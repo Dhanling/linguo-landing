@@ -1,0 +1,596 @@
+{
+  "title": "I'm not feeling well",
+  "title_target": "أَنَا لَسْتُ بِخَيْرٍ",
+  "goal": "Name parts of the body, explain what's wrong at a clinic or pharmacy, and use possessive forms for things that belong to you.",
+  "bekal": [
+    "say what hurts with *'indii alam fii...*",
+    "describe symptoms and understand advice",
+    "offer the right get-well wishes"
+  ],
+  "dialogs": [
+    {
+      "title": "حِوَار — فِي الْعِيَادَةِ",
+      "intro": "Budi goes to the campus clinic because he has had a fever for two days.",
+      "lines": [
+        {
+          "speaker": "اَلطَّبِيبَة:",
+          "text": "تَفَضَّلْ، اِجْلِسْ. مَاذَا بِكَ؟",
+          "baca": "tafaḍḍal, ijlis. maadhaa bika?",
+          "id": "Come in, have a seat. What's wrong?",
+          "literal": "please, sit-down. what with-you?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "عِنْدِي حَرَارَةٌ وَأَلَمٌ فِي رَأْسِي.",
+          "baca": "'indii haraaratun wa alamun fii ra'sii.",
+          "id": "I have a fever and a headache.",
+          "literal": "at-me heat and pain in head-my."
+        },
+        {
+          "speaker": "اَلطَّبِيبَة:",
+          "text": "مُنْذُ مَتَى؟",
+          "baca": "mundhu mataa?",
+          "id": "Since when?",
+          "literal": "since when?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مُنْذُ يَوْمَيْنِ. وَحَلْقِي يُؤْلِمُنِي أَيْضًا.",
+          "baca": "mundhu yaumain. wa halqii yu'limunii aiḍan.",
+          "id": "For two days. My throat hurts too.",
+          "literal": "since two-days. and throat-my hurts-me also."
+        },
+        {
+          "speaker": "اَلطَّبِيبَة:",
+          "text": "هَلْ تَسْعُلُ؟ وَهَلْ نِمْتَ جَيِّدًا؟",
+          "baca": "hal tas'ul? wa hal nimta jayyidan?",
+          "id": "Are you coughing? And are you sleeping well?",
+          "literal": "do you-cough? and do you-sleep well?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "نَعَمْ أَسْعُلُ قَلِيلًا، وَمَا نِمْتُ جَيِّدًا.",
+          "baca": "na'am as'ulu qaliilan, wa maa nimtu jayyidan.",
+          "id": "Yes, I'm coughing a little, and I didn't sleep well.",
+          "literal": "yes I-cough a-little, and not I-slept well."
+        },
+        {
+          "speaker": "اَلطَّبِيبَة:",
+          "text": "لَا تَقْلَقْ. هٰذِهِ نَزْلَةُ بَرْدٍ بَسِيطَةٌ.",
+          "baca": "laa taqlaq. haadhihi nazlatu bardin basiiṭah.",
+          "id": "Don't worry. It's just a mild cold.",
+          "literal": "don't you-worry. this cold simple."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "اَلْحَمْدُ لِلَّهِ. مَاذَا آخُذُ؟",
+          "baca": "alhamdu lillaah. maadhaa aakhudh?",
+          "id": "Thank God. What should I take?",
+          "literal": "praise be-to-God. what I-take?"
+        },
+        {
+          "speaker": "اَلطَّبِيبَة:",
+          "text": "خُذْ هٰذَا الدَّوَاءَ ثَلَاثَ مَرَّاتٍ فِي الْيَوْمِ.",
+          "baca": "khudh haadhad-dawaa'a thalaatha marraatin fil-yaum.",
+          "id": "Take this medicine three times a day.",
+          "literal": "take this medicine three times in the-day."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "قَبْلَ الْأَكْلِ أَمْ بَعْدَهُ؟",
+          "baca": "qablal-akli am ba'dah?",
+          "id": "Before meals or after?",
+          "literal": "before the-eating or after-it?"
+        },
+        {
+          "speaker": "اَلطَّبِيبَة:",
+          "text": "بَعْدَ الْأَكْلِ. وَاشْرَبْ مَاءً كَثِيرًا وَاسْتَرِحْ.",
+          "baca": "ba'dal-akl. washrab maa'an kathiiran wastarih.",
+          "id": "After meals. And drink plenty of water and rest.",
+          "literal": "after the-eating. and drink water much and rest."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "شُكْرًا يَا دُكْتُورَة!",
+          "baca": "shukran yaa duktuurah!",
+          "id": "Thank you, Doctor!",
+          "literal": "thanks O doctor(f.)!"
+        },
+        {
+          "speaker": "اَلطَّبِيبَة:",
+          "text": "سَلَامَتُكَ. أَلْفُ سَلَامَةٍ!",
+          "baca": "salaamatuk. alfu salaamah!",
+          "id": "Take care. Get well soon!",
+          "literal": "safety-your. a-thousand safety!"
+        }
+      ],
+      "notes": [
+        "**مَاذَا بِكَ؟ is literally \"what is with you?\".** It's the standard doctor's question, and also what people say when you look unwell. To a woman: مَاذَا بِكِ؟ More casual: مَا لَكَ؟",
+        "**عِنْدِي أَلَمٌ فِي... — the standard way to name a complaint.** \"I have pain in ...\". An equally common alternative: رَأْسِي يُؤْلِمُنِي (\"my head hurts me\") — here the body part is the subject, not you.",
+        "**Body parts that come in pairs are feminine.** يَد (hand), عَيْن (eye), رِجْل (leg, foot), أُذُن (ear) — all feminine even without ة. This continues the list of exceptions from unit 3, and the reason is simply that: Arabic treats paired body parts as feminine.",
+        "**مُنْذُ يَوْمَيْنِ — the dual after a preposition.** يَوْمَانِ becomes يَوْمَيْنِ because مُنْذُ comes before it. You saw this with صَدِيقَيْنِ in unit 13; the pattern is consistent.",
+        "**نِمْتُ, not نَامْتُ.** نَامَ is a hollow verb like كَانَ and زَارَ: the middle letter drops out as soon as the ending starts with a consonant. نَامَ → نِمْتُ, قَامَ → قُمْتُ, بَاعَ → بِعْتُ.",
+        "**أَمْ, not أَوْ.** Both mean \"or\", but أَمْ is used in **either-or questions**: قَبْلَ الْأَكْلِ أَمْ بَعْدَهُ؟ Outside questions you use أَوْ: شَايٌ أَوْ قَهْوَةٌ.",
+        "**سَلَامَتُكَ and أَلْفُ سَلَامَةٍ are get-well wishes.** The ones you'll hear most: سَلَامَتُكَ (\"may you be well\"), أَلْفُ سَلَامَةٍ (\"a thousand wishes of safety\"), شِفَاءً عَاجِلًا (\"get well soon\"). The reply: اَللهُ يُسَلِّمُكَ (\"may God keep you safe too\")."
+      ],
+      "grammars": [
+        {
+          "title": "Saying what's wrong",
+          "table": {
+            "head": [
+              "Arabic",
+              "Pronunciation",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "أَنَا مَرِيضٌ",
+                "anaa mariiḍ",
+                "I'm sick"
+              ],
+              [
+                "عِنْدِي حَرَارَةٌ",
+                "'indii haraarah",
+                "I have a fever"
+              ],
+              [
+                "عِنْدِي أَلَمٌ فِي رَأْسِي",
+                "'indii alamun fii ra'sii",
+                "I have a headache"
+              ],
+              [
+                "بَطْنِي يُؤْلِمُنِي",
+                "baṭnii yu'limunii",
+                "I have a stomachache"
+              ],
+              [
+                "عِنْدِي زُكَامٌ",
+                "'indii zukaam",
+                "I have a cold"
+              ],
+              [
+                "أَسْعُلُ",
+                "as'ulu",
+                "I have a cough"
+              ],
+              [
+                "أَشْعُرُ بِالتَّعَبِ",
+                "ash'uru bit-ta'ab",
+                "I feel tired"
+              ],
+              [
+                "أَشْعُرُ بِالدَّوَارِ",
+                "ash'uru bid-dawaar",
+                "I feel dizzy"
+              ],
+              [
+                "لَا أَسْتَطِيعُ النَّوْمَ",
+                "laa astaṭii'un-naum",
+                "I can't sleep"
+              ],
+              [
+                "عِنْدِي حَسَاسِيَّةٌ مِنْ...",
+                "'indii hasaasiyyatun min...",
+                "I'm allergic to..."
+              ]
+            ]
+          },
+          "after": [
+            "أَشْعُرُ بِـ (\"I feel\") is always followed by بِ and a noun: أَشْعُرُ بِالْبَرْدِ (I feel cold), أَشْعُرُ بِالْجُوعِ (I feel hungry), أَشْعُرُ بِتَحَسُّنٍ (I feel better)."
+          ]
+        },
+        {
+          "title": "Parts of the body",
+          "table": {
+            "head": [
+              "Arabic",
+              "Pronunciation",
+              "Meaning",
+              "Arabic",
+              "Pronunciation",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "رَأْس",
+                "ra's",
+                "head",
+                "يَد",
+                "yad",
+                "hand"
+              ],
+              [
+                "وَجْه",
+                "wajh",
+                "face",
+                "رِجْل",
+                "rijl",
+                "leg, foot"
+              ],
+              [
+                "عَيْن",
+                "'ain",
+                "eye",
+                "قَلْب",
+                "qalb",
+                "heart"
+              ],
+              [
+                "أُذُن",
+                "udhun",
+                "ear",
+                "بَطْن",
+                "baṭn",
+                "stomach"
+              ],
+              [
+                "أَنْف",
+                "anf",
+                "nose",
+                "ظَهْر",
+                "ẓahr",
+                "back"
+              ],
+              [
+                "فَم",
+                "fam",
+                "mouth",
+                "أَسْنَان",
+                "asnaan",
+                "tooth"
+              ],
+              [
+                "حَلْق",
+                "halq",
+                "throat",
+                "شَعْر",
+                "sha'r",
+                "hair"
+              ],
+              [
+                "رَقَبَة",
+                "raqabah",
+                "neck",
+                "جِلْد",
+                "jild",
+                "skin"
+              ]
+            ]
+          },
+          "after": [
+            "Some of these traveled far beyond Arabic: قَلْب lives on in Turkish *kalp*, Urdu *qalb* and Malay *kalbu*, and وَجْه in Malay *wajah*.",
+            "To say \"my\", attach ـِي as usual: رَأْسِي, يَدِي, بَطْنِي. Note that رِجْل becomes رِجْلِي and عَيْن becomes عَيْنِي."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "At the pharmacy",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Arabic",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "عِنْدَكُمْ دَوَاءٌ لِلصُّدَاعِ؟",
+              "'indakum dawaa'un liṣ-ṣudaa'?",
+              "Do you have something for a headache?"
+            ],
+            [
+              "دَوَاءٌ لِلسُّعَالِ",
+              "dawaa'un lis-su'aal",
+              "cough medicine"
+            ],
+            [
+              "حُبُوب / شَرَاب",
+              "hubuub / sharaab",
+              "tablets / syrup"
+            ],
+            [
+              "مَرْهَم",
+              "marham",
+              "ointment"
+            ],
+            [
+              "كَمْ مَرَّةً فِي الْيَوْمِ؟",
+              "kam marratan fil-yaum?",
+              "How many times a day?"
+            ],
+            [
+              "قَبْلَ الْأَكْلِ / بَعْدَهُ",
+              "qablal-akl / ba'dah",
+              "before / after meals"
+            ],
+            [
+              "هَلْ يَحْتَاجُ وَصْفَةً؟",
+              "hal yahtaaju waṣfah?",
+              "Do I need a prescription?"
+            ],
+            [
+              "عِنْدِي حَسَاسِيَّةٌ مِنَ الْبِنِسِلِين",
+              "'indii hasaasiyyatun minal-binisiliin",
+              "I'm allergic to penicillin"
+            ],
+            [
+              "أَيْنَ أَقْرَبُ صَيْدَلِيَّةٍ؟",
+              "aina aqrabu ṣaidaliyyah?",
+              "Where's the nearest pharmacy?"
+            ],
+            [
+              "اِتَّصِلْ بِالْإِسْعَافِ",
+              "ittaṣil bil-is'aaf",
+              "Call an ambulance"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Sentences to memorize whole before you travel",
+          "items": [
+            "**عِنْدِي حَسَاسِيَّةٌ مِنْ...** — \"I'm allergic to...\". This sentence can save a life, and it's not one to build while you think.",
+            "**أَحْتَاجُ إِلَى طَبِيبٍ** — \"I need a doctor\". And **أَيْنَ أَقْرَبُ مُسْتَشْفًى؟** — \"where's the nearest hospital?\".",
+            "Also keep one sentence ready about any chronic condition you have, for example عِنْدِي مَرَضُ السُّكَّرِ (\"I have diabetes\") or عِنْدِي رَبْوٌ (\"I have asthma\")."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking after the sick and wishing them well",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Arabic",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "كَيْفَ صِحَّتُكَ؟",
+              "kaifa ṣihhatuka?",
+              "How are you feeling?"
+            ],
+            [
+              "هَلْ تَحَسَّنْتَ؟",
+              "hal tahassanta?",
+              "Are you feeling better?"
+            ],
+            [
+              "أَتَمَنَّى لَكَ الشِّفَاءَ",
+              "atamannaa lakash-shifaa'",
+              "May you get well"
+            ],
+            [
+              "شِفَاءً عَاجِلًا",
+              "shifaa'an 'aajilan",
+              "Get well soon"
+            ],
+            [
+              "سَلَامَتُكَ",
+              "salaamatuk",
+              "Take care"
+            ],
+            [
+              "اَللهُ يَشْفِيكَ",
+              "allaahu yashfiik",
+              "May God heal you"
+            ],
+            [
+              "اِرْتَحْ قَلِيلًا",
+              "irtah qaliilan",
+              "Get some rest"
+            ],
+            [
+              "اَلْحَمْدُ لِلَّهِ عَلَى السَّلَامَةِ",
+              "alhamdu lillaahi 'alas-salaamah",
+              "Thank God you're safe"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last phrase is used far beyond illness: you say it to anyone who has just come back from a trip, just recovered, or just got through something difficult. The reply: اَللهُ يُسَلِّمُكَ."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "مَرِيض",
+      "baca": "mariiḍ",
+      "en": "sick"
+    },
+    {
+      "ar": "صِحَّة",
+      "baca": "ṣihhah",
+      "en": "health"
+    },
+    {
+      "ar": "عِيَادَة",
+      "baca": "'iyaadah",
+      "en": "clinic"
+    },
+    {
+      "ar": "طَبِيب / طَبِيبَة",
+      "baca": "ṭabiib / ṭabiibah",
+      "en": "doctor (m. / f.)"
+    },
+    {
+      "ar": "دَوَاء",
+      "baca": "dawaa'",
+      "en": "medicine"
+    },
+    {
+      "ar": "وَصْفَة",
+      "baca": "waṣfah",
+      "en": "prescription"
+    },
+    {
+      "ar": "أَلَم",
+      "baca": "alam",
+      "en": "pain"
+    },
+    {
+      "ar": "حَرَارَة",
+      "baca": "haraarah",
+      "en": "fever, temperature"
+    },
+    {
+      "ar": "صُدَاع",
+      "baca": "ṣudaa'",
+      "en": "headache"
+    },
+    {
+      "ar": "زُكَام",
+      "baca": "zukaam",
+      "en": "a cold"
+    },
+    {
+      "ar": "سُعَال",
+      "baca": "su'aal",
+      "en": "cough"
+    },
+    {
+      "ar": "حَسَاسِيَّة",
+      "baca": "hasaasiyyah",
+      "en": "allergy"
+    },
+    {
+      "ar": "تَعَب",
+      "baca": "ta'ab",
+      "en": "tired"
+    },
+    {
+      "ar": "رَأْس",
+      "baca": "ra's",
+      "en": "head"
+    },
+    {
+      "ar": "بَطْن",
+      "baca": "baṭn",
+      "en": "stomach"
+    },
+    {
+      "ar": "حَلْق",
+      "baca": "halq",
+      "en": "throat"
+    },
+    {
+      "ar": "يَد / رِجْل",
+      "baca": "yad / rijl",
+      "en": "hand / leg"
+    },
+    {
+      "ar": "عَيْن / أُذُن",
+      "baca": "'ain / udhun",
+      "en": "eye / ear"
+    },
+    {
+      "ar": "أَسْنَان",
+      "baca": "asnaan",
+      "en": "tooth"
+    },
+    {
+      "ar": "يَشْعُرُ بِـ",
+      "baca": "yash'uru bi",
+      "en": "to feel"
+    },
+    {
+      "ar": "يَسْتَطِيعُ",
+      "baca": "yastaṭii'u",
+      "en": "to be able"
+    },
+    {
+      "ar": "يَسْتَرِيحُ",
+      "baca": "yastariihu",
+      "en": "to rest"
+    },
+    {
+      "ar": "يَقْلَقُ",
+      "baca": "yaqlaqu",
+      "en": "to worry"
+    },
+    {
+      "ar": "أَمْ",
+      "baca": "am",
+      "en": "or (in questions)"
+    },
+    {
+      "ar": "مُنْذُ",
+      "baca": "mundhu",
+      "en": "since, for"
+    },
+    {
+      "ar": "بَسِيط",
+      "baca": "basiiṭ",
+      "en": "simple, mild"
+    },
+    {
+      "ar": "شِفَاء",
+      "baca": "shifaa'",
+      "en": "recovery"
+    },
+    {
+      "ar": "إِسْعَاف",
+      "baca": "is'aaf",
+      "en": "ambulance, emergency help"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Arabic.",
+      "items": [
+        "I've had a fever for two days.",
+        "I have a headache.",
+        "My throat hurts too.",
+        "How many times a day?",
+        "After meals.",
+        "Get well soon."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right body part.",
+      "items": [
+        "أَقْرَأُ بِـ____ . (eye)",
+        "أَسْمَعُ بِـ____ . (ear)",
+        "أَمْشِي بِـ____ . (leg)",
+        "آكُلُ بِـ____ . (mouth)",
+        "أَكْتُبُ بِـ____ . (hand)"
+      ]
+    },
+    {
+      "prompt": "Write a question that fits each answer.",
+      "items": [
+        "مُنْذُ ثَلَاثَةِ أَيَّامٍ.",
+        "نَعَمْ، أَسْعُلُ قَلِيلًا.",
+        "ثَلَاثَ مَرَّاتٍ فِي الْيَوْمِ.",
+        "بَعْدَ الْأَكْلِ.",
+        "لَا، لَيْسَ عِنْدِي حَسَاسِيَّةٌ."
+      ]
+    },
+    {
+      "prompt": "Write a conversation at the clinic: you've had a stomachache since yesterday, you can't sleep, and the doctor gives you medicine.",
+      "items": [
+        "The doctor greets you and asks",
+        "You say what's wrong",
+        "The doctor asks since when",
+        "You answer and add a symptom",
+        "The doctor gives advice",
+        "Closing and good wishes"
+      ]
+    }
+  ],
+  "answers": [
+    "عِنْدِي حَرَارَةٌ مُنْذُ يَوْمَيْنِ. — عِنْدِي أَلَمٌ فِي رَأْسِي. — وَحَلْقِي يُؤْلِمُنِي أَيْضًا. — كَمْ مَرَّةً فِي الْيَوْمِ؟ — بَعْدَ الْأَكْلِ. — شِفَاءً عَاجِلًا.",
+    "عَيْنِي / عَيْنَيَّ — أُذُنِي — رِجْلِي — فَمِي — يَدِي",
+    "مُنْذُ مَتَى؟ — هَلْ تَسْعُلُ؟ — كَمْ مَرَّةً فِي الْيَوْمِ؟ — قَبْلَ الْأَكْلِ أَمْ بَعْدَهُ؟ — هَلْ عِنْدَكَ حَسَاسِيَّةٌ؟",
+    "Example: مَاذَا بِكَ؟ — عِنْدِي أَلَمٌ فِي بَطْنِي مُنْذُ أَمْسِ — مُنْذُ مَتَى؟ — مُنْذُ أَمْسِ، وَمَا نِمْتُ جَيِّدًا — خُذْ هٰذَا الدَّوَاءَ مَرَّتَيْنِ فِي الْيَوْمِ وَاسْتَرِحْ — شُكْرًا يَا دُكْتُورَة! وَجَوَابُهَا: سَلَامَتُكَ"
+  ],
+  "wave": "Memorize three sentences from this unit word for word: the allergy, needing a doctor, and the nearest hospital. These are not sentences to go hunting for when you need them."
+}

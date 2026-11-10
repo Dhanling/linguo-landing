@@ -1,0 +1,635 @@
+{
+  "title": "My daily routine",
+  "title_target": "يَوْمِي",
+  "goal": "Build sentences that have a verb, describe your daily activities, and see how one Arabic verb changes according to who does the action.",
+  "bekal": [
+    "form present-tense verbs for every person",
+    "describe the sequence of a whole day's activities",
+    "negate verbs with *laa*"
+  ],
+  "dialogs": [
+    {
+      "title": "حِوَار — كَيْفَ تَقْضِي يَوْمَكَ؟",
+      "intro": "In the campus canteen. Laila asks Budi about his daily habits.",
+      "lines": [
+        {
+          "speaker": "لَيْلَى:",
+          "text": "مَتَى تَسْتَيْقِظُ عَادَةً؟",
+          "baca": "mataa tastaiqiẓu 'aadatan?",
+          "id": "What time do you usually get up?",
+          "literal": "when you-wake-up usually?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "أَسْتَيْقِظُ فِي السَّاعَةِ الْخَامِسَةِ، ثُمَّ أُصَلِّي.",
+          "baca": "astaiqiẓu fis-saa'atil-khaamisah, thumma uṣallii.",
+          "id": "I get up at five, then I pray.",
+          "literal": "I-wake-up at the-hour the-fifth, then I-pray."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "وَمَاذَا تَفْعَلُ بَعْدَ ذٰلِكَ؟",
+          "baca": "wa maadhaa taf'alu ba'da dhaalik?",
+          "id": "And what do you do after that?",
+          "literal": "and what you-do after that?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "أَتَنَاوَلُ الْفُطُورَ وَأَشْرَبُ الشَّايَ.",
+          "baca": "atanaawalul-fuṭuura wa ashrabush-shaay.",
+          "id": "I have breakfast and drink tea.",
+          "literal": "I-take the-breakfast and I-drink the-tea."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "هَلْ تَذْهَبُ إِلَى الْجَامِعَةِ بِالْحَافِلَةِ؟",
+          "baca": "hal tadh-habu ilal-jaami'ati bil-haafilah?",
+          "id": "Do you go to campus by bus?",
+          "literal": "(question) you-go to the-campus by-the-bus?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "لَا، أَمْشِي. اَلْجَامِعَةُ قَرِيبَةٌ مِنْ بَيْتِي.",
+          "baca": "laa, amshii. al-jaami'atu qariibatun min baitii.",
+          "id": "No, I walk. The campus is close to my house.",
+          "literal": "no, I-walk. the-campus near from house-my."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "مَاذَا تَدْرُسُ هٰذَا الْفَصْلَ؟",
+          "baca": "maadhaa tadrusu haadhal-faṣl?",
+          "id": "What are you studying this semester?",
+          "literal": "what you-study this the-semester?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "أَدْرُسُ النَّحْوَ وَالْأَدَبَ. وَأَنْتِ؟",
+          "baca": "adrusun-nahwa wal-adab. wa anti?",
+          "id": "I'm studying grammar and literature. And you?",
+          "literal": "I-study the-grammar and-the-literature. and you?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "أَنَا أَدْرُسُ التَّرْجَمَةَ، وَأَعْمَلُ فِي الْمَسَاءِ.",
+          "baca": "anaa adrusut-tarjamah, wa a'malu fil-masaa'.",
+          "id": "I study translation, and I work in the evenings.",
+          "literal": "I I-study the-translation, and I-work in the-evening."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "أَلَا تَتْعَبِينَ؟",
+          "baca": "alaa tat'abiin?",
+          "id": "Don't you get tired?",
+          "literal": "not you(f)-get-tired?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "أَحْيَانًا. لٰكِنِّي أُحِبُّ عَمَلِي.",
+          "baca": "ahyaanan. laakinnii uhibbu 'amalii.",
+          "id": "Sometimes. But I love my job.",
+          "literal": "sometimes. but-I I-love work-my."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "هٰذَا هُوَ الْمُهِمُّ. أَنَا أَيْضًا أُحِبُّ الدِّرَاسَةَ هُنَا.",
+          "baca": "haadhaa huwal-muhimm. anaa aiḍan uhibbud-diraasata hunaa.",
+          "id": "That's what matters. I love studying here too.",
+          "literal": "this it the-important. I also I-love the-study here."
+        }
+      ],
+      "notes": [
+        "**An Arabic verb already contains its subject.** أَدْرُسُ on its own already means \"I study\" — you don't have to say أَنَا. If أَنَا is added anyway (as in أَنَا أَدْرُسُ), it adds emphasis: \"*I'm* the one studying\". English always needs the pronoun; Arabic only uses it for stress.",
+        "**The prefix tells you who, not the ending.** أَ- for I, تَـ for you and she, يَـ for he, نَـ for we. These four letters cover almost all of everyday conversation.",
+        "**تَدْرُسُ has two meanings.** \"You (m) study\" and \"she studies\" — the form is exactly the same. Context separates them, and misunderstandings do sometimes happen even between native speakers. To make it clear, the pronoun is added: هِيَ تَدْرُسُ.",
+        "**Speaking to a woman, the verb ends in ـِينَ.** أَلَا تَتْعَبِينَ؟ — \"don't you (f) get tired?\". This follows directly from the اِسْمُكِ and حَالُكِ you've used since unit 1: Arabic distinguishes a male and a female \"you\" wherever it can.",
+        "**The object takes a fatha.** أَدْرُسُ النَّحْوَ, أَشْرَبُ الشَّايَ, أُحِبُّ عَمَلِي. The fatha at the end marks the word as the **object** of the verb. At A1 you aren't expected to add it yourself in every sentence, but learn to recognize it — it's clearly audible.",
+        "**بِالْحَافِلَةِ — بِ marks the means.** \"By bus\". Same pattern: بِالسَّيَّارَةِ (by car), بِالْقِطَارِ (by train), بِالْقَلَمِ (with a pen), بِيَدِي (with my hand).",
+        "**Verbs are negated with لَا, not لَيْسَ.** لَا أَفْهَمُ (I don't understand), لَا أَعْرِفُ (I don't know), لَا أَشْرَبُ الْقَهْوَةَ (I don't drink coffee). Remember the split: لَيْسَ for sentences without a verb, لَا for sentences with a present-tense verb.",
+        "**ثُمَّ and وَ are not the same.** وَ simply joins (\"and\"), ثُمَّ shows sequence in time (\"then, afterwards\"). There's one more, even tighter: فَ (\"and then, right away\") — دَخَلَ فَجَلَسَ (\"he came in and sat down\", with no pause).",
+        "**لٰكِنِّي = لٰكِنَّ + ي.** \"But I\". لٰكِنَّ is always followed by a noun or an attached pronoun, never directly by a verb — just like إِنَّ in unit 5."
+      ],
+      "grammars": [
+        {
+          "title": "The present tense (al-fi'l al-muḍaari')",
+          "body": [
+            "One verb, eight forms. What changes is the **prefix**; some forms also add an ending. The example below uses دَرَسَ (study), whose middle letter takes a damma: يَدْرُسُ."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Verb",
+              "Pronunciation",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "أَنَا",
+                "أَدْرُسُ",
+                "adrusu",
+                "I study"
+              ],
+              [
+                "أَنْتَ",
+                "تَدْرُسُ",
+                "tadrusu",
+                "you (m) study"
+              ],
+              [
+                "أَنْتِ",
+                "تَدْرُسِينَ",
+                "tadrusiina",
+                "you (f) study"
+              ],
+              [
+                "هُوَ",
+                "يَدْرُسُ",
+                "yadrusu",
+                "he studies"
+              ],
+              [
+                "هِيَ",
+                "تَدْرُسُ",
+                "tadrusu",
+                "she studies"
+              ],
+              [
+                "نَحْنُ",
+                "نَدْرُسُ",
+                "nadrusu",
+                "we study"
+              ],
+              [
+                "أَنْتُمْ",
+                "تَدْرُسُونَ",
+                "tadrusuuna",
+                "you (pl) study"
+              ],
+              [
+                "هُمْ",
+                "يَدْرُسُونَ",
+                "yadrusuuna",
+                "they study"
+              ]
+            ]
+          },
+          "after": [
+            "If you can only manage four, learn these: **أَ- (I), تَـ (you), يَـ (he), نَـ (we)**. Those four prefixes cover most conversation.",
+            "One form covers two tenses at once: أَدْرُسُ means \"I study\" (habit) **and** \"I am studying\". Arabic doesn't separate the two the way English does."
+          ]
+        },
+        {
+          "title": "The shifting middle vowel",
+          "body": [
+            "The unpredictable part of an Arabic verb isn't the prefix but **the vowel on the middle letter** in the present tense. It can be damma, fatha or kasra, and it can only be learned along with the word."
+          ],
+          "table": {
+            "head": [
+              "Past",
+              "Present",
+              "Pronunciation",
+              "Meaning",
+              "Middle vowel"
+            ],
+            "rows": [
+              [
+                "كَتَبَ",
+                "يَكْتُبُ",
+                "yaktubu",
+                "write",
+                "u"
+              ],
+              [
+                "دَرَسَ",
+                "يَدْرُسُ",
+                "yadrusu",
+                "study",
+                "u"
+              ],
+              [
+                "ذَهَبَ",
+                "يَذْهَبُ",
+                "yadh-habu",
+                "go",
+                "a"
+              ],
+              [
+                "فَتَحَ",
+                "يَفْتَحُ",
+                "yaftahu",
+                "open",
+                "a"
+              ],
+              [
+                "شَرِبَ",
+                "يَشْرَبُ",
+                "yashrabu",
+                "drink",
+                "a"
+              ],
+              [
+                "جَلَسَ",
+                "يَجْلِسُ",
+                "yajlisu",
+                "sit",
+                "i"
+              ],
+              [
+                "رَجَعَ",
+                "يَرْجِعُ",
+                "yarji'u",
+                "return",
+                "i"
+              ],
+              [
+                "عَرَفَ",
+                "يَعْرِفُ",
+                "ya'rifu",
+                "know",
+                "i"
+              ]
+            ]
+          },
+          "after": [
+            "So **always learn verbs in pairs**: كَتَبَ — يَكْتُبُ, not just كَتَبَ. From those two forms every other form can be derived without guesswork.",
+            "The good news: this only applies to basic three-letter verbs. Derived verbs (أَرَادَ — يُرِيدُ, تَكَلَّمَ — يَتَكَلَّمُ) follow fixed patterns that don't need to be learned one by one."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "A day's activities",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Arabic",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "أَسْتَيْقِظُ",
+              "astaiqiẓu",
+              "I wake up"
+            ],
+            [
+              "أُصَلِّي",
+              "uṣallii",
+              "I pray"
+            ],
+            [
+              "أَتَنَاوَلُ الْفُطُورَ",
+              "atanaawalul-fuṭuur",
+              "I have breakfast"
+            ],
+            [
+              "أَغْتَسِلُ",
+              "aghtasilu",
+              "I take a shower"
+            ],
+            [
+              "أَلْبَسُ",
+              "albasu",
+              "I get dressed"
+            ],
+            [
+              "أَخْرُجُ مِنَ الْبَيْتِ",
+              "akhruju minal-bait",
+              "I leave the house"
+            ],
+            [
+              "أَذْهَبُ إِلَى الْعَمَلِ",
+              "adh-habu ilal-'amal",
+              "I go to work"
+            ],
+            [
+              "أَعْمَلُ",
+              "a'malu",
+              "I work"
+            ],
+            [
+              "أَتَغَدَّى",
+              "atataghaddaa",
+              "I have lunch"
+            ],
+            [
+              "أَرْجِعُ إِلَى الْبَيْتِ",
+              "arji'u ilal-bait",
+              "I go back home"
+            ],
+            [
+              "أَسْتَرِيحُ",
+              "astariihu",
+              "I rest"
+            ],
+            [
+              "أَتَعَشَّى",
+              "ata'ashshaa",
+              "I have dinner"
+            ],
+            [
+              "أُشَاهِدُ التِّلْفَازَ",
+              "ushaahidut-tilfaaz",
+              "I watch television"
+            ],
+            [
+              "أَقْرَأُ كِتَابًا",
+              "aqra'u kitaaban",
+              "I read a book"
+            ],
+            [
+              "أَنَامُ",
+              "anaamu",
+              "I go to sleep"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that some of these are already full sentences, not just words. That's the best way to learn them: أَذْهَبُ إِلَى الْعَمَلِ also teaches you that ذَهَبَ takes إِلَى, not some other preposition."
+        },
+        {
+          "type": "kotak",
+          "title": "The first verbs you must know fluently",
+          "items": [
+            "These ten cover most everyday sentences, and all of them have already appeared in this book: ذَهَبَ (go), جَاءَ (come), أَكَلَ (eat), شَرِبَ (drink), دَرَسَ (study), عَمِلَ (work), سَكَنَ (live), فَهِمَ (understand), عَرَفَ (know), أَرَادَ (want).",
+            "The drill that pays off fastest: take one verb a day and build eight sentences with eight different subjects. Ten days, ten verbs, and conjugation stops feeling like a table."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking about habits",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "مَاذَا تَفْعَلُ؟",
+              "maadhaa taf'alu?",
+              "What are you doing? / What do you do?"
+            ],
+            [
+              "مَتَى تَسْتَيْقِظُ؟",
+              "mataa tastaiqiẓu?",
+              "What time do you get up?"
+            ],
+            [
+              "أَيْنَ تَسْكُنُ؟",
+              "aina taskunu?",
+              "Where do you live?"
+            ],
+            [
+              "أَيْنَ تَعْمَلُ؟",
+              "aina ta'malu?",
+              "Where do you work?"
+            ],
+            [
+              "مَاذَا تَدْرُسُ؟",
+              "maadhaa tadrusu?",
+              "What are you studying?"
+            ],
+            [
+              "كَيْفَ تَذْهَبُ إِلَى الْعَمَلِ؟",
+              "kaifa tadh-habu ilal-'amal?",
+              "How do you get to the office?"
+            ],
+            [
+              "هَلْ تَتَكَلَّمُ الْعَرَبِيَّةَ؟",
+              "hal tatakallamul-'arabiyyah?",
+              "Can you speak Arabic?"
+            ],
+            [
+              "مَاذَا تُحِبُّ أَنْ تَفْعَلَ؟",
+              "maadhaa tuhibbu an taf'ala?",
+              "What do you like doing?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the difference between مَا and مَاذَا: مَا is used before a noun (مَا اسْمُكَ؟), مَاذَا before a verb (مَاذَا تَفْعَلُ؟). Using مَا in front of a verb is one of the most typical beginner mistakes, because English uses the one word \"what\" for both."
+        },
+        {
+          "type": "kotak",
+          "title": "Questions that make people enjoy talking to you",
+          "items": [
+            "Open questions keep a conversation alive much longer than yes/no questions. Compare هَلْ تُحِبُّ الْقَهْوَةَ؟ (\"do you like coffee?\") with مَاذَا تَشْرَبُ عَادَةً؟ (\"what do you usually drink?\").",
+            "Three questions that always get a conversation going in the Arab world: مِنْ أَيْنَ أَنْتَ بِالضَّبْطِ؟ (\"where exactly are you from?\"), مَاذَا تُحِبُّ فِي مَدِينَتِكَ؟ (\"what do you like about your city?\"), and كَيْفَ حَالُ الْعَائِلَةِ؟ (\"how's the family?\")."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "يَسْتَيْقِظُ",
+      "baca": "yastaiqiẓu",
+      "en": "wake up"
+    },
+    {
+      "ar": "يَذْهَبُ",
+      "baca": "yadh-habu",
+      "en": "go"
+    },
+    {
+      "ar": "يَرْجِعُ",
+      "baca": "yarji'u",
+      "en": "return, go back"
+    },
+    {
+      "ar": "يَخْرُجُ",
+      "baca": "yakhruju",
+      "en": "go out"
+    },
+    {
+      "ar": "يَدْخُلُ",
+      "baca": "yadkhulu",
+      "en": "enter"
+    },
+    {
+      "ar": "يَأْكُلُ",
+      "baca": "ya'kulu",
+      "en": "eat"
+    },
+    {
+      "ar": "يَشْرَبُ",
+      "baca": "yashrabu",
+      "en": "drink"
+    },
+    {
+      "ar": "يَدْرُسُ",
+      "baca": "yadrusu",
+      "en": "study"
+    },
+    {
+      "ar": "يَعْمَلُ",
+      "baca": "ya'malu",
+      "en": "work"
+    },
+    {
+      "ar": "يَسْكُنُ",
+      "baca": "yaskunu",
+      "en": "live, reside"
+    },
+    {
+      "ar": "يَقْرَأُ",
+      "baca": "yaqra'u",
+      "en": "read"
+    },
+    {
+      "ar": "يَكْتُبُ",
+      "baca": "yaktubu",
+      "en": "write"
+    },
+    {
+      "ar": "يَنَامُ",
+      "baca": "yanaamu",
+      "en": "sleep"
+    },
+    {
+      "ar": "يَمْشِي",
+      "baca": "yamshii",
+      "en": "walk"
+    },
+    {
+      "ar": "يُحِبُّ",
+      "baca": "yuhibbu",
+      "en": "love, like"
+    },
+    {
+      "ar": "يَتَكَلَّمُ",
+      "baca": "yatakallamu",
+      "en": "speak"
+    },
+    {
+      "ar": "يُشَاهِدُ",
+      "baca": "yushaahidu",
+      "en": "watch"
+    },
+    {
+      "ar": "يَسْتَرِيحُ",
+      "baca": "yastariihu",
+      "en": "rest"
+    },
+    {
+      "ar": "يَتْعَبُ",
+      "baca": "yat'abu",
+      "en": "tired"
+    },
+    {
+      "ar": "فُطُور",
+      "baca": "fuṭuur",
+      "en": "breakfast"
+    },
+    {
+      "ar": "غَدَاء",
+      "baca": "ghadaa'",
+      "en": "lunch"
+    },
+    {
+      "ar": "عَشَاء",
+      "baca": "'ashaa'",
+      "en": "dinner"
+    },
+    {
+      "ar": "شَاي",
+      "baca": "shaay",
+      "en": "tea"
+    },
+    {
+      "ar": "حَافِلَة",
+      "baca": "haafilah",
+      "en": "bus"
+    },
+    {
+      "ar": "قِطَار",
+      "baca": "qiṭaar",
+      "en": "train"
+    },
+    {
+      "ar": "عَادَةً",
+      "baca": "'aadatan",
+      "en": "usually"
+    },
+    {
+      "ar": "ثُمَّ",
+      "baca": "thumma",
+      "en": "then, afterwards"
+    },
+    {
+      "ar": "مَاذَا",
+      "baca": "maadhaa",
+      "en": "what (before a verb)"
+    },
+    {
+      "ar": "دِرَاسَة",
+      "baca": "diraasah",
+      "en": "studies"
+    },
+    {
+      "ar": "مُهِمّ",
+      "baca": "muhimm",
+      "en": "important"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change the verb to match the subject given.",
+      "items": [
+        "يَدْرُسُ ← أَنَا ____",
+        "يَشْرَبُ ← نَحْنُ ____",
+        "يَذْهَبُ ← أَنْتِ ____",
+        "يَكْتُبُ ← هِيَ ____",
+        "يَعْمَلُ ← هُمْ ____",
+        "يَقْرَأُ ← أَنْتُمْ ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Arabic.",
+      "items": [
+        "I get up at five.",
+        "She studies Arabic.",
+        "We go to campus by bus.",
+        "Where do you work? (to a woman)",
+        "I don't drink coffee.",
+        "They read books in the library."
+      ]
+    },
+    {
+      "prompt": "Negate these sentences. Watch out: لَا or لَيْسَ?",
+      "items": [
+        "أَفْهَمُ الدَّرْسَ.",
+        "هُوَ طَالِبٌ.",
+        "نَذْهَبُ إِلَى السُّوقِ.",
+        "عِنْدِي وَقْتٌ.",
+        "هِيَ تَعْمَلُ فِي الْمَسَاءِ."
+      ]
+    },
+    {
+      "prompt": "Describe your day from waking up to going to bed, in at least eight sentences. Link them with ثُمَّ and بَعْدَ ذٰلِكَ.",
+      "items": [
+        "What time do you get up, and what do you do next?",
+        "What do you have for breakfast?",
+        "How do you get to work or class?",
+        "What do you do during the day?",
+        "What time do you get home?",
+        "What do you do in the evening?"
+      ]
+    }
+  ],
+  "answers": [
+    "أَدْرُسُ — نَشْرَبُ — تَذْهَبِينَ — تَكْتُبُ — يَعْمَلُونَ — تَقْرَأُونَ",
+    "أَسْتَيْقِظُ فِي السَّاعَةِ الْخَامِسَةِ. — هِيَ تَدْرُسُ الْعَرَبِيَّةَ. — نَذْهَبُ إِلَى الْجَامِعَةِ بِالْحَافِلَةِ. — أَيْنَ تَعْمَلِينَ؟ — لَا أَشْرَبُ الْقَهْوَةَ. — هُمْ يَقْرَأُونَ كِتَابًا فِي الْمَكْتَبَةِ.",
+    "لَا أَفْهَمُ الدَّرْسَ. — لَيْسَ هُوَ طَالِبًا. — لَا نَذْهَبُ إِلَى السُّوقِ. — لَيْسَ عِنْدِي وَقْتٌ. — هِيَ لَا تَعْمَلُ فِي الْمَسَاءِ.",
+    "Example: أَسْتَيْقِظُ فِي السَّاعَةِ الْخَامِسَةِ ثُمَّ أُصَلِّي — أَتَنَاوَلُ الْفُطُورَ وَأَشْرَبُ الشَّايَ — أَذْهَبُ إِلَى الْعَمَلِ بِالسَّيَّارَةِ — أَعْمَلُ فِي الْمَكْتَبِ مِنَ الثَّامِنَةِ إِلَى الرَّابِعَةِ — أَرْجِعُ إِلَى الْبَيْتِ فِي الْخَامِسَةِ — أَتَعَشَّى مَعَ عَائِلَتِي ثُمَّ أَقْرَأُ كِتَابًا"
+  ],
+  "wave": "Reread the unit 7 dialogue. Now you can recognize يَبْدَأُ and تَشْرَبُ as verbs with a subject, not just sounds."
+}

@@ -1,0 +1,571 @@
+{
+  "title": "Phone calls and messages",
+  "title_target": "اَلْمُكَالَمَةُ وَالرِّسَالَةُ",
+  "goal": "Make phone calls, leave messages, write short texts, and use the everyday courtesy phrases native speakers use.",
+  "bekal": [
+    "open and close a phone call properly",
+    "ask for help and apologize",
+    "write a natural short message, not a stiff translation"
+  ],
+  "dialogs": [
+    {
+      "title": "حِوَار — مُكَالَمَةٌ هَاتِفِيَّةٌ",
+      "intro": "Budi calls the language institute's office to ask about the exam schedule.",
+      "lines": [
+        {
+          "speaker": "اَلْمُوَظَّفَة:",
+          "text": "أَلُو، مَعْهَدُ اللُّغَاتِ، صَبَاحَ الْخَيْرِ.",
+          "baca": "aluu, ma'hadul-lughaat, ṣabaahal-khair.",
+          "id": "Hello, Language Institute, good morning.",
+          "literal": "hello, institute the-languages, morning the-good."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "صَبَاحَ النُّورِ. مَعَكِ بُودِي، طَالِبٌ فِي الْمُسْتَوَى الثَّانِي.",
+          "baca": "ṣabaahan-nuur. ma'aki Buudii, ṭaalibun fil-mustawath-thaanii.",
+          "id": "Good morning. This is Budi, a second-year student.",
+          "literal": "morning the-light. with-you Budi, student in the-level the-second."
+        },
+        {
+          "speaker": "اَلْمُوَظَّفَة:",
+          "text": "أَهْلًا يَا أُسْتَاذ بُودِي. كَيْفَ أَسْتَطِيعُ مُسَاعَدَتَكَ؟",
+          "baca": "ahlan yaa ustaadh Buudii. kaifa astaṭii'u musaa'adatak?",
+          "id": "Hello, Mr. Budi. How can I help you?",
+          "literal": "hello O ustadh Budi. how I-can helping-you?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "أُرِيدُ أَنْ أَسْأَلَ عَنْ مَوْعِدِ الِامْتِحَانِ.",
+          "baca": "uriidu an as'ala 'an mau'idil-imtihaan.",
+          "id": "I'd like to ask about the exam schedule.",
+          "literal": "I-want that I-ask about schedule the-exam."
+        },
+        {
+          "speaker": "اَلْمُوَظَّفَة:",
+          "text": "لَحْظَةً مِنْ فَضْلِكَ... اَلِامْتِحَانُ يَوْمَ الْأَحَدِ الْقَادِمِ.",
+          "baca": "lahẓatan min faḍlik... al-imtihaanu yaumal-ahadil-qaadim.",
+          "id": "One moment, please... The exam is next Sunday.",
+          "literal": "a-moment from favor-your... the-exam day the-Sunday the-coming."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "فِي أَيِّ سَاعَةٍ، لَوْ سَمَحْتِ؟",
+          "baca": "fii ayyi saa'ah, lau samahti?",
+          "id": "At what time, if I may ask?",
+          "literal": "at which hour, if you-permit?"
+        },
+        {
+          "speaker": "اَلْمُوَظَّفَة:",
+          "text": "فِي التَّاسِعَةِ صَبَاحًا، فِي الْقَاعَةِ الْكُبْرَى.",
+          "baca": "fit-taasi'ati ṣabaahan, fil-qaa'atil-kubraa.",
+          "id": "Nine in the morning, in the main hall.",
+          "literal": "at the-ninth morning-time, in the-hall the-biggest."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "عَفْوًا، لَمْ أَسْمَعْ جَيِّدًا. مَرَّةً أُخْرَى مِنْ فَضْلِكِ؟",
+          "baca": "'afwan, lam asma' jayyidan. marratan ukhraa min faḍlik?",
+          "id": "Sorry, I didn't quite catch that. Once more, please?",
+          "literal": "sorry, not I-heard well. time other from favor-your?"
+        },
+        {
+          "speaker": "اَلْمُوَظَّفَة:",
+          "text": "بِالتَّأْكِيدِ. اَلتَّاسِعَةُ صَبَاحًا، اَلْقَاعَةُ الْكُبْرَى.",
+          "baca": "bit-ta'kiid. at-taasi'atu ṣabaahan, al-qaa'atul-kubraa.",
+          "id": "Of course. Nine a.m., the main hall.",
+          "literal": "with-certainty. the-ninth morning-time, the-hall the-biggest."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "شُكْرًا جَزِيلًا. هَلْ يَجِبُ أَنْ أُحْضِرَ شَيْئًا؟",
+          "baca": "shukran jaziilan. hal yajibu an uhḍira shai'an?",
+          "id": "Thank you so much. Do I need to bring anything?",
+          "literal": "thanks abundant. is-it necessary that I-bring something?"
+        },
+        {
+          "speaker": "اَلْمُوَظَّفَة:",
+          "text": "بِطَاقَتَكَ الْجَامِعِيَّةَ وَقَلَمًا فَقَطْ.",
+          "baca": "biṭaaqatakal-jaami'iyyata wa qalaman faqaṭ.",
+          "id": "Just your student card and a pen.",
+          "literal": "card-your the-university and pen only."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "تَمَامٌ. شُكْرًا عَلَى وَقْتِكِ. مَعَ السَّلَامَةِ.",
+          "baca": "tamaam. shukran 'alaa waqtik. ma'as-salaamah.",
+          "id": "Perfect. Thank you for your time. Goodbye.",
+          "literal": "perfect. thanks for time-your. with the-safety."
+        }
+      ],
+      "notes": [
+        "**أَلُو is the \"hello\" used only on the phone.** It isn't used face to face. Then the caller identifies himself: مَعَكَ... (\"with you is ...\") or أَنَا... Giving your own name first is considered polite and saves time.",
+        "**كَيْفَ أَسْتَطِيعُ مُسَاعَدَتَكَ؟** is the standard phrase of office staff. Notice that مُسَاعَدَة (\"help\") is the noun from سَاعَدَ, and with the ending ـكَ it becomes \"helping you\".",
+        "**لَحْظَةً — \"one moment\".** Tanwin fathah again, as an adverb. Other equally common forms: ثَانِيَةً (one second), دَقِيقَةً (one minute), لَحْظَةً مِنْ فَضْلِكَ (one moment, please).",
+        "**أَسْأَلُ عَنْ — each verb demands its own preposition.** \"Ask **about**\". Just as in English, each verb has a partner preposition that can't be swapped: يَبْحَثُ عَنْ (look for), يَتَكَلَّمُ عَنْ (talk about), يَشْكُرُ عَلَى (thank for), يَحْتَاجُ إِلَى (need).",
+        "**اَلْقَاعَةُ الْكُبْرَى — the feminine \"-est\" form.** The pattern أَكْبَر has a feminine partner كُبْرَى, used when it follows a definite feminine noun. Others: اَلصُّغْرَى (smallest), اَلْأُولَى (first), اَلْعُلْيَا (highest).",
+        "**لَمْ أَسْمَعْ is far more polite than repeating the question.** \"I didn't hear well\" puts the cause on you, not on how the other person speaks. It's exactly the same courtesy as in English.",
+        "**تَمَامٌ means \"all good, perfect\".** One of the words you'll hear most in Egypt. In the Levant: مَنِيح, and تَمَام is used too. The formal form: حَسَنًا."
+      ],
+      "grammars": [
+        {
+          "title": "Phone phrases from start to finish",
+          "table": {
+            "head": [
+              "Arabic",
+              "Pronunciation",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "أَلُو، مَنْ مَعِي؟",
+                "aluu, man ma'ii?",
+                "Hello, who's calling?"
+              ],
+              [
+                "مَعَكَ بُودِي",
+                "ma'aka Buudii",
+                "This is Budi"
+              ],
+              [
+                "هَلْ أَسْتَطِيعُ التَّحَدُّثَ مَعَ...؟",
+                "hal astaṭii'ut-tahadduth ma'a...?",
+                "May I speak to...?"
+              ],
+              [
+                "لَحْظَةً مِنْ فَضْلِكَ",
+                "lahẓatan min faḍlik",
+                "One moment, please"
+              ],
+              [
+                "إِنَّهُ غَيْرُ مَوْجُودٍ",
+                "innahu ghairu maujuud",
+                "He's not here right now"
+              ],
+              [
+                "هَلْ أَتْرُكُ رِسَالَةً؟",
+                "hal atruku risaalah?",
+                "Can I leave a message?"
+              ],
+              [
+                "اَلْخَطُّ مَشْغُولٌ",
+                "al-khaṭṭu mashghuul",
+                "The line is busy"
+              ],
+              [
+                "اَلصَّوْتُ غَيْرُ وَاضِحٍ",
+                "aṣ-ṣautu ghairu waaḍih",
+                "I can't hear you clearly"
+              ],
+              [
+                "سَأُعَاوِدُ الِاتِّصَالَ",
+                "sa'u'aawidul-ittiṣaal",
+                "I'll call again"
+              ],
+              [
+                "شُكْرًا عَلَى وَقْتِكَ",
+                "shukran 'alaa waqtik",
+                "Thank you for your time"
+              ]
+            ]
+          },
+          "after": [
+            "غَيْرُ means \"not, un-\" before an adjective: غَيْرُ مَوْجُودٍ (not present), غَيْرُ وَاضِحٍ (unclear), غَيْرُ مُمْكِنٍ (impossible). It complements لَيْسَ for more compact sentences."
+          ]
+        },
+        {
+          "title": "Apologizing and thanking",
+          "table": {
+            "head": [
+              "Arabic",
+              "Pronunciation",
+              "Meaning",
+              "When"
+            ],
+            "rows": [
+              [
+                "عَفْوًا",
+                "'afwan",
+                "excuse me; you're welcome",
+                "getting attention / answering thanks"
+              ],
+              [
+                "آسِف / آسِفَة",
+                "aasif / aasifah",
+                "sorry",
+                "small slip"
+              ],
+              [
+                "أَعْتَذِرُ",
+                "a'tadhiru",
+                "I apologize",
+                "more formal"
+              ],
+              [
+                "سَامِحْنِي",
+                "saamihnii",
+                "forgive me",
+                "a real mistake"
+              ],
+              [
+                "لَا بَأْسَ",
+                "laa ba'sa",
+                "it's all right",
+                "accepting an apology"
+              ],
+              [
+                "شُكْرًا جَزِيلًا",
+                "shukran jaziilan",
+                "thank you very much",
+                "general"
+              ],
+              [
+                "أَشْكُرُكَ",
+                "ashkuruka",
+                "I thank you",
+                "warmer"
+              ],
+              [
+                "جَزَاكَ اللهُ خَيْرًا",
+                "jazaakallaahu khairan",
+                "may God reward you",
+                "very warm"
+              ],
+              [
+                "اَلْعَفْوُ",
+                "al-'afwu",
+                "you're welcome",
+                "answering thanks"
+              ],
+              [
+                "تَحْتَ أَمْرِكَ",
+                "tahta amrik",
+                "happy to help",
+                "offering help"
+              ]
+            ]
+          },
+          "after": [
+            "جَزَاكَ اللهُ خَيْرًا is widely used by Muslims around the world as \"jazakallah khairan\", with exactly the same meaning. To a woman: جَزَاكِ اللهُ خَيْرًا; to several people: جَزَاكُمُ اللهُ خَيْرًا."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Writing a short message",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A short message in Arabic follows three fixed layers: **greeting**, **content**, **closing**. Skipping the greeting feels much ruder than in English — even in the shortest work message."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Part",
+            "Example",
+            "Pronunciation"
+          ],
+          "rows": [
+            [
+              "Greeting",
+              "اَلسَّلَامُ عَلَيْكُمْ، كَيْفَ حَالُكَ؟",
+              "as-salaamu 'alaikum, kaifa haaluk?"
+            ],
+            [
+              "Opening the content",
+              "أُرِيدُ أَنْ أَسْأَلَ عَنْ...",
+              "uriidu an as'ala 'an..."
+            ],
+            [
+              "Request",
+              "هَلْ يُمْكِنُ أَنْ...؟",
+              "hal yumkinu an...?"
+            ],
+            [
+              "Time",
+              "غَدًا فِي السَّاعَةِ الرَّابِعَةِ",
+              "ghadan fis-saa'atir-raabi'ah"
+            ],
+            [
+              "Thanks",
+              "شُكْرًا مُقَدَّمًا",
+              "shukran muqaddaman"
+            ],
+            [
+              "Closing",
+              "مَعَ التَّحِيَّةِ",
+              "ma'at-tahiyyah"
+            ],
+            [
+              "Formal closing",
+              "وَتَفَضَّلُوا بِقَبُولِ الِاحْتِرَامِ",
+              "wa tafaḍḍaluu biqabuulil-ihtiraam"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "A complete sample message",
+          "items": [
+            "اَلسَّلَامُ عَلَيْكُمْ يَا أُسْتَاذ. أَنَا بُودِي مِنَ الْمُسْتَوَى الثَّانِي. أُرِيدُ أَنْ أَسْأَلَ عَنْ مَوْعِدِ الِامْتِحَانِ. هَلْ يُمْكِنُ أَنْ نَلْتَقِيَ غَدًا بَعْدَ الدَّرْسِ؟ شُكْرًا مُقَدَّمًا. مَعَ التَّحِيَّةِ، بُودِي.",
+            "Four sentences, all built from material you've had since unit 16. There's no new grammar in it at all — only the arrangement is new."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Everyday courtesy phrases",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Arabic",
+            "Pronunciation",
+            "When to use it"
+          ],
+          "rows": [
+            [
+              "تَفَضَّلْ",
+              "tafaḍḍal",
+              "inviting someone to go ahead, take, sit, etc."
+            ],
+            [
+              "حَيَّاكَ اللهُ",
+              "hayyaakallaah",
+              "welcoming a guest warmly"
+            ],
+            [
+              "إِنْ شَاءَ اللهُ",
+              "in shaa'allaah",
+              "mentioning a plan"
+            ],
+            [
+              "مَا شَاءَ اللهُ",
+              "maa shaa'allaah",
+              "admiring something nice"
+            ],
+            [
+              "بِإِذْنِكَ",
+              "bi'idhnik",
+              "excusing yourself to leave"
+            ],
+            [
+              "أَهْلًا بِكَ",
+              "ahlan bik",
+              "welcome"
+            ],
+            [
+              "كُلُّ عَامٍ وَأَنْتَ بِخَيْرٍ",
+              "kullu 'aamin wa anta bikhair",
+              "happy holidays / happy new year"
+            ],
+            [
+              "مَبْرُوك",
+              "mabruuk",
+              "congratulations (on a success)"
+            ],
+            [
+              "اَللهُ يُبَارِكُ فِيكَ",
+              "allaahu yubaariku fiik",
+              "reply to مَبْرُوك"
+            ],
+            [
+              "بِالْهَنَاءِ وَالشِّفَاءِ",
+              "bil-hanaa'i wash-shifaa'",
+              "enjoy your meal"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that many everyday phrases are blessings, and almost all have a **matching reply** — not a repetition. مَبْرُوك is answered with اَللهُ يُبَارِكُ فِيكَ; شُكْرًا with اَلْعَفْوُ; سَلَامَتُكَ with اَللهُ يُسَلِّمُكَ. Learning the pairs is more useful than learning the phrases on their own."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "مُكَالَمَة",
+      "baca": "mukaalamah",
+      "en": "phone call (conversation)"
+    },
+    {
+      "ar": "اِتِّصَال",
+      "baca": "ittiṣaal",
+      "en": "call, connection"
+    },
+    {
+      "ar": "يَتَّصِلُ بِـ",
+      "baca": "yattaṣilu bi",
+      "en": "to call"
+    },
+    {
+      "ar": "رِسَالَة",
+      "baca": "risaalah",
+      "en": "message, letter"
+    },
+    {
+      "ar": "صَوْت",
+      "baca": "ṣaut",
+      "en": "voice"
+    },
+    {
+      "ar": "وَاضِح",
+      "baca": "waaḍih",
+      "en": "clear"
+    },
+    {
+      "ar": "غَيْرُ",
+      "baca": "ghairu",
+      "en": "not, non-"
+    },
+    {
+      "ar": "مَوْجُود",
+      "baca": "maujuud",
+      "en": "present, available"
+    },
+    {
+      "ar": "لَحْظَة",
+      "baca": "lahẓah",
+      "en": "moment"
+    },
+    {
+      "ar": "يَسْأَلُ عَنْ",
+      "baca": "yas'alu 'an",
+      "en": "to ask about"
+    },
+    {
+      "ar": "يَبْحَثُ عَنْ",
+      "baca": "yabhathu 'an",
+      "en": "to look for"
+    },
+    {
+      "ar": "يَحْتَاجُ إِلَى",
+      "baca": "yahtaaju ilaa",
+      "en": "to need"
+    },
+    {
+      "ar": "يَتْرُكُ",
+      "baca": "yatruku",
+      "en": "to leave"
+    },
+    {
+      "ar": "مُسَاعَدَة",
+      "baca": "musaa'adah",
+      "en": "help"
+    },
+    {
+      "ar": "اِمْتِحَان",
+      "baca": "imtihaan",
+      "en": "exam"
+    },
+    {
+      "ar": "مُسْتَوَى",
+      "baca": "mustawaa",
+      "en": "level"
+    },
+    {
+      "ar": "قَاعَة",
+      "baca": "qaa'ah",
+      "en": "hall"
+    },
+    {
+      "ar": "مَعْهَد",
+      "baca": "ma'had",
+      "en": "institute"
+    },
+    {
+      "ar": "تَمَام",
+      "baca": "tamaam",
+      "en": "perfect, all good"
+    },
+    {
+      "ar": "بِالتَّأْكِيدِ",
+      "baca": "bit-ta'kiid",
+      "en": "of course"
+    },
+    {
+      "ar": "آسِف",
+      "baca": "aasif",
+      "en": "sorry"
+    },
+    {
+      "ar": "يَعْتَذِرُ",
+      "baca": "ya'tadhiru",
+      "en": "to apologize"
+    },
+    {
+      "ar": "لَا بَأْسَ",
+      "baca": "laa ba'sa",
+      "en": "it's all right"
+    },
+    {
+      "ar": "مَبْرُوك",
+      "baca": "mabruuk",
+      "en": "congratulations!"
+    },
+    {
+      "ar": "مُقَدَّمًا",
+      "baca": "muqaddaman",
+      "en": "in advance"
+    },
+    {
+      "ar": "تَحِيَّة",
+      "baca": "tahiyyah",
+      "en": "best regards"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the right preposition (عَنْ، إِلَى، عَلَى، بِـ، مَعَ).",
+      "items": [
+        "أَسْأَلُ ____ مَوْعِدِ الِامْتِحَانِ.",
+        "أَبْحَثُ ____ كِتَابِي.",
+        "أَحْتَاجُ ____ مُسَاعَدَتِكَ.",
+        "شُكْرًا ____ وَقْتِكَ.",
+        "سَأَتَّصِلُ ____ الْمُدِيرِ.",
+        "هَلْ أَسْتَطِيعُ التَّحَدُّثَ ____ الْأُسْتَاذِ؟"
+      ]
+    },
+    {
+      "prompt": "Translate into Arabic.",
+      "items": [
+        "Hello, who's calling?",
+        "This is Budi.",
+        "One moment, please.",
+        "He's not here right now.",
+        "Sorry, I didn't quite catch that.",
+        "Thank you for your time."
+      ]
+    },
+    {
+      "prompt": "Match each phrase with its reply.",
+      "items": [
+        "شُكْرًا ←",
+        "مَبْرُوك ←",
+        "سَلَامَتُكَ ←",
+        "آسِف ←",
+        "اَلسَّلَامُ عَلَيْكُمْ ←"
+      ]
+    },
+    {
+      "prompt": "Write one complete short message (greeting, content, closing) to your teacher, asking to miss class tomorrow because you're sick.",
+      "items": [
+        "Greeting",
+        "Introducing yourself",
+        "Your reason",
+        "Your request",
+        "Thanks",
+        "Closing"
+      ]
+    }
+  ],
+  "answers": [
+    "عَنْ — عَنْ — إِلَى — عَلَى — بِـ — مَعَ",
+    "أَلُو، مَنْ مَعِي؟ — مَعَكَ بُودِي. — لَحْظَةً مِنْ فَضْلِكَ. — إِنَّهُ غَيْرُ مَوْجُودٍ. — عَفْوًا، لَمْ أَسْمَعْ جَيِّدًا. — شُكْرًا عَلَى وَقْتِكَ.",
+    "اَلْعَفْوُ — اَللهُ يُبَارِكُ فِيكَ — اَللهُ يُسَلِّمُكَ — لَا بَأْسَ — وَعَلَيْكُمُ السَّلَامُ",
+    "Example: اَلسَّلَامُ عَلَيْكُمْ يَا أُسْتَاذ — أَنَا بُودِي مِنَ الْمُسْتَوَى الثَّانِي — أَنَا مَرِيضٌ الْيَوْمَ وَعِنْدِي حَرَارَةٌ — هَلْ يُمْكِنُ أَنْ أَغِيبَ عَنِ الدَّرْسِ غَدًا؟ — شُكْرًا مُقَدَّمًا — مَعَ التَّحِيَّةِ، بُودِي"
+  ],
+  "wave": "Today, write yourself a WhatsApp message in Arabic. Three sentences, with a greeting and a closing."
+}

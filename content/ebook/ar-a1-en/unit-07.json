@@ -1,0 +1,626 @@
+{
+  "title": "What time is it?",
+  "title_target": "كَمِ السَّاعَةُ؟",
+  "goal": "Tell the time, the day and the month, make an appointment, and understand why the days of the week sound like numbers.",
+  "bekal": [
+    "ask and tell the time",
+    "name the days, the months and the parts of the day",
+    "make a simple appointment with a time and a place"
+  ],
+  "dialogs": [
+    {
+      "title": "حِوَار — مَوْعِدٌ فِي الْمَكْتَبَةِ",
+      "intro": "Budi and Laila are arranging to study together.",
+      "lines": [
+        {
+          "speaker": "لَيْلَى:",
+          "text": "كَمِ السَّاعَةُ الْآنَ؟",
+          "baca": "kamis-saa'atul-aan?",
+          "id": "What time is it now?",
+          "literal": "how-much the-hour now?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "اَلسَّاعَةُ الْعَاشِرَةُ وَالنِّصْفُ.",
+          "baca": "as-saa'atul-'aashiratu wan-niṣf.",
+          "id": "Half past ten.",
+          "literal": "the-hour the-tenth and-half."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "مَتَى يَبْدَأُ دَرْسُ النَّحْوِ؟",
+          "baca": "mataa yabda'u darsun-nahw?",
+          "id": "When does the grammar class start?",
+          "literal": "when starts lesson the-grammar?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "يَبْدَأُ فِي السَّاعَةِ الْحَادِيَةَ عَشْرَةَ.",
+          "baca": "yabda'u fis-saa'atil-haadiyata 'ashrah.",
+          "id": "It starts at eleven.",
+          "literal": "starts at the-hour the-eleventh."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "إِذَنْ عِنْدَنَا نِصْفُ سَاعَةٍ. هَلْ تَشْرَبُ قَهْوَةً؟",
+          "baca": "idhan 'indanaa niṣfu saa'ah. hal tashrabu qahwah?",
+          "id": "Then we have half an hour. Do you want some coffee?",
+          "literal": "so at-us half hour. (question) you-drink coffee?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "بِكُلِّ سُرُورٍ. وَمَتَى نَدْرُسُ مَعًا؟",
+          "baca": "bikulli suruur. wa mataa nadrusu ma'an?",
+          "id": "With pleasure. And when shall we study together?",
+          "literal": "with all pleasure. and when we-study together?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "غَدًا؟ يَوْمَ الثُّلَاثَاءِ بَعْدَ الظُّهْرِ.",
+          "baca": "ghadan? yaumath-thulaathaa'i ba'daz-ẓuhr.",
+          "id": "Tomorrow? Tuesday afternoon.",
+          "literal": "tomorrow? day the-Tuesday after the-noon."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "فِي أَيِّ سَاعَةٍ؟",
+          "baca": "fii ayyi saa'ah?",
+          "id": "At what time?",
+          "literal": "at which hour?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "فِي الرَّابِعَةِ إِلَّا رُبْعًا، فِي الْمَكْتَبَةِ.",
+          "baca": "fir-raabi'ati illaa rub'an, fil-maktabah.",
+          "id": "At a quarter to four, in the library.",
+          "literal": "at the-fourth except quarter, in the-library."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مُنَاسِبٌ. أَنَا حُرٌّ بَعْدَ الثَّالِثَةِ.",
+          "baca": "munaasib. anaa hurrun ba'dath-thaalithah.",
+          "id": "Perfect. I'm free after three.",
+          "literal": "suitable. I free after the-third."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "اِتَّفَقْنَا. لَا تَتَأَخَّرْ!",
+          "baca": "ittafaqnaa. laa tata'akhkhar!",
+          "id": "Agreed. Don't be late!",
+          "literal": "we-agreed. don't you-be-late!"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "أَبَدًا! إِلَى الْغَدِ.",
+          "baca": "abadan! ilal-ghad.",
+          "id": "Not at all! See you tomorrow.",
+          "literal": "never! until tomorrow."
+        }
+      ],
+      "notes": [
+        "**سَاعَة has two meanings at once: \"hour/clock\" and \"o'clock\".** كَمِ السَّاعَةُ؟ = \"what time is it?\", but نِصْفُ سَاعَةٍ = \"half an hour (in length)\". Context separates them, and in practice it is never confusing.",
+        "**Clock times use ordinal numbers, not ordinary ones.** Not \"three o'clock\" but \"the third hour\": اَلسَّاعَةُ الثَّالِثَةُ. All of them are feminine, because they agree with the feminine word سَاعَة. That's good news: you only need to learn one set of forms.",
+        "**إِلَّا means \"to\" (minus).** اَلرَّابِعَةُ إِلَّا رُبْعًا = \"a quarter to four\" = 3:45 p.m. Literally \"the fourth except a quarter\". For \"past\", use وَ: اَلرَّابِعَةُ وَالرُّبْعُ = 4:15 p.m.",
+        "**Most day names are numbers.** اَلْأَحَد (the first), اَلِاثْنَيْنِ (the second), اَلثُّلَاثَاء (the third), اَلْأَرْبِعَاء (the fourth), اَلْخَمِيس (the fifth). Only two are not numbers: اَلْجُمُعَة (the day of gathering, for Friday prayers) and اَلسَّبْت (the day of rest, related to *sabbath*).",
+        "**يَوْمَ الثُّلَاثَاءِ — \"on Tuesday\".** Notice that يَوْم takes a fatha with no preposition: this form expresses time. You can also use فِي: فِي يَوْمِ الثُّلَاثَاءِ. Both are correct; the first is shorter and more common.",
+        "**بَعْدَ الظُّهْرِ literally \"after midday\".** Parts of the day are often named after the prayer times — not because every sentence is religious, but because that is how everyone divides the day: اَلْفَجْر, اَلظُّهْر, اَلْعَصْر, اَلْمَغْرِب, اَلْعِشَاء.",
+        "**فِي أَيِّ سَاعَةٍ؟ — the full \"at what time?\".** أَيّ means \"which\", and it is always followed by an indefinite noun with a kasra: أَيُّ كِتَابٍ؟ (which book?), فِي أَيِّ يَوْمٍ؟ (on which day?).",
+        "**لَا تَتَأَخَّرْ — a negative command.** \"Don't ...\" is لَا + the present-tense verb with a sukun at the end: لَا تَتَأَخَّرْ (don't be late), لَا تَنْسَ (don't forget), لَا تَقْلَقْ (don't worry). To a woman add ـِي: لَا تَتَأَخَّرِي.",
+        "**بِكُلِّ سُرُورٍ** literally \"with all pleasure\" — exactly \"with pleasure\". It's the standard polite answer to an invitation or a request for help."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "table": {
+            "head": [
+              "Time",
+              "Arabic",
+              "Pronunciation"
+            ],
+            "rows": [
+              [
+                "1:00",
+                "اَلسَّاعَةُ الْوَاحِدَةُ",
+                "as-saa'atul-waahidah"
+              ],
+              [
+                "2:00",
+                "اَلسَّاعَةُ الثَّانِيَةُ",
+                "as-saa'atuth-thaaniyah"
+              ],
+              [
+                "3:00",
+                "اَلسَّاعَةُ الثَّالِثَةُ",
+                "as-saa'atuth-thaalithah"
+              ],
+              [
+                "4:00",
+                "اَلسَّاعَةُ الرَّابِعَةُ",
+                "as-saa'atur-raabi'ah"
+              ],
+              [
+                "5:00",
+                "اَلسَّاعَةُ الْخَامِسَةُ",
+                "as-saa'atul-khaamisah"
+              ],
+              [
+                "6:00",
+                "اَلسَّاعَةُ السَّادِسَةُ",
+                "as-saa'atus-saadisah"
+              ],
+              [
+                "7:00",
+                "اَلسَّاعَةُ السَّابِعَةُ",
+                "as-saa'atus-saabi'ah"
+              ],
+              [
+                "8:00",
+                "اَلسَّاعَةُ الثَّامِنَةُ",
+                "as-saa'atuth-thaaminah"
+              ],
+              [
+                "9:00",
+                "اَلسَّاعَةُ التَّاسِعَةُ",
+                "as-saa'atut-taasi'ah"
+              ],
+              [
+                "10:00",
+                "اَلسَّاعَةُ الْعَاشِرَةُ",
+                "as-saa'atul-'aashirah"
+              ],
+              [
+                "11:00",
+                "اَلسَّاعَةُ الْحَادِيَةَ عَشْرَةَ",
+                "as-saa'atul-haadiyata 'ashrah"
+              ],
+              [
+                "12:00",
+                "اَلسَّاعَةُ الثَّانِيَةَ عَشْرَةَ",
+                "as-saa'atuth-thaaniyata 'ashrah"
+              ]
+            ]
+          },
+          "after": [
+            "Minutes are added with وَ (past) or إِلَّا (to): اَلثَّالِثَةُ وَالنِّصْفُ (3:30), اَلثَّالِثَةُ وَالرُّبْعُ (3:15), اَلثَّالِثَةُ إِلَّا رُبْعًا (2:45), اَلثَّالِثَةُ وَعِشْرُونَ دَقِيقَةً (3:20), اَلثَّالِثَةُ وَالثُّلْثُ (3:20, short version).",
+            "Morning or evening is added at the end: صَبَاحًا (a.m., morning), ظُهْرًا (midday), مَسَاءً (p.m., evening), لَيْلًا (at night). اَلسَّاعَةُ السَّابِعَةُ مَسَاءً = seven in the evening."
+          ]
+        },
+        {
+          "title": "Days and months",
+          "table": {
+            "head": [
+              "Day",
+              "Pronunciation",
+              "Meaning",
+              "Origin of the word"
+            ],
+            "rows": [
+              [
+                "اَلْأَحَد",
+                "al-ahad",
+                "Sunday",
+                "one"
+              ],
+              [
+                "اَلِاثْنَيْن",
+                "al-ithnain",
+                "Monday",
+                "two"
+              ],
+              [
+                "اَلثُّلَاثَاء",
+                "ath-thulaathaa'",
+                "Tuesday",
+                "three"
+              ],
+              [
+                "اَلْأَرْبِعَاء",
+                "al-arbi'aa'",
+                "Wednesday",
+                "four"
+              ],
+              [
+                "اَلْخَمِيس",
+                "al-khamiis",
+                "Thursday",
+                "five"
+              ],
+              [
+                "اَلْجُمُعَة",
+                "al-jumu'ah",
+                "Friday",
+                "gathering"
+              ],
+              [
+                "اَلسَّبْت",
+                "as-sabt",
+                "Saturday",
+                "rest"
+              ]
+            ]
+          },
+          "after": [
+            "So the Arab week counts its days: Sunday is \"day one\", Monday \"day two\", and so on up to Thursday, \"day five\". Once you know the numbers 1–5, you practically know the days already — just watch the vowels.",
+            "Western calendar months are borrowed too, but they differ by country: يَنَايِر (January) in Egypt and the Gulf, كَانُون الثَّانِي in Syria and Lebanon. The Islamic (Hijri) months are the same everywhere: مُحَرَّم, رَمَضَان, شَوَّال, ذُو الْحِجَّة."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Parts of the day and time words",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Arabic",
+            "Pronunciation",
+            "Meaning",
+            "Arabic",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "صَبَاح",
+              "ṣabaah",
+              "morning",
+              "اَلْيَوْم",
+              "al-yaum",
+              "today"
+            ],
+            [
+              "ظُهْر",
+              "ẓuhr",
+              "noon",
+              "غَدًا",
+              "ghadan",
+              "tomorrow"
+            ],
+            [
+              "بَعْدَ الظُّهْرِ",
+              "ba'daz-ẓuhr",
+              "afternoon",
+              "أَمْسِ",
+              "amsi",
+              "yesterday"
+            ],
+            [
+              "مَسَاء",
+              "masaa'",
+              "evening",
+              "اَلْآنَ",
+              "al-aan",
+              "now"
+            ],
+            [
+              "لَيْل",
+              "lail",
+              "night",
+              "دَائِمًا",
+              "daa'iman",
+              "always"
+            ],
+            [
+              "يَوْم",
+              "yaum",
+              "day",
+              "أَحْيَانًا",
+              "ahyaanan",
+              "sometimes"
+            ],
+            [
+              "أُسْبُوع",
+              "usbuu'",
+              "week",
+              "غَالِبًا",
+              "ghaaliban",
+              "often"
+            ],
+            [
+              "شَهْر",
+              "shahr",
+              "month",
+              "أَبَدًا",
+              "abadan",
+              "never"
+            ],
+            [
+              "سَنَة",
+              "sanah",
+              "year",
+              "قَبْلَ",
+              "qabla",
+              "before"
+            ],
+            [
+              "دَقِيقَة",
+              "daqiiqah",
+              "minute",
+              "بَعْدَ",
+              "ba'da",
+              "after"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that many time words end in tanween fatha: غَدًا, أَحْيَانًا, دَائِمًا, أَبَدًا, صَبَاحًا. That ـًا ending is the Arabic \"adverb\" marker — a bit like English *-ly* — just as in شُكْرًا (\"thankfully, thanks\") and أَهْلًا. Once you see the pattern, these words stop feeling random."
+        },
+        {
+          "type": "kotak",
+          "title": "The weekend in the Arab world",
+          "items": [
+            "In most Arab countries the weekend falls on **Friday and Saturday**, not Saturday–Sunday. In Egypt, Saudi Arabia and Jordan, Sunday is an ordinary working day.",
+            "This matters when you make plans: عُطْلَةُ نِهَايَةِ الْأُسْبُوعِ (*'uṭlatu nihaayatil-usbuu'* — the weekend) does not necessarily mean the same days as back home. A safe question: هَلْ أَنْتَ حُرٌّ يَوْمَ الْأَحَدِ؟ (\"are you free on Sunday?\")."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Making an appointment",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Arabic",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "مَتَى نَلْتَقِي؟",
+              "mataa naltaqii?",
+              "When shall we meet?"
+            ],
+            [
+              "هَلْ أَنْتَ حُرٌّ غَدًا؟",
+              "hal anta hurrun ghadan?",
+              "Are you free tomorrow?"
+            ],
+            [
+              "فِي أَيِّ سَاعَةٍ؟",
+              "fii ayyi saa'ah?",
+              "At what time?"
+            ],
+            [
+              "أَنَا مَشْغُولٌ الْيَوْمَ",
+              "anaa mashghuulunil-yaum",
+              "I'm busy today"
+            ],
+            [
+              "هٰذَا مُنَاسِبٌ",
+              "haadhaa munaasib",
+              "That suits me"
+            ],
+            [
+              "اِتَّفَقْنَا",
+              "ittafaqnaa",
+              "Agreed"
+            ],
+            [
+              "لَا تَتَأَخَّرْ",
+              "laa tata'akhkhar",
+              "Don't be late"
+            ],
+            [
+              "أَنَا آسِفٌ، تَأَخَّرْتُ",
+              "anaa aasif, ta'akhkhartu",
+              "Sorry, I'm late"
+            ],
+            [
+              "إِلَى الْغَدِ",
+              "ilal-ghad",
+              "See you tomorrow"
+            ],
+            [
+              "نَلْتَقِي هُنَاكَ",
+              "naltaqii hunaak",
+              "We'll meet there"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One phrase is used constantly and mistranslated constantly: إِنْ شَاءَ اللهُ (\"if God wills\"). It is neither \"maybe\" nor a polite no — it is the standard way to talk about any future plan, used by Muslims and Christians alike. Accepting an invitation without it can even sound a little presumptuous to some speakers."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "سَاعَة",
+      "baca": "saa'ah",
+      "en": "hour, clock, o'clock"
+    },
+    {
+      "ar": "دَقِيقَة",
+      "baca": "daqiiqah",
+      "en": "minute"
+    },
+    {
+      "ar": "نِصْف",
+      "baca": "niṣf",
+      "en": "half"
+    },
+    {
+      "ar": "رُبْع",
+      "baca": "rub'",
+      "en": "quarter"
+    },
+    {
+      "ar": "إِلَّا",
+      "baca": "illaa",
+      "en": "to (time); except"
+    },
+    {
+      "ar": "مَتَى",
+      "baca": "mataa",
+      "en": "when"
+    },
+    {
+      "ar": "أَيّ",
+      "baca": "ayy",
+      "en": "which"
+    },
+    {
+      "ar": "يَوْم",
+      "baca": "yaum",
+      "en": "day"
+    },
+    {
+      "ar": "أُسْبُوع",
+      "baca": "usbuu'",
+      "en": "week"
+    },
+    {
+      "ar": "شَهْر",
+      "baca": "shahr",
+      "en": "month"
+    },
+    {
+      "ar": "اَلْيَوْمَ",
+      "baca": "al-yauma",
+      "en": "today"
+    },
+    {
+      "ar": "غَدًا",
+      "baca": "ghadan",
+      "en": "tomorrow"
+    },
+    {
+      "ar": "أَمْسِ",
+      "baca": "amsi",
+      "en": "yesterday"
+    },
+    {
+      "ar": "صَبَاحًا",
+      "baca": "ṣabaahan",
+      "en": "in the morning"
+    },
+    {
+      "ar": "مَسَاءً",
+      "baca": "masaa'an",
+      "en": "in the evening"
+    },
+    {
+      "ar": "بَعْدَ",
+      "baca": "ba'da",
+      "en": "after"
+    },
+    {
+      "ar": "قَبْلَ",
+      "baca": "qabla",
+      "en": "before"
+    },
+    {
+      "ar": "مَوْعِد",
+      "baca": "mau'id",
+      "en": "appointment"
+    },
+    {
+      "ar": "حُرّ",
+      "baca": "hurr",
+      "en": "free"
+    },
+    {
+      "ar": "مَشْغُول",
+      "baca": "mashghuul",
+      "en": "busy"
+    },
+    {
+      "ar": "مُنَاسِب",
+      "baca": "munaasib",
+      "en": "suitable, convenient"
+    },
+    {
+      "ar": "مَعًا",
+      "baca": "ma'an",
+      "en": "together"
+    },
+    {
+      "ar": "إِذَنْ",
+      "baca": "idhan",
+      "en": "in that case, then"
+    },
+    {
+      "ar": "دَائِمًا",
+      "baca": "daa'iman",
+      "en": "always"
+    },
+    {
+      "ar": "أَحْيَانًا",
+      "baca": "ahyaanan",
+      "en": "sometimes"
+    },
+    {
+      "ar": "أَبَدًا",
+      "baca": "abadan",
+      "en": "never, not at all"
+    },
+    {
+      "ar": "قَهْوَة",
+      "baca": "qahwah",
+      "en": "coffee"
+    },
+    {
+      "ar": "نَحْو",
+      "baca": "nahw",
+      "en": "grammar (nahw)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the time in Arabic words.",
+      "items": [
+        "3:00",
+        "7:30",
+        "9:15",
+        "11:45",
+        "1:00 p.m.",
+        "8:00 p.m."
+      ]
+    },
+    {
+      "prompt": "Translate into Arabic.",
+      "items": [
+        "What time is it now?",
+        "Half past four.",
+        "When does the lesson start?",
+        "Tuesday afternoon.",
+        "I'm busy today.",
+        "See you tomorrow!"
+      ]
+    },
+    {
+      "prompt": "Put these days in order from Sunday to Saturday.",
+      "items": [
+        "اَلْخَمِيس",
+        "اَلْأَحَد",
+        "اَلسَّبْت",
+        "اَلثُّلَاثَاء",
+        "اَلِاثْنَيْن",
+        "اَلْجُمُعَة",
+        "اَلْأَرْبِعَاء"
+      ]
+    },
+    {
+      "prompt": "Answer about yourself in full sentences.",
+      "items": [
+        "كَمِ السَّاعَةُ الْآنَ؟",
+        "مَتَى تَبْدَأُ عَمَلَكَ؟",
+        "هَلْ أَنْتَ مَشْغُولٌ غَدًا؟",
+        "فِي أَيِّ يَوْمٍ تَدْرُسُ الْعَرَبِيَّةَ؟",
+        "مَتَى تَنَامُ؟"
+      ]
+    }
+  ],
+  "answers": [
+    "اَلسَّاعَةُ الثَّالِثَةُ — اَلسَّاعَةُ السَّابِعَةُ وَالنِّصْفُ — اَلسَّاعَةُ التَّاسِعَةُ وَالرُّبْعُ — اَلسَّاعَةُ الثَّانِيَةَ عَشْرَةَ إِلَّا رُبْعًا — اَلسَّاعَةُ الْوَاحِدَةُ ظُهْرًا — اَلسَّاعَةُ الثَّامِنَةُ مَسَاءً",
+    "كَمِ السَّاعَةُ الْآنَ؟ — اَلسَّاعَةُ الرَّابِعَةُ وَالنِّصْفُ. — مَتَى يَبْدَأُ الدَّرْسُ؟ — يَوْمَ الثُّلَاثَاءِ بَعْدَ الظُّهْرِ. — أَنَا مَشْغُولٌ الْيَوْمَ. — إِلَى الْغَدِ!",
+    "اَلْأَحَد — اَلِاثْنَيْن — اَلثُّلَاثَاء — اَلْأَرْبِعَاء — اَلْخَمِيس — اَلْجُمُعَة — اَلسَّبْت",
+    "Example: اَلسَّاعَةُ الثَّامِنَةُ صَبَاحًا. — أَبْدَأُ عَمَلِي فِي السَّاعَةِ التَّاسِعَةِ. — لَا، أَنَا حُرٌّ غَدًا. — أَدْرُسُ الْعَرَبِيَّةَ يَوْمَ السَّبْتِ. — أَنَامُ فِي السَّاعَةِ الْعَاشِرَةِ."
+  ],
+  "wave": "For the next three days, every time you look at a clock, say the time to yourself in Arabic. It's the cheapest drill there is."
+}

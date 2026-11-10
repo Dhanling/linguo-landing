@@ -1,0 +1,632 @@
+{
+  "title": "At the restaurant",
+  "title_target": "فِي الْمَطْعَمِ",
+  "goal": "Order food and drinks, ask for things politely, and understand the difference between asking for a thing and asking for an action.",
+  "bekal": [
+    "order with *uriidu* and *min faḍlika*",
+    "ask what's available and ask for the bill",
+    "say what food you like and don't like"
+  ],
+  "dialogs": [
+    {
+      "title": "حِوَار — اَلْغَدَاءُ فِي مَطْعَمٍ شَعْبِيٍّ",
+      "intro": "Lunch at a simple restaurant. The waiter comes over to the table.",
+      "lines": [
+        {
+          "speaker": "اَلنَّادِل:",
+          "text": "أَهْلًا وَسَهْلًا! تَفَضَّلُوا. مَاذَا تُرِيدُونَ؟",
+          "baca": "ahlan wa sahlan! tafaḍḍaluu. maadhaa turiiduun?",
+          "id": "Welcome! Please, have a seat. What would you like?",
+          "literal": "welcome! please(pl). what you(pl)-want?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مَا عِنْدَكُمُ الْيَوْمَ؟",
+          "baca": "maa 'indakumul-yaum?",
+          "id": "What do you have today?",
+          "literal": "what at-you(pl) today?"
+        },
+        {
+          "speaker": "اَلنَّادِل:",
+          "text": "عِنْدَنَا دَجَاجٌ مَشْوِيٌّ وَسَمَكٌ وَأَرُزٌّ بِالْخُضَارِ.",
+          "baca": "'indanaa dajaajun mashwiyy wa samakun wa aruzzun bil-khuḍaar.",
+          "id": "We have grilled chicken, fish, and rice with vegetables.",
+          "literal": "at-us chicken grilled and fish and rice with the-vegetables."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "أُرِيدُ دَجَاجًا مَشْوِيًّا مَعَ أَرُزٍّ، مِنْ فَضْلِكَ.",
+          "baca": "uriidu dajaajan mashwiyyan ma'a aruzz, min faḍlik.",
+          "id": "I'd like grilled chicken with rice, please.",
+          "literal": "I-want chicken grilled with rice, from kindness-your."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "وَأَنَا أُرِيدُ سَمَكًا وَسَلَطَةً.",
+          "baca": "wa anaa uriidu samakan wa salaṭah.",
+          "id": "And I'd like fish and a salad.",
+          "literal": "and I I-want fish and salad."
+        },
+        {
+          "speaker": "اَلنَّادِل:",
+          "text": "وَمَاذَا تَشْرَبُونَ؟",
+          "baca": "wa maadhaa tashrabuun?",
+          "id": "And to drink?",
+          "literal": "and what you(pl)-drink?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "عَصِيرَ بُرْتُقَالٍ لِي، وَمَاءً لَهَا.",
+          "baca": "'aṣiira burtuqaalin lii, wa maa'an lahaa.",
+          "id": "Orange juice for me, and water for her.",
+          "literal": "juice orange for-me, and water for-her."
+        },
+        {
+          "speaker": "اَلنَّادِل:",
+          "text": "حَاضِرٌ. هَلْ تُرِيدُونَ شَيْئًا آخَرَ؟",
+          "baca": "haaḍir. hal turiiduuna shai'an aakhar?",
+          "id": "Certainly. Would you like anything else?",
+          "literal": "present. (question) you(pl)-want thing other?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "لَا، شُكْرًا. هٰذَا يَكْفِي.",
+          "baca": "laa, shukran. haadhaa yakfii.",
+          "id": "No, thank you. That's enough.",
+          "literal": "no, thanks. this suffices."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "بِالْمُنَاسَبَةِ، هَلِ الطَّعَامُ حَارٌّ؟",
+          "baca": "bil-munaasabah, haliṭ-ṭa'aamu haarr?",
+          "id": "By the way, is the food spicy?",
+          "literal": "by-the-occasion, (question) the-food spicy?"
+        },
+        {
+          "speaker": "اَلنَّادِل:",
+          "text": "قَلِيلًا. إِذَا أَرَدْتَ، بِدُونِ فِلْفِلٍ.",
+          "baca": "qaliilan. idhaa aradta, biduuni filfil.",
+          "id": "A little. If you like, without chili.",
+          "literal": "a-little. if you-want, without chili."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "لَا، أُحِبُّ الطَّعَامَ الْحَارَّ. شُكْرًا!",
+          "baca": "laa, uhibbuṭ-ṭa'aamal-haarr. shukran!",
+          "id": "No, I like spicy food. Thanks!",
+          "literal": "no, I-love the-food the-spicy. thanks!"
+        }
+      ],
+      "notes": [
+        "**أُرِيدُ is followed by a noun with a fatha.** أُرِيدُ دَجَاجًا — \"I want chicken\". The thing wanted is the object of the verb, so it takes tanween fatha. To ask for an **action**, the structure is different: أُرِيدُ أَنْ أَشْرَبَ (\"I want to drink\") — covered fully in unit 17.",
+        "**مِنْ فَضْلِكَ literally means \"from your kindness\".** It is used exactly like \"please\" and goes at the end of the sentence. To a woman: مِنْ فَضْلِكِ. To several people: مِنْ فَضْلِكُمْ. An even more polite option: لَوْ سَمَحْتَ (\"if you would allow\").",
+        "**مَشْوِيٌّ — an adjective made from a verb.** The pattern مَفْعُول means \"having had something done to it\", like English *-ed*: شَوَى (grill) → مَشْوِيّ (grilled), كَتَبَ → مَكْتُوب (written), فَتَحَ → مَفْتُوح (opened), قَلَى → مَقْلِيّ (fried). You'll see this pattern everywhere, including on shop signs.",
+        "**دَجَاجًا مَشْوِيًّا — the adjective takes tanween fatha too.** You've known since unit 3 that an adjective agrees with its noun. Now you can see that \"agreeing\" also means copying its final vowel. The rule is consistent, with no exceptions.",
+        "**حَاضِرٌ is a waiter's \"right away\".** Literally \"present\". It's the standard reply of staff to a request, roughly \"certainly, at once\". Equivalents: تَمَامٌ (\"all right\"), حَالًا (\"immediately\").",
+        "**بِدُونِ means \"without\".** بِدُونِ سُكَّرٍ (without sugar), بِدُونِ فِلْفِلٍ (without chili), بِدُونِ لَحْمٍ (without meat). The next word always takes a kasra, because بِدُون is a preposition. A lifesaver if you have dietary restrictions.",
+        "**هَلِ الطَّعَامُ — another kasra.** هَلْ ends in a sukun, and اَلْ also starts with a vowelless letter, so هَلْ becomes هَلِ. You've seen the same thing with مِنَ and كَمِ. One rule: two vowelless letters may not collide.",
+        "**اَلطَّعَامَ الْحَارَّ — both take اَلْ.** Since the food is definite, its adjective must be definite as well. Compare طَعَامٌ حَارٌّ (\"spicy food\", not any particular food).",
+        "**بِالْمُنَاسَبَةِ** means \"by the way\" — a polite way to change the subject, very useful when you want to ask something unrelated to what came before."
+      ],
+      "grammars": [
+        {
+          "title": "Asking politely",
+          "body": [
+            "Arabic has a clear ladder of politeness, and choosing the right rung matters more than choosing the right word."
+          ],
+          "table": {
+            "head": [
+              "Arabic",
+              "Pronunciation",
+              "Meaning",
+              "Tone"
+            ],
+            "rows": [
+              [
+                "أُرِيدُ...",
+                "uriidu...",
+                "I want...",
+                "neutral, normal in restaurants"
+              ],
+              [
+                "أُرِيدُ... مِنْ فَضْلِكَ",
+                "uriidu... min faḍlik",
+                "I'd like... please",
+                "polite, safe anywhere"
+              ],
+              [
+                "مُمْكِنٌ...؟",
+                "mumkin...?",
+                "Can I have...?",
+                "casual, everyday"
+              ],
+              [
+                "هَلْ يُمْكِنُ أَنْ...؟",
+                "hal yumkinu an...?",
+                "Could you...?",
+                "polite and formal"
+              ],
+              [
+                "لَوْ سَمَحْتَ",
+                "lau samahta",
+                "Excuse me / if you don't mind",
+                "very polite"
+              ],
+              [
+                "أَعْطِنِي...",
+                "a'ṭinii...",
+                "Give me...",
+                "direct, among friends"
+              ],
+              [
+                "هَاتِ...",
+                "haati...",
+                "Hand me...",
+                "familiar, use with care"
+              ]
+            ]
+          },
+          "after": [
+            "When in doubt, use أُرِيدُ ... مِنْ فَضْلِكَ. It never sounds rude in any situation, and that's worth more than sounding very refined in one situation and awkward in another.",
+            "To call the waiter, don't say يَا نَادِل — it sounds like an order. What people actually say: لَوْ سَمَحْتَ (\"excuse me\") while raising a hand, or in Egypt يَا أُسْطَى."
+          ]
+        },
+        {
+          "title": "Saying what you like and don't like",
+          "table": {
+            "head": [
+              "Arabic",
+              "Pronunciation",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "أُحِبُّ الْقَهْوَةَ",
+                "uhibbul-qahwah",
+                "I like coffee"
+              ],
+              [
+                "لَا أُحِبُّ السَّمَكَ",
+                "laa uhibbus-samak",
+                "I don't like fish"
+              ],
+              [
+                "أُفَضِّلُ الشَّايَ",
+                "ufaḍḍilush-shaay",
+                "I prefer tea"
+              ],
+              [
+                "أَكْرَهُ الْبَصَلَ",
+                "akrahul-baṣal",
+                "I hate onions"
+              ],
+              [
+                "لَا بَأْسَ بِهِ",
+                "laa ba'sa bih",
+                "Not bad / pretty good"
+              ],
+              [
+                "لَذِيذٌ جِدًّا!",
+                "ladhiidhun jiddan!",
+                "Delicious!"
+              ],
+              [
+                "أَنَا نَبَاتِيٌّ",
+                "anaa nabaatiyy",
+                "I'm vegetarian"
+              ],
+              [
+                "لَا آكُلُ لَحْمَ الْخِنْزِيرِ",
+                "laa aakulu lahmal-khinziir",
+                "I don't eat pork"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that what you like always takes اَلْ: أُحِبُّ الْقَهْوَةَ, not أُحِبُّ قَهْوَةً. Without اَلْ the meaning becomes \"I want (a cup of) coffee\" — a request, not a statement of taste.",
+            "أُحِبُّ is also used for people, and there it fully means \"love\". For a friend, it's safer to say: هُوَ صَدِيقٌ عَزِيزٌ (\"he's a dear friend\")."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Food and drink",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Arabic",
+            "Pronunciation",
+            "Meaning",
+            "Arabic",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "طَعَام",
+              "ṭa'aam",
+              "food",
+              "مَاء",
+              "maa'",
+              "water"
+            ],
+            [
+              "أَرُزّ",
+              "aruzz",
+              "rice",
+              "شَاي",
+              "shaay",
+              "tea"
+            ],
+            [
+              "خُبْز",
+              "khubz",
+              "bread",
+              "قَهْوَة",
+              "qahwah",
+              "coffee"
+            ],
+            [
+              "لَحْم",
+              "lahm",
+              "meat",
+              "عَصِير",
+              "'aṣiir",
+              "juice"
+            ],
+            [
+              "دَجَاج",
+              "dajaaj",
+              "chicken",
+              "حَلِيب",
+              "haliib",
+              "milk"
+            ],
+            [
+              "سَمَك",
+              "samak",
+              "fish",
+              "سُكَّر",
+              "sukkar",
+              "sugar"
+            ],
+            [
+              "بَيْض",
+              "baiḍ",
+              "eggs",
+              "مِلْح",
+              "milh",
+              "salt"
+            ],
+            [
+              "خُضَار",
+              "khuḍaar",
+              "vegetables",
+              "فِلْفِل",
+              "filfil",
+              "chili, pepper"
+            ],
+            [
+              "فَاكِهَة",
+              "faakihah",
+              "fruit",
+              "زَيْت",
+              "zait",
+              "oil"
+            ],
+            [
+              "سَلَطَة",
+              "salaṭah",
+              "salad",
+              "جُبْن",
+              "jubn",
+              "cheese"
+            ],
+            [
+              "شُورْبَة",
+              "shuurbah",
+              "soup",
+              "زُبْدَة",
+              "zubdah",
+              "butter"
+            ],
+            [
+              "حَلْوَى",
+              "halwaa",
+              "sweets",
+              "عَسَل",
+              "'asal",
+              "honey"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Several of these words reached English long ago by various routes: *sugar* from سُكَّر, *coffee* from قَهْوَة, *syrup* and *sherbet* from شَرَاب, and *candy* from قَنْد. If an English word feels a little exotic yet familiar, there's a good chance it came from Arabic."
+        },
+        {
+          "type": "kotak",
+          "title": "Halal, and how to ask about it",
+          "items": [
+            "In Arab countries with a Muslim majority, almost every restaurant is halal and the question rarely needs asking. In Lebanon, Christian areas of Egypt, or international hotel restaurants, it's a normal question: هَلْ هٰذَا حَلَالٌ؟",
+            "More often useful: هَلْ فِيهِ لَحْمُ خِنْزِيرٍ؟ (\"does it contain pork?\") and هَلْ فِيهِ كُحُولٌ؟ (\"does it contain alcohol?\"). These two questions are specific, so the answers will be specific too."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Restaurant phrases, from arriving to leaving",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Arabic",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "طَاوِلَةٌ لِشَخْصَيْنِ، مِنْ فَضْلِكَ",
+              "ṭaawilatun lishakhṣain, min faḍlik",
+              "A table for two, please"
+            ],
+            [
+              "اَلْقَائِمَةُ، مِنْ فَضْلِكَ",
+              "al-qaa'imah, min faḍlik",
+              "The menu, please"
+            ],
+            [
+              "مَاذَا تَنْصَحُنِي؟",
+              "maadhaa tanṣahunii?",
+              "What do you recommend?"
+            ],
+            [
+              "مَا هٰذَا الطَّبَقُ؟",
+              "maa haadhaṭ-ṭabaq?",
+              "What is this dish?"
+            ],
+            [
+              "بِدُونِ سُكَّرٍ، مِنْ فَضْلِكَ",
+              "biduuni sukkar, min faḍlik",
+              "Without sugar, please"
+            ],
+            [
+              "اَلْحِسَابَ، مِنْ فَضْلِكَ",
+              "al-hisaab, min faḍlik",
+              "The bill, please"
+            ],
+            [
+              "هَلْ يَشْمَلُ الْخِدْمَةَ؟",
+              "hal yashmalul-khidmah?",
+              "Is service included?"
+            ],
+            [
+              "كَانَ لَذِيذًا، شُكْرًا",
+              "kaana ladhiidhan, shukran",
+              "Delicious, thank you"
+            ],
+            [
+              "أَيْنَ دَوْرَةُ الْمِيَاهِ؟",
+              "aina dauratul-miyaah?",
+              "Where's the restroom?"
+            ],
+            [
+              "اِحْتَفِظْ بِالْبَاقِي",
+              "ihtafiẓ bil-baaqii",
+              "Keep the change"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One custom that may differ from home: in many Arab countries the bill is **not** brought until you ask for it. Waiters feel that bringing the bill unasked is like telling guests to leave. So if you've finished and nobody comes, it's not bad service — you're the one who has to say اَلْحِسَابَ، مِنْ فَضْلِكَ."
+        },
+        {
+          "type": "kotak",
+          "title": "When you're offered food",
+          "items": [
+            "Offering food again and again is genuine hospitality, not empty formality. A first refusal is often taken as mere politeness, so the host will offer again.",
+            "If you're really full: شَبِعْتُ، اَلْحَمْدُ لِلَّهِ (*shabi'tu, alhamdulillaah* — \"I'm full, thank God\"). This is accepted as a sincere and polite refusal, unlike لَا شُكْرًا, which will just get the offer repeated."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "مَطْعَم",
+      "baca": "maṭ'am",
+      "en": "restaurant"
+    },
+    {
+      "ar": "نَادِل",
+      "baca": "naadil",
+      "en": "waiter"
+    },
+    {
+      "ar": "قَائِمَة",
+      "baca": "qaa'imah",
+      "en": "menu, list"
+    },
+    {
+      "ar": "طَبَق",
+      "baca": "ṭabaq",
+      "en": "plate, dish"
+    },
+    {
+      "ar": "أُرِيدُ",
+      "baca": "uriidu",
+      "en": "I want, I'd like"
+    },
+    {
+      "ar": "يُفَضِّلُ",
+      "baca": "yufaḍḍilu",
+      "en": "prefer"
+    },
+    {
+      "ar": "يَكْرَهُ",
+      "baca": "yakrahu",
+      "en": "hate"
+    },
+    {
+      "ar": "يَكْفِي",
+      "baca": "yakfii",
+      "en": "enough"
+    },
+    {
+      "ar": "لَذِيذ",
+      "baca": "ladhiidh",
+      "en": "delicious"
+    },
+    {
+      "ar": "حَارّ",
+      "baca": "haarr",
+      "en": "spicy; hot"
+    },
+    {
+      "ar": "بَارِد",
+      "baca": "baarid",
+      "en": "cold"
+    },
+    {
+      "ar": "حُلْو",
+      "baca": "hulw",
+      "en": "sweet"
+    },
+    {
+      "ar": "مَالِح",
+      "baca": "maalih",
+      "en": "salty"
+    },
+    {
+      "ar": "مَشْوِيّ",
+      "baca": "mashwiyy",
+      "en": "grilled"
+    },
+    {
+      "ar": "مَقْلِيّ",
+      "baca": "maqliyy",
+      "en": "fried"
+    },
+    {
+      "ar": "بِدُونِ",
+      "baca": "biduuni",
+      "en": "without"
+    },
+    {
+      "ar": "آخَر",
+      "baca": "aakhar",
+      "en": "other, else"
+    },
+    {
+      "ar": "حَاضِر",
+      "baca": "haaḍir",
+      "en": "certainly, right away"
+    },
+    {
+      "ar": "شَبِعْتُ",
+      "baca": "shabi'tu",
+      "en": "I'm full"
+    },
+    {
+      "ar": "جَوْعَان",
+      "baca": "jau'aan",
+      "en": "hungry"
+    },
+    {
+      "ar": "عَطْشَان",
+      "baca": "'aṭshaan",
+      "en": "thirsty"
+    },
+    {
+      "ar": "خِدْمَة",
+      "baca": "khidmah",
+      "en": "service"
+    },
+    {
+      "ar": "دَوْرَةُ الْمِيَاهِ",
+      "baca": "dauratul-miyaah",
+      "en": "restroom, toilet"
+    },
+    {
+      "ar": "شَخْص",
+      "baca": "shakhṣ",
+      "en": "person"
+    },
+    {
+      "ar": "بِالْمُنَاسَبَةِ",
+      "baca": "bil-munaasabah",
+      "en": "by the way"
+    },
+    {
+      "ar": "إِذَا",
+      "baca": "idhaa",
+      "en": "if"
+    },
+    {
+      "ar": "لَوْ سَمَحْتَ",
+      "baca": "lau samahta",
+      "en": "excuse me, if you don't mind"
+    },
+    {
+      "ar": "بُرْتُقَال",
+      "baca": "burtuqaal",
+      "en": "orange"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Arabic.",
+      "items": [
+        "I'd like grilled chicken, please.",
+        "And to drink?",
+        "I don't like fish.",
+        "Without sugar, please.",
+        "The bill, please.",
+        "The food is delicious."
+      ]
+    },
+    {
+      "prompt": "Change into the مَفْعُول form (the \"-ed\" form).",
+      "items": [
+        "كَتَبَ (write) ← ____ (written)",
+        "فَتَحَ (open) ← ____ (opened)",
+        "شَوَى (grill) ← ____ (grilled)",
+        "قَلَى (fry) ← ____ (fried)",
+        "طَبَخَ (cook) ← ____ (cooked)"
+      ]
+    },
+    {
+      "prompt": "Fill in the right word from the vocabulary list.",
+      "items": [
+        "أَنَا ____، أُرِيدُ أَنْ آكُلَ. (hungry)",
+        "اَلشَّايُ ____ جِدًّا، لَا أَسْتَطِيعُ شُرْبَهُ. (hot)",
+        "هٰذَا الطَّعَامُ ____! (delicious)",
+        "أُرِيدُ الْقَهْوَةَ ____ سُكَّرٍ. (without)",
+        "أَيْنَ ____؟ (restroom)",
+        "____، مِنْ فَضْلِكَ. (the bill)"
+      ]
+    },
+    {
+      "prompt": "Write a full restaurant conversation: the waiter greets you, you ask about the menu, order food and a drink, then ask for the bill.",
+      "items": [
+        "The waiter's greeting",
+        "You ask what they have",
+        "The waiter names two dishes",
+        "You order",
+        "You order a drink",
+        "You ask for the bill"
+      ]
+    }
+  ],
+  "answers": [
+    "أُرِيدُ دَجَاجًا مَشْوِيًّا، مِنْ فَضْلِكَ. — مَاذَا تَشْرَبُ؟ — لَا أُحِبُّ السَّمَكَ. — بِدُونِ سُكَّرٍ، مِنْ فَضْلِكَ. — اَلْحِسَابَ، مِنْ فَضْلِكَ. — اَلطَّعَامُ لَذِيذٌ جِدًّا.",
+    "مَكْتُوب — مَفْتُوح — مَشْوِيّ — مَقْلِيّ — مَطْبُوخ",
+    "جَوْعَانُ — حَارٌّ — لَذِيذٌ — بِدُونِ — دَوْرَةُ الْمِيَاهِ — اَلْحِسَابَ",
+    "Example: أَهْلًا وَسَهْلًا، مَاذَا تُرِيدُ؟ — مَا عِنْدَكُمُ الْيَوْمَ؟ — عِنْدَنَا دَجَاجٌ وَسَمَكٌ. — أُرِيدُ دَجَاجًا مَعَ أَرُزٍّ، مِنْ فَضْلِكَ. — وَعَصِيرَ بُرْتُقَالٍ. — اَلْحِسَابَ، مِنْ فَضْلِكَ."
+  ],
+  "wave": "Reread the dialogues of units 6 and 8. Notice how many verbs you can now identify the subject of just from the prefix."
+}

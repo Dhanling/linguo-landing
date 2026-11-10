@@ -1,0 +1,599 @@
+{
+  "title": "My home and my city",
+  "title_target": "بَيْتِي وَمَدِينَتِي",
+  "goal": "Describe where you live, compare two things, and say that something exists.",
+  "bekal": [
+    "say \"there is\" with *hunaaka* and *yuujadu*",
+    "compare two things with the pattern *af'al ... min*",
+    "describe a home and a city in a few connected sentences"
+  ],
+  "dialogs": [
+    {
+      "title": "حِوَار — أَيْنَ تَسْكُنُ؟",
+      "intro": "Laila asks Budi where he lives while he is in Cairo.",
+      "lines": [
+        {
+          "speaker": "لَيْلَى:",
+          "text": "أَيْنَ تَسْكُنُ فِي الْقَاهِرَةِ؟",
+          "baca": "aina taskunu fil-Qaahirah?",
+          "id": "Where do you live in Cairo?",
+          "literal": "where you-live in the-Cairo?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "أَسْكُنُ فِي شَقَّةٍ صَغِيرَةٍ قُرْبَ الْجَامِعَةِ.",
+          "baca": "askunu fii shaqqatin ṣaghiiratin qurbal-jaami'ah.",
+          "id": "I live in a small apartment near the university.",
+          "literal": "I-live in apartment small near the-university."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "كَمْ غُرْفَةً فِيهَا؟",
+          "baca": "kam ghurfatan fiihaa?",
+          "id": "How many rooms does it have?",
+          "literal": "how-many room in-it?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "غُرْفَتَانِ وَمَطْبَخٌ وَحَمَّامٌ. هُنَاكَ شُرْفَةٌ أَيْضًا.",
+          "baca": "ghurfataani wa maṭbakhun wa hammaam. hunaaka shurfatun aiḍan.",
+          "id": "Two rooms, a kitchen and a bathroom. There's a balcony too.",
+          "literal": "two-rooms and kitchen and bathroom. there balcony also."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "جَمِيلٌ! هَلْ هِيَ أَغْلَى مِنْ شَقَّتِي؟",
+          "baca": "jamiil! hal hiya aghlaa min shaqqatii?",
+          "id": "Nice! Is it more expensive than my apartment?",
+          "literal": "beautiful! is it more-expensive than apartment-my?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "لَا أَعْرِفُ. أَدْفَعُ ثَلَاثَةَ آلَافِ جُنَيْهٍ فِي الشَّهْرِ.",
+          "baca": "laa a'rif. adfa'u thalaathata aalaafi junaihin fish-shahr.",
+          "id": "I don't know. I pay three thousand pounds a month.",
+          "literal": "not I-know. I-pay three thousands pound in the-month."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "هٰذَا أَرْخَصُ مِنْ شَقَّتِي بِكَثِيرٍ!",
+          "baca": "haadhaa arkhaṣu min shaqqatii bikathiir!",
+          "id": "That's much cheaper than my apartment!",
+          "literal": "this cheaper than apartment-my by-much!"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "لٰكِنَّ حَيَّكِ أَهْدَأُ. حَيِّي مُزْدَحِمٌ جِدًّا.",
+          "baca": "laakinna hayyaki ahda'. hayyii muzdahimun jiddan.",
+          "id": "But your area is quieter. Mine is really crowded.",
+          "literal": "but area-your quieter. area-my crowded very."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "صَحِيحٌ. هَلْ تُحِبُّ الْقَاهِرَةَ؟",
+          "baca": "ṣahiih. hal tuhibbul-Qaahirah?",
+          "id": "True. Do you like Cairo?",
+          "literal": "right. do you-like the-Cairo?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "كَثِيرًا. هِيَ أَكْبَرُ مِنْ مَدِينَتِي، وَأَقْدَمُ أَيْضًا.",
+          "baca": "kathiiran. hiya akbaru min madiinatii, wa aqdamu aiḍan.",
+          "id": "Very much. It's bigger than my city, and older too.",
+          "literal": "much. it bigger than city-my, and older also."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "وَمَا أَجْمَلُ شَيْءٍ فِيهَا بِرَأْيِكَ؟",
+          "baca": "wa maa ajmalu shai'in fiihaa bira'yik?",
+          "id": "What do you think is the most beautiful thing here?",
+          "literal": "and what most-beautiful thing in-it with-opinion-your?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "اَلنَّاسُ. هُمْ أَكْرَمُ نَاسٍ قَابَلْتُهُمْ.",
+          "baca": "an-naas. hum akramu naasin qaabaltuhum.",
+          "id": "The people. They're the most generous people I've ever met.",
+          "literal": "the-people. they most-generous people I-met-them."
+        }
+      ],
+      "notes": [
+        "**هُنَاكَ has two jobs.** In unit 3 it meant \"there\"; here it means **\"there is\"**: هُنَاكَ شُرْفَةٌ (\"there is a balcony\"). Position tells them apart — at the start of a sentence it states that something exists. A more formal form: يُوجَدُ (\"there is to be found\").",
+        "**كَمْ takes a SINGULAR noun with tanwin fathah.** كَمْ غُرْفَةً؟ (\"how many rooms?\"), not كَمْ غُرَفًا. It is the same rule as numbers 11 and up in unit 6 — and just as much against an English speaker's instinct to say \"rooms\".",
+        "**The أَفْعَل pattern for comparing.** كَبِير → أَكْبَر (bigger), غَالٍ → أَغْلَى, رَخِيص → أَرْخَص, هَادِئ → أَهْدَأ, قَدِيم → أَقْدَم, جَمِيل → أَجْمَل. One form for masculine and feminine — no change at all.",
+        "**\"More ... than\" uses مِنْ.** أَكْبَرُ مِنْ مَدِينَتِي. Here مِنْ doesn't mean \"from\" in the sense of origin; it simply marks what you compare with, like English \"than\". To strengthen it: بِكَثِيرٍ (\"much more\").",
+        "**\"Most\" uses the same form, but without مِنْ.** It is built as an iḍafah: أَجْمَلُ شَيْءٍ (\"the most beautiful thing\"), أَكْبَرُ مَدِينَةٍ (\"the biggest city\"), أَكْرَمُ نَاسٍ (\"the most generous people\"). So one pattern covers both \"-er\" and \"-est\".",
+        "**ثَلَاثَةَ آلَافِ جُنَيْهٍ — numbers stacked.** أَلْف (a thousand) has the plural آلَاف, and it follows the rule for 3–10: the number takes the opposite gender and the noun is plural with kasrah. Large sums of money call for exactly this.",
+        "**بِرَأْيِكَ — \"in your opinion\".** Literally \"with your opinion\". Other equally common forms: فِي رَأْيِي (\"in my opinion\"), مَا رَأْيُكَ؟ (\"what do you think?\")."
+      ],
+      "grammars": [
+        {
+          "title": "Comparing: -er and -est",
+          "table": {
+            "head": [
+              "Adjective",
+              "Comparative",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "كَبِير",
+                "أَكْبَر",
+                "بَيْتِي أَكْبَرُ مِنْ بَيْتِكَ",
+                "my house is bigger than yours"
+              ],
+              [
+                "صَغِير",
+                "أَصْغَر",
+                "هٰذِهِ أَصْغَرُ غُرْفَةٍ",
+                "this is the smallest room"
+              ],
+              [
+                "جَدِيد",
+                "أَجَدّ / أَحْدَث",
+                "سَيَّارَةٌ أَحْدَثُ",
+                "a newer car"
+              ],
+              [
+                "قَدِيم",
+                "أَقْدَم",
+                "اَلْقَاهِرَةُ أَقْدَمُ مِنْ دُبَيْ",
+                "Cairo is older than Dubai"
+              ],
+              [
+                "جَمِيل",
+                "أَجْمَل",
+                "أَجْمَلُ مَدِينَةٍ",
+                "the most beautiful city"
+              ],
+              [
+                "سَهْل",
+                "أَسْهَل",
+                "هٰذَا أَسْهَلُ",
+                "this is easier"
+              ],
+              [
+                "صَعْب",
+                "أَصْعَب",
+                "اَلنَّحْوُ أَصْعَبُ",
+                "grammar is harder"
+              ],
+              [
+                "كَثِير",
+                "أَكْثَر",
+                "أَكْثَرُ مِنْ عَشَرَةٍ",
+                "more than ten"
+              ]
+            ]
+          },
+          "after": [
+            "Three adjectives that break the pattern and must be memorized: جَيِّد → أَحْسَن (better), سَيِّئ → أَسْوَأ (worse), and كَبِير meaning age → أَكْبَر سِنًّا (older).",
+            "Word order decides the meaning: **أَكْبَرُ مِنْ...** = \"bigger than\"; **أَكْبَرُ مَدِينَةٍ** = \"the biggest city\"; **اَلْمَدِينَةُ الْكُبْرَى** = \"the great city\" (a special form, rare at A1)."
+          ]
+        },
+        {
+          "title": "Saying there is and there isn't",
+          "table": {
+            "head": [
+              "Arabic",
+              "Pronunciation",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "هُنَاكَ مَطْعَمٌ قَرِيبٌ",
+                "hunaaka maṭ'amun qariib",
+                "there's a restaurant nearby"
+              ],
+              [
+                "يُوجَدُ بَنْكٌ هُنَا",
+                "yuujadu bankun hunaa",
+                "there is a bank here"
+              ],
+              [
+                "لَا يُوجَدُ مَاءٌ",
+                "laa yuujadu maa'",
+                "there's no water"
+              ],
+              [
+                "لَيْسَ هُنَاكَ مُشْكِلَةٌ",
+                "laisa hunaaka mushkilah",
+                "no problem"
+              ],
+              [
+                "فِي الْبَيْتِ غُرْفَتَانِ",
+                "fil-baiti ghurfataan",
+                "the house has two rooms"
+              ],
+              [
+                "مَاذَا يُوجَدُ فِي الْغُرْفَةِ؟",
+                "maadhaa yuujadu fil-ghurfah?",
+                "what's in the room?"
+              ]
+            ]
+          },
+          "after": [
+            "Note that whatever \"there is\" is always **indefinite** (with tanwin): هُنَاكَ مَطْعَمٌ. If you use اَلْ, the sentence turns into one about location: اَلْمَطْعَمُ هُنَاكَ (\"the restaurant is over there\")."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The home and what's in it",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Arabic",
+            "Pronunciation",
+            "Meaning",
+            "Arabic",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "شَقَّة",
+              "shaqqah",
+              "apartment",
+              "شُرْفَة",
+              "shurfah",
+              "balcony"
+            ],
+            [
+              "عِمَارَة",
+              "'imaarah",
+              "building",
+              "سُلَّم",
+              "sullam",
+              "stairs"
+            ],
+            [
+              "دَوْر / طَابِق",
+              "daur / ṭaabiq",
+              "floor (level)",
+              "مِصْعَد",
+              "miṣ'ad",
+              "elevator"
+            ],
+            [
+              "صَالَة",
+              "ṣaalah",
+              "living room",
+              "سَقْف",
+              "saqf",
+              "ceiling"
+            ],
+            [
+              "غُرْفَةُ النَّوْمِ",
+              "ghurfatun-naum",
+              "bedroom",
+              "أَثَاث",
+              "athaath",
+              "furniture"
+            ],
+            [
+              "مَطْبَخ",
+              "maṭbakh",
+              "kitchen",
+              "مِرْآة",
+              "mir'aah",
+              "mirror"
+            ],
+            [
+              "حَمَّام",
+              "hammaam",
+              "bathroom",
+              "سَجَّادَة",
+              "sajjaadah",
+              "carpet, prayer rug"
+            ],
+            [
+              "حَدِيقَة",
+              "hadiiqah",
+              "garden",
+              "مُكَيِّف",
+              "mukayyif",
+              "air conditioning"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The word حَمَّام needs attention: in the Arab world it means bathroom **and** toilet at once. If you ask أَيْنَ الْحَمَّامُ؟ in a restaurant, you'll be pointed to the toilet — which is what you meant anyway. A more polite form in public places: دَوْرَةُ الْمِيَاهِ."
+        },
+        {
+          "type": "kotak",
+          "title": "Describing a place in three layers",
+          "items": [
+            "The easiest way to describe a place without running out of words: give its **location**, then its **size**, then **what's in it**. أَسْكُنُ فِي شَقَّةٍ قُرْبَ الْجَامِعَةِ. هِيَ صَغِيرَةٌ لٰكِنَّهَا مُرِيحَةٌ. فِيهَا غُرْفَتَانِ وَشُرْفَةٌ.",
+            "Those three sentences already let someone picture your place, and they use only material you've had since unit 5."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "City and neighborhood",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Arabic",
+            "Pronunciation",
+            "Meaning",
+            "Arabic",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "مَدِينَة",
+              "madiinah",
+              "city",
+              "هَادِئ",
+              "haadi'",
+              "quiet"
+            ],
+            [
+              "قَرْيَة",
+              "qaryah",
+              "village",
+              "مُزْدَحِم",
+              "muzdahim",
+              "crowded, busy"
+            ],
+            [
+              "حَيّ",
+              "hayy",
+              "neighborhood",
+              "نَظِيف",
+              "naẓiif",
+              "clean"
+            ],
+            [
+              "وَسَطُ الْبَلَدِ",
+              "wasaṭul-balad",
+              "city center",
+              "وَسِخ",
+              "wasikh",
+              "dirty"
+            ],
+            [
+              "ضَاحِيَة",
+              "ḍaahiyah",
+              "suburbs",
+              "وَاسِع",
+              "waasi'",
+              "spacious"
+            ],
+            [
+              "نَهْر",
+              "nahr",
+              "river",
+              "ضَيِّق",
+              "ḍayyiq",
+              "narrow"
+            ],
+            [
+              "بَحْر",
+              "bahr",
+              "sea",
+              "مُرِيح",
+              "muriih",
+              "comfortable"
+            ],
+            [
+              "جَبَل",
+              "jabal",
+              "mountain",
+              "غَالِي الثَّمَنِ",
+              "ghaalith-thaman",
+              "expensive (cost of living)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One word you'll hear a lot: بَلَد. It means \"country\" **and** \"town\" at once, depending on context — and وَسَطُ الْبَلَدِ (\"the middle of town\") is the standard name for downtown almost everywhere in the Arab world."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "يَسْكُنُ",
+      "baca": "yaskunu",
+      "en": "to live"
+    },
+    {
+      "ar": "شَقَّة",
+      "baca": "shaqqah",
+      "en": "apartment"
+    },
+    {
+      "ar": "غُرْفَة",
+      "baca": "ghurfah",
+      "en": "room"
+    },
+    {
+      "ar": "شُرْفَة",
+      "baca": "shurfah",
+      "en": "balcony"
+    },
+    {
+      "ar": "طَابِق",
+      "baca": "ṭaabiq",
+      "en": "floor (level)"
+    },
+    {
+      "ar": "مِصْعَد",
+      "baca": "miṣ'ad",
+      "en": "elevator"
+    },
+    {
+      "ar": "أَثَاث",
+      "baca": "athaath",
+      "en": "furniture"
+    },
+    {
+      "ar": "هُنَاكَ",
+      "baca": "hunaaka",
+      "en": "there is; there"
+    },
+    {
+      "ar": "يُوجَدُ",
+      "baca": "yuujadu",
+      "en": "there is (formal)"
+    },
+    {
+      "ar": "أَكْبَر",
+      "baca": "akbar",
+      "en": "bigger"
+    },
+    {
+      "ar": "أَصْغَر",
+      "baca": "aṣghar",
+      "en": "smaller"
+    },
+    {
+      "ar": "أَجْمَل",
+      "baca": "ajmal",
+      "en": "more beautiful"
+    },
+    {
+      "ar": "أَقْدَم",
+      "baca": "aqdam",
+      "en": "older (of things)"
+    },
+    {
+      "ar": "أَحْسَن",
+      "baca": "ahsan",
+      "en": "better"
+    },
+    {
+      "ar": "أَسْوَأ",
+      "baca": "aswa'",
+      "en": "worse"
+    },
+    {
+      "ar": "أَسْهَل / أَصْعَب",
+      "baca": "as-hal / aṣ'ab",
+      "en": "easier / harder"
+    },
+    {
+      "ar": "حَيّ",
+      "baca": "hayy",
+      "en": "neighborhood"
+    },
+    {
+      "ar": "مُزْدَحِم",
+      "baca": "muzdahim",
+      "en": "crowded, busy"
+    },
+    {
+      "ar": "هَادِئ",
+      "baca": "haadi'",
+      "en": "quiet"
+    },
+    {
+      "ar": "نَظِيف / وَسِخ",
+      "baca": "naẓiif / wasikh",
+      "en": "clean / dirty"
+    },
+    {
+      "ar": "وَاسِع / ضَيِّق",
+      "baca": "waasi' / ḍayyiq",
+      "en": "spacious / narrow"
+    },
+    {
+      "ar": "مُرِيح",
+      "baca": "muriih",
+      "en": "comfortable"
+    },
+    {
+      "ar": "جَمِيل",
+      "baca": "jamiil",
+      "en": "beautiful"
+    },
+    {
+      "ar": "صَحِيح",
+      "baca": "ṣahiih",
+      "en": "right, true"
+    },
+    {
+      "ar": "أَلْف / آلَاف",
+      "baca": "alf / aalaaf",
+      "en": "thousand / thousands"
+    },
+    {
+      "ar": "رَأْي",
+      "baca": "ra'y",
+      "en": "opinion"
+    },
+    {
+      "ar": "يُقَابِلُ",
+      "baca": "yuqaabilu",
+      "en": "to meet"
+    },
+    {
+      "ar": "كَرِيم / أَكْرَم",
+      "baca": "kariim / akram",
+      "en": "generous / more generous"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Form the comparative (أَفْعَل).",
+      "items": [
+        "كَبِير ←",
+        "صَغِير ←",
+        "جَمِيل ←",
+        "قَدِيم ←",
+        "سَهْل ←",
+        "جَيِّد ←"
+      ]
+    },
+    {
+      "prompt": "Translate into Arabic.",
+      "items": [
+        "I live in a small apartment.",
+        "How many rooms does it have?",
+        "There's a balcony too.",
+        "My city is smaller than Cairo.",
+        "This is the most beautiful city.",
+        "No problem."
+      ]
+    },
+    {
+      "prompt": "Compare the two things in one complete sentence.",
+      "items": [
+        "اَلْقَاهِرَة / جَاكَرْتَا (big)",
+        "اَلشَّاي / اَلْقَهْوَة (tasty)",
+        "اَلنَّحْو / اَلْكَلَام (hard)",
+        "بَيْتِي / بَيْتُ صَدِيقِي (spacious)",
+        "اَلْحَافِلَة / اَلسَّيَّارَة (cheap)"
+      ]
+    },
+    {
+      "prompt": "Describe where you live in six sentences: location, size, contents, the neighborhood, and what you like about it.",
+      "items": [
+        "Where do you live?",
+        "A house or an apartment?",
+        "How many rooms are there?",
+        "What's inside?",
+        "What's the neighborhood like: quiet or busy?",
+        "What do you like most?"
+      ]
+    }
+  ],
+  "answers": [
+    "أَكْبَر — أَصْغَر — أَجْمَل — أَقْدَم — أَسْهَل — أَحْسَن",
+    "أَسْكُنُ فِي شَقَّةٍ صَغِيرَةٍ. — كَمْ غُرْفَةً فِيهَا؟ — هُنَاكَ شُرْفَةٌ أَيْضًا. — مَدِينَتِي أَصْغَرُ مِنَ الْقَاهِرَةِ. — هٰذِهِ أَجْمَلُ مَدِينَةٍ. — لَيْسَ هُنَاكَ مُشْكِلَةٌ.",
+    "اَلْقَاهِرَةُ أَكْبَرُ مِنْ جَاكَرْتَا. — اَلشَّايُ أَلَذُّ مِنَ الْقَهْوَةِ. — اَلنَّحْوُ أَصْعَبُ مِنَ الْكَلَامِ. — بَيْتِي أَوْسَعُ مِنْ بَيْتِ صَدِيقِي. — اَلْحَافِلَةُ أَرْخَصُ مِنَ السَّيَّارَةِ.",
+    "Example: أَسْكُنُ فِي جَاكَرْتَا — أَسْكُنُ فِي بَيْتٍ صَغِيرٍ — فِيهِ ثَلَاثُ غُرَفٍ وَمَطْبَخٌ — هُنَاكَ حَدِيقَةٌ صَغِيرَةٌ أَمَامَ الْبَيْتِ — حَيِّي هَادِئٌ وَنَظِيفٌ — أُحِبُّ الْحَدِيقَةَ لِأَنَّهَا مُرِيحَةٌ"
+  ],
+  "wave": "Go back over the dialogues of units 5 and 10. Look for sentences you can now turn into comparisons."
+}

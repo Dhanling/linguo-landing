@@ -1,0 +1,624 @@
+{
+  "title": "Where are you from?",
+  "title_target": "مِنْ أَيْنَ أَنْتَ؟",
+  "goal": "Say what country you come from and your nationality, ask about someone's job, and see how one small ending turns a country into a nationality.",
+  "bekal": [
+    "ask and say where someone is from with *min aina* and *min*",
+    "build the nationality word for any country yourself",
+    "name jobs in both the male and the female form"
+  ],
+  "dialogs": [
+    {
+      "title": "حِوَار — فِي الْمَقْهَى",
+      "intro": "At a coffee shop near the campus. Budi shares a table with a female student.",
+      "lines": [
+        {
+          "speaker": "لَيْلَى:",
+          "text": "أَهْلًا! أَنْتَ طَالِبٌ جَدِيدٌ، أَلَيْسَ كَذٰلِكَ؟",
+          "baca": "ahlan! anta ṭaalibun jadiid, alaisa kadhaalik?",
+          "id": "Hi! You're the new student, aren't you?",
+          "literal": "hi! you student new, isn't-it so?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "نَعَمْ. أَنَا بُودِي. مَا اسْمُكِ؟",
+          "baca": "na'am. anaa Buudii. masmuki?",
+          "id": "Yes. I'm Budi. What's your name?",
+          "literal": "yes. I Budi. what name-your?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "اِسْمِي لَيْلَى. مِنْ أَيْنَ أَنْتَ؟",
+          "baca": "ismii Lailaa. min aina anta?",
+          "id": "My name is Laila. Where are you from?",
+          "literal": "name-my Laila. from where you?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "أَنَا مِنْ إِنْدُونِيسِيَا. أَنَا إِنْدُونِيسِيٌّ.",
+          "baca": "anaa min Induuniisiyaa. anaa induuniisiyy.",
+          "id": "I'm from Indonesia. I'm Indonesian.",
+          "literal": "I from Indonesia. I Indonesian."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "أَهْلًا وَسَهْلًا! أَنَا مِنَ الْمَغْرِبِ. أَنَا مَغْرِبِيَّةٌ.",
+          "baca": "ahlan wa sahlan! anaa minal-maghrib. anaa maghribiyyah.",
+          "id": "Welcome! I'm from Morocco. I'm Moroccan.",
+          "literal": "welcome! I from the-Morocco. I Moroccan(f)."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مَا عَمَلُكِ؟ هَلْ أَنْتِ طَالِبَةٌ؟",
+          "baca": "maa 'amaluki? hal anti ṭaalibah?",
+          "id": "What do you do? Are you a student?",
+          "literal": "what work-your? (question) you student(f)?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "أَنَا طَالِبَةٌ وَمُتَرْجِمَةٌ أَيْضًا. وَأَنْتَ؟",
+          "baca": "anaa ṭaalibatun wa mutarjimatun aiḍan. wa anta?",
+          "id": "I'm a student and also a translator. And you?",
+          "literal": "I student(f) and translator(f) also. and you?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "أَنَا مُهَنْدِسٌ، وَأَدْرُسُ الْعَرَبِيَّةَ هُنَا.",
+          "baca": "anaa muhandis, wa adrusul-'arabiyyata hunaa.",
+          "id": "I'm an engineer, and I'm studying Arabic here.",
+          "literal": "I engineer, and I-study the-Arabic here."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "مُمْتَازٌ! لُغَتُكَ جَيِّدَةٌ.",
+          "baca": "mumtaaz! lughatuka jayyidah.",
+          "id": "Excellent! Your Arabic is good.",
+          "literal": "excellent! language-your good."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "شُكْرًا، وَلٰكِنَّهَا مَا زَالَتْ ضَعِيفَةً.",
+          "baca": "shukran, walaakinnahaa maa zaalat ḍa'iifah.",
+          "id": "Thanks, but it's still weak.",
+          "literal": "thanks, but-it still weak."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "لَا مُشْكِلَةَ! هٰذِهِ الْبِدَايَةُ فَقَطْ.",
+          "baca": "laa mushkilah! haadhihil-bidaayatu faqaṭ.",
+          "id": "No problem! This is just the beginning.",
+          "literal": "no problem! this the-beginning only."
+        }
+      ],
+      "notes": [
+        "**مِنْ أَيْنَ أَنْتَ؟ — two question words joined.** أَيْنَ on its own means \"where\"; with مِنْ in front it becomes \"where from\". To a woman: مِنْ أَيْنَ أَنْتِ؟ The answer always uses مِنْ too: أَنَا مِنْ...",
+        "**Country vs nationality.** إِنْدُونِيسِيَا is the country; إِنْدُونِيسِيٌّ is the person. The only difference is the ending ـِيّ — and that is the one tool you need to form any nationality. The ending is called the **nisba**.",
+        "**Women add ة.** إِنْدُونِيسِيٌّ (male) → إِنْدُونِيسِيَّةٌ (female). Notice that لَيْلَى says مَغْرِبِيَّةٌ, not مَغْرِبِيٌّ — not out of politeness, but because grammar requires it.",
+        "**مِنَ الْمَغْرِبِ, not مِنْ الْمَغْرِبِ.** The sukun on نْ turns into a fatha when it meets اَلْ, so that two vowelless letters don't collide: *minal-maghrib*, *minal-yaum*. The rule is automatic and there's no list to memorize — just follow the pronunciation line.",
+        "**Arab country names almost always take اَلْ.** اَلْمَغْرِب (Morocco), اَلْعِرَاق (Iraq), اَلْأُرْدُنّ (Jordan), اَلسُّودَان (Sudan), اَلْيَمَن (Yemen). Those that don't: مِصْر (Egypt), سُورِيَا (Syria), لُبْنَان (Lebanon), إِنْدُونِيسِيَا. There is no rule — this part you simply memorize.",
+        "**مَا عَمَلُكَ؟ literally \"what is your work\".** Notice that Arabic uses مَا (what) to ask about a job, not مَنْ (who). Another common option: مَاذَا تَعْمَلُ؟ (\"what do you do?\").",
+        "**لُغَتُكَ جَيِّدَةٌ — a nominal sentence again.** No \"is\". Notice too that جَيِّدَة is feminine because لُغَة (language) is a feminine word — the ة at the end decides that, not the meaning.",
+        "**لَا مُشْكِلَةَ** literally \"there is no problem\". This pattern — لَا + a noun without tanween — states an absolute \"no ...\": لَا بَأْسَ (no harm, it's fine), لَا شُكْرَ عَلَى وَاجِبٍ (no thanks needed for a duty).",
+        "**أَلَيْسَ كَذٰلِكَ؟** is the Arabic \"isn't it?\" — tagged onto the end of a sentence to ask for agreement, just like the English tag question."
+      ],
+      "grammars": [
+        {
+          "title": "The nisba — turning a place into a nationality",
+          "body": [
+            "One ending, and the whole world map opens up. The method: drop a final ا or ة from the country name if there is one, then attach ـِيّ."
+          ],
+          "table": {
+            "head": [
+              "Country",
+              "Pronunciation",
+              "Male",
+              "Female",
+              "Nationality"
+            ],
+            "rows": [
+              [
+                "إِنْدُونِيسِيَا",
+                "Induuniisiyaa",
+                "إِنْدُونِيسِيّ",
+                "إِنْدُونِيسِيَّة",
+                "Indonesian"
+              ],
+              [
+                "مِصْر",
+                "Miṣr",
+                "مِصْرِيّ",
+                "مِصْرِيَّة",
+                "Egyptian"
+              ],
+              [
+                "اَلْمَغْرِب",
+                "al-Maghrib",
+                "مَغْرِبِيّ",
+                "مَغْرِبِيَّة",
+                "Moroccan"
+              ],
+              [
+                "سُورِيَا",
+                "Suuriyaa",
+                "سُورِيّ",
+                "سُورِيَّة",
+                "Syrian"
+              ],
+              [
+                "اَلسُّعُودِيَّة",
+                "as-Su'uudiyyah",
+                "سُعُودِيّ",
+                "سُعُودِيَّة",
+                "Saudi"
+              ],
+              [
+                "اَلْيَابَان",
+                "al-Yaabaan",
+                "يَابَانِيّ",
+                "يَابَانِيَّة",
+                "Japanese"
+              ],
+              [
+                "أَمْرِيكَا",
+                "Amriikaa",
+                "أَمْرِيكِيّ",
+                "أَمْرِيكِيَّة",
+                "American"
+              ],
+              [
+                "مَالِيزِيَا",
+                "Maaliiziyaa",
+                "مَالِيزِيّ",
+                "مَالِيزِيَّة",
+                "Malaysian"
+              ]
+            ]
+          },
+          "after": [
+            "The nisba doesn't stop at countries. It works for anything: عَرَبِيّ (Arab, Arabic, from عَرَب), إِسْلَامِيّ (Islamic), يَوْمِيّ (daily, from يَوْم), جَامِعِيّ (university-, from جَامِعَة).",
+            "Language names are the feminine nisba: اَلْعَرَبِيَّة (Arabic), اَلْإِنْجِلِيزِيَّة (English), اَلْإِنْدُونِيسِيَّة (Indonesian). The full form is اَللُّغَةُ الْعَرَبِيَّةُ (\"the Arabic language\"), but the word لُغَة is almost always dropped."
+          ]
+        },
+        {
+          "title": "Jobs — and their female counterparts",
+          "body": [
+            "Almost every job title is masculine, and the feminine form simply adds ة."
+          ],
+          "table": {
+            "head": [
+              "Male",
+              "Female",
+              "Pronunciation",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "طَالِب",
+                "طَالِبَة",
+                "ṭaalib / ṭaalibah",
+                "student"
+              ],
+              [
+                "مُدَرِّس",
+                "مُدَرِّسَة",
+                "mudarris / mudarrisah",
+                "teacher"
+              ],
+              [
+                "مُهَنْدِس",
+                "مُهَنْدِسَة",
+                "muhandis / muhandisah",
+                "engineer"
+              ],
+              [
+                "طَبِيب",
+                "طَبِيبَة",
+                "ṭabiib / ṭabiibah",
+                "doctor"
+              ],
+              [
+                "مُمَرِّض",
+                "مُمَرِّضَة",
+                "mumarriḍ / mumarriḍah",
+                "nurse"
+              ],
+              [
+                "مُتَرْجِم",
+                "مُتَرْجِمَة",
+                "mutarjim / mutarjimah",
+                "translator"
+              ],
+              [
+                "مُوَظَّف",
+                "مُوَظَّفَة",
+                "muwaẓẓaf / muwaẓẓafah",
+                "employee"
+              ],
+              [
+                "تَاجِر",
+                "تَاجِرَة",
+                "taajir / taajirah",
+                "merchant"
+              ],
+              [
+                "سَائِق",
+                "سَائِقَة",
+                "saa'iq / saa'iqah",
+                "driver"
+              ],
+              [
+                "مُحَامٍ",
+                "مُحَامِيَة",
+                "muhaamin / muhaamiyah",
+                "lawyer"
+              ]
+            ]
+          },
+          "after": [
+            "Notice the مُ- at the front of many words: مُدَرِّس, مُهَنْدِس, مُتَرْجِم, مُمَرِّض. The prefix مُ almost always marks the **doer** — the person who does the job, much like English *-er*. Once you see the pattern, you can guess the meaning of new words built the same way."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The countries you'll hear most",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Arabic",
+            "Pronunciation",
+            "Country",
+            "Arabic",
+            "Pronunciation",
+            "Country"
+          ],
+          "rows": [
+            [
+              "مِصْر",
+              "Miṣr",
+              "Egypt",
+              "تُرْكِيَا",
+              "Turkiyaa",
+              "Turkey"
+            ],
+            [
+              "اَلسُّعُودِيَّة",
+              "as-Su'uudiyyah",
+              "Saudi Arabia",
+              "إِيرَان",
+              "Iiraan",
+              "Iran"
+            ],
+            [
+              "اَلْإِمَارَات",
+              "al-Imaaraat",
+              "United Arab Emirates",
+              "اَلصِّين",
+              "aṣ-Ṣiin",
+              "China"
+            ],
+            [
+              "اَلْأُرْدُنّ",
+              "al-Urdun",
+              "Jordan",
+              "اَلْهِنْد",
+              "al-Hind",
+              "India"
+            ],
+            [
+              "لُبْنَان",
+              "Lubnaan",
+              "Lebanon",
+              "أَلْمَانْيَا",
+              "Almaanyaa",
+              "Germany"
+            ],
+            [
+              "سُورِيَا",
+              "Suuriyaa",
+              "Syria",
+              "فَرَنْسَا",
+              "Faransaa",
+              "France"
+            ],
+            [
+              "فِلَسْطِين",
+              "Filasṭiin",
+              "Palestine",
+              "بِرِيطَانْيَا",
+              "Biriiṭaanyaa",
+              "England, Britain"
+            ],
+            [
+              "اَلْعِرَاق",
+              "al-'Iraaq",
+              "Iraq",
+              "أُسْتُرَالِيَا",
+              "Usturaaliyaa",
+              "Australia"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "City names work in exactly the same sentence: أَنَا مِنْ جَاكَرْتَا (I'm from Jakarta), أَنَا مِنْ بَانْدُونْج (I'm from Bandung), هُوَ مِنَ الْقَاهِرَةِ (he's from Cairo)."
+        },
+        {
+          "type": "kotak",
+          "title": "Why مِصْرَ has no tanween",
+          "items": [
+            "In the unit 1 dialogue you saw مِنْ مِصْرَ, not مِنْ مِصْرٍ. Some proper names — especially place names and women's names — belong to a group that **refuses tanween**: مِصْر, مَكَّة, فَاطِمَة, أَحْمَد.",
+            "At A1 you don't need to memorize the list. One habit is enough: **proper names rarely take tanween.** This book always writes their final vowels correctly, so you can absorb it by eye."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking about someone else",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Everything you learned for \"you\" works exactly the same for \"he/she\" — just swap the ending."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "مَا اسْمُهُ؟",
+              "masmuhu?",
+              "What's his name?"
+            ],
+            [
+              "مَا اسْمُهَا؟",
+              "masmuhaa?",
+              "What's her name?"
+            ],
+            [
+              "مِنْ أَيْنَ هُوَ؟",
+              "min aina huwa?",
+              "Where is he from?"
+            ],
+            [
+              "مِنْ أَيْنَ هِيَ؟",
+              "min aina hiya?",
+              "Where is she from?"
+            ],
+            [
+              "مَا عَمَلُهُ؟",
+              "maa 'amaluhu?",
+              "What does he do?"
+            ],
+            [
+              "هَلْ هُوَ طَالِبٌ؟",
+              "hal huwa ṭaalibun?",
+              "Is he a student?"
+            ],
+            [
+              "مَنْ هٰذَا؟",
+              "man haadhaa?",
+              "Who is this? (m)"
+            ],
+            [
+              "مَنْ هٰذِهِ؟",
+              "man haadhihi?",
+              "Who is this? (f)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One important difference from English: مَا is used for **things**, مَنْ for **people**. Asking a name uses مَا, not مَنْ — مَا اسْمُكَ is literally \"what is your name\", because you're asking about the name, not the person. Here English happens to agree."
+        },
+        {
+          "type": "kotak",
+          "title": "A ten-minute drill that works",
+          "items": [
+            "Pick ten people you know. For each, build three sentences in your head: what's his/her name, where is he/she from, what does he/she do. Each time, notice whether the person is male or female, and make sure the ending ـهُ / ـهَا and the ة change with it.",
+            "It sounds trivial. But this is exactly where learners slip most often throughout A1 — not because they don't know the rule, but because English never forces them to think about it."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "مِنْ أَيْنَ",
+      "baca": "min aina",
+      "en": "where from"
+    },
+    {
+      "ar": "أَيْنَ",
+      "baca": "aina",
+      "en": "where"
+    },
+    {
+      "ar": "عَمَل",
+      "baca": "'amal",
+      "en": "work, job"
+    },
+    {
+      "ar": "لُغَة",
+      "baca": "lughah",
+      "en": "language"
+    },
+    {
+      "ar": "اَلْعَرَبِيَّة",
+      "baca": "al-'arabiyyah",
+      "en": "Arabic (language)"
+    },
+    {
+      "ar": "اَلْإِنْجِلِيزِيَّة",
+      "baca": "al-injiliiziyyah",
+      "en": "English (language)"
+    },
+    {
+      "ar": "مُهَنْدِس",
+      "baca": "muhandis",
+      "en": "engineer"
+    },
+    {
+      "ar": "طَبِيب",
+      "baca": "ṭabiib",
+      "en": "doctor"
+    },
+    {
+      "ar": "مُتَرْجِم",
+      "baca": "mutarjim",
+      "en": "translator"
+    },
+    {
+      "ar": "مُوَظَّف",
+      "baca": "muwaẓẓaf",
+      "en": "employee"
+    },
+    {
+      "ar": "تَاجِر",
+      "baca": "taajir",
+      "en": "merchant"
+    },
+    {
+      "ar": "مَقْهًى",
+      "baca": "maqhan",
+      "en": "coffee shop"
+    },
+    {
+      "ar": "جَامِعَة",
+      "baca": "jaami'ah",
+      "en": "university"
+    },
+    {
+      "ar": "مَدِينَة",
+      "baca": "madiinah",
+      "en": "city"
+    },
+    {
+      "ar": "بَلَد",
+      "baca": "balad",
+      "en": "country"
+    },
+    {
+      "ar": "جَيِّد",
+      "baca": "jayyid",
+      "en": "good"
+    },
+    {
+      "ar": "مُمْتَاز",
+      "baca": "mumtaaz",
+      "en": "excellent, great"
+    },
+    {
+      "ar": "ضَعِيف",
+      "baca": "ḍa'iif",
+      "en": "weak"
+    },
+    {
+      "ar": "قَوِيّ",
+      "baca": "qawiyy",
+      "en": "strong"
+    },
+    {
+      "ar": "بِدَايَة",
+      "baca": "bidaayah",
+      "en": "beginning"
+    },
+    {
+      "ar": "فَقَطْ",
+      "baca": "faqaṭ",
+      "en": "only, just"
+    },
+    {
+      "ar": "لٰكِنْ",
+      "baca": "laakin",
+      "en": "but"
+    },
+    {
+      "ar": "مَا زَالَ",
+      "baca": "maa zaala",
+      "en": "still"
+    },
+    {
+      "ar": "لَا مُشْكِلَةَ",
+      "baca": "laa mushkilah",
+      "en": "no problem"
+    },
+    {
+      "ar": "مُشْكِلَة",
+      "baca": "mushkilah",
+      "en": "problem"
+    },
+    {
+      "ar": "أَدْرُسُ",
+      "baca": "adrusu",
+      "en": "I study, I'm learning"
+    },
+    {
+      "ar": "اَلْقَاهِرَة",
+      "baca": "al-Qaahirah",
+      "en": "Cairo"
+    },
+    {
+      "ar": "جَاكَرْتَا",
+      "baca": "Jaakartaa",
+      "en": "Jakarta"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Form the nationality word. Write the male form, then the female form.",
+      "items": [
+        "مِصْر ← ____ (m), ____ (f)",
+        "إِنْدُونِيسِيَا ← ____ (m), ____ (f)",
+        "اَلْيَابَان ← ____ (m), ____ (f)",
+        "سُورِيَا ← ____ (m), ____ (f)",
+        "أَمْرِيكَا ← ____ (m), ____ (f)",
+        "اَلْمَغْرِب ← ____ (m), ____ (f)"
+      ]
+    },
+    {
+      "prompt": "Translate into Arabic.",
+      "items": [
+        "I'm from Indonesia.",
+        "Where are you from? (to a woman)",
+        "She is Egyptian.",
+        "What do you do? (to a man)",
+        "I'm a teacher and a translator.",
+        "Your Arabic is good. (to a woman)"
+      ]
+    },
+    {
+      "prompt": "Correct the wrong sentences. Rewrite them in full with vowel marks.",
+      "items": [
+        "لَيْلَى مَغْرِبِيٌّ.",
+        "أَنَا مِنْ إِنْدُونِيسِيٌّ.",
+        "هِيَ مُدَرِّسٌ فِي الْجَامِعَةِ.",
+        "مَنْ اسْمُكَ؟",
+        "أَنَا مِنْ الْمَغْرِبِ."
+      ]
+    },
+    {
+      "prompt": "Answer these questions about yourself in full sentences.",
+      "items": [
+        "مَا اسْمُكَ؟",
+        "مِنْ أَيْنَ أَنْتَ؟",
+        "مَا عَمَلُكَ؟",
+        "هَلْ أَنْتَ طَالِبٌ؟",
+        "مَا لُغَتُكَ؟"
+      ]
+    }
+  ],
+  "answers": [
+    "مِصْرِيّ، مِصْرِيَّة — إِنْدُونِيسِيّ، إِنْدُونِيسِيَّة — يَابَانِيّ، يَابَانِيَّة — سُورِيّ، سُورِيَّة — أَمْرِيكِيّ، أَمْرِيكِيَّة — مَغْرِبِيّ، مَغْرِبِيَّة",
+    "أَنَا مِنْ إِنْدُونِيسِيَا. — مِنْ أَيْنَ أَنْتِ؟ — هِيَ مِصْرِيَّةٌ. — مَا عَمَلُكَ؟ — أَنَا مُدَرِّسٌ وَمُتَرْجِمٌ. — لُغَتُكِ جَيِّدَةٌ.",
+    "لَيْلَى مَغْرِبِيَّةٌ. — أَنَا مِنْ إِنْدُونِيسِيَا (or أَنَا إِنْدُونِيسِيٌّ). — هِيَ مُدَرِّسَةٌ فِي الْجَامِعَةِ. — مَا اسْمُكَ؟ — أَنَا مِنَ الْمَغْرِبِ.",
+    "Sample answers: اِسْمِي بُودِي. — أَنَا مِنْ إِنْدُونِيسِيَا. — أَنَا مُهَنْدِسٌ. — نَعَمْ، أَنَا طَالِبٌ. — لُغَتِي اَلْإِنْدُونِيسِيَّةُ."
+  ],
+  "wave": "Reread the unit 1 dialogue before you go on. Notice how many of its sentences now feel clear."
+}

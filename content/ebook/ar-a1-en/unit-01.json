@@ -1,0 +1,611 @@
+{
+  "title": "Nice to meet you",
+  "title_target": "اَلسَّلَامُ عَلَيْكُمْ",
+  "goal": "Greet people at the right time of day, say your name, ask how someone is, and understand why Arabic has no word for \"is\".",
+  "bekal": [
+    "greet with *as-salaamu 'alaikum* and answer it correctly",
+    "say your name and ask someone else's — in the right form for a man and for a woman",
+    "build complete sentences without a single verb"
+  ],
+  "dialogs": [
+    {
+      "title": "حِوَار — فِي مَعْهَدِ اللُّغَةِ",
+      "intro": "First day at a language institute in Cairo. Two people are sitting side by side in the waiting room.",
+      "lines": [
+        {
+          "speaker": "أَحْمَد:",
+          "text": "اَلسَّلَامُ عَلَيْكُمْ.",
+          "baca": "as-salaamu 'alaikum.",
+          "id": "Peace be upon you.",
+          "literal": "the-peace upon-you(pl)."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "وَعَلَيْكُمُ السَّلَامُ.",
+          "baca": "wa 'alaikumus-salaam.",
+          "id": "And upon you be peace.",
+          "literal": "and upon-you(pl) the-peace."
+        },
+        {
+          "speaker": "أَحْمَد:",
+          "text": "صَبَاحُ الْخَيْرِ! مَا اسْمُكَ؟",
+          "baca": "ṣabaahul-khair! masmuka?",
+          "id": "Good morning! What's your name?",
+          "literal": "morning the-goodness! what name-your?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "صَبَاحُ النُّورِ. اِسْمِي بُودِي. وَأَنْتَ؟",
+          "baca": "ṣabaahun-nuur. ismii Buudii. wa anta?",
+          "id": "Good morning. My name is Budi. And you?",
+          "literal": "morning the-light. name-my Budi. and you?"
+        },
+        {
+          "speaker": "أَحْمَد:",
+          "text": "أَنَا أَحْمَد. تَشَرَّفْنَا!",
+          "baca": "anaa Ahmad. tasharrafnaa!",
+          "id": "I'm Ahmad. Nice to meet you!",
+          "literal": "I Ahmad. we-were-honored!"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "تَشَرَّفْنَا. كَيْفَ حَالُكَ؟",
+          "baca": "tasharrafnaa. kaifa haaluka?",
+          "id": "Nice to meet you. How are you?",
+          "literal": "we-were-honored. how condition-your?"
+        },
+        {
+          "speaker": "أَحْمَد:",
+          "text": "بِخَيْرٍ، اَلْحَمْدُ لِلَّهِ. وَأَنْتَ؟",
+          "baca": "bikhair, alhamdu lillaah. wa anta?",
+          "id": "Fine, thank God. And you?",
+          "literal": "with goodness, the praise to God. and you?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "أَنَا بِخَيْرٍ أَيْضًا، شُكْرًا.",
+          "baca": "anaa bikhairin aiḍan, shukran.",
+          "id": "I'm fine too, thanks.",
+          "literal": "I with goodness also, thanks."
+        },
+        {
+          "speaker": "أَحْمَد:",
+          "text": "هَلْ أَنْتَ طَالِبٌ هُنَا؟",
+          "baca": "hal anta ṭaalibun hunaa?",
+          "id": "Are you a student here?",
+          "literal": "(question) you student here?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "نَعَمْ، أَنَا طَالِبٌ جَدِيدٌ مِنْ إِنْدُونِيسِيَا.",
+          "baca": "na'am, anaa ṭaalibun jadiidun min Induuniisiyaa.",
+          "id": "Yes, I'm a new student from Indonesia.",
+          "literal": "yes, I student new from Indonesia."
+        },
+        {
+          "speaker": "أَحْمَد:",
+          "text": "أَهْلًا وَسَهْلًا! إِلَى اللِّقَاءِ.",
+          "baca": "ahlan wa sahlan! ilal-liqaa'.",
+          "id": "Welcome! See you.",
+          "literal": "family and ease! until the-meeting."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مَعَ السَّلَامَةِ.",
+          "baca": "ma'as-salaamah.",
+          "id": "Goodbye, take care.",
+          "literal": "with the-safety."
+        }
+      ],
+      "notes": [
+        "**A greeting for any time of day.** اَلسَّلَامُ عَلَيْكُمْ works morning, noon and night, to one person or to a hundred. Note that \"you\" (عَلَيْكُمْ) stays plural even when you greet just one person — that is not a mistake, it is the standard form. Answering it is not optional but a social duty: ignoring a *salaam* feels far ruder than ignoring a \"hello\".",
+        "**A morning greeting gets a different word back.** You don't answer صَبَاحُ الْخَيْرِ (\"morning of goodness\") by repeating it, but with صَبَاحُ النُّورِ (\"morning of light\"). In the same way, مَسَاءُ الْخَيْرِ is answered with مَسَاءُ النُّورِ. Echoing the same phrase instantly marks you as a foreigner.",
+        "**مَا اسْمُكَ is read *masmuka*, not *maa ismuka*.** The alif of اِسْم is a *hamzat al-waṣl* — an alif that disappears as soon as a word comes before it. You'll meet it everywhere: بِسْمِ اللهِ is read *bismillaah*, not *bi ismi Allaah*.",
+        "**اِسْمُكَ or اِسْمُكِ — choose by who you're talking to.** To a man: مَا اسْمُكَ (*masmuka*). To a woman: مَا اسْمُكِ (*masmuki*). The difference is a single vowel mark at the end, and it is the number-one learner mistake — English \"you\" makes no such distinction at all. Getting it wrong is harmless, but it is instantly audible.",
+        "**تَشَرَّفْنَا literally means \"we have been honored\".** Not \"I\" but \"we\" — a plural used out of modesty, a bit like a polite \"we\" in formal English. Another common option: فُرْصَةٌ سَعِيدَةٌ (*furṣah sa'iidah*, \"a happy opportunity\").",
+        "**كَيْفَ حَالُكَ literally means \"how is your condition\".** The ending ـكَ is what attaches to a noun to show possession — and it changes with gender: حَالُكَ (*haaluka*, to a man), حَالُكِ (*haaluki*, to a woman). The answer is بِخَيْرٍ (\"with goodness\"), almost always followed by اَلْحَمْدُ لِلَّهِ.",
+        "**هَلْ marks a yes/no question.** English flips the word order (\"Are you a student?\"); Arabic simply puts one word in front: هَلْ أَنْتَ طَالِبٌ؟ The rest of the sentence doesn't change at all. The answer is نَعَمْ (yes) or لَا (no).",
+        "**أَنَا طَالِبٌ has no word for \"am\".** Two words, and that is already a complete, correct sentence. This is not a shortcut or casual speech — Arabic simply does not use a verb \"to be\" in present-tense sentences. Adding one would be wrong.",
+        "**طَالِبٌ جَدِيدٌ — the adjective comes after the noun.** Literally \"student new\", not \"new student\". That is the opposite of English, so watch your word order. Also notice the tanween ٌ ـ on both words — the adjective copies the form of its noun.",
+        "**أَهْلًا وَسَهْلًا** literally means \"family and ease\" — it is short for a longer sentence: \"you have come to family, and may your way be easy\". The short form أَهْلًا on its own is also common and works as a casual \"hi\"."
+      ],
+      "grammars": [
+        {
+          "title": "The nominal sentence — a sentence without a verb",
+          "body": [
+            "This is the first sentence pattern you need to master, and its biggest lesson is what is NOT in it."
+          ],
+          "table": {
+            "head": [
+              "Arabic",
+              "Pronunciation",
+              "Meaning",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "أَنَا بُودِي",
+                "anaa Buudii",
+                "I'm Budi",
+                "I Budi"
+              ],
+              [
+                "أَنَا طَالِبٌ",
+                "anaa ṭaalibun",
+                "I'm a student",
+                "I student"
+              ],
+              [
+                "أَنْتَ مُدَرِّسٌ",
+                "anta mudarrisun",
+                "You're a teacher",
+                "you teacher"
+              ],
+              [
+                "هُوَ مِنْ مِصْرَ",
+                "huwa min Miṣra",
+                "He's from Egypt",
+                "he from Egypt"
+              ],
+              [
+                "هِيَ طَالِبَةٌ",
+                "hiya ṭaalibatun",
+                "She's a student",
+                "she student(f)"
+              ],
+              [
+                "نَحْنُ هُنَا",
+                "nahnu hunaa",
+                "We're here",
+                "we here"
+              ]
+            ]
+          },
+          "after": [
+            "The pattern: **[the thing you're talking about] + [what you say about it]**. That's it. Nothing goes in between.",
+            "Notice the tanween ٌ ـ on طَالِبٌ and مُدَرِّسٌ: it marks \"not a specific one\" — like the *a* in *a student*. The first word is the opposite, always definite: a name, a pronoun, or a word with اَلْ.",
+            "Only in the past does a verb appear: كَانَ (*kaana*, \"was\") — but that's for unit 13."
+          ]
+        },
+        {
+          "title": "Personal pronouns and their attached forms",
+          "body": [
+            "Arabic pronouns come in two shapes: the standalone one used as the subject, and the one that attaches to the end of a word to show possession. You will use the attached one far more often."
+          ],
+          "table": {
+            "head": [
+              "Standalone",
+              "Pronunciation",
+              "Attached",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "أَنَا",
+                "anaa",
+                "ـِي",
+                "اِسْمِي",
+                "my name"
+              ],
+              [
+                "أَنْتَ",
+                "anta (kamu lk)",
+                "ـكَ",
+                "اِسْمُكَ",
+                "your name (m)"
+              ],
+              [
+                "أَنْتِ",
+                "anti (kamu pr)",
+                "ـكِ",
+                "اِسْمُكِ",
+                "your name (f)"
+              ],
+              [
+                "هُوَ",
+                "huwa (dia lk)",
+                "ـهُ",
+                "اِسْمُهُ",
+                "his name"
+              ],
+              [
+                "هِيَ",
+                "hiya (dia pr)",
+                "ـهَا",
+                "اِسْمُهَا",
+                "her name"
+              ],
+              [
+                "نَحْنُ",
+                "nahnu (kami)",
+                "ـنَا",
+                "اِسْمُنَا",
+                "our name"
+              ],
+              [
+                "أَنْتُمْ",
+                "antum (kalian)",
+                "ـكُمْ",
+                "اِسْمُكُمْ",
+                "your name (pl)"
+              ],
+              [
+                "هُمْ",
+                "hum (mereka)",
+                "ـهُمْ",
+                "اِسْمُهُمْ",
+                "their name"
+              ]
+            ]
+          },
+          "after": [
+            "There are no separate words for \"my\", \"your\", \"his\" — they all fuse onto the noun as one word: *ism* + *ii* = *ismii*, \"my name\". Think of it as a possessive glued to the end instead of placed in front.",
+            "Only one thing needs extra attention: **Arabic distinguishes male and female even for \"you\"**. It's a single vowel mark at the end, but it decides whether your sentence sounds right or awkward."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Greetings through the day",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "When",
+            "Greeting",
+            "Pronunciation",
+            "The reply"
+          ],
+          "rows": [
+            [
+              "Any time",
+              "اَلسَّلَامُ عَلَيْكُمْ",
+              "as-salaamu 'alaikum",
+              "وَعَلَيْكُمُ السَّلَامُ"
+            ],
+            [
+              "Morning",
+              "صَبَاحُ الْخَيْرِ",
+              "ṣabaahul-khair",
+              "صَبَاحُ النُّورِ"
+            ],
+            [
+              "Afternoon/evening",
+              "مَسَاءُ الْخَيْرِ",
+              "masaa'ul-khair",
+              "مَسَاءُ النُّورِ"
+            ],
+            [
+              "Casual",
+              "أَهْلًا",
+              "ahlan",
+              "أَهْلًا بِكَ"
+            ],
+            [
+              "Leaving",
+              "إِلَى اللِّقَاءِ",
+              "ilal-liqaa'",
+              "مَعَ السَّلَامَةِ"
+            ],
+            [
+              "Leaving (for longer)",
+              "إِلَى الْغَدِ",
+              "ilal-ghad",
+              "إِلَى الْغَدِ"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that saying goodbye uses two **paired** phrases rather than repeating each other: the one leaving says إِلَى اللِّقَاءِ (\"until the meeting\"), the one staying replies مَعَ السَّلَامَةِ (\"go with safety\") — much like \"see you\" answered with \"take care\"."
+        },
+        {
+          "type": "kotak",
+          "title": "When to use the Islamic greeting, and when not to",
+          "items": [
+            "اَلسَّلَامُ عَلَيْكُمْ is the most common greeting across the Arab world, including at the office and on television. It is not just a religious greeting but a normal everyday one.",
+            "With people you know are not Muslim — in Lebanon, Egypt or Syria, for example — the neutral greetings that are always safe are صَبَاحُ الْخَيْرِ, مَسَاءُ الْخَيْرِ or أَهْلًا. All of them are polite and carry no religious weight."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ten survival phrases",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These phrases are not grammar to memorize — they are emergency tools. Learn them whole now; understand how they're built later."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Arabic",
+            "Pronunciation",
+            "English"
+          ],
+          "rows": [
+            [
+              "نَعَمْ / لَا",
+              "na'am / laa",
+              "Yes / No"
+            ],
+            [
+              "شُكْرًا",
+              "shukran",
+              "Thank you"
+            ],
+            [
+              "عَفْوًا",
+              "'afwan",
+              "You're welcome; excuse me"
+            ],
+            [
+              "مِنْ فَضْلِكَ",
+              "min faḍlika",
+              "Please"
+            ],
+            [
+              "آسِف",
+              "aasif",
+              "Sorry"
+            ],
+            [
+              "لَا أَفْهَمُ",
+              "laa afhamu",
+              "I don't understand"
+            ],
+            [
+              "لَا أَعْرِفُ",
+              "laa a'rifu",
+              "I don't know"
+            ],
+            [
+              "مَرَّةً أُخْرَى، مِنْ فَضْلِكَ",
+              "marratan ukhraa, min faḍlika",
+              "Once more, please"
+            ],
+            [
+              "بِبُطْءٍ، مِنْ فَضْلِكَ",
+              "bibuṭ'in, min faḍlika",
+              "Slowly, please"
+            ],
+            [
+              "مَا مَعْنَى هٰذَا؟",
+              "maa ma'naa haadhaa?",
+              "What does this mean?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "عَفْوًا works two ways: it answers a thank-you **and** gets someone's attention in the street (\"excuse me\"). For a real apology, use آسِف — a woman says آسِفَة (*aasifah*)."
+        },
+        {
+          "type": "kotak",
+          "title": "One sentence that changes everything",
+          "items": [
+            "أَنَا أَتَعَلَّمُ الْعَرَبِيَّةَ. مِنْ فَضْلِكَ، تَكَلَّمْ بِالْعَرَبِيَّةِ. — *anaa ata'allamul-'arabiyyah. min faḍlika, takallam bil-'arabiyyah.* \"I'm learning Arabic. Please speak Arabic.\"",
+            "The typical problem when learning Arabic in an Arab country is not that people are unfriendly but the opposite: as soon as they hear your accent, many switch to English, thinking they're helping. This sentence stops that politely, and almost everyone will happily stay in Arabic."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "اَلسَّلَامُ عَلَيْكُمْ",
+      "baca": "as-salaamu 'alaikum",
+      "en": "peace be upon you"
+    },
+    {
+      "ar": "صَبَاحُ الْخَيْرِ",
+      "baca": "ṣabaahul-khair",
+      "en": "good morning"
+    },
+    {
+      "ar": "مَسَاءُ الْخَيْرِ",
+      "baca": "masaa'ul-khair",
+      "en": "good afternoon/evening"
+    },
+    {
+      "ar": "أَهْلًا وَسَهْلًا",
+      "baca": "ahlan wa sahlan",
+      "en": "welcome"
+    },
+    {
+      "ar": "إِلَى اللِّقَاءِ",
+      "baca": "ilal-liqaa'",
+      "en": "see you"
+    },
+    {
+      "ar": "مَعَ السَّلَامَةِ",
+      "baca": "ma'as-salaamah",
+      "en": "goodbye, take care"
+    },
+    {
+      "ar": "اِسْم",
+      "baca": "ism",
+      "en": "name"
+    },
+    {
+      "ar": "مَا",
+      "baca": "maa",
+      "en": "what"
+    },
+    {
+      "ar": "مَنْ",
+      "baca": "man",
+      "en": "who"
+    },
+    {
+      "ar": "كَيْفَ",
+      "baca": "kaifa",
+      "en": "how"
+    },
+    {
+      "ar": "هَلْ",
+      "baca": "hal",
+      "en": "question marker (yes/no)"
+    },
+    {
+      "ar": "حَال",
+      "baca": "haal",
+      "en": "condition, how one is"
+    },
+    {
+      "ar": "بِخَيْرٍ",
+      "baca": "bikhairin",
+      "en": "fine, well"
+    },
+    {
+      "ar": "اَلْحَمْدُ لِلَّهِ",
+      "baca": "alhamdu lillaah",
+      "en": "praise be to God"
+    },
+    {
+      "ar": "شُكْرًا",
+      "baca": "shukran",
+      "en": "thank you"
+    },
+    {
+      "ar": "عَفْوًا",
+      "baca": "'afwan",
+      "en": "you're welcome; excuse me"
+    },
+    {
+      "ar": "مِنْ فَضْلِكَ",
+      "baca": "min faḍlika",
+      "en": "please"
+    },
+    {
+      "ar": "نَعَمْ",
+      "baca": "na'am",
+      "en": "yes"
+    },
+    {
+      "ar": "لَا",
+      "baca": "laa",
+      "en": "no"
+    },
+    {
+      "ar": "أَنَا",
+      "baca": "anaa",
+      "en": "I"
+    },
+    {
+      "ar": "أَنْتَ / أَنْتِ",
+      "baca": "anta / anti",
+      "en": "you (m / f)"
+    },
+    {
+      "ar": "هُوَ / هِيَ",
+      "baca": "huwa / hiya",
+      "en": "he / she"
+    },
+    {
+      "ar": "نَحْنُ",
+      "baca": "nahnu",
+      "en": "we"
+    },
+    {
+      "ar": "طَالِب / طَالِبَة",
+      "baca": "ṭaalib / ṭaalibah",
+      "en": "student (m / f)"
+    },
+    {
+      "ar": "مُدَرِّس / مُدَرِّسَة",
+      "baca": "mudarris / mudarrisah",
+      "en": "teacher (m / f)"
+    },
+    {
+      "ar": "جَدِيد",
+      "baca": "jadiid",
+      "en": "new"
+    },
+    {
+      "ar": "هُنَا",
+      "baca": "hunaa",
+      "en": "here"
+    },
+    {
+      "ar": "مِنْ",
+      "baca": "min",
+      "en": "from"
+    },
+    {
+      "ar": "وَ",
+      "baca": "wa",
+      "en": "and"
+    },
+    {
+      "ar": "أَيْضًا",
+      "baca": "aiḍan",
+      "en": "also, too"
+    },
+    {
+      "ar": "إِنْدُونِيسِيَا",
+      "baca": "Induuniisiyaa",
+      "en": "Indonesia"
+    },
+    {
+      "ar": "مِصْر",
+      "baca": "Miṣr",
+      "en": "Egypt"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Arabic. Write the vowel marks.",
+      "items": [
+        "Good morning! What's your name? (to a man)",
+        "My name is Budi.",
+        "I'm a new student.",
+        "How are you? (to a woman)",
+        "Fine, thank God.",
+        "Are you from Egypt? (to a man)"
+      ]
+    },
+    {
+      "prompt": "Fill in the attached pronoun (ـِي، ـكَ، ـكِ، ـهُ، ـهَا).",
+      "items": [
+        "اِسْمُ____ بُودِي. (I)",
+        "مَا اسْمُ____؟ (you, f)",
+        "كَيْفَ حَالُ____؟ (you, m)",
+        "اِسْمُ____ فَاطِمَة. (she)",
+        "اِسْمُ____ أَحْمَد. (he)",
+        "حَالُ____ بِخَيْرٍ. (we)"
+      ]
+    },
+    {
+      "prompt": "Choose the right greeting. Write out the full sentence.",
+      "items": [
+        "You walk into a bakery at eight in the morning. You say to the baker: ____.",
+        "The baker answers your greeting with ____.",
+        "You walk into a restaurant at seven in the evening. You say to the waiter: ____.",
+        "Your friend says اَلسَّلَامُ عَلَيْكُمْ. You answer ____.",
+        "You're leaving your friend's house. You say ____, and he answers ____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "طَالِبٌ / أَنَا / جَدِيدٌ",
+        "اسْمُكَ / مَا / ؟",
+        "بُودِي / اِسْمِي",
+        "حَالُكِ / كَيْفَ / ؟",
+        "مِنْ / أَنَا / إِنْدُونِيسِيَا",
+        "أَنْتَ / هَلْ / مُدَرِّسٌ / ؟"
+      ]
+    }
+  ],
+  "answers": [
+    "صَبَاحُ الْخَيْرِ! مَا اسْمُكَ؟ — اِسْمِي بُودِي. — أَنَا طَالِبٌ جَدِيدٌ. — كَيْفَ حَالُكِ؟ — بِخَيْرٍ، اَلْحَمْدُ لِلَّهِ. — هَلْ أَنْتَ مِنْ مِصْرَ؟",
+    "اِسْمِي — اسْمُكِ — حَالُكَ — اِسْمُهَا — اِسْمُهُ — حَالُنَا",
+    "صَبَاحُ الْخَيْرِ. — صَبَاحُ النُّورِ. — مَسَاءُ الْخَيْرِ. — وَعَلَيْكُمُ السَّلَامُ. — إِلَى اللِّقَاءِ / مَعَ السَّلَامَةِ.",
+    "أَنَا طَالِبٌ جَدِيدٌ. — مَا اسْمُكَ؟ — اِسْمِي بُودِي. — كَيْفَ حَالُكِ؟ — أَنَا مِنْ إِنْدُونِيسِيَا. — هَلْ أَنْتَ مُدَرِّسٌ؟"
+  ],
+  "wave": "Starting tomorrow, reread this unit's dialogue before you begin the next unit. Five minutes, out loud."
+}

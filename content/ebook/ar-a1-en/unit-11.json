@@ -1,0 +1,614 @@
+{
+  "title": "Excuse me, where is...?",
+  "title_target": "لَوْ سَمَحْتَ، أَيْنَ...؟",
+  "goal": "Ask for directions, understand them, and use the imperative for the first time.",
+  "bekal": [
+    "politely ask a stranger where a place is",
+    "understand and give directions",
+    "form commands from verbs you already know"
+  ],
+  "dialogs": [
+    {
+      "title": "حِوَار — فِي الشَّارِعِ",
+      "intro": "Budi is lost, looking for the post office in the city center.",
+      "lines": [
+        {
+          "speaker": "بُودِي:",
+          "text": "لَوْ سَمَحْتَ، أَيْنَ مَكْتَبُ الْبَرِيدِ؟",
+          "baca": "lau samahta, aina maktabul-bariid?",
+          "id": "Excuse me, where is the post office?",
+          "literal": "if you-permit, where office-the post-the?"
+        },
+        {
+          "speaker": "رَجُل:",
+          "text": "قَرِيبٌ. اِمْشِ مُسْتَقِيمًا حَتَّى الْإِشَارَةِ.",
+          "baca": "qariib. imshi mustaqiiman hattal-ishaarah.",
+          "id": "It's close. Walk straight on to the traffic lights.",
+          "literal": "near. walk straight until the-signal."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "ثُمَّ؟",
+          "baca": "thumma?",
+          "id": "And then?",
+          "literal": "then?"
+        },
+        {
+          "speaker": "رَجُل:",
+          "text": "ثُمَّ اِنْعَطِفْ يَمِينًا. اَلْمَكْتَبُ عَلَى يَسَارِكَ.",
+          "baca": "thumma in'aṭif yamiinan. al-maktabu 'alaa yasaarik.",
+          "id": "Then turn right. The post office is on your left.",
+          "literal": "then turn to-right. the-office on left-your."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "هَلْ هُوَ بَعِيدٌ؟",
+          "baca": "hal huwa ba'iid?",
+          "id": "Is it far?",
+          "literal": "is it far?"
+        },
+        {
+          "speaker": "رَجُل:",
+          "text": "لَا، خَمْسُ دَقَائِقَ مَشْيًا.",
+          "baca": "laa, khamsu daqaa'iqa mashyan.",
+          "id": "No, five minutes on foot.",
+          "literal": "no, five minutes by-walking."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "وَهَلْ هُنَاكَ صَيْدَلِيَّةٌ قَرِيبَةٌ؟",
+          "baca": "wa hal hunaaka ṣaidaliyyatun qariibah?",
+          "id": "Is there a pharmacy nearby?",
+          "literal": "and is there pharmacy near?"
+        },
+        {
+          "speaker": "رَجُل:",
+          "text": "نَعَمْ، بَيْنَ الْبَنْكِ وَالْمَسْجِدِ.",
+          "baca": "na'am, bainal-banki wal-masjid.",
+          "id": "Yes, between the bank and the mosque.",
+          "literal": "yes, between the-bank and the-mosque."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "شُكْرًا جَزِيلًا! أَنَا لَسْتُ مِنْ هُنَا.",
+          "baca": "shukran jaziilan! anaa lastu min hunaa.",
+          "id": "Thank you so much! I'm not from here.",
+          "literal": "thanks abundant! I am-not from here."
+        },
+        {
+          "speaker": "رَجُل:",
+          "text": "عَفْوًا. مِنْ أَيْنَ أَنْتَ؟",
+          "baca": "'afwan. min aina anta?",
+          "id": "You're welcome. Where are you from?",
+          "literal": "you're-welcome. from where you?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مِنْ إِنْدُونِيسِيَا. أَنَا هُنَا لِلدِّرَاسَةِ.",
+          "baca": "min Induuniisiyaa. anaa hunaa lid-diraasah.",
+          "id": "From Indonesia. I'm here to study.",
+          "literal": "from Indonesia. I here for-the-studying."
+        },
+        {
+          "speaker": "رَجُل:",
+          "text": "أَهْلًا بِكَ فِي مِصْرَ! حَظًّا سَعِيدًا.",
+          "baca": "ahlan bika fii Miṣr! haẓẓan sa'iidan.",
+          "id": "Welcome to Egypt! Good luck.",
+          "literal": "welcome with-you in Egypt! luck happy."
+        }
+      ],
+      "notes": [
+        "**لَوْ سَمَحْتَ is the safest opener.** Literally \"if you permit\". To a woman: لَوْ سَمَحْتِ. Firing a question at a stranger with no opener at all sounds pushy, just as it does in English.",
+        "**اِمْشِ, اِنْعَطِفْ — the imperative.** They all start with اِ and are built from the present-tense verb with its prefix dropped. See the grammar box; the pattern is more regular than it looks.",
+        "**يَمِينًا and يَسَارًا — tanwin fathah again.** The ending ـًا turns a noun into an adverb: يَمِين (right) → يَمِينًا (to the right), مَشْي (walking) → مَشْيًا (on foot). You have already met the same pattern in شُكْرًا and غَدًا.",
+        "**عَلَى يَسَارِكَ — \"on your left\".** Right and left are always relative to the person, as in English. Compass points are for longer distances: شَمَال (north), جَنُوب (south), شَرْق (east), غَرْب (west).",
+        "**لَسْتُ = لَيْسَ for \"I\".** لَيْسَ changes with its subject like a past-tense verb: لَسْتُ (I am not), لَسْتَ (you are not), لَيْسَ (he is not), لَيْسَتْ (she is not), لَسْنَا (we are not).",
+        "**لِلدِّرَاسَةِ = لِ + الدِّرَاسَة.** The alif of اَلْ drops out after لِ, and the sounds merge: *lid-diraasah*. Same thing in لِلْبَيْتِ (for the house), بِالسَّيَّارَةِ (by car), and فِي الْبَيْتِ, read *fil-bait*.",
+        "**حَتَّى means \"until\".** حَتَّى الْإِشَارَةِ (up to the traffic lights), حَتَّى الْآنَ (until now), مِنْ ... حَتَّى ... (from ... until ...). It can also mean \"even\" — context tells them apart.",
+        "**حَظًّا سَعِيدًا** is \"good luck\". Other short well-wishing phrases you will hear often: بِالتَّوْفِيقِ (all the best), رِحْلَةً سَعِيدَةً (have a good trip), بِالشِّفَاءِ (get well soon)."
+      ],
+      "grammars": [
+        {
+          "title": "Fi'il amr — the imperative",
+          "body": [
+            "How it works: take the present-tense verb for \"you\", drop the prefix تَـ, and put a sukun on the last letter. If what remains starts with a consonant without a vowel, add اِ in front."
+          ],
+          "table": {
+            "head": [
+              "Present (you)",
+              "Command (m.)",
+              "Command (f.)",
+              "Pronunciation",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "تَكْتُبُ",
+                "اُكْتُبْ",
+                "اُكْتُبِي",
+                "uktub / uktubii",
+                "write!"
+              ],
+              [
+                "تَذْهَبُ",
+                "اِذْهَبْ",
+                "اِذْهَبِي",
+                "idh-hab / idh-habii",
+                "go!"
+              ],
+              [
+                "تَجْلِسُ",
+                "اِجْلِسْ",
+                "اِجْلِسِي",
+                "ijlis / ijlisii",
+                "sit down!"
+              ],
+              [
+                "تَسْمَعُ",
+                "اِسْمَعْ",
+                "اِسْمَعِي",
+                "isma' / isma'ii",
+                "listen!"
+              ],
+              [
+                "تَمْشِي",
+                "اِمْشِ",
+                "اِمْشِي",
+                "imshi / imshii",
+                "walk!"
+              ],
+              [
+                "تَأْخُذُ",
+                "خُذْ",
+                "خُذِي",
+                "khudh / khudhii",
+                "take!"
+              ],
+              [
+                "تَقُولُ",
+                "قُلْ",
+                "قُولِي",
+                "qul / quulii",
+                "say!"
+              ],
+              [
+                "تَنْظُرُ",
+                "اُنْظُرْ",
+                "اُنْظُرِي",
+                "unẓur / unẓurii",
+                "look!"
+              ]
+            ]
+          },
+          "after": [
+            "The vowel on the initial اِ follows the verb's middle vowel: if the middle is ḍammah, it becomes اُ (اُكْتُبْ); otherwise اِ (اِذْهَبْ, اِجْلِسْ).",
+            "**You don't forbid by changing the command form**, but with لَا + the present-tense verb: لَا تَذْهَبْ (don't go), لَا تَنْسَ (don't forget), لَا تَقْلَقْ (don't worry)."
+          ]
+        },
+        {
+          "title": "Directions",
+          "table": {
+            "head": [
+              "Arabic",
+              "Pronunciation",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "اِمْشِ مُسْتَقِيمًا",
+                "imshi mustaqiiman",
+                "go straight on"
+              ],
+              [
+                "اِنْعَطِفْ يَمِينًا",
+                "in'aṭif yamiinan",
+                "turn right"
+              ],
+              [
+                "اِنْعَطِفْ يَسَارًا",
+                "in'aṭif yasaaran",
+                "turn left"
+              ],
+              [
+                "عَلَى يَمِينِكَ",
+                "'alaa yamiinik",
+                "on your right"
+              ],
+              [
+                "عَلَى يَسَارِكَ",
+                "'alaa yasaarik",
+                "on your left"
+              ],
+              [
+                "أَمَامَكَ",
+                "amaamak",
+                "in front of you"
+              ],
+              [
+                "اُعْبُرِ الشَّارِعَ",
+                "u'buris-shaari'",
+                "cross the street"
+              ],
+              [
+                "عِنْدَ الْإِشَارَةِ",
+                "'indal-ishaarah",
+                "at the traffic lights"
+              ],
+              [
+                "فِي الزَّاوِيَةِ",
+                "fiz-zaawiyah",
+                "on the corner"
+              ],
+              [
+                "بِجَانِبِ الْبَنْكِ",
+                "bijaanibil-bank",
+                "next to the bank"
+              ],
+              [
+                "مُقَابِلَ الْمَسْجِدِ",
+                "muqaabilal-masjid",
+                "opposite the mosque"
+              ],
+              [
+                "فِي نِهَايَةِ الشَّارِعِ",
+                "fii nihaayatish-shaari'",
+                "at the end of the street"
+              ]
+            ]
+          },
+          "after": [
+            "If the directions come too fast: مَرَّةً أُخْرَى، مِنْ فَضْلِكَ (\"once more, please\") or بِبُطْءٍ، مِنْ فَضْلِكَ (\"slowly, please\"). These two sentences are far more useful than ten extra vocabulary words."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Places in town",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Arabic",
+            "Pronunciation",
+            "Meaning",
+            "Arabic",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "شَارِع",
+              "shaari'",
+              "street",
+              "مَسْجِد",
+              "masjid",
+              "mosque"
+            ],
+            [
+              "مَيْدَان",
+              "maidaan",
+              "square",
+              "كَنِيسَة",
+              "kaniisah",
+              "church"
+            ],
+            [
+              "بَنْك",
+              "bank",
+              "bank",
+              "مُسْتَشْفَى",
+              "mustashfaa",
+              "hospital"
+            ],
+            [
+              "مَكْتَبُ الْبَرِيدِ",
+              "maktabul-bariid",
+              "post office",
+              "صَيْدَلِيَّة",
+              "ṣaidaliyyah",
+              "pharmacy"
+            ],
+            [
+              "مَحَطَّة",
+              "mahaṭṭah",
+              "station, stop",
+              "فُنْدُق",
+              "funduq",
+              "hotel"
+            ],
+            [
+              "مَطَار",
+              "maṭaar",
+              "airport",
+              "مَتْحَف",
+              "mat-haf",
+              "museum"
+            ],
+            [
+              "حَدِيقَة",
+              "hadiiqah",
+              "park, garden",
+              "سِفَارَة",
+              "sifaarah",
+              "embassy"
+            ],
+            [
+              "مَدْرَسَة",
+              "madrasah",
+              "school",
+              "شُرْطَة",
+              "shurṭah",
+              "police"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice again the prefix مَ- that marks a place: مَكْتَب, مَحَطَّة, مَطَار, مَتْحَف, مَدْرَسَة, مَسْجِد. Six words with the same pattern at once — and English has already borrowed two of them as *madrasa* and, via Spanish and French, *mosque*."
+        },
+        {
+          "type": "kotak",
+          "title": "Who to ask",
+          "items": [
+            "In Arab cities people are almost always happy to help a lost foreigner — often to the point of walking you there. What you should know: some people would rather guess than admit they don't know, because admitting it feels like refusing to help.",
+            "So a safe habit: ask two people at two different spots. If the answers match, keep going. If they differ, ask a third."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "How to get there and how far",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Arabic",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "كَيْفَ أَذْهَبُ إِلَى...؟",
+              "kaifa adh-habu ilaa...?",
+              "How do I get to...?"
+            ],
+            [
+              "كَمْ يَبْعُدُ مِنْ هُنَا؟",
+              "kam yab'udu min hunaa?",
+              "How far is it from here?"
+            ],
+            [
+              "كَمْ دَقِيقَةً مَشْيًا؟",
+              "kam daqiiqatan mashyan?",
+              "How many minutes on foot?"
+            ],
+            [
+              "هَلْ أَسْتَطِيعُ الْمَشْيَ؟",
+              "hal astaṭii'ul-mashy?",
+              "Can I walk there?"
+            ],
+            [
+              "خُذْ سَيَّارَةَ أُجْرَةٍ",
+              "khudh sayyaarata ujrah",
+              "Just take a taxi"
+            ],
+            [
+              "أَيْنَ مَحَطَّةُ الْمِتْرُو؟",
+              "aina mahaṭṭatul-mitruu?",
+              "Where is the metro station?"
+            ],
+            [
+              "إِلَى الْمَطَارِ، مِنْ فَضْلِكَ",
+              "ilal-maṭaar, min faḍlik",
+              "To the airport, please"
+            ],
+            [
+              "قِفْ هُنَا، مِنْ فَضْلِكَ",
+              "qif hunaa, min faḍlik",
+              "Stop here, please"
+            ],
+            [
+              "كَمِ الْأُجْرَةُ؟",
+              "kamil-ujrah?",
+              "How much is the fare?"
+            ],
+            [
+              "أَنَا تَائِهٌ",
+              "anaa taa'ih",
+              "I'm lost"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "أَنَا تَائِهٌ (\"I'm lost\") is one of the most useful sentences in this book, and it almost always brings help right away. A woman says أَنَا تَائِهَةٌ."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "لَوْ سَمَحْتَ",
+      "baca": "lau samahta",
+      "en": "excuse me"
+    },
+    {
+      "ar": "شَارِع",
+      "baca": "shaari'",
+      "en": "street"
+    },
+    {
+      "ar": "يَمِين / يَسَار",
+      "baca": "yamiin / yasaar",
+      "en": "right / left"
+    },
+    {
+      "ar": "مُسْتَقِيم",
+      "baca": "mustaqiim",
+      "en": "straight"
+    },
+    {
+      "ar": "يَنْعَطِفُ",
+      "baca": "yan'aṭifu",
+      "en": "to turn"
+    },
+    {
+      "ar": "يَمْشِي",
+      "baca": "yamshii",
+      "en": "to walk"
+    },
+    {
+      "ar": "يَعْبُرُ",
+      "baca": "ya'buru",
+      "en": "to cross"
+    },
+    {
+      "ar": "إِشَارَة",
+      "baca": "ishaarah",
+      "en": "traffic lights, signal"
+    },
+    {
+      "ar": "زَاوِيَة",
+      "baca": "zaawiyah",
+      "en": "corner"
+    },
+    {
+      "ar": "مُقَابِلَ",
+      "baca": "muqaabila",
+      "en": "opposite"
+    },
+    {
+      "ar": "نِهَايَة",
+      "baca": "nihaayah",
+      "en": "end"
+    },
+    {
+      "ar": "قَرِيب / بَعِيد",
+      "baca": "qariib / ba'iid",
+      "en": "near / far"
+    },
+    {
+      "ar": "بَنْك",
+      "baca": "bank",
+      "en": "bank"
+    },
+    {
+      "ar": "صَيْدَلِيَّة",
+      "baca": "ṣaidaliyyah",
+      "en": "pharmacy"
+    },
+    {
+      "ar": "مُسْتَشْفَى",
+      "baca": "mustashfaa",
+      "en": "hospital"
+    },
+    {
+      "ar": "فُنْدُق",
+      "baca": "funduq",
+      "en": "hotel"
+    },
+    {
+      "ar": "مَحَطَّة",
+      "baca": "mahaṭṭah",
+      "en": "station, stop"
+    },
+    {
+      "ar": "مَطَار",
+      "baca": "maṭaar",
+      "en": "airport"
+    },
+    {
+      "ar": "مَكْتَبُ الْبَرِيدِ",
+      "baca": "maktabul-bariid",
+      "en": "post office"
+    },
+    {
+      "ar": "سَيَّارَةُ أُجْرَةٍ",
+      "baca": "sayyaaratu ujrah",
+      "en": "taxi"
+    },
+    {
+      "ar": "أُجْرَة",
+      "baca": "ujrah",
+      "en": "fare"
+    },
+    {
+      "ar": "حَتَّى",
+      "baca": "hattaa",
+      "en": "until"
+    },
+    {
+      "ar": "تَائِه",
+      "baca": "taa'ih",
+      "en": "lost"
+    },
+    {
+      "ar": "حَظًّا سَعِيدًا",
+      "baca": "haẓẓan sa'iidan",
+      "en": "good luck"
+    },
+    {
+      "ar": "شَمَال / جَنُوب",
+      "baca": "shamaal / januub",
+      "en": "north / south"
+    },
+    {
+      "ar": "شَرْق / غَرْب",
+      "baca": "sharq / gharb",
+      "en": "east / west"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Make these into commands (to a man, then to a woman).",
+      "items": [
+        "تَكْتُبُ ←",
+        "تَجْلِسُ ←",
+        "تَذْهَبُ ←",
+        "تَسْمَعُ ←",
+        "تَأْخُذُ ←",
+        "تَنْظُرُ ←"
+      ]
+    },
+    {
+      "prompt": "Translate into Arabic.",
+      "items": [
+        "Excuse me, where is the bank?",
+        "Walk straight on to the traffic lights.",
+        "Then turn left.",
+        "The pharmacy is opposite the mosque.",
+        "How far is it from here?",
+        "I'm lost."
+      ]
+    },
+    {
+      "prompt": "Make these into prohibitions.",
+      "items": [
+        "اِذْهَبْ إِلَى السُّوقِ.",
+        "اُكْتُبْ هُنَا.",
+        "اِجْلِسْ عَلَى الْكُرْسِيِّ.",
+        "خُذْ هٰذَا الْكِتَابَ.",
+        "اِنْعَطِفْ يَمِينًا."
+      ]
+    },
+    {
+      "prompt": "Give directions from your home to each place below, two sentences each.",
+      "items": [
+        "to the nearest mosque",
+        "to the market",
+        "to the hospital",
+        "to the bus stop",
+        "to school"
+      ]
+    }
+  ],
+  "answers": [
+    "اُكْتُبْ / اُكْتُبِي — اِجْلِسْ / اِجْلِسِي — اِذْهَبْ / اِذْهَبِي — اِسْمَعْ / اِسْمَعِي — خُذْ / خُذِي — اُنْظُرْ / اُنْظُرِي",
+    "لَوْ سَمَحْتَ، أَيْنَ الْبَنْكُ؟ — اِمْشِ مُسْتَقِيمًا حَتَّى الْإِشَارَةِ. — ثُمَّ اِنْعَطِفْ يَسَارًا. — اَلصَّيْدَلِيَّةُ مُقَابِلَ الْمَسْجِدِ. — كَمْ يَبْعُدُ مِنْ هُنَا؟ — أَنَا تَائِهٌ.",
+    "لَا تَذْهَبْ إِلَى السُّوقِ. — لَا تَكْتُبْ هُنَا. — لَا تَجْلِسْ عَلَى الْكُرْسِيِّ. — لَا تَأْخُذْ هٰذَا الْكِتَابَ. — لَا تَنْعَطِفْ يَمِينًا.",
+    "Example: اُخْرُجْ مِنَ الْبَيْتِ وَاِمْشِ مُسْتَقِيمًا، اَلْمَسْجِدُ عَلَى يَمِينِكَ — اِنْعَطِفْ يَسَارًا عِنْدَ الْإِشَارَةِ، اَلسُّوقُ فِي نِهَايَةِ الشَّارِعِ — اِمْشِ مُسْتَقِيمًا ثُمَّ اُعْبُرِ الشَّارِعَ، اَلْمُسْتَشْفَى مُقَابِلَ الْبَنْكِ — اَلْمَحَطَّةُ قَرِيبَةٌ، بِجَانِبِ الصَّيْدَلِيَّةِ — اِنْعَطِفْ يَمِينًا فِي الزَّاوِيَةِ، اَلْمَدْرَسَةُ أَمَامَكَ"
+  ],
+  "wave": "Tomorrow, as you walk out of your house, give yourself directions in Arabic: straight on, turn right, opposite."
+}

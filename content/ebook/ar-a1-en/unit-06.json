@@ -1,0 +1,644 @@
+{
+  "title": "How much is it?",
+  "title_target": "بِكَمْ هٰذَا؟",
+  "goal": "Say and understand numbers, ask about prices, and get to grips with the number rule that is both the most confusing and the most used.",
+  "bekal": [
+    "count from one to a hundred",
+    "ask about price and quantity with *bikam* and *kam*",
+    "say how many things there are in the correct form"
+  ],
+  "dialogs": [
+    {
+      "title": "حِوَار — فِي مَحَلِّ الْقِرْطَاسِيَّةِ",
+      "intro": "Budi is buying school supplies at a stationery shop near the campus.",
+      "lines": [
+        {
+          "speaker": "بُودِي:",
+          "text": "اَلسَّلَامُ عَلَيْكُمْ. عِنْدَكُمْ دَفَاتِرُ؟",
+          "baca": "as-salaamu 'alaikum. 'indakum dafaatir?",
+          "id": "Peace be upon you. Do you have notebooks?",
+          "literal": "peace upon you(pl). at-you(pl) notebooks?"
+        },
+        {
+          "speaker": "اَلْبَائِع:",
+          "text": "وَعَلَيْكُمُ السَّلَامُ. نَعَمْ، تَفَضَّلْ.",
+          "baca": "wa 'alaikumus-salaam. na'am, tafaḍḍal.",
+          "id": "And upon you be peace. Yes, here you are.",
+          "literal": "and upon you(pl) peace. yes, please."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "بِكَمْ هٰذَا الدَّفْتَرُ؟",
+          "baca": "bikam haadhad-daftar?",
+          "id": "How much is this notebook?",
+          "literal": "for-how-much the-notebook this?"
+        },
+        {
+          "speaker": "اَلْبَائِع:",
+          "text": "بِعَشَرَةِ جُنَيْهَاتٍ.",
+          "baca": "bi'asharati junaihaat.",
+          "id": "Ten pounds.",
+          "literal": "for ten pounds."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "أُرِيدُ ثَلَاثَةَ دَفَاتِرَ وَخَمْسَةَ أَقْلَامٍ.",
+          "baca": "uriidu thalaathata dafaatira wa khamsata aqlaam.",
+          "id": "I'd like three notebooks and five pens.",
+          "literal": "I-want three notebooks and five pens."
+        },
+        {
+          "speaker": "اَلْبَائِع:",
+          "text": "اَلْأَقْلَامُ بِخَمْسَةِ جُنَيْهَاتٍ لِلْوَاحِدِ.",
+          "baca": "al-aqlaamu bikhamsati junaihaatin lil-waahid.",
+          "id": "The pens are five pounds each.",
+          "literal": "the-pens for five pounds for-the-one."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "وَكَمِ الْمَجْمُوعُ؟",
+          "baca": "wa kamil-majmuu'?",
+          "id": "So how much is the total?",
+          "literal": "and how-much the-total?"
+        },
+        {
+          "speaker": "اَلْبَائِع:",
+          "text": "خَمْسَةٌ وَخَمْسُونَ جُنَيْهًا.",
+          "baca": "khamsatun wa khamsuuna junaihan.",
+          "id": "Fifty-five pounds.",
+          "literal": "five and-fifty pound."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "هٰذَا غَالٍ قَلِيلًا. هَلْ عِنْدَكُمْ أَرْخَصُ؟",
+          "baca": "haadhaa ghaalin qaliilan. hal 'indakum arkhaṣ?",
+          "id": "That's a bit expensive. Do you have anything cheaper?",
+          "literal": "this expensive a-little. (question) at-you(pl) cheaper?"
+        },
+        {
+          "speaker": "اَلْبَائِع:",
+          "text": "نَعَمْ، هٰذَا بِثَلَاثَةِ جُنَيْهَاتٍ فَقَطْ.",
+          "baca": "na'am, haadhaa bithalaathati junaihaatin faqaṭ.",
+          "id": "Yes, this one is just three pounds.",
+          "literal": "yes, this for three pounds only."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "طَيِّبٌ. تَفَضَّلْ، هٰذِهِ خَمْسُونَ جُنَيْهًا.",
+          "baca": "ṭayyib. tafaḍḍal, haadhihi khamsuuna junaihan.",
+          "id": "OK. Here you are, fifty pounds.",
+          "literal": "good. please, this fifty pound."
+        },
+        {
+          "speaker": "اَلْبَائِع:",
+          "text": "وَهٰذَا الْبَاقِي. شُكْرًا، مَعَ السَّلَامَةِ!",
+          "baca": "wa haadhal-baaqii. shukran, ma'as-salaamah!",
+          "id": "And here's your change. Thank you, goodbye!",
+          "literal": "and this the-remainder. thanks, with the-safety!"
+        }
+      ],
+      "notes": [
+        "**بِكَمْ literally \"for how much\".** The بِ here marks the price — like English \"for\". The answer uses بِ too: بِعَشَرَةِ جُنَيْهَاتٍ. Answering with the bare number (just عَشَرَة) is also common in quick conversation.",
+        "**كَمِ الْمَجْمُوعُ — a kasra out of nowhere.** كَمْ originally ends in a sukun, but when it meets the اَلْ of the next word, two vowelless letters collide and the sukun becomes a kasra: *kamil-majmuu'*. You already saw the same thing in مِنَ الْمَغْرِبِ in unit 2.",
+        "**The numbers 3–10 take the opposite gender.** ثَلَاثَةَ دَفَاتِرَ — the number is in the feminine form (ثَلَاثَة) even though دَفْتَر is masculine. This is not a typo but a rule, and it confuses learners more than any other. See the grammar box.",
+        "**From 11 up, the noun is SINGULAR with tanween fatha.** خَمْسُونَ جُنَيْهًا — \"fifty pounds\", with جُنَيْه in the singular, not جُنَيْهَات. That's the exact opposite of 3–10, which take the plural. English never makes you think about this at all.",
+        "**تَفَضَّلْ is used far more often than you'd expect.** It means \"please / go ahead / here you are\" in every situation: inviting someone in, handing something over, offering a seat, inviting someone to speak. To a woman: تَفَضَّلِي. To several people: تَفَضَّلُوا.",
+        "**غَالٍ — a word whose final ي drops.** The base form is غَالِي, but the ي disappears when the word is indefinite, leaving a tanween kasra: غَالٍ. Similar words: مُحَامٍ (lawyer), نَادٍ (club). You only need to recognize these for now, not form them yourself.",
+        "**أَرْخَص — the \"-er\" form.** The pattern أَفْعَل expresses comparison: رَخِيص (cheap) → أَرْخَص (cheaper); كَبِير (big) → أَكْبَر; جَيِّد (good) → أَجْوَد or أَحْسَن. This form doesn't change for gender — one form for all.",
+        "**طَيِّب is the Arabic \"OK\".** Literally \"good\", but in conversation it works exactly like \"OK\" or \"all right\": it signals agreement or a change of topic. In Egyptian dialect it's shortened to طَبْ.",
+        "**اَلْبَاقِي — the change.** Literally \"what remains\". If you don't want your change: اِحْتَفِظْ بِالْبَاقِي (\"keep the change\")."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers 1 to 10 — and their reverse rule",
+          "body": [
+            "The numbers 1 and 2 behave like ordinary adjectives and agree with their noun. The numbers 3 to 10 do the opposite, and that is the part that needs attention."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "With masculine nouns",
+              "With feminine nouns",
+              "Example"
+            ],
+            "rows": [
+              [
+                "1",
+                "وَاحِد",
+                "وَاحِدَة",
+                "كِتَابٌ وَاحِدٌ"
+              ],
+              [
+                "2",
+                "اِثْنَانِ",
+                "اِثْنَتَانِ",
+                "كِتَابَانِ (the dual alone is enough)"
+              ],
+              [
+                "3",
+                "ثَلَاثَة",
+                "ثَلَاث",
+                "ثَلَاثَةُ كُتُبٍ · ثَلَاثُ طَاوِلَاتٍ"
+              ],
+              [
+                "4",
+                "أَرْبَعَة",
+                "أَرْبَع",
+                "أَرْبَعَةُ أَقْلَامٍ"
+              ],
+              [
+                "5",
+                "خَمْسَة",
+                "خَمْس",
+                "خَمْسَةُ دَفَاتِرَ"
+              ],
+              [
+                "6",
+                "سِتَّة",
+                "سِتّ",
+                "سِتُّ سَاعَاتٍ"
+              ],
+              [
+                "7",
+                "سَبْعَة",
+                "سَبْع",
+                "سَبْعَةُ أَيَّامٍ"
+              ],
+              [
+                "8",
+                "ثَمَانِيَة",
+                "ثَمَانٍ",
+                "ثَمَانِيَةُ طُلَّابٍ"
+              ],
+              [
+                "9",
+                "تِسْعَة",
+                "تِسْع",
+                "تِسْعُ نَوَافِذَ"
+              ],
+              [
+                "10",
+                "عَشَرَة",
+                "عَشْر",
+                "عَشَرَةُ جُنَيْهَاتٍ"
+              ]
+            ]
+          },
+          "after": [
+            "**The rule: numbers 3–10 take the form OPPOSITE to their noun.** A masculine noun (كِتَاب) gets a number in the feminine form (ثَلَاثَة); a feminine noun (طَاوِلَة) gets a number without ة (ثَلَاث). There's no satisfying explanation — it simply is so, and you'll learn it far faster through examples than through the rule.",
+            "The noun changes too: after 3–10 it becomes **plural** with a kasra — ثَلَاثَةُ كُتُبٍ, not ثَلَاثَةُ كِتَابٍ.",
+            "The good news: in everyday speech across the Arab world, this rule is often relaxed. Your mistakes won't stop anyone from understanding you — but getting it right makes your Arabic sound educated."
+          ]
+        },
+        {
+          "title": "Numbers from 11 up",
+          "table": {
+            "head": [
+              "Number",
+              "Arabic",
+              "Pronunciation",
+              "Example"
+            ],
+            "rows": [
+              [
+                "11",
+                "أَحَدَ عَشَرَ",
+                "ahada 'ashar",
+                "أَحَدَ عَشَرَ كِتَابًا"
+              ],
+              [
+                "12",
+                "اِثْنَا عَشَرَ",
+                "ithnaa 'ashar",
+                "اِثْنَا عَشَرَ شَهْرًا"
+              ],
+              [
+                "13",
+                "ثَلَاثَةَ عَشَرَ",
+                "thalaathata 'ashar",
+                "ثَلَاثَةَ عَشَرَ طَالِبًا"
+              ],
+              [
+                "20",
+                "عِشْرُونَ",
+                "'ishruun",
+                "عِشْرُونَ جُنَيْهًا"
+              ],
+              [
+                "21",
+                "وَاحِدٌ وَعِشْرُونَ",
+                "waahidun wa 'ishruun",
+                "وَاحِدٌ وَعِشْرُونَ يَوْمًا"
+              ],
+              [
+                "50",
+                "خَمْسُونَ",
+                "khamsuun",
+                "خَمْسُونَ رِيَالًا"
+              ],
+              [
+                "100",
+                "مِائَة",
+                "mi'ah",
+                "مِائَةُ دُولَارٍ"
+              ],
+              [
+                "1000",
+                "أَلْف",
+                "alf",
+                "أَلْفُ رُوبِيَّةٍ"
+              ]
+            ]
+          },
+          "after": [
+            "**From 11 on, the noun is always SINGULAR with tanween fatha** (ـًا). So عِشْرُونَ جُنَيْهًا (\"twenty pounds\"), not جُنَيْهَات. Strange to an English speaker, but consistent.",
+            "In short there are only three cases: **1–2** ordinary noun · **3–10** plural with kasra · **11 and up** singular with fatha. If you only have time to memorize one thing from this page, make it those three lines."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Arabic numerals and currencies",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The digits used in the West (1, 2, 3) do come from the Arab world — Europeans call them \"Arabic numerals\". But the eastern Arab world actually uses a different set, which comes from India. You'll see both in the street."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Western",
+            "Eastern Arabic",
+            "Arabic",
+            "Western",
+            "Eastern Arabic",
+            "Arabic"
+          ],
+          "rows": [
+            [
+              "0",
+              "٠",
+              "صِفْر",
+              "5",
+              "٥",
+              "خَمْسَة"
+            ],
+            [
+              "1",
+              "١",
+              "وَاحِد",
+              "6",
+              "٦",
+              "سِتَّة"
+            ],
+            [
+              "2",
+              "٢",
+              "اِثْنَان",
+              "7",
+              "٧",
+              "سَبْعَة"
+            ],
+            [
+              "3",
+              "٣",
+              "ثَلَاثَة",
+              "8",
+              "٨",
+              "ثَمَانِيَة"
+            ],
+            [
+              "4",
+              "٤",
+              "أَرْبَعَة",
+              "9",
+              "٩",
+              "تِسْعَة"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that numbers are **still written left to right** even though the script runs right to left: ١٩٩٥ is read one thousand nine hundred ninety-five, not the other way round. This saves you from misreading a lot of phone numbers and prices."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Currency",
+            "Arabic",
+            "Pronunciation",
+            "Country"
+          ],
+          "rows": [
+            [
+              "Pound",
+              "جُنَيْه",
+              "junaih",
+              "Egypt, Sudan"
+            ],
+            [
+              "Riyal",
+              "رِيَال",
+              "riyaal",
+              "Saudi Arabia, Qatar, Oman"
+            ],
+            [
+              "Dirham",
+              "دِرْهَم",
+              "dirham",
+              "UAE, Morocco"
+            ],
+            [
+              "Dinar",
+              "دِينَار",
+              "diinaar",
+              "Kuwait, Jordan, Iraq"
+            ],
+            [
+              "Dollar",
+              "دُولَار",
+              "duulaar",
+              "—"
+            ],
+            [
+              "Rupiah",
+              "رُوبِيَّة",
+              "ruubiyyah",
+              "Indonesia"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Shopping: phrases you'll always use",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Arabic",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "بِكَمْ هٰذَا؟",
+              "bikam haadhaa?",
+              "How much is this?"
+            ],
+            [
+              "كَمِ الْحِسَابُ؟",
+              "kamil-hisaab?",
+              "What's the total?"
+            ],
+            [
+              "هٰذَا غَالٍ جِدًّا",
+              "haadhaa ghaalin jiddan",
+              "This is very expensive"
+            ],
+            [
+              "هَلْ عِنْدَكُمْ أَرْخَصُ؟",
+              "hal 'indakum arkhaṣ?",
+              "Do you have anything cheaper?"
+            ],
+            [
+              "أُرِيدُ هٰذَا",
+              "uriidu haadhaa",
+              "I'd like this one"
+            ],
+            [
+              "لَا أُرِيدُ، شُكْرًا",
+              "laa uriid, shukran",
+              "No, thank you"
+            ],
+            [
+              "هَلْ يُمْكِنُ تَخْفِيضٌ؟",
+              "hal yumkinu takhfiiḍ?",
+              "Can you lower the price?"
+            ],
+            [
+              "سَآخُذُ هٰذَا",
+              "sa'aakhudhu haadhaa",
+              "I'll take this one"
+            ],
+            [
+              "أَيْنَ الْمُحَاسِبُ؟",
+              "ainal-muhaasib?",
+              "Where's the cashier?"
+            ],
+            [
+              "هَلْ تَقْبَلُونَ الْبِطَاقَةَ؟",
+              "hal taqbaluunal-biṭaaqah?",
+              "Do you take cards?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Haggling: what to know before you try",
+          "items": [
+            "In a traditional market (سُوق) haggling is normal and even expected. In modern shops, supermarkets and pharmacies, prices are fixed and haggling will feel awkward.",
+            "A polite phrase that works: هَلْ يُمْكِنُ تَخْفِيضٌ قَلِيلًا؟ (\"could you take a little off?\"). What doesn't work: offering half the price straight away. A fair offer is usually about two-thirds of the price quoted.",
+            "A closing line if you decide not to buy: شُكْرًا، سَأُفَكِّرُ (*shukran, sa'ufakkir* — \"thanks, I'll think about it\"). It's polite and commits you to nothing."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "بِكَمْ",
+      "baca": "bikam",
+      "en": "how much (price)"
+    },
+    {
+      "ar": "كَمْ",
+      "baca": "kam",
+      "en": "how many, how much"
+    },
+    {
+      "ar": "ثَمَن",
+      "baca": "thaman",
+      "en": "price"
+    },
+    {
+      "ar": "حِسَاب",
+      "baca": "hisaab",
+      "en": "bill, check"
+    },
+    {
+      "ar": "مَجْمُوع",
+      "baca": "majmuu'",
+      "en": "total, sum"
+    },
+    {
+      "ar": "بَاقِي",
+      "baca": "baaqii",
+      "en": "the rest, change"
+    },
+    {
+      "ar": "غَالٍ",
+      "baca": "ghaalin",
+      "en": "expensive"
+    },
+    {
+      "ar": "رَخِيص",
+      "baca": "rakhiiṣ",
+      "en": "cheap"
+    },
+    {
+      "ar": "أَرْخَص",
+      "baca": "arkhaṣ",
+      "en": "cheaper"
+    },
+    {
+      "ar": "أَغْلَى",
+      "baca": "aghlaa",
+      "en": "more expensive"
+    },
+    {
+      "ar": "بَائِع",
+      "baca": "baa'i'",
+      "en": "seller"
+    },
+    {
+      "ar": "مَحَلّ",
+      "baca": "mahall",
+      "en": "shop"
+    },
+    {
+      "ar": "سُوق",
+      "baca": "suuq",
+      "en": "market"
+    },
+    {
+      "ar": "نُقُود",
+      "baca": "nuquud",
+      "en": "money"
+    },
+    {
+      "ar": "بِطَاقَة",
+      "baca": "biṭaaqah",
+      "en": "card"
+    },
+    {
+      "ar": "تَخْفِيض",
+      "baca": "takhfiiḍ",
+      "en": "discount"
+    },
+    {
+      "ar": "تَفَضَّلْ",
+      "baca": "tafaḍḍal",
+      "en": "please, here you are"
+    },
+    {
+      "ar": "أُرِيدُ",
+      "baca": "uriidu",
+      "en": "I want, I'd like"
+    },
+    {
+      "ar": "طَيِّب",
+      "baca": "ṭayyib",
+      "en": "OK, good"
+    },
+    {
+      "ar": "قَلِيلًا",
+      "baca": "qaliilan",
+      "en": "a little, somewhat"
+    },
+    {
+      "ar": "كَثِير",
+      "baca": "kathiir",
+      "en": "many, a lot"
+    },
+    {
+      "ar": "قَلِيل",
+      "baca": "qaliil",
+      "en": "few, little"
+    },
+    {
+      "ar": "دَفْتَر / دَفَاتِر",
+      "baca": "daftar / dafaatir",
+      "en": "notebook (sing./pl.)"
+    },
+    {
+      "ar": "قَلَم / أَقْلَام",
+      "baca": "qalam / aqlaam",
+      "en": "pen (sing./pl.)"
+    },
+    {
+      "ar": "كِتَاب / كُتُب",
+      "baca": "kitaab / kutub",
+      "en": "book (sing./pl.)"
+    },
+    {
+      "ar": "جُنَيْه",
+      "baca": "junaih",
+      "en": "pound (currency)"
+    },
+    {
+      "ar": "رِيَال",
+      "baca": "riyaal",
+      "en": "riyal"
+    },
+    {
+      "ar": "دُولَار",
+      "baca": "duulaar",
+      "en": "dollar"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the number in Arabic words.",
+      "items": [
+        "7 books (كُتُب — masculine)",
+        "3 tables (طَاوِلَات — feminine)",
+        "10 pens (أَقْلَام — masculine)",
+        "5 clocks (سَاعَات — feminine)",
+        "20 students (طَالِب)",
+        "45 pounds (جُنَيْه)"
+      ]
+    },
+    {
+      "prompt": "Translate into Arabic.",
+      "items": [
+        "How much is this book?",
+        "Twenty pounds.",
+        "This is very expensive.",
+        "Do you have anything cheaper?",
+        "I'd like three notebooks.",
+        "What's the total?"
+      ]
+    },
+    {
+      "prompt": "Read these prices out in words. Write your answers.",
+      "items": [
+        "١٥ جُنَيْهًا",
+        "٣٠ رِيَالًا",
+        "٧ دُولَارَاتٍ",
+        "١٠٠ دِرْهَمٍ",
+        "٦٢ جُنَيْهًا"
+      ]
+    },
+    {
+      "prompt": "Build a short conversation in a shop: you want to buy two dictionaries and five pens, you ask for the total, and you find it too expensive.",
+      "items": [
+        "Opening greeting",
+        "Ask the price of the dictionary",
+        "Say what you want",
+        "Ask for the total",
+        "Comment on the price",
+        "Closing"
+      ]
+    }
+  ],
+  "answers": [
+    "سَبْعَةُ كُتُبٍ — ثَلَاثُ طَاوِلَاتٍ — عَشَرَةُ أَقْلَامٍ — خَمْسُ سَاعَاتٍ — عِشْرُونَ طَالِبًا — خَمْسَةٌ وَأَرْبَعُونَ جُنَيْهًا",
+    "بِكَمْ هٰذَا الْكِتَابُ؟ — بِعِشْرِينَ جُنَيْهًا. — هٰذَا غَالٍ جِدًّا. — هَلْ عِنْدَكُمْ أَرْخَصُ؟ — أُرِيدُ ثَلَاثَةَ دَفَاتِرَ. — كَمِ الْمَجْمُوعُ؟",
+    "خَمْسَةَ عَشَرَ جُنَيْهًا — ثَلَاثُونَ رِيَالًا — سَبْعَةُ دُولَارَاتٍ — مِائَةُ دِرْهَمٍ — اِثْنَانِ وَسِتُّونَ جُنَيْهًا",
+    "Example: اَلسَّلَامُ عَلَيْكُمْ. — بِكَمْ هٰذَا الْقَامُوسُ؟ — أُرِيدُ قَامُوسَيْنِ وَخَمْسَةَ أَقْلَامٍ. — كَمِ الْمَجْمُوعُ؟ — هٰذَا غَالٍ قَلِيلًا، هَلْ عِنْدَكُمْ أَرْخَصُ؟ — شُكْرًا، مَعَ السَّلَامَةِ."
+  ],
+  "wave": "Today, silently count whatever you see: three chairs, five windows, twenty stairs. In Arabic."
+}

@@ -1,0 +1,695 @@
+{
+  "title": "At the market",
+  "title_target": "فِي السُّوقِ",
+  "goal": "Shop for groceries, give quantities and weights, and understand how Arabic forms irregular plurals.",
+  "bekal": [
+    "give quantities, weights and units",
+    "recognize the two kinds of plural and know when each is used",
+    "haggle politely and close a deal"
+  ],
+  "dialogs": [
+    {
+      "title": "حِوَار — عِنْدَ بَائِعِ الْخُضَارِ",
+      "intro": "The morning market. Laila takes Budi shopping for cooking ingredients.",
+      "lines": [
+        {
+          "speaker": "لَيْلَى:",
+          "text": "صَبَاحَ الْخَيْرِ يَا عَمّ! كَيْفَ الْحَالُ؟",
+          "baca": "ṣabaahal-khairi yaa 'amm! kaifal-haal?",
+          "id": "Good morning, sir! How are things?",
+          "literal": "morning the-goodness O uncle! how the-condition?"
+        },
+        {
+          "speaker": "اَلْبَائِع:",
+          "text": "صَبَاحَ النُّورِ يَا بِنْتِي. تَفَضَّلِي، كُلُّ شَيْءٍ طَازَجٌ.",
+          "baca": "ṣabaahan-nuuri yaa bintii. tafaḍḍalii, kullu shai'in ṭaazaj.",
+          "id": "Good morning, dear. Go ahead, everything's fresh.",
+          "literal": "morning the-light O daughter-my. please, every thing fresh."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "أُرِيدُ كِيلُو طَمَاطِمَ وَنِصْفَ كِيلُو بَصَلٍ.",
+          "baca": "uriidu kiiluu ṭamaaṭima wa niṣfa kiiluu baṣal.",
+          "id": "I'd like a kilo of tomatoes and half a kilo of onions.",
+          "literal": "I-want kilo tomatoes and half kilo onions."
+        },
+        {
+          "speaker": "اَلْبَائِع:",
+          "text": "حَاضِرٌ. وَالْفَاكِهَةُ؟ عِنْدِي تُفَّاحٌ وَمَوْزٌ.",
+          "baca": "haaḍir. wal-faakihah? 'indii tuffaahun wa mauz.",
+          "id": "Certainly. And fruit? I've got apples and bananas.",
+          "literal": "present. and the-fruit? at-me apples and bananas."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "بِكَمْ كِيلُو التُّفَّاحِ؟",
+          "baca": "bikam kiiluut-tuffaah?",
+          "id": "How much is a kilo of apples?",
+          "literal": "for-how-much kilo the-apples?"
+        },
+        {
+          "speaker": "اَلْبَائِع:",
+          "text": "بِعِشْرِينَ جُنَيْهًا. وَالْمَوْزُ بِخَمْسَةَ عَشَرَ.",
+          "baca": "bi'ishriina junaihan. wal-mauzu bikhamsata 'ashar.",
+          "id": "Twenty pounds. The bananas are fifteen.",
+          "literal": "for twenty pound. and the-bananas for fifteen."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "غَالٍ يَا عَمّ! أَمْسِ كَانَ بِثَمَانِيَةَ عَشَرَ.",
+          "baca": "ghaalin yaa 'amm! amsi kaana bithamaaniyata 'ashar.",
+          "id": "That's expensive, sir! Yesterday it was eighteen.",
+          "literal": "expensive O uncle! yesterday was for eighteen."
+        },
+        {
+          "speaker": "اَلْبَائِع:",
+          "text": "خُذِي بِثَمَانِيَةَ عَشَرَ، لِأَنَّكِ زَبُونَةٌ قَدِيمَةٌ.",
+          "baca": "khudhii bithamaaniyata 'ashar, li'annaki zabuunatun qadiimah.",
+          "id": "Take them for eighteen, since you're a regular customer.",
+          "literal": "take(f) for eighteen, because-you(f) customer old."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "شُكْرًا! وَكَمِ الْمَجْمُوعُ كُلُّهُ؟",
+          "baca": "shukran! wa kamil-majmuu'u kulluh?",
+          "id": "Thank you! And how much is it all together?",
+          "literal": "thanks! and how-much the-total all-of-it?"
+        },
+        {
+          "speaker": "اَلْبَائِع:",
+          "text": "سِتُّونَ جُنَيْهًا بِالتَّمَامِ.",
+          "baca": "sittuuna junaihan bit-tamaam.",
+          "id": "Sixty pounds exactly.",
+          "literal": "sixty pound with-the-completeness."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "تَفَضَّلْ. وَهَلْ عِنْدَكَ أَكْيَاسٌ؟",
+          "baca": "tafaḍḍal. wa hal 'indaka akyaas?",
+          "id": "Here you are. Do you have bags?",
+          "literal": "please. and (question) at-you bags?"
+        },
+        {
+          "speaker": "اَلْبَائِع:",
+          "text": "طَبْعًا. شُكْرًا وَإِلَى اللِّقَاءِ!",
+          "baca": "ṭab'an. shukran wa ilal-liqaa'!",
+          "id": "Of course. Thank you, see you!",
+          "literal": "of-course. thanks and until the-meeting!"
+        }
+      ],
+      "notes": [
+        "**يَا عَمّ and يَا بِنْتِي don't mean actual family.** \"Uncle\" and \"my daughter\" are used with strangers as a polite, warm form of address — much like \"sir\", \"ma'am\" or \"dear\" in English. For someone your own age: يَا أَخِي (my brother), يَا أُخْتِي (my sister).",
+        "**صَبَاحَ الْخَيْرِ — why a fatha, not a damma?** The full form is a wish: \"(may you have) a morning of goodness\". Because it is the object of a dropped verb, it ends in a fatha. You don't need to understand the whole reason — just learn the sound as a whole.",
+        "**كُلُّ شَيْءٍ — \"every thing\" = everything.** كُلّ is always followed by a noun with a kasra: كُلُّ يَوْمٍ (every day), كُلُّ النَّاسِ (all the people). When a pronoun is attached to it, it means \"all of it\": اَلْمَجْمُوعُ كُلُّهُ (\"the total, all of it\").",
+        "**كِيلُو طَمَاطِمَ — idafa again.** \"A kilo of tomatoes\". The first word is bare, the second takes a kasra — but طَمَاطِم is one of the words that refuse tanween, so its kasra becomes a fatha: طَمَاطِمَ. Just recognize the phenomenon; don't memorize the list at this level.",
+        "**كَانَ — \"was\".** The past-tense verb that fills the gap left by the missing \"is\": أَمْسِ كَانَ بِثَمَانِيَةَ عَشَرَ (\"yesterday it was eighteen\"). كَانَ gets fully unpacked in unit 13; for now, just recognize that it marks the past.",
+        "**لِأَنَّ — \"because\".** It is always followed by a noun or an attached pronoun: لِأَنَّكِ (because you), لِأَنَّهُ (because he), لِأَنَّ الطَّعَامَ لَذِيذٌ (because the food is delicious). Same pattern as إِنَّ and لٰكِنَّ.",
+        "**خُذِي — a command to a woman.** From أَخَذَ (take): خُذْ (to a man), خُذِي (to a woman), خُذُوا (to several people). Adding ـِي for a woman works for every command form.",
+        "**بِالتَّمَامِ — \"exactly\", no change needed.** An everyday market expression confirming that the figure is a round one. Equivalent: بِالضَّبْطِ (\"precisely\").",
+        "**طَبْعًا — \"of course\".** One of the most frequently heard words in Arabic conversation. Equivalents: بِالتَّأْكِيدِ (\"certainly\"), أَكِيد (\"for sure\", more casual)."
+      ],
+      "grammars": [
+        {
+          "title": "Two kinds of plural",
+          "body": [
+            "Arabic forms plurals in two completely different ways, and unfortunately the irregular one is the one used most."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Sound plural",
+                "Singular",
+                "Plural",
+                "Pronunciation",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "Masculine (+ُونَ)",
+                  "مُسْلِم",
+                  "مُسْلِمُونَ",
+                  "muslimuun",
+                  "Muslims (m)"
+                ],
+                [
+                  "",
+                  "مُدَرِّس",
+                  "مُدَرِّسُونَ",
+                  "mudarrisuun",
+                  "teachers (m)"
+                ],
+                [
+                  "",
+                  "مُهَنْدِس",
+                  "مُهَنْدِسُونَ",
+                  "muhandisuun",
+                  "engineers"
+                ],
+                [
+                  "Feminine (+َات)",
+                  "مُسْلِمَة",
+                  "مُسْلِمَات",
+                  "muslimaat",
+                  "Muslims (f)"
+                ],
+                [
+                  "",
+                  "طَالِبَة",
+                  "طَالِبَات",
+                  "ṭaalibaat",
+                  "students (f)"
+                ],
+                [
+                  "",
+                  "سَاعَة",
+                  "سَاعَات",
+                  "saa'aat",
+                  "clocks, hours"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Broken plural",
+                "Singular",
+                "Plural",
+                "Pronunciation",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "",
+                  "كِتَاب",
+                  "كُتُب",
+                  "kutub",
+                  "books"
+                ],
+                [
+                  "",
+                  "بَيْت",
+                  "بُيُوت",
+                  "buyuut",
+                  "houses"
+                ],
+                [
+                  "",
+                  "رَجُل",
+                  "رِجَال",
+                  "rijaal",
+                  "men"
+                ],
+                [
+                  "",
+                  "وَلَد",
+                  "أَوْلَاد",
+                  "aulaad",
+                  "children"
+                ],
+                [
+                  "",
+                  "قَلَم",
+                  "أَقْلَام",
+                  "aqlaam",
+                  "pens"
+                ],
+                [
+                  "",
+                  "طَالِب",
+                  "طُلَّاب",
+                  "ṭullaab",
+                  "students"
+                ],
+                [
+                  "",
+                  "مَدْرَسَة",
+                  "مَدَارِس",
+                  "madaaris",
+                  "schools"
+                ],
+                [
+                  "",
+                  "دَفْتَر",
+                  "دَفَاتِر",
+                  "dafaatir",
+                  "notebooks"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "The sound plural is used mainly for **people** (and some feminine words). For things, it's almost always a broken plural — which has to be learned together with its singular, just like the middle vowel of verbs.",
+            "Once again: **learn them in pairs.** كِتَاب — كُتُب. Learning only the singular just postpones half the work until later, when you've forgotten the context."
+          ]
+        },
+        {
+          "title": "Non-human plurals are treated as feminine singular",
+          "body": [
+            "This is the rule that surprises learners most, and also the one broken most often. When the plural refers to **things**, its adjectives and verbs take the **feminine singular** form."
+          ],
+          "table": {
+            "head": [
+              "Arabic",
+              "Pronunciation",
+              "Meaning",
+              "Note"
+            ],
+            "rows": [
+              [
+                "اَلْكُتُبُ جَدِيدَةٌ",
+                "al-kutubu jadiidah",
+                "the books are new",
+                "جَدِيدَة, not جُدُد"
+              ],
+              [
+                "اَلْبُيُوتُ كَبِيرَةٌ",
+                "al-buyuutu kabiirah",
+                "the houses are big",
+                "feminine adjective"
+              ],
+              [
+                "هٰذِهِ الْأَقْلَامُ",
+                "haadhihil-aqlaam",
+                "these pens",
+                "هٰذِهِ, not هٰؤُلَاءِ"
+              ],
+              [
+                "اَلسَّيَّارَاتُ سَرِيعَةٌ",
+                "as-sayyaaraatu sarii'ah",
+                "the cars are fast",
+                "stays singular"
+              ],
+              [
+                "اَلطُّلَّابُ مُجْتَهِدُونَ",
+                "aṭ-ṭullaabu mujtahiduun",
+                "the students are hard-working",
+                "PEOPLE → real plural"
+              ],
+              [
+                "اَلْمُدَرِّسَاتُ مَاهِرَاتٌ",
+                "al-mudarrisaatu maahiraat",
+                "the (female) teachers are experts",
+                "PEOPLE → real plural"
+              ]
+            ]
+          },
+          "after": [
+            "The dividing line is clear: **humans** get a real plural, **things and animals** are treated as one feminine thing. If in doubt, ask yourself: can this plural talk or not?"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "At the market: groceries and units",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Arabic",
+            "Pronunciation",
+            "Meaning",
+            "Arabic",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "طَمَاطِم",
+              "ṭamaaṭim",
+              "tomatoes",
+              "كِيلُو",
+              "kiiluu",
+              "kilogram"
+            ],
+            [
+              "بَصَل",
+              "baṣal",
+              "onions",
+              "نِصْفُ كِيلُو",
+              "niṣfu kiiluu",
+              "half a kilo"
+            ],
+            [
+              "بَطَاطِس",
+              "baṭaaṭis",
+              "potatoes",
+              "حَبَّة",
+              "habbah",
+              "piece, item"
+            ],
+            [
+              "جَزَر",
+              "jazar",
+              "carrots",
+              "عُلْبَة",
+              "'ulbah",
+              "box, can"
+            ],
+            [
+              "خِيَار",
+              "khiyaar",
+              "cucumbers",
+              "زُجَاجَة",
+              "zujaajah",
+              "bottle"
+            ],
+            [
+              "تُفَّاح",
+              "tuffaah",
+              "apples",
+              "كِيس",
+              "kiis",
+              "bag"
+            ],
+            [
+              "مَوْز",
+              "mauz",
+              "bananas",
+              "رِبْطَة",
+              "ribṭah",
+              "bunch"
+            ],
+            [
+              "بُرْتُقَال",
+              "burtuqaal",
+              "oranges",
+              "قِطْعَة",
+              "qiṭ'ah",
+              "slice, piece"
+            ],
+            [
+              "عِنَب",
+              "'inab",
+              "grapes",
+              "كُوب",
+              "kuub",
+              "glass"
+            ],
+            [
+              "مَانْجُو",
+              "maanjuu",
+              "mangoes",
+              "لِتْر",
+              "litr",
+              "liter"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that the fruit and vegetable names above are **collective**: تُفَّاح means \"apples\" as a kind, not one apple. For a single one, add ة: تُفَّاحَة (an apple), مَوْزَة (a banana), بَيْضَة (an egg). This is the reverse of the usual rule — here ة makes the word singular."
+        },
+        {
+          "type": "kotak",
+          "title": "Arabic plurals you may already know",
+          "items": [
+            "A few Arabic words have entered English in their **plural form**, and English often treats them as ordinary nouns: *ulama* (عُلَمَاء, plural of عَالِم, \"scholar\"), *mujahideen* (plural of مُجَاهِد), *fellahin* (plural of فَلَّاح, \"farmer\"). Even *Bedouin* comes from a plural: بَدَوِيِّين, \"desert dwellers\".",
+            "This isn't just trivia: recognizing them gives you a few free Arabic words and shows you plural patterns through words you may already have met."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Haggling and closing a deal",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Arabic",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "بِكَمِ الْكِيلُو؟",
+              "bikamil-kiiluu?",
+              "How much a kilo?"
+            ],
+            [
+              "هٰذَا غَالٍ جِدًّا",
+              "haadhaa ghaalin jiddan",
+              "This is very expensive"
+            ],
+            [
+              "أَعْطِنِي سِعْرًا أَفْضَلَ",
+              "a'ṭinii si'ran afḍal",
+              "Give me a better price"
+            ],
+            [
+              "آخِرُ سِعْرٍ؟",
+              "aakhiru si'r?",
+              "What's your final price?"
+            ],
+            [
+              "مَا رَأْيُكَ فِي...؟",
+              "maa ra'yuka fii...?",
+              "How about...?"
+            ],
+            [
+              "اِتَّفَقْنَا",
+              "ittafaqnaa",
+              "Agreed, it's a deal"
+            ],
+            [
+              "سَآخُذُهُ",
+              "sa'aakhudhuh",
+              "I'll take it"
+            ],
+            [
+              "لَا، شُكْرًا، غَالٍ",
+              "laa shukran, ghaalin",
+              "No thanks, it's too expensive"
+            ],
+            [
+              "هَلْ هٰذَا طَازَجٌ؟",
+              "hal haadhaa ṭaazaj?",
+              "Is this fresh?"
+            ],
+            [
+              "زِدْنِي قَلِيلًا",
+              "zidnii qaliilan",
+              "Add a little more"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One thing textbooks rarely mention: **haggling is a conversation, not a fight.** The tone is light, sometimes joking, and it ends with both sides satisfied. If you haggle with a tense face, the seller will feel distrusted — and the price won't come down."
+        },
+        {
+          "type": "kotak",
+          "title": "A lifesaver when sellers keep offering",
+          "items": [
+            "If a seller keeps offering things you don't want, a polite but firm line: شُكْرًا، أَنَا أَتَفَرَّجُ فَقَطْ (*shukran, anaa atafarraju faqaṭ* — \"thanks, I'm just looking\").",
+            "And if you really want to move on: شُكْرًا، سَأَعُودُ لَاحِقًا (\"thanks, I'll come back later\"). Both are accepted without offense."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "سُوق",
+      "baca": "suuq",
+      "en": "market"
+    },
+    {
+      "ar": "زَبُون",
+      "baca": "zabuun",
+      "en": "customer"
+    },
+    {
+      "ar": "سِعْر",
+      "baca": "si'r",
+      "en": "price"
+    },
+    {
+      "ar": "كِيلُو",
+      "baca": "kiiluu",
+      "en": "kilogram"
+    },
+    {
+      "ar": "حَبَّة",
+      "baca": "habbah",
+      "en": "piece, item"
+    },
+    {
+      "ar": "كِيس",
+      "baca": "kiis",
+      "en": "bag"
+    },
+    {
+      "ar": "زُجَاجَة",
+      "baca": "zujaajah",
+      "en": "bottle"
+    },
+    {
+      "ar": "عُلْبَة",
+      "baca": "'ulbah",
+      "en": "box, can"
+    },
+    {
+      "ar": "طَازَج",
+      "baca": "ṭaazaj",
+      "en": "fresh"
+    },
+    {
+      "ar": "قَدِيم",
+      "baca": "qadiim",
+      "en": "old"
+    },
+    {
+      "ar": "طَمَاطِم",
+      "baca": "ṭamaaṭim",
+      "en": "tomatoes"
+    },
+    {
+      "ar": "بَصَل",
+      "baca": "baṣal",
+      "en": "onions"
+    },
+    {
+      "ar": "بَطَاطِس",
+      "baca": "baṭaaṭis",
+      "en": "potatoes"
+    },
+    {
+      "ar": "تُفَّاح",
+      "baca": "tuffaah",
+      "en": "apples"
+    },
+    {
+      "ar": "مَوْز",
+      "baca": "mauz",
+      "en": "bananas"
+    },
+    {
+      "ar": "عِنَب",
+      "baca": "'inab",
+      "en": "grapes"
+    },
+    {
+      "ar": "كُلّ",
+      "baca": "kull",
+      "en": "every, all"
+    },
+    {
+      "ar": "لِأَنَّ",
+      "baca": "li'anna",
+      "en": "because"
+    },
+    {
+      "ar": "طَبْعًا",
+      "baca": "ṭab'an",
+      "en": "of course"
+    },
+    {
+      "ar": "يَأْخُذُ",
+      "baca": "ya'khudhu",
+      "en": "take"
+    },
+    {
+      "ar": "يُعْطِي",
+      "baca": "yu'ṭii",
+      "en": "give"
+    },
+    {
+      "ar": "يَشْتَرِي",
+      "baca": "yashtarii",
+      "en": "buy"
+    },
+    {
+      "ar": "يَبِيعُ",
+      "baca": "yabii'u",
+      "en": "sell"
+    },
+    {
+      "ar": "يَدْفَعُ",
+      "baca": "yadfa'u",
+      "en": "pay"
+    },
+    {
+      "ar": "كُتُب",
+      "baca": "kutub",
+      "en": "books"
+    },
+    {
+      "ar": "بُيُوت",
+      "baca": "buyuut",
+      "en": "houses"
+    },
+    {
+      "ar": "رِجَال",
+      "baca": "rijaal",
+      "en": "men"
+    },
+    {
+      "ar": "أَوْلَاد",
+      "baca": "aulaad",
+      "en": "children"
+    },
+    {
+      "ar": "طُلَّاب",
+      "baca": "ṭullaab",
+      "en": "students"
+    },
+    {
+      "ar": "نَاس",
+      "baca": "naas",
+      "en": "people"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the plural form.",
+      "items": [
+        "كِتَاب ←",
+        "بَيْت ←",
+        "قَلَم ←",
+        "طَالِبَة ←",
+        "مُهَنْدِس ←",
+        "وَلَد ←"
+      ]
+    },
+    {
+      "prompt": "Choose the correct form of the adjective.",
+      "items": [
+        "اَلْكُتُبُ ____ . (new)",
+        "اَلطُّلَّابُ ____ . (hard-working — مُجْتَهِد)",
+        "اَلْبُيُوتُ ____ . (big)",
+        "اَلْمُدَرِّسَاتُ ____ . (new)",
+        "اَلسَّيَّارَاتُ ____ . (small)"
+      ]
+    },
+    {
+      "prompt": "Translate into Arabic.",
+      "items": [
+        "I'd like a kilo of tomatoes.",
+        "How much is a kilo of apples?",
+        "This is very expensive.",
+        "Everything is fresh.",
+        "How much is it all together?",
+        "Do you have bags?"
+      ]
+    },
+    {
+      "prompt": "Build a market conversation: you want to buy two kilos of oranges and half a kilo of onions, ask the price, haggle, and agree.",
+      "items": [
+        "Greeting",
+        "Ask the price of oranges",
+        "Say what you want",
+        "Haggle",
+        "The seller agrees",
+        "Closing"
+      ]
+    }
+  ],
+  "answers": [
+    "كُتُب — بُيُوت — أَقْلَام — طَالِبَات — مُهَنْدِسُونَ — أَوْلَاد",
+    "جَدِيدَةٌ — مُجْتَهِدُونَ — كَبِيرَةٌ — جَدِيدَاتٌ — صَغِيرَةٌ",
+    "أُرِيدُ كِيلُو طَمَاطِمَ. — بِكَمْ كِيلُو التُّفَّاحِ؟ — هٰذَا غَالٍ جِدًّا. — كُلُّ شَيْءٍ طَازَجٌ. — كَمِ الْمَجْمُوعُ كُلُّهُ؟ — هَلْ عِنْدَكَ أَكْيَاسٌ؟",
+    "Example: صَبَاحَ الْخَيْرِ يَا عَمّ! — بِكَمْ كِيلُو الْبُرْتُقَالِ؟ — أُرِيدُ كِيلُوَيْنِ بُرْتُقَالًا وَنِصْفَ كِيلُو بَصَلٍ. — هٰذَا غَالٍ، آخِرُ سِعْرٍ؟ — خُذْ بِأَرْبَعِينَ جُنَيْهًا. — اِتَّفَقْنَا، شُكْرًا!"
+  ],
+  "wave": "Take ten nouns you've already learned and look up their plurals in this book's vocabulary lists. Write them in pairs."
+}

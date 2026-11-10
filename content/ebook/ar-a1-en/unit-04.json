@@ -1,0 +1,667 @@
+{
+  "title": "My family",
+  "title_target": "أُسْرَتِي",
+  "goal": "Name the members of your family, express possession in two ways, and understand the iron rule of the idafa that beginners break most often.",
+  "bekal": [
+    "build an idafa — two nouns joined to mean \"the X of Y\"",
+    "say \"I have\" with *'indii* and *lii*",
+    "say your age and how many brothers and sisters you have"
+  ],
+  "dialogs": [
+    {
+      "title": "حِوَار — صُورَةُ الْعَائِلَةِ",
+      "intro": "Laila is showing a photo of her family on her phone screen.",
+      "lines": [
+        {
+          "speaker": "لَيْلَى:",
+          "text": "اُنْظُرْ، هٰذِهِ صُورَةُ عَائِلَتِي.",
+          "baca": "unẓur, haadhihi ṣuuratu 'aa'ilatii.",
+          "id": "Look, this is a photo of my family.",
+          "literal": "look, this photo family-my."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مَا شَاءَ اللهُ! مَنْ هٰذَا الرَّجُلُ؟",
+          "baca": "maa shaa'allaah! man haadhar-rajul?",
+          "id": "Mashallah! Who is this man?",
+          "literal": "what willed God! who the-man this?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "هٰذَا أَبِي. اِسْمُهُ يُوسُف، وَهُوَ طَبِيبٌ.",
+          "baca": "haadhaa abii. ismuhu Yuusuf, wa huwa ṭabiib.",
+          "id": "This is my father. His name is Yusuf, and he's a doctor.",
+          "literal": "this father-my. name-his Yusuf, and he doctor."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "وَهٰذِهِ الْمَرْأَةُ؟ هَلْ هِيَ أُمُّكِ؟",
+          "baca": "wa haadhihil-mar'ah? hal hiya ummuki?",
+          "id": "And this woman? Is she your mother?",
+          "literal": "and the-woman this? (question) she mother-your?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "نَعَمْ، هٰذِهِ أُمِّي. هِيَ مُدَرِّسَةُ لُغَةٍ.",
+          "baca": "na'am, haadhihi ummii. hiya mudarrisatu lughah.",
+          "id": "Yes, this is my mother. She's a language teacher.",
+          "literal": "yes, this mother-my. she teacher(f) language."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "هَلْ عِنْدَكِ إِخْوَةٌ؟",
+          "baca": "hal 'indaki ikhwah?",
+          "id": "Do you have brothers and sisters?",
+          "literal": "(question) at-you siblings?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "نَعَمْ، عِنْدِي أَخٌ وَأُخْتَانِ.",
+          "baca": "na'am, 'indii akhun wa ukhtaan.",
+          "id": "Yes, I have one brother and two sisters.",
+          "literal": "yes, at-me brother and two-sisters."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "كَمْ عُمْرُ أَخِيكِ؟",
+          "baca": "kam 'umru akhiiki?",
+          "id": "How old is your brother?",
+          "literal": "how-much age brother-your?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "عُمْرُهُ خَمْسٌ وَعِشْرُونَ سَنَةً. وَأَنْتَ، كَمْ عُمْرُكَ؟",
+          "baca": "'umruhu khamsun wa 'ishruuna sanah. wa anta, kam 'umruka?",
+          "id": "He's twenty-five. And you, how old are you?",
+          "literal": "age-his five and-twenty year. and you, how-much age-your?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "عُمْرِي ثَلَاثُونَ سَنَةً. عِنْدِي أُخْتٌ وَاحِدَةٌ فَقَطْ.",
+          "baca": "'umrii thalaathuuna sanah. 'indii ukhtun waahidatun faqaṭ.",
+          "id": "I'm thirty. I have just one sister.",
+          "literal": "age-my thirty year. at-me sister one only."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "هَلْ هِيَ فِي إِنْدُونِيسِيَا؟",
+          "baca": "hal hiya fii Induuniisiyaa?",
+          "id": "Is she in Indonesia?",
+          "literal": "(question) she in Indonesia?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "نَعَمْ، هِيَ فِي بَيْتِ وَالِدَيَّ فِي جَاكَرْتَا.",
+          "baca": "na'am, hiya fii baiti waalidayya fii Jaakartaa.",
+          "id": "Yes, she's at my parents' house in Jakarta.",
+          "literal": "yes, she in house parents-my in Jakarta."
+        }
+      ],
+      "notes": [
+        "**صُورَةُ عَائِلَتِي — a stacked idafa.** \"Photo of family-my\". Notice that صُورَة takes no اَلْ and no tanween: it is the first word of an idafa, and the first word is always bare. See the grammar box below.",
+        "**أَبِي, أُمِّي — not أَبٌ لِي.** The five most important family words take the pronoun ending directly: أَبِي (my father), أُمِّي (my mother), أَخِي (my brother), أُخْتِي (my sister), اِبْنِي (my son).",
+        "**عِنْدِي literally means \"with me / at my side\" — it is not a verb.** Arabic has no verb \"to have\". It uses a preposition instead: عِنْدِي كِتَابٌ = \"at me (is) a book\" = \"I have a book\". Other forms: عِنْدَكَ, عِنْدَكِ, عِنْدَهُ, عِنْدَهَا, عِنْدَنَا.",
+        "**عِنْدِي vs لِي.** عِنْدِي is for things you can hold or that are near you, لِي for inherent relationships: لِي أَخٌ (\"I have a brother\"), لِي رَأْيٌ (\"I have an opinion\"). In everyday speech the line is blurry, and عِنْدِي is used for both without anyone objecting.",
+        "**أُخْتَانِ — the dual.** Arabic doesn't stop at singular and plural: it has a special form for **exactly two**, made with the ending ـَانِ. أُخْت → أُخْتَانِ (two sisters), كِتَاب → كِتَابَانِ (two books). You may not use the plural for two things — that is wrong, not just slightly off.",
+        "**كَمْ عُمْرُكَ؟ literally \"how much is your age\".** The answer uses سَنَةً with tanween fatha: عُمْرِي ثَلَاثُونَ سَنَةً. The form سَنَةً after numbers is a rule of its own, covered in unit 6 — for now, learn the pattern whole.",
+        "**Tens and units go in reverse order.** خَمْسٌ وَعِشْرُونَ is literally \"five and twenty\" for 25 — the unit comes first. Just like German (*fünfundzwanzig*) or old English \"four and twenty blackbirds\".",
+        "**مَا شَاءَ اللهُ** (\"what God has willed\") is used to praise something while protecting it from the evil eye — a new baby, a nice house, a good result. It is very common in everyday conversation, not just in religious settings.",
+        "**اُنْظُرْ — an imperative.** Commands are covered fully in unit 15. For now, learn the most frequent ones: اُنْظُرْ (look), اِسْمَعْ (listen), تَفَضَّلْ (please, go ahead), اِجْلِسْ (sit down). To a woman add ـِي: اُنْظُرِي, اِسْمَعِي."
+      ],
+      "grammars": [
+        {
+          "title": "Idafa — possession without a word for \"of\"",
+          "body": [
+            "Two nouns are simply placed side by side: **[the thing] + [the owner]**. English does something similar with \"the director's house\" — only in reverse order. What's new is the rule that comes with it."
+          ],
+          "table": {
+            "head": [
+              "Arabic",
+              "Pronunciation",
+              "Meaning",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "بَيْتُ الْمُدِيرِ",
+                "baitul-mudiir",
+                "the director's house",
+                "house the-director"
+              ],
+              [
+                "بَابُ الْمَكْتَبَةِ",
+                "baabul-maktabah",
+                "the library door",
+                "door the-library"
+              ],
+              [
+                "صُورَةُ الْعَائِلَةِ",
+                "ṣuuratul-'aa'ilah",
+                "the family photo",
+                "photo the-family"
+              ],
+              [
+                "مُدَرِّسَةُ لُغَةٍ",
+                "mudarrisatu lughah",
+                "a language teacher",
+                "teacher language"
+              ],
+              [
+                "كِتَابُ الطَّالِبِ",
+                "kitaabuṭ-ṭaalib",
+                "the student's book",
+                "book the-student"
+              ],
+              [
+                "مِفْتَاحُ السَّيَّارَةِ",
+                "miftaahus-sayyaarah",
+                "the car key",
+                "key the-car"
+              ]
+            ]
+          },
+          "after": [
+            "**There is only one iron rule, and it is exactly the one broken most often: the FIRST word never takes اَلْ and never takes tanween.** So اَلْبَيْتُ الْمُدِيرِ is wrong; بَيْتُ الْمُدِيرِ is right. Whether the whole phrase is definite or not is decided by the SECOND word.",
+            "Compare: بَيْتُ مُدِيرٍ (\"a director's house\") and بَيْتُ الْمُدِيرِ (\"the director's house\"). The first word has the same form in both — only the second word changes.",
+            "The endings ـِي, ـكَ, ـهُ you've been using are actually idafa too: كِتَابِي = \"the book of me\", with \"me\" as an ending instead of a separate word. That is why كِتَاب can't take اَلْ there either."
+          ]
+        },
+        {
+          "title": "عِنْدَ — how Arabic says \"have\"",
+          "table": {
+            "head": [
+              "Arabic",
+              "Pronunciation",
+              "Meaning",
+              "Example sentence"
+            ],
+            "rows": [
+              [
+                "عِنْدِي",
+                "'indii",
+                "I have",
+                "عِنْدِي أَخٌ"
+              ],
+              [
+                "عِنْدَكَ",
+                "'indaka",
+                "you (m) have",
+                "هَلْ عِنْدَكَ قَلَمٌ؟"
+              ],
+              [
+                "عِنْدَكِ",
+                "'indaki",
+                "you (f) have",
+                "هَلْ عِنْدَكِ وَقْتٌ؟"
+              ],
+              [
+                "عِنْدَهُ",
+                "'indahu",
+                "he has",
+                "عِنْدَهُ سَيَّارَةٌ"
+              ],
+              [
+                "عِنْدَهَا",
+                "'indahaa",
+                "she has",
+                "عِنْدَهَا أُخْتَانِ"
+              ],
+              [
+                "عِنْدَنَا",
+                "'indanaa",
+                "we have",
+                "عِنْدَنَا بَيْتٌ كَبِيرٌ"
+              ],
+              [
+                "لَيْسَ عِنْدِي",
+                "laisa 'indii",
+                "I don't have",
+                "لَيْسَ عِنْدِي وَقْتٌ"
+              ]
+            ]
+          },
+          "after": [
+            "It is negated with لَيْسَ, not لَا — because it is a nominal sentence: لَيْسَ عِنْدِي مَالٌ (\"I have no money\").",
+            "Notice that the thing you have is always **indefinite** (with tanween): عِنْدِي كِتَابٌ. If you use اَلْ, the meaning becomes \"the book is with me\" — that is, you're holding it, not that you own it."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Family members",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Arabic",
+            "Pronunciation",
+            "Meaning",
+            "Plural",
+            "Pronunciation"
+          ],
+          "rows": [
+            [
+              "أَب",
+              "ab",
+              "father",
+              "آبَاء",
+              "aabaa'"
+            ],
+            [
+              "أُمّ",
+              "umm",
+              "mother",
+              "أُمَّهَات",
+              "ummahaat"
+            ],
+            [
+              "اِبْن",
+              "ibn",
+              "son",
+              "أَبْنَاء",
+              "abnaa'"
+            ],
+            [
+              "بِنْت",
+              "bint",
+              "daughter",
+              "بَنَات",
+              "banaat"
+            ],
+            [
+              "أَخ",
+              "akh",
+              "brother",
+              "إِخْوَة",
+              "ikhwah"
+            ],
+            [
+              "أُخْت",
+              "ukht",
+              "sister",
+              "أَخَوَات",
+              "akhawaat"
+            ],
+            [
+              "جَدّ",
+              "jadd",
+              "grandfather",
+              "أَجْدَاد",
+              "ajdaad"
+            ],
+            [
+              "جَدَّة",
+              "jaddah",
+              "grandmother",
+              "جَدَّات",
+              "jaddaat"
+            ],
+            [
+              "زَوْج",
+              "zauj",
+              "husband",
+              "أَزْوَاج",
+              "azwaaj"
+            ],
+            [
+              "زَوْجَة",
+              "zaujah",
+              "wife",
+              "زَوْجَات",
+              "zaujaat"
+            ],
+            [
+              "عَمّ",
+              "'amm",
+              "uncle (father's side)",
+              "أَعْمَام",
+              "a'maam"
+            ],
+            [
+              "خَال",
+              "khaal",
+              "uncle (mother's side)",
+              "أَخْوَال",
+              "akhwaal"
+            ],
+            [
+              "اِبْنُ الْعَمّ",
+              "ibnul-'amm",
+              "cousin (m)",
+              "أَبْنَاءُ الْعَمّ",
+              "abnaa'ul-'amm"
+            ],
+            [
+              "وَالِدَانِ",
+              "waalidaan",
+              "parents",
+              "—",
+              "—"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that Arabic distinguishes an uncle on the father's side (عَمّ) from one on the mother's side (خَال) — a distinction English doesn't make. The female forms: عَمَّة (aunt on the father's side) and خَالَة (aunt on the mother's side)."
+        },
+        {
+          "type": "kotak",
+          "title": "أَب changes shape when joined",
+          "items": [
+            "Five words — أَب, أَخ, حَم, فُو, ذُو — behave oddly: their last vowel lengthens as soon as they are joined to an owner. أَب → أَبِي (my father), أَبُوكَ (your father), أَبَاهُ (his father, as an object). أَخ → أَخِي, أَخُوكَ, أَخَاهُ.",
+            "At A1 you only need to recognize أَبِي and أَخِي (\"my father\", \"my brother\") and أَخِيكِ (\"your brother\") as they appear in the dialogue, without mastering every change."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Age and the tens",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The round tens are very easy: they all end in ـُونَ."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Number",
+            "Arabic",
+            "Pronunciation",
+            "Number",
+            "Arabic",
+            "Pronunciation"
+          ],
+          "rows": [
+            [
+              "20",
+              "عِشْرُونَ",
+              "'ishruun",
+              "60",
+              "سِتُّونَ",
+              "sittuun"
+            ],
+            [
+              "30",
+              "ثَلَاثُونَ",
+              "thalaathuun",
+              "70",
+              "سَبْعُونَ",
+              "sab'uun"
+            ],
+            [
+              "40",
+              "أَرْبَعُونَ",
+              "arba'uun",
+              "80",
+              "ثَمَانُونَ",
+              "thamaanuun"
+            ],
+            [
+              "50",
+              "خَمْسُونَ",
+              "khamsuun",
+              "90",
+              "تِسْعُونَ",
+              "tis'uun"
+            ],
+            [
+              "100",
+              "مِائَة",
+              "mi'ah",
+              "1000",
+              "أَلْف",
+              "alf"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "For the numbers in between, the unit comes **first**, joined with وَ: وَاحِدٌ وَعِشْرُونَ (21), اِثْنَانِ وَثَلَاثُونَ (32), خَمْسٌ وَأَرْبَعُونَ (45). The exact reverse of English order."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "كَمْ عُمْرُكَ؟",
+              "kam 'umruka?",
+              "How old are you? (m)"
+            ],
+            [
+              "كَمْ عُمْرُكِ؟",
+              "kam 'umruki?",
+              "How old are you? (f)"
+            ],
+            [
+              "عُمْرِي ثَلَاثُونَ سَنَةً",
+              "'umrii thalaathuuna sanah",
+              "I'm 30 years old"
+            ],
+            [
+              "كَمْ أَخًا عِنْدَكَ؟",
+              "kam akhan 'indaka?",
+              "How many brothers do you have?"
+            ],
+            [
+              "هَلْ أَنْتَ مُتَزَوِّجٌ؟",
+              "hal anta mutazawwij?",
+              "Are you married?"
+            ],
+            [
+              "أَنَا أَعْزَبُ",
+              "anaa a'zab",
+              "I'm not married (m)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Asking someone's age: mind the context",
+          "items": [
+            "In many Arab countries, asking a grown woman you've just met how old she is counts as impolite. Asking how many siblings someone has, which city they're from, and what they do, on the other hand, is perfectly normal and friendly.",
+            "If someone asks you كَمْ عُمْرُكَ؟ and you'd rather not answer, the gentle reply is: أَنَا أَكْبَرُ مِمَّا أَبْدُو (*anaa akbaru mimmaa abduu* — \"I'm older than I look\")."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "أُسْرَة / عَائِلَة",
+      "baca": "usrah / 'aa'ilah",
+      "en": "family"
+    },
+    {
+      "ar": "أَب",
+      "baca": "ab",
+      "en": "father"
+    },
+    {
+      "ar": "أُمّ",
+      "baca": "umm",
+      "en": "mother"
+    },
+    {
+      "ar": "أَخ",
+      "baca": "akh",
+      "en": "brother"
+    },
+    {
+      "ar": "أُخْت",
+      "baca": "ukht",
+      "en": "sister"
+    },
+    {
+      "ar": "اِبْن",
+      "baca": "ibn",
+      "en": "son"
+    },
+    {
+      "ar": "بِنْت",
+      "baca": "bint",
+      "en": "daughter"
+    },
+    {
+      "ar": "جَدّ / جَدَّة",
+      "baca": "jadd / jaddah",
+      "en": "grandfather / grandmother"
+    },
+    {
+      "ar": "زَوْج / زَوْجَة",
+      "baca": "zauj / zaujah",
+      "en": "husband / wife"
+    },
+    {
+      "ar": "عَمّ / خَال",
+      "baca": "'amm / khaal",
+      "en": "uncle (father's / mother's side)"
+    },
+    {
+      "ar": "وَالِدَانِ",
+      "baca": "waalidaan",
+      "en": "parents"
+    },
+    {
+      "ar": "رَجُل",
+      "baca": "rajul",
+      "en": "man"
+    },
+    {
+      "ar": "اِمْرَأَة / مَرْأَة",
+      "baca": "imra'ah / mar'ah",
+      "en": "woman"
+    },
+    {
+      "ar": "وَلَد",
+      "baca": "walad",
+      "en": "child, boy"
+    },
+    {
+      "ar": "عِنْدَ",
+      "baca": "'inda",
+      "en": "have; with, at"
+    },
+    {
+      "ar": "لِ",
+      "baca": "li",
+      "en": "for, belonging to"
+    },
+    {
+      "ar": "عُمْر",
+      "baca": "'umr",
+      "en": "age"
+    },
+    {
+      "ar": "سَنَة",
+      "baca": "sanah",
+      "en": "year"
+    },
+    {
+      "ar": "كَمْ",
+      "baca": "kam",
+      "en": "how many, how much"
+    },
+    {
+      "ar": "صُورَة",
+      "baca": "ṣuurah",
+      "en": "photo, picture"
+    },
+    {
+      "ar": "بَيْت",
+      "baca": "bait",
+      "en": "house"
+    },
+    {
+      "ar": "مُدِير",
+      "baca": "mudiir",
+      "en": "director, manager"
+    },
+    {
+      "ar": "وَقْت",
+      "baca": "waqt",
+      "en": "time"
+    },
+    {
+      "ar": "مَال",
+      "baca": "maal",
+      "en": "money, wealth"
+    },
+    {
+      "ar": "مُتَزَوِّج",
+      "baca": "mutazawwij",
+      "en": "married"
+    },
+    {
+      "ar": "أَعْزَب",
+      "baca": "a'zab",
+      "en": "unmarried (m)"
+    },
+    {
+      "ar": "مَا شَاءَ اللهُ",
+      "baca": "maa shaa'allaah",
+      "en": "mashallah, what God has willed"
+    },
+    {
+      "ar": "اُنْظُرْ",
+      "baca": "unẓur",
+      "en": "look!"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Build the correct idafa. Watch the اَلْ and the final vowels.",
+      "items": [
+        "بَاب + اَلْبَيْت ←",
+        "كِتَاب + اَلطَّالِبَة ←",
+        "سَيَّارَة + اَلْمُدِير ←",
+        "غُرْفَة + اَلنَّوْم ←",
+        "مِفْتَاح + اَلْبَاب ←",
+        "اِسْم + اَلْمَدْرَسَة ←"
+      ]
+    },
+    {
+      "prompt": "Translate into Arabic.",
+      "items": [
+        "This is my father. His name is Yusuf.",
+        "I have two sisters.",
+        "How old are you? (to a woman)",
+        "I'm forty years old.",
+        "I don't have time.",
+        "Do you have a car? (to a man)"
+      ]
+    },
+    {
+      "prompt": "Correct the wrong sentences.",
+      "items": [
+        "اَلْبَيْتُ الْمُدِيرِ كَبِيرٌ.",
+        "عِنْدِي أُخْتٌ اِثْنَانِ.",
+        "لَا عِنْدِي وَقْتٌ.",
+        "كِتَابٌ الطَّالِبِ جَدِيدٌ.",
+        "عُمْرِي عِشْرُونَ وَخَمْسٌ سَنَةً."
+      ]
+    },
+    {
+      "prompt": "Write five sentences about your own family. Use at least one idafa and one عِنْدِي.",
+      "items": [
+        "What is your father's name and what does he do?",
+        "What is your mother's name and what does she do?",
+        "How many brothers and sisters do you have?",
+        "How old are you?",
+        "Where is your family's home?"
+      ]
+    }
+  ],
+  "answers": [
+    "بَابُ الْبَيْتِ — كِتَابُ الطَّالِبَةِ — سَيَّارَةُ الْمُدِيرِ — غُرْفَةُ النَّوْمِ — مِفْتَاحُ الْبَابِ — اِسْمُ الْمَدْرَسَةِ",
+    "هٰذَا أَبِي. اِسْمُهُ يُوسُف. — عِنْدِي أُخْتَانِ. — كَمْ عُمْرُكِ؟ — عُمْرِي أَرْبَعُونَ سَنَةً. — لَيْسَ عِنْدِي وَقْتٌ. — هَلْ عِنْدَكَ سَيَّارَةٌ؟",
+    "بَيْتُ الْمُدِيرِ كَبِيرٌ. — عِنْدِي أُخْتَانِ. — لَيْسَ عِنْدِي وَقْتٌ. — كِتَابُ الطَّالِبِ جَدِيدٌ. — عُمْرِي خَمْسٌ وَعِشْرُونَ سَنَةً.",
+    "Example: اِسْمُ أَبِي يُوسُف وَهُوَ مُهَنْدِسٌ. — اِسْمُ أُمِّي فَاطِمَة وَهِيَ مُدَرِّسَةٌ. — عِنْدِي أَخٌ وَأُخْتٌ. — عُمْرِي ثَلَاثُونَ سَنَةً. — بَيْتُ عَائِلَتِي فِي جَاكَرْتَا."
+  ],
+  "wave": "Reread the dialogues of units 2 and 3. Find every idafa that already appeared there before you knew its name."
+}
