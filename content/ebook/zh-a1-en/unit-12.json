@@ -1,0 +1,1008 @@
+{
+  "title": "At the restaurant, at the pharmacy, and in an emergency",
+  "title_target": "我不舒服 — Wǒ bù shūfu",
+  "goal": "Order food from start to paying the bill, say which part of your body hurts, ask for help — and pull together every sentence frame from all twelve units in the most demanding situations.",
+  "bekal": [
+    "order food and drinks at a restaurant",
+    "state your dietary restrictions clearly",
+    "say what hurts with the 我…疼 pattern",
+    "buy medicine at a pharmacy",
+    "ask for help in an emergency"
+  ],
+  "dialogs": [
+    {
+      "title": "对话 1 — Ordering food",
+      "intro": "Andi and Wang Li at a Sichuan restaurant. This is a conversation you'll repeat hundreds of times; memorize the frame, not the words.",
+      "lines": [
+        {
+          "speaker": "服务员:",
+          "text": "[几|Jǐ][位|wèi]？",
+          "id": "How many?",
+          "literal": "how-many — (polite classifier)."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[两|Liǎng][位|wèi]。[有|Yǒu][靠窗|kào chuāng][的|de][位子|wèizi][吗|ma]？",
+          "id": "Two. Do you have a table by the window?",
+          "literal": "two — (classifier). have — lean-window — (of) — seat — (question)."
+        },
+        {
+          "speaker": "服务员:",
+          "text": "[有|Yǒu]，[请|qǐng][跟|gēn][我|wǒ][来|lái]。[这|Zhè][是|shì][菜单|càidān]。",
+          "id": "Yes, please follow me. Here's the menu.",
+          "literal": "have, please — with — me — come. this — be — dish-list."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[谢谢|Xièxie]。[你们|Nǐmen][这儿|zhèr][什么|shénme][最|zuì][好吃|hǎochī]？",
+          "id": "Thanks. What's best here?",
+          "literal": "thank. you-all — here — what — most — good-to-eat."
+        },
+        {
+          "speaker": "服务员:",
+          "text": "[水煮鱼|Shuǐzhǔ yú][和|hé][宫保鸡丁|gōngbǎo jīdīng][最|zuì][有名|yǒumíng]。",
+          "id": "The spicy boiled fish and the kung pao chicken are the most famous.",
+          "literal": "water-boil-fish — and — gongbao-chicken-cube — most — have-name."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[水煮鱼|Shuǐzhǔ yú][辣|là][吗|ma]？[我|Wǒ][不|bú][太|tài][能|néng][吃|chī][辣|là]。",
+          "id": "Is the boiled fish spicy? I can't really handle spicy food.",
+          "literal": "water-boil-fish — spicy — (question). I — not — too — able — eat — spicy."
+        },
+        {
+          "speaker": "服务员:",
+          "text": "[很|Hěn][辣|là]。[可以|Kěyǐ][做|zuò][微辣|wēi là][的|de]。",
+          "id": "Very spicy. We can make it mild.",
+          "literal": "(prop) — spicy. may — make — slight — spicy — (one)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[那|Nà][来|lái][一|yí][个|ge][微辣|wēi là][的|de][水煮鱼|shuǐzhǔ yú]。[还有|Háiyǒu]，[我|wǒ][不|bù][吃|chī][猪肉|zhūròu]。",
+          "id": "Then one mild boiled fish. Oh, and I don't eat pork.",
+          "literal": "that — come — one — (classifier) — slight — spicy — (one) — water-boil-fish. also, I — not — eat — pig-meat."
+        },
+        {
+          "speaker": "服务员:",
+          "text": "[明白|Míngbai][了|le]。[还|Hái][要|yào][别的|bié de][吗|ma]？",
+          "id": "Got it. Anything else?",
+          "literal": "understand — (change). still — want — other — (one) — (question)."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[再|Zài][来|lái][一|yí][个|ge][青菜|qīngcài]、[两|liǎng][碗|wǎn][米饭|mǐfàn][和|hé][一|yì][壶|hú][茶|chá]。",
+          "id": "Plus a plate of greens, two bowls of rice and a pot of tea.",
+          "literal": "again — come — one — (classifier) — green-vegetable, two — bowl — rice — and — one — pot — tea."
+        },
+        {
+          "speaker": "服务员:",
+          "text": "[好|Hǎo][的|de]，[请|qǐng][稍|shāo][等|děng]。",
+          "id": "Sure, just a moment, please.",
+          "literal": "good — (of), please — slightly — wait."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[服务员|Fúwùyuán]，[买单|mǎidān]！",
+          "id": "Excuse me, the check, please!",
+          "literal": "waiter, buy — bill."
+        }
+      ],
+      "notes": [
+        "**[位|wèi] is the polite classifier for people.** Servers always use it: [几位|jǐ wèi]？ how many? You answer with number + 位 too: [两位|liǎng wèi].",
+        "**⚠️ To order food, use [来|lái] \"come\", not 要 or 买.** [来一个水煮鱼|Lái yí ge shuǐzhǔ yú] = one boiled fish. It sounds odd translated literally, but it's what people say. [要|yào] works too and is just as correct; 买 is never used at the table.",
+        "**[再来一个…|Zài lái yí ge…] = \"one more …\".** 再 before a verb means \"again, once more\" — and it's used for things that **haven't** happened yet. For things that already happened, use [又|yòu].",
+        "**[微辣|wēi là] mild · [中辣|zhōng là] medium · [特辣|tè là] extra hot · [不辣|bú là] not spicy.** These four words will save your dinner in Sichuan or Hunan.",
+        "**⚠️ [我不吃猪肉|Wǒ bù chī zhūròu] is a must-memorize sentence** for Muslim travelers. Say it before you order, not after the food arrives. Chinese restaurants are used to hearing it and won't ask further.",
+        "**[买单|mǎidān] = the check, please**, literally \"buy the bill\". The synonym is [结账|jiézhàng]. Just say it with a raised hand; calling out to staff in a Chinese restaurant is normal, not rude.",
+        "**[请稍等|Qǐng shāo děng] = just a moment, please.** More polite than [等一下|děng yíxià]; you'll hear it wherever there's customer service."
+      ],
+      "grammars": [
+        {
+          "title": "At the restaurant — the full frame",
+          "tables": [
+            {
+              "head": [
+                "Stage",
+                "What you say",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "Arriving",
+                  "[两位|Liǎng wèi]。",
+                  "Two, please."
+                ],
+                [
+                  "",
+                  "[有位子吗|Yǒu wèizi ma]？",
+                  "Do you have a table?"
+                ],
+                [
+                  "The menu",
+                  "[有中文菜单吗|Yǒu Zhōngwén càidān ma]？",
+                  "Is there a Chinese menu?"
+                ],
+                [
+                  "",
+                  "[有图片吗|Yǒu túpiàn ma]？",
+                  "Are there pictures? — a lifesaver while you can't read the characters yet"
+                ],
+                [
+                  "Asking",
+                  "[什么最好吃|Shénme zuì hǎochī]？",
+                  "What's best?"
+                ],
+                [
+                  "",
+                  "[这个辣吗|Zhège là ma]？",
+                  "Is this spicy?"
+                ],
+                [
+                  "",
+                  "[这个是什么肉|Zhège shì shénme ròu]？",
+                  "What meat is this?"
+                ],
+                [
+                  "Ordering",
+                  "[来一个…|Lái yí ge…]",
+                  "One … "
+                ],
+                [
+                  "",
+                  "[再来一个…|Zài lái yí ge…]",
+                  "One more …"
+                ],
+                [
+                  "Restrictions",
+                  "[我不吃猪肉|Wǒ bù chī zhūròu]。",
+                  "I don't eat pork."
+                ],
+                [
+                  "",
+                  "[请不要放辣椒|Qǐng bú yào fàng làjiāo]。",
+                  "No chili, please."
+                ],
+                [
+                  "",
+                  "[我对花生过敏|Wǒ duì huāshēng guòmǐn]。",
+                  "I'm allergic to peanuts."
+                ],
+                [
+                  "During the meal",
+                  "[很好吃|Hěn hǎochī]！",
+                  "Delicious!"
+                ],
+                [
+                  "",
+                  "[能加点儿水吗|Néng jiā diǎnr shuǐ ma]？",
+                  "Could we have more water?"
+                ],
+                [
+                  "Finishing",
+                  "[买单|Mǎidān]！ / [结账|Jiézhàng]！",
+                  "The check, please!"
+                ],
+                [
+                  "",
+                  "[能打包吗|Néng dǎbāo ma]？",
+                  "Could I get this to go?"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **Taking leftovers home is very common in China** and not embarrassing at all — it's seen as not being wasteful. [打包|dǎbāo] is a word you'll hear a lot.",
+            "⚠️ **Tipping isn't customary** in mainland Chinese restaurants and often just confuses the staff."
+          ]
+        },
+        {
+          "title": "Food and drinks",
+          "tables": [
+            {
+              "head": [
+                "Food",
+                "Pīnyīn",
+                "Drinks",
+                "Pīnyīn"
+              ],
+              "rows": [
+                [
+                  "[米饭|mǐfàn] steamed rice",
+                  "mǐfàn",
+                  "[水|shuǐ] water",
+                  "shuǐ"
+                ],
+                [
+                  "[面条|miàntiáo] noodles",
+                  "miàntiáo",
+                  "[茶|chá] tea",
+                  "chá"
+                ],
+                [
+                  "[包子|bāozi] steamed buns",
+                  "bāozi",
+                  "[咖啡|kāfēi] coffee",
+                  "kāfēi"
+                ],
+                [
+                  "[饺子|jiǎozi] dumplings",
+                  "jiǎozi",
+                  "[牛奶|niúnǎi] milk",
+                  "niúnǎi"
+                ],
+                [
+                  "[炒饭|chǎofàn] fried rice",
+                  "chǎofàn",
+                  "[果汁|guǒzhī] juice",
+                  "guǒzhī"
+                ],
+                [
+                  "[鸡肉|jīròu] chicken",
+                  "jīròu",
+                  "[啤酒|píjiǔ] beer",
+                  "píjiǔ"
+                ],
+                [
+                  "[牛肉|niúròu] beef",
+                  "niúròu",
+                  "[热水|rè shuǐ] hot water",
+                  "rè shuǐ"
+                ],
+                [
+                  "[羊肉|yángròu] lamb, mutton",
+                  "yángròu",
+                  "[冰水|bīng shuǐ] ice water",
+                  "bīng shuǐ"
+                ],
+                [
+                  "[猪肉|zhūròu] pork",
+                  "zhūròu",
+                  "[可乐|kělè] cola",
+                  "kělè"
+                ],
+                [
+                  "[鱼|yú] fish",
+                  "yú",
+                  "[豆浆|dòujiāng] soy milk",
+                  "dòujiāng"
+                ],
+                [
+                  "[鸡蛋|jīdàn] egg",
+                  "jīdàn",
+                  "[汤|tāng] soup",
+                  "tāng"
+                ],
+                [
+                  "[青菜|qīngcài] leafy greens",
+                  "qīngcài",
+                  "[水果|shuǐguǒ] fruit",
+                  "shuǐguǒ"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **Chinese people rarely drink cold water.** If you just ask for water, you'll almost certainly get hot water — [热水|rè shuǐ]. If you want it cold, say so: [冰水|bīng shuǐ] or [凉水|liáng shuǐ].",
+            "⚠️ [汤|tāng] \"soup\" is **drunk**, not eaten: [喝汤|hē tāng]. Same with rice porridge: [喝粥|hē zhōu]."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "对话 2 — At the pharmacy",
+      "intro": "The next day Andi isn't feeling well. This conversation is short, but every sentence in it could genuinely save you in a foreign country.",
+      "lines": [
+        {
+          "speaker": "药店:",
+          "text": "[您好|Nín hǎo]，[需要|xūyào][什么|shénme]？",
+          "id": "Hello, what do you need?",
+          "literal": "you(polite) — good, need — what."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[我|Wǒ][不|bù][舒服|shūfu]。[我|Wǒ][肚子|dùzi][疼|téng]。",
+          "id": "I don't feel well. My stomach hurts.",
+          "literal": "I — not — comfortable. I — stomach — hurt."
+        },
+        {
+          "speaker": "药店:",
+          "text": "[从|Cóng][什么|shénme][时候|shíhou][开始|kāishǐ][的|de]？",
+          "id": "Since when?",
+          "literal": "from — what — time — start — (of)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[昨天|Zuótiān][晚上|wǎnshang]。[我|Wǒ][吃|chī][了|le][很|hěn][辣|là][的|de][东西|dōngxi]。",
+          "id": "Last night. I ate something really spicy.",
+          "literal": "yesterday — evening. I — eat — (done) — (prop) — spicy — (of) — thing."
+        },
+        {
+          "speaker": "药店:",
+          "text": "[发烧|Fāshāo][吗|ma]？[拉肚子|Lā dùzi][吗|ma]？",
+          "id": "Any fever? Diarrhea?",
+          "literal": "emit-heat — (question). pull-stomach — (question)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[没有|Méiyǒu][发烧|fāshāo]，[但是|dànshì][拉|lā][了|le][三|sān][次|cì]。",
+          "id": "No fever, but I've had diarrhea three times.",
+          "literal": "not-have — fever, but — pull — (done) — three — times."
+        },
+        {
+          "speaker": "药店:",
+          "text": "[这|Zhè][个|ge][药|yào][一|yì][天|tiān][三|sān][次|cì]，[饭|fàn][后|hòu][吃|chī]。",
+          "id": "Take this medicine three times a day, after meals.",
+          "literal": "this — (classifier) — medicine — one — day — three — times, meal — after — eat."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[一|Yí][次|cì][几|jǐ][片|piàn]？",
+          "id": "How many tablets each time?",
+          "literal": "one — time — how-many — slice."
+        },
+        {
+          "speaker": "药店:",
+          "text": "[两|Liǎng][片|piàn]。[多|Duō][喝|hē][热水|rè shuǐ]，[别|bié][吃|chī][辣|là][的|de]。",
+          "id": "Two. Drink plenty of hot water, and no spicy food.",
+          "literal": "two — slice. more — drink — hot-water, don't — eat — spicy — (one)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[好|Hǎo][的|de]。[如果|Rúguǒ][明天|míngtiān][还|hái][疼|téng][呢|ne]？",
+          "id": "Okay. What if it still hurts tomorrow?",
+          "literal": "good — (of). if — tomorrow — still — hurt — (what-about)."
+        },
+        {
+          "speaker": "药店:",
+          "text": "[那|Nà][您|nín][得|děi][去|qù][医院|yīyuàn][看|kàn][医生|yīshēng]。",
+          "id": "Then you'll need to go to the hospital and see a doctor.",
+          "literal": "that — you(polite) — must — go — hospital — see — doctor."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[明白|Míngbai][了|le]，[谢谢|xièxie][您|nín]。",
+          "id": "Got it, thank you.",
+          "literal": "understand — (change), thank — you(polite)."
+        }
+      ],
+      "notes": [
+        "**⚠️ To say what hurts, use \"I + body part + 疼\", with no extra verb and no 的.** [我肚子疼|Wǒ dùzi téng] literally \"I stomach hurt\". Not 我的肚子是疼. Think of it as \"me — my stomach hurts\": the person first, then the part, then the pain.",
+        "**[不舒服|bù shūfu] = not feeling well.** The most useful opener when you don't yet know exactly what's wrong.",
+        "**[从什么时候开始的|Cóng shénme shíhou kāishǐ de]？** = since when. Note the 的 at the end — this is the 是…的 form from Unit 10, highlighting a detail of something that definitely happened.",
+        "**[发烧|fāshāo] fever · [咳嗽|késou] cough · [感冒|gǎnmào] cold, flu · [拉肚子|lā dùzi] diarrhea · [头晕|tóuyūn] dizzy.** Five words that cover most complaints.",
+        "**[片|piàn] is the classifier for thin, flat things**: tablets, slices of bread, pieces. [两片药|liǎng piàn yào] two tablets.",
+        "**[得|děi] = have to.** ⚠️ It's the same character as the 得 degree marker from Unit 8, but pronounced differently: *děi* (have to) and *de* (marker). Its negative isn't 不得 but [不用|bú yòng] \"don't need to\".",
+        "**[如果…呢|rúguǒ… ne]？ = \"what if …?\".** Synonym: [要是|yàoshi]. This is the simplest conditional frame, and it's all you need at A1.",
+        "**[看医生|kàn yīshēng] = see a doctor**, literally \"look at a doctor\". Another form: [看病|kàn bìng] \"get medical treatment\"."
+      ],
+      "grammars": [
+        {
+          "title": "Body and symptoms",
+          "tables": [
+            {
+              "head": [
+                "Body part",
+                "Pīnyīn",
+                "Body part",
+                "Pīnyīn"
+              ],
+              "rows": [
+                [
+                  "[头|tóu] head",
+                  "tóu",
+                  "[肚子|dùzi] stomach",
+                  "dùzi"
+                ],
+                [
+                  "[眼睛|yǎnjing] eye",
+                  "yǎnjing",
+                  "[背|bèi] back",
+                  "bèi"
+                ],
+                [
+                  "[鼻子|bízi] nose",
+                  "bízi",
+                  "[手|shǒu] hand",
+                  "shǒu"
+                ],
+                [
+                  "[嘴|zuǐ] mouth",
+                  "zuǐ",
+                  "[脚|jiǎo] foot",
+                  "jiǎo"
+                ],
+                [
+                  "[耳朵|ěrduo] ear",
+                  "ěrduo",
+                  "[腿|tuǐ] leg",
+                  "tuǐ"
+                ],
+                [
+                  "[牙|yá] tooth",
+                  "yá",
+                  "[嗓子|sǎngzi] throat",
+                  "sǎngzi"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Symptom",
+                "Sentence"
+              ],
+              "rows": [
+                [
+                  "Not feeling well",
+                  "[我不舒服|Wǒ bù shūfu]。"
+                ],
+                [
+                  "Headache",
+                  "[我头疼|Wǒ tóu téng]。"
+                ],
+                [
+                  "Fever",
+                  "[我发烧了|Wǒ fāshāo le]。"
+                ],
+                [
+                  "Cold, flu",
+                  "[我感冒了|Wǒ gǎnmào le]。"
+                ],
+                [
+                  "Cough",
+                  "[我咳嗽|Wǒ késou]。"
+                ],
+                [
+                  "Diarrhea",
+                  "[我拉肚子|Wǒ lā dùzi]。"
+                ],
+                [
+                  "Allergy",
+                  "[我对…过敏|Wǒ duì… guòmǐn]。"
+                ],
+                [
+                  "How long",
+                  "[疼了两天了|Téng le liǎng tiān le]。"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Notice that [发烧了|fāshāo le] and [感冒了|gǎnmào le] use the **change 了** from Unit 10: healthy before, not now. Without 了, the sentence sounds like you're describing a habit."
+          ]
+        },
+        {
+          "title": "Emergencies",
+          "tables": [
+            {
+              "head": [
+                "Sentence",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "[救命|Jiùmìng]！",
+                  "Help! — only when a life is in danger"
+                ],
+                [
+                  "[帮帮我|Bāng bang wǒ]！",
+                  "Please help me!"
+                ],
+                [
+                  "[请叫救护车|Qǐng jiào jiùhùchē]。",
+                  "Please call an ambulance."
+                ],
+                [
+                  "[请叫警察|Qǐng jiào jǐngchá]。",
+                  "Please call the police."
+                ],
+                [
+                  "[我的护照丢了|Wǒ de hùzhào diū le]。",
+                  "I've lost my passport."
+                ],
+                [
+                  "[我的钱包被偷了|Wǒ de qiánbāo bèi tōu le]。",
+                  "My wallet has been stolen."
+                ],
+                [
+                  "[我不会说中文|Wǒ bú huì shuō Zhōngwén]。",
+                  "I don't speak Chinese."
+                ],
+                [
+                  "[有人会说英语吗|Yǒu rén huì shuō Yīngyǔ ma]？",
+                  "Does anyone speak English?"
+                ],
+                [
+                  "[请给我叫翻译|Qǐng gěi wǒ jiào fānyì]。",
+                  "Please get me an interpreter."
+                ],
+                [
+                  "[我要联系我的大使馆|Wǒ yào liánxì wǒ de dàshǐguǎn]。",
+                  "I need to contact my embassy."
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Emergency numbers in China",
+                "For"
+              ],
+              "rows": [
+                [
+                  "**110**",
+                  "Police"
+                ],
+                [
+                  "**120**",
+                  "Ambulance"
+                ],
+                [
+                  "**119**",
+                  "Fire department"
+                ],
+                [
+                  "**122**",
+                  "Traffic accidents"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **Save your address in Chinese characters on your phone.** In a panic, showing it is far faster and far more reliable than trying to pronounce it.",
+            "Save your own embassy's name in Chinese too — for example, the Embassy of the Republic of Indonesia: **[印度尼西亚共和国大使馆|Yìndùníxīyà Gònghéguó Dàshǐguǎn]**. Save the Chinese name, not its translation."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Twelve units in review",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This isn't a list of topics — it's a list of **abilities**. Read it slowly and test yourself on each line. If something makes you hesitate, the unit is right there next to it."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "You can now",
+            "The pattern",
+            "Unit"
+          ],
+          "rows": [
+            [
+              "Introduce yourself",
+              "[我叫…，我是…人|Wǒ jiào…, wǒ shì… rén]",
+              "1"
+            ],
+            [
+              "Point things out and say whose they are",
+              "[这是我的…|Zhè shì wǒ de…]",
+              "2"
+            ],
+            [
+              "Shop and bargain",
+              "[多少钱？便宜一点儿吧|Duōshao qián? Piányi yìdiǎnr ba]",
+              "3"
+            ],
+            [
+              "Talk about your family",
+              "[我家有…口人|Wǒ jiā yǒu… kǒu rén]",
+              "4"
+            ],
+            [
+              "Tell the time and make plans",
+              "[明天下午四点见|Míngtiān xiàwǔ sì diǎn jiàn]",
+              "5"
+            ],
+            [
+              "Say where things are and give directions",
+              "[…在…旁边|… zài… pángbiān]",
+              "6"
+            ],
+            [
+              "Talk about habits",
+              "[我常常…|Wǒ chángcháng…]",
+              "7"
+            ],
+            [
+              "Judge and give opinions",
+              "[我觉得…很…|Wǒ juéde… hěn…]",
+              "8"
+            ],
+            [
+              "Invite and decline",
+              "[一起…吧 / 对不起，我有事|Yìqǐ… ba / Duìbuqǐ, wǒ yǒu shì]",
+              "9"
+            ],
+            [
+              "Tell what has happened",
+              "[我去了… / 我去过…|Wǒ qù le… / Wǒ qù guo…]",
+              "10"
+            ],
+            [
+              "Get around",
+              "[我坐地铁去…|Wǒ zuò dìtiě qù…]",
+              "11"
+            ],
+            [
+              "Order food and ask for help",
+              "[来一个… / 我不舒服|Lái yí ge… / Wǒ bù shūfu]",
+              "12"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Five rules that decide everything",
+          "items": [
+            "**1. All adverbials stand before the verb.** Time, place, means, manner — all of them. Only the object, duration and number of times can come after.",
+            "**2. Adjective sentences don't use 是; they use 很.** [他很忙|Tā hěn máng], not 他是忙.",
+            "**3. A number never attaches directly to a noun.** There's always a classifier in between.",
+            "**4. 了 is not a past tense.** It marks completion or change. What marks the past is a time expression.",
+            "**5. Negation has two forms.** 不 for will and habits; 没 for events that didn't happen. 有 always takes 没有."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Final test: a whole day in Mandarin",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Do this in your head, out loud, without opening your notes. If you can get through the ten situations below, you've mastered this module — not just read it."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**07:00** You meet a neighbor in the elevator. Greet them and answer their question about how you are.",
+            "**07:30** You have breakfast at a food stall. Order two steamed buns and a soy milk, then ask the price.",
+            "**08:15** You take a taxi. Give your destination, ask how long it'll take, and ask to stop across from the bank.",
+            "**10:00** You're introduced to a new coworker. Give your name, where you're from and what you do, then ask the same.",
+            "**12:30** You have lunch together. State your dietary restrictions and order something that isn't spicy.",
+            "**14:00** You're looking for the restroom in an unfamiliar building. Ask, then repeat the directions you heard to make sure.",
+            "**16:00** Your coworker invites you to dinner. Accept, then agree on a time and place.",
+            "**18:00** You're shopping for clothes. Ask the price, ask to try it on, then bargain once.",
+            "**20:00** You talk about last weekend in six sentences, using 了 and 过.",
+            "**22:00** Your stomach hurts. Explain your symptoms at the pharmacy and ask how many times a day to take the medicine."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "If you get stuck",
+          "items": [
+            "Note which situation stopped you, then reopen that unit — not the whole module.",
+            "Stalling mid-sentence is normal even for people who've studied for years. What separates beginners from fluent speakers isn't never getting stuck, but having backup sentences: [请再说一遍|Qǐng zài shuō yí biàn]。[这个用中文怎么说|Zhège yòng Zhōngwén zěnme shuō]？",
+            "Repeat this test in a week. The difference will surprise you.",
+            "[加油|Jiāyóu]！"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "服务员",
+      "baca": "fúwùyuán",
+      "en": "waiter, server"
+    },
+    {
+      "zh": "菜单",
+      "baca": "càidān",
+      "en": "menu"
+    },
+    {
+      "zh": "位",
+      "baca": "wèi",
+      "en": "classifier for people (polite)"
+    },
+    {
+      "zh": "位子",
+      "baca": "wèizi",
+      "en": "seat"
+    },
+    {
+      "zh": "来",
+      "baca": "lái",
+      "en": "come; (when ordering) bring"
+    },
+    {
+      "zh": "再",
+      "baca": "zài",
+      "en": "again, more"
+    },
+    {
+      "zh": "碗",
+      "baca": "wǎn",
+      "en": "bowl"
+    },
+    {
+      "zh": "杯",
+      "baca": "bēi",
+      "en": "glass, cup"
+    },
+    {
+      "zh": "瓶",
+      "baca": "píng",
+      "en": "bottle"
+    },
+    {
+      "zh": "米饭",
+      "baca": "mǐfàn",
+      "en": "steamed rice"
+    },
+    {
+      "zh": "面条",
+      "baca": "miàntiáo",
+      "en": "noodles"
+    },
+    {
+      "zh": "饺子",
+      "baca": "jiǎozi",
+      "en": "dumplings"
+    },
+    {
+      "zh": "包子",
+      "baca": "bāozi",
+      "en": "steamed bun"
+    },
+    {
+      "zh": "青菜",
+      "baca": "qīngcài",
+      "en": "leafy greens"
+    },
+    {
+      "zh": "鸡肉",
+      "baca": "jīròu",
+      "en": "chicken"
+    },
+    {
+      "zh": "牛肉",
+      "baca": "niúròu",
+      "en": "beef"
+    },
+    {
+      "zh": "羊肉",
+      "baca": "yángròu",
+      "en": "lamb, mutton"
+    },
+    {
+      "zh": "猪肉",
+      "baca": "zhūròu",
+      "en": "pork"
+    },
+    {
+      "zh": "鱼",
+      "baca": "yú",
+      "en": "fish"
+    },
+    {
+      "zh": "汤",
+      "baca": "tāng",
+      "en": "soup"
+    },
+    {
+      "zh": "茶",
+      "baca": "chá",
+      "en": "tea"
+    },
+    {
+      "zh": "热水",
+      "baca": "rè shuǐ",
+      "en": "hot water"
+    },
+    {
+      "zh": "买单",
+      "baca": "mǎidān",
+      "en": "pay the bill"
+    },
+    {
+      "zh": "打包",
+      "baca": "dǎbāo",
+      "en": "pack up (to go)"
+    },
+    {
+      "zh": "过敏",
+      "baca": "guòmǐn",
+      "en": "allergic"
+    },
+    {
+      "zh": "有名",
+      "baca": "yǒumíng",
+      "en": "famous"
+    },
+    {
+      "zh": "舒服",
+      "baca": "shūfu",
+      "en": "comfortable, well"
+    },
+    {
+      "zh": "疼",
+      "baca": "téng",
+      "en": "hurt, ache"
+    },
+    {
+      "zh": "头",
+      "baca": "tóu",
+      "en": "head"
+    },
+    {
+      "zh": "肚子",
+      "baca": "dùzi",
+      "en": "stomach"
+    },
+    {
+      "zh": "嗓子",
+      "baca": "sǎngzi",
+      "en": "throat"
+    },
+    {
+      "zh": "牙",
+      "baca": "yá",
+      "en": "tooth"
+    },
+    {
+      "zh": "眼睛",
+      "baca": "yǎnjing",
+      "en": "eye"
+    },
+    {
+      "zh": "手",
+      "baca": "shǒu",
+      "en": "hand"
+    },
+    {
+      "zh": "脚",
+      "baca": "jiǎo",
+      "en": "foot"
+    },
+    {
+      "zh": "发烧",
+      "baca": "fāshāo",
+      "en": "have a fever"
+    },
+    {
+      "zh": "感冒",
+      "baca": "gǎnmào",
+      "en": "cold, flu"
+    },
+    {
+      "zh": "咳嗽",
+      "baca": "késou",
+      "en": "cough"
+    },
+    {
+      "zh": "拉肚子",
+      "baca": "lā dùzi",
+      "en": "have diarrhea"
+    },
+    {
+      "zh": "药",
+      "baca": "yào",
+      "en": "medicine"
+    },
+    {
+      "zh": "药店",
+      "baca": "yàodiàn",
+      "en": "pharmacy"
+    },
+    {
+      "zh": "片",
+      "baca": "piàn",
+      "en": "tablet, slice"
+    },
+    {
+      "zh": "医生",
+      "baca": "yīshēng",
+      "en": "doctor"
+    },
+    {
+      "zh": "医院",
+      "baca": "yīyuàn",
+      "en": "hospital"
+    },
+    {
+      "zh": "得",
+      "baca": "děi",
+      "en": "have to"
+    },
+    {
+      "zh": "需要",
+      "baca": "xūyào",
+      "en": "need"
+    },
+    {
+      "zh": "如果",
+      "baca": "rúguǒ",
+      "en": "if"
+    },
+    {
+      "zh": "救命",
+      "baca": "jiùmìng",
+      "en": "help! (danger)"
+    },
+    {
+      "zh": "警察",
+      "baca": "jǐngchá",
+      "en": "police"
+    },
+    {
+      "zh": "丢",
+      "baca": "diū",
+      "en": "lose, be lost"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right classifier: 位, 碗, 杯, 瓶, 片, 个.",
+      "items": [
+        "[两|liǎng] ___ [米饭|mǐfàn]",
+        "[一|yì] ___ [茶|chá]",
+        "[三|sān] ___ [人|rén]",
+        "[两|liǎng] ___ [药|yào]",
+        "[一|yì] ___ [水|shuǐ]",
+        "[一|yí] ___ [青菜|qīngcài]"
+      ]
+    },
+    {
+      "prompt": "Fill in the right body part or symptom: 头, 肚子, 发烧, 感冒, 嗓子.",
+      "items": [
+        "[我昨天吃了很辣的东西，今天|Wǒ zuótiān chī le hěn là de dōngxi, jīntiān] ___ [疼|téng]。",
+        "[我|Wǒ] ___ [了，三十八度|le, sānshíbā dù]。",
+        "[我|Wǒ] ___ [疼，不能说话|téng, bù néng shuōhuà]。",
+        "[外边很冷，我|Wàibian hěn lěng, wǒ] ___ [了|le]。",
+        "[我|Wǒ] ___ [疼，想休息一下|téng, xiǎng xiūxi yíxià]。"
+      ]
+    },
+    {
+      "prompt": "Put the pieces in the right order.",
+      "items": [
+        "来 / 一 / 个 / 不辣 / 的 / 菜",
+        "我 / 不 / 吃 / 猪肉",
+        "我 / 肚子 / 疼",
+        "这 / 个 / 药 / 一 / 天 / 三 / 次",
+        "有 / 中文 / 菜单 / 吗",
+        "请 / 叫 / 救护车"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "[你们这儿什么最好吃|Nǐmen zhèr shénme zuì hǎochī]？",
+        "[请不要放辣椒|Qǐng bú yào fàng làjiāo]。",
+        "[这个药饭后吃，一次两片|Zhège yào fàn hòu chī, yí cì liǎng piàn]。",
+        "[如果明天还疼，就去医院|Rúguǒ míngtiān hái téng, jiù qù yīyuàn]。",
+        "[我的护照丢了|Wǒ de hùzhào diū le]。"
+      ]
+    },
+    {
+      "prompt": "Translate into Mandarin. Write in pīnyīn.",
+      "items": [
+        "Two people, do you have a table?",
+        "I don't eat pork.",
+        "I don't feel well.",
+        "I have a headache.",
+        "Please call the police."
+      ]
+    },
+    {
+      "prompt": "Correct these sentences, then write the correct form in pīnyīn.",
+      "items": [
+        "[我的肚子是疼|Wǒ de dùzi shì téng]。",
+        "[我买一个水煮鱼|Wǒ mǎi yí ge shuǐzhǔ yú]。",
+        "[我两碗米饭要|Wǒ liǎng wǎn mǐfàn yào]。",
+        "[我没发烧了|Wǒ méi fāshāo le]。",
+        "[我不能说中文|Wǒ bù néng shuō Zhōngwén]。"
+      ]
+    }
+  ],
+  "answers": [
+    "碗 — 杯 — 位 — 片 — 瓶 — 个",
+    "肚子 — 发烧 — 嗓子 — 感冒 — 头",
+    "来 一 个 不辣 的 菜 — 我 不 吃 猪肉 — 我 肚子 疼 — 这 个 药 一 天 三 次 — 有 中文 菜单 吗 — 请 叫 救护车",
+    "What's best here? — No chili, please. — Take this medicine after meals, two tablets each time. — If it still hurts tomorrow, go to the hospital. — I've lost my passport.",
+    "Liǎng wèi, yǒu wèizi ma? — Wǒ bù chī zhūròu. — Wǒ bù shūfu. — Wǒ tóu téng. — Qǐng jiào jǐngchá.",
+    "Wǒ dùzi téng. — Wǒ yào yí ge shuǐzhǔ yú. — Wǒ yào liǎng wǎn mǐfàn. — Wǒ méi fāshāo. — Wǒ bú huì shuō Zhōngwén."
+  ],
+  "wave": "Review the whole module: work through the \"Final test\" above from seven in the morning to ten at night, one situation each time you move to a different room today. Twelve units used in one day will stick far better than twelve units read in a week."
+}

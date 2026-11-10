@@ -1,0 +1,867 @@
+{
+  "title": "Numbers, prices, and haggling",
+  "title_target": "多少钱 — Duōshao qián",
+  "goal": "Read numbers into the tens of thousands, ask prices, say amounts of money the spoken and the written way, and haggle without feeling awkward.",
+  "bekal": [
+    "count from zero to 99,999",
+    "ask the price with 多少钱 and the quantity with 几",
+    "say prices with 块, 毛, 分",
+    "buy something from hello to change",
+    "haggle with 便宜一点儿吧"
+  ],
+  "dialogs": [
+    {
+      "title": "对话 1 — At the fruit stall",
+      "intro": "Andi is shopping at the market near his home. Notice that the seller says 块, not 元 — that's the form you actually hear every day.",
+      "lines": [
+        {
+          "speaker": "老板:",
+          "text": "[您好|Nín hǎo]！[要|Yào][什么|shénme]？",
+          "id": "Hello! What can I get you?",
+          "literal": "you(polite) — good. want — what."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[请问|Qǐngwèn]，[苹果|píngguǒ][多少|duōshao][钱|qián][一|yì][斤|jīn]？",
+          "id": "Excuse me, how much are the apples per jin?",
+          "literal": "please — ask, apple — how-much — money — one — jin."
+        },
+        {
+          "speaker": "老板:",
+          "text": "[八|Bā][块|kuài][五|wǔ][一|yì][斤|jīn]。[很|Hěn][甜|tián]！",
+          "id": "Eight fifty a jin. Really sweet!",
+          "literal": "eight — yuan — five, one — jin. (support) — sweet."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[有点儿|Yǒudiǎnr][贵|guì]。[便宜|Piányi][一点儿|yìdiǎnr][吧|ba]？",
+          "id": "That's a bit pricey. Could you go a little lower?",
+          "literal": "a-bit — expensive. cheap — a-little — (suggestion)."
+        },
+        {
+          "speaker": "老板:",
+          "text": "[好吧|Hǎo ba]，[八|bā][块|kuài]。[您|Nín][要|yào][几|jǐ][斤|jīn]？",
+          "id": "All right, eight. How many jin would you like?",
+          "literal": "good — (suggestion), eight — yuan. you(polite) — want — how-many — jin."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[两|Liǎng][斤|jīn]。[香蕉|Xiāngjiāo][呢|ne]？",
+          "id": "Two jin. What about the bananas?",
+          "literal": "two — jin. banana — (and)?"
+        },
+        {
+          "speaker": "老板:",
+          "text": "[香蕉|Xiāngjiāo][六|liù][块|kuài]。[一共|Yígòng][二十二|èrshí'èr][块|kuài]。",
+          "id": "Bananas are six. That's twenty-two altogether.",
+          "literal": "banana — six — yuan. altogether — twenty-two — yuan."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[给|Gěi][您|nín][一百|yì bǎi]。",
+          "id": "Here's a hundred.",
+          "literal": "give — you(polite) — one — hundred."
+        },
+        {
+          "speaker": "老板:",
+          "text": "[找|Zhǎo][您|nín][七十八|qīshíbā][块|kuài]。[谢谢|Xièxie]！",
+          "id": "Seventy-eight is your change. Thank you!",
+          "literal": "give-change — you(polite) — seventy-eight — yuan. thanks."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[谢谢|Xièxie]！[再见|Zàijiàn]！",
+          "id": "Thank you! Goodbye!",
+          "literal": "thanks. again — see."
+        }
+      ],
+      "notes": [
+        "**[多少钱|Duōshao qián]？ = how much is it?** Literally “how much money”. To add the unit, put it after: [多少钱一斤|duōshao qián yì jīn] how much per jin, [多少钱一个|duōshao qián yí ge] how much each.",
+        "**⚠️ [几|jǐ] and [多少|duōshao] both mean “how many”, but they aren't interchangeable.** 几 is for amounts **expected to be under ten** and **must be followed by a measure word**: [几个人|jǐ ge rén], [几点|jǐ diǎn]. 多少 is for large or unknown amounts, **with no measure word needed**: [多少钱|duōshao qián], [多少人|duōshao rén].",
+        "**[块|kuài] is the word people actually say** for Chinese money. [元|yuán] is only written — on price tags, receipts, and at the bank. Say 八元 at a market and you'll instantly sound like a textbook.",
+        "**Prices with decimals: [八块五|bā kuài wǔ] = 8.50 yuan.** The last part can stand bare, without 毛. The full form is [八块五毛|bā kuài wǔ máo], but people rarely say it all.",
+        "**[有点儿|yǒudiǎnr] + adjective = “a bit …”, and it always sounds negative.** [有点儿贵|yǒudiǎnr guì] a bit expensive, [有点儿累|yǒudiǎnr lèi] a bit tired. ⚠️ Don't confuse it with [一点儿|yìdiǎnr], which comes **after** the adjective and means “a little more”: [便宜一点儿|piányi yìdiǎnr] = a little cheaper.",
+        "**[吧|ba] at the end of a sentence softens a request.** [便宜一点儿吧|Piányi yìdiǎnr ba] sounds like a suggestion, not a demand. This one syllable changes the whole feel of your sentence.",
+        "**[找|zhǎo] means “look for”, but at the till it means “give change”.** [找您七十八块|Zhǎo nín qīshíbā kuài] = your change is 78 yuan.",
+        "**[斤|jīn] is a Chinese unit of weight = 500 grams**, not a kilogram (about 1.1 pounds). Market prices are almost always given per 斤, so a price that sounds cheap is actually double per kilo."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers from 0 to 99,999",
+          "body": [
+            "Mandarin numbers are very regular — far more regular than English, with its *eleven*, *twelve*, and *-teens*. After ten, numbers are read exactly as they're built: 11 = 10 + 1, 25 = 2 × 10 + 5."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Number",
+                "Character · Pīnyīn",
+                "Number",
+                "Character · Pīnyīn"
+              ],
+              "rows": [
+                [
+                  "0",
+                  "[零|líng]",
+                  "6",
+                  "[六|liù]"
+                ],
+                [
+                  "1",
+                  "[一|yī]",
+                  "7",
+                  "[七|qī]"
+                ],
+                [
+                  "2",
+                  "[二|èr]",
+                  "8",
+                  "[八|bā]"
+                ],
+                [
+                  "3",
+                  "[三|sān]",
+                  "9",
+                  "[九|jiǔ]"
+                ],
+                [
+                  "4",
+                  "[四|sì]",
+                  "10",
+                  "[十|shí]"
+                ],
+                [
+                  "5",
+                  "[五|wǔ]",
+                  "",
+                  ""
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Number",
+                "How it's built",
+                "Character · Pīnyīn"
+              ],
+              "rows": [
+                [
+                  "11",
+                  "10 + 1",
+                  "[十一|shíyī]"
+                ],
+                [
+                  "20",
+                  "2 × 10",
+                  "[二十|èrshí]"
+                ],
+                [
+                  "35",
+                  "3 × 10 + 5",
+                  "[三十五|sānshíwǔ]"
+                ],
+                [
+                  "99",
+                  "9 × 10 + 9",
+                  "[九十九|jiǔshíjiǔ]"
+                ],
+                [
+                  "100",
+                  "1 × 100",
+                  "[一百|yìbǎi]"
+                ],
+                [
+                  "101",
+                  "100 + **0** + 1 ⚠️",
+                  "[一百零一|yìbǎi líng yī]"
+                ],
+                [
+                  "110",
+                  "100 + 1 × 10",
+                  "[一百一十|yìbǎi yīshí]"
+                ],
+                [
+                  "256",
+                  "2×100 + 5×10 + 6",
+                  "[二百五十六|èrbǎi wǔshíliù]"
+                ],
+                [
+                  "1,000",
+                  "1 × 1000",
+                  "[一千|yìqiān]"
+                ],
+                [
+                  "2,500",
+                  "2×1000 + 5×100",
+                  "[两千五百|liǎngqiān wǔbǎi]"
+                ],
+                [
+                  "10,000",
+                  "1 万 ⚠️",
+                  "[一万|yíwàn]"
+                ],
+                [
+                  "58,000",
+                  "5万 + 8千",
+                  "[五万八千|wǔwàn bāqiān]"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **A zero in the middle must be said.** 101 isn't 一百一 but [一百零一|yìbǎi líng yī]. Skip the zero and 105 and 150 become impossible to tell apart.",
+            "⚠️ **Mandarin groups numbers every FOUR digits, not three.** After [千|qiān] (1,000) comes not “ten thousand” but a new unit: [万|wàn] = 10,000. So 250,000 is read as 25 万 — [二十五万|èrshíwǔ wàn]. This is the biggest source of confusion for English speakers hearing large prices. Practice: read ten electronics prices out loud today.",
+            "⚠️ **两 vs 二 once more**: [两百|liǎngbǎi] 200 and [两千|liǎngqiān] 2,000 use 两, but [二十|èrshí] 20 uses 二. The rule: 两 is used when the two **multiplies** a big unit."
+          ]
+        },
+        {
+          "title": "Money: 块 · 毛 · 分",
+          "tables": [
+            {
+              "head": [
+                "Value",
+                "Spoken",
+                "Written",
+                "Example 8.50"
+              ],
+              "rows": [
+                [
+                  "Yuan",
+                  "[块|kuài]",
+                  "[元|yuán]",
+                  "[八块五|bā kuài wǔ]"
+                ],
+                [
+                  "1/10 yuan",
+                  "[毛|máo]",
+                  "[角|jiǎo]",
+                  "[五毛|wǔ máo]"
+                ],
+                [
+                  "1/100 yuan",
+                  "[分|fēn]",
+                  "[分|fēn]",
+                  "[两分|liǎng fēn] — practically no longer used"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Price",
+                "How to say it"
+              ],
+              "rows": [
+                [
+                  "¥5",
+                  "[五块|wǔ kuài]"
+                ],
+                [
+                  "¥5.50",
+                  "[五块五|wǔ kuài wǔ]"
+                ],
+                [
+                  "¥5.55",
+                  "[五块五毛五|wǔ kuài wǔ máo wǔ]"
+                ],
+                [
+                  "¥20",
+                  "[二十块|èrshí kuài]"
+                ],
+                [
+                  "¥200",
+                  "[两百块|liǎngbǎi kuài]"
+                ],
+                [
+                  "¥1,999",
+                  "[一千九百九十九块|yìqiān jiǔbǎi jiǔshíjiǔ kuài]"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "When the last digit stands alone at the end, its unit is often dropped — except when the number is **two**, which must become 两: ¥2.20 = [两块二|liǎng kuài èr]."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "对话 2 — Buying clothes and haggling",
+      "intro": "Haggling is a normal part of shopping at Chinese markets — not in big stores or supermarkets. Notice that Andi is never rude; he just holds his ground calmly.",
+      "lines": [
+        {
+          "speaker": "安迪:",
+          "text": "[这|Zhè][件|jiàn][衣服|yīfu][多少|duōshao][钱|qián]？",
+          "id": "How much is this top?",
+          "literal": "this — (measure) — clothes — how-much — money."
+        },
+        {
+          "speaker": "老板:",
+          "text": "[三百|Sānbǎi][八十|bāshí]。[质量|Zhìliàng][很|hěn][好|hǎo]。",
+          "id": "Three hundred eighty. It's good quality.",
+          "literal": "three-hundred — eighty. quality — (support) — good."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[太|Tài][贵|guì][了|le]！[能|Néng][便宜|piányi][点儿|diǎnr][吗|ma]？",
+          "id": "That's way too expensive! Can you go a bit lower?",
+          "literal": "too — expensive — (change). can — cheap — a-bit — (question)."
+        },
+        {
+          "speaker": "老板:",
+          "text": "[您|Nín][想|xiǎng][多少|duōshao][钱|qián][买|mǎi]？",
+          "id": "How much do you want to pay?",
+          "literal": "you(polite) — want — how-much — money — buy."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[两百|Liǎngbǎi][怎么样|zěnmeyàng]？",
+          "id": "How about two hundred?",
+          "literal": "two-hundred — how-about."
+        },
+        {
+          "speaker": "老板:",
+          "text": "[两百|Liǎngbǎi][太|tài][少|shǎo][了|le]。[三百|Sānbǎi][吧|ba]。",
+          "id": "Two hundred is too little. Let's say three hundred.",
+          "literal": "two-hundred — too — little — (change). three-hundred — (suggestion)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[两百|Liǎngbǎi][五|wǔ]。[可以|Kěyǐ][吗|ma]？",
+          "id": "Two fifty. OK?",
+          "literal": "two-hundred — five. may — (question)."
+        },
+        {
+          "speaker": "老板:",
+          "text": "[好吧|Hǎo ba]，[两百|liǎngbǎi][五|wǔ]。[要|Yào][什么|shénme][颜色|yánsè]？",
+          "id": "All right, two fifty. What color do you want?",
+          "literal": "good — (suggestion), two-hundred — five. want — what — color."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[蓝色|Lánsè][的|de]。[可以|Kěyǐ][试试|shìshi][吗|ma]？",
+          "id": "The blue one. Can I try it on?",
+          "literal": "blue — (one). may — try-try — (question)."
+        },
+        {
+          "speaker": "老板:",
+          "text": "[当然|Dāngrán][可以|kěyǐ]。[试衣间|Shìyījiān][在|zài][那儿|nàr]。",
+          "id": "Of course. The fitting room is over there.",
+          "literal": "of-course — may. try-clothes-room — be-at — there."
+        }
+      ],
+      "notes": [
+        "**[太贵了|Tài guì le]！** — the first sentence out of your mouth when haggling. The pattern [太|tài] + adjective + [了|le] means “too …”, and the 了 at the end is almost never dropped.",
+        "**[怎么样|zěnmeyàng]？ = “how about it?”** — used to offer an opinion or a suggestion. [两百怎么样|Liǎngbǎi zěnmeyàng]？ = how about two hundred? This is the gentlest way to haggle.",
+        "**[两百五|liǎngbǎi wǔ] = 250, not 205.** When the last digit stands alone at the end of a price, it fills **the next place down**. For 205 you must say [两百零五|liǎngbǎi líng wǔ] with 零.",
+        "**[试试|shìshi] = “give it a try”.** Doubling a verb makes the action sound light and brief — like “have a quick …” in English. [看看|kànkan] have a look, [听听|tīngting] have a listen, [想想|xiǎngxiang] think it over.",
+        "**[当然|dāngrán] = of course.** A word that makes your answer sound friendly, not just agreeable.",
+        "⚠️ **Haggling is only normal at markets, street stalls, and small shops.** In supermarkets, chain stores, and restaurants, haggling is considered odd — much as it would be at home."
+      ],
+      "grammars": [
+        {
+          "title": "Two ways to say “a bit” and “a little”",
+          "body": [
+            "This is the pair learners mix up most, and the mistake is instantly audible. The difference is **where it stands**."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Form",
+                "Position",
+                "Nuance",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "[有点儿|yǒudiǎnr] + adjective",
+                  "**Before** the adjective",
+                  "Complaint — always about something unpleasant",
+                  "[有点儿贵|yǒudiǎnr guì] a bit expensive"
+                ],
+                [
+                  "adjective + [一点儿|yìdiǎnr]",
+                  "**After** the adjective",
+                  "Request or comparison — neutral",
+                  "[便宜一点儿|piányi yìdiǎnr] a little cheaper"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Right",
+                "Wrong",
+                "Why"
+              ],
+              "rows": [
+                [
+                  "[这个有点儿贵|Zhège yǒudiǎnr guì]。",
+                  "这个一点儿贵。",
+                  "Complaining → 有点儿 in front"
+                ],
+                [
+                  "[便宜一点儿吧|Piányi yìdiǎnr ba]。",
+                  "有点儿便宜吧。",
+                  "Asking → 一点儿 after"
+                ],
+                [
+                  "[我有点儿累|Wǒ yǒudiǎnr lèi]。",
+                  "我一点儿累。",
+                  "Complaining → 有点儿"
+                ],
+                [
+                  "[请说慢一点儿|Qǐng shuō màn yìdiǎnr]。",
+                  "请说有点儿慢。",
+                  "Asking → 一点儿"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "How to remember it: **有点儿 comes before a complaint, 一点儿 trails after a request.** If your sentence expresses a wish for something to change, use 一点儿."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Surviving at the checkout and in shops",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sellers say the same sentences every day. You don't need to be able to say them — you just need to **recognize** them and know the short reply."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "What you hear",
+            "What it means",
+            "Your short reply"
+          ],
+          "rows": [
+            [
+              "[您要什么|Nín yào shénme]？",
+              "What would you like?",
+              "[我要这个|Wǒ yào zhège]。"
+            ],
+            [
+              "[要几个|Yào jǐ ge]？",
+              "How many?",
+              "[两个|Liǎng ge]。"
+            ],
+            [
+              "[还要别的吗|Hái yào bié de ma]？",
+              "Anything else?",
+              "[不用了|Bú yòng le]，[谢谢|xièxie]。"
+            ],
+            [
+              "[一共一百二|Yígòng yìbǎi èr]。",
+              "That's 120 altogether.",
+              "[给您|Gěi nín]。"
+            ],
+            [
+              "[您怎么付|Nín zěnme fù]？",
+              "How are you paying?",
+              "[微信|Wēixìn]。 / [现金|Xiànjīn]。"
+            ],
+            [
+              "[要发票吗|Yào fāpiào ma]？",
+              "Do you need a receipt?",
+              "[不用|Bú yòng]。 / [要|Yào]。"
+            ],
+            [
+              "[找您二十|Zhǎo nín èrshí]。",
+              "Here's 20 change.",
+              "[谢谢|Xièxie]。"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Paying by phone",
+          "items": [
+            "Cash has nearly vanished from China's big cities. Two words you must recognize: **[微信|Wēixìn]** (WeChat Pay) and **[支付宝|Zhīfùbǎo]** (Alipay).",
+            "[可以用微信吗|Kěyǐ yòng Wēixìn ma]？ — Can I use WeChat?",
+            "[扫这个|Sǎo zhège]。 — “Scan this one.” 扫 = scan a QR code.",
+            "[我没有中国的手机号|Wǒ méiyǒu Zhōngguó de shǒujī hào]。 — “I don't have a Chinese phone number.” A sentence you'll need often as a newcomer."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Units, numbers, and things to watch out for",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Unit",
+            "Value",
+            "Note"
+          ],
+          "rows": [
+            [
+              "[斤|jīn]",
+              "500 grams",
+              "The most common market unit"
+            ],
+            [
+              "[公斤|gōngjīn]",
+              "1 kilogram",
+              "Used in supermarkets and on official scales"
+            ],
+            [
+              "[克|kè]",
+              "gram",
+              "[五百克|wǔbǎi kè] 500 grams"
+            ],
+            [
+              "[米|mǐ]",
+              "meter",
+              "[两米|liǎng mǐ] two meters"
+            ],
+            [
+              "[公里|gōnglǐ]",
+              "kilometer",
+              "[三公里|sān gōnglǐ] three kilometers"
+            ],
+            [
+              "[瓶|píng]",
+              "bottle",
+              "[一瓶水|yì píng shuǐ] a bottle of water"
+            ],
+            [
+              "[杯|bēi]",
+              "glass, cup",
+              "[两杯咖啡|liǎng bēi kāfēi] two cups of coffee"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Numbers in everyday life",
+          "items": [
+            "**Phone and room numbers are read digit by digit**, and 1 is read [幺|yāo] so it isn't confused with 七. The number 138-1174 is read *yāo sān bā, yāo yāo qī sì*.",
+            "**The number 4** ([四|sì]) is avoided because it sounds like [死|sǐ] “die”. Many buildings have no 4th, 14th, or 24th floor.",
+            "**The number 8** ([八|bā]) is loved because it sounds like [发|fā] “prosper”. Phone numbers full of 8s sell for high prices.",
+            "**Discounts are read the opposite way from English.** [打八折|dǎ bā zhé] isn't 80% off but **pay 80%**, i.e. 20% off. [打五折|dǎ wǔ zhé] = 50% off. ⚠️ Misreading this can make you think something is four times cheaper than it really is."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "一",
+      "baca": "yī",
+      "en": "one"
+    },
+    {
+      "zh": "二",
+      "baca": "èr",
+      "en": "two"
+    },
+    {
+      "zh": "三",
+      "baca": "sān",
+      "en": "three"
+    },
+    {
+      "zh": "四",
+      "baca": "sì",
+      "en": "four"
+    },
+    {
+      "zh": "五",
+      "baca": "wǔ",
+      "en": "five"
+    },
+    {
+      "zh": "六",
+      "baca": "liù",
+      "en": "six"
+    },
+    {
+      "zh": "七",
+      "baca": "qī",
+      "en": "seven"
+    },
+    {
+      "zh": "八",
+      "baca": "bā",
+      "en": "eight"
+    },
+    {
+      "zh": "九",
+      "baca": "jiǔ",
+      "en": "nine"
+    },
+    {
+      "zh": "十",
+      "baca": "shí",
+      "en": "ten"
+    },
+    {
+      "zh": "零",
+      "baca": "líng",
+      "en": "zero"
+    },
+    {
+      "zh": "百",
+      "baca": "bǎi",
+      "en": "hundred"
+    },
+    {
+      "zh": "千",
+      "baca": "qiān",
+      "en": "thousand"
+    },
+    {
+      "zh": "万",
+      "baca": "wàn",
+      "en": "ten thousand"
+    },
+    {
+      "zh": "钱",
+      "baca": "qián",
+      "en": "money"
+    },
+    {
+      "zh": "块",
+      "baca": "kuài",
+      "en": "yuan (spoken)"
+    },
+    {
+      "zh": "元",
+      "baca": "yuán",
+      "en": "yuan (written)"
+    },
+    {
+      "zh": "毛",
+      "baca": "máo",
+      "en": "one tenth of a yuan"
+    },
+    {
+      "zh": "多少",
+      "baca": "duōshao",
+      "en": "how many, how much (large amounts)"
+    },
+    {
+      "zh": "几",
+      "baca": "jǐ",
+      "en": "how many (under 10)"
+    },
+    {
+      "zh": "一共",
+      "baca": "yígòng",
+      "en": "altogether, in total"
+    },
+    {
+      "zh": "买",
+      "baca": "mǎi",
+      "en": "to buy"
+    },
+    {
+      "zh": "卖",
+      "baca": "mài",
+      "en": "to sell"
+    },
+    {
+      "zh": "贵",
+      "baca": "guì",
+      "en": "expensive"
+    },
+    {
+      "zh": "便宜",
+      "baca": "piányi",
+      "en": "cheap"
+    },
+    {
+      "zh": "太…了",
+      "baca": "tài … le",
+      "en": "too …"
+    },
+    {
+      "zh": "有点儿",
+      "baca": "yǒudiǎnr",
+      "en": "a bit (complaint)"
+    },
+    {
+      "zh": "一点儿",
+      "baca": "yìdiǎnr",
+      "en": "a little more"
+    },
+    {
+      "zh": "吧",
+      "baca": "ba",
+      "en": "softening particle (let's, OK?)"
+    },
+    {
+      "zh": "怎么样",
+      "baca": "zěnmeyàng",
+      "en": "how about, how is it"
+    },
+    {
+      "zh": "可以",
+      "baca": "kěyǐ",
+      "en": "may, can"
+    },
+    {
+      "zh": "能",
+      "baca": "néng",
+      "en": "can, be able to"
+    },
+    {
+      "zh": "想",
+      "baca": "xiǎng",
+      "en": "would like"
+    },
+    {
+      "zh": "要",
+      "baca": "yào",
+      "en": "to want"
+    },
+    {
+      "zh": "找",
+      "baca": "zhǎo",
+      "en": "to look for; to give change"
+    },
+    {
+      "zh": "试",
+      "baca": "shì",
+      "en": "to try"
+    },
+    {
+      "zh": "当然",
+      "baca": "dāngrán",
+      "en": "of course"
+    },
+    {
+      "zh": "老板",
+      "baca": "lǎobǎn",
+      "en": "shop owner, boss"
+    },
+    {
+      "zh": "苹果",
+      "baca": "píngguǒ",
+      "en": "apple"
+    },
+    {
+      "zh": "香蕉",
+      "baca": "xiāngjiāo",
+      "en": "banana"
+    },
+    {
+      "zh": "斤",
+      "baca": "jīn",
+      "en": "jin (500 grams)"
+    },
+    {
+      "zh": "公斤",
+      "baca": "gōngjīn",
+      "en": "kilogram"
+    },
+    {
+      "zh": "现金",
+      "baca": "xiànjīn",
+      "en": "cash"
+    },
+    {
+      "zh": "微信",
+      "baca": "Wēixìn",
+      "en": "WeChat"
+    },
+    {
+      "zh": "发票",
+      "baca": "fāpiào",
+      "en": "official receipt"
+    },
+    {
+      "zh": "质量",
+      "baca": "zhìliàng",
+      "en": "quality"
+    },
+    {
+      "zh": "甜",
+      "baca": "tián",
+      "en": "sweet"
+    },
+    {
+      "zh": "打折",
+      "baca": "dǎzhé",
+      "en": "to give a discount"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these numbers in Chinese characters.",
+      "items": [
+        "8: ___",
+        "15: ___",
+        "40: ___",
+        "101: ___",
+        "250: ___",
+        "3000: ___"
+      ]
+    },
+    {
+      "prompt": "Fill in with 几 or 多少.",
+      "items": [
+        "[你要|Nǐ yào] ___ [个|ge]？",
+        "[这个|Zhège] ___ [钱|qián]？",
+        "[你家有|Nǐ jiā yǒu] ___ [口人|kǒu rén]？",
+        "[这个学校有|Zhège xuéxiào yǒu] ___ [学生|xuésheng]？",
+        "[现在|Xiànzài] ___ [点|diǎn]？"
+      ]
+    },
+    {
+      "prompt": "Put the pieces in the right order.",
+      "items": [
+        "这 / 件 / 衣服 / 多少 / 钱",
+        "能 / 便宜 / 一点儿 / 吗",
+        "苹果 / 八 / 块 / 一 / 斤",
+        "一共 / 二十二 / 块",
+        "我 / 要 / 两 / 斤 / 香蕉",
+        "这 / 个 / 有点儿 / 贵"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "[这本书三十五块|Zhè běn shū sānshíwǔ kuài]。",
+        "[太贵了，便宜一点儿吧|Tài guì le, piányi yìdiǎnr ba]。",
+        "[一共多少钱|Yígòng duōshao qián]？",
+        "[找您七十八块|Zhǎo nín qīshíbā kuài]。",
+        "[可以用微信吗|Kěyǐ yòng Wēixìn ma]？"
+      ]
+    },
+    {
+      "prompt": "Translate into Mandarin. Write in pīnyīn.",
+      "items": [
+        "How much is it?",
+        "That's way too expensive!",
+        "I'd like two jin.",
+        "Can you make it a little cheaper?",
+        "That's one hundred twenty yuan altogether."
+      ]
+    },
+    {
+      "prompt": "Correct these wrong sentences, then write the right version in pīnyīn.",
+      "items": [
+        "[我要二个苹果|Wǒ yào èr ge píngguǒ]。",
+        "[这个一点儿贵|Zhège yìdiǎnr guì]。",
+        "[你要多少个|Nǐ yào duōshao ge]？",
+        "[这本书三十五元，太贵了|Zhè běn shū sānshíwǔ yuán, tài guì le]。",
+        "[一百一是101|Yìbǎi yī shì 101]。"
+      ]
+    }
+  ],
+  "answers": [
+    "八 — 十五 — 四十 — 一百零一 — 两百五十 — 三千",
+    "几 — 多少 — 几 — 多少 — 几",
+    "这 件 衣服 多少 钱 — 能 便宜 一点儿 吗 — 苹果 八 块 一 斤 — 一共 二十二 块 — 我 要 两 斤 香蕉 — 这 个 有点儿 贵",
+    "This book is thirty-five yuan. — That's too expensive, come on, a little cheaper. — How much is it altogether? — Your change is seventy-eight yuan. — Can I use WeChat?",
+    "Duōshao qián? — Tài guì le! — Wǒ yào liǎng jīn. — Néng piányi yìdiǎnr ma? — Yígòng yìbǎi èrshí kuài.",
+    "Wǒ yào liǎng ge píngguǒ. — Zhège yǒudiǎnr guì. — Nǐ yào jǐ ge? — Zhè běn shū sānshíwǔ kuài, tài guì le. — Yìbǎi líng yī shì 101."
+  ],
+  "wave": "Review Unit 2: pick five things around you, name them with the right measure word, then make up a price for each in yuan and say it out loud. Numbers only stick through your mouth, not your eyes."
+}

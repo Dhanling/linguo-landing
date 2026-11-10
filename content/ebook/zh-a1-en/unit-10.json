@@ -1,0 +1,830 @@
+{
+  "title": "Telling what has happened",
+  "title_target": "你去过中国吗 — Nǐ qù guo Zhōngguó ma",
+  "goal": "Master 了 and 过 — the two little words most often mistaken for a \"past tense\", which neither of them is — and negate events with 没, not 不.",
+  "bekal": [
+    "tell what you've done",
+    "tell completion 了 from change 了",
+    "talk about experience with 过",
+    "negate with 没有 and know when 了 must go",
+    "tell 不 from 没"
+  ],
+  "dialogs": [
+    {
+      "title": "对话 1 — Where did you go yesterday?",
+      "intro": "Monday morning. Wang Li asks about Andi's weekend. Notice that the verbs don't change form at all — the time is marked by time expressions, not by the verb.",
+      "lines": [
+        {
+          "speaker": "王丽:",
+          "text": "[周末|Zhōumò][你|nǐ][做|zuò][什么|shénme][了|le]？",
+          "id": "What did you do on the weekend?",
+          "literal": "week-end — you — do — what — (done)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[我|Wǒ][去|qù][长城|Chángchéng][了|le]。",
+          "id": "I went to the Great Wall.",
+          "literal": "I — go — long-wall — (done)."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[真的|Zhēn de]？[你|Nǐ][跟|gēn][谁|shéi][一起|yìqǐ][去|qù][的|de]？",
+          "id": "Really? Who did you go with?",
+          "literal": "true — (of). you — with — who — together — go — (of)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[跟|Gēn][李明|Lǐ Míng]。[我们|Wǒmen][早上|zǎoshang][六|liù][点|diǎn][就|jiù][出发|chūfā][了|le]。",
+          "id": "With Li Ming. We set off at six in the morning.",
+          "literal": "with — Li Ming. we — morning — six — o'clock — already — set-off — (done)."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[那么|Nàme][早|zǎo]！[人|Rén][多|duō][吗|ma]？",
+          "id": "That early! Was it crowded?",
+          "literal": "that — early. people — many — (question)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[很|Hěn][多|duō]。[我们|Wǒmen][爬|pá][了|le][三|sān][个|ge][小时|xiǎoshí]。[太|Tài][累|lèi][了|le]！",
+          "id": "Very. We climbed for three hours. I was exhausted!",
+          "literal": "(prop) — many. we — climb — (done) — three — (classifier) — hour. too — tired — (change)."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[你们|Nǐmen][吃|chī][午饭|wǔfàn][了|le][吗|ma]？",
+          "id": "Did you have lunch?",
+          "literal": "you-all — eat — noon-meal — (done) — (question)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[没有|Méiyǒu]。[我们|Wǒmen][只|zhǐ][吃|chī][了|le][一|yí][点儿|diǎnr][面包|miànbāo]。",
+          "id": "No. We just had a bit of bread.",
+          "literal": "not-have. we — only — eat — (done) — one — bit — bread."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[你|Nǐ][以前|yǐqián][去|qù][过|guo][长城|Chángchéng][吗|ma]？",
+          "id": "Had you been to the Great Wall before?",
+          "literal": "you — before — go — (ever) — long-wall — (question)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[没|Méi][去|qù][过|guo]。[这|Zhè][是|shì][第一|dì-yī][次|cì]。",
+          "id": "Never. This was my first time.",
+          "literal": "not — go — (ever). this — be — number-one — time."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[怎么样|Zěnmeyàng]？[值得|Zhíde][吗|ma]？",
+          "id": "How was it? Worth it?",
+          "literal": "how. worth — (question)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[非常|Fēicháng][值得|zhíde]！[我|Wǒ][拍|pāi][了|le][两百|liǎngbǎi][多|duō][张|zhāng][照片|zhàopiàn]。",
+          "id": "Totally worth it! I took over two hundred photos.",
+          "literal": "very — worth. I — snap — (done) — two-hundred — more — (classifier) — photo."
+        }
+      ],
+      "notes": [
+        "**⚠️ 了 is NOT a past-tense marker.** The sentence [我明天去了公司就回家|Wǒ míngtiān qù le gōngsī jiù huí jiā] is about **tomorrow**, and it still uses 了. What 了 marks is the **completion** of an action or a **change** of state — whenever that happens.",
+        "**So how does Mandarin mark the past? With time expressions.** [昨天|zuótiān], [上个星期|shàng ge xīngqī], [去年|qùnián], [以前|yǐqián]. The verb itself never changes — and that's the best news a Mandarin learner can get.",
+        "**⚠️ To negate an event, use [没有|méiyǒu] or [没|méi], and 了 DISAPPEARS.** [我吃了|Wǒ chī le] I've eaten → [我没吃|Wǒ méi chī] I haven't eaten. Not 我没吃了. Almost every beginner makes this mistake over and over.",
+        "**[过|guo] expresses experience: have ever, at some point in life.** [我去过中国|Wǒ qù guo Zhōngguó] I've been to China. The negative is [没去过|méi qù guo] have never been. ⚠️ Note: 过 here is read lightly, with no tone.",
+        "**了 vs 过 in one sentence:** [我去了中国|Wǒ qù le Zhōngguó] = I went to China (and may still be there). [我去过中国|Wǒ qù guo Zhōngguó] = I've been to China (I'm back; only the experience remains).",
+        "**[是…的|shì… de] highlights a detail of something that definitely happened.** [你跟谁一起去的|Nǐ gēn shéi yìqǐ qù de]？ asks **who with** — not whether you went. You'll hear this form constantly; recognize the pattern for now.",
+        "**Duration stands AFTER the verb.** [我们爬了三个小时|Wǒmen pá le sān ge xiǎoshí] we climbed for three hours. ⚠️ Don't confuse it with **when**, which stands before the verb.",
+        "**[第一次|dì-yī cì] = the first time.** [第|dì] turns a number into an ordinal: [第二|dì-èr] second, [第三|dì-sān] third."
+      ],
+      "grammars": [
+        {
+          "title": "The two jobs of 了",
+          "body": [
+            "Mandarin has two different 了s, written with the same character. What tells them apart is **where they stand**."
+          ],
+          "tables": [
+            {
+              "head": [
+                "",
+                "Completion 了",
+                "Change 了"
+              ],
+              "rows": [
+                [
+                  "**Position**",
+                  "Right after the verb",
+                  "At the end of the sentence"
+                ],
+                [
+                  "**Meaning**",
+                  "The action is **complete**",
+                  "The situation has **changed** — it wasn't so before, it is now"
+                ],
+                [
+                  "**Example**",
+                  "[我买了一本书|Wǒ mǎi le yì běn shū]。",
+                  "[下雨了|Xià yǔ le]。"
+                ],
+                [
+                  "**Translation**",
+                  "I bought a book.",
+                  "It's raining (and it wasn't before)."
+                ],
+                [
+                  "**Another example**",
+                  "[他喝了三杯咖啡|Tā hē le sān bēi kāfēi]。",
+                  "[我饿了|Wǒ è le]。 I'm hungry now."
+                ],
+                [
+                  "",
+                  "[我看了那个电影|Wǒ kàn le nàge diànyǐng]。",
+                  "[他退休了|Tā tuìxiū le]。 He's retired."
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Sentence",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "[我吃饭了|Wǒ chī fàn le]。",
+                  "I've eaten. — the state changed from hungry to full"
+                ],
+                [
+                  "[我吃了饭|Wǒ chī le fàn]。",
+                  "I ate (and I'm moving on to the next thing)"
+                ],
+                [
+                  "[我吃了三碗饭|Wǒ chī le sān wǎn fàn]。",
+                  "I ate three bowls of rice. — clear quantity, completion 了"
+                ],
+                [
+                  "[我不吃了|Wǒ bù chī le]。",
+                  "I'm not eating after all. — change 了; note 不, not 没"
+                ],
+                [
+                  "[太贵了|Tài guì le]！",
+                  "Too expensive! — 了 here is part of the 太…了 pattern"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **Don't stick 了 on every past sentence.** Sentences about past habits, states or background **take no 了** at all: [我小时候住在雅加达|Wǒ xiǎo shíhou zhù zài Yǎjiādá] \"as a child I lived in Jakarta\". No 了 there, and the sentence is still about the past.",
+            "A handy rule: **if the sentence reports a completed event — something you could follow with \"and then…\" — 了 is probably right.** If it describes a habit, a state or a background, leave it out."
+          ]
+        },
+        {
+          "title": "不 and 没 — two negatives",
+          "tables": [
+            {
+              "head": [
+                "",
+                "[不|bù]",
+                "[没|méi]"
+              ],
+              "rows": [
+                [
+                  "**Used for**",
+                  "Will, habits, states, the future",
+                  "Events that **haven't happened or didn't happen**"
+                ],
+                [
+                  "**Time**",
+                  "Now, always, later",
+                  "The past"
+                ],
+                [
+                  "**Example**",
+                  "[我不喝酒|Wǒ bù hē jiǔ]。 I don't drink alcohol.",
+                  "[我没喝酒|Wǒ méi hē jiǔ]。 I didn't (haven't) drink alcohol."
+                ],
+                [
+                  "**Difference**",
+                  "That's my habit",
+                  "Yesterday I just happened not to"
+                ],
+                [
+                  "**With 是**",
+                  "[不是|bú shì]",
+                  "⚠️ never 没是"
+                ],
+                [
+                  "**With 有**",
+                  "⚠️ never 不有",
+                  "[没有|méiyǒu]"
+                ],
+                [
+                  "**With 了**",
+                  "[不…了|bù… le] not anymore, not after all",
+                  "⚠️ 没 and 了 can't go together"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "Three rules settle most doubts: **有 always takes 没有. 是 always takes 不是. An event that didn't happen always takes 没.**",
+            "⚠️ [我没去了|Wǒ méi qù le] is wrong in any form. The correct one is [我没去|Wǒ méi qù]."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "对话 2 — Experiences",
+      "intro": "Li Ming asks about Andi's experiences in China. Notice how 过 and 了 take turns in the same conversation.",
+      "lines": [
+        {
+          "speaker": "李明:",
+          "text": "[你|Nǐ][来|lái][中国|Zhōngguó][多久|duō jiǔ][了|le]？",
+          "id": "How long have you been in China?",
+          "literal": "you — come — China — how — long — (change)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[三|Sān][个|ge][月|yuè][了|le]。[时间|Shíjiān][过|guò][得|de][真|zhēn][快|kuài]。",
+          "id": "Three months now. Time really flies.",
+          "literal": "three — (classifier) — month — (change). time — pass — (marker) — really — fast."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[你|Nǐ][吃|chī][过|guo][北京烤鸭|Běijīng kǎoyā][吗|ma]？",
+          "id": "Have you ever had Peking duck?",
+          "literal": "you — eat — (ever) — Beijing — roast-duck — (question)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[吃|Chī][过|guo][一|yí][次|cì]。[上|Shàng][个|ge][月|yuè][跟|gēn][同事|tóngshì][一起|yìqǐ][去|qù][的|de]。",
+          "id": "Once. I went last month with some coworkers.",
+          "literal": "eat — (ever) — one — time. above — (classifier) — month — with — coworker — together — go — (of)."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[好吃|Hǎochī][吗|ma]？",
+          "id": "Was it good?",
+          "literal": "good-to-eat — (question)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[很|Hěn][好吃|hǎochī]，[但是|dànshì][有点儿|yǒudiǎnr][油|yóu]。[我|Wǒ][吃|chī][了|le][半|bàn][只|zhī][就|jiù][饱|bǎo][了|le]。",
+          "id": "Delicious, but a bit greasy. I was full after just half a duck.",
+          "literal": "(prop) — good-to-eat, but — have-a-bit — oily. I — eat — (done) — half — (classifier) — already — full — (change)."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[你|Nǐ][坐|zuò][过|guo][高铁|gāotiě][吗|ma]？",
+          "id": "Have you ever taken the high-speed train?",
+          "literal": "you — sit — (ever) — high-rail — (question)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[还|Hái][没有|méiyǒu]。[但是|Dànshì][下|xià][个|ge][月|yuè][我|wǒ][要|yào][去|qù][上海|Shànghǎi]。",
+          "id": "Not yet. But next month I'm going to Shanghai.",
+          "literal": "still — not-have. but — below — (classifier) — month — I — will — go — Shanghai."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[那|Nà][你|nǐ][一定|yídìng][要|yào][坐|zuò][高铁|gāotiě]！[五|Wǔ][个|ge][小时|xiǎoshí][就|jiù][到|dào][了|le]。",
+          "id": "Then you have to take the high-speed train! You'll be there in just five hours.",
+          "literal": "that — you — definitely — must — sit — high-rail. five — (classifier) — hour — already — arrive — (change)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[票|Piào][贵|guì][吗|ma]？[我|Wǒ][还|hái][没|méi][买|mǎi][票|piào]。",
+          "id": "Are the tickets expensive? I haven't bought one yet.",
+          "literal": "ticket — expensive — (question). I — still — not — buy — ticket."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[不|Bù][便宜|piányi]，[但是|dànshì][值得|zhíde]。[我|Wǒ][帮|bāng][你|nǐ][订|dìng][吧|ba]。",
+          "id": "Not cheap, but worth it. Let me book it for you.",
+          "literal": "not — cheap, but — worth. I — help — you — book — (suggestion)."
+        }
+      ],
+      "notes": [
+        "**[多久了|duō jiǔ le]？ = \"how long has it been?\"** The final 了 marks that the situation continues up to now. The answer uses 了 too: [三个月了|Sān ge yuè le] three months now.",
+        "**⚠️ Fourth-tone [过|guò] means \"pass\"; toneless [过|guo] is the experience marker.** Same character. [时间过得真快|Shíjiān guò de zhēn kuài] uses the first; [吃过|chī guo] uses the second.",
+        "**[还没有|hái méiyǒu] = \"not yet\".** Much softer than plain [没有|méiyǒu], because 还 implies \"but maybe later\". For questions like \"are you married?\" or \"have you been there?\", this is the natural answer.",
+        "**[就|jiù] signals \"only … and already …\"** — sooner, less or easier than expected. [吃了半只就饱了|chī le bàn zhī jiù bǎo le] full after only half; [五个小时就到了|wǔ ge xiǎoshí jiù dào le] there in just five hours.",
+        "**[只|zhī] is the classifier for animals** — including poultry served as a dish: [半只鸭子|bàn zhī yāzi] half a duck.",
+        "**[高铁|gāotiě] = high-speed train**, short for 高速铁路 \"high-speed railway\". The network is the largest in the world, and riding it is something Chinese people almost always recommend to visitors.",
+        "**[值得|zhíde] = worth it.** [值得去|zhíde qù] worth visiting, [不值得|bù zhíde] not worth it."
+      ],
+      "grammars": [
+        {
+          "title": "Telling about events — the full frame",
+          "tables": [
+            {
+              "head": [
+                "Purpose",
+                "Pattern",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "Have done",
+                  "verb + 了",
+                  "[我买了票|Wǒ mǎi le piào]。"
+                ],
+                [
+                  "Haven't done",
+                  "没(有) + verb",
+                  "[我没买票|Wǒ méi mǎi piào]。"
+                ],
+                [
+                  "Not yet, but maybe later",
+                  "还没(有) + verb",
+                  "[我还没买票|Wǒ hái méi mǎi piào]。"
+                ],
+                [
+                  "Have ever experienced",
+                  "verb + 过",
+                  "[我坐过高铁|Wǒ zuò guo gāotiě]。"
+                ],
+                [
+                  "Have never",
+                  "没 + verb + 过",
+                  "[我没坐过高铁|Wǒ méi zuò guo gāotiě]。"
+                ],
+                [
+                  "How many times",
+                  "verb + 过 + number + 次",
+                  "[我去过两次|Wǒ qù guo liǎng cì]。"
+                ],
+                [
+                  "Asking done or not",
+                  "… 了吗？ / … 了没有？",
+                  "[你吃了吗|Nǐ chī le ma]？"
+                ],
+                [
+                  "Answering yes",
+                  "[吃了|Chī le]。",
+                  "—"
+                ],
+                [
+                  "Answering not yet",
+                  "[还没有|Hái méiyǒu]。",
+                  "—"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **\"Have you eaten?\" in China often isn't a real question** — it's a greeting, like \"how are you\". Answering [吃了|Chī le]。 is enough, and it doesn't mean you're turning down a meal."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Past time expressions",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Because Mandarin verbs never change form, the whole job of marking time falls on the words below. Master them and you've mastered how Mandarin tells a story."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Mandarin",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "[昨天|zuótiān]",
+              "yesterday",
+              "[昨天我去了公园|Zuótiān wǒ qù le gōngyuán]。"
+            ],
+            [
+              "[前天|qiántiān]",
+              "the day before yesterday",
+              "[前天下雨了|Qiántiān xià yǔ le]。"
+            ],
+            [
+              "[上个星期|shàng ge xīngqī]",
+              "last week",
+              "[上个星期我很忙|Shàng ge xīngqī wǒ hěn máng]。"
+            ],
+            [
+              "[上个月|shàng ge yuè]",
+              "last month",
+              "[上个月我去了上海|Shàng ge yuè wǒ qù le Shànghǎi]。"
+            ],
+            [
+              "[去年|qùnián]",
+              "last year",
+              "[去年我开始学中文|Qùnián wǒ kāishǐ xué Zhōngwén]。"
+            ],
+            [
+              "[以前|yǐqián]",
+              "before, in the past",
+              "[以前我不喜欢辣的|Yǐqián wǒ bù xǐhuan là de]。"
+            ],
+            [
+              "[刚才|gāngcái]",
+              "a moment ago",
+              "[他刚才走了|Tā gāngcái zǒu le]。"
+            ],
+            [
+              "[刚|gāng]",
+              "just",
+              "[我刚吃完|Wǒ gāng chī wán]。"
+            ],
+            [
+              "[小时候|xiǎo shíhou]",
+              "as a child",
+              "[小时候我住在雅加达|Xiǎo shíhou wǒ zhù zài Yǎjiādá]。"
+            ],
+            [
+              "[后来|hòulái]",
+              "later, after that",
+              "[后来他去了美国|Hòulái tā qù le Měiguó]。"
+            ],
+            [
+              "[那时候|nà shíhou]",
+              "at that time",
+              "[那时候我还是学生|Nà shíhou wǒ hái shì xuésheng]。"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Building a story",
+          "items": [
+            "**Start with the time:** [上个星期天|Shàng ge xīngqītiān]…",
+            "**Continue in sequence:** [先|xiān] first · [然后|ránhòu] then · [后来|hòulái] after that · [最后|zuìhòu] finally.",
+            "**End with a judgment:** [真的很有意思|Zhēn de hěn yǒu yìsi]。 or [下次我还想去|Xià cì wǒ hái xiǎng qù]。",
+            "A full example: [上个星期天我跟朋友去了长城。我们早上六点出发，爬了三个小时。后来我们在山下吃了午饭。真的很累，但是很值得|Shàng ge xīngqītiān wǒ gēn péngyou qù le Chángchéng. Wǒmen zǎoshang liù diǎn chūfā, pá le sān ge xiǎoshí. Hòulái wǒmen zài shān xià chī le wǔfàn. Zhēn de hěn lèi, dànshì hěn zhíde]。",
+            "Notice: in a story that long, 了 appears only four times — not on every verb."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Places worth talking about",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Place",
+            "Mandarin",
+            "Where"
+          ],
+          "rows": [
+            [
+              "The Great Wall",
+              "[长城|Chángchéng]",
+              "Beijing"
+            ],
+            [
+              "The Forbidden City",
+              "[故宫|Gùgōng]",
+              "Beijing"
+            ],
+            [
+              "Tiananmen Square",
+              "[天安门|Tiān'ānmén]",
+              "Beijing"
+            ],
+            [
+              "The Summer Palace",
+              "[颐和园|Yíhéyuán]",
+              "Beijing"
+            ],
+            [
+              "The Terracotta Warriors",
+              "[兵马俑|Bīngmǎyǒng]",
+              "Xi'an"
+            ],
+            [
+              "The Bund",
+              "[外滩|Wàitān]",
+              "Shanghai"
+            ],
+            [
+              "The Li River",
+              "[漓江|Líjiāng]",
+              "Guilin"
+            ],
+            [
+              "Mount Huang",
+              "[黄山|Huángshān]",
+              "Anhui"
+            ],
+            [
+              "The panda base",
+              "[熊猫基地|Xióngmāo Jīdì]",
+              "Chengdu"
+            ],
+            [
+              "West Lake",
+              "[西湖|Xīhú]",
+              "Hangzhou"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Sentences for talking about a trip",
+          "items": [
+            "[我去过…|Wǒ qù guo…] — I've been to …",
+            "[我在…住了三天|Wǒ zài… zhù le sān tiān]。 — I stayed three days in …",
+            "[那儿的风景很美|Nàr de fēngjǐng hěn měi]。 — The scenery there is beautiful.",
+            "[人太多了|Rén tài duō le]。 — Way too many people.",
+            "[值得去|Zhíde qù]。 / [不太值得|Bú tài zhíde]。 — Worth a visit. / Not really worth it.",
+            "[下次我还想去|Xià cì wǒ hái xiǎng qù]。 — Next time I'd like to go again."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "了",
+      "baca": "le",
+      "en": "completion / change marker"
+    },
+    {
+      "zh": "过",
+      "baca": "guo",
+      "en": "experience marker (have ever)"
+    },
+    {
+      "zh": "没有",
+      "baca": "méiyǒu",
+      "en": "not, haven't"
+    },
+    {
+      "zh": "还没有",
+      "baca": "hái méiyǒu",
+      "en": "not yet"
+    },
+    {
+      "zh": "昨天",
+      "baca": "zuótiān",
+      "en": "yesterday"
+    },
+    {
+      "zh": "前天",
+      "baca": "qiántiān",
+      "en": "the day before yesterday"
+    },
+    {
+      "zh": "上个星期",
+      "baca": "shàng ge xīngqī",
+      "en": "last week"
+    },
+    {
+      "zh": "上个月",
+      "baca": "shàng ge yuè",
+      "en": "last month"
+    },
+    {
+      "zh": "去年",
+      "baca": "qùnián",
+      "en": "last year"
+    },
+    {
+      "zh": "刚才",
+      "baca": "gāngcái",
+      "en": "a moment ago"
+    },
+    {
+      "zh": "刚",
+      "baca": "gāng",
+      "en": "just"
+    },
+    {
+      "zh": "小时候",
+      "baca": "xiǎo shíhou",
+      "en": "as a child"
+    },
+    {
+      "zh": "后来",
+      "baca": "hòulái",
+      "en": "later, after that"
+    },
+    {
+      "zh": "那时候",
+      "baca": "nà shíhou",
+      "en": "at that time"
+    },
+    {
+      "zh": "先",
+      "baca": "xiān",
+      "en": "first"
+    },
+    {
+      "zh": "最后",
+      "baca": "zuìhòu",
+      "en": "finally"
+    },
+    {
+      "zh": "小时",
+      "baca": "xiǎoshí",
+      "en": "hour (duration)"
+    },
+    {
+      "zh": "多久",
+      "baca": "duō jiǔ",
+      "en": "how long"
+    },
+    {
+      "zh": "第一次",
+      "baca": "dì-yī cì",
+      "en": "the first time"
+    },
+    {
+      "zh": "出发",
+      "baca": "chūfā",
+      "en": "set off"
+    },
+    {
+      "zh": "到",
+      "baca": "dào",
+      "en": "arrive"
+    },
+    {
+      "zh": "爬",
+      "baca": "pá",
+      "en": "climb"
+    },
+    {
+      "zh": "拍照",
+      "baca": "pāi zhào",
+      "en": "take photos"
+    },
+    {
+      "zh": "值得",
+      "baca": "zhíde",
+      "en": "worth it"
+    },
+    {
+      "zh": "只",
+      "baca": "zhǐ",
+      "en": "only"
+    },
+    {
+      "zh": "就",
+      "baca": "jiù",
+      "en": "right away, as soon as, just"
+    },
+    {
+      "zh": "订",
+      "baca": "dìng",
+      "en": "book, reserve"
+    },
+    {
+      "zh": "票",
+      "baca": "piào",
+      "en": "ticket"
+    },
+    {
+      "zh": "高铁",
+      "baca": "gāotiě",
+      "en": "high-speed train"
+    },
+    {
+      "zh": "长城",
+      "baca": "Chángchéng",
+      "en": "the Great Wall"
+    },
+    {
+      "zh": "故宫",
+      "baca": "Gùgōng",
+      "en": "the Forbidden City"
+    },
+    {
+      "zh": "烤鸭",
+      "baca": "kǎoyā",
+      "en": "roast duck"
+    },
+    {
+      "zh": "面包",
+      "baca": "miànbāo",
+      "en": "bread"
+    },
+    {
+      "zh": "风景",
+      "baca": "fēngjǐng",
+      "en": "scenery"
+    },
+    {
+      "zh": "美",
+      "baca": "měi",
+      "en": "beautiful"
+    },
+    {
+      "zh": "时间",
+      "baca": "shíjiān",
+      "en": "time"
+    },
+    {
+      "zh": "开始",
+      "baca": "kāishǐ",
+      "en": "start, begin"
+    },
+    {
+      "zh": "结束",
+      "baca": "jiéshù",
+      "en": "end, finish"
+    },
+    {
+      "zh": "完",
+      "baca": "wán",
+      "en": "finished, used up"
+    },
+    {
+      "zh": "真的",
+      "baca": "zhēn de",
+      "en": "really, truly"
+    },
+    {
+      "zh": "山",
+      "baca": "shān",
+      "en": "mountain"
+    },
+    {
+      "zh": "旅行",
+      "baca": "lǚxíng",
+      "en": "travel, take a trip"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in 了, 过 or 没.",
+      "items": [
+        "[我昨天去|Wǒ zuótiān qù] ___ [长城|Chángchéng]。",
+        "[我|Wǒ] ___ [吃早饭，现在很饿|chī zǎofàn, xiànzài hěn è]。",
+        "[你去|Nǐ qù] ___ [中国吗|Zhōngguó ma]？",
+        "[下雨|Xià yǔ] ___，[带伞吧|dài sǎn ba]。",
+        "[我还|Wǒ hái] ___ [买票|mǎi piào]。",
+        "[我坐|Wǒ zuò] ___ [两次高铁|liǎng cì gāotiě]。"
+      ]
+    },
+    {
+      "prompt": "Fill in 不 or 没.",
+      "items": [
+        "[我|Wǒ] ___ [喝酒，我从来不喝|hē jiǔ, wǒ cónglái bù hē]。",
+        "[昨天我|Zuótiān wǒ] ___ [去上班|qù shàng bān]。",
+        "[我|Wǒ] ___ [有钱|yǒu qián]。",
+        "[他|Tā] ___ [是老师，他是医生|shì lǎoshī, tā shì yīshēng]。",
+        "[我今天|Wǒ jīntiān] ___ [想出去|xiǎng chūqù]。"
+      ]
+    },
+    {
+      "prompt": "Put the pieces in the right order.",
+      "items": [
+        "我 / 昨天 / 去 / 了 / 公园",
+        "你 / 吃 / 过 / 北京 / 烤鸭 / 吗",
+        "我 / 还 / 没 / 买 / 票",
+        "我们 / 爬 / 了 / 三 / 个 / 小时",
+        "他 / 刚才 / 走 / 了",
+        "我 / 没 / 坐 / 过 / 高铁"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "[上个月我去了上海|Shàng ge yuè wǒ qù le Shànghǎi]。",
+        "[你来中国多久了|Nǐ lái Zhōngguó duō jiǔ le]？",
+        "[我没去过故宫|Wǒ méi qù guo Gùgōng]。",
+        "[我吃了半只就饱了|Wǒ chī le bàn zhī jiù bǎo le]。",
+        "[小时候我住在雅加达|Xiǎo shíhou wǒ zhù zài Yǎjiādá]。"
+      ]
+    },
+    {
+      "prompt": "Translate into Mandarin. Write in pīnyīn.",
+      "items": [
+        "Yesterday I went to the hospital.",
+        "Have you ever been to China?",
+        "I haven't eaten.",
+        "It's started raining.",
+        "I've been here for three months."
+      ]
+    },
+    {
+      "prompt": "Correct these sentences, then write the correct form in pīnyīn.",
+      "items": [
+        "[我没去了|Wǒ méi qù le]。",
+        "[昨天我不去上班|Zuótiān wǒ bú qù shàng bān]。",
+        "[我不有票|Wǒ bù yǒu piào]。",
+        "[小时候我住了在雅加达|Xiǎo shíhou wǒ zhù le zài Yǎjiādá]。",
+        "[我去了过中国|Wǒ qù le guo Zhōngguó]。"
+      ]
+    }
+  ],
+  "answers": [
+    "了 — 没 — 过 — 了 — 没 — 过",
+    "不 — 没 — 没 — 不 — 不",
+    "我 昨天 去 了 公园 — 你 吃 过 北京 烤鸭 吗 — 我 还 没 买 票 — 我们 爬 了 三 个 小时 — 他 刚才 走 了 — 我 没 坐 过 高铁",
+    "Last month I went to Shanghai. — How long have you been in China? — I've never been to the Forbidden City. — I was full after just half a duck. — As a child I lived in Jakarta.",
+    "Zuótiān wǒ qù le yīyuàn. — Nǐ qù guo Zhōngguó ma? — Wǒ méi chī fàn. — Xià yǔ le. — Wǒ lái zhèr sān ge yuè le.",
+    "Wǒ méi qù. — Zuótiān wǒ méi qù shàng bān. — Wǒ méiyǒu piào. — Xiǎo shíhou wǒ zhù zài Yǎjiādá. — Wǒ qù guo Zhōngguó."
+  ],
+  "wave": "Review Unit 9: tell about last weekend in eight sentences, using 先, 然后, 后来, 最后. Then count how many times you used 了 — if it's more than four, there's probably one too many."
+}

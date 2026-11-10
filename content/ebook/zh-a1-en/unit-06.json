@@ -1,0 +1,889 @@
+{
+  "title": "Places, directions, and where things are",
+  "title_target": "在哪儿 — Zài nǎr",
+  "goal": "Say where something is, tell apart three words that can all come out as “there is / is at” in English — 在, 有, 是 — and use place words, which always come after their noun.",
+  "bekal": [
+    "ask and answer “where?”",
+    "use 在, 有, and 是 each in its own place",
+    "use place words: 上, 里, 旁边, 对面",
+    "give an address from big to small",
+    "ask for directions and understand the answer"
+  ],
+  "dialogs": [
+    {
+      "title": "对话 1 — Looking for the classroom",
+      "intro": "It's Andi's first day of teaching. He gets lost in the school building and asks a staff member. Notice three different verbs that can all be translated “is / there is”.",
+      "lines": [
+        {
+          "speaker": "安迪:",
+          "text": "[请问|Qǐngwèn]，[三零五|sān líng wǔ][教室|jiàoshì][在|zài][哪儿|nǎr]？",
+          "id": "Excuse me, where is Room 305?",
+          "literal": "please — ask, three-zero-five — classroom — be-at — where."
+        },
+        {
+          "speaker": "职员:",
+          "text": "[在|Zài][三|sān][楼|lóu]。[上楼|Shàng lóu][以后|yǐhòu][往|wǎng][右|yòu][拐|guǎi]。",
+          "id": "On the third floor. Go upstairs and turn right.",
+          "literal": "be-at — three — floor. go-up — floor — after — toward — right — turn."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[楼梯|Lóutī][在|zài][哪儿|nǎr]？",
+          "id": "Where are the stairs?",
+          "literal": "stairs — be-at — where."
+        },
+        {
+          "speaker": "职员:",
+          "text": "[在|Zài][洗手间|xǐshǒujiān][旁边|pángbiān]。[电梯|Diàntī][在|zài][对面|duìmiàn]。",
+          "id": "Next to the restroom. The elevator is across from it.",
+          "literal": "be-at — wash-hands-room — beside. elevator — be-at — opposite."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[三|Sān][楼|lóu][有|yǒu][几|jǐ][个|ge][教室|jiàoshì]？",
+          "id": "How many classrooms are on the third floor?",
+          "literal": "three — floor — there-is — how-many — (measure) — classroom."
+        },
+        {
+          "speaker": "职员:",
+          "text": "[有|Yǒu][八|bā][个|ge]。[三零五|Sān líng wǔ][在|zài][最|zuì][里边|lǐbian]。",
+          "id": "Eight. Room 305 is at the very end.",
+          "literal": "there-is — eight — (measure). three-zero-five — be-at — most — inside."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[教室|Jiàoshì][里|li][有|yǒu][电脑|diànnǎo][吗|ma]？",
+          "id": "Is there a computer in the classroom?",
+          "literal": "classroom — inside — there-is — computer — (question)."
+        },
+        {
+          "speaker": "职员:",
+          "text": "[有|Yǒu]。[桌子|Zhuōzi][上|shang][有|yǒu][一|yì][台|tái][电脑|diànnǎo]。",
+          "id": "Yes. There's a computer on the desk.",
+          "literal": "there-is. desk — on — there-is — one — (measure) — computer."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[太好了|Tài hǎo le]。[谢谢|Xièxie][您|nín]！",
+          "id": "Great. Thank you!",
+          "literal": "too — good — (change). thank — you(polite)."
+        },
+        {
+          "speaker": "职员:",
+          "text": "[不客气|Bú kèqi]。[慢走|Màn zǒu]！",
+          "id": "You're welcome. Take care!",
+          "literal": "not — polite. slowly — walk."
+        }
+      ],
+      "notes": [
+        "**⚠️ Mandarin place words come AFTER their noun**, the reverse of English. English says “**on** the table”; Mandarin says [桌子**上**|zhuōzi shang] — “table on”. Likewise [教室**里**|jiàoshì li] “in the classroom”, [洗手间**旁边**|xǐshǒujiān pángbiān] “next to the restroom”.",
+        "**[在|zài] says where something is: A 在 place.** [教室在三楼|Jiàoshì zài sān lóu] the classroom is on the third floor. What comes before 在 is **something already known**; what comes after it is the place.",
+        "**[有|yǒu] says something exists: place 有 thing.** [桌子上有一台电脑|Zhuōzi shang yǒu yì tái diànnǎo] there's a computer on the desk. The order is the exact reverse of 在, and it introduces **something new** — like English “there is”.",
+        "**[往|wǎng] + direction + verb = “toward …”.** [往右拐|wǎng yòu guǎi] turn right, [往前走|wǎng qián zǒu] go straight ahead. This word will save you every time you ask for directions.",
+        "**[最|zuì] = most.** [最里边|zuì lǐbian] innermost, at the very end, [最好|zuì hǎo] best, [最后|zuì hòu] last.",
+        "**[台|tái] is the measure word for machines**: computers, TVs, washing machines, air conditioners. [一台电脑|yì tái diànnǎo].",
+        "**[慢走|Màn zǒu] literally “walk slowly”** is said by a host to a guest who is leaving. English has no exact match; “take care” is closest."
+      ],
+      "grammars": [
+        {
+          "title": "在, 有, 是 — three words, one English translation",
+          "body": [
+            "All three can come out as “is” or “there is” in English, and that's exactly why they get mixed up. What separates them is **what the speaker already knows and what is new**."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Word",
+                "Structure",
+                "Focus",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "[在|zài]",
+                  "**Thing** 在 **place**",
+                  "The thing is known; the place is new",
+                  "[书在桌子上|Shū zài zhuōzi shang]。 The book is on the table."
+                ],
+                [
+                  "[有|yǒu]",
+                  "**Place** 有 **thing**",
+                  "The place is known; the thing is new",
+                  "[桌子上有书|Zhuōzi shang yǒu shū]。 There's a book on the table."
+                ],
+                [
+                  "[是|shì]",
+                  "**Place** 是 **thing**",
+                  "Explains what fills the whole place",
+                  "[桌子上是书|Zhuōzi shang shì shū]。 What's on the table is books."
+                ]
+              ]
+            },
+            {
+              "head": [
+                "The question",
+                "Word used",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "“Where is …?”",
+                  "在",
+                  "[你在哪儿|Nǐ zài nǎr]？"
+                ],
+                [
+                  "“What's in/at …?”",
+                  "有",
+                  "[房间里有什么|Fángjiān li yǒu shénme]？"
+                ],
+                [
+                  "“Is there a … in/at …?”",
+                  "有 … 吗",
+                  "[附近有超市吗|Fùjìn yǒu chāoshì ma]？"
+                ],
+                [
+                  "Denying location",
+                  "不在",
+                  "[他不在家|Tā bú zài jiā]。"
+                ],
+                [
+                  "Denying existence",
+                  "没有",
+                  "[房间里没有人|Fángjiān li méiyǒu rén]。"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "One-second check: **if you can point at the thing, use 在; if you're introducing the thing, use 有.** “Where's the book?” → 书在哪儿. “Is there a book?” → 有书吗.",
+            "⚠️ The negative of 有 is still 没有, never 不有 — just as in Unit 2."
+          ]
+        },
+        {
+          "title": "Place words — all of them come after the noun",
+          "tables": [
+            {
+              "head": [
+                "Mandarin",
+                "Meaning",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "[上|shàng] / [上边|shàngbian]",
+                  "on, above",
+                  "[桌子上|zhuōzi shang]"
+                ],
+                [
+                  "[下|xià] / [下边|xiàbian]",
+                  "under, below",
+                  "[床下|chuáng xià]"
+                ],
+                [
+                  "[里|lǐ] / [里边|lǐbian]",
+                  "inside",
+                  "[包里|bāo li]"
+                ],
+                [
+                  "[外|wài] / [外边|wàibian]",
+                  "outside",
+                  "[门外|mén wài]"
+                ],
+                [
+                  "[前边|qiánbian]",
+                  "in front",
+                  "[学校前边|xuéxiào qiánbian]"
+                ],
+                [
+                  "[后边|hòubian]",
+                  "behind",
+                  "[房子后边|fángzi hòubian]"
+                ],
+                [
+                  "[旁边|pángbiān]",
+                  "next to",
+                  "[银行旁边|yínháng pángbiān]"
+                ],
+                [
+                  "[对面|duìmiàn]",
+                  "across from",
+                  "[医院对面|yīyuàn duìmiàn]"
+                ],
+                [
+                  "[中间|zhōngjiān]",
+                  "in the middle, between",
+                  "[两个楼中间|liǎng ge lóu zhōngjiān]"
+                ],
+                [
+                  "[附近|fùjìn]",
+                  "nearby, around",
+                  "[学校附近|xuéxiào fùjìn]"
+                ],
+                [
+                  "[左边|zuǒbian]",
+                  "on the left",
+                  "[门左边|mén zuǒbian]"
+                ],
+                [
+                  "[右边|yòubian]",
+                  "on the right",
+                  "[门右边|mén yòubian]"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **Place names are already places, so they don't take 里.** [我在北京|Wǒ zài Běijīng] is right; 我在北京里 is wrong. It's **objects** that need a place word: tables, bags, rooms, boxes.",
+            "With 里 and 上, the noun and the place word often fuse into one word, pronounced lightly: [家里|jiā li], [桌上|zhuō shang], [手里|shǒu li]."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "对话 2 — Asking for directions",
+      "intro": "Andi is looking for a bank near the school. A conversation like this is the first real test of your listening — and people's answers are usually much faster than you'd hope.",
+      "lines": [
+        {
+          "speaker": "安迪:",
+          "text": "[请问|Qǐngwèn]，[附近|fùjìn][有|yǒu][银行|yínháng][吗|ma]？",
+          "id": "Excuse me, is there a bank nearby?",
+          "literal": "please — ask, nearby — there-is — bank — (question)."
+        },
+        {
+          "speaker": "路人:",
+          "text": "[有|Yǒu]。[从|Cóng][这儿|zhèr][往|wǎng][前|qián][走|zǒu]，[大概|dàgài][两|liǎng][百|bǎi][米|mǐ]。",
+          "id": "Yes. Go straight ahead from here, about two hundred meters.",
+          "literal": "there-is. from — here — toward — front — walk, roughly — two — hundred — meter."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[然后|Ránhòu][呢|ne]？",
+          "id": "And then?",
+          "literal": "then — (and)?"
+        },
+        {
+          "speaker": "路人:",
+          "text": "[到|Dào][路口|lùkǒu][往|wǎng][左|zuǒ][拐|guǎi]。[银行|Yínháng][在|zài][超市|chāoshì][对面|duìmiàn]。",
+          "id": "At the intersection, turn left. The bank is across from the supermarket.",
+          "literal": "arrive — road-mouth — toward — left — turn. bank — be-at — supermarket — opposite."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[远|Yuǎn][吗|ma]？[走路|Zǒu lù][要|yào][多长|duō cháng][时间|shíjiān]？",
+          "id": "Is it far? How long does it take on foot?",
+          "literal": "far — (question). walk — road — need — how — long — time."
+        },
+        {
+          "speaker": "路人:",
+          "text": "[不|Bù][远|yuǎn]，[五|wǔ][分钟|fēnzhōng][就|jiù][到|dào][了|le]。",
+          "id": "Not far, you'll be there in five minutes.",
+          "literal": "not — far, five — minute — just — arrive — (change)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[银行|Yínháng][旁边|pángbiān][有|yǒu][地铁站|dìtiězhàn][吗|ma]？",
+          "id": "Is there a subway station next to the bank?",
+          "literal": "bank — beside — there-is — underground-rail-station — (question)."
+        },
+        {
+          "speaker": "路人:",
+          "text": "[有|Yǒu]，[二|èr][号|hào][线|xiàn]。[出口|Chūkǒu][就|jiù][在|zài][银行|yínháng][门口|ménkǒu]。",
+          "id": "Yes, Line 2. The exit is right outside the bank.",
+          "literal": "there-is, two — number — line. exit-mouth — right — be-at — bank — door-mouth."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[太|Tài][谢谢|xièxie][您|nín][了|le]！",
+          "id": "Thank you so much!",
+          "literal": "too — thank — you(polite) — (change)."
+        },
+        {
+          "speaker": "路人:",
+          "text": "[不用谢|Bú yòng xiè]。",
+          "id": "No need to thank me.",
+          "literal": "not — need — thank."
+        }
+      ],
+      "notes": [
+        "**[从…往…走|cóng… wǎng… zǒu] is the frame for giving directions.** [从这儿往前走|Cóng zhèr wǎng qián zǒu] go straight ahead from here.",
+        "**[就|jiù] signals “right away, no more than that”.** [五分钟就到了|Wǔ fēnzhōng jiù dào le] you'll be there in just five minutes; [出口就在门口|Chūkǒu jiù zài ménkǒu] the exit is right there. Native speakers use this little word dozens of times a day.",
+        "**⚠️ [分|fēn] is minutes on the clock; [分钟|fēnzhōng] is a length of time.** [三点五分|sān diǎn wǔ fēn] 3:05; [五分钟|wǔ fēnzhōng] for five minutes. Mixing them up is a very common mistake.",
+        "**[多长时间|duō cháng shíjiān]？ = how long.** Literally “how long time”. A synonym is [多久|duō jiǔ].",
+        "**[口|kǒu] “mouth” is used for all kinds of openings**: [门口|ménkǒu] entrance, [路口|lùkǒu] intersection, [出口|chūkǒu] exit, [入口|rùkǒu] entrance.",
+        "**[太谢谢您了|Tài xièxie nín le]！** — the 太…了 pattern is also used to thank someone warmly, not just to complain."
+      ],
+      "grammars": [
+        {
+          "title": "Asking for directions and understanding the answer",
+          "tables": [
+            {
+              "head": [
+                "Your question",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "[请问，…在哪儿|Qǐngwèn, … zài nǎr]？",
+                  "Excuse me, where is …?"
+                ],
+                [
+                  "[附近有…吗|Fùjìn yǒu … ma]？",
+                  "Is there a … nearby?"
+                ],
+                [
+                  "[怎么去|Zěnme qù]？",
+                  "How do I get there?"
+                ],
+                [
+                  "[远吗|Yuǎn ma]？",
+                  "Is it far?"
+                ],
+                [
+                  "[要多长时间|Yào duō cháng shíjiān]？",
+                  "How long does it take?"
+                ],
+                [
+                  "[能走着去吗|Néng zǒuzhe qù ma]？",
+                  "Can I walk there?"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Answers you'll hear",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "[往前走|Wǎng qián zǒu]。",
+                  "Go straight ahead."
+                ],
+                [
+                  "[往左拐|Wǎng zuǒ guǎi]。 / [往右拐|Wǎng yòu guǎi]。",
+                  "Turn left. / Turn right."
+                ],
+                [
+                  "[一直走|Yìzhí zǒu]。",
+                  "Keep going straight."
+                ],
+                [
+                  "[到路口|Dào lùkǒu]…",
+                  "At the intersection …"
+                ],
+                [
+                  "[在…对面|Zài … duìmiàn]。",
+                  "Across from …"
+                ],
+                [
+                  "[过马路|Guò mǎlù]。",
+                  "Cross the road."
+                ],
+                [
+                  "[很近|Hěn jìn]。 / [有点儿远|Yǒudiǎnr yuǎn]。",
+                  "It's close. / It's a bit far."
+                ],
+                [
+                  "[我也不知道|Wǒ yě bù zhīdào]。",
+                  "I don't know either."
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "If the answer is too fast — and it usually is — use the two lifesavers from Unit 2: [请再说一遍|Qǐng zài shuō yí biàn] and [请说慢一点儿|Qǐng shuō màn yìdiǎnr]. Asking for a repeat is far better than walking the wrong way."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Places you'll be looking for",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "In town",
+            "Pīnyīn",
+            "In a building",
+            "Pīnyīn"
+          ],
+          "rows": [
+            [
+              "[银行|yínháng] bank",
+              "yínháng",
+              "[教室|jiàoshì] classroom",
+              "jiàoshì"
+            ],
+            [
+              "[超市|chāoshì] supermarket",
+              "chāoshì",
+              "[办公室|bàngōngshì] office",
+              "bàngōngshì"
+            ],
+            [
+              "[医院|yīyuàn] hospital",
+              "yīyuàn",
+              "[洗手间|xǐshǒujiān] restroom",
+              "xǐshǒujiān"
+            ],
+            [
+              "[药店|yàodiàn] pharmacy",
+              "yàodiàn",
+              "[电梯|diàntī] elevator",
+              "diàntī"
+            ],
+            [
+              "[饭馆|fànguǎn] restaurant",
+              "fànguǎn",
+              "[楼梯|lóutī] stairs",
+              "lóutī"
+            ],
+            [
+              "[商店|shāngdiàn] shop",
+              "shāngdiàn",
+              "[门口|ménkǒu] entrance",
+              "ménkǒu"
+            ],
+            [
+              "[学校|xuéxiào] school",
+              "xuéxiào",
+              "[房间|fángjiān] room",
+              "fángjiān"
+            ],
+            [
+              "[公园|gōngyuán] park",
+              "gōngyuán",
+              "[厨房|chúfáng] kitchen",
+              "chúfáng"
+            ],
+            [
+              "[地铁站|dìtiězhàn] subway station",
+              "dìtiězhàn",
+              "[客厅|kètīng] living room",
+              "kètīng"
+            ],
+            [
+              "[机场|jīchǎng] airport",
+              "jīchǎng",
+              "[卧室|wòshì] bedroom",
+              "wòshì"
+            ],
+            [
+              "[酒店|jiǔdiàn] hotel",
+              "jiǔdiàn",
+              "[楼|lóu] floor, building",
+              "lóu"
+            ],
+            [
+              "[邮局|yóujú] post office",
+              "yóujú",
+              "[电梯口|diàntīkǒu] elevator lobby",
+              "diàntīkǒu"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Restroom — the word you'll need first",
+          "items": [
+            "**[洗手间|xǐshǒujiān]** — literally “hand-washing room”. The politest form, safe anywhere.",
+            "**[卫生间|wèishēngjiān]** — “hygiene room”. Just as polite, often written on signs.",
+            "**[厕所|cèsuǒ]** — direct and plain; used in public places and schools.",
+            "[洗手间在哪儿|Xǐshǒujiān zài nǎr]？ — learn it now, not later.",
+            "The door signs: [男|nán] men · [女|nǚ] women."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Addresses: biggest first",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Chinese addresses are written in exactly the reverse order from English: country first, room number last. It's the same rule as for dates and names — **Mandarin always runs from big to small.**"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Part",
+            "Mandarin",
+            "Example"
+          ],
+          "rows": [
+            [
+              "country",
+              "[国|guó]",
+              "[中国|Zhōngguó]"
+            ],
+            [
+              "province",
+              "[省|shěng]",
+              "[广东省|Guǎngdōng Shěng]"
+            ],
+            [
+              "city",
+              "[市|shì]",
+              "[广州市|Guǎngzhōu Shì]"
+            ],
+            [
+              "district",
+              "[区|qū]",
+              "[天河区|Tiānhé Qū]"
+            ],
+            [
+              "road / street",
+              "[路|lù] / [街|jiē]",
+              "[中山路|Zhōngshān Lù]"
+            ],
+            [
+              "number",
+              "[号|hào]",
+              "[五十八号|wǔshíbā hào]"
+            ],
+            [
+              "building / floor",
+              "[楼|lóu]",
+              "[三楼|sān lóu]"
+            ],
+            [
+              "room",
+              "[室|shì] / [房间|fángjiān]",
+              "[三零五室|sān líng wǔ shì]"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "A full example: 中国广东省广州市天河区中山路58号3楼305室 — “China, Guangdong Province, Guangzhou City, Tianhe District, No. 58 Zhongshan Road, 3rd floor, Room 305”. Read from the start, the address narrows like a funnel."
+        },
+        {
+          "type": "kotak",
+          "title": "Useful sentences when you're lost",
+          "items": [
+            "[我迷路了|Wǒ mílù le]。 — I'm lost.",
+            "[我在这儿|Wǒ zài zhèr]。 — I'm here. (pointing at the map on your phone)",
+            "[这是什么地方|Zhè shì shénme dìfang]？ — What is this place?",
+            "[您能帮我吗|Nín néng bāng wǒ ma]？ — Could you help me?",
+            "[请写下来|Qǐng xiě xiàlái]。 — Please write it down. A lifesaver: written characters are something you can show a taxi driver."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "在",
+      "baca": "zài",
+      "en": "to be at, in"
+    },
+    {
+      "zh": "哪儿",
+      "baca": "nǎr",
+      "en": "where"
+    },
+    {
+      "zh": "这儿",
+      "baca": "zhèr",
+      "en": "here"
+    },
+    {
+      "zh": "那儿",
+      "baca": "nàr",
+      "en": "there"
+    },
+    {
+      "zh": "上",
+      "baca": "shàng",
+      "en": "on, above"
+    },
+    {
+      "zh": "下",
+      "baca": "xià",
+      "en": "under, below"
+    },
+    {
+      "zh": "里",
+      "baca": "lǐ",
+      "en": "inside"
+    },
+    {
+      "zh": "外",
+      "baca": "wài",
+      "en": "outside"
+    },
+    {
+      "zh": "前边",
+      "baca": "qiánbian",
+      "en": "in front"
+    },
+    {
+      "zh": "后边",
+      "baca": "hòubian",
+      "en": "behind"
+    },
+    {
+      "zh": "左边",
+      "baca": "zuǒbian",
+      "en": "left side"
+    },
+    {
+      "zh": "右边",
+      "baca": "yòubian",
+      "en": "right side"
+    },
+    {
+      "zh": "旁边",
+      "baca": "pángbiān",
+      "en": "next to"
+    },
+    {
+      "zh": "对面",
+      "baca": "duìmiàn",
+      "en": "across from"
+    },
+    {
+      "zh": "中间",
+      "baca": "zhōngjiān",
+      "en": "in the middle, between"
+    },
+    {
+      "zh": "附近",
+      "baca": "fùjìn",
+      "en": "nearby"
+    },
+    {
+      "zh": "往",
+      "baca": "wǎng",
+      "en": "toward"
+    },
+    {
+      "zh": "拐",
+      "baca": "guǎi",
+      "en": "to turn"
+    },
+    {
+      "zh": "走",
+      "baca": "zǒu",
+      "en": "to walk, go"
+    },
+    {
+      "zh": "一直",
+      "baca": "yìzhí",
+      "en": "straight on"
+    },
+    {
+      "zh": "过",
+      "baca": "guò",
+      "en": "to cross, pass"
+    },
+    {
+      "zh": "到",
+      "baca": "dào",
+      "en": "to arrive, reach"
+    },
+    {
+      "zh": "远",
+      "baca": "yuǎn",
+      "en": "far"
+    },
+    {
+      "zh": "近",
+      "baca": "jìn",
+      "en": "near"
+    },
+    {
+      "zh": "就",
+      "baca": "jiù",
+      "en": "just, right (there)"
+    },
+    {
+      "zh": "最",
+      "baca": "zuì",
+      "en": "most"
+    },
+    {
+      "zh": "大概",
+      "baca": "dàgài",
+      "en": "about, roughly"
+    },
+    {
+      "zh": "分钟",
+      "baca": "fēnzhōng",
+      "en": "minute (duration)"
+    },
+    {
+      "zh": "多长时间",
+      "baca": "duō cháng shíjiān",
+      "en": "how long"
+    },
+    {
+      "zh": "银行",
+      "baca": "yínháng",
+      "en": "bank"
+    },
+    {
+      "zh": "超市",
+      "baca": "chāoshì",
+      "en": "supermarket"
+    },
+    {
+      "zh": "医院",
+      "baca": "yīyuàn",
+      "en": "hospital"
+    },
+    {
+      "zh": "饭馆",
+      "baca": "fànguǎn",
+      "en": "restaurant"
+    },
+    {
+      "zh": "商店",
+      "baca": "shāngdiàn",
+      "en": "shop"
+    },
+    {
+      "zh": "公园",
+      "baca": "gōngyuán",
+      "en": "park"
+    },
+    {
+      "zh": "地铁站",
+      "baca": "dìtiězhàn",
+      "en": "subway station"
+    },
+    {
+      "zh": "机场",
+      "baca": "jīchǎng",
+      "en": "airport"
+    },
+    {
+      "zh": "教室",
+      "baca": "jiàoshì",
+      "en": "classroom"
+    },
+    {
+      "zh": "办公室",
+      "baca": "bàngōngshì",
+      "en": "office"
+    },
+    {
+      "zh": "洗手间",
+      "baca": "xǐshǒujiān",
+      "en": "restroom"
+    },
+    {
+      "zh": "房间",
+      "baca": "fángjiān",
+      "en": "room"
+    },
+    {
+      "zh": "楼",
+      "baca": "lóu",
+      "en": "floor, building"
+    },
+    {
+      "zh": "电梯",
+      "baca": "diàntī",
+      "en": "elevator"
+    },
+    {
+      "zh": "门口",
+      "baca": "ménkǒu",
+      "en": "entrance, doorway"
+    },
+    {
+      "zh": "路口",
+      "baca": "lùkǒu",
+      "en": "intersection"
+    },
+    {
+      "zh": "地方",
+      "baca": "dìfang",
+      "en": "place"
+    },
+    {
+      "zh": "迷路",
+      "baca": "mílù",
+      "en": "to get lost"
+    },
+    {
+      "zh": "帮",
+      "baca": "bāng",
+      "en": "to help"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in with 在, 有, or 是.",
+      "items": [
+        "[书|Shū] ___ [桌子上|zhuōzi shang]。",
+        "[桌子上|Zhuōzi shang] ___ [一本书|yì běn shū]。",
+        "[他今天不|Tā jīntiān bù] ___ [家|jiā]。",
+        "[附近|Fùjìn][没|méi] ___ [银行|yínháng]。",
+        "[洗手间|Xǐshǒujiān] ___ [楼梯旁边|lóutī pángbiān]。",
+        "[房间里|Fángjiān li] ___ [几个人|jǐ ge rén]？"
+      ]
+    },
+    {
+      "prompt": "Fill in the right place word: 上, 里, 旁边, 对面, 附近.",
+      "items": [
+        "[钥匙在包|Yàoshi zài bāo] ___。",
+        "[电脑在桌子|Diànnǎo zài zhuōzi] ___。",
+        "[银行在超市|Yínháng zài chāoshì] ___，[要过马路|yào guò mǎlù]。",
+        "[电梯在洗手间|Diàntī zài xǐshǒujiān] ___。",
+        "[学校|Xuéxiào] ___ [有一个公园|yǒu yí ge gōngyuán]。"
+      ]
+    },
+    {
+      "prompt": "Put the pieces in the right order.",
+      "items": [
+        "教室 / 在 / 三 / 楼",
+        "桌子 / 上 / 有 / 一 / 台 / 电脑",
+        "附近 / 有 / 银行 / 吗",
+        "从 / 这儿 / 往 / 前 / 走",
+        "银行 / 在 / 超市 / 对面",
+        "他 / 不 / 在 / 办公室"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "[请问，洗手间在哪儿|Qǐngwèn, xǐshǒujiān zài nǎr]？",
+        "[到路口往左拐|Dào lùkǒu wǎng zuǒ guǎi]。",
+        "[房间里没有人|Fángjiān li méiyǒu rén]。",
+        "[五分钟就到了|Wǔ fēnzhōng jiù dào le]。",
+        "[我迷路了，您能帮我吗|Wǒ mílù le, nín néng bāng wǒ ma]？"
+      ]
+    },
+    {
+      "prompt": "Translate into Mandarin. Write in pīnyīn.",
+      "items": [
+        "The book is on the table.",
+        "Is there a supermarket nearby?",
+        "Where's the restroom?",
+        "The bank is across from the hospital.",
+        "He isn't at home."
+      ]
+    },
+    {
+      "prompt": "Correct these wrong sentences, then write the right version in pīnyīn.",
+      "items": [
+        "[书在上桌子|Shū zài shàng zhuōzi]。",
+        "[我在北京里|Wǒ zài Běijīng li]。",
+        "[附近不有银行|Fùjìn bù yǒu yínháng]。",
+        "[一本书在桌子上有|Yì běn shū zài zhuōzi shang yǒu]。",
+        "[我吃饭在食堂每天|Wǒ chī fàn zài shítáng měi tiān]。"
+      ]
+    }
+  ],
+  "answers": [
+    "在 — 有 — 在 — 有 — 在 — 有",
+    "里 — 上 — 对面 — 旁边 — 附近",
+    "教室 在 三 楼 — 桌子 上 有 一 台 电脑 — 附近 有 银行 吗 — 从 这儿 往 前 走 — 银行 在 超市 对面 — 他 不 在 办公室",
+    "Excuse me, where's the restroom? — At the intersection, turn left. — There's nobody in the room. — You'll be there in just five minutes. — I'm lost. Could you help me?",
+    "Shū zài zhuōzi shang. — Fùjìn yǒu chāoshì ma? — Xǐshǒujiān zài nǎr? — Yínháng zài yīyuàn duìmiàn. — Tā bú zài jiā.",
+    "Shū zài zhuōzi shang. — Wǒ zài Běijīng. — Fùjìn méiyǒu yínháng. — Zhuōzi shang yǒu yì běn shū. — Wǒ měi tiān zài shítáng chī fàn."
+  ],
+  "wave": "Review Unit 5: stand in a room, name ten things and where they are with the pattern A 在 B, then flip each one into B 有 A. These two verbs, the pair most often mixed up, only come apart through paired repetition like this."
+}

@@ -1,0 +1,931 @@
+{
+  "title": "Time, days, and dates",
+  "title_target": "现在几点 — Xiànzài jǐ diǎn",
+  "goal": "Tell the time, the day, the date, and the year; make plans; and master one ordering rule that runs through all of Mandarin — from big to small, and time always before the verb.",
+  "bekal": [
+    "ask and tell the time",
+    "say the days of the week and the date",
+    "put time expressions in the right place",
+    "arrange to meet someone",
+    "tell 号 from 日, and 星期 from 周"
+  ],
+  "dialogs": [
+    {
+      "title": "对话 1 — Making plans",
+      "intro": "Andi and Wang Li arrange a time to meet. Watch closely where each time expression stands — that's the whole lesson of this unit.",
+      "lines": [
+        {
+          "speaker": "安迪:",
+          "text": "[现在|Xiànzài][几|jǐ][点|diǎn]？",
+          "id": "What time is it now?",
+          "literal": "now — how-many — o'clock."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[三|Sān][点|diǎn][半|bàn]。[怎么|Zěnme][了|le]？",
+          "id": "Half past three. What's up?",
+          "literal": "three — o'clock — half. how — (change)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[明天|Míngtiān][你|nǐ][有空|yǒu kòng][吗|ma]？[我|Wǒ][想|xiǎng][请|qǐng][你|nǐ][喝|hē][咖啡|kāfēi]。",
+          "id": "Are you free tomorrow? I'd like to buy you a coffee.",
+          "literal": "tomorrow — you — have-free-time — (question). I — would-like — treat — you — drink — coffee."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[明天|Míngtiān][几|jǐ][号|hào]？[星期几|Xīngqī jǐ]？",
+          "id": "What's the date tomorrow? What day?",
+          "literal": "tomorrow — how-many — date. week — how-many."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[五|Wǔ][月|yuè][十二|shí'èr][号|hào]，[星期三|xīngqīsān]。",
+          "id": "May 12th, a Wednesday.",
+          "literal": "five — month — twelve — date, week — three."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[星期三|Xīngqīsān][上午|shàngwǔ][我|wǒ][有|yǒu][课|kè]，[下午|xiàwǔ][可以|kěyǐ]。",
+          "id": "I have class Wednesday morning, but the afternoon works.",
+          "literal": "week — three — upper-noon — I — have — class, lower-noon — may."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[下午|Xiàwǔ][三|sān][点|diǎn][怎么样|zěnmeyàng]？",
+          "id": "How about three in the afternoon?",
+          "literal": "afternoon — three — o'clock — how-about."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[三|Sān][点|diǎn][有点儿|yǒudiǎnr][早|zǎo]。[四|Sì][点|diǎn][行|xíng][吗|ma]？",
+          "id": "Three's a bit early. Is four OK?",
+          "literal": "three — o'clock — a-bit — early. four — o'clock — OK — (question)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[行|Xíng]！[我们|Wǒmen][四|sì][点|diǎn][在|zài][学校|xuéxiào][门口|ménkǒu][见|jiàn]。",
+          "id": "Sure! Let's meet at four at the school gate.",
+          "literal": "OK. we — four — o'clock — at — school — door-mouth — meet."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[好|Hǎo]。[别|Bié][迟到|chídào][啊|a]！",
+          "id": "OK. Don't be late!",
+          "literal": "good. don't — be-late — (ah)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[放心|Fàngxīn]，[我|wǒ][从来|cónglái][不|bù][迟到|chídào]。",
+          "id": "Don't worry, I'm never late.",
+          "literal": "release — heart, I — ever — not — be-late."
+        }
+      ],
+      "notes": [
+        "**⚠️ Time expressions stand BEFORE the verb, never after it.** [我三点去|Wǒ sān diǎn qù] = I'm going at three. 我去三点 is completely wrong. English puts the time at the end (“I'm going **at three**”); Mandarin puts it up front. This is the rule English speakers break most, and the one that decides whether your sentence sounds right.",
+        "**Time can also stand before the subject.** [明天我有课|Míngtiān wǒ yǒu kè] and [我明天有课|Wǒ míngtiān yǒu kè] are both correct. Only one place is **off-limits**: after the verb.",
+        "**[点|diǎn] = o'clock, [半|bàn] = half.** [三点半|sān diǎn bàn] means **half past three**, 3:30. ⚠️ The hour always comes first and 半 follows it — Mandarin never counts toward the next hour the way German *halb vier* (3:30) does.",
+        "**[几号|jǐ hào]？ what date; [星期几|xīngqī jǐ]？ what day.** Notice that 几 stands exactly where the answer goes: [五月十二号|wǔ yuè shí'èr hào], [星期三|xīngqīsān].",
+        "**[有空|yǒu kòng] = to be free, have time.** The opposite is [没空|méi kòng] or [很忙|hěn máng].",
+        "**[请|qǐng] has two meanings**: “please” ([请坐|qǐng zuò]) and “to treat, invite” ([我请你|wǒ qǐng nǐ] it's on me). At the dinner table, [我请客|wǒ qǐngkè] means “I'm paying”.",
+        "**[行|xíng] = “OK, fine”** — very colloquial, very common. [行吗|Xíng ma]？ is that OK? [行|Xíng]。 sure.",
+        "**[别|bié] + verb = don't.** [别迟到|Bié chídào] don't be late, [别走|bié zǒu] don't go. ⚠️ 不要 also means “don't” but sounds harsher."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "tables": [
+            {
+              "head": [
+                "Time",
+                "Mandarin",
+                "Note"
+              ],
+              "rows": [
+                [
+                  "1:00",
+                  "[一点|yī diǎn]",
+                  ""
+                ],
+                [
+                  "2:00",
+                  "[两点|liǎng diǎn]",
+                  "⚠️ 两, not 二"
+                ],
+                [
+                  "3:05",
+                  "[三点零五分|sān diǎn líng wǔ fēn]",
+                  "Minutes under 10 take 零"
+                ],
+                [
+                  "3:15",
+                  "[三点一刻|sān diǎn yí kè]",
+                  "[刻|kè] = a quarter hour"
+                ],
+                [
+                  "3:30",
+                  "[三点半|sān diǎn bàn]",
+                  "Half **past** three"
+                ],
+                [
+                  "3:45",
+                  "[三点四十五|sān diǎn sìshíwǔ] / [差一刻四点|chà yí kè sì diǎn]",
+                  "差 = short of, to"
+                ],
+                [
+                  "3:50",
+                  "[差十分四点|chà shí fēn sì diǎn]",
+                  "Ten to four"
+                ],
+                [
+                  "12:00",
+                  "[十二点|shí'èr diǎn]",
+                  ""
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Part of the day",
+                "Mandarin",
+                "Roughly"
+              ],
+              "rows": [
+                [
+                  "early hours",
+                  "[凌晨|língchén]",
+                  "00:00 – 05:00"
+                ],
+                [
+                  "early morning",
+                  "[早上|zǎoshang]",
+                  "05:00 – 09:00"
+                ],
+                [
+                  "late morning",
+                  "[上午|shàngwǔ]",
+                  "09:00 – 12:00"
+                ],
+                [
+                  "midday",
+                  "[中午|zhōngwǔ]",
+                  "12:00 – 13:00"
+                ],
+                [
+                  "afternoon",
+                  "[下午|xiàwǔ]",
+                  "13:00 – 18:00"
+                ],
+                [
+                  "evening",
+                  "[晚上|wǎnshang]",
+                  "18:00 – 24:00"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "The part of the day stands **before** the hour: [下午三点|xiàwǔ sān diǎn] 3 p.m., [晚上八点|wǎnshang bā diǎn] 8 p.m. Big first, small last — exactly like every Mandarin time expression."
+          ]
+        },
+        {
+          "title": "Days, dates, months, years",
+          "body": [
+            "Mandarin weekdays have no names of their own — they're numbered: [星期|xīngqī] + a number. The only exception is Sunday."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Day",
+                "Mandarin",
+                "Literally"
+              ],
+              "rows": [
+                [
+                  "Monday",
+                  "[星期一|xīngqīyī]",
+                  "week one"
+                ],
+                [
+                  "Tuesday",
+                  "[星期二|xīngqī'èr]",
+                  "week two"
+                ],
+                [
+                  "Wednesday",
+                  "[星期三|xīngqīsān]",
+                  "week three"
+                ],
+                [
+                  "Thursday",
+                  "[星期四|xīngqīsì]",
+                  "week four"
+                ],
+                [
+                  "Friday",
+                  "[星期五|xīngqīwǔ]",
+                  "week five"
+                ],
+                [
+                  "Saturday",
+                  "[星期六|xīngqīliù]",
+                  "week six"
+                ],
+                [
+                  "Sunday",
+                  "[星期天|xīngqītiān] / [星期日|xīngqīrì]",
+                  "⚠️ not 星期七"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Unit",
+                "Spoken",
+                "Written",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "date",
+                  "[号|hào]",
+                  "[日|rì]",
+                  "[五月十二号|wǔ yuè shí'èr hào]"
+                ],
+                [
+                  "month",
+                  "[月|yuè]",
+                  "[月|yuè]",
+                  "[一月|yīyuè] January, [十二月|shí'èryuè] December"
+                ],
+                [
+                  "week",
+                  "[星期|xīngqī]",
+                  "[周|zhōu]",
+                  "[这个星期|zhège xīngqī] this week"
+                ],
+                [
+                  "year",
+                  "[年|nián]",
+                  "[年|nián]",
+                  "2026 = [二零二六年|èr líng èr liù nián]"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **Mandarin months are numbered too**: 一月 January, 二月 February, all the way to 十二月 December. No month names to memorize.",
+            "⚠️ **Years are read digit by digit**, not as a number. 2026 is [二零二六|èr líng èr liù], not “two thousand twenty-six”.",
+            "**Full date order: year → month → date → day → part of day → time.** 2026年5月12号星期三下午四点 — from biggest to smallest, without exception. English mostly runs the other way: “4 p.m., Wednesday, May 12, 2026”."
+          ]
+        },
+        {
+          "title": "Common time expressions",
+          "tables": [
+            {
+              "head": [
+                "Day",
+                "Mandarin",
+                "Week / month / year",
+                "Mandarin"
+              ],
+              "rows": [
+                [
+                  "yesterday",
+                  "[昨天|zuótiān]",
+                  "last week",
+                  "[上个星期|shàng ge xīngqī]"
+                ],
+                [
+                  "today",
+                  "[今天|jīntiān]",
+                  "this week",
+                  "[这个星期|zhège xīngqī]"
+                ],
+                [
+                  "tomorrow",
+                  "[明天|míngtiān]",
+                  "next week",
+                  "[下个星期|xià ge xīngqī]"
+                ],
+                [
+                  "the day before yesterday",
+                  "[前天|qiántiān]",
+                  "last month",
+                  "[上个月|shàng ge yuè]"
+                ],
+                [
+                  "the day after tomorrow",
+                  "[后天|hòutiān]",
+                  "this month",
+                  "[这个月|zhège yuè]"
+                ],
+                [
+                  "every day",
+                  "[每天|měi tiān]",
+                  "next month",
+                  "[下个月|xià ge yuè]"
+                ],
+                [
+                  "now",
+                  "[现在|xiànzài]",
+                  "last year",
+                  "[去年|qùnián]"
+                ],
+                [
+                  "later, in future",
+                  "[以后|yǐhòu]",
+                  "this year",
+                  "[今年|jīnnián]"
+                ],
+                [
+                  "before, in the past",
+                  "[以前|yǐqián]",
+                  "next year",
+                  "[明年|míngnián]"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Notice that [上|shàng] “up” means **last** and [下|xià] “down” means **next**. Chinese speakers picture time like a scroll read from top to bottom, not a line running to the right.",
+            "⚠️ Days break the pattern: **not** 上天/下天 but [昨天|zuótiān] and [明天|míngtiān]. Years do too: [去年|qùnián] and [明年|míngnián]."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "对话 2 — A daily routine",
+      "intro": "Li Ming talks about his days. Notice that every time expression comes before its action, without a single exception.",
+      "lines": [
+        {
+          "speaker": "王丽:",
+          "text": "[你|Nǐ][每天|měi tiān][几|jǐ][点|diǎn][起床|qǐ chuáng]？",
+          "id": "What time do you get up every day?",
+          "literal": "you — every — day — how-many — o'clock — rise — bed."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[六|Liù][点|diǎn][半|bàn]。[然后|Ránhòu][七|qī][点|diǎn][吃|chī][早饭|zǎofàn]。",
+          "id": "Six thirty. Then I have breakfast at seven.",
+          "literal": "six — o'clock — half. then — seven — o'clock — eat — morning-meal."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[你|Nǐ][几|jǐ][点|diǎn][上班|shàng bān]？",
+          "id": "What time do you start work?",
+          "literal": "you — how-many — o'clock — go-to — shift."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[八|Bā][点|diǎn][半|bàn]。[从|Cóng][八|bā][点|diǎn][半|bàn][到|dào][五|wǔ][点|diǎn]。",
+          "id": "Eight thirty. From eight thirty to five.",
+          "literal": "eight — o'clock — half. from — eight — o'clock — half — to — five — o'clock."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[中午|Zhōngwǔ][你|nǐ][在|zài][哪儿|nǎr][吃饭|chī fàn]？",
+          "id": "Where do you eat at lunchtime?",
+          "literal": "midday — you — at — where — eat — meal."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[在|Zài][公司|gōngsī][食堂|shítáng]。[便宜|Piányi][又|yòu][快|kuài]。",
+          "id": "In the company cafeteria. Cheap and fast.",
+          "literal": "at — company — cafeteria. cheap — also — fast."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[晚上|Wǎnshang][呢|ne]？[你|Nǐ][几|jǐ][点|diǎn][睡觉|shuì jiào]？",
+          "id": "And at night? What time do you go to bed?",
+          "literal": "evening — (and)? you — how-many — o'clock — sleep — sleep."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[一般|Yìbān][十一|shíyī][点|diǎn]。[周末|Zhōumò][晚|wǎn][一点儿|yìdiǎnr]。",
+          "id": "Usually eleven. A bit later on weekends.",
+          "literal": "usually — eleven — o'clock. week-end — late — a-little."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[周末|Zhōumò][你|nǐ][做|zuò][什么|shénme]？",
+          "id": "What do you do on weekends?",
+          "literal": "week-end — you — do — what."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[星期六|Xīngqīliù][打球|dǎ qiú]，[星期天|xīngqītiān][在|zài][家|jiā][休息|xiūxi]。",
+          "id": "I play ball on Saturday and rest at home on Sunday.",
+          "literal": "week-six — play — ball, week-sky — at — home — rest."
+        }
+      ],
+      "notes": [
+        "**[从…到…|cóng… dào…] = from … to ….** Used for time and place alike: [从八点到五点|cóng bā diǎn dào wǔ diǎn], [从家到公司|cóng jiā dào gōngsī].",
+        "**⚠️ [在|zài] + place also stands BEFORE the verb.** [我在食堂吃饭|Wǒ zài shítáng chī fàn] = I eat in the cafeteria. Not 我吃饭在食堂. Same rule as time: all the extra information comes before the action.",
+        "**[起床|qǐ chuáng], [吃饭|chī fàn], [上班|shàng bān], [睡觉|shuì jiào]** are all verb + object pairs that have fused together. Since the object is already inside, you can't add another object after them.",
+        "**[又…又…|yòu… yòu…] = “both … and …”.** [便宜又快|piányi yòu kuài] cheap and fast. The full form is [又便宜又快|yòu piányi yòu kuài].",
+        "**[一般|yìbān] = usually, generally.** A synonym is [通常|tōngcháng]. It goes before the verb, like every other time word.",
+        "**[周末|zhōumò] = weekend.** 周 is the written form of 星期, but 周末 is used in everyday speech too."
+      ],
+      "grammars": [
+        {
+          "title": "Sentence order — learn it once, use it forever",
+          "body": [
+            "Here is the full frame of a Mandarin sentence. Once you've got it, you'll never wonder where to put extra information again."
+          ],
+          "tables": [
+            {
+              "head": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "rows": [
+                [
+                  "**Subject**",
+                  "**Time**",
+                  "**Place**",
+                  "**Manner / means**",
+                  "**Verb + object**"
+                ],
+                [
+                  "[我|Wǒ]",
+                  "[明天|míngtiān]",
+                  "[在家|zài jiā]",
+                  "[跟朋友|gēn péngyou]",
+                  "[看电影|kàn diànyǐng]。"
+                ],
+                [
+                  "[他|Tā]",
+                  "[每天早上|měi tiān zǎoshang]",
+                  "[在食堂|zài shítáng]",
+                  "—",
+                  "[吃早饭|chī zǎofàn]。"
+                ],
+                [
+                  "[王丽|Wáng Lì]",
+                  "[星期三下午|xīngqīsān xiàwǔ]",
+                  "[在学校|zài xuéxiào]",
+                  "—",
+                  "[有课|yǒu kè]。"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "Read the second row out loud word for word: “I tomorrow at home with friends watch a movie”. It sounds odd in English — and that's exactly what correct Mandarin sounds like.",
+            "⚠️ The only things that stand **after** the verb are the object and result complements. Time, place, and manner **never** go there. If you're unsure whether something can go at the end, the answer is almost always no."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Making and canceling plans",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "[你明天有空吗|Nǐ míngtiān yǒu kòng ma]？",
+              "Are you free tomorrow?"
+            ],
+            [
+              "[我们几点见|Wǒmen jǐ diǎn jiàn]？",
+              "What time shall we meet?"
+            ],
+            [
+              "[在哪儿见|Zài nǎr jiàn]？",
+              "Where shall we meet?"
+            ],
+            [
+              "[四点行吗|Sì diǎn xíng ma]？",
+              "Is four OK?"
+            ],
+            [
+              "[没问题|Méi wèntí]。",
+              "No problem."
+            ],
+            [
+              "[对不起，我有事|Duìbuqǐ, wǒ yǒu shì]。",
+              "Sorry, something's come up."
+            ],
+            [
+              "[改天吧|Gǎitiān ba]。",
+              "Let's make it another day."
+            ],
+            [
+              "[我可能会晚一点儿|Wǒ kěnéng huì wǎn yìdiǎnr]。",
+              "I might be a bit late."
+            ],
+            [
+              "[我马上到|Wǒ mǎshàng dào]。",
+              "I'll be right there."
+            ],
+            [
+              "[你等我一下|Nǐ děng wǒ yíxià]。",
+              "Wait for me a moment."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Punctuality in China",
+          "items": [
+            "For work and formal appointments, **on time means five minutes early**, not on the dot. Arriving at the exact minute already counts as cutting it close.",
+            "For a meal with friends, there's more leeway — but letting people know is still expected.",
+            "[我马上到|Wǒ mǎshàng dào] “I'll be right there” is used very loosely — much like “I'm on my way!” anywhere else.",
+            "⚠️ Canceling at the last minute is considered far ruder than being late. If you must, [改天吧|Gǎitiān ba] with a short reason is the safe form."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Holidays through the year",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The Chinese calendar runs on two tracks: the solar calendar you know, and the traditional lunar calendar that sets the dates of festivals. That's why Chinese New Year falls on a different date every year."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Holiday",
+            "Mandarin",
+            "When"
+          ],
+          "rows": [
+            [
+              "Chinese New Year (Spring Festival)",
+              "[春节|Chūn Jié]",
+              "Day 1 of lunar month 1 — January or February"
+            ],
+            [
+              "Lantern Festival",
+              "[元宵节|Yuánxiāo Jié]",
+              "The 15th day after New Year"
+            ],
+            [
+              "Qingming (Tomb-Sweeping Day)",
+              "[清明节|Qīngmíng Jié]",
+              "Around April 4–5"
+            ],
+            [
+              "Labor Day",
+              "[劳动节|Láodòng Jié]",
+              "May 1"
+            ],
+            [
+              "Dragon Boat Festival",
+              "[端午节|Duānwǔ Jié]",
+              "Day 5 of lunar month 5"
+            ],
+            [
+              "Mid-Autumn (Mooncake) Festival",
+              "[中秋节|Zhōngqiū Jié]",
+              "Day 15 of lunar month 8"
+            ],
+            [
+              "National Day",
+              "[国庆节|Guóqìng Jié]",
+              "October 1 — a week-long holiday"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Greetings and wishes",
+          "items": [
+            "[新年快乐|Xīnnián kuàilè]！ — Happy New Year.",
+            "[恭喜发财|Gōngxǐ fācái]！ — “Wishing you prosperity” — the most common Chinese New Year greeting.",
+            "[生日快乐|Shēngrì kuàilè]！ — Happy birthday.",
+            "[祝你|Zhù nǐ]… — “Wishing you …” The opener for every good wish: [祝你身体健康|Zhù nǐ shēntǐ jiànkāng] wishing you good health.",
+            "⚠️ Never give a **clock** as a gift: [送钟|sòng zhōng] “give a clock” sounds exactly like [送终|sòng zhōng] “attend someone's deathbed”."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "现在",
+      "baca": "xiànzài",
+      "en": "now"
+    },
+    {
+      "zh": "点",
+      "baca": "diǎn",
+      "en": "o'clock"
+    },
+    {
+      "zh": "分",
+      "baca": "fēn",
+      "en": "minute"
+    },
+    {
+      "zh": "半",
+      "baca": "bàn",
+      "en": "half"
+    },
+    {
+      "zh": "刻",
+      "baca": "kè",
+      "en": "quarter hour"
+    },
+    {
+      "zh": "差",
+      "baca": "chà",
+      "en": "short of, to (the hour)"
+    },
+    {
+      "zh": "早上",
+      "baca": "zǎoshang",
+      "en": "early morning"
+    },
+    {
+      "zh": "上午",
+      "baca": "shàngwǔ",
+      "en": "late morning"
+    },
+    {
+      "zh": "中午",
+      "baca": "zhōngwǔ",
+      "en": "midday"
+    },
+    {
+      "zh": "下午",
+      "baca": "xiàwǔ",
+      "en": "afternoon"
+    },
+    {
+      "zh": "晚上",
+      "baca": "wǎnshang",
+      "en": "evening"
+    },
+    {
+      "zh": "今天",
+      "baca": "jīntiān",
+      "en": "today"
+    },
+    {
+      "zh": "明天",
+      "baca": "míngtiān",
+      "en": "tomorrow"
+    },
+    {
+      "zh": "昨天",
+      "baca": "zuótiān",
+      "en": "yesterday"
+    },
+    {
+      "zh": "后天",
+      "baca": "hòutiān",
+      "en": "the day after tomorrow"
+    },
+    {
+      "zh": "每天",
+      "baca": "měi tiān",
+      "en": "every day"
+    },
+    {
+      "zh": "星期",
+      "baca": "xīngqī",
+      "en": "week"
+    },
+    {
+      "zh": "周末",
+      "baca": "zhōumò",
+      "en": "weekend"
+    },
+    {
+      "zh": "月",
+      "baca": "yuè",
+      "en": "month"
+    },
+    {
+      "zh": "号",
+      "baca": "hào",
+      "en": "date (day of month)"
+    },
+    {
+      "zh": "年",
+      "baca": "nián",
+      "en": "year"
+    },
+    {
+      "zh": "去年",
+      "baca": "qùnián",
+      "en": "last year"
+    },
+    {
+      "zh": "明年",
+      "baca": "míngnián",
+      "en": "next year"
+    },
+    {
+      "zh": "以前",
+      "baca": "yǐqián",
+      "en": "before, in the past"
+    },
+    {
+      "zh": "以后",
+      "baca": "yǐhòu",
+      "en": "later, afterwards"
+    },
+    {
+      "zh": "从…到…",
+      "baca": "cóng … dào …",
+      "en": "from … to …"
+    },
+    {
+      "zh": "有空",
+      "baca": "yǒu kòng",
+      "en": "to be free, have time"
+    },
+    {
+      "zh": "忙",
+      "baca": "máng",
+      "en": "busy"
+    },
+    {
+      "zh": "行",
+      "baca": "xíng",
+      "en": "OK, fine"
+    },
+    {
+      "zh": "别",
+      "baca": "bié",
+      "en": "don't"
+    },
+    {
+      "zh": "迟到",
+      "baca": "chídào",
+      "en": "to be late"
+    },
+    {
+      "zh": "见",
+      "baca": "jiàn",
+      "en": "to meet, to see"
+    },
+    {
+      "zh": "等",
+      "baca": "děng",
+      "en": "to wait"
+    },
+    {
+      "zh": "马上",
+      "baca": "mǎshàng",
+      "en": "right away"
+    },
+    {
+      "zh": "一般",
+      "baca": "yìbān",
+      "en": "usually"
+    },
+    {
+      "zh": "起床",
+      "baca": "qǐ chuáng",
+      "en": "to get up"
+    },
+    {
+      "zh": "睡觉",
+      "baca": "shuì jiào",
+      "en": "to sleep, go to bed"
+    },
+    {
+      "zh": "上班",
+      "baca": "shàng bān",
+      "en": "to start work"
+    },
+    {
+      "zh": "下班",
+      "baca": "xià bān",
+      "en": "to finish work"
+    },
+    {
+      "zh": "上课",
+      "baca": "shàng kè",
+      "en": "to go to class"
+    },
+    {
+      "zh": "早饭",
+      "baca": "zǎofàn",
+      "en": "breakfast"
+    },
+    {
+      "zh": "午饭",
+      "baca": "wǔfàn",
+      "en": "lunch"
+    },
+    {
+      "zh": "晚饭",
+      "baca": "wǎnfàn",
+      "en": "dinner"
+    },
+    {
+      "zh": "休息",
+      "baca": "xiūxi",
+      "en": "to rest"
+    },
+    {
+      "zh": "公司",
+      "baca": "gōngsī",
+      "en": "company"
+    },
+    {
+      "zh": "食堂",
+      "baca": "shítáng",
+      "en": "cafeteria"
+    },
+    {
+      "zh": "咖啡",
+      "baca": "kāfēi",
+      "en": "coffee"
+    },
+    {
+      "zh": "没问题",
+      "baca": "méi wèntí",
+      "en": "no problem"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these times and dates in Mandarin.",
+      "items": [
+        "7:00: ___",
+        "2:00: ___",
+        "9:30: ___",
+        "Wednesday: ___",
+        "May 12: ___",
+        "Sunday: ___"
+      ]
+    },
+    {
+      "prompt": "Put the pieces in the right order. Watch where the time expression goes.",
+      "items": [
+        "我 / 明天 / 有 / 课",
+        "他 / 每天 / 六点半 / 起床",
+        "我们 / 四点 / 在 / 学校 / 见",
+        "我 / 星期六 / 在 / 家 / 休息",
+        "从 / 八点半 / 到 / 五点 / 上班",
+        "现在 / 几 / 点"
+      ]
+    },
+    {
+      "prompt": "Fill in with 点, 号, 星期, 半, or 分.",
+      "items": [
+        "[现在三|Xiànzài sān] ___ [十五|shíwǔ] ___。",
+        "[今天五月十二|Jīntiān wǔ yuè shí'èr] ___。",
+        "[明天|Míngtiān] ___ [三|sān]。",
+        "[我六|Wǒ liù] ___ ___ [起床|qǐ chuáng]。",
+        "[晚上八|Wǎnshang bā] ___ [见|jiàn]。"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "[我每天七点吃早饭|Wǒ měi tiān qī diǎn chī zǎofàn]。",
+        "[星期三下午我有课|Xīngqīsān xiàwǔ wǒ yǒu kè]。",
+        "[你明天有空吗|Nǐ míngtiān yǒu kòng ma]？",
+        "[从八点半到五点上班|Cóng bā diǎn bàn dào wǔ diǎn shàng bān]。",
+        "[别迟到|Bié chídào]！"
+      ]
+    },
+    {
+      "prompt": "Translate into Mandarin. Write in pīnyīn.",
+      "items": [
+        "What time is it now?",
+        "What day is it tomorrow?",
+        "I get up at six thirty.",
+        "Let's meet at four in the afternoon.",
+        "I eat lunch in the cafeteria every day."
+      ]
+    },
+    {
+      "prompt": "Correct these wrong sentences, then write the right version in pīnyīn.",
+      "items": [
+        "[我去三点|Wǒ qù sān diǎn]。",
+        "[我吃饭在食堂|Wǒ chī fàn zài shítáng]。",
+        "[今天星期七|Jīntiān xīngqīqī]。",
+        "[现在二点|Xiànzài èr diǎn]。",
+        "[我有课明天上午|Wǒ yǒu kè míngtiān shàngwǔ]。"
+      ]
+    }
+  ],
+  "answers": [
+    "七点 — 两点 — 九点半 — 星期三 — 五月十二号 — 星期天",
+    "我 明天 有 课 — 他 每天 六点半 起床 — 我们 四点 在 学校 见 — 我 星期六 在 家 休息 — 从 八点半 到 五点 上班 — 现在 几 点",
+    "点 分 — 号 — 星期 — 点 半 — 点",
+    "I have breakfast at seven every day. — I have class on Wednesday afternoon. — Are you free tomorrow? — Work is from eight thirty to five. — Don't be late!",
+    "Xiànzài jǐ diǎn? — Míngtiān xīngqī jǐ? — Wǒ liù diǎn bàn qǐ chuáng. — Wǒmen xiàwǔ sì diǎn jiàn. — Wǒ měi tiān zài shítáng chī wǔfàn.",
+    "Wǒ sān diǎn qù. — Wǒ zài shítáng chī fàn. — Jīntiān xīngqītiān. — Xiànzài liǎng diǎn. — Wǒ míngtiān shàngwǔ yǒu kè."
+  ],
+  "wave": "Review Unit 4: describe the daily routine of each member of your family — when they get up, when they leave, when they come home — always with the time before the verb. If a sentence feels shaky, repeat it until it comes out without thinking."
+}

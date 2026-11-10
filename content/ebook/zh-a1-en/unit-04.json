@@ -1,0 +1,812 @@
+{
+  "title": "Family and age",
+  "title_target": "你家有几口人 — Nǐ jiā yǒu jǐ kǒu rén",
+  "goal": "Name family members, count the people in your household, ask someone's age in three different ways depending on who you're talking to, and join two nouns with 和.",
+  "bekal": [
+    "name father, mother, older and younger siblings, and children",
+    "answer 你家有几口人 correctly",
+    "ask the age of a child, a peer, and an older person with the right form",
+    "use 和 only where it belongs",
+    "say someone's age with no verb at all"
+  ],
+  "dialogs": [
+    {
+      "title": "对话 1 — A family photo",
+      "intro": "Wang Li shows Andi a photo of her family. Notice one odd thing about the sentences with ages: the verb disappears completely.",
+      "lines": [
+        {
+          "speaker": "王丽:",
+          "text": "[这|Zhè][是|shì][我|wǒ][家|jiā][的|de][照片|zhàopiàn]。",
+          "id": "This is a photo of my family.",
+          "literal": "this — is — I — home — 's — photo."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[你|Nǐ][家|jiā][有|yǒu][几|jǐ][口|kǒu][人|rén]？",
+          "id": "How many people are in your family?",
+          "literal": "you — home — there-is — how-many — (measure) — person."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[五|Wǔ][口|kǒu][人|rén]。[爸爸|Bàba]、[妈妈|māma]、[哥哥|gēge]、[妹妹|mèimei][和|hé][我|wǒ]。",
+          "id": "Five. My dad, my mom, my older brother, my younger sister, and me.",
+          "literal": "five — (measure) — person. dad, mom, older-brother, younger-sister — and — I."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[你|Nǐ][哥哥|gēge][做|zuò][什么|shénme][工作|gōngzuò]？",
+          "id": "What does your brother do?",
+          "literal": "you — older-brother — do — what — work."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[他|Tā][是|shì][医生|yīshēng]。[他|Tā][今年|jīnnián][三十|sānshí][岁|suì]。",
+          "id": "He's a doctor. He's thirty this year.",
+          "literal": "he — is — doctor. he — this-year — thirty — years-old."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[你|Nǐ][妹妹|mèimei][多大|duō dà]？",
+          "id": "How old is your sister?",
+          "literal": "you — younger-sister — how — big."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[她|Tā][十六|shíliù][岁|suì]，[还|hái][是|shì][中学生|zhōngxuéshēng]。",
+          "id": "She's sixteen, still in high school.",
+          "literal": "she — sixteen — years-old, still — is — middle-school-student."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[你|Nǐ][爸爸|bàba][妈妈|māma][呢|ne]？[他们|Tāmen][工作|gōngzuò][吗|ma]？",
+          "id": "What about your parents? Do they work?",
+          "literal": "you — dad — mom — (and)? they — work — (question)."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[我|Wǒ][爸爸|bàba][还|hái][工作|gōngzuò]，[我|wǒ][妈妈|māma][退休|tuìxiū][了|le]。",
+          "id": "My dad still works; my mom has retired.",
+          "literal": "I — dad — still — work, I — mom — retire — (change)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[你们|Nǐmen][都|dōu][住|zhù][在|zài][北京|Běijīng][吗|ma]？",
+          "id": "Do you all live in Beijing?",
+          "literal": "you-all — all — live — at — Beijing — (question)."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[不|Bù]，[他们|tāmen][住|zhù][在|zài][上海|Shànghǎi]。[我|Wǒ][一个人|yí ge rén][在|zài][北京|Běijīng]。",
+          "id": "No, they live in Shanghai. I'm on my own in Beijing.",
+          "literal": "no, they — live — at — Shanghai. I — one — (measure) — person — be-at — Beijing."
+        }
+      ],
+      "notes": [
+        "**⚠️ [口|kǒu] is a special measure word for counting the people in a household**, and only for that. [我家有五口人|Wǒ jiā yǒu wǔ kǒu rén]. Outside the family, people are counted with [个|ge]: [三个学生|sān ge xuésheng]. Using 个 for family isn't a big mistake, but using 口 for people outside the family sounds odd.",
+        "**⚠️ Age sentences use no verb at all.** [他三十岁|Tā sānshí suì] — literally “he thirty years-old”. There's no 是 in it. Adding 是 (他是三十岁) is a mistake people notice at once — and a tempting one, since English says “he *is* thirty”. This is one of the few Mandarin sentences that truly stands without a verb.",
+        "**⚠️ [和|hé] “and” only joins NOUNS**, never two sentences or two actions. Right: [爸爸和妈妈|bàba hé māma]. Wrong: 我吃饭和我看书 — two actions are joined without 和, just separated by a comma or linked with [然后|ránhòu] “then”.",
+        "**[还|hái] = still.** [他还工作|Tā hái gōngzuò] he still works; [她还是中学生|Tā hái shì zhōngxuéshēng] she's still in high school.",
+        "**[退休了|tuìxiū le] = has retired.** 了 here marks a **change of state**: she used to work, now she doesn't. That's the real job of 了 — not marking the past. Unit 10 covers it fully.",
+        "**[一个人|yí ge rén] means “on my own, alone”**, not “one person” as a count. [我一个人去|Wǒ yí ge rén qù] = I'm going alone.",
+        "**[住在|zhù zài] = live in.** Notice the order: the verb 住 first, then 在 + place. We'll cover 在 fully in Unit 6."
+      ],
+      "grammars": [
+        {
+          "title": "Asking someone's age — three forms, three kinds of people",
+          "body": [
+            "English uses one sentence for everyone: “how old are you?”. Mandarin changes the question depending on who you're asking, and using the wrong one is quite noticeable."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Asking",
+                "The sentence",
+                "Literally"
+              ],
+              "rows": [
+                [
+                  "A young child (under 10)",
+                  "[你几岁|Nǐ jǐ suì]？",
+                  "you how-many years-old"
+                ],
+                [
+                  "A peer, teenager, adult",
+                  "[你多大|Nǐ duō dà]？",
+                  "you how big"
+                ],
+                [
+                  "An older or respected person",
+                  "[您多大年纪|Nín duō dà niánjì]？",
+                  "you(polite) how big age"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Answering",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "Age + 岁",
+                  "[我二十五岁|Wǒ èrshíwǔ suì]。"
+                ],
+                [
+                  "Just the age, without 岁",
+                  "[二十五|Èrshíwǔ]。 — fine in casual conversation"
+                ],
+                [
+                  "This year I'm …",
+                  "[我今年二十五岁|Wǒ jīnnián èrshíwǔ suì]。"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ [多大|duō dà] literally means “how big”, so don't be surprised: the same phrase is also used to ask about the size of things. Who you're talking about decides the meaning.",
+            "The pattern [多|duō] + adjective = “how …” is very productive: [多高|duō gāo] how tall, [多长|duō cháng] how long, [多远|duō yuǎn] how far, [多重|duō zhòng] how heavy."
+          ]
+        },
+        {
+          "title": "和 and friends — ways of joining things",
+          "tables": [
+            {
+              "head": [
+                "Word",
+                "Joins",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "[和|hé]",
+                  "Two nouns",
+                  "[我和我妹妹|wǒ hé wǒ mèimei] my sister and I"
+                ],
+                [
+                  "[跟|gēn]",
+                  "Same as 和, more spoken; also “with”",
+                  "[我跟他去|Wǒ gēn tā qù] I'm going with him"
+                ],
+                [
+                  "[还有|háiyǒu]",
+                  "Adds the last item to a list",
+                  "[苹果、香蕉，还有水|píngguǒ, xiāngjiāo, háiyǒu shuǐ]"
+                ],
+                [
+                  "[然后|ránhòu]",
+                  "Two actions in sequence — “then”",
+                  "[我吃饭，然后看书|Wǒ chī fàn, ránhòu kàn shū]"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ A mistake you'll almost certainly make this week: using 和 to join two sentences, as in “I eat **and** read a book”. In Mandarin, two actions are just separated by a comma. **和 never stands between two verbs.**",
+            "Notice Mandarin list punctuation too: the slanted comma [、|dùnhào] goes between items in a list, while the ordinary comma ，goes between parts of a sentence."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "对话 2 — Asking about each other's families",
+      "intro": "Now it's Li Ming's turn to ask Andi. Talking about family is the most common small talk in China — far more common than talking about the weather.",
+      "lines": [
+        {
+          "speaker": "李明:",
+          "text": "[安迪|Āndí]，[你|nǐ][结婚|jiéhūn][了|le][吗|ma]？",
+          "id": "Andi, are you married?",
+          "literal": "Andi, you — marry — (change) — (question)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[结婚|Jiéhūn][了|le]。[我|Wǒ][有|yǒu][一个|yí ge][女儿|nǚ'ér]。",
+          "id": "Yes. I have a daughter.",
+          "literal": "marry — (change). I — have — one — (measure) — daughter."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[她|Tā][几|jǐ][岁|suì][了|le]？",
+          "id": "How old is she now?",
+          "literal": "she — how-many — years-old — (change)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[六|Liù][岁|suì]。[她|Tā][在|zài][雅加达|Yǎjiādá][上|shàng][小学|xiǎoxué]。",
+          "id": "Six. She's in elementary school in Jakarta.",
+          "literal": "six — years-old. she — at — Jakarta — attend — elementary-school."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[你|Nǐ][太太|tàitai][也|yě][在|zài][印尼|Yìnní][吗|ma]？",
+          "id": "Is your wife in Indonesia too?",
+          "literal": "you — wife — also — be-at — Indonesia — (question)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[对|Duì]。[我|Wǒ][很|hěn][想|xiǎng][她们|tāmen]。",
+          "id": "Yes. I miss them a lot.",
+          "literal": "correct. I — (support) — miss — them(female)."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[你|Nǐ][有|yǒu][兄弟姐妹|xiōngdì jiěmèi][吗|ma]？",
+          "id": "Do you have any brothers or sisters?",
+          "literal": "you — have — brothers-sisters — (question)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[有|Yǒu]，[一个|yí ge][弟弟|dìdi]。[他|Tā][比|bǐ][我|wǒ][小|xiǎo][五|wǔ][岁|suì]。",
+          "id": "Yes, a younger brother. He's five years younger than me.",
+          "literal": "have, one — (measure) — younger-brother. he — compared-to — I — small — five — years."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[我|Wǒ][是|shì][独生子|dúshēngzǐ]。[家里|Jiā li][只有|zhǐyǒu][我|wǒ][一个|yí ge][孩子|háizi]。",
+          "id": "I'm an only child. I'm the only kid at home.",
+          "literal": "I — am — only-born-son. home — inside — only-have — I — one — (measure) — child."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[那|Nà][你|nǐ][父母|fùmǔ][一定|yídìng][很|hěn][疼|téng][你|nǐ]。",
+          "id": "Then your parents must really dote on you.",
+          "literal": "then — you — parents — surely — (support) — dote-on — you."
+        }
+      ],
+      "notes": [
+        "**[结婚了吗|Jiéhūn le ma]？ — “are you married?”** This question is genuinely common in China, even with people you've just met. It isn't considered nosy; it's considered caring. Short answers: [结婚了|Jiéhūn le] or [还没有|Hái méiyǒu] “not yet”.",
+        "**[几岁了|Jǐ suì le]？** — the 了 at the end adds a sense of “by now”, as if asking about an age that keeps growing. Very common with children.",
+        "**[上小学|shàng xiǎoxué] = be in elementary school.** 上 here means “go up to, attend”: [上班|shàng bān] go to work, [上课|shàng kè] go to class, [上大学|shàng dàxué] go to university.",
+        "**[想|xiǎng] has two meanings: “would like” and “miss”.** [我想去|Wǒ xiǎng qù] I'd like to go; [我想你|Wǒ xiǎng nǐ] I miss you. The difference: followed by a **verb**, it means “would like”; followed by a **person**, it means “miss”.",
+        "**[比|bǐ] = compared with.** The pattern is A 比 B + adjective: [他比我大|Tā bǐ wǒ dà] he's older than me. ⚠️ Don't use 很 in a 比 sentence — [他比我很大|Tā bǐ wǒ hěn dà] is wrong.",
+        "**[独生子|dúshēngzǐ] only son, [独生女|dúshēngnǚ] only daughter.** Very common words in China because of the one-child policy, in force from 1979 to 2015.",
+        "**[疼|téng] means “ache, hurt”, but also “dote on”** — with a sense of spoiling. [父母很疼他|Fùmǔ hěn téng tā] his parents really dote on him."
+      ],
+      "grammars": [
+        {
+          "title": "比 — comparing two things",
+          "body": [
+            "This pattern is officially HSK 3 material, but it's placed here because you'll need it as soon as you talk about age and family."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Pattern",
+                "Example",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "A 比 B + adjective",
+                  "[他比我大|Tā bǐ wǒ dà]。",
+                  "He's older than me."
+                ],
+                [
+                  "A 比 B + adjective + amount",
+                  "[他比我大五岁|Tā bǐ wǒ dà wǔ suì]。",
+                  "He's five years older than me."
+                ],
+                [
+                  "A 没有 B + adjective",
+                  "[我没有他高|Wǒ méiyǒu tā gāo]。",
+                  "I'm not as tall as him."
+                ],
+                [
+                  "A 跟 B 一样 + adjective",
+                  "[我跟他一样大|Wǒ gēn tā yíyàng dà]。",
+                  "I'm the same age as him."
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **很 and 比 never meet.** The support word 很 disappears as soon as there's a comparison. To say “much more”, add [多|duō] or [得多|de duō] after: [他比我大得多|Tā bǐ wǒ dà de duō]."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The family map",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Mandarin distinguishes siblings by **age** — there is no single word for “brother” or “sister”, only older and younger ones. And it goes further: grandparents on your father's side and your mother's side have different names."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Mandarin",
+            "Pīnyīn",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "[爸爸|bàba] / [父亲|fùqīn]",
+              "bàba / fùqīn",
+              "father (everyday / formal)"
+            ],
+            [
+              "[妈妈|māma] / [母亲|mǔqīn]",
+              "māma / mǔqīn",
+              "mother (everyday / formal)"
+            ],
+            [
+              "[父母|fùmǔ]",
+              "fùmǔ",
+              "parents"
+            ],
+            [
+              "[哥哥|gēge]",
+              "gēge",
+              "older brother"
+            ],
+            [
+              "[姐姐|jiějie]",
+              "jiějie",
+              "older sister"
+            ],
+            [
+              "[弟弟|dìdi]",
+              "dìdi",
+              "younger brother"
+            ],
+            [
+              "[妹妹|mèimei]",
+              "mèimei",
+              "younger sister"
+            ],
+            [
+              "[兄弟姐妹|xiōngdì jiěmèi]",
+              "xiōngdì jiěmèi",
+              "siblings (all of them)"
+            ],
+            [
+              "[儿子|érzi]",
+              "érzi",
+              "son"
+            ],
+            [
+              "[女儿|nǚ'ér]",
+              "nǚ'ér",
+              "daughter"
+            ],
+            [
+              "[孩子|háizi]",
+              "háizi",
+              "child"
+            ],
+            [
+              "[丈夫|zhàngfu] / [老公|lǎogōng]",
+              "zhàngfu / lǎogōng",
+              "husband (formal / casual)"
+            ],
+            [
+              "[妻子|qīzi] / [太太|tàitai] / [老婆|lǎopo]",
+              "qīzi / tàitai / lǎopo",
+              "wife (formal / polite / casual)"
+            ],
+            [
+              "[爷爷|yéye]",
+              "yéye",
+              "grandfather — **father's father**"
+            ],
+            [
+              "[奶奶|nǎinai]",
+              "nǎinai",
+              "grandmother — **father's mother**"
+            ],
+            [
+              "[外公|wàigōng] / [姥爷|lǎoye]",
+              "wàigōng / lǎoye",
+              "grandfather — **mother's father**"
+            ],
+            [
+              "[外婆|wàipó] / [姥姥|lǎolao]",
+              "wàipó / lǎolao",
+              "grandmother — **mother's mother**"
+            ],
+            [
+              "[叔叔|shūshu]",
+              "shūshu",
+              "uncle (father's younger brother); also a way to address adult men"
+            ],
+            [
+              "[阿姨|āyí]",
+              "āyí",
+              "aunt (mother's sister); also a way to address adult women"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "外 — the “mother's side” marker",
+          "items": [
+            "The character [外|wài] means “outside”. It goes in front of family terms on the **mother's side**: [外公|wàigōng], [外婆|wàipó], [外孙|wàisūn] a daughter's child.",
+            "The reason is historical: the traditional Chinese family traced descent through the father's line, so the mother's side was literally “outside” the surname.",
+            "Today it's only a trace in the language, not a family attitude — but the words are still used exactly as before.",
+            "**[叔叔|shūshu] and [阿姨|āyí] are also used for strangers** around your parents' age, much like a child calling a family friend “auntie” or “uncle”."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Small talk people really use",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A first conversation with someone from China almost always runs through these questions. To many Western ears some of them feel personal; to them, this is simply friendliness."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Meaning",
+            "Safe answer"
+          ],
+          "rows": [
+            [
+              "[你家有几口人|Nǐ jiā yǒu jǐ kǒu rén]？",
+              "How many people in your family?",
+              "[四口人|Sì kǒu rén]。"
+            ],
+            [
+              "[你结婚了吗|Nǐ jiéhūn le ma]？",
+              "Are you married?",
+              "[还没有|Hái méiyǒu]。 / [结婚了|Jiéhūn le]。"
+            ],
+            [
+              "[你有孩子吗|Nǐ yǒu háizi ma]？",
+              "Do you have kids?",
+              "[有一个|Yǒu yí ge]。 / [还没有|Hái méiyǒu]。"
+            ],
+            [
+              "[你多大|Nǐ duō dà]？",
+              "How old are you?",
+              "[我三十岁|Wǒ sānshí suì]。"
+            ],
+            [
+              "[你是哪儿人|Nǐ shì nǎr rén]？",
+              "Where are you from?",
+              "[我是雅加达人|Wǒ shì Yǎjiādá rén]。"
+            ],
+            [
+              "[你父母做什么工作|Nǐ fùmǔ zuò shénme gōngzuò]？",
+              "What do your parents do?",
+              "[我爸爸是老师|Wǒ bàba shì lǎoshī]。"
+            ],
+            [
+              "[你一个月挣多少钱|Nǐ yí ge yuè zhèng duōshao qián]？",
+              "How much do you earn a month?",
+              "[还行吧|Hái xíng ba]。 — a polite dodge"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "If you'd rather not answer",
+          "items": [
+            "**[还行吧|Hái xíng ba]。** — “It's OK.” A neutral answer to questions about money or work.",
+            "**[保密|Bǎomì]！** — “It's a secret!” Said with a smile; taken as funny, not rude.",
+            "**[还没有|Hái méiyǒu]。** — “Not yet.” For questions about marriage or children. People rarely push further.",
+            "Turning the question around with [你呢|Nǐ ne]？ almost always works and offends no one."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "家",
+      "baca": "jiā",
+      "en": "home, family"
+    },
+    {
+      "zh": "口",
+      "baca": "kǒu",
+      "en": "measure word for family members"
+    },
+    {
+      "zh": "爸爸",
+      "baca": "bàba",
+      "en": "dad"
+    },
+    {
+      "zh": "妈妈",
+      "baca": "māma",
+      "en": "mom"
+    },
+    {
+      "zh": "父母",
+      "baca": "fùmǔ",
+      "en": "parents"
+    },
+    {
+      "zh": "哥哥",
+      "baca": "gēge",
+      "en": "older brother"
+    },
+    {
+      "zh": "姐姐",
+      "baca": "jiějie",
+      "en": "older sister"
+    },
+    {
+      "zh": "弟弟",
+      "baca": "dìdi",
+      "en": "younger brother"
+    },
+    {
+      "zh": "妹妹",
+      "baca": "mèimei",
+      "en": "younger sister"
+    },
+    {
+      "zh": "兄弟姐妹",
+      "baca": "xiōngdì jiěmèi",
+      "en": "siblings"
+    },
+    {
+      "zh": "儿子",
+      "baca": "érzi",
+      "en": "son"
+    },
+    {
+      "zh": "女儿",
+      "baca": "nǚ'ér",
+      "en": "daughter"
+    },
+    {
+      "zh": "孩子",
+      "baca": "háizi",
+      "en": "child"
+    },
+    {
+      "zh": "丈夫",
+      "baca": "zhàngfu",
+      "en": "husband"
+    },
+    {
+      "zh": "太太",
+      "baca": "tàitai",
+      "en": "wife"
+    },
+    {
+      "zh": "爷爷",
+      "baca": "yéye",
+      "en": "grandfather (father's side)"
+    },
+    {
+      "zh": "奶奶",
+      "baca": "nǎinai",
+      "en": "grandmother (father's side)"
+    },
+    {
+      "zh": "外公",
+      "baca": "wàigōng",
+      "en": "grandfather (mother's side)"
+    },
+    {
+      "zh": "外婆",
+      "baca": "wàipó",
+      "en": "grandmother (mother's side)"
+    },
+    {
+      "zh": "叔叔",
+      "baca": "shūshu",
+      "en": "uncle"
+    },
+    {
+      "zh": "阿姨",
+      "baca": "āyí",
+      "en": "aunt; auntie"
+    },
+    {
+      "zh": "岁",
+      "baca": "suì",
+      "en": "years old"
+    },
+    {
+      "zh": "多大",
+      "baca": "duō dà",
+      "en": "how old"
+    },
+    {
+      "zh": "年纪",
+      "baca": "niánjì",
+      "en": "age (polite)"
+    },
+    {
+      "zh": "今年",
+      "baca": "jīnnián",
+      "en": "this year"
+    },
+    {
+      "zh": "和",
+      "baca": "hé",
+      "en": "and"
+    },
+    {
+      "zh": "跟",
+      "baca": "gēn",
+      "en": "and; with"
+    },
+    {
+      "zh": "还有",
+      "baca": "háiyǒu",
+      "en": "and also"
+    },
+    {
+      "zh": "然后",
+      "baca": "ránhòu",
+      "en": "then, after that"
+    },
+    {
+      "zh": "比",
+      "baca": "bǐ",
+      "en": "compared with, than"
+    },
+    {
+      "zh": "一样",
+      "baca": "yíyàng",
+      "en": "the same"
+    },
+    {
+      "zh": "结婚",
+      "baca": "jiéhūn",
+      "en": "to get married"
+    },
+    {
+      "zh": "退休",
+      "baca": "tuìxiū",
+      "en": "to retire"
+    },
+    {
+      "zh": "住",
+      "baca": "zhù",
+      "en": "to live"
+    },
+    {
+      "zh": "做",
+      "baca": "zuò",
+      "en": "to do, to make"
+    },
+    {
+      "zh": "上班",
+      "baca": "shàng bān",
+      "en": "to go to work"
+    },
+    {
+      "zh": "上学",
+      "baca": "shàng xué",
+      "en": "to go to school"
+    },
+    {
+      "zh": "小学",
+      "baca": "xiǎoxué",
+      "en": "elementary school"
+    },
+    {
+      "zh": "中学",
+      "baca": "zhōngxué",
+      "en": "middle/high school"
+    },
+    {
+      "zh": "大学",
+      "baca": "dàxué",
+      "en": "university"
+    },
+    {
+      "zh": "照片",
+      "baca": "zhàopiàn",
+      "en": "photo"
+    },
+    {
+      "zh": "独生子",
+      "baca": "dúshēngzǐ",
+      "en": "only son"
+    },
+    {
+      "zh": "只有",
+      "baca": "zhǐyǒu",
+      "en": "only (there is)"
+    },
+    {
+      "zh": "一定",
+      "baca": "yídìng",
+      "en": "surely, must"
+    },
+    {
+      "zh": "疼",
+      "baca": "téng",
+      "en": "to hurt; to dote on"
+    },
+    {
+      "zh": "想",
+      "baca": "xiǎng",
+      "en": "would like; to miss"
+    },
+    {
+      "zh": "北京",
+      "baca": "Běijīng",
+      "en": "Beijing"
+    },
+    {
+      "zh": "上海",
+      "baca": "Shànghǎi",
+      "en": "Shanghai"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in with 口, 个, 岁, 和, or 比.",
+      "items": [
+        "[我家有四|Wǒ jiā yǒu sì] ___ [人|rén]。",
+        "[我有一|Wǒ yǒu yí] ___ [弟弟|dìdi]。",
+        "[他今年三十|Tā jīnnián sānshí] ___。",
+        "[爸爸|Bàba] ___ [妈妈|māma][都在上海|dōu zài Shànghǎi]。",
+        "[他|Tā] ___ [我大五岁|wǒ dà wǔ suì]。"
+      ]
+    },
+    {
+      "prompt": "Choose the right way to ask the age: 几岁, 多大, 多大年纪.",
+      "items": [
+        "[你的女儿|Nǐ de nǚ'ér]（6 [岁|suì]）___？",
+        "[你|Nǐ]（[同学|tóngxué]）___？",
+        "[您的爷爷|Nín de yéye] ___？",
+        "[你儿子|Nǐ érzi]（3 [岁|suì]）___？",
+        "[你哥哥|Nǐ gēge] ___？"
+      ]
+    },
+    {
+      "prompt": "Put the pieces in the right order.",
+      "items": [
+        "你 / 家 / 有 / 几 / 口 / 人",
+        "我 / 有 / 一 / 个 / 妹妹",
+        "他 / 今年 / 三十 / 岁",
+        "爸爸 / 和 / 妈妈 / 都 / 是 / 老师",
+        "他 / 比 / 我 / 小 / 五 / 岁",
+        "我 / 一个人 / 在 / 北京"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "[我家有五口人|Wǒ jiā yǒu wǔ kǒu rén]。",
+        "[我妈妈退休了|Wǒ māma tuìxiū le]。",
+        "[你有兄弟姐妹吗|Nǐ yǒu xiōngdì jiěmèi ma]？",
+        "[她今年十六岁，还是中学生|Tā jīnnián shíliù suì, hái shì zhōngxuéshēng]。",
+        "[我没有他高|Wǒ méiyǒu tā gāo]。"
+      ]
+    },
+    {
+      "prompt": "Translate into Mandarin. Write in pīnyīn.",
+      "items": [
+        "How many people are in your family?",
+        "I have a younger sister.",
+        "He's twenty-five.",
+        "My dad and mom live in Jakarta.",
+        "Are you married?"
+      ]
+    },
+    {
+      "prompt": "Correct these wrong sentences, then write the right version in pīnyīn.",
+      "items": [
+        "[他是三十岁|Tā shì sānshí suì]。",
+        "[我家有五个人|Wǒ jiā yǒu wǔ ge rén]。",
+        "[我吃饭和看书|Wǒ chī fàn hé kàn shū]。",
+        "[他比我很大|Tā bǐ wǒ hěn dà]。",
+        "[您几岁|Nín jǐ suì]？"
+      ]
+    }
+  ],
+  "answers": [
+    "口 — 个 — 岁 — 和 — 比",
+    "几岁 — 多大 — 多大年纪 — 几岁 — 多大",
+    "你 家 有 几 口 人 — 我 有 一 个 妹妹 — 他 今年 三十 岁 — 爸爸 和 妈妈 都 是 老师 — 他 比 我 小 五 岁 — 我 一个人 在 北京",
+    "There are five people in my family. — My mom has retired. — Do you have any brothers or sisters? — She's sixteen this year and still in high school. — I'm not as tall as him.",
+    "Nǐ jiā yǒu jǐ kǒu rén? — Wǒ yǒu yí ge mèimei. — Tā èrshíwǔ suì. — Wǒ bàba hé māma zhù zài Yǎjiādá. — Nǐ jiéhūn le ma?",
+    "Tā sānshí suì. — Wǒ jiā yǒu wǔ kǒu rén. — Wǒ chī fàn, ránhòu kàn shū. — Tā bǐ wǒ dà. — Nín duō dà niánjì?"
+  ],
+  "wave": "Review Unit 3: draw your family tree on a sheet of paper, write everyone's age in Chinese numerals, then describe your family out loud in ten sentences. Numbers and family practiced together."
+}

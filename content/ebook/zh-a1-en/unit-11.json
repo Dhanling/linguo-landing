@@ -1,0 +1,853 @@
+{
+  "title": "Getting around",
+  "title_target": "怎么去 — Zěnme qù",
+  "goal": "Ask how to get somewhere, name each vehicle with the right verb, and use the 从…到… frame plus means-of-transport phrases that always stand before the verb.",
+  "bekal": [
+    "ask 怎么去 and understand the answer",
+    "use 坐, 骑, 开 to match the vehicle",
+    "build sentences with the means of transport before the verb",
+    "take a taxi, the subway and the bus without panicking",
+    "say how long and how far"
+  ],
+  "dialogs": [
+    {
+      "title": "对话 1 — To the airport",
+      "intro": "Andi has to get to the airport tomorrow morning. Li Ming helps him plan. Notice that the means of transport always comes before the verb of going.",
+      "lines": [
+        {
+          "speaker": "安迪:",
+          "text": "[明天|Míngtiān][我|wǒ][要|yào][去|qù][机场|jīchǎng]。[怎么|Zěnme][去|qù][最|zuì][快|kuài]？",
+          "id": "I have to go to the airport tomorrow. What's the fastest way there?",
+          "literal": "tomorrow — I — will — go — airport. how — go — most — fast."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[坐|Zuò][机场|jīchǎng][快线|kuàixiàn][最|zuì][快|kuài]。[三十|Sānshí][分钟|fēnzhōng][就|jiù][到|dào][了|le]。",
+          "id": "The airport express is fastest. You're there in just thirty minutes.",
+          "literal": "sit — airport — express-line — most — fast. thirty — minute — already — arrive — (change)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[从|Cóng][我|wǒ][家|jiā][到|dào][地铁站|dìtiězhàn][远|yuǎn][吗|ma]？",
+          "id": "Is it far from my place to the subway station?",
+          "literal": "from — I — home — to — subway-station — far — (question)."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[不|Bù][远|yuǎn]，[走路|zǒu lù][十|shí][分钟|fēnzhōng]。[也|Yě][可以|kěyǐ][骑|qí][自行车|zìxíngchē]。",
+          "id": "Not far — a ten-minute walk. You could also bike.",
+          "literal": "not — far, walk — road — ten — minute. also — may — straddle — self-moving-vehicle."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[我|Wǒ][行李|xíngli][很|hěn][多|duō]。[打车|Dǎchē][怎么样|zěnmeyàng]？",
+          "id": "I have a lot of luggage. What about a taxi?",
+          "literal": "I — luggage — (prop) — many. hit-vehicle — how."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[打车|Dǎchē][要|yào][一|yí][个|ge][小时|xiǎoshí]，[而且|érqiě][早上|zǎoshang][很|hěn][堵|dǔ]。",
+          "id": "A taxi takes an hour, and the mornings are jammed.",
+          "literal": "taxi — need — one — (classifier) — hour, moreover — morning — (prop) — jammed."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[那|Nà][我|wǒ][坐|zuò][地铁|dìtiě][吧|ba]。[要|Yào][换|huàn][车|chē][吗|ma]？",
+          "id": "Then I'll take the subway. Do I need to change trains?",
+          "literal": "that — I — sit — under-ground-rail — (suggestion). need — change — vehicle — (question)."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[要|Yào][换|huàn][一|yí][次|cì]。[坐|Zuò][二|èr][号|hào][线|xiàn]，[在|zài][东直门|Dōngzhímén][换|huàn][机场|jīchǎng][线|xiàn]。",
+          "id": "Once. Take Line 2 and change to the airport line at Dongzhimen.",
+          "literal": "need — change — one — time. sit — two — number — line, at — Dongzhimen — change — airport — line."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[我|Wǒ][记|jì][下来|xiàlái]。[几|Jǐ][点|diǎn][出发|chūfā][比较|bǐjiào][好|hǎo]？",
+          "id": "I'll write that down. What time should I leave?",
+          "literal": "I — note — down-come. how-many — o'clock — set-off — fairly — good."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[飞机|Fēijī][几|jǐ][点|diǎn]？[一般|Yìbān][提前|tíqián][三|sān][个|ge][小时|xiǎoshí][到|dào][机场|jīchǎng]。",
+          "id": "What time's your flight? People usually get to the airport three hours early.",
+          "literal": "plane — how-many — o'clock. generally — ahead — three — (classifier) — hour — arrive — airport."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[十|Shí][点|diǎn][的|de][飞机|fēijī]。[那|Nà][我|wǒ][六|liù][点|diǎn][出发|chūfā]。",
+          "id": "The flight's at ten. Then I'll leave at six.",
+          "literal": "ten — o'clock — (of) — plane. that — I — six — o'clock — set-off."
+        }
+      ],
+      "notes": [
+        "**⚠️ Each vehicle has its own verb.** [坐|zuò] \"sit\" for vehicles you ride as a passenger: bus, train, plane, boat, taxi. [骑|qí] \"straddle\" for things you sit astride: bicycle, motorbike, horse. [开|kāi] \"drive\" for vehicles you drive yourself: a car.",
+        "**⚠️ The means of transport stands BEFORE the verb of going.** [我坐地铁去|Wǒ zuò dìtiě qù] = I go by subway — literally \"I sit subway go\". 我去坐地铁 means something else: \"I'm going to take the subway\". The rule is the same as for time and place: all adverbials come before the action.",
+        "**[从…到…|cóng… dào…] works for both distance and time.** [从我家到机场|cóng wǒ jiā dào jīchǎng] from my place to the airport; [从八点到五点|cóng bā diǎn dào wǔ diǎn] from eight to five.",
+        "**[打车|dǎchē] = take a taxi**, literally \"hit a vehicle\". The synonym is [坐出租车|zuò chūzūchē]. To hail one on the street: [打个车|dǎ ge chē].",
+        "**[堵|dǔ] = jammed**, full form [堵车|dǔchē] traffic jam. [今天很堵|Jīntiān hěn dǔ] the traffic's bad today.",
+        "**[换|huàn] = change, swap.** [换车|huàn chē] change trains/buses, [换钱|huàn qián] exchange money, [换衣服|huàn yīfu] change clothes.",
+        "**[比较|bǐjiào] = fairly, relatively.** [比较好|bǐjiào hǎo] better; [比较贵|bǐjiào guì] rather expensive. It softens any judgment, and native speakers use it constantly.",
+        "**[提前|tíqián] = ahead of schedule**; the opposite is [推迟|tuīchí] postpone."
+      ],
+      "grammars": [
+        {
+          "title": "Vehicles and their verbs",
+          "tables": [
+            {
+              "head": [
+                "Verb",
+                "For",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "[坐|zuò]",
+                  "Vehicles you ride in",
+                  "[坐飞机|zuò fēijī] fly · [坐地铁|zuò dìtiě] · [坐公共汽车|zuò gōnggòng qìchē] · [坐船|zuò chuán] take a boat · [坐火车|zuò huǒchē] take the train"
+                ],
+                [
+                  "[骑|qí]",
+                  "Things you sit astride",
+                  "[骑自行车|qí zìxíngchē] ride a bike · [骑摩托车|qí mótuōchē] ride a motorbike · [骑马|qí mǎ] ride a horse"
+                ],
+                [
+                  "[开|kāi]",
+                  "Vehicles you drive yourself",
+                  "[开车|kāi chē] drive a car"
+                ],
+                [
+                  "[走|zǒu] / [走路|zǒu lù]",
+                  "On foot",
+                  "[走路去|zǒu lù qù] walk there"
+                ],
+                [
+                  "[打车|dǎchē]",
+                  "By taxi",
+                  "[打车去|dǎchē qù]"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Sentence",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "[我坐地铁去公司|Wǒ zuò dìtiě qù gōngsī]。",
+                  "I go to the office by subway."
+                ],
+                [
+                  "[他骑自行车上班|Tā qí zìxíngchē shàng bān]。",
+                  "He bikes to work."
+                ],
+                [
+                  "[我们走路去吧|Wǒmen zǒu lù qù ba]。",
+                  "Let's just walk."
+                ],
+                [
+                  "[你怎么来的|Nǐ zěnme lái de]？",
+                  "How did you get here?"
+                ],
+                [
+                  "[坐飞机来的|Zuò fēijī lái de]。",
+                  "By plane."
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ [坐摩托车|zuò mótuōchē] and [骑摩托车|qí mótuōchē] both exist, but they mean different things: the first is **riding pillion**, the second is **riding it yourself**. If you've ever taken a motorbike taxi, the difference makes instant sense."
+          ]
+        },
+        {
+          "title": "How long and how far",
+          "tables": [
+            {
+              "head": [
+                "Question",
+                "Sample answer"
+              ],
+              "rows": [
+                [
+                  "[怎么去|Zěnme qù]？",
+                  "[坐地铁去|Zuò dìtiě qù]。"
+                ],
+                [
+                  "[要多长时间|Yào duō cháng shíjiān]？",
+                  "[要半个小时|Yào bàn ge xiǎoshí]。"
+                ],
+                [
+                  "[多久|Duō jiǔ]？",
+                  "[大概二十分钟|Dàgài èrshí fēnzhōng]。"
+                ],
+                [
+                  "[远不远|Yuǎn bu yuǎn]？",
+                  "[不远，很近|Bù yuǎn, hěn jìn]。"
+                ],
+                [
+                  "[有多远|Yǒu duō yuǎn]？",
+                  "[大概三公里|Dàgài sān gōnglǐ]。"
+                ],
+                [
+                  "[多少钱|Duōshao qián]？",
+                  "[打车大概五十块|Dǎchē dàgài wǔshí kuài]。"
+                ],
+                [
+                  "[要换车吗|Yào huàn chē ma]？",
+                  "[要换一次|Yào huàn yí cì]。"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **Travel time stands after the verb**, just like the duration of an action in Unit 10: [坐地铁要半个小时|Zuò dìtiě yào bàn ge xiǎoshí]。 Compare **when**, which always comes first: [我八点坐地铁|Wǒ bā diǎn zuò dìtiě]。"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "对话 2 — In the taxi",
+      "intro": "The rain forces Andi into a taxi. Talking with a taxi driver is one of the most nerve-racking listening tests for beginners — and one of the fastest ways to improve.",
+      "lines": [
+        {
+          "speaker": "司机:",
+          "text": "[您好|Nín hǎo]，[去|qù][哪儿|nǎr]？",
+          "id": "Hello, where to?",
+          "literal": "you(polite) — good, go — where."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[师傅|Shīfu]，[去|qù][首都|Shǒudū][机场|Jīchǎng][三|sān][号|hào][航站楼|hángzhànlóu]。",
+          "id": "Capital Airport, Terminal 3, please.",
+          "literal": "master, go — capital — airport — three — number — flight-station-building."
+        },
+        {
+          "speaker": "司机:",
+          "text": "[好|Hǎo][的|de]。[走|Zǒu][高速|gāosù][可以|kěyǐ][吗|ma]？[快|Kuài][一点儿|yìdiǎnr]。",
+          "id": "Okay. Is the expressway all right? It's a bit faster.",
+          "literal": "good — (of). go — high-speed — may — (question). fast — a-bit."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[可以|Kěyǐ]。[大概|Dàgài][要|yào][多长|duō cháng][时间|shíjiān]？",
+          "id": "Sure. About how long will it take?",
+          "literal": "may. roughly — need — how — long — time."
+        },
+        {
+          "speaker": "司机:",
+          "text": "[现在|Xiànzài][不|bù][堵|dǔ]，[四十|sìshí][分钟|fēnzhōng][左右|zuǒyòu]。",
+          "id": "There's no traffic now, so about forty minutes.",
+          "literal": "now — not — jammed, forty — minute — left-right."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[太好了|Tài hǎo le]。[师傅|Shīfu]，[能|néng][开|kāi][一下|yíxià][空调|kōngtiáo][吗|ma]？",
+          "id": "Great. Could you turn on the AC for a bit?",
+          "literal": "too — good — (change). master, able — open — a-bit — air-con — (question)."
+        },
+        {
+          "speaker": "司机:",
+          "text": "[好|Hǎo]。[您|Nín][是|shì][哪国人|nǎ guó rén]？[中文|Zhōngwén][说|shuō][得|de][挺|tǐng][好|hǎo][的|de]。",
+          "id": "Sure. Where are you from? Your Mandarin's pretty good.",
+          "literal": "good. you(polite) — be — which — country — person. Mandarin — speak — (marker) — quite — good — (of)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[哪里哪里|Nǎli nǎli]。[我|Wǒ][是|shì][印尼人|Yìnní rén]，[学|xué][了|le][半|bàn][年|nián]。",
+          "id": "Oh, not really. I'm Indonesian — I've been studying for six months.",
+          "literal": "where — where. I — be — Indonesia — person, study — (done) — half — year."
+        },
+        {
+          "speaker": "司机:",
+          "text": "[半|Bàn][年|nián][就|jiù][这么|zhème][好|hǎo]？[厉害|Lìhai]！",
+          "id": "This good after only six months? Impressive!",
+          "literal": "half — year — already — this — good. awesome."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[到|Dào][了|le][叫|jiào][我|wǒ][一|yí][下|xià]，[我|wǒ][眯|mī][一会儿|yíhuìr]。",
+          "id": "Please wake me when we get there — I'm going to take a nap.",
+          "literal": "arrive — (change) — call — me — one — time, I — squint — a-while."
+        },
+        {
+          "speaker": "司机:",
+          "text": "[没问题|Méi wèntí]，[您|nín][休息|xiūxi][吧|ba]。",
+          "id": "No problem, get some rest.",
+          "literal": "not-have — problem, you(polite) — rest — (suggestion)."
+        }
+      ],
+      "notes": [
+        "**[师傅|shīfu] is how you address drivers, tradespeople and other skilled workers.** Calling a taxi driver 师傅 sounds natural and respectful right away — much better than [先生|xiānsheng] \"sir\".",
+        "**[一下|yíxià] after a verb makes it light and brief**, just like doubling the verb. [看一下|kàn yíxià] take a quick look, [等一下|děng yíxià] wait a moment. This one word softens almost any request.",
+        "**[左右|zuǒyòu] literally \"left-right\", meaning \"about\".** It always stands **after** the number: [四十分钟左右|sìshí fēnzhōng zuǒyòu] about forty minutes, [五十块左右|wǔshí kuài zuǒyòu] about fifty yuan.",
+        "**[挺…的|tǐng… de] = \"pretty …\".** A very common spoken form: [挺好的|tǐng hǎo de] pretty good, [挺贵的|tǐng guì de] pretty expensive. It sounds more relaxed than 很.",
+        "**[哪里哪里|Nǎli nǎli]** is the standard reply to a compliment — literally \"where, where\", meaning \"oh, not at all\". Memorize it: compliments on your Mandarin will keep coming.",
+        "**[厉害|lìhai] = awesome, impressive.** A very common compliment among young people.",
+        "**[开空调|kāi kōngtiáo] turn on the AC.** 开 turns on any machine: [开灯|kāi dēng] turn on the light, [开电视|kāi diànshì]. The opposite is [关|guān]: [关灯|guān dēng] turn off the light."
+      ],
+      "grammars": [
+        {
+          "title": "Surviving public transport",
+          "tables": [
+            {
+              "head": [
+                "What you say",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "[师傅，去…|Shīfu, qù…]",
+                  "To …, please (giving a destination in a taxi)"
+                ],
+                [
+                  "[请打表|Qǐng dǎ biǎo]。",
+                  "Please use the meter."
+                ],
+                [
+                  "[请在这儿停|Qǐng zài zhèr tíng]。",
+                  "Please stop here."
+                ],
+                [
+                  "[请开发票|Qǐng kāi fāpiào]。",
+                  "Can I have a receipt, please?"
+                ],
+                [
+                  "[到…怎么走|Dào… zěnme zǒu]？",
+                  "Which way to …?"
+                ],
+                [
+                  "[这趟车去…吗|Zhè tàng chē qù… ma]？",
+                  "Does this one go to …?"
+                ],
+                [
+                  "[在哪站下|Zài nǎ zhàn xià]？",
+                  "Which stop do I get off at?"
+                ],
+                [
+                  "[到了叫我一下|Dào le jiào wǒ yíxià]。",
+                  "Please tell me when we get there."
+                ],
+                [
+                  "[我坐过站了|Wǒ zuò guò zhàn le]。",
+                  "I missed my stop."
+                ],
+                [
+                  "[下一站是哪儿|Xià yí zhàn shì nǎr]？",
+                  "What's the next stop?"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "What you'll see or hear",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "[入口|rùkǒu] / [出口|chūkǒu]",
+                  "Entrance / exit"
+                ],
+                [
+                  "[换乘|huànchéng]",
+                  "Transfer"
+                ],
+                [
+                  "[上车|shàng chē] / [下车|xià chē]",
+                  "Get on / get off"
+                ],
+                [
+                  "[请注意安全|Qǐng zhùyì ānquán]。",
+                  "Please mind your safety."
+                ],
+                [
+                  "[前方到站|Qiánfāng dào zhàn]…",
+                  "Next stop: …"
+                ],
+                [
+                  "[请让座|Qǐng ràng zuò]。",
+                  "Please offer your seat."
+                ],
+                [
+                  "[末班车|mòbānchē]",
+                  "Last train / last bus"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **[上车|shàng chē] and [下车|xià chē] use \"up\" and \"down\"**, not \"enter\" and \"exit\" — much like English \"get on\" and \"get off\". One of the few habits you don't need to change."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Vehicles and places",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Vehicle",
+            "Pīnyīn",
+            "Place",
+            "Pīnyīn"
+          ],
+          "rows": [
+            [
+              "[飞机|fēijī] plane",
+              "fēijī",
+              "[机场|jīchǎng] airport",
+              "jīchǎng"
+            ],
+            [
+              "[火车|huǒchē] train",
+              "huǒchē",
+              "[火车站|huǒchēzhàn] train station",
+              "huǒchēzhàn"
+            ],
+            [
+              "[高铁|gāotiě] high-speed train",
+              "gāotiě",
+              "[地铁站|dìtiězhàn] subway station",
+              "dìtiězhàn"
+            ],
+            [
+              "[地铁|dìtiě] subway",
+              "dìtiě",
+              "[车站|chēzhàn] stop, station",
+              "chēzhàn"
+            ],
+            [
+              "[公共汽车|gōnggòng qìchē] bus",
+              "gōnggòng qìchē",
+              "[码头|mǎtóu] pier",
+              "mǎtóu"
+            ],
+            [
+              "[出租车|chūzūchē] taxi",
+              "chūzūchē",
+              "[停车场|tíngchēchǎng] parking lot",
+              "tíngchēchǎng"
+            ],
+            [
+              "[自行车|zìxíngchē] bicycle",
+              "zìxíngchē",
+              "[路口|lùkǒu] intersection",
+              "lùkǒu"
+            ],
+            [
+              "[摩托车|mótuōchē] motorbike",
+              "mótuōchē",
+              "[高速|gāosù] expressway",
+              "gāosù"
+            ],
+            [
+              "[船|chuán] boat",
+              "chuán",
+              "[红绿灯|hónglǜdēng] traffic light",
+              "hónglǜdēng"
+            ],
+            [
+              "[车|chē] car, vehicle",
+              "chē",
+              "[人行道|rénxíngdào] sidewalk",
+              "rénxíngdào"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Words you'll see on screens and signs",
+          "items": [
+            "[出发|chūfā] departure · [到达|dàodá] arrival · [晚点|wǎndiǎn] delayed · [取消|qǔxiāo] canceled",
+            "[登机口|dēngjīkǒu] boarding gate · [候车室|hòuchēshì] waiting room · [检票|jiǎnpiào] ticket check",
+            "[车票|chēpiào] ticket (train/bus) · [机票|jīpiào] plane ticket · [单程|dānchéng] one-way · [往返|wǎngfǎn] round trip",
+            "[身份证|shēnfènzhèng] ID card · [护照|hùzhào] passport — ⚠️ Chinese train tickets are tied to your ID, so always carry your passport.",
+            "[安检|ānjiǎn] security check — at every subway and train station in China, not just at airports."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Planning a trip",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Describing a plan is practice that pulls together almost everything you've learned: time first, then place, means of transport before the verb, and a sequence held together by linking words."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Linker",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "[先|xiān]",
+              "first",
+              "[先坐地铁|Xiān zuò dìtiě]…"
+            ],
+            [
+              "[然后|ránhòu]",
+              "then",
+              "[然后换机场线|ránhòu huàn jīchǎng xiàn]"
+            ],
+            [
+              "[再|zài]",
+              "and then, after that",
+              "[再走五分钟|zài zǒu wǔ fēnzhōng]"
+            ],
+            [
+              "[最后|zuìhòu]",
+              "finally",
+              "[最后到航站楼|zuìhòu dào hángzhànlóu]"
+            ],
+            [
+              "[的时候|de shíhou]",
+              "when",
+              "[到的时候给我打电话|Dào de shíhou gěi wǒ dǎ diànhuà]。"
+            ],
+            [
+              "[以后|yǐhòu]",
+              "after",
+              "[下班以后|xià bān yǐhòu] after work"
+            ],
+            [
+              "[以前|yǐqián]",
+              "before",
+              "[出发以前|chūfā yǐqián] before leaving"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "A complete sample plan",
+          "items": [
+            "[明天早上六点，我从家出发。先走路十分钟到地铁站，然后坐二号线，在东直门换机场线。四十分钟以后到机场。到的时候大概八点，飞机十点起飞|Míngtiān zǎoshang liù diǎn, wǒ cóng jiā chūfā. Xiān zǒu lù shí fēnzhōng dào dìtiězhàn, ránhòu zuò èr hào xiàn, zài Dōngzhímén huàn jīchǎng xiàn. Sìshí fēnzhōng yǐhòu dào jīchǎng. Dào de shíhou dàgài bā diǎn, fēijī shí diǎn qǐfēi]。",
+            "Read it aloud three times. It packs in time, place, transport, sequence and duration — the whole frame of Units 5, 6 and 11 in one paragraph.",
+            "Then swap in the places and times of **your own** trip tomorrow. That's the best practice you can do today."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "怎么",
+      "baca": "zěnme",
+      "en": "how (method)"
+    },
+    {
+      "zh": "坐",
+      "baca": "zuò",
+      "en": "sit; ride (as a passenger)"
+    },
+    {
+      "zh": "骑",
+      "baca": "qí",
+      "en": "ride (bike, motorbike)"
+    },
+    {
+      "zh": "开车",
+      "baca": "kāi chē",
+      "en": "drive"
+    },
+    {
+      "zh": "走路",
+      "baca": "zǒu lù",
+      "en": "walk"
+    },
+    {
+      "zh": "打车",
+      "baca": "dǎchē",
+      "en": "take a taxi"
+    },
+    {
+      "zh": "飞机",
+      "baca": "fēijī",
+      "en": "plane"
+    },
+    {
+      "zh": "火车",
+      "baca": "huǒchē",
+      "en": "train"
+    },
+    {
+      "zh": "地铁",
+      "baca": "dìtiě",
+      "en": "subway, metro"
+    },
+    {
+      "zh": "公共汽车",
+      "baca": "gōnggòng qìchē",
+      "en": "bus"
+    },
+    {
+      "zh": "出租车",
+      "baca": "chūzūchē",
+      "en": "taxi"
+    },
+    {
+      "zh": "自行车",
+      "baca": "zìxíngchē",
+      "en": "bicycle"
+    },
+    {
+      "zh": "摩托车",
+      "baca": "mótuōchē",
+      "en": "motorbike"
+    },
+    {
+      "zh": "船",
+      "baca": "chuán",
+      "en": "boat, ship"
+    },
+    {
+      "zh": "车站",
+      "baca": "chēzhàn",
+      "en": "stop, station"
+    },
+    {
+      "zh": "机场",
+      "baca": "jīchǎng",
+      "en": "airport"
+    },
+    {
+      "zh": "上车",
+      "baca": "shàng chē",
+      "en": "get on (a vehicle)"
+    },
+    {
+      "zh": "下车",
+      "baca": "xià chē",
+      "en": "get off (a vehicle)"
+    },
+    {
+      "zh": "换",
+      "baca": "huàn",
+      "en": "change, swap"
+    },
+    {
+      "zh": "线",
+      "baca": "xiàn",
+      "en": "line (route)"
+    },
+    {
+      "zh": "票",
+      "baca": "piào",
+      "en": "ticket"
+    },
+    {
+      "zh": "护照",
+      "baca": "hùzhào",
+      "en": "passport"
+    },
+    {
+      "zh": "行李",
+      "baca": "xíngli",
+      "en": "luggage"
+    },
+    {
+      "zh": "堵车",
+      "baca": "dǔchē",
+      "en": "traffic jam"
+    },
+    {
+      "zh": "高速",
+      "baca": "gāosù",
+      "en": "expressway"
+    },
+    {
+      "zh": "红绿灯",
+      "baca": "hónglǜdēng",
+      "en": "traffic light"
+    },
+    {
+      "zh": "停",
+      "baca": "tíng",
+      "en": "stop"
+    },
+    {
+      "zh": "师傅",
+      "baca": "shīfu",
+      "en": "form of address for drivers"
+    },
+    {
+      "zh": "司机",
+      "baca": "sījī",
+      "en": "driver"
+    },
+    {
+      "zh": "一下",
+      "baca": "yíxià",
+      "en": "a moment, briefly"
+    },
+    {
+      "zh": "左右",
+      "baca": "zuǒyòu",
+      "en": "about, roughly"
+    },
+    {
+      "zh": "比较",
+      "baca": "bǐjiào",
+      "en": "fairly, relatively"
+    },
+    {
+      "zh": "挺",
+      "baca": "tǐng",
+      "en": "pretty, quite"
+    },
+    {
+      "zh": "厉害",
+      "baca": "lìhai",
+      "en": "impressive, awesome"
+    },
+    {
+      "zh": "提前",
+      "baca": "tíqián",
+      "en": "in advance, early"
+    },
+    {
+      "zh": "出发",
+      "baca": "chūfā",
+      "en": "set off, depart"
+    },
+    {
+      "zh": "到达",
+      "baca": "dàodá",
+      "en": "arrive"
+    },
+    {
+      "zh": "晚点",
+      "baca": "wǎndiǎn",
+      "en": "delayed (schedule)"
+    },
+    {
+      "zh": "空调",
+      "baca": "kōngtiáo",
+      "en": "air conditioning"
+    },
+    {
+      "zh": "开",
+      "baca": "kāi",
+      "en": "open, turn on"
+    },
+    {
+      "zh": "关",
+      "baca": "guān",
+      "en": "close, turn off"
+    },
+    {
+      "zh": "先",
+      "baca": "xiān",
+      "en": "first"
+    },
+    {
+      "zh": "再",
+      "baca": "zài",
+      "en": "then; again"
+    },
+    {
+      "zh": "的时候",
+      "baca": "de shíhou",
+      "en": "when"
+    },
+    {
+      "zh": "公里",
+      "baca": "gōnglǐ",
+      "en": "kilometer"
+    },
+    {
+      "zh": "记",
+      "baca": "jì",
+      "en": "note down, remember"
+    },
+    {
+      "zh": "叫",
+      "baca": "jiào",
+      "en": "call"
+    },
+    {
+      "zh": "安检",
+      "baca": "ānjiǎn",
+      "en": "security check"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right verb: 坐, 骑, 开, 走.",
+      "items": [
+        "___ [飞机|fēijī]",
+        "___ [自行车|zìxíngchē]",
+        "___ [车|chē]",
+        "___ [路|lù]",
+        "___ [地铁|dìtiě]",
+        "___ [摩托车|mótuōchē]"
+      ]
+    },
+    {
+      "prompt": "Fill in 从, 到, 换, 左右 or 比较.",
+      "items": [
+        "___ [我家|wǒ jiā] ___ [机场很远|jīchǎng hěn yuǎn]。",
+        "[在东直门|Zài Dōngzhímén] ___ [机场线|jīchǎng xiàn]。",
+        "[大概四十分钟|Dàgài sìshí fēnzhōng] ___。",
+        "[坐地铁|Zuò dìtiě] ___ [快|kuài]。"
+      ]
+    },
+    {
+      "prompt": "Put the pieces in the right order.",
+      "items": [
+        "我 / 坐 / 地铁 / 去 / 公司",
+        "从 / 我 / 家 / 到 / 机场 / 很 / 远",
+        "他 / 骑 / 自行车 / 上班",
+        "要 / 多长 / 时间",
+        "我们 / 走路 / 去 / 吧",
+        "师傅 / 请 / 在 / 这儿 / 停"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "[你怎么来的|Nǐ zěnme lái de]？",
+        "[坐地铁四十分钟左右|Zuò dìtiě sìshí fēnzhōng zuǒyòu]。",
+        "[今天早上很堵|Jīntiān zǎoshang hěn dǔ]。",
+        "[要换一次车|Yào huàn yí cì chē]。",
+        "[到的时候给我打电话|Dào de shíhou gěi wǒ dǎ diànhuà]。"
+      ]
+    },
+    {
+      "prompt": "Translate into Mandarin. Write in pīnyīn.",
+      "items": [
+        "How do I get to the airport?",
+        "I bike to school.",
+        "Is it far from here to the station?",
+        "How long does it take?",
+        "Please stop here."
+      ]
+    },
+    {
+      "prompt": "Correct these sentences, then write the correct form in pīnyīn.",
+      "items": [
+        "[我去坐地铁公司|Wǒ qù zuò dìtiě gōngsī]。",
+        "[他坐自行车上班|Tā zuò zìxíngchē shàng bān]。",
+        "[我坐地铁去半个小时|Wǒ zuò dìtiě qù bàn ge xiǎoshí]。",
+        "[左右四十分钟|Zuǒyòu sìshí fēnzhōng]。",
+        "[我开地铁去公司|Wǒ kāi dìtiě qù gōngsī]。"
+      ]
+    }
+  ],
+  "answers": [
+    "坐 — 骑 — 开 — 走 — 坐 — 骑",
+    "从 到 — 换 — 左右 — 比较",
+    "我 坐 地铁 去 公司 — 从 我 家 到 机场 很 远 — 他 骑 自行车 上班 — 要 多长 时间 — 我们 走路 去 吧 — 师傅 请 在 这儿 停",
+    "How did you get here? — About forty minutes by subway. — The traffic was really bad this morning. — You have to change once. — Call me when you get there.",
+    "Qù jīchǎng zěnme qù? — Wǒ qí zìxíngchē qù xuéxiào. — Cóng zhèr dào chēzhàn yuǎn ma? — Yào duō cháng shíjiān? — Qǐng zài zhèr tíng.",
+    "Wǒ zuò dìtiě qù gōngsī. — Tā qí zìxíngchē shàng bān. — Wǒ zuò dìtiě qù yào bàn ge xiǎoshí. — Sìshí fēnzhōng zuǒyòu. — Wǒ zuò dìtiě qù gōngsī."
+  ],
+  "wave": "Review Unit 10: describe your last trip — where, how, how long, with whom — using 了 and 过 in the right places. Then describe tomorrow's trip without a single 了. You should feel the difference in your mouth, not just in your head."
+}

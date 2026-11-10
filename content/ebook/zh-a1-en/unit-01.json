@@ -1,0 +1,893 @@
+{
+  "title": "First introductions",
+  "title_target": "你好 — Nǐ hǎo",
+  "goal": "Greet people, give your given name and surname, say where you're from and what you do, and ask yes/no questions — all with a single verb: 是.",
+  "bekal": [
+    "say hello and goodbye",
+    "give your name with 叫 and your surname with 姓",
+    "say “I'm Indonesian” and “I'm a teacher”",
+    "ask questions with 吗 and bounce a question back with 呢",
+    "say “no” with 不是"
+  ],
+  "dialogs": [
+    {
+      "title": "对话 1 — Meeting in class",
+      "intro": "Andi, a teacher from Jakarta, meets Wang Li on his first day in Beijing. Notice that the whole conversation runs on just one verb.",
+      "lines": [
+        {
+          "speaker": "王丽:",
+          "text": "[你好|Nǐ hǎo]！",
+          "id": "Hello!",
+          "literal": "you — good."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[你好|Nǐ hǎo]！[我叫|Wǒ jiào][安迪|Āndí]。",
+          "id": "Hello! My name is Andi.",
+          "literal": "you — good. I — am-called — Andi."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[我姓|Wǒ xìng][王|Wáng]，[叫|jiào][王丽|Wáng Lì]。",
+          "id": "My surname is Wang, my name is Wang Li.",
+          "literal": "I — am-surnamed — Wang, am-called — Wang Li."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[认识|Rènshi][你|nǐ][很|hěn][高兴|gāoxìng]。",
+          "id": "Nice to meet you.",
+          "literal": "know — you — (support) — happy."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[我|Wǒ][也|yě][很|hěn][高兴|gāoxìng]。[你是|Nǐ shì][哪国人|nǎ guó rén]？",
+          "id": "Nice to meet you too. Where are you from?",
+          "literal": "I — also — (support) — happy. you — are — which — country — person."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[我是|Wǒ shì][印尼人|Yìnní rén]。[你呢|Nǐ ne]？",
+          "id": "I'm Indonesian. And you?",
+          "literal": "I — am — Indonesia — person. you — (and)?"
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[我是|Wǒ shì][中国人|Zhōngguó rén]。[你是|Nǐ shì][学生|xuésheng][吗|ma]？",
+          "id": "I'm Chinese. Are you a student?",
+          "literal": "I — am — China — person. you — are — student — (question)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[不是|Bú shì]，[我是|wǒ shì][老师|lǎoshī]。[你|Nǐ][也是|yě shì][老师|lǎoshī][吗|ma]？",
+          "id": "No, I'm a teacher. Are you a teacher too?",
+          "literal": "not — am, I — am — teacher. you — also — are — teacher — (question)."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[我|Wǒ][不是|bú shì][老师|lǎoshī]，[我是|wǒ shì][学生|xuésheng]。",
+          "id": "I'm not a teacher, I'm a student.",
+          "literal": "I — not — am — teacher, I — am — student."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[你的|Nǐ de][名字|míngzi][很|hěn][好听|hǎotīng]。",
+          "id": "You have a lovely name.",
+          "literal": "you — 's — name — (support) — good-to-hear."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[谢谢|Xièxie]！[再见|Zàijiàn]！",
+          "id": "Thank you! Goodbye!",
+          "literal": "thanks. again — see."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[再见|Zàijiàn]！",
+          "id": "Goodbye!",
+          "literal": "again — see."
+        }
+      ],
+      "notes": [
+        "**[你好|Nǐ hǎo] literally means “you good”** — and it is a **statement**, not a question. It works any time, with anyone, like “hello”. To ask how someone is, you say [你好吗|Nǐ hǎo ma]？ with 吗 at the end.",
+        "**[姓|xìng] is only for surnames, [叫|jiào] is for names.** [我姓王|Wǒ xìng Wáng] = my surname is Wang. [我叫王丽|Wǒ jiào Wáng Lì] = my name is Wang Li. ⚠️ Learners often say 我姓安迪 for their first name — which sounds like “my surname is Andi”. If in doubt, use 叫; it is almost always right.",
+        "**Chinese names run the other way from English: surname first, then given name.** 王丽 = surname 王, given name 丽. The same goes for 毛泽东 and 习近平 — the first syllable is the surname. Chinese surnames are almost always one syllable.",
+        "**[呢|ne] bounces a question back without repeating it.** After someone asks you something, just answer and add [你呢|Nǐ ne]？ — “and you?” It saves a whole sentence and sounds very natural.",
+        "**⚠️ 不 changes tone before a fourth tone.** On its own, 不 is *bù* (tone 4), but [不是|bú shì] is said *bú* (tone 2) because 是 is also a fourth tone. The same happens in [不去|bú qù], [不要|bú yào], [不错|bú cuò]. The character stays 不.",
+        "**⚠️ [也|yě] “also” goes before the verb, never at the end of the sentence.** [我也是老师|Wǒ yě shì lǎoshī] = I'm a teacher too. “I am teacher too” word order doesn't exist in Mandarin.",
+        "**[很|hěn] in [很高兴|hěn gāoxìng] doesn't mean “very”.** It's a required support word placed before adjectives. We'll sort this out fully in Unit 8 — for now, just learn the pair as a unit."
+      ],
+      "grammars": [
+        {
+          "title": "是 — one verb is enough for this whole unit",
+          "body": [
+            "[是|shì] links two **nouns**: A 是 B means “A is B”. Mandarin verbs never change form, so 是 is exactly the same for I, you, he, we, and they — no *am / is / are* juggling as in English."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Person",
+                "Mandarin",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "I",
+                  "[我|wǒ]",
+                  "[我是老师|Wǒ shì lǎoshī]。 I'm a teacher."
+                ],
+                [
+                  "you",
+                  "[你|nǐ]",
+                  "[你是学生|Nǐ shì xuésheng]。 You're a student."
+                ],
+                [
+                  "you (polite)",
+                  "[您|nín]",
+                  "[您是王先生|Nín shì Wáng xiānsheng]？ Are you Mr. Wang?"
+                ],
+                [
+                  "he",
+                  "[他|tā]",
+                  "[他是医生|Tā shì yīshēng]。 He's a doctor."
+                ],
+                [
+                  "she",
+                  "[她|tā]",
+                  "[她是我朋友|Tā shì wǒ péngyou]。 She's my friend."
+                ],
+                [
+                  "we",
+                  "[我们|wǒmen]",
+                  "[我们是印尼人|Wǒmen shì Yìnní rén]。 We're Indonesian."
+                ],
+                [
+                  "you (plural)",
+                  "[你们|nǐmen]",
+                  "[你们是学生吗|Nǐmen shì xuésheng ma]？"
+                ],
+                [
+                  "they",
+                  "[他们|tāmen]",
+                  "[他们是中国人|Tāmen shì Zhōngguó rén]。"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Form",
+                "Pattern",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "Positive",
+                  "A 是 B",
+                  "[我是印尼人|Wǒ shì Yìnní rén]。"
+                ],
+                [
+                  "Negative",
+                  "A **不**是 B",
+                  "[我不是中国人|Wǒ bú shì Zhōngguó rén]。"
+                ],
+                [
+                  "Question",
+                  "A 是 B **吗**？",
+                  "[你是老师吗|Nǐ shì lǎoshī ma]？"
+                ],
+                [
+                  "Answering yes",
+                  "[是|Shì]。 / [对|Duì]。",
+                  "— one word is enough"
+                ],
+                [
+                  "Answering no",
+                  "[不是|Bú shì]。",
+                  "— two words are enough"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **是 is never used with adjectives.** “I'm busy” is **not** 我是忙 but [我很忙|Wǒ hěn máng]. This is the number-one mistake English speakers make, because English says “I *am* busy” — and it lasts for years if it isn't pulled out now. Remember: 是 only links **noun to noun**."
+          ]
+        },
+        {
+          "title": "Three ways to ask a question in Mandarin",
+          "body": [
+            "Mandarin never flips the word order to ask a question. A question has **exactly the same** word order as a statement — only one small word changes."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Method",
+                "How",
+                "Example",
+                "Answer"
+              ],
+              "rows": [
+                [
+                  "**吗**",
+                  "Add [吗|ma] to the end of a statement",
+                  "[你是学生吗|Nǐ shì xuésheng ma]？",
+                  "[是|Shì]。 / [不是|Bú shì]。"
+                ],
+                [
+                  "**Question word**",
+                  "Put the question word exactly where the answer goes",
+                  "[你是哪国人|Nǐ shì nǎ guó rén]？",
+                  "[我是印尼人|Wǒ shì Yìnní rén]。"
+                ],
+                [
+                  "**呢**",
+                  "Noun + [呢|ne] — bounces the last question back",
+                  "[你呢|Nǐ ne]？",
+                  "— whatever was just asked"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **Mandarin question words don't move to the front.** English says “**who** is he?”; Mandarin says [他是谁|Tā shì shéi]？ — literally “he is who”. Easy check: build the answer sentence first, then swap the part you don't know for a question word. Not a single word needs to move.",
+            "⚠️ 吗 and a question word **can't be used together**. [你是谁吗|Nǐ shì shéi ma]？ is wrong — just [你是谁|Nǐ shì shéi]？"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "对话 2 — Introducing a third person",
+      "intro": "That afternoon Wang Li introduces Andi to her friend. Watch for 这 and 那 — two words you'll use hundreds of times from the next unit on.",
+      "lines": [
+        {
+          "speaker": "王丽:",
+          "text": "[安迪|Āndí]，[这是|zhè shì][我|wǒ][朋友|péngyou][李明|Lǐ Míng]。",
+          "id": "Andi, this is my friend, Li Ming.",
+          "literal": "Andi, this — is — I — friend — Li Ming."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[你好|Nǐ hǎo]，[李明|Lǐ Míng]！",
+          "id": "Hello, Li Ming!",
+          "literal": "you — good, Li Ming."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[你好|Nǐ hǎo]！[你|Nǐ][叫|jiào][什么|shénme][名字|míngzi]？",
+          "id": "Hello! What's your name?",
+          "literal": "you — good. you — are-called — what — name."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[我|Wǒ][叫|jiào][安迪|Āndí]。[我是|Wǒ shì][印尼人|Yìnní rén]。",
+          "id": "My name is Andi. I'm Indonesian.",
+          "literal": "I — am-called — Andi. I — am — Indonesia — person."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[印尼|Yìnní]？[太好了|Tài hǎo le]！[我|Wǒ][很|hěn][喜欢|xǐhuan][巴厘岛|Bālí Dǎo]。",
+          "id": "Indonesia? That's great! I love Bali.",
+          "literal": "Indonesia. too — good — (change). I — (support) — like — Bali."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[真的|Zhēn de][吗|ma]？[你|Nǐ][去过|qù guo][印尼|Yìnní][吗|ma]？",
+          "id": "Really? Have you been to Indonesia?",
+          "literal": "real — (of) — (question). you — go — ever — Indonesia — (question)."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[去过|Qù guo]，[两次|liǎng cì]。[那|Nà][是|shì][谁|shéi]？",
+          "id": "Yes, twice. Who's that?",
+          "literal": "go — ever, two — times. that — is — who."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[那|Nà][是|shì][我|wǒ][同事|tóngshì]。[他|Tā][也|yě][是|shì][老师|lǎoshī]。",
+          "id": "That's my colleague. He's a teacher too.",
+          "literal": "that — is — I — colleague. he — also — is — teacher."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[你们|Nǐmen][都|dōu][是|shì][老师|lǎoshī]？[太好了|Tài hǎo le]！",
+          "id": "You're both teachers? That's great!",
+          "literal": "you-all — all — are — teacher. too — good — (change)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[对|Duì]。[明天见|Míngtiān jiàn]！",
+          "id": "That's right. See you tomorrow!",
+          "literal": "correct. tomorrow — see."
+        }
+      ],
+      "notes": [
+        "**[这|zhè] = this, [那|nà] = that.** Both are used for things and for people. Introducing someone always uses 这 — [这是我朋友|Zhè shì wǒ péngyou], literally “this is my friend”, just as in English.",
+        "**[什么|shénme] = what.** Notice where it sits: [你叫什么名字|Nǐ jiào shénme míngzi]？ — literally “you are-called what name”. It stands exactly where the answer will stand.",
+        "**[太好了|Tài hǎo le] = “that's great!”.** The pattern [太|tài] + adjective + [了|le] is used for anything that goes over the top: [太贵了|tài guì le] way too expensive, [太累了|tài lèi le] so tired. It's one of the most common patterns in everyday conversation.",
+        "**[都|dōu] = “all/both”, and it always comes after the subject, before the verb.** [我们都是老师|Wǒmen dōu shì lǎoshī] = we're all teachers. ⚠️ 都 can never go at the start of the sentence like “all we …”.",
+        "**[去过|qù guo] = have been (to).** We'll cover 过 fully in Unit 10; for now, just recognize that 过 means “have ever, at least once”.",
+        "**[明天见|Míngtiān jiàn] = see you tomorrow.** The pattern is time + 见: [回头见|huítóu jiàn] see you later, [下周见|xiàzhōu jiàn] see you next week. Much warmer than the flat 再见."
+      ],
+      "grammars": [
+        {
+          "title": "这 and 那 — pointing things out",
+          "tables": [
+            {
+              "head": [
+                "Mandarin",
+                "Meaning",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "[这|zhè]",
+                  "this",
+                  "[这是我的书|Zhè shì wǒ de shū]。"
+                ],
+                [
+                  "[那|nà]",
+                  "that",
+                  "[那是他的车|Nà shì tā de chē]。"
+                ],
+                [
+                  "[这儿|zhèr] / [这里|zhèlǐ]",
+                  "here",
+                  "[我在这儿|Wǒ zài zhèr]。"
+                ],
+                [
+                  "[那儿|nàr] / [那里|nàlǐ]",
+                  "there",
+                  "[他在那儿|Tā zài nàr]。"
+                ],
+                [
+                  "[哪|nǎ]",
+                  "which",
+                  "[哪个是你的|Nǎge shì nǐ de]？"
+                ],
+                [
+                  "[哪儿|nǎr] / [哪里|nǎlǐ]",
+                  "where",
+                  "[你在哪儿|Nǐ zài nǎr]？"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Look closely: [那|nà] “that” and [哪|nǎ] “which” differ only in tone and one small part on the left of the character (口). This is the pair beginners mix up most. How to tell them apart: the one that **asks** has a mouth 口 in front."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Greetings throughout the day",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "你好 is always correct, but Chinese people rarely use it with people they already know. The greetings below make you sound natural, not like a textbook."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Greeting",
+            "When to use it",
+            "Natural reply"
+          ],
+          "rows": [
+            [
+              "[你好|Nǐ hǎo]",
+              "Any time, especially with new people",
+              "[你好|Nǐ hǎo]。"
+            ],
+            [
+              "[您好|Nín hǎo]",
+              "To elders, bosses, guests, customers",
+              "[您好|Nín hǎo]。"
+            ],
+            [
+              "[大家好|Dàjiā hǎo]",
+              "To a whole group at once",
+              "[你好|Nǐ hǎo]。"
+            ],
+            [
+              "[早上好|Zǎoshang hǎo] / [早|Zǎo]",
+              "Morning. Just 早 is enough among friends",
+              "[早|Zǎo]。"
+            ],
+            [
+              "[晚上好|Wǎnshang hǎo]",
+              "Evening, a bit formal",
+              "[晚上好|Wǎnshang hǎo]。"
+            ],
+            [
+              "[你好吗|Nǐ hǎo ma]？",
+              "Asking how someone you know is doing",
+              "[我很好|Wǒ hěn hǎo]，[谢谢|xièxie]。"
+            ],
+            [
+              "[最近怎么样|Zuìjìn zěnmeyàng]？",
+              "“How have you been lately?” — used far more often",
+              "[还行|Hái xíng]。 / [挺好的|Tǐng hǎo de]。"
+            ],
+            [
+              "[吃了吗|Chī le ma]？",
+              "Friendly greeting, literally “eaten yet?” — not an invitation to eat",
+              "[吃了|Chī le]。 / [还没|Hái méi]。"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Saying goodbye",
+            "Nuance"
+          ],
+          "rows": [
+            [
+              "[再见|Zàijiàn]",
+              "Standard, safe anywhere"
+            ],
+            [
+              "[拜拜|Báibái]",
+              "Casual, from “bye bye”, very common among young people"
+            ],
+            [
+              "[明天见|Míngtiān jiàn]",
+              "See you tomorrow"
+            ],
+            [
+              "[回头见|Huítóu jiàn]",
+              "See you later (same day)"
+            ],
+            [
+              "[慢走|Màn zǒu]",
+              "Said by the **host** to a guest who is leaving — literally “walk slowly”"
+            ],
+            [
+              "[晚安|Wǎn'ān]",
+              "Good night, only before bed"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Manners to know from day one",
+          "items": [
+            "**[谢谢|Xièxie]** — thank you. The reply is [不客气|Bú kèqi] or [不用谢|Bú yòng xiè].",
+            "**[对不起|Duìbuqǐ]** — sorry, for real mistakes. The reply is [没关系|Méi guānxi] or [没事儿|Méi shìr].",
+            "**[不好意思|Bù hǎoyìsi]** — “excuse me, sorry” for small things: cutting in, being five minutes late, putting someone out. Used far more often than 对不起.",
+            "**[请问|Qǐngwèn]** — “may I ask”. Always put it before a question to a stranger. This one word changes the whole impression of your sentence.",
+            "⚠️ Chinese people say 谢谢 to family and close friends much less than English speakers do. Thanking a close friend too much actually feels distancing."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Names, surnames, and countries",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Your name will be the first thing you say in every introduction for as long as you speak Mandarin. These three patterns cover every situation."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pattern",
+            "Register",
+            "Example"
+          ],
+          "rows": [
+            [
+              "[我叫…|Wǒ jiào…]",
+              "Everyday, safe anywhere",
+              "[我叫安迪|Wǒ jiào Āndí]。"
+            ],
+            [
+              "[我姓…|Wǒ xìng…]",
+              "Surname only, a bit formal",
+              "[我姓王|Wǒ xìng Wáng]。"
+            ],
+            [
+              "[我的名字是…|Wǒ de míngzi shì…]",
+              "Formal and a bit stiff; for forms or officials",
+              "[我的名字是安迪|Wǒ de míngzi shì Āndí]。"
+            ],
+            [
+              "[您贵姓|Nín guì xìng]？",
+              "**Asking someone's surname politely** — literally “your honorable surname?”",
+              "[免贵姓王|Miǎn guì xìng Wáng]。 / [我姓王|Wǒ xìng Wáng]。"
+            ],
+            [
+              "[你叫什么名字|Nǐ jiào shénme míngzi]？",
+              "Asking someone's name, everyday",
+              "[我叫王丽|Wǒ jiào Wáng Lì]。"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Countries and nationalities"
+        },
+        {
+          "type": "p",
+          "text": "The pattern is very regular: country name + [人|rén] = its people, country name + [语|yǔ] or [文|wén] = its language. Once you know the country, the other two words come free."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Country",
+            "Its people",
+            "Its language"
+          ],
+          "rows": [
+            [
+              "[中国|Zhōngguó] China",
+              "[中国人|Zhōngguó rén]",
+              "[中文|Zhōngwén] / [汉语|Hànyǔ]"
+            ],
+            [
+              "[印尼|Yìnní] Indonesia",
+              "[印尼人|Yìnní rén]",
+              "[印尼语|Yìnníyǔ]"
+            ],
+            [
+              "[美国|Měiguó] USA",
+              "[美国人|Měiguó rén]",
+              "[英语|Yīngyǔ]"
+            ],
+            [
+              "[英国|Yīngguó] UK",
+              "[英国人|Yīngguó rén]",
+              "[英语|Yīngyǔ]"
+            ],
+            [
+              "[日本|Rìběn] Japan",
+              "[日本人|Rìběn rén]",
+              "[日语|Rìyǔ]"
+            ],
+            [
+              "[韩国|Hánguó] Korea",
+              "[韩国人|Hánguó rén]",
+              "[韩语|Hányǔ]"
+            ],
+            [
+              "[新加坡|Xīnjiāpō] Singapore",
+              "[新加坡人|Xīnjiāpō rén]",
+              "—"
+            ],
+            [
+              "[马来西亚|Mǎláixīyà] Malaysia",
+              "[马来西亚人|Mǎláixīyà rén]",
+              "[马来语|Mǎláiyǔ]"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "The jobs people ask about most",
+          "items": [
+            "[学生|xuésheng] student · [老师|lǎoshī] teacher · [医生|yīshēng] doctor · [护士|hùshi] nurse",
+            "[工程师|gōngchéngshī] engineer · [律师|lǜshī] lawyer · [警察|jǐngchá] police officer · [司机|sījī] driver",
+            "[商人|shāngrén] businessperson · [服务员|fúwùyuán] waiter · [记者|jìzhě] journalist · [经理|jīnglǐ] manager",
+            "Asking: [你做什么工作|Nǐ zuò shénme gōngzuò]？ — “what work do you do?”",
+            "⚠️ You don't **have** to answer with 是: both [我是老师|Wǒ shì lǎoshī] (identity) and [我教书|Wǒ jiāo shū] (I teach) work. The first is more common."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "你好",
+      "baca": "nǐ hǎo",
+      "en": "hello"
+    },
+    {
+      "zh": "您好",
+      "baca": "nín hǎo",
+      "en": "hello (polite)"
+    },
+    {
+      "zh": "再见",
+      "baca": "zàijiàn",
+      "en": "goodbye"
+    },
+    {
+      "zh": "谢谢",
+      "baca": "xièxie",
+      "en": "thank you"
+    },
+    {
+      "zh": "不客气",
+      "baca": "bú kèqi",
+      "en": "you're welcome"
+    },
+    {
+      "zh": "对不起",
+      "baca": "duìbuqǐ",
+      "en": "sorry"
+    },
+    {
+      "zh": "没关系",
+      "baca": "méi guānxi",
+      "en": "that's OK"
+    },
+    {
+      "zh": "请问",
+      "baca": "qǐngwèn",
+      "en": "excuse me, may I ask"
+    },
+    {
+      "zh": "我",
+      "baca": "wǒ",
+      "en": "I, me"
+    },
+    {
+      "zh": "你",
+      "baca": "nǐ",
+      "en": "you"
+    },
+    {
+      "zh": "您",
+      "baca": "nín",
+      "en": "you (polite)"
+    },
+    {
+      "zh": "他",
+      "baca": "tā",
+      "en": "he, him"
+    },
+    {
+      "zh": "她",
+      "baca": "tā",
+      "en": "she, her"
+    },
+    {
+      "zh": "我们",
+      "baca": "wǒmen",
+      "en": "we, us"
+    },
+    {
+      "zh": "你们",
+      "baca": "nǐmen",
+      "en": "you (plural)"
+    },
+    {
+      "zh": "他们",
+      "baca": "tāmen",
+      "en": "they, them"
+    },
+    {
+      "zh": "是",
+      "baca": "shì",
+      "en": "to be (noun = noun)"
+    },
+    {
+      "zh": "不",
+      "baca": "bù",
+      "en": "not"
+    },
+    {
+      "zh": "吗",
+      "baca": "ma",
+      "en": "question marker"
+    },
+    {
+      "zh": "呢",
+      "baca": "ne",
+      "en": "and …? (bounces a question back)"
+    },
+    {
+      "zh": "叫",
+      "baca": "jiào",
+      "en": "to be called, to call"
+    },
+    {
+      "zh": "姓",
+      "baca": "xìng",
+      "en": "to be surnamed"
+    },
+    {
+      "zh": "名字",
+      "baca": "míngzi",
+      "en": "name"
+    },
+    {
+      "zh": "什么",
+      "baca": "shénme",
+      "en": "what"
+    },
+    {
+      "zh": "谁",
+      "baca": "shéi",
+      "en": "who"
+    },
+    {
+      "zh": "哪",
+      "baca": "nǎ",
+      "en": "which"
+    },
+    {
+      "zh": "这",
+      "baca": "zhè",
+      "en": "this"
+    },
+    {
+      "zh": "那",
+      "baca": "nà",
+      "en": "that"
+    },
+    {
+      "zh": "国",
+      "baca": "guó",
+      "en": "country"
+    },
+    {
+      "zh": "人",
+      "baca": "rén",
+      "en": "person"
+    },
+    {
+      "zh": "中国",
+      "baca": "Zhōngguó",
+      "en": "China"
+    },
+    {
+      "zh": "印尼",
+      "baca": "Yìnní",
+      "en": "Indonesia"
+    },
+    {
+      "zh": "中文",
+      "baca": "Zhōngwén",
+      "en": "Chinese (language)"
+    },
+    {
+      "zh": "学生",
+      "baca": "xuésheng",
+      "en": "student"
+    },
+    {
+      "zh": "老师",
+      "baca": "lǎoshī",
+      "en": "teacher"
+    },
+    {
+      "zh": "医生",
+      "baca": "yīshēng",
+      "en": "doctor"
+    },
+    {
+      "zh": "朋友",
+      "baca": "péngyou",
+      "en": "friend"
+    },
+    {
+      "zh": "同事",
+      "baca": "tóngshì",
+      "en": "colleague"
+    },
+    {
+      "zh": "认识",
+      "baca": "rènshi",
+      "en": "to know, to meet"
+    },
+    {
+      "zh": "高兴",
+      "baca": "gāoxìng",
+      "en": "happy, glad"
+    },
+    {
+      "zh": "很",
+      "baca": "hěn",
+      "en": "adjective support word"
+    },
+    {
+      "zh": "也",
+      "baca": "yě",
+      "en": "also, too"
+    },
+    {
+      "zh": "都",
+      "baca": "dōu",
+      "en": "all, both"
+    },
+    {
+      "zh": "太…了",
+      "baca": "tài … le",
+      "en": "too …, so …"
+    },
+    {
+      "zh": "对",
+      "baca": "duì",
+      "en": "correct, right"
+    },
+    {
+      "zh": "喜欢",
+      "baca": "xǐhuan",
+      "en": "to like"
+    },
+    {
+      "zh": "工作",
+      "baca": "gōngzuò",
+      "en": "job; to work"
+    },
+    {
+      "zh": "明天",
+      "baca": "míngtiān",
+      "en": "tomorrow"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in with 是, 不是, or 叫.",
+      "items": [
+        "[我|Wǒ] ___ [印尼人|Yìnní rén]。",
+        "[他|Tā] ___ [老师|lǎoshī]，[他是学生|tā shì xuésheng]。",
+        "[你|Nǐ] ___ [什么名字|shénme míngzi]？",
+        "[她|Tā] ___ [王丽|Wáng Lì]。",
+        "[我们|Wǒmen] ___ [中国人|Zhōngguó rén]，[我们是印尼人|wǒmen shì Yìnní rén]。",
+        "[这|Zhè] ___ [我朋友|wǒ péngyou]。"
+      ]
+    },
+    {
+      "prompt": "Fill in the right question word: 什么, 谁, 哪, 吗, 呢.",
+      "items": [
+        "[他是|Tā shì] ___？ [他是我同事|Tā shì wǒ tóngshì]。",
+        "[你是|Nǐ shì] ___ [国人|guó rén]？",
+        "[你叫|Nǐ jiào] ___ [名字|míngzi]？",
+        "[你是老师|Nǐ shì lǎoshī] ___？",
+        "[我是学生|Wǒ shì xuésheng]，[你|nǐ] ___？"
+      ]
+    },
+    {
+      "prompt": "Put the pieces in the right order.",
+      "items": [
+        "我 / 是 / 印尼 / 人",
+        "你 / 是 / 学生 / 吗",
+        "他 / 也 / 是 / 老师",
+        "这 / 是 / 我 / 朋友",
+        "我们 / 都 / 是 / 中国 / 人",
+        "认识 / 你 / 很 / 高兴"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "[她不是医生，她是护士|Tā bú shì yīshēng, tā shì hùshi]。",
+        "[你们都是印尼人吗|Nǐmen dōu shì Yìnní rén ma]？",
+        "[那是谁|Nà shì shéi]？",
+        "[我姓王，叫王丽|Wǒ xìng Wáng, jiào Wáng Lì]。",
+        "[他也不是老师|Tā yě bú shì lǎoshī]。"
+      ]
+    },
+    {
+      "prompt": "Translate into Mandarin. Write in pīnyīn.",
+      "items": [
+        "Hello! My name is Andi.",
+        "I'm Indonesian. And you?",
+        "He isn't a student.",
+        "Nice to meet you.",
+        "We're all teachers."
+      ]
+    },
+    {
+      "prompt": "Correct these wrong sentences, then write the right version in pīnyīn.",
+      "items": [
+        "[我是也老师|Wǒ shì yě lǎoshī]。",
+        "[谁是他|Shéi shì tā]？",
+        "[你是谁吗|Nǐ shì shéi ma]？",
+        "[我姓安迪|Wǒ xìng Āndí]。",
+        "[都我们是学生|Dōu wǒmen shì xuésheng]。"
+      ]
+    }
+  ],
+  "answers": [
+    "是 — 不是 — 叫 — 叫 — 不是 — 是",
+    "谁 — 哪 — 什么 — 吗 — 呢",
+    "我 是 印尼 人 — 你 是 学生 吗 — 他 也 是 老师 — 这 是 我 朋友 — 我们 都 是 中国 人 — 认识 你 很 高兴",
+    "She isn't a doctor, she's a nurse. — Are you all Indonesian? — Who's that? — My surname is Wang, my name is Wang Li. — He isn't a teacher either.",
+    "Nǐ hǎo! Wǒ jiào Āndí. — Wǒ shì Yìnní rén. Nǐ ne? — Tā bú shì xuésheng. — Rènshi nǐ hěn gāoxìng. — Wǒmen dōu shì lǎoshī.",
+    "Wǒ yě shì lǎoshī. — Tā shì shéi? — Nǐ shì shéi? — Wǒ jiào Āndí. — Wǒmen dōu shì xuésheng."
+  ],
+  "wave": "Five minutes before Unit 2: cover the meaning column in the vocabulary list, then introduce yourself out loud six times in a row — name, surname, where you're from, what you do — until it comes out without thinking. Introducing yourself is the one part of Mandarin you'll say for the rest of your life, and it has to be automatic."
+}

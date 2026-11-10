@@ -1,0 +1,877 @@
+{
+  "title": "Things around you and who they belong to",
+  "title_target": "这是什么 — Zhè shì shénme",
+  "goal": "Point at things and name them, show possession with 的, say you have or don't have something with 有 and 没有, and use measure words — something English only does with a few nouns, but Mandarin requires every time.",
+  "bekal": [
+    "ask “what's this?” and answer it",
+    "use 这 and 那 with the right measure word",
+    "show possession with 的 and know when 的 can be dropped",
+    "tell 有 (have) apart from 是 (be)",
+    "say you don't have something with 没有, not 不有"
+  ],
+  "dialogs": [
+    {
+      "title": "对话 1 — At the desk",
+      "intro": "Andi has just walked into the staff room and sees the things on Wang Li's desk. Notice that every time there is a number or 这/那, a small word appears before the noun.",
+      "lines": [
+        {
+          "speaker": "安迪:",
+          "text": "[这是|Zhè shì][什么|shénme]？",
+          "id": "What's this?",
+          "literal": "this — is — what."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[这是|Zhè shì][我的|wǒ de][词典|cídiǎn]。[中文|Zhōngwén][词典|cídiǎn]。",
+          "id": "This is my dictionary. A Chinese dictionary.",
+          "literal": "this — is — I — 's — dictionary. Chinese — dictionary."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[那|Nà][本|běn][书|shū][也是|yě shì][你的|nǐ de][吗|ma]？",
+          "id": "Is that book yours too?",
+          "literal": "that — (measure) — book — also — is — you — 's — (question)."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[不是|Bú shì]，[那|nà][是|shì][李明|Lǐ Míng][的|de]。",
+          "id": "No, that's Li Ming's.",
+          "literal": "not — is, that — is — Li Ming — 's."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[你|Nǐ][有|yǒu][笔|bǐ][吗|ma]？",
+          "id": "Do you have a pen?",
+          "literal": "you — have — pen — (question)."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[有|Yǒu]。[我|Wǒ][有|yǒu][两|liǎng][支|zhī][笔|bǐ]。[给|Gěi][你|nǐ]。",
+          "id": "Yes. I have two pens. Here you go.",
+          "literal": "have. I — have — two — (measure) — pen. give — you."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[谢谢|Xièxie]。[你|Nǐ][有|yǒu][纸|zhǐ][吗|ma]？",
+          "id": "Thanks. Do you have any paper?",
+          "literal": "thanks. you — have — paper — (question)."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[对不起|Duìbuqǐ]，[我|wǒ][没有|méiyǒu][纸|zhǐ]。[李明|Lǐ Míng][有|yǒu]。",
+          "id": "Sorry, I don't have any paper. Li Ming does.",
+          "literal": "sorry, I — not-have — paper. Li Ming — has."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[他的|Tā de][桌子|zhuōzi][是|shì][哪|nǎ][张|zhāng]？",
+          "id": "Which one is his desk?",
+          "literal": "he — 's — desk — is — which — (measure)."
+        },
+        {
+          "speaker": "王丽:",
+          "text": "[那|Nà][张|zhāng]。[窗户|Chuānghu][旁边|pángbiān][的|de][那|nà][张|zhāng]。",
+          "id": "That one. The one next to the window.",
+          "literal": "that — (measure). window — beside — 's — that — (measure)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[好的|Hǎo de]，[谢谢|xièxie]！",
+          "id": "OK, thanks!",
+          "literal": "good — (de), thanks."
+        }
+      ],
+      "notes": [
+        "**⚠️ A number can never attach directly to a noun.** 两笔 is wrong; the right form is [两支笔|liǎng zhī bǐ] — “two **sticks of** pen”. That little word in the middle is called a **measure word**, and Mandarin requires it every time. English does this with some nouns (*two **slices of** bread*, *two **sheets of** paper*); Mandarin does it with all of them.",
+        "**⚠️ [两|liǎng], not [二|èr], before a measure word.** [两支笔|liǎng zhī bǐ], [两个人|liǎng ge rén], [两本书|liǎng běn shū]. 二 is for counting (一、二、三), house numbers, phone numbers, and digits inside larger numbers like [十二|shí'èr] or [二十|èrshí].",
+        "**[的|de] shows possession,** like English *'s*. [我的书|wǒ de shū] = my book. If what's owned is already clear, the noun can be dropped and 的 stands alone: [那是李明的|Nà shì Lǐ Míng de] = that's Li Ming's.",
+        "**⚠️ The negative of 有 is 没有, not 不有.** It's the only verb in Mandarin that can never be negated with 不. Learn it as one unit: [没有|méiyǒu]. In fast speech it's often shortened to just [没|méi].",
+        "**[给你|Gěi nǐ] = “here you go”** — said while handing something over. Very common; far more natural than a long sentence.",
+        "**[好的|Hǎo de] = “OK, sure”.** A short way to agree, slightly softer than just [好|hǎo]."
+      ],
+      "grammars": [
+        {
+          "title": "这 / 那 / 哪 + measure word + noun",
+          "body": [
+            "This is a frame you'll use every day. Notice that **the measure word can't be skipped**, even when there's no number at all."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Structure",
+                "Example",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "这 + measure word + noun",
+                  "[这本书|zhè běn shū]",
+                  "this book"
+                ],
+                [
+                  "那 + measure word + noun",
+                  "[那张桌子|nà zhāng zhuōzi]",
+                  "that table"
+                ],
+                [
+                  "哪 + measure word + noun",
+                  "[哪个人|nǎge rén]",
+                  "which person"
+                ],
+                [
+                  "number + measure word + noun",
+                  "[三支笔|sān zhī bǐ]",
+                  "three pens"
+                ],
+                [
+                  "这 + number + measure word + noun",
+                  "[这两本书|zhè liǎng běn shū]",
+                  "these two books"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Measure word",
+                "Used for",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "[个|gè]",
+                  "General — people and almost anything",
+                  "[一个人|yí ge rén], [两个问题|liǎng ge wèntí]"
+                ],
+                [
+                  "[本|běn]",
+                  "Books, dictionaries, magazines",
+                  "[三本书|sān běn shū]"
+                ],
+                [
+                  "[张|zhāng]",
+                  "Flat things: paper, tables, tickets, photos",
+                  "[一张纸|yì zhāng zhǐ]"
+                ],
+                [
+                  "[支|zhī]",
+                  "Small long things: pens, pencils, cigarettes",
+                  "[两支笔|liǎng zhī bǐ]"
+                ],
+                [
+                  "[件|jiàn]",
+                  "Tops/clothing; matters",
+                  "[一件衣服|yí jiàn yīfu]"
+                ],
+                [
+                  "[把|bǎ]",
+                  "Things with a handle: chairs, umbrellas, knives, keys",
+                  "[一把伞|yì bǎ sǎn]"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "If you truly forget the right measure word, **use 个**. It sounds a bit childish, but it's fully understood — and far better than stopping mid-sentence. The full list is in the appendix at the back of this course."
+          ]
+        },
+        {
+          "title": "的 — the possessive marker, and when to drop it",
+          "body": [
+            "The structure: **owner + 的 + thing owned** — the same order as English *'s*: [我的书|wǒ de shū] = my book, [老师的书|lǎoshī de shū] = the teacher's book."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Example",
+                "Meaning",
+                "Is 的 required?"
+              ],
+              "rows": [
+                [
+                  "[我的手机|wǒ de shǒujī]",
+                  "my phone",
+                  "Required"
+                ],
+                [
+                  "[老师的书|lǎoshī de shū]",
+                  "the teacher's book",
+                  "Required"
+                ],
+                [
+                  "[我妈妈|wǒ māma]",
+                  "my mom",
+                  "**Can be dropped** — family"
+                ],
+                [
+                  "[我朋友|wǒ péngyou]",
+                  "my friend",
+                  "**Can be dropped** — close relationship"
+                ],
+                [
+                  "[我们学校|wǒmen xuéxiào]",
+                  "our school",
+                  "**Can be dropped** — an institution you belong to"
+                ],
+                [
+                  "[他的|tā de]",
+                  "his",
+                  "的 stands alone; the thing is already clear"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "Rule of thumb: **when the relationship is part of who someone is** — family, friends, school, office, country — 的 is often dropped, and it actually sounds warmer. For objects, 的 is almost always used.",
+            "⚠️ Don't confuse it with 得 and 地, which are also read *de*. The three have different jobs; only **的** is used for possession."
+          ]
+        },
+        {
+          "title": "有 and 没有 — have, there is",
+          "tables": [
+            {
+              "head": [
+                "Form",
+                "Example",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "Positive",
+                  "[我有一个哥哥|Wǒ yǒu yí ge gēge]。",
+                  "I have an older brother."
+                ],
+                [
+                  "Negative",
+                  "[我没有车|Wǒ méiyǒu chē]。",
+                  "I don't have a car."
+                ],
+                [
+                  "Question (吗)",
+                  "[你有笔吗|Nǐ yǒu bǐ ma]？",
+                  "Do you have a pen?"
+                ],
+                [
+                  "Question (choice)",
+                  "[你有没有笔|Nǐ yǒu méiyǒu bǐ]？",
+                  "Same meaning, sounds livelier"
+                ],
+                [
+                  "Answering yes",
+                  "[有|Yǒu]。",
+                  "Yes, I do."
+                ],
+                [
+                  "Answering no",
+                  "[没有|Méiyǒu]。",
+                  "No, I don't."
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **Don't mix up 有 and 是.** 是 links two things that are **the same** (“this is a dictionary”). 有 means **to have** or **there is** (“I have a dictionary”). [这是词典|Zhè shì cídiǎn] ≠ [我有词典|Wǒ yǒu cídiǎn].",
+            "有 also means “there is” for saying something exists somewhere — [桌子上有一本书|Zhuōzi shang yǒu yì běn shū] “there's a book on the table”. This is covered fully in Unit 6."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "对话 2 — Left behind",
+      "intro": "After class, Li Ming is looking for something. Notice how 的 is used with no noun after it.",
+      "lines": [
+        {
+          "speaker": "李明:",
+          "text": "[安迪|Āndí]，[你|nǐ][看见|kànjiàn][我的|wǒ de][手机|shǒujī][了|le][吗|ma]？",
+          "id": "Andi, have you seen my phone?",
+          "literal": "Andi, you — see — I — 's — phone — (done) — (question)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[没有|Méiyǒu]。[你的|Nǐ de][手机|shǒujī][是|shì][什么|shénme][颜色|yánsè][的|de]？",
+          "id": "No. What color is your phone?",
+          "literal": "not-have. you — 's — phone — is — what — color — (one)."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[黑色|Hēisè][的|de]。[很|Hěn][旧|jiù][的|de][那|nà][个|ge]。",
+          "id": "A black one. That old one.",
+          "literal": "black — (one). (support) — old — (de) — that — (measure)."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[桌子上|Zhuōzi shang][有|yǒu][一|yí][个|ge][黑色|hēisè][的|de][手机|shǒujī]。[是|Shì][你的|nǐ de][吗|ma]？",
+          "id": "There's a black phone on the desk. Is it yours?",
+          "literal": "desk — on — there-is — one — (measure) — black — (de) — phone. is — you — 's — (question)."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[哪|Nǎ][张|zhāng][桌子|zhuōzi]？",
+          "id": "Which desk?",
+          "literal": "which — (measure) — desk."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[门|Mén][旁边|pángbiān][的|de][那|nà][张|zhāng]。",
+          "id": "The one next to the door.",
+          "literal": "door — beside — (de) — that — (measure)."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[啊|A]，[是|shì][我的|wǒ de]！[太好了|Tài hǎo le]！[谢谢|Xièxie]！",
+          "id": "Ah, it's mine! What a relief! Thank you!",
+          "literal": "ah, is — I — 's. too — good — (change). thanks."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[不客气|Bú kèqi]。[你|Nǐ][还|hái][有|yǒu][别的|bié de][东西|dōngxi][吗|ma]？",
+          "id": "You're welcome. Anything else?",
+          "literal": "not — polite. you — still — have — other — (de) — thing — (question)."
+        },
+        {
+          "speaker": "李明:",
+          "text": "[没有|Méiyǒu][了|le]。[都|Dōu][在|zài][这儿|zhèr]。",
+          "id": "No, that's it. Everything's here.",
+          "literal": "not-have — (change). all — be-at — here."
+        }
+      ],
+      "notes": [
+        "**[什么颜色的|shénme yánsè de]？** — “what color one?”. The 的 at the end stands in for a noun that's already clear. The answer uses 的 too: [黑色的|Hēisè de] = a black one.",
+        "**Adjective + 的 + noun.** [很旧的手机|hěn jiù de shǒujī] = an old phone. When the adjective is a single syllable, 的 is often dropped: [新手机|xīn shǒujī] new phone, [旧书|jiù shū] used book.",
+        "**⚠️ Descriptions always come BEFORE the thing they describe.** English says “the desk **next to the door**”; Mandarin says [门旁边的那张桌子|mén pángbiān de nà zhāng zhuōzi] — “door beside 's that desk”. This is the reverse of English and takes a few days to feel natural.",
+        "**[没有了|Méiyǒu le] = “there's nothing left”.** The 了 at the end marks a **change of state**: there was something before, now there isn't. We'll cover it in Unit 10.",
+        "**[还|hái] = still, else.** [你还有别的吗|Nǐ hái yǒu bié de ma]？ = anything else?"
+      ],
+      "grammars": [
+        {
+          "title": "Colors and qualities",
+          "tables": [
+            {
+              "head": [
+                "Color",
+                "Pīnyīn",
+                "Color",
+                "Pīnyīn"
+              ],
+              "rows": [
+                [
+                  "[红色|hóngsè] red",
+                  "hóngsè",
+                  "[白色|báisè] white",
+                  "báisè"
+                ],
+                [
+                  "[黄色|huángsè] yellow",
+                  "huángsè",
+                  "[黑色|hēisè] black",
+                  "hēisè"
+                ],
+                [
+                  "[蓝色|lánsè] blue",
+                  "lánsè",
+                  "[灰色|huīsè] gray",
+                  "huīsè"
+                ],
+                [
+                  "[绿色|lǜsè] green",
+                  "lǜsè",
+                  "[棕色|zōngsè] brown",
+                  "zōngsè"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Quality",
+                "Opposite"
+              ],
+              "rows": [
+                [
+                  "[新|xīn] new",
+                  "[旧|jiù] old, used"
+                ],
+                [
+                  "[大|dà] big",
+                  "[小|xiǎo] small"
+                ],
+                [
+                  "[长|cháng] long",
+                  "[短|duǎn] short"
+                ],
+                [
+                  "[好|hǎo] good",
+                  "[坏|huài] broken, bad"
+                ],
+                [
+                  "[多|duō] many",
+                  "[少|shǎo] few"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "Color words are almost always followed by 色 (*sè*, “color”) when they stand alone, but 色 is dropped when the color attaches directly to a noun: [红色|hóngsè] red → [红车|hóng chē] red car."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Things around you right now",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Words for things stick fastest when the things are right in front of you. After reading the table, close the book for a moment, look around, and name ten things you see using [这是…|Zhè shì…]."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "At work",
+            "Pīnyīn",
+            "At home",
+            "Pīnyīn"
+          ],
+          "rows": [
+            [
+              "[书|shū] book",
+              "shū",
+              "[桌子|zhuōzi] table",
+              "zhuōzi"
+            ],
+            [
+              "[笔|bǐ] pen",
+              "bǐ",
+              "[椅子|yǐzi] chair",
+              "yǐzi"
+            ],
+            [
+              "[纸|zhǐ] paper",
+              "zhǐ",
+              "[门|mén] door",
+              "mén"
+            ],
+            [
+              "[词典|cídiǎn] dictionary",
+              "cídiǎn",
+              "[窗户|chuānghu] window",
+              "chuānghu"
+            ],
+            [
+              "[电脑|diànnǎo] computer",
+              "diànnǎo",
+              "[床|chuáng] bed",
+              "chuáng"
+            ],
+            [
+              "[手机|shǒujī] phone",
+              "shǒujī",
+              "[灯|dēng] lamp",
+              "dēng"
+            ],
+            [
+              "[包|bāo] bag",
+              "bāo",
+              "[钥匙|yàoshi] key",
+              "yàoshi"
+            ],
+            [
+              "[钱包|qiánbāo] wallet",
+              "qiánbāo",
+              "[伞|sǎn] umbrella",
+              "sǎn"
+            ],
+            [
+              "[本子|běnzi] notebook",
+              "běnzi",
+              "[衣服|yīfu] clothes",
+              "yīfu"
+            ],
+            [
+              "[东西|dōngxi] thing",
+              "dōngxi",
+              "[水|shuǐ] water",
+              "shuǐ"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "东西 — a lifesaver word",
+          "items": [
+            "**[东西|dōngxi]** literally means “east west”, but it means “thing, stuff”. Use it for anything whose name you don't know.",
+            "[这是什么东西|Zhè shì shénme dōngxi]？ — “what is this thing?”",
+            "[我要买点儿东西|Wǒ yào mǎi diǎnr dōngxi]。 — “I want to buy some stuff.”",
+            "⚠️ Never use it for **people**. [他不是东西|Tā bú shì dōngxi] is a fairly harsh insult, not “he isn't a thing”."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking about things when you don't know the word",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "You'll often be in this situation: you see something, don't know its name, and want to find out. These sentences are enough for your whole first year."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "When to use it"
+          ],
+          "rows": [
+            [
+              "[这是什么|Zhè shì shénme]？",
+              "Pointing at something near you"
+            ],
+            [
+              "[这个用中文怎么说|Zhège yòng Zhōngwén zěnme shuō]？",
+              "“How do you say this in Chinese?”"
+            ],
+            [
+              "[这个字怎么念|Zhège zì zěnme niàn]？",
+              "“How do you read this character?”"
+            ],
+            [
+              "[请再说一遍|Qǐng zài shuō yí biàn]。",
+              "“Please say that again.” The most useful sentence of your first week"
+            ],
+            [
+              "[请说慢一点儿|Qǐng shuō màn yìdiǎnr]。",
+              "“Please speak more slowly.”"
+            ],
+            [
+              "[我不明白|Wǒ bù míngbai]。",
+              "“I don't understand.” More honest than nodding along"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three emergency sentences to learn today",
+          "items": [
+            "**[请再说一遍|Qǐng zài shuō yí biàn]。** — Please say that again.",
+            "**[我不明白|Wǒ bù míngbai]。** — I don't understand.",
+            "**[这个用中文怎么说|Zhège yòng Zhōngwén zěnme shuō]？** — How do you say this in Chinese?",
+            "These three keep a conversation from dying in the tenth second. Learn them now, not later — you'll use them more often than all the vocabulary in this unit combined."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "这",
+      "baca": "zhè",
+      "en": "this"
+    },
+    {
+      "zh": "那",
+      "baca": "nà",
+      "en": "that"
+    },
+    {
+      "zh": "这儿",
+      "baca": "zhèr",
+      "en": "here"
+    },
+    {
+      "zh": "那儿",
+      "baca": "nàr",
+      "en": "there"
+    },
+    {
+      "zh": "个",
+      "baca": "gè",
+      "en": "general measure word"
+    },
+    {
+      "zh": "本",
+      "baca": "běn",
+      "en": "measure word for books"
+    },
+    {
+      "zh": "张",
+      "baca": "zhāng",
+      "en": "measure word for flat things"
+    },
+    {
+      "zh": "支",
+      "baca": "zhī",
+      "en": "measure word for long thin things"
+    },
+    {
+      "zh": "件",
+      "baca": "jiàn",
+      "en": "measure word for clothes, matters"
+    },
+    {
+      "zh": "把",
+      "baca": "bǎ",
+      "en": "measure word for things with handles"
+    },
+    {
+      "zh": "两",
+      "baca": "liǎng",
+      "en": "two (before a measure word)"
+    },
+    {
+      "zh": "的",
+      "baca": "de",
+      "en": "possessive marker ('s)"
+    },
+    {
+      "zh": "有",
+      "baca": "yǒu",
+      "en": "to have; there is"
+    },
+    {
+      "zh": "没有",
+      "baca": "méiyǒu",
+      "en": "not have; there isn't"
+    },
+    {
+      "zh": "给",
+      "baca": "gěi",
+      "en": "to give; for"
+    },
+    {
+      "zh": "还",
+      "baca": "hái",
+      "en": "still, else"
+    },
+    {
+      "zh": "别的",
+      "baca": "bié de",
+      "en": "other, something else"
+    },
+    {
+      "zh": "东西",
+      "baca": "dōngxi",
+      "en": "thing, stuff"
+    },
+    {
+      "zh": "书",
+      "baca": "shū",
+      "en": "book"
+    },
+    {
+      "zh": "笔",
+      "baca": "bǐ",
+      "en": "pen"
+    },
+    {
+      "zh": "纸",
+      "baca": "zhǐ",
+      "en": "paper"
+    },
+    {
+      "zh": "词典",
+      "baca": "cídiǎn",
+      "en": "dictionary"
+    },
+    {
+      "zh": "本子",
+      "baca": "běnzi",
+      "en": "notebook"
+    },
+    {
+      "zh": "电脑",
+      "baca": "diànnǎo",
+      "en": "computer"
+    },
+    {
+      "zh": "手机",
+      "baca": "shǒujī",
+      "en": "cell phone"
+    },
+    {
+      "zh": "包",
+      "baca": "bāo",
+      "en": "bag"
+    },
+    {
+      "zh": "钱包",
+      "baca": "qiánbāo",
+      "en": "wallet"
+    },
+    {
+      "zh": "钥匙",
+      "baca": "yàoshi",
+      "en": "key"
+    },
+    {
+      "zh": "伞",
+      "baca": "sǎn",
+      "en": "umbrella"
+    },
+    {
+      "zh": "衣服",
+      "baca": "yīfu",
+      "en": "clothes"
+    },
+    {
+      "zh": "桌子",
+      "baca": "zhuōzi",
+      "en": "table, desk"
+    },
+    {
+      "zh": "椅子",
+      "baca": "yǐzi",
+      "en": "chair"
+    },
+    {
+      "zh": "门",
+      "baca": "mén",
+      "en": "door"
+    },
+    {
+      "zh": "窗户",
+      "baca": "chuānghu",
+      "en": "window"
+    },
+    {
+      "zh": "床",
+      "baca": "chuáng",
+      "en": "bed"
+    },
+    {
+      "zh": "旁边",
+      "baca": "pángbiān",
+      "en": "next to, beside"
+    },
+    {
+      "zh": "颜色",
+      "baca": "yánsè",
+      "en": "color"
+    },
+    {
+      "zh": "红色",
+      "baca": "hóngsè",
+      "en": "red"
+    },
+    {
+      "zh": "白色",
+      "baca": "báisè",
+      "en": "white"
+    },
+    {
+      "zh": "黑色",
+      "baca": "hēisè",
+      "en": "black"
+    },
+    {
+      "zh": "蓝色",
+      "baca": "lánsè",
+      "en": "blue"
+    },
+    {
+      "zh": "新",
+      "baca": "xīn",
+      "en": "new"
+    },
+    {
+      "zh": "旧",
+      "baca": "jiù",
+      "en": "old, used"
+    },
+    {
+      "zh": "大",
+      "baca": "dà",
+      "en": "big"
+    },
+    {
+      "zh": "小",
+      "baca": "xiǎo",
+      "en": "small"
+    },
+    {
+      "zh": "看见",
+      "baca": "kànjiàn",
+      "en": "to see"
+    },
+    {
+      "zh": "明白",
+      "baca": "míngbai",
+      "en": "to understand"
+    },
+    {
+      "zh": "怎么说",
+      "baca": "zěnme shuō",
+      "en": "how to say"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right measure word: 个, 本, 张, 支, 件, 把.",
+      "items": [
+        "[两|liǎng] ___ [书|shū]",
+        "[一|yì] ___ [纸|zhǐ]",
+        "[三|sān] ___ [笔|bǐ]",
+        "[这|zhè] ___ [人|rén]",
+        "[一|yí] ___ [衣服|yīfu]",
+        "[那|nà] ___ [伞|sǎn]"
+      ]
+    },
+    {
+      "prompt": "Fill in with 有, 没有, or 是.",
+      "items": [
+        "[我|Wǒ] ___ [中文词典|Zhōngwén cídiǎn]，[我要买一本|wǒ yào mǎi yì běn]。",
+        "[这|Zhè] ___ [我的手机|wǒ de shǒujī]。",
+        "[你|Nǐ] ___ [笔吗|bǐ ma]？",
+        "[他|Tā] ___ [两个包|liǎng ge bāo]。",
+        "[那|Nà] ___ [李明的书|Lǐ Míng de shū]。"
+      ]
+    },
+    {
+      "prompt": "Put the pieces in the right order.",
+      "items": [
+        "这 / 是 / 我 / 的 / 词典",
+        "我 / 有 / 两 / 支 / 笔",
+        "那 / 本 / 书 / 是 / 谁 / 的",
+        "我 / 没有 / 手机",
+        "门 / 旁边 / 的 / 那 / 张 / 桌子",
+        "你 / 有 / 没有 / 纸"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "[这不是我的包，是他的|Zhè bú shì wǒ de bāo, shì tā de]。",
+        "[你的手机是什么颜色的|Nǐ de shǒujī shì shénme yánsè de]？",
+        "[我有一个新电脑|Wǒ yǒu yí ge xīn diànnǎo]。",
+        "[那两本书都是老师的|Nà liǎng běn shū dōu shì lǎoshī de]。",
+        "[我没有钥匙|Wǒ méiyǒu yàoshi]。"
+      ]
+    },
+    {
+      "prompt": "Translate into Mandarin. Write in pīnyīn.",
+      "items": [
+        "What's this?",
+        "I have two books.",
+        "Whose book is that?",
+        "I don't have an umbrella.",
+        "That red bag is mine."
+      ]
+    },
+    {
+      "prompt": "Correct these wrong sentences, then write the right version in pīnyīn.",
+      "items": [
+        "[我不有钱包|Wǒ bù yǒu qiánbāo]。",
+        "[我有二本书|Wǒ yǒu èr běn shū]。",
+        "[这书是我的|Zhè shū shì wǒ de]。",
+        "[那是谁书|Nà shì shéi shū]？",
+        "[我有一手机|Wǒ yǒu yì shǒujī]。"
+      ]
+    }
+  ],
+  "answers": [
+    "本 — 张 — 支 — 个 — 件 — 把",
+    "没有 — 是 — 有 — 有 — 是",
+    "这 是 我 的 词典 — 我 有 两 支 笔 — 那 本 书 是 谁 的 — 我 没有 手机 — 门 旁边 的 那 张 桌子 — 你 有 没有 纸",
+    "This isn't my bag, it's his. — What color is your phone? — I have a new computer. — Those two books are both the teacher's. — I don't have a key.",
+    "Zhè shì shénme? — Wǒ yǒu liǎng běn shū. — Nà běn shū shì shéi de? — Wǒ méiyǒu sǎn. — Nà ge hóngsè de bāo shì wǒ de.",
+    "Wǒ méiyǒu qiánbāo. — Wǒ yǒu liǎng běn shū. — Zhè běn shū shì wǒ de. — Nà shì shéi de shū? — Wǒ yǒu yí ge shǒujī."
+  ],
+  "wave": "Review Unit 1: introduce yourself, then point at five things around you and say who owns them using A 是 B 的. Two units practiced in five minutes — and measure words only stick through repetition like this."
+}
