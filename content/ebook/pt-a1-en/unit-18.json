@@ -1,0 +1,495 @@
+{
+  "title": "Que tempo faz? — weather, months and dates",
+  "title_target": "Faz frio em janeiro",
+  "goal": "Talk about the weather with three different verbs, name the months and seasons, then write the date the way people in Portugal write it.",
+  "bekal": [
+    "choosing between *fazer*, *estar* and *haver* when talking about the weather",
+    "naming the twelve months and four seasons",
+    "answering *Que dia é hoje?* in full"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Um novembro chuvoso",
+      "intro": "It's been raining since dawn. Budi comes down to the kitchen with wet hair, and Dona Fernanda laughs.",
+      "lines": [
+        {
+          "speaker": "D. Fernanda:",
+          "text": "Então? Que tempo faz lá fora?",
+          "id": "Well? What's the weather like out there?",
+          "literal": "so? what weather makes there outside?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Está a chover. E está muito vento.",
+          "id": "It's raining. And it's very windy.",
+          "literal": "is to rain. and is much wind."
+        },
+        {
+          "speaker": "D. Fernanda:",
+          "text": "Em novembro é sempre assim. Em dezembro chove ainda mais.",
+          "id": "November's always like this. In December it rains even more.",
+          "literal": "in November is always so. in December rains still more."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Na Indonésia também chove muito, mas nunca faz frio.",
+          "id": "In Indonesia it rains a lot too, but it's never cold.",
+          "literal": "in-the Indonesia also rains much, but never makes cold."
+        },
+        {
+          "speaker": "D. Fernanda:",
+          "text": "Nunca? Nem no inverno?",
+          "id": "Never? Not even in winter?",
+          "literal": "never? not-even in-the winter?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Não temos inverno. Temos duas estações: chuva e sol.",
+          "id": "We don't have winter. We have two seasons: rainy and dry.",
+          "literal": "not we-have winter. we-have two seasons: rain and sun."
+        },
+        {
+          "speaker": "D. Fernanda:",
+          "text": "Que sorte! Aqui o inverno é curto, mas é húmido.",
+          "id": "Lucky you! Here winter is short, but it's damp.",
+          "literal": "what luck! here the winter is short, but is humid."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "E o verão? Faz muito calor?",
+          "id": "And summer? Is it very hot?",
+          "literal": "and the summer? makes much heat?"
+        },
+        {
+          "speaker": "D. Fernanda:",
+          "text": "Em julho e agosto faz muito calor, sobretudo no Alentejo. Quarenta graus.",
+          "id": "In July and August it's very hot, especially in the Alentejo. Forty degrees.",
+          "literal": "in July and August makes much heat, above-all in-the Alentejo. forty degrees."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Quarenta! Como em Jacarta.",
+          "id": "Forty! Like in Jakarta.",
+          "literal": "forty! like in Jakarta."
+        },
+        {
+          "speaker": "D. Fernanda:",
+          "text": "A primavera é a melhor altura. Abril, maio: está fresco e há flores.",
+          "id": "Spring is the best time. April, May: it's cool and there are flowers.",
+          "literal": "the spring is the best time. April, May: is cool and there-are flowers."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Então vou ficar até maio!",
+          "id": "Then I'll stay until May!",
+          "literal": "then I-go to-stay until May!"
+        }
+      ],
+      "notes": [
+        "**Month names are written in lowercase.** *janeiro*, *fevereiro*, *março* — unlike English. Days of the week are lowercase too: *segunda-feira*, *domingo*. Only names of people, cities and countries are capitalized.",
+        "**Sobretudo** means \"especially\" or \"above all\" — a very common word in both written and spoken Portuguese. Similar words: *principalmente*, *especialmente*.",
+        "**A altura** in the sense of \"time\" or \"period\" is typically European Portuguese: *nessa altura* (at that time), *na altura do Natal* (around Christmas). In Brazil people say *época*. The same word also means \"height\".",
+        "**Nem no inverno?** — *nem* means \"not even\", and it strengthens the earlier negation. *Nem eu* = \"neither do I\", the standard reply to a negative statement.",
+        "**Está muito vento**, not *faz vento*. Wind and rain use *estar* in Portugal; temperature uses *fazer*. The rule is laid out in the table below — and to be honest, Portuguese speakers sometimes mix them up themselves.",
+        "**Húmido with an h.** European spelling writes *húmido*, while Brazil writes *úmido*. This small difference shows up in a few other words too, like *facto* (Portugal) versus *fato* (Brazil)."
+      ],
+      "grammars": [
+        {
+          "title": "Three verbs for the weather",
+          "body": [
+            "All of them are used without a real subject, much like English \"it\" in \"it's raining\", where nobody is doing the raining."
+          ],
+          "table": {
+            "head": [
+              "Verb",
+              "Used for",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**fazer**",
+                "temperature and general weather",
+                "*Faz frio. Faz calor. Faz bom tempo.*"
+              ],
+              [
+                "**estar**",
+                "the sky right now",
+                "*Está sol. Está nublado. Está vento.*"
+              ],
+              [
+                "**estar a** + verb",
+                "what's falling right now",
+                "*Está a chover. Está a nevar.*"
+              ],
+              [
+                "**haver / há**",
+                "saying there is",
+                "*Há nevoeiro. Há trovoada.*"
+              ],
+              [
+                "the verb itself",
+                "rain and snow",
+                "*Chove muito em dezembro.*"
+              ]
+            ]
+          },
+          "after": [
+            "**Chover and nevar have only one form**, the third person: *chove*, *choveu*, *está a chover*. Nobody says \"I rain\" in any language.",
+            "To ask: *Que tempo faz?* (\"what's the weather like?\") or *Como está o tempo?*. Note that *o tempo* means \"weather\" **and** \"time\" — context tells them apart: *não tenho tempo* (I don't have time), *está bom tempo* (the weather's nice)."
+          ]
+        },
+        {
+          "title": "Months and seasons",
+          "body": [
+            "Months take the preposition *em*; seasons take *em* contracted with the article."
+          ],
+          "table": {
+            "head": [
+              "Month",
+              "Say it",
+              "Month",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "janeiro",
+                "zhuh-NAY-roo",
+                "julho",
+                "ZHOO-lyoo"
+              ],
+              [
+                "fevereiro",
+                "fuh-vuh-RAY-roo",
+                "agosto",
+                "uh-GOHSH-too"
+              ],
+              [
+                "março",
+                "MAHR-soo",
+                "setembro",
+                "suh-TEHN-broo"
+              ],
+              [
+                "abril",
+                "uh-BREEL",
+                "outubro",
+                "oh-TOO-broo"
+              ],
+              [
+                "maio",
+                "MY-oo",
+                "novembro",
+                "noo-VEHN-broo"
+              ],
+              [
+                "junho",
+                "ZHOO-nyoo",
+                "dezembro",
+                "duh-ZEHN-broo"
+              ]
+            ]
+          },
+          "after": [
+            "The four seasons: **a primavera** (spring), **o verão** (summer), **o outono** (autumn, fall), **o inverno** (winter). The preposition contracts: *na primavera*, *no verão*, *no outono*, *no inverno*.",
+            "With months there's no contraction: *em janeiro*, *em agosto* — simple. Same for years: *em 2026* (read *dois mil e vinte e seis*)."
+          ]
+        },
+        {
+          "title": "Writing and saying the date",
+          "body": [
+            "The order is day of the week, date, month, year — as in British English — all linked with *de*."
+          ],
+          "table": {
+            "head": [
+              "Question",
+              "Answer"
+            ],
+            "rows": [
+              [
+                "*Que dia é hoje?*",
+                "*Hoje é dia catorze.*"
+              ],
+              [
+                "*Em que dia estamos?*",
+                "*Estamos a catorze de novembro.*"
+              ],
+              [
+                "full date",
+                "*quinta-feira, 14 de novembro de 2026*"
+              ],
+              [
+                "the 1st",
+                "*o dia um de maio* (not *primeiro*)"
+              ],
+              [
+                "birthday",
+                "*Faço anos a 3 de julho.*"
+              ],
+              [
+                "year of birth",
+                "*Nasci em 1995.*"
+              ]
+            ]
+          },
+          "after": [
+            "**Dates use ordinary numbers, not ordinals.** *5 de maio* is read *cinco de maio*, not *quinto*. That's different from English \"the fifth\", and easier.",
+            "*Fazer anos* means to have a birthday — literally \"to make years\". *Quando fazes anos?* = \"when's your birthday?\", answered *Faço anos a vinte de março.*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "O tempo",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**Faz sol.** / **Está sol.**",
+              "fahsh sohl",
+              "It's sunny."
+            ],
+            [
+              "**Está a chover.**",
+              "ish-TAH uh shoo-VAYR",
+              "It's raining."
+            ],
+            [
+              "**Está nublado.**",
+              "ish-TAH noo-BLAH-doo",
+              "It's cloudy."
+            ],
+            [
+              "**Está vento.**",
+              "ish-TAH VEHN-too",
+              "It's windy."
+            ],
+            [
+              "**Faz frio / calor.**",
+              "fahsh FREE-oo / kuh-LOHR",
+              "It's cold / hot."
+            ],
+            [
+              "**Está fresco.**",
+              "ish-TAH FRAYSH-koo",
+              "It's cool."
+            ],
+            [
+              "**Há nevoeiro.**",
+              "ah nuh-voo-AY-roo",
+              "It's foggy."
+            ],
+            [
+              "**Há trovoada.**",
+              "ah troo-voo-AH-duh",
+              "There's a thunderstorm."
+            ],
+            [
+              "**Está a nevar.**",
+              "ish-TAH uh nuh-VAHR",
+              "It's snowing."
+            ],
+            [
+              "**Faz bom / mau tempo.**",
+              "fahsh bohn TEHN-poo",
+              "The weather's good / bad."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Temperature is given in *graus*: *Estão vinte graus* (it's twenty degrees) or *Faz vinte graus*. Below zero: *menos dois graus*. And the weather forecast is *a previsão do tempo* — a phrase you'll hear every evening on Portuguese TV. Temperatures are always in Celsius."
+        },
+        {
+          "type": "kotak",
+          "title": "A year in Portugal, through Budi's tropical eyes",
+          "items": [
+            "**The biggest difference isn't temperature but day length.** In late December the sun sets at five in the afternoon; in late June, at nine in the evening. In Indonesia the sun sets around six all year round. This is what surprises newcomers from the equator most.",
+            "Portuguese winters rarely freeze — Lisbon seldom drops below five degrees — but old houses often have no heating, so it can feel colder inside than out. Bring layers, not one thick coat.",
+            "*Agosto* is the national holiday month: many shops and small restaurants close, especially in Lisbon, as their owners head back to their hometowns. If you visit then, don't be surprised to find your favorite tasca locked up for the whole month."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pt": "o tempo",
+      "baca": "oo TEHN-poo",
+      "en": "weather; time"
+    },
+    {
+      "pt": "chover",
+      "baca": "shoo-VAYR",
+      "en": "to rain"
+    },
+    {
+      "pt": "a chuva",
+      "baca": "uh SHOO-vuh",
+      "en": "rain (noun)"
+    },
+    {
+      "pt": "o sol",
+      "baca": "oo sohl",
+      "en": "sun"
+    },
+    {
+      "pt": "o vento",
+      "baca": "oo VEHN-too",
+      "en": "wind"
+    },
+    {
+      "pt": "a nuvem / nublado",
+      "baca": "uh NOO-vayn",
+      "en": "cloud / cloudy"
+    },
+    {
+      "pt": "o frio / o calor",
+      "baca": "oo FREE-oo / oo kuh-LOHR",
+      "en": "cold / heat"
+    },
+    {
+      "pt": "fresco / húmido",
+      "baca": "FRAYSH-koo / OO-mee-doo",
+      "en": "cool / humid"
+    },
+    {
+      "pt": "a neve / nevar",
+      "baca": "uh NEHV / nuh-VAHR",
+      "en": "snow / to snow"
+    },
+    {
+      "pt": "o nevoeiro",
+      "baca": "oo nuh-voo-AY-roo",
+      "en": "fog"
+    },
+    {
+      "pt": "o grau",
+      "baca": "oo grow",
+      "en": "degree"
+    },
+    {
+      "pt": "a estação (do ano)",
+      "baca": "uh ish-tuh-SOWN",
+      "en": "season"
+    },
+    {
+      "pt": "a primavera",
+      "baca": "uh pree-muh-VEH-ruh",
+      "en": "spring"
+    },
+    {
+      "pt": "o verão",
+      "baca": "oo vuh-ROWN",
+      "en": "summer"
+    },
+    {
+      "pt": "o outono",
+      "baca": "oo oh-TOH-noo",
+      "en": "autumn, fall"
+    },
+    {
+      "pt": "o inverno",
+      "baca": "oo een-VEHR-noo",
+      "en": "winter"
+    },
+    {
+      "pt": "o mês / o ano",
+      "baca": "oo maysh / oo AH-noo",
+      "en": "month / year"
+    },
+    {
+      "pt": "fazer anos",
+      "baca": "fuh-ZAYR AH-noosh",
+      "en": "to have a birthday"
+    },
+    {
+      "pt": "nascer",
+      "baca": "nuhsh-SAYR",
+      "en": "to be born"
+    },
+    {
+      "pt": "a altura",
+      "baca": "uh ahl-TOO-ruh",
+      "en": "time, period (Portugal)"
+    },
+    {
+      "pt": "sobretudo",
+      "baca": "soo-bruh-TOO-doo",
+      "en": "especially, above all"
+    },
+    {
+      "pt": "curto / comprido",
+      "baca": "KOOR-too",
+      "en": "short / long"
+    },
+    {
+      "pt": "a flor",
+      "baca": "uh flohr",
+      "en": "flower"
+    },
+    {
+      "pt": "nem",
+      "baca": "nayn",
+      "en": "not even, neither"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in faz, está or há.",
+      "items": [
+        "____ frio em janeiro.",
+        "____ a chover.",
+        "____ sol hoje.",
+        "____ nevoeiro de manhã.",
+        "____ muito vento.",
+        "____ calor em agosto."
+      ]
+    },
+    {
+      "prompt": "Fill in em, no or na.",
+      "items": [
+        "____ janeiro",
+        "____ inverno",
+        "____ primavera",
+        "____ agosto",
+        "____ verão",
+        "____ 2026"
+      ]
+    },
+    {
+      "prompt": "Translate into Portuguese.",
+      "items": [
+        "What's the weather like?",
+        "It's raining and it's windy.",
+        "It's cold in January.",
+        "It's very hot in summer.",
+        "What's the date today?",
+        "My birthday is on the third of July."
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 16. Translate into Portuguese without looking back at the unit.",
+      "items": [
+        "Can I try it on?",
+        "This one is too tight on me.",
+        "Do you have a bigger one?",
+        "I prefer that blue one.",
+        "I'll take this one."
+      ]
+    }
+  ],
+  "answers": [
+    "Faz — Está — Faz — Há — Está — Faz",
+    "em — no — na — em — no — em",
+    "Que tempo faz? — Está a chover e está vento. — Em janeiro faz frio. — No verão faz muito calor. — Que dia é hoje? — Faço anos a três de julho.",
+    "Posso experimentar? — Este fica-me apertado. — Tem um maior? — Gosto mais daquele azul. — Fico com este."
+  ]
+}

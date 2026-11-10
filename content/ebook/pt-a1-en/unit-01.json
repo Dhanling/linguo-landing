@@ -1,0 +1,539 @@
+{
+  "title": "Bom dia! — saying hello and introducing yourself",
+  "title_target": "Muito prazer",
+  "goal": "Greet people by time of day, say your name and where you're from, and say thank you in the right form — while enjoying one big shortcut: Portuguese drops its subject pronouns, so \"I\" often disappears.",
+  "bekal": [
+    "greet with *bom dia*, *boa tarde*, *boa noite* at the right time",
+    "say *chamo-me...* and *sou de...*",
+    "use the six forms of the verb *ser* without looking at the table"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — No aeroporto de Lisboa",
+      "intro": "Budi, an Indonesian student, has just landed in Lisbon. In the line at baggage claim he is standing next to Ana, a Portuguese student his age.",
+      "lines": [
+        {
+          "speaker": "Ana:",
+          "text": "Bom dia! Tudo bem?",
+          "id": "Good morning! How are you?",
+          "literal": "good day! all well?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bom dia! Tudo bem, obrigado. E tu?",
+          "id": "Good morning! Fine, thanks. And you?",
+          "literal": "good day! all well, obliged(m). and you?"
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Estou bem, obrigada. Como te chamas?",
+          "id": "I'm fine, thanks. What's your name?",
+          "literal": "I-am(estar) well, obliged(f). how yourself you-call?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Chamo-me Budi. E tu?",
+          "id": "My name is Budi. And you?",
+          "literal": "I-call-myself Budi. and you?"
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Sou a Ana. Muito prazer.",
+          "id": "I'm Ana. Nice to meet you.",
+          "literal": "I-am the Ana. much pleasure."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Igualmente. És de Lisboa?",
+          "id": "Likewise. Are you from Lisbon?",
+          "literal": "equally. you-are from Lisbon?"
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Sou, sim. E tu, de onde és?",
+          "id": "Yes, I am. And you, where are you from?",
+          "literal": "I-am, yes. and you, from where you-are?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sou indonésio, de Jacarta.",
+          "id": "I'm Indonesian, from Jakarta.",
+          "literal": "I-am Indonesian(m), from Jakarta."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Que giro! Falas bem português.",
+          "id": "How cool! Your Portuguese is good.",
+          "literal": "what cool! you-speak well Portuguese."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Obrigado, mas falo muito pouco.",
+          "id": "Thanks, but I only speak a little.",
+          "literal": "obliged, but I-speak very little."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Não faz mal. Até logo!",
+          "id": "No problem. See you later!",
+          "literal": "not it-makes bad. until soon!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Até logo, Ana!",
+          "id": "See you later, Ana!",
+          "literal": "until soon, Ana!"
+        }
+      ],
+      "notes": [
+        "**Obrigado or obrigada?** This is the first mistake almost every beginner makes, and luckily also the easiest to fix. The form follows **the gender of the person saying thanks**, not the person being thanked. Budi is a man, so he always says *obrigado*; Ana is a woman, so she always says *obrigada*. Pick yours now and use it for life. (Literally it means \"obliged\".)",
+        "**Chamo-me, not me chamo.** The pronoun *me* goes **after** the verb, joined with a hyphen. This is one of the quickest giveaways that someone learned European Portuguese — in Brazil people say *me chamo Budi*. The full rule comes in Unit 12; for now, learn *chamo-me* as one solid block.",
+        "**Sou a Ana** — with *a* (\"the\") before her name. Portuguese puts an article in front of people's names, something English never does: *a Ana*, *o Pedro*, *o Budi*. In Portugal this is almost obligatory in everyday conversation. Leaving it out makes you sound like an official announcement.",
+        "**Sou indonésio, with no word for \"I\".** The form *sou* already contains \"I\", so *eu* doesn't need to be said. English can never drop its *I*; Portuguese drops it all the time. *Eu* appears only for emphasis or contrast: *Eu sou indonésio, ela é portuguesa* (I'm Indonesian, she's Portuguese).",
+        "**Sou, sim.** Portuguese often answers a question by repeating the verb, not with a bare *sim*. *És de Lisboa?* → *Sou.* It feels odd at first, but it's the most natural answer — a bit like English \"I am\". Adding *sim* after it adds emphasis: \"yes, I am\"."
+      ],
+      "grammars": [
+        {
+          "title": "Ser — your first verb and the one you'll use most",
+          "body": [
+            "*Ser* is one of the two Portuguese verbs for \"to be\". It's used for things that are **permanent**: who you are, where you're from, what you do. Its sibling, *estar*, is taken apart in Unit 3."
+          ],
+          "table": {
+            "head": [
+              "Pronoun",
+              "Form",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*eu*",
+                "**sou**",
+                "soh",
+                "I am"
+              ],
+              [
+                "*tu*",
+                "**és**",
+                "ehsh",
+                "you are (informal)"
+              ],
+              [
+                "*ele / ela / você*",
+                "**é**",
+                "eh",
+                "he / she is, you are"
+              ],
+              [
+                "*nós*",
+                "**somos**",
+                "SOH-moosh",
+                "we are"
+              ],
+              [
+                "*vocês*",
+                "**são**",
+                "sown",
+                "you are (plural)"
+              ],
+              [
+                "*eles / elas*",
+                "**são**",
+                "sown",
+                "they are"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that **one form serves three pronouns**: *é* is used for *ele*, *ela* and *você*. That's no accident — *você* was originally a polite third-person form (like \"Your Grace\"), which is why it never takes the *tu* form.",
+            "The pronoun itself is almost always dropped: *Sou professor*, not *Eu sou professor*. Coming from English, this is the first habit you have to let go of."
+          ]
+        },
+        {
+          "title": "Tu, você, o senhor — choosing how to address someone",
+          "body": [
+            "European Portuguese sorts the people you talk to much more carefully than English does — and more carefully than Brazilian Portuguese."
+          ],
+          "table": {
+            "head": [
+              "Address",
+              "Used for",
+              "Verb form"
+            ],
+            "rows": [
+              [
+                "**tu**",
+                "friends, people your age, family, children",
+                "the *tu* form: *és*, *falas*, *tens*"
+              ],
+              [
+                "**você**",
+                "acquaintances you're not close to — **careful in Portugal**",
+                "third-person form: *é*, *fala*, *tem*"
+              ],
+              [
+                "**o senhor / a senhora**",
+                "older people, bosses, shop staff, formal situations",
+                "third-person form: *é*, *fala*, *tem*"
+              ]
+            ]
+          },
+          "after": [
+            "**An important warning that doesn't apply in Brazil:** in Portugal, *você* can sound **a little rude** to older people or strangers. The Portuguese often avoid it entirely and just use the third-person form with no pronoun at all: *Fala inglês?* (\"Do you speak English?\") — no *você*, no *o senhor*.",
+            "**A safe rule for beginners:** use *tu* with people your age whom you know, and *o senhor / a senhora* or a sentence with no pronoun for everyone else. You'll never go wrong this way."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Greetings around the clock",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Portuguese splits the day into three, and the boundaries aren't quite where English puts them — there's no separate greeting for \"good afternoon\" versus \"good evening\" at dusk."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "When to use it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**Bom dia**",
+              "bohn DEE-uh",
+              "from waking up until midday",
+              "good morning"
+            ],
+            [
+              "**Boa tarde**",
+              "BOH-uh TAHRD",
+              "from midday until sunset",
+              "good afternoon"
+            ],
+            [
+              "**Boa noite**",
+              "BOH-uh NOYT",
+              "after dark — to say hello **and** goodbye",
+              "good evening / good night"
+            ],
+            [
+              "**Olá**",
+              "oh-LAH",
+              "any time, friendly, like \"hello\"",
+              "hello"
+            ],
+            [
+              "**Viva!**",
+              "VEE-vuh",
+              "any time, very typical of Portugal",
+              "hi!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Boa noite* does two jobs at once: it's your greeting when you walk into a restaurant at 8 p.m., and it's also your goodbye when you leave at 11. English splits these into \"good evening\" and \"good night\"; Portuguese doesn't."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Saying goodbye",
+            "Say it",
+            "English",
+            "Note"
+          ],
+          "rows": [
+            [
+              "**Até logo**",
+              "uh-TEH LOH-goo",
+              "see you later",
+              "the most common one"
+            ],
+            [
+              "**Até amanhã**",
+              "uh-TEH ah-muh-NYAHN",
+              "see you tomorrow",
+              ""
+            ],
+            [
+              "**Até já**",
+              "uh-TEH ZHAH",
+              "see you in a bit",
+              "when you'll be back within minutes"
+            ],
+            [
+              "**Adeus**",
+              "uh-DAY-ooSH",
+              "farewell",
+              "**feels heavy** — for long goodbyes"
+            ],
+            [
+              "**Tchau**",
+              "show",
+              "bye",
+              "borrowed from Italian *ciao*, casual, very common"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Don't throw adeus around",
+          "items": [
+            "Language classes often teach *adeus* as a plain \"goodbye\". In Portugal it sounds like a real farewell — right for seeing someone off at the airport, not for walking out of a bakery.",
+            "For everyday use, say *até logo* or *tchau*. Both are safe almost anywhere."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Words you'll use on day one",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**Por favor**",
+              "poor fuh-VOHR",
+              "please"
+            ],
+            [
+              "**Obrigado / Obrigada**",
+              "oo-bree-GAH-doo / oo-bree-GAH-duh",
+              "thank you (m / f)"
+            ],
+            [
+              "**De nada**",
+              "duh NAH-duh",
+              "you're welcome"
+            ],
+            [
+              "**Desculpe**",
+              "duhsh-KOOL-puh",
+              "sorry (bumping into someone, interrupting)"
+            ],
+            [
+              "**Com licença**",
+              "kohn lee-SEHN-suh",
+              "excuse me (to get past, to come in)"
+            ],
+            [
+              "**Sim / Não**",
+              "seen / nown",
+              "yes / no"
+            ],
+            [
+              "**Não percebo**",
+              "nown puhr-SAY-boo",
+              "I don't understand"
+            ],
+            [
+              "**Fala inglês?**",
+              "FAH-luh een-GLAYSH",
+              "Do you speak English?"
+            ],
+            [
+              "**Mais devagar, por favor**",
+              "mysh duh-vuh-GAHR",
+              "more slowly, please"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Não percebo** is a typically Portuguese phrase. In Brazil people say *não entendo*; both are correct and understood everywhere, but *perceber* is far more common in Lisbon. Learn this one — you'll use it constantly in your first week."
+        },
+        {
+          "type": "kotak",
+          "title": "Portuguese words you already know",
+          "items": [
+            "English took a handful of words straight from Portuguese: *a varanda* (veranda), *a marmelada* (marmalade — originally quince jam), *o flamingo*, *o albino*, *a cobra*. And thanks to Latin, thousands more are close cousins: *a família*, *o hospital*, *o hotel*, *o museu*, *a música*, *o problema*.",
+            "Most of them travel **without changing meaning**. The trick is to read them the Portuguese way: *hotel* is \"oh-TEHL\", *hospital* is \"ohsh-pee-TAHL\".",
+            "Make the most of this. Whenever a Portuguese word looks familiar, your guess is very likely right."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pt": "bom dia",
+      "baca": "bohn DEE-uh",
+      "en": "good morning"
+    },
+    {
+      "pt": "boa tarde",
+      "baca": "BOH-uh TAHRD",
+      "en": "good afternoon"
+    },
+    {
+      "pt": "boa noite",
+      "baca": "BOH-uh NOYT",
+      "en": "good evening / good night"
+    },
+    {
+      "pt": "olá",
+      "baca": "oh-LAH",
+      "en": "hello"
+    },
+    {
+      "pt": "tudo bem?",
+      "baca": "TOO-doo bayn",
+      "en": "how are you?"
+    },
+    {
+      "pt": "obrigado / obrigada",
+      "baca": "oo-bree-GAH-doo / -duh",
+      "en": "thank you (m / f)"
+    },
+    {
+      "pt": "por favor",
+      "baca": "poor fuh-VOHR",
+      "en": "please"
+    },
+    {
+      "pt": "de nada",
+      "baca": "duh NAH-duh",
+      "en": "you're welcome"
+    },
+    {
+      "pt": "desculpe",
+      "baca": "duhsh-KOOL-puh",
+      "en": "sorry"
+    },
+    {
+      "pt": "sim / não",
+      "baca": "seen / nown",
+      "en": "yes / no"
+    },
+    {
+      "pt": "chamar-se",
+      "baca": "shuh-MAHR-suh",
+      "en": "to be called"
+    },
+    {
+      "pt": "muito prazer",
+      "baca": "MOOYN-too pruh-ZAYR",
+      "en": "nice to meet you"
+    },
+    {
+      "pt": "igualmente",
+      "baca": "ee-gwahl-MEHN-tuh",
+      "en": "likewise"
+    },
+    {
+      "pt": "de onde?",
+      "baca": "duh OHND",
+      "en": "where from?"
+    },
+    {
+      "pt": "indonésio / indonésia",
+      "baca": "een-doo-NEH-zyoo / -zyuh",
+      "en": "Indonesian (m / f)"
+    },
+    {
+      "pt": "português / portuguesa",
+      "baca": "poor-too-GAYSH / -GAY-zuh",
+      "en": "Portuguese (person, m / f); Portuguese (language)"
+    },
+    {
+      "pt": "falar",
+      "baca": "fuh-LAHR",
+      "en": "to speak"
+    },
+    {
+      "pt": "bem",
+      "baca": "bayn",
+      "en": "well, fine"
+    },
+    {
+      "pt": "mas",
+      "baca": "muhsh",
+      "en": "but"
+    },
+    {
+      "pt": "muito / pouco",
+      "baca": "MOOYN-too / POH-koo",
+      "en": "a lot / a little"
+    },
+    {
+      "pt": "que giro!",
+      "baca": "kuh ZHEE-roo",
+      "en": "how cool! (typical of Portugal)"
+    },
+    {
+      "pt": "não faz mal",
+      "baca": "nown fahsh mahl",
+      "en": "no problem, never mind"
+    },
+    {
+      "pt": "até logo",
+      "baca": "uh-TEH LOH-goo",
+      "en": "see you later"
+    },
+    {
+      "pt": "não percebo",
+      "baca": "nown puhr-SAY-boo",
+      "en": "I don't understand"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Portuguese.",
+      "items": [
+        "Good morning! How are you?",
+        "My name is Ana.",
+        "I'm Indonesian.",
+        "Are you from Lisbon?",
+        "I don't understand.",
+        "See you tomorrow!"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right form of ser.",
+      "items": [
+        "Eu ____ de Jacarta.",
+        "Tu ____ portuguesa?",
+        "Ela ____ professora.",
+        "Nós ____ indonésios.",
+        "Eles ____ de Lisboa.",
+        "Você ____ o Pedro?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "me / Budi / chamo",
+        "és / onde / de / ?",
+        "português / falo / pouco / muito",
+        "prazer / muito",
+        "a / sou / Ana"
+      ]
+    },
+    {
+      "prompt": "Write the right Portuguese greeting for each situation.",
+      "items": [
+        "8:00 in the morning",
+        "3:00 in the afternoon",
+        "9:00 at night",
+        "leaving, seeing each other again later today",
+        "leaving, seeing each other again tomorrow"
+      ]
+    }
+  ],
+  "answers": [
+    "Bom dia! Tudo bem? — Chamo-me Ana. — Sou indonésio. (f: indonésia) — És de Lisboa? — Não percebo. — Até amanhã!",
+    "sou — és — é — somos — são — é",
+    "Chamo-me Budi. — De onde és? — Falo muito pouco português. — Muito prazer. — Sou a Ana.",
+    "Bom dia — Boa tarde — Boa noite — Até logo — Até amanhã"
+  ]
+}

@@ -1,0 +1,569 @@
+{
+  "title": "Que horas são? — time, days and routines",
+  "title_target": "São oito e meia",
+  "goal": "Tell the time, name the days and describe your daily routine — while meeting Portugal's way of naming the days, which no other major European language uses.",
+  "bekal": [
+    "answer *Que horas são?* correctly, including the exception *É uma hora*",
+    "name the days of the week and the parts of the day",
+    "use the time prepositions: *às nove*, *de manhã*, *ao sábado*"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Na cozinha, de manhã",
+      "intro": "Seven in the morning. Budi walks into the kitchen and finds Dona Fernanda has already made coffee.",
+      "lines": [
+        {
+          "speaker": "D. Fernanda:",
+          "text": "Bom dia, Budi! Já acordado?",
+          "id": "Good morning, Budi! Up already?",
+          "literal": "good day, Budi! already awake?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bom dia. Que horas são?",
+          "id": "Good morning. What time is it?",
+          "literal": "good day. what hours are?"
+        },
+        {
+          "speaker": "D. Fernanda:",
+          "text": "São sete e um quarto. Hoje tens aulas?",
+          "id": "It's a quarter past seven. Do you have classes today?",
+          "literal": "are seven and a quarter. today you-have classes?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tenho. As aulas são de segunda a sexta, das nove ao meio-dia.",
+          "id": "I do. Classes are Monday to Friday, from nine till noon.",
+          "literal": "I-have. the(pl) classes are from second to sixth, from-the(pl) nine to-the mid-day."
+        },
+        {
+          "speaker": "D. Fernanda:",
+          "text": "E à tarde?",
+          "id": "And in the afternoon?",
+          "literal": "and at-the afternoon?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "À tarde estudo em casa. Às vezes vou ao museu.",
+          "id": "In the afternoon I study at home. Sometimes I go to the museum.",
+          "literal": "at-the afternoon I-study in home. at-the(pl) times I-go to-the museum."
+        },
+        {
+          "speaker": "D. Fernanda:",
+          "text": "E ao fim de semana?",
+          "id": "And on weekends?",
+          "literal": "and at-the end of week?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ao sábado durmo até tarde. Ao domingo almoço fora.",
+          "id": "On Saturdays I sleep in. On Sundays I have lunch out.",
+          "literal": "at-the Saturday I-sleep until late. at-the Sunday I-lunch outside."
+        },
+        {
+          "speaker": "D. Fernanda:",
+          "text": "Aqui o almoço é sempre à uma e jantamos às oito.",
+          "id": "Here lunch is always at one and we have dinner at eight.",
+          "literal": "here the lunch is always at-the one and we-dine at-the(pl) eight."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Em Portugal janta-se tarde, não é?",
+          "id": "In Portugal people eat dinner late, don't they?",
+          "literal": "in Portugal dines-oneself late, not is?"
+        },
+        {
+          "speaker": "D. Fernanda:",
+          "text": "Tarde? Em Espanha jantam às dez!",
+          "id": "Late? In Spain they have dinner at ten!",
+          "literal": "late? in Spain they-dine at-the(pl) ten!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Pois é. Então às oito ainda é cedo!",
+          "id": "True. So eight o'clock is still early!",
+          "literal": "indeed is. so at-the(pl) eight still is early!"
+        }
+      ],
+      "notes": [
+        "**São sete, but É uma.** Time takes *ser*, and the form follows the number: plural for two and up (*são duas*, *são sete*), singular for one (*é uma hora*). Notice also that the number is **feminine** — *são duas*, not *são dois* — because *horas* is feminine.",
+        "**Portuguese days are numbered.** *Segunda-feira* means \"second day\", *terça* third, up to *sexta*, sixth. Only Saturday and Sunday have names of their own. This system comes from the 6th-century church calendar, and Portuguese is the **only major European language** that still uses it.",
+        "**Ao sábado means \"on Saturdays\", not \"on Saturday\".** For repeated habits, Portugal uses *ao sábado*, *ao domingo*, *à segunda*; Brazil uses the plural *aos sábados*. For one particular upcoming day, use *no sábado*: *no sábado vou a Sintra* (this Saturday).",
+        "**Janta-se tarde** is a subjectless construction, like English \"people eat late\" or \"dinner is eaten late\". The *se* here doesn't mean \"oneself\" — it signals that no one in particular is doing the action. It's very common on signs: *vende-se* (for sale), *aluga-se* (for rent), *fala-se inglês* (English spoken).",
+        "**Durmo, not dormo.** A group of *-ir* verbs change their vowel in the *eu* form only: *dormir* → *durmo*, *subir* → *subo*, *preferir* → *prefiro*, *servir* → *sirvo*. The other forms stay regular: *dormes*, *dorme*, *dormimos*, *dormem*. The change keeps the word easy to say, and you only need to remember it for *eu*."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "Minutes are added with *e* and subtracted with *menos*. After half past, the Portuguese usually count down to the next hour."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Português",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "1:00",
+                "**É uma hora.**",
+                "eh OO-muh OH-ruh"
+              ],
+              [
+                "2:00",
+                "**São duas horas.**",
+                "sown DOO-uhsh OH-ruhsh"
+              ],
+              [
+                "7:15",
+                "**São sete e um quarto.**",
+                "sown SEHT ee oon KWAHR-too"
+              ],
+              [
+                "8:30",
+                "**São oito e meia.**",
+                "sown OY-too ee MAY-uh"
+              ],
+              [
+                "9:45",
+                "**São dez menos um quarto.**",
+                "sown dehsh MAY-noosh"
+              ],
+              [
+                "10:50",
+                "**São onze menos dez.**",
+                "sown OHNZ MAY-noosh dehsh"
+              ],
+              [
+                "12:00 noon",
+                "**É meio-dia.**",
+                "eh MAY-oo DEE-uh"
+              ],
+              [
+                "12:00 midnight",
+                "**É meia-noite.**",
+                "eh MAY-uh NOYT"
+              ],
+              [
+                "4:20 pm",
+                "**São quatro e vinte da tarde.**",
+                "sown KWAH-troo ee VEENT"
+              ]
+            ]
+          },
+          "after": [
+            "**To ask the time:** *Que horas são?* To ask what time something happens: *A que horas...?* — and the answer always uses *às*: *às nove*, *às três e meia*. The one exception: *à uma* (singular).",
+            "The part of the day is added with *de* or *da*: *às oito **da** manhã* (8 am), *às três **da** tarde* (3 pm), *às dez **da** noite* (10 pm). When there's no doubt, it can be left out.",
+            "On train and airport timetables and at the movies, the Portuguese use the 24-hour clock and read it straight: *o comboio parte às dezoito e trinta* (18:30, i.e. 6:30 pm)."
+          ]
+        },
+        {
+          "title": "Days and parts of the day",
+          "body": [
+            "All the day names are **masculine** except those ending in *-feira*, which are feminine."
+          ],
+          "table": {
+            "head": [
+              "Português",
+              "Say it",
+              "English",
+              "Short form"
+            ],
+            "rows": [
+              [
+                "**segunda-feira**",
+                "suh-GOON-duh FAY-ruh",
+                "Monday",
+                "*2.ª feira* / *segunda*"
+              ],
+              [
+                "**terça-feira**",
+                "TAYR-suh FAY-ruh",
+                "Tuesday",
+                "*3.ª feira* / *terça*"
+              ],
+              [
+                "**quarta-feira**",
+                "KWAHR-tuh FAY-ruh",
+                "Wednesday",
+                "*4.ª feira*"
+              ],
+              [
+                "**quinta-feira**",
+                "KEEN-tuh FAY-ruh",
+                "Thursday",
+                "*5.ª feira*"
+              ],
+              [
+                "**sexta-feira**",
+                "SAYSH-tuh FAY-ruh",
+                "Friday",
+                "*6.ª feira*"
+              ],
+              [
+                "**o sábado**",
+                "oo SAH-boo-doo",
+                "Saturday",
+                "—"
+              ],
+              [
+                "**o domingo**",
+                "oo doo-MEEN-goo",
+                "Sunday",
+                "—"
+              ]
+            ]
+          },
+          "after": [
+            "In conversation, the word *feira* is almost always dropped: *Vejo-te na quinta* = \"see you Thursday\". Write it in full, say it short.",
+            "English names its days after gods and planets — Saturn's day, the Sun's day. Portuguese kept only two real names: *sábado* comes from the Hebrew *Sabbath*, and *domingo* from Latin *dies Dominicus*, \"the Lord's day\"."
+          ]
+        },
+        {
+          "title": "Time prepositions",
+          "body": [
+            "Four prepositions handle almost every time expression at A1."
+          ],
+          "table": {
+            "head": [
+              "For",
+              "Preposition",
+              "Example"
+            ],
+            "rows": [
+              [
+                "clock times",
+                "**a** (+ contraction)",
+                "*às nove*, *à uma*, *ao meio-dia*"
+              ],
+              [
+                "parts of the day",
+                "**de** or **a**",
+                "*de manhã*, *à tarde*, *à noite*"
+              ],
+              [
+                "weekly habits",
+                "**a** (+ contraction)",
+                "*ao sábado*, *à segunda*"
+              ],
+              [
+                "one particular day",
+                "**em** (+ contraction)",
+                "*no sábado*, *na quinta*"
+              ],
+              [
+                "months and seasons",
+                "**em** (+ contraction)",
+                "*em janeiro*, *no verão*"
+              ],
+              [
+                "duration",
+                "**durante** / **há**",
+                "*durante duas horas*, *há dois anos*"
+              ]
+            ]
+          },
+          "after": [
+            "**De manhã but à tarde and à noite.** There's no reason; it's just a habit to memorize. The three are often said in a row, so practice them as one sequence: *de manhã, à tarde, à noite*.",
+            "*Há* also means \"for\" or \"ago\": *estou em Portugal há dois meses* = \"I've been in Portugal for two months\". Notice that the verb stays in the present, unlike English \"I've been\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "An ordinary day",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**acordar**",
+              "uh-koor-DAHR",
+              "to wake up"
+            ],
+            [
+              "**tomar o pequeno-almoço**",
+              "PAY-kuh-noo ahl-MOH-soo",
+              "to have breakfast (Portugal)"
+            ],
+            [
+              "**almoçar**",
+              "ahl-moo-SAHR",
+              "to have lunch"
+            ],
+            [
+              "**lanchar**",
+              "lahn-SHAHR",
+              "to have an afternoon snack"
+            ],
+            [
+              "**jantar**",
+              "zhahn-TAHR",
+              "to have dinner"
+            ],
+            [
+              "**dormir** (*durmo*)",
+              "door-MEER",
+              "to sleep"
+            ],
+            [
+              "**trabalhar / estudar**",
+              "truh-buh-LYAHR",
+              "to work / to study"
+            ],
+            [
+              "**descansar**",
+              "duhsh-kahn-SAHR",
+              "to rest"
+            ],
+            [
+              "**ver televisão**",
+              "vayr tuh-luh-vee-ZOWN",
+              "to watch TV"
+            ],
+            [
+              "**ler**",
+              "layr",
+              "to read"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Breakfast in Portugal is *o pequeno-almoço*** — literally \"little lunch\". In Brazil it's *o café da manhã*. This is one of the most visible differences on hotel menus, and one that often confuses learners who study from both Portuguese and Brazilian sources at once."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**de manhã**",
+              "duh muh-NYAHN",
+              "in the morning"
+            ],
+            [
+              "**à tarde**",
+              "ah TAHRD",
+              "in the afternoon"
+            ],
+            [
+              "**à noite**",
+              "ah NOYT",
+              "in the evening, at night"
+            ],
+            [
+              "**hoje / amanhã / ontem**",
+              "OHZH / ah-muh-NYAHN / OHN-tayn",
+              "today / tomorrow / yesterday"
+            ],
+            [
+              "**cedo / tarde**",
+              "SAY-doo / TAHRD",
+              "early / late"
+            ],
+            [
+              "**o fim de semana**",
+              "oo feen duh suh-MAH-nuh",
+              "weekend"
+            ],
+            [
+              "**todos os dias**",
+              "TOH-doozh oosh DEE-uhsh",
+              "every day"
+            ],
+            [
+              "**por semana**",
+              "poor suh-MAH-nuh",
+              "a week, per week"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pt": "a hora",
+      "baca": "uh OH-ruh",
+      "en": "hour; time (of day)"
+    },
+    {
+      "pt": "o quarto (de hora)",
+      "baca": "oo KWAHR-too",
+      "en": "quarter (of an hour)"
+    },
+    {
+      "pt": "meio-dia / meia-noite",
+      "baca": "MAY-oo DEE-uh",
+      "en": "noon / midnight"
+    },
+    {
+      "pt": "segunda-feira",
+      "baca": "suh-GOON-duh FAY-ruh",
+      "en": "Monday"
+    },
+    {
+      "pt": "terça-feira",
+      "baca": "TAYR-suh FAY-ruh",
+      "en": "Tuesday"
+    },
+    {
+      "pt": "quarta-feira",
+      "baca": "KWAHR-tuh FAY-ruh",
+      "en": "Wednesday"
+    },
+    {
+      "pt": "quinta-feira",
+      "baca": "KEEN-tuh FAY-ruh",
+      "en": "Thursday"
+    },
+    {
+      "pt": "sexta-feira",
+      "baca": "SAYSH-tuh FAY-ruh",
+      "en": "Friday"
+    },
+    {
+      "pt": "o sábado / o domingo",
+      "baca": "oo SAH-boo-doo",
+      "en": "Saturday / Sunday"
+    },
+    {
+      "pt": "a semana",
+      "baca": "uh suh-MAH-nuh",
+      "en": "week"
+    },
+    {
+      "pt": "o fim de semana",
+      "baca": "oo feen duh suh-MAH-nuh",
+      "en": "weekend"
+    },
+    {
+      "pt": "de manhã",
+      "baca": "duh muh-NYAHN",
+      "en": "in the morning"
+    },
+    {
+      "pt": "à tarde / à noite",
+      "baca": "ah TAHRD / ah NOYT",
+      "en": "in the afternoon / at night"
+    },
+    {
+      "pt": "ontem",
+      "baca": "OHN-tayn",
+      "en": "yesterday"
+    },
+    {
+      "pt": "cedo / tarde",
+      "baca": "SAY-doo / TAHRD",
+      "en": "early / late"
+    },
+    {
+      "pt": "acordar",
+      "baca": "uh-koor-DAHR",
+      "en": "to wake up"
+    },
+    {
+      "pt": "dormir",
+      "baca": "door-MEER",
+      "en": "to sleep"
+    },
+    {
+      "pt": "o pequeno-almoço",
+      "baca": "oo puh-KAY-noo ahl-MOH-soo",
+      "en": "breakfast (Portugal)"
+    },
+    {
+      "pt": "o almoço / o jantar",
+      "baca": "oo ahl-MOH-soo",
+      "en": "lunch / dinner"
+    },
+    {
+      "pt": "jantar",
+      "baca": "zhahn-TAHR",
+      "en": "to have dinner"
+    },
+    {
+      "pt": "descansar",
+      "baca": "duhsh-kahn-SAHR",
+      "en": "to rest"
+    },
+    {
+      "pt": "ler",
+      "baca": "layr",
+      "en": "to read"
+    },
+    {
+      "pt": "o museu",
+      "baca": "oo moo-ZAY-oo",
+      "en": "museum"
+    },
+    {
+      "pt": "fora",
+      "baca": "FAW-ruh",
+      "en": "out, outside"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write out the time in Portuguese.",
+      "items": [
+        "1:00",
+        "3:30",
+        "7:15",
+        "9:45",
+        "12:00 noon",
+        "10:10 pm"
+      ]
+    },
+    {
+      "prompt": "Fill in the right time preposition.",
+      "items": [
+        "As aulas começam ____ nove.",
+        "Estudo ____ manhã.",
+        "Descanso ____ tarde.",
+        "____ sábado durmo até tarde.",
+        "____ sábado que vem vou a Sintra.",
+        "O almoço é ____ uma."
+      ]
+    },
+    {
+      "prompt": "Translate into Portuguese.",
+      "items": [
+        "What time is it?",
+        "It's half past eight.",
+        "Classes are Monday to Friday.",
+        "On Saturdays I sleep in.",
+        "We have dinner at eight.",
+        "Sometimes I go to the museum."
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 7. Translate into Portuguese without looking back at the unit.",
+      "items": [
+        "Where is the station?",
+        "The pharmacy is next to the bank.",
+        "Turn left.",
+        "Is it far from here?",
+        "The key is on the table."
+      ]
+    }
+  ],
+  "answers": [
+    "É uma hora. — São três e meia. — São sete e um quarto. — São dez menos um quarto. — É meio-dia. — São dez e dez da noite.",
+    "às — de — à — Ao — No — à",
+    "Que horas são? — São oito e meia. — As aulas são de segunda a sexta. — Ao sábado durmo até tarde. — Jantamos às oito. — Às vezes vou ao museu.",
+    "Onde fica a estação? — A farmácia fica ao lado do banco. — Vire à esquerda. — É longe daqui? — A chave está em cima da mesa."
+  ]
+}

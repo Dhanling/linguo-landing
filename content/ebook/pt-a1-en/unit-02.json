@@ -1,0 +1,630 @@
+{
+  "title": "O livro e a mesa — gender, articles and plurals",
+  "title_target": "O quarto é pequeno",
+  "goal": "Put *o* or *a* in front of every noun without hesitating, form plurals, and make adjectives agree — the first real hurdle for English speakers, deliberately placed at the start.",
+  "bekal": [
+    "guess a noun's gender from its ending, and recognize the exceptions you must memorize",
+    "choose between *o / a / os / as* and *um / uma / uns / umas*",
+    "form plurals, including words ending in *-l*, *-m* and *-ão*"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — O quarto arrendado",
+      "intro": "Budi is renting a room in Dona Fernanda's house in the Alfama district. Today he sees his room for the first time.",
+      "lines": [
+        {
+          "speaker": "D. Fernanda:",
+          "text": "Boa tarde. É o senhor Budi?",
+          "id": "Good afternoon. Are you Mr. Budi?",
+          "literal": "good afternoon. is the sir Budi?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sou, sim. Boa tarde, dona Fernanda.",
+          "id": "Yes, I am. Good afternoon, Dona Fernanda.",
+          "literal": "I-am, yes. good afternoon, lady Fernanda."
+        },
+        {
+          "speaker": "D. Fernanda:",
+          "text": "Este é o quarto. É pequeno, mas é confortável.",
+          "id": "This is the room. It's small, but it's comfortable.",
+          "literal": "this is the room. is small, but is comfortable."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A janela é grande! E a cama também.",
+          "id": "The window is big! And so is the bed.",
+          "literal": "the window is big! and the bed also."
+        },
+        {
+          "speaker": "D. Fernanda:",
+          "text": "Ali estão a mesa e uma cadeira. O armário está atrás da porta.",
+          "id": "Over there are the table and a chair. The wardrobe is behind the door.",
+          "literal": "there they-are the table and a chair. the wardrobe it-is behind of-the door."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "E a casa de banho? É no corredor?",
+          "id": "And the bathroom? Is it in the hallway?",
+          "literal": "and the house of bath? is in-the corridor?"
+        },
+        {
+          "speaker": "D. Fernanda:",
+          "text": "É. E a cozinha é ao lado. Os quartos dos outros são em cima.",
+          "id": "Yes. And the kitchen is next door. The other tenants' rooms are upstairs.",
+          "literal": "is. and the kitchen is to-the side. the(pl) rooms of-the(pl) others are on top."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "As chaves são estas?",
+          "id": "Are these the keys?",
+          "literal": "the(pl) keys are these(pl)?"
+        },
+        {
+          "speaker": "D. Fernanda:",
+          "text": "São. Duas chaves: a da porta e a do prédio.",
+          "id": "Yes. Two keys: the one for the door and the one for the building.",
+          "literal": "they-are. two keys: the of-the door and the of-the building."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "O prédio é antigo, não é?",
+          "id": "The building is old, isn't it?",
+          "literal": "the building is old, not is?"
+        },
+        {
+          "speaker": "D. Fernanda:",
+          "text": "É muito antigo. As casas de Alfama são todas antigas.",
+          "id": "Very old. The houses in Alfama are all old.",
+          "literal": "is very old. the(pl) houses of Alfama are all(f) old(f-pl)."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Muito obrigado, dona Fernanda!",
+          "id": "Thank you very much, Dona Fernanda!",
+          "literal": "much obliged, lady Fernanda!"
+        }
+      ],
+      "notes": [
+        "**O senhor Budi, a dona Fernanda.** Even titles take an article. *O senhor* and *a senhora* are the polite way to address someone you don't know well; *dona* goes before an older woman's first name, and in Portugal it sounds warm, not stiff.",
+        "**Não é?** This is the question tag for asking agreement, exactly like English \"isn't it?\" or \"right?\": *O prédio é antigo, não é?* The short form *né?* is very common in Brazil but rare in Portugal — the Portuguese say it in full.",
+        "**Da, do, no, ao — prepositions that fuse with the article.** *da porta* = *de + a porta*. *no corredor* = *em + o corredor*. *ao lado* = *a + o lado*. These contractions are **obligatory** — you can't split them — and they're fully taken apart in Unit 7. For now, just recognize them.",
+        "**Casa de banho** is \"bathroom\" in European Portuguese. In Brazil people say *banheiro* — a word that in Portugal means a lifeguard. This is one of the differences that most often sends learners to the wrong place.",
+        "**Todas antigas** — two words at once become plural and feminine, because *as casas* is feminine and plural. This chain of agreement is why noun gender matters: it doesn't stop at the article, it spreads to every word that describes the noun."
+      ],
+      "grammars": [
+        {
+          "title": "Four definite articles, four indefinite articles",
+          "body": [
+            "English has just *the* and *a*. Portuguese has eight, and the choice depends on only two things: the noun's gender, and singular or plural."
+          ],
+          "table": {
+            "head": [
+              "",
+              "Masculine singular",
+              "Masculine plural",
+              "Feminine singular",
+              "Feminine plural"
+            ],
+            "rows": [
+              [
+                "**Definite** (\"the\")",
+                "**o** livro",
+                "**os** livros",
+                "**a** mesa",
+                "**as** mesas"
+              ],
+              [
+                "**Indefinite** (\"a / some\")",
+                "**um** livro",
+                "**uns** livros",
+                "**uma** mesa",
+                "**umas** mesas"
+              ]
+            ]
+          },
+          "after": [
+            "How to say them: *o* = **oo**, *os* = **oosh**, *a* = **uh**, *as* = **uhsh**, *um* = **oon**, *uma* = **OO-muh**, *uns* = **oonsh**, *umas* = **OO-muhsh**.",
+            "**Portuguese uses articles far more often than English.** They appear before people's names (*o Pedro*), before country names (*o Brasil*, *a Indonésia* — but *Portugal* takes none), and before nouns in general statements: *Gosto do café* = \"I like coffee\", literally \"I like of-the coffee\".",
+            "*Uns* and *umas* mean \"some\", not \"a-a\": *uns livros* = some books."
+          ]
+        },
+        {
+          "title": "Guessing gender from the ending",
+          "body": [
+            "The guess is right about nine times out of ten. The rest must be memorized — and the list of exceptions you'll actually meet often turns out to be short."
+          ],
+          "table": {
+            "head": [
+              "Ending",
+              "Usually",
+              "Examples",
+              "Key exceptions"
+            ],
+            "rows": [
+              [
+                "**-o**",
+                "masculine",
+                "*o livro*, *o carro*, *o quarto*",
+                "*a mão* (hand), *a foto*, *a moto*"
+              ],
+              [
+                "**-a**",
+                "feminine",
+                "*a mesa*, *a casa*, *a porta*",
+                "*o dia*, *o problema*, *o mapa*, *o programa*"
+              ],
+              [
+                "**-ção, -são**",
+                "feminine **always**",
+                "*a lição*, *a estação*, *a televisão*",
+                "—"
+              ],
+              [
+                "**-dade, -agem**",
+                "feminine **always**",
+                "*a cidade*, *a viagem*",
+                "—"
+              ],
+              [
+                "**-or, -l, -r**",
+                "masculine",
+                "*o professor*, *o hotel*, *o mar*",
+                "*a flor* (flower), *a cor* (color)"
+              ],
+              [
+                "**-e**",
+                "either",
+                "*o nome*, *a noite*",
+                "learn them one by one"
+              ]
+            ]
+          },
+          "after": [
+            "**The exception that trips up the most learners is *o dia*.** The word for \"day\" ends in *-a* but is masculine, and it comes up every time you say hello: *bom dia*, not *boa dia*. Compare *boa tarde* and *boa noite*, which are both feminine.",
+            "Four Greek words ending in *-ma* are also masculine, and all are common: *o problema*, *o programa*, *o sistema*, *o tema*.",
+            "For nouns ending in *-e* there's no rule at all. Don't waste time guessing — learn them with their article the first time you meet them."
+          ]
+        },
+        {
+          "title": "Plurals",
+          "body": [
+            "Adding *-s* takes care of most words. Only four endings need attention."
+          ],
+          "table": {
+            "head": [
+              "If it ends in",
+              "Plural",
+              "Examples"
+            ],
+            "rows": [
+              [
+                "a vowel",
+                "**+ s**",
+                "*livro* → *livros*; *mesa* → *mesas*"
+              ],
+              [
+                "stressed **-r, -z, -s**",
+                "**+ es**",
+                "*flor* → *flores*; *rapaz* → *rapazes*; *português* → *portugueses*"
+              ],
+              [
+                "**-m**",
+                "**-m → -ns**",
+                "*homem* → *homens*; *jardim* → *jardins*"
+              ],
+              [
+                "**-l**",
+                "**-l → -is**",
+                "*hotel* → *hotéis*; *papel* → *papéis*; *fácil* → *fáceis*"
+              ],
+              [
+                "**-ão**",
+                "usually **-ões**",
+                "*lição* → *lições*; *coração* → *corações*"
+              ]
+            ]
+          },
+          "after": [
+            "**Words ending in -ão have three possible plurals**, and unfortunately all three are common: most become *-ões* (*lição → lições*), a few become *-ães* (*pão → pães*, *cão → cães*), and a few just add *-s* (*mão → mãos*, *irmão → irmãos*). Memorize those last ones; treat everything else as *-ões*.",
+            "Words already ending in an unstressed *-s* **don't change**: *o lápis* → *os lápis* (pencil), *o ónibus* → *os ónibus*. Only the article changes."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Adjectives follow gender and number",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This is the part that feels most foreign to English speakers, because English adjectives never change. In Portuguese, an adjective **takes its form from the noun it describes** — and it usually comes **after** the noun, not before."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Basic form",
+            "Masculine",
+            "Feminine",
+            "Plural"
+          ],
+          "rows": [
+            [
+              "**-o / -a**",
+              "*o quarto pequeno*",
+              "*a casa pequena*",
+              "*os quartos pequenos*, *as casas pequenas*"
+            ],
+            [
+              "**-e** (no change)",
+              "*o livro grande*",
+              "*a mesa grande*",
+              "*os livros grandes*, *as mesas grandes*"
+            ],
+            [
+              "**-l, -z** (no change)",
+              "*o exercício fácil*",
+              "*a lição fácil*",
+              "*os exercícios fáceis*"
+            ],
+            [
+              "**-or**",
+              "*o carro melhor*",
+              "*a casa melhor*",
+              "*os carros melhores*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The good news: adjectives ending in **-e** never change for gender — and there are lots of them (*grande*, *inteligente*, *interessante*, *forte*, *simples*, *verde*). When in doubt, choosing an *-e* adjective is an honest way out."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "English",
+            "Opposite"
+          ],
+          "rows": [
+            [
+              "grande",
+              "GRAHND",
+              "big",
+              "*pequeno* (small)"
+            ],
+            [
+              "novo",
+              "NOH-voo",
+              "new",
+              "*velho* / *antigo* (old)"
+            ],
+            [
+              "bom",
+              "bohn",
+              "good",
+              "*mau* (bad)"
+            ],
+            [
+              "caro",
+              "KAH-roo",
+              "expensive",
+              "*barato* (cheap)"
+            ],
+            [
+              "fácil",
+              "FAH-seel",
+              "easy",
+              "*difícil* (difficult)"
+            ],
+            [
+              "bonito",
+              "boo-NEE-too",
+              "pretty, nice",
+              "*feio* (ugly)"
+            ],
+            [
+              "comprido",
+              "kohn-PREE-doo",
+              "long",
+              "*curto* (short)"
+            ],
+            [
+              "limpo",
+              "LEEN-poo",
+              "clean",
+              "*sujo* (dirty)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Bom and mau break the pattern",
+          "items": [
+            "*bom* (m) → *boa* (f) → *bons* / *boas*. Notice that the feminine isn't *boma* but *boa* — which is why *bom dia* pairs with *boa tarde*.",
+            "*mau* (m) → *má* (f) → *maus* / *más*.",
+            "These two are too common to skip. Learn all four forms now."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Things around the house",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Notice that every word is written with its article. Never learn one on its own."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "English",
+            "Plural"
+          ],
+          "rows": [
+            [
+              "a casa",
+              "uh KAH-zuh",
+              "house",
+              "as casas"
+            ],
+            [
+              "o quarto",
+              "oo KWAHR-too",
+              "bedroom",
+              "os quartos"
+            ],
+            [
+              "a cozinha",
+              "uh koo-ZEE-nyuh",
+              "kitchen",
+              "as cozinhas"
+            ],
+            [
+              "a casa de banho",
+              "uh KAH-zuh duh BAH-nyoo",
+              "bathroom",
+              "as casas de banho"
+            ],
+            [
+              "a sala",
+              "uh SAH-luh",
+              "living room",
+              "as salas"
+            ],
+            [
+              "a porta",
+              "uh POHR-tuh",
+              "door",
+              "as portas"
+            ],
+            [
+              "a janela",
+              "uh zhuh-NEH-luh",
+              "window",
+              "as janelas"
+            ],
+            [
+              "a mesa",
+              "uh MAY-zuh",
+              "table",
+              "as mesas"
+            ],
+            [
+              "a cadeira",
+              "uh kuh-DAY-ruh",
+              "chair",
+              "as cadeiras"
+            ],
+            [
+              "a cama",
+              "uh KAH-muh",
+              "bed",
+              "as camas"
+            ],
+            [
+              "o armário",
+              "oo ahr-MAH-ryoo",
+              "wardrobe, cupboard",
+              "os armários"
+            ],
+            [
+              "a chave",
+              "uh SHAHV",
+              "key",
+              "as chaves"
+            ],
+            [
+              "o prédio",
+              "oo PREH-dyoo",
+              "building",
+              "os prédios"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "A few words in this table may ring a bell: *a mesa* gave American English its name for a flat-topped hill (it literally means \"table\"), *o armário* is a cousin of *armoire*, and *o corredor* is simply a corridor. Notice, though, that each one carries a **gender** in Portuguese — something English nouns never do. Learn the article along with the word."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pt": "o livro",
+      "baca": "oo LEE-vroo",
+      "en": "book"
+    },
+    {
+      "pt": "a mesa",
+      "baca": "uh MAY-zuh",
+      "en": "table"
+    },
+    {
+      "pt": "a casa",
+      "baca": "uh KAH-zuh",
+      "en": "house"
+    },
+    {
+      "pt": "o quarto",
+      "baca": "oo KWAHR-too",
+      "en": "room, bedroom"
+    },
+    {
+      "pt": "a porta",
+      "baca": "uh POHR-tuh",
+      "en": "door"
+    },
+    {
+      "pt": "a janela",
+      "baca": "uh zhuh-NEH-luh",
+      "en": "window"
+    },
+    {
+      "pt": "a cama",
+      "baca": "uh KAH-muh",
+      "en": "bed"
+    },
+    {
+      "pt": "a cadeira",
+      "baca": "uh kuh-DAY-ruh",
+      "en": "chair"
+    },
+    {
+      "pt": "o armário",
+      "baca": "oo ahr-MAH-ryoo",
+      "en": "wardrobe, cupboard"
+    },
+    {
+      "pt": "a chave",
+      "baca": "uh SHAHV",
+      "en": "key"
+    },
+    {
+      "pt": "a cozinha",
+      "baca": "uh koo-ZEE-nyuh",
+      "en": "kitchen"
+    },
+    {
+      "pt": "a casa de banho",
+      "baca": "uh KAH-zuh duh BAH-nyoo",
+      "en": "bathroom (Portugal)"
+    },
+    {
+      "pt": "o corredor",
+      "baca": "oo koo-khuh-DOHR",
+      "en": "hallway, corridor"
+    },
+    {
+      "pt": "o prédio",
+      "baca": "oo PREH-dyoo",
+      "en": "building"
+    },
+    {
+      "pt": "a cidade",
+      "baca": "uh see-DAHD",
+      "en": "city"
+    },
+    {
+      "pt": "o dia",
+      "baca": "oo DEE-uh",
+      "en": "day (masculine!)"
+    },
+    {
+      "pt": "a lição",
+      "baca": "uh lee-SOWN",
+      "en": "lesson"
+    },
+    {
+      "pt": "o pão",
+      "baca": "oo pown",
+      "en": "bread"
+    },
+    {
+      "pt": "grande / pequeno",
+      "baca": "GRAHND / puh-KAY-noo",
+      "en": "big / small"
+    },
+    {
+      "pt": "novo / velho",
+      "baca": "NOH-voo / VEH-lyoo",
+      "en": "new / old"
+    },
+    {
+      "pt": "antigo",
+      "baca": "ahn-TEE-goo",
+      "en": "old, ancient"
+    },
+    {
+      "pt": "confortável",
+      "baca": "kohn-foor-TAH-vuhl",
+      "en": "comfortable"
+    },
+    {
+      "pt": "também",
+      "baca": "tayn-BAYN",
+      "en": "also, too"
+    },
+    {
+      "pt": "ali / aqui",
+      "baca": "uh-LEE / uh-KEE",
+      "en": "there / here"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in o or a.",
+      "items": [
+        "____ livro",
+        "____ janela",
+        "____ dia",
+        "____ cidade",
+        "____ problema",
+        "____ lição"
+      ]
+    },
+    {
+      "prompt": "Write the plural, with its article.",
+      "items": [
+        "o livro",
+        "a lição",
+        "o hotel",
+        "o homem",
+        "o pão",
+        "a flor"
+      ]
+    },
+    {
+      "prompt": "Fill in the right form of the adjective (pequeno or pequena, novo or nova).",
+      "items": [
+        "A casa é ____. (pequeno)",
+        "O quarto é ____. (pequeno)",
+        "As mesas são ____. (novo)",
+        "Os livros são ____. (novo)",
+        "A cadeira é ____. (bom)",
+        "O dia é ____. (bom)"
+      ]
+    },
+    {
+      "prompt": "Translate into Portuguese.",
+      "items": [
+        "The room is small, but it's comfortable.",
+        "The window is big.",
+        "The houses are old.",
+        "This is a chair.",
+        "The key is behind the door.",
+        "The city is pretty."
+      ]
+    }
+  ],
+  "answers": [
+    "o — a — o — a — o — a",
+    "os livros — as lições — os hotéis — os homens — os pães — as flores",
+    "pequena — pequeno — novas — novos — boa — bom",
+    "O quarto é pequeno, mas é confortável. — A janela é grande. — As casas são antigas. — Isto é uma cadeira. — A chave está atrás da porta. — A cidade é bonita."
+  ]
+}

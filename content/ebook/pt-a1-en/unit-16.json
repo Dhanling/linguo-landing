@@ -1,0 +1,569 @@
+{
+  "title": "Este ou aquele? — shopping, colors and demonstratives",
+  "title_target": "Posso experimentar?",
+  "goal": "Point to things at three different distances, name colors and sizes, then complete a purchase in a shop from start to payment.",
+  "bekal": [
+    "telling apart *este*, *esse* and *aquele*",
+    "using *ficar* to say something fits or suits you",
+    "naming colors that change form and colors that don't"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Na loja de roupa",
+      "intro": "Early November, and Lisbon is getting cold. Budi walks into a clothes shop in Chiado.",
+      "lines": [
+        {
+          "speaker": "Empregada:",
+          "text": "Boa tarde. Precisa de ajuda?",
+          "id": "Good afternoon. Can I help you?",
+          "literal": "good afternoon. needs of help?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sim, procuro um casaco. Está frio lá fora.",
+          "id": "Yes, I'm looking for a jacket. It's cold out there.",
+          "literal": "yes, I-look-for a jacket. is cold there outside."
+        },
+        {
+          "speaker": "Empregada:",
+          "text": "Temos estes aqui. Que tamanho veste?",
+          "id": "We have these here. What size do you wear?",
+          "literal": "we-have these here. what size wears?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Não sei bem os tamanhos daqui. Na Indonésia uso M.",
+          "id": "I don't really know the sizes here. In Indonesia I wear M.",
+          "literal": "not I-know well the sizes of-here. in-the Indonesia I-use M."
+        },
+        {
+          "speaker": "Empregada:",
+          "text": "Então pode experimentar este. É o M.",
+          "id": "Then you can try this one. It's the M.",
+          "literal": "then can try this. is the M."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Obrigado. Onde é o gabinete de provas?",
+          "id": "Thanks. Where's the fitting room?",
+          "literal": "thanks. where is the cabinet of trials?"
+        },
+        {
+          "speaker": "Empregada:",
+          "text": "Ali ao fundo, à direita.",
+          "id": "Over there at the back, on the right.",
+          "literal": "there at-the bottom, at-the right."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Este fica-me apertado. Tem um maior?",
+          "id": "This one is too tight on me. Do you have a bigger one?",
+          "literal": "this stays-me tight. has a bigger?"
+        },
+        {
+          "speaker": "Empregada:",
+          "text": "Tenho esse castanho e aquele azul-escuro, ao fundo.",
+          "id": "I have that brown one and that dark blue one over there, at the back.",
+          "literal": "I-have that brown and that(far) blue-dark, at-the bottom."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Gosto mais daquele azul. Quanto custa?",
+          "id": "I prefer that blue one. How much is it?",
+          "literal": "I-like more of-that(far) blue. how-much costs?"
+        },
+        {
+          "speaker": "Empregada:",
+          "text": "Sessenta e nove euros. Está em saldo.",
+          "id": "Sixty-nine euros. It's on sale.",
+          "literal": "sixty and nine euros. is in sale."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Fico com ele! Onde é que pago?",
+          "id": "I'll take it! Where do I pay?",
+          "literal": "I-stay with it! where is it that I-pay?"
+        }
+      ],
+      "notes": [
+        "**Fica-me apertado** — the verb *ficar* takes on a new job here: \"to fit\" and \"to suit\". *Fica-te bem* = \"it suits you\", *fica-me grande* = \"it's too big on me\". Note that the object pronoun attaches, exactly as in unit 12.",
+        "**Este, esse, aquele — three distances, not two.** Portuguese distinguishes things near the speaker (*este*), near the listener (*esse*), and far from both (*aquele*). English has only \"this\" and \"that\", so the three need practice. Think of *aquele* as \"that one over there\".",
+        "**Castanho, not marrom.** Brown in Portugal is *castanho* — from *castanha*, chestnut. In Brazil people say *marrom*. Likewise *em saldo* (on sale) in Portugal versus *em promoção* in Brazil.",
+        "**O gabinete de provas** is the fitting room. A shorter word that's also used: *o provador*.",
+        "**Que tamanho veste?** — *vestir* means to wear clothes, and its *eu* form changes vowel: *visto*. For shoes, the verb is different: *calçar*. *Que número calça?* = \"what's your shoe size?\"",
+        "**Precisa de ajuda?** is the standard greeting from shop staff. Note the *de* that's required after *precisar*, as you learned in unit 4."
+      ],
+      "grammars": [
+        {
+          "title": "The three distances of demonstratives",
+          "body": [
+            "They all agree in gender and number with the thing pointed at — except the last form, which never changes."
+          ],
+          "table": {
+            "head": [
+              "Distance",
+              "m sing.",
+              "f sing.",
+              "m pl.",
+              "f pl.",
+              "no noun"
+            ],
+            "rows": [
+              [
+                "near **me**",
+                "**este**",
+                "**esta**",
+                "**estes**",
+                "**estas**",
+                "**isto**"
+              ],
+              [
+                "near **you**",
+                "**esse**",
+                "**essa**",
+                "**esses**",
+                "**essas**",
+                "**isso**"
+              ],
+              [
+                "**far** from both",
+                "**aquele**",
+                "**aquela**",
+                "**aqueles**",
+                "**aquelas**",
+                "**aquilo**"
+              ]
+            ]
+          },
+          "after": [
+            "**The last column is used when the thing hasn't been named or isn't known.** *O que é isto?* (\"what's this?\") — you don't know what it is yet, so you can't choose a gender. Likewise *isso é caro* and *não gosto daquilo*. These three never change form.",
+            "The matching words for place: *aqui* (here, near me), *aí* (there, near you), *ali* / *lá* (over there). Pair them up: *este... aqui*, *esse... aí*, *aquele... ali*.",
+            "**In everyday speech, people in Portugal often use just *este* and *aquele***, keeping *esse* for something the other person has just mentioned. If in doubt, those two are enough."
+          ]
+        },
+        {
+          "title": "Contracted demonstratives",
+          "body": [
+            "Like articles, demonstratives contract with *de*, *em* and *a*."
+          ],
+          "table": {
+            "head": [
+              "Preposition",
+              "+ *este*",
+              "+ *esse*",
+              "+ *aquele*",
+              "+ neutral form"
+            ],
+            "rows": [
+              [
+                "**de**",
+                "*deste*",
+                "*desse*",
+                "*daquele*",
+                "*disto*, *disso*, *daquilo*"
+              ],
+              [
+                "**em**",
+                "*neste*",
+                "*nesse*",
+                "*naquele*",
+                "*nisto*, *nisso*, *naquilo*"
+              ],
+              [
+                "**a**",
+                "—",
+                "—",
+                "*àquele*",
+                "*àquilo*"
+              ]
+            ]
+          },
+          "after": [
+            "*Gosto deste* = \"I like this one\". *Gosto daquele* = \"I like that one over there\". Since *gostar* requires *de*, these contractions come up constantly when shopping.",
+            "The preposition *a* only contracts with the *aquele* group, marked with ` as in *à*: *àquele*, *àquela*, *àquilo*."
+          ]
+        },
+        {
+          "title": "Ficar — to fit, suit and look good",
+          "body": [
+            "This verb has now appeared three times in the module: \"to be located\" (unit 7), \"to take (buy)\" (unit 6), and now \"to fit\"."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*Fica-me bem.*",
+                "It suits me."
+              ],
+              [
+                "*Fica-te muito bem!*",
+                "It looks great on you!"
+              ],
+              [
+                "*Fica-me grande / pequeno.*",
+                "It's too big / too small on me."
+              ],
+              [
+                "*Fica-me apertado / largo.*",
+                "It's too tight / too loose."
+              ],
+              [
+                "*Este fica melhor.*",
+                "This one suits you better."
+              ],
+              [
+                "*Fico com este.*",
+                "I'll take this one."
+              ]
+            ]
+          },
+          "after": [
+            "*Melhor* (better) and *pior* (worse) are irregular comparatives. For other adjectives, comparisons use *mais* and *menos*: *mais caro* (more expensive), *menos caro* (less expensive), and the superlative adds the article: *o mais caro* (the most expensive)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Colors",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "English",
+            "Changes?"
+          ],
+          "rows": [
+            [
+              "**branco / branca**",
+              "BRAHN-koo",
+              "white",
+              "yes"
+            ],
+            [
+              "**preto / preta**",
+              "PRAY-too",
+              "black",
+              "yes"
+            ],
+            [
+              "**vermelho / vermelha**",
+              "vuhr-MAY-lyoo",
+              "red",
+              "yes"
+            ],
+            [
+              "**amarelo / amarela**",
+              "uh-muh-REH-loo",
+              "yellow",
+              "yes"
+            ],
+            [
+              "**castanho / castanha**",
+              "kuhsh-TAH-nyoo",
+              "brown (Portugal)",
+              "yes"
+            ],
+            [
+              "**azul / azuis**",
+              "uh-ZOOL",
+              "blue",
+              "plural only"
+            ],
+            [
+              "**verde / verdes**",
+              "VAYRD",
+              "green",
+              "plural only"
+            ],
+            [
+              "**cinzento / cinzenta**",
+              "seen-ZEHN-too",
+              "gray",
+              "yes"
+            ],
+            [
+              "**cor-de-rosa**",
+              "kohr-duh-KHOH-zuh",
+              "pink",
+              "never"
+            ],
+            [
+              "**cor-de-laranja**",
+              "kohr-duh-luh-RAHN-zhuh",
+              "orange",
+              "never"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Colors that are really names of things never change form:** *cor-de-rosa* (rose-colored), *cor-de-laranja* (orange-colored), *bege*, *creme*. So *duas camisolas cor-de-rosa* — no *-s*. To say dark or light, add *escuro* (dark) or *claro* (light) after it: *azul-escuro*, *verde-claro*."
+        }
+      ]
+    },
+    {
+      "title": "A roupa",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "a camisa",
+              "uh kuh-MEE-zuh",
+              "shirt"
+            ],
+            [
+              "a camisola",
+              "uh kuh-mee-ZAW-luh",
+              "sweater (Portugal)"
+            ],
+            [
+              "a t-shirt",
+              "uh tee-SHAYRT",
+              "T-shirt"
+            ],
+            [
+              "as calças",
+              "uhsh KAHL-suhsh",
+              "trousers, pants"
+            ],
+            [
+              "os calções",
+              "oosh kahl-SOYNSH",
+              "shorts"
+            ],
+            [
+              "o vestido / a saia",
+              "oo vuhsh-TEE-doo / uh SY-uh",
+              "dress / skirt"
+            ],
+            [
+              "o casaco",
+              "oo kuh-ZAH-koo",
+              "jacket, coat"
+            ],
+            [
+              "os sapatos",
+              "oosh suh-PAH-toosh",
+              "shoes"
+            ],
+            [
+              "as meias",
+              "uhsh MAY-uhsh",
+              "socks"
+            ],
+            [
+              "o chapéu / o boné",
+              "oo shuh-PEHOO",
+              "hat / cap"
+            ],
+            [
+              "o cinto",
+              "oo SEEN-too",
+              "belt"
+            ],
+            [
+              "os óculos",
+              "oosh AW-koo-loosh",
+              "glasses"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Portuguese clothing words that traveled the world",
+          "items": [
+            "Portuguese traders left these words in Indonesian and Malay: *a camisa* → **kemeja**, *o sapato* → **sepatu**, *a renda* → **renda** (lace), *o saco* → **saku** (pocket), *o botão* → **butang** (button) in old Malay.",
+            "Watch out for *camisola*: in Portugal it means a sweater or long-sleeved top, while in Brazil the same word means a nightgown. One of those differences that can make a conversation awkward.",
+            "*As calças* is always plural, just like English *trousers* or *pants*. The same goes for *as meias* and *os óculos* (like *glasses*)."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pt": "este / esse / aquele",
+      "baca": "AYSH-tuh / AYS-suh / uh-KAYL",
+      "en": "this / that / that (over there)"
+    },
+    {
+      "pt": "isto / isso / aquilo",
+      "baca": "EESH-too / EES-soo / uh-KEE-loo",
+      "en": "this / that (no noun)"
+    },
+    {
+      "pt": "a loja",
+      "baca": "uh LOH-zhuh",
+      "en": "shop, store"
+    },
+    {
+      "pt": "a roupa",
+      "baca": "uh KHOH-puh",
+      "en": "clothes"
+    },
+    {
+      "pt": "o casaco",
+      "baca": "oo kuh-ZAH-koo",
+      "en": "jacket"
+    },
+    {
+      "pt": "as calças",
+      "baca": "uhsh KAHL-suhsh",
+      "en": "trousers, pants"
+    },
+    {
+      "pt": "os sapatos",
+      "baca": "oosh suh-PAH-toosh",
+      "en": "shoes"
+    },
+    {
+      "pt": "o tamanho",
+      "baca": "oo tuh-MAH-nyoo",
+      "en": "size"
+    },
+    {
+      "pt": "experimentar / provar",
+      "baca": "ish-puh-ree-mehn-TAHR",
+      "en": "to try on"
+    },
+    {
+      "pt": "vestir / calçar",
+      "baca": "vuhsh-TEER / kahl-SAHR",
+      "en": "to wear (clothes / shoes)"
+    },
+    {
+      "pt": "apertado / largo",
+      "baca": "uh-puhr-TAH-doo",
+      "en": "tight / loose"
+    },
+    {
+      "pt": "escuro / claro",
+      "baca": "ish-KOO-roo / KLAH-roo",
+      "en": "dark / light"
+    },
+    {
+      "pt": "em saldo",
+      "baca": "ayn SAHL-doo",
+      "en": "on sale (Portugal)"
+    },
+    {
+      "pt": "o desconto",
+      "baca": "oo duhsh-KOHN-too",
+      "en": "discount"
+    },
+    {
+      "pt": "procurar",
+      "baca": "proo-koo-RAHR",
+      "en": "to look for"
+    },
+    {
+      "pt": "precisar de",
+      "baca": "pruh-see-ZAHR duh",
+      "en": "to need"
+    },
+    {
+      "pt": "melhor / pior",
+      "baca": "muh-LYOHR / pee-OHR",
+      "en": "better / worse"
+    },
+    {
+      "pt": "maior / menor",
+      "baca": "muh-YOHR / muh-NOHR",
+      "en": "bigger / smaller"
+    },
+    {
+      "pt": "branco / preto",
+      "baca": "BRAHN-koo / PRAY-too",
+      "en": "white / black"
+    },
+    {
+      "pt": "vermelho / azul",
+      "baca": "vuhr-MAY-lyoo / uh-ZOOL",
+      "en": "red / blue"
+    },
+    {
+      "pt": "castanho",
+      "baca": "kuhsh-TAH-nyoo",
+      "en": "brown (Portugal)"
+    },
+    {
+      "pt": "verde / amarelo",
+      "baca": "VAYRD / uh-muh-REH-loo",
+      "en": "green / yellow"
+    },
+    {
+      "pt": "o frio",
+      "baca": "oo FREE-oo",
+      "en": "cold"
+    },
+    {
+      "pt": "lá fora",
+      "baca": "lah FAW-ruh",
+      "en": "out there, outside"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in este, esta, estes or estas.",
+      "items": [
+        "____ casaco",
+        "____ camisa",
+        "____ sapatos",
+        "____ calças",
+        "____ vestido",
+        "____ meias"
+      ]
+    },
+    {
+      "prompt": "Fill in the correct contracted form (deste, daquele, neste, naquela...).",
+      "items": [
+        "Gosto ____ casaco aqui. (de + este)",
+        "Gosto mais ____ azul ali. (de + aquele)",
+        "O que é que está ____ saco? (em + este)",
+        "Não gosto ____. (de + aquilo)",
+        "Moro ____ rua. (em + esta)",
+        "O que é ____? (isto)"
+      ]
+    },
+    {
+      "prompt": "Translate into Portuguese.",
+      "items": [
+        "I'm looking for a jacket.",
+        "Can I try it on?",
+        "This one is too tight on me.",
+        "Do you have a bigger one?",
+        "I prefer that blue one.",
+        "I'll take this one."
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 14. Translate into Portuguese without looking back at the unit.",
+      "items": [
+        "Yesterday I studied all afternoon.",
+        "How was your weekend?",
+        "She invited me to lunch.",
+        "I arrived two months ago.",
+        "We rested on Saturday."
+      ]
+    }
+  ],
+  "answers": [
+    "este — esta — estes — estas — este — estas",
+    "deste — daquele — neste — daquilo — nesta — isto",
+    "Procuro um casaco. — Posso experimentar? — Este fica-me apertado. — Tem um maior? — Gosto mais daquele azul. — Fico com este.",
+    "Ontem estudei a tarde toda. — Como correu o fim de semana? — Ela convidou-me para almoçar. — Cheguei há dois meses. — Descansámos no sábado."
+  ]
+}

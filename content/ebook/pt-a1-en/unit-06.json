@@ -1,0 +1,610 @@
+{
+  "title": "Quanto custa? — numbers, prices and cafés",
+  "title_target": "Um café, por favor",
+  "goal": "Count to a thousand, ask prices, order at a café and pay — while meeting a few numbers that are **spelled differently** in Portugal and in Brazil.",
+  "bekal": [
+    "say the numbers 0-1,000 correctly",
+    "ask *Quanto custa?* and understand the answer",
+    "order at a café with the phrases the Portuguese really use"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Na pastelaria",
+      "intro": "At four in the afternoon, Budi walks into a small *pastelaria* — a pastry shop and café — near his house.",
+      "lines": [
+        {
+          "speaker": "Empregado:",
+          "text": "Boa tarde! Faz favor?",
+          "id": "Good afternoon! What can I get you?",
+          "literal": "good afternoon! makes favor?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Um café e um pastel de nata, se faz favor.",
+          "id": "A coffee and a pastel de nata, please.",
+          "literal": "a coffee and a pastry of cream, if makes favor."
+        },
+        {
+          "speaker": "Empregado:",
+          "text": "Mais alguma coisa?",
+          "id": "Anything else?",
+          "literal": "more some thing?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sim, uma água sem gás. Quanto é tudo?",
+          "id": "Yes, a still water. How much is everything?",
+          "literal": "yes, a water without gas. how-much is all?"
+        },
+        {
+          "speaker": "Empregado:",
+          "text": "São três euros e vinte.",
+          "id": "That's three euros twenty.",
+          "literal": "they-are three euros and twenty."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aqui está. Tem troco de vinte?",
+          "id": "Here you are. Do you have change for a twenty?",
+          "literal": "here it-is. has change of twenty?"
+        },
+        {
+          "speaker": "Empregado:",
+          "text": "Tenho, sim. Aqui está: dezasseis e oitenta.",
+          "id": "I do. Here you go: sixteen eighty.",
+          "literal": "I-have, yes. here it-is: sixteen and eighty."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Obrigado. O café aqui é muito bom.",
+          "id": "Thanks. The coffee here is really good.",
+          "literal": "obliged. the coffee here is very good."
+        },
+        {
+          "speaker": "Empregado:",
+          "text": "É o melhor da rua! Quantos cafés bebe por dia?",
+          "id": "Best on the street! How many coffees do you drink a day?",
+          "literal": "is the best of-the street! how-many coffees drinks per day?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Três ou quatro. Em Portugal bebo mais.",
+          "id": "Three or four. In Portugal I drink more.",
+          "literal": "three or four. in Portugal I-drink more."
+        },
+        {
+          "speaker": "Empregado:",
+          "text": "Cá bebemos seis! Bom apetite.",
+          "id": "Here we drink six! Enjoy.",
+          "literal": "here we-drink six! good appetite."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Obrigado. Até amanhã!",
+          "id": "Thanks. See you tomorrow!",
+          "literal": "obliged. until tomorrow!"
+        }
+      ],
+      "notes": [
+        "**Faz favor and se faz favor** are Portugal's way of saying \"go ahead\" and \"please\". Staff use it to ask \"what can I get you?\", customers use it as \"please\". It's also the polite way to call a waiter from across the room: just say *Se faz favor!* — don't wave. *Por favor* is also correct and better known outside Portugal.",
+        "**São três euros, but É um euro.** The verb follows the amount: if the price is more than one, use *são*; if it's exactly one, use *é*. Cents are read as a plain number after *e*: *três euros e vinte* = €3.20. The Portuguese write it 3,20 € — with a decimal comma, where English uses a point.",
+        "**Dezasseis, not dezesseis.** Four numbers are spelled differently in Portugal: *dezasseis* (16), *dezassete* (17), *dezanove* (19), and *catorze* (14, which in Brazil can also be *quatorze*). Note the **a** in the middle — this is the Portuguese spelling, and the one used throughout this course.",
+        "**Um café in Portugal means an espresso**, not a big mug of coffee. Order *um café* in Lisbon and a tiny cup of strong black coffee arrives. In Lisbon it's also called *uma bica*; in Porto, *um cimbalino*. If you want a big milky coffee in a glass, order *um galão*.",
+        "**Tem troco de vinte?** — *troco* is change. This question is very useful, because many small shops in Portugal are reluctant to take big notes for small purchases.",
+        "**Bom apetite** is said to anyone eating or about to eat, even strangers at the next table. The reply: *Obrigado, igualmente.*"
+      ],
+      "grammars": [
+        {
+          "title": "Numbers 0 to 20",
+          "body": [
+            "Only two of them change for gender: **um/uma** and **dois/duas**. The rest stay the same."
+          ],
+          "table": {
+            "head": [
+              "",
+              "Number",
+              "Say it",
+              "",
+              "Number",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "0",
+                "zero",
+                "ZEH-roo",
+                "11",
+                "onze",
+                "OHNZ"
+              ],
+              [
+                "1",
+                "um / uma",
+                "oon / OO-muh",
+                "12",
+                "doze",
+                "DOHZ"
+              ],
+              [
+                "2",
+                "dois / duas",
+                "doysh / DOO-uhsh",
+                "13",
+                "treze",
+                "TRAYZ"
+              ],
+              [
+                "3",
+                "três",
+                "traysh",
+                "14",
+                "**catorze**",
+                "kuh-TOHRZ"
+              ],
+              [
+                "4",
+                "quatro",
+                "KWAH-troo",
+                "15",
+                "quinze",
+                "KEENZ"
+              ],
+              [
+                "5",
+                "cinco",
+                "SEEN-koo",
+                "16",
+                "**dezasseis**",
+                "duh-zuh-SAYSH"
+              ],
+              [
+                "6",
+                "seis",
+                "saysh",
+                "17",
+                "**dezassete**",
+                "duh-zuh-SEHT"
+              ],
+              [
+                "7",
+                "sete",
+                "SEHT",
+                "18",
+                "dezoito",
+                "duh-ZOY-too"
+              ],
+              [
+                "8",
+                "oito",
+                "OY-too",
+                "19",
+                "**dezanove**",
+                "duh-zuh-NAWV"
+              ],
+              [
+                "9",
+                "nove",
+                "NAWV",
+                "20",
+                "vinte",
+                "VEENT"
+              ],
+              [
+                "10",
+                "dez",
+                "dehsh",
+                "",
+                "",
+                ""
+              ]
+            ]
+          },
+          "after": [
+            "*Duas* is used with feminine nouns: *duas horas*, *duas casas*, *duas irmãs*. This is one of the most common beginner mistakes, because the other numbers don't change, which makes it easy to forget that this one does.",
+            "The numbers in bold are the four with a typically Portuguese spelling."
+          ]
+        },
+        {
+          "title": "Tens, hundreds, thousands",
+          "body": [
+            "Compound numbers are joined with **e** (\"and\") — everywhere, not just in one spot as in British \"one hundred and five\"."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Português",
+              "Say it",
+              "Compound example"
+            ],
+            "rows": [
+              [
+                "30",
+                "trinta",
+                "TREEN-tuh",
+                "*trinta e um* (31)"
+              ],
+              [
+                "40",
+                "quarenta",
+                "kwuh-REHN-tuh",
+                "*quarenta e dois* (42)"
+              ],
+              [
+                "50",
+                "cinquenta",
+                "seen-KWEHN-tuh",
+                "*cinquenta e cinco* (55)"
+              ],
+              [
+                "60",
+                "sessenta",
+                "suh-SEHN-tuh",
+                "*sessenta e nove* (69)"
+              ],
+              [
+                "70",
+                "setenta",
+                "suh-TEHN-tuh",
+                "*setenta e três* (73)"
+              ],
+              [
+                "80",
+                "oitenta",
+                "oy-TEHN-tuh",
+                "*oitenta e sete* (87)"
+              ],
+              [
+                "90",
+                "noventa",
+                "noo-VEHN-tuh",
+                "*noventa e nove* (99)"
+              ],
+              [
+                "100",
+                "cem / cento",
+                "sayn / SEHN-too",
+                "*cento e dez* (110)"
+              ],
+              [
+                "200",
+                "duzentos / duzentas",
+                "doo-ZEHN-toosh",
+                "*duzentos e cinquenta* (250)"
+              ],
+              [
+                "500",
+                "quinhentos",
+                "kee-NYEHN-toosh",
+                "*quinhentos euros*"
+              ],
+              [
+                "1000",
+                "mil",
+                "meel",
+                "*mil e quinhentos* (1,500)"
+              ]
+            ]
+          },
+          "after": [
+            "**Cem is exactly 100; cento is for 101 and up.** *Cem euros* (100), but *cento e vinte euros* (120). It's the only number with two forms like this.",
+            "**Hundreds agree in gender:** *duzentos livros* but *duzentas casas*. Likewise *trezentos/trezentas*, *quinhentos/quinhentas*. Tens never change.",
+            "*Mil* is never preceded by *um*: just *mil euros*, not *um mil euros*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Asking prices and paying",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**Quanto custa?**",
+              "KWAHN-too KOOSH-tuh",
+              "How much is it? (one item)"
+            ],
+            [
+              "**Quanto custam?**",
+              "KWAHN-too KOOSH-town",
+              "How much are they? (several items)"
+            ],
+            [
+              "**Quanto é tudo?**",
+              "KWAHN-too eh TOO-doo",
+              "How much is everything?"
+            ],
+            [
+              "**É caro / barato.**",
+              "eh KAH-roo / buh-RAH-too",
+              "It's expensive / cheap."
+            ],
+            [
+              "**Aceitam cartão?**",
+              "uh-SAY-town kahr-TOWN",
+              "Do you take cards?"
+            ],
+            [
+              "**Tem troco?**",
+              "tayn TROH-koo",
+              "Do you have change?"
+            ],
+            [
+              "**A conta, se faz favor.**",
+              "uh KOHN-tuh",
+              "The check, please."
+            ],
+            [
+              "**Fico com este.**",
+              "FEE-koo kohn AYSH-tuh",
+              "I'll take this one."
+            ],
+            [
+              "**Só estou a ver, obrigado.**",
+              "saw ish-TOH uh vayr",
+              "I'm just looking, thanks."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Ficar com* literally means \"to stay with\", and it's used exactly like \"I'll take it\" when you decide to buy something. The verb *ficar* is extremely productive in Portugal — it also means \"to be located\" (*Onde fica a estação?*) and \"to become\" (*fico contente*)."
+        }
+      ]
+    },
+    {
+      "title": "No café — ordering like the Portuguese",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "What you get"
+          ],
+          "rows": [
+            [
+              "**um café** / **uma bica**",
+              "oon kuh-FEH / OO-muh BEE-kuh",
+              "espresso, small cup"
+            ],
+            [
+              "**um galão**",
+              "oon guh-LOWN",
+              "milky coffee in a tall glass"
+            ],
+            [
+              "**uma meia de leite**",
+              "OO-muh MAY-uh duh LAYT",
+              "milky coffee in a large cup"
+            ],
+            [
+              "**um abatanado**",
+              "oon uh-buh-tuh-NAH-doo",
+              "weak black coffee, like an *americano*"
+            ],
+            [
+              "**um chá**",
+              "oon shah",
+              "tea"
+            ],
+            [
+              "**uma água (sem gás)**",
+              "OO-muh AH-gwuh",
+              "(still) water"
+            ],
+            [
+              "**um sumo de laranja**",
+              "oon SOO-moo duh luh-RAHN-zhuh",
+              "orange juice"
+            ],
+            [
+              "**uma cerveja / uma imperial**",
+              "OO-muh suhr-VAY-zhuh",
+              "beer / small draft beer"
+            ],
+            [
+              "**um pastel de nata**",
+              "oon puhsh-TEHL duh NAH-tuh",
+              "Portugal's famous custard tart"
+            ],
+            [
+              "**uma tosta mista**",
+              "OO-muh TOHSH-tuh MEESH-tuh",
+              "toasted ham-and-cheese sandwich"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two small things that make you sound local",
+          "items": [
+            "The Portuguese drink their coffee **standing at the counter**, not sitting — and it's often cheaper that way. Say your order straight out, without a long preamble: *Um café, se faz favor.*",
+            "*Sumo* means juice in Portugal; in Brazil it's *suco*. And an *imperial* is a small draft beer in Lisbon — in Porto the same thing is called a *fino*.",
+            "The plural of *pastel* is **pastéis**: *dois pastéis de nata*. Remember the *-l → -is* rule from Unit 2."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pt": "quanto custa?",
+      "baca": "KWAHN-too KOOSH-tuh",
+      "en": "how much is it?"
+    },
+    {
+      "pt": "o euro",
+      "baca": "oo AY-oo-roo",
+      "en": "euro"
+    },
+    {
+      "pt": "o troco",
+      "baca": "oo TROH-koo",
+      "en": "change (money)"
+    },
+    {
+      "pt": "a conta",
+      "baca": "uh KOHN-tuh",
+      "en": "check, bill"
+    },
+    {
+      "pt": "o cartão",
+      "baca": "oo kahr-TOWN",
+      "en": "card"
+    },
+    {
+      "pt": "o dinheiro",
+      "baca": "oo dee-NYAY-roo",
+      "en": "money"
+    },
+    {
+      "pt": "caro / barato",
+      "baca": "KAH-roo / buh-RAH-too",
+      "en": "expensive / cheap"
+    },
+    {
+      "pt": "o café",
+      "baca": "oo kuh-FEH",
+      "en": "coffee; café"
+    },
+    {
+      "pt": "o chá",
+      "baca": "oo shah",
+      "en": "tea"
+    },
+    {
+      "pt": "a água",
+      "baca": "uh AH-gwuh",
+      "en": "water"
+    },
+    {
+      "pt": "o sumo",
+      "baca": "oo SOO-moo",
+      "en": "juice (Portugal)"
+    },
+    {
+      "pt": "a cerveja",
+      "baca": "uh suhr-VAY-zhuh",
+      "en": "beer"
+    },
+    {
+      "pt": "o leite",
+      "baca": "oo LAYT",
+      "en": "milk"
+    },
+    {
+      "pt": "o pastel / os pastéis",
+      "baca": "oo puhsh-TEHL",
+      "en": "pastry"
+    },
+    {
+      "pt": "a pastelaria",
+      "baca": "uh puhsh-tuh-luh-REE-uh",
+      "en": "pastry shop and café"
+    },
+    {
+      "pt": "beber",
+      "baca": "buh-BAYR",
+      "en": "to drink"
+    },
+    {
+      "pt": "custar",
+      "baca": "koosh-TAHR",
+      "en": "to cost"
+    },
+    {
+      "pt": "pagar",
+      "baca": "puh-GAHR",
+      "en": "to pay"
+    },
+    {
+      "pt": "ficar com",
+      "baca": "fee-KAHR kohn",
+      "en": "to take (decide to buy)"
+    },
+    {
+      "pt": "alguma coisa",
+      "baca": "ahl-GOO-muh KOY-zuh",
+      "en": "something, anything"
+    },
+    {
+      "pt": "tudo",
+      "baca": "TOO-doo",
+      "en": "everything"
+    },
+    {
+      "pt": "mais / menos",
+      "baca": "mysh / MAY-noosh",
+      "en": "more / less"
+    },
+    {
+      "pt": "ou",
+      "baca": "oh",
+      "en": "or"
+    },
+    {
+      "pt": "bom apetite",
+      "baca": "bohn uh-puh-TEET",
+      "en": "enjoy your meal"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these numbers out in Portuguese (Portuguese spelling).",
+      "items": [
+        "14",
+        "16",
+        "17",
+        "19",
+        "45",
+        "128"
+      ]
+    },
+    {
+      "prompt": "Fill in um, uma, dois or duas.",
+      "items": [
+        "____ café",
+        "____ água",
+        "____ cervejas",
+        "____ pastéis",
+        "____ horas",
+        "____ euros"
+      ]
+    },
+    {
+      "prompt": "Translate into Portuguese.",
+      "items": [
+        "A coffee, please.",
+        "How much is everything?",
+        "Three euros twenty.",
+        "Do you have change for a fifty?",
+        "The check, please.",
+        "Do you take cards?"
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 4. Translate into Portuguese without looking back at the unit.",
+      "items": [
+        "Where do you live?",
+        "I don't work here.",
+        "We study every day.",
+        "They speak really fast.",
+        "I never speak English at home."
+      ]
+    }
+  ],
+  "answers": [
+    "catorze — dezasseis — dezassete — dezanove — quarenta e cinco — cento e vinte e oito",
+    "um — uma — duas — dois — duas — dois",
+    "Um café, se faz favor. — Quanto é tudo? — São três euros e vinte. — Tem troco de cinquenta? — A conta, se faz favor. — Aceitam cartão?",
+    "Onde é que moras? — Não trabalho aqui. — Estudamos todos os dias. — Eles falam muito depressa. — Nunca falo inglês em casa."
+  ]
+}
