@@ -44,11 +44,12 @@ import EbookLatihan, { type BerkasLatihan, type UnitLatihan } from "./EbookLatih
 import EbookPanduan, { type LangkahPanduan } from "./EbookPanduan";
 // [ebook-tts-ketuk-kata-v1]
 import {
-  bisaDibunyikan, kodeBahasaEbook, kataIndonesia, kalimatSekitar, ucapkanEbook,
+  bisaDibunyikan, kodeBahasaEbook, pengantarEbook, aturPengantarEbook, kataIndonesia, kalimatSekitar, ucapkanEbook,
   hentikanEbookTts, bukaKunciAudio, siapkanEbook, kataKepalaBaris, tanpaPenutur, jagaHangatTts,
 } from "@/lib/ebookTts";
 // [ebook-popup-kata-v1]
 import { artiKataEbook, artiTersimpan, siapkanArti, type HasilArti } from "@/lib/ebookKata";
+import { artiKataEn, artiKataEnTersimpan } from "@/lib/terjemahDek";
 import { langLabel } from "@/lib/quiz/language";
 import { kunciJejak } from "@/lib/jejakPemilik"; // [jejak-belajar-per-siswa-v1]
 
@@ -2380,6 +2381,13 @@ export default function EbookReader({
      belakangan. Tak terbaca = fitur ini diam sepenuhnya — kata Spanyol yang
      dilafalkan dengan fonem bahasa lain lebih merusak daripada tak ada suara. */
   const kodeBahasa = useMemo(() => kodeBahasaEbook(language, title), [language, title]);
+  /* [ebook-pengantar-en-v1] Modul edisi Inggris: penjelasannya bahasa Inggris,
+     jadi penjagaan "jangan bunyikan bahasa pengantar" memakai daftar Inggris.
+     Disetel saat render (bukan efek) supaya ketukan pertama sudah benar;
+     dikembalikan ke Indonesia saat reader ditutup. */
+  const pengantar = pengantarEbook(title);
+  aturPengantarEbook(pengantar);
+  useEffect(() => () => aturPengantarEbook("id"), []);
   const ttsAktif = bisaDibunyikan(kodeBahasa);
   // [tts-klik-pertama-v1] Fungsi /api/tts dibangunkan begitu reader terbuka.
   useEffect(() => (ttsAktif ? jagaHangatTts(kodeBahasa) : undefined), [ttsAktif, kodeBahasa]);
@@ -3498,8 +3506,15 @@ export default function EbookReader({
       // tak boleh ikut menunggu AI yang butuh satu-dua detik.
       const kunciArti = `${unit}|${kalimat}`;
       ucapKunciRef.current = kunciArti;
-      setArti(artiTersimpan(unit, kalimat, kodeBahasa));
-      void artiKataEbook(unit, kalimat, kodeBahasa).then((a) => {
+      /* [ebook-pengantar-en-v1] Modul edisi Inggris: arti di kartu ikut bahasa
+         pengantarnya. Rute arti menjawab bahasa Indonesia, jadi hasilnya
+         diterjemahkan lewat cache terjemahan slide yang sama. */
+      const keEn = async (a: HasilArti): Promise<HasilArti> =>
+        pengantar === "en" && a && a !== "mati" ? artiKataEn(a) : a;
+      const simpanan = artiTersimpan(unit, kalimat, kodeBahasa);
+      setArti(pengantar === "en" && simpanan && simpanan !== "mati"
+        ? artiKataEnTersimpan(simpanan) : simpanan);
+      void artiKataEbook(unit, kalimat, kodeBahasa).then(keEn).then((a) => {
         // Siswa mungkin sudah mengetuk kata lain — jangan timpa popup yang baru.
         if (ucapKunciRef.current === kunciArti) setArti(a);
       });
@@ -3507,7 +3522,7 @@ export default function EbookReader({
     setBunyi("kata");
     await ucapkanEbook(unit, kode);
     setBunyi(null);
-  }, [ttsAktif, kodeBahasa, resolusiKetuk, isiDiTitik, ke]);
+  }, [ttsAktif, kodeBahasa, pengantar, resolusiKetuk, isiDiTitik, ke]);
 
   /* [lingwords-v2] Simpan kata yang diketuk ke Lingwords: masuk simpanan kosakata
      (sama dengan Watch & Learn, origin 'ebook') supaya ikut flashcard/SRS dan

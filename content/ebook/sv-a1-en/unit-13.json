@@ -1,0 +1,542 @@
+{
+ "title": "Telling and asking",
+ "title_target": "Kom in och slå dig ner!",
+ "goal": "Build commands from the basic form of the verb, then soften them until they sound like an invitation rather than an order.",
+ "bekal": [
+  "the command form for all four verb groups",
+  "softening a command with *kan du*, *skulle du kunna* and *var snäll och*",
+  "being a guest: coming in, sitting down, eating and saying thank you"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — Middag hos Elin",
+   "intro": "Saturday evening. Elin has invited Dian to dinner at her parents' apartment in Vasastan. Dian is standing at the door with a bunch of flowers.",
+   "lines": [
+    {
+     "speaker": "Elin:",
+     "text": "Hej! Kom in och slå dig ner!",
+     "id": "Hi! Come in and sit down!",
+     "literal": "hi! come in and strike yourself down!"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Tack. Ska jag ta av mig skorna?",
+     "id": "Thanks. Should I take my shoes off?",
+     "literal": "thanks. shall I take off myself shoes-the?"
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Ja tack, ställ dem vid dörren. Vi gör alltid så här.",
+     "id": "Yes please, put them by the door. We always do it this way.",
+     "literal": "yes thanks, stand them by door-the. we do always so here."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Här är blommor till dig.",
+     "id": "Here are some flowers for you.",
+     "literal": "here are flowers to you."
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Vad fint, tack så mycket! Sätt dig, maten är nästan klar.",
+     "id": "How lovely, thank you so much! Have a seat, the food's almost ready.",
+     "literal": "what fine, thanks so much! set yourself, food-the is almost ready."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Kan jag hjälpa till med något?",
+     "id": "Can I help with anything?",
+     "literal": "can I help to with something?"
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Gärna. Skulle du kunna skära brödet?",
+     "id": "Sure. Could you slice the bread?",
+     "literal": "gladly. would you be-able cut bread-the?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Visst. Var ligger kniven?",
+     "id": "Of course. Where's the knife?",
+     "literal": "sure. where lies knife-the?"
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Titta i lådan till vänster. Och ta gärna ett glas vatten.",
+     "id": "Look in the drawer on the left. And help yourself to a glass of water.",
+     "literal": "look in drawer-the to left. and take gladly a glass water."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Tack. Det luktar fantastiskt!",
+     "id": "Thanks. It smells amazing!",
+     "literal": "thanks. it smells fantastic!"
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Varsågod, ta för dig! Och glöm inte — tack för maten efteråt.",
+     "id": "There you go, help yourself! And don't forget — say tack för maten afterwards.",
+     "literal": "you're-welcome, take for yourself! and forget not — thanks for food-the afterwards."
+    }
+   ],
+   "notes": [
+    "**The command form comes from the basic form, not from the present tense.** *Att komma* → *kom!*, *att sitta* → *sitt!*, *att ta* → *ta!*. In group 1 the command is exactly the same as the basic form: *att tala* → *tala!*, *att titta* → *titta!*. In the other groups you drop the ending.",
+    "**Slå dig ner** literally means \"strike yourself down\" — a fixed phrase meaning \"have a seat\". Together with *sätt dig* (sit down) and *ta för dig* (help yourself), these are the three phrases you will hear most often the moment you step into a Swedish home.",
+    "**Taking off your shoes is a must.** All over Sweden, shoes are left by the door — in houses, in apartments, often even in small offices. Asking *ska jag ta av mig skorna?* is always safe, and the answer is almost always yes. Tidy socks matter far more in Sweden than in most other countries.",
+    "**Varsågod** (say **vah-shoh-GOOD**) is one word that covers three situations: \"please, go ahead\" when inviting someone, \"here you are\" when handing something over, and \"you're welcome\" in reply to thanks. The plural is *varsågoda* when you speak to several people.",
+    "**Tack för maten** must be said after a meal in someone's home, by everyone who ate, without exception. Swedish children are taught it from the age of three. Skipping it gets noticed — not as rudeness, but as something odd.",
+    "**Skulle du kunna…?** is the most polite way to ask for something in Swedish, a close match for English \"would you be able to…?\". It is two steps politer than *kan du…?* and is used for requests that really put someone out."
+   ],
+   "grammars": [
+    {
+     "title": "The command form by verb group",
+     "table": {
+      "head": [
+       "Group",
+       "Basic form",
+       "Command",
+       "Example",
+       "Meaning"
+      ],
+      "rows": [
+       [
+        "**1**",
+        "att tala",
+        "**tala!**",
+        "Tala långsammare!",
+        "Speak more slowly!"
+       ],
+       [
+        "**1**",
+        "att titta",
+        "**titta!**",
+        "Titta här!",
+        "Look here!"
+       ],
+       [
+        "**2a**",
+        "att ringa",
+        "**ring!**",
+        "Ring mig ikväll!",
+        "Call me tonight!"
+       ],
+       [
+        "**2b**",
+        "att köpa",
+        "**köp!**",
+        "Köp två!",
+        "Buy two!"
+       ],
+       [
+        "**3**",
+        "att bo",
+        "**bo!**",
+        "Bo hos oss!",
+        "Stay with us!"
+       ],
+       [
+        "**4**",
+        "att komma",
+        "**kom!**",
+        "Kom in!",
+        "Come in!"
+       ],
+       [
+        "**4**",
+        "att ta",
+        "**ta!**",
+        "Ta en kaka!",
+        "Have a cookie!"
+       ]
+      ]
+     },
+     "after": [
+      "The rule fits in one sentence: **group 1 uses the basic form as it is; the other groups drop the final *-a***. Since group 1 is the biggest group, most Swedish commands end in *-a*.",
+      "To make a command negative, put *inte* **after** the verb: *Glöm inte!* (don't forget!), *Gå inte!* (don't go!), *Oroa dig inte!* (don't worry!). There is no helper like English \"don't\" — just the verb plus *inte*: literally \"forget not!\", the way Shakespeare might have said it.",
+      "A bare Swedish command sounds **much blunter** than you might expect. *Kom hit!* is an order, not an invitation. For everyday requests to people you don't know well, a question is almost always the better choice."
+     ]
+    },
+    {
+     "title": "Five levels of politeness",
+     "table": {
+      "head": [
+       "Pattern",
+       "Example",
+       "Tone"
+      ],
+      "rows": [
+       [
+        "Bare command",
+        "**Stäng** dörren.",
+        "an order — for children, close friends, emergencies"
+       ],
+       [
+        "Command + *tack*",
+        "**Stäng** dörren, tack.",
+        "neutral — in a shop, in class"
+       ],
+       [
+        "*Kan du…?*",
+        "**Kan du stänga** dörren?",
+        "normal and safe — your default choice"
+       ],
+       [
+        "*Skulle du kunna…?*",
+        "**Skulle du kunna stänga** dörren?",
+        "very polite — for a big favor"
+       ],
+       [
+        "*Var snäll och…*",
+        "**Var snäll och stäng** dörren.",
+        "polite but firm — notices and signs"
+       ]
+      ]
+     },
+     "after": [
+      "The third row is your default. When in doubt, use *kan du…?* — it is right in nine situations out of ten, and never sounds rude or over the top.",
+      "Notice that **none of them uses a word for \"please\"** — because Swedish doesn't really have one. Where English leans on \"please\", Swedish carries politeness in the shape of the sentence and in *tack*, not in a single magic word."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Visiting a Swedish home",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Svenska",
+      "When you say it",
+      "English"
+     ],
+     "rows": [
+      [
+       "Kom in!",
+       "opening the door",
+       "Come in!"
+      ],
+      [
+       "Ta av dig skorna.",
+       "in the hallway",
+       "Take your shoes off."
+      ],
+      [
+       "Slå dig ner. / Sätt dig.",
+       "pointing to a chair",
+       "Have a seat."
+      ],
+      [
+       "Vill du ha något att dricka?",
+       "once you're seated",
+       "Would you like something to drink?"
+      ],
+      [
+       "Varsågod!",
+       "handing something over",
+       "Here you are."
+      ],
+      [
+       "Ta för dig!",
+       "the food is on the table",
+       "Help yourself!"
+      ],
+      [
+       "Smaklig måltid!",
+       "before eating",
+       "Enjoy your meal."
+      ],
+      [
+       "Tack för maten!",
+       "after eating",
+       "Thank you for the meal."
+      ],
+      [
+       "Tack för ikväll!",
+       "when saying goodbye",
+       "Thank you for this evening."
+      ],
+      [
+       "Tack för senast!",
+       "the next time you meet",
+       "Thanks for last time."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Tack för senast** deserves its own explanation: if someone has had you over, you say it again **the next time you see them**, whenever that is — a week later, a month later. It is a very Swedish habit and people notice it; leaving it out makes you seem unappreciative of their hospitality."
+    },
+    {
+     "type": "kotak",
+     "title": "Be on time",
+     "items": [
+      "If the invitation says 6:00 p.m., arrive at 6:00 — not 6:20. Fifteen minutes late counts as genuinely late in Sweden, and your host will usually have timed the food to the minute.",
+      "Arriving **early** is not polite either. If you happen to get there ten minutes early, wait outside.",
+      "Your lifesaver if you are late: **Förlåt att jag är sen!** — Sorry I'm late!"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Food on the table",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Svenska",
+      "Pronunciation",
+      "English"
+     ],
+     "rows": [
+      [
+       "mat",
+       "maht",
+       "food"
+      ],
+      [
+       "kött",
+       "shöt",
+       "meat"
+      ],
+      [
+       "kyckling",
+       "SHÜK-ling",
+       "chicken"
+      ],
+      [
+       "fisk",
+       "fisk",
+       "fish"
+      ],
+      [
+       "potatis",
+       "poo-TAH-tis",
+       "potatoes"
+      ],
+      [
+       "ris",
+       "rees",
+       "rice"
+      ],
+      [
+       "grönsaker",
+       "GRÖN-sah-ker",
+       "vegetables"
+      ],
+      [
+       "frukt",
+       "frükt",
+       "fruit"
+      ],
+      [
+       "salt / peppar",
+       "sahlt · PEP-pahr",
+       "salt / pepper"
+      ],
+      [
+       "en kniv / en gaffel",
+       "en kneev · en GAHF-fel",
+       "knife / fork"
+      ],
+      [
+       "en sked / en tallrik",
+       "en hwehd · en TAHL-rik",
+       "spoon / plate"
+      ],
+      [
+       "en kaka / en bulle",
+       "en KAH-kah · en BÜL-leh",
+       "cookie, cake / sweet bun"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**En kanelbulle** — a sweet rolled bun filled with cinnamon — is the star of the Swedish *fika* table, and it even has its own national day every October 4. If you are invited for *fika*, bringing a bag of *bullar* from the bakery is always welcome."
+    },
+    {
+     "type": "kotak",
+     "title": "Spiral review — back to Unit 11",
+     "items": [
+      "Name ten places in town from Unit 11, each with its preposition: *på banken*, *i affären*, and so on.",
+      "Then turn them into commands: *Gå till banken!*, *Titta i affären!*, *Vänta vid kyrkan!*",
+      "Finally, soften all five into questions: *Kan du gå till banken?*"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "sv": "att komma in",
+   "baca": "aht KOM-mah in",
+   "en": "to come in"
+  },
+  {
+   "sv": "att sätta sig",
+   "baca": "aht SET-tah say",
+   "en": "to sit down"
+  },
+  {
+   "sv": "att ta av sig",
+   "baca": "aht tah ahv say",
+   "en": "to take off (clothes)"
+  },
+  {
+   "sv": "att ställa",
+   "baca": "aht STEL-lah",
+   "en": "to put (standing up)"
+  },
+  {
+   "sv": "att skära",
+   "baca": "aht HWEH-rah",
+   "en": "to cut, to slice"
+  },
+  {
+   "sv": "att glömma",
+   "baca": "aht GLÖM-mah",
+   "en": "to forget"
+  },
+  {
+   "sv": "att lukta",
+   "baca": "aht LÜK-tah",
+   "en": "to smell"
+  },
+  {
+   "sv": "att smaka",
+   "baca": "aht SMAH-kah",
+   "en": "to taste"
+  },
+  {
+   "sv": "varsågod",
+   "baca": "vah-shoh-GOOD",
+   "en": "here you are, you're welcome"
+  },
+  {
+   "sv": "förlåt",
+   "baca": "fö-LOHT",
+   "en": "sorry"
+  },
+  {
+   "sv": "en blomma",
+   "baca": "en BLOM-mah",
+   "en": "flower"
+  },
+  {
+   "sv": "en kniv",
+   "baca": "en kneev",
+   "en": "knife"
+  },
+  {
+   "sv": "en gaffel",
+   "baca": "en GAHF-fel",
+   "en": "fork"
+  },
+  {
+   "sv": "en tallrik",
+   "baca": "en TAHL-rik",
+   "en": "plate"
+  },
+  {
+   "sv": "en låda",
+   "baca": "en LOH-dah",
+   "en": "drawer, box"
+  },
+  {
+   "sv": "ett bröd",
+   "baca": "et bröd",
+   "en": "bread"
+  },
+  {
+   "sv": "kött",
+   "baca": "shöt",
+   "en": "meat"
+  },
+  {
+   "sv": "kyckling",
+   "baca": "SHÜK-ling",
+   "en": "chicken"
+  },
+  {
+   "sv": "grönsaker",
+   "baca": "GRÖN-sah-ker",
+   "en": "vegetables"
+  },
+  {
+   "sv": "en kanelbulle",
+   "baca": "en kah-NEHL-bül-leh",
+   "en": "cinnamon bun"
+  },
+  {
+   "sv": "sen",
+   "baca": "sehn",
+   "en": "late"
+  },
+  {
+   "sv": "fint",
+   "baca": "fint",
+   "en": "nice, lovely"
+  },
+  {
+   "sv": "efteråt",
+   "baca": "EF-ter-oht",
+   "en": "afterwards"
+  },
+  {
+   "sv": "så här",
+   "baca": "soh hehr",
+   "en": "like this"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Write the command form. Example: *att tala* → *tala!*",
+   "items": [
+    "att komma",
+    "att titta",
+    "att ringa",
+    "att köpa",
+    "att ta",
+    "att vänta"
+   ]
+  },
+  {
+   "prompt": "Soften each one into a request with *Kan du…?* Example: *Stäng dörren!* → *Kan du stänga dörren?*",
+   "items": [
+    "Hjälp mig!",
+    "Öppna fönstret!",
+    "Skär brödet!",
+    "Ring mig ikväll!",
+    "Vänta här!"
+   ]
+  },
+  {
+   "prompt": "Fill in the right phrase: *varsågod*, *tack för maten*, *förlåt att jag är sen*, *ta av dig skorna*, *smaklig måltid*.",
+   "items": [
+    "You have just arrived at a Swedish home and are standing in the hallway: ____",
+    "You hand your host some flowers and she thanks you; you reply: ____",
+    "Everyone is seated and the food has been served: ____",
+    "You have finished eating and are getting up from the table: ____",
+    "You arrive twenty minutes after the time on the invitation: ____"
+   ]
+  },
+  {
+   "prompt": "Translate into Swedish.",
+   "items": [
+    "Come in and sit down!",
+    "Don't forget the key!",
+    "Could you slice the bread?",
+    "Should I take my shoes off?",
+    "Thank you for the meal!"
+   ]
+  }
+ ],
+ "answers": [
+  "kom! — titta! — ring! — köp! — ta! — vänta!",
+  "Kan du hjälpa mig? — Kan du öppna fönstret? — Kan du skära brödet? — Kan du ringa mig ikväll? — Kan du vänta här?",
+  "ta av dig skorna — varsågod — smaklig måltid — tack för maten — förlåt att jag är sen",
+  "Kom in och sätt dig! — Glöm inte nyckeln! — Skulle du kunna skära brödet? — Ska jag ta av mig skorna? — Tack för maten!"
+ ]
+}

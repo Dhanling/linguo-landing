@@ -1,0 +1,534 @@
+{
+ "title": "Going shopping",
+ "title_target": "Vad kostar det?",
+ "goal": "Buy things, ask about prices, pay without cash, and understand the phrases a Swedish cashier rattles off at top speed.",
+ "bekal": [
+  "set phrases for shops, cafés and the checkout",
+  "*finns det…?* — the way to ask whether something is available",
+  "sizes, amounts and shopping units"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — På ICA och på caféet",
+   "intro": "Thursday afternoon. Dian is shopping at ICA before stopping by the campus café with Oskar.",
+   "lines": [
+    {
+     "speaker": "Dian:",
+     "text": "Ursäkta, finns det ris här?",
+     "id": "Excuse me, is there any rice here?",
+     "literal": "excuse, is-found it rice here?"
+    },
+    {
+     "speaker": "Personalen:",
+     "text": "Ja, i gång fyra, bredvid pastan.",
+     "id": "Yes, in aisle four, next to the pasta.",
+     "literal": "yes, in aisle four, beside pasta-the."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Tack. Och vad kostar den här osten?",
+     "id": "Thanks. And how much is this cheese?",
+     "literal": "thanks. and what costs the here cheese-the?"
+    },
+    {
+     "speaker": "Personalen:",
+     "text": "Sextionio kronor kilot. Den är på extrapris den här veckan.",
+     "id": "Sixty-nine kronor a kilo. It's on special offer this week.",
+     "literal": "sixty-nine kronor kilo-the. it is on extra-price the here week-the."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Då tar jag en bit. Var betalar man?",
+     "id": "Then I'll take a piece. Where do I pay?",
+     "literal": "then take I a piece. where pays one?"
+    },
+    {
+     "speaker": "Personalen:",
+     "text": "Vid självutcheckningen, eller i kassa två.",
+     "id": "At the self-checkout, or at checkout two.",
+     "literal": "at self-out-checking-the, or in checkout two."
+    },
+    {
+     "speaker": "Kassören:",
+     "text": "Hej! Vill du ha kvitto? Och har du ICA-kort?",
+     "id": "Hi! Do you want a receipt? And do you have an ICA card?",
+     "literal": "hi! want you have receipt? and have you ICA-card?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Nej tack, inget kvitto. Och nej, jag har inget kort.",
+     "id": "No thanks, no receipt. And no, I don't have a card.",
+     "literal": "no thanks, no receipt. and no, I have no card."
+    },
+    {
+     "speaker": "Kassören:",
+     "text": "Det blir tvåhundrafemton kronor. Kort eller Swish?",
+     "id": "That'll be two hundred and fifteen kronor. Card or Swish?",
+     "literal": "it becomes two-hundred-fifteen kronor. card or Swish?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Kort, tack.",
+     "id": "Card, please.",
+     "literal": "card, thanks."
+    },
+    {
+     "speaker": "Oskar:",
+     "text": "Och på caféet sen — vill du ha en kaffe och en bulle?",
+     "id": "And at the café later — would you like a coffee and a bun?",
+     "literal": "and at café-the later — want you have a coffee and a bun?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Gärna. Men den här gången bjuder jag.",
+     "id": "I'd love to. But this time it's my treat.",
+     "literal": "gladly. but the here time-the treat I."
+    }
+   ],
+   "notes": [
+    "**Finns det…?** is how you ask whether something is available: \"is there…? / are there…?\". *Finns* comes from *att finnas* (to exist, to be found), and it always goes with *det*, however many things you mean: *Finns det ris?*, *Finns det billiga hotell?* Unlike English, you don't switch between \"is there\" and \"are there\". The same pattern works for telling: *Det finns ett apotek vid torget.*",
+    "**Det blir…** is the cashier phrase you will hear most — literally \"it becomes…\", meaning \"that'll be…\". The verb *bli* (to become) turns up in lots of unexpected places: *det blir bra* (it'll be fine), *det blir kallt* (it's going to be cold), *vi blir fem* (there will be five of us).",
+    "**Swish** is a phone-number-based payment app used by almost everyone in Sweden. Together with cards, it has almost completely replaced cash: many shops, cafés and even churches put up signs saying *Vi tar inte kontanter* (we don't accept cash). Arriving in Sweden with nothing but banknotes is the quickest way to go hungry.",
+    "**Extrapris** means sale price; other words worth recognizing on the shelves: *rea* (sale), *erbjudande* (offer), *stammis* (regular customer), *bäst före* (best before). That last one is not the expiry date — for that, the label says *sista förbrukningsdag*.",
+    "**Jag bjuder** means \"it's my treat\". The verb *bjuda* also means \"to invite\": *jag bjuder dig på middag* can mean inviting someone to dinner and paying for it. Bear in mind that splitting the bill is the standard habit in Sweden — offering to pay is a special gesture, not automatic politeness.",
+    "**Inget kvitto** uses *inget*, not *inte*. To negate a **noun**, Swedish uses *ingen/inget/inga* — the form follows the gender and number of the noun, just like an adjective: *ingen bok*, *inget kort*, *inga pengar*. English does the same with \"no\" (no book, no card, no money) — Swedish just has three shapes of it."
+   ],
+   "grammars": [
+    {
+     "title": "Ingen, inget, inga",
+     "body": [
+      "You already use *inte* to negate a sentence. To negate a noun, there is a separate family of words:"
+     ],
+     "table": {
+      "head": [
+       "Type",
+       "Form",
+       "Example",
+       "Same meaning as"
+      ],
+      "rows": [
+       [
+        "*en*-word",
+        "**ingen**",
+        "Jag har **ingen** bil.",
+        "Jag har inte någon bil."
+       ],
+       [
+        "*ett*-word",
+        "**inget**",
+        "Jag har **inget** kort.",
+        "Jag har inte något kort."
+       ],
+       [
+        "plural",
+        "**inga**",
+        "Jag har **inga** pengar.",
+        "Jag har inte några pengar."
+       ],
+       [
+        "on its own",
+        "**ingenting**",
+        "Jag ser **ingenting**.",
+        "Jag ser inte något."
+       ],
+       [
+        "people",
+        "**ingen**",
+        "**Ingen** vet.",
+        "Nobody knows."
+       ]
+      ]
+     },
+     "after": [
+      "The last column shows that there are always two ways to say the same thing — just as English has \"I have no car\" and \"I don't have a car\". The *ingen* form is shorter and more common in simple sentences; the *inte någon* form is required when there is a helper verb: *Jag kan **inte** hitta **någon** nyckel* — not *jag kan ingen nyckel hitta*.",
+      "**Ingenting** (nothing) and **ingen** (nobody) stand on their own without a noun. Their positive cousins: *någonting/något* (something) and *någon* (somebody)."
+     ]
+    },
+    {
+     "title": "Checkout phrases, word by word",
+     "table": {
+      "head": [
+       "What you hear",
+       "Meaning",
+       "Your answer"
+      ],
+      "rows": [
+       [
+        "**Hej hej!**",
+        "Hello!",
+        "Hej!"
+       ],
+       [
+        "**Var det bra så?**",
+        "Is that everything?",
+        "Ja tack. / Nej, jag vill ha…"
+       ],
+       [
+        "**Har du medlemskort?**",
+        "Do you have a membership card?",
+        "Nej, tack."
+       ],
+       [
+        "**Vill du ha kvitto?**",
+        "Do you want a receipt?",
+        "Nej tack. / Ja tack."
+       ],
+       [
+        "**Det blir 215 kronor.**",
+        "That'll be 215 kronor.",
+        "(pay)"
+       ],
+       [
+        "**Kort eller Swish?**",
+        "Card or Swish?",
+        "Kort, tack."
+       ],
+       [
+        "**Tryck på grön knapp.**",
+        "Press the green button.",
+        "(press)"
+       ],
+       [
+        "**Ha en fortsatt bra dag!**",
+        "Have a nice rest of your day!",
+        "Detsamma! / Tack, du med!"
+       ]
+      ]
+     },
+     "after": [
+      "These phrases come out very fast, with hardly a pause, because cashiers say them hundreds of times a day. Don't panic: you can get through an entire Swedish checkout with three words — *hej*, *nej tack*, *tack*.",
+      "**Detsamma!** means \"you too!\" and is the standard reply to any good wishes. Alternatives: *tack detsamma* or *du med*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Shopping: items, sizes, amounts",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Svenska",
+      "Pronunciation",
+      "English"
+     ],
+     "rows": [
+      [
+       "en matbutik",
+       "en MAHT-bü-teek",
+       "grocery store"
+      ],
+      [
+       "en kundvagn",
+       "en KÜND-vahngn",
+       "shopping cart"
+      ],
+      [
+       "en kasse",
+       "en KAHS-seh",
+       "shopping bag"
+      ],
+      [
+       "ett kvitto",
+       "et KVIT-too",
+       "receipt"
+      ],
+      [
+       "en kassa",
+       "en KAHS-sah",
+       "checkout"
+      ],
+      [
+       "ett kort",
+       "et koht",
+       "card"
+      ],
+      [
+       "kontanter",
+       "kon-TAHN-ter",
+       "cash"
+      ],
+      [
+       "ett pris",
+       "et prees",
+       "price"
+      ],
+      [
+       "en rea",
+       "en REH-ah",
+       "sale"
+      ],
+      [
+       "en storlek",
+       "en STOOR-lehk",
+       "size"
+      ],
+      [
+       "ett kilo / ett hekto",
+       "et SHEE-loo · et HEK-too",
+       "kilogram / 100 grams"
+      ],
+      [
+       "en påse / en burk",
+       "en POH-seh · en bürk",
+       "bag / can, jar"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Ett hekto** (100 grams) is a unit still alive and well in Sweden, though most other countries have dropped it. At the meat and cheese counter, people order *två hekto skinka* (200 grams of ham). If you say grams, the staff will still understand — but *hekto* is what you will hear."
+    },
+    {
+     "type": "kotak",
+     "title": "Phrases you will say",
+     "items": [
+      "**Jag skulle vilja ha…** — I would like… (the politest form in shops and restaurants)",
+      "**Finns det…?** — Is there…? / Do you have…?",
+      "**Har ni den här i storlek M?** — Do you have this in a medium?",
+      "**Kan jag få prova?** — Can I try it on?",
+      "**Vad kostar det?** — How much is it?",
+      "**Det är för dyrt.** — It's too expensive.",
+      "**Jag tittar bara, tack.** — I'm just looking, thanks."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "At the café and restaurant",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Svenska",
+      "English"
+     ],
+     "rows": [
+      [
+       "Ett bord för två, tack.",
+       "A table for two, please."
+      ],
+      [
+       "Kan jag få se menyn?",
+       "Could I see the menu?"
+      ],
+      [
+       "Jag tar dagens rätt.",
+       "I'll have the dish of the day."
+      ],
+      [
+       "Har ni något vegetariskt?",
+       "Do you have anything vegetarian?"
+      ],
+      [
+       "Jag är allergisk mot nötter.",
+       "I'm allergic to nuts."
+      ],
+      [
+       "Kan vi få notan, tack?",
+       "Could we have the check, please?"
+      ],
+      [
+       "Vi delar på notan.",
+       "We're splitting the check."
+      ],
+      [
+       "Påtår?",
+       "Refill? (free in many cafés)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Dagens rätt** — often written just *dagens* — is the fixed-price lunch that almost every Swedish restaurant serves on weekdays, usually from 11 a.m. to 2 p.m. It costs far less than the dinner menu and usually includes salad, bread and coffee. It is the cheapest way to eat out in Sweden."
+    },
+    {
+     "type": "p",
+     "text": "**Påtår** means your second cup of coffee, and in many cafés it is **free** — ask *ingår påtår?* (is a refill included?). English \"refill\" only gets you halfway: Swedish has a dedicated word for that second cup, which tells you a lot about the place of coffee in Swedish culture."
+    },
+    {
+     "type": "kotak",
+     "title": "Spiral review — back to Unit 12",
+     "items": [
+      "Give the three forms of five adjectives: stor, ny, liten, gammal, billig.",
+      "Then use them in shopping sentences: *Har ni en billigare tröja?*, *Den här är för dyr*, *Jag vill ha den lilla påsen*.",
+      "Finally, ask the price of five things around you using *Vad kostar…?* and answer with Swedish numbers."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "sv": "att finnas / finns",
+   "baca": "aht FIN-nahs · fins",
+   "en": "to exist, there is / there are"
+  },
+  {
+   "sv": "att kosta",
+   "baca": "aht KOS-tah",
+   "en": "to cost"
+  },
+  {
+   "sv": "att betala",
+   "baca": "aht beh-TAH-lah",
+   "en": "to pay"
+  },
+  {
+   "sv": "att bli",
+   "baca": "aht blee",
+   "en": "to become"
+  },
+  {
+   "sv": "att bjuda",
+   "baca": "aht BYÜ-dah",
+   "en": "to treat (pay for), to invite"
+  },
+  {
+   "sv": "att prova",
+   "baca": "aht PROO-vah",
+   "en": "to try (on)"
+  },
+  {
+   "sv": "att dela",
+   "baca": "aht DEH-lah",
+   "en": "to share, to split"
+  },
+  {
+   "sv": "ingen / inget / inga",
+   "baca": "ING-en · ING-et",
+   "en": "no, none"
+  },
+  {
+   "sv": "något / någon",
+   "baca": "NOH-got · NOH-gon",
+   "en": "something / somebody"
+  },
+  {
+   "sv": "ett kvitto",
+   "baca": "et KVIT-too",
+   "en": "receipt"
+  },
+  {
+   "sv": "ett kort",
+   "baca": "et koht",
+   "en": "card"
+  },
+  {
+   "sv": "kontanter",
+   "baca": "kon-TAHN-ter",
+   "en": "cash"
+  },
+  {
+   "sv": "pengar",
+   "baca": "PENG-ahr",
+   "en": "money"
+  },
+  {
+   "sv": "ett pris",
+   "baca": "et prees",
+   "en": "price"
+  },
+  {
+   "sv": "en storlek",
+   "baca": "en STOOR-lehk",
+   "en": "size"
+  },
+  {
+   "sv": "en påse",
+   "baca": "en POH-seh",
+   "en": "bag, packet"
+  },
+  {
+   "sv": "en meny",
+   "baca": "en meh-NÜ",
+   "en": "menu"
+  },
+  {
+   "sv": "en nota",
+   "baca": "en NOO-tah",
+   "en": "check, bill"
+  },
+  {
+   "sv": "dagens rätt",
+   "baca": "DAH-gens ret",
+   "en": "dish of the day"
+  },
+  {
+   "sv": "en bit",
+   "baca": "en beet",
+   "en": "piece"
+  },
+  {
+   "sv": "en gång",
+   "baca": "en gong",
+   "en": "time (occasion); aisle"
+  },
+  {
+   "sv": "extrapris",
+   "baca": "EKS-trah-prees",
+   "en": "sale price"
+  },
+  {
+   "sv": "allergisk mot",
+   "baca": "ah-LEHR-gisk moot",
+   "en": "allergic to"
+  },
+  {
+   "sv": "detsamma",
+   "baca": "det-SAHM-mah",
+   "en": "you too, same to you"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Fill in *ingen*, *inget* or *inga*.",
+   "items": [
+    "Jag har ____ kort.",
+    "Vi har ____ pengar.",
+    "Hon har ____ bil.",
+    "Det finns ____ mjölk kvar.",
+    "Han har ____ syskon.",
+    "Jag vill ha ____ kvitto."
+   ]
+  },
+  {
+   "prompt": "Fill in the right phrase: *Vad kostar det?*, *Finns det ris här?*, *Kort, tack.*, *Nej tack.*, *Kan vi få notan, tack?*",
+   "items": [
+    "You are looking for rice on the store shelves: ____",
+    "You want to know the price of a piece of cheese: ____",
+    "The cashier asks *Vill du ha kvitto?* and you don't want one: ____",
+    "The cashier asks *Kort eller Swish?*: ____",
+    "You have finished eating at a restaurant: ____"
+   ]
+  },
+  {
+   "prompt": "Put the words in the right order.",
+   "items": [
+    "kostar / den / vad / här / osten / ?",
+    "det / här / finns / ris / ?",
+    "kronor / blir / tvåhundra / det",
+    "kort / jag / inget / har",
+    "gången / bjuder / den / här / jag"
+   ]
+  },
+  {
+   "prompt": "Translate into Swedish.",
+   "items": [
+    "Is there any rice here?",
+    "How much is it?",
+    "That'll be two hundred and fifteen kronor.",
+    "I don't have any cash.",
+    "Could we have the check, please?"
+   ]
+  }
+ ],
+ "answers": [
+  "inget — inga — ingen — ingen — inga — inget",
+  "Finns det ris här? — Vad kostar det? — Nej tack. — Kort, tack. — Kan vi få notan, tack?",
+  "Vad kostar den här osten? — Finns det ris här? — Det blir tvåhundra kronor. — Jag har inget kort. — Den här gången bjuder jag.",
+  "Finns det ris här? — Vad kostar det? — Det blir tvåhundrafemton kronor. — Jag har inga kontanter. — Kan vi få notan, tack?"
+ ]
+}

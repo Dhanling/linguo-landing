@@ -1,0 +1,514 @@
+{
+ "title": "Your own or someone else's",
+ "title_target": "Han ringer sin mamma",
+ "goal": "Master *sin/sitt/sina* — a word modern English no longer has, which separates \"his own mother\" from \"someone else's mother\" without a single extra word.",
+ "bekal": [
+  "when to use *sin/sitt/sina* and when to use *hans/hennes/deras*",
+  "one test that always works: who is the subject of the sentence?",
+  "the verbs *ringa* and *hälsa på*, and the business of calling family"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — Söndagssamtalet",
+   "intro": "Sunday afternoon. Oskar has just hung up the phone. Dian, who has just done the same with her family in Bandung, is curious about Swedish family habits.",
+   "lines": [
+    {
+     "speaker": "Dian:",
+     "text": "Vem pratade du med?",
+     "id": "Who were you talking to?",
+     "literal": "who talked you with?"
+    },
+    {
+     "speaker": "Oskar:",
+     "text": "Jag ringde min mamma. Jag ringer henne varje söndag.",
+     "id": "I called my mom. I call her every Sunday.",
+     "literal": "I called my mom. I call her every Sunday."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Ringer Elin också sin mamma på söndagar?",
+     "id": "Does Elin call her mom on Sundays too?",
+     "literal": "calls Elin also her-own mom on Sundays?"
+    },
+    {
+     "speaker": "Oskar:",
+     "text": "Nej, hon ringer sin pappa. Hennes mamma bor i Norge.",
+     "id": "No, she calls her dad. Her mom lives in Norway.",
+     "literal": "no, she calls her-own dad. her mom lives in Norway."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Vänta — sin pappa och hennes mamma? Varför inte samma ord?",
+     "id": "Wait — sin pappa and hennes mamma? Why not the same word?",
+     "literal": "wait — her-own dad and her mom? why not same word?"
+    },
+    {
+     "speaker": "Oskar:",
+     "text": "För att Elin är den som ringer. Då säger vi sin.",
+     "id": "Because Elin is the one doing the calling. So we say sin.",
+     "literal": "for that Elin is the-one who calls. then say we sin."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Och i andra meningen är mamman ämnet, inte Elin.",
+     "id": "And in the second sentence, the mom is the subject, not Elin.",
+     "literal": "and in second sentence-the is mom-the subject-the, not Elin."
+    },
+    {
+     "speaker": "Oskar:",
+     "text": "Precis! Du fattar snabbt.",
+     "id": "Exactly! You catch on fast.",
+     "literal": "exactly! you get-it quickly."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Ett till: Ahmad tog sin cykel eller hans cykel?",
+     "id": "One more: Ahmad took sin cykel or hans cykel?",
+     "literal": "one more: Ahmad took his-own bike or his bike?"
+    },
+    {
+     "speaker": "Oskar:",
+     "text": "Sin, om det är hans egen. Hans, om det är någon annans.",
+     "id": "Sin, if it's his own. Hans, if it's someone else's.",
+     "literal": "sin, if it is his own. hans, if it is someone else's."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Då tog han hans cykel. Min cykel står ju kvar!",
+     "id": "Then he took someone else's bike. Mine's still here, after all!",
+     "literal": "then took he his bike. my bike stands after-all still!"
+    }
+   ],
+   "notes": [
+    "**The test that always works:** ask *who is the subject of this sentence?* If the owner of the thing **is the subject**, use *sin/sitt/sina*. If the owner is **someone else**, use *hans/hennes/deras*. There are no exceptions at A1 level.",
+    "**Han ringer sin mamma** = he calls his (own) mother. **Han ringer hans mamma** = he calls his (some other man's) mother. The two sentences mean different things and both are grammatically correct, so nobody will correct you — people will simply understand something you didn't mean.",
+    "**Sin is never the subject.** You will never see a sentence that starts with *sin*. It always sits in a part of the sentence that is **not** the subject: the object, an adverbial, or after a preposition. If you are tempted to write *Sin mamma ringer…*, that's a sign the sentence should be *Hans mamma ringer…*",
+    "**Ringde** is the past tense of *ringa* — group 2a, so the ending is *-de*. The past tense is covered fully in Unit 15; for now, just recognize that *-de* and *-te* at the end of a verb mean past time — much like English *-ed*.",
+    "**Fatta** means \"get it, catch on\" in everyday speech — more casual than *förstå*. *Jag fattar inte* (I don't get it) is heard constantly among young people, while *jag förstår inte* (I don't understand) is more neutral and safe in any situation.",
+    "**Ju** in *Min cykel står ju kvar* is a flavoring word meaning roughly \"after all\" or \"you know\" — it reminds the listener of something they already know. Together with *nog* (probably) and *väl* (surely?), these three words often go untranslated but change the whole feel of a sentence."
+   ],
+   "grammars": [
+    {
+     "title": "Sin, sitt, sina",
+     "body": [
+      "The form follows the thing owned, exactly like *min/mitt/mina*. What decides whether to use it at all is the subject of the sentence."
+     ],
+     "table": {
+      "head": [
+       "The thing owned",
+       "Form",
+       "Example",
+       "Meaning"
+      ],
+      "rows": [
+       [
+        "*en*-word",
+        "**sin**",
+        "Han ringer **sin** mamma.",
+        "his own mother"
+       ],
+       [
+        "*ett*-word",
+        "**sitt**",
+        "Hon tar **sitt** paraply.",
+        "her own umbrella"
+       ],
+       [
+        "plural",
+        "**sina**",
+        "De städar **sina** rum.",
+        "their own rooms"
+       ],
+       [
+        "someone else's",
+        "hans / hennes / deras",
+        "Han ringer **hennes** mamma.",
+        "that woman's mother"
+       ]
+      ]
+     },
+     "after": [
+      "**Sin is only for the third person.** With *jag*, *du*, *vi*, *ni* the question never comes up: in *jag ringer min mamma* it is already clear whose mother it is. So the whole *sin* business only concerns *han*, *hon*, *den*, *det* and *de*.",
+      "When the subject is plural, the form is still *sin/sitt/sina* — not *deras*: *De städar **sina** rum* (they clean their own rooms) vs *De städar **deras** rum* (they clean other people's rooms).",
+      "Norwegian and Danish have exactly the same word, and so did Latin (*suus*). English lost it, which is why *he called his mother* is genuinely ambiguous in English — his own mother, or another man's? That ambiguity never happens in Swedish."
+     ]
+    },
+    {
+     "title": "Four sentences that show the difference",
+     "table": {
+      "head": [
+       "Sentence",
+       "Subject",
+       "Meaning"
+      ],
+      "rows": [
+       [
+        "Anna älskar **sin** bror.",
+        "Anna",
+        "Anna loves her (own) brother."
+       ],
+       [
+        "Anna älskar **hennes** bror.",
+        "Anna",
+        "Anna loves her (another woman's) brother."
+       ],
+       [
+        "**Hennes** bror är student.",
+        "brodern",
+        "Her brother is a student. (*sin* is impossible here)"
+       ],
+       [
+        "Anna och **hennes** bror bor här.",
+        "Anna och brodern",
+        "Both of them are part of the subject, so not *sin*."
+       ]
+      ]
+     },
+     "after": [
+      "The fourth row is the trap that catches even intermediate learners: once the owner **is part of the subject itself** (*Anna och hennes bror*), *sin* can no longer be used. The reason makes sense when you think about it: *sin* always points **back** to the subject, and something can't point back to itself inside the same subject.",
+      "For A1, the first three rows are enough. The fourth row is here so you recognize it when you meet it later — not for memorizing now."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Calling and visiting",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Svenska",
+      "Pronunciation",
+      "English"
+     ],
+     "rows": [
+      [
+       "att ringa",
+       "aht RING-ah",
+       "to call, to phone"
+      ],
+      [
+       "att ringa upp",
+       "aht RING-ah üp",
+       "to call (someone up)"
+      ],
+      [
+       "ett samtal",
+       "et SAHM-tahl",
+       "conversation, phone call"
+      ],
+      [
+       "att svara",
+       "aht SVAH-rah",
+       "to answer"
+      ],
+      [
+       "att höra av sig",
+       "aht HÖ-rah ahv say",
+       "to get in touch"
+      ],
+      [
+       "att hälsa på",
+       "aht HEL-sah poh",
+       "to visit"
+      ],
+      [
+       "att hälsa",
+       "aht HEL-sah",
+       "to greet, to say hello"
+      ],
+      [
+       "att sakna",
+       "aht SAHK-nah",
+       "to miss (someone)"
+      ],
+      [
+       "att skicka",
+       "aht SHIK-kah",
+       "to send"
+      ],
+      [
+       "ett meddelande",
+       "et meh-DEH-lahn-deh",
+       "message"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Hälsa på** and **hälsa** are a treacherous pair. With the particle *på*, stressed, it means \"visit\": *jag ska hälsa **på** min mormor* (I'm going to visit my grandma). Without the particle, it means \"greet\": *hälsa till din familj!* (say hello to your family!). Think of English *call* vs *call on*: one small word changes the meaning — and in Swedish the stress on *på* makes the difference perfectly clear to a Swedish ear."
+    },
+    {
+     "type": "kotak",
+     "title": "On the phone in Swedish",
+     "items": [
+      "**Hej, det är Dian.** — Hi, it's Dian. (not *jag är* — on the phone it's always *det är*, just like English \"it's Dian\", not \"I am Dian\")",
+      "**Kan jag få prata med Elin?** — Could I speak to Elin?",
+      "**Ett ögonblick.** — Just a moment.",
+      "**Hon är inte hemma just nu.** — She's not home right now.",
+      "**Kan du be henne ringa mig?** — Could you ask her to call me?",
+      "**Vi hörs!** — Talk soon! (the most common way to end a call)"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Object pronouns, and yourself",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Before leaving this unit, one short table to round it off: pronouns when they are the **object**, not the subject. English does the same thing (*I → me*, *he → him*), so the idea is already familiar."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Subject",
+      "Object",
+      "Pronunciation",
+      "Example"
+     ],
+     "rows": [
+      [
+       "jag",
+       "**mig**",
+       "may",
+       "Han ser mig."
+      ],
+      [
+       "du",
+       "**dig**",
+       "day",
+       "Jag ser dig."
+      ],
+      [
+       "han",
+       "**honom**",
+       "HON-nom",
+       "Vi ringer honom."
+      ],
+      [
+       "hon",
+       "**henne**",
+       "HEN-neh",
+       "Jag träffar henne."
+      ],
+      [
+       "den / det",
+       "den / det",
+       "den · deh",
+       "Jag tar den."
+      ],
+      [
+       "vi",
+       "**oss**",
+       "os",
+       "De hjälper oss."
+      ],
+      [
+       "ni",
+       "**er**",
+       "ehr",
+       "Vi ser er."
+      ],
+      [
+       "de",
+       "**dem**",
+       "dom",
+       "Jag känner dem."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Dem is pronounced \"dom\", exactly like *de*.** Because they sound identical, Swedes themselves often mix up which one is the subject and which the object in writing — the \"de or dem\" debate is a national spelling quarrel that never ends. A bit like English *who* vs *whom*, or *I* vs *me* in \"between you and me\". You may take comfort in that."
+    },
+    {
+     "type": "p",
+     "text": "For verbs that turn back on the subject (reflexive verbs), the object form in the third person becomes **sig** (pronounced \"say\") — like English *himself / herself / themselves*: *han tvättar sig* (he washes himself), *hon sätter sig* (she sits down), *de klär på sig* (they get dressed). A direct cousin of *sin* — and the same test applies."
+    },
+    {
+     "type": "kotak",
+     "title": "Spiral review — back to Unit 8",
+     "items": [
+      "Name the six helping verbs from Unit 8 and their meanings without looking, then make one sentence with each.",
+      "Combine them with this unit: *Han måste ringa sin mamma*, *Hon vill hälsa på sina föräldrar*, *De ska städa sina rum*.",
+      "Notice that the helping verb changes nothing about *sin* — what decides is still who the subject is."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "sv": "sin / sitt / sina",
+   "baca": "sin · sit · SEE-nah",
+   "en": "his/her/its/their own"
+  },
+  {
+   "sv": "sig",
+   "baca": "say",
+   "en": "himself, herself, themselves"
+  },
+  {
+   "sv": "honom",
+   "baca": "HON-nom",
+   "en": "him"
+  },
+  {
+   "sv": "henne",
+   "baca": "HEN-neh",
+   "en": "her"
+  },
+  {
+   "sv": "oss",
+   "baca": "os",
+   "en": "us"
+  },
+  {
+   "sv": "dem",
+   "baca": "dom",
+   "en": "them"
+  },
+  {
+   "sv": "att ringa",
+   "baca": "aht RING-ah",
+   "en": "to call, to phone"
+  },
+  {
+   "sv": "ett samtal",
+   "baca": "et SAHM-tahl",
+   "en": "conversation, call"
+  },
+  {
+   "sv": "att svara",
+   "baca": "aht SVAH-rah",
+   "en": "to answer"
+  },
+  {
+   "sv": "att hälsa på",
+   "baca": "aht HEL-sah POH",
+   "en": "to visit"
+  },
+  {
+   "sv": "att skicka",
+   "baca": "aht SHIK-kah",
+   "en": "to send"
+  },
+  {
+   "sv": "ett meddelande",
+   "baca": "et meh-DEH-lahn-deh",
+   "en": "message"
+  },
+  {
+   "sv": "att fatta",
+   "baca": "aht FAHT-tah",
+   "en": "to get it (casual)"
+  },
+  {
+   "sv": "att känna",
+   "baca": "aht SHEN-nah",
+   "en": "to know (a person), to feel"
+  },
+  {
+   "sv": "att älska",
+   "baca": "aht ELS-kah",
+   "en": "to love"
+  },
+  {
+   "sv": "att gilla",
+   "baca": "aht YIL-lah",
+   "en": "to like"
+  },
+  {
+   "sv": "egen / eget / egna",
+   "baca": "EH-gen · EH-get",
+   "en": "own"
+  },
+  {
+   "sv": "annan / annat / andra",
+   "baca": "AHN-nahn · AHN-naht",
+   "en": "other, else"
+  },
+  {
+   "sv": "någon / något",
+   "baca": "NOH-gon · NOH-got",
+   "en": "someone / something"
+  },
+  {
+   "sv": "snabbt",
+   "baca": "snahbt",
+   "en": "quickly, fast"
+  },
+  {
+   "sv": "att vänta",
+   "baca": "aht VEN-tah",
+   "en": "to wait"
+  },
+  {
+   "sv": "ju",
+   "baca": "yü",
+   "en": "after all, you know (flavoring word)"
+  },
+  {
+   "sv": "en cykel",
+   "baca": "en SÜK-kel",
+   "en": "bicycle, bike"
+  },
+  {
+   "sv": "ett ögonblick",
+   "baca": "et Ö-gon-blik",
+   "en": "a moment"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Fill in *sin*, *sitt*, *sina*, *hans*, *hennes* or *deras*.",
+   "items": [
+    "Oskar ringer ____ mamma varje söndag. (his own mother)",
+    "Elin bor hos ____ pappa. (her own father)",
+    "Han tog ____ cykel — den står där borta. (another man's bike)",
+    "De städar ____ rum på lördagar. (their own rooms)",
+    "____ mamma bor i Norge. (Elin's mother, as the subject of the sentence)",
+    "Hon glömde ____ paraply hemma. (her own umbrella)"
+   ]
+  },
+  {
+   "prompt": "Fill in the object pronoun: *mig*, *dig*, *honom*, *henne*, *oss*, *er*, *dem*.",
+   "items": [
+    "Kan du hjälpa ____? (me)",
+    "Jag ringer ____ ikväll. (her)",
+    "Vi träffar ____ imorgon. (them)",
+    "De ser ____ varje dag. (us)",
+    "Jag känner ____ inte. (him)"
+   ]
+  },
+  {
+   "prompt": "Translate, then explain your choice to yourself.",
+   "items": [
+    "He calls his own mother.",
+    "He calls Elin's mother.",
+    "They clean their own rooms.",
+    "Her mother lives in Norway.",
+    "She takes her own umbrella."
+   ]
+  },
+  {
+   "prompt": "Put the words in the right order.",
+   "items": [
+    "sin / ringer / mamma / han",
+    "hälsa på / vill / sina / hon / föräldrar",
+    "cykel / tog / hans / han",
+    "rum / städar / sina / de",
+    "bor / hennes / i Norge / mamma"
+   ]
+  }
+ ],
+ "answers": [
+  "sin — sin — hans — sina — Hennes — sitt",
+  "mig — henne — dem — oss — honom",
+  "Han ringer sin mamma. — Han ringer Elins mamma. — De städar sina rum. — Hennes mamma bor i Norge. — Hon tar sitt paraply.",
+  "Han ringer sin mamma. — Hon vill hälsa på sina föräldrar. — Han tog hans cykel. — De städar sina rum. — Hennes mamma bor i Norge."
+ ]
+}

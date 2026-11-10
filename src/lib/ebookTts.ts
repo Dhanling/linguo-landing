@@ -1169,6 +1169,189 @@ const LEKSIKON_EN = `
 `;
 const SET_EN = new Set(kataDaftar(LEKSIKON_EN));
 
+/* [ebook-pengantar-en-v1] Modul EDISI INGGRIS (judul produk "… (English
+   Edition)", mis. Swedish 101 sv-a1-en): bahasa targetnya tetap Swedia, tapi
+   terjemahan, terjemahan harfiah, dan penjelasannya bahasa Inggris. Seluruh
+   penjagaan di bawah menimbang "kata ini bahasa Indonesia?", dan kata Inggris
+   tak dikenal daftar Indonesia — jadi tanpa ini "the verb always comes second"
+   diketuk lalu dibunyikan berlogat Swedia. Untuk modul begini daftar
+   Indonesianya DIGANTI daftar ini, diperas dari prosa modul edisi Inggris oleh
+   scripts/leksikon-id-ebook.mjs (keluaran LEKSIKON_PENGANTAR_EN). Jangan
+   menambah kata dengan tangan — jalankan ulang skripnya. */
+const LEKSIKON_PENGANTAR_EN = `
+  able about above academic accents accepting accident according account across action
+  actually add adds adjectives adress adult adverb adverbs advisor after afternoon
+  afterwards again age agency ago agree agreeing agreement ah ahead aht air aisle alike
+  alive all allergic allowed almost alone along alongside aloud alphabet already also
+  although always am amazing ambulance ambush among amounts an and animal animals another
+  answer answered answering any anymore anyone anything anyway anywhere apart apartment
+  apostrophe app applies apply applying are aren around arrangements arrive arrived
+  arriving article artigt as ask asked asking asks assignment at ate attaches attention
+  attitude august aunt aunts automatic autumn available aware away ay back backpack bad
+  badar bag bake baked bakery bankid barbecue barbecues bare barnen barnet basic basket
+  bathe bathed bathroom be beanie because become becomes bed bedtime been before begin
+  beginner behind being believe belongings belongs below beneath berries beside best
+  better between bicycle biff big bigger biggest bike biljetter biljetterna bill billigt
+  bio black blue blur board boards body boh bonfire bonfires boo boohk book boring born
+  borrow borrowing borrows both bothnia bound box boy brackets brain bread break breakfast
+  breaking breaks breath breathy bridge bright bring bringing british broken brother
+  brothers brush buddy build building built bun bunch buns bus business busy but buy
+  buying by bye cabin cafeteria cake call called calling calls came camp campus can
+  candlelit capital capitalize capitalized card care carries carrying cart cases cash
+  cashier casual cat catch catches cats cause celebrate celebration celebrations central
+  centuries certain chair change changing chapter chat cheap cheapest check checking
+  checkout cheese chicken child children choice choose chooses choosing christmas church
+  cinnamon cities city class classmate clause clauses clean cleaner clear clearly clings
+  clock close closet cloth clothes clothing cloudy clue coffee cold colors column columns
+  combine come comes comfort coming command commands commit common comparative compare
+  comparing comparisons complete compounds computer condition conditions conjugation
+  connect consecutive considering consonant consonants constantly contains content
+  contents context contractions contradicting contrast conversation conversations cook
+  cookie cooking cool core corner correct corridor cost costs cottage could count
+  countable counted counter counting countries country countryside counts course courses
+  cousin cousins cover covers crayfish culture cup cupboard curious curled currency cut
+  cycle dad daily damage dance dancing danish dark darkness data dates daughter dawn day
+  days dealing dearer debate decide decided decides decked declining decoration dedicated
+  definiteness degree deliberate deliberately demand demands demonstratives denmark dent
+  dentist departure departures depend depending depends describe describing deserves
+  designed desk destroy dialect dialogues dians dictionary did didn differ difference
+  different difficult difficulties difficulty digit dinner direct direction directions
+  directly dirty disappeared disappears discover discovering dish dishes distance
+  distinctive disturb do doctor does doesn dog dogs doing don done door dorm dorms double
+  doubt down downtown dozen dragging drawer dress dressed drifted drink drinking drinks
+  drop dropped dropping duck dyrt each ear earlier early ears easier east easter easy
+  eaten eating economics ed ee eight either element eleven else elva emergency empty
+  emptying end enda ending endings ends english enjoy enough entirely entry envious
+  equally equivalent especially essay european even evening evenings ever every everyday
+  everyman everyone everything evident exact exactly exam example examples exams excellent
+  except exception exchange excuse exercises exist exit expect expects expensive
+  experience experiences explain explanation explanations exploiting expression
+  expressions extra fabric fact factory facts fairly fall falling falls familiar family
+  famously fantastic far fastest father feature features feel feeling feels feh felt
+  female feminine few fewest fifteen fifth fifty fill filled fills final finally find
+  finds fine finish finished fire fireworks first fish fished fit five fix fixed flavor
+  flavoring flickor flickorna flik flower flowers follow followed following follows food
+  foon foot for forces foreign foreigner foreigners forest foreword forget forgotten fork
+  form forms fort forty forward found foundation four fourteen fourth frame free freeze
+  freezes french frequency frequent friday fridays fridge friend friends frisk from front
+  frowning fruit fun fungerar funny fur further furthest future gammalt gathers gender
+  genders general generalize gentle gentler genuinely german get gets getting girl give
+  given gives giving gladly glance glass glasses glide gloves go goes going good goodbye
+  goodbyes got gothenburg gotland governs graduate graduation grammatical grams
+  grandfather grandmother grandparents grannar great green greeting greetings grej grill
+  grilled groceries grocery ground groundwork group groups guess guessing guest gulf guy
+  habit had half halfway hallway halves ham handful handout hands handy happen happened
+  happens happily happy hard harder hardest has hasn hat have haven having he head heading
+  hear heard heart heavy help helper helping her here herring hers hesitate hi high hike
+  hint his hissing hold holding holds holidays home hometown honest hospital hospitality
+  host hot hour hours house housemate houses housing how huge hundarna hundred hundreds
+  hung hungry ice id idea identical if ill imitate immediately included includes including
+  indeed indonesia indonesian infinitive ing ingenting inne inserted inside insist instead
+  institutions intend interchangeably internship intersection into introduce introduces
+  introducing introduction inversion invitation invite invited iron irregular is island
+  islands isn iso issues it italic items its itself jacket january jar jealous job jobbet
+  jobs join joke judgment july jump jumper jumps june just kahf kallast keena keep keeps
+  key keys kids kilogram kilometers kind kindness kinds kitchen kitchens klarat knew knife
+  knit know known knows koo korsningen lahr lake lamp land language languages lanterns
+  laptop large largest lars last late later laundry law lay layout learn learned learners
+  learning leave leaves leaving lecture left legal leh lend less lesson let lets letter
+  level library lie lies life lifeline lifesaver light lighter lights like liking lilt
+  limited line linked linking lips list listen listening literal literally little live
+  lived lives living ll loanwords locals located lock locks long longer look looking looks
+  lose losing lost lot lots loud love lovely low luck lunchtime ly lying lyssna machine
+  made mahr main make makes making male manage mandarin mandatory mannen manner many march
+  mark marked marker marketplace married masculine master match matter matters may maybe
+  me meal mealtime mean meanings means meant meat medieval medium meet meeting melody
+  melts members memorize memorized memorizing memory mention mentioned menu merry message
+  messages met meters metro mid midday middle midnight midsummer migration milk mine minus
+  minute minutes miss mistake mistakes misunderstand misunderstanding misunderstood
+  mittens mix mixed modern module mom moment monday money month months moon morbror more
+  morning most mother mouth move moved moves moving much mushrooms music musik must my
+  myself nah name names national nationalities nationality native natural naturally near
+  nearest nearly need needed needs negate negating negation negative neighbor neutral
+  never new newcomer newcomers news newspaper next nice nicer night nine ninety nittio no
+  none normal north northern northernmost northward norway not note notes nothing notice
+  noticed noun nouns now number numbers nuts object obviously occasion october odd of off
+  offenses offer offered offering office offices official officialdom often okay old older
+  oldest on once one ones oneself online only oo oops open opened opener opens opinion
+  opinions opposite opposites or order ordinal ordinary ore organizes origin other ought
+  ours out outside over overlap own owned owner owns packed packet padlock page pages pair
+  pairs pants paper parcel parents part participle parts party pass passive past pasta
+  pattern patterns pay pays pen penalty people pepper per percent perfect perfectly period
+  permission permit personal persons pharmacy phone photo phrase phrases pick picking
+  pickup picture piece place places planned plans plate platform play pleasant please
+  plenty plurals plus pocket pockets point pointing poison pole polite politely politeness
+  politest population porridge port position positive possessive possessives post posted
+  potato potatoes practical practice practicing precision predictions prefer preferences
+  prefix preposition prepositions present previously price prices pride priserna private
+  probably process procession program progress progressive projects pronoun pronounced
+  pronunciation protected public pupil pupils purpose push pushed put putting quarrel
+  quarter questions quick quickly quiet quirk quite rahng rain rainiest raining rains
+  rainy rarely rather rattles re reach reached read readers reading reads ready real
+  really reason reasons rebuild receipt receiving reciprocal recognize red refill
+  reflexive refusal register regular reindeer rejection relatives remaining remember rent
+  repair repeat repetition replaces reply request require required reread res rescue
+  rescues reserve residence residents respellings restaurant restaurants restroom results
+  return returning reverse review revisit rewrite rhymes rice ride right rise rises role
+  rolled roof room roommate rooms rough roughly round rounded rounding routine row rows
+  rude rule rules run running runs russian sad safe said salad sale same saturday sauna
+  sausage sausages saw say saying says scandinavia scarf schedule sea seasonal seasons
+  seat seated second see seeking seem seems seen seldom self send sense senses sensible
+  sentence sentences separate separates sequence serious served serves set sets seven
+  several shall share shared she shee sheep sheet shelves shining shirt shoes shop
+  shopping shops short shorter should show shower shows sibling siblings sick side silent
+  simma simple simply since singing single singular sink sister sisters sit sits sitting
+  six sixth sixty size sizes sjutton ski skip skipping skoo sleep sleepy slice slippery
+  slot slowly small smaller smallest smell smells smhi smoke smoking snabbare snabbast
+  snart snow snowing so social socks soft soften softening softens some somebody someone
+  something sometimes somewhere songs soo soon sorry sort sorting sound sounds sour source
+  south spaced speak speaker speakers speaks special specific speed spelled spelling
+  spells spend spent spiral spirit split splits splitting spoken spook spoon spot spring
+  square st staff stall stand standard standing stands stannar star start started starting
+  stating stay stayed staying stays steps stick sticks stiga still stoor stop stopping
+  stops store story straight strange stranger strangers strawberries street stressed
+  stretch strictly strike stripe strong stronger structure studenter students studied
+  study studying stuff stumble subordinate subtitles subtly subway such suffices suit
+  suitable suitcase summer sums sun sunday sundays super superlative supine support
+  suppose sure surely svt swallows swam swapping sweater swede sweden swedes swedish sweet
+  sweets swim swimming swing switch syllable symbols system table tables tacked tail take
+  taken takes taking talk talked talking tall tapes task taste tasty tax tea teach teacher
+  teeth tell telling tells temperature temperatures template tempted tempting ten tend
+  tense test text th thai than thank thanks that the their theirs them then there these
+  they thing things thingy think thinking thirty this though thought thousand thousands
+  three throughout thursday ticket tie timed times ting tired to today together toh toilet
+  told tomorrow tone tones tongue tonight too took tooth top topic topics touch toward
+  towel town track train translate translation translations transparent trap traps travel
+  treacherous treat trehundrasextiofem trevlig trevliga tried trousers true try trying
+  tuesday turn turns tusen twelve twenty twice two typical umbrella unappreciative uncle
+  uncles understand understood underwear unfortunately unit units university unlike unlock
+  unsure until unwell up ur us use used useful uses using usually vacation vacuum vaht
+  valid ve vegetables vegetarian vehicle verb verbs version versions versus very video
+  visiting vocabulary vowel wait wake waking walk walked walks wall wallet walls want
+  wants warm warmest was wash washes waste watch watching water wave way we weaker weather
+  week weekdays weekend weekends weeks welcome well went were west what whatever when
+  whenever where whether which while white who whole whose why will window windy wins
+  winter wise wish witches with without woman won wonder wonderful wooden word words work
+  worked working works world worried worse worst worth would wrapped wraps write writes
+  writing written wrong year years yellow yes yesterday yet yngre yoo you young your yours
+  yourself zero
+`;
+const SET_PENGANTAR_EN = kataDaftar(LEKSIKON_PENGANTAR_EN);
+
+/** Bahasa pengantar modul yang sedang terbuka. Satu reader = satu modul, jadi
+ *  cukup disetel reader saat modulnya dibuka (lihat aturPengantarEbook). */
+let pengantarAktif: "id" | "en" = "id";
+
+/** Bahasa pengantar modul dari judul produknya: "English Edition" = Inggris. */
+export function pengantarEbook(judul?: string | null): "id" | "en" {
+  return /english\s+edition/i.test(String(judul || "")) ? "en" : "id";
+}
+
+/** Disetel reader setiap kali modul berganti; kembalikan ke "id" saat ditutup. */
+export function aturPengantarEbook(p: "id" | "en") {
+  pengantarAktif = p;
+}
+
 /* Imbuhan yang praktis cuma milik bahasa Indonesia. Tiap pola dipilih supaya
    TIDAK menyentuh bahasa target yang kita jual: "menú" & "mensaje" tak kena
    karena polanya minta "meng-"/"meny-"/"memb-"/"memp-", bukan "men-" telanjang;
@@ -1222,6 +1405,18 @@ const KECUALI_TARGET: Record<string, Set<string>> = {
 /** Kata ini bahasa Indonesia dilihat dari dirinya sendiri (tanpa konteks)? */
 function kataIdMurni(k: string, kode: string): boolean {
   if (KECUALI_TARGET[kode]?.has(k)) return false;
+  /* [ebook-pengantar-en-v1] Modul edisi Inggris: "bahasa pengantar" = daftar
+     Inggris, tanpa daftar & imbuhan Indonesia sama sekali. Terjemahan harfiah
+     bersambung tanda hubung ("today-goes") tetap diputus per penggal. */
+  if (pengantarAktif === "en" && kode !== "en") {
+    if (SET_PENGANTAR_EN.has(k)) return true;
+    /* Singkatan & kepemilikan Inggris — "it's", "I'm", "don't", "Elin's". Bahasa
+       target Latin yang kita jual tak memakai ekor apostrof begini. */
+    if (/^\p{L}+['’](?:s|m|t|ll|ve|re|d)$/u.test(k)) return true;
+    if (!k.includes("-")) return false;
+    const penggal = k.split(/[-'’]+/).filter(Boolean);
+    return penggal.length > 1 && penggal.some((p) => SET_PENGANTAR_EN.has(p));
+  }
   if (SET_ID.has(k)) return true;
   if (kode !== "en" && SET_ID_V3.has(k)) return true;
   const morfologi = kode === "en" ? MORFOLOGI_EN

@@ -1,0 +1,543 @@
+{
+ "title": "The verb that must sit in second place",
+ "title_target": "Idag går jag till universitetet",
+ "goal": "Master the one rule that governs all Swedish word order — and the one English speakers break most often throughout their first year.",
+ "bekal": [
+  "put a time expression at the front of a sentence without breaking its order",
+  "the second-place rule: whatever comes first, the verb is always number two",
+  "name the days of the week and the parts of the day"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — På väg till tunnelbanan",
+   "intro": "Monday morning. Dian runs into Elin at the front door of the student housing; they're both heading for the same subway station.",
+   "lines": [
+    {
+     "speaker": "Elin:",
+     "text": "God morgon! Vart ska du idag?",
+     "id": "Good morning! Where are you off to today?",
+     "literal": "good morning! where-to shall you today?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Idag går jag till universitetet. Jag har en lektion klockan nio.",
+     "id": "Today I'm going to the university. I have a class at nine.",
+     "literal": "today go I to university-the. I have a lesson clock-the nine."
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Då tar vi samma tåg. Jag jobbar på ett bibliotek i stan.",
+     "id": "Then we're taking the same train. I work at a library in town.",
+     "literal": "then take we same train. I work at a library in town-the."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "På morgonen är tunnelbanan alltid full.",
+     "id": "In the morning the subway is always packed.",
+     "literal": "in morning-the is subway-the always full."
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Ja, men efter nio blir det bättre.",
+     "id": "Yes, but after nine it gets better.",
+     "literal": "yes, but after nine becomes it better."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Vad gör du på kvällen?",
+     "id": "What are you doing this evening?",
+     "literal": "what do you in evening-the?"
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Ikväll lagar jag mat hemma. Sedan tittar jag på en film.",
+     "id": "Tonight I'm cooking at home. Then I'm watching a movie.",
+     "literal": "tonight make I food at-home. then look I at a film."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "På fredag är jag ledig. Ska vi fika då?",
+     "id": "I'm free on Friday. Shall we have a fika then?",
+     "literal": "on Friday am I free. shall we fika then?"
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Gärna! Vi ses på fredag.",
+     "id": "I'd love to! See you on Friday.",
+     "literal": "gladly! we see-each-other on Friday."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Perfekt. Nu springer jag — tåget kommer!",
+     "id": "Perfect. I'm running now — the train's coming!",
+     "literal": "perfect. now run I — train-the comes!"
+    }
+   ],
+   "notes": [
+    "**Idag går jag** — not *idag jag går*. This one sentence teaches the whole unit. As soon as something else stands at the front of the sentence, the subject jumps behind the verb. If you say *idag jag går* (\"today I go\", perfectly normal English), Swedes will still understand you, but their ear trips over it — just as your ear would trip over \"tomorrow I go will\".",
+    "**Vart ska du?** is literally \"where-to shall you?\". The verb *gå* can be left out after *ska* when a direction is clear: *Vart ska du?* is a complete sentence on its own. Compare *Var är du?* — \"where are you?\", with no direction.",
+    "**Att gå** means **to walk**, not just \"to go\". If you travel by vehicle, the verb is **att åka**: *jag åker buss* (I go by bus), *jag åker tåg* (I go by train), *jag åker till Göteborg*. Saying *jag går till Göteborg* means you're really walking 470 kilometers.",
+    "**På morgonen, på kvällen** — parts of the day take *på* and the definite form (*morgonen*, not *morgon*): literally \"in the morning\", much as in English. Just learn these as set phrases; the *-en* ending stuck to the end of the noun is explained in the next unit.",
+    "**Sedan** (pronounced **SEN**, and often written just *sen* in casual writing) means \"then, after that\". It's one of the most common linking words in spoken Swedish, along with *och sen* — \"and then\".",
+    "**Gärna** has no single English equivalent. It means \"gladly, I'd love to\", and it's a one-word answer that is polite and warm at the same time. *Vill du ha kaffe?* — *Gärna!* Pronounced **YEH-nah**."
+   ],
+   "grammars": [
+    {
+     "title": "The verb-second rule (V2)",
+     "body": [
+      "In a Swedish statement, **the verb is always the second element**. Not the second word — the second element. One element can be several words long (*på fredagsmorgonen*, *min bror och jag*), but it still counts as one.",
+      "What changes is not the verb but who stands in first place:"
+     ],
+     "table": {
+      "head": [
+       "Place 1",
+       "Place 2 (**verb**)",
+       "Place 3",
+       "The rest"
+      ],
+      "rows": [
+       [
+        "Jag",
+        "**går**",
+        "till universitetet",
+        "idag."
+       ],
+       [
+        "Idag",
+        "**går**",
+        "jag",
+        "till universitetet."
+       ],
+       [
+        "Till universitetet",
+        "**går**",
+        "jag",
+        "idag."
+       ],
+       [
+        "På morgonen",
+        "**dricker**",
+        "vi",
+        "kaffe."
+       ],
+       [
+        "Hemma",
+        "**lagar**",
+        "hon",
+        "mat."
+       ]
+      ]
+     },
+     "after": [
+      "Look at the second column: **går, går, går, dricker, lagar** — it never moves. What moves is the subject, which gets pushed to third place every time something else comes first.",
+      "Why put something else first at all? Because that's where the **emphasis** goes. *Idag går jag till universitetet* stresses today (not tomorrow); *Jag går till universitetet idag* is a plain piece of information. Swedes front words as often as English speakers begin with \"Today,…\" or \"On Friday,…\" — the only difference is that Swedish then swaps the verb and subject. English still has a few fossils of this rule: \"Here comes the bus\", \"There goes my train\".",
+      "The rule also explains the question form you learned in Unit 2: in a yes/no question, first place is deliberately **left empty**, so the verb moves up to the front."
+     ]
+    },
+    {
+     "title": "Days, and parts of the day",
+     "tables": [
+      {
+       "head": [
+        "Svenska",
+        "Pronunciation",
+        "English"
+       ],
+       "rows": [
+        [
+         "måndag",
+         "MOHN-dah",
+         "Monday"
+        ],
+        [
+         "tisdag",
+         "TEES-dah",
+         "Tuesday"
+        ],
+        [
+         "onsdag",
+         "OONS-dah",
+         "Wednesday"
+        ],
+        [
+         "torsdag",
+         "TOSH-dah",
+         "Thursday"
+        ],
+        [
+         "fredag",
+         "FREH-dah",
+         "Friday"
+        ],
+        [
+         "lördag",
+         "LÖR-dah",
+         "Saturday"
+        ],
+        [
+         "söndag",
+         "SÖN-dah",
+         "Sunday"
+        ]
+       ]
+      },
+      {
+       "head": [
+        "Svenska",
+        "Meaning",
+        "How it's used"
+       ],
+       "rows": [
+        [
+         "**morgon**",
+         "morning",
+         "på morgonen · imorse (this morning, earlier)"
+        ],
+        [
+         "**förmiddag**",
+         "late morning",
+         "på förmiddagen"
+        ],
+        [
+         "**eftermiddag**",
+         "afternoon",
+         "på eftermiddagen"
+        ],
+        [
+         "**kväll**",
+         "evening",
+         "på kvällen · ikväll (tonight)"
+        ],
+        [
+         "**natt**",
+         "night (sleeping time)",
+         "på natten · inatt"
+        ],
+        [
+         "**idag / imorgon / igår**",
+         "today / tomorrow / yesterday",
+         "stand alone, without *på*"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "Days of the week are **not capitalized** in Swedish, and the final *-g* is almost always silent: *fredag* comes out as **FREH-dah**. Many of the names will look familiar — *tisdag, onsdag, torsdag, fredag* come from the same Norse gods as Tuesday to Friday.",
+      "\"On Friday\" is *på fredag*. If you mean \"every Friday\" or \"on Fridays\", it's plural: *på fredagar*. Just one letter's difference — but it separates a one-off plan from a weekly habit."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "The five most common word-order mistakes",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "They all have one cause: carrying English word order over word for word. English keeps subject-before-verb no matter what comes first; Swedish doesn't. Read the right-hand column aloud until it sounds natural."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Wrong",
+      "Right",
+      "Why"
+     ],
+     "rows": [
+      [
+       "*Idag jag går hem.*",
+       "**Idag går jag hem.**",
+       "something stands in front → the subject moves behind the verb"
+      ],
+      [
+       "*Jag inte förstår.*",
+       "**Jag förstår inte.**",
+       "*inte* comes after the verb"
+      ],
+      [
+       "*På fredag jag är ledig.*",
+       "**På fredag är jag ledig.**",
+       "same as the first row"
+      ],
+      [
+       "*Varför du sitter där?*",
+       "**Varför sitter du där?**",
+       "the question word takes place 1, the verb stays in place 2"
+      ],
+      [
+       "*Sedan vi äter middag.*",
+       "**Sedan äter vi middag.**",
+       "*sedan* is an element too — it fills place 1"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "One check that always works: **count to two**. The first element can be anything, and as long as you like; the second must be the verb. If the second turns out to be *jag*, *vi* or *han*, the order is wrong."
+    },
+    {
+     "type": "kotak",
+     "title": "Spaced review — back to Unit 1",
+     "items": [
+      "Cover the Swedish column of the Unit 1 vocabulary, look at the English column, and say the Swedish words out loud.",
+      "Then rebuild these five sentences without looking: \"My name is…\", \"I come from Indonesia\", \"Where do you live?\", \"Nice to meet you\", \"See you!\".",
+      "Finally, say three of them with a time expression in front — *Idag är jag…*, *Ikväll bor jag…* — and feel the subject jump behind the verb."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Everyday verbs used in this unit",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Every Swedish verb has **one** present-tense form, and it ends in *-r*. That's the only feature you need to recognize for now; the verb groups are waiting in Unit 7."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Infinitive",
+      "Present",
+      "Meaning",
+      "Example sentence"
+     ],
+     "rows": [
+      [
+       "att gå",
+       "går",
+       "to walk, to go (on foot)",
+       "Jag går hem nu."
+      ],
+      [
+       "att åka",
+       "åker",
+       "to go (by vehicle), to ride",
+       "Vi åker buss till stan."
+      ],
+      [
+       "att ta",
+       "tar",
+       "to take",
+       "Hon tar tåget klockan åtta."
+      ],
+      [
+       "att jobba",
+       "jobbar",
+       "to work",
+       "Han jobbar på ett café."
+      ],
+      [
+       "att laga",
+       "lagar",
+       "to cook, to fix",
+       "Ikväll lagar jag mat."
+      ],
+      [
+       "att titta",
+       "tittar",
+       "to look, to watch",
+       "Vi tittar på en film."
+      ],
+      [
+       "att springa",
+       "springer",
+       "to run",
+       "Nu springer jag!"
+      ],
+      [
+       "att göra",
+       "gör",
+       "to do, to make",
+       "Vad gör du?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Att göra** is pronounced **aht YÖ-rah**, and its present form *gör* is pronounced **yör** — a *g* before *ö* sounds like *y*. The word turns up in one of the most frequent questions in Swedish: *Vad gör du?* (\"what are you doing?\"), pronounced **vah yör dü**."
+    },
+    {
+     "type": "kotak",
+     "title": "Titta på, lyssna på",
+     "items": [
+      "Swedish attaches **på** to some verbs of the senses: *titta **på** en film* (watch a movie), *lyssna **på** musik* (listen to music) — just like English \"look **at**\" and \"listen **to**\".",
+      "Dropping *på* changes the meaning: *titta* on its own just means \"to look\", with no object. Learn them as a pair: **titta på** and **lyssna på**."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "sv": "idag",
+   "baca": "i-DAH",
+   "en": "today"
+  },
+  {
+   "sv": "imorgon",
+   "baca": "i-MOR-ron",
+   "en": "tomorrow"
+  },
+  {
+   "sv": "igår",
+   "baca": "i-GOHR",
+   "en": "yesterday"
+  },
+  {
+   "sv": "ikväll",
+   "baca": "i-KVEL",
+   "en": "tonight, this evening"
+  },
+  {
+   "sv": "sedan / sen",
+   "baca": "sen",
+   "en": "then, after that"
+  },
+  {
+   "sv": "nu",
+   "baca": "nü",
+   "en": "now"
+  },
+  {
+   "sv": "alltid",
+   "baca": "AHL-tid",
+   "en": "always"
+  },
+  {
+   "sv": "gärna",
+   "baca": "YEH-nah",
+   "en": "gladly, I'd love to"
+  },
+  {
+   "sv": "ledig",
+   "baca": "LEH-dee",
+   "en": "free, off (work)"
+  },
+  {
+   "sv": "full",
+   "baca": "fül",
+   "en": "full"
+  },
+  {
+   "sv": "samma",
+   "baca": "SAHM-mah",
+   "en": "same, the same"
+  },
+  {
+   "sv": "att gå",
+   "baca": "aht goh",
+   "en": "to walk, to go"
+  },
+  {
+   "sv": "att åka",
+   "baca": "aht OH-kah",
+   "en": "to go (by vehicle)"
+  },
+  {
+   "sv": "att ta",
+   "baca": "aht tah",
+   "en": "to take"
+  },
+  {
+   "sv": "att jobba",
+   "baca": "aht YOB-bah",
+   "en": "to work"
+  },
+  {
+   "sv": "att laga mat",
+   "baca": "aht LAH-gah maht",
+   "en": "to cook"
+  },
+  {
+   "sv": "att titta på",
+   "baca": "aht TIT-tah poh",
+   "en": "to watch, to look at"
+  },
+  {
+   "sv": "att göra",
+   "baca": "aht YÖ-rah",
+   "en": "to do, to make"
+  },
+  {
+   "sv": "ett tåg",
+   "baca": "et tohg",
+   "en": "a train"
+  },
+  {
+   "sv": "en buss",
+   "baca": "en büs",
+   "en": "a bus"
+  },
+  {
+   "sv": "tunnelbanan",
+   "baca": "TÜN-nel-bah-nahn",
+   "en": "the subway, the metro"
+  },
+  {
+   "sv": "ett bibliotek",
+   "baca": "et bib-lee-oo-TEHK",
+   "en": "a library"
+  },
+  {
+   "sv": "en lektion",
+   "baca": "en lek-HWOON",
+   "en": "a lesson, a class"
+  },
+  {
+   "sv": "en stad / i stan",
+   "baca": "en stahd · i stahn",
+   "en": "a city / in town, downtown"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Rewrite with the time or place expression at the front. Example: *Jag går hem idag.* → *Idag går jag hem.*",
+   "items": [
+    "Jag dricker kaffe på morgonen.",
+    "Vi åker buss till stan idag.",
+    "Hon jobbar på ett bibliotek på fredag.",
+    "Jag lagar mat ikväll.",
+    "De tittar på en film sedan.",
+    "Han är ledig imorgon."
+   ]
+  },
+  {
+   "prompt": "Correct the word order in these sentences.",
+   "items": [
+    "Idag jag går till universitetet.",
+    "På kvällen vi äter middag.",
+    "Varför du sitter här?",
+    "Jag inte förstår svenska.",
+    "Sedan hon tar tåget.",
+    "Imorgon jag jobbar hemma."
+   ]
+  },
+  {
+   "prompt": "Fill in *går* or *åker*.",
+   "items": [
+    "Jag ____ hem — det är bara femhundra meter.",
+    "Vi ____ tåg till Göteborg.",
+    "Hon ____ buss varje morgon.",
+    "Han ____ till köket och tar en kopp kaffe.",
+    "På söndag ____ vi till Finland."
+   ]
+  },
+  {
+   "prompt": "Translate into Swedish. Watch where the verb goes.",
+   "items": [
+    "Today I'm working at home.",
+    "Tonight we're watching a movie.",
+    "On Friday I'm free.",
+    "Why don't you drink coffee?",
+    "In the morning the subway is always packed."
+   ]
+  }
+ ],
+ "answers": [
+  "På morgonen dricker jag kaffe. — Idag åker vi buss till stan. — På fredag jobbar hon på ett bibliotek. — Ikväll lagar jag mat. — Sedan tittar de på en film. — Imorgon är han ledig.",
+  "Idag går jag till universitetet. — På kvällen äter vi middag. — Varför sitter du här? — Jag förstår inte svenska. — Sedan tar hon tåget. — Imorgon jobbar jag hemma.",
+  "går — åker — åker — går — åker",
+  "Idag jobbar jag hemma. — Ikväll tittar vi på en film. — På fredag är jag ledig. — Varför dricker du inte kaffe? — På morgonen är tunnelbanan alltid full."
+ ]
+}

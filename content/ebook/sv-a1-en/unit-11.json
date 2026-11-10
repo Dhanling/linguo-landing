@@ -1,0 +1,551 @@
+{
+ "title": "In, at, to, from",
+ "title_target": "Vart ska du?",
+ "goal": "Choose the right preposition for places and directions — the part of Swedish with the fewest rules and the most habits.",
+ "bekal": [
+  "*i* and *på* for places, and why institutions always take *på*",
+  "*till*, *från*, *hos*, *vid*, *mellan* and friends",
+  "asking for and giving directions in town"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — Var ligger posten?",
+   "intro": "Dian has to pick up a parcel from Indonesia. She stops outside a corner shop and asks a woman who has just come out.",
+   "lines": [
+    {
+     "speaker": "Dian:",
+     "text": "Ursäkta, vet du var posten ligger?",
+     "id": "Excuse me, do you know where the post office is?",
+     "literal": "excuse-me, know you where post-the lies?"
+    },
+    {
+     "speaker": "Kvinnan:",
+     "text": "Paketutlämningen? Den ligger i affären, längst in till höger.",
+     "id": "The parcel pickup? It's in the shop, all the way at the back on the right.",
+     "literal": "parcel-handout-the? it lies in shop-the, furthest in to right."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "I affären? Inte på ett postkontor?",
+     "id": "In the shop? Not at a post office?",
+     "literal": "in shop-the? not at a post-office?"
+    },
+    {
+     "speaker": "Kvinnan:",
+     "text": "Nej, vi har nästan inga postkontor kvar i Sverige.",
+     "id": "No, we have almost no post offices left in Sweden.",
+     "literal": "no, we have almost no post-offices left in Sweden."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Vad praktiskt. Och var ligger apoteket?",
+     "id": "How practical. And where's the pharmacy?",
+     "literal": "what practical. and where lies pharmacy-the?"
+    },
+    {
+     "speaker": "Kvinnan:",
+     "text": "Gå rakt fram, sedan till vänster vid kyrkan. Det ligger mellan banken och biblioteket.",
+     "id": "Go straight ahead, then left at the church. It's between the bank and the library.",
+     "literal": "go straight forward, then to left by church-the. it lies between bank-the and library-the."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Är det långt?",
+     "id": "Is it far?",
+     "literal": "is it far?"
+    },
+    {
+     "speaker": "Kvinnan:",
+     "text": "Nej då, femhundra meter. Fem minuter till fots.",
+     "id": "Oh no, five hundred meters. Five minutes on foot.",
+     "literal": "no then, five-hundred meters. five minutes to foot."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Tack så mycket! En sak till — bor du här i stan?",
+     "id": "Thanks so much! One more thing — do you live here in town?",
+     "literal": "thanks so much! one thing more — live you here in town-the?"
+    },
+    {
+     "speaker": "Kvinnan:",
+     "text": "Jag bor på Söder, men jag jobbar på ett kontor i Vasastan.",
+     "id": "I live on Söder, but I work at an office in Vasastan.",
+     "literal": "I live on Söder, but I work at an office in Vasastan."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Tack igen. Ha en bra dag!",
+     "id": "Thanks again. Have a nice day!",
+     "literal": "thanks again. have a good day!"
+    }
+   ],
+   "notes": [
+    "**I affären, men på ett kontor.** This is the distinction learners of Swedish ask about most, and the answer is part rule, part habit. The rough rule: **i** for enclosed spaces you actually go inside (*i huset*, *i rummet*, *i affären*), **på** for institutions, surfaces and activities (*på jobbet*, *på universitetet*, *på bordet*, *på bio*). English has the same kind of split with *in* and *at/on* (\"in the house\", \"at work\", \"on the table\") — but the two languages don't always draw the line in the same place, so learn each phrase as a unit.",
+    "**Nästan inga postkontor kvar.** Sweden closed almost all of its post offices from the early 2000s on; parcels are picked up at corner shops, kiosks or gas stations. If you look for a building that says \"Posten\", you won't find one. What you are looking for is the sign *ombud* or *paketutlämning* in a shop window.",
+    "**Söder** is short for Södermalm, and like most place names in Stockholm, it takes **på**, not *i*: *på Söder*, *på Kungsholmen*, *på Gotland*. Islands and districts take *på*; cities take *i*: *i Stockholm*, *i Göteborg*, *i Uppsala*. This is habit, not logic.",
+    "**Till fots** means \"on foot\" — a frozen form from old Swedish that is still alive, like *till sjöss* (at sea) and *till bords* (to the table). Don't try to analyze the grammar; just learn it.",
+    "**Nej då** is not a stronger \"no\" — quite the opposite. The *då* here softens it: \"oh no, not at all\". Compare *ja då* (oh yes, sure) and *jo då* (yes, there is / of course). All three are very common and make your answers sound warm.",
+    "**Ha en bra dag!** does sound like a translation of English \"have a nice day\", and many Swedes think so too. The more Swedish version: *Ha det bra!* or *Ha det så bra!* — the two most common goodbyes after *hej då*."
+   ],
+   "grammars": [
+    {
+     "title": "I or på",
+     "table": {
+      "head": [
+       "Use **i** for",
+       "Example",
+       "Use **på** for",
+       "Example"
+      ],
+      "rows": [
+       [
+        "rooms & buildings",
+        "i köket, i huset",
+        "institutions & workplaces",
+        "på jobbet, på banken"
+       ],
+       [
+        "cities & countries",
+        "i Stockholm, i Sverige",
+        "islands & districts",
+        "på Gotland, på Söder"
+       ],
+       [
+        "bags & containers",
+        "i väskan, i fickan",
+        "surfaces",
+        "på bordet, på golvet"
+       ],
+       [
+        "upcoming time",
+        "i sommar, i morgon",
+        "days & parts of the day",
+        "på fredag, på morgonen"
+       ],
+       [
+        "languages",
+        "på svenska (exception!)",
+        "activities",
+        "på bio, på fest, på semester"
+       ],
+       [
+        "length of time",
+        "i tre timmar",
+        "streets (addresses)",
+        "på Storgatan 5"
+       ]
+      ]
+     },
+     "after": [
+      "The fifth row is an exception to learn the other way round: languages take **på**, not *i*. *Vad heter det på svenska?* — not *i svenska*. English says \"in Swedish\", so this one will feel wrong at first.",
+      "Schools and universities take **på** because they count as institutions: *på skolan*, *på universitetet*, *på Linguo*. But when you mean the physical building, *i* turns up too: *det regnar in i skolan* (rain is coming into the school building).",
+      "If you really don't know, **på** is more often right for places of activity, and **i** is more often right for enclosed places. Choosing wrong never makes your sentence impossible to understand."
+     ]
+    },
+    {
+     "title": "Direction and location: two different questions",
+     "table": {
+      "head": [
+       "Question",
+       "Preposition",
+       "Example",
+       "Meaning"
+      ],
+      "rows": [
+       [
+        "**Var?** (where)",
+        "i, på, hos, vid",
+        "Jag är **på** jobbet.",
+        "I'm at work."
+       ],
+       [
+        "**Vart?** (where to)",
+        "till",
+        "Jag går **till** jobbet.",
+        "I'm going to work."
+       ],
+       [
+        "**Varifrån?** (where from)",
+        "från",
+        "Jag kommer **från** jobbet.",
+        "I'm coming from work."
+       ],
+       [
+        "to someone's place",
+        "**till** + person",
+        "Jag går **till** Elin.",
+        "I'm going to Elin's."
+       ],
+       [
+        "at someone's place",
+        "**hos** + person",
+        "Jag är **hos** Elin.",
+        "I'm at Elin's."
+       ]
+      ]
+     },
+     "after": [
+      "**Till** is almost always right for direction, with one big exception: **hem**. \"Go home\" is *gå **hem***, without *till*; \"be at home\" is *vara **hemma***. Two different words for direction and location — a leftover from Old Norse, and English has the same leftover (*go home*, not *go to home*). Note too that Swedish keeps *var* (where) and *vart* (where to) apart, the way old English kept *where* and *whither*.",
+      "**Hos** has no single-word equivalent in English; it means \"at someone's place\", like *chez* in French. *Hos Elin* (at Elin's), *hos doktorn* (at the doctor's), *hos frisören* (at the hairdresser's)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Places in town",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Svenska",
+      "Pronunciation",
+      "English",
+      "Preposition"
+     ],
+     "rows": [
+      [
+       "en affär / en butik",
+       "en ahf-FEHR",
+       "shop, store",
+       "i affären"
+      ],
+      [
+       "ett apotek",
+       "et ah-poo-TEHK",
+       "pharmacy",
+       "på apoteket"
+      ],
+      [
+       "en bank",
+       "en bahnk",
+       "bank",
+       "på banken"
+      ],
+      [
+       "ett sjukhus",
+       "et HWÜK-hüs",
+       "hospital",
+       "på sjukhuset"
+      ],
+      [
+       "en kyrka",
+       "en SHÜR-kah",
+       "church",
+       "i kyrkan"
+      ],
+      [
+       "ett torg",
+       "et tory",
+       "square, marketplace",
+       "på torget"
+      ],
+      [
+       "en gata",
+       "en GAH-tah",
+       "street",
+       "på gatan"
+      ],
+      [
+       "ett café",
+       "et kah-FEH",
+       "café",
+       "på ett café"
+      ],
+      [
+       "en restaurang",
+       "en res-toh-RAHNG",
+       "restaurant",
+       "på en restaurang"
+      ],
+      [
+       "ett kontor",
+       "et kon-TOOR",
+       "office",
+       "på ett kontor"
+      ],
+      [
+       "en park",
+       "en pahrk",
+       "park",
+       "i parken"
+      ],
+      [
+       "ett museum",
+       "et mü-SEH-üm",
+       "museum",
+       "på museet"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Ett sjukhus** literally means \"sick-house\" — and both halves are English cousins (*sjuk* = sick, *hus* = house). Transparent compounds like this turn up all the time in Swedish and are worth exploiting: *tandläkare* (dentist, \"tooth-doctor\"), *kylskåp* (fridge, \"cool-cupboard\"), *handduk* (towel, \"hand-cloth\")."
+    },
+    {
+     "type": "kotak",
+     "title": "Asking for directions",
+     "items": [
+      "**Ursäkta, var ligger…?** — Excuse me, where is…?",
+      "**Hur kommer jag till…?** — How do I get to…?",
+      "**Är det långt härifrån?** — Is it far from here?",
+      "**Gå rakt fram.** — Go straight ahead.",
+      "**Ta till höger / till vänster.** — Turn right / left.",
+      "**Det ligger mitt emot banken.** — It's opposite the bank.",
+      "**Vid andra korsningen.** — At the second intersection."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "The remaining prepositions",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Svenska",
+      "Meaning",
+      "Example"
+     ],
+     "rows": [
+      [
+       "**vid**",
+       "by, next to",
+       "Vi ses vid dörren."
+      ],
+      [
+       "**mellan**",
+       "between",
+       "Mellan banken och biblioteket."
+      ],
+      [
+       "**bakom**",
+       "behind",
+       "Cykeln står bakom huset."
+      ],
+      [
+       "**framför**",
+       "in front of",
+       "Han sitter framför mig."
+      ],
+      [
+       "**under**",
+       "under",
+       "Katten ligger under bordet."
+      ],
+      [
+       "**över**",
+       "over, across",
+       "Vi går över gatan."
+      ],
+      [
+       "**bredvid**",
+       "beside",
+       "Hon bor bredvid mig."
+      ],
+      [
+       "**mitt emot**",
+       "opposite",
+       "Apoteket ligger mitt emot torget."
+      ],
+      [
+       "**genom**",
+       "through",
+       "Vi går genom parken."
+      ],
+      [
+       "**runt**",
+       "around",
+       "Vi går runt sjön."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Swedish prepositions **don't change the form of the noun after them** — there are no cases like in German or Russian. Just as in English, the whole difficulty is choosing the right word, and there is no grammatical penalty if you get it wrong. Compare German, where choosing the wrong *in* also forces you to change the next three words."
+    },
+    {
+     "type": "kotak",
+     "title": "Spiral review — back to Unit 9",
+     "items": [
+      "Say the whole *min/mitt/mina* and *vår/vårt/våra* family without looking.",
+      "Combine them with this unit's places: *Min bank ligger på…*, *Vårt hus ligger vid…*, *Mina böcker ligger i…*",
+      "Finally, describe the way from your room to the kitchen in four sentences using *rakt fram*, *till höger*, *till vänster*, *bredvid*."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "sv": "en affär",
+   "baca": "en ahf-FEHR",
+   "en": "shop, store"
+  },
+  {
+   "sv": "ett apotek",
+   "baca": "et ah-poo-TEHK",
+   "en": "pharmacy"
+  },
+  {
+   "sv": "en bank",
+   "baca": "en bahnk",
+   "en": "bank"
+  },
+  {
+   "sv": "ett sjukhus",
+   "baca": "et HWÜK-hüs",
+   "en": "hospital"
+  },
+  {
+   "sv": "en kyrka",
+   "baca": "en SHÜR-kah",
+   "en": "church"
+  },
+  {
+   "sv": "ett torg",
+   "baca": "et tory",
+   "en": "square"
+  },
+  {
+   "sv": "en gata",
+   "baca": "en GAH-tah",
+   "en": "street"
+  },
+  {
+   "sv": "ett kontor",
+   "baca": "et kon-TOOR",
+   "en": "office"
+  },
+  {
+   "sv": "till",
+   "baca": "til",
+   "en": "to"
+  },
+  {
+   "sv": "hos",
+   "baca": "hoos",
+   "en": "at (someone's place)"
+  },
+  {
+   "sv": "vid",
+   "baca": "veed",
+   "en": "by, next to"
+  },
+  {
+   "sv": "mellan",
+   "baca": "MEL-lahn",
+   "en": "between"
+  },
+  {
+   "sv": "bakom",
+   "baca": "BAH-kom",
+   "en": "behind"
+  },
+  {
+   "sv": "framför",
+   "baca": "FRAHM-för",
+   "en": "in front of"
+  },
+  {
+   "sv": "bredvid",
+   "baca": "breh-VEED",
+   "en": "beside"
+  },
+  {
+   "sv": "mitt emot",
+   "baca": "mit eh-MOOT",
+   "en": "opposite"
+  },
+  {
+   "sv": "rakt fram",
+   "baca": "rahkt frahm",
+   "en": "straight ahead"
+  },
+  {
+   "sv": "till höger",
+   "baca": "til HÖ-ger",
+   "en": "to the right"
+  },
+  {
+   "sv": "till vänster",
+   "baca": "til VENS-ter",
+   "en": "to the left"
+  },
+  {
+   "sv": "hem / hemma",
+   "baca": "hem · HEM-mah",
+   "en": "home (direction) / at home"
+  },
+  {
+   "sv": "långt",
+   "baca": "longt",
+   "en": "far"
+  },
+  {
+   "sv": "nära",
+   "baca": "NEH-rah",
+   "en": "near, close"
+  },
+  {
+   "sv": "nästan",
+   "baca": "NES-tahn",
+   "en": "almost"
+  },
+  {
+   "sv": "igen",
+   "baca": "i-YEN",
+   "en": "again"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Fill in *i* or *på*.",
+   "items": [
+    "Jag jobbar ____ ett kontor.",
+    "Vi bor ____ Stockholm.",
+    "Boken ligger ____ bordet.",
+    "Hon är ____ banken.",
+    "Nyckeln ligger ____ fickan.",
+    "Vad heter det ____ svenska?"
+   ]
+  },
+  {
+   "prompt": "Fill in *till*, *från*, *hos* or *hem*.",
+   "items": [
+    "Jag går ____ jobbet klockan åtta.",
+    "Hon kommer ____ Norge.",
+    "Vi är ____ Elin ikväll.",
+    "Klockan sex går jag ____.",
+    "Tåget går ____ Uppsala."
+   ]
+  },
+  {
+   "prompt": "Fill in the right preposition of place: *mellan*, *bakom*, *framför*, *under*, *bredvid*.",
+   "items": [
+    "Apoteket ligger ____ banken och biblioteket.",
+    "Cykeln står ____ huset.",
+    "Katten ligger ____ bordet.",
+    "Hon sitter ____ mig i klassen.",
+    "Han bor ____ mig — vi är grannar."
+   ]
+  },
+  {
+   "prompt": "Translate into Swedish.",
+   "items": [
+    "Excuse me, where's the post office?",
+    "Go straight ahead, then turn left.",
+    "Is it far from here?",
+    "I live on Söder but work in Vasastan.",
+    "It's opposite the square."
+   ]
+  }
+ ],
+ "answers": [
+  "på — i — på — på — i — på",
+  "till — från — hos — hem — till",
+  "mellan — bakom — under — framför — bredvid",
+  "Ursäkta, var ligger posten? — Gå rakt fram, sedan till vänster. — Är det långt härifrån? — Jag bor på Söder men jobbar i Vasastan. — Det ligger mitt emot torget."
+ ]
+}

@@ -1,0 +1,677 @@
+{
+ "title": "Numbers and telling time",
+ "title_target": "Klockan är kvart över åtta",
+ "goal": "Count to a thousand, tell the time the way Swedes do, and never again misunderstand the word *halv* — which means the opposite of what an English speaker expects.",
+ "bekal": [
+  "the numbers 0-1000 and their ordinal forms",
+  "telling the time with *över*, *i* and *halv*",
+  "asking about departure times and making arrangements"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — På Centralstationen",
+   "intro": "Friday morning. Dian and Oskar are standing in front of the departures board at Stockholm Central Station. They're heading to Uppsala.",
+   "lines": [
+    {
+     "speaker": "Dian:",
+     "text": "Ursäkta, vad är klockan?",
+     "id": "Excuse me, what time is it?",
+     "literal": "excuse, what is clock-the?"
+    },
+    {
+     "speaker": "Oskar:",
+     "text": "Den är kvart över åtta.",
+     "id": "It's quarter past eight.",
+     "literal": "it is quarter over eight."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Och när går tåget till Uppsala?",
+     "id": "And when does the train to Uppsala leave?",
+     "literal": "and when goes train-the to Uppsala?"
+    },
+    {
+     "speaker": "Oskar:",
+     "text": "Halv nio. Vi har femton minuter.",
+     "id": "Half past eight. We've got fifteen minutes.",
+     "literal": "half nine. we have fifteen minutes."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Halv nio? Alltså klockan nio och trettio?",
+     "id": "\"Half nine\"? So nine thirty?",
+     "literal": "half nine? so clock-the nine and thirty?"
+    },
+    {
+     "speaker": "Oskar:",
+     "text": "Nej! Halv nio betyder åtta trettio. Vi säger halva timmen framåt.",
+     "id": "No! Halv nio means eight thirty. We count the half hour forward.",
+     "literal": "no! half nine means eight thirty. we say half hour-the forward."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Oj. Då har vi bara femton minuter, inte fyrtiofem.",
+     "id": "Oops. Then we only have fifteen minutes, not forty-five.",
+     "literal": "oops. then have we only fifteen minutes, not forty-five."
+    },
+    {
+     "speaker": "Oskar:",
+     "text": "Precis. Vilket spår? Spår sex, tror jag.",
+     "id": "Exactly. Which platform? Platform six, I think.",
+     "literal": "exactly. which track? track six, believe I."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Hur mycket kostar biljetten?",
+     "id": "How much is the ticket?",
+     "literal": "how much costs ticket-the?"
+    },
+    {
+     "speaker": "Oskar:",
+     "text": "Nittiofem kronor. Eller hundra tio om du köper ombord.",
+     "id": "Ninety-five kronor. Or a hundred and ten if you buy it on board.",
+     "literal": "ninety-five kronor. or hundred ten if you buy on-board."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Då köper jag nu. Och vi ses vid spår sex om tio minuter.",
+     "id": "Then I'll buy one now. See you at platform six in ten minutes.",
+     "literal": "then buy I now. and we see-each-other at track six in ten minutes."
+    }
+   ],
+   "notes": [
+    "**Halv nio means 8:30, not 9:30.** This is the most expensive misunderstanding a newcomer to Sweden can make, and it makes people miss trains every week. British speakers are especially at risk, because British \"half nine\" means 9:30 — the exact opposite. Swedish — along with German, Dutch, Danish and Norwegian — counts the half hour **toward** the next hour, not **after** the current one. *Halv nio* = \"half way to nine\". When in doubt, double-check with numbers: *Alltså åtta trettio?*",
+    "**Klockan** (the clock) is often shortened to **klockan är** or even **den är**. Three equally correct ways to ask: *Vad är klockan?*, *Hur mycket är klockan?* and, most casually, *Vet du vad klockan är?*",
+    "**Vilket spår?** — \"which platform?\". *Vilken* is used with *en*-words, *vilket* with *ett*-words, *vilka* with plurals. Since it's *ett spår*, the form is *vilket*. It's the same pattern as adjectives: a *-t* ending for *ett*-words.",
+    "**Hundra tio** is written as two words, but **nittiofem** as one. The rule: numbers under a hundred are written as a single word (*tjugoett*, *fyrtiofem*, *nittionio*), while hundreds and thousands may be split. In practice, Swedes just write the digits.",
+    "**Om tio minuter** means \"**in** ten minutes\", pointing forward in time. Don't confuse it with *i tio minuter*, which means \"**for** ten minutes\". *Jag kommer om tio minuter* (I'll be there in ten minutes) is very different from *jag väntar i tio minuter* (I'm waiting for ten minutes). English learners slip here because *i* looks like \"in\" — but for time, Swedish \"in\" is *om*.",
+    "**Kronor** is the plural of *en krona*, the Swedish currency. In conversation people say *spänn* or *kronor*; prices are written \"95 kr\". One krona is roughly a tenth of a US dollar, so knock a zero off to get a quick feel for prices."
+   ],
+   "grammars": [
+    {
+     "title": "Numbers 0-20, then the tens",
+     "tables": [
+      {
+       "head": [
+        "",
+        "Svenska",
+        "Say it",
+        "",
+        "Svenska",
+        "Say it"
+       ],
+       "rows": [
+        [
+         "0",
+         "noll",
+         "nol",
+         "11",
+         "elva",
+         "EL-vah"
+        ],
+        [
+         "1",
+         "ett / en",
+         "et · en",
+         "12",
+         "tolv",
+         "tolv"
+        ],
+        [
+         "2",
+         "två",
+         "tvoh",
+         "13",
+         "tretton",
+         "TRET-ton"
+        ],
+        [
+         "3",
+         "tre",
+         "treh",
+         "14",
+         "fjorton",
+         "FYOO-ton"
+        ],
+        [
+         "4",
+         "fyra",
+         "FÜ-rah",
+         "15",
+         "femton",
+         "FEM-ton"
+        ],
+        [
+         "5",
+         "fem",
+         "fem",
+         "16",
+         "sexton",
+         "SEKS-ton"
+        ],
+        [
+         "6",
+         "sex",
+         "seks",
+         "17",
+         "sjutton",
+         "HWÜT-ton"
+        ],
+        [
+         "7",
+         "sju",
+         "hwü",
+         "18",
+         "arton",
+         "AH-ton"
+        ],
+        [
+         "8",
+         "åtta",
+         "OT-tah",
+         "19",
+         "nitton",
+         "NIT-ton"
+        ],
+        [
+         "9",
+         "nio",
+         "NEE-oo",
+         "20",
+         "tjugo",
+         "SHÜ-goo"
+        ],
+        [
+         "10",
+         "tio",
+         "TEE-oo",
+         "21",
+         "tjugoett",
+         "shü-goo-ET"
+        ]
+       ]
+      },
+      {
+       "head": [
+        "Tens",
+        "Say it",
+        "Hundreds & thousands",
+        "Say it"
+       ],
+       "rows": [
+        [
+         "trettio (30)",
+         "TRET-tee",
+         "hundra (100)",
+         "HÜND-rah"
+        ],
+        [
+         "fyrtio (40)",
+         "FÖR-tee",
+         "tvåhundra (200)",
+         "tvoh-HÜND-rah"
+        ],
+        [
+         "femtio (50)",
+         "FEM-tee",
+         "tusen (1000)",
+         "TÜ-sen"
+        ],
+        [
+         "sextio (60)",
+         "SEKS-tee",
+         "tvåtusen (2000)",
+         "tvoh-TÜ-sen"
+        ],
+        [
+         "sjuttio (70)",
+         "HWÜT-tee",
+         "en miljon",
+         "en mil-YOON"
+        ],
+        [
+         "åttio (80)",
+         "OT-tee",
+         "",
+         ""
+        ],
+        [
+         "nittio (90)",
+         "NIT-tee",
+         "",
+         ""
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "The final **-o** of the tens (*trettio*, *fyrtio*, *sjuttio*) is almost always silent in speech: **TRET-tee**, **FÖR-tee**, **HWÜT-tee**. Pronouncing it in full sounds like someone reading out a document.",
+      "The number **1** has two forms that follow the gender of the noun: *ett hus* but *en bok*. When the number stands alone — counting, phone numbers, scores — it's always **ett**: \"one, two, three\" is *ett, två, tre*.",
+      "**Sju (7)** and **sjuttio (70)** both use the breathy back sound: **hwü** and **HWÜT-tee**. Practice them together with *sjutton* (17), because these three sound alike to a beginner's ear and get mixed up when you're hearing prices."
+     ]
+    },
+    {
+     "title": "Telling the time",
+     "table": {
+      "head": [
+       "Time",
+       "Svenska",
+       "Literally"
+      ],
+      "rows": [
+       [
+        "08.00",
+        "**Klockan är åtta.**",
+        "clock-the is eight"
+       ],
+       [
+        "08.05",
+        "**Fem över åtta.**",
+        "five over eight"
+       ],
+       [
+        "08.15",
+        "**Kvart över åtta.**",
+        "quarter over eight"
+       ],
+       [
+        "08.20",
+        "**Tjugo över åtta.**",
+        "twenty over eight"
+       ],
+       [
+        "08.25",
+        "**Fem i halv nio.**",
+        "five to half nine"
+       ],
+       [
+        "08.30",
+        "**Halv nio.**",
+        "half nine"
+       ],
+       [
+        "08.35",
+        "**Fem över halv nio.**",
+        "five over half nine"
+       ],
+       [
+        "08.45",
+        "**Kvart i nio.**",
+        "quarter to nine"
+       ],
+       [
+        "08.55",
+        "**Fem i nio.**",
+        "five to nine"
+       ]
+      ]
+     },
+     "after": [
+      "Look at the two rows that sound strangest to an English ear: **fem i halv nio** (8:25) and **fem över halv nio** (8:35). Swedish treats the half hour as **a landmark of its own**, then counts forward and back from it. English stops at \"twenty-five past\" and \"twenty-five to\"; Swedish reaches for *halv* instead.",
+      "For official timetables — trains, flights, opening hours — Swedes use **the 24-hour clock and plain numbers**: *tåget går 14.37* is read *fjorton trettiosju*. So if *halv* ever confuses you, you can always say the raw numbers, and it still sounds perfectly natural.",
+      "**Klockan** is shortened to **kl.** in writing. To ask about an appointment: *Hur dags?* (\"what time?\") — shorter and more casual than *vilken tid*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Months, dates and ordinal numbers",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Month",
+      "Say it",
+      "Month",
+      "Say it"
+     ],
+     "rows": [
+      [
+       "januari",
+       "yah-nü-AH-ree",
+       "juli",
+       "YÜ-lee"
+      ],
+      [
+       "februari",
+       "feb-rü-AH-ree",
+       "augusti",
+       "ow-GÜS-tee"
+      ],
+      [
+       "mars",
+       "mahsh",
+       "september",
+       "sep-TEM-ber"
+      ],
+      [
+       "april",
+       "ahp-REEL",
+       "oktober",
+       "ok-TOO-ber"
+      ],
+      [
+       "maj",
+       "my",
+       "november",
+       "noo-VEM-ber"
+      ],
+      [
+       "juni",
+       "YÜ-nee",
+       "december",
+       "deh-SEM-ber"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Month names are **not capitalized**, just like the days of the week — a small trap for English speakers, who capitalize both. Dates use ordinal numbers: *den första januari* (January 1st), *den tjugofjärde december* (December 24th). In everyday writing, *1 januari* or *2026-01-01* is enough — Sweden writes dates year-month-day, which is even the official ISO standard. No more guessing whether 03/04 is March or April."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Number",
+      "Ordinal",
+      "Say it",
+      "Number",
+      "Ordinal",
+      "Say it"
+     ],
+     "rows": [
+      [
+       "1",
+       "första",
+       "FÖSH-tah",
+       "6",
+       "sjätte",
+       "HWET-teh"
+      ],
+      [
+       "2",
+       "andra",
+       "AHND-rah",
+       "7",
+       "sjunde",
+       "HWÜN-deh"
+      ],
+      [
+       "3",
+       "tredje",
+       "TREHD-yeh",
+       "8",
+       "åttonde",
+       "OT-ton-deh"
+      ],
+      [
+       "4",
+       "fjärde",
+       "FYEH-deh",
+       "9",
+       "nionde",
+       "NEE-on-deh"
+      ],
+      [
+       "5",
+       "femte",
+       "FEM-teh",
+       "10",
+       "tionde",
+       "TEE-on-deh"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "From eleven on, the ordinal just adds **-de** or **-e**: *elfte*, *tolfte*, *trettonde*, *tjugonde*, *trettiofemte*. Only the first ten need memorizing on their own — and three of them (*första*, *andra*, *tredje*) work just like English *first*, *second*, *third*, which are irregular in exactly the same way. *Fjärde*, *femte*, *sjätte* even sound like \"fourth\", \"fifth\", \"sixth\"."
+    },
+    {
+     "type": "kotak",
+     "title": "Seasons, and why Swedes never stop talking about them",
+     "items": [
+      "**en vinter** (winter) · **en vår** (spring) · **en sommar** (summer) · **en höst** (fall)",
+      "\"In summer\" = *på sommaren*; \"this summer\" = *i sommar*. Same pattern as *på kvällen* and *ikväll*.",
+      "In Stockholm the sun sets at 2:50 p.m. in December and at 10:10 p.m. in June. That's why weather and light are the number-one conversation opener in Sweden, far ahead of work or family."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Numbers you use every day",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Use",
+      "Example",
+      "How to say it"
+     ],
+     "rows": [
+      [
+       "Price",
+       "95 kr",
+       "nittiofem kronor"
+      ],
+      [
+       "Phone number",
+       "070-123 45 67",
+       "noll sjuttio, ett två tre, fyrtiofem, sextiosju"
+      ],
+      [
+       "Age",
+       "Jag är 24 år.",
+       "tjugofyra år"
+      ],
+      [
+       "Temperature",
+       "-7 °C",
+       "minus sju grader"
+      ],
+      [
+       "Platform number",
+       "spår 6",
+       "spår sex"
+      ],
+      [
+       "Room number",
+       "rum 312",
+       "rum tre tolv"
+      ],
+      [
+       "Year",
+       "2026",
+       "tjugohundratjugosex / två tusen tjugosex"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Swedish phone numbers are read **in pairs**, not digit by digit: *45* is *fyrtiofem*, not *fyra fem*. To a beginner it sounds very fast. Your lifeline: *Kan du säga siffra för siffra?* — \"could you say it one digit at a time?\""
+    },
+    {
+     "type": "kotak",
+     "title": "Spiral review — back to Unit 4",
+     "items": [
+      "Cover the Swedish column in the house table in Unit 4 and say the **definite** forms from memory: the house, the kitchen, the door, the window.",
+      "Then combine them with this unit's numbers: *tre hus*, *två dörrar*, *fem fönster*, *tio rum*. Notice which ones change and which don't.",
+      "Finally, say these three times out loud: 07.15, 09.30, 17.45 — in Swedish, without looking at the table."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "sv": "en klocka",
+   "baca": "en KLOK-kah",
+   "en": "clock, watch; o'clock"
+  },
+  {
+   "sv": "en timme",
+   "baca": "en TIM-meh",
+   "en": "hour"
+  },
+  {
+   "sv": "en minut",
+   "baca": "en mi-NÜT",
+   "en": "minute"
+  },
+  {
+   "sv": "kvart",
+   "baca": "kvaht",
+   "en": "quarter (of an hour)"
+  },
+  {
+   "sv": "halv",
+   "baca": "hahlv",
+   "en": "half (toward the next hour)"
+  },
+  {
+   "sv": "över",
+   "baca": "Ö-ver",
+   "en": "past, over"
+  },
+  {
+   "sv": "i (time)",
+   "baca": "ee",
+   "en": "to (before the hour)"
+  },
+  {
+   "sv": "om",
+   "baca": "om",
+   "en": "in (time from now)"
+  },
+  {
+   "sv": "en biljett",
+   "baca": "en bil-YET",
+   "en": "ticket"
+  },
+  {
+   "sv": "ett spår",
+   "baca": "et spohr",
+   "en": "platform, track"
+  },
+  {
+   "sv": "en krona",
+   "baca": "en KROO-nah",
+   "en": "krona (currency)"
+  },
+  {
+   "sv": "att kosta",
+   "baca": "aht KOS-tah",
+   "en": "to cost"
+  },
+  {
+   "sv": "att köpa",
+   "baca": "aht SHÖ-pah",
+   "en": "to buy"
+  },
+  {
+   "sv": "att tro",
+   "baca": "aht troo",
+   "en": "to think, to believe"
+  },
+  {
+   "sv": "att betyda",
+   "baca": "aht beh-TÜ-dah",
+   "en": "to mean"
+  },
+  {
+   "sv": "alltså",
+   "baca": "AHLT-soh",
+   "en": "so, that is"
+  },
+  {
+   "sv": "eller",
+   "baca": "EL-ler",
+   "en": "or"
+  },
+  {
+   "sv": "en månad",
+   "baca": "en MOH-nahd",
+   "en": "month"
+  },
+  {
+   "sv": "ett år",
+   "baca": "et ohr",
+   "en": "year"
+  },
+  {
+   "sv": "en sommar",
+   "baca": "en SOM-mahr",
+   "en": "summer"
+  },
+  {
+   "sv": "en vinter",
+   "baca": "en VIN-ter",
+   "en": "winter"
+  },
+  {
+   "sv": "en grad",
+   "baca": "en grahd",
+   "en": "degree"
+  },
+  {
+   "sv": "hur dags",
+   "baca": "hür dahks",
+   "en": "what time, when"
+  },
+  {
+   "sv": "ungefär",
+   "baca": "ün-yeh-FEHR",
+   "en": "about, roughly"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Write the time in Swedish.",
+   "items": [
+    "07.00",
+    "09.15",
+    "10.30",
+    "12.45",
+    "15.25",
+    "18.35"
+   ]
+  },
+  {
+   "prompt": "Write the numbers out in words.",
+   "items": [
+    "7",
+    "17",
+    "20",
+    "45",
+    "90",
+    "365"
+   ]
+  },
+  {
+   "prompt": "Fill in *om* or *i*.",
+   "items": [
+    "Jag kommer ____ tio minuter.",
+    "Vi väntade ____ en timme.",
+    "Tåget går ____ fem minuter.",
+    "Hon bodde i Sverige ____ tre år.",
+    "Vi ses ____ en vecka."
+   ]
+  },
+  {
+   "prompt": "Translate into Swedish.",
+   "items": [
+    "What time is it?",
+    "The train leaves at half past eight.",
+    "How much is the ticket?",
+    "Ninety-five kronor.",
+    "See you in ten minutes."
+   ]
+  }
+ ],
+ "answers": [
+  "Klockan är sju. — Kvart över nio. — Halv elva. — Kvart i ett. — Fem i halv fyra. — Fem över halv sju.",
+  "sju — sjutton — tjugo — fyrtiofem — nittio — trehundrasextiofem",
+  "om — i — om — i — om",
+  "Vad är klockan? — Tåget går halv nio. — Hur mycket kostar biljetten? — Nittiofem kronor. — Vi ses om tio minuter."
+ ]
+}

@@ -25,6 +25,10 @@ const MIRING = /(?<!\*)\*(?!\*)([^*]+)\*(?!\*)/g;
 const KEPALA_ID = /arti|makna|indonesia|terjemah/i;
 /** Kepala kolom "cara baca": bukan bahasa mana pun, jangan diperas. */
 const KEPALA_BACA = /cara baca|baca|pelafalan|romaji|rōmaji/i;
+/* [ebook-pengantar-en-v1] Kepala kolom modul edisi Inggris: kolom arti &
+   penjelasan (bahasa pengantar) dan kolom cara baca. Selebihnya bahasa target. */
+const KEPALA_PENGANTAR_EN = /english|meaning|literally|note|why|remember|what happens|known for|^when|tone|how to spot|sound|found in|^use$|^purpose$/i;
+const KEPALA_BACA_EN = /pronunciation|say it|how to say/i;
 /* Ekor kata kerja Spanyol & Italia yang sesekali lolos lewat contoh kalimat
    tanpa tanda miring, dan kata serapan yang ejaannya sama persis di bahasa
    target — mengunci ini berarti mengunci kata bahasa targetnya sekalian.
@@ -41,8 +45,26 @@ const BUANG = new Set([
   "apel", "salad", "tomat", "sup", "pena", "peron", "radio", "hotel", "taxi",
 ]);
 
-const idF = new Map();
-const tgF = new Map();
+/* [ebook-pengantar-en-v1] Modul EDISI INGGRIS (meta.edition "English Edition",
+   mis. sv-a1-en) memakai skema yang sama persis dengan modul berpengantar
+   Indonesia — `l.id`, `vocab[].en`, prosa catatan — tapi prosanya bahasa
+   Inggris. Kalau ikut diperas ke idF, kata Inggris ("the", "you") masuk
+   LEKSIKON_ID dan dibungkam di SEMUA modul. Jadi untuk modul begini kedua
+   wadahnya ditukar: prosanya masuk penIdF, ruas targetnya penTgF, lalu keluar
+   sebagai daftar ketiga LEKSIKON_PENGANTAR_EN. */
+const idUtama = new Map();
+const tgUtama = new Map();
+const penIdF = new Map();
+const penTgF = new Map();
+let idF = idUtama;
+/** Modul yang sedang diperas = modul edisi Inggris? */
+let pengantarEn = false;
+/* Kata bahasa target modul edisi Inggris yang dijamin skema (dialog, kolom
+   vocab bahasa target) — pembanding daftar pengantar Inggris. Sengaja TIDAK
+   memakai tgSkema: tgSkema memuat dialog modul Inggris (en-*), yang isinya
+   persis kata pengantar kita. */
+const penSkema = new Set();
+let tgF = tgUtama;
 /* [ebook-jaga-bahasa-en-v1] Modul Inggris butuh daftar KEDUA. Bahasa Inggris
    ditulis dengan huruf Latin polos, jadi `kataTargetJelas` di ebookTts.ts tak
    pernah menemukan bukti bahasa target di dalamnya — dan satu kata serapan
@@ -58,7 +80,7 @@ const teksEnMiring = (s) => { if (modulEn && typeof s === "string") catat(enLema
 const pecah = (s) => String(s).toLowerCase().split(/[^\p{L}]+/u).filter(Boolean);
 const catat = (m, s) => pecah(s).forEach((w) => {
   m.set(w, (m.get(w) || 0) + 1);
-  if (m === idF) (idModul.get(w) ?? idModul.set(w, new Set()).get(w)).add(modulKini);
+  if (m === idUtama) (idModul.get(w) ?? idModul.set(w, new Set()).get(w)).add(modulKini);
 });
 /* [ebook-jaga-bahasa-id-v3] Di modul mana saja kata itu tercetak di prosa
    Indonesia. Bocoran bahasa target (kata tanpa tanda miring di contoh) hampir
@@ -76,6 +98,7 @@ let modulSerumpun = false;
    Sunda dikecualikan karena pagarnya memang mati untuk `su`. */
 const tgSkema = new Set();
 const teksSkema = (s) => {
+  if (typeof s === "string" && pengantarEn) pecah(s).forEach((w) => penSkema.add(w));
   if (typeof s === "string" && !modulSerumpun && !modulKini.startsWith("su-")) pecah(s).forEach((w) => tgSkema.add(w));
 };
 
@@ -97,8 +120,8 @@ function blok(b) {
     for (const baris of b.rows) {
       (Array.isArray(baris) ? baris : []).forEach((sel, i) => {
         const judul = String(kepala[i] ?? "");
-        if (KEPALA_BACA.test(judul)) return;                 // kolom cara baca: bukan bahasa mana pun
-        if (KEPALA_ID.test(judul) || (!kepala.length && i > 0)) teksId(sel);
+        if (KEPALA_BACA.test(judul) || (pengantarEn && KEPALA_BACA_EN.test(judul))) return; // kolom cara baca: bukan bahasa mana pun
+        if (KEPALA_ID.test(judul) || (pengantarEn && KEPALA_PENGANTAR_EN.test(judul)) || (!kepala.length && i > 0)) teksId(sel);
         else { teksTarget(sel); if (/^english$/i.test(judul.trim())) teksEn(sel); }
       });
     }
@@ -123,8 +146,11 @@ function unit(j) {
      yang lupa ditambahkan — pl, sv, tl, … — lolos perbandingan 6:1, lalu kata
      bahasa targetnya ikut terperas jadi "kata Indonesia". */
   for (const v of j.vocab || []) {
-    for (const k of Object.keys(v)) if (k !== "id" && k !== "baca") { teksTarget(v[k]); teksSkema(v[k]); }
-    teksEn(v.en); teksId(v.id);
+    /* [ebook-pengantar-en-v1] Di modul edisi Inggris `vocab[].en` = ARTINYA
+       (bahasa pengantar), bukan kolom bahasa target. */
+    for (const k of Object.keys(v)) if (k !== "id" && k !== "baca" && !(pengantarEn && k === "en")) { teksTarget(v[k]); teksSkema(v[k]); }
+    if (pengantarEn) teksId(v.en); else teksEn(v.en);
+    teksId(v.id);
   }
   for (const e of j.exercises || []) { teksId(e.title); teksId(e.prompt); daftarId(e.items); }
   daftarId(j.answers);
@@ -139,6 +165,11 @@ for (const modul of fs.readdirSync(AKAR)) {
   modulEn = /^en-/.test(modul);
   modulKini = modul;
   modulSerumpun = MODUL_SERUMPUN.test(modul);
+  let edisi = "";
+  try { edisi = JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8")).edition ?? ""; } catch { /* tanpa meta */ }
+  pengantarEn = !modulSerumpun && !modulEn && /english/i.test(edisi);
+  idF = pengantarEn ? penIdF : idUtama;
+  tgF = pengantarEn ? penTgF : tgUtama;
   for (const berkas of fs.readdirSync(dir)) {
     if (!berkas.endsWith(".json")) continue;
     unit(JSON.parse(fs.readFileSync(path.join(dir, berkas), "utf8")));
@@ -149,11 +180,11 @@ for (const modul of fs.readdirSync(AKAR)) {
    cuma tercetak sekali di seluruh modul tetap akan diketuk siswa, dan risikonya
    satu arah — kalau kata itu ternyata bahasa target, ia sudah tersaring lebih
    dulu oleh perbandingan 6:1 di atas. */
-const kata = [...idF.entries()]
+const kata = [...idUtama.entries()]
   /* Minimal di 2 modul: tanpa syarat ini daftar melar ke ~20 ribu kata, dan
      ekornya penuh kata bahasa target yang tercetak tanpa tanda miring di
      prosa satu modul saja. */
-  .filter(([w, n]) => w.length >= 3 && /^[a-z]+$/.test(w) && n >= 6 * (tgF.get(w) || 0) &&
+  .filter(([w, n]) => w.length >= 3 && /^[a-z]+$/.test(w) && n >= 6 * (tgUtama.get(w) || 0) &&
     (idModul.get(w)?.size || 0) >= 2 && !tgSkema.has(w))
   .map(([w]) => w)
   .filter((w) => !BUANG.has(w) && !EKOR_ASING.test(w))
@@ -186,7 +217,7 @@ console.log(baris.join("\n"));
    terbawa — maka ia disaring 20:1 lawan prosa Indonesianya. */
 const kataEn = [...new Set([
   ...[...enKuat.keys()],
-  ...[...enLemah.entries()].filter(([w, n]) => n * 20 >= (idF.get(w) || 0)).map(([w]) => w),
+  ...[...enLemah.entries()].filter(([w, n]) => n * 20 >= (idUtama.get(w) || 0)).map(([w]) => w),
 ])]
   .filter((w) => w.length >= 2 && /^[a-z']+$/.test(w))
   .sort();
@@ -199,4 +230,23 @@ for (const w of kataEn) {
 barisEn.push("  " + kiniEn.trim());
 console.log("\n/* ── LEKSIKON_EN ─────────────────────────────────────────── */");
 console.log(barisEn.join("\n"));
-console.error(`${kata.length} kata Indonesia · ${kataEn.length} kata Inggris`);
+
+/* [ebook-pengantar-en-v1] Kata prosa modul edisi Inggris yang praktis tak
+   pernah tercetak di ruas bahasa targetnya (6:1) dan tak pernah muncul di baris
+   dialog modul mana pun. Tanpa syarat "minimal 2 modul" — modul edisi Inggris
+   baru satu dua, dan kata Inggris tak mungkin bocor dari bahasa target Latin
+   lain karena tgSkema sudah menyaringnya. */
+const kataPen = [...penIdF.entries()]
+  .filter(([w, n]) => w.length >= 2 && /^[a-z']+$/.test(w) && n >= 6 * (penTgF.get(w) || 0) && !penSkema.has(w))
+  .map(([w]) => w)
+  .sort();
+const barisPen = [];
+let kiniPen = "";
+for (const w of kataPen) {
+  if ((kiniPen + " " + w).trim().length > 88) { barisPen.push("  " + kiniPen.trim()); kiniPen = w; }
+  else kiniPen += " " + w;
+}
+barisPen.push("  " + kiniPen.trim());
+console.log("\n/* ── LEKSIKON_PENGANTAR_EN ───────────────────────────────── */");
+console.log(barisPen.join("\n"));
+console.error(`${kata.length} kata Indonesia · ${kataEn.length} kata Inggris · ${kataPen.length} kata pengantar Inggris`);

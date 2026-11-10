@@ -1,0 +1,537 @@
+{
+ "title": "Describing things",
+ "title_target": "Den stora gröna ryggsäcken",
+ "goal": "Use adjectives in their three forms, and understand double definiteness — the pattern that makes Swedish say \"the\" twice in a single phrase.",
+ "bekal": [
+  "the three forms of an adjective: *stor*, *stort*, *stora*",
+  "double definiteness: *den stora bilen*",
+  "the most common adjectives, and the irregular ones"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — Den gröna ryggsäcken",
+   "intro": "A backpack has been left behind in the reading room of the university library. Dian takes it to the front desk.",
+   "lines": [
+    {
+     "speaker": "Dian:",
+     "text": "Hej, jag hittade en ryggsäck i läsesalen.",
+     "id": "Hi, I found a backpack in the reading room.",
+     "literal": "hi, I found a backpack in reading-room-the."
+    },
+    {
+     "speaker": "Personalen:",
+     "text": "Tack! Hur ser den ut?",
+     "id": "Thanks! What does it look like?",
+     "literal": "thanks! how looks it out?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Den är grön och ganska stor. Den har en gul rand.",
+     "id": "It's green and fairly big. It has a yellow stripe.",
+     "literal": "it is green and fairly big. it has a yellow stripe."
+    },
+    {
+     "speaker": "Personalen:",
+     "text": "Den stora gröna ryggsäcken? Den har någon frågat efter.",
+     "id": "The big green backpack? Someone's already asked about it.",
+     "literal": "the big green backpack-the? it has someone asked after."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Vad bra. Är det en student?",
+     "id": "Great. Is it a student?",
+     "literal": "what good. is it a student?"
+    },
+    {
+     "speaker": "Personalen:",
+     "text": "Ja, en ung kille med blå jacka. Han var väldigt orolig.",
+     "id": "Yes, a young guy in a blue jacket. He was really worried.",
+     "literal": "yes, a young guy with blue jacket. he was very worried."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Det förstår jag. Min gamla dator ligger i min ryggsäck.",
+     "id": "I can understand that. My old laptop is in my backpack.",
+     "literal": "that understand I. my old computer lies in my backpack."
+    },
+    {
+     "speaker": "Personalen:",
+     "text": "Har du ett nytt lås? Gamla lås är inte säkra.",
+     "id": "Do you have a new lock? Old locks aren't safe.",
+     "literal": "have you a new lock? old locks are not safe."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Nej. Var kan jag köpa ett bra lås?",
+     "id": "No. Where can I buy a good lock?",
+     "literal": "no. where can I buy a good lock?"
+    },
+    {
+     "speaker": "Personalen:",
+     "text": "I den lilla affären bredvid kyrkan. De har billiga och bra lås.",
+     "id": "In the little shop next to the church. They have cheap, good locks.",
+     "literal": "in the little shop-the beside church-the. they have cheap and good locks."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Perfekt, tack! Då går jag dit imorgon.",
+     "id": "Perfect, thanks! Then I'll go there tomorrow.",
+     "literal": "perfect, thanks! then go I there tomorrow."
+    }
+   ],
+   "notes": [
+    "**Den stora gröna ryggsäcken** says \"the\" **twice**: once in front as *den*, once at the end as the ending *-en* — literally \"the big green backpack-the\". This is **double definiteness**, and it is a hallmark of Swedish; Danish, for example, does without it. To an English ear it sounds like one \"the\" too many, but leave either one out and the phrase sounds broken.",
+    "**An adjective in a definite phrase always ends in *-a***, whatever the gender and number of the noun: *den stor**a** bilen*, *det stor**a** huset*, *de stor**a** bilarna*. That saves memorizing — the only tricky part is the indefinite phrase.",
+    "**Liten is the only truly irregular adjective**: *en liten bil*, *ett litet hus*, *små bilar*, *den lilla bilen*, *de små bilarna*. Four forms that don't even look alike. It is also one of the most frequent words, so you will learn it simply by using it.",
+    "**Gammal** loses a letter when it gets an ending: *en gammal bil* → *den gamla bilen*, *gamla bilar*. The same pattern applies to *vacker* → *vackra* and *enkel* → *enkla*. This is a sound adjustment, not a random exception.",
+    "**En kille** means \"guy\", and its partner *en tjej* means \"girl, gal\" (pronounced **shay**). Both are everyday words; the neutral forms are *en man* and *en kvinna*, while *en pojke* and *en flicka* are for children. Calling a twenty-year-old student a *pojke* sounds odd — like calling him a \"little boy\".",
+    "**Väldigt** means \"very, really\" and in conversation is much more common than *mycket* in front of an adjective. Its cousins: *jättebra* (super good), *jättestor* (huge) — the prefix *jätte-* literally means \"giant\", and it attaches to any adjective, much like English *super-*."
+   ],
+   "grammars": [
+    {
+     "title": "The three forms of an adjective",
+     "table": {
+      "head": [
+       "Pattern",
+       "Form",
+       "Example",
+       "Meaning"
+      ],
+      "rows": [
+       [
+        "*en*-word, indefinite",
+        "base",
+        "en **stor** bil",
+        "a big car"
+       ],
+       [
+        "*ett*-word, indefinite",
+        "+ **t**",
+        "ett **stort** hus",
+        "a big house"
+       ],
+       [
+        "plural, indefinite",
+        "+ **a**",
+        "**stora** bilar",
+        "big cars"
+       ],
+       [
+        "definite (all)",
+        "**den/det/de** + **-a** + ending",
+        "**den stora bilen**",
+        "the big car"
+       ],
+       [
+        "after *är*, *blir*",
+        "follows gender & number",
+        "Bilen är **stor**.",
+        "The car is big."
+       ],
+       [
+        "after a possessive",
+        "+ **a**",
+        "min **stora** bil",
+        "my big car"
+       ]
+      ]
+     },
+     "after": [
+      "The fifth row is easy to miss: an adjective standing **after the verb** (*är*, *blir*, *verkar*) never takes the *-a* ending in the singular. *Bilen är stor*, *Huset är stort*, *Bilarna är stora*. What decides is still the gender and number of the noun — English adjectives never change at all, so this is the part that needs practice.",
+      "The last row matters too: after *min*, *din*, *hans* or a name ending in *-s*, the adjective takes the *-a* form even without *den*. *Min stora bil*, *Elins nya jacka*, *hans gamla dator*.",
+      "Adjectives that **already end in *-t*** don't change for *ett*-words: *svart* stays *svart*. Those ending in a long vowel double the *t*: *blå* → *blått*, *ny* → *nytt*, *fri* → *fritt*."
+     ]
+    },
+    {
+     "title": "Irregular adjectives",
+     "table": {
+      "head": [
+       "*en*-word",
+       "*ett*-word",
+       "Plural / definite",
+       "Meaning"
+      ],
+      "rows": [
+       [
+        "**liten**",
+        "litet",
+        "**små** / lilla",
+        "small, little"
+       ],
+       [
+        "**gammal**",
+        "gammalt",
+        "**gamla**",
+        "old"
+       ],
+       [
+        "**vacker**",
+        "vackert",
+        "**vackra**",
+        "beautiful"
+       ],
+       [
+        "**enkel**",
+        "enkelt",
+        "**enkla**",
+        "simple"
+       ],
+       [
+        "**bra**",
+        "bra",
+        "bra",
+        "good (never changes)"
+       ],
+       [
+        "**kul / roligt**",
+        "kul / roligt",
+        "kul / roliga",
+        "fun, funny"
+       ]
+      ]
+     },
+     "after": [
+      "**Bra never changes** in any form: *en bra bok*, *ett bra hus*, *bra böcker*, *den bra boken*. It is one of a handful of adjectives free of every rule on this page, and luckily it is also one of the most used.",
+      "**Liten/lilla/små** needs attention: *lilla* is used in the definite singular (*den lilla bilen*), while *små* is for the plural (*små bilar*, *de små bilarna*). There is no form *litena* or *litna*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "The most common adjectives",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Svenska",
+      "Pronunciation",
+      "Meaning",
+      "Opposite"
+     ],
+     "rows": [
+      [
+       "stor",
+       "stoor",
+       "big",
+       "liten"
+      ],
+      [
+       "ny",
+       "nü",
+       "new",
+       "gammal"
+      ],
+      [
+       "bra",
+       "brah",
+       "good",
+       "dålig"
+      ],
+      [
+       "lätt",
+       "let",
+       "easy, light",
+       "svår / tung"
+      ],
+      [
+       "billig",
+       "BIL-lee",
+       "cheap",
+       "dyr"
+      ],
+      [
+       "snäll",
+       "snel",
+       "kind, nice",
+       "elak"
+      ],
+      [
+       "glad",
+       "glahd",
+       "happy, glad",
+       "ledsen"
+      ],
+      [
+       "varm",
+       "vahrm",
+       "warm",
+       "kall"
+      ],
+      [
+       "lång",
+       "long",
+       "long, tall",
+       "kort"
+      ],
+      [
+       "snabb",
+       "snahb",
+       "fast",
+       "långsam"
+      ],
+      [
+       "ren",
+       "rehn",
+       "clean",
+       "smutsig"
+      ],
+      [
+       "trött",
+       "tröt",
+       "tired",
+       "pigg"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Lätt** does two jobs: \"easy\" and \"light\". So it has two opposites: *svår* (difficult) and *tung* (heavy). Context tells them apart. English splits this into two words — though \"light work\" shows the same overlap is there in English too."
+    },
+    {
+     "type": "kotak",
+     "title": "Making it stronger or weaker",
+     "items": [
+      "**jätte-** — super: *jättebra*, *jättestor*, *jättetrött* (very common among young people)",
+      "**väldigt** — very, really: *väldigt snäll*",
+      "**mycket** — very (more neutral): *mycket bra*",
+      "**ganska** — fairly, quite: *ganska stor*",
+      "**lite** — a bit: *lite trött*",
+      "**inte så** — not that: *inte så dyr*",
+      "**för** — too: *för kallt* (note: *för* also means \"for\")"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Pointing: den här, den där",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "After double definiteness, one more pattern that works the same way: the demonstratives \"this\" and \"that\"."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pattern",
+      "*en*-word",
+      "*ett*-word",
+      "Plural"
+     ],
+     "rows": [
+      [
+       "this / these",
+       "den här bilen",
+       "det här huset",
+       "de här bilarna"
+      ],
+      [
+       "that / those",
+       "den där bilen",
+       "det där huset",
+       "de där bilarna"
+      ],
+      [
+       "this / these (formal)",
+       "denna bil",
+       "detta hus",
+       "dessa bilar"
+      ],
+      [
+       "+ adjective",
+       "den här stora bilen",
+       "det där nya huset",
+       "de här små bilarna"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Notice the third row: the formal *denna/detta/dessa* takes the **indefinite** noun (*denna bil*, not *denna bilen*), while *den här* takes the **definite** form (*den här bilen*, literally \"the here car-the\"). The formal version is used in official writing and the news; in conversation, *den här* wins hands down."
+    },
+    {
+     "type": "kotak",
+     "title": "Spiral review — back to Unit 10",
+     "items": [
+      "Explain to yourself, in one sentence, the difference between *sin* and *hans*.",
+      "Then combine it with this unit's adjectives: *Han tog sin gamla cykel*, *Hon ringde sin snälla mamma*, *De städade sina små rum*.",
+      "Notice that an adjective after *sin/min/hans* always takes the *-a* form, with no need for *den* in front."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "sv": "stor / stort / stora",
+   "baca": "stoor · stoot · STOO-rah",
+   "en": "big, large"
+  },
+  {
+   "sv": "liten / litet / små",
+   "baca": "LEE-ten · LEE-tet · smoh",
+   "en": "small, little"
+  },
+  {
+   "sv": "gammal / gamla",
+   "baca": "GAHM-mahl · GAHM-lah",
+   "en": "old"
+  },
+  {
+   "sv": "ny / nytt / nya",
+   "baca": "nü · nüt · NÜ-ah",
+   "en": "new"
+  },
+  {
+   "sv": "dålig",
+   "baca": "DOH-lee",
+   "en": "bad"
+  },
+  {
+   "sv": "billig",
+   "baca": "BIL-lee",
+   "en": "cheap"
+  },
+  {
+   "sv": "dyr",
+   "baca": "dür",
+   "en": "expensive"
+  },
+  {
+   "sv": "lätt",
+   "baca": "let",
+   "en": "easy, light"
+  },
+  {
+   "sv": "svår",
+   "baca": "svohr",
+   "en": "difficult"
+  },
+  {
+   "sv": "snäll",
+   "baca": "snel",
+   "en": "kind, nice"
+  },
+  {
+   "sv": "glad",
+   "baca": "glahd",
+   "en": "happy, glad"
+  },
+  {
+   "sv": "ledsen",
+   "baca": "LES-sen",
+   "en": "sad, sorry"
+  },
+  {
+   "sv": "varm / kall",
+   "baca": "vahrm · kahl",
+   "en": "warm / cold"
+  },
+  {
+   "sv": "ren / smutsig",
+   "baca": "rehn · SMÜT-see",
+   "en": "clean / dirty"
+  },
+  {
+   "sv": "en ryggsäck",
+   "baca": "en RÜG-sek",
+   "en": "backpack"
+  },
+  {
+   "sv": "ett lås",
+   "baca": "et lohs",
+   "en": "lock, padlock"
+  },
+  {
+   "sv": "en kille / en tjej",
+   "baca": "en SHIL-leh · en shay",
+   "en": "guy / girl"
+  },
+  {
+   "sv": "ung",
+   "baca": "üng",
+   "en": "young"
+  },
+  {
+   "sv": "väldigt",
+   "baca": "VEL-dit",
+   "en": "very, really"
+  },
+  {
+   "sv": "ganska",
+   "baca": "GAHN-skah",
+   "en": "fairly, quite"
+  },
+  {
+   "sv": "jätte-",
+   "baca": "YET-teh",
+   "en": "super- (prefix)"
+  },
+  {
+   "sv": "säker",
+   "baca": "SEH-ker",
+   "en": "safe, sure"
+  },
+  {
+   "sv": "orolig",
+   "baca": "oo-ROO-lee",
+   "en": "worried"
+  },
+  {
+   "sv": "dit",
+   "baca": "deet",
+   "en": "(to) there"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Write the correct adjective form for an *ett*-word. Example: *stor* → *stort*.",
+   "items": [
+    "ny",
+    "billig",
+    "liten",
+    "gammal",
+    "blå",
+    "bra"
+   ]
+  },
+  {
+   "prompt": "Change to the definite form. Example: *en stor bil* → *den stora bilen*.",
+   "items": [
+    "en ny cykel",
+    "ett gammalt hus",
+    "en liten affär",
+    "ett billigt lås",
+    "en grön ryggsäck",
+    "ett stort rum"
+   ]
+  },
+  {
+   "prompt": "Fill in the correct form of the adjective in brackets.",
+   "items": [
+    "Huset är ____. (stor)",
+    "Bilarna är ____. (ny)",
+    "Det är ett ____ rum. (liten)",
+    "Min ____ dator fungerar inte. (gammal)",
+    "De ____ affärerna ligger vid torget. (billig)"
+   ]
+  },
+  {
+   "prompt": "Translate into Swedish.",
+   "items": [
+    "The big green backpack.",
+    "The little house is old.",
+    "I want to buy a good lock.",
+    "The cheap shops are near the church.",
+    "My old laptop is in my backpack."
+   ]
+  }
+ ],
+ "answers": [
+  "nytt — billigt — litet — gammalt — blått — bra",
+  "den nya cykeln — det gamla huset — den lilla affären — det billiga låset — den gröna ryggsäcken — det stora rummet",
+  "stort — nya — litet — gamla — billiga",
+  "Den stora gröna ryggsäcken. — Det lilla huset är gammalt. — Jag vill köpa ett bra lås. — De billiga affärerna ligger nära kyrkan. — Min gamla dator ligger i min ryggsäck."
+ ]
+}

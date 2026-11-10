@@ -11,6 +11,7 @@ import { describe, expect, it } from "vitest";
 import fs from "node:fs";
 import path from "node:path";
 import {
+  aturPengantarEbook, pengantarEbook,
   bahasaKata, kalimatSekitar, kalimatTarget, kataIndonesia, kataKepalaBaris, kataTranslit,
   klausaKata, pecahKalimat, penuturBaris, tanpaPenutur,
 } from "./ebookTts";
@@ -19,6 +20,16 @@ const AKAR = path.join(process.cwd(), "content/ebook");
 const MIRING = /(?<!\*)\*(?!\*)([^*]+)\*(?!\*)/g;
 const KEPALA_ID = /arti|makna|indonesia|terjemah/i;
 const KEPALA_BACA = /cara baca|baca|pelafalan|romaji|rōmaji/i;
+
+/** Modul berbahasa target non-Indonesia yang pengantarnya Inggris. BIPA (id-/ms-)
+ *  dan modul Inggris (en-) punya blok ujinya sendiri, jadi tetap seperti dulu. */
+function edisiInggris(modul: string): boolean {
+  if (/^(id|ms|en)-/.test(modul)) return false;
+  try {
+    const m = JSON.parse(fs.readFileSync(path.join(AKAR, modul, "meta.json"), "utf8"));
+    return /english/i.test(String(m.edition ?? ""));
+  } catch { return false; }
+}
 
 type Contoh = { kata: string; konteks: string };
 const id: Contoh[] = [];
@@ -60,6 +71,9 @@ function blok(b: any) {
 for (const modul of fs.readdirSync(AKAR)) {
   const dir = path.join(AKAR, modul);
   if (!fs.statSync(dir).isDirectory()) continue;
+  /* [ebook-pengantar-en-v1] Modul edisi Inggris (sv-a1-en, …) berprosa Inggris —
+     bukan contoh kata Indonesia. Diuji terpisah di blok "modul edisi Inggris". */
+  if (edisiInggris(modul)) continue;
   for (const berkas of fs.readdirSync(dir)) {
     if (!berkas.endsWith(".json")) continue;
     const j = JSON.parse(fs.readFileSync(path.join(dir, berkas), "utf8"));
@@ -297,5 +311,55 @@ describe("penutur dua patah kata", () => {
     // Baris biasa tak punya kepala — tak ada kata yang dibungkam.
     expect(kataKepalaBaris("24 horas al día")).toBe(0);
     expect(kataKepalaBaris("Guten Tag. Ich bin Frau Weber.")).toBe(0);
+  });
+});
+
+/* [ebook-pengantar-en-v1] Modul EDISI INGGRIS: bahasa target Swedia, terjemahan &
+   penjelasan bahasa Inggris. Kata Inggris di baris terjemahan wajib terkunci,
+   kata Swedia di baris dialog wajib bebas — dan menyetel pengantar tak boleh
+   bocor ke modul berpengantar Indonesia sesudahnya. */
+describe("modul edisi Inggris (sv-a1-en)", () => {
+  const SV = path.join(AKAR, "sv-a1-en");
+  const en: Contoh[] = [];
+  const sv: Contoh[] = [];
+  if (fs.existsSync(SV)) {
+    for (const berkas of fs.readdirSync(SV)) {
+      if (!/^unit-\d+\.json$/.test(berkas)) continue;
+      const j = JSON.parse(fs.readFileSync(path.join(SV, berkas), "utf8"));
+      for (const d of j.dialogs || []) for (const l of d.lines || []) {
+        kumpul(sv, l.text);
+        kumpul(en, l.id);
+      }
+    }
+  }
+
+  it("judul \"English Edition\" = pengantar Inggris", () => {
+    expect(pengantarEbook("Swedish 101 - A1 (English Edition)")).toBe("en");
+    expect(pengantarEbook("Swedish 101 - A1")).toBe("id");
+    expect(pengantarEbook(null)).toBe("id");
+  });
+
+  it("terjemahan Inggris terkunci, dialog Swedia bebas", () => {
+    expect(en.length).toBeGreaterThan(500);
+    aturPengantarEbook("en");
+    try {
+      const enLolos = en.filter((c) => !kataIndonesia(c.kata, "sv", c.konteks));
+      const svKunci = sv.filter((c) => kataIndonesia(c.kata, "sv", c.konteks));
+      console.log("edisi Inggris — Inggris lolos:", (enLolos.length / en.length * 100).toFixed(2) + "%",
+        "· Swedia terkunci:", (svKunci.length / sv.length * 100).toFixed(2) + "%");
+      // Sisa yang lolos (±6%) hampir seluruhnya nama diri (Elin, Dian, Stockholm)
+      // dan kata Swedia yang dikutip di terjemahan (fika, kronor) — memang
+      // seharusnya berbunyi Swedia.
+      expect(enLolos.length / en.length).toBeLessThan(0.08);
+      expect(svKunci.length / sv.length).toBeLessThan(0.05);
+    } finally {
+      aturPengantarEbook("id");
+    }
+  });
+
+  it("pengantar kembali ke Indonesia: \"the\" tak lagi dianggap bahasa pengantar", () => {
+    aturPengantarEbook("id");
+    expect(kataIndonesia("the", "sv", "the verb")).toBe(false);
+    expect(kataIndonesia("dengan", "sv", "dengan kata kerja")).toBe(true);
   });
 });

@@ -1,0 +1,587 @@
+{
+ "title": "Whose is it?",
+ "title_target": "Är det här din tröja?",
+ "goal": "Say who owns what with three forms that follow the thing owned — not the owner — and use an *-s* ending that works just like English, only without the apostrophe.",
+ "bekal": [
+  "min/mitt/mina and the whole family",
+  "the *-s* ending for people's names: *Elins jacka*",
+  "nouns for clothes and personal belongings"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — I tvättstugan",
+   "intro": "Saturday morning in the shared laundry room. A basket of clothes has been left on top of a machine, and Dian has no idea whose it is.",
+   "lines": [
+    {
+     "speaker": "Dian:",
+     "text": "Elin, är det här din tröja?",
+     "id": "Elin, is this your sweater?",
+     "literal": "Elin, is it here your sweater?"
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Nej, min tröja är blå. Den där är nog Oskars.",
+     "id": "No, my sweater's blue. That one's probably Oskar's.",
+     "literal": "no, my sweater is blue. that-one there is probably Oskar's."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Och vems är byxorna?",
+     "id": "And whose are the pants?",
+     "literal": "and whose are pants-the?"
+    },
+    {
+     "speaker": "Elin:",
+     "text": "De är mina. Tack för att du frågar!",
+     "id": "They're mine. Thanks for asking!",
+     "literal": "they are mine-plural. thanks for that you ask!"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Var är mitt paraply? Jag hittar det inte.",
+     "id": "Where's my umbrella? I can't find it.",
+     "literal": "where is my umbrella? I find it not."
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Är det svart? Då står det vid dörren. Ahmad tog det igår.",
+     "id": "Is it the black one? Then it's by the door. Ahmad took it yesterday.",
+     "literal": "is it black? then stands it by door-the. Ahmad took it yesterday."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Typiskt Ahmad. Han lånar alltid mina saker.",
+     "id": "Typical Ahmad. He's always borrowing my stuff.",
+     "literal": "typical Ahmad. he borrows always my-plural things."
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Han lånar våra saker också. Men han lämnar alltid tillbaka.",
+     "id": "He borrows our stuff too. But he always gives it back.",
+     "literal": "he borrows our things too. but he leaves always back."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Det är sant. Förresten, är den här nyckeln er?",
+     "id": "That's true. By the way, is this key yours?",
+     "literal": "that is true. by-the-way, is this here key-the yours-plural?"
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Nej, den är inte vår. Kanske är den Ahmads — eller hans kompis.",
+     "id": "No, it's not ours. Maybe it's Ahmad's — or his buddy's.",
+     "literal": "no, it is not ours. maybe is it Ahmad's — or his buddy."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Då lägger jag den på hans dörr.",
+     "id": "Then I'll put it on his door.",
+     "literal": "then put I it on his door."
+    }
+   ],
+   "notes": [
+    "**The form follows the thing, not the owner.** *Min tröja* (my sweater, an *en*-word), *mitt paraply* (my umbrella, an *ett*-word), *mina saker* (my things, plural). What changes is the ending, and what decides it is the gender and number of **the thing owned**. English \"my\" never changes, so this is the one genuinely new habit in this unit.",
+    "**Hans, hennes, deras, dess never change.** Only *min*, *din*, *vår*, *er* have three forms. The third-person words (*hans*, *hennes*, *deras*) already end in *-s* and stop there: *hans tröja*, *hans paraply*, *hans saker*. That halves the memorizing.",
+    "**Vems** means \"whose\" — and it even looks like it: *vem* (who) + *-s*, exactly like English *who* → *whose*. *Vems är byxorna?* (whose are the pants?), *Vems bok är det här?* (whose book is this?).",
+    "**Oskars, Ahmads** — just add **-s** to a name, with no apostrophe. Swedish writes *Oskars tröja*, not *Oskar's tröja* — an apostrophe here is one of the most common mistakes English speakers make. If the name already ends in *-s*, *-x* or *-z*, add nothing: *Lars bok*, *Max jacka*.",
+    "**Byxorna är mina** — notice that \"pants\" in Swedish is always **plural**, exactly as in English (*trousers*, *pants*). So are *glasögon* (glasses) and *pengar* (money — unlike English, where money is singular). Because they are plural, the possessive is plural too: *mina byxor*.",
+    "**Nog** means \"probably, I guess\" — a flavoring word that softens the whole sentence without really being translated. It is a cousin of *väl* and *ju*, and these three little words are what make a sentence sound like a real Swede rather than a textbook."
+   ],
+   "grammars": [
+    {
+     "title": "The whole family of possessives",
+     "table": {
+      "head": [
+       "Owner",
+       "*en*-word",
+       "*ett*-word",
+       "Plural",
+       "Example"
+      ],
+      "rows": [
+       [
+        "I → my",
+        "**min**",
+        "**mitt**",
+        "**mina**",
+        "min bok · mitt hus · mina böcker"
+       ],
+       [
+        "you → your",
+        "**din**",
+        "**ditt**",
+        "**dina**",
+        "din bok · ditt hus · dina böcker"
+       ],
+       [
+        "he → his",
+        "hans",
+        "hans",
+        "hans",
+        "hans bok · hans hus · hans böcker"
+       ],
+       [
+        "she → her",
+        "hennes",
+        "hennes",
+        "hennes",
+        "hennes bok · hennes hus"
+       ],
+       [
+        "it → its",
+        "dess",
+        "dess",
+        "dess",
+        "dess färg"
+       ],
+       [
+        "we → our",
+        "**vår**",
+        "**vårt**",
+        "**våra**",
+        "vår bok · vårt hus · våra böcker"
+       ],
+       [
+        "you (pl.) → your",
+        "**er**",
+        "**ert**",
+        "**era**",
+        "er bok · ert hus · era böcker"
+       ],
+       [
+        "they → their",
+        "deras",
+        "deras",
+        "deras",
+        "deras bok · deras hus"
+       ]
+      ]
+     },
+     "after": [
+      "The easiest way to remember it: **a *-tt* ending for *ett*-words, an *-a* ending for plurals**. That is the same pattern as adjectives (*stor / stort / stora*), and you will meet it again in Unit 12.",
+      "The noun after a possessive is always in the **indefinite** form: *min bok*, not *min boken*. Ownership already makes it specific, so the definite ending is dropped — just as English says \"my book\", never \"my the book\". (Norwegian and Danish allow both orders; Swedish does not.)"
+     ]
+    },
+    {
+     "title": "Three ways to show ownership",
+     "table": {
+      "head": [
+       "Way",
+       "Pattern",
+       "Example",
+       "When to use it"
+      ],
+      "rows": [
+       [
+        "Possessive word",
+        "min/mitt/mina + noun",
+        "**min** jacka",
+        "the owner is a pronoun"
+       ],
+       [
+        "*-s* ending",
+        "name + **s** + noun",
+        "**Elins** jacka",
+        "the owner is a person or institution"
+       ],
+       [
+        "*till* / *på*",
+        "noun + *till/på* + …",
+        "nyckeln **till** rummet",
+        "part-and-whole relationships"
+       ],
+       [
+        "Standing alone",
+        "…är + min/mitt/mina",
+        "Jackan är **min**.",
+        "answering \"whose is it?\""
+       ]
+      ]
+     },
+     "after": [
+      "The third row is easy to miss: when one thing \"belongs\" to another thing, Swedish prefers *till* or *på* over the *-s* ending — much as English says \"the roof of the house\" rather than \"the house's roof\". *Nyckeln till rummet* (the key to the room), *taket på huset* (the roof of the house), *slutet på filmen* (the end of the movie). Using *-s* there — *rummets nyckel* — is grammatical but sounds like formal writing.",
+      "The fourth row uses exactly the same forms as the first, just with no noun after them: *Boken är min*, *Huset är vårt*, *Sakerna är mina*. English switches to a different form here (*my* → *mine*, *our* → *ours*); Swedish does not — one less thing to learn."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Clothes and personal belongings",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Svenska",
+      "Pronunciation",
+      "English"
+     ],
+     "rows": [
+      [
+       "en tröja",
+       "en TRÖY-ah",
+       "sweater, jumper"
+      ],
+      [
+       "en skjorta",
+       "en HWOO-tah",
+       "shirt"
+      ],
+      [
+       "en jacka",
+       "en YAHK-kah",
+       "jacket"
+      ],
+      [
+       "byxor",
+       "BÜK-sor",
+       "pants, trousers"
+      ],
+      [
+       "en klänning",
+       "en KLEN-ning",
+       "dress"
+      ],
+      [
+       "skor",
+       "skoor",
+       "shoes"
+      ],
+      [
+       "strumpor",
+       "STRÜM-por",
+       "socks"
+      ],
+      [
+       "en mössa",
+       "en MÖS-sah",
+       "beanie, knit hat"
+      ],
+      [
+       "vantar / handskar",
+       "VAHN-tahr · HAHND-skahr",
+       "mittens / gloves"
+      ],
+      [
+       "en halsduk",
+       "en HAHLS-dük",
+       "scarf"
+      ],
+      [
+       "glasögon",
+       "GLAHS-ö-gon",
+       "glasses"
+      ],
+      [
+       "en plånbok",
+       "en PLOHN-boohk",
+       "wallet"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**En mössa, vantar, en halsduk** are three words you will use every day from October to April. There is a Swedish saying that sums up their whole attitude to weather: *Det finns inget dåligt väder, bara dåliga kläder* — \"there's no such thing as bad weather, only bad clothes\"."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Color",
+      "Pronunciation",
+      "*ett*-word",
+      "Plural"
+     ],
+     "rows": [
+      [
+       "vit",
+       "veet",
+       "vitt",
+       "vita"
+      ],
+      [
+       "svart",
+       "svaht",
+       "svart",
+       "svarta"
+      ],
+      [
+       "röd",
+       "röd",
+       "rött",
+       "röda"
+      ],
+      [
+       "blå",
+       "bloh",
+       "blått",
+       "blåa"
+      ],
+      [
+       "grön",
+       "grön",
+       "grönt",
+       "gröna"
+      ],
+      [
+       "gul",
+       "gül",
+       "gult",
+       "gula"
+      ],
+      [
+       "brun",
+       "brün",
+       "brunt",
+       "bruna"
+      ],
+      [
+       "grå",
+       "groh",
+       "grått",
+       "gråa"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Colors are adjectives, so they follow the same pattern: a *-t* ending for *ett*-words, an *-a* ending for plurals. *En röd jacka*, *ett rött hus*, *röda skor*. The word *svart* already ends in *-t*, so its *ett*-form doesn't change."
+    }
+   ]
+  },
+  {
+   "title": "Borrowing, returning, losing",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Svenska",
+      "English",
+      "Note"
+     ],
+     "rows": [
+      [
+       "Får jag låna din penna?",
+       "Can I borrow your pen?",
+       "*låna* = borrow **and** lend"
+      ],
+      [
+       "Kan du låna mig hundra kronor?",
+       "Could you lend me a hundred kronor?",
+       "the person after *låna* tells you which direction"
+      ],
+      [
+       "Jag lämnar tillbaka den imorgon.",
+       "I'll give it back tomorrow.",
+       "*lämna tillbaka* = give back, return"
+      ],
+      [
+       "Jag har tappat bort min nyckel.",
+       "I've lost my key.",
+       "*tappa bort* = drop and lose"
+      ],
+      [
+       "Har du sett min telefon?",
+       "Have you seen my phone?",
+       "*ha sett* = have seen"
+      ],
+      [
+       "Den är inte min.",
+       "It's not mine.",
+       ""
+      ],
+      [
+       "Vems är den här?",
+       "Whose is this?",
+       ""
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Låna** does two jobs that English keeps apart: \"borrow\" and \"lend\". What tells them apart is whether there is a person receiving it. *Jag lånar en bok* = I borrow a book. *Jag lånar dig en bok* = I lend you a book. English speakers tend to stumble here at first — not because it is hard, but because one Swedish word has to do the work of two English ones."
+    },
+    {
+     "type": "kotak",
+     "title": "Spiral review — back to Unit 7",
+     "items": [
+      "Give the present tense of the ten verbs from Unit 7 without looking: vakna, duscha, cykla, plugga, handla, laga, träffa, börja, sluta, läsa.",
+      "Then combine them with this unit's possessives: *Jag lånar min…*, *Hon tar sina…*, *Vi städar vårt…*",
+      "Finally, ask about five things around you: *Vems är…?* and answer yourself with *Den är min* or *Det är mitt*."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "sv": "min / mitt / mina",
+   "baca": "min · mit · MEE-nah",
+   "en": "my, mine"
+  },
+  {
+   "sv": "din / ditt / dina",
+   "baca": "din · dit · DEE-nah",
+   "en": "your, yours"
+  },
+  {
+   "sv": "hans",
+   "baca": "hahns",
+   "en": "his"
+  },
+  {
+   "sv": "hennes",
+   "baca": "HEN-nes",
+   "en": "her, hers"
+  },
+  {
+   "sv": "vår / vårt / våra",
+   "baca": "vohr · vort · VOH-rah",
+   "en": "our, ours"
+  },
+  {
+   "sv": "er / ert / era",
+   "baca": "ehr · ehrt · EH-rah",
+   "en": "your, yours (plural)"
+  },
+  {
+   "sv": "deras",
+   "baca": "DEH-rahs",
+   "en": "their, theirs"
+  },
+  {
+   "sv": "vems",
+   "baca": "vems",
+   "en": "whose"
+  },
+  {
+   "sv": "en tröja",
+   "baca": "en TRÖY-ah",
+   "en": "sweater"
+  },
+  {
+   "sv": "byxor",
+   "baca": "BÜK-sor",
+   "en": "pants, trousers"
+  },
+  {
+   "sv": "skor",
+   "baca": "skoor",
+   "en": "shoes"
+  },
+  {
+   "sv": "en plånbok",
+   "baca": "en PLOHN-boohk",
+   "en": "wallet"
+  },
+  {
+   "sv": "kläder",
+   "baca": "KLEH-der",
+   "en": "clothes"
+  },
+  {
+   "sv": "att låna",
+   "baca": "aht LOH-nah",
+   "en": "to borrow, to lend"
+  },
+  {
+   "sv": "att lämna tillbaka",
+   "baca": "aht LEM-nah til-BAH-kah",
+   "en": "to give back, to return"
+  },
+  {
+   "sv": "att tappa bort",
+   "baca": "aht TAHP-pah boht",
+   "en": "to lose"
+  },
+  {
+   "sv": "att lägga",
+   "baca": "aht LEG-gah",
+   "en": "to put, to lay"
+  },
+  {
+   "sv": "blå / blått",
+   "baca": "bloh · blot",
+   "en": "blue"
+  },
+  {
+   "sv": "svart",
+   "baca": "svaht",
+   "en": "black"
+  },
+  {
+   "sv": "röd / rött",
+   "baca": "röd · röt",
+   "en": "red"
+  },
+  {
+   "sv": "nog",
+   "baca": "noog",
+   "en": "probably, I guess"
+  },
+  {
+   "sv": "sant",
+   "baca": "sahnt",
+   "en": "true"
+  },
+  {
+   "sv": "förresten",
+   "baca": "fö-RES-ten",
+   "en": "by the way"
+  },
+  {
+   "sv": "typiskt",
+   "baca": "TÜ-piskt",
+   "en": "typical(ly)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Fill in *min*, *mitt* or *mina*.",
+   "items": [
+    "Det är ____ jacka.",
+    "Var är ____ paraply?",
+    "Här är ____ skor.",
+    "____ rum är litet.",
+    "Han lånar ____ saker.",
+    "____ telefon är svart."
+   ]
+  },
+  {
+   "prompt": "Fill in *din*, *ditt*, *dina*, *vår*, *vårt* or *våra* according to the owner in brackets.",
+   "items": [
+    "Är det här ____ tröja? (your)",
+    "Var är ____ hus? (our)",
+    "____ böcker ligger på bordet. (your, plural noun)",
+    "____ kök är stort. (our)",
+    "Jag gillar ____ skor. (your, plural noun)"
+   ]
+  },
+  {
+   "prompt": "Rewrite using the *-s* ending. Example: *jackan som Elin har* → *Elins jacka*.",
+   "items": [
+    "tröjan som Oskar har",
+    "boken som Ahmad har",
+    "rummet som Elin har",
+    "nyckeln som Lars har",
+    "cykeln som Dian har"
+   ]
+  },
+  {
+   "prompt": "Translate into Swedish.",
+   "items": [
+    "Is this your sweater?",
+    "No, my sweater is blue.",
+    "Whose are the pants?",
+    "They're mine.",
+    "He always borrows my things."
+   ]
+  }
+ ],
+ "answers": [
+  "min — mitt — mina — Mitt — mina — Min",
+  "din — vårt — Dina — Vårt — dina",
+  "Oskars tröja — Ahmads bok — Elins rum — Lars bok — Dians cykel",
+  "Är det här din tröja? — Nej, min tröja är blå. — Vems är byxorna? — De är mina. — Han lånar alltid mina saker."
+ ]
+}

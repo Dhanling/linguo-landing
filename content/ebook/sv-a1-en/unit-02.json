@@ -1,0 +1,520 @@
+{
+ "title": "Asking, answering, saying no",
+ "title_target": "Vad är det här?",
+ "goal": "Ask questions in two ways, say \"not\" with a single word, and discover that Swedish has two different words for \"yes\" that must never be mixed up.",
+ "bekal": [
+  "make yes/no questions just by swapping two words",
+  "seven question words that cover almost everything you need at A1",
+  "put *inte* in the right place, and answer with *jo*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — I köket",
+   "intro": "The first evening. Dian opens the cupboard in the shared kitchen and finds a row of things she doesn't recognize. Ahmad, a housemate who has already spent a year in Stockholm, is sitting at the table.",
+   "lines": [
+    {
+     "speaker": "Dian:",
+     "text": "Ahmad, vad är det här?",
+     "id": "Ahmad, what's this?",
+     "literal": "Ahmad, what is it here?"
+    },
+    {
+     "speaker": "Ahmad:",
+     "text": "Det är filmjölk. Det är inte mjölk.",
+     "id": "That's filmjölk. It isn't milk.",
+     "literal": "it is film-milk. it is not milk."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Är det gott?",
+     "id": "Is it good?",
+     "literal": "is it tasty?"
+    },
+    {
+     "speaker": "Ahmad:",
+     "text": "Ja, mycket gott. Man äter det till frukost.",
+     "id": "Yes, really good. People eat it for breakfast.",
+     "literal": "yes, very tasty. one eats it for breakfast."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Och vem är det där?",
+     "id": "And who's that?",
+     "literal": "and who is it there?"
+    },
+    {
+     "speaker": "Ahmad:",
+     "text": "Det är Oskar. Han bor också här.",
+     "id": "That's Oskar. He lives here too.",
+     "literal": "it is Oskar. he lives also here."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Varför sitter han där ute?",
+     "id": "Why is he sitting out there?",
+     "literal": "why sits he there out?"
+    },
+    {
+     "speaker": "Ahmad:",
+     "text": "Han dricker kaffe. Svenskar dricker mycket kaffe.",
+     "id": "He's having coffee. Swedes drink a lot of coffee.",
+     "literal": "he drinks coffee. Swedes drink much coffee."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Dricker du inte kaffe?",
+     "id": "Don't you drink coffee?",
+     "literal": "drink you not coffee?"
+    },
+    {
+     "speaker": "Ahmad:",
+     "text": "Jo, men inte på kvällen. Då sover jag inte.",
+     "id": "Oh yes, I do — but not in the evening. Then I can't sleep.",
+     "literal": "yes-indeed, but not in evening-the. then sleep I not."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Hur säger man \"ngantuk\" på svenska?",
+     "id": "How do you say \"ngantuk\" (sleepy) in Swedish?",
+     "literal": "how says one \"ngantuk\" in Swedish?"
+    },
+    {
+     "speaker": "Ahmad:",
+     "text": "Trött. Och det är jag nu. God natt!",
+     "id": "Trött. And that's what I am now. Good night!",
+     "literal": "tired. and that am I now. good night!"
+    }
+   ],
+   "notes": [
+    "**Det är** is the most useful sentence opener in all of Swedish: \"it is…\" / \"that is…\". It's used for things, people, weather and situations — *det är kallt* (it's cold), *det är bra* (that's good), *det är Oskar*. It's pronounced **deh eh**, two short sounds melting into one.",
+    "**Det här / det där** — \"this one\" and \"that one\". Swedish attaches a place word to the pointing word: *här* (here) and *där* (there) — rather like saying \"this here\" and \"that there\" in casual English. There's also a short form *detta* (this), but it smells of formal writing; in conversation people say *det här*.",
+    "**Inte always comes after the verb.** *Det är inte mjölk*, *jag talar inte svenska*, *han sover inte*. English puts \"not\" after a helper verb (*I do not speak*), but Swedish has no helper — so *inte* simply follows the main verb: \"I speak not Swedish\". If you slip and say *jag inte talar*, you'll still be understood — but it marks you instantly as a beginner. The only place *inte* moves in front of the verb is inside a subordinate clause, and that's for Unit 18.",
+    "**Jo is not ja.** When a question **contains a negative** — *Dricker du inte kaffe?* (\"Don't you drink coffee?\") — and your answer contradicts it, say **jo**, not *ja*. Answering *ja* there can sound as if you agree that you don't drink coffee. English muddles through with \"Yes, I do!\" and a firm tone; Swedish has a dedicated word (like German *doch* or French *si*), and Swedes use it dozens of times a day.",
+    "**Man** means \"one\" or \"people\" in the sense of \"people in general\". *Man äter det till frukost* = \"people eat it for breakfast\" (literally \"one eats it…\"). It's as common as the general \"you\" or \"they\" in everyday English — and far more common than the passive.",
+    "**Mycket** means \"much / a lot of\" with things you don't count (coffee, time, money) and \"very\" in front of adjectives: *mycket gott* (really good). For things you can count, the right word is *många*: *många böcker* (many books) — the same split as English *much* and *many*. It's pronounced **MÜK-keh** — the *c* is silent."
+   ],
+   "grammars": [
+    {
+     "title": "Two ways to ask a question",
+     "body": [
+      "Swedish has no helper verb like English *do*. Making a question is simply a matter of moving the verb to the front — just as English does with *Are you…?* or *Can you…?*, but with every verb."
+     ],
+     "table": {
+      "head": [
+       "Type",
+       "Order",
+       "Example",
+       "Meaning"
+      ],
+      "rows": [
+       [
+        "Statement",
+        "subject – verb",
+        "Du **talar** svenska.",
+        "You speak Swedish."
+       ],
+       [
+        "Yes/no question",
+        "**verb** – subject",
+        "**Talar** du svenska?",
+        "Do you speak Swedish?"
+       ],
+       [
+        "Question-word question",
+        "question word – **verb** – subject",
+        "Vad **talar** du?",
+        "What (language) do you speak?"
+       ],
+       [
+        "Question + negation",
+        "**verb** – subject – **inte**",
+        "**Talar** du **inte** svenska?",
+        "Don't you speak Swedish?"
+       ]
+      ]
+     },
+     "after": [
+      "Notice that **the verb never leaves second place** except in yes/no questions, where it moves up to first place. The \"verb in second place\" rule is the backbone of Swedish word order, and all of Unit 3 is devoted to it.",
+      "Your tone of voice is **not enough** to make a question. Saying *du talar svenska?* with a rising tone can be understood — just like \"You speak Swedish?\" in English — but the proper way is to swap the order."
+     ]
+    },
+    {
+     "title": "Seven question words",
+     "table": {
+      "head": [
+       "Svenska",
+       "Pronunciation",
+       "Meaning",
+       "Example"
+      ],
+      "rows": [
+       [
+        "**vad**",
+        "vah",
+        "what",
+        "Vad heter du?"
+       ],
+       [
+        "**vem**",
+        "vem",
+        "who",
+        "Vem är det där?"
+       ],
+       [
+        "**var**",
+        "vahr",
+        "where",
+        "Var bor du?"
+       ],
+       [
+        "**vart**",
+        "vaht",
+        "where to",
+        "Vart går du?"
+       ],
+       [
+        "**när**",
+        "nehr",
+        "when",
+        "När kommer bussen?"
+       ],
+       [
+        "**hur**",
+        "hür",
+        "how",
+        "Hur mår du?"
+       ],
+       [
+        "**varför**",
+        "vahr-FÖR",
+        "why",
+        "Varför sitter han där?"
+       ]
+      ]
+     },
+     "after": [
+      "**Var** and **vart** are a pair that often get mixed up: *var* asks about a **location** (\"where?\"), *vart* asks about a **direction** (\"where to?\"). *Var är du?* — where are you? *Vart ska du?* — where are you going? English has mostly lost the difference (old English had *where* and *whither*), but Swedish still uses it every day.",
+      "**Hur mår du?** is the real \"how are you?\". The standard answers: *Bra, tack!* (fine, thanks), *Ganska bra* (pretty good), *Så där* (so-so), *Inte så bra* (not so good). Unlike English \"How are you?\", the question is meant seriously — Swedes actually wait for your answer."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Negation: one word, one place",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Swedish has just one word for negating a sentence: **inte**. No contractions like *don't / isn't / can't*, no *do*-support, and no two-part negation like French *ne… pas*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Sentence",
+      "Negated",
+      "Meaning"
+     ],
+     "rows": [
+      [
+       "Jag talar svenska.",
+       "Jag talar **inte** svenska.",
+       "I don't speak Swedish."
+      ],
+      [
+       "Det är mjölk.",
+       "Det är **inte** mjölk.",
+       "That isn't milk."
+      ],
+      [
+       "Han bor här.",
+       "Han bor **inte** här.",
+       "He doesn't live here."
+      ],
+      [
+       "Jag förstår.",
+       "Jag förstår **inte**.",
+       "I don't understand."
+      ],
+      [
+       "Vi har tid.",
+       "Vi har **inte** tid.",
+       "We don't have time."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "To negate a **noun** there's a separate word: **ingen / inget / inga**, meaning \"no\" or \"not any\". *Jag har inga pengar* (I have no money at all) sounds stronger than *jag har inte pengar* — just like English \"I have no money\" versus \"I don't have money\". The form follows the noun's gender, and that will make sense after Unit 4."
+    },
+    {
+     "type": "kotak",
+     "title": "Ja, nej, jo",
+     "items": [
+      "**Ja** — \"yes\" to an ordinary question. *Talar du svenska?* — *Ja.*",
+      "**Nej** — \"no\" to any question. *Talar du svenska?* — *Nej.*",
+      "**Jo** — \"yes, I do / yes, it is\" in reply to a question that contains a negative. *Talar du inte svenska?* — *Jo, det gör jag!* (\"Yes, I do!\")",
+      "Picking the wrong one of *ja* and *jo* is the most common mistake foreigners make, and it can turn your answer into its opposite. If the question contains *inte*, the positive answer is almost always **jo**."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Things in the kitchen, and a habit called fika",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "The vocabulary in this unit gathers in the kitchen on purpose, because that's where the first conversations in a Swedish student corridor nearly always happen."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Svenska",
+      "Pronunciation",
+      "English"
+     ],
+     "rows": [
+      [
+       "ett kök",
+       "et shök",
+       "kitchen"
+      ],
+      [
+       "ett bord",
+       "et boohd",
+       "table"
+      ],
+      [
+       "en stol",
+       "en stool",
+       "chair"
+      ],
+      [
+       "ett glas",
+       "et glahs",
+       "glass"
+      ],
+      [
+       "en kopp",
+       "en kop",
+       "cup"
+      ],
+      [
+       "mjölk",
+       "myölk",
+       "milk"
+      ],
+      [
+       "bröd",
+       "bröd",
+       "bread"
+      ],
+      [
+       "ost",
+       "ost",
+       "cheese"
+      ],
+      [
+       "vatten",
+       "VAHT-ten",
+       "water"
+      ],
+      [
+       "te",
+       "teh",
+       "tea"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Fika** is a Swedish word with no translation. It means sitting down together, drinking coffee or tea and eating something sweet — not just a \"coffee break\", because what matters is the sitting together, not the coffee. It's a noun (*en fika*) and a verb (*att fika*), and it's an official part of the working day: many Swedish offices stop twice a day for it."
+    },
+    {
+     "type": "kotak",
+     "title": "Phrases you'll use this week",
+     "items": [
+      "**Ska vi fika?** — Shall we have a fika? (the most common invitation in Sweden)",
+      "**Vad heter det på svenska?** — What's that called in Swedish?",
+      "**Jag vet inte.** — I don't know.",
+      "**Ursäkta?** — Sorry? (to ask someone to repeat; pronounced *ür-SHEK-tah*)",
+      "**God natt.** — Good night (when going to bed, not as a greeting)."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "sv": "vad",
+   "baca": "vah",
+   "en": "what"
+  },
+  {
+   "sv": "vem",
+   "baca": "vem",
+   "en": "who"
+  },
+  {
+   "sv": "när",
+   "baca": "nehr",
+   "en": "when"
+  },
+  {
+   "sv": "hur",
+   "baca": "hür",
+   "en": "how"
+  },
+  {
+   "sv": "varför",
+   "baca": "vahr-FÖR",
+   "en": "why"
+  },
+  {
+   "sv": "inte",
+   "baca": "IN-teh",
+   "en": "not"
+  },
+  {
+   "sv": "jo",
+   "baca": "yoo",
+   "en": "yes (contradicting a negative)"
+  },
+  {
+   "sv": "det här",
+   "baca": "deh hehr",
+   "en": "this (one)"
+  },
+  {
+   "sv": "det där",
+   "baca": "deh dehr",
+   "en": "that (one)"
+  },
+  {
+   "sv": "man",
+   "baca": "mahn",
+   "en": "one, people (in general)"
+  },
+  {
+   "sv": "mycket",
+   "baca": "MÜK-keh",
+   "en": "much, a lot, very"
+  },
+  {
+   "sv": "att dricka",
+   "baca": "aht DRIK-kah",
+   "en": "to drink"
+  },
+  {
+   "sv": "att äta",
+   "baca": "aht EH-tah",
+   "en": "to eat"
+  },
+  {
+   "sv": "att sitta",
+   "baca": "aht SIT-tah",
+   "en": "to sit"
+  },
+  {
+   "sv": "att sova",
+   "baca": "aht SOO-vah",
+   "en": "to sleep"
+  },
+  {
+   "sv": "att säga",
+   "baca": "aht SEH-yah",
+   "en": "to say"
+  },
+  {
+   "sv": "att förstå",
+   "baca": "aht fö-SHTOH",
+   "en": "to understand"
+  },
+  {
+   "sv": "att veta",
+   "baca": "aht VEH-tah",
+   "en": "to know (a fact)"
+  },
+  {
+   "sv": "kaffe",
+   "baca": "KAHF-feh",
+   "en": "coffee"
+  },
+  {
+   "sv": "ett kök",
+   "baca": "et shök",
+   "en": "a kitchen"
+  },
+  {
+   "sv": "gott",
+   "baca": "got",
+   "en": "tasty, good"
+  },
+  {
+   "sv": "trött",
+   "baca": "tröt",
+   "en": "tired, sleepy"
+  },
+  {
+   "sv": "en kväll",
+   "baca": "en kvel",
+   "en": "an evening"
+  },
+  {
+   "sv": "att fika",
+   "baca": "aht FEE-kah",
+   "en": "to have a coffee break (fika)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Turn into a yes/no question by moving the verb to the front.",
+   "items": [
+    "Du bor i Stockholm.",
+    "Han dricker kaffe.",
+    "Det är gott.",
+    "Ni talar svenska.",
+    "Hon kommer från Göteborg.",
+    "De sitter i köket."
+   ]
+  },
+  {
+   "prompt": "Negate these sentences by putting *inte* in the right place.",
+   "items": [
+    "Jag förstår svenska.",
+    "Det är mjölk.",
+    "Han bor här.",
+    "Vi dricker kaffe på kvällen.",
+    "Du vet det.",
+    "Hon är trött."
+   ]
+  },
+  {
+   "prompt": "Fill in the right question word: *vad*, *vem*, *var*, *när*, *hur*, *varför*.",
+   "items": [
+    "____ heter du?",
+    "____ bor du?",
+    "____ mår du?",
+    "____ är det där?",
+    "____ kommer bussen?",
+    "____ dricker han kaffe på kvällen?"
+   ]
+  },
+  {
+   "prompt": "Answer with *ja*, *nej* or *jo*. (A positive answer to a negative question uses *jo*.)",
+   "items": [
+    "Talar du svenska? (positive)",
+    "Dricker du inte te? (positive)",
+    "Är det mjölk? (negative)",
+    "Bor han inte här? (positive)",
+    "Förstår du? (negative)"
+   ]
+  }
+ ],
+ "answers": [
+  "Bor du i Stockholm? — Dricker han kaffe? — Är det gott? — Talar ni svenska? — Kommer hon från Göteborg? — Sitter de i köket?",
+  "Jag förstår inte svenska. — Det är inte mjölk. — Han bor inte här. — Vi dricker inte kaffe på kvällen. — Du vet det inte. — Hon är inte trött.",
+  "Vad — Var — Hur — Vem — När — Varför",
+  "Ja — Jo — Nej — Jo — Nej"
+ ]
+}
