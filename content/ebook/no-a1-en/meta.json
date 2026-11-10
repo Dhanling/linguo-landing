@@ -1,0 +1,828 @@
+{
+  "brand": "LINGUO",
+  "cover": "cover.png",
+  "title": "Norsk 101",
+  "subtitle": "A self-study course in Norwegian for complete beginners",
+  "level": "Level A1 (CEFR)",
+  "edition": "English Edition",
+  "ruby": false,
+  "font_size": "9.0pt",
+  "page_margin": "11mm 10mm 10mm",
+  "labels": {
+    "unit": "Unit",
+    "dialog": "Dialogue",
+    "notes": "Notes",
+    "vocab": "Vocabulary in this unit",
+    "exercises": "Exercises",
+    "answers": "Answer key",
+    "bekal": "By the end of this unit you can:",
+    "literal": "literally:",
+    "wave": "Wave review:",
+    "bagian": "Part"
+  },
+  "vocab_columns": [
+    {
+      "head": "Norsk",
+      "key": "no"
+    },
+    {
+      "head": "Say it",
+      "key": "baca"
+    },
+    {
+      "head": "English",
+      "key": "en"
+    }
+  ],
+  "cover_design": {
+    "bg": "#123B63",
+    "accent": "#F0C05A",
+    "label": "NORWEGIAN",
+    "judul": "Norsk",
+    "cap": "å",
+    "pola_opacity": 0.42,
+    "pola": "background-image:repeating-linear-gradient(90deg, rgba(255,255,255,.11) 0 3px, transparent 3px 44px),repeating-linear-gradient(0deg, rgba(255,255,255,.06) 0 3px, transparent 3px 44px);",
+    "ringkas": "A self-study course in Norwegian for complete beginners — from saying hello in Oslo to telling the story of last weekend.",
+    "catatan": "Every line of dialogue comes with a word-for-word translation and a pronunciation guide.",
+    "merek_sub": "SELF-STUDY MODULE",
+    "kaki_sub": "units · dialogues · exercises · answer key"
+  },
+  "product": {
+    "slug": "modul-norwegia-101-en",
+    "title": "Norwegian 101 - A1 (English Edition)",
+    "type": "ebook",
+    "language": "Norwegian",
+    "level": "A1",
+    "file": "norsk-101-a1-en.pdf",
+    "description": "Twenty Assimil-style self-study units that take you from zero to A1 Norwegian (bokmål): short dialogues, word-for-word translations that show how Norwegian builds its sentences, grammar notes, vocabulary with an English-friendly pronunciation guide, exercises, and an answer key. Norwegian is closer to English than you might think: the verb never changes for the person (no am/is/are, no -s), and thousands of words are already familiar. Each unit targets one of the spots that actually trip learners up: the article that sticks to the end of the noun, the verb that must sit in second place, *halv ni* meaning 8:30, *må ikke* versus *trenger ikke*, and sin versus hans, which has no counterpart in English.",
+    "pages": 147
+  },
+  "front": [
+    {
+      "title": "Preface",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "There's one thing you should know from the very first page: **Norwegian is the most beginner-friendly of the Scandinavian languages**. That's not a personal opinion — it's a conclusion language teachers in Oslo, Copenhagen and Stockholm all share. Danish has a similar grammar, but its pronunciation is far from its spelling. Swedish has clear pronunciation, but its tones are demanding. Norwegian stands right in the middle: written almost like Danish, sounded almost like Swedish."
+        },
+        {
+          "type": "p",
+          "text": "And the list of things that are **easier than English** turns out to be long. Norwegian verbs don't change for the person at all — *jeg er, du er, han er, vi er, dere er, de er*, one form for everyone. No *am/is/are*, no *-s* sticking to the third person. Norwegian also has no progressive verb form; \"I'm eating\" and \"I eat\" are the same sentence."
+        },
+        {
+          "type": "p",
+          "text": "There are difficulties, of course, and from the start this course will name them openly so they don't take you by surprise. There are three: **the article that sticks to the end of the noun** (*en bil* → *bilen*, \"the car\"), **the verb that must sit in second place** in the sentence (*I dag går jeg* — not *I dag jeg går*), and **letters that don't always sound the way they're written** — above all the *o* that often sounds like \"oo\", and the *d* at the end of a word that is usually silent."
+        },
+        {
+          "type": "p",
+          "text": "All three are real, but there are also **only three** of them. No genders that change the article by grammatical case as in German; no six-line conjugations as in French; no fifteen cases as in Finnish. Once those three things have settled, the rest flows."
+        },
+        {
+          "type": "p",
+          "text": "What you'll learn in this course is **bokmål**, the written standard used by about 85% of Norwegians, in schools, the media and almost every book. The other standard, *nynorsk*, is also official and gets a brief mention on the last page, but if your goal is to work, study or live in Norway, bokmål is the way in."
+        },
+        {
+          "type": "p",
+          "text": "The dialogues follow Budi, an Indonesian student who has just arrived in Oslo, along with his friend Ahmad and his Norwegian neighbors, Ingrid and Lars. What they talk about is deliberately ordinary: looking for keys, buying bread, late trains, a weekend at the cabin. The language people really use is the language they use for ordinary things."
+        },
+        {
+          "type": "p",
+          "text": "Twenty units, one dialogue per unit, about twenty to thirty minutes per sitting. If you do one unit every two days, you'll be done in six weeks. **Lykke til** — good luck."
+        }
+      ]
+    },
+    {
+      "type": "isi",
+      "title": "Contents",
+      "intro": "This course works best in order — each unit reuses what the previous ones put in place."
+    },
+    {
+      "title": "How to use this course",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This course is built for **self-study**. Each unit is designed to be finished in one sitting, about 20-30 minutes. What matters is not how fast you move forward, but how often you come back."
+        },
+        {
+          "type": "p",
+          "text": "Every unit has the same layout, and the order is deliberate:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Dialogue** — first read the Norwegian out loud without looking at the translation. Let your ears do the work before your brain demands an explanation.",
+            "**Literal translation** — the small italic line under the translation. This is the part people skip most often, yet it is where you see how Norwegian *thinks*. Example: *Jeg heter Budi* literally means \"I am-called Budi\", not \"my name is Budi\".",
+            "**Notes** — short explanations of whatever just felt strange.",
+            "**Vocabulary** — the new words of the unit, each with its pronunciation. Nouns are always given with *en*, *ei* or *et*, so the gender sticks from the very first time you see the word.",
+            "**Exercises** — do them without looking at the key. Mistakes are part of the process.",
+            "**Answer key** — open it only after you have genuinely tried."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Wave review",
+          "items": [
+            "From Unit 3 on, each unit asks you to revisit an earlier unit — usually two steps back, just the right distance to make your memory work without feeling like starting over. Do it in reverse: cover the Norwegian, look at the English translation, and rebuild the Norwegian sentence from memory.",
+            "This is what turns \"I understood it once\" into \"I can use it\". Don't skip it."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One last rule: **say it out loud**. Norwegian spelling is far more honest than Danish, but it still has a dozen or so habits you can't see on the page. The \"Say it\" column in every vocabulary table is not decoration; it is a core part of the lesson. Capital letters mark the stressed syllable: **SNAHK-ker** means the stress falls on *snak*."
+        }
+      ]
+    },
+    {
+      "title": "Norwegian pronunciation",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Norwegian spelling follows the sound far more faithfully than English or French — but there are still about a dozen habits you need to put in place first. This page puts them all in place at once. Read it once now, then come back whenever a word doesn't sound the way it looks. The respellings in this course are written to be read the way an English speaker naturally would: **ah** as in \"father\" (every Norwegian *a*: *takk* → **tahk**), **ee** as in \"see\", **oo** as in \"moon\", **oh** as in \"go\" (without the glide into \"w\"), **eh** as in \"bed\" (also a final *-e*: *komme* → **KOM-meh**), **ay** as in \"say\" (a long *e*: *hete* → **HAY-teh**), **ai** as in \"Thai\", **y** always as in \"yes\". Three extra symbols, **ü**, **ö** and **æ**, cover the vowels English doesn't have."
+        },
+        {
+          "type": "sub",
+          "text": "Three extra letters"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Letter",
+            "Sound",
+            "Written in this course",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**æ**",
+              "like the *a* in \"bad\"; before *r* close to \"air\"",
+              "**æ**",
+              "*være* → VÆ-reh"
+            ],
+            [
+              "**ø**",
+              "say \"eh\" while rounding your lips — like German *ö*, close to the vowel in \"her\" with rounded lips",
+              "**ö**",
+              "*kjøtt* → hyöt"
+            ],
+            [
+              "**å**",
+              "like the vowel in \"more\" or \"saw\" (long), or in British \"hot\" (short)",
+              "**oh** / **o**",
+              "*hvorfor* → VOOR-for · *gå* → goh"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "All three are letters in their own right, not letters with accents. They come at the very end of the alphabet: …*x, y, z, æ, ø, å*. If you look up a word in a dictionary, words starting with *å* are on the very last pages."
+        },
+        {
+          "type": "sub",
+          "text": "Vowels that fool you"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**o often sounds like \"oo\".** This is trap number one, and it hits the most common words: *bok* → **book** (rhymes with \"spook\", not with English \"book\"), *bo* → **boo**, *sol* → **sool**, *god* → **goo**, *stor* → **stoor**, *bord* → **boor**. The rule is rough but useful: a long *o* is usually \"oo\"; a short *o* (before two consonants) usually stays \"o\" or even becomes \"å\": *sommer* → **SOM-mer**, *opp* → **op**.",
+            "**u is not an English \"oo\".** It sits between \"oo\" and \"ee\" — round your lips as if to say \"oo\", then push your tongue forward as if to say \"ee\". *hus* → **hüs**, *du* → **dü**. This course writes it **ü**, and uses the same symbol for *y*, which is very close."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Silent letters"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pattern",
+            "What happens",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "**hv-**",
+              "the *h* disappears",
+              "*hva* → **vah**, *hvor* → **voor**, *hvem* → **vem**"
+            ],
+            [
+              "final **-d**",
+              "almost always silent",
+              "*med* → **meh**, *ved* → **veh**, *god* → **goo**, *land* → **lahn**"
+            ],
+            [
+              "**-t** in *det* and the ending *-et*",
+              "silent",
+              "*det* → **deh**, *huset* → **HÜ-seh**"
+            ],
+            [
+              "**g-** before i, y, ei",
+              "becomes *y*",
+              "*gi* → **yee**, *gift* → **yift**"
+            ],
+            [
+              "**-g** in *jeg, meg, deg*",
+              "becomes *i*",
+              "*jeg* → **yai**, *meg* → **mai**"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Letter combinations with a different sound"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Written",
+            "Sounds like",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "**kj-**, **k-** before i/y",
+              "**hy** — a soft hiss like the *h* in \"huge\" or German *ich*; softer than \"sh\", though many young Norwegians say it almost like \"sh\"",
+              "*kjøkken* → **HYÖK-ken**, *kino* → **HYEE-noo**"
+            ],
+            [
+              "**sj-**, **skj-**, **sk-** before i/y/øy",
+              "**sh** — as in \"sheep\"",
+              "*sju* → **shü**, *skje* → **sheh**, *ski* → **shee**"
+            ],
+            [
+              "**rs**",
+              "**sh**",
+              "*norsk* → **noshk**, *person* → **peh-SHOON**"
+            ],
+            [
+              "**eg** inside a word",
+              "**ai**",
+              "*regn* → **rain**, *tegne* → **TAI-neh**"
+            ],
+            [
+              "**ei**",
+              "**ai**",
+              "*nei* → **nai**, *hei* → **hai**"
+            ],
+            [
+              "**øy**",
+              "**öi**",
+              "*øy* → **öi**, *høyre* → **HÖI-reh**"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Stress and length"
+        },
+        {
+          "type": "p",
+          "text": "Norwegian stress almost always falls on the **first syllable** — *SNAK-ke*, *ØN-ske*, *AR-beid*. The words that break this rule are mostly loanwords: **bah-NAHN**, **stü-DENT**, **res-tow-RAHNG**. Throughout this course, capital letters mark the stressed syllable."
+        },
+        {
+          "type": "p",
+          "text": "More important than stress is **vowel length**, because it changes meaning. The rule is tidy: a vowel before **one** consonant is long, a vowel before **two** consonants is short. *tak* (roof) is long, *takk* (thanks) is short. *lese* (to read) is long, *lesse* (to load) is short. If you shorten a vowel that should be long, Norwegians often genuinely don't understand you — far more often than if your stress is off."
+        },
+        {
+          "type": "kotak",
+          "title": "What you can ignore for now",
+          "items": [
+            "Norwegian has **two tones** (*tonem*) that tell apart pairs like *bønder* (farmers) and *bønner* (beans). The tones are real, but they never make a whole sentence misunderstood, and no one expects a beginner to master them. Ignore them until you're really comfortable speaking.",
+            "**Dialects vary enormously** in Norway — far more than in most English-speaking countries — and none of them is considered \"wrong\". The pronunciation in this course follows the Oslo accent (*østnorsk*), the one heard most on the radio, in films and in language classes."
+          ]
+        }
+      ]
+    }
+  ],
+  "back": [
+    {
+      "title": "A1 grammar summary",
+      "blocks": [
+        {
+          "type": "sub",
+          "text": "Nouns: three genders, four forms"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gender",
+            "Indefinite",
+            "Definite",
+            "Plural",
+            "Definite plural"
+          ],
+          "rows": [
+            [
+              "hankjønn (**en**)",
+              "en bil",
+              "bil**en**",
+              "bil**er**",
+              "bil**ene**"
+            ],
+            [
+              "hunkjønn (**ei**)",
+              "ei bok",
+              "bok**a**",
+              "bøk**er**",
+              "bøk**ene**"
+            ],
+            [
+              "intetkjønn (**et**)",
+              "et hus",
+              "hus**et**",
+              "hus",
+              "hus**ene**"
+            ],
+            [
+              "intetkjønn, 2 syllables",
+              "et eple",
+              "epl**et**",
+              "epl**er**",
+              "epl**ene**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Irregular: *mann → menn*, *bok → bøker*, *bror → brødre*, *søster → søstre*, *far → fedre*, *mor → mødre*, *datter → døtre*, *natt → netter*, *hånd → hender*, *fot → føtter*, *tre → trær*, *øye → øyne*, *ku → kyr*. No change: *sko*, *ting*, *år*, *barn*."
+        },
+        {
+          "type": "sub",
+          "text": "Adjectives: three forms"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Situation",
+            "Form",
+            "Example"
+          ],
+          "rows": [
+            [
+              "*en/ei*-word, indefinite",
+              "basic",
+              "en **stor** bil"
+            ],
+            [
+              "*et*-word, indefinite",
+              "+ **t**",
+              "et **stort** hus"
+            ],
+            [
+              "plural",
+              "+ **e**",
+              "**store** biler"
+            ],
+            [
+              "after *den/det/de/min/…*",
+              "+ **e**",
+              "den **store** bilen"
+            ],
+            [
+              "after *er*",
+              "follows the gender",
+              "bilen er **stor**; huset er **stort**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Double definite:** \"the big car\" = *den store bilen* — *den* in front, the *-e* ending on the adjective, **and** the *-en* ending on the noun. Three markers at once."
+        },
+        {
+          "type": "p",
+          "text": "No added *-t*: adjectives ending in *-ig* (*hyggelig*), nationality *-sk* (*norsk*), *-t* (*svart*), and *-e* (*moderne*). Those ending in a vowel double it: *blå → blått*, *ny → nytt*. Irregular: *liten, lita, lite, lille, små*."
+        },
+        {
+          "type": "p",
+          "text": "Comparison: **-ere** and **-est** — *billig → billigere → billigst*. Irregular: *god → bedre → best*, *dårlig → verre → verst*, *stor → større → størst*, *liten → mindre → minst*, *mange → flere → flest*, *mye → mer → mest*, *gammel → eldre → eldst*, *ung → yngre → yngst*, *lang → lengre → lengst*. Long words use *mer* and *mest*."
+        },
+        {
+          "type": "sub",
+          "text": "Pronouns"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Subject",
+            "Object",
+            "Possessive (en / et / plural)"
+          ],
+          "rows": [
+            [
+              "jeg",
+              "meg",
+              "min / mitt / mine"
+            ],
+            [
+              "du",
+              "deg",
+              "din / ditt / dine"
+            ],
+            [
+              "han",
+              "ham",
+              "hans"
+            ],
+            [
+              "hun",
+              "henne",
+              "hennes"
+            ],
+            [
+              "den / det",
+              "den / det",
+              "dens / dets"
+            ],
+            [
+              "vi",
+              "oss",
+              "vår / vårt / våre"
+            ],
+            [
+              "dere",
+              "dere",
+              "deres"
+            ],
+            [
+              "de",
+              "dem",
+              "deres"
+            ],
+            [
+              "(own, 3rd person)",
+              "seg",
+              "sin / sitt / sine"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Han ringer til **moren sin*** = his **own** mother. *Han ringer til **moren hans*** = **another man's** mother. *Sin/si/sitt/sine* is only used when the owner is the subject of that sentence, and it can never be part of the subject itself."
+        },
+        {
+          "type": "sub",
+          "text": "Verbs: one form for everyone"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Tense",
+            "Form",
+            "Example"
+          ],
+          "rows": [
+            [
+              "present",
+              "infinitive + **-r**",
+              "jeg snakke**r**, du snakke**r**, de snakke**r**"
+            ],
+            [
+              "past, group 1",
+              "+ **-et**",
+              "snakk**et**, jobb**et**, vent**et**"
+            ],
+            [
+              "past, group 2",
+              "+ **-te**",
+              "spis**te**, les**te**, kjøp**te**"
+            ],
+            [
+              "past, group 3",
+              "+ **-de**",
+              "lev**de**, prøv**de**"
+            ],
+            [
+              "past, group 4",
+              "+ **-dde**",
+              "bo**dde**, tro**dde**"
+            ],
+            [
+              "present perfect",
+              "**har** + participle",
+              "har snakk**et**, har spi**st**, har bo**dd**"
+            ],
+            [
+              "future (intention)",
+              "**skal** + infinitive",
+              "jeg skal jobbe"
+            ],
+            [
+              "future (prediction)",
+              "**kommer til å** + infinitive",
+              "det kommer til å regne"
+            ],
+            [
+              "imperative",
+              "infinitive without *å* and *-e*",
+              "kom! spis! vent!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Helper verbs **don't** end in *-r*: *kan, vil, skal, må, bør*. Their past forms are *kunne, ville, skulle, måtte, burde*. The verb after them stands bare, without *å*."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Du **må ikke** røyke* = smoking is **forbidden**. *Du **trenger ikke** røyke* = you don't have to smoke. ⚠️ *Vil* means **want**, not \"will\"."
+        },
+        {
+          "type": "sub",
+          "text": "Word order"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "1. Opener",
+            "2. **Verb**",
+            "3. Subject",
+            "4. *ikke* etc.",
+            "5. The rest"
+          ],
+          "rows": [
+            [
+              "Jeg",
+              "**går**",
+              "—",
+              "ikke",
+              "på jobb i dag."
+            ],
+            [
+              "I dag",
+              "**går**",
+              "jeg",
+              "ikke",
+              "på jobb."
+            ],
+            [
+              "Hvorfor",
+              "**går**",
+              "du",
+              "ikke",
+              "på jobb?"
+            ],
+            [
+              "—",
+              "**Går**",
+              "du",
+              "ikke",
+              "på jobb i dag?"
+            ],
+            [
+              "I dag",
+              "**skal**",
+              "jeg",
+              "ikke",
+              "**gå** på jobb."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**The verb is always in second place** in a main clause. The fourth box holds *ikke*, *alltid*, *ofte*, *aldri*, *sjelden*, *bare*, *også*, *kanskje*, *nok*, *jo*, *allerede*. The linking words *og*, *men*, *for*, *eller* do **not** force inversion."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Inside a subordinate clause** (*at*, *fordi*, *hvis*, *når*, *da*, *som*, *om*, *før*, *etter at*), the order is **subject — ikke — verb**: *…at han **ikke kommer***. This is the only place where *ikke* comes before the verb. If the subordinate clause comes first, the main clause is inverted: *Hvis du ikke vil, **er det** greit.*"
+        }
+      ]
+    },
+    {
+      "title": "The most common verbs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The verbs below cover most of everyday conversation. Read each row aloud in all four forms at once — infinitive, present, past, participle — the way you'd learn *go, goes, went, gone*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Infinitive",
+            "Present",
+            "Past",
+            "Participle",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "å være",
+              "er",
+              "var",
+              "vært",
+              "to be"
+            ],
+            [
+              "å ha",
+              "har",
+              "hadde",
+              "hatt",
+              "to have"
+            ],
+            [
+              "å gjøre",
+              "gjør",
+              "gjorde",
+              "gjort",
+              "to do"
+            ],
+            [
+              "å si",
+              "sier",
+              "sa",
+              "sagt",
+              "to say"
+            ],
+            [
+              "å se",
+              "ser",
+              "så",
+              "sett",
+              "to see"
+            ],
+            [
+              "å gå",
+              "går",
+              "gikk",
+              "gått",
+              "to go, to walk"
+            ],
+            [
+              "å komme",
+              "kommer",
+              "kom",
+              "kommet",
+              "to come"
+            ],
+            [
+              "å ta",
+              "tar",
+              "tok",
+              "tatt",
+              "to take"
+            ],
+            [
+              "å få",
+              "får",
+              "fikk",
+              "fått",
+              "to get"
+            ],
+            [
+              "å gi",
+              "gir",
+              "ga",
+              "gitt",
+              "to give"
+            ],
+            [
+              "å vite",
+              "vet",
+              "visste",
+              "visst",
+              "to know"
+            ],
+            [
+              "å spørre",
+              "spør",
+              "spurte",
+              "spurt",
+              "to ask"
+            ],
+            [
+              "å finne",
+              "finner",
+              "fant",
+              "funnet",
+              "to find"
+            ],
+            [
+              "å bli",
+              "blir",
+              "ble",
+              "blitt",
+              "to become; to stay"
+            ],
+            [
+              "å stå",
+              "står",
+              "sto",
+              "stått",
+              "to stand"
+            ],
+            [
+              "å sitte",
+              "sitter",
+              "satt",
+              "sittet",
+              "to sit"
+            ],
+            [
+              "å ligge",
+              "ligger",
+              "lå",
+              "ligget",
+              "to lie"
+            ],
+            [
+              "å sove",
+              "sover",
+              "sov",
+              "sovet",
+              "to sleep"
+            ],
+            [
+              "å drikke",
+              "drikker",
+              "drakk",
+              "drukket",
+              "to drink"
+            ],
+            [
+              "å skrive",
+              "skriver",
+              "skrev",
+              "skrevet",
+              "to write"
+            ],
+            [
+              "å le",
+              "ler",
+              "lo",
+              "ledd",
+              "to laugh"
+            ],
+            [
+              "å snakke",
+              "snakker",
+              "snakket",
+              "snakket",
+              "to speak"
+            ],
+            [
+              "å jobbe",
+              "jobber",
+              "jobbet",
+              "jobbet",
+              "to work"
+            ],
+            [
+              "å våkne",
+              "våkner",
+              "våknet",
+              "våknet",
+              "to wake up"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Group 1 (*snakke*, *jobbe*, *våkne*, *vente*) has a past tense and participle that are **exactly the same** — like English *talked / talked* — and it covers a quarter of all Norwegian verbs."
+        }
+      ]
+    },
+    {
+      "title": "What's next",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These twenty units give you the complete framework of level **A1**: nouns, adjectives, pronouns, four tenses, helper verbs, subordinate clauses and about six hundred words. With them you can introduce yourself, handle everyday errands, and talk about what has happened and what will happen."
+        },
+        {
+          "type": "sub",
+          "text": "What's waiting at the next level"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**The passive** — *huset **ble bygd** i 1950*, and the *-s* form (*boka **selges** her*).",
+            "**The conditional** — *hvis jeg **hadde hatt** tid, **ville jeg** kommet*.",
+            "**Phrasal verbs in large numbers** — *å slå opp*, *å finne ut*, *å legge fram*, *å gi opp*. This group demands the most memorizing at B1 — much like English *look up*, *find out*, *give up*.",
+            "**Compound nouns** — Norwegian joins words without spaces, and the chains get long: *arbeidsledighetstrygd*. Once you can cut them up, your vocabulary multiplies."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Resources that really help"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**klartale.no** — daily news in simple Norwegian, free, with audio. The best next step after this course.",
+            "**NRK** — Norway's public broadcaster. *NRK Skole* has short videos for schools; *Supernytt* is news for children and is perfect for adult learners.",
+            "**Ordbøkene.no** — the official bokmål and nynorsk dictionary, with every form of every word. Free and ad-free.",
+            "**Lær norsk nå** and **Norsklærer Karense** — two podcasts that speak slowly, made specifically for learners."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "One last sentence to learn by heart",
+          "items": [
+            "*Kan vi snakke norsk? Jeg øver.* — \"Can we speak Norwegian? I'm practicing.\" Norwegians often switch to English the moment they hear a foreign accent, and this sentence politely stops them. It may well be the most useful sentence in the whole course.",
+            "Go through this course again from Unit 1 in reverse: read the English translation and build the Norwegian from memory. The second round feels completely different from the first.",
+            "**Lykke til!**"
+          ]
+        }
+      ]
+    }
+  ]
+}

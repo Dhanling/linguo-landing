@@ -1,0 +1,534 @@
+{
+  "title": "The article that sticks to the end",
+  "title_target": "Hvor er nøkkelen?",
+  "goal": "Use the Norwegian definite article — which doesn't stand in front of the noun but sticks to the end of it — and recognize the three noun genders along with their shortcut.",
+  "bekal": [
+    "turn *en bil* into *bilen*, *ei bok* into *boka*, *et hus* into *huset*",
+    "know why you can skip *ei* almost entirely — and the seven words you can't",
+    "use *den*, *det*, *denne* and *dette* to point at things"
+  ],
+  "wave": "Go back over **Unit 2** first: cover the Norwegian, look at the English translation, and rebuild the dialogue. Notice where *ikke* goes in every negative sentence.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Hvor er nøkkelen?",
+      "intro": "Early morning, and Budi is already late. Ahmad spent the night on the sofa and has only just woken up.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Ahmad! Har du sett nøkkelen?",
+          "id": "Ahmad! Have you seen the key?",
+          "literal": "Ahmad! have you seen the-key?"
+        },
+        {
+          "speaker": "Ahmad:",
+          "text": "Nøkkelen? Nei. Ligger den ikke på bordet?",
+          "id": "The key? No. Isn't it on the table?",
+          "literal": "the-key? no. lies it not on the-table?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bordet er tomt. Og stolen også.",
+          "id": "The table's empty. And so is the chair.",
+          "literal": "the-table is empty. and the-chair also."
+        },
+        {
+          "speaker": "Ahmad:",
+          "text": "Se i sekken. Eller i jakka.",
+          "id": "Look in the backpack. Or in the jacket.",
+          "literal": "look in the-backpack. or in the-jacket."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jakka henger ved døra… Nei, den er tom.",
+          "id": "The jacket's hanging by the door… No, it's empty.",
+          "literal": "the-jacket hangs by the-door… no, it is empty."
+        },
+        {
+          "speaker": "Ahmad:",
+          "text": "Hva med vinduet? Du åpnet det i går.",
+          "id": "What about the window? You opened it yesterday.",
+          "literal": "what with the-window? you opened it in yesterday."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vent… Her er den! Under avisa.",
+          "id": "Wait… Here it is! Under the newspaper.",
+          "literal": "wait… here is it! under the-newspaper."
+        },
+        {
+          "speaker": "Ahmad:",
+          "text": "Selvfølgelig. Det er alltid det siste stedet.",
+          "id": "Of course. It's always the last place.",
+          "literal": "of-course. it is always the last the-place."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Takk! Kan du lukke vinduet når du går?",
+          "id": "Thanks! Can you close the window when you leave?",
+          "literal": "thanks! can you close the-window when you go?"
+        },
+        {
+          "speaker": "Ahmad:",
+          "text": "Ja ja. Og lyset og døra. Jeg kan rutinen.",
+          "id": "Yes, yes. And the light and the door. I know the routine.",
+          "literal": "yes yes. and the-light and the-door. I know the-routine."
+        }
+      ],
+      "notes": [
+        "**This is the most foreign feature of Norwegian for an English ear.** There's no separate word for \"the\" in front of the noun. The article **sticks to the end**: *en nøkkel* (a key) → *nøkkelen* (the key). Apart from the other Scandinavian languages, hardly any major language works like this.",
+        "**The ending is exactly the same as the indefinite article, just moved.** *en* → *-en*, *ei* → *-a*, *et* → *-et*. Once you know a noun's gender, you automatically know its ending. That's why the vocabulary in this course is always given with *en/ei/et* in front.",
+        "**Spelled -et, said -e.** *Huset* is pronounced **HÜ-seh**, *bordet* **BOO-reh**, *vinduet* **VIN-dü-eh**. The *t* in this ending is almost always silent. This is one of the biggest sound traps for beginners — and it applies to the word *det* itself too, which is pronounced **deh**.",
+        "**Jakka, døra, avisa** — here's where the *-a* ending shows up. All three are feminine nouns, and the *-a* form sounds far more natural to Norwegians than *jakken*, *døren*, *avisen*, although those forms are also correct. The rules of the game are in the box on the next page.",
+        "**Den er tom** — notice *den*, not *det*. *Jakka* isn't a neuter noun, so the pronoun that replaces it is *den*. If the thing is an *et*-word, the replacement is *det*: *vinduet… det er lukket*. English has just one \"it\" for everything.",
+        "**Se i sekken** is an imperative, and Norwegian imperatives are always **the bare stem, with no å and no -r**: *å se* → *se!*, *å komme* → *kom!*, *å lukke* → *lukk!* The full rule is waiting in Unit 13."
+      ],
+      "grammars": [
+        {
+          "title": "Three genders, four forms",
+          "body": [
+            "These four columns are the heart of the whole unit — and in fact the heart of the entire Norwegian noun system. Copy them into your notes and stick them somewhere you look often."
+          ],
+          "table": {
+            "head": [
+              "Gender",
+              "Indefinite",
+              "Definite",
+              "Plural",
+              "Definite plural"
+            ],
+            "rows": [
+              [
+                "hankjønn (**en**)",
+                "**en** bil",
+                "bil**en**",
+                "bil**er**",
+                "bil**ene**"
+              ],
+              [
+                "hankjønn (**en**)",
+                "**en** stol",
+                "stol**en**",
+                "stol**er**",
+                "stol**ene**"
+              ],
+              [
+                "hunkjønn (**ei**)",
+                "**ei** bok",
+                "bok**a**",
+                "bøk**er**",
+                "bøk**ene**"
+              ],
+              [
+                "hunkjønn (**ei**)",
+                "**ei** jente",
+                "jent**a**",
+                "jent**er**",
+                "jent**ene**"
+              ],
+              [
+                "intetkjønn (**et**)",
+                "**et** hus",
+                "hus**et**",
+                "hus",
+                "hus**ene**"
+              ],
+              [
+                "intetkjønn (**et**)",
+                "**et** eple",
+                "epl**et**",
+                "epl**er**",
+                "epl**ene**"
+              ]
+            ]
+          },
+          "after": [
+            "Read each row from left to right like a sentence: a car → the car → cars → the cars.",
+            "Words that already end in *-e* don't add another *e*: *en jente* → *jenta*, *et eple* → *eplet*. The ending attaches directly.",
+            "Words ending in *-el*, *-en*, *-er* drop the middle *e* when an ending is added: *en nøkkel* → *nøkkelen* but plural *nøkler*; *en søster* → *søsteren* → *søstre*.",
+            "One-syllable words with a single consonant after a short vowel double that consonant: *et rom* → *rommet*, *en venn* → *vennen*, *en topp* → *toppen*."
+          ]
+        },
+        {
+          "title": "Good news: you can skip ei",
+          "body": [
+            "Bokmål lets you treat **every** feminine noun as masculine. So *ei bok* can be written *en bok*, and *boka* can be written *boken*. Both are correct, both are used in national newspapers, and nobody will correct you."
+          ],
+          "table": {
+            "head": [
+              "You can say this",
+              "Or this",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ei bok → **boka**",
+                "en bok → **boken**",
+                "the book"
+              ],
+              [
+                "ei jente → **jenta**",
+                "en jente → **jenten**",
+                "the girl"
+              ],
+              [
+                "ei dør → **døra**",
+                "en dør → **døren**",
+                "the door"
+              ],
+              [
+                "ei klokke → **klokka**",
+                "en klokke → **klokken**",
+                "the clock"
+              ],
+              [
+                "ei uke → **uka**",
+                "en uke → **uken**",
+                "the week"
+              ]
+            ]
+          },
+          "after": [
+            "**Practical advice for beginners:** use *en* for every noun that isn't *et*, and you instantly cut the genders from three to two. You'll still be right one hundred percent of the time.",
+            "⚠️ But a handful of words are **heard far more often** in their *-a* form, and you'll keep meeting them everywhere: **boka**, **jenta**, **hytta** (the cabin), **klokka** (the clock), **uka** (the week), **døra** (the door), **sola** (the sun). Learn to recognize these forms so you can **read** them, even if you choose to write *boken* yourself.",
+            "Neuter nouns (*et*) get no such freedom. *Et hus* is always *et hus* and can never become *en hus*. This is the only gender you really must learn word by word."
+          ]
+        },
+        {
+          "title": "Pointing: den, det, denne, dette",
+          "body": [
+            "When you really want to point at something — \"**this** book\", \"**that** house\" — Norwegian puts a demonstrative in front **and** keeps the ending."
+          ],
+          "table": {
+            "head": [
+              "",
+              "en-ord",
+              "et-ord",
+              "Plural"
+            ],
+            "rows": [
+              [
+                "this (near)",
+                "**denne** boka",
+                "**dette** huset",
+                "**disse** bøkene"
+              ],
+              [
+                "that (far)",
+                "**den** bilen",
+                "**det** huset",
+                "**de** bilene"
+              ],
+              [
+                "it / they (pronoun)",
+                "**den**",
+                "**det**",
+                "**de**"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that the ending **stays**: *denne bok**a***, not *denne bok*. This is different from Danish and Swedish, which drop it here, so don't carry habits over from them.",
+            "*Den* and *det* also work as \"it\" for things — exactly like English *it*. Choose *det* if the thing is an *et*-word, *den* if not."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Eye training: one word, four forms",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Read this table aloud, one whole row at a time, from left to right. It's a drill that looks boring and is exactly the one that works best."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "A…",
+            "The…",
+            "Some…",
+            "The… (plural)"
+          ],
+          "rows": [
+            [
+              "en bil",
+              "bilen",
+              "biler",
+              "bilene"
+            ],
+            [
+              "en stol",
+              "stolen",
+              "stoler",
+              "stolene"
+            ],
+            [
+              "en nøkkel",
+              "nøkkelen",
+              "nøkler",
+              "nøklene"
+            ],
+            [
+              "en sekk",
+              "sekken",
+              "sekker",
+              "sekkene"
+            ],
+            [
+              "en venn",
+              "vennen",
+              "venner",
+              "vennene"
+            ],
+            [
+              "ei bok",
+              "boka",
+              "bøker",
+              "bøkene"
+            ],
+            [
+              "ei dør",
+              "døra",
+              "dører",
+              "dørene"
+            ],
+            [
+              "ei jente",
+              "jenta",
+              "jenter",
+              "jentene"
+            ],
+            [
+              "et hus",
+              "huset",
+              "hus",
+              "husene"
+            ],
+            [
+              "et bord",
+              "bordet",
+              "bord",
+              "bordene"
+            ],
+            [
+              "et vindu",
+              "vinduet",
+              "vinduer",
+              "vinduene"
+            ],
+            [
+              "et eple",
+              "eplet",
+              "epler",
+              "eplene"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last rows show an important habit: **one-syllable** neuter nouns don't change in the indefinite plural (*et hus → to hus*, like English *sheep*), while those with two or more syllables do take *-er* (*et vindu → to vinduer*). The full plural rules are waiting in the next unit."
+        }
+      ]
+    },
+    {
+      "title": "Why this feels strange to an English speaker",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "English marks definiteness with a separate word in front — *the* book, *a* book — and that habit leads to two typical mistakes:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Translating \"the\" as a separate word.** *Den bil* for \"the car\" is wrong: plain \"the\" is the ending, *bilen*. *Den* in front only means \"**that** car\" — and then the ending stays too: *den bilen*.",
+            "**Dropping the ending after a demonstrative.** *Denne bok* looks logical to an English eye (\"this book\" has no extra \"the\"), but in Norwegian it's wrong — it has to be *denne boka*. The mistake is removing the ending, not keeping it.",
+            "One thing works just like English: a bare noun is fine for professions (*jeg er lærer*, though English adds \"a\"), languages (*jeg snakker norsk*) and fixed expressions (*på jobb*, *på skolen*, *til fots*, *i går*). Learn those expressions whole; don't take them apart."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "A quick self-test",
+          "items": [
+            "Point at five things around you right now. Name each one in all four forms: *en stol — stolen — stoler — stolene*.",
+            "If you get stuck, it isn't because you don't know the rule — it's because you don't know the noun's gender. Always write your vocabulary with *en*/*et* in front, no exceptions.",
+            "A quick rule for when you're really stuck: about **three quarters** of Norwegian nouns are *en*-words. Guess *en* and the odds are three to one."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "no": "en nøkkel",
+      "baca": "en NÖK-kel",
+      "en": "a key"
+    },
+    {
+      "no": "ei jakke",
+      "baca": "ai YAHK-keh",
+      "en": "a jacket"
+    },
+    {
+      "no": "en sekk",
+      "baca": "en sek",
+      "en": "a backpack, a bag"
+    },
+    {
+      "no": "ei avis",
+      "baca": "ai ah-VEES",
+      "en": "a newspaper"
+    },
+    {
+      "no": "et bord",
+      "baca": "et boor",
+      "en": "a table"
+    },
+    {
+      "no": "en stol",
+      "baca": "en stool",
+      "en": "a chair"
+    },
+    {
+      "no": "et vindu",
+      "baca": "et VIN-dü",
+      "en": "a window"
+    },
+    {
+      "no": "ei dør",
+      "baca": "ai dör",
+      "en": "a door"
+    },
+    {
+      "no": "et lys",
+      "baca": "et lüs",
+      "en": "a light, a lamp; a candle"
+    },
+    {
+      "no": "et sted",
+      "baca": "et stay",
+      "en": "a place"
+    },
+    {
+      "no": "ei bok",
+      "baca": "ai book",
+      "en": "a book"
+    },
+    {
+      "no": "ei jente",
+      "baca": "ai YEN-teh",
+      "en": "a girl"
+    },
+    {
+      "no": "en gutt",
+      "baca": "en güt",
+      "en": "a boy"
+    },
+    {
+      "no": "et eple",
+      "baca": "et EP-leh",
+      "en": "an apple"
+    },
+    {
+      "no": "en venn",
+      "baca": "en ven",
+      "en": "a friend"
+    },
+    {
+      "no": "et rom",
+      "baca": "et rom",
+      "en": "a room"
+    },
+    {
+      "no": "å ligge",
+      "baca": "oh LIG-geh",
+      "en": "to lie, to be (lying somewhere)"
+    },
+    {
+      "no": "å henge",
+      "baca": "oh HENG-eh",
+      "en": "to hang"
+    },
+    {
+      "no": "å åpne",
+      "baca": "oh OP-neh",
+      "en": "to open"
+    },
+    {
+      "no": "å lukke",
+      "baca": "oh LÜK-keh",
+      "en": "to close"
+    },
+    {
+      "no": "å vente",
+      "baca": "oh VEN-teh",
+      "en": "to wait"
+    },
+    {
+      "no": "å se",
+      "baca": "oh say",
+      "en": "to see, to look"
+    },
+    {
+      "no": "tom / tomt",
+      "baca": "tom / tomt",
+      "en": "empty"
+    },
+    {
+      "no": "siste",
+      "baca": "SIS-teh",
+      "en": "last"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change to the definite form (the ending article).",
+      "items": [
+        "en bil → ____",
+        "et hus → ____",
+        "en nøkkel → ____",
+        "et vindu → ____",
+        "ei bok → ____",
+        "et bord → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in *en*, *ei* or *et* according to the vocabulary list.",
+      "items": [
+        "____ stol",
+        "____ vindu",
+        "____ dør",
+        "____ sekk",
+        "____ eple",
+        "____ jente"
+      ]
+    },
+    {
+      "prompt": "Translate into Norwegian.",
+      "items": [
+        "The table is empty.",
+        "The key is under the newspaper.",
+        "Can you close the window?",
+        "The jacket is hanging by the door.",
+        "The book is on the chair.",
+        "This house is big."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "er / bordet / tomt",
+        "avisa / nøkkelen / under / er",
+        "vinduet / du / lukke / kan / ?",
+        "ved / henger / døra / jakka",
+        "stolen / ligger / på / boka"
+      ]
+    }
+  ],
+  "answers": [
+    "bilen — huset — nøkkelen — vinduet — boka — bordet",
+    "en — et — ei — en — et — ei",
+    "Bordet er tomt. — Nøkkelen er under avisa. — Kan du lukke vinduet? — Jakka henger ved døra. — Boka ligger på stolen. — Dette huset er stort.",
+    "Bordet er tomt. — Nøkkelen er under avisa. — Kan du lukke vinduet? — Jakka henger ved døra. — Boka ligger på stolen."
+  ]
+}

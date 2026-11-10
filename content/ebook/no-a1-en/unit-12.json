@@ -1,0 +1,653 @@
+{
+  "title": "Describing things",
+  "title_target": "Den store, grønne sekken",
+  "goal": "Change adjectives to match the noun they describe — only three forms — and master the habit that trips up beginners: marking definiteness twice at once.",
+  "bekal": [
+    "use the base form, the *-t* form and the *-e* form",
+    "build *den store bilen* with three markers at once",
+    "recognize adjectives that refuse to add *-t*"
+  ],
+  "wave": "Review **unit 10** first: cover the Norwegian, look at the English, and rebuild the dialogue. Just one question: when *sin*, when *hans*?",
+  "dialogs": [
+    {
+      "title": "Dialogue — På hittegodskontoret",
+      "intro": "The lost-and-found office at the station. Budi lost his backpack on the tram two days ago, and the clerk behind the counter looks like he has heard this story a thousand times.",
+      "lines": [
+        {
+          "speaker": "Betjenten:",
+          "text": "Kan du beskrive sekken?",
+          "id": "Can you describe the backpack?",
+          "literal": "can you describe backpack-the?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Den er stor og grønn. En gammel sekk.",
+          "id": "It's big and green. An old backpack.",
+          "literal": "it is big and green. an old backpack."
+        },
+        {
+          "speaker": "Betjenten:",
+          "text": "Vi har mange grønne sekker. Hva var inni?",
+          "id": "We have lots of green backpacks. What's inside?",
+          "literal": "we have many green backpacks. what is inside?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ei blå bok, et lite håndkle og en rød lue.",
+          "id": "A blue book, a small towel and a red hat.",
+          "literal": "a blue book, a small towel and a red hat."
+        },
+        {
+          "speaker": "Betjenten:",
+          "text": "Den store, grønne sekken med den røde lua… vent litt.",
+          "id": "The big green backpack with the red hat… wait a moment.",
+          "literal": "the big, green backpack-the with the red hat-the… wait a-little."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Har dere den?",
+          "id": "Do you have it?",
+          "literal": "have you it?"
+        },
+        {
+          "speaker": "Betjenten:",
+          "text": "Vi har tre. En gammel, en ny og en veldig skitten.",
+          "id": "We have three. One old, one new and one very dirty.",
+          "literal": "we have three. one old, one new and one very dirty."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Den gamle er nok min.",
+          "id": "The old one is probably mine.",
+          "literal": "the old is probably mine."
+        },
+        {
+          "speaker": "Betjenten:",
+          "text": "Er boka tykk eller tynn?",
+          "id": "Is the book thick or thin?",
+          "literal": "is book-the thick or thin?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Veldig tykk. Det er ei norsk grammatikkbok.",
+          "id": "Very thick. A Norwegian grammar book.",
+          "literal": "very thick. it is a Norwegian grammar-book."
+        },
+        {
+          "speaker": "Betjenten:",
+          "text": "Da er det din. Ingen andre mister slike bøker med glede.",
+          "id": "Then it's yours. Nobody else would be happy to lose a book like that.",
+          "literal": "then is it yours. nobody else loses such books with pleasure."
+        }
+      ],
+      "notes": [
+        "**Norwegian adjectives have only three forms**, and the third doubles as the plural: *stor* (base), *stort* (for *et*-words), *store* (plural and after a definite marker). Compare German with its sixteen possibilities; Norwegian offers three.",
+        "**Et lite håndkle** breaks the rule: the *et*-word form of *liten* is not *litet* but **lite**. *Liten* is the only truly irregular adjective in Norwegian — and it's used a lot, so learn it now: *liten, lita, lite, små*.",
+        "**Den store, grønne sekken** uses **three definite markers at once**: *den* in front, the *-e* ending on every adjective, and the *-en* ending on the noun. This is called double definiteness, and Norwegian is one of the few languages that does it. English makes do with a single \"the\".",
+        "**Danish and Swedish differ here.** Danish drops the ending (*den store sæk*), Swedish keeps it (*den stora säcken*). If you've touched either one, don't carry the habit over.",
+        "**Den gamle er nok min** — an adjective can stand alone without a noun when the thing is clear from the conversation. *Den gamle* = \"the old one\". English needs \"one\"; Norwegian doesn't. This shortcut is used all the time.",
+        "**Ei norsk grammatikkbok** — the adjective *norsk* doesn't change even though the noun is an *ei*-word. Adjectives that already end in *-sk*, *-ig* or *-t* never add another *-t*. The list is on the next page."
+      ],
+      "grammars": [
+        {
+          "title": "The three adjective forms",
+          "body": [
+            "Two things decide the form: the gender of the noun, and whether the noun is definite or not."
+          ],
+          "table": {
+            "head": [
+              "Situation",
+              "Form",
+              "Example",
+              "English"
+            ],
+            "rows": [
+              [
+                "*en*/*ei*-word, indefinite",
+                "base",
+                "en **stor** bil",
+                "a big car"
+              ],
+              [
+                "*et*-word, indefinite",
+                "+ **t**",
+                "et **stort** hus",
+                "a big house"
+              ],
+              [
+                "plural, indefinite",
+                "+ **e**",
+                "**store** biler",
+                "big cars"
+              ],
+              [
+                "after *den/det/de*",
+                "+ **e**",
+                "den **store** bilen",
+                "the big car"
+              ],
+              [
+                "after *min/din/…*",
+                "+ **e**",
+                "min **store** bil",
+                "my big car"
+              ],
+              [
+                "after name + *-s*",
+                "+ **e**",
+                "Ingrids **store** bil",
+                "Ingrid's big car"
+              ],
+              [
+                "standing alone after *er*",
+                "follows gender",
+                "bilen er **stor**; huset er **stort**",
+                "the car is big; the house is big"
+              ]
+            ]
+          },
+          "after": [
+            "The last row matters: when an adjective stands after *er* or *blir*, it never takes *-e*, even if the noun is definite. *Bilen er stor*, not *bilen er store*.",
+            "But if the noun is plural, it still takes *-e* in this position: *bilene er stor**e***. So *-e* marks plural **and** definiteness; *-t* marks neuter gender."
+          ]
+        },
+        {
+          "title": "Double definiteness",
+          "body": [
+            "This pattern is a Norwegian trademark. Read the three parts as one sound, not three separate pieces."
+          ],
+          "table": {
+            "head": [
+              "Indefinite",
+              "**Definite (double)**",
+              "English"
+            ],
+            "rows": [
+              [
+                "en stor bil",
+                "**den** stor**e** bil**en**",
+                "the big car"
+              ],
+              [
+                "ei gammel bok",
+                "**den** gaml**e** bok**a**",
+                "the old book"
+              ],
+              [
+                "et lite hus",
+                "**det** lit**e** hus**et**",
+                "the little house"
+              ],
+              [
+                "store biler",
+                "**de** stor**e** bil**ene**",
+                "the big cars"
+              ],
+              [
+                "en ny, rød genser",
+                "**den** ny**e**, rød**e** genser**en**",
+                "the new red sweater"
+              ],
+              [
+                "et norsk hus",
+                "**det** norsk**e** hus**et**",
+                "the Norwegian house"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ When there is **no** adjective, the demonstrative is dropped: *bilen* already means \"the car\". *Den* is only required when an adjective comes in between.",
+            "Every adjective in a row takes *-e*, not just the first: *den nye, røde genseren*.",
+            "One group drops the noun ending even with an adjective: names and family relations that are already definite — *min gamle venn*, *hele dagen*, *neste uke*. The words *hele*, *neste*, *forrige* and *samme* are always followed by a noun without an ending."
+          ]
+        },
+        {
+          "title": "Rebellious adjectives",
+          "body": [
+            "The only part you have to memorize. Everything else follows the three forms above without arguing."
+          ],
+          "table": {
+            "head": [
+              "Group",
+              "What happens",
+              "Example"
+            ],
+            "rows": [
+              [
+                "ending in **-ig**",
+                "no added *-t*",
+                "et hyggel**ig** hus, et vikt**ig** møte"
+              ],
+              [
+                "ending in **-sk** (nationality)",
+                "no added *-t*",
+                "et nor**sk** hus, et indonesi**sk** ord"
+              ],
+              [
+                "ending in **-t**",
+                "no change",
+                "et sv**art** bord, et lett spørsmål"
+              ],
+              [
+                "ending in **-e**",
+                "no change at all",
+                "et mod**erne** hus, et stille rom"
+              ],
+              [
+                "ending in a vowel",
+                "doubles the consonant",
+                "et bl**ått** hus, et gr**ått** hus, et n**ytt** hus"
+              ],
+              [
+                "**liten**",
+                "fully irregular",
+                "en liten, ei lita, et **lite**, **små** (plural)"
+              ],
+              [
+                "**gammel**",
+                "drops the middle *e*",
+                "en gammel, et gammelt, **gamle** (plural)"
+              ],
+              [
+                "**annen**",
+                "irregular",
+                "en annen, et **annet**, **andre** (plural)"
+              ]
+            ]
+          },
+          "after": [
+            "*Liten* has five forms and all of them are common: *en liten gutt*, *ei lita jente*, *et lite hus*, *små barn*, *den lille gutten*. The last one — **lille** after a demonstrative — is the one most often forgotten.",
+            "Adjectives ending in *-el*, *-en*, *-er* drop the middle *e* when adding *-e*: *gammel → gamle*, *sulten → sultne*, *vakker → vakre*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The most common adjectives",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Norsk",
+            "et-word",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "stor",
+              "stort",
+              "stoor / stoort",
+              "big"
+            ],
+            [
+              "liten",
+              "lite",
+              "LEE-ten / LEE-teh",
+              "small, little"
+            ],
+            [
+              "ny",
+              "nytt",
+              "nü / nüt",
+              "new"
+            ],
+            [
+              "gammel",
+              "gammelt",
+              "GAHM-mel",
+              "old"
+            ],
+            [
+              "god",
+              "godt",
+              "goo / got",
+              "good, tasty"
+            ],
+            [
+              "dårlig",
+              "dårlig",
+              "DOR-lee",
+              "bad"
+            ],
+            [
+              "lang",
+              "langt",
+              "lahng / lahngt",
+              "long"
+            ],
+            [
+              "kort",
+              "kort",
+              "kort",
+              "short"
+            ],
+            [
+              "tykk",
+              "tykt",
+              "tük / tükt",
+              "thick, fat"
+            ],
+            [
+              "tynn",
+              "tynt",
+              "tün / tünt",
+              "thin"
+            ],
+            [
+              "varm",
+              "varmt",
+              "vahrm / vahrmt",
+              "warm, hot"
+            ],
+            [
+              "kald",
+              "kaldt",
+              "kahl / kahlt",
+              "cold"
+            ],
+            [
+              "billig",
+              "billig",
+              "BIL-lee",
+              "cheap"
+            ],
+            [
+              "dyr",
+              "dyrt",
+              "dür / dürt",
+              "expensive"
+            ],
+            [
+              "lett",
+              "lett",
+              "let",
+              "easy; light"
+            ],
+            [
+              "vanskelig",
+              "vanskelig",
+              "VAHN-skeh-lee",
+              "difficult"
+            ],
+            [
+              "fin",
+              "fint",
+              "feen / fint",
+              "nice, pretty"
+            ],
+            [
+              "skitten",
+              "skittent",
+              "SHIHT-ten",
+              "dirty"
+            ],
+            [
+              "ren",
+              "rent",
+              "rayn / raynt",
+              "clean"
+            ],
+            [
+              "morsom",
+              "morsomt",
+              "MOO-som",
+              "funny, fun"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that *skitten* is pronounced **SHIHT-ten** — *sk* before *i* sounds like *sh*, as set out on the pronunciation page. And *morsom* sounds like **MOO-som**: the first *o* becomes \"oo\", the second stays \"o\"."
+        }
+      ]
+    },
+    {
+      "title": "Eye training: one adjective, six situations",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Read each row aloud from left to right in one breath."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "en-word",
+            "et-word",
+            "Plural",
+            "Definite singular",
+            "Definite plural"
+          ],
+          "rows": [
+            [
+              "en stor bil",
+              "et stort hus",
+              "store hus",
+              "den store bilen",
+              "de store bilene"
+            ],
+            [
+              "en ny genser",
+              "et nytt bord",
+              "nye bord",
+              "den nye genseren",
+              "de nye genserne"
+            ],
+            [
+              "ei gammel bok",
+              "et gammelt hus",
+              "gamle hus",
+              "den gamle boka",
+              "de gamle bøkene"
+            ],
+            [
+              "en liten gutt",
+              "et lite barn",
+              "små barn",
+              "den lille gutten",
+              "de små barna"
+            ],
+            [
+              "en norsk lærer",
+              "et norsk ord",
+              "norske ord",
+              "den norske læreren",
+              "de norske ordene"
+            ],
+            [
+              "ei blå bukse",
+              "et blått håndkle",
+              "blå klær",
+              "den blå buksa",
+              "de blå klærne"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "A quick self-test",
+          "items": [
+            "Describe five things around you with two adjectives each, in indefinite and definite form: *en stor, grønn sekk → den store, grønne sekken*.",
+            "If you stumble, the cause is almost always the same: you forgot the noun's gender. The adjective rules themselves are very short; what takes memory is the *en/ei/et*.",
+            "Say all five forms of *liten* in one go — *liten, lita, lite, lille, små* — until it flows. It's the only adjective truly worth memorizing on its own."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "no": "stor / stort / store",
+      "baca": "stoor",
+      "en": "big"
+    },
+    {
+      "no": "liten / lite / små",
+      "baca": "LEE-ten / LEE-teh / smoh",
+      "en": "small, little"
+    },
+    {
+      "no": "gammel / gammelt / gamle",
+      "baca": "GAHM-mel",
+      "en": "old"
+    },
+    {
+      "no": "tykk / tykt",
+      "baca": "tük",
+      "en": "thick"
+    },
+    {
+      "no": "tynn / tynt",
+      "baca": "tün",
+      "en": "thin"
+    },
+    {
+      "no": "varm / varmt",
+      "baca": "vahrm",
+      "en": "warm, hot"
+    },
+    {
+      "no": "kald / kaldt",
+      "baca": "kahl",
+      "en": "cold"
+    },
+    {
+      "no": "lett",
+      "baca": "let",
+      "en": "easy; light"
+    },
+    {
+      "no": "vanskelig",
+      "baca": "VAHN-skeh-lee",
+      "en": "difficult"
+    },
+    {
+      "no": "fin / fint",
+      "baca": "fin",
+      "en": "nice, fine"
+    },
+    {
+      "no": "skitten / skittent",
+      "baca": "SHIHT-ten",
+      "en": "dirty"
+    },
+    {
+      "no": "ren / rent",
+      "baca": "rayn",
+      "en": "clean"
+    },
+    {
+      "no": "morsom / morsomt",
+      "baca": "MOO-som",
+      "en": "funny, fun"
+    },
+    {
+      "no": "slik / slikt / slike",
+      "baca": "slik",
+      "en": "such, like that"
+    },
+    {
+      "no": "å beskrive",
+      "baca": "oh beh-SKREE-veh",
+      "en": "to describe"
+    },
+    {
+      "no": "å miste",
+      "baca": "oh MIS-teh",
+      "en": "to lose"
+    },
+    {
+      "no": "ei lue",
+      "baca": "ai LÜ-eh",
+      "en": "knitted hat, beanie"
+    },
+    {
+      "no": "ei glede",
+      "baca": "ai GLAY-deh",
+      "en": "pleasure, joy"
+    },
+    {
+      "no": "et ord",
+      "baca": "et oor",
+      "en": "word"
+    },
+    {
+      "no": "et møte",
+      "baca": "et MÖ-teh",
+      "en": "meeting"
+    },
+    {
+      "no": "et spørsmål",
+      "baca": "et SPÖSH-mohl",
+      "en": "question"
+    },
+    {
+      "no": "ei grammatikkbok",
+      "baca": "ai grah-mah-TIK-book",
+      "en": "grammar book"
+    },
+    {
+      "no": "inni",
+      "baca": "IN-nee",
+      "en": "inside"
+    },
+    {
+      "no": "hele",
+      "baca": "HAY-leh",
+      "en": "whole, entire"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the right form of the adjective.",
+      "items": [
+        "en ____ bil (stor)",
+        "et ____ hus (stor)",
+        "____ biler (stor)",
+        "et ____ barn (liten)",
+        "et ____ hus (ny)",
+        "et ____ bord (norsk)"
+      ]
+    },
+    {
+      "prompt": "Change to the definite form with double definiteness.",
+      "items": [
+        "en stor bil → ____",
+        "et lite hus → ____",
+        "ei gammel bok → ____",
+        "en ny genser → ____",
+        "store biler → ____",
+        "en liten gutt → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Norwegian.",
+      "items": [
+        "The backpack is big and green.",
+        "This is a small house.",
+        "The old book is on the table.",
+        "The little children are in the park.",
+        "The new red sweater is mine.",
+        "The book is very thick."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "grønn / sekken / og / er / stor",
+        "hus / dette / lite / er / et",
+        "bordet / gamle / boka / på / den / ligger",
+        "parken / barna / i / små / er / de",
+        "min / genseren / røde / er / nye / den"
+      ]
+    }
+  ],
+  "answers": [
+    "stor — stort — store — lite — nytt — norsk",
+    "den store bilen — det lille huset — den gamle boka — den nye genseren — de store bilene — den lille gutten",
+    "Sekken er stor og grønn. — Dette er et lite hus. — Den gamle boka ligger på bordet. — De små barna er i parken. — Den nye, røde genseren er min. — Boka er veldig tykk.",
+    "Sekken er stor og grønn. — Dette er et lite hus. — Den gamle boka ligger på bordet. — De små barna er i parken. — Den nye, røde genseren er min."
+  ]
+}

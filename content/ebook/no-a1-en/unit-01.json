@@ -1,0 +1,522 @@
+{
+  "title": "Greetings and names",
+  "title_target": "Hei! Jeg heter Budi",
+  "goal": "Greet people, give your name and say where you come from — while discovering Norwegian's biggest gift: its verbs never change according to who is doing the action.",
+  "bekal": [
+    "greet people and say goodbye according to the time of day",
+    "give your name with *jeg heter* and where you're from with *jeg kommer fra*",
+    "use the six personal pronouns with one and the same verb form"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — På studentbyen",
+      "intro": "It's Budi's first day at the Kringsjå student village in Oslo. He is dragging his suitcase up the stairs when someone opens a door.",
+      "lines": [
+        {
+          "speaker": "Ingrid:",
+          "text": "Hei! Er du ny her?",
+          "id": "Hi! Are you new here?",
+          "literal": "hi! are you new here?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja, jeg er ny. Jeg heter Budi.",
+          "id": "Yes, I'm new. My name's Budi.",
+          "literal": "yes, I am new. I am-called Budi."
+        },
+        {
+          "speaker": "Ingrid:",
+          "text": "Hyggelig! Jeg heter Ingrid.",
+          "id": "Nice to meet you! I'm Ingrid.",
+          "literal": "pleasant! I am-called Ingrid."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hyggelig å møte deg. Bor du her også?",
+          "id": "Nice to meet you. Do you live here too?",
+          "literal": "pleasant to meet you. live you here also?"
+        },
+        {
+          "speaker": "Ingrid:",
+          "text": "Ja, jeg bor i nummer tolv. Hvor kommer du fra?",
+          "id": "Yes, I live in number twelve. Where are you from?",
+          "literal": "yes, I live in number twelve. where come you from?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jeg kommer fra Indonesia. Og du?",
+          "id": "I'm from Indonesia. And you?",
+          "literal": "I come from Indonesia. and you?"
+        },
+        {
+          "speaker": "Ingrid:",
+          "text": "Jeg er norsk. Jeg er fra Bergen.",
+          "id": "I'm Norwegian. I'm from Bergen.",
+          "literal": "I am Norwegian. I am from Bergen."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Snakker du engelsk?",
+          "id": "Do you speak English?",
+          "literal": "speak you English?"
+        },
+        {
+          "speaker": "Ingrid:",
+          "text": "Ja, litt. Men vi snakker norsk, ikke sant?",
+          "id": "Yes, a little. But we speak Norwegian, right?",
+          "literal": "yes, little. but we speak Norwegian, not true?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja! Takk, Ingrid. Vi ses!",
+          "id": "Yes! Thanks, Ingrid. See you!",
+          "literal": "yes! thanks, Ingrid. we see-each-other!"
+        }
+      ],
+      "notes": [
+        "**Jeg heter Budi** literally means \"I am called Budi\". Norwegian introduces people with the verb *å hete* (to be called) rather than \"my name is…\". *Navnet mitt er Budi* does exist and is correct, but it sounds stiff — like filling in a form. Use *jeg heter*.",
+        "**Here is the big gift.** Look at *jeg er* and *er du* — exactly the same verb form. The same goes for *jeg heter* / *du heter*, *jeg bor* / *bor du*, *jeg kommer* / *kommer du*. Norwegian verbs **do not change at all** according to who is doing the action. No *am/is/are*, no *-s* for he/she/it. One form for all six persons.",
+        "**Jeg is pronounced yai**, not \"yeg\". The *g* in *jeg*, *meg*, *deg* turns into an *i* sound. These are three of the most frequent words in the whole language, so get the sound right now.",
+        "**Hvor is pronounced voor.** An *h* in front of *v* is always silent: *hva* → **vah**, *hvem* → **vem**, *hvorfor* → **VOOR-for**. No exceptions.",
+        "**Hyggelig** is the most Norwegian word there is. It's used for people, rooms, evenings, conversations — anything that feels warm and cozy. Say it **HÜ-geh-lee**; the final *g* is silent, as in almost every *-lig* ending.",
+        "**Jeg er norsk** — languages and nationalities are written with a **small letter** in Norwegian (*norsk*, *engelsk*, *indonesisk*), unlike English. Country names keep their capital: *Norge*, *Indonesia*."
+      ],
+      "grammars": [
+        {
+          "title": "One verb form for everyone",
+          "body": [
+            "This table is why Norwegian feels light in the first week. Read the columns from top to bottom: nothing changes."
+          ],
+          "table": {
+            "head": [
+              "Pronoun",
+              "Meaning",
+              "*å være* (to be)",
+              "*å hete* (to be called)",
+              "*å bo* (to live)"
+            ],
+            "rows": [
+              [
+                "**jeg**",
+                "I",
+                "er",
+                "heter",
+                "bor"
+              ],
+              [
+                "**du**",
+                "you",
+                "er",
+                "heter",
+                "bor"
+              ],
+              [
+                "**han / hun**",
+                "he / she",
+                "er",
+                "heter",
+                "bor"
+              ],
+              [
+                "**det / den**",
+                "it",
+                "er",
+                "heter",
+                "bor"
+              ],
+              [
+                "**vi**",
+                "we",
+                "er",
+                "heter",
+                "bor"
+              ],
+              [
+                "**dere**",
+                "you (plural)",
+                "er",
+                "heter",
+                "bor"
+              ],
+              [
+                "**de**",
+                "they",
+                "er",
+                "heter",
+                "bor"
+              ]
+            ]
+          },
+          "after": [
+            "Compare English (*I am, you are, he is*) or French (*je suis, tu es, il est, nous sommes*). Norwegian has scrapped all of that. All you need to learn is **one form per verb**.",
+            "The pronoun *de* (they) is pronounced **dee**, and *dere* (you, plural) is pronounced **DAY-reh**. Beginners mix them up because they look alike; they sound quite different.",
+            "Norwegian no longer uses the polite *De* for \"you\". Even with lecturers, doctors or immigration officers, Norwegians say *du*. This isn't rude — quite the opposite: using *De* would sound odd and distant."
+          ]
+        },
+        {
+          "title": "Hello and goodbye",
+          "body": [
+            "Norwegian sorts greetings by time of day, but *hei* cuts across all of them and works almost anywhere."
+          ],
+          "table": {
+            "head": [
+              "Norsk",
+              "Say it",
+              "When to use it"
+            ],
+            "rows": [
+              [
+                "**Hei!**",
+                "hai",
+                "any time, to anyone — the one you'll hear most"
+              ],
+              [
+                "**Hallo!**",
+                "hah-LOO",
+                "answering the phone, calling from a distance"
+              ],
+              [
+                "**God morgen**",
+                "goo MOR-en",
+                "until about 10 a.m."
+              ],
+              [
+                "**God dag**",
+                "goo DAHG",
+                "daytime, a bit formal — in shops, in offices"
+              ],
+              [
+                "**God kveld**",
+                "goo KVEL",
+                "after about 6 p.m."
+              ],
+              [
+                "**God natt**",
+                "goo NAHT",
+                "only when parting to go to bed"
+              ],
+              [
+                "**Ha det (bra)!**",
+                "hah deh BRAH",
+                "goodbye — the most common one"
+              ],
+              [
+                "**Vi ses!**",
+                "vee SAYS",
+                "see you, to someone you'll meet again"
+              ],
+              [
+                "**Takk for nå**",
+                "tahk for NOH",
+                "\"thanks for now\" — a typical way to end a conversation"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that *god* is pronounced **goo** — the final *d* is silent, and the *o* sounds like \"oo\". Two big Norwegian habits meet in one short word.",
+            "*Ha det bra* literally means \"have it good\" — something like \"take care\". In fast speech it shrinks to just **hade**, and that's what you'll hear most on the street."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Saying where you're from and what you speak",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Two patterns are used interchangeably, and they're equally correct:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Norsk",
+            "English",
+            "Literally"
+          ],
+          "rows": [
+            [
+              "Jeg **er fra** Indonesia.",
+              "I'm from Indonesia.",
+              "I am from Indonesia"
+            ],
+            [
+              "Jeg **kommer fra** Indonesia.",
+              "I come from Indonesia.",
+              "I come from Indonesia"
+            ],
+            [
+              "Jeg **er** indonesisk.",
+              "I'm Indonesian.",
+              "I am Indonesian"
+            ],
+            [
+              "Jeg **bor i** Oslo.",
+              "I live in Oslo.",
+              "I live in Oslo"
+            ],
+            [
+              "Jeg **snakker** indonesisk.",
+              "I speak Indonesian.",
+              "I speak Indonesian"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice there's **no article** in front of languages and nationalities: not *jeg snakker det norsk*, just *jeg snakker norsk* — exactly as in English."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Country",
+            "Nationality / language",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "Norge",
+              "norsk",
+              "NOR-geh · noshk"
+            ],
+            [
+              "Indonesia",
+              "indonesisk",
+              "in-doo-NAY-see-ah · in-doo-NAY-sisk"
+            ],
+            [
+              "England",
+              "engelsk",
+              "ENG-lahn · ENG-elsk"
+            ],
+            [
+              "Tyskland",
+              "tysk",
+              "TÜSK-lahn · tüsk"
+            ],
+            [
+              "Sverige",
+              "svensk",
+              "SVÆR-yeh · svensk"
+            ],
+            [
+              "Danmark",
+              "dansk",
+              "DAHN-mahrk · dahnsk"
+            ],
+            [
+              "Japan",
+              "japansk",
+              "yah-PAHN · yah-PAHNSK"
+            ],
+            [
+              "Kina",
+              "kinesisk",
+              "HYEE-nah · hyee-NAY-sisk"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Why this feels easy for an English speaker",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The first unit of most language courses walks you straight into a wall. There's no wall here, and that's no accident — Norwegian and English are close relatives, and three features make the start especially gentle:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Verbs don't change for the person.** English still clings to *I am / he is* and *I eat / she eats*. Norwegian has dropped even that: *jeg spiser, du spiser, hun spiser* — one form, always.",
+            "**No separate progressive tense.** *Jeg spiser* means both \"I eat\" **and** \"I am eating\", depending on the situation. English makes you choose between *I eat* and *I am eating*; Norwegian doesn't.",
+            "**He and she work just as in English** — *han* and *hun* replace a man and a woman, and they change nothing else in the sentence."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "What to watch out for",
+          "items": [
+            "Never drop **er** (am/is/are). *Jeg student* is wrong — it has to be *jeg **er** student*. Note, too, that Norwegian drops the article with jobs and roles: *jeg er student*, not \"I am a student\".",
+            "Always name the subject. A casual English \"From where?\" won't do: Norwegian says *Hvor kommer **du** fra?*",
+            "Say every word all the way to the end. The biggest temptation for beginners is to swallow endings, but that's exactly where Norwegian keeps its grammar."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "no": "hei",
+      "baca": "hai",
+      "en": "hi, hello"
+    },
+    {
+      "no": "ja",
+      "baca": "yah",
+      "en": "yes"
+    },
+    {
+      "no": "nei",
+      "baca": "nai",
+      "en": "no"
+    },
+    {
+      "no": "takk",
+      "baca": "tahk",
+      "en": "thank you, thanks"
+    },
+    {
+      "no": "å være",
+      "baca": "oh VÆ-reh",
+      "en": "to be"
+    },
+    {
+      "no": "er",
+      "baca": "ær",
+      "en": "am, is, are (present)"
+    },
+    {
+      "no": "å hete",
+      "baca": "oh HAY-teh",
+      "en": "to be called"
+    },
+    {
+      "no": "å bo",
+      "baca": "oh boo",
+      "en": "to live, to stay"
+    },
+    {
+      "no": "å komme",
+      "baca": "oh KOM-meh",
+      "en": "to come"
+    },
+    {
+      "no": "å snakke",
+      "baca": "oh SNAHK-keh",
+      "en": "to speak, to talk"
+    },
+    {
+      "no": "å møte",
+      "baca": "oh MÖ-teh",
+      "en": "to meet"
+    },
+    {
+      "no": "ny",
+      "baca": "nü",
+      "en": "new"
+    },
+    {
+      "no": "her",
+      "baca": "hær",
+      "en": "here"
+    },
+    {
+      "no": "hvor",
+      "baca": "voor",
+      "en": "where"
+    },
+    {
+      "no": "fra",
+      "baca": "frah",
+      "en": "from"
+    },
+    {
+      "no": "i",
+      "baca": "ee",
+      "en": "in"
+    },
+    {
+      "no": "og",
+      "baca": "oh",
+      "en": "and"
+    },
+    {
+      "no": "men",
+      "baca": "men",
+      "en": "but"
+    },
+    {
+      "no": "også",
+      "baca": "OS-soh",
+      "en": "also, too"
+    },
+    {
+      "no": "litt",
+      "baca": "lit",
+      "en": "a little"
+    },
+    {
+      "no": "hyggelig",
+      "baca": "HÜ-geh-lee",
+      "en": "nice, pleasant"
+    },
+    {
+      "no": "norsk",
+      "baca": "noshk",
+      "en": "Norwegian"
+    },
+    {
+      "no": "engelsk",
+      "baca": "ENG-elsk",
+      "en": "English"
+    },
+    {
+      "no": "et nummer",
+      "baca": "et NOM-mer",
+      "en": "a number"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the correct form of *å være*. (Hint: there's only one.)",
+      "items": [
+        "Jeg ____ ny her.",
+        "Du ____ fra Bergen.",
+        "Hun ____ norsk.",
+        "Vi ____ studenter.",
+        "De ____ i Oslo.",
+        "Dere ____ hyggelige."
+      ]
+    },
+    {
+      "prompt": "Fill in the right verb: *heter*, *bor*, *kommer*, *snakker*.",
+      "items": [
+        "Jeg ____ Budi.",
+        "Hun ____ i Bergen.",
+        "Han ____ fra Indonesia.",
+        "Vi ____ norsk og engelsk.",
+        "Hva ____ du?",
+        "Hvor ____ dere fra?"
+      ]
+    },
+    {
+      "prompt": "Translate into Norwegian.",
+      "items": [
+        "Hi! My name's Ahmad.",
+        "I'm from Indonesia.",
+        "Do you live here too?",
+        "Nice to meet you.",
+        "She speaks a little Norwegian.",
+        "See you!"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "heter / jeg / Ingrid",
+        "du / hvor / fra / kommer / ?",
+        "i / bor / Oslo / vi",
+        "norsk / snakker / litt / han",
+        "ny / er / her / du / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "er — er — er — er — er — er",
+    "heter — bor — kommer — snakker — heter — kommer",
+    "Hei! Jeg heter Ahmad. — Jeg kommer fra Indonesia. — Bor du her også? — Hyggelig å møte deg. — Hun snakker litt norsk. — Vi ses!",
+    "Jeg heter Ingrid. — Hvor kommer du fra? — Vi bor i Oslo. — Han snakker litt norsk. — Er du ny her?"
+  ]
+}

@@ -1,0 +1,525 @@
+{
+  "title": "Asking, answering, saying no",
+  "title_target": "Hva er dette?",
+  "goal": "Build questions with Norwegian's seven question words, and negate sentences with *ikke* — which goes after the verb, not before it as \"not\" does in \"don't\".",
+  "bekal": [
+    "tell yes/no questions apart from questions with a question word",
+    "put *ikke* **after** the verb, not before it",
+    "answer with *ja*, *nei* and — this is the interesting one — *jo*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — På kjøkkenet",
+      "intro": "The shared kitchen on the second floor. Budi is frying something when a neighbor walks in with an empty mug.",
+      "lines": [
+        {
+          "speaker": "Lars:",
+          "text": "Hei. Hva heter du?",
+          "id": "Hi. What's your name?",
+          "literal": "hi. what are-called you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jeg heter Budi. Hvem er du?",
+          "id": "My name's Budi. Who are you?",
+          "literal": "I am-called Budi. who are you?"
+        },
+        {
+          "speaker": "Lars:",
+          "text": "Lars. Jeg bor her også. Hva er dette?",
+          "id": "Lars. I live here too. What's this?",
+          "literal": "Lars. I live here also. what is this?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Det er tempe. Det er indonesisk mat.",
+          "id": "It's tempeh. It's Indonesian food.",
+          "literal": "it is tempeh. it is Indonesian food."
+        },
+        {
+          "speaker": "Lars:",
+          "text": "Hvordan smaker det?",
+          "id": "What does it taste like?",
+          "literal": "how tastes it?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Det er veldig godt. Vil du smake?",
+          "id": "It's really good. Want a taste?",
+          "literal": "it is very good. want you taste?"
+        },
+        {
+          "speaker": "Lars:",
+          "text": "Nei takk, ikke nå. Jeg spiser ikke frokost.",
+          "id": "No thanks, not now. I don't eat breakfast.",
+          "literal": "no thanks, not now. I eat not breakfast."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hvorfor ikke?",
+          "id": "Why not?",
+          "literal": "why not?"
+        },
+        {
+          "speaker": "Lars:",
+          "text": "Jeg er ikke sulten om morgenen. Bare kaffe.",
+          "id": "I'm not hungry in the morning. Just coffee.",
+          "literal": "I am not hungry in the-morning. only coffee."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jeg drikker ikke kaffe. Jeg drikker te.",
+          "id": "I don't drink coffee. I drink tea.",
+          "literal": "I drink not coffee. I drink tea."
+        },
+        {
+          "speaker": "Lars:",
+          "text": "Drikker du ikke kaffe? Er du sikker på at du bor i Norge?",
+          "id": "You don't drink coffee? Are you sure you live in Norway?",
+          "literal": "drink you not coffee? are you sure on that you live in Norway?"
+        }
+      ],
+      "notes": [
+        "**This is the spot that trips up English speakers most.** The word *ikke* stands **after** the verb, not before it: *jeg spiser **ikke*** — literally \"I eat not\". English puts \"not\" before the verb with a helper (*I don't eat*), so your hand will automatically write *jeg ikke spiser*. That's wrong, and it sounds very wrong to a Norwegian ear.",
+        "**Yes/no questions are made by putting the verb first.** *Du bor her* → *Bor du her?* There's no helper verb like English *do*. Just swap the verb and the subject.",
+        "**All question words start with hv-, and the h is silent**: *hva* → **vah**, *hvem* → **vem**, *hvor* → **voor**, *hvordan* → **VOOR-dahn**, *hvorfor* → **VOOR-for**. One sound habit sorts out six words at once.",
+        "**Dette** and **det** both mean \"this/that\", but *dette* points to something close and *det* to something farther away or already mentioned. To ask about an object, *hva er dette?* is the most natural.",
+        "**Det er godt** — the adjective *god* becomes *godt* because *det* is neuter. The full rule comes in Unit 12; for now just learn *det er godt* and *det er kaldt* as whole phrases.",
+        "**Bare** means \"only, just\" and is said **BAH-reh**. It's one of the words Norwegians use most in everyday conversation."
+      ],
+      "grammars": [
+        {
+          "title": "Seven question words that take you anywhere",
+          "body": [
+            "Learn this table whole. With these seven words you can already ask almost everything a newcomer needs to ask."
+          ],
+          "table": {
+            "head": [
+              "Norsk",
+              "Say it",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**hva**",
+                "vah",
+                "what",
+                "*Hva heter du?* — What's your name?"
+              ],
+              [
+                "**hvem**",
+                "vem",
+                "who",
+                "*Hvem er han?* — Who is he?"
+              ],
+              [
+                "**hvor**",
+                "voor",
+                "where",
+                "*Hvor bor du?* — Where do you live?"
+              ],
+              [
+                "**hvordan**",
+                "VOOR-dahn",
+                "how",
+                "*Hvordan går det?* — How are you?"
+              ],
+              [
+                "**hvorfor**",
+                "VOOR-for",
+                "why",
+                "*Hvorfor ikke?* — Why not?"
+              ],
+              [
+                "**når**",
+                "nohr",
+                "when",
+                "*Når kommer du?* — When are you coming?"
+              ],
+              [
+                "**hvilken**",
+                "VIL-ken",
+                "which",
+                "*Hvilken buss?* — Which bus?"
+              ]
+            ]
+          },
+          "after": [
+            "Three extras that are useful right away: **hvor mange** (how many, for things you count), **hvor mye** (how much, for things you don't count) and **hvor lenge** (how long). All three build on *hvor*.",
+            "*Hvilken* changes form with the gender of the noun — *hvilken buss*, *hvilket hus*, *hvilke bøker*. Noun genders come in Unit 4, so for now just use *hvilken* and nobody will misunderstand you.",
+            "⚠️ *Hvordan går det?* literally means \"how goes it?\" and is the everyday \"how are you?\". The answer is almost always *Det går bra, takk* — \"it's going well, thanks\"."
+          ]
+        },
+        {
+          "title": "Two kinds of question, two word orders",
+          "body": [
+            "Every Norwegian question falls into one of these two patterns. Notice that **the verb always stands in second place** — something we'll take apart in the next unit."
+          ],
+          "table": {
+            "head": [
+              "Kind",
+              "Word order",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Yes/no",
+                "**verb** + subject + …",
+                "*Bor du i Oslo?* — Do you live in Oslo?"
+              ],
+              [
+                "Yes/no",
+                "**verb** + subject + …",
+                "*Snakker han norsk?* — Does he speak Norwegian?"
+              ],
+              [
+                "Question word",
+                "question word + **verb** + subject",
+                "*Hvor bor du?* — Where do you live?"
+              ],
+              [
+                "Question word",
+                "question word + **verb** + subject",
+                "*Når kommer bussen?* — When is the bus coming?"
+              ]
+            ]
+          },
+          "after": [
+            "What's missing here is the important part: **there's no helper verb**. English insists on *do you live…?*; Norwegian just says *bor du…?*. If you think through English, throw out the *do*."
+          ]
+        },
+        {
+          "title": "Saying no with ikke",
+          "body": [
+            "One rule, and it applies to every ordinary sentence: **ikke stands right after the verb**."
+          ],
+          "table": {
+            "head": [
+              "Ordinary sentence",
+              "Negated",
+              "English"
+            ],
+            "rows": [
+              [
+                "Jeg **snakker** norsk.",
+                "Jeg **snakker ikke** norsk.",
+                "I don't speak Norwegian."
+              ],
+              [
+                "Han **er** hjemme.",
+                "Han **er ikke** hjemme.",
+                "He isn't at home."
+              ],
+              [
+                "Vi **bor** i Bergen.",
+                "Vi **bor ikke** i Bergen.",
+                "We don't live in Bergen."
+              ],
+              [
+                "Det **koster** mye.",
+                "Det **koster ikke** mye.",
+                "It isn't expensive."
+              ],
+              [
+                "**Kommer** du?",
+                "**Kommer** du **ikke**?",
+                "Aren't you coming?"
+              ]
+            ]
+          },
+          "after": [
+            "In a question, *ikke* moves behind the subject: *Kommer du ikke?* The rule stays the same — it follows the verb **and** the subject, never comes before them.",
+            "⚠️ The only place where *ikke* jumps **in front of** the verb is inside a subordinate clause (*fordi jeg **ikke** kommer*). That's a big trap waiting in Unit 18; for now it's enough to know the exception exists."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Ja, nei — and jo",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Norwegian has **three** answer words, not two. The third, *jo*, has no direct English equivalent, and that's exactly why it's worth learning from the start."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Answer",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Snakker du norsk?*",
+              "**Ja**, litt.",
+              "Yes, a little."
+            ],
+            [
+              "*Snakker du norsk?*",
+              "**Nei**, dessverre.",
+              "No, unfortunately."
+            ],
+            [
+              "*Snakker du **ikke** norsk?*",
+              "**Jo**, det gjør jeg!",
+              "**Yes I do**, actually!"
+            ],
+            [
+              "*Snakker du **ikke** norsk?*",
+              "**Nei**, dessverre ikke.",
+              "No, unfortunately not."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The rule is simple: if the question **contains a negative** and your answer **contradicts it**, use *jo*, not *ja*. English handles this with stress and extra words (\"Yes, I *do*!\"); Norwegian has one special word for it — just like French *si* or German *doch*."
+        },
+        {
+          "type": "kotak",
+          "title": "Polite short answers",
+          "items": [
+            "*Ja takk* — \"yes, please\", to accept an offer. Not just *ja*; that sounds blunt.",
+            "*Nei takk* — \"no, thank you\", to decline. Just as important.",
+            "*Det går bra* — \"that's fine\" / \"no problem\", an all-purpose answer.",
+            "*Kanskje* (**KAHN-sheh**) — \"maybe\", the polite escape when you don't want to decide yet."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Eye training: one sentence, four forms",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Read each row aloud from left to right. What you're training here isn't vocabulary but the habit of putting *ikke* in the right place."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Statement",
+            "Negative",
+            "Question",
+            "Negative question"
+          ],
+          "rows": [
+            [
+              "Du bor her.",
+              "Du bor ikke her.",
+              "Bor du her?",
+              "Bor du ikke her?"
+            ],
+            [
+              "Han er sulten.",
+              "Han er ikke sulten.",
+              "Er han sulten?",
+              "Er han ikke sulten?"
+            ],
+            [
+              "De snakker norsk.",
+              "De snakker ikke norsk.",
+              "Snakker de norsk?",
+              "Snakker de ikke norsk?"
+            ],
+            [
+              "Det smaker godt.",
+              "Det smaker ikke godt.",
+              "Smaker det godt?",
+              "Smaker det ikke godt?"
+            ],
+            [
+              "Vi drikker kaffe.",
+              "Vi drikker ikke kaffe.",
+              "Drikker vi kaffe?",
+              "Drikker vi ikke kaffe?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "A quick self-test",
+          "items": [
+            "Take any five sentences from Unit 1, negate them all, then turn them into questions. If your hand writes *ikke* before the verb even once, start again from the top.",
+            "Say them as you write. The sound of *ikke* — **IK-keh**, with the *k* held — sticks in the ear faster than in the eye."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "no": "hva",
+      "baca": "vah",
+      "en": "what"
+    },
+    {
+      "no": "hvem",
+      "baca": "vem",
+      "en": "who"
+    },
+    {
+      "no": "hvordan",
+      "baca": "VOOR-dahn",
+      "en": "how"
+    },
+    {
+      "no": "hvorfor",
+      "baca": "VOOR-for",
+      "en": "why"
+    },
+    {
+      "no": "når",
+      "baca": "nohr",
+      "en": "when"
+    },
+    {
+      "no": "hvilken",
+      "baca": "VIL-ken",
+      "en": "which"
+    },
+    {
+      "no": "ikke",
+      "baca": "IK-keh",
+      "en": "not"
+    },
+    {
+      "no": "jo",
+      "baca": "yoo",
+      "en": "yes (contradicting a negative question)"
+    },
+    {
+      "no": "dette",
+      "baca": "DET-teh",
+      "en": "this"
+    },
+    {
+      "no": "det",
+      "baca": "deh",
+      "en": "it, that"
+    },
+    {
+      "no": "en kopp",
+      "baca": "en kop",
+      "en": "a cup, a mug"
+    },
+    {
+      "no": "en kaffe",
+      "baca": "en KAHF-feh",
+      "en": "a coffee"
+    },
+    {
+      "no": "en te",
+      "baca": "en tay",
+      "en": "a tea"
+    },
+    {
+      "no": "mat",
+      "baca": "maht",
+      "en": "food"
+    },
+    {
+      "no": "en frokost",
+      "baca": "en FROO-kost",
+      "en": "a breakfast"
+    },
+    {
+      "no": "å spise",
+      "baca": "oh SPEE-seh",
+      "en": "to eat"
+    },
+    {
+      "no": "å drikke",
+      "baca": "oh DRIK-keh",
+      "en": "to drink"
+    },
+    {
+      "no": "å smake",
+      "baca": "oh SMAH-keh",
+      "en": "to taste"
+    },
+    {
+      "no": "å forstå",
+      "baca": "oh for-STOH",
+      "en": "to understand"
+    },
+    {
+      "no": "sulten",
+      "baca": "SÜL-ten",
+      "en": "hungry"
+    },
+    {
+      "no": "god / godt",
+      "baca": "goo / got",
+      "en": "good, tasty"
+    },
+    {
+      "no": "veldig",
+      "baca": "VEL-dee",
+      "en": "very"
+    },
+    {
+      "no": "bare",
+      "baca": "BAH-reh",
+      "en": "only, just"
+    },
+    {
+      "no": "nå",
+      "baca": "noh",
+      "en": "now"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Negate the sentences by putting *ikke* in the right place.",
+      "items": [
+        "Jeg snakker norsk. → Jeg ____",
+        "Han er hjemme. → Han ____",
+        "Vi bor i Bergen. → Vi ____",
+        "De drikker kaffe. → De ____",
+        "Det smaker godt. → Det ____",
+        "Du forstår meg. → Du ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the right question word: *hva*, *hvem*, *hvor*, *hvordan*, *hvorfor*, *når*.",
+      "items": [
+        "____ heter du?",
+        "____ bor dere?",
+        "____ går det?",
+        "____ er han? — Det er Lars.",
+        "____ kommer bussen?",
+        "____ spiser du ikke frokost?"
+      ]
+    },
+    {
+      "prompt": "Translate into Norwegian.",
+      "items": [
+        "I don't drink coffee.",
+        "Don't you live here?",
+        "What's this?",
+        "Why not?",
+        "He isn't hungry.",
+        "When are you coming?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ikke / jeg / kaffe / drikker",
+        "du / hvor / bor / ?",
+        "er / dette / hva / ?",
+        "ikke / han / hjemme / er",
+        "norsk / snakker / ikke / de / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "snakker ikke norsk — er ikke hjemme — bor ikke i Bergen — drikker ikke kaffe — smaker ikke godt — forstår meg ikke",
+    "Hva — Hvor — Hvordan — Hvem — Når — Hvorfor",
+    "Jeg drikker ikke kaffe. — Bor du ikke her? — Hva er dette? — Hvorfor ikke? — Han er ikke sulten. — Når kommer du?",
+    "Jeg drikker ikke kaffe. — Hvor bor du? — Hva er dette? — Han er ikke hjemme. — Snakker de ikke norsk?"
+  ]
+}
