@@ -1,0 +1,565 @@
+{
+  "title": "Where are you from?",
+  "title_target": "מֵאַיִן אַתָּה?",
+  "goal": "Say where you're from, which country and city you live in, and which languages you speak — and meet the prefixes that glue straight onto the next word.",
+  "bekal": [
+    "ask and answer where someone is from",
+    "say which city you live in",
+    "name the languages you speak and the one you're learning"
+  ],
+  "dialogs": [
+    {
+      "title": "שִׂיחָה — בָּאוּלְפָּן",
+      "intro": "First day of the language course. Budi sits next to Yossi.",
+      "lines": [
+        {
+          "speaker": "יוֹסִי:",
+          "text": "סְלִיחָה, מֵאַיִן אַתָּה?",
+          "baca": "slikhah, me'ayin atah?",
+          "id": "Excuse me, where are you from?",
+          "literal": "sorry, from-where you (m)?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "אֲנִי מֵאִינְדּוֹנֶזְיָה. וְאַתָּה?",
+          "baca": "ani me'indonezyah. ve'atah?",
+          "id": "I'm from Indonesia. And you?",
+          "literal": "I from-indonesia. and-you?"
+        },
+        {
+          "speaker": "יוֹסִי:",
+          "text": "אֲנִי מִיִּשְׂרָאֵל, מֵחֵיפָה.",
+          "baca": "ani miyisra'el, mekheifah.",
+          "id": "I'm from Israel, from Haifa.",
+          "literal": "I from-israel, from-haifa."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "וְאֵיפֹה אַתָּה גָּר עַכְשָׁו?",
+          "baca": "ve'eifoh atah gar akhshav?",
+          "id": "And where do you live now?",
+          "literal": "and-where you live now?"
+        },
+        {
+          "speaker": "יוֹסִי:",
+          "text": "אֲנִי גָּר בְּתֵל אָבִיב. וְאַתָּה?",
+          "baca": "ani gar betel aviv. ve'atah?",
+          "id": "I live in Tel Aviv. And you?",
+          "literal": "I live in-tel aviv. and-you?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "גַּם אֲנִי. אֲנִי גָּר פֹּה חֹדֶשׁ.",
+          "baca": "gam ani. ani gar poh khodesh.",
+          "id": "Me too. I've been living here for a month.",
+          "literal": "also I. I live in-here month."
+        },
+        {
+          "speaker": "יוֹסִי:",
+          "text": "אַתָּה מְדַבֵּר עִבְרִית יָפֶה!",
+          "baca": "atah medaber ivrit yafeh!",
+          "id": "Your Hebrew is good!",
+          "literal": "you speak hebrew beautiful!"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "תּוֹדָה, אֲבָל רַק קְצָת.",
+          "baca": "todah, aval rak ktsat.",
+          "id": "Thanks, but only a little.",
+          "literal": "thanks, but only little."
+        },
+        {
+          "speaker": "יוֹסִי:",
+          "text": "אֵיזוֹ שָׂפָה אַתָּה מְדַבֵּר בַּבַּיִת?",
+          "baca": "eizo safah atah medaber babayit?",
+          "id": "What language do you speak at home?",
+          "literal": "which language you speak in-home?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "אִינְדּוֹנֶזִית. וְגַם קְצָת אַנְגְּלִית.",
+          "baca": "indonezit. vegam ktsat anglit.",
+          "id": "Indonesian. And a little English too.",
+          "literal": "indonesian. and-also little english."
+        },
+        {
+          "speaker": "יוֹסִי:",
+          "text": "מְעַנְיֵן! אֲנִי לֹא מַכִּיר אֶת הַשָּׂפָה הַזֹּאת.",
+          "baca": "me'anyen! ani lo makir et hasafah hazot.",
+          "id": "Interesting! I don't know that language.",
+          "literal": "interesting! I not know (obj) the-language the-this."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "אַתָּה מוּזְמָן לִלְמֹד. זֶה קַל!",
+          "baca": "atah muzman lilmod. zeh kal!",
+          "id": "You're welcome to learn it. It's easy!",
+          "literal": "you invited to-learn. it easy!"
+        }
+      ],
+      "notes": [
+        "**מֵאַיִן אַתָּה?** (*me'ayin atah?*) is the standard \"where are you from?\". In everyday speech Israelis more often say **מֵאֵיפֹה אַתָּה?** (*me'eifoh atah?*) — same meaning, more casual. Both are correct; you'll hear the second one more.",
+        "⚠️ **מִ־ attaches; it never stands alone.** \"From Israel\" isn't two words but one: מִיִּשְׂרָאֵל. The sound shifts from *mi-* to *me-* before the throat letters (א ה ח ע ר): מֵאִינְדּוֹנֶזְיָה, מֵחֵיפָה. No need to memorize the list now — just listen, and your ear will pick it up.",
+        "**גָּר** (*gar*) means \"live, reside\" — not \"be alive\". A woman says **גָּרָה** (*garah*). This is your first verb, and it already shows a big rule of Hebrew: the verb changes form according to the gender of the subject.",
+        "**בְּ־ attaches too**: בְּתֵל אָבִיב = \"in Tel Aviv\". If the next word starts with הַ־ (\"the\"), the two prefixes merge into בַּ־: הַבַּיִת (the house) + בְּ = **בַּבַּיִת** (*babayit*, in the house). This merger comes up constantly, so learn to spot it now.",
+        "**Language names almost always end in ־ִית.** עִבְרִית (Hebrew), אַנְגְּלִית (English), אִינְדּוֹנֶזִית (Indonesian), עֲרָבִית (Arabic), רוּסִית (Russian). They're all **feminine**, so adjectives agree: עִבְרִית קַלָּה (easy Hebrew).",
+        "⚠️ **אֶת** (*et*) in line 11 has no meaning at all.** It just signals that what follows is a **definite object**. English has nothing like it, and learners forget it all the time. The easy rule: if the object has הַ־ or is a proper name, put אֶת in front of it. Covered fully in unit 7.",
+        "**רַק קְצָת** (*rak ktsat*, \"only a little\") is an answer you'll use for months. Learn it as a chunk. Don't answer לֹא — in Israel, being modest and then carrying on in Hebrew anyway is the fastest way to get a patient conversation partner.",
+        "**פֹּה** (*poh*) and **כָּאן** (*kan*) both mean \"here\" and are fully interchangeable. פֹּה is slightly more casual."
+      ],
+      "grammars": [
+        {
+          "title": "One-letter prefixes: Hebrew glues on what English writes separately",
+          "body": [
+            "Some of the most common words in Hebrew aren't whole words but **a single letter attached** to the next word. In English these are all separate words, so your eye needs training to see them."
+          ],
+          "table": {
+            "head": [
+              "Prefix",
+              "Meaning",
+              "Example",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "בְּ־",
+                "in, with",
+                "בְּחֵיפָה",
+                "bekheifah — in Haifa"
+              ],
+              [
+                "לְ־",
+                "to, for",
+                "לְתֵל אָבִיב",
+                "letel aviv — to Tel Aviv"
+              ],
+              [
+                "מִ־ / מֵ־",
+                "from",
+                "מִיִּשְׂרָאֵל",
+                "miyisra'el — from Israel"
+              ],
+              [
+                "וְ־",
+                "and",
+                "וְאַתָּה",
+                "ve'atah — and you"
+              ],
+              [
+                "הַ־",
+                "the",
+                "הַבַּיִת",
+                "habayit — the house"
+              ],
+              [
+                "כְּ־",
+                "like",
+                "כְּמוֹ",
+                "kmo — like"
+              ],
+              [
+                "שֶׁ־",
+                "that, who",
+                "שֶׁאֲנִי",
+                "she'ani — that I"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ The practical effect is big: one Hebrew word often equals **three English words**. בַּבַּיִת = \"in the house\". When reading, get used to asking: \"is this first letter part of the word, or a prefix?\""
+          ]
+        },
+        {
+          "title": "Country, nationality, language — three words from one",
+          "body": [
+            "This pattern is regular and economical: from one country name you can derive the nationality (two forms) and the language."
+          ],
+          "table": {
+            "head": [
+              "Country",
+              "Masculine",
+              "Feminine",
+              "Language"
+            ],
+            "rows": [
+              [
+                "יִשְׂרָאֵל *(Israel)*",
+                "יִשְׂרְאֵלִי",
+                "יִשְׂרְאֵלִית",
+                "עִבְרִית"
+              ],
+              [
+                "אִינְדּוֹנֶזְיָה",
+                "אִינְדּוֹנֶזִי",
+                "אִינְדּוֹנֶזִית",
+                "אִינְדּוֹנֶזִית"
+              ],
+              [
+                "אַנְגְּלִיָּה *(England)*",
+                "אַנְגְּלִי",
+                "אַנְגְּלִיָּה",
+                "אַנְגְּלִית"
+              ],
+              [
+                "רוּסְיָה *(Russia)*",
+                "רוּסִי",
+                "רוּסִית",
+                "רוּסִית"
+              ],
+              [
+                "צָרְפַת *(France)*",
+                "צָרְפָתִי",
+                "צָרְפָתִיָּה",
+                "צָרְפָתִית"
+              ],
+              [
+                "מִצְרַיִם *(Egypt)*",
+                "מִצְרִי",
+                "מִצְרִית",
+                "עֲרָבִית"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that **the feminine nationality and the language name are often identical** (אִינְדּוֹנֶזִית = \"Indonesian woman\" and \"the Indonesian language\"). The sentence tells them apart: אֲנִי אִינְדּוֹנֶזִית = I'm Indonesian; אֲנִי מְדַבֶּרֶת אִינְדּוֹנֶזִית = I speak Indonesian."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Countries you'll mention often",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hebrew",
+            "Say it",
+            "Country"
+          ],
+          "rows": [
+            [
+              "יִשְׂרָאֵל",
+              "yisra'el",
+              "Israel"
+            ],
+            [
+              "אִינְדּוֹנֶזְיָה",
+              "indonezyah",
+              "Indonesia"
+            ],
+            [
+              "מַלֶזְיָה",
+              "malezyah",
+              "Malaysia"
+            ],
+            [
+              "סִינְגָּפּוּר",
+              "singapur",
+              "Singapore"
+            ],
+            [
+              "אַרְצוֹת הַבְּרִית",
+              "artsot habrit",
+              "United States"
+            ],
+            [
+              "אַנְגְּלִיָּה",
+              "anglyah",
+              "England"
+            ],
+            [
+              "גֶּרְמַנְיָה",
+              "germanyah",
+              "Germany"
+            ],
+            [
+              "צָרְפַת",
+              "tsarfat",
+              "France"
+            ],
+            [
+              "רוּסְיָה",
+              "rusyah",
+              "Russia"
+            ],
+            [
+              "סִין",
+              "sin",
+              "China"
+            ],
+            [
+              "יָפָן",
+              "yapan",
+              "Japan"
+            ],
+            [
+              "הֹדּוּ",
+              "hodu",
+              "India"
+            ],
+            [
+              "תּוּרְכִּיָּה",
+              "turkiyah",
+              "Turkey"
+            ],
+            [
+              "אוּסְטְרַלְיָה",
+              "ustralyah",
+              "Australia"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **אַרְצוֹת הַבְּרִית** literally means \"the lands of the covenant\" — that's \"the United States\". Israelis often shorten it to אַרְהַ\"ב, pronounced *arhav*."
+        }
+      ]
+    },
+    {
+      "title": "Israeli cities you'll hear a lot",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hebrew",
+            "Say it",
+            "City"
+          ],
+          "rows": [
+            [
+              "יְרוּשָׁלַיִם",
+              "yerushalayim",
+              "Jerusalem"
+            ],
+            [
+              "תֵּל אָבִיב",
+              "tel aviv",
+              "Tel Aviv"
+            ],
+            [
+              "חֵיפָה",
+              "kheifah",
+              "Haifa"
+            ],
+            [
+              "בְּאֵר שֶׁבַע",
+              "be'er sheva",
+              "Beersheba"
+            ],
+            [
+              "אֵילַת",
+              "eilat",
+              "Eilat"
+            ],
+            [
+              "נָצְרַת",
+              "natsrat",
+              "Nazareth"
+            ],
+            [
+              "עַכּוֹ",
+              "ako",
+              "Acre (Akko)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Asking with three words",
+          "items": [
+            "**מֵאַיִן? / מֵאֵיפֹה?** *(me'ayin / me'eifoh)* — from where?",
+            "**אֵיפֹה?** *(eifoh)* — where?",
+            "**לְאָן?** *(le'an)* — where to?",
+            "All three use prefixes you already know: מ־ (from), an implied ב־ (in), ל־ (to). Once you see the pattern, you'll never mix them up again."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "he": "מֵאַיִן / מֵאֵיפֹה",
+      "baca": "me'ayin / me'eifoh",
+      "en": "from where"
+    },
+    {
+      "he": "אֵיפֹה",
+      "baca": "eifoh",
+      "en": "where"
+    },
+    {
+      "he": "לְאָן",
+      "baca": "le'an",
+      "en": "where to"
+    },
+    {
+      "he": "גָּר / גָּרָה",
+      "baca": "gar / garah",
+      "en": "live, reside (m / f)"
+    },
+    {
+      "he": "מְדַבֵּר / מְדַבֶּרֶת",
+      "baca": "medaber / medaberet",
+      "en": "speak (m / f)"
+    },
+    {
+      "he": "שָׂפָה",
+      "baca": "safah",
+      "en": "language"
+    },
+    {
+      "he": "עִיר",
+      "baca": "ir",
+      "en": "city"
+    },
+    {
+      "he": "אֶרֶץ",
+      "baca": "erets",
+      "en": "land, country"
+    },
+    {
+      "he": "בַּיִת",
+      "baca": "bayit",
+      "en": "house, home"
+    },
+    {
+      "he": "אוּלְפָּן",
+      "baca": "ulpan",
+      "en": "Hebrew course"
+    },
+    {
+      "he": "סְלִיחָה",
+      "baca": "slikhah",
+      "en": "excuse me; sorry"
+    },
+    {
+      "he": "רַק",
+      "baca": "rak",
+      "en": "only"
+    },
+    {
+      "he": "קְצָת",
+      "baca": "ktsat",
+      "en": "a little"
+    },
+    {
+      "he": "פֹּה / כָּאן",
+      "baca": "poh / kan",
+      "en": "here"
+    },
+    {
+      "he": "שָׁם",
+      "baca": "sham",
+      "en": "there"
+    },
+    {
+      "he": "חֹדֶשׁ",
+      "baca": "khodesh",
+      "en": "month"
+    },
+    {
+      "he": "שָׁנָה",
+      "baca": "shanah",
+      "en": "year"
+    },
+    {
+      "he": "אֵיזֶה / אֵיזוֹ",
+      "baca": "eizeh / eizo",
+      "en": "which (m / f)"
+    },
+    {
+      "he": "מְעַנְיֵן",
+      "baca": "me'anyen",
+      "en": "interesting"
+    },
+    {
+      "he": "קַל",
+      "baca": "kal",
+      "en": "easy, light"
+    },
+    {
+      "he": "קָשֶׁה",
+      "baca": "kasheh",
+      "en": "difficult, heavy"
+    },
+    {
+      "he": "מַכִּיר / מַכִּירָה",
+      "baca": "makir / makirah",
+      "en": "know (a person/thing) (m / f)"
+    },
+    {
+      "he": "עִבְרִית",
+      "baca": "ivrit",
+      "en": "Hebrew (language)"
+    },
+    {
+      "he": "עֲרָבִית",
+      "baca": "aravit",
+      "en": "Arabic (language)"
+    },
+    {
+      "he": "יִשְׂרָאֵל",
+      "baca": "yisra'el",
+      "en": "Israel"
+    },
+    {
+      "he": "אִינְדּוֹנֶזְיָה",
+      "baca": "indonezyah",
+      "en": "Indonesia"
+    },
+    {
+      "he": "אֶת",
+      "baca": "et",
+      "en": "definite object marker (not translated)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right prefix: בְּ, לְ, or מִ.",
+      "items": [
+        "אֲנִי ____יִּשְׂרָאֵל.",
+        "הוּא גָּר ____חֵיפָה.",
+        "אֲנַחְנוּ הוֹלְכִים ____תֵל אָבִיב.",
+        "הִיא ____אִינְדּוֹנֶזְיָה.",
+        "אַתָּה גָּר ____יְרוּשָׁלַיִם?"
+      ]
+    },
+    {
+      "prompt": "Answer in Hebrew about yourself.",
+      "items": [
+        "מֵאַיִן אַתָּה?",
+        "אֵיפֹה אַתָּה גָּר?",
+        "אֵיזוֹ שָׂפָה אַתָּה מְדַבֵּר בַּבַּיִת?",
+        "אַתָּה מְדַבֵּר עִבְרִית?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "בְּתֵל אָבִיב / גָּרָה / הִיא",
+        "מֵאִינְדּוֹנֶזְיָה / אֲנִי / לֹא",
+        "עִבְרִית / קְצָת / רַק / מְדַבֵּר / אֲנִי",
+        "אַתָּה / מֵאַיִן / סְלִיחָה"
+      ]
+    },
+    {
+      "prompt": "Write the name of the language spoken in each country.",
+      "items": [
+        "יִשְׂרָאֵל ____",
+        "רוּסְיָה ____",
+        "צָרְפַת ____",
+        "אַנְגְּלִיָּה ____",
+        "אִינְדּוֹנֶזְיָה ____"
+      ]
+    }
+  ],
+  "answers": [
+    "מִיִּשְׂרָאֵל — בְּחֵיפָה — לְתֵל אָבִיב — מֵאִינְדּוֹנֶזְיָה — בִּירוּשָׁלַיִם",
+    "אֲנִי מֵאִינְדּוֹנֶזְיָה. — אֲנִי גָּר בְּ... — אֲנִי מְדַבֵּר אִינְדּוֹנֶזִית. — כֵּן, קְצָת.",
+    "הִיא גָּרָה בְּתֵל אָבִיב — אֲנִי לֹא מֵאִינְדּוֹנֶזְיָה — אֲנִי מְדַבֵּר רַק קְצָת עִבְרִית — סְלִיחָה, מֵאַיִן אַתָּה?",
+    "עִבְרִית — רוּסִית — צָרְפָתִית — אַנְגְּלִית — אִינְדּוֹנֶזִית"
+  ],
+  "wave": "Reread the unit 1 dialogue, then add one new sentence about yourself: אֲנִי מֵ... וְאֲנִי גָּר בְּ... — say it out loud five times until you don't have to think."
+}

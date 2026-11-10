@@ -1,0 +1,668 @@
+{
+  "title": "I don't feel well",
+  "title_target": "אֲנִי לֹא מַרְגִּישׁ טוֹב",
+  "goal": "Describe symptoms, name body parts and ask for medicine — using a typically Hebrew pattern: pain that \"happens to you\", not pain you have.",
+  "bekal": [
+    "naming the body part that hurts",
+    "describing symptoms at the pharmacy or to a doctor",
+    "understanding simple advice"
+  ],
+  "dialogs": [
+    {
+      "title": "שִׂיחָה — בְּבֵית מִרְקַחַת",
+      "intro": "Budi walks into a pharmacy looking worn out. The pharmacist, Tamar, greets him.",
+      "lines": [
+        {
+          "speaker": "תָּמָר:",
+          "text": "שָׁלוֹם, אֵיךְ אֲנִי יְכוֹלָה לַעֲזֹר?",
+          "baca": "shalom, eikh ani yekholah la'azor?",
+          "id": "Hi, how can I help?",
+          "literal": "hello, how I can (f) to-help?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "אֲנִי לֹא מַרְגִּישׁ טוֹב. כּוֹאֵב לִי הָרֹאשׁ.",
+          "baca": "ani lo margish tov. ko'ev li harosh.",
+          "id": "I don't feel well. I have a headache.",
+          "literal": "I not feel good. hurts to-me the-head."
+        },
+        {
+          "speaker": "תָּמָר:",
+          "text": "מִמָּתַי? יֵשׁ לְךָ חֹם?",
+          "baca": "mimatai? yesh lekha khom?",
+          "id": "Since when? Do you have a fever?",
+          "literal": "from-when? there-is to-you heat?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "מֵאֶתְמוֹל. אֲנִי חוֹשֵׁב שֶׁכֵּן, קְצָת.",
+          "baca": "me'etmol. ani khoshev sheken, ktsat.",
+          "id": "Since yesterday. I think so, a little.",
+          "literal": "from-yesterday. I think that-yes, a-little."
+        },
+        {
+          "speaker": "תָּמָר:",
+          "text": "כּוֹאֵב לְךָ גַּם הַגָּרוֹן?",
+          "baca": "ko'ev lekha gam hagaron?",
+          "id": "Does your throat hurt too?",
+          "literal": "hurts to-you also the-throat?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "כֵּן, וְקָשֶׁה לִי לִבְלֹעַ.",
+          "baca": "ken, vekasheh li livlo'a.",
+          "id": "Yes, and it's hard to swallow.",
+          "literal": "yes, and-hard to-me to-swallow."
+        },
+        {
+          "speaker": "תָּמָר:",
+          "text": "כַּנִּרְאֶה שַׁפַּעַת. יֵשׁ לְךָ אֲלֶרְגְיָה לְמַשֶּׁהוּ?",
+          "baca": "kanir'eh shapa'at. yesh lekha alergyah lemashehu?",
+          "id": "Probably the flu. Are you allergic to anything?",
+          "literal": "apparently flu. there-is to-you allergy to-something?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "לֹא, אֵין לִי.",
+          "baca": "lo, ein li.",
+          "id": "No, I'm not.",
+          "literal": "no, there-isn't to-me."
+        },
+        {
+          "speaker": "תָּמָר:",
+          "text": "קַח אֶת זֶה, כַּדּוּר כָּל שֵׁשׁ שָׁעוֹת.",
+          "baca": "kakh et zeh, kadur kol shesh sha'ot.",
+          "id": "Take this, one tablet every six hours.",
+          "literal": "take (obj) this, tablet every six hours."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "לִפְנֵי הָאֹכֶל אוֹ אַחֲרֵי?",
+          "baca": "lifnei ha'okhel o akharei?",
+          "id": "Before meals or after?",
+          "literal": "before the-meal or after?"
+        },
+        {
+          "speaker": "תָּמָר:",
+          "text": "אַחֲרֵי. וְתִשְׁתֶּה הַרְבֵּה מַיִם וְתָנוּחַ.",
+          "baca": "akharei. vetishteh harbeh mayim vetanu'akh.",
+          "id": "After. And drink lots of water and rest.",
+          "literal": "after. and-you-will-drink much water and-you-will-rest."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "תּוֹדָה. וְאִם לֹא יַעֲבֹר?",
+          "baca": "todah. ve'im lo ya'avor?",
+          "id": "Thanks. And if it doesn't go away?",
+          "literal": "thanks. and-if not will-pass?"
+        },
+        {
+          "speaker": "תָּמָר:",
+          "text": "אָז לֵךְ לְרוֹפֵא. תִּרְגִּישׁ טוֹב!",
+          "baca": "az lekh lerofe. targish tov!",
+          "id": "Then see a doctor. Feel better!",
+          "literal": "so go to-doctor. you-will-feel good!"
+        }
+      ],
+      "notes": [
+        "⚠️ **כּוֹאֵב לִי הָרֹאשׁ** literally means **\"the head hurts to me\"** — the body part is the subject, not you. English \"my head hurts\" is close; \"I have a headache\" is far off. Think \"my head hurts\" and you're nearly there.",
+        "**כּוֹאֵב changes form to match the body part**, because it's a verb: כּוֹאֵב לִי הָרֹאשׁ (head, m), כּוֹאֶבֶת לִי הַבֶּטֶן (stomach, f), כּוֹאֲבוֹת לִי הָרַגְלַיִם (legs, pl). The body part decides, not you.",
+        "**Paired body parts are feminine** — יָד (hand), רֶגֶל (leg), עַיִן (eye), אֹזֶן (ear) — and their plural uses the pair form ־ַיִם: יָדַיִם, רַגְלַיִם, עֵינַיִם, אָזְנַיִם. You saw this rule in units 11 and 17; now the reason is complete.",
+        "**מַרְגִּישׁ** (feel) works for both physical state and mood: אֲנִי מַרְגִּישׁ טוֹב / רַע / עָיֵף. Feminine: מַרְגִּישָׁה.",
+        "**קָשֶׁה לִי לְ...** = \"it's hard for me to...\". A very useful pattern that reaches far beyond health: קָשֶׁה לִי לְדַבֵּר עִבְרִית, קָשֶׁה לִי לָקוּם מֻקְדָּם. The opposite: קַל לִי לְ...",
+        "**כַּנִּרְאֶה** (*kanir'eh*) = \"apparently, it seems\". A word that lets you guess without committing — very handy for a learner who isn't sure yet.",
+        "**תִּשְׁתֶּה וְתָנוּחַ** uses the **future as a gentle instruction** — the politest way to give advice in Hebrew, softer than a direct imperative. Like English \"you'll want to drink lots of water\" instead of \"drink!\".",
+        "**תִּרְגִּישׁ טוֹב!** (\"may you feel good\") is the standard thing to say to someone who's sick. To a woman: תַּרְגִּישִׁי טוֹב. A more formal equivalent: רְפוּאָה שְׁלֵמָה (\"a complete recovery\")."
+      ],
+      "grammars": [
+        {
+          "title": "Pain and states that \"happen to you\"",
+          "body": [
+            "A group of Hebrew sentences use לְ + ending instead of a normal subject. They're all about things that happen to someone."
+          ],
+          "table": {
+            "head": [
+              "Hebrew",
+              "Say it",
+              "Literally",
+              "English"
+            ],
+            "rows": [
+              [
+                "כּוֹאֵב לִי הָרֹאשׁ",
+                "ko'ev li harosh",
+                "hurts to me the head",
+                "My head hurts"
+              ],
+              [
+                "כּוֹאֶבֶת לִי הַבֶּטֶן",
+                "ko'evet li habeten",
+                "hurts to me the stomach",
+                "My stomach hurts"
+              ],
+              [
+                "קַר לִי",
+                "kar li",
+                "cold to me",
+                "I'm cold"
+              ],
+              [
+                "חַם לִי",
+                "kham li",
+                "hot to me",
+                "I'm hot"
+              ],
+              [
+                "נָעִים לִי",
+                "na'im li",
+                "comfortable to me",
+                "I'm comfortable"
+              ],
+              [
+                "קָשֶׁה לִי",
+                "kasheh li",
+                "hard to me",
+                "I'm having a hard time"
+              ],
+              [
+                "נִמְאַס לִי",
+                "nim'as li",
+                "fed up to me",
+                "I'm fed up"
+              ],
+              [
+                "בָּא לִי",
+                "ba li",
+                "comes to me",
+                "I feel like it"
+              ],
+              [
+                "אִכְפַּת לִי",
+                "ikhpat li",
+                "important to me",
+                "I care"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **בָּא לִי** and **נִמְאַס לִי** are two of the most common everyday Israeli expressions. בָּא לִי קָפֶה = \"I feel like a coffee\". לֹא בָּא לִי = \"I'm not in the mood\". Neither has an exact translation, and that's exactly why they feel so Israeli."
+          ]
+        },
+        {
+          "title": "Body parts",
+          "body": [
+            "The gender column matters because it decides the form of כּוֹאֵב."
+          ],
+          "table": {
+            "head": [
+              "Hebrew",
+              "Say it",
+              "English",
+              "Gender",
+              "Plural"
+            ],
+            "rows": [
+              [
+                "רֹאשׁ",
+                "rosh",
+                "head",
+                "m",
+                "רָאשִׁים"
+              ],
+              [
+                "פָּנִים",
+                "panim",
+                "face",
+                "pl",
+                "—"
+              ],
+              [
+                "עַיִן",
+                "ayin",
+                "eye",
+                "f",
+                "עֵינַיִם"
+              ],
+              [
+                "אֹזֶן",
+                "ozen",
+                "ear",
+                "f",
+                "אָזְנַיִם"
+              ],
+              [
+                "אַף",
+                "af",
+                "nose",
+                "m",
+                "—"
+              ],
+              [
+                "פֶּה",
+                "peh",
+                "mouth",
+                "m",
+                "—"
+              ],
+              [
+                "שֵׁן",
+                "shen",
+                "tooth",
+                "f",
+                "שִׁנַּיִם"
+              ],
+              [
+                "גָּרוֹן",
+                "garon",
+                "throat",
+                "m",
+                "—"
+              ],
+              [
+                "יָד",
+                "yad",
+                "hand, arm",
+                "f",
+                "יָדַיִם"
+              ],
+              [
+                "רֶגֶל",
+                "regel",
+                "leg, foot",
+                "f",
+                "רַגְלַיִם"
+              ],
+              [
+                "בֶּטֶן",
+                "beten",
+                "stomach",
+                "f",
+                "—"
+              ],
+              [
+                "גַּב",
+                "gav",
+                "back",
+                "m",
+                "—"
+              ],
+              [
+                "לֵב",
+                "lev",
+                "heart",
+                "m",
+                "—"
+              ],
+              [
+                "גּוּף",
+                "guf",
+                "body",
+                "m",
+                "—"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **פָּנִים (face) is always plural** in Hebrew, with no singular — like מַיִם and שָׁמַיִם. Its adjective goes plural too: פָּנִים יָפוֹת."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Symptoms and medicine",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hebrew",
+            "Say it",
+            "English",
+            "Hebrew",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "רוֹפֵא",
+              "rofe",
+              "doctor",
+              "תְּרוּפָה",
+              "trufah",
+              "medicine"
+            ],
+            [
+              "בֵּית מִרְקַחַת",
+              "beit mirkakhat",
+              "pharmacy",
+              "כַּדּוּר",
+              "kadur",
+              "tablet"
+            ],
+            [
+              "בֵּית חוֹלִים",
+              "beit kholim",
+              "hospital",
+              "מִרְשָׁם",
+              "mirsham",
+              "prescription"
+            ],
+            [
+              "חוֹלֶה",
+              "kholeh",
+              "sick",
+              "חִסּוּן",
+              "khisun",
+              "vaccine"
+            ],
+            [
+              "חֹם",
+              "khom",
+              "fever",
+              "אֲלֶרְגְיָה",
+              "alergyah",
+              "allergy"
+            ],
+            [
+              "שַׁפַּעַת",
+              "shapa'at",
+              "flu",
+              "כְּאֵב",
+              "ke'ev",
+              "pain"
+            ],
+            [
+              "שִׁעוּל",
+              "shi'ul",
+              "cough",
+              "פֶּצַע",
+              "petsa",
+              "wound"
+            ],
+            [
+              "נַזֶּלֶת",
+              "nazelet",
+              "runny nose",
+              "בְּחִילָה",
+              "bkhilah",
+              "nausea"
+            ],
+            [
+              "מַרְגִּישׁ",
+              "margish",
+              "to feel",
+              "עָיֵף",
+              "ayef",
+              "tired"
+            ],
+            [
+              "נָח",
+              "nakh",
+              "to rest",
+              "בָּרִיא",
+              "bari",
+              "healthy"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Sentences to take to the pharmacy",
+          "items": [
+            "**אֲנִי לֹא מַרְגִּישׁ / מַרְגִּישָׁה טוֹב** — I don't feel well.",
+            "**כּוֹאֵב לִי ...** — my ... hurts. Just add the body part.",
+            "**יֵשׁ לִי חֹם / שִׁעוּל / נַזֶּלֶת** — I have a fever / a cough / a runny nose.",
+            "**יֵשׁ לִי אֲלֶרְגְיָה לְ...** — I'm allergic to...",
+            "**זֶה בְּלִי מִרְשָׁם?** — is this without a prescription?",
+            "**כַּמָּה פְּעָמִים בְּיוֹם?** — how many times a day?",
+            "**זֶה דָּחוּף** *(zeh dakhuf)* — it's urgent."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Israeli emergency numbers: 101 for an ambulance (מָגֵן דָּוִד אָדֹם), 100 police, 102 fire.** Sentences to know without thinking: **צָרִיךְ אַמְבּוּלַנְס!** *(tsarikh ambulans)* and **קִרְאוּ לְרוֹפֵא!** *(kir'u lerofe — call a doctor!)*."
+        }
+      ]
+    },
+    {
+      "title": "Asking after someone who's sick",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hebrew",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "אֵיךְ אַתָּה מַרְגִּישׁ?",
+              "eikh atah margish?",
+              "How are you feeling (m)?"
+            ],
+            [
+              "מָה קָרָה?",
+              "mah karah?",
+              "What happened?"
+            ],
+            [
+              "מִמָּתַי?",
+              "mimatai?",
+              "Since when?"
+            ],
+            [
+              "זֶה עָבַר?",
+              "zeh avar?",
+              "Is it gone? Has it passed?"
+            ],
+            [
+              "תִּרְגִּישׁ טוֹב!",
+              "targish tov!",
+              "Feel better! (to m)"
+            ],
+            [
+              "רְפוּאָה שְׁלֵמָה",
+              "refu'ah shlemah",
+              "Wishing you a full recovery"
+            ],
+            [
+              "תִּשְׁמֹר עַל עַצְמְךָ",
+              "tishmor al atsmekha",
+              "Take care of yourself (to m)"
+            ],
+            [
+              "אַל תִּדְאַג",
+              "al tid'ag",
+              "Don't worry"
+            ],
+            [
+              "זֶה יַעֲבֹר",
+              "zeh ya'avor",
+              "It'll pass"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**זֶה יַעֲבֹר** literally means \"this will pass\". Hebrew pictures illness as something that **walks past you**, not something you defeat. A comforting image, and something you'll hear very often."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "he": "מַרְגִּישׁ / מַרְגִּישָׁה",
+      "baca": "margish / margishah",
+      "en": "to feel"
+    },
+    {
+      "he": "כּוֹאֵב לִי",
+      "baca": "ko'ev li",
+      "en": "my ... hurts"
+    },
+    {
+      "he": "כְּאֵב",
+      "baca": "ke'ev",
+      "en": "pain"
+    },
+    {
+      "he": "רֹאשׁ",
+      "baca": "rosh",
+      "en": "head"
+    },
+    {
+      "he": "בֶּטֶן",
+      "baca": "beten",
+      "en": "stomach (f)"
+    },
+    {
+      "he": "גָּרוֹן",
+      "baca": "garon",
+      "en": "throat"
+    },
+    {
+      "he": "יָד / יָדַיִם",
+      "baca": "yad / yadayim",
+      "en": "hand, arm (f)"
+    },
+    {
+      "he": "רֶגֶל / רַגְלַיִם",
+      "baca": "regel / raglayim",
+      "en": "leg, foot (f)"
+    },
+    {
+      "he": "עַיִן / עֵינַיִם",
+      "baca": "ayin / einayim",
+      "en": "eye (f)"
+    },
+    {
+      "he": "שֵׁן / שִׁנַּיִם",
+      "baca": "shen / shinayim",
+      "en": "tooth (f)"
+    },
+    {
+      "he": "פָּנִים",
+      "baca": "panim",
+      "en": "face (always plural)"
+    },
+    {
+      "he": "גּוּף",
+      "baca": "guf",
+      "en": "body"
+    },
+    {
+      "he": "חוֹלֶה / חוֹלָה",
+      "baca": "kholeh / kholah",
+      "en": "sick"
+    },
+    {
+      "he": "בָּרִיא / בְּרִיאָה",
+      "baca": "bari / bri'ah",
+      "en": "healthy"
+    },
+    {
+      "he": "חֹם",
+      "baca": "khom",
+      "en": "fever"
+    },
+    {
+      "he": "שִׁעוּל / נַזֶּלֶת",
+      "baca": "shi'ul / nazelet",
+      "en": "cough / runny nose"
+    },
+    {
+      "he": "תְּרוּפָה",
+      "baca": "trufah",
+      "en": "medicine"
+    },
+    {
+      "he": "כַּדּוּר",
+      "baca": "kadur",
+      "en": "tablet"
+    },
+    {
+      "he": "מִרְשָׁם",
+      "baca": "mirsham",
+      "en": "prescription"
+    },
+    {
+      "he": "בֵּית מִרְקַחַת",
+      "baca": "beit mirkakhat",
+      "en": "pharmacy"
+    },
+    {
+      "he": "רוֹפֵא / רוֹפְאָה",
+      "baca": "rofe / rof'ah",
+      "en": "doctor"
+    },
+    {
+      "he": "נָח / נָחָה",
+      "baca": "nakh / nakhah",
+      "en": "to rest"
+    },
+    {
+      "he": "קָשֶׁה לִי",
+      "baca": "kasheh li",
+      "en": "it's hard for me"
+    },
+    {
+      "he": "כַּנִּרְאֶה",
+      "baca": "kanir'eh",
+      "en": "apparently"
+    },
+    {
+      "he": "תִּרְגִּישׁ טוֹב",
+      "baca": "targish tov",
+      "en": "feel better"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose the form of כּוֹאֵב that matches the body part.",
+      "items": [
+        "____ לִי הָרֹאשׁ.",
+        "____ לִי הַבֶּטֶן.",
+        "____ לִי הָרַגְלַיִם.",
+        "____ לִי הַגָּרוֹן.",
+        "____ לִי הָעֵינַיִם."
+      ]
+    },
+    {
+      "prompt": "Translate into Hebrew.",
+      "items": [
+        "I (f) don't feel well.",
+        "My tooth hurts.",
+        "I've had a fever since yesterday.",
+        "I'm allergic to this medicine.",
+        "How many times a day?"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right body part.",
+      "items": [
+        "אֲנִי רוֹאֶה עִם הָ____.",
+        "אֲנִי שׁוֹמֵעַ עִם הָ____.",
+        "אֲנִי אוֹכֵל עִם הַ____.",
+        "אֲנִי הוֹלֵךְ עִם הָ____.",
+        "אֲנִי כּוֹתֵב עִם הַ____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "טוֹב / מַרְגִּישׁ / לֹא / אֲנִי",
+        "הָרֹאשׁ / לִי / כּוֹאֵב",
+        "מַיִם / תִּשְׁתֶּה / הַרְבֵּה",
+        "לְרוֹפֵא / לֵךְ / אָז"
+      ]
+    }
+  ],
+  "answers": [
+    "כּוֹאֵב — כּוֹאֶבֶת — כּוֹאֲבוֹת — כּוֹאֵב — כּוֹאֲבוֹת",
+    "אֲנִי לֹא מַרְגִּישָׁה טוֹב. — כּוֹאֶבֶת לִי הַשֵּׁן. — יֵשׁ לִי חֹם מֵאֶתְמוֹל. — יֵשׁ לִי אֲלֶרְגְיָה לַתְּרוּפָה הַזֹּאת. — כַּמָּה פְּעָמִים בְּיוֹם?",
+    "עֵינַיִם — אָזְנַיִם — פֶּה — רַגְלַיִם — יָד",
+    "אֲנִי לֹא מַרְגִּישׁ טוֹב — כּוֹאֵב לִי הָרֹאשׁ — תִּשְׁתֶּה הַרְבֵּה מַיִם — אָז לֵךְ לְרוֹפֵא"
+  ],
+  "wave": "Point to ten parts of your own body and name them in Hebrew. Then make five כּוֹאֵב לִי sentences in the right form — check the gender of each body part."
+}

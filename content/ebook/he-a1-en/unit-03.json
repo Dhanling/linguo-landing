@@ -1,0 +1,591 @@
+{
+  "title": "What's this?",
+  "title_target": "מַה זֶּה?",
+  "goal": "Point at and name things around you, recognize the gender of nouns, and attach the article הַ־.",
+  "bekal": [
+    "ask what something you don't know is called",
+    "tell masculine nouns from feminine ones",
+    "tell \"a book\" from \"the book\""
+  ],
+  "dialogs": [
+    {
+      "title": "שִׂיחָה — בַּחֲנוּת סְפָרִים",
+      "intro": "Budi and Noa are in the campus bookshop. Budi points at things one by one.",
+      "lines": [
+        {
+          "speaker": "בּוּדִי:",
+          "text": "נֹעָה, מַה זֶּה?",
+          "baca": "no'ah, mah zeh?",
+          "id": "Noa, what's this?",
+          "literal": "noa, what this?"
+        },
+        {
+          "speaker": "נֹעָה:",
+          "text": "זֶה מִלּוֹן. מִלּוֹן עִבְרִי־אַנְגְּלִי.",
+          "baca": "zeh milon. milon ivri-angli.",
+          "id": "It's a dictionary. A Hebrew-English dictionary.",
+          "literal": "this dictionary. dictionary hebrew-english."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "וְזֹאת? זֹאת מַחְבֶּרֶת?",
+          "baca": "vezot? zot makhberet?",
+          "id": "And this one? Is this a notebook?",
+          "literal": "and-this (f)? this (f) notebook?"
+        },
+        {
+          "speaker": "נֹעָה:",
+          "text": "כֵּן. מַחְבֶּרֶת גְּדוֹלָה.",
+          "baca": "ken. makhberet gdolah.",
+          "id": "Yes. A big notebook.",
+          "literal": "yes. notebook big (f)."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "לָמָּה גְּדוֹלָה וְלֹא גָּדוֹל?",
+          "baca": "lamah gdolah velo gadol?",
+          "id": "Why gdolah and not gadol?",
+          "literal": "why big (f) and-not big (m)?"
+        },
+        {
+          "speaker": "נֹעָה:",
+          "text": "כִּי מַחְבֶּרֶת הִיא מִלָּה נְקֵבָה.",
+          "baca": "ki makhberet hi milah nekevah.",
+          "id": "Because makhberet is a feminine word.",
+          "literal": "because notebook she word feminine."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "אָה. וְאֵיךְ אֲנִי יוֹדֵעַ?",
+          "baca": "ah. ve'eikh ani yode'a?",
+          "id": "Oh. And how do I know?",
+          "literal": "ah. and-how I know?"
+        },
+        {
+          "speaker": "נֹעָה:",
+          "text": "בְּדֶרֶךְ כְּלָל ־ָה אוֹ ־ֶת בַּסּוֹף — נְקֵבָה.",
+          "baca": "bederekh klal ah o et basof — nekevah.",
+          "id": "Usually if it ends in -ah or -et, it's feminine.",
+          "literal": "in-way general ah or et in-the-end — feminine."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "וְהַסֵּפֶר הַזֶּה? כַּמָּה הוּא עוֹלֶה?",
+          "baca": "vehasefer hazeh? kamah hu oleh?",
+          "id": "And this book? How much is it?",
+          "literal": "and-the-book the-this? how-much it goes-up?"
+        },
+        {
+          "speaker": "נֹעָה:",
+          "text": "רֶגַע... שִׁשִּׁים שֶׁקֶל.",
+          "baca": "rega... shishim shekel.",
+          "id": "Just a moment... sixty shekels.",
+          "literal": "moment... sixty shekel."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "בְּסֵדֶר. אֲנִי לוֹקֵחַ אֶת הַסֵּפֶר.",
+          "baca": "beseder. ani loke'akh et hasefer.",
+          "id": "OK. I'll take the book.",
+          "literal": "good. I take (obj) the-book."
+        },
+        {
+          "speaker": "נֹעָה:",
+          "text": "וְהַמִּלּוֹן? הוּא בֶּאֱמֶת טוֹב.",
+          "baca": "vehamilon? hu be'emet tov.",
+          "id": "And the dictionary? It's really good.",
+          "literal": "and-the-dictionary? it really good."
+        }
+      ],
+      "notes": [
+        "**זֶה** and **זֹאת** both mean \"this\", but you choose by **the gender of the thing** you're pointing at. זֶה for masculine things, זֹאת for feminine ones. If you don't know what the thing is yet — like Budi in line 1 — use זֶה; that's the default in the question מַה זֶּה?",
+        "⚠️ **Every noun has a gender, with no exceptions and no reason.** סֵפֶר (book) is masculine, מַחְבֶּרֶת (notebook) is feminine. There's no logic to work out; there are just two clues from the word's shape (see the next box) and habit. **Learn every noun TOGETHER with its gender from day one** — fixing this habit a year later costs far more.",
+        "**הַ־ = \"the\".** סֵפֶר = a book (any book); הַסֵּפֶר = the book. Like English \"the\", it goes in front — but it's glued on, and Hebrew has **no** word for \"a\".",
+        "⚠️ **\"This book\" needs הַ־ TWICE.** הַסֵּפֶר הַזֶּה — literally \"the-book the-this\". Forgetting the second הַ־ is the most common A1 mistake. Compare: זֶה סֵפֶר (this is a book) ≠ הַסֵּפֶר הַזֶּה (this book).",
+        "**כַּמָּה זֶה עוֹלֶה?** (*kamah zeh oleh?*) — \"how much is it?\", literally \"how much does this go up?\". The verb עוֹלֶה really does mean \"go up\" and also \"cost\". Learn the sentence as a chunk; unit 11 takes it apart.",
+        "**רֶגַע** (*rega*) literally means \"a moment\", used exactly like \"just a sec\". The sweeter version: רֶגַע אֶחָד (*rega ekhad*, one second).",
+        "**כִּי** (*ki*) = because. Notice that the answer is a full sentence: כִּי מַחְבֶּרֶת הִיא מִלָּה נְקֵבָה. The הִיא in the middle isn't \"she\" but a link — Hebrew uses a pronoun in place of \"is\" when both sides are nouns. You'll see it again in unit 6.",
+        "**אֶת הַסֵּפֶר** — this is the אֶת from unit 2. Because the book is **definite** (it has הַ־), the object must be preceded by אֶת. If it's indefinite, אֶת disappears: אֲנִי לוֹקֵחַ סֵפֶר."
+      ],
+      "grammars": [
+        {
+          "title": "Guessing the gender of a noun",
+          "body": [
+            "No rule works a hundred percent of the time, but these two clues cover about nine words out of ten."
+          ],
+          "table": {
+            "head": [
+              "Clue",
+              "Gender",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ends in ־ָה",
+                "feminine",
+                "מִשְׁפָּחָה, שָׂפָה, מוֹרָה",
+                "family, language, teacher (f)"
+              ],
+              [
+                "ends in ־ֶת / ־ִית",
+                "feminine",
+                "מַחְבֶּרֶת, כַּפִּית",
+                "notebook, teaspoon"
+              ],
+              [
+                "paired body parts",
+                "feminine",
+                "יָד, רֶגֶל, עַיִן, אֹזֶן",
+                "hand, leg, eye, ear"
+              ],
+              [
+                "cities & countries",
+                "feminine",
+                "תֵּל אָבִיב, יִשְׂרָאֵל",
+                "Tel Aviv, Israel"
+              ],
+              [
+                "everything else",
+                "masculine",
+                "סֵפֶר, שֻׁלְחָן, חַלּוֹן",
+                "book, table, window"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Except for these five, which you should learn right now because they're so common: **אֶרֶץ** (land), **עִיר** (city), **דֶּרֶךְ** (way, road), **אֶבֶן** (stone), and **רוּחַ** (wind) are all **feminine** even though they don't end in ־ָה."
+          ]
+        },
+        {
+          "title": "Pointing: this, these",
+          "body": [
+            "Just four forms, chosen only by gender and number."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Say it",
+              "Used for",
+              "Example"
+            ],
+            "rows": [
+              [
+                "זֶה",
+                "zeh",
+                "1 masculine thing",
+                "זֶה סֵפֶר — this is a book"
+              ],
+              [
+                "זֹאת",
+                "zot",
+                "1 feminine thing",
+                "זֹאת מַחְבֶּרֶת — this is a notebook"
+              ],
+              [
+                "אֵלֶּה",
+                "eleh",
+                "several things (m & f)",
+                "אֵלֶּה סְפָרִים — these are books"
+              ],
+              [
+                "הַזֶּה / הַזֹּאת / הָאֵלֶּה",
+                "hazeh / hazot / ha'eleh",
+                "attached to a definite noun",
+                "הַסֵּפֶר הַזֶּה — this book"
+              ]
+            ]
+          },
+          "after": [
+            "Modern Hebrew doesn't draw a sharp line between \"this\" and \"that\" the way English does. For something far away, people add **שָׁם** (there): הַסֵּפֶר שָׁם — that book over there."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Things around you",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hebrew",
+            "Say it",
+            "Meaning",
+            "Gender"
+          ],
+          "rows": [
+            [
+              "סֵפֶר",
+              "sefer",
+              "book",
+              "m"
+            ],
+            [
+              "מַחְבֶּרֶת",
+              "makhberet",
+              "notebook",
+              "f"
+            ],
+            [
+              "מִלּוֹן",
+              "milon",
+              "dictionary",
+              "m"
+            ],
+            [
+              "עֵט",
+              "et",
+              "pen",
+              "m"
+            ],
+            [
+              "עִפָּרוֹן",
+              "iparon",
+              "pencil",
+              "m"
+            ],
+            [
+              "שֻׁלְחָן",
+              "shulkhan",
+              "table",
+              "m"
+            ],
+            [
+              "כִּסֵּא",
+              "kise",
+              "chair",
+              "m"
+            ],
+            [
+              "חַלּוֹן",
+              "khalon",
+              "window",
+              "m"
+            ],
+            [
+              "דֶּלֶת",
+              "delet",
+              "door",
+              "f"
+            ],
+            [
+              "תִּיק",
+              "tik",
+              "bag",
+              "m"
+            ],
+            [
+              "מַפְתֵּחַ",
+              "mafte'akh",
+              "key",
+              "m"
+            ],
+            [
+              "טֶלֶפוֹן",
+              "telefon",
+              "phone",
+              "m"
+            ],
+            [
+              "מַחְשֵׁב",
+              "makhshev",
+              "computer",
+              "m"
+            ],
+            [
+              "שָׁעוֹן",
+              "sha'on",
+              "clock, watch",
+              "m"
+            ],
+            [
+              "כּוֹס",
+              "kos",
+              "glass, cup",
+              "f"
+            ],
+            [
+              "מִטָּה",
+              "mitah",
+              "bed",
+              "f"
+            ],
+            [
+              "חֶדֶר",
+              "kheder",
+              "room",
+              "m"
+            ],
+            [
+              "תְּמוּנָה",
+              "tmunah",
+              "picture, photo",
+              "f"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **כּוֹס** and **דֶּלֶת** are feminine even though they don't end in ־ָה — the two words beginners most often pair with the wrong adjective. כּוֹס גְּדוֹלָה, not כּוֹס גָּדוֹל."
+        }
+      ]
+    },
+    {
+      "title": "Colors: one adjective, four forms",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "M",
+            "F",
+            "Say it",
+            "Color"
+          ],
+          "rows": [
+            [
+              "אָדֹם",
+              "אֲדֻמָּה",
+              "adom / adumah",
+              "red"
+            ],
+            [
+              "כָּחֹל",
+              "כְּחֻלָּה",
+              "kakhol / kkhulah",
+              "blue"
+            ],
+            [
+              "יָרֹק",
+              "יְרֻקָּה",
+              "yarok / yerukah",
+              "green"
+            ],
+            [
+              "צָהֹב",
+              "צְהֻבָּה",
+              "tsahov / tsehubah",
+              "yellow"
+            ],
+            [
+              "שָׁחֹר",
+              "שְׁחֹרָה",
+              "shakhor / shkhorah",
+              "black"
+            ],
+            [
+              "לָבָן",
+              "לְבָנָה",
+              "lavan / levanah",
+              "white"
+            ],
+            [
+              "חוּם",
+              "חוּמָה",
+              "khum / khumah",
+              "brown"
+            ],
+            [
+              "אָפֹר",
+              "אֲפֹרָה",
+              "afor / aforah",
+              "gray"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Adjectives come **after** the noun, the opposite of English: סֵפֶר אָדֹם = \"book red\", a red book. If the noun is definite, the adjective takes הַ־ too: הַסֵּפֶר הָאָדֹם = \"the red book\". This \"הַ־ twice\" rule is the same as the הַזֶּה rule above."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "he": "זֶה / זֹאת",
+      "baca": "zeh / zot",
+      "en": "this (m / f)"
+    },
+    {
+      "he": "אֵלֶּה",
+      "baca": "eleh",
+      "en": "these"
+    },
+    {
+      "he": "מַה זֶּה?",
+      "baca": "mah zeh?",
+      "en": "what's this?"
+    },
+    {
+      "he": "סֵפֶר",
+      "baca": "sefer",
+      "en": "book (m)"
+    },
+    {
+      "he": "מַחְבֶּרֶת",
+      "baca": "makhberet",
+      "en": "notebook (f)"
+    },
+    {
+      "he": "מִלּוֹן",
+      "baca": "milon",
+      "en": "dictionary (m)"
+    },
+    {
+      "he": "מִלָּה",
+      "baca": "milah",
+      "en": "word (f)"
+    },
+    {
+      "he": "שֻׁלְחָן",
+      "baca": "shulkhan",
+      "en": "table (m)"
+    },
+    {
+      "he": "כִּסֵּא",
+      "baca": "kise",
+      "en": "chair (m)"
+    },
+    {
+      "he": "דֶּלֶת",
+      "baca": "delet",
+      "en": "door (f)"
+    },
+    {
+      "he": "חַלּוֹן",
+      "baca": "khalon",
+      "en": "window (m)"
+    },
+    {
+      "he": "כּוֹס",
+      "baca": "kos",
+      "en": "glass, cup (f)"
+    },
+    {
+      "he": "תִּיק",
+      "baca": "tik",
+      "en": "bag (m)"
+    },
+    {
+      "he": "חֲנוּת",
+      "baca": "khanut",
+      "en": "shop (f)"
+    },
+    {
+      "he": "זָכָר / נְקֵבָה",
+      "baca": "zakhar / nekevah",
+      "en": "masculine / feminine (grammar)"
+    },
+    {
+      "he": "גָּדוֹל / גְּדוֹלָה",
+      "baca": "gadol / gdolah",
+      "en": "big"
+    },
+    {
+      "he": "קָטָן / קְטַנָּה",
+      "baca": "katan / ktanah",
+      "en": "small"
+    },
+    {
+      "he": "אָדֹם / אֲדֻמָּה",
+      "baca": "adom / adumah",
+      "en": "red"
+    },
+    {
+      "he": "לָבָן / לְבָנָה",
+      "baca": "lavan / levanah",
+      "en": "white"
+    },
+    {
+      "he": "לָמָּה",
+      "baca": "lamah",
+      "en": "why"
+    },
+    {
+      "he": "כִּי",
+      "baca": "ki",
+      "en": "because"
+    },
+    {
+      "he": "אֵיךְ",
+      "baca": "eikh",
+      "en": "how"
+    },
+    {
+      "he": "רֶגַע",
+      "baca": "rega",
+      "en": "a moment"
+    },
+    {
+      "he": "כַּמָּה זֶה עוֹלֶה?",
+      "baca": "kamah zeh oleh?",
+      "en": "how much is it?"
+    },
+    {
+      "he": "שֶׁקֶל",
+      "baca": "shekel",
+      "en": "shekel (Israeli currency)"
+    },
+    {
+      "he": "לוֹקֵחַ / לוֹקַחַת",
+      "baca": "loke'akh / lokakhat",
+      "en": "take (m / f)"
+    },
+    {
+      "he": "בֶּאֱמֶת",
+      "baca": "be'emet",
+      "en": "really, truly"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with זֶה or זֹאת.",
+      "items": [
+        "____ סֵפֶר.",
+        "____ מַחְבֶּרֶת.",
+        "____ כּוֹס.",
+        "____ מַפְתֵּחַ.",
+        "____ דֶּלֶת.",
+        "____ שֻׁלְחָן."
+      ]
+    },
+    {
+      "prompt": "Make each noun definite by adding הַ־.",
+      "items": [
+        "סֵפֶר ____",
+        "מַחְבֶּרֶת ____",
+        "חַלּוֹן ____",
+        "חֲנוּת ____",
+        "מַחְשֵׁב ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right form of the adjective.",
+      "items": [
+        "סֵפֶר ____ (big)",
+        "מַחְבֶּרֶת ____ (small)",
+        "כּוֹס ____ (red)",
+        "שֻׁלְחָן ____ (white)",
+        "דֶּלֶת ____ (big)"
+      ]
+    },
+    {
+      "prompt": "Translate into Hebrew.",
+      "items": [
+        "This is a new dictionary.",
+        "This isn't my bag.",
+        "This book is red.",
+        "The table is big.",
+        "How much is this notebook?"
+      ]
+    }
+  ],
+  "answers": [
+    "זֶה — זֹאת — זֹאת — זֶה — זֹאת — זֶה",
+    "הַסֵּפֶר — הַמַּחְבֶּרֶת — הַחַלּוֹן — הַחֲנוּת — הַמַּחְשֵׁב",
+    "גָּדוֹל — קְטַנָּה — אֲדֻמָּה — לָבָן — גְּדוֹלָה",
+    "זֶה מִלּוֹן חָדָשׁ. — זֶה לֹא הַתִּיק שֶׁלִּי. — הַסֵּפֶר הַזֶּה אָדֹם. — הַשֻּׁלְחָן גָּדוֹל. — כַּמָּה עוֹלָה הַמַּחְבֶּרֶת הַזֹּאת?"
+  ],
+  "wave": "Walk around your room and name ten things with the pattern זֶה ... or זֹאת .... If you're unsure of the gender, check whether the word ends in ־ָה or ־ֶת."
+}

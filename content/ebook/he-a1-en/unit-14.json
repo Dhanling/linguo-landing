@@ -1,0 +1,588 @@
+{
+  "title": "I have, I don't have",
+  "title_target": "יֵשׁ לִי, אֵין לִי",
+  "goal": "Master possession completely — and the machine that drives it: prepositions that take personal endings, a pattern that repeats all through Hebrew.",
+  "bekal": [
+    "saying what you have and don't have",
+    "using לִי, לְךָ, לוֹ and their relatives",
+    "building sentences with אִתִּי, אֶצְלִי, בִּשְׁבִילִי"
+  ],
+  "dialogs": [
+    {
+      "title": "שִׂיחָה — מִי לָקַח אֶת הַמַּפְתֵּחַ?",
+      "intro": "Late afternoon at the apartment. Budi can't find his keys.",
+      "lines": [
+        {
+          "speaker": "בּוּדִי:",
+          "text": "דָּנָה, יֵשׁ לָךְ אֶת הַמַּפְתֵּחַ שֶׁלִּי?",
+          "baca": "danah, yesh lakh et hamafte'akh sheli?",
+          "id": "Dana, do you have my key?",
+          "literal": "dana, there-is to-you (obj) the-key of-me?"
+        },
+        {
+          "speaker": "דָּנָה:",
+          "text": "לֹא, אֵין לִי. בָּדַקְתָּ בַּתִּיק?",
+          "baca": "lo, ein li. badakta batik?",
+          "id": "No, I don't. Did you check your bag?",
+          "literal": "no, there-isn't to-me. you-checked in-the-bag?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "כֵּן. יֵשׁ לִי רַק אֶת הַטֶּלֶפוֹן וְהָאַרְנָק.",
+          "baca": "ken. yesh li rak et hatelefon veha'arnak.",
+          "id": "Yes. All I have is my phone and my wallet.",
+          "literal": "yes. there-is to-me only (obj) the-phone and-the-wallet."
+        },
+        {
+          "speaker": "דָּנָה:",
+          "text": "אוּלַי הוּא אֵצֶל יוֹסִי?",
+          "baca": "ulai hu etsel yosi?",
+          "id": "Maybe it's at Yossi's?",
+          "literal": "maybe it at yossi?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "אֲנִי חוֹשֵׁב שֶׁלֹּא. הוּא לֹא הָיָה אִתִּי.",
+          "baca": "ani khoshev shelo. hu lo hayah iti.",
+          "id": "I don't think so. He's not with me.",
+          "literal": "I think that-not. he not with-me."
+        },
+        {
+          "speaker": "דָּנָה:",
+          "text": "יֵשׁ לְךָ מַפְתֵּחַ נוֹסָף?",
+          "baca": "yesh lekha mafte'akh nosaf?",
+          "id": "Do you have a spare key?",
+          "literal": "there-is to-you key extra?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "יֵשׁ אֶחָד אֵצֶל הַשְּׁכֵנָה.",
+          "baca": "yesh ekhad etsel hashkhenah.",
+          "id": "There's one at the neighbor's.",
+          "literal": "there-is one at the-neighbor."
+        },
+        {
+          "speaker": "דָּנָה:",
+          "text": "אָז אֵין בְּעָיָה. יֵשׁ לָךְ אֶת הַמִּסְפָּר שֶׁלָּהּ?",
+          "baca": "az ein be'ayah. yesh lakh et hamispar shelah?",
+          "id": "Then no problem. Do you have her number?",
+          "literal": "so there-isn't problem. there-is to-you (obj) the-number of-her (f)?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "יֵשׁ לִי, אֲבָל אֵין לִי סוֹלְלָה.",
+          "baca": "yesh li, aval ein li solelah.",
+          "id": "I do, but my battery's dead.",
+          "literal": "there-is to-me, but there-isn't to-me battery."
+        },
+        {
+          "speaker": "דָּנָה:",
+          "text": "קְחִי — קַח אֶת הַטֶּלֶפוֹן שֶׁלִּי.",
+          "baca": "kkhi — kakh et hatelefon sheli.",
+          "id": "Here — take my phone.",
+          "literal": "take (f) — take (m) (obj) the-phone of-me."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "תּוֹדָה! אַתְּ מַצִּילָה אוֹתִי.",
+          "baca": "todah! at matsilah oti.",
+          "id": "Thanks! You're a lifesaver.",
+          "literal": "thanks! you (f) save me."
+        },
+        {
+          "speaker": "דָּנָה:",
+          "text": "בִּשְׁבִיל זֶה יֵשׁ שְׁכֵנִים, לֹא?",
+          "baca": "bishvil zeh yesh shkhenim, lo?",
+          "id": "That's what neighbors are for, right?",
+          "literal": "for this there-are neighbors, no?"
+        }
+      ],
+      "notes": [
+        "⚠️ **Hebrew has no verb \"to have\" at all.** For \"I have a book\" it says יֵשׁ לִי סֵפֶר — literally **\"there is to me a book\"**. Notice what the subject is: not \"I\" but **the book**. The owner isn't the doer; there's just a thing located near someone.",
+        "**This isn't a Hebrew quirk.** Arabic, Russian and Irish do the same, and even English has a trace of it: \"the book is mine\", \"there's a book for me\". If you think \"there is to me\" instead of \"I have\", this whole unit feels natural.",
+        "⚠️ **If the thing is definite, אֶת must appear**: יֵשׁ לִי אֶת הַמַּפְתֵּחַ (I have the key). If indefinite, no אֶת: יֵשׁ לִי מַפְתֵּחַ. The אֶת rule from unit 7 applies unchanged. Israelis themselves argue about this in formal Hebrew — but in everyday speech, אֶת is used.",
+        "**אֵין is the negative, and it's never paired with לֹא.** אֵין לִי כֶּסֶף. Saying לֹא יֵשׁ is a mistake that marks you as a beginner instantly.",
+        "**אֵצֶל** (*etsel*) = \"at (someone's) place\", exactly like French *chez*. אֵצֶל יוֹסִי = at Yossi's. אֲנִי אֵצֶל הָרוֹפֵא = I'm at the doctor's.",
+        "**אִתִּי** = \"with me\". The base word is עִם (with), but with endings it becomes אִתִּ־: אִתִּי, אִתְּךָ, אִתּוֹ, אִתָּהּ, אִתָּנוּ. An exception to memorize whole.",
+        "**קַח / קְחִי** = \"take\" (to m / to f). Imperatives again; unit 19 takes them apart.",
+        "**בִּשְׁבִיל זֶה** = \"that's what ... is for\". Dana's closing line shows how everyday Hebrew is often warmer than its literal translation."
+      ],
+      "grammars": [
+        {
+          "title": "Prepositions that take endings — the recurring machine",
+          "body": [
+            "You've met this machine three times already: שֶׁל (unit 4), אֶת (unit 7), בִּשְׁבִיל (unit 11). Here it is in full, with the most common prepositions."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "לְ (to)",
+              "עִם (with)",
+              "אֵצֶל (at the place of)",
+              "בִּשְׁבִיל (for)"
+            ],
+            "rows": [
+              [
+                "I / me",
+                "לִי *li*",
+                "אִתִּי *iti*",
+                "אֶצְלִי *etsli*",
+                "בִּשְׁבִילִי *bishvili*"
+              ],
+              [
+                "you (m)",
+                "לְךָ *lekha*",
+                "אִתְּךָ *itkha*",
+                "אֶצְלְךָ *etslekha*",
+                "בִּשְׁבִילְךָ *bishvilkha*"
+              ],
+              [
+                "you (f)",
+                "לָךְ *lakh*",
+                "אִתָּךְ *itakh*",
+                "אֶצְלֵךְ *etslekh*",
+                "בִּשְׁבִילֵךְ *bishvilekh*"
+              ],
+              [
+                "he / him",
+                "לוֹ *lo*",
+                "אִתּוֹ *ito*",
+                "אֶצְלוֹ *etslo*",
+                "בִּשְׁבִילוֹ *bishvilo*"
+              ],
+              [
+                "she / her",
+                "לָהּ *lah*",
+                "אִתָּהּ *itah*",
+                "אֶצְלָהּ *etslah*",
+                "בִּשְׁבִילָהּ *bishvilah*"
+              ],
+              [
+                "we / us",
+                "לָנוּ *lanu*",
+                "אִתָּנוּ *itanu*",
+                "אֶצְלֵנוּ *etslenu*",
+                "בִּשְׁבִילֵנוּ *bishvilenu*"
+              ],
+              [
+                "you (pl)",
+                "לָכֶם *lakhem*",
+                "אִתְּכֶם *itkhem*",
+                "אֶצְלְכֶם *etslekhem*",
+                "בִּשְׁבִילְכֶם *bishvilkhem*"
+              ],
+              [
+                "they / them",
+                "לָהֶם *lahem*",
+                "אִתָּם *itam*",
+                "אֶצְלָם *etslam*",
+                "בִּשְׁבִילָם *bishvilam*"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Notice that **the endings are exactly the same in all four columns**: ־ִי, ־ְךָ, ־ֵךְ, ־וֹ, ־ָהּ, ־ֵנוּ, ־ְכֶם, ־ָם. You're not memorizing four tables — you're memorizing **one set of endings** and sticking it onto any preposition. That's how Hebrew saves effort: one machine, used again and again.",
+            "English has a similar set, just shorter and separate: me, you, him, her, us, them. The difference is that Hebrew marks male and female at almost every step — even for \"you\"."
+          ]
+        },
+        {
+          "title": "יֵשׁ and אֵין in full sentences",
+          "body": [
+            "These four patterns cover nearly every A1 sentence about having."
+          ],
+          "table": {
+            "head": [
+              "Hebrew",
+              "Say it",
+              "English",
+              "Note"
+            ],
+            "rows": [
+              [
+                "יֵשׁ לִי סֵפֶר",
+                "yesh li sefer",
+                "I have a book",
+                "indefinite thing"
+              ],
+              [
+                "יֵשׁ לִי אֶת הַסֵּפֶר",
+                "yesh li et hasefer",
+                "I have the book",
+                "definite thing → אֶת"
+              ],
+              [
+                "אֵין לִי סֵפֶר",
+                "ein li sefer",
+                "I don't have a book",
+                ""
+              ],
+              [
+                "יֵשׁ לְךָ זְמַן?",
+                "yesh lekha zman?",
+                "Do you have time?",
+                "question, to m"
+              ],
+              [
+                "לְמִי יֵשׁ עֵט?",
+                "lemi yesh et?",
+                "Who has a pen?",
+                "literally: to whom is there"
+              ],
+              [
+                "יֵשׁ פֹּה מִסְעָדָה?",
+                "yesh poh mis'adah?",
+                "Is there a restaurant here?",
+                "existence, not ownership"
+              ],
+              [
+                "הָיָה לִי",
+                "hayah li",
+                "I had",
+                "past form"
+              ],
+              [
+                "יִהְיֶה לִי",
+                "yihyeh li",
+                "I will have",
+                "future form"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ The last two rows show that **יֵשׁ changes form for other tenses**: הָיָה לִי (there was to me), יִהְיֶה לִי (there will be to me). Past and future are covered in full in units 15 and 16 — but you can memorize these two sentences whole right now, because both are very common."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Things you carry",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hebrew",
+            "Say it",
+            "English",
+            "Hebrew",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "מַפְתֵּחַ",
+              "mafte'akh",
+              "key",
+              "מִשְׁקָפַיִם",
+              "mishkafayim",
+              "glasses"
+            ],
+            [
+              "אַרְנָק",
+              "arnak",
+              "wallet",
+              "מִטְרִיָּה",
+              "mitriyah",
+              "umbrella"
+            ],
+            [
+              "טֶלֶפוֹן",
+              "telefon",
+              "phone",
+              "כּוֹבַע",
+              "kova",
+              "hat"
+            ],
+            [
+              "סוֹלְלָה",
+              "solelah",
+              "battery",
+              "שָׁעוֹן",
+              "sha'on",
+              "watch"
+            ],
+            [
+              "מַטְעֵן",
+              "mat'en",
+              "charger",
+              "דַּרְכּוֹן",
+              "darkon",
+              "passport"
+            ],
+            [
+              "כֶּסֶף",
+              "kesef",
+              "money",
+              "תְּעוּדַת זֶהוּת",
+              "te'udat zehut",
+              "ID card"
+            ],
+            [
+              "כַּרְטִיס",
+              "kartis",
+              "card; ticket",
+              "כַּרְטִיס אַשְׁרַאי",
+              "kartis ashrai",
+              "credit card"
+            ],
+            [
+              "תִּיק",
+              "tik",
+              "bag",
+              "מַחְשֵׁב נַיָּד",
+              "makhshev nayad",
+              "laptop"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **מִשְׁקָפַיִם** ends in ־ַיִם, the pair marker — like מִכְנָסַיִם and נַעֲלַיִם in unit 11. Hebrew sees glasses as a pair of lenses, just as English says \"a pair of glasses\"."
+        }
+      ]
+    },
+    {
+      "title": "Sentences born from the ending machine",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hebrew",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "יֵשׁ לְךָ רֶגַע?",
+              "yesh lekha rega?",
+              "Got a minute?"
+            ],
+            [
+              "אֵין לִי מֻשָּׂג",
+              "ein li musag",
+              "I have no idea"
+            ],
+            [
+              "יֵשׁ לִי רַעְיוֹן",
+              "yesh li ra'ayon",
+              "I have an idea"
+            ],
+            [
+              "אֵין לִי כֹּחַ",
+              "ein li ko'akh",
+              "I can't be bothered"
+            ],
+            [
+              "בּוֹא אִתִּי",
+              "bo iti",
+              "Come with me"
+            ],
+            [
+              "זֶה בִּשְׁבִילְךָ",
+              "zeh bishvilkha",
+              "This is for you"
+            ],
+            [
+              "אֲנִי אֵצֶל הָרוֹפֵא",
+              "ani etsel harofe",
+              "I'm at the doctor's"
+            ],
+            [
+              "תֵּן לִי",
+              "ten li",
+              "Give it to me"
+            ],
+            [
+              "תַּגִּיד לִי",
+              "tagid li",
+              "Tell me (to m)"
+            ],
+            [
+              "אֲנִי מְחַכֶּה לְךָ",
+              "ani mekhakeh lekha",
+              "I'm waiting for you"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two expressions that make you sound Israeli",
+          "items": [
+            "**אֵין לִי כֹּחַ** *(ein li ko'akh)* — literally \"there's no strength to me\", meaning \"I really can't be bothered\". One of the most common expressions in Israel, and almost impossible to translate exactly.",
+            "**אֵין לִי מֻשָּׂג** *(ein li musag)* — \"I haven't the faintest idea\", for questions you truly can't answer. More honest and warmer than אֲנִי לֹא יוֹדֵעַ."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "he": "יֵשׁ לִי / אֵין לִי",
+      "baca": "yesh li / ein li",
+      "en": "I have / don't have"
+    },
+    {
+      "he": "לְךָ / לָךְ",
+      "baca": "lekha / lakh",
+      "en": "to you (m / f)"
+    },
+    {
+      "he": "לוֹ / לָהּ",
+      "baca": "lo / lah",
+      "en": "to him / to her"
+    },
+    {
+      "he": "לָנוּ / לָהֶם",
+      "baca": "lanu / lahem",
+      "en": "to us / to them"
+    },
+    {
+      "he": "עִם",
+      "baca": "im",
+      "en": "with"
+    },
+    {
+      "he": "אִתִּי / אִתְּךָ / אִתּוֹ",
+      "baca": "iti / itkha / ito",
+      "en": "with me / you / him"
+    },
+    {
+      "he": "אֵצֶל",
+      "baca": "etsel",
+      "en": "at (someone's) place"
+    },
+    {
+      "he": "בִּשְׁבִיל",
+      "baca": "bishvil",
+      "en": "for"
+    },
+    {
+      "he": "מַפְתֵּחַ",
+      "baca": "mafte'akh",
+      "en": "key"
+    },
+    {
+      "he": "אַרְנָק",
+      "baca": "arnak",
+      "en": "wallet"
+    },
+    {
+      "he": "סוֹלְלָה",
+      "baca": "solelah",
+      "en": "battery"
+    },
+    {
+      "he": "מַטְעֵן",
+      "baca": "mat'en",
+      "en": "charger"
+    },
+    {
+      "he": "כַּרְטִיס",
+      "baca": "kartis",
+      "en": "card, ticket"
+    },
+    {
+      "he": "דַּרְכּוֹן",
+      "baca": "darkon",
+      "en": "passport"
+    },
+    {
+      "he": "מִשְׁקָפַיִם",
+      "baca": "mishkafayim",
+      "en": "glasses"
+    },
+    {
+      "he": "מִטְרִיָּה",
+      "baca": "mitriyah",
+      "en": "umbrella"
+    },
+    {
+      "he": "נוֹסָף / נוֹסֶפֶת",
+      "baca": "nosaf / nosefet",
+      "en": "extra, spare"
+    },
+    {
+      "he": "בּוֹדֵק / בּוֹדֶקֶת",
+      "baca": "bodek / bodeket",
+      "en": "to check"
+    },
+    {
+      "he": "מְחַכֶּה / מְחַכָּה",
+      "baca": "mekhakeh / mekhakah",
+      "en": "to wait"
+    },
+    {
+      "he": "כֹּחַ",
+      "baca": "ko'akh",
+      "en": "energy, strength"
+    },
+    {
+      "he": "מֻשָּׂג",
+      "baca": "musag",
+      "en": "notion, idea (faint)"
+    },
+    {
+      "he": "רַעְיוֹן",
+      "baca": "ra'ayon",
+      "en": "idea"
+    },
+    {
+      "he": "לְמִי",
+      "baca": "lemi",
+      "en": "to whom"
+    },
+    {
+      "he": "דָּבָר",
+      "baca": "davar",
+      "en": "thing"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the right form of לְ.",
+      "items": [
+        "יֵשׁ ____ סֵפֶר. (I)",
+        "אֵין ____ זְמַן. (he)",
+        "יֵשׁ ____ כֶּסֶף? (you, f)",
+        "אֵין ____ מַפְתֵּחַ. (we)",
+        "יֵשׁ ____ שְׁלוֹשָׁה יְלָדִים. (they)"
+      ]
+    },
+    {
+      "prompt": "Make these negative with אֵין.",
+      "items": [
+        "יֵשׁ לִי כֶּסֶף.",
+        "יֵשׁ לָנוּ זְמַן.",
+        "יֵשׁ לָהּ מְכוֹנִית.",
+        "יֵשׁ לָהֶם בַּיִת גָּדוֹל."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with עִם, אֵצֶל or בִּשְׁבִיל plus the right ending.",
+      "items": [
+        "בּוֹא ____. (with me)",
+        "הַסֵּפֶר ____. (at his place)",
+        "זֶה ____. (for you, m)",
+        "הִיא בָּאָה ____. (with us)"
+      ]
+    },
+    {
+      "prompt": "Translate into Hebrew.",
+      "items": [
+        "Do you (m) have time?",
+        "I don't have cash.",
+        "She has the key.",
+        "This is for you (pl).",
+        "I have no idea."
+      ]
+    }
+  ],
+  "answers": [
+    "לִי — לוֹ — לָךְ — לָנוּ — לָהֶם",
+    "אֵין לִי כֶּסֶף. — אֵין לָנוּ זְמַן. — אֵין לָהּ מְכוֹנִית. — אֵין לָהֶם בַּיִת גָּדוֹל.",
+    "אִתִּי — אֶצְלוֹ — בִּשְׁבִילְךָ — אִתָּנוּ",
+    "יֵשׁ לְךָ זְמַן? — אֵין לִי מְזֻמָּן. — יֵשׁ לָהּ אֶת הַמַּפְתֵּחַ. — זֶה בִּשְׁבִילְכֶם. — אֵין לִי מֻשָּׂג."
+  ],
+  "wave": "Empty your bag onto the table and name each item with יֵשׁ לִי .... Then name five things you DON'T have with you using אֵין לִי .... Ten sentences, three minutes."
+}

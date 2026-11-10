@@ -1,0 +1,635 @@
+{
+  "title": "At the market",
+  "title_target": "בַּשּׁוּק",
+  "goal": "Shop, ask prices, haggle and count your change — in the busiest and most enjoyable place to practice Hebrew.",
+  "bekal": [
+    "asking about prices and quantities",
+    "asking for amounts and naming units",
+    "haggling and paying politely"
+  ],
+  "dialogs": [
+    {
+      "title": "שִׂיחָה — שׁוּק הַכַּרְמֶל",
+      "intro": "Budi is shopping at the Carmel Market in Tel Aviv. The vendor, Moshe, is shouting out his goods.",
+      "lines": [
+        {
+          "speaker": "מֹשֶׁה:",
+          "text": "עַגְבָנִיּוֹת! חָמֵשׁ שֶׁקֶל לְקִילוֹ!",
+          "baca": "agvaniyot! khamesh shekel lekilo!",
+          "id": "Tomatoes! Five shekels a kilo!",
+          "literal": "tomatoes! five shekel for-kilo!"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "סְלִיחָה, כַּמָּה עוֹלוֹת הַתַּפּוּזִים?",
+          "baca": "slikhah, kamah olot hatapuzim?",
+          "id": "Excuse me, how much are the oranges?",
+          "literal": "sorry, how-much rise (pl f) the-oranges?"
+        },
+        {
+          "speaker": "מֹשֶׁה:",
+          "text": "שְׁמוֹנָה שֶׁקֶל לְקִילוֹ. הֵם מְתוּקִים!",
+          "baca": "shmonah shekel lekilo. hem metukim!",
+          "id": "Eight shekels a kilo. They're sweet!",
+          "literal": "eight shekel for-kilo. they sweet (pl)!"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "אֶפְשָׁר שְׁנֵי קִילוֹ, בְּבַקָּשָׁה?",
+          "baca": "efshar shnei kilo, bevakashah?",
+          "id": "Could I have two kilos, please?",
+          "literal": "possible two kilo, with-request?"
+        },
+        {
+          "speaker": "מֹשֶׁה:",
+          "text": "בְּוַדַּאי. עוֹד מַשֶּׁהוּ?",
+          "baca": "bevadai. od mashehu?",
+          "id": "Of course. Anything else?",
+          "literal": "with-certainty. more something?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "חֲצִי קִילוֹ עַגְבָנִיּוֹת וּשְׁלוֹשָׁה מְלָפְפוֹנִים.",
+          "baca": "khatsi kilo agvaniyot ushloshah melafefonim.",
+          "id": "Half a kilo of tomatoes and three cucumbers.",
+          "literal": "half kilo tomatoes and-three cucumbers."
+        },
+        {
+          "speaker": "מֹשֶׁה:",
+          "text": "הַכֹּל בְּיַחַד עֶשְׂרִים וְאַרְבָּעָה שֶׁקֶל.",
+          "baca": "hakol beyakhad esrim ve'arba'ah shekel.",
+          "id": "That's twenty-four shekels altogether.",
+          "literal": "the-all together twenty and-four shekel."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "זֶה קְצָת יָקָר, לֹא?",
+          "baca": "zeh ktsat yakar, lo?",
+          "id": "That's a bit expensive, isn't it?",
+          "literal": "this a-little expensive, no?"
+        },
+        {
+          "speaker": "מֹשֶׁה:",
+          "text": "טוֹב, עֶשְׂרִים. רַק בִּשְׁבִילְךָ.",
+          "baca": "tov, esrim. rak bishvilkha.",
+          "id": "OK, twenty. Just for you.",
+          "literal": "good, twenty. only for-you."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "תּוֹדָה! הִנֵּה חֲמִשִּׁים.",
+          "baca": "todah! hineh khamishim.",
+          "id": "Thanks! Here's fifty.",
+          "literal": "thanks! here fifty."
+        },
+        {
+          "speaker": "מֹשֶׁה:",
+          "text": "וְהָעֹדֶף — שְׁלוֹשִׁים שֶׁקֶל. בְּתֵאָבוֹן!",
+          "baca": "veha'odef — shloshim shekel. bete'avon!",
+          "id": "And your change — thirty shekels. Enjoy!",
+          "literal": "and-the-change — thirty shekel. with-appetite!"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "תּוֹדָה רַבָּה. יוֹם טוֹב!",
+          "baca": "todah rabah. yom tov!",
+          "id": "Thanks a lot. Have a good day!",
+          "literal": "thanks much. day good!"
+        }
+      ],
+      "notes": [
+        "**כַּמָּה עוֹלֶה?** (\"how much does it cost?\") changes form to match the item, because עוֹלֶה is a verb. One masculine item: כַּמָּה עוֹלֶה הַסֵּפֶר? One feminine item: כַּמָּה עוֹלָה הַמַּחְבֶּרֶת? Plural: כַּמָּה עוֹלִים / עוֹלוֹת. If you don't know what the item is, use the default form: **כַּמָּה זֶה עוֹלֶה?**",
+        "⚠️ **Price units use לְ־.** חָמֵשׁ שֶׁקֶל לְקִילוֹ = \"five shekels per kilo\". Exactly the same pattern as לְחֹדֶשׁ (per month) and לְשִׁעוּר (per lesson), which you've already seen.",
+        "**שֶׁקֶל isn't made plural when quoting prices.** People say עֶשְׂרִים שֶׁקֶל, not עֶשְׂרִים שְׁקָלִים — even though the plural exists and is used in formal contexts. Market habit beats grammar here.",
+        "**Fruit and vegetable names are almost always feminine plural (־וֹת) or masculine plural (־ִים)** because you buy them in quantity: עַגְבָנִיּוֹת (tomatoes), מְלָפְפוֹנִים (cucumbers), תַּפּוּזִים (oranges). The singular is rare unless you really are buying just one.",
+        "**בִּשְׁבִיל** (*bishvil*, \"for\") also takes endings: בִּשְׁבִילִי (for me), בִּשְׁבִילְךָ (for you). The same ending machine again — the third time you've seen it, after שֶׁל and אֶת.",
+        "**Haggling in Israel has its limits.** In a שׁוּק (open-air market) haggling is normal, especially just before Shabbat when vendors want to clear their stock. In shops, supermarkets and restaurants you **don't** haggle at all. A gentle way to open: זֶה קְצָת יָקָר, לֹא? — exactly what Budi says.",
+        "**עֹדֶף** (*odef*) = change. If you want to pay exact, the full sentence is: אֵין לִי עֹדֶף (I don't have small change).",
+        "**הִנֵּה** (*hineh*) = \"here you go, here it is\". Used when handing something over. Very common, and it never changes form."
+      ],
+      "grammars": [
+        {
+          "title": "Asking about prices and quantities",
+          "body": [
+            "Four question patterns cover almost all your shopping."
+          ],
+          "table": {
+            "head": [
+              "Hebrew",
+              "Say it",
+              "English",
+              "Note"
+            ],
+            "rows": [
+              [
+                "כַּמָּה זֶה עוֹלֶה?",
+                "kamah zeh oleh?",
+                "How much is it?",
+                "default form, always safe"
+              ],
+              [
+                "כַּמָּה עוֹלָה הַחֻלְצָה?",
+                "kamah olah hakhultsah?",
+                "How much is the shirt?",
+                "feminine item"
+              ],
+              [
+                "כַּמָּה עוֹלִים הַנַּעֲלַיִם?",
+                "kamah olim hana'alayim?",
+                "How much are the shoes?",
+                "plural"
+              ],
+              [
+                "כַּמָּה הַכֹּל?",
+                "kamah hakol?",
+                "How much altogether?",
+                "when paying"
+              ],
+              [
+                "יֵשׁ הַנָּחָה?",
+                "yesh hanakhah?",
+                "Is there a discount?",
+                "polite, not pushy"
+              ],
+              [
+                "אֶפְשָׁר לְשַׁלֵּם בְּמְזֻמָּן?",
+                "efshar leshalem bimzuman?",
+                "Can I pay cash?",
+                ""
+              ],
+              [
+                "יֵשׁ לְךָ עֹדֶף?",
+                "yesh lekha odef?",
+                "Do you have change?",
+                ""
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Notice that **the verb comes before its subject** in some of these questions: כַּמָּה עוֹלָה הַחֻלְצָה. Hebrew word order is fairly flexible; in questions the verb often moves forward — much like English \"How much *is* the shirt?\""
+          ]
+        },
+        {
+          "title": "Units and amounts",
+          "body": [
+            "All of these go straight in front of the item, with no linking word (no \"of\")."
+          ],
+          "table": {
+            "head": [
+              "Hebrew",
+              "Say it",
+              "English",
+              "Example"
+            ],
+            "rows": [
+              [
+                "קִילוֹ",
+                "kilo",
+                "kilogram",
+                "קִילוֹ עַגְבָנִיּוֹת"
+              ],
+              [
+                "חֲצִי קִילוֹ",
+                "khatsi kilo",
+                "half a kilo",
+                "חֲצִי קִילוֹ גְּבִינָה"
+              ],
+              [
+                "גְּרַם",
+                "gram",
+                "gram",
+                "מָאתַיִם גְּרַם"
+              ],
+              [
+                "לִיטֶר",
+                "liter",
+                "liter",
+                "לִיטֶר חָלָב"
+              ],
+              [
+                "בַּקְבּוּק",
+                "bakbuk",
+                "bottle",
+                "בַּקְבּוּק מַיִם"
+              ],
+              [
+                "חֲבִילָה",
+                "khavilah",
+                "pack, package",
+                "חֲבִילַת אֹרֶז"
+              ],
+              [
+                "קֻפְסָה",
+                "kufsah",
+                "can, box",
+                "קֻפְסַת טוּנָה"
+              ],
+              [
+                "פְּרוּסָה",
+                "prusah",
+                "slice",
+                "פְּרוּסַת לֶחֶם"
+              ],
+              [
+                "מָנָה",
+                "manah",
+                "portion",
+                "מָנַת פָלָאפֶל"
+              ],
+              [
+                "שְׁקִית",
+                "shkit",
+                "plastic bag",
+                "שְׁקִית אַחַת"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Notice **חֲבִילַת, קֻפְסַת, פְּרוּסַת, מָנַת** — the ending ־ָה turns into ־ַת when the word attaches to the next one. This is the **construct form** (סְמִיכוּת, *smikhut*), Hebrew's way of saying \"X of Y\" without שֶׁל. Covered in full in unit 17."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "What's sold at the market",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hebrew",
+            "Say it",
+            "English",
+            "Hebrew",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "עַגְבָנִיָּה",
+              "agvaniyah",
+              "tomato",
+              "תַּפּוּז",
+              "tapuz",
+              "orange"
+            ],
+            [
+              "מְלָפְפוֹן",
+              "melafefon",
+              "cucumber",
+              "תַּפּוּחַ",
+              "tapu'akh",
+              "apple"
+            ],
+            [
+              "בָּצָל",
+              "batsal",
+              "onion",
+              "בָּנָנָה",
+              "bananah",
+              "banana"
+            ],
+            [
+              "שׁוּם",
+              "shum",
+              "garlic",
+              "עֲנָבִים",
+              "anavim",
+              "grapes"
+            ],
+            [
+              "גֶּזֶר",
+              "gezer",
+              "carrot",
+              "אֲבַטִּיחַ",
+              "avati'akh",
+              "watermelon"
+            ],
+            [
+              "תַּפּוּחַ אֲדָמָה",
+              "tapu'akh adamah",
+              "potato",
+              "תְּמָרִים",
+              "tmarim",
+              "dates"
+            ],
+            [
+              "חָסָה",
+              "khasah",
+              "lettuce",
+              "לִימוֹן",
+              "limon",
+              "lemon"
+            ],
+            [
+              "פִּלְפֵּל",
+              "pilpel",
+              "pepper, chili",
+              "רִמּוֹן",
+              "rimon",
+              "pomegranate"
+            ],
+            [
+              "חַצִּיל",
+              "khatsil",
+              "eggplant",
+              "זֵיתִים",
+              "zeitim",
+              "olives"
+            ],
+            [
+              "פֶּטְרוֹזִילְיָה",
+              "petrozilyah",
+              "parsley",
+              "אֱגוֹזִים",
+              "egozim",
+              "nuts"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **תַּפּוּחַ אֲדָמָה** literally means \"earth apple\" — that's a potato. Modern Hebrew often strings two old words together for a new thing: תַּפּוּז (orange) itself is a blend of תַּפּוּחַ + זָהָב, \"golden apple\"."
+        },
+        {
+          "type": "p",
+          "text": "Israel's busiest markets: **שׁוּק הַכַּרְמֶל** in Tel Aviv, **מַחֲנֵה יְהוּדָה** in Jerusalem, and **שׁוּק הָעִיר הָעַתִּיקָה** in Akko. All of them are far busier — and far cheaper — **on Friday morning**."
+        }
+      ]
+    },
+    {
+      "title": "Shopping outside the market",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hebrew",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "חֲנוּת",
+              "khanut",
+              "shop"
+            ],
+            [
+              "סוּפֶּרְמַרְקֶט",
+              "supermarket",
+              "supermarket"
+            ],
+            [
+              "מַכֹּלֶת",
+              "makolet",
+              "corner grocery"
+            ],
+            [
+              "בֵּית מִרְקַחַת",
+              "beit mirkakhat",
+              "pharmacy"
+            ],
+            [
+              "קַנְיוֹן",
+              "kanyon",
+              "mall"
+            ],
+            [
+              "חֻלְצָה",
+              "khultsah",
+              "shirt, T-shirt"
+            ],
+            [
+              "מִכְנָסַיִם",
+              "mikhnasayim",
+              "pants"
+            ],
+            [
+              "נַעֲלַיִם",
+              "na'alayim",
+              "shoes"
+            ],
+            [
+              "שִׂמְלָה",
+              "simlah",
+              "dress"
+            ],
+            [
+              "מְעִיל",
+              "me'il",
+              "jacket, coat"
+            ],
+            [
+              "הַנָּחָה",
+              "hanakhah",
+              "discount"
+            ],
+            [
+              "מְזֻמָּן",
+              "mezuman",
+              "cash"
+            ],
+            [
+              "עֹדֶף",
+              "odef",
+              "change"
+            ],
+            [
+              "קַבָּלָה",
+              "kabalah",
+              "receipt"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Four sentences for trying on clothes",
+          "items": [
+            "**אֶפְשָׁר לִמְדֹּד?** *(efshar limdod?)* — can I try it on?",
+            "**יֵשׁ בְּמִדָּה יוֹתֵר גְּדוֹלָה?** *(yesh bemidah yoter gdolah?)* — do you have a bigger size?",
+            "**יֵשׁ בְּצֶבַע אַחֵר?** *(yesh betseva akher?)* — do you have another color?",
+            "**אֲנִי לוֹקֵחַ אֶת זֶה** *(ani loke'akh et zeh)* — I'll take this one. Note the אֶת: \"this one\" is definite."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **מִכְנָסַיִם** and **נַעֲלַיִם** end in ־ַיִם, the **pair** marker — a leftover special form for things that come in twos. Just like יָדַיִם (two hands), עֵינַיִם (two eyes), אָזְנַיִם (two ears). English says \"a pair of pants\"; Hebrew builds the pair into the word."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "he": "שׁוּק",
+      "baca": "shuk",
+      "en": "market"
+    },
+    {
+      "he": "חֲנוּת",
+      "baca": "khanut",
+      "en": "shop"
+    },
+    {
+      "he": "כַּמָּה זֶה עוֹלֶה?",
+      "baca": "kamah zeh oleh?",
+      "en": "how much is it?"
+    },
+    {
+      "he": "עוֹלֶה / עוֹלָה",
+      "baca": "oleh / olah",
+      "en": "costs; goes up"
+    },
+    {
+      "he": "מְחִיר",
+      "baca": "mekhir",
+      "en": "price"
+    },
+    {
+      "he": "הַנָּחָה",
+      "baca": "hanakhah",
+      "en": "discount"
+    },
+    {
+      "he": "עֹדֶף",
+      "baca": "odef",
+      "en": "change"
+    },
+    {
+      "he": "מְזֻמָּן",
+      "baca": "mezuman",
+      "en": "cash"
+    },
+    {
+      "he": "קִילוֹ",
+      "baca": "kilo",
+      "en": "kilogram"
+    },
+    {
+      "he": "חֲצִי",
+      "baca": "khatsi",
+      "en": "half"
+    },
+    {
+      "he": "בַּקְבּוּק",
+      "baca": "bakbuk",
+      "en": "bottle"
+    },
+    {
+      "he": "שְׁקִית",
+      "baca": "shkit",
+      "en": "plastic bag"
+    },
+    {
+      "he": "הַכֹּל בְּיַחַד",
+      "baca": "hakol beyakhad",
+      "en": "altogether"
+    },
+    {
+      "he": "הִנֵּה",
+      "baca": "hineh",
+      "en": "here you go"
+    },
+    {
+      "he": "בְּוַדַּאי",
+      "baca": "bevadai",
+      "en": "of course"
+    },
+    {
+      "he": "בִּשְׁבִיל",
+      "baca": "bishvil",
+      "en": "for"
+    },
+    {
+      "he": "מָתוֹק / מְתוּקָה",
+      "baca": "matok / metukah",
+      "en": "sweet"
+    },
+    {
+      "he": "טָרִי / טְרִיָּה",
+      "baca": "tari / triyah",
+      "en": "fresh"
+    },
+    {
+      "he": "עַגְבָנִיָּה",
+      "baca": "agvaniyah",
+      "en": "tomato"
+    },
+    {
+      "he": "תַּפּוּז",
+      "baca": "tapuz",
+      "en": "orange"
+    },
+    {
+      "he": "לֶחֶם",
+      "baca": "lekhem",
+      "en": "bread"
+    },
+    {
+      "he": "חֻלְצָה",
+      "baca": "khultsah",
+      "en": "shirt, T-shirt"
+    },
+    {
+      "he": "נַעֲלַיִם",
+      "baca": "na'alayim",
+      "en": "shoes"
+    },
+    {
+      "he": "מִדָּה",
+      "baca": "midah",
+      "en": "size"
+    },
+    {
+      "he": "צֶבַע",
+      "baca": "tseva",
+      "en": "color"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose the form of עוֹלֶה that matches the item.",
+      "items": [
+        "כַּמָּה ____ הַסֵּפֶר?",
+        "כַּמָּה ____ הַחֻלְצָה?",
+        "כַּמָּה ____ הַנַּעֲלַיִם?",
+        "כַּמָּה ____ הָעַגְבָנִיּוֹת?",
+        "כַּמָּה ____ זֶה?"
+      ]
+    },
+    {
+      "prompt": "Translate into Hebrew.",
+      "items": [
+        "How much are the oranges?",
+        "Half a kilo of tomatoes, please.",
+        "This is a bit expensive.",
+        "Is there a discount?",
+        "How much altogether?"
+      ]
+    },
+    {
+      "prompt": "Do the math and write the answer in Hebrew words.",
+      "items": [
+        "A kilo of oranges is 8 shekels. Two kilos = ____ shekels.",
+        "You pay 50, the shopping comes to 32. Change = ____ shekels.",
+        "Three bottles of water, 6 shekels a bottle = ____ shekels.",
+        "A discount of 10 off a price of 40 = ____ shekels."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "בְּבַקָּשָׁה / קִילוֹ / שְׁנֵי / אֶפְשָׁר",
+        "יָקָר / זֶה / קְצָת",
+        "לִי / עֹדֶף / אֵין",
+        "בְּיַחַד / עֶשְׂרִים / הַכֹּל / שֶׁקֶל"
+      ]
+    }
+  ],
+  "answers": [
+    "עוֹלֶה — עוֹלָה — עוֹלִים — עוֹלוֹת — עוֹלֶה",
+    "כַּמָּה עוֹלִים הַתַּפּוּזִים? — חֲצִי קִילוֹ עַגְבָנִיּוֹת, בְּבַקָּשָׁה. — זֶה קְצָת יָקָר. — יֵשׁ הַנָּחָה? — כַּמָּה הַכֹּל?",
+    "שִׁשָּׁה עָשָׂר — שְׁמוֹנֶה עֶשְׂרֵה — שְׁמוֹנָה עָשָׂר — שְׁלוֹשִׁים",
+    "אֶפְשָׁר שְׁנֵי קִילוֹ בְּבַקָּשָׁה — זֶה קְצָת יָקָר — אֵין לִי עֹדֶף — הַכֹּל בְּיַחַד עֶשְׂרִים שֶׁקֶל"
+  ],
+  "wave": "Write a shopping list for a week in Hebrew — ten items, each with its amount. Then work out the rough total out loud in Hebrew."
+}

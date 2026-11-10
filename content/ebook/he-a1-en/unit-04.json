@@ -1,0 +1,595 @@
+{
+  "title": "My family",
+  "title_target": "הַמִּשְׁפָּחָה שֶׁלִּי",
+  "goal": "Name family members, say who something belongs to, and form plurals — three things that in Hebrew turn out to run on the same machinery.",
+  "bekal": [
+    "name your immediate and extended family",
+    "say \"my book\", \"our house\", \"his mother\"",
+    "form plurals with ־ִים and ־וֹת"
+  ],
+  "dialogs": [
+    {
+      "title": "שִׂיחָה — תְּמוּנוֹת בַּטֶּלֶפוֹן",
+      "intro": "Noa shows a family photo on her phone screen.",
+      "lines": [
+        {
+          "speaker": "נֹעָה:",
+          "text": "תִּרְאֶה, זֹאת הַמִּשְׁפָּחָה שֶׁלִּי.",
+          "baca": "tir'eh, zot hamishpakhah sheli.",
+          "id": "Look, this is my family.",
+          "literal": "look, this (f) the-family of-me."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "מִשְׁפָּחָה גְּדוֹלָה! מִי זֶה?",
+          "baca": "mishpakhah gdolah! mi zeh?",
+          "id": "A big family! Who's this?",
+          "literal": "family big! who this?"
+        },
+        {
+          "speaker": "נֹעָה:",
+          "text": "זֶה אַבָּא שֶׁלִּי. הוּא רוֹפֵא.",
+          "baca": "zeh aba sheli. hu rofe.",
+          "id": "This is my dad. He's a doctor.",
+          "literal": "this dad of-me. he doctor."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "וְזֹאת אִמָּא שֶׁלָּךְ?",
+          "baca": "vezot ima shelakh?",
+          "id": "And is this your mom?",
+          "literal": "and-this (f) mom of-you (f)?"
+        },
+        {
+          "speaker": "נֹעָה:",
+          "text": "כֵּן. הִיא מוֹרָה לְמָתֵמָטִיקָה.",
+          "baca": "ken. hi morah lematematikah.",
+          "id": "Yes. She's a math teacher.",
+          "literal": "yes. she teacher (f) for-math."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "יֵשׁ לָךְ אַחִים?",
+          "baca": "yesh lakh akhim?",
+          "id": "Do you have brothers and sisters?",
+          "literal": "there-is to-you (f) brothers?"
+        },
+        {
+          "speaker": "נֹעָה:",
+          "text": "יֵשׁ לִי אָח אֶחָד וּשְׁתֵּי אֲחָיוֹת.",
+          "baca": "yesh li akh ekhad ushtei akhayot.",
+          "id": "I have one brother and two sisters.",
+          "literal": "there-is to-me brother one and-two sisters."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "אֵיפֹה הֵם גָּרִים?",
+          "baca": "eifoh hem garim?",
+          "id": "Where do they live?",
+          "literal": "where they live (pl)?"
+        },
+        {
+          "speaker": "נֹעָה:",
+          "text": "הָאָח שֶׁלִּי בְּחֵיפָה, הָאֲחָיוֹת בַּבַּיִת.",
+          "baca": "ha'akh sheli bekheifah, ha'akhayot babayit.",
+          "id": "My brother's in Haifa, my sisters are at home.",
+          "literal": "the-brother of-me in-haifa, the-sisters in-the-home."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "וְזֶה? זֶה סַבָּא שֶׁלָּךְ?",
+          "baca": "vezeh? zeh saba shelakh?",
+          "id": "And this one? Is this your grandpa?",
+          "literal": "and-this? this grandpa of-you (f)?"
+        },
+        {
+          "speaker": "נֹעָה:",
+          "text": "כֵּן, סַבָּא בֶּן שְׁמוֹנִים וְחָמֵשׁ.",
+          "baca": "ken, saba ben shmonim vekhamesh.",
+          "id": "Yes, grandpa is eighty-five.",
+          "literal": "yes, grandpa son eighty and-five."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "אֵיזוֹ מִשְׁפָּחָה יָפָה. תּוֹדָה שֶׁהֶרְאֵית לִי.",
+          "baca": "eizo mishpakhah yafah. todah shehar'eit li.",
+          "id": "What a lovely family. Thanks for showing me.",
+          "literal": "what-a family beautiful. thanks that-you-showed to-me."
+        }
+      ],
+      "notes": [
+        "**שֶׁל** (*shel*) means \"of\" or \"belonging to\". To say \"my book\", Hebrew says **הַסֵּפֶר שֶׁלִּי** — literally \"the-book of-me\". Note that הַ־ is required: if something belongs to someone, it's automatically definite.",
+        "⚠️ **אַבָּא and אִמָּא don't take הַ־.** You say אַבָּא שֶׁלִּי (not הָאַבָּא שֶׁלִּי) — they're treated like names, just as English says \"Dad\" rather than \"the dad\". Other family words still take הַ־: הָאָח שֶׁלִּי.",
+        "**שֶׁלִּי, שֶׁלְּךָ, שֶׁלָּךְ …** — שֶׁל takes person endings, the same way prepositions take endings later in unit 14. The full set is in the next box. Think of it as one word that turns into my, your, his, her, our, their.",
+        "⚠️ **שֶׁלְּךָ (to a man) vs שֶׁלָּךְ (to a woman)** — both are spelled שלך without niqqud. This is the second pair (after אתה/את) that looks identical on paper and sounds different.",
+        "**יֵשׁ לִי** (*yesh li*) = \"I have\", literally **\"there is to me\"**. Hebrew has no verb \"to have\" at all. For now, learn it as a chunk: יֵשׁ לִי (I have), יֵשׁ לְךָ / יֵשׁ לָךְ (you have). Unit 14 takes the whole machine apart.",
+        "**Masculine plural ־ִים, feminine plural ־וֹת** — and verbs go plural too: הֵם גָּרִים (they live). English marks the plural on the noun; Hebrew marks it on **every** word in the sentence.",
+        "⚠️ **אָח simply means \"brother\" — Hebrew has no words for \"older\" or \"younger\" siblings built in.** When it matters, people add הַגָּדוֹל (the big one) or הַקָּטָן (the little one): הָאָח הַגָּדוֹל שֶׁלִּי = my big (older) brother.",
+        "**בֶּן שְׁמוֹנִים וְחָמֵשׁ** — age is expressed with בֶּן (\"son\") for males and בַּת (\"daughter\") for females. \"I'm 25\" = אֲנִי בֶּן עֶשְׂרִים וְחָמֵשׁ. Literally \"I son twenty and-five\". Numbers come in unit 5."
+      ],
+      "grammars": [
+        {
+          "title": "שֶׁל with endings: eight forms that cover everything",
+          "body": [
+            "One word, שֶׁל, takes endings, and the result replaces all the English possessives (my, your, his...)."
+          ],
+          "table": {
+            "head": [
+              "Hebrew",
+              "Say it",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "שֶׁלִּי",
+                "sheli",
+                "my, mine",
+                "הַסֵּפֶר שֶׁלִּי — my book"
+              ],
+              [
+                "שֶׁלְּךָ",
+                "shelkha",
+                "your (m)",
+                "הַתִּיק שֶׁלְּךָ — your bag"
+              ],
+              [
+                "שֶׁלָּךְ",
+                "shelakh",
+                "your (f)",
+                "הַבַּיִת שֶׁלָּךְ — your house"
+              ],
+              [
+                "שֶׁלּוֹ",
+                "shelo",
+                "his",
+                "הָאִמָּא שֶׁלּוֹ — his mother"
+              ],
+              [
+                "שֶׁלָּהּ",
+                "shelah",
+                "her",
+                "הָאָח שֶׁלָּהּ — her brother"
+              ],
+              [
+                "שֶׁלָּנוּ",
+                "shelanu",
+                "our",
+                "הַחֶדֶר שֶׁלָּנוּ — our room"
+              ],
+              [
+                "שֶׁלָּכֶם",
+                "shelakhem",
+                "your (pl)",
+                "הַמּוֹרֶה שֶׁלָּכֶם — your teacher"
+              ],
+              [
+                "שֶׁלָּהֶם",
+                "shelahem",
+                "their",
+                "הַבַּיִת שֶׁלָּהֶם — their house"
+              ]
+            ]
+          },
+          "after": [
+            "The order is always: **הַ־ + noun + שֶׁל...**. Never reversed, and הַ־ is never skipped (except with אַבָּא, אִמָּא, סַבָּא, סַבְתָא)."
+          ]
+        },
+        {
+          "title": "Forming plurals",
+          "body": [
+            "The basic rule is just two endings, but the vowels inside the word often change too — that's what needs practice, not the endings."
+          ],
+          "table": {
+            "head": [
+              "Singular",
+              "Plural",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "סֵפֶר",
+                "סְפָרִים",
+                "sefer / sfarim",
+                "book"
+              ],
+              [
+                "שֻׁלְחָן",
+                "שֻׁלְחָנוֹת",
+                "shulkhan / shulkhanot",
+                "table"
+              ],
+              [
+                "מוֹרָה",
+                "מוֹרוֹת",
+                "morah / morot",
+                "teacher (f)"
+              ],
+              [
+                "מַחְבֶּרֶת",
+                "מַחְבָּרוֹת",
+                "makhberet / makhbarot",
+                "notebook"
+              ],
+              [
+                "יֶלֶד",
+                "יְלָדִים",
+                "yeled / yeladim",
+                "child, boy"
+              ],
+              [
+                "אִשָּׁה",
+                "נָשִׁים",
+                "ishah / nashim",
+                "woman"
+              ],
+              [
+                "אִישׁ",
+                "אֲנָשִׁים",
+                "ish / anashim",
+                "man / people"
+              ],
+              [
+                "בַּיִת",
+                "בָּתִּים",
+                "bayit / batim",
+                "house"
+              ],
+              [
+                "בֵּן",
+                "בָּנִים",
+                "ben / banim",
+                "son"
+              ],
+              [
+                "בַּת",
+                "בָּנוֹת",
+                "bat / banot",
+                "daughter"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **שֻׁלְחָן is masculine but its plural ends in ־וֹת**, and **אִשָּׁה is feminine but its plural is נָשִׁים**. The plural ending **doesn't always** tell you the gender — the adjective that goes with it does: שֻׁלְחָנוֹת גְּדוֹלִים (masculine form), נָשִׁים יָפוֹת (feminine form). Six words in this table are among the most common and most often gotten wrong; learn them in pairs."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Family",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hebrew",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "מִשְׁפָּחָה",
+              "mishpakhah",
+              "family"
+            ],
+            [
+              "אַבָּא",
+              "aba",
+              "dad"
+            ],
+            [
+              "אִמָּא",
+              "ima",
+              "mom"
+            ],
+            [
+              "בֵּן",
+              "ben",
+              "son"
+            ],
+            [
+              "בַּת",
+              "bat",
+              "daughter"
+            ],
+            [
+              "אָח",
+              "akh",
+              "brother"
+            ],
+            [
+              "אָחוֹת",
+              "akhot",
+              "sister"
+            ],
+            [
+              "סַבָּא",
+              "saba",
+              "grandpa"
+            ],
+            [
+              "סַבְתָא",
+              "savta",
+              "grandma"
+            ],
+            [
+              "דּוֹד / דּוֹדָה",
+              "dod / dodah",
+              "uncle / aunt"
+            ],
+            [
+              "בֶּן דּוֹד / בַּת דּוֹדָה",
+              "ben dod / bat dodah",
+              "cousin (m / f)"
+            ],
+            [
+              "בַּעַל",
+              "ba'al",
+              "husband"
+            ],
+            [
+              "אִשָּׁה",
+              "ishah",
+              "wife; woman"
+            ],
+            [
+              "הוֹרִים",
+              "horim",
+              "parents"
+            ],
+            [
+              "נֶכֶד / נֶכְדָּה",
+              "nekhed / nekhdah",
+              "grandchild (m / f)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **אִשָּׁה** means both \"woman\" **and** \"wife\"; only the sentence tells them apart. הָאִשָּׁה שֶׁלִּי = my wife; הָאִשָּׁה שָׁם = the woman over there."
+        },
+        {
+          "type": "p",
+          "text": "Irregular family plurals you must learn: אָח → **אַחִים**, אָחוֹת → **אֲחָיוֹת**, בֵּן → **בָּנִים**, בַּת → **בָּנוֹת**."
+        }
+      ]
+    },
+    {
+      "title": "Asking about people",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hebrew",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "מִי זֶה?",
+              "mi zeh?",
+              "Who's this?"
+            ],
+            [
+              "מִי אַתָּה?",
+              "mi atah?",
+              "Who are you?"
+            ],
+            [
+              "מָה שְׁמוֹ?",
+              "mah shmo?",
+              "What's his name?"
+            ],
+            [
+              "מָה שְׁמָהּ?",
+              "mah shmah?",
+              "What's her name?"
+            ],
+            [
+              "מָה שִׁמְךָ? / מָה שְׁמֵךְ?",
+              "mah shimkha? / mah shmekh?",
+              "What's your name (m / f)?"
+            ],
+            [
+              "בֶּן כַּמָּה אַתָּה?",
+              "ben kamah atah?",
+              "How old are you (m)?"
+            ],
+            [
+              "בַּת כַּמָּה אַתְּ?",
+              "bat kamah at?",
+              "How old are you (f)?"
+            ],
+            [
+              "יֵשׁ לְךָ אַחִים?",
+              "yesh lekha akhim?",
+              "Do you have brothers and sisters?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two ways to ask someone's name",
+          "items": [
+            "**מָה שִׁמְךָ?** *(mah shimkha?)* — formal, used on forms and in interviews. Literally \"what your-name?\".",
+            "**אֵיךְ קוֹרְאִים לְךָ?** *(eikh kor'im lekha?)* — everyday, far more common. Literally \"how do they call to-you?\". The answer: **קוֹרְאִים לִי בּוּדִי** — \"they call me Budi\".",
+            "The second form sounds odd when translated, but it's the one you'll hear nine times out of ten."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "he": "מִשְׁפָּחָה",
+      "baca": "mishpakhah",
+      "en": "family"
+    },
+    {
+      "he": "אַבָּא / אִמָּא",
+      "baca": "aba / ima",
+      "en": "dad / mom"
+    },
+    {
+      "he": "בֵּן / בַּת",
+      "baca": "ben / bat",
+      "en": "son / daughter"
+    },
+    {
+      "he": "אָח / אָחוֹת",
+      "baca": "akh / akhot",
+      "en": "brother / sister"
+    },
+    {
+      "he": "אַחִים / אֲחָיוֹת",
+      "baca": "akhim / akhayot",
+      "en": "brothers / sisters"
+    },
+    {
+      "he": "סַבָּא / סַבְתָא",
+      "baca": "saba / savta",
+      "en": "grandpa / grandma"
+    },
+    {
+      "he": "הוֹרִים",
+      "baca": "horim",
+      "en": "parents"
+    },
+    {
+      "he": "דּוֹד / דּוֹדָה",
+      "baca": "dod / dodah",
+      "en": "uncle / aunt"
+    },
+    {
+      "he": "אִישׁ / אִשָּׁה",
+      "baca": "ish / ishah",
+      "en": "man / woman, wife"
+    },
+    {
+      "he": "אֲנָשִׁים / נָשִׁים",
+      "baca": "anashim / nashim",
+      "en": "people / women"
+    },
+    {
+      "he": "יֶלֶד / יַלְדָּה",
+      "baca": "yeled / yaldah",
+      "en": "boy / girl (child)"
+    },
+    {
+      "he": "שֶׁל",
+      "baca": "shel",
+      "en": "of, belonging to"
+    },
+    {
+      "he": "שֶׁלִּי / שֶׁלְּךָ / שֶׁלָּךְ",
+      "baca": "sheli / shelkha / shelakh",
+      "en": "my / your (m) / your (f)"
+    },
+    {
+      "he": "שֶׁלּוֹ / שֶׁלָּהּ",
+      "baca": "shelo / shelah",
+      "en": "his / her"
+    },
+    {
+      "he": "יֵשׁ לִי",
+      "baca": "yesh li",
+      "en": "I have"
+    },
+    {
+      "he": "מִי",
+      "baca": "mi",
+      "en": "who"
+    },
+    {
+      "he": "שֵׁם",
+      "baca": "shem",
+      "en": "name"
+    },
+    {
+      "he": "בֶּן כַּמָּה? / בַּת כַּמָּה?",
+      "baca": "ben kamah? / bat kamah?",
+      "en": "how old are you (m / f)"
+    },
+    {
+      "he": "תְּמוּנָה",
+      "baca": "tmunah",
+      "en": "photo, picture"
+    },
+    {
+      "he": "יָפֶה / יָפָה",
+      "baca": "yafeh / yafah",
+      "en": "beautiful, pretty"
+    },
+    {
+      "he": "אֶחָד / אַחַת",
+      "baca": "ekhad / akhat",
+      "en": "one (m / f)"
+    },
+    {
+      "he": "שְׁנַיִם / שְׁתַּיִם",
+      "baca": "shnayim / shtayim",
+      "en": "two (m / f)"
+    },
+    {
+      "he": "קוֹרְאִים לִי",
+      "baca": "kor'im li",
+      "en": "my name is"
+    },
+    {
+      "he": "בַּעַל",
+      "baca": "ba'al",
+      "en": "husband"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right form of שֶׁל.",
+      "items": [
+        "הַסֵּפֶר ____ (my)",
+        "הַבַּיִת ____ (our)",
+        "הָאִמָּא ____ (his)",
+        "הַתִּיק ____ (your, f)",
+        "הַחֶדֶר ____ (their)"
+      ]
+    },
+    {
+      "prompt": "Write the plural form.",
+      "items": [
+        "סֵפֶר ____",
+        "יֶלֶד ____",
+        "אָחוֹת ____",
+        "בַּיִת ____",
+        "אִשָּׁה ____",
+        "מוֹרָה ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Hebrew.",
+      "items": [
+        "This is my dad.",
+        "I have two sisters.",
+        "Their house is big.",
+        "What's your name? (to a woman)",
+        "How old are you? (to a man)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "שֶׁלִּי / זֹאת / הַמִּשְׁפָּחָה",
+        "גָּרִים / הֵם / בְּחֵיפָה",
+        "אָח / לִי / יֵשׁ / אֶחָד",
+        "הַסַּבְתָא / יָפָה / שֶׁלִּי"
+      ]
+    }
+  ],
+  "answers": [
+    "שֶׁלִּי — שֶׁלָּנוּ — שֶׁלּוֹ — שֶׁלָּךְ — שֶׁלָּהֶם",
+    "סְפָרִים — יְלָדִים — אֲחָיוֹת — בָּתִּים — נָשִׁים — מוֹרוֹת",
+    "זֶה אַבָּא שֶׁלִּי. — יֵשׁ לִי שְׁתֵּי אֲחָיוֹת. — הַבַּיִת שֶׁלָּהֶם גָּדוֹל. — מָה שְׁמֵךְ? — בֶּן כַּמָּה אַתָּה?",
+    "זֹאת הַמִּשְׁפָּחָה שֶׁלִּי — הֵם גָּרִים בְּחֵיפָה — יֵשׁ לִי אָח אֶחָד — הַסַּבְתָא שֶׁלִּי יָפָה"
+  ],
+  "wave": "Draw your family tree on paper and write each person in Hebrew with שֶׁלִּי. Say it out loud: זֶה אַבָּא שֶׁלִּי, זֹאת אִמָּא שֶׁלִּי, and so on."
+}

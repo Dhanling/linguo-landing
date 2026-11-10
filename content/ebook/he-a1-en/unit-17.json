@@ -1,0 +1,626 @@
+{
+  "title": "On the road",
+  "title_target": "בַּדֶּרֶךְ",
+  "goal": "Travel by bus, train and taxi — and master the construct form, Hebrew's way of joining two nouns without a linking word.",
+  "bekal": [
+    "buying tickets and asking about times",
+    "understanding travel announcements and signs",
+    "joining two nouns with the construct form"
+  ],
+  "dialogs": [
+    {
+      "title": "שִׂיחָה — בְּתַחֲנַת הָרַכֶּבֶת",
+      "intro": "Budi is at Tel Aviv train station, about to go to Haifa.",
+      "lines": [
+        {
+          "speaker": "בּוּדִי:",
+          "text": "שָׁלוֹם, כַּרְטִיס אֶחָד לְחֵיפָה בְּבַקָּשָׁה.",
+          "baca": "shalom, kartis ekhad lekheifah bevakashah.",
+          "id": "Hi, one ticket to Haifa, please.",
+          "literal": "hello, ticket one to-haifa with-request."
+        },
+        {
+          "speaker": "פְּקִידָה:",
+          "text": "הָלוֹךְ בִּלְבַד אוֹ הָלוֹךְ וָשׁוֹב?",
+          "baca": "halokh bilvad o halokh vashov?",
+          "id": "One way or round trip?",
+          "literal": "going only or going and-returning?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "הָלוֹךְ וָשׁוֹב. כַּמָּה זֶה עוֹלֶה?",
+          "baca": "halokh vashov. kamah zeh oleh?",
+          "id": "Round trip. How much is it?",
+          "literal": "going and-returning. how-much this rises?"
+        },
+        {
+          "speaker": "פְּקִידָה:",
+          "text": "חֲמִשִּׁים וְאַרְבָּעָה שֶׁקֶל. יֵשׁ לְךָ רַב־קַו?",
+          "baca": "khamishim ve'arba'ah shekel. yesh lekha rav-kav?",
+          "id": "Fifty-four shekels. Do you have a Rav-Kav?",
+          "literal": "fifty and-four shekel. there-is to-you rav-kav?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "עוֹד לֹא. אֶפְשָׁר לְהוֹצִיא כָּאן?",
+          "baca": "od lo. efshar lehotsi kan?",
+          "id": "Not yet. Can I get one here?",
+          "literal": "still not. possible to-issue here?"
+        },
+        {
+          "speaker": "פְּקִידָה:",
+          "text": "כֵּן, בַּדֶּלְפֵּק מִשְּׂמֹאל. תָּבִיא דַּרְכּוֹן.",
+          "baca": "ken, badelpek mismol. tavi darkon.",
+          "id": "Yes, at the counter on the left. Bring your passport.",
+          "literal": "yes, at-the-counter from-left. bring passport."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "מָתַי יוֹצֵאת הָרַכֶּבֶת הַבָּאָה?",
+          "baca": "matai yotset harakevet haba'ah?",
+          "id": "When does the next train leave?",
+          "literal": "when leaves (f) the-train the-next?"
+        },
+        {
+          "speaker": "פְּקִידָה:",
+          "text": "בְּעוֹד רֶבַע שָׁעָה, מֵרָצִיף שָׁלוֹשׁ.",
+          "baca": "be'od reva sha'ah, meratsif shalosh.",
+          "id": "In a quarter of an hour, from platform three.",
+          "literal": "in-another quarter hour, from-platform three."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "כַּמָּה זְמַן לוֹקַחַת הַנְּסִיעָה?",
+          "baca": "kamah zman lokakhat hansi'ah?",
+          "id": "How long is the trip?",
+          "literal": "how-much time takes (f) the-trip?"
+        },
+        {
+          "speaker": "פְּקִידָה:",
+          "text": "שָׁעָה וָרֶבַע, בְּלִי חֲלִיפָה.",
+          "baca": "sha'ah vareva, bli khalifah.",
+          "id": "An hour and a quarter, no change.",
+          "literal": "hour and-quarter, without change."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "מְעֻלֶּה. וּבַחֲזָרָה, מָתַי הָרַכֶּבֶת הָאַחֲרוֹנָה?",
+          "baca": "me'uleh. uvakhazarah, matai harakevet ha'akharonah?",
+          "id": "Great. And on the way back, when's the last train?",
+          "literal": "excellent. and-on-the-return, when the-train the-last?"
+        },
+        {
+          "speaker": "פְּקִידָה:",
+          "text": "בְּעֶשְׂרִים וּשְׁלוֹשִׁים. נְסִיעָה טוֹבָה!",
+          "baca": "be'esrim ushloshim. nesi'ah tovah!",
+          "id": "At 8:30 p.m. Have a good trip!",
+          "literal": "at-twenty and-thirty. trip good!"
+        }
+      ],
+      "notes": [
+        "**The construct form (סְמִיכוּת, *smikhut*) is Hebrew's way of saying \"X of Y\"** without שֶׁל. תַּחֲנַת הָרַכֶּבֶת = \"the train station\", כַּרְטִיס הָרַכֶּבֶת = \"the train ticket\". The first word often changes shape a little; the second stays the same.",
+        "**English does this with no marker at all**: \"train station\", \"credit card\", \"language teacher\". Hebrew is the same — two nouns side by side, nothing in between. The only difference: the order is reversed (\"station train\"), and the first word's shape changes.",
+        "⚠️ **The most common change: ־ָה at the end of the first word becomes ־ַת.** תַּחֲנָה → תַּחֲנַת הָרַכֶּבֶת; אֲרוּחָה → אֲרוּחַת בֹּקֶר; תְּעוּדָה → תְּעוּדַת זֶהוּת. You met this pattern in units 10 and 11 without explanation; here it is in full.",
+        "⚠️ **הַ־ goes on the SECOND word, not the first.** \"The train station\" is תַּחֲנַת **הָ**רַכֶּבֶת, not הַתַּחֲנַת רַכֶּבֶת. This is the most common A1 mistake, because English instinct puts \"the\" at the front.",
+        "**רַב־קַו** (*Rav-Kav*) is Israel's public transport card — one card for buses, trains and light rail across the country. Without it, many buses won't take cash at all. It's the first thing a newcomer needs to sort out.",
+        "**נְסִיעָה טוֹבָה!** (\"good trip\") = \"have a good trip\". Another option: דֶּרֶךְ צְלֵחָה (\"successful road\"), a bit more formal.",
+        "**הָלוֹךְ וָשׁוֹב** literally \"going and returning\" = round trip. An ancient verb form that survives as a set phrase; memorize it whole.",
+        "**תָּבִיא** and **תָּבוֹא** are easy to mix up: תָּבִיא = \"bring\", תָּבוֹא = \"come\". One letter, two meanings."
+      ],
+      "grammars": [
+        {
+          "title": "The construct form: two nouns, one meaning",
+          "body": [
+            "The first word gives up part of its shape; the second word decides whether it's definite or not."
+          ],
+          "table": {
+            "head": [
+              "Separate",
+              "Joined",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "תַּחֲנָה + רַכֶּבֶת",
+                "תַּחֲנַת רַכֶּבֶת",
+                "takhanat rakevet",
+                "train station"
+              ],
+              [
+                "אֲרוּחָה + בֹּקֶר",
+                "אֲרוּחַת בֹּקֶר",
+                "arukhat boker",
+                "breakfast"
+              ],
+              [
+                "בַּיִת + סֵפֶר",
+                "בֵּית סֵפֶר",
+                "beit sefer",
+                "school"
+              ],
+              [
+                "בַּיִת + חוֹלִים",
+                "בֵּית חוֹלִים",
+                "beit kholim",
+                "hospital"
+              ],
+              [
+                "כַּרְטִיס + אַשְׁרַאי",
+                "כַּרְטִיס אַשְׁרַאי",
+                "kartis ashrai",
+                "credit card"
+              ],
+              [
+                "חֶדֶר + שֵׁנָה",
+                "חֲדַר שֵׁנָה",
+                "khadar shenah",
+                "bedroom"
+              ],
+              [
+                "מִסְפָּר + טֶלֶפוֹן",
+                "מִסְפַּר טֶלֶפוֹן",
+                "mispar telefon",
+                "phone number"
+              ],
+              [
+                "שְׂדֶה + תְּעוּפָה",
+                "שְׂדֵה תְּעוּפָה",
+                "sdeh te'ufah",
+                "airport"
+              ],
+              [
+                "סוֹף + שָׁבוּעַ",
+                "סוֹף שָׁבוּעַ",
+                "sof shavu'a",
+                "weekend"
+              ],
+              [
+                "בֵּית + קָפֶה",
+                "בֵּית קָפֶה",
+                "beit kafeh",
+                "café"
+              ]
+            ]
+          },
+          "after": [
+            "**When to use שֶׁל and when the construct form?** A practical rule: if the link is **someone's ownership**, use שֶׁל — הַסֵּפֶר שֶׁל דָּנָה. If the link is a **type or category** — a school *of the book kind*, a card *of the credit kind* — use the construct form. The construct makes one new term; שֶׁל only shows the owner.",
+            "⚠️ **You can't put an adjective in the middle of a construct.** \"A new credit card\" is כַּרְטִיס אַשְׁרַאי חָדָשׁ — the adjective goes at the end, after both nouns."
+          ]
+        },
+        {
+          "title": "Traveling: verbs and their prepositions",
+          "body": [
+            "Hebrew distinguishes going on foot from going by vehicle, something English \"go\" doesn't do."
+          ],
+          "table": {
+            "head": [
+              "Hebrew",
+              "Say it",
+              "English",
+              "Note"
+            ],
+            "rows": [
+              [
+                "הוֹלֵךְ לְ־",
+                "holekh le",
+                "go (on foot)",
+                "short distance"
+              ],
+              [
+                "נוֹסֵעַ לְ־",
+                "nose'a le",
+                "go (by vehicle)",
+                "bus, car, train"
+              ],
+              [
+                "טָס לְ־",
+                "tas le",
+                "fly to",
+                "plane"
+              ],
+              [
+                "מַגִּיעַ לְ־",
+                "magi'a le",
+                "arrive at",
+                ""
+              ],
+              [
+                "יוֹצֵא מִ־",
+                "yotse mi",
+                "leave from",
+                ""
+              ],
+              [
+                "חוֹזֵר מִ־",
+                "khozer mi",
+                "come back from",
+                ""
+              ],
+              [
+                "עוֹלֶה עַל",
+                "oleh al",
+                "get on (a vehicle)",
+                "literally: go up onto"
+              ],
+              [
+                "יוֹרֵד מִ־",
+                "yored mi",
+                "get off",
+                ""
+              ],
+              [
+                "מַחֲלִיף בְּ־",
+                "makhlif be",
+                "change (vehicles) at",
+                ""
+              ],
+              [
+                "מְחַכֶּה לְ־",
+                "mekhakeh le",
+                "wait for",
+                "always with לְ"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Don't use הוֹלֵךְ for long trips.** אֲנִי הוֹלֵךְ לְחֵיפָה means you're actually walking to Haifa — ninety kilometers. The right way: אֲנִי נוֹסֵעַ לְחֵיפָה."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Transport and travel",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hebrew",
+            "Say it",
+            "English",
+            "Hebrew",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "אוֹטוֹבּוּס",
+              "otobus",
+              "bus",
+              "רָצִיף",
+              "ratsif",
+              "platform"
+            ],
+            [
+              "רַכֶּבֶת",
+              "rakevet",
+              "train",
+              "כַּרְטִיס",
+              "kartis",
+              "ticket"
+            ],
+            [
+              "מוֹנִית",
+              "monit",
+              "taxi",
+              "נְסִיעָה",
+              "nesi'ah",
+              "trip, ride"
+            ],
+            [
+              "מְכוֹנִית",
+              "mekhonit",
+              "car",
+              "דֶּרֶךְ",
+              "derekh",
+              "road, way (f)"
+            ],
+            [
+              "אוֹפַנַּיִם",
+              "ofanayim",
+              "bicycle",
+              "כְּבִישׁ",
+              "kvish",
+              "highway"
+            ],
+            [
+              "מָטוֹס",
+              "matos",
+              "plane",
+              "פְּקָק",
+              "pkak",
+              "traffic jam"
+            ],
+            [
+              "שְׂדֵה תְּעוּפָה",
+              "sdeh te'ufah",
+              "airport",
+              "נֶהָג",
+              "nehag",
+              "driver"
+            ],
+            [
+              "תַּחֲנָה מֶרְכָּזִית",
+              "takhanah merkazit",
+              "central bus station",
+              "מַפָּה",
+              "mapah",
+              "map"
+            ],
+            [
+              "הָלוֹךְ וָשׁוֹב",
+              "halokh vashov",
+              "round trip",
+              "מִזְוָדָה",
+              "mizvadah",
+              "suitcase"
+            ],
+            [
+              "רַב־קַו",
+              "rav-kav",
+              "Israeli transit card",
+              "אִחוּר",
+              "ikhur",
+              "delay"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **אוֹפַנַּיִם** (bicycle) ends in ־ַיִם, the pair form — two wheels. Just like מִשְׁקָפַיִם and נַעֲלַיִם. Hebrew consistently sees two-wheeled things as a pair, much as English says *bi*-cycle."
+        },
+        {
+          "type": "p",
+          "text": "**Israeli public transport stops completely during Shabbat** — from Friday afternoon to Saturday evening, in almost the whole country. The only things running are the **מוֹנִית שֵׁרוּת** *(monit sherut)*, minibus shared taxis on fixed routes, and regular taxis. This is a practical matter, not a cultural footnote: plan a Saturday trip without knowing it and you'll be stuck."
+        }
+      ]
+    },
+    {
+      "title": "Announcements and signs you'll read",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Without niqqud",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "רכבת",
+              "rakevet",
+              "TRAIN"
+            ],
+            [
+              "יציאה",
+              "yetsi'ah",
+              "DEPARTURES"
+            ],
+            [
+              "הגעה",
+              "haga'ah",
+              "ARRIVALS"
+            ],
+            [
+              "רציף",
+              "ratsif",
+              "PLATFORM"
+            ],
+            [
+              "איחור",
+              "ikhur",
+              "DELAYED"
+            ],
+            [
+              "התחנה הבאה",
+              "hatakhanah haba'ah",
+              "NEXT STOP"
+            ],
+            [
+              "תחנה סופית",
+              "takhanah sofit",
+              "LAST STOP"
+            ],
+            [
+              "כניסה אחורית",
+              "knisah akhorit",
+              "REAR DOOR"
+            ],
+            [
+              "נא לשמור על נקיון",
+              "na lishmor al nikayon",
+              "PLEASE KEEP CLEAN"
+            ],
+            [
+              "נסיעה טובה",
+              "nesi'ah tovah",
+              "HAVE A GOOD TRIP"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Sentences for on board",
+          "items": [
+            "**הָאוֹטוֹבּוּס הַזֶּה נוֹסֵעַ לְ...?** — does this bus go to ...?",
+            "**תַּגִּיד לִי מָתַי לָרֶדֶת, בְּבַקָּשָׁה** *(tagid li matai laredet)* — please tell me when to get off. A sentence that will truly save you in a strange city.",
+            "**אֶפְשָׁר לַעֲצֹר כָּאן?** — can you stop here?",
+            "**פִּסְפַּסְתִּי אֶת הַתַּחֲנָה** *(pispasti et hatakhanah)* — I missed my stop."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "he": "רַכֶּבֶת",
+      "baca": "rakevet",
+      "en": "train"
+    },
+    {
+      "he": "אוֹטוֹבּוּס",
+      "baca": "otobus",
+      "en": "bus"
+    },
+    {
+      "he": "מוֹנִית",
+      "baca": "monit",
+      "en": "taxi"
+    },
+    {
+      "he": "מְכוֹנִית",
+      "baca": "mekhonit",
+      "en": "car"
+    },
+    {
+      "he": "מָטוֹס",
+      "baca": "matos",
+      "en": "plane"
+    },
+    {
+      "he": "שְׂדֵה תְּעוּפָה",
+      "baca": "sdeh te'ufah",
+      "en": "airport"
+    },
+    {
+      "he": "נְסִיעָה",
+      "baca": "nesi'ah",
+      "en": "trip, ride"
+    },
+    {
+      "he": "כַּרְטִיס",
+      "baca": "kartis",
+      "en": "ticket"
+    },
+    {
+      "he": "רָצִיף",
+      "baca": "ratsif",
+      "en": "platform"
+    },
+    {
+      "he": "הָלוֹךְ וָשׁוֹב",
+      "baca": "halokh vashov",
+      "en": "round trip"
+    },
+    {
+      "he": "נוֹסֵעַ / נוֹסַעַת",
+      "baca": "nose'a / nosa'at",
+      "en": "to travel (by vehicle)"
+    },
+    {
+      "he": "טָס / טָסָה",
+      "baca": "tas / tasah",
+      "en": "to fly"
+    },
+    {
+      "he": "עוֹלֶה עַל",
+      "baca": "oleh al",
+      "en": "to get on (a vehicle)"
+    },
+    {
+      "he": "יוֹרֵד מִ־",
+      "baca": "yored mi",
+      "en": "to get off"
+    },
+    {
+      "he": "מַחֲלִיף",
+      "baca": "makhlif",
+      "en": "to change (vehicles)"
+    },
+    {
+      "he": "מְחַכֶּה לְ־",
+      "baca": "mekhakeh le",
+      "en": "to wait"
+    },
+    {
+      "he": "אִחוּר",
+      "baca": "ikhur",
+      "en": "delay"
+    },
+    {
+      "he": "פְּקָק",
+      "baca": "pkak",
+      "en": "traffic jam"
+    },
+    {
+      "he": "דֶּרֶךְ",
+      "baca": "derekh",
+      "en": "road, way (f)"
+    },
+    {
+      "he": "מַפָּה",
+      "baca": "mapah",
+      "en": "map"
+    },
+    {
+      "he": "מִזְוָדָה",
+      "baca": "mizvadah",
+      "en": "suitcase"
+    },
+    {
+      "he": "רַב־קַו",
+      "baca": "rav-kav",
+      "en": "public transport card"
+    },
+    {
+      "he": "נְסִיעָה טוֹבָה",
+      "baca": "nesi'ah tovah",
+      "en": "have a good trip"
+    },
+    {
+      "he": "מְעֻלֶּה",
+      "baca": "me'uleh",
+      "en": "excellent"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Join into the construct form.",
+      "items": [
+        "תַּחֲנָה + אוֹטוֹבּוּס ____",
+        "אֲרוּחָה + עֶרֶב ____",
+        "בַּיִת + חוֹלִים ____",
+        "מִסְפָּר + טֶלֶפוֹן ____",
+        "כַּרְטִיס + אַשְׁרַאי ____"
+      ]
+    },
+    {
+      "prompt": "Choose הוֹלֵךְ, נוֹסֵעַ or טָס.",
+      "items": [
+        "אֲנִי ____ לְחֵיפָה בְּרַכֶּבֶת.",
+        "אֲנִי ____ לַחֲנוּת בַּפִּנָּה.",
+        "אֲנִי ____ לְאִינְדּוֹנֶזְיָה.",
+        "אֲנַחְנוּ ____ לַשּׁוּק בְּאוֹטוֹבּוּס.",
+        "הִיא ____ לַגַּן בְּרֶגֶל."
+      ]
+    },
+    {
+      "prompt": "Translate into Hebrew.",
+      "items": [
+        "One round-trip ticket to Haifa.",
+        "When does the next train leave?",
+        "How long is the trip?",
+        "Does this bus go to the central station?",
+        "Please tell me when to get off."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "בְּרַכֶּבֶת / לְחֵיפָה / נוֹסֵעַ / אֲנִי",
+        "הָרַכֶּבֶת / מָתַי / יוֹצֵאת / הַבָּאָה",
+        "שָׁלוֹשׁ / מֵרָצִיף / יוֹצֵאת / הִיא",
+        "לָאוֹטוֹבּוּס / מְחַכֶּה / אֲנִי"
+      ]
+    }
+  ],
+  "answers": [
+    "תַּחֲנַת אוֹטוֹבּוּס — אֲרוּחַת עֶרֶב — בֵּית חוֹלִים — מִסְפַּר טֶלֶפוֹן — כַּרְטִיס אַשְׁרַאי",
+    "נוֹסֵעַ — הוֹלֵךְ — טָס — נוֹסְעִים — הוֹלֶכֶת",
+    "כַּרְטִיס אֶחָד הָלוֹךְ וָשׁוֹב לְחֵיפָה. — מָתַי יוֹצֵאת הָרַכֶּבֶת הַבָּאָה? — כַּמָּה זְמַן לוֹקַחַת הַנְּסִיעָה? — הָאוֹטוֹבּוּס הַזֶּה נוֹסֵעַ לַתַּחֲנָה הַמֶּרְכָּזִית? — תַּגִּיד לִי מָתַי לָרֶדֶת, בְּבַקָּשָׁה.",
+    "אֲנִי נוֹסֵעַ לְחֵיפָה בְּרַכֶּבֶת — מָתַי יוֹצֵאת הָרַכֶּבֶת הַבָּאָה — הִיא יוֹצֵאת מֵרָצִיף שָׁלוֹשׁ — אֲנִי מְחַכֶּה לָאוֹטוֹבּוּס"
+  ],
+  "wave": "Plan one real trip — from your home to a place you often go — and write every step in Hebrew: what you take, where you get off, how long it takes."
+}

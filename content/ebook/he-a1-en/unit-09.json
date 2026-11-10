@@ -1,0 +1,597 @@
+{
+  "title": "What time is it?",
+  "title_target": "מָה הַשָּׁעָה?",
+  "goal": "Tell the time, name the days of the week, and make plans — and avoid the day-numbering slip that makes learners turn up on the wrong day.",
+  "bekal": [
+    "ask and tell the time",
+    "name the days and parts of the day",
+    "make a simple appointment"
+  ],
+  "dialogs": [
+    {
+      "title": "שִׂיחָה — קוֹבְעִים פְּגִישָׁה",
+      "intro": "Noa and Budi are setting a time to study together.",
+      "lines": [
+        {
+          "speaker": "נֹעָה:",
+          "text": "בּוּדִי, מָתַי אַתָּה חָפְשִׁי הַשָּׁבוּעַ?",
+          "baca": "budi, matai atah khofshi hashavu'a?",
+          "id": "Budi, when are you free this week?",
+          "literal": "budi, when you free in-the-week?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "בְּיוֹם שְׁלִישִׁי אַחֲרֵי הַצָּהֳרַיִם.",
+          "baca": "beyom shlishi akharei hatsohorayim.",
+          "id": "Tuesday afternoon.",
+          "literal": "in-day third after the-noon."
+        },
+        {
+          "speaker": "נֹעָה:",
+          "text": "מְצֻיָּן. בְּאֵיזוֹ שָׁעָה?",
+          "baca": "metsuyan. be'eizo sha'ah?",
+          "id": "Great. What time?",
+          "literal": "excellent. at-which hour?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "בְּאַרְבַּע? אוֹ אוּלַי בְּאַרְבַּע וָחֵצִי.",
+          "baca": "be'arba? o ulai be'arba vakhetsi.",
+          "id": "Four? Or maybe four-thirty.",
+          "literal": "at-four? or maybe at-four and-half."
+        },
+        {
+          "speaker": "נֹעָה:",
+          "text": "אַרְבַּע וָחֵצִי טוֹב. אֵיפֹה נִפְגָּשׁ?",
+          "baca": "arba vakhetsi tov. eifoh nipagesh?",
+          "id": "Four-thirty is good. Where shall we meet?",
+          "literal": "four and-half good. where we-will-meet?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "בַּסִּפְרִיָּה. הִיא פְּתוּחָה עַד שְׁמוֹנֶה.",
+          "baca": "basifriyah. hi ptukhah ad shmoneh.",
+          "id": "At the library. It's open until eight.",
+          "literal": "in-the-library. she open until eight."
+        },
+        {
+          "speaker": "נֹעָה:",
+          "text": "רֶגַע — מָה הַשָּׁעָה עַכְשָׁו?",
+          "baca": "rega — mah hasha'ah akhshav?",
+          "id": "Wait — what time is it now?",
+          "literal": "moment — what the-hour now?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "עֶשֶׂר וְרֶבַע. לָמָּה?",
+          "baca": "eser vareva. lamah?",
+          "id": "Quarter past ten. Why?",
+          "literal": "ten and-quarter. why?"
+        },
+        {
+          "speaker": "נֹעָה:",
+          "text": "יֵשׁ לִי שִׁעוּר בְּעוֹד חֲמֵשׁ עֶשְׂרֵה דַּקּוֹת!",
+          "baca": "yesh li shi'ur be'od khamesh esreh dakot!",
+          "id": "I have a class in fifteen minutes!",
+          "literal": "there-is to-me lesson in-more fifteen minutes!"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "אָז רוּצִי. נִדַּבֵּר אַחַר כָּךְ.",
+          "baca": "az rutsi. nedaber akhar kakh.",
+          "id": "Then run. We'll talk later.",
+          "literal": "so run (f). we-will-talk after so."
+        },
+        {
+          "speaker": "נֹעָה:",
+          "text": "יוֹם שְׁלִישִׁי, אַרְבַּע וָחֵצִי. אַל תִּשְׁכַּח!",
+          "baca": "yom shlishi, arba vakhetsi. al tishkakh!",
+          "id": "Tuesday, four-thirty. Don't forget!",
+          "literal": "day third, four and-half. don't you-will-forget!"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "לֹא אֶשְׁכַּח. לְהִתְרָאוֹת!",
+          "baca": "lo eshkakh. lehitra'ot!",
+          "id": "I won't. See you!",
+          "literal": "not I-will-forget. see-you!"
+        }
+      ],
+      "notes": [
+        "**Good news: Hebrew tells the time the way English does.** אַרְבַּע וָחֵצִי is literally \"four and a half\" — that's **4:30**, just like \"four-thirty\" (or British \"half four\"). Hebrew counts **forward** from the hour that has passed. (Speakers of German or Dutch, where \"halb fünf\" means 4:30, need to watch out here; English speakers don't.)",
+        "**Remember it in one sentence: Hebrew names the hour that has ALREADY passed, then adds.** שֶׁבַע וָחֵצִי = 7:30. תֵּשַׁע וְרֶבַע = 9:15. When in doubt, convert to digits first.",
+        "**Times use the FEMININE numbers** — שָׁעָה (hour) is a feminine word. So בְּאַרְבַּע (not בְּאַרְבָּעָה), בְּשָׁלוֹשׁ, בְּשֶׁבַע.",
+        "**For times just before the hour, use רֶבַע לְ־** (\"a quarter to\"): רֶבַע לְחָמֵשׁ = 4:45. Here Hebrew counts backward, exactly like English \"a quarter to five\" — but only for the last half hour.",
+        "⚠️ **The days of the week are numbered, not named.** יוֹם רִאשׁוֹן (first day) = **Sunday**, יוֹם שֵׁנִי = Monday, and so on up to יוֹם שִׁשִּׁי = Friday. Only Saturday has its own name: שַׁבָּת. So \"the second day\" is **Monday**, not Tuesday — learners often slip by one day.",
+        "**The Israeli work week starts on Sunday and ends on Thursday.** Friday is a half day, Saturday is fully off. When Israelis say \"the weekend\", they mean **Friday–Saturday**, not Saturday–Sunday.",
+        "**בְּעוֹד** (*be'od*) = \"in ... (from now)\": בְּעוֹד חָמֵשׁ דַּקּוֹת (in five minutes), בְּעוֹד שָׁבוּעַ (in a week).",
+        "**אַל תִּשְׁכַּח!** = \"don't forget!\". Negative commands in Hebrew use **אַל** + the future form, not לֹא. To a woman: אַל תִּשְׁכְּחִי."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "The pattern is always: the hour (feminine form) + an add-on. The word שָׁעָה itself is hardly ever said."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Hebrew",
+              "Say it",
+              "Literal"
+            ],
+            "rows": [
+              [
+                "7:00",
+                "שֶׁבַע",
+                "sheva",
+                "seven"
+              ],
+              [
+                "7:05",
+                "שֶׁבַע וְחָמֵשׁ",
+                "sheva vekhamesh",
+                "seven and five"
+              ],
+              [
+                "7:15",
+                "שֶׁבַע וָרֶבַע",
+                "sheva vareva",
+                "seven and a quarter"
+              ],
+              [
+                "7:30",
+                "שֶׁבַע וָחֵצִי",
+                "sheva vakhetsi",
+                "seven and a half"
+              ],
+              [
+                "7:45",
+                "רֶבַע לִשְׁמוֹנֶה",
+                "reva lishmoneh",
+                "a quarter to eight"
+              ],
+              [
+                "7:50",
+                "עֲשָׂרָה לִשְׁמוֹנֶה",
+                "asarah lishmoneh",
+                "ten to eight"
+              ],
+              [
+                "12:00",
+                "שְׁתֵּים עֶשְׂרֵה",
+                "shteim esreh",
+                "twelve"
+              ],
+              [
+                "13:00",
+                "אַחַת",
+                "akhat",
+                "one"
+              ],
+              [
+                "20:30",
+                "שְׁמוֹנֶה וָחֵצִי בָּעֶרֶב",
+                "shmoneh vakhetsi ba'erev",
+                "eight and a half in the evening"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Israelis read the clock in 12-hour style in speech — 13:00 is just \"one\" — and add בַּבֹּקֶר or בָּעֶרֶב only when it isn't obvious. Practice by converting five times from your own day into Hebrew."
+          ]
+        },
+        {
+          "title": "Days and parts of the day",
+          "body": [
+            "Days are numbered, and the numbering starts on **Sunday**."
+          ],
+          "table": {
+            "head": [
+              "Hebrew",
+              "Say it",
+              "Day",
+              "Literal"
+            ],
+            "rows": [
+              [
+                "יוֹם רִאשׁוֹן",
+                "yom rishon",
+                "Sunday",
+                "first day"
+              ],
+              [
+                "יוֹם שֵׁנִי",
+                "yom sheni",
+                "Monday",
+                "second day"
+              ],
+              [
+                "יוֹם שְׁלִישִׁי",
+                "yom shlishi",
+                "Tuesday",
+                "third day"
+              ],
+              [
+                "יוֹם רְבִיעִי",
+                "yom revi'i",
+                "Wednesday",
+                "fourth day"
+              ],
+              [
+                "יוֹם חֲמִישִׁי",
+                "yom khamishi",
+                "Thursday",
+                "fifth day"
+              ],
+              [
+                "יוֹם שִׁשִּׁי",
+                "yom shishi",
+                "Friday",
+                "sixth day"
+              ],
+              [
+                "שַׁבָּת",
+                "shabat",
+                "Saturday",
+                "rest"
+              ]
+            ]
+          },
+          "after": [
+            "Parts of the day: **בֹּקֶר** (morning), **צָהֳרַיִם** (midday), **אַחֲרֵי הַצָּהֳרַיִם** (afternoon), **עֶרֶב** (evening), **לַיְלָה** (night). Used with בַּ־: בַּבֹּקֶר, בָּעֶרֶב, בַּלַּיְלָה.",
+            "⚠️ The Jewish day begins **at sunset**, not midnight. That's why Shabbat starts on Friday evening. If someone invites you לְשַׁבָּת, they often mean Friday-night dinner."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Time words you need",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hebrew",
+            "Say it",
+            "Meaning",
+            "Hebrew",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "שָׁעָה",
+              "sha'ah",
+              "hour",
+              "אֶתְמוֹל",
+              "etmol",
+              "yesterday"
+            ],
+            [
+              "דַּקָּה",
+              "dakah",
+              "minute",
+              "הַיּוֹם",
+              "hayom",
+              "today"
+            ],
+            [
+              "שְׁנִיָּה",
+              "shniyah",
+              "second",
+              "מָחָר",
+              "makhar",
+              "tomorrow"
+            ],
+            [
+              "יוֹם",
+              "yom",
+              "day",
+              "עַכְשָׁו",
+              "akhshav",
+              "now"
+            ],
+            [
+              "שָׁבוּעַ",
+              "shavu'a",
+              "week",
+              "תָּמִיד",
+              "tamid",
+              "always"
+            ],
+            [
+              "חֹדֶשׁ",
+              "khodesh",
+              "month",
+              "לִפְעָמִים",
+              "lif'amim",
+              "sometimes"
+            ],
+            [
+              "שָׁנָה",
+              "shanah",
+              "year",
+              "אַף פַּעַם לֹא",
+              "af pa'am lo",
+              "never"
+            ],
+            [
+              "בֹּקֶר",
+              "boker",
+              "morning",
+              "מֻקְדָּם",
+              "mukdam",
+              "early"
+            ],
+            [
+              "עֶרֶב",
+              "erev",
+              "evening",
+              "מְאֻחָר",
+              "me'ukhar",
+              "late"
+            ],
+            [
+              "לַיְלָה",
+              "laylah",
+              "night",
+              "בִּזְמַן",
+              "bizman",
+              "on time"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **אַף פַּעַם לֹא** is a **double negative**: literally \"not even once not\". Hebrew, unlike standard English, lets negatives stack without canceling out. אֲנִי אַף פַּעַם לֹא שׁוֹתֶה קָפֶה = I never drink coffee."
+        }
+      ]
+    },
+    {
+      "title": "Making plans",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hebrew",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "מָה הַשָּׁעָה?",
+              "mah hasha'ah?",
+              "What time is it?"
+            ],
+            [
+              "בְּאֵיזוֹ שָׁעָה?",
+              "be'eizo sha'ah?",
+              "At what time? (for an event)"
+            ],
+            [
+              "מָתַי אַתָּה חָפְשִׁי?",
+              "matai atah khofshi?",
+              "When are you free?"
+            ],
+            [
+              "יֵשׁ לְךָ זְמַן?",
+              "yesh lekha zman?",
+              "Do you have time?"
+            ],
+            [
+              "בּוֹא נִפְגָּשׁ בְּ...",
+              "bo nipagesh be...",
+              "Let's meet at..."
+            ],
+            [
+              "אֲנִי מְאַחֵר / מְאַחֶרֶת",
+              "ani me'akher / me'akheret",
+              "I'm running late"
+            ],
+            [
+              "סְלִיחָה עַל הָאִחוּר",
+              "slikhah al ha'ikhur",
+              "Sorry I'm late"
+            ],
+            [
+              "מָתַי זֶה פָּתוּחַ?",
+              "matai zeh patu'akh?",
+              "When is it open?"
+            ],
+            [
+              "זֶה סָגוּר בְּשַׁבָּת",
+              "zeh sagur beshabat",
+              "It's closed on Shabbat"
+            ],
+            [
+              "אַחַר כָּךְ",
+              "akhar kakh",
+              "later, afterwards"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Israel's daily rhythm",
+          "items": [
+            "Shops and offices are generally open **8:00–19:00**; in small towns many close for a few hours at midday.",
+            "**On Friday everything closes early** — around 14:00–15:00 — and doesn't reopen until Saturday evening. Public transport in most cities stops completely during Shabbat.",
+            "If you need something for the weekend, sort it out **before Friday noon**. Almost every newcomer learns this the expensive way."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "he": "שָׁעָה",
+      "baca": "sha'ah",
+      "en": "hour; o'clock"
+    },
+    {
+      "he": "דַּקָּה",
+      "baca": "dakah",
+      "en": "minute"
+    },
+    {
+      "he": "חֵצִי",
+      "baca": "khetsi",
+      "en": "half"
+    },
+    {
+      "he": "רֶבַע",
+      "baca": "reva",
+      "en": "quarter"
+    },
+    {
+      "he": "יוֹם",
+      "baca": "yom",
+      "en": "day"
+    },
+    {
+      "he": "שָׁבוּעַ",
+      "baca": "shavu'a",
+      "en": "week"
+    },
+    {
+      "he": "שַׁבָּת",
+      "baca": "shabat",
+      "en": "Saturday; Shabbat"
+    },
+    {
+      "he": "בֹּקֶר / עֶרֶב / לַיְלָה",
+      "baca": "boker / erev / laylah",
+      "en": "morning / evening / night"
+    },
+    {
+      "he": "צָהֳרַיִם",
+      "baca": "tsohorayim",
+      "en": "midday"
+    },
+    {
+      "he": "אַחֲרֵי הַצָּהֳרַיִם",
+      "baca": "akharei hatsohorayim",
+      "en": "afternoon"
+    },
+    {
+      "he": "אֶתְמוֹל / הַיּוֹם / מָחָר",
+      "baca": "etmol / hayom / makhar",
+      "en": "yesterday / today / tomorrow"
+    },
+    {
+      "he": "זְמַן",
+      "baca": "zman",
+      "en": "time"
+    },
+    {
+      "he": "פְּגִישָׁה",
+      "baca": "pgishah",
+      "en": "meeting, appointment"
+    },
+    {
+      "he": "פָּתוּחַ / סָגוּר",
+      "baca": "patu'akh / sagur",
+      "en": "open / closed"
+    },
+    {
+      "he": "עַד",
+      "baca": "ad",
+      "en": "until"
+    },
+    {
+      "he": "מִן / מִ־",
+      "baca": "min / mi",
+      "en": "from (time & place)"
+    },
+    {
+      "he": "בְּעוֹד",
+      "baca": "be'od",
+      "en": "in ... (from now)"
+    },
+    {
+      "he": "אַחַר כָּךְ",
+      "baca": "akhar kakh",
+      "en": "later, afterwards"
+    },
+    {
+      "he": "לִפְעָמִים",
+      "baca": "lif'amim",
+      "en": "sometimes"
+    },
+    {
+      "he": "תָּמִיד",
+      "baca": "tamid",
+      "en": "always"
+    },
+    {
+      "he": "אַף פַּעַם לֹא",
+      "baca": "af pa'am lo",
+      "en": "never"
+    },
+    {
+      "he": "מְאֻחָר / מֻקְדָּם",
+      "baca": "me'ukhar / mukdam",
+      "en": "late / early"
+    },
+    {
+      "he": "אוּלַי",
+      "baca": "ulai",
+      "en": "maybe"
+    },
+    {
+      "he": "אַל",
+      "baca": "al",
+      "en": "don't (prohibition)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these times in Hebrew.",
+      "items": [
+        "8:00 ____",
+        "9:30 ____",
+        "11:15 ____",
+        "14:45 ____",
+        "18:30 ____"
+      ]
+    },
+    {
+      "prompt": "Write these Hebrew times in digits.",
+      "items": [
+        "חָמֵשׁ וָחֵצִי ____",
+        "שָׁלוֹשׁ וָרֶבַע ____",
+        "רֶבַע לְשֶׁבַע ____",
+        "תֵּשַׁע וְעֶשְׂרִים ____"
+      ]
+    },
+    {
+      "prompt": "Write the names of the days in Hebrew.",
+      "items": [
+        "Monday ____",
+        "Wednesday ____",
+        "Friday ____",
+        "Sunday ____",
+        "Saturday ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Hebrew.",
+      "items": [
+        "What time is it now?",
+        "We'll meet on Tuesday at four.",
+        "The library is open until eight.",
+        "I never get up early.",
+        "Sorry, I'm late."
+      ]
+    }
+  ],
+  "answers": [
+    "שְׁמוֹנֶה — תֵּשַׁע וָחֵצִי — אַחַת עֶשְׂרֵה וָרֶבַע — רֶבַע לְשָׁלוֹשׁ — שֵׁשׁ וָחֵצִי בָּעֶרֶב",
+    "5:30 — 3:15 — 6:45 — 9:20",
+    "יוֹם שֵׁנִי — יוֹם רְבִיעִי — יוֹם שִׁשִּׁי — יוֹם רִאשׁוֹן — שַׁבָּת",
+    "מָה הַשָּׁעָה? — נִפְגָּשׁ בְּיוֹם שְׁלִישִׁי בְּאַרְבַּע. — הַסִּפְרִיָּה פְּתוּחָה עַד שְׁמוֹנֶה. — אֲנִי אַף פַּעַם לֹא קָם מֻקְדָּם. — סְלִיחָה, אֲנִי מְאַחֵר."
+  ],
+  "wave": "Convert five key times of your day — waking up, breakfast, starting work, dinner, bed — into Hebrew. Double-check the days too: יוֹם שֵׁנִי is MONDAY."
+}

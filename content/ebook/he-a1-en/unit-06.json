@@ -1,0 +1,633 @@
+{
+  "title": "What are they like?",
+  "title_target": "אֵיךְ הוּא?",
+  "goal": "Describe people and things with adjectives, and master the one rule that governs the rest of Hebrew: agreement.",
+  "bekal": [
+    "describe people, places, and things",
+    "make adjectives agree with nouns in all four forms",
+    "tell \"a big house\" from \"the house is big\""
+  ],
+  "dialogs": [
+    {
+      "title": "שִׂיחָה — דִּירָה חֲדָשָׁה",
+      "intro": "Budi is looking for a room to rent. He calls Dana, who has advertised her room.",
+      "lines": [
+        {
+          "speaker": "בּוּדִי:",
+          "text": "שָׁלוֹם, אֲנִי מְחַפֵּשׂ חֶדֶר.",
+          "baca": "shalom, ani mekhapes kheder.",
+          "id": "Hello, I'm looking for a room.",
+          "literal": "hello, I look-for room."
+        },
+        {
+          "speaker": "דָּנָה:",
+          "text": "יֵשׁ לִי חֶדֶר גָּדוֹל וּמוּאָר.",
+          "baca": "yesh li kheder gadol umu'ar.",
+          "id": "I have a big, bright room.",
+          "literal": "there-is to-me room big and-bright."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "וְהַדִּירָה? הִיא גְּדוֹלָה?",
+          "baca": "vehadirah? hi gdolah?",
+          "id": "And the apartment? Is it big?",
+          "literal": "and-the-apartment? she big (f)?"
+        },
+        {
+          "speaker": "דָּנָה:",
+          "text": "לֹא גְּדוֹלָה, אֲבָל נְעִימָה וּשְׁקֵטָה.",
+          "baca": "lo gdolah, aval ne'imah ushketah.",
+          "id": "Not big, but pleasant and quiet.",
+          "literal": "not big (f), but pleasant (f) and-quiet (f)."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "וְהַשְּׁכֵנִים? הֵם נְחְמָדִים?",
+          "baca": "vehashkhenim? hem nekhmadim?",
+          "id": "And the neighbors? Are they nice?",
+          "literal": "and-the-neighbors? they nice (m pl)?"
+        },
+        {
+          "speaker": "דָּנָה:",
+          "text": "מְאוֹד נְחְמָדִים. שְׁתֵּי סְטוּדֶנְטִיּוֹת שְׁקֵטוֹת.",
+          "baca": "me'od nekhmadim. shtei studentiyot shketot.",
+          "id": "Very nice. Two quiet students.",
+          "literal": "very nice (m pl). two students (f) quiet (f pl)."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "הַחֶדֶר יָקָר?",
+          "baca": "hakheder yakar?",
+          "id": "Is the room expensive?",
+          "literal": "the-room expensive?"
+        },
+        {
+          "speaker": "דָּנָה:",
+          "text": "לֹא יָקָר. אַלְפַּיִם שֶׁקֶל לְחֹדֶשׁ.",
+          "baca": "lo yakar. alpayim shekel lekhodesh.",
+          "id": "Not expensive. Two thousand shekels a month.",
+          "literal": "not expensive. two-thousand shekel for-month."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "זֶה מְחִיר טוֹב. וְהַשְּׁכוּנָה?",
+          "baca": "zeh mekhir tov. vehashkhunah?",
+          "id": "That's a good price. And the neighborhood?",
+          "literal": "this price good. and-the-neighborhood?"
+        },
+        {
+          "speaker": "דָּנָה:",
+          "text": "שְׁכוּנָה יְשָׁנָה אֲבָל יָפָה מְאוֹד.",
+          "baca": "shkhunah yeshanah aval yafah me'od.",
+          "id": "An old neighborhood, but very pretty.",
+          "literal": "neighborhood old (f) but pretty (f) very."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "מְצֻיָּן. מָתַי אֶפְשָׁר לִרְאוֹת?",
+          "baca": "metsuyan. matai efshar lir'ot?",
+          "id": "Great. When can I see it?",
+          "literal": "excellent. when possible to-see?"
+        },
+        {
+          "speaker": "דָּנָה:",
+          "text": "מָחָר בָּעֶרֶב. אַתָּה חָפְשִׁי?",
+          "baca": "makhar ba'erev. atah khofshi?",
+          "id": "Tomorrow evening. Are you free?",
+          "literal": "tomorrow in-the-evening. you free?"
+        }
+      ],
+      "notes": [
+        "⚠️ **The adjective comes AFTER the noun** — the reverse of English: חֶדֶר גָּדוֹל = \"room big\", a big room. Your English reflex will push the adjective to the front; train yourself to say the thing first, then describe it.",
+        "⚠️ **Adjectives agree with the noun in TWO ways at once: gender and number.** חֶדֶר גָּדוֹל (a big room) but דִּירָה גְּדוֹלָה (a big apartment). In English \"big\" is always \"big\", whatever the noun — so this is the new habit that takes longest to build.",
+        "**Chains of adjectives all agree.** נְעִימָה וּשְׁקֵטָה — two adjectives, both feminine, because דִּירָה is feminine. If you forget to adjust even one, it jars on the ear.",
+        "⚠️ **\"A big house\" vs \"the house is big\".** The only difference is one הַ־ on the adjective: הַבַּיִת הַגָּדוֹל = \"the big house\" (naming a thing); הַבַּיִת גָּדוֹל = \"the house is big\" (a full sentence that says something). One הַ־ decides whether you're naming a thing or saying something about it — hardly any other A1 rule matters as much.",
+        "**מְאוֹד** (*me'od*, \"very\") comes **after** the adjective: יָפָה מְאוֹד, \"pretty very\". The opposite of English. מְאוֹד יָפָה is also heard, but it's more emphatic.",
+        "**הֵם / הֵן** — \"they\" also has two forms: הֵם for groups with any men, הֵן for all-female groups. A hundred women and one man still make הֵם. The same rule applies to אַתֶּם/אַתֶּן.",
+        "**אֶפְשָׁר** (*efshar*) = \"it's possible, may I, can I\" — a word that never changes form and is followed directly by the infinitive: אֶפְשָׁר לִרְאוֹת? (can I see?), אֶפְשָׁר לְשַׁלֵּם? (can I pay?). The most economical polite sentence in Hebrew.",
+        "**מָחָר בָּעֶרֶב** — notice בָּ (the merger of בְּ + הַ). \"In the evening\", i.e. tomorrow evening. Telling time in full comes in unit 9."
+      ],
+      "grammars": [
+        {
+          "title": "Four forms for every adjective",
+          "body": [
+            "No Hebrew adjective has fewer than four forms. The pattern is regular: nothing, ־ָה, ־ִים, ־וֹת."
+          ],
+          "table": {
+            "head": [
+              "M sing.",
+              "F sing.",
+              "M pl.",
+              "F pl.",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "גָּדוֹל",
+                "גְּדוֹלָה",
+                "גְּדוֹלִים",
+                "גְּדוֹלוֹת",
+                "big"
+              ],
+              [
+                "קָטָן",
+                "קְטַנָּה",
+                "קְטַנִּים",
+                "קְטַנּוֹת",
+                "small"
+              ],
+              [
+                "טוֹב",
+                "טוֹבָה",
+                "טוֹבִים",
+                "טוֹבוֹת",
+                "good"
+              ],
+              [
+                "רַע",
+                "רָעָה",
+                "רָעִים",
+                "רָעוֹת",
+                "bad"
+              ],
+              [
+                "חָדָשׁ",
+                "חֲדָשָׁה",
+                "חֲדָשִׁים",
+                "חֲדָשׁוֹת",
+                "new"
+              ],
+              [
+                "יָשָׁן",
+                "יְשָׁנָה",
+                "יְשָׁנִים",
+                "יְשָׁנוֹת",
+                "old (things)"
+              ],
+              [
+                "יָפֶה",
+                "יָפָה",
+                "יָפִים",
+                "יָפוֹת",
+                "pretty, beautiful"
+              ],
+              [
+                "יָקָר",
+                "יְקָרָה",
+                "יְקָרִים",
+                "יְקָרוֹת",
+                "expensive; dear"
+              ],
+              [
+                "זוֹל",
+                "זוֹלָה",
+                "זוֹלִים",
+                "זוֹלוֹת",
+                "cheap"
+              ],
+              [
+                "נֶחְמָד",
+                "נֶחְמָדָה",
+                "נֶחְמָדִים",
+                "נֶחְמָדוֹת",
+                "nice, friendly"
+              ],
+              [
+                "שָׁקֵט",
+                "שְׁקֵטָה",
+                "שְׁקֵטִים",
+                "שְׁקֵטוֹת",
+                "quiet"
+              ],
+              [
+                "עָסוּק",
+                "עֲסוּקָה",
+                "עֲסוּקִים",
+                "עֲסוּקוֹת",
+                "busy"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **יָשָׁן is for THINGS, not people.** An old person is זָקֵן / זְקֵנָה. Saying אִישׁ יָשָׁן sounds like \"a second-hand man\"."
+          ]
+        },
+        {
+          "title": "Two patterns, one letter apart",
+          "body": [
+            "This is the rule to practice most in this unit. Watch where הַ־ goes."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Example",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "noun + adjective (no הַ־)",
+                "בַּיִת גָּדוֹל",
+                "bayit gadol",
+                "a big house"
+              ],
+              [
+                "הַ + noun + הַ + adjective",
+                "הַבַּיִת הַגָּדוֹל",
+                "habayit hagadol",
+                "the big house"
+              ],
+              [
+                "הַ + noun + adjective",
+                "הַבַּיִת גָּדוֹל",
+                "habayit gadol",
+                "The house is big."
+              ],
+              [
+                "indefinite noun + adjective",
+                "דִּירָה שְׁקֵטָה",
+                "dirah shketah",
+                "a quiet apartment"
+              ],
+              [
+                "הַ + noun + adjective",
+                "הַדִּירָה שְׁקֵטָה",
+                "hadirah shketah",
+                "The apartment is quiet."
+              ]
+            ]
+          },
+          "after": [
+            "Rows three and five are **full sentences** — they state something. Row two isn't a sentence, just a name for a thing. If you mean \"the house is big\" but put הַ־ in twice, your listener will wait for the rest of a sentence that never comes."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Describing people",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "M",
+            "F",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "גָּבוֹהַּ",
+              "גְּבוֹהָה",
+              "gavoha / gvohah",
+              "tall"
+            ],
+            [
+              "נָמוּךְ",
+              "נְמוּכָה",
+              "namukh / nemukhah",
+              "short (person)"
+            ],
+            [
+              "צָעִיר",
+              "צְעִירָה",
+              "tsa'ir / tse'irah",
+              "young"
+            ],
+            [
+              "זָקֵן",
+              "זְקֵנָה",
+              "zaken / zkenah",
+              "old (person)"
+            ],
+            [
+              "רָזֶה",
+              "רָזָה",
+              "razeh / razah",
+              "thin"
+            ],
+            [
+              "שָׁמֵן",
+              "שְׁמֵנָה",
+              "shamen / shmenah",
+              "fat"
+            ],
+            [
+              "חָכָם",
+              "חֲכָמָה",
+              "khakham / khakhamah",
+              "smart"
+            ],
+            [
+              "חָזָק",
+              "חֲזָקָה",
+              "khazak / khazakah",
+              "strong"
+            ],
+            [
+              "עָיֵף",
+              "עֲיֵפָה",
+              "ayef / ayefah",
+              "tired"
+            ],
+            [
+              "שָׂמֵחַ",
+              "שְׂמֵחָה",
+              "same'akh / smekhah",
+              "happy"
+            ],
+            [
+              "עָצוּב",
+              "עֲצוּבָה",
+              "atsuv / atsuvah",
+              "sad"
+            ],
+            [
+              "רָעֵב",
+              "רְעֵבָה",
+              "ra'ev / re'evah",
+              "hungry"
+            ],
+            [
+              "צָמֵא",
+              "צְמֵאָה",
+              "tsame / tsme'ah",
+              "thirsty"
+            ],
+            [
+              "חוֹלֶה",
+              "חוֹלָה",
+              "kholeh / kholah",
+              "sick"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ The last four words describe **states**, not permanent traits, but they're still adjectives: אֲנִי רָעֵב = \"I hungry\". Hebrew doesn't say \"I have hunger\" like French — just \"I hungry\", with no \"am\"."
+        }
+      ]
+    },
+    {
+      "title": "Home and housing",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hebrew",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "דִּירָה",
+              "dirah",
+              "apartment"
+            ],
+            [
+              "חֶדֶר",
+              "kheder",
+              "room"
+            ],
+            [
+              "חֲדַר שֵׁנָה",
+              "khadar shenah",
+              "bedroom"
+            ],
+            [
+              "מִטְבָּח",
+              "mitbakh",
+              "kitchen"
+            ],
+            [
+              "שֵׁרוּתִים",
+              "sherutim",
+              "toilet"
+            ],
+            [
+              "מִקְלַחַת",
+              "miklakhat",
+              "shower room"
+            ],
+            [
+              "סָלוֹן",
+              "salon",
+              "living room"
+            ],
+            [
+              "מִרְפֶּסֶת",
+              "mirpeset",
+              "balcony"
+            ],
+            [
+              "שְׁכוּנָה",
+              "shkhunah",
+              "neighborhood"
+            ],
+            [
+              "שָׁכֵן / שְׁכֵנָה",
+              "shakhen / shkhenah",
+              "neighbor"
+            ],
+            [
+              "מְחִיר",
+              "mekhir",
+              "price"
+            ],
+            [
+              "שְׂכַר דִּירָה",
+              "skhar dirah",
+              "rent"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Four sentences to take room hunting",
+          "items": [
+            "**אֲנִי מְחַפֵּשׂ חֶדֶר** *(ani mekhapes kheder)* — I'm looking for a room. A woman says: מְחַפֶּשֶׂת.",
+            "**כַּמָּה זֶה לְחֹדֶשׁ?** *(kamah zeh lekhodesh?)* — how much a month?",
+            "**אֶפְשָׁר לִרְאוֹת?** *(efshar lir'ot?)* — can I see it?",
+            "**זֶה כּוֹלֵל חַשְׁמַל?** *(zeh kolel khashmal?)* — does it include electricity?"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "he": "אֵיךְ",
+      "baca": "eikh",
+      "en": "how; what like"
+    },
+    {
+      "he": "דִּירָה",
+      "baca": "dirah",
+      "en": "apartment"
+    },
+    {
+      "he": "חֶדֶר",
+      "baca": "kheder",
+      "en": "room"
+    },
+    {
+      "he": "שָׁכֵן / שְׁכֵנָה",
+      "baca": "shakhen / shkhenah",
+      "en": "neighbor"
+    },
+    {
+      "he": "מְחִיר",
+      "baca": "mekhir",
+      "en": "price"
+    },
+    {
+      "he": "חָדָשׁ / חֲדָשָׁה",
+      "baca": "khadash / khadashah",
+      "en": "new"
+    },
+    {
+      "he": "יָשָׁן / יְשָׁנָה",
+      "baca": "yashan / yeshanah",
+      "en": "old (things)"
+    },
+    {
+      "he": "יָקָר / יְקָרָה",
+      "baca": "yakar / yekarah",
+      "en": "expensive"
+    },
+    {
+      "he": "זוֹל / זוֹלָה",
+      "baca": "zol / zolah",
+      "en": "cheap"
+    },
+    {
+      "he": "נֶחְמָד / נֶחְמָדָה",
+      "baca": "nekhmad / nekhmadah",
+      "en": "friendly, nice"
+    },
+    {
+      "he": "שָׁקֵט / שְׁקֵטָה",
+      "baca": "shaket / shketah",
+      "en": "quiet"
+    },
+    {
+      "he": "נָעִים / נְעִימָה",
+      "baca": "na'im / ne'imah",
+      "en": "pleasant, comfortable"
+    },
+    {
+      "he": "גָּבוֹהַּ / גְּבוֹהָה",
+      "baca": "gavoha / gvohah",
+      "en": "tall"
+    },
+    {
+      "he": "צָעִיר / צְעִירָה",
+      "baca": "tsa'ir / tse'irah",
+      "en": "young"
+    },
+    {
+      "he": "זָקֵן / זְקֵנָה",
+      "baca": "zaken / zkenah",
+      "en": "old (people)"
+    },
+    {
+      "he": "עָיֵף / עֲיֵפָה",
+      "baca": "ayef / ayefah",
+      "en": "tired"
+    },
+    {
+      "he": "רָעֵב / רְעֵבָה",
+      "baca": "ra'ev / re'evah",
+      "en": "hungry"
+    },
+    {
+      "he": "עָסוּק / עֲסוּקָה",
+      "baca": "asuk / asukah",
+      "en": "busy"
+    },
+    {
+      "he": "חָפְשִׁי / חָפְשִׁיָּה",
+      "baca": "khofshi / khofshiyah",
+      "en": "free, available"
+    },
+    {
+      "he": "מְאוֹד",
+      "baca": "me'od",
+      "en": "very"
+    },
+    {
+      "he": "אֶפְשָׁר",
+      "baca": "efshar",
+      "en": "it's possible; may I"
+    },
+    {
+      "he": "מָתַי",
+      "baca": "matai",
+      "en": "when"
+    },
+    {
+      "he": "מָחָר",
+      "baca": "makhar",
+      "en": "tomorrow"
+    },
+    {
+      "he": "מְחַפֵּשׂ / מְחַפֶּשֶׂת",
+      "baca": "mekhapes / mekhapeset",
+      "en": "look for"
+    },
+    {
+      "he": "הֵם / הֵן",
+      "baca": "hem / hen",
+      "en": "they (m/mixed / f)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the right form of the adjective.",
+      "items": [
+        "בַּיִת ____ (big)",
+        "דִּירָה ____ (small)",
+        "סְפָרִים ____ (new)",
+        "מַחְבָּרוֹת ____ (old)",
+        "שְׁכֵנִים ____ (friendly)",
+        "אִשָּׁה ____ (young)"
+      ]
+    },
+    {
+      "prompt": "Translate, watching where הַ־ goes.",
+      "items": [
+        "The big house.",
+        "The house is big.",
+        "A quiet room.",
+        "The room is quiet.",
+        "The new apartment is expensive."
+      ]
+    },
+    {
+      "prompt": "Change these sentences to the feminine.",
+      "items": [
+        "הוּא סְטוּדֶנְט חָדָשׁ.",
+        "הַשָּׁכֵן נֶחְמָד.",
+        "הוּא עָיֵף מְאוֹד.",
+        "הוּא גָּבוֹהַּ וְרָזֶה."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "שְׁקֵטָה / הַדִּירָה / מְאוֹד",
+        "חֶדֶר / מְחַפֵּשׂ / אֲנִי / גָּדוֹל",
+        "יָקָר / לֹא / הַמְּחִיר",
+        "נֶחְמָדוֹת / הֵן / מְאוֹד"
+      ]
+    }
+  ],
+  "answers": [
+    "גָּדוֹל — קְטַנָּה — חֲדָשִׁים — יְשָׁנוֹת — נֶחְמָדִים — צְעִירָה",
+    "הַבַּיִת הַגָּדוֹל — הַבַּיִת גָּדוֹל — חֶדֶר שָׁקֵט — הַחֶדֶר שָׁקֵט — הַדִּירָה הַחֲדָשָׁה יְקָרָה",
+    "הִיא סְטוּדֶנְטִית חֲדָשָׁה. — הַשְּׁכֵנָה נֶחְמָדָה. — הִיא עֲיֵפָה מְאוֹד. — הִיא גְּבוֹהָה וְרָזָה.",
+    "הַדִּירָה שְׁקֵטָה מְאוֹד — אֲנִי מְחַפֵּשׂ חֶדֶר גָּדוֹל — הַמְּחִיר לֹא יָקָר — הֵן נֶחְמָדוֹת מְאוֹד"
+  ],
+  "wave": "Pick five things in your room and three people you know, and describe each with one sentence: הַ... + adjective. Check that every adjective agrees in gender."
+}

@@ -1,0 +1,559 @@
+{
+  "title": "Hello, I'm Budi",
+  "title_target": "שָׁלוֹם, אֲנִי בּוּדִי",
+  "goal": "Greet people, introduce yourself, ask how someone is, and build your first Hebrew sentences — which turn out to need no \"is\" and no \"a\".",
+  "bekal": [
+    "say hello and goodbye at the right time of day",
+    "say who you are and what you do",
+    "choose the right \"you\" for a man or a woman"
+  ],
+  "dialogs": [
+    {
+      "title": "שִׂיחָה — בָּאוּנִיבֶרְסִיטָה",
+      "intro": "Budi has just arrived in Tel Aviv. In a university corridor he runs into Noa.",
+      "lines": [
+        {
+          "speaker": "נֹעָה:",
+          "text": "שָׁלוֹם!",
+          "baca": "shalom!",
+          "id": "Hello!",
+          "literal": "peace!"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "שָׁלוֹם. מָה שְׁלוֹמֵךְ?",
+          "baca": "shalom. mah shlomekh?",
+          "id": "Hello. How are you?",
+          "literal": "peace. what peace-your (f)?"
+        },
+        {
+          "speaker": "נֹעָה:",
+          "text": "בְּסֵדֶר, תּוֹדָה. וְאַתָּה?",
+          "baca": "beseder, todah. ve'atah?",
+          "id": "Fine, thanks. And you?",
+          "literal": "in-order, thanks. and-you (m)?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "גַּם בְּסֵדֶר. אֲנִי בּוּדִי.",
+          "baca": "gam beseder. ani budi.",
+          "id": "Fine too. I'm Budi.",
+          "literal": "also in-order. I budi."
+        },
+        {
+          "speaker": "נֹעָה:",
+          "text": "נָעִים מְאֹד. אֲנִי נֹעָה.",
+          "baca": "na'im me'od. ani no'ah.",
+          "id": "Nice to meet you. I'm Noa.",
+          "literal": "pleasant very. I noa."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "אַתְּ סְטוּדֶנְטִית?",
+          "baca": "at studentit?",
+          "id": "Are you a student?",
+          "literal": "you (f) student (f)?"
+        },
+        {
+          "speaker": "נֹעָה:",
+          "text": "כֵּן, אֲנִי סְטוּדֶנְטִית. וְאַתָּה?",
+          "baca": "ken, ani studentit. ve'atah?",
+          "id": "Yes, I'm a student. And you?",
+          "literal": "yes, I student (f). and-you (m)?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "אֲנִי לֹא סְטוּדֶנְט. אֲנִי מוֹרֶה.",
+          "baca": "ani lo student. ani moreh.",
+          "id": "I'm not a student. I'm a teacher.",
+          "literal": "I not student. I teacher."
+        },
+        {
+          "speaker": "נֹעָה:",
+          "text": "אָה, יָפֶה! מוֹרֶה לְמָה?",
+          "baca": "ah, yafeh! moreh lemah?",
+          "id": "Oh, great! A teacher of what?",
+          "literal": "ah, beautiful! teacher for-what?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "מוֹרֶה לְאַנְגְּלִית. אֲבָל עַכְשָׁו אֲנִי תַּלְמִיד.",
+          "baca": "moreh le'anglit. aval akhshav ani talmid.",
+          "id": "An English teacher. But right now I'm a learner.",
+          "literal": "teacher for-english. but now I pupil."
+        },
+        {
+          "speaker": "נֹעָה:",
+          "text": "תַּלְמִיד שֶׁל עִבְרִית?",
+          "baca": "talmid shel ivrit?",
+          "id": "A Hebrew learner?",
+          "literal": "pupil of hebrew?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "כֵּן. תּוֹדָה, נֹעָה. לְהִתְרָאוֹת!",
+          "baca": "ken. todah, no'ah. lehitra'ot!",
+          "id": "Yes. Thanks, Noa. See you!",
+          "literal": "yes. thanks, noa. to-see-each-other!"
+        }
+      ],
+      "notes": [
+        "**שָׁלוֹם** is the first word you'll learn and the one you'll hear most in Israel. It means \"peace\", and it's used for both **hello** and **goodbye** — just like *aloha*. When in doubt, שָׁלוֹם is never wrong.",
+        "⚠️ **מָה שְׁלוֹמְךָ / מָה שְׁלוֹמֵךְ** — \"how are you\" changes according to **the person you're talking to**, not according to you. To a man: *mah shlomkha*. To a woman: *mah shlomekh*. In line 2 Budi is asking Noa, a woman, so he says *shlomekh*; asking David, he would say *mah shlomkha*. Literally it isn't \"how are you\" but **\"what is your peace?\"** — the same root as שָׁלוֹם.",
+        "**בְּסֵדֶר** (*beseder*) literally means \"in order\", and it's an all-purpose answer: fine, OK, sure, no problem. This word will save you hundreds of times.",
+        "**Notice what is NOT in the sentence אֲנִי בּוּדִי.** There is no \"am\". Hebrew just says \"I Budi\". In the present tense, Hebrew simply has no word for am/is/are — so stop looking for one.",
+        "**And something else is missing: \"a\".** אֲנִי מוֹרֶה = \"I teacher\". Hebrew has no equivalent of *a/an* at all.",
+        "⚠️ **לֹא** (*lo*) means both \"no\" **and** \"not\". אֲנִי לֹא סְטוּדֶנְט = \"I'm not a student\". It always comes **right before** the word it negates — no \"do not\", no \"am not\", just לֹא.",
+        "**Jobs have a masculine and a feminine form.** מוֹרֶה (teacher, m) → מוֹרָה (teacher, f); סְטוּדֶנְט → סְטוּדֶנְטִית. The most common patterns: add ־ָה or ־ִית. Calling yourself by the wrong form sounds like getting your own name wrong.",
+        "**נָעִים מְאֹד** (*na'im me'od*, \"very pleasant\") is \"nice to meet you\". It's the same for men and women — learn it as a single chunk.",
+        "⚠️ **The stress is almost always on the LAST syllable.** *sha-LOM*, *to-DAH*, *be-SE-der* (this one's an exception), *le-hit-ra-OT*. English speakers tend to stress earlier; if you say *SHA-lom*, Israelis will still understand, but it sounds like a brand name, not a greeting."
+      ],
+      "grammars": [
+        {
+          "title": "Sentences with no verb: the basic pattern",
+          "body": [
+            "The most basic Hebrew sentence just puts two things side by side: **who** + **what/how they are**. There's nothing linking them."
+          ],
+          "table": {
+            "head": [
+              "Hebrew",
+              "Say it",
+              "Literal",
+              "English"
+            ],
+            "rows": [
+              [
+                "אֲנִי בּוּדִי",
+                "ani budi",
+                "I budi",
+                "I'm Budi"
+              ],
+              [
+                "הוּא מוֹרֶה",
+                "hu moreh",
+                "he teacher",
+                "He's a teacher"
+              ],
+              [
+                "הִיא סְטוּדֶנְטִית",
+                "hi studentit",
+                "she student (f)",
+                "She's a student"
+              ],
+              [
+                "אֲנַחְנוּ תַּלְמִידִים",
+                "anakhnu talmidim",
+                "we pupils",
+                "We're learners"
+              ],
+              [
+                "אֲנִי לֹא מוֹרֶה",
+                "ani lo moreh",
+                "I not teacher",
+                "I'm not a teacher"
+              ]
+            ]
+          },
+          "after": [
+            "Compare the English — *I am Budi*, *she is a student* — and you'll see how much work Hebrew skips. This pattern holds all the way to the last unit."
+          ]
+        },
+        {
+          "title": "Four ways to say \"you\"",
+          "body": [
+            "English gets by with one \"you\"; Hebrew has four, and it's better to set them up in unit 1 than to put it off. You choose by **who you're talking to**."
+          ],
+          "table": {
+            "head": [
+              "To",
+              "Hebrew",
+              "Say it",
+              "Example"
+            ],
+            "rows": [
+              [
+                "one man",
+                "אַתָּה",
+                "atah",
+                "אַתָּה מוֹרֶה? — are you a teacher?"
+              ],
+              [
+                "one woman",
+                "אַתְּ",
+                "at",
+                "אַתְּ מוֹרָה? — are you a teacher?"
+              ],
+              [
+                "a group (with any men)",
+                "אַתֶּם",
+                "atem",
+                "אַתֶּם תַּלְמִידִים? — are you all learners?"
+              ],
+              [
+                "a group (all women)",
+                "אַתֶּן",
+                "aten",
+                "אַתֶּן מוֹרוֹת? — are you all teachers?"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Look at אַתָּה and אַתְּ: **both are spelled את**; only the niqqud tells them apart. Once you read Hebrew without niqqud, you'll have to guess from context — one reason Israelis often say the pronoun in full.",
+            "Modern Hebrew has **no polite \"you\"** (like French *vous*). To a minister, a professor, or a grandfather, Israelis still say אַתָּה. Politeness comes through tone and words like בְּבַקָּשָׁה, not through pronouns."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Greetings around the clock",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hebrew",
+            "Say it",
+            "When",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "בֹּקֶר טוֹב",
+              "boker tov",
+              "morning until about 11:00",
+              "Good morning"
+            ],
+            [
+              "צָהֳרַיִם טוֹבִים",
+              "tsohorayim tovim",
+              "around midday",
+              "Good afternoon"
+            ],
+            [
+              "עֶרֶב טוֹב",
+              "erev tov",
+              "late afternoon and evening",
+              "Good evening"
+            ],
+            [
+              "לַיְלָה טוֹב",
+              "laylah tov",
+              "parting at night",
+              "Good night (parting)"
+            ],
+            [
+              "שָׁלוֹם",
+              "shalom",
+              "anytime, coming & going",
+              "Hello / Goodbye"
+            ],
+            [
+              "לְהִתְרָאוֹת",
+              "lehitra'ot",
+              "parting, will meet again",
+              "See you"
+            ],
+            [
+              "בַּיי",
+              "bai",
+              "casual, among friends",
+              "Bye"
+            ],
+            [
+              "מָה נִשְׁמָע?",
+              "mah nishma?",
+              "casual, very common",
+              "What's up?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **לַיְלָה טוֹב is not a greeting.** It's only used for **parting** at night, like \"sleep well\". To greet someone in the evening, use עֶרֶב טוֹב."
+        },
+        {
+          "type": "kotak",
+          "title": "Answering \"how are you\"",
+          "items": [
+            "**בְּסֵדֶר** *(beseder)* — fine, OK. The safest and most common answer.",
+            "**טוֹב, תּוֹדָה** *(tov, todah)* — good, thanks.",
+            "**מְצֻיָּן** *(metsuyan)* — excellent.",
+            "**כָּכָה כָּכָה** *(kakhah kakhah)* — so-so.",
+            "**וְאַתָּה? / וְאַתְּ?** *(ve'atah? / ve'at?)* — and you? Don't forget to ask back; in Israel, not asking back sounds cold."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Naming jobs: two forms for one word",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Masculine",
+            "Feminine",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "מוֹרֶה",
+              "מוֹרָה",
+              "moreh / morah",
+              "teacher"
+            ],
+            [
+              "תַּלְמִיד",
+              "תַּלְמִידָה",
+              "talmid / talmidah",
+              "pupil, learner"
+            ],
+            [
+              "סְטוּדֶנְט",
+              "סְטוּדֶנְטִית",
+              "student / studentit",
+              "(university) student"
+            ],
+            [
+              "רוֹפֵא",
+              "רוֹפְאָה",
+              "rofe / rof'ah",
+              "doctor"
+            ],
+            [
+              "מְהַנְדֵּס",
+              "מְהַנְדֶּסֶת",
+              "mehandes / mehandeset",
+              "engineer"
+            ],
+            [
+              "עוֹרֵךְ דִּין",
+              "עוֹרֶכֶת דִּין",
+              "orekh din / orekhet din",
+              "lawyer"
+            ],
+            [
+              "מֶלְצַר",
+              "מֶלְצָרִית",
+              "meltsar / meltsarit",
+              "waiter / waitress"
+            ],
+            [
+              "נַהָג",
+              "נַהֶגֶת",
+              "nahag / naheget",
+              "driver"
+            ],
+            [
+              "פְּקִיד",
+              "פְּקִידָה",
+              "pakid / pkidah",
+              "office clerk"
+            ],
+            [
+              "מְתַכְנֵת",
+              "מְתַכְנֶתֶת",
+              "metakhnet / metakhnetet",
+              "programmer"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Three patterns cover almost every case: add **־ָה** (מוֹרֶה → מוֹרָה), add **־ִית** (סְטוּדֶנְט → סְטוּדֶנְטִית), or insert **־ֶ־ֶת** (מְהַנְדֵּס → מְהַנְדֶּסֶת). That third pattern is exactly the verb pattern you'll meet in unit 7 — not a coincidence."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "he": "שָׁלוֹם",
+      "baca": "shalom",
+      "en": "hello; goodbye; peace"
+    },
+    {
+      "he": "בֹּקֶר טוֹב",
+      "baca": "boker tov",
+      "en": "good morning"
+    },
+    {
+      "he": "עֶרֶב טוֹב",
+      "baca": "erev tov",
+      "en": "good evening"
+    },
+    {
+      "he": "לְהִתְרָאוֹת",
+      "baca": "lehitra'ot",
+      "en": "see you"
+    },
+    {
+      "he": "מָה שְׁלוֹמְךָ / מָה שְׁלוֹמֵךְ",
+      "baca": "mah shlomkha / mah shlomekh",
+      "en": "how are you (to m / to f)"
+    },
+    {
+      "he": "מָה נִשְׁמָע?",
+      "baca": "mah nishma?",
+      "en": "what's up? (casual)"
+    },
+    {
+      "he": "בְּסֵדֶר",
+      "baca": "beseder",
+      "en": "fine; OK"
+    },
+    {
+      "he": "טוֹב",
+      "baca": "tov",
+      "en": "good"
+    },
+    {
+      "he": "מְצֻיָּן",
+      "baca": "metsuyan",
+      "en": "excellent"
+    },
+    {
+      "he": "תּוֹדָה",
+      "baca": "todah",
+      "en": "thank you"
+    },
+    {
+      "he": "בְּבַקָּשָׁה",
+      "baca": "bevakashah",
+      "en": "please; here you go; you're welcome"
+    },
+    {
+      "he": "נָעִים מְאֹד",
+      "baca": "na'im me'od",
+      "en": "nice to meet you"
+    },
+    {
+      "he": "כֵּן",
+      "baca": "ken",
+      "en": "yes"
+    },
+    {
+      "he": "לֹא",
+      "baca": "lo",
+      "en": "no; not"
+    },
+    {
+      "he": "אֲנִי",
+      "baca": "ani",
+      "en": "I"
+    },
+    {
+      "he": "אַתָּה / אַתְּ",
+      "baca": "atah / at",
+      "en": "you (m / f)"
+    },
+    {
+      "he": "הוּא / הִיא",
+      "baca": "hu / hi",
+      "en": "he / she"
+    },
+    {
+      "he": "אֲנַחְנוּ",
+      "baca": "anakhnu",
+      "en": "we"
+    },
+    {
+      "he": "מוֹרֶה / מוֹרָה",
+      "baca": "moreh / morah",
+      "en": "teacher (m / f)"
+    },
+    {
+      "he": "תַּלְמִיד / תַּלְמִידָה",
+      "baca": "talmid / talmidah",
+      "en": "pupil, learner (m / f)"
+    },
+    {
+      "he": "סְטוּדֶנְט / סְטוּדֶנְטִית",
+      "baca": "student / studentit",
+      "en": "university student (m / f)"
+    },
+    {
+      "he": "עִבְרִית",
+      "baca": "ivrit",
+      "en": "Hebrew (language)"
+    },
+    {
+      "he": "אַנְגְּלִית",
+      "baca": "anglit",
+      "en": "English (language)"
+    },
+    {
+      "he": "עַכְשָׁו",
+      "baca": "akhshav",
+      "en": "now"
+    },
+    {
+      "he": "אֲבָל",
+      "baca": "aval",
+      "en": "but"
+    },
+    {
+      "he": "גַּם",
+      "baca": "gam",
+      "en": "also, too"
+    },
+    {
+      "he": "שֶׁל",
+      "baca": "shel",
+      "en": "of, belonging to"
+    },
+    {
+      "he": "מָה",
+      "baca": "mah",
+      "en": "what"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with אַתָּה or אַתְּ.",
+      "items": [
+        "נֹעָה, ____ מוֹרָה?",
+        "בּוּדִי, ____ תַּלְמִיד?",
+        "דָּוִד, ____ רוֹפֵא?",
+        "רוּת, ____ סְטוּדֶנְטִית?",
+        "מִיכָאֵל, ____ נַהָג?"
+      ]
+    },
+    {
+      "prompt": "Translate into Hebrew.",
+      "items": [
+        "I'm a teacher.",
+        "She's a student.",
+        "I'm not a doctor.",
+        "Good morning!",
+        "Thanks, see you."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "מוֹרֶה / אֲנִי / לֹא",
+        "סְטוּדֶנְטִית / הִיא / כֵּן",
+        "בּוּדִי / אֲנִי / שָׁלוֹם",
+        "תַּלְמִידִים / אֲנַחְנוּ / עַכְשָׁו"
+      ]
+    },
+    {
+      "prompt": "Write the feminine form of each job.",
+      "items": [
+        "מוֹרֶה ____",
+        "תַּלְמִיד ____",
+        "רוֹפֵא ____",
+        "מְהַנְדֵּס ____",
+        "מֶלְצַר ____"
+      ]
+    }
+  ],
+  "answers": [
+    "אַתְּ — אַתָּה — אַתָּה — אַתְּ — אַתָּה",
+    "אֲנִי מוֹרֶה — הִיא סְטוּדֶנְטִית — אֲנִי לֹא רוֹפֵא — בֹּקֶר טוֹב! — תּוֹדָה, לְהִתְרָאוֹת",
+    "אֲנִי לֹא מוֹרֶה — כֵּן, הִיא סְטוּדֶנְטִית — שָׁלוֹם, אֲנִי בּוּדִי — עַכְשָׁו אֲנַחְנוּ תַּלְמִידִים",
+    "מוֹרָה — תַּלְמִידָה — רוֹפְאָה — מְהַנְדֶּסֶת — מֶלְצָרִית"
+  ],
+  "wave": "Before bed, say five sentences about yourself out loud using the pattern \"אֲנִי ...\" — your name, your job, and three things you are not (אֲנִי לֹא ...). Watch the stress on the last syllable."
+}

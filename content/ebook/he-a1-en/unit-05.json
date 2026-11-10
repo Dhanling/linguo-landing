@@ -1,0 +1,619 @@
+{
+  "title": "Numbers, age, phone numbers",
+  "title_target": "מִסְפָּרִים",
+  "goal": "Count from zero to a hundred, give your age and phone number — and face the one number trap that catches everyone.",
+  "bekal": [
+    "count 0–100 and use numbers for prices",
+    "say and ask someone's age",
+    "read out a phone number correctly"
+  ],
+  "dialogs": [
+    {
+      "title": "שִׂיחָה — טֹפֶס בַּמִּשְׂרָד",
+      "intro": "Budi is registering at the course office. The clerk, Rina, is filling in a form.",
+      "lines": [
+        {
+          "speaker": "רִינָה:",
+          "text": "שֵׁם מִשְׁפָּחָה, בְּבַקָּשָׁה.",
+          "baca": "shem mishpakhah, bevakashah.",
+          "id": "Last name, please.",
+          "literal": "name family, with-request."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "סַנְטוֹסוֹ. בּוּדִי סַנְטוֹסוֹ.",
+          "baca": "santoso. budi santoso.",
+          "id": "Santoso. Budi Santoso.",
+          "literal": "santoso. budi santoso."
+        },
+        {
+          "speaker": "רִינָה:",
+          "text": "בֶּן כַּמָּה אַתָּה?",
+          "baca": "ben kamah atah?",
+          "id": "How old are you?",
+          "literal": "son how-many you?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "אֲנִי בֶּן עֶשְׂרִים וּשְׁמוֹנֶה.",
+          "baca": "ani ben esrim ushmoneh.",
+          "id": "I'm twenty-eight.",
+          "literal": "I son twenty and-eight."
+        },
+        {
+          "speaker": "רִינָה:",
+          "text": "מַה מִּסְפַּר הַטֶּלֶפוֹן שֶׁלְּךָ?",
+          "baca": "mah mispar hatelefon shelkha?",
+          "id": "What's your phone number?",
+          "literal": "what the-number the-phone of-you?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "אֶפֶס חָמֵשׁ שָׁלוֹשׁ, שְׁתַּיִם שֶׁבַע אַרְבַּע...",
+          "baca": "efes khamesh shalosh, shtayim sheva arba...",
+          "id": "Zero five three, two seven four...",
+          "literal": "zero five three, two seven four..."
+        },
+        {
+          "speaker": "רִינָה:",
+          "text": "לְאַט, בְּבַקָּשָׁה. עוֹד פַּעַם?",
+          "baca": "le'at, bevakashah. od pa'am?",
+          "id": "Slowly, please. Once more?",
+          "literal": "slowly, with-request. more time?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "אֶפֶס־חָמֵשׁ־שָׁלוֹשׁ... שְׁתַּיִם־שֶׁבַע־אַרְבַּע־אַחַת.",
+          "baca": "efes-khamesh-shalosh... shtayim-sheva-arba-akhat.",
+          "id": "Zero-five-three... two-seven-four-one.",
+          "literal": "zero-five-three... two-seven-four-one."
+        },
+        {
+          "speaker": "רִינָה:",
+          "text": "תּוֹדָה. כַּמָּה שִׁעוּרִים אַתָּה רוֹצֶה?",
+          "baca": "todah. kamah shi'urim atah rotseh?",
+          "id": "Thank you. How many lessons do you want?",
+          "literal": "thanks. how-many lessons you want?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "שְׁנֵים עָשָׂר שִׁעוּרִים.",
+          "baca": "shneim asar shi'urim.",
+          "id": "Twelve lessons.",
+          "literal": "two ten lessons."
+        },
+        {
+          "speaker": "רִינָה:",
+          "text": "זֶה תִּשְׁעִים שֶׁקֶל לְשִׁעוּר.",
+          "baca": "zeh tish'im shekel leshi'ur.",
+          "id": "That's ninety shekels per lesson.",
+          "literal": "this ninety shekel for-lesson."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "בְּסֵדֶר גָּמוּר. תּוֹדָה רַבָּה!",
+          "baca": "beseder gamur. todah rabah!",
+          "id": "Perfect. Thanks a lot!",
+          "literal": "in-order complete. thanks much!"
+        }
+      ],
+      "notes": [
+        "⚠️ **This is the number trap that catches everyone.** Hebrew numbers come in two sets — masculine and feminine — and the one **ending in ־ָה is the MASCULINE form**: שְׁלוֹשָׁה (three, m) vs שָׁלוֹשׁ (three, f). The reflex you built in unit 3 (\"־ָה means feminine\") leads you astray here. This is the only place in all of Hebrew where the pattern is reversed, which is why it gets its own warning.",
+        "**The good news: for plain counting, use the FEMININE form.** Counting 1-2-3, reading a phone number, a house number, a bus number — all of these use אַחַת, שְׁתַּיִם, שָׁלוֹשׁ. That's what Budi uses in line 6.",
+        "**The masculine form is used when you're counting masculine things**: שְׁלוֹשָׁה סְפָרִים (three books). For feminine things, the feminine form: שָׁלוֹשׁ מַחְבָּרוֹת (three notebooks).",
+        "⚠️ **\"Two\" changes shape before a noun.** On its own: שְׁנַיִם / שְׁתַּיִם. Before a noun: **שְׁנֵי** (m) / **שְׁתֵּי** (f). שְׁנֵי סְפָרִים, שְׁתֵּי אֲחָיוֹת. No other number does this — only \"two\".",
+        "**וּ־ replaces וְ־ before certain letters.** עֶשְׂרִים **וּ**שְׁמוֹנֶה, not וְשְׁמוֹנֶה. The rule: before ב, ו, מ, פ and before a shva, וְ becomes וּ. You don't need to memorize it — just say what feels smooth, because the rule grew out of ease of pronunciation.",
+        "**בְּסֵדֶר גָּמוּר** (*beseder gamur*) = \"all good, perfect\". One of the most common expressions in Israel; much warmer than בְּסֵדֶר on its own.",
+        "**עוֹד פַּעַם** (*od pa'am*) = \"once more\". A must-have sentence for any learner: use it shamelessly. Equivalent but politer: **אֶפְשָׁר עוֹד פַּעַם, בְּבַקָּשָׁה?**",
+        "**לְאַט** (*le'at*) = \"slowly\". Doubled, לְאַט לְאַט means \"take it slow, little by little\"."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers 0–10 in two sets",
+          "body": [
+            "The left columns are for counting **feminine** things and for plain counting; the right columns are for **masculine** things."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Feminine form",
+              "Say it",
+              "Masculine form",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "0",
+                "אֶפֶס",
+                "efes",
+                "אֶפֶס",
+                "efes"
+              ],
+              [
+                "1",
+                "אַחַת",
+                "akhat",
+                "אֶחָד",
+                "ekhad"
+              ],
+              [
+                "2",
+                "שְׁתַּיִם",
+                "shtayim",
+                "שְׁנַיִם",
+                "shnayim"
+              ],
+              [
+                "3",
+                "שָׁלוֹשׁ",
+                "shalosh",
+                "שְׁלוֹשָׁה",
+                "shloshah"
+              ],
+              [
+                "4",
+                "אַרְבַּע",
+                "arba",
+                "אַרְבָּעָה",
+                "arba'ah"
+              ],
+              [
+                "5",
+                "חָמֵשׁ",
+                "khamesh",
+                "חֲמִשָּׁה",
+                "khamishah"
+              ],
+              [
+                "6",
+                "שֵׁשׁ",
+                "shesh",
+                "שִׁשָּׁה",
+                "shishah"
+              ],
+              [
+                "7",
+                "שֶׁבַע",
+                "sheva",
+                "שִׁבְעָה",
+                "shiv'ah"
+              ],
+              [
+                "8",
+                "שְׁמוֹנֶה",
+                "shmoneh",
+                "שְׁמוֹנָה",
+                "shmonah"
+              ],
+              [
+                "9",
+                "תֵּשַׁע",
+                "tesha",
+                "תִּשְׁעָה",
+                "tish'ah"
+              ],
+              [
+                "10",
+                "עֶשֶׂר",
+                "eser",
+                "עֲשָׂרָה",
+                "asarah"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Note **1**: it comes **after** the noun, unlike the other numbers. סֵפֶר אֶחָד (one book), מַחְבֶּרֶת אַחַת (one notebook). All other numbers go before: שְׁלוֹשָׁה סְפָרִים."
+          ]
+        },
+        {
+          "title": "Tens and building numbers",
+          "body": [
+            "The tens **don't change** for gender — one form for everything. The hardest part is behind you."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Hebrew",
+              "Say it",
+              "Number",
+              "Hebrew",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "11",
+                "אַחַת עֶשְׂרֵה",
+                "akhat esreh",
+                "20",
+                "עֶשְׂרִים",
+                "esrim"
+              ],
+              [
+                "12",
+                "שְׁתֵּים עֶשְׂרֵה",
+                "shteim esreh",
+                "30",
+                "שְׁלוֹשִׁים",
+                "shloshim"
+              ],
+              [
+                "13",
+                "שְׁלוֹשׁ עֶשְׂרֵה",
+                "shlosh esreh",
+                "40",
+                "אַרְבָּעִים",
+                "arba'im"
+              ],
+              [
+                "15",
+                "חֲמֵשׁ עֶשְׂרֵה",
+                "khamesh esreh",
+                "50",
+                "חֲמִשִּׁים",
+                "khamishim"
+              ],
+              [
+                "17",
+                "שְׁבַע עֶשְׂרֵה",
+                "shva esreh",
+                "60",
+                "שִׁשִּׁים",
+                "shishim"
+              ],
+              [
+                "19",
+                "תְּשַׁע עֶשְׂרֵה",
+                "tsha esreh",
+                "70",
+                "שִׁבְעִים",
+                "shiv'im"
+              ],
+              [
+                "21",
+                "עֶשְׂרִים וְאַחַת",
+                "esrim ve'akhat",
+                "80",
+                "שְׁמוֹנִים",
+                "shmonim"
+              ],
+              [
+                "45",
+                "אַרְבָּעִים וְחָמֵשׁ",
+                "arba'im vekhamesh",
+                "90",
+                "תִּשְׁעִים",
+                "tish'im"
+              ],
+              [
+                "99",
+                "תִּשְׁעִים וָתֵשַׁע",
+                "tish'im vatesha",
+                "100",
+                "מֵאָה",
+                "me'ah"
+              ]
+            ]
+          },
+          "after": [
+            "The order is just like English: tens first, then \"and\", then the units. עֶשְׂרִים וְחָמֵשׁ = twenty and five = 25. Nothing to flip around.",
+            "Above a hundred: מָאתַיִם (200), שְׁלוֹשׁ מֵאוֹת (300), אֶלֶף (1,000), עֶשֶׂרֶת אֲלָפִים (10,000)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Saying your age",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hebrew",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "בֶּן כַּמָּה אַתָּה?",
+              "ben kamah atah?",
+              "How old are you? (to m)"
+            ],
+            [
+              "בַּת כַּמָּה אַתְּ?",
+              "bat kamah at?",
+              "How old are you? (to f)"
+            ],
+            [
+              "אֲנִי בֶּן שְׁלוֹשִׁים",
+              "ani ben shloshim",
+              "I (m) am thirty"
+            ],
+            [
+              "אֲנִי בַּת עֶשְׂרִים וְשָׁלוֹשׁ",
+              "ani bat esrim veshalosh",
+              "I (f) am twenty-three"
+            ],
+            [
+              "הוּא בֶּן חָמֵשׁ",
+              "hu ben khamesh",
+              "He's five"
+            ],
+            [
+              "הִיא בַּת שְׁמוֹנִים",
+              "hi bat shmonim",
+              "She's eighty"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Age uses the **feminine form** of the number (שָׁלוֹשׁ, not שְׁלוֹשָׁה) even for a man, because what's really being counted is שָׁנָה (year), which is feminine. Once you get this, you won't mix it up again."
+        },
+        {
+          "type": "p",
+          "text": "The word \"years\" is usually **left out**: אֲנִי בֶּן שְׁלוֹשִׁים is complete. Adding שָׁנִים isn't wrong, just unnecessary."
+        }
+      ]
+    },
+    {
+      "title": "Everyday number words",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Expression",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "כַּמָּה?",
+              "kamah?",
+              "how much? how many?"
+            ],
+            [
+              "מִסְפָּר",
+              "mispar",
+              "number"
+            ],
+            [
+              "מִסְפַּר הַטֶּלֶפוֹן",
+              "mispar hatelefon",
+              "phone number"
+            ],
+            [
+              "חֲדַר מִסְפָּר שָׁלוֹשׁ",
+              "khadar mispar shalosh",
+              "room number three"
+            ],
+            [
+              "אוֹטוֹבּוּס מִסְפָּר חָמֵשׁ",
+              "otobus mispar khamesh",
+              "bus number five"
+            ],
+            [
+              "חֲצִי",
+              "khatsi",
+              "half"
+            ],
+            [
+              "רֶבַע",
+              "reva",
+              "quarter"
+            ],
+            [
+              "הַרְבֵּה",
+              "harbeh",
+              "a lot, many"
+            ],
+            [
+              "מְעַט / קְצָת",
+              "me'at / ktsat",
+              "a little, a few"
+            ],
+            [
+              "רִאשׁוֹן / רִאשׁוֹנָה",
+              "rishon / rishonah",
+              "first"
+            ],
+            [
+              "שֵׁנִי / שְׁנִיָּה",
+              "sheni / shniyah",
+              "second"
+            ],
+            [
+              "אַחֲרוֹן / אַחֲרוֹנָה",
+              "akharon / akharonah",
+              "last"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Reading Israeli phone numbers",
+          "items": [
+            "Israeli numbers always start with **אֶפֶס** (zero): 050, 052, 054 for mobiles; 02 Jerusalem, 03 Tel Aviv, 04 Haifa, 08 the south, 09 the Sharon.",
+            "The digits are read **one by one in the feminine form**, not grouped into tens. 054-2718 is read *efes khamesh arba — shtayim sheva akhat shmoneh*.",
+            "If the other person goes too fast: **לְאַט, בְּבַקָּשָׁה** or **עוֹד פַּעַם?** — two sentences that will save you on the phone."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "he": "מִסְפָּר",
+      "baca": "mispar",
+      "en": "number"
+    },
+    {
+      "he": "אֶפֶס",
+      "baca": "efes",
+      "en": "zero"
+    },
+    {
+      "he": "אַחַת / אֶחָד",
+      "baca": "akhat / ekhad",
+      "en": "one (f / m)"
+    },
+    {
+      "he": "שְׁתַּיִם / שְׁנַיִם",
+      "baca": "shtayim / shnayim",
+      "en": "two (f / m)"
+    },
+    {
+      "he": "שָׁלוֹשׁ / שְׁלוֹשָׁה",
+      "baca": "shalosh / shloshah",
+      "en": "three (f / m)"
+    },
+    {
+      "he": "אַרְבַּע / אַרְבָּעָה",
+      "baca": "arba / arba'ah",
+      "en": "four (f / m)"
+    },
+    {
+      "he": "חָמֵשׁ / חֲמִשָּׁה",
+      "baca": "khamesh / khamishah",
+      "en": "five (f / m)"
+    },
+    {
+      "he": "שֵׁשׁ / שִׁשָּׁה",
+      "baca": "shesh / shishah",
+      "en": "six (f / m)"
+    },
+    {
+      "he": "שֶׁבַע / שִׁבְעָה",
+      "baca": "sheva / shiv'ah",
+      "en": "seven (f / m)"
+    },
+    {
+      "he": "שְׁמוֹנֶה / שְׁמוֹנָה",
+      "baca": "shmoneh / shmonah",
+      "en": "eight (f / m)"
+    },
+    {
+      "he": "תֵּשַׁע / תִּשְׁעָה",
+      "baca": "tesha / tish'ah",
+      "en": "nine (f / m)"
+    },
+    {
+      "he": "עֶשֶׂר / עֲשָׂרָה",
+      "baca": "eser / asarah",
+      "en": "ten (f / m)"
+    },
+    {
+      "he": "עֶשְׂרִים",
+      "baca": "esrim",
+      "en": "twenty"
+    },
+    {
+      "he": "חֲמִשִּׁים",
+      "baca": "khamishim",
+      "en": "fifty"
+    },
+    {
+      "he": "מֵאָה",
+      "baca": "me'ah",
+      "en": "a hundred"
+    },
+    {
+      "he": "אֶלֶף",
+      "baca": "elef",
+      "en": "a thousand"
+    },
+    {
+      "he": "כַּמָּה",
+      "baca": "kamah",
+      "en": "how much, how many"
+    },
+    {
+      "he": "שִׁעוּר",
+      "baca": "shi'ur",
+      "en": "lesson"
+    },
+    {
+      "he": "טֹפֶס",
+      "baca": "tofes",
+      "en": "form (document)"
+    },
+    {
+      "he": "לְאַט",
+      "baca": "le'at",
+      "en": "slowly"
+    },
+    {
+      "he": "עוֹד פַּעַם",
+      "baca": "od pa'am",
+      "en": "once more"
+    },
+    {
+      "he": "תּוֹדָה רַבָּה",
+      "baca": "todah rabah",
+      "en": "thanks a lot"
+    },
+    {
+      "he": "בְּסֵדֶר גָּמוּר",
+      "baca": "beseder gamur",
+      "en": "all good, perfect"
+    },
+    {
+      "he": "הַרְבֵּה",
+      "baca": "harbeh",
+      "en": "a lot, many"
+    },
+    {
+      "he": "רוֹצֶה / רוֹצָה",
+      "baca": "rotseh / rotsah",
+      "en": "want (m / f)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these numbers in Hebrew letters (feminine form, for counting).",
+      "items": [
+        "7 ____",
+        "12 ____",
+        "25 ____",
+        "40 ____",
+        "63 ____",
+        "100 ____"
+      ]
+    },
+    {
+      "prompt": "Choose the right form of the number for the noun.",
+      "items": [
+        "____ סְפָרִים (three)",
+        "____ מַחְבָּרוֹת (three)",
+        "____ יְלָדִים (five)",
+        "____ אֲחָיוֹת (two)",
+        "____ בָּתִּים (two)"
+      ]
+    },
+    {
+      "prompt": "Translate into Hebrew.",
+      "items": [
+        "I (m) am thirty years old.",
+        "She is nineteen years old.",
+        "What's your phone number? (to a woman)",
+        "Once more, slowly.",
+        "That's eighty shekels."
+      ]
+    },
+    {
+      "prompt": "Read these phone numbers out loud, then write how they're pronounced.",
+      "items": [
+        "052-3149",
+        "03-6720",
+        "054-8815"
+      ]
+    }
+  ],
+  "answers": [
+    "שֶׁבַע — שְׁתֵּים עֶשְׂרֵה — עֶשְׂרִים וְחָמֵשׁ — אַרְבָּעִים — שִׁשִּׁים וְשָׁלוֹשׁ — מֵאָה",
+    "שְׁלוֹשָׁה — שָׁלוֹשׁ — חֲמִשָּׁה — שְׁתֵּי — שְׁנֵי",
+    "אֲנִי בֶּן שְׁלוֹשִׁים. — הִיא בַּת תְּשַׁע עֶשְׂרֵה. — מַה מִּסְפַּר הַטֶּלֶפוֹן שֶׁלָּךְ? — עוֹד פַּעַם, לְאַט. — זֶה שְׁמוֹנִים שֶׁקֶל.",
+    "efes khamesh shtayim, shalosh akhat arba tesha — efes shalosh, shesh sheva shtayim efes — efes khamesh arba, shmoneh shmoneh akhat khamesh"
+  ],
+  "wave": "Count down from twenty to zero in Hebrew before bed, three nights in a row. Then read out your own phone number, digit by digit."
+}

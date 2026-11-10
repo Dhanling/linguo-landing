@@ -1,0 +1,608 @@
+{
+  "title": "At the café",
+  "title_target": "בְּבֵית קָפֶה",
+  "goal": "Order food and drinks, ask politely, and pay — using one sentence pattern you'll repeat hundreds of times in Israel.",
+  "bekal": [
+    "order drinks and food politely",
+    "say what you want and don't want",
+    "ask for the check and pay"
+  ],
+  "dialogs": [
+    {
+      "title": "שִׂיחָה — בּוֹקֶר בְּבֵית קָפֶה",
+      "intro": "Budi walks into a small café in Tel Aviv. The waiter, Ilan, greets him.",
+      "lines": [
+        {
+          "speaker": "אִילָן:",
+          "text": "בֹּקֶר טוֹב! מָה אַתָּה רוֹצֶה?",
+          "baca": "boker tov! mah atah rotseh?",
+          "id": "Good morning! What would you like?",
+          "literal": "morning good! what you want?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "אֲנִי רוֹצֶה קָפֶה הָפוּךְ, בְּבַקָּשָׁה.",
+          "baca": "ani rotseh kafeh hafukh, bevakashah.",
+          "id": "I'd like a latte, please.",
+          "literal": "I want coffee upside-down, with-request."
+        },
+        {
+          "speaker": "אִילָן:",
+          "text": "גָּדוֹל אוֹ קָטָן?",
+          "baca": "gadol o katan?",
+          "id": "Large or small?",
+          "literal": "big or small?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "גָּדוֹל. וְגַם מַשֶּׁהוּ לֶאֱכֹל.",
+          "baca": "gadol. vegam mashehu le'ekhol.",
+          "id": "Large. And something to eat too.",
+          "literal": "big. and-also something to-eat."
+        },
+        {
+          "speaker": "אִילָן:",
+          "text": "יֵשׁ לָנוּ סַלָּט, חָבִיתָה, וְכָרִיךְ גְּבִינָה.",
+          "baca": "yesh lanu salat, khavitah, vekharikh gvinah.",
+          "id": "We have salad, khavitah, and a cheese sandwich.",
+          "literal": "there-is to-us salad, khavitah, and-sandwich cheese."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "מָה זֶה חָבִיתָה?",
+          "baca": "mah zeh khavitah?",
+          "id": "What's khavitah?",
+          "literal": "what this khavitah?"
+        },
+        {
+          "speaker": "אִילָן:",
+          "text": "בֵּיצִים. אוֹמְלֶט בְּעִבְרִית.",
+          "baca": "beitsim. omlet be'ivrit.",
+          "id": "Eggs. It's Hebrew for omelet.",
+          "literal": "eggs. omelet in-hebrew."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "אָז חָבִיתָה, בְּלִי גְּבִינָה בְּבַקָּשָׁה.",
+          "baca": "az khavitah, bli gvinah bevakashah.",
+          "id": "An omelet, then — no cheese, please.",
+          "literal": "so khavitah, without cheese with-request."
+        },
+        {
+          "speaker": "אִילָן:",
+          "text": "אֵין בְּעָיָה. עוֹד מַשֶּׁהוּ?",
+          "baca": "ein be'ayah. od mashehu?",
+          "id": "No problem. Anything else?",
+          "literal": "there-isn't problem. more something?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "לֹא, תּוֹדָה. כַּמָּה זֶה?",
+          "baca": "lo, todah. kamah zeh?",
+          "id": "No, thanks. How much is it altogether?",
+          "literal": "no, thanks. how-much this?"
+        },
+        {
+          "speaker": "אִילָן:",
+          "text": "אַרְבָּעִים וּשְׁתַּיִם שֶׁקֶל.",
+          "baca": "arba'im ushtayim shekel.",
+          "id": "Forty-two shekels.",
+          "literal": "forty and-two shekel."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "אֶפְשָׁר לְשַׁלֵּם בְּאַשְׁרַאי?",
+          "baca": "efshar leshalem be'ashrai?",
+          "id": "Can I pay by card?",
+          "literal": "possible to-pay in-credit?"
+        }
+      ],
+      "notes": [
+        "**אֲנִי רוֹצֶה ... בְּבַקָּשָׁה** (\"I want ..., please\") is the standard way to order, and it's polite as it stands. Hebrew has no softened \"could I possibly have\" — adding בְּבַקָּשָׁה is enough. Even more casual: **אֶפְשָׁר קָפֶה?** (\"possible coffee?\").",
+        "⚠️ **קָפֶה הָפוּךְ** literally means \"upside-down coffee\" — that's the Israeli name for a milky coffee (*cappuccino*/*latte*). The name comes from how it's made: milk first, coffee after. If you just order קָפֶה, you'll usually get strong black Turkish-style coffee.",
+        "**בְּלִי** (*bli*, without) and **עִם** (*im*, with) are the two words you'll need most when ordering: בְּלִי סֻכָּר (no sugar), עִם חָלָב (with milk). Both stand alone; they don't attach.",
+        "**אֵין בְּעָיָה** (*ein be'ayah*, \"no problem\") — the Israeli all-purpose answer, like \"sure\" or \"OK\". You'll hear it many times a day.",
+        "⚠️ **אֵין is the opposite of יֵשׁ.** יֵשׁ = there is; אֵין = there isn't. Hebrew does **not** use לֹא to deny that something exists. יֵשׁ לָנוּ סַלָּט (we have salad) → אֵין לָנוּ סַלָּט (we don't have salad). Saying לֹא יֵשׁ instantly marks you as a beginner.",
+        "**מַשֶּׁהוּ** (*mashehu*) = \"something\"; **כְּלוּם** (*klum*) = \"nothing\". Neither ever changes form.",
+        "**אָז** (*az*) = \"so, then\". A linking word that makes you sound much more natural than just blurting out your order.",
+        "**לְשַׁלֵּם** (*leshalem*, to pay) is the infinitive. After אֶפְשָׁר, רוֹצֶה, צָרִיךְ, and אוֹהֵב, a verb always takes the **infinitive** — just like English \"want to pay\", \"need to go\"."
+      ],
+      "grammars": [
+        {
+          "title": "The infinitive, and when to use it",
+          "body": [
+            "The infinitive (מָקוֹר, *makor*) almost always starts with לְ, לִ, or לָ — the Hebrew \"to\". It comes right after the following words, with no change of form."
+          ],
+          "table": {
+            "head": [
+              "Lead word",
+              "Meaning",
+              "Example",
+              "Translation"
+            ],
+            "rows": [
+              [
+                "רוֹצֶה / רוֹצָה",
+                "want",
+                "אֲנִי רוֹצֶה לֶאֱכֹל",
+                "I want to eat"
+              ],
+              [
+                "אֶפְשָׁר",
+                "it's possible, may",
+                "אֶפְשָׁר לְשַׁלֵּם?",
+                "Can I pay?"
+              ],
+              [
+                "צָרִיךְ / צְרִיכָה",
+                "must, need",
+                "אֲנִי צָרִיךְ לָלֶכֶת",
+                "I have to go"
+              ],
+              [
+                "יָכוֹל / יְכוֹלָה",
+                "can, be able",
+                "אֲנִי לֹא יָכוֹל לָבוֹא",
+                "I can't come"
+              ],
+              [
+                "אוֹהֵב / אוֹהֶבֶת",
+                "like",
+                "אֲנִי אוֹהֵב לִקְרֹא",
+                "I like to read"
+              ],
+              [
+                "אָסוּר",
+                "forbidden",
+                "אָסוּר לְעַשֵּׁן",
+                "No smoking"
+              ],
+              [
+                "מֻתָּר",
+                "allowed",
+                "מֻתָּר לְצַלֵּם",
+                "Photography allowed"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Note that **צָרִיךְ and יָכוֹל change form** for gender (they're adjectives), while **אֶפְשָׁר, אָסוּר, and מֻתָּר never change**. Those last three are the easiest to use — reach for them when in doubt."
+          ]
+        },
+        {
+          "title": "יֵשׁ and אֵין: there is and there isn't",
+          "body": [
+            "These two words cover all of \"there is\", \"have\", \"available\", and their negatives. Neither **ever changes form**."
+          ],
+          "table": {
+            "head": [
+              "Hebrew",
+              "Say it",
+              "Meaning",
+              "Note"
+            ],
+            "rows": [
+              [
+                "יֵשׁ קָפֶה",
+                "yesh kafeh",
+                "there's coffee",
+                "states existence"
+              ],
+              [
+                "אֵין קָפֶה",
+                "ein kafeh",
+                "there's no coffee",
+                "the negative"
+              ],
+              [
+                "יֵשׁ לִי כֶּסֶף",
+                "yesh li kesef",
+                "I have money",
+                "lit.: there is to me money"
+              ],
+              [
+                "אֵין לִי כֶּסֶף",
+                "ein li kesef",
+                "I don't have money",
+                ""
+              ],
+              [
+                "יֵשׁ לְךָ זְמַן?",
+                "yesh lekha zman?",
+                "do you have time?",
+                "to a man"
+              ],
+              [
+                "אֵין בְּעָיָה",
+                "ein be'ayah",
+                "no problem",
+                "set phrase"
+              ],
+              [
+                "אֵין דָּבָר",
+                "ein davar",
+                "never mind, that's OK",
+                "reply to an apology"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ If the thing is **definite**, אֵין requires אֶת: אֵין לִי אֶת הַסֵּפֶר (I don't have the book). If indefinite, no אֶת."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Food and drink",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hebrew",
+            "Say it",
+            "Meaning",
+            "Hebrew",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "מַיִם",
+              "mayim",
+              "water",
+              "לֶחֶם",
+              "lekhem",
+              "bread"
+            ],
+            [
+              "קָפֶה",
+              "kafeh",
+              "coffee",
+              "חֶמְאָה",
+              "khem'ah",
+              "butter"
+            ],
+            [
+              "תֵּה",
+              "teh",
+              "tea",
+              "גְּבִינָה",
+              "gvinah",
+              "cheese"
+            ],
+            [
+              "חָלָב",
+              "khalav",
+              "milk",
+              "בֵּיצָה",
+              "beitsah",
+              "egg"
+            ],
+            [
+              "מִיץ",
+              "mits",
+              "juice",
+              "בָּשָׂר",
+              "basar",
+              "meat"
+            ],
+            [
+              "בִּירָה",
+              "birah",
+              "beer",
+              "עוֹף",
+              "of",
+              "chicken"
+            ],
+            [
+              "יַיִן",
+              "yayin",
+              "wine",
+              "דָּג",
+              "dag",
+              "fish"
+            ],
+            [
+              "סֻכָּר",
+              "sukar",
+              "sugar",
+              "אֹרֶז",
+              "orez",
+              "rice"
+            ],
+            [
+              "מֶלַח",
+              "melakh",
+              "salt",
+              "יָרָק",
+              "yarak",
+              "vegetable"
+            ],
+            [
+              "סַלָּט",
+              "salat",
+              "salad",
+              "פְּרִי",
+              "pri",
+              "fruit"
+            ],
+            [
+              "מָרָק",
+              "marak",
+              "soup",
+              "עוּגָה",
+              "ugah",
+              "cake"
+            ],
+            [
+              "חוּמּוּס",
+              "khumus",
+              "hummus",
+              "גְּלִידָה",
+              "glidah",
+              "ice cream"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **מַיִם** (water) is always plural — it has no singular. So its adjectives are plural too: מַיִם קָרִים (cold water). The same goes for שָׁמַיִם (sky) and חַיִּים (life)."
+        },
+        {
+          "type": "p",
+          "text": "Israeli food you'll find on any menu: **פָלָאפֶל** *(falafel)*, **שָׁוַארְמָה** *(shawarma)*, **סַבִּיךְ** *(sabikh — pita stuffed with eggplant and egg)*, **שַׁקְשׁוּקָה** *(shakshukah — eggs cooked in tomato sauce)*, and **בּוֹרֶקַס** *(borekas — savory pastries)*."
+        }
+      ]
+    },
+    {
+      "title": "Sentences you need at the table",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hebrew",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "אֶפְשָׁר תַּפְרִיט?",
+              "efshar tafrit?",
+              "Could I have the menu?"
+            ],
+            [
+              "מָה יֵשׁ לָכֶם?",
+              "mah yesh lakhem?",
+              "What do you have?"
+            ],
+            [
+              "מָה אַתָּה מַמְלִיץ?",
+              "mah atah mamlits?",
+              "What do you recommend?"
+            ],
+            [
+              "אֲנִי צִמְחוֹנִי / צִמְחוֹנִית",
+              "ani tsimkhoni / tsimkhonit",
+              "I'm vegetarian (m / f)"
+            ],
+            [
+              "זֶה כָּשֵׁר?",
+              "zeh kasher?",
+              "Is this kosher?"
+            ],
+            [
+              "בְּלִי סֻכָּר, בְּבַקָּשָׁה",
+              "bli sukar, bevakashah",
+              "No sugar, please"
+            ],
+            [
+              "עוֹד מַיִם, בְּבַקָּשָׁה",
+              "od mayim, bevakashah",
+              "More water, please"
+            ],
+            [
+              "חֶשְׁבּוֹן, בְּבַקָּשָׁה",
+              "kheshbon, bevakashah",
+              "The check, please"
+            ],
+            [
+              "אֶפְשָׁר לְשַׁלֵּם בְּאַשְׁרַאי?",
+              "efshar leshalem be'ashrai?",
+              "Can I pay by card?"
+            ],
+            [
+              "הָיָה טָעִים מְאוֹד",
+              "hayah ta'im me'od",
+              "That was delicious"
+            ],
+            [
+              "בְּתֵאָבוֹן!",
+              "bete'avon!",
+              "Enjoy your meal!"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two things to know about eating in Israel",
+          "items": [
+            "**כָּשֵׁר** *(kasher)* marks food that follows Jewish dietary law. What visitors notice most: meat and dairy aren't served together, so many restaurants pick one — **בְּשָׂרִי** *(besari, meat)* or **חֲלָבִי** *(khalavi, dairy)*. A חֲלָבִי restaurant serves no meat at all.",
+            "**A tip (טִיפּ) is about 10–12 percent** and often has to be paid in cash even if the meal goes on a card. The sentence: אֶפְשָׁר לְהוֹסִיף טִיפּ? *(efshar lehosif tip?)*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "he": "בֵּית קָפֶה",
+      "baca": "beit kafeh",
+      "en": "café"
+    },
+    {
+      "he": "מִסְעָדָה",
+      "baca": "mis'adah",
+      "en": "restaurant"
+    },
+    {
+      "he": "תַּפְרִיט",
+      "baca": "tafrit",
+      "en": "menu"
+    },
+    {
+      "he": "מֶלְצַר / מֶלְצָרִית",
+      "baca": "meltsar / meltsarit",
+      "en": "waiter"
+    },
+    {
+      "he": "חֶשְׁבּוֹן",
+      "baca": "kheshbon",
+      "en": "check, bill"
+    },
+    {
+      "he": "כֶּסֶף",
+      "baca": "kesef",
+      "en": "money"
+    },
+    {
+      "he": "יֵשׁ / אֵין",
+      "baca": "yesh / ein",
+      "en": "there is / there isn't"
+    },
+    {
+      "he": "עִם / בְּלִי",
+      "baca": "im / bli",
+      "en": "with / without"
+    },
+    {
+      "he": "מַשֶּׁהוּ",
+      "baca": "mashehu",
+      "en": "something"
+    },
+    {
+      "he": "עוֹד",
+      "baca": "od",
+      "en": "more, another"
+    },
+    {
+      "he": "אָז",
+      "baca": "az",
+      "en": "so, then"
+    },
+    {
+      "he": "אוֹ",
+      "baca": "o",
+      "en": "or"
+    },
+    {
+      "he": "לֶאֱכֹל",
+      "baca": "le'ekhol",
+      "en": "to eat"
+    },
+    {
+      "he": "לִשְׁתּוֹת",
+      "baca": "lishtot",
+      "en": "to drink"
+    },
+    {
+      "he": "לְשַׁלֵּם",
+      "baca": "leshalem",
+      "en": "to pay"
+    },
+    {
+      "he": "צָרִיךְ / צְרִיכָה",
+      "baca": "tsarikh / tsrikhah",
+      "en": "must, need"
+    },
+    {
+      "he": "יָכוֹל / יְכוֹלָה",
+      "baca": "yakhol / yekholah",
+      "en": "can, be able"
+    },
+    {
+      "he": "טָעִים / טְעִימָה",
+      "baca": "ta'im / te'imah",
+      "en": "tasty, delicious"
+    },
+    {
+      "he": "קָר / חַם",
+      "baca": "kar / kham",
+      "en": "cold / hot"
+    },
+    {
+      "he": "כָּרִיךְ",
+      "baca": "karikh",
+      "en": "sandwich"
+    },
+    {
+      "he": "חָבִיתָה",
+      "baca": "khavitah",
+      "en": "omelet"
+    },
+    {
+      "he": "בְּתֵאָבוֹן",
+      "baca": "bete'avon",
+      "en": "enjoy your meal"
+    },
+    {
+      "he": "אֵין בְּעָיָה",
+      "baca": "ein be'ayah",
+      "en": "no problem"
+    },
+    {
+      "he": "אַשְׁרַאי",
+      "baca": "ashrai",
+      "en": "credit card"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with יֵשׁ or אֵין.",
+      "items": [
+        "____ לִי כֶּסֶף. (have)",
+        "____ לָנוּ זְמַן. (don't have)",
+        "____ קָפֶה בַּמִּסְעָדָה. (there is)",
+        "____ בְּעָיָה. (there isn't)",
+        "____ לְךָ טֶלֶפוֹן? (have?)"
+      ]
+    },
+    {
+      "prompt": "Fill in the infinitive.",
+      "items": [
+        "אֲנִי רוֹצֶה ____ קָפֶה. (drink)",
+        "אֶפְשָׁר ____ בְּאַשְׁרַאי? (pay)",
+        "אֲנִי צָרִיךְ ____ עַכְשָׁו. (go — לָלֶכֶת)",
+        "הִיא אוֹהֶבֶת ____ סְפָרִים. (read — לִקְרֹא)",
+        "אֲנַחְנוּ רוֹצִים ____ מַשֶּׁהוּ. (eat)"
+      ]
+    },
+    {
+      "prompt": "Translate into Hebrew.",
+      "items": [
+        "I'd like tea without sugar.",
+        "Is there salad?",
+        "The check, please.",
+        "I (f) am vegetarian.",
+        "Very tasty, thank you."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "בְּבַקָּשָׁה / קָפֶה / רוֹצֶה / אֲנִי",
+        "לִי / אֵין / כֶּסֶף",
+        "בְּאַשְׁרַאי / אֶפְשָׁר / לְשַׁלֵּם",
+        "בְּלִי / חָבִיתָה / גְּבִינָה"
+      ]
+    }
+  ],
+  "answers": [
+    "יֵשׁ — אֵין — יֵשׁ — אֵין — יֵשׁ",
+    "לִשְׁתּוֹת — לְשַׁלֵּם — לָלֶכֶת — לִקְרֹא — לֶאֱכֹל",
+    "אֲנִי רוֹצֶה תֵּה בְּלִי סֻכָּר. — יֵשׁ סַלָּט? — חֶשְׁבּוֹן, בְּבַקָּשָׁה. — אֲנִי צִמְחוֹנִית. — טָעִים מְאוֹד, תּוֹדָה.",
+    "אֲנִי רוֹצֶה קָפֶה בְּבַקָּשָׁה — אֵין לִי כֶּסֶף — אֶפְשָׁר לְשַׁלֵּם בְּאַשְׁרַאי — חָבִיתָה בְּלִי גְּבִינָה"
+  ],
+  "wave": "Write your own order for tomorrow's breakfast in Hebrew — three sentences, with בְּלִי or עִם. Say them out loud as if the waiter were standing in front of you."
+}

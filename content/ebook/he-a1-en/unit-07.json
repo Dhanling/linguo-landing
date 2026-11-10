@@ -1,0 +1,604 @@
+{
+  "title": "What are you doing?",
+  "title_target": "מָה אַתְּ עוֹשָׂה?",
+  "goal": "Use present-tense verbs — the main engine of Hebrew — and place אֶת, the object marker with no English equivalent at all.",
+  "bekal": [
+    "build sentences with verbs in all four forms",
+    "ask what someone is doing",
+    "put אֶת in the right place"
+  ],
+  "dialogs": [
+    {
+      "title": "שִׂיחָה — בַּסִּפְרִיָּה",
+      "intro": "Budi runs into Dana at the library one afternoon.",
+      "lines": [
+        {
+          "speaker": "דָּנָה:",
+          "text": "בּוּדִי! מָה אַתָּה עוֹשֶׂה פֹּה?",
+          "baca": "budi! mah atah oseh poh?",
+          "id": "Budi! What are you doing here?",
+          "literal": "budi! what you do in-here?"
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "אֲנִי לוֹמֵד עִבְרִית. וְאַתְּ?",
+          "baca": "ani lomed ivrit. ve'at?",
+          "id": "I'm studying Hebrew. And you?",
+          "literal": "I learn hebrew. and-you (f)?"
+        },
+        {
+          "speaker": "דָּנָה:",
+          "text": "אֲנִי כּוֹתֶבֶת עֲבוֹדָה לָאוּנִיבֶרְסִיטָה.",
+          "baca": "ani kotevet avodah la'universitah.",
+          "id": "I'm writing a paper for university.",
+          "literal": "I write (f) work for-university."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "עַל מָה אַתְּ כּוֹתֶבֶת?",
+          "baca": "al mah at kotevet?",
+          "id": "What are you writing about?",
+          "literal": "on what you (f) write?"
+        },
+        {
+          "speaker": "דָּנָה:",
+          "text": "עַל הַהִיסְטוֹרְיָה שֶׁל תֵּל אָבִיב.",
+          "baca": "al hahistoryah shel tel aviv.",
+          "id": "About the history of Tel Aviv.",
+          "literal": "on the-history of tel aviv."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "אַתְּ קוֹרֵאת אֶת כָּל הַסְּפָרִים הָאֵלֶּה?",
+          "baca": "at koret et kol hasfarim ha'eleh?",
+          "id": "Are you reading all these books?",
+          "literal": "you (f) read (obj) all the-books the-these?"
+        },
+        {
+          "speaker": "דָּנָה:",
+          "text": "לֹא הַכֹּל. אֲנִי קוֹרֵאת רַק שְׁנֵי פְּרָקִים.",
+          "baca": "lo hakol. ani koret rak shnei prakim.",
+          "id": "Not all of them. I've only read two chapters.",
+          "literal": "not all. I read (f) only two chapters."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "אֲנִי לֹא מֵבִין אֶת הַמִּלָּה הַזֹּאת.",
+          "baca": "ani lo mevin et hamilah hazot.",
+          "id": "I don't understand this word.",
+          "literal": "I not understand (obj) the-word the-this."
+        },
+        {
+          "speaker": "דָּנָה:",
+          "text": "אֵיזוֹ מִלָּה? תַּרְאֶה לִי.",
+          "baca": "eizo milah? tar'eh li.",
+          "id": "Which word? Show me.",
+          "literal": "which word? show to-me."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "הַמִּלָּה הַזֹּאת. אֲנִי מְחַפֵּשׂ אוֹתָהּ בַּמִּלּוֹן.",
+          "baca": "hamilah hazot. ani mekhapes otah bamilon.",
+          "id": "This word. I'm looking it up in the dictionary.",
+          "literal": "the-word the-this. I look-for her in-the-dictionary."
+        },
+        {
+          "speaker": "דָּנָה:",
+          "text": "אָה, זֶה קַל. זֶה אוֹמֵר \"מַהְפֵּכָה\".",
+          "baca": "ah, zeh kal. zeh omer \"mahpekhah\".",
+          "id": "Oh, that's easy. It means \"revolution\".",
+          "literal": "ah, this easy. this says \"revolution\"."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "תּוֹדָה! אַתְּ מַסְבִּירָה יוֹתֵר טוֹב מֵהַמִּלּוֹן.",
+          "baca": "todah! at masbirah yoter tov mehamilon.",
+          "id": "Thanks! You explain better than the dictionary.",
+          "literal": "thanks! you (f) explain more good from-the-dictionary."
+        }
+      ],
+      "notes": [
+        "⚠️ **This is the big load of this unit: present-tense verbs change according to who does the action.** אֲנִי לוֹמֵד if you're a man, אֲנִי לוֹמֶדֶת if you're a woman. English never asks this of you — \"I study\" is \"I study\", whoever you are.",
+        "**The good news: it isn't the person that matters, only gender & number.** So אֲנִי, אַתָּה, and הוּא all use **exactly the same** form (לוֹמֵד). You need only four forms for everyone, not six.",
+        "**The Hebrew present covers two English tenses at once.** אֲנִי לוֹמֵד means \"I study\" (habit) **and** \"I'm studying\" (right now). Hebrew doesn't distinguish them — one form, two meanings, and context decides.",
+        "⚠️ **אֶת is a word that means nothing**, and that's exactly why learners forget it. It goes in front of a **definite** object: one with הַ־, a proper name, or a pronoun. אֲנִי קוֹרֵאת סֵפֶר (no אֶת — any book) but אֲנִי קוֹרֵאת אֶת הַסֵּפֶר (with אֶת — the book).",
+        "**Quick self-check:** if your English has \"the\", \"this\", a name, or him/her/it as the object, you need אֶת. \"I'm reading a book\" → no אֶת. \"I'm reading the book\" → with אֶת.",
+        "**עַל** (*al*) means \"about\" **and** \"on\". עַל מָה אַתְּ כּוֹתֶבֶת? = what are you writing about?; הַסֵּפֶר עַל הַשֻּׁלְחָן = the book is on the table. Context tells them apart.",
+        "**אוֹתָהּ** in line 10 is \"her/it\" as an object: אֶת + she. The full set (אוֹתִי, אוֹתְךָ, אוֹתוֹ, אוֹתָהּ …) is in the second box — and once again, it's just אֶת taking endings, the same machinery as שֶׁל in unit 4.",
+        "**יוֹתֵר טוֹב מִ־** = \"better than\". The pattern: יוֹתֵר + adjective + מִ. Full comparisons come in unit 13, but you can use this one now."
+      ],
+      "grammars": [
+        {
+          "title": "Present-tense verbs: one pattern, four forms",
+          "body": [
+            "The biggest verb group (called פָּעַל, *pa'al*) uses this pattern. Once you see it, hundreds of verbs open up at once."
+          ],
+          "table": {
+            "head": [
+              "Who",
+              "Pattern",
+              "לומד (learn)",
+              "כותב (write)",
+              "עובד (work)"
+            ],
+            "rows": [
+              [
+                "1 man",
+                "־וֹ־ֵ־",
+                "לוֹמֵד",
+                "כּוֹתֵב",
+                "עוֹבֵד"
+              ],
+              [
+                "1 woman",
+                "־וֹ־ֶ־ֶת",
+                "לוֹמֶדֶת",
+                "כּוֹתֶבֶת",
+                "עוֹבֶדֶת"
+              ],
+              [
+                "several m / mixed",
+                "־וֹ־ְ־ִים",
+                "לוֹמְדִים",
+                "כּוֹתְבִים",
+                "עוֹבְדִים"
+              ],
+              [
+                "several women",
+                "־וֹ־ְ־וֹת",
+                "לוֹמְדוֹת",
+                "כּוֹתְבוֹת",
+                "עוֹבְדוֹת"
+              ]
+            ]
+          },
+          "after": [
+            "Notice the **וֹ** that always appears after the first root letter — that's the signature of the pa'al present. Whenever you see the pattern ־וֹ־ֵ־ in Hebrew text, you know it's a verb in the present.",
+            "⚠️ Verbs whose last root letter is **ה** deviate a little: עוֹשֶׂה / עוֹשָׂה / עוֹשִׂים / עוֹשׂוֹת (do), רוֹצֶה / רוֹצָה / רוֹצִים / רוֹצוֹת (want), קוֹנֶה (buy), שׁוֹתֶה (drink). The feminine is ־ָה, not ־ֶת. A small group, but full of the most common words."
+          ]
+        },
+        {
+          "title": "אֶת with endings: \"I see him\"",
+          "body": [
+            "When the object is a pronoun, אֶת fuses with it into one word. Same machinery as שֶׁל."
+          ],
+          "table": {
+            "head": [
+              "Hebrew",
+              "Say it",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "אוֹתִי",
+                "oti",
+                "me",
+                "הוּא רוֹאֶה אוֹתִי — he sees me"
+              ],
+              [
+                "אוֹתְךָ / אוֹתָךְ",
+                "otkha / otakh",
+                "you (m / f)",
+                "אֲנִי מַכִּיר אוֹתְךָ — I know you"
+              ],
+              [
+                "אוֹתוֹ / אוֹתָהּ",
+                "oto / otah",
+                "him / her",
+                "אֲנִי אוֹהֵב אוֹתָהּ — I love her"
+              ],
+              [
+                "אוֹתָנוּ",
+                "otanu",
+                "us",
+                "הֵם מְחַכִּים לָנוּ — they're waiting for us"
+              ],
+              [
+                "אֶתְכֶם / אֶתְכֶן",
+                "etkhem / etkhen",
+                "you (pl)",
+                "אֲנִי רוֹאֶה אֶתְכֶם — I see you all"
+              ],
+              [
+                "אוֹתָם / אוֹתָן",
+                "otam / otan",
+                "them (m / f)",
+                "אֲנִי מַכִּיר אוֹתָם — I know them"
+              ]
+            ]
+          },
+          "after": [
+            "English already has object pronouns (me, him, her), but Hebrew splits further: \"you\" and \"them\" each come in masculine and feminine. Practice the three most common first: אוֹתִי, אוֹתוֹ, אוֹתָהּ."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Twenty verbs that cover everyday conversation",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "M sing.",
+            "F sing.",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "לוֹמֵד",
+              "לוֹמֶדֶת",
+              "lomed / lomedet",
+              "learn, study"
+            ],
+            [
+              "עוֹבֵד",
+              "עוֹבֶדֶת",
+              "oved / ovedet",
+              "work"
+            ],
+            [
+              "כּוֹתֵב",
+              "כּוֹתֶבֶת",
+              "kotev / kotevet",
+              "write"
+            ],
+            [
+              "קוֹרֵא",
+              "קוֹרֵאת",
+              "kore / koret",
+              "read"
+            ],
+            [
+              "אוֹכֵל",
+              "אוֹכֶלֶת",
+              "okhel / okhelet",
+              "eat"
+            ],
+            [
+              "שׁוֹתֶה",
+              "שׁוֹתָה",
+              "shoteh / shotah",
+              "drink"
+            ],
+            [
+              "הוֹלֵךְ",
+              "הוֹלֶכֶת",
+              "holekh / holekhet",
+              "go, walk"
+            ],
+            [
+              "בָּא",
+              "בָּאָה",
+              "ba / ba'ah",
+              "come"
+            ],
+            [
+              "רוֹאֶה",
+              "רוֹאָה",
+              "ro'eh / ro'ah",
+              "see"
+            ],
+            [
+              "שׁוֹמֵעַ",
+              "שׁוֹמַעַת",
+              "shome'a / shoma'at",
+              "hear"
+            ],
+            [
+              "יוֹדֵעַ",
+              "יוֹדַעַת",
+              "yode'a / yoda'at",
+              "know"
+            ],
+            [
+              "מֵבִין",
+              "מְבִינָה",
+              "mevin / mevinah",
+              "understand"
+            ],
+            [
+              "חוֹשֵׁב",
+              "חוֹשֶׁבֶת",
+              "khoshev / khoshevet",
+              "think"
+            ],
+            [
+              "רוֹצֶה",
+              "רוֹצָה",
+              "rotseh / rotsah",
+              "want"
+            ],
+            [
+              "אוֹהֵב",
+              "אוֹהֶבֶת",
+              "ohev / ohevet",
+              "like, love"
+            ],
+            [
+              "עוֹשֶׂה",
+              "עוֹשָׂה",
+              "oseh / osah",
+              "do, make"
+            ],
+            [
+              "גָּר",
+              "גָּרָה",
+              "gar / garah",
+              "live, reside"
+            ],
+            [
+              "מְדַבֵּר",
+              "מְדַבֶּרֶת",
+              "medaber / medaberet",
+              "speak"
+            ],
+            [
+              "קוֹנֶה",
+              "קוֹנָה",
+              "koneh / konah",
+              "buy"
+            ],
+            [
+              "נוֹתֵן",
+              "נוֹתֶנֶת",
+              "noten / notenet",
+              "give"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Verbs ending in a throat letter (ע, ח) take ־ַ־ַת in the feminine: שׁוֹמַעַת, יוֹדַעַת, לוֹקַחַת. It looks like an exception, but it's just a sound adjustment — throat letters pull the vowel toward *a*."
+        },
+        {
+          "type": "p",
+          "text": "**מְדַבֵּר** and **מְחַפֵּשׂ** start with מְ, not וֹ. They belong to another verb family (called פִּעֵל, *pi'el*) with the pattern מְ־ַ־ֵ־. Just note it for now: if a verb starts with מְ, its feminine also ends in ־ֶת."
+        }
+      ]
+    },
+    {
+      "title": "Asking what people are doing",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hebrew",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "מָה אַתָּה עוֹשֶׂה?",
+              "mah atah oseh?",
+              "What are you (m) doing?"
+            ],
+            [
+              "מָה אַתְּ עוֹשָׂה?",
+              "mah at osah?",
+              "What are you (f) doing?"
+            ],
+            [
+              "אֵיפֹה אַתָּה עוֹבֵד?",
+              "eifoh atah oved?",
+              "Where do you work?"
+            ],
+            [
+              "מָה אַתָּה לוֹמֵד?",
+              "mah atah lomed?",
+              "What do you study?"
+            ],
+            [
+              "עַל מָה אַתְּ חוֹשֶׁבֶת?",
+              "al mah at khoshevet?",
+              "What are you thinking about?"
+            ],
+            [
+              "אַתָּה מֵבִין?",
+              "atah mevin?",
+              "Do you understand?"
+            ],
+            [
+              "אֲנִי לֹא מֵבִין",
+              "ani lo mevin",
+              "I don't understand"
+            ],
+            [
+              "מָה זֶה אוֹמֵר?",
+              "mah zeh omer?",
+              "What does it mean?"
+            ],
+            [
+              "אֵיךְ אוֹמְרִים ... בְּעִבְרִית?",
+              "eikh omrim ... be'ivrit?",
+              "How do you say ... in Hebrew?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three lifesaver sentences for learners",
+          "items": [
+            "**אֲנִי לֹא מֵבִין / מְבִינָה** — I don't understand. Don't be shy; it's the most useful sentence in the whole course.",
+            "**אֵיךְ אוֹמְרִים \"table\" בְּעִבְרִית?** — how to grow your vocabulary straight from conversation, no dictionary needed.",
+            "**מָה זֶה אוֹמֵר?** — what does it mean? Literally \"what does this say?\", and Israelis use it exactly that way."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "he": "עוֹשֶׂה / עוֹשָׂה",
+      "baca": "oseh / osah",
+      "en": "do, make"
+    },
+    {
+      "he": "לוֹמֵד / לוֹמֶדֶת",
+      "baca": "lomed / lomedet",
+      "en": "learn, study"
+    },
+    {
+      "he": "עוֹבֵד / עוֹבֶדֶת",
+      "baca": "oved / ovedet",
+      "en": "work"
+    },
+    {
+      "he": "כּוֹתֵב / כּוֹתֶבֶת",
+      "baca": "kotev / kotevet",
+      "en": "write"
+    },
+    {
+      "he": "קוֹרֵא / קוֹרֵאת",
+      "baca": "kore / koret",
+      "en": "read"
+    },
+    {
+      "he": "רוֹאֶה / רוֹאָה",
+      "baca": "ro'eh / ro'ah",
+      "en": "see"
+    },
+    {
+      "he": "שׁוֹמֵעַ / שׁוֹמַעַת",
+      "baca": "shome'a / shoma'at",
+      "en": "hear"
+    },
+    {
+      "he": "יוֹדֵעַ / יוֹדַעַת",
+      "baca": "yode'a / yoda'at",
+      "en": "know"
+    },
+    {
+      "he": "מֵבִין / מְבִינָה",
+      "baca": "mevin / mevinah",
+      "en": "understand"
+    },
+    {
+      "he": "חוֹשֵׁב / חוֹשֶׁבֶת",
+      "baca": "khoshev / khoshevet",
+      "en": "think"
+    },
+    {
+      "he": "אוֹהֵב / אוֹהֶבֶת",
+      "baca": "ohev / ohevet",
+      "en": "like, love"
+    },
+    {
+      "he": "מַסְבִּיר / מַסְבִּירָה",
+      "baca": "masbir / masbirah",
+      "en": "explain"
+    },
+    {
+      "he": "אֶת",
+      "baca": "et",
+      "en": "definite object marker"
+    },
+    {
+      "he": "אוֹתִי / אוֹתוֹ / אוֹתָהּ",
+      "baca": "oti / oto / otah",
+      "en": "me / him / her (object)"
+    },
+    {
+      "he": "עַל",
+      "baca": "al",
+      "en": "about; on"
+    },
+    {
+      "he": "כָּל",
+      "baca": "kol",
+      "en": "all, every"
+    },
+    {
+      "he": "הַכֹּל",
+      "baca": "hakol",
+      "en": "everything"
+    },
+    {
+      "he": "סִפְרִיָּה",
+      "baca": "sifriyah",
+      "en": "library"
+    },
+    {
+      "he": "עֲבוֹדָה",
+      "baca": "avodah",
+      "en": "work; assignment, paper"
+    },
+    {
+      "he": "אוּנִיבֶרְסִיטָה",
+      "baca": "universitah",
+      "en": "university"
+    },
+    {
+      "he": "מִלָּה",
+      "baca": "milah",
+      "en": "word"
+    },
+    {
+      "he": "פֶּרֶק",
+      "baca": "perek",
+      "en": "chapter"
+    },
+    {
+      "he": "יוֹתֵר",
+      "baca": "yoter",
+      "en": "more"
+    },
+    {
+      "he": "אוֹמֵר / אוֹמֶרֶת",
+      "baca": "omer / omeret",
+      "en": "say; mean"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right form of the verb.",
+      "items": [
+        "הִיא ____ עִבְרִית. (learn)",
+        "אֲנַחְנוּ ____ בְּתֵל אָבִיב. (work)",
+        "הוּא ____ סֵפֶר. (read)",
+        "הֵן ____ קָפֶה. (drink)",
+        "אַתְּ ____ אוֹתִי? (understand)",
+        "הַיְלָדִים ____ בַּגַּן. (play — מְשַׂחֲקִים)"
+      ]
+    },
+    {
+      "prompt": "Add אֶת where needed; where it isn't, write a dash.",
+      "items": [
+        "אֲנִי קוֹרֵא ____ סֵפֶר.",
+        "אֲנִי קוֹרֵא ____ הַסֵּפֶר.",
+        "הִיא רוֹאָה ____ דָּנָה.",
+        "הוּא כּוֹתֵב ____ מִכְתָּב.",
+        "אֲנַחְנוּ מַכִּירִים ____ הַמּוֹרָה."
+      ]
+    },
+    {
+      "prompt": "Change to the feminine.",
+      "items": [
+        "הוּא כּוֹתֵב מִכְתָּב.",
+        "אֲנִי לֹא יוֹדֵעַ.",
+        "הוּא שׁוֹמֵעַ מוּזִיקָה.",
+        "הֵם עוֹשִׂים שִׁעוּרִים."
+      ]
+    },
+    {
+      "prompt": "Translate into Hebrew.",
+      "items": [
+        "I (f) am writing a letter.",
+        "Do you (m) understand this word?",
+        "They work in Haifa.",
+        "I don't know.",
+        "How do you say \"door\" in Hebrew?"
+      ]
+    }
+  ],
+  "answers": [
+    "לוֹמֶדֶת — עוֹבְדִים — קוֹרֵא — שׁוֹתוֹת — מְבִינָה — מְשַׂחֲקִים",
+    "־ — אֶת — אֶת — ־ — אֶת",
+    "הִיא כּוֹתֶבֶת מִכְתָּב. — אֲנִי לֹא יוֹדַעַת. — הִיא שׁוֹמַעַת מוּזִיקָה. — הֵן עוֹשׂוֹת שִׁעוּרִים.",
+    "אֲנִי כּוֹתֶבֶת מִכְתָּב. — אַתָּה מֵבִין אֶת הַמִּלָּה הַזֹּאת? — הֵם עוֹבְדִים בְּחֵיפָה. — אֲנִי לֹא יוֹדֵעַ. — אֵיךְ אוֹמְרִים \"door\" בְּעִבְרִית?"
+  ],
+  "wave": "All day tomorrow, every time you do something, say it in your head: אֲנִי אוֹכֵל, אֲנִי הוֹלֵךְ, אֲנִי קוֹרֵא. Make sure the form matches your own gender."
+}

@@ -1,0 +1,648 @@
+{
+  "title": "Where is it?",
+  "title_target": "אֵיפֹה זֶה?",
+  "goal": "Ask for and give directions, name places in town — and cross this module's most important bridge: reading Hebrew without niqqud, as on real signs.",
+  "bekal": [
+    "asking the way and understanding the answer",
+    "saying where things are with prepositions",
+    "reading Hebrew without niqqud"
+  ],
+  "dialogs": [
+    {
+      "title": "שִׂיחָה — מְחַפְּשִׂים אֶת הַתַּחֲנָה",
+      "intro": "Budi is lost in downtown Jerusalem and asks a woman passing by.",
+      "lines": [
+        {
+          "speaker": "בּוּדִי:",
+          "text": "סְלִיחָה, אֵיפֹה תַּחֲנַת הָאוֹטוֹבּוּס?",
+          "baca": "slikhah, eifoh takhanat ha'otobus?",
+          "id": "Excuse me, where's the bus stop?",
+          "literal": "sorry, where the-stop the-bus?"
+        },
+        {
+          "speaker": "אִשָּׁה:",
+          "text": "לֵךְ יָשָׁר עַד הָרַמְזוֹר.",
+          "baca": "lekh yashar ad haramzor.",
+          "id": "Go straight to the traffic light.",
+          "literal": "go straight until the-traffic-light."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "וְאָז?",
+          "baca": "ve'az?",
+          "id": "And then?",
+          "literal": "and-then?"
+        },
+        {
+          "speaker": "אִשָּׁה:",
+          "text": "אָז פְּנֵה שְׂמֹאלָה, לִרְחוֹב יָפוֹ.",
+          "baca": "az pneh smolah, lirkhov yafo.",
+          "id": "Then turn left, onto Jaffa Street.",
+          "literal": "then turn to-left, to-street yafo."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "זֶה רָחוֹק?",
+          "baca": "zeh rakhok?",
+          "id": "Is it far?",
+          "literal": "this far?"
+        },
+        {
+          "speaker": "אִשָּׁה:",
+          "text": "לֹא, חָמֵשׁ דַּקּוֹת בְּרֶגֶל.",
+          "baca": "lo, khamesh dakot beregel.",
+          "id": "No, five minutes on foot.",
+          "literal": "no, five minutes with-foot."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "הַתַּחֲנָה מוּל הַבַּנְק?",
+          "baca": "hatakhanah mul habank?",
+          "id": "Is the stop opposite the bank?",
+          "literal": "the-stop opposite the-bank?"
+        },
+        {
+          "speaker": "אִשָּׁה:",
+          "text": "לֹא, לְיַד הַדֹּאַר, אַחֲרֵי הָרְחוֹב.",
+          "baca": "lo, leyad hado'ar, akharei harkhov.",
+          "id": "No, next to the post office, past the street.",
+          "literal": "no, next-to the-post, after the-street."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "וְאֵיזֶה אוֹטוֹבּוּס נוֹסֵעַ לַתַּחֲנָה הַמֶּרְכָּזִית?",
+          "baca": "ve'eizeh otobus nose'a latakhanah hamerkazit?",
+          "id": "And which bus goes to the central station?",
+          "literal": "and-which bus goes to-the-station the-central?"
+        },
+        {
+          "speaker": "אִשָּׁה:",
+          "text": "מִסְפָּר שְׁמוֹנֶה עֶשְׂרֵה אוֹ עֶשְׂרִים וְאַחַת.",
+          "baca": "mispar shmoneh esreh o esrim ve'akhat.",
+          "id": "Number eighteen or twenty-one.",
+          "literal": "number eighteen or twenty and-one."
+        },
+        {
+          "speaker": "בּוּדִי:",
+          "text": "תּוֹדָה רַבָּה! עָזַרְתְּ לִי מְאוֹד.",
+          "baca": "todah rabah! azart li me'od.",
+          "id": "Thanks so much! You've been a great help.",
+          "literal": "thanks much! you-helped (f) to-me very."
+        },
+        {
+          "speaker": "אִשָּׁה:",
+          "text": "בְּכֵיף. שֶׁיִּהְיֶה לְךָ יוֹם טוֹב!",
+          "baca": "bekeif. sheyihyeh lekha yom tov!",
+          "id": "My pleasure. Have a nice day!",
+          "literal": "with-fun. may-be to-you day good!"
+        }
+      ],
+      "notes": [
+        "**לֵךְ יָשָׁר** and **פְּנֵה שְׂמֹאלָה** are **imperatives**. To a woman the form changes: לְכִי, פְּנִי. Full imperatives come in unit 19; for now just recognize the forms you **hear**, since you'll receive directions more often than give them.",
+        "**The directional ending ־ָה is back**: שְׂמֹאלָה (to the left), יָמִינָה (to the right), יָשָׁר (straight, no ending). Just like הַבַּיְתָה in unit 10.",
+        "**Place prepositions stand alone — they don't attach**: לְיַד (next to), מוּל (opposite), בֵּין (between), מֵאֲחוֹרֵי (behind), לִפְנֵי (in front of). Only בְּ (in) attaches; עַל (on) is its own word too.",
+        "⚠️ **לִפְנֵי means both \"before\" AND \"in front of\"** — the sentence tells you which. לִפְנֵי הַשִּׁעוּר = before the lesson; לִפְנֵי הַבַּיִת = in front of the house. Hebrew uses one spatial image for time and place, much as English says \"the days ahead\".",
+        "**בְּרֶגֶל** (\"by foot\") = on foot. Related: בְּאוֹטוֹבּוּס (by bus), בְּמוֹנִית (by taxi), בְּרַכֶּבֶת (by train). All means of transport take בְּ־, like English \"by\".",
+        "**עָזַרְתְּ** in line 11 is **past tense** — the first past-tense verb you've met. Unit 15 takes it apart; for now just know that the ending ־ְתְּ marks \"you (f) did\".",
+        "**בְּכֵיף** (*bekeif*, \"with pleasure\") is a casual reply to thanks. The more standard one: **בְּבַקָּשָׁה** — the same word for \"please\" and \"you're welcome\", just like German *bitte*.",
+        "**הַתַּחֲנָה הַמֶּרְכָּזִית** = the central bus station. Note הַ־ twice: definite noun + definite adjective, the rule from unit 6."
+      ],
+      "grammars": [
+        {
+          "title": "Place prepositions",
+          "body": [
+            "These ten words cover almost every place expression at A1."
+          ],
+          "table": {
+            "head": [
+              "Hebrew",
+              "Say it",
+              "English",
+              "Example"
+            ],
+            "rows": [
+              [
+                "בְּ־",
+                "be",
+                "in, at",
+                "בַּחֶדֶר — in the room"
+              ],
+              [
+                "עַל",
+                "al",
+                "on",
+                "עַל הַשֻּׁלְחָן — on the table"
+              ],
+              [
+                "מִתַּחַת לְ־",
+                "mitakhat le",
+                "under",
+                "מִתַּחַת לַכִּסֵּא — under the chair"
+              ],
+              [
+                "לְיַד",
+                "leyad",
+                "next to",
+                "לְיַד הַבַּנְק — next to the bank"
+              ],
+              [
+                "מוּל",
+                "mul",
+                "opposite",
+                "מוּל הַבַּיִת — opposite the house"
+              ],
+              [
+                "בֵּין",
+                "bein",
+                "between",
+                "בֵּין הַחַלּוֹן וְהַדֶּלֶת"
+              ],
+              [
+                "לִפְנֵי",
+                "lifnei",
+                "in front of; before",
+                "לִפְנֵי הַחֲנוּת"
+              ],
+              [
+                "אַחֲרֵי",
+                "akharei",
+                "behind; after",
+                "אַחֲרֵי הָרַמְזוֹר"
+              ],
+              [
+                "בְּתוֹךְ",
+                "betokh",
+                "inside",
+                "בְּתוֹךְ הַתִּיק — inside the bag"
+              ],
+              [
+                "מֵאֲחוֹרֵי",
+                "me'akhorei",
+                "behind",
+                "מֵאֲחוֹרֵי הַבַּיִת"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Prepositions ending in לְ (מִתַּחַת לְ־) merge with הַ־ into לַ: מִתַּחַת **לַ**שֻּׁלְחָן. The same merger as בְּ + הַ = בַּ."
+          ]
+        },
+        {
+          "title": "Reading without niqqud: the bridge to real Hebrew",
+          "body": [
+            "Signs, menus and WhatsApp messages in Israel don't have a single dot. The letters don't change — but ו and י start being used as vowel markers (called כְּתִיב מָלֵא, *ktiv male*, full spelling)."
+          ],
+          "table": {
+            "head": [
+              "With niqqud",
+              "Without niqqud",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "שָׁלוֹם",
+                "שלום",
+                "shalom",
+                "hello"
+              ],
+              [
+                "תּוֹדָה",
+                "תודה",
+                "todah",
+                "thank you"
+              ],
+              [
+                "בֹּקֶר טוֹב",
+                "בוקר טוב",
+                "boker tov",
+                "good morning"
+              ],
+              [
+                "כְּתֹבֶת",
+                "כתובת",
+                "ktovet",
+                "address"
+              ],
+              [
+                "שֻׁלְחָן",
+                "שולחן",
+                "shulkhan",
+                "table"
+              ],
+              [
+                "רְחוֹב",
+                "רחוב",
+                "rekhov",
+                "street"
+              ],
+              [
+                "מִסְעָדָה",
+                "מסעדה",
+                "mis'adah",
+                "restaurant"
+              ],
+              [
+                "שֵׁרוּתִים",
+                "שירותים",
+                "sherutim",
+                "restroom"
+              ],
+              [
+                "יְצִיאָה",
+                "יציאה",
+                "yetsi'ah",
+                "exit"
+              ],
+              [
+                "כְּנִיסָה",
+                "כניסה",
+                "knisah",
+                "entrance"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Note the recurring pattern: every *o* and *u* sound gets an extra ו, every *i* sound gets a י.** שֻׁלְחָן becomes שולחן; שֵׁרוּתִים becomes שירותים. The rest you guess from words you already know — and you know more than three hundred words by now.",
+            "Reassuring news: **you guess far less than you think.** Hebrew words grow from three-letter roots with a limited set of vowel patterns, so once you see כתב you know there are only a handful of options. It's just like reading \"txt msg\" in English and instantly knowing it's \"text message\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Places in town",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Hebrew",
+            "Say it",
+            "English",
+            "Hebrew",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "רְחוֹב",
+              "rekhov",
+              "street",
+              "בַּנְק",
+              "bank",
+              "bank"
+            ],
+            [
+              "כִּכָּר",
+              "kikar",
+              "square",
+              "דֹּאַר",
+              "do'ar",
+              "post office"
+            ],
+            [
+              "תַּחֲנָה",
+              "takhanah",
+              "stop, station",
+              "בֵּית חוֹלִים",
+              "beit kholim",
+              "hospital"
+            ],
+            [
+              "רַמְזוֹר",
+              "ramzor",
+              "traffic light",
+              "בֵּית סֵפֶר",
+              "beit sefer",
+              "school"
+            ],
+            [
+              "פִּנָּה",
+              "pinah",
+              "corner",
+              "מִשְׂרָד",
+              "misrad",
+              "office"
+            ],
+            [
+              "גַּן",
+              "gan",
+              "park",
+              "מוּזֵאוֹן",
+              "muze'on",
+              "museum"
+            ],
+            [
+              "חוֹף",
+              "khof",
+              "beach",
+              "קוֹלְנוֹעַ",
+              "kolno'a",
+              "movie theater"
+            ],
+            [
+              "מָלוֹן",
+              "malon",
+              "hotel",
+              "מִסְעָדָה",
+              "mis'adah",
+              "restaurant"
+            ],
+            [
+              "שְׁדֵרָה",
+              "sderah",
+              "boulevard",
+              "מִשְׁטָרָה",
+              "mishtarah",
+              "police station"
+            ],
+            [
+              "גֶּשֶׁר",
+              "gesher",
+              "bridge",
+              "בֵּית כְּנֶסֶת",
+              "beit knesset",
+              "synagogue"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **בֵּית** in front of another word means \"house/building of\": בֵּית סֵפֶר (\"house of book\" = school), בֵּית חוֹלִים (\"house of the sick\" = hospital), בֵּית קָפֶה (café), בֵּית מִרְקַחַת (\"house of potions\" = pharmacy). Once you spot this pattern, ten new words open up at once."
+        }
+      ]
+    },
+    {
+      "title": "Signs you'll see — without niqqud",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Read the left column first without looking at the meaning. Every word below has already appeared in this module, just without the dots now."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sign",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "כניסה",
+              "knisah",
+              "ENTRANCE"
+            ],
+            [
+              "יציאה",
+              "yetsi'ah",
+              "EXIT"
+            ],
+            [
+              "פתוח / סגור",
+              "patu'akh / sagur",
+              "OPEN / CLOSED"
+            ],
+            [
+              "שירותים",
+              "sherutim",
+              "RESTROOMS"
+            ],
+            [
+              "גברים / נשים",
+              "gvarim / nashim",
+              "MEN / WOMEN"
+            ],
+            [
+              "מדרגות",
+              "madregot",
+              "STAIRS"
+            ],
+            [
+              "מעלית",
+              "ma'alit",
+              "ELEVATOR"
+            ],
+            [
+              "קופה",
+              "kupah",
+              "CASHIER"
+            ],
+            [
+              "מבצע",
+              "mivtsa",
+              "SALE"
+            ],
+            [
+              "תחנה מרכזית",
+              "takhanah merkazit",
+              "CENTRAL STATION"
+            ],
+            [
+              "רכבת",
+              "rakevet",
+              "TRAIN"
+            ],
+            [
+              "שדה תעופה",
+              "sdeh te'ufah",
+              "AIRPORT"
+            ],
+            [
+              "אסור לעשן",
+              "asur le'ashen",
+              "NO SMOKING"
+            ],
+            [
+              "זהירות",
+              "zehirut",
+              "CAUTION"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Asking the way",
+          "items": [
+            "**סְלִיחָה, אֵיפֹה ...?** — excuse me, where is ...?",
+            "**אֵיךְ מַגִּיעִים לְ...?** *(eikh magi'im le...?)* — how do I get to...? Literally \"how do they arrive to\" — a subjectless form Israelis use all the time.",
+            "**זֶה רָחוֹק מִכָּאן?** — is it far from here?",
+            "**אֶפְשָׁר לָלֶכֶת בְּרֶגֶל?** — can I walk there?",
+            "**אֲנִי הָלַכְתִּי לְאִבּוּד** *(ani halakhti le'ibud)* — I'm lost. A sentence you hopefully won't need, but better to have."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "he": "אֵיפֹה",
+      "baca": "eifoh",
+      "en": "where"
+    },
+    {
+      "he": "רְחוֹב",
+      "baca": "rekhov",
+      "en": "street"
+    },
+    {
+      "he": "תַּחֲנָה",
+      "baca": "takhanah",
+      "en": "stop, station"
+    },
+    {
+      "he": "רַמְזוֹר",
+      "baca": "ramzor",
+      "en": "traffic light"
+    },
+    {
+      "he": "פִּנָּה",
+      "baca": "pinah",
+      "en": "corner"
+    },
+    {
+      "he": "יָשָׁר",
+      "baca": "yashar",
+      "en": "straight"
+    },
+    {
+      "he": "יָמִינָה / שְׂמֹאלָה",
+      "baca": "yaminah / smolah",
+      "en": "to the right / to the left"
+    },
+    {
+      "he": "לְיַד",
+      "baca": "leyad",
+      "en": "next to"
+    },
+    {
+      "he": "מוּל",
+      "baca": "mul",
+      "en": "opposite"
+    },
+    {
+      "he": "בֵּין",
+      "baca": "bein",
+      "en": "between"
+    },
+    {
+      "he": "מִתַּחַת לְ־",
+      "baca": "mitakhat le",
+      "en": "under"
+    },
+    {
+      "he": "בְּתוֹךְ",
+      "baca": "betokh",
+      "en": "inside"
+    },
+    {
+      "he": "רָחוֹק / קָרוֹב",
+      "baca": "rakhok / karov",
+      "en": "far / near"
+    },
+    {
+      "he": "בְּרֶגֶל",
+      "baca": "beregel",
+      "en": "on foot"
+    },
+    {
+      "he": "בַּנְק",
+      "baca": "bank",
+      "en": "bank"
+    },
+    {
+      "he": "דֹּאַר",
+      "baca": "do'ar",
+      "en": "post office"
+    },
+    {
+      "he": "בֵּית חוֹלִים",
+      "baca": "beit kholim",
+      "en": "hospital"
+    },
+    {
+      "he": "בֵּית סֵפֶר",
+      "baca": "beit sefer",
+      "en": "school"
+    },
+    {
+      "he": "כְּנִיסָה / יְצִיאָה",
+      "baca": "knisah / yetsi'ah",
+      "en": "entrance / exit"
+    },
+    {
+      "he": "שֵׁרוּתִים",
+      "baca": "sherutim",
+      "en": "restroom"
+    },
+    {
+      "he": "כְּתֹבֶת",
+      "baca": "ktovet",
+      "en": "address"
+    },
+    {
+      "he": "עוֹזֵר / עוֹזֶרֶת",
+      "baca": "ozer / ozeret",
+      "en": "to help"
+    },
+    {
+      "he": "בְּכֵיף",
+      "baca": "bekeif",
+      "en": "my pleasure (casual)"
+    },
+    {
+      "he": "זְהִירוּת",
+      "baca": "zehirut",
+      "en": "caution, careful"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the right place preposition.",
+      "items": [
+        "הַסֵּפֶר ____ הַשֻּׁלְחָן. (on)",
+        "הַתִּיק ____ הַכִּסֵּא. (under)",
+        "הַבַּנְק ____ הַדֹּאַר. (next to)",
+        "הַתַּחֲנָה ____ הַבַּיִת. (opposite)",
+        "הַמַּפְתֵּחַ ____ הַתִּיק. (inside)"
+      ]
+    },
+    {
+      "prompt": "Read these words without niqqud and write their meaning.",
+      "items": [
+        "כניסה ____",
+        "שירותים ____",
+        "רחוב ____",
+        "בית קפה ____",
+        "תודה רבה ____",
+        "אסור לעשן ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Hebrew.",
+      "items": [
+        "Excuse me, where's the bus stop?",
+        "Go straight to the traffic light.",
+        "Turn left at the corner.",
+        "Is it far from here?",
+        "Five minutes on foot."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "הַבַּנְק / מוּל / הַתַּחֲנָה",
+        "בְּרֶגֶל / דַּקּוֹת / חָמֵשׁ / זֶה",
+        "לִי / מְאוֹד / עָזַרְתְּ",
+        "לַתַּחֲנָה / מַגִּיעִים / אֵיךְ"
+      ]
+    }
+  ],
+  "answers": [
+    "עַל — מִתַּחַת לְ — לְיַד — מוּל — בְּתוֹךְ",
+    "entrance — restroom — street — café — thank you very much — no smoking",
+    "סְלִיחָה, אֵיפֹה תַּחֲנַת הָאוֹטוֹבּוּס? — לֵךְ יָשָׁר עַד הָרַמְזוֹר. — פְּנֵה שְׂמֹאלָה בַּפִּנָּה. — זֶה רָחוֹק מִכָּאן? — חָמֵשׁ דַּקּוֹת בְּרֶגֶל.",
+    "הַתַּחֲנָה מוּל הַבַּנְק — זֶה חָמֵשׁ דַּקּוֹת בְּרֶגֶל — עָזַרְתְּ לִי מְאוֹד — אֵיךְ מַגִּיעִים לַתַּחֲנָה"
+  ],
+  "wave": "Rewrite ten words from unit 1 without niqqud, then read them again tomorrow morning without looking at the original. This single exercise does more for your reading than any other."
+}
