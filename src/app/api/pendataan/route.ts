@@ -102,6 +102,22 @@ function parseParticipants(raw: unknown, rule: { count: number; fixed: boolean }
   return out;
 }
 
+// [pendataan-durasi-sesi-v1] Durasi satu sesi (menit) untuk kisi jadwal. Tanpa
+// angka ini siswa paket 45 menit bisa memilih satu kotak "09.30-10.00" yang tidak
+// muat untuk sesinya. Dibaca terpisah (seperti cocokkanForm) supaya galat di sini
+// tidak merusak pembacaan form utama. null = belum tercatat.
+async function sessionMinutesOf(token: string): Promise<number | null> {
+  try {
+    const res = await sb(`student_intake_forms?token=eq.${token}&select=registrations(duration),manual_invoices(duration_min)`);
+    if (!res.ok) return null;
+    const row = ((await res.json()) as { registrations?: { duration?: unknown } | null; manual_invoices?: { duration_min?: unknown } | null }[])[0];
+    const n = Number(row?.registrations?.duration || row?.manual_invoices?.duration_min || 0);
+    return Number.isFinite(n) && n >= 15 && n <= 240 ? n : null;
+  } catch {
+    return null;
+  }
+}
+
 function classModeOf(row: ModeRow): "online" | "offline" {
   const mode = row?.registrations?.class_mode || row?.manual_invoices?.class_mode || "";
   // Baris lama tanpa class_mode dianggap ONLINE — dulu semua kelas memang online.
@@ -332,12 +348,14 @@ export async function GET(req: NextRequest) {
   const { registrations, manual_invoices, ...form } = rows[0] as ModeRow & Record<string, unknown>;
   const peers = peersOf(rows[0]);
   const prefill = form.status === "pending" ? await prefillSiswaLama(token) : null;
+  const sessionMinutes = await sessionMinutesOf(token);
   return NextResponse.json({
     ...form,
     prefill,
     class_mode: classModeOf(rows[0]),
     peer_count: peers.count,
     peer_fixed: peers.fixed,
+    session_minutes: sessionMinutes,
     teacher_gender_choice: await teacherGenderChoice(form.language),
   });
 }

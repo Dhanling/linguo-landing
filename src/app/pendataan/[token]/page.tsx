@@ -69,6 +69,8 @@ type IntakeForm = {
   additional_participants?: Partial<Peer>[] | null;
   peer_count?: number;
   peer_fixed?: boolean;
+  // [pendataan-durasi-sesi-v1] Durasi satu sesi (menit) dari registrasi/tagihan.
+  session_minutes?: number | null;
   // [pendataan-siswa-lama-v1] Data diri dari pendaftaran sebelumnya (form lama
   // yang sudah dikirim + baris students). Cuma mengisi kolom yang masih kosong.
   prefill?: {
@@ -144,6 +146,18 @@ function hasConsecutiveRun(blocks: Set<string>, n: number): boolean {
     if (len >= n) return true;
   }
   return false;
+}
+
+/** Rentang (hasil serializeBlocks) yang lebih pendek dari satu sesi — tidak
+ *  bisa dipakai pengajar. Contoh: paket 45 menit, siswa memilih "Senin 09.30-10.00". */
+function shortRanges(text: string, sessionMin: number): string[] {
+  if (!text || !sessionMin) return [];
+  return text.split(", ").filter((r) => {
+    const m = r.match(RANGE_RE);
+    if (!m) return false;
+    const len = (+m[4] * 60 + +m[5]) - (+m[2] * 60 + +m[3]);
+    return len < sessionMin;
+  });
 }
 
 const RANGE_RE = /^(\S+)\s+(\d{1,2})[.:](\d{2})\s*[-–]\s*(\d{1,2})[.:](\d{2})$/;
@@ -878,6 +892,7 @@ export default function PendataanPage() {
   // [pendataan-alamat-offline-v1] Pengajar datang ke tempat siswa, jadi
   // kelas offline butuh alamat yang bisa didatangi — bukan cuma kota.
   const isOffline = form?.class_mode === "offline";
+  const sessionMin = form?.session_minutes || 0;
 
   // [pendataan-negara-v1] Di luar Indonesia daftar provinsi & kab/kota kita
   // tidak berlaku, jadi wilayahnya diketik bebas. Kelas offline pun tidak
@@ -999,6 +1014,11 @@ export default function PendataanPage() {
       if (!goal.trim()) return "Ceritakan sedikit tujuan belajarmu";
     }
     if (s === 3 && blocks.size === 0) return "Pilih minimal 1 blok waktu yang kamu bisa";
+    if (s === 3 && sessionMin) {
+      const short = shortRanges(scheduleText, sessionMin);
+      if (short.length)
+        return `Sesimu ${sessionMin} menit, jadi tiap pilihan minimal ${Math.ceil(sessionMin / STEP_MIN)} kotak berurutan. Belum cukup: ${short.join(", ")}`;
+    }
     if (s === 3 && isTrial && !hasConsecutiveRun(blocks, 2))
       return "Untuk trial 45 menit, pilih minimal 2 kotak berurutan (1 jam), misal 19.00 + 19.30";
     if (s === 3 && form?.teacher_gender_choice && !teacherPref) return "Pilih preferensi pengajarmu";
@@ -1528,7 +1548,9 @@ export default function PendataanPage() {
               {kind === 3 && (
                 <div className="space-y-4">
                   <StepHead icon={CalendarDays} title="Jadwal yang Diinginkan"
-                    desc="1 kotak = 30 menit. Ketuk semua waktu yang kamu bisa (boleh banyak) — pilih rentang sepanjang 1 sesi kelasmu (mis. 60 menit = 2 kotak)." />
+                    desc={sessionMin
+                      ? `1 kotak = 30 menit. Sesimu ${sessionMin} menit, jadi pilih minimal ${Math.ceil(sessionMin / STEP_MIN)} kotak berurutan (${Math.ceil(sessionMin / STEP_MIN) * STEP_MIN} menit) di tiap waktu yang kamu bisa.`
+                      : "1 kotak = 30 menit. Ketuk semua waktu yang kamu bisa (boleh banyak) — pilih rentang sepanjang 1 sesi kelasmu (mis. 60 menit = 2 kotak)."} />
 
                   {/* [trial-jadwal-45-v1] Siswa trial sering ragu: ini jadwal trial
                       atau daftar paket? Jelaskan, dan kenapa minimal 2 kotak. */}
@@ -1571,16 +1593,22 @@ export default function PendataanPage() {
 
                   {scheduleChips.length > 0 && (
                     <div className="flex flex-wrap gap-1.5">
-                      {scheduleChips.map((c) => (
+                      {scheduleChips.map((c) => {
+                        const short = sessionMin > 0 && shortRanges(c, sessionMin).length > 0;
+                        return (
                         <span key={c} className="inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-xs font-bold"
-                          style={{ borderColor: `${TEAL}55`, color: TEAL, background: `${TEAL}0d` }}>
-                          {c}
+                          title={short ? `Kurang dari ${sessionMin} menit` : undefined}
+                          style={short
+                            ? { borderColor: "#fca5a5", color: "#dc2626", background: "#fef2f2" }
+                            : { borderColor: `${TEAL}55`, color: TEAL, background: `${TEAL}0d` }}>
+                          {c}{short && " · kurang"}
                           <button type="button" onClick={() => removeChip(c)} aria-label={`Hapus ${c}`}
                             className="opacity-60 transition hover:opacity-100">
                             <X className="h-3 w-3" />
                           </button>
                         </span>
-                      ))}
+                        );
+                      })}
                     </div>
                   )}
 
