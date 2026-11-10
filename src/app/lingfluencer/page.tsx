@@ -47,6 +47,17 @@ function XLogo({ size = 18, className }: { size?: number; className?: string }) 
   );
 }
 
+// Ikon "@" gaya Threads (lucide tidak punya logo Threads) — [lingfluencer-threads-v1]
+function ThreadsLogo({ size = 18, className }: { size?: number; className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round"
+      strokeLinejoin="round" width={size} height={size} className={className} aria-hidden="true">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8" />
+    </svg>
+  );
+}
+
 // ────────────────────────────────────────────────────────────────────
 // constants
 // ────────────────────────────────────────────────────────────────────
@@ -57,6 +68,8 @@ const PLATFORMS = [
   { id: "ig_feeds", label: "IG Feeds", icon: ImageIcon },
   { id: "twitter", label: "X (Twitter)", subLabel: "berupa Thread", icon: XLogo },
   { id: "tiktok", label: "TikTok", icon: Music },
+  // [lingfluencer-threads-v1] Bug Tracker b55a009b (Intan): opsi Threads
+  { id: "threads", label: "Threads", subLabel: "post/thread", icon: ThreadsLogo },
 ] as const;
 
 const STEPS = [

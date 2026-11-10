@@ -3,7 +3,8 @@ import { NextRequest, NextResponse } from "next/server";
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
-const VALID_PLATFORMS = ["ig_reels", "ig_story", "ig_feeds", "twitter", "tiktok"] as const;
+// [lingfluencer-threads-v1] + Threads (Bug Tracker b55a009b)
+const VALID_PLATFORMS = ["ig_reels", "ig_story", "ig_feeds", "twitter", "tiktok", "threads"] as const;
 
 const PLATFORM_LABELS: Record<string, string> = {
   ig_reels: "IG Reels",
@@ -11,6 +12,7 @@ const PLATFORM_LABELS: Record<string, string> = {
   ig_feeds: "IG Feeds",
   twitter: "X (Twitter) Thread",
   tiktok: "TikTok",
+  threads: "Threads",
 };
 
 async function supaFetch(path: string, options?: RequestInit) {
@@ -53,6 +55,7 @@ function normalizeWhatsApp(input: string): string | null {
 function pickPrimaryPlatform(platforms: string[]): string {
   if (platforms.some((p) => p.startsWith("ig_"))) return "instagram";
   if (platforms.includes("tiktok")) return "tiktok";
+  if (platforms.includes("threads")) return "threads";
   if (platforms.includes("twitter")) return "twitter";
   return "instagram";
 }
@@ -255,7 +258,8 @@ export async function POST(req: NextRequest) {
 
     // ── Build payload sesuai schema `lingfluencers` ──────────────────
     const username = socmed_username.trim().replace(/^@/, "");
-    const usesIg = content_platforms.some((p: string) => p.startsWith("ig_"));
+    // Threads memakai username Instagram yang sama → simpan di ig_handle agar tampil di dashboard.
+    const usesIg = content_platforms.some((p: string) => p.startsWith("ig_") || p === "threads");
     const usesTiktok = content_platforms.includes("tiktok");
     const primaryPlatform = pickPrimaryPlatform(content_platforms);
 
