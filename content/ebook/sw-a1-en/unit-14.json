@@ -1,0 +1,613 @@
+{
+  "title": "Commands, invitations, and the polite -e form",
+  "title_target": "Karibu jikoni, kaa hapa!",
+  "goal": "Tell people what to do without sounding rude, make suggestions, forbid things, and use the one verb ending behind every polite request in Swahili.",
+  "bekal": [
+    "the imperative: *soma!* for one person, *someni!* for several",
+    "the *-e* form: *nisome*, *tusome* — for suggestions, requests, and prohibitions",
+    "prohibitions with *usi-* and *msi-*: *usiende!* (don't go)"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Jikoni pamoja",
+      "intro": "Late afternoon in the kitchen at Amina's house. Her mother is making dinner and Budi offers to help.",
+      "lines": [
+        {
+          "speaker": "Mama:",
+          "text": "Budi, karibu jikoni! Kaa hapa.",
+          "id": "Budi, come into the kitchen! Sit here.",
+          "literal": "Budi, welcome in-kitchen! sit here."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Asante mama. Naweza kusaidia?",
+          "id": "Thank you, ma'am. Can I help?",
+          "literal": "thanks mother. I-can to-help?"
+        },
+        {
+          "speaker": "Mama:",
+          "text": "Ndiyo! Chukua kisu, kata vitunguu.",
+          "id": "Yes! Take the knife and cut the onions.",
+          "literal": "yes! take knife, cut onions."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nikate vipande vidogo au vikubwa?",
+          "id": "Should I cut them small or big?",
+          "literal": "I-should-cut pieces small-small or big-big?"
+        },
+        {
+          "speaker": "Mama:",
+          "text": "Vidogo. Halafu weka ndani ya sufuria.",
+          "id": "Small. Then put them in the pot.",
+          "literal": "small-small. then put inside of pot."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sawa. Nifanye nini sasa?",
+          "id": "Okay. What should I do now?",
+          "literal": "okay. I-should-do what now?"
+        },
+        {
+          "speaker": "Mama:",
+          "text": "Ngoja kidogo. Usiweke chumvi bado!",
+          "id": "Wait a moment. Don't put the salt in yet!",
+          "literal": "wait little. don't-you-put salt yet!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Samahani! Nilikuwa na haraka.",
+          "id": "Sorry! I was in a hurry.",
+          "literal": "sorry! I-past-have with hurry."
+        },
+        {
+          "speaker": "Mama:",
+          "text": "Hakuna shida. Amina, njoo usaidie pia!",
+          "id": "No problem. Amina, come and help too!",
+          "literal": "there-is-no problem. Amina, come you-should-help too!"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Ninakuja! Tuanze kupika wali?",
+          "id": "Coming! Shall we start cooking the rice?",
+          "literal": "I-am-coming! we-should-start to-cook rice?"
+        },
+        {
+          "speaker": "Mama:",
+          "text": "Ndiyo, anzeni. Na msisahau nazi!",
+          "id": "Yes, go ahead, you two. And don't forget the coconut!",
+          "literal": "yes, start-you(pl). and don't-you(pl)-forget coconut!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tupike haraka — nina njaa kubwa!",
+          "id": "Let's cook fast — I'm starving!",
+          "literal": "we-should-cook quickly — I-have hunger big!"
+        }
+      ],
+      "notes": [
+        "**Swahili commands don't sound as rude as you might expect.** *Kaa!* (sit), *Njoo!* (come here), *Kula!* (eat) are said to guests as hospitality, not barked orders. What makes them polite is tone and small additions: *tafadhali* (please), *bwana*/*mama*/*dada* after them, or a smile.",
+        "**Naweza is a shortened ninaweza.** In fast speech, *nina-* often shrinks to *na-*: *nataka* (= *ninataka*), *nafikiri*, *naomba*, *nakuja*. These short forms are very common and fully correct; this book uses the long form so you can still see how it's built.",
+        "**Sufuria is a pot, and the other kitchen words are easy too**: *sahani* (plate), *bilauri* (glass), *kijiko* (spoon), *chumvi* (salt), *nazi* (coconut), *sukari* (sugar). *Nazi* here isn't a whole coconut but its milk — *tui la nazi*.",
+        "**Nina njaa literally means \"I have hunger\".** The same pattern works for other physical states: *nina kiu* (thirsty), *nina baridi* (cold), *nina joto* (hot), *nina usingizi* (sleepy), *nina haraka* (in a hurry), *nina wasiwasi* (worried).",
+        "**Vipande vidogo — doubling a word gives \"small-small\", i.e. in small pieces.** Swahili loves doubling: *polepole* (slowly), *harakaharaka* (hurriedly), *kidogokidogo* (little by little), *mbalimbali* (various)."
+      ],
+      "grammars": [
+        {
+          "title": "Commands: one person and several",
+          "body": [
+            "The command for one person is **the bare root** — drop the *ku-*, done. For more than one person, add **-ni** at the end, and a final *-a* turns into *-e*."
+          ],
+          "table": {
+            "head": [
+              "Dictionary form",
+              "To one person",
+              "To several",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*kusoma*",
+                "*soma!*",
+                "*someni!*",
+                "read!"
+              ],
+              [
+                "*kukaa*",
+                "*kaa!*",
+                "*kaeni!*",
+                "sit!"
+              ],
+              [
+                "*kusubiri*",
+                "*subiri!*",
+                "*subirini!*",
+                "wait!"
+              ],
+              [
+                "*kuandika*",
+                "*andika!*",
+                "*andikeni!*",
+                "write!"
+              ],
+              [
+                "*kuja*",
+                "**njoo!**",
+                "**njooni!**",
+                "come! (irregular)"
+              ],
+              [
+                "*kwenda*",
+                "**nenda!**",
+                "**nendeni!**",
+                "go! (irregular)"
+              ],
+              [
+                "*kuleta*",
+                "**lete!**",
+                "**leteni!**",
+                "bring! (irregular)"
+              ],
+              [
+                "*kula*",
+                "*kula!*",
+                "*kuleni!*",
+                "eat! (ku- kept)"
+              ]
+            ]
+          },
+          "after": [
+            "The four irregular verbs — *njoo*, *nenda*, *lete*, and *kuwa* → *uwe* — are the only ones to memorize. You'll hear them dozens of times a day, so they'll stick on their own.",
+            "Verbs borrowed from Arabic don't change their ending even in the plural: *fikiri!* → *fikirini!*, *jibu!* → *jibuni!*, *rudi!* → *rudini!*, *samehe!* → *sameheni!*",
+            "⚠️ Watch out: *kata!* means **cut!** (from *kukata*). A \"word\" is *neno*, plural *maneno*."
+          ]
+        },
+        {
+          "title": "The -e form: suggestions, requests, and prohibitions",
+          "body": [
+            "Swahili has one verb form that covers \"so that\", \"let's\", \"please\", and \"don't\" all at once. Its shape: **subject prefix + root ending in -e**, with no tense slot at all."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Say it",
+              "Meaning",
+              "Used for"
+            ],
+            "rows": [
+              [
+                "*nisome*",
+                "nee-SOH-meh",
+                "let me read",
+                "offering"
+              ],
+              [
+                "*usome*",
+                "oo-SOH-meh",
+                "(that) you read",
+                "gentle request"
+              ],
+              [
+                "*asome*",
+                "ah-SOH-meh",
+                "let him/her read",
+                "suggesting"
+              ],
+              [
+                "**tusome**",
+                "too-SOH-meh",
+                "**let's read**",
+                "invitation — the most common"
+              ],
+              [
+                "*msome*",
+                "m-SOH-meh",
+                "(that) you (pl.) read",
+                "request to several people"
+              ],
+              [
+                "*wasome*",
+                "wah-SOH-meh",
+                "let them read",
+                "suggesting"
+              ],
+              [
+                "**usisome**",
+                "oo-see-SOH-meh",
+                "**don't read (you)**",
+                "prohibition"
+              ],
+              [
+                "**msisome**",
+                "m-see-SOH-meh",
+                "**don't read (you pl.)**",
+                "prohibition"
+              ]
+            ]
+          },
+          "after": [
+            "**Invitations** use *tu-*: *Twende!* (let's go), *Tuende sokoni* (let's go to the market), *Tule!* (let's eat), *Tuanze* (let's start). It's the form you'll hear most from any group about to head off somewhere.",
+            "**Prohibitions** slip in *-si-*: *usiende* (don't go), *usisahau* (don't forget), *usijali* (don't worry), *usiwe na wasiwasi* (don't be anxious), *msichelewe* (don't be late, you all). This is the only way to say \"don't\" — a plain command can't be made negative.",
+            "**Polite requests** almost always start with *naomba* (I ask) or *tafadhali*: *Naomba usaidie* (please help me), *Naomba maji* (may I have some water), *Tafadhali urudie* (please repeat). And after *lazima* (must), the *-e* form is required: *Lazima uende sasa* (you have to go now), *Lazima tuondoke* (we have to leave)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Maagizo ya kila siku — commands you'll hear",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Njoo hapa!*",
+              "n-JOH-oh HAH-pah",
+              "Come here!"
+            ],
+            [
+              "*Ngoja kidogo.*",
+              "NGOH-jah kee-DOH-goh",
+              "Wait a moment."
+            ],
+            [
+              "*Kaa, karibu.*",
+              "KAH-ah kah-REE-boo",
+              "Sit down, please."
+            ],
+            [
+              "*Sema polepole.*",
+              "SEH-mah poh-leh-POH-leh",
+              "Speak slowly."
+            ],
+            [
+              "*Rudia tafadhali.*",
+              "roo-DEE-ah",
+              "Please repeat."
+            ],
+            [
+              "*Nisaidie tafadhali.*",
+              "nee-sah-ee-DEE-eh",
+              "Please help me."
+            ],
+            [
+              "*Simama hapa.*",
+              "see-MAH-mah",
+              "Stop here."
+            ],
+            [
+              "*Endelea.*",
+              "ehn-deh-LEH-ah",
+              "Go on."
+            ],
+            [
+              "*Usijali.*",
+              "oo-see-JAH-lee",
+              "Don't worry."
+            ],
+            [
+              "*Usisahau!*",
+              "oo-see-sah-HAH-oo",
+              "Don't forget!"
+            ],
+            [
+              "*Usiwe na haraka.*",
+              "oo-see-WEH nah hah-RAH-kah",
+              "Don't rush."
+            ],
+            [
+              "*Twende!*",
+              "TWEHN-deh",
+              "Let's go!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Nisaidie* already contains \"me\" — the insert *-ni-*, meaning \"me as the target\". That part is taken apart fully in the next unit; for now learn it whole, because it's one of the most useful sentences in this book."
+        },
+        {
+          "type": "p",
+          "text": "On a daladala or bodaboda, these two commands are the ones you'll need most: *Shusha hapa!* (drop me here) and *Simama pale!* (stop over there). And at the market: *Punguza bei* (lower the price) — which you already used in unit 7 without knowing it was a command."
+        }
+      ]
+    },
+    {
+      "title": "Nina njaa — body states you \"have\"",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Swahili expresses most physical states and feelings with *kuwa na* — \"to have\" — just like French and Arabic, and unlike English, which uses adjectives."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Literally",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Nina njaa.*",
+              "I have hunger",
+              "I'm hungry."
+            ],
+            [
+              "*Nina kiu.*",
+              "I have thirst",
+              "I'm thirsty."
+            ],
+            [
+              "*Nina baridi.*",
+              "I have cold",
+              "I'm cold."
+            ],
+            [
+              "*Nina joto.*",
+              "I have heat",
+              "I'm hot."
+            ],
+            [
+              "*Nina usingizi.*",
+              "I have sleepiness",
+              "I'm sleepy."
+            ],
+            [
+              "*Nina haraka.*",
+              "I have hurry",
+              "I'm in a hurry."
+            ],
+            [
+              "*Nina wasiwasi.*",
+              "I have worry",
+              "I'm worried."
+            ],
+            [
+              "*Nina furaha.*",
+              "I have joy",
+              "I'm happy."
+            ],
+            [
+              "*Nina hakika.*",
+              "I have certainty",
+              "I'm sure."
+            ],
+            [
+              "*Sina uhakika.*",
+              "I don't have certainty",
+              "I'm not sure."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The negative uses the *sina* you've had since unit 2: *Sina njaa* (I'm not hungry), *Sina wasiwasi* (I'm not worried). And for others: *Ana njaa*, *Wana kiu*, *Hana haraka*."
+        },
+        {
+          "type": "p",
+          "text": "Two of these come from Arabic: *hakika* (certainty, from *ḥaqīqa*) and *furaha* (joy, from *faraḥ*). If you want to answer \"how are you\" honestly and with life, *Nina furaha leo!* makes far more of an impression than an automatic *nzuri*."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "kukata",
+      "baca": "koo-KAH-tah",
+      "en": "to cut"
+    },
+    {
+      "sw": "kuweka",
+      "baca": "koo-WEH-kah",
+      "en": "to put"
+    },
+    {
+      "sw": "kuanza",
+      "baca": "koo-AHN-zah",
+      "en": "to begin"
+    },
+    {
+      "sw": "kuendelea",
+      "baca": "koo-ehn-deh-LEH-ah",
+      "en": "to continue"
+    },
+    {
+      "sw": "kurudia",
+      "baca": "koo-roo-DEE-ah",
+      "en": "to repeat"
+    },
+    {
+      "sw": "kujali",
+      "baca": "koo-JAH-lee",
+      "en": "to care; to worry"
+    },
+    {
+      "sw": "kushusha",
+      "baca": "koo-SHOO-shah",
+      "en": "to drop off; to lower"
+    },
+    {
+      "sw": "njoo / njooni",
+      "baca": "n-JOH-oh",
+      "en": "come! (you / you pl.)"
+    },
+    {
+      "sw": "nenda / nendeni",
+      "baca": "NEHN-dah",
+      "en": "go!"
+    },
+    {
+      "sw": "lete / leteni",
+      "baca": "LEH-teh",
+      "en": "bring!"
+    },
+    {
+      "sw": "twende",
+      "baca": "TWEHN-deh",
+      "en": "let's go"
+    },
+    {
+      "sw": "usijali",
+      "baca": "oo-see-JAH-lee",
+      "en": "don't worry"
+    },
+    {
+      "sw": "usisahau",
+      "baca": "oo-see-sah-HAH-oo",
+      "en": "don't forget"
+    },
+    {
+      "sw": "lazima",
+      "baca": "lah-ZEE-mah",
+      "en": "must"
+    },
+    {
+      "sw": "naomba",
+      "baca": "nah-OHM-bah",
+      "en": "I ask; please"
+    },
+    {
+      "sw": "sufuria",
+      "baca": "soo-foo-REE-ah",
+      "en": "pot"
+    },
+    {
+      "sw": "sahani",
+      "baca": "sah-HAH-nee",
+      "en": "plate"
+    },
+    {
+      "sw": "bilauri",
+      "baca": "bee-lah-OO-ree",
+      "en": "glass"
+    },
+    {
+      "sw": "chumvi",
+      "baca": "CHOOM-vee",
+      "en": "salt"
+    },
+    {
+      "sw": "nazi",
+      "baca": "NAH-zee",
+      "en": "coconut; coconut milk"
+    },
+    {
+      "sw": "kitunguu / vitunguu",
+      "baca": "kee-too-NGOO-oo",
+      "en": "onion"
+    },
+    {
+      "sw": "kipande / vipande",
+      "baca": "kee-PAHN-deh",
+      "en": "piece"
+    },
+    {
+      "sw": "njaa",
+      "baca": "n-JAH-ah",
+      "en": "hunger"
+    },
+    {
+      "sw": "kiu",
+      "baca": "KEE-oo",
+      "en": "thirst"
+    },
+    {
+      "sw": "usingizi",
+      "baca": "oo-see-NGEE-zee",
+      "en": "sleepiness"
+    },
+    {
+      "sw": "haraka",
+      "baca": "hah-RAH-kah",
+      "en": "hurry"
+    },
+    {
+      "sw": "wasiwasi",
+      "baca": "wah-see-WAH-see",
+      "en": "worry"
+    },
+    {
+      "sw": "furaha",
+      "baca": "foo-RAH-hah",
+      "en": "joy"
+    },
+    {
+      "sw": "hakika",
+      "baca": "hah-KEE-kah",
+      "en": "certainty; sure"
+    },
+    {
+      "sw": "mbalimbali",
+      "baca": "m-bah-lee-m-BAH-lee",
+      "en": "various"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Make a command for one person, then for several.",
+      "items": [
+        "kusoma → ____",
+        "kukaa → ____",
+        "kuandika → ____",
+        "kuja → ____",
+        "kwenda → ____",
+        "kuleta → ____"
+      ]
+    },
+    {
+      "prompt": "Make it a prohibition.",
+      "items": [
+        "Nenda! → ____",
+        "Sahau! → ____",
+        "Kula! → ____",
+        "Chelewa! → ____",
+        "Njoo! → ____",
+        "Weka chumvi! → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Swahili.",
+      "items": [
+        "Please sit down.",
+        "Wait a moment.",
+        "Let's go to the market!",
+        "Don't worry.",
+        "You have to go now.",
+        "Please repeat."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right -e form.",
+      "items": [
+        "Lazima u____ sasa. (kwenda — you have to go)",
+        "Tu____ chakula! (kula — let's eat)",
+        "Naomba u____. (kusaidia — please help)",
+        "Lazima tu____ mapema. (kuondoka — we have to leave)",
+        "U____ na haraka. (kuwa — don't rush)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "hapa / kaa / karibu",
+        "kidogo / ngoja",
+        "chumvi / usiweke / bado",
+        "wali / tuanze / kupika",
+        "njaa / nina / kubwa"
+      ]
+    }
+  ],
+  "answers": [
+    "soma! / someni! — kaa! / kaeni! — andika! / andikeni! — njoo! / njooni! — nenda! / nendeni! — lete! / leteni!",
+    "Usiende! — Usisahau! — Usile! — Usichelewe! — Usije! — Usiweke chumvi!",
+    "Karibu, kaa. — Ngoja kidogo. — Twende sokoni! — Usijali. — Lazima uende sasa. — Rudia tafadhali.",
+    "uende — tule — usaidie — tuondoke — Usiwe",
+    "Karibu, kaa hapa. — Ngoja kidogo. — Usiweke chumvi bado. — Tuanze kupika wali. — Nina njaa kubwa."
+  ]
+}

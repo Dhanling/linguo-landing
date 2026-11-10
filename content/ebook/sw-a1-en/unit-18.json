@@ -1,0 +1,586 @@
+{
+  "title": "Want, can, like: verbs that hold hands with verbs",
+  "title_target": "Mgahawani: nataka kuagiza",
+  "goal": "Order food, turn down what you don't eat, and chain two verbs in one sentence — the second one keeps its *ku-*.",
+  "bekal": [
+    "*kutaka*, *kuweza*, *kupenda*, *kujua* + a verb with *ku-*",
+    "*ku-* as a noun: *kusoma ni kuzuri* (reading is good)",
+    "*kabla ya*, *baada ya*, *bila* + verb"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Mgahawani",
+      "intro": "Budi's first dinner in a real restaurant, with Amina on hand as translator — but she isn't needed.",
+      "lines": [
+        {
+          "speaker": "Mhudumu:",
+          "text": "Karibuni! Mnataka kuagiza nini?",
+          "id": "Welcome! What would you like to order?",
+          "literal": "welcome-you(pl)! you(pl)-are-want to-order what?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Naomba menyu, tafadhali.",
+          "id": "The menu, please.",
+          "literal": "I-ask menu, please."
+        },
+        {
+          "speaker": "Mhudumu:",
+          "text": "Hii hapa. Leo tuna samaki, kuku na nyama choma.",
+          "id": "Here you are. Today we have fish, chicken, and grilled meat.",
+          "literal": "this at-here. today we-have fish, chicken and meat grilled."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Ninataka kula samaki na wali wa nazi.",
+          "id": "I'd like to eat fish and coconut rice.",
+          "literal": "I-am-want to-eat fish and rice of coconut."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Naweza kupata kuku bila pilipili? Siwezi kula pilipili kali.",
+          "id": "Could I get the chicken without chili? I can't handle spicy chili.",
+          "literal": "I-can to-get chicken without chili? I-not-can to-eat chili hot."
+        },
+        {
+          "speaker": "Mhudumu:",
+          "text": "Bila shaka. Mnataka kunywa nini?",
+          "id": "Of course. What would you like to drink?",
+          "literal": "without doubt. you(pl)-are-want to-drink what?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Maji baridi mawili, tafadhali.",
+          "id": "Two cold waters, please.",
+          "literal": "water cold two, please."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Na mimi napenda kujaribu juisi ya embe.",
+          "id": "And I'd like to try mango juice.",
+          "literal": "and I I-like to-try juice of mango."
+        },
+        {
+          "speaker": "Mhudumu:",
+          "text": "Sawa. Chakula kitakuwa tayari baada ya dakika ishirini.",
+          "id": "Fine. The food will be ready in twenty minutes.",
+          "literal": "okay. food it-will-be ready after of minutes twenty."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Asante. Kabla ya kula, choo kiko wapi?",
+          "id": "Thanks. Before we eat, where's the restroom?",
+          "literal": "thanks. before of eating, toilet it-is where?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Nyuma pale. Chakula hiki ni kitamu — utapenda!",
+          "id": "Back there. This food is delicious — you'll love it!",
+          "literal": "back there. food this is tasty — you-will-like!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kupika kwao ni kuzuri sana. Naomba bili, tafadhali!",
+          "id": "Their cooking is wonderful. The bill, please!",
+          "literal": "cooking of-them is good very. I-ask bill, please!"
+        }
+      ],
+      "notes": [
+        "**Naomba is the politest way to ask for anything.** Literally \"I beg\", and it works for things and actions alike: *Naomba maji* (water, please), *Naomba bili* (the bill, please), *Naomba kupita* (excuse me, let me through), *Naomba unisaidie* (please help me). If you could take only one polite word into a restaurant, take this one.",
+        "**Bila shaka means \"without doubt\", i.e. of course.** *Bila* means \"without\" and can be followed by a noun or a verb: *bila sukari* (without sugar), *bila pilipili* (without chili), *bila kusubiri* (without waiting), *bila shaka* (certainly).",
+        "**Nyama choma isn't just food, it's an occasion.** Goat or beef slow-grilled and eaten in a big group with *kachumbari* (a fresh salad-salsa of sliced tomato, onion, and lime). If you're invited *kwenda kula nyama choma*, it's an invitation to get together, not just to eat.",
+        "**Wali wa nazi is rice cooked in coconut milk** — a cousin of Southeast Asian coconut rice, and perhaps the most comforting dish on the East African coast. Its relatives are *mchuzi wa nazi* (coconut curry) and *samaki wa nazi*.",
+        "**Hii hapa means \"here it is\".** A demonstrative paired with a place word: *hii hapa* (here it is, N-class thing), *hiki hapa*, *huyu hapa* (here he/she is). A very common phrase when handing something over."
+      ],
+      "grammars": [
+        {
+          "title": "Two verbs in one sentence",
+          "body": [
+            "When a sentence has two verbs, the **first is built in full** with subject prefix and tense slot, while the **second stays in its dictionary form** — with *ku-* intact in front. It's exactly the same as English \"I want **to** eat\"."
+          ],
+          "table": {
+            "head": [
+              "First verb",
+              "Example",
+              "Meaning",
+              "Negative"
+            ],
+            "rows": [
+              [
+                "*kutaka* (to want)",
+                "*ninataka kula*",
+                "I want to eat",
+                "*sitaki kula*"
+              ],
+              [
+                "*kuweza* (can)",
+                "*ninaweza kusema*",
+                "I can speak",
+                "*siwezi kusema*"
+              ],
+              [
+                "*kupenda* (to like)",
+                "*ninapenda kusoma*",
+                "I like reading",
+                "*sipendi kusoma*"
+              ],
+              [
+                "*kujua* (to know how)",
+                "*ninajua kuogelea*",
+                "I can swim",
+                "*sijui kuogelea*"
+              ],
+              [
+                "*kuanza* (to start)",
+                "*nimeanza kujifunza*",
+                "I've started learning",
+                "*sijaanza kujifunza*"
+              ],
+              [
+                "*kumaliza* (to finish)",
+                "*nimemaliza kula*",
+                "I've finished eating",
+                "*sijamaliza kula*"
+              ],
+              [
+                "*kujaribu* (to try)",
+                "*nitajaribu kupika*",
+                "I'll try to cook",
+                "*sitajaribu kupika*"
+              ],
+              [
+                "*kusahau* (to forget)",
+                "*nimesahau kununua*",
+                "I forgot to buy",
+                "*sijasahau kununua*"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that **only the first verb is negated** — the second is untouched. *Siwezi kuja* (I can't come), not *siwezi siji*.",
+            "*Kujua* means \"know\" for facts and \"know how\" for skills: *Ninajua Kiswahili* (I know Swahili), *Ninajua kuendesha gari* (I can drive). Tell it apart from *kuweza*, which means can because circumstances allow: *Siwezi kuja leo* (I can't come today — not because I'm unable).",
+            "For a request gentler than *ninataka*, use **ningependa** (\"I would like\"): *Ningependa kuagiza* (I'd like to order), *Ningependa chai* (I'd like tea). Memorize it whole; its structure isn't taken apart until A2."
+          ]
+        },
+        {
+          "title": "Ku- as a noun: \"reading is good\"",
+          "body": [
+            "The *ku-* form isn't only \"to…\" — it also turns a verb into a **noun**, just like the English *-ing* in \"reading is fun\". And as a noun it has its own class, with the prefix **ku-**."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Meaning",
+              "Note"
+            ],
+            "rows": [
+              [
+                "*Kusoma ni kuzuri.*",
+                "Reading is good.",
+                "the adjective agrees: *ku-*"
+              ],
+              [
+                "*Kupika kwao ni kuzuri.*",
+                "Their cooking is good.",
+                "the possessives: *kwangu, kwako, kwao*"
+              ],
+              [
+                "*Kusafiri ni ghali.*",
+                "Traveling is expensive.",
+                "loanword adjectives don't change"
+              ],
+              [
+                "*Kabla ya kula*",
+                "before eating",
+                "after *ya* it's always the *ku-* form"
+              ],
+              [
+                "*Baada ya kufika*",
+                "after arriving",
+                "same"
+              ],
+              [
+                "*Bila kusubiri*",
+                "without waiting",
+                "same"
+              ]
+            ]
+          },
+          "after": [
+            "Three time-linkers to take away from this page: **kabla ya** (before), **baada ya** (after), and **bila** (without). All three are always followed by the *ku-* form, never by a built verb.",
+            "Look at *kwao* in the second row: the possessives for the *ku-* class are *kwangu*, *kwako*, *kwake*, *kwetu*, *kwenu*, *kwao* — exactly the same as the \"at someone's place\" forms you've used since unit 2. They're one family.",
+            "Swahili proverbs are almost always built on this pattern: *Kusoma ni kujua* (reading is knowing), *Kupanga ni kuchagua* (to plan is to choose), *Kuuliza si ujinga* (asking is not ignorance)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Mgahawani — sentences for ordering food",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Naomba menyu.*",
+              "The menu, please."
+            ],
+            [
+              "*Mna chakula gani leo?*",
+              "What food do you have today?"
+            ],
+            [
+              "*Ningependa kuagiza…*",
+              "I'd like to order…"
+            ],
+            [
+              "*Kuna kitu bila nyama?*",
+              "Is there anything without meat?"
+            ],
+            [
+              "*Bila pilipili, tafadhali.*",
+              "No chili, please."
+            ],
+            [
+              "*Punguza chumvi kidogo.*",
+              "Go easy on the salt."
+            ],
+            [
+              "*Kiasi gani?* / *Bei gani?*",
+              "How much is it?"
+            ],
+            [
+              "*Chakula kitakuwa tayari lini?*",
+              "When will the food be ready?"
+            ],
+            [
+              "*Chakula ni kitamu sana!*",
+              "The food is delicious!"
+            ],
+            [
+              "*Nimeshiba, asante.*",
+              "I'm full, thank you."
+            ],
+            [
+              "*Naomba bili, tafadhali.*",
+              "The bill, please."
+            ],
+            [
+              "*Mnapokea pesa za simu?*",
+              "Do you accept mobile money?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last line isn't tech small talk: mobile payments (*M-Pesa* in Kenya, *Tigo Pesa* and *Mixx* in Tanzania) are used everywhere, even at roadside stalls. Your phone number is your wallet, and a sentence you'll often hear is *Nitume kwa namba hii* (send it to this number)."
+        },
+        {
+          "type": "p",
+          "text": "*Mgahawa* is a restaurant; *baa* sells drinks; *kibanda* is a small food stall; and *hoteli* — careful — in Tanzania often means a restaurant, not a place to stay."
+        }
+      ]
+    },
+    {
+      "title": "Ladha na maombi maalum — flavors and special requests",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*tamu*",
+              "TAH-moo",
+              "sweet; tasty"
+            ],
+            [
+              "*chumvi nyingi*",
+              "CHOOM-vee NYEE-ngee",
+              "too salty"
+            ],
+            [
+              "*kali*",
+              "KAH-lee",
+              "spicy"
+            ],
+            [
+              "*chungu*",
+              "CHOO-ngoo",
+              "bitter"
+            ],
+            [
+              "*chachu*",
+              "CHAH-choo",
+              "sour"
+            ],
+            [
+              "*baridi* / *moto*",
+              "bah-REE-dee / MOH-toh",
+              "cold / hot"
+            ],
+            [
+              "*bila nyama*",
+              "BEE-lah NYAH-mah",
+              "without meat"
+            ],
+            [
+              "*bila sukari*",
+              "BEE-lah soo-KAH-ree",
+              "without sugar"
+            ],
+            [
+              "*chakula cha halali*",
+              "chah-KOO-lah chah hah-LAH-lee",
+              "halal food"
+            ],
+            [
+              "*sili nyama ya nguruwe*",
+              "SEE-lee NYAH-mah yah ngoo-ROO-weh",
+              "I don't eat pork"
+            ],
+            [
+              "*nina mzio wa…*",
+              "NEE-nah m-ZEE-oh wah",
+              "I'm allergic to…"
+            ],
+            [
+              "*maji ya kunywa*",
+              "MAH-jee yah KOO-nywah",
+              "drinking water"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "In Zanzibar and along the Tanzanian coast, most restaurants really are *halali* and serve no pork at all; in big cities like Dar es Salaam and Nairobi, asking first is a normal habit and offends no one. The sentence: *Chakula hiki ni halali?*"
+        },
+        {
+          "type": "p",
+          "text": "Look at *maji ya kunywa* — \"water for drinking\", using the *ku-* form from the previous page as a description. Same pattern: *chumba cha kulala* (bedroom), *chumba cha kulia* (dining room), *mashine ya kufulia* (washing machine). Swahili builds new terms from old parts, and now you can read them yourself."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "kuagiza",
+      "baca": "koo-ah-GEE-zah",
+      "en": "to order"
+    },
+    {
+      "sw": "kupata",
+      "baca": "koo-PAH-tah",
+      "en": "to get"
+    },
+    {
+      "sw": "kujaribu",
+      "baca": "koo-jah-REE-boo",
+      "en": "to try"
+    },
+    {
+      "sw": "kuweza",
+      "baca": "koo-WEH-zah",
+      "en": "can; to be able"
+    },
+    {
+      "sw": "kujua",
+      "baca": "koo-JOO-ah",
+      "en": "to know; to know how"
+    },
+    {
+      "sw": "kuendesha",
+      "baca": "koo-ehn-DEH-shah",
+      "en": "to drive; to operate"
+    },
+    {
+      "sw": "ningependa",
+      "baca": "nee-ngeh-PEHN-dah",
+      "en": "I'd like (polite)"
+    },
+    {
+      "sw": "menyu",
+      "baca": "MEH-nyoo",
+      "en": "menu"
+    },
+    {
+      "sw": "bili",
+      "baca": "BEE-lee",
+      "en": "bill; check"
+    },
+    {
+      "sw": "mgahawa",
+      "baca": "m-gah-HAH-wah",
+      "en": "restaurant"
+    },
+    {
+      "sw": "mhudumu",
+      "baca": "m-hoo-DOO-moo",
+      "en": "waiter"
+    },
+    {
+      "sw": "kuku",
+      "baca": "KOO-koo",
+      "en": "chicken"
+    },
+    {
+      "sw": "nyama choma",
+      "baca": "NYAH-mah CHOH-mah",
+      "en": "grilled meat"
+    },
+    {
+      "sw": "kachumbari",
+      "baca": "kah-choom-BAH-ree",
+      "en": "fresh tomato-onion salsa"
+    },
+    {
+      "sw": "juisi",
+      "baca": "JOO-ee-see",
+      "en": "juice"
+    },
+    {
+      "sw": "pilipili",
+      "baca": "pee-lee-PEE-lee",
+      "en": "chili"
+    },
+    {
+      "sw": "bila",
+      "baca": "BEE-lah",
+      "en": "without"
+    },
+    {
+      "sw": "bila shaka",
+      "baca": "BEE-lah SHAH-kah",
+      "en": "of course"
+    },
+    {
+      "sw": "kabla ya",
+      "baca": "KAHB-lah yah",
+      "en": "before"
+    },
+    {
+      "sw": "baada ya",
+      "baca": "bah-AH-dah yah",
+      "en": "after"
+    },
+    {
+      "sw": "ladha",
+      "baca": "LAH-dhah",
+      "en": "flavor"
+    },
+    {
+      "sw": "moto",
+      "baca": "MOH-toh",
+      "en": "hot; fire"
+    },
+    {
+      "sw": "chachu",
+      "baca": "CHAH-choo",
+      "en": "sour"
+    },
+    {
+      "sw": "halali",
+      "baca": "hah-LAH-lee",
+      "en": "halal"
+    },
+    {
+      "sw": "nguruwe",
+      "baca": "ngoo-ROO-weh",
+      "en": "pig; pork"
+    },
+    {
+      "sw": "mzio",
+      "baca": "m-ZEE-oh",
+      "en": "allergy"
+    },
+    {
+      "sw": "kupanga",
+      "baca": "koo-PAH-ngah",
+      "en": "to plan; to arrange"
+    },
+    {
+      "sw": "ujinga",
+      "baca": "oo-JEE-ngah",
+      "en": "ignorance"
+    },
+    {
+      "sw": "kuvuta",
+      "baca": "koo-VOO-tah",
+      "en": "to pull; to smoke"
+    },
+    {
+      "sw": "kulipa",
+      "baca": "koo-LEE-pah",
+      "en": "to pay"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Chain the two verbs.",
+      "items": [
+        "I want + to eat → ____",
+        "I can + speak Swahili → ____",
+        "he/she likes + to cook → ____",
+        "we've started + learning → ____",
+        "I forgot + to buy → ____",
+        "they will try + to swim → ____"
+      ]
+    },
+    {
+      "prompt": "Make it negative.",
+      "items": [
+        "Ninataka kula. → ____",
+        "Ninaweza kuja. → ____",
+        "Anapenda kusubiri. → ____",
+        "Ninajua kuogelea. → ____",
+        "Tumemaliza kula. → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Swahili.",
+      "items": [
+        "What would you like to order?",
+        "The menu, please.",
+        "I want to eat fish.",
+        "Could I get chicken without chili?",
+        "The food is delicious!",
+        "The bill, please."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with kabla ya, baada ya, or bila.",
+      "items": [
+        "____ kula, nanawa mikono. (before)",
+        "____ kufika, nitakupigia simu. (after)",
+        "Nataka chai ____ sukari. (without)",
+        "____ kusubiri, aliondoka. (without)",
+        "____ dakika ishirini chakula kitakuwa tayari. (after)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "kula / ninataka / samaki",
+        "pilipili / bila / kuku / naweza / kupata",
+        "tafadhali / naomba / bili",
+        "kuzuri / ni / kusoma",
+        "kula / choo / kabla / kiko / wapi / ya"
+      ]
+    }
+  ],
+  "answers": [
+    "ninataka kula — ninaweza kusema Kiswahili — anapenda kupika — tumeanza kujifunza — nimesahau kununua — watajaribu kuogelea",
+    "Sitaki kula. — Siwezi kuja. — Hapendi kusubiri. — Sijui kuogelea. — Hatujamaliza kula.",
+    "Mnataka kuagiza nini? — Naomba menyu, tafadhali. — Ninataka kula samaki. — Naweza kupata kuku bila pilipili? — Chakula ni kitamu sana! — Naomba bili, tafadhali.",
+    "Kabla ya — Baada ya — bila — Bila — Baada ya",
+    "Ninataka kula samaki. — Naweza kupata kuku bila pilipili. — Naomba bili, tafadhali. — Kusoma ni kuzuri. — Kabla ya kula, choo kiko wapi?"
+  ]
+}

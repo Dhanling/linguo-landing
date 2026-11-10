@@ -1,0 +1,642 @@
+{
+  "title": "One word, one sentence: subject prefixes and the -na- slot",
+  "title_target": "Unafanya nini?",
+  "goal": "Build Swahili verbs the way you couple train cars — subject, tense, root — and tell what you are doing today.",
+  "bekal": [
+    "the six subject prefixes: *ni-, u-, a-, tu-, m-, wa-*",
+    "the *-na-* slot for \"is doing\" and for daily habits",
+    "dropping *ku-* from the dictionary form — and the six verbs that keep it"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Chuoni",
+      "intro": "Midday on the campus lawn. Juma, a young man Budi's age, sits next to him under the mango tree.",
+      "lines": [
+        {
+          "speaker": "Juma:",
+          "text": "Habari za mchana! Unafanya nini hapa?",
+          "id": "Good afternoon! What are you doing here?",
+          "literal": "news of afternoon! you-are-doing what here?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ninajifunza Kiswahili. Ninasoma kila siku.",
+          "id": "I'm learning Swahili. I study every day.",
+          "literal": "I-am-teaching-myself Swahili. I-am-reading every day."
+        },
+        {
+          "speaker": "Juma:",
+          "text": "Vizuri sana! Unajifunza wapi?",
+          "id": "Very good! Where do you study?",
+          "literal": "well very! you-are-teaching-yourself where?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ninajifunza hapa chuoni. Mwalimu wangu anafundisha vizuri.",
+          "id": "I study here at the college. My teacher teaches well.",
+          "literal": "I-am-teaching-myself here at-college. teacher of-me he-is-teaching well."
+        },
+        {
+          "speaker": "Juma:",
+          "text": "Unaelewa Kiswahili sasa?",
+          "id": "Do you understand Swahili now?",
+          "literal": "you-are-understanding Swahili now?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ninaelewa kidogo. Ninasema polepole sana.",
+          "id": "I understand a little. I speak very slowly.",
+          "literal": "I-am-understanding a-little. I-am-speaking slowly very."
+        },
+        {
+          "speaker": "Juma:",
+          "text": "Hakuna shida. Sisi tunaongea polepole pia.",
+          "id": "No problem. We speak slowly too.",
+          "literal": "there-is-not problem. we we-are-chatting slowly also."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Wewe unafanya kazi gani?",
+          "id": "What work do you do?",
+          "literal": "you you-are-doing work which?"
+        },
+        {
+          "speaker": "Juma:",
+          "text": "Ninafanya kazi hotelini. Ninapika chakula.",
+          "id": "I work at a hotel. I cook food.",
+          "literal": "I-am-doing work at-hotel. I-am-cooking food."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aa, wewe ni mpishi! Unapika nini leo?",
+          "id": "Oh, you're a cook! What are you cooking today?",
+          "literal": "ah, you are cook! you-are-cooking what today?"
+        },
+        {
+          "speaker": "Juma:",
+          "text": "Ninapika samaki na wali. Wageni wanakula saa tatu.",
+          "id": "I'm cooking fish and rice. The guests eat at nine.",
+          "literal": "I-am-cooking fish and rice. guests they-are-eating hour three."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ninakuja jioni. Ninapenda samaki sana!",
+          "id": "I'm coming this evening. I love fish!",
+          "literal": "I-am-coming evening. I-am-liking fish very!"
+        }
+      ],
+      "notes": [
+        "**Ninasoma can mean \"I am reading\" and \"I read (as a habit)\".** The *-na-* slot covers two meanings that English splits apart. Context chooses, and misunderstandings almost never happen: *ninasoma sasa* (right now) versus *ninasoma kila siku* (habit).",
+        "**Kusoma means both to read and to study.** *Ninasoma kitabu* = I'm reading a book; *Ninasoma chuoni* = I study at college. For a firmer \"learn\" there is *kujifunza*, literally \"to teach oneself\" — that infix *-ji-* means \"self\".",
+        "**Vizuri means \"well\", not \"good\".** The *vi-* before an adjective turns it into an adverb: *nzuri* (good) → *vizuri* (well), *baya* (bad) → *vibaya* (badly). *Anafundisha vizuri* = he/she teaches well.",
+        "**Hotelini, chuoni, nyumbani — the ending -ni means \"in/at\".** Attach it to any place noun: *hoteli* → *hotelini* (at the hotel), *chuo* → *chuoni* (at college), *soko* → *sokoni* (at the market). This ending is taken apart fully in unit 8; for now just use these as whole words.",
+        "**Hakuna shida = \"there is no problem\".** This phrase, together with its cousin *hakuna matata*, is the most famous Swahili phrase in the world — and it really is used every day. *Hakuna* means \"there is not\", and you'll build it yourself in unit 8."
+      ],
+      "grammars": [
+        {
+          "title": "The verb train: subject + tense + root",
+          "body": [
+            "Swahili verbs don't conjugate — they are **assembled**. Three cars, always in the same order, with no spaces between them:",
+            "**subject prefix + tense slot + root**. *Ni* + *na* + *soma* = *ninasoma*. Change the front car, the subject changes. Change the middle car, the tense changes. The root is never touched."
+          ],
+          "table": {
+            "head": [
+              "Pronoun",
+              "Prefix",
+              "+ -na- + soma",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*mimi*",
+                "**ni-**",
+                "*ninasoma*",
+                "nee-nah-SOH-mah",
+                "I read"
+              ],
+              [
+                "*wewe*",
+                "**u-**",
+                "*unasoma*",
+                "oo-nah-SOH-mah",
+                "you read"
+              ],
+              [
+                "*yeye*",
+                "**a-**",
+                "*anasoma*",
+                "ah-nah-SOH-mah",
+                "he/she reads"
+              ],
+              [
+                "*sisi*",
+                "**tu-**",
+                "*tunasoma*",
+                "too-nah-SOH-mah",
+                "we read"
+              ],
+              [
+                "*ninyi*",
+                "**m-**",
+                "*mnasoma*",
+                "m-nah-SOH-mah",
+                "you (pl.) read"
+              ],
+              [
+                "*wao*",
+                "**wa-**",
+                "*wanasoma*",
+                "wah-nah-SOH-mah",
+                "they read"
+              ]
+            ]
+          },
+          "after": [
+            "The pronoun (*mimi*, *wewe*, …) is almost always **dropped**, because the prefix already carries the subject. *Ninasoma* already means \"I read\". The pronoun is used when you want to stress or contrast: *Mimi ninasoma, wewe unalala* — \"I'm studying, you're sleeping\".",
+            "Watch the stress: it's always on the second-to-last syllable, so it **shifts by itself** as the word grows. *SO-ma* → *ni-na-SO-ma* → *ni-na-ku-SO-ma*. Nothing to memorize.",
+            "The third-person prefix *a-* merges with the next vowel: *a- + -elewa* becomes **anaelewa** (not *aelewa*), and the *m-* prefix for \"you (pl.)\" stands alone as a syllable: *mnasoma* is pronounced m-na-SO-ma."
+          ]
+        },
+        {
+          "title": "The ku- that drops off — and the six verbs that keep it",
+          "body": [
+            "The dictionary form of every verb starts with **ku-**, which means \"to…\": *kusoma* (to read), *kupika* (to cook). As soon as a subject prefix is attached, that *ku-* is **dropped**."
+          ],
+          "table": {
+            "head": [
+              "Dictionary form",
+              "Meaning",
+              "With a subject",
+              "Note"
+            ],
+            "rows": [
+              [
+                "*kusoma*",
+                "to read; to study",
+                "*ninasoma*",
+                "ku- dropped"
+              ],
+              [
+                "*kupika*",
+                "to cook",
+                "*anapika*",
+                "ku- dropped"
+              ],
+              [
+                "*kufanya*",
+                "to do",
+                "*tunafanya*",
+                "ku- dropped"
+              ],
+              [
+                "*kula*",
+                "to eat",
+                "**ninakula**",
+                "ku- **kept** (the root is only -la)"
+              ],
+              [
+                "*kunywa*",
+                "to drink",
+                "**ninakunywa**",
+                "ku- kept"
+              ],
+              [
+                "*kuja*",
+                "to come",
+                "**ninakuja**",
+                "ku- kept"
+              ],
+              [
+                "*kwenda*",
+                "to go",
+                "**ninakwenda**",
+                "ku- kept (kw- before a vowel)"
+              ],
+              [
+                "*kuwa*",
+                "to be; to become",
+                "**ninakuwa**",
+                "ku- kept"
+              ]
+            ]
+          },
+          "after": [
+            "The reason is purely sound: the root is too short to stand alone. *Ni-na-la* is awkward to say and the stress lands nowhere, so *ku-* stays as a prop. One-syllable verbs can be counted on your fingers — the six in this table plus *kufa* (to die) — and they are all words you'll use every day, so they will stick by themselves.",
+            "*Kwenda* has one concession: the form *ninaenda* is also correct and is in fact heard more often in everyday speech. Both are fine.",
+            "⚠️ Don't confuse this prop *ku-* with the *ku-* that means \"you\" as an object (*ninakupenda* = I love you). The second one sits in a different slot and is taken apart in unit 15."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Twenty verbs for day one",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Dictionary form",
+            "Meaning",
+            "Dictionary form",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*kusoma*",
+              "to read; to study",
+              "*kuandika*",
+              "to write"
+            ],
+            [
+              "*kusema*",
+              "to say; to speak",
+              "*kuongea*",
+              "to chat"
+            ],
+            [
+              "*kuelewa*",
+              "to understand",
+              "*kujua*",
+              "to know"
+            ],
+            [
+              "*kufanya*",
+              "to do",
+              "*kufanya kazi*",
+              "to work"
+            ],
+            [
+              "*kupika*",
+              "to cook",
+              "*kununua*",
+              "to buy"
+            ],
+            [
+              "*kupenda*",
+              "to like; to love",
+              "*kutaka*",
+              "to want"
+            ],
+            [
+              "*kuona*",
+              "to see",
+              "*kusikia*",
+              "to hear"
+            ],
+            [
+              "*kukaa*",
+              "to sit; to stay",
+              "*kusimama*",
+              "to stand; to stop"
+            ],
+            [
+              "*kulala*",
+              "to sleep",
+              "*kuamka*",
+              "to wake up"
+            ],
+            [
+              "*kucheza*",
+              "to play; to dance",
+              "*kuimba*",
+              "to sing"
+            ],
+            [
+              "*kuandaa*",
+              "to prepare",
+              "*kusubiri*",
+              "to wait"
+            ],
+            [
+              "*kutoka*",
+              "to come from; to go out",
+              "*kufika*",
+              "to arrive"
+            ],
+            [
+              "*kujifunza*",
+              "to learn",
+              "*kufundisha*",
+              "to teach"
+            ],
+            [
+              "*kula*",
+              "to eat",
+              "*kunywa*",
+              "to drink"
+            ],
+            [
+              "*kuja*",
+              "to come",
+              "*kwenda*",
+              "to go"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Almost all end in **-a**, and that is no accident: native Swahili verbs always end in *-a*. Those ending in *-i*, *-e* or *-u* — *kufikiri* (to think), *kusamehe* (to forgive), *kujibu* (to answer) — are almost always loans from Arabic, and the difference only shows up when the sentence is negated in unit 4."
+        }
+      ]
+    },
+    {
+      "title": "Sasa, leo, kila siku — when and how often",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*sasa*",
+              "SAH-sah",
+              "now"
+            ],
+            [
+              "*leo*",
+              "LEH-oh",
+              "today"
+            ],
+            [
+              "*kila siku*",
+              "KEE-lah SEE-koo",
+              "every day"
+            ],
+            [
+              "*mara nyingi*",
+              "MAH-rah NYEE-ngee",
+              "often"
+            ],
+            [
+              "*mara kwa mara*",
+              "MAH-rah kwah MAH-rah",
+              "from time to time"
+            ],
+            [
+              "*kidogo*",
+              "kee-DOH-goh",
+              "a little"
+            ],
+            [
+              "*sana*",
+              "SAH-nah",
+              "very; a lot"
+            ],
+            [
+              "*polepole*",
+              "poh-leh-POH-leh",
+              "slowly"
+            ],
+            [
+              "*haraka*",
+              "hah-RAH-kah",
+              "fast; in a hurry"
+            ],
+            [
+              "*pamoja*",
+              "pah-MOH-jah",
+              "together"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "All of them stand **after the verb**, never in front of it: *Ninasoma kila siku*, *Anapika haraka*, *Tunacheza pamoja*. That is the usual position in English too."
+        },
+        {
+          "type": "p",
+          "text": "*Polepole* is the favorite word of East Africa, and it means more than \"slowly\". It is an attitude to life: *Pole pole ndio mwendo* — \"slowly, slowly is the way to walk\". If someone says it to you when you're in a rush, it isn't a rebuke, it's an invitation to breathe."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "kufanya",
+      "baca": "koo-FAH-nyah",
+      "en": "to do; to make"
+    },
+    {
+      "sw": "kusoma",
+      "baca": "koo-SOH-mah",
+      "en": "to read; to study"
+    },
+    {
+      "sw": "kujifunza",
+      "baca": "koo-jee-FOON-zah",
+      "en": "to learn"
+    },
+    {
+      "sw": "kufundisha",
+      "baca": "koo-foon-DEE-shah",
+      "en": "to teach"
+    },
+    {
+      "sw": "kuelewa",
+      "baca": "koo-eh-LEH-wah",
+      "en": "to understand"
+    },
+    {
+      "sw": "kusema",
+      "baca": "koo-SEH-mah",
+      "en": "to say; to speak"
+    },
+    {
+      "sw": "kuongea",
+      "baca": "koo-oh-NGEH-ah",
+      "en": "to chat; to talk"
+    },
+    {
+      "sw": "kupika",
+      "baca": "koo-PEE-kah",
+      "en": "to cook"
+    },
+    {
+      "sw": "kula",
+      "baca": "KOO-lah",
+      "en": "to eat"
+    },
+    {
+      "sw": "kunywa",
+      "baca": "KOO-nywah",
+      "en": "to drink"
+    },
+    {
+      "sw": "kuja",
+      "baca": "KOO-jah",
+      "en": "to come"
+    },
+    {
+      "sw": "kwenda",
+      "baca": "KWEHN-dah",
+      "en": "to go"
+    },
+    {
+      "sw": "kupenda",
+      "baca": "koo-PEHN-dah",
+      "en": "to like; to love"
+    },
+    {
+      "sw": "kulala",
+      "baca": "koo-LAH-lah",
+      "en": "to sleep"
+    },
+    {
+      "sw": "kuamka",
+      "baca": "koo-AHM-kah",
+      "en": "to wake up"
+    },
+    {
+      "sw": "nini",
+      "baca": "NEE-nee",
+      "en": "what"
+    },
+    {
+      "sw": "wapi",
+      "baca": "WAH-pee",
+      "en": "where"
+    },
+    {
+      "sw": "gani",
+      "baca": "GAH-nee",
+      "en": "what kind of; which"
+    },
+    {
+      "sw": "chuo / chuoni",
+      "baca": "CHOO-oh",
+      "en": "college / at college"
+    },
+    {
+      "sw": "hoteli",
+      "baca": "hoh-TEH-lee",
+      "en": "hotel"
+    },
+    {
+      "sw": "chakula",
+      "baca": "chah-KOO-lah",
+      "en": "food"
+    },
+    {
+      "sw": "samaki",
+      "baca": "sah-MAH-kee",
+      "en": "fish"
+    },
+    {
+      "sw": "wali",
+      "baca": "WAH-lee",
+      "en": "rice (cooked)"
+    },
+    {
+      "sw": "mpishi",
+      "baca": "m-PEE-shee",
+      "en": "cook"
+    },
+    {
+      "sw": "sasa",
+      "baca": "SAH-sah",
+      "en": "now"
+    },
+    {
+      "sw": "leo",
+      "baca": "LEH-oh",
+      "en": "today"
+    },
+    {
+      "sw": "kila siku",
+      "baca": "KEE-lah SEE-koo",
+      "en": "every day"
+    },
+    {
+      "sw": "kidogo",
+      "baca": "kee-DOH-goh",
+      "en": "a little"
+    },
+    {
+      "sw": "polepole",
+      "baca": "poh-leh-POH-leh",
+      "en": "slowly"
+    },
+    {
+      "sw": "vizuri",
+      "baca": "vee-ZOO-ree",
+      "en": "well"
+    },
+    {
+      "sw": "shida",
+      "baca": "SHEE-dah",
+      "en": "problem"
+    },
+    {
+      "sw": "hakuna",
+      "baca": "hah-KOO-nah",
+      "en": "there is not; there are no"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Build the verb: subject + -na- + root.",
+      "items": [
+        "mimi + kusoma → ____",
+        "yeye + kupika → ____",
+        "sisi + kufanya kazi → ____",
+        "wao + kuongea → ____",
+        "wewe + kula → ____",
+        "ninyi + kuja → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Swahili.",
+      "items": [
+        "What are you doing?",
+        "I study Swahili every day.",
+        "He works at a hotel.",
+        "We understand a little.",
+        "They eat fish and rice.",
+        "I speak slowly."
+      ]
+    },
+    {
+      "prompt": "Change the subject to wao (they).",
+      "items": [
+        "Ninapika chakula. → ____",
+        "Unafanya kazi hapa. → ____",
+        "Anakunywa chai. → ____",
+        "Tunajifunza Kiswahili. → ____",
+        "Ninakwenda sokoni. → ____"
+      ]
+    },
+    {
+      "prompt": "Which verbs keep ku-? Write the \"I am …-ing\" form of each.",
+      "items": [
+        "kuandika",
+        "kula",
+        "kusikia",
+        "kuja",
+        "kununua",
+        "kunywa"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "nini / unafanya / hapa",
+        "kila / ninasoma / siku",
+        "hotelini / anafanya / kazi",
+        "polepole / tunaongea",
+        "samaki / wanakula / wageni"
+      ]
+    }
+  ],
+  "answers": [
+    "ninasoma — anapika — tunafanya kazi — wanaongea — unakula — mnakuja",
+    "Unafanya nini? — Ninajifunza Kiswahili kila siku. — Anafanya kazi hotelini. — Tunaelewa kidogo. — Wanakula samaki na wali. — Ninasema polepole.",
+    "Wanapika chakula. — Wanafanya kazi hapa. — Wanakunywa chai. — Wanajifunza Kiswahili. — Wanakwenda sokoni.",
+    "ninaandika — ninakula (ku- kept) — ninasikia — ninakuja (ku- kept) — ninanunua — ninakunywa (ku- kept)",
+    "Unafanya nini hapa? — Ninasoma kila siku. — Anafanya kazi hotelini. — Tunaongea polepole. — Wageni wanakula samaki."
+  ]
+}

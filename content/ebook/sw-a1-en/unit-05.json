@@ -1,0 +1,601 @@
+{
+  "title": "Numbers and age: six numbers that change their clothes",
+  "title_target": "Una miaka mingapi?",
+  "goal": "Count from zero to millions, say your age, spell out a phone number, and recognize the six numbers that change shape to match the thing being counted.",
+  "bekal": [
+    "numbers 1–10, the tens, hundreds and thousands",
+    "the six numbers that follow the noun class: *-moja, -wili, -tatu, -nne, -tano, -nane*",
+    "ask and tell age with *miaka*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Wangapi nyumbani kwenu?",
+      "intro": "Late afternoon on the veranda, waiting for the rain to stop. Amina and Budi swap stories about their homes.",
+      "lines": [
+        {
+          "speaker": "Amina:",
+          "text": "Budi, una miaka mingapi?",
+          "id": "Budi, how old are you?",
+          "literal": "you-have years how-many?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nina miaka ishirini na mitatu. Na wewe?",
+          "id": "I'm twenty-three. And you?",
+          "literal": "I-have years twenty and three. and you?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Nina miaka ishirini na mmoja.",
+          "id": "I'm twenty-one.",
+          "literal": "I-have years twenty and one."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Familia yako ina watu wangapi?",
+          "id": "How many people are in your family?",
+          "literal": "family of-you it-has people how-many?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Tuko watu saba: wazazi wawili na watoto watano.",
+          "id": "There are seven of us: two parents and five children.",
+          "literal": "we-are people seven: parents two and children five."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Watoto watano! Wewe ni wa ngapi?",
+          "id": "Five children! Which one are you?",
+          "literal": "children five! you are of how-many?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Mimi ni wa tatu. Kaka zangu wana miaka thelathini na ishirini na saba.",
+          "id": "I'm the third. My brothers are thirty and twenty-seven.",
+          "literal": "I am of three. brothers of-me they-have years thirty and twenty and seven."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Namba yako ya simu ni ngapi?",
+          "id": "What's your phone number?",
+          "literal": "number of-you of phone is how-many?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Sifuri, saba, tano — mbili, tatu, nne — sita, saba, nane.",
+          "id": "Zero, seven, five — two, three, four — six, seven, eight.",
+          "literal": "zero, seven, five — two, three, four — six, seven, eight."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ngoja kidogo... sema tena polepole, tafadhali!",
+          "id": "Wait a moment... say it again slowly, please!",
+          "literal": "wait a-little... speak again slowly, please!"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Haya: sifuri, saba, tano... Unaandika sasa?",
+          "id": "Okay: zero, seven, five... Are you writing now?",
+          "literal": "okay: zero, seven, five... you-are-writing now?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ndiyo, ninaandika. Asante sana, dada!",
+          "id": "Yes, I'm writing. Thank you very much, sis!",
+          "literal": "yes, I-am-writing. thanks very, sister!"
+        }
+      ],
+      "notes": [
+        "**Age is measured with miaka, the plural of mwaka (year).** Literally \"I have years twenty-three\", exactly the way French and Spanish do it. The question is *Una miaka mingapi?* — and don't be surprised if people answer while asking you back; age is no secret in East Africa.",
+        "**Na means \"and\" and also joins numbers.** *Ishirini na tatu* = twenty and three = 23. *Mia moja hamsini na tano* = 155. All number joins use *na*, without exception.",
+        "**Tuko means \"we are (located)\".** This is the \"be located\" form that is set up fully in unit 8; for now just know that *tuko watu saba* is the most natural way to say \"there are seven of us\".",
+        "**Wa ngapi? asks for position, not quantity.** *Wewe ni wa ngapi?* = which child are you? The answer uses an ordinal: *wa kwanza* (first), *wa pili* (second), *wa tatu* (third).",
+        "**Ngoja means \"wait\" and haya means \"okay\".** Both are spoken-language words that rarely make it into textbooks but are heard a hundred times a day. *Haya basi* = \"well, all right then\", the most common way to close a conversation."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers: the first ten, then everything else",
+          "body": [
+            "The first ten numbers have to be memorized. After that Swahili counts in the most sensible way in the world: you just join them with *na*."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Kiswahili",
+              "Say it",
+              "Number",
+              "Kiswahili"
+            ],
+            "rows": [
+              [
+                "0",
+                "*sifuri*",
+                "see-FOO-ree",
+                "10",
+                "*kumi*"
+              ],
+              [
+                "1",
+                "*moja*",
+                "MOH-jah",
+                "20",
+                "*ishirini*"
+              ],
+              [
+                "2",
+                "*mbili*",
+                "m-BEE-lee",
+                "30",
+                "*thelathini*"
+              ],
+              [
+                "3",
+                "*tatu*",
+                "TAH-too",
+                "40",
+                "*arobaini*"
+              ],
+              [
+                "4",
+                "*nne*",
+                "n-NEH",
+                "50",
+                "*hamsini*"
+              ],
+              [
+                "5",
+                "*tano*",
+                "TAH-noh",
+                "60",
+                "*sitini*"
+              ],
+              [
+                "6",
+                "*sita*",
+                "SEE-tah",
+                "70",
+                "*sabini*"
+              ],
+              [
+                "7",
+                "*saba*",
+                "SAH-bah",
+                "80",
+                "*themanini*"
+              ],
+              [
+                "8",
+                "*nane*",
+                "NAH-neh",
+                "90",
+                "*tisini*"
+              ],
+              [
+                "9",
+                "*tisa*",
+                "TEE-sah",
+                "100 / 1,000",
+                "*mia* / *elfu*"
+              ]
+            ]
+          },
+          "after": [
+            "Notice the Arabic roots: *sifuri* (from *sifr*, zero — the same word that gave English \"cipher\" and \"zero\"), *ishirini* (Arabic *'ishrun*), *arobaini* (*arba'in*), *hamsini* (*khamsin*), *mia* (*mi'a*), *elfu* (*alf*). All the tens come from Arabic, while the units 1–10 are native Bantu.",
+            "Joining is always with *na*: **23** = *ishirini na tatu*, **47** = *arobaini na saba*, **99** = *tisini na tisa*, **156** = *mia moja hamsini na sita*, **2,024** = *elfu mbili na ishirini na nne*.",
+            "For money, people in Tanzania and Kenya say the thousands first: *elfu tano* (5,000), *elfu kumi* (10,000), *laki moja* (100,000 — a loan from Hindi *lakh*), *milioni moja* (1,000,000)."
+          ]
+        },
+        {
+          "title": "Six numbers that follow their noun class",
+          "body": [
+            "Four numbers never change: **sita, saba, tisa, kumi** — and all the tens and hundreds. The remaining six have an empty prefix to be filled by the noun class: **-moja, -wili, -tatu, -nne, -tano, -nane**."
+          ],
+          "table": {
+            "head": [
+              "Noun class",
+              "one",
+              "two",
+              "three",
+              "five",
+              "but: six"
+            ],
+            "rows": [
+              [
+                "*watu* (people)",
+                "*mtu mmoja*",
+                "*watu wawili*",
+                "*watu watatu*",
+                "*watu watano*",
+                "*watu sita*"
+              ],
+              [
+                "*vitabu* (books)",
+                "*kitabu kimoja*",
+                "*vitabu viwili*",
+                "*vitabu vitatu*",
+                "*vitabu vitano*",
+                "*vitabu sita*"
+              ],
+              [
+                "*miaka* (years)",
+                "*mwaka mmoja*",
+                "*miaka miwili*",
+                "*miaka mitatu*",
+                "*miaka mitano*",
+                "*miaka sita*"
+              ],
+              [
+                "*magari* (cars)",
+                "*gari moja*",
+                "*magari mawili*",
+                "*magari matatu*",
+                "*magari matano*",
+                "*magari sita*"
+              ],
+              [
+                "*nyumba* (houses)",
+                "*nyumba moja*",
+                "*nyumba mbili*",
+                "*nyumba tatu*",
+                "*nyumba tano*",
+                "*nyumba sita*"
+              ]
+            ]
+          },
+          "after": [
+            "The *nyumba* class — the biggest class in Swahili, which you set up in unit 7 — happens to use the numbers in their bare form: *nyumba mbili*, *saa tatu*, *shilingi elfu tano*. That is why the forms *mbili*, *tatu*, *tano* are heard most often: they are the form of the class with the most members.",
+            "The number always comes **after** its noun: *watoto watano* (five children), not the reverse. Think of the English \"children five\" — the order is the opposite of English.",
+            "The question word *-ngapi* (how many) follows exactly the same rule: *watu wangapi?*, *vitabu vingapi?*, *miaka mingapi?*, *nyumba ngapi?*, *magari mangapi?*. If you're unsure of the form, just remember the number \"two\" for that noun — the prefix is the same."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Wa kwanza, wa pili — ordinal numbers",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Ordinal numbers are formed with the connector *-a* in front of the number. The form of that connector follows the noun class — *wa* for people, *cha* for *ki-* class things, *ya* for the *nyumba* class."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Order",
+            "For a person",
+            "Other example",
+            "English"
+          ],
+          "rows": [
+            [
+              "1",
+              "*wa kwanza*",
+              "*mwaka wa kwanza*",
+              "first"
+            ],
+            [
+              "2",
+              "*wa pili*",
+              "*siku ya pili*",
+              "second"
+            ],
+            [
+              "3",
+              "*wa tatu*",
+              "*kitabu cha tatu*",
+              "third"
+            ],
+            [
+              "4",
+              "*wa nne*",
+              "*mtoto wa nne*",
+              "fourth"
+            ],
+            [
+              "5",
+              "*wa tano*",
+              "*safari ya tano*",
+              "fifth"
+            ],
+            [
+              "6",
+              "*wa sita*",
+              "*gari la sita*",
+              "sixth"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Two surprises: \"first\" is not *wa moja* but **wa kwanza**, and \"second\" is not *wa mbili* but **wa pili**. After that the ordinary numbers are used. These two special words turn up everywhere: *daraja la kwanza* (first class), *mara ya pili* (the second time)."
+        },
+        {
+          "type": "p",
+          "text": "*Mara* means \"time/occasion\": *mara moja* (once — and also \"immediately\"), *mara mbili* (twice), *mara nyingi* (often), *mara ya kwanza* (for the first time)."
+        }
+      ]
+    },
+    {
+      "title": "Numbers in the real world",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Numbers rarely show up alone. The six rows below are where you'll hear them most."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Situation",
+            "Sentence",
+            "English"
+          ],
+          "rows": [
+            [
+              "Age",
+              "*Nina miaka thelathini.*",
+              "I'm thirty years old."
+            ],
+            [
+              "Price",
+              "*Ni shilingi elfu tatu.*",
+              "It's three thousand shillings."
+            ],
+            [
+              "Phone number",
+              "*Namba yangu ni sifuri saba tano...*",
+              "My number is zero seven five..."
+            ],
+            [
+              "Number of people",
+              "*Sisi ni watu wanne.*",
+              "There are four of us."
+            ],
+            [
+              "Room number",
+              "*Chumba namba kumi na tano.*",
+              "Room number fifteen."
+            ],
+            [
+              "Time",
+              "*Saa tatu asubuhi.*",
+              "Nine o'clock in the morning."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Phone numbers are **always spelled digit by digit**, never grouped the way English speakers say \"eight twenty-one\". Zero is *sifuri*, and in casual talk it is often replaced by *ziro*."
+        },
+        {
+          "type": "p",
+          "text": "For prices, people usually drop the word *shilingi* and just say the number: \"*Elfu tatu*\" is clear enough for three thousand shillings. What matters is that you catch the word *elfu* — that is where the zeros are."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "sifuri",
+      "baca": "see-FOO-ree",
+      "en": "zero"
+    },
+    {
+      "sw": "moja",
+      "baca": "MOH-jah",
+      "en": "one"
+    },
+    {
+      "sw": "mbili",
+      "baca": "m-BEE-lee",
+      "en": "two"
+    },
+    {
+      "sw": "tatu",
+      "baca": "TAH-too",
+      "en": "three"
+    },
+    {
+      "sw": "nne",
+      "baca": "n-NEH",
+      "en": "four"
+    },
+    {
+      "sw": "tano",
+      "baca": "TAH-noh",
+      "en": "five"
+    },
+    {
+      "sw": "sita",
+      "baca": "SEE-tah",
+      "en": "six"
+    },
+    {
+      "sw": "saba",
+      "baca": "SAH-bah",
+      "en": "seven"
+    },
+    {
+      "sw": "nane",
+      "baca": "NAH-neh",
+      "en": "eight"
+    },
+    {
+      "sw": "tisa",
+      "baca": "TEE-sah",
+      "en": "nine"
+    },
+    {
+      "sw": "kumi",
+      "baca": "KOO-mee",
+      "en": "ten"
+    },
+    {
+      "sw": "ishirini",
+      "baca": "ee-shee-REE-nee",
+      "en": "twenty"
+    },
+    {
+      "sw": "thelathini",
+      "baca": "theh-lah-THEE-nee",
+      "en": "thirty"
+    },
+    {
+      "sw": "arobaini",
+      "baca": "ah-roh-BAH-ee-nee",
+      "en": "forty"
+    },
+    {
+      "sw": "hamsini",
+      "baca": "hahm-SEE-nee",
+      "en": "fifty"
+    },
+    {
+      "sw": "mia",
+      "baca": "MEE-ah",
+      "en": "one hundred"
+    },
+    {
+      "sw": "elfu",
+      "baca": "EHL-foo",
+      "en": "one thousand"
+    },
+    {
+      "sw": "laki",
+      "baca": "LAH-kee",
+      "en": "one hundred thousand"
+    },
+    {
+      "sw": "milioni",
+      "baca": "mee-lee-OH-nee",
+      "en": "one million"
+    },
+    {
+      "sw": "mwaka / miaka",
+      "baca": "MWAH-kah / mee-AH-kah",
+      "en": "year / years"
+    },
+    {
+      "sw": "-ngapi",
+      "baca": "NGAH-pee",
+      "en": "how many"
+    },
+    {
+      "sw": "namba",
+      "baca": "NAHM-bah",
+      "en": "number"
+    },
+    {
+      "sw": "simu",
+      "baca": "SEE-moo",
+      "en": "phone"
+    },
+    {
+      "sw": "kwanza",
+      "baca": "KWAHN-zah",
+      "en": "first"
+    },
+    {
+      "sw": "pili",
+      "baca": "PEE-lee",
+      "en": "second"
+    },
+    {
+      "sw": "mara",
+      "baca": "MAH-rah",
+      "en": "time; occasion"
+    },
+    {
+      "sw": "ngoja",
+      "baca": "NGOH-jah",
+      "en": "wait"
+    },
+    {
+      "sw": "haya",
+      "baca": "HAH-yah",
+      "en": "okay; all right"
+    },
+    {
+      "sw": "tena",
+      "baca": "TEH-nah",
+      "en": "again"
+    },
+    {
+      "sw": "chumba / vyumba",
+      "baca": "CHOOM-bah",
+      "en": "room / rooms"
+    },
+    {
+      "sw": "kuandika",
+      "baca": "koo-ahn-DEE-kah",
+      "en": "to write"
+    },
+    {
+      "sw": "kuhesabu",
+      "baca": "koo-heh-SAH-boo",
+      "en": "to count"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these out in Swahili.",
+      "items": [
+        "7",
+        "12",
+        "25",
+        "48",
+        "100",
+        "3,500"
+      ]
+    },
+    {
+      "prompt": "Fill in the number with the right class prefix.",
+      "items": [
+        "watoto ____ (2)",
+        "vitabu ____ (3)",
+        "miaka ____ (5)",
+        "nyumba ____ (4)",
+        "magari ____ (2)",
+        "watu ____ (8)"
+      ]
+    },
+    {
+      "prompt": "Translate into Swahili.",
+      "items": [
+        "How old are you?",
+        "I'm twenty-three years old.",
+        "How many people are in your family?",
+        "There are seven of us.",
+        "I'm the third child.",
+        "What's your phone number?"
+      ]
+    },
+    {
+      "prompt": "Answer with the right ordinal.",
+      "items": [
+        "Child number 1 → mtoto ____",
+        "Day number 2 → siku ____",
+        "Book number 3 → kitabu ____",
+        "Time number 5 → mara ____",
+        "Year number 1 → mwaka ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "mingapi / una / miaka",
+        "watano / tuna / watoto",
+        "ni / wa / mimi / tatu",
+        "sita / vyumba / nyumba / ina",
+        "elfu / ni / tatu / bei"
+      ]
+    }
+  ],
+  "answers": [
+    "saba — kumi na mbili — ishirini na tano — arobaini na nane — mia moja — elfu tatu na mia tano",
+    "wawili — vitatu — mitano — nne — mawili — wanane",
+    "Una miaka mingapi? — Nina miaka ishirini na mitatu. — Familia yako ina watu wangapi? — Sisi ni watu saba. — Mimi ni wa tatu. — Namba yako ya simu ni ngapi?",
+    "wa kwanza — ya pili — cha tatu — ya tano — wa kwanza",
+    "Una miaka mingapi? — Tuna watoto watano. — Mimi ni wa tatu. — Nyumba ina vyumba sita. — Bei ni elfu tatu."
+  ]
+}

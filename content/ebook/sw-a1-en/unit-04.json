@@ -1,0 +1,623 @@
+{
+  "title": "Saying \"no\": prefixes that switch and an -a ending that becomes -i",
+  "title_target": "Samahani, sielewi",
+  "goal": "Negate any sentence, decline politely, and order a drink at a roadside stall without having to fall back on English.",
+  "bekal": [
+    "the six negative prefixes: *si-, hu-, ha-, hatu-, ham-, hawa-*",
+    "the ending rule: verbs ending in *-a* change to *-i* when negated",
+    "the Arabic loan verbs whose endings never change"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kwenye kibanda cha chai",
+      "intro": "Morning at a roadside tea stall. Budi tries to order by himself for the first time.",
+      "lines": [
+        {
+          "speaker": "Muuzaji:",
+          "text": "Karibu! Unataka nini?",
+          "id": "Welcome! What would you like?",
+          "literal": "welcome! you-are-wanting what?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Samahani, sielewi. Sema polepole tafadhali.",
+          "id": "Sorry, I don't understand. Please speak slowly.",
+          "literal": "sorry, I-don't-understand. speak slowly please."
+        },
+        {
+          "speaker": "Muuzaji:",
+          "text": "Pole! Unataka chai au kahawa?",
+          "id": "Oh, sorry about that! Do you want tea or coffee?",
+          "literal": "pity! you-are-wanting tea or coffee?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ninataka chai, tafadhali. Sipendi kahawa.",
+          "id": "I'd like tea, please. I don't like coffee.",
+          "literal": "I-am-wanting tea, please. I-don't-like coffee."
+        },
+        {
+          "speaker": "Muuzaji:",
+          "text": "Unataka sukari ngapi?",
+          "id": "How much sugar do you want (spoonfuls)?",
+          "literal": "you-are-wanting sugar how-many?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hapana, asante. Sitaki sukari kabisa.",
+          "id": "None, thank you. I don't want any sugar at all.",
+          "literal": "no, thanks. I-don't-want sugar at-all."
+        },
+        {
+          "speaker": "Muuzaji:",
+          "text": "Sawa. Shilingi elfu moja.",
+          "id": "Okay. One thousand shillings.",
+          "literal": "equal; okay. shilling thousand one."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Samahani, sina pesa ndogo. Nina elfu tano.",
+          "id": "Sorry, I don't have small change. I have five thousand.",
+          "literal": "sorry, I-don't-have money small. I-have thousand five."
+        },
+        {
+          "speaker": "Muuzaji:",
+          "text": "Hakuna shida. Chenji yako hii.",
+          "id": "No problem. Here's your change.",
+          "literal": "there-is-not problem. change of-you this."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Asante. Rafiki yangu haji leo, anaumwa.",
+          "id": "Thanks. My friend isn't coming today, he's sick.",
+          "literal": "thanks. friend of-me he-doesn't-come today, he-is-being-hurt."
+        },
+        {
+          "speaker": "Muuzaji:",
+          "text": "Pole sana. Yeye hanywi chai?",
+          "id": "So sorry to hear it. Doesn't he drink tea?",
+          "literal": "pity very. he he-doesn't-drink tea?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hanywi chai, lakini anapenda maji ya matunda.",
+          "id": "He doesn't drink tea, but he likes fruit juice.",
+          "literal": "he-doesn't-drink tea, but he-is-liking water of fruits."
+        }
+      ],
+      "notes": [
+        "**Pole and samahani are not two words for the same thing.** *Samahani* is used when you are at fault or want to say \"excuse me\". *Pole* is said to someone who is having a hard time — ill, tired, has lost something. The vendor in this dialogue says *pole* out of sympathy, not because he feels guilty.",
+        "**Sawa means \"equal\", and is used for \"okay\".** It is one of the words you hear most in East Africa. *Sawa sawa* (doubled) means \"all good, no worries\", and *sawa?* with a rising tone means \"agreed?\".",
+        "**Kabisa means \"completely\" and strengthens a negative.** *Sitaki* = I don't want; *sitaki kabisa* = I don't want it at all. On its own, *kabisa!* means \"absolutely!\".",
+        "**Maji ya matunda literally means \"water of fruits\" — that is juice.** Swahili often links two nouns with *ya*/*wa*/*cha* rather than inventing a new word: *maji ya matunda* (juice), *chai ya maziwa* (milk tea), *kibanda cha chai* (tea stall).",
+        "**Anaumwa means \"he/she is sick\", literally \"he/she is being hurt\".** This form is taken apart in unit 19 along with all the body vocabulary; for now learn *ninaumwa* (I am sick) and *anaumwa* (he/she is sick) as whole sentences."
+      ],
+      "grammars": [
+        {
+          "title": "Negation: two things change at once",
+          "body": [
+            "Negating a present-tense sentence in Swahili changes **two** things at once, and the *-na-* slot actually disappears:",
+            "**(1)** the subject prefix is replaced by a negative prefix, and **(2)** the final *-a* of the verb changes to *-i*."
+          ],
+          "table": {
+            "head": [
+              "Positive",
+              "Negative prefix",
+              "Negative",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*ninasoma*",
+                "**si-**",
+                "*sisomi*",
+                "see-SOH-mee",
+                "I don't read"
+              ],
+              [
+                "*unasoma*",
+                "**hu-**",
+                "*husomi*",
+                "hoo-SOH-mee",
+                "you don't read"
+              ],
+              [
+                "*anasoma*",
+                "**ha-**",
+                "*hasomi*",
+                "hah-SOH-mee",
+                "he/she doesn't read"
+              ],
+              [
+                "*tunasoma*",
+                "**hatu-**",
+                "*hatusomi*",
+                "hah-too-SOH-mee",
+                "we don't read"
+              ],
+              [
+                "*mnasoma*",
+                "**ham-**",
+                "*hamsomi*",
+                "hahm-SOH-mee",
+                "you (pl.) don't read"
+              ],
+              [
+                "*wanasoma*",
+                "**hawa-**",
+                "*hawasomi*",
+                "hah-wah-SOH-mee",
+                "they don't read"
+              ]
+            ]
+          },
+          "after": [
+            "The *-na-* slot is dropped because its job is done: this negative covers \"isn't doing\" and \"doesn't usually do\" at once. *Sisomi* means \"I'm not reading\" **and** \"I never read\", depending on context.",
+            "You already know these six prefixes from unit 2: *sina*, *huna*, *hana*, *hatuna*, *hamna*, *hawana*. Exactly the same prefixes, attached to any verb.",
+            "The most common everyday examples: *sielewi* (I don't understand), *sijui* (I don't know), *sitaki* (I don't want), *sipendi* (I don't like), *sisemi* (I don't say). These five sentences alone will rescue many conversations."
+          ]
+        },
+        {
+          "title": "Endings that don't change — and four short verbs",
+          "body": [
+            "The \"-a becomes -i\" rule only applies to native Bantu verbs, which always end in *-a*. Verbs borrowed from Arabic end in *-i*, *-e* or *-u*, and **keep their ending as it is**."
+          ],
+          "table": {
+            "head": [
+              "Dictionary form",
+              "Meaning",
+              "Positive",
+              "Negative",
+              "Note"
+            ],
+            "rows": [
+              [
+                "*kufikiri*",
+                "to think",
+                "*ninafikiri*",
+                "*sifikiri*",
+                "ending -i stays"
+              ],
+              [
+                "*kujibu*",
+                "to answer",
+                "*anajibu*",
+                "*hajibu*",
+                "ending -u stays"
+              ],
+              [
+                "*kusamehe*",
+                "to forgive",
+                "*tunasamehe*",
+                "*hatusamehe*",
+                "ending -e stays"
+              ],
+              [
+                "*kurudi*",
+                "to return",
+                "*wanarudi*",
+                "*hawarudi*",
+                "ending -i stays"
+              ],
+              [
+                "*kula*",
+                "to eat",
+                "*ninakula*",
+                "**sili**",
+                "ku- drops in the negative"
+              ],
+              [
+                "*kunywa*",
+                "to drink",
+                "*ninakunywa*",
+                "**sinywi**",
+                "ku- drops"
+              ],
+              [
+                "*kuja*",
+                "to come",
+                "*ninakuja*",
+                "**siji**",
+                "ku- drops"
+              ],
+              [
+                "*kwenda*",
+                "to go",
+                "*ninakwenda*",
+                "**siendi**",
+                "ku- drops, kw- becomes -e-"
+              ]
+            ]
+          },
+          "after": [
+            "The four short verbs in the lower rows keep *ku-* in positive sentences but **drop it in negative ones** — because the negative prefix is already long enough to carry the sound. *Ninakula* → *sili*. *Anakuja* → *haji*.",
+            "How to recognize them in a dictionary without memorizing: if the verb ends in **-a**, change it to **-i**. If it ends in any other letter, leave it alone. It's that simple, and there are no exceptions to memorize.",
+            "⚠️ *Kujua* (to know) ends in *-a*, so its negative is *sijui*, *hujui*, *hajui*. And you already know the negative of *kuwa na* (to have) from unit 2: *sina*, not *siwi*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Saying no without offending",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "In East Africa, a direct refusal feels rude. The table below runs from the gentlest to the firmest — and the first three rows are the ones you'll need most."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Say it",
+            "When to use it"
+          ],
+          "rows": [
+            [
+              "*Asante, nimeshiba*",
+              "ah-SAHN-teh nee-meh-SHEE-bah",
+              "\"Thank you, I'm full\" — declining food"
+            ],
+            [
+              "*Labda baadaye*",
+              "LAHB-dah bah-ah-DAH-yeh",
+              "\"Maybe later\" — declining an invitation without closing the door"
+            ],
+            [
+              "*Sitaki, asante*",
+              "see-TAH-kee ah-SAHN-teh",
+              "\"I don't want any, thank you\" — polite and clear"
+            ],
+            [
+              "*Hapana, asante*",
+              "hah-PAH-nah",
+              "\"No, thank you\" — neutral"
+            ],
+            [
+              "*Siyo* / *Sio*",
+              "SEE-yoh",
+              "\"That's not so\" — correcting a statement"
+            ],
+            [
+              "*Hapana kabisa*",
+              "hah-PAH-nah kah-BEE-sah",
+              "\"Absolutely not\" — firm"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Note the difference between *hapana* and *siyo*. *Hapana* refuses a request (\"want tea?\" → \"no\"). *Siyo* denies a statement (\"are you Malaysian?\" → \"no, I'm not\"). Using *hapana* to deny also gets understood, but *siyo* sounds more accurate."
+        },
+        {
+          "type": "p",
+          "text": "One lifesaver that isn't in the table yet: **Sijui** (I don't know). It is honest, it is polite, and it almost always gets answered with a long explanation that teaches you more than pretending to understand would."
+        }
+      ]
+    },
+    {
+      "title": "Kibanda cha chai — the stall and what's on it",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*chai*",
+              "CHAH-ee",
+              "tea"
+            ],
+            [
+              "*kahawa*",
+              "kah-HAH-wah",
+              "coffee"
+            ],
+            [
+              "*maji*",
+              "MAH-jee",
+              "water"
+            ],
+            [
+              "*maziwa*",
+              "mah-ZEE-wah",
+              "milk"
+            ],
+            [
+              "*juisi* / *maji ya matunda*",
+              "JOO-ee-see",
+              "juice"
+            ],
+            [
+              "*soda*",
+              "SOH-dah",
+              "soda; soft drink"
+            ],
+            [
+              "*sukari*",
+              "soo-KAH-ree",
+              "sugar"
+            ],
+            [
+              "*chumvi*",
+              "CHOOM-vee",
+              "salt"
+            ],
+            [
+              "*mkate*",
+              "m-KAH-teh",
+              "bread"
+            ],
+            [
+              "*mandazi*",
+              "mahn-DAH-zee",
+              "sweet fried dough, like a doughnut"
+            ],
+            [
+              "*chapati*",
+              "chah-PAH-tee",
+              "flatbread"
+            ],
+            [
+              "*bei*",
+              "BEH-ee",
+              "price"
+            ],
+            [
+              "*pesa*",
+              "PEH-sah",
+              "money"
+            ],
+            [
+              "*chenji*",
+              "CHEHN-jee",
+              "change (coins)"
+            ],
+            [
+              "*muuzaji*",
+              "moo-oo-ZAH-jee",
+              "seller"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Chai* in East Africa is not weak, plain tea. The default is *chai ya maziwa* — tea boiled together with milk, often with ginger (*tangawizi*) and cardamom. If you want plain tea without milk, ask for *chai ya rangi*, literally \"tea of color\" — tea that is only given its color, without milk."
+        },
+        {
+          "type": "p",
+          "text": "*Mandazi* are a lightly spiced, slightly sweet fried dough, somewhere between a doughnut and a puffed pastry, and they are almost always on the table with morning tea. Ordering them in Swahili at any stall will make the seller smile."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "samahani",
+      "baca": "sah-mah-HAH-nee",
+      "en": "sorry; excuse me"
+    },
+    {
+      "sw": "pole",
+      "baca": "POH-leh",
+      "en": "sorry for you; hang in there"
+    },
+    {
+      "sw": "tafadhali",
+      "baca": "tah-fah-DHAH-lee",
+      "en": "please"
+    },
+    {
+      "sw": "sawa",
+      "baca": "SAH-wah",
+      "en": "okay; equal"
+    },
+    {
+      "sw": "au",
+      "baca": "AH-oo",
+      "en": "or"
+    },
+    {
+      "sw": "kabisa",
+      "baca": "kah-BEE-sah",
+      "en": "completely; absolutely"
+    },
+    {
+      "sw": "labda",
+      "baca": "LAHB-dah",
+      "en": "maybe"
+    },
+    {
+      "sw": "baadaye",
+      "baca": "bah-ah-DAH-yeh",
+      "en": "later"
+    },
+    {
+      "sw": "siyo / sio",
+      "baca": "SEE-yoh",
+      "en": "it's not so"
+    },
+    {
+      "sw": "kutaka",
+      "baca": "koo-TAH-kah",
+      "en": "to want"
+    },
+    {
+      "sw": "kujua",
+      "baca": "koo-JOO-ah",
+      "en": "to know"
+    },
+    {
+      "sw": "kufikiri",
+      "baca": "koo-fee-KEE-ree",
+      "en": "to think"
+    },
+    {
+      "sw": "kujibu",
+      "baca": "koo-JEE-boo",
+      "en": "to answer"
+    },
+    {
+      "sw": "kuuliza",
+      "baca": "koo-oo-LEE-zah",
+      "en": "to ask (a question)"
+    },
+    {
+      "sw": "kusamehe",
+      "baca": "koo-sah-MEH-heh",
+      "en": "to forgive"
+    },
+    {
+      "sw": "kurudi",
+      "baca": "koo-ROO-dee",
+      "en": "to return"
+    },
+    {
+      "sw": "kunipa / kupa",
+      "baca": "koo-PAH",
+      "en": "to give"
+    },
+    {
+      "sw": "kuumwa",
+      "baca": "koo-OOM-wah",
+      "en": "to be sick"
+    },
+    {
+      "sw": "chai",
+      "baca": "CHAH-ee",
+      "en": "tea"
+    },
+    {
+      "sw": "kahawa",
+      "baca": "kah-HAH-wah",
+      "en": "coffee"
+    },
+    {
+      "sw": "maji",
+      "baca": "MAH-jee",
+      "en": "water"
+    },
+    {
+      "sw": "maziwa",
+      "baca": "mah-ZEE-wah",
+      "en": "milk"
+    },
+    {
+      "sw": "sukari",
+      "baca": "soo-KAH-ree",
+      "en": "sugar"
+    },
+    {
+      "sw": "matunda",
+      "baca": "mah-TOON-dah",
+      "en": "fruit"
+    },
+    {
+      "sw": "mkate",
+      "baca": "m-KAH-teh",
+      "en": "bread"
+    },
+    {
+      "sw": "bei",
+      "baca": "BEH-ee",
+      "en": "price"
+    },
+    {
+      "sw": "pesa",
+      "baca": "PEH-sah",
+      "en": "money"
+    },
+    {
+      "sw": "chenji",
+      "baca": "CHEHN-jee",
+      "en": "change (coins)"
+    },
+    {
+      "sw": "shilingi",
+      "baca": "shee-LEE-ngee",
+      "en": "shilling (currency)"
+    },
+    {
+      "sw": "elfu",
+      "baca": "EHL-foo",
+      "en": "thousand"
+    },
+    {
+      "sw": "muuzaji",
+      "baca": "moo-oo-ZAH-jee",
+      "en": "seller"
+    },
+    {
+      "sw": "kibanda",
+      "baca": "kee-BAHN-dah",
+      "en": "stall; kiosk"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Make these negative.",
+      "items": [
+        "Ninaelewa. → ____",
+        "Anapenda kahawa. → ____",
+        "Tunajua. → ____",
+        "Wanasoma kila siku. → ____",
+        "Unataka sukari. → ____",
+        "Mnaongea Kiswahili. → ____"
+      ]
+    },
+    {
+      "prompt": "Make these negative. Watch out: there are loan verbs and short verbs.",
+      "items": [
+        "Ninafikiri. → ____",
+        "Anakula wali. → ____",
+        "Wanakuja leo. → ____",
+        "Tunarudi jioni. → ____",
+        "Ninakunywa chai. → ____",
+        "Anajibu haraka. → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Swahili.",
+      "items": [
+        "Sorry, I don't understand.",
+        "I don't know.",
+        "I don't like coffee.",
+        "He doesn't come today.",
+        "We don't have small change.",
+        "They don't drink tea."
+      ]
+    },
+    {
+      "prompt": "Choose the best reply: hapana, siyo, pole or samahani.",
+      "items": [
+        "Your friend tells you her bag was lost. → ____",
+        "The seller offers sugar and you don't want any. → ____",
+        "You bump into someone at the market. → ____",
+        "Someone assumes you are Malaysian. → ____",
+        "You want to squeeze past in a narrow aisle. → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "sielewi / samahani",
+        "kahawa / sipendi",
+        "haji / rafiki / leo / yangu",
+        "ndogo / sina / pesa",
+        "chai / hanywi / yeye"
+      ]
+    }
+  ],
+  "answers": [
+    "Sielewi. — Hapendi kahawa. — Hatujui. — Hawasomi kila siku. — Hutaki sukari. — Hamuongei Kiswahili.",
+    "Sifikiri. — Hali wali. — Hawaji leo. — Haturudi jioni. — Sinywi chai. — Hajibu haraka.",
+    "Samahani, sielewi. — Sijui. — Sipendi kahawa. — Haji leo. — Hatuna pesa ndogo. — Hawanywi chai.",
+    "pole — hapana — samahani — siyo — samahani",
+    "Samahani, sielewi. — Sipendi kahawa. — Rafiki yangu haji leo. — Sina pesa ndogo. — Yeye hanywi chai."
+  ]
+}

@@ -1,0 +1,606 @@
+{
+  "title": "If…: the -ki- slot, and illness with its own pattern",
+  "title_target": "Kichwa kinaniuma",
+  "goal": "Say \"if\" and \"while\" with a single slot, name parts of the body, and tell a doctor what hurts.",
+  "bekal": [
+    "the *-ki-* slot for \"if\" and \"while\"",
+    "its negative: *-sipo-* — *usipokunywa* (if you don't drink)",
+    "saying what hurts: *kichwa kinaniuma* — the head hurts me"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Hospitalini",
+      "intro": "Morning. Budi looks pale, and Amina can tell right away that something is wrong.",
+      "lines": [
+        {
+          "speaker": "Amina:",
+          "text": "Habari yako? Uso wako hauonekani vizuri.",
+          "id": "What's the matter? You don't look well.",
+          "literal": "news of-you? face of-you it-not-look good."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sijisikii vizuri. Kichwa kinaniuma sana.",
+          "id": "I don't feel well. My head hurts a lot.",
+          "literal": "I-not-feel-self good. head it-is-me-hurting very."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Una homa?",
+          "id": "Do you have a fever?",
+          "literal": "you-have fever?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kidogo. Na tumbo pia linaniuma tangu jana usiku.",
+          "id": "A little. And my stomach has been hurting since last night, too.",
+          "literal": "little. and stomach also it-is-me-hurting since yesterday night."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Ulikula nini jana?",
+          "id": "What did you eat yesterday?",
+          "literal": "you-past-eat what yesterday?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nilikula samaki barabarani... labda hakuwa safi.",
+          "id": "I ate fish at a roadside stall... maybe it wasn't fresh.",
+          "literal": "I-past-eat fish at-road... maybe it-not-past-be clean."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Pole sana. Ukienda hospitali sasa, utapata dawa haraka.",
+          "id": "Poor you. If you go to the hospital now, you'll get medicine quickly.",
+          "literal": "patience very. you-if-go hospital now, you-will-get medicine quickly."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nikienda peke yangu, sitaweza kueleza vizuri.",
+          "id": "If I go by myself, I can't explain things well.",
+          "literal": "I-if-go alone of-me, I-not-will-can to-explain well."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Nitakwenda nawe. Twende sasa hivi!",
+          "id": "I'll come with you. Let's go right now!",
+          "literal": "I-will-go with-you. we-should-go now this!"
+        },
+        {
+          "speaker": "Daktari:",
+          "text": "Karibu. Unaumwa nini?",
+          "id": "Come in. What's hurting?",
+          "literal": "welcome. you-are-hurt what?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kichwa na tumbo. Nina homa tangu jana.",
+          "id": "My head and stomach. I've had a fever since yesterday.",
+          "literal": "head and stomach. I-have fever since yesterday."
+        },
+        {
+          "speaker": "Daktari:",
+          "text": "Usipokunywa maji mengi, hutapona haraka. Kunywa dawa hii mara tatu kwa siku.",
+          "id": "If you don't drink lots of water, you won't get better quickly. Take this medicine three times a day.",
+          "literal": "you-if-not-drink water much, you-not-will-recover quickly. drink medicine this times three per day."
+        }
+      ],
+      "notes": [
+        "**Sijisikii vizuri is the sentence for \"I don't feel well\".** The infix *-ji-* means \"oneself\" — the same piece that makes *kujifunza* mean \"to teach oneself\", i.e. to learn. The positive: *ninajisikia vizuri* (I feel well).",
+        "**Tangu means \"since\".** *Tangu jana* (since yesterday), *tangu asubuhi* (since morning), *tangu lini?* (since when?). A question doctors always ask, so memorize your answer too.",
+        "**Peke yangu means \"by myself\".** Its form follows the owner: *peke yangu*, *peke yako*, *peke yake*, *peke yetu*. *Anaishi peke yake* = he/she lives alone.",
+        "**Nawe is na + wewe fused together.** Likewise *nami* (with me), *naye* (with him/her), *nasi* (with us), *nanyi* (with you pl.), *nao* (with them). A short form you'll hear a lot: *Njoo nami* (come with me).",
+        "**Mara tatu kwa siku means three times a day.** *Kwa* here means \"per\": *mara mbili kwa wiki* (twice a week), *shilingi elfu kwa kilo* (a thousand shillings per kilo)."
+      ],
+      "grammars": [
+        {
+          "title": "The -ki- slot: if, and while",
+          "body": [
+            "The **-ki-** slot covers two meanings: \"if\" for conditions, and \"while\" for two actions happening at once. It sits where the tense slot normally goes, and **the next clause carries the time**."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Meaning",
+              "Note"
+            ],
+            "rows": [
+              [
+                "*Ukienda sokoni, nunua ndizi.*",
+                "If you go to the market, buy bananas.",
+                "condition + command"
+              ],
+              [
+                "*Nikipata pesa, nitasafiri.*",
+                "If I get money, I'll travel.",
+                "condition + future"
+              ],
+              [
+                "*Akifika, niambie.*",
+                "If he/she arrives, tell me.",
+                "condition + request"
+              ],
+              [
+                "*Tukisoma, tutafaulu.*",
+                "If we study, we'll pass.",
+                "general condition"
+              ],
+              [
+                "*Ninasoma nikisikiliza muziki.*",
+                "I study while listening to music.",
+                "\"while\" meaning"
+              ],
+              [
+                "*Alianguka akikimbia.*",
+                "He/She fell while running.",
+                "\"while\" meaning"
+              ],
+              [
+                "*Usipokunywa dawa, hutapona.*",
+                "If you don't take the medicine, you won't get better.",
+                "negative: -sipo-"
+              ],
+              [
+                "*Nisipofika, msinisubiri.*",
+                "If I don't come, don't wait for me.",
+                "negative: -sipo-"
+              ]
+            ]
+          },
+          "after": [
+            "The negative uses the **-sipo-** slot, and the subject prefix stays the ordinary one — not a negative prefix. *Ni-sipo-fika*, *u-sipo-kunywa*, *a-sipo-kuja*, *tu-sipo-soma*. It's the only negative in Swahili that doesn't use *si-*, *hu-*, *ha-*.",
+            "*Mungu akipenda* — God willing, which you used in unit 13 — you can now read for yourself: *a-ki-penda*, \"if He likes\".",
+            "For a firmer or unreal condition, use **kama** (if) with an ordinary sentence: *Kama una muda, njoo* (if you have time, come). *Kama* also means \"like\": *kama nyumbani* (like home)."
+          ]
+        },
+        {
+          "title": "Pain: the body part that hurts you",
+          "body": [
+            "Swahili flips the order we use. Not \"I have a headache\", but **\"the head is hurting me\"** — the body part becomes the subject, and you become the object through the *-ni-* infix from unit 15."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Literally",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*Kichwa **ki**na**ni**uma.*",
+                "head it-hurts-me",
+                "My head hurts."
+              ],
+              [
+                "*Tumbo **li**na**ni**uma.*",
+                "stomach it-hurts-me",
+                "My stomach hurts."
+              ],
+              [
+                "*Miguu **i**na**ni**uma.*",
+                "legs they-hurt-me",
+                "My legs hurt."
+              ],
+              [
+                "*Jino **li**na**m**uma.*",
+                "tooth it-hurts-him/her",
+                "His/Her tooth hurts."
+              ],
+              [
+                "*Koo **li**na**ni**uma.*",
+                "throat it-hurts-me",
+                "My throat hurts."
+              ],
+              [
+                "*Ninaumwa na kichwa.*",
+                "I-am-hurt by head",
+                "I have a headache. (alternative form)"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that the subject prefix follows the body part's class: *kichwa* in the *ki-* class → *kinauma*; *tumbo* and *jino* in the *ji-/ma-* class → *linauma*; *miguu* and *mikono* in the *m-/mi-* class → *inauma*. Everything you set up in units 6, 9, and 16 is used again here.",
+            "The second form — *ninaumwa na…* — is easier and just as correct: *ninaumwa na kichwa*, *ninaumwa na tumbo*. If you're unsure of the class prefix, use this form.",
+            "For other complaints use *kuwa na* as in unit 14: *nina homa* (fever), *nina kikohozi* (cough), *nina mafua* (a cold), *nina kizunguzungu* (dizzy), *nina kuhara* (diarrhea), *nina mzio* (allergy)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Mwili — parts of the body",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*kichwa* / *vichwa*",
+              "KEE-chwah",
+              "head"
+            ],
+            [
+              "*uso* / *nyuso*",
+              "OO-soh",
+              "face"
+            ],
+            [
+              "*jicho* / *macho*",
+              "JEE-choh",
+              "eye"
+            ],
+            [
+              "*sikio* / *masikio*",
+              "see-KEE-oh",
+              "ear"
+            ],
+            [
+              "*pua*",
+              "POO-ah",
+              "nose"
+            ],
+            [
+              "*mdomo* / *midomo*",
+              "m-DOH-moh",
+              "mouth; lip"
+            ],
+            [
+              "*jino* / *meno*",
+              "JEE-noh",
+              "tooth"
+            ],
+            [
+              "*ulimi* / *ndimi*",
+              "oo-LEE-mee",
+              "tongue"
+            ],
+            [
+              "*koo*",
+              "KOH-oh",
+              "throat"
+            ],
+            [
+              "*shingo*",
+              "SHEE-ngoh",
+              "neck"
+            ],
+            [
+              "*mkono* / *mikono*",
+              "m-KOH-noh",
+              "hand; arm"
+            ],
+            [
+              "*kidole* / *vidole*",
+              "kee-DOH-leh",
+              "finger"
+            ],
+            [
+              "*mguu* / *miguu*",
+              "m-GOO-oo",
+              "leg; foot"
+            ],
+            [
+              "*tumbo* / *matumbo*",
+              "TOOM-boh",
+              "stomach"
+            ],
+            [
+              "*mgongo* / *migongo*",
+              "m-GOH-ngoh",
+              "back"
+            ],
+            [
+              "*moyo* / *mioyo*",
+              "MOH-yoh",
+              "heart"
+            ],
+            [
+              "*damu*",
+              "DAH-moo",
+              "blood"
+            ],
+            [
+              "*ngozi*",
+              "NGOH-zee",
+              "skin"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Paired body parts almost all fall into the *ji-/ma-* class (*jicho → macho*, *sikio → masikio*, *jino → meno*) or the *m-/mi-* class (*mkono → mikono*, *mguu → miguu*). That's no accident: the *m-/mi-* class holds long things, and the *ji-/ma-* class holds things that come in pairs."
+        },
+        {
+          "type": "p",
+          "text": "*Moyo* means heart in the emotional sense and in the organ sense at once — just as English \"heart\" does. The expressions are similar too: *moyo mkunjufu* (an open heart), *kwa moyo wote* (with all my heart), *moyo unauma* (the heart aches)."
+        }
+      ]
+    },
+    {
+      "title": "Hospitalini na duka la dawa — at the hospital and the pharmacy",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Sijisikii vizuri.*",
+              "I don't feel well."
+            ],
+            [
+              "*Ninaumwa na kichwa / tumbo.*",
+              "I have a headache / stomachache."
+            ],
+            [
+              "*Nina homa tangu jana.*",
+              "I've had a fever since yesterday."
+            ],
+            [
+              "*Nina mafua na kikohozi.*",
+              "I have a cold and a cough."
+            ],
+            [
+              "*Nina kizunguzungu.*",
+              "I'm dizzy."
+            ],
+            [
+              "*Nina mzio wa dawa hii.*",
+              "I'm allergic to this medicine."
+            ],
+            [
+              "*Naomba dawa ya maumivu.*",
+              "I'd like some painkillers."
+            ],
+            [
+              "*Nimechomwa na mbu.*",
+              "I've been bitten by a mosquito."
+            ],
+            [
+              "*Ninahitaji kupima malaria.*",
+              "I need to be tested for malaria."
+            ],
+            [
+              "*Dawa hii ninywe mara ngapi?*",
+              "How many times should I take this medicine?"
+            ],
+            [
+              "*Nitapona lini?*",
+              "When will I get better?"
+            ],
+            [
+              "*Bima yangu ya afya iko hapa.*",
+              "Here's my health insurance card."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Malaria is still a real risk in parts of East Africa**, and its first symptoms feel just like a bad flu: fever, chills, headache. *Ninahitaji kupima malaria* isn't an overreaction — at any clinic the test is quick and cheap, and asking for it yourself is perfectly normal."
+        },
+        {
+          "type": "p",
+          "text": "Medicine is sold at a *duka la dawa* (pharmacy) or *famasi*. Words to recognize on labels: *kidonge* (tablet), *sharubati* (syrup), *sindano* (injection), *mara tatu kwa siku* (three times a day), *baada ya chakula* (after meals), *kabla ya kulala* (before bed)."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "kuumwa",
+      "baca": "koo-OOM-wah",
+      "en": "to be sick; to be hurt"
+    },
+    {
+      "sw": "kuuma",
+      "baca": "koo-OO-mah",
+      "en": "to hurt; to bite"
+    },
+    {
+      "sw": "kujisikia",
+      "baca": "koo-jee-see-KEE-ah",
+      "en": "to feel (in the body)"
+    },
+    {
+      "sw": "kupona",
+      "baca": "koo-POH-nah",
+      "en": "to recover"
+    },
+    {
+      "sw": "kupima",
+      "baca": "koo-PEE-mah",
+      "en": "to measure; to test"
+    },
+    {
+      "sw": "kueleza",
+      "baca": "koo-eh-LEH-zah",
+      "en": "to explain"
+    },
+    {
+      "sw": "kusikiliza",
+      "baca": "koo-see-kee-LEE-zah",
+      "en": "to listen"
+    },
+    {
+      "sw": "kukimbia",
+      "baca": "koo-keem-BEE-ah",
+      "en": "to run"
+    },
+    {
+      "sw": "kuanguka",
+      "baca": "koo-ahn-GOO-kah",
+      "en": "to fall"
+    },
+    {
+      "sw": "kufaulu",
+      "baca": "koo-fah-OO-loo",
+      "en": "to pass; to succeed"
+    },
+    {
+      "sw": "kichwa / vichwa",
+      "baca": "KEE-chwah",
+      "en": "head"
+    },
+    {
+      "sw": "tumbo / matumbo",
+      "baca": "TOOM-boh",
+      "en": "stomach"
+    },
+    {
+      "sw": "jino / meno",
+      "baca": "JEE-noh",
+      "en": "tooth"
+    },
+    {
+      "sw": "sikio / masikio",
+      "baca": "see-KEE-oh",
+      "en": "ear"
+    },
+    {
+      "sw": "pua",
+      "baca": "POO-ah",
+      "en": "nose"
+    },
+    {
+      "sw": "koo",
+      "baca": "KOH-oh",
+      "en": "throat"
+    },
+    {
+      "sw": "mgongo / migongo",
+      "baca": "m-GOH-ngoh",
+      "en": "back"
+    },
+    {
+      "sw": "damu",
+      "baca": "DAH-moo",
+      "en": "blood"
+    },
+    {
+      "sw": "homa",
+      "baca": "HOH-mah",
+      "en": "fever"
+    },
+    {
+      "sw": "mafua",
+      "baca": "mah-FOO-ah",
+      "en": "a cold"
+    },
+    {
+      "sw": "kikohozi",
+      "baca": "kee-koh-HOH-zee",
+      "en": "cough"
+    },
+    {
+      "sw": "kizunguzungu",
+      "baca": "kee-zoo-ngoo-ZOO-ngoo",
+      "en": "dizziness"
+    },
+    {
+      "sw": "dawa",
+      "baca": "DAH-wah",
+      "en": "medicine"
+    },
+    {
+      "sw": "kidonge / vidonge",
+      "baca": "kee-DOHN-geh",
+      "en": "tablet"
+    },
+    {
+      "sw": "hospitali",
+      "baca": "hohs-pee-TAH-lee",
+      "en": "hospital"
+    },
+    {
+      "sw": "afya",
+      "baca": "AH-fyah",
+      "en": "health"
+    },
+    {
+      "sw": "mbu",
+      "baca": "m-BOO",
+      "en": "mosquito"
+    },
+    {
+      "sw": "tangu",
+      "baca": "TAH-ngoo",
+      "en": "since"
+    },
+    {
+      "sw": "peke yangu",
+      "baca": "PEH-keh YAH-ngoo",
+      "en": "alone"
+    },
+    {
+      "sw": "maumivu",
+      "baca": "mah-oo-MEE-voo",
+      "en": "pain"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Combine into one sentence with -ki-.",
+      "items": [
+        "you go to the market + buy bananas → ____",
+        "I get money + I'll travel → ____",
+        "he/she arrives + tell me → ____",
+        "we study + we'll pass → ____",
+        "you come + we'll eat together → ____"
+      ]
+    },
+    {
+      "prompt": "Make it negative with -sipo-.",
+      "items": [
+        "Ukikunywa dawa → ____",
+        "Nikifika → ____",
+        "Akija → ____",
+        "Tukisoma → ____",
+        "Mkiondoka → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Swahili.",
+      "items": [
+        "My head hurts.",
+        "My stomach has hurt since yesterday.",
+        "I have a fever.",
+        "I don't feel well.",
+        "If you don't take the medicine, you won't get better.",
+        "I'd like some painkillers."
+      ]
+    },
+    {
+      "prompt": "Fill in the subject prefix for each body part.",
+      "items": [
+        "Kichwa ____naniuma.",
+        "Tumbo ____naniuma.",
+        "Miguu ____naniuma.",
+        "Jino ____naniuma.",
+        "Mikono ____naniuma."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "kinaniuma / kichwa / sana",
+        "jana / homa / nina / tangu",
+        "vizuri / sijisikii",
+        "dawa / hospitali / utapata / ukienda",
+        "siku / mara / kunywa / kwa / dawa / tatu"
+      ]
+    }
+  ],
+  "answers": [
+    "Ukienda sokoni, nunua ndizi. — Nikipata pesa, nitasafiri. — Akifika, niambie. — Tukisoma, tutafaulu. — Ukija, tutakula pamoja.",
+    "Usipokunywa dawa — Nisipofika — Asipokuja — Tusiposoma — Msipoondoka",
+    "Kichwa kinaniuma. — Tumbo linaniuma tangu jana. — Nina homa. — Sijisikii vizuri. — Usipokunywa dawa, hutapona. — Naomba dawa ya maumivu.",
+    "ki — li — i — li — i",
+    "Kichwa kinaniuma sana. — Nina homa tangu jana. — Sijisikii vizuri. — Ukienda hospitali utapata dawa. — Kunywa dawa mara tatu kwa siku."
+  ]
+}

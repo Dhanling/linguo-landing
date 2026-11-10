@@ -1,0 +1,589 @@
+{
+  "title": "Saa ngapi? The Swahili clock, shifted by six hours",
+  "title_target": "Tunakutana saa ngapi?",
+  "goal": "Tell time the East African way, name the days and months, make plans to meet — and avoid being six hours late on day one.",
+  "bekal": [
+    "count the hours from sunrise, not from midnight",
+    "*na nusu*, *na robo*, *kasoro robo* for parts of the hour",
+    "the seven day names and how to give a date"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Tunakutana lini?",
+      "intro": "Juma invites Budi to the beach. All that's left is to settle the time — and that's where the most typical East African misunderstanding is waiting.",
+      "lines": [
+        {
+          "speaker": "Juma:",
+          "text": "Kesho tunakwenda ufuoni. Tunakutana saa ngapi?",
+          "id": "Tomorrow we're going to the beach. What time shall we meet?",
+          "literal": "tomorrow we-are-going at-beach. we-are-meeting-each-other hour how-many?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Saa ngapi ni nzuri kwako?",
+          "id": "What time suits you?",
+          "literal": "hour how-many is good for-you?"
+        },
+        {
+          "speaker": "Juma:",
+          "text": "Saa tatu asubuhi. Jua bado si kali.",
+          "id": "Nine in the morning. The sun isn't fierce yet.",
+          "literal": "hour three morning. sun not-yet not sharp."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ngoja kidogo... saa tatu ni saa tisa kwa saa yangu?",
+          "id": "Wait a moment... is saa tatu nine o'clock on my clock?",
+          "literal": "wait a-little... hour three is hour nine at hour of-me?"
+        },
+        {
+          "speaker": "Juma:",
+          "text": "Ndiyo! Sisi tunahesabu kutoka macheo ya jua.",
+          "id": "Yes! We count from the sunrise.",
+          "literal": "yes! we we-are-counting from rising of sun."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aa, sasa ninaelewa. Saa sita ni adhuhuri, siyo?",
+          "id": "Ah, now I understand. Saa sita is noon, right?",
+          "literal": "ah, now I-am-understanding. hour six is midday, not-so?"
+        },
+        {
+          "speaker": "Juma:",
+          "text": "Hasa! Na saa kumi na mbili jioni ni machweo.",
+          "id": "Exactly! And saa kumi na mbili in the evening is sunset.",
+          "literal": "exactly! and hour ten and two evening is setting."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kesho ni Jumanne, siyo?",
+          "id": "Tomorrow is Tuesday, right?",
+          "literal": "tomorrow is Tuesday, not-so?"
+        },
+        {
+          "speaker": "Juma:",
+          "text": "Hapana, kesho ni Jumatano. Jumamosi kuna sherehe kubwa.",
+          "id": "No, tomorrow is Wednesday. On Saturday there's a big party.",
+          "literal": "no, tomorrow is Wednesday. Saturday there-is party big."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sawa. Tunarudi saa ngapi?",
+          "id": "Okay. What time do we come back?",
+          "literal": "okay. we-are-returning hour how-many?"
+        },
+        {
+          "speaker": "Juma:",
+          "text": "Saa kumi na moja na nusu, kabla ya giza.",
+          "id": "Half past five in the afternoon, before dark.",
+          "literal": "hour ten and one and half, before of darkness."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Haya basi! Tutaonana kesho saa tatu kamili.",
+          "id": "All right then! See you tomorrow at nine sharp.",
+          "literal": "okay then! will-we-see-each-other tomorrow hour three complete."
+        }
+      ],
+      "notes": [
+        "**The clock misunderstanding is the classic newcomer story in East Africa.** If someone gives a time in Swahili, they almost certainly mean the Swahili count. If they give it in English, they almost certainly mean international time. One lifesaving sentence: *Saa tatu ya Kiswahili au ya kizungu?* — Swahili three o'clock or Western three o'clock?",
+        "**Hasa means \"exactly; precisely\".** A short word of praise that is nice to use when you finally understand something. Its cousins: *sawa kabisa* (absolutely right) and *ndiyo hivyo* (yes, just like that).",
+        "**Kamili means \"complete; exact\".** *Saa tatu kamili* = three o'clock sharp. Notice also *kabla ya* (before) and its partner *baada ya* (after) — both from Arabic, and both followed by *ya*.",
+        "**Siyo? at the end of a sentence means \"right?\".** It invites your partner to confirm, exactly like \"isn't that so?\" in English. Other forms with the same use: *je?* and *sivyo?*",
+        "**Kutana means \"to meet\" and already contains \"each other\".** The ending *-ana* means mutual action: *kuona* (to see) → *kuonana* (to see each other, i.e. to meet), *kupenda* → *kupendana* (to love each other), *kusaidia* → *kusaidiana* (to help each other). That is why *tutaonana* means \"see you\"."
+      ],
+      "grammars": [
+        {
+          "title": "The Swahili clock: counting starts at sunrise",
+          "body": [
+            "On the equator, the sun rises and sets at almost the same time all year: around 6 a.m. and 6 p.m. So Swahili counts the hours **from sunrise**. The first hour after sunrise is *saa moja* — and that is 7 a.m.",
+            "The practical rule in one sentence: **add or subtract six**."
+          ],
+          "table": {
+            "head": [
+              "International time",
+              "Kiswahili",
+              "Part of day",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "7:00",
+                "*saa moja*",
+                "*asubuhi*",
+                "hour one (after sunrise)"
+              ],
+              [
+                "9:00",
+                "*saa tatu*",
+                "*asubuhi*",
+                "hour three"
+              ],
+              [
+                "12:00",
+                "*saa sita*",
+                "*mchana*",
+                "hour six — midday"
+              ],
+              [
+                "13:00",
+                "*saa saba*",
+                "*mchana*",
+                "hour seven"
+              ],
+              [
+                "16:00",
+                "*saa kumi*",
+                "*jioni*",
+                "hour ten"
+              ],
+              [
+                "18:00",
+                "*saa kumi na mbili*",
+                "*jioni*",
+                "hour twelve — sunset"
+              ],
+              [
+                "20:00",
+                "*saa mbili*",
+                "*usiku*",
+                "hour two of the night"
+              ],
+              [
+                "24:00",
+                "*saa sita*",
+                "*usiku*",
+                "hour six of the night"
+              ]
+            ]
+          },
+          "after": [
+            "The four parts of the day are **obligatory to mention**, because the numbers repeat twice a day: *asubuhi* (morning, until midday), *mchana* (afternoon, daytime), *jioni* (evening, roughly after 4 p.m.), *usiku* (night). *Saa mbili asubuhi* = 8 a.m.; *saa mbili usiku* = 8 p.m.",
+            "The fastest way to convert in your head: **if the international hour is over 6, subtract 6; if it's under 6, add 6**. 15:00 → 15 − 6 = *saa tisa*. 4:00 → 4 + 6 = *saa kumi*.",
+            "⚠️ The word *saa* has three meanings at once: a clock time (*saa tatu*), a clock as an object (*saa yangu* = my watch), and a length of time (*saa mbili* = two hours). Context separates them, and they almost never cause confusion."
+          ]
+        },
+        {
+          "title": "Half, quarter, and minutes",
+          "body": [
+            "Parts of the hour are attached with *na* (past) and *kasoro* (to) — the same construction as English \"past\" and \"to\"."
+          ],
+          "table": {
+            "head": [
+              "Kiswahili",
+              "Meaning",
+              "International time"
+            ],
+            "rows": [
+              [
+                "*saa tatu kamili*",
+                "hour three exactly",
+                "9:00"
+              ],
+              [
+                "*saa tatu na robo*",
+                "hour three and a quarter",
+                "9:15"
+              ],
+              [
+                "*saa tatu na nusu*",
+                "hour three and a half",
+                "9:30"
+              ],
+              [
+                "*saa nne kasoro robo*",
+                "hour four less a quarter",
+                "9:45"
+              ],
+              [
+                "*saa tatu na dakika kumi*",
+                "hour three and ten minutes",
+                "9:10"
+              ],
+              [
+                "*saa nne kasoro dakika tano*",
+                "hour four less five minutes",
+                "9:55"
+              ]
+            ]
+          },
+          "after": [
+            "*Nusu* (half) and *robo* (quarter) come straight from Arabic (*nisf* and *rub'*). *Dakika* means minute, *sekunde* means second.",
+            "For a length of time rather than a point in time, the same words are used: *saa mbili* (two hours), *dakika thelathini* (thirty minutes), *siku tatu* (three days), *wiki moja* (one week), *mwezi mmoja* (one month).",
+            "Asking about time: *Saa ngapi?* (what time is it?), *Saa ngapi tunakutana?* (what time do we meet?), *Lini?* (when?), *Kwa muda gani?* (for how long?)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Siku za wiki — and why Monday is \"day three\"",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Say it",
+            "English",
+            "Literally"
+          ],
+          "rows": [
+            [
+              "*Jumatatu*",
+              "joo-mah-TAH-too",
+              "Monday",
+              "day three"
+            ],
+            [
+              "*Jumanne*",
+              "joo-MAH-n-neh",
+              "Tuesday",
+              "day four"
+            ],
+            [
+              "*Jumatano*",
+              "joo-mah-TAH-noh",
+              "Wednesday",
+              "day five"
+            ],
+            [
+              "*Alhamisi*",
+              "ahl-hah-MEE-see",
+              "Thursday",
+              "from Arabic \"al-khamis\""
+            ],
+            [
+              "*Ijumaa*",
+              "ee-joo-MAH-ah",
+              "Friday",
+              "from Arabic \"al-jum'a\""
+            ],
+            [
+              "*Jumamosi*",
+              "joo-mah-MOH-see",
+              "Saturday",
+              "day one (of the new week)"
+            ],
+            [
+              "*Jumapili*",
+              "joo-mah-PEE-lee",
+              "Sunday",
+              "day two"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Two names — **Alhamisi** and **Ijumaa** — come straight from Arabic. The rest are counted, and the count starts from **Jumamosi**: Saturday is day one of the week, Sunday is day two, Monday is day three (*Jumatatu*), Tuesday day four (*Jumanne*), Wednesday day five (*Jumatano*). What looks chaotic is actually consistent: the traditional Swahili week starts on Saturday."
+        },
+        {
+          "type": "p",
+          "text": "Month names follow two patterns. The first is borrowed as is: *Januari, Februari, Machi, Aprili, Mei, Juni, Julai, Agosti, Septemba, Oktoba, Novemba, Desemba*. The second is counted: *mwezi wa kwanza* (first month = January), *mwezi wa pili*, and so on. Both are used; the counted version is heard more in the villages."
+        },
+        {
+          "type": "p",
+          "text": "A date is given like this: *tarehe kumi na tano Machi* (the 15th of March). *Tarehe* is Arabic *tarikh*, \"date\"."
+        }
+      ]
+    },
+    {
+      "title": "Jana, leo, kesho — placing yourself in time",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "English",
+            "Kiswahili",
+            "English"
+          ],
+          "rows": [
+            [
+              "*juzi*",
+              "the day before yesterday",
+              "*keshokutwa*",
+              "the day after tomorrow"
+            ],
+            [
+              "*jana*",
+              "yesterday",
+              "*kesho*",
+              "tomorrow"
+            ],
+            [
+              "*leo*",
+              "today",
+              "*sasa hivi*",
+              "just now; right away"
+            ],
+            [
+              "*wiki iliyopita*",
+              "last week",
+              "*wiki ijayo*",
+              "next week"
+            ],
+            [
+              "*mwezi uliopita*",
+              "last month",
+              "*mwezi ujao*",
+              "next month"
+            ],
+            [
+              "*mwaka jana*",
+              "last year",
+              "*mwaka kesho*",
+              "next year"
+            ],
+            [
+              "*asubuhi*",
+              "morning",
+              "*mchana*",
+              "afternoon"
+            ],
+            [
+              "*jioni*",
+              "evening",
+              "*usiku*",
+              "night"
+            ],
+            [
+              "*alfajiri*",
+              "dawn; early morning",
+              "*adhuhuri*",
+              "midday"
+            ],
+            [
+              "*mapema*",
+              "early",
+              "*kuchelewa*",
+              "to be late"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Alfajiri* and *adhuhuri* come from the names of the Muslim prayer times (Arabic *al-fajr*, *adh-dhuhr*). So does *magharibi* — in Swahili it means \"west\" and also \"the time of sunset\"."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ One habit to be ready for: appointments in East Africa are kept loosely, and people joke about it themselves with the phrase *saa za Kiafrika* (African time). If precision matters, say *kamili* (exactly) and confirm again the day before. If it doesn't matter, just go with the rhythm — *haraka haraka haina baraka*."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "saa",
+      "baca": "SAH-ah",
+      "en": "hour; clock (time; object; duration)"
+    },
+    {
+      "sw": "dakika",
+      "baca": "dah-KEE-kah",
+      "en": "minute"
+    },
+    {
+      "sw": "nusu",
+      "baca": "NOO-soo",
+      "en": "half"
+    },
+    {
+      "sw": "robo",
+      "baca": "ROH-boh",
+      "en": "quarter"
+    },
+    {
+      "sw": "kasoro",
+      "baca": "kah-SOH-roh",
+      "en": "less; to (before the hour)"
+    },
+    {
+      "sw": "kamili",
+      "baca": "kah-MEE-lee",
+      "en": "exactly; complete"
+    },
+    {
+      "sw": "lini",
+      "baca": "LEE-nee",
+      "en": "when"
+    },
+    {
+      "sw": "siku",
+      "baca": "SEE-koo",
+      "en": "day"
+    },
+    {
+      "sw": "wiki",
+      "baca": "WEE-kee",
+      "en": "week"
+    },
+    {
+      "sw": "mwezi / miezi",
+      "baca": "MWEH-zee",
+      "en": "month; moon"
+    },
+    {
+      "sw": "tarehe",
+      "baca": "tah-REH-heh",
+      "en": "date"
+    },
+    {
+      "sw": "jana",
+      "baca": "JAH-nah",
+      "en": "yesterday"
+    },
+    {
+      "sw": "kesho",
+      "baca": "KEH-shoh",
+      "en": "tomorrow"
+    },
+    {
+      "sw": "juzi",
+      "baca": "JOO-zee",
+      "en": "the day before yesterday"
+    },
+    {
+      "sw": "keshokutwa",
+      "baca": "keh-shoh-KOO-twah",
+      "en": "the day after tomorrow"
+    },
+    {
+      "sw": "mapema",
+      "baca": "mah-PEH-mah",
+      "en": "early"
+    },
+    {
+      "sw": "kuchelewa",
+      "baca": "koo-cheh-LEH-wah",
+      "en": "to be late"
+    },
+    {
+      "sw": "kabla ya",
+      "baca": "KAHB-lah yah",
+      "en": "before"
+    },
+    {
+      "sw": "baada ya",
+      "baca": "bah-AH-dah yah",
+      "en": "after"
+    },
+    {
+      "sw": "jua",
+      "baca": "JOO-ah",
+      "en": "sun"
+    },
+    {
+      "sw": "macheo",
+      "baca": "mah-CHEH-oh",
+      "en": "sunrise"
+    },
+    {
+      "sw": "machweo",
+      "baca": "mah-CHWEH-oh",
+      "en": "sunset"
+    },
+    {
+      "sw": "giza",
+      "baca": "GEE-zah",
+      "en": "darkness"
+    },
+    {
+      "sw": "kukutana",
+      "baca": "koo-koo-TAH-nah",
+      "en": "to meet"
+    },
+    {
+      "sw": "kituo",
+      "baca": "kee-TOO-oh",
+      "en": "stop; station"
+    },
+    {
+      "sw": "basi",
+      "baca": "BAH-see",
+      "en": "bus; \"all right then\""
+    },
+    {
+      "sw": "ufuo",
+      "baca": "oo-FOO-oh",
+      "en": "beach; shore"
+    },
+    {
+      "sw": "kali",
+      "baca": "KAH-lee",
+      "en": "fierce; sharp; strong"
+    },
+    {
+      "sw": "hasa",
+      "baca": "HAH-sah",
+      "en": "exactly; especially"
+    },
+    {
+      "sw": "alfajiri",
+      "baca": "ahl-fah-JEE-ree",
+      "en": "dawn"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Convert to Swahili time, with the part of the day.",
+      "items": [
+        "7:00 a.m.",
+        "9:00 a.m.",
+        "12:00 noon",
+        "3:00 p.m.",
+        "6:00 p.m.",
+        "8:00 p.m."
+      ]
+    },
+    {
+      "prompt": "Convert to international time.",
+      "items": [
+        "saa mbili asubuhi",
+        "saa saba mchana",
+        "saa kumi jioni",
+        "saa tatu na nusu asubuhi",
+        "saa nne kasoro robo asubuhi",
+        "saa nne usiku"
+      ]
+    },
+    {
+      "prompt": "Translate into Swahili.",
+      "items": [
+        "What time do we meet?",
+        "Nine in the morning.",
+        "Tomorrow is Wednesday.",
+        "We come back at half past five in the afternoon.",
+        "See you tomorrow at nine sharp.",
+        "On Saturday there's a big party."
+      ]
+    },
+    {
+      "prompt": "Write the day names in Swahili.",
+      "items": [
+        "Monday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Sunday"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ngapi / tunakutana / saa",
+        "asubuhi / tatu / saa",
+        "kesho / ni / Jumatano",
+        "nusu / saa / na / tunarudi / kumi",
+        "kamili / tutaonana / tatu / saa"
+      ]
+    }
+  ],
+  "answers": [
+    "saa moja asubuhi — saa tatu asubuhi — saa sita mchana — saa tisa mchana — saa kumi na mbili jioni — saa mbili usiku",
+    "8:00 a.m. — 1:00 p.m. — 4:00 p.m. — 9:30 a.m. — 9:45 a.m. — 10:00 p.m.",
+    "Tunakutana saa ngapi? — Saa tatu asubuhi. — Kesho ni Jumatano. — Tunarudi saa kumi na moja na nusu jioni. — Tutaonana kesho saa tatu kamili. — Jumamosi kuna sherehe kubwa.",
+    "Jumatatu — Jumatano — Alhamisi — Ijumaa — Jumapili",
+    "Tunakutana saa ngapi? — Saa tatu asubuhi. — Kesho ni Jumatano. — Tunarudi saa kumi na nusu. — Tutaonana saa tatu kamili."
+  ]
+}

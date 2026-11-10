@@ -1,0 +1,576 @@
+{
+  "title": "The -me- slot: done, and the result still counts",
+  "title_target": "Bado sijala",
+  "goal": "Tell \"I ate earlier\" from \"I've already eaten\", say \"not yet\", and use a slot that in Swahili can also mean a present state.",
+  "bekal": [
+    "the *-me-* slot for completed actions",
+    "its negative with *-ja-*: *sijala* (I haven't eaten yet)",
+    "verbs that turn into states with *-me-*: *nimechoka*, *nimeshiba*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Karibu nyumbani",
+      "intro": "Late afternoon. Budi has been invited to dinner at Amina's family home for the first time.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Hodi hodi!",
+          "id": "Knock knock! (at the door)",
+          "literal": "hodi hodi!"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Karibu sana! Umefika mapema.",
+          "id": "Come on in! You're early.",
+          "literal": "welcome very! you-have-arrived early."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nimeshafika, ndiyo. Nimeleta matunda kidogo.",
+          "id": "Yes, I'm here. I brought a little fruit.",
+          "literal": "I-have-arrived, yes. I-have-brought fruits few."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Asante sana! Umekula?",
+          "id": "Thank you so much! Have you eaten?",
+          "literal": "thanks very! you-have-eaten?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bado sijala. Nimekunywa chai tu asubuhi.",
+          "id": "Not yet. This morning I only had tea.",
+          "literal": "not-yet I-not-yet-eat. I-have-drunk tea only morning."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Karibu chakula! Mama amepika pilau.",
+          "id": "Please, eat! Mom has made pilau.",
+          "literal": "welcome food! mother she-has-cooked pilau."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Harufu nzuri sana! Nimeshiba kwa harufu tu.",
+          "id": "It smells wonderful! The smell alone has filled me up.",
+          "literal": "smell good very! I-have-become-full with smell only."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Baba hajarudi bado. Yuko kazini mpaka saa mbili.",
+          "id": "Dad isn't back yet. He's at work until eight.",
+          "literal": "father he-not-yet-return yet. he-is at-work until hour two."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aa, nimesahau kitu... simu yangu iko wapi?",
+          "id": "Oh, I've forgotten something... where's my phone?",
+          "literal": "ah, I-have-forgotten thing... phone of-mine it-is where?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Iko mezani pale. Umechoka, siyo?",
+          "id": "It's on that table. You're tired, aren't you?",
+          "literal": "it-is at-table there. you-have-tired, isn't-it?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kidogo. Nimetembea sana leo — nimeona mji wote!",
+          "id": "A little. I walked a lot today — I've seen the whole city!",
+          "literal": "little. I-have-walked very today — I-have-seen city all!"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Pole sana! Kaa, chakula kiko tayari.",
+          "id": "Poor you! Sit down, the food is ready.",
+          "literal": "patience very! sit, food it-is ready."
+        }
+      ],
+      "notes": [
+        "**Hodi is the word for knocking.** You say it rather than knock, and the answer is always *karibu*. Even at a house with the door wide open, people call out *hodi* before going in — and a guest who knows to say *hodi* instantly sounds like someone who has lived here.",
+        "**Nimeshafika is -me- with -sha- slipped in.** That insert comes from *kwisha* (to finish) and means \"already; well before now\". *Nimekula* = I've eaten; *nimeshakula* = I've already eaten, so don't go to any trouble.",
+        "**Bado has two jobs.** As a one-word answer it means \"not yet\". Inside a sentence it goes with the *-ja-* form and can stand before or after it: *Bado sijala* = *Sijala bado*. It also means \"still\": *Bado ninasoma* (I'm still studying).",
+        "**Pilau is spiced rice**, a close cousin of pilaf — and its richer twin, *biriani*, is the very same biryani. The spices arrived by the same sea routes that brought Arabic words into this language.",
+        "**Mpaka means \"until\".** *Mpaka saa mbili* (until eight o'clock), *mpaka kesho* (until tomorrow), *kutoka... mpaka...* (from… to…). The same word also means \"border\"."
+      ],
+      "grammars": [
+        {
+          "title": "-me-: done, and still felt now",
+          "body": [
+            "Swahili has two kinds of past, and the difference isn't how long ago something happened but **whether its result still counts now**.",
+            "*Nilikula* = I ate (earlier; that story is over). *Nimekula* = I've eaten (so I'm full now — don't offer me more)."
+          ],
+          "table": {
+            "head": [
+              "With -li-",
+              "With -me-",
+              "The difference"
+            ],
+            "rows": [
+              [
+                "*Nilifika saa tatu.*",
+                "*Nimefika.*",
+                "\"I arrived at nine\" vs \"I'm here (it's me)\""
+              ],
+              [
+                "*Alilala mapema.*",
+                "*Amelala.*",
+                "\"He went to bed early\" vs \"He's asleep now\""
+              ],
+              [
+                "*Nilichoka jana.*",
+                "*Nimechoka.*",
+                "\"I was tired yesterday\" vs \"I'm tired now\""
+              ],
+              [
+                "*Mama alipika pilau.*",
+                "*Mama amepika pilau.*",
+                "\"Mom cooked pilau\" vs \"The pilau is ready\""
+              ],
+              [
+                "*Nilisahau.*",
+                "*Nimesahau.*",
+                "\"I forgot at the time\" vs \"I've forgotten — I can't remember now\""
+              ],
+              [
+                "*Alivaa kanzu.*",
+                "*Amevaa kanzu.*",
+                "\"He put on a kanzu\" vs \"He's wearing a kanzu\""
+              ]
+            ]
+          },
+          "after": [
+            "The last rows show something that surprises new learners: for some verbs, **-me- actually translates a present state**. *Amesimama* = he's standing (he stood up, and still is). *Amekaa* = she's sitting. *Amevaa* = he's wearing. *Nimeshiba* = I'm full. *Nimeelewa* = I understand now.",
+            "One-syllable verbs keep their *ku-*: *nimekula*, *nimekunywa*, *nimekuja*, *nimekwenda*.",
+            "Because *-me-* marks a result that still holds, it's the slot you'll use most when visiting, shopping, and on the phone: *Nimefika* (I'm here), *Nimepokea* (I've received it), *Nimeelewa* (I understand), *Nimemaliza* (I'm done)."
+          ]
+        },
+        {
+          "title": "Not yet: the -ja- slot",
+          "body": [
+            "The negative of *-me-* isn't \"haven't done\" but **not yet** — and the slot changes to *-ja-*."
+          ],
+          "table": {
+            "head": [
+              "Already",
+              "Not yet",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*nimekula*",
+                "**sijala**",
+                "see-JAH-lah",
+                "I haven't eaten yet"
+              ],
+              [
+                "*umekula*",
+                "**hujala**",
+                "hoo-JAH-lah",
+                "you haven't eaten yet"
+              ],
+              [
+                "*amekula*",
+                "**hajala**",
+                "hah-JAH-lah",
+                "he/she hasn't eaten yet"
+              ],
+              [
+                "*tumekula*",
+                "**hatujala**",
+                "hah-too-JAH-lah",
+                "we haven't eaten yet"
+              ],
+              [
+                "*mmekula*",
+                "**hamjala**",
+                "hahm-JAH-lah",
+                "you (pl.) haven't eaten yet"
+              ],
+              [
+                "*wamekula*",
+                "**hawajala**",
+                "hah-wah-JAH-lah",
+                "they haven't eaten yet"
+              ],
+              [
+                "*amefika*",
+                "**hajafika**",
+                "hah-jah-FEE-kah",
+                "he/she hasn't arrived yet"
+              ],
+              [
+                "*nimemaliza*",
+                "**sijamaliza**",
+                "see-jah-mah-LEE-zah",
+                "I haven't finished yet"
+              ]
+            ]
+          },
+          "after": [
+            "The verb ending **doesn't change** — just like the negative past in unit 11. Only the two front slots are swapped. Short verbs drop their *ku-*: *nimekula* → **sijala**, *nimekunywa* → **sijanywa**, *amekuja* → **hajaja**. Don't mix this up with the negative present from unit 4 (*sili*, *sinywi*, *siji*): that's \"don't\", this is \"not yet\".",
+            "Three sentences you'll say again and again: *Sijaelewa* (I don't get it yet), *Sijui bado* (I don't know yet), *Bado hajafika* (he hasn't arrived yet).",
+            "The four slots you now have: **-na-** present, **-li-** past, **-me-** already, with negatives *si…i*, *siku…*, *sija…*. One more slot — the future — is waiting in the next unit, and it's the easiest of all."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Everyday -me- sentences",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Nimefika.*",
+              "nee-meh-FEE-kah",
+              "I'm here. / I've arrived."
+            ],
+            [
+              "*Nimechoka.*",
+              "nee-meh-CHOH-kah",
+              "I'm tired."
+            ],
+            [
+              "*Nimeshiba.*",
+              "nee-meh-SHEE-bah",
+              "I'm full."
+            ],
+            [
+              "*Nimeelewa.*",
+              "nee-meh-eh-LEH-wah",
+              "I understand."
+            ],
+            [
+              "*Nimesahau.*",
+              "nee-meh-sah-HAH-oo",
+              "I've forgotten."
+            ],
+            [
+              "*Nimemaliza.*",
+              "nee-meh-mah-LEE-zah",
+              "I'm done."
+            ],
+            [
+              "*Nimepotea.*",
+              "nee-meh-poh-TEH-ah",
+              "I'm lost."
+            ],
+            [
+              "*Nimefurahi kukuona.*",
+              "nee-meh-foo-RAH-hee",
+              "Nice to meet you."
+            ],
+            [
+              "*Amelala.*",
+              "ah-meh-LAH-lah",
+              "He/She is asleep."
+            ],
+            [
+              "*Hajafika bado.*",
+              "hah-jah-FEE-kah",
+              "He/She isn't here yet."
+            ],
+            [
+              "*Chakula kimekwisha.*",
+              "kee-meh-KWEE-shah",
+              "The food is all gone."
+            ],
+            [
+              "*Simu imezimika.*",
+              "ee-meh-zee-MEE-kah",
+              "The phone has died."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Nimepotea* is the sentence to memorize whole before you explore a town on your own. Follow it with *Ninatafuta…* (I'm looking for…) and *Unaweza kunisaidia?* (can you help me?)."
+        }
+      ]
+    },
+    {
+      "title": "Adabu ya kutembelea — visiting etiquette",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Visiting someone in East Africa has its own sequence, and nearly all of it is short sentences you already have the pieces for."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "When",
+            "You say",
+            "You hear"
+          ],
+          "rows": [
+            [
+              "At the door",
+              "*Hodi!*",
+              "*Karibu!*"
+            ],
+            [
+              "Coming in",
+              "*Shikamoo* (to an elder)",
+              "*Marahaba*"
+            ],
+            [
+              "Sitting down",
+              "*Asante*",
+              "*Karibu, kaa*"
+            ],
+            [
+              "Offered food",
+              "*Asante sana!*",
+              "*Karibu chakula*"
+            ],
+            [
+              "After eating",
+              "*Nimeshiba, asante*",
+              "*Karibu tena*"
+            ],
+            [
+              "Praising the food",
+              "*Chakula ni kitamu sana!*",
+              "*Asante!*"
+            ],
+            [
+              "Leaving",
+              "*Naomba niondoke*",
+              "*Karibu tena, safari njema*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Bringing something is always welcome** — fruit, sugar, tea, or bread from a roadside stall. The sentence: *Nimeleta kitu kidogo* (I brought a little something). Hosts don't normally refuse, so don't be surprised if it's declined once before being accepted."
+        },
+        {
+          "type": "p",
+          "text": "*Naomba niondoke* literally means \"I ask that I may leave\" — the politest way to take your leave, and a sentence pattern you'll take apart yourself in unit 14. Leaving without saying it seems abrupt; saying it and then sitting another ten minutes is perfectly normal."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "hodi",
+      "baca": "HOH-dee",
+      "en": "knock knock (at the door)"
+    },
+    {
+      "sw": "kufika",
+      "baca": "koo-FEE-kah",
+      "en": "to arrive; to get there"
+    },
+    {
+      "sw": "kuleta",
+      "baca": "koo-LEH-tah",
+      "en": "to bring"
+    },
+    {
+      "sw": "kusahau",
+      "baca": "koo-sah-HAH-oo",
+      "en": "to forget"
+    },
+    {
+      "sw": "kumaliza",
+      "baca": "koo-mah-LEE-zah",
+      "en": "to finish"
+    },
+    {
+      "sw": "kukwisha",
+      "baca": "koo-KWEE-shah",
+      "en": "to run out; to end"
+    },
+    {
+      "sw": "kupokea",
+      "baca": "koo-poh-KEH-ah",
+      "en": "to receive"
+    },
+    {
+      "sw": "kutafuta",
+      "baca": "koo-tah-FOO-tah",
+      "en": "to look for"
+    },
+    {
+      "sw": "kusaidia",
+      "baca": "koo-sah-ee-DEE-ah",
+      "en": "to help"
+    },
+    {
+      "sw": "kusimama",
+      "baca": "koo-see-MAH-mah",
+      "en": "to stand; to stop"
+    },
+    {
+      "sw": "kuomba",
+      "baca": "koo-OHM-bah",
+      "en": "to ask for; to pray"
+    },
+    {
+      "sw": "kuondoka",
+      "baca": "koo-ohn-DOH-kah",
+      "en": "to leave; to depart"
+    },
+    {
+      "sw": "bado",
+      "baca": "BAH-doh",
+      "en": "not yet; still"
+    },
+    {
+      "sw": "mpaka",
+      "baca": "m-PAH-kah",
+      "en": "until"
+    },
+    {
+      "sw": "harufu",
+      "baca": "hah-ROO-foo",
+      "en": "smell; aroma"
+    },
+    {
+      "sw": "pilau",
+      "baca": "pee-LAH-oo",
+      "en": "spiced rice"
+    },
+    {
+      "sw": "biriani",
+      "baca": "bee-ree-AH-nee",
+      "en": "biryani"
+    },
+    {
+      "sw": "tayari",
+      "baca": "tah-YAH-ree",
+      "en": "ready"
+    },
+    {
+      "sw": "adabu",
+      "baca": "ah-DAH-boo",
+      "en": "good manners"
+    },
+    {
+      "sw": "kutembelea",
+      "baca": "koo-tehm-beh-LEH-ah",
+      "en": "to visit"
+    },
+    {
+      "sw": "nimefika",
+      "baca": "nee-meh-FEE-kah",
+      "en": "I've arrived"
+    },
+    {
+      "sw": "nimechoka",
+      "baca": "nee-meh-CHOH-kah",
+      "en": "I'm tired"
+    },
+    {
+      "sw": "nimeshiba",
+      "baca": "nee-meh-SHEE-bah",
+      "en": "I'm full"
+    },
+    {
+      "sw": "nimeelewa",
+      "baca": "nee-meh-eh-LEH-wah",
+      "en": "I understand"
+    },
+    {
+      "sw": "sijala",
+      "baca": "see-JAH-lah",
+      "en": "I haven't eaten yet"
+    },
+    {
+      "sw": "hajafika",
+      "baca": "hah-jah-FEE-kah",
+      "en": "he/she hasn't arrived yet"
+    },
+    {
+      "sw": "kitamu",
+      "baca": "kee-TAH-moo",
+      "en": "tasty (ki-/vi- class)"
+    },
+    {
+      "sw": "safari njema",
+      "baca": "sah-FAH-ree n-JEH-mah",
+      "en": "have a good trip"
+    },
+    {
+      "sw": "kuzimika",
+      "baca": "koo-zee-MEE-kah",
+      "en": "to go off; to die (light, device)"
+    },
+    {
+      "sw": "mgonjwa",
+      "baca": "m-GOHN-jwah",
+      "en": "sick person"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Put into the -me- form.",
+      "items": [
+        "Ninafika. → ____",
+        "Anapika chakula. → ____",
+        "Tunamaliza kazi. → ____",
+        "Wanakula. → ____",
+        "Unaelewa. → ____",
+        "Chakula kinakwisha. → ____"
+      ]
+    },
+    {
+      "prompt": "Change to the \"not yet\" form.",
+      "items": [
+        "Nimekula. → ____",
+        "Amefika. → ____",
+        "Tumemaliza. → ____",
+        "Wamekuja. → ____",
+        "Umeelewa. → ____",
+        "Nimeona daktari. → ____"
+      ]
+    },
+    {
+      "prompt": "Choose -li- or -me-, then write the full sentence.",
+      "items": [
+        "I've arrived (I'm here now). → ____",
+        "Yesterday I arrived at nine. → ____",
+        "Mom has cooked (the food is ready). → ____",
+        "Last year she studied in Kenya. → ____",
+        "I'm tired now. → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Swahili.",
+      "items": [
+        "Have you eaten?",
+        "Not yet, I haven't eaten.",
+        "Dad isn't back yet.",
+        "I've forgotten something.",
+        "I understand now.",
+        "The food is ready."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "mapema / umefika",
+        "sijala / bado",
+        "pilau / amepika / mama",
+        "bado / hajarudi / baba",
+        "leo / nimetembea / sana"
+      ]
+    }
+  ],
+  "answers": [
+    "Nimefika. — Amepika chakula. — Tumemaliza kazi. — Wamekula. — Umeelewa. — Chakula kimekwisha.",
+    "Sijala. — Hajafika. — Hatujamaliza. — Hawajaja. — Hujaelewa. — Sijaona daktari.",
+    "Nimefika. — Jana nilifika saa tatu. — Mama amepika. — Mwaka jana alisoma Kenya. — Nimechoka.",
+    "Umekula? — Bado, sijala. — Baba hajarudi bado. — Nimesahau kitu. — Nimeelewa. — Chakula kiko tayari.",
+    "Umefika mapema. — Bado sijala. — Mama amepika pilau. — Baba hajarudi bado. — Nimetembea sana leo."
+  ]
+}

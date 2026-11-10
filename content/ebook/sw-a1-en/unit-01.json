@@ -1,0 +1,600 @@
+{
+  "title": "Greetings and names: a two-letter word for \"is\"",
+  "title_target": "Habari yako? Jina lako nani?",
+  "goal": "Greet people at the right time of day and in the right way for their age, give your name, say where you come from, and use the two shortest words in Swahili — *ni* and *si*.",
+  "bekal": [
+    "greet people with *habari*, *shikamoo* and *mambo*, each in its proper place",
+    "build \"A is B\" and \"A is not B\" sentences with *ni* and *si*",
+    "give your own name, other people's names and your nationality with the prefixes *M-/Wa-*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Siku ya kwanza Zanzibar",
+      "intro": "First day in Zanzibar. Budi, a student from Jakarta, has just stepped off the ferry and is greeted by a young woman at the port.",
+      "lines": [
+        {
+          "speaker": "Amina:",
+          "text": "Habari za asubuhi!",
+          "id": "Good morning!",
+          "literal": "news of morning!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nzuri sana. Habari yako?",
+          "id": "Very well. How are you?",
+          "literal": "good very. news of-you?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Nzuri. Karibu Zanzibar!",
+          "id": "Fine. Welcome to Zanzibar!",
+          "literal": "good. welcome Zanzibar!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Asante sana.",
+          "id": "Thank you very much.",
+          "literal": "thanks very."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Jina langu ni Amina. Jina lako nani?",
+          "id": "My name is Amina. What's your name?",
+          "literal": "name of-me is Amina. name of-you who?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jina langu ni Budi. Nimefurahi kukutana nawe.",
+          "id": "My name is Budi. Nice to meet you.",
+          "literal": "name of-me is Budi. I-have-become-glad to-meet with-you."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Mimi pia. Wewe ni mgeni hapa?",
+          "id": "Me too. Are you new here?",
+          "literal": "me also. you are guest here?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ndiyo. Mimi si Mtanzania, mimi ni Mwindonesia.",
+          "id": "Yes. I'm not Tanzanian, I'm Indonesian.",
+          "literal": "yes. I not Tanzanian-person, I am Indonesian-person."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Aa, safi! Na yeye ni nani?",
+          "id": "Oh, cool! And who is she?",
+          "literal": "ah, clean! and she is who?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Yeye ni rafiki yangu. Jina lake ni Rina.",
+          "id": "She's my friend. Her name is Rina.",
+          "literal": "she is friend of-me. name of-her is Rina."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Karibuni wote! Tutaonana!",
+          "id": "Welcome, both of you! See you!",
+          "literal": "welcome-you-all all! will-we-each-other-see!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kwaheri!",
+          "id": "Goodbye!",
+          "literal": "with blessing!"
+        }
+      ],
+      "notes": [
+        "**Habari literally means \"news\".** It is used just like \"how are you?\", but you can attach the time of day: *habari za asubuhi* (morning), *za mchana* (afternoon), *za jioni* (evening), *za usiku* (night). Plain *Habari?* or *Habari gani?* works too.",
+        "**The answer is almost always Nzuri.** *Nzuri* means \"good\", and in East Africa nobody answers \"how are you?\" with a complaint. Even if you feel unwell, you say *nzuri* first and tell the story afterwards. Equally safe alternatives: *salama* (peaceful) and *safi* (clean; cool).",
+        "**Ndiyo means \"yes\", hapana means \"no\".** *Ndiyo* confirms, *hapana* refuses. More casual: *ndio* (without the y) and *la*.",
+        "**Karibu becomes karibuni for more than one person.** The ending *-ni* on greetings and commands means \"you all\": *karibu* → *karibuni*, *asante* → *asanteni*. You'll meet this ending again in unit 14.",
+        "**Kwaheri literally means \"with blessing\".** *Kwa* (with) + *heri* (good fortune; blessing). For a lighter goodbye, people more often say *tutaonana* (\"we'll see each other\") or *baadaye* (later)."
+      ],
+      "grammars": [
+        {
+          "title": "Ni and si — \"is\" and \"is not\", which never change",
+          "body": [
+            "Swahili has a word for \"to be\", and it is the lightest part of the whole course: **there is only one form, for everyone**. No *am/is/are*, no change for the person, no change for the tense."
+          ],
+          "table": {
+            "head": [
+              "Pronoun",
+              "Say it",
+              "Positive",
+              "Negative",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**mimi**",
+                "MEE-mee",
+                "*mimi ni mwalimu*",
+                "*mimi si mwalimu*",
+                "I am (not) a teacher"
+              ],
+              [
+                "**wewe**",
+                "WEH-weh",
+                "*wewe ni mwalimu*",
+                "*wewe si mwalimu*",
+                "you are (not) a teacher"
+              ],
+              [
+                "**yeye**",
+                "YEH-yeh",
+                "*yeye ni mwalimu*",
+                "*yeye si mwalimu*",
+                "he/she is (not) a teacher"
+              ],
+              [
+                "**sisi**",
+                "SEE-see",
+                "*sisi ni walimu*",
+                "*sisi si walimu*",
+                "we are (not) teachers"
+              ],
+              [
+                "**ninyi**",
+                "NEE-nyee",
+                "*ninyi ni walimu*",
+                "*ninyi si walimu*",
+                "you (pl.) are (not) teachers"
+              ],
+              [
+                "**wao**",
+                "WAH-oh",
+                "*wao ni walimu*",
+                "*wao si walimu*",
+                "they are (not) teachers"
+              ]
+            ]
+          },
+          "after": [
+            "*Yeye* means both \"he\" and \"she\". Swahili has no *he/she* split, no articles *a*/*the*, and no adjectives that change for gender.",
+            "The pronoun can be dropped when it's clear from context: *Ni mwalimu* is enough for \"he's a teacher\". You use it when you want **emphasis**: *Mimi ni mwalimu* = \"As for me, I'm a teacher\".",
+            "⚠️ Don't mix them up: *si* means **not**, not \"I\". The verb prefix *si-* meaning \"I don't\" only appears in unit 4, and the two are indeed related — but this *si* stands on its own as a separate word."
+          ]
+        },
+        {
+          "title": "Where are you from? The prefixes M- and Wa-",
+          "body": [
+            "Nationalities are formed from the country name with **M-** for one person and **Wa-** for several people. The language takes a third prefix, **Ki-**, and the country itself usually starts with **U-**."
+          ],
+          "table": {
+            "head": [
+              "Country",
+              "One person",
+              "Several people",
+              "Language"
+            ],
+            "rows": [
+              [
+                "*Indonesia*",
+                "**Mwindonesia**",
+                "**Waindonesia**",
+                "*Kiindonesia*"
+              ],
+              [
+                "*Tanzania*",
+                "**Mtanzania**",
+                "**Watanzania**",
+                "*Kiswahili*"
+              ],
+              [
+                "*Kenya*",
+                "**Mkenya**",
+                "**Wakenya**",
+                "*Kiswahili*"
+              ],
+              [
+                "*Uingereza* (England)",
+                "**Mwingereza**",
+                "**Waingereza**",
+                "*Kiingereza*"
+              ],
+              [
+                "*Ujerumani* (Germany)",
+                "**Mjerumani**",
+                "**Wajerumani**",
+                "*Kijerumani*"
+              ],
+              [
+                "*Uchina* (China)",
+                "**Mchina**",
+                "**Wachina**",
+                "*Kichina*"
+              ],
+              [
+                "*Uarabuni* (Arabia)",
+                "**Mwarabu**",
+                "**Waarabu**",
+                "*Kiarabu*"
+              ]
+            ]
+          },
+          "after": [
+            "If the country name begins with a vowel, *M-* becomes *Mw-* so it's easier to say: *Mwindonesia*, *Mwingereza*, *Mwarabu*. The same small rule applies throughout this course.",
+            "The **Ki-** that marks a language is the same prefix as in *kitabu* and *kiti*. It is one of the six noun classes you'll set up one by one from unit 2 — and it gives the language its name, *Kiswahili*, \"the language of the coast people\" (*sahil* is Arabic for coast).",
+            "To ask, just add *wapi*: *Unatoka wapi?* (Where are you from?) — the answer is *Ninatoka Indonesia*. The verb form is taken apart fully in unit 3."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Survival phrases",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These ten phrases aren't grammar to memorize — they're an emergency kit. Learn them whole now, understand how they're built later."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Ndiyo / Hapana",
+              "n-DEE-yoh / hah-PAH-nah",
+              "Yes / No"
+            ],
+            [
+              "Asante (sana)",
+              "ah-SAHN-teh",
+              "Thank you (very much)"
+            ],
+            [
+              "Karibu",
+              "kah-REE-boo",
+              "You're welcome; please, go ahead; welcome"
+            ],
+            [
+              "Samahani",
+              "sah-mah-HAH-nee",
+              "Sorry; excuse me"
+            ],
+            [
+              "Tafadhali",
+              "tah-fah-DHAH-lee",
+              "Please"
+            ],
+            [
+              "Pole",
+              "POH-leh",
+              "I'm sorry for you; hang in there"
+            ],
+            [
+              "Sielewi",
+              "see-eh-LEH-wee",
+              "I don't understand"
+            ],
+            [
+              "Sijui",
+              "see-JOO-ee",
+              "I don't know"
+            ],
+            [
+              "Sema polepole",
+              "SEH-mah poh-leh-POH-leh",
+              "Please speak slowly"
+            ],
+            [
+              "Unasema Kiingereza?",
+              "oo-nah-SEH-mah kee-ee-ngeh-REH-zah",
+              "Do you speak English?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Karibu* is the most versatile word on this page. It means \"welcome\" at the door, \"please, go ahead\" when inviting someone to sit or eat, and \"you're welcome\" after someone thanks you. If you could learn only one word from this unit, make it this one."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Pole* doesn't mean \"sorry, my mistake\" — that's *samahani*. *Pole* is sympathy: you say it to someone who trips, who is ill, who drops something, even to someone working hard (*pole na kazi*). To accept it, just say *asante*."
+        }
+      ]
+    },
+    {
+      "title": "Greetings by time of day and by age",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Swahili chooses its greeting not only by the time of day but by **who you're greeting**. Getting it wrong isn't fatal, but getting it right is the fastest way to make people smile."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "To whom",
+            "Greeting",
+            "Expected reply"
+          ],
+          "rows": [
+            [
+              "Anyone, polite & safe",
+              "*Habari?* / *Habari yako?*",
+              "*Nzuri* / *Salama*"
+            ],
+            [
+              "Someone older, respected",
+              "*Shikamoo*",
+              "*Marahaba*"
+            ],
+            [
+              "Friends your age, casual",
+              "*Mambo?* / *Vipi?*",
+              "*Poa* / *Safi* / *Freshi*"
+            ],
+            [
+              "Standard, slightly formal",
+              "*Hujambo?*",
+              "*Sijambo*"
+            ],
+            [
+              "To several people at once",
+              "*Hamjambo?*",
+              "*Hatujambo*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Shikamoo is the most important item in this table.** You say it to anyone clearly older than you — the shopkeeper, the driver, the neighbor's mother, anyone your parents' age or above. The reply is always *marahaba*, and a newcomer who knows when to use *shikamoo* is instantly treated as a guest, not a tourist."
+        },
+        {
+          "type": "p",
+          "text": "*Mzee* (elder, sir) and *mama* or *dada* (for women) are often added after it: *Shikamoo mzee*, *Shikamoo mama*. *Mambo?* is the opposite — use it only with people your age or younger. Saying *mambo* to a village grandfather sounds like slapping a stranger on the back."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "habari",
+      "baca": "hah-BAH-ree",
+      "en": "news; how are you"
+    },
+    {
+      "sw": "asubuhi",
+      "baca": "ah-soo-BOO-hee",
+      "en": "morning"
+    },
+    {
+      "sw": "mchana",
+      "baca": "m-CHAH-nah",
+      "en": "daytime; afternoon"
+    },
+    {
+      "sw": "jioni",
+      "baca": "jee-OH-nee",
+      "en": "evening"
+    },
+    {
+      "sw": "usiku",
+      "baca": "oo-SEE-koo",
+      "en": "night"
+    },
+    {
+      "sw": "nzuri",
+      "baca": "n-ZOO-ree",
+      "en": "good; fine"
+    },
+    {
+      "sw": "salama",
+      "baca": "sah-LAH-mah",
+      "en": "safe; peaceful"
+    },
+    {
+      "sw": "safi",
+      "baca": "SAH-fee",
+      "en": "clean; cool"
+    },
+    {
+      "sw": "karibu",
+      "baca": "kah-REE-boo",
+      "en": "welcome; please; you're welcome"
+    },
+    {
+      "sw": "asante",
+      "baca": "ah-SAHN-teh",
+      "en": "thank you"
+    },
+    {
+      "sw": "sana",
+      "baca": "SAH-nah",
+      "en": "very; a lot"
+    },
+    {
+      "sw": "jina",
+      "baca": "JEE-nah",
+      "en": "name"
+    },
+    {
+      "sw": "langu / lako / lake",
+      "baca": "LAH-ngoo",
+      "en": "my / your / his, her (name)"
+    },
+    {
+      "sw": "nani",
+      "baca": "NAH-nee",
+      "en": "who"
+    },
+    {
+      "sw": "mimi",
+      "baca": "MEE-mee",
+      "en": "I; me"
+    },
+    {
+      "sw": "wewe",
+      "baca": "WEH-weh",
+      "en": "you (one person)"
+    },
+    {
+      "sw": "yeye",
+      "baca": "YEH-yeh",
+      "en": "he; she"
+    },
+    {
+      "sw": "sisi",
+      "baca": "SEE-see",
+      "en": "we"
+    },
+    {
+      "sw": "ninyi",
+      "baca": "NEE-nyee",
+      "en": "you (plural)"
+    },
+    {
+      "sw": "wao",
+      "baca": "WAH-oh",
+      "en": "they"
+    },
+    {
+      "sw": "ni",
+      "baca": "nee",
+      "en": "is; am; are"
+    },
+    {
+      "sw": "si",
+      "baca": "see",
+      "en": "is not; am not; are not"
+    },
+    {
+      "sw": "ndiyo",
+      "baca": "n-DEE-yoh",
+      "en": "yes"
+    },
+    {
+      "sw": "hapana",
+      "baca": "hah-PAH-nah",
+      "en": "no; not"
+    },
+    {
+      "sw": "mgeni",
+      "baca": "m-GEH-nee",
+      "en": "guest; newcomer"
+    },
+    {
+      "sw": "rafiki",
+      "baca": "rah-FEE-kee",
+      "en": "friend"
+    },
+    {
+      "sw": "mwalimu",
+      "baca": "mwah-LEE-moo",
+      "en": "teacher"
+    },
+    {
+      "sw": "mwanafunzi",
+      "baca": "mwah-nah-FOON-zee",
+      "en": "student"
+    },
+    {
+      "sw": "hapa",
+      "baca": "HAH-pah",
+      "en": "here"
+    },
+    {
+      "sw": "pia",
+      "baca": "PEE-ah",
+      "en": "also; too"
+    },
+    {
+      "sw": "wote",
+      "baca": "WOH-teh",
+      "en": "all"
+    },
+    {
+      "sw": "kwaheri",
+      "baca": "kwah-HEH-ree",
+      "en": "goodbye"
+    },
+    {
+      "sw": "tutaonana",
+      "baca": "too-tah-oh-NAH-nah",
+      "en": "see you"
+    },
+    {
+      "sw": "shikamoo",
+      "baca": "shee-kah-MOH-oh",
+      "en": "respectful greeting (to an elder)"
+    },
+    {
+      "sw": "marahaba",
+      "baca": "mah-rah-HAH-bah",
+      "en": "reply to shikamoo"
+    },
+    {
+      "sw": "mzee",
+      "baca": "m-ZEH-eh",
+      "en": "elder; old man"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Swahili.",
+      "items": [
+        "Good morning! How are you?",
+        "Very well. Thank you very much.",
+        "My name is Rina.",
+        "What's your name?",
+        "I'm not Tanzanian.",
+        "She's my friend."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with ni or si.",
+      "items": [
+        "Mimi ____ Mwindonesia. (I'm Indonesian)",
+        "Yeye ____ mwalimu. (he isn't a teacher)",
+        "Wewe ____ mgeni hapa? (are you a guest here?)",
+        "Sisi ____ wanafunzi. (we're students)",
+        "Jina lake ____ Amina.",
+        "Wao ____ Wakenya. (they aren't Kenyan)"
+      ]
+    },
+    {
+      "prompt": "Which greeting fits? Choose shikamoo, mambo or habari.",
+      "items": [
+        "To the grandmother who runs the corner shop.",
+        "To a classmate your own age.",
+        "To a hotel clerk you've just met.",
+        "To a taxi driver much older than you.",
+        "To a young man selling bananas at the market."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "Budi / ni / jina / langu",
+        "Mwindonesia / mimi / ni",
+        "nani / lako / jina",
+        "yangu / yeye / rafiki / ni",
+        "hapa / mgeni / wewe / ni"
+      ]
+    },
+    {
+      "prompt": "Give the nationality and the language, following the pattern Mtanzania — Watanzania — Kiswahili.",
+      "items": [
+        "Uingereza → ____",
+        "Uchina → ____",
+        "Ujerumani → ____",
+        "Indonesia → ____",
+        "Uarabuni → ____"
+      ]
+    }
+  ],
+  "answers": [
+    "Habari za asubuhi! Habari yako? — Nzuri sana. Asante sana. — Jina langu ni Rina. — Jina lako nani? — Mimi si Mtanzania. — Yeye ni rafiki yangu.",
+    "ni — si — ni — ni — ni — si",
+    "shikamoo — mambo — habari — shikamoo — mambo",
+    "Jina langu ni Budi. — Mimi ni Mwindonesia. — Jina lako nani? — Yeye ni rafiki yangu. — Wewe ni mgeni hapa?",
+    "Mwingereza / Waingereza / Kiingereza — Mchina / Wachina / Kichina — Mjerumani / Wajerumani / Kijerumani — Mwindonesia / Waindonesia / Kiindonesia — Mwarabu / Waarabu / Kiarabu"
+  ]
+}

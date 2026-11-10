@@ -1,0 +1,609 @@
+{
+  "title": "The gari class: things whose plural is marked by ma-",
+  "title_target": "Sokoni: matunda na mboga",
+  "goal": "Shop for fruit and vegetables, say quantities and prices, and set up the noun class that holds almost every fruit name — the class whose plural begins with *ma-*.",
+  "bekal": [
+    "the JI-/MA- class: *gari → magari*, *tunda → matunda*",
+    "its subject prefixes: *li-* for one, *ya-* for many",
+    "adjectives of this class: *kubwa → makubwa*, *-eupe → jeupe / meupe*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Matunda ya asubuhi",
+      "intro": "Early morning at the fruit market. Amina teaches Budi to name what goes in the shopping basket.",
+      "lines": [
+        {
+          "speaker": "Amina:",
+          "text": "Leo tunanunua matunda na mboga.",
+          "id": "Today we're buying fruit and vegetables.",
+          "literal": "today we-are-buying fruits and vegetables."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ninataka maembe. Embe moja ni bei gani?",
+          "id": "I'd like some mangoes. How much is one mango?",
+          "literal": "I-am-wanting mangoes. mango one is price which?"
+        },
+        {
+          "speaker": "Muuzaji:",
+          "text": "Embe moja ni mia tano. Maembe matano ni elfu mbili.",
+          "id": "One mango is five hundred. Five mangoes are two thousand.",
+          "literal": "mango one is hundred five. mangoes five is thousand two."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Maembe haya ni mabivu?",
+          "id": "Are these mangoes ripe?",
+          "literal": "mangoes these are ripe-ones?"
+        },
+        {
+          "speaker": "Muuzaji:",
+          "text": "Mabivu kabisa! Yanatoka shambani leo asubuhi.",
+          "id": "Perfectly ripe! They came from the farm this morning.",
+          "literal": "ripe-ones completely! they-are-coming-from at-farm today morning."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Tunahitaji machungwa pia, na mayai kumi.",
+          "id": "We need oranges too, and ten eggs.",
+          "literal": "we-are-needing oranges also, and eggs ten."
+        },
+        {
+          "speaker": "Muuzaji:",
+          "text": "Mayai yako hapa, ndani ya sanduku dogo.",
+          "id": "Your eggs are here, in a small box.",
+          "literal": "eggs they-are-located here, inside of box small."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Na hili ni nini? Jina lake ni nini?",
+          "id": "And what's this? What's it called?",
+          "literal": "and this-thing is what? name of-it is what?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Hili ni tunda la hapa. Jina lake ni fenesi.",
+          "id": "That's a local fruit. It's called fenesi.",
+          "literal": "this-thing is fruit of here. name of-it is jackfruit."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Fenesi? Kwetu tunaita nangka! Tunda hili ni kubwa sana.",
+          "id": "Fenesi? Back home we call it nangka! This fruit is huge.",
+          "literal": "jackfruit? at-our-place we-are-calling nangka! fruit this is big very."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Ni tamu pia. Duka lile linauza maji ya matunda.",
+          "id": "It's sweet too. That shop sells fruit juice.",
+          "literal": "is sweet also. shop that it-is-selling water of fruits."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vizuri! Sasa mifuko yetu ni mizito kabisa.",
+          "id": "Great! Now our bags are really heavy.",
+          "literal": "well! now bags of-us are heavy-ones completely."
+        }
+      ],
+      "notes": [
+        "**Fenesi is jackfruit, and it's not the only surprise in the Zanzibar market.** The East African coast has a tropical climate, so the basket looks tropical too: *nanasi* (pineapple), *embe* (mango), *nazi* (coconut), *mchicha* (spinach), *muhogo* (cassava), *ndizi* (banana), *papai* (papaya), *pilipili* (chili), *tangawizi* (ginger), *mdalasini* (cinnamon). Zanzibar is even nicknamed the Spice Island, for the same reason as Indonesia's Maluku.",
+        "**Shambani means \"on the farm\", from shamba (field; farm).** It is one of the first words to recognize once you leave town: most fruit in the market is described as *ya shambani* — from the farm, not from a warehouse. Remember the *-ni* ending from unit 8; it works here exactly the same way.",
+        "**Kuita means \"to call; to name\".** *Tunaita nangka* = we call it nangka. *Unaitwaje?* (what are you called?) is another way to ask a name, and the answer is *Ninaitwa Budi*.",
+        "**Kwetu means \"at our place\" — and holds a whole home town inside it.** *Kwetu*, *kwenu*, *kwao* are used for home, village or country of origin. When a Tanzanian says *kwetu*, it can mean \"at our house\" or \"in our country\", and context chooses.",
+        "**Mia tano means five hundred, not one hundred five.** Hundreds are built the reverse of the English habit: *mia* (hundred) first, then the multiplier. *Mia mbili* = two hundred, *mia sita* = six hundred."
+      ],
+      "grammars": [
+        {
+          "title": "The JI-/MA- class: none for one, ma- for many",
+          "body": [
+            "This class holds fruits, paired things, big things and a large number of loanwords. The singular is often **without any prefix**, and the plural is marked by **ma-**."
+          ],
+          "table": {
+            "head": [
+              "Singular",
+              "Plural",
+              "Meaning",
+              "With an adjective"
+            ],
+            "rows": [
+              [
+                "*gari*",
+                "*magari*",
+                "car",
+                "*gari kubwa → magari makubwa*"
+              ],
+              [
+                "*duka*",
+                "*maduka*",
+                "shop",
+                "*duka dogo → maduka madogo*"
+              ],
+              [
+                "*tunda*",
+                "*matunda*",
+                "fruit",
+                "*tunda tamu → matunda matamu*"
+              ],
+              [
+                "*embe*",
+                "*maembe*",
+                "mango",
+                "*embe bivu → maembe mabivu*"
+              ],
+              [
+                "*yai*",
+                "*mayai*",
+                "egg",
+                "*yai jeupe → mayai meupe*"
+              ],
+              [
+                "*jina*",
+                "*majina*",
+                "name",
+                "*jina zuri → majina mazuri*"
+              ],
+              [
+                "*jicho*",
+                "*macho*",
+                "eye",
+                "*jicho jekundu → macho mekundu*"
+              ],
+              [
+                "*gazeti*",
+                "*magazeti*",
+                "newspaper",
+                "*gazeti jipya → magazeti mapya*"
+              ],
+              [
+                "*jiwe*",
+                "*mawe*",
+                "stone",
+                "*jiwe kubwa → mawe makubwa*"
+              ]
+            ]
+          },
+          "after": [
+            "The singular **takes no prefix on adjectives** — *gari kubwa*, *duka dogo* — except before an adjective that starts with a vowel, which takes *j-*: *yai jeupe* (white egg), *jicho jekundu* (red eye), *gazeti jipya* (new newspaper).",
+            "The plural uses **ma-** everywhere: *magari makubwa*, *matunda matamu*, *majina mazuri*. Before a vowel, *ma-* merges: *ma + eupe* → **meupe**, *ma + eusi* → **meusi**, *ma + ekundu* → **mekundu**, *ma + pya* → **mapya**.",
+            "Some words in this class **exist only in the plural** and never in the singular: *maji* (water), *maziwa* (milk), *mafuta* (oil), *maisha* (life). If you meet a word starting with *ma-* that makes no sense as a plural, it is probably one of this group."
+          ]
+        },
+        {
+          "title": "Li- and ya-: the subject prefixes of this class",
+          "body": [
+            "Just as the *nyumba* class uses *i-* and *zi-*, the *gari* class uses **li-** for one and **ya-** for many. Possessives and connectors: **langu / yangu** and **la / ya**."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Meaning",
+              "Its negative"
+            ],
+            "rows": [
+              [
+                "*Gari **li**nakuja.*",
+                "The car is coming.",
+                "*Gari **hali**ji.*"
+              ],
+              [
+                "*Magari **ya**nakuja.*",
+                "The cars are coming.",
+                "*Magari **haya**ji.*"
+              ],
+              [
+                "*Duka **li**nauza matunda.*",
+                "The shop sells fruit.",
+                "*Duka **hali**uzi matunda.*"
+              ],
+              [
+                "*Maembe **ya**natoka shambani.*",
+                "The mangoes come from the farm.",
+                "*Maembe **haya**toki shambani.*"
+              ],
+              [
+                "*Gari **li**ko wapi?*",
+                "Where is the car?",
+                "*Gari **hali**po.*"
+              ],
+              [
+                "*Jina **la**ngu ni Budi.*",
+                "My name is Budi.",
+                "—"
+              ]
+            ]
+          },
+          "after": [
+            "Now you can reread sentences you've been using since unit 1: *jina langu*, *jina lako*, *jina lake* use *l-* precisely because *jina* belongs to this class. So does *soko liko mbele ya benki* in unit 8.",
+            "The demonstratives: *hili* / *haya* (this), *hilo* / *hayo* (that, just mentioned), *lile* / *yale* (that over there). Notice *haya* — the same word as the \"okay\" you used in unit 5, and the origin really is the same: \"these things\".",
+            "With this you hold **four of the six classes**: people (*mtu*), made things (*kitabu*), the biggest class (*nyumba*), and this one (*gari*). The two remaining — the *mti* class and the *u-* class — wait in unit 16."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Matunda na mboga — what goes in the basket",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*embe* / *maembe*",
+              "EHM-beh",
+              "mango"
+            ],
+            [
+              "*chungwa* / *machungwa*",
+              "CHOO-ngwah",
+              "orange"
+            ],
+            [
+              "*ndizi*",
+              "n-DEE-zee",
+              "banana"
+            ],
+            [
+              "*nanasi* / *mananasi*",
+              "nah-NAH-see",
+              "pineapple"
+            ],
+            [
+              "*papai* / *mapapai*",
+              "pah-PAH-ee",
+              "papaya"
+            ],
+            [
+              "*nazi*",
+              "NAH-zee",
+              "coconut"
+            ],
+            [
+              "*fenesi*",
+              "feh-NEH-see",
+              "jackfruit"
+            ],
+            [
+              "*tikitimaji*",
+              "tee-kee-tee-MAH-jee",
+              "watermelon"
+            ],
+            [
+              "*parachichi*",
+              "pah-rah-CHEE-chee",
+              "avocado"
+            ],
+            [
+              "*nyanya*",
+              "NYAH-nyah",
+              "tomato"
+            ],
+            [
+              "*kitunguu* / *vitunguu*",
+              "kee-too-NGOO-oo",
+              "onion"
+            ],
+            [
+              "*viazi*",
+              "vee-AH-zee",
+              "potatoes"
+            ],
+            [
+              "*muhogo*",
+              "moo-HOH-goh",
+              "cassava"
+            ],
+            [
+              "*mchicha*",
+              "m-CHEE-chah",
+              "spinach"
+            ],
+            [
+              "*pilipili*",
+              "pee-lee-PEE-lee",
+              "chili pepper"
+            ],
+            [
+              "*tangawizi*",
+              "tah-ngah-WEE-zee",
+              "ginger"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Tikitimaji* literally means \"water pumpkin\", and *maji ya nazi* is coconut water. Notice that many fruit names belong to the *nyumba* class (singular = plural): *ndizi*, *nazi*, *nyanya*, *pilipili*. Those in the *ma-* class are usually big fruits counted one by one."
+        },
+        {
+          "type": "p",
+          "text": "Market quantities in East Africa are often given as *fungu* (a bunch; a pile) and *lundo* (a heap): *fungu la nyanya* (a pile of tomatoes). If you want to buy just a little, the sentence is *Nataka kidogo tu*."
+        }
+      ]
+    },
+    {
+      "title": "Chakula cha Afrika Mashariki — East African food",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The following names will appear on every menu, from the roadside stall to the hotel restaurant."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "What it is"
+          ],
+          "rows": [
+            [
+              "*ugali*",
+              "A stiff maize porridge eaten with the hand — the number-one staple"
+            ],
+            [
+              "*wali*",
+              "Plain white rice; *wali wa nazi* is coconut rice"
+            ],
+            [
+              "*mchuzi*",
+              "Sauce; stew — the necessary partner of ugali and rice"
+            ],
+            [
+              "*nyama choma*",
+              "Grilled meat, the most anticipated party dish"
+            ],
+            [
+              "*maharagwe*",
+              "Red beans, often cooked in coconut milk"
+            ],
+            [
+              "*chapati*",
+              "Layered flatbread, a legacy of Indian traders"
+            ],
+            [
+              "*samaki wa kupaka*",
+              "Grilled fish in coconut sauce, a Zanzibar specialty"
+            ],
+            [
+              "*pilau* / *biriani*",
+              "Spiced rice — a direct cousin of pilaf and biryani"
+            ],
+            [
+              "*mandazi*",
+              "Sweet fried dough, companion of morning tea"
+            ],
+            [
+              "*supu*",
+              "Broth soup, usually for breakfast"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Sentences to bring to the table: *Chakula hiki ni kitamu sana* (this food is delicious), *Nimeshiba* (I'm full), and *Sili nyama* (I don't eat meat) for vegetarians. For halal meat, *nyama ya halali* is understood all along the coast — most of Zanzibar and the Tanzanian coast is Muslim."
+        },
+        {
+          "type": "p",
+          "text": "Ugali is eaten with the right hand: a small ball is rolled, pressed with the thumb into a hollow, then used to scoop up the sauce. It's a way of eating that feels natural at once — and your host will smile to see that a guest needs no teaching."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "tunda / matunda",
+      "baca": "TOON-dah",
+      "en": "fruit / fruits"
+    },
+    {
+      "sw": "mboga",
+      "baca": "m-BOH-gah",
+      "en": "vegetables"
+    },
+    {
+      "sw": "embe / maembe",
+      "baca": "EHM-beh",
+      "en": "mango"
+    },
+    {
+      "sw": "chungwa / machungwa",
+      "baca": "CHOO-ngwah",
+      "en": "orange"
+    },
+    {
+      "sw": "yai / mayai",
+      "baca": "YAH-ee",
+      "en": "egg"
+    },
+    {
+      "sw": "gari / magari",
+      "baca": "GAH-ree",
+      "en": "car"
+    },
+    {
+      "sw": "duka / maduka",
+      "baca": "DOO-kah",
+      "en": "shop"
+    },
+    {
+      "sw": "gazeti / magazeti",
+      "baca": "gah-ZEH-tee",
+      "en": "newspaper"
+    },
+    {
+      "sw": "sanduku / masanduku",
+      "baca": "sahn-DOO-koo",
+      "en": "box; suitcase"
+    },
+    {
+      "sw": "jicho / macho",
+      "baca": "JEE-choh",
+      "en": "eye"
+    },
+    {
+      "sw": "jiwe / mawe",
+      "baca": "JEE-weh",
+      "en": "stone"
+    },
+    {
+      "sw": "shamba / mashamba",
+      "baca": "SHAHM-bah",
+      "en": "farm; field"
+    },
+    {
+      "sw": "mfuko / mifuko",
+      "baca": "m-FOO-koh",
+      "en": "bag; pocket"
+    },
+    {
+      "sw": "maji",
+      "baca": "MAH-jee",
+      "en": "water"
+    },
+    {
+      "sw": "maisha",
+      "baca": "mah-EE-shah",
+      "en": "life"
+    },
+    {
+      "sw": "mafuta",
+      "baca": "mah-FOO-tah",
+      "en": "oil; fat"
+    },
+    {
+      "sw": "bivu",
+      "baca": "BEE-voo",
+      "en": "ripe"
+    },
+    {
+      "sw": "tamu",
+      "baca": "TAH-moo",
+      "en": "sweet; tasty"
+    },
+    {
+      "sw": "chungu",
+      "baca": "CHOO-ngoo",
+      "en": "bitter"
+    },
+    {
+      "sw": "zito",
+      "baca": "ZEE-toh",
+      "en": "heavy"
+    },
+    {
+      "sw": "-epesi",
+      "baca": "eh-PEH-see",
+      "en": "light (not heavy)"
+    },
+    {
+      "sw": "kuita",
+      "baca": "koo-EE-tah",
+      "en": "to call; to name"
+    },
+    {
+      "sw": "kwetu / kwenu",
+      "baca": "KWEH-too",
+      "en": "at our place / at your (pl.) place"
+    },
+    {
+      "sw": "ugali",
+      "baca": "oo-GAH-lee",
+      "en": "stiff maize porridge"
+    },
+    {
+      "sw": "wali",
+      "baca": "WAH-lee",
+      "en": "rice (cooked)"
+    },
+    {
+      "sw": "nyama",
+      "baca": "NYAH-mah",
+      "en": "meat"
+    },
+    {
+      "sw": "mchuzi",
+      "baca": "m-CHOO-zee",
+      "en": "sauce; stew"
+    },
+    {
+      "sw": "maharagwe",
+      "baca": "mah-hah-RAH-gweh",
+      "en": "red beans"
+    },
+    {
+      "sw": "chapati",
+      "baca": "chah-PAH-tee",
+      "en": "flatbread"
+    },
+    {
+      "sw": "kushiba",
+      "baca": "koo-SHEE-bah",
+      "en": "to be full (after eating)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Make these plural; the adjective changes too.",
+      "items": [
+        "gari kubwa → ____",
+        "duka dogo → ____",
+        "tunda tamu → ____",
+        "yai jeupe → ____",
+        "jina zuri → ____",
+        "gazeti jipya → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the subject prefix li- or ya-.",
+      "items": [
+        "Gari ____nakuja. (one car)",
+        "Maembe ____natoka shambani.",
+        "Duka ____nauza matunda. (one shop)",
+        "Magari ____ko wapi?",
+        "Jina ____ngu ni Budi."
+      ]
+    },
+    {
+      "prompt": "Translate into Swahili.",
+      "items": [
+        "How much is one mango?",
+        "Five mangoes are two thousand.",
+        "Are these mangoes ripe?",
+        "We need ten eggs.",
+        "This fruit is very big.",
+        "That shop sells fruit juice."
+      ]
+    },
+    {
+      "prompt": "Which class? Write the plural.",
+      "items": [
+        "kitabu → ____",
+        "mtoto → ____",
+        "gari → ____",
+        "nyumba → ____",
+        "embe → ____",
+        "kiti → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "gani / embe / ni / bei / moja",
+        "mabivu / haya / ni / maembe",
+        "kumi / tunahitaji / mayai",
+        "kubwa / hili / ni / tunda / sana",
+        "matunda / linauza / duka / lile"
+      ]
+    }
+  ],
+  "answers": [
+    "magari makubwa — maduka madogo — matunda matamu — mayai meupe — majina mazuri — magazeti mapya",
+    "li — ya — li — ya — la",
+    "Embe moja ni bei gani? — Maembe matano ni elfu mbili. — Maembe haya ni mabivu? — Tunahitaji mayai kumi. — Tunda hili ni kubwa sana. — Duka lile linauza maji ya matunda.",
+    "vitabu — watoto — magari — nyumba — maembe — viti",
+    "Embe moja ni bei gani? — Maembe haya ni mabivu. — Tunahitaji mayai kumi. — Tunda hili ni kubwa sana. — Duka lile linauza matunda."
+  ]
+}

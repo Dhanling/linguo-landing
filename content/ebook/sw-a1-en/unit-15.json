@@ -1,0 +1,588 @@
+{
+  "title": "Object infixes: ninakupenda in one word",
+  "title_target": "Naomba unisaidie",
+  "goal": "Say who receives the action without a separate word — phoning, asking for help, passing on greetings — by slipping one extra slot into the middle of the verb.",
+  "bekal": [
+    "object infixes for people: *-ni-*, *-ku-*, *-m-*, *-tu-*, *-wa-*",
+    "where they go: subject + tense + **object** + root",
+    "object infixes for things, which mean \"that one, the one we mentioned\""
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kwenye simu",
+      "intro": "Evening. Amina calls Budi because she left something on campus.",
+      "lines": [
+        {
+          "speaker": "Amina:",
+          "text": "Halo? Budi? Unanisikia?",
+          "id": "Hello? Budi? Can you hear me?",
+          "literal": "hello? Budi? you-are-me-hearing?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ndiyo, ninakusikia vizuri. Habari za jioni?",
+          "id": "Yes, I can hear you clearly. Good evening, how are you?",
+          "literal": "yes, I-am-you-hearing well. news of evening?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Nzuri. Naomba unisaidie kidogo.",
+          "id": "Fine. Could you help me with something?",
+          "literal": "good. I-ask you-should-me-help little."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Karibu. Niambie.",
+          "id": "Sure. Just tell me.",
+          "literal": "go-ahead. tell-me."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Nimesahau kitabu changu chuoni. Unaweza kukichukua?",
+          "id": "I left my book on campus. Could you get it?",
+          "literal": "I-have-forgotten book of-mine at-campus. you-can to-it-take?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ninakiona sasa hivi, kiko mezani. Nikilete lini?",
+          "id": "I can see it right now, it's on the table. When should I bring it?",
+          "literal": "I-am-it-seeing now this, it-is at-table. I-should-it-bring when?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Kesho asubuhi. Utanikuta kituoni.",
+          "id": "Tomorrow morning. You'll find me at the bus stop.",
+          "literal": "tomorrow morning. you-will-me-find at-stop."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sawa. Nitakusubiri saa mbili kamili.",
+          "id": "Okay. I'll wait for you at eight sharp.",
+          "literal": "okay. I-will-you-wait hour two full."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Asante sana! Unanisaidia kila wakati.",
+          "id": "Thanks so much! You always help me.",
+          "literal": "thanks very! you-are-me-helping every time."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hakuna shida. Sisi ni marafiki, tunasaidiana.",
+          "id": "No problem. We're friends, we help each other.",
+          "literal": "there-is-no problem. we are friends, we-are-each-other-helping."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Kweli kabisa. Mama anakusalimia pia.",
+          "id": "Absolutely. Mom says hi.",
+          "literal": "truly completely. mother she-is-you-greeting too."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nisalimie mama! Tutaonana kesho, usiku mwema.",
+          "id": "Say hi to your mom for me! See you tomorrow, good night.",
+          "literal": "greet-for-me mother! we-will-each-other-see tomorrow, night good."
+        }
+      ],
+      "notes": [
+        "**Kusalimia means to pass on greetings to someone.** *Anakusalimia* = she says hi to you; *Nisalimie mama* = say hi to your mom for me. Sending greetings is a strong custom in East Africa — almost every phone call ends with greetings to the whole household.",
+        "**Sasa hivi means both \"just now\" and \"in a moment\".** Past and future squeezed into one phrase. If someone says *ninakuja sasa hivi*, get ready to wait — and look back at the note on time in unit 10.",
+        "**Kila wakati means \"every time; always\".** *Kila* works just like \"every\": *kila siku* (every day), *kila mtu* (everyone), *kila mahali* (everywhere). It's one of the few words that comes **before** its noun.",
+        "**Usiku mwema is \"good night\" when parting.** To greet someone in the evening, use *habari za usiku*. Its partner is *lala salama* (sleep well — literally \"sleep in safety\"), said to someone going to bed.",
+        "**Marafiki is the plural of rafiki.** Because it's a loanword, its plural takes *ma-*, not *wa-* — even though it means people. Likewise *madaktari*, *madereva*, *maaskari*."
+      ],
+      "grammars": [
+        {
+          "title": "Object infixes: who it's done to",
+          "body": [
+            "The Swahili verb has one more slot, and it sits right in the middle: **subject + tense + object + root**.",
+            "*Ni* + *na* + *ku* + *penda* = **ninakupenda** — \"I-am-you-loving\", i.e. I love you."
+          ],
+          "table": {
+            "head": [
+              "Object",
+              "Infix",
+              "Example",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "me",
+                "**-ni-**",
+                "*unanisaidia*",
+                "oo-nah-nee-sah-ee-DEE-ah",
+                "you help me"
+              ],
+              [
+                "you",
+                "**-ku-**",
+                "*ninakupenda*",
+                "nee-nah-koo-PEHN-dah",
+                "I love you"
+              ],
+              [
+                "him/her",
+                "**-m-** / **-mw-**",
+                "*ninamwona*",
+                "nee-nah-MWOH-nah",
+                "I see him/her"
+              ],
+              [
+                "us",
+                "**-tu-**",
+                "*anatusaidia*",
+                "ah-nah-too-sah-ee-DEE-ah",
+                "she helps us"
+              ],
+              [
+                "you (pl.)",
+                "**-wa-**",
+                "*ninawaona*",
+                "nee-nah-wah-OH-nah",
+                "I see you (pl.)"
+              ],
+              [
+                "them",
+                "**-wa-**",
+                "*tunawajua*",
+                "too-nah-wah-JOO-ah",
+                "we know them"
+              ]
+            ]
+          },
+          "after": [
+            "For **people**, the infix is almost always **required**, even when the name is given: *Ninamwona Amina* (I see Amina) — not *ninaona Amina*. Infix and name go together, and that's exactly what sounds natural.",
+            "The infix *-m-* becomes **-mw-** before a vowel: *ninamwona* (I see him), *ninamwuliza* (I ask her), but *ninampenda* (I like him) and *ninamsaidia* (I help her).",
+            "Object infixes work with every tense slot and with the *-e* form too: *nilikuona* (I saw you), *nitakusubiri* (I'll wait for you), *nimemwona* (I've seen him), *unisaidie* (please help me), *usinisahau* (don't forget me)."
+          ]
+        },
+        {
+          "title": "Things as objects",
+          "body": [
+            "Things can be objects too, and the infix **follows the noun class** — it sounds just like the subject prefix you already know. The difference: for things the infix is **optional**, and using it means \"that one, the one we've been talking about\"."
+          ],
+          "table": {
+            "head": [
+              "Class",
+              "Infix",
+              "Without infix",
+              "With infix",
+              "The difference"
+            ],
+            "rows": [
+              [
+                "*kitabu*",
+                "**-ki-**",
+                "*ninasoma kitabu*",
+                "*ninakisoma*",
+                "I'm reading it (that book)"
+              ],
+              [
+                "*vitabu*",
+                "**-vi-**",
+                "*ninasoma vitabu*",
+                "*ninavisoma*",
+                "I'm reading them (those books)"
+              ],
+              [
+                "*nyumba*",
+                "**-i-**",
+                "*ninaona nyumba*",
+                "*ninaiona*",
+                "I see it (that house)"
+              ],
+              [
+                "*nyumba* (plural)",
+                "**-zi-**",
+                "*ninaona nyumba*",
+                "*ninaziona*",
+                "I see them (those houses)"
+              ],
+              [
+                "*gari*",
+                "**-li-**",
+                "*ninaona gari*",
+                "*ninaliona*",
+                "I see it (that car)"
+              ],
+              [
+                "*magari*",
+                "**-ya-**",
+                "*ninaona magari*",
+                "*ninayaona*",
+                "I see them"
+              ]
+            ]
+          },
+          "after": [
+            "Compare these two: *Ninanunua kitabu* (I'm buying a book — any book) and *Ninakinunua kitabu* (I'm buying that book — the one we just saw). The infix works like a \"that\" stuck onto the verb.",
+            "Some verbs **always** take an infix because their meaning calls for a specific object: *kukumbuka* (to remember), *kupenda* (to like), *kuchukia* (to hate) — almost never used without one.",
+            "The ending **-ana** you met in *tutaonana* is this page's twin: instead of adding an object, it says the two sides do it to each other. *Kusaidia* (to help) → *kusaidiana* (to help each other); *kupenda* → *kupendana*; *kuona* → *kuonana*; *kujua* → *kujuana* (to know each other)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Object-infix sentences you'll need most",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Nisaidie tafadhali.*",
+              "nee-sah-ee-DEE-eh",
+              "Please help me."
+            ],
+            [
+              "*Niambie.*",
+              "nee-AHM-bee-eh",
+              "Tell me."
+            ],
+            [
+              "*Nipe, tafadhali.*",
+              "NEE-peh",
+              "Give me, please."
+            ],
+            [
+              "*Nionyeshe.*",
+              "nee-oh-NYEH-sheh",
+              "Show me."
+            ],
+            [
+              "*Nisubiri kidogo.*",
+              "nee-soo-BEE-ree",
+              "Wait for me a moment."
+            ],
+            [
+              "*Usinisahau.*",
+              "oo-see-nee-sah-HAH-oo",
+              "Don't forget me."
+            ],
+            [
+              "*Ninakupenda.*",
+              "nee-nah-koo-PEHN-dah",
+              "I love you."
+            ],
+            [
+              "*Ninakukumbuka.*",
+              "nee-nah-koo-koom-BOO-kah",
+              "I miss you."
+            ],
+            [
+              "*Nitakupigia simu.*",
+              "nee-tah-koo-PEE-gee-ah",
+              "I'll call you."
+            ],
+            [
+              "*Nakushukuru sana.*",
+              "nah-koo-shoo-KOO-roo",
+              "I'm very grateful to you."
+            ],
+            [
+              "*Nisamehe.*",
+              "nee-sah-MEH-heh",
+              "Forgive me."
+            ],
+            [
+              "*Nionyeshe njia, tafadhali.*",
+              "nee-oh-NYEH-sheh n-JEE-ah",
+              "Please show me the way."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that nearly all of these use the *-e* form from unit 14 with *-ni-* inside. The build: *u* (you) + *ni* (me) + root + *-e* → *unisaidie*, which in speech is often shortened to just *nisaidie*."
+        },
+        {
+          "type": "p",
+          "text": "*Ninakukumbuka* is for missing someone, while plain *Nakumbuka* means \"I remember\". One small infix separates memory from longing."
+        }
+      ]
+    },
+    {
+      "title": "Kwenye simu — on the phone in Swahili",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Halo? Naomba kuongea na…*",
+              "Hello? May I speak to…"
+            ],
+            [
+              "*Ni nani anaongea?*",
+              "Who's speaking?"
+            ],
+            [
+              "*Ni mimi, Budi.*",
+              "It's me, Budi."
+            ],
+            [
+              "*Unanisikia?*",
+              "Can you hear me?"
+            ],
+            [
+              "*Mtandao ni mbaya.*",
+              "The signal is bad."
+            ],
+            [
+              "*Sikusikii vizuri.*",
+              "I can't hear you well."
+            ],
+            [
+              "*Nitakupigia baadaye.*",
+              "I'll call you later."
+            ],
+            [
+              "*Nipigie ukifika.*",
+              "Call me when you get there."
+            ],
+            [
+              "*Tuma ujumbe.*",
+              "Just send a message."
+            ],
+            [
+              "*Salamu kwa familia.*",
+              "Greetings to the family."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "In East Africa, phone credit is *salio* and a data bundle is *bandeli* or *kifurushi*. Sentences you'll need at the airtime kiosk: *Naomba salio ya elfu tano* (credit for five thousand, please) and *Nataka bandeli ya wiki* (I want a weekly bundle)."
+        },
+        {
+          "type": "p",
+          "text": "A distinctive habit: *kupiga miss* — calling and hanging up straight away so the other person calls back. It isn't rude, just a credit-saving trick everyone understands, and it has its own slang name: *kubipu*."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "kusikia",
+      "baca": "koo-see-KEE-ah",
+      "en": "to hear"
+    },
+    {
+      "sw": "kuambia",
+      "baca": "koo-ahm-BEE-ah",
+      "en": "to tell"
+    },
+    {
+      "sw": "kupa",
+      "baca": "koo-PAH",
+      "en": "to give"
+    },
+    {
+      "sw": "kuonyesha",
+      "baca": "koo-oh-NYEH-shah",
+      "en": "to show"
+    },
+    {
+      "sw": "kukuta",
+      "baca": "koo-KOO-tah",
+      "en": "to find; to meet"
+    },
+    {
+      "sw": "kukumbuka",
+      "baca": "koo-koom-BOO-kah",
+      "en": "to remember; to miss"
+    },
+    {
+      "sw": "kusalimia",
+      "baca": "koo-sah-lee-MEE-ah",
+      "en": "to send greetings"
+    },
+    {
+      "sw": "kushukuru",
+      "baca": "koo-shoo-KOO-roo",
+      "en": "to thank"
+    },
+    {
+      "sw": "kusaidiana",
+      "baca": "koo-sah-ee-dee-AH-nah",
+      "en": "to help each other"
+    },
+    {
+      "sw": "kupendana",
+      "baca": "koo-pehn-DAH-nah",
+      "en": "to love each other"
+    },
+    {
+      "sw": "kujuana",
+      "baca": "koo-joo-AH-nah",
+      "en": "to know each other"
+    },
+    {
+      "sw": "kutuma",
+      "baca": "koo-TOO-mah",
+      "en": "to send"
+    },
+    {
+      "sw": "ujumbe",
+      "baca": "oo-JOOM-beh",
+      "en": "message"
+    },
+    {
+      "sw": "mtandao",
+      "baca": "m-tahn-DAH-oh",
+      "en": "network; internet"
+    },
+    {
+      "sw": "salio",
+      "baca": "sah-LEE-oh",
+      "en": "phone credit"
+    },
+    {
+      "sw": "kila",
+      "baca": "KEE-lah",
+      "en": "every"
+    },
+    {
+      "sw": "wakati",
+      "baca": "wah-KAH-tee",
+      "en": "time"
+    },
+    {
+      "sw": "sasa hivi",
+      "baca": "SAH-sah HEE-vee",
+      "en": "just now; in a moment"
+    },
+    {
+      "sw": "marafiki",
+      "baca": "mah-rah-FEE-kee",
+      "en": "friends"
+    },
+    {
+      "sw": "salamu",
+      "baca": "sah-LAH-moo",
+      "en": "greetings"
+    },
+    {
+      "sw": "usiku mwema",
+      "baca": "oo-SEE-koo MWEH-mah",
+      "en": "good night"
+    },
+    {
+      "sw": "lala salama",
+      "baca": "LAH-lah sah-LAH-mah",
+      "en": "sleep well"
+    },
+    {
+      "sw": "ninakupenda",
+      "baca": "nee-nah-koo-PEHN-dah",
+      "en": "I love you"
+    },
+    {
+      "sw": "unanisikia",
+      "baca": "oo-nah-nee-see-KEE-ah",
+      "en": "you hear me"
+    },
+    {
+      "sw": "nisaidie",
+      "baca": "nee-sah-ee-DEE-eh",
+      "en": "please help me"
+    },
+    {
+      "sw": "niambie",
+      "baca": "nee-AHM-bee-eh",
+      "en": "tell me"
+    },
+    {
+      "sw": "nipe",
+      "baca": "NEE-peh",
+      "en": "give me"
+    },
+    {
+      "sw": "nisamehe",
+      "baca": "nee-sah-MEH-heh",
+      "en": "forgive me"
+    },
+    {
+      "sw": "halo",
+      "baca": "HAH-loh",
+      "en": "hello"
+    },
+    {
+      "sw": "kupigia",
+      "baca": "koo-pee-GEE-ah",
+      "en": "to call (someone)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Insert the object infix.",
+      "items": [
+        "I + you + kupenda (present) → ____",
+        "you + me + kusaidia (present) → ____",
+        "I + him + kuona (present) → ____",
+        "she + us + kujua (present) → ____",
+        "I + you + kusubiri (future) → ____",
+        "I + her + kuona (already) → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Swahili.",
+      "items": [
+        "Can you hear me?",
+        "I can hear you clearly.",
+        "Could you help me a little?",
+        "Tell me.",
+        "I'll call you later.",
+        "Don't forget me."
+      ]
+    },
+    {
+      "prompt": "Replace the noun with an infix, as in the example: Ninasoma kitabu → Ninakisoma.",
+      "items": [
+        "Ninanunua kitabu. → ____",
+        "Anaona nyumba. → ____",
+        "Tunaleta magari. → ____",
+        "Wanauza viatu. → ____",
+        "Nimeona gari. → ____"
+      ]
+    },
+    {
+      "prompt": "Make the \"each other\" form with the ending -ana.",
+      "items": [
+        "kusaidia → ____",
+        "kupenda → ____",
+        "kuona → ____",
+        "kujua → ____",
+        "kuandika → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "unanisikia / halo",
+        "kidogo / unisaidie / naomba",
+        "kesho / utanikuta / kituoni",
+        "wakati / unanisaidia / kila",
+        "mama / anakusalimia"
+      ]
+    }
+  ],
+  "answers": [
+    "ninakupenda — unanisaidia — ninamwona — anatujua — nitakusubiri — nimemwona",
+    "Unanisikia? — Ninakusikia vizuri. — Naomba unisaidie kidogo. — Niambie. — Nitakupigia simu baadaye. — Usinisahau.",
+    "Ninakinunua. — Anaiona. — Tunayaleta. — Wanaviuza. — Nimeliona.",
+    "kusaidiana — kupendana — kuonana — kujuana — kuandikiana",
+    "Halo, unanisikia? — Naomba unisaidie kidogo. — Utanikuta kituoni kesho. — Unanisaidia kila wakati. — Mama anakusalimia."
+  ]
+}

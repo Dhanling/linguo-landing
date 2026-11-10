@@ -1,0 +1,643 @@
+{
+  "title": "Where: the ending -ni, kuna, and the verbs of \"being located\"",
+  "title_target": "Choo kiko wapi?",
+  "goal": "Ask for and give directions, say that something exists or doesn't, and use one small ending that replaces all the English prepositions of place.",
+  "bekal": [
+    "the ending *-ni*, which means in, to and from all at once",
+    "*kuna* and *hakuna* for \"there is\" and \"there isn't\"",
+    "the verbs of being located: *niko*, *yuko*, *iko*, *kiko* — and how they differ from *-po* and *-mo*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Njia ya kwenda benki",
+      "intro": "Morning at the guesthouse reception. Budi needs to change money and doesn't know the way.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Samahani, choo kiko wapi?",
+          "id": "Excuse me, where's the toilet?",
+          "literal": "sorry, toilet it-is-located where?"
+        },
+        {
+          "speaker": "Mhudumu:",
+          "text": "Kiko nyuma ya jengo, karibu na jikoni.",
+          "id": "It's behind the building, near the kitchen.",
+          "literal": "it-is-located behind of building, near with at-kitchen."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Asante. Na benki iko wapi?",
+          "id": "Thank you. And where's the bank?",
+          "literal": "thanks. and bank it-is-located where?"
+        },
+        {
+          "speaker": "Mhudumu:",
+          "text": "Benki iko mjini, si mbali. Kuna benki mbili hapo.",
+          "id": "The bank is in town, not far. There are two banks there.",
+          "literal": "bank it-is-located at-town, not far. there-is bank two there."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ninatembea au ninapanda daladala?",
+          "id": "Do I walk or take a daladala?",
+          "literal": "I-am-walking or I-am-climbing daladala?"
+        },
+        {
+          "speaker": "Mhudumu:",
+          "text": "Tembea moja kwa moja, kisha geuka kushoto.",
+          "id": "Walk straight ahead, then turn left.",
+          "literal": "walk one by one, then turn left."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kuna soko karibu na benki?",
+          "id": "Is there a market near the bank?",
+          "literal": "there-is market near with bank?"
+        },
+        {
+          "speaker": "Mhudumu:",
+          "text": "Ndiyo, soko liko mbele ya benki, upande wa kulia.",
+          "id": "Yes, the market is in front of the bank, on the right-hand side.",
+          "literal": "yes, market it-is-located front of bank, side of right."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Na hoteli yangu iko wapi? Jina lake ni Bahari.",
+          "id": "And where's my hotel? It's called Bahari.",
+          "literal": "and hotel of-me it-is-located where? name of-it is Sea."
+        },
+        {
+          "speaker": "Mhudumu:",
+          "text": "Iko baharini, mbali kidogo. Rafiki yako yuko wapi?",
+          "id": "It's by the sea, a little far. Where's your friend?",
+          "literal": "it-is-located at-sea, far a-little. friend of-you he-is-located where?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Yumo ndani, anasubiri. Hakuna shida!",
+          "id": "He's inside, waiting. No problem!",
+          "literal": "he-is-located-inside inside, he-is-waiting. there-is-not problem!"
+        },
+        {
+          "speaker": "Mhudumu:",
+          "text": "Karibuni tena! Njia ni salama sana.",
+          "id": "Come again! The road is very safe.",
+          "literal": "welcome-you-all again! road is safe very."
+        }
+      ],
+      "notes": [
+        "**Wapi means \"where\" and always stands at the end of the sentence.** *Choo kiko wapi?*, *Unakwenda wapi?* (where are you going?), *Unatoka wapi?* (where are you from?). One word for all three — the direction is set by the verb, not the question word.",
+        "**Daladala is Tanzania's public minibus**, crowded and full of music, much like a jeepney or Nairobi's *matatu* (the Kenyan name). The fare is *nauli*, and the conductor is the *konda*. A motorcycle taxi is a *bodaboda* — a name born from carrying people from border to border, \"border to border\".",
+        "**Moja kwa moja literally means \"one by one\" and means \"straight ahead\".** Together with *kushoto* (left) and *kulia* (right), these three words cover nearly all the directions you will be given.",
+        "**Si mbali means \"not far\".** The *si* here is the \"is not\" you set up in unit 1, used in front of an adjective. Note that distance in East Africa is measured very loosely: *si mbali* can mean ten minutes or an hour on foot.",
+        "**Karibu tena is the warmest way of saying goodbye.** Literally \"welcome again\" — said by sellers, receptionists and hosts as you leave, not as you arrive."
+      ],
+      "grammars": [
+        {
+          "title": "The ending -ni: in, to and from all at once",
+          "body": [
+            "Swahili has no prepositions like \"in\", \"to\" and \"from\". What it has is the **ending -ni** attached to the noun — and the direction of movement is set by the verb."
+          ],
+          "table": {
+            "head": [
+              "Noun",
+              "With -ni",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*nyumba* (house)",
+                "*nyumbani*",
+                "*Niko nyumbani.*",
+                "I'm at home."
+              ],
+              [
+                "*soko* (market)",
+                "*sokoni*",
+                "*Ninakwenda sokoni.*",
+                "I'm going to the market."
+              ],
+              [
+                "*shule* (school)",
+                "*shuleni*",
+                "*Ninatoka shuleni.*",
+                "I'm coming from school."
+              ],
+              [
+                "*mji* (town)",
+                "*mjini*",
+                "*Anafanya kazi mjini.*",
+                "He/she works in town."
+              ],
+              [
+                "*kazi* (work)",
+                "*kazini*",
+                "*Yuko kazini.*",
+                "He/she is at work."
+              ],
+              [
+                "*bahari* (sea)",
+                "*baharini*",
+                "*Tunakwenda baharini.*",
+                "We're going to the beach."
+              ],
+              [
+                "*jiko* (kitchen)",
+                "*jikoni*",
+                "*Mama yuko jikoni.*",
+                "Mother is in the kitchen."
+              ]
+            ]
+          },
+          "after": [
+            "**Names of places never take -ni**: *Ninakwenda Zanzibar*, *Niko Dar es Salaam*, *Anatoka Jakarta*. A proper name already carries the sense of place inside it.",
+            "Some words mean a place from birth and also don't take *-ni*: *nje* (outside), *ndani* (inside), *juu* (above), *chini* (below), *mbali* (far), *karibu* (near), *hapa* (here), *kule* (over there).",
+            "For \"at someone's place\" you use **kwa**: *kwa Amina* (at Amina's), *kwa daktari* (to the doctor), *kwetu* (at our place), *kwako* (at your place). This is the same *kwa* as in *karibu nyumbani kwetu* in unit 2."
+          ]
+        },
+        {
+          "title": "Being located: -ko, -po, -mo — and kuna",
+          "body": [
+            "\"Be there\" and \"be located\" in Swahili use a short verb attached straight to the subject prefix. The most common form is **-ko**."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "Be located",
+              "Say it",
+              "Negative",
+              "Example"
+            ],
+            "rows": [
+              [
+                "*mimi*",
+                "**niko**",
+                "NEE-koh",
+                "*sipo* / *siko*",
+                "*Niko hapa.*"
+              ],
+              [
+                "*wewe*",
+                "**uko**",
+                "OO-koh",
+                "*hupo*",
+                "*Uko wapi?*"
+              ],
+              [
+                "*yeye*",
+                "**yuko**",
+                "YOO-koh",
+                "*hayupo*",
+                "*Yuko nyumbani.*"
+              ],
+              [
+                "*sisi*",
+                "**tuko**",
+                "TOO-koh",
+                "*hatupo*",
+                "*Tuko tayari.*"
+              ],
+              [
+                "*ninyi*",
+                "**mko**",
+                "m-KOH",
+                "*hampo*",
+                "*Mko wapi?*"
+              ],
+              [
+                "*wao*",
+                "**wako**",
+                "WAH-koh",
+                "*hawapo*",
+                "*Wako sokoni.*"
+              ],
+              [
+                "*kitabu*",
+                "**kiko**",
+                "KEE-koh",
+                "*hakipo*",
+                "*Kitabu kiko mezani.*"
+              ],
+              [
+                "*nyumba*",
+                "**iko** / **ziko**",
+                "EE-koh",
+                "*haipo* / *hazipo*",
+                "*Nyumba iko mbali.*"
+              ]
+            ]
+          },
+          "after": [
+            "Three different endings mark three kinds of place. **-ko** is for a general or unspecified place (*Yuko wapi?*). **-po** is for a specific, clear place (*Yupo hapa* — he/she is right here, at this exact spot). **-mo** is for inside something (*Yumo ndani*, *Kimo mfukoni* — it's inside the pocket). If in doubt, use *-ko*; it is almost always acceptable.",
+            "To **say something exists without naming who**, use *kuna* (there is) and *hakuna* (there isn't): *Kuna soko hapa* (there's a market here), *Hakuna maji* (there's no water), *Kuna nini?* (what's up? / what is there?). These two words are among the ten most-used in East Africa.",
+            "⚠️ The negative third-person form is **hayupo** — not *hako*. It is one of the few irregular forms in the language, and you'll hear it often: *Daktari hayupo leo* (the doctor isn't in today)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Mahali — where exactly",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*mbele ya*",
+              "m-BEH-leh yah",
+              "in front of"
+            ],
+            [
+              "*nyuma ya*",
+              "NYOO-mah yah",
+              "behind"
+            ],
+            [
+              "*juu ya*",
+              "JOO-oo yah",
+              "above; on top of"
+            ],
+            [
+              "*chini ya*",
+              "CHEE-nee yah",
+              "below; under"
+            ],
+            [
+              "*ndani ya*",
+              "n-DAH-nee yah",
+              "inside"
+            ],
+            [
+              "*nje ya*",
+              "n-JEH yah",
+              "outside"
+            ],
+            [
+              "*karibu na*",
+              "kah-REE-boo nah",
+              "near"
+            ],
+            [
+              "*mbali na*",
+              "m-BAH-lee nah",
+              "far from"
+            ],
+            [
+              "*kati ya*",
+              "KAH-tee yah",
+              "between"
+            ],
+            [
+              "*katikati ya*",
+              "kah-tee-KAH-tee yah",
+              "in the middle of"
+            ],
+            [
+              "*upande wa kushoto*",
+              "oo-PAHN-deh wah koo-SHOH-toh",
+              "on the left-hand side"
+            ],
+            [
+              "*upande wa kulia*",
+              "oo-PAHN-deh wah koo-LEE-ah",
+              "on the right-hand side"
+            ],
+            [
+              "*moja kwa moja*",
+              "MOH-jah kwah MOH-jah",
+              "straight ahead"
+            ],
+            [
+              "*hapa* / *hapo* / *pale*",
+              "HAH-pah",
+              "here / there (by you) / over there"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that almost all of them end in *ya* or *na* — the same connector as in *picha ya familia*. If the noun belongs to another class, *ya* changes too: *mbele ya nyumba*, but *mbele wa mti*. In everyday speech, the *ya* form is used for nearly everything and nobody will correct you."
+        },
+        {
+          "type": "p",
+          "text": "The most useful direction question: **Nifikaje…?** (how do I get to…?). Example: *Nifikaje sokoni?* If the answer comes too fast, one lifesaving sentence: *Onyesha kwenye ramani, tafadhali* — show me on the map."
+        }
+      ]
+    },
+    {
+      "title": "Mjini — places in town",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "English",
+            "Kiswahili",
+            "English"
+          ],
+          "rows": [
+            [
+              "*soko*",
+              "market",
+              "*duka*",
+              "shop"
+            ],
+            [
+              "*benki*",
+              "bank",
+              "*posta*",
+              "post office"
+            ],
+            [
+              "*hospitali*",
+              "hospital",
+              "*duka la dawa*",
+              "pharmacy"
+            ],
+            [
+              "*shule*",
+              "school",
+              "*chuo kikuu*",
+              "university"
+            ],
+            [
+              "*msikiti*",
+              "mosque",
+              "*kanisa*",
+              "church"
+            ],
+            [
+              "*mgahawa*",
+              "restaurant",
+              "*hoteli*",
+              "hotel; eatery"
+            ],
+            [
+              "*kituo cha basi*",
+              "bus station",
+              "*uwanja wa ndege*",
+              "airport"
+            ],
+            [
+              "*ufuo* / *pwani*",
+              "beach",
+              "*bandari*",
+              "harbor; port"
+            ],
+            [
+              "*barabara*",
+              "main road",
+              "*daraja*",
+              "bridge"
+            ],
+            [
+              "*jengo*",
+              "building",
+              "*bustani*",
+              "garden; park"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Hoteli* in Tanzania often means an **eatery**, not a place to stay. For lodging, the safer words are *gesti* (guest house) or *nyumba ya wageni*. And *mgahawa* — a bigger restaurant — comes from the same word as *kahawa*: a place where people drink coffee."
+        },
+        {
+          "type": "p",
+          "text": "*Chuo kikuu* literally means \"big college\", and *uwanja wa ndege* literally \"field of birds\" — *ndege* really does mean both bird and airplane. Swahili very often strings together words it already has instead of borrowing new ones, and you can guess most of these compounds yourself once you know the ingredients."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "wapi",
+      "baca": "WAH-pee",
+      "en": "where"
+    },
+    {
+      "sw": "kuna",
+      "baca": "KOO-nah",
+      "en": "there is; there are"
+    },
+    {
+      "sw": "hakuna",
+      "baca": "hah-KOO-nah",
+      "en": "there isn't; there aren't"
+    },
+    {
+      "sw": "niko / uko / yuko",
+      "baca": "NEE-koh",
+      "en": "I am / you are / he, she is (located)"
+    },
+    {
+      "sw": "mahali",
+      "baca": "mah-HAH-lee",
+      "en": "place"
+    },
+    {
+      "sw": "mbele",
+      "baca": "m-BEH-leh",
+      "en": "front"
+    },
+    {
+      "sw": "nyuma",
+      "baca": "NYOO-mah",
+      "en": "back; behind"
+    },
+    {
+      "sw": "juu",
+      "baca": "JOO-oo",
+      "en": "top; above"
+    },
+    {
+      "sw": "chini",
+      "baca": "CHEE-nee",
+      "en": "bottom; below"
+    },
+    {
+      "sw": "ndani",
+      "baca": "n-DAH-nee",
+      "en": "inside"
+    },
+    {
+      "sw": "nje",
+      "baca": "n-JEH",
+      "en": "outside"
+    },
+    {
+      "sw": "karibu na",
+      "baca": "kah-REE-boo nah",
+      "en": "near"
+    },
+    {
+      "sw": "mbali",
+      "baca": "m-BAH-lee",
+      "en": "far"
+    },
+    {
+      "sw": "kushoto",
+      "baca": "koo-SHOH-toh",
+      "en": "left"
+    },
+    {
+      "sw": "kulia",
+      "baca": "koo-LEE-ah",
+      "en": "right"
+    },
+    {
+      "sw": "upande",
+      "baca": "oo-PAHN-deh",
+      "en": "side"
+    },
+    {
+      "sw": "kisha",
+      "baca": "KEE-shah",
+      "en": "then; afterwards"
+    },
+    {
+      "sw": "benki",
+      "baca": "BEHN-kee",
+      "en": "bank"
+    },
+    {
+      "sw": "duka / maduka",
+      "baca": "DOO-kah",
+      "en": "shop / shops"
+    },
+    {
+      "sw": "jengo / majengo",
+      "baca": "JEH-ngoh",
+      "en": "building / buildings"
+    },
+    {
+      "sw": "jiko / jikoni",
+      "baca": "JEE-koh",
+      "en": "kitchen / in the kitchen"
+    },
+    {
+      "sw": "choo / vyoo",
+      "baca": "CHOH-oh",
+      "en": "toilet"
+    },
+    {
+      "sw": "bahari",
+      "baca": "bah-HAH-ree",
+      "en": "sea"
+    },
+    {
+      "sw": "mji / mjini",
+      "baca": "m-JEE",
+      "en": "town / in town"
+    },
+    {
+      "sw": "barabara",
+      "baca": "bah-rah-BAH-rah",
+      "en": "main road"
+    },
+    {
+      "sw": "daladala",
+      "baca": "dah-lah-DAH-lah",
+      "en": "minibus"
+    },
+    {
+      "sw": "kutembea",
+      "baca": "koo-tehm-BEH-ah",
+      "en": "to walk"
+    },
+    {
+      "sw": "kupanda",
+      "baca": "koo-PAHN-dah",
+      "en": "to climb; to board"
+    },
+    {
+      "sw": "kugeuka",
+      "baca": "koo-geh-OO-kah",
+      "en": "to turn"
+    },
+    {
+      "sw": "kusubiri",
+      "baca": "koo-soo-BEE-ree",
+      "en": "to wait"
+    },
+    {
+      "sw": "mhudumu",
+      "baca": "m-hoo-DOO-moo",
+      "en": "attendant; staff member"
+    },
+    {
+      "sw": "tayari",
+      "baca": "tah-YAH-ree",
+      "en": "ready; already"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Add the ending -ni if needed. If not, write the word as it is.",
+      "items": [
+        "soko → ____",
+        "Zanzibar → ____",
+        "nyumba → ____",
+        "shule → ____",
+        "Jakarta → ____",
+        "kazi → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the right \"be located\" form.",
+      "items": [
+        "Mimi ____ hapa. (I'm here)",
+        "Wewe ____ wapi? (where are you)",
+        "Yeye ____ nyumbani. (he's at home)",
+        "Kitabu ____ mezani. (the book is on the table)",
+        "Wao ____ sokoni. (they're at the market)",
+        "Daktari ____ leo. (the doctor isn't in)"
+      ]
+    },
+    {
+      "prompt": "Translate into Swahili.",
+      "items": [
+        "Excuse me, where's the toilet?",
+        "The bank is in town, not far.",
+        "Is there a market near the bank?",
+        "Walk straight ahead, then turn left.",
+        "There's no water.",
+        "Where's your friend?"
+      ]
+    },
+    {
+      "prompt": "Fill in kuna or hakuna.",
+      "items": [
+        "____ soko hapa. (there is)",
+        "____ maji leo. (there isn't)",
+        "____ shida! (there isn't)",
+        "____ watu wengi sokoni. (there are)",
+        "____ daladala sasa. (there aren't)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "wapi / kiko / choo",
+        "benki / iko / mjini",
+        "ya / soko / mbele / benki / liko",
+        "moja / kwa / tembea / moja",
+        "wapi / yuko / yako / rafiki"
+      ]
+    }
+  ],
+  "answers": [
+    "sokoni — Zanzibar — nyumbani — shuleni — Jakarta — kazini",
+    "niko — uko — yuko — kiko — wako — hayupo",
+    "Samahani, choo kiko wapi? — Benki iko mjini, si mbali. — Kuna soko karibu na benki? — Tembea moja kwa moja, kisha geuka kushoto. — Hakuna maji. — Rafiki yako yuko wapi?",
+    "Kuna — Hakuna — Hakuna — Kuna — Hakuna",
+    "Choo kiko wapi? — Benki iko mjini. — Soko liko mbele ya benki. — Tembea moja kwa moja. — Rafiki yako yuko wapi?"
+  ]
+}

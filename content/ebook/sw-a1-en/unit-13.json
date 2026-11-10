@@ -1,0 +1,624 @@
+{
+  "title": "Kesho: the -ta- slot and plans yet to happen",
+  "title_target": "Utafanya nini likizo?",
+  "goal": "Talk about plans, make arrangements, and use the one Swahili slot whose negative changes nothing but the prefix.",
+  "bekal": [
+    "the *-ta-* slot for the future",
+    "its negative: *sitakwenda* — same slot, same ending",
+    "*nitakuwa* and *kutakuwa na* for \"will be\" and \"there will be\""
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Mipango ya likizo",
+      "intro": "The long holidays are just a week away. Juma wants to know Budi's plans.",
+      "lines": [
+        {
+          "speaker": "Juma:",
+          "text": "Utafanya nini likizo?",
+          "id": "What are you going to do over the holidays?",
+          "literal": "you-will-do what holiday?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nitasafiri kwenda Arusha. Nitaona Serengeti!",
+          "id": "I'm going to Arusha. I'll see the Serengeti!",
+          "literal": "I-will-travel go Arusha. I-will-see Serengeti!"
+        },
+        {
+          "speaker": "Juma:",
+          "text": "Safi sana! Utakwenda na nani?",
+          "id": "That's awesome! Who are you going with?",
+          "literal": "clean very! you-will-go with who?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nitakwenda na Amina. Tutakaa huko siku tano.",
+          "id": "I'm going with Amina. We'll stay there five days.",
+          "literal": "I-will-go with Amina. we-will-stay there days five."
+        },
+        {
+          "speaker": "Juma:",
+          "text": "Mtaona wanyama wengi: simba, tembo, twiga, pundamilia.",
+          "id": "You'll see lots of animals: lions, elephants, giraffes, zebras.",
+          "literal": "you(pl)-will-see animals many: lions, elephants, giraffes, striped-donkeys."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nitapiga picha nyingi! Wewe hutakuja?",
+          "id": "I'll take tons of photos! Aren't you coming?",
+          "literal": "I-will-hit picture many! you you-not-will-come?"
+        },
+        {
+          "speaker": "Juma:",
+          "text": "Sitaweza. Nitafanya kazi wiki ijayo, hoteli itakuwa na wageni wengi.",
+          "id": "I can't. I'm working next week, and the hotel will be full of guests.",
+          "literal": "I-not-will-be-able. I-will-do work week which-comes, hotel it-will-have guests many."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Pole sana. Tutaleta zawadi kwako.",
+          "id": "What a shame. We'll bring you back a present.",
+          "literal": "patience very. we-will-bring present for-you."
+        },
+        {
+          "speaker": "Juma:",
+          "text": "Asante sana! Mtaondoka lini?",
+          "id": "Thanks so much! When are you leaving?",
+          "literal": "thanks very! you(pl)-will-leave when?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tutaondoka Ijumaa asubuhi, Mungu akipenda.",
+          "id": "We leave Friday morning, God willing.",
+          "literal": "we-will-leave Friday morning, God if-He-likes."
+        },
+        {
+          "speaker": "Juma:",
+          "text": "Safari njema! Mtarudi lini?",
+          "id": "Have a good trip! When are you coming back?",
+          "literal": "journey good! you(pl)-will-return when?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tutarudi Jumatano ijayo. Nitakuwa na habari nyingi!",
+          "id": "We're back next Wednesday. I'll have lots of stories!",
+          "literal": "we-will-return Wednesday which-comes. I-will-have news many!"
+        }
+      ],
+      "notes": [
+        "**Kupiga literally means \"to hit\", and it's the most versatile verb in Swahili.** *Kupiga picha* (to take a photo), *kupiga simu* (to phone), *kupiga kelele* (to shout), *kupiga mswaki* (to brush your teeth), *kupiga deki* (to mop), *kupiga soga* (to chat). If you forget a verb, try *kupiga* — your odds aren't bad.",
+        "**Ijayo means \"the coming one\".** *Wiki ijayo* (next week), *mwaka ujao* (next year), *Jumatano ijayo* (next Wednesday). Its form follows the noun class — *i-* for *wiki*, *u-* for *mwaka* — and its opposite is *iliyopita* (last, past).",
+        "**Mungu akipenda = God willing.** Literally \"if God likes\", and it's used exactly where Muslims say *inshallah* — a form that is itself widely used on the coast. The *-ki-* form meaning \"if\" is covered fully in unit 19.",
+        "**Safari njema means \"have a good trip\".** *Njema* is the N-class form of *-ema* (good). Its cousins: *usiku mwema* (good night), *siku njema* (have a nice day), *karibu tena*.",
+        "**Zawadi means a present or souvenir**, and bringing a *zawadi* home from a trip is a strong custom in East Africa — however small. The sentence: *Nimekuletea zawadi kidogo*."
+      ],
+      "grammars": [
+        {
+          "title": "The -ta- slot: the easiest of all",
+          "body": [
+            "The future is made with the **-ta-** slot, and it's the only slot whose negative **changes nothing** except the subject prefix. No ending changes, no slot gets swapped."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "Will",
+              "Say it",
+              "Won't",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*mimi*",
+                "*nitasoma*",
+                "nee-tah-SOH-mah",
+                "**sitasoma**",
+                "I will (won't) read"
+              ],
+              [
+                "*wewe*",
+                "*utasoma*",
+                "oo-tah-SOH-mah",
+                "**hutasoma**",
+                "you will (won't) read"
+              ],
+              [
+                "*yeye*",
+                "*atasoma*",
+                "ah-tah-SOH-mah",
+                "**hatasoma**",
+                "he/she will (won't) read"
+              ],
+              [
+                "*sisi*",
+                "*tutasoma*",
+                "too-tah-SOH-mah",
+                "**hatutasoma**",
+                "we will (won't) read"
+              ],
+              [
+                "*ninyi*",
+                "*mtasoma*",
+                "m-tah-SOH-mah",
+                "**hamtasoma**",
+                "you (pl.) will (won't) read"
+              ],
+              [
+                "*wao*",
+                "*watasoma*",
+                "wah-tah-SOH-mah",
+                "**hawatasoma**",
+                "they will (won't) read"
+              ],
+              [
+                "*mimi*",
+                "*nitakula*",
+                "nee-tah-KOO-lah",
+                "**sitakula**",
+                "I will (won't) eat"
+              ],
+              [
+                "*gari*",
+                "*litafika*",
+                "lee-tah-FEE-kah",
+                "**halitafika**",
+                "the car will (won't) arrive"
+              ]
+            ]
+          },
+          "after": [
+            "One-syllable verbs keep their *ku-* in both forms: *nitakula*, *sitakula*, *nitakunywa*, *sitakunywa*, *nitakuja*, *sitakuja*, *nitakwenda*, *sitakwenda*.",
+            "You've been using this slot since unit 1 without realizing it: **tutaonana** — \"we will see each other\", i.e. see you later.",
+            "For \"will be\" and \"there will be\": *nitakuwa mwalimu* (I'll be a teacher), *kutakuwa na sherehe* (there'll be a party), *hakutakuwa na mvua* (there won't be any rain), *nitakuwa na muda* (I'll have time)."
+          ]
+        },
+        {
+          "title": "Four slots, one table",
+          "body": [
+            "With this unit you hold the whole A1 tense system of Swahili. This page is worth bookmarking — you'll come back to it again and again."
+          ],
+          "table": {
+            "head": [
+              "Slot",
+              "Meaning",
+              "Example",
+              "Negative",
+              "Negative rule"
+            ],
+            "rows": [
+              [
+                "**-na-**",
+                "now; usually",
+                "*ninasoma*",
+                "*sisomi*",
+                "slot drops, final -a becomes -i"
+              ],
+              [
+                "**-li-**",
+                "past",
+                "*nilisoma*",
+                "*sikusoma*",
+                "slot becomes -ku-, ending stays"
+              ],
+              [
+                "**-me-**",
+                "already",
+                "*nimesoma*",
+                "*sijasoma*",
+                "slot becomes -ja-, ending stays"
+              ],
+              [
+                "**-ta-**",
+                "will",
+                "*nitasoma*",
+                "*sitasoma*",
+                "nothing changes"
+              ],
+              [
+                "**hu-**",
+                "habit",
+                "*husoma*",
+                "—",
+                "no subject prefix at all"
+              ],
+              [
+                "**-ki-**",
+                "if; while",
+                "*nikisoma*",
+                "*nisiposoma*",
+                "unit 19"
+              ]
+            ]
+          },
+          "after": [
+            "The *hu-* row is a small extra you haven't met yet: it marks **a habit that repeats with no time limit**, and unusually it goes **in place of** the subject prefix, not after it. *Husoma kila siku* = (she) reads every day. It turns up most in general truths and proverbs: *Watoto hupenda pipi* (children love sweets).",
+            "The negative prefixes used throughout this table are the same six: *si-*, *hu-*, *ha-*, *hatu-*, *ham-*, *hawa-*. You've been using them since unit 2 as *sina*, *huna*, *hana*.",
+            "Notice that **the root is never touched** anywhere in the table. That's the promise this book's introduction made: you don't memorize twenty forms of one verb, you snap on slots."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Wanyama — and why Simba is called Simba",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "You may know more East African animal names than you think — some have been on screen for a long time."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*simba*",
+              "SEEM-bah",
+              "lion"
+            ],
+            [
+              "*tembo* / *ndovu*",
+              "TEHM-boh",
+              "elephant"
+            ],
+            [
+              "*twiga*",
+              "TWEE-gah",
+              "giraffe"
+            ],
+            [
+              "*pundamilia*",
+              "poon-dah-mee-LEE-ah",
+              "zebra (\"striped donkey\")"
+            ],
+            [
+              "*kiboko*",
+              "kee-BOH-koh",
+              "hippo"
+            ],
+            [
+              "*chui*",
+              "CHOO-ee",
+              "leopard"
+            ],
+            [
+              "*duma*",
+              "DOO-mah",
+              "cheetah"
+            ],
+            [
+              "*nyani*",
+              "NYAH-nee",
+              "baboon; big monkey"
+            ],
+            [
+              "*kima*",
+              "KEE-mah",
+              "monkey"
+            ],
+            [
+              "*nyoka*",
+              "NYOH-kah",
+              "snake"
+            ],
+            [
+              "*ng'ombe*",
+              "NG'OHM-beh",
+              "cow"
+            ],
+            [
+              "*mbuzi*",
+              "m-BOO-zee",
+              "goat"
+            ],
+            [
+              "*kuku*",
+              "KOO-koo",
+              "chicken"
+            ],
+            [
+              "*paka* / *mbwa*",
+              "PAH-kah / m-BWAH",
+              "cat / dog"
+            ],
+            [
+              "*ndege*",
+              "n-DEH-geh",
+              "bird; airplane"
+            ],
+            [
+              "*samaki*",
+              "sah-MAH-kee",
+              "fish"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Simba* really does mean lion, and *rafiki* really does mean friend — two words millions of people learned from one film without realizing they were hearing Swahili. The same goes for *hakuna matata*, a real phrase that people really use, though in daily life you'll more often hear *hakuna shida* and *hakuna noma*."
+        },
+        {
+          "type": "p",
+          "text": "*Safari* itself is a Swahili word the whole world has borrowed — and it doesn't mean \"watching animals\" but **any journey**. Taking the bus to the next town is a *safari* too. For \"wildlife tourism\", the better phrase is *utalii wa wanyama*."
+        }
+      ]
+    },
+    {
+      "title": "Kesho, wiki ijayo — marking what's ahead",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "English",
+            "Kiswahili",
+            "English"
+          ],
+          "rows": [
+            [
+              "*kesho*",
+              "tomorrow",
+              "*keshokutwa*",
+              "the day after tomorrow"
+            ],
+            [
+              "*wiki ijayo*",
+              "next week",
+              "*mwezi ujao*",
+              "next month"
+            ],
+            [
+              "*mwaka ujao*",
+              "next year",
+              "*baadaye*",
+              "later"
+            ],
+            [
+              "*hivi karibuni*",
+              "soon",
+              "*siku moja*",
+              "one day"
+            ],
+            [
+              "*saa moja ijayo*",
+              "in an hour",
+              "*dakika chache*",
+              "in a few minutes"
+            ],
+            [
+              "*likizo*",
+              "holiday; vacation",
+              "*sikukuu*",
+              "festival; public holiday"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**A note on promises.** *Mungu akipenda* or *Inshallah* at the end of a plan isn't mere politeness — it's part of how people talk, and saying it makes your sentence sound natural. But it also says something about how plans are seen: what hasn't happened yet isn't certain, and there's no point pretending otherwise."
+        },
+        {
+          "type": "p",
+          "text": "Useful sentences for making arrangements: *Tutaonana kesho* (see you tomorrow), *Nitakupigia simu* (I'll call you), *Utakuwa huru lini?* (when will you be free?), *Nitakujulisha* (I'll let you know)."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "likizo",
+      "baca": "lee-KEE-zoh",
+      "en": "holiday; vacation"
+    },
+    {
+      "sw": "mpango / mipango",
+      "baca": "m-PAH-ngoh",
+      "en": "plan"
+    },
+    {
+      "sw": "zawadi",
+      "baca": "zah-WAH-dee",
+      "en": "present; souvenir"
+    },
+    {
+      "sw": "kupiga",
+      "baca": "koo-PEE-gah",
+      "en": "to hit; (all-purpose verb)"
+    },
+    {
+      "sw": "kupiga picha",
+      "baca": "koo-PEE-gah PEE-chah",
+      "en": "to take a photo"
+    },
+    {
+      "sw": "kupiga simu",
+      "baca": "koo-PEE-gah SEE-moo",
+      "en": "to phone"
+    },
+    {
+      "sw": "kuweza",
+      "baca": "koo-WEH-zah",
+      "en": "to be able; can"
+    },
+    {
+      "sw": "kuondoka",
+      "baca": "koo-ohn-DOH-kah",
+      "en": "to leave; to set off"
+    },
+    {
+      "sw": "ijayo",
+      "baca": "ee-JAH-yoh",
+      "en": "next; coming"
+    },
+    {
+      "sw": "iliyopita",
+      "baca": "ee-lee-yoh-PEE-tah",
+      "en": "last; past"
+    },
+    {
+      "sw": "mnyama / wanyama",
+      "baca": "m-NYAH-mah",
+      "en": "animal"
+    },
+    {
+      "sw": "simba",
+      "baca": "SEEM-bah",
+      "en": "lion"
+    },
+    {
+      "sw": "tembo",
+      "baca": "TEHM-boh",
+      "en": "elephant"
+    },
+    {
+      "sw": "twiga",
+      "baca": "TWEE-gah",
+      "en": "giraffe"
+    },
+    {
+      "sw": "pundamilia",
+      "baca": "poon-dah-mee-LEE-ah",
+      "en": "zebra"
+    },
+    {
+      "sw": "ng'ombe",
+      "baca": "NG'OHM-beh",
+      "en": "cow"
+    },
+    {
+      "sw": "mbuzi",
+      "baca": "m-BOO-zee",
+      "en": "goat"
+    },
+    {
+      "sw": "kuku",
+      "baca": "KOO-koo",
+      "en": "chicken"
+    },
+    {
+      "sw": "ndege",
+      "baca": "n-DEH-geh",
+      "en": "bird; airplane"
+    },
+    {
+      "sw": "mwingi / wengi",
+      "baca": "MWEE-ngee",
+      "en": "many"
+    },
+    {
+      "sw": "Mungu",
+      "baca": "MOO-ngoo",
+      "en": "God"
+    },
+    {
+      "sw": "njema",
+      "baca": "n-JEH-mah",
+      "en": "good (N class)"
+    },
+    {
+      "sw": "huru",
+      "baca": "HOO-roo",
+      "en": "free; not busy"
+    },
+    {
+      "sw": "sikukuu",
+      "baca": "see-koo-KOO-oo",
+      "en": "festival; public holiday"
+    },
+    {
+      "sw": "utalii",
+      "baca": "oo-tah-LEE-ee",
+      "en": "tourism"
+    },
+    {
+      "sw": "kujulisha",
+      "baca": "koo-joo-LEE-shah",
+      "en": "to let know; to inform"
+    },
+    {
+      "sw": "kutarajia",
+      "baca": "koo-tah-rah-JEE-ah",
+      "en": "to hope; to expect"
+    },
+    {
+      "sw": "chache",
+      "baca": "CHAH-cheh",
+      "en": "a few; some"
+    },
+    {
+      "sw": "nitakuwa",
+      "baca": "nee-tah-KOO-wah",
+      "en": "I will be"
+    },
+    {
+      "sw": "kutakuwa na",
+      "baca": "koo-tah-KOO-wah nah",
+      "en": "there will be"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Put into the future.",
+      "items": [
+        "Ninasoma. → ____",
+        "Anakuja kesho. → ____",
+        "Tunakwenda Arusha. → ____",
+        "Wanakula pilau. → ____",
+        "Unafanya kazi. → ____",
+        "Kuna sherehe. → ____"
+      ]
+    },
+    {
+      "prompt": "Make it negative.",
+      "items": [
+        "Nitakwenda. → ____",
+        "Atakuja. → ____",
+        "Tutaweza. → ____",
+        "Watarudi. → ____",
+        "Utakula. → ____",
+        "Gari litafika. → ____"
+      ]
+    },
+    {
+      "prompt": "Choose the right slot (-na-, -li-, -me-, -ta-), then write the sentence.",
+      "items": [
+        "Tomorrow I'll go to the market. → ____",
+        "Yesterday I went to the market. → ____",
+        "I've arrived at the market. → ____",
+        "I'm at the market now (I'm shopping). → ____",
+        "Next week we'll stay in Arusha. → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Swahili.",
+      "items": [
+        "What are you going to do over the holidays?",
+        "I'm going to Arusha.",
+        "When are you (pl.) leaving?",
+        "We won't come back on Friday.",
+        "There will be a big party.",
+        "Have a good trip!"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "likizo / utafanya / nini",
+        "Arusha / nitasafiri / kwenda",
+        "lini / mtaondoka",
+        "wengi / mtaona / wanyama",
+        "akipenda / tutaondoka / Mungu / Ijumaa"
+      ]
+    }
+  ],
+  "answers": [
+    "Nitasoma. — Atakuja kesho. — Tutakwenda Arusha. — Watakula pilau. — Utafanya kazi. — Kutakuwa na sherehe.",
+    "Sitakwenda. — Hatakuja. — Hatutaweza. — Hawatarudi. — Hutakula. — Gari halitafika.",
+    "Kesho nitakwenda sokoni. — Jana nilikwenda sokoni. — Nimefika sokoni. — Ninanunua sokoni sasa. — Wiki ijayo tutakaa Arusha.",
+    "Utafanya nini likizo? — Nitakwenda Arusha. — Mtaondoka lini? — Hatutarudi Ijumaa. — Kutakuwa na sherehe kubwa. — Safari njema!",
+    "Utafanya nini likizo? — Nitasafiri kwenda Arusha. — Mtaondoka lini? — Mtaona wanyama wengi. — Tutaondoka Ijumaa, Mungu akipenda."
+  ]
+}

@@ -1,0 +1,628 @@
+{
+  "title": "Family: the people class and plurals that swap the head of the word",
+  "title_target": "Hii ni familia yangu",
+  "goal": "Name family members, introduce people, form plurals by swapping the prefix, and say \"have\" without using a verb at all.",
+  "bekal": [
+    "form the plural of the people class: *mtoto → watoto*, *mwalimu → walimu*",
+    "match an adjective to its class: *mtoto mdogo → watoto wadogo*",
+    "say have and don't have with *nina*, *una*, *ana* — and *sina*, *huna*, *hana*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Picha ya familia",
+      "intro": "Late afternoon on the veranda. Amina shows Budi the photos on her phone.",
+      "lines": [
+        {
+          "speaker": "Amina:",
+          "text": "Angalia, hii ni picha ya familia yangu.",
+          "id": "Look, this is a photo of my family.",
+          "literal": "look, this is picture of family of-me."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Familia yako ni kubwa! Hawa ni nani?",
+          "id": "Your family is big! Who are these people?",
+          "literal": "family of-you is big! these-people are who?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Huyu ni baba yangu, na huyu ni mama yangu.",
+          "id": "This is my father, and this is my mother.",
+          "literal": "this-person is father of-me, and this-person is mother of-me."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Baba yako ni mrefu sana! Yeye ni mwalimu?",
+          "id": "Your father is very tall! Is he a teacher?",
+          "literal": "father of-you is tall very! he is teacher?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Hapana, yeye ni daktari. Mama yangu ni mwalimu.",
+          "id": "No, he's a doctor. My mother is the teacher.",
+          "literal": "no, he is doctor. mother of-me is teacher."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Na hawa watoto wadogo ni nani?",
+          "id": "And who are these little children?",
+          "literal": "and these-people children small-ones are who?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Hao ni watoto wa kaka yangu. Ana watoto watatu.",
+          "id": "They're my brother's children. He has three children.",
+          "literal": "those-people are children of brother of-me. he-has children three."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Wewe una watoto pia?",
+          "id": "Do you have children too?",
+          "literal": "you you-have children also?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Hapana, sina. Sina mume bado. Na wewe je?",
+          "id": "No, I don't. I don't have a husband yet. And you?",
+          "literal": "no, I-don't-have. I-don't-have husband yet. and you how?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mimi nina dada mmoja tu. Yeye ni mwanafunzi.",
+          "id": "I only have one sister. She's a student.",
+          "literal": "I I-have sister one only. she is student."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Familia yako ni ndogo, lakini nzuri. Karibu nyumbani kwetu!",
+          "id": "Your family is small, but nice. Come visit our house!",
+          "literal": "family of-you is small, but good. welcome at-home of-us!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Asante sana, dada!",
+          "id": "Thank you very much, sis!",
+          "literal": "thanks very, sister!"
+        }
+      ],
+      "notes": [
+        "**Hii, huyu, hawa — there are many words for \"this\".** Swahili picks the form of \"this\" according to the noun class: *huyu* for one person, *hawa* for several people, *hii* for things like *picha* and *familia*. For now learn the three as whole words; the full table follows in unit 6.",
+        "**Ya in picha ya familia means \"of\".** Its form follows the class of the noun before it: *picha ya familia* (picture of the family), but *watoto wa kaka* (children of the brother). Like the possessives, it changes clothes — and that is the heart of this language.",
+        "**Je? at the end of a sentence means \"how?\".** *Na wewe je?* is how you toss the same question back at your partner without repeating it. A tiny piece that makes your conversation sound alive at once.",
+        "**Bado means \"not yet\" and goes at the end.** *Sina mume bado* = \"I don't have a husband yet\". On its own, *Bado* is also a complete answer to \"already?\" — it means \"not yet\".",
+        "**Dada and kaka aren't only for siblings.** Both are used to address people of your own age: *dada* for women, *kaka* for men, much like \"sis\" and \"bro\". For older people use *mama* and *baba* — which also don't mean your actual parents."
+      ],
+      "grammars": [
+        {
+          "title": "The people class: plurals that swap the head of the word",
+          "body": [
+            "Swahili doesn't add an ending for the plural — it **swaps the prefix**. The first class you set up is the people class: **M-** for one person, **WA-** for several."
+          ],
+          "table": {
+            "head": [
+              "One person",
+              "Several people",
+              "Meaning",
+              "Sound note"
+            ],
+            "rows": [
+              [
+                "*mtu*",
+                "*watu*",
+                "person",
+                "m- → wa-"
+              ],
+              [
+                "*mtoto*",
+                "*watoto*",
+                "child",
+                "m- → wa-"
+              ],
+              [
+                "*mgeni*",
+                "*wageni*",
+                "guest",
+                "m- → wa-"
+              ],
+              [
+                "*mzee*",
+                "*wazee*",
+                "elder",
+                "m- → wa-"
+              ],
+              [
+                "*mwalimu*",
+                "*walimu*",
+                "teacher",
+                "mw- → w- (not *wawalimu*)"
+              ],
+              [
+                "*mwanafunzi*",
+                "*wanafunzi*",
+                "student",
+                "mw- → w-"
+              ],
+              [
+                "*Mtanzania*",
+                "*Watanzania*",
+                "Tanzanian",
+                "same for every nationality"
+              ]
+            ]
+          },
+          "after": [
+            "Adjectives **change prefix along with their noun**, and this is the signature sound of Swahili: *mtoto mdogo* (small child) → *watoto wadogo* (small children). *mgeni mzuri* → *wageni wazuri*. *mzee mrefu* → *wazee warefu*. One sound, spreading through the whole sentence.",
+            "The six most common adjectives: **-zuri** (good, beautiful), **-baya** (bad), **-kubwa** (big), **-dogo** (small), **-refu** (tall; long), **-fupi** (short). The hyphen in front means: the class prefix goes there.",
+            "⚠️ Not every word for a person belongs to this class. *Baba*, *mama*, *dada*, *kaka*, *rafiki* and *daktari* have no *m-* prefix because they are all loanwords — their plurals are formed differently (*marafiki*, *madaktari*) or don't change at all. But they are still **treated as people** in a sentence: *baba yangu ni mrefu*, not *baba yangu ni ndefu*."
+          ]
+        },
+        {
+          "title": "Having: nina, una, ana — without a verb",
+          "body": [
+            "Swahili has no verb \"to have\". What it has is a subject prefix attached straight to *na* (\"with\") — literally \"I with\", \"you with\"."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "Have",
+              "Say it",
+              "Don't have",
+              "Example"
+            ],
+            "rows": [
+              [
+                "*mimi*",
+                "**nina**",
+                "NEE-nah",
+                "**sina**",
+                "*Nina dada.* (I have a sister)"
+              ],
+              [
+                "*wewe*",
+                "**una**",
+                "OO-nah",
+                "**huna**",
+                "*Una watoto?* (do you have children?)"
+              ],
+              [
+                "*yeye*",
+                "**ana**",
+                "AH-nah",
+                "**hana**",
+                "*Ana kazi.* (he/she has a job)"
+              ],
+              [
+                "*sisi*",
+                "**tuna**",
+                "TOO-nah",
+                "**hatuna**",
+                "*Tuna wageni.* (we have guests)"
+              ],
+              [
+                "*ninyi*",
+                "**mna**",
+                "m-NAH",
+                "**hamna**",
+                "*Mna muda?* (do you all have time?)"
+              ],
+              [
+                "*wao*",
+                "**wana**",
+                "WAH-nah",
+                "**hawana**",
+                "*Wana nyumba.* (they have a house)"
+              ]
+            ]
+          },
+          "after": [
+            "Look at the negative forms: **si-**, **hu-**, **ha-**, **hatu-**, **ham-**, **hawa-**. These six prefixes will come back exactly the same in unit 4 to negate every verb in Swahili. Memorizing them now puts you halfway there.",
+            "*Sina* on its own is already a complete answer to \"do you have?\" — it means \"I don't\". Likewise *hana*, *hatuna* and so on.",
+            "A \"have\" sentence with a number puts the number **after the noun**: *nina kaka wawili* (I have two brothers), *ana watoto watatu* (he has three children). The number changes prefix too — that's unit 5's business."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Familia yangu — the whole household in one table",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*baba*",
+              "BAH-bah",
+              "father"
+            ],
+            [
+              "*mama*",
+              "MAH-mah",
+              "mother"
+            ],
+            [
+              "*mtoto* / *watoto*",
+              "m-TOH-toh",
+              "child / children"
+            ],
+            [
+              "*kaka*",
+              "KAH-kah",
+              "brother"
+            ],
+            [
+              "*dada*",
+              "DAH-dah",
+              "sister"
+            ],
+            [
+              "*ndugu*",
+              "n-DOO-goo",
+              "sibling; relative"
+            ],
+            [
+              "*babu*",
+              "BAH-boo",
+              "grandfather"
+            ],
+            [
+              "*bibi*",
+              "BEE-bee",
+              "grandmother"
+            ],
+            [
+              "*mjomba*",
+              "m-JOHM-bah",
+              "uncle (mother's side)"
+            ],
+            [
+              "*shangazi*",
+              "shah-NGAH-zee",
+              "aunt (father's side)"
+            ],
+            [
+              "*binamu*",
+              "bee-NAH-moo",
+              "cousin"
+            ],
+            [
+              "*mume* / *mke*",
+              "MOO-meh / m-KEH",
+              "husband / wife"
+            ],
+            [
+              "*mzazi* / *wazazi*",
+              "m-ZAH-zee",
+              "parent / parents"
+            ],
+            [
+              "*familia* / *jamaa*",
+              "fah-mee-LEE-ah",
+              "family / extended family"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Swahili doesn't distinguish older and younger siblings in one word: *kaka* means brother, older or younger. If you need to specify, add *mkubwa* (big) or *mdogo* (small): *kaka mkubwa* (older brother), *dada mdogo* (younger sister)."
+        },
+        {
+          "type": "p",
+          "text": "What Swahili does distinguish is something English doesn't: **uncles on the mother's and father's side have different names**. *Mjomba* is your mother's brother; your father's brother is called *baba mdogo* or *baba mkubwa* — \"little father\" and \"big father\", depending on whether he is younger or older than your father. Likewise *shangazi* (father's sister) stands against *mama mdogo* and *mama mkubwa* (mother's sisters)."
+        }
+      ]
+    },
+    {
+      "title": "Kazi gani? — the jobs people mention most",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "After name and origin, the third question in East Africa is almost always about work. All these words are used with *ni*: *Mimi ni mwalimu*, *Yeye ni dereva*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "One person",
+            "Several people",
+            "English"
+          ],
+          "rows": [
+            [
+              "*mwalimu*",
+              "*walimu*",
+              "teacher"
+            ],
+            [
+              "*mwanafunzi*",
+              "*wanafunzi*",
+              "student"
+            ],
+            [
+              "*daktari*",
+              "*madaktari*",
+              "doctor"
+            ],
+            [
+              "*mfanyakazi*",
+              "*wafanyakazi*",
+              "worker; employee"
+            ],
+            [
+              "*mfanyabiashara*",
+              "*wafanyabiashara*",
+              "trader; businessperson"
+            ],
+            [
+              "*dereva*",
+              "*madereva*",
+              "driver"
+            ],
+            [
+              "*mkulima*",
+              "*wakulima*",
+              "farmer"
+            ],
+            [
+              "*mvuvi*",
+              "*wavuvi*",
+              "fisherman"
+            ],
+            [
+              "*muuguzi*",
+              "*wauguzi*",
+              "nurse"
+            ],
+            [
+              "*mhandisi*",
+              "*wahandisi*",
+              "engineer"
+            ],
+            [
+              "*askari*",
+              "*maaskari*",
+              "soldier; guard"
+            ],
+            [
+              "*mpishi*",
+              "*wapishi*",
+              "cook"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice how many of them are built from verbs: *mfanyakazi* from *kufanya kazi* (to work), *mkulima* from *kulima* (to farm), *mvuvi* from *kuvua* (to fish), *mpishi* from *kupika* (to cook). The prefix **m-/wa-** attached to a verb root means \"person who…\" — a word-making machine that will save you hundreds of memorized words."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "familia",
+      "baca": "fah-mee-LEE-ah",
+      "en": "family"
+    },
+    {
+      "sw": "picha",
+      "baca": "PEE-chah",
+      "en": "photo; picture"
+    },
+    {
+      "sw": "angalia",
+      "baca": "ah-ngah-LEE-ah",
+      "en": "look!; pay attention"
+    },
+    {
+      "sw": "baba",
+      "baca": "BAH-bah",
+      "en": "father"
+    },
+    {
+      "sw": "mama",
+      "baca": "MAH-mah",
+      "en": "mother"
+    },
+    {
+      "sw": "kaka",
+      "baca": "KAH-kah",
+      "en": "brother"
+    },
+    {
+      "sw": "dada",
+      "baca": "DAH-dah",
+      "en": "sister"
+    },
+    {
+      "sw": "mtoto / watoto",
+      "baca": "m-TOH-toh",
+      "en": "child / children"
+    },
+    {
+      "sw": "mtu / watu",
+      "baca": "m-TOO",
+      "en": "person / people"
+    },
+    {
+      "sw": "mume",
+      "baca": "MOO-meh",
+      "en": "husband"
+    },
+    {
+      "sw": "mke",
+      "baca": "m-KEH",
+      "en": "wife"
+    },
+    {
+      "sw": "ndugu",
+      "baca": "n-DOO-goo",
+      "en": "sibling; relative"
+    },
+    {
+      "sw": "daktari",
+      "baca": "dahk-TAH-ree",
+      "en": "doctor"
+    },
+    {
+      "sw": "dereva",
+      "baca": "deh-REH-vah",
+      "en": "driver"
+    },
+    {
+      "sw": "kazi",
+      "baca": "KAH-zee",
+      "en": "work; job"
+    },
+    {
+      "sw": "nyumbani",
+      "baca": "nyoom-BAH-nee",
+      "en": "at home; to the house"
+    },
+    {
+      "sw": "kubwa",
+      "baca": "KOO-bwah",
+      "en": "big"
+    },
+    {
+      "sw": "dogo",
+      "baca": "DOH-goh",
+      "en": "small"
+    },
+    {
+      "sw": "refu",
+      "baca": "REH-foo",
+      "en": "tall; long"
+    },
+    {
+      "sw": "fupi",
+      "baca": "FOO-pee",
+      "en": "short"
+    },
+    {
+      "sw": "zuri",
+      "baca": "ZOO-ree",
+      "en": "good; beautiful"
+    },
+    {
+      "sw": "baya",
+      "baca": "BAH-yah",
+      "en": "bad; ugly"
+    },
+    {
+      "sw": "nina / una / ana",
+      "baca": "NEE-nah",
+      "en": "I / you / he, she has"
+    },
+    {
+      "sw": "sina / huna / hana",
+      "baca": "SEE-nah",
+      "en": "I / you / he, she doesn't have"
+    },
+    {
+      "sw": "bado",
+      "baca": "BAH-doh",
+      "en": "not yet; still"
+    },
+    {
+      "sw": "lakini",
+      "baca": "lah-KEE-nee",
+      "en": "but"
+    },
+    {
+      "sw": "tu",
+      "baca": "too",
+      "en": "only; just"
+    },
+    {
+      "sw": "na",
+      "baca": "nah",
+      "en": "and; with"
+    },
+    {
+      "sw": "huyu / hawa",
+      "baca": "HOO-yoo / HAH-wah",
+      "en": "this person / these people"
+    },
+    {
+      "sw": "hao",
+      "baca": "HAH-oh",
+      "en": "those people"
+    },
+    {
+      "sw": "je",
+      "baca": "jeh",
+      "en": "how? (at the end of a sentence)"
+    },
+    {
+      "sw": "muda",
+      "baca": "MOO-dah",
+      "en": "time; period"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Make these plural. Remember, the adjective changes too.",
+      "items": [
+        "mtoto mdogo → ____",
+        "mgeni mzuri → ____",
+        "mwalimu mrefu → ____",
+        "mzee mkubwa → ____",
+        "mwanafunzi mfupi → ____",
+        "Mtanzania mzuri → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right form of \"have\".",
+      "items": [
+        "Mimi ____ dada wawili. (have)",
+        "Yeye ____ watoto. (doesn't have)",
+        "Wewe ____ kazi? (have)",
+        "Sisi ____ wageni leo. (have)",
+        "Wao ____ nyumba hapa. (don't have)",
+        "Ninyi ____ muda? (have)"
+      ]
+    },
+    {
+      "prompt": "Translate into Swahili.",
+      "items": [
+        "This is my family.",
+        "My father is a doctor.",
+        "He has three children.",
+        "I don't have children.",
+        "Who are these small children?",
+        "Your family is big!"
+      ]
+    },
+    {
+      "prompt": "Answer with the right Swahili family word.",
+      "items": [
+        "Your mother's mother.",
+        "Your mother's brother.",
+        "Your mjomba's child.",
+        "Your father's father.",
+        "Your father's sister."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "yangu / familia / kubwa / ni",
+        "watatu / ana / watoto",
+        "mwalimu / mama / ni / yangu",
+        "sina / bado / mume",
+        "wadogo / hawa / watoto / ni / nani"
+      ]
+    }
+  ],
+  "answers": [
+    "watoto wadogo — wageni wazuri — walimu warefu — wazee wakubwa — wanafunzi wafupi — Watanzania wazuri",
+    "nina — hana — una — tuna — hawana — mna",
+    "Hii ni familia yangu. — Baba yangu ni daktari. — Ana watoto watatu. — Sina watoto. — Hawa watoto wadogo ni nani? — Familia yako ni kubwa!",
+    "bibi — mjomba — binamu — babu — shangazi",
+    "Familia yangu ni kubwa. — Ana watoto watatu. — Mama yangu ni mwalimu. — Sina mume bado. — Hawa watoto wadogo ni nani?"
+  ]
+}

@@ -1,0 +1,584 @@
+{
+  "title": "Jana: the -li- slot for what's over",
+  "title_target": "Ulifanya nini wikendi?",
+  "goal": "Talk about what has already happened — the weekend, a trip, yesterday's weather — and negate it by swapping the slot, not the ending.",
+  "bekal": [
+    "the *-li-* slot for past events",
+    "the negative: *-li-* becomes *-ku-* and the verb ending stays put",
+    "*nilikuwa* and *kulikuwa na* — I was, there was"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Wikendi ilikuwaje?",
+      "intro": "Monday morning on campus. Amina wants to know where Budi disappeared to for two days.",
+      "lines": [
+        {
+          "speaker": "Amina:",
+          "text": "Habari za Jumatatu! Ulifanya nini wikendi?",
+          "id": "Happy Monday! What did you do at the weekend?",
+          "literal": "news of Monday! you-past-do what weekend?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nilikwenda Bagamoyo pamoja na Juma.",
+          "id": "I went to Bagamoyo with Juma.",
+          "literal": "I-past-go Bagamoyo together with Juma."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Kweli? Mlisafiri vipi?",
+          "id": "Really? How did you get there?",
+          "literal": "truly? you(pl)-past-travel how?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tulipanda basi mapema. Safari ilichukua saa tatu.",
+          "id": "We took the bus early. The trip took three hours.",
+          "literal": "we-past-board bus early. journey it-past-take hours three."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Mliona nini huko?",
+          "id": "What did you see there?",
+          "literal": "you(pl)-past-see what there?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tuliona bahari, majengo ya zamani, na soko kubwa.",
+          "id": "We saw the sea, old buildings, and a big market.",
+          "literal": "we-past-see sea, buildings of long-ago, and market big."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Mlikula wapi?",
+          "id": "Where did you eat?",
+          "literal": "you(pl)-past-eat where?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tulikula samaki wa kupaka ufuoni. Ilikuwa tamu sana!",
+          "id": "We had fish in coconut sauce on the beach. It was delicious!",
+          "literal": "we-past-eat fish of smearing on-beach. it-past-be sweet very!"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Hapa jana kulikuwa na mvua kubwa siku nzima.",
+          "id": "Here it rained heavily all day yesterday.",
+          "literal": "here yesterday there-past-be with rain big day whole."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Huko hakukuwa na mvua. Jua lilikuwa kali sana.",
+          "id": "There was no rain there. The sun was really strong.",
+          "literal": "there not-there-past-be with rain. sun it-past-be sharp very."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Mlirudi lini?",
+          "id": "When did you get back?",
+          "literal": "you(pl)-past-return when?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tulirudi usiku. Sikulala vizuri — nilichoka sana.",
+          "id": "We got back at night. I didn't sleep well — I was very tired.",
+          "literal": "we-past-return night. I-not-past-sleep well — I-past-tire very."
+        }
+      ],
+      "notes": [
+        "**Vipi means \"how\" and goes at the end.** *Mlisafiri vipi?* (you traveled how?), *Ilikuwaje?* (how was it?). The second form glues the suffix *-je* straight onto the verb — same job, shorter.",
+        "**Huko means \"there\" for a place being talked about**, not one you can see. *Kule* is for a place you can point to. The same contrast as *hapo* and *pale* in unit 6.",
+        "**Bagamoyo is an old port town across from Zanzibar.** Its name means \"lay down your heart\" — from *bwaga* (lay down) and *moyo* (heart), a bitter legacy of its days as a slave-trade port. You'll meet *moyo* often: *moyo mkunjufu* (an open heart), *kwa moyo wote* (with all my heart).",
+        "**Siku nzima means \"all day\".** *-zima* means whole, complete: *mwaka mzima* (a whole year), *usiku kucha* (all night long). Note that *siku* is in the N class, so *-zima* becomes *nzima*.",
+        "**Samaki wa kupaka is Zanzibar's most famous dish**: grilled fish brushed with spiced coconut milk. *Kupaka* means to smear or brush on, and the linker *wa* marks the kind — just like *maji ya matunda* and *chai ya maziwa*."
+      ],
+      "grammars": [
+        {
+          "title": "The -li- slot: what's already over",
+          "body": [
+            "To move into the past, you **change nothing but the middle slot**. The root stays whole, the subject prefix stays whole. Swap *-na-* for **-li-**, done."
+          ],
+          "table": {
+            "head": [
+              "Present",
+              "Past",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*ninasoma*",
+                "*nilisoma*",
+                "nee-lee-SOH-mah",
+                "I read (earlier)"
+              ],
+              [
+                "*unasoma*",
+                "*ulisoma*",
+                "oo-lee-SOH-mah",
+                "you read"
+              ],
+              [
+                "*anasoma*",
+                "*alisoma*",
+                "ah-lee-SOH-mah",
+                "he/she read"
+              ],
+              [
+                "*tunasoma*",
+                "*tulisoma*",
+                "too-lee-SOH-mah",
+                "we read"
+              ],
+              [
+                "*mnasoma*",
+                "*mlisoma*",
+                "m-lee-SOH-mah",
+                "you (pl.) read"
+              ],
+              [
+                "*wanasoma*",
+                "*walisoma*",
+                "wah-lee-SOH-mah",
+                "they read"
+              ],
+              [
+                "*ninakula*",
+                "*nilikula*",
+                "nee-lee-KOO-lah",
+                "I ate (ku- is kept)"
+              ],
+              [
+                "*gari linakuja*",
+                "*gari lilikuja*",
+                "lee-lee-KOO-jah",
+                "the car came"
+              ]
+            ]
+          },
+          "after": [
+            "One-syllable verbs keep their *ku-* exactly as in the present: *nilikula*, *nilikunywa*, *nilikuja*, *nilikwenda*, *nilikuwa*.",
+            "Noun-class prefixes work as usual: *safari ilichukua* (the trip took), *magari yalifika* (the cars arrived), *kitabu kilipotea* (the book got lost), *watoto walicheza* (the children played).",
+            "Swahili doesn't separate \"I read\" and \"I have read\" in this slot — *nilisoma* covers both. \"Done, and the result still matters\" belongs to the *-me-* slot, and that's next unit's business."
+          ]
+        },
+        {
+          "title": "The negative: -li- becomes -ku-, the ending stays",
+          "body": [
+            "This is where people slip most, yet the rule is actually easier than in the present: **the verb ending doesn't change at all**. Only the two front slots are swapped."
+          ],
+          "table": {
+            "head": [
+              "Past",
+              "Negative",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*nilisoma*",
+                "**sikusoma**",
+                "see-koo-SOH-mah",
+                "I didn't read"
+              ],
+              [
+                "*ulisoma*",
+                "**hukusoma**",
+                "hoo-koo-SOH-mah",
+                "you didn't read"
+              ],
+              [
+                "*alisoma*",
+                "**hakusoma**",
+                "hah-koo-SOH-mah",
+                "he/she didn't read"
+              ],
+              [
+                "*tulisoma*",
+                "**hatukusoma**",
+                "hah-too-koo-SOH-mah",
+                "we didn't read"
+              ],
+              [
+                "*mlisoma*",
+                "**hamkusoma**",
+                "hahm-koo-SOH-mah",
+                "you (pl.) didn't read"
+              ],
+              [
+                "*walisoma*",
+                "**hawakusoma**",
+                "hah-wah-koo-SOH-mah",
+                "they didn't read"
+              ],
+              [
+                "*nilikula*",
+                "**sikula**",
+                "see-KOO-lah",
+                "I didn't eat"
+              ],
+              [
+                "*nilikwenda*",
+                "**sikwenda**",
+                "see-KWEHN-dah",
+                "I didn't go"
+              ]
+            ]
+          },
+          "after": [
+            "Note that this *-ku-* is **not** the filler *ku-* from unit 3, even though it sounds the same — it's the negative past slot. That's why short verbs don't double it: *nilikula* becomes *sikula*, not *sikukula*.",
+            "For **\"was\"** use *kuwa*: *nilikuwa mwanafunzi* (I was a student), *ilikuwa tamu* (it tasted great), *hakukuwa na mvua* (there was no rain). *Kulikuwa na* means \"there was\", the past partner of *kuna*.",
+            "And for **\"had\"**: *nilikuwa na pesa* (I had money then), *hatukuwa na muda* (we didn't have time). It's simply *kuwa* + *na*, with the slot attached to *kuwa*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Hali ya hewa — weather, and why hewa means air",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "*Hali* (state; condition) + *hewa* (air) = the state of the air, i.e. the weather. Both words are borrowed from Arabic."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*mvua*",
+              "m-VOO-ah",
+              "rain"
+            ],
+            [
+              "*jua*",
+              "JOO-ah",
+              "sun; blazing heat"
+            ],
+            [
+              "*joto*",
+              "JOH-toh",
+              "heat; hot"
+            ],
+            [
+              "*baridi*",
+              "bah-REE-dee",
+              "cold; cool"
+            ],
+            [
+              "*upepo*",
+              "oo-PEH-poh",
+              "wind"
+            ],
+            [
+              "*mawingu*",
+              "mah-WEE-ngoo",
+              "clouds; overcast"
+            ],
+            [
+              "*unyevu*",
+              "oo-NYEH-voo",
+              "humidity; damp"
+            ],
+            [
+              "*dhoruba*",
+              "dhoh-ROO-bah",
+              "storm"
+            ],
+            [
+              "*kiangazi*",
+              "kee-ah-NGAH-zee",
+              "dry season"
+            ],
+            [
+              "*masika*",
+              "mah-SEE-kah",
+              "long rainy season"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Weather sentences almost always use *kuna* or *ni*: *Kuna mvua* (it's raining), *Kuna jua kali* (the sun is blazing), *Leo ni baridi* (it's cold today), *Jana kulikuwa na upepo* (it was windy yesterday). To ask: *Hali ya hewa ikoje leo?*"
+        },
+        {
+          "type": "p",
+          "text": "East Africa has **two** rainy seasons, not one: *masika* (March–May, the long rains) and *vuli* (October–December, the short rains). In between comes *kiangazi*, the hot dry season. People here reckon the seasons by the monsoon winds — the same winds that once carried sailors from Arabia and Gujarat to this coast, and their words along with them."
+        }
+      ]
+    },
+    {
+      "title": "Telling what happened",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The sentences below are a story frame you can fill in yourself. They all use the *-li-* slot."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Jana nilikwenda…*",
+              "Yesterday I went to…"
+            ],
+            [
+              "*Wikendi iliyopita tulikutana na…*",
+              "Last weekend we met…"
+            ],
+            [
+              "*Kwanza tulikula, kisha tulitembea.*",
+              "First we ate, then we went for a walk."
+            ],
+            [
+              "*Ilikuwa nzuri sana!*",
+              "It was great!"
+            ],
+            [
+              "*Sikupenda sana.*",
+              "I didn't really like it."
+            ],
+            [
+              "*Nilichoka lakini nilifurahi.*",
+              "I was tired but happy."
+            ],
+            [
+              "*Tulikaa huko siku mbili.*",
+              "We stayed there two days."
+            ],
+            [
+              "*Nilirudi jana usiku.*",
+              "I got back last night."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Story linkers you need from now on: **kwanza** (first), **kisha** or **halafu** (then), **mwisho** (finally), and **kwa hiyo** (so; therefore). With these, your short sentences instantly sound like a story, not a list."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "wikendi",
+      "baca": "wee-KEHN-dee",
+      "en": "weekend"
+    },
+    {
+      "sw": "kusafiri",
+      "baca": "koo-sah-FEE-ree",
+      "en": "to travel"
+    },
+    {
+      "sw": "kuchukua",
+      "baca": "koo-choo-KOO-ah",
+      "en": "to take; to take (time)"
+    },
+    {
+      "sw": "kufika",
+      "baca": "koo-FEE-kah",
+      "en": "to arrive"
+    },
+    {
+      "sw": "kuondoka",
+      "baca": "koo-ohn-DOH-kah",
+      "en": "to set off; to go"
+    },
+    {
+      "sw": "kukaa",
+      "baca": "koo-KAH-ah",
+      "en": "to sit; to stay"
+    },
+    {
+      "sw": "kuchoka",
+      "baca": "koo-CHOH-kah",
+      "en": "tired"
+    },
+    {
+      "sw": "kufurahi",
+      "baca": "koo-foo-RAH-hee",
+      "en": "glad; happy"
+    },
+    {
+      "sw": "kupotea",
+      "baca": "koo-poh-TEH-ah",
+      "en": "to get lost; to go missing"
+    },
+    {
+      "sw": "kuona",
+      "baca": "koo-OH-nah",
+      "en": "to see"
+    },
+    {
+      "sw": "huko",
+      "baca": "HOO-koh",
+      "en": "there (place mentioned)"
+    },
+    {
+      "sw": "vipi",
+      "baca": "VEE-pee",
+      "en": "how"
+    },
+    {
+      "sw": "zamani",
+      "baca": "zah-MAH-nee",
+      "en": "old times; era"
+    },
+    {
+      "sw": "nzima",
+      "baca": "n-ZEE-mah",
+      "en": "whole; complete"
+    },
+    {
+      "sw": "pamoja na",
+      "baca": "pah-MOH-jah nah",
+      "en": "together with"
+    },
+    {
+      "sw": "kwanza",
+      "baca": "KWAHN-zah",
+      "en": "first; at first"
+    },
+    {
+      "sw": "halafu",
+      "baca": "hah-LAH-foo",
+      "en": "then; next"
+    },
+    {
+      "sw": "kwa hiyo",
+      "baca": "kwah HEE-yoh",
+      "en": "so; therefore"
+    },
+    {
+      "sw": "hali ya hewa",
+      "baca": "HAH-lee yah HEH-wah",
+      "en": "weather"
+    },
+    {
+      "sw": "mvua",
+      "baca": "m-VOO-ah",
+      "en": "rain"
+    },
+    {
+      "sw": "joto",
+      "baca": "JOH-toh",
+      "en": "heat; hot"
+    },
+    {
+      "sw": "baridi",
+      "baca": "bah-REE-dee",
+      "en": "cold"
+    },
+    {
+      "sw": "upepo",
+      "baca": "oo-PEH-poh",
+      "en": "wind"
+    },
+    {
+      "sw": "mawingu",
+      "baca": "mah-WEE-ngoo",
+      "en": "clouds; overcast"
+    },
+    {
+      "sw": "kiangazi",
+      "baca": "kee-ah-NGAH-zee",
+      "en": "dry season"
+    },
+    {
+      "sw": "masika",
+      "baca": "mah-SEE-kah",
+      "en": "rainy season"
+    },
+    {
+      "sw": "moyo / mioyo",
+      "baca": "MOH-yoh",
+      "en": "heart"
+    },
+    {
+      "sw": "kupaka",
+      "baca": "koo-PAH-kah",
+      "en": "to smear; to brush on"
+    },
+    {
+      "sw": "nilikuwa",
+      "baca": "nee-lee-KOO-wah",
+      "en": "I was (past)"
+    },
+    {
+      "sw": "kulikuwa na",
+      "baca": "koo-lee-KOO-wah nah",
+      "en": "there was"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Put into the past.",
+      "items": [
+        "Ninasoma kitabu. → ____",
+        "Anapika chakula. → ____",
+        "Tunakwenda sokoni. → ____",
+        "Wanakula wali. → ____",
+        "Unafanya kazi. → ____",
+        "Safari inachukua saa tatu. → ____"
+      ]
+    },
+    {
+      "prompt": "Make it negative past.",
+      "items": [
+        "Nilisoma. → ____",
+        "Alikuja. → ____",
+        "Tulikwenda. → ____",
+        "Walikula. → ____",
+        "Ulilala vizuri. → ____",
+        "Mlirudi jana. → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Swahili.",
+      "items": [
+        "What did you do at the weekend?",
+        "I went to Bagamoyo.",
+        "We took the bus early.",
+        "Where did you (pl.) eat?",
+        "It rained heavily yesterday.",
+        "I didn't sleep well."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with nilikuwa, kulikuwa na, or hakukuwa na.",
+      "items": [
+        "Jana ____ mvua kubwa. (there was)",
+        "____ mwanafunzi mwaka jana. (I was)",
+        "Huko ____ mvua. (there wasn't)",
+        "Sokoni ____ watu wengi. (there were)",
+        "____ mgonjwa juzi. (I was)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "nini / wikendi / ulifanya",
+        "basi / tulipanda / mapema",
+        "wapi / mlikula",
+        "vizuri / sikulala",
+        "mvua / kulikuwa / jana / na"
+      ]
+    }
+  ],
+  "answers": [
+    "Nilisoma kitabu. — Alipika chakula. — Tulikwenda sokoni. — Walikula wali. — Ulifanya kazi. — Safari ilichukua saa tatu.",
+    "Sikusoma. — Hakuja. — Hatukwenda. — Hawakula. — Hukulala vizuri. — Hamkurudi jana.",
+    "Ulifanya nini wikendi? — Nilikwenda Bagamoyo. — Tulipanda basi mapema. — Mlikula wapi? — Jana kulikuwa na mvua kubwa. — Sikulala vizuri.",
+    "kulikuwa na — Nilikuwa — hakukuwa na — kulikuwa na — Nilikuwa",
+    "Ulifanya nini wikendi? — Tulipanda basi mapema. — Mlikula wapi? — Sikulala vizuri. — Jana kulikuwa na mvua."
+  ]
+}

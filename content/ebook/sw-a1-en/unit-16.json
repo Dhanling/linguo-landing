@@ -1,0 +1,623 @@
+{
+  "title": "The last two classes — and the whole possessive system in one table",
+  "title_target": "Miti hii ni mikubwa!",
+  "goal": "Finish the six noun classes with the m-/mi- class and the u- class, then see Swahili's entire system of possessives and linkers on a single page.",
+  "bekal": [
+    "the m-/mi- class: *mti → miti*, subject prefixes *u-* and *i-*",
+    "the u- class: *ukuta → kuta*, and idea words like *uhuru*, *upendo*",
+    "the complete *-angu/-ako/-ake* table and the linker *-a* for all six classes"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kijijini kwao",
+      "intro": "A weekend in Amina's home village, at the foot of the mountains.",
+      "lines": [
+        {
+          "speaker": "Amina:",
+          "text": "Karibu kijijini kwetu! Huu ni mji mdogo sana.",
+          "id": "Welcome to our village! It's a very small town.",
+          "literal": "welcome at-village of-us! this is town small very."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ni mzuri sana. Na miti hii ni mikubwa!",
+          "id": "It's lovely. And these trees are huge!",
+          "literal": "is beautiful very. and trees these are big-big!"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Ni miembe. Mwaka huu imezaa sana.",
+          "id": "That's a mango tree. This year it's full of fruit.",
+          "literal": "is tree-mango. year this they-have-borne very."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Na mlima ule? Jina lake nani?",
+          "id": "And that mountain? What's it called?",
+          "literal": "and mountain that? name of-it who?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Ni Mlima Uluguru. Mto wetu unatoka huko.",
+          "id": "That's Mount Uluguru. Our river comes from there.",
+          "literal": "is Mount Uluguru. river of-us it-is-coming from-there."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Maji ya mto ni safi?",
+          "id": "Is the river water clean?",
+          "literal": "water of river is clean?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Safi kabisa. Watoto huogelea humo kila jioni.",
+          "id": "Very clean. The children swim there every evening.",
+          "literal": "clean completely. children usually-swim in-it every evening."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nyumba yenu iko wapi?",
+          "id": "Where's your house?",
+          "literal": "house of-you(pl) it-is where?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Pale, nyuma ya ukuta mweupe. Nina ufunguo wake.",
+          "id": "Over there, behind the white wall. I have the key.",
+          "literal": "over-there, behind of wall white. I-have key of-it."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ninasikia muziki. Nyimbo hizi ni za nani?",
+          "id": "I hear music. Whose songs are these?",
+          "literal": "I-am-hearing music. songs these are of whom?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Ni za bibi yangu. Anapenda nyimbo za zamani.",
+          "id": "My grandmother's. She likes old songs.",
+          "literal": "are of grandmother of-me. she-is-liking songs of long-ago."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ninafurahi kuwa hapa. Ukarimu wenu ni mkubwa.",
+          "id": "I'm so happy to be here. Your hospitality is huge.",
+          "literal": "I-am-glad to-be here. hospitality of-you(pl) is big."
+        }
+      ],
+      "notes": [
+        "**Kijiji means village and kijijini means in the village.** It belongs to the *ki-/vi-* class from unit 6, and its origin is neat: *mji* (town) shrunk with the prefix *ki-* becomes \"little town\". Swahili builds words from parts it already has, and once you know the parts, the meaning can be guessed.",
+        "**Huogelea is the habitual hu- form** you saw in the table in unit 13: no subject prefix at all, meaning \"usually swims\". It's used constantly to describe what people in a place habitually do: *Watu hapa hulima* (people here farm).",
+        "**Humo means \"in there\".** A cousin of *hapa* (here) and *huko* (there), but specifically for the inside of something — a river, a room, a bag. It's the ending *-mo* you met in *yumo ndani* in unit 8.",
+        "**Kuzaa means both to give birth and to bear fruit.** *Mti umezaa* (the tree has borne fruit), *Amezaa mtoto* (she has given birth to a child). The same verb gives *mzazi* (parent) and *uzazi* (birth).",
+        "**Ukarimu means hospitality, from karim \"generous\".** It's a *u-* class word — the class of ideas, where Swahili puts almost all its abstract nouns, just as English uses endings like *-ness*, *-ship* and *-dom*."
+      ],
+      "grammars": [
+        {
+          "title": "The m-/mi- class: trees, long things, and time",
+          "body": [
+            "From the outside this class looks like the people class — its singular also starts with **m-** — but its plural is **mi-**, and its subject prefixes are completely different. It holds plants, long objects, paired body parts, and units of time."
+          ],
+          "table": {
+            "head": [
+              "Singular",
+              "Plural",
+              "Meaning",
+              "Sentence"
+            ],
+            "rows": [
+              [
+                "*mti*",
+                "*miti*",
+                "tree",
+                "*Mti **u**mekua.* (the tree has grown)"
+              ],
+              [
+                "*mji*",
+                "*miji*",
+                "town",
+                "*Miji **i**nakua haraka.*"
+              ],
+              [
+                "*mkono*",
+                "*mikono*",
+                "hand; arm",
+                "*Mikono **ya**ngu ni chafu.*"
+              ],
+              [
+                "*mguu*",
+                "*miguu*",
+                "leg; foot",
+                "*Mguu **wa**ngu unauma.*"
+              ],
+              [
+                "*mlango*",
+                "*milango*",
+                "door",
+                "*Mlango **u**mefungwa.*"
+              ],
+              [
+                "*mto*",
+                "*mito*",
+                "river; pillow",
+                "*Mto **u**natoka mlimani.*"
+              ],
+              [
+                "*mlima*",
+                "*milima*",
+                "mountain",
+                "*Milima **i**ko mbali.*"
+              ],
+              [
+                "*mwaka*",
+                "*miaka*",
+                "year",
+                "*Mwaka **u**jao* (next year)"
+              ],
+              [
+                "*mkate*",
+                "*mikate*",
+                "bread",
+                "*Mkate **u**metosha.*"
+              ]
+            ]
+          },
+          "after": [
+            "Its subject prefixes: **u-** for one, **i-** for many. Its possessives are **wangu / yangu**, its linkers **wa / ya**, its demonstratives **huu / hii** and **ule / ile**.",
+            "How to tell it apart from the people class in practice: if the thing isn't a human being, it's almost certainly this class. *Mtoto anakuja* (a person → *a-*) versus *mti unakua* (not a person → *u-*).",
+            "⚠️ A small trap: *mto* means both **river** and **pillow**. Context sorts it out, and locals joke about it too."
+          ]
+        },
+        {
+          "title": "Possessives and the linker -a: all six classes at once",
+          "body": [
+            "This page is the backbone of Swahili. A possessive is always **the stem -angu/-ako/-ake/-etu/-enu/-ao** with its class prefix in front; the linker *-a* works with exactly the same prefixes."
+          ],
+          "table": {
+            "head": [
+              "Class",
+              "Example noun",
+              "my",
+              "your",
+              "linker -a"
+            ],
+            "rows": [
+              [
+                "M-/WA-",
+                "*mtoto / watoto*",
+                "*wangu / wangu*",
+                "*wako / wako*",
+                "*wa / wa*"
+              ],
+              [
+                "M-/MI-",
+                "*mti / miti*",
+                "*wangu / yangu*",
+                "*wako / yako*",
+                "*wa / ya*"
+              ],
+              [
+                "JI-/MA-",
+                "*gari / magari*",
+                "*langu / yangu*",
+                "*lako / yako*",
+                "*la / ya*"
+              ],
+              [
+                "KI-/VI-",
+                "*kitabu / vitabu*",
+                "*changu / vyangu*",
+                "*chako / vyako*",
+                "*cha / vya*"
+              ],
+              [
+                "N-",
+                "*nyumba / nyumba*",
+                "*yangu / zangu*",
+                "*yako / zako*",
+                "*ya / za*"
+              ],
+              [
+                "U-",
+                "*ukuta / kuta*",
+                "*wangu / zangu*",
+                "*wako / zako*",
+                "*wa / za*"
+              ]
+            ]
+          },
+          "after": [
+            "The six possessive stems never change: **-angu** (my), **-ako** (your), **-ake** (his/her), **-etu** (our), **-enu** (your, pl.), **-ao** (their). Only the prefix changes. So *kitabu changu*, *vitabu vyangu*, *nyumba yangu*, *nyumba zangu*, *gari langu*, *magari yangu* — six forms, one stem.",
+            "The linker *-a* covers every relationship of \"of, belonging to, kind of, for\": *mwalimu wa Kiswahili* (Swahili teacher), *kitabu cha Amina* (Amina's book), *maji ya matunda* (fruit juice), *gari la baba* (Dad's car), *nyimbo za zamani* (old songs).",
+            "Two possessives that often cause doubt: *-ake* means \"his/her\" for one owner, while *-ao* means \"their\". *Nyumba yake* (his/her house) versus *nyumba yao* (their house). Note that the prefix is set by **the thing owned**, not by the owner."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The u- class: where Swahili keeps its ideas",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The prefix **u-** builds abstract nouns from adjectives or verbs — the very job of English *-ness*, *-ship*, and *-dom*. Once you know the root, you can guess the new word yourself."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Base word",
+            "Becomes u- word",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*huru* (free)",
+              "*uhuru*",
+              "independence; freedom"
+            ],
+            [
+              "*kupenda* (to love)",
+              "*upendo*",
+              "love"
+            ],
+            [
+              "*rafiki* (friend)",
+              "*urafiki*",
+              "friendship"
+            ],
+            [
+              "*kweli* (true)",
+              "*ukweli*",
+              "truth"
+            ],
+            [
+              "*-zuri* (good; beautiful)",
+              "*uzuri*",
+              "beauty"
+            ],
+            [
+              "*mgonjwa* (sick person)",
+              "*ugonjwa*",
+              "illness"
+            ],
+            [
+              "*-vivu* (lazy)",
+              "*uvivu*",
+              "laziness"
+            ],
+            [
+              "*karimu* (generous)",
+              "*ukarimu*",
+              "hospitality; generosity"
+            ],
+            [
+              "*salama* (safe)",
+              "*usalama*",
+              "safety; security"
+            ],
+            [
+              "*-hai* (alive)",
+              "*uhai*",
+              "life"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The same class also holds thin, long things, and these have a plural: *ukuta* → *kuta* (wall), *ufunguo* → *funguo* (key), *uso* → *nyuso* (face), *wimbo* → *nyimbo* (song), *ubao* → *mbao* (board). Its subject prefixes are *u-* for one and *zi-* for many."
+        },
+        {
+          "type": "p",
+          "text": "*Uhuru* may be the most famous Swahili word after *safari* and *hakuna matata* — it names streets, stadiums, and monuments across East Africa, and was a keyword of the independence movements of the 1960s. *Uhuru na umoja* (freedom and unity) is Tanzania's national motto."
+        }
+      ]
+    },
+    {
+      "title": "Mazingira — the world around us",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*mlima* / *milima*",
+              "m-LEE-mah",
+              "mountain"
+            ],
+            [
+              "*mto* / *mito*",
+              "m-TOH",
+              "river"
+            ],
+            [
+              "*msitu* / *misitu*",
+              "m-SEE-too",
+              "forest"
+            ],
+            [
+              "*bahari*",
+              "bah-HAH-ree",
+              "sea"
+            ],
+            [
+              "*ziwa* / *maziwa*",
+              "ZEE-wah",
+              "lake"
+            ],
+            [
+              "*kisiwa* / *visiwa*",
+              "kee-SEE-wah",
+              "island"
+            ],
+            [
+              "*jangwa*",
+              "JAH-ngwah",
+              "desert"
+            ],
+            [
+              "*bonde* / *mabonde*",
+              "BOHN-deh",
+              "valley"
+            ],
+            [
+              "*shamba* / *mashamba*",
+              "SHAHM-bah",
+              "farm; field"
+            ],
+            [
+              "*kijiji* / *vijiji*",
+              "kee-JEE-jee",
+              "village"
+            ],
+            [
+              "*mwezi*",
+              "MWEH-zee",
+              "moon; month"
+            ],
+            [
+              "*nyota*",
+              "NYOH-tah",
+              "star"
+            ],
+            [
+              "*anga*",
+              "AH-ngah",
+              "sky"
+            ],
+            [
+              "*ardhi*",
+              "AHR-dhee",
+              "land; earth"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Maziwa* means both **lakes** and **milk** — two different words whose plural forms happen to match. East Africa's great lakes are called *Maziwa Makuu*, and the biggest, Lake Victoria, is *Ziwa Nyanza* in the local language."
+        },
+        {
+          "type": "p",
+          "text": "Africa's highest mountain is in Tanzania: *Mlima Kilimanjaro*. The origin of the name itself is debated, but *kilima* in Swahili means \"hill\" — a diminutive of *mlima*, with the same *ki-* as *kijiji* from *mji*. Read at face value, it's a name meaning \"little hill\" for a mountain 5,895 meters high."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "mti / miti",
+      "baca": "m-TEE",
+      "en": "tree"
+    },
+    {
+      "sw": "mji / miji",
+      "baca": "m-JEE",
+      "en": "town"
+    },
+    {
+      "sw": "kijiji / vijiji",
+      "baca": "kee-JEE-jee",
+      "en": "village"
+    },
+    {
+      "sw": "mlima / milima",
+      "baca": "m-LEE-mah",
+      "en": "mountain"
+    },
+    {
+      "sw": "mto / mito",
+      "baca": "m-TOH",
+      "en": "river; pillow"
+    },
+    {
+      "sw": "msitu / misitu",
+      "baca": "m-SEE-too",
+      "en": "forest"
+    },
+    {
+      "sw": "mkono / mikono",
+      "baca": "m-KOH-noh",
+      "en": "hand; arm"
+    },
+    {
+      "sw": "mguu / miguu",
+      "baca": "m-GOO-oo",
+      "en": "leg; foot"
+    },
+    {
+      "sw": "mlango / milango",
+      "baca": "m-LAH-ngoh",
+      "en": "door"
+    },
+    {
+      "sw": "mkate / mikate",
+      "baca": "m-KAH-teh",
+      "en": "bread"
+    },
+    {
+      "sw": "mwembe / miembe",
+      "baca": "MWEHM-beh",
+      "en": "mango tree"
+    },
+    {
+      "sw": "ukuta / kuta",
+      "baca": "oo-KOO-tah",
+      "en": "wall"
+    },
+    {
+      "sw": "ufunguo / funguo",
+      "baca": "oo-foo-NGOO-oh",
+      "en": "key"
+    },
+    {
+      "sw": "uso / nyuso",
+      "baca": "OO-soh",
+      "en": "face"
+    },
+    {
+      "sw": "wimbo / nyimbo",
+      "baca": "WEEM-boh",
+      "en": "song"
+    },
+    {
+      "sw": "uhuru",
+      "baca": "oo-HOO-roo",
+      "en": "independence"
+    },
+    {
+      "sw": "upendo",
+      "baca": "oo-PEHN-doh",
+      "en": "love"
+    },
+    {
+      "sw": "urafiki",
+      "baca": "oo-rah-FEE-kee",
+      "en": "friendship"
+    },
+    {
+      "sw": "ukweli",
+      "baca": "oo-KWEH-lee",
+      "en": "truth"
+    },
+    {
+      "sw": "ukarimu",
+      "baca": "oo-kah-REE-moo",
+      "en": "hospitality"
+    },
+    {
+      "sw": "umoja",
+      "baca": "oo-MOH-jah",
+      "en": "unity"
+    },
+    {
+      "sw": "muziki",
+      "baca": "moo-ZEE-kee",
+      "en": "music"
+    },
+    {
+      "sw": "kuogelea",
+      "baca": "koo-oh-geh-LEH-ah",
+      "en": "to swim"
+    },
+    {
+      "sw": "kuzaa",
+      "baca": "koo-ZAH-ah",
+      "en": "to give birth; to bear fruit"
+    },
+    {
+      "sw": "kukua",
+      "baca": "koo-KOO-ah",
+      "en": "to grow"
+    },
+    {
+      "sw": "kufunga",
+      "baca": "koo-FOO-ngah",
+      "en": "to close; to tie"
+    },
+    {
+      "sw": "kufungua",
+      "baca": "koo-foo-NGOO-ah",
+      "en": "to open"
+    },
+    {
+      "sw": "humo",
+      "baca": "HOO-moh",
+      "en": "in there"
+    },
+    {
+      "sw": "ziwa / maziwa",
+      "baca": "ZEE-wah",
+      "en": "lake"
+    },
+    {
+      "sw": "kisiwa / visiwa",
+      "baca": "kee-SEE-wah",
+      "en": "island"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Make it plural, with the adjective agreeing.",
+      "items": [
+        "mti mkubwa → ____",
+        "mji mzuri → ____",
+        "mlima mrefu → ____",
+        "mkono mchafu → ____",
+        "mkate mpya → ____",
+        "mlango mdogo → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right subject prefix (u- or i-).",
+      "items": [
+        "Mti ____mekua. (one tree)",
+        "Miti ____mekua. (many trees)",
+        "Mto ____natoka mlimani.",
+        "Milima ____ko mbali.",
+        "Mkate ____metosha."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right \"my\" possessive.",
+      "items": [
+        "kitabu ____",
+        "nyumba ____",
+        "gari ____",
+        "miti ____",
+        "watoto ____",
+        "ufunguo ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right linker -a.",
+      "items": [
+        "mwalimu ____ Kiswahili",
+        "kitabu ____ Amina",
+        "gari ____ baba",
+        "maji ____ matunda",
+        "nyimbo ____ zamani"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "mikubwa / hii / ni / miti",
+        "wetu / unatoka / mlimani / mto",
+        "nani / hizi / za / nyimbo / ni",
+        "mweupe / nyuma / ukuta / ya",
+        "mkubwa / wenu / ni / ukarimu"
+      ]
+    }
+  ],
+  "answers": [
+    "miti mikubwa — miji mizuri — milima mirefu — mikono michafu — mikate mipya — milango midogo",
+    "u — i — u — i — u",
+    "changu — yangu — langu — yangu — wangu — wangu",
+    "wa — cha — la — ya — za",
+    "Miti hii ni mikubwa. — Mto wetu unatoka mlimani. — Nyimbo hizi ni za nani? — Nyuma ya ukuta mweupe. — Ukarimu wenu ni mkubwa."
+  ]
+}

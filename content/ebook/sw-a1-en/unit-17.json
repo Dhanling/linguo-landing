@@ -1,0 +1,648 @@
+{
+  "title": "Comparing: kuliko, zaidi, and adjectives that don't change",
+  "title_target": "Meli ni rahisi kuliko ndege",
+  "goal": "Compare two options, say which is the most, and use the words for \"many\", \"few\", \"other\" and \"all\", which all agree with their noun class.",
+  "bekal": [
+    "*kuliko* for \"than\" and *zaidi* for \"more\"",
+    "saying \"the most\" with *kuliko wote* / *kuliko zote*",
+    "*-ingi*, *-chache*, *-ingine*, *-ote* across all six classes"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ndege au meli?",
+      "intro": "Budi plans to cross over to Zanzibar and can't decide how. Amina, who has made the trip dozens of times, has an opinion.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Nataka kwenda Zanzibar. Nichague ndege au meli?",
+          "id": "I want to go to Zanzibar. Should I take the plane or the ferry?",
+          "literal": "I-want to-go Zanzibar. I-should-choose plane or ship?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Meli ni rahisi kuliko ndege, lakini ni polepole zaidi.",
+          "id": "The ferry is cheaper than the plane, but slower.",
+          "literal": "ship is cheap than plane, but is slow more."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Meli inachukua muda gani?",
+          "id": "How long does the ferry take?",
+          "literal": "ship it-is-taking time what?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Saa mbili. Ndege inachukua dakika ishirini tu.",
+          "id": "Two hours. The plane takes only twenty minutes.",
+          "literal": "hours two. plane it-is-taking minutes twenty only."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ndege ni ghali kiasi gani?",
+          "id": "How expensive is the plane?",
+          "literal": "plane is expensive measure what?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Mara tatu zaidi ya meli. Tiketi ni ghali sana.",
+          "id": "Three times the ferry. The ticket is very expensive.",
+          "literal": "times three more than ship. ticket is expensive very."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Basi nitachukua meli. Nina muda mwingi, pesa chache!",
+          "id": "Then I'll take the ferry. I have lots of time and little money!",
+          "literal": "in-that-case I-will-take ship. I-have time much, money little!"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Uamuzi mzuri! Meli ya asubuhi ni bora kuliko ya jioni.",
+          "id": "Good decision! The morning ferry is better than the afternoon one.",
+          "literal": "decision good! ship of morning is better than of afternoon."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kwa nini hivyo?",
+          "id": "Why is that?",
+          "literal": "because what that?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Bahari ni shwari zaidi asubuhi. Jioni kuna mawimbi makubwa.",
+          "id": "The sea is calmer in the morning. In the afternoon there are big waves.",
+          "literal": "sea is calm more morning. afternoon there-are waves big-big."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Asante! Wewe ni rafiki bora kuliko wote.",
+          "id": "Thanks! You're the best friend of all.",
+          "literal": "thanks! you are friend best than all."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Haya, usinisifu sana! Nunua tiketi leo, si kesho.",
+          "id": "Oh, stop, don't flatter me! Buy the ticket today, not tomorrow.",
+          "literal": "enough, don't-you-me-praise too-much! buy ticket today, not tomorrow."
+        }
+      ],
+      "notes": [
+        "**Kiasi gani? means \"how much?\" as in degree.** *Kiasi* itself means extent, measure, approximately. *Kiasi gani?* asks how far along a scale: how expensive, how far, how much. Its cousins: *Muda gani?* (how long?) and *Umbali gani?* (how far?).",
+        "**Basi has two completely different meanings.** As a noun it's \"bus\"; as a conjunction it's \"in that case; all right then\". *Basi twende!* = all right, let's go. *Haya basi* = fine, then. Context tells them apart without trouble.",
+        "**Bora means both \"better\" and \"best\"**, and as a loanword it never changes form. *Ni bora* (it's better), *bora kuliko wote* (best of all), *Ni bora tuende sasa* (we'd better go now).",
+        "**Shwari means calm, especially for the sea and the weather.** For a calm person use *mtulivu*; *shwari* can also describe a peaceful atmosphere. *Bahari ni shwari* is a sentence you'll hear a lot before a crossing — and the one you most want to hear.",
+        "**Si kesho at the end of a sentence means \"not tomorrow\".** It's the same *si* as in unit 1, used to deny anything that isn't a verb: *si mimi* (not me), *si sasa* (not now), *si mbali* (not far)."
+      ],
+      "grammars": [
+        {
+          "title": "Kuliko and zaidi: more, than, most",
+          "body": [
+            "Swahili **doesn't change the adjective** to compare — there's no *big → bigger* like in English. Instead you add a separate word."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*X ni [adjective] kuliko Y*",
+                "*Meli ni rahisi kuliko ndege.*",
+                "The ferry is cheaper than the plane."
+              ],
+              [
+                "*X ni [adjective] zaidi*",
+                "*Meli ni polepole zaidi.*",
+                "The ferry is slower."
+              ],
+              [
+                "*zaidi ya*",
+                "*zaidi ya elfu kumi*",
+                "more than ten thousand"
+              ],
+              [
+                "*X ni [adjective] kuliko wote/zote*",
+                "*Yeye ni mzuri kuliko wote.*",
+                "He/She is the nicest of all."
+              ],
+              [
+                "*X ni sawa na Y*",
+                "*Bei ni sawa na jana.*",
+                "The price is the same as yesterday."
+              ],
+              [
+                "*X ni kama Y*",
+                "*Ni kama nyumbani.*",
+                "It feels like home."
+              ],
+              [
+                "*X ni tofauti na Y*",
+                "*Hii ni tofauti na ile.*",
+                "This one is different from that one."
+              ],
+              [
+                "*mara tatu zaidi*",
+                "*Ni ghali mara tatu zaidi.*",
+                "Three times more expensive."
+              ]
+            ]
+          },
+          "after": [
+            "*Kuliko* literally means \"than what there is\" — a frozen form of the verb *kuwa*. It never changes, works for any noun class, and always stands between the two things compared.",
+            "**For \"the most\"**, Swahili has no special form. Instead: *kuliko wote* (than everyone), *kuliko zote* (than all N-class things), *kuliko vyote*, and so on — the *-ote* form follows the class of the thing compared. Alternatives: *bora zaidi* (the best) and *namba moja* (number one, colloquial).",
+            "The adjectives most often compared: *kubwa* (big), *dogo* (small), *ghali* (expensive), *rahisi* (cheap), *nzuri* (good), *mbaya* (bad), *refu* (long), *fupi* (short), *haraka* (fast), *polepole* (slow), *tamu* (tasty), *bora* (good, better)."
+          ]
+        },
+        {
+          "title": "Many, few, other, all",
+          "body": [
+            "These four quantity words all start with a bare stem, so all four follow their noun class — and the sounds change enough that they feel like different words. This table sorts it out."
+          ],
+          "table": {
+            "head": [
+              "Class",
+              "many (-ingi)",
+              "few (-chache)",
+              "other (-ingine)",
+              "all (-ote)"
+            ],
+            "rows": [
+              [
+                "*watu*",
+                "*wengi*",
+                "*wachache*",
+                "*wengine*",
+                "*wote*"
+              ],
+              [
+                "*vitabu*",
+                "*vingi*",
+                "*vichache*",
+                "*vingine*",
+                "*vyote*"
+              ],
+              [
+                "*nyumba*",
+                "*nyingi*",
+                "*chache*",
+                "*nyingine*",
+                "*zote*"
+              ],
+              [
+                "*magari*",
+                "*mengi*",
+                "*machache*",
+                "*mengine*",
+                "*yote*"
+              ],
+              [
+                "*miti*",
+                "*mingi*",
+                "*michache*",
+                "*mingine*",
+                "*yote*"
+              ],
+              [
+                "*maji*",
+                "*mengi*",
+                "—",
+                "*mengine*",
+                "*yote*"
+              ]
+            ]
+          },
+          "after": [
+            "Singular forms for \"other\": *mtu mwingine* (another person), *kitu kingine* (another thing), *nyumba nyingine* (another house), *gari lingine* (another car), *mti mwingine* (another tree). Note that *-ingi* (many) is almost always plural, while *-ingine* (other) is used in both numbers.",
+            "Everyday phrases: *watu wengi* (many people), *pesa nyingi* (a lot of money), *muda mwingi* (a lot of time), *maji mengi* (a lot of water), *siku chache* (a few days), *mara nyingine* (another time), *kila mtu* (everyone).",
+            "⚠️ Don't mix up *wengi* (many people) and *wengine* (other people) — one syllable separates \"many people came\" from \"other people came\". Listen for the *-ne* at the end."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Usafiri — ways of getting around",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*basi* / *mabasi*",
+              "BAH-see",
+              "bus"
+            ],
+            [
+              "*daladala*",
+              "dah-lah-DAH-lah",
+              "minibus (shared)"
+            ],
+            [
+              "*bodaboda*",
+              "boh-dah-BOH-dah",
+              "motorbike taxi"
+            ],
+            [
+              "*teksi*",
+              "TEHK-see",
+              "taxi"
+            ],
+            [
+              "*bajaji*",
+              "bah-JAH-jee",
+              "auto-rickshaw; tuk-tuk"
+            ],
+            [
+              "*treni*",
+              "TREH-nee",
+              "train"
+            ],
+            [
+              "*ndege*",
+              "n-DEH-geh",
+              "airplane"
+            ],
+            [
+              "*meli*",
+              "MEH-lee",
+              "ship; ferry"
+            ],
+            [
+              "*boti*",
+              "BOH-tee",
+              "boat"
+            ],
+            [
+              "*baiskeli*",
+              "bah-ee-SKEH-lee",
+              "bicycle"
+            ],
+            [
+              "*tiketi*",
+              "tee-KEH-tee",
+              "ticket"
+            ],
+            [
+              "*nauli*",
+              "nah-OO-lee",
+              "fare"
+            ],
+            [
+              "*abiria*",
+              "ah-bee-REE-ah",
+              "passenger"
+            ],
+            [
+              "*kituo*",
+              "kee-TOO-oh",
+              "stop; terminal"
+            ],
+            [
+              "*safari ndefu*",
+              "sah-FAH-ree n-DEH-foo",
+              "long journey"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Sentences you'll need at the terminal: *Basi la Arusha linaondoka saa ngapi?* (what time does the bus to Arusha leave?), *Nauli ni ngapi?* (how much is the fare?), *Kuna nafasi?* (is there room?), *Nataka tiketi mbili* (I want two tickets)."
+        },
+        {
+          "type": "p",
+          "text": "The verbs: *kupanda* (to board), *kushuka* (to get off), *kuondoka* (to depart), *kufika* (to arrive), *kuchelewa* (to be late), *kukosa* (to miss). *Nimekosa basi* = I've missed the bus — a sentence you'll need sooner or later."
+        }
+      ]
+    },
+    {
+      "title": "Paired adjectives — one read, two words",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The fastest way to add adjectives is to learn them in pairs. The left and right columns are opposites."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Meaning",
+            "Opposite",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*-kubwa*",
+              "big",
+              "*-dogo*",
+              "small"
+            ],
+            [
+              "*-refu*",
+              "long; tall",
+              "*-fupi*",
+              "short"
+            ],
+            [
+              "*-zuri*",
+              "good; beautiful",
+              "*-baya*",
+              "bad"
+            ],
+            [
+              "*-pya*",
+              "new",
+              "*kuukuu*",
+              "worn-out"
+            ],
+            [
+              "*safi*",
+              "clean",
+              "*chafu*",
+              "dirty"
+            ],
+            [
+              "*ghali*",
+              "expensive",
+              "*rahisi*",
+              "cheap"
+            ],
+            [
+              "*rahisi*",
+              "easy",
+              "*gumu*",
+              "difficult"
+            ],
+            [
+              "*-tamu*",
+              "tasty; sweet",
+              "*-chungu*",
+              "bitter"
+            ],
+            [
+              "*-zito*",
+              "heavy",
+              "*-epesi*",
+              "light"
+            ],
+            [
+              "*-ingi*",
+              "many",
+              "*-chache*",
+              "few"
+            ],
+            [
+              "*joto*",
+              "hot",
+              "*baridi*",
+              "cold"
+            ],
+            [
+              "*karibu*",
+              "near",
+              "*mbali*",
+              "far"
+            ],
+            [
+              "*hodari*",
+              "clever; hardworking",
+              "*-vivu*",
+              "lazy"
+            ],
+            [
+              "*-kali*",
+              "fierce; blazing; spicy",
+              "*-pole*",
+              "gentle; patient"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the hyphen before some words: it marks words that **agree with their noun class**. Those without a hyphen — *safi*, *chafu*, *ghali*, *rahisi*, *gumu*, *hodari*, *kuukuu*, *joto*, *baridi* — are loanwords that never change form, which means nine adjectives you don't have to worry about at all."
+        },
+        {
+          "type": "p",
+          "text": "*Kali* has the widest range of any of them: *jua kali* (blazing sun), *mwalimu mkali* (a strict teacher), *pilipili kali* (hot chili), *sabuni kali* (harsh soap). And on the streets of Tanzania, *jua kali* is also the name for workshops and small businesses that work outdoors — literally \"under the blazing sun\"."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "kuliko",
+      "baca": "koo-LEE-koh",
+      "en": "than"
+    },
+    {
+      "sw": "zaidi",
+      "baca": "zah-EE-dee",
+      "en": "more"
+    },
+    {
+      "sw": "bora",
+      "baca": "BOH-rah",
+      "en": "better; best"
+    },
+    {
+      "sw": "sawa na",
+      "baca": "SAH-wah nah",
+      "en": "the same as"
+    },
+    {
+      "sw": "kama",
+      "baca": "KAH-mah",
+      "en": "like; if"
+    },
+    {
+      "sw": "tofauti na",
+      "baca": "toh-fah-OO-tee nah",
+      "en": "different from"
+    },
+    {
+      "sw": "kiasi",
+      "baca": "kee-AH-see",
+      "en": "extent; approximately"
+    },
+    {
+      "sw": "-ingi",
+      "baca": "EE-ngee",
+      "en": "many; much"
+    },
+    {
+      "sw": "-chache",
+      "baca": "CHAH-cheh",
+      "en": "few; little"
+    },
+    {
+      "sw": "-ingine",
+      "baca": "ee-NGEE-neh",
+      "en": "other"
+    },
+    {
+      "sw": "-ote",
+      "baca": "OH-teh",
+      "en": "all"
+    },
+    {
+      "sw": "meli",
+      "baca": "MEH-lee",
+      "en": "ship; ferry"
+    },
+    {
+      "sw": "ndege",
+      "baca": "n-DEH-geh",
+      "en": "airplane; bird"
+    },
+    {
+      "sw": "tiketi",
+      "baca": "tee-KEH-tee",
+      "en": "ticket"
+    },
+    {
+      "sw": "nauli",
+      "baca": "nah-OO-lee",
+      "en": "fare"
+    },
+    {
+      "sw": "abiria",
+      "baca": "ah-bee-REE-ah",
+      "en": "passenger"
+    },
+    {
+      "sw": "nafasi",
+      "baca": "nah-FAH-see",
+      "en": "room; chance"
+    },
+    {
+      "sw": "wimbi / mawimbi",
+      "baca": "WEEM-bee",
+      "en": "wave"
+    },
+    {
+      "sw": "shwari",
+      "baca": "SHWAH-ree",
+      "en": "calm (sea)"
+    },
+    {
+      "sw": "uamuzi",
+      "baca": "oo-ah-MOO-zee",
+      "en": "decision"
+    },
+    {
+      "sw": "kuchagua",
+      "baca": "koo-chah-GOO-ah",
+      "en": "to choose"
+    },
+    {
+      "sw": "kusifu",
+      "baca": "koo-SEE-foo",
+      "en": "to praise"
+    },
+    {
+      "sw": "kushuka",
+      "baca": "koo-SHOO-kah",
+      "en": "to get off"
+    },
+    {
+      "sw": "kukosa",
+      "baca": "koo-KOH-sah",
+      "en": "to miss; to get wrong"
+    },
+    {
+      "sw": "gumu",
+      "baca": "GOO-moo",
+      "en": "difficult"
+    },
+    {
+      "sw": "kuukuu",
+      "baca": "koo-oo-KOO-oo",
+      "en": "worn-out; old"
+    },
+    {
+      "sw": "hodari",
+      "baca": "hoh-DAH-ree",
+      "en": "clever; hardworking"
+    },
+    {
+      "sw": "-vivu",
+      "baca": "VEE-voo",
+      "en": "lazy"
+    },
+    {
+      "sw": "-kali",
+      "baca": "KAH-lee",
+      "en": "fierce; blazing; spicy"
+    },
+    {
+      "sw": "muhimu",
+      "baca": "moo-HEE-moo",
+      "en": "important"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Compare with kuliko. Example: meli + rahisi + ndege → Meli ni rahisi kuliko ndege.",
+      "items": [
+        "meli + rahisi + ndege → ____",
+        "basi + polepole + treni → ____",
+        "Amina + hodari + Juma → ____",
+        "nyumba hii + kubwa + ile → ____",
+        "chai + tamu + kahawa → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the right \"many\" form.",
+      "items": [
+        "watu ____",
+        "vitabu ____",
+        "pesa ____",
+        "magari ____",
+        "miti ____",
+        "maji ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the right \"other\" form.",
+      "items": [
+        "mtu ____",
+        "kitu ____",
+        "nyumba ____",
+        "gari ____",
+        "watu ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Swahili.",
+      "items": [
+        "The ferry is cheaper than the plane.",
+        "The plane is faster.",
+        "He/She is the best friend of all.",
+        "I have a lot of time, little money.",
+        "The price is the same as yesterday.",
+        "How much is the fare?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ndege / rahisi / kuliko / meli / ni",
+        "zaidi / polepole / ni / meli",
+        "wote / kuliko / bora / rafiki / ni / wewe",
+        "chache / mwingi / nina / pesa / muda",
+        "gani / muda / inachukua / meli"
+      ]
+    }
+  ],
+  "answers": [
+    "Meli ni rahisi kuliko ndege. — Basi ni polepole kuliko treni. — Amina ni hodari kuliko Juma. — Nyumba hii ni kubwa kuliko ile. — Chai ni tamu kuliko kahawa.",
+    "wengi — vingi — nyingi — mengi — mingi — mengi",
+    "mwingine — kingine — nyingine — lingine — wengine",
+    "Meli ni rahisi kuliko ndege. — Ndege ni haraka zaidi. — Yeye ni rafiki bora kuliko wote. — Nina muda mwingi, pesa chache. — Bei ni sawa na jana. — Nauli ni ngapi?",
+    "Meli ni rahisi kuliko ndege. — Meli ni polepole zaidi. — Wewe ni rafiki bora kuliko wote. — Nina muda mwingi, pesa chache. — Meli inachukua muda gani?"
+  ]
+}

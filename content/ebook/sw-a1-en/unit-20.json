@@ -1,0 +1,581 @@
+{
+  "title": "Stringing a story together, and saying goodbye",
+  "title_target": "Safari njema, rafiki yangu",
+  "goal": "Join short sentences into a story with the *-ka-* slot, congratulate people on special days, and say goodbye in sentences that sound like someone who has lived there.",
+  "bekal": [
+    "the *-ka-* slot: \"and then\", linking a chain of events",
+    "linkers: *lakini*, *kwa sababu*, *kwa hiyo*, *ingawa*, *ili*",
+    "holiday greetings, congratulations, and ways of saying goodbye"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kwaheri, si kwaheri ya milele",
+      "intro": "The last evening. Amina's family hosts a small dinner to send Budi off to Jakarta.",
+      "lines": [
+        {
+          "speaker": "Amina:",
+          "text": "Kesho unaondoka. Tutakukumbuka sana.",
+          "id": "You leave tomorrow. We're going to miss you so much.",
+          "literal": "tomorrow you-are-leaving. we-will-you-remember very."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nami nitawakumbuka. Miezi mitatu imepita haraka mno.",
+          "id": "I'll miss you all too. Three months went by so fast.",
+          "literal": "and-I I-will-you(pl)-remember. months three they-have-passed quickly very."
+        },
+        {
+          "speaker": "Juma:",
+          "text": "Unakumbuka siku ya kwanza? Ulisema \"sielewi\" mara mia!",
+          "id": "Remember the first day? You said \"I don't understand\" a hundred times!",
+          "literal": "you-are-remember day of first? you-past-say \"I-not-understand\" times hundred!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kweli kabisa! Nilifika, nikaogopa, nikanyamaza. Sasa ninaongea!",
+          "id": "So true! I arrived, then got scared, then went quiet. Now I'm talking!",
+          "literal": "truly completely! I-past-arrive, I-then-fear, I-then-quiet. now I-am-speaking!"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Umejifunza haraka kwa sababu ulijaribu kila siku.",
+          "id": "You learned fast because you tried every day.",
+          "literal": "you-have-learned quickly because reason you-past-try every day."
+        },
+        {
+          "speaker": "Mama:",
+          "text": "Chukua chakula hiki kwa safari. Na hii ni zawadi kutoka kwetu.",
+          "id": "Take this food for the trip. And this is a gift from us.",
+          "literal": "take food this for journey. and this is gift from of-us."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Asanteni sana. Sitasahau ukarimu wenu kamwe.",
+          "id": "Thank you all so much. I'll never forget your hospitality.",
+          "literal": "thanks-you(pl) very. I-not-will-forget hospitality of-you(pl) ever."
+        },
+        {
+          "speaker": "Juma:",
+          "text": "Utarudi lini?",
+          "id": "When will you come back?",
+          "literal": "you-will-return when?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nikipata nafasi, nitarudi mwaka ujao — Mungu akipenda.",
+          "id": "If I get the chance, I'll come back next year — God willing.",
+          "literal": "I-if-get chance, I-will-return year which-comes — God if-He-likes."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Tutakusubiri. Nyumba yetu ni yako pia.",
+          "id": "We'll be waiting for you. Our house is your house, too.",
+          "literal": "we-will-you-wait. house of-us is of-you too."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kwaherini, ndugu zangu. Mnisalimie familia yote.",
+          "id": "Goodbye, my brothers and sisters. Give my greetings to the whole family.",
+          "literal": "stay-well-you(pl), siblings of-me. you(pl)-should-me-greet family all."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Safari njema! Tutaonana tena, Mungu akipenda.",
+          "id": "Have a safe trip! We'll meet again, God willing.",
+          "literal": "journey good! we-will-each-other-see again, God if-He-likes."
+        }
+      ],
+      "notes": [
+        "**Mno means \"too much; excessively\".** Stronger than *sana*: *haraka mno* (far too fast), *ghali mno* (way too expensive). Its cousin *kupita kiasi* (to go past the measure).",
+        "**Kamwe means \"not at all; never\"** and is used only in negative sentences: *Sitasahau kamwe* (I'll never forget), *Hajawahi kufika* (he/she has never arrived). *Hajawahi* is another way of saying \"never has\".",
+        "**Asanteni is asante for several people** — the same ending *-ni* as in *karibuni* and *kwaherini*. Saying it to a whole family at once sounds far warmer than a singular *asante*.",
+        "**Nyumba yetu ni yako pia is the most characteristic East African farewell**, and it isn't a polite formula. A guest who has stayed is considered to have a place in that house forever — and if you come back ten years later, the same sentence will be said again.",
+        "**Kwaheri isn't a heavy goodbye.** For a really long parting, people add *ya kuonana* — \"until we meet again\". And the most common one isn't *kwaheri* at all but *tutaonana* (we'll see each other again)."
+      ],
+      "grammars": [
+        {
+          "title": "The -ka- slot: \"and then\", the story-linker",
+          "body": [
+            "When you narrate a chain of events, Swahili **doesn't repeat the tense slot in every sentence**. The first verb carries the time, and the rest take the **-ka-** slot, meaning \"and then\".",
+            "*Nilifika, **nika**ogopa, **nika**nyamaza* = I arrived, then got scared, then went quiet."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Meaning",
+              "Note"
+            ],
+            "rows": [
+              [
+                "*Nilikwenda sokoni, **nika**nunua ndizi.*",
+                "I went to the market, then bought bananas.",
+                "first verb has -li-"
+              ],
+              [
+                "*Aliamka, **aka**oga, **aka**ondoka.*",
+                "He/She woke up, bathed, then left.",
+                "a chain of three"
+              ],
+              [
+                "*Tutakula, **tuka**lale.*",
+                "We'll eat, then sleep.",
+                "after -ta-"
+              ],
+              [
+                "*Nenda **uka**mwone.*",
+                "Go, and then meet him/her.",
+                "after a command"
+              ],
+              [
+                "*Alifika **aka**kuta mlango umefungwa.*",
+                "He/She arrived, then found the door locked.",
+                "story"
+              ],
+              [
+                "*Nilisoma **nika**faulu.*",
+                "I studied, then passed.",
+                "cause and effect"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that the subject prefix is still there — *ni-ka-*, *a-ka-*, *tu-ka-* — only the tense slot is replaced by *-ka-*. And the verb ending stays *-a* as usual.",
+            "This form is what makes Swahili stories flow. Compare *Nilikwenda sokoni. Nilinunua ndizi. Nilirudi nyumbani.* — three stiff sentences — with *Nilikwenda sokoni, nikanunua ndizi, nikarudi nyumbani.* The second sounds like someone telling a story.",
+            "After a command, *-ka-* means \"go and…\": *Nenda ukanunue mkate* (go and buy bread), *Njoo ukale* (come and eat). You'll hear this form constantly at home."
+          ]
+        },
+        {
+          "title": "Linkers: from short sentences to paragraphs",
+          "body": [
+            "The ten words below are what separate A1 sentences from A2 stories. Each one stands between two complete sentences, without changing anything around it."
+          ],
+          "table": {
+            "head": [
+              "Kiswahili",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "*na*",
+                "and",
+                "*Nilikula na nikalala.*"
+              ],
+              [
+                "*lakini*",
+                "but",
+                "*Nilichoka lakini nilifurahi.*"
+              ],
+              [
+                "*au*",
+                "or",
+                "*Chai au kahawa?*"
+              ],
+              [
+                "*kwa sababu*",
+                "because",
+                "*Sikuja kwa sababu niliumwa.*"
+              ],
+              [
+                "*kwa hiyo*",
+                "so; therefore",
+                "*Mvua ilinyesha, kwa hiyo tulikaa ndani.*"
+              ],
+              [
+                "*ingawa*",
+                "although",
+                "*Ingawa ni ghali, ni nzuri.*"
+              ],
+              [
+                "*ili*",
+                "so that",
+                "*Nasoma ili nifaulu.*"
+              ],
+              [
+                "*kwanza… kisha… mwisho*",
+                "first… then… finally",
+                "*Kwanza tulikula, kisha tulitembea.*"
+              ],
+              [
+                "*pia*",
+                "also",
+                "*Yeye pia anakuja.*"
+              ],
+              [
+                "*hata*",
+                "even",
+                "*Hata mimi sikujua.*"
+              ]
+            ]
+          },
+          "after": [
+            "Note *ili* (so that): the verb after it always takes the **-e** form from unit 14. *Nasoma ili nifaulu* (I study so that I pass), *Njoo ili tuongee* (come so that we can chat).",
+            "*Kwa sababu* and *kwa hiyo* are a cause-and-effect pair, in opposite order: *Sikuja kwa sababu niliumwa* (effect first, cause after) versus *Niliumwa, kwa hiyo sikuja* (cause first, effect after).",
+            "With these ten words, everything you've put together over twenty units can be strung into a full story. Try it now: tell about yesterday in five sentences, using *-li-* in the first and *-ka-* in the rest."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Sherehe na salamu — greetings for special days",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "When it's said"
+          ],
+          "rows": [
+            [
+              "*Hongera!*",
+              "Congratulations! (on a success, a graduation, a birth)"
+            ],
+            [
+              "*Heri ya mwaka mpya!*",
+              "Happy New Year"
+            ],
+            [
+              "*Idi njema!* / *Eid Mubarak*",
+              "Happy Eid (Eid al-Fitr / Eid al-Adha)"
+            ],
+            [
+              "*Ramadhani Kareem*",
+              "Happy Ramadan"
+            ],
+            [
+              "*Krismasi njema!*",
+              "Merry Christmas"
+            ],
+            [
+              "*Heri ya siku ya kuzaliwa!*",
+              "Happy birthday"
+            ],
+            [
+              "*Karibu sana!*",
+              "Welcome"
+            ],
+            [
+              "*Pole na kazi.*",
+              "Keep it up (to someone who's working)"
+            ],
+            [
+              "*Pole kwa msiba.*",
+              "My condolences"
+            ],
+            [
+              "*Safari njema!*",
+              "Have a safe trip"
+            ],
+            [
+              "*Usiku mwema.* / *Lala salama.*",
+              "Good night / sleep well"
+            ],
+            [
+              "*Siku njema!*",
+              "Have a good day"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Eid al-Fitr is called *Idi el-Fitri* and Eid al-Adha *Idi el-Hajj*; both are national holidays in Tanzania and Kenya, and in Zanzibar they're celebrated on a grand scale. Other characteristic celebrations: *Siku ya Uhuru* (Independence Day, December 9 in Tanzania) and *Sikukuu ya Wafanyakazi* (Labor Day)."
+        },
+        {
+          "type": "p",
+          "text": "*Pole na kazi* is the hardest greeting to translate and the most East African: said to anyone who is working — a porter, a tailor, a teacher, a driver — and it means roughly \"I see your hard work\". Saying it to a stranger at work is one of the quickest ways to make that person's day better."
+        }
+      ]
+    },
+    {
+      "title": "Methali — ten proverbs you can already read",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Proverbs (*methali*) are the backbone of East African speech, and they're all built from parts you already have. Read slowly; you'll recognize the slots."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Methali",
+            "Literal meaning",
+            "What it means"
+          ],
+          "rows": [
+            [
+              "*Haraka haraka haina baraka.*",
+              "hurry hurry has-not blessing",
+              "Haste rarely succeeds."
+            ],
+            [
+              "*Polepole ndiyo mwendo.*",
+              "slowly slowly that-is the way-of-walking",
+              "Slow and steady wins the race."
+            ],
+            [
+              "*Haba na haba hujaza kibaba.*",
+              "little and little fills the measure",
+              "Little by little, a little becomes a lot."
+            ],
+            [
+              "*Usipoziba ufa, utajenga ukuta.*",
+              "if-you-don't plug the crack, you-will build a wall",
+              "A small problem left alone becomes a big one."
+            ],
+            [
+              "*Umoja ni nguvu.*",
+              "unity is strength",
+              "A motto used everywhere."
+            ],
+            [
+              "*Elimu ni bahari.*",
+              "knowledge is an ocean",
+              "Learning is never finished."
+            ],
+            [
+              "*Akili ni nywele, kila mtu ana zake.*",
+              "wit is hair, everyone has their own",
+              "Everyone has their own way of thinking."
+            ],
+            [
+              "*Mgeni njoo, mwenyeji apone.*",
+              "come, guest, so the host may be blessed",
+              "A guest brings good fortune."
+            ],
+            [
+              "*Mtaka cha mvunguni sharti ainame.*",
+              "whoever wants what's under the bed must bend down",
+              "Everything has its price."
+            ],
+            [
+              "*Asiyeuliza hanajifunza.*",
+              "he-who-doesn't-ask doesn't-learn",
+              "Asking is not ignorance."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at the fourth: *Usipoziba* is the *-sipo-* form you just learned in unit 19, and *utajenga* is the *-ta-* slot from unit 13. Look at the third: *hujaza* is the habitual *hu-* form from unit 13. You can now take apart proverbs hundreds of years old with the tables you assembled earlier."
+        },
+        {
+          "type": "p",
+          "text": "And the last one may be the best way to close this book. *Asiyeuliza hanajifunza* — he who doesn't ask doesn't learn. Swahili speakers are patient with questions, and your first sentence needn't be perfect to be answered with a smile. *Karibu, na safari njema.*"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "kukumbuka",
+      "baca": "koo-koom-BOO-kah",
+      "en": "to remember; to miss"
+    },
+    {
+      "sw": "kupita",
+      "baca": "koo-PEE-tah",
+      "en": "to pass; to go by"
+    },
+    {
+      "sw": "kuogopa",
+      "baca": "koo-oh-GOH-pah",
+      "en": "to fear; to be scared"
+    },
+    {
+      "sw": "kunyamaza",
+      "baca": "koo-nyah-MAH-zah",
+      "en": "to be quiet"
+    },
+    {
+      "sw": "kujenga",
+      "baca": "koo-JEHN-gah",
+      "en": "to build"
+    },
+    {
+      "sw": "kuziba",
+      "baca": "koo-ZEE-bah",
+      "en": "to plug; to block"
+    },
+    {
+      "sw": "kujaza",
+      "baca": "koo-JAH-zah",
+      "en": "to fill"
+    },
+    {
+      "sw": "kuinama",
+      "baca": "koo-ee-NAH-mah",
+      "en": "to bend down"
+    },
+    {
+      "sw": "kwaheri",
+      "baca": "kwah-HEH-ree",
+      "en": "goodbye"
+    },
+    {
+      "sw": "hongera",
+      "baca": "hoh-NGEH-rah",
+      "en": "congratulations!"
+    },
+    {
+      "sw": "heri",
+      "baca": "HEH-ree",
+      "en": "goodness; blessing"
+    },
+    {
+      "sw": "baraka",
+      "baca": "bah-RAH-kah",
+      "en": "blessing"
+    },
+    {
+      "sw": "msiba",
+      "baca": "m-SEE-bah",
+      "en": "misfortune; mourning"
+    },
+    {
+      "sw": "sherehe",
+      "baca": "sheh-REH-heh",
+      "en": "celebration"
+    },
+    {
+      "sw": "methali",
+      "baca": "meh-THAH-lee",
+      "en": "proverb"
+    },
+    {
+      "sw": "nguvu",
+      "baca": "n-GOO-voo",
+      "en": "strength"
+    },
+    {
+      "sw": "mwenyeji / wenyeji",
+      "baca": "mweh-NYEH-jee",
+      "en": "host; local resident"
+    },
+    {
+      "sw": "nafasi",
+      "baca": "nah-FAH-see",
+      "en": "chance; room"
+    },
+    {
+      "sw": "lakini",
+      "baca": "lah-KEE-nee",
+      "en": "but"
+    },
+    {
+      "sw": "ingawa",
+      "baca": "ee-NGAH-wah",
+      "en": "although"
+    },
+    {
+      "sw": "ili",
+      "baca": "EE-lee",
+      "en": "so that"
+    },
+    {
+      "sw": "hata",
+      "baca": "HAH-tah",
+      "en": "even"
+    },
+    {
+      "sw": "kwa hiyo",
+      "baca": "kwah HEE-yoh",
+      "en": "so; therefore"
+    },
+    {
+      "sw": "mno",
+      "baca": "m-NOH",
+      "en": "too much; excessively"
+    },
+    {
+      "sw": "kamwe",
+      "baca": "KAHM-weh",
+      "en": "not at all; never"
+    },
+    {
+      "sw": "milele",
+      "baca": "mee-LEH-leh",
+      "en": "forever"
+    },
+    {
+      "sw": "mwendo",
+      "baca": "MWEHN-doh",
+      "en": "step; pace"
+    },
+    {
+      "sw": "ufa / nyufa",
+      "baca": "OO-fah",
+      "en": "crack"
+    },
+    {
+      "sw": "nywele",
+      "baca": "NYWEH-leh",
+      "en": "hair"
+    },
+    {
+      "sw": "kuzaliwa",
+      "baca": "koo-zah-LEE-wah",
+      "en": "to be born"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Join into one story with -ka-.",
+      "items": [
+        "Nilikwenda sokoni. Nilinunua ndizi. → ____",
+        "Aliamka. Alioga. Aliondoka. → ____",
+        "Tulifika. Tulikula. Tulilala. → ____",
+        "Nilisoma. Nilifaulu. → ____",
+        "Alipika chakula. Aliwaita watoto. → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the right linker: lakini, kwa sababu, kwa hiyo, ingawa, ili.",
+      "items": [
+        "Nilichoka ____ nilifurahi.",
+        "Sikuja ____ niliumwa.",
+        "Mvua ilinyesha, ____ tulikaa ndani.",
+        "____ ni ghali, ni nzuri sana.",
+        "Ninasoma ____ nifaulu."
+      ]
+    },
+    {
+      "prompt": "Translate into Swahili.",
+      "items": [
+        "We're going to miss you so much.",
+        "Three months went by so fast.",
+        "I'll never forget your hospitality.",
+        "If I get the chance, I'll come back next year.",
+        "Give my greetings to the whole family.",
+        "Have a safe trip, see you again!"
+      ]
+    },
+    {
+      "prompt": "Which greeting fits?",
+      "items": [
+        "Your friend just passed an exam. → ____",
+        "Your neighbor has lost a family member. → ____",
+        "You meet a tailor at work. → ____",
+        "Your friend is taking a long bus ride tomorrow morning. → ____",
+        "The day of Eid al-Fitr. → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "sana / tutakukumbuka",
+        "haraka / imepita / mitatu / miezi",
+        "kamwe / wenu / sitasahau / ukarimu",
+        "ujao / nitarudi / mwaka",
+        "njema / tutaonana / safari / tena"
+      ]
+    }
+  ],
+  "answers": [
+    "Nilikwenda sokoni, nikanunua ndizi. — Aliamka, akaoga, akaondoka. — Tulifika, tukala, tukalala. — Nilisoma nikafaulu. — Alipika chakula, akawaita watoto.",
+    "lakini — kwa sababu — kwa hiyo — Ingawa — ili",
+    "Tutakukumbuka sana. — Miezi mitatu imepita haraka mno. — Sitasahau ukarimu wenu kamwe. — Nikipata nafasi, nitarudi mwaka ujao. — Nisalimie familia yote. — Safari njema, tutaonana tena!",
+    "Hongera! — Pole kwa msiba. — Pole na kazi. — Safari njema! — Idi njema!",
+    "Tutakukumbuka sana. — Miezi mitatu imepita haraka. — Sitasahau ukarimu wenu kamwe. — Nitarudi mwaka ujao. — Safari njema, tutaonana tena."
+  ]
+}

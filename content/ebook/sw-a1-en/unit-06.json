@@ -1,0 +1,623 @@
+{
+  "title": "Things around you: the ki-/vi- class and demonstratives",
+  "title_target": "Hiki ni kitu gani?",
+  "goal": "Name the things around you, haggle a little at a craft market, and point precisely: this, that, and the one over there.",
+  "bekal": [
+    "the *ki-/vi-* class: *kitabu → vitabu*, and adjectives that follow its prefix",
+    "three kinds of demonstratives: *hiki* (this), *hicho* (that one mentioned), *kile* (that one far away)",
+    "how to read the sound of a prefix to guess the demonstrative of any class"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Sokoni la vitu vya mikono",
+      "intro": "The craft market in Stone Town. Budi is looking for a gift for his sister, with Amina along.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Hiki ni kitu gani?",
+          "id": "What is this thing?",
+          "literal": "this-thing is thing which?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Hiki ni kikapu cha mkono. Watu hapa wanatengeneza vikapu vizuri.",
+          "id": "This is a handmade basket. People here make beautiful baskets.",
+          "literal": "this-thing is basket of hand. people here they-are-making baskets good-ones."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ni kizuri sana! Na hivi ni nini?",
+          "id": "It's very nice! And what are these?",
+          "literal": "is good-one very! and these-things are what?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Hivi ni viatu vya ngozi. Vinatoka Mombasa.",
+          "id": "These are leather shoes. They come from Mombasa.",
+          "literal": "these-things are shoes of leather. they-are-coming-from Mombasa."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Viatu hivi ni ghali?",
+          "id": "Are these shoes expensive?",
+          "literal": "shoes these are expensive?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Hapana, ni rahisi. Shilingi elfu kumi tu.",
+          "id": "No, they're cheap. Only ten thousand shillings.",
+          "literal": "no, is easy. shilling thousand ten only."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kitu gani ni kizuri kwa dada yangu?",
+          "id": "What would be a good thing for my sister?",
+          "literal": "thing which is good for sister of-me?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Kikapu hiki kidogo ni kizuri. Au vikombe hivi.",
+          "id": "This little basket is nice. Or these cups.",
+          "literal": "basket this small is good. or cups these."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vikombe hivi ni vingapi?",
+          "id": "How many cups are there?",
+          "literal": "cups these are how-many?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Ni vinne. Vyote ni vya udongo.",
+          "id": "There are four. They're all clay.",
+          "literal": "are four. all-of-them are of clay."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ninapenda kile cheusi kule!",
+          "id": "I like that black one over there!",
+          "literal": "I-am-liking that-thing black there!"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Kile ni kizuri kabisa. Bei yake ni elfu tano.",
+          "id": "That one is really beautiful. Its price is five thousand.",
+          "literal": "that-thing is good completely. price of-it is thousand five."
+        }
+      ],
+      "notes": [
+        "**Kitu means \"thing\" and Swahili uses it as often as English uses \"thing\" or \"stuff\".** *Kitu gani?* (what thing?), *kitu kimoja* (one thing), *hakuna kitu* (nothing). The plural is *vitu*.",
+        "**Vya, cha mean \"of; made of\".** The form follows the class of the noun: *kikapu cha mkono* (hand basket), *viatu vya ngozi* (leather shoes), *vikombe vya udongo* (clay cups). You've already met its cousins in unit 2: *picha ya familia*, *watoto wa kaka*.",
+        "**Ghali and rahisi never change form.** Both are Arabic loans, so they don't follow a class: *kitabu ghali*, *nyumba ghali*, *viatu ghali*. Other loan adjectives that behave the same: *safi* (clean), *tayari* (ready), *muhimu* (important), *bora* (best), *hodari* (clever; hard-working).",
+        "**Rahisi means both \"cheap\" and \"easy\".** It has two opposites: *ghali* for prices, *gumu* for difficulty. If someone says *Kiswahili ni rahisi*, they are saying this language is easy — and so far they're not wrong.",
+        "**Cheusi is ki- + eusi.** The prefix *ki-* turns into *ch-* before a vowel: *ki + eusi* → *cheusi* (black), *ki + eupe* → *cheupe* (white), and *ki + ingi* → *vingi* for the plural. A small sound rule that applies throughout this class."
+      ],
+      "grammars": [
+        {
+          "title": "The ki-/vi- class — handmade things",
+          "body": [
+            "The second class you set up holds mostly **man-made things**: tools, furniture, implements. Singular **ki-**, plural **vi-** — and as usual, adjectives and numbers change along."
+          ],
+          "table": {
+            "head": [
+              "Singular",
+              "Plural",
+              "Meaning",
+              "With an adjective"
+            ],
+            "rows": [
+              [
+                "*kitabu*",
+                "*vitabu*",
+                "book",
+                "*kitabu kizuri → vitabu vizuri*"
+              ],
+              [
+                "*kiti*",
+                "*viti*",
+                "chair",
+                "*kiti kidogo → viti vidogo*"
+              ],
+              [
+                "*kisu*",
+                "*visu*",
+                "knife",
+                "*kisu kikubwa → visu vikubwa*"
+              ],
+              [
+                "*kikombe*",
+                "*vikombe*",
+                "cup",
+                "*kikombe kimoja → vikombe viwili*"
+              ],
+              [
+                "*kiatu*",
+                "*viatu*",
+                "shoe",
+                "*kiatu kipya → viatu vipya*"
+              ],
+              [
+                "*kijiko*",
+                "*vijiko*",
+                "spoon",
+                "*kijiko kifupi → vijiko vifupi*"
+              ],
+              [
+                "*chakula*",
+                "*vyakula*",
+                "food",
+                "*ch- before a vowel*"
+              ],
+              [
+                "*chumba*",
+                "*vyumba*",
+                "room",
+                "*chumba changu → vyumba vyangu*"
+              ]
+            ]
+          },
+          "after": [
+            "The last two rows show the sound rule: **ki- becomes ch- and vi- becomes vy- before a vowel**. *Ki + akula* → *chakula*. *Vi + akula* → *vyakula*. Words like *chumba*, *choo* (toilet) and *chuo* (college) are really members of this class in disguise.",
+            "The prefix *ki-* is also a word-making machine. It marks **languages**: *Kiswahili*, *Kiingereza*, *Kiindonesia*. It marks **manner**: *kienyeji* (in the local way), *kizungu* (Western style). And it makes things smaller: *mtoto* (child) → *kitoto* (tiny baby), *kijiji* (small village) from *mji* (town).",
+            "The *vi-* before an adjective produces the adverbs you've used since unit 3: *vizuri* (well), *vibaya* (badly), *vingi* (a lot), *vipi?* (how?)."
+          ]
+        },
+        {
+          "title": "This, that, and the one over there",
+          "body": [
+            "Swahili distinguishes **three** distances, not two. English has \"this\" and \"that\"; Swahili adds a third for something that has just been mentioned in the conversation."
+          ],
+          "table": {
+            "head": [
+              "Class",
+              "this (here)",
+              "that (just mentioned)",
+              "that (over there)",
+              "Example"
+            ],
+            "rows": [
+              [
+                "People: *mtu/watu*",
+                "*huyu* / *hawa*",
+                "*huyo* / *hao*",
+                "*yule* / *wale*",
+                "*mtu huyu*"
+              ],
+              [
+                "*kitu/vitu*",
+                "*hiki* / *hivi*",
+                "*hicho* / *hivyo*",
+                "*kile* / *vile*",
+                "*kitabu hiki*"
+              ],
+              [
+                "*nyumba* (N class)",
+                "*hii* / *hizi*",
+                "*hiyo* / *hizo*",
+                "*ile* / *zile*",
+                "*nyumba hii*"
+              ],
+              [
+                "*gari/magari*",
+                "*hili* / *haya*",
+                "*hilo* / *hayo*",
+                "*lile* / *yale*",
+                "*gari hili*"
+              ],
+              [
+                "*mti/miti*",
+                "*huu* / *hii*",
+                "*huo* / *hiyo*",
+                "*ule* / *ile*",
+                "*mti huu*"
+              ],
+              [
+                "Place",
+                "*hapa*",
+                "*hapo*",
+                "*pale* / *kule*",
+                "*hapa Zanzibar*"
+              ]
+            ]
+          },
+          "after": [
+            "There is a pattern that saves you the whole table. The \"this\" demonstrative is built from **h + the vowel of the class prefix + the class prefix**: class *ki-* → *h* + *i* + *ki* = **hiki**. Class *vi-* → *h* + *i* + *vi* = **hivi**. Class *wa-* → *h* + *a* + *wa* = **hawa**. Once you hear the pattern, you don't need to memorize the table.",
+            "The \"that (just mentioned)\" forms (*hicho*, *hiyo*, *hayo*) are used for something **already mentioned in the conversation**, even if the thing is right in front of you. These are the most common in everyday talk: *Hiyo ni kweli* — \"That's true\" (what you just said).",
+            "The demonstrative stands **after** its noun: *kitabu hiki* (this book), *watu hawa* (these people). Put it in front — *hiki kitabu* — and the meaning shifts to emphasis: \"**this** book, not that one\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Vitu ndani ya chumba — what's in the room",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*kitanda* / *vitanda*",
+              "kee-TAHN-dah",
+              "bed"
+            ],
+            [
+              "*kiti* / *viti*",
+              "KEE-tee",
+              "chair"
+            ],
+            [
+              "*meza*",
+              "MEH-zah",
+              "table"
+            ],
+            [
+              "*mlango* / *milango*",
+              "m-LAH-ngoh",
+              "door"
+            ],
+            [
+              "*dirisha* / *madirisha*",
+              "dee-REE-shah",
+              "window"
+            ],
+            [
+              "*taa*",
+              "TAH-ah",
+              "lamp; light"
+            ],
+            [
+              "*kioo* / *vioo*",
+              "kee-OH-oh",
+              "mirror; glass"
+            ],
+            [
+              "*sanduku* / *masanduku*",
+              "sahn-DOO-koo",
+              "box; suitcase"
+            ],
+            [
+              "*kikombe* / *vikombe*",
+              "kee-KOHM-beh",
+              "cup"
+            ],
+            [
+              "*sahani*",
+              "sah-HAH-nee",
+              "plate"
+            ],
+            [
+              "*kijiko* / *vijiko*",
+              "kee-JEE-koh",
+              "spoon"
+            ],
+            [
+              "*uma*",
+              "OO-mah",
+              "fork"
+            ],
+            [
+              "*kisu* / *visu*",
+              "KEE-soo",
+              "knife"
+            ],
+            [
+              "*choo* / *vyoo*",
+              "CHOH-oh",
+              "toilet"
+            ],
+            [
+              "*ufunguo* / *funguo*",
+              "oo-foo-NGOO-oh",
+              "key"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Note that not all of these belong to the *ki-/vi-* class. *Meza*, *taa* and *sahani* are loanwords in the *nyumba* class (unit 7); *mlango* is in the *mti* class (unit 16); *dirisha* and *sanduku* are in the *gari* class (unit 9). This course sets up the classes one at a time, so for now just memorize the plural forms as they are."
+        }
+      ]
+    },
+    {
+      "title": "Rangi — colors, and the ones that change prefix",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Colors fall into two groups, and the difference matters because only the first group changes prefix to match its noun."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Changes prefix",
+            "Meaning",
+            "Example, ki- class",
+            "Example, people"
+          ],
+          "rows": [
+            [
+              "*-eusi*",
+              "black",
+              "*cheusi*",
+              "*mweusi*"
+            ],
+            [
+              "*-eupe*",
+              "white",
+              "*cheupe*",
+              "*mweupe*"
+            ],
+            [
+              "*-ekundu*",
+              "red",
+              "*chekundu*",
+              "*mwekundu*"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Doesn't change",
+            "Meaning",
+            "Doesn't change",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*bluu*",
+              "blue",
+              "*kijani*",
+              "green"
+            ],
+            [
+              "*njano*",
+              "yellow",
+              "*kahawia*",
+              "brown"
+            ],
+            [
+              "*rangi ya machungwa*",
+              "orange",
+              "*kijivu*",
+              "gray"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "To ask: *Rangi gani?* (what color?). The answer can use *ni* or not: *Kitabu ni cheusi* or *kitabu cheusi* (a black book). Notice *kijani* (green) — literally \"like a leaf\", from *jani* (leaf); and *kahawia* (brown) — from *kahawa* (coffee)."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "kitu / vitu",
+      "baca": "KEE-too",
+      "en": "thing / things"
+    },
+    {
+      "sw": "kikapu / vikapu",
+      "baca": "kee-KAH-poo",
+      "en": "basket"
+    },
+    {
+      "sw": "kiatu / viatu",
+      "baca": "kee-AH-too",
+      "en": "shoe"
+    },
+    {
+      "sw": "kikombe / vikombe",
+      "baca": "kee-KOHM-beh",
+      "en": "cup"
+    },
+    {
+      "sw": "kitabu / vitabu",
+      "baca": "kee-TAH-boo",
+      "en": "book"
+    },
+    {
+      "sw": "kiti / viti",
+      "baca": "KEE-tee",
+      "en": "chair"
+    },
+    {
+      "sw": "kisu / visu",
+      "baca": "KEE-soo",
+      "en": "knife"
+    },
+    {
+      "sw": "chumba / vyumba",
+      "baca": "CHOOM-bah",
+      "en": "room"
+    },
+    {
+      "sw": "chakula / vyakula",
+      "baca": "chah-KOO-lah",
+      "en": "food"
+    },
+    {
+      "sw": "mkono / mikono",
+      "baca": "m-KOH-noh",
+      "en": "hand; arm"
+    },
+    {
+      "sw": "ngozi",
+      "baca": "NGOH-zee",
+      "en": "leather; skin"
+    },
+    {
+      "sw": "udongo",
+      "baca": "oo-DOH-ngoh",
+      "en": "clay; soil"
+    },
+    {
+      "sw": "ghali",
+      "baca": "GHAH-lee",
+      "en": "expensive"
+    },
+    {
+      "sw": "rahisi",
+      "baca": "rah-HEE-see",
+      "en": "cheap; easy"
+    },
+    {
+      "sw": "gumu",
+      "baca": "GOO-moo",
+      "en": "difficult; hard"
+    },
+    {
+      "sw": "-pya",
+      "baca": "pyah",
+      "en": "new"
+    },
+    {
+      "sw": "-eusi",
+      "baca": "EH-oo-see",
+      "en": "black"
+    },
+    {
+      "sw": "-eupe",
+      "baca": "EH-oo-peh",
+      "en": "white"
+    },
+    {
+      "sw": "-ekundu",
+      "baca": "eh-KOON-doo",
+      "en": "red"
+    },
+    {
+      "sw": "rangi",
+      "baca": "RAH-ngee",
+      "en": "color"
+    },
+    {
+      "sw": "hiki / hivi",
+      "baca": "HEE-kee / HEE-vee",
+      "en": "this / these (ki-/vi- class)"
+    },
+    {
+      "sw": "kile / vile",
+      "baca": "KEE-leh",
+      "en": "that / those (far)"
+    },
+    {
+      "sw": "hii / hizi",
+      "baca": "HEE-ee / HEE-zee",
+      "en": "this / these (nyumba class)"
+    },
+    {
+      "sw": "kule",
+      "baca": "KOO-leh",
+      "en": "over there"
+    },
+    {
+      "sw": "-ote",
+      "baca": "OH-teh",
+      "en": "all"
+    },
+    {
+      "sw": "kutengeneza",
+      "baca": "koo-teh-ngeh-NEH-zah",
+      "en": "to make; to repair"
+    },
+    {
+      "sw": "kununua",
+      "baca": "koo-noo-NOO-ah",
+      "en": "to buy"
+    },
+    {
+      "sw": "kuuza",
+      "baca": "koo-OO-zah",
+      "en": "to sell"
+    },
+    {
+      "sw": "soko / masoko",
+      "baca": "SOH-koh",
+      "en": "market"
+    },
+    {
+      "sw": "kweli",
+      "baca": "KWEH-lee",
+      "en": "true; truly"
+    },
+    {
+      "sw": "meza",
+      "baca": "MEH-zah",
+      "en": "table"
+    },
+    {
+      "sw": "mlango / milango",
+      "baca": "m-LAH-ngoh",
+      "en": "door"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Make these plural; the adjective changes too.",
+      "items": [
+        "kitabu kizuri → ____",
+        "kiti kidogo → ____",
+        "kikombe kipya → ____",
+        "kisu kikubwa → ____",
+        "chumba kizuri → ____",
+        "kiatu cheusi → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the right \"this\" demonstrative.",
+      "items": [
+        "kitabu ____",
+        "vitabu ____",
+        "mtu ____",
+        "watu ____",
+        "nyumba ____",
+        "gari ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Swahili.",
+      "items": [
+        "What is this thing?",
+        "This is a handmade basket.",
+        "Are these shoes expensive?",
+        "No, they're cheap.",
+        "How many cups are there?",
+        "I like that black one."
+      ]
+    },
+    {
+      "prompt": "Fill in the connector cha or vya.",
+      "items": [
+        "kikapu ____ mkono",
+        "viatu ____ ngozi",
+        "vikombe ____ udongo",
+        "kitabu ____ Kiswahili",
+        "chumba ____ wageni"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "gani / hiki / kitu / ni",
+        "vingapi / hivi / ni / vikombe",
+        "cheusi / ninapenda / kile",
+        "ni / viatu / ghali / hivi",
+        "vizuri / vikapu / ni / hivi"
+      ]
+    }
+  ],
+  "answers": [
+    "vitabu vizuri — viti vidogo — vikombe vipya — visu vikubwa — vyumba vizuri — viatu vyeusi",
+    "hiki — hivi — huyu — hawa — hii — hili",
+    "Hiki ni kitu gani? — Hiki ni kikapu cha mkono. — Viatu hivi ni ghali? — Hapana, ni rahisi. — Vikombe hivi ni vingapi? — Ninapenda kile cheusi.",
+    "cha — vya — vya — cha — cha",
+    "Hiki ni kitu gani? — Vikombe hivi ni vingapi? — Ninapenda kile cheusi. — Viatu hivi ni ghali. — Vikapu hivi ni vizuri."
+  ]
+}
