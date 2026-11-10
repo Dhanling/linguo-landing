@@ -1,0 +1,589 @@
+{
+  "title": "Shopping and comparing",
+  "title_target": "이거 얼마예요 — Igeo eolmayeyo",
+  "goal": "Get by at markets and in shops: ask prices, ask for another size or color, compare two items, and ask people to do things with -아/어 주세요.",
+  "bekal": [
+    "ask a price and understand the answer",
+    "ask someone to do something with -아/어 주세요",
+    "compare two things with 보다 and 제일",
+    "name colors and sizes",
+    "haggle politely without sounding pushy"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — At Namdaemun Market",
+      "intro": "Ani is looking for a jacket. Watch for the pattern -아/어 주세요: it appears four times in this short conversation, and you'll use it every day.",
+      "lines": [
+        {
+          "speaker": "아니:",
+          "text": "[저기요|Jeogiyo], [이|i] [자켓|jaket] [얼마예요|eolmayeyo]?",
+          "id": "Excuse me, how much is this jacket?",
+          "literal": "excuse-me, this — jacket — how-much — is?"
+        },
+        {
+          "speaker": "주인:",
+          "text": "[그거|Geugeo] [사만|saman] [오천|ocheon] [원이에요|wonieyo]. [좋은|Joeun] [거예요|geoyeyo].",
+          "id": "That one's forty-five thousand won. It's good quality.",
+          "literal": "that — forty-thousand — five-thousand — won — is. good-that — item — is."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[조금|Jogeum] [비싸요|bissayo]. [좀|Jom] [깎아|kkakka] [주세요|juseyo].",
+          "id": "It's a bit expensive. Could you give me a discount?",
+          "literal": "a-little — expensive. a-little — cut — give."
+        },
+        {
+          "speaker": "주인:",
+          "text": "[음|Eum]… [그럼|geureom] [사만|saman] [원|won] [하세요|haseyo].",
+          "id": "Hmm… all right, forty thousand won then.",
+          "literal": "mm… then, forty-thousand — won — do."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[감사합니다|Gamsahamnida]! [그런데|Geureonde] [다른|dareun] [색|saek] [있어요|isseoyo]?",
+          "id": "Thank you! Do you have other colors, though?",
+          "literal": "thank-you! by-the-way, other — color — exists?"
+        },
+        {
+          "speaker": "주인:",
+          "text": "[검은색|Geomeunsaek][하고|hago] [흰색|huinsaek] [있어요|isseoyo]. [뭐가|Mwoga] [좋아요|joayo]?",
+          "id": "There's black and white. Which do you like?",
+          "literal": "black-color — and — white-color — exist. what — subject — good?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[검은색이|Geomeunsaegi] [흰색보다|huinsaekboda] [좋아요|joayo]. [입어|Ibeo] [봐도|bwado] [돼요|dwaeyo]?",
+          "id": "Black is nicer than white. May I try it on?",
+          "literal": "black-color — subject — white-color — than — good. wear — try — even — OK?"
+        },
+        {
+          "speaker": "주인:",
+          "text": "[네|Ne], [입어|ibeo] [보세요|boseyo]. [사이즈는|Saijeuneun] [어떠세요|eotteoseyo]?",
+          "id": "Yes, go ahead. How's the size?",
+          "literal": "yes, wear — try. size — as-for — how (honorific)?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[조금|Jogeum] [커요|keoyo]. [더|Deo] [작은|jageun] [거|geo] [있어요|isseoyo]?",
+          "id": "A bit big. Do you have a smaller one?",
+          "literal": "a-little — big. more — small-that — item — exists?"
+        },
+        {
+          "speaker": "주인:",
+          "text": "[잠깐만|Jamkkanman] [기다려|gidaryeo] [주세요|juseyo]. [여기|Yeogi] [있어요|isseoyo].",
+          "id": "Just a moment, please. Here you go.",
+          "literal": "just-a-moment — wait — give. here — exists."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[이게|Ige] [제일|jeil] [좋아요|joayo]. [이거|Igeo] [주세요|juseyo].",
+          "id": "This one's the best. I'll take this one.",
+          "literal": "this — subject — most — good. this — give."
+        },
+        {
+          "speaker": "주인:",
+          "text": "[네|Ne], [카드로|kadeuro] [하시겠어요|hasigesseoyo]?",
+          "id": "All right, paying by card?",
+          "literal": "yes, card-with — will-do?"
+        }
+      ],
+      "notes": [
+        "**-아/어 주세요 means \"please do this for me\".** Take the 해요 form of the verb, drop 요, and add 주세요. 깎다 → 깎아 → 깎아 **주세요**. 기다리다 → 기다려 → 기다려 **주세요**. This pattern covers almost every request in Korean, and it's much more polite than the bare command -(으)세요.",
+        "**주세요 alone is for things, -아/어 주세요 for actions.** 물 주세요 (water, please) but 기다려 주세요 (please wait). Keeping the two apart is a small step that instantly makes your Korean sound more mature.",
+        "**보다 means \"than\" and comes after the thing being compared to.** 흰색**보다** 좋아요 = better than white. Korean needs no separate word for \"more\" in comparisons — 보다 is enough, though 더 is often added for emphasis: 흰색보다 **더** 좋아요.",
+        "**제일 and 가장 both mean \"most\".** 제일 is more common in speech, 가장 more written. Both go right before the adjective: 이게 **제일** 좋아요.",
+        "**-아/어 봐도 돼요? means \"may I try?\"** It combines two patterns: -아/어 보다 (try doing) and -아도 되다 (may). No need to take it apart yet; memorize the shop phrases whole: 입어 봐도 돼요? (may I try it on?), 먹어 봐도 돼요? (may I taste it?).",
+        "**Haggling in Korea has limits.** At traditional markets like Namdaemun or Dongdaemun, haggling is normal and expected. In regular shops, convenience stores, and malls, the price is the price — haggling there isn't clever, it's embarrassing. 좀 깎아 주세요 is a market phrase, not a mall phrase.",
+        "**이게 is 이거 + 이 merged.** 이거**가** is never said; the form used is 이게. Likewise 그게 and 저게. As objects: 이걸 (from 이거를), 그걸, 저걸.",
+        "**사만 오천 원 = 45,000 won.** Remember that Korean counts in units of 만 (ten thousand): forty-five thousand isn't \"forty-five thousand\" but \"four 만 five 천\". Practice reading prices until it's automatic — it's the skill you'll need first if you actually go to Korea."
+      ],
+      "grammars": [
+        {
+          "title": "-아/어 주세요 — asking politely",
+          "body": [
+            "Take the verb's 해요 form, drop 요, attach 주세요. No new rules."
+          ],
+          "table": {
+            "head": [
+              "Dictionary",
+              "해요체",
+              "Request",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "기다리다",
+                "기다려요",
+                "기다려 **주세요**",
+                "please wait"
+              ],
+              [
+                "깎다",
+                "깎아요",
+                "깎아 **주세요**",
+                "please lower (the price)"
+              ],
+              [
+                "말하다",
+                "말해요",
+                "말해 **주세요**",
+                "please tell me"
+              ],
+              [
+                "보여주다",
+                "보여줘요",
+                "보여 **주세요**",
+                "please show me"
+              ],
+              [
+                "도와주다",
+                "도와줘요",
+                "도와 **주세요**",
+                "please help me"
+              ],
+              [
+                "가르치다",
+                "가르쳐요",
+                "가르쳐 **주세요**",
+                "please teach me"
+              ],
+              [
+                "천천히 말하다",
+                "천천히 말해요",
+                "천천히 말해 **주세요**",
+                "please speak slowly"
+              ],
+              [
+                "다시 하다",
+                "다시 해요",
+                "다시 해 **주세요**",
+                "please repeat"
+              ]
+            ]
+          },
+          "after": [
+            "**An even more respectful form: -아/어 주시겠어요?** Literally \"would you do it for me?\". Use it with strangers in more formal situations, or when your request is a real favor: 도와주시겠어요?",
+            "**Add 좀 in front and your request instantly sounds friendlier.** 좀 기다려 주세요 is much softer than 기다려 주세요. Nearly all native speakers slip it in."
+          ]
+        },
+        {
+          "title": "Comparisons",
+          "body": [
+            "Three patterns that cover every comparison you need at A1."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Form",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "More … than",
+                "A가 B**보다** …",
+                "커피가 차**보다** 비싸요",
+                "coffee is more expensive than tea"
+              ],
+              [
+                "More (emphasis)",
+                "**더**",
+                "이게 **더** 좋아요",
+                "this one is better"
+              ],
+              [
+                "Less",
+                "**덜**",
+                "이게 **덜** 매워요",
+                "this one is less spicy"
+              ],
+              [
+                "Most",
+                "**제일 / 가장**",
+                "이게 **제일** 커요",
+                "this one is the biggest"
+              ],
+              [
+                "Same",
+                "A는 B**와 같아요**",
+                "이거는 그거와 같아요",
+                "this one is the same as that"
+              ],
+              [
+                "Different",
+                "A는 B**와 달라요**",
+                "이거는 그거와 달라요",
+                "this one is different from that"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **The order is the reverse of English.** English: \"coffee is more expensive **than tea**\". Korean: \"coffee **tea-than** expensive\" — the thing compared to comes first, the adjective last. If you build it in English order, you'll flip the meaning.",
+            "**The standard answer to \"which is more…?\"** is to repeat your choice: 커피하고 차 중에 뭐가 더 좋아요? → 커피가 더 좋아요. 중에 means \"among, between\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Colors, sizes, and shop words",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Color",
+            "Romanization",
+            "English",
+            "Color",
+            "Romanization",
+            "English"
+          ],
+          "rows": [
+            [
+              "빨간색",
+              "ppalgansaek",
+              "red",
+              "검은색",
+              "geomeunsaek",
+              "black"
+            ],
+            [
+              "파란색",
+              "paransaek",
+              "blue",
+              "흰색",
+              "huinsaek",
+              "white"
+            ],
+            [
+              "노란색",
+              "noransaek",
+              "yellow",
+              "회색",
+              "hoesaek",
+              "gray"
+            ],
+            [
+              "초록색",
+              "choroksaek",
+              "green",
+              "갈색",
+              "galsaek",
+              "brown"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "한국어",
+            "Romanization",
+            "English",
+            "한국어",
+            "Romanization",
+            "English"
+          ],
+          "rows": [
+            [
+              "옷",
+              "ot",
+              "clothes",
+              "값",
+              "gap",
+              "price"
+            ],
+            [
+              "바지",
+              "baji",
+              "pants",
+              "돈",
+              "don",
+              "money"
+            ],
+            [
+              "치마",
+              "chima",
+              "skirt",
+              "카드",
+              "kadeu",
+              "card"
+            ],
+            [
+              "신발",
+              "sinbal",
+              "shoes",
+              "현금",
+              "hyeongeum",
+              "cash"
+            ],
+            [
+              "가방",
+              "gabang",
+              "bag",
+              "영수증",
+              "yeongsujeung",
+              "receipt"
+            ],
+            [
+              "모자",
+              "moja",
+              "hat",
+              "사이즈",
+              "saijeu",
+              "size"
+            ],
+            [
+              "자켓",
+              "jaket",
+              "jacket",
+              "다른",
+              "dareun",
+              "other, different"
+            ],
+            [
+              "선물",
+              "seonmul",
+              "gift",
+              "봉투",
+              "bongtu",
+              "shopping bag"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Shop phrases worth memorizing whole"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "이거 얼마예요?",
+              "How much is this?"
+            ],
+            [
+              "좀 깎아 주세요.",
+              "Could you give me a discount?"
+            ],
+            [
+              "다른 색 있어요?",
+              "Do you have other colors?"
+            ],
+            [
+              "더 큰 거 있어요?",
+              "Do you have a bigger one?"
+            ],
+            [
+              "입어 봐도 돼요?",
+              "May I try it on?"
+            ],
+            [
+              "이걸로 할게요.",
+              "I'll take this one."
+            ],
+            [
+              "카드 돼요?",
+              "Can I pay by card?"
+            ],
+            [
+              "봉투 주세요.",
+              "A bag, please."
+            ],
+            [
+              "영수증 주세요.",
+              "The receipt, please."
+            ],
+            [
+              "그냥 볼게요.",
+              "I'm just looking."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "그냥 볼게요 — your escape line",
+          "items": [
+            "Korean shop staff will come over and offer help almost immediately. If you just want to browse, the phrase is 그냥 볼게요 (\"I'm just looking\").",
+            "It's polite, standard, and instantly understood. Without it, the only way out is usually to leave the shop."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "얼마",
+      "baca": "eolma",
+      "en": "how much (price)"
+    },
+    {
+      "ko": "값",
+      "baca": "gap",
+      "en": "price"
+    },
+    {
+      "ko": "돈",
+      "baca": "don",
+      "en": "money"
+    },
+    {
+      "ko": "깎아 주세요",
+      "baca": "kkakka juseyo",
+      "en": "please give me a discount"
+    },
+    {
+      "ko": "기다려 주세요",
+      "baca": "gidaryeo juseyo",
+      "en": "please wait"
+    },
+    {
+      "ko": "도와주세요",
+      "baca": "dowajuseyo",
+      "en": "please help me"
+    },
+    {
+      "ko": "보여 주세요",
+      "baca": "boyeo juseyo",
+      "en": "please show me"
+    },
+    {
+      "ko": "보다",
+      "baca": "boda",
+      "en": "than"
+    },
+    {
+      "ko": "더",
+      "baca": "deo",
+      "en": "more"
+    },
+    {
+      "ko": "덜",
+      "baca": "deol",
+      "en": "less"
+    },
+    {
+      "ko": "제일",
+      "baca": "jeil",
+      "en": "most"
+    },
+    {
+      "ko": "다른",
+      "baca": "dareun",
+      "en": "other, different"
+    },
+    {
+      "ko": "색",
+      "baca": "saek",
+      "en": "color"
+    },
+    {
+      "ko": "사이즈",
+      "baca": "saijeu",
+      "en": "size"
+    },
+    {
+      "ko": "커요",
+      "baca": "keoyo",
+      "en": "big"
+    },
+    {
+      "ko": "작아요",
+      "baca": "jagayo",
+      "en": "small"
+    },
+    {
+      "ko": "옷",
+      "baca": "ot",
+      "en": "clothes"
+    },
+    {
+      "ko": "신발",
+      "baca": "sinbal",
+      "en": "shoes"
+    },
+    {
+      "ko": "카드",
+      "baca": "kadeu",
+      "en": "card"
+    },
+    {
+      "ko": "현금",
+      "baca": "hyeongeum",
+      "en": "cash"
+    },
+    {
+      "ko": "영수증",
+      "baca": "yeongsujeung",
+      "en": "receipt"
+    },
+    {
+      "ko": "선물",
+      "baca": "seonmul",
+      "en": "gift"
+    },
+    {
+      "ko": "잠깐만",
+      "baca": "jamkkanman",
+      "en": "just a moment"
+    },
+    {
+      "ko": "그냥",
+      "baca": "geunyang",
+      "en": "just, simply"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Korean.",
+      "items": [
+        "How much is this?",
+        "It's a bit expensive.",
+        "Could you give me a discount?",
+        "Do you have other colors?",
+        "Do you have a smaller one?",
+        "I'll take this one."
+      ]
+    },
+    {
+      "prompt": "Turn into a request with 주세요.",
+      "items": [
+        "기다리다 → ____ 주세요",
+        "말하다 → ____ 주세요",
+        "가르치다 → ____ 주세요",
+        "깎다 → ____ 주세요",
+        "보여주다 → ____ 주세요"
+      ]
+    },
+    {
+      "prompt": "Make comparison sentences in hangeul.",
+      "items": [
+        "Coffee is more expensive than tea.",
+        "This one is better.",
+        "This one is the biggest.",
+        "Black is nicer than white.",
+        "This one is less spicy."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "얼마예요 / 이거 / ?",
+        "주세요 / 깎아 / 좀",
+        "있어요 / 색 / 다른 / ?",
+        "좋아요 / 흰색보다 / 검은색이",
+        "할게요 / 이걸로"
+      ]
+    }
+  ],
+  "answers": [
+    "이거 얼마예요? — 조금 비싸요. — 좀 깎아 주세요. — 다른 색 있어요? — 더 작은 거 있어요? — 이걸로 할게요.",
+    "기다려 — 말해 — 가르쳐 — 깎아 — 보여",
+    "커피가 차보다 비싸요. — 이게 더 좋아요. — 이게 제일 커요. — 검은색이 흰색보다 좋아요. — 이게 덜 매워요.",
+    "이거 얼마예요? — 좀 깎아 주세요. — 다른 색 있어요? — 검은색이 흰색보다 좋아요. — 이걸로 할게요."
+  ]
+}

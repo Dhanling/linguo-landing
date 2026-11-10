@@ -1,0 +1,487 @@
+{
+  "title": "Joining sentences, and making suggestions",
+  "title_target": "같이 갈까요 — Gachi galkkayo",
+  "goal": "Break free of short sentences: join two ideas into one with -고, -지만 and -아서/어서, then invite others along with -(으)ㄹ까요.",
+  "bekal": [
+    "linking two actions with -고",
+    "expressing contrast with -지만",
+    "expressing a reason with -아서/어서",
+    "suggesting and offering with -(으)ㄹ까요",
+    "wrapping up a conversation and saying goodbye properly"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — Planning the last day",
+      "intro": "The last unit. Notice that the sentences here are much longer than in unit one — not because the vocabulary is harder, but because the short sentences you've mastered are now joined into one.",
+      "lines": [
+        {
+          "speaker": "수지:",
+          "text": "[아니|Ani] [씨|ssi], [내일|naeil] [시간|sigan] [있으면|isseumyeon] [같이|gachi] [점심|jeomsim] [먹을까요|meogeulkkayo]?",
+          "id": "Ani, if you have time tomorrow, shall we have lunch together?",
+          "literal": "Ani — Ms., tomorrow — time — exists-if — together — lunch — eat-shall-we?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[좋아요|Joayo]! [오전에는|Ojeoneneun] [수업이|sueobi] [있지만|itjiman] [오후에는|ohueneun] [괜찮아요|gwaenchanayo].",
+          "id": "Sure! I have class in the morning, but the afternoon is free.",
+          "literal": "good! morning-in — as-for — class — subject — exists-but — afternoon-in — as-for — fine."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[그럼|Geureom] [한|han] [시에|sie] [만날까요|mannalkkayo]?",
+          "id": "Then shall we meet at one?",
+          "literal": "then, one — o'clock-at — meet-shall-we?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[네|Ne]. [밥을|Bapeul] [먹고|meokgo] [커피도|keopido] [마셔요|masyeoyo].",
+          "id": "Yes. Let's eat and have coffee too.",
+          "literal": "yes. rice — object — eat-and — coffee — also — drink."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[좋아요|Joayo]. [그런데|Geureonde] [아니|Ani] [씨|ssi], [다음|daeum] [주에|jue] [인도네시아에|Indonesiae] [가요|gayo]?",
+          "id": "Sounds good. By the way, Ani, are you going back to Indonesia next week?",
+          "literal": "good. by-the-way, Ani — Ms., next — week-in — Indonesia-to — go?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[네|Ne]. [한국|Hanguk] [생활이|saenghwari] [정말|jeongmal] [좋아서|joaseo] [가고|gago] [싶지|sipji] [않아요|anayo].",
+          "id": "Yes. Life in Korea has been so good that I don't want to leave.",
+          "literal": "yes. Korea — life — subject — really — good-because — go — want — not."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[저도|Jeodo] [아쉬워요|aswiwoyo]. [하지만|Hajiman] [또|tto] [올|ol] [거예요|geoyeyo], [그렇죠|geureotjyo]?",
+          "id": "I'm sad too. But you'll come back, won't you?",
+          "literal": "I — also — sorry. but — again — come-will — thing — is, right?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[당연하죠|Dangyeonhajyo]! [내년에|Naenyeone] [또|tto] [올게요|olgeyo].",
+          "id": "Of course! I'll come again next year.",
+          "literal": "of-course-right! next-year-in — again — will-come."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[그때는|Geuttaeneun] [한국말을|hangungmareul] [더|deo] [잘할|jalhal] [거예요|geoyeyo].",
+          "id": "By then your Korean will be even better.",
+          "literal": "then — as-for — Korean-speech — object — more — good-at-will — thing — is."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[열심히|Yeolsimhi] [공부할게요|gongbuhalgeyo]. [수지|Suji] [씨|ssi] [덕분에|deokbune] [많이|mani] [배웠어요|baewosseoyo].",
+          "id": "I'll study hard. I've learned a lot thanks to you, Suji.",
+          "literal": "diligently — will-study. Suji — Ms. — thanks-to — much — learned."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[저야말로|Jeoyamallo] [고마워요|gomawoyo]. [그럼|Geureom] [내일|naeil] [한|han] [시에|sie] [봐요|bwayo]!",
+          "id": "No, I'm the one who should thank you. See you tomorrow at one, then!",
+          "literal": "I — rather — thank-you. then, tomorrow — one — o'clock-at — see!"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[네|Ne], [내일|naeil] [봐요|bwayo]. [안녕히|Annyeonghi] [가세요|gaseyo]!",
+          "id": "Yes, see you tomorrow. Bye!",
+          "literal": "yes, tomorrow — see. in-peace — go!"
+        }
+      ],
+      "notes": [
+        "**-고 links two actions without saying how they're related.** 밥을 먹**고** 커피를 마셔요 = eat and then have coffee. It simply strings them together, without saying one causes the other. It's the easiest connector of all: attach it straight to the stem, vowel or consonant.",
+        "**-지만 means \"but\" and also attaches straight to the stem.** 있**지만**, 좋**지만**, 먹**지만**. The only difference from 하지만 (which starts a new sentence) is position: -지만 joins two parts into one sentence, 하지만 splits them into two.",
+        "**-아서/어서 expresses a reason, and follows the same rules as the 해요 form.** 좋아요 → 좋**아서** (because it's good). 먹어요 → 먹**어서**. 공부해요 → 공부**해서**. ⚠️ The reason always comes **first** and the result after — whereas English often puts \"because\" second.",
+        "**⚠️ -아서/어서 can't take the past tense.** \"Because it rained yesterday\" is not 비가 왔어서 but 비가 **와서**. The past is marked only on the last verb of the sentence: 비가 와서 집에 있**었**어요. Almost every learner makes this mistake, and it's very noticeable.",
+        "**⚠️ -아서/어서 also can't be followed by a command or suggestion.** \"Since it's raining, let's stay home\" can't be 비가 와서 집에 있을까요. For that you use another connector, -(으)니까: 비가 **오니까** 집에 있을까요. The rule looks minor but is a favorite exam question.",
+        "**-(으)ㄹ까요? covers two intentions: suggesting and offering.** 같이 갈까요? = shall we go together? (a suggestion). 제가 할까요? = shall I do it? (an offer). Both are much softer than asking directly, because they leave the decision to the other person.",
+        "**덕분에 means \"thanks to\".** It's used for good things and almost always to say thank you. Its counterpart 때문에 (\"because of\") is neutral and often used for bad things. Swapping them can turn praise into a subtle accusation.",
+        "**-죠 is a shortened -지요, and it asks for agreement.** 그렇죠? = \"right?\". 당연하죠! = \"of course!\". This ending makes a sentence sound friendly and inviting, and it's everywhere in real conversation."
+      ],
+      "grammars": [
+        {
+          "title": "Three connectors that round off A1",
+          "body": [
+            "All of them attach to the first verb, and tense is marked on the last verb of the sentence."
+          ],
+          "table": {
+            "head": [
+              "Connector",
+              "Meaning",
+              "How to attach",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**-고**",
+                "and, and then",
+                "straight to the stem",
+                "밥을 먹**고** 커피를 마셔요"
+              ],
+              [
+                "**-지만**",
+                "but",
+                "straight to the stem",
+                "비싸**지만** 맛있어요"
+              ],
+              [
+                "**-아서/어서**",
+                "because, and then",
+                "like the 해요 form",
+                "배고파**서** 밥을 먹었어요"
+              ],
+              [
+                "**-(으)면**",
+                "if",
+                "-면 / -으면",
+                "시간이 있으**면** 갈게요"
+              ],
+              [
+                "**-(으)니까**",
+                "because (can be followed by a suggestion)",
+                "-니까 / -으니까",
+                "비가 오**니까** 택시를 타요"
+              ]
+            ]
+          },
+          "after": [
+            "**-고 and -아서 can both mean \"and then\", and the difference is subtle but real.** 밥을 먹**고** 갔어요 = I ate, then left (two separate actions). 집에 가**서** 잤어요 = I went home and slept **there** (the second happens because of, or at the place of, the first). If the two actions are closely linked, -아서 is the right one.",
+            "**-(으)면 means \"if\" and is very common in polite requests:** 시간이 있으면 알려 주세요 (\"if you have time, please let me know\"). It softens whatever follows."
+          ]
+        },
+        {
+          "title": "-(으)ㄹ까요? — suggesting and offering",
+          "body": [
+            "The form is exactly like the -(으)ㄹ 거예요 and -(으)ㄹ 수 있어요 you've already mastered: ㄹ for vowel stems, 을 for consonant stems."
+          ],
+          "table": {
+            "head": [
+              "Purpose",
+              "Example",
+              "Meaning",
+              "Typical answer"
+            ],
+            "rows": [
+              [
+                "Suggesting",
+                "같이 **갈까요**?",
+                "shall we go together?",
+                "네, 좋아요 / 그래요"
+              ],
+              [
+                "Suggesting",
+                "점심 **먹을까요**?",
+                "shall we have lunch?",
+                "좋아요"
+              ],
+              [
+                "Offering",
+                "제가 **할까요**?",
+                "shall I do it?",
+                "네, 부탁해요"
+              ],
+              [
+                "Asking for an opinion",
+                "이거 어**떨까요**?",
+                "what about this one?",
+                "괜찮아요"
+              ],
+              [
+                "Wondering",
+                "비가 **올까요**?",
+                "I wonder if it'll rain?",
+                "글쎄요"
+              ]
+            ]
+          },
+          "after": [
+            "**For a firmer suggestion there's -(으)ㅂ시다** (갑시다 — \"let's go\"), but ⚠️ this form is **impolite to older people**, even though it looks formal. With a boss or anyone older, stick to -(으)ㄹ까요? or simply the 해요 form: 같이 가요.",
+            "**The safest way to suggest something in any situation is the plain 해요 form with rising intonation:** 같이 가요? It's polite, never out of place, and it's what Koreans use most in everyday life."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Wrapping up a conversation",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Korean has a fairly set order for closing, and following it makes your goodbye feel finished — not left hanging."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Step",
+            "Phrase",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "1. Signal the end",
+              "그럼…",
+              "Well then…"
+            ],
+            [
+              "2. Mention the next meeting",
+              "내일 봐요.",
+              "See you tomorrow."
+            ],
+            [
+              "",
+              "다음에 또 봐요.",
+              "See you again."
+            ],
+            [
+              "3. Say thank you",
+              "오늘 고마웠어요.",
+              "Thanks for today."
+            ],
+            [
+              "4. Say goodbye",
+              "안녕히 가세요.",
+              "Goodbye (to the one leaving)."
+            ],
+            [
+              "",
+              "안녕히 계세요.",
+              "Goodbye (to the one staying)."
+            ],
+            [
+              "5. For someone traveling",
+              "조심해서 가세요.",
+              "Have a safe trip."
+            ],
+            [
+              "",
+              "잘 다녀오세요.",
+              "Have a good trip and come back safely."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Phrases to close these twenty units"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Korean",
+            "Romanization",
+            "When to use it"
+          ],
+          "rows": [
+            [
+              "수고하셨습니다",
+              "sugohasyeotseumnida",
+              "To someone who has just finished work or a task"
+            ],
+            [
+              "고생하셨습니다",
+              "gosaenghasyeotseumnida",
+              "The same, with a sense of \"you've been through a lot\""
+            ],
+            [
+              "화이팅",
+              "hwaiting",
+              "Go for it! Shouted as encouragement"
+            ],
+            [
+              "잘 지내세요",
+              "jal jinaeseyo",
+              "Take care. For a longer parting"
+            ],
+            [
+              "또 만나요",
+              "tto mannayo",
+              "See you again"
+            ],
+            [
+              "연락할게요",
+              "yeollakhalgeyo",
+              "I'll be in touch"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "수고하셨습니다 — the phrase you'll hear most in Korea",
+          "items": [
+            "Said at the end of a meeting, a class, a work shift, to the courier delivering a parcel, to anyone who has just finished something. It means roughly \"thank you for your hard work\".",
+            "⚠️ To someone older or a boss, this form can sound as if you're evaluating their work. With them, 감사합니다 is safer.",
+            "The everyday forms are 수고했어요 (to someone younger or the same age) and 수고하세요 (to someone who is still carrying on with their work)."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Twenty units done. If you've worked through them seriously, you can now introduce yourself, point at things, count, tell the time, talk about yesterday, order food, go shopping, say what you want, decline politely, ask the way, and join all of it into flowing sentences. That's no small thing."
+        },
+        {
+          "type": "p",
+          "text": "수고하셨습니다. 화이팅!"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "고",
+      "baca": "go",
+      "en": "and, and then (connector)"
+    },
+    {
+      "ko": "지만",
+      "baca": "jiman",
+      "en": "but (connector)"
+    },
+    {
+      "ko": "아서 / 어서",
+      "baca": "aseo / eoseo",
+      "en": "because, and then (connector)"
+    },
+    {
+      "ko": "면 / 으면",
+      "baca": "myeon / eumyeon",
+      "en": "if"
+    },
+    {
+      "ko": "까요",
+      "baca": "kkayo",
+      "en": "shall we, how about"
+    },
+    {
+      "ko": "덕분에",
+      "baca": "deokbune",
+      "en": "thanks to"
+    },
+    {
+      "ko": "때문에",
+      "baca": "ttaemune",
+      "en": "because of"
+    },
+    {
+      "ko": "점심",
+      "baca": "jeomsim",
+      "en": "lunch"
+    },
+    {
+      "ko": "생활",
+      "baca": "saenghwal",
+      "en": "life"
+    },
+    {
+      "ko": "또",
+      "baca": "tto",
+      "en": "again"
+    },
+    {
+      "ko": "내년",
+      "baca": "naenyeon",
+      "en": "next year"
+    },
+    {
+      "ko": "그때",
+      "baca": "geuttae",
+      "en": "then, at that time"
+    },
+    {
+      "ko": "열심히",
+      "baca": "yeolsimhi",
+      "en": "hard, diligently"
+    },
+    {
+      "ko": "잘해요",
+      "baca": "jalhaeyo",
+      "en": "to be good at, do well"
+    },
+    {
+      "ko": "배웠어요",
+      "baca": "baewosseoyo",
+      "en": "learned"
+    },
+    {
+      "ko": "연락해요",
+      "baca": "yeollakaeyo",
+      "en": "to contact"
+    },
+    {
+      "ko": "지내요",
+      "baca": "jinaeyo",
+      "en": "to get along, be doing (well)"
+    },
+    {
+      "ko": "수고하셨습니다",
+      "baca": "sugohasyeotseumnida",
+      "en": "thank you for your hard work"
+    },
+    {
+      "ko": "화이팅",
+      "baca": "hwaiting",
+      "en": "go for it!"
+    },
+    {
+      "ko": "당연하죠",
+      "baca": "dangyeonhajyo",
+      "en": "of course"
+    },
+    {
+      "ko": "그렇죠",
+      "baca": "geureotjyo",
+      "en": "right?"
+    },
+    {
+      "ko": "글쎄요",
+      "baca": "geulsseyo",
+      "en": "well, I'm not sure"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Join with the right connector. Write out the full sentence.",
+      "items": [
+        "밥을 먹다 ____ 커피를 마셔요. Two actions in sequence.",
+        "비싸다 ____ 맛있어요. Contrast.",
+        "배고프다 ____ 밥을 먹었어요. Reason.",
+        "시간이 있다 ____ 갈게요. Condition.",
+        "오전에는 수업이 있다 ____ 오후에는 괜찮아요. Contrast."
+      ]
+    },
+    {
+      "prompt": "Change into the suggestion form with -(으)ㄹ까요.",
+      "items": [
+        "가다 → ____",
+        "먹다 → ____",
+        "만나다 → ____",
+        "보다 → ____",
+        "하다 → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Korean.",
+      "items": [
+        "Shall we have lunch together?",
+        "I have class in the morning, but the afternoon is free.",
+        "Then shall we meet at one?",
+        "I'll come again next year.",
+        "I'll study hard.",
+        "See you tomorrow."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "먹을까요 / 같이 / 점심 / ?",
+        "마셔요 / 밥을 / 커피를 / 먹고",
+        "괜찮아요 / 있지만 / 수업이 / 오후에는 / 오전에는",
+        "올게요 / 또 / 내년에",
+        "공부할게요 / 열심히"
+      ]
+    }
+  ],
+  "answers": [
+    "밥을 먹고 커피를 마셔요. — 비싸지만 맛있어요. — 배고파서 밥을 먹었어요. — 시간이 있으면 갈게요. — 오전에는 수업이 있지만 오후에는 괜찮아요.",
+    "갈까요 — 먹을까요 — 만날까요 — 볼까요 — 할까요",
+    "같이 점심 먹을까요? — 오전에는 수업이 있지만 오후에는 괜찮아요. — 그럼 한 시에 만날까요? — 내년에 또 올게요. — 열심히 공부할게요. — 내일 봐요.",
+    "같이 점심 먹을까요? — 밥을 먹고 커피를 마셔요. — 오전에는 수업이 있지만 오후에는 괜찮아요. — 내년에 또 올게요. — 열심히 공부할게요."
+  ]
+}

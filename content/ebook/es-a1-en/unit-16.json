@@ -1,0 +1,403 @@
+{
+  "title": "Making plans to meet",
+  "title_target": "Quedamos",
+  "goal": "Invite, accept and turn down invitations; agree on a time and place; talk about the weather.",
+  "bekal": [
+    "inviting someone out",
+    "accepting and declining politely",
+    "agreeing on a time and meeting place",
+    "talking about the weather"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Quedamos el sábado",
+      "intro": "Making a date: inviting, negotiating the time, agreeing on a place.",
+      "lines": [
+        {
+          "speaker": "Ana:",
+          "text": "Oye, ¿te apetece ir al cine el sábado?",
+          "id": "Hey, do you fancy going to the cinema on Saturday?",
+          "literal": "listen, to-you appeals go to-the cinema the Saturday?"
+        },
+        {
+          "speaker": "Luis:",
+          "text": "¡Vale! ¿A qué hora quedamos?",
+          "id": "OK! What time shall we meet?",
+          "literal": "OK! at what time we-arrange?"
+        },
+        {
+          "speaker": "Ana:",
+          "text": "La película empieza a las ocho. ¿Quedamos a las siete y media?",
+          "id": "The film starts at eight. Shall we meet at half past seven?",
+          "literal": "the film it-begins at the eight. we-arrange at the seven and half?"
+        },
+        {
+          "speaker": "Luis:",
+          "text": "Uf, a las siete y media no puedo. Trabajo hasta las siete.",
+          "id": "Ugh, I can't do half past seven. I work until seven.",
+          "literal": "ugh, at the seven and half not I-can. I-work until the seven."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Entonces a las ocho menos cuarto, en la puerta del cine.",
+          "id": "Then at a quarter to eight, at the cinema door.",
+          "literal": "then at the eight minus quarter, at the door of-the cinema."
+        },
+        {
+          "speaker": "Luis:",
+          "text": "Perfecto. ¿Y después cenamos algo?",
+          "id": "Perfect. And afterwards shall we have dinner?",
+          "literal": "perfect. and after we-dine something?"
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Me encantaría. Conozco un sitio muy bueno.",
+          "id": "I'd love to. I know a really good place.",
+          "literal": "to-me would-please-much. I-know a place very good."
+        },
+        {
+          "speaker": "Luis:",
+          "text": "¿Está lejos? Porque no tengo coche.",
+          "id": "Is it far? I don't have a car.",
+          "literal": "it-is-located far? because not I-have car."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "No, está al lado. Diez minutos andando.",
+          "id": "No, it's close. Ten minutes on foot.",
+          "literal": "no, it-is-located at-the side. ten minutes walking."
+        },
+        {
+          "speaker": "Luis:",
+          "text": "Genial. ¿Qué tiempo va a hacer el sábado?",
+          "id": "Great. What's the weather going to be like on Saturday?",
+          "literal": "great. what weather it-goes to make the Saturday?"
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Va a hacer bueno. Sol y veinticinco grados.",
+          "id": "It's going to be nice. Sunny and twenty-five degrees.",
+          "literal": "it-goes to make good. sun and twenty-five degrees."
+        },
+        {
+          "speaker": "Luis:",
+          "text": "Estupendo. Hasta el sábado, entonces.",
+          "id": "Great. See you Saturday, then.",
+          "literal": "great. until the Saturday, then."
+        }
+      ],
+      "notes": [
+        "**Oye** = \"hey\", \"listen\", a very common conversation opener among friends. The polite form is *oiga*, used more to call a waiter or a stranger.",
+        "**¿Te apetece…?** = \"do you feel like…?\" — the gentlest and most common way to invite someone in Spain. The pattern is exactly like *gustar*: *me apetece*, *te apetece*, *le apetece*. In Latin America *¿tienes ganas de…?* is more usual.",
+        "**Quedar = to arrange to meet.** *¿Quedamos a las siete?* — shall we meet at seven? *Hemos quedado* — we've arranged to meet. It's the most important social verb in everyday Spanish, and it has no one-word English equivalent.",
+        "**Saying no without saying no.** Spaniards rarely give a bare *no*. The formula: a short groan (*uf*, *qué pena*) + a reason + a counteroffer. *A las siete y media no puedo, trabajo hasta las siete. ¿A las ocho?*",
+        "**Me encantaría** = \"I'd love to\" — a conditional form, B1 grammar. Learn it whole; it's the warmest answer to an invitation.",
+        "**Conocer vs saber.** Both mean \"to know\". *Conocer* is for people and places you're **familiar with** (*conozco un sitio*, *conozco a Marta*); *saber* is for facts and skills (*sé dónde está*, *sé nadar*). Their *yo* forms are naughty: *conozco*, *sé*.",
+        "**Andando** = walking, on foot. This -ando / -iendo form matches English \"-ing\", and you'll meet it again in *estoy comiendo* (I'm eating). For now, just recognize it in *diez minutos andando*.",
+        "**Temperatures use grados.** *Veinticinco grados*, *tres grados bajo cero* (three below zero). Always Celsius."
+      ],
+      "grammars": [
+        {
+          "title": "The weather — el tiempo",
+          "body": [
+            "Weather is described with three verbs that have no subject at all. Which one is used is a matter of habit, not rules, so learn them in groups:"
+          ],
+          "table": {
+            "head": [
+              "Verb",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**hacer**",
+                "hace calor",
+                "it's hot"
+              ],
+              [
+                "",
+                "hace frío",
+                "it's cold"
+              ],
+              [
+                "",
+                "hace sol",
+                "it's sunny"
+              ],
+              [
+                "",
+                "hace viento",
+                "it's windy"
+              ],
+              [
+                "",
+                "hace buen / mal tiempo",
+                "the weather's nice / bad"
+              ],
+              [
+                "**haber**",
+                "hay niebla",
+                "it's foggy"
+              ],
+              [
+                "",
+                "hay tormenta",
+                "there's a storm"
+              ],
+              [
+                "",
+                "hay nubes",
+                "it's cloudy"
+              ],
+              [
+                "**on their own**",
+                "llueve",
+                "it's raining"
+              ],
+              [
+                "",
+                "nieva",
+                "it's snowing"
+              ],
+              [
+                "",
+                "está nublado",
+                "it's overcast"
+              ]
+            ]
+          },
+          "after": [
+            "Asking: *¿Qué tiempo hace?* (now) or *¿Qué tiempo va a hacer mañana?* (tomorrow). Note that *tiempo* here means weather, not time.",
+            "*Llover* and *nevar* also split in the middle, like the verbs in Unit 14: *llueve* from *llover*, *nieva* from *nevar*. But since rain has no subject, these are the only forms you'll ever need."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Inviting and replying",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Inviting",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "¿Te apetece ir al cine?",
+              "Fancy going to the cinema?"
+            ],
+            [
+              "¿Quieres venir conmigo?",
+              "Do you want to come with me?"
+            ],
+            [
+              "¿Vamos a tomar algo?",
+              "Shall we grab a drink?"
+            ],
+            [
+              "¿Quedamos el sábado?",
+              "Shall we meet on Saturday?"
+            ],
+            [
+              "¿Qué tal si vamos a la playa?",
+              "How about going to the beach?"
+            ],
+            [
+              "¿Te viene bien a las ocho?",
+              "Does eight o'clock suit you?"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Accepting",
+            "Declining"
+          ],
+          "rows": [
+            [
+              "¡Vale!",
+              "Lo siento, no puedo."
+            ],
+            [
+              "¡Genial!",
+              "Qué pena, ese día trabajo."
+            ],
+            [
+              "Me encantaría.",
+              "Me gustaría, pero estoy ocupado."
+            ],
+            [
+              "Buena idea.",
+              "Uf, ese día no me viene bien."
+            ],
+            [
+              "Por supuesto.",
+              "Mejor otro día, ¿vale?"
+            ],
+            [
+              "Ahí estaré.",
+              "Tengo otros planes, lo siento."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that the right-hand column almost never stops at no: nearly every reply offers another day. Declining without offering an alternative sounds like shutting the door."
+        }
+      ]
+    },
+    {
+      "title": "Culture corner",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "Weekends that start on Friday night",
+          "items": [
+            "Spanish evenings start late and end late. Meeting friends for dinner at 10 p.m. is normal, and bars only fill up after midnight.",
+            "*El puente* — \"the bridge\" — is when a public holiday falls on a Tuesday or Thursday, so the working day in between is taken off too. When two holidays are close together, people call it an *acueducto*.",
+            "Every town has its own yearly *fiestas*, sometimes a whole week long, and nearly all of them are linked to the town's patron saint. During that week, don't expect offices to keep normal hours.",
+            "Invitations in Spain are often last-minute — a message on Saturday morning for Saturday evening is normal, not rude. On the other hand, plans made three weeks ahead often need confirming again."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "es": "el plan",
+      "baca": "ehl plahn",
+      "en": "plan"
+    },
+    {
+      "es": "ir a…",
+      "baca": "eer ah",
+      "en": "to be going to…"
+    },
+    {
+      "es": "conocer",
+      "baca": "koh-noh-SEHR",
+      "en": "to know (a person, a place)"
+    },
+    {
+      "es": "la película",
+      "baca": "lah peh-LEE-koo-lah",
+      "en": "film, movie"
+    },
+    {
+      "es": "el cine",
+      "baca": "ehl SEE-neh",
+      "en": "cinema, movie theater"
+    },
+    {
+      "es": "el sitio",
+      "baca": "ehl SEE-tyoh",
+      "en": "place"
+    },
+    {
+      "es": "hace calor / frío",
+      "baca": "AH-seh kah-LOHR",
+      "en": "hot / cold"
+    },
+    {
+      "es": "está nublado",
+      "baca": "ehs-TAH noo-BLAH-doh",
+      "en": "overcast"
+    },
+    {
+      "es": "el grado",
+      "baca": "ehl GRAH-doh",
+      "en": "degree"
+    },
+    {
+      "es": "la playa",
+      "baca": "lah PLAH-yah",
+      "en": "beach"
+    },
+    {
+      "es": "oye / oiga",
+      "baca": "OH-yeh / OY-gah",
+      "en": "hey, listen"
+    },
+    {
+      "es": "vale",
+      "baca": "BAH-leh",
+      "en": "OK"
+    },
+    {
+      "es": "qué pena",
+      "baca": "keh PEH-nah",
+      "en": "what a shame"
+    },
+    {
+      "es": "volver",
+      "baca": "bohl-BEHR",
+      "en": "to go back, to return"
+    },
+    {
+      "es": "apetecer",
+      "baca": "ah-peh-teh-SEHR",
+      "en": "to feel like, to fancy"
+    },
+    {
+      "es": "hace sol",
+      "baca": "AH-seh sohl",
+      "en": "sunny"
+    },
+    {
+      "es": "llueve",
+      "baca": "YWEH-beh",
+      "en": "it's raining"
+    },
+    {
+      "es": "el verano",
+      "baca": "ehl beh-RAH-noh",
+      "en": "summer"
+    },
+    {
+      "es": "descansar",
+      "baca": "dehs-kahn-SAHR",
+      "en": "to rest"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right weather expression.",
+      "items": [
+        "En verano ____ mucho calor.",
+        "Hoy no hay sol, está ____ .",
+        "En invierno en Madrid a veces ____ .",
+        "Llevo paraguas porque ____ .",
+        "¿Qué ____ va a hacer mañana?"
+      ]
+    },
+    {
+      "prompt": "Write the dates out in words (day/month).",
+      "items": [
+        "15/5 ____",
+        "3/1 ____",
+        "24/12 ____",
+        "1/8 ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in order to make a correct Spanish sentence.",
+      "items": [
+        "hacer / ¿ / vas / qué / a / ?",
+        "playa / la / a / vamos / a / ir",
+        "sábado / ¿ / el / quedamos / ?",
+        "siento / puedo / lo / no",
+        "llover / va / mañana / a"
+      ]
+    }
+  ],
+  "answers": [
+    "hace — nublado — nieva — llueve — tiempo",
+    "el quince de mayo — el tres de enero — el veinticuatro de diciembre — el uno de agosto",
+    "¿Qué vas a hacer? — Vamos a ir a la playa. — ¿Quedamos el sábado? — No puedo, lo siento. — Mañana va a llover."
+  ],
+  "wave": "Review **Unit 14**: shop for five food items with their quantities, out loud."
+}

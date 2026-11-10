@@ -1,0 +1,561 @@
+{
+  "title": "Weather and seasons",
+  "title_target": "날씨가 어때요 — Nalssiga eottaeyo",
+  "goal": "Talk about the weather — Korea's number-one small-talk topic — while adding two new tools: conditional -(으)면 and the guess -(으)ㄹ 것 같아요.",
+  "bekal": [
+    "asking about and describing the weather",
+    "naming the four seasons and what happens in each",
+    "using -(으)면 for \"if\" sentences",
+    "making guesses with -(으)ㄹ 것 같아요",
+    "using the weather as an opening for small talk"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — A cloudy morning",
+      "intro": "Ani and Minjun meet at a bus stop. Notice that almost this whole conversation is weather small talk — and that this is completely normal in Korea.",
+      "lines": [
+        {
+          "speaker": "민준:",
+          "text": "[오늘|Oneul] [날씨가|nalssiga] [좀|jom] [흐리네요|heurineyo].",
+          "id": "It's a bit cloudy today, isn't it?",
+          "literal": "today — weather — subject — a-little — cloudy — I-see."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[네|Ne], [비가|biga] [올|ol] [것|geot] [같아요|gatayo]. [우산|Usan] [가져왔어요|gajyeowasseoyo]?",
+          "id": "Yes, it looks like rain. Did you bring an umbrella?",
+          "literal": "yes, rain — subject — come-will — thing — seems. umbrella — bring-came?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[아니요|Aniyo], [안|an] [가져왔어요|gajyeowasseoyo]. [비가|Biga] [오면|omyeon] [편의점에서|pyeonuijeomeseo] [살|sal] [거예요|geoyeyo].",
+          "id": "No, I didn't. If it rains, I'll buy one at a convenience store.",
+          "literal": "no, not — bring-came. rain — subject — come-if — convenience-store-at — buy-will — thing — is."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[요즘|Yojeum] [한국|Hanguk] [날씨가|nalssiga] [진짜|jinjja] [이상해요|isanghaeyo].",
+          "id": "Korean weather has been really strange lately.",
+          "literal": "these-days — Korea — weather — subject — really — strange."
+        },
+        {
+          "speaker": "민준:",
+          "text": "[맞아요|Majayo]. [어제는|Eojeneun] [더웠는데|deowonneunde] [오늘은|oneureun] [추워요|chuwoyo].",
+          "id": "Right. Yesterday was hot, but today it's cold.",
+          "literal": "right. yesterday — as-for — hot-was-but — today — as-for — cold."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[인도네시아는|Indonesianeun] [일년|illyeon] [내내|naenae] [더워요|deowoyo]. [사계절이|Sagyejeori] [없어요|eopseoyo].",
+          "id": "Indonesia is hot all year. There are no four seasons.",
+          "literal": "Indonesia — as-for — one-year — throughout — hot. four-seasons — subject — don't-exist."
+        },
+        {
+          "speaker": "민준:",
+          "text": "[그럼|Geureom] [겨울이|gyeouri] [처음이에요|cheoeumieyo]? [한국|Hanguk] [겨울은|gyeoureun] [정말|jeongmal] [추워요|chuwoyo].",
+          "id": "So this is your first winter? Korean winters are really cold.",
+          "literal": "then, winter — subject — first — is? Korea — winter — as-for — really — cold."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[눈을|Nuneul] [보고|bogo] [싶어요|sipeoyo]. [눈이|Nuni] [오면|omyeon] [사진을|sajineul] [찍을|jjigeul] [거예요|geoyeyo].",
+          "id": "I want to see snow. If it snows, I'll take photos.",
+          "literal": "snow — object — see — want. snow — subject — come-if — photo — object — take-will — thing — is."
+        },
+        {
+          "speaker": "민준:",
+          "text": "[십이월에|Sibiwore] [올|ol] [것|geot] [같아요|gatayo]. [그런데|Geureonde] [옷을|oseul] [따뜻하게|ttatteutage] [입어야|ibeoya] [돼요|dwaeyo].",
+          "id": "It'll probably snow in December. But you have to dress warmly.",
+          "literal": "December-in — come-will — thing — seems. by-the-way, clothes — object — warm-ly — wear-must — becomes."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[알겠어요|Algesseoyo]. [가을은|Gaeureun] [어때요|eottaeyo]?",
+          "id": "OK. What about autumn?",
+          "literal": "understood. autumn — as-for — how?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[가을이|Gaeuri] [제일|jeil] [좋아요|joayo]. [안|An] [덥고|deopgo] [안|an] [추워요|chuwoyo].",
+          "id": "Autumn is the best. Not hot and not cold.",
+          "literal": "autumn — subject — most — good. not — hot-and — not — cold."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[빨리|Ppalli] [가을이|gaeuri] [왔으면|wasseumyeon] [좋겠어요|jokesseoyo].",
+          "id": "I hope autumn comes soon.",
+          "literal": "quickly — autumn — subject — came-if — good-would-be."
+        }
+      ],
+      "notes": [
+        "**The weather is Korea's number-one conversation opener** — not empty small talk, but a way to start talking without pushing. If you don't know what to say to a neighbor in the elevator, 날씨가 좋네요 is always right.",
+        "**비가 와요 uses 오다 (come), not 내리다 or 있다.** In Korean, rain and snow \"come\": 비가 와요, 눈이 와요. 비가 내려요 (\"rain falls\") is also correct but sounds more poetic and written. ⚠️ 비가 있어요 is not a sentence at all.",
+        "**-네요 expresses something you've just noticed.** 흐리네요 = \"oh, it's cloudy, isn't it\" — unlike 흐려요, which simply reports. This ending makes your sentences sound alive and invites a response, and Koreans use it constantly.",
+        "**맞아요 means \"that's right\" as agreement.** It's warmer than 네 and far more common for agreeing with someone's opinion. The alternatives are 아니에요, or 글쎄요 (\"well, I'm not sure\") when you doubt it but don't want to contradict.",
+        "**-는데 in 더웠는데 means \"but\" or \"whereas\", setting up a background.** It's one of the connectors Koreans use most and one of the hardest to explain — the full picture waits for B1. For now, just recognize that it prepares a gentle contrast.",
+        "**따뜻하게 means \"warmly\".** The ending **-게** turns an adjective into an adverb, like English \"-ly\": 따뜻하다 (warm) → 따뜻하게 (warmly), 맵다 (spicy) → 맵게 (spicily), 크다 (big) → 크게 (in a big way). Very productive and easy: 안 맵게 해 주세요 (\"not spicy, please\") uses it.",
+        "**-았으면 좋겠어요 means \"I hope\" or \"I wish\".** Literally \"if it had happened, it would be good\". It's the standard way to express a hope in Korean, and it makes no sense translated word for word. Learn it whole: 빨리 왔으면 좋겠어요, 비가 안 왔으면 좋겠어요.",
+        "**일년 내내 means \"all year round\".** 내내 means \"throughout\", and it attaches to a span of time: 하루 종일 (all day), 일주일 내내 (all week)."
+      ],
+      "grammars": [
+        {
+          "title": "-(으)면 — if",
+          "body": [
+            "Attach **-면** to vowel stems, **-으면** to consonant stems. Just like the -(으)ㄹ pattern you already know."
+          ],
+          "table": {
+            "head": [
+              "Stem ends in",
+              "Form",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Vowel",
+                "**-면**",
+                "오다 → 오**면**",
+                "if (it) comes"
+              ],
+              [
+                "Vowel",
+                "**-면**",
+                "가다 → 가**면**",
+                "if (you) go"
+              ],
+              [
+                "Consonant",
+                "**-으면**",
+                "먹다 → 먹**으면**",
+                "if (you) eat"
+              ],
+              [
+                "Consonant",
+                "**-으면**",
+                "있다 → 있**으면**",
+                "if there is"
+              ],
+              [
+                "하다",
+                "**-하면**",
+                "공부하다 → 공부**하면**",
+                "if (you) study"
+              ],
+              [
+                "Past",
+                "**-았/었으면**",
+                "오다 → **왔으면**",
+                "if (it) has come"
+              ]
+            ]
+          },
+          "after": [
+            "**The condition always comes first, the result after.** 비가 오면 택시를 탈 거예요 = if it rains, I'll take a taxi. English can flip the order (\"I'll take a taxi if it rains\"); Korean can't.",
+            "**Unlike -아서/어서, -(으)면 can be followed by commands and suggestions:** 시간이 있으면 오세요 (if you have time, come). That's one reason it's so useful for polite requests.",
+            "**-(으)면 is also used for habits:** 주말이 되면 늦게 일어나요 (on weekends, I get up late). Here it's closer to \"whenever\" than to \"if\"."
+          ]
+        },
+        {
+          "title": "-(으)ㄹ 것 같아요 — it seems",
+          "body": [
+            "Expresses an uncertain guess. It uses the same -(으)ㄹ pattern, plus 것 같아요 (\"it seems so\")."
+          ],
+          "table": {
+            "head": [
+              "Meaning",
+              "Pattern",
+              "Example",
+              "Translation"
+            ],
+            "rows": [
+              [
+                "Guess about the future",
+                "**-(으)ㄹ 것 같아요**",
+                "비가 **올** 것 같아요",
+                "it looks like it'll rain"
+              ],
+              [
+                "Guess about now",
+                "**-는 것 같아요**",
+                "비가 **오는** 것 같아요",
+                "it seems to be raining"
+              ],
+              [
+                "Guess with an adjective",
+                "**-(으)ㄴ 것 같아요**",
+                "**좋은** 것 같아요",
+                "it seems good"
+              ],
+              [
+                "Guess about the past",
+                "**-(으)ㄴ 것 같아요**",
+                "비가 **온** 것 같아요",
+                "it seems it rained"
+              ],
+              [
+                "Short form",
+                "**같아요**",
+                "학생인 것 같아요",
+                "seems to be a student"
+              ]
+            ]
+          },
+          "after": [
+            "**Koreans use this form far more often than foreign learners expect.** Stating an opinion directly (맛있어요! — it's delicious!) sounds blunter than is usually considered polite; softening it (맛있는 것 같아요 — I think it's delicious) is the standard way to share an opinion without imposing it.",
+            "⚠️ So don't translate 것 같아요 literally every time. Often it doesn't mean the speaker is unsure — just that they're being polite, like English \"I think\".",
+            "At A1, master the first form, **-(으)ㄹ 것 같아요**. Just recognize the rest."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Weather and the four seasons",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "한국어",
+            "Romanization",
+            "English",
+            "한국어",
+            "Romanization",
+            "English"
+          ],
+          "rows": [
+            [
+              "날씨",
+              "nalssi",
+              "weather",
+              "비",
+              "bi",
+              "rain"
+            ],
+            [
+              "맑아요",
+              "malgayo",
+              "clear, sunny",
+              "눈",
+              "nun",
+              "snow"
+            ],
+            [
+              "흐려요",
+              "heuryeoyo",
+              "cloudy",
+              "바람",
+              "baram",
+              "wind"
+            ],
+            [
+              "더워요",
+              "deowoyo",
+              "hot",
+              "구름",
+              "gureum",
+              "cloud"
+            ],
+            [
+              "추워요",
+              "chuwoyo",
+              "cold",
+              "햇빛",
+              "haetbit",
+              "sunshine"
+            ],
+            [
+              "따뜻해요",
+              "ttatteutaeyo",
+              "warm",
+              "천둥",
+              "cheondung",
+              "thunder"
+            ],
+            [
+              "시원해요",
+              "siwonhaeyo",
+              "cool, refreshing",
+              "태풍",
+              "taepung",
+              "typhoon"
+            ],
+            [
+              "습해요",
+              "seuphaeyo",
+              "humid",
+              "장마",
+              "jangma",
+              "monsoon season"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Season",
+            "Korean",
+            "Romanization",
+            "Months",
+            "Typical"
+          ],
+          "rows": [
+            [
+              "Spring",
+              "봄",
+              "bom",
+              "March–May",
+              "벚꽃 (cherry blossoms), 미세먼지 (fine dust haze)"
+            ],
+            [
+              "Summer",
+              "여름",
+              "yeoreum",
+              "June–August",
+              "장마 (monsoon rains), 태풍, very humid"
+            ],
+            [
+              "Autumn",
+              "가을",
+              "gaeul",
+              "September–November",
+              "단풍 (autumn leaves), the clearest skies"
+            ],
+            [
+              "Winter",
+              "겨울",
+              "gyeoul",
+              "December–February",
+              "눈, temperatures can drop to −15 °C"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Weather sentences worth memorizing"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "오늘 날씨가 어때요?",
+              "What's the weather like today?"
+            ],
+            [
+              "날씨가 좋네요.",
+              "Nice weather, isn't it?"
+            ],
+            [
+              "비가 와요.",
+              "It's raining."
+            ],
+            [
+              "비가 올 것 같아요.",
+              "It looks like rain."
+            ],
+            [
+              "너무 더워요.",
+              "It's so hot."
+            ],
+            [
+              "감기 조심하세요.",
+              "Be careful not to catch a cold."
+            ],
+            [
+              "우산 가져가세요.",
+              "Take an umbrella."
+            ],
+            [
+              "어느 계절을 제일 좋아해요?",
+              "Which season do you like best?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Korean winter if you're not used to cold",
+          "items": [
+            "In January, Seoul often stays below zero all day, and the wind makes it feel much colder than the number says. If you grew up somewhere warm, this isn't just uncomfortable — it's exhausting.",
+            "Words you'll hear often: **내복** (thermal underwear), **핫팩** (disposable hand warmer) and **패딩** (thick down jacket). All three are sold everywhere and all three are worth the money.",
+            "⚠️ Indoors, Korea is actually very warm because the floors are heated (**온돌**). Layering is the answer: thick outside, thin underneath."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "날씨",
+      "baca": "nalssi",
+      "en": "weather"
+    },
+    {
+      "ko": "비",
+      "baca": "bi",
+      "en": "rain"
+    },
+    {
+      "ko": "눈",
+      "baca": "nun",
+      "en": "snow, eye"
+    },
+    {
+      "ko": "바람",
+      "baca": "baram",
+      "en": "wind"
+    },
+    {
+      "ko": "맑아요",
+      "baca": "malgayo",
+      "en": "clear, sunny"
+    },
+    {
+      "ko": "흐려요",
+      "baca": "heuryeoyo",
+      "en": "cloudy"
+    },
+    {
+      "ko": "따뜻해요",
+      "baca": "ttatteutaeyo",
+      "en": "warm"
+    },
+    {
+      "ko": "시원해요",
+      "baca": "siwonhaeyo",
+      "en": "cool"
+    },
+    {
+      "ko": "봄",
+      "baca": "bom",
+      "en": "spring"
+    },
+    {
+      "ko": "여름",
+      "baca": "yeoreum",
+      "en": "summer"
+    },
+    {
+      "ko": "가을",
+      "baca": "gaeul",
+      "en": "autumn, fall"
+    },
+    {
+      "ko": "겨울",
+      "baca": "gyeoul",
+      "en": "winter"
+    },
+    {
+      "ko": "계절",
+      "baca": "gyejeol",
+      "en": "season"
+    },
+    {
+      "ko": "면 / 으면",
+      "baca": "myeon / eumyeon",
+      "en": "if"
+    },
+    {
+      "ko": "것 같아요",
+      "baca": "geot gatayo",
+      "en": "it seems"
+    },
+    {
+      "ko": "네요",
+      "baca": "neyo",
+      "en": "oh, … (just noticed)"
+    },
+    {
+      "ko": "게",
+      "baca": "ge",
+      "en": "-ly (turns adjectives into adverbs)"
+    },
+    {
+      "ko": "요즘",
+      "baca": "yojeum",
+      "en": "lately, these days"
+    },
+    {
+      "ko": "맞아요",
+      "baca": "majayo",
+      "en": "that's right"
+    },
+    {
+      "ko": "이상해요",
+      "baca": "isanghaeyo",
+      "en": "strange"
+    },
+    {
+      "ko": "빨리",
+      "baca": "ppalli",
+      "en": "quickly, soon"
+    },
+    {
+      "ko": "감기",
+      "baca": "gamgi",
+      "en": "cold, flu"
+    },
+    {
+      "ko": "처음",
+      "baca": "cheoeum",
+      "en": "for the first time"
+    },
+    {
+      "ko": "좋겠어요",
+      "baca": "jokesseoyo",
+      "en": "I hope, that would be nice"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change into the conditional form with -(으)면.",
+      "items": [
+        "오다 → ____",
+        "가다 → ____",
+        "먹다 → ____",
+        "있다 → ____",
+        "공부하다 → ____"
+      ]
+    },
+    {
+      "prompt": "Change into the guessing form with -(으)ㄹ 것 같아요.",
+      "items": [
+        "오다 → ____ 것 같아요",
+        "가다 → ____ 것 같아요",
+        "먹다 → ____ 것 같아요",
+        "좋다 → ____ 것 같아요",
+        "하다 → ____ 것 같아요"
+      ]
+    },
+    {
+      "prompt": "Translate into Korean.",
+      "items": [
+        "What's the weather like today?",
+        "It looks like rain.",
+        "If it rains, I'll take a taxi.",
+        "Korean winters are really cold.",
+        "I want to see snow.",
+        "Autumn is the best."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "같아요 / 비가 / 올 / 것",
+        "거예요 / 오면 / 살 / 비가 / 편의점에서",
+        "추워요 / 겨울은 / 정말 / 한국",
+        "싶어요 / 눈을 / 보고",
+        "좋아요 / 가을이 / 제일"
+      ]
+    }
+  ],
+  "answers": [
+    "오면 — 가면 — 먹으면 — 있으면 — 공부하면",
+    "올 — 갈 — 먹을 — 좋을 — 할",
+    "오늘 날씨가 어때요? — 비가 올 것 같아요. — 비가 오면 택시를 탈 거예요. — 한국 겨울은 정말 추워요. — 눈을 보고 싶어요. — 가을이 제일 좋아요.",
+    "비가 올 것 같아요. — 비가 오면 편의점에서 살 거예요. — 한국 겨울은 정말 추워요. — 눈을 보고 싶어요. — 가을이 제일 좋아요."
+  ]
+}

@@ -1,0 +1,873 @@
+{
+  "title": "First introductions",
+  "title_target": "はじめまして — Hajimemashite",
+  "goal": "Greet people at any time of day, introduce yourself, say where you're from and what you do, ask someone's name, and say goodbye — in a polite tone that is safe to use with anyone.",
+  "bekal": [
+    "greet people from morning to night",
+    "say *I am X* with the pattern AはBです",
+    "say what something isn't with *じゃありません*",
+    "ask questions by adding か to the end of a sentence",
+    "say your country and your job"
+  ],
+  "dialogs": [
+    {
+      "title": "会話 1 — Evening class",
+      "intro": "Two people meet for the first time in a Japanese class. Read the Japanese aloud first, glancing up at the rōmaji above it, and only then look at the meaning.",
+      "lines": [
+        {
+          "speaker": "アニ:",
+          "text": "[こんにちは|Konnichiwa]。",
+          "id": "Good afternoon.",
+          "literal": "today-day."
+        },
+        {
+          "speaker": "たなか:",
+          "text": "[こんにちは|Konnichiwa]。[はじめまして|Hajimemashite]。",
+          "id": "Good afternoon. Nice to meet you.",
+          "literal": "today-day. for-the-first-time."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[はじめまして|Hajimemashite]。[わたしは|Watashi wa] [アニです|Ani desu]。",
+          "id": "Nice to meet you. I'm Ani.",
+          "literal": "for-the-first-time. I — as-for — Ani — am."
+        },
+        {
+          "speaker": "たなか:",
+          "text": "[たなかです|Tanaka desu]。[どうぞ|Dōzo] [よろしく|yoroshiku] [おねがいします|onegaishimasu]。",
+          "id": "I'm Tanaka. Please treat me kindly.",
+          "literal": "Tanaka — am. please — well — I-ask."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[こちらこそ|Kochira koso] [よろしく|yoroshiku] [おねがいします|onegaishimasu]。",
+          "id": "Likewise, please treat me kindly.",
+          "literal": "this-side — rather — well — I-ask."
+        },
+        {
+          "speaker": "たなか:",
+          "text": "[アニさんは|Ani-san wa] [がくせいですか|gakusei desu ka]。",
+          "id": "Ani, are you a student?",
+          "literal": "Ani-san — as-for — student — are — [question]"
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[はい|Hai]、[がくせいです|gakusei desu]。[たなかさんは|Tanaka-san wa]？",
+          "id": "Yes, I'm a student. And you, Mr. Tanaka?",
+          "literal": "yes, student — am. Tanaka-san — as-for?"
+        },
+        {
+          "speaker": "たなか:",
+          "text": "[わたしは|Watashi wa] [がくせいじゃありません|gakusei ja arimasen]。[かいしゃいんです|Kaishain desu]。",
+          "id": "I'm not a student. I'm an office worker.",
+          "literal": "I — as-for — student — am-not. company-person — am."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "そうですか。[しごとは|Shigoto wa] [たいへんですか|taihen desu ka]。",
+          "id": "I see. Is the work hard?",
+          "literal": "so — is — [question]. work — as-for — hard — is — [question]"
+        },
+        {
+          "speaker": "たなか:",
+          "text": "[ちょっと|Chotto] [たいへんです|taihen desu]。でも、[おもしろいです|omoshiroi desu]。",
+          "id": "A little. But it's interesting.",
+          "literal": "a-little — hard — is. but, interesting — is."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "いいですね。[じゃあ|Jā]、また [あした|ashita]。",
+          "id": "That's good. Well then, see you tomorrow.",
+          "literal": "good — is — isn't-it. well-then, again tomorrow."
+        },
+        {
+          "speaker": "たなか:",
+          "text": "[さようなら|Sayōnara]。[きを|Ki o] つけて。",
+          "id": "Goodbye. Take care.",
+          "literal": "goodbye. spirit — will — put-on."
+        }
+      ],
+      "notes": [
+        "**はじめまして is not “hello”.** It literally means “for the first time”, and is used **only at a first meeting**. Greeting an old friend with はじめまして sounds as if you've forgotten them. For everyday greetings, use こんにちは.",
+        "**よろしくおねがいします has no single translation.** Literally it's “please treat me well”, and it is used far beyond introductions: when handing over a task, when joining a new team, when ending an email. Think of it as “let's make this go well together”. In an introduction it is almost obligatory — to Japanese ears, an introduction without it feels unfinished.",
+        "**こちらこそ = “no, *I* should say that”.** It returns a kind word: if the other person says よろしく first, the most natural reply is こちらこそよろしくおねがいします.",
+        "**さん is not exactly “Mr./Ms.”, but it's used almost always.** さん goes after other people's names whatever their gender or age. The key rule: **never attach it to your own name**. Calling yourself “たなかさんです” sounds like you're flattering yourself.",
+        "**そうですか with a falling tone = “oh, I see”.** With a rising tone it becomes “oh, really?”. The tone makes the difference, not the words. It's one of the most frequent phrases in Japanese conversation — a kind of “uh-huh” that shows you're still listening.",
+        "**でも = but, at the start of a sentence.** Notice that でも begins a new sentence; it doesn't join two clauses mid-sentence the way English “but” often does."
+      ],
+      "grammars": [
+        {
+          "title": "Core pattern: A [は|wa] B [です|desu]",
+          "body": [
+            "This is the first and most important pattern in Japanese: **topic + [は|wa] + comment + [です|desu]**.",
+            "**[は|wa]** here is read *wa*, not *ha*. This is the one big exception in reading hiragana, and you'll meet it in almost every sentence.",
+            "**[は|wa] marks the topic**, not the subject. The most honest translation is “as for …”: [わたしはアニです|watashi wa Ani desu] = “as for me, Ani”. The difference will matter later, when one sentence has both a topic and a subject.",
+            "**[です|desu] means “is/am/are”**, and also signals politeness. It goes at the **end** of the sentence — in Japanese, the verb always comes last.",
+            "Pronunciation: [です|desu] is said *dess*, not *de-su*. The final u is barely audible."
+          ],
+          "table": {
+            "head": [
+              "Topic (は)",
+              "Comment",
+              "です",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "[わたしは|watashi wa]",
+                "[アニ|Ani]",
+                "です",
+                "I'm Ani."
+              ],
+              [
+                "[わたしは|watashi wa]",
+                "[がくせい|gakusei]",
+                "です",
+                "I'm a student."
+              ],
+              [
+                "[たなかさんは|Tanaka-san wa]",
+                "[かいしゃいん|kaishain]",
+                "です",
+                "Mr. Tanaka is an office worker."
+              ],
+              [
+                "[しごとは|shigoto wa]",
+                "[たいへん|taihen]",
+                "です",
+                "The work is hard."
+              ]
+            ]
+          },
+          "after": [
+            "**The topic can be dropped.** Once it's clear who you're talking about, [わたしは|watashi wa] disappears: [がくせいです|gakusei desu] already means “I'm a student”. Japanese speakers drop it far more often than beginners expect — sentences that keep starting with [わたしは|watashi wa] sound like a textbook translation."
+          ]
+        },
+        {
+          "title": "Asking: just add [か|ka]",
+          "body": [
+            "Japanese **does not change the word order** to ask a question, and doesn't need a question mark. Just attach **[か|ka]** to the end.",
+            "[がくせいです|gakusei desu] = “You are a student.” → [がくせいですか|gakusei desu ka] = “Are you a student?”",
+            "Since [か|ka] already marks the question, ？ is actually redundant. Formal writing ends questions with a plain 。. The ？ is still used in text messages and casual speech — usually precisely when the [か|ka] has been dropped."
+          ],
+          "table": {
+            "head": [
+              "Statement",
+              "Question",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "[がくせいです|gakusei desu]",
+                "[がくせいですか|gakusei desu ka]",
+                "Are you a student?"
+              ],
+              [
+                "[にほんじんです|Nihonjin desu]",
+                "[にほんじんですか|Nihonjin desu ka]",
+                "Are you Japanese?"
+              ],
+              [
+                "[たなかさんです|Tanaka-san desu]",
+                "[たなかさんですか|Tanaka-san desu ka]",
+                "Are you Mr. Tanaka?"
+              ]
+            ]
+          },
+          "after": [
+            "**Answering:** [はい|hai] (yes) or [いいえ|iie] (no). Politeness doesn't stop there — after [はい|hai] the sentence is usually repeated: [はい|hai]、[がくせいです|gakusei desu]."
+          ]
+        },
+        {
+          "title": "Saying “not”: [じゃありません|ja arimasen]",
+          "body": [
+            "The opposite of [です|desu] is **[じゃありません|ja arimasen]**. It sits in exactly the same place: at the end of the sentence.",
+            "[わたしはがくせいです|watashi wa gakusei desu] → [わたしはがくせいじゃありません|watashi wa gakusei ja arimasen].",
+            "There are three forms with the same meaning; they differ only in formality:"
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Feel",
+              "Where it's used"
+            ],
+            "rows": [
+              [
+                "[じゃありません|ja arimasen]",
+                "Polite, natural",
+                "Polite everyday conversation. Use this one."
+              ],
+              [
+                "[ではありません|de wa arimasen]",
+                "Polite, rather formal",
+                "Writing, presentations, announcements."
+              ],
+              [
+                "[じゃないです|ja nai desu]",
+                "Polite, casual",
+                "Chatting with friends, still polite."
+              ]
+            ]
+          },
+          "after": [
+            "**Before you ask:** [じゃ|ja] is really a contraction of [では|dewa] said quickly. Spoken Japanese is full of contractions like this, and the contraction is almost always what you'll hear in real life."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "会話 2 — At the front desk",
+      "intro": "Ani is signing up at a language school. Notice that the receptionist uses more refined forms than in the first dialogue — note おなまえ, not なまえ.",
+      "lines": [
+        {
+          "speaker": "うけつけ:",
+          "text": "[いらっしゃいませ|Irasshaimase]。",
+          "id": "Welcome.",
+          "literal": "please-come (honorific)."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[すみません|Sumimasen]。[にほんごの|Nihongo no] [クラスは|kurasu wa]…",
+          "id": "Excuse me. About the Japanese class…",
+          "literal": "excuse-me. Japan-language — 's — class — as-for…"
+        },
+        {
+          "speaker": "うけつけ:",
+          "text": "はい。[おなまえは|Onamae wa]？",
+          "id": "Yes. Your name?",
+          "literal": "honorable-name — as-for?"
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[アニ・ウィジャヤです|Ani Wijaya desu]。",
+          "id": "Ani Wijaya.",
+          "literal": "Ani Wijaya — am."
+        },
+        {
+          "speaker": "うけつけ:",
+          "text": "[アニさんですね|Ani-san desu ne]。[おくには|Okuni wa]？",
+          "id": "Ms. Ani, then. Which country are you from?",
+          "literal": "Ani-san — is — right. honorable-country — as-for?"
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[インドネシアです|Indoneshia desu]。[ジャカルタから|Jakaruta kara] [きました|kimashita]。",
+          "id": "Indonesia. I came from Jakarta.",
+          "literal": "Indonesia — is. Jakarta — from — came."
+        },
+        {
+          "speaker": "うけつけ:",
+          "text": "[おしごとは|Oshigoto wa] [なんですか|nan desu ka]。",
+          "id": "What do you do for work?",
+          "literal": "honorable-work — as-for — what — is — [question]"
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[エンジニアです|Enjinia desu]。でも、[いまは|ima wa] [がくせいです|gakusei desu]。",
+          "id": "I'm an engineer. But right now I'm a student.",
+          "literal": "engineer — am. but, now — as-for — student — am."
+        },
+        {
+          "speaker": "うけつけ:",
+          "text": "わかりました。[これは|Kore wa] [がっこうの|gakkō no] カードです。",
+          "id": "Certainly. Here is your school card.",
+          "literal": "understood. this — as-for — school — 's — card — is."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[ありがとうございます|Arigatō gozaimasu]。",
+          "id": "Thank you very much.",
+          "literal": "thank-you (full polite form)."
+        },
+        {
+          "speaker": "うけつけ:",
+          "text": "[クラスは|Kurasu wa] [あしたからです|ashita kara desu]。[きょうしつは|Kyōshitsu wa] 2かいです。",
+          "id": "Classes start tomorrow. The classroom is on the 2nd floor.",
+          "literal": "class — as-for — tomorrow — from — is. classroom — as-for — 2-floor — is."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "はい、わかりました。[しつれいします|Shitsurei shimasu]。",
+          "id": "Yes, understood. Excuse me.",
+          "literal": "yes, understood. rudeness — I-do."
+        }
+      ],
+      "notes": [
+        "**お before a word = politeness lent to the other person.** なまえ = name, おなまえ = your name. The rule is simple: use お for **other people's** things, never for your own. So おなまえは？ to ask, but to answer just なまえはアニです — or, more often, simply アニです.",
+        "**A sentence left hanging on purpose.** にほんごのクラスは… stops halfway, and that is **not a mistake**. Trailing off is Japanese politeness: you leave the other person to finish the thought instead of demanding. Beginners often feel they must complete it; Japanese speakers often don't.",
+        "**すみません has three meanings at once:** “excuse me” (to get attention), “sorry” (for a small mistake), and “thank you” (when you've put someone out). If you can't decide between this and ありがとう, すみません is rarely wrong.",
+        "**ね at the end of a sentence = seeking agreement**, like “right?” or “isn't it?” in English. アニさんですね = “Ms. Ani, right?”. This tiny word softens a sentence noticeably — without ね, a sentence can sound like a data check.",
+        "**しつれいします literally means “I commit a rudeness”** and is used when entering or leaving a room, or ending a phone call. This, not さようなら, is what you say at the office — さようなら feels like a long farewell.",
+        "**きました = “came”.** This is the past form; you'll learn it fully in Unit 10. For now, memorize ジャカルタからきました as one ready-made introduction phrase."
+      ],
+      "grammars": [
+        {
+          "title": "Nationality and language: ～[じん|jin] and ～[ご|go]",
+          "body": [
+            "Country names are written in katakana (except a few Asian countries that have their own kanji). From the country name, two more words form automatically:",
+            "**～[じん|jin] (人)** = a person from that country. **～[ご|go] ([語|go])** = that country's language.",
+            "This pattern has almost no exceptions, so one country name gives you three words at once."
+          ],
+          "table": {
+            "head": [
+              "Country",
+              "Person (～じん)",
+              "Language (～ご)"
+            ],
+            "rows": [
+              [
+                "[インドネシア|Indoneshia] Indonesia",
+                "[インドネシアじん|Indoneshia-jin]",
+                "[インドネシアご|Indoneshia-go]"
+              ],
+              [
+                "[にほん|Nihon] 日本 Japan",
+                "[にほんじん|Nihonjin]",
+                "[にほんご|Nihongo]"
+              ],
+              [
+                "[かんこく|Kankoku] South Korea",
+                "[かんこくじん|Kankokujin]",
+                "[かんこくご|Kankokugo]"
+              ],
+              [
+                "[ちゅうごく|Chūgoku] China",
+                "[ちゅうごくじん|Chūgokujin]",
+                "[ちゅうごくご|Chūgokugo]"
+              ],
+              [
+                "[アメリカ|Amerika] USA",
+                "[アメリカじん|Amerika-jin]",
+                "[えいご|eigo] (English)"
+              ],
+              [
+                "[マレーシア|Marēshia] Malaysia",
+                "[マレーシアじん|Marēshia-jin]",
+                "[マレーご|Marē-go]"
+              ]
+            ]
+          },
+          "after": [
+            "**One exception to memorize:** English is **not** [イギリスご|igirisugo] but **[えいご|eigo]**. Arabic, too: [アラビアご|arabiago]. Otherwise, the pattern holds."
+          ]
+        },
+        {
+          "title": "Question words: [なん|nan] / [だれ|dare] / [どこ|doko]",
+          "body": [
+            "Japanese does not move question words to the front of the sentence the way English does. The question word **sits in the same position** as the answer — just swap in the part you don't know.",
+            "[しごとはエンジニアです|shigoto wa enjinia desu] → [しごとは|shigoto wa]**[なん|nan]**[ですか|desu ka]. It doesn't move an inch."
+          ],
+          "table": {
+            "head": [
+              "Question word",
+              "Meaning",
+              "Example sentence"
+            ],
+            "rows": [
+              [
+                "[なん|nan] / [なに|nani]",
+                "what",
+                "[おしごとは|Oshigoto wa] [なんですか|nan desu ka]. — What do you do for work?"
+              ],
+              [
+                "[だれ|dare]",
+                "who",
+                "[あのひとは|Ano hito wa] [だれですか|dare desu ka]. — Who is that person?"
+              ],
+              [
+                "[どこ|doko]",
+                "where",
+                "[トイレは|Toire wa] [どこですか|doko desu ka]. — Where is the restroom?"
+              ],
+              [
+                "[どちら|dochira]",
+                "where/which (polite)",
+                "[おくには|Okuni wa] [どちらですか|dochira desu ka]. — Which country are you from?"
+              ]
+            ]
+          },
+          "after": [
+            "**[なん|nan] or [なに|nani]?** Both are written 何. Use **[なん|nan]** before [です|desu] and before t/d/n sounds ([なんですか|nan desu ka], [なんじ|nanji]). Use **[なに|nani]** elsewhere ([なにを|nani o] [たべますか|tabemasu ka]). If you get it wrong you'll still be understood — your ear will correct it over time.",
+            "⚠️ **Questions with a question word aren't answered with [はい|hai]/[いいえ|iie].** Answering [おしごとはなんですか|oshigoto wa nan desu ka] with [はい|hai] makes no sense — just as “Yes” makes no sense as an answer to “What do you do?”"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Greetings through the day",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Japanese greetings are tied to the time of day, and the boundaries are stricter than in English. Saying おはようございます in the late afternoon sounds odd, not just slightly off."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Greeting",
+            "When",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "[おはようございます|Ohayō gozaimasu]",
+              "Morning until about 10",
+              "To close friends, just おはよう. At work it's also used as the first greeting of the day — even if the shift starts in the evening."
+            ],
+            [
+              "[こんにちは|Konnichiwa]",
+              "About 10 a.m. until sunset",
+              "The safest greeting when in doubt."
+            ],
+            [
+              "[こんばんは|Konbanwa]",
+              "After dark",
+              "For meeting, not for parting."
+            ],
+            [
+              "[おやすみなさい|Oyasuminasai]",
+              "Before bed",
+              "Used when parting at night, not when meeting."
+            ],
+            [
+              "[さようなら|Sayōnara]",
+              "Parting",
+              "Feels heavy — used when you won't meet for a long time. For everyday partings, じゃあまた or またあした is far more natural."
+            ],
+            [
+              "[おつかれさまです|Otsukaresama desu]",
+              "Any time at work",
+              "Literally “you must be tired”. The all-purpose office greeting: when passing in the hallway, when leaving, when closing a meeting."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Bowing (おじぎ).** Japanese greetings almost always come with a small bow. Rule of thumb: the deeper the bow, the greater the politeness. A 15° nod for everyday greetings, 30° for thanks and formal introductions, 45° for a sincere apology. Keep your back straight and pause briefly at the lowest point — a hurried bow reads as insincere."
+        }
+      ]
+    },
+    {
+      "title": "Names, order, and forms of address",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Japanese people say the **family name first**, then the given name: たなか ゆうこ = family Tanaka, given name Yuko. And in everyday life it's the **family name** that's used — たなかさん, not ゆうこさん. Calling someone by their given name signals a closeness that may not exist yet."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Suffix",
+            "Used for",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "**～さん**",
+              "Almost everyone",
+              "Safe for anyone, regardless of gender or age. When in doubt, use this."
+            ],
+            [
+              "**～せんせい**",
+              "Teachers, doctors, lawyers",
+              "Replaces さん, not combined: たなかせんせい, not たなかせんせいさん."
+            ],
+            [
+              "**～くん**",
+              "Boys/young men, close friends",
+              "Used for juniors or equals, not for superiors."
+            ],
+            [
+              "**～ちゃん**",
+              "Small children, very close friends",
+              "Used with someone you've just met, it sounds condescending."
+            ],
+            [
+              "**～さま**",
+              "Customers, letter recipients",
+              "Very respectful. You'll hear it often in shops: おきゃくさま."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Your name in katakana",
+          "items": [
+            "Foreign names are written in katakana, adapted to Japanese syllables: **Budi → ブディ**, **Sari → サリ**, **John → ジョン**, **Emma → エマ**, **Michael → マイケル**, **Lisa → リサ**.",
+            "A consonant standing alone gets a u (or an o after t/d): Mark → マー**ク**, Robert → ロバー**ト**.",
+            "If your name is long, Japanese people will usually use just part of it — that's not rudeness, just their way of making your name pronounceable."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Putting together your own introduction",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A self-introduction (**じこしょうかい**) has a set structure in Japan, and people really use it — on the first day at work, in class, at meetings. These lines are all you need:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Step",
+            "Sentence",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "1. Opening",
+              "[はじめまして|Hajimemashite]。",
+              "Nice to meet you."
+            ],
+            [
+              "2. Name",
+              "[わたしは|Watashi wa] ___ [です|desu]。",
+              "I'm ___."
+            ],
+            [
+              "3. Origin",
+              "___ [から|kara] [きました|kimashita]。",
+              "I come from ___."
+            ],
+            [
+              "4. Job",
+              "[しごとは|Shigoto wa] ___ [です|desu]。",
+              "I work as ___."
+            ],
+            [
+              "5. Closing",
+              "[どうぞ|Dōzo] [よろしく|yoroshiku] [おねがいします|onegaishimasu]。",
+              "Please treat me kindly."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "A complete example",
+          "items": [
+            "[はじめまして|Hajimemashite]。[わたしは|Watashi wa] [ブディです|Budi desu]。[インドネシアの|Indoneshia no] [バンドンから|Bandon kara] [きました|kimashita]。[しごとは|Shigoto wa] [エンジニアです|enjinia desu]。[どうぞ|Dōzo] [よろしく|yoroshiku] [おねがいします|onegaishimasu]。",
+            "Nice to meet you. I'm Budi. I come from Bandung, Indonesia. I work as an engineer. Please treat me kindly.",
+            "Say it aloud five times with your own name. This is the sentence you'll use most in your first month."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ja": "[こんにちは|konnichiwa]",
+      "baca": "こんにちは · konnichiwa",
+      "en": "good afternoon; hello"
+    },
+    {
+      "ja": "[おはようございます|ohayō gozaimasu]",
+      "baca": "おはようございます · ohayō gozaimasu",
+      "en": "good morning"
+    },
+    {
+      "ja": "[こんばんは|konbanwa]",
+      "baca": "こんばんは · konbanwa",
+      "en": "good evening (when meeting)"
+    },
+    {
+      "ja": "[おやすみなさい|oyasuminasai]",
+      "baca": "おやすみなさい · oyasuminasai",
+      "en": "good night"
+    },
+    {
+      "ja": "[さようなら|sayōnara]",
+      "baca": "さようなら · sayōnara",
+      "en": "goodbye"
+    },
+    {
+      "ja": "[はじめまして|hajimemashite]",
+      "baca": "はじめまして · hajimemashite",
+      "en": "nice to meet you (first meeting)"
+    },
+    {
+      "ja": "[よろしくおねがいします|yoroshiku onegaishimasu]",
+      "baca": "よろしくおねがいします · yoroshiku onegaishimasu",
+      "en": "please treat me kindly"
+    },
+    {
+      "ja": "[こちらこそ|kochira koso]",
+      "baca": "こちらこそ · kochira koso",
+      "en": "likewise; it's I who should say that"
+    },
+    {
+      "ja": "[すみません|sumimasen]",
+      "baca": "すみません · sumimasen",
+      "en": "excuse me; sorry; thank you"
+    },
+    {
+      "ja": "[ありがとうございます|arigatō gozaimasu]",
+      "baca": "ありがとうございます · arigatō gozaimasu",
+      "en": "thank you very much"
+    },
+    {
+      "ja": "[しつれいします|shitsurei shimasu]",
+      "baca": "しつれいします · shitsurei shimasu",
+      "en": "excuse me (entering/leaving a room)"
+    },
+    {
+      "ja": "[いらっしゃいませ|irasshaimase]",
+      "baca": "いらっしゃいませ · irasshaimase",
+      "en": "welcome (in a shop)"
+    },
+    {
+      "ja": "[おつかれさまです|otsukaresama desu]",
+      "baca": "おつかれさまです · otsukaresama desu",
+      "en": "all-purpose work greeting"
+    },
+    {
+      "ja": "[わたし|watashi] 私",
+      "baca": "わたし · watashi",
+      "en": "I, me"
+    },
+    {
+      "ja": "[あなた|anata]",
+      "baca": "あなた · anata",
+      "en": "you (rarely used; use the name)"
+    },
+    {
+      "ja": "[ひと|hito] 人",
+      "baca": "ひと · hito",
+      "en": "person"
+    },
+    {
+      "ja": "[なまえ|namae] 名前",
+      "baca": "なまえ · namae",
+      "en": "name"
+    },
+    {
+      "ja": "[がくせい|gakusei] 学生",
+      "baca": "がくせい · gakusei",
+      "en": "student"
+    },
+    {
+      "ja": "[せんせい|sensei] 先生",
+      "baca": "せんせい · sensei",
+      "en": "teacher, professor, doctor"
+    },
+    {
+      "ja": "[かいしゃいん|kaishain] 会社員",
+      "baca": "かいしゃいん · kaishain",
+      "en": "company employee"
+    },
+    {
+      "ja": "[エンジニア|enjinia]",
+      "baca": "エンジニア · enjinia",
+      "en": "engineer"
+    },
+    {
+      "ja": "[いしゃ|isha] 医者",
+      "baca": "いしゃ · isha",
+      "en": "doctor"
+    },
+    {
+      "ja": "[しごと|shigoto] 仕事",
+      "baca": "しごと · shigoto",
+      "en": "work, job"
+    },
+    {
+      "ja": "[がっこう|gakkō] 学校",
+      "baca": "がっこう · gakkō",
+      "en": "school"
+    },
+    {
+      "ja": "[きょうしつ|kyōshitsu] 教室",
+      "baca": "きょうしつ · kyōshitsu",
+      "en": "classroom"
+    },
+    {
+      "ja": "[クラス|kurasu]",
+      "baca": "クラス · kurasu",
+      "en": "class"
+    },
+    {
+      "ja": "[うけつけ|uketsuke] 受付",
+      "baca": "うけつけ · uketsuke",
+      "en": "reception, front desk"
+    },
+    {
+      "ja": "[くに|kuni] 国",
+      "baca": "くに · kuni",
+      "en": "country"
+    },
+    {
+      "ja": "[にほん|Nihon] 日本",
+      "baca": "にほん · Nihon",
+      "en": "Japan"
+    },
+    {
+      "ja": "[にほんご|Nihongo] 日本語",
+      "baca": "にほんご · Nihongo",
+      "en": "Japanese (language)"
+    },
+    {
+      "ja": "[インドネシア|Indoneshia]",
+      "baca": "インドネシア · Indoneshia",
+      "en": "Indonesia"
+    },
+    {
+      "ja": "[はい|hai]",
+      "baca": "はい · hai",
+      "en": "yes"
+    },
+    {
+      "ja": "[いいえ|iie]",
+      "baca": "いいえ · iie",
+      "en": "no"
+    },
+    {
+      "ja": "[そうです|sō desu]",
+      "baca": "そうです · sō desu",
+      "en": "that's right"
+    },
+    {
+      "ja": "[そうですか|sō desu ka]",
+      "baca": "そうですか · sō desu ka",
+      "en": "oh, I see"
+    },
+    {
+      "ja": "[でも|demo]",
+      "baca": "でも · demo",
+      "en": "but"
+    },
+    {
+      "ja": "[ちょっと|chotto]",
+      "baca": "ちょっと · chotto",
+      "en": "a little, somewhat"
+    },
+    {
+      "ja": "[たいへん|taihen] 大変",
+      "baca": "たいへん · taihen",
+      "en": "hard, tough"
+    },
+    {
+      "ja": "[おもしろい|omoshiroi]",
+      "baca": "おもしろい · omoshiroi",
+      "en": "interesting"
+    },
+    {
+      "ja": "[いま|ima] 今",
+      "baca": "いま · ima",
+      "en": "now"
+    },
+    {
+      "ja": "[あした|ashita] 明日",
+      "baca": "あした · ashita",
+      "en": "tomorrow"
+    },
+    {
+      "ja": "[きょう|kyō] 今日",
+      "baca": "きょう · kyō",
+      "en": "today"
+    },
+    {
+      "ja": "[わかりました|wakarimashita]",
+      "baca": "わかりました · wakarimashita",
+      "en": "I understand; certainly"
+    },
+    {
+      "ja": "[なん|nan] 何",
+      "baca": "なん · nan",
+      "en": "what"
+    },
+    {
+      "ja": "[だれ|dare] 誰",
+      "baca": "だれ · dare",
+      "en": "who"
+    },
+    {
+      "ja": "[どこ|doko]",
+      "baca": "どこ · doko",
+      "en": "where"
+    },
+    {
+      "ja": "[じゃあ|jā]",
+      "baca": "じゃあ · jā",
+      "en": "well then"
+    },
+    {
+      "ja": "[また|mata]",
+      "baca": "また · mata",
+      "en": "again; see you"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the missing particle. Choose from the tiles provided.",
+      "items": [
+        "わたし ___ アニです。",
+        "たなかさん ___ がくせいですか。",
+        "しごと ___ たいへんですか。",
+        "にほんご ___ クラスです。",
+        "ジャカルタ ___ きました。",
+        "おなまえ ___ なんですか。"
+      ]
+    },
+    {
+      "prompt": "Arrange the tiles into a correct sentence.",
+      "items": [
+        "わたし / は / インドネシアじん / です",
+        "たなかさん / は / かいしゃいん / です / か",
+        "わたし / は / がくせい / じゃありません",
+        "おしごと / は / なん / です / か",
+        "これ / は / がっこう / の / カード / です",
+        "きょうしつ / は / どこ / です / か"
+      ]
+    },
+    {
+      "prompt": "Complete with the word for the person or language.",
+      "items": [
+        "にほん → a Japanese person: ___",
+        "インドネシア → an Indonesian person: ___",
+        "かんこく → Korean (language): ___",
+        "ちゅうごく → a Chinese person: ___",
+        "イギリス → English (language): ___"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "はじめまして。わたしはブディです。",
+        "たなかさんはせんせいじゃありません。",
+        "おくにはどちらですか。",
+        "しごとはちょっとたいへんです。でも、おもしろいです。",
+        "クラスはあしたからです。"
+      ]
+    },
+    {
+      "prompt": "Translate into Japanese. Write in rōmaji, without punctuation.",
+      "items": [
+        "I'm not a company employee.",
+        "Are you Japanese?",
+        "What's your name? (use the word for what)",
+        "This is a Japanese class.",
+        "Well then, see you tomorrow."
+      ]
+    },
+    {
+      "prompt": "Choose the right greeting for each situation.",
+      "items": [
+        "7 a.m., meeting your boss at the office: ___",
+        "2 p.m., meeting a neighbor: ___",
+        "8 p.m., entering a restaurant and being greeted by staff: ___",
+        "Leaving a meeting room before everyone else: ___",
+        "Parting from a friend you'll see tomorrow: ___"
+      ]
+    }
+  ],
+  "answers": [
+    "は — は — は — の — から — は",
+    "わたし は インドネシアじん です — たなかさん は かいしゃいん です か — わたし は がくせい じゃありません — おしごと は なん です か — これ は がっこう の カード です — きょうしつ は どこ です か",
+    "にほんじん — インドネシアじん — かんこくご — ちゅうごくじん — えいご",
+    "Nice to meet you. I'm Budi. — Mr. Tanaka is not a teacher. — Which country are you from? — The work is a little hard. But it's interesting. — The class starts tomorrow.",
+    "watashi wa kaishain ja arimasen — Nihonjin desu ka — onamae wa nan desu ka — kore wa Nihongo no kurasu desu — jā mata ashita",
+    "おはようございます — こんにちは — こんばんは — しつれいします — じゃあまた"
+  ],
+  "wave": "There's no earlier unit to review yet. Instead, say your own self-introduction aloud five times before starting Unit 2 — with your real name, city, and job."
+}

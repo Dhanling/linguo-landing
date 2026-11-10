@@ -1,0 +1,462 @@
+{
+  "title": "What I did yesterday",
+  "title_target": "어제 뭐 했어요 — Eoje mwo haesseoyo",
+  "goal": "Talk about things that have already happened using the past tense, and see how Korean marks time inside the verb itself — not only with time words.",
+  "bekal": [
+    "form the past tense -았어요/었어요 from a verb stem",
+    "make the past tense of 이에요 and 있어요",
+    "negate past events with 안 and 못",
+    "describe your weekend in a few sentences in a row",
+    "use 그리고, 그래서 and 하지만 to link a story together"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — Monday morning in class",
+      "intro": "Suji asks about Ani's weekend. Notice that no word like \"already\" or \"ago\" is needed — Korean puts that time information inside the verb.",
+      "lines": [
+        {
+          "speaker": "수지:",
+          "text": "[아니|Ani] [씨|ssi], [주말에|jumare] [뭐|mwo] [했어요|haesseoyo]?",
+          "id": "Ani, what did you do on the weekend?",
+          "literal": "Ani — Ms., weekend-on — what — did?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[토요일에|Toyoire] [친구를|chingureul] [만났어요|mannasseoyo]. [같이|Gachi] [명동에|Myeongdonge] [갔어요|gasseoyo].",
+          "id": "On Saturday I met a friend. We went to Myeongdong together.",
+          "literal": "Saturday-on — friend — object — met. together — Myeongdong-to — went."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[뭐|Mwo] [샀어요|sasseoyo]?",
+          "id": "What did you buy?",
+          "literal": "what — bought?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[옷을|Oseul] [조금|jogeum] [샀어요|sasseoyo]. [그리고|Geurigo] [떡볶이를|tteokbokkireul] [먹었어요|meogeosseoyo].",
+          "id": "A few clothes. Then we ate tteokbokki.",
+          "literal": "clothes — object — a-little — bought. and — tteokbokki — object — ate."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[맛있었어요|Masisseosseoyo]?",
+          "id": "Was it good?",
+          "literal": "tasty-was?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[너무|Neomu] [맛있었어요|masisseosseoyo]! [그런데|Geureonde] [조금|jogeum] [매웠어요|maewosseoyo].",
+          "id": "It was delicious! But a bit spicy.",
+          "literal": "very — tasty-was! by-the-way, a-little — spicy-was."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[일요일에는|Iryoireneun] [뭐|mwo] [했어요|haesseoyo]?",
+          "id": "And on Sunday?",
+          "literal": "Sunday-on — as-for — what — did?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[아무것도|Amugeotdo] [안|an] [했어요|haesseoyo]. [집에서|Jibeseo] [쉬었어요|swieosseoyo].",
+          "id": "I didn't do anything. I rested at home.",
+          "literal": "anything — not — did. home-at — rested."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[숙제는|Sukjeneun] [했어요|haesseoyo]?",
+          "id": "Did you do the homework?",
+          "literal": "homework — as-for — did?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[아|A]… [못|mot] [했어요|haesseoyo]. [시간이|Sigani] [없었어요|eopseosseoyo].",
+          "id": "Oh… I couldn't. I didn't have time.",
+          "literal": "ah… couldn't — did. time — subject — didn't-exist."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[괜찮아요|Gwaenchanayo]. [저도|Jeodo] [안|an] [했어요|haesseoyo].",
+          "id": "That's okay. I didn't either.",
+          "literal": "it's-okay. I — also — not — did."
+        }
+      ],
+      "notes": [
+        "**The Korean past tense attaches to the verb rather than standing as a separate word.** English sometimes adds \"did\", \"have\" or \"already\"; Korean simply changes the verb itself. 먹어요 (eat) → 먹**었**어요 (ate). Time words are optional — the verb form is not.",
+        "**The past is built from the 해요 form you already know**, so there's no new rule to memorize. Remove 요 from the 해요 form and add ㅆ어요. 가요 → 가**ㅆ**어요 → 갔어요. 먹어요 → 먹었어요. 마셔요 → 마셨어요. Once you see the pattern, it works for every verb, no exceptions.",
+        "**안 and 못 both negate, but for different reasons.** 안 했어요 = didn't do it (chose not to, didn't intend to). 못 했어요 = couldn't, didn't get to (something got in the way). When Ani says 못 했어요 about her homework, she's saying \"it's not that I was lazy\" — and the difference is felt.",
+        "**아무것도 always pairs with a negative.** 아무것도 **안** 했어요 = didn't do anything. ⚠️ 아무것도 했어요 isn't a sentence. Think of English \"not … anything\"; the same goes for 아무도 (anyone) and 아무 데도 (anywhere).",
+        "**Adjectives take the past tense too, exactly like verbs.** 맛있어요 → 맛있**었**어요, 매워요 → 매**웠**어요. In Korean, adjectives behave like verbs: they can be put in the past, negated, and stand alone as the predicate with no \"to be\".",
+        "**매워요 comes from 맵다, not 매우다.** It's an irregular ㅂ verb: ㅂ turns into 우 before a vowel. 맵다 → 매워요 → 매웠어요. This group includes many key adjectives: 덥다 (hot) → 더워요, 춥다 (cold) → 추워요, 쉽다 (easy) → 쉬워요, 어렵다 (difficult) → 어려워요.",
+        "**너무 used to mean \"too\" and now more often means \"very\".** 너무 맛있어요 doesn't mean \"too tasty\" but \"really delicious\". For compliments this is completely natural. If you really mean \"too\", it shows in a complaining tone or a pattern like 너무 … 아서 + the problem.",
+        "**떡볶이 is read *tteokbokki*, not *tteokbokgi*.** It's the tensing rule after a stopped sound, explained in the front pages. You'll see this word often, and beginners often misread it."
+      ],
+      "grammars": [
+        {
+          "title": "The past tense -았어요 / -었어요",
+          "body": [
+            "The rule is exactly the same as the 해요 form you've already mastered — only the ending differs. Look at the last vowel in the stem."
+          ],
+          "table": {
+            "head": [
+              "Rule",
+              "Dictionary form",
+              "해요체",
+              "Past tense"
+            ],
+            "rows": [
+              [
+                "ㅏ or ㅗ → **-았어요**",
+                "살다",
+                "살아요",
+                "살**았**어요"
+              ],
+              [
+                "",
+                "좋다",
+                "좋아요",
+                "좋**았**어요"
+              ],
+              [
+                "Other vowels → **-었어요**",
+                "먹다",
+                "먹어요",
+                "먹**었**어요"
+              ],
+              [
+                "",
+                "읽다",
+                "읽어요",
+                "읽**었**어요"
+              ],
+              [
+                "하다 → **했어요**",
+                "공부하다",
+                "공부해요",
+                "공부**했**어요"
+              ],
+              [
+                "Stem ends in a vowel",
+                "가다",
+                "가요",
+                "**갔**어요"
+              ],
+              [
+                "",
+                "보다",
+                "봐요",
+                "**봤**어요"
+              ],
+              [
+                "",
+                "마시다",
+                "마셔요",
+                "**마셨**어요"
+              ],
+              [
+                "",
+                "배우다",
+                "배워요",
+                "**배웠**어요"
+              ]
+            ]
+          },
+          "after": [
+            "**A shortcut that always works:** take the 해요 form, drop 요, attach ㅆ어요. 봐요 → 봐 + ㅆ어요 → 봤어요. Not a single verb breaks this shortcut.",
+            "**The past of \"to be\" and \"to exist\":** 이에요 → **이었어요**, 예요 → **였어요**, 있어요 → **있었어요**, 없어요 → **없었어요**. Learn these four as they are.",
+            "⚠️ Korean has no separate \"have done\" or \"just did\" forms like English. This one past form covers them all, and the nuance comes from adverbs: 아까 (earlier), 벌써 (already), 방금 (just now)."
+          ]
+        },
+        {
+          "title": "안 and 못 — two ways to say no",
+          "body": [
+            "Both go **directly in front of the verb**, and both work the same in the present and the past."
+          ],
+          "table": {
+            "head": [
+              "",
+              "안",
+              "못"
+            ],
+            "rows": [
+              [
+                "Meaning",
+                "not (by choice)",
+                "can't, didn't get to"
+              ],
+              [
+                "Present",
+                "안 가요 — don't go",
+                "못 가요 — can't go"
+              ],
+              [
+                "Past",
+                "안 갔어요 — didn't go",
+                "못 갔어요 — couldn't go"
+              ],
+              [
+                "하다 verbs",
+                "공부 **안** 해요",
+                "공부 **못** 해요"
+              ],
+              [
+                "Nuance",
+                "neutral, or no intention",
+                "something got in the way"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **하다 verbs split in the middle.** It's 공부 안 해요, not 안 공부해요. The noun stands on its own, 안 goes in between, then 해요. This applies to every 하다 verb: 일 안 해요, 운동 안 해요, 요리 안 해요.",
+            "**못 is more polite for turning down an invitation.** 안 가요 sounds like \"I just don't want to\"; 못 가요 sounds like \"sorry, I can't make it\". To decline an invitation, 못 is almost always the one.",
+            "There's a third, gentler and more written negative: **-지 않다**. 가지 않아요 = 안 가요. It comes back in unit 12."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Telling the story of a day gone by",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Storytelling doesn't come from long sentences, but from several short sentences linked correctly. These connectors are enough for all of A1."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Connector",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "그리고",
+              "and, and then",
+              "친구를 만났어요. **그리고** 밥을 먹었어요."
+            ],
+            [
+              "그래서",
+              "so, therefore",
+              "비가 왔어요. **그래서** 집에 있었어요."
+            ],
+            [
+              "하지만",
+              "but",
+              "숙제를 했어요. **하지만** 어려웠어요."
+            ],
+            [
+              "그런데",
+              "by the way; but",
+              "재미있었어요. **그런데** 조금 비쌌어요."
+            ],
+            [
+              "그다음에",
+              "after that",
+              "영화를 봤어요. **그다음에** 커피를 마셨어요."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "A sample weekend story"
+        },
+        {
+          "type": "p",
+          "text": "토요일에 친구를 만났어요. 같이 명동에 갔어요. 거기에서 옷을 샀어요. 그리고 떡볶이를 먹었어요. 너무 맛있었어요. 하지만 조금 매웠어요. 일요일에는 아무것도 안 했어요. 집에서 쉬었어요. 그래서 지금 괜찮아요."
+        },
+        {
+          "type": "p",
+          "text": "Nine sentences, all short, all using material you already have. This is the kind of story expected at TOPIK level 1 — not layered sentences, but simple sentences that are correct and connected."
+        },
+        {
+          "type": "kotak",
+          "title": "The most useful practice in this whole unit",
+          "items": [
+            "Every night before bed, tell your day in five Korean sentences. Out loud, not in your head.",
+            "Don't hunt for words you don't have yet. Tell only what you can with what you have — that's exactly what builds flexibility.",
+            "If there's one word you truly need every day, that's the word worth looking up. Vocabulary that comes from your own needs sticks far better than a memorized list."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "했어요",
+      "baca": "haesseoyo",
+      "en": "did"
+    },
+    {
+      "ko": "갔어요",
+      "baca": "gasseoyo",
+      "en": "went"
+    },
+    {
+      "ko": "왔어요",
+      "baca": "wasseoyo",
+      "en": "came"
+    },
+    {
+      "ko": "먹었어요",
+      "baca": "meogeosseoyo",
+      "en": "ate"
+    },
+    {
+      "ko": "만났어요",
+      "baca": "mannasseoyo",
+      "en": "met"
+    },
+    {
+      "ko": "샀어요",
+      "baca": "sasseoyo",
+      "en": "bought"
+    },
+    {
+      "ko": "봤어요",
+      "baca": "bwasseoyo",
+      "en": "saw, watched"
+    },
+    {
+      "ko": "쉬었어요",
+      "baca": "swieosseoyo",
+      "en": "rested"
+    },
+    {
+      "ko": "안",
+      "baca": "an",
+      "en": "not (by choice)"
+    },
+    {
+      "ko": "못",
+      "baca": "mot",
+      "en": "can't, didn't get to"
+    },
+    {
+      "ko": "아무것도",
+      "baca": "amugeotdo",
+      "en": "anything (with a negative)"
+    },
+    {
+      "ko": "숙제",
+      "baca": "sukje",
+      "en": "homework"
+    },
+    {
+      "ko": "옷",
+      "baca": "ot",
+      "en": "clothes"
+    },
+    {
+      "ko": "영화",
+      "baca": "yeonghwa",
+      "en": "movie"
+    },
+    {
+      "ko": "떡볶이",
+      "baca": "tteokbokki",
+      "en": "tteokbokki"
+    },
+    {
+      "ko": "맛있어요",
+      "baca": "masisseoyo",
+      "en": "delicious"
+    },
+    {
+      "ko": "매워요",
+      "baca": "maewoyo",
+      "en": "spicy"
+    },
+    {
+      "ko": "더워요",
+      "baca": "deowoyo",
+      "en": "hot (weather)"
+    },
+    {
+      "ko": "추워요",
+      "baca": "chuwoyo",
+      "en": "cold (weather)"
+    },
+    {
+      "ko": "어려워요",
+      "baca": "eoryeowoyo",
+      "en": "difficult"
+    },
+    {
+      "ko": "쉬워요",
+      "baca": "swiwoyo",
+      "en": "easy"
+    },
+    {
+      "ko": "너무",
+      "baca": "neomu",
+      "en": "very, too"
+    },
+    {
+      "ko": "벌써",
+      "baca": "beolsseo",
+      "en": "already (sooner than expected)"
+    },
+    {
+      "ko": "아까",
+      "baca": "akka",
+      "en": "earlier, a while ago"
+    },
+    {
+      "ko": "그다음에",
+      "baca": "geudaeume",
+      "en": "after that"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change into the past tense.",
+      "items": [
+        "먹어요 → ____",
+        "가요 → ____",
+        "봐요 → ____",
+        "공부해요 → ____",
+        "마셔요 → ____",
+        "있어요 → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in 안 or 못 according to the hint.",
+      "items": [
+        "I simply don't want to go: 저는 ____ 가요.",
+        "I didn't get to do my homework: 숙제를 ____ 했어요.",
+        "I don't eat meat: 고기를 ____ 먹어요.",
+        "I couldn't come because I was sick: ____ 왔어요.",
+        "I didn't study today: 오늘 공부 ____ 했어요."
+      ]
+    },
+    {
+      "prompt": "Translate into Korean using the past tense.",
+      "items": [
+        "What did you do on the weekend?",
+        "I met a friend yesterday.",
+        "We ate tteokbokki together.",
+        "It was delicious.",
+        "I didn't do anything.",
+        "I didn't have time."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "만났어요 / 친구를 / 토요일에",
+        "갔어요 / 명동에 / 같이",
+        "했어요 / 안 / 아무것도",
+        "매웠어요 / 조금 / 하지만",
+        "없었어요 / 시간이"
+      ]
+    }
+  ],
+  "answers": [
+    "먹었어요 — 갔어요 — 봤어요 — 공부했어요 — 마셨어요 — 있었어요",
+    "안 — 못 — 안 — 못 — 안",
+    "주말에 뭐 했어요? — 어제 친구를 만났어요. — 같이 떡볶이를 먹었어요. — 너무 맛있었어요. — 아무것도 안 했어요. — 시간이 없었어요.",
+    "토요일에 친구를 만났어요. — 같이 명동에 갔어요. — 아무것도 안 했어요. — 하지만 조금 매웠어요. — 시간이 없었어요."
+  ]
+}

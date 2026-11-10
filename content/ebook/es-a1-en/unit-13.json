@@ -1,0 +1,479 @@
+{
+  "title": "At the clothes shop",
+  "title_target": "En la tienda de ropa",
+  "goal": "Say what you like and don't like, name colors and clothes, then try things on and buy them.",
+  "bekal": [
+    "saying what you like and don't like",
+    "using colors in the matching form",
+    "naming clothes and sizes",
+    "asking prices and trying things on"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — En una tienda de ropa",
+      "intro": "A clothes shop. Watch the verb *gustar*, which works backwards compared with English \"like\".",
+      "lines": [
+        {
+          "speaker": "Dependiente:",
+          "text": "Buenas tardes, ¿en qué puedo ayudarle?",
+          "id": "Good afternoon, can I help you?",
+          "literal": "good afternoons, in what I-can help-you(formal)?"
+        },
+        {
+          "speaker": "Marta:",
+          "text": "Busco una camisa blanca.",
+          "id": "I'm looking for a white shirt.",
+          "literal": "I-look-for a shirt white."
+        },
+        {
+          "speaker": "Dependiente:",
+          "text": "¿Le gusta esta? Es de algodón.",
+          "id": "Do you like this one? It's cotton.",
+          "literal": "to-you(formal) pleases this? it-is of cotton."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "Me gusta, pero prefiero la azul. ¿Cuánto cuesta?",
+          "id": "I like it, but I prefer the blue one. How much is it?",
+          "literal": "to-me pleases, but I-prefer the blue. how-much it-costs?"
+        },
+        {
+          "speaker": "Dependiente:",
+          "text": "Veinticinco euros. ¿Qué talla usa?",
+          "id": "Twenty-five euros. What size are you?",
+          "literal": "twenty-five euros. what size you(formal)-use?"
+        },
+        {
+          "speaker": "Marta:",
+          "text": "La mediana. ¿Puedo probarla?",
+          "id": "Medium. Can I try it on?",
+          "literal": "the medium. I-can try-it?"
+        },
+        {
+          "speaker": "Dependiente:",
+          "text": "Claro, el probador está al fondo.",
+          "id": "Of course, the fitting room is at the back.",
+          "literal": "clear, the fitting-room it-is-located at-the end."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "Me queda un poco grande. ¿Tiene la talla pequeña?",
+          "id": "It's a bit big on me. Do you have a small?",
+          "literal": "to-me it-stays a little big. you(formal)-have the size small?"
+        },
+        {
+          "speaker": "Dependiente:",
+          "text": "Sí, aquí tiene. Esta le queda perfecta.",
+          "id": "Yes, here you are. This one fits you perfectly.",
+          "literal": "yes, here you(formal)-have. this to-you(formal) it-stays perfect."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "Me la llevo. ¿Puedo pagar con tarjeta?",
+          "id": "I'll take it. Can I pay by card?",
+          "literal": "to-me-it I-carry. I-can pay with card?"
+        },
+        {
+          "speaker": "Dependiente:",
+          "text": "Por supuesto. ¿Quiere una bolsa?",
+          "id": "Of course. Would you like a bag?",
+          "literal": "of course. you(formal)-want a bag?"
+        },
+        {
+          "speaker": "Marta:",
+          "text": "No, gracias. Llevo la mía.",
+          "id": "No, thank you. I've brought my own.",
+          "literal": "no, thanks. I-carry the mine."
+        }
+      ],
+      "notes": [
+        "**Gustar works backwards, and this is the hardest part of the unit.** *Me gusta el café* isn't \"I like coffee\" but literally **\"coffee pleases me\"**. So the subject of the sentence is **the thing**, not you. Once you accept that, the rest falls into place.",
+        "**Since the thing is the subject, the verb agrees with it.** One thing: *me gusta el libro*. Several: *me gustan los libros*. Followed by a verb, it's always singular: *me gusta leer* (I like reading), even with two verbs: *me gusta leer y escribir*.",
+        "**What changes is the person who feels it:** *me* (me), *te* (you), *le* (him/her/you formal), *nos* (us), *os* (you all), *les* (them). For emphasis, add a phrase in front: *A mí me gusta, pero a él no le gusta*.",
+        "**Colors agree with the noun.** Those ending in -o change fully: *blanco / blanca / blancos / blancas*. Those ending in -e or a consonant only change in the plural: *verde → verdes*, *azul → azules*. And colors go **after** the noun: *una camisa blanca*, not *una blanca camisa*.",
+        "**La azul, la mediana, la mía** — you can drop the noun completely as long as the article stays. *Prefiero la azul* = \"I prefer the blue one\", with *camisa* understood from the previous sentence.",
+        "**Quedar for how clothes fit.** *Me queda grande* (it's too big on me), *me queda bien* (it fits), *te queda muy bien* (it looks great on you). The pattern is exactly like *gustar*: the item of clothing is the subject.",
+        "**Verbs that split in the middle.** *Poder* → *puedo*, *querer* → *quiero*, *preferir* → *prefiero*, *costar* → *cuesta*. The change only happens in the stressed syllable — which is why the *nosotros* form escapes: *podemos*, *queremos*, *preferimos*.",
+        "**Me la llevo** uses two little words at once (*me* + *la*) — grammar that's really beyond A1. Learn it as a set phrase: \"I'll take it\". For a masculine item: *me lo llevo*."
+      ],
+      "grammars": [
+        {
+          "title": "The gustar pattern",
+          "body": [
+            "The order is fixed: **to whom** + *gusta / gustan* + **what is liked**. To negate, just put *no* at the very front: *No me gusta el pescado*."
+          ],
+          "table": {
+            "head": [
+              "To whom",
+              "One thing",
+              "Several things"
+            ],
+            "rows": [
+              [
+                "a mí **me**",
+                "me gusta el café",
+                "me gustan los libros"
+              ],
+              [
+                "a ti **te**",
+                "te gusta la ciudad",
+                "te gustan los zapatos"
+              ],
+              [
+                "a él / ella / usted **le**",
+                "le gusta viajar",
+                "le gustan las flores"
+              ],
+              [
+                "a nosotros **nos**",
+                "nos gusta el cine",
+                "nos gustan las series"
+              ],
+              [
+                "a vosotros **os**",
+                "os gusta bailar",
+                "os gustan los perros"
+              ],
+              [
+                "a ellos / ustedes **les**",
+                "les gusta el mar",
+                "les gustan las playas"
+              ]
+            ]
+          },
+          "after": [
+            "How much you like something, from hate to love: *odio* (I hate) &middot; *no me gusta nada* &middot; *no me gusta* &middot; *me gusta* &middot; *me gusta mucho* &middot; *me encanta* (I love it). Note that *me encanta* already means \"I really like it\", so *me encanta mucho* is overkill.",
+            "Other verbs with exactly the same pattern: *me duele* (it hurts me), *me interesa* (it interests me), *me parece* (it seems to me), *me apetece* (I feel like it). Once the *gustar* pattern sticks, you get these for free."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Colors",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Español",
+            "Pronunciation",
+            "Meaning",
+            "Forms"
+          ],
+          "rows": [
+            [
+              "blanco",
+              "BLAHN-koh",
+              "white",
+              "blanco / blanca / blancos / blancas"
+            ],
+            [
+              "negro",
+              "NEH-groh",
+              "black",
+              "negro / negra / negros / negras"
+            ],
+            [
+              "rojo",
+              "ROH-hoh",
+              "red",
+              "rojo / roja / rojos / rojas"
+            ],
+            [
+              "amarillo",
+              "ah-mah-REE-yoh",
+              "yellow",
+              "amarillo / amarilla / …"
+            ],
+            [
+              "azul",
+              "ah-SOOL",
+              "blue",
+              "azul / azules"
+            ],
+            [
+              "verde",
+              "BEHR-deh",
+              "green",
+              "verde / verdes"
+            ],
+            [
+              "gris",
+              "grees",
+              "gray",
+              "gris / grises"
+            ],
+            [
+              "marrón",
+              "mah-RROHN",
+              "brown",
+              "marrón / marrones"
+            ],
+            [
+              "rosa",
+              "ROH-sah",
+              "pink",
+              "rosa (doesn't change)"
+            ],
+            [
+              "naranja",
+              "nah-RAHN-hah",
+              "orange",
+              "naranja (doesn't change)"
+            ],
+            [
+              "morado",
+              "moh-RAH-doh",
+              "purple",
+              "morado / morada / …"
+            ],
+            [
+              "claro / oscuro",
+              "KLAH-roh / ohs-KOO-roh",
+              "light / dark",
+              "*azul claro*, *verde oscuro*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Two colors that started life as nouns — *rosa* (rose) and *naranja* (orange) — never change form: *unos zapatos rosa*, not *rosas*. And adding *claro* or *oscuro* freezes the color too: *unas camisas azul claro*."
+        }
+      ]
+    },
+    {
+      "title": "Clothes and sizes",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Español",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "la ropa",
+              "lah ROH-pah",
+              "clothes"
+            ],
+            [
+              "la camisa",
+              "lah kah-MEE-sah",
+              "shirt"
+            ],
+            [
+              "la camiseta",
+              "lah kah-mee-SEH-tah",
+              "T-shirt"
+            ],
+            [
+              "los pantalones",
+              "pahn-tah-LOH-nehs",
+              "trousers, pants"
+            ],
+            [
+              "los vaqueros",
+              "bah-KEH-rohs",
+              "jeans"
+            ],
+            [
+              "la falda",
+              "lah FAHL-dah",
+              "skirt"
+            ],
+            [
+              "el vestido",
+              "ehl behs-TEE-doh",
+              "dress"
+            ],
+            [
+              "la chaqueta",
+              "lah chah-KEH-tah",
+              "jacket"
+            ],
+            [
+              "el abrigo",
+              "ehl ah-BREE-goh",
+              "coat"
+            ],
+            [
+              "los zapatos",
+              "sah-PAH-tohs",
+              "shoes"
+            ],
+            [
+              "las zapatillas",
+              "sah-pah-TEE-yahs",
+              "sneakers"
+            ],
+            [
+              "el bolso",
+              "ehl BOHL-soh",
+              "bag, handbag"
+            ],
+            [
+              "la gorra",
+              "lah GOH-rrah",
+              "cap"
+            ],
+            [
+              "el cinturón",
+              "ehl seen-too-ROHN",
+              "belt"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Must-know shop phrases",
+          "items": [
+            "*¿Qué talla usa?* — what size are you? The answer: *la pequeña* (S), *la mediana* (M), *la grande* (L). For shoes: *¿Qué número calza?*",
+            "*¿Puedo probármelo?* — can I try it on? &middot; *el probador* — fitting room &middot; *¿Tiene otro color?* — do you have another color?",
+            "*Me queda grande / pequeño / bien* — too big / too small / fits. &middot; *Me lo llevo* — I'll take it.",
+            "*¿Se puede cambiar?* — can it be exchanged? &middot; *el recibo* — receipt &middot; *las rebajas* — the sales."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "es": "la ropa",
+      "baca": "lah ROH-pah",
+      "en": "clothes"
+    },
+    {
+      "es": "la camisa",
+      "baca": "lah kah-MEE-sah",
+      "en": "shirt"
+    },
+    {
+      "es": "los pantalones",
+      "baca": "pahn-tah-LOH-nehs",
+      "en": "trousers, pants"
+    },
+    {
+      "es": "la talla",
+      "baca": "lah TAH-yah",
+      "en": "size"
+    },
+    {
+      "es": "el probador",
+      "baca": "ehl proh-bah-DOHR",
+      "en": "fitting room"
+    },
+    {
+      "es": "blanco / negro",
+      "baca": "BLAHN-koh / NEH-groh",
+      "en": "white / black"
+    },
+    {
+      "es": "rojo / azul / verde",
+      "baca": "ROH-hoh / ah-SOOL / BEHR-deh",
+      "en": "red / blue / green"
+    },
+    {
+      "es": "amarillo",
+      "baca": "ah-mah-REE-yoh",
+      "en": "yellow"
+    },
+    {
+      "es": "el color",
+      "baca": "ehl koh-LOHR",
+      "en": "color"
+    },
+    {
+      "es": "gustar",
+      "baca": "goos-TAHR",
+      "en": "to please (to like)"
+    },
+    {
+      "es": "probar",
+      "baca": "proh-BAHR",
+      "en": "to try (on)"
+    },
+    {
+      "es": "quedar",
+      "baca": "keh-DAHR",
+      "en": "to fit (of size)"
+    },
+    {
+      "es": "¿cuánto cuesta?",
+      "baca": "KWAHN-toh KWEHS-tah",
+      "en": "how much does it cost?"
+    },
+    {
+      "es": "pagar con tarjeta",
+      "baca": "pah-GAHR kohn tahr-HEH-tah",
+      "en": "to pay by card"
+    },
+    {
+      "es": "por supuesto",
+      "baca": "pohr soo-PWEHS-toh",
+      "en": "of course"
+    },
+    {
+      "es": "comprar",
+      "baca": "kohm-PRAHR",
+      "en": "to buy"
+    },
+    {
+      "es": "el vestido",
+      "baca": "ehl behs-TEE-doh",
+      "en": "dress"
+    },
+    {
+      "es": "encantar",
+      "baca": "ehn-kahn-TAHR",
+      "en": "to love (a thing)"
+    },
+    {
+      "es": "llevar",
+      "baca": "yeh-BAHR",
+      "en": "to take, to carry, to wear"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in *gusta* or *gustan*.",
+      "items": [
+        "Me ____ los zapatos negros.",
+        "¿Te ____ esta camisa?",
+        "Nos ____ viajar en tren.",
+        "A ellos no les ____ las series largas.",
+        "A mí me ____ mucho el café.",
+        "¿Os ____ las naranjas?"
+      ]
+    },
+    {
+      "prompt": "Make the color agree with the noun.",
+      "items": [
+        "una falda (rojo) ____",
+        "unos pantalones (negro) ____",
+        "dos camisas (azul) ____",
+        "un vestido (verde) ____",
+        "unas zapatillas (blanco) ____",
+        "un bolso (marrón) ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Spanish.",
+      "items": [
+        "I like this white shirt.",
+        "How much are those shoes?",
+        "We don't like the color black.",
+        "Can I pay by card?",
+        "I'd like a kilo of tomatoes.",
+        "The shirt is too big on me."
+      ]
+    }
+  ],
+  "answers": [
+    "gustan — gusta — gusta — gustan — gusta — gustan",
+    "roja — negros — azules — verde — blancas — marrón",
+    "Me gusta esta camisa blanca. — ¿Cuánto cuestan esos zapatos? — No nos gusta el color negro. — ¿Puedo pagar con tarjeta? — Quisiera un kilo de tomates. — La camisa me queda grande."
+  ],
+  "wave": "Review **Unit 11**: ask the way to the bank, the pharmacy and the market — three sentences, without looking."
+}

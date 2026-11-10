@@ -1,0 +1,465 @@
+{
+  "title": "What's this, and whose is it?",
+  "title_target": "이거 뭐예요 — Igeo mwoyeyo",
+  "goal": "Point to things by distance, ask what they're called in Korean, say who owns something, and — most important of all — start telling the particles 은/는 and 이/가 apart.",
+  "bekal": [
+    "tell 이거, 그거 and 저거 apart by who the thing is close to",
+    "use 이, 그, 저 before a noun",
+    "show possession with 의 and drop it the way Koreans do",
+    "ask *whose* with 누구 거",
+    "notice when a sentence uses 이/가 rather than 은/는"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — Things left behind in the classroom",
+      "intro": "After class, Ani finds a few things on the desk. Notice how the pointing words change according to who is closer to the object, not simply whether it's near or far.",
+      "lines": [
+        {
+          "speaker": "아니:",
+          "text": "[민준|Minjun] [씨|ssi], [이거|igeo] [뭐예요|mwoyeyo]?",
+          "id": "Minjun, what's this?",
+          "literal": "Minjun — Mr., this — what — is?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[그거는|Geugeoneun] [사전이에요|sajeonieyo]. [한국어|Hangugeo] [사전이에요|sajeonieyo].",
+          "id": "That's a dictionary. A Korean dictionary.",
+          "literal": "that — as-for — dictionary — is. Korea-language — dictionary — is."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[그럼|Geureom] [저거는|jeogeoneun] [뭐예요|mwoyeyo]?",
+          "id": "Then what's that over there?",
+          "literal": "then, that-over-there — as-for — what — is?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[저거는|Jeogeoneun] [시계예요|sigyeyeyo]. [교실|Gyosil] [시계예요|sigyeyeyo].",
+          "id": "That over there is a clock. The classroom clock.",
+          "literal": "that-over-there — as-for — clock — is. classroom — clock — is."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[이|I] [책은|chaegeun] [누구|nugu] [거예요|geoyeyo]?",
+          "id": "Whose book is this?",
+          "literal": "this — book — as-for — who — thing — is?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[그거는|Geugeoneun] [제|je] [거예요|geoyeyo]. [고맙습니다|Gomapseumnida].",
+          "id": "That's mine. Thank you.",
+          "literal": "that — as-for — my — thing — is. thank-you."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[이|I] [가방도|gabangdo] [민준|Minjun] [씨|ssi] [거예요|geoyeyo]?",
+          "id": "Is this bag yours too, Minjun?",
+          "literal": "this — bag — also — Minjun — Mr. — thing — is?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[아니요|Aniyo], [제|je] [가방이|gabangi] [아니에요|anieyo]. [수지|Suji] [씨|ssi] [거예요|geoyeyo].",
+          "id": "No, that's not my bag. It's Suji's.",
+          "literal": "no, my — bag — subject — not-is. Suji — Ms. — thing — is."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[수지|Suji] [씨가|ssiga] [누구예요|nuguyeyo]?",
+          "id": "Who's Suji?",
+          "literal": "Suji — Ms. — subject — who — is?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[제|Je] [친구예요|chinguyeyo]. [저|Jeo] [사람이|sarami] [수지|Suji] [씨예요|ssiyeyo].",
+          "id": "My friend. That person over there is Suji.",
+          "literal": "my — friend — is. that-over-there — person — subject — Suji — Ms. — is."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[아|A], [그래요|geuraeyo]? [저도|Jeodo] [친구가|chinguga] [되고|doego] [싶어요|sipeoyo].",
+          "id": "Oh, really? I'd like to be friends too.",
+          "literal": "ah, so — is? I — also — friend — subject — become — want."
+        }
+      ],
+      "notes": [
+        "**Distance is measured from two people, not one.** 이거 = near the **speaker**. 그거 = near the **listener**. 저거 = far from **both**. That's why Ani asks with 이거 (the thing in her hand) and Minjun answers with 그거 (it's far from him). Two different words for the same object. English \"this/that\" only has two steps, so learners often take 그거 to mean \"that, a bit far\"; it really means \"the one by you\".",
+        "**이거/그거/저거 are shortened spoken forms.** The full forms are 이것/그것/저것. In conversation they're almost always shortened; formal writing and exams use the long forms. With a particle attached there are two options: 이거는 (casual speech) or 이것은 (writing). This module uses the spoken forms.",
+        "**이/그/저 without 거 go before a noun.** 이 책 = this book, 그 가방 = that bag, 저 사람 = that person over there. ⚠️ Don't write 이거 책 — that means \"this, a book\" as two separate things. If there's a noun, just use 이.",
+        "**거 in 제 거 means \"thing belonging to\".** The full form is 것. 제 거 = mine, 민준 씨 거 = Minjun's, 누구 거 = whose. The noun can be dropped when it's obvious: 그거는 제 거예요 = \"that's mine\", with no need to repeat \"book\".",
+        "**The possessive particle 의 is almost always dropped.** 제 친구의 가방 is grammatically correct, but Koreans say 제 친구 가방. Two nouns side by side are already understood as possession. Save 의 for formal writing; in speech, drop it. Also note that 의 here is pronounced *e*, not *ui*.",
+        "**도 replaces a particle; it doesn't stack on top of one.** 이 가방**은** → 이 가방**도** (this bag too). ⚠️ Don't write 이 가방은도. The same rule applies to 이/가 and 을/를: 제가 → 저도, 책을 → 책도.",
+        "**고맙습니다 and 감사합니다 both mean \"thank you\".** 감사합니다 comes from Chinese and sounds a little more formal; 고맙습니다 is native Korean and sounds a little warmer. Both are safe with anyone. The everyday form is 고마워요.",
+        "**저 meaning \"I\" and 저 meaning \"over there\" are two words that happen to look the same.** Context tells them apart, and in practice it's never confusing: 저 사람 almost can't mean \"my person\"."
+      ],
+      "grammars": [
+        {
+          "title": "은/는 vs 이/가 — the difference that matters most",
+          "body": [
+            "This is the most important lesson in the whole module, and you won't finish it today. What you should take from this unit isn't mastery but **the awareness that the two are not the same thing**.",
+            "English has just one \"subject\"; Korean splits it into two different roles: what is being **talked about** (the topic, 은/는) and who **does something or is singled out** (the subject, 이/가)."
+          ],
+          "table": {
+            "head": [
+              "",
+              "After a vowel",
+              "After a consonant",
+              "What it does"
+            ],
+            "rows": [
+              [
+                "Topic",
+                "**는**",
+                "**은**",
+                "sets what is being discussed"
+              ],
+              [
+                "Subject",
+                "**가**",
+                "**이**",
+                "points out the doer or the one chosen"
+              ],
+              [
+                "Topic example",
+                "저**는** 학생이에요",
+                "이 책**은** 제 거예요",
+                "\"as for me…\", \"as for this book…\""
+              ],
+              [
+                "Subject example",
+                "수지 씨**가** 누구예요?",
+                "누구**가** 왔어요?",
+                "\"who is Suji?\", \"who came?\""
+              ]
+            ]
+          },
+          "after": [
+            "**First rule of thumb you can use right away: questions with 누구, 뭐, 어느 take 이/가, not 은/는.** 수지 씨**가** 누구예요? is right; 수지 씨는 누구예요? sounds as if you're comparing Suji with someone else.",
+            "**Second rule of thumb: 은/는 always carries a hint of contrast, even when it isn't said.** When Minjun says 그거는 제 거예요, it implies \"that one is mine (the others, not necessarily)\". That nuance is lost if you use 이/가.",
+            "**Third rule of thumb: self-introductions almost always use 은/는.** 저**는** 아니예요. You're setting yourself up as the topic of conversation, not picking yourself out of a crowd.",
+            "⚠️ Don't try to memorize the full rules now. Koreans themselves can't explain them. What works is noticing which one is used in each dialogue in this module, and copying it."
+          ]
+        },
+        {
+          "title": "Basic question words",
+          "body": [
+            "The seven question words below are enough to get by in everyday conversation. Each one goes **where the answer will go**, not moved to the front of the sentence as in English."
+          ],
+          "table": {
+            "head": [
+              "Korean",
+              "Romanization",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "뭐 / 무엇",
+                "mwo / mueot",
+                "what",
+                "이거 **뭐**예요?"
+              ],
+              [
+                "누구",
+                "nugu",
+                "who",
+                "**누구** 거예요?"
+              ],
+              [
+                "어디",
+                "eodi",
+                "where",
+                "화장실이 **어디**예요?"
+              ],
+              [
+                "언제",
+                "eonje",
+                "when",
+                "시험이 **언제**예요?"
+              ],
+              [
+                "왜",
+                "wae",
+                "why",
+                "**왜** 안 와요?"
+              ],
+              [
+                "몇",
+                "myeot",
+                "how many",
+                "**몇** 개예요?"
+              ],
+              [
+                "얼마",
+                "eolma",
+                "how much (price)",
+                "**얼마**예요?"
+              ]
+            ]
+          },
+          "after": [
+            "Look at 이거 뭐예요? — the question word sits exactly where the noun will appear in the answer: 이거 사전이에요. The word order doesn't change at all between question and answer.",
+            "누구 becomes **누가** when it's the subject: 누**가** 왔어요? (who came?), not 누구가. It's the only question word that changes form, and it comes up a lot."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Things around you",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The objects you'll point at most often in class, in your room and in your bag. Practice by pointing at real things around you while saying 이거 …이에요."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "한국어",
+            "Romanization",
+            "English",
+            "한국어",
+            "Romanization",
+            "English"
+          ],
+          "rows": [
+            [
+              "책",
+              "chaek",
+              "book",
+              "가방",
+              "gabang",
+              "bag"
+            ],
+            [
+              "공책",
+              "gongchaek",
+              "notebook",
+              "지갑",
+              "jigap",
+              "wallet"
+            ],
+            [
+              "펜",
+              "pen",
+              "pen",
+              "우산",
+              "usan",
+              "umbrella"
+            ],
+            [
+              "연필",
+              "yeonpil",
+              "pencil",
+              "휴대폰",
+              "hyudaepon",
+              "cell phone"
+            ],
+            [
+              "사전",
+              "sajeon",
+              "dictionary",
+              "컴퓨터",
+              "keompyuteo",
+              "computer"
+            ],
+            [
+              "시계",
+              "sigye",
+              "clock, watch",
+              "안경",
+              "angyeong",
+              "glasses"
+            ],
+            [
+              "의자",
+              "uija",
+              "chair",
+              "열쇠",
+              "yeolsoe",
+              "key"
+            ],
+            [
+              "책상",
+              "chaeksang",
+              "desk",
+              "창문",
+              "changmun",
+              "window"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "휴대폰 and its relatives",
+          "items": [
+            "A cell phone has three names, all in use: **휴대폰** (the most neutral), **핸드폰** (from *hand phone*, very common in speech), and just **폰** among young people.",
+            "Korean is full of English loanwords with their sounds reshaped to fit hangeul: 컴퓨터 (*computer*), 펜 (*pen*), 커피 (*coffee*), 버스 (*bus*), 택시 (*taxi*). Guessing often works — but don't get overconfident: 아르바이트 (part-time job) comes from German, and 원피스 means a dress, not a swimsuit."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "이거",
+      "baca": "igeo",
+      "en": "this (near me)"
+    },
+    {
+      "ko": "그거",
+      "baca": "geugeo",
+      "en": "that (near you)"
+    },
+    {
+      "ko": "저거",
+      "baca": "jeogeo",
+      "en": "that (far from both of us)"
+    },
+    {
+      "ko": "거 / 것",
+      "baca": "geo / geot",
+      "en": "thing, possession"
+    },
+    {
+      "ko": "누구",
+      "baca": "nugu",
+      "en": "who"
+    },
+    {
+      "ko": "누가",
+      "baca": "nuga",
+      "en": "who (as subject)"
+    },
+    {
+      "ko": "책",
+      "baca": "chaek",
+      "en": "book"
+    },
+    {
+      "ko": "가방",
+      "baca": "gabang",
+      "en": "bag"
+    },
+    {
+      "ko": "사전",
+      "baca": "sajeon",
+      "en": "dictionary"
+    },
+    {
+      "ko": "시계",
+      "baca": "sigye",
+      "en": "clock, watch"
+    },
+    {
+      "ko": "교실",
+      "baca": "gyosil",
+      "en": "classroom"
+    },
+    {
+      "ko": "친구",
+      "baca": "chingu",
+      "en": "friend"
+    },
+    {
+      "ko": "한국어",
+      "baca": "hangugeo",
+      "en": "Korean (language)"
+    },
+    {
+      "ko": "그럼",
+      "baca": "geureom",
+      "en": "then, in that case"
+    },
+    {
+      "ko": "의",
+      "baca": "e",
+      "en": "possessive particle"
+    },
+    {
+      "ko": "고맙습니다",
+      "baca": "gomapseumnida",
+      "en": "thank you"
+    },
+    {
+      "ko": "휴대폰",
+      "baca": "hyudaepon",
+      "en": "cell phone"
+    },
+    {
+      "ko": "컴퓨터",
+      "baca": "keompyuteo",
+      "en": "computer"
+    },
+    {
+      "ko": "지갑",
+      "baca": "jigap",
+      "en": "wallet"
+    },
+    {
+      "ko": "우산",
+      "baca": "usan",
+      "en": "umbrella"
+    },
+    {
+      "ko": "안경",
+      "baca": "angyeong",
+      "en": "glasses"
+    },
+    {
+      "ko": "열쇠",
+      "baca": "yeolsoe",
+      "en": "key"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Korean.",
+      "items": [
+        "What's this?",
+        "That's a dictionary.",
+        "Whose book is this?",
+        "That's mine.",
+        "That bag isn't my bag.",
+        "That person over there is my friend."
+      ]
+    },
+    {
+      "prompt": "Fill in 이거, 그거 or 저거.",
+      "items": [
+        "The thing is in your hand, and you ask: ____ 뭐예요?",
+        "The thing is in the other person's hand: ____ 뭐예요?",
+        "The thing is at the far end of the room, away from both of you: ____ 뭐예요?",
+        "The other person is holding a book; you ask whose it is: ____ 누구 거예요?",
+        "You're holding a pen and say it's yours: ____ 제 거예요."
+      ]
+    },
+    {
+      "prompt": "Fill in 은, 는, 이 or 가.",
+      "items": [
+        "저____ 인도네시아 사람이에요.",
+        "수지 씨____ 누구예요?",
+        "이 책____ 제 거예요.",
+        "누____ 선생님이에요?",
+        "그 가방____ 민준 씨 거예요.",
+        "이름____ 뭐예요?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "뭐예요 / 이거 / ?",
+        "제 / 그거는 / 거예요",
+        "누구 / 이 / 거예요 / 책은 / ?",
+        "친구예요 / 사람이 / 저 / 제",
+        "아니에요 / 가방이 / 제"
+      ]
+    }
+  ],
+  "answers": [
+    "이거 뭐예요? — 그거는 사전이에요. — 이 책은 누구 거예요? — 그거는 제 거예요. — 그 가방은 제 가방이 아니에요. — 저 사람이 제 친구예요.",
+    "이거 — 그거 — 저거 — 그거 — 이거",
+    "는 — 가 — 은 — 가 — 은 — 이",
+    "이거 뭐예요? — 그거는 제 거예요. — 이 책은 누구 거예요? — 저 사람이 제 친구예요. — 제 가방이 아니에요."
+  ]
+}

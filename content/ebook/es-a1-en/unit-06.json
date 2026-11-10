@@ -1,0 +1,430 @@
+{
+  "title": "Lunch and the check",
+  "title_target": "La comida y la cuenta",
+  "goal": "Order a full meal, ask for the check, pay, and use the verb *querer*.",
+  "bekal": [
+    "order a first and a second course",
+    "ask for the check and how you can pay",
+    "use *quiero*, *quieres*, *quiere*",
+    "ask where the restroom is"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — La comida del mediodía",
+      "intro": "Lunch, the main meal of the day. Two people sit down, order, and ask for the check.",
+      "lines": [
+        {
+          "speaker": "Camarero:",
+          "text": "Buenas tardes. ¿Una mesa para dos?",
+          "id": "Good afternoon. A table for two?",
+          "literal": "good afternoons. a table for two?"
+        },
+        {
+          "speaker": "Luis:",
+          "text": "Sí, por favor. ¿Hay menú del día?",
+          "id": "Yes, please. Is there a set menu today?",
+          "literal": "yes, please. there-is menu of-the day?"
+        },
+        {
+          "speaker": "Camarero:",
+          "text": "Sí. De primero, sopa o ensalada. De segundo, pollo o pescado.",
+          "id": "Yes. For the first course, soup or salad. For the second, chicken or fish.",
+          "literal": "yes. of first, soup or salad. of second, chicken or fish."
+        },
+        {
+          "speaker": "Luis:",
+          "text": "Para mí, ensalada y pollo, por favor.",
+          "id": "For me, salad and chicken, please.",
+          "literal": "for me, salad and chicken, please."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Yo quiero sopa. Y de segundo, pescado.",
+          "id": "I'd like soup. And for the second course, fish.",
+          "literal": "I I-want soup. and of second, fish."
+        },
+        {
+          "speaker": "Camarero:",
+          "text": "¿Y para beber?",
+          "id": "And to drink?",
+          "literal": "and for to-drink?"
+        },
+        {
+          "speaker": "Luis:",
+          "text": "Una botella de agua, por favor. Sin gas.",
+          "id": "A bottle of water, please. Still.",
+          "literal": "a bottle of water, please. without gas."
+        },
+        {
+          "speaker": "Camarero:",
+          "text": "Perfecto. El postre está incluido.",
+          "id": "Perfect. Dessert is included.",
+          "literal": "perfect. the dessert is included."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "¡Qué bien! Perdone, ¿dónde está el baño?",
+          "id": "Great! Excuse me, where's the restroom?",
+          "literal": "how good! pardon (polite), where is the bathroom?"
+        },
+        {
+          "speaker": "Camarero:",
+          "text": "Al fondo, a la derecha.",
+          "id": "At the back, on the right.",
+          "literal": "at-the bottom, to the right."
+        },
+        {
+          "speaker": "Luis:",
+          "text": "La cuenta, por favor. ¿Se puede pagar con tarjeta?",
+          "id": "The check, please. Can I pay by card?",
+          "literal": "the bill, please. one can to-pay with card?"
+        },
+        {
+          "speaker": "Camarero:",
+          "text": "Sí, claro. Son veinte euros.",
+          "id": "Yes, of course. That's twenty euros.",
+          "literal": "yes, clear. are twenty euros."
+        }
+      ],
+      "notes": [
+        "**Menú del día** is an institution in Spain: a first course, a second course, bread, a drink and dessert for one fixed price, at lunchtime only. Don't confuse it with *la carta* — that's the full list of dishes, what English calls \"the menu\".",
+        "**Del = de + el.** *El menú del día*, not *de el día*. This merge is required, not a matter of style.",
+        "**Para mí** = \"for me\". Note the ´ on *mí* — without it, *mi* means \"my\". After a preposition, the pronoun changes form: *para mí*, *para ti*, *para él*.",
+        "**Quiero vs quisiera.** *Quiero sopa* is perfectly fine among friends or when ordering quickly; *quisiera* is softer still. What's really rude is just naming the dish with nothing else — that's true everywhere.",
+        "**Sin gas / con gas** = still or sparkling water. In Spain, *agua* in a restaurant almost always comes in a bottle and is rarely free.",
+        "**¿Dónde está…?** uses *estar*, not *ser*, because you're asking about location. The difference is covered fully in Unit 11; for now: **location always takes *estar***.",
+        "**Perdone / perdona** = \"excuse me\" to interrupt someone — the first is polite, the second informal. Don't confuse it with *lo siento*, which is a real apology.",
+        "**¿Se puede…?** = \"can one…? / is it OK to…?\" without saying who. A handy all-purpose pattern: *¿se puede pagar con tarjeta?*, *¿se puede fumar aquí?*"
+      ],
+      "grammars": [
+        {
+          "title": "Querer (to want) and hay (there is)",
+          "body": [
+            "*Querer* is one of the verbs that **change inside**, not just at the end: the *e* in the stressed syllable becomes *ie*. The same pattern turns up later in *tener*, *empezar* and *preferir*."
+          ],
+          "table": {
+            "head": [
+              "",
+              "querer (to want)",
+              "Example"
+            ],
+            "rows": [
+              [
+                "yo",
+                "qu**ie**ro",
+                "*Quiero un café.*"
+              ],
+              [
+                "tú",
+                "qu**ie**res",
+                "*¿Quieres agua?*"
+              ],
+              [
+                "él / ella / usted",
+                "qu**ie**re",
+                "*Ella quiere sopa.*"
+              ],
+              [
+                "(polite, any person)",
+                "quisiera",
+                "*Quisiera la cuenta.*"
+              ]
+            ]
+          },
+          "after": [
+            "*Hay* stands outside every table: it has no other forms, no subject, and means \"there is\" or \"there are\". *Hay una mesa libre* (there's one free table), *hay tres mesas libres* (there are three free tables).",
+            "The negative is just *no hay*: *no hay pescado hoy* — there's no fish today. You'll hear this a lot in small cafés late in the afternoon."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "A mini menu",
+      "blocks": [
+        {
+          "type": "sub",
+          "text": "To drink — *para beber*"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Español",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "un café solo",
+              "oon kah-FEH SOH-loh",
+              "black coffee (espresso)"
+            ],
+            [
+              "un café con leche",
+              "oon kah-FEH kohn LEH-cheh",
+              "coffee with milk"
+            ],
+            [
+              "un cortado",
+              "oon kohr-TAH-doh",
+              "espresso with a dash of milk"
+            ],
+            [
+              "un té",
+              "oon TEH",
+              "tea"
+            ],
+            [
+              "un zumo de naranja",
+              "oon SOO-moh deh nah-RAHN-hah",
+              "orange juice"
+            ],
+            [
+              "una botella de agua",
+              "oo-nah boh-TEH-yah deh AH-gwah",
+              "a bottle of water"
+            ],
+            [
+              "una cerveza",
+              "oo-nah sehr-BEH-sah",
+              "beer"
+            ],
+            [
+              "un vino tinto",
+              "oon BEE-noh TEEN-toh",
+              "red wine"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "To eat — *para comer*"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Español",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "una tostada",
+              "oo-nah tohs-TAH-dah",
+              "toast"
+            ],
+            [
+              "un bocadillo",
+              "oon boh-kah-DEE-yoh",
+              "baguette sandwich"
+            ],
+            [
+              "una ensalada",
+              "oo-nah ehn-sah-LAH-dah",
+              "salad"
+            ],
+            [
+              "una sopa",
+              "oo-nah SOH-pah",
+              "soup"
+            ],
+            [
+              "el pollo",
+              "ehl POH-yoh",
+              "chicken"
+            ],
+            [
+              "el pescado",
+              "ehl pehs-KAH-doh",
+              "fish"
+            ],
+            [
+              "la carne",
+              "lah KAHR-neh",
+              "meat"
+            ],
+            [
+              "el arroz",
+              "ehl ah-RROHS",
+              "rice"
+            ],
+            [
+              "las patatas fritas",
+              "lahs pah-TAH-tahs FREE-tahs",
+              "French fries"
+            ],
+            [
+              "la tortilla española",
+              "lah tohr-TEE-yah ehs-pah-NYOH-lah",
+              "Spanish potato omelet"
+            ],
+            [
+              "el postre",
+              "ehl POHS-treh",
+              "dessert"
+            ],
+            [
+              "el helado",
+              "ehl eh-LAH-doh",
+              "ice cream"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "El agua — a tricky word",
+          "items": [
+            "*Agua* is **feminine**, but in the singular it takes *el*: *el agua*, not *la agua*. The reason is purely sound — *la agua* sounds like one stuttered word.",
+            "The proof is that its adjective stays feminine: *el agua fría* (cold water), not *frío*. And in the plural everything goes back to normal: *las aguas*.",
+            "Other words treated the same way: *el aula* (classroom), *el hambre* (hunger), *el águila* (eagle). Same feature: feminine, starting with a stressed **a** sound."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Culture corner",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "Mealtimes that shift",
+          "items": [
+            "A Spanish breakfast is very light: coffee and toast, often standing at the bar. The big meal is lunch, around 2-3 p.m., and dinner doesn't start until 9 p.m. A restaurant open at 6 p.m. is almost certainly a tourist restaurant.",
+            "*Tapas* are small portions served with drinks. In some cities — Granada is the most famous — tapas come free with every drink you order.",
+            "*La propina* (the tip) isn't required or expected the way it is in the US. Leaving some change or rounding up the bill is seen as friendly.",
+            "You have to ask for the check; a waiter who brings it unasked is seen as hurrying guests out. *La cuenta, por favor* — or raise your hand and draw a little square in the air."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "es": "el té",
+      "baca": "ehl TEH",
+      "en": "tea"
+    },
+    {
+      "es": "el agua",
+      "baca": "ehl AH-gwah",
+      "en": "water"
+    },
+    {
+      "es": "la botella",
+      "baca": "lah boh-TEH-yah",
+      "en": "bottle"
+    },
+    {
+      "es": "la sopa",
+      "baca": "lah SOH-pah",
+      "en": "soup"
+    },
+    {
+      "es": "la ensalada",
+      "baca": "lah ehn-sah-LAH-dah",
+      "en": "salad"
+    },
+    {
+      "es": "el pollo",
+      "baca": "ehl POH-yoh",
+      "en": "chicken"
+    },
+    {
+      "es": "el pescado",
+      "baca": "ehl pehs-KAH-doh",
+      "en": "fish"
+    },
+    {
+      "es": "el postre",
+      "baca": "ehl POHS-treh",
+      "en": "dessert"
+    },
+    {
+      "es": "la mesa",
+      "baca": "lah MEH-sah",
+      "en": "table"
+    },
+    {
+      "es": "el menú del día",
+      "baca": "ehl meh-NOO dehl DEE-ah",
+      "en": "set menu of the day"
+    },
+    {
+      "es": "la carta",
+      "baca": "lah KAHR-tah",
+      "en": "menu (list of dishes)"
+    },
+    {
+      "es": "la tarjeta",
+      "baca": "lah tahr-HEH-tah",
+      "en": "card"
+    },
+    {
+      "es": "el baño",
+      "baca": "ehl BAH-nyoh",
+      "en": "restroom, bathroom"
+    },
+    {
+      "es": "querer",
+      "baca": "keh-REHR",
+      "en": "to want"
+    },
+    {
+      "es": "beber",
+      "baca": "beh-BEHR",
+      "en": "to drink"
+    },
+    {
+      "es": "pagar",
+      "baca": "pah-GAHR",
+      "en": "to pay"
+    },
+    {
+      "es": "perdone",
+      "baca": "pehr-DOH-neh",
+      "en": "excuse me (polite)"
+    },
+    {
+      "es": "el azúcar",
+      "baca": "ehl ah-SOO-kahr",
+      "en": "sugar"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right form of *querer* (*quiero*, *quieres*, *quiere*).",
+      "items": [
+        "Yo ____ un café solo.",
+        "¿Tú ____ postre?",
+        "Ana ____ pescado.",
+        "¿Usted ____ la cuenta?"
+      ]
+    },
+    {
+      "prompt": "Put the words in order to make a correct Spanish sentence.",
+      "items": [
+        "cuenta / por favor / la",
+        "¿ / hay / del / menú / día / ?",
+        "agua / botella / una / de",
+        "está / ¿ / dónde / baño / el / ?",
+        "más / nada / gracias"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "¿Se puede pagar con tarjeta?",
+        "No hay pescado hoy.",
+        "El postre está incluido.",
+        "¿Para tomar aquí o para llevar?",
+        "Son cuatro euros con cincuenta."
+      ]
+    }
+  ],
+  "answers": [
+    "quiero — quieres — quiere — quiere",
+    "La cuenta, por favor. — ¿Hay menú del día? — Una botella de agua. — ¿Dónde está el baño? — Nada más, gracias.",
+    "Can I pay by card? — There's no fish today. — Dessert is included. — For here or to go? — That's four euros fifty."
+  ],
+  "wave": "Go back to **Unit 4**: name three languages and three jobs, each with its article."
+}

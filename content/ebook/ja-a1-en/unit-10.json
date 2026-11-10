@@ -1,0 +1,325 @@
+{
+  "title": "Talking about yesterday",
+  "title_target": "きのう なにを しましたか — Kinō nani o shimashita ka",
+  "goal": "Talk about what has already happened: the past tense of verbs, adjectives and nouns; chaining events with the て-form; and putting together a short, well-ordered story.",
+  "bekal": [
+    "using ました and ませんでした",
+    "putting い- and な-adjectives in the past",
+    "making the て-form of verbs",
+    "linking events with ～てから and ～てください",
+    "telling about your weekend in five sentences"
+  ],
+  "dialogs": [
+    {
+      "title": "会話 1 — Last weekend",
+      "intro": "Tanaka and Ani swap stories on Monday morning. This is the last dialogue of the module — almost everything you learned in the previous nine units shows up here at once.",
+      "lines": [
+        {"speaker": "たなか:", "text": "[アニさん|Ani-san]、[しゅうまつは|shūmatsu wa] [なにを|nani o] [しましたか|shimashita ka]。", "id": "Ani, what did you do on the weekend?", "literal": "Ani-Ms., weekend — as-for — what — [object] — did — [question]."},
+        {"speaker": "アニ:", "text": "[どようびに|Doyōbi ni] [ともだちと|tomodachi to] [きょうとへ|Kyōto e] [いきました|ikimashita]。", "id": "On Saturday I went to Kyoto with a friend.", "literal": "Saturday — on — friend — with — Kyoto — to — went."},
+        {"speaker": "たなか:", "text": "[どうでしたか|Dō deshita ka]。", "id": "How was it?", "literal": "how — was — [question]."},
+        {"speaker": "アニ:", "text": "[とても|Totemo] [きれいでした|kirei deshita]。[おてらを|Otera o] [みて|mite]、[しゃしんを|shashin o] [たくさん|takusan] [とりました|torimashita]。", "id": "It was beautiful. I saw temples and took lots of photos.", "literal": "very — beautiful — was. temple — [object] — see-and, photo — [object] — many — took."},
+        {"speaker": "たなか:", "text": "[ひとは|Hito wa] [おおかったですか|ōkatta desu ka]。", "id": "Was it crowded?", "literal": "people — as-for — many-were — is — [question]."},
+        {"speaker": "アニ:", "text": "[はい|Hai]、[すごく|sugoku] [おおかったです|ōkatta desu]。でも、[たのしかったです|tanoshikatta desu]。", "id": "Yes, really crowded. But it was fun.", "literal": "yes, terribly — many-were — is. but, fun-was — is."},
+        {"speaker": "たなか:", "text": "[なにか|Nanika] [かいましたか|kaimashita ka]。", "id": "Did you buy anything?", "literal": "something — bought — [question]."},
+        {"speaker": "アニ:", "text": "[おみやげを|Omiyage o] [かいました|kaimashita]。[でも|Demo]、[すこし|sukoshi] [たかかったです|takakatta desu]。", "id": "I bought some souvenirs. But they were a bit pricey.", "literal": "souvenir — [object] — bought. but, a-little — expensive-was — is."},
+        {"speaker": "たなか:", "text": "[にちようびは|Nichiyōbi wa]？", "id": "And Sunday?", "literal": "Sunday — as-for?"},
+        {"speaker": "アニ:", "text": "[どこも|Doko mo] [いきませんでした|ikimasen deshita]。[つかれましたから|Tsukaremashita kara]、[うちで|uchi de] [やすみました|yasumimashita]。", "id": "I didn't go anywhere. I was tired, so I rested at home.", "literal": "where — even — didn't-go. got-tired — because, home — at — rested."},
+        {"speaker": "たなか:", "text": "[それは|Sore wa] [よかったですね|yokatta desu ne]。", "id": "Good for you.", "literal": "that — as-for — good-was — is — right."}
+      ],
+      "notes": [
+        "**どうでしたか = “how was it?”** — the past of どうですか. It's the standard opening question about a past experience, and you'll be asked it often.",
+        "**どこも + negative verb = “not anywhere”.** The pattern question word + も + negative gives “not … any”: なにも たべませんでした (didn't eat anything), だれも いませんでした (there was nobody).",
+        "**なにか = something.** Compare なにも, which always pairs with a negative. One kana different, and the sentence flips direction.",
+        "**よかったです has a warm second meaning:** besides “was good”, it also means “I'm glad”. それはよかったですね = “I'm glad to hear that”. One of the most common ways to respond to good news.",
+        "**つかれました = I'm tired**, just like おなかがすきました in Unit 7: a past form for a **present** state. Japanese sees it as “have become tired”.",
+        "**おみやげ = souvenirs**, and this is more than a habit: bringing back souvenirs for coworkers after a trip is a custom genuinely followed in Japanese offices."
+      ],
+      "grammars": [
+        {
+          "title": "The past tense — three kinds of words, three ways",
+          "body": [
+            "This is the most important summary in the module. Note that **verbs** and **[い|i]-adjectives** change themselves, while **[な|na]-adjectives** and **nouns** change their [です|desu]."
+          ],
+          "table": {
+            "head": ["Type", "Present", "Past", "Past negative"],
+            "rows": [
+              ["Verb", "[たべます|tabemasu]", "[たべました|tabemashita]", "[たべませんでした|tabemasen deshita]"],
+              ["い-adjective", "[たかいです|takai desu]", "[たかかったです|takakatta desu]", "[たかくなかったです|takakunakatta desu]"],
+              ["な-adjective", "[しずかです|shizuka desu]", "[しずかでした|shizuka deshita]", "[しずかじゃありませんでした|shizuka ja arimasen deshita]"],
+              ["Noun", "[がくせいです|gakusei desu]", "[がくせいでした|gakusei deshita]", "[がくせいじゃありませんでした|gakusei ja arimasen deshita]"],
+              ["⚠️ いい", "[いいです|ii desu]", "[よかったです|yokatta desu]", "[よくなかったです|yokunakatta desu]"]
+            ]
+          },
+          "after": [
+            "⚠️ **Mistake number one:** writing **[たかいでした|takai deshita]**. An [い|i]-adjective puts **itself** in the past ([たかかった|takakatta]), not its [です|desu]. This mistake hangs on even among intermediate learners — nip it in the bud now.",
+            "**The quick way for [い|i]-adjectives:** drop [い|i], add **[かった|katta]**. [たかい|takai] → [たか|taka] + [かった|katta] → [たかかった|takakatta]. The negative: [たかくない|takakunai] → [たかくなかった|takaku nakatta]."
+          ]
+        },
+        {
+          "title": "Making the [て|te]-form",
+          "body": [
+            "The **[て|te]-form** is a major hub of Japanese: it gives you requests (～[てください|te kudasai]), permission (～[てもいいですか|te mo ii desu ka]), ongoing states (～[ています|te imasu]) and linked events (～[て|te]、～).",
+            "How you form it from the [ます|masu] form depends on the last sound before [ます|masu]:"
+          ],
+          "table": {
+            "head": ["ます ending", "Becomes", "Example"],
+            "rows": [
+              ["～い / ～ち / ～り", "→ **って**", "[かいます|kaimasu] → [かって|katte] · [まちます|machimasu] → [まって|matte]"],
+              ["～み / ～び / ～に", "→ **んで**", "[のみます|nomimasu] → [のんで|nonde] · [よみます|yomimasu] → [よんで|yonde]"],
+              ["～き", "→ **いて**", "[かきます|kakimasu] → [かいて|kaite] · [ききます|kikimasu] → [きいて|kiite]"],
+              ["～ぎ", "→ **いで**", "[およぎます|oyogimasu] → [およいで|oyoide]"],
+              ["～し", "→ **して**", "[はなします|hanashimasu] → [はなして|hanashite]"],
+              ["Group 2 (～え/～い + ます)", "→ **て**", "[たべます|tabemasu] → [たべて|tabete] · [みます|mimasu] → [みて|mite]"],
+              ["⚠️ Irregular", "—", "[します|shimasu] → [して|shite] · [きます|kimasu] → [きて|kite] · [いきます|ikimasu] → [いって|itte]"]
+            ]
+          },
+          "after": [
+            "**Don't memorize this table all at once.** What works for nearly every learner: memorize the [て|te]-forms of the ten verbs you use most, as whole words. The pattern will emerge from experience, not from the table.",
+            "⚠️ **[いきます|ikimasu] → [いって|itte]** is the only exception in the ～[き|ki] group. The rest ([かきます|kakimasu] → [かいて|kaite]) follow the pattern."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "会話 2 — Chaining events",
+      "intro": "Budi tells his teacher about his day. Notice how the て-form links events in sequence without repeating “and then” over and over.",
+      "lines": [
+        {"speaker": "せんせい:", "text": "[ブディさん|Budi-san]、[きのうは|kinō wa] [どうでしたか|dō deshita ka]。", "id": "Budi, how was yesterday?", "literal": "Budi-Mr., yesterday — as-for — how — was — [question]."},
+        {"speaker": "ブディ:", "text": "[あさ|Asa] [おきて|okite]、[あさごはんを|asagohan o] [たべて|tabete]、[がっこうへ|gakkō e] [きました|kimashita]。", "id": "In the morning I got up, had breakfast and came to school.", "literal": "morning — get-up-and, breakfast — [object] — eat-and, school — to — came."},
+        {"speaker": "せんせい:", "text": "[ごごは|Gogo wa]？", "id": "And the afternoon?", "literal": "afternoon — as-for?"},
+        {"speaker": "ブディ:", "text": "[じゅぎょうが|Jugyō ga] [おわってから|owatte kara]、[としょかんで|toshokan de] [べんきょうしました|benkyō shimashita]。", "id": "After class finished, I studied at the library.", "literal": "class — [subject] — finish-after, library — at — studied."},
+        {"speaker": "せんせい:", "text": "[なんじまで|Nanji made] [べんきょうしましたか|benkyō shimashita ka]。", "id": "Until what time did you study?", "literal": "what-o'clock — until — studied — [question]."},
+        {"speaker": "ブディ:", "text": "8[じまでです|ji made desu]。[それから|Sorekara] [ともだちと|tomodachi to] [ばんごはんを|bangohan o] [たべました|tabemashita]。", "id": "Until eight. After that I had dinner with friends.", "literal": "8 — o'clock — until — is. after-that — friend — with — dinner — [object] — ate."},
+        {"speaker": "せんせい:", "text": "[なにを|Nani o] [たべましたか|tabemashita ka]。", "id": "What did you eat?", "literal": "what — [object] — ate — [question]."},
+        {"speaker": "ブディ:", "text": "[カレーを|Karē o] [たべました|tabemashita]。[やすくて|Yasukute] [おいしかったです|oishikatta desu]。", "id": "Curry. It was cheap and tasty.", "literal": "curry — [object] — ate. cheap-and — tasty-was — is."},
+        {"speaker": "せんせい:", "text": "[しゅくだいは|Shukudai wa] [しましたか|shimashita ka]。", "id": "Did you do your homework?", "literal": "homework — as-for — did — [question]."},
+        {"speaker": "ブディ:", "text": "[すみません|Sumimasen]、[まだです|mada desu]。[きょう|Kyō] [うちへ|uchi e] [かえってから|kaette kara] [します|shimasu]。", "id": "Sorry, not yet. I'll do it today after I get home.", "literal": "sorry, not-yet — is. today — home — to — return-after — do."},
+        {"speaker": "せんせい:", "text": "[わかりました|Wakarimashita]。[がんばってください|Ganbatte kudasai]。", "id": "All right. Do your best.", "literal": "understood. persevere-please."}
+      ],
+      "notes": [
+        "**～て、～て、～ました** — a sequence of events marks only the **last verb** as past. The earlier ones just take the て-form. This saves a lot, and instantly makes your story flow instead of sounding choppy.",
+        "**～てから = after ～.** Unlike plain ～て, てから stresses that the first action is fully finished first. かえってからします = I'll do it **after** I get home.",
+        "**まだです = not yet.** A short, polite answer to “have you…?”. The opposite: もうしました (already did).",
+        "**がんばってください = do your best / good luck.** One of the most typically Japanese phrases, used for anything: exams, work, matches. The casual version is がんばって; to encourage yourself, がんばります.",
+        "**しゅくだい = homework**, literally “lodging task”. The verb is します: しゅくだいをします.",
+        "**カレー** — Japanese curry differs from Indian or Thai curry: sweeter, thicker, served over rice. It's one of the most common home-cooked meals in Japan."
+      ],
+      "grammars": [
+        {
+          "title": "Chaining events with the [て|te]-form",
+          "body": [
+            "Japanese doesn't link clauses with a word for “and”. It uses the [て|te]-form of the earlier verb instead. The order follows time — the first event comes first."
+          ],
+          "table": {
+            "head": ["Form", "Example", "Meaning"],
+            "rows": [
+              ["～て、～ました", "[おきて|Okite]、[たべて|tabete]、[いきました|ikimashita]。", "I got up, ate, then went."],
+              ["～てから", "[かえってから|Kaette kara] [します|shimasu]。", "I'll do it after I get home."],
+              ["～てください", "[まって|Matte] [ください|kudasai]。", "Please wait."],
+              ["～てもいいですか", "[すわっても|Suwatte mo] [いいですか|ii desu ka]。", "May I sit down?"],
+              ["～ています", "[いま|Ima] [たべています|tabete imasu]。", "I'm eating right now."],
+              ["～ています (state)", "[とうきょうに|Tōkyō ni] [すんでいます|sunde imasu]。", "I live in Tokyo."]
+            ]
+          },
+          "after": [
+            "**One form, six uses.** That's why the [て|te]-form deserves practice until it comes out without thinking. If there's one thing from this module to carry to the next level, this is it."
+          ]
+        },
+        {
+          "title": "Dates and months",
+          "body": [
+            "To talk about the past, you need dates. Months are very regular — just number + **[がつ|gatsu]**. Days 1 to 10 are irregular and must be memorized; the rest are number + **[にち|nichi]**."
+          ],
+          "tables": [
+            {
+              "head": ["Month", "Reading", "Month", "Reading"],
+              "rows": [
+                ["1月", "[いちがつ|ichigatsu]", "7月", "[しちがつ|shichigatsu] ⚠️"],
+                ["2月", "[にがつ|nigatsu]", "8月", "[はちがつ|hachigatsu]"],
+                ["3月", "[さんがつ|sangatsu]", "9月", "[くがつ|kugatsu] ⚠️"],
+                ["4月", "[しがつ|shigatsu] ⚠️", "10月", "[じゅうがつ|jūgatsu]"],
+                ["5月", "[ごがつ|gogatsu]", "11月", "[じゅういちがつ|jūichigatsu]"],
+                ["6月", "[ろくがつ|rokugatsu]", "12月", "[じゅうにがつ|jūnigatsu]"]
+              ]
+            },
+            {
+              "head": ["Date", "Reading", "Date", "Reading"],
+              "rows": [
+                ["1日", "[ついたち|tsuitachi] ⚠️", "8日", "[ようか|yōka] ⚠️"],
+                ["2日", "[ふつか|futsuka] ⚠️", "9日", "[ここのか|kokonoka] ⚠️"],
+                ["3日", "[みっか|mikka] ⚠️", "10日", "[とおか|tōka] ⚠️"],
+                ["4日", "[よっか|yokka] ⚠️", "14日", "[じゅうよっか|jūyokka] ⚠️"],
+                ["5日", "[いつか|itsuka] ⚠️", "20日", "[はつか|hatsuka] ⚠️"],
+                ["6日", "[むいか|muika] ⚠️", "24日", "[にじゅうよっか|nijūyokka] ⚠️"],
+                ["7日", "[なのか|nanoka] ⚠️", "what date", "[なんにち|nannichi]"]
+              ]
+            }
+          ],
+          "after": [
+            "**The order goes from big to small:** 2026[ねん|nen] 8[がつ|gatsu] 21[にち|nichi] = August 21, 2026. Year first, then month, then day — the same way Japanese addresses are written.",
+            "**The rest are regular:** 11日 = [じゅういちにち|jūichinichi], 15日 = [じゅうごにち|jūgonichi], 30日 = [さんじゅうにち|sanjūnichi]. Only the ones marked in the table are irregular — learn the first ten and the rest take care of themselves."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Building a five-sentence story",
+      "blocks": [
+        {"type": "p", "text": "The final A1 skill is telling something that has happened, in order. This five-sentence frame works for any story:"},
+        {"type": "tabel", "head": ["Part", "Pattern", "Example"], "rows": [
+          ["1. When & what", "[time] [に] [place] [へ/で] [verb ました]", "[どようびに|Doyōbi ni] [きょうとへ|Kyōto e] [いきました|ikimashita]。"],
+          ["2. With whom", "[who] [と] …", "[ともだちと|Tomodachi to] [いきました|ikimashita]。"],
+          ["3. What you did", "～て、～て、～ました", "[おてらを|Otera o] [みて|mite]、[しゃしんを|shashin o] [とりました|torimashita]。"],
+          ["4. How it felt", "[past adjective]", "[とても|Totemo] [たのしかったです|tanoshikatta desu]。"],
+          ["5. Wrap-up / plans", "[また|Mata] ～たいです", "[また|Mata] [いきたいです|ikitai desu]。"]
+        ]},
+        {"type": "kotak", "title": "A complete example", "items": [
+          "[せんしゅうの|Senshū no] [にちようびに|nichiyōbi ni] [ともだちと|tomodachi to] [うみへ|umi e] [いきました|ikimashita]。",
+          "[でんしゃで|Densha de] 2[じかん|jikan] [ぐらい|gurai] [かかりました|kakarimashita]。",
+          "[うみで|Umi de] [およいで|oyoide]、[しゃしんを|shashin o] [たくさん|takusan] [とりました|torimashita]。",
+          "[てんきが|Tenki ga] [よくて|yokute]、[とても|totemo] [たのしかったです|tanoshikatta desu]。",
+          "[こんど|Kondo] [かぞくと|kazoku to] [また|mata] [いきたいです|ikitai desu]。",
+          "Last Sunday I went to the beach with a friend. It took about 2 hours by train. At the beach I swam and took lots of photos. The weather was nice and it was great fun. Next time I want to go again with my family."
+        ]},
+        {"type": "p", "text": "Now write your own version, about your actual weekend. Five sentences. This is the module's last homework, and the most useful."}
+      ]
+    },
+    {
+      "title": "Time words for the past",
+      "blocks": [
+        {"type": "tabel", "head": ["Japanese", "Meaning", "Japanese", "Meaning"], "rows": [
+          ["[きのう|kinō] 昨日", "yesterday", "[おととい|ototoi]", "the day before yesterday"],
+          ["[せんしゅう|senshū] 先週", "last week", "[せんげつ|sengetsu] 先月", "last month"],
+          ["[きょねん|kyonen] 去年", "last year", "[このまえ|kono mae]", "the other day"],
+          ["[さっき|sakki]", "a moment ago", "[もう|mō]", "already"],
+          ["[まだ|mada]", "not yet", "[はじめて|hajimete] 初めて", "for the first time"],
+          ["[ときどき|tokidoki] 時々", "sometimes", "[いつか|itsuka]", "someday"]
+        ]},
+        {"type": "kotak", "title": "もう and まだ", "items": [
+          "**[もう|Mō] [しましたか|shimashita ka]。** — Have you done it yet?",
+          "**[はい|Hai]、[もう|mō] [しました|shimashita]。** — Yes, already.",
+          "**[いいえ|Iie]、[まだです|mada desu]。** — Not yet.",
+          "⚠️ Don't answer いいえ、しませんでした for “not yet” — that means “I didn't do it (and won't)”. まだです leaves the possibility open, which is usually what you mean."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    {"ja": "[きのう|kinō] 昨日", "baca": "きのう · kinō", "en": "yesterday"},
+    {"ja": "[おととい|ototoi]", "baca": "おととい · ototoi", "en": "the day before yesterday"},
+    {"ja": "[せんげつ|sengetsu] 先月", "baca": "せんげつ · sengetsu", "en": "last month"},
+    {"ja": "[きょねん|kyonen] 去年", "baca": "きょねん · kyonen", "en": "last year"},
+    {"ja": "[さっき|sakki]", "baca": "さっき · sakki", "en": "a moment ago"},
+    {"ja": "[もう|mō]", "baca": "もう · mō", "en": "already"},
+    {"ja": "[はじめて|hajimete] 初めて", "baca": "はじめて · hajimete", "en": "for the first time"},
+    {"ja": "[たのしい|tanoshii] 楽しい", "baca": "たのしい · tanoshii", "en": "fun, enjoyable"},
+    {"ja": "[おおい|ōi] 多い", "baca": "おおい · ōi", "en": "many, a lot"},
+    {"ja": "[すくない|sukunai] 少ない", "baca": "すくない · sukunai", "en": "few, little"},
+    {"ja": "[たくさん|takusan]", "baca": "たくさん · takusan", "en": "lots, plenty"},
+    {"ja": "[つかれました|tsukaremashita] 疲れました", "baca": "つかれました · tsukaremashita", "en": "tired"},
+    {"ja": "[おわります|owarimasu] 終わります", "baca": "おわります · owarimasu", "en": "end, finish"},
+    {"ja": "[はじまります|hajimarimasu] 始まります", "baca": "はじまります · hajimarimasu", "en": "begin, start"},
+    {"ja": "[およぎます|oyogimasu] 泳ぎます", "baca": "およぎます · oyogimasu", "en": "swim"},
+    {"ja": "[かかります|kakarimasu]", "baca": "かかります · kakarimasu", "en": "take (time)"},
+    {"ja": "[がんばります|ganbarimasu] 頑張ります", "baca": "がんばります · ganbarimasu", "en": "do one's best"},
+    {"ja": "[おてら|otera] お寺", "baca": "おてら · otera", "en": "Buddhist temple"},
+    {"ja": "[じんじゃ|jinja] 神社", "baca": "じんじゃ · jinja", "en": "Shinto shrine"},
+    {"ja": "[うみ|umi] 海", "baca": "うみ · umi", "en": "sea, beach"},
+    {"ja": "[やま|yama] 山", "baca": "やま · yama", "en": "mountain"},
+    {"ja": "[おみやげ|omiyage] お土産", "baca": "おみやげ · omiyage", "en": "souvenir"},
+    {"ja": "[しゅくだい|shukudai] 宿題", "baca": "しゅくだい · shukudai", "en": "homework"},
+    {"ja": "[カレー|karē]", "baca": "カレー · karē", "en": "curry"},
+    {"ja": "[きょうと|Kyōto] 京都", "baca": "きょうと · Kyōto", "en": "Kyoto"},
+    {"ja": "[おおさか|Ōsaka] 大阪", "baca": "おおさか · Ōsaka", "en": "Osaka"},
+    {"ja": "[ねん|nen] 年", "baca": "ねん · nen", "en": "year"},
+    {"ja": "[がつ|gatsu] 月", "baca": "がつ · gatsu", "en": "month (names)"},
+    {"ja": "[にち|nichi] 日", "baca": "にち · nichi", "en": "date, day"},
+    {"ja": "[ついたち|tsuitachi] 一日", "baca": "ついたち · tsuitachi", "en": "the 1st"},
+    {"ja": "[ふつか|futsuka] 二日", "baca": "ふつか · futsuka", "en": "the 2nd"},
+    {"ja": "[みっか|mikka] 三日", "baca": "みっか · mikka", "en": "the 3rd"},
+    {"ja": "[はつか|hatsuka] 二十日", "baca": "はつか · hatsuka", "en": "the 20th"},
+    {"ja": "[なんにち|nannichi] 何日", "baca": "なんにち · nannichi", "en": "what date"},
+    {"ja": "[なにか|nanika] 何か", "baca": "なにか · nanika", "en": "something"},
+    {"ja": "[なにも|nanimo] 何も", "baca": "なにも · nanimo", "en": "not … anything"},
+    {"ja": "[どこも|dokomo]", "baca": "どこも · dokomo", "en": "not … anywhere"},
+    {"ja": "[それから|sorekara]", "baca": "それから · sorekara", "en": "after that"},
+    {"ja": "[てから|te kara]", "baca": "てから · te kara", "en": "after (doing)"},
+    {"ja": "[よかった|yokatta]", "baca": "よかった · yokatta", "en": "I'm glad; was good"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Change to the past tense.",
+      "items": [
+        "たべます → ___",
+        "いきます → ___",
+        "たかいです → ___",
+        "しずかです → しずか ___",
+        "がくせいです → がくせい ___",
+        "いいです → ___"
+      ]
+    },
+    {
+      "prompt": "Change to the past negative.",
+      "items": [
+        "いきます → ___",
+        "たべます → ___",
+        "しません → ___",
+        "きます → ___",
+        "のみます → ___"
+      ]
+    },
+    {
+      "prompt": "Write the て-form of these verbs.",
+      "items": [
+        "たべます → ___",
+        "のみます → ___",
+        "かきます → ___",
+        "します → ___",
+        "きます → ___",
+        "いきます → ___"
+      ]
+    },
+    {
+      "prompt": "Put the pieces in order to make a correct sentence.",
+      "items": [
+        "きのう / ともだち / と / きょうと / へ / いきました",
+        "とても / たのしかった / です",
+        "おきて / あさごはん / を / たべて / がっこう / へ / いきました",
+        "うち / へ / かえって / から / しゅくだい / を / します",
+        "どこ / も / いきません / でした",
+        "つかれました / から / うち / で / やすみました"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "しゅうまつはなにをしましたか。",
+        "きょうとはとてもきれいでした。",
+        "ひとがすごくおおかったです。",
+        "にちようびはどこもいきませんでした。",
+        "じゅぎょうがおわってから、としょかんでべんきょうしました。"
+      ]
+    },
+    {
+      "prompt": "Translate into Japanese. Write in rōmaji.",
+      "items": [
+        "Yesterday I went to Kyoto.",
+        "It was great fun.",
+        "I didn't eat anything.",
+        "I'll do my homework after I get home.",
+        "Next time I want to go again."
+      ]
+    }
+  ],
+  "answers": [
+    "たべました — いきました — たかかったです — でした — でした — よかったです",
+    "いきませんでした — たべませんでした — しませんでした — きませんでした — のみませんでした",
+    "たべて — のんで — かいて — して — きて — いって",
+    "きのう ともだち と きょうと へ いきました — とても たのしかった です — おきて あさごはん を たべて がっこう へ いきました — うち へ かえって から しゅくだい を します — どこ も いきません でした — つかれました から うち で やすみました",
+    "What did you do on the weekend? — Kyoto was very beautiful. — There were so many people. — On Sunday I didn't go anywhere. — After class finished, I studied at the library.",
+    "kinō Kyōto e ikimashita — totemo tanoshikatta desu — nanimo tabemasen deshita — kaette kara shukudai o shimasu — kondo mata ikitai desu"
+  ],
+  "wave": "This is the last unit, so the review covers everything: read **the first dialogue of every unit** aloud, one a day for ten days, without looking at the translation. Whatever no longer needs the rōmaji above it is truly yours — and there's usually a surprising amount of it."
+}

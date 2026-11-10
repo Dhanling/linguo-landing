@@ -1,0 +1,388 @@
+{
+  "title": "Hello, what's your name?",
+  "title_target": "¡Hola! ¿Cómo te llamas?",
+  "goal": "Greet people for the time of day, introduce yourself, and say who you are.",
+  "bekal": [
+    "say hello and goodbye",
+    "give your name",
+    "say who you are (*soy estudiante*)",
+    "say no with *no*"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — En la escuela de idiomas",
+      "intro": "Two strangers meet in the hallway of a language school. Read the Spanish out loud first, then glance at the translation.",
+      "lines": [
+        {
+          "speaker": "Ana:",
+          "text": "¡Hola! Buenos días.",
+          "id": "Hi! Good morning.",
+          "literal": "hello! good days."
+        },
+        {
+          "speaker": "Luis:",
+          "text": "Buenos días. ¿Cómo te llamas?",
+          "id": "Good morning. What's your name?",
+          "literal": "good days. how you-call-yourself?"
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Me llamo Ana. ¿Y tú?",
+          "id": "My name's Ana. And you?",
+          "literal": "myself-I-call Ana. and you?"
+        },
+        {
+          "speaker": "Luis:",
+          "text": "Yo soy Luis. Mucho gusto.",
+          "id": "I'm Luis. Nice to meet you.",
+          "literal": "I am Luis. much pleasure."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Encantada. ¿Eres estudiante?",
+          "id": "Nice to meet you too. Are you a student?",
+          "literal": "delighted. you-are student?"
+        },
+        {
+          "speaker": "Luis:",
+          "text": "Sí, soy estudiante. Y tú, ¿eres profesora?",
+          "id": "Yes, I'm a student. And you, are you a teacher?",
+          "literal": "yes, am student. and you, you-are teacher?"
+        },
+        {
+          "speaker": "Ana:",
+          "text": "No, no soy profesora. Soy estudiante también.",
+          "id": "No, I'm not a teacher. I'm a student too.",
+          "literal": "no, not am teacher. am student also."
+        },
+        {
+          "speaker": "Luis:",
+          "text": "¿Y cómo estás hoy?",
+          "id": "And how are you today?",
+          "literal": "and how you-are today?"
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Muy bien, gracias. Un poco cansada, pero bien.",
+          "id": "Very well, thanks. A little tired, but fine.",
+          "literal": "very well, thanks. a little tired, but well."
+        },
+        {
+          "speaker": "Luis:",
+          "text": "¡Ah, muy bien! Hasta luego, Ana.",
+          "id": "Oh, great! See you later, Ana.",
+          "literal": "ah, very well! until later, Ana."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Adiós, Luis. Hasta mañana.",
+          "id": "Bye, Luis. See you tomorrow.",
+          "literal": "goodbye, Luis. until tomorrow."
+        }
+      ],
+      "notes": [
+        "**Pronouns can be dropped.** *Soy estudiante* already means \"I'm a student\" without *yo*, because the verb form itself shows who is speaking. *Yo* is used for emphasis: *Yo soy Luis* = \"as for **me**, I'm Luis\". That's why Spanish sounds so economical — half of its pronouns are never actually said.",
+        "**Double question and exclamation marks.** Spanish opens a question with ¿ and an exclamation with ¡. It's practical: the reader knows the tone of the sentence from the start, not only at the end. On a phone, these marks appear when you long-press ? or !.",
+        "**Encantado / encantada.** It means \"nice to meet you\", but its form follows the gender of the **speaker**: a man says *encantado*, a woman *encantada*. The same thing happens with *cansado / cansada* in line 9 — Ana is a woman, so she's *cansada*. *Mucho gusto* is safe for anyone because it isn't an adjective.",
+        "**Saying no is easy.** Just put *no* in front of the verb: *soy* → *no soy*. When answering a question, *no* appears twice: *No, no soy profesora* — the first means \"no\", the second is part of the sentence. There's no helper verb like English \"do\".",
+        "**Buenos días** is used until around noon, then *buenas tardes* until sunset, and *buenas noches* after that. Notice: *días* is plural, so the adjective is plural too — *buenos*. And *buenas noches* works both as a greeting and as \"good night\" before bed.",
+        "**¿Cómo estás? doesn't use *ser*.** How you are and how you feel use a different verb, *estar*, which is covered in Unit 11. For now, learn it as one whole phrase: *¿cómo estás?* (informal) and *¿cómo está usted?* (polite).",
+        "**Un poco** = \"a little\", always before the adjective: *un poco cansada*, *un poco difícil*. Don't flip it."
+      ],
+      "grammars": [
+        {
+          "title": "The verb ser (to be) — the first three forms",
+          "body": [
+            "*Ser* is used for **identity** — who you are, what you do, where you're from, what you're like. Its form changes with the person, and these three forms are all you need for this unit:"
+          ],
+          "table": {
+            "head": [
+              "Spanish",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "yo **soy**",
+                "yoh SOY",
+                "I am"
+              ],
+              [
+                "tú **eres**",
+                "too EH-rehs",
+                "you are"
+              ],
+              [
+                "él / ella **es**",
+                "ehl / EH-yah EHS",
+                "he / she is"
+              ],
+              [
+                "usted **es**",
+                "oos-TEHD EHS",
+                "you are (polite)"
+              ]
+            ]
+          },
+          "after": [
+            "Look at the last row: *usted* (polite \"you\") uses exactly the same form as *él / ella*. Strange at first, but it makes sense once you know where it comes from — *usted* was once *vuestra merced*, \"Your Grace\", and people spoke about it in the third person rather than addressing it directly.",
+            "The most basic identity sentence is **A es B**, with nothing in between: *Ana es profesora*, *yo soy estudiante*. And unlike English, jobs take no article — not *soy una profesora*, but *soy profesora*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Hello and goodbye",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Learn this list as whole phrases rather than word by word. They are all fixed expressions that never change form."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Español",
+            "Say it",
+            "Meaning",
+            "When"
+          ],
+          "rows": [
+            [
+              "¡Hola!",
+              "OH-lah",
+              "Hello / Hi",
+              "any time, to anyone"
+            ],
+            [
+              "Buenos días",
+              "BWEH-nohs DEE-ahs",
+              "Good morning",
+              "until about 12 noon"
+            ],
+            [
+              "Buenas tardes",
+              "BWEH-nahs TAHR-dehs",
+              "Good afternoon",
+              "from 12 until sunset"
+            ],
+            [
+              "Buenas noches",
+              "BWEH-nahs NOH-chehs",
+              "Good evening",
+              "after dark; also \"good night\" before bed"
+            ],
+            [
+              "¿Qué tal?",
+              "keh TAHL",
+              "How's it going?",
+              "casual, to anyone you call *tú*"
+            ],
+            [
+              "¿Cómo estás?",
+              "KOH-moh ehs-TAHS",
+              "How are you?",
+              "informal"
+            ],
+            [
+              "¿Cómo está usted?",
+              "KOH-moh ehs-TAH oos-TEHD",
+              "How are you?",
+              "polite"
+            ],
+            [
+              "Adiós",
+              "ah-DYOHS",
+              "Goodbye",
+              "general goodbye"
+            ],
+            [
+              "Hasta luego",
+              "AHS-tah LWEH-goh",
+              "See you later",
+              "general goodbye, the most common"
+            ],
+            [
+              "Hasta mañana",
+              "AHS-tah mah-NYAH-nah",
+              "See you tomorrow",
+              "when you really will meet tomorrow"
+            ],
+            [
+              "Hasta pronto",
+              "AHS-tah PROHN-toh",
+              "See you soon",
+              "when you don't know when yet"
+            ],
+            [
+              "Nos vemos",
+              "nohs BEH-mohs",
+              "See you",
+              "casual, between friends"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Answering *¿qué tal?* doesn't need to be long: *bien, gracias* is enough, and it's almost always followed by *¿y tú?* — returning the question is polite; leaving it hanging sounds cold."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "es": "hola",
+      "baca": "OH-lah",
+      "en": "hello"
+    },
+    {
+      "es": "buenos días",
+      "baca": "BWEH-nohs DEE-ahs",
+      "en": "good morning"
+    },
+    {
+      "es": "buenas noches",
+      "baca": "BWEH-nahs NOH-chehs",
+      "en": "good evening / good night"
+    },
+    {
+      "es": "¿cómo?",
+      "baca": "KOH-moh",
+      "en": "how? / what?"
+    },
+    {
+      "es": "¿qué tal?",
+      "baca": "keh TAHL",
+      "en": "how's it going?"
+    },
+    {
+      "es": "me llamo…",
+      "baca": "meh YAH-moh",
+      "en": "my name is…"
+    },
+    {
+      "es": "y",
+      "baca": "ee",
+      "en": "and"
+    },
+    {
+      "es": "pero",
+      "baca": "PEH-roh",
+      "en": "but"
+    },
+    {
+      "es": "tú",
+      "baca": "too",
+      "en": "you (informal)"
+    },
+    {
+      "es": "yo",
+      "baca": "yoh",
+      "en": "I"
+    },
+    {
+      "es": "mucho gusto",
+      "baca": "MOO-choh GOOS-toh",
+      "en": "nice to meet you"
+    },
+    {
+      "es": "encantado / encantada",
+      "baca": "ehn-kahn-TAH-doh",
+      "en": "nice to meet you (said by a man / a woman)"
+    },
+    {
+      "es": "estudiante",
+      "baca": "ehs-too-DYAHN-teh",
+      "en": "student"
+    },
+    {
+      "es": "profesor / profesora",
+      "baca": "proh-feh-SOHR",
+      "en": "teacher"
+    },
+    {
+      "es": "sí / no",
+      "baca": "see / noh",
+      "en": "yes / no"
+    },
+    {
+      "es": "también",
+      "baca": "tahm-BYEHN",
+      "en": "also, too"
+    },
+    {
+      "es": "muy",
+      "baca": "mwee",
+      "en": "very"
+    },
+    {
+      "es": "un poco",
+      "baca": "oon POH-koh",
+      "en": "a little / a bit"
+    },
+    {
+      "es": "bien",
+      "baca": "byehn",
+      "en": "well, fine"
+    },
+    {
+      "es": "gracias",
+      "baca": "GRAH-see-ahs",
+      "en": "thank you"
+    },
+    {
+      "es": "cansado / cansada",
+      "baca": "kahn-SAH-doh",
+      "en": "tired"
+    },
+    {
+      "es": "hasta luego",
+      "baca": "AHS-tah LWEH-goh",
+      "en": "see you later"
+    },
+    {
+      "es": "hasta mañana",
+      "baca": "AHS-tah mah-NYAH-nah",
+      "en": "see you tomorrow"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "Me llamo Carlos.",
+        "¿Eres profesora?",
+        "No soy estudiante.",
+        "Ella es profesora también.",
+        "Este es mi amigo Luis.",
+        "¡Hasta luego!"
+      ]
+    },
+    {
+      "prompt": "Fill in the right form of *ser* (*soy*, *eres*, *es*).",
+      "items": [
+        "Yo ____ estudiante.",
+        "¿Tú ____ Ana?",
+        "Él ____ profesor.",
+        "No, yo no ____ profesora.",
+        "La señora Gómez ____ muy simpática.",
+        "¿Usted ____ el profesor de español?"
+      ]
+    },
+    {
+      "prompt": "Which greeting fits? Fill in the blanks.",
+      "items": [
+        "At 8:00 a.m. you meet a neighbor: ____",
+        "At 5:00 p.m. you walk into a shop: ____",
+        "At 10:00 p.m. you're off to bed: ____",
+        "You greet a friend your age, casually: ____"
+      ]
+    }
+  ],
+  "answers": [
+    "My name's Carlos. — Are you a teacher? — I'm not a student. — She's a teacher too. — This is my friend Luis. — See you later!",
+    "soy — eres — es — soy — es — es",
+    "buenos días — buenas tardes — buenas noches — hola"
+  ]
+}

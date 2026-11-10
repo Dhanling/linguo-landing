@@ -1,0 +1,306 @@
+{
+  "title": "Inviting, asking and wanting",
+  "title_target": "いっしょに いきませんか — Issho ni ikimasen ka",
+  "goal": "Invite people, say what you want and want to do, ask for permission, and turn things down without giving offense.",
+  "bekal": [
+    "inviting with ～ませんか and ～ましょう",
+    "expressing wishes with ～たいです and ～が ほしいです",
+    "asking permission with ～てもいいですか",
+    "declining gently, the Japanese way",
+    "giving reasons with ～から"
+  ],
+  "dialogs": [
+    {
+      "title": "会話 1 — A weekend invitation",
+      "intro": "Tanaka invites Ani out. Notice that invitations in Japanese take the form of a negative question — and that's exactly what makes them polite.",
+      "lines": [
+        {"speaker": "たなか:", "text": "[アニさん|Ani-san]、[こんどの|kondo no] [どようび|doyōbi]、[ひまですか|hima desu ka]。", "id": "Ani, are you free this Saturday?", "literal": "Ani-Ms., this-time — 's — Saturday, free — is — [question]."},
+        {"speaker": "アニ:", "text": "[はい|Hai]、[ひまです|hima desu]。", "id": "Yes, I'm free.", "literal": "yes, free — is."},
+        {"speaker": "たなか:", "text": "[いっしょに|Issho ni] [おまつりへ|omatsuri e] [いきませんか|ikimasen ka]。", "id": "Would you like to go to the festival together?", "literal": "together — festival — to — don't-go — [question]."},
+        {"speaker": "アニ:", "text": "[いいですね|Ii desu ne]！[わたしも|Watashi mo] [おまつりが|omatsuri ga] [みたいです|mitai desu]。", "id": "Sounds great! I'd like to see a festival too.", "literal": "good — is — right! I — also — festival — [subject] — want-to-see — is."},
+        {"speaker": "たなか:", "text": "[じゃあ|Jā]、[なんじに|nanji ni] [あいましょうか|aimashō ka]。", "id": "So, what time shall we meet?", "literal": "well-then, what-o'clock — at — let's-meet — [question]."},
+        {"speaker": "アニ:", "text": "[ろくじは|Roku-ji wa] [どうですか|dō desu ka]。", "id": "How about six?", "literal": "six-o'clock — as-for — how — is — [question]."},
+        {"speaker": "たなか:", "text": "[いいですよ|Ii desu yo]。[えきの|Eki no] [まえで|mae de] [あいましょう|aimashō]。", "id": "Sure. Let's meet in front of the station.", "literal": "good — is — you-know. station — 's — front — at — let's-meet."},
+        {"speaker": "アニ:", "text": "[おまつりで|Omatsuri de] [なにが|nani ga] [たべられますか|taberaremasu ka]。", "id": "What can you eat at the festival?", "literal": "festival — at — what — [subject] — can-be-eaten — [question]."},
+        {"speaker": "たなか:", "text": "[たこやきや|Takoyaki ya] [やきそばが|yakisoba ga] [あります|arimasu]。[たこやきを|Takoyaki o] [たべたいですか|tabetai desu ka]。", "id": "There's takoyaki, yakisoba and so on. Do you want to try takoyaki?", "literal": "takoyaki — and-such — yakisoba — [subject] — exist. takoyaki — [object] — want-to-eat — [question]."},
+        {"speaker": "アニ:", "text": "[はい|Hai]、[たべたいです|tabetai desu]！[ゆかたも|Yukata mo] [きたいです|kitai desu]。", "id": "Yes, I want to! I'd like to wear a yukata too.", "literal": "yes, want-to-eat — is! yukata — also — want-to-wear — is."},
+        {"speaker": "たなか:", "text": "[じゃあ|Jā]、[ごじに|go-ji ni] [きてください|kite kudasai]。[ははが|Haha ga] [てつだいます|tetsudaimasu]。", "id": "Then come at five. My mother will help you.", "literal": "well-then, five-o'clock — at — come-please. mother — [subject] — helps."}
+      ],
+      "notes": [
+        "**Inviting with a negative sounds more polite.** いきませんか (“won't you go?”) leaves the door open to say no, while いきましょう (“let's go”) already assumes a yes. That's why the first invitation almost always uses ～ませんか; ～ましょう comes later, once the person has agreed.",
+        "**Notice the flow in this dialogue:** Tanaka invites with いきませんか → Ani agrees → only then does あいましょう appear. This order is no accident, and following it makes your conversations sound natural.",
+        "**～ましょうか = “shall we ～?”** — offering while asking. なんじに あいましょうか = what time shall we meet? Also used to offer help: てつだいましょうか (shall I help?).",
+        "**や = “and so on”**, unlike と, which gives a complete list. たこやき**と**やきそば = takoyaki and yakisoba (that's all). たこやき**や**やきそば = takoyaki, yakisoba, and other things.",
+        "**きます has two different meanings:** 来ます (come) and 着ます (wear clothes). In this dialogue きたいです = want to **wear**, not want to come. Different kanji, same kana — one of the reasons kanji are still used.",
+        "**Yukata** (ゆかた) is a light cotton kimono worn at summer festivals. Unlike formal kimono, it's cheaper, simpler, and young people love wearing it."
+      ],
+      "grammars": [
+        {
+          "title": "Inviting: four levels",
+          "body": [
+            "All are formed from the [ます|masu] form by changing the ending. What differs is how much room you leave for a no."
+          ],
+          "table": {
+            "head": ["Form", "Example", "Meaning", "Room to refuse"],
+            "rows": [
+              ["～[ませんか|masen ka]", "[いきませんか|Ikimasen ka]。", "Would you like to go?", "Most — the first invitation"],
+              ["～[ましょうか|mashō ka]", "[いきましょうか|Ikimashō ka]。", "Shall we go?", "Some — checking"],
+              ["～[ましょう|mashō]", "[いきましょう|Ikimashō]。", "Let's go.", "Little — already agreed"],
+              ["～[てください|te kudasai]", "[きてください|Kite kudasai]。", "Please come.", "None — it's a request"]
+            ]
+          },
+          "after": [
+            "**Answering an invitation:**",
+            "Accepting — **[いいですね|ii desu ne]。** (Sounds good.) / **[ぜひ|zehi]。** (I'd love to.) / **[いきましょう|ikimashō]。** (Let's go.)",
+            "Declining — **[すみません|sumimasen]、[ちょっと|chotto]…** (Sorry, it's a bit…) / **[その日は|sono hi wa] [ちょっと|chotto]…** (That day's a bit…). ⚠️ Answering [いいえ|iie]、[いきません|ikimasen] sounds very cold and is almost never used."
+          ]
+        },
+        {
+          "title": "～[たいです|tai desu] — want to do",
+          "body": [
+            "To say you **want to do something**, drop [ます|masu] and add **[たい|tai]**. The result behaves like an [い|i]-adjective — so its negative and past follow the rules from Unit 7."
+          ],
+          "table": {
+            "head": ["Form", "Example", "Meaning"],
+            "rows": [
+              ["Basic", "[たべます|tabemasu] → [たべたいです|tabetai desu]", "want to eat"],
+              ["Negative", "[たべたくないです|tabetakunai desu]", "don't want to eat"],
+              ["Past", "[たべたかったです|tabetakatta desu]", "wanted to eat"],
+              ["Another example", "[いきます|ikimasu] → [いきたいです|ikitai desu]", "want to go"],
+              ["Another example", "[みます|mimasu] → [みたいです|mitai desu]", "want to watch"],
+              ["Another example", "[かいます|kaimasu] → [かいたいです|kaitai desu]", "want to buy"]
+            ]
+          },
+          "after": [
+            "**The object can take [を|o] or [が|ga].** [すしを|sushi o] [たべたいです|tabetai desu] and [すしが|sushi ga] [たべたいです|tabetai desu] are both correct; the [が|ga] version puts slightly more stress on the thing.",
+            "⚠️ **Don't use ～[たいです|tai desu] for a third person.** Japanese assumes you can't know what's in someone else's heart, so “he wants to go” needs another form ([いきたがっています|ikitagatte imasu]). Use ～[たいです|tai desu] only for yourself and when asking the person you're talking to.",
+            "**Its relative: ～[が|ga] [ほしいです|hoshii desu]** = want to **have** (a thing). [あたらしいくるまが|atarashii kuruma ga] [ほしいです|hoshii desu] = I want a new car. Use [ほしい|hoshii] for things, [たい|tai] for actions."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "会話 2 — Asking permission in class",
+      "intro": "Budi asks his teacher for a few things. Notice how the patterns for permission and prohibition come in pairs.",
+      "lines": [
+        {"speaker": "ブディ:", "text": "[せんせい|Sensei]、[しつもんが|shitsumon ga] [あります|arimasu]。", "id": "Sensei, I have a question.", "literal": "teacher, question — [subject] — exists."},
+        {"speaker": "せんせい:", "text": "[はい|Hai]、[どうぞ|dōzo]。", "id": "Yes, go ahead.", "literal": "yes, please."},
+        {"speaker": "ブディ:", "text": "[すみません|Sumimasen]、[この|kono] [ことばの|kotoba no] [いみが|imi ga] [わかりません|wakarimasen]。", "id": "Excuse me, I don't understand what this word means.", "literal": "excuse-me, this — word — 's — meaning — [subject] — don't-understand."},
+        {"speaker": "せんせい:", "text": "[じしょで|Jisho de] [しらべてください|shirabete kudasai]。", "id": "Look it up in the dictionary.", "literal": "dictionary — with — check-please."},
+        {"speaker": "ブディ:", "text": "[スマホを|Sumaho o] [つかっても|tsukatte mo] [いいですか|ii desu ka]。", "id": "May I use my phone?", "literal": "smartphone — [object] — use — even-if — good — is — [question]."},
+        {"speaker": "せんせい:", "text": "[はい|Hai]、[いいですよ|ii desu yo]。でも、[じゅぎょうちゅうは|jugyōchū wa] [でんわは|denwa wa] [だめです|dame desu]。", "id": "Yes, that's fine. But no phone calls during class.", "literal": "yes, good — is — you-know. but, class-during — as-for — phone-call — as-for — no-good — is."},
+        {"speaker": "ブディ:", "text": "[わかりました|Wakarimashita]。[あと|Ato]、[すこし|sukoshi] [はやく|hayaku] [かえっても|kaette mo] [いいですか|ii desu ka]。", "id": "Understood. Also, may I leave a little early?", "literal": "understood. also, a-little — early — go-home — even-if — good — is — [question]."},
+        {"speaker": "せんせい:", "text": "[どうしてですか|Dōshite desu ka]。", "id": "Why?", "literal": "why — is — [question]."},
+        {"speaker": "ブディ:", "text": "[びょういんへ|Byōin e] [いきますから|ikimasu kara]。", "id": "Because I'm going to the hospital.", "literal": "hospital — to — go — because."},
+        {"speaker": "せんせい:", "text": "[そうですか|Sō desu ka]。[じゃあ|Jā]、[だいじょうぶです|daijōbu desu]。[おだいじに|Odaiji ni]。", "id": "I see. In that case, it's fine. Take care of yourself.", "literal": "so — is — [question]. well-then, all-right — is. honorable-important — to."},
+        {"speaker": "ブディ:", "text": "[ありがとうございます|Arigatō gozaimasu]。[しつれいします|Shitsurei shimasu]。", "id": "Thank you. Excuse me.", "literal": "thank-you. rudeness — I-do."}
+      ],
+      "notes": [
+        "**～てもいいですか = “may I ～?”.** Literally “even if I ～, is it good?”. This is the most common permission pattern and you'll need it constantly: ここに すわってもいいですか (may I sit here?), しゃしんを とってもいいですか (may I take a photo?).",
+        "**だめです = not allowed.** Short and firm. A softer version: **ちょっと…** — yet another trailing-off sentence.",
+        "**から at the end of a sentence = because.** びょういんへ いきます**から** = because I'm going to the hospital. Note the position: in a full sentence the reason comes first and the result second — the reverse of English, where “because” usually comes second.",
+        "**どうして / なぜ = why.** どうして is more common in conversation, なぜ more written. The answer ends in から.",
+        "**おだいじに = take care / get well soon.** A set phrase for someone who's ill or on the way to the doctor. You'll hear it from pharmacists and doctors every time.",
+        "**じゅぎょうちゅう = during class.** The suffix ～ちゅう (中) means “in progress”: しごとちゅう (at work), でんわちゅう (on the phone), こうじちゅう (under construction)."
+      ],
+      "grammars": [
+        {
+          "title": "Permission, prohibition and requests",
+          "body": [
+            "All three are built from the **[て|te]-form** — the most versatile verb form in Japanese. How to make it is fully explained in Unit 10; here you'll use it as a ready-made package first."
+          ],
+          "table": {
+            "head": ["Pattern", "Example", "Meaning"],
+            "rows": [
+              ["～ても いいですか", "[すわっても|Suwatte mo] [いいですか|ii desu ka]。", "May I sit down?"],
+              ["～ても いいです", "[かえっても|Kaette mo] [いいです|ii desu]。", "You may go home."],
+              ["～ては いけません", "[ここで|Koko de] [たべては|tabete wa] [いけません|ikemasen]。", "You mustn't eat here."],
+              ["～は だめです", "[でんわは|Denwa wa] [だめです|dame desu]。", "No phone calls."],
+              ["～て ください", "[まって|Matte] [ください|kudasai]。", "Please wait."],
+              ["～ないで ください", "[しゃしんを|Shashin o] [とらないで|toranaide] [ください|kudasai]。", "Please don't take photos."]
+            ]
+          },
+          "after": [
+            "**The ten most useful [て|te]-forms — learn them as whole words:** [きて|kite] (come), [みて|mite] (look), [まって|matte] (wait), [いって|itte] (say/go), [かいて|kaite] (write), [よんで|yonde] (read), [たべて|tabete] (eat), [のんで|nonde] (drink), [して|shite] (do), [すわって|suwatte] (sit)."
+          ]
+        },
+        {
+          "title": "Declining without saying no",
+          "body": [
+            "This is the part of the culture that most often trips up foreigners. Japanese has a whole range of very gentle refusals, and native speakers read the signals easily."
+          ],
+          "table": {
+            "head": ["Sentence", "What it really means"],
+            "rows": [
+              ["[ちょっと|Chotto]…", "I can't. (Period.)"],
+              ["[その日は|Sono hi wa] [ちょっと|chotto]…", "That day doesn't work."],
+              ["[かんがえておきます|Kangaete okimasu]。", "I'll think about it — usually means no."],
+              ["[むずかしいですね|Muzukashii desu ne]。", "That's difficult — almost always means no."],
+              ["[つぎの|Tsugi no] [きかいに|kikai ni]。", "Maybe next time."],
+              ["[ざんねんですが|Zannen desu ga]…", "Unfortunately… — a polite, clear refusal."]
+            ]
+          },
+          "after": [
+            "⚠️ **Don't push after hearing [ちょっと|chotto].** Repeating an invitation after a gentle refusal is seen as pressuring. The right response: **[そうですか|sō desu ka]、[ざんねんです|zannen desu]。[またこんど|mata kondo]。** (I see, that's a shame. Next time, then.)",
+            "**It works both ways.** If you want to decline, [ちょっと|chotto] is enough — you don't need to build a long excuse. In fact, Japanese people won't ask any further."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Giving reasons with から",
+      "blocks": [
+        {"type": "p", "text": "The most basic reason pattern: **[reason] から、[result]。** The reason comes first. In conversation it can also be flipped, with から at the end of the sentence as a short answer."},
+        {"type": "tabel", "head": ["Sentence", "Meaning"], "rows": [
+          ["[あついですから|Atsui desu kara]、[まどを|mado o] [あけます|akemasu]。", "It's hot, so I'll open the window."],
+          ["[じかんが|Jikan ga] [ありませんから|arimasen kara]、[いきません|ikimasen]。", "I don't have time, so I won't go."],
+          ["[どうして|Dōshite] [きませんでしたか|kimasen deshita ka]。 — [びょうきでしたから|Byōki deshita kara]。", "Why didn't you come? — Because I was sick."],
+          ["[やすいですから|Yasui desu kara]、[かいます|kaimasu]。", "It's cheap, so I'll buy it."]
+        ]},
+        {"type": "kotak", "title": "から and ので", "items": [
+          "**から** = because, fairly direct. Good for personal reasons and ordinary conversation.",
+          "**ので** = because, softer and less defensive-sounding. Used when asking permission or explaining to a superior: **[びょういんへ|byōin e] [いきますので|ikimasu node]**…",
+          "At A1, から is enough. Just recognize ので so it doesn't confuse you when you hear it."
+        ]}
+      ]
+    },
+    {
+      "title": "Ten lifesaving sentences",
+      "blocks": [
+        {"type": "p", "text": "If you could memorize only ten sentences from this whole module, make it these ten. You've met them all, and every one is useful from your first day in Japan."},
+        {"type": "tabel", "head": ["Sentence", "Meaning"], "rows": [
+          ["[すみません|Sumimasen]。", "Excuse me / sorry / thanks."],
+          ["[ありがとうございます|Arigatō gozaimasu]。", "Thank you very much."],
+          ["[わかりません|Wakarimasen]。", "I don't understand."],
+          ["[もういちど|Mō ichido] [おねがいします|onegaishimasu]。", "Once more, please."],
+          ["[ゆっくり|Yukkuri] [おねがいします|onegaishimasu]。", "Slowly, please."],
+          ["[にほんごが|Nihongo ga] [すこし|sukoshi] [わかります|wakarimasu]。", "I understand a little Japanese."],
+          ["[えいごが|Eigo ga] [はなせますか|hanasemasu ka]。", "Do you speak English?"],
+          ["～は [どこですか|doko desu ka]。", "Where is ～?"],
+          ["[これを|Kore o] [ください|kudasai]。", "This one, please."],
+          ["[だいじょうぶです|Daijōbu desu]。", "It's fine / no, thank you."]
+        ]},
+        {"type": "p", "text": "Copy these ten sentences into your phone. Not to read when you need them — you won't have time — but to reread five times a day until they come out without thinking."}
+      ]
+    }
+  ],
+  "vocab": [
+    {"ja": "[いっしょに|issho ni] 一緒に", "baca": "いっしょに · issho ni", "en": "together"},
+    {"ja": "[ぜひ|zehi]", "baca": "ぜひ · zehi", "en": "I'd love to; by all means"},
+    {"ja": "[ざんねん|zannen] 残念", "baca": "ざんねん · zannen", "en": "a shame, too bad"},
+    {"ja": "[きかい|kikai] 機会", "baca": "きかい · kikai", "en": "opportunity"},
+    {"ja": "[ほしい|hoshii] 欲しい", "baca": "ほしい · hoshii", "en": "want (to have)"},
+    {"ja": "[だめ|dame] 駄目", "baca": "だめ · dame", "en": "not allowed, no good"},
+    {"ja": "[どうして|dōshite]", "baca": "どうして · dōshite", "en": "why"},
+    {"ja": "[から|kara]", "baca": "から · kara", "en": "because"},
+    {"ja": "[しつもん|shitsumon] 質問", "baca": "しつもん · shitsumon", "en": "question"},
+    {"ja": "[ことば|kotoba] 言葉", "baca": "ことば · kotoba", "en": "word, language"},
+    {"ja": "[いみ|imi] 意味", "baca": "いみ · imi", "en": "meaning"},
+    {"ja": "[しらべます|shirabemasu] 調べます", "baca": "しらべます · shirabemasu", "en": "check, look up"},
+    {"ja": "[つかいます|tsukaimasu] 使います", "baca": "つかいます · tsukaimasu", "en": "use"},
+    {"ja": "[すわります|suwarimasu] 座ります", "baca": "すわります · suwarimasu", "en": "sit"},
+    {"ja": "[まちます|machimasu] 待ちます", "baca": "まちます · machimasu", "en": "wait"},
+    {"ja": "[てつだいます|tetsudaimasu] 手伝います", "baca": "てつだいます · tetsudaimasu", "en": "help"},
+    {"ja": "[あけます|akemasu] 開けます", "baca": "あけます · akemasu", "en": "open"},
+    {"ja": "[しめます|shimemasu] 閉めます", "baca": "しめます · shimemasu", "en": "close"},
+    {"ja": "[とります|torimasu] 撮ります", "baca": "とります · torimasu", "en": "take (a photo)"},
+    {"ja": "[きます|kimasu] 着ます", "baca": "きます · kimasu", "en": "wear (clothes)"},
+    {"ja": "[じゅぎょう|jugyō] 授業", "baca": "じゅぎょう · jugyō", "en": "class, lesson"},
+    {"ja": "[でんわ|denwa] 電話", "baca": "でんわ · denwa", "en": "phone"},
+    {"ja": "[びょうき|byōki] 病気", "baca": "びょうき · byōki", "en": "illness, sick"},
+    {"ja": "[おだいじに|odaiji ni] お大事に", "baca": "おだいじに · odaiji ni", "en": "get well soon"},
+    {"ja": "[おまつり|omatsuri] お祭り", "baca": "おまつり · omatsuri", "en": "festival"},
+    {"ja": "[ゆかた|yukata] 浴衣", "baca": "ゆかた · yukata", "en": "yukata"},
+    {"ja": "[たこやき|takoyaki]", "baca": "たこやき · takoyaki", "en": "takoyaki"},
+    {"ja": "[やきそば|yakisoba]", "baca": "やきそば · yakisoba", "en": "yakisoba"},
+    {"ja": "[はなび|hanabi] 花火", "baca": "はなび · hanabi", "en": "fireworks"},
+    {"ja": "[りょこう|ryokō] 旅行", "baca": "りょこう · ryokō", "en": "trip, travel"},
+    {"ja": "[おんせん|onsen] 温泉", "baca": "おんせん · onsen", "en": "hot spring"},
+    {"ja": "[かいもの|kaimono] 買い物", "baca": "かいもの · kaimono", "en": "shopping"},
+    {"ja": "[パーティー|pātī]", "baca": "パーティー · pātī", "en": "party"},
+    {"ja": "[やくそく|yakusoku] 約束", "baca": "やくそく · yakusoku", "en": "promise, appointment"},
+    {"ja": "[や|ya]", "baca": "や · ya", "en": "and so on"},
+    {"ja": "[あと|ato] 後", "baca": "あと · ato", "en": "also; after"},
+    {"ja": "[ゆっくり|yukkuri]", "baca": "ゆっくり · yukkuri", "en": "slowly"},
+    {"ja": "[はやく|hayaku] 早く", "baca": "はやく · hayaku", "en": "early, quickly"},
+    {"ja": "[かんがえます|kangaemasu] 考えます", "baca": "かんがえます · kangaemasu", "en": "think, consider"},
+    {"ja": "[はなせます|hanasemasu] 話せます", "baca": "はなせます · hanasemasu", "en": "can speak"},
+    {"ja": "[まど|mado] 窓", "baca": "まど · mado", "en": "window"},
+    {"ja": "[じかん|jikan] 時間", "baca": "じかん · jikan", "en": "time"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Change to the ～たいです form (want to do).",
+      "items": [
+        "たべます → ___",
+        "いきます → ___",
+        "みます → ___",
+        "かいます → ___",
+        "のみます → ___"
+      ]
+    },
+    {
+      "prompt": "Fill in the missing particle.",
+      "items": [
+        "いっしょ ___ いきませんか。",
+        "あたらしいくるま ___ ほしいです。",
+        "えきのまえ ___ あいましょう。",
+        "たこやき ___ やきそばがあります。",
+        "びょういんへいきます ___ 。(because)",
+        "スマホをつかって ___ いいですか。"
+      ]
+    },
+    {
+      "prompt": "Put the pieces in order to make a correct sentence.",
+      "items": [
+        "いっしょ / に / えいが / を / みません / か",
+        "わたし / は / にほん / へ / いきたい / です",
+        "ここ / に / すわって / も / いい / です / か",
+        "じかん / が / ありません / から / いきません",
+        "すみません / その / ひ / は / ちょっと",
+        "えき / の / まえ / で / あいましょう"
+      ]
+    },
+    {
+      "prompt": "Choose the right response for each situation.",
+      "items": [
+        "Accepting happily: ___ ですね。",
+        "Declining gently: すみません、 ___ …。",
+        "Offering help: てつだい ___ か。",
+        "Inviting once the person has agreed: いき ___ 。",
+        "Asking why: ___ ですか。"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "こんどのどようび、いっしょにおまつりへいきませんか。",
+        "わたしはおんせんへいきたいです。",
+        "しゃしんをとってもいいですか。",
+        "じゅぎょうちゅうはでんわはだめです。",
+        "あついですから、まどをあけます。"
+      ]
+    },
+    {
+      "prompt": "Translate into Japanese. Write in rōmaji.",
+      "items": [
+        "Would you like to watch a movie together?",
+        "I want to go to Japan.",
+        "May I sit here?",
+        "Sorry, that day is a bit…",
+        "Please wait a moment."
+      ]
+    }
+  ],
+  "answers": [
+    "たべたいです — いきたいです — みたいです — かいたいです — のみたいです",
+    "に — が — で — や — から — も",
+    "いっしょ に えいが を みません か — わたし は にほん へ いきたい です — ここ に すわって も いい です か — じかん が ありません から いきません — すみません その ひ は ちょっと — えき の まえ で あいましょう",
+    "いい — ちょっと — ましょう — ましょう — どうして",
+    "Would you like to go to the festival together this Saturday? — I want to go to a hot spring. — May I take a photo? — No phone calls during class. — It's hot, so I'll open the window.",
+    "issho ni eiga o mimasen ka — watashi wa Nihon e ikitai desu — koko ni suwatte mo ii desu ka — sumimasen sono hi wa chotto — chotto matte kudasai"
+  ],
+  "wave": "Review Unit 8 through this unit: invite the three people you described to do something — each with ～ませんか — then write two answers to each invitation: one accepting, one gently declining. Saying no matters as much as inviting."
+}

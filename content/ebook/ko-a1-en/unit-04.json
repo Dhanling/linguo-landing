@@ -1,0 +1,543 @@
+{
+  "title": "Two number systems",
+  "title_target": "몇 개예요 — Myeot gaeyeyo",
+  "goal": "Master the biggest stumbling block for foreign learners: Korean has two sets of numbers that cannot stand in for each other. Count things, give your age, and read prices.",
+  "bekal": [
+    "say the native Korean numbers from one to twenty",
+    "say the Sino-Korean numbers and read prices",
+    "choose the right set depending on what is being counted",
+    "use the counters 개, 명, 잔, 병, 살",
+    "ask how many with 몇 and how much with 얼마"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — At the convenience store by campus",
+      "intro": "Ani is buying a few things. Listen closely: in this one short conversation both number systems are used side by side, and they never get mixed up.",
+      "lines": [
+        {
+          "speaker": "점원:",
+          "text": "[어서|Eoseo] [오세요|oseyo].",
+          "id": "Welcome.",
+          "literal": "quickly — come."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[안녕하세요|Annyeonghaseyo]. [물|Mul] [두|du] [병|byeong] [주세요|juseyo].",
+          "id": "Hello. Two bottles of water, please.",
+          "literal": "hello. water — two — bottle — give."
+        },
+        {
+          "speaker": "점원:",
+          "text": "[네|Ne], [여기|yeogi] [있습니다|itseumnida]. [더|Deo] [필요한|piryohan] [거|geo] [있으세요|isseuseyo]?",
+          "id": "Sure, here you go. Do you need anything else?",
+          "literal": "yes, here — is. more — needed — thing — exists (honorific)?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[커피|Keopi] [한|han] [잔|jan] [하고|hago] [빵|ppang] [세|se] [개|gae] [주세요|juseyo].",
+          "id": "One coffee and three pieces of bread, please.",
+          "literal": "coffee — one — cup — and — bread — three — item — give."
+        },
+        {
+          "speaker": "점원:",
+          "text": "[모두|Modu] [팔천|palcheon] [원이에요|wonieyo].",
+          "id": "That's eight thousand won altogether.",
+          "literal": "all — eight-thousand — won — is."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[여기|Yeogi] [있어요|isseoyo]. [아|A], [그런데|geureonde] [저|jeo] [빵은|ppangeun] [얼마예요|eolmayeyo]?",
+          "id": "Here you are. Oh, by the way, how much is that bread over there?",
+          "literal": "here — is. ah, by-the-way, that-over-there — bread — as-for — how-much — is?"
+        },
+        {
+          "speaker": "점원:",
+          "text": "[그거는|Geugeoneun] [천오백|cheonobaek] [원이에요|wonieyo]. [좀|Jom] [비싸요|bissayo].",
+          "id": "That one is fifteen hundred won. It's a bit pricey.",
+          "literal": "that — as-for — one-thousand-five-hundred — won — is. a-little — expensive."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[괜찮아요|Gwaenchanayo]. [하나|Hana] [주세요|juseyo].",
+          "id": "That's fine. One, please.",
+          "literal": "it's-okay. one — give."
+        },
+        {
+          "speaker": "점원:",
+          "text": "[네|Ne]. [학생이세요|Haksaengiseyo]? [학생|Haksaeng] [할인이|harini] [있어요|isseoyo].",
+          "id": "Sure. Are you a student? There's a student discount.",
+          "literal": "yes. student — are (honorific)? student — discount — that — exists."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[네|Ne], [학생이에요|haksaengieyo]. [감사합니다|Gamsahamnida]!",
+          "id": "Yes, I'm a student. Thank you!",
+          "literal": "yes, student — am. thank-you!"
+        },
+        {
+          "speaker": "점원:",
+          "text": "[모두|Modu] [구천|gucheon] [원입니다|wonimnida]. [안녕히|Annyeonghi] [가세요|gaseyo].",
+          "id": "That's nine thousand won altogether. Have a good day.",
+          "literal": "all — nine-thousand — won — is. in-peace — go."
+        }
+      ],
+      "notes": [
+        "**The two number systems are not a matter of style.** 물 두 병 uses native Korean numbers because bottles are being counted; 팔천 원 uses Sino-Korean numbers because money is read as a figure. Swapping them doesn't just sound odd — often it isn't understood at all.",
+        "**The order is noun + number + counter.** 커피 한 잔, not 한 잔 커피. That's the reverse of English (\"one cup of coffee\"), so drill it consciously until it's automatic. If you flip it, Koreans will understand — but you'll sound like you're translating in your head.",
+        "**The first four numbers change shape before a counter.** 하나→한, 둘→두, 셋→세, 넷→네. Plus 스물→스무. All others stay the same. Memorize these five, because they're the numbers you'll use most.",
+        "**하나 on its own can be used without a counter.** 하나 주세요 = \"one, please\" — correct and very common when the item is obvious. But as soon as a counter appears, it must become 한: 한 개 주세요.",
+        "**어서 오세요 is not an ordinary greeting.** Shopkeepers say it to customers, never the other way round. You'll never say it unless you own the shop. A simple 안녕하세요 is enough in reply, or just say what you want.",
+        "**주세요 is the most useful word in this whole unit.** Literally \"please give\", it ends almost every request for something: 물 주세요, 계산서 주세요, 이거 주세요. The dictionary form is 주다 (to give).",
+        "**좀 softens whatever is around it.** Literally \"a little\" (from 조금), its main job is to cushion. 비싸요 = expensive (sounds like a complaint). 좀 비싸요 = a bit pricey (sounds like a polite remark). Slip in 좀 and your whole sentence sounds friendlier.",
+        "**학생이세요? uses the honorific 시.** The clerk is showing respect to a customer, so she doesn't say 학생이에요? but 학생이세요?. You don't need to use it yet — just recognize it, because you'll hear it in every shop in Korea."
+      ],
+      "grammars": [
+        {
+          "title": "Native Korean numbers",
+          "body": [
+            "Used for **counting**: numbers of things, numbers of people, age, and hours. They stop at 99, and in practice are rarely used above 40."
+          ],
+          "table": {
+            "head": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "rows": [
+              [
+                "하나 *hana*",
+                "둘 *dul*",
+                "셋 *set*",
+                "넷 *net*",
+                "다섯 *daseot*"
+              ],
+              [
+                "**6**",
+                "**7**",
+                "**8**",
+                "**9**",
+                "**10**"
+              ],
+              [
+                "여섯 *yeoseot*",
+                "일곱 *ilgop*",
+                "여덟 *yeodeol*",
+                "아홉 *ahop*",
+                "열 *yeol*"
+              ],
+              [
+                "**11**",
+                "**12**",
+                "**20**",
+                "**30**",
+                "**40**"
+              ],
+              [
+                "열하나",
+                "열둘",
+                "스물 *seumul*",
+                "서른 *seoreun*",
+                "마흔 *maheun*"
+              ]
+            ]
+          },
+          "after": [
+            "Eleven to nineteen are formed by putting 열 in front: 열하나, 열둘, 열셋 … 열아홉. Twenty-one = 스물하나. Same pattern as English \"twenty-one\".",
+            "여덟 (eight) is written with two final consonants but read *yeodeol* — the ㅂ is completely silent unless a vowel particle follows."
+          ]
+        },
+        {
+          "title": "Sino-Korean numbers",
+          "body": [
+            "Used for **reading figures**: money, minutes, dates, phone numbers, addresses, measurements. This is the only system that can climb into the millions."
+          ],
+          "table": {
+            "head": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "rows": [
+              [
+                "일 *il*",
+                "이 *i*",
+                "삼 *sam*",
+                "사 *sa*",
+                "오 *o*"
+              ],
+              [
+                "**6**",
+                "**7**",
+                "**8**",
+                "**9**",
+                "**10**"
+              ],
+              [
+                "육 *yuk*",
+                "칠 *chil*",
+                "팔 *pal*",
+                "구 *gu*",
+                "십 *sip*"
+              ],
+              [
+                "**100**",
+                "**1.000**",
+                "**10.000**",
+                "**100.000**",
+                "**1.000.000**"
+              ],
+              [
+                "백 *baek*",
+                "천 *cheon*",
+                "만 *man*",
+                "십만 *simman*",
+                "백만 *baengman*"
+              ]
+            ]
+          },
+          "after": [
+            "**Korean counts large numbers in units of ten thousand, not a thousand.** 만 = 10,000. A hundred thousand isn't a new word but \"ten 만\" = 십만. One million = \"a hundred 만\" = 백만. It feels strange at first and matters a lot in Korea, because everyday prices sit right in that range.",
+            "⚠️ **일 is not said before 백, 천 and 만.** A hundred is 백, not 일백. A thousand is 천, not 일천. Ten thousand is likewise just **만**, and a hundred million has its own word: 억.",
+            "Prices in the dialogue: 팔천 원 = 8,000 won, 천오백 원 = 1,500 won, 구천 원 = 9,000 won. Note there are no spaces inside the number, and 원 stands apart."
+          ]
+        },
+        {
+          "title": "The most common counters",
+          "body": [
+            "Korean can't count nouns directly — there's always a counter between the number and the noun, like \"two **cups** of coffee\" or \"three **sheets** of paper\" in English, but for everything."
+          ],
+          "table": {
+            "head": [
+              "Counter",
+              "For",
+              "Numbers",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**개**",
+                "general things — use this if unsure",
+                "native Korean",
+                "빵 세 개"
+              ],
+              [
+                "**명**",
+                "people",
+                "native Korean",
+                "학생 두 명"
+              ],
+              [
+                "**분**",
+                "people (honorific)",
+                "native Korean",
+                "손님 네 분"
+              ],
+              [
+                "**잔**",
+                "glasses, cups",
+                "native Korean",
+                "커피 한 잔"
+              ],
+              [
+                "**병**",
+                "bottles",
+                "native Korean",
+                "물 두 병"
+              ],
+              [
+                "**권**",
+                "books",
+                "native Korean",
+                "책 다섯 권"
+              ],
+              [
+                "**마리**",
+                "animals",
+                "native Korean",
+                "고양이 세 마리"
+              ],
+              [
+                "**살**",
+                "years of age",
+                "native Korean",
+                "스무 살"
+              ],
+              [
+                "**원**",
+                "currency",
+                "Sino-Korean",
+                "오천 원"
+              ],
+              [
+                "**분**",
+                "minutes",
+                "Sino-Korean",
+                "십 분"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **분 has two meanings that use different number systems.** 세 **분** (three people, honorific) uses native Korean numbers; 삼십 **분** (thirty minutes) uses Sino-Korean. The number system itself tells you which meaning is intended.",
+            "If you really forget the counter, **개 is almost always acceptable** for objects. It isn't always the best fit, but it never leaves you misunderstood."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Age, and why people ask about it so often",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The question 몇 살이에요? (\"how old are you?\") comes much earlier in a Korean introduction than English speakers are used to. It isn't nosiness: age decides the speech style both sides use, what they call each other, and who pays for lunch. Without knowing it, a Korean doesn't know how to talk to you."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Age",
+            "Korean",
+            "Age",
+            "Korean"
+          ],
+          "rows": [
+            [
+              "15",
+              "열다섯 살",
+              "30",
+              "서른 살"
+            ],
+            [
+              "19",
+              "열아홉 살",
+              "35",
+              "서른다섯 살"
+            ],
+            [
+              "20",
+              "**스무** 살",
+              "40",
+              "마흔 살"
+            ],
+            [
+              "21",
+              "스물한 살",
+              "45",
+              "마흔다섯 살"
+            ],
+            [
+              "25",
+              "스물다섯 살",
+              "50",
+              "쉰 살"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "There is a different honorific form you'll hear from older people: 연세가 어떻게 되세요? The answer stays the same."
+        },
+        {
+          "type": "kotak",
+          "title": "Terms of address that depend on age",
+          "items": [
+            "Women call an older man **오빠**; men call an older man **형**.",
+            "Women call an older woman **언니**; men call an older woman **누나**.",
+            "Someone younger is a **동생** (or just called by name). People the same age use name + 씨 until you both agree to go casual.",
+            "⚠️ Those first four terms are for people you're **close** to, not for anyone older. Calling the convenience-store cashier 오빠 isn't polite — it's out of place."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "하나 / 한",
+      "baca": "hana / han",
+      "en": "one"
+    },
+    {
+      "ko": "둘 / 두",
+      "baca": "dul / du",
+      "en": "two"
+    },
+    {
+      "ko": "셋 / 세",
+      "baca": "set / se",
+      "en": "three"
+    },
+    {
+      "ko": "넷 / 네",
+      "baca": "net / ne",
+      "en": "four"
+    },
+    {
+      "ko": "다섯",
+      "baca": "daseot",
+      "en": "five"
+    },
+    {
+      "ko": "열",
+      "baca": "yeol",
+      "en": "ten"
+    },
+    {
+      "ko": "스물 / 스무",
+      "baca": "seumul / seumu",
+      "en": "twenty"
+    },
+    {
+      "ko": "백",
+      "baca": "baek",
+      "en": "hundred"
+    },
+    {
+      "ko": "천",
+      "baca": "cheon",
+      "en": "thousand"
+    },
+    {
+      "ko": "만",
+      "baca": "man",
+      "en": "ten thousand"
+    },
+    {
+      "ko": "개",
+      "baca": "gae",
+      "en": "item (general counter)"
+    },
+    {
+      "ko": "명",
+      "baca": "myeong",
+      "en": "person (counter)"
+    },
+    {
+      "ko": "잔",
+      "baca": "jan",
+      "en": "glass, cup"
+    },
+    {
+      "ko": "병",
+      "baca": "byeong",
+      "en": "bottle"
+    },
+    {
+      "ko": "살",
+      "baca": "sal",
+      "en": "years old"
+    },
+    {
+      "ko": "원",
+      "baca": "won",
+      "en": "won (Korean currency)"
+    },
+    {
+      "ko": "몇",
+      "baca": "myeot",
+      "en": "how many"
+    },
+    {
+      "ko": "얼마",
+      "baca": "eolma",
+      "en": "how much (price)"
+    },
+    {
+      "ko": "주세요",
+      "baca": "juseyo",
+      "en": "please give"
+    },
+    {
+      "ko": "물",
+      "baca": "mul",
+      "en": "water"
+    },
+    {
+      "ko": "빵",
+      "baca": "ppang",
+      "en": "bread"
+    },
+    {
+      "ko": "커피",
+      "baca": "keopi",
+      "en": "coffee"
+    },
+    {
+      "ko": "좀",
+      "baca": "jom",
+      "en": "a little; please (softener)"
+    },
+    {
+      "ko": "비싸요",
+      "baca": "bissayo",
+      "en": "expensive"
+    },
+    {
+      "ko": "싸요",
+      "baca": "ssayo",
+      "en": "cheap"
+    },
+    {
+      "ko": "모두",
+      "baca": "modu",
+      "en": "altogether"
+    },
+    {
+      "ko": "괜찮아요",
+      "baca": "gwaenchanayo",
+      "en": "it's okay"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write in hangeul using the correct number system.",
+      "items": [
+        "two bottles of water",
+        "one cup of coffee",
+        "three pieces of bread",
+        "five thousand won",
+        "twenty years old",
+        "four people"
+      ]
+    },
+    {
+      "prompt": "Fill in the correct form of the number before the counter.",
+      "items": [
+        "커피 ____ 잔 주세요. (one)",
+        "학생 ____ 명이에요. (two)",
+        "빵 ____ 개 주세요. (three)",
+        "고양이 ____ 마리 있어요. (four)",
+        "저는 ____ 살이에요. (twenty)"
+      ]
+    },
+    {
+      "prompt": "Read these prices aloud in hangeul.",
+      "items": [
+        "3,000원",
+        "1,500원",
+        "8,000원",
+        "12,000원",
+        "50,000원"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "주세요 / 물 / 병 / 두",
+        "얼마예요 / 이거 / ?",
+        "있어요 / 명 / 학생이 / 세",
+        "살이에요 / 스무 / 저는",
+        "주세요 / 세 / 빵 / 개"
+      ]
+    }
+  ],
+  "answers": [
+    "물 두 병 — 커피 한 잔 — 빵 세 개 — 오천 원 — 스무 살 — 네 명",
+    "한 — 두 — 세 — 네 — 스무",
+    "삼천 원 — 천오백 원 — 팔천 원 — 만이천 원 — 오만 원",
+    "물 두 병 주세요. — 이거 얼마예요? — 학생이 세 명 있어요. — 저는 스무 살이에요. — 빵 세 개 주세요."
+  ]
+}

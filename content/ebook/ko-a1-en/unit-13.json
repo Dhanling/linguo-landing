@@ -1,0 +1,550 @@
+{
+  "title": "Asking the way",
+  "title_target": "어떻게 가요 — Eotteoke gayo",
+  "goal": "Find your way around a Korean city: ask for directions, understand the answer, take the right transport, and ask how long the trip takes.",
+  "bekal": [
+    "asking for directions with 어떻게 가요",
+    "using the particle (으)로 for means and direction",
+    "using 에서 … 까지 for the distance between places",
+    "understanding directions: straight, left, right, across",
+    "asking how long a trip takes with 얼마나 걸려요"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — Lost near the station",
+      "intro": "Ani is looking for Gyeongbokgung Palace. Notice that a Korean answer to a directions question almost always comes as a string of polite commands ending in -(으)세요.",
+      "lines": [
+        {
+          "speaker": "아니:",
+          "text": "[실례합니다|Sillyehamnida]. [경복궁에|Gyeongbokgunge] [어떻게|eotteoke] [가요|gayo]?",
+          "id": "Excuse me. How do I get to Gyeongbokgung?",
+          "literal": "excuse-me. Gyeongbokgung-to — how — go?"
+        },
+        {
+          "speaker": "행인:",
+          "text": "[지하철로|Jihacheollo] [가세요|gaseyo]. [삼호선을|Samhoseoneul] [타세요|taseyo].",
+          "id": "Take the subway. Take line three.",
+          "literal": "subway-by — please-go. three-line — object — please-ride."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[지하철역이|Jihacheollyeogi] [어디에|eodie] [있어요|isseoyo]?",
+          "id": "Where's the station?",
+          "literal": "train-station — subject — where-at — exists?"
+        },
+        {
+          "speaker": "행인:",
+          "text": "[여기에서|Yeogieseo] [쭉|jjuk] [가세요|gaseyo]. [그리고|Geurigo] [사거리에서|sageorieseo] [왼쪽으로|oenjjogeuro] [가세요|gaseyo].",
+          "id": "Go straight from here. Then turn left at the intersection.",
+          "literal": "here-from — straight — please-go. then — intersection-at — left-toward — please-go."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[여기에서|Yeogieseo] [멀어요|meoreoyo]?",
+          "id": "Is it far from here?",
+          "literal": "here-from — far?"
+        },
+        {
+          "speaker": "행인:",
+          "text": "[아니요|Aniyo], [가까워요|gakkawoyo]. [걸어서|Georeoseo] [오|o] [분쯤|bunjjeum] [걸려요|geollyeoyo].",
+          "id": "No, it's close. About five minutes on foot.",
+          "literal": "no, close. walking-by — five — minutes-about — takes."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[경복궁까지|Gyeongbokgungkkaji] [얼마나|eolmana] [걸려요|geollyeoyo]?",
+          "id": "How long to Gyeongbokgung?",
+          "literal": "Gyeongbokgung-until — how-much — takes?"
+        },
+        {
+          "speaker": "행인:",
+          "text": "[지하철로|Jihacheollo] [이십|isip] [분쯤|bunjjeum] [걸려요|geollyeoyo]. [세|Se] [정거장이에요|jeonggeojangieyo].",
+          "id": "About twenty minutes by subway. Three stops.",
+          "literal": "subway-by — twenty — minutes-about — takes. three — stop — is."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[어느|Eoneu] [출구로|chulguro] [나가야|nagaya] [돼요|dwaeyo]?",
+          "id": "Which exit should I take?",
+          "literal": "which — exit-through — go-out-must — becomes?"
+        },
+        {
+          "speaker": "행인:",
+          "text": "[오번|Obeon] [출구로|chulguro] [나가세요|nagaseyo]. [바로|Baro] [앞이에요|apieyo].",
+          "id": "Go out through exit five. It's right in front.",
+          "literal": "five-number — exit-through — please-go-out. right — front — is."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[정말|Jeongmal] [감사합니다|gamsahamnida]!",
+          "id": "Thank you so much!",
+          "literal": "truly — thank-you!"
+        },
+        {
+          "speaker": "행인:",
+          "text": "[아니에요|Anieyo]. [조심해서|Josimhaeseo] [가세요|gaseyo].",
+          "id": "Not at all. Take care.",
+          "literal": "it-isn't. carefully — please-go."
+        }
+      ],
+      "notes": [
+        "**The particle (으)로 does three jobs at once: means, direction and manner.** 지하철**로** 가요 (go by subway — means), 왼쪽**으로** 가세요 (go to the left — direction), 한국어**로** 말하세요 (speak in Korean — manner). One particle, three meanings told apart by context.",
+        "**It's 로 after a vowel and after ㄹ, 으로 after other consonants.** 지하철 ends in ㄹ, so 지하철**로** (not 지하철으로). It's the only particle that treats ㄹ like a vowel, which often makes beginners hesitate.",
+        "**타다 takes the particle 을/를, not 에.** 버스**를** 타요 (take the bus), 지하철**을** 타요. Think \"take\" or \"ride\", not \"get on\". Its opposite, 내리다 (get off), takes 에서 instead: 여기**에서** 내려요.",
+        "**걸리다 means \"to take (time)\".** 이십 분 걸려요 = it takes twenty minutes. It's always used with a length of time, never with a clock time.",
+        "**얼마나 means \"how much / how long\" and is different from 얼마 (\"how much does it cost\").** 얼마예요? = how much is it? 얼마나 걸려요? = how long does it take? 얼마나 멀어요? = how far is it? One syllable makes the difference.",
+        "**쯤 means \"about\" and goes after the number.** 오 분**쯤**, 삼십 분**쯤**, 세 시**쯤**. Koreans almost always add it when giving an estimate — a time without 쯤 sounds like a binding promise.",
+        "**걸어서 means \"on foot\".** It's the -아서/어서 form meaning \"by way of\", just like 조심해서 in the previous unit. The alternative 도보로 is more written and appears more often on signs.",
+        "**아니에요 in reply to thanks means \"not at all\".** It isn't a denial but modesty — like \"oh, it's nothing\". Other options are 별말씀을요 (more polite) and 괜찮아요."
+      ],
+      "grammars": [
+        {
+          "title": "The particle (으)로",
+          "body": [
+            "One particle that covers means, direction, manner and material."
+          ],
+          "table": {
+            "head": [
+              "Role",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Means, vehicle",
+                "버스**로** 가요",
+                "go by bus"
+              ],
+              [
+                "Direction",
+                "오른쪽**으로** 가세요",
+                "turn right"
+              ],
+              [
+                "Language, manner",
+                "한국어**로** 말해요",
+                "speak in Korean"
+              ],
+              [
+                "Writing tool",
+                "볼펜**으로** 쓰세요",
+                "write with a pen"
+              ],
+              [
+                "Choice",
+                "이걸**로** 할게요",
+                "I'll take this one"
+              ],
+              [
+                "Material",
+                "쌀**로** 만들어요",
+                "made from rice"
+              ]
+            ]
+          },
+          "after": [
+            "**After ㄹ, the form stays 로.** 지하철로, 이걸로, 서울로. If you write 지하철으로, it immediately sounds like a foreigner's mistake.",
+            "⚠️ **Don't mix it up with 에.** 학교**에** 가요 = go to school (final destination). 학교 쪽**으로** 가요 = go toward the school (direction, may not arrive). 에 marks the destination, 로 the direction — like English \"to\" versus \"toward\"."
+          ]
+        },
+        {
+          "title": "Direction words",
+          "body": [
+            "A Korean answer to a directions question is almost always a string of polite -(으)세요 commands. Know the key words and you can follow along."
+          ],
+          "table": {
+            "head": [
+              "Korean",
+              "Romanization",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "쭉 가세요",
+                "jjuk gaseyo",
+                "go straight ahead"
+              ],
+              [
+                "직진하세요",
+                "jikjinhaseyo",
+                "go straight (more formal)"
+              ],
+              [
+                "왼쪽으로 가세요",
+                "oenjjogeuro gaseyo",
+                "turn left"
+              ],
+              [
+                "오른쪽으로 가세요",
+                "oreunjjogeuro gaseyo",
+                "turn right"
+              ],
+              [
+                "건너세요",
+                "geonneoseyo",
+                "cross"
+              ],
+              [
+                "돌아가세요",
+                "doragaseyo",
+                "turn, go around"
+              ],
+              [
+                "사거리에서",
+                "sageorieseo",
+                "at the intersection"
+              ],
+              [
+                "신호등에서",
+                "sinhodeungeseo",
+                "at the traffic light"
+              ],
+              [
+                "횡단보도",
+                "hoengdanbodo",
+                "crosswalk"
+              ],
+              [
+                "출구",
+                "chulgu",
+                "exit"
+              ],
+              [
+                "입구",
+                "ipgu",
+                "entrance"
+              ],
+              [
+                "정거장",
+                "jeonggeojang",
+                "stop (bus, tram)"
+              ]
+            ]
+          },
+          "after": [
+            "**Station exits are numbered, and the number matters.** A Seoul subway station can have more than ten exits, hundreds of meters apart. 몇 번 출구예요? (\"which exit number?\") is a question you'll ask often and be asked often.",
+            "**Korean directions use landmarks, not numbers.** Koreans explain where something is by naming a well-known building nearby: 스타벅스 옆에 있어요. Don't expect street names and house numbers."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Transport and travel",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "한국어",
+            "Romanization",
+            "English",
+            "한국어",
+            "Romanization",
+            "English"
+          ],
+          "rows": [
+            [
+              "지하철",
+              "jihacheol",
+              "subway",
+              "택시",
+              "taeksi",
+              "taxi"
+            ],
+            [
+              "버스",
+              "beoseu",
+              "bus",
+              "자전거",
+              "jajeongeo",
+              "bicycle"
+            ],
+            [
+              "기차",
+              "gicha",
+              "train",
+              "오토바이",
+              "otobai",
+              "motorcycle"
+            ],
+            [
+              "비행기",
+              "bihaenggi",
+              "airplane",
+              "차",
+              "cha",
+              "car"
+            ],
+            [
+              "역",
+              "yeok",
+              "station",
+              "공항",
+              "gonghang",
+              "airport"
+            ],
+            [
+              "정류장",
+              "jeongnyujang",
+              "bus stop",
+              "표",
+              "pyo",
+              "ticket"
+            ],
+            [
+              "갈아타요",
+              "garatayo",
+              "to transfer",
+              "내려요",
+              "naeryeoyo",
+              "to get off"
+            ],
+            [
+              "멀어요",
+              "meoreoyo",
+              "far",
+              "가까워요",
+              "gakkawoyo",
+              "near"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Travel sentences worth learning whole"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "여기가 어디예요?",
+              "Where is this?"
+            ],
+            [
+              "경복궁에 어떻게 가요?",
+              "How do I get to Gyeongbokgung?"
+            ],
+            [
+              "얼마나 걸려요?",
+              "How long does it take?"
+            ],
+            [
+              "여기에서 멀어요?",
+              "Is it far from here?"
+            ],
+            [
+              "어디에서 갈아타요?",
+              "Where do I transfer?"
+            ],
+            [
+              "몇 번 출구예요?",
+              "Which exit number?"
+            ],
+            [
+              "여기에서 세워 주세요.",
+              "Please stop here."
+            ],
+            [
+              "이 버스가 시청에 가요?",
+              "Does this bus go to City Hall?"
+            ],
+            [
+              "길을 잃어버렸어요.",
+              "I'm lost."
+            ],
+            [
+              "여기로 가 주세요.",
+              "Please take me here. (Showing the address.)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "여기로 가 주세요 and your phone screen",
+          "items": [
+            "The safest way for a foreigner to take a taxi in Korea is to show the address on your phone screen while saying 여기로 가 주세요.",
+            "Place names said with not-quite-right pronunciation often aren't understood, and that's not your fault — Korean place names are dense with sounds. The screen solves what your pronunciation can't yet.",
+            "⚠️ Google Maps is nearly useless for directions in Korea because of mapping-data restrictions. Locals use 네이버 지도 and 카카오맵."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "어떻게",
+      "baca": "eotteoke",
+      "en": "how"
+    },
+    {
+      "ko": "얼마나",
+      "baca": "eolmana",
+      "en": "how much, how long"
+    },
+    {
+      "ko": "걸려요",
+      "baca": "geollyeoyo",
+      "en": "to take (time)"
+    },
+    {
+      "ko": "타요",
+      "baca": "tayo",
+      "en": "to ride, take (transport)"
+    },
+    {
+      "ko": "내려요",
+      "baca": "naeryeoyo",
+      "en": "to get off"
+    },
+    {
+      "ko": "갈아타요",
+      "baca": "garatayo",
+      "en": "to transfer"
+    },
+    {
+      "ko": "지하철",
+      "baca": "jihacheol",
+      "en": "subway"
+    },
+    {
+      "ko": "버스",
+      "baca": "beoseu",
+      "en": "bus"
+    },
+    {
+      "ko": "택시",
+      "baca": "taeksi",
+      "en": "taxi"
+    },
+    {
+      "ko": "역",
+      "baca": "yeok",
+      "en": "station"
+    },
+    {
+      "ko": "출구",
+      "baca": "chulgu",
+      "en": "exit"
+    },
+    {
+      "ko": "쭉",
+      "baca": "jjuk",
+      "en": "straight ahead"
+    },
+    {
+      "ko": "왼쪽",
+      "baca": "oenjjok",
+      "en": "left"
+    },
+    {
+      "ko": "오른쪽",
+      "baca": "oreunjjok",
+      "en": "right"
+    },
+    {
+      "ko": "사거리",
+      "baca": "sageori",
+      "en": "intersection"
+    },
+    {
+      "ko": "건너요",
+      "baca": "geonneoyo",
+      "en": "to cross"
+    },
+    {
+      "ko": "멀어요",
+      "baca": "meoreoyo",
+      "en": "far"
+    },
+    {
+      "ko": "가까워요",
+      "baca": "gakkawoyo",
+      "en": "near"
+    },
+    {
+      "ko": "쯤",
+      "baca": "jjeum",
+      "en": "about"
+    },
+    {
+      "ko": "바로",
+      "baca": "baro",
+      "en": "right, directly"
+    },
+    {
+      "ko": "어느",
+      "baca": "eoneu",
+      "en": "which"
+    },
+    {
+      "ko": "정거장",
+      "baca": "jeonggeojang",
+      "en": "stop (on a line)"
+    },
+    {
+      "ko": "실례합니다",
+      "baca": "sillyehamnida",
+      "en": "excuse me"
+    },
+    {
+      "ko": "길",
+      "baca": "gil",
+      "en": "road, way"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Korean.",
+      "items": [
+        "How do I get to Gyeongbokgung?",
+        "Take the subway.",
+        "Go straight from here.",
+        "Turn left at the intersection.",
+        "How long does it take?",
+        "Is it far from here?"
+      ]
+    },
+    {
+      "prompt": "Fill in 로 or 으로.",
+      "items": [
+        "버스____ 가요.",
+        "지하철____ 가요.",
+        "왼쪽____ 가세요.",
+        "한국어____ 말해요.",
+        "오른쪽____ 가세요.",
+        "이걸____ 할게요."
+      ]
+    },
+    {
+      "prompt": "Fill in the right particle.",
+      "items": [
+        "버스____ 타요.",
+        "여기____ 내려요.",
+        "집____ 학교____ 삼십 분 걸려요.",
+        "경복궁____ 어떻게 가요?",
+        "오번 출구____ 나가세요."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "가요 / 어떻게 / 경복궁에 / ?",
+        "타세요 / 삼호선을",
+        "가세요 / 왼쪽으로 / 사거리에서",
+        "걸려요 / 얼마나 / ?",
+        "나가세요 / 출구로 / 오번"
+      ]
+    }
+  ],
+  "answers": [
+    "경복궁에 어떻게 가요? — 지하철로 가세요. — 여기에서 쭉 가세요. — 사거리에서 왼쪽으로 가세요. — 얼마나 걸려요? — 여기에서 멀어요?",
+    "로 — 로 — 으로 — 로 — 으로 — 로",
+    "를 — 에서 — 에서 까지 — 에 — 로",
+    "경복궁에 어떻게 가요? — 삼호선을 타세요. — 사거리에서 왼쪽으로 가세요. — 얼마나 걸려요? — 오번 출구로 나가세요."
+  ]
+}

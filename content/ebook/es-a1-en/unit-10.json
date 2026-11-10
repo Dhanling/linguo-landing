@@ -1,0 +1,431 @@
+{
+  "title": "A whole week",
+  "title_target": "La semana",
+  "goal": "Name the days, say how often you do things, and tell the time down to the minute.",
+  "bekal": [
+    "name the days of the week",
+    "use *siempre*, *a veces* and *nunca*",
+    "tell the time, minutes included",
+    "talk about your weekend"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — La semana de Marta",
+      "intro": "Now it's Marta's turn to talk. Watch for the words that say how often.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "¿Qué haces normalmente los lunes?",
+          "id": "What do you usually do on Mondays?",
+          "literal": "what you-do normally the Mondays?"
+        },
+        {
+          "speaker": "Marta:",
+          "text": "Los lunes siempre trabajo en la librería.",
+          "id": "On Mondays I always work at the bookstore.",
+          "literal": "the Mondays always I-work in the bookstore."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Y los martes y miércoles?",
+          "id": "And Tuesdays and Wednesdays?",
+          "literal": "and the Tuesdays and Wednesdays?"
+        },
+        {
+          "speaker": "Marta:",
+          "text": "Igual. Pero los jueves estudio inglés por la tarde.",
+          "id": "Same. But on Thursdays I study English in the afternoon.",
+          "literal": "same. but the Thursdays I-study English through the afternoon."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Y no descansas nunca?",
+          "id": "And you never rest?",
+          "literal": "and not you-rest never?"
+        },
+        {
+          "speaker": "Marta:",
+          "text": "Sí, los fines de semana. Los sábados me levanto tarde.",
+          "id": "I do, on weekends. On Saturdays I get up late.",
+          "literal": "yes, the ends of week. the Saturdays I-raise-myself late."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿A qué hora?",
+          "id": "What time?",
+          "literal": "at what hour?"
+        },
+        {
+          "speaker": "Marta:",
+          "text": "A las once, a veces a las doce. ¡Es mi lujo!",
+          "id": "At eleven, sometimes at twelve. It's my luxury!",
+          "literal": "at the hours eleven, at times at the hours twelve. is my-luxury!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Y los domingos?",
+          "id": "And Sundays?",
+          "literal": "and the Sundays?"
+        },
+        {
+          "speaker": "Marta:",
+          "text": "Los domingos comemos en casa de mis padres. Nunca falto.",
+          "id": "On Sundays we have lunch at my parents' house. I never miss it.",
+          "literal": "the Sundays we-eat in house of my-parents. never I-miss."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¡Qué bien! Nosotros también comemos juntos los domingos.",
+          "id": "How nice! We have lunch together on Sundays too.",
+          "literal": "how good! we also we-eat together the Sundays."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "Entonces no somos tan diferentes.",
+          "id": "So we're not that different.",
+          "literal": "then not we-are so different."
+        }
+      ],
+      "notes": [
+        "**Nunca can double up with no.** *No descanso nunca* and *nunca descanso* are both correct and mean the same. Spanish allows stacked negatives — *no veo nada nunca* (\"I don't never see nothing\") is perfectly fine, something that's wrong in standard English.",
+        "**Sí as a contradiction.** When Marta answers *sí* to a negative question, it means \"yes, I do!\" — like English \"I do\" or French *si*. Spanish uses a stressed *sí*.",
+        "**Hacer** = to do / to make, one of the most common verbs. Its *yo* form is *hago*; the rest are regular: *haces, hace, hacemos, hacéis, hacen*. *¿Qué haces?* has two uses: \"what are you doing?\" and \"what do you do (for a living)?\"",
+        "**Comer has two meanings.** Generally \"to eat\", but in Spain *comer* specifically means to have lunch — the main meal of the day. Dinner is *cenar*, breakfast *desayunar*.",
+        "**Los fines de semana** — notice that it's *fin* that becomes plural, not *semana*: *los fines de semana*, not *los fin de semanas*. The same rule applies to every phrase joined with *de*.",
+        "**Igual** = \"the same\", a very common short answer. It also appears in *me da igual* (\"it's all the same to me\", \"I don't mind\").",
+        "**Normalmente, generalmente, tranquilamente.** Adverbs are formed from the feminine adjective + **-mente**: *normal → normalmente*, *rápida → rápidamente*, *tranquila → tranquilamente*. Just like the English ending -ly.",
+        "**Juntos / juntas** = together, and the form follows the group: *comemos juntos* (mixed or all male), *comemos juntas* (all female)."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "The formula has two parts: **Es la una** for one o'clock, **Son las…** for every other hour. Minutes are added with *y* up to half past, then *menos* after that — Spanish counts back from the next hour."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Español",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "1:00",
+                "Es la una",
+                "it is the one"
+              ],
+              [
+                "3:00",
+                "Son las tres",
+                "they are the three"
+              ],
+              [
+                "3:10",
+                "Son las tres y diez",
+                "three and ten"
+              ],
+              [
+                "3:15",
+                "Son las tres y cuarto",
+                "three and a quarter"
+              ],
+              [
+                "3:30",
+                "Son las tres y media",
+                "three and a half"
+              ],
+              [
+                "3:40",
+                "Son las cuatro menos veinte",
+                "four minus twenty"
+              ],
+              [
+                "3:45",
+                "Son las cuatro menos cuarto",
+                "four minus a quarter"
+              ],
+              [
+                "12:00",
+                "Son las doce / Es mediodía",
+                "twelve / it's noon"
+              ],
+              [
+                "00:00",
+                "Son las doce / Es medianoche",
+                "twelve / it's midnight"
+              ]
+            ]
+          },
+          "after": [
+            "To make morning or evening clear, add *de la mañana* (roughly 6 a.m.-12 noon), *de la tarde* (noon until dark), or *de la noche* (after dark). So *las ocho de la mañana* and *las ocho de la tarde* are two very different times.",
+            "Official schedules — stations, airports, cinemas — use the 24-hour clock as is: *el tren sale a las diecinueve treinta*. Everyday speech still uses the 12-hour system in this table."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Days, and how often",
+      "blocks": [
+        {
+          "type": "sub",
+          "text": "Los días de la semana"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Español",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "lunes",
+              "LOO-nehs",
+              "Monday"
+            ],
+            [
+              "martes",
+              "MAHR-tehs",
+              "Tuesday"
+            ],
+            [
+              "miércoles",
+              "MYEHR-koh-lehs",
+              "Wednesday"
+            ],
+            [
+              "jueves",
+              "HWEH-behs",
+              "Thursday"
+            ],
+            [
+              "viernes",
+              "BYEHR-nehs",
+              "Friday"
+            ],
+            [
+              "sábado",
+              "SAH-bah-doh",
+              "Saturday"
+            ],
+            [
+              "domingo",
+              "doh-MEEN-goh",
+              "Sunday"
+            ],
+            [
+              "el fin de semana",
+              "ehl feen deh seh-MAH-nah",
+              "weekend"
+            ],
+            [
+              "hoy / mañana / ayer",
+              "oy / mah-NYAH-nah / ah-YEHR",
+              "today / tomorrow / yesterday"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Days are written in lowercase, and the first five already look plural: *el lunes* is one Monday, *los lunes* is every Monday. Only *sábado* and *domingo* change: *los sábados*, *los domingos*."
+        },
+        {
+          "type": "sub",
+          "text": "¿Con qué frecuencia?"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Español",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "siempre",
+              "always",
+              "*Siempre desayuno en casa.*"
+            ],
+            [
+              "casi siempre",
+              "almost always",
+              "*Casi siempre llego temprano.*"
+            ],
+            [
+              "normalmente",
+              "usually",
+              "*Normalmente ceno a las nueve.*"
+            ],
+            [
+              "a menudo",
+              "often",
+              "*Voy a menudo al cine.*"
+            ],
+            [
+              "a veces",
+              "sometimes",
+              "*A veces trabajo el sábado.*"
+            ],
+            [
+              "casi nunca",
+              "hardly ever",
+              "*Casi nunca veo la tele.*"
+            ],
+            [
+              "nunca",
+              "never",
+              "*Nunca llego tarde.*"
+            ],
+            [
+              "todos los días",
+              "every day",
+              "*Estudio todos los días.*"
+            ],
+            [
+              "una vez por semana",
+              "once a week",
+              "*Voy al gimnasio una vez por semana.*"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Culture corner",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "A day shifted by two hours",
+          "items": [
+            "Spain's clock runs about two hours behind its European neighbors. Lunch is at 2 p.m., dinner at 9-10 p.m., and prime-time TV doesn't start until 10:30 p.m. A dinner invitation for 8 p.m. is a tourist's invitation.",
+            "*La siesta* does exist, but it isn't the national afternoon nap people imagine. What's real is the *horario partido* (split schedule): many small shops close from 2 to 5 p.m., then reopen until 8 p.m.",
+            "So don't be surprised if the pharmacy or post office is closed exactly when you're free. Big stores and shopping malls usually stay open all day.",
+            "In Latin America the pattern is much closer to North America: lunch around 12-1 p.m., dinner around 7-8 p.m."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "es": "la noche",
+      "baca": "lah NOH-cheh",
+      "en": "night"
+    },
+    {
+      "es": "y cuarto",
+      "baca": "ee KWAHR-toh",
+      "en": "quarter past"
+    },
+    {
+      "es": "y media",
+      "baca": "ee MEH-dyah",
+      "en": "half past"
+    },
+    {
+      "es": "menos cuarto",
+      "baca": "MEH-nohs KWAHR-toh",
+      "en": "quarter to"
+    },
+    {
+      "es": "el mediodía",
+      "baca": "ehl meh-dyoh-DEE-ah",
+      "en": "noon, midday"
+    },
+    {
+      "es": "todos los días",
+      "baca": "TOH-dohs lohs DEE-ahs",
+      "en": "every day"
+    },
+    {
+      "es": "a veces",
+      "baca": "ah BEH-sehs",
+      "en": "sometimes"
+    },
+    {
+      "es": "normalmente",
+      "baca": "nohr-mahl-MEHN-teh",
+      "en": "usually"
+    },
+    {
+      "es": "el fin de semana",
+      "baca": "feen deh seh-MAH-nah",
+      "en": "weekend"
+    },
+    {
+      "es": "juntos / juntas",
+      "baca": "HOON-tohs",
+      "en": "together"
+    },
+    {
+      "es": "igual",
+      "baca": "ee-GWAHL",
+      "en": "the same"
+    },
+    {
+      "es": "desayunar",
+      "baca": "deh-sah-yoo-NAHR",
+      "en": "to have breakfast"
+    },
+    {
+      "es": "comer",
+      "baca": "koh-MEHR",
+      "en": "to eat (lunch)"
+    },
+    {
+      "es": "cenar",
+      "baca": "seh-NAHR",
+      "en": "to have dinner"
+    },
+    {
+      "es": "hacer",
+      "baca": "ah-SEHR",
+      "en": "to do, to make"
+    },
+    {
+      "es": "a pie",
+      "baca": "ah PYEH",
+      "en": "on foot"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right form of *ir* (*voy*, *vas*, *va*, *vamos*, *van*).",
+      "items": [
+        "Yo ____ al trabajo en moto.",
+        "¿Tú ____ a la escuela a pie?",
+        "Marta ____ a la librería los lunes.",
+        "Nosotros ____ al cine los domingos.",
+        "Mis padres ____ a Madrid mañana."
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "Normalmente me acuesto a las once.",
+        "Los domingos comemos en casa de mis padres.",
+        "Nunca llego tarde al trabajo.",
+        "Tardo media hora en llegar.",
+        "A veces trabajo el sábado por la mañana."
+      ]
+    },
+    {
+      "prompt": "Put the words in order to make a correct Spanish sentence.",
+      "items": [
+        "hora / ¿ / qué / es / ?",
+        "seis / me / las / levanto / a",
+        "domingos / los / descanso",
+        "tarde / nunca / llego",
+        "trabajo / al / moto / en / voy"
+      ]
+    }
+  ],
+  "answers": [
+    "voy — vas — va — vamos — van",
+    "I usually go to bed at eleven. — On Sundays we have lunch at my parents' house. — I'm never late for work. — It takes me half an hour to get there. — Sometimes I work on Saturday morning.",
+    "¿Qué hora es? — Me levanto a las seis. — Los domingos descanso. — Nunca llego tarde. — Voy al trabajo en moto."
+  ],
+  "wave": "Go back to **Unit 8**: describe one family member in three sentences — looks, personality, age."
+}

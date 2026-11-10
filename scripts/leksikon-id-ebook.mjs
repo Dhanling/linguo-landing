@@ -98,7 +98,10 @@ let modulSerumpun = false;
    Sunda dikecualikan karena pagarnya memang mati untuk `su`. */
 const tgSkema = new Set();
 const teksSkema = (s) => {
-  if (typeof s === "string" && pengantarEn) pecah(s).forEach((w) => penSkema.add(w));
+  /* [ebook-pengantar-en-v2] Bacaan ruby `[あれ|are]`, `[安|ān]` bukan teks
+     target yang dibunyikan — kalau ikut dihitung, kata Inggris "are", "an",
+     "age" tercoret dari daftar begitu modul Jepang/Mandarin edisi Inggris masuk. */
+  if (typeof s === "string" && pengantarEn) pecah(s.replace(/\[([^|\]]*)\|[^\]]*\]/g, "$1")).forEach((w) => penSkema.add(w));
   if (typeof s === "string" && !modulSerumpun && !modulKini.startsWith("su-")) pecah(s).forEach((w) => tgSkema.add(w));
 };
 

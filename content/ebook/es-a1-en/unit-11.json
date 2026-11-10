@@ -1,0 +1,508 @@
+{
+  "title": "Is there a bank around here?",
+  "title_target": "¿Hay un banco por aquí?",
+  "goal": "Ask whether a place exists, say where it is, and tell *ser* from *estar*.",
+  "bekal": [
+    "asking whether something is nearby",
+    "saying where a place is",
+    "choosing between *ser* and *estar*",
+    "giving opening and closing times"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Perdona, ¿hay un banco por aquí?",
+      "intro": "Asking someone in the street. Watch how *hay* and *está* take turns — that is the whole lesson of this unit.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Perdona, ¿hay un banco por aquí?",
+          "id": "Excuse me, is there a bank around here?",
+          "literal": "forgive, there-is a bank through here?"
+        },
+        {
+          "speaker": "Señora:",
+          "text": "Sí, hay uno en la calle Mayor.",
+          "id": "Yes, there's one on Mayor Street.",
+          "literal": "yes, there-is one on street Mayor."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Está lejos de aquí?",
+          "id": "Is it far from here?",
+          "literal": "it-is-located far from here?"
+        },
+        {
+          "speaker": "Señora:",
+          "text": "No, está cerca. Está al lado de la farmacia.",
+          "id": "No, it's close. It's next to the pharmacy.",
+          "literal": "no, it-is-located near. it-is-located at-the side of the pharmacy."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿A cuántos minutos está?",
+          "id": "How many minutes away is it?",
+          "literal": "at how-many minutes it-is-located?"
+        },
+        {
+          "speaker": "Señora:",
+          "text": "A cinco minutos a pie. Todo recto y a la izquierda.",
+          "id": "Five minutes on foot. Straight ahead and then left.",
+          "literal": "at five minutes on foot. all straight and to the left."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Y el mercado? Hoy está cerrado, ¿verdad?",
+          "id": "And the market? It's closed today, isn't it?",
+          "literal": "and the market? today it-is-located closed, truth?"
+        },
+        {
+          "speaker": "Señora:",
+          "text": "No, está abierto hasta las dos.",
+          "id": "No, it's open until two.",
+          "literal": "no, it-is-located open until the two."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Y hay un cajero automático en el banco?",
+          "id": "And is there an ATM at the bank?",
+          "literal": "and there-is a cashier automatic at the bank?"
+        },
+        {
+          "speaker": "Señora:",
+          "text": "Sí, hay dos. Están en la entrada.",
+          "id": "There are two. They're at the entrance.",
+          "literal": "yes, there-are two. they-are-located at the entrance."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Muchas gracias. Usted es muy amable.",
+          "id": "Thank you very much. You're very kind.",
+          "literal": "many thanks. you(formal) are very kind."
+        },
+        {
+          "speaker": "Señora:",
+          "text": "De nada. ¡Que tenga un buen día!",
+          "id": "You're welcome. Have a nice day!",
+          "literal": "of nothing. may(you) have a good day!"
+        }
+      ],
+      "notes": [
+        "**Hay = there is / there are, and it never changes form.** One thing or a hundred, it's still *hay*: *hay un banco*, *hay tres bancos*. It introduces something not yet mentioned — which is why it pairs with *un / una / dos*, never with *el / la*.",
+        "**Once the thing is known, estar takes over.** Compare: *Hay un banco en la calle Mayor* (saying it exists), then *El banco está al lado de la farmacia* (saying where it is). This order is almost always right: *hay* first, *estar* after.",
+        "**Ser vs estar — the heart of Spanish.** *Ser* is for what something basically is: *Marta es española*, *el mercado es grande*. *Estar* is for where it is and how it is right now: *Marta está en casa*, *el mercado está cerrado*. The wrong choice changes the meaning, not just the sound: *es aburrido* = he's a boring person; *está aburrido* = he's bored.",
+        "**Por aquí** = \"around here\", looser than *aquí*, which means right on this spot. *Por* with a place word always means \"around\": *por Madrid*, *por el centro*.",
+        "**Uno replaces a noun already mentioned.** *Hay uno en la calle Mayor* — *uno* here means \"one bank\", with no need to repeat *banco*. For feminine nouns: *una*.",
+        "**Distance is measured in time.** *Está a cinco minutos* (five minutes away), *a diez minutos en coche*, *a dos horas de Madrid*. Note the *a* — it can't be dropped.",
+        "**Usted = formal \"you\".** Its verb forms are exactly the same as \"he/she\": *usted es*, *usted tiene*, *usted vive*. In Spain *usted* is used sparingly; in Latin America far more often.",
+        "**¿verdad? and ¿no?** Tacked onto the end of a sentence to ask for agreement, just like \"right?\" or \"isn't it?\" in English: *Está abierto, ¿verdad?*",
+        "**¡Que tenga un buen día!** is a short, very common well-wish. It's actually a subjunctive form — B1 grammar — so just learn it whole. The informal version is *¡que tengas un buen día!*"
+      ],
+      "grammars": [
+        {
+          "title": "The verb estar (to be located)",
+          "body": [
+            "*Estar* answers two questions: **where** something is and **how** it is at the moment."
+          ],
+          "table": {
+            "head": [
+              "",
+              "estar",
+              "Pronunciation",
+              "Example"
+            ],
+            "rows": [
+              [
+                "yo",
+                "**estoy**",
+                "ehs-TOY",
+                "*Estoy en casa.*"
+              ],
+              [
+                "tú",
+                "**estás**",
+                "ehs-TAHS",
+                "*¿Dónde estás?*"
+              ],
+              [
+                "él / ella / usted",
+                "**está**",
+                "ehs-TAH",
+                "*El banco está cerca.*"
+              ],
+              [
+                "nosotros",
+                "**estamos**",
+                "ehs-TAH-mohs",
+                "*Estamos en el café.*"
+              ],
+              [
+                "vosotros",
+                "**estáis**",
+                "ehs-TEYES",
+                "*¿Estáis cansados?*"
+              ],
+              [
+                "ellos / ustedes",
+                "**están**",
+                "ehs-TAHN",
+                "*Las tiendas están abiertas.*"
+              ]
+            ]
+          },
+          "after": [
+            "Its partner, *ser*, you've been using since Unit 1 — but only its first three forms. Here's the full set: **yo soy, tú eres, él / ella / usted es, nosotros somos, vosotros sois, ellos / ustedes son**. The anchors are the same as for other verbs: the *nosotros* form ends in **-mos**, the *ellos* form in **-n**."
+          ]
+        },
+        {
+          "title": "Ser or estar? A decision table",
+          "body": [
+            "When in doubt, ask yourself: **could what I'm saying change tomorrow?** If so, it's almost certainly *estar*."
+          ],
+          "table": {
+            "head": [
+              "Used for",
+              "Verb",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Identity, name, profession",
+                "**ser**",
+                "*Soy profesora.*"
+              ],
+              [
+                "Origin and nationality",
+                "**ser**",
+                "*Somos de Indonesia.*"
+              ],
+              [
+                "Permanent traits",
+                "**ser**",
+                "*Mi hermana es simpática.*"
+              ],
+              [
+                "Time, date, hour",
+                "**ser**",
+                "*Son las tres.*"
+              ],
+              [
+                "Total price",
+                "**ser**",
+                "*Son veinte euros.*"
+              ],
+              [
+                "Possession",
+                "**ser**",
+                "*El libro es de Luis.*"
+              ],
+              [
+                "Location, place",
+                "**estar**",
+                "*El banco está cerca.*"
+              ],
+              [
+                "Temporary state",
+                "**estar**",
+                "*Estoy cansado.*"
+              ],
+              [
+                "How you feel today",
+                "**estar**",
+                "*¿Cómo estás?*"
+              ],
+              [
+                "Open / closed, on / off",
+                "**estar**",
+                "*La tienda está cerrada.*"
+              ],
+              [
+                "Status that can change",
+                "**estar**",
+                "*Está casada.*"
+              ]
+            ]
+          },
+          "after": [
+            "Some adjectives change meaning depending on the verb. The most common: *ser listo* (clever) vs *estar listo* (ready); *ser aburrido* (boring) vs *estar aburrido* (bored); *ser bueno* (good) vs *estar bueno* (tasty, of food); *ser rico* (rich) vs *estar rico* (delicious).",
+            "One exception that trips people up: **events** take *ser*, even when you're asking where. *La fiesta es en mi casa* — the party is at my house. But *mi casa está en Bandung*. Things take *estar*, events take *ser*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Places in town",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Español",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "el centro",
+              "ehl SEHN-troh",
+              "town center"
+            ],
+            [
+              "la plaza",
+              "lah PLAH-sah",
+              "square"
+            ],
+            [
+              "la calle",
+              "lah KAH-yeh",
+              "street"
+            ],
+            [
+              "la avenida",
+              "lah ah-beh-NEE-dah",
+              "avenue"
+            ],
+            [
+              "el banco",
+              "ehl BAHN-koh",
+              "bank"
+            ],
+            [
+              "el cajero automático",
+              "ehl kah-HEH-roh",
+              "ATM"
+            ],
+            [
+              "la farmacia",
+              "lah fahr-MAH-syah",
+              "pharmacy"
+            ],
+            [
+              "el hospital",
+              "ehl ohs-pee-TAHL",
+              "hospital"
+            ],
+            [
+              "el mercado",
+              "ehl mehr-KAH-doh",
+              "market"
+            ],
+            [
+              "el supermercado",
+              "ehl soo-pehr-mehr-KAH-doh",
+              "supermarket"
+            ],
+            [
+              "la tienda",
+              "lah TYEHN-dah",
+              "shop, store"
+            ],
+            [
+              "el restaurante",
+              "ehl rehs-tow-RAHN-teh",
+              "restaurant"
+            ],
+            [
+              "la estación",
+              "lah ehs-tah-SYOHN",
+              "station"
+            ],
+            [
+              "la parada de autobús",
+              "lah pah-RAH-dah",
+              "bus stop"
+            ],
+            [
+              "el aeropuerto",
+              "ehl ah-eh-roh-PWEHR-toh",
+              "airport"
+            ],
+            [
+              "la iglesia",
+              "lah ee-GLEH-syah",
+              "church"
+            ],
+            [
+              "la catedral",
+              "lah kah-teh-DRAHL",
+              "cathedral"
+            ],
+            [
+              "la mezquita",
+              "lah mehs-KEE-tah",
+              "mosque"
+            ],
+            [
+              "el museo",
+              "ehl moo-SEH-oh",
+              "museum"
+            ],
+            [
+              "el parque",
+              "ehl PAHR-keh",
+              "park"
+            ],
+            [
+              "la playa",
+              "lah PLAH-yah",
+              "beach"
+            ],
+            [
+              "el hotel",
+              "ehl oh-TEHL",
+              "hotel"
+            ],
+            [
+              "la oficina de correos",
+              "koh-RREH-ohs",
+              "post office"
+            ],
+            [
+              "la comisaría",
+              "lah koh-mee-sah-REE-ah",
+              "police station"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "es": "hay",
+      "baca": "eye",
+      "en": "there is / there are"
+    },
+    {
+      "es": "la calle",
+      "baca": "lah KAH-yeh",
+      "en": "street"
+    },
+    {
+      "es": "el banco",
+      "baca": "ehl BAHN-koh",
+      "en": "bank"
+    },
+    {
+      "es": "la farmacia",
+      "baca": "lah fahr-MAH-syah",
+      "en": "pharmacy"
+    },
+    {
+      "es": "el mercado",
+      "baca": "ehl mehr-KAH-doh",
+      "en": "market"
+    },
+    {
+      "es": "la iglesia",
+      "baca": "lah ee-GLEH-syah",
+      "en": "church"
+    },
+    {
+      "es": "el parque",
+      "baca": "ehl PAHR-keh",
+      "en": "park"
+    },
+    {
+      "es": "cerca / lejos",
+      "baca": "SEHR-kah / LEH-hohs",
+      "en": "near / far"
+    },
+    {
+      "es": "al lado de",
+      "baca": "ahl LAH-doh deh",
+      "en": "next to"
+    },
+    {
+      "es": "a la izquierda",
+      "baca": "ah lah ees-KYEHR-dah",
+      "en": "to / on the left"
+    },
+    {
+      "es": "todo recto",
+      "baca": "TOH-doh REHK-toh",
+      "en": "straight ahead"
+    },
+    {
+      "es": "abierto / cerrado",
+      "baca": "ah-BYEHR-toh / seh-RRAH-doh",
+      "en": "open / closed"
+    },
+    {
+      "es": "aquí / allí",
+      "baca": "ah-KEE / ah-YEE",
+      "en": "here / there"
+    },
+    {
+      "es": "por aquí",
+      "baca": "pohr ah-KEE",
+      "en": "around here"
+    },
+    {
+      "es": "perdona / perdone",
+      "baca": "pehr-DOH-nah",
+      "en": "excuse me (informal / formal)"
+    },
+    {
+      "es": "amable",
+      "baca": "ah-MAH-bleh",
+      "en": "kind, friendly"
+    },
+    {
+      "es": "de nada",
+      "baca": "deh NAH-dah",
+      "en": "you're welcome"
+    },
+    {
+      "es": "¿verdad?",
+      "baca": "behr-DAHD",
+      "en": "right?"
+    },
+    {
+      "es": "la estación",
+      "baca": "lah ehs-tah-SYOHN",
+      "en": "station"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in with *hay* or the correct form of *estar*.",
+      "items": [
+        "En esta calle ____ una farmacia.",
+        "El mercado ____ cerca de mi casa.",
+        "¿Dónde ____ tú?",
+        "En la plaza ____ tres cafés.",
+        "Los museos ____ cerrados los lunes.",
+        "Cerca del hotel ____ un cajero automático."
+      ]
+    },
+    {
+      "prompt": "Fill in with the correct form of *ser* or *estar*.",
+      "items": [
+        "Marta ____ española.",
+        "Marta ____ en Barcelona hoy.",
+        "El banco ____ cerrado los domingos.",
+        "Mi hermano ____ profesor.",
+        "Nosotros ____ muy cansados.",
+        "La fiesta ____ en mi casa."
+      ]
+    },
+    {
+      "prompt": "Translate into Spanish.",
+      "items": [
+        "There is a shop opposite the bank.",
+        "The pharmacy is far from here.",
+        "We're at the market.",
+        "Excuse me, where is Mayor Street?",
+        "The museum is open from ten to eight.",
+        "The beach is twenty minutes away by bus."
+      ]
+    }
+  ],
+  "answers": [
+    "hay — está — estás — hay — están — hay",
+    "es — está — está — es — estamos — es",
+    "Hay una tienda enfrente del banco. — La farmacia está lejos de aquí. — Estamos en el mercado. — Perdone, ¿dónde está la calle Mayor? — El museo está abierto de diez a ocho. — La playa está a veinte minutos en autobús."
+  ],
+  "wave": "Review **Unit 9**: describe your morning from waking up to arriving at work, in six sentences."
+}

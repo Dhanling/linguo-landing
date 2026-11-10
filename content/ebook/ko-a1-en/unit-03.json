@@ -1,0 +1,491 @@
+{
+  "title": "Where it is, and what isn't there",
+  "title_target": "어디에 있어요 — Eodie isseoyo",
+  "goal": "Say that something is or isn't there, ask where it is, describe position with place words, and learn the difference between 에 and 에서 from the very start.",
+  "bekal": [
+    "use 있어요 and 없어요 for existence and possession",
+    "ask where something is with 어디에 있어요",
+    "describe position: on, under, in front of, next to",
+    "tell the particle 에 apart from 에서",
+    "name common places around town"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — Looking for a lost key",
+      "intro": "Ani can't find her room key. Notice that Korean place words come **after** the reference object — the reverse of English \"on the desk\", \"under the chair\".",
+      "lines": [
+        {
+          "speaker": "아니:",
+          "text": "[민준|Minjun] [씨|ssi], [제|je] [열쇠|yeolsoe] [있어요|isseoyo]?",
+          "id": "Minjun, do you have my key?",
+          "literal": "Minjun — Mr., my — key — exists?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[아니요|Aniyo], [없어요|eopseoyo]. [가방|Gabang] [안에|ane] [없어요|eopseoyo]?",
+          "id": "No. Isn't it in your bag?",
+          "literal": "no, not-exist. bag — inside-at — not-exist?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[없어요|Eopseoyo]. [책상|Chaeksang] [위에도|wiedo] [없어요|eopseoyo].",
+          "id": "It's not there. It's not on the desk either.",
+          "literal": "not-exist. desk — top-at — also — not-exist."
+        },
+        {
+          "speaker": "민준:",
+          "text": "[의자|Uija] [밑을|miteul] [봤어요|bwasseoyo]?",
+          "id": "Did you look under the chair?",
+          "literal": "chair — under — object — looked?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[아|A]! [여기|Yeogi] [있어요|isseoyo]! [의자|Uija] [밑에|mite] [있어요|isseoyo].",
+          "id": "Oh! Here it is! It's under the chair.",
+          "literal": "ah! here — exists! chair — under-at — exists."
+        },
+        {
+          "speaker": "민준:",
+          "text": "[다행이에요|Dahaengieyo]. [그런데|Geureonde] [사전은|sajeoneun] [어디에|eodie] [있어요|isseoyo]?",
+          "id": "What a relief. By the way, where's the dictionary?",
+          "literal": "relief — is. by-the-way, dictionary — as-for — where-at — exists?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[교실에|Gyosire] [있어요|isseoyo]. [책상|Chaeksang] [위에|wie] [있어요|isseoyo].",
+          "id": "It's in the classroom. On the desk.",
+          "literal": "classroom-at — exists. desk — top-at — exists."
+        },
+        {
+          "speaker": "민준:",
+          "text": "[아니|Ani] [씨|ssi], [오늘|oneul] [어디에서|eodieseo] [공부해요|gongbuhaeyo]?",
+          "id": "Ani, where are you studying today?",
+          "literal": "Ani — Ms., today — where-at(place) — study?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[도서관에서|Doseogwaneseo] [공부해요|gongbuhaeyo]. [민준|Minjun] [씨는요|ssineunyo]?",
+          "id": "At the library. And you, Minjun?",
+          "literal": "library-at(place) — study. Minjun — Mr. — as-for — (then)?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[저는|Jeoneun] [집에|jibe] [가요|gayo]. [집에서|Jibeseo] [일해요|ilhaeyo].",
+          "id": "I'm going home. I work from home.",
+          "literal": "I — as-for — home-to — go. home-at(place) — work."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[도서관은|Doseogwaneun] [학교|hakgyo] [옆에|yeope] [있어요|isseoyo]. [같이|Gachi] [가요|gayo]?",
+          "id": "The library is next to the school. Shall we go together?",
+          "literal": "library — as-for — school — side-at — exists. together — go?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[네|Ne], [좋아요|joayo]!",
+          "id": "Sure, sounds good!",
+          "literal": "yes, good!"
+        }
+      ],
+      "notes": [
+        "**있어요 does two jobs at once.** It means \"there is\" (existence somewhere) and also \"have\" (possession). 열쇠 있어요? can mean \"is the key there?\" or \"do you have a key?\" — context decides. English separates the two; Korean doesn't feel the need.",
+        "**없어요 is not 안 있어요.** Korean has its own word for \"there isn't\", and the usual negative (안) isn't used here. The pair 있다/없다 keeps coming back until the last unit, including inside big expressions like \"can\" and \"can't\".",
+        "**Place words come AFTER the noun.** 책상 위 = \"desk top\" = on the desk. 가방 안 = \"bag inside\" = in the bag. It's the reverse of English prepositions and one of the things that feels odd the longest. Practice by naming things in your room: 침대 옆, 문 앞, 의자 밑.",
+        "**The place word itself is a noun, so it needs a particle.** 위 (top) plus 에 becomes 위**에**. Without 에 the sentence isn't finished: 책상 위 있어요 is wrong, 책상 위**에** 있어요 is right.",
+        "**여기, 거기, 저기** follow the same three-distance pattern as 이거/그거/저거: here (near me), there (near you), over there (far from both of us). To ask: 어디.",
+        "**다행이에요 has no one-word equivalent.** It's said when something bad turns out not to have happened — closest to \"what a relief\" or \"thank goodness\". It's very common, and sounds much warmer than 좋아요 in situations like this.",
+        "**그런데 opens a change of topic.** Literally \"but\", in conversation it more often means \"by the way\" — a gentle way of steering the conversation elsewhere. The short form is 근데, and that's what you'll hear most.",
+        "**같이 is pronounced *gachi*, not *gati*.** The letter ㅌ meeting 이 changes its sound to *chi*. This change has its own name (구개음화) and only happens with ㄷ and ㅌ before 이: 굳이 *guji*, 같이 *gachi*."
+      ],
+      "grammars": [
+        {
+          "title": "에 vs 에서 — two place particles you must not mix up",
+          "body": [
+            "English uses \"at/in\" for two things that Korean treats as completely different: **where something is** and **where something happens**. This is the number one particle mistake for learners, and it never goes away by itself — you have to notice it once and then practice."
+          ],
+          "table": {
+            "head": [
+              "Particle",
+              "Used for",
+              "Verbs it pairs with",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**에**",
+                "location — something *is* there",
+                "있다, 없다, 살다",
+                "집**에** 있어요 — is at home"
+              ],
+              [
+                "**에**",
+                "destination — going *to* a place",
+                "가다, 오다, 다니다",
+                "학교**에** 가요 — go to school"
+              ],
+              [
+                "**에**",
+                "time — *at* a certain hour",
+                "all",
+                "세 시**에** 만나요 — meet at three"
+              ],
+              [
+                "**에서**",
+                "place where an activity happens",
+                "먹다, 공부하다, 일하다, 만나다",
+                "집**에서** 일해요 — work at home"
+              ],
+              [
+                "**에서**",
+                "starting point — *from* there",
+                "오다, 출발하다",
+                "인도네시아**에서** 왔어요 — came from Indonesia"
+              ]
+            ]
+          },
+          "after": [
+            "**The one-sentence quick test: is some activity being done in that place?** If yes → 에서. If the place is only where something is, or where someone is going → 에.",
+            "Look at the pair in the dialogue: 집**에** 가요 (go home — movement) but 집**에서** 일해요 (work at home — activity). Same noun, different particle, very different meaning.",
+            "⚠️ The most common mistake: 식당**에** 먹어요. Eating is an activity, so the correct form is 식당**에서** 먹어요. If in doubt, remember that 에 only keeps company with 있다, 없다, 가다 and 오다."
+          ]
+        },
+        {
+          "title": "Place words",
+          "body": [
+            "All of them go after the reference noun and take 에."
+          ],
+          "table": {
+            "head": [
+              "Korean",
+              "Romanization",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "위",
+                "wi",
+                "top, on",
+                "책상 위에 — on the desk"
+              ],
+              [
+                "밑 / 아래",
+                "mit / arae",
+                "under, below",
+                "의자 밑에 — under the chair"
+              ],
+              [
+                "안",
+                "an",
+                "inside",
+                "가방 안에 — in the bag"
+              ],
+              [
+                "밖",
+                "bak",
+                "outside",
+                "집 밖에 — outside the house"
+              ],
+              [
+                "앞",
+                "ap",
+                "front",
+                "학교 앞에 — in front of the school"
+              ],
+              [
+                "뒤",
+                "dwi",
+                "back, behind",
+                "은행 뒤에 — behind the bank"
+              ],
+              [
+                "옆",
+                "yeop",
+                "side, next to",
+                "저 옆에 — next to me"
+              ],
+              [
+                "사이",
+                "sai",
+                "between",
+                "은행과 학교 사이에 — between the bank and the school"
+              ]
+            ]
+          },
+          "after": [
+            "**밑 and 아래 both mean \"under\", but they're not quite the same.** 밑 means right underneath, touching or covered by it; 아래 is more general, meaning somewhere below. For a key that fell under a chair, 밑 is the right one.",
+            "**밖에 has a tricky second meaning.** Attached to a noun and followed by a negative, it means \"only\": 물**밖에** 없어요 = \"there's nothing but water\" = \"there's only water\". Spelled the same as \"outside\", but doing a completely different job."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Places around town",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The vocabulary that's useful fastest if you're actually in Korea, and that comes up most often in TOPIK level 1 questions."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "한국어",
+            "Romanization",
+            "English",
+            "한국어",
+            "Romanization",
+            "English"
+          ],
+          "rows": [
+            [
+              "집",
+              "jip",
+              "house, home",
+              "은행",
+              "eunhaeng",
+              "bank"
+            ],
+            [
+              "학교",
+              "hakgyo",
+              "school",
+              "우체국",
+              "ucheguk",
+              "post office"
+            ],
+            [
+              "교실",
+              "gyosil",
+              "classroom",
+              "병원",
+              "byeongwon",
+              "hospital"
+            ],
+            [
+              "도서관",
+              "doseogwan",
+              "library",
+              "약국",
+              "yakguk",
+              "pharmacy"
+            ],
+            [
+              "식당",
+              "sikdang",
+              "restaurant",
+              "시장",
+              "sijang",
+              "market"
+            ],
+            [
+              "카페",
+              "kape",
+              "café",
+              "백화점",
+              "baekhwajeom",
+              "department store"
+            ],
+            [
+              "회사",
+              "hoesa",
+              "office, company",
+              "편의점",
+              "pyeonuijeom",
+              "convenience store"
+            ],
+            [
+              "화장실",
+              "hwajangsil",
+              "restroom",
+              "지하철역",
+              "jihacheollyeok",
+              "subway station"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "화장실이 어디예요?",
+          "items": [
+            "This sentence is worth memorizing before any other. Notice that it uses **이/가**, not 은/는 — because you're asking the other person to pick out one place among many.",
+            "Notice too that it uses **예요**, not 있어요. 화장실이 어디예요? (where's the restroom?) and 화장실이 어디에 있어요? are both correct; the first is shorter and more common."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "있어요",
+      "baca": "isseoyo",
+      "en": "there is; to have"
+    },
+    {
+      "ko": "없어요",
+      "baca": "eopseoyo",
+      "en": "there isn't; not to have"
+    },
+    {
+      "ko": "어디",
+      "baca": "eodi",
+      "en": "where"
+    },
+    {
+      "ko": "여기",
+      "baca": "yeogi",
+      "en": "here"
+    },
+    {
+      "ko": "거기",
+      "baca": "geogi",
+      "en": "there (near you)"
+    },
+    {
+      "ko": "저기",
+      "baca": "jeogi",
+      "en": "over there"
+    },
+    {
+      "ko": "위",
+      "baca": "wi",
+      "en": "top, on"
+    },
+    {
+      "ko": "밑",
+      "baca": "mit",
+      "en": "under, below"
+    },
+    {
+      "ko": "안",
+      "baca": "an",
+      "en": "inside"
+    },
+    {
+      "ko": "밖",
+      "baca": "bak",
+      "en": "outside"
+    },
+    {
+      "ko": "앞",
+      "baca": "ap",
+      "en": "front"
+    },
+    {
+      "ko": "뒤",
+      "baca": "dwi",
+      "en": "back, behind"
+    },
+    {
+      "ko": "옆",
+      "baca": "yeop",
+      "en": "side, next to"
+    },
+    {
+      "ko": "집",
+      "baca": "jip",
+      "en": "house, home"
+    },
+    {
+      "ko": "도서관",
+      "baca": "doseogwan",
+      "en": "library"
+    },
+    {
+      "ko": "식당",
+      "baca": "sikdang",
+      "en": "restaurant"
+    },
+    {
+      "ko": "화장실",
+      "baca": "hwajangsil",
+      "en": "restroom"
+    },
+    {
+      "ko": "공부해요",
+      "baca": "gongbuhaeyo",
+      "en": "to study"
+    },
+    {
+      "ko": "일해요",
+      "baca": "ilhaeyo",
+      "en": "to work"
+    },
+    {
+      "ko": "가요",
+      "baca": "gayo",
+      "en": "to go"
+    },
+    {
+      "ko": "같이",
+      "baca": "gachi",
+      "en": "together"
+    },
+    {
+      "ko": "그런데",
+      "baca": "geureonde",
+      "en": "by the way; but"
+    },
+    {
+      "ko": "다행이에요",
+      "baca": "dahaengieyo",
+      "en": "what a relief"
+    },
+    {
+      "ko": "오늘",
+      "baca": "oneul",
+      "en": "today"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Korean.",
+      "items": [
+        "My key is in the bag.",
+        "The dictionary isn't here.",
+        "Where is it?",
+        "The library is next to the school.",
+        "I study at the library.",
+        "I'm going home."
+      ]
+    },
+    {
+      "prompt": "Fill in 에 or 에서.",
+      "items": [
+        "저는 학교____ 가요.",
+        "도서관____ 공부해요.",
+        "책이 책상 위____ 있어요.",
+        "집____ 일해요.",
+        "인도네시아____ 왔어요.",
+        "세 시____ 만나요."
+      ]
+    },
+    {
+      "prompt": "Fill in 있어요 or 없어요 according to the meaning.",
+      "items": [
+        "It's in the bag: 가방 안에 ____.",
+        "It's not on the desk: 책상 위에 ____.",
+        "I have a Korean friend: 한국 친구가 ____.",
+        "I don't have any money: 돈이 ____.",
+        "The restroom is over there: 화장실은 저기에 ____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "있어요 / 열쇠가 / 안에 / 가방",
+        "어디에 / 사전은 / ? / 있어요",
+        "공부해요 / 도서관에서 / 저는",
+        "옆에 / 학교 / 도서관은 / 있어요",
+        "없어요 / 위에 / 책상 / 아무것도"
+      ]
+    }
+  ],
+  "answers": [
+    "제 열쇠가 가방 안에 있어요. — 사전이 없어요. — 어디에 있어요? — 도서관은 학교 옆에 있어요. — 저는 도서관에서 공부해요. — 저는 집에 가요.",
+    "에 — 에서 — 에 — 에서 — 에서 — 에",
+    "있어요 — 없어요 — 있어요 — 없어요 — 있어요",
+    "열쇠가 가방 안에 있어요. — 사전은 어디에 있어요? — 저는 도서관에서 공부해요. — 도서관은 학교 옆에 있어요. — 책상 위에 아무것도 없어요."
+  ]
+}

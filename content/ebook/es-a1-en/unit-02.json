@@ -1,0 +1,330 @@
+{
+  "title": "Meet my friend",
+  "title_target": "Mucho gusto",
+  "goal": "Introduce other people, choose between *tú* and *usted*, and ask someone's name politely.",
+  "bekal": [
+    "introduce other people",
+    "choose between *tú* and *usted*",
+    "ask what someone else is called",
+    "pronounce ll, h, j and ñ correctly"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Presentaciones",
+      "intro": "At a neighborhood event, Ana runs into her much older neighbor and introduces Luis. Notice how the tone changes.",
+      "lines": [
+        {
+          "speaker": "Ana:",
+          "text": "Buenas tardes, señora Gómez. ¿Cómo está usted?",
+          "id": "Good afternoon, Mrs. Gómez. How are you?",
+          "literal": "good afternoons, madam Gómez. how are you (polite)?"
+        },
+        {
+          "speaker": "Sra. Gómez:",
+          "text": "Muy bien, gracias. ¿Y tú, Ana?",
+          "id": "Very well, thank you. And you, Ana?",
+          "literal": "very well, thanks. and you, Ana?"
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Bien, gracias. Mire, este es mi amigo Luis.",
+          "id": "Fine, thanks. Look, this is my friend Luis.",
+          "literal": "well, thanks. look (polite), this is my friend Luis."
+        },
+        {
+          "speaker": "Luis:",
+          "text": "Mucho gusto, señora.",
+          "id": "Nice to meet you, ma'am.",
+          "literal": "much pleasure, madam."
+        },
+        {
+          "speaker": "Sra. Gómez:",
+          "text": "Encantada, Luis. ¿Eres estudiante también?",
+          "id": "Nice to meet you, Luis. Are you a student too?",
+          "literal": "delighted, Luis. you-are student also?"
+        },
+        {
+          "speaker": "Luis:",
+          "text": "Sí, señora. Soy estudiante de español.",
+          "id": "Yes, ma'am. I'm a Spanish student.",
+          "literal": "yes, madam. am student of Spanish."
+        },
+        {
+          "speaker": "Sra. Gómez:",
+          "text": "¡Qué bien! ¿Y cómo se llama tu profesora?",
+          "id": "How nice! And what's your teacher's name?",
+          "literal": "how good! and how herself-calls your teacher?"
+        },
+        {
+          "speaker": "Luis:",
+          "text": "Se llama Carmen. Es muy simpática.",
+          "id": "Her name is Carmen. She's really nice.",
+          "literal": "herself-calls Carmen. is very nice."
+        },
+        {
+          "speaker": "Sra. Gómez:",
+          "text": "Perfecto. Bueno, hasta pronto, chicos.",
+          "id": "Perfect. Well, see you soon, kids.",
+          "literal": "perfect. good, until soon, boys."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Adiós, señora Gómez. ¡Buenas tardes!",
+          "id": "Goodbye, Mrs. Gómez. Have a good afternoon!",
+          "literal": "goodbye, madam Gómez. good afternoons!"
+        }
+      ],
+      "notes": [
+        "**Tú or usted?** *Tú* is for friends, peers, family, children, and almost anyone your own age. *Usted* is for people much older than you, bosses, officials, and anyone you don't know in a formal situation. When in doubt, start with *usted*: nobody minds being shown too much respect, and people will usually offer *puedes tutearme* (\"you can call me *tú*\") themselves.",
+        "**Titles.** *Señor* (Mr.), *señora* (Mrs.), *señorita* (Miss, now rarely used for adults). Used with a name, the article appears when you're **talking about** the person — *la señora Gómez es simpática* — but disappears when you're **speaking to** them: *Buenas tardes, señora Gómez*.",
+        "**Este es…** = \"this is…\", used to introduce people. For a woman: *esta es mi amiga Ana*. Notice *mi amigo / mi amiga* — the word for friend follows the gender of the friend, not yours.",
+        "**Mire** literally means \"look\" (polite form), used much like English \"look\" or \"so\" — an opener to get the other person's attention. The informal version is *mira*.",
+        "**¿Cómo se llama…?** does two jobs: asking a third person's name (*¿cómo se llama tu profesora?*) and asking someone's name politely (*¿cómo se llama usted?*). Context tells you which.",
+        "**¡Qué bien!** = \"how nice!\", one of the exclamations you'll hear most. The pattern is *¡Qué + adjective!* — *¡qué bonito!*, *¡qué difícil!*, *¡qué simpática!*",
+        "**Chicos** literally means \"boys\", but it's used for any mixed group of young people, a bit like \"guys\" or \"you all\". An all-female group is *chicas*."
+      ],
+      "grammars": [
+        {
+          "title": "Llamarse (to be called) — a verb with a mirror",
+          "body": [
+            "*Llamarse* literally means \"to call oneself\". That's why it always comes with a small word in front — *me*, *te*, *se* — pointing back at the person doing it. The small word changes, and so does the verb:"
+          ],
+          "table": {
+            "head": [
+              "Spanish",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**me** llamo",
+                "meh YAH-moh",
+                "my name is"
+              ],
+              [
+                "**te** llamas",
+                "teh YAH-mahs",
+                "your name is"
+              ],
+              [
+                "**se** llama",
+                "seh YAH-mah",
+                "his / her / your (polite) name is"
+              ]
+            ]
+          },
+          "after": [
+            "So *¿cómo te llamas?* literally means \"how do you call yourself?\" — not \"what is your name\". One of the most common beginner mistakes is dropping the small word: *llamo Ana* means nothing; it has to be *me llamo Ana*.",
+            "Another way that's just as correct and shorter: *soy Ana*. Both are used every day; *me llamo* is slightly more neutral, *soy* slightly more casual."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Sounds that fool the eye",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Spanish is pronounced almost exactly as it's written — almost. These letters are the ones that trip up English speakers most, and all of them have already appeared in the first two units."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Letter",
+            "Sounds like",
+            "Example",
+            "Not"
+          ],
+          "rows": [
+            [
+              "**ll**",
+              "*y* as in \"yes\"",
+              "*me llamo* → meh **YAH**-moh",
+              "\"meh LAH-moh\""
+            ],
+            [
+              "**h**",
+              "silent, no sound at all",
+              "*hola* → **OH**-lah",
+              "\"HOH-lah\""
+            ],
+            [
+              "**j**",
+              "a breathy *h* from the back of the throat",
+              "*trabajo* → trah-**BAH-hoh**",
+              "\"trah-BAH-joh\""
+            ],
+            [
+              "**ñ**",
+              "*ny* as in \"canyon\"",
+              "*mañana* → mah-**NYAH**-nah",
+              "\"mah-NAH-nah\""
+            ],
+            [
+              "**v**",
+              "like *b*",
+              "*nos vemos* → nohs **BEH**-mohs",
+              "\"VEH-mohs\""
+            ],
+            [
+              "**z**, **ce**, **ci**",
+              "*s* (Latin America), *th* (Spain)",
+              "*gracias* → GRAH-see-ahs",
+              "\"GRAH-shus\""
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Word stress",
+          "items": [
+            "Words ending in a **vowel, -n or -s** are stressed on the **second-to-last** syllable: *es-tu-**dian**-te*, ***ho**-la*, ***bue**-nos*.",
+            "Words ending in any other consonant are stressed on the **last** syllable: *pro-fe-**sor**, us-**ted***.",
+            "If there's a ´ over a vowel, it **overrides both rules** — that's where the stress falls: *a-**diós***, *ma-**má***, *tam-**bién***. The mark isn't decoration; *papa* means potato, *papá* means dad."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Culture corner",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "Two kisses and one long name",
+          "items": [
+            "In Spain, introductions between two women, or a woman and a man, usually come with *dos besos* — two light air kisses, left cheek first. Between men, a handshake is enough. In many Latin American countries it's just **one** kiss. If you're unsure, wait half a second and follow the other person's lead.",
+            "Spanish speakers usually have **two surnames**: the first from their father, the second from their mother. *Ana García Morales* is called *señora García*, not *señora Morales*. Married women don't change their surname either.",
+            "*Usted* is used far more in Latin America — in Colombia even between friends — while in Spain people switch to *tú* very quickly. Neither is wrong; follow the person in front of you."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "es": "adiós",
+      "baca": "ah-DYOHS",
+      "en": "goodbye"
+    },
+    {
+      "es": "buenas tardes",
+      "baca": "BWEH-nahs TAHR-dehs",
+      "en": "good afternoon / good evening"
+    },
+    {
+      "es": "llamarse",
+      "baca": "yah-MAHR-seh",
+      "en": "to be called"
+    },
+    {
+      "es": "se llama…",
+      "baca": "seh YAH-mah",
+      "en": "his / her name is…"
+    },
+    {
+      "es": "usted",
+      "baca": "oos-TEHD",
+      "en": "you (polite)"
+    },
+    {
+      "es": "amigo / amiga",
+      "baca": "ah-MEE-goh",
+      "en": "friend"
+    },
+    {
+      "es": "señor / señora",
+      "baca": "seh-NYOHR / seh-NYOH-rah",
+      "en": "Mr. / Mrs."
+    },
+    {
+      "es": "chico / chica",
+      "baca": "CHEE-koh / CHEE-kah",
+      "en": "young man / young woman"
+    },
+    {
+      "es": "este es… / esta es…",
+      "baca": "EHS-teh ehs",
+      "en": "this is…"
+    },
+    {
+      "es": "mi",
+      "baca": "mee",
+      "en": "my"
+    },
+    {
+      "es": "español",
+      "baca": "ehs-pah-NYOHL",
+      "en": "Spanish (language)"
+    },
+    {
+      "es": "ser",
+      "baca": "sehr",
+      "en": "to be (identity)"
+    },
+    {
+      "es": "él / ella",
+      "baca": "ehl / EH-yah",
+      "en": "he / she"
+    },
+    {
+      "es": "de nada",
+      "baca": "deh NAH-dah",
+      "en": "you're welcome"
+    },
+    {
+      "es": "por favor",
+      "baca": "pohr fah-BOHR",
+      "en": "please"
+    },
+    {
+      "es": "perdón",
+      "baca": "pehr-DOHN",
+      "en": "sorry / excuse me"
+    },
+    {
+      "es": "simpático / simpática",
+      "baca": "seem-PAH-tee-koh",
+      "en": "nice, friendly"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in *me llamo*, *te llamas* or *se llama*.",
+      "items": [
+        "Hola, ____ Ana.",
+        "¿Cómo ____ tú?",
+        "Mi profesora ____ Carmen.",
+        "¿Cómo ____ usted?",
+        "Él ____ Luis."
+      ]
+    },
+    {
+      "prompt": "Put the words in order to make a correct Spanish sentence.",
+      "items": [
+        "llamas / ¿ / te / cómo / ?",
+        "Luis / soy / yo",
+        "estudiante / también / soy",
+        "amigo / este / mi / es / Luis",
+        "profesora / no / soy"
+      ]
+    },
+    {
+      "prompt": "Translate into Spanish.",
+      "items": [
+        "Good morning!",
+        "My name is Ana.",
+        "I'm a student too.",
+        "She's a teacher.",
+        "Thank you very much.",
+        "See you tomorrow."
+      ]
+    }
+  ],
+  "answers": [
+    "me llamo — te llamas — se llama — se llama — se llama",
+    "¿Cómo te llamas? — Yo soy Luis. — Soy estudiante también. — Este es mi amigo Luis. — No soy profesora.",
+    "¡Buenos días! — Me llamo Ana. — Soy estudiante también. — Es profesora. — Muchas gracias. — Hasta mañana."
+  ]
+}

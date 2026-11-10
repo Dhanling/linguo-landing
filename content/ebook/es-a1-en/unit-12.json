@@ -1,0 +1,406 @@
+{
+  "title": "Describing a town",
+  "title_target": "Mi ciudad",
+  "goal": "Name places in town, use location words, and describe the town where you live.",
+  "bekal": [
+    "naming key places in town",
+    "using location words that end in *de*",
+    "describing your town in five sentences",
+    "using *hay que* and *poder*"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — En la oficina de turismo",
+      "intro": "Now it's time to describe a whole town, not just one building.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Buenos días. ¿Qué hay que ver en la ciudad?",
+          "id": "Good morning. What is there to see in this town?",
+          "literal": "good day. what there-is that see in the town?"
+        },
+        {
+          "speaker": "Empleada:",
+          "text": "Mucho. La catedral es preciosa y está en el centro.",
+          "id": "Lots. The cathedral is very beautiful, and it's in the center.",
+          "literal": "much. the cathedral is pretty and it-is-located in the center."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Y hay un museo?",
+          "id": "And is there a museum?",
+          "literal": "and there-is a museum?"
+        },
+        {
+          "speaker": "Empleada:",
+          "text": "Hay tres. El más interesante está detrás de la plaza.",
+          "id": "There are three. The most interesting one is behind the square.",
+          "literal": "there-are three. the more interesting it-is-located behind of the square."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Está abierto los lunes?",
+          "id": "Is it open on Mondays?",
+          "literal": "it-is-located open the Mondays?"
+        },
+        {
+          "speaker": "Empleada:",
+          "text": "No, los lunes está cerrado. De martes a domingo, de diez a ocho.",
+          "id": "No, it's closed on Mondays. Tuesday to Sunday, ten to eight.",
+          "literal": "no, the Mondays it-is-located closed. from Tuesday to Sunday, from ten to eight."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Y dónde puedo comer algo típico?",
+          "id": "And where can I eat some local food?",
+          "literal": "and where I-can eat something typical?"
+        },
+        {
+          "speaker": "Empleada:",
+          "text": "En la calle de las Flores hay muchos restaurantes buenos.",
+          "id": "On Flores Street there are lots of good restaurants.",
+          "literal": "in the street of the flowers there-are many restaurants good."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Está lejos la playa?",
+          "id": "Is the beach far?",
+          "literal": "it-is-located far the beach?"
+        },
+        {
+          "speaker": "Empleada:",
+          "text": "A veinte minutos en autobús. El número 12 va directo.",
+          "id": "Twenty minutes by bus. The number 12 goes straight there.",
+          "literal": "at twenty minutes in bus. the twelve goes direct."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Perfecto. ¿Tiene un mapa de la ciudad?",
+          "id": "Perfect. Do you have a map of the town?",
+          "literal": "perfect. you(formal)-have a map of the town?"
+        },
+        {
+          "speaker": "Empleada:",
+          "text": "Claro, aquí tiene. Es gratis.",
+          "id": "Of course, here you are. It's free.",
+          "literal": "of-course, here you(formal)-have. it-is free."
+        }
+      ],
+      "notes": [
+        "**¿Qué hay que ver?** = \"what is there to see?\" The pattern *hay que + verb* means \"one needs to / one must\" without saying who: *hay que pagar aquí* (you pay here). Compare *tengo que pagar* (I have to pay) from Unit 7 — one is general, the other personal.",
+        "**El más interesante** = \"the most interesting (one)\". The superlative is simply *el / la / los / las + más + adjective*: *la ciudad más bonita*, *los museos más antiguos*.",
+        "**Poder (can)** also changes inside, like *querer*: *puedo, puedes, puede, podemos, podéis, pueden*. It's always followed by the dictionary form: *puedo comer*, *¿puedes ayudarme?*",
+        "**De … a …** works for any range — time, days, hours: *de martes a domingo*, *de diez a ocho*, *de Madrid a Barcelona*.",
+        "**Algo típico.** An adjective after *algo* and *nada* is always masculine singular: *algo típico*, *nada especial*, *algo barato*.",
+        "**Muchos restaurantes buenos** — notice both go plural: the quantity word *muchos* and the adjective *buenos*. Adjectives agree with their noun, not with the word next to them.",
+        "**Gratis** never changes form: *es gratis*, *son gratis*, *entrada gratis*. One of the few immune adjectives.",
+        "**Bus numbers are said as plain numbers**, and you'll be understood even without *número*: *el doce va directo*."
+      ],
+      "grammars": [
+        {
+          "title": "Location words",
+          "body": [
+            "Almost all of them end in *de*, and *de + el* must merge into *del*: *al lado del banco*, *cerca del centro*, *enfrente del museo*."
+          ],
+          "table": {
+            "head": [
+              "Español",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "al lado de",
+                "next to",
+                "*al lado de la farmacia*"
+              ],
+              [
+                "cerca de",
+                "near",
+                "*cerca del centro*"
+              ],
+              [
+                "lejos de",
+                "far from",
+                "*lejos de aquí*"
+              ],
+              [
+                "enfrente de",
+                "opposite / across from",
+                "*enfrente del banco*"
+              ],
+              [
+                "delante de",
+                "in front of",
+                "*delante de la puerta*"
+              ],
+              [
+                "detrás de",
+                "behind",
+                "*detrás de la plaza*"
+              ],
+              [
+                "encima de",
+                "on, on top of",
+                "*encima de la mesa*"
+              ],
+              [
+                "debajo de",
+                "under",
+                "*debajo de la silla*"
+              ],
+              [
+                "dentro de",
+                "inside",
+                "*dentro del edificio*"
+              ],
+              [
+                "fuera de",
+                "outside",
+                "*fuera de la ciudad*"
+              ],
+              [
+                "entre … y …",
+                "between",
+                "*entre el banco y el café*"
+              ],
+              [
+                "a la derecha de",
+                "to the right of",
+                "*a la derecha de la entrada*"
+              ],
+              [
+                "a la izquierda de",
+                "to the left of",
+                "*a la izquierda del museo*"
+              ]
+            ]
+          },
+          "after": [
+            "*Enfrente de* and *delante de* often get mixed up. *Delante de* means right in front of something (you stand in front of the door); *enfrente de* means across from it, usually with a street in between.",
+            "When the reference point is clear from context, drop the *de* and let the location word stand alone: *El banco está enfrente.* — the bank is over the road."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Describing your town",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The speaking practice that pays off fastest at A1: describe the town where you live in five sentences. Here's the frame."
+        },
+        {
+          "type": "kotak",
+          "title": "A five-sentence frame",
+          "items": [
+            "**Vivo en …** — name the city and country. *Vivo en Bandung, en Indonesia.*",
+            "**Es una ciudad …** — what it's like, with *ser*: *grande*, *pequeña*, *tranquila*, *ruidosa*, *bonita*, *moderna*, *antigua*.",
+            "**Está en …** — where it is, with *estar*: *en el norte / sur / este / oeste de Java*, *cerca de Yakarta*, *en las montañas*.",
+            "**En mi ciudad hay …** — what's there: *muchas tiendas*, *dos universidades*, *un mercado muy grande*.",
+            "**Lo que más me gusta es …** — the part you like best. *Lo que más me gusta es el clima.*"
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Town adjective",
+            "Meaning",
+            "Town adjective",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "grande",
+              "big",
+              "pequeña",
+              "small"
+            ],
+            [
+              "moderna",
+              "modern",
+              "antigua",
+              "old, historic"
+            ],
+            [
+              "tranquila",
+              "quiet",
+              "ruidosa",
+              "noisy"
+            ],
+            [
+              "limpia",
+              "clean",
+              "sucia",
+              "dirty"
+            ],
+            [
+              "cara",
+              "expensive",
+              "barata",
+              "cheap"
+            ],
+            [
+              "turística",
+              "touristy",
+              "industrial",
+              "industrial"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Culture corner",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "Towns built around a square",
+          "items": [
+            "Almost every town in Spain and Latin America has a *plaza mayor* — a square with a church on one side and the town hall on another. If you get lost, head there: from the square, every street is easy to read.",
+            "*El paseo* is the habit of strolling in the early evening, usually before dinner, just to get out and see the neighbors. It isn't exercise, and there's no particular destination.",
+            "Addresses put the number **after** the street name: *Calle Mayor 25*, not *25 Calle Mayor*. The floor comes separately: *Calle Mayor 25, 3.º B* — third floor, door B.",
+            "And watch the floors: *la planta baja* is the ground floor, so *el primer piso* is what Americans call the second floor."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "es": "la ciudad",
+      "baca": "lah see-oo-DAHD",
+      "en": "town, city"
+    },
+    {
+      "es": "el centro",
+      "baca": "ehl SEHN-troh",
+      "en": "town center"
+    },
+    {
+      "es": "la plaza",
+      "baca": "lah PLAH-sah",
+      "en": "square"
+    },
+    {
+      "es": "el museo",
+      "baca": "ehl moo-SEH-oh",
+      "en": "museum"
+    },
+    {
+      "es": "la playa",
+      "baca": "lah PLAH-yah",
+      "en": "beach"
+    },
+    {
+      "es": "el autobús",
+      "baca": "ehl ow-toh-BOOS",
+      "en": "bus"
+    },
+    {
+      "es": "el mapa",
+      "baca": "ehl MAH-pah",
+      "en": "map"
+    },
+    {
+      "es": "enfrente de",
+      "baca": "ehn-FREHN-teh deh",
+      "en": "opposite, across from"
+    },
+    {
+      "es": "detrás de",
+      "baca": "deh-TRAHS deh",
+      "en": "behind"
+    },
+    {
+      "es": "delante de",
+      "baca": "deh-LAHN-teh deh",
+      "en": "in front of"
+    },
+    {
+      "es": "encima de",
+      "baca": "ehn-SEE-mah deh",
+      "en": "on, on top of"
+    },
+    {
+      "es": "debajo de",
+      "baca": "deh-BAH-hoh deh",
+      "en": "under"
+    },
+    {
+      "es": "a la derecha",
+      "baca": "ah lah deh-REH-chah",
+      "en": "to / on the right"
+    },
+    {
+      "es": "poder",
+      "baca": "poh-DEHR",
+      "en": "can, may"
+    },
+    {
+      "es": "hay que…",
+      "baca": "eye keh",
+      "en": "one needs to / must…"
+    },
+    {
+      "es": "gratis",
+      "baca": "GRAH-tees",
+      "en": "free"
+    },
+    {
+      "es": "estar",
+      "baca": "ehs-TAHR",
+      "en": "to be (located), to be (temporarily)"
+    },
+    {
+      "es": "la tienda",
+      "baca": "lah TYEHN-dah",
+      "en": "shop, store"
+    },
+    {
+      "es": "entre… y…",
+      "baca": "EHN-treh",
+      "en": "between"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right location word to match the meaning.",
+      "items": [
+        "El banco está ____ de la farmacia. (next to)",
+        "El museo está ____ de la plaza. (behind)",
+        "El libro está ____ de la mesa. (on top of)",
+        "La tienda está ____ el banco y el café. (between)",
+        "Mi casa está ____ del centro. (far from)"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "¿Qué hay que ver en la ciudad?",
+        "El más interesante está detrás de la plaza.",
+        "¿A cuántos minutos está la playa?",
+        "Hay que pagar en la entrada.",
+        "Todo recto y a la izquierda."
+      ]
+    },
+    {
+      "prompt": "Put the words in order to make a correct Spanish sentence.",
+      "items": [
+        "banco / ¿ / hay / aquí / un / por / ?",
+        "farmacia / la / al / de / lado / está",
+        "cerrado / lunes / los / está",
+        "ciudad / mi / grande / es",
+        "¿ / está / dónde / estación / la / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "al lado — detrás — encima — entre — lejos",
+    "What is there to see in the town? — The most interesting one is behind the square. — How many minutes away is the beach? — You pay at the entrance. — Straight ahead and then left.",
+    "¿Hay un banco por aquí? — Está al lado de la farmacia. — Los lunes está cerrado. — Mi ciudad es grande. — ¿Dónde está la estación?"
+  ],
+  "wave": "Review **Unit 10**: describe your activities over a week, putting *siempre*, *a veces* and *nunca* in the right places."
+}

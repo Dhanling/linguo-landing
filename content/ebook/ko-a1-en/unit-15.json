@@ -1,0 +1,527 @@
+{
+  "title": "When you're sick",
+  "title_target": "어디가 아파요 — Eodiga apayo",
+  "goal": "Describe what's wrong at a pharmacy or clinic, understand the advice you're given, and use the prohibition form -지 마세요, which hasn't appeared until now.",
+  "bekal": [
+    "naming body parts and saying which part hurts",
+    "describing common symptoms at the pharmacy",
+    "understanding advice in the -(으)세요 form",
+    "telling someone not to do something with -지 마세요",
+    "expressing sympathy with the right phrases"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — At the pharmacy",
+      "intro": "Ani has been feeling unwell since yesterday. Notice that the pharmacist's advice is all polite commands, and the prohibitions use a new form.",
+      "lines": [
+        {
+          "speaker": "약사:",
+          "text": "[어서|Eoseo] [오세요|oseyo]. [어디가|Eodiga] [아프세요|apeuseyo]?",
+          "id": "Hello. Where does it hurt?",
+          "literal": "quickly — come. where — subject — hurt (honorific)?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[어제부터|Eojebuteo] [목이|mogi] [아파요|apayo]. [그리고|Geurigo] [열도|yeoldo] [조금|jogeum] [있어요|isseoyo].",
+          "id": "My throat has hurt since yesterday. And I have a slight fever too.",
+          "literal": "yesterday-from — throat — subject — hurts. and — fever — also — a-little — exists."
+        },
+        {
+          "speaker": "약사:",
+          "text": "[기침도|Gichimdo] [해요|haeyo]?",
+          "id": "Do you have a cough too?",
+          "literal": "cough — also — do?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[네|Ne], [밤에|bame] [기침이|gichimi] [심해요|simhaeyo]. [잠을|Jameul] [못|mot] [잤어요|jasseoyo].",
+          "id": "Yes, the cough is bad at night. I couldn't sleep.",
+          "literal": "yes, night-at — cough — subject — severe. sleep — object — couldn't — slept."
+        },
+        {
+          "speaker": "약사:",
+          "text": "[감기인|Gamgiin] [것|geot] [같아요|gatayo]. [이|I] [약을|yageul] [하루에|harue] [세|se] [번|beon] [드세요|deuseyo].",
+          "id": "It looks like a cold. Take this medicine three times a day.",
+          "literal": "cold-subject — caught — thing — seems. this — medicine — object — day-per — three — times — please-eat."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[식사|Siksa] [전에|jeone] [먹어요|meogeoyo], [후에|hue] [먹어요|meogeoyo]?",
+          "id": "Before meals or after meals?",
+          "literal": "meal — before-at — eat, after-at — eat?"
+        },
+        {
+          "speaker": "약사:",
+          "text": "[식사|Siksa] [후에|hue] [드세요|deuseyo]. [빈|Bin] [속에|soge] [먹지|meokji] [마세요|maseyo].",
+          "id": "After meals. Don't take it on an empty stomach.",
+          "literal": "meal — after-at — please-eat. empty — stomach-on — eat — don't."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[알겠습니다|Algetseumnida]. [내일|Naeil] [일해도|ilhaedo] [돼요|dwaeyo]?",
+          "id": "OK. Can I work tomorrow?",
+          "literal": "understood. tomorrow — work-even-if — okay?"
+        },
+        {
+          "speaker": "약사:",
+          "text": "[오늘은|Oneureun] [푹|puk] [쉬세요|swiseyo]. [찬|Chan] [물|mul] [마시지|masiji] [마세요|maseyo].",
+          "id": "Get plenty of rest today. Don't drink cold water.",
+          "literal": "today — as-for — deeply — please-rest. cold — water — drink — don't."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[네|Ne]. [얼마예요|Eolmayeyo]?",
+          "id": "OK. How much is it?",
+          "literal": "yes. how-much — is?"
+        },
+        {
+          "speaker": "약사:",
+          "text": "[사천|Sacheon] [원이에요|wonieyo]. [빨리|Ppalli] [나으세요|naeuseyo].",
+          "id": "Four thousand won. Get well soon.",
+          "literal": "four-thousand — won — is. quickly — please-recover."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[감사합니다|Gamsahamnida]!",
+          "id": "Thank you!",
+          "literal": "thank-you!"
+        }
+      ],
+      "notes": [
+        "**아프다 is used for the body part that hurts, not for the person.** The correct form is 목**이** 아파요 (\"the throat hurts\"), not 저는 목을 아파요. The body part is the subject, with 이/가 — just as in English \"my throat hurts\". Same pattern as 배가 고파요 (\"the stomach is hungry\" = I'm hungry).",
+        "**어디가 아파요?, not 어디 아파요?** The particle 가 is required here because the body part is the subject. Compare unit 3: 어디에 있어요? takes 에 because it asks for a location. Two questions that sound alike, two different particles.",
+        "**감기 covers far more than English \"flu\".** It includes a runny nose, cough, sore throat and mild fever — anything you'd call \"a cold\". 감기에 걸렸어요 = \"I caught a cold\", using 걸리다, which in unit 13 meant \"to take (time)\". Same word, different job.",
+        "**약을 먹다, not 약을 마시다.** In Korea medicine is \"eaten\", even liquid medicine. The honorific form is 약을 드세요, and that's what you'll hear from the pharmacist.",
+        "**하루에 세 번 = three times a day.** Note the order: the time unit comes first with 에, then the number. 일주일에 두 번 (twice a week), 한 달에 한 번 (once a month). The reverse of the English order.",
+        "**전에 and 후에 go after the noun.** 식사 **전에** (before the meal), 식사 **후에** (after the meal). Like the place words in unit 3, Korean time words come after what they refer to.",
+        "**푹 쉬세요 is the standard thing to say to someone who's ill.** 푹 means \"deeply, fully\", and it almost always pairs with 쉬다 and 자다. Together with 빨리 나으세요 (\"get well soon\"), these are sentences you must have.",
+        "**나으세요 comes from 낫다 (to get better), an irregular ㅅ verb.** The ㅅ drops before a vowel: 낫다 → 나아요 → 나으세요. The group is small but contains common words: 짓다 (to build) → 지어요, 붓다 (to swell) → 부어요."
+      ],
+      "grammars": [
+        {
+          "title": "-지 마세요 — don't",
+          "body": [
+            "The polite prohibition. Attach **-지 마세요** straight to the verb stem, whether it ends in a vowel or a consonant."
+          ],
+          "table": {
+            "head": [
+              "Dictionary",
+              "Command",
+              "Prohibition",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "가다",
+                "가세요",
+                "가**지 마세요**",
+                "don't go"
+              ],
+              [
+                "먹다",
+                "드세요",
+                "먹**지 마세요**",
+                "don't eat"
+              ],
+              [
+                "마시다",
+                "드세요",
+                "마시**지 마세요**",
+                "don't drink"
+              ],
+              [
+                "하다",
+                "하세요",
+                "하**지 마세요**",
+                "don't do it"
+              ],
+              [
+                "걱정하다",
+                "—",
+                "걱정하**지 마세요**",
+                "don't worry"
+              ],
+              [
+                "Casual form",
+                "—",
+                "가**지 마**",
+                "don't go (to a close friend)"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Don't use 안 to forbid.** 안 가세요 isn't \"don't go\" but \"you aren't going\" — a statement, not a prohibition. To forbid, the only correct form is -지 마세요.",
+            "**To include yourself and others** (\"let's not…\") there's -지 맙시다, but it's rare in conversation. People more often say 하지 말까요? (\"shall we not?\").",
+            "**걱정하지 마세요** (\"don't worry\") is worth learning whole — it's one of the most-used comforting phrases."
+          ]
+        },
+        {
+          "title": "Body parts and symptoms",
+          "body": [
+            "The pattern is always **body part + 이/가 + 아파요**."
+          ],
+          "table": {
+            "head": [
+              "Part",
+              "Romanization",
+              "Meaning",
+              "Part",
+              "Romanization",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "머리",
+                "meori",
+                "head",
+                "배",
+                "bae",
+                "stomach, belly"
+              ],
+              [
+                "눈",
+                "nun",
+                "eye",
+                "등",
+                "deung",
+                "back"
+              ],
+              [
+                "코",
+                "ko",
+                "nose",
+                "허리",
+                "heori",
+                "waist, lower back"
+              ],
+              [
+                "입",
+                "ip",
+                "mouth",
+                "다리",
+                "dari",
+                "leg"
+              ],
+              [
+                "귀",
+                "gwi",
+                "ear",
+                "발",
+                "bal",
+                "foot"
+              ],
+              [
+                "목",
+                "mok",
+                "neck, throat",
+                "팔",
+                "pal",
+                "arm"
+              ],
+              [
+                "이",
+                "i",
+                "tooth",
+                "손",
+                "son",
+                "hand"
+              ],
+              [
+                "어깨",
+                "eokkae",
+                "shoulder",
+                "몸",
+                "mom",
+                "body"
+              ]
+            ]
+          },
+          "after": [
+            "**Common symptoms:** 열이 있어요 (I have a fever), 기침을 해요 (I'm coughing), 콧물이 나요 (my nose is running), 어지러워요 (I'm dizzy), 토할 것 같아요 (I feel sick), 설사를 해요 (I have diarrhea), 몸살이 났어요 (I ache all over from exhaustion).",
+            "**몸살 has no English equivalent.** It means aching all over from exhaustion or stress, is considered an illness in its own right in Korea, and is a perfectly valid reason to miss work."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "At the clinic and the pharmacy",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "어디가 아파요?",
+              "Where does it hurt?"
+            ],
+            [
+              "머리가 아파요.",
+              "My head hurts."
+            ],
+            [
+              "열이 있어요.",
+              "I have a fever."
+            ],
+            [
+              "감기에 걸렸어요.",
+              "I've caught a cold."
+            ],
+            [
+              "어제부터 아팠어요.",
+              "It's hurt since yesterday."
+            ],
+            [
+              "약 있어요?",
+              "Do you have medicine for it?"
+            ],
+            [
+              "하루에 몇 번 먹어요?",
+              "How many times a day do I take it?"
+            ],
+            [
+              "식사 후에 드세요.",
+              "Take it after meals."
+            ],
+            [
+              "푹 쉬세요.",
+              "Get plenty of rest."
+            ],
+            [
+              "빨리 나으세요.",
+              "Get well soon."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Expressing sympathy"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Korean",
+            "Romanization",
+            "When to use it"
+          ],
+          "rows": [
+            [
+              "괜찮아요?",
+              "gwaenchanayo",
+              "Are you OK? — the first question"
+            ],
+            [
+              "많이 아파요?",
+              "mani apayo",
+              "Does it hurt a lot?"
+            ],
+            [
+              "힘내세요",
+              "himnaeseyo",
+              "Hang in there! For someone going through a hard time"
+            ],
+            [
+              "걱정하지 마세요",
+              "geokjeonghaji maseyo",
+              "Don't worry"
+            ],
+            [
+              "몸조리 잘하세요",
+              "momjori jalhaseyo",
+              "Take good care of yourself"
+            ],
+            [
+              "무리하지 마세요",
+              "murihaji maseyo",
+              "Don't overdo it"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Pharmacies and clinics in Korea",
+          "items": [
+            "A **약국** (pharmacy) has a green sign with 약 on it. For minor complaints — colds, headaches, small cuts — the pharmacist can give medicine without a prescription, and it's the fastest route.",
+            "**병원** is used for both clinics and hospitals; small clinics are usually called 의원 or named after their specialty: 내과 (internal medicine), 이비인후과 (ENT), 치과 (dentist), 피부과 (dermatology).",
+            "⚠️ As a foreign student or worker on a long-term visa, you must join the national health insurance (**건강보험**) — and with it, treatment becomes very cheap. Bring your foreign resident card (외국인등록증) every time you see a doctor."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "아파요",
+      "baca": "apayo",
+      "en": "to hurt, be sick"
+    },
+    {
+      "ko": "약",
+      "baca": "yak",
+      "en": "medicine"
+    },
+    {
+      "ko": "약국",
+      "baca": "yakguk",
+      "en": "pharmacy"
+    },
+    {
+      "ko": "병원",
+      "baca": "byeongwon",
+      "en": "hospital, clinic"
+    },
+    {
+      "ko": "감기",
+      "baca": "gamgi",
+      "en": "cold, flu"
+    },
+    {
+      "ko": "열",
+      "baca": "yeol",
+      "en": "fever"
+    },
+    {
+      "ko": "기침",
+      "baca": "gichim",
+      "en": "cough"
+    },
+    {
+      "ko": "머리",
+      "baca": "meori",
+      "en": "head"
+    },
+    {
+      "ko": "목",
+      "baca": "mok",
+      "en": "neck, throat"
+    },
+    {
+      "ko": "배",
+      "baca": "bae",
+      "en": "stomach, belly"
+    },
+    {
+      "ko": "다리",
+      "baca": "dari",
+      "en": "leg"
+    },
+    {
+      "ko": "몸",
+      "baca": "mom",
+      "en": "body"
+    },
+    {
+      "ko": "지 마세요",
+      "baca": "ji maseyo",
+      "en": "don't"
+    },
+    {
+      "ko": "쉬세요",
+      "baca": "swiseyo",
+      "en": "please rest"
+    },
+    {
+      "ko": "푹",
+      "baca": "puk",
+      "en": "deeply, fully"
+    },
+    {
+      "ko": "심해요",
+      "baca": "simhaeyo",
+      "en": "severe"
+    },
+    {
+      "ko": "번",
+      "baca": "beon",
+      "en": "time(s)"
+    },
+    {
+      "ko": "하루",
+      "baca": "haru",
+      "en": "a day, per day"
+    },
+    {
+      "ko": "식사",
+      "baca": "siksa",
+      "en": "meal"
+    },
+    {
+      "ko": "전에",
+      "baca": "jeone",
+      "en": "before"
+    },
+    {
+      "ko": "후에",
+      "baca": "hue",
+      "en": "after"
+    },
+    {
+      "ko": "걱정해요",
+      "baca": "geokjeonghaeyo",
+      "en": "worry"
+    },
+    {
+      "ko": "힘내세요",
+      "baca": "himnaeseyo",
+      "en": "hang in there"
+    },
+    {
+      "ko": "나으세요",
+      "baca": "naeuseyo",
+      "en": "get well soon"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change into the prohibition form with -지 마세요.",
+      "items": [
+        "가다 → ____",
+        "먹다 → ____",
+        "마시다 → ____",
+        "걱정하다 → ____",
+        "무리하다 → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the right body part in hangeul.",
+      "items": [
+        "My head hurts: ____가 아파요.",
+        "My throat hurts: ____이 아파요.",
+        "My stomach hurts: ____가 아파요.",
+        "My leg hurts: ____가 아파요.",
+        "My tooth hurts: ____가 아파요."
+      ]
+    },
+    {
+      "prompt": "Translate into Korean.",
+      "items": [
+        "Where does it hurt?",
+        "My throat has hurt since yesterday.",
+        "I have a slight fever.",
+        "Take this medicine three times a day.",
+        "Don't drink cold water.",
+        "Get well soon."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "아파요 / 목이 / 어제부터",
+        "있어요 / 열도 / 조금",
+        "드세요 / 세 / 하루에 / 번",
+        "마세요 / 마시지 / 찬 / 물",
+        "쉬세요 / 푹 / 오늘은"
+      ]
+    }
+  ],
+  "answers": [
+    "가지 마세요 — 먹지 마세요 — 마시지 마세요 — 걱정하지 마세요 — 무리하지 마세요",
+    "머리 — 목 — 배 — 다리 — 이",
+    "어디가 아파요? — 어제부터 목이 아파요. — 열이 조금 있어요. — 이 약을 하루에 세 번 드세요. — 찬 물 마시지 마세요. — 빨리 나으세요.",
+    "어제부터 목이 아파요. — 열도 조금 있어요. — 하루에 세 번 드세요. — 찬 물 마시지 마세요. — 오늘은 푹 쉬세요."
+  ]
+}

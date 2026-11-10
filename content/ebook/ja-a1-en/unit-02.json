@@ -1,0 +1,823 @@
+{
+  "title": "This, that, and whose",
+  "title_target": "これは なんですか — Kore wa nan desu ka",
+  "goal": "Point at things near and far, ask what they're called in Japanese, say who owns something, and correct someone who guessed wrong.",
+  "bekal": [
+    "tell これ・それ・あれ apart by distance",
+    "use この・その・あの before a noun",
+    "show possession with の",
+    "ask *whose?* with だれの",
+    "correct someone with ちがいます without sounding rude"
+  ],
+  "dialogs": [
+    {
+      "title": "会話 1 — In the classroom",
+      "intro": "Ani points at things around her and asks what they're called. Notice how the pointing words change with the distance of each thing from the two speakers.",
+      "lines": [
+        {
+          "speaker": "アニ:",
+          "text": "[すみません|Sumimasen]。[これは|Kore wa] [なんですか|nan desu ka]。",
+          "id": "Excuse me. What is this?",
+          "literal": "excuse-me. this — as-for — what — is — [question]"
+        },
+        {
+          "speaker": "たなか:",
+          "text": "[それは|Sore wa] [じしょです|jisho desu]。[にほんごの|Nihongo no] [じしょです|jisho desu]。",
+          "id": "That's a dictionary. A Japanese dictionary.",
+          "literal": "that — as-for — dictionary — is. Japan-language — 's — dictionary — is."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[じゃあ|Jā]、[あれは|are wa]？",
+          "id": "Then what about that one over there?",
+          "literal": "well-then, that-over-there — as-for?"
+        },
+        {
+          "speaker": "たなか:",
+          "text": "[あれは|Are wa] [とけいです|tokei desu]。",
+          "id": "That one over there is a clock.",
+          "literal": "that-over-there — as-for — clock — is."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[この|Kono] [ほんは|hon wa] [だれのですか|dare no desu ka]。",
+          "id": "Whose book is this?",
+          "literal": "this — book — as-for — who — 's — is — [question]"
+        },
+        {
+          "speaker": "たなか:",
+          "text": "[それは|Sore wa] [わたしのです|watashi no desu]。",
+          "id": "That's mine.",
+          "literal": "that — as-for — I — 's — is."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[この|Kono] [ペンも|pen mo] [たなかさんのですか|Tanaka-san no desu ka]。",
+          "id": "Is this pen Mr. Tanaka's too?",
+          "literal": "this — pen — also — Tanaka-san — 's — is — [question]"
+        },
+        {
+          "speaker": "たなか:",
+          "text": "[いいえ|Iie]、[ちがいます|chigaimasu]。[それは|Sore wa] [やまださんのです|Yamada-san no desu]。",
+          "id": "No, it isn't. That's Ms. Yamada's.",
+          "literal": "no, differs. that — as-for — Yamada-san — 's — is."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[そうですか|Sō desu ka]。[じしょは|Jisho wa] [いくらですか|ikura desu ka]。",
+          "id": "I see. How much is the dictionary?",
+          "literal": "so — is — [question]. dictionary — as-for — how-much — is — [question]"
+        },
+        {
+          "speaker": "たなか:",
+          "text": "[ちょっと|Chotto] [たかいです|takai desu]。でも、[いい|ii] [じしょです|jisho desu]。",
+          "id": "A bit expensive. But it's a good dictionary.",
+          "literal": "a-little — expensive — is. but, good — dictionary — is."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[わたしも|Watashi mo] [ほしいです|hoshii desu]。",
+          "id": "I want one too.",
+          "literal": "I — also — wanted — is."
+        }
+      ],
+      "notes": [
+        "**Distance is measured from two people, not one.** これ = near the **speaker**. それ = near the **listener**. あれ = far from **both**. That's why Ani asks これは (the book in her hand) and Tanaka answers それは (the book is away from him). Two different words, the same object. Beginners often think それ means “that, a little further away”; really it means “the one on your side”.",
+        "**ちがいます is not “no” but “that's different”.** To correct someone's guess, いいえ、ちがいます is far more natural than いいえ、じゃありません. In everyday speech ちがいます often stands alone, without いいえ.",
+        "**も replaces は; it doesn't attach to it.** わたしは → わたし**も** (me too). Never write わたしはも. The same rule applies to を later: それを → それも.",
+        "**の here means “'s”.** わたしの = mine. The noun can be dropped once it's clear: それはわたしのです = “that's mine”, without repeating “book”.",
+        "**いい = good, and it's a rebel.** It's the only adjective that breaks the pattern: its negative and past forms switch to よ～ (よくない, よかった). For now just remember that いい is used as is before a noun: いいじしょ.",
+        "**ほしいです = want (to have a thing).** This differs from “want to do”, which is ～たいです — that's in Unit 9."
+      ],
+      "grammars": [
+        {
+          "title": "[こそあど|kosoado] — the pointing-word system",
+          "body": [
+            "Japanese pointing words are neatly arranged in one grid. Once you see the grid, thirty words turn into four predictable patterns. The rows: **[こ|ko]** near me, **[そ|so]** near you, **[あ|a]** away from us both, **[ど|do]** question word."
+          ],
+          "table": {
+            "head": [
+              "",
+              "こ (near me)",
+              "そ (near you)",
+              "あ (far)",
+              "ど (which?)"
+            ],
+            "rows": [
+              [
+                "Thing, standing alone",
+                "[これ|kore] this",
+                "[それ|sore] that",
+                "[あれ|are] that (over there)",
+                "[どれ|dore] which one"
+              ],
+              [
+                "+ noun",
+                "[この|kono] this ～",
+                "[その|sono] that ～",
+                "[あの|ano] that ～",
+                "[どの|dono] which ～"
+              ],
+              [
+                "Place",
+                "[ここ|koko] here",
+                "[そこ|soko] there",
+                "[あそこ|asoko] over there",
+                "[どこ|doko] where"
+              ],
+              [
+                "Direction, thing (polite)",
+                "[こちら|kochira]",
+                "[そちら|sochira]",
+                "[あちら|achira]",
+                "[どちら|dochira]"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **[これ|kore] and [この|kono] are not interchangeable.** [これ|kore] stands alone ([これはほんです|kore wa hon desu]); [この|kono] must be followed by a noun ([このほんは|kono hon wa]…). Saying [これほん|kore hon] is the most common beginner mistake you'll hear.",
+            "**[こちら|kochira] / [そちら|sochira] / [あちら|achira]** are used for directions, but also as polite versions of [これ|kore]/[それ|sore]/[あれ|are] and even to introduce people: [こちらはたなかさんです|kochira wa Tanaka-san desu] = “this is Mr. Tanaka”."
+          ]
+        },
+        {
+          "title": "[の|no] — the all-purpose glue",
+          "body": [
+            "The particle **[の|no]** joins two nouns: **A [の|no] B** means “B related to A”, much like English “A's B”. The word that **describes** comes first.",
+            "English: *a dictionary of Japanese* → Japanese: **[にほんごの|nihongo no] [じしょ|jisho]** (Japanese's dictionary).",
+            "This one particle covers three relationships English expresses in different ways: ownership, origin, and type."
+          ],
+          "table": {
+            "head": [
+              "Japanese",
+              "Meaning",
+              "Relationship"
+            ],
+            "rows": [
+              [
+                "[わたしの|watashi no] [ほん|hon]",
+                "my book",
+                "ownership"
+              ],
+              [
+                "[たなかさんの|Tanaka-san no] [ペン|pen]",
+                "Mr. Tanaka's pen",
+                "ownership"
+              ],
+              [
+                "[にほんごの|Nihongo no] [じしょ|jisho]",
+                "Japanese dictionary",
+                "type / content"
+              ],
+              [
+                "[インドネシアの|Indoneshia no] [コーヒー|kōhī]",
+                "Indonesian coffee",
+                "origin"
+              ],
+              [
+                "[がっこうの|gakkō no] [せんせい|sensei]",
+                "the school's teacher",
+                "connection"
+              ],
+              [
+                "[にほんごの|Nihongo no] [がっこうの|gakkō no] [せんせい|sensei]",
+                "a teacher at a Japanese language school",
+                "stacked"
+              ]
+            ]
+          },
+          "after": [
+            "**The noun can be dropped.** If the thing is clear from the conversation, just stop at [の|no]: [これはわたしのです|kore wa watashi no desu] = “this is mine”. This is the most common way to answer a [だれの|dare no] question.",
+            "**Asking:** [だれの|dare no] = whose. [このかばんはだれのですか|kono kaban wa dare no desu ka] = “whose bag is this?”"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "会話 2 — Lost property",
+      "intro": "At the front desk, someone is looking for a bag they left behind. Notice how people correct and how they confirm.",
+      "lines": [
+        {
+          "speaker": "うけつけ:",
+          "text": "[はい|Hai]、[うけつけです|uketsuke desu]。",
+          "id": "Yes, front desk.",
+          "literal": "yes, reception — is."
+        },
+        {
+          "speaker": "ブディ:",
+          "text": "[すみません|Sumimasen]。[かばんを|Kaban o] [わすれました|wasuremashita]。",
+          "id": "Excuse me. I left my bag behind.",
+          "literal": "excuse-me. bag — [object] — forgot."
+        },
+        {
+          "speaker": "うけつけ:",
+          "text": "[どんな|Donna] [かばんですか|kaban desu ka]。",
+          "id": "What kind of bag is it?",
+          "literal": "what-kind — bag — is — [question]"
+        },
+        {
+          "speaker": "ブディ:",
+          "text": "[くろい|Kuroi] [かばんです|kaban desu]。[なかに|Naka ni] [パソコンが|pasokon ga] [あります|arimasu]。",
+          "id": "A black bag. There's a laptop inside.",
+          "literal": "black — bag — is. inside — in — computer — [subject] — exists."
+        },
+        {
+          "speaker": "うけつけ:",
+          "text": "[これですか|Kore desu ka]。",
+          "id": "Is it this one?",
+          "literal": "this — is — [question]"
+        },
+        {
+          "speaker": "ブディ:",
+          "text": "[いいえ|Iie]、[ちがいます|chigaimasu]。[それは|Sore wa] [わたしのじゃありません|watashi no ja arimasen]。",
+          "id": "No, it isn't. That's not mine.",
+          "literal": "no, differs. that — as-for — I — 's — is-not."
+        },
+        {
+          "speaker": "うけつけ:",
+          "text": "[じゃあ|Jā]、[あれは|are wa] [どうですか|dō desu ka]。",
+          "id": "Then how about that one over there?",
+          "literal": "well-then, that-over-there — as-for — how — is — [question]"
+        },
+        {
+          "speaker": "ブディ:",
+          "text": "[あ|A]、[そうです|sō desu]！[あれです|Are desu]。[わたしのです|Watashi no desu]。",
+          "id": "Ah, yes! That's it. It's mine.",
+          "literal": "ah, so — is! that-over-there — is. I — 's — is."
+        },
+        {
+          "speaker": "うけつけ:",
+          "text": "[おなまえは|Onamae wa]？",
+          "id": "Your name?",
+          "literal": "honorable-name — as-for?"
+        },
+        {
+          "speaker": "ブディ:",
+          "text": "[ブディです|Budi desu]。[インドネシアの|Indoneshia no] [がくせいです|gakusei desu]。",
+          "id": "Budi. I'm a student from Indonesia.",
+          "literal": "Budi — am. Indonesia — 's — student — am."
+        },
+        {
+          "speaker": "うけつけ:",
+          "text": "[はい|Hai]、[どうぞ|dōzo]。",
+          "id": "All right, here you are.",
+          "literal": "yes, please."
+        },
+        {
+          "speaker": "ブディ:",
+          "text": "[たすかりました|Tasukarimashita]。[ありがとうございます|Arigatō gozaimasu]。",
+          "id": "You've saved me. Thank you very much.",
+          "literal": "was-saved. thank-you."
+        }
+      ],
+      "notes": [
+        "**どんな = “what kind of”**, always followed by a noun: どんなかばん, どんなひと, どんなくるま. Don't confuse it with どう (= how), which stands alone: どうですか.",
+        "**どうですか has two jobs:** asking for an opinion (“what do you think?”) and offering (“how about this one?”). In this dialogue it's the second.",
+        "**どうぞ = please / here you are**, used when handing something over, inviting someone to sit, or letting them go first. Its partner is どうも, which can be a short “thanks”. Two similar words, two opposite directions.",
+        "**たすかりました literally means “I was saved”** and is a warmer thank-you than a plain ありがとう — perfect when someone has really rescued you from trouble.",
+        "**が and あります make a brief appearance here.** Both are fully explained in Unit 5. For now, read ～があります as one package meaning “there is ～”.",
+        "**くろい = black**, one of the い-adjectives that can go straight in front of a noun: くろいかばん. Adjectives are covered fully in Unit 7."
+      ],
+      "grammars": [
+        {
+          "title": "[も|mo] — “also”, and what it pushes out",
+          "body": [
+            "**[も|mo]** means “also / too”, and it **replaces** the particle [は|wa] or [を|o] instead of attaching after it.",
+            "[わたしはがくせいです|watashi wa gakusei desu]。→ [ブディさん|Budi-san]**[も|mo]**[がくせいです|gakusei desu]。 (Budi is a student too.)",
+            "In a negative sentence, [も|mo] means “not … either”: [わたしもがくせいじゃありません|watashi mo gakusei ja arimasen] = “I'm not a student either”."
+          ],
+          "table": {
+            "head": [
+              "Original sentence",
+              "With も",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "[わたしは|watashi wa] [がくせいです|gakusei desu]",
+                "[わたしも|watashi mo] [がくせいです|gakusei desu]",
+                "I'm a student too."
+              ],
+              [
+                "[これは|kore wa] [わたしのです|watashi no desu]",
+                "[これも|kore mo] [わたしのです|watashi no desu]",
+                "This is mine too."
+              ],
+              [
+                "[アニさんは|Ani-san wa] [きません|kimasen]",
+                "[アニさんも|Ani-san mo] [きません|kimasen]",
+                "Ani isn't coming either."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ The most common mistake: writing **[わたしはも|watashi wa mo]**. There's only one particle — choose [は|wa] or [も|mo], not both."
+          ]
+        },
+        {
+          "title": "Correcting without sounding rude",
+          "body": [
+            "Japanese has its own ladder of politeness for saying “no”. Picking the wrong rung is one of the fastest ways to sound stiff."
+          ],
+          "table": {
+            "head": [
+              "Expression",
+              "Feel",
+              "Used when"
+            ],
+            "rows": [
+              [
+                "[ちがいます|chigaimasu]",
+                "Neutral, clear",
+                "Correcting a fact: someone guessed wrong."
+              ],
+              [
+                "[いいえ|iie]",
+                "Neutral, rather firm",
+                "Answering a yes/no question. Rarely stands alone."
+              ],
+              [
+                "[ちょっと|chotto]…",
+                "Very gentle, trailing off",
+                "Declining an invitation or request without saying no."
+              ],
+              [
+                "[すみません|sumimasen]、[ちがいます|chigaimasu]",
+                "Polite",
+                "Correcting someone older or a superior."
+              ],
+              [
+                "[そうじゃないです|sō ja nai desu]",
+                "Casual",
+                "Between friends."
+              ]
+            ]
+          },
+          "after": [
+            "**A trailing [ちょっと|chotto]… is a refusal.** If you invite a Japanese person and the answer is “[ちょっと|chotto]…”, it means no — not “just a moment”. Waiting for the rest of the sentence is a very common misunderstanding."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Things around you",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Most modern objects in Japan use loanwords written in katakana. Once you can read katakana, you already know these words before memorizing them — try guessing before you look at the right-hand column."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Katakana",
+            "Rōmaji",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "[ペン|pen]",
+              "pen",
+              "pen"
+            ],
+            [
+              "[ノート|nōto]",
+              "nōto",
+              "notebook"
+            ],
+            [
+              "[パソコン|pasokon]",
+              "pasokon",
+              "laptop, personal computer"
+            ],
+            [
+              "[スマホ|sumaho]",
+              "sumaho",
+              "smartphone"
+            ],
+            [
+              "[カメラ|kamera]",
+              "kamera",
+              "camera"
+            ],
+            [
+              "[テーブル|tēburu]",
+              "tēburu",
+              "table"
+            ],
+            [
+              "[コーヒー|kōhī]",
+              "kōhī",
+              "coffee"
+            ],
+            [
+              "[バス|basu]",
+              "basu",
+              "bus"
+            ],
+            [
+              "[テレビ|terebi]",
+              "terebi",
+              "television"
+            ],
+            [
+              "[エアコン|eakon]",
+              "eakon",
+              "air conditioner"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "And here are everyday things that **don't** use loanwords — these you'll have to learn:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Japanese",
+            "Meaning",
+            "Japanese",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "[ほん|hon] 本",
+              "book",
+              "[かばん|kaban]",
+              "bag"
+            ],
+            [
+              "[じしょ|jisho] 辞書",
+              "dictionary",
+              "[かさ|kasa] 傘",
+              "umbrella"
+            ],
+            [
+              "[とけい|tokei] 時計",
+              "clock, watch",
+              "[かぎ|kagi] 鍵",
+              "key"
+            ],
+            [
+              "[つくえ|tsukue] 机",
+              "desk",
+              "[いす|isu] 椅子",
+              "chair"
+            ],
+            [
+              "[くつ|kutsu] 靴",
+              "shoes",
+              "[さいふ|saifu] 財布",
+              "wallet"
+            ],
+            [
+              "[みず|mizu] 水",
+              "water",
+              "[おかね|okane] お金",
+              "money"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Check before you get it wrong",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Everyday conversation is more about checking than stating. These three short patterns cover almost everything a beginner needs:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pattern",
+            "Example",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "～ですか",
+              "[これですか|Kore desu ka]。",
+              "This one?"
+            ],
+            [
+              "～ですね",
+              "[アニさんですね|Ani-san desu ne]。",
+              "You're Ms. Ani, right?"
+            ],
+            [
+              "～ですよ",
+              "[それは|Sore wa] [わたしのですよ|watashi no desu yo]。",
+              "That's mine, you know."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "ね and よ — the two tiniest words that change the tone most",
+          "items": [
+            "**ね** invites agreement: “right?”. It softens the sentence. When in doubt, ね almost always improves your tone.",
+            "**よ** tells the listener something they don't know yet: “you know”. Useful, but overusing it can sound preachy.",
+            "**Without either**, a sentence sounds flat and a little cold — like reading a list. Not wrong, but distant."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ja": "[これ|kore]",
+      "baca": "これ · kore",
+      "en": "this (near me)"
+    },
+    {
+      "ja": "[それ|sore]",
+      "baca": "それ · sore",
+      "en": "that (near you)"
+    },
+    {
+      "ja": "[あれ|are]",
+      "baca": "あれ · are",
+      "en": "that (away from us)"
+    },
+    {
+      "ja": "[どれ|dore]",
+      "baca": "どれ · dore",
+      "en": "which one"
+    },
+    {
+      "ja": "[この|kono]",
+      "baca": "この · kono",
+      "en": "this + noun"
+    },
+    {
+      "ja": "[その|sono]",
+      "baca": "その · sono",
+      "en": "that + noun"
+    },
+    {
+      "ja": "[あの|ano]",
+      "baca": "あの · ano",
+      "en": "that (over there) + noun"
+    },
+    {
+      "ja": "[どの|dono]",
+      "baca": "どの · dono",
+      "en": "which + noun"
+    },
+    {
+      "ja": "[こちら|kochira]",
+      "baca": "こちら · kochira",
+      "en": "this way; this (polite)"
+    },
+    {
+      "ja": "[どんな|donna]",
+      "baca": "どんな · donna",
+      "en": "what kind of"
+    },
+    {
+      "ja": "[どう|dō]",
+      "baca": "どう · dō",
+      "en": "how"
+    },
+    {
+      "ja": "[ほん|hon] 本",
+      "baca": "ほん · hon",
+      "en": "book"
+    },
+    {
+      "ja": "[じしょ|jisho] 辞書",
+      "baca": "じしょ · jisho",
+      "en": "dictionary"
+    },
+    {
+      "ja": "[ノート|nōto]",
+      "baca": "ノート · nōto",
+      "en": "notebook"
+    },
+    {
+      "ja": "[ペン|pen]",
+      "baca": "ペン · pen",
+      "en": "pen"
+    },
+    {
+      "ja": "[とけい|tokei] 時計",
+      "baca": "とけい · tokei",
+      "en": "clock, watch"
+    },
+    {
+      "ja": "[かばん|kaban]",
+      "baca": "かばん · kaban",
+      "en": "bag"
+    },
+    {
+      "ja": "[かさ|kasa] 傘",
+      "baca": "かさ · kasa",
+      "en": "umbrella"
+    },
+    {
+      "ja": "[かぎ|kagi] 鍵",
+      "baca": "かぎ · kagi",
+      "en": "key"
+    },
+    {
+      "ja": "[さいふ|saifu] 財布",
+      "baca": "さいふ · saifu",
+      "en": "wallet"
+    },
+    {
+      "ja": "[つくえ|tsukue] 机",
+      "baca": "つくえ · tsukue",
+      "en": "desk"
+    },
+    {
+      "ja": "[いす|isu] 椅子",
+      "baca": "いす · isu",
+      "en": "chair"
+    },
+    {
+      "ja": "[くつ|kutsu] 靴",
+      "baca": "くつ · kutsu",
+      "en": "shoes"
+    },
+    {
+      "ja": "[おかね|okane] お金",
+      "baca": "おかね · okane",
+      "en": "money"
+    },
+    {
+      "ja": "[みず|mizu] 水",
+      "baca": "みず · mizu",
+      "en": "water"
+    },
+    {
+      "ja": "[パソコン|pasokon]",
+      "baca": "パソコン · pasokon",
+      "en": "laptop"
+    },
+    {
+      "ja": "[スマホ|sumaho]",
+      "baca": "スマホ · sumaho",
+      "en": "smartphone"
+    },
+    {
+      "ja": "[カメラ|kamera]",
+      "baca": "カメラ · kamera",
+      "en": "camera"
+    },
+    {
+      "ja": "[テレビ|terebi]",
+      "baca": "テレビ · terebi",
+      "en": "television"
+    },
+    {
+      "ja": "[コーヒー|kōhī]",
+      "baca": "コーヒー · kōhī",
+      "en": "coffee"
+    },
+    {
+      "ja": "[くろい|kuroi] 黒い",
+      "baca": "くろい · kuroi",
+      "en": "black"
+    },
+    {
+      "ja": "[しろい|shiroi] 白い",
+      "baca": "しろい · shiroi",
+      "en": "white"
+    },
+    {
+      "ja": "[あかい|akai] 赤い",
+      "baca": "あかい · akai",
+      "en": "red"
+    },
+    {
+      "ja": "[たかい|takai] 高い",
+      "baca": "たかい · takai",
+      "en": "expensive; tall, high"
+    },
+    {
+      "ja": "[やすい|yasui] 安い",
+      "baca": "やすい · yasui",
+      "en": "cheap"
+    },
+    {
+      "ja": "[いい|ii]",
+      "baca": "いい · ii",
+      "en": "good"
+    },
+    {
+      "ja": "[ちがいます|chigaimasu]",
+      "baca": "ちがいます · chigaimasu",
+      "en": "wrong, different"
+    },
+    {
+      "ja": "[どうぞ|dōzo]",
+      "baca": "どうぞ · dōzo",
+      "en": "please; here you are"
+    },
+    {
+      "ja": "[どうも|dōmo]",
+      "baca": "どうも · dōmo",
+      "en": "thanks (short)"
+    },
+    {
+      "ja": "[ほしい|hoshii]",
+      "baca": "ほしい · hoshii",
+      "en": "want (to have)"
+    },
+    {
+      "ja": "[わすれました|wasuremashita]",
+      "baca": "わすれました · wasuremashita",
+      "en": "I forgot / left behind"
+    },
+    {
+      "ja": "[たすかりました|tasukarimashita]",
+      "baca": "たすかりました · tasukarimashita",
+      "en": "you've saved me"
+    },
+    {
+      "ja": "[も|mo]",
+      "baca": "も · mo",
+      "en": "also, too"
+    },
+    {
+      "ja": "[の|no]",
+      "baca": "の · no",
+      "en": "'s; from; of (type)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose the right pointing word for the distance.",
+      "items": [
+        "The book is in your hand; you ask: ___ はなんですか。",
+        "The book is in the listener's hand: ___ はなんですか。",
+        "The book is on a shelf far from both of you: ___ はなんですか。",
+        "You point at the book in your hand, using the noun: ___ ほんはわたしのです。",
+        "You ask which one of several books: ___ ですか。"
+      ]
+    },
+    {
+      "prompt": "Fill in the missing particle.",
+      "items": [
+        "これはにほんご ___ じしょです。",
+        "このかばんはだれ ___ ですか。",
+        "わたし ___ がくせいです。(me too)",
+        "あれ ___ たなかさんのですか。",
+        "インドネシア ___ コーヒーです。",
+        "それはわたし ___ じゃありません。"
+      ]
+    },
+    {
+      "prompt": "Arrange the tiles into a correct sentence.",
+      "items": [
+        "これ / は / わたし / の / かばん / です",
+        "あの / とけい / は / だれ / の / です / か",
+        "その / ほん / も / たなかさん / の / です / か",
+        "いいえ / ちがいます / それ / は / やまださん / の / です",
+        "どんな / かばん / です / か",
+        "この / じしょ / は / ちょっと / たかい / です"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "これはインドネシアのコーヒーです。",
+        "そのペンはだれのですか。",
+        "いいえ、ちがいます。わたしのじゃありません。",
+        "あのくろいかばんもたなかさんのですか。",
+        "このじしょはやすいです。でも、いいじしょです。"
+      ]
+    },
+    {
+      "prompt": "Translate into Japanese. Write in rōmaji.",
+      "items": [
+        "This is a Japanese dictionary.",
+        "Whose is that umbrella?",
+        "No, that's not right.",
+        "This bag is mine too.",
+        "That clock over there is expensive, isn't it?"
+      ]
+    },
+    {
+      "prompt": "Write the name of each thing in Japanese (kana).",
+      "items": [
+        "bag: ___",
+        "book: ___",
+        "umbrella: ___",
+        "wallet: ___",
+        "laptop: ___",
+        "shoes: ___"
+      ]
+    }
+  ],
+  "answers": [
+    "これ — それ — あれ — この — どれ",
+    "の — の — も — は — の — の",
+    "これ は わたし の かばん です — あの とけい は だれ の です か — その ほん も たなかさん の です か — いいえ ちがいます それ は やまださん の です — どんな かばん です か — この じしょ は ちょっと たかい です",
+    "This is Indonesian coffee. — Whose pen is that? — No, it isn't. It's not mine. — Is that black bag over there Mr. Tanaka's too? — This dictionary is cheap. But it's a good dictionary.",
+    "kore wa Nihongo no jisho desu — sono kasa wa dare no desu ka — iie chigaimasu — kono kaban mo watashi no desu — ano tokei wa takai desu ne",
+    "かばん — ほん — かさ — さいふ — パソコン — くつ"
+  ],
+  "wave": "Before starting Unit 3, reread both Unit 1 dialogues aloud with the meaning column covered. Notice how much you can now read without glancing at the rōmaji above — that's the real measure of your progress."
+}

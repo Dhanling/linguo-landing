@@ -1,0 +1,348 @@
+{
+  "title": "Family and the people around you",
+  "title_target": "かぞくは なんにんですか — Kazoku wa nannin desu ka",
+  "goal": "Name family members with two different sets of words, count people and give ages, and describe others — their jobs, personalities and where they live.",
+  "bekal": [
+    "telling your own family words from other people's",
+    "counting people with ～にん",
+    "giving ages with ～さい",
+    "describing people with adjectives and jobs",
+    "asking about family without sounding nosy"
+  ],
+  "dialogs": [
+    {
+      "title": "会話 1 — How many in your family?",
+      "intro": "Tanaka asks about Ani's family. Look closely: the word for “mother” changes depending on whose mother it is.",
+      "lines": [
+        {"speaker": "たなか:", "text": "[アニさんの|Ani-san no] [ごかぞくは|gokazoku wa] [なんにんですか|nannin desu ka]。", "id": "Ani, how many people are in your family?", "literal": "Ani-Ms. — 's — honorable-family — as-for — how-many-people — is — [question]."},
+        {"speaker": "アニ:", "text": "[ごにん|Gonin] [かぞくです|kazoku desu]。[ちちと|Chichi to] [ははと|haha to] [あにと|ani to] [いもうとと|imōto to] [わたしです|watashi desu]。", "id": "Five. My father, my mother, my older brother, my younger sister and me.", "literal": "five-people — family — is. father — and — mother — and — older-brother — and — younger-sister — and — I — am."},
+        {"speaker": "たなか:", "text": "[おにいさんは|Oniisan wa] [なんさいですか|nansai desu ka]。", "id": "How old is your brother?", "literal": "honorable-older-brother — as-for — how-many-years — is — [question]."},
+        {"speaker": "アニ:", "text": "[あには|Ani wa] 28[さいです|sai desu]。[ジャカルタで|Jakaruta de] [はたらいています|hataraite imasu]。", "id": "He's 28. He works in Jakarta.", "literal": "older-brother — as-for — 28 — years — is. Jakarta — at — is-working."},
+        {"speaker": "たなか:", "text": "[おしごとは|Oshigoto wa] [なんですか|nan desu ka]。", "id": "What does he do?", "literal": "honorable-work — as-for — what — is — [question]."},
+        {"speaker": "アニ:", "text": "[いしゃです|Isha desu]。[とても|Totemo] [まじめな|majimena] [ひとです|hito desu]。", "id": "He's a doctor. He's a very serious person.", "literal": "doctor — is. very — serious — person — is."},
+        {"speaker": "たなか:", "text": "[いもうとさんは|Imōtosan wa]？", "id": "And your sister?", "literal": "honorable-younger-sister — as-for?"},
+        {"speaker": "アニ:", "text": "[いもうとは|Imōto wa] [まだ|mada] [こうこうせいです|kōkōsei desu]。17[さいです|sai desu]。", "id": "She's still in high school. She's 17.", "literal": "younger-sister — as-for — still — high-school-student — is. 17 — years — is."},
+        {"speaker": "たなか:", "text": "[ごりょうしんは|Goryōshin wa] [おげんきですか|ogenki desu ka]。", "id": "Are your parents well?", "literal": "honorable-parents — as-for — honorable-healthy — is — [question]."},
+        {"speaker": "アニ:", "text": "[はい|Hai]、[おかげさまで|okagesama de] [げんきです|genki desu]。[たなかさんの|Tanaka-san no] [ごかぞくは|gokazoku wa]？", "id": "Yes, they're well, thank you. What about your family?", "literal": "yes, honorable-thanks — by — healthy — is. Tanaka-Mr. — 's — honorable-family — as-for?"},
+        {"speaker": "たなか:", "text": "[わたしは|Watashi wa] [ひとりっこです|hitorikko desu]。[りょうしんと|Ryōshin to] [さんにんです|sannin desu]。", "id": "I'm an only child. It's just me and my parents.", "literal": "I — as-for — only-child — am. parents — with — three-people — is."}
+      ],
+      "notes": [
+        "**Two sets of family words — the most distinctive feature of Japanese here.** For your own family, use the short, humble forms: **ちち** (my father), **はは** (my mother). For someone else's family, use the long, respectful forms: **おとうさん**, **おかあさん**. Using おかあさん for your own mother in front of outsiders sounds like you're praising your own family — which is exactly what's avoided.",
+        "**Inside the home, the rule flips.** You still call your mother おかあさん when talking **to her**. はは is only for talking about her **to outsiders**. This isn't about personal respect but about the in-group/out-group line (うち/そと) that governs much of Japanese.",
+        "**おかげさまで = “thanks to you”**, used as a polite reply when asked how you are. It doesn't mean the listener actually helped — it's a set phrase, used as reflexively as “fine, thanks”.",
+        "**ひとりっこ = only child.** Note the small つ (っ), which means a one-beat pause: hi-to-ri-k-ko.",
+        "**まだ = still**, and with a negative verb it means “not yet”: まだです (not yet). Two meanings, one word.",
+        "**はたらいています = works (there).** The ～ています form here expresses an **ongoing state** — a steady job, not a one-off activity. You'll hear it a lot for jobs and where people live: とうきょうに すんでいます (I live in Tokyo)."
+      ],
+      "grammars": [
+        {
+          "title": "Two lists of family words",
+          "body": [
+            "The left column is for **your own family** (when talking to outsiders). The right column is for **other people's families** — and also for addressing your own family members directly."
+          ],
+          "table": {
+            "head": ["Relation", "My family (humble)", "Your family (respectful)"],
+            "rows": [
+              ["family", "[かぞく|kazoku] 家族", "[ごかぞく|gokazoku] ご家族"],
+              ["parents", "[りょうしん|ryōshin] 両親", "[ごりょうしん|goryōshin] ご両親"],
+              ["father", "[ちち|chichi] 父", "[おとうさん|otōsan] お父さん"],
+              ["mother", "[はは|haha] 母", "[おかあさん|okāsan] お母さん"],
+              ["older brother", "[あに|ani] 兄", "[おにいさん|oniisan] お兄さん"],
+              ["older sister", "[あね|ane] 姉", "[おねえさん|onēsan] お姉さん"],
+              ["younger brother", "[おとうと|otōto] 弟", "[おとうとさん|otōtosan] 弟さん"],
+              ["younger sister", "[いもうと|imōto] 妹", "[いもうとさん|imōtosan] 妹さん"],
+              ["husband", "[しゅじん|shujin] 主人", "[ごしゅじん|goshujin] ご主人"],
+              ["wife", "[つま|tsuma] 妻", "[おくさん|okusan] 奥さん"],
+              ["child", "[こども|kodomo] 子供", "[おこさん|okosan] お子さん"],
+              ["grandfather", "[そふ|sofu] 祖父", "[おじいさん|ojiisan]"],
+              ["grandmother", "[そぼ|sobo] 祖母", "[おばあさん|obāsan]"]
+            ]
+          },
+          "after": [
+            "⚠️ **Japanese always says which sibling is older.** There's no everyday word for just “brother” or “sister” without saying who's older — the opposite of English, where *brother* and *sister* don't tell you the order.",
+            "**If you forget, use the respectful form for other people.** Erring on the side of too much respect is far milder than being too familiar."
+          ]
+        },
+        {
+          "title": "Counting people and ages",
+          "body": [
+            "People are counted with **～[にん|nin] (人)**, ages with **～[さい|sai] ([歳|sai]/[才|sai])**. Both are regular except for a few forms you have to memorize."
+          ],
+          "tables": [
+            {
+              "head": ["People", "Reading", "People", "Reading"],
+              "rows": [
+                ["1 人", "[ひとり|hitori] ⚠️", "6 人", "[ろくにん|rokunin]"],
+                ["2 人", "[ふたり|futari] ⚠️", "7 人", "[ななにん|nananin]"],
+                ["3 人", "[さんにん|sannin]", "8 人", "[はちにん|hachinin]"],
+                ["4 人", "[よにん|yonin] ⚠️", "9 人", "[きゅうにん|kyūnin]"],
+                ["5 人", "[ごにん|gonin]", "10 人", "[じゅうにん|jūnin]"],
+                ["how many people", "[なんにん|nannin]", "alone", "[ひとりで|hitori de]"]
+              ]
+            },
+            {
+              "head": ["Age", "Reading", "Age", "Reading"],
+              "rows": [
+                ["1 歳", "[いっさい|issai] ⚠️", "10 歳", "[じゅっさい|jussai] ⚠️"],
+                ["2 歳", "[にさい|nisai]", "17 歳", "[じゅうななさい|jūnanasai]"],
+                ["3 歳", "[さんさい|sansai]", "20 歳", "[はたち|hatachi] ⚠️⚠️"],
+                ["4 歳", "[よんさい|yonsai]", "28 歳", "[にじゅうはっさい|nijūhassai]"],
+                ["8 歳", "[はっさい|hassai] ⚠️", "how old", "[なんさい|nansai]"]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️⚠️ **20 years old = [はたち|hatachi]**, which follows no pattern at all. The number matters in Japan: 20 was the legal age of adulthood under the old law and is still a social milestone.",
+            "**Ask about age with care.** [なんさいですか|nansai desu ka] is fine for children and peers, but best avoided entirely with older people. The polite form is **[おいくつですか|oikutsu desu ka]**."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "会話 2 — Describing someone",
+      "intro": "Ani introduces a classmate through a photo. Notice how adjectives and nouns are chained to describe people.",
+      "lines": [
+        {"speaker": "たなか:", "text": "[この|Kono] [しゃしんの|shashin no] [ひとは|hito wa] [だれですか|dare desu ka]。", "id": "Who's the person in this photo?", "literal": "this — photo — 's — person — as-for — who — is — [question]."},
+        {"speaker": "アニ:", "text": "[クラスの|Kurasu no] [ともだちです|tomodachi desu]。[なまえは|Namae wa] [マヤさんです|Maya-san desu]。", "id": "A friend from class. Her name is Maya.", "literal": "class — 's — friend — is. name — as-for — Maya-Ms. — is."},
+        {"speaker": "たなか:", "text": "[どんな|Donna] [ひとですか|hito desu ka]。", "id": "What's she like?", "literal": "what-kind-of — person — is — [question]."},
+        {"speaker": "アニ:", "text": "[あかるくて|Akarukute]、[しんせつな|shinsetsuna] [ひとです|hito desu]。[かみが|Kami ga] [ながいです|nagai desu]。", "id": "She's cheerful and kind. She has long hair.", "literal": "cheerful-and, kind — person — is. hair — [subject] — long — is."},
+        {"speaker": "たなか:", "text": "[マヤさんも|Maya-san mo] [インドネシアじんですか|Indoneshia-jin desu ka]。", "id": "Is Maya Indonesian too?", "literal": "Maya-Ms. — also — Indonesia-person — is — [question]."},
+        {"speaker": "アニ:", "text": "[はい|Hai]、[スラバヤから|Surabaya kara] [きました|kimashita]。[いま|Ima] [おおさかに|Ōsaka ni] [すんでいます|sunde imasu]。", "id": "Yes, she's from Surabaya. Now she lives in Osaka.", "literal": "yes, Surabaya — from — came. now — Osaka — in — is-living."},
+        {"speaker": "たなか:", "text": "[そのとなりの|Sono tonari no] [ひとは|hito wa]？", "id": "And the person next to her?", "literal": "that — next-to — 's — person — as-for?"},
+        {"speaker": "アニ:", "text": "[せんせいです|Sensei desu]。[きびしいですが|Kibishii desu ga]、[いい|ii] [せんせいです|sensei desu]。", "id": "Our teacher. Strict, but a good teacher.", "literal": "teacher — is. strict — is — but, good — teacher — is."},
+        {"speaker": "たなか:", "text": "[せが|Se ga] [たかいですね|takai desu ne]。", "id": "He's tall, isn't he?", "literal": "height — [subject] — high — is — right."},
+        {"speaker": "アニ:", "text": "[はい|Hai]、190[センチ|senchi] [ぐらいです|gurai desu]。[バスケットボールが|Basukettobōru ga] [じょうずです|jōzu desu]。", "id": "Yes, about 190 centimeters. He's great at basketball.", "literal": "yes, 190 — centimeters — about — is. basketball — [subject] — skilled — is."}
+      ],
+      "notes": [
+        "**せがたかい = tall (person), not just たかい.** たかいひと could read as “an expensive person”. For height, せ (stature) is the subject: せがたかい / せがひくい.",
+        "**Body parts and traits use the ～が～です pattern.** かみがながい (has long hair), めがおおきい (has big eyes), あたまがいい (is smart — literally “head is good”). The person described takes は, the part takes が.",
+        "**すんでいます = live (reside).** Always in the ～ています form, never すみます, when saying where you live. The place is marked with **に**: とうきょうに すんでいます.",
+        "**あかるくて — い-adjectives link with ～くて.** あかるい + しんせつ = あかるくて、しんせつな. な-adjectives link with で: しんせつで、あかるい.",
+        "**きびしい = strict, demanding.** For teachers and bosses this isn't an insult — it's often praise mixed with respect.",
+        "**センチ = centimeter**, from *centimeter*. Height in Japan is always given in whole centimeters: 170センチ, not 1.7 meters."
+      ],
+      "grammars": [
+        {
+          "title": "Linking two adjectives",
+          "body": [
+            "To give one thing or person two qualities, the first adjective changes into a linking form. The form depends on the type of adjective."
+          ],
+          "table": {
+            "head": ["Type", "How", "Example"],
+            "rows": [
+              ["い-adjective", "い → **くて**", "[やすくて|Yasukute] [おいしい|oishii] — cheap and tasty"],
+              ["な-adjective", "+ **で**", "[しずかで|Shizuka de] [きれい|kirei] — quiet and clean"],
+              ["Noun", "+ **で**", "[がくせいで|Gakusei de] 20[さい|sai] — a student, and 20"],
+              ["⚠️ いい", "→ **よくて**", "[よくて|Yokute] [やすい|yasui] — good and cheap"]
+            ]
+          },
+          "after": [
+            "⚠️ **This link is only for qualities that point the same way.** If they contrast (expensive but tasty), use **[が|ga]** = but: [たかいです|takai desu]**[が|ga]**、[おいしいです|oishii desu]。 Using [くて|kute] for contrasting qualities sounds odd to Japanese ears."
+          ]
+        },
+        {
+          "title": "Describing people",
+          "body": [
+            "The most natural order: **quality → person → extra details**. Note that [な|na]-adjectives need [な|na] before [ひと|hito]; [い|i]-adjectives don't."
+          ],
+          "tables": [
+            {
+              "head": ["Quality", "Meaning", "Sentence"],
+              "rows": [
+                ["[あかるい|akarui] 明るい", "cheerful", "[あかるい|Akarui] [ひとです|hito desu]。"],
+                ["[やさしい|yasashii] 優しい", "gentle, kind", "[やさしい|Yasashii] [ひとです|hito desu]。"],
+                ["[きびしい|kibishii] 厳しい", "strict", "[きびしい|Kibishii] [せんせいです|sensei desu]。"],
+                ["[おもしろい|omoshiroi]", "funny, interesting", "[おもしろい|Omoshiroi] [ひとです|hito desu]。"],
+                ["[しんせつ|shinsetsu] 親切", "kind, helpful", "[しんせつな|Shinsetsuna] [ひとです|hito desu]。"],
+                ["[まじめ|majime]", "diligent, serious", "[まじめな|Majimena] [がくせいです|gakusei desu]。"],
+                ["[げんき|genki] 元気", "energetic", "[げんきな|Genkina] [こどもです|kodomo desu]。"],
+                ["[しずか|shizuka] 静か", "quiet", "[しずかな|Shizukana] [ひとです|hito desu]。"]
+              ]
+            },
+            {
+              "head": ["Physical trait", "Sentence", "Meaning"],
+              "rows": [
+                ["height", "[せが|Se ga] [たかいです|takai desu]。", "He/she is tall."],
+                ["short", "[せが|Se ga] [ひくいです|hikui desu]。", "He/she is short."],
+                ["hair", "[かみが|Kami ga] [ながいです|nagai desu]。", "He/she has long hair."],
+                ["eyes", "[めが|Me ga] [おおきいです|ōkii desu]。", "He/she has big eyes."],
+                ["smart", "[あたまが|Atama ga] [いいです|ii desu]。", "He/she is smart."],
+                ["age", "20[さいです|sai desu]。", "He/she is 20."]
+              ]
+            }
+          ],
+          "after": [
+            "**Avoid physical comments.** In Japan, commenting on the weight, age or looks of someone you've just met is considered very rude — and the bar is high. When in doubt, stick to personality and job."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Jobs",
+      "blocks": [
+        {"type": "p", "text": "All of these work with the simple pattern you've known since Unit 1: **[who] は [job] です**."},
+        {"type": "tabel", "head": ["Japanese", "Meaning", "Japanese", "Meaning"], "rows": [
+          ["[かいしゃいん|kaishain] 会社員", "office worker", "[こうむいん|kōmuin] 公務員", "civil servant"],
+          ["[せんせい|sensei] 先生", "teacher", "[きょうし|kyōshi] 教師", "teacher (of yourself)"],
+          ["[いしゃ|isha] 医者", "doctor", "[かんごし|kangoshi] 看護師", "nurse"],
+          ["[エンジニア|enjinia]", "engineer", "[プログラマー|puroguramā]", "programmer"],
+          ["[べんごし|bengoshi] 弁護士", "lawyer", "[ぎんこういん|ginkōin] 銀行員", "bank employee"],
+          ["[てんいん|ten'in] 店員", "shop clerk", "[コック|kokku]", "cook"],
+          ["[うんてんしゅ|untenshu] 運転手", "driver", "[けいさつかん|keisatsukan] 警察官", "police officer"],
+          ["[がくせい|gakusei] 学生", "student", "[こうこうせい|kōkōsei] 高校生", "high school student"],
+          ["[しゅふ|shufu] 主婦", "homemaker", "[むしょく|mushoku] 無職", "not working"]
+        ]},
+        {"type": "kotak", "title": "⚠️ せんせい isn't used for yourself", "items": [
+          "せんせい is a **title of respect** that others give you. Saying “わたしはせんせいです” about yourself sounds like you're demanding respect.",
+          "If you are a teacher, call yourself **きょうし** (教師) — the neutral word for the profession.",
+          "The same pattern runs through all of Japanese: respectful forms for others, neutral or humble forms for yourself. You've seen it with family in this unit, and with さん in Unit 1."
+        ]}
+      ]
+    },
+    {
+      "title": "Asking about family without awkwardness",
+      "blocks": [
+        {"type": "p", "text": "In Japan, questions about family are handled much more carefully than in many other cultures. Safe things to ask a new acquaintance:"},
+        {"type": "tabel", "head": ["Safe to ask", "Sentence"], "rows": [
+          ["How many in their family", "[ごかぞくは|Gokazoku wa] [なんにんですか|nannin desu ka]。"],
+          ["Whether they have siblings", "[きょうだいは|Kyōdai wa] [いますか|imasu ka]。"],
+          ["Where they live", "[どこに|Doko ni] [すんでいますか|sunde imasu ka]。"],
+          ["Their job", "[おしごとは|Oshigoto wa] [なんですか|nan desu ka]。"]
+        ]},
+        {"type": "tabel", "head": ["Better avoided", "Why"], "rows": [
+          ["An adult's age", "Seen as private, especially with women."],
+          ["Married or not", "A common question in some cultures, but it feels pushy in Japan."],
+          ["Salary, rent", "Nearly taboo, even between friends."],
+          ["Why they have no children", "Very rude."]
+        ]},
+        {"type": "kotak", "title": "If you're the one being asked", "items": [
+          "You don't have to answer in full. **[ちょっと|Chotto]…** is enough to close the question without offending — and Japanese people will get it right away.",
+          "Or, if you want to change the subject: answer briefly, then turn the question around with **[～さんは|～-san wa]？** — a pattern you've used since Unit 1."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    {"ja": "[かぞく|kazoku] 家族", "baca": "かぞく · kazoku", "en": "family (my)"},
+    {"ja": "[ごかぞく|gokazoku] ご家族", "baca": "ごかぞく · gokazoku", "en": "family (your)"},
+    {"ja": "[りょうしん|ryōshin] 両親", "baca": "りょうしん · ryōshin", "en": "parents (my)"},
+    {"ja": "[ちち|chichi] 父", "baca": "ちち · chichi", "en": "father (my)"},
+    {"ja": "[はは|haha] 母", "baca": "はは · haha", "en": "mother (my)"},
+    {"ja": "[おとうさん|otōsan] お父さん", "baca": "おとうさん · otōsan", "en": "father (your)"},
+    {"ja": "[おかあさん|okāsan] お母さん", "baca": "おかあさん · okāsan", "en": "mother (your)"},
+    {"ja": "[あに|ani] 兄", "baca": "あに · ani", "en": "older brother (my)"},
+    {"ja": "[あね|ane] 姉", "baca": "あね · ane", "en": "older sister (my)"},
+    {"ja": "[おとうと|otōto] 弟", "baca": "おとうと · otōto", "en": "younger brother (my)"},
+    {"ja": "[いもうと|imōto] 妹", "baca": "いもうと · imōto", "en": "younger sister (my)"},
+    {"ja": "[おにいさん|oniisan] お兄さん", "baca": "おにいさん · oniisan", "en": "older brother (your)"},
+    {"ja": "[おねえさん|onēsan] お姉さん", "baca": "おねえさん · onēsan", "en": "older sister (your)"},
+    {"ja": "[きょうだい|kyōdai] 兄弟", "baca": "きょうだい · kyōdai", "en": "siblings"},
+    {"ja": "[こども|kodomo] 子供", "baca": "こども · kodomo", "en": "child"},
+    {"ja": "[つま|tsuma] 妻", "baca": "つま · tsuma", "en": "wife (my)"},
+    {"ja": "[おくさん|okusan] 奥さん", "baca": "おくさん · okusan", "en": "wife (your)"},
+    {"ja": "[しゅじん|shujin] 主人", "baca": "しゅじん · shujin", "en": "husband (my)"},
+    {"ja": "[そふ|sofu] 祖父", "baca": "そふ · sofu", "en": "grandfather (my)"},
+    {"ja": "[そぼ|sobo] 祖母", "baca": "そぼ · sobo", "en": "grandmother (my)"},
+    {"ja": "[ひとりっこ|hitorikko] 一人っ子", "baca": "ひとりっこ · hitorikko", "en": "only child"},
+    {"ja": "[にん|nin] 人", "baca": "にん · nin", "en": "counter for people"},
+    {"ja": "[なんにん|nannin] 何人", "baca": "なんにん · nannin", "en": "how many people"},
+    {"ja": "[さい|sai] 歳", "baca": "さい · sai", "en": "years (age)"},
+    {"ja": "[なんさい|nansai] 何歳", "baca": "なんさい · nansai", "en": "how old"},
+    {"ja": "[はたち|hatachi] 二十歳", "baca": "はたち · hatachi", "en": "20 years old"},
+    {"ja": "[すんでいます|sunde imasu] 住んでいます", "baca": "すんでいます · sunde imasu", "en": "live (reside)"},
+    {"ja": "[はたらいています|hataraite imasu] 働いています", "baca": "はたらいています · hataraite imasu", "en": "work (as)"},
+    {"ja": "[しゃしん|shashin] 写真", "baca": "しゃしん · shashin", "en": "photo"},
+    {"ja": "[かみ|kami] 髪", "baca": "かみ · kami", "en": "hair"},
+    {"ja": "[め|me] 目", "baca": "め · me", "en": "eye"},
+    {"ja": "[せ|se] 背", "baca": "せ · se", "en": "height (body)"},
+    {"ja": "[あたま|atama] 頭", "baca": "あたま · atama", "en": "head"},
+    {"ja": "[あかるい|akarui] 明るい", "baca": "あかるい · akarui", "en": "cheerful, bright"},
+    {"ja": "[きびしい|kibishii] 厳しい", "baca": "きびしい · kibishii", "en": "strict"},
+    {"ja": "[まじめ|majime] 真面目", "baca": "まじめ · majime", "en": "diligent, serious"},
+    {"ja": "[ひくい|hikui] 低い", "baca": "ひくい · hikui", "en": "low, short"},
+    {"ja": "[いしゃ|isha] 医者", "baca": "いしゃ · isha", "en": "doctor"},
+    {"ja": "[べんごし|bengoshi] 弁護士", "baca": "べんごし · bengoshi", "en": "lawyer"},
+    {"ja": "[こうむいん|kōmuin] 公務員", "baca": "こうむいん · kōmuin", "en": "civil servant"},
+    {"ja": "[こうこうせい|kōkōsei] 高校生", "baca": "こうこうせい · kōkōsei", "en": "high school student"},
+    {"ja": "[しゅふ|shufu] 主婦", "baca": "しゅふ · shufu", "en": "homemaker"},
+    {"ja": "[まだ|mada]", "baca": "まだ · mada", "en": "still; not yet"},
+    {"ja": "[おかげさまで|okagesama de]", "baca": "おかげさまで · okagesama de", "en": "fine, thank you (set phrase)"},
+    {"ja": "[おいくつ|oikutsu]", "baca": "おいくつ · oikutsu", "en": "how old (polite)"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose the right form: your own family or someone else's.",
+      "items": [
+        "My mother (to an outsider): ___",
+        "Your mother: ___",
+        "My father (to an outsider): ___",
+        "Your older brother: ___",
+        "My younger sister: ___",
+        "Your family: ___"
+      ]
+    },
+    {
+      "prompt": "Write these numbers of people in kana.",
+      "items": [
+        "1 person: ___",
+        "2 people: ___",
+        "4 people: ___",
+        "5 people: ___",
+        "how many people: ___"
+      ]
+    },
+    {
+      "prompt": "Fill in the missing particle.",
+      "items": [
+        "わたし ___ かぞくは5にんです。",
+        "あに ___ いしゃです。",
+        "とうきょう ___ すんでいます。",
+        "かみ ___ ながいです。",
+        "せ ___ たかいですね。",
+        "きびしいです ___ 、いいせんせいです。"
+      ]
+    },
+    {
+      "prompt": "Put the pieces in order to make a correct sentence.",
+      "items": [
+        "わたし / の / かぞく / は / ごにん / です",
+        "あに / は / いしゃ / です",
+        "いま / おおさか / に / すんでいます",
+        "あかるくて / しんせつな / ひと / です",
+        "ごかぞく / は / なんにん / です / か",
+        "いもうと / は / まだ / こうこうせい / です"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "わたしはひとりっこです。",
+        "ちちはこうむいんです。",
+        "あねはとうきょうではたらいています。",
+        "マヤさんはやさしいひとです。",
+        "ごりょうしんはおげんきですか。"
+      ]
+    },
+    {
+      "prompt": "Translate into Japanese. Write in rōmaji.",
+      "items": [
+        "There are five people in my family.",
+        "My father is a doctor.",
+        "I live in Tokyo.",
+        "How many people are in your family?",
+        "He's a kind person."
+      ]
+    }
+  ],
+  "answers": [
+    "はは — おかあさん — ちち — おにいさん — いもうと — ごかぞく",
+    "ひとり — ふたり — よにん — ごにん — なんにん",
+    "の — は — に — が — が — が",
+    "わたし の かぞく は ごにん です — あに は いしゃ です — いま おおさか に すんでいます — あかるくて しんせつな ひと です — ごかぞく は なんにん です か — いもうと は まだ こうこうせい です",
+    "I'm an only child. — My father is a civil servant. — My older sister works in Tokyo. — Maya is a kind person. — Are your parents well?",
+    "watashi no kazoku wa gonin desu — chichi wa isha desu — watashi wa Tōkyō ni sunde imasu — gokazoku wa nannin desu ka — shinsetsuna hito desu"
+  ],
+  "wave": "Review Unit 7 through this unit: describe the three people closest to you, each with **two linked adjectives** — one い-adjective and one な-adjective. Watch the links: くて for the first type, で for the second."
+}

@@ -1,0 +1,414 @@
+{
+  "title": "At the station",
+  "title_target": "En la estación",
+  "goal": "Buy tickets, ask about times and platforms, and use ordinal numbers.",
+  "bekal": [
+    "buying a train or bus ticket",
+    "asking departure times and journey length",
+    "using ordinal numbers",
+    "naming means of transport"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — En la estación",
+      "intro": "Buying a ticket. A conversation that goes almost the same way everywhere.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Buenos días. Un billete para Sevilla, por favor.",
+          "id": "Good morning. A ticket to Seville, please.",
+          "literal": "good day. a ticket for Seville, please."
+        },
+        {
+          "speaker": "Taquillera:",
+          "text": "¿De ida o de ida y vuelta?",
+          "id": "One-way or round trip?",
+          "literal": "of going or of going and return?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "De ida y vuelta. Vuelvo el domingo.",
+          "id": "Round trip. I'm coming back on Sunday.",
+          "literal": "of going and return. I-return the Sunday."
+        },
+        {
+          "speaker": "Taquillera:",
+          "text": "¿Para qué hora? Hay uno a las nueve y otro a las once.",
+          "id": "For what time? There's one at nine and another at eleven.",
+          "literal": "for what time? there-is one at the nine and other at the eleven."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "El de las nueve. ¿Cuánto tarda?",
+          "id": "The nine o'clock. How long does it take?",
+          "literal": "the of the nine. how-much it-takes?"
+        },
+        {
+          "speaker": "Taquillera:",
+          "text": "Dos horas y media. Llega a las once y media.",
+          "id": "Two and a half hours. It arrives at half past eleven.",
+          "literal": "two hours and half. it-arrives at the eleven and half."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Perfecto. ¿Cuánto es?",
+          "id": "Perfect. How much is it?",
+          "literal": "perfect. how-much is?"
+        },
+        {
+          "speaker": "Taquillera:",
+          "text": "Sesenta y cuatro euros. ¿Ventanilla o pasillo?",
+          "id": "Sixty-four euros. Window or aisle?",
+          "literal": "sixty and four euros. little-window or aisle?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ventanilla, por favor. ¿De qué andén sale?",
+          "id": "Window, please. Which platform does it leave from?",
+          "literal": "little-window, please. from what platform it-leaves?"
+        },
+        {
+          "speaker": "Taquillera:",
+          "text": "Del andén cuatro. Suba diez minutos antes.",
+          "id": "Platform four. Board ten minutes before.",
+          "literal": "from-the platform four. get-on(formal) ten minutes before."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Gracias. Una última cosa: ¿hay wifi en el tren?",
+          "id": "Thank you. One last thing: is there wifi on the train?",
+          "literal": "thanks. one last thing: there-is wifi on the train?"
+        },
+        {
+          "speaker": "Taquillera:",
+          "text": "Sí, es gratis. Buen viaje.",
+          "id": "Yes, it's free. Have a good trip.",
+          "literal": "yes, it-is free. good journey."
+        }
+      ],
+      "notes": [
+        "**Un billete para Sevilla.** A ticket's destination takes *para*, not *a*: *un billete para Madrid*, *un billete para las nueve*. The movement itself takes *a*: *voy a Sevilla*.",
+        "**De ida / de ida y vuelta** = one-way / round trip. In Latin America a ticket is *el boleto* or *el pasaje*, not *el billete*.",
+        "**El de las nueve** = \"the nine o'clock one\". The pattern *el de…* and *la de…* replaces a noun that's already clear: *la de azul* (the one in blue), *el de Marta* (Marta's). Very common and a great word-saver.",
+        "**Otro without an article.** *Hay otro a las once*, not *un otro*. Almost every beginner makes this mistake, tempted by English \"another\".",
+        "**Tardar vs durar.** *¿Cuánto tarda?* asks how long the trip takes you; *¿cuánto dura?* asks how long something lasts — a film, a class, a show.",
+        "**Suba** is the polite command of *subir*. What staff say at stations and airports is almost all polite commands, so recognizing the form matters more than producing it.",
+        "**Antes / después** stand alone as adverbs (*diez minutos antes*), and take *de* before a noun or verb: *antes de salir*, *después de la plaza*.",
+        "**Buen viaje** — *bueno* shortens to *buen* before a masculine singular noun, as in *un buen día*, *un buen restaurante*. The feminine stays whole: *una buena idea*."
+      ],
+      "grammars": [
+        {
+          "title": "Ordinal numbers",
+          "body": [
+            "After tenth, even native speakers rarely use ordinals — they go back to plain numbers: *el piso once*, *la calle veinte*."
+          ],
+          "table": {
+            "head": [
+              "",
+              "Español",
+              "Feminine form",
+              "Example"
+            ],
+            "rows": [
+              [
+                "1",
+                "primero / **primer**",
+                "primera",
+                "*el primer día*"
+              ],
+              [
+                "2",
+                "segundo",
+                "segunda",
+                "*la segunda calle*"
+              ],
+              [
+                "3",
+                "tercero / **tercer**",
+                "tercera",
+                "*el tercer piso*"
+              ],
+              [
+                "4",
+                "cuarto",
+                "cuarta",
+                "*la cuarta vez*"
+              ],
+              [
+                "5",
+                "quinto",
+                "quinta",
+                "*el quinto capítulo*"
+              ],
+              [
+                "6",
+                "sexto",
+                "sexta",
+                "*la sexta planta*"
+              ],
+              [
+                "7",
+                "séptimo",
+                "séptima",
+                "*el séptimo día*"
+              ],
+              [
+                "8",
+                "octavo",
+                "octava",
+                "*la octava calle*"
+              ],
+              [
+                "9",
+                "noveno",
+                "novena",
+                "*el noveno piso*"
+              ],
+              [
+                "10",
+                "décimo",
+                "décima",
+                "*la décima vez*"
+              ]
+            ]
+          },
+          "after": [
+            "Only *primero* and *tercero* shorten, and only before a masculine singular noun. Standing alone, they stay whole: *¿Cuál tomo? —El primero.*",
+            "For building floors, remember the warning from Unit 12: *la planta baja* is the ground floor, so *el primer piso* is what Americans call the second floor."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Transport and the station",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Español",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "el autobús",
+              "ehl ow-toh-BOOS",
+              "bus"
+            ],
+            [
+              "el metro",
+              "ehl MEH-troh",
+              "subway, metro"
+            ],
+            [
+              "el tren",
+              "ehl trehn",
+              "train"
+            ],
+            [
+              "el taxi",
+              "ehl TAHK-see",
+              "taxi"
+            ],
+            [
+              "el coche",
+              "ehl KOH-cheh",
+              "car"
+            ],
+            [
+              "la bicicleta",
+              "lah bee-see-KLEH-tah",
+              "bicycle"
+            ],
+            [
+              "el avión",
+              "ehl ah-BYOHN",
+              "plane"
+            ],
+            [
+              "la estación",
+              "lah ehs-tah-SYOHN",
+              "station"
+            ],
+            [
+              "la parada",
+              "lah pah-RAH-dah",
+              "stop"
+            ],
+            [
+              "el andén",
+              "ehl ahn-DEHN",
+              "platform"
+            ],
+            [
+              "el billete",
+              "ehl bee-YEH-teh",
+              "ticket"
+            ],
+            [
+              "de ida y vuelta",
+              "deh EE-dah ee BWEHL-tah",
+              "round trip"
+            ],
+            [
+              "el horario",
+              "ehl oh-RAH-ryoh",
+              "timetable"
+            ],
+            [
+              "el retraso",
+              "ehl reh-TRAH-soh",
+              "delay"
+            ],
+            [
+              "la salida / la llegada",
+              "sah-LEE-dah / yeh-GAH-dah",
+              "departure / arrival"
+            ],
+            [
+              "la entrada / la salida",
+              "ehn-TRAH-dah / sah-LEE-dah",
+              "entrance / exit"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice *salida* appears twice with different meanings — departure on a timetable board, exit in a building. Context tells them apart, and both come from the same verb: *salir*."
+        }
+      ]
+    },
+    {
+      "title": "Culture corner",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "Asking the way without a map",
+          "items": [
+            "People in Spain and Latin America almost always stop and answer when asked the way — often walking a few steps with you. Opening with *perdone* or *disculpe* is all it takes.",
+            "One risk: many people would rather guess than admit they don't know. If the directions sound unsure, ask a second person.",
+            "Distances are rarely given in meters; almost always in minutes on foot. *Está a diez minutos* can mean anything from seven to twenty minutes.",
+            "In big Spanish cities, bus and metro tickets can usually be paid with a bank card right at the entrance. In small towns, have cash ready — bus drivers don't always have change for big notes."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "es": "¿me lo repite?",
+      "baca": "meh loh reh-PEE-teh",
+      "en": "could you repeat that?"
+    },
+    {
+      "es": "más despacio",
+      "baca": "mahs dehs-PAH-syoh",
+      "en": "more slowly"
+    },
+    {
+      "es": "el billete",
+      "baca": "ehl bee-YEH-teh",
+      "en": "ticket"
+    },
+    {
+      "es": "de ida y vuelta",
+      "baca": "deh EE-dah ee BWEHL-tah",
+      "en": "round trip"
+    },
+    {
+      "es": "el andén",
+      "baca": "ehl ahn-DEHN",
+      "en": "platform"
+    },
+    {
+      "es": "la ventanilla",
+      "baca": "lah behn-tah-NEE-yah",
+      "en": "window seat"
+    },
+    {
+      "es": "el pasillo",
+      "baca": "ehl pah-SEE-yoh",
+      "en": "aisle"
+    },
+    {
+      "es": "antes / después",
+      "baca": "AHN-tehs / dehs-PWEHS",
+      "en": "before / after"
+    },
+    {
+      "es": "buen viaje",
+      "baca": "bwehn BYAH-heh",
+      "en": "have a good trip"
+    },
+    {
+      "es": "llegar",
+      "baca": "yeh-GAHR",
+      "en": "to arrive"
+    },
+    {
+      "es": "subir / bajar",
+      "baca": "soo-BEER / bah-HAHR",
+      "en": "to go up, get on / to go down, get off"
+    },
+    {
+      "es": "el metro (ukuran)",
+      "baca": "ehl MEH-troh",
+      "en": "meter"
+    },
+    {
+      "es": "primero / segundo",
+      "baca": "pree-MEH-roh / seh-GOON-doh",
+      "en": "first / second"
+    },
+    {
+      "es": "tercero / cuarto",
+      "baca": "tehr-SEH-roh / KWAHR-toh",
+      "en": "third / fourth"
+    },
+    {
+      "es": "tener prisa",
+      "baca": "teh-NEHR PREE-sah",
+      "en": "hurry"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the ordinal form in words.",
+      "items": [
+        "Take the 1st street (masculine: *el ____ *)",
+        "Take the 2nd street (feminine: *la ____ *)",
+        "3rd floor (masculine: *el ____ *)",
+        "4th time (feminine: *la ____ *)",
+        "5th day (masculine: *el ____ *)"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "¿De qué andén sale el tren?",
+        "Hay uno a las nueve y otro a las once.",
+        "Suba diez minutos antes.",
+        "No tiene pérdida.",
+        "¿Cuánto tarda el viaje?"
+      ]
+    },
+    {
+      "prompt": "Put the words in order to make a correct Spanish sentence.",
+      "items": [
+        "recto / siga / todo",
+        "derecha / a / gire / la",
+        "¿ / llego / cómo / estación / la / a / ?",
+        "para / billete / un / Sevilla",
+        "prisa / tengo"
+      ]
+    }
+  ],
+  "answers": [
+    "primer — segunda — tercer — cuarta — quinto",
+    "Which platform does the train leave from? — There's one at nine and another at eleven. — Board ten minutes before. — You can't miss it. — How long does the journey take?",
+    "Siga todo recto. — Gire a la derecha. — ¿Cómo llego a la estación? — Un billete para Sevilla. — Tengo prisa."
+  ],
+  "wave": "Review **Unit 16**: invite a friend out this Saturday, then turn down the same invitation with a reason and another day."
+}

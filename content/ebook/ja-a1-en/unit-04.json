@@ -1,0 +1,907 @@
+{
+  "title": "Time, days, and schedules",
+  "title_target": "なんじですか — Nanji desu ka",
+  "goal": "Tell the hour and the minutes, ask the time, name the days of the week, and explain opening hours or a schedule with ～から～まで.",
+  "bekal": [
+    "say hours and minutes correctly",
+    "read schedules with ～から～まで",
+    "name the seven days of the week",
+    "use the ます form for everyday activities",
+    "make a simple appointment with someone"
+  ],
+  "dialogs": [
+    {
+      "title": "会話 1 — What time is class?",
+      "intro": "Ani asks a friend about the class schedule. Notice the pattern ～から～まで repeating over several lines.",
+      "lines": [
+        {
+          "speaker": "アニ:",
+          "text": "[すみません|Sumimasen]、[いま|ima] [なんじですか|nanji desu ka]。",
+          "id": "Excuse me, what time is it now?",
+          "literal": "excuse-me, now — what-o'clock — is — [question]"
+        },
+        {
+          "speaker": "たなか:",
+          "text": "[はちじはんです|Hachi-ji han desu]。",
+          "id": "Half past eight.",
+          "literal": "eight-o'clock-half — is."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[クラスは|Kurasu wa] [なんじからですか|nanji kara desu ka]。",
+          "id": "What time does the class start?",
+          "literal": "class — as-for — what-o'clock — from — is — [question]"
+        },
+        {
+          "speaker": "たなか:",
+          "text": "[くじから|Ku-ji kara] [じゅういちじまでです|jūichi-ji made desu]。",
+          "id": "From nine to eleven.",
+          "literal": "nine-o'clock — from — eleven-o'clock — until — is."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[やすみは|Yasumi wa] [ありますか|arimasu ka]。",
+          "id": "Is there a break?",
+          "literal": "break — as-for — exists — [question]"
+        },
+        {
+          "speaker": "たなか:",
+          "text": "[はい|Hai]、[じゅうじから|jū-ji kara] [じゅうじじゅうごふんまで|jū-ji jūgo-fun made] [やすみます|yasumimasu]。",
+          "id": "Yes, we take a break from ten to ten fifteen.",
+          "literal": "yes, ten-o'clock — from — ten-o'clock-fifteen-minutes — until — rest."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[ごごの|Gogo no] [クラスも|kurasu mo] [ありますか|arimasu ka]。",
+          "id": "Are there afternoon classes too?",
+          "literal": "afternoon — 's — class — also — exists — [question]"
+        },
+        {
+          "speaker": "たなか:",
+          "text": "[かようびと|Kayōbi to] [もくようびだけです|mokuyōbi dake desu]。",
+          "id": "Only Tuesday and Thursday.",
+          "literal": "Tuesday — and — Thursday — only — is."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[にちようびは|Nichiyōbi wa] [やすみですか|yasumi desu ka]。",
+          "id": "Is Sunday a day off?",
+          "literal": "Sunday — as-for — day-off — is — [question]"
+        },
+        {
+          "speaker": "たなか:",
+          "text": "[はい|Hai]、[どようびと|doyōbi to] [にちようびは|nichiyōbi wa] [やすみです|yasumi desu]。",
+          "id": "Yes, Saturday and Sunday are days off.",
+          "literal": "yes, Saturday — and — Sunday — as-for — day-off — is."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[わかりました|Wakarimashita]。[ありがとうございます|Arigatō gozaimasu]。",
+          "id": "Got it. Thank you.",
+          "literal": "understood. thank-you."
+        }
+      ],
+      "notes": [
+        "**なんじ = what time, なんぷん = how many minutes.** Notice that hours use the counter **じ (時)** and minutes use **ふん/ぷん (分)** — two different counters that can't be swapped.",
+        "**はん = half**, and it comes after the hour: はちじはん = 8:30. It's much more common than はちじさんじゅっぷん, although both are correct.",
+        "**だけ = only**, placed **after** the word it limits: かようびだけ = only Tuesday. Unlike English, where “only” usually comes before.",
+        "**と = and, but only for nouns.** どようびとにちようび = Saturday and Sunday. と can't join two sentences — that needs the て-form in Unit 10.",
+        "**やすみ is a noun (day off, break); やすみます is a verb (to rest).** Japanese has many pairs like this, and the noun is usually the shorter one.",
+        "**ごぜん / ごご = a.m. / p.m.** They go **before** the hour: ごご3じ = 3 p.m. Japan uses the 24-hour clock on official timetables, but the 12-hour clock in conversation."
+      ],
+      "grammars": [
+        {
+          "title": "Hours and minutes",
+          "body": [
+            "Hours = number + **[じ|ji]**. Minutes = number + **[ふん|fun]** or **[ぷん|pun]**. Most are regular; the irregular ones are in the table, and there are only a handful."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Hour",
+                "Reading",
+                "Hour",
+                "Reading"
+              ],
+              "rows": [
+                [
+                  "1 時",
+                  "[いちじ|ichi-ji]",
+                  "7 時",
+                  "[しちじ|shichi-ji] ⚠️"
+                ],
+                [
+                  "2 時",
+                  "[にじ|ni-ji]",
+                  "8 時",
+                  "[はちじ|hachi-ji]"
+                ],
+                [
+                  "3 時",
+                  "[さんじ|san-ji]",
+                  "9 時",
+                  "[くじ|ku-ji] ⚠️"
+                ],
+                [
+                  "4 時",
+                  "[よじ|yo-ji] ⚠️",
+                  "10 時",
+                  "[じゅうじ|jū-ji]"
+                ],
+                [
+                  "5 時",
+                  "[ごじ|go-ji]",
+                  "11 時",
+                  "[じゅういちじ|jūichi-ji]"
+                ],
+                [
+                  "6 時",
+                  "[ろくじ|roku-ji]",
+                  "12 時",
+                  "[じゅうにじ|jūni-ji]"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Minutes",
+                "Reading",
+                "Minutes",
+                "Reading"
+              ],
+              "rows": [
+                [
+                  "1 分",
+                  "[いっぷん|ippun] ⚠️",
+                  "7 分",
+                  "[ななふん|nana-fun]"
+                ],
+                [
+                  "2 分",
+                  "[にふん|ni-fun]",
+                  "8 分",
+                  "[はっぷん|happun] ⚠️"
+                ],
+                [
+                  "3 分",
+                  "[さんぷん|sanpun] ⚠️",
+                  "9 分",
+                  "[きゅうふん|kyū-fun]"
+                ],
+                [
+                  "4 分",
+                  "[よんぷん|yonpun] ⚠️",
+                  "10 分",
+                  "[じゅっぷん|juppun] ⚠️"
+                ],
+                [
+                  "5 分",
+                  "[ごふん|go-fun]",
+                  "30 分",
+                  "[さんじゅっぷん|sanjuppun] / [はん|han]"
+                ],
+                [
+                  "6 分",
+                  "[ろっぷん|roppun] ⚠️",
+                  "how many",
+                  "[なんぷん|nanpun]"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **The hours that break the pattern:** 4[時|ji] = **[よじ|yo-ji]** (not [よんじ|yonji]), 7[時|ji] = **[しちじ|shichi-ji]**, 9[時|ji] = **[くじ|ku-ji]** (not [きゅうじ|kyūji]). These three are the ones beginners mispronounce most.",
+            "**Rule of thumb for minutes:** numbers ending in 1, 3, 4, 6, 8, 10 take **[ぷん|pun]**; the rest take **[ふん|fun]**. The sounds merge because of the mouth, not because of grammar — say them aloud a few times and they'll stick.",
+            "**Full order:** [ごご|gogo] **3[じ|ji] 15[ふん|fun]** = 3:15 p.m. Hour first, then minutes, just as in English."
+          ]
+        },
+        {
+          "title": "～[から|kara]～[まで|made] — from … to …",
+          "body": [
+            "**[から|kara]** = from (starting point). **[まで|made]** = until/to (end point). Both attach **after** the word they mark, not before — the most common pattern in Japanese, and you'll see it over and over.",
+            "Both work for **time** and **place**, and either can stand alone without its partner."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "[くじから|Ku-ji kara] [ごじまでです|go-ji made desu]。",
+                "From 9 to 5."
+              ],
+              [
+                "[くじからです|Ku-ji kara desu]。",
+                "From 9 o'clock."
+              ],
+              [
+                "[ごじまでです|Go-ji made desu]。",
+                "Until 5 o'clock."
+              ],
+              [
+                "[ジャカルタから|Jakaruta kara] [とうきょうまで|Tōkyō made]",
+                "From Jakarta to Tokyo."
+              ],
+              [
+                "[げつようびから|Getsuyōbi kara] [きんようびまで|kin'yōbi made]",
+                "From Monday to Friday."
+              ]
+            ]
+          },
+          "after": [
+            "**[から|kara] also means “because”** when it attaches to the end of a sentence rather than to a noun. Two different jobs for the same word; context almost always tells them apart."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "会話 2 — Making plans",
+      "intro": "Budi and Ani set a time to meet. Notice the ます-form verbs starting to appear.",
+      "lines": [
+        {
+          "speaker": "ブディ:",
+          "text": "[アニさん|Ani-san]、[あした|ashita] [ひまですか|hima desu ka]。",
+          "id": "Ani, are you free tomorrow?",
+          "literal": "Ani-san, tomorrow — free — is — [question]"
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[あしたは|Ashita wa] [しごとが|shigoto ga] [あります|arimasu]。[あさってはひまです|Asatte wa hima desu]。",
+          "id": "Tomorrow I have work. The day after, I'm free.",
+          "literal": "tomorrow — as-for — work — [subject] — exists. day-after-tomorrow — as-for — free — is."
+        },
+        {
+          "speaker": "ブディ:",
+          "text": "[あさっては|Asatte wa] [なんようびですか|nan-yōbi desu ka]。",
+          "id": "What day is the day after tomorrow?",
+          "literal": "day-after-tomorrow — as-for — what-day — is — [question]"
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[すいようびです|Suiyōbi desu]。",
+          "id": "Wednesday.",
+          "literal": "Wednesday — is."
+        },
+        {
+          "speaker": "ブディ:",
+          "text": "[すいようびの|Suiyōbi no] [ごご|gogo] 2[じは|ji wa] [どうですか|dō desu ka]。",
+          "id": "How about Wednesday at 2 p.m.?",
+          "literal": "Wednesday — 's — afternoon — 2 — o'clock — as-for — how — is — [question]"
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[すみません|Sumimasen]、2[じは|ji wa] [ちょっと|chotto]…。3[じは|ji wa] [だいじょうぶです|daijōbu desu]。",
+          "id": "Sorry, 2 is a bit… 3 o'clock is fine.",
+          "literal": "sorry, 2 — o'clock — as-for — a-little…. 3 — o'clock — as-for — all-right — is."
+        },
+        {
+          "speaker": "ブディ:",
+          "text": "[じゃあ|Jā]、3[じに|ji ni] [あいましょう|aimashō]。[どこで|Doko de] [あいますか|aimasu ka]。",
+          "id": "Then let's meet at 3. Where shall we meet?",
+          "literal": "well-then, 3 — o'clock — at — let's-meet. where — at — meet — [question]"
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[えきの|Eki no] [まえは|mae wa] [どうですか|dō desu ka]。",
+          "id": "How about in front of the station?",
+          "literal": "station — 's — front — as-for — how — is — [question]"
+        },
+        {
+          "speaker": "ブディ:",
+          "text": "[いいですね|Ii desu ne]。[じゃあ|Jā]、[すいようびの|suiyōbi no] 3[じに|ji ni]。",
+          "id": "Sounds good. Wednesday at 3, then.",
+          "literal": "good — is — isn't-it. well-then, Wednesday — 's — 3 — o'clock — at."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[はい|Hai]、[またあさって|mata asatte]。",
+          "id": "OK, see you the day after tomorrow.",
+          "literal": "yes, again — day-after-tomorrow."
+        }
+      ],
+      "notes": [
+        "**A trailing ちょっと… is a gentle refusal** — you saw it in Unit 2, and here its use is clear: turning down the suggested time without saying “I can't”. Japanese people rarely refuse bluntly, and an unfinished sentence is considered polite.",
+        "**に marks a specific time.** 3じ**に**あいましょう = let's meet **at** 3. The rule: use に when the time can be pointed to on a clock or calendar (hour, date, day), not for vague times (きょう, あした, いま, まいにち).",
+        "**～ましょう = “let's ～”.** The invitation form, fully explained in Unit 9. For now, just recognize it: あいます → あいましょう.",
+        "**ひま = free (not busy).** A な-adjective (Unit 7). Its opposite is いそがしい (busy).",
+        "**まえ = front.** えきのまえ = in front of the station. Position words are covered fully in Unit 5.",
+        "**なんようび = what day (of the week).** Don't confuse it with なんにち (what date)."
+      ],
+      "grammars": [
+        {
+          "title": "The [ます|masu] form — polite verbs",
+          "body": [
+            "Every Japanese verb has one polite form ending in **～[ます|masu]**. At A1 this is the form you use — safe with everyone, in every situation.",
+            "The good news: **the form never changes for the person doing the action.** No I/you/he, no singular/plural — no am/is/are, no -s. One form for everyone."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "～[ます|masu]",
+                "present / future / habit",
+                "[やすみます|yasumimasu] — rest"
+              ],
+              [
+                "～[ません|masen]",
+                "not",
+                "[やすみません|yasumimasen] — don't rest"
+              ],
+              [
+                "～[ました|mashita]",
+                "did (past)",
+                "[やすみました|yasumimashita] — rested"
+              ],
+              [
+                "～[ませんでした|masen deshita]",
+                "didn't (past)",
+                "[やすみませんでした|yasumimasen deshita] — didn't rest"
+              ],
+              [
+                "～[ましょう|mashō]",
+                "let's",
+                "[やすみましょう|yasumimashō] — let's rest"
+              ],
+              [
+                "～[ませんか|masen ka]",
+                "won't you…?",
+                "[やすみませんか|yasumimasen ka] — want to take a break?"
+              ]
+            ]
+          },
+          "after": [
+            "**A single [ます|masu] form covers both now and later.** [いきます|ikimasu] can mean “I go” and “I will go”. Only the time word makes the difference: [あしたいきます|ashita ikimasu] = I'll go tomorrow.",
+            "⚠️ **The verb always comes at the end of the sentence.** No exceptions — which is why Japanese listeners often only learn what a sentence means at the very last second."
+          ]
+        },
+        {
+          "title": "Days, and the time words around them",
+          "body": [
+            "The names of the days all end in **[ようび|yōbi] ([曜日|yōbi])**, and their first part comes from the natural elements — moon, fire, water, wood, gold, earth, sun. The order matches Monday to Sunday exactly (Monday = moon day, as in English), so you only need to learn it once."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Day",
+                "Reading",
+                "Origin"
+              ],
+              "rows": [
+                [
+                  "月曜日",
+                  "[げつようび|getsuyōbi]",
+                  "moon — Monday"
+                ],
+                [
+                  "火曜日",
+                  "[かようび|kayōbi]",
+                  "fire — Tuesday"
+                ],
+                [
+                  "水曜日",
+                  "[すいようび|suiyōbi]",
+                  "water — Wednesday"
+                ],
+                [
+                  "木曜日",
+                  "[もくようび|mokuyōbi]",
+                  "wood — Thursday"
+                ],
+                [
+                  "金曜日",
+                  "[きんようび|kin'yōbi]",
+                  "gold — Friday"
+                ],
+                [
+                  "土曜日",
+                  "[どようび|doyōbi]",
+                  "earth — Saturday"
+                ],
+                [
+                  "日曜日",
+                  "[にちようび|nichiyōbi]",
+                  "sun — Sunday"
+                ],
+                [
+                  "何曜日",
+                  "[なんようび|nan'yōbi]",
+                  "what day?"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Time word",
+                "Reading",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "今日",
+                  "[きょう|kyō]",
+                  "today"
+                ],
+                [
+                  "明日",
+                  "[あした|ashita]",
+                  "tomorrow"
+                ],
+                [
+                  "明後日",
+                  "[あさって|asatte]",
+                  "the day after tomorrow"
+                ],
+                [
+                  "昨日",
+                  "[きのう|kinō]",
+                  "yesterday"
+                ],
+                [
+                  "毎日",
+                  "[まいにち|mainichi]",
+                  "every day"
+                ],
+                [
+                  "今週",
+                  "[こんしゅう|konshū]",
+                  "this week"
+                ],
+                [
+                  "来週",
+                  "[らいしゅう|raishū]",
+                  "next week"
+                ],
+                [
+                  "先週",
+                  "[せんしゅう|senshū]",
+                  "last week"
+                ],
+                [
+                  "午前",
+                  "[ごぜん|gozen]",
+                  "morning (a.m.)"
+                ],
+                [
+                  "午後",
+                  "[ごご|gogo]",
+                  "afternoon (p.m.)"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **Vague time words don't take [に|ni]**: [きょういきます|kyō ikimasu] (not [きょうにいきます|kyō ni ikimasu]), [まいにちべんきょうします|mainichi benkyō shimasu]. The ones that take [に|ni]: hours, dates, days, months — anything you can point to on a calendar."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Opening hours in Japan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Schedules in Japan are written in the same pattern everywhere, and once you recognize it, any sign with opening hours becomes readable:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "What's written",
+            "Reading",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "[えいぎょうじかん|eigyō jikan] 営業時間",
+              "eigyō jikan",
+              "business hours"
+            ],
+            [
+              "9:00 〜 18:00",
+              "[くじから|ku-ji kara] [じゅうはちじまで|jūhachi-ji made]",
+              "from 9:00 to 18:00"
+            ],
+            [
+              "[ていきゅうび|teikyūbi] 定休日",
+              "teikyūbi",
+              "regular closing day"
+            ],
+            [
+              "[きゅうぎょう|kyūgyō] 休業",
+              "kyūgyō",
+              "closed"
+            ],
+            [
+              "[ちゅうし|chūshi] 中止",
+              "chūshi",
+              "canceled"
+            ],
+            [
+              "24[じかん|jikan]",
+              "nijūyo-jikan",
+              "24 hours"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Time is serious in Japan",
+          "items": [
+            "A Japanese train counts as late if it's more than a minute behind, and passengers are given a delay certificate to show at work. This is not a joke.",
+            "Arriving **on time** means arriving **five minutes early**. Arriving on the exact minute already counts as cutting it close.",
+            "If you're going to be late, let people know before the time passes — not after. The phrase: **[すみません|Sumimasen]、10[ぷん|pun] [おくれます|okuremasu]。** (Sorry, I'll be 10 minutes late.)"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "One day, from waking up to bedtime",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These sentences use the ます form you've just seen. Read them as one story — this is the framework used fully in Unit 6."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Time",
+            "Sentence",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "6:00",
+              "[ろくじに|Roku-ji ni] [おきます|okimasu]。",
+              "I get up at 6."
+            ],
+            [
+              "7:00",
+              "[しちじに|Shichi-ji ni] [あさごはんを|asagohan o] [たべます|tabemasu]。",
+              "I have breakfast at 7."
+            ],
+            [
+              "8:00",
+              "[はちじに|Hachi-ji ni] [うちを|uchi o] [でます|demasu]。",
+              "I leave home at 8."
+            ],
+            [
+              "9:00",
+              "[くじから|Ku-ji kara] [はたらきます|hatarakimasu]。",
+              "I start work at 9."
+            ],
+            [
+              "12:00",
+              "[じゅうにじに|Jūni-ji ni] [ひるごはんを|hirugohan o] [たべます|tabemasu]。",
+              "I have lunch at 12."
+            ],
+            [
+              "18:00",
+              "[ろくじに|Roku-ji ni] [うちへ|uchi e] [かえります|kaerimasu]。",
+              "I go home at 6."
+            ],
+            [
+              "23:00",
+              "[じゅういちじに|Jūichi-ji ni] [ねます|nemasu]。",
+              "I go to bed at 11."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Read this table aloud, swapping in the times from your own schedule. These seven sentences alone are enough to tell a Japanese person about a whole day."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ja": "[じ|ji] 時",
+      "baca": "じ · ji",
+      "en": "o'clock"
+    },
+    {
+      "ja": "[ふん|fun] 分",
+      "baca": "ふん · fun",
+      "en": "minute(s)"
+    },
+    {
+      "ja": "[はん|han] 半",
+      "baca": "はん · han",
+      "en": "half"
+    },
+    {
+      "ja": "[なんじ|nanji] 何時",
+      "baca": "なんじ · nanji",
+      "en": "what time"
+    },
+    {
+      "ja": "[ごぜん|gozen] 午前",
+      "baca": "ごぜん · gozen",
+      "en": "morning, a.m."
+    },
+    {
+      "ja": "[ごご|gogo] 午後",
+      "baca": "ごご · gogo",
+      "en": "afternoon, p.m."
+    },
+    {
+      "ja": "[あさ|asa] 朝",
+      "baca": "あさ · asa",
+      "en": "morning"
+    },
+    {
+      "ja": "[ひる|hiru] 昼",
+      "baca": "ひる · hiru",
+      "en": "noon, daytime"
+    },
+    {
+      "ja": "[ばん|ban] 晩",
+      "baca": "ばん · ban",
+      "en": "evening, night"
+    },
+    {
+      "ja": "[よる|yoru] 夜",
+      "baca": "よる · yoru",
+      "en": "night"
+    },
+    {
+      "ja": "[げつようび|getsuyōbi] 月曜日",
+      "baca": "げつようび · getsuyōbi",
+      "en": "Monday"
+    },
+    {
+      "ja": "[かようび|kayōbi] 火曜日",
+      "baca": "かようび · kayōbi",
+      "en": "Tuesday"
+    },
+    {
+      "ja": "[すいようび|suiyōbi] 水曜日",
+      "baca": "すいようび · suiyōbi",
+      "en": "Wednesday"
+    },
+    {
+      "ja": "[もくようび|mokuyōbi] 木曜日",
+      "baca": "もくようび · mokuyōbi",
+      "en": "Thursday"
+    },
+    {
+      "ja": "[きんようび|kin'yōbi] 金曜日",
+      "baca": "きんようび · kin'yōbi",
+      "en": "Friday"
+    },
+    {
+      "ja": "[どようび|doyōbi] 土曜日",
+      "baca": "どようび · doyōbi",
+      "en": "Saturday"
+    },
+    {
+      "ja": "[にちようび|nichiyōbi] 日曜日",
+      "baca": "にちようび · nichiyōbi",
+      "en": "Sunday"
+    },
+    {
+      "ja": "[なんようび|nan'yōbi] 何曜日",
+      "baca": "なんようび · nan'yōbi",
+      "en": "what day"
+    },
+    {
+      "ja": "[きょう|kyō] 今日",
+      "baca": "きょう · kyō",
+      "en": "today"
+    },
+    {
+      "ja": "[あした|ashita] 明日",
+      "baca": "あした · ashita",
+      "en": "tomorrow"
+    },
+    {
+      "ja": "[あさって|asatte]",
+      "baca": "あさって · asatte",
+      "en": "the day after tomorrow"
+    },
+    {
+      "ja": "[きのう|kinō] 昨日",
+      "baca": "きのう · kinō",
+      "en": "yesterday"
+    },
+    {
+      "ja": "[まいにち|mainichi] 毎日",
+      "baca": "まいにち · mainichi",
+      "en": "every day"
+    },
+    {
+      "ja": "[らいしゅう|raishū] 来週",
+      "baca": "らいしゅう · raishū",
+      "en": "next week"
+    },
+    {
+      "ja": "[せんしゅう|senshū] 先週",
+      "baca": "せんしゅう · senshū",
+      "en": "last week"
+    },
+    {
+      "ja": "[やすみ|yasumi] 休み",
+      "baca": "やすみ · yasumi",
+      "en": "day off, break"
+    },
+    {
+      "ja": "[じかん|jikan] 時間",
+      "baca": "じかん · jikan",
+      "en": "time; hours (duration)"
+    },
+    {
+      "ja": "[ひま|hima] 暇",
+      "baca": "ひま · hima",
+      "en": "free (not busy)"
+    },
+    {
+      "ja": "[いそがしい|isogashii] 忙しい",
+      "baca": "いそがしい · isogashii",
+      "en": "busy"
+    },
+    {
+      "ja": "[から|kara]",
+      "baca": "から · kara",
+      "en": "from"
+    },
+    {
+      "ja": "[まで|made]",
+      "baca": "まで · made",
+      "en": "until, to"
+    },
+    {
+      "ja": "[だけ|dake]",
+      "baca": "だけ · dake",
+      "en": "only"
+    },
+    {
+      "ja": "[と|to]",
+      "baca": "と · to",
+      "en": "and (nouns)"
+    },
+    {
+      "ja": "[えき|eki] 駅",
+      "baca": "えき · eki",
+      "en": "station"
+    },
+    {
+      "ja": "[まえ|mae] 前",
+      "baca": "まえ · mae",
+      "en": "front; before"
+    },
+    {
+      "ja": "[おきます|okimasu] 起きます",
+      "baca": "おきます · okimasu",
+      "en": "get up"
+    },
+    {
+      "ja": "[ねます|nemasu] 寝ます",
+      "baca": "ねます · nemasu",
+      "en": "sleep, go to bed"
+    },
+    {
+      "ja": "[たべます|tabemasu] 食べます",
+      "baca": "たべます · tabemasu",
+      "en": "eat"
+    },
+    {
+      "ja": "[はたらきます|hatarakimasu] 働きます",
+      "baca": "はたらきます · hatarakimasu",
+      "en": "work"
+    },
+    {
+      "ja": "[やすみます|yasumimasu] 休みます",
+      "baca": "やすみます · yasumimasu",
+      "en": "rest, take a day off"
+    },
+    {
+      "ja": "[かえります|kaerimasu] 帰ります",
+      "baca": "かえります · kaerimasu",
+      "en": "go home"
+    },
+    {
+      "ja": "[あいます|aimasu] 会います",
+      "baca": "あいます · aimasu",
+      "en": "meet"
+    },
+    {
+      "ja": "[おくれます|okuremasu] 遅れます",
+      "baca": "おくれます · okuremasu",
+      "en": "be late"
+    },
+    {
+      "ja": "[あさごはん|asagohan] 朝ごはん",
+      "baca": "あさごはん · asagohan",
+      "en": "breakfast"
+    },
+    {
+      "ja": "[ひるごはん|hirugohan] 昼ごはん",
+      "baca": "ひるごはん · hirugohan",
+      "en": "lunch"
+    },
+    {
+      "ja": "[ばんごはん|bangohan] 晩ごはん",
+      "baca": "ばんごはん · bangohan",
+      "en": "dinner"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these times in kana.",
+      "items": [
+        "4 o'clock: ___",
+        "7 o'clock: ___",
+        "9 o'clock: ___",
+        "half past 3 (3:30): ___ じはん",
+        "what time: ___"
+      ]
+    },
+    {
+      "prompt": "Fill in the missing particle.",
+      "items": [
+        "クラスは9じ ___ です。(starts)",
+        "5じ ___ はたらきます。(until)",
+        "3じ ___ あいましょう。",
+        "どようび ___ にちようびはやすみです。",
+        "かようび ___ です。(only)",
+        "すいようび ___ ごご2じはどうですか。"
+      ]
+    },
+    {
+      "prompt": "Write these days in kana.",
+      "items": [
+        "Monday: ___",
+        "Wednesday: ___",
+        "Friday: ___",
+        "Saturday: ___",
+        "Sunday: ___"
+      ]
+    },
+    {
+      "prompt": "Arrange the tiles into a correct sentence.",
+      "items": [
+        "いま / なんじ / です / か",
+        "クラス / は / くじ / から / じゅういちじ / まで / です",
+        "まいにち / ろくじ / に / おきます",
+        "どようび / と / にちようび / は / やすみ / です",
+        "えき / の / まえ / で / あいましょう",
+        "すみません / じゅっぷん / おくれます"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "いまはちじはんです。",
+        "しごとはくじからごじまでです。",
+        "あさっては なんようびですか。",
+        "まいにち じゅういちじに ねます。",
+        "きんようびの ごご は ひまです。"
+      ]
+    },
+    {
+      "prompt": "Translate into Japanese. Write in rōmaji.",
+      "items": [
+        "What time is it now?",
+        "The class is from 9 to 11.",
+        "Sunday is a day off.",
+        "Let's meet at 3.",
+        "I'm busy tomorrow."
+      ]
+    }
+  ],
+  "answers": [
+    "よじ — しちじ — くじ — さん — なんじ",
+    "から — まで — に — と — だけ — の",
+    "げつようび — すいようび — きんようび — どようび — にちようび",
+    "いま なんじ です か — クラス は くじ から じゅういちじ まで です — まいにち ろくじ に おきます — どようび と にちようび は やすみ です — えき の まえ で あいましょう — すみません じゅっぷん おくれます",
+    "It's half past eight now. — Work is from 9 to 5. — What day is the day after tomorrow? — I go to bed at 11 every day. — I'm free on Friday afternoon.",
+    "ima nanji desu ka — kurasu wa ku-ji kara jūichi-ji made desu — nichiyōbi wa yasumi desu — san-ji ni aimashō — ashita wa isogashii desu"
+  ],
+  "wave": "Review Unit 3: read ten random prices in yen aloud, then combine them with this unit — “What time does that shop open and close, and how much do things cost?” Two units used in one sentence."
+}

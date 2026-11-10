@@ -1,0 +1,864 @@
+{
+  "title": "Places and existence",
+  "title_target": "どこですか — Doko desu ka",
+  "goal": "Ask where things are, say whether something is there or not, describe where one thing is relative to another, and ask a stranger for directions.",
+  "bekal": [
+    "tell あります (things) from います (living beings)",
+    "give positions with うえ・した・なか・となり",
+    "use the particle に for where something is",
+    "ask for directions and understand the answer",
+    "tell は and が apart in sentences about existence"
+  ],
+  "dialogs": [
+    {
+      "title": "会話 1 — Looking for the restroom and the office",
+      "intro": "Ani is in this building for the first time. Notice how は and が alternate throughout the dialogue.",
+      "lines": [
+        {
+          "speaker": "アニ:",
+          "text": "[すみません|Sumimasen]。[トイレは|Toire wa] [どこですか|doko desu ka]。",
+          "id": "Excuse me. Where is the restroom?",
+          "literal": "excuse-me. restroom — as-for — where — is — [question]"
+        },
+        {
+          "speaker": "ひと:",
+          "text": "[トイレは|Toire wa] [あそこです|asoko desu]。[エレベーターの|Erebētā no] [となりです|tonari desu]。",
+          "id": "The restroom is over there. Next to the elevator.",
+          "literal": "restroom — as-for — over-there — is. elevator — 's — next-to — is."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[ありがとうございます|Arigatō gozaimasu]。[この|Kono] [ビルに|biru ni] [コンビニは|konbini wa] [ありますか|arimasu ka]。",
+          "id": "Thank you. Is there a convenience store in this building?",
+          "literal": "thank-you. this — building — in — convenience-store — as-for — exists — [question]"
+        },
+        {
+          "speaker": "ひと:",
+          "text": "[はい|Hai]、1[かいに|kai ni] [あります|arimasu]。[いりぐちの|Iriguchi no] [ちかくです|chikaku desu]。",
+          "id": "Yes, on the 1st floor. Near the entrance.",
+          "literal": "yes, 1 — floor — on — exists. entrance — 's — near — is."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[ATMも|ATM mo] [ありますか|arimasu ka]。",
+          "id": "Is there an ATM too?",
+          "literal": "ATM — also — exists — [question]"
+        },
+        {
+          "speaker": "ひと:",
+          "text": "[ATMは|ATM wa] [コンビニの|konbini no] [なかに|naka ni] [あります|arimasu]。",
+          "id": "The ATM is inside the convenience store.",
+          "literal": "ATM — as-for — convenience-store — 's — inside — in — exists."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[じゃあ|Jā]、[じむしょは|jimusho wa]？",
+          "id": "And the office?",
+          "literal": "well-then, office — as-for?"
+        },
+        {
+          "speaker": "ひと:",
+          "text": "[じむしょは|Jimusho wa] 3[かいです|kai desu]。[かいだんの|Kaidan no] [うえに|ue ni] [あります|arimasu]。",
+          "id": "The office is on the 3rd floor. It's at the top of the stairs.",
+          "literal": "office — as-for — 3 — floor — is. stairs — 's — top — at — exists."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[いま|Ima] [だれか|dareka] [いますか|imasu ka]。",
+          "id": "Is anyone there now?",
+          "literal": "now — someone — is-there — [question]"
+        },
+        {
+          "speaker": "ひと:",
+          "text": "[はい|Hai]、[やまださんが|Yamada-san ga] [います|imasu]。",
+          "id": "Yes, Mr. Yamada is there.",
+          "literal": "yes, Yamada-san — [subject] — is-there."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[たすかりました|Tasukarimashita]。[ありがとうございます|Arigatō gozaimasu]。",
+          "id": "You've saved me. Thank you very much.",
+          "literal": "was-saved. thank-you."
+        }
+      ],
+      "notes": [
+        "**あります for inanimate things, います for living beings.** English uses one “there is” for both, but Japanese draws the line from the start: ほんが**あります** (there's a book), ねこが**います** (there's a cat). Choosing wrong won't make you unintelligible, but it instantly marks you as a beginner.",
+        "**Plants take あります.** Although alive, plants don't “move on their own”. A car with someone driving it? Still あります. The real rule isn't “alive” but **moves by its own will**.",
+        "**に marks where something is.** 1かい**に**あります = it's **on** the 1st floor. Don't confuse it with で (Unit 6), which marks where an **action** happens — two particles that both translate as “in/at” and are the most often mixed up.",
+        "**だれか = someone** (anyone), different from だれ (who). Adding か to a question word turns it into “some-”: なにか (something), どこか (somewhere), いつか (sometime).",
+        "**かい (階) = floor.** 1かい = いっかい, 3かい = さんがい ⚠️ (not さんかい), なんがい = which floor. Another counter whose sound shifts — the same family as 300 and 1 minute.",
+        "**Konbini** (コンビニ) is a 24-hour convenience store, short for *convenience store*. In Japan the konbini is also where you withdraw cash, pay bills, print documents, and send parcels."
+      ],
+      "grammars": [
+        {
+          "title": "[あります|arimasu] and [います|imasu] — two ways to say “there is”",
+          "body": [
+            "There are two basic patterns, and both are used just as often. What separates them is **what the conversation is about**:"
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Example",
+              "Used when"
+            ],
+            "rows": [
+              [
+                "**place** に **thing** が あります",
+                "[つくえの|Tsukue no] [うえに|ue ni] [ほんが|hon ga] [あります|arimasu]。",
+                "Describing what **is in a place**. The place is the starting point."
+              ],
+              [
+                "**thing** は **place** に あります",
+                "[ほんは|Hon wa] [つくえの|tsukue no] [うえに|ue ni] [あります|arimasu]。",
+                "Describing **where a thing is**. The thing is the starting point."
+              ],
+              [
+                "**place** に **person** が います",
+                "[きょうしつに|Kyōshitsu ni] [せんせいが|sensei ga] [います|imasu]。",
+                "The same, but for living beings."
+              ],
+              [
+                "Negative",
+                "[ATMは|ATM wa] [ありません|arimasen]。",
+                "There's no ATM."
+              ]
+            ]
+          },
+          "after": [
+            "**Why [は|wa] in one sentence and [が|ga] in another?** A rule of thumb that rarely fails: **[は|wa] marks what's already known**, **[が|ga] marks new information**. [トイレは|Toire wa] (we both know which restroom) [どこですか|doko desu ka]. [きょうしつに|kyōshitsu ni] [せんせいが|sensei ga] (new information) [います|imasu].",
+            "**Answering a [どこ|doko] question** almost always uses [は|wa] for the thing: [トイレは|Toire wa] [あそこです|asoko desu]. If you're unsure between [は|wa] and [が|ga] in a sentence about existence, ask yourself: does the listener already know about this thing? If so, [は|wa]."
+          ]
+        },
+        {
+          "title": "Position words — all through [の|no]",
+          "body": [
+            "Positions always use the pattern **[reference] [の|no] [position] [に|ni]**. The reference point comes first, just like the [の|no] pattern from Unit 2."
+          ],
+          "table": {
+            "head": [
+              "Position word",
+              "Reading",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "上",
+                "[うえ|ue]",
+                "on, above",
+                "[つくえの|tsukue no] [うえ|ue] — on the desk"
+              ],
+              [
+                "下",
+                "[した|shita]",
+                "under, below",
+                "[いすの|isu no] [した|shita] — under the chair"
+              ],
+              [
+                "中",
+                "[なか|naka]",
+                "inside",
+                "[かばんの|kaban no] [なか|naka] — inside the bag"
+              ],
+              [
+                "外",
+                "[そと|soto]",
+                "outside",
+                "[うちの|uchi no] [そと|soto] — outside the house"
+              ],
+              [
+                "前",
+                "[まえ|mae]",
+                "in front",
+                "[えきの|eki no] [まえ|mae] — in front of the station"
+              ],
+              [
+                "後ろ",
+                "[うしろ|ushiro]",
+                "behind",
+                "[ビルの|biru no] [うしろ|ushiro] — behind the building"
+              ],
+              [
+                "隣",
+                "[となり|tonari]",
+                "next to",
+                "[ぎんこうの|ginkō no] [となり|tonari] — next to the bank"
+              ],
+              [
+                "近く",
+                "[ちかく|chikaku]",
+                "near",
+                "[がっこうの|gakkō no] [ちかく|chikaku] — near the school"
+              ],
+              [
+                "間",
+                "[あいだ|aida]",
+                "between",
+                "[Aと|A to] [Bの|B no] [あいだ|aida] — between A and B"
+              ],
+              [
+                "右",
+                "[みぎ|migi]",
+                "right",
+                "[みちの|michi no] [みぎ|migi] — right side of the road"
+              ],
+              [
+                "左",
+                "[ひだり|hidari]",
+                "left",
+                "[みちの|michi no] [ひだり|hidari] — left side of the road"
+              ]
+            ]
+          },
+          "after": [
+            "**[となり|tonari] vs [ちかく|chikaku]:** [となり|tonari] means right next to, and of the same kind (a shop next to a shop). [ちかく|chikaku] just means somewhere around there, not necessarily touching.",
+            "**A position can be a whole answer:** [どこですか|doko desu ka] → [えきのまえです|eki no mae desu]。 Complete even without [あります|arimasu]."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "会話 2 — Asking the way",
+      "intro": "Budi is lost looking for the post office. Notice that Japanese directions are often a chain of landmarks, not street names — the Japanese address system doesn't use street names.",
+      "lines": [
+        {
+          "speaker": "ブディ:",
+          "text": "[すみません|Sumimasen]、[ゆうびんきょくは|yūbinkyoku wa] [どこですか|doko desu ka]。",
+          "id": "Excuse me, where is the post office?",
+          "literal": "excuse-me, post-office — as-for — where — is — [question]"
+        },
+        {
+          "speaker": "ひと:",
+          "text": "[ゆうびんきょくですか|Yūbinkyoku desu ka]。[あの|Ano] [しんごうの|shingō no] [ちかくです|chikaku desu]。",
+          "id": "The post office? It's near that traffic light.",
+          "literal": "post-office — is — [question]. that — traffic-light — 's — near — is."
+        },
+        {
+          "speaker": "ブディ:",
+          "text": "[この|Kono] [みちを|michi o] [まっすぐですか|massugu desu ka]。",
+          "id": "Straight along this road?",
+          "literal": "this — road — [along] — straight — is — [question]"
+        },
+        {
+          "speaker": "ひと:",
+          "text": "[はい|Hai]。[しんごうを|Shingō o] [みぎに|migi ni] [まがってください|magatte kudasai]。",
+          "id": "Yes. Turn right at the traffic light.",
+          "literal": "yes. traffic-light — [at] — right — to — please-turn."
+        },
+        {
+          "speaker": "ブディ:",
+          "text": "[みぎですね|Migi desu ne]。[そのあとは|Sono ato wa]？",
+          "id": "Right, OK. And after that?",
+          "literal": "right — is — right. that — after — as-for?"
+        },
+        {
+          "speaker": "ひと:",
+          "text": "[ぎんこうと|Ginkō to] [コンビニの|konbini no] [あいだに|aida ni] [あります|arimasu]。[しろい|Shiroi] [ビルです|biru desu]。",
+          "id": "It's between the bank and the convenience store. A white building.",
+          "literal": "bank — and — convenience-store — 's — between — in — exists. white — building — is."
+        },
+        {
+          "speaker": "ブディ:",
+          "text": "[ここから|Koko kara] [とおいですか|tōi desu ka]。",
+          "id": "Is it far from here?",
+          "literal": "here — from — far — is — [question]"
+        },
+        {
+          "speaker": "ひと:",
+          "text": "[いいえ|Iie]、[ちかいです|chikai desu]。[あるいて|Aruite] 5[ふんぐらいです|fun gurai desu]。",
+          "id": "No, it's close. About 5 minutes on foot.",
+          "literal": "no, near — is. walking — 5 — minutes — about — is."
+        },
+        {
+          "speaker": "ブディ:",
+          "text": "[わかりました|Wakarimashita]。[どうも|Dōmo] [ありがとうございます|arigatō gozaimasu]。",
+          "id": "Got it. Thank you very much.",
+          "literal": "understood. very — thank-you."
+        },
+        {
+          "speaker": "ひと:",
+          "text": "[いいえ|Iie]、[きをつけて|ki o tsukete]。",
+          "id": "Not at all. Take care.",
+          "literal": "no, spirit — [object] — attach."
+        }
+      ],
+      "notes": [
+        "**Japan doesn't use street names in addresses.** An address goes district → block → building number, from largest to smallest — the reverse of a typical Western address. That's why directions always come as landmarks: traffic lights, convenience stores, banks.",
+        "**を with a verb of motion means “through / along”**, not an object: みち**を**まっすぐ (straight **along** the road), しんごう**を**まがる (turn **at** the traffic light). This use of を is different from “marking the object” and only appears with verbs of motion.",
+        "**まがってください = please turn.** This is the て-form + ください, the way to ask someone to **do** something — the companion of the ください you learned in Unit 3. Fully explained in Unit 10.",
+        "**ぐらい / くらい = about, roughly.** 5ふんぐらい = about 5 minutes. It goes **after** the amount. Don't confuse it with ごろ, used for points in time: 3じごろ = around 3 o'clock.",
+        "**あるいて = on foot.** Its partners: でんしゃで (by train), くるまで (by car), バスで (by bus) — using the particle で you already know from Unit 3.",
+        "**きをつけて = take care.** A very common goodbye, literally “attach your attention”."
+      ],
+      "grammars": [
+        {
+          "title": "Asking for and giving directions",
+          "body": [
+            "These five questions are enough to find almost anything in a Japanese city, and the six phrases after them are enough to understand the answer."
+          ],
+          "tables": [
+            {
+              "head": [
+                "What you ask",
+                "Sentence"
+              ],
+              "rows": [
+                [
+                  "Where is ～?",
+                  "[すみません|Sumimasen]、～[は|wa] [どこですか|doko desu ka]。"
+                ],
+                [
+                  "Is there a ～ near here?",
+                  "[このへんに|Kono hen ni] ～[は|wa] [ありますか|arimasu ka]。"
+                ],
+                [
+                  "Is it far?",
+                  "[ここから|Koko kara] [とおいですか|tōi desu ka]。"
+                ],
+                [
+                  "How many minutes?",
+                  "[なんぷん|Nanpun] [ぐらいですか|gurai desu ka]。"
+                ],
+                [
+                  "Once more, slowly",
+                  "[ゆっくり|Yukkuri] [おねがいします|onegaishimasu]。"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "What you hear",
+                "What it means"
+              ],
+              "rows": [
+                [
+                  "[まっすぐです|Massugu desu]。",
+                  "Go straight."
+                ],
+                [
+                  "[みぎに|Migi ni] [まがってください|magatte kudasai]。",
+                  "Turn right."
+                ],
+                [
+                  "[ひだりに|Hidari ni] [まがってください|magatte kudasai]。",
+                  "Turn left."
+                ],
+                [
+                  "[つぎの|Tsugi no] [しんごうです|shingō desu]。",
+                  "At the next traffic light."
+                ],
+                [
+                  "[となりです|Tonari desu]。",
+                  "It's next door."
+                ],
+                [
+                  "[すぐ|Sugu] [そこです|soko desu]。",
+                  "It's right there."
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "**If you don't understand the answer**, don't just nod. Say: **[すみません|sumimasen]、[もういちど|mō ichido] [ゆっくり|yukkuri] [おねがいします|onegaishimasu]。** Japanese people are almost always happy to repeat — and often end up walking you there."
+          ]
+        },
+        {
+          "title": "Floors, and counting them",
+          "body": [
+            "Japanese buildings number floors from 1 at ground level, as in American English (there's no British-style “ground floor”). Basement floors take the prefix [ちか|chika] ([地下|chika])."
+          ],
+          "table": {
+            "head": [
+              "Floor",
+              "Reading",
+              "Floor",
+              "Reading"
+            ],
+            "rows": [
+              [
+                "1 階",
+                "[いっかい|ikkai] ⚠️",
+                "6 階",
+                "[ろっかい|rokkai] ⚠️"
+              ],
+              [
+                "2 階",
+                "[にかい|nikai]",
+                "7 階",
+                "[ななかい|nanakai]"
+              ],
+              [
+                "3 階",
+                "[さんがい|sangai] ⚠️",
+                "8 階",
+                "[はっかい|hakkai] ⚠️"
+              ],
+              [
+                "4 階",
+                "[よんかい|yonkai]",
+                "9 階",
+                "[きゅうかい|kyūkai]"
+              ],
+              [
+                "5 階",
+                "[ごかい|gokai]",
+                "10 階",
+                "[じゅっかい|jukkai] ⚠️"
+              ],
+              [
+                "地下 1 階",
+                "[ちかいっかい|chika ikkai]",
+                "which floor",
+                "[なんがい|nangai] ⚠️"
+              ]
+            ]
+          },
+          "after": [
+            "**The same sound pattern again.** Compare minutes in Unit 4 and hundreds in Unit 3: the numbers 1, 3, 6, 8, 10 are always the troublemakers. Once you recognize the pattern, new counters stop feeling like random memorization."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Places worth knowing by name",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Some places use Japanese words, others loanwords. If you can read katakana, you've already mastered half this list before memorizing it."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Japanese",
+            "Meaning",
+            "Japanese",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "[えき|eki] 駅",
+              "station",
+              "[くうこう|kūkō] 空港",
+              "airport"
+            ],
+            [
+              "[ぎんこう|ginkō] 銀行",
+              "bank",
+              "[ゆうびんきょく|yūbinkyoku] 郵便局",
+              "post office"
+            ],
+            [
+              "[びょういん|byōin] 病院",
+              "hospital",
+              "[やっきょく|yakkyoku] 薬局",
+              "pharmacy"
+            ],
+            [
+              "[としょかん|toshokan] 図書館",
+              "library",
+              "[こうえん|kōen] 公園",
+              "park"
+            ],
+            [
+              "[がっこう|gakkō] 学校",
+              "school",
+              "[だいがく|daigaku] 大学",
+              "university"
+            ],
+            [
+              "[かいしゃ|kaisha] 会社",
+              "company",
+              "[じむしょ|jimusho] 事務所",
+              "office"
+            ],
+            [
+              "[うち|uchi] 家",
+              "home, house",
+              "[へや|heya] 部屋",
+              "room"
+            ],
+            [
+              "[みせ|mise] 店",
+              "shop",
+              "[しょくどう|shokudō] 食堂",
+              "cafeteria, canteen"
+            ],
+            [
+              "[コンビニ|konbini]",
+              "convenience store",
+              "[スーパー|sūpā]",
+              "supermarket"
+            ],
+            [
+              "[レストラン|resutoran]",
+              "restaurant",
+              "[ホテル|hoteru]",
+              "hotel"
+            ],
+            [
+              "[トイレ|toire]",
+              "restroom, toilet",
+              "[エレベーター|erebētā]",
+              "elevator"
+            ],
+            [
+              "[ビル|biru]",
+              "building",
+              "[デパート|depāto]",
+              "department store"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "False friends",
+          "items": [
+            "**ビル** = building (from *building*), not beer. Beer is **ビール**, with a long vowel. One ー mark separates “building” from “beer” — and people really do mix them up.",
+            "**デパート** comes from *department store* — it never means a government department.",
+            "**マンション** comes from *mansion*, but means an **apartment / condo**, not a luxury house.",
+            "**スーパー** comes from *supermarket* — cut off in the middle, like most long loanwords."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Describing your own room",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The best practice for position words is describing the room you're in right now. Read this example, then swap in the things around you:"
+        },
+        {
+          "type": "kotak",
+          "title": "A complete example",
+          "items": [
+            "[わたしの|Watashi no] [へやに|heya ni] [つくえが|tsukue ga] [あります|arimasu]。",
+            "[つくえの|Tsukue no] [うえに|ue ni] [パソコンと|pasokon to] [ほんが|hon ga] [あります|arimasu]。",
+            "[つくえの|Tsukue no] [したに|shita ni] [かばんが|kaban ga] [あります|arimasu]。",
+            "[まどの|Mado no] [ちかくに|chikaku ni] [ベッドが|beddo ga] [あります|arimasu]. ",
+            "[へやの|Heya no] [なかに|naka ni] [ねこが|neko ga] [います|imasu]。",
+            "In my room there's a desk. On the desk there's a laptop and books. Under the desk there's a bag. Near the window there's a bed. In the room there's a cat."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at the last sentence: the cat takes **います**, everything else **あります**. Keep switching between the two until the choice becomes automatic — this is the one part of the unit that really needs repetition."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ja": "[ここ|koko]",
+      "baca": "ここ · koko",
+      "en": "here"
+    },
+    {
+      "ja": "[そこ|soko]",
+      "baca": "そこ · soko",
+      "en": "there (near you)"
+    },
+    {
+      "ja": "[あそこ|asoko]",
+      "baca": "あそこ · asoko",
+      "en": "over there"
+    },
+    {
+      "ja": "[どこ|doko]",
+      "baca": "どこ · doko",
+      "en": "where"
+    },
+    {
+      "ja": "[あります|arimasu]",
+      "baca": "あります · arimasu",
+      "en": "there is (things)"
+    },
+    {
+      "ja": "[います|imasu]",
+      "baca": "います · imasu",
+      "en": "there is (living beings)"
+    },
+    {
+      "ja": "[ありません|arimasen]",
+      "baca": "ありません · arimasen",
+      "en": "there isn't (things)"
+    },
+    {
+      "ja": "[いません|imasen]",
+      "baca": "いません · imasen",
+      "en": "there isn't (living beings)"
+    },
+    {
+      "ja": "[うえ|ue] 上",
+      "baca": "うえ · ue",
+      "en": "on, above"
+    },
+    {
+      "ja": "[した|shita] 下",
+      "baca": "した · shita",
+      "en": "under, below"
+    },
+    {
+      "ja": "[なか|naka] 中",
+      "baca": "なか · naka",
+      "en": "inside"
+    },
+    {
+      "ja": "[そと|soto] 外",
+      "baca": "そと · soto",
+      "en": "outside"
+    },
+    {
+      "ja": "[まえ|mae] 前",
+      "baca": "まえ · mae",
+      "en": "front"
+    },
+    {
+      "ja": "[うしろ|ushiro] 後ろ",
+      "baca": "うしろ · ushiro",
+      "en": "behind"
+    },
+    {
+      "ja": "[となり|tonari] 隣",
+      "baca": "となり · tonari",
+      "en": "next to"
+    },
+    {
+      "ja": "[ちかく|chikaku] 近く",
+      "baca": "ちかく · chikaku",
+      "en": "near, nearby"
+    },
+    {
+      "ja": "[あいだ|aida] 間",
+      "baca": "あいだ · aida",
+      "en": "between"
+    },
+    {
+      "ja": "[みぎ|migi] 右",
+      "baca": "みぎ · migi",
+      "en": "right"
+    },
+    {
+      "ja": "[ひだり|hidari] 左",
+      "baca": "ひだり · hidari",
+      "en": "left"
+    },
+    {
+      "ja": "[まっすぐ|massugu]",
+      "baca": "まっすぐ · massugu",
+      "en": "straight"
+    },
+    {
+      "ja": "[つぎ|tsugi] 次",
+      "baca": "つぎ · tsugi",
+      "en": "next"
+    },
+    {
+      "ja": "[とおい|tōi] 遠い",
+      "baca": "とおい · tōi",
+      "en": "far"
+    },
+    {
+      "ja": "[ちかい|chikai] 近い",
+      "baca": "ちかい · chikai",
+      "en": "near, close"
+    },
+    {
+      "ja": "[えき|eki] 駅",
+      "baca": "えき · eki",
+      "en": "station"
+    },
+    {
+      "ja": "[ぎんこう|ginkō] 銀行",
+      "baca": "ぎんこう · ginkō",
+      "en": "bank"
+    },
+    {
+      "ja": "[ゆうびんきょく|yūbinkyoku] 郵便局",
+      "baca": "ゆうびんきょく · yūbinkyoku",
+      "en": "post office"
+    },
+    {
+      "ja": "[びょういん|byōin] 病院",
+      "baca": "びょういん · byōin",
+      "en": "hospital"
+    },
+    {
+      "ja": "[としょかん|toshokan] 図書館",
+      "baca": "としょかん · toshokan",
+      "en": "library"
+    },
+    {
+      "ja": "[こうえん|kōen] 公園",
+      "baca": "こうえん · kōen",
+      "en": "park"
+    },
+    {
+      "ja": "[だいがく|daigaku] 大学",
+      "baca": "だいがく · daigaku",
+      "en": "university"
+    },
+    {
+      "ja": "[かいしゃ|kaisha] 会社",
+      "baca": "かいしゃ · kaisha",
+      "en": "company"
+    },
+    {
+      "ja": "[じむしょ|jimusho] 事務所",
+      "baca": "じむしょ · jimusho",
+      "en": "office"
+    },
+    {
+      "ja": "[うち|uchi] 家",
+      "baca": "うち · uchi",
+      "en": "home, house"
+    },
+    {
+      "ja": "[へや|heya] 部屋",
+      "baca": "へや · heya",
+      "en": "room"
+    },
+    {
+      "ja": "[まど|mado] 窓",
+      "baca": "まど · mado",
+      "en": "window"
+    },
+    {
+      "ja": "[みち|michi] 道",
+      "baca": "みち · michi",
+      "en": "road, street"
+    },
+    {
+      "ja": "[しんごう|shingō] 信号",
+      "baca": "しんごう · shingō",
+      "en": "traffic light"
+    },
+    {
+      "ja": "[かいだん|kaidan] 階段",
+      "baca": "かいだん · kaidan",
+      "en": "stairs"
+    },
+    {
+      "ja": "[いりぐち|iriguchi] 入口",
+      "baca": "いりぐち · iriguchi",
+      "en": "entrance"
+    },
+    {
+      "ja": "[かい|kai] 階",
+      "baca": "かい · kai",
+      "en": "floor (story)"
+    },
+    {
+      "ja": "[コンビニ|konbini]",
+      "baca": "コンビニ · konbini",
+      "en": "convenience store"
+    },
+    {
+      "ja": "[スーパー|sūpā]",
+      "baca": "スーパー · sūpā",
+      "en": "supermarket"
+    },
+    {
+      "ja": "[ビル|biru]",
+      "baca": "ビル · biru",
+      "en": "building"
+    },
+    {
+      "ja": "[ねこ|neko] 猫",
+      "baca": "ねこ · neko",
+      "en": "cat"
+    },
+    {
+      "ja": "[いぬ|inu] 犬",
+      "baca": "いぬ · inu",
+      "en": "dog"
+    },
+    {
+      "ja": "[ぐらい|gurai]",
+      "baca": "ぐらい · gurai",
+      "en": "about, roughly"
+    },
+    {
+      "ja": "[きをつけて|ki o tsukete] 気をつけて",
+      "baca": "きをつけて · ki o tsukete",
+      "en": "take care"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose あります or います.",
+      "items": [
+        "つくえのうえにほんが ___ 。",
+        "きょうしつにせんせいが ___ 。",
+        "かばんのなかにさいふが ___ 。",
+        "こうえんにいぬが ___ 。",
+        "へやのなかにテレビが ___ 。",
+        "うちにねこが ___ 。"
+      ]
+    },
+    {
+      "prompt": "Fill in the missing particle.",
+      "items": [
+        "トイレ ___ どこですか。",
+        "1かい ___ コンビニがあります。",
+        "きょうしつ ___ せんせいがいます。",
+        "ぎんこう ___ となりです。",
+        "ここ ___ とおいですか。",
+        "ぎんこう ___ コンビニのあいだにあります。"
+      ]
+    },
+    {
+      "prompt": "Write the right position word in kana.",
+      "items": [
+        "on: ___",
+        "under: ___",
+        "inside: ___",
+        "next to: ___",
+        "in front of: ___",
+        "between: ___"
+      ]
+    },
+    {
+      "prompt": "Arrange the tiles into a correct sentence.",
+      "items": [
+        "トイレ / は / どこ / です / か",
+        "つくえ / の / うえ / に / ほん / が / あります",
+        "きょうしつ / に / せんせい / が / います",
+        "ぎんこう / は / えき / の / ちかく / です",
+        "この / みち / を / まっすぐ / です",
+        "ここ / から / あるいて / ごふん / ぐらい / です"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "ゆうびんきょくはぎんこうのとなりにあります。",
+        "へやのなかにねこがいます。",
+        "このビルにATMはありますか。",
+        "しんごうをみぎにまがってください。",
+        "えきからとおいですか。"
+      ]
+    },
+    {
+      "prompt": "Translate into Japanese. Write in rōmaji.",
+      "items": [
+        "Where is the restroom?",
+        "There's a book on the desk.",
+        "There's a teacher in the classroom.",
+        "There's no convenience store.",
+        "It's close from here."
+      ]
+    }
+  ],
+  "answers": [
+    "あります — います — あります — います — あります — います",
+    "は — に — に — の — から — と",
+    "うえ — した — なか — となり — まえ — あいだ",
+    "トイレ は どこ です か — つくえ の うえ に ほん が あります — きょうしつ に せんせい が います — ぎんこう は えき の ちかく です — この みち を まっすぐ です — ここ から あるいて ごふん ぐらい です",
+    "The post office is next to the bank. — There's a cat in the room. — Is there an ATM in this building? — Please turn right at the traffic light. — Is it far from the station?",
+    "toire wa doko desu ka — tsukue no ue ni hon ga arimasu — kyōshitsu ni sensei ga imasu — konbini wa arimasen — koko kara chikai desu"
+  ],
+  "wave": "Review Unit 4 while using this unit: describe your schedule today together with the places — “at 9 at the office, at 12 in the cafeteria, at 6 back home”. Time and place are the two backbones of everyday sentences; practicing them together is far more useful than separately."
+}

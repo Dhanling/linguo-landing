@@ -1,0 +1,507 @@
+{
+  "title": "What time, what day",
+  "title_target": "몇 시예요 — Myeot siyeyo",
+  "goal": "Tell the time using both number systems at once, say days and dates, make plans, and use 부터 … 까지 for time spans.",
+  "bekal": [
+    "read hours with native Korean numbers and minutes with Sino-Korean numbers",
+    "name the seven days of the week",
+    "read dates from largest to smallest",
+    "use 에 for time and know when to leave it out",
+    "make a simple plan with 언제 and 몇 시에"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — Making plans",
+      "intro": "Suji asks Ani to study together. Notice how, within a single time expression, both number systems work side by side without getting in each other's way.",
+      "lines": [
+        {
+          "speaker": "수지:",
+          "text": "[아니|Ani] [씨|ssi], [오늘|oneul] [몇|myeot] [시에|sie] [수업이|sueobi] [끝나요|kkeunnayo]?",
+          "id": "Ani, what time does your class finish today?",
+          "literal": "Ani — Ms., today — what — hour-at — class — subject — finish?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[네|Ne] [시에|sie] [끝나요|kkeunnayo]. [왜요|Waeyo]?",
+          "id": "It finishes at four. Why?",
+          "literal": "four — hour-at — finish. why — (polite)?"
+        },
+        {
+          "speaker": "수지:",
+          "text": "[같이|Gachi] [공부해요|gongbuhaeyo]. [네|Ne] [시|si] [반에|bane] [어때요|eottaeyo]?",
+          "id": "Let's study together. How about four thirty?",
+          "literal": "together — study. four — hour — half-at — how-is-it?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[좋아요|Joayo]. [어디에서|Eodieseo] [만나요|mannayo]?",
+          "id": "Sure. Where shall we meet?",
+          "literal": "good. where-at — meet?"
+        },
+        {
+          "speaker": "수지:",
+          "text": "[도서관|Doseogwan] [앞에서|apeseo] [만나요|mannayo]. [도서관은|Doseogwaneun] [아홉|ahop] [시부터|sibuteo] [열|yeol] [시까지|sikkaji] [열어요|yeoreoyo].",
+          "id": "Let's meet in front of the library. The library is open from nine to ten.",
+          "literal": "library — front-at — meet. library — as-for — nine — hour-from — ten — hour-until — open."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[알겠어요|Algesseoyo]. [그런데|Geureonde] [내일은|naeireun] [무슨|museun] [요일이에요|yoirieyo]?",
+          "id": "Got it. By the way, what day is tomorrow?",
+          "literal": "understood. by-the-way, tomorrow — as-for — what — day — is?"
+        },
+        {
+          "speaker": "수지:",
+          "text": "[내일은|Naeireun] [금요일이에요|geumyoirieyo]. [모레는|Moreneun] [토요일이에요|toyoirieyo].",
+          "id": "Tomorrow is Friday. The day after is Saturday.",
+          "literal": "tomorrow — as-for — Friday — is. day-after-tomorrow — as-for — Saturday — is."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[토요일에|Toyoire] [시험이|siheomi] [있어요|isseoyo]?",
+          "id": "Is there an exam on Saturday?",
+          "literal": "Saturday-on — exam — subject — exists?"
+        },
+        {
+          "speaker": "수지:",
+          "text": "[아니요|Aniyo], [시험은|siheomeun] [다음|daeum] [주|ju] [월요일이에요|woryoirieyo]. [유월|Yuwol] [십오일이에요|sibo-irieyo].",
+          "id": "No, the exam is next Monday. June fifteenth.",
+          "literal": "no, exam — as-for — next — week — Monday — is. June — fifteenth-day — is."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[아직|Ajik] [시간이|sigani] [있어요|isseoyo]. [다행이에요|Dahaengieyo].",
+          "id": "There's still time. What a relief.",
+          "literal": "still — time — subject — exists. relief — is."
+        },
+        {
+          "speaker": "수지:",
+          "text": "[그럼|Geureom] [이따가|ittaga] [봐요|bwayo]!",
+          "id": "See you later, then!",
+          "literal": "then, later-today — see!"
+        }
+      ],
+      "notes": [
+        "**One time expression uses both number systems.** 네 시 십 분 = ten past four. **네** is native Korean for the hour, **십** is Sino-Korean for the minutes. It's not chaos: hours are counted as an *amount*, minutes are read as a *figure*. Once you accept that, it never confuses you again.",
+        "**반 means half, and it goes after 시.** 네 시 반 = four thirty, half past four. Korean counts from the hour that has **already passed**, just like English, so there's no trap here — simply \"four hour half\".",
+        "**The time particle 에 is used for hours, days and dates — but not for every time word.** 세 시**에**, 월요일**에**, 유월**에** all take 에. But **오늘, 내일, 어제, 지금, 언제, 매일** never do — just as English says \"at three\" but never \"at today\". 오늘에 만나요 is wrong; it's 오늘 만나요.",
+        "**부터 … 까지 for time, 에서 … 까지 for place.** 아홉 시**부터** 열 시**까지** (from nine to ten); 집**에서** 학교**까지** (from home to school). An easy pair to mix up, and a mix-up sounds wrong immediately.",
+        "**무슨 요일이에요? is the standard way to ask the day.** Note that 무슨 (\"what\") is used before a noun, while 뭐 stands alone. 무슨 책이에요? (what book?) but 이거 뭐예요? (what's this?).",
+        "**알겠어요 means \"I see\" or \"okay, got it\".** It looks like a future/past form of 알다 (to know) but means \"understood\" right now. Its opposite is 모르겠어요 (\"I'm not sure\"), far gentler than 몰라요 (\"I don't know\"), which can sound curt.",
+        "**어때요? is the Swiss Army knife of conversation.** It means \"how about it?\", used to suggest (네 시 반에 어때요?), ask an opinion (이거 어때요?), and ask how things are (한국 생활 어때요?). One word, three jobs.",
+        "**이따가 and 나중에 both mean \"later\".** 이따가 means later **today**, within hours. 나중에 means some vague later — next week, or never. Saying 나중에 봐요 to someone commits nobody to anything."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "Hours use **native Korean numbers + 시**. Minutes use **Sino-Korean numbers + 분**. No exceptions."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Korean",
+              "Romanization"
+            ],
+            "rows": [
+              [
+                "1:00",
+                "한 시",
+                "han si"
+              ],
+              [
+                "2:00",
+                "두 시",
+                "du si"
+              ],
+              [
+                "3:30",
+                "세 시 반",
+                "se si ban"
+              ],
+              [
+                "4:10",
+                "네 시 십 분",
+                "ne si sip bun"
+              ],
+              [
+                "7:15",
+                "일곱 시 십오 분",
+                "ilgop si sibo bun"
+              ],
+              [
+                "9:45",
+                "아홉 시 사십오 분",
+                "ahop si sasibo bun"
+              ],
+              [
+                "12:00 noon",
+                "낮 열두 시",
+                "nat yeoldu si"
+              ],
+              [
+                "What time is it?",
+                "몇 시예요?",
+                "myeot siyeyo"
+              ],
+              [
+                "What time (shall we meet)?",
+                "몇 시에 만나요?",
+                "myeot sie mannayo"
+              ]
+            ]
+          },
+          "after": [
+            "**오전 and 오후 go in front**, not behind like a.m. and p.m.: 오전 아홉 시 (9 a.m.), 오후 세 시 (3 p.m.). For evening and night, use 저녁 or 밤: 밤 열 시.",
+            "Korean uses morning/afternoon markers less than English uses a.m./p.m., since the 24-hour clock is common in written schedules. In conversation, context is usually enough."
+          ]
+        },
+        {
+          "title": "Days and dates",
+          "body": [
+            "The seven days follow one pattern: an element of nature + 요일. Dates use Sino-Korean numbers throughout."
+          ],
+          "table": {
+            "head": [
+              "Day",
+              "Korean",
+              "Element",
+              "Day",
+              "Korean",
+              "Element"
+            ],
+            "rows": [
+              [
+                "Monday",
+                "월요일",
+                "월 = moon",
+                "Friday",
+                "금요일",
+                "금 = gold"
+              ],
+              [
+                "Tuesday",
+                "화요일",
+                "화 = fire",
+                "Saturday",
+                "토요일",
+                "토 = earth"
+              ],
+              [
+                "Wednesday",
+                "수요일",
+                "수 = water",
+                "Sunday",
+                "일요일",
+                "일 = sun"
+              ],
+              [
+                "Thursday",
+                "목요일",
+                "목 = wood",
+                "weekend",
+                "주말",
+                "주 = week"
+              ]
+            ]
+          },
+          "after": [
+            "**Dates go from largest to smallest: year – month – day.** 2026년 6월 15일 = June 15, 2026. The same applies to addresses: country, city, street, number.",
+            "⚠️ **Two months break the pattern.** June should be 육월 but is written and read **유월**; October should be 십월 but becomes **시월**. Purely for ease of pronunciation. Learn these two separately — every other month follows number + 월."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The most common time words",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "한국어",
+            "Romanization",
+            "English",
+            "한국어",
+            "Romanization",
+            "English"
+          ],
+          "rows": [
+            [
+              "그저께",
+              "geujeokke",
+              "day before yesterday",
+              "지난주",
+              "jinanju",
+              "last week"
+            ],
+            [
+              "어제",
+              "eoje",
+              "yesterday",
+              "이번 주",
+              "ibeon ju",
+              "this week"
+            ],
+            [
+              "오늘",
+              "oneul",
+              "today",
+              "다음 주",
+              "daeum ju",
+              "next week"
+            ],
+            [
+              "내일",
+              "naeil",
+              "tomorrow",
+              "지난달",
+              "jinandal",
+              "last month"
+            ],
+            [
+              "모레",
+              "more",
+              "day after tomorrow",
+              "다음 달",
+              "daeum dal",
+              "next month"
+            ],
+            [
+              "아침",
+              "achim",
+              "morning",
+              "지금",
+              "jigeum",
+              "now"
+            ],
+            [
+              "점심",
+              "jeomsim",
+              "midday, lunch",
+              "이따가",
+              "ittaga",
+              "later (today)"
+            ],
+            [
+              "저녁",
+              "jeonyeok",
+              "evening",
+              "나중에",
+              "najunge",
+              "later (some time)"
+            ],
+            [
+              "밤",
+              "bam",
+              "night",
+              "언제",
+              "eonje",
+              "when"
+            ],
+            [
+              "주말",
+              "jumal",
+              "weekend",
+              "시간",
+              "sigan",
+              "time, hours (duration)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "시 vs. 시간",
+          "items": [
+            "**시** names a point in time: 세 시 = three o'clock.",
+            "**시간** names a duration: 세 시간 = three hours.",
+            "세 시에 만나요 = meet at three. 세 시간 공부해요 = study for three hours. One syllable apart, worlds apart in meaning.",
+            "The same holds for 분: 십 분 can mean \"ten past\" or \"ten minutes long\" — here context comes to the rescue."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "시",
+      "baca": "si",
+      "en": "o'clock, hour"
+    },
+    {
+      "ko": "분",
+      "baca": "bun",
+      "en": "minute"
+    },
+    {
+      "ko": "반",
+      "baca": "ban",
+      "en": "half"
+    },
+    {
+      "ko": "시간",
+      "baca": "sigan",
+      "en": "time, hours (duration)"
+    },
+    {
+      "ko": "몇 시",
+      "baca": "myeot si",
+      "en": "what time"
+    },
+    {
+      "ko": "언제",
+      "baca": "eonje",
+      "en": "when"
+    },
+    {
+      "ko": "요일",
+      "baca": "yoil",
+      "en": "day of the week"
+    },
+    {
+      "ko": "무슨",
+      "baca": "museun",
+      "en": "what (before a noun)"
+    },
+    {
+      "ko": "월요일",
+      "baca": "woryoil",
+      "en": "Monday"
+    },
+    {
+      "ko": "금요일",
+      "baca": "geumyoil",
+      "en": "Friday"
+    },
+    {
+      "ko": "토요일",
+      "baca": "toyoil",
+      "en": "Saturday"
+    },
+    {
+      "ko": "일요일",
+      "baca": "iryoil",
+      "en": "Sunday"
+    },
+    {
+      "ko": "주말",
+      "baca": "jumal",
+      "en": "weekend"
+    },
+    {
+      "ko": "내일",
+      "baca": "naeil",
+      "en": "tomorrow"
+    },
+    {
+      "ko": "모레",
+      "baca": "more",
+      "en": "day after tomorrow"
+    },
+    {
+      "ko": "다음 주",
+      "baca": "daeum ju",
+      "en": "next week"
+    },
+    {
+      "ko": "부터",
+      "baca": "buteo",
+      "en": "from (time)"
+    },
+    {
+      "ko": "까지",
+      "baca": "kkaji",
+      "en": "until, to"
+    },
+    {
+      "ko": "수업",
+      "baca": "sueop",
+      "en": "class, lesson"
+    },
+    {
+      "ko": "시험",
+      "baca": "siheom",
+      "en": "exam"
+    },
+    {
+      "ko": "끝나요",
+      "baca": "kkeunnayo",
+      "en": "to finish"
+    },
+    {
+      "ko": "열어요",
+      "baca": "yeoreoyo",
+      "en": "to open"
+    },
+    {
+      "ko": "어때요",
+      "baca": "eottaeyo",
+      "en": "how is it, how about"
+    },
+    {
+      "ko": "알겠어요",
+      "baca": "algesseoyo",
+      "en": "I see, okay"
+    },
+    {
+      "ko": "이따가",
+      "baca": "ittaga",
+      "en": "later (today)"
+    },
+    {
+      "ko": "아직",
+      "baca": "ajik",
+      "en": "still, not yet"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these times in hangeul.",
+      "items": [
+        "2:00",
+        "4:30",
+        "7:20",
+        "9:00",
+        "12:15"
+      ]
+    },
+    {
+      "prompt": "Fill in 에, or write X if no particle is used.",
+      "items": [
+        "세 시____ 만나요.",
+        "오늘____ 수업이 있어요.",
+        "월요일____ 시험이 있어요.",
+        "내일____ 도서관에 가요.",
+        "저녁____ 드라마를 봐요.",
+        "지금____ 뭐 해요?"
+      ]
+    },
+    {
+      "prompt": "Translate into Korean.",
+      "items": [
+        "What time is it now?",
+        "What day is tomorrow?",
+        "The exam is on Monday.",
+        "The library is open from nine to ten.",
+        "Let's meet at four thirty."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "만나요 / 시에 / 네 / 도서관에서",
+        "시험이 / 다음 주 / 있어요 / 월요일에",
+        "끝나요 / 몇 / 수업이 / 시에 / ?",
+        "열어요 / 열 / 아홉 / 시까지 / 시부터",
+        "요일이에요 / 내일은 / 무슨 / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "두 시 — 네 시 반 — 일곱 시 이십 분 — 아홉 시 — 열두 시 십오 분",
+    "에 — X — 에 — X — 에 — X",
+    "지금 몇 시예요? — 내일은 무슨 요일이에요? — 시험은 월요일이에요. — 도서관은 아홉 시부터 열 시까지 열어요. — 네 시 반에 만나요.",
+    "네 시에 도서관에서 만나요. — 다음 주 월요일에 시험이 있어요. — 수업이 몇 시에 끝나요? — 아홉 시부터 열 시까지 열어요. — 내일은 무슨 요일이에요?"
+  ]
+}

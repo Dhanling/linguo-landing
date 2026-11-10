@@ -1,0 +1,463 @@
+{
+  "title": "At the market",
+  "title_target": "En el mercado",
+  "goal": "Buy groceries by quantity, point at things, and use verbs that split in the middle.",
+  "bekal": [
+    "buying by quantity (*un kilo de…*)",
+    "pointing with *este*, *ese*, *aquel*",
+    "using verbs that split in the middle",
+    "turning down an offer politely"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — En el mercado",
+      "intro": "A traditional market, where prices are per kilo and the queue has rules of its own.",
+      "lines": [
+        {
+          "speaker": "Vendedor:",
+          "text": "¿Quién es el último?",
+          "id": "Who's last?",
+          "literal": "who is the last?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Yo. ¿Qué tal? Quisiera un kilo de tomates.",
+          "id": "Me. How are you? I'd like a kilo of tomatoes.",
+          "literal": "I. how-goes? I-would-want a kilo of tomatoes."
+        },
+        {
+          "speaker": "Vendedor:",
+          "text": "¿Estos o aquellos? Estos están más maduros.",
+          "id": "These or those? These are riper.",
+          "literal": "these or those? these they-are more ripe."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Esos de ahí, por favor. ¿A cuánto están?",
+          "id": "Those ones, please. How much are they today?",
+          "literal": "those of there, please. at how-much they-are?"
+        },
+        {
+          "speaker": "Vendedor:",
+          "text": "A dos euros el kilo. Están muy buenos hoy.",
+          "id": "Two euros a kilo. They're very good today.",
+          "literal": "at two euros the kilo. they-are very good today."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vale. Y medio kilo de queso, por favor.",
+          "id": "OK. And half a kilo of cheese, please.",
+          "literal": "OK. and half kilo of cheese, please."
+        },
+        {
+          "speaker": "Vendedor:",
+          "text": "¿Algo más? Tengo naranjas muy dulces.",
+          "id": "Anything else? I have some very sweet oranges.",
+          "literal": "something more? I-have oranges very sweet."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "No me gustan mucho las naranjas. ¿Tiene manzanas?",
+          "id": "I'm not so keen on oranges. Do you have apples?",
+          "literal": "not to-me please(plural) much the oranges. you(formal)-have apples?"
+        },
+        {
+          "speaker": "Vendedor:",
+          "text": "Sí, un kilo son tres euros.",
+          "id": "Yes, three euros a kilo.",
+          "literal": "yes, a kilo are three euros."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Entonces un kilo. ¿Cuánto es todo?",
+          "id": "Then a kilo. How much is everything?",
+          "literal": "then a kilo. how-much is all?"
+        },
+        {
+          "speaker": "Vendedor:",
+          "text": "Ocho euros con veinte. ¿Tiene suelto?",
+          "id": "Eight euros twenty. Do you have any change?",
+          "literal": "eight euros with twenty. you(formal)-have small-change?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Solo tengo un billete de veinte. Lo siento.",
+          "id": "I only have a twenty. Sorry.",
+          "literal": "only I-have a bill of twenty. it I-regret."
+        }
+      ],
+      "notes": [
+        "**¿Quién es el último?** is the unwritten queuing rule at Spanish markets: people don't stand in a neat line, they ask who arrived last and remember that face. If someone asks after you arrive, answer *yo*.",
+        "**¿A cuánto están?** is for goods whose price changes — vegetables, fruit, fish. *¿Cuánto cuesta?* is for things with a fixed price. Using *cuesta* at the market isn't wrong, just a bit less natural.",
+        "**Vale** = \"OK\", the most-said word in Spain after *hola*. In Latin America the equivalent is *está bien* or *bueno*.",
+        "**Quantities use de.** *Un kilo **de** tomates*, *medio kilo **de** queso*, *una botella **de** agua*, *un poco **de** azúcar*. It's like English \"of\" — except Spanish never drops it: \"a little sugar\" is still *un poco de azúcar*.",
+        "**Están muy buenos** uses *estar*, not *ser* — because it's about how they taste today, not tomatoes in general. Remember the pair *ser bueno* (good) vs *estar bueno* (tasty) from Unit 11.",
+        "**No me gustan mucho** = \"I'm not so keen on them\", much softer than *no me gustan*. Adding *mucho* softens the no, just like \"not really\" in English.",
+        "**Suelto** = loose change or small notes. *Un billete* is a banknote, *una moneda* a coin. You'll hear *¿tiene suelto?* almost every day at the market.",
+        "**Lo siento** = \"sorry\" for something you regret. Different from *perdón / perdone*, used to interrupt or say \"excuse me\"."
+      ],
+      "grammars": [
+        {
+          "title": "Este, ese, aquel — pointing at things",
+          "body": [
+            "Spanish distinguishes **three** distances, not two like English: near the speaker, near the listener, and far from both."
+          ],
+          "table": {
+            "head": [
+              "Distance",
+              "Masculine",
+              "Feminine",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "near me",
+                "**este / estos**",
+                "**esta / estas**",
+                "this / these"
+              ],
+              [
+                "near you",
+                "**ese / esos**",
+                "**esa / esas**",
+                "that / those"
+              ],
+              [
+                "far from us both",
+                "**aquel / aquellos**",
+                "**aquella / aquellas**",
+                "that / those (over there)"
+              ]
+            ]
+          },
+          "after": [
+            "All of them can stand alone without a noun: *quiero este* (I want this one), *esos de ahí* (those ones there). The matching place words: *aquí* (here) — *ahí* (there, by you) — *allí* (over there).",
+            "There's one more, genderless form: *esto*, *eso*, *aquello*, used for things that don't have a name yet. *¿Qué es esto?* — what's this? You'll never use it in front of a noun."
+          ]
+        },
+        {
+          "title": "Verbs that split in the middle",
+          "body": [
+            "A large group of verbs change the vowel in the **stressed syllable**. Since the stress in *nosotros* and *vosotros* falls on the ending, those two rows escape the change — and that's the trademark of the whole group."
+          ],
+          "table": {
+            "head": [
+              "",
+              "querer (e→ie)",
+              "poder (o→ue)",
+              "pedir (e→i)"
+            ],
+            "rows": [
+              [
+                "yo",
+                "qu**ie**ro",
+                "p**ue**do",
+                "p**i**do"
+              ],
+              [
+                "tú",
+                "qu**ie**res",
+                "p**ue**des",
+                "p**i**des"
+              ],
+              [
+                "él / ella / usted",
+                "qu**ie**re",
+                "p**ue**de",
+                "p**i**de"
+              ],
+              [
+                "nosotros",
+                "queremos",
+                "podemos",
+                "pedimos"
+              ],
+              [
+                "vosotros",
+                "queréis",
+                "podéis",
+                "pedís"
+              ],
+              [
+                "ellos / ustedes",
+                "qu**ie**ren",
+                "p**ue**den",
+                "p**i**den"
+              ]
+            ]
+          },
+          "after": [
+            "Other **e→ie** verbs: *empezar* (to begin), *preferir* (to prefer), *entender* (to understand), *pensar* (to think), *cerrar* (to close). **o→ue** verbs: *costar* (to cost), *dormir* (to sleep), *volver* (to come back), *encontrar* (to find), *jugar* (to play, the only u→ue).",
+            "Dictionaries don't mark this change, so the safest way is to learn the *yo* form along with the verb from the start: not *poder*, but *poder / puedo*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "At the market",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Quantity",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "un kilo de…",
+              "a kilo",
+              "*un kilo de tomates*"
+            ],
+            [
+              "medio kilo de…",
+              "half a kilo",
+              "*medio kilo de queso*"
+            ],
+            [
+              "cien gramos de…",
+              "a hundred grams",
+              "*cien gramos de jamón*"
+            ],
+            [
+              "un litro de…",
+              "a liter",
+              "*un litro de leche*"
+            ],
+            [
+              "una docena de…",
+              "a dozen",
+              "*una docena de huevos*"
+            ],
+            [
+              "un paquete de…",
+              "a packet",
+              "*un paquete de arroz*"
+            ],
+            [
+              "una botella de…",
+              "a bottle",
+              "*una botella de aceite*"
+            ],
+            [
+              "una lata de…",
+              "a can",
+              "*una lata de atún*"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Español",
+            "Meaning",
+            "Español",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "el tomate",
+              "tomato",
+              "la manzana",
+              "apple"
+            ],
+            [
+              "la patata",
+              "potato",
+              "el plátano",
+              "banana"
+            ],
+            [
+              "la cebolla",
+              "onion",
+              "la naranja",
+              "orange"
+            ],
+            [
+              "el ajo",
+              "garlic",
+              "la fresa",
+              "strawberry"
+            ],
+            [
+              "la zanahoria",
+              "carrot",
+              "la uva",
+              "grape"
+            ],
+            [
+              "el queso",
+              "cheese",
+              "el huevo",
+              "egg"
+            ],
+            [
+              "el jamón",
+              "ham",
+              "el pollo",
+              "chicken"
+            ],
+            [
+              "el pan",
+              "bread",
+              "el aceite",
+              "oil"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Culture corner",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "No haggling — except in one place",
+          "items": [
+            "In Spanish shops and markets, prices are **not haggled over**. Bargaining at a *mercado* is considered rude. The one place where haggling is normal is *el mercadillo* — the weekly flea market selling secondhand goods and cheap clothes.",
+            "Displayed prices already include tax (*IVA*). The number on the label is what you pay — nothing is added at the till, unlike in the United States.",
+            "*Las rebajas* is the official sales season, twice a year: January and July. The discounts are real and big, and the first day is incredibly busy.",
+            "Commas and periods are the reverse of English: *2,50 €* means two euros fifty, and *1.500 €* means one thousand five hundred. The euro sign also goes after the number."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "es": "el mercado",
+      "baca": "ehl mehr-KAH-doh",
+      "en": "market"
+    },
+    {
+      "es": "¿a cuánto están?",
+      "baca": "ah KWAHN-toh ehs-TAHN",
+      "en": "how much a kilo?"
+    },
+    {
+      "es": "en efectivo",
+      "baca": "ehn eh-fehk-TEE-boh",
+      "en": "cash"
+    },
+    {
+      "es": "el suelto",
+      "baca": "ehl SWEHL-toh",
+      "en": "small change"
+    },
+    {
+      "es": "el kilo",
+      "baca": "ehl KEE-loh",
+      "en": "kilo"
+    },
+    {
+      "es": "medio kilo",
+      "baca": "MEH-dyoh KEE-loh",
+      "en": "half a kilo"
+    },
+    {
+      "es": "la docena",
+      "baca": "lah doh-SEH-nah",
+      "en": "dozen"
+    },
+    {
+      "es": "el tomate",
+      "baca": "ehl toh-MAH-teh",
+      "en": "tomato"
+    },
+    {
+      "es": "la manzana",
+      "baca": "lah mahn-SAH-nah",
+      "en": "apple"
+    },
+    {
+      "es": "el queso",
+      "baca": "ehl KEH-soh",
+      "en": "cheese"
+    },
+    {
+      "es": "maduro / dulce",
+      "baca": "mah-DOO-roh / DOOL-seh",
+      "en": "ripe / sweet"
+    },
+    {
+      "es": "este / ese / aquel",
+      "baca": "EHS-teh / EH-seh / ah-KEHL",
+      "en": "this / that / that over there"
+    },
+    {
+      "es": "vale",
+      "baca": "BAH-leh",
+      "en": "OK"
+    },
+    {
+      "es": "lo siento",
+      "baca": "loh SYEHN-toh",
+      "en": "sorry"
+    },
+    {
+      "es": "la tienda",
+      "baca": "lah TYEHN-dah",
+      "en": "shop, store"
+    },
+    {
+      "es": "buscar",
+      "baca": "boos-KAHR",
+      "en": "to look for"
+    },
+    {
+      "es": "los zapatos",
+      "baca": "sah-PAH-tohs",
+      "en": "shoes"
+    },
+    {
+      "es": "preferir",
+      "baca": "preh-feh-REER",
+      "en": "to prefer"
+    },
+    {
+      "es": "barato / caro",
+      "baca": "bah-RAH-toh / KAH-roh",
+      "en": "cheap / expensive"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right pointing word (*este*, *esta*, *estos*, *estas*).",
+      "items": [
+        "Me gusta ____ camisa.",
+        "____ zapatos son muy caros.",
+        "¿Cuánto cuesta ____ vestido?",
+        "____ manzanas están muy buenas.",
+        "¿Qué es ____ ?"
+      ]
+    },
+    {
+      "prompt": "Fill in the right form of the verb in brackets.",
+      "items": [
+        "Yo (preferir) ____ la camisa azul.",
+        "¿Tú (poder) ____ ayudarme?",
+        "La falda (costar) ____ treinta euros.",
+        "Nosotros (querer) ____ pagar en efectivo.",
+        "Ellos (dormir) ____ mucho los domingos."
+      ]
+    },
+    {
+      "prompt": "Put the words in order to make a correct Spanish sentence.",
+      "items": [
+        "cuesta / ¿ / cuánto / ?",
+        "gusta / no / me / negro / el",
+        "llevo / la / me",
+        "tomates / kilo / un / de",
+        "grande / me / queda"
+      ]
+    }
+  ],
+  "answers": [
+    "esta — estos — este — estas — esto",
+    "prefiero — puedes — cuesta — queremos — duermen",
+    "¿Cuánto cuesta? — No me gusta el negro. — Me la llevo. — Un kilo de tomates. — Me queda grande."
+  ],
+  "wave": "Review **Unit 12**: describe your town in five sentences, with *ser*, *estar* and *hay* each in the right place."
+}

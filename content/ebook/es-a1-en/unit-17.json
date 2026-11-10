@@ -1,0 +1,383 @@
+{
+  "title": "Asking for directions",
+  "title_target": "¿Cómo llego?",
+  "goal": "Ask the way, understand directions, and use both informal and polite commands.",
+  "bekal": [
+    "asking the way to a place",
+    "understanding directions spoken fast",
+    "using command forms",
+    "asking someone to repeat when you miss it"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — En la calle",
+      "intro": "Asking a police officer. Every verb she uses is a polite command.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Perdone, ¿cómo llego a la estación?",
+          "id": "Excuse me, how do I get to the station?",
+          "literal": "forgive(formal), how I-arrive to-the station?"
+        },
+        {
+          "speaker": "Policía:",
+          "text": "Siga todo recto hasta la plaza.",
+          "id": "Keep going straight until the square.",
+          "literal": "continue(formal) all straight until the square."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Y después de la plaza?",
+          "id": "And after the square?",
+          "literal": "and after of the square?"
+        },
+        {
+          "speaker": "Policía:",
+          "text": "Gire a la derecha y tome la segunda calle.",
+          "id": "Turn right and take the second street.",
+          "literal": "turn(formal) to-the right and take(formal) the second street."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿La segunda a la derecha?",
+          "id": "The second on the right?",
+          "literal": "the second to the right?"
+        },
+        {
+          "speaker": "Policía:",
+          "text": "Exacto. Cruce el semáforo y siga cien metros.",
+          "id": "Exactly. Cross at the traffic lights and carry on for a hundred meters.",
+          "literal": "exact. cross(formal) the traffic-light and continue(formal) one-hundred meters."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Está muy lejos? Tengo prisa.",
+          "id": "Is it very far? I'm in a hurry.",
+          "literal": "it-is-located very far? I-have hurry."
+        },
+        {
+          "speaker": "Policía:",
+          "text": "Diez minutos a pie. También puede tomar el autobús número cinco.",
+          "id": "Ten minutes on foot. You can also take the number five bus.",
+          "literal": "ten minutes on foot. also you(formal)-can take the bus number five."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Y dónde está la parada?",
+          "id": "And where's the bus stop?",
+          "literal": "and where it-is-located the stop?"
+        },
+        {
+          "speaker": "Policía:",
+          "text": "Enfrente del banco. No tiene pérdida.",
+          "id": "In front of the bank. You can't miss it.",
+          "literal": "in-front of-the bank. not you(formal)-have loss."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Muchas gracias. ¿Me lo repite, por favor?",
+          "id": "Thank you very much. Could you repeat that, please?",
+          "literal": "many thanks. to-me-it you(formal)-repeat, please?"
+        },
+        {
+          "speaker": "Policía:",
+          "text": "Claro. Todo recto, segunda a la derecha, y está allí.",
+          "id": "Of course. Straight on, second on the right, and you're there.",
+          "literal": "of-course. all straight, second to the right, and it-is-located there."
+        }
+      ],
+      "notes": [
+        "**Polite commands are formed by swapping the vowel.** Take the present *yo* form, drop the -o, and add the **opposite** vowel: -ar verbs get **-e** (*girar → gire*), -er/-ir verbs get **-a** (*comer → coma*, *seguir → siga*). This swap — not an extra word — is what makes the sentence sound formal.",
+        "**With friends, the form is actually simpler:** exactly the same as the \"he/she\" form. *Sigue todo recto*, *gira a la derecha*, *toma el autobús*. So *gire* for someone you call *usted*, *gira* for someone you call *tú*.",
+        "**Ordinals: primero, segundo, tercero, cuarto, quinto.** Two of them shorten before a masculine singular noun: *el primer día*, *el tercer piso* — but stay whole for feminine ones: *la primera calle*.",
+        "**Many physical states use tener where English uses \"be\".** *Tengo prisa* (I'm in a hurry), *tengo hambre* (I'm hungry), *tengo sed* (I'm thirsty), *tengo frío* (I'm cold), *tengo sueño* (I'm sleepy). You \"have\" them all, just like age in Unit 7.",
+        "**Coger or tomar?** In Spain *coger el autobús* is completely normal. In most of Latin America the word is vulgar, so people say *tomar* or *agarrar*. When in doubt, *tomar* is safe everywhere.",
+        "**Exacto, eso es, correcto** — three ways to tell someone they're right. The one you'll hear most is *exacto*, said briskly.",
+        "**No tiene pérdida** literally \"you have no loss\", meaning \"you can't miss it\". You'll hear it every time you ask the way in Spain.",
+        "**The lifesaver: ¿Me lo repite, por favor?** Never be shy about using it. Two others just as important: *¿Puede hablar más despacio?* and *No entiendo, lo siento.*"
+      ],
+      "grammars": [
+        {
+          "title": "Commands",
+          "body": [
+            "Compare the two columns below. The informal one (*tú*) keeps the original vowel; the polite one (*usted*) swaps it. To say \"don't\", just add *no* to the polite form: *No gire aquí*."
+          ],
+          "table": {
+            "head": [
+              "Verb",
+              "To a friend (tú)",
+              "Polite (usted)",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "girar",
+                "gir**a**",
+                "gir**e**",
+                "turn"
+              ],
+              [
+                "tomar",
+                "tom**a**",
+                "tom**e**",
+                "take (a bus etc.)"
+              ],
+              [
+                "seguir",
+                "sigu**e**",
+                "sig**a**",
+                "carry on, continue"
+              ],
+              [
+                "cruzar",
+                "cruz**a**",
+                "cruc**e**",
+                "cross"
+              ],
+              [
+                "subir",
+                "sub**e**",
+                "sub**a**",
+                "go up, get on"
+              ],
+              [
+                "bajar",
+                "baj**a**",
+                "baj**e**",
+                "go down, get off"
+              ],
+              [
+                "perdonar",
+                "perdon**a**",
+                "perdon**e**",
+                "excuse me, sorry"
+              ]
+            ]
+          },
+          "after": [
+            "Eight verbs have completely irregular informal commands, and all are very common: *decir → di*, *hacer → haz*, *ir → ve*, *poner → pon*, *salir → sal*, *ser → sé*, *tener → ten*, *venir → ven*. Their polite forms are regular again: *diga, haga, vaya, ponga, salga, sea, tenga, venga*.",
+            "Saying \"don't\" with *tú* doesn't use the informal command, but the polite form plus -s: *no gires*, *no tomes*, *no vayas*. That's why *ven* (come) turns into *no vengas* (don't come) — two words that look nothing alike."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Directions you'll hear",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "You don't need to be able to say all of these — just recognize them when someone in a hurry rattles them off."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Español",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "Siga todo recto.",
+              "Keep going straight."
+            ],
+            [
+              "Gire a la derecha / izquierda.",
+              "Turn right / left."
+            ],
+            [
+              "Tome la primera calle a la derecha.",
+              "Take the first street on the right."
+            ],
+            [
+              "Cruce la calle / la plaza.",
+              "Cross the street / the square."
+            ],
+            [
+              "Está al final de la calle.",
+              "It's at the end of the street."
+            ],
+            [
+              "Está en la esquina.",
+              "It's on the corner."
+            ],
+            [
+              "Pase el semáforo.",
+              "Go past the traffic lights."
+            ],
+            [
+              "Suba / baje las escaleras.",
+              "Go up / down the stairs."
+            ],
+            [
+              "Está a unos cinco minutos.",
+              "It's about five minutes away."
+            ],
+            [
+              "No tiene pérdida.",
+              "You can't miss it."
+            ],
+            [
+              "Lo siento, no soy de aquí.",
+              "Sorry, I'm not from around here."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "If you didn't catch it",
+          "items": [
+            "*¿Puede hablar más despacio, por favor?* — Could you speak more slowly?",
+            "*¿Me lo repite, por favor?* — Could you repeat that?",
+            "*¿Cómo se dice … en español?* — How do you say … in Spanish?",
+            "*¿Qué significa …?* — What does … mean?",
+            "*No entiendo. Soy extranjero.* — I don't understand. I'm a foreigner.",
+            "*¿Me lo puede escribir?* — Could you write it down? This one saves you most: writing can't be spoken too fast."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "es": "seguir",
+      "baca": "seh-GEER",
+      "en": "to continue"
+    },
+    {
+      "es": "girar",
+      "baca": "hee-RAHR",
+      "en": "to turn"
+    },
+    {
+      "es": "cruzar",
+      "baca": "kroo-SAHR",
+      "en": "to cross"
+    },
+    {
+      "es": "tomar",
+      "baca": "toh-MAHR",
+      "en": "to take, to catch"
+    },
+    {
+      "es": "pasar",
+      "baca": "pah-SAHR",
+      "en": "to pass, to go past"
+    },
+    {
+      "es": "la estación",
+      "baca": "lah ehs-tah-SYOHN",
+      "en": "station"
+    },
+    {
+      "es": "la plaza",
+      "baca": "lah PLAH-sah",
+      "en": "square"
+    },
+    {
+      "es": "la calle",
+      "baca": "lah KAH-yeh",
+      "en": "street"
+    },
+    {
+      "es": "la esquina",
+      "baca": "lah ehs-KEE-nah",
+      "en": "corner"
+    },
+    {
+      "es": "el semáforo",
+      "baca": "ehl seh-MAH-foh-roh",
+      "en": "traffic light"
+    },
+    {
+      "es": "todo recto",
+      "baca": "TOH-doh REHK-toh",
+      "en": "straight ahead"
+    },
+    {
+      "es": "a la derecha",
+      "baca": "ah lah deh-REH-chah",
+      "en": "to the right"
+    },
+    {
+      "es": "a la izquierda",
+      "baca": "ah lah ees-KYEHR-dah",
+      "en": "to the left"
+    },
+    {
+      "es": "al final de",
+      "baca": "ahl fee-NAHL deh",
+      "en": "at the end"
+    },
+    {
+      "es": "el autobús",
+      "baca": "ehl ow-toh-BOOS",
+      "en": "bus"
+    },
+    {
+      "es": "la parada",
+      "baca": "lah pah-RAH-dah",
+      "en": "bus stop"
+    },
+    {
+      "es": "el metro",
+      "baca": "ehl MEH-troh",
+      "en": "subway, metro"
+    },
+    {
+      "es": "a pie",
+      "baca": "ah pyeh",
+      "en": "on foot"
+    },
+    {
+      "es": "exacto",
+      "baca": "ehk-SAHK-toh",
+      "en": "exactly, right"
+    },
+    {
+      "es": "no tiene pérdida",
+      "baca": "noh TYEH-neh PEHR-dee-dah",
+      "en": "you can't miss it"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Turn into polite commands (*usted*).",
+      "items": [
+        "girar a la izquierda",
+        "tomar el autobús",
+        "seguir todo recto",
+        "cruzar la plaza",
+        "subir las escaleras",
+        "pasar el semáforo"
+      ]
+    },
+    {
+      "prompt": "Complete with the right direction word.",
+      "items": [
+        "El banco está en la ____ de la calle Mayor.",
+        "Siga todo ____ hasta el semáforo.",
+        "La farmacia está a la ____, al lado del café.",
+        "Voy a la estación ____ pie.",
+        "El museo está al ____ de esta calle."
+      ]
+    },
+    {
+      "prompt": "Translate into Spanish (use the polite form).",
+      "items": [
+        "Excuse me, where's the bus stop?",
+        "Turn left at the traffic lights.",
+        "Take the third street.",
+        "I'm in a hurry, is the station far?",
+        "Could you speak more slowly?",
+        "A return ticket to Seville."
+      ]
+    }
+  ],
+  "answers": [
+    "gire a la izquierda — tome el autobús — siga todo recto — cruce la plaza — suba las escaleras — pase el semáforo",
+    "esquina — recto — derecha — a — final",
+    "Perdone, ¿dónde está la parada? — Gire a la izquierda en el semáforo. — Tome la tercera calle. — Tengo prisa, ¿está lejos la estación? — ¿Puede hablar más despacio? — Un billete de ida y vuelta para Sevilla."
+  ],
+  "wave": "Review **Unit 15**: describe your plans for this weekend in four sentences with *voy a*."
+}

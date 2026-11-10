@@ -1,0 +1,450 @@
+{
+  "title": "Hello, I'm from Indonesia",
+  "title_target": "안녕하세요 — Annyeonghaseyo",
+  "goal": "Greet anyone safely, give your name and where you're from, ask the other person the same, and recognize the two polite forms used throughout this module.",
+  "bekal": [
+    "greet with 안녕하세요 at any time, day or night",
+    "introduce yourself with 저는 …이에요/예요",
+    "say your nationality and your job",
+    "tell the 입니다 form apart from the 이에요/예요 form",
+    "say goodbye with the right word depending on who is leaving"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — First day of language class",
+      "intro": "Ani, a student from Indonesia, sits down next to a stranger in a Korean class in Seoul. Notice that neither of them ever says the word \"you\".",
+      "lines": [
+        {
+          "speaker": "아니:",
+          "text": "[안녕하세요|Annyeonghaseyo].",
+          "id": "Hello.",
+          "literal": "peace — be — ? (honorific)."
+        },
+        {
+          "speaker": "민준:",
+          "text": "[안녕하세요|Annyeonghaseyo]. [처음|Cheoeum] [뵙겠습니다|boepgetseumnida].",
+          "id": "Hello. Nice to meet you.",
+          "literal": "peace-be-?. first-time — will-meet (very respectful)."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[저는|Jeoneun] [아니예요|Ani-yeyo]. [이름이|Ireumi] [뭐예요|mwoyeyo]?",
+          "id": "I'm Ani. What's your name?",
+          "literal": "I — as-for — Ani — am. name — subject — what — is?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[제|Je] [이름은|ireumeun] [김민준입니다|Gim Minjun-imnida].",
+          "id": "My name is Kim Minjun.",
+          "literal": "my — name — as-for — Kim Minjun — is (formal)."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[민준|Minjun] [씨는|ssineun] [한국|Hanguk] [사람이에요|saramieyo]?",
+          "id": "Are you Korean, Minjun?",
+          "literal": "Minjun — Mr. — as-for — Korea — person — is?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[네|Ne], [한국|Hanguk] [사람이에요|saramieyo]. [아니|Ani] [씨는요|ssineunyo]?",
+          "id": "Yes, I'm Korean. And you, Ani?",
+          "literal": "yes, Korea — person — am. Ani — Ms. — as-for — (then)?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[저는|Jeoneun] [한국|Hanguk] [사람이|sarami] [아니에요|anieyo]. [인도네시아|Indonesia] [사람이에요|saramieyo].",
+          "id": "I'm not Korean. I'm Indonesian.",
+          "literal": "I — as-for — Korea — person — subject — not-am. Indonesia — person — am."
+        },
+        {
+          "speaker": "민준:",
+          "text": "[아|A], [그래요|geuraeyo]? [학생이에요|Haksaengieyo]?",
+          "id": "Oh, really? Are you a student?",
+          "literal": "ah, so — is? student — are?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[네|Ne], [학생이에요|haksaengieyo]. [민준|Minjun] [씨도|ssido] [학생이에요|haksaengieyo]?",
+          "id": "Yes, I'm a student. Are you a student too, Minjun?",
+          "literal": "yes, student — am. Minjun — Mr. — also — student — are?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[아니요|Aniyo], [저는|jeoneun] [회사원이에요|hoesawonieyo].",
+          "id": "No, I'm an office worker.",
+          "literal": "no, I — as-for — office-worker — am."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[반갑습니다|Bangapseumnida]. [잘|Jal] [부탁합니다|butakamnida].",
+          "id": "Nice to meet you. I look forward to working with you.",
+          "literal": "glad — am (formal). well — request — do."
+        },
+        {
+          "speaker": "민준:",
+          "text": "[네|Ne], [안녕히|annyeonghi] [가세요|gaseyo].",
+          "id": "Yes, goodbye.",
+          "literal": "yes, in-peace — go (honorific)."
+        }
+      ],
+      "notes": [
+        "**안녕하세요 has no clock.** There's no separate \"good morning\", \"good afternoon\" and \"good evening\" as in English. This one word works from dawn to midnight, with anyone. Literally it means \"are you at peace?\" — which is why it's a question, even though the tone falls like a statement.",
+        "**Korean avoids the word \"you\".** There isn't a single second-person pronoun in the dialogue above. Instead people use **name + 씨**: 민준 씨는…? Calling someone 당신 (\"you\") can sound like you're picking a fight, even though old textbooks often list it. Delete that word from your head right now.",
+        "**씨 goes with names, not titles.** 민준 씨 is safe between adults of equal standing. But ⚠️ don't use 씨 with your boss or teacher — use their title instead: 선생님 (teacher), 사장님 (company president). Calling your boss by name + 씨 is as awkward as calling the dean by a nickname.",
+        "**저 and 나 both mean \"I\".** 저 is the humble form, and it's the one used in this module; 나 is the plain form, safe only among close friends your own age. With the topic particle attached it becomes 저는, and \"my\" is 제 (not 저의).",
+        "**씨는요? lets you bounce the question back without repeating it.** The ending 요 attached to a particle means \"what about…?\". It's very common and very handy: whenever someone asks you something, answer and then turn it around with 씨는요?",
+        "**아니요 means \"no\" as an answer; 아니에요 means \"is not\" as a verb.** Two similar words that are easily mixed up. 아니요 stands alone at the start of a sentence; 아니에요 ends the sentence and needs a noun with the particle 이/가 before it: 한국 사람**이** 아니에요.",
+        "**Goodbye has two forms, and what decides it is who is moving.** 안녕히 **가**세요 (\"go in peace\") is said to the person who is **leaving**. 안녕히 **계**세요 (\"stay in peace\") is said to the person who is **staying**. If you're both leaving, you both say 안녕히 가세요. Picking the wrong one instantly marks you as a foreigner.",
+        "**잘 부탁합니다 has no real English equivalent.** Literally \"please treat me well\", it's said at the start of any relationship: a new class, a new office, a new team. It isn't empty politeness — leaving it out of a formal introduction actually feels cold."
+      ],
+      "grammars": [
+        {
+          "title": "이에요 / 예요 — \"to be\"",
+          "body": [
+            "The first verb you must master. It attaches **directly to the end** of the noun with no space, and its form depends on the last letter of that noun."
+          ],
+          "table": {
+            "head": [
+              "Noun ends in",
+              "Form",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Consonant",
+                "**이에요**",
+                "학생 → 학생**이에요**",
+                "is a student"
+              ],
+              [
+                "Consonant",
+                "**이에요**",
+                "선생님 → 선생님**이에요**",
+                "is a teacher"
+              ],
+              [
+                "Vowel",
+                "**예요**",
+                "아니 → 아니**예요**",
+                "is Ani"
+              ],
+              [
+                "Vowel",
+                "**예요**",
+                "의사 → 의사**예요**",
+                "is a doctor"
+              ]
+            ]
+          },
+          "after": [
+            "The reason is simply ease of pronunciation: after a consonant you need a linking vowel, after a vowel you don't. This \"vowel or consonant\" rule comes back with almost every Korean particle, so get into the habit now of checking the last letter of the noun.",
+            "The question form is **exactly the same**; only the intonation rises at the end: 학생이에요. (statement) and 학생이에요? (question). Korean doesn't flip word order to ask a question.",
+            "The negative doesn't attach; it's a separate word, **아니에요**, and the noun before it takes the particle 이/가: 학생**이** 아니에요 (is not a student), 의사**가** 아니에요 (is not a doctor)."
+          ]
+        },
+        {
+          "title": "Two politeness levels used throughout the module",
+          "body": [
+            "The same sentence takes different shapes depending on who you're talking to. At A1 you only need to recognize two, and only one needs to be drilled until it's automatic."
+          ],
+          "table": {
+            "head": [
+              "",
+              "합쇼체 (formal style)",
+              "해요체 (polite style)"
+            ],
+            "rows": [
+              [
+                "I'm Ani",
+                "저는 아니**입니다**",
+                "저는 아니**예요**"
+              ],
+              [
+                "Are you a student?",
+                "학생**입니까**?",
+                "학생**이에요**?"
+              ],
+              [
+                "Thank you",
+                "감사**합니다**",
+                "고마워**요**"
+              ],
+              [
+                "Feels like",
+                "Announcements, news, reports",
+                "Ordinary polite conversation"
+              ],
+              [
+                "Used with",
+                "Customers, audiences, distant superiors",
+                "Almost every adult"
+              ]
+            ]
+          },
+          "after": [
+            "**This module uses 해요체 as its main form** because that's what you'll use ninety percent of the time. 합쇼체 is introduced so you can recognize it in station announcements and on the news, not so you drill it.",
+            "What you must not use with people you've just met is **반말** — the casual form without 요 that you hear in TV dramas: 아니야, 어디 가? It sounds natural between characters who are friends, and rude from a foreigner who has only just met someone. Wait until the other person offers it.",
+            "⚠️ Note that 감사합니다 and 안녕하세요 are used as they are at both levels. Both have frozen into fixed words and don't need to change."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Words to have in your pocket on day one",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The eleven expressions below cover most of the small talk on your first day. Learn them whole and don't take their grammar apart yet — everything will be explained in due course."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "한국어",
+            "Romanization",
+            "English"
+          ],
+          "rows": [
+            [
+              "네 / 아니요",
+              "ne / aniyo",
+              "Yes / No"
+            ],
+            [
+              "감사합니다",
+              "gamsahamnida",
+              "Thank you (formal)"
+            ],
+            [
+              "고마워요",
+              "gomawoyo",
+              "Thank you (everyday)"
+            ],
+            [
+              "죄송합니다",
+              "joesonghamnida",
+              "I'm sorry (formal, a real apology)"
+            ],
+            [
+              "실례합니다",
+              "sillyehamnida",
+              "Excuse me (interrupting, getting past)"
+            ],
+            [
+              "괜찮아요",
+              "gwaenchanayo",
+              "It's okay, I'm fine"
+            ],
+            [
+              "잘 모르겠어요",
+              "jal moreugesseoyo",
+              "I'm not sure"
+            ],
+            [
+              "다시 한번 말해 주세요",
+              "dasi hanbeon malhae juseyo",
+              "Please say that again"
+            ],
+            [
+              "천천히 말해 주세요",
+              "cheoncheonhi malhae juseyo",
+              "Please speak more slowly"
+            ],
+            [
+              "이게 뭐예요?",
+              "ige mwoyeyo",
+              "What's this?"
+            ],
+            [
+              "한국어로 뭐예요?",
+              "hangugeoro mwoyeyo",
+              "How do you say it in Korean?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last two sentences are learning tools, not just vocabulary. Once you can ask \"what's this?\" and \"how do you say it in Korean?\", every Korean around you becomes a walking dictionary."
+        },
+        {
+          "type": "kotak",
+          "title": "죄송합니다 vs 실례합니다",
+          "items": [
+            "**죄송합니다** is used when you're genuinely at fault: bumping into someone, arriving late, making a mistake.",
+            "**실례합니다** is used when you're about to inconvenience someone a little: interrupting a conversation, passing in front of someone, asking a stranger in the street.",
+            "Using 죄송합니다 just to get past someone sounds over the top; using 실례합니다 after spilling coffee on someone's shirt sounds clueless."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "안녕하세요",
+      "baca": "annyeonghaseyo",
+      "en": "hello (any time of day)"
+    },
+    {
+      "ko": "안녕히 가세요",
+      "baca": "annyeonghi gaseyo",
+      "en": "goodbye (to someone leaving)"
+    },
+    {
+      "ko": "안녕히 계세요",
+      "baca": "annyeonghi gyeseyo",
+      "en": "goodbye (to someone staying)"
+    },
+    {
+      "ko": "저",
+      "baca": "jeo",
+      "en": "I (humble)"
+    },
+    {
+      "ko": "제",
+      "baca": "je",
+      "en": "my"
+    },
+    {
+      "ko": "이름",
+      "baca": "ireum",
+      "en": "name"
+    },
+    {
+      "ko": "뭐",
+      "baca": "mwo",
+      "en": "what"
+    },
+    {
+      "ko": "사람",
+      "baca": "saram",
+      "en": "person"
+    },
+    {
+      "ko": "한국",
+      "baca": "Hanguk",
+      "en": "Korea"
+    },
+    {
+      "ko": "인도네시아",
+      "baca": "Indonesia",
+      "en": "Indonesia"
+    },
+    {
+      "ko": "학생",
+      "baca": "haksaeng",
+      "en": "student"
+    },
+    {
+      "ko": "회사원",
+      "baca": "hoesawon",
+      "en": "office worker"
+    },
+    {
+      "ko": "선생님",
+      "baca": "seonsaengnim",
+      "en": "teacher"
+    },
+    {
+      "ko": "의사",
+      "baca": "uisa",
+      "en": "doctor"
+    },
+    {
+      "ko": "네",
+      "baca": "ne",
+      "en": "yes"
+    },
+    {
+      "ko": "아니요",
+      "baca": "aniyo",
+      "en": "no (as an answer)"
+    },
+    {
+      "ko": "아니에요",
+      "baca": "anieyo",
+      "en": "is not (verb)"
+    },
+    {
+      "ko": "씨",
+      "baca": "ssi",
+      "en": "polite title after a name"
+    },
+    {
+      "ko": "도",
+      "baca": "do",
+      "en": "also, too"
+    },
+    {
+      "ko": "반갑습니다",
+      "baca": "bangapseumnida",
+      "en": "nice to meet you"
+    },
+    {
+      "ko": "처음 뵙겠습니다",
+      "baca": "cheoeum boepgetseumnida",
+      "en": "nice to meet you (first meeting)"
+    },
+    {
+      "ko": "잘 부탁합니다",
+      "baca": "jal butakamnida",
+      "en": "I look forward to working with you"
+    },
+    {
+      "ko": "그래요",
+      "baca": "geuraeyo",
+      "en": "really?, that's right"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Korean. Use the 해요체 form.",
+      "items": [
+        "Hello.",
+        "I'm Ani.",
+        "I'm Indonesian.",
+        "What's your name?",
+        "I'm a student.",
+        "I'm not an office worker."
+      ]
+    },
+    {
+      "prompt": "Fill in 이에요 or 예요 according to the last letter of the noun.",
+      "items": [
+        "저는 학생____.",
+        "제 이름은 아니____.",
+        "민준 씨는 회사원____.",
+        "그분은 의사____.",
+        "저는 한국 사람____.",
+        "여기는 학교____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "저는 / 사람이에요 / 인도네시아",
+        "뭐예요 / 이름이 / ?",
+        "학생이에요 / 씨도 / 민준 / ?",
+        "아니에요 / 사람이 / 한국 / 저는",
+        "부탁합니다 / 잘"
+      ]
+    },
+    {
+      "prompt": "Choose the right expression. Write your answer in hangeul.",
+      "items": [
+        "You meet your teacher in the hallway at seven in the morning. You say ____.",
+        "Your friend leaves the café first; you're staying. You say ____.",
+        "You're leaving the office; your coworker is still working. You say ____.",
+        "You accidentally bump into someone on the train. You say ____.",
+        "You want to pass in front of someone who is sitting down. You say ____."
+      ]
+    }
+  ],
+  "answers": [
+    "안녕하세요. — 저는 아니예요. — 저는 인도네시아 사람이에요. — 이름이 뭐예요? — 저는 학생이에요. — 저는 회사원이 아니에요.",
+    "이에요 — 예요 — 이에요 — 예요 — 이에요 — 예요",
+    "저는 인도네시아 사람이에요. — 이름이 뭐예요? — 민준 씨도 학생이에요? — 저는 한국 사람이 아니에요. — 잘 부탁합니다.",
+    "안녕하세요 — 안녕히 가세요 — 안녕히 계세요 — 죄송합니다 — 실례합니다"
+  ]
+}

@@ -1,0 +1,397 @@
+{
+  "title": "Where are you from?",
+  "title_target": "¿De dónde eres?",
+  "goal": "Say where you're from and where you live, state your nationality, and use regular verbs for the first three persons.",
+  "bekal": [
+    "name your country and city",
+    "give your nationality in the right form",
+    "use -ar, -er and -ir verbs for *yo*, *tú* and *él / ella*"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — En una fiesta",
+      "intro": "A party in Barcelona. Two people who haven't met yet make small talk.",
+      "lines": [
+        {
+          "speaker": "Marta:",
+          "text": "Hola, ¿de dónde eres?",
+          "id": "Hi, where are you from?",
+          "literal": "hello, from where you-are?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Soy de Indonesia. Soy indonesio.",
+          "id": "I'm from Indonesia. I'm Indonesian.",
+          "literal": "am from Indonesia. am Indonesian(male)."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "¡Qué bien! Yo soy española, de Madrid.",
+          "id": "How nice! I'm Spanish, from Madrid.",
+          "literal": "how good! I am Spanish(female), from Madrid."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Vives en Madrid ahora?",
+          "id": "Do you live in Madrid now?",
+          "literal": "you-live in Madrid now?"
+        },
+        {
+          "speaker": "Marta:",
+          "text": "No, vivo en Barcelona. Trabajo allí.",
+          "id": "No, I live in Barcelona. I work there.",
+          "literal": "no, I-live in Barcelona. I-work there."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "¿Y en qué trabajas?",
+          "id": "And what do you do?",
+          "literal": "and in what you-work?"
+        },
+        {
+          "speaker": "Marta:",
+          "text": "Trabajo en una librería. Me gusta mucho.",
+          "id": "I work in a bookstore. I really like it.",
+          "literal": "I-work in a bookstore. to-me pleases much."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Yo vivo en Yakarta, pero estudio español.",
+          "id": "I live in Jakarta, but I'm studying Spanish.",
+          "literal": "I I-live in Jakarta, but I-study Spanish."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "¿Y hablas español muy bien?",
+          "id": "And do you speak Spanish very well?",
+          "literal": "and you-speak Spanish very well?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Un poco. Hablo poco, pero entiendo mucho.",
+          "id": "A little. I don't speak much, but I understand a lot.",
+          "literal": "a little. I-speak little, but I-understand much."
+        },
+        {
+          "speaker": "Marta:",
+          "text": "Pues hablamos despacio. ¡No hay problema!",
+          "id": "Then let's speak slowly. No problem!",
+          "literal": "well we-speak slowly. not there-is problem!"
+        }
+      ],
+      "notes": [
+        "**Nationalities follow gender, and they're lowercase.** *indonesio* (male) / *indonesia* (female), *español* / *española*. Unlike English, nationalities do **not** take a capital letter — but country names do: *España*, *Indonesia*. The same goes for languages: *hablo español*, lowercase.",
+        "**The pattern is simple.** Adjectives ending in **-o** for men change to **-a** for women: *mexicano / mexicana*. Those ending in a consonant just add **-a**: *español / española*. Those ending in **-e** don't change at all: *estadounidense* works for both.",
+        "**-ar, -er, -ir verbs.** Every Spanish verb ends in one of these three. For \"I\", all three end in **-o**: *hablar* → *hablo*, *comer* → *como*, *vivir* → *vivo*. For \"you\", -ar becomes **-as** and the other two **-es**.",
+        "**De = from.** *Soy de Indonesia* = \"I'm from Indonesia\". Followed by *el*, the two merge into *del*: *del norte* (from the north), not *de el norte*. The same merge happens with *a + el* → *al*.",
+        "**¿En qué trabajas?** literally \"in what do you work?\" — the normal way to ask what someone does. The answer can be a place (*trabajo en una librería*) or a profession (*soy profesora*).",
+        "**Me gusta** means \"I like\", but it's built the other way around: literally \"it pleases me\". For now, learn it whole — the pattern is taken apart in Unit 13.",
+        "**Pero vs sino.** *Pero* = \"but\" in the ordinary sense. You'll meet *sino* later; it's used only after a negative sentence (\"not this, but that\").",
+        "**Pues** is an all-purpose linking word that's almost impossible to translate — \"well\", \"then\", \"so\", \"because\". Spaniards sprinkle it everywhere; you don't have to use it, but you do need to recognize it."
+      ],
+      "grammars": [
+        {
+          "title": "Regular verbs — the \"I\", \"you\", \"he/she\" forms",
+          "body": [
+            "Drop the *-ar / -er / -ir* ending from the infinitive, then add the endings below. Once this pattern sticks, thousands of verbs open up at once:"
+          ],
+          "table": {
+            "head": [
+              "",
+              "hablar (to speak)",
+              "comer (to eat)",
+              "vivir (to live)"
+            ],
+            "rows": [
+              [
+                "yo",
+                "habl**o**",
+                "com**o**",
+                "viv**o**"
+              ],
+              [
+                "tú",
+                "habl**as**",
+                "com**es**",
+                "viv**es**"
+              ],
+              [
+                "él / ella / usted",
+                "habl**a**",
+                "com**e**",
+                "viv**e**"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that **-er** and **-ir** differ only in forms you haven't learned yet (*comemos* vs *vivimos*, Unit 9). In these first three forms they're twins — so in practice you're memorizing **two** patterns, not three.",
+            "These three forms cover most one-on-one conversations: you talk about yourself (*yo*), about the person you're talking to (*tú*), or about someone you're both discussing (*él / ella*). The plural forms follow in Unit 9."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Country, nationality, language",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Three columns that are easy to mix up. Notice that the name of the language is always the same as the masculine nationality — once you know *japonés*, you automatically know the name of the language."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "País",
+            "Él es…",
+            "Ella es…",
+            "Idioma"
+          ],
+          "rows": [
+            [
+              "Indonesia",
+              "indonesio",
+              "indonesia",
+              "indonesio"
+            ],
+            [
+              "España",
+              "español",
+              "española",
+              "español"
+            ],
+            [
+              "México",
+              "mexicano",
+              "mexicana",
+              "español"
+            ],
+            [
+              "Argentina",
+              "argentino",
+              "argentina",
+              "español"
+            ],
+            [
+              "Colombia",
+              "colombiano",
+              "colombiana",
+              "español"
+            ],
+            [
+              "Estados Unidos",
+              "estadounidense",
+              "estadounidense",
+              "inglés"
+            ],
+            [
+              "Inglaterra",
+              "inglés",
+              "inglesa",
+              "inglés"
+            ],
+            [
+              "Francia",
+              "francés",
+              "francesa",
+              "francés"
+            ],
+            [
+              "Alemania",
+              "alemán",
+              "alemana",
+              "alemán"
+            ],
+            [
+              "Italia",
+              "italiano",
+              "italiana",
+              "italiano"
+            ],
+            [
+              "Japón",
+              "japonés",
+              "japonesa",
+              "japonés"
+            ],
+            [
+              "China",
+              "chino",
+              "china",
+              "chino"
+            ],
+            [
+              "Corea",
+              "coreano",
+              "coreana",
+              "coreano"
+            ],
+            [
+              "Brasil",
+              "brasileño",
+              "brasileña",
+              "portugués"
+            ],
+            [
+              "Marruecos",
+              "marroquí",
+              "marroquí",
+              "árabe"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the ´ disappearing in the feminine forms: *japonés* → *japonesa*, *francés* → *francesa*, *alemán* → *alemana*. The mark is no longer needed once the word gains a syllable."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "es": "¿de dónde?",
+      "baca": "deh DOHN-deh",
+      "en": "from where?"
+    },
+    {
+      "es": "¿dónde?",
+      "baca": "DOHN-deh",
+      "en": "where?"
+    },
+    {
+      "es": "el país",
+      "baca": "ehl pah-EES",
+      "en": "country"
+    },
+    {
+      "es": "vivir",
+      "baca": "bee-BEER",
+      "en": "to live"
+    },
+    {
+      "es": "trabajar",
+      "baca": "trah-bah-HAHR",
+      "en": "to work"
+    },
+    {
+      "es": "estudiar",
+      "baca": "ehs-too-DYAHR",
+      "en": "to study"
+    },
+    {
+      "es": "hablar",
+      "baca": "ah-BLAHR",
+      "en": "to speak"
+    },
+    {
+      "es": "entender",
+      "baca": "ehn-tehn-DEHR",
+      "en": "to understand"
+    },
+    {
+      "es": "comer",
+      "baca": "koh-MEHR",
+      "en": "to eat"
+    },
+    {
+      "es": "ahora",
+      "baca": "ah-OH-rah",
+      "en": "now"
+    },
+    {
+      "es": "allí",
+      "baca": "ah-YEE",
+      "en": "there"
+    },
+    {
+      "es": "pero",
+      "baca": "PEH-roh",
+      "en": "but"
+    },
+    {
+      "es": "o",
+      "baca": "oh",
+      "en": "or"
+    },
+    {
+      "es": "pues",
+      "baca": "pwehs",
+      "en": "well, then"
+    },
+    {
+      "es": "despacio",
+      "baca": "dehs-PAH-syoh",
+      "en": "slowly"
+    },
+    {
+      "es": "mucho",
+      "baca": "MOO-choh",
+      "en": "a lot, much"
+    },
+    {
+      "es": "la librería",
+      "baca": "lah lee-breh-REE-ah",
+      "en": "bookstore"
+    },
+    {
+      "es": "español / española",
+      "baca": "ehs-pah-NYOHL",
+      "en": "Spanish (person)"
+    },
+    {
+      "es": "indonesio / indonesia",
+      "baca": "een-doh-NEH-syoh",
+      "en": "Indonesian (person)"
+    },
+    {
+      "es": "¡qué bien!",
+      "baca": "keh BYEHN",
+      "en": "how nice!"
+    },
+    {
+      "es": "no hay problema",
+      "baca": "noh eye proh-BLEH-mah",
+      "en": "no problem"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Spanish.",
+      "items": [
+        "I'm from Indonesia.",
+        "Do you live in Madrid?",
+        "She works in Barcelona.",
+        "I'm studying a little Spanish.",
+        "Do you (sir) speak English?",
+        "She's a doctor."
+      ]
+    },
+    {
+      "prompt": "Put the verb in brackets into the right form.",
+      "items": [
+        "Yo (vivir) ____ en Yakarta.",
+        "¿Tú (hablar) ____ español?",
+        "Ella (trabajar) ____ mucho.",
+        "Yo (comer) ____ en casa.",
+        "¿Usted (estudiar) ____ español?",
+        "Él (entender) ____ un poco."
+      ]
+    },
+    {
+      "prompt": "Fill in the right nationality for each speaker.",
+      "items": [
+        "Marta (woman, Madrid): Soy ____.",
+        "Budi (man, Jakarta): Soy ____.",
+        "Yuki (woman, Osaka): Soy ____.",
+        "Pierre (man, Paris): Soy ____.",
+        "Anna (woman, Berlin): Soy ____."
+      ]
+    }
+  ],
+  "answers": [
+    "Soy de Indonesia. — ¿Vives en Madrid? — Ella trabaja en Barcelona. — Estudio español un poco. — ¿Habla usted inglés? — Es médica.",
+    "vivo — hablas — trabaja — como — estudia — entiende",
+    "española — indonesio — japonesa — francés — alemana"
+  ],
+  "wave": "Go back to **Unit 1** first: introduce yourself out loud — name, what you do, then where you're from — all in one breath."
+}

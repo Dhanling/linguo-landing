@@ -1,0 +1,879 @@
+{
+  "title": "Numbers, prices, and shopping",
+  "title_target": "いくらですか — Ikura desu ka",
+  "goal": "Count from zero up to the tens of thousands, ask prices, ask for things politely, and get through a whole shop transaction from start to finish.",
+  "bekal": [
+    "read Japanese numbers up to 99,999",
+    "ask the price with いくらですか",
+    "ask for things with ～をください",
+    "give quantities with ～つ and ～こ",
+    "survive a checkout conversation from greeting to change"
+  ],
+  "dialogs": [
+    {
+      "title": "会話 1 — At the convenience store",
+      "intro": "Ani buys a few things. Notice that the cashier uses far more respectful language than the customer — that's normal, and you don't need to match it.",
+      "lines": [
+        {
+          "speaker": "てんいん:",
+          "text": "[いらっしゃいませ|Irasshaimase]。",
+          "id": "Welcome.",
+          "literal": "please-come."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[すみません|Sumimasen]。[この|kono] [ノートは|nōto wa] [いくらですか|ikura desu ka]。",
+          "id": "Excuse me. How much is this notebook?",
+          "literal": "excuse-me. this — notebook — as-for — how-much — is — [question]"
+        },
+        {
+          "speaker": "てんいん:",
+          "text": "[それは|Sore wa] 250[えんです|en desu]。",
+          "id": "That's 250 yen.",
+          "literal": "that — as-for — 250 — yen — is."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[じゃあ|Jā]、[それを|sore o] [みっつ|mittsu] [ください|kudasai]。",
+          "id": "Then I'll take three, please.",
+          "literal": "well-then, that — [object] — three-things — please-give."
+        },
+        {
+          "speaker": "てんいん:",
+          "text": "[はい|Hai]、[みっつですね|mittsu desu ne]。[ほかには|Hoka ni wa]？",
+          "id": "Certainly, three. Anything else?",
+          "literal": "yes, three-things — is — right. other — in — as-for?"
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[この|Kono] [ペンも|pen mo] [ください|kudasai]。[いくらですか|Ikura desu ka]。",
+          "id": "This pen too, please. How much is it?",
+          "literal": "this — pen — also — please-give. how-much — is — [question]"
+        },
+        {
+          "speaker": "てんいん:",
+          "text": "[ペンは|Pen wa] 120[えんです|en desu]。[ぜんぶで|Zenbu de] 870[えんです|en desu]。",
+          "id": "The pen is 120 yen. That's 870 yen altogether.",
+          "literal": "pen — as-for — 120 — yen — is. all — with — 870 — yen — is."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[カードで|Kādo de] [いいですか|ii desu ka]。",
+          "id": "Can I pay by card?",
+          "literal": "card — with — good — is — [question]"
+        },
+        {
+          "speaker": "てんいん:",
+          "text": "[はい|Hai]、[だいじょうぶです|daijōbu desu]。",
+          "id": "Yes, that's fine.",
+          "literal": "yes, all-right — is."
+        },
+        {
+          "speaker": "アニ:",
+          "text": "[おねがいします|Onegaishimasu]。",
+          "id": "Here you go.",
+          "literal": "please."
+        },
+        {
+          "speaker": "てんいん:",
+          "text": "[ありがとうございました|Arigatō gozaimashita]。[またどうぞ|Mata dōzo]。",
+          "id": "Thank you very much. Please come again.",
+          "literal": "thank-you (past). again — please."
+        }
+      ],
+      "notes": [
+        "**～をください = “please give me ～”.** The single most useful way to ask for anything in Japan: メニューをください, みずをください, これをください. Polite, clear, and never out of place in a shop or restaurant.",
+        "**The number comes after the noun, not before.** English: *three notebooks*. Japanese: ノートを**みっつ**ください — the noun first, the number after. This is the opposite of what you're used to, and it takes a few days to feel natural.",
+        "**ぜんぶで = “altogether”.** The particle で here marks a limit or total. You'll hear it at every checkout in Japan.",
+        "**～でいいですか = “is ～ OK?”.** カードでいいですか = can I pay by card? This short pattern covers many situations: えいごでいいですか (is English OK?).",
+        "**ありがとうございました with ました, not ます.** The past form is used when the business is **finished** — the cashier says it once the transaction is done. Before that, it's ありがとうございます.",
+        "**ほかには？** = “anything else?”. If you're done, answer いいえ、けっこうです (no, that's all) — けっこうです is a polite refusal worth memorizing."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers 0 to 99,999",
+          "body": [
+            "Japanese numbers are very regular. After ten, a number is read exactly the way it's built: 11 = 10 + 1 = [じゅういち|jūichi], 25 = 2 × 10 + 5 = [にじゅうご|nijūgo]. There are no special forms like English *eleven*, *twelve* or *-teen*."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Number",
+                "Kana · Rōmaji",
+                "Number",
+                "Kana · Rōmaji"
+              ],
+              "rows": [
+                [
+                  "0",
+                  "[ゼロ|zero] / [れい|rei]",
+                  "6",
+                  "[ろく|roku] 六"
+                ],
+                [
+                  "1",
+                  "[いち|ichi] 一",
+                  "7",
+                  "[なな|nana] / [しち|shichi] 七"
+                ],
+                [
+                  "2",
+                  "[に|ni] 二",
+                  "8",
+                  "[はち|hachi] 八"
+                ],
+                [
+                  "3",
+                  "[さん|san] 三",
+                  "9",
+                  "[きゅう|kyū] / [く|ku] 九"
+                ],
+                [
+                  "4",
+                  "[よん|yon] / [し|shi] 四",
+                  "10",
+                  "[じゅう|jū] 十"
+                ],
+                [
+                  "5",
+                  "[ご|go] 五",
+                  "",
+                  ""
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Number",
+                "How it's built",
+                "Kana · Rōmaji"
+              ],
+              "rows": [
+                [
+                  "11",
+                  "10 + 1",
+                  "[じゅういち|jūichi]"
+                ],
+                [
+                  "20",
+                  "2 × 10",
+                  "[にじゅう|nijū]"
+                ],
+                [
+                  "35",
+                  "3 × 10 + 5",
+                  "[さんじゅうご|sanjūgo]"
+                ],
+                [
+                  "100",
+                  "—",
+                  "[ひゃく|hyaku] 百"
+                ],
+                [
+                  "300",
+                  "3 × 100",
+                  "[さんびゃく|sanbyaku] ⚠️"
+                ],
+                [
+                  "600",
+                  "6 × 100",
+                  "[ろっぴゃく|roppyaku] ⚠️"
+                ],
+                [
+                  "800",
+                  "8 × 100",
+                  "[はっぴゃく|happyaku] ⚠️"
+                ],
+                [
+                  "1,000",
+                  "—",
+                  "[せん|sen] 千"
+                ],
+                [
+                  "3,000",
+                  "3 × 1,000",
+                  "[さんぜん|sanzen] ⚠️"
+                ],
+                [
+                  "8,000",
+                  "8 × 1,000",
+                  "[はっせん|hassen] ⚠️"
+                ],
+                [
+                  "10,000",
+                  "—",
+                  "[いちまん|ichiman] 一万"
+                ],
+                [
+                  "25,400",
+                  "2man 5sen 4hyaku",
+                  "[にまんごせんよんひゃく|nimangosenyonhyaku]"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **The marked ones change sound** because the consonants clash: [さんひゃく|sanhyaku] is too clumsy to say, so it becomes [さんびゃく|sanbyaku]. Don't learn this as a rule — just memorize these numbers: 300, 600, 800, 3,000, 8,000.",
+            "**10,000 is a unit of its own ([まん|man]), not “ten thousand”.** This is the hardest point for English speakers: a price of 25,000 yen is read **[にまんごせん|niman gosen]** (2 man 5 sen), not “twenty-five thousand”. The trick: split numbers from the right every **four** digits, not three.",
+            "**4, 7 and 9 have two readings.** Rule of thumb: use [よん|yon], [なな|nana], [きゅう|kyū]. The forms [し|shi], [しち|shichi], [く|ku] appear more in clock times and dates, and will be pointed out when needed."
+          ]
+        },
+        {
+          "title": "Asking for things: ～[をください|o kudasai] and relatives",
+          "body": [
+            "Three request patterns that cover almost everything you'll need as a beginner:"
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Example",
+              "Used for"
+            ],
+            "rows": [
+              [
+                "～を [ください|kudasai]",
+                "[みずを|Mizu o] [ください|kudasai]。",
+                "Asking for **things**. The most common."
+              ],
+              [
+                "～を [おねがいします|onegaishimasu]",
+                "[おかいけいを|Okaikei o] [おねがいします|onegaishimasu]。",
+                "A little more polite. Good for asking for **services**: please ring this up, please wrap it."
+              ],
+              [
+                "～は [ありますか|arimasu ka]",
+                "[トイレは|Toire wa] [ありますか|arimasu ka]。",
+                "Asking about **availability**: do you have…?"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Don't use [ください|kudasai] to ask someone to do something** — that needs a different form ([て|te]-form + [ください|kudasai]), covered in Unit 10. [ください|kudasai] with [を|o] is for things only."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "会話 2 — At the coffee shop",
+      "intro": "Budi orders a drink. Ordering in Japan has its own flow: order, size, for here or to go, pay.",
+      "lines": [
+        {
+          "speaker": "てんいん:",
+          "text": "[いらっしゃいませ|Irasshaimase]。[ごちゅうもんは|Gochūmon wa]？",
+          "id": "Welcome. What would you like?",
+          "literal": "please-come. honorable-order — as-for?"
+        },
+        {
+          "speaker": "ブディ:",
+          "text": "[アイスコーヒーを|Aisu kōhī o] [ひとつ|hitotsu] [ください|kudasai]。",
+          "id": "One iced coffee, please.",
+          "literal": "iced-coffee — [object] — one-thing — please-give."
+        },
+        {
+          "speaker": "てんいん:",
+          "text": "[サイズは|Saizu wa]？ S、M、L [が|ga] [あります|arimasu]。",
+          "id": "What size? We have S, M, and L.",
+          "literal": "size — as-for? S, M, L — [subject] — exist."
+        },
+        {
+          "speaker": "ブディ:",
+          "text": "M [を|o] [おねがいします|onegaishimasu]。",
+          "id": "M, please.",
+          "literal": "M — [object] — I-ask."
+        },
+        {
+          "speaker": "てんいん:",
+          "text": "[こちらで|Kochira de] [おめしあがりですか|omeshiagari desu ka]。",
+          "id": "Is that for here?",
+          "literal": "this-side — at — honorably-eat — is — [question]"
+        },
+        {
+          "speaker": "ブディ:",
+          "text": "[いいえ|Iie]、[もちかえりで|mochikaeri de]。",
+          "id": "No, to go.",
+          "literal": "no, take-home — as."
+        },
+        {
+          "speaker": "てんいん:",
+          "text": "[かしこまりました|Kashikomarimashita]。480[えんです|en desu]。",
+          "id": "Certainly. That's 480 yen.",
+          "literal": "understood (honorific). 480 — yen — is."
+        },
+        {
+          "speaker": "ブディ:",
+          "text": "1000[えんで|en de] [おねがいします|onegaishimasu]。",
+          "id": "Out of a thousand yen, please.",
+          "literal": "1000 — yen — with — I-ask."
+        },
+        {
+          "speaker": "てんいん:",
+          "text": "520[えんの|en no] [おかえしです|okaeshi desu]。",
+          "id": "Here's your change, 520 yen.",
+          "literal": "520 — yen — 's — honorable-change — is."
+        },
+        {
+          "speaker": "ブディ:",
+          "text": "[どうも|Dōmo]。",
+          "id": "Thanks.",
+          "literal": "indeed."
+        },
+        {
+          "speaker": "てんいん:",
+          "text": "[ありがとうございました|Arigatō gozaimashita]。",
+          "id": "Thank you very much.",
+          "literal": "thank-you (past)."
+        }
+      ],
+      "notes": [
+        "**かしこまりました = “certainly”, in a very respectful form.** You'll hear it in restaurants, hotels, and on customer-service calls. You **don't need to use it** — it's staff speaking to customers. Just recognize it.",
+        "**おめしあがりですか is also one-way honorific language.** It means “will you be eating it (here)?”. You only need two answers: **はい** (here) or **もちかえりで** (to go).",
+        "**Paying with a larger bill.** 1000えんでおねがいします is the standard phrase when handing over money. で here means “with (a tool/means)”.",
+        "**ご before a word = the honorific version.** It does the same job as the お you saw in Unit 1, but is used with words of Chinese origin: ごちゅうもん, ごかぞく. Which words take お and which take ご isn't worth memorizing now — you'll pick them up one at a time.",
+        "**どうも on its own = a short thanks.** Fine between equals, a bit too casual for a boss. The full version is どうもありがとうございます.",
+        "**Sen and yen.** Yen is written 円 and pronounced **えん** (*en*), not “yen”. The English spelling “yen” is a historical leftover, not how it sounds."
+      ],
+      "grammars": [
+        {
+          "title": "Two ways of counting: [つ|tsu] and [こ|ko]",
+          "body": [
+            "Japanese can't count without **counter words** — a bit like “three *sheets* of paper” or “two *loaves* of bread” in English, but compulsory. For a beginner, these two systems go a long way:",
+            "**～[つ|tsu] (native Japanese counting)** — for things in general, 1 to 10. The forms are irregular and must be memorized, but this is your lifesaver: if you don't know the right counter, ～[つ|tsu] is almost always understood.",
+            "**～[こ|ko] ([個|ko])** — for small, round objects; and from 11 upward, ～[つ|tsu] is no longer used."
+          ],
+          "table": {
+            "head": [
+              "Quantity",
+              "～つ",
+              "～こ",
+              "～にん (people)"
+            ],
+            "rows": [
+              [
+                "1",
+                "[ひとつ|hitotsu]",
+                "[いっこ|ikko]",
+                "[ひとり|hitori]"
+              ],
+              [
+                "2",
+                "[ふたつ|futatsu]",
+                "[にこ|niko]",
+                "[ふたり|futari]"
+              ],
+              [
+                "3",
+                "[みっつ|mittsu]",
+                "[さんこ|sanko]",
+                "[さんにん|sannin]"
+              ],
+              [
+                "4",
+                "[よっつ|yottsu]",
+                "[よんこ|yonko]",
+                "[よにん|yonin]"
+              ],
+              [
+                "5",
+                "[いつつ|itsutsu]",
+                "[ごこ|goko]",
+                "[ごにん|gonin]"
+              ],
+              [
+                "6",
+                "[むっつ|muttsu]",
+                "[ろっこ|rokko]",
+                "[ろくにん|rokunin]"
+              ],
+              [
+                "7",
+                "[ななつ|nanatsu]",
+                "[ななこ|nanako]",
+                "[ななにん|nananin]"
+              ],
+              [
+                "8",
+                "[やっつ|yattsu]",
+                "[はっこ|hakko]",
+                "[はちにん|hachinin]"
+              ],
+              [
+                "9",
+                "[ここのつ|kokonotsu]",
+                "[きゅうこ|kyūko]",
+                "[きゅうにん|kyūnin]"
+              ],
+              [
+                "10",
+                "[とお|tō]",
+                "[じゅっこ|jukko]",
+                "[じゅうにん|jūnin]"
+              ],
+              [
+                "how many",
+                "[いくつ|ikutsu]",
+                "[なんこ|nanko]",
+                "[なんにん|nannin]"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **[ひとり|hitori] and [ふたり|futari] break the pattern** — 1 person and 2 people have their own forms; the rest use ～[にん|nin].",
+            "**Position in the sentence:** [ノートを|nōto o] **[みっつ|mittsu]** [ください|kudasai]。 The number stands on its own after the object, with no particle at all."
+          ]
+        },
+        {
+          "title": "[で|de] — the “with” particle that does double duty",
+          "body": [
+            "You'll meet the particle **[で|de]** again and again. In this unit it shows up in three jobs, all of which can be translated “with” or “by”:"
+          ],
+          "table": {
+            "head": [
+              "Job",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Tool / means of payment",
+                "[カードで|kādo de] [はらいます|haraimasu]",
+                "pay by card"
+              ],
+              [
+                "Total amount",
+                "[ぜんぶで|zenbu de] 870[えん|en]",
+                "870 yen altogether"
+              ],
+              [
+                "Form of handover",
+                "[もちかえりで|mochikaeri de]",
+                "as takeout"
+              ],
+              [
+                "Language used",
+                "[にほんごで|Nihongo de] [おねがいします|onegaishimasu]",
+                "in Japanese, please"
+              ]
+            ]
+          },
+          "after": [
+            "[で|de] has one more big job — marking **the place where an action happens** — covered in Unit 6."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Japanese money and how to say it",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Japan still relies heavily on cash, and you need to recognize the denominations quickly in your hand. Every amount is said with えん at the end."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Denomination",
+            "Reading",
+            "Form"
+          ],
+          "rows": [
+            [
+              "1 円",
+              "[いちえん|ichi-en]",
+              "Aluminum coin, very light"
+            ],
+            [
+              "10 円",
+              "[じゅうえん|jū-en]",
+              "Copper coin"
+            ],
+            [
+              "100 円",
+              "[ひゃくえん|hyaku-en]",
+              "Silver coin — the most used"
+            ],
+            [
+              "500 円",
+              "[ごひゃくえん|gohyaku-en]",
+              "Large coin"
+            ],
+            [
+              "1,000 円",
+              "[せんえん|sen-en]",
+              "Smallest bill"
+            ],
+            [
+              "5,000 円",
+              "[ごせんえん|gosen-en]",
+              "Bill"
+            ],
+            [
+              "10,000 円",
+              "[いちまんえん|ichiman-en]",
+              "Largest common bill"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Practicing まん quickly",
+          "items": [
+            "The easiest way to read big prices: split the number every **four** digits from the right, not three. 250,000 → 25|0000 → にじゅうごまん.",
+            "Roughly, 1,000 yen is somewhere around 6–7 US dollars (depending on the exchange rate). So when you see 一万円, think of a decent restaurant dinner — not pocket change.",
+            "Five-minute drill: open a Japanese shopping app and read ten prices aloud. It's the most effective number practice you can do on your own."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Surviving the checkout",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Japanese cashiers say the same sentences every day, and they're long and respectful. You don't need to be able to say them — you only need to **recognize** them and know the short answer."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "What you hear",
+            "What it means",
+            "Your short answer"
+          ],
+          "rows": [
+            [
+              "[ふくろは|Fukuro wa] [いりますか|irimasu ka]。",
+              "Do you need a bag?",
+              "[はい|Hai] / [だいじょうぶです|Daijōbu desu]。"
+            ],
+            [
+              "[ポイントカードは|Pointo kādo wa]？",
+              "Do you have a points card?",
+              "[ありません|Arimasen]。"
+            ],
+            [
+              "[おしはらいは|Oshiharai wa]？",
+              "How will you be paying?",
+              "[げんきんで|Genkin de]。 / [カードで|Kādo de]。"
+            ],
+            [
+              "[あたためますか|Atatamemasu ka]。",
+              "Shall I heat it up?",
+              "[はい|Hai]、[おねがいします|onegaishimasu]。"
+            ],
+            [
+              "[レシートは|Reshīto wa]？",
+              "Your receipt?",
+              "[はい|Hai]、[ください|kudasai]。"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three emergency phrases",
+          "items": [
+            "**[だいじょうぶです|Daijōbu desu]。** — “I'm fine / no need.” Politely declines anything.",
+            "**[けっこうです|Kekkō desu]。** — “That's all, thanks.” Declines an extra offer.",
+            "**[もういちど|Mō ichido] [おねがいします|onegaishimasu]。** — “Once more, please.” The most useful sentence of your first week in Japan."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ja": "[いち|ichi] 一",
+      "baca": "いち · ichi",
+      "en": "one"
+    },
+    {
+      "ja": "[に|ni] 二",
+      "baca": "に · ni",
+      "en": "two"
+    },
+    {
+      "ja": "[さん|san] 三",
+      "baca": "さん · san",
+      "en": "three"
+    },
+    {
+      "ja": "[よん|yon] 四",
+      "baca": "よん · yon",
+      "en": "four"
+    },
+    {
+      "ja": "[ご|go] 五",
+      "baca": "ご · go",
+      "en": "five"
+    },
+    {
+      "ja": "[ろく|roku] 六",
+      "baca": "ろく · roku",
+      "en": "six"
+    },
+    {
+      "ja": "[なな|nana] 七",
+      "baca": "なな · nana",
+      "en": "seven"
+    },
+    {
+      "ja": "[はち|hachi] 八",
+      "baca": "はち · hachi",
+      "en": "eight"
+    },
+    {
+      "ja": "[きゅう|kyū] 九",
+      "baca": "きゅう · kyū",
+      "en": "nine"
+    },
+    {
+      "ja": "[じゅう|jū] 十",
+      "baca": "じゅう · jū",
+      "en": "ten"
+    },
+    {
+      "ja": "[ひゃく|hyaku] 百",
+      "baca": "ひゃく · hyaku",
+      "en": "hundred"
+    },
+    {
+      "ja": "[せん|sen] 千",
+      "baca": "せん · sen",
+      "en": "thousand"
+    },
+    {
+      "ja": "[まん|man] 万",
+      "baca": "まん · man",
+      "en": "ten thousand"
+    },
+    {
+      "ja": "[えん|en] 円",
+      "baca": "えん · en",
+      "en": "yen"
+    },
+    {
+      "ja": "[いくら|ikura]",
+      "baca": "いくら · ikura",
+      "en": "how much (price)"
+    },
+    {
+      "ja": "[いくつ|ikutsu]",
+      "baca": "いくつ · ikutsu",
+      "en": "how many (things)"
+    },
+    {
+      "ja": "[ひとつ|hitotsu] 一つ",
+      "baca": "ひとつ · hitotsu",
+      "en": "one (thing)"
+    },
+    {
+      "ja": "[ふたつ|futatsu] 二つ",
+      "baca": "ふたつ · futatsu",
+      "en": "two (things)"
+    },
+    {
+      "ja": "[みっつ|mittsu] 三つ",
+      "baca": "みっつ · mittsu",
+      "en": "three (things)"
+    },
+    {
+      "ja": "[ください|kudasai]",
+      "baca": "ください · kudasai",
+      "en": "please give me"
+    },
+    {
+      "ja": "[おねがいします|onegaishimasu]",
+      "baca": "おねがいします · onegaishimasu",
+      "en": "please; I ask"
+    },
+    {
+      "ja": "[てんいん|ten'in] 店員",
+      "baca": "てんいん · ten'in",
+      "en": "shop clerk"
+    },
+    {
+      "ja": "[みせ|mise] 店",
+      "baca": "みせ · mise",
+      "en": "shop, store"
+    },
+    {
+      "ja": "[ぜんぶ|zenbu] 全部",
+      "baca": "ぜんぶ · zenbu",
+      "en": "all, everything"
+    },
+    {
+      "ja": "[ほか|hoka]",
+      "baca": "ほか · hoka",
+      "en": "other"
+    },
+    {
+      "ja": "[サイズ|saizu]",
+      "baca": "サイズ · saizu",
+      "en": "size"
+    },
+    {
+      "ja": "[カード|kādo]",
+      "baca": "カード · kādo",
+      "en": "card"
+    },
+    {
+      "ja": "[げんきん|genkin] 現金",
+      "baca": "げんきん · genkin",
+      "en": "cash"
+    },
+    {
+      "ja": "[レシート|reshīto]",
+      "baca": "レシート · reshīto",
+      "en": "receipt"
+    },
+    {
+      "ja": "[ふくろ|fukuro] 袋",
+      "baca": "ふくろ · fukuro",
+      "en": "bag (shopping)"
+    },
+    {
+      "ja": "[おかえし|okaeshi]",
+      "baca": "おかえし · okaeshi",
+      "en": "change (money)"
+    },
+    {
+      "ja": "[ちゅうもん|chūmon] 注文",
+      "baca": "ちゅうもん · chūmon",
+      "en": "order"
+    },
+    {
+      "ja": "[もちかえり|mochikaeri] 持ち帰り",
+      "baca": "もちかえり · mochikaeri",
+      "en": "takeout, to go"
+    },
+    {
+      "ja": "[だいじょうぶ|daijōbu] 大丈夫",
+      "baca": "だいじょうぶ · daijōbu",
+      "en": "it's OK; no need"
+    },
+    {
+      "ja": "[けっこうです|kekkō desu]",
+      "baca": "けっこうです · kekkō desu",
+      "en": "that's all (declining)"
+    },
+    {
+      "ja": "[かしこまりました|kashikomarimashita]",
+      "baca": "かしこまりました · kashikomarimashita",
+      "en": "certainly (very respectful)"
+    },
+    {
+      "ja": "[もういちど|mō ichido] もう一度",
+      "baca": "もういちど · mō ichido",
+      "en": "once more"
+    },
+    {
+      "ja": "[アイスコーヒー|aisu kōhī]",
+      "baca": "アイスコーヒー · aisu kōhī",
+      "en": "iced coffee"
+    },
+    {
+      "ja": "[おちゃ|ocha] お茶",
+      "baca": "おちゃ · ocha",
+      "en": "tea"
+    },
+    {
+      "ja": "[パン|pan]",
+      "baca": "パン · pan",
+      "en": "bread"
+    },
+    {
+      "ja": "[たまご|tamago] 卵",
+      "baca": "たまご · tamago",
+      "en": "egg"
+    },
+    {
+      "ja": "[りんご|ringo]",
+      "baca": "りんご · ringo",
+      "en": "apple"
+    },
+    {
+      "ja": "[やすい|yasui] 安い",
+      "baca": "やすい · yasui",
+      "en": "cheap"
+    },
+    {
+      "ja": "[たかい|takai] 高い",
+      "baca": "たかい · takai",
+      "en": "expensive"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these numbers in kana.",
+      "items": [
+        "7: ___",
+        "12: ___",
+        "30: ___",
+        "100: ___",
+        "300: ___",
+        "1000: ___"
+      ]
+    },
+    {
+      "prompt": "Fill in the missing particle.",
+      "items": [
+        "このノート ___ いくらですか。",
+        "コーヒー ___ ひとつください。",
+        "カード ___ いいですか。",
+        "ぜんぶ ___ 870えんです。",
+        "1000えん ___ おねがいします。",
+        "サイズ ___ Mをおねがいします。"
+      ]
+    },
+    {
+      "prompt": "Arrange the tiles into a correct sentence.",
+      "items": [
+        "この / ペン / は / いくら / です / か",
+        "ノート / を / みっつ / ください",
+        "ぜんぶ / で / いくら / です / か",
+        "アイスコーヒー / を / ひとつ / おねがいします",
+        "すみません / もういちど / おねがいします",
+        "トイレ / は / あります / か"
+      ]
+    },
+    {
+      "prompt": "Fill in the right counter (the ～つ form).",
+      "items": [
+        "1 thing: ___",
+        "2 things: ___",
+        "3 things: ___",
+        "4 things: ___",
+        "how many: ___"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "このかさは1500えんです。",
+        "ぜんぶで3200えんです。",
+        "ふくろはいりますか。",
+        "いいえ、けっこうです。",
+        "520えんのおかえしです。"
+      ]
+    },
+    {
+      "prompt": "Translate into Japanese. Write in rōmaji.",
+      "items": [
+        "How much is it?",
+        "Two, please.",
+        "Can I pay by card?",
+        "Once more, please.",
+        "No, I'm fine."
+      ]
+    }
+  ],
+  "answers": [
+    "なな — じゅうに — さんじゅう — ひゃく — さんびゃく — せん",
+    "は — を — で — で — で — は",
+    "この ペン は いくら です か — ノート を みっつ ください — ぜんぶ で いくら です か — アイスコーヒー を ひとつ おねがいします — すみません もういちど おねがいします — トイレ は あります か",
+    "ひとつ — ふたつ — みっつ — よっつ — いくつ",
+    "This umbrella is 1,500 yen. — That's 3,200 yen altogether. — Do you need a bag? — No, that's all, thanks. — Here's your change, 520 yen.",
+    "ikura desu ka — futatsu kudasai — kādo de ii desu ka — mō ichido onegaishimasu — iie daijōbu desu"
+  ],
+  "wave": "Review Unit 2: cover the meaning column, then name ten things around you right now with the pattern これは～です. Then say their rough price in yen — two units practiced in five minutes."
+}

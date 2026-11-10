@@ -1,0 +1,341 @@
+{
+  "title": "Describing and giving opinions",
+  "title_target": "どうですか — Dō desu ka",
+  "goal": "Describe things, places and people with adjectives; say what you like and dislike; and give opinions that sound natural, not translated.",
+  "bekal": [
+    "telling い-adjectives from な-adjectives",
+    "making adjectives negative and past",
+    "putting adjectives in front of nouns",
+    "saying you like something with ～が すきです",
+    "giving opinions with とても and あまり"
+  ],
+  "dialogs": [
+    {
+      "title": "会話 1 — How's Tokyo?",
+      "intro": "Tanaka asks Ani about her impressions of Japan. Watch the two kinds of adjectives taking turns — this is the key distinction in this unit.",
+      "lines": [
+        {"speaker": "たなか:", "text": "[とうきょうは|Tōkyō wa] [どうですか|dō desu ka]。", "id": "How do you like Tokyo?", "literal": "Tokyo — as-for — how — is — [question]."},
+        {"speaker": "アニ:", "text": "[とても|Totemo] [おもしろいです|omoshiroi desu]。でも、[すこし|sukoshi] [たかいです|takai desu]。", "id": "It's really interesting. But a bit expensive.", "literal": "very — interesting — is. but, a-little — expensive — is."},
+        {"speaker": "たなか:", "text": "[そうですね|Sō desu ne]。[へやは|Heya wa] [ひろいですか|hiroi desu ka]。", "id": "True. Is your room spacious?", "literal": "so — is — right. room — as-for — spacious — is — [question]."},
+        {"speaker": "アニ:", "text": "[いいえ|Iie]、[ひろくないです|hirokunai desu]。[せまいですが|Semai desu ga]、[しずかです|shizuka desu]。", "id": "No, it isn't. It's small, but quiet.", "literal": "no, spacious-not — is. cramped — is — but, quiet — is."},
+        {"speaker": "たなか:", "text": "[しずかな|Shizukana] [へやは|heya wa] [いいですね|ii desu ne]。[ちかくに|Chikaku ni] [なにが|nani ga] [ありますか|arimasu ka]。", "id": "A quiet room is nice. What's nearby?", "literal": "quiet — room — as-for — good — is — right. nearby — at — what — [subject] — exists — [question]."},
+        {"speaker": "アニ:", "text": "[おおきい|Ōkii] [こうえんが|kōen ga] [あります|arimasu]。[とても|Totemo] [きれいです|kirei desu]。", "id": "There's a big park. It's very pretty.", "literal": "big — park — [subject] — exists. very — pretty — is."},
+        {"speaker": "たなか:", "text": "[にほんの|Nihon no] [たべものは|tabemono wa] [どうですか|dō desu ka]。", "id": "How about Japanese food?", "literal": "Japan — 's — food — as-for — how — is — [question]."},
+        {"speaker": "アニ:", "text": "[おいしいです|Oishii desu]！でも、[なっとうは|nattō wa] [あまり|amari] [すきじゃありません|suki ja arimasen]。", "id": "Delicious! But I'm not too keen on natto.", "literal": "delicious — is! but, natto — as-for — not-much — liked — is-not."},
+        {"speaker": "たなか:", "text": "[はは|Haha]、[なっとうは|nattō wa] [むずかしいですね|muzukashii desu ne]。", "id": "Haha, natto is a tough one, isn't it?", "literal": "haha, natto — as-for — difficult — is — right."},
+        {"speaker": "アニ:", "text": "[でも|Demo]、[すしは|sushi wa] [だいすきです|daisuki desu]。[まいしゅう|Maishū] [たべます|tabemasu]。", "id": "But I love sushi. I eat it every week.", "literal": "but, sushi — as-for — big-liked — is. every-week — eat."}
+      ],
+      "notes": [
+        "**Japanese has two kinds of adjectives**, and they behave differently. **い-adjectives** end in い and change form themselves (たかい → たかくない). **な-adjectives** don't change and lean on です (しずか → しずかじゃありません). Telling them apart is the main job of this unit.",
+        "**が in the middle of a sentence means “but”.** せまいです**が**、しずかです = it's small, but quiet. Don't confuse it with が the subject marker — position tells them apart: at the end of a clause it means “but”, after a noun it's the marker.",
+        "**きれい ends in い but is not an い-adjective.** This is the most famous trap in Japanese. きれい, ゆうめい and きらい are all **な-adjectives**, despite ending in い. The reason: the い is part of the kanji (綺麗), not an ending. All three must be memorized as exceptions.",
+        "**すき isn't a verb but a な-adjective.** すきです = “like”, and the thing liked is marked with **が**, not を: すしが すきです. It feels odd at first, but makes sense once you know すき is closer to “pleasing to me”.",
+        "**だいすき = love, really like**; the prefix だい (大) intensifies. Its partners: きらい (dislike), だいきらい (hate).",
+        "**あまり + negative adjective** — same as with verbs in Unit 6: あまり すきじゃありません = not very fond of. This is the gentlest way to say you dislike something, and Japanese people use it far more often than きらいです, which sounds harsh."
+      ],
+      "grammars": [
+        {
+          "title": "[い|i]-adjectives — they change themselves",
+          "body": [
+            "[い|i]-adjectives end in **[い|i]** and change their own form to become negative or past. **[です|desu] doesn't change** — it just sits at the end as a politeness marker."
+          ],
+          "table": {
+            "head": ["Form", "Example (たかい = expensive)", "Meaning"],
+            "rows": [
+              ["Plain", "[たかいです|takai desu]", "is expensive"],
+              ["Negative", "[たかくないです|takakunai desu]", "isn't expensive"],
+              ["Past", "[たかかったです|takakatta desu]", "was expensive"],
+              ["Past negative", "[たかくなかったです|takakunakatta desu]", "wasn't expensive"],
+              ["+ noun", "[たかい|takai] [ほん|hon]", "an expensive book"]
+            ]
+          },
+          "after": [
+            "**The rule:** drop the [い|i], then add **[くない|kunai]** (negative) or **[かった|katta]** (past).",
+            "⚠️ **[いい|ii] (good) is irregular.** Its stem becomes [よ|yo]～: [よくないです|yokunai desu] (not good), [よかったです|yokatta desu] (was good). [いくないです|ikunai desu] is wrong.",
+            "⚠️ **Don't write [たかいでした|takai deshita] for the past.** It's the adjective that changes, not [です|desu]. This is the number-one beginner mistake in this unit."
+          ]
+        },
+        {
+          "title": "[な|na]-adjectives — they lean on [です|desu]",
+          "body": [
+            "[な|na]-adjectives **don't change at all**. What changes is the [です|desu] after them — exactly like nouns in Unit 1. If you can already change [がくせいです|gakusei desu], you can change every [な|na]-adjective."
+          ],
+          "table": {
+            "head": ["Form", "Example (しずか = quiet)", "Meaning"],
+            "rows": [
+              ["Plain", "[しずかです|shizuka desu]", "is quiet"],
+              ["Negative", "[しずかじゃありません|shizuka ja arimasen]", "isn't quiet"],
+              ["Past", "[しずかでした|shizuka deshita]", "was quiet"],
+              ["Past negative", "[しずかじゃありませんでした|shizuka ja arimasen deshita]", "wasn't quiet"],
+              ["+ noun", "[しずかな|shizukana] [へや|heya]", "a quiet room"]
+            ]
+          },
+          "after": [
+            "**Where does the name come from?** From the **[な|na]** that appears when the adjective is attached to a noun: [しずか|shizuka]**[な|na]**[へや|heya]. [い|i]-adjectives don't need it: [たかいほん|takai hon].",
+            "**A quick way to tell them apart:** if it doesn't end in [い|i], it's definitely a [な|na]-adjective. If it ends in [い|i], it's almost certainly an [い|i]-adjective — except **[きれい|kirei], [ゆうめい|yūmei], [きらい|kirai]**, three exceptions to memorize."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "会話 2 — Choosing a restaurant",
+      "intro": "Budi and Ani pick a place to eat. Notice how adjectives are used to compare and give reasons.",
+      "lines": [
+        {"speaker": "ブディ:", "text": "[おなかが|Onaka ga] [すきました|sukimashita]。[どこで|Doko de] [たべますか|tabemasu ka]。", "id": "I'm hungry. Where shall we eat?", "literal": "stomach — [subject] — became-empty. where — at — eat — [question]."},
+        {"speaker": "アニ:", "text": "[えきの|Eki no] [ちかくに|chikaku ni] [あたらしい|atarashii] [みせが|mise ga] [あります|arimasu]。", "id": "There's a new place near the station.", "literal": "station — 's — nearby — at — new — shop — [subject] — exists."},
+        {"speaker": "ブディ:", "text": "[どんな|Donna] [みせですか|mise desu ka]。", "id": "What kind of place?", "literal": "what-kind-of — shop — is — [question]."},
+        {"speaker": "アニ:", "text": "[ラーメンやです|Rāmen-ya desu]。[やすくて|Yasukute] [おいしいです|oishii desu]。", "id": "A ramen shop. Cheap and tasty.", "literal": "ramen-shop — is. cheap-and — tasty — is."},
+        {"speaker": "ブディ:", "text": "[いいですね|Ii desu ne]。でも、[こんでいますか|konde imasu ka]。", "id": "Nice. But is it crowded?", "literal": "good — is — right. but, crowded-being — [question]."},
+        {"speaker": "アニ:", "text": "[ひるは|Hiru wa] [とても|totemo] [こんでいます|konde imasu]。でも、[いまは|ima wa] [だいじょうぶです|daijōbu desu]。", "id": "At lunchtime it's packed. But now it's fine.", "literal": "midday — as-for — very — crowded-being. but, now — as-for — all-right — is."},
+        {"speaker": "ブディ:", "text": "[ブディは|Budi wa] [からい|karai] [たべものが|tabemono ga] [すきです|suki desu]。[からい|Karai] [ラーメンは|rāmen wa] [ありますか|arimasu ka]。", "id": "I like spicy food. Do they have spicy ramen?", "literal": "Budi — as-for — spicy — food — [subject] — liked — is. spicy — ramen — as-for — exists — [question]."},
+        {"speaker": "アニ:", "text": "[はい|Hai]、[あります|arimasu]。[でも|Demo]、[すごく|sugoku] [からいですよ|karai desu yo]。", "id": "Yes, they do. But it's seriously spicy, you know.", "literal": "yes, exists. but, terribly — spicy — is — you-know."},
+        {"speaker": "ブディ:", "text": "[だいじょうぶです|Daijōbu desu]。[インドネシアの|Indoneshia no] [りょうりも|ryōri mo] [からいです|karai desu]。", "id": "No problem. Indonesian food is spicy too.", "literal": "all-right — is. Indonesia — 's — cuisine — also — spicy — is."},
+        {"speaker": "アニ:", "text": "[そうですね|Sō desu ne]。[じゃあ|Jā]、[いきましょう|ikimashō]。", "id": "True. Well then, let's go.", "literal": "so — is — right. well-then, let's-go."}
+      ],
+      "notes": [
+        "**おなかがすきました = I'm hungry**, literally “my stomach has become empty”. It's past tense although it means now — a fixed expression to learn as is. The opposite: おなかがいっぱいです (I'm full).",
+        "**～くて links two い-adjectives**: やすくて おいしい = cheap and tasty. For な-adjectives the link is **で**: しずかで きれい. This connecting form is very common and very economical.",
+        "**～や (屋) = a shop selling ～.** ラーメンや (ramen shop), パンや (bakery), はなや (florist), ほんや (bookstore). This one suffix gives you dozens of words.",
+        "**こんでいます = is crowded.** The ～ています form expresses an ongoing state; it isn't covered in this module, but the word is too useful to skip.",
+        "**すごく = really, super**, a livelier version of とても. A bit more casual, very common in everyday conversation.",
+        "**Budi calls himself “ブディは”, not “わたしは”.** Using your own name instead of “I” sounds natural in Japanese, especially in casual talk — something that would sound childish in English."
+      ],
+      "grammars": [
+        {
+          "title": "Saying you like something: ～[が|ga] [すきです|suki desu]",
+          "body": [
+            "The thing liked is marked with **[が|ga]**, not [を|o] — because [すき|suki] is really an adjective, not a verb. The full pattern: **[who] [は|wa] [what] [が|ga] [すきです|suki desu]**."
+          ],
+          "table": {
+            "head": ["Sentence", "Meaning"],
+            "rows": [
+              ["[わたしは|Watashi wa] [すしが|sushi ga] [すきです|suki desu]。", "I like sushi."],
+              ["[わたしは|Watashi wa] [なっとうが|nattō ga] [あまり|amari] [すきじゃありません|suki ja arimasen]。", "I'm not too keen on natto."],
+              ["[アニさんは|Ani-san wa] [おんがくが|ongaku ga] [だいすきです|daisuki desu]。", "Ani loves music."],
+              ["[なにが|Nani ga] [すきですか|suki desu ka]。", "What do you like?"],
+              ["[にほんごが|Nihongo ga] [じょうずですね|jōzu desu ne]。", "Your Japanese is good."]
+            ]
+          },
+          "after": [
+            "**This [が|ga] family is fairly large:** [すき|suki] (like), [きらい|kirai] (dislike), [じょうず|jōzu] (good at), [へた|heta] (bad at), [わかります|wakarimasu] (understand), [できます|dekimasu] (can), [あります|arimasu]/[います|imasu] (exist). All take [が|ga], and beginners often wrongly use [を|o] with all of them.",
+            "⚠️ **Don't praise yourself with [じょうず|jōzu].** When someone says [にほんごがじょうずですね|nihongo ga jōzu desu ne], the natural reply is **[いいえ|iie]、[まだまだです|mada mada desu]** (no, I've still got a long way to go) — modesty is part of Japanese politeness."
+          ]
+        },
+        {
+          "title": "Your first forty adjectives",
+          "body": [
+            "The left table is **[い|i]**-adjectives, the right is **[な|na]**-adjectives. Learn them in pairs with their opposites — they stick much faster."
+          ],
+          "tables": [
+            {
+              "head": ["い-adjective", "Meaning", "Opposite", "Meaning"],
+              "rows": [
+                ["[おおきい|ōkii] 大きい", "big", "[ちいさい|chiisai] 小さい", "small"],
+                ["[たかい|takai] 高い", "expensive; tall", "[やすい|yasui] 安い", "cheap"],
+                ["[あたらしい|atarashii] 新しい", "new", "[ふるい|furui] 古い", "old"],
+                ["[あつい|atsui] 暑い", "hot", "[さむい|samui] 寒い", "cold (weather)"],
+                ["[ひろい|hiroi] 広い", "spacious", "[せまい|semai] 狭い", "cramped"],
+                ["[ながい|nagai] 長い", "long", "[みじかい|mijikai] 短い", "short"],
+                ["[おもしろい|omoshiroi]", "interesting", "[つまらない|tsumaranai]", "boring"],
+                ["[むずかしい|muzukashii] 難しい", "difficult", "[やさしい|yasashii]", "easy; kind"],
+                ["[いそがしい|isogashii] 忙しい", "busy", "[おいしい|oishii]", "delicious"],
+                ["[ちかい|chikai] 近い", "near", "[とおい|tōi] 遠い", "far"],
+                ["[はやい|hayai] 早い", "fast; early", "[おそい|osoi] 遅い", "slow; late"],
+                ["[からい|karai] 辛い", "spicy", "[あまい|amai] 甘い", "sweet"]
+              ]
+            },
+            {
+              "head": ["な-adjective", "Meaning", "な-adjective", "Meaning"],
+              "rows": [
+                ["[しずか|shizuka] 静か", "quiet", "[にぎやか|nigiyaka]", "lively, bustling"],
+                ["[きれい|kirei] ⚠️", "pretty, clean", "[ゆうめい|yūmei] 有名 ⚠️", "famous"],
+                ["[すき|suki] 好き", "liked", "[きらい|kirai] 嫌い ⚠️", "disliked"],
+                ["[じょうず|jōzu] 上手", "skilled", "[へた|heta] 下手", "unskilled"],
+                ["[べんり|benri] 便利", "convenient", "[ふべん|fuben] 不便", "inconvenient"],
+                ["[げんき|genki] 元気", "healthy, energetic", "[ひま|hima] 暇", "free (time)"],
+                ["[たいへん|taihen] 大変", "tough, hard", "[だいじょうぶ|daijōbu] 大丈夫", "all right"],
+                ["[しんせつ|shinsetsu] 親切", "kind, helpful", "[まじめ|majime]", "serious, diligent"]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ The three marked — **[きれい|kirei], [ゆうめい|yūmei], [きらい|kirai]** — end in [い|i] but are **[な|na]**-adjectives. If you memorize only one set of exceptions from this unit, make it these three."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Giving opinions that sound natural",
+      "blocks": [
+        {"type": "p", "text": "Japanese people rarely state opinions in absolute terms. A softened sentence isn't a sign of doubt — it's a sign of consideration for the listener. The list below runs from most direct to most gentle:"},
+        {"type": "tabel", "head": ["Sentence", "Meaning", "Tone"], "rows": [
+          ["[おいしいです|Oishii desu]。", "It's tasty.", "Flat, clear"],
+          ["[とても|Totemo] [おいしいです|oishii desu]。", "It's very tasty.", "Enthusiastic"],
+          ["[おいしいですね|Oishii desu ne]。", "It's tasty, isn't it?", "Invites agreement — most natural"],
+          ["[ちょっと|Chotto] [からいですね|karai desu ne]。", "It's a bit spicy, isn't it?", "Gentle complaint"],
+          ["[あまり|Amari] [すきじゃありません|suki ja arimasen]。", "I'm not too keen on it.", "Gentle refusal"],
+          ["[すきじゃありません|Suki ja arimasen]。", "I don't like it.", "Frank"],
+          ["[きらいです|Kirai desu]。", "I hate it.", "⚠️ Harsh — use with care"]
+        ]},
+        {"type": "kotak", "title": "Intensifiers and softeners", "items": [
+          "**[とても|totemo]** = very. Neutral, safe anywhere.",
+          "**[すごく|sugoku]** = really, super. More casual and lively.",
+          "**[ちょっと|chotto] / [すこし|sukoshi]** = a little, a bit. ちょっと is more casual, すこし neater.",
+          "**[あまり|amari] + negative** = not very, not much.",
+          "**[ぜんぜん|zenzen] + negative** = not at all.",
+          "⚠️ とても can't be used with a negative verb. For that, use あまり."
+        ]}
+      ]
+    },
+    {
+      "title": "Weather and seasons",
+      "blocks": [
+        {"type": "p", "text": "The weather is Japan's number-one conversation opener, and almost all of it uses the adjectives you've just learned."},
+        {"type": "tabel", "head": ["Season", "Reading", "Typical sentence"], "rows": [
+          ["春", "[はる|haru]", "[はるは|Haru wa] [あたたかいです|atatakai desu]。 — Spring is warm."],
+          ["夏", "[なつ|natsu]", "[なつは|Natsu wa] [あついです|atsui desu]。 — Summer is hot."],
+          ["秋", "[あき|aki]", "[あきは|Aki wa] [すずしいです|suzushii desu]。 — Fall is cool."],
+          ["冬", "[ふゆ|fuyu]", "[ふゆは|Fuyu wa] [さむいです|samui desu]。 — Winter is cold."]
+        ]},
+        {"type": "tabel", "head": ["Weather", "Reading", "Meaning"], "rows": [
+          ["[てんき|tenki] 天気", "tenki", "weather"],
+          ["[はれ|hare] 晴れ", "hare", "sunny"],
+          ["[くもり|kumori] 曇り", "kumori", "cloudy"],
+          ["[あめ|ame] 雨", "ame", "rain"],
+          ["[ゆき|yuki] 雪", "yuki", "snow"],
+          ["[かぜ|kaze] 風", "kaze", "wind"]
+        ]},
+        {"type": "kotak", "title": "Conversation openers that never fail", "items": [
+          "**[きょうは|Kyō wa] [いい|ii] [てんきですね|tenki desu ne]。** — Nice weather today, isn't it?",
+          "**[あついですね|Atsui desu ne]。** — Hot, isn't it? (Japanese summers are humid and heavy — you'll use this every day in August.)",
+          "**[さむくなりましたね|Samuku narimashita ne]。** — It's gotten cold, hasn't it?",
+          "Weather lines work like “how are you?” in English: they don't call for a serious answer, but they open the door."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    {"ja": "[おおきい|ōkii] 大きい", "baca": "おおきい · ōkii", "en": "big"},
+    {"ja": "[ちいさい|chiisai] 小さい", "baca": "ちいさい · chiisai", "en": "small"},
+    {"ja": "[あたらしい|atarashii] 新しい", "baca": "あたらしい · atarashii", "en": "new"},
+    {"ja": "[ふるい|furui] 古い", "baca": "ふるい · furui", "en": "old (things)"},
+    {"ja": "[あつい|atsui] 暑い", "baca": "あつい · atsui", "en": "hot"},
+    {"ja": "[さむい|samui] 寒い", "baca": "さむい · samui", "en": "cold (weather)"},
+    {"ja": "[ひろい|hiroi] 広い", "baca": "ひろい · hiroi", "en": "spacious"},
+    {"ja": "[せまい|semai] 狭い", "baca": "せまい · semai", "en": "cramped, small"},
+    {"ja": "[ながい|nagai] 長い", "baca": "ながい · nagai", "en": "long"},
+    {"ja": "[みじかい|mijikai] 短い", "baca": "みじかい · mijikai", "en": "short"},
+    {"ja": "[おもしろい|omoshiroi] 面白い", "baca": "おもしろい · omoshiroi", "en": "interesting, fun"},
+    {"ja": "[つまらない|tsumaranai]", "baca": "つまらない · tsumaranai", "en": "boring"},
+    {"ja": "[むずかしい|muzukashii] 難しい", "baca": "むずかしい · muzukashii", "en": "difficult"},
+    {"ja": "[やさしい|yasashii] 優しい", "baca": "やさしい · yasashii", "en": "easy; kind"},
+    {"ja": "[おいしい|oishii]", "baca": "おいしい · oishii", "en": "delicious"},
+    {"ja": "[からい|karai] 辛い", "baca": "からい · karai", "en": "spicy"},
+    {"ja": "[あまい|amai] 甘い", "baca": "あまい · amai", "en": "sweet"},
+    {"ja": "[はやい|hayai] 早い", "baca": "はやい · hayai", "en": "fast; early"},
+    {"ja": "[おそい|osoi] 遅い", "baca": "おそい · osoi", "en": "slow; late"},
+    {"ja": "[しずか|shizuka] 静か", "baca": "しずか · shizuka", "en": "quiet"},
+    {"ja": "[にぎやか|nigiyaka]", "baca": "にぎやか · nigiyaka", "en": "lively, bustling"},
+    {"ja": "[きれい|kirei] ⚠️な", "baca": "きれい · kirei", "en": "pretty, clean"},
+    {"ja": "[ゆうめい|yūmei] 有名 ⚠️な", "baca": "ゆうめい · yūmei", "en": "famous"},
+    {"ja": "[すき|suki] 好き", "baca": "すき · suki", "en": "liked"},
+    {"ja": "[だいすき|daisuki] 大好き", "baca": "だいすき · daisuki", "en": "loved, really liked"},
+    {"ja": "[きらい|kirai] 嫌い ⚠️な", "baca": "きらい · kirai", "en": "disliked"},
+    {"ja": "[じょうず|jōzu] 上手", "baca": "じょうず · jōzu", "en": "skilled, good at"},
+    {"ja": "[へた|heta] 下手", "baca": "へた · heta", "en": "unskilled, bad at"},
+    {"ja": "[べんり|benri] 便利", "baca": "べんり · benri", "en": "convenient"},
+    {"ja": "[げんき|genki] 元気", "baca": "げんき · genki", "en": "healthy, energetic"},
+    {"ja": "[しんせつ|shinsetsu] 親切", "baca": "しんせつ · shinsetsu", "en": "kind, helpful"},
+    {"ja": "[とても|totemo]", "baca": "とても · totemo", "en": "very"},
+    {"ja": "[すごく|sugoku]", "baca": "すごく · sugoku", "en": "really, super"},
+    {"ja": "[すこし|sukoshi] 少し", "baca": "すこし · sukoshi", "en": "a little"},
+    {"ja": "[たべもの|tabemono] 食べ物", "baca": "たべもの · tabemono", "en": "food"},
+    {"ja": "[のみもの|nomimono] 飲み物", "baca": "のみもの · nomimono", "en": "drink"},
+    {"ja": "[すし|sushi] 寿司", "baca": "すし · sushi", "en": "sushi"},
+    {"ja": "[ラーメン|rāmen]", "baca": "ラーメン · rāmen", "en": "ramen"},
+    {"ja": "[てんき|tenki] 天気", "baca": "てんき · tenki", "en": "weather"},
+    {"ja": "[あめ|ame] 雨", "baca": "あめ · ame", "en": "rain"},
+    {"ja": "[ゆき|yuki] 雪", "baca": "ゆき · yuki", "en": "snow"},
+    {"ja": "[はる|haru] 春", "baca": "はる · haru", "en": "spring"},
+    {"ja": "[なつ|natsu] 夏", "baca": "なつ · natsu", "en": "summer"},
+    {"ja": "[あき|aki] 秋", "baca": "あき · aki", "en": "fall, autumn"},
+    {"ja": "[ふゆ|fuyu] 冬", "baca": "ふゆ · fuyu", "en": "winter"},
+    {"ja": "[まち|machi] 町", "baca": "まち · machi", "en": "town"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Make these adjectives negative.",
+      "items": [
+        "たかいです → ___",
+        "おおきいです → ___",
+        "おもしろいです → ___",
+        "しずかです → しずか ___",
+        "べんりです → べんり ___"
+      ]
+    },
+    {
+      "prompt": "Fill in the missing particle.",
+      "items": [
+        "わたしはすし ___ すきです。",
+        "せまいです ___ 、しずかです。",
+        "にほんご ___ じょうずですね。",
+        "とうきょう ___ どうですか。",
+        "しずか ___ へやです。",
+        "からいたべもの ___ すきです。"
+      ]
+    },
+    {
+      "prompt": "Write the opposite in kana.",
+      "items": [
+        "おおきい → ___",
+        "あたらしい → ___",
+        "あつい → ___",
+        "ひろい → ___",
+        "むずかしい → ___",
+        "たかい → ___"
+      ]
+    },
+    {
+      "prompt": "Put the pieces in order to make a correct sentence.",
+      "items": [
+        "この / へや / は / せまい / です",
+        "とうきょう / は / とても / にぎやか / です",
+        "わたし / は / すし / が / だいすき / です",
+        "しずかな / へや / は / いい / です / ね",
+        "この / みせ / は / やすくて / おいしい / です",
+        "なっとう / は / あまり / すき / じゃありません"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "このへやはひろくないです。",
+        "きょうはとてもさむいですね。",
+        "あたらしいみせはきれいです。",
+        "わたしはからいたべものがすきです。",
+        "にほんごはむずかしいですが、おもしろいです。"
+      ]
+    },
+    {
+      "prompt": "Translate into Japanese. Write in rōmaji.",
+      "items": [
+        "This room isn't spacious.",
+        "Tokyo is very interesting.",
+        "I like sushi.",
+        "I'm not too keen on it.",
+        "Nice weather today, isn't it?"
+      ]
+    }
+  ],
+  "answers": [
+    "たかくないです — おおきくないです — おもしろくないです — じゃありません — じゃありません",
+    "が — が — が — は — な — が",
+    "ちいさい — ふるい — さむい — せまい — やさしい — やすい",
+    "この へや は せまい です — とうきょう は とても にぎやか です — わたし は すし が だいすき です — しずかな へや は いい です ね — この みせ は やすくて おいしい です — なっとう は あまり すき じゃありません",
+    "This room isn't spacious. — It's very cold today, isn't it? — The new shop is clean. — I like spicy food. — Japanese is difficult, but interesting.",
+    "kono heya wa hirokunai desu — Tōkyō wa totemo omoshiroi desu — watashi wa sushi ga suki desu — amari suki ja arimasen — kyō wa ii tenki desu ne"
+  ],
+  "wave": "Review Unit 6 through this unit: retell your day, but this time add **one adjective** to each sentence — “every morning I drink hot coffee at a quiet café”. Adjectives are the seasoning that turns a list of activities into a story."
+}

@@ -1,0 +1,367 @@
+{
+  "title": "Breakfast at a café",
+  "title_target": "El desayuno",
+  "goal": "Order drinks and breakfast politely, count from 0 to 20, and ask how much it costs.",
+  "bekal": [
+    "order with *quisiera*",
+    "count from 0 to 20",
+    "use *hay* to ask whether something is available",
+    "ask for the total"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Pidiendo el desayuno",
+      "intro": "Eight in the morning at a café in Madrid. A Spanish breakfast is short and often eaten standing at the bar.",
+      "lines": [
+        {
+          "speaker": "Camarero:",
+          "text": "Buenos días. ¿Qué desea?",
+          "id": "Good morning. What would you like?",
+          "literal": "good day. what you (polite)-wish?"
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Quisiera un café con leche, por favor.",
+          "id": "I'd like a coffee with milk, please.",
+          "literal": "I-would-like a coffee with milk, please."
+        },
+        {
+          "speaker": "Camarero:",
+          "text": "¿Y para comer? Tenemos tostadas y churros.",
+          "id": "And to eat? We have toast and churros.",
+          "literal": "and for to-eat? we-have toasts and churros."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Una tostada con tomate, por favor.",
+          "id": "Toast with tomato, please.",
+          "literal": "a toast with tomato, please."
+        },
+        {
+          "speaker": "Camarero:",
+          "text": "Muy bien. ¿Algo más?",
+          "id": "Very good. Anything else?",
+          "literal": "very well. something more?"
+        },
+        {
+          "speaker": "Ana:",
+          "text": "¿Hay zumo de naranja?",
+          "id": "Is there orange juice?",
+          "literal": "there-is juice of orange?"
+        },
+        {
+          "speaker": "Camarero:",
+          "text": "Sí, claro. ¿Grande o pequeño?",
+          "id": "Yes, of course. Large or small?",
+          "literal": "yes, clear. large or small?"
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Pequeño, gracias. Nada más.",
+          "id": "Small, thanks. That's all.",
+          "literal": "small, thanks. nothing more."
+        },
+        {
+          "speaker": "Camarero:",
+          "text": "Enseguida.",
+          "id": "Coming right up.",
+          "literal": "at-once."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "¿Cuánto es?",
+          "id": "How much is it?",
+          "literal": "how-much is?"
+        },
+        {
+          "speaker": "Camarero:",
+          "text": "Son cuatro euros con cincuenta.",
+          "id": "That's four euros fifty.",
+          "literal": "are four euros with fifty."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Aquí tiene. ¡Muchas gracias!",
+          "id": "Here you are. Thank you very much!",
+          "literal": "here you (polite)-have. many thanks!"
+        }
+      ],
+      "notes": [
+        "**Quisiera is the key to politeness.** It means \"I'd like\", much softer than *quiero* (\"I want\"). In cafés, restaurants and shops, *quisiera* is almost always the right choice. And you only need this one form for now.",
+        "**Un and una.** Spanish nouns have gender: *un café* (masculine), *una tostada* (feminine). When you order, the gender decides the form of the number one — and only the number one. *Dos cafés* and *dos tostadas* use the same word.",
+        "**Por favor and gracias.** *Por favor* at the end of a request, *gracias* after you receive something. Leaving them out sounds rude to Spanish ears.",
+        "**Hay = there is / there are.** One word for singular and plural: *hay un café* (there's a café), *hay tres cafés* (there are three cafés). It never changes, and it's the most useful word for asking whether anything is available: *¿hay wifi?*, *¿hay agua?*",
+        "**¿Cuánto es? vs ¿cuánto son?** For one item, *¿cuánto es?*; when giving the total for several items, Spaniards use the plural: *son cuatro euros*. You'll hear *son* at the checkout all the time.",
+        "**Nada más** = \"nothing else\", the standard answer to *¿algo más?* Softer than a plain *no*.",
+        "**Aquí tiene** literally means \"here you have\" — said when handing something over, like \"here you are\". The informal version is *aquí tienes*.",
+        "**Enseguida** (sometimes written *en seguida*) = \"right away\". Waiters say it as they turn away; it means your order has been taken."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers 0-20",
+          "body": [
+            "The number 1 changes to match the thing being counted: *un café* but *una tostada*. The rest never change, whatever you're counting."
+          ],
+          "table": {
+            "head": [
+              "",
+              "",
+              "",
+              ""
+            ],
+            "rows": [
+              [
+                "0 cero",
+                "6 seis",
+                "11 once",
+                "16 dieciséis"
+              ],
+              [
+                "1 uno / una",
+                "7 siete",
+                "12 doce",
+                "17 diecisiete"
+              ],
+              [
+                "2 dos",
+                "8 ocho",
+                "13 trece",
+                "18 dieciocho"
+              ],
+              [
+                "3 tres",
+                "9 nueve",
+                "14 catorce",
+                "19 diecinueve"
+              ],
+              [
+                "4 cuatro",
+                "10 diez",
+                "15 quince",
+                "20 veinte"
+              ],
+              [
+                "5 cinco",
+                "",
+                "",
+                ""
+              ]
+            ]
+          },
+          "after": [
+            "*Uno* shortens to *un* right before a masculine noun: *uno* on its own (\"one!\"), *un café* with a noun. The feminine form doesn't shorten: *una tostada*.",
+            "The numbers 16-19 are really *diez y seis* etc. squeezed into one word. That's why *dieciséis* has a ´ and *diecisiete* doesn't — the stress falls in a different place."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "What the waiter says, what you say",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Café conversations almost always use exactly the same sentences. Memorize the right-hand column; just recognize the left-hand one when you hear it."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "The waiter says",
+            "Meaning",
+            "Your answer"
+          ],
+          "rows": [
+            [
+              "¿Qué desea?",
+              "What would you like?",
+              "*Quisiera…*"
+            ],
+            [
+              "¿Qué le pongo?",
+              "What can I get you?",
+              "*Un café con leche.*"
+            ],
+            [
+              "¿Para tomar aquí o para llevar?",
+              "For here or to go?",
+              "*Para llevar.*"
+            ],
+            [
+              "¿Algo más?",
+              "Anything else?",
+              "*Nada más, gracias.*"
+            ],
+            [
+              "¿Y para beber?",
+              "And to drink?",
+              "*Agua sin gas.*"
+            ],
+            [
+              "Enseguida",
+              "Right away",
+              "*Gracias.*"
+            ],
+            [
+              "Aquí tiene",
+              "Here you are",
+              "*Muchas gracias.*"
+            ],
+            [
+              "¿Todo bien?",
+              "Everything OK?",
+              "*Sí, muy rico.*"
+            ],
+            [
+              "¿Junto o separado?",
+              "Together or separate?",
+              "*Junto, por favor.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "es": "el café",
+      "baca": "ehl kah-FEH",
+      "en": "coffee / café"
+    },
+    {
+      "es": "la leche",
+      "baca": "lah LEH-cheh",
+      "en": "milk"
+    },
+    {
+      "es": "el zumo",
+      "baca": "ehl SOO-moh",
+      "en": "juice"
+    },
+    {
+      "es": "la naranja",
+      "baca": "lah nah-RAHN-hah",
+      "en": "orange"
+    },
+    {
+      "es": "la tostada",
+      "baca": "lah tohs-TAH-dah",
+      "en": "toast"
+    },
+    {
+      "es": "el pan",
+      "baca": "ehl PAHN",
+      "en": "bread"
+    },
+    {
+      "es": "el tomate",
+      "baca": "ehl toh-MAH-teh",
+      "en": "tomato"
+    },
+    {
+      "es": "la cuenta",
+      "baca": "lah KWEHN-tah",
+      "en": "check, bill"
+    },
+    {
+      "es": "quisiera",
+      "baca": "kee-SYEH-rah",
+      "en": "I'd like (polite)"
+    },
+    {
+      "es": "hay",
+      "baca": "eye",
+      "en": "there is / there are"
+    },
+    {
+      "es": "por favor",
+      "baca": "pohr fah-BOHR",
+      "en": "please"
+    },
+    {
+      "es": "gracias",
+      "baca": "GRAH-syahs",
+      "en": "thank you"
+    },
+    {
+      "es": "¿algo más?",
+      "baca": "AHL-goh MAHS",
+      "en": "anything else?"
+    },
+    {
+      "es": "nada más",
+      "baca": "NAH-dah MAHS",
+      "en": "nothing else, that's all"
+    },
+    {
+      "es": "¿cuánto es?",
+      "baca": "KWAHN-toh EHS",
+      "en": "how much is it?"
+    },
+    {
+      "es": "con",
+      "baca": "kohn",
+      "en": "with"
+    },
+    {
+      "es": "sin",
+      "baca": "seen",
+      "en": "without"
+    },
+    {
+      "es": "grande",
+      "baca": "GRAHN-deh",
+      "en": "big, large"
+    },
+    {
+      "es": "pequeño",
+      "baca": "peh-KEH-nyoh",
+      "en": "small"
+    },
+    {
+      "es": "enseguida",
+      "baca": "ehn-seh-GEE-dah",
+      "en": "right away"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Order these politely, using *quisiera*.",
+      "items": [
+        "a coffee with milk",
+        "a tea without sugar",
+        "two pieces of toast with tomato",
+        "a bottle of still water",
+        "an orange juice"
+      ]
+    },
+    {
+      "prompt": "Write the answer in words.",
+      "items": [
+        "3 + 4 = ____",
+        "10 + 5 = ____",
+        "12 + 8 = ____",
+        "9 + 2 = ____",
+        "6 + 7 = ____",
+        "18 − 6 = ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with *un* or *una*.",
+      "items": [
+        "____ café con leche",
+        "____ tostada con tomate",
+        "____ botella de agua",
+        "____ ensalada",
+        "____ zumo de naranja",
+        "____ mesa para dos"
+      ]
+    }
+  ],
+  "answers": [
+    "Quisiera un café con leche, por favor. — Quisiera un té sin azúcar, por favor. — Quisiera dos tostadas con tomate, por favor. — Quisiera una botella de agua sin gas, por favor. — Quisiera un zumo de naranja, por favor.",
+    "siete — quince — veinte — once — trece — doce",
+    "un — una — una — una — un — una"
+  ],
+  "wave": "Go back to **Unit 3**: say where you're from, your city and your job without looking at the page."
+}

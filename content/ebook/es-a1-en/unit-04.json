@@ -1,0 +1,430 @@
+{
+  "title": "What languages do you speak?",
+  "title_target": "¿Qué idiomas hablas?",
+  "goal": "Speak formally with *usted*, talk about languages and jobs, and use the right article.",
+  "bekal": [
+    "say which languages you speak",
+    "say what you do for a living",
+    "use *el*, *la*, *un*, *una*",
+    "ask questions with the basic question words"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — En la oficina de la escuela",
+      "intro": "Enrolling a new student. Because it's formal, the whole conversation uses *usted*.",
+      "lines": [
+        {
+          "speaker": "Secretaria:",
+          "text": "Buenos días. ¿De dónde es usted, señor Tanaka?",
+          "id": "Good morning. Where are you from, Mr. Tanaka?",
+          "literal": "good day. from where are you (polite), mister Tanaka?"
+        },
+        {
+          "speaker": "Sr. Tanaka:",
+          "text": "Soy japonés, de Osaka. Pero ahora vivo en México.",
+          "id": "I'm Japanese, from Osaka. But I live in Mexico now.",
+          "literal": "am Japanese, from Osaka. but now I-live in Mexico."
+        },
+        {
+          "speaker": "Secretaria:",
+          "text": "¿Y habla usted inglés también?",
+          "id": "And do you speak English too?",
+          "literal": "and speak you (polite) English also?"
+        },
+        {
+          "speaker": "Sr. Tanaka:",
+          "text": "Sí, hablo japonés, inglés y un poco de español.",
+          "id": "Yes, I speak Japanese, English and a little Spanish.",
+          "literal": "yes, I-speak Japanese, English and a little of Spanish."
+        },
+        {
+          "speaker": "Secretaria:",
+          "text": "¿Y su amiga? ¿Ella también es japonesa?",
+          "id": "And your friend? Is she Japanese too?",
+          "literal": "and your friend(female)? she also is Japanese(female)?"
+        },
+        {
+          "speaker": "Sr. Tanaka:",
+          "text": "No, no es japonesa. Es coreana, de Seúl.",
+          "id": "No, she's not Japanese. She's Korean, from Seoul.",
+          "literal": "no, not is Japanese. is Korean, from Seoul."
+        },
+        {
+          "speaker": "Secretaria:",
+          "text": "¿Y dónde trabaja ella?",
+          "id": "And where does she work?",
+          "literal": "and where works she?"
+        },
+        {
+          "speaker": "Sr. Tanaka:",
+          "text": "Trabaja en un hospital. Es médica.",
+          "id": "She works in a hospital. She's a doctor.",
+          "literal": "works in a hospital. is doctor(female)."
+        },
+        {
+          "speaker": "Secretaria:",
+          "text": "Perfecto. ¿Y usted trabaja o estudia?",
+          "id": "Perfect. And do you work or study?",
+          "literal": "perfect. and you (polite) work or study?"
+        },
+        {
+          "speaker": "Sr. Tanaka:",
+          "text": "Estudio español por la mañana y trabajo por la tarde.",
+          "id": "I study Spanish in the morning and work in the afternoon.",
+          "literal": "I-study Spanish in the morning and I-work in the afternoon."
+        },
+        {
+          "speaker": "Secretaria:",
+          "text": "Estupendo. Bienvenido a la escuela.",
+          "id": "Wonderful. Welcome to the school.",
+          "literal": "wonderful. welcome to the school."
+        }
+      ],
+      "notes": [
+        "**Usted takes the *él / ella* verb form.** That's why *¿habla usted inglés?* uses *habla*, not *hablas*. If you slip and use the *tú* form with someone you should address formally, you'll still be understood — you'll just sound too familiar.",
+        "**Su** = \"your\" (polite), but also \"his\" or \"her\": *su amiga* can mean your friend or his/her friend. It is ambiguous, and Spanish leaves it that way — context decides.",
+        "**Languages without an article.** *Hablo español*, not *hablo el español*. The article only appears when the language is the subject of the sentence: *el español es fácil* (\"Spanish is easy\").",
+        "**Un poco de + noun.** Notice the *de*: *un poco de español*, *un poco de agua*. But before an adjective, the *de* disappears: *un poco cansado*.",
+        "**O = or**, except before a word starting with an *o* sound. There it becomes *u*: *siete u ocho* (seven or eight). The reason is purely sound — two *o*'s in a row blur together.",
+        "**Por la mañana / por la tarde / por la noche** = in the morning / in the afternoon / at night. These are the most common time markers, and they never change form.",
+        "**Jobs have gender too.** *médico / médica*, *enfermero / enfermera*, *abogado / abogada*. Some ending in -ista don't change: *el dentista / la dentista* — only the article changes.",
+        "**Bienvenido / bienvenida / bienvenidos.** The form follows whoever is being welcomed: one man *bienvenido*, one woman *bienvenida*, a group *bienvenidos*."
+      ],
+      "grammars": [
+        {
+          "title": "El, la, un, una — a noun never travels alone",
+          "body": [
+            "Every Spanish noun has a gender, and its article has to match. There's no way around it: learn each noun **together with its article** from day one — not *hospital*, but *el hospital*."
+          ],
+          "table": {
+            "head": [
+              "",
+              "Masculine",
+              "Feminine",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Definite (\"the\")",
+                "**el**",
+                "**la**",
+                "*el libro*, *la casa*"
+              ],
+              [
+                "Indefinite (\"a / an\")",
+                "**un**",
+                "**una**",
+                "*un hospital*, *una librería*"
+              ],
+              [
+                "Definite plural",
+                "**los**",
+                "**las**",
+                "*los libros*, *las casas*"
+              ],
+              [
+                "Indefinite plural (\"some\")",
+                "**unos**",
+                "**unas**",
+                "*unos amigos*, *unas amigas*"
+              ]
+            ]
+          },
+          "after": [
+            "You'll guess right about eight times out of ten: words ending in **-o** are usually masculine; words ending in **-a**, **-ción** or **-dad** are usually feminine. The rest must be memorized — and the exceptions that trip up beginners most: *el día* (day) is masculine despite its -a, *la mano* (hand) is feminine despite its -o.",
+            "Plurals are easy: after a vowel add **-s** (*libro → libros*), after a consonant add **-es** (*profesor → profesores*)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Asking questions",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Every Spanish question word carries a ´ — that's what sets it apart from the same word without a question. Compare *¿qué?* (what?) with *que* (that, which)."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Español",
+            "Say it",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "¿qué?",
+              "keh",
+              "what",
+              "*¿Qué estudias?*"
+            ],
+            [
+              "¿quién?",
+              "kyehn",
+              "who",
+              "*¿Quién es ella?*"
+            ],
+            [
+              "¿dónde?",
+              "DOHN-deh",
+              "where",
+              "*¿Dónde trabajas?*"
+            ],
+            [
+              "¿de dónde?",
+              "deh DOHN-deh",
+              "where from",
+              "*¿De dónde eres?*"
+            ],
+            [
+              "¿adónde?",
+              "ah-DOHN-deh",
+              "where to",
+              "*¿Adónde vas?*"
+            ],
+            [
+              "¿cómo?",
+              "KOH-moh",
+              "how",
+              "*¿Cómo estás?*"
+            ],
+            [
+              "¿cuándo?",
+              "KWAHN-doh",
+              "when",
+              "*¿Cuándo trabajas?*"
+            ],
+            [
+              "¿cuánto?",
+              "KWAHN-toh",
+              "how much",
+              "*¿Cuánto cuesta?*"
+            ],
+            [
+              "¿por qué?",
+              "pohr KEH",
+              "why",
+              "*¿Por qué estudias español?*"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Questions without a question word",
+          "items": [
+            "A statement becomes a question just by adding question marks and a rising tone at the end: *Vives en Madrid.* → *¿Vives en Madrid?* No need for \"do\" or for switching the word order as in English.",
+            "Moving the subject after the verb is also common and sounds slightly more formal: *¿Vive usted en Madrid?*",
+            "A \"yes\" answer usually repeats the verb rather than stopping at *sí*: *—¿Hablas español? —Sí, hablo un poco.* A bare *sí* sounds cold."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Jobs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Él es…",
+            "Ella es…",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "profesor",
+              "profesora",
+              "teacher"
+            ],
+            [
+              "médico",
+              "médica",
+              "doctor"
+            ],
+            [
+              "enfermero",
+              "enfermera",
+              "nurse"
+            ],
+            [
+              "ingeniero",
+              "ingeniera",
+              "engineer"
+            ],
+            [
+              "abogado",
+              "abogada",
+              "lawyer"
+            ],
+            [
+              "camarero",
+              "camarera",
+              "waiter / waitress"
+            ],
+            [
+              "cocinero",
+              "cocinera",
+              "cook"
+            ],
+            [
+              "empleado",
+              "empleada",
+              "employee"
+            ],
+            [
+              "dependiente",
+              "dependienta",
+              "shop assistant"
+            ],
+            [
+              "periodista",
+              "periodista",
+              "journalist"
+            ],
+            [
+              "estudiante",
+              "estudiante",
+              "student"
+            ],
+            [
+              "ama de casa",
+              "ama de casa",
+              "homemaker"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Remember: jobs take no article. *Soy ingeniera*, not *soy una ingeniera*. The article only comes in when there's an extra description: *soy una ingeniera muy ocupada*."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "es": "un poco de…",
+      "baca": "oon POH-koh deh",
+      "en": "a little (of)…"
+    },
+    {
+      "es": "por la mañana",
+      "baca": "pohr lah mah-NYAH-nah",
+      "en": "in the morning"
+    },
+    {
+      "es": "por la tarde",
+      "baca": "pohr lah TAHR-deh",
+      "en": "in the afternoon"
+    },
+    {
+      "es": "por la noche",
+      "baca": "pohr lah NOH-cheh",
+      "en": "at night"
+    },
+    {
+      "es": "el hospital",
+      "baca": "ehl ohs-pee-TAHL",
+      "en": "hospital"
+    },
+    {
+      "es": "la escuela",
+      "baca": "lah ehs-KWEH-lah",
+      "en": "school"
+    },
+    {
+      "es": "el médico / la médica",
+      "baca": "ehl MEH-dee-koh",
+      "en": "doctor"
+    },
+    {
+      "es": "el ingeniero",
+      "baca": "ehl een-heh-NYEH-roh",
+      "en": "engineer"
+    },
+    {
+      "es": "el camarero",
+      "baca": "ehl kah-mah-REH-roh",
+      "en": "waiter"
+    },
+    {
+      "es": "japonés / japonesa",
+      "baca": "hah-poh-NEHS",
+      "en": "Japanese (person)"
+    },
+    {
+      "es": "inglés / inglesa",
+      "baca": "een-GLEHS",
+      "en": "English (person)"
+    },
+    {
+      "es": "bienvenido / bienvenida",
+      "baca": "byehn-beh-NEE-doh",
+      "en": "welcome"
+    },
+    {
+      "es": "estupendo",
+      "baca": "ehs-too-PEHN-doh",
+      "en": "great, wonderful"
+    },
+    {
+      "es": "la ciudad",
+      "baca": "lah see-oo-DAHD",
+      "en": "city"
+    },
+    {
+      "es": "el idioma",
+      "baca": "ehl ee-DYOH-mah",
+      "en": "language"
+    },
+    {
+      "es": "aquí",
+      "baca": "ah-KEE",
+      "en": "here"
+    },
+    {
+      "es": "la oficina",
+      "baca": "lah oh-fee-SEE-nah",
+      "en": "office"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right article (*el*, *la*, *un*, *una*).",
+      "items": [
+        "Trabajo en ____ hospital de Madrid.",
+        "Ella es ____ profesora muy simpática.",
+        "Vivo en ____ casa de Marta.",
+        "Estudio en ____ escuela de idiomas.",
+        "Leo ____ libro de Luis."
+      ]
+    },
+    {
+      "prompt": "Put the words in order to make a correct Spanish sentence.",
+      "items": [
+        "eres / ¿ / dónde / de / ?",
+        "Barcelona / vivo / en",
+        "español / hablo / poco / de / un",
+        "trabajas / ¿ / qué / en / ?",
+        "japonesa / ella / es / no"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "Estudio español por la mañana.",
+        "¿Y su amiga? ¿Es coreana?",
+        "Trabajo en una librería.",
+        "Hablo japonés, inglés y un poco de español.",
+        "No hay problema."
+      ]
+    }
+  ],
+  "answers": [
+    "un — una — la — una — el",
+    "¿De dónde eres? — Vivo en Barcelona. — Hablo un poco de español. — ¿En qué trabajas? — Ella no es japonesa.",
+    "I study Spanish in the morning. — And his friend? Is she Korean? — I work in a bookstore. — I speak Japanese, English and a little Spanish. — No problem."
+  ],
+  "wave": "Go back to **Unit 2**, but make the whole dialogue polite: every *eres* becomes *es*, every *te llamas* becomes *se llama*."
+}

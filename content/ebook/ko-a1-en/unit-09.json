@@ -1,0 +1,560 @@
+{
+  "title": "Ordering food",
+  "title_target": "뭐 드릴까요 — Mwo deurilkkayo",
+  "goal": "Survive a Korean restaurant: order, give quantities, ask for more, and describe flavors. Along the way, meet Korean adjectives, which behave like verbs.",
+  "bekal": [
+    "order with 주세요 and 주문할게요",
+    "link two nouns with 하고, 와/과, and 랑",
+    "describe flavors with Korean adjectives",
+    "soften a request with 좀",
+    "use the set phrases for before and after a meal"
+  ],
+  "dialogs": [
+    {
+      "title": "대화 — At a restaurant",
+      "intro": "Ani and Minjun have lunch. Notice that Korean adjectives work as the predicate on their own, with no \"to be\" in front of them.",
+      "lines": [
+        {
+          "speaker": "종업원:",
+          "text": "[어서|Eoseo] [오세요|oseyo]. [몇|Myeot] [분이세요|buniseyo]?",
+          "id": "Welcome. How many of you?",
+          "literal": "quickly — come. how-many — people (honorific) — is?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[두|Du] [명이에요|myeongieyo].",
+          "id": "Two.",
+          "literal": "two — people — is."
+        },
+        {
+          "speaker": "종업원:",
+          "text": "[이쪽으로|Ijjogeuro] [오세요|oseyo]. [주문|Jumun] [하시겠어요|hasigesseoyo]?",
+          "id": "This way, please. Ready to order?",
+          "literal": "this-side-to — come. order — will-do (honorific)?"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[네|Ne]. [비빔밥|Bibimbap] [하나하고|hanahago] [김치찌개|kimchijjigae] [하나|hana] [주세요|juseyo].",
+          "id": "Yes. One bibimbap and one kimchi jjigae, please.",
+          "literal": "yes. bibimbap — one — and — kimchi-stew — one — give."
+        },
+        {
+          "speaker": "종업원:",
+          "text": "[음료수는|Eumnyosuneun] [뭐로|mwoiro] [하시겠어요|hasigesseoyo]?",
+          "id": "What would you like to drink?",
+          "literal": "drink — as-for — what — with — will-do?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[물만|Mulman] [주세요|juseyo]. [아|A], [그리고|geurigo] [김치|kimchi] [좀|jom] [더|deo] [주세요|juseyo].",
+          "id": "Just water. Oh, and some more kimchi, please.",
+          "literal": "water — only — give. ah, and — kimchi — a-little — more — give."
+        },
+        {
+          "speaker": "종업원:",
+          "text": "[네|Ne], [알겠습니다|algetseumnida].",
+          "id": "Certainly.",
+          "literal": "yes, will-understand (formal)."
+        },
+        {
+          "speaker": "민준:",
+          "text": "[아니|Ani] [씨|ssi], [매운|maeun] [음식|eumsik] [괜찮아요|gwaenchanayo]?",
+          "id": "Ani, is spicy food OK for you?",
+          "literal": "Ani — Ms., spicy-that — food — OK?"
+        },
+        {
+          "speaker": "아니:",
+          "text": "[네|Ne], [괜찮아요|gwaenchanayo]. [인도네시아|Indonesia] [음식도|eumsikdo] [매워요|maewoyo].",
+          "id": "Yes, it's fine. Indonesian food is spicy too.",
+          "literal": "yes, OK. Indonesia — food — also — spicy."
+        },
+        {
+          "speaker": "민준:",
+          "text": "[아|A], [그래요|geuraeyo]? [그럼|Geureom] [잘|jal] [드세요|deuseyo]!",
+          "id": "Oh, really? Then enjoy your meal!",
+          "literal": "ah, so — is? then, well — eat (honorific)."
+        },
+        {
+          "speaker": "아니:",
+          "text": "[잘|Jal] [먹겠습니다|meokgetseumnida]! [음|Eum]… [진짜|jinjja] [맛있어요|masisseoyo]!",
+          "id": "Thank you for the food! Mm… this is really good!",
+          "literal": "well — will-eat! mm… really — tasty!"
+        },
+        {
+          "speaker": "민준:",
+          "text": "[다행이에요|Dahaengieyo]. [계산은|Gyesaneun] [제가|jega] [할게요|halgeyo].",
+          "id": "Glad you like it. The bill's on me.",
+          "literal": "bill — as-for — I — subject — will-do."
+        }
+      ],
+      "notes": [
+        "**Korean adjectives are verbs.** 맛있어요 doesn't mean \"is tasty\" — it's a complete sentence meaning \"(it's) tasty\" all by itself. There's no 이에요 after it, and adding one is wrong. This holds for every adjective: 비싸요, 매워요, 좋아요, 예뻐요. They're all formed exactly like verbs, past tense included.",
+        "**Adjectives change form when they describe a noun.** As a predicate: 음식이 매워요 (the food is spicy). Before a noun: **매운** 음식 (spicy food). The ending becomes -(으)ㄴ. This form is practiced fully at B1, but the most common ones are worth memorizing whole: 매운, 좋은, 예쁜, 큰, 작은.",
+        "**잘 먹겠습니다 and 잘 먹었습니다 are a pair.** The first is said **before** eating (\"I will eat well\"), the second **after** (\"I have eaten well\"). Both are a must when someone is treating you, and still polite when you pay for yourself. Skipping them at a Korean table feels cold.",
+        "**잘 드세요 is said to others, 잘 먹겠습니다 about yourself.** This is the honorific rule from the previous unit in action: verbs for others go up (드시다), verbs for yourself don't.",
+        "**The person treating announces it rather than asking.** 제가 할게요 (\"I'll get it\") is said as a decision. Splitting the bill is increasingly common among young Koreans, but between friends of different ages the older one usually pays — and refusing too hard is seen as bad manners.",
+        "**만 means \"only\" and replaces other particles.** 물**만** 주세요 = just water. It attaches directly to the noun and takes the place of 을/를 or 이/가. ⚠️ Don't write 물을만.",
+        "**좀 더 is the gentlest way to ask for more.** Literally \"a little more\". 김치 좀 더 주세요 sounds much friendlier than 김치 더 주세요. In Korean restaurants, side dishes (반찬) can be refilled for free.",
+        "**진짜 and 정말 both mean \"really, truly\".** 진짜 is more casual and far more common in conversation; 정말 is slightly softer. Both also work alone as a reaction: 진짜? = \"Seriously?\"."
+      ],
+      "grammars": [
+        {
+          "title": "Linking two nouns: 하고, 와/과, (이)랑",
+          "body": [
+            "Korean has three ways to say \"and\" between nouns. All three mean the same; what differs is how formal the situation is."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "After a vowel",
+              "After a consonant",
+              "Tone",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**하고**",
+                "하고",
+                "하고",
+                "neutral, spoken",
+                "빵**하고** 우유"
+              ],
+              [
+                "**와 / 과**",
+                "**와**",
+                "**과**",
+                "formal, written",
+                "빵**과** 우유"
+              ],
+              [
+                "**(이)랑**",
+                "**랑**",
+                "**이랑**",
+                "casual, friendly",
+                "빵**이랑** 우유"
+              ]
+            ]
+          },
+          "after": [
+            "**하고 is the safest choice** — it never changes form, never sounds out of place, and is used in everyday speech. Start here.",
+            "All three also mean \"with\" when used with people: 친구**하고** 같이 가요 (I'm going with a friend). One form, two jobs.",
+            "⚠️ These are **only** for linking nouns. To link two clauses, use 그리고 (starting a new sentence) or -고 (attached to the verb). 밥을 먹고 커피를 마셔요 = I eat and then drink coffee."
+          ]
+        },
+        {
+          "title": "The most common adjectives",
+          "body": [
+            "They all behave like verbs: formed with the same -아요/어요 rule, and they can go into the past tense."
+          ],
+          "table": {
+            "head": [
+              "Dictionary",
+              "해요체",
+              "Meaning",
+              "Dictionary",
+              "해요체",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "맛있다",
+                "맛있어요",
+                "tasty",
+                "맛없다",
+                "맛없어요",
+                "not tasty"
+              ],
+              [
+                "맵다",
+                "매워요",
+                "spicy",
+                "짜다",
+                "짜요",
+                "salty"
+              ],
+              [
+                "달다",
+                "달아요",
+                "sweet",
+                "시다",
+                "시어요",
+                "sour"
+              ],
+              [
+                "쓰다",
+                "써요",
+                "bitter",
+                "싱겁다",
+                "싱거워요",
+                "bland"
+              ],
+              [
+                "뜨겁다",
+                "뜨거워요",
+                "hot (things)",
+                "차갑다",
+                "차가워요",
+                "cold (things)"
+              ],
+              [
+                "비싸다",
+                "비싸요",
+                "expensive",
+                "싸다",
+                "싸요",
+                "cheap"
+              ],
+              [
+                "크다",
+                "커요",
+                "big",
+                "작다",
+                "작아요",
+                "small"
+              ],
+              [
+                "많다",
+                "많아요",
+                "many, much",
+                "적다",
+                "적어요",
+                "few, little"
+              ],
+              [
+                "좋다",
+                "좋아요",
+                "good",
+                "나쁘다",
+                "나빠요",
+                "bad"
+              ],
+              [
+                "배고프다",
+                "배고파요",
+                "hungry",
+                "배부르다",
+                "배불러요",
+                "full"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **뜨겁다/차갑다 for things, 덥다/춥다 for weather.** Hot coffee is 뜨거운 커피; a hot day is 더운 날. Mixing them up is a classic beginner mistake that people notice instantly.",
+            "**좋다 and 좋아하다 are not the same.** 좋아요 = \"is good\" (adjective, describes the thing). 좋아해요 = \"like\" (verb, someone does the liking). 커피가 좋아요 = the coffee is good. 커피를 좋아해요 = I like coffee. Notice that the particle changes too."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Dishes you should know by name",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "한국어",
+            "Romanization",
+            "What it is"
+          ],
+          "rows": [
+            [
+              "비빔밥",
+              "bibimbap",
+              "Rice with mixed vegetables and gochujang, stirred yourself"
+            ],
+            [
+              "김치찌개",
+              "kimchijjigae",
+              "Kimchi stew with tofu and pork"
+            ],
+            [
+              "된장찌개",
+              "doenjangjjigae",
+              "Soybean paste stew — like miso, but sharper"
+            ],
+            [
+              "불고기",
+              "bulgogi",
+              "Thin beef in a sweet marinade, safe for beginners"
+            ],
+            [
+              "삼겹살",
+              "samgyeopsal",
+              "Pork belly grilled at the table, for two or more"
+            ],
+            [
+              "김밥",
+              "gimbap",
+              "Seaweed rice rolls, cheap and filling"
+            ],
+            [
+              "라면",
+              "ramyeon",
+              "Korean instant noodles, almost always spicy"
+            ],
+            [
+              "떡볶이",
+              "tteokbokki",
+              "Rice cakes in a sweet-spicy sauce"
+            ],
+            [
+              "치킨",
+              "chikin",
+              "Korean fried chicken, usually ordered at night"
+            ],
+            [
+              "반찬",
+              "banchan",
+              "Small free side dishes you can get refilled"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Lifesaving restaurant phrases"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Situation",
+            "Sentence",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "Calling the server",
+              "저기요!",
+              "Excuse me!"
+            ],
+            [
+              "Asking for the menu",
+              "메뉴 좀 주세요.",
+              "The menu, please."
+            ],
+            [
+              "Ordering",
+              "이거 주세요.",
+              "This one, please."
+            ],
+            [
+              "Asking what's good",
+              "뭐가 맛있어요?",
+              "What's good here?"
+            ],
+            [
+              "Asking for no spice",
+              "안 맵게 해 주세요.",
+              "Not spicy, please."
+            ],
+            [
+              "Asking for more",
+              "물 좀 더 주세요.",
+              "More water, please."
+            ],
+            [
+              "Takeout",
+              "포장해 주세요.",
+              "To go, please."
+            ],
+            [
+              "Asking for the bill",
+              "계산서 주세요.",
+              "The bill, please."
+            ],
+            [
+              "Paying separately",
+              "따로 계산해 주세요.",
+              "Separate checks, please."
+            ],
+            [
+              "No meat",
+              "고기 빼고 주세요.",
+              "Without meat, please."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "저기요 isn't rude",
+          "items": [
+            "Calling the server with 저기요 (literally \"over there\") is the standard, perfectly polite way in Korea — nobody is offended. You can also say it much louder than might feel comfortable at home.",
+            "Many restaurants have a call button on the table. If there is one, use it.",
+            "⚠️ Don't call out 아저씨 or 아줌마 unless you really know what you're doing — they mean \"mister\" and \"ma'am/auntie\", and some people find them unpleasant."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ko": "음식",
+      "baca": "eumsik",
+      "en": "food"
+    },
+    {
+      "ko": "식당",
+      "baca": "sikdang",
+      "en": "restaurant"
+    },
+    {
+      "ko": "메뉴",
+      "baca": "menyu",
+      "en": "menu"
+    },
+    {
+      "ko": "주문",
+      "baca": "jumun",
+      "en": "order"
+    },
+    {
+      "ko": "계산서",
+      "baca": "gyesanseo",
+      "en": "bill, check"
+    },
+    {
+      "ko": "음료수",
+      "baca": "eumnyosu",
+      "en": "drink, beverage"
+    },
+    {
+      "ko": "반찬",
+      "baca": "banchan",
+      "en": "side dishes"
+    },
+    {
+      "ko": "김치",
+      "baca": "kimchi",
+      "en": "kimchi"
+    },
+    {
+      "ko": "고기",
+      "baca": "gogi",
+      "en": "meat"
+    },
+    {
+      "ko": "하고",
+      "baca": "hago",
+      "en": "and, with"
+    },
+    {
+      "ko": "만",
+      "baca": "man",
+      "en": "only"
+    },
+    {
+      "ko": "더",
+      "baca": "deo",
+      "en": "more"
+    },
+    {
+      "ko": "맛있어요",
+      "baca": "masisseoyo",
+      "en": "tasty, delicious"
+    },
+    {
+      "ko": "맛없어요",
+      "baca": "madeopseoyo",
+      "en": "not tasty"
+    },
+    {
+      "ko": "매워요",
+      "baca": "maewoyo",
+      "en": "spicy"
+    },
+    {
+      "ko": "짜요",
+      "baca": "jjayo",
+      "en": "salty"
+    },
+    {
+      "ko": "달아요",
+      "baca": "darayo",
+      "en": "sweet"
+    },
+    {
+      "ko": "배고파요",
+      "baca": "baegopayo",
+      "en": "hungry"
+    },
+    {
+      "ko": "배불러요",
+      "baca": "baebulleoyo",
+      "en": "full (after eating)"
+    },
+    {
+      "ko": "저기요",
+      "baca": "jeogiyo",
+      "en": "excuse me (to call someone)"
+    },
+    {
+      "ko": "잘 먹겠습니다",
+      "baca": "jal meokgetseumnida",
+      "en": "phrase said before eating"
+    },
+    {
+      "ko": "잘 먹었습니다",
+      "baca": "jal meogeotseumnida",
+      "en": "thanks for the meal (after eating)"
+    },
+    {
+      "ko": "진짜",
+      "baca": "jinjja",
+      "en": "really, truly"
+    },
+    {
+      "ko": "좋아해요",
+      "baca": "joahaeyo",
+      "en": "to like"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Korean.",
+      "items": [
+        "Two people.",
+        "One bibimbap, please.",
+        "Just water.",
+        "Some more kimchi, please.",
+        "It's really delicious.",
+        "The bill, please."
+      ]
+    },
+    {
+      "prompt": "Fill in with 하고, 와, or 과.",
+      "items": [
+        "빵____ 우유 주세요. Use the neutral spoken form.",
+        "커피____ 차. Use the formal form after a vowel.",
+        "김밥____ 라면. Use the formal form after a consonant.",
+        "친구____ 같이 가요. Use the neutral spoken form.",
+        "물____ 김치 주세요. Use the neutral spoken form."
+      ]
+    },
+    {
+      "prompt": "Fill in the right adjective in hangeul.",
+      "items": [
+        "The food is spicy: 음식이 ____.",
+        "The coffee is expensive: 커피가 ____.",
+        "I'm hungry: 배____.",
+        "This isn't tasty: 이거 ____.",
+        "This stew is hot: 이 찌개가 ____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "주세요 / 비빔밥 / 하나",
+        "주세요 / 좀 / 김치 / 더",
+        "맛있어요 / 뭐가 / ?",
+        "괜찮아요 / 음식 / 매운 / ?",
+        "할게요 / 계산은 / 제가"
+      ]
+    }
+  ],
+  "answers": [
+    "두 명이에요. — 비빔밥 하나 주세요. — 물만 주세요. — 김치 좀 더 주세요. — 진짜 맛있어요. — 계산서 주세요.",
+    "하고 — 와 — 과 — 하고 — 하고",
+    "매워요 — 비싸요 — 고파요 — 맛없어요 — 뜨거워요",
+    "비빔밥 하나 주세요. — 김치 좀 더 주세요. — 뭐가 맛있어요? — 매운 음식 괜찮아요? — 계산은 제가 할게요."
+  ]
+}

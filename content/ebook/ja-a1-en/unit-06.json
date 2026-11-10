@@ -1,0 +1,336 @@
+{
+  "title": "Daily activities",
+  "title_target": "まいにち なにを しますか — Mainichi nani o shimasu ka",
+  "goal": "Talk about what you do every day: ます-form verbs with their objects, where the activity happens, what you use, and who you're with.",
+  "bekal": [
+    "using を to mark the object",
+    "using で for the place of an activity and for tools",
+    "using へ / に for direction",
+    "using と to say who you're with",
+    "describing a whole day in Japanese"
+  ],
+  "dialogs": [
+    {
+      "title": "会話 1 — What's your day like?",
+      "intro": "Tanaka asks about Ani's routine. Notice how a single sentence can hold time, place, object and verb all at once — and always in that order.",
+      "lines": [
+        {"speaker": "たなか:", "text": "[アニさんは|Ani-san wa] [まいにち|mainichi] [なにを|nani o] [しますか|shimasu ka]。", "id": "Ani, what do you do every day?", "literal": "Ani-Ms. — as-for — every-day — what — [object] — do — [question]."},
+        {"speaker": "アニ:", "text": "[あさ|Asa] [がっこうで|gakkō de] [にほんごを|Nihongo o] [べんきょうします|benkyō shimasu]。", "id": "In the morning I study Japanese at school.", "literal": "morning — school — at — Japan-language — [object] — study-do."},
+        {"speaker": "たなか:", "text": "[ごごは|Gogo wa]？", "id": "And in the afternoon?", "literal": "afternoon — as-for?"},
+        {"speaker": "アニ:", "text": "[ごごは|Gogo wa] [としょかんで|toshokan de] [ほんを|hon o] [よみます|yomimasu]。", "id": "In the afternoon I read books at the library.", "literal": "afternoon — as-for — library — at — book — [object] — read."},
+        {"speaker": "たなか:", "text": "[ひとりで|Hitori de] [いきますか|ikimasu ka]。", "id": "Do you go alone?", "literal": "one-person — by — go — [question]."},
+        {"speaker": "アニ:", "text": "[いいえ|Iie]、[ともだちと|tomodachi to] [いきます|ikimasu]。[ときどき|Tokidoki] [カフェで|kafe de] [コーヒーを|kōhī o] [のみます|nomimasu]。", "id": "No, I go with a friend. Sometimes we have coffee at a café.", "literal": "no, friend — with — go. sometimes — café — at — coffee — [object] — drink."},
+        {"speaker": "たなか:", "text": "[うちへは|Uchi e wa] [なんじに|nanji ni] [かえりますか|kaerimasu ka]。", "id": "What time do you get home?", "literal": "home — to — as-for — what-o'clock — at — return — [question]."},
+        {"speaker": "アニ:", "text": "[ろくじごろ|Roku-ji goro] [かえります|kaerimasu]。[でんしゃで|Densha de] [かえります|kaerimasu]。", "id": "Around six. I go home by train.", "literal": "six-o'clock — around — return. train — by — return."},
+        {"speaker": "たなか:", "text": "[よるは|Yoru wa] [なにを|nani o] [しますか|shimasu ka]。", "id": "What do you do in the evening?", "literal": "night — as-for — what — [object] — do — [question]."},
+        {"speaker": "アニ:", "text": "[ばんごはんを|Bangohan o] [つくります|tsukurimasu]。[それから|Sorekara] [テレビを|terebi o] [みます|mimasu]。", "id": "I cook dinner. After that I watch TV.", "literal": "dinner — [object] — make. after-that — TV — [object] — watch."},
+        {"speaker": "たなか:", "text": "[まいにち|Mainichi] [いそがしいですね|isogashii desu ne]。", "id": "You're busy every day, aren't you?", "literal": "every-day — busy — is — right."}
+      ],
+      "notes": [
+        "**Japanese word order is far looser than you'd expect** — except for one thing: **the verb always comes last**. Otherwise the most natural order is: who は — when — where で — what を — verb.",
+        "**します = do**, the most versatile verb of all. Combined with nouns it forms hundreds of new verbs: べんきょう**します** (study), しごと**します** (work), そうじ**します** (clean), でんわ**します** (phone).",
+        "**ごろ vs ぐらい.** ごろ is for **points in time** (6じごろ = around 6 o'clock), ぐらい for **amounts and durations** (5ふんぐらい = about 5 minutes). Swapping them sounds wrong to Japanese ears right away.",
+        "**ひとりで = alone**, with で. Its counterpart ともだち**と** = with a friend, uses と. Two different particles for two related ideas.",
+        "**それから = after that**, used to chain activities in sequence. Its relatives: そして (and then), でも (but), だから (so).",
+        "**うちへは — two stacked particles.** へ marks direction, は makes it the topic. This is perfectly normal and used for contrast: “as for getting home, what time?”"
+      ],
+      "grammars": [
+        {
+          "title": "[を|o] and [で|de] — the two most often confused particles",
+          "body": [
+            "**[を|o]** marks the **object**: what the action is done to. **[で|de]** marks the **place of an activity** or a **tool/means**. Both often appear in one sentence, and the order is almost always place first, object second."
+          ],
+          "table": {
+            "head": ["Sentence", "Meaning", "What's marked"],
+            "rows": [
+              ["[ほんを|Hon o] [よみます|yomimasu]。", "I read a book.", "を — object"],
+              ["[としょかんで|Toshokan de] [よみます|yomimasu]。", "I read at the library.", "で — place of activity"],
+              ["[としょかんで|Toshokan de] [ほんを|hon o] [よみます|yomimasu]。", "I read a book at the library.", "both"],
+              ["[でんしゃで|Densha de] [いきます|ikimasu]。", "I go by train.", "で — means"],
+              ["[にほんごで|Nihongo de] [はなします|hanashimasu]。", "I speak in Japanese.", "で — means (language)"],
+              ["[ともだちと|Tomodachi to] [はなします|hanashimasu]。", "I talk with a friend.", "と — with whom"]
+            ]
+          },
+          "after": [
+            "⚠️ **[で|de] (place of activity) vs [に|ni] (place of existence).** Compare: [きょうしつ|kyōshitsu]**[に|ni]** [います|imasu] (to be **in** the classroom — Unit 5) and [きょうしつ|kyōshitsu]**[で|de]** [べんきょうします|benkyō shimasu] (to study **in** the classroom). If something is being done, use [で|de]. If you're only saying something is there, use [に|ni]. This is the most important particle distinction at A1.",
+            "⚠️ **[を|o] is written with the kana [を|o], not [お|o].** This kana is used only as a particle and never appears inside words."
+          ]
+        },
+        {
+          "title": "[へ|e] and [に|ni] for direction",
+          "body": [
+            "With verbs of motion — [いきます|ikimasu] (go), [きます|kimasu] (come), [かえります|kaerimasu] (go home) — the destination is marked with **[へ|e]** or **[に|ni]**. The two are almost interchangeable.",
+            "The difference is slight: **[へ|e]** stresses the **direction**, **[に|ni]** the **point of arrival**. In everyday use, either is fine.",
+            "⚠️ **The particle [へ|e] is read *e*, not *he*.** This is the second exception after [は|wa], which is read *wa*."
+          ],
+          "table": {
+            "head": ["Sentence", "Meaning"],
+            "rows": [
+              ["[がっこうへ|Gakkō e] [いきます|ikimasu]。", "I go to school."],
+              ["[うちへ|Uchi e] [かえります|kaerimasu]。", "I go home."],
+              ["[にほんに|Nihon ni] [きました|kimashita]。", "I came to Japan."],
+              ["[どこへ|Doko e] [いきますか|ikimasu ka]。", "Where are you going?"],
+              ["[でんしゃで|Densha de] [えきへ|eki e] [いきます|ikimasu]。", "I go to the station by train."]
+            ]
+          },
+          "after": [
+            "**The full chain:** [まいにち|Mainichi] [でんしゃで|densha de] [がっこうへ|gakkō e] [いきます|ikimasu]。 — when, by what, where to, verb. This order sounds the most natural."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "会話 2 — The weekend",
+      "intro": "Budi talks about his weekend plans. Watch for the frequency adverbs that appear in several lines.",
+      "lines": [
+        {"speaker": "アニ:", "text": "[ブディさんは|Budi-san wa] [しゅうまつ|shūmatsu] [なにを|nani o] [しますか|shimasu ka]。", "id": "Budi, what do you do on weekends?", "literal": "Budi-Mr. — as-for — weekend — what — [object] — do — [question]."},
+        {"speaker": "ブディ:", "text": "[どようびは|Doyōbi wa] [うちで|uchi de] [やすみます|yasumimasu]。[にちようびは|Nichiyōbi wa] [こうえんで|kōen de] [サッカーを|sakkā o] [します|shimasu]。", "id": "On Saturday I rest at home. On Sunday I play soccer in the park.", "literal": "Saturday — as-for — home — at — rest. Sunday — as-for — park — at — soccer — [object] — do."},
+        {"speaker": "アニ:", "text": "[よく|Yoku] [サッカーを|sakkā o] [しますか|shimasu ka]。", "id": "Do you play soccer often?", "literal": "often — soccer — [object] — do — [question]."},
+        {"speaker": "ブディ:", "text": "[まいしゅう|Maishū] [します|shimasu]。[インドネシアじんの|Indoneshia-jin no] [ともだちと|tomodachi to] [します|shimasu]。", "id": "Every week. I play with my Indonesian friends.", "literal": "every-week — do. Indonesia-person — 's — friend — with — do."},
+        {"speaker": "アニ:", "text": "[おもしろそうですね|Omoshirosō desu ne]。[わたしは|Watashi wa] [スポーツを|supōtsu o] [あまり|amari] [しません|shimasen]。", "id": "Sounds fun. I don't do much sport.", "literal": "interesting-looking — is — right. I — as-for — sport — [object] — not-much — don't-do."},
+        {"speaker": "ブディ:", "text": "[じゃあ|Jā]、[なにを|nani o] [しますか|shimasu ka]。", "id": "So what do you do?", "literal": "well-then, what — [object] — do — [question]."},
+        {"speaker": "アニ:", "text": "[おんがくを|Ongaku o] [ききます|kikimasu]。[それから|Sorekara] [えいがを|eiga o] [みます|mimasu]。", "id": "I listen to music. And I watch movies.", "literal": "music — [object] — listen. after-that — movie — [object] — watch."},
+        {"speaker": "ブディ:", "text": "[どこで|Doko de] [えいがを|eiga o] [みますか|mimasu ka]。", "id": "Where do you watch them?", "literal": "where — at — movie — [object] — watch — [question]."},
+        {"speaker": "アニ:", "text": "[うちで|Uchi de] [みます|mimasu]。[えいがかんへは|Eigakan e wa] [ぜんぜん|zenzen] [いきません|ikimasen]。", "id": "At home. I never go to the movie theater.", "literal": "home — at — watch. movie-theater — to — as-for — at-all — don't-go."},
+        {"speaker": "ブディ:", "text": "[こんどの|Kondo no] [にちようび|nichiyōbi]、[いっしょに|issho ni] [いきませんか|ikimasen ka]。", "id": "Want to go together next Sunday?", "literal": "next-time — 's — Sunday, together — don't-go — [question]."},
+        {"speaker": "アニ:", "text": "[いいですね|Ii desu ne]。[いきましょう|Ikimashō]。", "id": "Sounds good. Let's go.", "literal": "good — is — right. let's-go."}
+      ],
+      "notes": [
+        "**あまり and ぜんぜん always pair with a negative verb.** あまり しません = don't do much. ぜんぜん いきません = never go at all. Using them with a positive verb is a grammar error, not just a matter of style.",
+        "**よく has two meanings:** “often” (よくいきます) and “well” (よくわかりました). Context tells them apart, and both are very common.",
+        "**いっしょに = together**, unlike と, which names **who**. You can use both at once: ともだちと いっしょに いきます.",
+        "**～ませんか = a gentle invitation**, literally “won't you ～?”. In Japanese, inviting with a negative sounds more polite than with a positive — it leaves room to say no. Fully covered in Unit 9.",
+        "**こんどの = the coming / next.** こんどのにちようび = next Sunday. The word is slippery: it can mean “this time” or “next time” depending on context.",
+        "**おもしろそう = sounds interesting.** The ending ～そう expresses an impression from the outside. Not required at this level, but too useful not to recognize."
+      ],
+      "grammars": [
+        {
+          "title": "Frequency adverbs",
+          "body": [
+            "These words go **before the verb**, and three of them require a negative verb. The right-hand column is a rule you can't break."
+          ],
+          "table": {
+            "head": ["Word", "Meaning", "Verb form"],
+            "rows": [
+              ["[いつも|itsumo]", "always", "positive"],
+              ["[たいてい|taitei]", "usually", "positive"],
+              ["[よく|yoku]", "often", "positive"],
+              ["[ときどき|tokidoki]", "sometimes", "positive"],
+              ["[たまに|tamani]", "once in a while", "positive"],
+              ["[あまり|amari]", "rarely, not much", "⚠️ negative"],
+              ["[ぜんぜん|zenzen]", "not at all, never", "⚠️ negative"],
+              ["[まだ|mada]", "not yet", "⚠️ negative"],
+              ["[まいにち|mainichi]", "every day", "positive"],
+              ["[まいしゅう|maishū]", "every week", "positive"],
+              ["[まいつき|maitsuki]", "every month", "positive"],
+              ["[まいあさ|maiasa]", "every morning", "positive"]
+            ]
+          },
+          "after": [
+            "**A matched pair:** [よく|Yoku] [コーヒーを|kōhī o] [のみます|nomimasu]。 / [あまり|Amari] [コーヒーを|kōhī o] [のみません|nomimasen]。 — two sentences where the verb form has to change too."
+          ]
+        },
+        {
+          "title": "Your first thirty verbs",
+          "body": [
+            "These verbs cover most everyday conversation. All are written in the [ます|masu] form. Learn them together with their objects — the brain remembers phrases far better than single words."
+          ],
+          "tables": [
+            {
+              "head": ["Verb", "Meaning", "Example phrase"],
+              "rows": [
+                ["[たべます|tabemasu] 食べます", "eat", "[ごはんを|gohan o] [たべます|tabemasu]"],
+                ["[のみます|nomimasu] 飲みます", "drink", "[みずを|mizu o] [のみます|nomimasu]"],
+                ["[みます|mimasu] 見ます", "see, watch", "[テレビを|terebi o] [みます|mimasu]"],
+                ["[ききます|kikimasu] 聞きます", "listen, ask", "[おんがくを|ongaku o] [ききます|kikimasu]"],
+                ["[よみます|yomimasu] 読みます", "read", "[ほんを|hon o] [よみます|yomimasu]"],
+                ["[かきます|kakimasu] 書きます", "write", "[てがみを|tegami o] [かきます|kakimasu]"],
+                ["[はなします|hanashimasu] 話します", "speak", "[にほんごを|Nihongo o] [はなします|hanashimasu]"],
+                ["[かいます|kaimasu] 買います", "buy", "[パンを|pan o] [かいます|kaimasu]"],
+                ["[つくります|tsukurimasu] 作ります", "make", "[りょうりを|ryōri o] [つくります|tsukurimasu]"],
+                ["[べんきょうします|benkyō shimasu]", "study", "[にほんごを|Nihongo o] [べんきょうします|benkyō shimasu]"]
+              ]
+            },
+            {
+              "head": ["Verb", "Meaning", "Example phrase"],
+              "rows": [
+                ["[いきます|ikimasu] 行きます", "go", "[がっこうへ|gakkō e] [いきます|ikimasu]"],
+                ["[きます|kimasu] 来ます", "come", "[にほんへ|Nihon e] [きます|kimasu]"],
+                ["[かえります|kaerimasu] 帰ります", "go home, return", "[うちへ|uchi e] [かえります|kaerimasu]"],
+                ["[おきます|okimasu] 起きます", "get up", "6[じに|ji ni] [おきます|okimasu]"],
+                ["[ねます|nemasu] 寝ます", "sleep, go to bed", "11[じに|ji ni] [ねます|nemasu]"],
+                ["[はたらきます|hatarakimasu] 働きます", "work", "[かいしゃで|kaisha de] [はたらきます|hatarakimasu]"],
+                ["[やすみます|yasumimasu] 休みます", "rest", "[うちで|uchi de] [やすみます|yasumimasu]"],
+                ["[あいます|aimasu] 会います", "meet", "[ともだちに|tomodachi ni] [あいます|aimasu]"],
+                ["[します|shimasu]", "do", "[サッカーを|sakkā o] [します|shimasu]"],
+                ["[わかります|wakarimasu] 分かります", "understand", "[にほんごが|Nihongo ga] [わかります|wakarimasu]"]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **Two verbs with unexpected particles:** [ともだち|tomodachi]**[に|ni]** [あいます|aimasu] (meet a friend — [に|ni], not [と|to] or [を|o]) and [にほんご|nihongo]**[が|ga]** [わかります|wakarimasu] (understand Japanese — [が|ga], not [を|o]). There are a dozen or so verbs like this; learn them with their particles from day one."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Building long sentences",
+      "blocks": [
+        {"type": "p", "text": "Japanese sentences grow by adding information **in front of** the verb, not after it. Watch a short sentence expand without a single part needing to change:"},
+        {"type": "tabel", "head": ["Step", "Sentence", "Meaning"], "rows": [
+          ["1", "[たべます|Tabemasu]。", "I eat."],
+          ["2", "[ごはんを|Gohan o] [たべます|tabemasu]。", "I eat a meal."],
+          ["3", "[しょくどうで|Shokudō de] [ごはんを|gohan o] [たべます|tabemasu]。", "I eat a meal in the cafeteria."],
+          ["4", "[じゅうにじに|Jūni-ji ni] [しょくどうで|shokudō de] [ごはんを|gohan o] [たべます|tabemasu]。", "I eat a meal in the cafeteria at 12."],
+          ["5", "[まいにち|Mainichi] [じゅうにじに|jūni-ji ni] [しょくどうで|shokudō de] [ごはんを|gohan o] [たべます|tabemasu]。", "Every day I eat a meal in the cafeteria at 12."],
+          ["6", "[ともだちと|Tomodachi to] [まいにち|mainichi] [じゅうにじに|jūni-ji ni] [しょくどうで|shokudō de] [ごはんを|gohan o] [たべます|tabemasu]。", "Every day at 12 I eat a meal in the cafeteria with a friend."]
+        ]},
+        {"type": "kotak", "title": "The most natural order", "items": [
+          "**Who は — When — With whom と — Where で — By what で — What を — Verb**",
+          "This order isn't a fixed rule; Japanese speakers shift things around for emphasis. But if you follow it, your sentences will never sound odd.",
+          "Only one thing is **fixed**: the verb at the end. That never moves."
+        ]}
+      ]
+    },
+    {
+      "title": "Getting around",
+      "blocks": [
+        {"type": "p", "text": "Every means of transport takes the particle **で**, except walking, which uses the special form あるいて."},
+        {"type": "tabel", "head": ["Japanese", "Meaning", "Example"], "rows": [
+          ["[でんしゃ|densha] 電車", "train", "[でんしゃで|densha de] [いきます|ikimasu]"],
+          ["[ちかてつ|chikatetsu] 地下鉄", "subway", "[ちかてつで|chikatetsu de] [かえります|kaerimasu]"],
+          ["[バス|basu]", "bus", "[バスで|basu de] [きます|kimasu]"],
+          ["[くるま|kuruma] 車", "car", "[くるまで|kuruma de] [いきます|ikimasu]"],
+          ["[じてんしゃ|jitensha] 自転車", "bicycle", "[じてんしゃで|jitensha de] [いきます|ikimasu]"],
+          ["[タクシー|takushī]", "taxi", "[タクシーで|takushī de] [かえります|kaerimasu]"],
+          ["[ひこうき|hikōki] 飛行機", "airplane", "[ひこうきで|hikōki de] [きました|kimashita]"],
+          ["[あるいて|aruite] 歩いて", "on foot", "⚠️ [あるいて|aruite] [いきます|ikimasu] — no で"]
+        ]},
+        {"type": "p", "text": "**Trains in Japan.** JR is the national network; the rest belong to private companies and cities. IC cards (Suica, PASMO, ICOCA) work almost everywhere in the country and can also pay at convenience stores — this one card saves a lot of conversations at the ticket counter."}
+      ]
+    }
+  ],
+  "vocab": [
+    {"ja": "[します|shimasu]", "baca": "します · shimasu", "en": "do"},
+    {"ja": "[べんきょうします|benkyō shimasu] 勉強します", "baca": "べんきょうします · benkyō shimasu", "en": "study"},
+    {"ja": "[よみます|yomimasu] 読みます", "baca": "よみます · yomimasu", "en": "read"},
+    {"ja": "[かきます|kakimasu] 書きます", "baca": "かきます · kakimasu", "en": "write"},
+    {"ja": "[ききます|kikimasu] 聞きます", "baca": "ききます · kikimasu", "en": "listen, ask"},
+    {"ja": "[みます|mimasu] 見ます", "baca": "みます · mimasu", "en": "see, watch"},
+    {"ja": "[のみます|nomimasu] 飲みます", "baca": "のみます · nomimasu", "en": "drink"},
+    {"ja": "[かいます|kaimasu] 買います", "baca": "かいます · kaimasu", "en": "buy"},
+    {"ja": "[つくります|tsukurimasu] 作ります", "baca": "つくります · tsukurimasu", "en": "make, cook"},
+    {"ja": "[はなします|hanashimasu] 話します", "baca": "はなします · hanashimasu", "en": "speak"},
+    {"ja": "[いきます|ikimasu] 行きます", "baca": "いきます · ikimasu", "en": "go"},
+    {"ja": "[きます|kimasu] 来ます", "baca": "きます · kimasu", "en": "come"},
+    {"ja": "[わかります|wakarimasu] 分かります", "baca": "わかります · wakarimasu", "en": "understand"},
+    {"ja": "[ともだち|tomodachi] 友達", "baca": "ともだち · tomodachi", "en": "friend"},
+    {"ja": "[ひとりで|hitori de] 一人で", "baca": "ひとりで · hitori de", "en": "alone"},
+    {"ja": "[いっしょに|issho ni] 一緒に", "baca": "いっしょに · issho ni", "en": "together"},
+    {"ja": "[おんがく|ongaku] 音楽", "baca": "おんがく · ongaku", "en": "music"},
+    {"ja": "[えいが|eiga] 映画", "baca": "えいが · eiga", "en": "movie"},
+    {"ja": "[えいがかん|eigakan] 映画館", "baca": "えいがかん · eigakan", "en": "movie theater"},
+    {"ja": "[スポーツ|supōtsu]", "baca": "スポーツ · supōtsu", "en": "sport"},
+    {"ja": "[サッカー|sakkā]", "baca": "サッカー · sakkā", "en": "soccer"},
+    {"ja": "[りょうり|ryōri] 料理", "baca": "りょうり · ryōri", "en": "cooking, cuisine"},
+    {"ja": "[てがみ|tegami] 手紙", "baca": "てがみ · tegami", "en": "letter"},
+    {"ja": "[ごはん|gohan] ご飯", "baca": "ごはん · gohan", "en": "rice, meal"},
+    {"ja": "[しゅうまつ|shūmatsu] 週末", "baca": "しゅうまつ · shūmatsu", "en": "weekend"},
+    {"ja": "[カフェ|kafe]", "baca": "カフェ · kafe", "en": "café"},
+    {"ja": "[でんしゃ|densha] 電車", "baca": "でんしゃ · densha", "en": "train"},
+    {"ja": "[ちかてつ|chikatetsu] 地下鉄", "baca": "ちかてつ · chikatetsu", "en": "subway"},
+    {"ja": "[くるま|kuruma] 車", "baca": "くるま · kuruma", "en": "car"},
+    {"ja": "[じてんしゃ|jitensha] 自転車", "baca": "じてんしゃ · jitensha", "en": "bicycle"},
+    {"ja": "[ひこうき|hikōki] 飛行機", "baca": "ひこうき · hikōki", "en": "airplane"},
+    {"ja": "[あるいて|aruite] 歩いて", "baca": "あるいて · aruite", "en": "on foot"},
+    {"ja": "[いつも|itsumo]", "baca": "いつも · itsumo", "en": "always"},
+    {"ja": "[よく|yoku]", "baca": "よく · yoku", "en": "often; well"},
+    {"ja": "[ときどき|tokidoki] 時々", "baca": "ときどき · tokidoki", "en": "sometimes"},
+    {"ja": "[たいてい|taitei]", "baca": "たいてい · taitei", "en": "usually"},
+    {"ja": "[あまり|amari]", "baca": "あまり · amari", "en": "not much, rarely (+ negative)"},
+    {"ja": "[ぜんぜん|zenzen] 全然", "baca": "ぜんぜん · zenzen", "en": "not at all"},
+    {"ja": "[まいしゅう|maishū] 毎週", "baca": "まいしゅう · maishū", "en": "every week"},
+    {"ja": "[まいあさ|maiasa] 毎朝", "baca": "まいあさ · maiasa", "en": "every morning"},
+    {"ja": "[ごろ|goro]", "baca": "ごろ · goro", "en": "around (time)"},
+    {"ja": "[それから|sorekara]", "baca": "それから · sorekara", "en": "after that"},
+    {"ja": "[こんど|kondo] 今度", "baca": "こんど · kondo", "en": "this time; next time"},
+    {"ja": "[へ|e]", "baca": "へ · e", "en": "to (direction)"},
+    {"ja": "[を|o]", "baca": "を · o", "en": "object marker"},
+    {"ja": "[で|de]", "baca": "で · de", "en": "at (activity); by (means)"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the missing particle.",
+      "items": [
+        "としょかん ___ ほんをよみます。",
+        "ほん ___ よみます。",
+        "がっこう ___ いきます。",
+        "でんしゃ ___ かえります。",
+        "ともだち ___ はなします。",
+        "きょうしつ ___ せんせいがいます。"
+      ]
+    },
+    {
+      "prompt": "Change each verb into the form asked for.",
+      "items": [
+        "たべます → don't eat: ___",
+        "いきます → don't go: ___",
+        "のみます → don't drink: ___",
+        "べんきょうします → don't study: ___",
+        "みます → don't watch: ___"
+      ]
+    },
+    {
+      "prompt": "Put the pieces in order to make a correct sentence.",
+      "items": [
+        "まいにち / がっこう / で / にほんご / を / べんきょうします",
+        "ともだち / と / カフェ / で / コーヒー / を / のみます",
+        "わたし / は / でんしゃ / で / かいしゃ / へ / いきます",
+        "よる / うち / で / テレビ / を / みます",
+        "しゅうまつ / は / こうえん / で / サッカー / を / します",
+        "あまり / スポーツ / を / しません"
+      ]
+    },
+    {
+      "prompt": "Fill in the right frequency adverb.",
+      "items": [
+        "every day: ___",
+        "often: ___",
+        "sometimes: ___",
+        "rarely (+ negative): ___",
+        "not at all: ___"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "あさ、うちであさごはんをたべます。",
+        "としょかんでにほんごをべんきょうします。",
+        "ともだちといっしょにえいがをみます。",
+        "わたしはぜんぜんおさけをのみません。",
+        "まいあさ じてんしゃで がっこうへ いきます。"
+      ]
+    },
+    {
+      "prompt": "Translate into Japanese. Write in rōmaji.",
+      "items": [
+        "I study Japanese every day.",
+        "I read books at the library.",
+        "I go to school by train.",
+        "In the evening I watch TV.",
+        "I rarely drink coffee."
+      ]
+    }
+  ],
+  "answers": [
+    "で — を — へ — で — と — に",
+    "たべません — いきません — のみません — べんきょうしません — みません",
+    "まいにち がっこう で にほんご を べんきょうします — ともだち と カフェ で コーヒー を のみます — わたし は でんしゃ で かいしゃ へ いきます — よる うち で テレビ を みます — しゅうまつ は こうえん で サッカー を します — あまり スポーツ を しません",
+    "まいにち — よく — ときどき — あまり — ぜんぜん",
+    "In the morning I eat breakfast at home. — I study Japanese at the library. — I watch a movie together with a friend. — I don't drink alcohol at all. — Every morning I go to school by bicycle.",
+    "mainichi Nihongo o benkyō shimasu — toshokan de hon o yomimasu — densha de gakkō e ikimasu — yoru terebi o mimasu — amari kōhī o nomimasen"
+  ],
+  "wave": "Review Unit 5 through this unit: describe a whole day, naming the **place** of each activity. Notice that Unit 5 used に (to be at) and this unit uses で (to do at) — the two most often confused particles. Reread the grammar box if you're still unsure."
+}
