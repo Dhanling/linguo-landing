@@ -20,7 +20,7 @@ export const LANG_FLAGS: Record<string, string> = {
   // [linguo-patch:onboarding-lang-catalog-v1] flag bahasa tambahan (lengkapi katalog Kelas Private)
   Hungarian:"hu",Romanian:"ro",Bulgarian:"bg",Ukrainian:"ua",Icelandic:"is",
   Cantonese:"hk",Filipino:"ph",Khmer:"kh",Lao:"la",Burmese:"mm",Urdu:"pk",
-  Balinese:"id",Batak:"id",Bugis:"id",Madurese:"id",
+  Balinese:"id",Batak:"id","Batak Mandailing":"id",Bugis:"id",Madurese:"id",
   Uzbek:"uz",
   // [ebook-taiwan-101-v1] Katalog Perpustakaan punya baris "Taiwanese Mandarin".
   "Taiwanese Mandarin":"tw", "Mandarin Taiwan":"tw",

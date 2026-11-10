@@ -6908,7 +6908,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
       {
         question: "Batak kan banyak — Toba, Karo, Mandailing. Yang diajarkan yang mana?",
         answer:
-          "Track utama kami Batak Toba (penutur terbanyak & bahasa mayoritas pesta adat di perantauan). Karo dan Mandailing-Angkola cukup berbeda — kalau kebutuhanmu spesifik ke sana, sampaikan di awal; ketersediaan pengajarnya kami carikan.",
+          "Ada dua pilihan: Batak Toba (track utama, penutur terbanyak & bahasa mayoritas pesta adat di perantauan) dan Batak Mandailing (Mandailing-Angkola, kelas Private dengan pengajar penutur asli). Saat daftar, pilih Batak Toba atau Batak Mandailing. Karo masih kami carikan pengajarnya — sampaikan di awal kalau butuh.",
       },
       {
         question: "Saya menantu orang Batak, pesta unjuk 8 bulan lagi. Sempat?",

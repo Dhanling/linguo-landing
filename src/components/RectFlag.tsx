@@ -22,7 +22,7 @@ export const FLAG_CODE_BY_SLUG: Record<string, string> = {
   malay: "my",
   lao: "la", burmese: "mm", hindi: "in", urdu: "pk", bengali: "bd",
   tamil: "in", punjabi: "in", nepali: "np", mongolian: "mn", balinese: "id",
-  minangkabau: "id", batak: "id", bugis: "id", acehnese: "id", banjar: "id",
+  minangkabau: "id", batak: "id", "batak-mandailing": "id", bugis: "id", acehnese: "id", banjar: "id",
   madurese: "id", swahili: "ke", zulu: "za", yoruba: "ng", amharic: "et",
   armenian: "am",
   // [materi-bendera-uzbek-v1] Bahasa yang TIDAK ada di master kurikulum jatuh ke

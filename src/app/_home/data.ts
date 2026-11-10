@@ -86,7 +86,7 @@ export const SEMUA_BAHASA: { label: string; slug: string }[] = [
   { label: "Urdu", slug: "urdu" }, { label: "Indonesia", slug: "indonesia" },
   { label: "Jawa", slug: "jawa" }, { label: "Sunda", slug: "sunda" },
   { label: "Betawi", slug: "betawi" }, { label: "Bali", slug: "bali" },
-  { label: "Batak", slug: "batak" }, { label: "Bugis", slug: "bugis" },
+  { label: "Batak Toba", slug: "batak" }, { label: "Bugis", slug: "bugis" },
   { label: "Madura", slug: "madura" },
 ];
 

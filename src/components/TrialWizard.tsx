@@ -163,6 +163,7 @@ const LANG_META: Record<string, { flag: string; region: LangRegion }> = {
   Sundanese: { flag: "id", region: "nusantara" },
   Madurese: { flag: "id", region: "nusantara" },
   Batak: { flag: "id", region: "nusantara" },
+  "Batak Mandailing": { flag: "id", region: "nusantara" },
   Banjar: { flag: "id", region: "nusantara" },
   Balinese: { flag: "id", region: "nusantara" },
   Malay: { flag: "my", region: "asia" },

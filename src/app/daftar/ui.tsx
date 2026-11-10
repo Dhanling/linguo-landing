@@ -21,7 +21,7 @@ import { buildFunnelPath, langNameId, type ProgramSlug } from "@/lib/funnelRouti
 // Bendera: nama bahasa Inggris funnel → kode negara ISO-2.
 const FLAG_CODES: Record<string, string> = {
   English:"gb",Japanese:"jp",Korean:"kr",Mandarin:"cn",Arabic:"sa",French:"fr",German:"de",Spanish:"es",Italian:"it",Dutch:"nl",Portuguese:"br",Russian:"ru",Thai:"th",Vietnamese:"vn",Hindi:"in",Turkish:"tr",Polish:"pl",Swedish:"se",Norwegian:"no",Danish:"dk",Finnish:"fi",Greek:"gr",Czech:"cz",Hungarian:"hu",Hebrew:"il",Persian:"ir",Swahili:"ke",Tagalog:"ph",Malay:"my",Georgian:"ge",Javanese:"id",Sundanese:"id",Betawi:"id",BIPA:"id",Urdu:"pk",Bengali:"bd",Romanian:"ro",
-  Icelandic:"is",Bulgarian:"bg",Ukrainian:"ua",Khmer:"kh",Lao:"la",Burmese:"mm",Cantonese:"hk",Balinese:"id",Batak:"id",Bugis:"id",Madurese:"id",
+  Icelandic:"is",Bulgarian:"bg",Ukrainian:"ua",Khmer:"kh",Lao:"la",Burmese:"mm",Cantonese:"hk",Balinese:"id",Batak:"id","Batak Mandailing":"id",Bugis:"id",Madurese:"id",
 };
 export const getFlagCode = (name: string) => FLAG_CODES[name] || "un";
 

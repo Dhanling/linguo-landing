@@ -463,7 +463,7 @@ const PRIVATE_LANG_GROUPS: { region: string; langs: string[] }[] = [
   { region: "Eropa", langs: ["English","French","German","Spanish","Italian","Portuguese","Dutch","Russian","Polish","Czech","Hungarian","Romanian","Bulgarian","Ukrainian","Greek","Turkish","Danish","Swedish","Norwegian","Finnish","Icelandic","Bosnian"] },
   { region: "Asia", langs: ["Japanese","Korean","Mandarin","Cantonese","Thai","Vietnamese","Filipino","Khmer","Lao","Burmese","Hindi","Urdu"] },
   { region: "Timur Tengah", langs: ["Arabic","Hebrew","Persian"] },
-  { region: "Nusantara", langs: ["Javanese","Sundanese","Balinese","Batak","Bugis","Madurese","BIPA"] },
+  { region: "Nusantara", langs: ["Javanese","Sundanese","Balinese","Batak","Batak Mandailing","Bugis","Madurese","BIPA"] },
   { region: "Lainnya", langs: ["Georgian"] },
 ];
 const LANGS_BY_PROGRAM: Record<string, string[]> = {

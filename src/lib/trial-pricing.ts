@@ -55,7 +55,7 @@ export const PRICE_CATEGORIES: Record<string, string[]> = {
     "Egyptian Arabic Dialect", "English - Conversation",
   ],
   D: [
-    "Javanese", "Sundanese", "Betawi", "Madurese", "Batak", "Banjar", "Balinese",
+    "Javanese", "Sundanese", "Betawi", "Madurese", "Batak", "Batak Mandailing", "Banjar", "Balinese",
     "Bugis",
     // price-cat-wainbox-parity-v1 — bahasa daerah Nusantara lain di WA Inbox.
     "Acehnese", "Minangkabau",

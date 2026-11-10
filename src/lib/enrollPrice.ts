@@ -22,7 +22,7 @@ export const PRIVATE_LANG_CAT: Record<string, "A" | "B" | "C" | "D" | "E"> = {
   "Ancient Egyptian": "A", Georgian: "A", Irish: "A", Malay: "A", Bosnian: "A",
   Russian: "B", Dutch: "B", Italian: "B", Spanish: "B", Thai: "B", "Sign Language": "B",
   Arabic: "C", English: "C", Japanese: "C", German: "C", Korean: "C", Mandarin: "C", French: "C",
-  Javanese: "D", Sundanese: "D", Madurese: "D", Batak: "D", Banjar: "D",
+  Javanese: "D", Sundanese: "D", Madurese: "D", Batak: "D", "Batak Mandailing": "D", Banjar: "D",
   // Melayu = bahasa asing (Malaysia/Brunei/Singapura), bukan bahasa daerah → kategori A.
   Balinese: "D", Bugis: "D",
   BIPA: "E",
