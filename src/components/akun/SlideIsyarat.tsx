@@ -385,8 +385,12 @@ async function bangunPanggung(
   try {
     renderer = new THREE.WebGLRenderer({ canvas: kanvas, antialias: true, alpha: true, preserveDrawingBuffer: true });
   } catch (e) { onGagal(e); return null; }
-  // [isyarat-jia-v1] Minimal 2× (supersampling) supaya jari & wajah tetap tajam di layar 1×
-  renderer.setPixelRatio(Math.min(Math.max(window.devicePixelRatio || 1, 2), 3));
+  // [isyarat-jia-v1] Minimal 2× (supersampling) supaya jari & wajah tetap tajam di layar 1×.
+  // [isyarat-coba-v1] Maksimal juga 2× — 3× di layar retina/HP terlalu berat bagi GPU
+  // (Chrome bisa mencabut konteks WebGL → "3D tidak bisa dimuat").
+  renderer.setPixelRatio(2);
+  const konteksHilang = (ev: Event) => { ev.preventDefault(); onGagal(new Error("Konteks WebGL hilang (GPU sibuk)")); };
+  kanvas.addEventListener("webglcontextlost", konteksHilang);
   renderer.setClearColor(0x000000, 0);
 
   const scene = new THREE.Scene();
@@ -421,7 +425,7 @@ async function bangunPanggung(
   const ext = pakaiVrm ? "vrm" : "glb";
   const daftar = dialog ? [`isyarat-pria.${ext}`, `isyarat-wanita.${ext}`] : [`isyarat-${tokoh === "B" ? "wanita" : "pria"}.${ext}`];
   let tokohs: Awaited<ReturnType<typeof muat>>[];
-  try { tokohs = await Promise.all(daftar.map(muat)); } catch (e) { renderer.dispose(); onGagal(e); return null; }
+  try { tokohs = await Promise.all(daftar.map(muat)); } catch (e) { kanvas.removeEventListener("webglcontextlost", konteksHilang); renderer.dispose(); onGagal(e); return null; }
 
   const klipCache = new Map<string, import("three").AnimationClip | null>();
   const klip = (n: string) => {
@@ -492,6 +496,7 @@ async function bangunPanggung(
         const mat = m.material as import("three").Material | import("three").Material[] | undefined;
         (Array.isArray(mat) ? mat : mat ? [mat] : []).forEach((x) => x.dispose());
       });
+      kanvas.removeEventListener("webglcontextlost", konteksHilang);
       renderer.dispose();
       try { renderer.forceContextLoss(); } catch { /* diam */ }
     },
@@ -514,6 +519,10 @@ export default function SlideIsyarat({ v, aksen = TEAL }: { v: VisualIsyarat; ak
   const wadah = useRef<HTMLDivElement>(null);
   const panggung = useRef<Panggung | null>(null);
   const [status, setStatus] = useState<"muat" | "siap" | "gagal">("muat");
+  // [isyarat-coba-v1] Gagal → coba ulang otomatis sekali (kanvas baru), lalu tombol "Coba lagi".
+  const [coba, setCoba] = useState(0);
+  const [alasan, setAlasan] = useState("");
+  const cobaOtomatis = useRef(0);
   const [gerak, setGerak] = useState<Gerak | null>(null);
   const [aktif, setAktif] = useState<number>(-1);
   const [token, setToken] = useState<number>(-1);
@@ -532,15 +541,24 @@ export default function SlideIsyarat({ v, aksen = TEAL }: { v: VisualIsyarat; ak
     let batal = false;
     const el = kanvas.current, w = wadah.current;
     if (!el || !w) return;
+    setStatus("muat");
+    const gagal = (e: unknown) => {
+      if (batal) return;
+      console.error("[SlideIsyarat] 3D gagal dimuat:", e);
+      if (cobaOtomatis.current < 1) { cobaOtomatis.current++; setCoba((c) => c + 1); return; }
+      const m = e instanceof Error ? e.message : String(e ?? "");
+      setAlasan(/webgl/i.test(m) && /creat|context/i.test(m) ? "WebGL tidak tersedia / sedang diblokir browser" : m.slice(0, 120));
+      setStatus("gagal");
+    };
     void bangunPanggung(el, w, base, dialog, v.tokoh === "B" ? "B" : "A", pakaiVrm,
       (g) => { if (!batal) { setGerak(g); setStatus("siap"); } },
-      () => { if (!batal) setStatus("gagal"); },
+      gagal,
     ).then((p) => {
       if (batal) { p?.dispose(); return; }
       panggung.current = p;
-    }).catch(() => { if (!batal) setStatus("gagal"); });
+    }).catch(gagal);
     return () => { batal = true; urutPutar.current++; panggung.current?.dispose(); panggung.current = null; };
-  }, [base, dialog, v.tokoh, pakaiVrm]);
+  }, [base, dialog, v.tokoh, pakaiVrm, coba]);
 
   const meta = useMemo(() => new Map((gerak?.isyarat || []).map((m) => [m.kode, m])), [gerak]);
   const skala = pelan ? 0.3 : 1; // [isyarat-jia-v1] dulu 0,5× — masih terlalu cepat untuk ditiru
@@ -659,7 +677,7 @@ export default function SlideIsyarat({ v, aksen = TEAL }: { v: VisualIsyarat; ak
         {status !== "siap" && (
           <img src={poster} alt="" aria-hidden style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain", opacity: status === "gagal" ? 1 : 0.55, filter: status === "muat" ? "blur(1px)" : undefined }} />
         )}
-        <canvas ref={kanvas} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", display: "block" }} />
+        <canvas key={coba} ref={kanvas} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", display: "block" }} />
         {status === "muat" && (
           <div style={{ position: "absolute", left: "50%", top: "50%", transform: "translate(-50%,-50%)", background: "rgba(255,255,255,0.92)", borderRadius: 999, padding: "0.35em 0.9em", fontSize: "0.8em", fontWeight: 700, color: TEAL }}>
             Menyiapkan avatar 3D…
@@ -668,6 +686,12 @@ export default function SlideIsyarat({ v, aksen = TEAL }: { v: VisualIsyarat; ak
         {status === "gagal" && (
           <div style={{ position: "absolute", left: "4%", right: "4%", bottom: "4%", background: "rgba(255,255,255,0.95)", borderRadius: 12, padding: "0.5em 0.8em", fontSize: "0.78em", color: "#92400e" }}>
             3D tidak bisa dimuat di perangkat ini. Daftar isyarat & caranya tetap bisa dibaca di samping.
+            {alasan && <div style={{ marginTop: "0.25em", fontSize: "0.85em", color: "#9ca3af" }}>Alasan: {alasan}</div>}
+            <button type="button" onPointerDown={(e) => e.stopPropagation()}
+              onClick={() => { setAlasan(""); setCoba((c) => c + 1); }}
+              style={{ marginTop: "0.45em", borderRadius: 999, border: "none", background: TEAL, color: "#fff", fontWeight: 700, fontSize: "0.95em", padding: "0.3em 0.9em", cursor: "pointer" }}>
+              Coba lagi
+            </button>
           </div>
         )}
         {/* Teks bawah: gloss (token aktif ditebalkan) + arti */}
