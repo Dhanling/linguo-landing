@@ -1,0 +1,573 @@
+{
+  "title": "Where are you from? — and the rule that drives the whole language",
+  "title_target": "Honnan jössz?",
+  "goal": "Say where you are from and where you live, then master vowel harmony — one rule that decides the form of almost every ending in Hungarian.",
+  "bekal": [
+    "answer *honnan* and *hol* with the correct ending",
+    "choose between *-ban* and *-ben*, *-ból* and *-ből* yourself, without memorizing them one by one",
+    "name countries, nationalities and languages with one and the same word"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Szünet a nyelviskolában",
+      "intro": "A break between classes. Anna and Budi chat over coffee in the corridor.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Honnan jössz, Budi?",
+          "id": "Where are you from, Budi?",
+          "literal": "from-where you-come, Budi?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Indonéziából jövök, Jakartából.",
+          "id": "I'm from Indonesia, from Jakarta.",
+          "literal": "Indonesia-from-inside I-come, Jakarta-from-inside."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "És most hol laksz?",
+          "id": "And where do you live now?",
+          "literal": "and now where-at you-live?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Budapesten lakom, a hetedik kerületben.",
+          "id": "I live in Budapest, in the seventh district.",
+          "literal": "Budapest-on I-live, the seventh district-in."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Én is Budapesten lakom, de Szegedről jövök.",
+          "id": "I live in Budapest too, but I'm originally from Szeged.",
+          "literal": "I also Budapest-on I-live, but Szeged-from-on I-come."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Szeged messze van?",
+          "id": "Is Szeged far?",
+          "literal": "Szeged far is?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Nem nagyon. Két óra vonattal.",
+          "id": "Not very. Two hours by train.",
+          "literal": "not very. two hours train-with."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "És hol van Szeged?",
+          "id": "Where is Szeged?",
+          "literal": "and where-at is Szeged?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Délen, a Tisza mellett. Nagyon szép város.",
+          "id": "In the south, on the Tisza river. A very beautiful city.",
+          "literal": "south-in, the Tisza next-to. very beautiful city."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "És a család? Ők is Szegeden élnek?",
+          "id": "And your family? Do they live in Szeged too?",
+          "literal": "and the family? they also Szeged-in they-live?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Igen, ott élnek. Én egyedül lakom itt.",
+          "id": "Yes, they live there. I live here by myself.",
+          "literal": "yes, there they-live. I alone I-live here."
+        }
+      ],
+      "notes": [
+        "**Three question words for place, not one.** *Hol?* (where), *Honnan?* (where from), *Hová?* (where to). English also splits these three, and Hungarian does the same — but each word demands its own group of endings. Getting used to all three now saves a lot of confusion later.",
+        "**Jakartából, but Szegedről.** Both mean \"from\", and the difference is not distance. Cities **outside Hungary** count as enclosed spaces, so they take the *-ban/-ból/-ba* group. Cities **inside Hungary** are generally seen as surfaces, so they take *-on/-ról/-ra*. Odd, but consistent — and it instantly marks you as someone who learned properly.",
+        "**Budapesten, not Budapestben.** It follows the rule above: Budapest is in Hungary, so it is a surface. Unfortunately Hungarian towns are not all uniform — *Debrecenben* and *Győrben* use the space group. The table at the end of this unit lists the most common ones; the rest are learned one by one, just as Hungarians themselves do.",
+        "**Lakom or lakok?** The verb *lakik* belongs to the **-ik** class, whose \"I\" form ends in *-om/-em/-öm*. Standard form: *lakom*. In everyday speech *lakok* is also often heard and is not considered a big mistake. Use *lakom* and you are always safe.",
+        "**Van is back.** In Unit 1 the verb \"to be\" vanished for the third person. Here it appears: *Szeged messze van*, *Hol van Szeged?*. The difference is clear — when the sentence states **place or existence**, *van* is required; when it states **who or what** something is, *van* is forbidden.",
+        "**Vonattal** = *vonat* + *-val*. Notice that the *v* disappears and the consonant before it doubles. The \"with\" ending really behaves like that: *busszal* (by bus), *repülővel* (by plane). It is covered fully in Unit 15."
+      ],
+      "grammars": [
+        {
+          "title": "Vowel harmony — the rule that drives the whole language",
+          "body": [
+            "This is the most important page in the whole course. Almost every Hungarian ending has two or three forms that mean **exactly the same thing**. What chooses between them is not meaning, but the vowels of the word it attaches to."
+          ],
+          "table": {
+            "head": [
+              "Group",
+              "Vowels",
+              "Example word",
+              "\"in\"",
+              "\"out of\""
+            ],
+            "rows": [
+              [
+                "**Back** (mély)",
+                "a, á, o, ó, u, ú",
+                "*ház* (house)",
+                "ház**ban**",
+                "ház**ból**"
+              ],
+              [
+                "**Front** (magas)",
+                "e, é, i, í",
+                "*kert* (garden)",
+                "kert**ben**",
+                "kert**ből**"
+              ],
+              [
+                "**Rounded front**",
+                "ö, ő, ü, ű",
+                "*sör* (beer)",
+                "sör**ben**",
+                "sör**ből**"
+              ]
+            ]
+          },
+          "after": [
+            "The two main groups are determined by **tongue position**: back vowels are formed at the back of the mouth, front vowels at the front. Hungarian refuses to mix the two inside one plain word — so the ending adjusts, not the other way around.",
+            "**The third group matters only for some endings.** Most endings have just two forms (*-ban/-ben*), but a handful have three: *-hoz/-hez/-höz*, *-on/-en/-ön*, and the \"I\" ending on verbs (*-ok/-ek/-ök*). For those three-form endings, *ö, ő, ü, ű* get their own slot."
+          ]
+        },
+        {
+          "title": "Mixed words: e, é, i, í are neutral",
+          "body": [
+            "What if a word contains vowels from both groups? The rule is short, and has almost no exceptions at A1 level."
+          ],
+          "table": {
+            "head": [
+              "Word",
+              "Vowels",
+              "Winning group",
+              "Result"
+            ],
+            "rows": [
+              [
+                "*papír*",
+                "a + í",
+                "back — *í* is neutral",
+                "papír**ban**"
+              ],
+              [
+                "*Budapest*",
+                "u + a + e",
+                "back — *e* is neutral",
+                "Budapest**en**"
+              ],
+              [
+                "*ebéd*",
+                "e + é",
+                "front",
+                "ebéd**ben**"
+              ],
+              [
+                "*sofőr*",
+                "o + ő",
+                "front — the **last** vowel wins",
+                "sofőr**ben**"
+              ],
+              [
+                "*kávé*",
+                "á + é",
+                "back — old loanword",
+                "kávé**ban**"
+              ]
+            ]
+          },
+          "after": [
+            "The key: **e, é, i, í are neutral**. They force nothing. So if a word contains even one back vowel (a, á, o, ó, u, ú), the ending follows the back group — even if there is an *e* or *i* in it.",
+            "Only when a word contains **ö, ő, ü, ű** together with a back vowel does the last vowel decide. Words like this are rare, and almost all are loanwords.",
+            "A few old loanwords rebel — *kávé*, *sofőr*, *hotel* — and their choice is memorized, not calculated. There are few of them, so don't let these exceptions shake your trust in the rule."
+          ]
+        },
+        {
+          "title": "Where you come from, where you are",
+          "body": [
+            "Three pairs of endings you can use right away."
+          ],
+          "table": {
+            "head": [
+              "Question",
+              "Ending",
+              "Used for",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**Hol?** (where)",
+                "*-ban / -ben*",
+                "enclosed space, countries, cities abroad",
+                "*Indonéziában* = in Indonesia"
+              ],
+              [
+                "**Hol?**",
+                "*-on / -en / -ön*",
+                "surface, Hungarian cities",
+                "*Budapesten* = in Budapest"
+              ],
+              [
+                "**Honnan?** (where from)",
+                "*-ból / -ből*",
+                "out of an enclosed space",
+                "*Jakartából* = from Jakarta"
+              ],
+              [
+                "**Honnan?**",
+                "*-ról / -ről*",
+                "off a surface",
+                "*Szegedről* = from Szeged"
+              ]
+            ]
+          },
+          "after": [
+            "Notice the sound pattern: the \"space\" group always contains a **b**, the \"surface\" group always contains an **r** or **n**. Once you hear the pattern, you don't need to memorize twelve endings — just three forms times two vowel groups.",
+            "Country names almost always take the space group: *Magyarországon* is the big exception you must memorize — Hungarians treat their own country as a surface."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Countries, nationalities, languages",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Hungarian saves a word here: the name of a nationality and the name of its language are **exactly the same**. Only an ending changes, when you talk about speaking *in* that language."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Country",
+            "Nationality / adjective",
+            "Speaking in…"
+          ],
+          "rows": [
+            [
+              "*Magyarország*",
+              "*magyar*",
+              "*magyarul*"
+            ],
+            [
+              "*Indonézia*",
+              "*indonéz*",
+              "*indonézül*"
+            ],
+            [
+              "*Anglia*",
+              "*angol*",
+              "*angolul*"
+            ],
+            [
+              "*Németország*",
+              "*német*",
+              "*németül*"
+            ],
+            [
+              "*Franciaország*",
+              "*francia*",
+              "*franciául*"
+            ],
+            [
+              "*Olaszország*",
+              "*olasz*",
+              "*olaszul*"
+            ],
+            [
+              "*Spanyolország*",
+              "*spanyol*",
+              "*spanyolul*"
+            ],
+            [
+              "*Kína*",
+              "*kínai*",
+              "*kínaiul*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The ending *-ul / -ül* means \"in the manner of\". *Beszélek magyarul* literally means \"I speak Hungarian-ly\". Note that this ending also obeys vowel harmony: *magyar***ul**, but *német***ül**."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "Beszélsz magyarul?",
+              "BEH-sayls MAW-dyaw-rool",
+              "Do you speak Hungarian?"
+            ],
+            [
+              "Egy kicsit beszélek.",
+              "ehdy KI-chit BEH-say-lehk",
+              "I speak a little."
+            ],
+            [
+              "Nem beszélek magyarul.",
+              "nehm BEH-say-lehk MAW-dyaw-rool",
+              "I don't speak Hungarian."
+            ],
+            [
+              "Magyarul tanulok.",
+              "MAW-dyaw-rool TAW-noo-lohk",
+              "I am learning Hungarian."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Egy kicsit beszélek* is the sentence that rescues beginners most often. It is honest, it is polite, and it almost always makes the other person slow down without being asked."
+        }
+      ]
+    },
+    {
+      "title": "Hungarian cities and their endings",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cities inside Hungary choose between the surface group and the space group on their own, and the choice cannot be guessed from the shape of the word. Most use the surface group; the ones that use the space group are few and are best memorized."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "City",
+            "In…",
+            "From…",
+            "To…"
+          ],
+          "rows": [
+            [
+              "Budapest",
+              "Budapest**en**",
+              "Budapest**ről**",
+              "Budapest**re**"
+            ],
+            [
+              "Szeged",
+              "Szeged**en**",
+              "Szeged**ről**",
+              "Szeged**re**"
+            ],
+            [
+              "Miskolc",
+              "Miskolc**on**",
+              "Miskolc**ról**",
+              "Miskolc**ra**"
+            ],
+            [
+              "Kecskemét",
+              "Kecskemét**en**",
+              "Kecskemét**ről**",
+              "Kecskemét**re**"
+            ],
+            [
+              "Siófok",
+              "Siófok**on**",
+              "Siófok**ról**",
+              "Siófok**ra**"
+            ],
+            [
+              "Debrecen",
+              "Debrecen**ben**",
+              "Debrecen**ből**",
+              "Debrecen**be**"
+            ],
+            [
+              "Győr",
+              "Győr**ben**",
+              "Győr**ből**",
+              "Győr**be**"
+            ],
+            [
+              "Sopron",
+              "Sopron**ban**",
+              "Sopron**ból**",
+              "Sopron**ba**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Cities outside Hungary are uniform and easy: they all take the space group. *Jakartában*, *Jakartából*, *Jakartába*. *Bécsben* (in Vienna), *Londonban*, *Párizsban*, *Tokióban*."
+        },
+        {
+          "type": "kotak",
+          "title": "A way to memorize that really works",
+          "items": [
+            "Don't memorize the cities. Memorize **one full sentence** per city: *Budapesten lakom.* *Debrecenbe megyek.* A form that sticks to a sentence lasts far longer than one that sticks to a table.",
+            "If you truly forget and have to speak right now: use the surface group. It is the most often right for Hungarian cities, and the mistake will still be understood."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "honnan",
+      "baca": "HOHN-nawn",
+      "en": "where from"
+    },
+    {
+      "hu": "hol",
+      "baca": "hohl",
+      "en": "where"
+    },
+    {
+      "hu": "hová",
+      "baca": "HOH-vah",
+      "en": "where to"
+    },
+    {
+      "hu": "jön",
+      "baca": "yön",
+      "en": "to come"
+    },
+    {
+      "hu": "lakik",
+      "baca": "LAW-kik",
+      "en": "to live (reside)"
+    },
+    {
+      "hu": "él",
+      "baca": "ayl",
+      "en": "to live; to be alive"
+    },
+    {
+      "hu": "most",
+      "baca": "mohsht",
+      "en": "now"
+    },
+    {
+      "hu": "itt",
+      "baca": "itt",
+      "en": "here"
+    },
+    {
+      "hu": "ott",
+      "baca": "ohtt",
+      "en": "there"
+    },
+    {
+      "hu": "de",
+      "baca": "deh",
+      "en": "but"
+    },
+    {
+      "hu": "messze",
+      "baca": "MEHS-seh",
+      "en": "far"
+    },
+    {
+      "hu": "közel",
+      "baca": "KÖ-zehl",
+      "en": "near"
+    },
+    {
+      "hu": "két / kettő",
+      "baca": "kayt / KEHT-tö",
+      "en": "two"
+    },
+    {
+      "hu": "óra",
+      "baca": "OH-raw",
+      "en": "hour; o'clock"
+    },
+    {
+      "hu": "vonat",
+      "baca": "VOH-nawt",
+      "en": "train"
+    },
+    {
+      "hu": "busz",
+      "baca": "boos",
+      "en": "bus"
+    },
+    {
+      "hu": "dél",
+      "baca": "dayl",
+      "en": "south; noon"
+    },
+    {
+      "hu": "észak",
+      "baca": "AY-sawk",
+      "en": "north"
+    },
+    {
+      "hu": "mellett",
+      "baca": "MEHL-lehtt",
+      "en": "next to"
+    },
+    {
+      "hu": "város",
+      "baca": "VAH-rohsh",
+      "en": "city"
+    },
+    {
+      "hu": "falu",
+      "baca": "FAW-loo",
+      "en": "village"
+    },
+    {
+      "hu": "ország",
+      "baca": "OHR-sahg",
+      "en": "country"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Rewrite each word with the right \"in\" ending.",
+      "items": [
+        "ház",
+        "kert",
+        "Jakarta",
+        "Indonézia",
+        "étterem",
+        "papír"
+      ]
+    },
+    {
+      "prompt": "Fill in the right form of the city.",
+      "items": [
+        "____ lakom. (in Budapest)",
+        "____ jövök. (from Szeged)",
+        "____ megyek. (to Debrecen)",
+        "____ lakik a családom. (in Miskolc)",
+        "____ jön a vonat. (from Győr)",
+        "____ élek. (in Jakarta)"
+      ]
+    },
+    {
+      "prompt": "Translate into Hungarian.",
+      "items": [
+        "Where are you from?",
+        "I'm from Indonesia.",
+        "I live in Budapest now.",
+        "Is Szeged far?",
+        "Do you speak Hungarian?",
+        "I speak a little."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "lakom / Budapesten / én",
+        "jövök / Jakartából / ?",
+        "van / Szeged / hol / ?",
+        "beszélek / magyarul / nem",
+        "szép / nagyon / város / Szeged"
+      ]
+    }
+  ],
+  "answers": [
+    "házban — kertben — Jakartában — Indonéziában — étteremben — papírban",
+    "Budapesten — Szegedről — Debrecenbe — Miskolcon — Győrből — Jakartában",
+    "Honnan jössz? — Indonéziából jövök. — Most Budapesten lakom. — Szeged messze van? — Beszélsz magyarul? — Egy kicsit beszélek.",
+    "Én Budapesten lakom. — Jakartából jövök? — Hol van Szeged? — Nem beszélek magyarul. — Szeged nagyon szép város."
+  ]
+}

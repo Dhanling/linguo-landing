@@ -1,0 +1,509 @@
+{
+  "title": "How much is it? — at the market",
+  "title_target": "Mennyibe kerül?",
+  "goal": "Ask prices, name weights and quantities, pay and receive change in forints.",
+  "bekal": [
+    "ask the price with *mennyibe kerül* and understand the answer",
+    "order by weight and container: *egy kiló*, *fél kiló*, *egy üveg*",
+    "pay, work out the change, and choose between cash and card"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — A piacon",
+      "intro": "The covered market at Hunyadi tér, Saturday morning. Budi stands in front of a table piled with red peppers.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Jó napot! Mennyibe kerül a paprika?",
+          "id": "Good afternoon! How much are the peppers?",
+          "literal": "good day! how-much-into it-costs the pepper?"
+        },
+        {
+          "speaker": "Árus:",
+          "text": "Ötszáz forint kilója. Nagyon friss.",
+          "id": "Five hundred forints a kilo. Very fresh.",
+          "literal": "five-hundred forint kilo-its. very fresh."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "És a paradicsom mennyibe kerül?",
+          "id": "And how much are the tomatoes?",
+          "literal": "and the tomato how-much-into it-costs?"
+        },
+        {
+          "speaker": "Árus:",
+          "text": "A paradicsom hatszáznegyven forint.",
+          "id": "The tomatoes are six hundred and forty forints.",
+          "literal": "the tomato six-hundred-forty forint."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kérek egy kiló paradicsomot és fél kiló almát.",
+          "id": "I'd like a kilo of tomatoes and half a kilo of apples.",
+          "literal": "I-ask a kilo tomato-OBJ and half kilo apple-OBJ."
+        },
+        {
+          "speaker": "Árus:",
+          "text": "Melyik almát? Ez édes, az savanyú.",
+          "id": "Which apples? These are sweet, those are sour.",
+          "literal": "which apple-OBJ? this sweet, that sour."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Az édeset kérem. Valami mást nem kérek.",
+          "id": "I'd like the sweet ones. Nothing else.",
+          "literal": "the sweet-OBJ I-ask-it. something other-OBJ not I-ask."
+        },
+        {
+          "speaker": "Árus:",
+          "text": "Rendben. Mennyi lesz? Mindjárt megmondom.",
+          "id": "Fine. How much will it be? I'll work it out in a moment.",
+          "literal": "fine. how-much will-be? in-a-moment I-say-it."
+        },
+        {
+          "speaker": "Árus:",
+          "text": "Ezerkétszáz forint lesz összesen.",
+          "id": "It comes to one thousand two hundred forints in total.",
+          "literal": "thousand-two-hundred forint will-be altogether."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tessék, kétezer forint.",
+          "id": "Here you are, two thousand forints.",
+          "literal": "here-you-are, two-thousand forint."
+        },
+        {
+          "speaker": "Árus:",
+          "text": "Nyolcszáz a visszajáró. Köszönöm szépen, viszlát!",
+          "id": "Eight hundred is your change. Thank you very much, goodbye!",
+          "literal": "eight-hundred the change. I-thank nicely, goodbye!"
+        }
+      ],
+      "notes": [
+        "**Mennyibe kerül?** literally means \"into how much does it cost\". The construction is odd and not worth taking apart; learn it whole. A shorter form is just as polite: *Mennyi?* or *Mennyi lesz?*",
+        "**Ötszáz forint kilója** uses the possessive ending from Unit 5: literally \"five hundred forints its-kilo\". This is the standard way to give a price per unit, and you will hear it at every market stall.",
+        "**Forint never takes a plural.** *ötszáz forint*, *kétezer forint* — following the rule from Units 3 and 6: after a number, the noun stays singular. The abbreviation is **Ft**, written **after** the number: 1,200 Ft.",
+        "**Fél kiló, másfél kiló.** *Fél* means half, and *másfél* means one and a half — literally \"other half\". English has no word that short for \"one and a half\", and once you get used to it you will miss it.",
+        "**Az édeset kérem** shows two things at once. First, an adjective can stand alone as a noun: *az édes* = \"the sweet one\". Second, it then takes the object ending too: *az édeset*. Note also *kérem*, not *kérek* — the apples are now specific, so it is clear which ones. The rule waits in Unit 11.",
+        "**Lesz is the future of van.** *Mennyi lesz?* = \"how much will it be?\". It is the only Hungarian verb with a future form of its own; every other verb uses a different method, covered in Unit 20."
+      ],
+      "grammars": [
+        {
+          "title": "Asking and giving prices",
+          "body": [
+            "Four patterns that cover almost every shopping need."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Mennyibe kerül?*",
+                "MEHNY-nyi-beh KEH-rül",
+                "How much is it?"
+              ],
+              [
+                "*Mennyibe kerülnek?*",
+                "MEHNY-nyi-beh KEH-rül-nehk",
+                "How much are they? (plural items)"
+              ],
+              [
+                "*Mennyi lesz összesen?*",
+                "MEHNY-nyi lehs ÖS-seh-shehn",
+                "What does it come to in total?"
+              ],
+              [
+                "*Ez mennyi?*",
+                "ehz MEHNY-nyi",
+                "How much is this?"
+              ],
+              [
+                "*Drága.* / *Olcsó.*",
+                "DRAH-gaw / OHL-choh",
+                "Expensive. / Cheap."
+              ],
+              [
+                "*Van olcsóbb?*",
+                "vawn OHL-chohbb",
+                "Is there anything cheaper?"
+              ]
+            ]
+          },
+          "after": [
+            "Note *kerülnek* in the second row: when the goods are plural, the verb is plural too. Getting it wrong is not fatal, but fixing it costs nothing.",
+            "*Olcsóbb* is the \"-er\" form of *olcsó*, built with the ending *-bb*. Comparison is covered fully in Unit 16; for now these three forms are enough: *olcsóbb* (cheaper), *jobb* (better), *nagyobb* (bigger)."
+          ]
+        },
+        {
+          "title": "Weights, quantities and containers",
+          "body": [
+            "They all behave like numbers: the noun after them stays singular, and the object ending attaches to **the noun**, not to the unit."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Say it",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "*egy kiló*",
+                "ehdy KI-loh",
+                "one kilo",
+                "*egy kiló almát kérek*"
+              ],
+              [
+                "*fél kiló*",
+                "fayl KI-loh",
+                "half a kilo",
+                "*fél kiló sajtot kérek*"
+              ],
+              [
+                "*másfél kiló*",
+                "MAHSH-fayl KI-loh",
+                "one and a half kilos",
+                "*másfél kiló krumplit kérek*"
+              ],
+              [
+                "*tíz deka*",
+                "teez DEH-kaw",
+                "a hundred grams",
+                "*tíz deka sonkát kérek*"
+              ],
+              [
+                "*egy üveg*",
+                "ehdy Ü-vehg",
+                "a bottle",
+                "*egy üveg bort kérek*"
+              ],
+              [
+                "*egy doboz*",
+                "ehdy DOH-bohz",
+                "a box / carton",
+                "*egy doboz tejet kérek*"
+              ],
+              [
+                "*egy szelet*",
+                "ehdy SEH-leht",
+                "a slice / piece",
+                "*egy szelet süteményt kérek*"
+              ],
+              [
+                "*egy csomag*",
+                "ehdy CHOH-mawg",
+                "a packet",
+                "*egy csomag rizst kérek*"
+              ]
+            ]
+          },
+          "after": [
+            "**The deka is the most typically Hungarian unit.** One *deka* is ten grams, so *tíz deka* means a hundred grams. At the butcher's and the cheese counter, Hungarians almost never say grams — they say deka, and a beginner who asks for \"száz gramm\" immediately sounds like a foreigner.",
+            "Note once more where the object ending goes: *egy kiló almá**t***, not *egy kiló**t** alma*. The unit stays attached to the number; the thing acted on is still the noun."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "At the market",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "a piac",
+              "aw PI-awts",
+              "market"
+            ],
+            [
+              "a zöldség",
+              "aw ZÖLD-shayg",
+              "vegetables"
+            ],
+            [
+              "a gyümölcs",
+              "aw DYÜ-mölch",
+              "fruit"
+            ],
+            [
+              "a paprika",
+              "aw PAWP-ri-kaw",
+              "pepper; paprika"
+            ],
+            [
+              "a paradicsom",
+              "aw PAW-raw-di-chohm",
+              "tomato"
+            ],
+            [
+              "a krumpli",
+              "aw KROOMP-li",
+              "potato"
+            ],
+            [
+              "a hagyma",
+              "aw HAWDY-maw",
+              "onion"
+            ],
+            [
+              "az uborka",
+              "awz OO-bohr-kaw",
+              "cucumber"
+            ],
+            [
+              "a sárgarépa",
+              "aw SHAHR-gaw-ray-paw",
+              "carrot"
+            ],
+            [
+              "az alma",
+              "awz AWL-maw",
+              "apple"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Paprika* in Hungary means two things at once: the fresh pepper sold at the market, and the red powder that gives *gulyás* its color. If you want the powder, say *őrölt paprika* (ground paprika) or just point — Hungarian market sellers are very used to translating hand gestures."
+        }
+      ]
+    },
+    {
+      "title": "Money, change, ways to pay",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Mennyi lesz összesen?",
+              "MEHNY-nyi lehs ÖS-seh-shehn",
+              "How much does it come to in total?"
+            ],
+            [
+              "Tessék.",
+              "TEHSH-shayk",
+              "Here you are (handing over money)."
+            ],
+            [
+              "Kártyával fizetek.",
+              "KAHR-tyah-vawl FI-zeh-tehk",
+              "I'll pay by card."
+            ],
+            [
+              "Készpénzzel fizetek.",
+              "KAYS-paynz-zehl FI-zeh-tehk",
+              "I'll pay in cash."
+            ],
+            [
+              "Kártyával lehet?",
+              "KAHR-tyah-vawl LEH-heht",
+              "Can I pay by card?"
+            ],
+            [
+              "Nincs apróm.",
+              "ninch AWP-rohm",
+              "I don't have small change."
+            ],
+            [
+              "Nem kell a visszajáró.",
+              "nehm kehll aw VIS-saw-yah-roh",
+              "Keep the change."
+            ],
+            [
+              "Kaphatok számlát?",
+              "KAWP-haw-tohk SAHM-laht",
+              "May I have a receipt?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Forints in practice",
+          "items": [
+            "Coins: 5, 10, 20, 50, 100, 200 Ft. Banknotes: 500, 1,000, 2,000, 5,000, 10,000, 20,000 Ft. The 20,000 note is often refused at small stalls, so keep some mid-size notes.",
+            "Cash totals at the till are **rounded to the nearest multiple of five**, because 1 and 2 forint coins are no longer in circulation. Card payments are not rounded — so the figure on the receipt and the amount you pay can differ by a few forints, and that is normal.",
+            "At the market, cards are not always accepted. Say *Kártyával lehet?* **before** the seller starts weighing."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "mennyibe kerül",
+      "baca": "MEHNY-nyi-beh KEH-rül",
+      "en": "how much does it cost"
+    },
+    {
+      "hu": "forint",
+      "baca": "FOH-rint",
+      "en": "forint (currency)"
+    },
+    {
+      "hu": "piac",
+      "baca": "PI-awts",
+      "en": "market"
+    },
+    {
+      "hu": "árus",
+      "baca": "AH-roosh",
+      "en": "seller; vendor"
+    },
+    {
+      "hu": "ár",
+      "baca": "ahr",
+      "en": "price"
+    },
+    {
+      "hu": "kiló",
+      "baca": "KI-loh",
+      "en": "kilo"
+    },
+    {
+      "hu": "deka",
+      "baca": "DEH-kaw",
+      "en": "ten grams"
+    },
+    {
+      "hu": "fél",
+      "baca": "fayl",
+      "en": "half"
+    },
+    {
+      "hu": "másfél",
+      "baca": "MAHSH-fayl",
+      "en": "one and a half"
+    },
+    {
+      "hu": "üveg",
+      "baca": "Ü-vehg",
+      "en": "bottle; glass"
+    },
+    {
+      "hu": "doboz",
+      "baca": "DOH-bohz",
+      "en": "box"
+    },
+    {
+      "hu": "csomag",
+      "baca": "CHOH-mawg",
+      "en": "packet; pack"
+    },
+    {
+      "hu": "szelet",
+      "baca": "SEH-leht",
+      "en": "slice; piece"
+    },
+    {
+      "hu": "melyik",
+      "baca": "MEH-yik",
+      "en": "which one"
+    },
+    {
+      "hu": "más",
+      "baca": "mahsh",
+      "en": "other; else"
+    },
+    {
+      "hu": "összesen",
+      "baca": "ÖS-seh-shehn",
+      "en": "altogether"
+    },
+    {
+      "hu": "visszajáró",
+      "baca": "VIS-saw-yah-roh",
+      "en": "change (money back)"
+    },
+    {
+      "hu": "készpénz",
+      "baca": "KAYS-paynz",
+      "en": "cash"
+    },
+    {
+      "hu": "apró",
+      "baca": "AWP-roh",
+      "en": "small change; small"
+    },
+    {
+      "hu": "lesz",
+      "baca": "lehs",
+      "en": "will be"
+    },
+    {
+      "hu": "mindjárt",
+      "baca": "MIND-yahrt",
+      "en": "in a moment"
+    },
+    {
+      "hu": "olcsó",
+      "baca": "OHL-choh",
+      "en": "cheap"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Hungarian.",
+      "items": [
+        "How much are the peppers?",
+        "Five hundred forints a kilo.",
+        "I'd like a kilo of tomatoes.",
+        "I'd like half a kilo of apples.",
+        "What does it come to in total?",
+        "Can I pay by card?"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right object form.",
+      "items": [
+        "Egy kiló ____ kérek. (alma)",
+        "Fél kiló ____ kérek. (sajt)",
+        "Egy üveg ____ kérek. (bor)",
+        "Tíz deka ____ kérek. (sonka)",
+        "Egy doboz ____ kérek. (tej)",
+        "Egy szelet ____ kérek. (sütemény)"
+      ]
+    },
+    {
+      "prompt": "Write the price in words.",
+      "items": [
+        "500 Ft",
+        "640 Ft",
+        "1200 Ft",
+        "2000 Ft",
+        "850 Ft",
+        "3400 Ft"
+      ]
+    },
+    {
+      "prompt": "Spiral review — Unit 6. Translate into Hungarian without looking back at the unit.",
+      "items": [
+        "How old are you?",
+        "I'm twenty-four years old.",
+        "What's your phone number?",
+        "Which floor?",
+        "The course is eight weeks."
+      ]
+    }
+  ],
+  "answers": [
+    "Mennyibe kerül a paprika? — Ötszáz forint kilója. — Kérek egy kiló paradicsomot. — Kérek fél kiló almát. — Mennyi lesz összesen? — Kártyával lehet?",
+    "almát — sajtot — bort — sonkát — tejet — süteményt",
+    "ötszáz forint — hatszáznegyven forint — ezerkétszáz forint — kétezer forint — nyolcszázötven forint — háromezer-négyszáz forint",
+    "Hány éves vagy? — Huszonnégy éves vagyok. — Mi a telefonszámod? — Hányadik emelet? — A tanfolyam nyolc hét."
+  ]
+}

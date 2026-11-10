@@ -1,0 +1,534 @@
+{
+  "title": "Weather and seasons",
+  "title_target": "Milyen az idő?",
+  "goal": "Talk about the weather in sentences with no subject, name the four seasons with their endings, and tell \"it's cold\" apart from \"I'm cold\".",
+  "bekal": [
+    "answer *Milyen az idő?* with ten ready-made sentences",
+    "give temperatures in degrees, including below zero",
+    "use *tavasszal, nyáron, ősszel, télen* to say \"in\" a season"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Az első tél",
+      "intro": "Early January, outside the language school. Budi's first snow fell last night.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Milyen hideg van ma!",
+          "id": "It's so cold today!",
+          "literal": "how cold is today!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Igen, nagyon hideg. Hány fok van?",
+          "id": "Yes, very cold. How many degrees is it?",
+          "literal": "yes, very cold. how-many degree is?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Mínusz öt. És havazik is.",
+          "id": "Minus five. And it's snowing too.",
+          "literal": "minus five. and it-snows too."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Indonéziában soha nincs hó. Ez az első telem.",
+          "id": "It never snows in Indonesia. This is my first winter.",
+          "literal": "Indonesia-in never not-is snow. this the first winter-my."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Tényleg? És szereted a telet?",
+          "id": "Really? And do you like winter?",
+          "literal": "really? and you-like-it the winter-obj?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Szeretem, de fázom. Nálunk mindig meleg van.",
+          "id": "I do, but I'm cold. It's always hot back home.",
+          "literal": "I-like-it, but I-am-cold. at-us always hot is."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Hány fok van Jakartában?",
+          "id": "How warm is it in Jakarta?",
+          "literal": "how-many degree is Jakarta-in?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Harminc fok, egész évben. Két évszak van: száraz és esős.",
+          "id": "Thirty degrees, all year round. There are two seasons: dry and rainy.",
+          "literal": "thirty degree, whole year-in. two season is: dry and rainy."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Nálunk négy évszak van. A tavasz a legszebb.",
+          "id": "We have four seasons. Spring is the most beautiful.",
+          "literal": "at-us four season is. the spring the most-beautiful."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mikor kezdődik a tavasz?",
+          "id": "When does spring start?",
+          "literal": "when it-starts the spring?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Márciusban. Akkor süt a nap, és minden virágzik.",
+          "id": "In March. Then the sun shines and everything blooms.",
+          "literal": "March-in. then it-shines the sun, and all it-blooms."
+        }
+      ],
+      "notes": [
+        "**Hideg van — a sentence with no subject.** Literally \"cold is\", without saying who or what is cold. Hungarian uses this pattern for all weather talk, where English needs a dummy \"it\": \"it's cold\".",
+        "**Hideg van is not Fázom.** Keep this distinction tidy: *Hideg van* means **the weather** is cold, while *Fázom* means **I** feel cold. Both can be true at once, as in the dialogue. The opposite pair: *Meleg van* (it's hot) versus *Melegem van* (I'm hot).",
+        "**Havazik and esik az eső.** \"It's snowing\" is a single verb, *havazik*. \"It's raining\" takes two words: *esik az eső* — literally \"the rain falls\". The short form *esik* alone is also used and heard very often.",
+        "**Ez az első telem** shows *tél* shortening its vowel once an ending is added: *tél* → *telem*, *telet*, *télen*. You've already seen the same thing with *víz* → *vizet* in unit 7 and *nyár* → *nyarat*.",
+        "**Nálunk means \"at our place, where we live\"** — the *-nál* ending from unit 12 plus a possessive ending. Hungarians use it for their country, their town, or their home, depending on context. Its siblings are *nálatok* (at your place, plural) and *náluk* (at their place).",
+        "**A legszebb** uses the prefix *leg-* to say \"most\". It goes together with the ending *-bb*: *szép* → *szebb* (more beautiful) → *legszebb* (most beautiful). The full rule is in unit 16."
+      ],
+      "grammars": [
+        {
+          "title": "Weather: ten sentences that cover it all",
+          "body": [
+            "Almost all of them use *van* with no subject, or a single verb."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Milyen az idő?*",
+                "MI-yehn awz I-dö",
+                "What's the weather like?"
+              ],
+              [
+                "*Szép idő van.*",
+                "sayp I-dö vawn",
+                "The weather is nice."
+              ],
+              [
+                "*Rossz idő van.*",
+                "rohss I-dö vawn",
+                "The weather is bad."
+              ],
+              [
+                "*Meleg van.*",
+                "MEH-lehg vawn",
+                "It's hot."
+              ],
+              [
+                "*Hideg van.*",
+                "HI-dehg vawn",
+                "It's cold."
+              ],
+              [
+                "*Süt a nap.*",
+                "shüt aw nawp",
+                "The sun is shining."
+              ],
+              [
+                "*Esik az eső.*",
+                "EH-shik awz EH-shö",
+                "It's raining."
+              ],
+              [
+                "*Havazik.*",
+                "HAW-vaw-zik",
+                "It's snowing."
+              ],
+              [
+                "*Fúj a szél.*",
+                "fooy aw sayl",
+                "The wind is blowing."
+              ],
+              [
+                "*Köd van.*",
+                "köd vawn",
+                "It's foggy."
+              ]
+            ]
+          },
+          "after": [
+            "**Temperatures use fok.** *Húsz fok van* (twenty degrees), *mínusz öt fok van* (minus five degrees), *Hány fok van?* (how many degrees is it?). Note that *fok* stays singular after a number, like every other noun.",
+            "*Idő* means both \"time\" and \"weather\". Beginners may therefore misread *Milyen az idő?* as \"what time is it\" — but Hungarian uses *Hány óra van?* for that, so the confusion never lasts long."
+          ]
+        },
+        {
+          "title": "Is it cold, or are you cold?",
+          "body": [
+            "Hungarian keeps apart two things that are easy to blur."
+          ],
+          "table": {
+            "head": [
+              "About the weather",
+              "Meaning",
+              "About a person",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*Hideg van.*",
+                "It's cold.",
+                "*Fázom.*",
+                "I'm cold."
+              ],
+              [
+                "*Meleg van.*",
+                "It's hot.",
+                "*Melegem van.*",
+                "I'm hot."
+              ],
+              [
+                "*Hideg van itt.*",
+                "It's cold in here.",
+                "*Fázol?*",
+                "Are you cold?"
+              ],
+              [
+                "*Nagyon meleg van.*",
+                "It's very hot.",
+                "*Nagyon melegem van.*",
+                "I'm very hot."
+              ]
+            ]
+          },
+          "after": [
+            "*Fázik* is an *-ik* verb: *fázom, fázol, fázik, fázunk, fáztok, fáznak*. *Melegem van*, on the other hand, is built from a possessive ending: literally \"my-heat is\" — the same pattern as *Nincs pénzem* from unit 5.",
+            "The first pattern is used for many bodily states: *Éhes vagyok* (hungry), *Szomjas vagyok* (thirsty), *Álmos vagyok* (sleepy), *Fáradt vagyok* (tired), but *Melegem van* and *Hidegem van* take the other road. Learn the two as a pair."
+          ]
+        },
+        {
+          "title": "The four seasons and their endings",
+          "body": [
+            "Note that \"in a season\" doesn't use a place ending but the \"with\" ending — an old habit you simply memorize."
+          ],
+          "table": {
+            "head": [
+              "Season",
+              "Say it",
+              "Meaning",
+              "In…"
+            ],
+            "rows": [
+              [
+                "*tavasz*",
+                "TAW-vaws",
+                "spring",
+                "*tavasszal*"
+              ],
+              [
+                "*nyár*",
+                "nyahr",
+                "summer",
+                "*nyáron*"
+              ],
+              [
+                "*ősz*",
+                "ös",
+                "autumn, fall",
+                "*ősszel*"
+              ],
+              [
+                "*tél*",
+                "tayl",
+                "winter",
+                "*télen*"
+              ]
+            ]
+          },
+          "after": [
+            "*Tavasszal* and *ősszel* use the *-val/-vel* ending with its merged *v*, while *nyáron* and *télen* use the surface ending *-on/-en*. There's no logic to explain; these four forms are learned whole, and luckily there are only four.",
+            "In Hungary the seasons are truly different from one another: summer can reach 35 degrees, winter drops to minus 10. For newcomers from the tropics, *ősz* — autumn — is usually the most pleasant, and *november* the hardest, foggy and dark from four in the afternoon."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Weather and clothing",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "az idő / az időjárás",
+              "awz I-dö / awz I-dö-yah-rahsh",
+              "weather"
+            ],
+            [
+              "a nap",
+              "aw nawp",
+              "sun; day"
+            ],
+            [
+              "a felhő",
+              "aw FEHL-hö",
+              "cloud"
+            ],
+            [
+              "az eső",
+              "awz EH-shö",
+              "rain"
+            ],
+            [
+              "a hó",
+              "aw hoh",
+              "snow"
+            ],
+            [
+              "a szél",
+              "aw sayl",
+              "wind"
+            ],
+            [
+              "a köd",
+              "aw köd",
+              "fog"
+            ],
+            [
+              "a vihar",
+              "aw VI-hawr",
+              "storm"
+            ],
+            [
+              "a fok",
+              "aw fohk",
+              "degree"
+            ],
+            [
+              "napos",
+              "NAW-pohsh",
+              "sunny, clear"
+            ],
+            [
+              "a kabát",
+              "aw KAW-baht",
+              "coat"
+            ],
+            [
+              "az esernyő",
+              "awz EH-shehr-nyö",
+              "umbrella"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One sentence that will come in very handy in November: *Hozz esernyőt!* — \"Bring an umbrella!\". And one for January: *Vegyél fel kabátot!* — \"Put on a coat!\". Both are imperatives, which you'll learn at A2; for now, just recognize them."
+        }
+      ]
+    },
+    {
+      "title": "A year in Hungary",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Months",
+            "Typical weather",
+            "What's going on"
+          ],
+          "rows": [
+            [
+              "*december – február*",
+              "−5 to +5 °C, often snowy",
+              "*karácsony* (Christmas), the Christmas market on Vörösmarty tér"
+            ],
+            [
+              "*március – május*",
+              "10 to 20 °C",
+              "*tavasz*, the city turns green, cafés open their terraces"
+            ],
+            [
+              "*június – augusztus*",
+              "25 to 35 °C",
+              "*nyár*, people head to Lake Balaton and the pools"
+            ],
+            [
+              "*szeptember – november*",
+              "5 to 20 °C",
+              "*ősz*, the best leaf colors, then November fog"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Szia, hogy vagy? Milyen idő van nálatok?* — the safest small-talk question in all of Hungary, and now you can answer it fully. Weather opens conversations here just as in Britain; the difference is that Hungarians will follow up straight away with a very detailed complaint."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "idő",
+      "baca": "I-dö",
+      "en": "weather; time"
+    },
+    {
+      "hu": "hideg",
+      "baca": "HI-dehg",
+      "en": "cold"
+    },
+    {
+      "hu": "meleg",
+      "baca": "MEH-lehg",
+      "en": "hot; warm"
+    },
+    {
+      "hu": "fok",
+      "baca": "fohk",
+      "en": "degree"
+    },
+    {
+      "hu": "mínusz",
+      "baca": "MEE-noos",
+      "en": "minus"
+    },
+    {
+      "hu": "hó",
+      "baca": "hoh",
+      "en": "snow"
+    },
+    {
+      "hu": "havazik",
+      "baca": "HAW-vaw-zik",
+      "en": "to snow"
+    },
+    {
+      "hu": "eső",
+      "baca": "EH-shö",
+      "en": "rain"
+    },
+    {
+      "hu": "esik",
+      "baca": "EH-shik",
+      "en": "to fall; to rain"
+    },
+    {
+      "hu": "szél",
+      "baca": "sayl",
+      "en": "wind"
+    },
+    {
+      "hu": "fúj",
+      "baca": "fooy",
+      "en": "to blow"
+    },
+    {
+      "hu": "süt",
+      "baca": "shüt",
+      "en": "to shine; to bake"
+    },
+    {
+      "hu": "felhő",
+      "baca": "FEHL-hö",
+      "en": "cloud"
+    },
+    {
+      "hu": "köd",
+      "baca": "köd",
+      "en": "fog"
+    },
+    {
+      "hu": "évszak",
+      "baca": "AYV-sawk",
+      "en": "season"
+    },
+    {
+      "hu": "tavasz",
+      "baca": "TAW-vaws",
+      "en": "spring"
+    },
+    {
+      "hu": "nyár",
+      "baca": "nyahr",
+      "en": "summer"
+    },
+    {
+      "hu": "ősz",
+      "baca": "ös",
+      "en": "autumn, fall"
+    },
+    {
+      "hu": "tél",
+      "baca": "tayl",
+      "en": "winter"
+    },
+    {
+      "hu": "fázik",
+      "baca": "FAH-zik",
+      "en": "to feel cold"
+    },
+    {
+      "hu": "száraz",
+      "baca": "SAH-rawz",
+      "en": "dry"
+    },
+    {
+      "hu": "egész",
+      "baca": "EH-gays",
+      "en": "whole, entire"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Hungarian.",
+      "items": [
+        "What's the weather like?",
+        "It's very cold today.",
+        "How many degrees is it?",
+        "It's snowing.",
+        "The sun is shining.",
+        "I'm cold."
+      ]
+    },
+    {
+      "prompt": "Fill in the right form of the season.",
+      "items": [
+        "____ mindig meleg van. (summer)",
+        "____ havazik. (winter)",
+        "____ minden virágzik. (spring)",
+        "____ sok eső esik. (autumn)",
+        "A ____ márciusban kezdődik. (spring)",
+        "Ez az első ____ Magyarországon. (my winter)"
+      ]
+    },
+    {
+      "prompt": "Choose: weather or person. Write the Hungarian sentence.",
+      "items": [
+        "It's hot.",
+        "I'm hot.",
+        "It's cold.",
+        "I'm cold.",
+        "It's cold in here.",
+        "Are you cold?"
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 11. Translate into Hungarian without looking back at the unit.",
+      "items": [
+        "I'll have the soup.",
+        "I'll have a soup.",
+        "I don't understand anything.",
+        "I know Anna.",
+        "I'll call the waiter."
+      ]
+    }
+  ],
+  "answers": [
+    "Milyen az idő? — Nagyon hideg van ma. — Hány fok van? — Havazik. — Süt a nap. — Fázom.",
+    "Nyáron — Télen — Tavasszal — Ősszel — tavasz — telem",
+    "Meleg van. — Melegem van. — Hideg van. — Fázom. — Hideg van itt. — Fázol?",
+    "Kérem a levest. — Kérek egy levest. — Nem értek semmit. — Ismerem Annát. — Hívom a pincért."
+  ]
+}

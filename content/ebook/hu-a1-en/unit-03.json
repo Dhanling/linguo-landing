@@ -1,0 +1,545 @@
+{
+  "title": "What is this? — demonstratives, articles and the plural",
+  "title_target": "Ez egy könyv",
+  "goal": "Point at things and name them, choose between *a* and *az*, and form plurals with *-k* — while enjoying one big saving: Hungarian nouns have no grammatical gender.",
+  "bekal": [
+    "ask *Ez mi?* and answer it",
+    "use *a* and *az* in the right place, including in the pattern *ez a könyv*",
+    "form the plural, and know when an adjective follows suit and when it does not"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — A könyvesboltban",
+      "intro": "Budi walks into a small bookshop in Budapest, looking for a dictionary. The shopkeeper is patient.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Bocsánat, ez mi?",
+          "id": "Excuse me, what is this?",
+          "literal": "sorry, this what?"
+        },
+        {
+          "speaker": "Eladó:",
+          "text": "Ez egy magyar szótár.",
+          "id": "This is a Hungarian dictionary.",
+          "literal": "this a Hungarian dictionary."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "És az? Az is szótár?",
+          "id": "And that? Is that a dictionary too?",
+          "literal": "and that? that also dictionary?"
+        },
+        {
+          "speaker": "Eladó:",
+          "text": "Nem, az egy nyelvkönyv. Nagyon jó könyv.",
+          "id": "No, that is a language textbook. A very good book.",
+          "literal": "no, that a language-book. very good book."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "És ezek? Ezek is szótárak?",
+          "id": "And all these? Are these dictionaries too?",
+          "literal": "and these? these also dictionaries?"
+        },
+        {
+          "speaker": "Eladó:",
+          "text": "Nem, ezek nem szótárak. Ezek térképek.",
+          "id": "No, these are not dictionaries. These are maps.",
+          "literal": "no, these not dictionaries. these maps."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Értem. És ott mi van?",
+          "id": "I see. And what is over there?",
+          "literal": "I-understand. and there what is?"
+        },
+        {
+          "speaker": "Eladó:",
+          "text": "Ott vannak a regények és az újságok.",
+          "id": "Over there are novels and newspapers.",
+          "literal": "there they-are the novels and the newspapers."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Az a piros könyv érdekes?",
+          "id": "Is that red book interesting?",
+          "literal": "that red book interesting?"
+        },
+        {
+          "speaker": "Eladó:",
+          "text": "Igen, az egy nagyon jó regény. Magyar író.",
+          "id": "Yes, it is a very good novel. The author is Hungarian.",
+          "literal": "yes, that a very good novel. Hungarian author."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Köszönöm. Ezt a könyvet kérem.",
+          "id": "Thank you. I'll take this book.",
+          "literal": "I-thank. this-OBJ the book-OBJ I-ask."
+        }
+      ],
+      "notes": [
+        "**Ez mi?** — two words with no verb, word for word \"this what?\". The order can be flipped to *Mi ez?* and the meaning does not change; only the emphasis does. Hungarian is very flexible about word order, but not random — the most important part always sits **right before the verb**.",
+        "**Az does two jobs.** *Az* means \"that\", and *az* is also \"the\" before a word that starts with a vowel. The sentence tells them apart, and Hungarians are never confused by it. You won't be either, after a few days.",
+        "**Ez a könyv, not ez könyv.** When a demonstrative stands in front of a noun, the article is **required**: *ez a könyv* (this book), *az a ház* (that house). Literally \"this the book\". Dropping *a* there is the quickest-to-spot beginner mistake.",
+        "**Egy means \"one\" and \"a/an\" at once.** It is used when something is introduced for the first time: *Ez egy szótár*. Once the thing is known, it becomes *a szótár*. In many sentences *egy* can simply be dropped — *Ez szótár* is still correct, just flatter.",
+        "**The plural is formed with -k, and almost always needs a linking vowel.** *könyv* → *könyv**ek***, *szótár* → *szótár**ak***, *térkép* → *térkép**ek***. Words that already end in a vowel just add *-k*: *ajtó* → *ajtók*."
+      ],
+      "grammars": [
+        {
+          "title": "Ez és az — this and that",
+          "body": [
+            "Just four forms, and no gender to match."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Say it",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**ez**",
+                "ehz",
+                "this (one thing)",
+                "*Ez egy könyv.* = This is a book."
+              ],
+              [
+                "**az**",
+                "awz",
+                "that (one thing)",
+                "*Az egy ház.* = That is a house."
+              ],
+              [
+                "**ezek**",
+                "EH-zehk",
+                "these (several things)",
+                "*Ezek könyvek.* = These are books."
+              ],
+              [
+                "**azok**",
+                "AW-zohk",
+                "those (several things)",
+                "*Azok házak.* = Those are houses."
+              ]
+            ]
+          },
+          "after": [
+            "When the demonstrative stands alone as the subject, the structure is straight: *Ez egy szótár.*",
+            "When it describes a noun, the structure changes and **the article is required**: *ez a szótár* (this dictionary), *azok a könyvek* (those books). Note that the demonstrative becomes plural too, while the article does not.",
+            "That structure may feel redundant to an English speaker — as if you were saying \"this the dictionary\". Accept it as the standard form; there is no other correct way."
+          ]
+        },
+        {
+          "title": "A and az — one article, two forms",
+          "body": [
+            "Like *a* and *an* in English, the choice is decided by the first sound of the word that follows — not by meaning, not by gender."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Before",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**a**",
+                "a consonant",
+                "*a könyv*, *a ház*, *a lány*, *a szótár*"
+              ],
+              [
+                "**az**",
+                "a vowel",
+                "*az alma*, *az ember*, *az óra*, *az újság*"
+              ]
+            ]
+          },
+          "after": [
+            "Hungarian uses the definite article quite often. Country names take it (*a Magyarország* — except in many fixed phrases), and so do times and general things. If in doubt at A1: **use a/az when it is clear which one you mean**, and drop it when you are speaking in general.",
+            "This article will also decide the verb form later, in Unit 11. So paying attention to it now is not a matter of neatness, but an investment."
+          ]
+        },
+        {
+          "title": "The plural: -k and its linking vowel",
+          "body": [
+            "Just one letter marks the plural. All you have to choose is the vowel that bridges to it — and the choice follows the vowel harmony from Unit 2."
+          ],
+          "table": {
+            "head": [
+              "Base form ends in",
+              "Add",
+              "Example"
+            ],
+            "rows": [
+              [
+                "a vowel",
+                "**-k**",
+                "*ajtó* → *ajtók*; *kutya* → *kutyák*; *alma* → *almák*"
+              ],
+              [
+                "a consonant, back vowel",
+                "**-ok**",
+                "*asztal* → *asztalok*; *ablak* → *ablakok*; *város* → *városok*"
+              ],
+              [
+                "a consonant, front vowel",
+                "**-ek**",
+                "*szék* → *székek*; *könyv* → *könyvek*; *ember* → *emberek*"
+              ],
+              [
+                "a consonant, rounded front vowel",
+                "**-ök**",
+                "*sör* → *sörök*; *gyümölcs* → *gyümölcsök*"
+              ]
+            ]
+          },
+          "after": [
+            "**Watch a and e at the end of a word.** Both **lengthen** as soon as an ending is added: *alma* → *almák*, *kutya* → *kutyák*, *fekete* → *feketék*. This rule applies to all endings, not only the plural, and it is one of the most often forgotten.",
+            "**A handful of back-vowel words take -ak, not -ok.** There are few of them and they are best memorized outright: *ház* → *házak*, *fal* → *falak*, *toll* → *tollak*, *hal* → *halak*, *út* → *utak*. Note that the long vowel of *út* shortens in *utak* — this group of words likes to misbehave."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Things around you",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "All the words below are written together with their article, so the choice of *a* or *az* gets memorized with no extra effort."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English",
+            "Plural"
+          ],
+          "rows": [
+            [
+              "a könyv",
+              "aw könyv",
+              "book",
+              "könyvek"
+            ],
+            [
+              "az újság",
+              "awz OOY-shahg",
+              "newspaper",
+              "újságok"
+            ],
+            [
+              "a szótár",
+              "aw SOH-tahr",
+              "dictionary",
+              "szótárak"
+            ],
+            [
+              "a térkép",
+              "aw TAYR-kayp",
+              "map",
+              "térképek"
+            ],
+            [
+              "a toll",
+              "aw tohll",
+              "pen",
+              "tollak"
+            ],
+            [
+              "a ceruza",
+              "aw TSEH-roo-zaw",
+              "pencil",
+              "ceruzák"
+            ],
+            [
+              "a füzet",
+              "aw FÜ-zeht",
+              "notebook",
+              "füzetek"
+            ],
+            [
+              "a táska",
+              "aw TAHSH-kaw",
+              "bag",
+              "táskák"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Note that *ceruza* and *táska* end in a vowel, so the plural just adds *-k* — after the *a* lengthens to *á*."
+        }
+      ]
+    },
+    {
+      "title": "Adjectives: before the noun and at the end of the sentence",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This is the one place in this unit that really needs your attention, because English adjectives never change for number, so nothing here is familiar."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Position of the adjective",
+            "Takes the plural?",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**Before** the noun",
+              "no",
+              "*a piros könyv* → *a piros könyvek*"
+            ],
+            [
+              "**At the end** of the sentence, as a predicate",
+              "yes",
+              "*A könyv piros.* → *A könyvek piros**ak**.*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "So *piros* in *a piros könyvek* stays as it is, but *piros* in *A könyvek pirosak* must be plural. How to remember it: an adjective attached to a noun rides on the noun's plural; an adjective standing alone must carry its own plural."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Color",
+            "Say it",
+            "English",
+            "Plural form"
+          ],
+          "rows": [
+            [
+              "piros",
+              "PI-rohsh",
+              "red",
+              "pirosak"
+            ],
+            [
+              "kék",
+              "kayk",
+              "blue",
+              "kékek"
+            ],
+            [
+              "zöld",
+              "zöld",
+              "green",
+              "zöldek"
+            ],
+            [
+              "sárga",
+              "SHAHR-gaw",
+              "yellow",
+              "sárgák"
+            ],
+            [
+              "fehér",
+              "FEH-hayr",
+              "white",
+              "fehérek"
+            ],
+            [
+              "fekete",
+              "FEH-keh-teh",
+              "black",
+              "feketék"
+            ],
+            [
+              "barna",
+              "BAWR-naw",
+              "brown",
+              "barnák"
+            ],
+            [
+              "szürke",
+              "SÜR-keh",
+              "gray",
+              "szürkék"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "More adjectives that are useful right away",
+          "items": [
+            "*nagy* (big) — *kicsi* (small); *hosszú* (long) — *rövid* (short)",
+            "*új* (new) — *régi* (old); *drága* (expensive) — *olcsó* (cheap)",
+            "*jó* (good) — *rossz* (bad); *könnyű* (easy/light) — *nehéz* (hard/heavy)",
+            "Note the last two: *könnyű* and *nehéz* each do two jobs at once, just as English can call a task \"light\" or \"heavy\" as well as an object."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "ez",
+      "baca": "ehz",
+      "en": "this"
+    },
+    {
+      "hu": "az",
+      "baca": "awz",
+      "en": "that; the"
+    },
+    {
+      "hu": "ezek",
+      "baca": "EH-zehk",
+      "en": "these"
+    },
+    {
+      "hu": "azok",
+      "baca": "AW-zohk",
+      "en": "those"
+    },
+    {
+      "hu": "egy",
+      "baca": "ehdy",
+      "en": "a; one"
+    },
+    {
+      "hu": "mi",
+      "baca": "mi",
+      "en": "what"
+    },
+    {
+      "hu": "könyv",
+      "baca": "könyv",
+      "en": "book"
+    },
+    {
+      "hu": "szótár",
+      "baca": "SOH-tahr",
+      "en": "dictionary"
+    },
+    {
+      "hu": "nyelvkönyv",
+      "baca": "NYEHLV-könyv",
+      "en": "language textbook"
+    },
+    {
+      "hu": "térkép",
+      "baca": "TAYR-kayp",
+      "en": "map"
+    },
+    {
+      "hu": "újság",
+      "baca": "OOY-shahg",
+      "en": "newspaper"
+    },
+    {
+      "hu": "regény",
+      "baca": "REH-gayny",
+      "en": "novel"
+    },
+    {
+      "hu": "író",
+      "baca": "EE-roh",
+      "en": "writer"
+    },
+    {
+      "hu": "eladó",
+      "baca": "EHL-aw-doh",
+      "en": "shopkeeper"
+    },
+    {
+      "hu": "bolt",
+      "baca": "bohlt",
+      "en": "shop"
+    },
+    {
+      "hu": "asztal",
+      "baca": "AWS-tawl",
+      "en": "table"
+    },
+    {
+      "hu": "szék",
+      "baca": "sayk",
+      "en": "chair"
+    },
+    {
+      "hu": "ajtó",
+      "baca": "AWY-toh",
+      "en": "door"
+    },
+    {
+      "hu": "ablak",
+      "baca": "AWB-lawk",
+      "en": "window"
+    },
+    {
+      "hu": "toll",
+      "baca": "tohll",
+      "en": "pen"
+    },
+    {
+      "hu": "táska",
+      "baca": "TAHSH-kaw",
+      "en": "bag"
+    },
+    {
+      "hu": "ember",
+      "baca": "EHM-behr",
+      "en": "person; human being"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Hungarian.",
+      "items": [
+        "What is this?",
+        "This is a dictionary.",
+        "That is a language textbook.",
+        "This is not a map.",
+        "Is that book expensive?",
+        "These are books."
+      ]
+    },
+    {
+      "prompt": "Fill in with a or az.",
+      "items": [
+        "____ könyv",
+        "____ alma",
+        "____ asztal",
+        "____ szótár",
+        "____ ember",
+        "____ újság"
+      ]
+    },
+    {
+      "prompt": "Write the plural form.",
+      "items": [
+        "könyv",
+        "asztal",
+        "ház",
+        "alma",
+        "sör",
+        "ajtó"
+      ]
+    },
+    {
+      "prompt": "Review of Unit 1. Translate into Hungarian without looking back at the unit.",
+      "items": [
+        "Hi! How are you?",
+        "Thank you, I'm fine.",
+        "I'm Indonesian.",
+        "He/She is a teacher.",
+        "See you tomorrow!"
+      ]
+    }
+  ],
+  "answers": [
+    "Ez mi? — Ez egy szótár. — Az egy nyelvkönyv. — Ez nem térkép. — Az a könyv drága? — Ezek könyvek.",
+    "a — az — az — a — az — az",
+    "könyvek — asztalok — házak — almák — sörök — ajtók",
+    "Szia! Hogy vagy? — Köszönöm, jól vagyok. — Indonéz vagyok. — Ő tanár. — Holnap találkozunk!"
+  ]
+}

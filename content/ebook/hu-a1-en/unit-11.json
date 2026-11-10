@@ -1,0 +1,517 @@
+{
+  "title": "Two ways to build a verb",
+  "title_target": "Kérem a számlát",
+  "goal": "Master the most distinctive feature of Hungarian, one with no counterpart in any language you have likely studied: two sets of verb endings, chosen by whether the object is definite or not.",
+  "bekal": [
+    "build the definite form for every person",
+    "decide in one second: *kérek* or *kérem*",
+    "use the special *-lak / -lek* form for \"I … you\""
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Az étteremben",
+      "intro": "A small restaurant on Kazinczy utca. Anna comes here often; Budi has never been.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Mit kérsz?",
+          "id": "What would you like?",
+          "literal": "what-obj you-ask?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Egy levest kérek. És te?",
+          "id": "I'll have a soup. And you?",
+          "literal": "a soup-obj I-ask. and you?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Én a gulyást kérem. Azt mindig szeretem.",
+          "id": "I'll have the goulash. I always love it.",
+          "literal": "I the goulash-obj I-ask-it. that-obj always I-love-it."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ismered ezt az éttermet?",
+          "id": "Do you know this restaurant?",
+          "literal": "you-know-it this-obj the restaurant-obj?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Igen, jól ismerem. Gyakran eszem itt.",
+          "id": "Yes, I know it well. I often eat here.",
+          "literal": "yes, well I-know-it. often I-eat here."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Érted az étlapot? Én nem értek semmit.",
+          "id": "Do you understand the menu? I don't understand anything.",
+          "literal": "you-understand-it the menu-obj? I not I-understand nothing-obj."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Persze. Elolvasom neked.",
+          "id": "Sure. I'll read it out for you.",
+          "literal": "sure. I-read-it-through to-you."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Köszönöm! És mit iszol?",
+          "id": "Thank you! And what are you drinking?",
+          "literal": "I-thank! and what-obj you-drink?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Egy pohár bort kérek. Te is kérsz bort?",
+          "id": "I'll have a glass of wine. Do you want wine too?",
+          "literal": "a glass wine-obj I-ask. you too you-ask wine-obj?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nem, én vizet kérek. Nem iszom alkoholt.",
+          "id": "No, I'll have water. I don't drink alcohol.",
+          "literal": "no, I water-obj I-ask. not I-drink alcohol-obj."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Rendben. Akkor hívom a pincért.",
+          "id": "All right. Then I'll call the waiter.",
+          "literal": "order-in. then I-call-him the waiter-obj."
+        }
+      ],
+      "notes": [
+        "**Reread the dialogue and watch one thing only: when Anna says *kérek* and when she says *kérem*.** *Egy levest kérek* — no particular soup yet, so the indefinite form. *A gulyást kérem* — the goulash on the menu, a definite one, so the definite form. The difference is not about politeness or number; it is about whether the object has a clear identity.",
+        "**English marks the same thing another way.** Compare \"I'll have **a** soup\" and \"I'll have **the** soup\". In English the article on the **noun** does the work; Hungarian marks it on the **verb** as well.",
+        "**The trigger for the definite form is always in the object.** The article *a/az*, the demonstratives *ezt/azt*, a proper name, a possessive ending, or the pronouns *őt/őket* — if any of these appears, the verb must take the definite form. There are no exceptions to memorize at A1.",
+        "**Nem értek semmit** uses the indefinite form even though *nem* is there. The trigger is not the negation but *semmit* (nothing), the most indefinite object there is. Compare *Nem értem* (\"I don't understand\" — the thing just said, so definite).",
+        "**Elolvasom neked** uses the definite form without naming the object. The object is hidden: \"I'll read **it** for you\". When a definite object is obvious from the situation, Hungarian drops it but keeps the definite form — and that is exactly the point. The verb form itself carries the information."
+      ],
+      "grammars": [
+        {
+          "title": "The definite form — the second set of endings",
+          "body": [
+            "Compare with the table in unit 10. Same persons, same vowel groups; the whole tail is different."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "*tanul* (back)",
+              "*kér* (front)",
+              "*főz* (front rounded)"
+            ],
+            "rows": [
+              [
+                "én",
+                "tanul**om**",
+                "kér**em**",
+                "főz**öm**"
+              ],
+              [
+                "te",
+                "tanul**od**",
+                "kér**ed**",
+                "főz**öd**"
+              ],
+              [
+                "ő",
+                "tanul**ja**",
+                "kér**i**",
+                "főz**i**"
+              ],
+              [
+                "mi",
+                "tanul**juk**",
+                "kér**jük**",
+                "főz**zük**"
+              ],
+              [
+                "ti",
+                "tanul**játok**",
+                "kér**itek**",
+                "főz**itek**"
+              ],
+              [
+                "ők",
+                "tanul**ják**",
+                "kér**ik**",
+                "főz**ik**"
+              ]
+            ]
+          },
+          "after": [
+            "**Back-vowel verbs use j, front-vowel verbs use i.** Compare *tanulja* with *kéri*, *tanulják* with *kérik*. The only row with *j* in both groups is the *mi* row: *tanuljuk*, *kérjük*.",
+            "**J merges after s, sz, z, dz.** *olvas* + *ja* → *olvas**sa***; *olvas* + *juk* → *olvas**suk***; *néz* + *jük* → *néz**zük***; *főz* + *jük* → *főz**zük***. The reason is the same as in unit 10: Hungarian avoids piling up hissing sounds."
+          ]
+        },
+        {
+          "title": "When to use which",
+          "body": [
+            "One table worth bookmarking — you will come back to it many times in the next few weeks."
+          ],
+          "table": {
+            "head": [
+              "If the object…",
+              "Set",
+              "Example"
+            ],
+            "rows": [
+              [
+                "has *a / az*",
+                "**definite**",
+                "*Kérem a levest.*"
+              ],
+              [
+                "has the demonstrative *ezt / azt*",
+                "**definite**",
+                "*Ezt kérem.*"
+              ],
+              [
+                "is a proper name",
+                "**definite**",
+                "*Ismerem Annát.*"
+              ],
+              [
+                "has a possessive ending",
+                "**definite**",
+                "*Olvasom a könyvedet.*"
+              ],
+              [
+                "*őt / őket*",
+                "**definite**",
+                "*Látom őt.*"
+              ],
+              [
+                "has *egy*",
+                "indefinite",
+                "*Kérek egy levest.*"
+              ],
+              [
+                "has no article",
+                "indefinite",
+                "*Kérek levest.*"
+              ],
+              [
+                "*valamit / semmit / mit?*",
+                "indefinite",
+                "*Nem értek semmit.*"
+              ],
+              [
+                "*engem / téged / minket / titeket*",
+                "indefinite",
+                "*Vársz engem?*"
+              ],
+              [
+                "there is no object at all",
+                "indefinite",
+                "*Dolgozom.*"
+              ]
+            ]
+          },
+          "after": [
+            "**The fastest check:** put your sentence into English and see whether the noun naturally takes \"the\", \"this\", \"my\" or a name. \"I'll have the soup\" → definite. \"I'll have a soup\" / \"I'll have soup\" → indefinite. This check is right nine times out of ten.",
+            "**Note the ninth row.** *Engem*, *téged*, *minket*, *titeket* are objects whose person is perfectly clear, yet they take the **indefinite** set. This is the one part you truly have to memorize, because common sense misleads you here."
+          ]
+        },
+        {
+          "title": "Szeretlek — the special \"I … you\" form",
+          "body": [
+            "There is a third form that stands on its own, used only when **I** do something to **you**."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Szeretlek.*",
+                "SEH-reht-lehk",
+                "I love you."
+              ],
+              [
+                "*Látlak.*",
+                "LAHT-lawk",
+                "I see you."
+              ],
+              [
+                "*Várlak.*",
+                "VAHR-lawk",
+                "I'm waiting for you."
+              ],
+              [
+                "*Kérlek.*",
+                "KAYR-lehk",
+                "Please (I ask you)."
+              ],
+              [
+                "*Értelek.*",
+                "AYR-teh-lehk",
+                "I understand what you mean."
+              ]
+            ]
+          },
+          "after": [
+            "The ending is *-lak / -lek*, and it replaces every other ending. Note that *téged* (you, as object) can be added for emphasis but is not required: *Téged várlak* = \"it's you I'm waiting for\".",
+            "*Kérlek* is one of the most useful words in everyday Hungarian. It means \"please\" when you ask a friend for something, while the polite form is *kérem*. These two words cover almost every request you will make."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Eight pairs that show the difference",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Read each row aloud, both sentences in a row. Your ear picks up this pattern much faster than your eye."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Indefinite",
+            "Meaning",
+            "Definite",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Kérek egy levest.*",
+              "I'll have a soup.",
+              "*Kérem a levest.*",
+              "I'll have the soup."
+            ],
+            [
+              "*Olvasok egy könyvet.*",
+              "I'm reading a book.",
+              "*Olvasom a könyvet.*",
+              "I'm reading the book."
+            ],
+            [
+              "*Nézek egy filmet.*",
+              "I'm watching a film.",
+              "*Nézem a filmet.*",
+              "I'm watching the film."
+            ],
+            [
+              "*Ismerek egy magyart.*",
+              "I know a Hungarian.",
+              "*Ismerem Annát.*",
+              "I know Anna."
+            ],
+            [
+              "*Eszem valamit.*",
+              "I'm eating something.",
+              "*Megeszem az almát.*",
+              "I'll eat up the apple."
+            ],
+            [
+              "*Iszom vizet.*",
+              "I'm drinking water.",
+              "*Iszom a kávémat.*",
+              "I'm drinking my coffee."
+            ],
+            [
+              "*Várok egy barátot.*",
+              "I'm waiting for a friend.",
+              "*Várom a barátomat.*",
+              "I'm waiting for my friend."
+            ],
+            [
+              "*Nem értek semmit.*",
+              "I don't understand anything.",
+              "*Nem értem a kérdést.*",
+              "I don't understand the question."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The three-second check",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "Three questions, in order",
+          "items": [
+            "**Is there an object?** If not, you're done — use the indefinite form.",
+            "**Does the object have *a/az*, a demonstrative, a proper name, or a possessive ending?** If so, use the definite form.",
+            "**Is the object *engem, téged, minket, titeket*?** If so, use the indefinite form — even though the person is clear."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Those three questions settle almost every A1 sentence. What's left — subordinate clauses, odd indefinite pronouns, nested structures — comes naturally at A2, and until then it will never get in the way of your conversations."
+        },
+        {
+          "type": "p",
+          "text": "One last thing worth knowing now so it doesn't confuse you later: this double set also applies in the **past tense** (unit 18) and in the imperative. So the effort you put into this unit pays off three times, not once."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "ismer",
+      "baca": "ISH-mehr",
+      "en": "to know (someone)"
+    },
+    {
+      "hu": "ért",
+      "baca": "ayrt",
+      "en": "to understand"
+    },
+    {
+      "hu": "lát",
+      "baca": "laht",
+      "en": "to see"
+    },
+    {
+      "hu": "vár",
+      "baca": "vahr",
+      "en": "to wait (for)"
+    },
+    {
+      "hu": "hív",
+      "baca": "heev",
+      "en": "to call; to phone"
+    },
+    {
+      "hu": "szeret",
+      "baca": "SEH-reht",
+      "en": "to like; to love"
+    },
+    {
+      "hu": "tud",
+      "baca": "tood",
+      "en": "to know; can"
+    },
+    {
+      "hu": "étlap",
+      "baca": "AYT-lawp",
+      "en": "menu"
+    },
+    {
+      "hu": "gulyás",
+      "baca": "GOO-yahsh",
+      "en": "goulash (beef soup)"
+    },
+    {
+      "hu": "leves",
+      "baca": "LEH-vehsh",
+      "en": "soup"
+    },
+    {
+      "hu": "alkohol",
+      "baca": "AWL-koh-hohl",
+      "en": "alcohol"
+    },
+    {
+      "hu": "persze",
+      "baca": "PEHR-seh",
+      "en": "of course"
+    },
+    {
+      "hu": "semmi",
+      "baca": "SHEHM-mi",
+      "en": "nothing"
+    },
+    {
+      "hu": "senki",
+      "baca": "SHEHN-ki",
+      "en": "nobody"
+    },
+    {
+      "hu": "valami",
+      "baca": "VAW-law-mi",
+      "en": "something"
+    },
+    {
+      "hu": "valaki",
+      "baca": "VAW-law-ki",
+      "en": "somebody"
+    },
+    {
+      "hu": "kérdés",
+      "baca": "KAYR-daysh",
+      "en": "question"
+    },
+    {
+      "hu": "válasz",
+      "baca": "VAH-laws",
+      "en": "answer"
+    },
+    {
+      "hu": "szó",
+      "baca": "soh",
+      "en": "word"
+    },
+    {
+      "hu": "engem",
+      "baca": "EHN-gehm",
+      "en": "me (as object)"
+    },
+    {
+      "hu": "téged",
+      "baca": "TAY-gehd",
+      "en": "you (as object)"
+    },
+    {
+      "hu": "őt",
+      "baca": "öt",
+      "en": "him / her (as object)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose the right form and write the full sentence.",
+      "items": [
+        "____ egy levest. (kérek or kérem)",
+        "____ a gulyást. (kérek or kérem)",
+        "____ a könyvet. (olvasok or olvasom)",
+        "____ egy könyvet. (olvasok or olvasom)",
+        "Nem ____ semmit. (értek or értem)",
+        "____ Annát. (ismerek or ismerem)"
+      ]
+    },
+    {
+      "prompt": "Write the definite form for the person given.",
+      "items": [
+        "kér (én)",
+        "kér (te)",
+        "tanul (ő)",
+        "tanul (mi)",
+        "főz (ők)",
+        "olvas (ő)"
+      ]
+    },
+    {
+      "prompt": "Translate into Hungarian.",
+      "items": [
+        "I'll have the soup.",
+        "I'll have a soup.",
+        "Do you know this restaurant?",
+        "I don't understand anything.",
+        "I'll call the waiter.",
+        "I love you."
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 9. Translate into Hungarian without looking back at the unit.",
+      "items": [
+        "What time is it?",
+        "Half past six.",
+        "The film starts at seven.",
+        "What day is it today?",
+        "Tomorrow I'm getting up early."
+      ]
+    }
+  ],
+  "answers": [
+    "Kérek — Kérem — Olvasom — Olvasok — értek — Ismerem",
+    "kérem — kéred — tanulja — tanuljuk — főzik — olvassa",
+    "Kérem a levest. — Kérek egy levest. — Ismered ezt az éttermet? — Nem értek semmit. — Hívom a pincért. — Szeretlek.",
+    "Hány óra van? — Fél hét. — A film hétkor kezdődik. — Milyen nap van ma? — Holnap korán kelek."
+  ]
+}

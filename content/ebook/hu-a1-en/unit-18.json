@@ -1,0 +1,539 @@
+{
+  "title": "What did you do yesterday? — the past tense",
+  "title_target": "Mit csináltál tegnap?",
+  "goal": "Tell what has already happened using the past marker *-t*, with the two sets of endings you already know from units 10 and 11.",
+  "bekal": [
+    "form the past tense of any regular verb",
+    "choose between the indefinite and definite set in the past",
+    "use *volt* and *nem volt* for states that are over"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Mit csináltál tegnap?",
+      "intro": "Monday morning in the classroom, before the lesson starts.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Szia! Mit csináltál tegnap?",
+          "id": "Hi! What did you do yesterday?",
+          "literal": "hi! what-OBJ you-did-PAST yesterday?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dolgoztam egész nap. És te?",
+          "id": "I worked all day. And you?",
+          "literal": "I-worked-PAST whole day. and you?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Én nem dolgoztam. Otthon maradtam és olvastam.",
+          "id": "I didn't work. I just stayed home and read.",
+          "literal": "I not I-worked-PAST. home-at I I-stayed-PAST and I-read-PAST."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mit olvastál?",
+          "id": "What did you read?",
+          "literal": "what-OBJ you-read-PAST?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Egy magyar regényt. Nehéz volt, de tetszett.",
+          "id": "A Hungarian novel. It was hard, but I liked it.",
+          "literal": "a Hungarian novel-OBJ. hard was-PAST, but it-pleased-PAST."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Este mit csináltatok?",
+          "id": "What did you do in the evening?",
+          "literal": "evening what-OBJ you-pl-did-PAST?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Egy étteremben vacsoráztunk a barátaimmal.",
+          "id": "We had dinner at a restaurant with my friends.",
+          "literal": "a restaurant-in we-dined-PAST the friend-PL-my-with."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jó volt?",
+          "id": "Was it good?",
+          "literal": "good was-PAST?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Nagyon. Halászlét rendeltünk, és sokat beszélgettünk.",
+          "id": "Very good. We ordered fish soup and talked a lot.",
+          "literal": "very. fish-soup-OBJ we-ordered-PAST, and much-OBJ we-chatted-PAST."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Én csak tévét néztem és korán pihentem.",
+          "id": "I just watched TV and went to bed early.",
+          "literal": "I only TV-OBJ I-watched-PAST and early-ly I-rested-PAST."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Nem baj. Ma este együtt vacsorázunk!",
+          "id": "No problem. Tonight we're having dinner together!",
+          "literal": "no problem. today evening together we-dine!"
+        }
+      ],
+      "notes": [
+        "**The past marker is -t, and it comes before the person ending.** *csinál* → *csinál**t**am*, *dolgozik* → *dolgoz**t**am*, *olvas* → *olvas**t**am*. Every Hungarian past form contains this letter; if you can't find it, the sentence isn't past.",
+        "**The \"I\" form is the same in both sets.** *Olvastam egy könyvet* and *Olvastam a könyvet* use exactly the same form. A small, pleasant saving: in the past you only need to choose the set for five persons, not six.",
+        "**Maradtam, but olvasott.** There are two patterns: some verbs attach *-t* directly, some need a linking vowel *-ott / -ett / -ött*. The table below gives the rule, and it can be guessed from the last letter of the stem.",
+        "**Volt is the past of van — and also of nincs.** *Nehéz volt* (it was hard), *Jó volt?* (was it good?). The negative is *nem volt*, not *nincs volt*: *nincs* only lives in the present, and once the story shifts into the past, it disappears completely.",
+        "**Note that volt must appear even though it's absent in the present.** Compare *Nehéz* (hard — present, no verb) with *Nehéz volt* (it was hard — past). The empty box from unit 1 is empty only in the present; in the past it is filled.",
+        "**Tetszett** uses a pattern that flips the subject: the thing that pleases is the book, not Anna. Literally \"it pleased\". English words it the usual way (\"I liked\"), so this form must be memorized whole: *Tetszett a film* = \"I liked the film\"."
+      ],
+      "grammars": [
+        {
+          "title": "The -t marker: direct or with a linking vowel",
+          "body": [
+            "The last letter of the stem decides."
+          ],
+          "table": {
+            "head": [
+              "Stem ends in",
+              "Form",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**j, l, ly, n, ny, r**",
+                "*-t* directly",
+                "*tanul* → *tanult*; *beszél* → *beszélt*; *vár* → *várt*; *pihen* → *pihent*"
+              ],
+              [
+                "other consonants",
+                "*-ott / -ett / -ött*",
+                "*olvas* → *olvasott*; *néz* → *nézett*; *főz* → *főzött*; *mond* → *mondott*"
+              ],
+              [
+                "**-ít**",
+                "*-ott / -ett*",
+                "*tanít* → *tanított*; *segít* → *segített*"
+              ]
+            ]
+          },
+          "after": [
+            "**That linking vowel appears only in the *ő* form.** Compare *olvas**ott*** (he/she read) but *olvas**t**am*, *olvas**t**ál*, *olvas**t**unk*. Once a person ending is there, the linking vowel is no longer needed.",
+            "**A few rebels, all of them common:** two-syllable verbs ending in *-ad / -ed* take *-t* directly — *marad* → *maradt*, *szalad* → *szaladt* — while *hall*, on the contrary, takes the linking vowel: *hallott*. There are few of them; memorize them as you meet them.",
+            "Irregular verbs — *van, megy, jön, eszik, iszik, tesz, vesz* — have their own past forms, and that is the content of unit 19."
+          ]
+        },
+        {
+          "title": "Person endings in the past",
+          "body": [
+            "Two sets, just like in the present. Note the first row: the forms are identical."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Indefinite",
+              "Definite",
+              "Definite example"
+            ],
+            "rows": [
+              [
+                "én",
+                "tanul**tam**",
+                "tanul**tam**",
+                "*Tanultam a leckét.*"
+              ],
+              [
+                "te",
+                "tanul**tál**",
+                "tanul**tad**",
+                "*Tanultad a leckét?*"
+              ],
+              [
+                "ő",
+                "tanul**t**",
+                "tanul**ta**",
+                "*Tanulta a leckét.*"
+              ],
+              [
+                "mi",
+                "tanul**tunk**",
+                "tanul**tuk**",
+                "*Tanultuk a leckét.*"
+              ],
+              [
+                "ti",
+                "tanul**tatok**",
+                "tanul**tátok**",
+                "*Tanultátok a leckét?*"
+              ],
+              [
+                "ők",
+                "tanul**tak**",
+                "tanul**ták**",
+                "*Tanulták a leckét.*"
+              ]
+            ]
+          },
+          "after": [
+            "For front-vowel verbs, the vowel of the ending adjusts: *kér* → *kértem, kértél, kért, kértünk, kértetek, kértek* (indefinite) and *kértem, kérted, kérte, kértük, kértétek, kérték* (definite).",
+            "**The rule for choosing the set is exactly the same as in unit 11.** An object with *a/az*, a proper name, a demonstrative, a possessive ending, *őt/őket* → definite. Everything else is indefinite. There's no new rule to memorize here — only the new forms."
+          ]
+        },
+        {
+          "title": "Volt — the past of van",
+          "body": [
+            "One verb, but the one you'll use most in the past."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Form",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "én",
+                "*voltam*",
+                "*Otthon voltam.*",
+                "I was at home."
+              ],
+              [
+                "te",
+                "*voltál*",
+                "*Hol voltál?*",
+                "Where were you?"
+              ],
+              [
+                "ő",
+                "*volt*",
+                "*Jó volt.*",
+                "It was good."
+              ],
+              [
+                "mi",
+                "*voltunk*",
+                "*Moziban voltunk.*",
+                "We were at the cinema."
+              ],
+              [
+                "ti",
+                "*voltatok*",
+                "*Ott voltatok?*",
+                "Were you (pl.) there?"
+              ],
+              [
+                "ők",
+                "*voltak*",
+                "*Itt voltak.*",
+                "They were here."
+              ]
+            ]
+          },
+          "after": [
+            "The negatives are *nem voltam*, *nem volt*, and so on. The word *nincs* has no past form at all: \"there wasn't\" in the past is always *nem volt*.",
+            "*Volt* is also used to express experience: *Voltál már Szegeden?* = \"Have you been to Szeged?\". The word *már* (already) turns it into a question about experience, and the answer is *Igen, voltam* or *Nem, még nem*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Past time expressions",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "tegnap",
+              "TEHG-nawp",
+              "yesterday"
+            ],
+            [
+              "tegnapelőtt",
+              "TEHG-nawp-eh-lött",
+              "the day before yesterday"
+            ],
+            [
+              "tegnap este",
+              "TEHG-nawp EHSH-teh",
+              "last night"
+            ],
+            [
+              "ma reggel",
+              "maw REHG-gehl",
+              "this morning (earlier today)"
+            ],
+            [
+              "a múlt héten",
+              "aw moolt HAY-tehn",
+              "last week"
+            ],
+            [
+              "a múlt hónapban",
+              "aw moolt HOH-nawp-bawn",
+              "last month"
+            ],
+            [
+              "tavaly",
+              "TAW-vawy",
+              "last year"
+            ],
+            [
+              "régen",
+              "RAY-gehn",
+              "a long time ago"
+            ],
+            [
+              "azelőtt",
+              "AWZ-eh-lött",
+              "before that"
+            ],
+            [
+              "egy órája",
+              "ehdy OH-rah-yaw",
+              "an hour ago"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice *egy órája* and *két napja*: they use a possessive ending, literally \"its one hour\", \"its two days\". Compare *egy óra múlva* (in an hour) from unit 9 — one looks backward, the other faces forward."
+        }
+      ]
+    },
+    {
+      "title": "Telling about yesterday",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Mit csináltál tegnap?",
+              "mit CHI-nahl-tahl TEHG-nawp",
+              "What did you do yesterday?"
+            ],
+            [
+              "Dolgoztam egész nap.",
+              "DOHL-gohz-tawm EH-gays nawp",
+              "I worked all day."
+            ],
+            [
+              "Otthon maradtam.",
+              "OHTT-hohn MAW-rawd-tawm",
+              "I just stayed home."
+            ],
+            [
+              "Hol voltál?",
+              "hohl VOHL-tahl",
+              "Where were you?"
+            ],
+            [
+              "Moziban voltam.",
+              "MOH-zi-bawn VOHL-tawm",
+              "I was at the cinema."
+            ],
+            [
+              "Jó volt?",
+              "yoh vohlt",
+              "Was it good?"
+            ],
+            [
+              "Nagyon jó volt.",
+              "NAW-dyohn yoh vohlt",
+              "Very good."
+            ],
+            [
+              "Sokat beszélgettünk.",
+              "SHOH-kawt BEH-sayl-geht-tünk",
+              "We talked a lot."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "The most useful writing exercise at this level",
+          "items": [
+            "Write five sentences about your day yesterday, using only regular verbs you already know. Five sentences, not five paragraphs.",
+            "Then turn them all into a story about a friend — every verb in the *ő* form. Then turn them into a story about the two of you — all *mi*.",
+            "Those three rounds lock in the whole past-tense table without you ever having to stare at it."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "tegnap",
+      "baca": "TEHG-nawp",
+      "en": "yesterday"
+    },
+    {
+      "hu": "volt",
+      "baca": "vohlt",
+      "en": "was (past)"
+    },
+    {
+      "hu": "marad",
+      "baca": "MAW-rawd",
+      "en": "to stay; to remain"
+    },
+    {
+      "hu": "rendel",
+      "baca": "REHN-dehl",
+      "en": "to order"
+    },
+    {
+      "hu": "beszélget",
+      "baca": "BEH-sayl-geht",
+      "en": "to chat"
+    },
+    {
+      "hu": "tévé",
+      "baca": "TAY-vay",
+      "en": "television"
+    },
+    {
+      "hu": "lecke",
+      "baca": "LEHTS-keh",
+      "en": "lesson; homework"
+    },
+    {
+      "hu": "együtt",
+      "baca": "EH-dyütt",
+      "en": "together"
+    },
+    {
+      "hu": "fáradt",
+      "baca": "FAH-rawdt",
+      "en": "tired"
+    },
+    {
+      "hu": "múlt",
+      "baca": "moolt",
+      "en": "past"
+    },
+    {
+      "hu": "tavaly",
+      "baca": "TAW-vawy",
+      "en": "last year"
+    },
+    {
+      "hu": "régen",
+      "baca": "RAY-gehn",
+      "en": "a long time ago"
+    },
+    {
+      "hu": "már",
+      "baca": "mahr",
+      "en": "already"
+    },
+    {
+      "hu": "még",
+      "baca": "mayg",
+      "en": "still; yet"
+    },
+    {
+      "hu": "tetszik",
+      "baca": "TEHT-sik",
+      "en": "liked; pleasing"
+    },
+    {
+      "hu": "halászlé",
+      "baca": "HAW-lahs-lay",
+      "en": "fish soup"
+    },
+    {
+      "hu": "sokat",
+      "baca": "SHOH-kawt",
+      "en": "a lot (of doing)"
+    },
+    {
+      "hu": "keveset",
+      "baca": "KEH-veh-sheht",
+      "en": "a little (of doing)"
+    },
+    {
+      "hu": "csak",
+      "baca": "chawk",
+      "en": "only"
+    },
+    {
+      "hu": "szalad",
+      "baca": "SAW-lawd",
+      "en": "to run"
+    },
+    {
+      "hu": "tanít",
+      "baca": "TAW-neet",
+      "en": "to teach"
+    },
+    {
+      "hu": "hall",
+      "baca": "hawll",
+      "en": "to hear"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the past form for ő (indefinite).",
+      "items": [
+        "tanul",
+        "olvas",
+        "néz",
+        "főz",
+        "dolgozik",
+        "marad"
+      ]
+    },
+    {
+      "prompt": "Fill in the right past form.",
+      "items": [
+        "Tegnap egész nap ____. (dolgozik — I)",
+        "Mit ____ tegnap? (csinál — you)",
+        "Otthon ____ és ____. (marad, olvas — I)",
+        "Egy étteremben ____. (vacsorázik — we)",
+        "Hol ____? (van — you)",
+        "Nagyon jó ____. (van — it)"
+      ]
+    },
+    {
+      "prompt": "Translate into Hungarian.",
+      "items": [
+        "What did you do yesterday?",
+        "I worked all day.",
+        "I stayed home and read.",
+        "What did you read?",
+        "We talked a lot.",
+        "Have you been to Budapest?"
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 16. Translate into Hungarian without looking back at the unit.",
+      "items": [
+        "What's she like?",
+        "Is she older than you?",
+        "No, younger.",
+        "My best friend.",
+        "She speaks better than I do."
+      ]
+    }
+  ],
+  "answers": [
+    "tanult — olvasott — nézett — főzött — dolgozott — maradt",
+    "dolgoztam — csináltál — maradtam és olvastam — vacsoráztunk — voltál — volt",
+    "Mit csináltál tegnap? — Dolgoztam egész nap. — Otthon maradtam és olvastam. — Mit olvastál? — Sokat beszélgettünk. — Voltál már Budapesten?",
+    "Milyen ő? — Idősebb nálad? — Nem, fiatalabb. — A legjobb barátnőm. — Jobban beszél, mint én."
+  ]
+}

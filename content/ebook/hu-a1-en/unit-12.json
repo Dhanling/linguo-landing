@@ -1,0 +1,562 @@
+{
+  "title": "Where's the post office? — directions, distance, and verb prefixes",
+  "title_target": "Hol van a posta?",
+  "goal": "Ask for directions and understand the answer, use the third group of endings (*-hoz*, *-nál*, *-tól*), and recognize the verb prefixes that change the direction of an action.",
+  "bekal": [
+    "ask for directions politely and catch a passerby's answer",
+    "use *-hoz / -nál / -tól* for people, places, and landmarks",
+    "read the prefixes *be-, ki-, fel-, le-, el-, meg-* and know when they move"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Az utcán",
+      "intro": "Budi is lost near Astoria and stops a woman walking by.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Elnézést! Hol van a posta?",
+          "id": "Excuse me! Where's the post office?",
+          "literal": "excuse-obj! where is the post?"
+        },
+        {
+          "speaker": "Járókelő:",
+          "text": "A posta a második utcában van, balra.",
+          "id": "The post office is on the second street, on the left.",
+          "literal": "the post the second street-in is, left-to."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Messze van innen?",
+          "id": "Is it far from here?",
+          "literal": "far is from-here?"
+        },
+        {
+          "speaker": "Járókelő:",
+          "text": "Nem, öt perc gyalog. A gyógyszertár mellett van.",
+          "id": "No, five minutes on foot. It's next to the pharmacy.",
+          "literal": "no, five minute on-foot. the pharmacy next-to is."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Köszönöm. És a metró merre van?",
+          "id": "Thank you. And which way is the metro?",
+          "literal": "I-thank. and the metro which-way is?"
+        },
+        {
+          "speaker": "Járókelő:",
+          "text": "Arra, a nagy tér felé. Az Astoriánál.",
+          "id": "That way, toward the big square. At Astoria.",
+          "literal": "that-way, the big square toward. the Astoria-at."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Az messze van a postától?",
+          "id": "Is that far from the post office?",
+          "literal": "that far is the post-from?"
+        },
+        {
+          "speaker": "Járókelő:",
+          "text": "Nem, két perc. Villamossal is lehet menni.",
+          "id": "No, two minutes. You can also take the tram.",
+          "literal": "no, two minute. tram-with also may go."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Melyik villamossal?",
+          "id": "Which tram?",
+          "literal": "which tram-with?"
+        },
+        {
+          "speaker": "Járókelő:",
+          "text": "A negyvenhetessel. A megálló ott van, a sarkon.",
+          "id": "The 47. The stop is over there, on the corner.",
+          "literal": "the forty-seven-er-with. the stop there is, the corner-on."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Köszönöm szépen a segítséget! Viszlát!",
+          "id": "Thanks a lot for your help! Bye!",
+          "literal": "I-thank nicely the help-obj! bye!"
+        }
+      ],
+      "notes": [
+        "**Elnézést to stop someone, bocsánat to apologize.** Note that *elnézést* already carries the object ending — the full form is *Elnézést kérek* (\"I ask for pardon\"), and the *kérek* part is usually dropped.",
+        "**Az Astoriánál** uses the ending *-nál/-nél*, meaning \"at, by, at someone's place\". This group is the one used for **people and landmarks**: *az orvosnál* (at the doctor's), *Annánál* (at Anna's), *a hídnál* (by the bridge).",
+        "**Merre, arra, erre.** Three direction words that are not quite the same as *hol, ott, itt*. *Hol?* asks for a point; *Merre?* asks for a direction. The answer is *arra* (that way) or *erre* (this way), and Hungarians usually say it while pointing.",
+        "**Felé is a postposition**, so the noun stays bare: *a tér felé* (toward the square). Compare *-ra/-re*, which means all the way onto the place: *a térre megyek* (I'm going to the square).",
+        "**A negyvenhetessel.** Public transport numbers become nouns with the ending *-s*: *négy* → *négyes* (number four), *hét* → *hetes*, *negyvenhét* → *negyvenhetes*. Then they take ordinary endings: *a hetessel megyek* (I take the number seven). Everyone in Budapest talks this way."
+      ],
+      "grammars": [
+        {
+          "title": "The third group: people, places, landmarks",
+          "body": [
+            "Unit 4 set up six endings for inside and surface. Here are the remaining three — and this is the group you must use for **people**."
+          ],
+          "table": {
+            "head": [
+              "Question",
+              "Ending",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**Hol?**",
+                "*-nál / -nél*",
+                "at, by; at someone's place",
+                "*az orvosnál* = at the doctor's"
+              ],
+              [
+                "**Hová?**",
+                "*-hoz / -hez / -höz*",
+                "to, toward; to someone's place",
+                "*az orvoshoz* = to the doctor's"
+              ],
+              [
+                "**Honnan?**",
+                "*-tól / -től*",
+                "from (beside); from someone's place",
+                "*az orvostól* = from the doctor's"
+              ]
+            ]
+          },
+          "after": [
+            "**For people, this group is required.** *Annához megyek* (I'm going to Anna's), not *Annába* — that form means something else entirely. The same rule applies to the doctor, the barber, a friend, anyone.",
+            "**The ending -hoz has three forms**, like *-on/-en/-ön*: *az asztalhoz*, *a kerthez*, *az ördöghöz*. The third group (*ö, ő, ü, ű*) gets its own share here.",
+            "**-tól/-től also means \"from\" in time**, as you already used in unit 10: *kilenctől* (from nine). One ending, two jobs — and both share the same feel: a starting point."
+          ]
+        },
+        {
+          "title": "Verb prefixes (igekötő)",
+          "body": [
+            "A set of small words that attach to the front of a verb and sharpen its meaning. They are one of the most distinctive features of Hungarian."
+          ],
+          "table": {
+            "head": [
+              "Prefix",
+              "Basic meaning",
+              "Example with *megy* (go)",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**be-**",
+                "in",
+                "*bemegy*",
+                "go in"
+              ],
+              [
+                "**ki-**",
+                "out",
+                "*kimegy*",
+                "go out"
+              ],
+              [
+                "**fel-**",
+                "up",
+                "*felmegy*",
+                "go up"
+              ],
+              [
+                "**le-**",
+                "down",
+                "*lemegy*",
+                "go down"
+              ],
+              [
+                "**el-**",
+                "away; completely",
+                "*elmegy*",
+                "leave, go away"
+              ],
+              [
+                "**át-**",
+                "across",
+                "*átmegy*",
+                "go across"
+              ],
+              [
+                "**meg-**",
+                "completion",
+                "*megnéz*",
+                "watch to the end"
+              ],
+              [
+                "**vissza-**",
+                "back",
+                "*visszamegy*",
+                "go back"
+              ]
+            ]
+          },
+          "after": [
+            "**The prefix moves behind the verb after a negation or a question word.** *Elmegyek* (I'm leaving) → *Nem megyek el* (I'm not leaving) → *Elmegyek?* but *Mikor megyek el?*. This rule feels strange at first and quickly becomes natural, because you will hear it many times a day.",
+            "**Meg- is the most frequent and the hardest to translate.** It marks a **completed** action: *eszem a levest* (I'm eating the soup) versus *megeszem a levest* (I'll eat up the soup). English often uses \"up\", \"through\", \"finish\", or doesn't mark it at all.",
+            "At A1 you don't need to use these prefixes actively. What matters is **recognizing** them when they appear, so you can still find the root in a dictionary: *felkelek* is listed under *kel*, not *fel*."
+          ]
+        },
+        {
+          "title": "How are you getting there?",
+          "body": [
+            "Means of transport take the \"with\" ending; the only exception is your own two feet."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "*gyalog*",
+                "DYAW-lohg",
+                "on foot"
+              ],
+              [
+                "*busszal*",
+                "BOOS-sawl",
+                "by bus"
+              ],
+              [
+                "*villamossal*",
+                "VIL-law-mohsh-shawl",
+                "by tram"
+              ],
+              [
+                "*metróval*",
+                "MEHT-roh-vawl",
+                "by metro"
+              ],
+              [
+                "*vonattal*",
+                "VOH-nawt-tawl",
+                "by train"
+              ],
+              [
+                "*autóval*",
+                "AWOO-toh-vawl",
+                "by car"
+              ],
+              [
+                "*taxival*",
+                "TAWK-si-vawl",
+                "by taxi"
+              ],
+              [
+                "*biciklivel*",
+                "BI-tsik-li-vehl",
+                "by bike"
+              ],
+              [
+                "*repülővel*",
+                "REH-pü-lö-vehl",
+                "by plane"
+              ]
+            ]
+          },
+          "after": [
+            "Note once more how the *v* merges after a consonant: *busz* → *bus**sz**al*, *vonat* → *vona**tt**al*. After a vowel it stays intact: *metró**val***, *taxi**val***."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "In town",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "a posta",
+              "aw POHSH-taw",
+              "post office"
+            ],
+            [
+              "a bank",
+              "aw bawnk",
+              "bank"
+            ],
+            [
+              "a gyógyszertár",
+              "aw DYOHDY-sehr-tahr",
+              "pharmacy"
+            ],
+            [
+              "a kórház",
+              "aw KOHR-hahz",
+              "hospital"
+            ],
+            [
+              "az iskola",
+              "awz ISH-koh-law",
+              "school"
+            ],
+            [
+              "a templom",
+              "aw TEHMP-lohm",
+              "church"
+            ],
+            [
+              "a múzeum",
+              "aw MOO-zeh-oom",
+              "museum"
+            ],
+            [
+              "a színház",
+              "aw SEEN-hahz",
+              "theater"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice how many of these are built from two words you already know: *gyógyszer* (medicine) + *tár* (store), *kór* (illness) + *ház* (house), *repülő* (flyer) + *tér* (square). Hungarian hardly ever borrows a foreign word if it can build its own — that's why its vocabulary feels foreign at first and becomes surprisingly guessable later."
+        }
+      ]
+    },
+    {
+      "title": "Asking for directions",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Elnézést, hol van…?",
+              "EHL-nay-zaysht hohl vawn",
+              "Excuse me, where is…?"
+            ],
+            [
+              "Merre van…?",
+              "MEHR-reh vawn",
+              "Which way is…?"
+            ],
+            [
+              "Messze van innen?",
+              "MEHS-seh vawn IN-nehn",
+              "Is it far from here?"
+            ],
+            [
+              "Öt perc gyalog.",
+              "öt pehrts DYAW-lohg",
+              "Five minutes on foot."
+            ],
+            [
+              "Egyenesen.",
+              "EH-dyeh-neh-shehn",
+              "Straight ahead."
+            ],
+            [
+              "Balra. / Jobbra.",
+              "BAWL-raw / YOHBB-raw",
+              "Left. / Right."
+            ],
+            [
+              "A sarkon.",
+              "aw SHAWR-kohn",
+              "On the corner."
+            ],
+            [
+              "A második utcában.",
+              "aw MAH-shoh-dik OOT-tsah-bawn",
+              "On the second street."
+            ],
+            [
+              "Eltévedtem.",
+              "EHL-tay-vehd-tehm",
+              "I'm lost."
+            ],
+            [
+              "Jó utat!",
+              "yoh OO-tawt",
+              "Have a good trip!"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Getting around Budapest",
+          "items": [
+            "The Budapest metro has four lines numbered **M1** to **M4**; M1 is the oldest underground line in continental Europe, and locals call it the *kisföldalatti* (\"the little underground\").",
+            "A ticket is a *jegy* and a pass is a *bérlet*. The thing to remember: tickets must be **validated** before boarding (*kezelni*), and inspectors in blue jackets often stand right at the end of the escalator.",
+            "*Átszállni* means to change (lines), *felszállni* to get on, *leszállni* to get off. All three are prefixed verbs — and the announcements on board say them many times a day, so they're some of the best free listening practice you can get."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "posta",
+      "baca": "POHSH-taw",
+      "en": "post office"
+    },
+    {
+      "hu": "gyógyszertár",
+      "baca": "DYOHDY-sehr-tahr",
+      "en": "pharmacy"
+    },
+    {
+      "hu": "megálló",
+      "baca": "MEHG-ahl-loh",
+      "en": "stop (bus, tram)"
+    },
+    {
+      "hu": "sarok",
+      "baca": "SHAW-rohk",
+      "en": "corner"
+    },
+    {
+      "hu": "híd",
+      "baca": "heed",
+      "en": "bridge"
+    },
+    {
+      "hu": "merre",
+      "baca": "MEHR-reh",
+      "en": "which way"
+    },
+    {
+      "hu": "arra",
+      "baca": "AWR-raw",
+      "en": "that way"
+    },
+    {
+      "hu": "erre",
+      "baca": "EHR-reh",
+      "en": "this way"
+    },
+    {
+      "hu": "innen",
+      "baca": "IN-nehn",
+      "en": "from here"
+    },
+    {
+      "hu": "onnan",
+      "baca": "OHN-nawn",
+      "en": "from there"
+    },
+    {
+      "hu": "felé",
+      "baca": "FEH-lay",
+      "en": "toward"
+    },
+    {
+      "hu": "gyalog",
+      "baca": "DYAW-lohg",
+      "en": "on foot"
+    },
+    {
+      "hu": "villamos",
+      "baca": "VIL-law-mohsh",
+      "en": "tram"
+    },
+    {
+      "hu": "bicikli",
+      "baca": "BI-tsik-li",
+      "en": "bicycle"
+    },
+    {
+      "hu": "repülő",
+      "baca": "REH-pü-lö",
+      "en": "plane"
+    },
+    {
+      "hu": "jegy",
+      "baca": "yehdy",
+      "en": "ticket"
+    },
+    {
+      "hu": "bérlet",
+      "baca": "BAYR-leht",
+      "en": "pass (season ticket)"
+    },
+    {
+      "hu": "segítség",
+      "baca": "SHEH-geet-shayg",
+      "en": "help"
+    },
+    {
+      "hu": "elmegy",
+      "baca": "EHL-mehdy",
+      "en": "to leave; to go away"
+    },
+    {
+      "hu": "bemegy",
+      "baca": "BEH-mehdy",
+      "en": "to go in"
+    },
+    {
+      "hu": "kimegy",
+      "baca": "KI-mehdy",
+      "en": "to go out"
+    },
+    {
+      "hu": "felszáll",
+      "baca": "FEHL-sahll",
+      "en": "to get on (a vehicle)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Add the right ending from the people-and-landmarks group.",
+      "items": [
+        "orvos (to)",
+        "Anna (at)",
+        "posta (from)",
+        "híd (by)",
+        "barát (to)",
+        "iskola (from)"
+      ]
+    },
+    {
+      "prompt": "Fill in the right form of transport.",
+      "items": [
+        "____ megyek dolgozni. (metro)",
+        "____ megyek haza. (bus)",
+        "____ megyünk Szegedre. (train)",
+        "____ megyek a boltba. (on foot)",
+        "____ megyek a repülőtérre. (taxi)",
+        "____ megyek a parkba. (bike)"
+      ]
+    },
+    {
+      "prompt": "Translate into Hungarian.",
+      "items": [
+        "Excuse me, where's the post office?",
+        "Is it far from here?",
+        "Five minutes on foot.",
+        "It's next to the pharmacy.",
+        "You can also take the tram.",
+        "Thanks a lot for your help!"
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 10. Translate into Hungarian without looking back at the unit.",
+      "items": [
+        "In the morning I get up at six.",
+        "Where do you work?",
+        "I work from nine to five.",
+        "Sometimes I do sports.",
+        "What do you do in the evening?"
+      ]
+    }
+  ],
+  "answers": [
+    "orvoshoz — Annánál — postától — hídnál — baráthoz — iskolától",
+    "Metróval — Busszal — Vonattal — Gyalog — Taxival — Biciklivel",
+    "Elnézést, hol van a posta? — Messze van innen? — Öt perc gyalog. — A gyógyszertár mellett van. — Villamossal is lehet menni. — Köszönöm szépen a segítséget!",
+    "Reggel hatkor felkelek. — Hol dolgozol? — Kilenctől ötig dolgozom. — Néha sportolok. — Este mit csinálsz?"
+  ]
+}

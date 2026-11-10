@@ -1,0 +1,540 @@
+{
+  "title": "At the café — and the ending that marks the object",
+  "title_target": "A kávézóban",
+  "goal": "Order food and drinks politely, and attach the *-t* ending that marks the part of the sentence receiving the action.",
+  "bekal": [
+    "form the object ending *-t* on any noun",
+    "order with *kérek* and *szeretnék*",
+    "ask what's in a dish and ask for the bill"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — A kávézóban",
+      "intro": "A small café near Nyugati pályaudvar. Budi is hungry, and the menu on the wall is full of words he has never seen.",
+      "lines": [
+        {
+          "speaker": "Pincér:",
+          "text": "Jó napot kívánok! Mit kér?",
+          "id": "Good afternoon! What would you like?",
+          "literal": "good day I-wish! what-OBJ you-ask?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Egy kávét kérek szépen.",
+          "id": "A coffee, please.",
+          "literal": "a coffee-OBJ I-ask nicely."
+        },
+        {
+          "speaker": "Pincér:",
+          "text": "Tejjel vagy tej nélkül?",
+          "id": "With milk or without milk?",
+          "literal": "milk-with or milk without?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tejjel. És egy pohár vizet is kérek.",
+          "id": "With milk. And a glass of water too, please.",
+          "literal": "milk-with. and a glass water-OBJ also I-ask."
+        },
+        {
+          "speaker": "Pincér:",
+          "text": "Rendben. Enni is kér valamit?",
+          "id": "All right. Would you like something to eat as well?",
+          "literal": "order-in. eat also you-ask something-OBJ?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Igen. Bocsánat, mi az a lángos?",
+          "id": "Yes. Excuse me, what is lángos?",
+          "literal": "yes. sorry, what that the lángos?"
+        },
+        {
+          "speaker": "Pincér:",
+          "text": "Az egy magyar étel. Sült tészta, tejföllel és sajttal.",
+          "id": "It's a Hungarian dish. Fried dough with sour cream and cheese.",
+          "literal": "that a Hungarian food. fried dough, sour-cream-with and cheese-with."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Finom? És elég nagy?",
+          "id": "Is it good? And is it big enough?",
+          "literal": "tasty? and enough big?"
+        },
+        {
+          "speaker": "Pincér:",
+          "text": "Nagyon finom, és elég nagy egy embernek.",
+          "id": "Very good, and big enough for one person.",
+          "literal": "very tasty, and enough big a person-for."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jó, akkor egy lángost kérek.",
+          "id": "Good, then I'll have a lángos.",
+          "literal": "good, then a lángos-OBJ I-ask."
+        },
+        {
+          "speaker": "Pincér:",
+          "text": "Máris hozom. Tessék, egy kávé tejjel!",
+          "id": "Coming right up. Here you are, a coffee with milk!",
+          "literal": "right-away I-bring-it. here-you-are, a coffee milk-with!"
+        }
+      ],
+      "notes": [
+        "**The -t ending marks the object, not a place.** *Egy kávét kérek* = \"I'd like a coffee\". The coffee is **what is being asked for**, so it takes *-t*. English marks this role only by word order; Hungarian marks it with an ending — and that is exactly why its word order is free: *Kérek egy kávét* is just as correct.",
+        "**Kérek or kérem?** *Kérek* is used when the thing is not yet specific (*egy kávét kérek*), *kérem* when it is clear which one (*a számlát kérem* — the bill). This is your first glimpse of the two sets of verb endings covered fully in Unit 11. For now, just learn these two sentences as they are.",
+        "**Szépen makes your order friendly.** Literally \"nicely\". *Egy kávét kérek szépen* sounds warm without being over the top; it is the equivalent of adding \"please\" in English.",
+        "**Tejjel = tej + -vel.** The \"with\" ending is *-val/-vel*, and its *v* merges into the consonant before it, doubling that consonant: *tej* → *tej**jel***, *sajt* → *sajt**tal***, *tejföl* → *tejföl**lel***. The rule is unpacked in Unit 15; here just recognize the pattern.",
+        "**Nélkül stands on its own.** It is a *névutó* (postposition) like *mellett* from Unit 4, so the noun stays bare: *tej nélkül*, *cukor nélkül*. Notice that \"with\" sticks to the word but \"without\" does not — an asymmetric pair, and that is simply how it is.",
+        "**Mit is mi + -t.** Even question words obey the object rule: *Mi ez?* (What is this?) versus *Mit kérsz?* (What would you like?). Likewise *Ki?* → *Kit?* (who/whom, as the object). If you can't decide, ask yourself: is this word **receiving** the action? It's the same logic as English *who* vs *whom*."
+      ],
+      "grammars": [
+        {
+          "title": "The object ending -t",
+          "body": [
+            "One letter, three situations. Notice that the third is exactly the same as the plural rule in Unit 3 — Hungarian reuses the same pattern everywhere."
+          ],
+          "table": {
+            "head": [
+              "Noun ends in",
+              "What is added",
+              "Example"
+            ],
+            "rows": [
+              [
+                "a vowel",
+                "**-t** directly (*a* and *e* lengthen)",
+                "*kávé* → *kávét*; *alma* → *almát*; *tea* → *teát*"
+              ],
+              [
+                "s, sz, r, l, n, ny",
+                "**-t** directly",
+                "*sör* → *sört*; *bor* → *bort*; *lángos* → *lángost*; *asztal* → *asztalt*"
+              ],
+              [
+                "another consonant",
+                "**linking vowel + t**",
+                "*könyv* → *könyvet*; *sajt* → *sajtot*; *gyümölcs* → *gyümölcsöt*"
+              ]
+            ]
+          },
+          "after": [
+            "**The -at group to memorize.** Some back-vowel words take *-at* instead of *-ot* — and the list is exactly the same as the *-ak* plural group from Unit 3: *ház* → *házat*, *hal* → *halat*, *fal* → *falat*, *toll* → *tollat*, *út* → *utat*. If you already know *házak*, you already know *házat*.",
+            "**Some words shorten or drop a vowel.** *víz* → *vizet*, *kenyér* → *kenyeret*, *cukor* → *cukrot*, *étterem* → *éttermet*, *nyár* → *nyarat*. This happens with every ending, not just *-t*, so once you know one form, you know them all.",
+            "**When is -t used?** Whenever the noun answers the question \"what receives the action\": *Kérek egy kávét*, *Eszem egy lángost*, *Olvasom a könyvet*. If the noun only names a place, a time, or a tool, it does not take *-t*."
+          ]
+        },
+        {
+          "title": "Kérek, szeretnék — two ways to order",
+          "body": [
+            "Both are polite. The second is slightly softer, and almost always safe."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Say it",
+              "Tone",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*Egy kávét kérek.*",
+                "ehdy KAH-vayt KAY-rehk",
+                "neutral, friendly",
+                "I'd like a coffee."
+              ],
+              [
+                "*Egy kávét szeretnék.*",
+                "ehdy KAH-vayt SEH-reht-nayk",
+                "softer",
+                "I would like a coffee."
+              ],
+              [
+                "*Kérhetek egy kávét?*",
+                "KAYR-heh-tehk ehdy KAH-vayt",
+                "asking permission",
+                "May I have a coffee?"
+              ],
+              [
+                "*Hozna egy kávét?*",
+                "HOHZ-naw ehdy KAH-vayt",
+                "very polite",
+                "Could you bring me a coffee?"
+              ]
+            ]
+          },
+          "after": [
+            "*Szeretnék* is actually the conditional of *szeretek* (\"I like\") — literally \"I would like\". Exactly the same as English *I would like*.",
+            "To order more than one item, link them with *és* and put *-t* on **each one**: *Egy kávét és egy pohár vizet kérek.* Leaving the *-t* off the second item is the most common mistake beginners make."
+          ]
+        },
+        {
+          "title": "Question words take the ending too",
+          "body": [
+            "If the question word asks about the object, it also takes *-t*."
+          ],
+          "table": {
+            "head": [
+              "Not the object",
+              "As the object",
+              "Example"
+            ],
+            "rows": [
+              [
+                "*mi* (what)",
+                "**mit**",
+                "*Mit kérsz?* = What would you like?"
+              ],
+              [
+                "*ki* (who)",
+                "**kit**",
+                "*Kit vársz?* = Who are you waiting for?"
+              ],
+              [
+                "*melyik* (which one)",
+                "**melyiket**",
+                "*Melyiket kéred?* = Which one would you like?"
+              ],
+              [
+                "*mennyi* (how much)",
+                "**mennyit**",
+                "*Mennyit kérsz?* = How much would you like?"
+              ]
+            ]
+          },
+          "after": [
+            "Notice the word order: a Hungarian question word always stands **right before the verb**. *Mit kérsz?*, not *Kérsz mit?*. This position rule later applies to any emphasized part of the sentence as well — and that is the key to Hungarian word order, which is often called \"free\" but is nothing of the sort."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Food and drink",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English",
+            "Object form"
+          ],
+          "rows": [
+            [
+              "a kávé",
+              "aw KAH-vay",
+              "coffee",
+              "kávét"
+            ],
+            [
+              "a tea",
+              "aw TEH-aw",
+              "tea",
+              "teát"
+            ],
+            [
+              "a víz",
+              "aw veez",
+              "water",
+              "vizet"
+            ],
+            [
+              "a tej",
+              "aw tehy",
+              "milk",
+              "tejet"
+            ],
+            [
+              "a sör",
+              "aw shör",
+              "beer",
+              "sört"
+            ],
+            [
+              "a bor",
+              "aw bohr",
+              "wine",
+              "bort"
+            ],
+            [
+              "a kenyér",
+              "aw KEH-nyayr",
+              "bread",
+              "kenyeret"
+            ],
+            [
+              "a sajt",
+              "aw shawyt",
+              "cheese",
+              "sajtot"
+            ],
+            [
+              "a leves",
+              "aw LEH-vehsh",
+              "soup",
+              "levest"
+            ],
+            [
+              "a hús",
+              "aw hoosh",
+              "meat",
+              "húst"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Three dishes you must try and must be able to pronounce: **gulyás** (GOO-yahsh) — the paprika beef soup that outside Hungary is called \"goulash\" and wrongly thought to be thick; **pörkölt** (PÖR-költ) — the one that really is thick; and **lángos** (LAHN-gohsh) — fried dough topped with sour cream and cheese, sold at markets and thermal baths."
+        }
+      ]
+    },
+    {
+      "title": "Ordering phrases",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Mit kér?",
+              "mit kayr",
+              "What would you like?"
+            ],
+            [
+              "Egy kávét kérek.",
+              "ehdy KAH-vayt KAY-rehk",
+              "I'd like a coffee."
+            ],
+            [
+              "Egy pohár vizet kérek.",
+              "ehdy POH-hahr VI-zeht KAY-rehk",
+              "I'd like a glass of water."
+            ],
+            [
+              "Mi az?",
+              "mi awz",
+              "What's that?"
+            ],
+            [
+              "Finom?",
+              "FI-nohm",
+              "Is it good?"
+            ],
+            [
+              "Éhes vagyok.",
+              "AY-hehsh VAW-dyohk",
+              "I'm hungry."
+            ],
+            [
+              "Szomjas vagyok.",
+              "SOHM-yawsh VAW-dyohk",
+              "I'm thirsty."
+            ],
+            [
+              "Egészségedre!",
+              "EH-gays-shay-gehd-reh",
+              "Cheers! (to one friend)"
+            ],
+            [
+              "Jó étvágyat!",
+              "yoh AYT-vah-dyawt",
+              "Enjoy your meal!"
+            ],
+            [
+              "A számlát kérem.",
+              "aw SAHM-laht KAY-rehm",
+              "The bill, please."
+            ],
+            [
+              "Fizetni szeretnék.",
+              "FI-zeht-ni SEH-reht-nayk",
+              "I'd like to pay."
+            ],
+            [
+              "Kártyával lehet?",
+              "KAHR-tyah-vawl LEH-heht",
+              "Can I pay by card?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three Hungarian café habits",
+          "items": [
+            "**Water doesn't come automatically.** Free tap water is rarely served unless you ask. Order *egy pohár vizet* if you want some.",
+            "**Service is around ten percent** and is often already on the bill as *szervizdíj*. If not, say the total you want to pay as you hand over the money — the local habit is to name a figure, not to leave change on the table.",
+            "**Egészségedre** is used for toasting, and the polite form is *Egészségére*. The word looks long and scary at first, but it becomes one of the most enjoyable to say once your tongue gets used to it."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "kávézó",
+      "baca": "KAH-vay-zoh",
+      "en": "café"
+    },
+    {
+      "hu": "étterem",
+      "baca": "AYT-teh-rehm",
+      "en": "restaurant"
+    },
+    {
+      "hu": "pincér",
+      "baca": "PIN-tsayr",
+      "en": "waiter"
+    },
+    {
+      "hu": "étel",
+      "baca": "AY-tehl",
+      "en": "food; dish"
+    },
+    {
+      "hu": "ital",
+      "baca": "I-tawl",
+      "en": "drink"
+    },
+    {
+      "hu": "kér",
+      "baca": "kayr",
+      "en": "to ask for"
+    },
+    {
+      "hu": "szeretnék",
+      "baca": "SEH-reht-nayk",
+      "en": "I would like"
+    },
+    {
+      "hu": "hoz",
+      "baca": "hohz",
+      "en": "to bring"
+    },
+    {
+      "hu": "eszik",
+      "baca": "EH-sik",
+      "en": "to eat"
+    },
+    {
+      "hu": "iszik",
+      "baca": "I-sik",
+      "en": "to drink"
+    },
+    {
+      "hu": "fizet",
+      "baca": "FI-zeht",
+      "en": "to pay"
+    },
+    {
+      "hu": "pohár",
+      "baca": "POH-hahr",
+      "en": "glass"
+    },
+    {
+      "hu": "csésze",
+      "baca": "CHAY-seh",
+      "en": "cup"
+    },
+    {
+      "hu": "számla",
+      "baca": "SAHM-law",
+      "en": "bill; check"
+    },
+    {
+      "hu": "tejföl",
+      "baca": "TEHY-föl",
+      "en": "sour cream"
+    },
+    {
+      "hu": "tészta",
+      "baca": "TAYS-taw",
+      "en": "dough; pasta"
+    },
+    {
+      "hu": "sült",
+      "baca": "shült",
+      "en": "fried; roasted"
+    },
+    {
+      "hu": "finom",
+      "baca": "FI-nohm",
+      "en": "tasty, delicious"
+    },
+    {
+      "hu": "éhes",
+      "baca": "AY-hehsh",
+      "en": "hungry"
+    },
+    {
+      "hu": "szomjas",
+      "baca": "SOHM-yawsh",
+      "en": "thirsty"
+    },
+    {
+      "hu": "elég",
+      "baca": "EH-layg",
+      "en": "enough"
+    },
+    {
+      "hu": "akkor",
+      "baca": "AWK-kohr",
+      "en": "then, in that case"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the object form.",
+      "items": [
+        "kávé",
+        "sör",
+        "könyv",
+        "ház",
+        "víz",
+        "alma"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right object form.",
+      "items": [
+        "Egy ____ kérek. (coffee)",
+        "____ kérsz? (what)",
+        "A ____ kérem. (bill)",
+        "Egy pohár ____ kérek. (water)",
+        "Egy ____ eszem. (lángos)",
+        "____ vársz? (who)"
+      ]
+    },
+    {
+      "prompt": "Translate into Hungarian.",
+      "items": [
+        "I'd like a coffee.",
+        "With milk or without milk?",
+        "I'd like a glass of water too.",
+        "What's that?",
+        "I'm hungry.",
+        "The bill, please."
+      ]
+    },
+    {
+      "prompt": "Spiral review — Unit 5. Translate into Hungarian without looking back at the unit.",
+      "items": [
+        "This is my family.",
+        "I have an older brother.",
+        "I don't have any siblings.",
+        "What's your job?",
+        "My mother is a doctor."
+      ]
+    }
+  ],
+  "answers": [
+    "kávét — sört — könyvet — házat — vizet — almát",
+    "kávét — Mit — számlát — vizet — lángost — Kit",
+    "Egy kávét kérek. — Tejjel vagy tej nélkül? — Egy pohár vizet is kérek. — Mi az? — Éhes vagyok. — A számlát kérem.",
+    "Ez a családom. — Van egy bátyám. — Nincs testvérem. — Mi a foglalkozásod? — Az anyám orvos."
+  ]
+}

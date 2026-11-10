@@ -1,0 +1,540 @@
+{
+  "title": "Prepositions that stick to the tail",
+  "title_target": "Hol van a szoba?",
+  "goal": "Say where things and rooms are with six place endings, tell *van* apart from *nincs*, and spot the group of words that does **not** stick on.",
+  "bekal": [
+    "answer *hol*, *hová* and *honnan* with the right ending",
+    "say what exists and what doesn't with *van*, *vannak*, *nincs*, *nincsenek*",
+    "use *mellett*, *alatt*, *előtt* and friends as separate words"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Az új lakásban",
+      "intro": "Budi has just moved into a small apartment in the seventh district. Anna comes over to have a look.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Szia! Milyen szép lakás! Hol van a konyha?",
+          "id": "Hi! What a nice apartment! Where is the kitchen?",
+          "literal": "hello! how nice apartment! where is the kitchen?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A konyha itt van, balra. A szoba pedig jobbra.",
+          "id": "The kitchen is here, on the left. And the room is on the right.",
+          "literal": "the kitchen here is, left-to. the room whereas right-to."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "És hol vannak a könyvek?",
+          "id": "And where are the books?",
+          "literal": "and where they-are the book-PL?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A könyvek a polcon vannak, az ablak mellett.",
+          "id": "The books are on the shelf, next to the window.",
+          "literal": "the book-PL the shelf-on they-are, the window next-to."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Fürdőszoba is van?",
+          "id": "Is there a bathroom too?",
+          "literal": "bathroom also is?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Igen, van. A fürdőszoba a konyha mellett van.",
+          "id": "Yes, there is. The bathroom is next to the kitchen.",
+          "literal": "yes, is. the bathroom the kitchen next-to is."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "És erkély? Van erkély?",
+          "id": "And a balcony? Is there a balcony?",
+          "literal": "and balcony? is balcony?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sajnos nincs erkély. De van egy nagy ablak.",
+          "id": "Unfortunately there is no balcony. But there is a big window.",
+          "literal": "unfortunately there-isn't balcony. but is a big window."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "A lakás a földszinten van?",
+          "id": "Is the apartment on the ground floor?",
+          "literal": "the apartment the ground-floor-on is?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nem, a harmadik emeleten. Lift is van a házban.",
+          "id": "No, on the third floor. There is an elevator in the building too.",
+          "literal": "no, the third floor-on. elevator also is the house-in."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Nagyon jó hely! És a bolt közel van?",
+          "id": "Great place! And is the shop close?",
+          "literal": "very good place! and the shop close is?"
+        }
+      ],
+      "notes": [
+        "**A polcon, but a szobában.** A shelf is a **surface** — things sit on top of it — so it takes *-on*. A room is an **enclosed space** — you are inside it — so it takes *-ban*. This split makes sense nine times out of ten, and that is enough for A1.",
+        "**Mellett does not stick on.** Look at *az ablak mellett* — written separately, with no ending on *ablak*. Hungarian has two tools for place: **endings** that attach, and **postpositions** (*névutó*) that stand alone. Both come **after** the noun, like English prepositions flipped around; the only difference is whether they fuse with it or not.",
+        "**Nincs, not nem van.** Hungarian has special words for \"there isn't\": *nincs* (singular) and *nincsenek* (plural). Building *nem van* sounds instantly odd — like saying \"is-not is\" in English.",
+        "**Van erkély? with no article.** When you ask whether something **exists** in general, the noun stays bare: *Van erkély?* (Is there a balcony?). The article shows up as soon as the noun is specific: *Hol van az erkély?* (Where is the balcony?).",
+        "**Is goes right after the word you stress.** *Fürdőszoba is van* = \"there is a bathroom too\". *Van is fürdőszoba* means something else. Put *is* directly **after** the word you mean — a small habit that marks a careful speaker.",
+        "**Balra, jobbra take the ending -ra.** Literally \"to the left\", \"to the right\" — direction, not location. The form for \"on the left side\" is *bal oldalon*. For everyday use, *balra* and *jobbra* cover almost every need."
+      ],
+      "grammars": [
+        {
+          "title": "Six place endings, two groups",
+          "body": [
+            "All these endings answer one of three questions: *hol* (where), *hová* (where to), *honnan* (where from). What decides the group is whether the noun is thought of as a space or a surface."
+          ],
+          "table": {
+            "head": [
+              "Question",
+              "Enclosed space",
+              "Example",
+              "Surface",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**Hol?**",
+                "*-ban / -ben*",
+                "*a szobában* = in the room",
+                "*-on / -en / -ön*",
+                "*az asztalon* = on the table"
+              ],
+              [
+                "**Hová?**",
+                "*-ba / -be*",
+                "*a szobába* = into the room",
+                "*-ra / -re*",
+                "*az asztalra* = onto the table"
+              ],
+              [
+                "**Honnan?**",
+                "*-ból / -ből*",
+                "*a szobából* = out of the room",
+                "*-ról / -ről*",
+                "*az asztalról* = off the table"
+              ]
+            ]
+          },
+          "after": [
+            "Notice the sound pattern once more: the space group always contains a **b**, the surface group an **r** or **n**. These six endings are really just two patterns times three directions.",
+            "**The ending -on has three forms**, not two: *-on* (back vowels), *-en* (front vowels), *-ön* (rounded front vowels). *az asztalon*, *a széken*, *a földön*. Also, words ending in a vowel take just *-n*: *az ajtón*, *a kanapén*.",
+            "If you are unsure between space and surface for an odd noun — a party, a mountain, a meeting — use common sense first, then memorize the ones that miss. Even Hungarians can't explain why they say *a piacon* (at the market) but *a boltban* (in the shop)."
+          ]
+        },
+        {
+          "title": "Van, vannak, nincs, nincsenek",
+          "body": [
+            "Four words that handle all of existence and non-existence."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Say it",
+              "Used for",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**van**",
+                "vawn",
+                "one thing exists",
+                "*Van egy ablak.* = There is a window."
+              ],
+              [
+                "**vannak**",
+                "VAWN-nawk",
+                "several things exist",
+                "*Vannak könyvek.* = There are books."
+              ],
+              [
+                "**nincs**",
+                "ninch",
+                "one thing doesn't exist",
+                "*Nincs erkély.* = There is no balcony."
+              ],
+              [
+                "**nincsenek**",
+                "NIN-cheh-nehk",
+                "several things don't exist",
+                "*Nincsenek székek.* = There are no chairs."
+              ]
+            ]
+          },
+          "after": [
+            "Recall the rule from Unit 1: when a sentence says **who or what** something is, *van* is forbidden (*Ő tanár*). When it says **where something is or that it exists**, *van* is required (*A tanár az iskolában van*).",
+            "The negative follows the same rule: *Ő nem tanár* (He is not a teacher) uses *nem*, while *Nincs itt* (He isn't here) uses *nincs*."
+          ]
+        },
+        {
+          "title": "Névutó — postpositions that don't stick on",
+          "body": [
+            "This small group works like English prepositions, except that it stands after the noun. It never fuses with it, and the noun stays bare."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Say it",
+              "English",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**mellett**",
+                "MEHL-lehtt",
+                "next to",
+                "*az ablak mellett* = next to the window"
+              ],
+              [
+                "**alatt**",
+                "AW-lawtt",
+                "under",
+                "*az asztal alatt* = under the table"
+              ],
+              [
+                "**fölött**",
+                "FÖ-lött",
+                "above (hovering)",
+                "*a kép a kanapé fölött* = the picture above the sofa"
+              ],
+              [
+                "**előtt**",
+                "EH-lött",
+                "in front of",
+                "*a ház előtt* = in front of the house"
+              ],
+              [
+                "**mögött**",
+                "MÖ-gött",
+                "behind",
+                "*a szekrény mögött* = behind the wardrobe"
+              ],
+              [
+                "**között**",
+                "KÖ-zött",
+                "between",
+                "*az ablak és az ajtó között* = between the window and the door"
+              ],
+              [
+                "**körül**",
+                "KÖ-rül",
+                "around",
+                "*az asztal körül* = around the table"
+              ]
+            ]
+          },
+          "after": [
+            "*Fölött* versus *-on*: *a kép a falon van* (the picture is attached to the wall), *a lámpa az asztal fölött van* (the lamp hangs over the table without touching it). English uses \"above\" or \"on\" loosely for both; Hungarian separates touching from not touching.",
+            "This group also has \"to\" and \"from\" forms: *mellé* (to the side of), *mellől* (from beside), *alá* / *alól*, *elé* / *elől*, *mögé* / *mögül*. For A1, just recognize the \"at\" forms; the rest comes by itself through use."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The home and what's in it",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "a lakás",
+              "aw LAW-kahsh",
+              "apartment"
+            ],
+            [
+              "a ház",
+              "aw hahz",
+              "house"
+            ],
+            [
+              "a szoba",
+              "aw SOH-baw",
+              "room"
+            ],
+            [
+              "a hálószoba",
+              "aw HAH-loh-soh-baw",
+              "bedroom"
+            ],
+            [
+              "a nappali",
+              "aw NAWP-paw-li",
+              "living room"
+            ],
+            [
+              "a konyha",
+              "aw KOHNY-haw",
+              "kitchen"
+            ],
+            [
+              "a fürdőszoba",
+              "aw FÜR-dö-soh-baw",
+              "bathroom"
+            ],
+            [
+              "az erkély",
+              "awz EHR-kay",
+              "balcony"
+            ],
+            [
+              "a folyosó",
+              "aw FOH-yoh-shoh",
+              "hallway"
+            ],
+            [
+              "az emelet",
+              "awz EH-meh-leht",
+              "floor (storey)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Use the habit suggested on the first pages: say each new word in this table right away with one ending. *szoba* → *szobában*, *polc* → *polcon*, *erkély* → *erkélyen*. Ten seconds per word, and vowel harmony stops being theory."
+        }
+      ]
+    },
+    {
+      "title": "Asking and answering about places",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Hol van a fürdőszoba?",
+              "hohl vawn aw FÜR-dö-soh-baw",
+              "Where is the bathroom?"
+            ],
+            [
+              "Itt van, balra.",
+              "itt vawn BAWL-raw",
+              "Here, on the left."
+            ],
+            [
+              "Ott van, jobbra.",
+              "ohtt vawn YOHBB-raw",
+              "There, on the right."
+            ],
+            [
+              "Egyenesen.",
+              "EH-dyeh-neh-shehn",
+              "Straight ahead."
+            ],
+            [
+              "Van itt bolt?",
+              "vawn itt bohlt",
+              "Is there a shop here?"
+            ],
+            [
+              "Sajnos nincs.",
+              "SHAWY-nohsh ninch",
+              "Unfortunately, no."
+            ],
+            [
+              "Közel van.",
+              "KÖ-zehl vawn",
+              "It's close."
+            ],
+            [
+              "Messze van.",
+              "MEHS-seh vawn",
+              "It's far."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "One small trap that often trips learners",
+          "items": [
+            "*Hol vannak a könyvek?* uses the plural form because the thing is plural. English also marks this (*is* vs *are*), but Hungarian does it with *vannak* and *nincsenek* — so train yourself to check: plural things demand *vannak* and *nincsenek*, not *van* and *nincs*.",
+            "On the other hand, after a number the noun stays singular — and the verb goes singular with it: *Két könyv van az asztalon.* Not *vannak*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "lakás",
+      "baca": "LAW-kahsh",
+      "en": "apartment"
+    },
+    {
+      "hu": "szoba",
+      "baca": "SOH-baw",
+      "en": "room"
+    },
+    {
+      "hu": "konyha",
+      "baca": "KOHNY-haw",
+      "en": "kitchen"
+    },
+    {
+      "hu": "fürdőszoba",
+      "baca": "FÜR-dö-soh-baw",
+      "en": "bathroom"
+    },
+    {
+      "hu": "erkély",
+      "baca": "EHR-kay",
+      "en": "balcony"
+    },
+    {
+      "hu": "polc",
+      "baca": "pohlts",
+      "en": "shelf"
+    },
+    {
+      "hu": "szekrény",
+      "baca": "SEHK-rayny",
+      "en": "wardrobe"
+    },
+    {
+      "hu": "ágy",
+      "baca": "ahdy",
+      "en": "bed"
+    },
+    {
+      "hu": "kanapé",
+      "baca": "KAW-naw-pay",
+      "en": "sofa"
+    },
+    {
+      "hu": "fal",
+      "baca": "fawl",
+      "en": "wall"
+    },
+    {
+      "hu": "emelet",
+      "baca": "EH-meh-leht",
+      "en": "floor (storey)"
+    },
+    {
+      "hu": "földszint",
+      "baca": "FÖLD-sint",
+      "en": "ground floor"
+    },
+    {
+      "hu": "lift",
+      "baca": "lift",
+      "en": "elevator"
+    },
+    {
+      "hu": "hely",
+      "baca": "hehy",
+      "en": "place"
+    },
+    {
+      "hu": "balra",
+      "baca": "BAWL-raw",
+      "en": "to the left"
+    },
+    {
+      "hu": "jobbra",
+      "baca": "YOHBB-raw",
+      "en": "to the right"
+    },
+    {
+      "hu": "egyenesen",
+      "baca": "EH-dyeh-neh-shehn",
+      "en": "straight ahead"
+    },
+    {
+      "hu": "sajnos",
+      "baca": "SHAWY-nohsh",
+      "en": "unfortunately"
+    },
+    {
+      "hu": "pedig",
+      "baca": "PEH-dig",
+      "en": "whereas; while"
+    },
+    {
+      "hu": "nincs",
+      "baca": "ninch",
+      "en": "there is no"
+    },
+    {
+      "hu": "nincsenek",
+      "baca": "NIN-cheh-nehk",
+      "en": "there are no"
+    },
+    {
+      "hu": "mellett",
+      "baca": "MEHL-lehtt",
+      "en": "next to"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Add the right \"at\" ending — space or surface.",
+      "items": [
+        "szoba",
+        "asztal",
+        "ház",
+        "polc",
+        "konyha",
+        "fal"
+      ]
+    },
+    {
+      "prompt": "Fill in with van, vannak, nincs, or nincsenek.",
+      "items": [
+        "A könyv az asztalon ____.",
+        "A könyvek a polcon ____.",
+        "Sajnos ____ erkély.",
+        "____ székek a szobában? (there are no)",
+        "Hol ____ a fürdőszoba?",
+        "____ egy nagy ablak a konyhában."
+      ]
+    },
+    {
+      "prompt": "Translate into Hungarian.",
+      "items": [
+        "Where is the kitchen?",
+        "The books are on the shelf.",
+        "There is no balcony.",
+        "The bathroom is next to the kitchen.",
+        "The apartment is on the third floor.",
+        "Is there a shop here?"
+      ]
+    },
+    {
+      "prompt": "Spiral review — Unit 2. Translate into Hungarian without looking back at the unit.",
+      "items": [
+        "Where are you from?",
+        "I live in Budapest.",
+        "I come from Jakarta.",
+        "Is Szeged far?",
+        "I can speak a little Hungarian."
+      ]
+    }
+  ],
+  "answers": [
+    "szobában — asztalon — házban — polcon — konyhában — falon",
+    "van — vannak — nincs — Nincsenek — van — Van",
+    "Hol van a konyha? — A könyvek a polcon vannak. — Nincs erkély. — A fürdőszoba a konyha mellett van. — A lakás a harmadik emeleten van. — Van itt bolt?",
+    "Honnan jössz? — Budapesten lakom. — Jakartából jövök. — Szeged messze van? — Egy kicsit beszélek magyarul."
+  ]
+}

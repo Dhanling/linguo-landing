@@ -1,0 +1,621 @@
+{
+  "title": "Numbers, age, and addresses",
+  "title_target": "Hány éves vagy?",
+  "goal": "Count from zero to the millions, give your age, phone number, and address — while enjoying one rule that is simpler than English: after a number, the noun stays singular.",
+  "bekal": [
+    "build any number up to a thousand without memorizing each one",
+    "answer *Hány éves vagy?* and ask it back",
+    "use ordinal numbers for floors, dates, and order"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Az iskola irodájában",
+      "intro": "Budi is enrolling at the language school's office. The secretary fills in a form as she asks questions.",
+      "lines": [
+        {
+          "speaker": "Titkárnő:",
+          "text": "Jó napot kívánok! Mi a neve?",
+          "id": "Good afternoon! What is your name?",
+          "literal": "good day I-wish! what the name-his/her?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jó napot! Budi Santoso vagyok.",
+          "id": "Good afternoon! I'm Budi Santoso.",
+          "literal": "good day! Budi Santoso I-am."
+        },
+        {
+          "speaker": "Titkárnő:",
+          "text": "Hány éves ön?",
+          "id": "How old are you?",
+          "literal": "how-many year-old you(formal)?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Huszonnégy éves vagyok.",
+          "id": "I'm twenty-four years old.",
+          "literal": "twenty-four year-old I-am."
+        },
+        {
+          "speaker": "Titkárnő:",
+          "text": "És mi a telefonszáma?",
+          "id": "And what is your phone number?",
+          "literal": "and what the phone-number-your?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nulla-hat, harminc, hét-hat-öt, negyven-hatvan.",
+          "id": "Zero-six, thirty, seven-six-five, forty-sixty.",
+          "literal": "zero-six, thirty, seven-six-five, forty-sixty."
+        },
+        {
+          "speaker": "Titkárnő:",
+          "text": "Köszönöm. És a címe?",
+          "id": "Thank you. And your address?",
+          "literal": "I-thank. and the address-your?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Budapest, Rákóczi út huszonhét, második emelet, hat.",
+          "id": "Budapest, Rákóczi út twenty-seven, second floor, number six.",
+          "literal": "Budapest, Rákóczi road twenty-seven, second floor, six."
+        },
+        {
+          "speaker": "Titkárnő:",
+          "text": "Rendben. A csoportjában tizenkét diák van.",
+          "id": "All right. There are twelve students in your group.",
+          "literal": "in-order. the group-your-in twelve student is."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tizenkettő? Az jó. És hány tanár?",
+          "id": "Twelve? That's good. And how many teachers?",
+          "literal": "twelve? that good. and how-many teacher?"
+        },
+        {
+          "speaker": "Titkárnő:",
+          "text": "Két tanár. A tanfolyam nyolc hét.",
+          "id": "Two teachers. The course is eight weeks.",
+          "literal": "two teacher. the course eight week."
+        }
+      ],
+      "notes": [
+        "**Két or kettő, once more.** *Kettő* is used when the number stands alone — answering a question, reading a phone number, giving a house number. *Két* is used when a noun follows: *két tanár*, *két hét*. Look at the dialogue: Budi answers *Tizenkettő?* (standing alone) after the secretary says *tizenkét diák* (with a noun).",
+        "**After a number, the noun stays singular — and so does the verb.** *Tizenkét diák **van***, not *vannak*. Unlike English (\"there are twelve students\"), Hungarian never pluralizes after a number, so don't let English habits creep in.",
+        "**Hány for countable things, mennyi for amounts.** *Hány diák?* (how many students), *Mennyi idő?* (how much time), *Mennyi pénz?* (how much money). Choosing wrong isn't fatal, but *hány* before an uncountable noun sounds odd right away — just like \"how many water\" in English.",
+        "**Hét does double duty.** It means \"seven\" **and** \"week\". The sentence tells them apart: *hét diák* (seven students) versus *nyolc hét* (eight weeks). This coincidence will never truly confuse you, but it always makes beginners smile the first time they notice it.",
+        "**Numbers are written as one word, with no \"and\".** *huszonnégy* (twenty-four), *harminchét* (thirty-seven), *százhúsz* (one hundred twenty). Hungarian joins them into a single word up to two thousand. Above that, hyphens appear."
+      ],
+      "grammars": [
+        {
+          "title": "Zero to twenty-nine",
+          "body": [
+            "Learn the first eleven numbers by heart; the rest is just assembly."
+          ],
+          "table": {
+            "head": [
+              "",
+              "",
+              "",
+              ""
+            ],
+            "rows": [
+              [
+                "0 *nulla* (NOOL-law)",
+                "1 *egy* (ehdy)",
+                "2 *kettő / két* (KEHT-tö)",
+                "3 *három* (HAH-rohm)"
+              ],
+              [
+                "4 *négy* (naydy)",
+                "5 *öt* (öt)",
+                "6 *hat* (hawt)",
+                "7 *hét* (hayt)"
+              ],
+              [
+                "8 *nyolc* (nyohlts)",
+                "9 *kilenc* (KI-lehnts)",
+                "10 *tíz* (teez)",
+                "11 *tizenegy* (TI-zehn-ehdy)"
+              ],
+              [
+                "12 *tizenkettő*",
+                "13 *tizenhárom*",
+                "14 *tizennégy*",
+                "15 *tizenöt*"
+              ],
+              [
+                "16 *tizenhat*",
+                "17 *tizenhét*",
+                "18 *tizennyolc*",
+                "19 *tizenkilenc*"
+              ],
+              [
+                "20 *húsz* (hus)",
+                "21 *huszonegy*",
+                "22 *huszonkettő*",
+                "29 *huszonkilenc*"
+              ]
+            ]
+          },
+          "after": [
+            "Teens are built from **tizen-** + the unit, and the twenties from **huszon-** + the unit. Notice that *tíz* shortens to *tizen-* and *húsz* changes to *huszon-* — these two changes are the only things to memorize in the whole number system.",
+            "From thirty on, the pattern is straight with no surprises: the tens are written in full and the unit is attached."
+          ]
+        },
+        {
+          "title": "Tens, hundreds, thousands",
+          "body": [
+            "After twenty, Hungarian stops being difficult."
+          ],
+          "table": {
+            "head": [
+              "Tens",
+              "Say it",
+              "Example",
+              "Means"
+            ],
+            "rows": [
+              [
+                "30 *harminc*",
+                "HAWR-mints",
+                "*harminchét*",
+                "37"
+              ],
+              [
+                "40 *negyven*",
+                "NEHDY-vehn",
+                "*negyvenkettő*",
+                "42"
+              ],
+              [
+                "50 *ötven*",
+                "ÖT-vehn",
+                "*ötvenöt*",
+                "55"
+              ],
+              [
+                "60 *hatvan*",
+                "HAWT-vawn",
+                "*hatvanhárom*",
+                "63"
+              ],
+              [
+                "70 *hetven*",
+                "HEHT-vehn",
+                "*hetvenkilenc*",
+                "79"
+              ],
+              [
+                "80 *nyolcvan*",
+                "NYOHLTS-vawn",
+                "*nyolcvanegy*",
+                "81"
+              ],
+              [
+                "90 *kilencven*",
+                "KI-lehnts-vehn",
+                "*kilencvennyolc*",
+                "98"
+              ],
+              [
+                "100 *száz*",
+                "sahz",
+                "*százhúsz*",
+                "120"
+              ],
+              [
+                "1000 *ezer*",
+                "EH-zehr",
+                "*ezerötszáz*",
+                "1,500"
+              ],
+              [
+                "1,000,000 *millió*",
+                "MIL-li-oh",
+                "*kétmillió*",
+                "2,000,000"
+              ]
+            ]
+          },
+          "after": [
+            "Hundreds and thousands use *két-*, not *kettő-*: *kétszáz* (200), *kétezer* (2,000). Once again the same rule — something follows, so the form is *két*.",
+            "For years, Hungarians read them out as one full number: *ezerkilencszázkilencvennyolc* (1998), *kétezer-huszonhat* (2026). Long, but no shortcut — and one of the best pronunciation workouts you can get."
+          ]
+        },
+        {
+          "title": "Ordinal numbers",
+          "body": [
+            "Used for floors, dates, order, and the unit numbers in this course."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Ordinal",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "1.",
+                "**első**",
+                "EHL-shö",
+                "first"
+              ],
+              [
+                "2.",
+                "**második**",
+                "MAH-shoh-dik",
+                "second"
+              ],
+              [
+                "3.",
+                "**harmadik**",
+                "HAWR-maw-dik",
+                "third"
+              ],
+              [
+                "4.",
+                "**negyedik**",
+                "NEH-dyeh-dik",
+                "fourth"
+              ],
+              [
+                "5.",
+                "**ötödik**",
+                "Ö-tö-dik",
+                "fifth"
+              ],
+              [
+                "6.",
+                "**hatodik**",
+                "HAW-toh-dik",
+                "sixth"
+              ],
+              [
+                "7.",
+                "**hetedik**",
+                "HEH-teh-dik",
+                "seventh"
+              ],
+              [
+                "8.",
+                "**nyolcadik**",
+                "NYOHL-tsaw-dik",
+                "eighth"
+              ],
+              [
+                "9.",
+                "**kilencedik**",
+                "KI-lehn-tseh-dik",
+                "ninth"
+              ],
+              [
+                "10.",
+                "**tizedik**",
+                "TI-zeh-dik",
+                "tenth"
+              ],
+              [
+                "20.",
+                "**huszadik**",
+                "HOO-saw-dik",
+                "twentieth"
+              ],
+              [
+                "100.",
+                "**századik**",
+                "SAH-zaw-dik",
+                "hundredth"
+              ]
+            ]
+          },
+          "after": [
+            "The ending is *-dik*, with a linking vowel following vowel harmony. Two rebels: *első* and *második* — and they are the most frequently used, so memorize them outright.",
+            "In writing, ordinals are marked by a **period** after the digit: *2. emelet* is read *második emelet*. That period is not a full stop; it is part of the number."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Age, numbers, dates",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Hány éves vagy?",
+              "hahny AY-vehsh vawdy",
+              "How old are you?"
+            ],
+            [
+              "Hány éves ön?",
+              "hahny AY-vehsh ön",
+              "How old are you? (formal)"
+            ],
+            [
+              "Huszonöt éves vagyok.",
+              "HOO-sohn-öt AY-vehsh VAW-dyohk",
+              "I'm twenty-five years old."
+            ],
+            [
+              "Mi a telefonszámod?",
+              "mi aw TEH-leh-fohn-sah-mohd",
+              "What is your phone number?"
+            ],
+            [
+              "Mi a címed?",
+              "mi aw TSEE-mehd",
+              "What is your address?"
+            ],
+            [
+              "Hányan vagytok?",
+              "HAH-nyawn VAWDY-tohk",
+              "How many of you are there?"
+            ],
+            [
+              "Négyen vagyunk.",
+              "NAY-dyehn VAW-dyoonk",
+              "There are four of us."
+            ],
+            [
+              "Hányadik emelet?",
+              "HAH-nyaw-dik EH-meh-leht",
+              "Which floor?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Hányan vagytok?* uses a special form for counting people: *ketten* (two of us/them), *hárman* (three), *négyen* (four), *öten* (five). English has no equivalent beyond phrases like \"the two of us\", but the Hungarian forms are short and tidy."
+        }
+      ]
+    },
+    {
+      "title": "Addresses, Hungarian style",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Hungarian addresses are written from the biggest unit to the smallest, and each part has its own word that cannot be swapped."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Part",
+            "Magyar",
+            "Example"
+          ],
+          "rows": [
+            [
+              "city",
+              "*város*",
+              "Budapest"
+            ],
+            [
+              "district (Budapest only)",
+              "*kerület*",
+              "VII. kerület"
+            ],
+            [
+              "main road",
+              "*út*",
+              "Rákóczi út"
+            ],
+            [
+              "regular street",
+              "*utca* (abbreviated *u.*)",
+              "Dob utca"
+            ],
+            [
+              "square",
+              "*tér*",
+              "Deák tér"
+            ],
+            [
+              "house number",
+              "—",
+              "27."
+            ],
+            [
+              "floor",
+              "*emelet* (abbreviated *em.*)",
+              "2. em."
+            ],
+            [
+              "door number",
+              "*ajtó*",
+              "6."
+            ],
+            [
+              "postal code",
+              "*irányítószám*",
+              "1074"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Written out in full, Budi's address becomes: **1074 Budapest, Rákóczi út 27. 2. em. 6.** A Budapest postal code is always four digits starting with 1, and the middle two digits give the district — 1074 means district seven. Every Hungarian uses this little trick to guess where an address is."
+        },
+        {
+          "type": "kotak",
+          "title": "Two phrases you must know when filling in forms",
+          "items": [
+            "*Hogy írjuk?* — \"How do we write it?\" Used to ask for a spelling, and very handy because your name will almost certainly be misspelled.",
+            "*Betűzném.* — \"Let me spell it.\" Then say it letter by letter. Names with *y* and *u* side by side almost always need this treatment."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "hány",
+      "baca": "hahny",
+      "en": "how many (countable)"
+    },
+    {
+      "hu": "mennyi",
+      "baca": "MEHNY-nyi",
+      "en": "how much (amount)"
+    },
+    {
+      "hu": "szám",
+      "baca": "sahm",
+      "en": "number; digit"
+    },
+    {
+      "hu": "telefonszám",
+      "baca": "TEH-leh-fohn-sahm",
+      "en": "phone number"
+    },
+    {
+      "hu": "név",
+      "baca": "nayv",
+      "en": "name"
+    },
+    {
+      "hu": "cím",
+      "baca": "tseem",
+      "en": "address; title"
+    },
+    {
+      "hu": "utca",
+      "baca": "OOT-tsaw",
+      "en": "street"
+    },
+    {
+      "hu": "út",
+      "baca": "oot",
+      "en": "road; trip"
+    },
+    {
+      "hu": "tér",
+      "baca": "tayr",
+      "en": "square; plaza"
+    },
+    {
+      "hu": "csoport",
+      "baca": "CHOH-pohrt",
+      "en": "group"
+    },
+    {
+      "hu": "tanfolyam",
+      "baca": "TAWN-foh-yawm",
+      "en": "course"
+    },
+    {
+      "hu": "hét",
+      "baca": "hayt",
+      "en": "seven; week"
+    },
+    {
+      "hu": "hónap",
+      "baca": "HOH-nawp",
+      "en": "month"
+    },
+    {
+      "hu": "év",
+      "baca": "ayv",
+      "en": "year"
+    },
+    {
+      "hu": "nap",
+      "baca": "nawp",
+      "en": "day; sun"
+    },
+    {
+      "hu": "rendben",
+      "baca": "REHND-behn",
+      "en": "all right; okay"
+    },
+    {
+      "hu": "titkárnő",
+      "baca": "TIT-kahr-nö",
+      "en": "secretary (female)"
+    },
+    {
+      "hu": "első",
+      "baca": "EHL-shö",
+      "en": "first"
+    },
+    {
+      "hu": "második",
+      "baca": "MAH-shoh-dik",
+      "en": "second"
+    },
+    {
+      "hu": "sok",
+      "baca": "shohk",
+      "en": "a lot; many"
+    },
+    {
+      "hu": "kevés",
+      "baca": "KEH-vaysh",
+      "en": "a few; little"
+    },
+    {
+      "hu": "összesen",
+      "baca": "ÖSS-seh-shehn",
+      "en": "altogether"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the numbers out in words.",
+      "items": [
+        "14",
+        "23",
+        "37",
+        "58",
+        "91",
+        "120"
+      ]
+    },
+    {
+      "prompt": "Fill in with két or kettő.",
+      "items": [
+        "____ tanár van a csoportban.",
+        "Hány diák? ____.",
+        "A tanfolyam ____ hét.",
+        "Hányadik emelet? A ____ .",
+        "____ testvérem van.",
+        "Hány óra? ____ ."
+      ]
+    },
+    {
+      "prompt": "Translate into Hungarian.",
+      "items": [
+        "How old are you?",
+        "I'm twenty-four years old.",
+        "What is your phone number?",
+        "There are twelve students in the group.",
+        "Which floor?",
+        "The course is eight weeks."
+      ]
+    },
+    {
+      "prompt": "Spiral review — Unit 4. Translate into Hungarian without looking back at the unit.",
+      "items": [
+        "Where is the kitchen?",
+        "The books are on the shelf.",
+        "There is no balcony.",
+        "Is there a shop here?",
+        "The bathroom is next to the kitchen."
+      ]
+    }
+  ],
+  "answers": [
+    "tizennégy — huszonhárom — harminchét — ötvennyolc — kilencvenegy — százhúsz",
+    "Két — Kettő — két — második — Két — Kettő",
+    "Hány éves vagy? — Huszonnégy éves vagyok. — Mi a telefonszámod? — A csoportban tizenkét diák van. — Hányadik emelet? — A tanfolyam nyolc hét.",
+    "Hol van a konyha? — A könyvek a polcon vannak. — Nincs erkély. — Van itt bolt? — A fürdőszoba a konyha mellett van."
+  ]
+}

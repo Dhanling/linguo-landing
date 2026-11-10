@@ -1,0 +1,531 @@
+{
+  "title": "Shopping at the supermarket — the \"with\" ending",
+  "title_target": "A boltban",
+  "goal": "Do your everyday shopping, and master the *-val / -vel* ending that melts into the consonant before it.",
+  "bekal": [
+    "form *-val / -vel* correctly on any word",
+    "answer *Kivel?* and *Mivel?* with the right pronoun form",
+    "use the verb *vesz* for buying"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — A boltban",
+      "intro": "Saturday midday at a supermarket near home. Anna is holding a phone with the shopping list.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Mit veszünk?",
+          "id": "What are we buying?",
+          "literal": "what-obj we-buy?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kenyeret, tejet és gyümölcsöt. Van nálad lista?",
+          "id": "Bread, milk, and fruit. Do you have the list?",
+          "literal": "bread-obj, milk-obj and fruit-obj. is at-you list?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Igen, a telefonomban. A pékárunál kezdünk.",
+          "id": "Yes, on my phone. Let's start at the bakery section.",
+          "literal": "yes, the phone-my-in. the bread-goods-at we-start."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Milyen kenyeret veszel?",
+          "id": "What kind of bread are you getting?",
+          "literal": "what-kind bread-obj you-buy?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Barnát. Fehér kenyérrel nem jó a szendvics.",
+          "id": "Brown. White bread is no good for sandwiches.",
+          "literal": "brown-obj. white bread-with not good the sandwich."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Egyetértek. És mivel isszuk a kávét?",
+          "id": "Agreed. And what do we drink our coffee with?",
+          "literal": "I-agree. and what-with we-drink-it the coffee-obj?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Én tejjel iszom, te feketén.",
+          "id": "I take mine with milk, you take it black.",
+          "literal": "I milk-with I-drink, you black-ly."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Igaz. Kivel jössz holnap a piacra?",
+          "id": "Right. Who are you going to the market with tomorrow?",
+          "literal": "right. who-with you-come tomorrow the market-onto?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Veled, ha ráérsz.",
+          "id": "With you, if you have time.",
+          "literal": "you-with, if you-have-time."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ráérek. Itt lehet kártyával fizetni?",
+          "id": "I do. Can you pay by card here?",
+          "literal": "I-have-time. here may card-with pay?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Igen, mindenhol lehet.",
+          "id": "Yes, everywhere.",
+          "literal": "yes, everywhere may."
+        }
+      ],
+      "notes": [
+        "**Tejjel, kenyérrel, kártyával — all the same ending.** The base form is *-val / -vel*, but the *v* disappears after a consonant and that consonant doubles. *tej* + *vel* → *tejjel*; *kenyér* + *vel* → *kenyérrel*; *kártya* + *val* → *kártyával* (after a vowel the *v* stays).",
+        "**Isszuk is the definite form of iszik.** This is one of the most irregular verbs in Hungarian: *iszom, iszod, issza, isszuk, isszátok, isszák*. Because the coffee is definite (*a kávét*), the definite form is used — the unit 11 rule still applies, however badly the verb behaves.",
+        "**Nálad lista van** uses the *-nál* ending from unit 12 to mean \"on you\", \"do you have it with you\". This pattern is very common: *Van nálad pénz?* (Do you have any money on you?), *Nincs nálam telefon* (I don't have my phone with me).",
+        "**Feketén** is the adverb of *fekete*. For coffee it means without milk — just like \"black coffee\" in English. The ending *-n / -an / -en* turns an adjective into an adverb, as you've seen in *jól*, *szépen*, *gyorsan*.",
+        "**Kivel and mivel are question words with an ending already on.** *Ki* + *vel* → *kivel* (with whom), *mi* + *vel* → *mivel* (with what). Hungarian question words really do take endings like ordinary nouns: *kinek* (to whom), *kitől* (from whom), *hova* (where to)."
+      ],
+      "grammars": [
+        {
+          "title": "The -val / -vel ending: the melting v",
+          "body": [
+            "The only Hungarian ending that truly changes shape to match the consonant before it. The rule is simple and has no exceptions."
+          ],
+          "table": {
+            "head": [
+              "Word ends in",
+              "What happens",
+              "Example"
+            ],
+            "rows": [
+              [
+                "a vowel",
+                "*v* stays; *a* and *e* lengthen",
+                "*kávé* → *kávéval*; *Anna* → *Annával*; *taxi* → *taxival*"
+              ],
+              [
+                "a consonant",
+                "*v* disappears, the consonant doubles",
+                "*vonat* → *vonattal*; *tej* → *tejjel*; *busz* → *busszal*"
+              ],
+              [
+                "a double consonant",
+                "no further change",
+                "*toll* → *tollal*; *kés* → *késsel*"
+              ],
+              [
+                "plural form",
+                "*-kkal / -kkel*",
+                "*barátok* → *barátokkal*; *gyerekek* → *gyerekekkel*"
+              ]
+            ]
+          },
+          "after": [
+            "This ending covers three meanings at once: **together with** (*Annával megyek* — I'm going with Anna), **using** (*kártyával fizetek* — I'm paying by card), and **by (transport)** (*busszal megyek* — I'm going by bus).",
+            "Note that this ending also follows vowel harmony: *-val* for back-vowel words, *-vel* for front-vowel words. So *vonattal* but *kenyérrel*, *busszal* but *késsel*."
+          ]
+        },
+        {
+          "title": "With whom? Pronoun forms",
+          "body": [
+            "Personal pronouns don't take the ordinary endings; they have their own forms to memorize."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "\"with\"",
+              "\"to, for\"",
+              "\"at (someone's)\""
+            ],
+            "rows": [
+              [
+                "én",
+                "**velem**",
+                "nekem",
+                "nálam"
+              ],
+              [
+                "te",
+                "**veled**",
+                "neked",
+                "nálad"
+              ],
+              [
+                "ő",
+                "**vele**",
+                "neki",
+                "nála"
+              ],
+              [
+                "mi",
+                "**velünk**",
+                "nekünk",
+                "nálunk"
+              ],
+              [
+                "ti",
+                "**veletek**",
+                "nektek",
+                "nálatok"
+              ],
+              [
+                "ők",
+                "**velük**",
+                "nekik",
+                "náluk"
+              ]
+            ]
+          },
+          "after": [
+            "Notice the pattern: the endings are exactly the possessive endings from unit 5 (*-m, -d, -a/-e, -nk, -tok, -uk*). Hungarian reuses the same toolkit throughout, and once you see it, these three columns stop feeling like three separate tables.",
+            "You've already met the second and third columns: *nekem* in units 5 and 7, *nálunk* in unit 13. Now you have all three at once."
+          ]
+        },
+        {
+          "title": "Vesz — to buy",
+          "body": [
+            "One of the irregular verbs you'll use most in shops."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Indefinite",
+              "Definite",
+              "Example"
+            ],
+            "rows": [
+              [
+                "én",
+                "vesz**ek**",
+                "vesz**em**",
+                "*Veszek egy kenyeret.*"
+              ],
+              [
+                "te",
+                "vesz**el**",
+                "vesz**ed**",
+                "*Mit veszel?*"
+              ],
+              [
+                "ő",
+                "vesz",
+                "vesz**i**",
+                "*Megveszi a könyvet.*"
+              ],
+              [
+                "mi",
+                "vesz**ünk**",
+                "vesz**szük**",
+                "*Mit veszünk?*"
+              ],
+              [
+                "ti",
+                "vesz**tek**",
+                "vesz**itek**",
+                "*Mit vesztek?*"
+              ],
+              [
+                "ők",
+                "vesz**nek**",
+                "vesz**ik**",
+                "*Ők veszik a jegyet.*"
+              ]
+            ]
+          },
+          "after": [
+            "The prefix *meg-* makes the action complete: *veszem a kenyeret* (I'm buying the bread) versus *megveszem a kenyeret* (I'll buy the bread, done). In shops you'll mostly hear the prefixed form.",
+            "Its partner *elad* means to sell, and *eladó* — which you met in unit 3 — means both \"seller\" and \"for sale\". A sign reading *ELADÓ* in a house window means the house is for sale."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "At the supermarket",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "a bolt / az üzlet",
+              "aw bohlt / awz ÜZ-leht",
+              "shop"
+            ],
+            [
+              "a bevásárlókocsi",
+              "aw BEH-vah-shahr-loh-koh-chi",
+              "shopping cart"
+            ],
+            [
+              "a kosár",
+              "aw KOH-shahr",
+              "basket"
+            ],
+            [
+              "a pénztár / a kassza",
+              "aw PAYNZ-tahr / aw KAWS-saw",
+              "checkout"
+            ],
+            [
+              "a zacskó",
+              "aw ZAWCH-koh",
+              "plastic bag"
+            ],
+            [
+              "az akció",
+              "awz AWK-tsi-oh",
+              "sale, discount"
+            ],
+            [
+              "a pékáru",
+              "aw PAYK-ah-roo",
+              "bread and pastries"
+            ],
+            [
+              "a tejtermék",
+              "aw TEHY-tehr-mayk",
+              "dairy products"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Two words that often confuse newcomers: *bolt* and *üzlet* both mean shop and are interchangeable; while *ABC* — said *á-bé-cé* — is the old name for a small grocery store, and signs with those three letters still hang in many small towns."
+        }
+      ]
+    },
+    {
+      "title": "Shopping phrases",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Hol van a tej?",
+              "hohl vawn aw tehy",
+              "Where's the milk?"
+            ],
+            [
+              "Van friss kenyerük?",
+              "vawn frish KEH-nyeh-rük",
+              "Is there fresh bread?"
+            ],
+            [
+              "Mennyibe kerül ez?",
+              "MEHNY-nyi-beh KEH-rül ehz",
+              "How much is this?"
+            ],
+            [
+              "Akciós?",
+              "AWK-tsi-ohsh",
+              "Is it on sale?"
+            ],
+            [
+              "Kérek egy zacskót.",
+              "KAY-rehk ehdy ZAWCH-koht",
+              "A bag, please."
+            ],
+            [
+              "Kártyával fizetek.",
+              "KAHR-tyah-vawl FI-zeh-tehk",
+              "I'll pay by card."
+            ],
+            [
+              "Van kártyájuk?",
+              "vawn KAHR-tyah-yook",
+              "Do you have a loyalty card?"
+            ],
+            [
+              "Nincs, köszönöm.",
+              "ninch KÖ-sö-nöm",
+              "No, thank you."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two habits that may surprise you",
+          "items": [
+            "**Plastic bags cost money** and are almost never handed out automatically. Hungarians bring a *vászontáska* — a cloth bag — and the question *Kér zacskót?* at the checkout means you'll be charged for one.",
+            "**You weigh produce yourself** in many supermarkets: put the fruit or vegetables on the scale, press the button with the picture, and stick on the price label. The cashier won't weigh it for you, and the line behind you will soon let you know."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "vesz",
+      "baca": "vehs",
+      "en": "to buy; to take"
+    },
+    {
+      "hu": "elad",
+      "baca": "EHL-awd",
+      "en": "to sell"
+    },
+    {
+      "hu": "bolt",
+      "baca": "bohlt",
+      "en": "shop"
+    },
+    {
+      "hu": "lista",
+      "baca": "LISH-taw",
+      "en": "list"
+    },
+    {
+      "hu": "kosár",
+      "baca": "KOH-shahr",
+      "en": "basket"
+    },
+    {
+      "hu": "pénztár",
+      "baca": "PAYNZ-tahr",
+      "en": "checkout"
+    },
+    {
+      "hu": "zacskó",
+      "baca": "ZAWCH-koh",
+      "en": "bag"
+    },
+    {
+      "hu": "akció",
+      "baca": "AWK-tsi-oh",
+      "en": "sale, discount"
+    },
+    {
+      "hu": "blokk",
+      "baca": "blohkk",
+      "en": "receipt"
+    },
+    {
+      "hu": "barna",
+      "baca": "BAWR-naw",
+      "en": "brown"
+    },
+    {
+      "hu": "fehér",
+      "baca": "FEH-hayr",
+      "en": "white"
+    },
+    {
+      "hu": "fekete",
+      "baca": "FEH-keh-teh",
+      "en": "black"
+    },
+    {
+      "hu": "szendvics",
+      "baca": "SEHND-vich",
+      "en": "sandwich"
+    },
+    {
+      "hu": "vaj",
+      "baca": "vawy",
+      "en": "butter"
+    },
+    {
+      "hu": "só",
+      "baca": "shoh",
+      "en": "salt"
+    },
+    {
+      "hu": "olaj",
+      "baca": "OH-lawy",
+      "en": "oil"
+    },
+    {
+      "hu": "csirke",
+      "baca": "CHIR-keh",
+      "en": "chicken"
+    },
+    {
+      "hu": "kivel",
+      "baca": "KI-vehl",
+      "en": "with whom"
+    },
+    {
+      "hu": "mivel",
+      "baca": "MI-vehl",
+      "en": "with what"
+    },
+    {
+      "hu": "velem",
+      "baca": "VEH-lehm",
+      "en": "with me"
+    },
+    {
+      "hu": "ha",
+      "baca": "haw",
+      "en": "if"
+    },
+    {
+      "hu": "ráér",
+      "baca": "RAH-ayr",
+      "en": "to have time"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Add the \"with\" ending.",
+      "items": [
+        "vonat",
+        "tej",
+        "kávé",
+        "busz",
+        "Anna",
+        "barátok"
+      ]
+    },
+    {
+      "prompt": "Fill in the right pronoun form.",
+      "items": [
+        "____ jössz? (with me)",
+        "____ megyek a piacra. (with you)",
+        "Nincs ____ pénz. (on me)",
+        "____ mindig meleg van. (at our place)",
+        "Adok ____ egy könyvet. (to you)",
+        "____ beszélek holnap. (with them)"
+      ]
+    },
+    {
+      "prompt": "Translate into Hungarian.",
+      "items": [
+        "What are we buying?",
+        "Do you have the list?",
+        "I'll pay by card.",
+        "Who are you going to the market with tomorrow?",
+        "With you, if you have time.",
+        "Can you pay by card here?"
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 13. Translate into Hungarian without looking back at the unit.",
+      "items": [
+        "What's the weather like?",
+        "It's very cold today.",
+        "It's snowing.",
+        "I'm cold.",
+        "Spring starts in March."
+      ]
+    }
+  ],
+  "answers": [
+    "vonattal — tejjel — kávéval — busszal — Annával — barátokkal",
+    "Velem — Veled — nálam — Nálunk — neked — Velük",
+    "Mit veszünk? — Van nálad lista? — Kártyával fizetek. — Kivel jössz holnap a piacra? — Veled, ha ráérsz. — Itt lehet kártyával fizetni?",
+    "Milyen az idő? — Nagyon hideg van ma. — Havazik. — Fázom. — A tavasz márciusban kezdődik."
+  ]
+}

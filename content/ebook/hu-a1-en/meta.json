@@ -1,0 +1,1127 @@
+{
+  "brand": "LINGUO",
+  "cover": "cover.png",
+  "title": "Magyar 101",
+  "subtitle": "A self-study course in Hungarian for complete beginners",
+  "level": "Level A1 (CEFR)",
+  "edition": "English Edition",
+  "ruby": false,
+  "font_size": "9.4pt",
+  "page_margin": "11mm 10mm 9mm",
+  "vocab_columns": [
+    {
+      "head": "Magyar",
+      "key": "hu"
+    },
+    {
+      "head": "Say it",
+      "key": "baca"
+    },
+    {
+      "head": "English",
+      "key": "en"
+    }
+  ],
+  "cover_design": {
+    "bg": "#186145",
+    "accent": "#F0824A",
+    "label": "HUNGARIAN",
+    "judul": "Magyar",
+    "cap": "ő",
+    "pola_opacity": 0.42,
+    "pola": "background-image:repeating-linear-gradient(135deg, rgba(255,255,255,.11) 0 3px, transparent 3px 42px),repeating-linear-gradient(45deg, rgba(255,255,255,.06) 0 3px, transparent 3px 42px);",
+    "ringkas": "A self-study course in Hungarian for complete beginners — from saying hello in Budapest to telling the story of last weekend.",
+    "catatan": "Every line of dialogue comes with a word-for-word translation and a pronunciation guide.",
+    "merek_sub": "SELF-STUDY MODULE",
+    "kaki_sub": "units · dialogues · exercises · answer key"
+  },
+  "product": {
+    "slug": "modul-hungaria-101-en",
+    "title": "Hungarian 101 - A1 (English Edition)",
+    "type": "ebook",
+    "language": "Hungarian",
+    "level": "A1",
+    "file": "magyar-101-a1-en.pdf",
+    "description": "Twenty Assimil-style self-study units that take you from zero to A1 Hungarian: short dialogues, word-for-word translations that show how Hungarian builds its sentences, grammar notes, vocabulary with an English-friendly pronunciation guide, exercises, and an answer key. Hungarian looks fearsome, but its spelling is honest, stress always falls on the first syllable, and there is no grammatical gender at all (one word, ő, means both \"he\" and \"she\"). Each unit targets one of the spots that actually trip learners up: vowel harmony, which decides the shape of every ending, suffixes that do the job of English prepositions, and the two ways of conjugating a verb, depending on whether its object is definite or not.",
+    "pages": 145
+  },
+  "front": [
+    {
+      "title": "Foreword",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Hungarian has a fearsome reputation, and most of it rests on a single number: **eighteen cases**. The figure gets repeated everywhere, and it has made plenty of people quit before they started."
+        },
+        {
+          "type": "p",
+          "text": "The number is right. The conclusion is wrong. A Hungarian \"case\" is not a memorization table like the ones in German or Russian; it is **an ending that does the work of a preposition**. *A házban* means \"in the house\": *ház* (house) + *-ban* (in). You are not memorizing cases; you are learning that Hungarian prepositions go on the back of the word instead of standing in front of it."
+        },
+        {
+          "type": "p",
+          "text": "And here is the news that rarely gets told: Hungarian removes three of the things that hurt English speakers most when they learn a European language. **There is no grammatical gender** — no *der/die/das*, no *le/la*. **There is no \"he\" versus \"she\"** — it is all *ő*. And in third-person sentences, **the verb \"to be\" is simply left out**: *Ő tanár* = \"(He/she) teacher\", that is, \"He/She is a teacher\". Two words, no verb."
+        },
+        {
+          "type": "p",
+          "text": "One more thing will feel familiar from Unit 5: possession is marked with an **ending**, not a separate word. *ház* → *házam* = house → house**-my**, that is, \"my house\". *könyv* → *könyved* = book → book**-your**. English has *my* and *your* in front of the noun; Hungarian puts them on the back."
+        },
+        {
+          "type": "p",
+          "text": "So Hungarian is hard, but not where you expect. The difficulty sits in three places: **vowel harmony**, which decides the shape of every ending; **endings that replace prepositions**; and **two ways of conjugating a verb** — one for a definite object, one for an indefinite one — which has no counterpart in English."
+        },
+        {
+          "type": "p",
+          "text": "That is why none of the three is put off until the back of the course. Vowel harmony is set up in Unit 2, place endings follow in Unit 4, and the two verb conjugations get an entire unit of their own in Unit 11."
+        },
+        {
+          "type": "p",
+          "text": "The explanations are deliberately short. What is long is the practice."
+        },
+        {
+          "type": "kotak",
+          "title": "Before you start",
+          "items": [
+            "Set aside 20-30 uninterrupted minutes, not two chopped-up hours. Language sticks through short, frequent repetition, not one long assault.",
+            "Read aloud. In Hungarian this comes cheap: the spelling is almost completely honest. One letter, one sound, and the stress **always** falls on the first syllable — no exceptions, for life.",
+            "From the first unit, get into the habit of looking at the **vowels** of a word before you attach any ending. The vowels decide between *-ban* and *-ben*, *-hoz* and *-hez*. This habit separates the fluent beginner from the one who stalls.",
+            "Do not wait until your pronunciation is perfect before you dare to speak. Hungarians almost never meet a foreigner who wants to learn their language; even the smallest effort is welcomed far more warmly than you would imagine."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Happy studying. *Sok sikert!* (Lots of success!)"
+        }
+      ]
+    },
+    {
+      "type": "isi",
+      "title": "Contents",
+      "intro": "This course works best in order — each unit reuses what the previous ones put in place."
+    },
+    {
+      "title": "How to use this course",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This course is built for **self-study**. Each unit is designed to be finished in a single sitting of about 20-30 minutes. What matters is not how fast you move forward, but how often you come back."
+        },
+        {
+          "type": "p",
+          "text": "Every unit has the same layout, and the order is deliberate:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Dialogue** — read the Hungarian aloud first, without looking at the meaning. Let your ear work before your brain demands an explanation.",
+            "**Word-for-word translation** — the small italic line under the meaning. It is the part people skip most often, yet it is where you see how Hungarian *thinks*. For example, *Hogy hívnak?* literally means \"how they-call-(you)?\", not \"what is your name\".",
+            "**Notes** — short explanations of whatever just felt strange.",
+            "**Vocabulary** — the unit's new words, with a pronunciation guide.",
+            "**Exercises** — do them without looking at the key. Mistakes are part of the process.",
+            "**Answer key** — open it only after you have really tried."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Spaced review",
+          "items": [
+            "From Unit 3 on, each unit asks you to revisit an earlier one — usually two steps back, a distance that makes memory work without feeling like starting over. The method is reversed: cover the Hungarian, read the English translation, then rebuild the Hungarian sentence from memory.",
+            "This part turns \"I once understood it\" into \"I can use it\". Do not skip it."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "One habit this course teaches",
+          "items": [
+            "Every time you meet a new noun, say it together with one place ending: *ház* → *házban*, *bolt* → *boltban*, *étterem* → *étteremben*. Ten seconds per word, and vowel harmony stops being theory.",
+            "When you are unsure which of two endings to use, do not guess from the meaning — look at the vowels of the base word. The answer is always there, never anywhere else."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One last rule: **say it out loud**. Hungarian rewards this handsomely, because its spelling is honest — once you know twenty-two pairs of letters and their sounds, you can read any word correctly, including words you have never seen."
+        }
+      ]
+    },
+    {
+      "title": "Hungarian pronunciation",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This section is short, and that is the good news. Hungarian is written with spelling that is **almost entirely honest**: one letter (or one pair of letters) is always read the same way, in every word. No silent letters, no surprises like English or French. All you have to do is learn the list below once, and use it for life."
+        },
+        {
+          "type": "p",
+          "text": "The **Say it** column throughout this course uses English-based spelling, with capital letters marking the stressed syllable. Because Hungarian stress **always** falls on the first syllable, the capitals are really predictable — they are kept so that your eyes get used to it. A few spellings need a word of warning: **aw** is a short, slightly rounded *a* (like the vowel in \"law\" said briefly, or British \"hot\"); **ah** is the *a* of \"father\"; **ay** is the *ay* of \"say\", held pure without gliding; **ö** and **ü** are the same letters as in Hungarian (see the table)."
+        },
+        {
+          "type": "sub",
+          "text": "Stress rule: one sentence"
+        },
+        {
+          "type": "p",
+          "text": "**Stress is always on the first syllable.** Always. No matter how long the word is: *ma-gyar* → **MAW**-dyawr, *Bu-da-pest* → **BOO**-daw-pehsht, *le-gel-len-ke-zőbb* → **LEH**-gehl-lehn-keh-zöbb. A word of any length is still stressed at the front. This is one of the cheapest rules in all of European languages — learn it once, never get it wrong again."
+        },
+        {
+          "type": "sub",
+          "text": "Consonants that differ from what you would guess"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Written",
+            "Sounds like",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**s**",
+              "**sh** — like *sh* in **she**",
+              "*sör* (shör) = beer"
+            ],
+            [
+              "**sz**",
+              "plain **s**, as in **see**",
+              "*szép* (sayp) = beautiful"
+            ],
+            [
+              "**zs**",
+              "**zh** — like the *s* in **measure**",
+              "*zsemle* (ZHEHM-leh) = bread roll"
+            ],
+            [
+              "**cs**",
+              "**ch** — like *ch* in **church**",
+              "*csak* (chawk) = only"
+            ],
+            [
+              "**c**",
+              "**ts** — as in **cats**",
+              "*cukor* (TSOO-kohr) = sugar"
+            ],
+            [
+              "**gy**",
+              "**dy** — a *d* and a *y* fused, like \"during\" said fast",
+              "*magyar* (MAW-dyawr) = Hungarian"
+            ],
+            [
+              "**ty**",
+              "**ty** — a *t* and a *y* fused, like \"tune\" said fast",
+              "*kutya* (KOO-tyaw) = dog"
+            ],
+            [
+              "**ny**",
+              "**ny** — as in **canyon**",
+              "*nyár* (nyahr) = summer"
+            ],
+            [
+              "**j** and **ly**",
+              "**y** as in **yes** — two spellings, one sound",
+              "*jó* (yoh) = good; *hely* (hehy) = place"
+            ],
+            [
+              "**r**",
+              "trilled with the tip of the tongue, as in Spanish or Scottish English",
+              "*rossz* (rohss) = bad"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Watch the pair that gets mixed up most: **s** is read *sh*, while **sz** is read plain *s*. The opposite of what anyone would guess. If you order a *sör* and say \"sor\", the waiter will be confused; \"shör\" is understood at once."
+        },
+        {
+          "type": "sub",
+          "text": "Vowels: long and short change the meaning"
+        },
+        {
+          "type": "p",
+          "text": "The accent marks over vowels (*á, é, í, ó, ő, ú, ű*) are not decoration and not stress marks — they mean the **vowel is held longer**. The difference changes meaning, so it is not just a matter of pretty sound. In the **Say it** column, *a/á* and *e/é* are written differently (aw/ah, eh/ay) because the sounds themselves differ, and *i/í* are written i/ee; for the other long vowels, look at the accent in the Hungarian word."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Letter",
+            "Sounds like",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**a**",
+              "**aw** — between *a* and *o*, lips slightly rounded, short",
+              "*hal* (hawl) = fish"
+            ],
+            [
+              "**á**",
+              "**ah** — long, as in *father*, lips spread",
+              "*hál* (hahl) = he/she sleeps over"
+            ],
+            [
+              "**e**",
+              "**eh** — like *e* in **bed**",
+              "*hegy* (hehdy) = mountain"
+            ],
+            [
+              "**é**",
+              "**ay** — long, like *ay* in **say** but held pure",
+              "*kék* (kayk) = blue"
+            ],
+            [
+              "**i / í**",
+              "short *i* as in **sit** / long *ee* as in **see**",
+              "*ing* (ing) = shirt; *ír* (eer) = he/she writes"
+            ],
+            [
+              "**o / ó**",
+              "**oh** — short / long",
+              "*bor* (bohr) = wine; *jó* (yoh) = good"
+            ],
+            [
+              "**ö / ő**",
+              "**ö** — lips as for *o*, tongue as for *e* (like German *ö* or French *eu*)",
+              "*öt* (öt) = five; *nő* (nö) = woman"
+            ],
+            [
+              "**u / ú**",
+              "**oo** as in **food** — short / long",
+              "*kutya* (KOO-tyaw) = dog; *út* (oot) = road"
+            ],
+            [
+              "**ü / ű**",
+              "**ü** — lips as for *oo*, tongue as for *ee* (like German *ü*)",
+              "*ül* (ül) = he/she sits; *tűz* (tüz) = fire"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three pairs that really differ in meaning",
+          "items": [
+            "*kor* (age, era) — *kór* (disease). Only the vowel length differs.",
+            "*örül* (he/she is glad) — *őrül* (he/she goes mad). One double dot, two worlds.",
+            "*hal* (fish) — *hál* (he/she sleeps over)."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Double consonants are held"
+        },
+        {
+          "type": "p",
+          "text": "*ssz*, *tt*, *ll*, *nny* and their relatives are not just spelling: the sound is really **held twice as long**, like the \"n\" in \"**unnamed**\" said slowly, or the \"t\" in \"**hot tea**\". Compare *hallgat* (HAWLL-gawt, to listen) with *halgat*, which means nothing. In the Say it column, double letters stay double so that you remember to hold them."
+        },
+        {
+          "type": "sub",
+          "text": "A first look: vowel harmony"
+        },
+        {
+          "type": "p",
+          "text": "One thing you should *see* right now, even though you will study it properly in Unit 2. Hungarian vowels are split into two camps, and the camp decides the form of every ending:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Group",
+            "Vowels",
+            "Example word",
+            "Ending \"in\""
+          ],
+          "rows": [
+            [
+              "**Back** (mély)",
+              "a, á, o, ó, u, ú",
+              "*ház* (house)",
+              "*házban*"
+            ],
+            [
+              "**Front** (magas)",
+              "e, é, i, í, ö, ő, ü, ű",
+              "*kert* (garden)",
+              "*kertben*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The two forms *-ban* and *-ben* have **exactly the same meaning and function**. What chooses between them is not meaning but the vowel of the base word. This rule applies to almost every ending in Hungarian — so mastering it once in Unit 2 means finishing most of the work for the rest of the course."
+        }
+      ]
+    }
+  ],
+  "back": [
+    {
+      "title": "A1 grammar summary",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These pages are not study material — they are a place for a quick look when you forget a form in the middle of an exercise. Everything here has already been explained step by step in its own unit."
+        },
+        {
+          "type": "sub",
+          "text": "1. Vowel harmony (Unit 2)"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Group",
+            "Vowels",
+            "Example endings"
+          ],
+          "rows": [
+            [
+              "**Back**",
+              "a, á, o, ó, u, ú",
+              "*-ban, -ból, -ba, -nak, -hoz, -tól, -nál, -val, -ra, -ról*"
+            ],
+            [
+              "**Front, unrounded**",
+              "e, é, i, í",
+              "*-ben, -ből, -be, -nek, -hez, -től, -nél, -vel, -re, -ről*"
+            ],
+            [
+              "**Front, rounded**",
+              "ö, ő, ü, ű",
+              "same as front unrounded, except *-höz* and *-on* becomes *-ön*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The key for mixed words: *e, é, i, í* are **neutral** — they force nothing. So if a word contains even one back vowel (a, á, o, ó, u, ú), its ending follows the back group, even with an *e* or *i* inside: *papír* → *papírban*, *Budapest* → *Budapesten*. Only when a word has *ö, ő, ü, ű* together with a back vowel does the **last** vowel decide."
+        },
+        {
+          "type": "sub",
+          "text": "2. Articles"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Form",
+            "Used",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**a**",
+              "before a consonant",
+              "*a ház*, *a könyv*, *a lány*"
+            ],
+            [
+              "**az**",
+              "before a vowel",
+              "*az alma*, *az ember*, *az óra*"
+            ],
+            [
+              "**egy**",
+              "\"a/an\" — indefinite, often dropped",
+              "*egy könyv*, *egy barát*"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "3. Place and direction endings (Units 4, 12)"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Meaning",
+            "Ending",
+            "Example"
+          ],
+          "rows": [
+            [
+              "in",
+              "*-ban / -ben*",
+              "*a házban* = in the house"
+            ],
+            [
+              "into",
+              "*-ba / -be*",
+              "*a házba* = into the house"
+            ],
+            [
+              "out of",
+              "*-ból / -ből*",
+              "*a házból* = out of the house"
+            ],
+            [
+              "on (a surface)",
+              "*-on / -en / -ön*",
+              "*az asztalon* = on the table"
+            ],
+            [
+              "onto (a surface)",
+              "*-ra / -re*",
+              "*az asztalra* = onto the table"
+            ],
+            [
+              "off / from (a surface)",
+              "*-ról / -ről*",
+              "*az asztalról* = off the table"
+            ],
+            [
+              "at / at (someone's) place",
+              "*-nál / -nél*",
+              "*Annánál* = at Anna's"
+            ],
+            [
+              "to (someone's) place",
+              "*-hoz / -hez / -höz*",
+              "*Annához* = to Anna's"
+            ],
+            [
+              "from (someone's) place",
+              "*-tól / -től*",
+              "*Annától* = from Anna"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The first three rows are for **enclosed spaces**, the next three for **surfaces**, the last three for **people and nearness**. Hungarian towns usually take the surface group (*Budapesten*), foreign cities the enclosed-space group (*Jakartában*)."
+        },
+        {
+          "type": "sub",
+          "text": "4. The object ending -t (Unit 7)"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Base form",
+            "Object form",
+            "Rule"
+          ],
+          "rows": [
+            [
+              "*kenyér*",
+              "*kenyeret*",
+              "after a consonant a linking vowel is usually needed"
+            ],
+            [
+              "*kávé*",
+              "*kávét*",
+              "after a vowel, *-t* attaches directly"
+            ],
+            [
+              "*alma*",
+              "*almát*",
+              "a final *a* lengthens to *á*"
+            ],
+            [
+              "*leves*",
+              "*levest*",
+              "after s, sz, z, r, l, n, j: *-t* directly"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "5. Present tense — indefinite conjugation (Unit 10)"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Person",
+            "*tanul* (back)",
+            "*beszél* (front)",
+            "*ül* (rounded front)"
+          ],
+          "rows": [
+            [
+              "én",
+              "tanul**ok**",
+              "beszél**ek**",
+              "ül**ök**"
+            ],
+            [
+              "te",
+              "tanul**sz**",
+              "beszél**sz**",
+              "ül**sz**"
+            ],
+            [
+              "ő",
+              "tanul",
+              "beszél",
+              "ül"
+            ],
+            [
+              "mi",
+              "tanul**unk**",
+              "beszél**ünk**",
+              "ül**ünk**"
+            ],
+            [
+              "ti",
+              "tanul**tok**",
+              "beszél**tek**",
+              "ül**tök**"
+            ],
+            [
+              "ők",
+              "tanul**nak**",
+              "beszél**nek**",
+              "ül**nek**"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "6. Present tense — definite conjugation (Unit 11)"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Person",
+            "*tanul* (back)",
+            "*kér* (front)",
+            "*főz* (rounded front)"
+          ],
+          "rows": [
+            [
+              "én",
+              "tanul**om**",
+              "kér**em**",
+              "főz**öm**"
+            ],
+            [
+              "te",
+              "tanul**od**",
+              "kér**ed**",
+              "főz**öd**"
+            ],
+            [
+              "ő",
+              "tanul**ja**",
+              "kér**i**",
+              "főz**i**"
+            ],
+            [
+              "mi",
+              "tanul**juk**",
+              "kér**jük**",
+              "főz**zük**"
+            ],
+            [
+              "ti",
+              "tanul**játok**",
+              "kér**itek**",
+              "főz**itek**"
+            ],
+            [
+              "ők",
+              "tanul**ják**",
+              "kér**ik**",
+              "főz**ik**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Use the **definite** form when the object is specific: it has *a/az*, a proper name, a demonstrative, a possessive ending, or *őt/őket*. Use the **indefinite** form when the object is vague, when there is no object at all, or when the object is *engem, téged, minket, titeket*."
+        },
+        {
+          "type": "sub",
+          "text": "7. The most important irregular verbs"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Infinitive",
+            "én",
+            "te",
+            "ő",
+            "mi",
+            "ti",
+            "ők"
+          ],
+          "rows": [
+            [
+              "*lenni* (to be)",
+              "vagyok",
+              "vagy",
+              "van",
+              "vagyunk",
+              "vagytok",
+              "vannak"
+            ],
+            [
+              "*menni* (to go)",
+              "megyek",
+              "mész",
+              "megy",
+              "megyünk",
+              "mentek",
+              "mennek"
+            ],
+            [
+              "*jönni* (to come)",
+              "jövök",
+              "jössz",
+              "jön",
+              "jövünk",
+              "jöttök",
+              "jönnek"
+            ],
+            [
+              "*enni* (to eat)",
+              "eszem",
+              "eszel",
+              "eszik",
+              "eszünk",
+              "esztek",
+              "esznek"
+            ],
+            [
+              "*inni* (to drink)",
+              "iszom",
+              "iszol",
+              "iszik",
+              "iszunk",
+              "isztok",
+              "isznak"
+            ],
+            [
+              "*tenni* (to put)",
+              "teszek",
+              "teszel",
+              "tesz",
+              "teszünk",
+              "tesztek",
+              "tesznek"
+            ],
+            [
+              "*venni* (to buy)",
+              "veszek",
+              "veszel",
+              "vesz",
+              "veszünk",
+              "vesztek",
+              "vesznek"
+            ],
+            [
+              "*tudni* (can / to know)",
+              "tudok",
+              "tudsz",
+              "tud",
+              "tudunk",
+              "tudtok",
+              "tudnak"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "8. Possessive endings (Unit 5)"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Owner",
+            "after a consonant",
+            "example *ház*",
+            "example *kert*"
+          ],
+          "rows": [
+            [
+              "my",
+              "*-om / -em / -öm*",
+              "ház**am**",
+              "kert**em**"
+            ],
+            [
+              "your (sg.)",
+              "*-od / -ed / -öd*",
+              "ház**ad**",
+              "kert**ed**"
+            ],
+            [
+              "his/her/its",
+              "*-a / -e*",
+              "ház**a**",
+              "kert**je**"
+            ],
+            [
+              "our",
+              "*-unk / -ünk*",
+              "ház**unk**",
+              "kert**ünk**"
+            ],
+            [
+              "your (pl.)",
+              "*-otok / -etek / -ötök*",
+              "ház**atok**",
+              "kert**etek**"
+            ],
+            [
+              "their",
+              "*-uk / -ük*",
+              "ház**uk**",
+              "kert**jük**"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "9. Past tense (Units 18-19)"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Person",
+            "indefinite *tanul*",
+            "definite *tanul*"
+          ],
+          "rows": [
+            [
+              "én",
+              "tanul**tam**",
+              "tanul**tam**"
+            ],
+            [
+              "te",
+              "tanul**tál**",
+              "tanul**tad**"
+            ],
+            [
+              "ő",
+              "tanul**t**",
+              "tanul**ta**"
+            ],
+            [
+              "mi",
+              "tanul**tunk**",
+              "tanul**tuk**"
+            ],
+            [
+              "ti",
+              "tanul**tatok**",
+              "tanul**tátok**"
+            ],
+            [
+              "ők",
+              "tanul**tak**",
+              "tanul**ták**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*lenni* in the past: *voltam, voltál, volt, voltunk, voltatok, voltak*. Its negative is *nem volt*, not *nincs* — *nincs* lives only in the present."
+        },
+        {
+          "type": "sub",
+          "text": "10. Negation"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Form",
+            "Used for",
+            "Example"
+          ],
+          "rows": [
+            [
+              "*nem*",
+              "negating a verb or an adjective",
+              "*Nem tudom.* = I don't know."
+            ],
+            [
+              "*nincs / nincsenek*",
+              "negating existence (*van/vannak*)",
+              "*Nincs pénzem.* = I have no money."
+            ],
+            [
+              "*ne*",
+              "prohibiting (commands)",
+              "*Ne menj!* = Don't go!"
+            ],
+            [
+              "*se / sem*",
+              "\"neither / not ... either\"",
+              "*Én sem tudom.* = I don't know either."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "11. The most common verbal prefixes (Unit 12)"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Prefix",
+            "Basic meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "*be-*",
+              "in",
+              "*bemegy* = he/she goes in"
+            ],
+            [
+              "*ki-*",
+              "out",
+              "*kimegy* = he/she goes out"
+            ],
+            [
+              "*fel-*",
+              "up",
+              "*felmegy* = he/she goes up"
+            ],
+            [
+              "*le-*",
+              "down",
+              "*lemegy* = he/she goes down"
+            ],
+            [
+              "*el-*",
+              "away; completion",
+              "*elmegy* = he/she leaves"
+            ],
+            [
+              "*meg-*",
+              "completing the action",
+              "*megeszi* = he/she eats it up"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "When there is a *nem* or a question word, the prefix **moves behind** the verb: *Nem megyek el.* = I am not going (away)."
+        }
+      ]
+    },
+    {
+      "title": "The most frequently used verbs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The thirty-four verbs below cover most everyday conversation at A1. The form written is the dictionary form (*ő*, third person singular, indefinite) — the shortest form and the one you will meet most often."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "van",
+              "vawn",
+              "is; there is"
+            ],
+            [
+              "nincs",
+              "ninch",
+              "there isn't"
+            ],
+            [
+              "megy",
+              "mehdy",
+              "to go"
+            ],
+            [
+              "jön",
+              "yön",
+              "to come"
+            ],
+            [
+              "lakik",
+              "LAW-kik",
+              "to live (reside)"
+            ],
+            [
+              "dolgozik",
+              "DOHL-goh-zik",
+              "to work"
+            ],
+            [
+              "tanul",
+              "TAW-nool",
+              "to study"
+            ],
+            [
+              "tanít",
+              "TAW-neet",
+              "to teach"
+            ],
+            [
+              "beszél",
+              "BEH-sayl",
+              "to speak"
+            ],
+            [
+              "ért",
+              "ayrt",
+              "to understand"
+            ],
+            [
+              "tud",
+              "tood",
+              "can; to know"
+            ],
+            [
+              "ismer",
+              "ISH-mehr",
+              "to know (a person)"
+            ],
+            [
+              "gondol",
+              "GOHN-dohl",
+              "to think"
+            ],
+            [
+              "kér",
+              "kayr",
+              "to ask for"
+            ],
+            [
+              "kap",
+              "kawp",
+              "to receive"
+            ],
+            [
+              "ad",
+              "awd",
+              "to give"
+            ],
+            [
+              "vesz",
+              "vehs",
+              "to buy; to take"
+            ],
+            [
+              "elad",
+              "EHL-awd",
+              "to sell"
+            ],
+            [
+              "fizet",
+              "FI-zeht",
+              "to pay"
+            ],
+            [
+              "eszik",
+              "EH-sik",
+              "to eat"
+            ],
+            [
+              "iszik",
+              "I-sik",
+              "to drink"
+            ],
+            [
+              "főz",
+              "föz",
+              "to cook"
+            ],
+            [
+              "alszik",
+              "AWL-sik",
+              "to sleep"
+            ],
+            [
+              "kel fel",
+              "kehl fehl",
+              "to get up"
+            ],
+            [
+              "ül",
+              "ül",
+              "to sit"
+            ],
+            [
+              "áll",
+              "ahll",
+              "to stand"
+            ],
+            [
+              "megáll",
+              "MEHG-ahll",
+              "to stop"
+            ],
+            [
+              "indul",
+              "IN-dool",
+              "to depart"
+            ],
+            [
+              "érkezik",
+              "AYR-keh-zik",
+              "to arrive"
+            ],
+            [
+              "utazik",
+              "OO-taw-zik",
+              "to travel"
+            ],
+            [
+              "sétál",
+              "SHAY-tahl",
+              "to stroll"
+            ],
+            [
+              "fut",
+              "foot",
+              "to run"
+            ],
+            [
+              "olvas",
+              "OHL-vawsh",
+              "to read"
+            ],
+            [
+              "ír",
+              "eer",
+              "to write"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "What's next",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "If you have reached this page after really working through all twenty units, you now have a complete A1: you can introduce yourself, ask for directions, order food, shop, tell about yesterday and make plans for tomorrow. More importantly, you have gotten past the three barriers that make many people quit — vowel harmony, place endings and the two verb conjugations."
+        },
+        {
+          "type": "p",
+          "text": "To step up to A2, these three things give the fastest return:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**The conditional (*feltételes mód*).** The *szeretnék* you have used since Unit 7 is actually this form. Completing it — *tudnék, mennék, kérnék* — immediately makes your Hungarian sound far more polite and grown-up.",
+            "**Verbal prefixes, seriously.** At A1 you used them as direction markers. At A2 you will find that prefixes change the meaning completely: *néz* (to look) → *megnéz* (to watch to the end) → *kinéz* (to look like) → *elnéz* (to forgive).",
+            "**The imperative (*felszólító mód*).** This form is also used for \"so that\", so mastering it opens up complex sentences: *Azt akarom, hogy gyere.* = I want you to come."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "And one piece of advice that is not grammar: **find listening material**. Hungarian has no close relatives, so there is no shortcut through another language — your ear has to be built from scratch, and that takes only time, not talent. Songs, short news or cooking videos in Hungarian for thirty minutes a week work better than yet another grammar book."
+        },
+        {
+          "type": "p",
+          "text": "*Sok sikert, és jó tanulást!* — Good luck, and happy studying!"
+        }
+      ]
+    }
+  ],
+  "labels": {
+    "unit": "Unit",
+    "dialog": "Dialogue",
+    "notes": "Notes",
+    "vocab": "Vocabulary in this unit",
+    "exercises": "Exercises",
+    "answers": "Answer key",
+    "bekal": "By the end of this unit you can:",
+    "literal": "literally:",
+    "wave": "Wave review:",
+    "bagian": "Part"
+  }
+}

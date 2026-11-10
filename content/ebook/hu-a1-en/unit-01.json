@@ -1,0 +1,507 @@
+{
+  "title": "Hello, what's your name?",
+  "title_target": "Szia! Hogy hívnak?",
+  "goal": "Greet people at the right time and level of politeness, say your name, ask how someone is, and see why the verb \"to be\" goes missing in Hungarian exactly where you would use it most.",
+  "bekal": [
+    "greet with *szia*, *jó napot* and *jó reggelt* in the right place",
+    "give your name with *…vagyok* or *…nak hívnak*, and ask someone else's",
+    "build third-person sentences with no verb at all — \"to be\" is simply left out"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Első nap a nyelviskolában",
+      "intro": "The first day of a language course at a nyelviskola in Budapest. Two new students sit side by side.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Szia! Hogy hívnak?",
+          "id": "Hi! What's your name?",
+          "literal": "hi! how they-call-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Szia! Budi vagyok. És téged?",
+          "id": "Hi! I'm Budi. And you?",
+          "literal": "hi! Budi I-am. and you-OBJ?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Anna vagyok. Nagyon örülök!",
+          "id": "I'm Anna. Nice to meet you!",
+          "literal": "Anna I-am. very I-am-glad!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Én is örülök. Hogy vagy?",
+          "id": "Nice to meet you too. How are you?",
+          "literal": "I also I-am-glad. how you-are?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Köszönöm, jól vagyok. És te?",
+          "id": "Thanks, I'm fine. And you?",
+          "literal": "I-thank, well I-am. and you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Én is jól vagyok. Magyar vagy?",
+          "id": "I'm fine too. Are you Hungarian?",
+          "literal": "I also well I-am. Hungarian you-are?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Igen, magyar vagyok. Te kínai vagy?",
+          "id": "Yes, I'm Hungarian. Are you Chinese?",
+          "literal": "yes, Hungarian I-am. you Chinese you-are?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nem, indonéz vagyok. Jakartából jövök.",
+          "id": "No, I'm Indonesian. I come from Jakarta.",
+          "literal": "no, Indonesian I-am. Jakarta-from I-come."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Milyen érdekes! Isten hozott Magyarországon!",
+          "id": "How interesting! Welcome to Hungary!",
+          "literal": "how interesting! God brought Hungary-in!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Köszönöm szépen! Holnap találkozunk, Anna.",
+          "id": "Thank you very much! See you tomorrow, Anna.",
+          "literal": "I-thank beautifully! tomorrow we-meet, Anna."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Viszlát! Szia!",
+          "id": "Goodbye! Bye!",
+          "literal": "until-seeing! hi!"
+        }
+      ],
+      "notes": [
+        "**Szia works both ways.** One word for both \"hi\" and \"bye\" — just like Italian *ciao*. To more than one person it becomes *sziasztok*: Hungarian tells \"you\" (one person) and \"you all\" apart even inside a greeting.",
+        "**Hogy hívnak? is not \"what is your name\".** Literally it is \"how do they call you\". It is a full sentence with the verb *hív* (to call) — the subject is a vague \"they\", like English \"what do people call you?\". You can answer in two ways: *Budi vagyok* (easiest) or *Budinak hívnak* (\"they call me Budi\"). *A nevem Budi* (\"my name is Budi\") is also correct, but it sounds like filling in a form.",
+        "**Örülök literally means \"I am glad\".** It is used exactly like \"nice to meet you\". The more formal version is *Örvendek*. Notice that the verb already carries its subject in the ending — *örül-ök* means \"glad-I\", so the *én* in front can be dropped.",
+        "**No \"is/are\" in the third person.** Look closely: for I and you there is a verb (*vagyok*, *vagy*), but for *ő* there is nothing. *Ő magyar* = \"He/She is Hungarian\", two words, full stop. English insists on \"is\" everywhere; Hungarian simply leaves it out when you say who or what someone is.",
+        "**No masculine and feminine.** *Ő* means \"he\" and \"she\" alike. Hungarian has no *he/she*, no *der/die/das*, and adjectives do not change with gender. If you have ever fought with gender in French, German or Spanish, you can relax."
+      ],
+      "grammars": [
+        {
+          "title": "Lenni — the verb \"to be\" that half disappears",
+          "body": [
+            "The first verb you must master. The most important lesson is not its forms, but the two boxes that are deliberately left empty."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Say it",
+              "lenni",
+              "meaning"
+            ],
+            "rows": [
+              [
+                "én",
+                "ayn",
+                "**vagyok**",
+                "I am"
+              ],
+              [
+                "te",
+                "teh",
+                "**vagy**",
+                "you are"
+              ],
+              [
+                "ő",
+                "ö",
+                "— *(van)*",
+                "he/she is"
+              ],
+              [
+                "mi",
+                "mi",
+                "**vagyunk**",
+                "we are"
+              ],
+              [
+                "ti",
+                "ti",
+                "**vagytok**",
+                "you (pl.) are"
+              ],
+              [
+                "ők",
+                "ök",
+                "— *(vannak)*",
+                "they are"
+              ]
+            ]
+          },
+          "after": [
+            "The two bracketed rows stay empty when the sentence **says who or what something is**: *Ő tanár* (He/She is a teacher), *Ők diákok* (They are students). There is no verb at all, and adding *van* there would be wrong.",
+            "*Van* and *vannak* come back as soon as the sentence is about **existence or location**: *A könyv az asztalon van* (The book is on the table), *Anna itthon van* (Anna is at home). The full rule comes in Unit 4.",
+            "Note also that *én*, *te*, *mi*, *ti* may be dropped, because the verb ending already carries the subject: *Jól vagyok* clearly means \"I'm well\". Pronouns are used when you want to **stress** them: *Én jól vagyok* = \"As for me, I'm fine\"."
+          ]
+        },
+        {
+          "title": "Personal pronouns",
+          "body": [
+            "Six forms, no gender. Only the last two (polite) rows need your attention."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "**én**",
+                "ayn",
+                "I"
+              ],
+              [
+                "**te**",
+                "teh",
+                "you (informal)"
+              ],
+              [
+                "**ő**",
+                "ö",
+                "he or she"
+              ],
+              [
+                "**mi**",
+                "mi",
+                "we"
+              ],
+              [
+                "**ti**",
+                "ti",
+                "you (pl.)"
+              ],
+              [
+                "**ők**",
+                "ök",
+                "they"
+              ],
+              [
+                "**ön**",
+                "ön",
+                "you (polite, singular)"
+              ],
+              [
+                "**önök**",
+                "Ö-nök",
+                "you (polite, plural)"
+              ]
+            ]
+          },
+          "after": [
+            "**Ön takes the third-person verb form**, not the second: *Ön magyar?* (Are you Hungarian?), not *Ön magyar vagy?*. Hungarian talks *about* you instead of *to* you — a polite distance that German and Italian also use.",
+            "There is a second polite form, *maga*, which is grammatically the same but can sound cold or accusing. As a beginner, stick with *ön* and you are safe."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Sentences that keep you afloat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The eight phrases below are not grammar to memorize — they are emergency tools. Learn them whole now; understand how they are built later."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Igen / Nem",
+              "I-gehn / nehm",
+              "Yes / No"
+            ],
+            [
+              "Köszönöm",
+              "KÖ-sö-nöm",
+              "Thank you"
+            ],
+            [
+              "Szívesen",
+              "SEE-veh-shehn",
+              "You're welcome"
+            ],
+            [
+              "Bocsánat",
+              "BOH-chah-nawt",
+              "Sorry"
+            ],
+            [
+              "Elnézést",
+              "EHL-nay-zaysht",
+              "Excuse me (to get attention)"
+            ],
+            [
+              "Tessék",
+              "TEHSH-shayk",
+              "Please; here you are"
+            ],
+            [
+              "Nem értem",
+              "nehm AYR-tehm",
+              "I don't understand"
+            ],
+            [
+              "Nem tudom",
+              "nehm TOO-dohm",
+              "I don't know"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Tessék* is the most versatile word in Hungarian. It means \"please, go ahead\" when inviting someone to sit, \"here you are\" when handing something over, \"hello?\" when answering the phone, and \"yes?\" when a waiter walks up to your table. If you memorize only one word from this page, make it this one."
+        },
+        {
+          "type": "p",
+          "text": "*Bocsánat* is for apologizing, *elnézést* for getting someone's attention. Many speakers use them interchangeably, but picking the right one instantly sounds polished."
+        }
+      ]
+    },
+    {
+      "title": "Greetings by time of day and politeness",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Hungarian sorts its greetings on two axes at once: what time it is, and how close you are to the other person. This table covers both."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "When to use it"
+          ],
+          "rows": [
+            [
+              "**Jó reggelt!**",
+              "yoh REHG-gehlt",
+              "Good morning — until about 9 a.m."
+            ],
+            [
+              "**Jó napot!**",
+              "yoh NAW-poht",
+              "Good day — all day long, the safest polite greeting"
+            ],
+            [
+              "**Jó estét!**",
+              "yoh EHSH-tayt",
+              "Good evening — from dusk"
+            ],
+            [
+              "**Jó éjszakát!**",
+              "yoh AY-saw-kaht",
+              "Good night — only when parting to go to sleep"
+            ],
+            [
+              "**Szia!**",
+              "SI-aw",
+              "Hi/bye — informal, one person"
+            ],
+            [
+              "**Sziasztok!**",
+              "SI-aws-tohk",
+              "Hi/bye — informal, several people"
+            ],
+            [
+              "**Helló!**",
+              "HEHL-loh",
+              "Hello — informal, a bit modern"
+            ],
+            [
+              "**Viszontlátásra!**",
+              "VI-sohnt-lah-tahsh-raw",
+              "Goodbye — fully formal"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The polite form is actually longer: *Jó napot kívánok!* — literally \"I wish you a good day\". Adding *kívánok* makes your greeting sound very polished, and it is free. Hungarians use it in offices, shops, and every time they walk into a room full of strangers."
+        },
+        {
+          "type": "p",
+          "text": "One habit worth copying: in Hungary, **entering a small space means greeting**. Lift, doctor's waiting room, train compartment — people say *jó napot* to people they do not know, and staying silent actually feels rude."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "szia",
+      "baca": "SI-aw",
+      "en": "hi; bye (informal)"
+    },
+    {
+      "hu": "sziasztok",
+      "baca": "SI-aws-tohk",
+      "en": "hi; bye (to several people)"
+    },
+    {
+      "hu": "jó reggelt",
+      "baca": "yoh REHG-gehlt",
+      "en": "good morning"
+    },
+    {
+      "hu": "jó napot",
+      "baca": "yoh NAW-poht",
+      "en": "good day"
+    },
+    {
+      "hu": "jó estét",
+      "baca": "yoh EHSH-tayt",
+      "en": "good evening"
+    },
+    {
+      "hu": "viszlát",
+      "baca": "VIS-laht",
+      "en": "goodbye"
+    },
+    {
+      "hu": "hogy",
+      "baca": "hohdy",
+      "en": "how"
+    },
+    {
+      "hu": "hív",
+      "baca": "heev",
+      "en": "to call"
+    },
+    {
+      "hu": "vagyok",
+      "baca": "VAW-dyohk",
+      "en": "I am"
+    },
+    {
+      "hu": "vagy",
+      "baca": "vawdy",
+      "en": "you are"
+    },
+    {
+      "hu": "és",
+      "baca": "aysh",
+      "en": "and"
+    },
+    {
+      "hu": "nagyon",
+      "baca": "NAW-dyohn",
+      "en": "very"
+    },
+    {
+      "hu": "örül",
+      "baca": "Ö-rül",
+      "en": "glad"
+    },
+    {
+      "hu": "is",
+      "baca": "ish",
+      "en": "also; too"
+    },
+    {
+      "hu": "köszönöm",
+      "baca": "KÖ-sö-nöm",
+      "en": "thank you"
+    },
+    {
+      "hu": "szívesen",
+      "baca": "SEE-veh-shehn",
+      "en": "you're welcome"
+    },
+    {
+      "hu": "jól",
+      "baca": "yohl",
+      "en": "well (state)"
+    },
+    {
+      "hu": "igen",
+      "baca": "I-gehn",
+      "en": "yes"
+    },
+    {
+      "hu": "nem",
+      "baca": "nehm",
+      "en": "no; not"
+    },
+    {
+      "hu": "magyar",
+      "baca": "MAW-dyawr",
+      "en": "Hungarian (adj.); a Hungarian; the language"
+    },
+    {
+      "hu": "indonéz",
+      "baca": "IN-doh-nayz",
+      "en": "Indonesian (adj.); an Indonesian"
+    },
+    {
+      "hu": "kínai",
+      "baca": "KEE-naw-i",
+      "en": "Chinese (adj.); a Chinese person"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Hungarian.",
+      "items": [
+        "Hi! What's your name?",
+        "I'm Budi.",
+        "I'm Indonesian.",
+        "How are you?",
+        "Thank you, I'm fine.",
+        "Are you Hungarian?"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right pronoun or form of lenni.",
+      "items": [
+        "____ Anna vagyok. (I)",
+        "Te magyar ____? (form of lenni)",
+        "Ő tanár, és ____ diák vagyok. (I)",
+        "Mi diákok ____. (form of lenni)",
+        "____ jól vagytok? (you all)",
+        "____ magyarok. (they)"
+      ]
+    },
+    {
+      "prompt": "Choose the right greeting. Write out the full sentence.",
+      "items": [
+        "You walk into a bakery at seven in the morning. You say to the baker ____.",
+        "You meet a classmate in the canteen at eleven. You say ____.",
+        "You walk into a restaurant at eight in the evening. You say to the waiter ____.",
+        "You part with your professor at the end of the corridor, formally. You say ____.",
+        "You say goodbye to three classmates at once. You say ____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "vagyok / Anna / én",
+        "vagy / magyar / te / ?",
+        "hívnak / hogy / ?",
+        "jól / köszönöm / vagyok / ,",
+        "vagyok / nem / magyar / én"
+      ]
+    }
+  ],
+  "answers": [
+    "Szia! Hogy hívnak? — Budi vagyok. — Indonéz vagyok. — Hogy vagy? — Köszönöm, jól vagyok. — Magyar vagy?",
+    "Én — vagy — én — vagyunk — Ti — Ők",
+    "Jó reggelt! — Szia! — Jó estét! — Viszontlátásra! — Sziasztok!",
+    "Én Anna vagyok. — Te magyar vagy? — Hogy hívnak? — Köszönöm, jól vagyok. — Én nem vagyok magyar."
+  ]
+}

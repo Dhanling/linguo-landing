@@ -1,0 +1,602 @@
+{
+  "title": "What time is it? — and a pleasant surprise",
+  "title_target": "Hány óra van?",
+  "goal": "Tell the time, the days and the parts of the day — and discover that Hungarian reads the half hour in a way that is the opposite of what English speakers expect, so it is worth learning on purpose.",
+  "bekal": [
+    "answer *Hány óra van?* with *fél*, *negyed* and *háromnegyed*",
+    "say when something happens with the ending *-kor*",
+    "name the days of the week with their \"on that day\" forms"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Mikor kezdődik a film?",
+      "intro": "Late afternoon at a bus stop. Budi and Anna are planning to see a film at the Toldi mozi.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Bocsánat, hány óra van?",
+          "id": "Excuse me, what time is it?",
+          "literal": "sorry, how-many hour is?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Fél hét. Miért?",
+          "id": "Half past six. Why?",
+          "literal": "half-to-seven. why?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mert hétkor kezdődik a film.",
+          "id": "Because the film starts at seven.",
+          "literal": "because seven-at it-starts the film."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Akkor még van idő. A mozi közel van.",
+          "id": "Then there's still time. The cinema is close.",
+          "literal": "then still is time. the cinema near is."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mikor jön a következő busz?",
+          "id": "When does the next bus come?",
+          "literal": "when it-comes the next bus?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Tíz perc múlva, háromnegyed hétkor.",
+          "id": "In ten minutes, at a quarter to seven.",
+          "literal": "ten minute from-now, three-quarters-toward-seven-at."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jó. Akkor hét óra előtt ott vagyunk.",
+          "id": "Good. Then we'll be there before seven.",
+          "literal": "good. then seven hour before there we-are."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Remek. Utána vacsorázunk?",
+          "id": "Great. Dinner afterwards?",
+          "literal": "great. afterwards we-dine?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Igen, de nem túl későn.",
+          "id": "Yes, but not too late.",
+          "literal": "yes, but not too late-ly."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Miért? Holnap korán kelsz?",
+          "id": "Why? Are you getting up early tomorrow?",
+          "literal": "why? tomorrow early you-get-up?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Igen, hatkor. Nyolckor kezdődik a munkám.",
+          "id": "Yes, at six. My work starts at eight.",
+          "literal": "yes, six-at. eight-at it-starts the work-my."
+        }
+      ],
+      "notes": [
+        "**Fél hét means 6:30, not 7:30 — a trap for English speakers.** Hungarian counts the half hour **toward the next hour**: *fél hét* is \"half (the way) to seven\". In English, \"half seven\" is heard by many people as 7:30, so your instinct will pull you the wrong way. Train yourself on purpose: whenever you hear *fél*, subtract from the next hour.",
+        "**Negyed and háromnegyed follow the same logic.** *Negyed hét* = 6:15 (a quarter of the way to seven), *háromnegyed hét* = 6:45 (three quarters of the way). English has no equivalent, but once *fél* feels natural, these two come along with it.",
+        "**Hétkor, nyolckor, hatkor.** The ending *-kor* means \"at (that hour)\". It is one of the few Hungarian endings that **does not obey vowel harmony** — it is always *-kor*, whatever the vowels of the base word. Enjoy it; this language rarely hands out such small gifts.",
+        "**Two different time questions.** *Hány óra van?* asks what time it is **now**. *Hánykor?* or *Mikor?* asks **when** something happens. Mixing them up is the beginner mistake that most often produces confusing answers.",
+        "**Tíz perc múlva** literally means \"ten minutes passing\" — it means \"in ten minutes\". Its lookalike *tíz perce* means \"ten minutes ago\". Two similar words, two opposite directions in time.",
+        "**Mert answers miért.** The two share a root, which makes life easy: *Miért?* (why) is answered with *Mert…* (because). Don't confuse *mert* with *mint* (as, than)."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "Hungarian divides the hour into quarters and counts forward to the next hour. The table uses seven o'clock as its example."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Magyar",
+              "Say it",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "6:00",
+                "*hat óra*",
+                "hawt OH-raw",
+                "six hour"
+              ],
+              [
+                "6:15",
+                "*negyed hét*",
+                "NEH-dyehd hayt",
+                "quarter toward seven"
+              ],
+              [
+                "6:30",
+                "*fél hét*",
+                "fayl hayt",
+                "half toward seven"
+              ],
+              [
+                "6:45",
+                "*háromnegyed hét*",
+                "HAH-rohm-neh-dyehd hayt",
+                "three-quarters toward seven"
+              ],
+              [
+                "6:50",
+                "*tíz perc múlva hét*",
+                "teez pehrts MOOL-vaw hayt",
+                "ten minutes from-now seven"
+              ],
+              [
+                "7:00",
+                "*hét óra*",
+                "hayt OH-raw",
+                "seven hour"
+              ],
+              [
+                "7:10",
+                "*hét óra tíz perc*",
+                "hayt OH-raw teez pehrts",
+                "seven hour ten minute"
+              ]
+            ]
+          },
+          "after": [
+            "**For official schedules, Hungarians use the long form**: *tizennyolc óra harminc perc* (18:30) at stations, airports and on television. The *fél hét* way is used in everyday conversation.",
+            "**Morning and evening are told apart with words, not numbers.** *reggel hétkor* (seven in the morning), *este hétkor* (seven in the evening). Everyday Hungarian uses the 12-hour clock, just like English."
+          ]
+        },
+        {
+          "title": "When? The ending -kor and its relatives",
+          "body": [
+            "The time of an event is marked with an ending, just as place is."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Say it",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "*-kor*",
+                "-kohr",
+                "at (an hour)",
+                "*hétkor* = at seven o'clock"
+              ],
+              [
+                "*-n / -on / -en / -ön*",
+                "",
+                "on (a day)",
+                "*hétfőn* = on Monday"
+              ],
+              [
+                "*-ban / -ben*",
+                "",
+                "in (a month/year)",
+                "*januárban* = in January"
+              ],
+              [
+                "*előtt*",
+                "EH-lött",
+                "before",
+                "*hét óra előtt* = before seven o'clock"
+              ],
+              [
+                "*után*",
+                "OO-tahn",
+                "after",
+                "*hét óra után* = after seven o'clock"
+              ],
+              [
+                "*-ig*",
+                "-ig",
+                "until",
+                "*hétig* = until seven"
+              ],
+              [
+                "*-tól / -től*",
+                "",
+                "since; from",
+                "*héttől* = from seven on"
+              ],
+              [
+                "*múlva*",
+                "MOOL-vaw",
+                "from now; in",
+                "*tíz perc múlva* = in ten minutes"
+              ]
+            ]
+          },
+          "after": [
+            "*Előtt* and *után* are *névutó* — postpositions that stand on their own, like *mellett* in Unit 4. The noun stays bare.",
+            "The pair *-tól … -ig* covers a whole stretch: *kilenctől ötig dolgozom* = I work from nine to five. You will use this pattern often when describing a working day in Unit 10."
+          ]
+        },
+        {
+          "title": "Days of the week",
+          "body": [
+            "Look at the last row — it is the only one that takes no ending at all."
+          ],
+          "table": {
+            "head": [
+              "Day",
+              "Say it",
+              "On that day…",
+              "English"
+            ],
+            "rows": [
+              [
+                "*hétfő*",
+                "HAYT-fö",
+                "*hétfőn*",
+                "Monday"
+              ],
+              [
+                "*kedd*",
+                "kehdd",
+                "*kedden*",
+                "Tuesday"
+              ],
+              [
+                "*szerda*",
+                "SEHR-daw",
+                "*szerdán*",
+                "Wednesday"
+              ],
+              [
+                "*csütörtök*",
+                "CHÜ-tör-tök",
+                "*csütörtökön*",
+                "Thursday"
+              ],
+              [
+                "*péntek*",
+                "PAYN-tehk",
+                "*pénteken*",
+                "Friday"
+              ],
+              [
+                "*szombat*",
+                "SOHM-bawt",
+                "*szombaton*",
+                "Saturday"
+              ],
+              [
+                "*vasárnap*",
+                "VAW-shahr-nawp",
+                "*vasárnap*",
+                "Sunday"
+              ]
+            ]
+          },
+          "after": [
+            "*Hétfő* literally means \"head of the week\" — and since *hét* means both seven and week, the name makes sense twice. *Vasárnap* means \"market day\", and because it already contains the word *nap* (day), it needs no ending.",
+            "*Hétvége* means weekend — literally \"end of the week\". \"On the weekend\" is *hétvégén*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Parts of the day and time words",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "reggel",
+              "REHG-gehl",
+              "morning (until about 9)"
+            ],
+            [
+              "délelőtt",
+              "DAYL-eh-lött",
+              "late morning"
+            ],
+            [
+              "dél",
+              "dayl",
+              "noon"
+            ],
+            [
+              "délután",
+              "DAYL-oo-tahn",
+              "afternoon"
+            ],
+            [
+              "este",
+              "EHSH-teh",
+              "evening"
+            ],
+            [
+              "éjszaka",
+              "AY-saw-kaw",
+              "night (late)"
+            ],
+            [
+              "ma",
+              "maw",
+              "today"
+            ],
+            [
+              "holnap",
+              "HOHL-nawp",
+              "tomorrow"
+            ],
+            [
+              "holnapután",
+              "HOHL-nawp-oo-tahn",
+              "the day after tomorrow"
+            ],
+            [
+              "tegnap",
+              "TEHG-nawp",
+              "yesterday"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that *délelőtt* and *délután* are built from *dél* (noon) plus *előtt* and *után* — \"before noon\" and \"after noon\". Hungarian likes to build long words out of pieces you already know, and once you notice this, the vocabulary stops feeling foreign."
+        }
+      ]
+    },
+    {
+      "title": "Months and dates",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "rows": [
+            [
+              "*január*",
+              "*február*",
+              "*március*",
+              "*április*"
+            ],
+            [
+              "*május*",
+              "*június*",
+              "*július*",
+              "*augusztus*"
+            ],
+            [
+              "*szeptember*",
+              "*október*",
+              "*november*",
+              "*december*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Month names are very close to English, so there is nothing to memorize — just watch the spelling: *március* with **c** read as *ts*, and *augusztus* with **sz** read as *s*."
+        },
+        {
+          "type": "p",
+          "text": "Dates are written from big to small, like an address: **2026. augusztus 24.** Read it as *kétezer-huszonhat augusztus huszonnegyedike*. Note that the day uses an ordinal number ending in *-e*: *elseje* (the 1st), *másodika* (the 2nd), *huszonnegyedike* (the 24th)."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Hányadika van ma?",
+              "HAH-nyaw-di-kaw vawn maw",
+              "What's the date today?"
+            ],
+            [
+              "Ma augusztus huszonnegyedike van.",
+              "maw AWOO-goos-toosh HOO-sohn-neh-dyeh-di-keh vawn",
+              "Today is the 24th of August."
+            ],
+            [
+              "Milyen nap van ma?",
+              "MI-yehn nawp vawn maw",
+              "What day is it today?"
+            ],
+            [
+              "Ma hétfő van.",
+              "maw HAYT-fö vawn",
+              "Today is Monday."
+            ],
+            [
+              "Mikor van a születésnapod?",
+              "MI-kohr vawn aw SÜ-leh-taysh-naw-pohd",
+              "When is your birthday?"
+            ],
+            [
+              "Májusban.",
+              "MAH-yoosh-bawn",
+              "In May."
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "óra",
+      "baca": "OH-raw",
+      "en": "hour; o'clock"
+    },
+    {
+      "hu": "perc",
+      "baca": "pehrts",
+      "en": "minute"
+    },
+    {
+      "hu": "idő",
+      "baca": "I-dö",
+      "en": "time; weather"
+    },
+    {
+      "hu": "negyed",
+      "baca": "NEH-dyehd",
+      "en": "quarter"
+    },
+    {
+      "hu": "háromnegyed",
+      "baca": "HAH-rohm-neh-dyehd",
+      "en": "three quarters"
+    },
+    {
+      "hu": "mikor",
+      "baca": "MI-kohr",
+      "en": "when"
+    },
+    {
+      "hu": "hánykor",
+      "baca": "HAHNY-kohr",
+      "en": "at what time"
+    },
+    {
+      "hu": "múlva",
+      "baca": "MOOL-vaw",
+      "en": "in…; from now"
+    },
+    {
+      "hu": "miért",
+      "baca": "MI-ayrt",
+      "en": "why"
+    },
+    {
+      "hu": "mert",
+      "baca": "mehrt",
+      "en": "because"
+    },
+    {
+      "hu": "kezdődik",
+      "baca": "KEHZ-dö-dik",
+      "en": "to begin; to start"
+    },
+    {
+      "hu": "végződik",
+      "baca": "VAYG-zö-dik",
+      "en": "to end"
+    },
+    {
+      "hu": "következő",
+      "baca": "KÖ-veht-keh-zö",
+      "en": "next"
+    },
+    {
+      "hu": "mozi",
+      "baca": "MOH-zi",
+      "en": "cinema"
+    },
+    {
+      "hu": "film",
+      "baca": "film",
+      "en": "film"
+    },
+    {
+      "hu": "utána",
+      "baca": "OO-tah-naw",
+      "en": "afterwards"
+    },
+    {
+      "hu": "vacsorázik",
+      "baca": "VAW-choh-rah-zik",
+      "en": "to have dinner"
+    },
+    {
+      "hu": "kel",
+      "baca": "kehl",
+      "en": "to get up"
+    },
+    {
+      "hu": "munka",
+      "baca": "MOON-kaw",
+      "en": "work"
+    },
+    {
+      "hu": "remek",
+      "baca": "REH-mehk",
+      "en": "great"
+    },
+    {
+      "hu": "túl",
+      "baca": "tool",
+      "en": "too; overly"
+    },
+    {
+      "hu": "hétvége",
+      "baca": "HAYT-vay-geh",
+      "en": "weekend"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the time in Hungarian.",
+      "items": [
+        "6:30",
+        "7:15",
+        "8:45",
+        "9:00",
+        "10:30",
+        "11:15"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right time form.",
+      "items": [
+        "A film ____ kezdődik. (at seven)",
+        "____ dolgozom. (on Monday)",
+        "____ van a születésnapom. (in May)",
+        "____ kelek. (at six)",
+        "____ jön a busz. (in ten minutes)",
+        "____ nem dolgozom. (on Sunday)"
+      ]
+    },
+    {
+      "prompt": "Translate into Hungarian.",
+      "items": [
+        "What time is it?",
+        "Half past six.",
+        "The film starts at seven.",
+        "When does the next bus come?",
+        "I'm getting up early tomorrow.",
+        "What day is it today?"
+      ]
+    },
+    {
+      "prompt": "Spiral review — Unit 7. Translate into Hungarian without looking back at the unit.",
+      "items": [
+        "I'd like a coffee.",
+        "With milk or without milk?",
+        "I'm hungry.",
+        "What's that?",
+        "The bill, please."
+      ]
+    }
+  ],
+  "answers": [
+    "fél hét — negyed nyolc — háromnegyed kilenc — kilenc óra — fél tizenegy — negyed tizenkettő",
+    "hétkor — Hétfőn — Májusban — Hatkor — Tíz perc múlva — Vasárnap",
+    "Hány óra van? — Fél hét. — A film hétkor kezdődik. — Mikor jön a következő busz? — Holnap korán kelek. — Milyen nap van ma?",
+    "Egy kávét kérek. — Tejjel vagy tej nélkül? — Éhes vagyok. — Mi az? — A számlát kérem."
+  ]
+}

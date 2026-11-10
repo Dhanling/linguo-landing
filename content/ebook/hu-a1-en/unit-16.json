@@ -1,0 +1,566 @@
+{
+  "title": "What's she like? — adjectives and comparison",
+  "title_target": "Milyen ő?",
+  "goal": "Describe people and things, compare them in two equally correct ways — and say which is the most.",
+  "bekal": [
+    "form comparatives with the ending *-bb* and recognize the irregular ones",
+    "use *mint* and the ending *-nál / -nél* for \"than\"",
+    "say \"the most\" with the prefix *leg-*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ki az a Kati?",
+      "intro": "Anna is introducing her best friend to Budi tonight. Budi wants to know more first.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Ma este jön a barátnőm, Kati.",
+          "id": "My best friend Kati is coming tonight.",
+          "literal": "today evening she-comes the girlfriend-my, Kati."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Milyen ő?",
+          "id": "What's she like?",
+          "literal": "what-kind she?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Magas, barna hajú és nagyon vidám.",
+          "id": "Tall, brown-haired, and very cheerful.",
+          "literal": "tall, brown haired and very cheerful."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Idősebb nálad?",
+          "id": "Is she older than you?",
+          "literal": "older you-than?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Nem, fiatalabb. Huszonkét éves.",
+          "id": "No, younger. She's twenty-two.",
+          "literal": "no, younger. twenty-two year-old."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "És mit csinál?",
+          "id": "And what does she do?",
+          "literal": "and what-obj she-does?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Építész. A legjobb barátnőm.",
+          "id": "She's an architect. My best friend.",
+          "literal": "architect. the most-good girlfriend-my."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Milyen magas? Én elég alacsony vagyok.",
+          "id": "How tall? I'm fairly short.",
+          "literal": "how tall? I fairly short I-am."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Magasabb, mint te, de alacsonyabb, mint én.",
+          "id": "Taller than you, but shorter than me.",
+          "literal": "taller, than you, but shorter, than I."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Akkor nem baj. És beszél angolul?",
+          "id": "Then it's fine. And does she speak English?",
+          "literal": "then no problem. and she-speaks English-ly?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Jobban, mint én. Nagyon okos lány.",
+          "id": "Better than I do. A very clever girl.",
+          "literal": "better, than I. very clever girl."
+        }
+      ],
+      "notes": [
+        "**Milyen ő? asks about character, not condition.** Compare *Hogy van?*, which asks how someone is doing. *Milyen* also works for things: *Milyen a lakás?* (what's the apartment like?), and as an exclamation: *Milyen szép!* (how beautiful!).",
+        "**Barna hajú** literally means \"brown-haired\". The ending *-ú / -ű* turns a noun into a \"having-X\" adjective: *kék szemű* (blue-eyed), *hosszú hajú* (long-haired), *jó kedvű* (good-humored). The pattern is very productive — and just like English \"-ed\" here, it instantly makes your descriptions sound grown-up.",
+        "**Idősebb nálad, or magasabb, mint te.** Two equally correct ways to say \"than\": the ending *-nál / -nél* on the thing compared, or the word *mint* followed by the plain form. The first is shorter, the second easier for beginners. Use either; both sound natural.",
+        "**Mint takes a comma.** Hungarian puts a comma before *mint* in comparisons: *magasabb, mint te*. It's a spelling rule Hungarians take seriously.",
+        "**Jobban, not jobb.** *Jobb* is the adjective (better), *jobban* is the adverb (better at doing something). Compare: *Ő jobb tanár* (she's a better teacher) versus *Ő jobban tanít* (she teaches better)."
+      ],
+      "grammars": [
+        {
+          "title": "Comparison with -bb",
+          "body": [
+            "One ending for all adjectives, with a linking vowel that follows vowel harmony."
+          ],
+          "table": {
+            "head": [
+              "Adjective",
+              "Meaning",
+              "More…",
+              "Most…"
+            ],
+            "rows": [
+              [
+                "*magas*",
+                "tall",
+                "magas**abb**",
+                "a leg**magasabb**"
+              ],
+              [
+                "*alacsony*",
+                "short",
+                "alacsony**abb**",
+                "a leg**alacsonyabb**"
+              ],
+              [
+                "*fiatal*",
+                "young",
+                "fiatal**abb**",
+                "a leg**fiatalabb**"
+              ],
+              [
+                "*idős*",
+                "old",
+                "idős**ebb**",
+                "a leg**idősebb**"
+              ],
+              [
+                "*drága*",
+                "expensive",
+                "drágá**bb**",
+                "a leg**drágább**"
+              ],
+              [
+                "*olcsó*",
+                "cheap",
+                "olcsó**bb**",
+                "a leg**olcsóbb**"
+              ],
+              [
+                "*okos*",
+                "clever",
+                "okos**abb**",
+                "a leg**okosabb**"
+              ],
+              [
+                "*érdekes*",
+                "interesting",
+                "érdekes**ebb**",
+                "a leg**érdekesebb**"
+              ]
+            ]
+          },
+          "after": [
+            "Adjectives ending in a vowel just add *-bb*, with *a* and *e* lengthening as usual: *drága* → *drágább*, *olcsó* → *olcsóbb*.",
+            "**Irregular forms you must memorize**, because they're all used constantly: *jó* → **jobb** (better), *rossz* → **rosszabb**, *nagy* → **nagyobb**, *kicsi* → **kisebb**, *szép* → **szebb**, *sok* → **több** (more), *kevés* → **kevesebb**.",
+            "To sharpen the comparison, add *sokkal* (much more) or *egy kicsit* (a bit more): *sokkal jobb*, *egy kicsit drágább*."
+          ]
+        },
+        {
+          "title": "Two ways to say \"than\"",
+          "body": [
+            "Pick either; both are equally correct and equally common."
+          ],
+          "table": {
+            "head": [
+              "Way",
+              "Pattern",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**mint**",
+                "adjective + comma + *mint* + plain form",
+                "*magasabb, mint te*",
+                "taller than you"
+              ],
+              [
+                "**-nál / -nél**",
+                "adjective + compared word with ending",
+                "*magasabb nálad*",
+                "taller than you"
+              ],
+              [
+                "**mint**",
+                "",
+                "*drágább, mint a másik*",
+                "more expensive than the other one"
+              ],
+              [
+                "**-nál / -nél**",
+                "",
+                "*drágább a másiknál*",
+                "more expensive than the other one"
+              ]
+            ]
+          },
+          "after": [
+            "Note that the second way uses an ending you already know from unit 12, the \"people and landmarks\" group. Even the pronoun forms are the same: *nálam, nálad, nála, nálunk, nálatok, náluk*.",
+            "To say two things are equal, use *olyan … mint*: *Olyan magas, mint én* = \"As tall as me\". And for not equal: *Nem olyan magas, mint én*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Describing people",
+      "blocks": [
+        {
+          "type": "sub",
+          "text": "Looks"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "magas",
+              "MAW-gawsh",
+              "tall"
+            ],
+            [
+              "alacsony",
+              "AW-law-chohny",
+              "short (height)"
+            ],
+            [
+              "fiatal",
+              "FI-aw-tawl",
+              "young"
+            ],
+            [
+              "idős",
+              "I-dösh",
+              "old (polite)"
+            ],
+            [
+              "sovány",
+              "SHOH-vahny",
+              "thin"
+            ],
+            [
+              "kövér",
+              "KÖ-vayr",
+              "fat"
+            ],
+            [
+              "a haj",
+              "aw hawy",
+              "hair"
+            ],
+            [
+              "a szem",
+              "aw sehm",
+              "eye"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Character"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "kedves",
+              "KEHD-vehsh",
+              "kind"
+            ],
+            [
+              "barátságos",
+              "BAW-raht-shah-gohsh",
+              "friendly"
+            ],
+            [
+              "okos",
+              "OH-kohsh",
+              "clever"
+            ],
+            [
+              "vidám",
+              "VI-dahm",
+              "cheerful"
+            ],
+            [
+              "komoly",
+              "KOH-mohy",
+              "serious"
+            ],
+            [
+              "vicces",
+              "VITS-tsehsh",
+              "funny"
+            ],
+            [
+              "csendes",
+              "CHEHN-dehsh",
+              "quiet"
+            ],
+            [
+              "szorgalmas",
+              "SOHR-gawl-mawsh",
+              "hard-working"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "A subtlety worth noticing: Hungarians use *idős* for \"old\" when talking about people, and *öreg* feels blunter. For things, *régi* is used instead: *régi ház* (an old house), not *idős ház*."
+        }
+      ]
+    },
+    {
+      "title": "Adjective pairs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Meaning",
+            "Opposite",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*nagy*",
+              "big",
+              "*kicsi*",
+              "small"
+            ],
+            [
+              "*hosszú*",
+              "long",
+              "*rövid*",
+              "short"
+            ],
+            [
+              "*új*",
+              "new",
+              "*régi*",
+              "old"
+            ],
+            [
+              "*drága*",
+              "expensive",
+              "*olcsó*",
+              "cheap"
+            ],
+            [
+              "*jó*",
+              "good",
+              "*rossz*",
+              "bad"
+            ],
+            [
+              "*könnyű*",
+              "easy; light",
+              "*nehéz*",
+              "difficult; heavy"
+            ],
+            [
+              "*gyors*",
+              "fast",
+              "*lassú*",
+              "slow"
+            ],
+            [
+              "*meleg*",
+              "hot",
+              "*hideg*",
+              "cold"
+            ],
+            [
+              "*tiszta*",
+              "clean",
+              "*piszkos*",
+              "dirty"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "The fastest way to lock in this table",
+          "items": [
+            "Take five things around you and compare them in pairs out loud: *Ez a könyv nagyobb, mint az a könyv.* Then repeat the other way: *Ez a könyv nagyobb annál a könyvnél.*",
+            "Then compare yourself with three people you know. Sentences about people stick much better than sentences about things, because they're true."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "milyen",
+      "baca": "MI-yehn",
+      "en": "what kind; what … like"
+    },
+    {
+      "hu": "magas",
+      "baca": "MAW-gawsh",
+      "en": "tall"
+    },
+    {
+      "hu": "alacsony",
+      "baca": "AW-law-chohny",
+      "en": "short"
+    },
+    {
+      "hu": "fiatal",
+      "baca": "FI-aw-tawl",
+      "en": "young"
+    },
+    {
+      "hu": "idős",
+      "baca": "I-dösh",
+      "en": "old"
+    },
+    {
+      "hu": "haj",
+      "baca": "hawy",
+      "en": "hair"
+    },
+    {
+      "hu": "szem",
+      "baca": "sehm",
+      "en": "eye"
+    },
+    {
+      "hu": "vidám",
+      "baca": "VI-dahm",
+      "en": "cheerful"
+    },
+    {
+      "hu": "kedves",
+      "baca": "KEHD-vehsh",
+      "en": "kind"
+    },
+    {
+      "hu": "okos",
+      "baca": "OH-kohsh",
+      "en": "clever"
+    },
+    {
+      "hu": "komoly",
+      "baca": "KOH-mohy",
+      "en": "serious"
+    },
+    {
+      "hu": "lusta",
+      "baca": "LOOSH-taw",
+      "en": "lazy"
+    },
+    {
+      "hu": "szorgalmas",
+      "baca": "SOHR-gawl-mawsh",
+      "en": "hard-working"
+    },
+    {
+      "hu": "gyors",
+      "baca": "dyohrsh",
+      "en": "fast"
+    },
+    {
+      "hu": "lassú",
+      "baca": "LAWSH-shoo",
+      "en": "slow"
+    },
+    {
+      "hu": "nehéz",
+      "baca": "NEH-hayz",
+      "en": "difficult; heavy"
+    },
+    {
+      "hu": "könnyű",
+      "baca": "KÖNY-nyü",
+      "en": "easy; light"
+    },
+    {
+      "hu": "mint",
+      "baca": "mint",
+      "en": "than; as"
+    },
+    {
+      "hu": "jobb",
+      "baca": "yohbb",
+      "en": "better; right (side)"
+    },
+    {
+      "hu": "jobban",
+      "baca": "YOHB-bawn",
+      "en": "better (adverb)"
+    },
+    {
+      "hu": "több",
+      "baca": "több",
+      "en": "more"
+    },
+    {
+      "hu": "építész",
+      "baca": "AY-pee-tays",
+      "en": "architect"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the \"more\" and \"most\" forms of these adjectives.",
+      "items": [
+        "magas",
+        "olcsó",
+        "jó",
+        "nagy",
+        "szép",
+        "sok"
+      ]
+    },
+    {
+      "prompt": "Rewrite each sentence using the other way.",
+      "items": [
+        "Magasabb, mint te. (use the ending)",
+        "Idősebb nálam. (use mint)",
+        "Drágább, mint a másik. (use the ending)",
+        "Okosabb nálad. (use mint)",
+        "Fiatalabb, mint Anna. (use the ending)",
+        "Jobb nálunk. (use mint)"
+      ]
+    },
+    {
+      "prompt": "Translate into Hungarian.",
+      "items": [
+        "What's she like?",
+        "Tall and very cheerful.",
+        "Is she older than you?",
+        "No, younger.",
+        "My best friend.",
+        "She speaks better than I do."
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 14. Translate into Hungarian without looking back at the unit.",
+      "items": [
+        "Can you help?",
+        "What needs to be done?",
+        "I have to go.",
+        "Can I smoke here?",
+        "I'd like to learn."
+      ]
+    }
+  ],
+  "answers": [
+    "magasabb, a legmagasabb — olcsóbb, a legolcsóbb — jobb, a legjobb — nagyobb, a legnagyobb — szebb, a legszebb — több, a legtöbb",
+    "Magasabb nálad. — Idősebb, mint én. — Drágább a másiknál. — Okosabb, mint te. — Fiatalabb Annánál. — Jobb, mint nálunk.",
+    "Milyen ő? — Magas és nagyon vidám. — Idősebb nálad? — Nem, fiatalabb. — A legjobb barátnőm. — Jobban beszél, mint én.",
+    "Tudsz segíteni? — Mit kell csinálni? — Mennem kell. — Itt lehet dohányozni? — Szeretnék tanulni."
+  ]
+}

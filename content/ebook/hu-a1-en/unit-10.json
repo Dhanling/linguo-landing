@@ -1,0 +1,589 @@
+{
+  "title": "A working day — present-tense verbs",
+  "title_target": "Egy hétköznap",
+  "goal": "Describe your daily routine with the first full set of verb endings: indefinite conjugation, six persons, three vowel groups.",
+  "bekal": [
+    "build the *én*, *te*, *ő*, *mi*, *ti*, *ők* forms of any verb yourself",
+    "recognize verbs ending in *s*, *sz*, *z* whose \"you\" form is different",
+    "tell the story of your working day from waking up to going to bed"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Egy hétköznap",
+      "intro": "Anna is curious what it is like to work in Budapest as a foreigner. Budi describes his ordinary day.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Mit csinálsz egy hétköznapon?",
+          "id": "What do you do on a weekday?",
+          "literal": "what-OBJ you-do a weekday-on?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Reggel hatkor kelek. Aztán zuhanyozom és reggelizem.",
+          "id": "I get up at six in the morning. Then I shower and have breakfast.",
+          "literal": "morning six-at I-get-up. then I-shower and I-breakfast."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Mikor indulsz otthonról?",
+          "id": "When do you leave the house?",
+          "literal": "when you-leave home-from?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Fél nyolckor. Metróval megyek dolgozni.",
+          "id": "At half past seven. I take the metro to work.",
+          "literal": "half-to-eight-at. metro-with I-go to-work."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Hol dolgozol?",
+          "id": "Where do you work?",
+          "literal": "where you-work?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Egy irodában, a Blaha Lujza téren. Kilenctől ötig dolgozom.",
+          "id": "In an office on Blaha Lujza tér. I work from nine to five.",
+          "literal": "an office-in, the Blaha Lujza square-on. nine-from five-until I-work."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "És ebédelsz?",
+          "id": "And do you have lunch?",
+          "literal": "and you-lunch?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Igen, délben eszem valamit a kollégákkal.",
+          "id": "Yes, at noon I eat something with my colleagues.",
+          "literal": "yes, noon-at I-eat something-OBJ the colleague-PL-with."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Este mit csinálsz?",
+          "id": "What do you do in the evening?",
+          "literal": "evening what-OBJ you-do?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Magyarul tanulok, olvasok, néha sportolok. Tizenegy körül alszom.",
+          "id": "I study Hungarian, I read, sometimes I exercise. Around eleven I go to sleep.",
+          "literal": "Hungarian-ly I-study, I-read, sometimes I-exercise. eleven around I-sleep."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Az kevés! Én nyolc órát alszom.",
+          "id": "That's not much! I sleep eight hours.",
+          "literal": "that little! I eight hour-OBJ I-sleep."
+        }
+      ],
+      "notes": [
+        "**The pronoun is almost always dropped.** *Kelek* already means \"I get up\", *dolgozol* already means \"you work\". The ending carries the person, so *én* and *te* appear only for emphasis — look at the last line: *Én nyolc órát alszom* = \"**I** sleep eight hours\" (unlike you).",
+        "**Nyolc órát alszom** uses the object ending to express **duration**. Hungarian treats duration like an object: *két órát várok* (I wait two hours), *egy hetet maradok* (I stay a week). The habit is not hard; it just needs noticing once.",
+        "**Metróval, a kollégákkal.** The \"with\" ending attaches and assimilates its *v*, as you saw in Unit 7. After a plural, the result is *-kkal / -kkel*: *kollégák* → *kollégákkal*. The full rule is in Unit 15.",
+        "**Megyek dolgozni** uses the *-ni* base form to express purpose: \"I go to work\". Just like English \"I go to work\" — no extra word for \"to\" needed.",
+        "**Kilenctől ötig** closes a stretch of time with a pair of endings: *-tól/-től* (from) and *-ig* (until). The pair is also used for places: *Budapesttől Szegedig* (from Budapest to Szeged).",
+        "**Zuhanyozom, reggelizem, dolgozom, alszom.** All end in *-om/-em* in the \"I\" form, not *-ok/-ek*. That is the sign of the **-ik group**: verbs whose dictionary form ends in *-ik*. This group is covered in the third box below."
+      ],
+      "grammars": [
+        {
+          "title": "Indefinite conjugation — the first set of endings",
+          "body": [
+            "Six persons, three vowel groups. Notice that the pattern is identical in all three columns; only the linking vowel differs, exactly as with the possessive endings in Unit 5."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "*tanul* (back)",
+              "*beszél* (front)",
+              "*ül* (rounded front)",
+              "Ending"
+            ],
+            "rows": [
+              [
+                "én",
+                "tanul**ok**",
+                "beszél**ek**",
+                "ül**ök**",
+                "*-ok / -ek / -ök*"
+              ],
+              [
+                "te",
+                "tanul**sz**",
+                "beszél**sz**",
+                "ül**sz**",
+                "*-sz*"
+              ],
+              [
+                "ő",
+                "tanul",
+                "beszél",
+                "ül",
+                "— (bare)"
+              ],
+              [
+                "mi",
+                "tanul**unk**",
+                "beszél**ünk**",
+                "ül**ünk**",
+                "*-unk / -ünk*"
+              ],
+              [
+                "ti",
+                "tanul**tok**",
+                "beszél**tek**",
+                "ül**tök**",
+                "*-tok / -tek / -tök*"
+              ],
+              [
+                "ők",
+                "tanul**nak**",
+                "beszél**nek**",
+                "ül**nek**",
+                "*-nak / -nek*"
+              ]
+            ]
+          },
+          "after": [
+            "**The ő row is a gift.** The third person singular is the bare verb itself, with nothing added. That is why Hungarian dictionaries list the *ő* form rather than the infinitive — the shortest form is also the most frequently used.",
+            "**The te form has two faces.** *-sz* is used for most verbs, but verbs ending in a hissing sound take *-ol/-el/-öl*. The next table covers them.",
+            "**The present also means \"am doing\" and \"will do\".** *Tanulok* can mean \"I study\", \"I am studying\" and — if the time is clear — \"I will study\". Hungarian does not distinguish the three, just as English often doesn't for the future (\"I leave tomorrow\")."
+          ]
+        },
+        {
+          "title": "Verbs ending in s, sz, z, dz",
+          "body": [
+            "One small adjustment in the \"you\" form, and that's all."
+          ],
+          "table": {
+            "head": [
+              "Verb",
+              "Meaning",
+              "*te* form",
+              "Not"
+            ],
+            "rows": [
+              [
+                "*olvas*",
+                "to read",
+                "olvas**ol**",
+                "~~olvassz~~"
+              ],
+              [
+                "*keres*",
+                "to look for",
+                "keres**el**",
+                "~~keressz~~"
+              ],
+              [
+                "*néz*",
+                "to watch; to look",
+                "néz**el**",
+                "~~nézsz~~"
+              ],
+              [
+                "*főz*",
+                "to cook",
+                "főz**öl**",
+                "~~főzsz~~"
+              ],
+              [
+                "*utazik*",
+                "to travel",
+                "utaz**ol**",
+                "~~utazsz~~"
+              ],
+              [
+                "*dolgozik*",
+                "to work",
+                "dolgoz**ol**",
+                "~~dolgozsz~~"
+              ]
+            ]
+          },
+          "after": [
+            "The reason is purely phonetic: *-sz* after *s* or *z* cannot be pronounced clearly. Hungarian chooses a linking vowel rather than forcing the tongue.",
+            "The other five forms do not change at all: *olvasok, olvasol, olvas, olvasunk, olvastok, olvasnak*."
+          ]
+        },
+        {
+          "title": "The -ik group",
+          "body": [
+            "A set of verbs whose dictionary form ends in *-ik*. Only the first two rows differ."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "*lakik* (to live)",
+              "*dolgozik* (to work)",
+              "*eszik* (to eat)"
+            ],
+            "rows": [
+              [
+                "én",
+                "lak**om**",
+                "dolgoz**om**",
+                "esz**em**"
+              ],
+              [
+                "te",
+                "lak**sz**",
+                "dolgoz**ol**",
+                "esz**el**"
+              ],
+              [
+                "ő",
+                "lak**ik**",
+                "dolgoz**ik**",
+                "esz**ik**"
+              ],
+              [
+                "mi",
+                "lak**unk**",
+                "dolgoz**unk**",
+                "esz**ünk**"
+              ],
+              [
+                "ti",
+                "lak**tok**",
+                "dolgoz**tok**",
+                "esz**tek**"
+              ],
+              [
+                "ők",
+                "lak**nak**",
+                "dolgoz**nak**",
+                "esz**nek**"
+              ]
+            ]
+          },
+          "after": [
+            "This group contains many everyday verbs: *lakik, dolgozik, alszik, eszik, iszik, utazik, zuhanyozik, reggelizik, ebédel* (this one is not *-ik*, careful), *érkezik, találkozik, kezdődik*.",
+            "**In everyday speech, many Hungarians also use *-ok* for this group** — *lakok* instead of *lakom*. It is not considered a serious mistake, but the *-om* form is always correct, so use that."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "A whole day",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English",
+            "*én* form"
+          ],
+          "rows": [
+            [
+              "felkel",
+              "FEHL-kehl",
+              "to get up",
+              "felkelek"
+            ],
+            [
+              "zuhanyozik",
+              "ZOO-haw-nyoh-zik",
+              "to shower",
+              "zuhanyozom"
+            ],
+            [
+              "reggelizik",
+              "REHG-geh-li-zik",
+              "to have breakfast",
+              "reggelizem"
+            ],
+            [
+              "ebédel",
+              "EH-bay-dehl",
+              "to have lunch",
+              "ebédelek"
+            ],
+            [
+              "vacsorázik",
+              "VAW-choh-rah-zik",
+              "to have dinner",
+              "vacsorázom"
+            ],
+            [
+              "indul",
+              "IN-dool",
+              "to set off",
+              "indulok"
+            ],
+            [
+              "érkezik",
+              "AYR-keh-zik",
+              "to arrive",
+              "érkezem"
+            ],
+            [
+              "dolgozik",
+              "DOHL-goh-zik",
+              "to work",
+              "dolgozom"
+            ],
+            [
+              "tanul",
+              "TAW-nool",
+              "to study",
+              "tanulok"
+            ],
+            [
+              "olvas",
+              "OHL-vawsh",
+              "to read",
+              "olvasok"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice *felkel*: it is *kel* with the prefix *fel-* (up). Prefixes like this change and sharpen the meaning of a verb, and they are one of the most distinctive features of Hungarian. Unit 12 covers them."
+        }
+      ]
+    },
+    {
+      "title": "Order and frequency",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These two little groups of words turn a list of activities into a story."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sequence",
+            "Say it",
+            "Meaning",
+            "Frequency",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*először*",
+              "EHLÖ-sör",
+              "first of all",
+              "*mindig*",
+              "MIN-dig",
+              "always"
+            ],
+            [
+              "*aztán*",
+              "AWZ-tahn",
+              "then",
+              "*gyakran*",
+              "DYAWK-rawn",
+              "often"
+            ],
+            [
+              "*utána*",
+              "OO-tah-naw",
+              "afterwards",
+              "*néha*",
+              "NAY-haw",
+              "sometimes"
+            ],
+            [
+              "*közben*",
+              "KÖZ-behn",
+              "meanwhile",
+              "*ritkán*",
+              "RIT-kahn",
+              "rarely"
+            ],
+            [
+              "*végül*",
+              "VAY-gül",
+              "finally",
+              "*soha nem*",
+              "SHOH-haw nehm",
+              "never"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Soha* always goes with *nem*: *Soha nem főzök* = \"I never cook\". Hungarian uses **double negation** and considers it correct — like Spanish or Italian, and unlike standard English."
+        },
+        {
+          "type": "kotak",
+          "title": "The most productive speaking practice at this level",
+          "items": [
+            "Tell your own day out loud, from waking up to going to bed, using only ten verbs. Do it every day for a week.",
+            "Then tell your **friend's** day — the same sentences, but with every verb in the *ő* form. This is the hidden exercise that fastest installs the whole table in your head, because you change the form while thinking about the content, not while staring at a table."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "csinál",
+      "baca": "CHI-nahl",
+      "en": "to do; to make"
+    },
+    {
+      "hu": "hétköznap",
+      "baca": "HAYT-köz-nawp",
+      "en": "weekday"
+    },
+    {
+      "hu": "felkel",
+      "baca": "FEHL-kehl",
+      "en": "to get up"
+    },
+    {
+      "hu": "zuhanyozik",
+      "baca": "ZOO-haw-nyoh-zik",
+      "en": "to shower"
+    },
+    {
+      "hu": "reggelizik",
+      "baca": "REHG-geh-li-zik",
+      "en": "to have breakfast"
+    },
+    {
+      "hu": "ebédel",
+      "baca": "EH-bay-dehl",
+      "en": "to have lunch"
+    },
+    {
+      "hu": "indul",
+      "baca": "IN-dool",
+      "en": "to set off; to leave"
+    },
+    {
+      "hu": "érkezik",
+      "baca": "AYR-keh-zik",
+      "en": "to arrive"
+    },
+    {
+      "hu": "otthon",
+      "baca": "OHTT-hohn",
+      "en": "at home; home"
+    },
+    {
+      "hu": "metró",
+      "baca": "MEHT-roh",
+      "en": "metro; subway"
+    },
+    {
+      "hu": "villamos",
+      "baca": "VIL-law-mohsh",
+      "en": "tram"
+    },
+    {
+      "hu": "kolléga",
+      "baca": "KOHL-lay-gaw",
+      "en": "colleague"
+    },
+    {
+      "hu": "olvas",
+      "baca": "OHL-vawsh",
+      "en": "to read"
+    },
+    {
+      "hu": "néz",
+      "baca": "nayz",
+      "en": "to watch; to look"
+    },
+    {
+      "hu": "főz",
+      "baca": "föz",
+      "en": "to cook"
+    },
+    {
+      "hu": "vásárol",
+      "baca": "VAH-shah-rohl",
+      "en": "to shop"
+    },
+    {
+      "hu": "takarít",
+      "baca": "TAW-kaw-reet",
+      "en": "to clean; to tidy up"
+    },
+    {
+      "hu": "pihen",
+      "baca": "PI-hehn",
+      "en": "to rest"
+    },
+    {
+      "hu": "sportol",
+      "baca": "SHPOHR-tohl",
+      "en": "to do sports"
+    },
+    {
+      "hu": "alszik",
+      "baca": "AWL-sik",
+      "en": "to sleep"
+    },
+    {
+      "hu": "aztán",
+      "baca": "AWZ-tahn",
+      "en": "then"
+    },
+    {
+      "hu": "néha",
+      "baca": "NAY-haw",
+      "en": "sometimes"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the én, te and ő forms of these verbs.",
+      "items": [
+        "tanul",
+        "beszél",
+        "ül",
+        "olvas",
+        "főz",
+        "lakik"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right verb form.",
+      "items": [
+        "Reggel hatkor ____. (felkel — I)",
+        "Hol ____? (dolgozik — you)",
+        "Este magyarul ____. (tanul — I)",
+        "Ők egy irodában ____. (dolgozik — they)",
+        "Mit ____? (csinál — you all)",
+        "Mi mindig otthon ____. (vacsorázik — we)"
+      ]
+    },
+    {
+      "prompt": "Translate into Hungarian.",
+      "items": [
+        "I get up at six in the morning.",
+        "Where do you work?",
+        "I work from nine to five.",
+        "What do you do in the evening?",
+        "Sometimes I exercise.",
+        "I sleep eight hours."
+      ]
+    },
+    {
+      "prompt": "Spiral review — Unit 8. Translate into Hungarian without looking back at the unit.",
+      "items": [
+        "How much are the tomatoes?",
+        "I'd like a kilo of apples.",
+        "What does it come to in total?",
+        "Is there anything cheaper?",
+        "Can I pay by card?"
+      ]
+    }
+  ],
+  "answers": [
+    "tanulok, tanulsz, tanul — beszélek, beszélsz, beszél — ülök, ülsz, ül — olvasok, olvasol, olvas — főzök, főzöl, főz — lakom, laksz, lakik",
+    "felkelek — dolgozol — tanulok — dolgoznak — csináltok — vacsorázunk",
+    "Reggel hatkor felkelek. — Hol dolgozol? — Kilenctől ötig dolgozom. — Este mit csinálsz? — Néha sportolok. — Nyolc órát alszom.",
+    "Mennyibe kerül a paradicsom? — Kérek egy kiló almát. — Mennyi lesz összesen? — Van olcsóbb? — Kártyával lehet?"
+  ]
+}

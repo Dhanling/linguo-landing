@@ -1,0 +1,552 @@
+{
+  "title": "Likes and dislikes",
+  "title_target": "Szeretem a magyar ételt",
+  "goal": "Say what you like, both things and activities — two different patterns with the same verb — while adding plurals that are also objects.",
+  "bekal": [
+    "tell *szeretem a gulyást* from *szeretek főzni*",
+    "form plurals that are also objects: *a könyveket*, *a filmeket*",
+    "build the ladder from *imádom* to *utálom*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Mit szeretsz csinálni?",
+      "intro": "Lunch in the school canteen. Budi's plate is full; Anna's is already empty.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Szereted a magyar ételeket?",
+          "id": "Do you like Hungarian food?",
+          "literal": "you-like-them the Hungarian food-PL-OBJ?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Igen, nagyon szeretem őket. A gulyás a kedvencem.",
+          "id": "Yes, I like it a lot. Goulash is my favorite.",
+          "literal": "yes, very I-like-them them-OBJ. the goulash the favorite-my."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "És a savanyú káposztát?",
+          "id": "And sauerkraut?",
+          "literal": "and the sour cabbage-OBJ?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Azt nem szeretem. Túl savanyú.",
+          "id": "That one I don't like. Too sour.",
+          "literal": "that-OBJ not I-like-it. too sour."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Én imádom. És mit szeretsz csinálni?",
+          "id": "I love it. And what do you like doing?",
+          "literal": "I I-adore-it. and what-OBJ you-like do?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Szeretek focizni és zenét hallgatni. Te?",
+          "id": "I like playing football and listening to music. You?",
+          "literal": "I-like to-play-football and music-OBJ to-listen. you?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Én olvasok és úszom. Utálom a focit.",
+          "id": "I read and swim. I hate football.",
+          "literal": "I I-read and I-swim. I-hate-it the football-OBJ."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tényleg? Miért?",
+          "id": "Really? Why?",
+          "literal": "really? why?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Unalmas. De szeretem a filmeket.",
+          "id": "It's boring. But I like films.",
+          "literal": "boring. but I-like-them the film-PL-OBJ."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Milyen filmeket szeretsz?",
+          "id": "What kind of films do you like?",
+          "literal": "what-kind film-PL-OBJ you-like?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "A vígjátékokat. A horrort nem szeretem.",
+          "id": "Comedies. I don't like horror films.",
+          "literal": "the comedy-PL-OBJ. the horror-OBJ not I-like-it."
+        }
+      ],
+      "notes": [
+        "**Szeretem and szeretek in one dialogue.** Look at the second and sixth lines. *Szeretem őket* uses the definite form because the object is *őket* — the food is already identified. *Szeretek focizni* uses the indefinite form because the object is not a thing but an **activity**. This is a direct application of the unit 11 rule, and the place where beginners trip most often.",
+        "**Milyen filmeket szeretsz? is also indefinite**, even though *filmeket* is plural and an object. The trigger is *milyen* — it asks for a kind, not for one specific film. Compare *A filmeket szeretem*, which is definite because of the *a*.",
+        "**A plural object stacks two endings.** *film* → *filmek* (plural) → *filmeket* (plural + object). The order is always the same: plural first, object second. This holds across all of Hungarian and is never reversed.",
+        "**A gulyás a kedvencem** puts two nouns face to face with no verb, following the unit 1 rule. Literally \"the goulash the my-favorite\". The word *kedvenc* can also be an adjective: *a kedvenc ételem* (my favorite food).",
+        "**Imád and utál are the ends of the ladder.** *Imádom* means \"I love it\" and is used every day without sounding over the top, while *utálom* is every bit as strong as \"I hate it\". For a softer feeling: *nem nagyon szeretem* (I don't really like it)."
+      ],
+      "grammars": [
+        {
+          "title": "Two patterns for \"like\"",
+          "body": [
+            "The verb is the same, the set of endings differs — and what decides it is the form of the object."
+          ],
+          "table": {
+            "head": [
+              "What is liked",
+              "Set",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "a specific thing",
+                "**definite**",
+                "*Szeretem a gulyást.*",
+                "I like goulash."
+              ],
+              [
+                "specific things (plural)",
+                "**definite**",
+                "*Szeretem a filmeket.*",
+                "I like the films."
+              ],
+              [
+                "*őt / őket*",
+                "**definite**",
+                "*Szeretem őket.*",
+                "I like them."
+              ],
+              [
+                "an activity (infinitive)",
+                "indefinite",
+                "*Szeretek főzni.*",
+                "I like cooking."
+              ],
+              [
+                "a kind, in a question",
+                "indefinite",
+                "*Milyen zenét szeretsz?*",
+                "What music do you like?"
+              ],
+              [
+                "a thing without an article",
+                "indefinite",
+                "*Szeretek gulyást enni.*",
+                "I like eating goulash."
+              ]
+            ]
+          },
+          "after": [
+            "**The fastest check:** if a word ending in *-ni* follows *szeret*, it's almost certainly the indefinite form. If there's an *a/az*, it's almost certainly the definite form.",
+            "*Szeret* also means \"love\" for people: *Szeretlek* (unit 11) uses the special *-lak/-lek* form, and *Szeretem Annát* uses the definite form because of the proper name."
+          ]
+        },
+        {
+          "title": "Plurals that are also objects",
+          "body": [
+            "Two endings stacked, always in the same order."
+          ],
+          "table": {
+            "head": [
+              "Base",
+              "Plural",
+              "Plural + object",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*könyv*",
+                "könyvek",
+                "**könyveket**",
+                "books (object)"
+              ],
+              [
+                "*film*",
+                "filmek",
+                "**filmeket**",
+                "films"
+              ],
+              [
+                "*alma*",
+                "almák",
+                "**almákat**",
+                "apples"
+              ],
+              [
+                "*ház*",
+                "házak",
+                "**házakat**",
+                "houses"
+              ],
+              [
+                "*gyerek*",
+                "gyerekek",
+                "**gyerekeket**",
+                "children"
+              ],
+              [
+                "*sör*",
+                "sörök",
+                "**söröket**",
+                "beers"
+              ],
+              [
+                "*étel*",
+                "ételek",
+                "**ételeket**",
+                "foods"
+              ]
+            ]
+          },
+          "after": [
+            "The linking vowel is always *-a-* or *-e-*, following vowel harmony — not *-o-* as in the singular. So *ház* → *házat* (singular) but *házak* → *házakat* (plural).",
+            "Remember the unit 3 rule again: **after a number, don't use the plural**. *Két könyvet kérek*, not *két könyveket*."
+          ]
+        },
+        {
+          "title": "The ladder of likes and dislikes",
+          "body": [
+            "Five steps that cover almost everything you need to say."
+          ],
+          "table": {
+            "head": [
+              "Magyar",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Imádom.*",
+                "I-mah-dohm",
+                "I love it."
+              ],
+              [
+                "*Nagyon szeretem.*",
+                "NAW-dyohn SEH-reh-tehm",
+                "I like it a lot."
+              ],
+              [
+                "*Szeretem.*",
+                "SEH-reh-tehm",
+                "I like it."
+              ],
+              [
+                "*Nem nagyon szeretem.*",
+                "nehm NAW-dyohn SEH-reh-tehm",
+                "I don't really like it."
+              ],
+              [
+                "*Nem szeretem.*",
+                "nehm SEH-reh-tehm",
+                "I don't like it."
+              ],
+              [
+                "*Utálom.*",
+                "OO-tah-lohm",
+                "I hate it."
+              ]
+            ]
+          },
+          "after": [
+            "There's one more very Hungarian pattern: *Jobban szeretem a teát, mint a kávét* = \"I like tea better than coffee\". It uses *jobban* from unit 16 and settles every question of choosing.",
+            "To ask for an opinion: *Ízlik?* (tasty? — food only) and *Tetszik?* (do you like it? — for anything). Both flip the subject around, so the answer is *Ízlik* or *Tetszik*, not *Ízlem*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Hobbies and free time",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "English",
+            "Infinitive"
+          ],
+          "rows": [
+            [
+              "olvas",
+              "OHL-vawsh",
+              "reading",
+              "olvasni"
+            ],
+            [
+              "zenét hallgat",
+              "ZEH-nayt HAWLL-gawt",
+              "listening to music",
+              "zenét hallgatni"
+            ],
+            [
+              "filmet néz",
+              "FIL-meht nayz",
+              "watching films",
+              "filmet nézni"
+            ],
+            [
+              "focizik",
+              "FOH-tsi-zik",
+              "playing football",
+              "focizni"
+            ],
+            [
+              "úszik",
+              "OO-sik",
+              "swimming",
+              "úszni"
+            ],
+            [
+              "fut",
+              "foot",
+              "running",
+              "futni"
+            ],
+            [
+              "kirándul",
+              "KI-rahn-dool",
+              "hiking",
+              "kirándulni"
+            ],
+            [
+              "táncol",
+              "TAHN-tsohl",
+              "dancing",
+              "táncolni"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that *zenét hallgat* and *filmet néz* already carry their own objects. When you use them after *szeret*, the object stays inside: *Szeretek zenét hallgatni*. Layered structures like this are what start to make your sentences sound grown-up rather than a list of words."
+        }
+      ]
+    },
+    {
+      "title": "Hungarian dishes you must try",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Magyar",
+            "Say it",
+            "What it is"
+          ],
+          "rows": [
+            [
+              "*gulyás*",
+              "GOO-yahsh",
+              "beef soup with paprika — in Hungary it's a **soup**, not a stew"
+            ],
+            [
+              "*pörkölt*",
+              "PÖR-költ",
+              "thick paprika meat stew; this is what's called \"goulash\" abroad"
+            ],
+            [
+              "*halászlé*",
+              "HAW-lahs-lay",
+              "spicy red fish soup from the Danube and the Tisza"
+            ],
+            [
+              "*töltött káposzta*",
+              "TÖL-tött KAH-pohs-taw",
+              "cabbage rolls stuffed with meat, a Christmas dish"
+            ],
+            [
+              "*lecsó*",
+              "LEH-choh",
+              "stewed peppers, tomatoes, and onions — a summer dish"
+            ],
+            [
+              "*paprikás csirke*",
+              "PAWP-ri-kahsh CHIR-keh",
+              "chicken in a paprika and sour cream sauce"
+            ],
+            [
+              "*lángos*",
+              "LAHN-gohsh",
+              "fried dough topped with sour cream and cheese"
+            ],
+            [
+              "*túró rudi*",
+              "TOO-roh ROO-di",
+              "a curd cheese bar coated in chocolate — the national snack"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One sentence that will make anyone happy: *Nagyon finom volt, köszönöm!* — \"It was delicious, thank you!\". And one more that's honest and still polite if something isn't to your taste: *Érdekes íze van* — \"It has an interesting flavor\"."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hu": "szeret",
+      "baca": "SEH-reht",
+      "en": "to like; to love"
+    },
+    {
+      "hu": "imád",
+      "baca": "I-mahd",
+      "en": "to love, adore"
+    },
+    {
+      "hu": "utál",
+      "baca": "OO-tahl",
+      "en": "to hate"
+    },
+    {
+      "hu": "kedvenc",
+      "baca": "KEHD-vehnts",
+      "en": "favorite"
+    },
+    {
+      "hu": "szabadidő",
+      "baca": "SAW-bawd-i-dö",
+      "en": "free time"
+    },
+    {
+      "hu": "zene",
+      "baca": "ZEH-neh",
+      "en": "music"
+    },
+    {
+      "hu": "hallgat",
+      "baca": "HAWLL-gawt",
+      "en": "to listen"
+    },
+    {
+      "hu": "foci",
+      "baca": "FOH-tsi",
+      "en": "football; soccer"
+    },
+    {
+      "hu": "úszik",
+      "baca": "OO-sik",
+      "en": "to swim"
+    },
+    {
+      "hu": "kirándul",
+      "baca": "KI-rahn-dool",
+      "en": "to hike"
+    },
+    {
+      "hu": "táncol",
+      "baca": "TAHN-tsohl",
+      "en": "to dance"
+    },
+    {
+      "hu": "énekel",
+      "baca": "AY-neh-kehl",
+      "en": "to sing"
+    },
+    {
+      "hu": "rajzol",
+      "baca": "RAWY-zohl",
+      "en": "to draw"
+    },
+    {
+      "hu": "utazik",
+      "baca": "OO-taw-zik",
+      "en": "to travel"
+    },
+    {
+      "hu": "unalmas",
+      "baca": "OO-nawl-mawsh",
+      "en": "boring"
+    },
+    {
+      "hu": "érdekes",
+      "baca": "AYR-deh-kehsh",
+      "en": "interesting"
+    },
+    {
+      "hu": "vígjáték",
+      "baca": "VEEG-yah-tayk",
+      "en": "comedy film"
+    },
+    {
+      "hu": "káposzta",
+      "baca": "KAH-pohs-taw",
+      "en": "cabbage"
+    },
+    {
+      "hu": "íz",
+      "baca": "eez",
+      "en": "taste"
+    },
+    {
+      "hu": "ízlik",
+      "baca": "EEZ-lik",
+      "en": "to taste good"
+    },
+    {
+      "hu": "tetszik",
+      "baca": "TEHT-sik",
+      "en": "pleasing; liked"
+    },
+    {
+      "hu": "csak",
+      "baca": "chawk",
+      "en": "only"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose the right form and write the full sentence.",
+      "items": [
+        "____ a gulyást. (szeretek or szeretem)",
+        "____ főzni. (szeretek or szeretem)",
+        "____ a filmeket. (szeretek or szeretem)",
+        "____ zenét hallgatni. (szeretek or szeretem)",
+        "Nem ____ a horrort. (szeretek or szeretem)",
+        "____ Annát. (szeretek or szeretem)"
+      ]
+    },
+    {
+      "prompt": "Write the plural object form.",
+      "items": [
+        "könyv",
+        "film",
+        "alma",
+        "ház",
+        "sör",
+        "gyerek"
+      ]
+    },
+    {
+      "prompt": "Translate into Hungarian.",
+      "items": [
+        "Do you like Hungarian food?",
+        "Goulash is my favorite.",
+        "I like playing football.",
+        "I hate football.",
+        "What kind of films do you like?",
+        "I like tea better than coffee."
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 15. Translate into Hungarian without looking back at the unit.",
+      "items": [
+        "What are we buying?",
+        "I'll pay by card.",
+        "Who are you going to the market with tomorrow?",
+        "With you, if you have time.",
+        "Do you have the list?"
+      ]
+    }
+  ],
+  "answers": [
+    "Szeretem — Szeretek — Szeretem — Szeretek — szeretem — Szeretem",
+    "könyveket — filmeket — almákat — házakat — söröket — gyerekeket",
+    "Szereted a magyar ételeket? — A gulyás a kedvencem. — Szeretek focizni. — Utálom a focit. — Milyen filmeket szeretsz? — Jobban szeretem a teát, mint a kávét.",
+    "Mit veszünk? — Kártyával fizetek. — Kivel jössz holnap a piacra? — Veled, ha ráérsz. — Van nálad lista?"
+  ]
+}
