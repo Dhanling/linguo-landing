@@ -1,0 +1,699 @@
+{
+  "title": "Numbers and age",
+  "title_target": "Numerot ja ikä",
+  "goal": "Count to a thousand, say your age and birthday, and accept the fact that in Finnish, numbers make the noun change its form.",
+  "bekal": [
+    "build the numbers 0–1,000 out of just ten pieces",
+    "use the partitive after numbers: *kaksi kirja**a***, not *kaksi kirjat*",
+    "give your age, date of birth, and phone number"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ilmoittautuminen",
+      "intro": "Budi is signing up for the next-level course. Sanna, the office clerk, fills in the form as she asks questions.",
+      "lines": [
+        {
+          "speaker": "Sanna:",
+          "text": "Hyvää päivää! Mikä sinun koko nimesi on?",
+          "id": "Good afternoon! What's your full name?",
+          "literal": "good day! what your whole name-your is?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Budi Santoso. Anteeksi, voitko toistaa hitaammin?",
+          "id": "Budi Santoso. Sorry, could you repeat that more slowly?",
+          "literal": "Budi Santoso. sorry, can-?-you repeat more-slowly?"
+        },
+        {
+          "speaker": "Sanna:",
+          "text": "Totta kai. Kuinka vanha sinä olet?",
+          "id": "Of course. How old are you?",
+          "literal": "true of-course. how old you are?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Olen kaksikymmentäkuusi vuotta.",
+          "id": "I'm twenty-six.",
+          "literal": "am-I twenty-six year-partitive."
+        },
+        {
+          "speaker": "Sanna:",
+          "text": "Selvä. Milloin sinun syntymäpäiväsi on?",
+          "id": "Okay. When is your birthday?",
+          "literal": "clear. when your birthday-your is?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kolmastoista maaliskuuta.",
+          "id": "March thirteenth.",
+          "literal": "thirteenth March-partitive."
+        },
+        {
+          "speaker": "Sanna:",
+          "text": "Ja puhelinnumero?",
+          "id": "And your phone number?",
+          "literal": "and phone-number?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nolla neljä nolla, kaksi kuusi kolme, seitsemän yksi yhdeksän.",
+          "id": "Zero four zero, two six three, seven one nine.",
+          "literal": "zero four zero, two six three, seven one nine."
+        },
+        {
+          "speaker": "Sanna:",
+          "text": "Kiitos. Kuinka monta kieltä sinä puhut?",
+          "id": "Thank you. How many languages do you speak?",
+          "literal": "thanks. how many language-partitive you speak?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kolme kieltä hyvin ja yhtä huonosti — suomea!",
+          "id": "Three languages well and one badly — Finnish!",
+          "literal": "three language-partitive well and one-partitive badly — Finnish-partitive!"
+        },
+        {
+          "speaker": "Sanna:",
+          "text": "Ha! Kurssi maksaa sata euroa. Se kestää kaksitoista viikkoa.",
+          "id": "Ha! The course costs a hundred euros. It lasts twelve weeks.",
+          "literal": "ha! course costs hundred euro-partitive. it lasts twelve week-partitive."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hyvä. Montako opiskelijaa ryhmässä on?",
+          "id": "Good. How many students are in a group?",
+          "literal": "good. how-many student-partitive in-group is?"
+        },
+        {
+          "speaker": "Sanna:",
+          "text": "Yhdeksän tai kymmenen. Tervetuloa kurssille!",
+          "id": "Nine or ten. Welcome to the course!",
+          "literal": "nine or ten. welcome to-course!"
+        }
+      ],
+      "notes": [
+        "**After a number, the noun is partitive and SINGULAR.** *Kaksitoista viikko**a*** — not *viikot*. This truly goes against instinct: twelve weeks, but the word is singular. It makes sense from the inside: the number already states the quantity, so the noun only names \"what kind of thing\" — a bit like English \"a twelve-week course\" or \"ten head of cattle\", where the noun doesn't go plural either.",
+        "**Except after yksi.** *Yksi kirja* uses the basic form, because one item is a whole item. From *kaksi* on, everything is partitive.",
+        "**Vuotta, not vuosia.** *Vuosi* (year) becomes *vuotta* in the partitive — one of the most irregular forms you'll use often. Its cousins: *kuukausi → kuukautta* (month), *uusi → uutta* (new).",
+        "**Kuinka monta and montako mean the same thing.** Both mean \"how many\", and both require the partitive singular after them: *kuinka monta kiel**tä***, *montako opiskelija**a***. *Montako* is shorter and heard more often.",
+        "**Phone numbers are read digit by digit.** No combining digits as English sometimes does (\"double four\"). Zero is always *nolla*, never the letter \"o\".",
+        "**Kolmastoista maaliskuuta** uses two forms at once: an ordinal number (*kolmastoista* = thirteenth) and the month name in the partitive (*maaliskuu → maaliskuuta*). This pattern is the same for every date, so memorize the shape now; ordinal numbers are covered in Unit 16."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers 0–1,000",
+          "body": [
+            "Ten basic numbers plus two pieces (*-toista* and *-kymmentä*) are enough to build everything up to a hundred. Note that Finnish numbers are written **as one word**, however long they get."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Number",
+                "Suomi",
+                "Say it",
+                "Number",
+                "Suomi",
+                "Say it"
+              ],
+              "rows": [
+                [
+                  "0",
+                  "nolla",
+                  "NOL-lah",
+                  "10",
+                  "kymmenen",
+                  "KÜM-me-nen"
+                ],
+                [
+                  "1",
+                  "yksi",
+                  "ÜK-si",
+                  "11",
+                  "yksitoista",
+                  "ÜK-si-toys-tah"
+                ],
+                [
+                  "2",
+                  "kaksi",
+                  "KAHK-si",
+                  "12",
+                  "kaksitoista",
+                  "KAHK-si-toys-tah"
+                ],
+                [
+                  "3",
+                  "kolme",
+                  "KOL-me",
+                  "13",
+                  "kolmetoista",
+                  "KOL-me-toys-tah"
+                ],
+                [
+                  "4",
+                  "neljä",
+                  "NEL-yä",
+                  "14",
+                  "neljätoista",
+                  "NEL-yä-toys-tah"
+                ],
+                [
+                  "5",
+                  "viisi",
+                  "VEE-si",
+                  "15",
+                  "viisitoista",
+                  "VEE-si-toys-tah"
+                ],
+                [
+                  "6",
+                  "kuusi",
+                  "KOOO-si",
+                  "16",
+                  "kuusitoista",
+                  "KOOO-si-toys-tah"
+                ],
+                [
+                  "7",
+                  "seitsemän",
+                  "SAYT-se-män",
+                  "17",
+                  "seitsemäntoista",
+                  "SAYT-se-män-toys-tah"
+                ],
+                [
+                  "8",
+                  "kahdeksan",
+                  "KAHH-dek-sahn",
+                  "18",
+                  "kahdeksantoista",
+                  "KAHH-dek-sahn-toys-tah"
+                ],
+                [
+                  "9",
+                  "yhdeksän",
+                  "ÜH-dek-sän",
+                  "19",
+                  "yhdeksäntoista",
+                  "ÜH-dek-sän-toys-tah"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Number",
+                "Suomi",
+                "Number",
+                "Suomi"
+              ],
+              "rows": [
+                [
+                  "20",
+                  "kaksikymmentä",
+                  "70",
+                  "seitsemänkymmentä"
+                ],
+                [
+                  "21",
+                  "kaksikymmentäyksi",
+                  "80",
+                  "kahdeksankymmentä"
+                ],
+                [
+                  "30",
+                  "kolmekymmentä",
+                  "90",
+                  "yhdeksänkymmentä"
+                ],
+                [
+                  "40",
+                  "neljäkymmentä",
+                  "100",
+                  "sata"
+                ],
+                [
+                  "50",
+                  "viisikymmentä",
+                  "200",
+                  "kaksisataa"
+                ],
+                [
+                  "60",
+                  "kuusikymmentä",
+                  "1,000",
+                  "tuhat"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "**-toista** literally means \"of the second\" — that is, \"so-many of the second ten\". So *kolmetoista* = \"three of the second ten\" = 13. It does the job of English \"-teen\", but it carries a real meaning.",
+            "⚠️ **8 and 9 are built by subtraction.** *Kahdeksan* and *yhdeksän* contain *kaksi* and *yksi* — originally \"two short (of ten)\" and \"one short\". That's history, not a rule you need to apply, but it helps you remember the long forms.",
+            "The tens use *-kymmentä*, which is actually the partitive of *kymmenen* — so *kolmekymmentä* literally means \"three of ten\". The numbers themselves obey the partitive-after-numbers rule."
+          ]
+        },
+        {
+          "title": "Number + partitive singular",
+          "body": [
+            "The rule in one sentence: **after numbers from two up, the noun is partitive and stays singular.** What needs practice is forming the partitive."
+          ],
+          "table": {
+            "head": [
+              "Basic form",
+              "Partitive",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*kirja*",
+                "*kirja**a***",
+                "*kolme kirjaa*",
+                "three books"
+              ],
+              [
+                "*euro*",
+                "*euro**a***",
+                "*sata euroa*",
+                "a hundred euros"
+              ],
+              [
+                "*viikko*",
+                "*viikko**a***",
+                "*kaksitoista viikkoa*",
+                "twelve weeks"
+              ],
+              [
+                "*päivä*",
+                "*päivä**ä***",
+                "*seitsemän päivää*",
+                "seven days"
+              ],
+              [
+                "*opiskelija*",
+                "*opiskelija**a***",
+                "*yhdeksän opiskelijaa*",
+                "nine students"
+              ],
+              [
+                "*kieli*",
+                "*kiel**tä***",
+                "*kolme kieltä*",
+                "three languages"
+              ],
+              [
+                "*lapsi*",
+                "*las**ta***",
+                "*kaksi lasta*",
+                "two children"
+              ],
+              [
+                "*vuosi*",
+                "*vuo**tta***",
+                "*kaksikymmentä vuotta*",
+                "twenty years"
+              ],
+              [
+                "*ihminen*",
+                "*ihmis**tä***",
+                "*viisi ihmistä*",
+                "five people"
+              ]
+            ]
+          },
+          "after": [
+            "The pattern: words ending in a **single vowel** simply double that last vowel (*kirja → kirjaa*). Words ending in *-i*, *-si*, or *-nen* take the ending **-ta/-tä** and often change their stem (*kieli → kieltä*, *ihminen → ihmistä*).",
+            "⚠️ *Lapsi → lasta* and *vuosi → vuotta* can't be guessed from the basic form. Such words are few but very frequent, so memorize the partitive together with the word itself.",
+            "The same rule applies after *paljon* (much, a lot), *vähän* (a little), *monta* (many, countable), and *kuinka monta / montako* (how many)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Age and birthdays",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Kuinka vanha sinä olet?",
+              "KOOYN-kah VAHN-hah SI-nä O-let",
+              "How old are you?"
+            ],
+            [
+              "Minkä ikäinen olet?",
+              "MIN-kä I-käi-nen O-let",
+              "How old are you? (more polite)"
+            ],
+            [
+              "Olen kaksikymmentäkuusi.",
+              "O-len KAHK-si-küm-men-tä-kooo-si",
+              "I'm twenty-six."
+            ],
+            [
+              "Olen 26-vuotias.",
+              "O-len KAHK-si-küm-men-tä-kooo-si-vwoh-ti-ahs",
+              "I'm 26 years old."
+            ],
+            [
+              "Milloin sinun syntymäpäiväsi on?",
+              "MIL-loyn SIN-oon SÜN-tü-mä-päi-vä-si on",
+              "When is your birthday?"
+            ],
+            [
+              "Hyvää syntymäpäivää!",
+              "HÜ-vää SÜN-tü-mä-päi-vää",
+              "Happy birthday!"
+            ],
+            [
+              "Milloin sinä olet syntynyt?",
+              "MIL-loyn SI-nä O-let SÜN-tü-nüt",
+              "When were you born?"
+            ],
+            [
+              "Olen syntynyt vuonna 2000.",
+              "O-len SÜN-tü-nüt VWOHN-nah KAHK-si-too-haht-tah",
+              "I was born in 2000."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Both ways of giving your age are correct. *Olen 26* is shortest and most common; *Olen 26-vuotias* (\"I'm a 26-year-old\") is a bit fuller and is required when the age becomes an adjective: *26-vuotias mies* (a 26-year-old man)."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Month",
+            "Say it",
+            "Date form",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "tammikuu",
+              "TAHM-mi-kooo",
+              "tammikuuta",
+              "January"
+            ],
+            [
+              "helmikuu",
+              "HEL-mi-kooo",
+              "helmikuuta",
+              "February"
+            ],
+            [
+              "maaliskuu",
+              "MAAH-lis-kooo",
+              "maaliskuuta",
+              "March"
+            ],
+            [
+              "huhtikuu",
+              "HOOH-ti-kooo",
+              "huhtikuuta",
+              "April"
+            ],
+            [
+              "toukokuu",
+              "TOU-ko-kooo",
+              "toukokuuta",
+              "May"
+            ],
+            [
+              "kesäkuu",
+              "KE-sä-kooo",
+              "kesäkuuta",
+              "June"
+            ],
+            [
+              "heinäkuu",
+              "HAY-nä-kooo",
+              "heinäkuuta",
+              "July"
+            ],
+            [
+              "elokuu",
+              "E-lo-kooo",
+              "elokuuta",
+              "August"
+            ],
+            [
+              "syyskuu",
+              "SÜÜS-kooo",
+              "syyskuuta",
+              "September"
+            ],
+            [
+              "lokakuu",
+              "LO-kah-kooo",
+              "lokakuuta",
+              "October"
+            ],
+            [
+              "marraskuu",
+              "MAHR-rahs-kooo",
+              "marraskuuta",
+              "November"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Every month name ends in *-kuu*, which means \"moon\" — the moon in the sky and the month on the calendar are the same word, just as \"month\" and \"moon\" share a root in English. The first part comes from what happens in nature that month: *heinäkuu* = hay month, *lokakuu* = mud month, *joulukuu* = Christmas month."
+        }
+      ]
+    },
+    {
+      "title": "Numbers in everyday life",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "English",
+            "Note"
+          ],
+          "rows": [
+            [
+              "Paljonko se maksaa?",
+              "How much does it cost?",
+              "the answer takes the partitive: *kymmenen euroa*"
+            ],
+            [
+              "Montako?",
+              "How many?",
+              "followed by the partitive singular"
+            ],
+            [
+              "Mikä sinun numerosi on?",
+              "What's your number?",
+              "read digit by digit"
+            ],
+            [
+              "Kaksi lippua, kiitos.",
+              "Two tickets, please.",
+              "*lippu → lippua*"
+            ],
+            [
+              "Se kestää kolme tuntia.",
+              "It takes three hours.",
+              "*tunti → tuntia*"
+            ],
+            [
+              "Odota viisi minuuttia.",
+              "Wait five minutes.",
+              "*minuutti → minuuttia*"
+            ],
+            [
+              "Asun kerroksessa kolme.",
+              "I live on the third floor.",
+              "addresses use plain numbers"
+            ],
+            [
+              "Numero yksi, kiitos.",
+              "Number one, please.",
+              "ordering from a menu"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two numbers that are easy to mix up",
+          "items": [
+            "**kuusi** = six, but *kuusi* also means **spruce tree**. Two identical words; only the context tells them apart. *Kuusi kuusta* = six spruce trees.",
+            "**seitsemän** and **kahdeksan** are both long and often get mixed up by ear. A handle: *seitsemän* has an *s* up front, like \"seven\" and German \"sieben\"; *kahdeksan* contains the *kah-* from *kaksi*."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Decimal commas and thousands work the other way around from English. Finland uses a comma for decimals (*3,5* is read *kolme pilkku viisi*, \"three comma five\") and a space for thousands (*10 000*). So the English 1,000.50 is written *1 000,50* in Finland."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fi": "numero",
+      "baca": "NOO-me-ro",
+      "en": "number"
+    },
+    {
+      "fi": "nolla",
+      "baca": "NOL-lah",
+      "en": "zero"
+    },
+    {
+      "fi": "kymmenen",
+      "baca": "KÜM-me-nen",
+      "en": "ten"
+    },
+    {
+      "fi": "sata",
+      "baca": "SAH-tah",
+      "en": "a hundred"
+    },
+    {
+      "fi": "tuhat",
+      "baca": "TOO-haht",
+      "en": "a thousand"
+    },
+    {
+      "fi": "ikä",
+      "baca": "I-kä",
+      "en": "age"
+    },
+    {
+      "fi": "vuosi",
+      "baca": "VWOH-si",
+      "en": "year"
+    },
+    {
+      "fi": "kuukausi",
+      "baca": "KOOO-kow-si",
+      "en": "month"
+    },
+    {
+      "fi": "viikko",
+      "baca": "VEEK-ko",
+      "en": "week"
+    },
+    {
+      "fi": "päivä",
+      "baca": "PÄI-vä",
+      "en": "day"
+    },
+    {
+      "fi": "tunti",
+      "baca": "TOON-ti",
+      "en": "hour"
+    },
+    {
+      "fi": "minuutti",
+      "baca": "MI-nooot-ti",
+      "en": "minute"
+    },
+    {
+      "fi": "syntymäpäivä",
+      "baca": "SÜN-tü-mä-päi-vä",
+      "en": "birthday"
+    },
+    {
+      "fi": "puhelinnumero",
+      "baca": "POO-he-lin-noo-me-ro",
+      "en": "phone number"
+    },
+    {
+      "fi": "koko nimi",
+      "baca": "KO-ko NI-mi",
+      "en": "full name"
+    },
+    {
+      "fi": "kurssi",
+      "baca": "KOORS-si",
+      "en": "course"
+    },
+    {
+      "fi": "ryhmä",
+      "baca": "RÜH-mä",
+      "en": "group"
+    },
+    {
+      "fi": "euro",
+      "baca": "EOO-ro",
+      "en": "euro"
+    },
+    {
+      "fi": "lippu",
+      "baca": "LIP-poo",
+      "en": "ticket; flag"
+    },
+    {
+      "fi": "maksaa",
+      "baca": "MAHK-saah",
+      "en": "to pay; to cost"
+    },
+    {
+      "fi": "kestää",
+      "baca": "KES-tää",
+      "en": "to last; to endure"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the numbers out in words.",
+      "items": [
+        "7",
+        "14",
+        "23",
+        "48",
+        "95",
+        "300"
+      ]
+    },
+    {
+      "prompt": "Put the noun into the right form after the number.",
+      "items": [
+        "kolme (kirja)",
+        "sata (euro)",
+        "kaksitoista (viikko)",
+        "viisi (ihminen)",
+        "kaksi (lapsi)",
+        "kaksikymmentä (vuosi)"
+      ]
+    },
+    {
+      "prompt": "Translate into Finnish.",
+      "items": [
+        "How old are you?",
+        "I'm twenty-six years old.",
+        "When is your birthday?",
+        "The course costs a hundred euros.",
+        "How many languages do you speak?",
+        "I have two children."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "vanha / kuinka / olet / sinä / ?",
+        "kestää / kurssi / viikkoa / kaksitoista",
+        "opiskelijaa / on / ryhmässä / yhdeksän",
+        "euroa / se / sata / maksaa",
+        "kieltä / puhun / kolme"
+      ]
+    }
+  ],
+  "answers": [
+    "seitsemän — neljätoista — kaksikymmentäkolme — neljäkymmentäkahdeksan — yhdeksänkymmentäviisi — kolmesataa",
+    "kolme kirjaa — sata euroa — kaksitoista viikkoa — viisi ihmistä — kaksi lasta — kaksikymmentä vuotta",
+    "Kuinka vanha sinä olet? — Olen kaksikymmentäkuusi vuotta. — Milloin sinun syntymäpäiväsi on? — Kurssi maksaa sata euroa. — Kuinka monta kieltä sinä puhut? — Minulla on kaksi lasta.",
+    "Kuinka vanha sinä olet? — Kurssi kestää kaksitoista viikkoa. — Ryhmässä on yhdeksän opiskelijaa. — Se maksaa sata euroa. — Puhun kolme kieltä."
+  ]
+}

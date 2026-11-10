@@ -1,0 +1,1206 @@
+{
+  "brand": "LINGUO",
+  "cover": "cover.png",
+  "title": "Suomi 101",
+  "subtitle": "A self-study course in Finnish for complete beginners",
+  "level": "Level A1 (CEFR)",
+  "edition": "English Edition",
+  "ruby": false,
+  "font_size": "9.4pt",
+  "page_margin": "12mm 11mm 10mm",
+  "labels": {
+    "unit": "Unit",
+    "dialog": "Dialogue",
+    "notes": "Notes",
+    "vocab": "Vocabulary in this unit",
+    "exercises": "Exercises",
+    "answers": "Answer key",
+    "bekal": "By the end of this unit you can:",
+    "literal": "literally:",
+    "wave": "Wave review:",
+    "bagian": "Part"
+  },
+  "vocab_columns": [
+    {
+      "head": "Suomi",
+      "key": "fi"
+    },
+    {
+      "head": "Say it",
+      "key": "baca"
+    },
+    {
+      "head": "English",
+      "key": "en"
+    }
+  ],
+  "cover_design": {
+    "bg": "#14453D",
+    "accent": "#8FE3A8",
+    "label": "FINNISH",
+    "judul": "Suomi",
+    "cap": "ä",
+    "pola_opacity": 0.4,
+    "pola": "background-image:repeating-linear-gradient(115deg, rgba(255,255,255,.10) 0 2px, transparent 2px 38px),repeating-linear-gradient(65deg, rgba(255,255,255,.06) 0 2px, transparent 2px 38px);",
+    "ringkas": "A self-study course in Finnish for complete beginners — from saying hello in Helsinki to telling the story of a summer that's already gone.",
+    "catatan": "Every line of dialogue comes with a word-for-word translation and a pronunciation guide.",
+    "merek_sub": "SELF-STUDY MODULE",
+    "kaki_sub": "units · dialogues · exercises · answer key"
+  },
+  "product": {
+    "slug": "modul-finlandia-101-en",
+    "title": "Finnish 101 - A1 (English Edition)",
+    "type": "ebook",
+    "language": "Finnish",
+    "level": "A1",
+    "file": "suomi-101-a1-en.pdf",
+    "description": "Twenty Assimil-style self-study units that take you from zero to A1 Finnish: short dialogues, word-for-word translations that show how Finnish builds its sentences, grammar notes, vocabulary with an English-friendly pronunciation guide, exercises, and an answer key. Finnish is easier than its reputation: no articles, no grammatical gender, no future tense, one word for both \"he\" and \"she\", and spelling that matches sound letter for letter. Each unit targets one of the spots that actually trip learners up, from endings that do the job of English prepositions to consonants that weaken when a word changes form.",
+    "pages": 146
+  },
+  "front": [
+    {
+      "title": "Foreword",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Finnish has a reputation as one of the hardest languages in the world, and that reputation is **half misdirected**. The number everyone quotes is fifteen — the number of noun cases. The number is right, but it scares people because it's misunderstood: fifteen cases aren't fifteen extra things to memorize, but fifteen **prepositions stuck onto the end of the word**. English writes \"in the house\", Finnish writes *talossa*. Same content; it has just moved."
+        },
+        {
+          "type": "p",
+          "text": "What people rarely mention is the list of things that are **easier** than in English, and that list is long. Finnish has no grammatical gender — no *der/die/das*, no *le/la*. It has no articles at all: no \"a\", no \"the\". It has no future tense; \"tomorrow I go\" uses exactly the same form as \"I go\". It doesn't even split \"he\" and \"she\" — one word, *hän*, covers both."
+        },
+        {
+          "type": "p",
+          "text": "And one more gift from day one: **Finnish spelling is completely faithful to sound**. One letter, one sound, no exceptions. No silent letters, no letter combinations that suddenly sound different. After a lifetime of English spelling (*though*, *through*, *tough*), this will feel like a holiday."
+        },
+        {
+          "type": "p",
+          "text": "So the difficulty of Finnish isn't where you think it is. It lies in three other places: **sound length that changes meaning** (*tuli* fire, *tuuli* wind, *tulli* customs — three different words), **vowel harmony**, which decides which ending is allowed to attach, and **consonants that weaken** when a word changes form (*Suomi → Suomessa*, but *kauppa → kaupassa*). None of the three has any counterpart in English. That's why this course puts all three up front, before Unit 1, and keeps revisiting them little by little across all twenty units."
+        },
+        {
+          "type": "p",
+          "text": "The explanations are deliberately short. What's long isn't the theory but the practice — and the practice is in your hands, not on this page."
+        },
+        {
+          "type": "kotak",
+          "title": "Before you start",
+          "items": [
+            "This course asks only one thing of you: **say it out loud**. Finnish is a language where sound length distinguishes meaning, and you can't train your ears through your eyes.",
+            "Do one unit per sitting, 20–30 minutes. At five days a week, you'll finish all twenty units in under two months.",
+            "Don't skip the pronunciation chapter on the next pages. It isn't an extra; it's the foundation every unit builds on."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Enjoy the journey. *Onnea matkaan!*"
+        }
+      ]
+    },
+    {
+      "type": "isi",
+      "title": "Contents",
+      "intro": "Twenty units, arranged so that each one clears up one of the spots that most often trip learners up."
+    },
+    {
+      "title": "How to use this course",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This course is built for **self-study**. Each unit is designed to be finished in one sitting, 20 to 30 minutes, and asks nothing of you except a willingness to read out loud."
+        },
+        {
+          "type": "p",
+          "text": "Every unit has the same layout, and the order is deliberate:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Dialogue** — first read only the Finnish, without glancing down. Only then read the translation.",
+            "**Literal translation** — the small line under each sentence. It often sounds odd in English, and that's exactly the point: it shows how Finnish *actually* builds its thoughts, not how we'd tidy them up in translation.",
+            "**Notes** — things that are visible in the dialogue but that you may not have noticed.",
+            "**Grammar boxes** — the rule you just saw at work, explained after you've seen it, not before.",
+            "**Extra sections** — reference tables, ready-to-use phrases, culture notes.",
+            "**Vocabulary** — all the new words of the unit, each with its pronunciation.",
+            "**Exercises** and **answer key** — four groups of questions; do them all before opening the key."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Spaced review",
+          "items": [
+            "After finishing a new unit, briefly revisit the unit from **two days ago** and the unit from **one week ago** — just read the dialogue out loud, two minutes per unit.",
+            "This isn't a time-saving tip; it's the only way Unit 3 will still be alive in your head when you reach Unit 15."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One last rule: **say it out loud**. Finnish distinguishes meaning through sound length, and sound length can't be learned with your eyes. *Tuli*, *tuuli*, and *tulli* look alike on the page; to the ear they are far apart. Read each dialogue aloud at least twice — once slowly while looking, once a bit faster without looking at the translation."
+        }
+      ]
+    },
+    {
+      "title": "Finnish pronunciation",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This is the most important part of the whole course, and it comes first because three things in it will be used on every page that follows. The good news: the hardest part of pronouncing most languages — guessing the sound from the spelling — **doesn't exist at all** here."
+        },
+        {
+          "type": "p",
+          "text": "Finnish spelling is completely faithful to sound. A letter always sounds the same, wherever it stands. No silent letters, no combinations that sound different, no surprises. Once you know what each letter says, you can read any Finnish word correctly."
+        },
+        {
+          "type": "p",
+          "text": "The **Say it** column in this course respells each word in English-friendly letters, and it also marks two things the spelling doesn't show: **which syllable is stressed** (written in CAPITALS) and **which sounds are long**. Here is the key — every respelling in the book follows it exactly:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Letter",
+            "Say it (short / long)",
+            "How it sounds",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**a**",
+              "ah / aah",
+              "*a* as in \"father\"",
+              "*talo* → TAH-lo (house)"
+            ],
+            [
+              "**ä**",
+              "ä / ää",
+              "*a* as in \"cat\", mouth wide",
+              "*päivä* → PÄI-vä (day)"
+            ],
+            [
+              "**e**",
+              "e / ehh",
+              "*e* as in \"bed\" — long *ee* is the same sound held, never the *ee* of \"see\"",
+              "*tee* → tehh (tea)"
+            ],
+            [
+              "**i**",
+              "i / ee",
+              "short: *i* as in \"sit\" (never as in \"mine\"); long: *ee* as in \"see\"",
+              "*kiitos* → KEE-tos (thank you)"
+            ],
+            [
+              "**o**",
+              "o / ohh",
+              "a pure *o*, lips rounded, no glide",
+              "*joo* → yohh (yeah)"
+            ],
+            [
+              "**u**",
+              "oo / ooo",
+              "*oo* as in \"food\"; three o's = held long",
+              "*kuusi* → KOOO-si (six)"
+            ],
+            [
+              "**y**",
+              "ü / üü",
+              "say *ee* with your lips pushed forward (like German *ü*)",
+              "*hyvä* → HÜ-vä (good)"
+            ],
+            [
+              "**ö**",
+              "ö / öö",
+              "say *e* as in \"bed\" with rounded lips (like German *ö*)",
+              "*yö* → üö (night)"
+            ],
+            [
+              "**j**",
+              "y",
+              "always *y* as in \"yes\", never *j* as in \"jam\"",
+              "*ja* → yah (and)"
+            ],
+            [
+              "**diphthongs**",
+              "igh, ay, oy, ow, ou, woh, iye…",
+              "two vowels glided in one syllable: *ai* as in \"high\", *ei* as in \"day\", *oi* as in \"boy\", *au* as in \"how\", *ou* like \"soul\", *uo* = oo+o, *ie* = ee+e",
+              "*hei* → hay; *Suomi* → SWOH-mi; *tie* → tiye (road)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Everything else is read as written. *k*, *p*, *t* are not puffed out as in English — they sound like the *k*, *p*, *t* in \"skin\", \"spin\", \"stop\". *r* is rolled, as in Spanish or Italian. *h* is always heard, even in the middle of a word before another consonant: *lahti* = LAHH-ti (*ahh* here is *ah* + the Finnish *h*, not a long vowel)."
+        },
+        {
+          "type": "sub",
+          "text": "Stress always falls on the first syllable"
+        },
+        {
+          "type": "p",
+          "text": "No exceptions, nothing to memorize, even for loanwords: *TE-le-vi-si-o*, *RAH-vin-to-lah*, *PO-lee-si*. This is a huge saving compared with English or Russian, where stress has to be learned word by word. Long words have a weaker secondary stress on the third syllable, but at A1 you only need to make sure **the first syllable is the loudest**."
+        },
+        {
+          "type": "kotak",
+          "title": "The number-one mistake English speakers make",
+          "items": [
+            "English stresses all sorts of syllables (\"baNAna\", \"comPUter\", \"HelSINki\"), and that habit carries over: *kiitos* comes out as \"ki-I-tos\", *Helsinki* as \"hel-SIN-ki\".",
+            "Correct is **KEE-tos** and **HEL-sin-ki**. Get into the habit of hitting the first syllable as hard as you can, even if it feels exaggerated — to Finnish ears, that sounds normal."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Sound length changes meaning"
+        },
+        {
+          "type": "p",
+          "text": "This is the part that is genuinely hard, and unfortunately it's hard from day one. In Finnish, a letter written twice is pronounced **twice as long** — and that length separates words; it isn't decoration."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Short",
+            "Meaning",
+            "Long",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*tuli*",
+              "fire",
+              "*tuuli*",
+              "wind"
+            ],
+            [
+              "*tuli*",
+              "fire",
+              "*tulli*",
+              "customs"
+            ],
+            [
+              "*kuka*",
+              "who",
+              "*kukka*",
+              "flower"
+            ],
+            [
+              "*muta*",
+              "mud",
+              "*mutta*",
+              "but"
+            ],
+            [
+              "*kisa*",
+              "contest",
+              "*kissa*",
+              "cat"
+            ],
+            [
+              "*tapan*",
+              "I kill",
+              "*tapaan*",
+              "I meet"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Long vowels (*aa*, *ii*, *uu*) are held like a sustained note; long consonants (*kk*, *tt*, *ss*) are held with a **brief stop** before release — like the pause in the middle of \"black cat\" or \"hot tea\" said smoothly. In the Say it column, long consonants are doubled too and long vowels follow the key above: *kissa* → **KIS-sah**, *kiitos* → **KEE-tos**."
+        },
+        {
+          "type": "kotak",
+          "title": "Good news that rarely gets mentioned",
+          "items": [
+            "English already has this contrast in a few places — compare \"some ice\" with \"some mice\", or \"a nice tea\" with \"a night tea\". What's new isn't the ability but the awareness that it **separates words**.",
+            "When in doubt, make it longer. Finns forgive a sound that's too long more easily than one that's too short — a sound that's too short turns into a different word."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Vowel harmony — the rule that picks the ending"
+        },
+        {
+          "type": "p",
+          "text": "Finnish's eight vowels fall into three groups, and this split decides **which form of an ending may attach** to a word. You'll use this rule in almost every unit, so get to know it now, even though you don't need to memorize it yet:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Group",
+            "Vowels",
+            "What it does"
+          ],
+          "rows": [
+            [
+              "**Back**",
+              "a, o, u",
+              "forces endings with *a/o/u*"
+            ],
+            [
+              "**Front**",
+              "ä, ö, y",
+              "forces endings with *ä/ö/y*"
+            ],
+            [
+              "**Neutral**",
+              "e, i",
+              "goes along; forces nothing"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The rule in one sentence: **back vowels and front vowels can't be in the same word**. That's why the \"in\" ending has two faces — *-ssa* and *-ssä* — and which one you use depends on the word it attaches to:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Base word",
+            "Its vowels",
+            "Becomes",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*talo* (house)",
+              "a, o → back",
+              "*talo**ssa***",
+              "in the house"
+            ],
+            [
+              "*Suomi* (Finland)",
+              "u, o → back",
+              "*Suome**ssa***",
+              "in Finland"
+            ],
+            [
+              "*kylä* (village)",
+              "y, ä → front",
+              "*kylä**ssä***",
+              "in the village"
+            ],
+            [
+              "*Helsinki*",
+              "e, i → neutral only",
+              "*Helsingi**ssä***",
+              "in Helsinki"
+            ],
+            [
+              "*metsä* (forest)",
+              "e neutral, ä front",
+              "*metsä**ssä***",
+              "in the forest"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Words that contain **only** neutral vowels (*e*, *i*) take the front form: *Helsingissä*, *Berliinissä*. On the other hand, *Suomessa* takes *-ssa* — even though *Suomi* has an *i*, it also has *u* and *o*, and back vowels always win."
+        },
+        {
+          "type": "sub",
+          "text": "Consonants that weaken"
+        },
+        {
+          "type": "p",
+          "text": "The third thing that holds beginners back. When a noun takes an ending, the consonants *k*, *p*, *t* in its last syllable often **weaken** — sometimes becoming single, sometimes disappearing altogether. This isn't an exception; it's a widespread pattern with a name: *astevaihtelu*, consonant gradation."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Strong",
+            "Weak",
+            "Example",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**kk**",
+              "**k**",
+              "*kauppa → kaupassa*",
+              "shop → in the shop"
+            ],
+            [
+              "**pp**",
+              "**p**",
+              "*kaappi → kaapissa*",
+              "cupboard → in the cupboard"
+            ],
+            [
+              "**tt**",
+              "**t**",
+              "*matto → matolla*",
+              "rug → on the rug"
+            ],
+            [
+              "**k**",
+              "— (gone)",
+              "*jalka → jalassa*",
+              "foot → on the foot"
+            ],
+            [
+              "**p**",
+              "**v**",
+              "*leipä → leivässä*",
+              "bread → in the bread"
+            ],
+            [
+              "**t**",
+              "**d**",
+              "*katu → kadulla*",
+              "street → on the street"
+            ],
+            [
+              "**nt**",
+              "**nn**",
+              "*ranta → rannalla*",
+              "beach → at the beach"
+            ],
+            [
+              "**mp**",
+              "**mm**",
+              "*lampi → lammessa*",
+              "pond → in the pond"
+            ],
+            [
+              "**nk**",
+              "**ng**",
+              "*Helsinki → Helsingissä*",
+              "Helsinki → in Helsinki"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Don't memorize this table now. It's here so that when you meet *kaupassa* in Unit 11 and wonder \"where did one *p* go?\", the answer has already passed before your eyes. The rule is introduced gradually from Unit 6 on."
+        },
+        {
+          "type": "kotak",
+          "title": "Five words to get right from day one",
+          "items": [
+            "*kiitos* → **KEE-tos** (thank you) — long *ii*, stress up front.",
+            "*hyvää päivää* → **HÜ-vää PÄI-vää** (good afternoon) — four long vowels in a row.",
+            "*anteeksi* → **AHN-tehhk-si** (sorry; excuse me) — long *ee* in the middle.",
+            "*Suomi* → **SWOH-mi** (Finland) — *uo* is one glide, not two syllables.",
+            "*hän* → **hän** (he, she) — one word for both."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Don't try to memorize this whole chapter now. Read it through once, calmly, then start Unit 1. You'll come back to this page many times on your own, and each time it will make more sense than before."
+        }
+      ]
+    }
+  ],
+  "back": [
+    {
+      "title": "A1 grammar summary",
+      "blocks": [
+        {
+          "type": "sub",
+          "text": "Fifteen cases — the ones used at A1"
+        },
+        {
+          "type": "p",
+          "text": "Finnish has fifteen noun endings. The ones below cover all of A1; the rest are rarely used even by native speakers in everyday conversation."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Name",
+            "Ending",
+            "*talo* (house)",
+            "Meaning",
+            "Unit"
+          ],
+          "rows": [
+            [
+              "basic (nominative)",
+              "—",
+              "*talo*",
+              "house",
+              "1"
+            ],
+            [
+              "genitive",
+              "**-n**",
+              "*talon*",
+              "the house's; whole object",
+              "4, 11"
+            ],
+            [
+              "partitive",
+              "**-a/-ä, -ta/-tä**",
+              "*taloa*",
+              "part of a house; unfinished object",
+              "11"
+            ],
+            [
+              "inessive (in)",
+              "**-ssa/-ssä**",
+              "*talossa*",
+              "in the house",
+              "2"
+            ],
+            [
+              "elative (out of)",
+              "**-sta/-stä**",
+              "*talosta*",
+              "out of the house",
+              "2"
+            ],
+            [
+              "illative (into)",
+              "**-Vn**",
+              "*taloon*",
+              "into the house",
+              "9"
+            ],
+            [
+              "adessive (on, at)",
+              "**-lla/-llä**",
+              "*talolla*",
+              "at the house; have; by means of",
+              "4, 9"
+            ],
+            [
+              "ablative (off, from)",
+              "**-lta/-ltä**",
+              "*talolta*",
+              "from the house; at what time",
+              "9, 10"
+            ],
+            [
+              "allative (onto, to)",
+              "**-lle**",
+              "*talolle*",
+              "to the house; to a person",
+              "9"
+            ],
+            [
+              "essive (as)",
+              "**-na/-nä**",
+              "*talona*",
+              "as a house; on a day",
+              "10, 18"
+            ],
+            [
+              "translative (into a state)",
+              "**-ksi**",
+              "*taloksi*",
+              "becoming a house; in a language",
+              "18"
+            ],
+            [
+              "plural",
+              "**-t**",
+              "*talot*",
+              "houses",
+              "3"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Adjectives, ordinal numbers, and demonstratives **always** take the same ending as their noun: *isossa talossa*, *kolmannessa kerroksessa*, *tässä talossa*. Not a single exception."
+        },
+        {
+          "type": "sub",
+          "text": "Consonant gradation"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Strong",
+            "Weak",
+            "Example",
+            "Strong",
+            "Weak",
+            "Example"
+          ],
+          "rows": [
+            [
+              "kk",
+              "k",
+              "*kauppa → kaupan*",
+              "nt",
+              "nn",
+              "*ranta → rannan*"
+            ],
+            [
+              "pp",
+              "p",
+              "*kaappi → kaapin*",
+              "mp",
+              "mm",
+              "*lampi → lammen*"
+            ],
+            [
+              "tt",
+              "t",
+              "*matto → maton*",
+              "nk",
+              "ng",
+              "*Helsinki → Helsingin*"
+            ],
+            [
+              "k",
+              "—",
+              "*jalka → jalan*",
+              "lt",
+              "ll",
+              "*ilta → illan*"
+            ],
+            [
+              "p",
+              "v",
+              "*leipä → leivän*",
+              "rt",
+              "rr",
+              "*parta → parran*"
+            ],
+            [
+              "t",
+              "d",
+              "*katu → kadun*",
+              "—",
+              "—",
+              "—"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Only k/p/t in the last syllable weaken, and only when the ending closes that syllable. The **\"into\" ending never causes weakening**: *kauppa → kauppaan*."
+        },
+        {
+          "type": "sub",
+          "text": "Present-tense verbs"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Subject",
+            "Ending",
+            "Example",
+            "Negative",
+            "Negative example"
+          ],
+          "rows": [
+            [
+              "minä",
+              "**-n**",
+              "puhu**n**",
+              "**en**",
+              "en puhu"
+            ],
+            [
+              "sinä",
+              "**-t**",
+              "puhu**t**",
+              "**et**",
+              "et puhu"
+            ],
+            [
+              "hän",
+              "*vowel lengthened*",
+              "puhu**u**",
+              "**ei**",
+              "ei puhu"
+            ],
+            [
+              "me",
+              "**-mme**",
+              "puhu**mme**",
+              "**emme**",
+              "emme puhu"
+            ],
+            [
+              "te",
+              "**-tte**",
+              "puhu**tte**",
+              "**ette**",
+              "ette puhu"
+            ],
+            [
+              "he",
+              "**-vat/-vät**",
+              "puhu**vat**",
+              "**eivät**",
+              "eivät puhu"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Gradation in verbs:** weak for *minä/sinä/me/te*, strong for *hän/he* — except type 4, which is exactly the reverse (*tavata → tapaan*)."
+        },
+        {
+          "type": "sub",
+          "text": "Six verb types"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Type",
+            "Marker",
+            "Stem",
+            "Example"
+          ],
+          "rows": [
+            [
+              "1",
+              "two different vowels",
+              "drop **-a/-ä**",
+              "*puhua → puhun*"
+            ],
+            [
+              "2",
+              "**-da/-dä**",
+              "drop **-da/-dä**",
+              "*juoda → juon*"
+            ],
+            [
+              "3",
+              "**-lla, -nnä, -sta**…",
+              "drop two letters + **-e-**",
+              "*tulla → tulen*"
+            ],
+            [
+              "4",
+              "vowel + **-ta**",
+              "drop **-ta** + **-a-**",
+              "*haluta → haluan*"
+            ],
+            [
+              "5",
+              "**-ita/-itä**",
+              "drop **-ta** + **-tse-**",
+              "*tarvita → tarvitsen*"
+            ],
+            [
+              "6",
+              "**-eta/-etä**",
+              "drop **-ta** + **-ne-**",
+              "*vanheta → vanhenen*"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Three tenses"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Tense",
+            "Formation",
+            "Example",
+            "Negative"
+          ],
+          "rows": [
+            [
+              "present",
+              "stem + person ending",
+              "*menen*",
+              "*en mene*"
+            ],
+            [
+              "past",
+              "stem + **-i-** + ending",
+              "*menin*",
+              "*en mennyt*"
+            ],
+            [
+              "perfect",
+              "*olla* + **-nut/-nyt/-neet**",
+              "*olen mennyt*",
+              "*en ole mennyt*"
+            ],
+            [
+              "future",
+              "**no separate form**",
+              "*menen huomenna*",
+              "*en mene huomenna*"
+            ],
+            [
+              "conditional",
+              "stem + **-isi-** + ending",
+              "*menisin*",
+              "*en menisi*"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Objects: whole or partial"
+        },
+        {
+          "type": "p",
+          "text": "The object is **partitive** when: (1) the thing is uncountable, (2) it follows a number from two up, (3) the sentence is negative, (4) the action is unfinished. Otherwise the object takes the **genitive (-n)** form."
+        },
+        {
+          "type": "sub",
+          "text": "Word order"
+        },
+        {
+          "type": "list",
+          "items": [
+            "The standard order is **subject – verb – rest**: *Minä ostan leipää.* But the endings already show each word's role, so the order is far freer than in English — whatever moves to the front is what's being emphasized.",
+            "Questions without a question word: verb to the front + the ending **-ko/-kö**: *Ostatko sinä leipää?*",
+            "Questions with a question word: the question word goes first, no *-ko*: *Mitä sinä ostat?*",
+            "Existence sentences: **the place comes first**, the thing after it: *Pöydällä on kirja.* (Like \"On the table there is a book.\")",
+            "Adjectives always come **before** their noun: *sininen laukku* — just as in English.",
+            "The owner always comes **before** the thing owned: *Ainon kirja* — like English \"Aino's book\"."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Comparison"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Basic",
+            "More (**-mpi**)",
+            "Most (**-in**)",
+            "Note"
+          ],
+          "rows": [
+            [
+              "*iso*",
+              "*isompi*",
+              "*isoin*",
+              "regular"
+            ],
+            [
+              "*kallis*",
+              "*kalliimpi*",
+              "*kallein*",
+              "vowel lengthens"
+            ],
+            [
+              "*hyvä*",
+              "**parempi**",
+              "**paras**",
+              "irregular"
+            ],
+            [
+              "*paljon*",
+              "**enemmän**",
+              "**eniten**",
+              "irregular"
+            ],
+            [
+              "*vähän*",
+              "**vähemmän**",
+              "**vähiten**",
+              "irregular"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "\"Than\" = ***kuin***, and the word after it doesn't change: *isompi kuin Tampere*."
+        }
+      ]
+    },
+    {
+      "title": "The most common verbs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The thirty verbs below cover most everyday conversation. The fourth and fifth columns are there on purpose, because those are the forms learners most often get wrong when building them on their own."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Dictionary",
+            "Type",
+            "minä (present)",
+            "minä (past)",
+            "-nut",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*olla*",
+              "3",
+              "olen",
+              "olin",
+              "ollut",
+              "to be"
+            ],
+            [
+              "*tulla*",
+              "3",
+              "tulen",
+              "tulin",
+              "tullut",
+              "to come"
+            ],
+            [
+              "*mennä*",
+              "3",
+              "menen",
+              "menin",
+              "mennyt",
+              "to go"
+            ],
+            [
+              "*tehdä*",
+              "2",
+              "teen",
+              "tein",
+              "tehnyt",
+              "to do, to make"
+            ],
+            [
+              "*saada*",
+              "2",
+              "saan",
+              "sain",
+              "saanut",
+              "to get"
+            ],
+            [
+              "*voida*",
+              "2",
+              "voin",
+              "voin",
+              "voinut",
+              "can, to be able"
+            ],
+            [
+              "*sanoa*",
+              "1",
+              "sanon",
+              "sanoin",
+              "sanonut",
+              "to say"
+            ],
+            [
+              "*puhua*",
+              "1",
+              "puhun",
+              "puhuin",
+              "puhunut",
+              "to speak"
+            ],
+            [
+              "*tietää*",
+              "1",
+              "tiedän",
+              "tiesin",
+              "tiennyt",
+              "to know"
+            ],
+            [
+              "*ymmärtää*",
+              "1",
+              "ymmärrän",
+              "ymmärsin",
+              "ymmärtänyt",
+              "to understand"
+            ],
+            [
+              "*nähdä*",
+              "2",
+              "näen",
+              "näin",
+              "nähnyt",
+              "to see"
+            ],
+            [
+              "*katsoa*",
+              "1",
+              "katson",
+              "katsoin",
+              "katsonut",
+              "to watch, to look"
+            ],
+            [
+              "*kuulla*",
+              "3",
+              "kuulen",
+              "kuulin",
+              "kuullut",
+              "to hear"
+            ],
+            [
+              "*lukea*",
+              "1",
+              "luen",
+              "luin",
+              "lukenut",
+              "to read"
+            ],
+            [
+              "*kirjoittaa*",
+              "1",
+              "kirjoitan",
+              "kirjoitin",
+              "kirjoittanut",
+              "to write"
+            ],
+            [
+              "*syödä*",
+              "2",
+              "syön",
+              "söin",
+              "syönyt",
+              "to eat"
+            ],
+            [
+              "*juoda*",
+              "2",
+              "juon",
+              "join",
+              "juonut",
+              "to drink"
+            ],
+            [
+              "*ostaa*",
+              "1",
+              "ostan",
+              "ostin",
+              "ostanut",
+              "to buy"
+            ],
+            [
+              "*maksaa*",
+              "1",
+              "maksan",
+              "maksoin",
+              "maksanut",
+              "to pay"
+            ],
+            [
+              "*antaa*",
+              "1",
+              "annan",
+              "annoin",
+              "antanut",
+              "to give"
+            ],
+            [
+              "*ottaa*",
+              "1",
+              "otan",
+              "otin",
+              "ottanut",
+              "to take"
+            ],
+            [
+              "*asua*",
+              "1",
+              "asun",
+              "asuin",
+              "asunut",
+              "to live"
+            ],
+            [
+              "*opiskella*",
+              "3",
+              "opiskelen",
+              "opiskelin",
+              "opiskellut",
+              "to study"
+            ],
+            [
+              "*oppia*",
+              "1",
+              "opin",
+              "opin",
+              "oppinut",
+              "to learn"
+            ],
+            [
+              "*haluta*",
+              "4",
+              "haluan",
+              "halusin",
+              "halunnut",
+              "to want"
+            ],
+            [
+              "*osata*",
+              "4",
+              "osaan",
+              "osasin",
+              "osannut",
+              "to know how"
+            ],
+            [
+              "*tarvita*",
+              "5",
+              "tarvitsen",
+              "tarvitsin",
+              "tarvinnut",
+              "to need"
+            ],
+            [
+              "*tavata*",
+              "4",
+              "tapaan",
+              "tapasin",
+              "tavannut",
+              "to meet"
+            ],
+            [
+              "*käydä*",
+              "2",
+              "käyn",
+              "kävin",
+              "käynyt",
+              "to visit, to drop by"
+            ],
+            [
+              "*jäädä*",
+              "2",
+              "jään",
+              "jäin",
+              "jäänyt",
+              "to stay"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Two verbs have a past form identical to the present: *voin* (I can / I could) and *opin*. Only the time expression tells them apart — one of the few places where Finnish lets a sentence stay ambiguous."
+        }
+      ]
+    },
+    {
+      "title": "What's next",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "If you've reached this page after really working through all twenty units — not just reading them — you've completed the full A1 level of Finnish. That means you can introduce yourself, handle everyday errands, tell what has happened, and ask for things politely. For a language with Finnish's reputation, that's no small achievement."
+        },
+        {
+          "type": "p",
+          "text": "What matters most now isn't the next chapter but **habit**. Finnish is learned through short, frequent repetition, not long, rare sessions. Fifteen minutes every day beats three hours every Sunday, and the gap is far bigger than people think."
+        },
+        {
+          "type": "kotak",
+          "title": "Four steps that really move the needle",
+          "items": [
+            "**Three written sentences every evening** about your day: one positive, one negative, one question. Ninety sentences a month.",
+            "**Yle Areena and Yle Uutiset selkosuomeksi.** The second is the news in simplified Finnish, read slowly — made precisely for people at your level, and free.",
+            "**A library card.** It's free, and the whole easy-Finnish reading section is there. Children's books aren't an insult; they're the most widely available A1 material in the world.",
+            "**Don't let people switch to English.** *Voisimmeko puhua suomea? Minä opiskelen.* — one sentence that saves hundreds of hours of practice."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The next official step is **A2**: plurals with full endings (*taloissa*, *kirjoista*), complex sentences with *joka* and *että*, subjectless verb forms you can build yourself, and the *-va/-nut* forms used as adjectives. None of it starts from zero — it all stands on the six place endings, six verb types, and partitive rules you've mastered in this course."
+        },
+        {
+          "type": "p",
+          "text": "One last thing, and it's the one self-learners forget most often: **Finnish is learned with your mouth, not your eyes.** Sound length changes meaning, stress always falls up front, and neither can be practiced in silence. Read out loud, even when you're alone, even when you feel silly."
+        },
+        {
+          "type": "p",
+          "text": "*Onnea matkaan — ja muista puhua ääneen!* (Good luck on your journey — and remember to speak out loud!)"
+        }
+      ]
+    }
+  ]
+}

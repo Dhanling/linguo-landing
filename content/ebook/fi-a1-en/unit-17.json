@@ -1,0 +1,579 @@
+{
+  "title": "Feeling ill",
+  "title_target": "Olen kipeä",
+  "goal": "Describe physical symptoms, understand two structures that make you the target rather than the doer, and express obligation — including the big trap in how to negate it.",
+  "bekal": [
+    "describe symptoms with *minulla on…* and *minua väsyttää*",
+    "express obligation with *minun täytyy* — and negate it correctly",
+    "name body parts and deal with the pharmacy and the health center"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Terveyskeskuksessa",
+      "intro": "Budi has been feeling unwell for three days. Aino takes him to the health center.",
+      "lines": [
+        {
+          "speaker": "Hoitaja:",
+          "text": "Päivää. Mikä on vaivana?",
+          "id": "Good afternoon. What seems to be the problem?",
+          "literal": "day. what is as-trouble?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Minulla on kuumetta ja kurkku on kipeä.",
+          "id": "I have a fever and my throat is sore.",
+          "literal": "at-me is fever-part and throat is sore."
+        },
+        {
+          "speaker": "Hoitaja:",
+          "text": "Kuinka kauan sinulla on ollut oireita?",
+          "id": "How long have you had symptoms?",
+          "literal": "how long at-you is been symptom-part?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kolme päivää. Minua väsyttää koko ajan.",
+          "id": "Three days. I feel tired all the time.",
+          "literal": "three day-part. me-part tires whole time-part."
+        },
+        {
+          "speaker": "Hoitaja:",
+          "text": "Sattuuko päähän?",
+          "id": "Does your head hurt?",
+          "literal": "hurts-? into-head?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vähän. Mutta yskä on pahin. En pysty nukkumaan.",
+          "id": "A little. But the cough is the worst. I can't sleep.",
+          "literal": "little. but cough is worst. not-I able to-sleep."
+        },
+        {
+          "speaker": "Hoitaja:",
+          "text": "Mitataan kuume. Kolmekymmentäkahdeksan ja kaksi.",
+          "id": "Let's take your temperature. Thirty-eight point two.",
+          "literal": "is-measured fever. thirty-eight and two."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Onko se paha?",
+          "id": "Is that bad?",
+          "literal": "is-? it bad?"
+        },
+        {
+          "speaker": "Hoitaja:",
+          "text": "Ei hätää. Se on tavallinen flunssa. Sinun täytyy levätä.",
+          "id": "Don't worry. It's an ordinary flu. You need to rest.",
+          "literal": "no emergency-part. it is ordinary flu. your must rest."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Täytyykö minun ottaa antibiootteja?",
+          "id": "Do I have to take antibiotics?",
+          "literal": "must-? my take antibiotic-part?"
+        },
+        {
+          "speaker": "Hoitaja:",
+          "text": "Ei tarvitse. Juo paljon vettä ja nuku. Se riittää.",
+          "id": "No need. Drink lots of water and sleep. That's enough.",
+          "literal": "not need. drink much water-part and sleep. it suffices."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kiitos. Milloin voin mennä takaisin töihin?",
+          "id": "Thank you. When can I go back to work?",
+          "literal": "thanks. when can-I go back to-work?"
+        },
+        {
+          "speaker": "Hoitaja:",
+          "text": "Kun kuume on poissa kaksi päivää. Parane pian!",
+          "id": "When you've been fever-free for two days. Get well soon!",
+          "literal": "when fever is away two day-part. recover soon!"
+        }
+      ],
+      "notes": [
+        "**Minulla on kuumetta** — partial form, not basic form. Fever is uncountable: you have \"some fever\", not all the fever in the world. Likewise *minulla on yskää*, *minulla on kipuja*. But *minulla on flunssa* uses the basic form, because flu is seen as one whole illness.",
+        "**Minua väsyttää — you're the target, not the doer.** Literally \"something tires me\". Finnish has a group of verbs that build sentences this way, all about bodily feelings: *minua väsyttää* (I'm sleepy), *minua paleltaa* (I'm cold), *minua oksettaa* (I feel sick), *minua janottaa* (I'm thirsty). You're in the **partial** form, and the verb is always in the *hän* form.",
+        "**Sattuuko päähän?** — \"does it hurt into the head\". Pain uses the direction ending *-Vn*: *päähän sattuu* (my head hurts), *vatsaan sattuu* (my stomach hurts), *selkään sattuu* (my back hurts). Finnish pictures pain as something that strikes into a place.",
+        "**Sinun täytyy levätä.** Obligation is built with the person in the **possessive** form: *minun täytyy*, *sinun täytyy*, *hänen täytyy*. The verb *täytyy* itself never changes — it's always in the *hän* form, whoever has to do it.",
+        "**Ei tarvitse, not ei täydy.** This is the big trap of the unit. Negating obligation uses a **different** verb: *minun **ei tarvitse** mennä* = I don't need to go. If you use a negative form of *täytyy*, it sounds wrong to Finnish ears. The difference matters as much as \"mustn't\" versus \"don't have to\" in English.",
+        "**Mitataan** — the subjectless form, like *sovitaan* and *mennään*, which you saw in unit 10. Here it means \"let's measure\", but it can also mean \"is measured\" by anyone. This form is covered in the next unit."
+      ],
+      "grammars": [
+        {
+          "title": "Three ways to describe symptoms",
+          "body": [
+            "Finnish describes bodily complaints with three different structures, and which one you use depends on the kind of complaint. You need to recognize all three, because they often turn up in the same conversation."
+          ],
+          "table": {
+            "head": [
+              "Structure",
+              "Example",
+              "Literally",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*minulla on* + illness",
+                "*Minulla on flunssa.*",
+                "at me is flu",
+                "I have the flu."
+              ],
+              [
+                "*minulla on* + partial form",
+                "*Minulla on kuumetta.*",
+                "at me is fever-part",
+                "I have a fever."
+              ],
+              [
+                "*minua* + feeling verb",
+                "*Minua väsyttää.*",
+                "me-part tires",
+                "I feel tired."
+              ],
+              [
+                "body part + *sattuu*",
+                "*Päähän sattuu.*",
+                "into head hurts",
+                "My head hurts."
+              ],
+              [
+                "body part + *on kipeä*",
+                "*Kurkku on kipeä.*",
+                "throat is sore",
+                "My throat is sore."
+              ],
+              [
+                "*olen* + adjective",
+                "*Olen kipeä.*",
+                "I am ill",
+                "I'm ill."
+              ]
+            ]
+          },
+          "after": [
+            "**The most common feeling verbs:** *väsyttää* (sleepy/tired), *paleltaa* (cold), *kuumottaa* (hot), *janottaa* (thirsty), *oksettaa* (nauseous), *pelottaa* (scared), *harmittaa* (annoyed), *naurattaa* (wanting to laugh).",
+            "⚠️ In this structure you're **always in the partial form**: *minua*, *sinua*, *häntä*, *meitä*, *teitä*, *heitä*. And the verb never changes — it always looks like the *hän* form.",
+            "This is one place where Finnish really thinks differently from English. We say \"I'm sleepy\" — we're the subject. Finnish says \"sleepiness comes to me\" — we're the target."
+          ]
+        },
+        {
+          "title": "Obligation — and how to negate it",
+          "body": [
+            "A structure where the person is in the possessive form and the verb is frozen. The part that needs attention is the negative, which uses a completely different verb."
+          ],
+          "table": {
+            "head": [
+              "Suomi",
+              "Literally",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Minun **täytyy** mennä.*",
+                "my must go",
+                "I have to go."
+              ],
+              [
+                "*Sinun **täytyy** levätä.*",
+                "your must rest",
+                "You have to rest."
+              ],
+              [
+                "*Hänen **täytyy** odottaa.*",
+                "his/her must wait",
+                "He/She has to wait."
+              ],
+              [
+                "*Meidän **pitää** kiirehtiä.*",
+                "our must hurry",
+                "We have to hurry."
+              ],
+              [
+                "*Minun **ei tarvitse** mennä.*",
+                "my not need go",
+                "I **don't need to** go."
+              ],
+              [
+                "*Täällä **ei saa** tupakoida.*",
+                "here not may smoke",
+                "You **mustn't** smoke here."
+              ],
+              [
+                "*Minun **kannattaa** levätä.*",
+                "my pays-off rest",
+                "I'd better rest."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Three negatives with very different meanings:** *ei tarvitse* = don't need to (it's optional); *ei saa* = mustn't (it's forbidden); *ei voi* = can't (it's impossible). Picking the wrong one isn't a grammar mistake but a wrong message, and the consequences can be serious.",
+            "*Täytyy* and *pitää* mean the same; *pitää* is a bit more casual and heard more often in conversation.",
+            "**The second verb is always in the dictionary form**: *täytyy **mennä***, *pitää **odottaa***, *kannattaa **levätä***. It never changes form."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Body parts",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "Say it",
+            "Meaning",
+            "Suomi",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "pää",
+              "pää",
+              "head",
+              "käsi",
+              "KÄ-si",
+              "hand, arm"
+            ],
+            [
+              "silmä",
+              "SIL-mä",
+              "eye",
+              "sormi",
+              "SOR-mi",
+              "finger"
+            ],
+            [
+              "korva",
+              "KOR-vah",
+              "ear",
+              "jalka",
+              "YAHL-kah",
+              "leg, foot"
+            ],
+            [
+              "nenä",
+              "NE-nä",
+              "nose",
+              "polvi",
+              "POL-vi",
+              "knee"
+            ],
+            [
+              "suu",
+              "sooo",
+              "mouth",
+              "selkä",
+              "SEL-kä",
+              "back"
+            ],
+            [
+              "hammas",
+              "HAHM-mahs",
+              "tooth",
+              "vatsa",
+              "VAHT-sah",
+              "stomach"
+            ],
+            [
+              "kurkku",
+              "KOORK-koo",
+              "throat",
+              "sydän",
+              "SÜ-dän",
+              "heart"
+            ],
+            [
+              "kaula",
+              "KOW-lah",
+              "neck",
+              "iho",
+              "I-ho",
+              "skin"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Complaint",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "flunssa",
+              "FLOONS-sah",
+              "flu, cold"
+            ],
+            [
+              "kuume",
+              "KOOO-me",
+              "fever"
+            ],
+            [
+              "yskä",
+              "ÜS-kä",
+              "cough"
+            ],
+            [
+              "nuha",
+              "NOO-hah",
+              "runny nose"
+            ],
+            [
+              "päänsärky",
+              "PÄÄN-sär-kü",
+              "headache"
+            ],
+            [
+              "vatsakipu",
+              "VAHT-sah-ki-poo",
+              "stomachache"
+            ],
+            [
+              "allergia",
+              "AHL-ler-gi-ah",
+              "allergy"
+            ],
+            [
+              "haava",
+              "HAAH-vah",
+              "wound"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Kurkku* means \"throat\" **and** \"cucumber\". Exactly the same word. *Minulla on kurkku kipeä* is clearly about your throat; if in doubt, people will laugh and understand."
+        }
+      ]
+    },
+    {
+      "title": "At the pharmacy and the health center",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "English"
+          ],
+          "rows": [
+            [
+              "terveyskeskus",
+              "health center"
+            ],
+            [
+              "apteekki",
+              "pharmacy"
+            ],
+            [
+              "lääkäri",
+              "doctor"
+            ],
+            [
+              "hoitaja",
+              "nurse"
+            ],
+            [
+              "hammaslääkäri",
+              "dentist"
+            ],
+            [
+              "lääke",
+              "medicine"
+            ],
+            [
+              "resepti",
+              "prescription"
+            ],
+            [
+              "särkylääke",
+              "painkiller"
+            ],
+            [
+              "ajanvaraus",
+              "appointment"
+            ],
+            [
+              "päivystys",
+              "emergency department"
+            ],
+            [
+              "Haluaisin varata ajan.",
+              "I'd like to make an appointment."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "What newcomers should know",
+          "items": [
+            "Finnish public healthcare is cheap, but the queues are long for anything non-urgent. Emergency number: **112**. Non-emergency medical advice: **116 117**.",
+            "Painkillers (*Burana*, *Panadol*) are sold over the counter at pharmacies, but **not** in supermarkets as in many other countries. Antibiotics always need a doctor's prescription.",
+            "If you live and work in Finland, you're entitled to public healthcare — newcomers too. Bring your Kela card if you have one."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fi": "terveys",
+      "baca": "TER-veüs",
+      "en": "health"
+    },
+    {
+      "fi": "kipeä",
+      "baca": "KI-pe-ä",
+      "en": "ill, sore"
+    },
+    {
+      "fi": "kuume",
+      "baca": "KOOO-me",
+      "en": "fever"
+    },
+    {
+      "fi": "yskä",
+      "baca": "ÜS-kä",
+      "en": "cough"
+    },
+    {
+      "fi": "flunssa",
+      "baca": "FLOONS-sah",
+      "en": "flu, cold"
+    },
+    {
+      "fi": "oire",
+      "baca": "OY-re",
+      "en": "symptom"
+    },
+    {
+      "fi": "sattua",
+      "baca": "SAHT-too-ah",
+      "en": "to hurt; to happen"
+    },
+    {
+      "fi": "särkeä",
+      "baca": "SÄR-ke-ä",
+      "en": "to ache"
+    },
+    {
+      "fi": "väsyttää",
+      "baca": "VÄ-süt-tää",
+      "en": "to make tired"
+    },
+    {
+      "fi": "levätä",
+      "baca": "LE-vä-tä",
+      "en": "to rest"
+    },
+    {
+      "fi": "parantua",
+      "baca": "PAH-rahn-too-ah",
+      "en": "to recover, get well"
+    },
+    {
+      "fi": "pystyä",
+      "baca": "PÜS-tü-ä",
+      "en": "to be able"
+    },
+    {
+      "fi": "täytyy",
+      "baca": "TÄÜ-tüü",
+      "en": "must, have to"
+    },
+    {
+      "fi": "pitää",
+      "baca": "PI-tää",
+      "en": "must; to like"
+    },
+    {
+      "fi": "tarvita",
+      "baca": "TAHR-vi-tah",
+      "en": "to need"
+    },
+    {
+      "fi": "kannattaa",
+      "baca": "KAHN-naht-taah",
+      "en": "to be worth it, had better"
+    },
+    {
+      "fi": "lääkäri",
+      "baca": "LÄÄ-kä-ri",
+      "en": "doctor"
+    },
+    {
+      "fi": "lääke",
+      "baca": "LÄÄ-ke",
+      "en": "medicine"
+    },
+    {
+      "fi": "apteekki",
+      "baca": "AHP-tehhk-ki",
+      "en": "pharmacy"
+    },
+    {
+      "fi": "resepti",
+      "baca": "RE-sep-ti",
+      "en": "prescription"
+    },
+    {
+      "fi": "pää",
+      "baca": "pää",
+      "en": "head"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Finnish.",
+      "items": [
+        "I have a fever.",
+        "My throat is sore.",
+        "I feel tired all the time.",
+        "My head hurts.",
+        "You have to rest.",
+        "I can't sleep."
+      ]
+    },
+    {
+      "prompt": "Complete with *täytyy* or *ei tarvitse*.",
+      "items": [
+        "Minun ____ mennä lääkäriin. (must)",
+        "Sinun ____ ottaa antibiootteja. (no need)",
+        "Hänen ____ levätä. (must)",
+        "Meidän ____ kiirehtiä. (no need)",
+        "Teidän ____ odottaa. (must)"
+      ]
+    },
+    {
+      "prompt": "Fill in the partial form of the pronoun (*minua*, *sinua*, *häntä*…).",
+      "items": [
+        "____ väsyttää. (I)",
+        "____ paleltaa. (you)",
+        "____ oksettaa. (he/she)",
+        "____ janottaa. (we)",
+        "____ pelottaa. (they)"
+      ]
+    },
+    {
+      "prompt": "Choose *ei tarvitse*, *ei saa* or *ei voi*.",
+      "items": [
+        "Täällä ____ tupakoida. (forbidden)",
+        "Sinun ____ tulla, jos olet kipeä. (not required)",
+        "Hän ____ kävellä, jalka on murtunut. (impossible)",
+        "Bussissa ____ syödä. (forbidden)",
+        "Minun ____ maksaa tänään. (not required)"
+      ]
+    }
+  ],
+  "answers": [
+    "Minulla on kuumetta. — Kurkku on kipeä. — Minua väsyttää koko ajan. — Päähän sattuu. — Sinun täytyy levätä. — En pysty nukkumaan.",
+    "täytyy — ei tarvitse — täytyy — ei tarvitse — täytyy",
+    "Minua — Sinua — Häntä — Meitä — Heitä",
+    "ei saa — ei tarvitse — ei voi — ei saa — ei tarvitse"
+  ]
+}

@@ -1,0 +1,593 @@
+{
+  "title": "Yesterday",
+  "title_target": "Eilen",
+  "goal": "Talk about what has already happened — one inserted letter turns the whole sentence into the past, and the negative uses a completely different form.",
+  "bekal": [
+    "insert **-i-** to form the past tense",
+    "negate the past with the *-nut/-nyt* and *-neet* forms",
+    "tell a story from beginning to end"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Viikonloppu mökillä",
+      "intro": "Monday morning. Budi finally went along to the cottage last weekend, and Aino wants to hear all about it.",
+      "lines": [
+        {
+          "speaker": "Aino:",
+          "text": "No niin! Mitä te teitte viikonloppuna?",
+          "id": "Well then! What did you guys do at the weekend?",
+          "literal": "well so! what you(pl) did at-weekend?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Me lähdimme perjantaina. Ajoimme kaksi tuntia autolla.",
+          "id": "We left on Friday. We drove for two hours.",
+          "literal": "we left on-Friday. drove-we two hour-part by-car."
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Millainen mökki oli?",
+          "id": "What was the cottage like?",
+          "literal": "what-kind cottage was?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Se oli pieni ja vanha. Ei ollut suihkua eikä nettiä.",
+          "id": "It was small and old. No shower and no internet.",
+          "literal": "it was small and old. not been shower-part and-not internet-part."
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Se on koko idea! Menitkö saunaan?",
+          "id": "That's the whole idea! Did you go in the sauna?",
+          "literal": "it is whole idea! went-?-you into-sauna?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Menin. Marek lämmitti saunan, ja me istuimme siellä tunnin.",
+          "id": "I did. Marek heated the sauna, and we sat there for an hour.",
+          "literal": "went-I. Marek heated sauna-whole, and we sat there hour-whole."
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Uitko järvessä sen jälkeen?",
+          "id": "Did you swim in the lake afterwards?",
+          "literal": "swam-?-you in-lake it-of after?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "En uinut. Katsoin vain. Vesi oli neljä astetta!",
+          "id": "No. I just watched. The water was four degrees!",
+          "literal": "not-I swum. watched-I only. water was four degree-part!"
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Ha! Ensi kerralla. Mitä te söitte?",
+          "id": "Ha! Next time. What did you eat?",
+          "literal": "ha! next on-time. what you(pl) ate?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Grillasimme makkaraa ja joimme olutta. Marek lauloi.",
+          "id": "We grilled sausages and drank beer. Marek sang.",
+          "literal": "grilled-we sausage-part and drank-we beer-part. Marek sang."
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Sinä et kertonut, että Marek laulaa.",
+          "id": "You never told me Marek sings.",
+          "literal": "you not told, that Marek sings."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "En tiennyt itsekään. Emme nukkuneet paljon.",
+          "id": "I didn't know either. We didn't sleep much.",
+          "literal": "not-I known self-either. not-we slept much."
+        }
+      ],
+      "notes": [
+        "**One letter changes the whole tense.** *Menen* (I go) → *men**i**n* (I went). The inserted *-i-* sits between the stem and the personal ending, and the ending doesn't change at all. Compare English, where *go → went* can change the whole word; Finnish is far more regular.",
+        "**The hän form loses its ending.** *Hän menee* → *hän meni*; *hän lukee* → *hän luki*. The long vowel of the present is replaced by *-i*, so the past *hän* form is actually shorter. This is the most reliable sign of the past tense in a text.",
+        "**Oli, not olei.** *Olla* in the past: *olin, olit, oli, olimme, olitte, olivat*. These forms appear in almost every story, so learn them now, before anything else.",
+        "**The negative uses a completely different form.** *En uinut*, *en tiennyt*, *emme nukkuneet*. The negative verb is still *en/et/ei/emme/ette/eivät* — what changes is the main verb, which takes *-nut/-nyt* (one person) or *-neet* (several people). The inserted *-i-* disappears completely in the negative.",
+        "**Eikä nettiä** — \"and no internet\". Once again *-kä* links two negatives, as you learned in unit 7.",
+        "**Söitte from syödä.** Some verbs change their vowel as well: *syödä → söin*, *juoda → join*, *tehdä → tein*, *nähdä → näin*, *tietää → tiesin*. The list is short but very frequent; it's in this unit's reference table."
+      ],
+      "grammars": [
+        {
+          "title": "The past tense — inserting -i-",
+          "body": [
+            "Finnish has only one simple past tense, formed by inserting **-i-** between the stem and the personal ending. The endings are exactly the ones you already know."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "*asua*",
+              "*mennä*",
+              "*olla*",
+              "*lukea*",
+              "*ostaa*"
+            ],
+            "rows": [
+              [
+                "minä",
+                "asu**i**n",
+                "men**i**n",
+                "ol**i**n",
+                "lu**i**n",
+                "ost**i**n"
+              ],
+              [
+                "sinä",
+                "asu**i**t",
+                "men**i**t",
+                "ol**i**t",
+                "lu**i**t",
+                "ost**i**t"
+              ],
+              [
+                "hän",
+                "asu**i**",
+                "men**i**",
+                "ol**i**",
+                "luk**i**",
+                "ost**i**"
+              ],
+              [
+                "me",
+                "asu**i**mme",
+                "men**i**mme",
+                "ol**i**mme",
+                "lu**i**mme",
+                "ost**i**mme"
+              ],
+              [
+                "te",
+                "asu**i**tte",
+                "men**i**tte",
+                "ol**i**tte",
+                "lu**i**tte",
+                "ost**i**tte"
+              ],
+              [
+                "he",
+                "asu**i**vat",
+                "men**i**vät",
+                "ol**i**vat",
+                "luk**i**vat",
+                "ost**i**vat"
+              ]
+            ]
+          },
+          "after": [
+            "**Stems ending in -u, -o, -y, -ö: just add the -i-.** *Asun → asuin*, *sanon → sanoin*, *katson → katsoin*. The easiest and largest group.",
+            "⚠️ **Stems ending in -a/-ä: the vowel disappears or changes.** If the first syllable has *o* or *u*, the final vowel **disappears**: *ostan → ostin*, *muistan → muistin*. If the first syllable has *a* or *e*, the final vowel becomes **-o-**: *annan → annoin*, *maksan → maksoin*, *alan → aloin*.",
+            "**Stems ending in -e: the -e disappears.** *Tulen → tulin*, *menen → menin*, *nousen → nousin*, *opiskelen → opiskelin*."
+          ]
+        },
+        {
+          "title": "Negating the past",
+          "body": [
+            "The form is completely different from the positive sentence, and this is what needs the most practice in this unit. The negative verb stays the same; the main verb changes its clothes."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Negative",
+              "*mennä*",
+              "*olla*",
+              "*nukkua*"
+            ],
+            "rows": [
+              [
+                "minä",
+                "en",
+                "en **mennyt**",
+                "en **ollut**",
+                "en **nukkunut**"
+              ],
+              [
+                "sinä",
+                "et",
+                "et **mennyt**",
+                "et **ollut**",
+                "et **nukkunut**"
+              ],
+              [
+                "hän",
+                "ei",
+                "ei **mennyt**",
+                "ei **ollut**",
+                "ei **nukkunut**"
+              ],
+              [
+                "me",
+                "emme",
+                "emme **menneet**",
+                "emme **olleet**",
+                "emme **nukkuneet**"
+              ],
+              [
+                "te",
+                "ette",
+                "ette **menneet**",
+                "ette **olleet**",
+                "ette **nukkuneet**"
+              ],
+              [
+                "he",
+                "eivät",
+                "eivät **menneet**",
+                "eivät **olleet**",
+                "eivät **nukkuneet**"
+              ]
+            ]
+          },
+          "after": [
+            "**The rule fits in two lines:** one person takes **-nut/-nyt**, several people take **-neet**. Choose *u* or *y* by vowel harmony: *nukkunut* but *mennyt*.",
+            "How to form it: take the stem of the dictionary form and add the ending. *Puhua → puhu**nut***, *asua → asu**nut***, *ostaa → osta**nut***, *lukea → luke**nut***.",
+            "⚠️ Type 3 verbs double their consonant: *tulla → tul**lut***, *mennä → men**nyt***, *nousta → nous**sut***, *opiskella → opiskel**lut***. The pattern: the stem's last consonant takes the place of the *n*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Past-tense verbs to learn by heart",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These verbs change more than just adding *-i-*. The list is short, but all of them are very frequent — they cover most everyday stories."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Dictionary",
+            "minä (present)",
+            "minä (past)",
+            "hän (past)",
+            "Past negative",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*olla*",
+              "olen",
+              "**olin**",
+              "oli",
+              "en ollut",
+              "to be"
+            ],
+            [
+              "*tehdä*",
+              "teen",
+              "**tein**",
+              "teki",
+              "en tehnyt",
+              "to do, make"
+            ],
+            [
+              "*nähdä*",
+              "näen",
+              "**näin**",
+              "näki",
+              "en nähnyt",
+              "to see"
+            ],
+            [
+              "*syödä*",
+              "syön",
+              "**söin**",
+              "söi",
+              "en syönyt",
+              "to eat"
+            ],
+            [
+              "*juoda*",
+              "juon",
+              "**join**",
+              "joi",
+              "en juonut",
+              "to drink"
+            ],
+            [
+              "*saada*",
+              "saan",
+              "**sain**",
+              "sai",
+              "en saanut",
+              "to get"
+            ],
+            [
+              "*käydä*",
+              "käyn",
+              "**kävin**",
+              "kävi",
+              "en käynyt",
+              "to visit"
+            ],
+            [
+              "*tietää*",
+              "tiedän",
+              "**tiesin**",
+              "tiesi",
+              "en tiennyt",
+              "to know"
+            ],
+            [
+              "*ymmärtää*",
+              "ymmärrän",
+              "**ymmärsin**",
+              "ymmärsi",
+              "en ymmärtänyt",
+              "to understand"
+            ],
+            [
+              "*tulla*",
+              "tulen",
+              "**tulin**",
+              "tuli",
+              "en tullut",
+              "to come"
+            ],
+            [
+              "*mennä*",
+              "menen",
+              "**menin**",
+              "meni",
+              "en mennyt",
+              "to go"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Notice the *t → s* pattern in *tietää → tiesin* and *ymmärtää → ymmärsin*. It applies to several verbs ending in *-ta/-tä*: *pyytää → pyysin* (ask for), *löytää → löysin* (find), *huutaa → huusin* (shout)."
+        }
+      ]
+    },
+    {
+      "title": "Linking a story",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "ensin",
+              "EN-sin",
+              "first"
+            ],
+            [
+              "sitten",
+              "SIT-ten",
+              "then"
+            ],
+            [
+              "sen jälkeen",
+              "sen YÄL-kehhn",
+              "after that"
+            ],
+            [
+              "myöhemmin",
+              "MÜÖ-hem-min",
+              "later"
+            ],
+            [
+              "lopuksi",
+              "LO-pook-si",
+              "finally"
+            ],
+            [
+              "yhtäkkiä",
+              "ÜH-täk-ki-ä",
+              "suddenly"
+            ],
+            [
+              "onneksi",
+              "ON-nek-si",
+              "luckily"
+            ],
+            [
+              "valitettavasti",
+              "VAH-li-tet-tah-vahs-ti",
+              "unfortunately"
+            ],
+            [
+              "koska",
+              "KOS-kah",
+              "because"
+            ],
+            [
+              "että",
+              "ET-tä",
+              "that"
+            ],
+            [
+              "kun",
+              "koon",
+              "when"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Koska* has two jobs: \"because\" and \"when\". Only its position tells them apart — at the start of a question it means \"when\" (*Koska tulit?*), in the middle of a sentence \"because\" (*En tullut, koska olin kipeä*)."
+        },
+        {
+          "type": "kotak",
+          "title": "The practice that pays off most at this stage",
+          "items": [
+            "Every evening, write **three sentences** about your day in the past tense. One positive, one negative, one question.",
+            "*Menin kauppaan. En ostanut mitään. Miksi kävin siellä?*",
+            "Three sentences a day for a month makes ninety sentences — far more than you'd get from reading the tables over and over."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fi": "eilen",
+      "baca": "AY-len",
+      "en": "yesterday"
+    },
+    {
+      "fi": "viikonloppuna",
+      "baca": "VEE-kon-lop-poo-nah",
+      "en": "at the weekend"
+    },
+    {
+      "fi": "lähteä",
+      "baca": "LÄH-te-ä",
+      "en": "to leave, set off"
+    },
+    {
+      "fi": "ajaa",
+      "baca": "AH-yaah",
+      "en": "to drive"
+    },
+    {
+      "fi": "istua",
+      "baca": "IS-too-ah",
+      "en": "to sit"
+    },
+    {
+      "fi": "lämmittää",
+      "baca": "LÄM-mit-tää",
+      "en": "to heat"
+    },
+    {
+      "fi": "grillata",
+      "baca": "GRIL-lah-tah",
+      "en": "to grill"
+    },
+    {
+      "fi": "makkara",
+      "baca": "MAHK-kah-rah",
+      "en": "sausage"
+    },
+    {
+      "fi": "laulaa",
+      "baca": "LOW-laah",
+      "en": "to sing"
+    },
+    {
+      "fi": "nähdä",
+      "baca": "NÄH-dä",
+      "en": "to see"
+    },
+    {
+      "fi": "tehdä",
+      "baca": "TEH-dä",
+      "en": "to do, make"
+    },
+    {
+      "fi": "löytää",
+      "baca": "LÖÜ-tää",
+      "en": "to find"
+    },
+    {
+      "fi": "pyytää",
+      "baca": "PÜÜ-tää",
+      "en": "to ask for"
+    },
+    {
+      "fi": "suihku",
+      "baca": "SOOYH-koo",
+      "en": "shower"
+    },
+    {
+      "fi": "idea",
+      "baca": "I-de-ah",
+      "en": "idea"
+    },
+    {
+      "fi": "sen jälkeen",
+      "baca": "sen YÄL-kehhn",
+      "en": "after that"
+    },
+    {
+      "fi": "ensin",
+      "baca": "EN-sin",
+      "en": "first"
+    },
+    {
+      "fi": "lopuksi",
+      "baca": "LO-pook-si",
+      "en": "finally"
+    },
+    {
+      "fi": "yhtäkkiä",
+      "baca": "ÜH-täk-ki-ä",
+      "en": "suddenly"
+    },
+    {
+      "fi": "koska",
+      "baca": "KOS-kah",
+      "en": "because; when"
+    },
+    {
+      "fi": "että",
+      "baca": "ET-tä",
+      "en": "that"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change to the past tense.",
+      "items": [
+        "Minä menen kauppaan.",
+        "Sinä olet kotona.",
+        "Hän lukee kirjaa.",
+        "Me ostamme leipää.",
+        "Te tulette myöhään.",
+        "He asuvat Helsingissä."
+      ]
+    },
+    {
+      "prompt": "Change to the past negative.",
+      "items": [
+        "Menin saunaan.",
+        "Uin järvessä.",
+        "Hän nukkui hyvin.",
+        "Me olimme mökillä.",
+        "Te söitte makkaraa.",
+        "He tulivat perjantaina."
+      ]
+    },
+    {
+      "prompt": "Write the past *minä* form.",
+      "items": [
+        "olla",
+        "tehdä",
+        "nähdä",
+        "syödä",
+        "juoda",
+        "tietää"
+      ]
+    },
+    {
+      "prompt": "Translate into Finnish.",
+      "items": [
+        "What did you guys do at the weekend?",
+        "We left on Friday.",
+        "The cottage was small and old.",
+        "I didn't swim.",
+        "We didn't sleep much.",
+        "The water was four degrees."
+      ]
+    }
+  ],
+  "answers": [
+    "Minä menin kauppaan. — Sinä olit kotona. — Hän luki kirjaa. — Me ostimme leipää. — Te tulitte myöhään. — He asuivat Helsingissä.",
+    "En mennyt saunaan. — En uinut järvessä. — Hän ei nukkunut hyvin. — Me emme olleet mökillä. — Te ette syöneet makkaraa. — He eivät tulleet perjantaina.",
+    "olin — tein — näin — söin — join — tiesin",
+    "Mitä te teitte viikonloppuna? — Me lähdimme perjantaina. — Mökki oli pieni ja vanha. — En uinut. — Emme nukkuneet paljon. — Vesi oli neljä astetta."
+  ]
+}

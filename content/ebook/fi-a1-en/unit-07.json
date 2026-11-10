@@ -1,0 +1,538 @@
+{
+  "title": "Saying no",
+  "title_target": "En ymmärrä!",
+  "goal": "Negate anything correctly — and accept the strangest fact about Finnish: the word \"not\" is a verb, and it changes with the subject.",
+  "bekal": [
+    "build the six forms of the negative verb *ei* and pair them with the verb stem",
+    "negate *olla* and *minulla on*, together with the partitive that must go with them",
+    "say no, apologize, and admit you don't understand without sounding rude"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Väärinkäsitys",
+      "intro": "In a campus corridor. Marek thinks Budi is coming to a weekend trip; it turns out he isn't.",
+      "lines": [
+        {
+          "speaker": "Marek:",
+          "text": "Hei Budi! Tuletko sinä mökille lauantaina?",
+          "id": "Hi Budi! Are you coming to the cottage on Saturday?",
+          "literal": "hi Budi! come-? you to-cottage on-Saturday?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Anteeksi, en ymmärrä. Voitko toistaa?",
+          "id": "Sorry, I don't understand. Could you repeat that?",
+          "literal": "sorry, not-I understand. can-you-? repeat?"
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Lauantaina. Mökille. Järven rannalla.",
+          "id": "On Saturday. To the cottage. On the lakeshore.",
+          "literal": "on-Saturday. to-cottage. lake-'s on-shore."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ai, nyt ymmärrän! Mutta en voi tulla. Minulla ei ole aikaa.",
+          "id": "Oh, now I get it! But I can't come. I don't have time.",
+          "literal": "ah, now understand-I! but not-I can come. at-me not is time-some."
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Etkö? Miksi et?",
+          "id": "You can't? Why not?",
+          "literal": "not-you-? why not-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Minä teen töitä lauantaina. Enkä minä osaa uida.",
+          "id": "I'm working on Saturday. And I can't swim, either.",
+          "literal": "I make work-plural-some on-Saturday. and-not-I know-how swim."
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Se ei ole ongelma! Me emme ui, me saunomme.",
+          "id": "That's not a problem! We don't swim, we take a sauna.",
+          "literal": "it not is problem! we not-we swim, we sauna."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Saunotteko te talvella? Eikö se ole kylmää?",
+          "id": "You do sauna in winter? Isn't it cold?",
+          "literal": "sauna-you-? you in-winter? not-?-it is cold-some?"
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Sauna ei ole kylmä. Järvi on kylmä!",
+          "id": "The sauna isn't cold. The lake is cold!",
+          "literal": "sauna not is cold. lake is cold!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Voi ei. Te ette ole normaaleja.",
+          "id": "Oh no. You people aren't normal.",
+          "literal": "oh no. you not-you are normal-plural-some."
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Suomalaiset eivät ole normaaleja. Se on totta!",
+          "id": "Finns aren't normal. That's true!",
+          "literal": "Finn-plural not-they are normal-plural-some. it is true."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ehkä ensi kerralla. Mutta en lupaa mitään!",
+          "id": "Maybe next time. But I'm not promising anything!",
+          "literal": "maybe next at-time. but not-I promise anything-some!"
+        }
+      ],
+      "notes": [
+        "**Ei is a verb, and it carries the subject.** This is the hardest part of the unit. In *en ymmärrä*, the word that says \"I\" isn't *ymmärrä* but *en*. The main verb is left bare — no person ending at all. English \"not\" never changes; Finnish treats it as a full verb.",
+        "**The main verb goes into its bare form.** *Ymmärrän → en ymmärrä*, *voin → en voi*, *tulen → en tule*, *olen → en ole*. What is left is the stem with no ending. That makes negation actually **easier** than a plain sentence — once you know the six forms of *ei*, the rest is just cutting off endings.",
+        "**Etkö? — questions can be negative too.** The question ending *-kö* attaches to the negative verb: *etkö* (don't you), *eikö* (doesn't he/it), *emmekö* (don't we). To answer: *En.* / *Kyllä.* Note that *kyllä* here means \"oh yes I do\" — it contradicts the negative, like German *doch*.",
+        "**Enkä** = *en* + *-kä* (\"and not\"). When one negative sentence is joined to another, *ja* is replaced by the ending *-kä*: *enkä minä osaa uida* (and I can't swim either). The forms: *enkä, etkä, eikä, emmekä, ettekä, eivätkä*.",
+        "**Minulla ei ole aikaa** — the thing must take the partitive. The positive sentence is *minulla on aika*; once negated, *aika* becomes *aikaa*. This isn't optional: negation **always** puts the negated thing in the partitive. *En juo kahvi**a***, *en syö liha**a***, *minulla ei ole auto**a***.",
+        "**Se ei ole ongelma, but Te ette ole normaaleja.** Why isn't the first one in the partitive? Because *ongelma* here names a **kind**, not an amount — and an adjective describing a plural subject always takes the plural partitive (*normaaleja*). The difference is subtle; at A1, just remember the *ei ole + noun* pattern as it appears in the dialogue."
+      ],
+      "grammars": [
+        {
+          "title": "Ei — the negative word that changes",
+          "body": [
+            "Six forms you really must know by heart, because they appear in every negative sentence you will ever say in Finnish."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "Negative",
+              "*puhua*",
+              "*olla*",
+              "*tietää*"
+            ],
+            "rows": [
+              [
+                "minä",
+                "**en**",
+                "en puhu",
+                "en ole",
+                "en tiedä"
+              ],
+              [
+                "sinä",
+                "**et**",
+                "et puhu",
+                "et ole",
+                "et tiedä"
+              ],
+              [
+                "hän",
+                "**ei**",
+                "ei puhu",
+                "ei ole",
+                "ei tiedä"
+              ],
+              [
+                "me",
+                "**emme**",
+                "emme puhu",
+                "emme ole",
+                "emme tiedä"
+              ],
+              [
+                "te",
+                "**ette**",
+                "ette puhu",
+                "ette ole",
+                "ette tiedä"
+              ],
+              [
+                "he",
+                "**eivät**",
+                "eivät puhu",
+                "eivät ole",
+                "eivät tiedä"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that the verb columns **don't change at all** from top to bottom. The whole job of marking the person is taken over by the negative verb. It is a big saving that beginners rarely notice.",
+            "**The bare form is the same as the command form.** *Puhu!* (speak!) and *en puhu* use exactly the same form. So if you know how to give an order, you know how to negate — and vice versa.",
+            "⚠️ The bare form uses the **weak grade**: *lukea → luen → en lue*, *ottaa → otan → en ota*, *mennä → menen → en mene*. The practical shortcut: take the *minä* form and drop the *-n*. That is almost always right."
+          ]
+        },
+        {
+          "title": "Negation demands the partitive",
+          "body": [
+            "The unit's second rule, and it has no exceptions: **whatever is negated changes to the partitive.** That is why a positive sentence and its negative never look like a neat pair."
+          ],
+          "table": {
+            "head": [
+              "Positive",
+              "Negative",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*Minulla on auto.*",
+                "*Minulla ei ole auto**a**.*",
+                "I have (don't have) a car."
+              ],
+              [
+                "*Minulla on aika.*",
+                "*Minulla ei ole aika**a**.*",
+                "I have (don't have) time."
+              ],
+              [
+                "*Juon kahvin.*",
+                "*En juo kahvi**a**.*",
+                "I drink (don't drink) the coffee."
+              ],
+              [
+                "*Syön leivän.*",
+                "*En syö leipä**ä**.*",
+                "I eat (don't eat) the bread."
+              ],
+              [
+                "*Ostan kirjan.*",
+                "*En osta kirja**a**.*",
+                "I buy (don't buy) the book."
+              ],
+              [
+                "*Meillä on lapsia.*",
+                "*Meillä ei ole lapsi**a**.*",
+                "We have (don't have) children."
+              ],
+              [
+                "*Ymmärrän suomea.*",
+                "*En ymmärrä suome**a**.*",
+                "I understand (don't understand) Finnish."
+              ]
+            ]
+          },
+          "after": [
+            "The last row shows something comforting: if the positive sentence is **already** in the partitive (as language names are), the negative changes nothing. This happens more often than you'd think.",
+            "⚠️ What does **not** change is the subject. *Minä en ole opiskelija* — *minä* stays *minä*. Only the object or the thing owned goes into the partitive.",
+            "If you forget to change it, you'll still be understood — but you'll sound exactly like a foreigner who has just started, and it is one of the mistakes Finnish ears catch fastest. Practice the pairs together: every time you learn a new sentence, learn its negative too."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Saying no and admitting you don't know",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Saying no in Finnish doesn't call for long pleasantries. A direct answer is considered honest and polite, not rude — but adding one short reason still makes it warmer."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "En ymmärrä.",
+              "en ÜM-mär-rä",
+              "I don't understand."
+            ],
+            [
+              "En tiedä.",
+              "en TIYE-dä",
+              "I don't know."
+            ],
+            [
+              "En osaa.",
+              "en O-saah",
+              "I can't (I don't know how)."
+            ],
+            [
+              "En voi.",
+              "en voy",
+              "I can't (I'm not able to make it)."
+            ],
+            [
+              "En puhu suomea hyvin.",
+              "en POO-hoo SWOH-me-ah HÜ-vin",
+              "My Finnish isn't good yet."
+            ],
+            [
+              "Valitettavasti en.",
+              "VAH-li-tet-tah-vahs-ti en",
+              "Unfortunately not."
+            ],
+            [
+              "Ei kiitos.",
+              "ay KEE-tos",
+              "No, thank you."
+            ],
+            [
+              "Ei käy.",
+              "ay käü",
+              "That won't work; that doesn't suit me."
+            ],
+            [
+              "Ehkä ensi kerralla.",
+              "EH-kä EN-si KER-rahl-lah",
+              "Maybe next time."
+            ],
+            [
+              "En lupaa mitään.",
+              "en LOO-paah MI-tään",
+              "I'm not promising anything."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Osata or voida?",
+          "items": [
+            "**Osata** = to have the skill. *En osaa uida* — I can't swim (I never learned).",
+            "**Voida** = to have the opportunity. *En voi tulla* — I can't come (something is in the way).",
+            "**Saada** = to have permission. *En saa tulla* — I'm not allowed to come.",
+            "English uses \"can\" for all three, so this distinction is genuinely new. Picking the wrong one changes what your sentence means, not just its tone."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Other negative words",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "Say it",
+            "English",
+            "Example"
+          ],
+          "rows": [
+            [
+              "ei mitään",
+              "ay MI-tään",
+              "nothing",
+              "*En sano mitään.*"
+            ],
+            [
+              "ei kukaan",
+              "ay KOO-kaahn",
+              "nobody",
+              "*Kukaan ei tiedä.*"
+            ],
+            [
+              "ei koskaan",
+              "ay KOS-kaahn",
+              "never",
+              "*En koskaan juo olutta.*"
+            ],
+            [
+              "ei missään",
+              "ay MIS-sään",
+              "nowhere",
+              "*Se ei ole missään.*"
+            ],
+            [
+              "ei vielä",
+              "ay VIYE-lä",
+              "not yet",
+              "*En ole vielä valmis.*"
+            ],
+            [
+              "ei enää",
+              "ay E-nää",
+              "no longer",
+              "*En asu enää Espoossa.*"
+            ],
+            [
+              "ei ollenkaan",
+              "ay OL-len-kaahn",
+              "not at all",
+              "*En ymmärrä ollenkaan.*"
+            ],
+            [
+              "ei myöskään",
+              "ay MÜÖS-kään",
+              "not either",
+              "*Hän ei myöskään tule.*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **The negative verb is still required.** *Kukaan ei tiedä* uses *ei* even though *kukaan* on its own already means \"nobody\". Finnish negates twice — something standard English forbids (\"nobody doesn't know\"), but in Finnish it is the only correct way."
+        },
+        {
+          "type": "p",
+          "text": "*Ei enää* and *ei vielä* come as a pair and are often mixed up. The rule of thumb: *vielä* looks forward (not yet, but maybe later), *enää* looks back (it used to be, but no longer)."
+        },
+        {
+          "type": "kotak",
+          "title": "The one sentence you'll need most",
+          "items": [
+            "*Anteeksi, en ymmärrä. Voitko puhua hitaammin?* — \"Sorry, I don't understand. Could you speak more slowly?\"",
+            "Nobody is offended by it, and it is far better than nodding along pretending to understand — a habit that is very hard to shake and only slows your learning down."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fi": "ei",
+      "baca": "ay",
+      "en": "no, not"
+    },
+    {
+      "fi": "mökki",
+      "baca": "MÖK-ki",
+      "en": "(summer) cottage"
+    },
+    {
+      "fi": "järvi",
+      "baca": "YÄR-vi",
+      "en": "lake"
+    },
+    {
+      "fi": "sauna",
+      "baca": "SOW-nah",
+      "en": "sauna"
+    },
+    {
+      "fi": "saunoa",
+      "baca": "SOW-no-ah",
+      "en": "to take a sauna"
+    },
+    {
+      "fi": "uida",
+      "baca": "OOY-dah",
+      "en": "to swim"
+    },
+    {
+      "fi": "lauantai",
+      "baca": "LOW-ahn-tigh",
+      "en": "Saturday"
+    },
+    {
+      "fi": "talvi",
+      "baca": "TAHL-vi",
+      "en": "winter"
+    },
+    {
+      "fi": "kylmä",
+      "baca": "KÜL-mä",
+      "en": "cold"
+    },
+    {
+      "fi": "lämmin",
+      "baca": "LÄM-min",
+      "en": "warm"
+    },
+    {
+      "fi": "ongelma",
+      "baca": "ON-gel-mah",
+      "en": "problem"
+    },
+    {
+      "fi": "osata",
+      "baca": "O-sah-tah",
+      "en": "can, know how to"
+    },
+    {
+      "fi": "voida",
+      "baca": "VOY-dah",
+      "en": "can, be able to"
+    },
+    {
+      "fi": "tulla",
+      "baca": "TOOL-lah",
+      "en": "to come"
+    },
+    {
+      "fi": "mennä",
+      "baca": "MEN-nä",
+      "en": "to go"
+    },
+    {
+      "fi": "tehdä",
+      "baca": "TEH-dä",
+      "en": "to make, to do"
+    },
+    {
+      "fi": "luvata",
+      "baca": "LOO-vah-tah",
+      "en": "to promise"
+    },
+    {
+      "fi": "sanoa",
+      "baca": "SAH-no-ah",
+      "en": "to say"
+    },
+    {
+      "fi": "ostaa",
+      "baca": "OS-taah",
+      "en": "to buy"
+    },
+    {
+      "fi": "normaali",
+      "baca": "NOR-maah-li",
+      "en": "normal"
+    },
+    {
+      "fi": "totta",
+      "baca": "TOT-tah",
+      "en": "true"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Make these sentences negative.",
+      "items": [
+        "Minä ymmärrän suomea.",
+        "Sinä tulet lauantaina.",
+        "Hän on opiskelija.",
+        "Me olemme Helsingissä.",
+        "Te puhutte englantia.",
+        "He tietävät sen."
+      ]
+    },
+    {
+      "prompt": "Make these negative. Remember the partitive.",
+      "items": [
+        "Minulla on auto.",
+        "Minulla on aikaa.",
+        "Juon kahvin.",
+        "Syön leivän.",
+        "Meillä on lapsia.",
+        "Ostan kirjan."
+      ]
+    },
+    {
+      "prompt": "Translate into Finnish.",
+      "items": [
+        "I don't understand.",
+        "I don't have time.",
+        "I can't swim.",
+        "That's not a problem.",
+        "Why not?",
+        "I'm not promising anything."
+      ]
+    },
+    {
+      "prompt": "Choose *osata*, *voida*, or *saada* in the negative.",
+      "items": [
+        "____ uida. (never learned to swim)",
+        "____ tulla lauantaina. (something in the way)",
+        "____ puhua tunnilla. (not allowed)",
+        "Hän ____ soittaa pianoa. (doesn't have the skill)",
+        "Me ____ auttaa tänään. (something in the way)"
+      ]
+    }
+  ],
+  "answers": [
+    "Minä en ymmärrä suomea. — Sinä et tule lauantaina. — Hän ei ole opiskelija. — Me emme ole Helsingissä. — Te ette puhu englantia. — He eivät tiedä sitä.",
+    "Minulla ei ole autoa. — Minulla ei ole aikaa. — En juo kahvia. — En syö leipää. — Meillä ei ole lapsia. — En osta kirjaa.",
+    "En ymmärrä. — Minulla ei ole aikaa. — En osaa uida. — Se ei ole ongelma. — Miksi et? — En lupaa mitään.",
+    "En osaa — En voi — En saa — ei osaa — emme voi"
+  ]
+}

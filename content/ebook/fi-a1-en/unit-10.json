@@ -1,0 +1,607 @@
+{
+  "title": "What time is it?",
+  "title_target": "Paljonko kello on?",
+  "goal": "Tell the time, name the days, and make appointments — while dodging one trap that catches English speakers every time: the Finnish \"half\" points to the NEXT hour.",
+  "bekal": [
+    "tell any time, including *puoli*, *yli*, and *vaille*",
+    "name days with the ending **-na/-nä** and appointment times with **-lta/-ltä**",
+    "make, change, and cancel an appointment"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Sovitaan aika",
+      "intro": "Aino and Budi are looking for a time to study together before an exam.",
+      "lines": [
+        {
+          "speaker": "Aino:",
+          "text": "Budi, meillä on koe ensi perjantaina. Opiskellaanko yhdessä?",
+          "id": "Budi, we have an exam next Friday. Shall we study together?",
+          "literal": "at-us is exam next on-Friday. study-shall-we-? together?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mielellään! Milloin sinulle sopii?",
+          "id": "I'd love to! When suits you?",
+          "literal": "gladly! when to-you suits?"
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Sopiiko keskiviikkona? Vaikka kahdelta.",
+          "id": "How about Wednesday? At two, say.",
+          "literal": "suits-? on-Wednesday? say from-two."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hetkinen… Ei sovi. Minulla on työvuoro kahdesta kahdeksaan.",
+          "id": "Just a moment… No, that doesn't work. I have a work shift from two to eight.",
+          "literal": "moment… not suits. at-me is work-shift from-two to-eight."
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Entä aamulla? Kello puoli yksitoista?",
+          "id": "What about the morning? Half past ten?",
+          "literal": "and in-morning? clock half eleven?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Puoli yksitoista… eli kymmenen kolmekymmentä?",
+          "id": "\"Half eleven\"… so ten thirty?",
+          "literal": "half eleven… that-is ten thirty?"
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Juuri niin. Sama kuin indonesiaksi, eikö?",
+          "id": "Exactly. Same as in Indonesian, right?",
+          "literal": "just so. same as in-Indonesian, not-?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sama! Onneksi. Englanniksi se on aina väärin päin.",
+          "id": "Same! Luckily. In English it's always the wrong way round.",
+          "literal": "same! luckily. in-English it is always wrong way."
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Sovitaan sitten keskiviikkona puoli yksitoista. Missä?",
+          "id": "Let's say Wednesday at half past ten, then. Where?",
+          "literal": "let's-agree then on-Wednesday half eleven. where?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kirjastossa? Se aukeaa kello yhdeksän.",
+          "id": "At the library? It opens at nine.",
+          "literal": "in-library? it opens clock nine."
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Sopii. Nähdään kirjaston edessä varttia vaille yksitoista.",
+          "id": "OK. See you in front of the library at quarter to eleven.",
+          "literal": "suits. let's-see library-'s in-front quarter-some short-of eleven."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Odota! Sanoit puoli yksitoista. Kumpi se on?",
+          "id": "Wait! You said half past ten. Which is it?",
+          "literal": "wait! said-you half eleven. which-of-two it is?"
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Hupsis. Puoli yksitoista. Anteeksi!",
+          "id": "Oops. Half past ten. Sorry!",
+          "literal": "oops. half eleven. sorry!"
+        }
+      ],
+      "notes": [
+        "**The big trap: puoli yksitoista = 10:30.** Finnish counts the half hour **toward** the next hour: *puoli yksitoista* is \"half (on the way to) eleven\". British English *half eleven* means 11:30 — exactly one hour later. Budi, as an Indonesian, is lucky: his language works like Finnish. For English speakers, this is the classic way to arrive an hour late. Train yourself: *puoli* + the **next** hour.",
+        "**Kahdesta kahdeksaan** — \"from two to eight\". Time spans use the pair of endings *-sta … -Vn*, exactly the endings you learned for places. Finnish treats time like a distance covered, and reusing these endings is one of the most economical things about the language.",
+        "**Kahdelta = at two (for appointments).** The ending *-lta/-ltä*, literally \"from\". Compare *kello kaksi*, which just names the hour. *Tulen kahdelta* = I'll come at two; *Kello on kaksi* = it's two o'clock now.",
+        "**Keskiviikkona** — days take the ending *-na/-nä*. *Maanantai → maanantaina*, *perjantai → perjantaina*. This is the essive (\"as\") ending, also used for dates and roles (*olen opettajana* = I work as a teacher, Unit 18).",
+        "**Sopiiko?** — \"does it suit?\". The verb *sopia* is used for anything that \"fits\": a schedule, clothes, a taste. Answer by repeating it: *Sopii.* / *Ei sovi.* Note the gradation in the negative: *sopii → ei sovi*.",
+        "**Sovitaan** — the \"let's\" form. Finnish has its own form for suggestions: *mennään!* (let's go), *opiskellaan* (let's study), *sovitaan* (let's agree). It looks like the impersonal form, and it is used far more often than *me menemme*."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "Finnish has two ways: the official one (24-hour, used in train timetables and the news) and the everyday one (12-hour, used in speech). The one you need to master is the second."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Suomi",
+              "Say it",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "14:00",
+                "*Kello on kaksi.*",
+                "KEL-lo on KAHK-si",
+                "clock is two"
+              ],
+              [
+                "14:05",
+                "*Viisi yli kaksi.*",
+                "VEE-si Ü-li KAHK-si",
+                "five over two"
+              ],
+              [
+                "14:15",
+                "*Vartin yli kaksi.*",
+                "VAHR-tin Ü-li KAHK-si",
+                "quarter over two"
+              ],
+              [
+                "14:20",
+                "*Kaksikymmentä yli kaksi.*",
+                "—",
+                "twenty over two"
+              ],
+              [
+                "14:30",
+                "*Puoli kolme.*",
+                "PWOH-li KOL-me",
+                "half three"
+              ],
+              [
+                "14:40",
+                "*Kaksikymmentä vaille kolme.*",
+                "—",
+                "twenty short of three"
+              ],
+              [
+                "14:45",
+                "*Varttia vaille kolme.*",
+                "VAHRT-ti-ah VIGHL-le KOL-me",
+                "quarter short of three"
+              ],
+              [
+                "14:55",
+                "*Viisi vaille kolme.*",
+                "VEE-si VIGHL-le KOL-me",
+                "five short of three"
+              ],
+              [
+                "14:30 (official)",
+                "*Kello neljätoista kolmekymmentä.*",
+                "—",
+                "clock fourteen thirty"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Puoli always points to the NEXT hour.** *Puoli kolme* = 2:30, not 3:30. If you think in British English (\"half three\" = 3:30), you'll be exactly one hour off. Translate it in your head as \"halfway to three\".",
+            "*Yli* = past, *vaille* = to. The dividing line is minute 30: up to 30 you use *yli*, after 30 you use *vaille* with the next hour.",
+            "To ask: *Paljonko kello on?* or *Mitä kello on?* — both are equally common. To answer: *Kello on…* or just the number."
+          ]
+        },
+        {
+          "title": "Days and appointment times",
+          "body": [
+            "Two endings cover almost all scheduling: **-na/-nä** for days and dates, **-lta/-ltä** for clock times."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Day",
+                "Say it",
+                "On that day",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "maanantai",
+                  "MAAH-nahn-tigh",
+                  "maanantai**na**",
+                  "Monday"
+                ],
+                [
+                  "tiistai",
+                  "TEES-tigh",
+                  "tiistai**na**",
+                  "Tuesday"
+                ],
+                [
+                  "keskiviikko",
+                  "KES-ki-veek-ko",
+                  "keskiviikko**na**",
+                  "Wednesday"
+                ],
+                [
+                  "torstai",
+                  "TORS-tigh",
+                  "torstai**na**",
+                  "Thursday"
+                ],
+                [
+                  "perjantai",
+                  "PER-yahn-tigh",
+                  "perjantai**na**",
+                  "Friday"
+                ],
+                [
+                  "lauantai",
+                  "LOW-ahn-tigh",
+                  "lauantai**na**",
+                  "Saturday"
+                ],
+                [
+                  "sunnuntai",
+                  "SOON-noon-tigh",
+                  "sunnuntai**na**",
+                  "Sunday"
+                ],
+                [
+                  "viikonloppu",
+                  "VEE-kon-lop-poo",
+                  "viikonloppu**na**",
+                  "weekend"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Hour",
+                "At that hour",
+                "Hour",
+                "At that hour"
+              ],
+              "rows": [
+                [
+                  "yksi",
+                  "**yhdeltä**",
+                  "seitsemän",
+                  "**seitsemältä**"
+                ],
+                [
+                  "kaksi",
+                  "**kahdelta**",
+                  "kahdeksan",
+                  "**kahdeksalta**"
+                ],
+                [
+                  "kolme",
+                  "**kolmelta**",
+                  "yhdeksän",
+                  "**yhdeksältä**"
+                ],
+                [
+                  "neljä",
+                  "**neljältä**",
+                  "kymmenen",
+                  "**kymmeneltä**"
+                ],
+                [
+                  "viisi",
+                  "**viideltä**",
+                  "yksitoista",
+                  "**yhdeltätoista**"
+                ],
+                [
+                  "kuusi",
+                  "**kuudelta**",
+                  "kaksitoista",
+                  "**kahdeltatoista**"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Numbers undergo gradation too: *yksi → yhdeltä*, *kaksi → kahdelta*, *viisi → viideltä*, *kuusi → kuudelta*. The first six numbers all change their stem; the rest are tamer.",
+            "*Keskiviikko* literally means \"mid-week\" — the only Finnish weekday name not borrowed from Scandinavian. Note that the Finnish week starts on **Monday**, so Wednesday really is in the middle.",
+            "**For half-hour times, the ending goes on the number**: *puoli kolmelta* (at half past two), *varttia vaille kolmelta*. In conversation people often just drop it: *Nähdään puoli kolme.*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Time words",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "tänään",
+              "TÄ-nään",
+              "today"
+            ],
+            [
+              "huomenna",
+              "HWOH-men-nah",
+              "tomorrow"
+            ],
+            [
+              "ylihuomenna",
+              "Ü-li-hwoh-men-nah",
+              "the day after tomorrow"
+            ],
+            [
+              "eilen",
+              "AY-len",
+              "yesterday"
+            ],
+            [
+              "toissapäivänä",
+              "TOYS-sah-päi-vä-nä",
+              "the day before yesterday"
+            ],
+            [
+              "tällä viikolla",
+              "TÄL-lä VEE-kol-lah",
+              "this week"
+            ],
+            [
+              "ensi viikolla",
+              "EN-si VEE-kol-lah",
+              "next week"
+            ],
+            [
+              "viime viikolla",
+              "VEE-me VEE-kol-lah",
+              "last week"
+            ],
+            [
+              "tässä kuussa",
+              "TÄS-sä KOOOS-sah",
+              "this month"
+            ],
+            [
+              "ensi kuussa",
+              "EN-si KOOOS-sah",
+              "next month"
+            ],
+            [
+              "tänä vuonna",
+              "TÄ-nä VWOHN-nah",
+              "this year"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Ensi* (next) and *viime* (last) never change form, but the noun does: *ensi **viikolla***, *viime **vuonna***. Note that weeks take an \"outer\" ending (*-lla*) while months take an \"inner\" one (*-ssa*) — something you simply have to memorize."
+        },
+        {
+          "type": "kotak",
+          "title": "Punctuality in Finland",
+          "items": [
+            "Five minutes late already counts as late, and fifteen minutes late without warning is considered rude. Buses and trains leave on the minute, too.",
+            "If you're going to be late, let people know in advance — one short message, *Olen viisi minuuttia myöhässä, anteeksi*, solves the whole problem."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Making an appointment",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "English"
+          ],
+          "rows": [
+            [
+              "Milloin sinulle sopii?",
+              "When suits you?"
+            ],
+            [
+              "Sopiiko keskiviikkona?",
+              "Does Wednesday work?"
+            ],
+            [
+              "Sopii hyvin.",
+              "That works fine."
+            ],
+            [
+              "Valitettavasti ei sovi.",
+              "Unfortunately that doesn't work."
+            ],
+            [
+              "Mihin aikaan?",
+              "At what time?"
+            ],
+            [
+              "Kahdelta, jos sopii.",
+              "At two, if that works."
+            ],
+            [
+              "Missä tavataan?",
+              "Where shall we meet?"
+            ],
+            [
+              "Nähdään kirjaston edessä.",
+              "See you in front of the library."
+            ],
+            [
+              "Voisitko siirtää sitä?",
+              "Could you move it?"
+            ],
+            [
+              "Minun täytyy perua.",
+              "I have to cancel."
+            ],
+            [
+              "Olen vähän myöhässä.",
+              "I'm running a little late."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Perua* (to cancel) is best used with a short reason: *Minun täytyy perua, olen kipeä* (I have to cancel, I'm sick). Canceling with no reason at all feels colder in Finland, even though nobody will tell you off."
+        },
+        {
+          "type": "p",
+          "text": "The most common invitations use the \"let's\" form: *Mennään kahville!* (let's get coffee), *Nähdään huomenna!* (see you tomorrow), *Sovitaan myöhemmin* (let's sort it out later). You've already seen this form in the dialogue, and it is far more natural than building a full sentence with *me*."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fi": "kello",
+      "baca": "KEL-lo",
+      "en": "clock, watch; o'clock"
+    },
+    {
+      "fi": "puoli",
+      "baca": "PWOH-li",
+      "en": "half"
+    },
+    {
+      "fi": "vartti",
+      "baca": "VAHRT-ti",
+      "en": "quarter of an hour"
+    },
+    {
+      "fi": "yli",
+      "baca": "Ü-li",
+      "en": "past, over"
+    },
+    {
+      "fi": "vaille",
+      "baca": "VIGHL-le",
+      "en": "to, short of"
+    },
+    {
+      "fi": "aika",
+      "baca": "IGH-kah",
+      "en": "time"
+    },
+    {
+      "fi": "maanantai",
+      "baca": "MAAH-nahn-tigh",
+      "en": "Monday"
+    },
+    {
+      "fi": "keskiviikko",
+      "baca": "KES-ki-veek-ko",
+      "en": "Wednesday"
+    },
+    {
+      "fi": "perjantai",
+      "baca": "PER-yahn-tigh",
+      "en": "Friday"
+    },
+    {
+      "fi": "viikonloppu",
+      "baca": "VEE-kon-lop-poo",
+      "en": "weekend"
+    },
+    {
+      "fi": "tänään",
+      "baca": "TÄ-nään",
+      "en": "today"
+    },
+    {
+      "fi": "eilen",
+      "baca": "AY-len",
+      "en": "yesterday"
+    },
+    {
+      "fi": "myöhemmin",
+      "baca": "MÜÖ-hem-min",
+      "en": "later"
+    },
+    {
+      "fi": "myöhässä",
+      "baca": "MÜÖ-häs-sä",
+      "en": "late"
+    },
+    {
+      "fi": "aikaisin",
+      "baca": "IGH-kigh-sin",
+      "en": "early"
+    },
+    {
+      "fi": "sopia",
+      "baca": "SO-pi-ah",
+      "en": "to suit, to fit"
+    },
+    {
+      "fi": "sopia (jotain)",
+      "baca": "SO-pi-ah",
+      "en": "to agree on (something)"
+    },
+    {
+      "fi": "tavata",
+      "baca": "TAH-vah-tah",
+      "en": "to meet"
+    },
+    {
+      "fi": "siirtää",
+      "baca": "SEER-tää",
+      "en": "to move, to reschedule"
+    },
+    {
+      "fi": "perua",
+      "baca": "PE-roo-ah",
+      "en": "to cancel"
+    },
+    {
+      "fi": "koe",
+      "baca": "KO-e",
+      "en": "exam, test"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the time in Finnish (the everyday way).",
+      "items": [
+        "14:00",
+        "14:15",
+        "14:30",
+        "14:45",
+        "10:30",
+        "11:55"
+      ]
+    },
+    {
+      "prompt": "Change each day to the \"on that day\" form.",
+      "items": [
+        "maanantai",
+        "keskiviikko",
+        "perjantai",
+        "lauantai",
+        "sunnuntai",
+        "viikonloppu"
+      ]
+    },
+    {
+      "prompt": "Change each hour to the appointment form (-lta/-ltä).",
+      "items": [
+        "kaksi",
+        "viisi",
+        "kuusi",
+        "yhdeksän",
+        "yksi",
+        "kymmenen"
+      ]
+    },
+    {
+      "prompt": "Translate into Finnish.",
+      "items": [
+        "What time is it?",
+        "It's half past two.",
+        "Does Wednesday work?",
+        "Unfortunately that doesn't work.",
+        "See you in front of the library.",
+        "I'm running a little late."
+      ]
+    }
+  ],
+  "answers": [
+    "Kello on kaksi. — Vartin yli kaksi. — Puoli kolme. — Varttia vaille kolme. — Puoli yksitoista. — Viisi vaille kaksitoista.",
+    "maanantaina — keskiviikkona — perjantaina — lauantaina — sunnuntaina — viikonloppuna",
+    "kahdelta — viideltä — kuudelta — yhdeksältä — yhdeltä — kymmeneltä",
+    "Paljonko kello on? — Kello on puoli kolme. — Sopiiko keskiviikkona? — Valitettavasti ei sovi. — Nähdään kirjaston edessä. — Olen vähän myöhässä."
+  ]
+}

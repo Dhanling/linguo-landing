@@ -1,0 +1,606 @@
+{
+  "title": "Hi, what's your name?",
+  "title_target": "Hei! Mikä sinun nimesi on?",
+  "goal": "Greet people at the right time of day, say your name, ask how someone is, and see for yourself that Finnish has no articles and no grammatical gender.",
+  "bekal": [
+    "greet with *hei*, *moi*, *hyvää päivää*, and *hyvää iltaa*, each in its proper place",
+    "say your name with *minun nimeni on* and *olen*, and ask other people theirs",
+    "put together the six forms of the verb *olla* — the only verb you truly must memorize in this unit"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ensimmäinen päivä kielikurssilla",
+      "intro": "First day of a language course at a university in Helsinki. Two new students sit next to each other before class begins.",
+      "lines": [
+        {
+          "speaker": "Aino:",
+          "text": "Hei! Mikä sinun nimesi on?",
+          "id": "Hi! What's your name?",
+          "literal": "hi! what your name-your is?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hei! Minun nimeni on Budi. Entä sinä?",
+          "id": "Hi! My name is Budi. And you?",
+          "literal": "hi! my name-my is Budi. and you?"
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Minä olen Aino. Hauska tutustua!",
+          "id": "I'm Aino. Nice to meet you!",
+          "literal": "I am Aino. pleasant to-get-acquainted!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Samoin. Mitä kuuluu?",
+          "id": "Likewise. How are you?",
+          "literal": "same-way. what is-heard?"
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Kiitos, hyvää. Entä sinulle?",
+          "id": "Fine, thanks. And you?",
+          "literal": "thanks, good. and to-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ihan hyvää, kiitos. Oletko sinä suomalainen?",
+          "id": "Pretty good, thanks. Are you Finnish?",
+          "literal": "quite good, thanks. are-? you Finnish?"
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Joo, minä olen Tampereelta. Oletko sinä opiskelija?",
+          "id": "Yeah, I'm from Tampere. Are you a student?",
+          "literal": "yeah, I am from-Tampere. are-? you student?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Joo, minä olen opiskelija. Minä olen indonesialainen.",
+          "id": "Yeah, I'm a student. I'm Indonesian.",
+          "literal": "yeah, I am student. I am Indonesian."
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Vau! Puhutko sinä suomea?",
+          "id": "Wow! Do you speak Finnish?",
+          "literal": "wow! speak-? you Finnish?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vähän. Anteeksi, minä en ymmärrä hyvin.",
+          "id": "A little. Sorry, I don't understand very well.",
+          "literal": "a-little. sorry, I not understand well."
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Ei se mitään! Nähdään huomenna, Budi.",
+          "id": "No problem! See you tomorrow, Budi.",
+          "literal": "not it anything! is-seen tomorrow, Budi."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nähdään! Hei hei!",
+          "id": "See you! Bye-bye!",
+          "literal": "is-seen! hi hi!"
+        }
+      ],
+      "notes": [
+        "**Hei works both ways, and repeating it means goodbye.** The same word covers \"hi\" and \"bye\"; doubled (*hei hei*, *moi moi*), it always means goodbye — not an extra-warm hello. Danish and Swedish work exactly the same way, and it's the opposite of what most people guess.",
+        "**Mikä sinun nimesi on** marks ownership twice.** Literally \"what **your** name-**your** is\": *sinun* (your) in front, and the ending *-si* (your) on *nime-*. Finnish deliberately locks it in twice, and in casual speech the front one is often dropped: *Mikä nimesi on?* The ending can never go.",
+        "**Mitä kuuluu** literally means \"what is heard\".** Not \"how are you\". So the answer is about the news, not about you: *kiitos, hyvää* — \"thanks, good\". Note the order: Finns almost always put *kiitos* **first**, and that sounds far more natural than the reverse.",
+        "**There isn't a single article in this whole dialogue.** No \"a\", no \"the\", and no gender for nouns. *Opiskelija* means \"student\", \"a student\", and \"the student\" all at once. This isn't a textbook simplification; Finnish simply has neither.",
+        "**Oletko** — questions are made by attaching **-ko/-kö**.** There's no helper word like English \"do\". The verb moves to the front and takes the ending: *sinä olet* (you are) → *oletko sinä?* (are you?). The same ending is at work in *puhutko* and *ymmärrätkö*.",
+        "**Joo and kyllä both mean \"yes\".** *Joo* is casual and heard far more often; *kyllä* is a bit firmer or more formal. For \"no\" there's *ei* — and this *ei* isn't just a word but a **verb** that changes form. That surprise is saved for Unit 7."
+      ],
+      "grammars": [
+        {
+          "title": "Olla — the verb \"to be\"",
+          "body": [
+            "The first verb you must master, and the only one in this unit that is truly irregular. The good news: after *olla*, almost every other verb follows a tidy pattern."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "Say it",
+              "olla",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "minä",
+                "MI-nä",
+                "**olen**",
+                "I am"
+              ],
+              [
+                "sinä",
+                "SI-nä",
+                "**olet**",
+                "you are"
+              ],
+              [
+                "hän",
+                "hän",
+                "**on**",
+                "he/she is"
+              ],
+              [
+                "me",
+                "me",
+                "**olemme**",
+                "we are"
+              ],
+              [
+                "te",
+                "te",
+                "**olette**",
+                "you (plural) are"
+              ],
+              [
+                "he",
+                "he",
+                "**ovat**",
+                "they are"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Hän is one word for both he and she.** Finnish makes no distinction at all. Many Finns mix up \"he\" and \"she\" in English for life for exactly this reason — and you get to skip the choice entirely.",
+            "For things, use *se* (\"it\"), not *hän*: *Se on kirja* — it's a book. In casual speech Finns actually use *se* for people too, but don't copy that until you know when it sounds friendly and when it sounds rude.",
+            "**The pronoun can be dropped** for *minä*, *sinä*, *me*, and *te*, because the verb ending already says who it is: *olen opiskelija* can only mean \"I'm a student\". But *hän* and *he* can **not** be dropped — the forms *on* and *ovat* don't tell you who is meant."
+          ]
+        },
+        {
+          "title": "Asking with -ko / -kö",
+          "body": [
+            "Finnish has no question helper like \"do\" or \"is it\". The word being asked about moves to the front of the sentence and takes a question ending."
+          ],
+          "table": {
+            "head": [
+              "Statement",
+              "Question",
+              "Meaning of the question"
+            ],
+            "rows": [
+              [
+                "*Sinä olet suomalainen.*",
+                "**Oletko** sinä suomalainen?",
+                "Are you Finnish?"
+              ],
+              [
+                "*Hän on opiskelija.*",
+                "**Onko** hän opiskelija?",
+                "Is he/she a student?"
+              ],
+              [
+                "*Sinä puhut suomea.*",
+                "**Puhutko** sinä suomea?",
+                "Do you speak Finnish?"
+              ],
+              [
+                "*Te olette Helsingistä.*",
+                "**Oletteko** te Helsingistä?",
+                "Are you (plural) from Helsinki?"
+              ],
+              [
+                "*Se on hyvä.*",
+                "**Onko** se hyvä?",
+                "Is it good?"
+              ]
+            ]
+          },
+          "after": [
+            "Choose **-ko** or **-kö** by vowel harmony: *oletko* (back-vowel word) but *ymmärrätkö* (front-vowel word). It's exactly the rule from the pronunciation chapter.",
+            "If there's a question word (*mikä*, *mitä*, *kuka*, *missä*), the *-ko* ending is **not used**: *Mikä sinun nimesi on?* — not *mikäko*.",
+            "Whatever goes first decides what is being asked. *Oletko sinä opiskelija?* asks about the status; *Sinäkö olet opiskelija?* asks about the person — \"is it **you** who's the student?\". Same ending, different emphasis."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Greetings by the clock",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Finnish picks its greeting by the time of day and by how close you are to the other person. Getting it wrong isn't a grammar mistake but a mood mistake — and that's actually more noticeable."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Greeting",
+            "Say it",
+            "When",
+            "Tone"
+          ],
+          "rows": [
+            [
+              "Hei",
+              "hay",
+              "any time",
+              "neutral, the most widely used — fine with shop staff too"
+            ],
+            [
+              "Moi",
+              "moy",
+              "any time",
+              "friendly, to people your age"
+            ],
+            [
+              "Terve",
+              "TER-ve",
+              "any time",
+              "relaxed, a bit masculine in tone"
+            ],
+            [
+              "Huomenta",
+              "HWOH-men-tah",
+              "until ~10 a.m.",
+              "neutral"
+            ],
+            [
+              "Hyvää päivää",
+              "HÜ-vää PÄI-vää",
+              "daytime",
+              "fairly formal; to strangers"
+            ],
+            [
+              "Hyvää iltaa",
+              "HÜ-vää IL-taah",
+              "evening",
+              "fairly formal"
+            ],
+            [
+              "Hyvää yötä",
+              "HÜ-vää Ü-ö-tä",
+              "parting at night",
+              "before bed"
+            ],
+            [
+              "Näkemiin",
+              "NÄ-ke-meen",
+              "when parting",
+              "formal"
+            ],
+            [
+              "Hei hei / Moi moi",
+              "hay hay / moy moy",
+              "when parting",
+              "friendly"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Hyvää päivää* sounds more formal than it looks. To a friend your age it feels stiff, like saying \"good afternoon\" to your roommate. To a cashier, a doctor, or an official, it's just right."
+        },
+        {
+          "type": "kotak",
+          "title": "One Finnish habit worth knowing first",
+          "items": [
+            "Silence isn't awkwardness. Long pauses in a conversation are considered normal and polite — they give the other person room to think. Don't rush to fill them out of reflex.",
+            "On the other hand, interrupting is considered far ruder than in many other countries. Wait until the other person has really finished, even if the pause feels long."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Phrases that keep you afloat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The ten phrases below aren't grammar to study — they're an emergency kit. Memorize them whole now; understand how they're built later."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Kyllä / Ei",
+              "KÜL-lä / ay",
+              "Yes / No"
+            ],
+            [
+              "Kiitos",
+              "KEE-tos",
+              "Thank you"
+            ],
+            [
+              "Ole hyvä",
+              "O-le HÜ-vä",
+              "You're welcome; here you go"
+            ],
+            [
+              "Anteeksi",
+              "AHN-tehhk-si",
+              "Sorry; excuse me"
+            ],
+            [
+              "En ymmärrä",
+              "en ÜM-mär-rä",
+              "I don't understand"
+            ],
+            [
+              "En tiedä",
+              "en TIYE-dä",
+              "I don't know"
+            ],
+            [
+              "Voitko toistaa?",
+              "VOYT-ko TOYS-taah",
+              "Could you repeat that?"
+            ],
+            [
+              "Puhutko englantia?",
+              "POO-hoot-ko ENG-lahn-ti-ah",
+              "Do you speak English?"
+            ],
+            [
+              "Mitä tämä on suomeksi?",
+              "MI-tä TÄ-mä on SWOH-mek-si",
+              "What's this in Finnish?"
+            ],
+            [
+              "Vähän hitaammin, kiitos",
+              "VÄ-hän HI-taahm-min KEE-tos",
+              "A little slower, please"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Ole hyvä* literally means \"be good\", and it's used for two things: answering a thank-you, and handing something to someone. To several people the form is *olkaa hyvä*."
+        },
+        {
+          "type": "kotak",
+          "title": "One sentence that changes your experience of Finland",
+          "items": [
+            "*Voidaanko puhua suomea? Minä opiskelen.* — \"Could we speak Finnish? I'm learning.\"",
+            "The classic problem for Finnish learners isn't unfriendly people but the opposite: the moment they hear your accent, almost every Finn automatically switches to English to be helpful — and their English is excellent. The sentence above stops that politely, and nearly everyone will happily stay in Finnish."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Personal pronouns",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Subject",
+            "Say it",
+            "Object",
+            "Possessive",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "minä",
+              "MI-nä",
+              "minua",
+              "minun",
+              "I"
+            ],
+            [
+              "sinä",
+              "SI-nä",
+              "sinua",
+              "sinun",
+              "you"
+            ],
+            [
+              "hän",
+              "hän",
+              "häntä",
+              "hänen",
+              "he, she"
+            ],
+            [
+              "se",
+              "se",
+              "sitä",
+              "sen",
+              "it (things)"
+            ],
+            [
+              "me",
+              "me",
+              "meitä",
+              "meidän",
+              "we"
+            ],
+            [
+              "te",
+              "te",
+              "teitä",
+              "teidän",
+              "you (plural); you (polite)"
+            ],
+            [
+              "he",
+              "he",
+              "heitä",
+              "heidän",
+              "they"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The \"possessive\" column gets full use in Unit 4; for now, just recognize *minun* and *sinun*, which already appeared in the dialogue."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Te has two jobs.** It's \"you all\" and also the polite \"you\" to one person, just like French *vous*. But Finns use it far less than the French or Germans do: with cashiers, coworkers, often even the boss, Finns simply say *sinä*. Save *te* for much older people or truly formal situations."
+        },
+        {
+          "type": "p",
+          "text": "In everyday speech, *minä* often shrinks to *mä* and *sinä* to *sä*: *mä oon*, *sä oot*. You'll hear it everywhere in Helsinki. This course uses the standard forms, because they're understood everywhere, while the casual forms vary from region to region."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fi": "hei",
+      "baca": "hay",
+      "en": "hi; bye"
+    },
+    {
+      "fi": "moi",
+      "baca": "moy",
+      "en": "hi (friendly)"
+    },
+    {
+      "fi": "huomenta",
+      "baca": "HWOH-men-tah",
+      "en": "good morning"
+    },
+    {
+      "fi": "hyvää päivää",
+      "baca": "HÜ-vää PÄI-vää",
+      "en": "good afternoon, good day"
+    },
+    {
+      "fi": "hyvää iltaa",
+      "baca": "HÜ-vää IL-taah",
+      "en": "good evening"
+    },
+    {
+      "fi": "näkemiin",
+      "baca": "NÄ-ke-meen",
+      "en": "goodbye (formal)"
+    },
+    {
+      "fi": "nähdään",
+      "baca": "NÄH-dään",
+      "en": "see you"
+    },
+    {
+      "fi": "olla",
+      "baca": "OL-lah",
+      "en": "to be"
+    },
+    {
+      "fi": "nimi",
+      "baca": "NI-mi",
+      "en": "name"
+    },
+    {
+      "fi": "mikä",
+      "baca": "MI-kä",
+      "en": "what (asking about a thing/name)"
+    },
+    {
+      "fi": "mitä",
+      "baca": "MI-tä",
+      "en": "what (partitive form)"
+    },
+    {
+      "fi": "kuka",
+      "baca": "KOO-kah",
+      "en": "who"
+    },
+    {
+      "fi": "entä",
+      "baca": "EN-tä",
+      "en": "and, what about"
+    },
+    {
+      "fi": "hauska tutustua",
+      "baca": "HOWS-kah TOO-toos-too-ah",
+      "en": "nice to meet you"
+    },
+    {
+      "fi": "samoin",
+      "baca": "SAH-moyn",
+      "en": "likewise, same to you"
+    },
+    {
+      "fi": "kiitos",
+      "baca": "KEE-tos",
+      "en": "thank you"
+    },
+    {
+      "fi": "ole hyvä",
+      "baca": "O-le HÜ-vä",
+      "en": "you're welcome; here you go"
+    },
+    {
+      "fi": "anteeksi",
+      "baca": "AHN-tehhk-si",
+      "en": "sorry; excuse me"
+    },
+    {
+      "fi": "hyvä",
+      "baca": "HÜ-vä",
+      "en": "good"
+    },
+    {
+      "fi": "ihan",
+      "baca": "I-hahn",
+      "en": "quite, pretty"
+    },
+    {
+      "fi": "vähän",
+      "baca": "VÄ-hän",
+      "en": "a little"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Finnish.",
+      "items": [
+        "Hi! What's your name?",
+        "My name is Budi.",
+        "I'm Indonesian.",
+        "How are you?",
+        "Fine, thanks.",
+        "Are you a student?"
+      ]
+    },
+    {
+      "prompt": "Fill in the correct form of *olla*.",
+      "items": [
+        "Minä ____ opiskelija.",
+        "Sinä ____ suomalainen.",
+        "Hän ____ Tampereelta.",
+        "Me ____ kielikurssilla.",
+        "Te ____ indonesialaisia.",
+        "He ____ Helsingistä."
+      ]
+    },
+    {
+      "prompt": "Turn into questions with the ending -ko / -kö.",
+      "items": [
+        "Sinä olet opiskelija.",
+        "Hän on suomalainen.",
+        "Sinä puhut suomea.",
+        "Te olette Helsingistä.",
+        "Se on hyvä."
+      ]
+    },
+    {
+      "prompt": "Choose the right greeting. Write your answer as one word or one phrase.",
+      "items": [
+        "You walk into a bakery at eight in the morning. To the baker you say ____.",
+        "You run into a classmate in the cafeteria at eleven. You say ____.",
+        "You walk into a restaurant at seven in the evening. To the server you say ____.",
+        "You part from your lecturer at the end of the hallway, formally. You say ____.",
+        "You say goodbye to a classmate, casually. You say ____."
+      ]
+    }
+  ],
+  "answers": [
+    "Hei! Mikä sinun nimesi on? — Minun nimeni on Budi. — Minä olen indonesialainen. — Mitä kuuluu? — Kiitos, hyvää. — Oletko sinä opiskelija?",
+    "olen — olet — on — olemme — olette — ovat",
+    "Oletko sinä opiskelija? — Onko hän suomalainen? — Puhutko sinä suomea? — Oletteko te Helsingistä? — Onko se hyvä?",
+    "Huomenta. — Hei. — Hyvää iltaa. — Näkemiin. — Hei hei."
+  ]
+}

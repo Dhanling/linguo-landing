@@ -1,0 +1,624 @@
+{
+  "title": "Where are you going?",
+  "title_target": "Mihin sinä menet?",
+  "goal": "Master all six place endings at once in a single table — the core of the whole Finnish case system, and the part that suddenly makes fifteen cases make sense.",
+  "bekal": [
+    "build the six place endings: *-ssa/-sta/-Vn* and *-lla/-lta/-lle*",
+    "name means of transport with the ending *-lla*",
+    "ask for and give directions"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Eksyksissä Helsingissä",
+      "intro": "Budi is lost in central Helsinki and asks a woman at a bus stop.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Anteeksi, tiedättekö te, missä rautatieasema on?",
+          "id": "Excuse me, do you know where the railway station is?",
+          "literal": "sorry, know-? you, where rail-road-station is?"
+        },
+        {
+          "speaker": "Nainen:",
+          "text": "Tuolla. Mene suoraan ja käänny vasemmalle.",
+          "id": "Over there. Go straight and turn left.",
+          "literal": "over-there. go straight and turn to-left."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Onko se kaukana?",
+          "id": "Is it far?",
+          "literal": "is-? it far?"
+        },
+        {
+          "speaker": "Nainen:",
+          "text": "Ei ole. Viisi minuuttia jalan. Mihin sinä menet?",
+          "id": "No. Five minutes on foot. Where are you going?",
+          "literal": "not is. five minute-some on-foot. to-where you go?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Menen Tampereelle. Sisareni asuu siellä.",
+          "id": "I'm going to Tampere. My sister lives there.",
+          "literal": "go-I to-Tampere. sister-my lives there."
+        },
+        {
+          "speaker": "Nainen:",
+          "text": "Ai, kiva! Menetkö junalla vai bussilla?",
+          "id": "Oh, nice! Are you going by train or by bus?",
+          "literal": "ah, nice! go-you-? by-train or by-bus?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Junalla. Se on nopeampi. Tulen takaisin sunnuntaina.",
+          "id": "By train. It's faster. I'm coming back on Sunday.",
+          "literal": "by-train. it is faster. come-I back on-Sunday."
+        },
+        {
+          "speaker": "Nainen:",
+          "text": "Muista ostaa lippu netistä. Se on halvempi.",
+          "id": "Remember to buy the ticket online. It's cheaper.",
+          "literal": "remember buy ticket from-internet. it is cheaper."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kiitos vinkistä! Tuleeko bussi tähän pysäkille?",
+          "id": "Thanks for the tip! Does the bus come to this stop?",
+          "literal": "thanks from-tip! comes-? bus to-this to-stop?"
+        },
+        {
+          "speaker": "Nainen:",
+          "text": "Tulee, mutta sinä et tarvitse bussia. Asema on tuossa!",
+          "id": "It does, but you don't need the bus. The station is right there!",
+          "literal": "comes, but you not need bus-some. station is right-there!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Voi, anteeksi. Olen tosi huono kartoissa.",
+          "id": "Oh, sorry. I'm really bad with maps.",
+          "literal": "oh, sorry. am-I really bad in-map-plural."
+        },
+        {
+          "speaker": "Nainen:",
+          "text": "Ei se mitään. Hyvää matkaa!",
+          "id": "No problem. Have a good trip!",
+          "literal": "not it anything. good-some trip-some!"
+        }
+      ],
+      "notes": [
+        "**Missä, mistä, mihin** — one word, three directions. All three are *mi-* with a different place ending. The same pattern sticks to any noun: *Helsingi**ssä*** (in), *Helsingi**stä*** (from), *Helsinki**in*** (to). Once you see it, you don't need to memorize any more lists — you just attach the ending.",
+        "**Tampereelle, not Tampereeseen.** Some Finnish towns take the \"outer\" set of endings instead of the \"inner\" one. These really have to be memorized, but luckily the list is short: *Tampere*, *Vantaa*, *Rovaniemi*, *Seinäjoki*, *Riihimäki*, and a handful more. The rest use the \"inner\" set: *Helsinkiin*, *Turkuun*, *Ouluun*.",
+        "**Junalla, bussilla, autolla** — means of transport take the ending *-lla/-llä*. Literally \"on the train\", which makes sense if you picture climbing onto something — English says \"on the bus\" too. The exception is *jalan* (on foot), a frozen form that never changes.",
+        "**Netistä** = *netti* + *-stä*. Note the gradation: two *t*'s become one. You buy something \"from\" the internet, where English says \"online\" or \"on the internet\".",
+        "**Kiitos vinkistä** — thanking uses the \"from\" ending. *Kiitos avu**sta*** (thanks for the help), *kiitos kahvi**sta***, *kiitos kaike**sta*** (thanks for everything). English says \"for\"; Finnish says \"from\".",
+        "**Tähän pysäkille** — two direction endings in one phrase, both meaning \"to\". *Tähän* comes from *tämä*, *pysäkille* from *pysäkki*. Even the pointing word changes form to match its noun, just like an adjective."
+      ],
+      "grammars": [
+        {
+          "title": "Six place endings — the core of the whole system",
+          "body": [
+            "This is the most important table in the whole course. Finnish divides \"place\" into two sets — **inner** and **outer** — and each has three directions: staying in, coming from, going to. Six endings, one layout."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Set",
+                "In / at",
+                "From",
+                "To"
+              ],
+              "rows": [
+                [
+                  "**Inner** (inside a container)",
+                  "**-ssa / -ssä**",
+                  "**-sta / -stä**",
+                  "**-Vn** (vowel + n)"
+                ],
+                [
+                  "**Outer** (on a surface)",
+                  "**-lla / -llä**",
+                  "**-lta / -ltä**",
+                  "**-lle**"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Word",
+                "In / at",
+                "From",
+                "To",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "*talo*",
+                  "*talossa*",
+                  "*talosta*",
+                  "*taloon*",
+                  "house"
+                ],
+                [
+                  "*koulu*",
+                  "*koulussa*",
+                  "*koulusta*",
+                  "*kouluun*",
+                  "school"
+                ],
+                [
+                  "*Suomi*",
+                  "*Suomessa*",
+                  "*Suomesta*",
+                  "*Suomeen*",
+                  "Finland"
+                ],
+                [
+                  "*Helsinki*",
+                  "*Helsingissä*",
+                  "*Helsingistä*",
+                  "*Helsinkiin*",
+                  "Helsinki"
+                ],
+                [
+                  "*pöytä*",
+                  "*pöydällä*",
+                  "*pöydältä*",
+                  "*pöydälle*",
+                  "table"
+                ],
+                [
+                  "*asema*",
+                  "*asemalla*",
+                  "*asemalta*",
+                  "*asemalle*",
+                  "station"
+                ],
+                [
+                  "*Tampere*",
+                  "*Tampereella*",
+                  "*Tampereelta*",
+                  "*Tampereelle*",
+                  "Tampere"
+                ],
+                [
+                  "*Aino*",
+                  "*Ainolla*",
+                  "*Ainolta*",
+                  "*Ainolle*",
+                  "Aino (a person)"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "**The inner set is for containers and enclosed spaces**: house, room, shop, bag, country, city. **The outer set is for surfaces and open places**: table, floor, station, bus stop, beach, market. Most can be guessed by picturing the shape.",
+            "⚠️ **People always take the outer set.** *Ainolla on kirja* (Aino has a book), *annan kirjan Aino**lle*** (I give the book to Aino), *sain kirjan Aino**lta*** (I got the book from Aino). This is the use you'll need most every day, and it has nothing to do with place at all.",
+            "What can't be guessed and must be memorized: some town names (*Tampereella*), some countries (*Venäjällä* = in Russia, outer set), and some things (*torilla* = at the market, *kadulla* = on the street, but *kaupassa* = in the shop)."
+          ]
+        },
+        {
+          "title": "Building the \"into\" ending",
+          "body": [
+            "Five of the six place endings are easy: you just attach them. Only \"into\" needs its own rule, because its shape depends on the base word."
+          ],
+          "table": {
+            "head": [
+              "Base word",
+              "Rule",
+              "Example",
+              "Becomes"
+            ],
+            "rows": [
+              [
+                "ends in a single vowel",
+                "double the vowel + **n**",
+                "*talo*, *koulu*, *Helsinki*",
+                "*taloon*, *kouluun*, *Helsinkiin*"
+              ],
+              [
+                "ends in a long vowel",
+                "add **-hVn**",
+                "*maa*, *työ*, *puu*",
+                "*maahan*, *työhön*, *puuhun*"
+              ],
+              [
+                "ends in *-e*",
+                "lengthen + **-seen**",
+                "*huone*, *Tampere*, *perhe*",
+                "*huoneeseen*, *Tampereeseen*, *perheeseen*"
+              ],
+              [
+                "foreign word in *-i*",
+                "**-in**",
+                "*hotelli*, *Pariisi*",
+                "*hotelliin*, *Pariisiin*"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **The \"into\" ending uses the STRONG grade.** *Kauppa → kaupassa* (weak) but *kauppa → kauppaan* (strong). It is the only place ending that doesn't weaken the consonant, and it often makes beginners hesitate. The rule of thumb: if you're going in, the consonant stays whole.",
+            "Words in *-i* whose stem changes to *-e-* follow the rule too: *Suomi → Suome- → Suomeen*, *nimi → nime- → nimeen*.",
+            "For *koti* (home, the place you return to) there are frozen forms you must learn: *kotona* (at home), *kotoa* (from home), *kotiin* (home, homeward). None of the three follows any pattern, and you'll use all three every day."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Getting around",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "Say it",
+            "By (-lla)",
+            "English"
+          ],
+          "rows": [
+            [
+              "juna",
+              "YOO-nah",
+              "junalla",
+              "train"
+            ],
+            [
+              "bussi",
+              "BOOS-si",
+              "bussilla",
+              "bus"
+            ],
+            [
+              "ratikka",
+              "RAH-tik-kah",
+              "ratikalla",
+              "tram"
+            ],
+            [
+              "metro",
+              "MET-ro",
+              "metrolla",
+              "subway, metro"
+            ],
+            [
+              "auto",
+              "OW-to",
+              "autolla",
+              "car"
+            ],
+            [
+              "taksi",
+              "TAHK-si",
+              "taksilla",
+              "taxi"
+            ],
+            [
+              "polkupyörä",
+              "POL-koo-püö-rä",
+              "pyörällä",
+              "bicycle"
+            ],
+            [
+              "lentokone",
+              "LEN-to-ko-ne",
+              "lentokoneella",
+              "airplane"
+            ],
+            [
+              "laiva",
+              "LIGH-vah",
+              "laivalla",
+              "ship"
+            ],
+            [
+              "jalan",
+              "YAH-lahn",
+              "jalan",
+              "on foot"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Verb",
+            "Say it",
+            "English",
+            "Example"
+          ],
+          "rows": [
+            [
+              "mennä",
+              "MEN-nä",
+              "to go",
+              "*Menen kauppaan.*"
+            ],
+            [
+              "tulla",
+              "TOOL-lah",
+              "to come",
+              "*Tulen kotiin.*"
+            ],
+            [
+              "lähteä",
+              "LÄH-te-ä",
+              "to leave, to set off",
+              "*Lähden Tampereelle.*"
+            ],
+            [
+              "saapua",
+              "SAAH-poo-ah",
+              "to arrive",
+              "*Juna saapuu kello viisi.*"
+            ],
+            [
+              "kävellä",
+              "KÄ-vel-lä",
+              "to walk",
+              "*Kävelen asemalle.*"
+            ],
+            [
+              "ajaa",
+              "AH-yaah",
+              "to drive, to ride",
+              "*Ajan autolla.*"
+            ],
+            [
+              "matkustaa",
+              "MAHT-koos-taah",
+              "to travel",
+              "*Matkustan junalla.*"
+            ],
+            [
+              "palata",
+              "PAH-lah-tah",
+              "to return",
+              "*Palaan sunnuntaina.*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Mennä* and *tulla* work from opposite points of view, just like English *go* and *come*: *menen* = I go away from here, *tulen* = I come toward you. If a friend invites you to their home, the right answer is *tulen*, not *menen* — because you are moving toward them."
+        }
+      ]
+    },
+    {
+      "title": "Asking the way",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Anteeksi, missä on…?",
+              "AHN-tehhk-si MIS-sä on",
+              "Excuse me, where is …?"
+            ],
+            [
+              "Miten pääsen…?",
+              "MI-ten PÄÄ-sen",
+              "How do I get to …?"
+            ],
+            [
+              "Onko se kaukana?",
+              "ON-ko se KOW-kah-nah",
+              "Is it far?"
+            ],
+            [
+              "Mene suoraan.",
+              "ME-ne SWOH-raahn",
+              "Go straight on."
+            ],
+            [
+              "Käänny oikealle.",
+              "KÄÄN-nü OY-ke-ahl-le",
+              "Turn right."
+            ],
+            [
+              "Käänny vasemmalle.",
+              "KÄÄN-nü VAH-sem-mahl-le",
+              "Turn left."
+            ],
+            [
+              "Se on oikealla.",
+              "se on OY-ke-ahl-lah",
+              "It's on the right."
+            ],
+            [
+              "Ensimmäinen risteys",
+              "EN-sim-mäi-nen RIS-teüs",
+              "The first intersection"
+            ],
+            [
+              "Kadun toisella puolella",
+              "KAH-doon TOY-sel-lah PWOH-lel-lah",
+              "On the other side of the street"
+            ],
+            [
+              "Se on aivan tässä.",
+              "se on IGH-vahn TÄS-sä",
+              "It's right here."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the pair *oikealle* (to the right) and *oikealla* (on the right) — the direction endings work exactly as you have just learned. The same goes for *vasemmalle* and *vasemmalla*."
+        },
+        {
+          "type": "kotak",
+          "title": "Three place words you'll use every day",
+          "items": [
+            "*täällä* (here) — *täältä* (from here) — *tänne* (to here)",
+            "*siellä* (there) — *sieltä* (from there) — *sinne* (to there)",
+            "*tuolla* (over there, in sight) — *tuolta* (from over there) — *tuonne* (to over there)",
+            "These three rows follow the same six-ending pattern; their shapes have just frozen. Learn them as one group, not nine separate words."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fi": "mihin / minne",
+      "baca": "MI-hin / MIN-ne",
+      "en": "where to"
+    },
+    {
+      "fi": "rautatieasema",
+      "baca": "ROW-tah-tiye-ah-se-mah",
+      "en": "railway station"
+    },
+    {
+      "fi": "pysäkki",
+      "baca": "PÜ-säk-ki",
+      "en": "(bus/tram) stop"
+    },
+    {
+      "fi": "juna",
+      "baca": "YOO-nah",
+      "en": "train"
+    },
+    {
+      "fi": "lentokone",
+      "baca": "LEN-to-ko-ne",
+      "en": "airplane"
+    },
+    {
+      "fi": "polkupyörä",
+      "baca": "POL-koo-püö-rä",
+      "en": "bicycle"
+    },
+    {
+      "fi": "kartta",
+      "baca": "KAHRT-tah",
+      "en": "map"
+    },
+    {
+      "fi": "tori",
+      "baca": "TO-ri",
+      "en": "market square"
+    },
+    {
+      "fi": "netti",
+      "baca": "NET-ti",
+      "en": "internet"
+    },
+    {
+      "fi": "vinkki",
+      "baca": "VINK-ki",
+      "en": "tip, hint"
+    },
+    {
+      "fi": "suoraan",
+      "baca": "SWOH-raahn",
+      "en": "straight on"
+    },
+    {
+      "fi": "oikealle",
+      "baca": "OY-ke-ahl-le",
+      "en": "to the right"
+    },
+    {
+      "fi": "vasemmalle",
+      "baca": "VAH-sem-mahl-le",
+      "en": "to the left"
+    },
+    {
+      "fi": "kääntyä",
+      "baca": "KÄÄN-tü-ä",
+      "en": "to turn"
+    },
+    {
+      "fi": "päästä",
+      "baca": "PÄÄS-tä",
+      "en": "to get to, to reach"
+    },
+    {
+      "fi": "kävellä",
+      "baca": "KÄ-vel-lä",
+      "en": "to walk"
+    },
+    {
+      "fi": "ajaa",
+      "baca": "AH-yaah",
+      "en": "to drive, to ride"
+    },
+    {
+      "fi": "matkustaa",
+      "baca": "MAHT-koos-taah",
+      "en": "to travel"
+    },
+    {
+      "fi": "saapua",
+      "baca": "SAAH-poo-ah",
+      "en": "to arrive"
+    },
+    {
+      "fi": "palata",
+      "baca": "PAH-lah-tah",
+      "en": "to return"
+    },
+    {
+      "fi": "takaisin",
+      "baca": "TAH-kigh-sin",
+      "en": "back (direction)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Complete the three directions: in / from / to.",
+      "items": [
+        "talo: talossa, talosta, ____",
+        "koulu: ____, koulusta, kouluun",
+        "Suomi: Suomessa, ____, Suomeen",
+        "pöytä: pöydällä, pöydältä, ____",
+        "asema: ____, asemalta, asemalle",
+        "Tampere: Tampereella, ____, Tampereelle"
+      ]
+    },
+    {
+      "prompt": "Translate into Finnish.",
+      "items": [
+        "Where are you going?",
+        "I'm going to Tampere.",
+        "I'm going by train.",
+        "Go straight and turn left.",
+        "Excuse me, where is the railway station?",
+        "I'm coming back on Sunday."
+      ]
+    },
+    {
+      "prompt": "Fill in the ending -lla/-llä (transport) or *jalan*.",
+      "items": [
+        "Menen kouluun bussi____.",
+        "Matkustan Tampereelle juna____.",
+        "Ajan töihin auto____.",
+        "Kävelen asemalle ____.",
+        "Menen Indonesiaan lentokonee____."
+      ]
+    },
+    {
+      "prompt": "Fill in *täällä/täältä/tänne* or *siellä/sieltä/sinne*.",
+      "items": [
+        "Tule ____! (to here)",
+        "Asun ____. (here)",
+        "Tulen ____. (from there)",
+        "Menen ____. (to there)",
+        "Sisareni asuu ____. (there)"
+      ]
+    }
+  ],
+  "answers": [
+    "taloon — koulussa — Suomesta — pöydälle — asemalla — Tampereelta",
+    "Mihin sinä menet? — Menen Tampereelle. — Menen junalla. — Mene suoraan ja käänny vasemmalle. — Anteeksi, missä rautatieasema on? — Tulen takaisin sunnuntaina.",
+    "lla — lla — lla — jalan — lla",
+    "tänne — täällä — sieltä — sinne — siellä"
+  ]
+}

@@ -1,0 +1,518 @@
+{
+  "title": "Shopping",
+  "title_target": "Kaupassa",
+  "goal": "Shop and ask about prices — and meet the most typically Finnish rule of all: when something is taken whole and when only part of it.",
+  "bekal": [
+    "tell a whole object (*-n*) from a partial object (*-a/-ä*)",
+    "ask about prices, amounts and whether something is in stock",
+    "name groceries and the units used in Finnish shops"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Ruokakaupassa",
+      "intro": "Budi is shopping at the supermarket. Aino comes along because Budi doesn't know the names of groceries yet.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Ostan maitoa, leipää ja kahvia. Mitä muuta tarvitsen?",
+          "id": "I'm buying milk, bread and coffee. What else do I need?",
+          "literal": "buy-I milk-part, bread-part and coffee-part. what else need-I?"
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Osta myös juustoa. Ja ota se iso leipä, se on parempi.",
+          "id": "Buy some cheese too. And take that big loaf, it's better.",
+          "literal": "buy also cheese-part. and take that big bread, it is better."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Selvä. Otan leivän. Paljonko juusto maksaa?",
+          "id": "OK. I'll take the loaf. How much is the cheese?",
+          "literal": "clear. take-I bread-whole. how-much cheese costs?"
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Katso hintalappua. Yhdeksän euroa kilo.",
+          "id": "Look at the price tag. Nine euros a kilo.",
+          "literal": "look price-tag-part. nine euro-part kilo."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kallista! Otan vain vähän. Onko teillä indonesialaista riisiä?",
+          "id": "Expensive! I'll just take a little. Do you have Indonesian rice?",
+          "literal": "expensive-part! take-I only little. is-? at-you Indonesian-part rice-part?"
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Ei tässä kaupassa. Etnisessä kaupassa Hakaniemessä on.",
+          "id": "Not in this shop. The ethnic shop in Hakaniemi has it.",
+          "literal": "not in-this in-shop. in-ethnic in-shop in-Hakaniemi is."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hyvä tietää. Otan sitten nämä perunat ja kaksi tomaattia.",
+          "id": "Good to know. Then I'll take these potatoes and two tomatoes.",
+          "literal": "good to-know. take-I then these potatoes and two tomato-part."
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Muista punnita ne itse. Vaaka on tuolla.",
+          "id": "Remember to weigh them yourself. The scale is over there.",
+          "literal": "remember to-weigh them self. scale is over-there."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ai niin, unohdin. Suomessa asiakas punnitsee itse.",
+          "id": "Oh right, I forgot. In Finland the customer weighs things himself.",
+          "literal": "ah so, forgot-I. in-Finland customer weighs self."
+        },
+        {
+          "speaker": "Kassa:",
+          "text": "Hei! Onko kanta-asiakaskorttia?",
+          "id": "Hi! Do you have a loyalty card?",
+          "literal": "hi! is-? regular-customer-card-part?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ei ole. Maksan kortilla.",
+          "id": "No, I don't. I'll pay by card.",
+          "literal": "not is. pay-I with-card."
+        },
+        {
+          "speaker": "Kassa:",
+          "text": "Kaksikymmentäkolme euroa neljäkymmentä. Kiitos ja hei!",
+          "id": "Twenty-three euros forty. Thanks and bye!",
+          "literal": "twenty-three euro-part forty. thanks and hi!"
+        }
+      ],
+      "notes": [
+        "**Ostan maitoa, tapi otan leivän.** This is the heart of the unit. *Maitoa* is partial because milk is uncountable — you buy some of the world's milk, not all of it. *Leivän* is whole because there is one specific loaf and you take all of it.",
+        "**Kaksi tomaattia** — after a number you always use the partial form, as you learned in unit 5. But *nämä perunat* is an ordinary plural, because the potatoes are pointed out: **these**, all of them.",
+        "**Kallista, not kallis.** Exclaiming about a price uses the partial form because you're commenting on a situation, not a particular thing. Relatives you've already seen: *hienoa*, *erinomaista*, *kylmää*.",
+        "**Indonesialaista riisiä** — the adjective follows its noun all the way into the partial form. Once again: Finnish adjectives **always** copy their noun, no exceptions.",
+        "**Punnita ne itse.** In almost every Finnish supermarket, customers weigh their own fruit and vegetables on the scales provided and stick on the label. Forget, and the cashier will send you back. This practical surprise catches nearly every newcomer in their first week.",
+        "**Kanta-asiakaskortti** — a loyalty card. Two big chains (S and K) dominate almost the whole market, and their cards give real discounts. If you're staying more than a few months, getting one is well worth it."
+      ],
+      "grammars": [
+        {
+          "title": "Whole objects and partial objects",
+          "body": [
+            "Finnish marks objects in two ways, and the choice changes the meaning of the sentence — not just its form. English has nothing quite like it (the closest is \"the bread\" vs. \"some bread\"), so it has to be learned from scratch."
+          ],
+          "table": {
+            "head": [
+              "Whole form (-n)",
+              "Meaning",
+              "Partial form",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*Ostan leivä**n**.*",
+                "I buy that (one) loaf.",
+                "*Ostan leipä**ä**.*",
+                "I buy (some) bread."
+              ],
+              [
+                "*Juon kahvi**n**.*",
+                "I drink up the coffee.",
+                "*Juon kahvi**a**.*",
+                "I'm drinking coffee."
+              ],
+              [
+                "*Luen kirja**n**.*",
+                "I read the book to the end.",
+                "*Luen kirja**a**.*",
+                "I'm reading a book."
+              ],
+              [
+                "*Syön omena**n**.*",
+                "I eat the apple.",
+                "*Syön omena**a**.*",
+                "I'm eating an apple."
+              ],
+              [
+                "*Otan juusto**n**.*",
+                "I take the cheese.",
+                "*Otan juusto**a**.*",
+                "I take some cheese."
+              ]
+            ]
+          },
+          "after": [
+            "**Four situations that MUST use the partial form**, no exceptions: (1) uncountable things — *vettä*, *maitoa*, *rahaa*; (2) after numbers from two up — *kaksi tomaattia*; (3) negative sentences — *en osta leipää*; (4) actions in progress — *luen kirjaa*.",
+            "⚠️ Forming the partial: a single final vowel is doubled (*leipä → leipää*, *kahvi → kahvia*), while words ending in *-i*/*-nen*/a consonant take *-ta/-tä* (*vesi → vettä*, *ihminen → ihmistä*, *puhelin → puhelinta*).",
+            "If in doubt, **the partial form is safer**. It's used far more often, and using it in the wrong place just sounds \"unfinished\" — much milder than a misplaced whole form, which sounds like a broken sentence."
+          ]
+        },
+        {
+          "title": "Asking about price and quantity",
+          "body": [
+            "A handful of sentences that cover almost all your business in a shop, and they all use the partial form."
+          ],
+          "table": {
+            "head": [
+              "Suomi",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "Paljonko tämä maksaa?",
+                "PAHL-yon-ko TÄ-mä MAHK-saah",
+                "How much is this?"
+              ],
+              [
+                "Paljonko se on yhteensä?",
+                "PAHL-yon-ko se on ÜH-tehhn-sä",
+                "How much is it altogether?"
+              ],
+              [
+                "Onko teillä…?",
+                "ON-ko TAYL-lä",
+                "Do you have…?"
+              ],
+              [
+                "Missä on…?",
+                "MIS-sä on",
+                "Where is…?"
+              ],
+              [
+                "Saisinko kilon perunoita?",
+                "SIGH-sin-ko KI-lon PE-roo-noy-tah",
+                "Could I have a kilo of potatoes?"
+              ],
+              [
+                "Onko tämä alennuksessa?",
+                "ON-ko TÄ-mä AH-len-nook-ses-sah",
+                "Is this on sale?"
+              ],
+              [
+                "Voinko maksaa kortilla?",
+                "VOYN-ko MAHK-saah KOR-til-lah",
+                "Can I pay by card?"
+              ],
+              [
+                "Saanko kuitin?",
+                "SAAHN-ko KOOY-tin",
+                "Could I have the receipt?"
+              ]
+            ]
+          },
+          "after": [
+            "*Kilon perunoita* — the unit is whole (*kilo → kilon*), the contents are partial plural (*peruna → perunoita*). The same structure for *pullon vettä* (a bottle of water), *kupin kahvia* (a cup of coffee), *palan juustoa* (a piece of cheese).",
+            "Prices are written with a comma: *2,50 €* is read *kaksi viisikymmentä* — the euros first, then the cents, without saying *euro* in the middle."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "At the grocery store",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "Partial form",
+            "English"
+          ],
+          "rows": [
+            [
+              "maito",
+              "maitoa",
+              "milk"
+            ],
+            [
+              "vesi",
+              "vettä",
+              "water"
+            ],
+            [
+              "leipä",
+              "leipää",
+              "bread"
+            ],
+            [
+              "juusto",
+              "juustoa",
+              "cheese"
+            ],
+            [
+              "voi",
+              "voita",
+              "butter"
+            ],
+            [
+              "muna",
+              "munia (plural)",
+              "egg"
+            ],
+            [
+              "liha",
+              "lihaa",
+              "meat"
+            ],
+            [
+              "kana",
+              "kanaa",
+              "chicken"
+            ],
+            [
+              "kala",
+              "kalaa",
+              "fish"
+            ],
+            [
+              "riisi",
+              "riisiä",
+              "rice"
+            ],
+            [
+              "peruna",
+              "perunoita (plural)",
+              "potato"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The second column is there on purpose: that's the form you actually say in a shop. Note the plural ones: eggs, potatoes and berries are almost always bought several at a time, so you rarely hear the singular."
+        },
+        {
+          "type": "kotak",
+          "title": "Units you'll see",
+          "items": [
+            "*kilo* (kg), *puoli kiloa* (half a kilo), *sata grammaa* (100 grams)",
+            "*litra* (liter), *pullo* (bottle), *purkki* (can, jar), *paketti* (pack), *pala* (piece)",
+            "All of these are whole, and the contents follow in the partial form: *pullon maitoa*, *paketin kahvia*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Giving polite commands",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Finnish commands are very easy to make: take the *minä* form and drop the final *-n*. *Otan → Ota!*, *Katson → Katso!*, *Muistan → Muista!* It's exactly the same form used after the negative verb, so you've actually known it since unit 7."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "*minä* form",
+            "Command",
+            "Meaning",
+            "Negative command"
+          ],
+          "rows": [
+            [
+              "otan",
+              "**Ota!**",
+              "Take!",
+              "*Älä ota!*"
+            ],
+            [
+              "katson",
+              "**Katso!**",
+              "Look!",
+              "*Älä katso!*"
+            ],
+            [
+              "muistan",
+              "**Muista!**",
+              "Remember!",
+              "*Älä unohda!*"
+            ],
+            [
+              "tulen",
+              "**Tule!**",
+              "Come!",
+              "*Älä tule!*"
+            ],
+            [
+              "menen",
+              "**Mene!**",
+              "Go!",
+              "*Älä mene!*"
+            ],
+            [
+              "odotan",
+              "**Odota!**",
+              "Wait!",
+              "*Älä odota!*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Negative commands use **älä** (to one person) or **älkää** (to several people) — not *ei*. *Älä unohda!* = don't forget. This is the only member of the *ei* family you have to learn separately."
+        },
+        {
+          "type": "p",
+          "text": "With people you don't know well, a bare command can sound a bit blunt. Softer: add *ole hyvä* or turn it into a question — *Voisitko odottaa hetken?* (could you wait a moment?). In shops and among friends, the plain command is perfectly normal."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fi": "ostaa",
+      "baca": "OS-taah",
+      "en": "to buy"
+    },
+    {
+      "fi": "myydä",
+      "baca": "MÜÜ-dä",
+      "en": "to sell"
+    },
+    {
+      "fi": "maksaa",
+      "baca": "MAHK-saah",
+      "en": "to pay; to cost"
+    },
+    {
+      "fi": "ruokakauppa",
+      "baca": "RWOH-kah-kowp-pah",
+      "en": "grocery store"
+    },
+    {
+      "fi": "kassa",
+      "baca": "KAHS-sah",
+      "en": "checkout, cashier"
+    },
+    {
+      "fi": "asiakas",
+      "baca": "AH-si-ah-kahs",
+      "en": "customer"
+    },
+    {
+      "fi": "hinta",
+      "baca": "HIN-tah",
+      "en": "price"
+    },
+    {
+      "fi": "hintalappu",
+      "baca": "HIN-tah-lahp-poo",
+      "en": "price tag"
+    },
+    {
+      "fi": "alennus",
+      "baca": "AH-len-noos",
+      "en": "discount"
+    },
+    {
+      "fi": "kuitti",
+      "baca": "KOOYT-ti",
+      "en": "receipt"
+    },
+    {
+      "fi": "kilo",
+      "baca": "KI-lo",
+      "en": "kilogram"
+    },
+    {
+      "fi": "pullo",
+      "baca": "POOL-lo",
+      "en": "bottle"
+    },
+    {
+      "fi": "paketti",
+      "baca": "PAH-ket-ti",
+      "en": "pack, package"
+    },
+    {
+      "fi": "pala",
+      "baca": "PAH-lah",
+      "en": "piece"
+    },
+    {
+      "fi": "vaaka",
+      "baca": "VAAH-kah",
+      "en": "scale"
+    },
+    {
+      "fi": "punnita",
+      "baca": "POON-ni-tah",
+      "en": "to weigh"
+    },
+    {
+      "fi": "itse",
+      "baca": "IT-se",
+      "en": "(one)self"
+    },
+    {
+      "fi": "muuta",
+      "baca": "MOOO-tah",
+      "en": "else, other"
+    },
+    {
+      "fi": "vain",
+      "baca": "vighn",
+      "en": "only"
+    },
+    {
+      "fi": "parempi",
+      "baca": "PAH-rem-pi",
+      "en": "better"
+    },
+    {
+      "fi": "raha",
+      "baca": "RAH-hah",
+      "en": "money"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose the whole form (-n) or the partial form.",
+      "items": [
+        "Ostan (leipä) ____. (that one loaf)",
+        "Ostan (leipä) ____. (bread, amount unspecified)",
+        "Juon (kahvi) ____. (drinking right now)",
+        "Luen (kirja) ____. (to the end)",
+        "En osta (juusto) ____.",
+        "Otan kaksi (tomaatti) ____."
+      ]
+    },
+    {
+      "prompt": "Change to the partial form.",
+      "items": [
+        "maito",
+        "vesi",
+        "riisi",
+        "liha",
+        "omena",
+        "ihminen"
+      ]
+    },
+    {
+      "prompt": "Change to a command.",
+      "items": [
+        "otan",
+        "katson",
+        "muistan",
+        "tulen",
+        "odotan",
+        "menen"
+      ]
+    },
+    {
+      "prompt": "Translate into Finnish.",
+      "items": [
+        "How much is this?",
+        "How much is it altogether?",
+        "Do you have rice?",
+        "Could I have a kilo of potatoes?",
+        "I'll pay by card.",
+        "Don't forget!"
+      ]
+    }
+  ],
+  "answers": [
+    "leivän — leipää — kahvia — kirjan — juustoa — tomaattia",
+    "maitoa — vettä — riisiä — lihaa — omenaa — ihmistä",
+    "Ota! — Katso! — Muista! — Tule! — Odota! — Mene!",
+    "Paljonko tämä maksaa? — Paljonko se on yhteensä? — Onko teillä riisiä? — Saisinko kilon perunoita? — Maksan kortilla. — Älä unohda!"
+  ]
+}

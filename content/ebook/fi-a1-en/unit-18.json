@@ -1,0 +1,582 @@
+{
+  "title": "Work and study",
+  "title_target": "Työ ja opiskelu",
+  "goal": "Talk about jobs and ambitions with two endings you haven't used yet, and build sentences that don't say who does the action — the form found on every Finnish notice board.",
+  "bekal": [
+    "use the endings **-na/-nä** (as) and **-ksi** (becoming)",
+    "build subjectless sentences: *Suomessa puhutaan suomea*",
+    "talk about your job, education and work plans"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Työhaastattelu",
+      "intro": "Budi applies for a part-time job at a café. The owner, Jussi, has a short chat with him.",
+      "lines": [
+        {
+          "speaker": "Jussi:",
+          "text": "Kerro vähän itsestäsi. Mitä sinä teet työksesi?",
+          "id": "Tell me a bit about yourself. What do you do for a living?",
+          "literal": "tell little from-yourself. what you do as-work-your?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Olen opiskelija. Opiskelen insinööriksi Aallossa.",
+          "id": "I'm a student. I'm studying to be an engineer at Aalto.",
+          "literal": "am-I student. study-I into-engineer in-Aalto."
+        },
+        {
+          "speaker": "Jussi:",
+          "text": "Hienoa. Oletko ollut töissä aiemmin?",
+          "id": "Great. Have you worked before?",
+          "literal": "great. are-?-you been in-work earlier?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Olen. Olin tarjoilijana ravintolassa Jakartassa kaksi vuotta.",
+          "id": "Yes. I worked as a waiter in a restaurant in Jakarta for two years.",
+          "literal": "am-I. was-I as-waiter in-restaurant in-Jakarta two year-part."
+        },
+        {
+          "speaker": "Jussi:",
+          "text": "Hyvä. Täällä työskennellään nopeasti, varsinkin aamuisin.",
+          "id": "Good. We work fast here, especially in the mornings.",
+          "literal": "good. here is-worked fast, especially in-mornings."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Se sopii minulle. Pidän kiireestä.",
+          "id": "That suits me. I like being busy.",
+          "literal": "it suits to-me. like-I from-hurry."
+        },
+        {
+          "speaker": "Jussi:",
+          "text": "Suomea puhutaan täällä koko ajan. Riittääkö sinun suomesi?",
+          "id": "Finnish is spoken here all the time. Is your Finnish good enough?",
+          "literal": "Finnish-part is-spoken here whole time-part. suffices-? your Finnish-your?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Se ei ole täydellistä, mutta ymmärrän hyvin ja opin nopeasti.",
+          "id": "It's not perfect, but I understand well and I learn fast.",
+          "literal": "it not is perfect-part, but understand-I well and learn-I fast."
+        },
+        {
+          "speaker": "Jussi:",
+          "text": "Rehellinen vastaus. Milloin voisit aloittaa?",
+          "id": "An honest answer. When could you start?",
+          "literal": "honest answer. when could-you start?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vaikka ensi maanantaina. Työskentelen mielelläni viikonloppuisin.",
+          "id": "Next Monday, even. I'm happy to work weekends.",
+          "literal": "even next on-Monday. work-I gladly on-weekends."
+        },
+        {
+          "speaker": "Jussi:",
+          "text": "Se on harvinaista. Otetaan sinut kokeiluun kuukaudeksi.",
+          "id": "That's rare. Let's take you on trial for a month.",
+          "literal": "it is rare-part. is-taken you into-trial for-month."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kiitos paljon! Et tule katumaan.",
+          "id": "Thank you very much! You won't regret it.",
+          "literal": "thanks much! not-you come to-regret."
+        }
+      ],
+      "notes": [
+        "**Olin tarjoilijana** — the ending **-na/-nä** means \"as\", and it's the ending used for a job you're doing or used to do. You already know it from the days of the week (*maanantaina*) and from *ensimmäisenä* in unit 13; this is its third use.",
+        "**Opiskelen insinööriksi** — the ending **-ksi** means \"becoming\". It's used for a change of state: studying **to become** an engineer, wanting **to become** a doctor. So *-na* and *-ksi* pair up like \"as\" and \"becoming\" — one is a current state, the other the goal of a change.",
+        "**Suomea puhutaan täällä** — a sentence without a subject. It doesn't say who speaks; what matters is the action. English uses the passive: \"Finnish **is spoken** here\". Both languages are comfortable dropping the doer, but Finnish does it far more often, even in casual speech.",
+        "**Otetaan sinut** — the same form is used for suggestions (\"let's\") and for subjectless sentences (\"is taken\"). Only the situation tells them apart. *Mennään!* = let's go; *Suomessa mennään saunaan* = in Finland people go to the sauna.",
+        "**Pidän kiireestä** — *pitää* with the \"from\" ending means \"to like\". Note that this is the same verb as *pitää* for obligation in unit 17; what differs is the structure. *Pidän kahvi**sta*** = I like coffee.",
+        "**Täydellistä, harvinaista** — partial forms again for judging uncountable things. The same pattern as *hienoa*, *kallista*, *erinomaista*, which have been scattered around since unit 6."
+      ],
+      "grammars": [
+        {
+          "title": "As (-na) and becoming (-ksi)",
+          "body": [
+            "Two endings that pair up and are very useful, and both are used far more widely than just for jobs."
+          ],
+          "table": {
+            "head": [
+              "Suomi",
+              "Literally",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Olen opettaja**na**.*",
+                "I am as-teacher",
+                "I work as a teacher."
+              ],
+              [
+                "*Hän on lääkäri**nä**.*",
+                "he/she is as-doctor",
+                "He/She works as a doctor."
+              ],
+              [
+                "*Opiskelen insinööri**ksi**.*",
+                "I study into-engineer",
+                "I'm studying to be an engineer."
+              ],
+              [
+                "*Haluan tulla lääkäri**ksi**.*",
+                "I want come into-doctor",
+                "I want to become a doctor."
+              ],
+              [
+                "*Maanantai**na**.*",
+                "as-Monday",
+                "On Monday."
+              ],
+              [
+                "*Lapse**na** asuin Bandungissa.*",
+                "as-child I lived",
+                "As a child I lived in Bandung."
+              ],
+              [
+                "*Kuukaude**ksi**.*",
+                "into-month",
+                "For a month."
+              ],
+              [
+                "*Sanoin sen suome**ksi**.*",
+                "I said it into-Finnish",
+                "I said it in Finnish."
+              ]
+            ]
+          },
+          "after": [
+            "**Language names take -ksi** to mean \"in (language)\": *suomeksi*, *englanniksi*, *indonesiaksi*. This is the use you'll need most often: *Mitä tämä on suomeksi?* (what's this in Finnish?).",
+            "*Olen opettaja* and *olen opettajana* are both correct but slightly different: the first states your identity, the second what you're doing at the moment. If you're a trained teacher now working in a café: *olen opettaja, mutta olen tällä hetkellä tarjoilijana*.",
+            "⚠️ Gradation applies as usual: *opettaja → opettajana* (no change), but *lapsi → lapsena*, *kuukausi → kuukaudeksi*."
+          ]
+        },
+        {
+          "title": "Sentences without a subject",
+          "body": [
+            "A form that doesn't say who's doing the action. It's on every notice board, in every rule and in every casual suggestion in Finland — and there's only one form, which doesn't change for anyone."
+          ],
+          "table": {
+            "head": [
+              "Verb",
+              "Subjectless",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*puhua*",
+                "**puhutaan**",
+                "*Täällä puhutaan suomea.*",
+                "Finnish is spoken here."
+              ],
+              [
+                "*mennä*",
+                "**mennään**",
+                "*Mennään saunaan!*",
+                "Let's go to the sauna!"
+              ],
+              [
+                "*syödä*",
+                "**syödään**",
+                "*Suomessa syödään paljon kalaa.*",
+                "In Finland people eat a lot of fish."
+              ],
+              [
+                "*sanoa*",
+                "**sanotaan**",
+                "*Sanotaan, että talvi on pitkä.*",
+                "They say winter is long."
+              ],
+              [
+                "*tehdä*",
+                "**tehdään**",
+                "*Mitä tänään tehdään?*",
+                "What shall we do today?"
+              ],
+              [
+                "*ottaa*",
+                "**otetaan**",
+                "*Otetaan kahvit.*",
+                "Let's get coffee."
+              ],
+              [
+                "*saada*",
+                "**saa / ei saa**",
+                "*Täällä ei saa tupakoida.*",
+                "No smoking here."
+              ],
+              [
+                "*avata*",
+                "**avataan**",
+                "*Kauppa avataan kello yhdeksän.*",
+                "The shop opens at nine."
+              ]
+            ]
+          },
+          "after": [
+            "**Two jobs, one form.** With an exclamation mark or an inviting tone, it means \"let's\". As part of a statement, it's a passive with no doer. Finns never confuse the two, and after a few weeks neither will you.",
+            "**Negating it:** *ei puhuta*, *ei mennä*, *ei syödä*, *ei saa*. Notice the form gets shorter — just like ordinary negatives drop the ending.",
+            "⚠️ For now, learn the forms in the table as they are. Forming them from any verb is a bit tricky and belongs to A2; the ones above already cover almost everything you need."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Jobs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "Say it",
+            "Meaning",
+            "Suomi",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "opettaja",
+              "O-pet-tah-yah",
+              "teacher",
+              "lääkäri",
+              "LÄÄ-kä-ri",
+              "doctor"
+            ],
+            [
+              "hoitaja",
+              "HOY-tah-yah",
+              "nurse",
+              "insinööri",
+              "IN-si-nöö-ri",
+              "engineer"
+            ],
+            [
+              "myyjä",
+              "MÜÜ-yä",
+              "salesperson",
+              "kokki",
+              "KOK-ki",
+              "cook, chef"
+            ],
+            [
+              "tarjoilija",
+              "TAHR-yoy-li-yah",
+              "waiter",
+              "kuljettaja",
+              "KOOL-yet-tah-yah",
+              "driver"
+            ],
+            [
+              "rakentaja",
+              "RAH-ken-tah-yah",
+              "builder",
+              "siivooja",
+              "SEE-vohh-yah",
+              "cleaner"
+            ],
+            [
+              "toimittaja",
+              "TOY-mit-tah-yah",
+              "journalist",
+              "juristi",
+              "YOO-ris-ti",
+              "lawyer"
+            ],
+            [
+              "tutkija",
+              "TOOT-ki-yah",
+              "researcher",
+              "yrittäjä",
+              "Ü-rit-tä-yä",
+              "entrepreneur"
+            ],
+            [
+              "ohjelmoija",
+              "OH-yel-moy-yah",
+              "programmer",
+              "kirjanpitäjä",
+              "KIR-yahn-pi-tä-yä",
+              "accountant"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that almost all of them end in **-ja/-jä**, meaning \"person who does\" — formed from the verb, much like English *-er*: *opettaa* (teach) → *opettaja*, *myydä* (sell) → *myyjä*, *tarjoilla* (serve) → *tarjoilija*. If you know the verb, you can guess the job."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "English"
+          ],
+          "rows": [
+            [
+              "Missä sinä olet töissä?",
+              "Where do you work?"
+            ],
+            [
+              "Mitä sinä teet työksesi?",
+              "What do you do for a living?"
+            ],
+            [
+              "Olen työtön.",
+              "I'm unemployed."
+            ],
+            [
+              "Teen osa-aikatyötä.",
+              "I work part-time."
+            ],
+            [
+              "Olen töissä kahvilassa.",
+              "I work at a café."
+            ],
+            [
+              "Opiskelen yliopistossa.",
+              "I study at a university."
+            ],
+            [
+              "Mitä sinä opiskelet?",
+              "What are you studying?"
+            ],
+            [
+              "Valmistun ensi vuonna.",
+              "I graduate next year."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Finnish in the workplace",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "What's really required",
+          "items": [
+            "For tech and research jobs in Helsinki, English is often enough. For almost any job dealing with people — cafés, shops, care work, education — Finnish is **a must**.",
+            "The levels job ads usually ask for: *sujuva suomi* (fluent) or *hyvä suomen kielen taito* (good command). The equivalent of this A1 is *suomen kielen alkeet* — and that's already enough to show commitment, which often matters more than the level itself.",
+            "Being honest about your skills actually helps: *Puhun vähän suomea, mutta opiskelen aktiivisesti.* Exaggerating will be obvious within two minutes."
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "English"
+          ],
+          "rows": [
+            [
+              "työhakemus",
+              "job application"
+            ],
+            [
+              "työhaastattelu",
+              "job interview"
+            ],
+            [
+              "ansioluettelo / CV",
+              "résumé, CV"
+            ],
+            [
+              "työsopimus",
+              "employment contract"
+            ],
+            [
+              "palkka",
+              "salary"
+            ],
+            [
+              "koeaika",
+              "probation period"
+            ],
+            [
+              "työkokemus",
+              "work experience"
+            ],
+            [
+              "suositus",
+              "reference letter"
+            ],
+            [
+              "Olen kiinnostunut paikasta.",
+              "I'm interested in the position."
+            ],
+            [
+              "Minulla on kahden vuoden kokemus.",
+              "I have two years' experience."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Finnish job interviews are much flatter in tone than many people expect: little small talk, little praise, lots of direct questions. A brief silence after a question is seen as a sign you're thinking, not that you're unprepared. Don't fill it."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fi": "työ",
+      "baca": "tüö",
+      "en": "work, job"
+    },
+    {
+      "fi": "töissä",
+      "baca": "TÖIS-sä",
+      "en": "at work"
+    },
+    {
+      "fi": "työskennellä",
+      "baca": "TÜÖS-ken-nel-lä",
+      "en": "to work"
+    },
+    {
+      "fi": "ammatti",
+      "baca": "AHM-maht-ti",
+      "en": "profession"
+    },
+    {
+      "fi": "opiskella",
+      "baca": "O-pis-kel-lah",
+      "en": "to study"
+    },
+    {
+      "fi": "yliopisto",
+      "baca": "Ü-li-o-pis-to",
+      "en": "university"
+    },
+    {
+      "fi": "valmistua",
+      "baca": "VAHL-mis-too-ah",
+      "en": "to graduate"
+    },
+    {
+      "fi": "insinööri",
+      "baca": "IN-si-nöö-ri",
+      "en": "engineer"
+    },
+    {
+      "fi": "tarjoilija",
+      "baca": "TAHR-yoy-li-yah",
+      "en": "waiter"
+    },
+    {
+      "fi": "kokki",
+      "baca": "KOK-ki",
+      "en": "cook, chef"
+    },
+    {
+      "fi": "yrittäjä",
+      "baca": "Ü-rit-tä-yä",
+      "en": "entrepreneur"
+    },
+    {
+      "fi": "työtön",
+      "baca": "TÜÖ-tön",
+      "en": "unemployed"
+    },
+    {
+      "fi": "palkka",
+      "baca": "PAHLK-kah",
+      "en": "salary"
+    },
+    {
+      "fi": "haastattelu",
+      "baca": "HAAHS-taht-te-loo",
+      "en": "interview"
+    },
+    {
+      "fi": "hakemus",
+      "baca": "HAH-ke-moos",
+      "en": "application"
+    },
+    {
+      "fi": "kokemus",
+      "baca": "KO-ke-moos",
+      "en": "experience"
+    },
+    {
+      "fi": "koeaika",
+      "baca": "KO-e-igh-kah",
+      "en": "probation period"
+    },
+    {
+      "fi": "aloittaa",
+      "baca": "AH-loyt-taah",
+      "en": "to start"
+    },
+    {
+      "fi": "pitää (jostakin)",
+      "baca": "PI-tää",
+      "en": "to like (something)"
+    },
+    {
+      "fi": "kiinnostunut",
+      "baca": "KEEN-nos-too-noot",
+      "en": "interested"
+    },
+    {
+      "fi": "rehellinen",
+      "baca": "RE-hel-li-nen",
+      "en": "honest"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the ending **-na/-nä** or **-ksi**.",
+      "items": [
+        "Olen opettaja____. (working as)",
+        "Opiskelen lääkäri____. (to become)",
+        "Haluan tulla insinööri____. (become)",
+        "Olin tarjoilija____ kaksi vuotta. (as)",
+        "Mitä tämä on suome____? (in the language)",
+        "Lapse____ asuin Bandungissa. (when I was)"
+      ]
+    },
+    {
+      "prompt": "Change into a subjectless sentence.",
+      "items": [
+        "Me puhumme suomea. → Täällä ____ suomea.",
+        "Me menemme saunaan. → ____ saunaan!",
+        "Me syömme paljon kalaa. → Suomessa ____ paljon kalaa.",
+        "Me teemme jotain. → Mitä tänään ____?",
+        "Me otamme kahvit. → ____ kahvit."
+      ]
+    },
+    {
+      "prompt": "Translate into Finnish.",
+      "items": [
+        "Where do you work?",
+        "I'm a student.",
+        "I'm studying to be an engineer.",
+        "I've worked as a waiter.",
+        "Finnish is spoken here all the time.",
+        "When could you start?"
+      ]
+    },
+    {
+      "prompt": "Guess the job from the verb.",
+      "items": [
+        "opettaa (teach) → ____",
+        "myydä (sell) → ____",
+        "hoitaa (care for) → ____",
+        "kuljettaa (transport) → ____",
+        "tutkia (research) → ____"
+      ]
+    }
+  ],
+  "answers": [
+    "na — ksi — ksi — na — ksi — na",
+    "puhutaan — Mennään — syödään — tehdään — Otetaan",
+    "Missä sinä olet töissä? — Olen opiskelija. — Opiskelen insinööriksi. — Olen ollut tarjoilijana. — Täällä puhutaan suomea koko ajan. — Milloin voisit aloittaa?",
+    "opettaja — myyjä — hoitaja — kuljettaja — tutkija"
+  ]
+}

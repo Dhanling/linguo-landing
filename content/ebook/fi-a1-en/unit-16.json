@@ -1,0 +1,551 @@
+{
+  "title": "Finding a place to live",
+  "title_target": "Asunnon etsintä",
+  "goal": "Describe a home and what's in it, say which floor and which room, and build sentences that say something exists somewhere.",
+  "bekal": [
+    "use ordinal numbers: *ensimmäinen*, *toinen*, *kolmas*…",
+    "build existential sentences: *Pöydällä on kirja*",
+    "read rental ads and ask what matters before renting"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Asuntonäyttö",
+      "intro": "Budi wants to move out of the student dorm. He views a small apartment with the owner, Mrs. Nieminen.",
+      "lines": [
+        {
+          "speaker": "Nieminen:",
+          "text": "Tervetuloa! Asunto on kolmannessa kerroksessa.",
+          "id": "Welcome! The apartment is on the third floor.",
+          "literal": "welcome! apartment is in-third in-floor."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kiitos. Onko talossa hissi?",
+          "id": "Thank you. Does the building have an elevator?",
+          "literal": "thanks. is-? in-building elevator?"
+        },
+        {
+          "speaker": "Nieminen:",
+          "text": "On. Tässä on eteinen, ja tuolla on keittiö.",
+          "id": "Yes. Here's the hallway, and over there is the kitchen.",
+          "literal": "is. here is hallway, and over-there is kitchen."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Keittiössä on jääkaappi ja liesi. Onko astianpesukonetta?",
+          "id": "The kitchen has a fridge and a stove. Is there a dishwasher?",
+          "literal": "in-kitchen is fridge and stove. is-? dish-washing-machine-part?"
+        },
+        {
+          "speaker": "Nieminen:",
+          "text": "Valitettavasti ei ole. Mutta pyykkitupa on kellarissa.",
+          "id": "Unfortunately not. But the laundry room is in the basement.",
+          "literal": "unfortunately not is. but laundry-room is in-basement."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Selvä. Entä sauna?",
+          "id": "OK. And the sauna?",
+          "literal": "clear. and sauna?"
+        },
+        {
+          "speaker": "Nieminen:",
+          "text": "Taloyhtiön sauna on kellarissa. Vuorot ovat torstaisin.",
+          "id": "The building's sauna is in the basement. The slots are on Thursdays.",
+          "literal": "housing-company's sauna is in-basement. turns are on-Thursdays."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hienoa. Paljonko vuokra on?",
+          "id": "Great. How much is the rent?",
+          "literal": "great. how-much rent is?"
+        },
+        {
+          "speaker": "Nieminen:",
+          "text": "Seitsemänsataa euroa kuussa. Vesi ja lämpö sisältyvät.",
+          "id": "Seven hundred euros a month. Water and heating are included.",
+          "literal": "seven-hundred euro-part in-month. water and heat are-included."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Onko parvekkeella aurinkoa iltapäivällä?",
+          "id": "Does the balcony get sun in the afternoon?",
+          "literal": "is-? on-balcony sun-part in-afternoon?"
+        },
+        {
+          "speaker": "Nieminen:",
+          "text": "On, se on länteen. Se on tämän asunnon paras puoli.",
+          "id": "Yes, it faces west. That's the best thing about this apartment.",
+          "literal": "is, it is to-west. it is this-of apartment-of best side."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Otan sen. Milloin voin muuttaa?",
+          "id": "I'll take it. When can I move in?",
+          "literal": "take-I it-whole. when can-I move?"
+        }
+      ],
+      "notes": [
+        "**Kolmannessa kerroksessa** — ordinal numbers take endings too, just like adjectives. *Kolmas* (third) → *kolmanne**ssa***. Notice the stem changes from *-s* to *-nne-*; this is the pattern for every ordinal from three upwards.",
+        "**Keittiössä on jääkaappi** — the \"in some place there is something\" structure. The place comes **first**, the thing after. It's the reverse of an ordinary sentence (*jääkaappi on keittiössä*), and the difference isn't grammar but what's being talked about: the first describes what's in the kitchen, the second says where the fridge is.",
+        "**Onko astianpesukonetta?** — questions about existence use the partial form. Just like *onko teillä teetä* in unit 6: something not yet known to exist is mentioned in the partial.",
+        "**Vuorot ovat torstaisin** — the ending **-isin** means \"every\": *torstaisin* (on Thursdays), *aamuisin* (in the mornings), *viikonloppuisin* (at weekends). A short, very useful ending that's rarely taught early on.",
+        "**Taloyhtiö** — the housing company of a building's owners, the body that runs almost every apartment block in Finland. It manages the shared sauna, the laundry room and their schedules. You'll see this word in every rental ad.",
+        "**Sisältyvät** — \"are included\". In Finland water and heating are usually included in the rent, while electricity and internet usually aren't. Ask: *Sisältyykö sähkö vuokraan?*"
+      ],
+      "grammars": [
+        {
+          "title": "Ordinal numbers",
+          "body": [
+            "Used for floors, dates, order and rankings. The first two are irregular; the rest use the ending **-s**, which becomes **-nne-** as soon as another ending is added."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Ordinal",
+              "Say it",
+              "With ending (-ssa)",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "1",
+                "**ensimmäinen**",
+                "EN-sim-mäi-nen",
+                "ensimmäisessä",
+                "first"
+              ],
+              [
+                "2",
+                "**toinen**",
+                "TOY-nen",
+                "toisessa",
+                "second"
+              ],
+              [
+                "3",
+                "**kolmas**",
+                "KOL-mahs",
+                "kolmannessa",
+                "third"
+              ],
+              [
+                "4",
+                "**neljäs**",
+                "NEL-yäs",
+                "neljännessä",
+                "fourth"
+              ],
+              [
+                "5",
+                "**viides**",
+                "VEE-des",
+                "viidennessä",
+                "fifth"
+              ],
+              [
+                "6",
+                "**kuudes**",
+                "KOOO-des",
+                "kuudennessa",
+                "sixth"
+              ],
+              [
+                "7",
+                "**seitsemäs**",
+                "SAYT-se-mäs",
+                "seitsemännessä",
+                "seventh"
+              ],
+              [
+                "8",
+                "**kahdeksas**",
+                "KAHH-dek-sahs",
+                "kahdeksannessa",
+                "eighth"
+              ],
+              [
+                "9",
+                "**yhdeksäs**",
+                "ÜH-dek-säs",
+                "yhdeksännessä",
+                "ninth"
+              ],
+              [
+                "10",
+                "**kymmenes**",
+                "KÜM-me-nes",
+                "kymmenennessä",
+                "tenth"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *Ensimmäinen* and *toinen* have nothing to do with *yksi* and *kaksi*. Both must be learned separately — just as \"first\" and \"second\" have nothing to do with \"one\" and \"two\" in English.",
+            "Dates use an ordinal plus the month name in the partial form: *kolmastoista maaliskuuta* (March 13), *ensimmäinen tammikuuta* (January 1). You glimpsed this form in unit 5.",
+            "Floors in Finland are counted as in the US: the ground floor is *ensimmäinen kerros* (the first floor). This differs from the UK and much of Europe, where counting starts from the ground floor."
+          ]
+        },
+        {
+          "title": "Existential sentences",
+          "body": [
+            "The structure that says \"in some place there is something\". The place comes first, the verb is always *on* (singular) or *ovat* (plural), and the thing comes last."
+          ],
+          "table": {
+            "head": [
+              "Suomi",
+              "Literally",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Pöydällä on kirja.*",
+                "on-table is book",
+                "There's a book on the table."
+              ],
+              [
+                "*Keittiössä on jääkaappi.*",
+                "in-kitchen is fridge",
+                "There's a fridge in the kitchen."
+              ],
+              [
+                "*Huoneessa on kaksi ikkunaa.*",
+                "in-room is two window-part",
+                "The room has two windows."
+              ],
+              [
+                "*Kaupungissa on paljon ihmisiä.*",
+                "in-city is many people-part",
+                "There are lots of people in the city."
+              ],
+              [
+                "*Kellarissa ei ole saunaa.*",
+                "in-basement not is sauna-part",
+                "There's no sauna in the basement."
+              ],
+              [
+                "*Onko täällä wc:tä?*",
+                "is-? here toilet-part",
+                "Is there a toilet here?"
+              ]
+            ]
+          },
+          "after": [
+            "**The verb stays *on* even with many things**, as long as they're in the partial form: *Kaupungissa on paljon ihmisiä*. *Ovat* is only used when the things are specific and countable: *Huoneessa ovat ne kirjat*.",
+            "⚠️ **In the negative, the thing must be partial**: *Kellarissa ei ole sauna**a***. An old rule from unit 7, turning up in a new place.",
+            "The difference from an ordinary sentence: *Kirja on pöydällä* answers \"where's the book?\", while *Pöydällä on kirja* answers \"what's on the table?\". What comes first is already known; what comes last is the news."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The home and what's in it",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "asunto",
+              "AH-soon-to",
+              "apartment, home"
+            ],
+            [
+              "talo",
+              "TAH-lo",
+              "house, building"
+            ],
+            [
+              "kerros",
+              "KER-ros",
+              "floor (level)"
+            ],
+            [
+              "huone",
+              "HWOH-ne",
+              "room"
+            ],
+            [
+              "olohuone",
+              "O-lo-hwoh-ne",
+              "living room"
+            ],
+            [
+              "makuuhuone",
+              "MAH-kooo-hwoh-ne",
+              "bedroom"
+            ],
+            [
+              "keittiö",
+              "KAYT-ti-ö",
+              "kitchen"
+            ],
+            [
+              "kylpyhuone",
+              "KÜL-pü-hwoh-ne",
+              "bathroom"
+            ],
+            [
+              "vessa / wc",
+              "VES-sah",
+              "toilet"
+            ],
+            [
+              "eteinen",
+              "E-tay-nen",
+              "hallway"
+            ],
+            [
+              "parveke",
+              "PAHR-ve-ke",
+              "balcony"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Yksiö* is a one-room apartment (studio), *kaksio* has two rooms, *kolmio* three. The number counts living rooms — the kitchen and bathroom don't count. This matters when reading ads: *kaksio* doesn't mean two bedrooms."
+        }
+      ]
+    },
+    {
+      "title": "Reading a rental ad",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Abbreviation",
+            "In full",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*1h + kk*",
+              "yksi huone + keittokomero",
+              "one room + kitchenette"
+            ],
+            [
+              "*2h + k + kph*",
+              "kaksi huonetta + keittiö + kylpyhuone",
+              "two rooms + kitchen + bathroom"
+            ],
+            [
+              "*m²*",
+              "neliömetriä",
+              "square meters"
+            ],
+            [
+              "*vuokra*",
+              "—",
+              "monthly rent"
+            ],
+            [
+              "*takuuvuokra*",
+              "—",
+              "deposit (usually 1–2 months)"
+            ],
+            [
+              "*vapautuu*",
+              "—",
+              "available from (date)"
+            ],
+            [
+              "*sis.*",
+              "sisältyy",
+              "included"
+            ],
+            [
+              "*sähkö*",
+              "—",
+              "electricity (usually NOT included)"
+            ],
+            [
+              "*taloyhtiön sauna*",
+              "—",
+              "the building's shared sauna"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Six questions before you sign",
+          "items": [
+            "*Paljonko vuokra on?* — How much is the rent?",
+            "*Sisältyykö sähkö ja nettiyhteys?* — Are electricity and internet included?",
+            "*Kuinka suuri takuuvuokra on?* — How big is the deposit?",
+            "*Onko sopimus määräaikainen vai toistaiseksi voimassa?* — Is the lease fixed-term or open-ended?",
+            "*Milloin asunto vapautuu?* — When is the apartment available?",
+            "*Saako täällä pitää lemmikkiä?* — Are pets allowed?"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ The rental market in Helsinki is very tight and moves fast. Good ads are often gone within hours, so a short introduction letter in Finnish — however simple — really makes a difference. One paragraph is enough: who you are, what you do, and when you can move in."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fi": "asunto",
+      "baca": "AH-soon-to",
+      "en": "home, apartment"
+    },
+    {
+      "fi": "vuokra",
+      "baca": "VWOHK-rah",
+      "en": "rent"
+    },
+    {
+      "fi": "kerros",
+      "baca": "KER-ros",
+      "en": "floor (level)"
+    },
+    {
+      "fi": "hissi",
+      "baca": "HIS-si",
+      "en": "elevator"
+    },
+    {
+      "fi": "keittiö",
+      "baca": "KAYT-ti-ö",
+      "en": "kitchen"
+    },
+    {
+      "fi": "olohuone",
+      "baca": "O-lo-hwoh-ne",
+      "en": "living room"
+    },
+    {
+      "fi": "parveke",
+      "baca": "PAHR-ve-ke",
+      "en": "balcony"
+    },
+    {
+      "fi": "kellari",
+      "baca": "KEL-lah-ri",
+      "en": "basement"
+    },
+    {
+      "fi": "liesi",
+      "baca": "LIYE-si",
+      "en": "stove"
+    },
+    {
+      "fi": "pesukone",
+      "baca": "PE-soo-ko-ne",
+      "en": "washing machine"
+    },
+    {
+      "fi": "sähkö",
+      "baca": "SÄH-kö",
+      "en": "electricity"
+    },
+    {
+      "fi": "lämpö",
+      "baca": "LÄM-pö",
+      "en": "heating, warmth"
+    },
+    {
+      "fi": "sisältyä",
+      "baca": "SI-säl-tü-ä",
+      "en": "to be included"
+    },
+    {
+      "fi": "muuttaa",
+      "baca": "MOOOT-taah",
+      "en": "to move; to change"
+    },
+    {
+      "fi": "sopimus",
+      "baca": "SO-pi-moos",
+      "en": "contract, lease"
+    },
+    {
+      "fi": "lemmikki",
+      "baca": "LEM-mik-ki",
+      "en": "pet"
+    },
+    {
+      "fi": "ensimmäinen",
+      "baca": "EN-sim-mäi-nen",
+      "en": "first"
+    },
+    {
+      "fi": "toinen",
+      "baca": "TOY-nen",
+      "en": "second"
+    },
+    {
+      "fi": "kolmas",
+      "baca": "KOL-mahs",
+      "en": "third"
+    },
+    {
+      "fi": "pohjoinen",
+      "baca": "POH-yoy-nen",
+      "en": "north"
+    },
+    {
+      "fi": "etelä",
+      "baca": "E-te-lä",
+      "en": "south"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the ordinal number.",
+      "items": [
+        "1",
+        "2",
+        "3",
+        "5",
+        "7",
+        "10"
+      ]
+    },
+    {
+      "prompt": "Make existential sentences (place first).",
+      "items": [
+        "kirja / pöytä",
+        "jääkaappi / keittiö",
+        "sauna / kellari",
+        "kaksi ikkunaa / huone",
+        "paljon ihmisiä / kaupunki"
+      ]
+    },
+    {
+      "prompt": "Translate into Finnish.",
+      "items": [
+        "The apartment is on the third floor.",
+        "Does the building have an elevator?",
+        "How much is the rent?",
+        "Water and heating are included.",
+        "There's no sauna in the basement.",
+        "When can I move in?"
+      ]
+    },
+    {
+      "prompt": "Fill in the ordinal with the right -ssa/-ssä ending.",
+      "items": [
+        "Asun (kolmas) ____ kerroksessa.",
+        "Hän asuu (ensimmäinen) ____ kerroksessa.",
+        "Olemme (toinen) ____ huoneessa.",
+        "Kauppa on (neljäs) ____ kerroksessa.",
+        "Vessa on (viides) ____ kerroksessa."
+      ]
+    }
+  ],
+  "answers": [
+    "ensimmäinen — toinen — kolmas — viides — seitsemäs — kymmenes",
+    "Pöydällä on kirja. — Keittiössä on jääkaappi. — Kellarissa on sauna. — Huoneessa on kaksi ikkunaa. — Kaupungissa on paljon ihmisiä.",
+    "Asunto on kolmannessa kerroksessa. — Onko talossa hissi? — Paljonko vuokra on? — Vesi ja lämpö sisältyvät. — Kellarissa ei ole saunaa. — Milloin voin muuttaa?",
+    "kolmannessa — ensimmäisessä — toisessa — neljännessä — viidennessä"
+  ]
+}

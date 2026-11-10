@@ -1,0 +1,558 @@
+{
+  "title": "Where are you from?",
+  "title_target": "Mistä sinä olet kotoisin?",
+  "goal": "Say where you're from, where you live, and which languages you speak — and see for the first time that English prepositions turn into word endings in Finnish.",
+  "bekal": [
+    "answer *mistä* (where from) and *missä* (where) with the endings *-sta/-stä* and *-ssa/-ssä*",
+    "turn a country name into a nationality and a language name — one root, three faces",
+    "attach the six person endings to a verb without needing the pronoun"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kahvitauko",
+      "intro": "A coffee break between two classes. Aino and Budi sit in the cafeteria with Marek, a new student from Poland.",
+      "lines": [
+        {
+          "speaker": "Marek:",
+          "text": "Hei! Minä olen Marek. Mistä sinä olet kotoisin?",
+          "id": "Hi! I'm Marek. Where are you from?",
+          "literal": "hi! I am Marek. from-what you are originally?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Minä olen Indonesiasta. Tarkemmin sanottuna Jakartasta.",
+          "id": "I'm from Indonesia. From Jakarta, to be exact.",
+          "literal": "I am from-Indonesia. more-precisely said from-Jakarta."
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Ai, Jakartasta! Onko se iso kaupunki?",
+          "id": "Oh, from Jakarta! Is it a big city?",
+          "literal": "oh, from-Jakarta! is-? it big city?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kyllä, se on erittäin iso. Entä sinä? Mistä sinä olet?",
+          "id": "Yes, it's very big. And you? Where are you from?",
+          "literal": "yes, it is very big. and you? from-what you are?"
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Minä olen Puolasta, Krakovasta. Nyt minä asun Helsingissä.",
+          "id": "I'm from Poland, from Kraków. Now I live in Helsinki.",
+          "literal": "I am from-Poland, from-Kraków. now I live in-Helsinki."
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Minä asun myös Helsingissä, Kalliossa. Missä sinä asut, Budi?",
+          "id": "I live in Helsinki too, in Kallio. Where do you live, Budi?",
+          "literal": "I live also in-Helsinki, in-Kallio. in-what you live, Budi?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Minä asun Espoossa. Mitä kieltä sinä puhut kotona, Marek?",
+          "id": "I live in Espoo. What language do you speak at home, Marek?",
+          "literal": "I live in-Espoo. what language you speak at-home, Marek?"
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Puolaa, tietysti. Ja englantia työssä. Puhutko sinä indonesiaa?",
+          "id": "Polish, of course. And English at work. Do you speak Indonesian?",
+          "literal": "Polish, of-course. and English at-work. speak-? you Indonesian?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Puhun indonesiaa ja javaa. Ja nyt vähän suomea!",
+          "id": "I speak Indonesian and Javanese. And now a little Finnish!",
+          "literal": "speak-I Indonesian and Javanese. and now a-little Finnish!"
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Hienoa! Suomi on vaikea kieli, mutta sinä opit nopeasti.",
+          "id": "Great! Finnish is a hard language, but you learn fast.",
+          "literal": "great! Finnish is difficult language, but you learn quickly."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kiitos! Mutta kielioppi on kyllä vaikeaa.",
+          "id": "Thanks! But the grammar really is hard.",
+          "literal": "thanks! but grammar is indeed difficult."
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Meille kaikille. Kahvi on kuitenkin hyvää — se auttaa!",
+          "id": "For all of us. Luckily the coffee is good — that helps!",
+          "literal": "to-us to-all. coffee is however good — it helps!"
+        }
+      ],
+      "notes": [
+        "**Mistä and missä aren't two separate words to memorize.** They're the same word (*mi-* = what) with different endings: *-stä* means \"out of\", *-ssä* means \"in\". The very same endings later attach to nouns: *Helsingi**stä*** (from Helsinki), *Helsingi**ssä*** (in Helsinki). This is the most important pattern in the whole unit.",
+        "**A country name becomes three things.** *Suomi* is the country, *suomalainen* the person, *suomea* the language. *Puola → puolalainen → puolaa*. *Indonesia → indonesialainen → indonesiaa*. Once this pattern sinks in, you get three words every time you learn one country.",
+        "**Language names always take the partitive form.** *Puhun suome**a***, not *puhun suomi*. This *-a/-ä* ending is called the **partitive**, and it appears because speaking a language means using a part of it, never all of it. For now, just memorize the form; the reason is covered fully in Unit 11.",
+        "**Language names are lowercase, country names are capitalized.** *Suomi* (Finland) but *suomi* (Finnish); *Puola* but *puolaa*. Nationalities are lowercase too: *suomalainen*, *indonesialainen*. Compare English, which capitalizes them all.",
+        "**The pronoun can disappear.** Look at line 9: *Puhun indonesiaa* — no *minä*. The ending *-n* already says \"I\", so the pronoun is redundant. Finns drop it all the time for *minä*, *sinä*, *me*, *te*. Not for *hän* and *he*.",
+        "**Helsingissä, not Helsinkissä.** The *nk* weakens to *ng* as soon as an ending is attached — this is the consonant gradation whose table you saw in the pronunciation chapter. Compare *Espoo → Espoossa* (nothing weakens, because there's no k/p/t)."
+      ],
+      "grammars": [
+        {
+          "title": "-ssa / -ssä and -sta / -stä — \"in\" and \"from\"",
+          "body": [
+            "The first two of the fifteen case endings. They come as a pair and are best learned together, because they differ in only one way: one stays inside a place, the other comes out of it."
+          ],
+          "table": {
+            "head": [
+              "Base word",
+              "in (-ssa/-ssä)",
+              "from (-sta/-stä)",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*Suomi*",
+                "*Suome**ssa***",
+                "*Suome**sta***",
+                "Finland"
+              ],
+              [
+                "*Indonesia*",
+                "*Indonesia**ssa***",
+                "*Indonesia**sta***",
+                "Indonesia"
+              ],
+              [
+                "*Helsinki*",
+                "*Helsingi**ssä***",
+                "*Helsingi**stä***",
+                "Helsinki"
+              ],
+              [
+                "*talo* (house)",
+                "*talo**ssa***",
+                "*talo**sta***",
+                "house"
+              ],
+              [
+                "*kylä* (village)",
+                "*kylä**ssä***",
+                "*kylä**stä***",
+                "village"
+              ],
+              [
+                "*kauppa* (shop)",
+                "*kaupa**ssa***",
+                "*kaupa**sta***",
+                "shop"
+              ]
+            ]
+          },
+          "after": [
+            "Choose *a* or *ä* by vowel harmony, just as with *-ko/-kö*: *talossa* but *kylässä*. Words whose only vowels are *e* and *i* take the front form — hence *Helsingissä*.",
+            "⚠️ *Suomi* first changes to *Suome-* before taking the ending. Nouns ending in *-i* often swap that *i* for *e*: *Suomi → Suomessa*, *nimi → nimessä*, *kieli → kielessä*. It's a pattern, not an exception.",
+            "English puts \"in\" and \"from\" **before** the word; Finnish attaches them **after** it. The meaning is identical. What needs practice isn't understanding it but the reflex of putting it at the end."
+          ]
+        },
+        {
+          "title": "Person endings on verbs",
+          "body": [
+            "Every Finnish verb uses the same six endings. Learn them once and they work for thousands of verbs — including ones you've never seen."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "Ending",
+              "*puhua* (speak)",
+              "*asua* (live)",
+              "*opiskella* (study)"
+            ],
+            "rows": [
+              [
+                "minä",
+                "**-n**",
+                "puhu**n**",
+                "asu**n**",
+                "opiskele**n**"
+              ],
+              [
+                "sinä",
+                "**-t**",
+                "puhu**t**",
+                "asu**t**",
+                "opiskele**t**"
+              ],
+              [
+                "hän",
+                "*last vowel lengthened*",
+                "puhu**u**",
+                "asu**u**",
+                "opiskele**e**"
+              ],
+              [
+                "me",
+                "**-mme**",
+                "puhu**mme**",
+                "asu**mme**",
+                "opiskele**mme**"
+              ],
+              [
+                "te",
+                "**-tte**",
+                "puhu**tte**",
+                "asu**tte**",
+                "opiskele**tte**"
+              ],
+              [
+                "he",
+                "**-vat / -vät**",
+                "puhu**vat**",
+                "asu**vat**",
+                "opiskele**vat**"
+              ]
+            ]
+          },
+          "after": [
+            "The *hän* form is the strangest one: there's no ending at all, **the last vowel is simply lengthened**. *Hän puhuu* — with a long *u*. If you say it short (*hän puhu*), what comes out isn't a wrong sentence but an unfinished one.",
+            "The dictionary form (*puhua*, *asua*) is never used as-is in a sentence — it always loses its *-a/-ä* first. What's left (*puhu-*, *asu-*) is the stem the endings attach to.",
+            "⚠️ Some verbs change their consonant when a person ending is added — *lukea* (to read) becomes *luen*, not *luken*. That pattern gets its own treatment in Unit 8; for now, use the verbs in this unit as they are."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Country, nationality, language",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This table saves you more time than it looks: each row gives you three words at once, and the pattern holds almost without exception."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Country",
+            "Say it",
+            "Person",
+            "Language"
+          ],
+          "rows": [
+            [
+              "Suomi",
+              "SWOH-mi",
+              "suomalainen",
+              "suomea"
+            ],
+            [
+              "Indonesia",
+              "IN-do-ne-si-ah",
+              "indonesialainen",
+              "indonesiaa"
+            ],
+            [
+              "Ruotsi",
+              "RWOHT-si",
+              "ruotsalainen",
+              "ruotsia"
+            ],
+            [
+              "Viro",
+              "VI-ro",
+              "virolainen",
+              "viroa"
+            ],
+            [
+              "Venäjä",
+              "VE-nä-yä",
+              "venäläinen",
+              "venäjää"
+            ],
+            [
+              "Saksa",
+              "SAHK-sah",
+              "saksalainen",
+              "saksaa"
+            ],
+            [
+              "Ranska",
+              "RAHNS-kah",
+              "ranskalainen",
+              "ranskaa"
+            ],
+            [
+              "Puola",
+              "PWOH-lah",
+              "puolalainen",
+              "puolaa"
+            ],
+            [
+              "Japani",
+              "YAH-pah-ni",
+              "japanilainen",
+              "japania"
+            ],
+            [
+              "Kiina",
+              "KEE-nah",
+              "kiinalainen",
+              "kiinaa"
+            ],
+            [
+              "Englanti",
+              "ENG-lahn-ti",
+              "englantilainen",
+              "englantia"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ One trap catches every beginner: **Suomi** with a capital letter is the country, **suomi** in lowercase is the language. The sentence *Suomi on Suomessa* makes no sense; *Suomi on kaunis maa* (Finland is a beautiful country) does."
+        },
+        {
+          "type": "p",
+          "text": "The ending **-lainen/-läinen** means \"person from\", and it works for cities too: *helsinkiläinen* (someone from Helsinki), *tamperelainen* (someone from Tampere), *jakartalainen*. It doesn't change for gender — men and women are both *suomalainen*."
+        }
+      ]
+    },
+    {
+      "title": "Question words",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Nine question words cover nearly everything you need at A1. Notice that the first three are the same word with different place endings — so you're really memorizing only six."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "Say it",
+            "English",
+            "Example"
+          ],
+          "rows": [
+            [
+              "missä",
+              "MIS-sä",
+              "where",
+              "*Missä sinä asut?*"
+            ],
+            [
+              "mistä",
+              "MIS-tä",
+              "where from",
+              "*Mistä sinä olet?*"
+            ],
+            [
+              "mihin / minne",
+              "MI-hin / MIN-ne",
+              "where to",
+              "*Mihin sinä menet?*"
+            ],
+            [
+              "mikä",
+              "MI-kä",
+              "what (whole thing)",
+              "*Mikä tämä on?*"
+            ],
+            [
+              "mitä",
+              "MI-tä",
+              "what (partitive)",
+              "*Mitä sinä juot?*"
+            ],
+            [
+              "kuka",
+              "KOO-kah",
+              "who",
+              "*Kuka hän on?*"
+            ],
+            [
+              "milloin / koska",
+              "MIL-loyn / KOS-kah",
+              "when",
+              "*Milloin kurssi alkaa?*"
+            ],
+            [
+              "miksi",
+              "MIK-si",
+              "why",
+              "*Miksi sinä opiskelet suomea?*"
+            ],
+            [
+              "miten / kuinka",
+              "MI-ten / KOOYN-kah",
+              "how",
+              "*Miten sinä voit?*"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "If you only have time to memorize three",
+          "items": [
+            "*Missä?* — where. The one you'll need most as a newcomer.",
+            "*Paljonko?* — how much is it. Not a true question word but *paljon* (much) plus the question ending, yet it saves you in every shop.",
+            "*Anteeksi, mitä?* — \"sorry, what?\". The phrase learners use most, and nobody minds hearing it."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fi": "mistä",
+      "baca": "MIS-tä",
+      "en": "where from"
+    },
+    {
+      "fi": "missä",
+      "baca": "MIS-sä",
+      "en": "where"
+    },
+    {
+      "fi": "kotoisin",
+      "baca": "KO-toy-sin",
+      "en": "originally (from)"
+    },
+    {
+      "fi": "asua",
+      "baca": "AH-soo-ah",
+      "en": "to live, to reside"
+    },
+    {
+      "fi": "kaupunki",
+      "baca": "KOW-poon-ki",
+      "en": "city, town"
+    },
+    {
+      "fi": "maa",
+      "baca": "maah",
+      "en": "country; land"
+    },
+    {
+      "fi": "kieli",
+      "baca": "KIYE-li",
+      "en": "language; tongue"
+    },
+    {
+      "fi": "kielioppi",
+      "baca": "KIYE-li-op-pi",
+      "en": "grammar"
+    },
+    {
+      "fi": "iso / suuri",
+      "baca": "I-so / SOOO-ri",
+      "en": "big"
+    },
+    {
+      "fi": "pieni",
+      "baca": "PIYE-ni",
+      "en": "small"
+    },
+    {
+      "fi": "erittäin",
+      "baca": "E-rit-täin",
+      "en": "very"
+    },
+    {
+      "fi": "nyt",
+      "baca": "nüt",
+      "en": "now"
+    },
+    {
+      "fi": "myös",
+      "baca": "müös",
+      "en": "also, too"
+    },
+    {
+      "fi": "koti",
+      "baca": "KO-ti",
+      "en": "home"
+    },
+    {
+      "fi": "kotona",
+      "baca": "KO-to-nah",
+      "en": "at home"
+    },
+    {
+      "fi": "työ",
+      "baca": "tüö",
+      "en": "work, job"
+    },
+    {
+      "fi": "tietysti",
+      "baca": "TIYE-tüs-ti",
+      "en": "of course"
+    },
+    {
+      "fi": "vaikea",
+      "baca": "VIGH-ke-ah",
+      "en": "difficult"
+    },
+    {
+      "fi": "helppo",
+      "baca": "HELP-po",
+      "en": "easy"
+    },
+    {
+      "fi": "mutta",
+      "baca": "MOOT-tah",
+      "en": "but"
+    },
+    {
+      "fi": "ja",
+      "baca": "yah",
+      "en": "and"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Finnish.",
+      "items": [
+        "Where are you from?",
+        "I'm from Indonesia.",
+        "I live in Helsinki.",
+        "What language do you speak at home?",
+        "I speak Indonesian and a little Finnish.",
+        "Helsinki is a big city."
+      ]
+    },
+    {
+      "prompt": "Fill in the right ending: -ssa/-ssä or -sta/-stä.",
+      "items": [
+        "Minä olen Indonesia____. (from)",
+        "Marek asuu Helsingi____. (in)",
+        "Aino on Tamperee____. (from)",
+        "Me opiskelemme kylä____. (in)",
+        "He tulevat kaupa____. (from)",
+        "Sinä asut Espoo____. (in)"
+      ]
+    },
+    {
+      "prompt": "Complete each verb with the right person ending.",
+      "items": [
+        "Minä puhu____ suomea.",
+        "Sinä asu____ Espoossa.",
+        "Hän puhu____ ranskaa.",
+        "Me opiskele____ suomea.",
+        "Te asu____ Helsingissä.",
+        "He puhu____ puolaa."
+      ]
+    },
+    {
+      "prompt": "Fill in the nationality or the language.",
+      "items": [
+        "Marek on Puolasta. Hän on ____.",
+        "Marek puhuu ____.",
+        "Aino on Suomesta. Hän on ____.",
+        "Budi on Indonesiasta. Hän puhuu ____.",
+        "Yuki on Japanista. Hän on ____."
+      ]
+    }
+  ],
+  "answers": [
+    "Mistä sinä olet kotoisin? — Minä olen Indonesiasta. — Minä asun Helsingissä. — Mitä kieltä sinä puhut kotona? — Puhun indonesiaa ja vähän suomea. — Helsinki on iso kaupunki.",
+    "sta — ssä — sta — ssä — sta — ssa",
+    "n — t — u — mme — tte — vat",
+    "puolalainen — puolaa — suomalainen — indonesiaa — japanilainen"
+  ]
+}

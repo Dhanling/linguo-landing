@@ -1,0 +1,534 @@
+{
+  "title": "The six verb types",
+  "title_target": "Kuusi verbityyppiä",
+  "goal": "Complete the whole present-tense verb system of Finnish — six types, six ways to build the stem, and after this unit there's no verb you can't conjugate yourself.",
+  "bekal": [
+    "recognize a verb's type from its dictionary form alone",
+    "build the stem for all six types and add the personal endings",
+    "talk about free-time activities and hobbies"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Mitä sinä harrastat?",
+      "intro": "The weekend is coming. Marek, Aino and Budi talk about what they do in their free time.",
+      "lines": [
+        {
+          "speaker": "Marek:",
+          "text": "Mitä sinä harrastat, Budi?",
+          "id": "What are your hobbies, Budi?",
+          "literal": "what you hobby-do, Budi?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Pelaan jalkapalloa ja soitan kitaraa. Entä sinä?",
+          "id": "I play football and play the guitar. And you?",
+          "literal": "play-I football-part and play-I guitar-part. and you?"
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Minä juoksen. Ja talvella hiihdän — yritän ainakin.",
+          "id": "I run. And in winter I ski — or at least I try.",
+          "literal": "I run. and in-winter ski-I — try-I at-least."
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Minä valitsen aina helpomman: käyn kahvilassa ja luen.",
+          "id": "I always choose the easier option: I go to a café and read.",
+          "literal": "I choose always easier-one: go-I in-café and read-I."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sekin on harrastus! Tarvitsetko sinä kirjastokorttia?",
+          "id": "That's a hobby too! Do you need a library card?",
+          "literal": "that-too is hobby! need-? you library-card-part?"
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Minulla on jo. Se on ilmainen — Suomessa kirjastot ovat pyhiä.",
+          "id": "I already have one. It's free — in Finland libraries are sacred.",
+          "literal": "at-me is already. it is free — in-Finland libraries are sacred-part."
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Totta. Tapaan usein ystäviä kirjastossa, emmekä edes lue.",
+          "id": "True. I often meet friends at the library, and we don't even read.",
+          "literal": "true. meet-I often friends-part in-library, and-not-we even read."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Haluatteko te tulla lauantaina pelaamaan?",
+          "id": "Do you want to come and play on Saturday?",
+          "literal": "want-? you(pl) come on-Saturday to-play?"
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Minä tulen katsomaan. En osaa pelata ollenkaan.",
+          "id": "I'll come and watch. I can't play at all.",
+          "literal": "I come to-watch. not-I can play at-all."
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Minä tulen. Mutta minä vanhenen — juoksen hitaasti nykyään.",
+          "id": "I'll come. But I'm getting old — I run slowly these days.",
+          "literal": "I come. but I grow-old — run-I slowly nowadays."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Me kaikki vanhenemme. Se ei ole tekosyy!",
+          "id": "We're all getting older. That's no excuse!",
+          "literal": "we all grow-old-we. it not is excuse!"
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Hyvin sanottu. Nähdään lauantaina kentällä!",
+          "id": "Well said. See you Saturday on the field!",
+          "literal": "well said. be-seen on-Saturday on-field!"
+        }
+      ],
+      "notes": [
+        "**Tapaan, not tavaan.** Type 4 verbs gradate **in reverse**: the dictionary form is weak (*tavata*), the personal forms are strong (*tapaan*). It's the opposite of the type 1 you learned in unit 8, and the only part of the verb system that can really trip you up.",
+        "**Tarvitsen from tarvita.** Type 5 inserts *-tse-*, which is completely invisible in the dictionary form. Luckily the group is small; the only really common ones are *tarvita* (need), *valita* (choose) and *häiritä* (disturb).",
+        "**Vanhenen from vanheta.** Type 6 inserts *-ne-* and nearly all its verbs mean \"to become more…\": *vanheta* (grow old), *kylmetä* (get colder), *pimetä* (get darker). The smallest type — you could live for years without it.",
+        "**Pelaamaan, katsomaan** — the \"in order to do\" form. After verbs of motion (*tulla*, *mennä*, *lähteä*), the next verb takes *-maan/-mään*: *tulen katso**maan*** (I'm coming to watch). Compare *haluan katso**a***, which uses the dictionary form. The choice depends on the first verb, and it's one of the things that takes longest to get used to.",
+        "**Emmekä edes lue** — *ja* becomes *-kä* in negative sentences, as you learned in unit 7. Note *lue* too, the bare form of *lukea*.",
+        "**Soitan kitaraa** literally means \"I sound the guitar\". *Soittaa* is used for playing instruments **and** for phoning: *soitan sinulle* (I'll call you). Playing games uses *pelata*: *pelaan jalkapalloa*. English uses \"play\" for both, so this is a distinction to keep in mind."
+      ],
+      "grammars": [
+        {
+          "title": "The six verb types",
+          "body": [
+            "Every Finnish verb belongs to one of these six types, and you can tell which one straight from **the last two letters of the dictionary form**. Once the stem is built, the personal endings are the same for every type."
+          ],
+          "table": {
+            "head": [
+              "Type",
+              "Dictionary form",
+              "How to build the stem",
+              "Examples",
+              "*minä* form"
+            ],
+            "rows": [
+              [
+                "**1**",
+                "two different vowels: *-oa, -ua, -ea, -ia, -aa, -ää*",
+                "drop **-a/-ä**",
+                "*puhua, ottaa, lukea*",
+                "*puhun, otan, luen*"
+              ],
+              [
+                "**2**",
+                "**-da / -dä**",
+                "drop **-da/-dä**",
+                "*juoda, syödä, saada*",
+                "*juon, syön, saan*"
+              ],
+              [
+                "**3**",
+                "**-lla, -nna, -rra, -sta** etc.",
+                "drop two letters, add **-e-**",
+                "*tulla, mennä, nousta*",
+                "*tulen, menen, nousen*"
+              ],
+              [
+                "**4**",
+                "**-ata, -ota, -uta** (vowel + ta)",
+                "drop **-ta/-tä**, add **-a-**",
+                "*tavata, haluta, siivota*",
+                "*tapaan, haluan, siivoan*"
+              ],
+              [
+                "**5**",
+                "**-ita / -itä**",
+                "drop **-ta/-tä**, add **-tse-**",
+                "*tarvita, valita*",
+                "*tarvitsen, valitsen*"
+              ],
+              [
+                "**6**",
+                "**-eta / -etä**",
+                "drop **-ta/-tä**, add **-ne-**",
+                "*vanheta, kylmetä*",
+                "*vanhenen, kylmenen*"
+              ]
+            ]
+          },
+          "after": [
+            "**Types 1 and 3 cover most of everyday conversation.** Type 2 is small but very frequent (*juoda*, *syödä*, *saada*, *tuoda*, *viedä*, *käydä*). Types 5 and 6 can wait; both are rare.",
+            "⚠️ Type 3 always has a stem ending in **-e-**, so its *hän* form lengthens the *e*: *tulee*, *menee*, *nousee*, *opiskelee*. This is the form beginners mispronounce most often — two *e*'s, not one.",
+            "Type 2 doesn't lengthen anything in the *hän* form, because the stem already ends in a long vowel or a diphthong: *hän juo*, *hän syö*, *hän saa*."
+          ]
+        },
+        {
+          "title": "Reverse gradation in type 4",
+          "body": [
+            "Type 4 is the only one that goes against the instinct you built in unit 8. Here the dictionary form is **weak** and the personal forms are **strong**."
+          ],
+          "table": {
+            "head": [
+              "Dictionary form (weak)",
+              "minä (strong)",
+              "hän",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*tavata*",
+                "**tapaan**",
+                "tapaa",
+                "to meet"
+              ],
+              [
+                "*herätä*",
+                "**herään**",
+                "herää",
+                "to wake up"
+              ],
+              [
+                "*hypätä*",
+                "**hyppään**",
+                "hyppää",
+                "to jump"
+              ],
+              [
+                "*pelätä*",
+                "**pelkään**",
+                "pelkää",
+                "to be afraid"
+              ],
+              [
+                "*haluta*",
+                "**haluan**",
+                "haluaa",
+                "to want"
+              ],
+              [
+                "*siivota*",
+                "**siivoan**",
+                "siivoaa",
+                "to clean"
+              ],
+              [
+                "*pelata*",
+                "**pelaan**",
+                "pelaa",
+                "to play"
+              ],
+              [
+                "*osata*",
+                "**osaan**",
+                "osaa",
+                "to know how, can"
+              ]
+            ]
+          },
+          "after": [
+            "Look at *tavata → tapaan*: *v* becomes *p*, gradating the other way round. Likewise *herätä → herään* (the *t* disappears) and *hypätä → hyppään* (*p* becomes *pp*).",
+            "You've been using four verbs of this type since the early units without knowing their type: *haluta*, *osata*, *tavata*, *herätä*. Now you know why their forms seem to jump.",
+            "⚠️ The *hän* form adds no extra vowel because the stem already ends in a double vowel: *hän tapaa*, not *tapaaa*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The most common verbs, by type",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Type",
+            "Verbs",
+            "*minä* form",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "1",
+              "*puhua, asua, lukea, ottaa, antaa, tietää, ymmärtää, katsoa, muistaa, ostaa, maksaa, sanoa, alkaa, auttaa*",
+              "puhun, asun, luen, otan, annan, tiedän, ymmärrän, katson, muistan, ostan, maksan, sanon, alan, autan",
+              "speak, live, read, take, give, know, understand, watch, remember, buy, pay, say, begin, help"
+            ],
+            [
+              "2",
+              "*juoda, syödä, saada, tuoda, viedä, käydä, myydä, jäädä*",
+              "juon, syön, saan, tuon, vien, käyn, myyn, jään",
+              "drink, eat, get, bring, take (somewhere), visit, sell, stay"
+            ],
+            [
+              "3",
+              "*tulla, mennä, olla, nousta, opiskella, ajatella, kävellä, kuunnella, purra*",
+              "tulen, menen, olen, nousen, opiskelen, ajattelen, kävelen, kuuntelen, puren",
+              "come, go, be, rise, study, think, walk, listen, bite"
+            ],
+            [
+              "4",
+              "*tavata, herätä, haluta, siivota, pelata, osata, hypätä, pelätä*",
+              "tapaan, herään, haluan, siivoan, pelaan, osaan, hyppään, pelkään",
+              "meet, wake up, want, clean, play, can, jump, be afraid"
+            ],
+            [
+              "5",
+              "*tarvita, valita, häiritä, mainita*",
+              "tarvitsen, valitsen, häiritsen, mainitsen",
+              "need, choose, disturb, mention"
+            ],
+            [
+              "6",
+              "*vanheta, kylmetä, pimetä, lämmetä*",
+              "vanhenen, kylmenen, pimenen, lämpenen",
+              "grow old, get colder, get darker, get warmer"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Olla* belongs to type 3, but it's still irregular: its *hän* form is *on*, not *olee*. It's the only truly rebellious verb in Finnish, and you've known it by heart since unit 1."
+        }
+      ]
+    },
+    {
+      "title": "Hobbies and free time",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "harrastaa",
+              "HAHR-rahs-taah",
+              "to have as a hobby"
+            ],
+            [
+              "pelata jalkapalloa",
+              "PE-lah-tah YAHL-kah-pahl-lo-ah",
+              "to play football"
+            ],
+            [
+              "soittaa kitaraa",
+              "SOYT-taah KI-tah-raah",
+              "to play the guitar"
+            ],
+            [
+              "laulaa",
+              "LOW-laah",
+              "to sing"
+            ],
+            [
+              "tanssia",
+              "TAHNS-si-ah",
+              "to dance"
+            ],
+            [
+              "juosta",
+              "YWOHS-tah",
+              "to run"
+            ],
+            [
+              "uida",
+              "OOY-dah",
+              "to swim"
+            ],
+            [
+              "hiihtää",
+              "HEEH-tää",
+              "to ski"
+            ],
+            [
+              "luistella",
+              "LOOYS-tel-lah",
+              "to skate"
+            ],
+            [
+              "kuntosalilla käydä",
+              "KOON-to-sah-lil-lah",
+              "to go to the gym"
+            ],
+            [
+              "valokuvata",
+              "VAH-lo-koo-vah-tah",
+              "to take photos"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ What you play is always partial: *pelaan jalkapallo**a***, *soitan kitara**a***. Same reason as reading a book — playing is an ongoing activity, never \"fully finished\"."
+        },
+        {
+          "type": "kotak",
+          "title": "Asking about hobbies",
+          "items": [
+            "*Mitä sinä harrastat?* — What are your hobbies?",
+            "*Mitä sinä teet vapaa-ajalla?* — What do you do in your free time?",
+            "*Käytkö sinä usein…?* — Do you often go to…?",
+            "*Marjastaminen* and *sienestäminen* (berry and mushroom picking) are serious national hobbies. The law of *jokamiehenoikeus* (everyman's right) lets anyone pick in any forest, even on private land — as long as they don't come close to the owner's house."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fi": "harrastus",
+      "baca": "HAHR-rahs-toos",
+      "en": "hobby"
+    },
+    {
+      "fi": "vapaa-aika",
+      "baca": "VAH-paah-igh-kah",
+      "en": "free time"
+    },
+    {
+      "fi": "pelata",
+      "baca": "PE-lah-tah",
+      "en": "to play (a game)"
+    },
+    {
+      "fi": "soittaa",
+      "baca": "SOYT-taah",
+      "en": "to play (music); to call"
+    },
+    {
+      "fi": "juosta",
+      "baca": "YWOHS-tah",
+      "en": "to run"
+    },
+    {
+      "fi": "hiihtää",
+      "baca": "HEEH-tää",
+      "en": "to ski"
+    },
+    {
+      "fi": "tavata",
+      "baca": "TAH-vah-tah",
+      "en": "to meet"
+    },
+    {
+      "fi": "valita",
+      "baca": "VAH-li-tah",
+      "en": "to choose"
+    },
+    {
+      "fi": "tarvita",
+      "baca": "TAHR-vi-tah",
+      "en": "to need"
+    },
+    {
+      "fi": "vanheta",
+      "baca": "VAHN-he-tah",
+      "en": "to grow old"
+    },
+    {
+      "fi": "käydä",
+      "baca": "KÄÜ-dä",
+      "en": "to visit, drop by"
+    },
+    {
+      "fi": "tuoda",
+      "baca": "TWOH-dah",
+      "en": "to bring"
+    },
+    {
+      "fi": "viedä",
+      "baca": "VIYE-dä",
+      "en": "to take (somewhere)"
+    },
+    {
+      "fi": "jäädä",
+      "baca": "YÄÄ-dä",
+      "en": "to stay, remain"
+    },
+    {
+      "fi": "ajatella",
+      "baca": "AH-yah-tel-lah",
+      "en": "to think"
+    },
+    {
+      "fi": "alkaa",
+      "baca": "AHL-kaah",
+      "en": "to begin"
+    },
+    {
+      "fi": "loppua",
+      "baca": "LOP-poo-ah",
+      "en": "to end"
+    },
+    {
+      "fi": "ystävä",
+      "baca": "ÜS-tä-vä",
+      "en": "friend"
+    },
+    {
+      "fi": "kenttä",
+      "baca": "KENT-tä",
+      "en": "field, pitch"
+    },
+    {
+      "fi": "kitara",
+      "baca": "KI-tah-rah",
+      "en": "guitar"
+    },
+    {
+      "fi": "jalkapallo",
+      "baca": "YAHL-kah-pahl-lo",
+      "en": "football, soccer"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Name the type (1–6).",
+      "items": [
+        "puhua",
+        "juoda",
+        "mennä",
+        "tavata",
+        "tarvita",
+        "vanheta"
+      ]
+    },
+    {
+      "prompt": "Give the *minä* form.",
+      "items": [
+        "syödä",
+        "tulla",
+        "nousta",
+        "haluta",
+        "valita",
+        "kylmetä"
+      ]
+    },
+    {
+      "prompt": "Give the *hän* form.",
+      "items": [
+        "opiskella",
+        "juoda",
+        "lukea",
+        "tavata",
+        "tarvita",
+        "mennä"
+      ]
+    },
+    {
+      "prompt": "Translate into Finnish.",
+      "items": [
+        "What are your hobbies?",
+        "I play football.",
+        "I need a library card.",
+        "I'm coming to watch.",
+        "I can't play at all.",
+        "See you Saturday on the field."
+      ]
+    }
+  ],
+  "answers": [
+    "1 — 2 — 3 — 4 — 5 — 6",
+    "syön — tulen — nousen — haluan — valitsen — kylmenen",
+    "opiskelee — juo — lukee — tapaa — tarvitsee — menee",
+    "Mitä sinä harrastat? — Pelaan jalkapalloa. — Tarvitsen kirjastokortin. — Tulen katsomaan. — En osaa pelata ollenkaan. — Nähdään lauantaina kentällä."
+  ]
+}

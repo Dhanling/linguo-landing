@@ -1,0 +1,591 @@
+{
+  "title": "My day",
+  "title_target": "Minun päiväni",
+  "goal": "Describe your daily routine, master the biggest verb type, and see that consonant gradation in verbs is actually very tidy: weak for I and you, strong for he and she.",
+  "bekal": [
+    "conjugate type 1 verbs in full, including consonant gradation",
+    "link one verb to another: *haluan mennä*, *osaan puhua*, *voin tulla*",
+    "describe a whole day from waking up to going back to bed"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Arkipäivä",
+      "intro": "In class, the teacher asks everyone to describe an ordinary day. It's Budi's turn.",
+      "lines": [
+        {
+          "speaker": "Opettaja:",
+          "text": "Budi, kerro. Mitä sinä teet tavallisena päivänä?",
+          "id": "Budi, tell us. What do you do on an ordinary day?",
+          "literal": "Budi, tell. what you make as-ordinary as-day?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Minä herään seitsemältä. En nouse heti — luen puhelinta sängyssä.",
+          "id": "I wake up at seven. I don't get up right away — I read my phone in bed.",
+          "literal": "I wake from-seven. not-I rise at-once — read-I phone-some in-bed."
+        },
+        {
+          "speaker": "Opettaja:",
+          "text": "Sama juttu kaikilla. Entä aamiainen?",
+          "id": "Same for everyone. And breakfast?",
+          "literal": "same thing at-all. and breakfast?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Syön puuroa ja juon kahvia. Sitten lähden bussilla kouluun.",
+          "id": "I eat porridge and drink coffee. Then I take the bus to school.",
+          "literal": "eat-I porridge-some and drink-I coffee-some. then leave-I by-bus to-school."
+        },
+        {
+          "speaker": "Opettaja:",
+          "text": "Kuinka kauan matka kestää?",
+          "id": "How long does the trip take?",
+          "literal": "how long trip lasts?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Puoli tuntia. Luen kirjaa bussissa, mutta usein nukun.",
+          "id": "Half an hour. I read a book on the bus, but I often fall asleep.",
+          "literal": "half hour-some. read-I book-some in-bus, but often sleep-I."
+        },
+        {
+          "speaker": "Opettaja:",
+          "text": "Ha! Ja iltapäivällä?",
+          "id": "Ha! And in the afternoon?",
+          "literal": "ha! and in-afternoon?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Teen töitä ravintolassa. Tulen kotiin yhdeksältä.",
+          "id": "I work in a restaurant. I get home at nine.",
+          "literal": "make-I work-plural-some in-restaurant. come-I to-home from-nine."
+        },
+        {
+          "speaker": "Opettaja:",
+          "text": "Se on pitkä päivä. Milloin sinä opiskelet suomea?",
+          "id": "That's a long day. When do you study Finnish?",
+          "literal": "it is long day. when you study Finnish-some?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Illalla. Kirjoitan sanoja vihkoon ja katson suomalaista sarjaa.",
+          "id": "In the evening. I write words in my notebook and watch a Finnish series.",
+          "literal": "in-evening. write-I word-plural-some into-notebook and watch-I Finnish-some series-some."
+        },
+        {
+          "speaker": "Opettaja:",
+          "text": "Erinomaista! Ymmärrätkö sinä sarjaa?",
+          "id": "Excellent! Do you understand the series?",
+          "literal": "excellent-some! understand-? you series-some?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "En ymmärrä paljon. Mutta minä haluan oppia, ja se riittää.",
+          "id": "I don't understand much. But I want to learn, and that's enough.",
+          "literal": "not-I understand much. but I want learn, and it suffices."
+        }
+      ],
+      "notes": [
+        "**Herään, but hän herää.** Notice the pattern that keeps coming back in the dialogue: the *minä* and *sinä* forms use the **weak** consonant, the *hän* form uses the **strong** one. *Luen* but *hän lukee*; *otan* but *hän ottaa*; *tiedän* but *hän tietää*. Once you see it as a pattern, hundreds of verbs become predictable.",
+        "**What you read and watch takes the partitive.** *Luen kirja**a***, *katson sarja**a***, *ymmärrätkö sarja**a***. The reason: reading a book is an ongoing activity, not finished. If you read the book to the end, the form changes: *luin kirja**n***. The full rule is in Unit 11.",
+        "**Teen töitä** literally means \"I make works\". Finnish has no everyday one-word verb for \"to work\" — there is *työskennellä*, but it sounds formal. The everyday phrase is *tehdä töitä*, always with the plural partitive *töitä*.",
+        "**Seitsemältä and yhdeksältä** — clock times take the ending *-lta/-ltä*, literally \"from seven\". Finnish sees the hour as a surface you pass over, not a point you sit on. Don't try to make sense of the logic; just learn the form. Telling the time in full comes in Unit 10.",
+        "**Bussilla kouluun** — two endings at once. *Bussi**lla*** = by bus (the means), *koulu**un*** = to school (the direction). These direction endings are the subject of the next unit.",
+        "**Haluan oppia** — the second verb stays in the dictionary form. After *haluta*, *osata*, *voida*, and their cousins, the next verb keeps its untouched dictionary form: *haluan **oppia***, *osaan **puhua***, *voin **tulla***. Just like English \"I want to learn\" — the second verb doesn't change."
+      ],
+      "grammars": [
+        {
+          "title": "Verb type 1",
+          "body": [
+            "The biggest group and the one you'll meet most often: verbs whose dictionary form ends in **two different vowels** — *puhu-a*, *asu-a*, *luke-a*, *otta-a*, *tietä-ä*."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "*puhua*",
+              "*lukea*",
+              "*ottaa*",
+              "*tietää*",
+              "*antaa*"
+            ],
+            "rows": [
+              [
+                "minä",
+                "puhu**n**",
+                "**lue**n",
+                "**ota**n",
+                "**tiedä**n",
+                "**anna**n"
+              ],
+              [
+                "sinä",
+                "puhu**t**",
+                "**lue**t",
+                "**ota**t",
+                "**tiedä**t",
+                "**anna**t"
+              ],
+              [
+                "hän",
+                "puhu**u**",
+                "**luke**e",
+                "**otta**a",
+                "**tietä**ä",
+                "**anta**a"
+              ],
+              [
+                "me",
+                "puhu**mme**",
+                "**lue**mme",
+                "**ota**mme",
+                "**tiedä**mme",
+                "**anna**mme"
+              ],
+              [
+                "te",
+                "puhu**tte**",
+                "**lue**tte",
+                "**ota**tte",
+                "**tiedä**tte",
+                "**anna**tte"
+              ],
+              [
+                "he",
+                "puhu**vat**",
+                "**luke**vat",
+                "**otta**vat",
+                "**tietä**vät",
+                "**anta**vat"
+              ]
+            ]
+          },
+          "after": [
+            "**The pattern in one sentence: weak for *minä*, *sinä*, *me*, *te* — strong for *hän* and *he*.** That's all. Four rows are the same, two rows (*hän*, *he*) keep the original consonant from the dictionary form.",
+            "*Puhua* and *asua* show nothing because they have no k/p/t to weaken. Most verbs of this type are actually like that, so don't assume everything changes.",
+            "⚠️ The *hän* form lengthens the last vowel: *puhu**u***, *luke**e***, *otta**a***. If the stem vowel is already long, nothing is added: *saa → hän saa*, not *saaa*."
+          ]
+        },
+        {
+          "title": "Verbs that attach to verbs",
+          "body": [
+            "Six very common verbs, all followed by the dictionary form — just like \"want to\" or \"can\" in English."
+          ],
+          "table": {
+            "head": [
+              "Verb",
+              "Meaning",
+              "Example",
+              "Translation"
+            ],
+            "rows": [
+              [
+                "*haluta*",
+                "to want",
+                "*Haluan oppia suomea.*",
+                "I want to learn Finnish."
+              ],
+              [
+                "*osata*",
+                "can (know how)",
+                "*Osaan puhua englantia.*",
+                "I can speak English."
+              ],
+              [
+                "*voida*",
+                "can (be able)",
+                "*Voitko auttaa?*",
+                "Can you help?"
+              ],
+              [
+                "*saada*",
+                "may",
+                "*Saanko istua tässä?*",
+                "May I sit here?"
+              ],
+              [
+                "*aikoa*",
+                "to intend, to be going to",
+                "*Aion mennä Suomeen.*",
+                "I'm going to go to Finland."
+              ],
+              [
+                "*yrittää*",
+                "to try",
+                "*Yritän muistaa.*",
+                "I'm trying to remember."
+              ]
+            ]
+          },
+          "after": [
+            "Only the **first** verb changes; the second stays as it is in the dictionary. *Haluan mennä*, *haluat mennä*, *hän haluaa mennä* — *mennä* never changes.",
+            "Negation also hits the first one: *en halua mennä*, *emme osaa uida*.",
+            "⚠️ *Haluta* and *osata* aren't actually type 1 — their *minä* forms are *haluan* and *osaan*, which you can't guess from the dictionary form. For now, learn these six as they are; their type is explained in Unit 12."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "A whole day",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "herätä",
+              "HE-rä-tä",
+              "to wake up"
+            ],
+            [
+              "nousta",
+              "NOUS-tah",
+              "to get up"
+            ],
+            [
+              "peseytyä",
+              "PE-seü-tü-ä",
+              "to wash (yourself)"
+            ],
+            [
+              "pukeutua",
+              "POO-keoo-too-ah",
+              "to get dressed"
+            ],
+            [
+              "syödä aamiaista",
+              "SÜÖ-dä AAH-mi-ighs-tah",
+              "to have breakfast"
+            ],
+            [
+              "lähteä",
+              "LÄH-te-ä",
+              "to leave, to set off"
+            ],
+            [
+              "mennä töihin",
+              "MEN-nä TÖI-hin",
+              "to go to work"
+            ],
+            [
+              "tehdä töitä",
+              "TEH-dä TÖI-tä",
+              "to work"
+            ],
+            [
+              "syödä lounasta",
+              "SÜÖ-dä LOU-nahs-tah",
+              "to have lunch"
+            ],
+            [
+              "opiskella",
+              "O-pis-kel-lah",
+              "to study"
+            ],
+            [
+              "tulla kotiin",
+              "TOOL-lah KO-teen",
+              "to come home"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "Say it",
+            "Meaning",
+            "Roughly"
+          ],
+          "rows": [
+            [
+              "aamulla",
+              "AAH-mool-lah",
+              "in the morning",
+              "6:00–10:00"
+            ],
+            [
+              "aamupäivällä",
+              "AAH-moo-päi-väl-lä",
+              "in the late morning",
+              "10:00–12:00"
+            ],
+            [
+              "päivällä",
+              "PÄI-väl-lä",
+              "during the day",
+              "12:00–15:00"
+            ],
+            [
+              "iltapäivällä",
+              "IL-tah-päi-väl-lä",
+              "in the afternoon",
+              "15:00–18:00"
+            ],
+            [
+              "illalla",
+              "IL-lahl-lah",
+              "in the evening",
+              "18:00–23:00"
+            ],
+            [
+              "yöllä",
+              "ÜÖL-lä",
+              "at night",
+              "23:00–6:00"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "All the time expressions above use the ending **-lla/-llä**, which originally means \"on a surface\". Finnish pictures time as a surface we move across, not a container we step into. Note the gradation: *ilta → illalla*, *päivä → päivällä*."
+        }
+      ]
+    },
+    {
+      "title": "How often?",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "aina",
+              "IGH-nah",
+              "always"
+            ],
+            [
+              "usein",
+              "OO-sayn",
+              "often"
+            ],
+            [
+              "yleensä",
+              "Ü-lehhn-sä",
+              "usually"
+            ],
+            [
+              "joskus",
+              "YOS-koos",
+              "sometimes"
+            ],
+            [
+              "harvoin",
+              "HAHR-voyn",
+              "rarely"
+            ],
+            [
+              "ei koskaan",
+              "ay KOS-kaahn",
+              "never"
+            ],
+            [
+              "joka päivä",
+              "YO-kah PÄI-vä",
+              "every day"
+            ],
+            [
+              "kerran viikossa",
+              "KER-rahn VEE-kos-sah",
+              "once a week"
+            ],
+            [
+              "kaksi kertaa viikossa",
+              "KAHK-si KER-taah VEE-kos-sah",
+              "twice a week"
+            ],
+            [
+              "tavallisesti",
+              "TAH-vahl-li-ses-ti",
+              "usually, as a rule"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Their position is fairly free, but the most natural spot is **after the subject and before the verb**: *Minä usein nukun bussissa* or *Usein nukun bussissa*. Putting it at the end is also correct and adds a little emphasis: *Nukun bussissa usein*."
+        },
+        {
+          "type": "kotak",
+          "title": "Kuinka usein sinä…?",
+          "items": [
+            "*Kuinka usein sinä käyt saunassa?* — How often do you go to the sauna?",
+            "*Kaksi kertaa viikossa.* — Twice a week. (a very Finnish answer)",
+            "*Kuinka kauan?* — How long? Don't mix it up with *kuinka usein* (how often)."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Joka* means \"every\", and the noun doesn't change: *joka päivä*, *joka viikko*, *joka aamu*. It is one of the few words that demands no ending at all — enjoy it while it lasts."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fi": "herätä",
+      "baca": "HE-rä-tä",
+      "en": "to wake up"
+    },
+    {
+      "fi": "nousta",
+      "baca": "NOUS-tah",
+      "en": "to get up, to rise"
+    },
+    {
+      "fi": "lukea",
+      "baca": "LOO-ke-ah",
+      "en": "to read"
+    },
+    {
+      "fi": "kirjoittaa",
+      "baca": "KIR-yoyt-taah",
+      "en": "to write"
+    },
+    {
+      "fi": "katsoa",
+      "baca": "KAHT-so-ah",
+      "en": "to watch, to look"
+    },
+    {
+      "fi": "kuunnella",
+      "baca": "KOOON-nel-lah",
+      "en": "to listen"
+    },
+    {
+      "fi": "antaa",
+      "baca": "AHN-taah",
+      "en": "to give"
+    },
+    {
+      "fi": "muistaa",
+      "baca": "MOOYS-taah",
+      "en": "to remember"
+    },
+    {
+      "fi": "unohtaa",
+      "baca": "OO-noh-taah",
+      "en": "to forget"
+    },
+    {
+      "fi": "nukkua",
+      "baca": "NOOK-koo-ah",
+      "en": "to sleep"
+    },
+    {
+      "fi": "lähteä",
+      "baca": "LÄH-te-ä",
+      "en": "to leave, to set off"
+    },
+    {
+      "fi": "aikoa",
+      "baca": "IGH-ko-ah",
+      "en": "to intend"
+    },
+    {
+      "fi": "yrittää",
+      "baca": "Ü-rit-tää",
+      "en": "to try"
+    },
+    {
+      "fi": "riittää",
+      "baca": "REET-tää",
+      "en": "to be enough"
+    },
+    {
+      "fi": "kertoa",
+      "baca": "KER-to-ah",
+      "en": "to tell"
+    },
+    {
+      "fi": "aamiainen",
+      "baca": "AAH-mi-igh-nen",
+      "en": "breakfast"
+    },
+    {
+      "fi": "lounas",
+      "baca": "LOU-nahs",
+      "en": "lunch"
+    },
+    {
+      "fi": "päivällinen",
+      "baca": "PÄI-väl-li-nen",
+      "en": "dinner"
+    },
+    {
+      "fi": "puuro",
+      "baca": "POOO-ro",
+      "en": "porridge"
+    },
+    {
+      "fi": "ruoka",
+      "baca": "RWOH-kah",
+      "en": "food"
+    },
+    {
+      "fi": "ravintola",
+      "baca": "RAH-vin-to-lah",
+      "en": "restaurant"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the correct verb form.",
+      "items": [
+        "Minä (lukea) ____ kirjaa.",
+        "Hän (lukea) ____ kirjaa.",
+        "Sinä (ottaa) ____ kahvin.",
+        "He (ottaa) ____ kahvin.",
+        "Me (tietää) ____ sen.",
+        "Hän (tietää) ____ sen."
+      ]
+    },
+    {
+      "prompt": "Translate into Finnish.",
+      "items": [
+        "I wake up at seven.",
+        "I eat porridge and drink coffee.",
+        "I work in a restaurant.",
+        "In the evening I watch television.",
+        "I want to learn Finnish.",
+        "How long does the trip take?"
+      ]
+    },
+    {
+      "prompt": "Fill in the second verb in the dictionary form.",
+      "items": [
+        "Haluan (oppia) ____ suomea.",
+        "Osaan (puhua) ____ englantia.",
+        "Voitko (auttaa) ____ minua?",
+        "Saanko (istua) ____ tässä?",
+        "Aion (mennä) ____ Suomeen.",
+        "Yritän (muistaa) ____ sanoja."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "seitsemältä / minä / herään",
+        "bussissa / nukun / usein",
+        "töitä / illalla / teen",
+        "kestää / matka / tuntia / puoli",
+        "opiskelen / joka / suomea / päivä"
+      ]
+    }
+  ],
+  "answers": [
+    "luen — lukee — otat — ottavat — tiedämme — tietää",
+    "Minä herään seitsemältä. — Syön puuroa ja juon kahvia. — Teen töitä ravintolassa. — Illalla katson televisiota. — Haluan oppia suomea. — Kuinka kauan matka kestää?",
+    "oppia — puhua — auttaa — istua — mennä — muistaa",
+    "Minä herään seitsemältä. — Usein nukun bussissa. — Illalla teen töitä. — Matka kestää puoli tuntia. — Opiskelen suomea joka päivä."
+  ]
+}

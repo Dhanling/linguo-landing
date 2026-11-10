@@ -1,0 +1,543 @@
+{
+  "title": "What is this?",
+  "title_target": "Mikä tämä on?",
+  "goal": "Point at things near and far, name their colors, and form plurals with a single letter — without ever dealing with articles or gender.",
+  "bekal": [
+    "tell *tämä*, *tuo*, and *se* apart by their distance from the speaker",
+    "make plurals with the ending **-t** and make the adjective change along with them",
+    "name about twenty everyday objects and their colors"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Uusi huone",
+      "intro": "Budi has just moved into a dorm room in Espoo. Aino comes over to help him settle in.",
+      "lines": [
+        {
+          "speaker": "Aino:",
+          "text": "Oho, huone on iso! Mikä tuo on?",
+          "id": "Wow, the room is big! What's that?",
+          "literal": "oh, room is big! what that-over-there is?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tuo on minun uusi pöytä. Ja tämä on tuoli.",
+          "id": "That's my new desk. And this is the chair.",
+          "literal": "that-over-there is my new table. and this is chair."
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Pöytä on tosi kaunis. Onko se puuta?",
+          "id": "The desk is really beautiful. Is it wood?",
+          "literal": "table is really beautiful. is-? it wood-partitive?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "On. Se on vanha, mutta se on hyvä.",
+          "id": "Yes. It's old, but it's good.",
+          "literal": "is. it is old, but it is good."
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Mitä nämä ovat?",
+          "id": "What are these?",
+          "literal": "what these are?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ne ovat kirjoja. Suomen kirjat ovat tuossa, ja nämä ovat sanakirjat.",
+          "id": "They're books. The Finnish books are over there, and these are the dictionaries.",
+          "literal": "they are books-partitive. Finnish's books are in-that, and these are dictionaries."
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Kaksi sanakirjaa? Miksi?",
+          "id": "Two dictionaries? Why?",
+          "literal": "two dictionary-partitive? why?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Toinen on suomi–englanti, toinen suomi–indonesia.",
+          "id": "One is Finnish–English, the other is Finnish–Indonesian.",
+          "literal": "one is Finnish–English, other Finnish–Indonesian."
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Fiksua! Entä tuo sininen laukku — onko se sinun?",
+          "id": "Smart! And that blue bag — is it yours?",
+          "literal": "smart! and that-over-there blue bag — is-? it yours?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ei ole. Se on Marekin. Minun laukku on musta.",
+          "id": "No. It's Marek's. My bag is the black one.",
+          "literal": "not is. it is Marek's. my bag is black."
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Missä sinun avaimet ovat?",
+          "id": "Where are your keys?",
+          "literal": "where your keys are?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Voi ei. En tiedä! Ehkä ne ovat pöydällä.",
+          "id": "Oh no. I don't know! Maybe they're on the desk.",
+          "literal": "oh no. not-I know! maybe they are on-table."
+        }
+      ],
+      "notes": [
+        "**Three distances, not two.** English has \"this\" and \"that\"; Finnish has three levels — *tämä* (near the speaker), *tuo* (away from both of you, but visible), *se* (already mentioned, or near the listener). In practice *se* is also what you use to refer back to something just mentioned, exactly like \"it\" in \"it's nice\".",
+        "**Ne ovat kirjoja** uses a form you haven't learned yet.** *Kirjoja* is the **partitive plural** — used when you mean \"some books\" with no exact number. Compare *sanakirjat* in the same line: that's the ordinary plural, because the dictionaries are clearly both of them. For now, just feel the difference; the rule is covered in Unit 11.",
+        "**Onko se puuta?** literally \"is it wood-partitive\". Materials always take the partitive, because the object is made **of some** of the material, not of all the wood in the world. *Se on puuta* (made of wood), *se on metallia* (of metal), *se on muovia* (of plastic).",
+        "**On on its own means \"yes\".** Look at line 4: the question *Onko se puuta?* is answered *On.* Finnish often answers a question by **repeating the verb**, not with *kyllä*. To say no: *Ei ole.* This habit sounds very Finnish, and copying it makes your Finnish instantly more natural.",
+        "**Marekin** — possession is made with the ending **-n**. *Marek* → *Marekin laukku* (Marek's bag), *Aino* → *Ainon kirja*. The same ending that makes *minun* from *minä*. We'll cover it fully in the next unit.",
+        "**Adjectives go in front, just as in English.** *Sininen laukku*, *musta laukku*, *uusi pöytä* — not \"laukku sininen\". Good news: here your English instincts are exactly right."
+      ],
+      "grammars": [
+        {
+          "title": "Tämä, tuo, se — and their plurals",
+          "body": [
+            "Six words that cover all pointing. Note that the plurals aren't made by adding *-t* but are separate forms you have to memorize — one of the few places in Finnish that truly calls for rote learning."
+          ],
+          "table": {
+            "head": [
+              "Singular",
+              "Say it",
+              "Plural",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**tämä**",
+                "TÄ-mä",
+                "**nämä**",
+                "NÄ-mä",
+                "this (near the speaker)"
+              ],
+              [
+                "**tuo**",
+                "twoh",
+                "**nuo**",
+                "nwoh",
+                "that (far, visible)"
+              ],
+              [
+                "**se**",
+                "se",
+                "**ne**",
+                "ne",
+                "it, that (already mentioned; near the listener)"
+              ]
+            ]
+          },
+          "after": [
+            "*Mikä tämä on?* — \"what's this?\" The answer almost always uses *se*, not *tämä* again: *Se on kirja.* Repeating *tämä* sounds like a small child pointing at things.",
+            "The plurals need a plural verb too: *tämä **on*** but *nämä **ovat***. English does this too (*is/are*), so it should feel familiar.",
+            "⚠️ In everyday speech Finns use *se* and *ne* for almost everything, people included — *se sanoi* (he/she said). It really is used, but it sounds very casual; don't copy it in letters or with people you don't know well."
+          ]
+        },
+        {
+          "title": "Plurals with -t, and adjectives that follow along",
+          "body": [
+            "Making a plural is as easy as adding one letter. What takes a new habit is that **the adjective changes too** — something that never happens in English."
+          ],
+          "table": {
+            "head": [
+              "Singular",
+              "Plural",
+              "With an adjective",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*kirja*",
+                "*kirja**t***",
+                "*uude**t** kirja**t***",
+                "new books"
+              ],
+              [
+                "*tuoli*",
+                "*tuoli**t***",
+                "*musta**t** tuoli**t***",
+                "black chairs"
+              ],
+              [
+                "*avain*",
+                "*avaime**t***",
+                "*pienet avaime**t***",
+                "small keys"
+              ],
+              [
+                "*pöytä*",
+                "*pöydä**t***",
+                "*isot pöydä**t***",
+                "big tables"
+              ],
+              [
+                "*kauppa*",
+                "*kaupa**t***",
+                "*uude**t** kauppa**t***",
+                "new shops"
+              ],
+              [
+                "*ihminen*",
+                "*ihmise**t***",
+                "*mukava**t** ihmise**t***",
+                "friendly people"
+              ]
+            ]
+          },
+          "after": [
+            "**The adjective takes exactly the same ending as its noun.** *Iso talo → isot talot*. Once this pattern sinks in, it also holds for the fourteen other endings you'll learn later — the adjective always copies its noun, no exceptions. A far tidier deal than German or French.",
+            "⚠️ Notice *pöytä → pöydät* and *kauppa → kaupat*: the consonant weakens when *-t* is attached. By contrast, *kirja → kirjat* doesn't change, because there's no *k*, *p*, or *t* to weaken.",
+            "⚠️ Words ending in *-nen* (*ihminen*, *punainen*, *nainen*) first change their ending to *-se-*: *ihminen → ihmiset*, *punainen → punaiset*. This group is huge in Finnish, so the pattern pays off fast."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Things around you",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "Say it",
+            "Plural",
+            "English"
+          ],
+          "rows": [
+            [
+              "pöytä",
+              "PÖÜ-tä",
+              "pöydät",
+              "table, desk"
+            ],
+            [
+              "tuoli",
+              "TWOH-li",
+              "tuolit",
+              "chair"
+            ],
+            [
+              "sänky",
+              "SÄN-kü",
+              "sängyt",
+              "bed"
+            ],
+            [
+              "ovi",
+              "O-vi",
+              "ovet",
+              "door"
+            ],
+            [
+              "ikkuna",
+              "IK-koo-nah",
+              "ikkunat",
+              "window"
+            ],
+            [
+              "seinä",
+              "SAY-nä",
+              "seinät",
+              "wall"
+            ],
+            [
+              "lattia",
+              "LAHT-ti-ah",
+              "lattiat",
+              "floor"
+            ],
+            [
+              "lamppu",
+              "LAHMP-poo",
+              "lamput",
+              "lamp"
+            ],
+            [
+              "kirja",
+              "KIR-yah",
+              "kirjat",
+              "book"
+            ],
+            [
+              "sanakirja",
+              "SAH-nah-kir-yah",
+              "sanakirjat",
+              "dictionary"
+            ],
+            [
+              "kynä",
+              "KÜ-nä",
+              "kynät",
+              "pen, pencil"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Tietokone* (computer) literally means \"knowledge machine\" — *tieto* (knowledge) + *kone* (machine). Finnish loves building new words from its own material instead of borrowing: *puhelin* (phone) from *puhua* (speak), *jääkaappi* (fridge) from *jää* (ice) + *kaappi* (cupboard). This habit helps you guess the meaning of long words you've never seen."
+        }
+      ]
+    },
+    {
+      "title": "Colors",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "Say it",
+            "Plural",
+            "English"
+          ],
+          "rows": [
+            [
+              "punainen",
+              "POO-nigh-nen",
+              "punaiset",
+              "red"
+            ],
+            [
+              "sininen",
+              "SI-ni-nen",
+              "siniset",
+              "blue"
+            ],
+            [
+              "keltainen",
+              "KEL-tigh-nen",
+              "keltaiset",
+              "yellow"
+            ],
+            [
+              "vihreä",
+              "VIH-re-ä",
+              "vihreät",
+              "green"
+            ],
+            [
+              "musta",
+              "MOOS-tah",
+              "mustat",
+              "black"
+            ],
+            [
+              "valkoinen",
+              "VAHL-koy-nen",
+              "valkoiset",
+              "white"
+            ],
+            [
+              "harmaa",
+              "HAHR-maah",
+              "harmaat",
+              "gray"
+            ],
+            [
+              "ruskea",
+              "ROOS-ke-ah",
+              "ruskeat",
+              "brown"
+            ],
+            [
+              "oranssi",
+              "O-rahns-si",
+              "oranssit",
+              "orange"
+            ],
+            [
+              "violetti",
+              "VI-o-let-ti",
+              "violetit",
+              "purple"
+            ],
+            [
+              "vaaleanpunainen",
+              "VAAH-le-ahn-poo-nigh-nen",
+              "vaaleanpunaiset",
+              "pink"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Six of the eleven colors above end in *-nen*, and that's no accident: *-nen* is the most productive adjective-forming ending in Finnish. If you meet an unfamiliar word ending in *-nen*, your best bet is that it's an adjective."
+        },
+        {
+          "type": "p",
+          "text": "*Vaalea* means \"light\" and *tumma* means \"dark\". Both go in front of a color with the possessive ending: *vaaleanpunainen* (pink, literally \"light's red\"), *tummansininen* (dark blue). Note that they fuse into a single word."
+        },
+        {
+          "type": "kotak",
+          "title": "Asking about color",
+          "items": [
+            "*Minkä värinen tämä on?* — \"What color is this?\" Literally \"what's colored this is\".",
+            "*Se on sininen.* — \"It's blue.\" For plurals: *Ne ovat sinisiä* — note that the plural in this position takes the partitive, just like *Ne ovat kirjoja* in the dialogue."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fi": "tämä",
+      "baca": "TÄ-mä",
+      "en": "this"
+    },
+    {
+      "fi": "tuo",
+      "baca": "twoh",
+      "en": "that (far, visible)"
+    },
+    {
+      "fi": "se",
+      "baca": "se",
+      "en": "it, that (already mentioned)"
+    },
+    {
+      "fi": "nämä / nuo / ne",
+      "baca": "NÄ-mä / nwoh / ne",
+      "en": "these / those (plural)"
+    },
+    {
+      "fi": "huone",
+      "baca": "HWOH-ne",
+      "en": "room"
+    },
+    {
+      "fi": "uusi",
+      "baca": "OOO-si",
+      "en": "new"
+    },
+    {
+      "fi": "vanha",
+      "baca": "VAHN-hah",
+      "en": "old"
+    },
+    {
+      "fi": "kaunis",
+      "baca": "KOW-nis",
+      "en": "beautiful"
+    },
+    {
+      "fi": "ruma",
+      "baca": "ROO-mah",
+      "en": "ugly"
+    },
+    {
+      "fi": "puu",
+      "baca": "pooo",
+      "en": "wood; tree"
+    },
+    {
+      "fi": "metalli",
+      "baca": "ME-tahl-li",
+      "en": "metal"
+    },
+    {
+      "fi": "muovi",
+      "baca": "MWOH-vi",
+      "en": "plastic"
+    },
+    {
+      "fi": "tosi",
+      "baca": "TO-si",
+      "en": "really, truly"
+    },
+    {
+      "fi": "ehkä",
+      "baca": "EH-kä",
+      "en": "maybe"
+    },
+    {
+      "fi": "miksi",
+      "baca": "MIK-si",
+      "en": "why"
+    },
+    {
+      "fi": "kaksi",
+      "baca": "KAHK-si",
+      "en": "two"
+    },
+    {
+      "fi": "toinen",
+      "baca": "TOY-nen",
+      "en": "the other one; second"
+    },
+    {
+      "fi": "fiksu",
+      "baca": "FIK-soo",
+      "en": "smart, clever"
+    },
+    {
+      "fi": "mukava",
+      "baca": "MOO-kah-vah",
+      "en": "friendly, pleasant"
+    },
+    {
+      "fi": "ihminen",
+      "baca": "IH-mi-nen",
+      "en": "person, human"
+    },
+    {
+      "fi": "nainen",
+      "baca": "NIGH-nen",
+      "en": "woman"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Finnish.",
+      "items": [
+        "What is this?",
+        "That's a new book.",
+        "The table is big and beautiful.",
+        "That blue bag is Marek's.",
+        "Where are my keys?",
+        "This is a dictionary, and that's a notebook."
+      ]
+    },
+    {
+      "prompt": "Make these plural. Change the adjective too.",
+      "items": [
+        "uusi kirja",
+        "musta tuoli",
+        "iso pöytä",
+        "punainen laukku",
+        "pieni avain",
+        "mukava ihminen"
+      ]
+    },
+    {
+      "prompt": "Fill in *tämä*, *tuo*, *se*, *nämä*, *nuo*, or *ne*.",
+      "items": [
+        "____ on minun kynä. (in my hand)",
+        "____ on Ainon pöytä. (at the far end of the room)",
+        "Mikä ____ on? — ____ on sanakirja. (answering)",
+        "____ ovat minun avaimet. (in my hand)",
+        "____ ovat Marekin kirjat. (across the room)"
+      ]
+    },
+    {
+      "prompt": "Answer by repeating the verb, the way Finns do.",
+      "items": [
+        "Onko tämä sinun kirja? (yes)",
+        "Onko pöytä puuta? (yes)",
+        "Onko laukku sininen? (no)",
+        "Ovatko nämä sinun avaimet? (yes)",
+        "Onko huone pieni? (no)"
+      ]
+    }
+  ],
+  "answers": [
+    "Mikä tämä on? — Se on uusi kirja. — Pöytä on iso ja kaunis. — Tuo sininen laukku on Marekin. — Missä minun avaimet ovat? — Tämä on sanakirja, ja tuo on vihko.",
+    "uudet kirjat — mustat tuolit — isot pöydät — punaiset laukut — pienet avaimet — mukavat ihmiset",
+    "Tämä — Tuo — tämä; Se — Nämä — Nuo",
+    "On. — On. — Ei ole. — Ovat. — Ei ole."
+  ]
+}

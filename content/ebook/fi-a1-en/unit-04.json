@@ -1,0 +1,527 @@
+{
+  "title": "My family",
+  "title_target": "Minun perheeni",
+  "goal": "Name family members, show ownership in two ways at once, and say \"have\" in a language that has no verb \"to have\".",
+  "bekal": [
+    "form possession with the ending **-n** (*Ainon kirja*) and with possessive endings (*kirjani*)",
+    "use *minulla on* to say you have something",
+    "name fifteen family members and ask about other people's families"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Perhekuva",
+      "intro": "Aino is looking at a photo on the wall of Budi's room.",
+      "lines": [
+        {
+          "speaker": "Aino:",
+          "text": "Kuka tuo on kuvassa? Onko hän sinun äitisi?",
+          "id": "Who's that in the picture? Is she your mother?",
+          "literal": "who that-over-there is in-picture? is-? she your mother-your?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Joo, se on minun äitini. Ja tuo on isäni.",
+          "id": "Yeah, that's my mother. And that's my father.",
+          "literal": "yeah, it is my mother-my. and that-over-there is father-my."
+        },
+        {
+          "speaker": "Aino:",
+          "text": "He näyttävät mukavilta. Onko sinulla sisaruksia?",
+          "id": "They look nice. Do you have any brothers or sisters?",
+          "literal": "they look nice-from. is-? at-you siblings-partitive?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "On. Minulla on yksi isosisko ja yksi pikkuveli.",
+          "id": "Yes. I have one older sister and one younger brother.",
+          "literal": "is. at-me is one big-sister and one little-brother."
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Missä he asuvat?",
+          "id": "Where do they live?",
+          "literal": "where they live?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Siskoni asuu Bandungissa. Veljeni asuu vielä vanhempien kanssa.",
+          "id": "My sister lives in Bandung. My brother still lives with our parents.",
+          "literal": "sister-my lives in-Bandung. brother-my lives still parents' with."
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Onko siskosi naimisissa?",
+          "id": "Is your sister married?",
+          "literal": "is-? sister-your in-marriage?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "On. Hänen miehensä on opettaja, ja heillä on pieni vauva.",
+          "id": "Yes. Her husband is a teacher, and they have a little baby.",
+          "literal": "is. her husband-her is teacher, and at-them is small baby."
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Ihanaa! Minulla ei ole sisaruksia. Olen ainoa lapsi.",
+          "id": "How lovely! I don't have any siblings. I'm an only child.",
+          "literal": "lovely! at-me not is siblings-partitive. am-I only child."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Onko se yksinäistä?",
+          "id": "Is that lonely?",
+          "literal": "is-? it lonely-partitive?"
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Ei oikeastaan. Meillä on iso suku ja paljon serkkuja.",
+          "id": "Not really. We have a big extended family and lots of cousins.",
+          "literal": "not really. at-us is big extended-family and many cousins-partitive."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sitten sinä et ole yksin ollenkaan!",
+          "id": "Then you're not alone at all!",
+          "literal": "then you not are alone at-all!"
+        }
+      ],
+      "notes": [
+        "**Possession is stated twice.** *Minun äiti**ni*** — \"my mother-my\". The front word (*minun*) and the ending (*-ni*) say the same thing. Standard Finnish uses both; the **front** one can be dropped (*äitini* already clearly means \"my mother\"), the **ending** cannot.",
+        "**Except with hän and he.** *Hänen miehe**nsä*** — here the front word is required, because the ending *-nsä* doesn't tell you who the owner is. Without *hänen*, the sentence could mean anyone's husband.",
+        "**Onko sinulla — \"is there at you\".** Finnish has no verb \"to have\" at all. Instead it uses *olla* (to be) plus the owner in an \"at\" form: *minulla on* = \"at me there is\". Russian and Arabic work exactly the same way, and once you're used to it, it feels perfectly logical.",
+        "**Sisaruksia and serkkuja take the partitive.** After *onko sinulla* and after *paljon*, the noun is partitive because the number isn't fixed — \"siblings (some? one? none?)\". Compare *minulla on **yksi** isosisko*, where the number is clear.",
+        "**Minulla ei ole** — the negative uses *ei ole*, not *ei on*. The verb *olla* goes back to its stem when negated. This is the first surprise about Finnish negation; the whole story is in Unit 7.",
+        "**Naimisissa** literally means \"in marriage\" — the noun *naimiset* with the ending *-ssa*. The opposite is *naimaton* (unmarried). For \"have a boyfriend/girlfriend\": *minulla on poikaystävä / tyttöystävä*."
+      ],
+      "grammars": [
+        {
+          "title": "The -n ending: possession",
+          "body": [
+            "One letter that does the whole job of English 's. The owner stands **in front of** the thing, just as in English."
+          ],
+          "table": {
+            "head": [
+              "Base word",
+              "Possessive form",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*Aino*",
+                "*Aino**n***",
+                "*Ainon kirja*",
+                "Aino's book"
+              ],
+              [
+                "*Marek*",
+                "*Marekin*",
+                "*Marekin laukku*",
+                "Marek's bag"
+              ],
+              [
+                "*äiti*",
+                "*äidi**n***",
+                "*äidin auto*",
+                "Mom's car"
+              ],
+              [
+                "*opettaja*",
+                "*opettaja**n***",
+                "*opettajan nimi*",
+                "the teacher's name"
+              ],
+              [
+                "*minä*",
+                "*minu**n***",
+                "*minun kirjani*",
+                "my book"
+              ],
+              [
+                "*hän*",
+                "*häne**n***",
+                "*hänen miehensä*",
+                "her husband"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *äiti → äidin*: the consonant weakens again. Same pattern: *katu → kadun*, *pöytä → pöydän*, *kauppa → kaupan*.",
+            "This *-n* ending also shows up in many other places — in front of words like *kanssa*, and as a marker for a completed object (Unit 11). So learning to form it now pays off many times over.",
+            "The word order is **always owner first**: *Ainon kirja*, never *kirja Ainon*. Your English instinct (\"Aino's book\") is exactly right here — just never use \"of\" order (\"the book of Aino\")."
+          ]
+        },
+        {
+          "title": "Minulla on — how Finnish says \"have\"",
+          "body": [
+            "Finnish has no verb \"to own\". Instead, the owner takes the ending **-lla/-llä** (\"at\"), followed by *on*."
+          ],
+          "table": {
+            "head": [
+              "Owner",
+              "-lla form",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "minä",
+                "**minulla**",
+                "*Minulla on kirja.*",
+                "I have a book."
+              ],
+              [
+                "sinä",
+                "**sinulla**",
+                "*Sinulla on aikaa.*",
+                "You have time."
+              ],
+              [
+                "hän",
+                "**hänellä**",
+                "*Hänellä on koira.*",
+                "He/She has a dog."
+              ],
+              [
+                "me",
+                "**meillä**",
+                "*Meillä on iso suku.*",
+                "We have a big extended family."
+              ],
+              [
+                "te",
+                "**teillä**",
+                "*Teillä on kysymys.*",
+                "You (plural) have a question."
+              ],
+              [
+                "he",
+                "**heillä**",
+                "*Heillä on vauva.*",
+                "They have a baby."
+              ]
+            ]
+          },
+          "after": [
+            "The verb is **always *on***, no matter who the owner is or how many things there are: *minulla on kirja*, *minulla on kirjoja*, *heillä on vauva*. Nothing needs to agree.",
+            "To negate: change *on* to **ei ole**, and the thing goes into the partitive — *Minulla **ei ole** auto**a***. Changing the thing's form is required; this is one of the first places where the partitive can't be avoided.",
+            "To ask: *Onko sinulla…?* — *Onko sinulla aikaa?* (Do you have time?). Answer by repeating the verb: *On.* / *Ei ole.*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Family members",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "perhe",
+              "PER-he",
+              "(immediate) family"
+            ],
+            [
+              "suku",
+              "SOO-koo",
+              "extended family, clan"
+            ],
+            [
+              "äiti",
+              "ÄI-ti",
+              "mother"
+            ],
+            [
+              "isä",
+              "I-sä",
+              "father"
+            ],
+            [
+              "vanhemmat",
+              "VAHN-hem-maht",
+              "parents"
+            ],
+            [
+              "veli",
+              "VE-li",
+              "brother"
+            ],
+            [
+              "sisko / sisar",
+              "SIS-ko / SI-sahr",
+              "sister"
+            ],
+            [
+              "isoveli / isosisko",
+              "I-so-ve-li",
+              "older brother / sister"
+            ],
+            [
+              "pikkuveli / pikkusisko",
+              "PIK-koo-ve-li",
+              "younger brother / sister"
+            ],
+            [
+              "sisarukset",
+              "SI-sah-rook-set",
+              "siblings"
+            ],
+            [
+              "lapsi",
+              "LAHP-si",
+              "child"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Finnish has two kinds of uncle: **setä** is your **father's** brother, **eno** is your **mother's** brother. There's no such split for aunts — *täti* covers both. English doesn't make this distinction at all, so it's genuinely new; if in doubt, *setä* is safer, since children also use it as a general word for any grown man."
+        },
+        {
+          "type": "p",
+          "text": "*Mummo* and *vaari* are warm everyday words for grandma and grandpa; *isoäiti* and *isoisä* are more neutral, literally \"big mother\" and \"big father\" (much like English \"grand-\"). There are also *mummi*, *pappa*, and *ukki*, which vary by region and family."
+        }
+      ]
+    },
+    {
+      "title": "The full set of possessive endings",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Owner",
+            "Ending",
+            "*kirja* (book)",
+            "*äiti* (mother)",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "minun",
+              "**-ni**",
+              "kirja**ni**",
+              "äiti**ni**",
+              "my book/mother"
+            ],
+            [
+              "sinun",
+              "**-si**",
+              "kirja**si**",
+              "äiti**si**",
+              "your book/mother"
+            ],
+            [
+              "hänen",
+              "**-nsa / -nsä**",
+              "kirja**nsa**",
+              "äiti**nsä**",
+              "his/her book/mother"
+            ],
+            [
+              "meidän",
+              "**-mme**",
+              "kirja**mme**",
+              "äiti**mme**",
+              "our book/mother"
+            ],
+            [
+              "teidän",
+              "**-nne**",
+              "kirja**nne**",
+              "äiti**nne**",
+              "your (plural) book/mother"
+            ],
+            [
+              "heidän",
+              "**-nsa / -nsä**",
+              "kirja**nsa**",
+              "äiti**nsä**",
+              "their book/mother"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Note that *hän* and *he* use exactly the same ending. That's why the word in front (*hänen* / *heidän*) can't be dropped — it's the only thing that tells them apart."
+        },
+        {
+          "type": "kotak",
+          "title": "What you'll actually hear on the street",
+          "items": [
+            "In everyday speech the possessive ending often **disappears completely**, leaving only the front word: *mun äiti* (not *minun äitini*), *sun kirja*, *sen auto*.",
+            "Don't copy it yet. This course uses the standard forms because they're understood in every situation, while the casual forms look wrong in formal writing — and Finnish language exams require the standard forms."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Ready-made questions for getting to know someone better: *Onko sinulla perhettä Suomessa?* (Do you have family in Finland?), *Kuinka monta sisarusta sinulla on?* (How many siblings do you have?), *Missä sinun perheesi asuu?* (Where does your family live?)."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fi": "perhe",
+      "baca": "PER-he",
+      "en": "family"
+    },
+    {
+      "fi": "kuva",
+      "baca": "KOO-vah",
+      "en": "picture, photo"
+    },
+    {
+      "fi": "äiti",
+      "baca": "ÄI-ti",
+      "en": "mother"
+    },
+    {
+      "fi": "isä",
+      "baca": "I-sä",
+      "en": "father"
+    },
+    {
+      "fi": "vanhemmat",
+      "baca": "VAHN-hem-maht",
+      "en": "parents"
+    },
+    {
+      "fi": "veli",
+      "baca": "VE-li",
+      "en": "brother"
+    },
+    {
+      "fi": "sisko",
+      "baca": "SIS-ko",
+      "en": "sister"
+    },
+    {
+      "fi": "sisarukset",
+      "baca": "SI-sah-rook-set",
+      "en": "siblings"
+    },
+    {
+      "fi": "lapsi",
+      "baca": "LAHP-si",
+      "en": "child"
+    },
+    {
+      "fi": "vauva",
+      "baca": "VOW-vah",
+      "en": "baby"
+    },
+    {
+      "fi": "vaimo",
+      "baca": "VIGH-mo",
+      "en": "wife"
+    },
+    {
+      "fi": "aviomies",
+      "baca": "AH-vi-o-miyes",
+      "en": "husband"
+    },
+    {
+      "fi": "serkku",
+      "baca": "SERK-koo",
+      "en": "cousin"
+    },
+    {
+      "fi": "suku",
+      "baca": "SOO-koo",
+      "en": "extended family"
+    },
+    {
+      "fi": "opettaja",
+      "baca": "O-pet-tah-yah",
+      "en": "teacher"
+    },
+    {
+      "fi": "koira",
+      "baca": "KOY-rah",
+      "en": "dog"
+    },
+    {
+      "fi": "kissa",
+      "baca": "KIS-sah",
+      "en": "cat"
+    },
+    {
+      "fi": "auto",
+      "baca": "OW-to",
+      "en": "car"
+    },
+    {
+      "fi": "aika",
+      "baca": "IGH-kah",
+      "en": "time"
+    },
+    {
+      "fi": "kysymys",
+      "baca": "KÜ-sü-müs",
+      "en": "question"
+    },
+    {
+      "fi": "naimisissa",
+      "baca": "NIGH-mi-sis-sah",
+      "en": "married"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Finnish.",
+      "items": [
+        "That's my mother.",
+        "I have one older sister.",
+        "My sister lives in Bandung.",
+        "Her husband is a teacher.",
+        "I don't have any siblings.",
+        "We have a big extended family."
+      ]
+    },
+    {
+      "prompt": "Fill in the *-lla/-llä* form of the right pronoun.",
+      "items": [
+        "____ on kirja. (I)",
+        "____ on aikaa. (you)",
+        "____ on koira. (he/she)",
+        "____ on iso perhe. (we)",
+        "____ on vauva. (they)",
+        "____ on kysymys. (you, plural)"
+      ]
+    },
+    {
+      "prompt": "Add the right possessive ending.",
+      "items": [
+        "minun kirja____",
+        "sinun äiti____",
+        "hänen veli____",
+        "meidän perhe____",
+        "teidän talo____",
+        "heidän lapsi____"
+      ]
+    },
+    {
+      "prompt": "Make the possessive form with the -n ending.",
+      "items": [
+        "Aino / kirja",
+        "Marek / laukku",
+        "äiti / auto",
+        "opettaja / nimi",
+        "isä / puhelin"
+      ]
+    }
+  ],
+  "answers": [
+    "Se on minun äitini. — Minulla on yksi isosisko. — Siskoni asuu Bandungissa. — Hänen miehensä on opettaja. — Minulla ei ole sisaruksia. — Meillä on iso suku.",
+    "Minulla — Sinulla — Hänellä — Meillä — Heillä — Teillä",
+    "ni — si — nsä — mme — nne — nsa",
+    "Ainon kirja — Marekin laukku — äidin auto — opettajan nimi — isän puhelin"
+  ]
+}

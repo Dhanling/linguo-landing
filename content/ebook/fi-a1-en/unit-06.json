@@ -1,0 +1,588 @@
+{
+  "title": "At the café",
+  "title_target": "Kahvilassa",
+  "goal": "Order food and drink politely, and take on the pattern that trips up beginners more than any other: consonants that weaken when a word changes form.",
+  "bekal": [
+    "order with *saisinko*, *otan*, and *haluaisin* — three levels of politeness",
+    "recognize the weakening of **k, p, t** and apply it yourself to new words",
+    "name thirty foods and drinks you will actually find in a Finnish café"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kahvilassa Kampissa",
+      "intro": "After class, Budi and Aino stop at a café in the Kamppi shopping center in Helsinki.",
+      "lines": [
+        {
+          "speaker": "Aino:",
+          "text": "Tässä kahvilassa on hyvät pullat. Mitä sinä otat?",
+          "id": "The sweet buns in this café are good. What are you having?",
+          "literal": "in-this in-café is good-plural bun-plural. what you take?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "En tiedä vielä. Mikä tuo on?",
+          "id": "I don't know yet. What's that?",
+          "literal": "not-I know still. what that-there is?"
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Se on korvapuusti. Se on kanelipulla.",
+          "id": "That's a korvapuusti. A cinnamon bun.",
+          "literal": "it is korvapuusti. it is cinnamon-bun."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hyvä. Otan sen ja kahvin.",
+          "id": "Great. I'll take that and a coffee.",
+          "literal": "take-I it-'s and coffee-'s."
+        },
+        {
+          "speaker": "Myyjä:",
+          "text": "Hei! Mitä saisi olla?",
+          "id": "Hi! What can I get you?",
+          "literal": "hi! what may be?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Saisinko yhden korvapuustin ja yhden kahvin?",
+          "id": "Could I have one korvapuusti and one coffee?",
+          "literal": "may-I-get one-'s korvapuusti-'s and one-'s coffee-'s?"
+        },
+        {
+          "speaker": "Myyjä:",
+          "text": "Toki. Maidon kanssa vai ilman?",
+          "id": "Sure. With milk or without?",
+          "literal": "sure. milk-'s with or without?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Maidon kanssa, kiitos. Onko teillä teetä?",
+          "id": "With milk, thanks. Do you have tea?",
+          "literal": "milk-'s with, thanks. is-? at-you tea-some?"
+        },
+        {
+          "speaker": "Myyjä:",
+          "text": "On. Vihreää teetä ja mustaa teetä.",
+          "id": "Yes. Green tea and black tea.",
+          "literal": "is. green-some tea-some and black-some tea-some."
+        },
+        {
+          "speaker": "Aino:",
+          "text": "Minä otan vihreän teen ja yhden voileivän.",
+          "id": "I'll have a green tea and a sandwich.",
+          "literal": "I take green-'s tea-'s and one-'s sandwich-'s."
+        },
+        {
+          "speaker": "Myyjä:",
+          "text": "Kaksitoista euroa yhteensä. Tässä tai mukaan?",
+          "id": "Twelve euros altogether. For here or to go?",
+          "literal": "twelve euro-some together. in-this or along?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tässä, kiitos. Onko täällä vapaa pöytä?",
+          "id": "For here, thanks. Is there a free table?",
+          "literal": "in-this, thanks. is-? here free table?"
+        },
+        {
+          "speaker": "Myyjä:",
+          "text": "On, ikkunan vieressä. Ole hyvä!",
+          "id": "Yes, by the window. Here you go!",
+          "literal": "is, window-'s beside. be good!"
+        }
+      ],
+      "notes": [
+        "**Kahvila → kahvilassa, but kauppa → kaupassa.** Compare two words from this unit: one stays the same, the other loses a *p*. The difference is simple — *kahvila* has no *k*, *p*, or *t* in its last syllable, so there is nothing to weaken. The full rule is in the next box.",
+        "**Saisinko** literally means \"may-I would get\" — the conditional form of *saada* (to get) plus the question ending. It is the politest and most common way to order anywhere in Finland. You don't need to understand the form yet; learn it whole and use it every day.",
+        "**What you order takes the genitive.** *Otan kahvi**n***, *saisinko yhde**n** korvapuusti**n***. The *-n* here doesn't mean possession; it marks that the thing is **taken in full** — one whole coffee, not some of it. Compare *otan kahvi**a*** (I'll take some coffee = coffee with no set amount). This rule is covered fully in Unit 11.",
+        "**Teetä, vihreää teetä.** After *onko teillä*, the item takes the partitive because the amount isn't fixed. Note that **the adjective follows suit**: *vihreä teetä* becomes *vihreä**ä** teetä*. Once again, the adjective always copies the form of its noun.",
+        "**Ikkunan vieressä** — \"by the window\". Words like *vieressä* (beside), *edessä* (in front of), *takana* (behind) always come **after** their noun, and the noun takes the genitive. English puts them before; Finnish turns it around.",
+        "**Mitä saisi olla?** literally \"what may be\" — the standard phrase of café and shop staff. Its cousin: *Kuinka voin auttaa?* (how can I help)."
+      ],
+      "grammars": [
+        {
+          "title": "Consonant gradation — astevaihtelu",
+          "body": [
+            "This is the pattern that most often makes beginners feel Finnish words \"change however they like\". In fact it is very regular, and the rule fits in one sentence: **when an ending closes the last syllable, the k/p/t in front of it weakens.**"
+          ],
+          "table": {
+            "head": [
+              "Strong",
+              "Weak",
+              "Base form",
+              "With ending",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**kk**",
+                "**k**",
+                "*kauppa*",
+                "*kaupa**ssa***",
+                "in the shop"
+              ],
+              [
+                "**pp**",
+                "**p**",
+                "*kaappi*",
+                "*kaapi**ssa***",
+                "in the cupboard"
+              ],
+              [
+                "**tt**",
+                "**t**",
+                "*matto*",
+                "*mato**lla***",
+                "on the rug"
+              ],
+              [
+                "**k**",
+                "— disappears",
+                "*jalka*",
+                "*jala**ssa***",
+                "on the foot"
+              ],
+              [
+                "**p**",
+                "**v**",
+                "*leipä*",
+                "*leivä**n***",
+                "bread (genitive)"
+              ],
+              [
+                "**t**",
+                "**d**",
+                "*katu*",
+                "*kadu**lla***",
+                "on the street"
+              ],
+              [
+                "**nt**",
+                "**nn**",
+                "*ranta*",
+                "*ranna**lla***",
+                "on the beach"
+              ],
+              [
+                "**mp**",
+                "**mm**",
+                "*lampi*",
+                "*lamme**ssa***",
+                "in the pond"
+              ],
+              [
+                "**nk**",
+                "**ng**",
+                "*Helsinki*",
+                "*Helsingi**ssä***",
+                "in Helsinki"
+              ],
+              [
+                "**lt**",
+                "**ll**",
+                "*ilta*",
+                "*illa**lla***",
+                "in the evening"
+              ],
+              [
+                "**rt**",
+                "**rr**",
+                "*parta*",
+                "*parra**n***",
+                "beard (genitive)"
+              ]
+            ]
+          },
+          "after": [
+            "**Words without k/p/t don't change at all.** *Kahvila → kahvilassa*, *talo → talossa*, *Espoo → Espoossa*. Most words actually fall into this group, so don't picture the whole of Finnish shifting under your feet.",
+            "⚠️ Only the k/p/t in the **last syllable** changes, not anywhere in the word. *Kahvi → kahvin* loses nothing because *v* isn't k/p/t; *tietokone → tietokoneen* is safe too.",
+            "For some words it runs the other way: a weak base turns strong when the ending arrives — *hake**a** → ha**k**een*, *sata → sadan* but *kaksi**sataa***. This group is smaller; don't chase it yet."
+          ]
+        },
+        {
+          "title": "Three ways to order",
+          "body": [
+            "Finnish has a clear politeness ladder for ordering, and all the rungs are used every day. What can go wrong isn't the grammar but the tone."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Say it",
+              "Tone",
+              "When to use it"
+            ],
+            "rows": [
+              [
+                "*Yksi kahvi, kiitos.*",
+                "ÜK-si KAHH-vi KEE-tos",
+                "direct",
+                "long line, busy café"
+              ],
+              [
+                "*Otan kahvin.*",
+                "O-tahn KAHH-vin",
+                "plain",
+                "most common, neutral"
+              ],
+              [
+                "*Haluaisin kahvin.*",
+                "HAH-loo-igh-sin KAHH-vin",
+                "polite",
+                "restaurant, to strangers"
+              ],
+              [
+                "*Saisinko kahvin?*",
+                "SIGH-sin-ko KAHH-vin",
+                "most polite",
+                "safe anywhere"
+              ],
+              [
+                "*Voisinko saada kahvin?*",
+                "VOY-sin-ko SAAH-dah KAHH-vin",
+                "very polite",
+                "formal situations"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *Kiitos* at the end of the sentence isn't just a courtesy — it is what **makes** a short sentence polite. *Yksi kahvi* without *kiitos* sounds like a command; with *kiitos*, it is perfectly normal.",
+            "If you're asked *Mitä saisi olla?* and you're not ready, say *Hetkinen* (just a moment) or *Anteeksi, minä mietin vielä* (sorry, I'm still thinking). Nobody is in a hurry.",
+            "Paying: *Kortilla vai käteisellä?* (card or cash?). The answer is almost always *Kortilla* — Finland has almost entirely given up cash, and many small cafés don't accept it at all."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Food and drink",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "Say it",
+            "With -n",
+            "English"
+          ],
+          "rows": [
+            [
+              "kahvi",
+              "KAHH-vi",
+              "kahvin",
+              "coffee"
+            ],
+            [
+              "tee",
+              "tehh",
+              "teen",
+              "tea"
+            ],
+            [
+              "maito",
+              "MIGH-to",
+              "maidon",
+              "milk"
+            ],
+            [
+              "vesi",
+              "VE-si",
+              "veden",
+              "water"
+            ],
+            [
+              "mehu",
+              "ME-hoo",
+              "mehun",
+              "juice"
+            ],
+            [
+              "olut",
+              "O-loot",
+              "oluen",
+              "beer"
+            ],
+            [
+              "leipä",
+              "LAY-pä",
+              "leivän",
+              "bread"
+            ],
+            [
+              "voileipä",
+              "VOY-lay-pä",
+              "voileivän",
+              "sandwich"
+            ],
+            [
+              "pulla",
+              "POOL-lah",
+              "pullan",
+              "sweet bun"
+            ],
+            [
+              "korvapuusti",
+              "KOR-vah-pooos-ti",
+              "korvapuustin",
+              "cinnamon bun"
+            ],
+            [
+              "kakku",
+              "KAHK-koo",
+              "kakun",
+              "cake"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The third column is there on purpose: it is the form you use when ordering (*otan kahvi**n***), and it also shows whether the consonant weakens. Look at *maito → maido**n***, *leipä → leivä**n***, *olut → olue**n***."
+        },
+        {
+          "type": "kotak",
+          "title": "Four sentences for people who don't eat just anything",
+          "items": [
+            "*Olen kasvissyöjä.* — I'm vegetarian.",
+            "*En syö sianlihaa.* — I don't eat pork. (*sianliha* = pork)",
+            "*Onko tässä maitoa?* — Is there milk in this?",
+            "*Olen allerginen pähkinöille.* — I'm allergic to nuts."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Place words that stand behind",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Finnish puts some place words **after** the noun, and the noun must take the genitive (*-n*). The order is the reverse of English prepositions, so it takes conscious practice."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Suomi",
+            "Say it",
+            "Example",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "vieressä",
+              "VIYE-res-sä",
+              "*ikkunan vieressä*",
+              "by the window"
+            ],
+            [
+              "edessä",
+              "E-des-sä",
+              "*talon edessä*",
+              "in front of the house"
+            ],
+            [
+              "takana",
+              "TAH-kah-nah",
+              "*kaupan takana*",
+              "behind the shop"
+            ],
+            [
+              "alla",
+              "AHL-lah",
+              "*pöydän alla*",
+              "under the table"
+            ],
+            [
+              "päällä",
+              "PÄÄL-lä",
+              "*pöydän päällä*",
+              "on the table"
+            ],
+            [
+              "välissä",
+              "VÄ-lis-sä",
+              "*talojen välissä*",
+              "between the houses"
+            ],
+            [
+              "lähellä",
+              "LÄ-hel-lä",
+              "*aseman lähellä*",
+              "near the station"
+            ],
+            [
+              "kaukana",
+              "KOW-kah-nah",
+              "*keskustasta kaukana*",
+              "far from the center"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that almost all of them carry an ending you already know: *viere**ssä*** (in the side), *ede**ssä***, *väli**ssä***. Once you see the pattern, the list stops feeling like random memorization."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Lähellä* and *kaukana* want different endings on the noun: *aseman lähellä* (genitive) but *keskusta**sta** kaukana* (from). If in doubt, rephrase: *Asema on lähellä* (the station is near) is always safe."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fi": "kahvila",
+      "baca": "KAHH-vi-lah",
+      "en": "café"
+    },
+    {
+      "fi": "kauppa",
+      "baca": "KOWP-pah",
+      "en": "shop, store"
+    },
+    {
+      "fi": "myyjä",
+      "baca": "MÜÜ-yä",
+      "en": "salesperson, cashier"
+    },
+    {
+      "fi": "ottaa",
+      "baca": "OT-taah",
+      "en": "to take"
+    },
+    {
+      "fi": "saada",
+      "baca": "SAAH-dah",
+      "en": "to get; may"
+    },
+    {
+      "fi": "haluta",
+      "baca": "HAH-loo-tah",
+      "en": "to want"
+    },
+    {
+      "fi": "syödä",
+      "baca": "SÜÖ-dä",
+      "en": "to eat"
+    },
+    {
+      "fi": "juoda",
+      "baca": "YWOH-dah",
+      "en": "to drink"
+    },
+    {
+      "fi": "ilman",
+      "baca": "IL-mahn",
+      "en": "without"
+    },
+    {
+      "fi": "yhteensä",
+      "baca": "ÜH-tehhn-sä",
+      "en": "altogether, in total"
+    },
+    {
+      "fi": "mukaan",
+      "baca": "MOO-kaahn",
+      "en": "to go (takeaway); along"
+    },
+    {
+      "fi": "vapaa",
+      "baca": "VAH-paah",
+      "en": "free, vacant"
+    },
+    {
+      "fi": "täällä",
+      "baca": "TÄÄL-lä",
+      "en": "here"
+    },
+    {
+      "fi": "tässä",
+      "baca": "TÄS-sä",
+      "en": "here (right here)"
+    },
+    {
+      "fi": "vieressä",
+      "baca": "VIYE-res-sä",
+      "en": "beside, next to"
+    },
+    {
+      "fi": "toki",
+      "baca": "TO-ki",
+      "en": "sure, of course"
+    },
+    {
+      "fi": "vai",
+      "baca": "vigh",
+      "en": "or (in either-or questions)"
+    },
+    {
+      "fi": "kortti",
+      "baca": "KORT-ti",
+      "en": "card"
+    },
+    {
+      "fi": "käteinen",
+      "baca": "KÄ-tay-nen",
+      "en": "cash"
+    },
+    {
+      "fi": "hetkinen",
+      "baca": "HET-ki-nen",
+      "en": "just a moment"
+    },
+    {
+      "fi": "miettiä",
+      "baca": "MIYET-ti-ä",
+      "en": "to think, to consider"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Finnish.",
+      "items": [
+        "Could I have one coffee?",
+        "I'll have a green tea.",
+        "Do you have tea?",
+        "Twelve euros altogether.",
+        "Is there a free table?",
+        "For here, thanks."
+      ]
+    },
+    {
+      "prompt": "Add the ending -ssa/-ssä. Watch the consonant gradation.",
+      "items": [
+        "kauppa",
+        "kahvila",
+        "Helsinki",
+        "kaappi",
+        "talo",
+        "lampi"
+      ]
+    },
+    {
+      "prompt": "Change to the -n form (the form used when ordering).",
+      "items": [
+        "maito",
+        "leipä",
+        "olut",
+        "kahvi",
+        "voileipä",
+        "kakku"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "kahvin / saisinko / ?",
+        "teetä / on / teillä / ?",
+        "vieressä / pöytä / on / ikkunan",
+        "euroa / yhteensä / kaksitoista",
+        "otan / ja / korvapuustin / kahvin"
+      ]
+    }
+  ],
+  "answers": [
+    "Saisinko yhden kahvin? — Otan vihreän teen. — Onko teillä teetä? — Kaksitoista euroa yhteensä. — Onko täällä vapaa pöytä? — Tässä, kiitos.",
+    "kaupassa — kahvilassa — Helsingissä — kaapissa — talossa — lammessa",
+    "maidon — leivän — oluen — kahvin — voileivän — kakun",
+    "Saisinko kahvin? — Onko teillä teetä? — Pöytä on ikkunan vieressä. — Yhteensä kaksitoista euroa. — Otan kahvin ja korvapuustin."
+  ]
+}
