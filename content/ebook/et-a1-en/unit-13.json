@@ -1,0 +1,512 @@
+{
+  "title": "Done or not yet",
+  "title_target": "Sihitis — raamatu või raamatut?",
+  "goal": "The toughest unit in this module. Estonian marks whether an action is **finished or not** in the ending of the noun — a job English gives to verb forms like \"am reading\" and \"have read\".",
+  "bekal": [
+    "choose between the genitive and the partitive for the object of an action",
+    "use one rule that never fails: after a negative, always the partitive",
+    "recognize verbs that always take the partitive"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Raamatupoes",
+      "intro": "The Rahva Raamat bookstore in central Tallinn. Budi is looking for a textbook.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Tere! Ma otsin raamatut.",
+          "id": "Hello! I'm looking for a book.",
+          "literal": "hello! I look-for-I book-part."
+        },
+        {
+          "speaker": "Müüja:",
+          "text": "Millist raamatut?",
+          "id": "What kind of book?",
+          "literal": "which-part book-part?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eesti keele õpikut algajatele.",
+          "id": "An Estonian textbook for beginners.",
+          "literal": "Estonian language-gen textbook-part beginners-to."
+        },
+        {
+          "speaker": "Müüja:",
+          "text": "Palun, see on hea.",
+          "id": "Here you are, this one is good.",
+          "literal": "please, this is good."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aitäh. Ma ostan selle raamatu.",
+          "id": "Thank you. I'll buy this book.",
+          "literal": "thanks. I buy-I this-gen book-gen."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Oota — sa ütlesid \"raamatut\", nüüd \"raamatu\".",
+          "id": "Wait — before you said \"raamatut\", now \"raamatu\".",
+          "literal": "wait — you said-you \"book-part\", now \"book-gen\"."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jah, ma märkasin ka. Mis vahe on?",
+          "id": "Yes, I noticed too. What's the difference?",
+          "literal": "yes, I noticed-I too. what difference is-it?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "\"Otsin raamatut\" — sa alles otsid. \"Ostan raamatu\" — asi saab tehtud.",
+          "id": "\"Otsin raamatut\" — you're still looking. \"Ostan raamatu\" — the deal is done.",
+          "literal": "\"look-for-I book-part\" — you still look-for-you. \"buy-I book-gen\" — thing gets done."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nii et lõpetatus on tähtis?",
+          "id": "So what matters is whether it's finished?",
+          "literal": "so that completeness is-it important?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Just. Indoneesia keeles sa ütled \"sedang\" ja \"sudah\", eks?",
+          "id": "Exactly. In Indonesian you say \"sedang\" and \"sudah\", right?",
+          "literal": "exactly. Indonesian language-in you say-you \"sedang\" and \"sudah\", right?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jah! \"Sedang membaca\" ja \"sudah membaca\".",
+          "id": "Yes! \"Sedang membaca\" (reading) and \"sudah membaca\" (have read).",
+          "literal": "yes! \"am reading\" and \"have read\"."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Sama mõte. Meie paneme selle sõna lõppu, teie eraldi sõnasse.",
+          "id": "Same idea. We put it at the end of the word; you use a separate word.",
+          "literal": "same thought. we put-we it-gen word-gen end-to, you separate word-to."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "See on tegelikult loogiline.",
+          "id": "That actually makes sense.",
+          "literal": "that is-it actually logical."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ja üks reegel on lihtne: eituse järel alati -t.",
+          "id": "And one easy rule: after a negative, always -t.",
+          "literal": "and one rule is-it easy: negative-gen after always -t."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "\"Ma ei osta raamatut\"?",
+          "id": "\"Ma ei osta raamatut\"?",
+          "literal": "\"I not buy book-part\"?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Täpselt. Alati. Eranditult.",
+          "id": "Exactly. Always. No exceptions.",
+          "literal": "exactly. always. without-exception."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Siis ma tean vähemalt ühe kindla reegli.",
+          "id": "Then I know at least one sure rule.",
+          "literal": "then I know-I at-least one-gen sure-gen rule-gen."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ja kui kahtled — kasuta -t. Enamasti õige.",
+          "id": "And when in doubt — use -t. It's usually right.",
+          "literal": "and if doubt-you — use -t. mostly correct."
+        }
+      ],
+      "notes": [
+        "⚠️ **This is the core idea of the unit, and it's worth reading twice.** English marks whether an action is finished with the verb: *I'm reading* the book, *I've read* the book, *I read it through*. Estonian marks exactly the same thing by **changing the ending of the noun**. Same meaning; it just lives in a different place — exactly what happened with prepositions in unit 2.",
+        "**Ma otsin raamatut** — the action is in progress, no result yet. **Partitive**. **Ma ostan raamatu** — the action is complete; one whole book changes hands. **Genitive**.",
+        "**Millist raamatut?** — \"which book?\" Notice the question word is partitive too, because the noun is. Adjectives and demonstratives **always** copy the form of their noun; more on this in unit 14.",
+        "**Selle raamatu** — \"this book\". *See* becomes *selle* in the genitive, just like an ordinary noun. Its partitive is *seda*: *ma ei taha seda* (I don't want that)."
+      ],
+      "grammars": [
+        {
+          "title": "Three forms, and when to use each",
+          "body": [
+            "The object of an action can appear in three forms. The last column tells you when."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "*raamat* (book)",
+              "Example",
+              "When to use it"
+            ],
+            "rows": [
+              [
+                "**partitive**",
+                "*raamatu**t***",
+                "*Ma loen raamatut.*",
+                "In progress, not finished."
+              ],
+              [
+                "**genitive**",
+                "*raamatu*",
+                "*Ma loen raamatu läbi.*",
+                "Finished, with a whole result."
+              ],
+              [
+                "**nominative**",
+                "*raamat*",
+                "*Osta raamat!*",
+                "⚠️ Only in commands."
+              ]
+            ]
+          },
+          "after": [
+            "Compare the first two rows with English: *ma loen raamatut* = \"I **am reading** a book\"; *ma loen raamatu läbi* = \"I **finish reading** the book\". The word *läbi* (through, finished) makes it clearer, but the *-u* ending alone already carries that meaning.",
+            "⚠️ The third row is often forgotten: in **commands**, the object goes back to the nominative. *Osta raamat!* (Buy the book!), *Tee töö ära!* (Finish the job!). But if the command is negative, the partitive comes back: *Ära osta raamatut!*",
+            "The genitive used as an object is often called the \"total object\". The name doesn't matter; what matters is the picture — **the whole thing gets dealt with**."
+          ]
+        },
+        {
+          "title": "Five situations that always take the partitive",
+          "body": [
+            "If you memorize just one thing from this unit, make it this table. None of these five rows has exceptions at A1."
+          ],
+          "table": {
+            "head": [
+              "Situation",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "⚠️ **After a negative**",
+                "*Ma ei osta raamatut.*",
+                "I'm not buying a book."
+              ],
+              [
+                "**Action not finished**",
+                "*Ma loen raamatut.*",
+                "I'm reading a book."
+              ],
+              [
+                "**Uncountable things**",
+                "*Ma joon vett.*",
+                "I drink water."
+              ],
+              [
+                "**After numbers**",
+                "*Ma ostan kaks raamatut.*",
+                "I'm buying two books."
+              ],
+              [
+                "**After *palju*, *vähe***",
+                "*Mul on palju tööd.*",
+                "I have a lot of work."
+              ]
+            ]
+          },
+          "after": [
+            "**The first row is the most valuable rule in this whole module.** After *ei* or *ära*, the object is **always** partitive — no exceptions, no conditions, no need to think about whether it's finished. If you remember only one thing, remember this.",
+            "You've been using the third row since unit 5 without knowing its name: *kohvi*, *teed*, *vett*, *piima*. Now you know why.",
+            "You've also used the fourth row since unit 4: *kaks eurot*, *kolm last*, *viis raamatut*. Note the noun stays singular after a number — only the ending is new."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Verbs that always want the partitive",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Some verbs can never naturally be \"finished\" — you can't finish loving or finish waiting. Such verbs **always** take the partitive, whatever the situation. The ten most common:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Verb",
+            "Example",
+            "English"
+          ],
+          "rows": [
+            [
+              "*armastama*",
+              "*Ma armastan sind.*",
+              "I love you."
+            ],
+            [
+              "*ootama*",
+              "*Ma ootan bussi.*",
+              "I'm waiting for the bus."
+            ],
+            [
+              "*aitama*",
+              "*Ma aitan sind.*",
+              "I'll help you."
+            ],
+            [
+              "*kuulama*",
+              "*Ma kuulan muusikat.*",
+              "I'm listening to music."
+            ],
+            [
+              "*otsima*",
+              "*Ma otsin võtit.*",
+              "I'm looking for the key."
+            ],
+            [
+              "*tundma*",
+              "*Ma tunnen teda.*",
+              "I know him/her."
+            ],
+            [
+              "*mäletama*",
+              "*Ma mäletan sind.*",
+              "I remember you."
+            ],
+            [
+              "*kartma*",
+              "*Ma kardan koera.*",
+              "I'm afraid of dogs."
+            ],
+            [
+              "*uskuma*",
+              "*Ma usun sind.*",
+              "I believe you."
+            ],
+            [
+              "*tänama*",
+              "*Ma tänan teid.*",
+              "I thank you."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Partitive pronouns — used every day",
+          "items": [
+            "*mind* (me), *sind* (you), *teda* (him/her), *meid* (us), *teid* (you, pl.), *neid* (them).",
+            "*Ma armastan sind.* — I love you. *Ta tunneb mind.* — He/she knows me.",
+            "⚠️ *Teid* is used for \"you\" plural **and** for polite \"you\": *Ma tänan teid.* — Thank you (polite).",
+            "These forms are irregular and very common. Memorize all six now; you'll use them more often than any table in this unit."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pairs that show the difference",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Read each row aloud, pair by pair. The difference in the ending is small; the difference in meaning is big."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Not finished",
+            "Meaning",
+            "Finished",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Ma loen raamatut.*",
+              "I'm reading a book.",
+              "*Ma loen raamatu läbi.*",
+              "I read the book to the end."
+            ],
+            [
+              "*Ma söön õuna.*",
+              "I'm eating an apple.",
+              "*Ma söön õuna ära.*",
+              "I eat up the apple."
+            ],
+            [
+              "*Ma kirjutan kirja.*",
+              "I'm writing a letter.",
+              "*Ma kirjutan kirja valmis.*",
+              "I finish the letter."
+            ],
+            [
+              "*Ma otsin võtit.*",
+              "I'm looking for the key.",
+              "*Ma leian võtme.*",
+              "I find the key."
+            ],
+            [
+              "*Ma ehitan maja.*",
+              "I'm building a house.",
+              "*Ma ehitan maja valmis.*",
+              "I finish the house."
+            ],
+            [
+              "*Ta joob kohvi.*",
+              "He/she is drinking coffee.",
+              "*Ta joob kohvi ära.*",
+              "He/she finishes the coffee."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Notice the small words in the third column: *läbi*, *ära*, *valmis*. Estonian often adds them to stress completion — they work just like English \"up\", \"through\" and \"off\" in *eat up*, *read through*, *finish off*. If you use one, the object is almost certainly genitive."
+        },
+        {
+          "type": "kotak",
+          "title": "The order decides — use this when in doubt",
+          "items": [
+            "**1.** Is the sentence negative? → **partitive**. Stop here; there's no other step.",
+            "**2.** Is the thing uncountable — a liquid, a material, time? → **partitive**.",
+            "**3.** Is there a number above one, or *palju*/*vähe*? → **partitive**.",
+            "**4.** Is the verb on the list of ten above? → **partitive**."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "et": "sihitis",
+      "baca": "SI-hi-tis",
+      "en": "object, target"
+    },
+    {
+      "et": "otsima",
+      "baca": "OT-si-mah",
+      "en": "to look for"
+    },
+    {
+      "et": "leidma",
+      "baca": "LAYD-mah",
+      "en": "to find"
+    },
+    {
+      "et": "ostma",
+      "baca": "OST-mah",
+      "en": "to buy"
+    },
+    {
+      "et": "armastama",
+      "baca": "AHR-mahs-tah-mah",
+      "en": "to love"
+    },
+    {
+      "et": "ootama",
+      "baca": "OHH-tah-mah",
+      "en": "to wait"
+    },
+    {
+      "et": "aitama",
+      "baca": "IGH-tah-mah",
+      "en": "to help"
+    },
+    {
+      "et": "kartma",
+      "baca": "KAHRT-mah",
+      "en": "to be afraid"
+    },
+    {
+      "et": "uskuma",
+      "baca": "OOS-koo-mah",
+      "en": "to believe"
+    },
+    {
+      "et": "tänama",
+      "baca": "TÄ-nah-mah",
+      "en": "to thank"
+    },
+    {
+      "et": "ehitama",
+      "baca": "E-hi-tah-mah",
+      "en": "to build"
+    },
+    {
+      "et": "märkama",
+      "baca": "MÄR-kah-mah",
+      "en": "to notice, to realize"
+    },
+    {
+      "et": "kahtlema",
+      "baca": "KAHHT-le-mah",
+      "en": "to doubt"
+    },
+    {
+      "et": "mind",
+      "baca": "mind",
+      "en": "me (object)"
+    },
+    {
+      "et": "sind",
+      "baca": "sind",
+      "en": "you (object)"
+    },
+    {
+      "et": "teda",
+      "baca": "TE-dah",
+      "en": "him/her (object)"
+    },
+    {
+      "et": "meid",
+      "baca": "mayd",
+      "en": "us (object)"
+    },
+    {
+      "et": "teid",
+      "baca": "tayd",
+      "en": "you, pl./polite (object)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose the right form: genitive or partitive.",
+      "items": [
+        "Ma ostan ____. (raamat, finished)",
+        "Ma otsin ____. (raamat, still looking)",
+        "Ma ei osta ____. (raamat)",
+        "Ma joon ____. (vesi)",
+        "Ma ostan kaks ____. (pilet)",
+        "Ma armastan ____. (sina)"
+      ]
+    },
+    {
+      "prompt": "Make these sentences negative. Remember: after ei, always the partitive.",
+      "items": [
+        "Ma ostan raamatu.",
+        "Ma söön õuna.",
+        "Ta loeb kirja.",
+        "Me võtame pileti.",
+        "Ma tean seda.",
+        "Nad ehitavad maja."
+      ]
+    },
+    {
+      "prompt": "Translate into Estonian.",
+      "items": [
+        "I'm looking for a book.",
+        "I'll buy this book.",
+        "I'm not buying a book.",
+        "I'm waiting for the bus.",
+        "I love you.",
+        "I drink water."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "otsin / raamatut / ma",
+        "raamatu / ostan / selle / ma",
+        "osta / ei / ma / raamatut",
+        "bussi / ma / ootan",
+        "läbi / raamatu / loen / ma"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "raamatu — raamatut — raamatut — vett — piletit — sind",
+    "1": "Ma ei osta raamatut. — Ma ei söö õuna. — Ta ei loe kirja. — Me ei võta piletit. — Ma ei tea seda. — Nad ei ehita maja.",
+    "2": "Ma otsin raamatut. — Ma ostan selle raamatu. — Ma ei osta raamatut. — Ma ootan bussi. — Ma armastan sind. — Ma joon vett.",
+    "3": "Ma otsin raamatut. — Ma ostan selle raamatu. — Ma ei osta raamatut. — Ma ootan bussi. — Ma loen raamatu läbi."
+  }
+}

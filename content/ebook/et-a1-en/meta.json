@@ -1,0 +1,1918 @@
+{
+  "brand": "LINGUO",
+  "cover": "cover.png",
+  "title": "Eesti keel 101",
+  "subtitle": "A self-study course in Estonian for complete beginners",
+  "level": "Level A1 (CEFR)",
+  "edition": "English Edition",
+  "ruby": false,
+  "font_size": "9.3pt",
+  "page_margin": "12mm 11mm 10mm",
+  "labels": {
+    "unit": "Unit",
+    "dialog": "Dialogue",
+    "notes": "Notes",
+    "vocab": "Vocabulary in this unit",
+    "exercises": "Exercises",
+    "answers": "Answer key",
+    "bekal": "By the end of this unit you can:",
+    "literal": "literally:",
+    "wave": "Wave review:",
+    "bagian": "Part"
+  },
+  "vocab_columns": [
+    {
+      "head": "Eesti keel",
+      "key": "et"
+    },
+    {
+      "head": "Say it",
+      "key": "baca"
+    },
+    {
+      "head": "English",
+      "key": "en"
+    }
+  ],
+  "cover_design": {
+    "bg": "#123A5E",
+    "accent": "#7FC4F5",
+    "label": "ESTONIAN",
+    "judul": "Eesti",
+    "cap": "õ",
+    "pola_opacity": 0.38,
+    "pola": "background-image:repeating-linear-gradient(0deg, rgba(255,255,255,.10) 0 3px, transparent 3px 42px),repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 2px, transparent 2px 42px);",
+    "ringkas": "A self-study course in Estonian for complete beginners — from saying hello in Tallinn to telling the story of a summer that's already gone.",
+    "catatan": "Every line of dialogue comes with a word-for-word translation and a pronunciation guide.",
+    "merek_sub": "SELF-STUDY MODULE",
+    "kaki_sub": "units · dialogues · exercises · answer key"
+  },
+  "product": {
+    "slug": "modul-estonia-101-en",
+    "title": "Estonian 101 - A1 (English Edition)",
+    "type": "ebook",
+    "language": "Estonian",
+    "level": "A1",
+    "file": "estonia-101-a1-en.pdf",
+    "description": "Twenty Assimil-style self-study units that take you from zero to A1 Estonian: short dialogues, word-for-word translations that show how Estonian builds its sentences, grammar notes, vocabulary with an English-friendly pronunciation guide, exercises, and an answer key. Estonian is friendlier than its reputation: no articles, no grammatical gender, no future tense, one word for both \"he\" and \"she\", a negation word (ei) that never changes, and spelling that matches sound letter for letter. Each unit targets one of the spots that actually trip learners up, from consonants that shift when a word changes shape to the three lengths of sound that change a word's meaning without showing up in the spelling.",
+    "pages": 141
+  },
+  "front": [
+    {
+      "title": "Foreword",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Estonian is spoken by about **one million** people — roughly the population of a single mid-sized city. A number that small usually makes people ask: why bother? The answer is simple. Estonia runs almost everything its citizens do through a screen — digital signatures, online elections, setting up a company in minutes — and many of the people who learn the language arrive through that door: university, remote work, or *e-Residency*. The rest come for an older reason: curiosity about a language that is related to none of the big European languages."
+        },
+        {
+          "type": "p",
+          "text": "Because Estonian is often called Finnish's cousin, it inherits Finnish's reputation as \"one of the hardest languages in the world.\" That reputation is **mostly misplaced**, and this course will show you exactly where it goes wrong."
+        },
+        {
+          "type": "p",
+          "text": "Start with the good news. Estonian has **no grammatical gender** — no *der/die/das*, no *le/la*. It has no articles at all: no \"a,\" no \"the.\" It has **no future tense**; \"tomorrow I'm going\" uses the same verb form as \"I'm going,\" much as English does with \"I'm leaving tomorrow.\" It has just one third-person pronoun, *tema*, for both men and women — like the English \"they\" for one person, but for everyone. And its negative word, *ei*, **never changes** whoever the subject is. Finnish changes it six times (*en, et, ei, emme, ette, eivät*); Estonian writes *ei* and is done."
+        },
+        {
+          "type": "p",
+          "text": "So where is the difficulty? In three places that English gives you almost nothing to lean on."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Consonants that shift** when a word changes shape: *linn* (town) → *linna*, *tuba* (room) → *toa*, *jalg* (foot) → *jala*. The same word can look like two different words. Unit 6 is devoted to this.",
+            "**Three lengths of sound** — and the most annoying part is that the second and third lengths are **written exactly the same**. *Kooli* can mean \"of the school\" and *kooli* can mean \"into the school\"; the only difference is how long the *oo* is held. The pronunciation page that follows gives you a mark to help.",
+            "**Fourteen cases** — or, more honestly, fourteen **prepositions stuck onto the end of the word**. English writes \"in the house\"; Estonian writes *majas*. The meaning is the same; only the position moves."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that none of the three is a matter of memorizing tables. All three are **habits of the ear and the tongue** — things that grow from use, not from rereading explanations. That is why the explanations in this course are deliberately short. The long part is the practice, and the practice is in your hands."
+        },
+        {
+          "type": "p",
+          "text": "One last advantage, and a big one: **Estonian spelling is faithful to its sounds.** One letter, one sound. No silent letters, no letter combinations that sound like something else. English has *though, through, tough, thought* — four spellings, four sounds. In Estonian, once you know the letters, you can read any word aloud correctly."
+        },
+        {
+          "type": "kotak",
+          "title": "Before you start",
+          "items": [
+            "This course asks for just one thing: **read aloud.** Estonian's three lengths cannot be learned with the eyes. If you only read silently, you're studying a different language.",
+            "Each unit is designed for **one sitting of 20–30 minutes.** Twenty units means about a month if you sit down five times a week. Don't do two units a day; what counts is not speed but the number of days.",
+            "**Don't memorize the tables.** The tables are for looking things up, not for learning by heart. What you memorize are whole sentences from the dialogues.",
+            "If a grammar note feels too heavy, **skip it.** It will come back in a later unit in a lighter form. Estonian teaches itself through repetition."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "isi",
+      "title": "Contents",
+      "intro": "Twenty units, arranged so that each one clears up one of the spots that most often trip learners up."
+    },
+    {
+      "title": "How to use this course",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Every unit has exactly the same layout. Once you're used to the order in unit 1, the other nineteen units run themselves."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Part",
+            "What it contains",
+            "What you do"
+          ],
+          "rows": [
+            [
+              "**Unit goals**",
+              "Three lines: what you can do after this unit.",
+              "Skim them. Read them again at the end, as a check."
+            ],
+            [
+              "**Dialogue**",
+              "A short conversation with three lines for each sentence.",
+              "Read aloud twice: once looking at the meaning, once without."
+            ],
+            [
+              "**Notes**",
+              "Four to six short notes on the lines you just read.",
+              "Read once. Don't memorize."
+            ],
+            [
+              "**Grammar box**",
+              "One pattern, one table, one paragraph after it.",
+              "Look back when you need it. It's a reference, not reading."
+            ],
+            [
+              "**Part**",
+              "Themed vocabulary plus ready-to-use sentence patterns.",
+              "Read aloud. Mark the five words you need most."
+            ],
+            [
+              "**Vocabulary**",
+              "All the new words of the unit with their pronunciation.",
+              "Cover the meaning column and test yourself."
+            ],
+            [
+              "**Exercises**",
+              "Four sets: translate, fill in, change the form, put in order.",
+              "Do them on paper, not in your head. The key is at the end of the unit."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Three lines under every line of dialogue"
+        },
+        {
+          "type": "p",
+          "text": "The first line is the Estonian sentence. The second is a natural English translation — the way an English speaker would say it. The third is the **word-for-word translation**, one word at a time, including the word endings."
+        },
+        {
+          "type": "kotak",
+          "title": "Example",
+          "items": [
+            "*Ma elan Tallinnas.*",
+            "I live in Tallinn.",
+            "I live-I Tallinn-in."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "That third line is the most valuable and the one people skip most often. It shows that *Tallinnas* is not a new word, but *Tallinn* with \"in\" stuck on the back. If you get used to reading the third line, Estonian's fourteen cases stop feeling like fourteen things to memorize and start feeling like a list of prepositions that have moved to the end of the word."
+        },
+        {
+          "type": "sub",
+          "text": "Symbols used"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Symbol",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*italics*",
+              "An Estonian word or sentence."
+            ],
+            [
+              "**bold**",
+              "The part being discussed — usually a word ending or the letter that changes."
+            ],
+            [
+              "**CAPITALS** in the Say it column",
+              "The stressed syllable. In Estonian this is **always the first syllable**."
+            ],
+            [
+              "**:** in the Say it column",
+              "The sound before it is held even longer — the third length. See the pronunciation page."
+            ],
+            [
+              "⚠️",
+              "A trap spot. The part English speakers most often get wrong."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "If you only have ten minutes a day"
+        },
+        {
+          "type": "p",
+          "text": "Do just the dialogue, aloud, twice. Skip the notes, boxes and exercises. Ten minutes a day for twenty days is far more useful than three hours once a month — and that goes for every language, not just Estonian."
+        }
+      ]
+    },
+    {
+      "title": "Estonian pronunciation",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The good news first: **Estonian spelling is faithful to its sounds.** One letter makes one sound, wherever it stands. Once you know the sounds of the twenty-seven letters, you can read any Estonian text correctly — even text whose meaning you don't yet understand. Compare English, where *though, through, tough, thought* are spelled alike and read four different ways."
+        },
+        {
+          "type": "p",
+          "text": "The bad news is only one, but it is big: **the length of a sound changes the meaning**, and some of the length is invisible in writing. This page deals with both."
+        },
+        {
+          "type": "sub",
+          "text": "Stress"
+        },
+        {
+          "type": "p",
+          "text": "Estonian stress **always falls on the first syllable.** Nothing you need to think about at A1 is an exception. *TAHL-linn*, *EHHS-ti*, *TE-re*, *IGH-täh*. Because the rule is a single line, the \"Say it\" column in this course uses CAPITAL LETTERS to mark the first syllable — as a reminder, not because the stress moves around."
+        },
+        {
+          "type": "p",
+          "text": "The one exception you will meet often is a loanword that still feels foreign: *apteek*, *hotell* and *restoran* are stressed on the last syllable. This course marks them when they appear."
+        },
+        {
+          "type": "sub",
+          "text": "Vowels — nine, four of them new"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Letter",
+            "Written in this course",
+            "Sound",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**a**",
+              "ah",
+              "Like the *a* in \"father.\"",
+              "*aitäh* — thank you"
+            ],
+            [
+              "**e**",
+              "e",
+              "Like the *e* in \"bed\" — always, even at the end of a word. *tere* is TE-reh, never \"tee-ree.\"",
+              "*tere* — hello"
+            ],
+            [
+              "**i**",
+              "i",
+              "Like the *i* in \"sit\" — never like \"eye.\"",
+              "*ilus* — beautiful"
+            ],
+            [
+              "**o**",
+              "o",
+              "A pure *o*, with no glide toward *w* (unlike English \"go\").",
+              "*kohv* — coffee"
+            ],
+            [
+              "**u**",
+              "oo",
+              "Like the *oo* in \"food.\"",
+              "*uus* — new"
+            ],
+            [
+              "**õ**",
+              "**õ**",
+              "⚠️ The signature Estonian letter. An *u*-like sound with the tongue pulled back and the lips **spread flat, not rounded**.",
+              "*õde* — sister"
+            ],
+            [
+              "**ä**",
+              "**ä**",
+              "Like the *a* in \"cat.\"",
+              "*ää* in *aitäh* — thank you"
+            ],
+            [
+              "**ö**",
+              "**ö**",
+              "Like the *e* in \"bed,\" but with the lips rounded as if to say *o* (as in German *schön*).",
+              "*töö* — work"
+            ],
+            [
+              "**ü**",
+              "**ü**",
+              "Like the *ee* in \"see,\" but with the lips rounded as if to say *oo* (as in German *über*).",
+              "*üks* — one"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ How to find õ in one minute",
+          "items": [
+            "Say a long *oo* (as in \"food\") and hold it. Now **spread your lips** until they're flat, as if you were smiling slightly, without moving the tongue at all. The sound that comes out is *õ*.",
+            "A second way: say the *u* of \"put\" and pull the back of your tongue back, as if about to swallow. That's *õ* too.",
+            "If you still can't get it, say the plain *u* of \"put.\" Estonians will understand you, and your ear will find the real sound on its own within a few weeks. What you must **not** do is say it as *o* — *kõik* (all) and *koik* are different words."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Consonants that need attention"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Letter",
+            "Written in this course",
+            "Note"
+          ],
+          "rows": [
+            [
+              "**j**",
+              "**y**",
+              "Always like the *y* in \"yes.\" *jah* is read *yahh*."
+            ],
+            [
+              "**s**",
+              "s",
+              "Always like the *s* in \"sit.\" Never *z*."
+            ],
+            [
+              "**š**",
+              "**sh**",
+              "Like the *sh* in \"ship.\" It only appears in loanwords: *šokolaad*."
+            ],
+            [
+              "**ž**",
+              "**zh**",
+              "Like the *s* in \"measure.\" Only in loanwords: *žanr*."
+            ],
+            [
+              "**h**",
+              "h",
+              "Pronounced clearly, including at the start of a word. *hea* = HE-ah, not \"ea.\""
+            ],
+            [
+              "**r**",
+              "r",
+              "Rolled or tapped, like Spanish *r* (or the *tt* of American \"butter\"). Never the English \"r.\""
+            ],
+            [
+              "**v**",
+              "v",
+              "Like English *v*; the lower lip touches the upper teeth. A slide toward *w* causes no misunderstanding."
+            ],
+            [
+              "**z, f, c, q, w, x, y**",
+              "—",
+              "Only in loanwords and foreign names."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Estonian b, d, g are not English b, d, g",
+          "items": [
+            "In Estonian, **the vocal cords do not vibrate** for *b*, *d*, *g*. They are really **short, weak** *p*, *t*, *k*, without the puff of air English adds.",
+            "So *pood* (shop) sounds to an English ear like *poot*, and *tuba* (room) like *tupa*.",
+            "The difference from Estonian *p*, *t*, *k* is not vibration but **length**: *p t k* are held longer than *b d g*. Compare *kabi* (hoof) with *kapi* (of the cupboard).",
+            "The Say it column in this course still writes *b*, *d*, *g* as they are — if it wrote *p*, *t*, *k* you would misread other letters. Just remember this box, and don't push the voicing."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "⚠️ Three lengths — the hardest part of the whole course"
+        },
+        {
+          "type": "p",
+          "text": "English does not use sound length to tell words apart. \"Sip\" said fast and \"siiip\" said slowly are the same word. Estonian distinguishes **three levels**, and the level **changes the meaning**."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Level",
+            "Estonian name",
+            "Written",
+            "Example",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**I — short**",
+              "*I välde*",
+              "one letter",
+              "*sada*",
+              "hundred"
+            ],
+            [
+              "**II — long**",
+              "*II välde*",
+              "double letter",
+              "*saada*",
+              "send!"
+            ],
+            [
+              "**III — overlong**",
+              "*III välde*",
+              "⚠️ **the same double letter**",
+              "*saada*",
+              "to get"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The second and third rows are spelled **exactly the same.** The only difference is how long the *aa* is held — and Estonians hear that difference as clearly as you hear \"bit\" versus \"beat.\" Nothing in ordinary writing helps you."
+        },
+        {
+          "type": "p",
+          "text": "That is why this course uses the **:** mark in the Say it column. *SAH-dah* is the first level, *SAAH-dah* the second, *SAAH:-dah* the third. The colon is **not Estonian spelling** — it exists only in this course, for your ear."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Written the same",
+            "Say it",
+            "Meaning",
+            "Written the same",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*kooli*",
+              "*KOHH-li*",
+              "of the school",
+              "*kooli*",
+              "*KOHH:-li*",
+              "into the school"
+            ],
+            [
+              "*linna*",
+              "*LIN-nah*",
+              "of the town",
+              "*linna*",
+              "*LIN:-nah*",
+              "into the town"
+            ],
+            [
+              "*lauda*",
+              "*LOW-dah*",
+              "of the table",
+              "*lauda*",
+              "*LOW:-dah*",
+              "onto the table"
+            ],
+            [
+              "*aeda*",
+              "*AHE-dah*",
+              "of the garden",
+              "*aeda*",
+              "*AHE:-dah*",
+              "into the garden"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Don't panic — read this",
+          "items": [
+            "Look at the pattern in the table above: **the third level almost always means \"into,\"** and the second level means \"of.\" So you're not memorizing random sounds; you're learning one grammar pattern that happens to be carried by sound length. It is covered in units 7 and 15.",
+            "For the first month, **mistakes in length will not make you misunderstood** in real conversation. Context helps. Estonians are used to hearing foreigners level everything out.",
+            "The one thing you really need to do now: **read aloud**, and exaggerate the **:** mark when you meet it. Your ear will take care of the rest.",
+            "If you can tell *kooli* from *koo:li* within three months, you are ahead of most learners of Estonian."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Sound practice — read aloud now"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*tere*",
+              "*TE-re*",
+              "hello"
+            ],
+            [
+              "*aitäh*",
+              "*IGH-täh*",
+              "thank you"
+            ],
+            [
+              "*jah*",
+              "*yahh*",
+              "yes"
+            ],
+            [
+              "*ei*",
+              "*ay*",
+              "no"
+            ],
+            [
+              "*hea*",
+              "*HE-ah*",
+              "good"
+            ],
+            [
+              "*õun*",
+              "*õwn*",
+              "apple"
+            ],
+            [
+              "*töö*",
+              "*töö*",
+              "work"
+            ],
+            [
+              "*üks*",
+              "*üks*",
+              "one"
+            ],
+            [
+              "*kõik*",
+              "*kõik*",
+              "all"
+            ],
+            [
+              "*sõber*",
+              "*SÕ-ber*",
+              "friend"
+            ],
+            [
+              "*pööning*",
+              "*PÖÖ-ning*",
+              "attic"
+            ],
+            [
+              "*väike*",
+              "*VÄI-ke*",
+              "small"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "If those twelve lines come out of your mouth, you're ready for unit 1. You'll come back to this page several times in the next month — that's exactly what it is for."
+        }
+      ]
+    },
+    {
+      "title": "Hundreds of Estonian words you already know",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Estonian and English are not related at all. One belongs to the Finno-Ugric family, the other to Indo-European — about as far apart as two European languages can be. But both have borrowed heavily from **the same wider European pool**: Estonian from German, Swedish, Russian and, lately, English; English from Latin, French and German. The result is that hundreds of Estonian words stop at forms you can recognize on sight."
+        },
+        {
+          "type": "p",
+          "text": "That means you start Estonian with capital that many learners of other small languages don't have. This page is not for memorizing — it is to convince you that you are not really starting from zero."
+        },
+        {
+          "type": "sub",
+          "text": "Words you only have to recognize"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "Say it",
+            "English",
+            "Eesti keel",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*kohv*",
+              "*kohv*",
+              "**coffee**",
+              "*tee*",
+              "*tehh*",
+              "**tea**"
+            ],
+            [
+              "*apteek*",
+              "*ahp-TEHHK*",
+              "**pharmacy**",
+              "*politsei*",
+              "*po-lit-SAY*",
+              "**police**"
+            ],
+            [
+              "*bensiin*",
+              "*ben-SEEN*",
+              "**gasoline**",
+              "*masin*",
+              "*MAH-sin*",
+              "**machine**"
+            ],
+            [
+              "*kontor*",
+              "*KON-tor*",
+              "**office**",
+              "*kohver*",
+              "*KOH-ver*",
+              "**suitcase**"
+            ],
+            [
+              "*kviitung*",
+              "*KVEE-toong*",
+              "**receipt**",
+              "*kassa*",
+              "*KAHS-sah*",
+              "**cash desk**"
+            ],
+            [
+              "*buss*",
+              "*booss*",
+              "**bus**",
+              "*taksi*",
+              "*TAHK-si*",
+              "**taxi**"
+            ],
+            [
+              "*hotell*",
+              "*ho-TELL*",
+              "**hotel**",
+              "*restoran*",
+              "*res-to-RAHN*",
+              "**restaurant**"
+            ],
+            [
+              "*pank*",
+              "*pahnk*",
+              "**bank**",
+              "*post*",
+              "*post*",
+              "**post**"
+            ],
+            [
+              "*number*",
+              "*NOOM-ber*",
+              "**number**",
+              "*kaart*",
+              "*kaahrt*",
+              "**card**"
+            ],
+            [
+              "*doktor*",
+              "*DOK-tor*",
+              "**doctor**",
+              "*insener*",
+              "*in-se-NER*",
+              "**engineer**"
+            ],
+            [
+              "*direktor*",
+              "*di-REK-tor*",
+              "**director**",
+              "*minister*",
+              "*mi-NIS-ter*",
+              "**minister**"
+            ],
+            [
+              "*büroo*",
+              "*bü-ROHH*",
+              "**bureau**",
+              "*kalender*",
+              "*kah-LEN-der*",
+              "**calendar**"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "One rule that gives you hundreds of words at once"
+        },
+        {
+          "type": "p",
+          "text": "This is not a list but a **pattern**. Estonian words ending in **-tsioon** are almost always the same as English words ending in **-tion**. Once you see the pattern, you can guess words you have never seen."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "English",
+            "Eesti keel",
+            "English"
+          ],
+          "rows": [
+            [
+              "*informa**tsioon***",
+              "informa**tion**",
+              "*organisa**tsioon***",
+              "organiza**tion**"
+            ],
+            [
+              "*situa**tsioon***",
+              "situa**tion**",
+              "*tradi**tsioon***",
+              "tradi**tion**"
+            ],
+            [
+              "*produk**tsioon***",
+              "produc**tion**",
+              "*revolut**sioon***",
+              "revolu**tion**"
+            ],
+            [
+              "*delegat**sioon***",
+              "delega**tion**",
+              "*generat**sioon***",
+              "genera**tion**"
+            ],
+            [
+              "*administrat**sioon***",
+              "administra**tion**",
+              "*kommunikat**sioon***",
+              "communica**tion**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Its cousin patterns: **-teet** = **-ty** (*kvaliteet* → quality, *kvantiteet* → quantity), and **-ism** = **-ism** (*turism* → tourism, *optimism* → optimism). All three came in through the same door, so all three can be trusted."
+        },
+        {
+          "type": "sub",
+          "text": "⚠️ Six words that trick you"
+        },
+        {
+          "type": "p",
+          "text": "The flip side of that luck: some Estonian words **happen** to look like English words, with no connection at all. Learn these six now so you don't misuse them for a month."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "Say it",
+            "Means",
+            "⚠️ Not"
+          ],
+          "rows": [
+            [
+              "*kala*",
+              "*KAH-lah*",
+              "**fish**",
+              "not \"kale\""
+            ],
+            [
+              "*kana*",
+              "*KAH-nah*",
+              "**chicken**",
+              "not \"cane\""
+            ],
+            [
+              "*maja*",
+              "*MAH-yah*",
+              "**house**",
+              "not \"Maya\""
+            ],
+            [
+              "*tuba*",
+              "*TOO-bah*",
+              "**room**",
+              "not the brass instrument"
+            ],
+            [
+              "*kass*",
+              "*kahss*",
+              "**cat**",
+              "not \"cash\" — that's *sularaha*"
+            ],
+            [
+              "*ja*",
+              "*yah*",
+              "**and**",
+              "⚠️ not \"yes\" as in German or Swedish *ja*! \"Yes\" is *jah*."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ That last row is the one that trips people most",
+          "items": [
+            "*ja* = **and**. *jah* = **yes**. To many ears they sound alike (*yah* and *yahh*), and their meanings are far apart. If you know German or Swedish, *ja* is an especially strong trap.",
+            "*Ma olen Budi **ja** ma olen Indoneesiast.* — I'm Budi **and** I'm from Indonesia.",
+            "*Kas sa oled Budi?* — *Jah.* — Are you Budi? — **Yes.**",
+            "The only difference is the *h* at the end, and that letter **is pronounced**. Hold a little breath at the end of *jah* and you're safe."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "And one gift from an unexpected direction"
+        },
+        {
+          "type": "p",
+          "text": "The Estonian word for mother is **ema**, and for aunt **tädi**. English has \"mama\" and \"auntie.\" The first is pure coincidence — languages everywhere build the word for mother out of the easiest sounds a baby can make. The second sounds close enough to \"auntie\" to work. Use both as memory anchors; it works."
+        }
+      ]
+    }
+  ],
+  "back": [
+    {
+      "title": "A1 grammar summary",
+      "blocks": [
+        {
+          "type": "sub",
+          "text": "Fourteen noun endings — and the nine you really use"
+        },
+        {
+          "type": "p",
+          "text": "Estonian has fourteen noun forms. The number is often used to scare beginners, but nine of them already cover all of A1 and the other five rarely come up in conversation. Every ending attaches to the **genitive form**, except in the first two rows."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Estonian name",
+            "Meaning",
+            "Ending",
+            "*maja* (house)",
+            "Unit"
+          ],
+          "rows": [
+            [
+              "*nimetav*",
+              "base (nominative)",
+              "—",
+              "*maja*",
+              "1"
+            ],
+            [
+              "*omastav*",
+              "possessive (genitive)",
+              "**-∅**",
+              "*maja*",
+              "3, 6"
+            ],
+            [
+              "*osastav*",
+              "partitive",
+              "**-t, -d, -a**",
+              "*maja*",
+              "5, 13"
+            ],
+            [
+              "*seesütlev*",
+              "in (inessive)",
+              "**-s**",
+              "*majas*",
+              "2"
+            ],
+            [
+              "*seestütlev*",
+              "out of (elative)",
+              "**-st**",
+              "*majast*",
+              "2"
+            ],
+            [
+              "*sisseütlev*",
+              "into (illative)",
+              "**-sse**",
+              "*majasse*, *majja*",
+              "7"
+            ],
+            [
+              "*alalütlev*",
+              "on, at (adessive)",
+              "**-l**",
+              "*majal*",
+              "2, 4"
+            ],
+            [
+              "*alaltütlev*",
+              "off, from (ablative)",
+              "**-lt**",
+              "*majalt*",
+              "15"
+            ],
+            [
+              "*alaleütlev*",
+              "onto, to (allative)",
+              "**-le**",
+              "*majale*",
+              "10, 15"
+            ],
+            [
+              "*kaasaütlev*",
+              "with (comitative)",
+              "**-ga**",
+              "*majaga*",
+              "15"
+            ],
+            [
+              "*ilmaütlev*",
+              "without (abessive)",
+              "**-ta**",
+              "*majata*",
+              "17"
+            ],
+            [
+              "*olev*",
+              "as (essive)",
+              "**-na**",
+              "*majana*",
+              "6"
+            ],
+            [
+              "*saav*",
+              "becoming, for (translative)",
+              "**-ks**",
+              "*majaks*",
+              "18, 20"
+            ],
+            [
+              "*rajav*",
+              "up to (terminative)",
+              "**-ni**",
+              "*majani*",
+              "8"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Maja* was chosen as the example precisely because it **doesn't shift** — its base and genitive forms are the same. For a word that does shift, swap the stem and the endings stay exactly the same: *jalg* → *jala* → *jalas, jalast, jalasse, jalal, jalalt, jalale, jalaga, jalata, jalana, jalaks, jalani*."
+        },
+        {
+          "type": "sub",
+          "text": "The inside series and the surface series"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Direction",
+            "Inside",
+            "Surface",
+            "For people"
+          ],
+          "rows": [
+            [
+              "at / in",
+              "**-s** *majas*",
+              "**-l** *laual*",
+              "*juures* — *arsti juures*"
+            ],
+            [
+              "from",
+              "**-st** *majast*",
+              "**-lt** *laualt*",
+              "*juurest* — *arsti juurest*"
+            ],
+            [
+              "to / into",
+              "**-sse** *majasse*",
+              "**-le** *lauale*",
+              "*juurde* — *arsti juurde*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Place names ending in **-maa**, markets, streets, squares, floors, islands and workplaces use the surface series. Everything else uses the inside series."
+        },
+        {
+          "type": "sub",
+          "text": "Pronouns — complete"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Base",
+            "Short",
+            "Possessive",
+            "Object",
+            "\"On / at\"",
+            "\"To\""
+          ],
+          "rows": [
+            [
+              "*mina*",
+              "*ma*",
+              "*minu / mu*",
+              "*mind*",
+              "*mul*",
+              "*mulle*"
+            ],
+            [
+              "*sina*",
+              "*sa*",
+              "*sinu / su*",
+              "*sind*",
+              "*sul*",
+              "*sulle*"
+            ],
+            [
+              "*tema*",
+              "*ta*",
+              "*tema / ta*",
+              "*teda*",
+              "*tal*",
+              "*talle*"
+            ],
+            [
+              "*meie*",
+              "*me*",
+              "*meie / me*",
+              "*meid*",
+              "*meil*",
+              "*meile*"
+            ],
+            [
+              "*teie*",
+              "*te*",
+              "*teie / te*",
+              "*teid*",
+              "*teil*",
+              "*teile*"
+            ],
+            [
+              "*nemad*",
+              "*nad*",
+              "*nende*",
+              "*neid*",
+              "*neil*",
+              "*neile*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Tema* is used for both men and women. Estonian does not mark gender in pronouns — there is just one word for \"he\" and \"she.\""
+        },
+        {
+          "type": "sub",
+          "text": "Verbs — three tenses and the negative"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Person",
+            "Present",
+            "Past",
+            "Conditional"
+          ],
+          "rows": [
+            [
+              "*ma*",
+              "*ela**n***",
+              "*ela**sin***",
+              "*ela**ksin***"
+            ],
+            [
+              "*sa*",
+              "*ela**d***",
+              "*ela**sid***",
+              "*ela**ksid***"
+            ],
+            [
+              "*ta*",
+              "*ela**b***",
+              "*ela**s***",
+              "*ela**ks***"
+            ],
+            [
+              "*me*",
+              "*ela**me***",
+              "*ela**sime***",
+              "*ela**ksime***"
+            ],
+            [
+              "*te*",
+              "*ela**te***",
+              "*ela**site***",
+              "*ela**ksite***"
+            ],
+            [
+              "*nad*",
+              "*ela**vad***",
+              "*ela**sid***",
+              "*ela**ksid***"
+            ],
+            [
+              "**negative**",
+              "*ei ela*",
+              "*ei elanud*",
+              "*ei elaks*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**The negation rule:** take the *ma* form, drop the *-n*, and put *ei* in front of it. That form works for all six persons at once — and it is also the imperative for *sa*."
+        },
+        {
+          "type": "sub",
+          "text": "Two base forms of the verb"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Use **-ma** after",
+            "Use **-da** after"
+          ],
+          "rows": [
+            [
+              "*pean* (must)",
+              "*tahan* (want)"
+            ],
+            [
+              "*hakkan* (start)",
+              "*saan* (can)"
+            ],
+            [
+              "*lähen* (go)",
+              "*oskan* (be able to)"
+            ],
+            [
+              "*tulen* (come)",
+              "*võin* (may)"
+            ],
+            [
+              "*õpin* (study)",
+              "*mulle meeldib* (like)"
+            ],
+            [
+              "*harjun* (get used to)",
+              "*on vaja* (need)"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Choosing the object form"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Situation",
+            "Form",
+            "Example"
+          ],
+          "rows": [
+            [
+              "⚠️ After a negative",
+              "**partitive**",
+              "*Ma ei osta raamatut.*"
+            ],
+            [
+              "Action not completed",
+              "**partitive**",
+              "*Ma loen raamatut.*"
+            ],
+            [
+              "Uncountable things",
+              "**partitive**",
+              "*Ma joon vett.*"
+            ],
+            [
+              "After a number > 1",
+              "**partitive**",
+              "*Kaks raamatut.*"
+            ],
+            [
+              "After *palju*, *vähe*",
+              "**partitive**",
+              "*Palju tööd.*"
+            ],
+            [
+              "Action completed",
+              "**genitive**",
+              "*Ma ostan raamatu.*"
+            ],
+            [
+              "Command",
+              "**base**",
+              "*Osta raamat!*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**When in doubt, use the partitive.** You will be right far more often than wrong, and a mistake in that direction almost never blocks understanding."
+        },
+        {
+          "type": "sub",
+          "text": "Consonant gradation — ten patterns"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Strong → weak",
+            "Example",
+            "Strong → weak",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**kk → k**",
+              "*lukk – luku*",
+              "**nd → nn**",
+              "*hind – hinna*"
+            ],
+            [
+              "**pp → p**",
+              "*kapp – kapi*",
+              "**ld → ll**",
+              "*kuld – kulla*"
+            ],
+            [
+              "**tt → t**",
+              "*pott – poti*",
+              "**rd → rr**",
+              "*kord – korra*"
+            ],
+            [
+              "**g → —**",
+              "*jalg – jala*",
+              "**g → j**",
+              "*selg – selja*"
+            ],
+            [
+              "**b → v**",
+              "*leib – leiva*",
+              "**d → —**",
+              "*pood – poe*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Not every word shifts. *Maja*, *sõna*, *päev*, *silm*, *kool* and almost all loanwords ending in a vowel use the same stem for everything."
+        },
+        {
+          "type": "sub",
+          "text": "Question words"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "Meaning",
+            "Eesti keel",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*kes*",
+              "who",
+              "*kus*",
+              "where"
+            ],
+            [
+              "*mis*",
+              "what",
+              "*kust*",
+              "where from"
+            ],
+            [
+              "*kas*",
+              "(yes/no question)",
+              "*kuhu*",
+              "where to"
+            ],
+            [
+              "*miks*",
+              "why",
+              "*millal*",
+              "when"
+            ],
+            [
+              "*kuidas*",
+              "how",
+              "*kui palju*",
+              "how much"
+            ],
+            [
+              "*kumb*",
+              "which (of two)",
+              "*milline*",
+              "which (of more than two)"
+            ],
+            [
+              "*kellega*",
+              "with whom",
+              "*kellele*",
+              "to whom"
+            ],
+            [
+              "*kui kaua*",
+              "how long",
+              "*mitu*",
+              "how many"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The eighty most common verbs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Write each new verb with **all four forms**, the way you write a noun as a pair. The third column is the most important: every present form, every negative and every imperative comes from it."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "-ma form",
+            "-da form",
+            "\"ma\" form",
+            "Past",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*olema*",
+              "*olla*",
+              "*olen*",
+              "*olin*",
+              "to be"
+            ],
+            [
+              "*minema*",
+              "*minna*",
+              "*lähen*",
+              "*läksin*",
+              "to go"
+            ],
+            [
+              "*tulema*",
+              "*tulla*",
+              "*tulen*",
+              "*tulin*",
+              "to come"
+            ],
+            [
+              "*tegema*",
+              "*teha*",
+              "*teen*",
+              "*tegin*",
+              "to do, to make"
+            ],
+            [
+              "*saama*",
+              "*saada*",
+              "*saan*",
+              "*sain*",
+              "to get, can"
+            ],
+            [
+              "*nägema*",
+              "*näha*",
+              "*näen*",
+              "*nägin*",
+              "to see"
+            ],
+            [
+              "*sööma*",
+              "*süüa*",
+              "*söön*",
+              "*sõin*",
+              "to eat"
+            ],
+            [
+              "*jooma*",
+              "*juua*",
+              "*joon*",
+              "*jõin*",
+              "to drink"
+            ],
+            [
+              "*tahtma*",
+              "*tahta*",
+              "*tahan*",
+              "*tahtsin*",
+              "to want"
+            ],
+            [
+              "*teadma*",
+              "*teada*",
+              "*tean*",
+              "*teadsin*",
+              "to know"
+            ],
+            [
+              "*rääkima*",
+              "*rääkida*",
+              "*räägin*",
+              "*rääkisin*",
+              "to speak"
+            ],
+            [
+              "*ütlema*",
+              "*öelda*",
+              "*ütlen*",
+              "*ütlesin*",
+              "to say"
+            ],
+            [
+              "*küsima*",
+              "*küsida*",
+              "*küsin*",
+              "*küsisin*",
+              "to ask"
+            ],
+            [
+              "*vastama*",
+              "*vastata*",
+              "*vastan*",
+              "*vastasin*",
+              "to answer"
+            ],
+            [
+              "*lugema*",
+              "*lugeda*",
+              "*loen*",
+              "*lugesin*",
+              "to read"
+            ],
+            [
+              "*kirjutama*",
+              "*kirjutada*",
+              "*kirjutan*",
+              "*kirjutasin*",
+              "to write"
+            ],
+            [
+              "*kuulama*",
+              "*kuulata*",
+              "*kuulan*",
+              "*kuulasin*",
+              "to listen"
+            ],
+            [
+              "*kuulma*",
+              "*kuulda*",
+              "*kuulen*",
+              "*kuulsin*",
+              "to hear"
+            ],
+            [
+              "*vaatama*",
+              "*vaadata*",
+              "*vaatan*",
+              "*vaatasin*",
+              "to watch"
+            ],
+            [
+              "*õppima*",
+              "*õppida*",
+              "*õpin*",
+              "*õppisin*",
+              "to study, to learn"
+            ],
+            [
+              "*õpetama*",
+              "*õpetada*",
+              "*õpetan*",
+              "*õpetasin*",
+              "to teach"
+            ],
+            [
+              "*töötama*",
+              "*töötada*",
+              "*töötan*",
+              "*töötasin*",
+              "to work"
+            ],
+            [
+              "*elama*",
+              "*elada*",
+              "*elan*",
+              "*elasin*",
+              "to live"
+            ],
+            [
+              "*magama*",
+              "*magada*",
+              "*magan*",
+              "*magasin*",
+              "to sleep"
+            ],
+            [
+              "*ärkama*",
+              "*ärgata*",
+              "*ärkan*",
+              "*ärkasin*",
+              "to wake up"
+            ],
+            [
+              "*ostma*",
+              "*osta*",
+              "*ostan*",
+              "*ostsin*",
+              "to buy"
+            ],
+            [
+              "*müüma*",
+              "*müüa*",
+              "*müün*",
+              "*müüsin*",
+              "to sell"
+            ],
+            [
+              "*maksma*",
+              "*maksta*",
+              "*maksan*",
+              "*maksin*",
+              "to pay"
+            ],
+            [
+              "*võtma*",
+              "*võtta*",
+              "*võtan*",
+              "*võtsin*",
+              "to take"
+            ],
+            [
+              "*andma*",
+              "*anda*",
+              "*annan*",
+              "*andsin*",
+              "to give"
+            ],
+            [
+              "*tooma*",
+              "*tuua*",
+              "*toon*",
+              "*tõin*",
+              "to bring"
+            ],
+            [
+              "*viima*",
+              "*viia*",
+              "*viin*",
+              "*viisin*",
+              "to take (someone), to deliver"
+            ],
+            [
+              "*panema*",
+              "*panna*",
+              "*panen*",
+              "*panin*",
+              "to put"
+            ],
+            [
+              "*jääma*",
+              "*jääda*",
+              "*jään*",
+              "*jäin*",
+              "to stay, to remain"
+            ],
+            [
+              "*leidma*",
+              "*leida*",
+              "*leian*",
+              "*leidsin*",
+              "to find"
+            ],
+            [
+              "*otsima*",
+              "*otsida*",
+              "*otsin*",
+              "*otsisin*",
+              "to look for"
+            ],
+            [
+              "*ootama*",
+              "*oodata*",
+              "*ootan*",
+              "*ootasin*",
+              "to wait"
+            ],
+            [
+              "*aitama*",
+              "*aidata*",
+              "*aitan*",
+              "*aitasin*",
+              "to help"
+            ],
+            [
+              "*armastama*",
+              "*armastada*",
+              "*armastan*",
+              "*armastasin*",
+              "to love"
+            ],
+            [
+              "*meeldima*",
+              "*meeldida*",
+              "*meeldib*",
+              "*meeldis*",
+              "to be liked"
+            ],
+            [
+              "*tundma*",
+              "*tunda*",
+              "*tunnen*",
+              "*tundsin*",
+              "to feel, to know (a person)"
+            ],
+            [
+              "*mäletama*",
+              "*mäletada*",
+              "*mäletan*",
+              "*mäletasin*",
+              "to remember"
+            ],
+            [
+              "*unustama*",
+              "*unustada*",
+              "*unustan*",
+              "*unustasin*",
+              "to forget"
+            ],
+            [
+              "*mõtlema*",
+              "*mõelda*",
+              "*mõtlen*",
+              "*mõtlesin*",
+              "to think"
+            ],
+            [
+              "*arvama*",
+              "*arvata*",
+              "*arvan*",
+              "*arvasin*",
+              "to suppose"
+            ],
+            [
+              "*uskuma*",
+              "*uskuda*",
+              "*usun*",
+              "*uskusin*",
+              "to believe"
+            ],
+            [
+              "*lootma*",
+              "*loota*",
+              "*loodan*",
+              "*lootsin*",
+              "to hope"
+            ],
+            [
+              "*kartma*",
+              "*karta*",
+              "*kardan*",
+              "*kartsin*",
+              "to fear"
+            ],
+            [
+              "*oskama*",
+              "*osata*",
+              "*oskan*",
+              "*oskasin*",
+              "to be able to"
+            ],
+            [
+              "*võima*",
+              "*võida*",
+              "*võin*",
+              "*võisin*",
+              "may, to be allowed"
+            ],
+            [
+              "*pidama*",
+              "*pidada*",
+              "*pean*",
+              "*pidin*",
+              "must, to have to"
+            ],
+            [
+              "*vajama*",
+              "*vajada*",
+              "*vajan*",
+              "*vajasin*",
+              "to need"
+            ],
+            [
+              "*hakkama*",
+              "*hakata*",
+              "*hakkan*",
+              "*hakkasin*",
+              "to start"
+            ],
+            [
+              "*algama*",
+              "*alata*",
+              "*algab*",
+              "*algas*",
+              "to begin (itself)"
+            ],
+            [
+              "*lõpetama*",
+              "*lõpetada*",
+              "*lõpetan*",
+              "*lõpetasin*",
+              "to finish"
+            ],
+            [
+              "*kasutama*",
+              "*kasutada*",
+              "*kasutan*",
+              "*kasutasin*",
+              "to use"
+            ],
+            [
+              "*sobima*",
+              "*sobida*",
+              "*sobib*",
+              "*sobis*",
+              "to suit, to fit"
+            ],
+            [
+              "*kandma*",
+              "*kanda*",
+              "*kannan*",
+              "*kandsin*",
+              "to wear, to carry"
+            ],
+            [
+              "*sõitma*",
+              "*sõita*",
+              "*sõidan*",
+              "*sõitsin*",
+              "to ride, to drive"
+            ],
+            [
+              "*käima*",
+              "*käia*",
+              "*käin*",
+              "*käisin*",
+              "to go (regularly)"
+            ],
+            [
+              "*kõndima*",
+              "*kõndida*",
+              "*kõnnin*",
+              "*kõndisin*",
+              "to walk"
+            ],
+            [
+              "*jooksma*",
+              "*joosta*",
+              "*jooksen*",
+              "*jooksin*",
+              "to run"
+            ],
+            [
+              "*ujuma*",
+              "*ujuda*",
+              "*ujun*",
+              "*ujusin*",
+              "to swim"
+            ],
+            [
+              "*mängima*",
+              "*mängida*",
+              "*mängin*",
+              "*mängisin*",
+              "to play"
+            ],
+            [
+              "*helistama*",
+              "*helistada*",
+              "*helistan*",
+              "*helistasin*",
+              "to phone"
+            ],
+            [
+              "*kutsuma*",
+              "*kutsuda*",
+              "*kutsun*",
+              "*kutsusin*",
+              "to invite"
+            ],
+            [
+              "*kohtuma*",
+              "*kohtuda*",
+              "*kohtun*",
+              "*kohtusin*",
+              "to meet"
+            ],
+            [
+              "*tellima*",
+              "*tellida*",
+              "*tellin*",
+              "*tellisin*",
+              "to order"
+            ],
+            [
+              "*soovima*",
+              "*soovida*",
+              "*soovin*",
+              "*soovisin*",
+              "to wish"
+            ],
+            [
+              "*avama*",
+              "*avada*",
+              "*avan*",
+              "*avasin*",
+              "to open"
+            ],
+            [
+              "*sulgema*",
+              "*sulgeda*",
+              "*sulen*",
+              "*sulgesin*",
+              "to close"
+            ],
+            [
+              "*asuma*",
+              "*asuda*",
+              "*asub*",
+              "*asus*",
+              "to be located"
+            ],
+            [
+              "*jõudma*",
+              "*jõuda*",
+              "*jõuan*",
+              "*jõudsin*",
+              "to arrive, to reach"
+            ],
+            [
+              "*väljuma*",
+              "*väljuda*",
+              "*väljun*",
+              "*väljusin*",
+              "to depart, to leave"
+            ],
+            [
+              "*muretsema*",
+              "*muretseda*",
+              "*muretsen*",
+              "*muretsesin*",
+              "to worry"
+            ],
+            [
+              "*harjuma*",
+              "*harjuda*",
+              "*harjun*",
+              "*harjusin*",
+              "to get used to"
+            ],
+            [
+              "*juhtuma*",
+              "*juhtuda*",
+              "*juhtub*",
+              "*juhtus*",
+              "to happen"
+            ],
+            [
+              "*sadama*",
+              "*sadada*",
+              "*sajab*",
+              "*sadas*",
+              "to fall (rain)"
+            ],
+            [
+              "*valutama*",
+              "*valutada*",
+              "*valutab*",
+              "*valutas*",
+              "to hurt"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "How to use this list",
+          "items": [
+            "**Don't memorize it all at once.** It's a reference, not reading. Eighty rows don't fit in one sitting.",
+            "**The third column is the key.** From the *ma* form you get the other five present forms, the whole negative (drop *-n*, add *ei*), and the imperative for *sa*.",
+            "⚠️ **Watch the rows where the second and third columns are far apart** — *minema/lähen*, *tegema/teen*, *sööma/söön*, *ütlema/öelda*, *pidama/pean*. Those are the ones you really need to memorize; the rest can be guessed.",
+            "The last four rows use the \"he/she/it\" form because these verbs have no personal subject: *sajab* (it rains), *valutab* (it hurts), *juhtub* (it happens), *asub* (it is located)."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Congratulations. You've reached the last page. *Edu eesti keele õppimisel!* (Good luck learning Estonian!)"
+        }
+      ]
+    }
+  ],
+  "line_height": "1.42"
+}

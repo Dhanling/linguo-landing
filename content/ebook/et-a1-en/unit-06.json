@@ -1,0 +1,631 @@
+{
+  "title": "Why the word keeps changing",
+  "title_target": "Astmevaheldus",
+  "goal": "Face head-on the pattern that makes more beginners give up than any other: one word that shows up in two different shapes. After this unit it stops feeling random.",
+  "bekal": [
+    "recognize the ten most common consonant gradation patterns",
+    "memorize nouns as **pairs**, not as a single form",
+    "name places in town and say you are there"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Vanalinnas jalutades",
+      "intro": "Budi and Kerli are walking through the Old Town. Budi points at two signs that confuse him.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Kerli, ma ei saa aru. Siin on kirjas \"pood\", aga seal \"poe\".",
+          "id": "Kerli, I don't get it. Here it says \"pood\", but over there \"poe\".",
+          "literal": "Kerli, I not can-I understand. here is writing-in \"shop\", but there \"shop-GEN\"."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Aa, see on astmevaheldus. Üks sõna, kaks kuju.",
+          "id": "Ah, that's grade alternation. One word, two shapes.",
+          "literal": "ah, that is-it grade-alternation. one word, two shape."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kaks kuju? Miks?",
+          "id": "Two shapes? Why?",
+          "literal": "two shape? why?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "\"Pood\" on põhikuju. \"Poe\" on omastav — \"milik toko\".",
+          "id": "\"Pood\" is the basic form. \"Poe\" is the genitive — \"of the shop\".",
+          "literal": "\"shop\" is-it basic-shape. \"shop-GEN\" is-it genitive — \"of the shop\"."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja kõik sõnad teevad nii?",
+          "id": "And do all words do that?",
+          "literal": "and all word-PLURAL do-they so?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ei, ainult osa. \"Maja\" jääb alati \"maja\".",
+          "id": "No, only some. \"Maja\" always stays \"maja\".",
+          "literal": "no, only part. \"house\" stays-it always \"house\"."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kuidas ma tean, millised?",
+          "id": "How do I know which ones?",
+          "literal": "how I know-I, which-PLURAL?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ausalt? Sa ei tea. Sa õpid iga sõna paarina.",
+          "id": "Honestly? You don't. You learn each word as a pair.",
+          "literal": "honestly? you not know. you learn-you each word pair-as."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Paarina?",
+          "id": "As a pair?",
+          "literal": "pair-as?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Jah: \"jalg – jala\", \"leib – leiva\", \"tuba – toa\".",
+          "id": "Yes: \"jalg – jala\", \"leib – leiva\", \"tuba – toa\".",
+          "literal": "yes: \"foot – foot-GEN\", \"bread – bread-GEN\", \"room – room-GEN\"."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "See on nagu saksa keeles der, die, das.",
+          "id": "That's like der, die, das in German.",
+          "literal": "that is-it like German language-in der, die, das."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Täpselt nii. Ja hea uudis: omastav kannab kõiki teisi lõppe.",
+          "id": "Exactly. And the good news: the genitive carries all the other endings.",
+          "literal": "exactly so. and good news: genitive carries-it all-PARTITIVE other-PARTITIVE ending-PLURAL-PARTITIVE."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nii et kui ma tean \"jala\", siis ma tean ka \"jalas\" ja \"jalast\"?",
+          "id": "So if I know \"jala\", I also know \"jalas\" and \"jalast\"?",
+          "literal": "so that if I know-I \"foot-GEN\", then I know-I also \"foot-in\" and \"foot-from\"?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Just nimelt. Üks paar, kaksteist vormi.",
+          "id": "Precisely. One pair, twelve forms.",
+          "literal": "precisely namely. one pair, twelve form-PARTITIVE."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Siis see ei olegi nii hull.",
+          "id": "Then this isn't so bad after all.",
+          "literal": "then this not is-even so crazy."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ei olegi. Lähme nüüd poodi — mul on leiba vaja.",
+          "id": "It isn't. Now let's go to the shop — I need bread.",
+          "literal": "not is-even. go-we now shop-to — me-at is bread-PARTITIVE need."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "\"Poodi\"? Aga sa ütlesid \"poe\"!",
+          "id": "\"Poodi\"? But you just said \"poe\"!",
+          "literal": "\"shop-to\"? but you said-you \"shop-GEN\"!"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ha! See on juba järgmine peatükk.",
+          "id": "Ha! That's already the next chapter.",
+          "literal": "ha! that is-it already next chapter."
+        }
+      ],
+      "notes": [
+        "**Astmevaheldus** literally means \"grade alternation\" (in English, *consonant gradation*). The name is scary, the content is simple: some Estonian nouns and verbs have **two stems** — one strong, one weak — and which one appears depends on the ending attached.",
+        "**Omastav** is the Estonian name for the genitive (\"of\" / possessive) form. It is the most important form in all of Estonian, and the reason is in the next note.",
+        "⚠️ **The genitive is the stepping stone to almost every other form.** *Jalg* (foot) → *jala* (of the foot) → *jalas* (in the foot), *jalast* (from the foot), *jalale* (onto the foot), *jalaga* (with the foot). Ten endings attach to the same stem. So memorizing the pair isn't extra work — it's a shortcut.",
+        "**Maja jääb alati maja.** (\"Maja always stays maja.\") Not every word alternates. Words like *maja*, *sõna*, *päev*, *silm*, *kool* use the same stem for everything. A large part of your basic vocabulary turns out to be safe."
+      ],
+      "grammars": [
+        {
+          "title": "The ten gradation patterns you'll meet most often",
+          "body": [
+            "This table is **not for memorizing**. Read it once, then come back to it when you meet a word that looks odd. What you really memorize is the word pairs, not the rules."
+          ],
+          "table": {
+            "head": [
+              "Strong",
+              "Weak",
+              "Basic form",
+              "Genitive form",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**kk**",
+                "**k**",
+                "*lukk*",
+                "*lu**k**u*",
+                "key, lock"
+              ],
+              [
+                "**pp**",
+                "**p**",
+                "*kapp*",
+                "*ka**p**i*",
+                "cupboard"
+              ],
+              [
+                "**tt**",
+                "**t**",
+                "*pott*",
+                "*po**t**i*",
+                "pot"
+              ],
+              [
+                "**g**",
+                "— disappears",
+                "*jalg*",
+                "*jala*",
+                "foot, leg"
+              ],
+              [
+                "**b**",
+                "**v**",
+                "*leib*",
+                "*lei**v**a*",
+                "bread"
+              ],
+              [
+                "**d**",
+                "— disappears",
+                "*pood*",
+                "*poe*",
+                "shop"
+              ],
+              [
+                "**nd**",
+                "**nn**",
+                "*hind*",
+                "*hi**nn**a*",
+                "price"
+              ],
+              [
+                "**ld**",
+                "**ll**",
+                "*kuld*",
+                "*ku**ll**a*",
+                "gold"
+              ],
+              [
+                "**rd**",
+                "**rr**",
+                "*kord*",
+                "*ko**rr**a*",
+                "time (occasion)"
+              ],
+              [
+                "**g**",
+                "**j**",
+                "*selg*",
+                "*sel**j**a*",
+                "back"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that the direction of the weakening is always the same: **basic form strong, genitive weak**. Never the other way around. So if you see two shapes of one word, the \"heavier\" one is almost always the basic form.",
+            "Some words go further than just weakening a consonant — the vowels change too: *tuba → toa*, *nägu → näo*, *lugu → loo*, *jõgi → jõe*, *mägi → mäe*. This group is small but contains frequently used words, so memorize them straight away as pairs.",
+            "⚠️ There is also alternation in the opposite direction in some verbs — the basic form is weak and the form with an ending is strong. You don't need to think about it now; at A1 the noun pattern covers almost every need."
+          ]
+        },
+        {
+          "title": "One pair, twelve forms",
+          "body": [
+            "This is the real reason this unit exists. Take one word and see how many forms you get for free once you know its genitive."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "*jalg* (foot)",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "basic",
+                "*jalg*",
+                "foot, leg"
+              ],
+              [
+                "genitive",
+                "**jala**",
+                "of the foot"
+              ],
+              [
+                "partitive",
+                "*jalga*",
+                "some foot"
+              ],
+              [
+                "in (inessive)",
+                "**jala**s",
+                "in the foot"
+              ],
+              [
+                "out of (elative)",
+                "**jala**st",
+                "out of the foot"
+              ],
+              [
+                "into (illative)",
+                "**jala**sse",
+                "into the foot"
+              ],
+              [
+                "on (adessive)",
+                "**jala**l",
+                "on the foot"
+              ],
+              [
+                "off, from (ablative)",
+                "**jala**lt",
+                "off the foot"
+              ],
+              [
+                "onto, to (allative)",
+                "**jala**le",
+                "onto the foot"
+              ],
+              [
+                "with",
+                "**jala**ga",
+                "with the foot"
+              ],
+              [
+                "without",
+                "**jala**ta",
+                "without a foot"
+              ],
+              [
+                "as",
+                "**jala**na",
+                "as a foot"
+              ]
+            ]
+          },
+          "after": [
+            "Ten of the twelve rows use the same stem: **jala-**. You memorize one thing and get ten. That's a great deal, and it's why Estonian dictionaries always list the genitive next to the basic form.",
+            "The two rows that don't follow are the **basic form** and the **partitive** — both use the strong stem. For now just know that; both are covered in Unit 13.",
+            "Practical advice: **when you write a new word in your notebook, always write two forms.** *jalg – jala*, not just *jalg*. This habit cuts months of confusion down the road."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Places in town — with their pairs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Basic form",
+            "Genitive",
+            "\"In/at\"",
+            "English"
+          ],
+          "rows": [
+            [
+              "*pood*",
+              "*poe*",
+              "*poes*",
+              "shop"
+            ],
+            [
+              "*turg*",
+              "*turu*",
+              "⚠️ *turul*",
+              "market"
+            ],
+            [
+              "*pank*",
+              "*panga*",
+              "*pangas*",
+              "bank"
+            ],
+            [
+              "*apteek*",
+              "*apteegi*",
+              "*apteegis*",
+              "pharmacy"
+            ],
+            [
+              "*kohvik*",
+              "*kohviku*",
+              "*kohvikus*",
+              "café"
+            ],
+            [
+              "*restoran*",
+              "*restorani*",
+              "*restoranis*",
+              "restaurant"
+            ],
+            [
+              "*kool*",
+              "*kooli*",
+              "*koolis*",
+              "school"
+            ],
+            [
+              "*ülikool*",
+              "*ülikooli*",
+              "*ülikoolis*",
+              "university"
+            ],
+            [
+              "*raamatukogu*",
+              "*raamatukogu*",
+              "*raamatukogus*",
+              "library"
+            ],
+            [
+              "*park*",
+              "*pargi*",
+              "⚠️ *pargis*",
+              "park"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at the third column: **the \"-s\" ending attaches to the genitive**, not the basic form. *Apteek* → *apteegi* → *apteegi**s***. If you try attaching it to the basic form (\"apteekis\"), it comes out wrong. That's why the second column is there."
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Three places that use -l, not -s",
+          "items": [
+            "*turul* (at the market), *tänaval* (on the street), *väljakul* (on the square).",
+            "The reason is the same as the *-maa* rule in Unit 2: all three count as **open surfaces**, not enclosed rooms. You stand **on** the street, not inside it.",
+            "The same pattern applies to *põrandal* (on the floor), *laual* (on the table), *maal* (in the countryside), *tööl* (at work).",
+            "⚠️ *Tööl* is worth memorizing now: *Ma olen tööl* = \"I'm at work\". One of the sentences adult Estonians use most often."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pairs you must have",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These twenty words appear on almost every page of Estonian. Memorizing their pairs now saves an enormous amount of time later."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pair",
+            "Meaning",
+            "Pair",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*jalg – jala*",
+              "foot, leg",
+              "*käsi – käe*",
+              "hand"
+            ],
+            [
+              "*silm – silma*",
+              "eye",
+              "*pea – pea*",
+              "head"
+            ],
+            [
+              "*leib – leiva*",
+              "dark rye bread",
+              "*vesi – vee*",
+              "water"
+            ],
+            [
+              "*tuba – toa*",
+              "room",
+              "*maja – maja*",
+              "house"
+            ],
+            [
+              "*pood – poe*",
+              "shop",
+              "*laud – laua*",
+              "table"
+            ],
+            [
+              "*hind – hinna*",
+              "price",
+              "*kord – korra*",
+              "time (occasion)"
+            ],
+            [
+              "*sild – silla*",
+              "bridge",
+              "*rand – ranna*",
+              "beach"
+            ],
+            [
+              "*sõber – sõbra*",
+              "friend",
+              "*vend – venna*",
+              "brother"
+            ],
+            [
+              "*õde – õe*",
+              "sister",
+              "*poeg – poja*",
+              "son"
+            ],
+            [
+              "*laps – lapse*",
+              "child",
+              "*inimene – inimese*",
+              "person"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Words that never change — relax",
+          "items": [
+            "*maja – maja* (house), *sõna – sõna* (word), *päev – päeva* (day), *silm – silma* (eye).",
+            "*kino – kino*, *raadio – raadio*, *auto – auto*, *foto – foto* — almost all loanwords ending in a vowel are safe.",
+            "Words ending in *-mine*, *-us*, *-lane*, *-kond* are also safe: *õppimine*, *küsimus*, *eestlane*, *perekond*.",
+            "This is a large part of your vocabulary. Consonant gradation feels threatening because it hits the most frequently used words — not because it hits many words."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "et": "pood",
+      "baca": "pohhd",
+      "en": "shop (gen. poe)"
+    },
+    {
+      "et": "turg",
+      "baca": "toorg",
+      "en": "market (gen. turu)"
+    },
+    {
+      "et": "pank",
+      "baca": "pahnk",
+      "en": "bank (gen. panga)"
+    },
+    {
+      "et": "apteek",
+      "baca": "ahp-TEHHK",
+      "en": "pharmacy (gen. apteegi)"
+    },
+    {
+      "et": "kool",
+      "baca": "kohhl",
+      "en": "school (gen. kooli)"
+    },
+    {
+      "et": "ülikool",
+      "baca": "Ü-li-kohhl",
+      "en": "university"
+    },
+    {
+      "et": "raamatukogu",
+      "baca": "RAAH-mah-too-ko-goo",
+      "en": "library"
+    },
+    {
+      "et": "haigla",
+      "baca": "HIGHG-lah",
+      "en": "hospital"
+    },
+    {
+      "et": "kirik",
+      "baca": "KI-rik",
+      "en": "church (gen. kiriku)"
+    },
+    {
+      "et": "jaam",
+      "baca": "yaahm",
+      "en": "station (gen. jaama)"
+    },
+    {
+      "et": "park",
+      "baca": "pahrk",
+      "en": "park (gen. pargi)"
+    },
+    {
+      "et": "tänav",
+      "baca": "TÄ-nahv",
+      "en": "street (gen. tänava)"
+    },
+    {
+      "et": "väljak",
+      "baca": "VÄL-yahk",
+      "en": "square"
+    },
+    {
+      "et": "töö",
+      "baca": "töö",
+      "en": "work, job"
+    },
+    {
+      "et": "jalg",
+      "baca": "yahlg",
+      "en": "foot (gen. jala)"
+    },
+    {
+      "et": "käsi",
+      "baca": "KÄ-si",
+      "en": "hand (gen. käe)"
+    },
+    {
+      "et": "hind",
+      "baca": "hind",
+      "en": "price (gen. hinna)"
+    },
+    {
+      "et": "kord",
+      "baca": "kord",
+      "en": "time (gen. korra)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the genitive (omastav) of these words.",
+      "items": [
+        "jalg",
+        "leib",
+        "pood",
+        "hind",
+        "kord",
+        "sild"
+      ]
+    },
+    {
+      "prompt": "Add the ending -s (\"in\") to the genitive form.",
+      "items": [
+        "apteek",
+        "pank",
+        "kohvik",
+        "kool",
+        "kirik",
+        "hotell"
+      ]
+    },
+    {
+      "prompt": "Translate into Estonian.",
+      "items": [
+        "I'm at the shop.",
+        "He/she is at the bank.",
+        "We are at school.",
+        "I'm at work.",
+        "The price is high.",
+        "I need bread."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "olen / ma / poes",
+        "sõna / kaks / üks / kuju",
+        "on / hind / see / kallis",
+        "vaja / mul / leiba / on",
+        "jääb / maja / alati / maja"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "jala — leiva — poe — hinna — korra — silla",
+    "1": "apteegis — pangas — kohvikus — koolis — kirikus — hotellis",
+    "2": "Ma olen poes. — Ta on pangas. — Me oleme koolis. — Ma olen tööl. — Hind on kallis. — Mul on leiba vaja.",
+    "3": "Ma olen poes. — Üks sõna, kaks kuju. — See hind on kallis. — Mul on leiba vaja. — Maja jääb alati maja."
+  }
+}

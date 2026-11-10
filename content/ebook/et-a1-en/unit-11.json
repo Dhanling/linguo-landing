@@ -1,0 +1,528 @@
+{
+  "title": "Saying no — one word for everything",
+  "title_target": "Eitus — ei",
+  "goal": "Master Estonian negation, which turns out to be **simpler than English** and far simpler than Finnish.",
+  "bekal": [
+    "negate any verb for any person with a single word: *ei*",
+    "use *ära* to forbid and *mitte* to negate things other than verbs",
+    "use the negative words *midagi*, *keegi*, *kunagi*, *kuskil*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kadunud telefon",
+      "intro": "In the campus cafeteria. Budi is patting his pockets in a panic.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Kerli, ma ei leia oma telefoni.",
+          "id": "Kerli, I can't find my phone.",
+          "literal": "Kerli, I not find own phone-part."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Kas see ei ole kotis?",
+          "id": "Isn't it in your bag?",
+          "literal": "question it not is bag-in?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ei ole. Ma ei näe seda kuskil.",
+          "id": "No. I don't see it anywhere.",
+          "literal": "not is. I not see it-part anywhere."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ära muretse. Helistame sellele.",
+          "id": "Don't panic. Let's call it.",
+          "literal": "don't worry. call-we it-to."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hea mõte. Aga ma ei mäleta numbrit.",
+          "id": "Good idea. But I don't remember the number.",
+          "literal": "good thought. but I not remember number-part."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Sa ei mäleta oma numbrit?",
+          "id": "You don't remember your own number?",
+          "literal": "you not remember own number-part?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ei mäleta. Keegi ei mäleta enam numbreid.",
+          "id": "No. Nobody remembers numbers anymore.",
+          "literal": "not remember. anyone not remember anymore numbers-part."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "See on tõsi. Mina ka ei mäleta.",
+          "id": "That's true. I don't either.",
+          "literal": "that is true. I also not remember."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Oota. Ma tunnen midagi taskus.",
+          "id": "Wait. I feel something in my pocket.",
+          "literal": "wait. I feel something pocket-in."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ära ütle.",
+          "id": "Don't tell me.",
+          "literal": "don't say."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jah... see on siin. Kogu aeg.",
+          "id": "Yes... it's here. The whole time.",
+          "literal": "yes... it is here. whole time."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Sa ei ole esimene ega viimane.",
+          "id": "You're not the first and not the last.",
+          "literal": "you not are first nor last."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ma ei räägi sellest kellelegi.",
+          "id": "I'm not telling anyone about this.",
+          "literal": "I not speak it-from anyone-to."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Mina ei luba midagi.",
+          "id": "I'm not promising anything.",
+          "literal": "I not promise anything."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sa oled halb sõber!",
+          "id": "You're a bad friend!",
+          "literal": "you are bad friend!"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ei ole. Ma olen aus sõber.",
+          "id": "No, I'm not. I'm an honest friend.",
+          "literal": "not is. I am honest friend."
+        }
+      ],
+      "notes": [
+        "**Count how many times *ei* appears in this dialogue, then notice that it never changes.** *Ma ei leia*, *sa ei mäleta*, *keegi ei mäleta*, *mina ei luba* — one word for six people. Compare Finnish, which has six different forms (*en, et, ei, emme, ette, eivät*).",
+        "⚠️ **The verb doesn't change for the person either.** *Ei mäleta* works for I, you, he/she, we, you (plural) and they. So the Estonian negative actually takes **less memorizing** than the ordinary form.",
+        "**Ei ole = pole.** Both are correct and equally common. *Pole* is slightly more casual. *Mul pole aega* = *mul ei ole aega* = I don't have time.",
+        "**Ära muretse, ära ütle.** *Ära* is used only to forbid. It **can't** be replaced by *ei*: \"ei muretse\" means \"doesn't worry\", not \"don't worry\"."
+      ],
+      "grammars": [
+        {
+          "title": "Ei — and a one-line rule for forming it",
+          "body": [
+            "Negating an Estonian verb takes two steps, and the second step has a perfect shortcut."
+          ],
+          "table": {
+            "head": [
+              "\"ma\" form",
+              "Drop -n",
+              "Negative",
+              "Works for"
+            ],
+            "rows": [
+              [
+                "*ma ole**n***",
+                "*ole*",
+                "*ei ole*",
+                "I, you, he/she, we, you (pl.), they"
+              ],
+              [
+                "*ma lähe**n***",
+                "*lähe*",
+                "*ei lähe*",
+                "everyone"
+              ],
+              [
+                "*ma tea**n***",
+                "*tea*",
+                "*ei tea*",
+                "everyone"
+              ],
+              [
+                "*ma söö**n***",
+                "*söö*",
+                "*ei söö*",
+                "everyone"
+              ],
+              [
+                "*ma tee**n***",
+                "*tee*",
+                "*ei tee*",
+                "everyone"
+              ],
+              [
+                "*ma räägi**n***",
+                "*räägi*",
+                "*ei räägi*",
+                "everyone"
+              ],
+              [
+                "*ma loe**n***",
+                "*loe*",
+                "*ei loe*",
+                "everyone"
+              ],
+              [
+                "*ma taha**n***",
+                "*taha*",
+                "*ei taha*",
+                "everyone"
+              ]
+            ]
+          },
+          "after": [
+            "**The rule: take the *ma* form, drop the *-n*, put *ei* in front.** There are no exceptions to remember at A1. This is one of the cleanest rules in the whole Estonian language.",
+            "This shortcut is one more reason to memorize the *ma* form of every new verb, as recommended in unit 10. That one form gives you the other five **and** the whole negative.",
+            "⚠️ **After a negative, the object switches to the partitive.** *Ma loen raamatu* (I read the book to the end) → *ma ei loe raamatu**t***. *Mul on auto* → *mul ei ole auto**t***. This rule is covered in full in unit 13; for now, just notice that the ending shifts."
+          ]
+        },
+        {
+          "title": "Three other negators, and when to use each",
+          "body": [
+            "*Ei* handles verbs. The three words below handle the rest."
+          ],
+          "table": {
+            "head": [
+              "Word",
+              "Job",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**ei**",
+                "negates a verb",
+                "*Ma ei tule.*",
+                "I'm not coming."
+              ],
+              [
+                "**ära**",
+                "forbids (one person)",
+                "*Ära tule!*",
+                "Don't come!"
+              ],
+              [
+                "**ärge**",
+                "forbids (several/polite)",
+                "*Ärge tulge!*",
+                "Don't come!"
+              ],
+              [
+                "**mitte**",
+                "negates anything but a verb",
+                "*Mitte täna.*",
+                "Not today."
+              ],
+              [
+                "**ega**",
+                "\"and not\", \"nor\"",
+                "*Ei täna ega homme.*",
+                "Neither today nor tomorrow."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Ära and ei can't be swapped.** *Sa ei tule* = you aren't coming (a statement). *Ära tule* = don't come (a command). English separates them too — \"you don't\" versus \"don't!\" — so your instinct is already right; only the words are new.",
+            "*Mitte* is used when what you negate isn't a verb: *mitte mina* (not me), *mitte siin* (not here), *mitte kunagi* (never), *mitte veel* (not yet).",
+            "Prohibitions you'll often see on signs: *Ära suitseta!* (No smoking), *Ärge puudutage!* (Do not touch), *Sissepääs keelatud* (No entry)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Negative words — and the double negative",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Positive",
+            "Negative",
+            "Example",
+            "English"
+          ],
+          "rows": [
+            [
+              "*keegi* (someone)",
+              "*mitte keegi*",
+              "*Keegi ei tea.*",
+              "Nobody knows."
+            ],
+            [
+              "*midagi* (something)",
+              "*mitte midagi*",
+              "*Ma ei tea midagi.*",
+              "I don't know anything."
+            ],
+            [
+              "*kunagi* (ever)",
+              "*mitte kunagi*",
+              "*Ma ei käi kunagi.*",
+              "I never go there."
+            ],
+            [
+              "*kuskil* (somewhere)",
+              "*mitte kuskil*",
+              "*Teda ei ole kuskil.*",
+              "He/she isn't anywhere."
+            ],
+            [
+              "*kuidagi* (somehow)",
+              "*mitte kuidagi*",
+              "*Ma ei saa kuidagi.*",
+              "I just can't, no way."
+            ],
+            [
+              "*keegi teine*",
+              "—",
+              "*Keegi teine tuleb.*",
+              "Someone else is coming."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ The double negative is REQUIRED",
+          "items": [
+            "*Ma ei tea midagi.* — literally \"I don't know nothing\". Two negatives in one sentence, and that's the **correct** form.",
+            "Dropping one of them gives you a wrong sentence. \"Ma tean midagi\" means \"I know something\" — the opposite meaning.",
+            "Many languages work this way — Spanish *no sé nada*, French *je ne sais rien*, Russian *я ничего не знаю*. Standard English is the odd one out.",
+            "English says *I don't know anything*, not *I don't know nothing*. In Estonian, the \"nothing\" version is exactly what you want — so forget what your English teacher told you, just this once."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Refusing and saying no politely",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "English",
+            "Tone"
+          ],
+          "rows": [
+            [
+              "*Ei, aitäh.*",
+              "No, thank you.",
+              "Neutral, the most common."
+            ],
+            [
+              "*Kahjuks ei.*",
+              "Unfortunately not.",
+              "Soft, regretful."
+            ],
+            [
+              "*Ma ei saa täna.*",
+              "I can't today.",
+              "Declining an invitation."
+            ],
+            [
+              "*Mul ei ole aega.*",
+              "I don't have time.",
+              "A direct reason."
+            ],
+            [
+              "*Võib-olla mõni teine kord.*",
+              "Maybe some other time.",
+              "Leaves the door open."
+            ],
+            [
+              "*Ma ei ole kindel.*",
+              "I'm not sure.",
+              "Postpones the answer."
+            ],
+            [
+              "*Ma ei tea veel.*",
+              "I don't know yet.",
+              "Postpones the answer."
+            ],
+            [
+              "*See ei sobi mulle.*",
+              "That doesn't suit me.",
+              "Turning down a suggestion."
+            ],
+            [
+              "*Ma ei saa aru.*",
+              "I don't understand.",
+              "What beginners say most."
+            ],
+            [
+              "*Vabandust, ma ei kuule.*",
+              "Sorry, I can't hear you.",
+              ""
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Estonians say no directly, and that isn't rude.** A plain *ei* counts as an honest answer that respects the other person's time. Cushioning a refusal with three layers of small talk can come across as hesitation or even insincerity. If you mean no, say no."
+        },
+        {
+          "type": "kotak",
+          "title": "Pole — the short form you'll hear constantly",
+          "items": [
+            "*pole* = *ei ole*. *Mul pole aega.* — I don't have time.",
+            "*Pole viga.* — No problem. (literally: \"there's no flaw\") ⚠️ It's also the answer to an apology.",
+            "*Pole tänu väärt.* — Don't mention it. (literally: \"not worth thanks\")",
+            "*Pole hullu.* — It's not that bad."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "et": "ei",
+      "baca": "ay",
+      "en": "not; no"
+    },
+    {
+      "et": "pole",
+      "baca": "PO-le",
+      "en": "isn't, there's no (= ei ole)"
+    },
+    {
+      "et": "ära",
+      "baca": "Ä-rah",
+      "en": "don't (one person)"
+    },
+    {
+      "et": "ärge",
+      "baca": "ÄR-ge",
+      "en": "don't (several people)"
+    },
+    {
+      "et": "mitte",
+      "baca": "MIT-te",
+      "en": "not (non-verbs)"
+    },
+    {
+      "et": "ega",
+      "baca": "E-gah",
+      "en": "and not; nor"
+    },
+    {
+      "et": "midagi",
+      "baca": "MI-dah-gi",
+      "en": "something; anything"
+    },
+    {
+      "et": "keegi",
+      "baca": "KEHH-gi",
+      "en": "someone; anyone"
+    },
+    {
+      "et": "kunagi",
+      "baca": "KOO-nah-gi",
+      "en": "ever"
+    },
+    {
+      "et": "kuskil",
+      "baca": "KOOS-kil",
+      "en": "somewhere"
+    },
+    {
+      "et": "leidma",
+      "baca": "LAYD-mah",
+      "en": "to find (leian)"
+    },
+    {
+      "et": "mäletama",
+      "baca": "MÄ-le-tah-mah",
+      "en": "to remember"
+    },
+    {
+      "et": "muretsema",
+      "baca": "MOO-ret-se-mah",
+      "en": "to worry"
+    },
+    {
+      "et": "helistama",
+      "baca": "HE-lis-tah-mah",
+      "en": "to call (on the phone)"
+    },
+    {
+      "et": "lubama",
+      "baca": "LOO-bah-mah",
+      "en": "to promise; to allow"
+    },
+    {
+      "et": "ootama",
+      "baca": "OHH-tah-mah",
+      "en": "to wait"
+    },
+    {
+      "et": "tundma",
+      "baca": "TOOND-mah",
+      "en": "to feel; to know (a person)"
+    },
+    {
+      "et": "ütlema",
+      "baca": "ÜT-le-mah",
+      "en": "to say (ütlen)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Make these sentences negative.",
+      "items": [
+        "Ma olen kodus.",
+        "Sa lähed kooli.",
+        "Ta teab.",
+        "Me sööme.",
+        "Te räägite eesti keelt.",
+        "Nad tulevad."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with ei, ära or mitte.",
+      "items": [
+        "Ma ____ tea.",
+        "____ tule!",
+        "____ täna, homme.",
+        "Ta ____ ole kodus.",
+        "____ muretse!",
+        "Keegi ____ tea."
+      ]
+    },
+    {
+      "prompt": "Translate into Estonian.",
+      "items": [
+        "I don't know anything.",
+        "Nobody knows.",
+        "I never go there.",
+        "I don't have time.",
+        "Don't worry!",
+        "No, thank you."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "tea / ma / ei / midagi",
+        "ei / keegi / tea",
+        "muretse / ära",
+        "aega / mul / pole",
+        "aitäh / ei / ,"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Ma ei ole kodus. — Sa ei lähe kooli. — Ta ei tea. — Me ei söö. — Te ei räägi eesti keelt. — Nad ei tule.",
+    "1": "ei — Ära — Mitte — ei — Ära — ei",
+    "2": "Ma ei tea midagi. — Keegi ei tea. — Ma ei käi seal kunagi. — Mul ei ole aega. — Ära muretse! — Ei, aitäh.",
+    "3": "Ma ei tea midagi. — Keegi ei tea. — Ära muretse. — Mul pole aega. — Ei, aitäh."
+  }
+}

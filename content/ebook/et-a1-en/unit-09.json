@@ -1,0 +1,573 @@
+{
+  "title": "Days, months, dates",
+  "title_target": "Nädalapäevad ja kuud",
+  "goal": "Master the Estonian calendar — and discover that you already know most of the twelve month names.",
+  "bekal": [
+    "name the seven days and twelve months",
+    "say something happens **on** a given day or in a given month",
+    "give dates and recognize Estonian holidays"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Mis kuupäev täna on?",
+      "intro": "Late April. Budi is filling in a form and has forgotten the date.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Kerli, mis päev täna on?",
+          "id": "Kerli, what day is it today?",
+          "literal": "Kerli, what day today is-it?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Täna on kolmapäev.",
+          "id": "Today is Wednesday.",
+          "literal": "today is-it third-day."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja mis kuupäev?",
+          "id": "And what's the date?",
+          "literal": "and what month-day?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Kahekümne teine aprill.",
+          "id": "The twenty-second of April.",
+          "literal": "twenty-of second April."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aitäh. Ma pean vormi täitma.",
+          "id": "Thanks. I have to fill in a form.",
+          "literal": "thank-you. I must-I form-part to-fill."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Siis on varsti volbriöö.",
+          "id": "Then Walpurgis Night is coming soon.",
+          "literal": "then is soon Walpurgis-night."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mis see on?",
+          "id": "What is that?",
+          "literal": "what that is-it?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Kevadpüha, kolmekümnendal aprillil. Tudengid tähistavad.",
+          "id": "A spring festival, on the thirtieth of April. Students celebrate.",
+          "literal": "spring-festival, thirtieth-on April-on. student-plural celebrate-they."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Huvitav. Mul on üks küsimus kuude kohta.",
+          "id": "Interesting. I have a question about the months.",
+          "literal": "interesting. I-at is one question month-plural-of about."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Küsi julgelt.",
+          "id": "Go ahead and ask.",
+          "literal": "ask boldly."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aprill, mai, juuni — need on peaaegu samad kui indoneesia keeles.",
+          "id": "April, May, June — they're almost the same as in Indonesian.",
+          "literal": "April, May, June — they-plural are-they almost same-plural as Indonesian language-in."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Loomulikult. Mõlemad tulevad ladina keelest.",
+          "id": "Of course. Both come from Latin.",
+          "literal": "naturally. both-plural come-they Latin language-from."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Siis ma tean juba kaksteist sõna!",
+          "id": "Then I already know twelve words!",
+          "literal": "then I know-I already twelve word-part!"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ja päevadega on ka lihtne. Esmaspäev, teisipäev, kolmapäev.",
+          "id": "And the days are easy too. Esmaspäev, teisipäev, kolmapäev.",
+          "literal": "and day-plural-with is also easy. first-day, second-day, third-day."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Need on numbrid! Esimene, teine, kolmas päev.",
+          "id": "Those are numbers! First, second, third day.",
+          "literal": "those-plural are-they number-plural! first, second, third day."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Just. Kas indoneesia keeles on teisiti?",
+          "id": "Exactly. Is it different in Indonesian?",
+          "literal": "exactly. whether Indonesian language-in is other-way?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ei. Meil on ka numbrid — araabia keelest. \"Senin\" on \"teine\".",
+          "id": "No. We use numbers too — from Arabic. \"Senin\" is \"second\".",
+          "literal": "no. we-at is also number-plural — Arabic language-from. \"Senin\" is-it \"second\"."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Kaks keelt, üks mõte.",
+          "id": "Two languages, one idea.",
+          "literal": "two language-part, one thought."
+        }
+      ],
+      "notes": [
+        "**Estonian and English month names are near-twins** because both borrow from the same Latin source — Estonian through German, English through Old French and Latin. These are twelve words you barely need to learn, only adjust the spelling.",
+        "**The first four days are numbers.** *Esmaspäev* = first day, *teisipäev* = second day, *kolmapäev* = third, *neljapäev* = fourth. The other three have different origins: *reede* from German, *laupäev* from a Norse word for \"bath day\", *pühapäev* = \"holy day\".",
+        "⚠️ **Estonian numbers its weekdays; English names them after gods.** *Wednesday* is Woden's day, *Thursday* Thor's day. Estonian instead counts: **number the working days, give special names to the weekend**. Budi's Indonesian numbers its days too, via Arabic (Senin = \"second\").",
+        "**Kolmekümnendal aprillil** — \"on the thirtieth of April\". Both words take the ending **-l**: the date is an ordinal + *-l*, and the month also takes *-l*. This pattern works for all dates."
+      ],
+      "grammars": [
+        {
+          "title": "Seven days — four of them numbers",
+          "body": [
+            "The third column is the form you actually use: \"on that day\", with the ending **-l**."
+          ],
+          "table": {
+            "head": [
+              "Eesti keel",
+              "Literal",
+              "\"On that day\"",
+              "English"
+            ],
+            "rows": [
+              [
+                "*esmaspäev*",
+                "**first** day",
+                "*esmaspäeval*",
+                "Monday"
+              ],
+              [
+                "*teisipäev*",
+                "**second** day",
+                "*teisipäeval*",
+                "Tuesday"
+              ],
+              [
+                "*kolmapäev*",
+                "**third** day",
+                "*kolmapäeval*",
+                "Wednesday"
+              ],
+              [
+                "*neljapäev*",
+                "**fourth** day",
+                "*neljapäeval*",
+                "Thursday"
+              ],
+              [
+                "*reede*",
+                "— (from German)",
+                "*reedel*",
+                "Friday"
+              ],
+              [
+                "*laupäev*",
+                "**bath** day",
+                "*laupäeval*",
+                "Saturday"
+              ],
+              [
+                "*pühapäev*",
+                "**holy** day",
+                "*pühapäeval*",
+                "Sunday"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Estonian counts from **Monday as day one**, so *kolmapäev* is the \"third day\" — Wednesday. (The Arabic counting behind Indonesian starts from Sunday, which is why Budi's *Senin* is \"second\".)",
+            "*Nädal* means week (seven days), *nädalavahetus* means weekend (literally: \"week change\"). *Sel nädalal* = this week, *järgmisel nädalal* = next week, *eelmisel nädalal* = last week.",
+            "For repeated habits, the day is used in the plural + *-ti*: *esmaspäeviti* (every Monday), *reedeti* (every Friday), *hommikuti* (every morning)."
+          ]
+        },
+        {
+          "title": "Twelve months you already have",
+          "body": [
+            "Read the second and fourth columns side by side. Almost nothing needs memorizing — only spelling adjustments."
+          ],
+          "table": {
+            "head": [
+              "Eesti keel",
+              "Say it",
+              "\"In that month\"",
+              "English"
+            ],
+            "rows": [
+              [
+                "*jaanuar*",
+                "*YAAH-noo-ahr*",
+                "*jaanuaris*",
+                "January"
+              ],
+              [
+                "*veebruar*",
+                "*VEHHB-roo-ahr*",
+                "*veebruaris*",
+                "February"
+              ],
+              [
+                "*märts*",
+                "*märts*",
+                "*märtsis*",
+                "March"
+              ],
+              [
+                "*aprill*",
+                "*ahp-RILL*",
+                "*aprillis*",
+                "April"
+              ],
+              [
+                "*mai*",
+                "*migh*",
+                "*mais*",
+                "May"
+              ],
+              [
+                "*juuni*",
+                "*YOOO-ni*",
+                "*juunis*",
+                "June"
+              ],
+              [
+                "*juuli*",
+                "*YOOO-li*",
+                "*juulis*",
+                "July"
+              ],
+              [
+                "*august*",
+                "*OW-goost*",
+                "*augustis*",
+                "August"
+              ],
+              [
+                "*september*",
+                "*sep-TEM-ber*",
+                "*septembris*",
+                "September"
+              ],
+              [
+                "*oktoober*",
+                "*ok-TOHH-ber*",
+                "*oktoobris*",
+                "October"
+              ],
+              [
+                "*november*",
+                "*no-VEM-ber*",
+                "*novembris*",
+                "November"
+              ],
+              [
+                "*detsember*",
+                "*det-SEM-ber*",
+                "*detsembris*",
+                "December"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Month names are written in **lowercase** in Estonian, like language names and nationalities. This is the opposite of English.",
+            "Notice that *september, oktoober, november, detsember* lose their final *e* when an ending is added: *septembris*, not \"septemberis\". The same shortening pattern as *number → numbri* and *sõber → sõbra* in unit 6.",
+            "Months take **-s** (the inside series), while days and dates take **-l** (the surface series). *Mais* (in May), but *esmaspäeval* (on Monday) and *kolmandal mail* (on the third of May). There is no logic to find; memorize the pairs."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Dates and years",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Mis kuupäev täna on?*",
+              "What's the date today?"
+            ],
+            [
+              "*Täna on kolmas mai.*",
+              "Today is the third of May."
+            ],
+            [
+              "*Kolmandal mail.*",
+              "On the third of May."
+            ],
+            [
+              "*Mis päev täna on?*",
+              "What day is it today?"
+            ],
+            [
+              "*Täna on reede.*",
+              "Today is Friday."
+            ],
+            [
+              "*Millal sa tuled?*",
+              "When are you coming?"
+            ],
+            [
+              "*Järgmisel nädalal.*",
+              "Next week."
+            ],
+            [
+              "*Eelmisel kuul.*",
+              "Last month."
+            ],
+            [
+              "*Sel aastal.*",
+              "This year."
+            ],
+            [
+              "*Kaks tuhat kakskümmend kuus.*",
+              "Two thousand twenty-six."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Kuu has two meanings — just like \"moon/month\"",
+          "items": [
+            "*kuu* means both the **moon in the sky** and the **calendar month**. English once did too: *month* comes from *moon*.",
+            "*Kuu on täna täis.* — The moon is full today. *Ma olen siin kolm kuud.* — I've been here three months.",
+            "English now has two separate words (*moon* and *month*), so here Estonian gives you one word to learn instead of two.",
+            "*päike* — sun. *täht* — star. *taevas* — sky."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Estonian holidays",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Date",
+            "Eesti keel",
+            "What it is"
+          ],
+          "rows": [
+            [
+              "Jan 1",
+              "*uusaasta*",
+              "New Year's Day"
+            ],
+            [
+              "Feb 24",
+              "*iseseisvuspäev*",
+              "Independence Day (1918)"
+            ],
+            [
+              "March/April",
+              "*ülestõusmispühad*",
+              "Easter"
+            ],
+            [
+              "April 30",
+              "*volbriöö*",
+              "Walpurgis Night — students' celebration"
+            ],
+            [
+              "May 1",
+              "*kevadpüha*",
+              "Spring Day (Labor Day)"
+            ],
+            [
+              "June 23",
+              "*võidupüha*",
+              "Victory Day"
+            ],
+            [
+              "June 24",
+              "*jaanipäev*",
+              "Midsummer Day"
+            ],
+            [
+              "Aug 20",
+              "*taasiseseisvumispäev*",
+              "Day of Restoration of Independence (1991)"
+            ],
+            [
+              "Dec 24–26",
+              "*jõulud*",
+              "Christmas"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Jaanipäev is the real holiday in Estonia**, for many people bigger than Christmas. The cities genuinely empty out; everyone goes to the countryside, lights bonfires, and stays up under a sky that never gets dark. If you're in Estonia on June 23–24, don't expect shops or offices to be open."
+        },
+        {
+          "type": "kotak",
+          "title": "Holiday greetings",
+          "items": [
+            "*Head uut aastat!* — Happy New Year!",
+            "*Häid jõule!* — Merry Christmas!",
+            "*Palju õnne sünnipäevaks!* — Happy birthday!",
+            "⚠️ Notice that they all use *head/häid* — forms of *hea* (good). Estonian offers greetings by wishing \"good ones\" without a verb, just like *head aega* and *head isu*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "et": "päev",
+      "baca": "päev",
+      "en": "day"
+    },
+    {
+      "et": "nädal",
+      "baca": "NÄ-dahl",
+      "en": "week"
+    },
+    {
+      "et": "kuu",
+      "baca": "kooo",
+      "en": "⚠️ month (calendar & moon)"
+    },
+    {
+      "et": "aasta",
+      "baca": "AAHS-tah",
+      "en": "year"
+    },
+    {
+      "et": "kuupäev",
+      "baca": "KOOO-päev",
+      "en": "date (day of the month)"
+    },
+    {
+      "et": "esmaspäev",
+      "baca": "ES-mahs-päev",
+      "en": "Monday"
+    },
+    {
+      "et": "teisipäev",
+      "baca": "TAY-si-päev",
+      "en": "Tuesday"
+    },
+    {
+      "et": "kolmapäev",
+      "baca": "KOL-mah-päev",
+      "en": "Wednesday"
+    },
+    {
+      "et": "neljapäev",
+      "baca": "NEL-yah-päev",
+      "en": "Thursday"
+    },
+    {
+      "et": "reede",
+      "baca": "REHH-de",
+      "en": "Friday"
+    },
+    {
+      "et": "laupäev",
+      "baca": "LOW-päev",
+      "en": "Saturday"
+    },
+    {
+      "et": "pühapäev",
+      "baca": "PÜ-hah-päev",
+      "en": "Sunday"
+    },
+    {
+      "et": "nädalavahetus",
+      "baca": "NÄ-dah-lah-vah-he-toos",
+      "en": "weekend"
+    },
+    {
+      "et": "sünnipäev",
+      "baca": "SÜN-ni-päev",
+      "en": "birthday"
+    },
+    {
+      "et": "püha",
+      "baca": "PÜ-hah",
+      "en": "holiday; holy"
+    },
+    {
+      "et": "jõulud",
+      "baca": "YÕW-lood",
+      "en": "Christmas"
+    },
+    {
+      "et": "jaanipäev",
+      "baca": "YAAH-ni-päev",
+      "en": "Midsummer Day"
+    },
+    {
+      "et": "järgmine",
+      "baca": "YÄRG-mi-ne",
+      "en": "next"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the day or month in Estonian.",
+      "items": [
+        "Monday",
+        "Friday",
+        "Sunday",
+        "March",
+        "August",
+        "December"
+      ]
+    },
+    {
+      "prompt": "Add the right ending (-l for days, -s for months).",
+      "items": [
+        "esmaspäev",
+        "reede",
+        "laupäev",
+        "jaanuar",
+        "mai",
+        "oktoober"
+      ]
+    },
+    {
+      "prompt": "Translate into Estonian.",
+      "items": [
+        "What day is it today?",
+        "Today is Wednesday.",
+        "What's the date today?",
+        "My birthday is in June.",
+        "I'm coming next week.",
+        "Have a good weekend!"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "täna / päev / mis / on / ?",
+        "on / kolmapäev / täna",
+        "juunis / sünnipäev / minu / on",
+        "nädalal / tulen / järgmisel / ma",
+        "aastat / head / uut / !"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "esmaspäev — reede — pühapäev — märts — august — detsember",
+    "1": "esmaspäeval — reedel — laupäeval — jaanuaris — mais — oktoobris",
+    "2": "Mis päev täna on? — Täna on kolmapäev. — Mis kuupäev täna on? — Minu sünnipäev on juunis. — Ma tulen järgmisel nädalal. — Head nädalavahetust!",
+    "3": "Mis päev täna on? — Täna on kolmapäev. — Minu sünnipäev on juunis. — Ma tulen järgmisel nädalal. — Head uut aastat!"
+  }
+}

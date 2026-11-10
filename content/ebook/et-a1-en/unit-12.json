@@ -1,0 +1,560 @@
+{
+  "title": "Talking about the past",
+  "title_target": "Minevik",
+  "goal": "Talk about yesterday — and discover that Estonian **has no future tense at all**.",
+  "bekal": [
+    "form the past tense with the infix **-si-** and recognize ten irregular forms",
+    "negate past sentences with *ei* + the **-nud** form",
+    "talk about the future without learning a single new form"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Nädalavahetus Tartus",
+      "intro": "Monday morning. Kerli asks Budi how his weekend was.",
+      "lines": [
+        {
+          "speaker": "Kerli:",
+          "text": "Kuidas nädalavahetus oli?",
+          "id": "How was your weekend?",
+          "literal": "how weekend was-it?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Väga hea! Ma käisin Tartus.",
+          "id": "Really good! I went to Tartu.",
+          "literal": "very good! I went-I Tartu-in."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Tõesti? Kellega sa läksid?",
+          "id": "Really? Who did you go with?",
+          "literal": "really? who-with you went-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Üksi. Ma sõitsin bussiga.",
+          "id": "On my own. I took the bus.",
+          "literal": "alone. I rode-I bus-with."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ja mida sa seal tegid?",
+          "id": "And what did you do there?",
+          "literal": "and what-part you there did-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ma jalutasin vanalinnas ja käisin muuseumis.",
+          "id": "I walked around the old town and went to a museum.",
+          "literal": "I walked-I old-town-in and went-I museum-in."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Kas sa nägid ülikooli?",
+          "id": "Did you see the university?",
+          "literal": "question you saw-you university-part?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jah, see oli väga ilus. Ma tegin palju pilte.",
+          "id": "Yes, it was beautiful. I took lots of pictures.",
+          "literal": "yes, it was-it very pretty. I made-I many pictures-part."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Kas sa sõid midagi head?",
+          "id": "Did you eat anything good?",
+          "literal": "question you ate-you something good-part?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ma sõin verivorsti.",
+          "id": "I ate verivorst.",
+          "literal": "I ate-I blood-sausage-part."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ja?",
+          "id": "And?",
+          "literal": "and?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ma ei teadnud, mis see on. Nüüd ma tean.",
+          "id": "I didn't know what it was. Now I know.",
+          "literal": "I not knew, what it is-it. now I know-I."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Oi ei. Vabandust!",
+          "id": "Oh no. Sorry!",
+          "literal": "oh no. sorry!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Pole hullu. Aga järgmine kord ma küsin enne.",
+          "id": "It's fine. But next time I'll ask first.",
+          "literal": "not-is bad-part. but next time I ask-I before."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Tark otsus. Millal sa jälle lähed?",
+          "id": "Wise decision. When are you going again?",
+          "literal": "clever decision. when you again go-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Järgmisel kuul. Eesti keeles pole tulevikku, eks?",
+          "id": "Next month. Estonian has no future tense, right?",
+          "literal": "next month-in. Estonian language-in not-is future-part, right?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ei ole. Sama nagu indoneesia keeles.",
+          "id": "No, it doesn't. Just like Indonesian.",
+          "literal": "not is. same as Indonesian language-in."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Üks asi vähem õppida!",
+          "id": "One less thing to learn!",
+          "literal": "one thing less to-learn!"
+        }
+      ],
+      "notes": [
+        "⚠️ **Estonian has no future tense.** *Ma lähen* means \"I go\" **and** \"I will go\". The time word decides: *ma lähen homme* (I'm going tomorrow), *ma lähen praegu* (I'm going now). English does this too — \"I'm leaving tomorrow\" — and it means one big chapter you don't have to learn at all.",
+        "**Käisin** comes from *käima* — \"I've been there\". Tell it apart from *läksin* (*minema*): *käisin Tartus* means you went and came back; *läksin Tartusse* means you set off for there. English handles this with \"been\" versus \"gone\"; Estonian uses different verbs.",
+        "**Kellega** = *kes* + **-ga**, \"with whom\". Question words take endings too: *millega* (with what), *kellele* (to whom), *kelle* (whose), *millal* (when).",
+        "⚠️ **Verivorst** is pork blood sausage, a Christmas dish that turns up everywhere between November and January. If you have dietary restrictions, learn the name — it's rarely translated on English menus."
+      ],
+      "grammars": [
+        {
+          "title": "The past tense — the infix -si-",
+          "body": [
+            "Take the verb stem, insert **-si-**, then add the person endings you already know from unit 10."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "*elama* (to live)",
+              "*õppima* (to study)",
+              "*olema* (to be)",
+              "*minema* (to go)"
+            ],
+            "rows": [
+              [
+                "*ma*",
+                "*ela**si**n*",
+                "*õppi**si**n*",
+                "⚠️ *olin*",
+                "⚠️ *läksin*"
+              ],
+              [
+                "*sa*",
+                "*ela**si**d*",
+                "*õppi**si**d*",
+                "*olid*",
+                "*läksid*"
+              ],
+              [
+                "*ta*",
+                "*ela**s***",
+                "*õppi**s***",
+                "*oli*",
+                "*läks*"
+              ],
+              [
+                "*me*",
+                "*ela**si**me*",
+                "*õppi**si**me*",
+                "*olime*",
+                "*läksime*"
+              ],
+              [
+                "*te*",
+                "*ela**si**te*",
+                "*õppi**si**te*",
+                "*olite*",
+                "*läksite*"
+              ],
+              [
+                "*nad*",
+                "*ela**si**d*",
+                "*õppi**si**d*",
+                "*olid*",
+                "*läksid*"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ The third row loses its *-i*: *elas*, not \"elasi\". It's the only quirk in an otherwise regular pattern.",
+            "The second and sixth rows are **identical** (*elasid* for \"you\" and for \"they\"). Context always tells them apart; don't worry.",
+            "⚠️ Notice *õppisin* has **pp**, while the present *õpin* has **p**. Consonant gradation works differently in the two tenses. Once again the fix isn't a rule — just learn the past form together with the present."
+          ]
+        },
+        {
+          "title": "Negating the past — ei + the -nud form",
+          "body": [
+            "Just as in unit 11, *ei* doesn't change for anyone. Only the verb form changes, and that form is the **same** for all six persons."
+          ],
+          "table": {
+            "head": [
+              "Verb",
+              "Past positive",
+              "Past negative",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*olema*",
+                "*ma olin*",
+                "*ma ei olnud* (*polnud*)",
+                "I wasn't"
+              ],
+              [
+                "*minema*",
+                "*ma läksin*",
+                "*ma ei läinud*",
+                "I didn't go"
+              ],
+              [
+                "*tulema*",
+                "*ma tulin*",
+                "*ma ei tulnud*",
+                "I didn't come"
+              ],
+              [
+                "*tegema*",
+                "*ma tegin*",
+                "*ma ei teinud*",
+                "I didn't do"
+              ],
+              [
+                "*sööma*",
+                "*ma sõin*",
+                "*ma ei söönud*",
+                "I didn't eat"
+              ],
+              [
+                "*teadma*",
+                "*ma teadsin*",
+                "*ma ei teadnud*",
+                "I didn't know"
+              ],
+              [
+                "*nägema*",
+                "*ma nägin*",
+                "*ma ei näinud*",
+                "I didn't see"
+              ],
+              [
+                "*rääkima*",
+                "*ma rääkisin*",
+                "*ma ei rääkinud*",
+                "I didn't speak"
+              ]
+            ]
+          },
+          "after": [
+            "The **-nud** form is also used for \"have done\": *ma olen käinud Tartus* (I've been to Tartu), *kas sa oled söönud?* (have you eaten?). So it's worth learning for two jobs at once.",
+            "⚠️ *Polnud* is short for *ei olnud*, matching *pole* for *ei ole*.",
+            "*Kas sa oled söönud?* is very common small talk among Estonians — rather like \"have you eaten?\" as a friendly greeting in many Asian cultures."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Irregular past forms",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These verbs come up constantly, and their past forms can't be guessed. Memorize the second column; it's the one you'll need most."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Present",
+            "Past",
+            "Negative",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*ma olen*",
+              "*ma olin*",
+              "*ei olnud*",
+              "to be"
+            ],
+            [
+              "*ma lähen*",
+              "*ma läksin*",
+              "*ei läinud*",
+              "to go"
+            ],
+            [
+              "*ma tulen*",
+              "*ma tulin*",
+              "*ei tulnud*",
+              "to come"
+            ],
+            [
+              "*ma teen*",
+              "*ma tegin*",
+              "*ei teinud*",
+              "to do"
+            ],
+            [
+              "*ma näen*",
+              "*ma nägin*",
+              "*ei näinud*",
+              "to see"
+            ],
+            [
+              "*ma söön*",
+              "*ma sõin*",
+              "*ei söönud*",
+              "to eat"
+            ],
+            [
+              "*ma joon*",
+              "*ma jõin*",
+              "*ei joonud*",
+              "to drink"
+            ],
+            [
+              "*ma saan*",
+              "*ma sain*",
+              "*ei saanud*",
+              "to get"
+            ],
+            [
+              "*ma tean*",
+              "*ma teadsin*",
+              "*ei teadnud*",
+              "to know"
+            ],
+            [
+              "*ma tahan*",
+              "*ma tahtsin*",
+              "*ei tahtnud*",
+              "to want"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ How Estonian talks about the future",
+          "items": [
+            "**No special form.** The present tense covers both, as in \"I'm flying tomorrow\".",
+            "*Ma lähen homme Tartusse.* — I'm going to Tartu tomorrow. The word *homme* marks the time.",
+            "For extra emphasis, add *hakkan* (will start): *ma hakkan õppima* — I'm going to start studying.",
+            "For intentions, use *kavatsen* (intend): *ma kavatsen minna* — I intend to go."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Telling what happened",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Kuidas nädalavahetus oli?*",
+              "How was the weekend?"
+            ],
+            [
+              "*See oli väga tore.*",
+              "It was really nice."
+            ],
+            [
+              "*Ma käisin Tartus.*",
+              "I went to Tartu."
+            ],
+            [
+              "*Ma sõitsin bussiga.*",
+              "I took the bus."
+            ],
+            [
+              "*Mida sa eile tegid?*",
+              "What did you do yesterday?"
+            ],
+            [
+              "*Ma töötasin terve päeva.*",
+              "I worked all day."
+            ],
+            [
+              "*Ma ei teinud midagi.*",
+              "I didn't do anything."
+            ],
+            [
+              "*Kas sa oled söönud?*",
+              "Have you eaten?"
+            ],
+            [
+              "*Ma ei ole veel söönud.*",
+              "I haven't eaten yet."
+            ],
+            [
+              "*Ma olen siin kolm kuud olnud.*",
+              "I've been here three months."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Notice *ma ei ole veel söönud* — \"I haven't eaten yet\". Estonian has no single word for \"not yet\"; it uses *ei ... veel*, just like English \"not ... yet\". Same pattern: *ma ei tea veel* (I don't know yet), *ta ei ole veel tulnud* (he/she hasn't come yet)."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "et": "minevik",
+      "baca": "MI-ne-vik",
+      "en": "the past"
+    },
+    {
+      "et": "tulevik",
+      "baca": "TOO-le-vik",
+      "en": "the future"
+    },
+    {
+      "et": "eile",
+      "baca": "AY-le",
+      "en": "yesterday"
+    },
+    {
+      "et": "jalutama",
+      "baca": "YAH-loo-tah-mah",
+      "en": "to walk around"
+    },
+    {
+      "et": "sõitma",
+      "baca": "SÕIT-mah",
+      "en": "to ride, to drive (sõidan – sõitsin)"
+    },
+    {
+      "et": "panema",
+      "baca": "PAH-ne-mah",
+      "en": "to put (panen – panin)"
+    },
+    {
+      "et": "jääma",
+      "baca": "YÄÄ-mah",
+      "en": "to stay (jään – jäin)"
+    },
+    {
+      "et": "kavatsema",
+      "baca": "KAH-vaht-se-mah",
+      "en": "to intend"
+    },
+    {
+      "et": "pilt",
+      "baca": "pilt",
+      "en": "picture, photo (gen. pildi)"
+    },
+    {
+      "et": "otsus",
+      "baca": "OT-soos",
+      "en": "decision"
+    },
+    {
+      "et": "tark",
+      "baca": "tahrk",
+      "en": "clever, wise"
+    },
+    {
+      "et": "asi",
+      "baca": "AH-si",
+      "en": "thing (gen. asja)"
+    },
+    {
+      "et": "kord",
+      "baca": "kord",
+      "en": "time (as in \"once\")"
+    },
+    {
+      "et": "üksi",
+      "baca": "ÜK-si",
+      "en": "alone"
+    },
+    {
+      "et": "jälle",
+      "baca": "YÄL-le",
+      "en": "again"
+    },
+    {
+      "et": "enne",
+      "baca": "EN-ne",
+      "en": "before, first"
+    },
+    {
+      "et": "pärast",
+      "baca": "PÄ-rahst",
+      "en": "after"
+    },
+    {
+      "et": "verivorst",
+      "baca": "VE-ri-vorst",
+      "en": "⚠️ pork blood sausage"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change to the past tense.",
+      "items": [
+        "Ma elan Tallinnas.",
+        "Sa õpid eesti keelt.",
+        "Ta läheb kooli.",
+        "Me sööme kohvikus.",
+        "Te teete tööd.",
+        "Nad tulevad koju."
+      ]
+    },
+    {
+      "prompt": "Change to the negative past.",
+      "items": [
+        "Ma olin kodus.",
+        "Sa läksid Tartusse.",
+        "Ta tegi seda.",
+        "Me sõime.",
+        "Te teadsite.",
+        "Nad tulid."
+      ]
+    },
+    {
+      "prompt": "Translate into Estonian.",
+      "items": [
+        "What did you do yesterday?",
+        "I didn't do anything.",
+        "I went to Tartu.",
+        "Have you eaten?",
+        "I haven't eaten yet.",
+        "I'm going to Tartu tomorrow."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "käisin / ma / Tartus",
+        "tegid / mida / eile / sa / ?",
+        "midagi / ei / ma / teinud",
+        "söönud / oled / sa / kas / ?",
+        "lähen / homme / ma / Tartusse"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Ma elasin Tallinnas. — Sa õppisid eesti keelt. — Ta läks kooli. — Me sõime kohvikus. — Te tegite tööd. — Nad tulid koju.",
+    "1": "Ma ei olnud kodus. — Sa ei läinud Tartusse. — Ta ei teinud seda. — Me ei söönud. — Te ei teadnud. — Nad ei tulnud.",
+    "2": "Mida sa eile tegid? — Ma ei teinud midagi. — Ma käisin Tartus. — Kas sa oled söönud? — Ma ei ole veel söönud. — Homme ma lähen Tartusse.",
+    "3": "Ma käisin Tartus. — Mida sa eile tegid? — Ma ei teinud midagi. — Kas sa oled söönud? — Homme ma lähen Tartusse."
+  }
+}

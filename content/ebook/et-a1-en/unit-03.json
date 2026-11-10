@@ -1,0 +1,624 @@
+{
+  "title": "My family",
+  "title_target": "Minu pere",
+  "goal": "Introduce family members and describe people — while noticing a spot where many languages are **more detailed** than Estonian.",
+  "bekal": [
+    "name the members of your immediate and extended family",
+    "use the possessives *minu/mu*, *sinu/su*, *tema/ta*, *meie*, *teie*, *nende*",
+    "point to people and things with *see*, *need*, and *too*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Foto telefonis",
+      "intro": "In a shared study room, Budi shows a photo of his family on his phone screen.",
+      "lines": [
+        {
+          "speaker": "Kerli:",
+          "text": "Kas see on sinu pere?",
+          "id": "Is this your family?",
+          "literal": "is-it this is-it your family?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jah, see on foto meie majast Bandungis.",
+          "id": "Yes, this is a photo of our house in Bandung.",
+          "literal": "yes, this is-it photo our house-of Bandung-in."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Kes see naine on?",
+          "id": "Who is this woman?",
+          "literal": "who this woman is-she?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "See on minu ema. Tema nimi on Sari.",
+          "id": "That's my mother. Her name is Sari.",
+          "literal": "that is-she my mother. her name is-it Sari."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ja see mees tema kõrval?",
+          "id": "And the man next to her?",
+          "literal": "and this man her next-to?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "See on mu isa, Hasan. Ta on arst.",
+          "id": "That's my father, Hasan. He's a doctor.",
+          "literal": "that is-he my father, Hasan. he is-he doctor."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Kas sul on õdesid või vendi?",
+          "id": "Do you have sisters or brothers?",
+          "literal": "is-it you-at is sister-plural-(partial) or brother-plural-(partial)?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mul on üks õde ja kaks venda.",
+          "id": "I have one sister and two brothers.",
+          "literal": "me-at is one sister and two brother-(partial)."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Kes on see tüdruk?",
+          "id": "Who is that girl?",
+          "literal": "who is-she that girl?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "See on mu õde Dewi. Ta on noorem kui mina.",
+          "id": "That's my younger sister Dewi. She's younger than me.",
+          "literal": "that is-she my sister Dewi. she is-she more-young than me."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Aa, siis ta on sinu noorem õde.",
+          "id": "Ah, so she's your little sister.",
+          "literal": "ah, then she is-she your more-young sister."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jah. Aga eesti keeles on ainult \"õde\", eks?",
+          "id": "Yes. But in Estonian there's just \"õde\", right?",
+          "literal": "yes. but Estonian language-in is only \"sister\", right?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Täpselt. Meil pole eraldi sõna vanema ja noorema jaoks.",
+          "id": "Exactly. We have no separate words for older and younger.",
+          "literal": "exactly. us-at not-is separate word older-of and younger-of for."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Indoneesia keeles on. \"Kakak\" ja \"adik\".",
+          "id": "In Indonesian there are. \"Kakak\" and \"adik\".",
+          "literal": "Indonesian language-in there-is. \"kakak\" and \"adik\"."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Huvitav! Meil on ainult \"vanem õde\" ja \"noorem õde\".",
+          "id": "Interesting! We only have \"older sister\" and \"younger sister\".",
+          "literal": "interesting! us-at is only \"older sister\" and \"younger sister\"."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja kes on see vana mees?",
+          "id": "And who is that old man?",
+          "literal": "and who is-he that old man?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ma arvan, et see on sinu vanaisa.",
+          "id": "I guess that's your grandfather.",
+          "literal": "I think-I, that that is-he your grandfather."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Õige! Ta on kaheksakümmend aastat vana.",
+          "id": "Right! He's eighty years old.",
+          "literal": "right! he is-he eighty year-(partial) old."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ta näeb väga rõõmus välja.",
+          "id": "He looks very happy.",
+          "literal": "he looks-he very happy out."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "On küll. Ta on meie pere lemmik.",
+          "id": "He is. He's our family's favorite.",
+          "literal": "is indeed. he is-he our family favorite."
+        }
+      ],
+      "notes": [
+        "⚠️ **See means \"this\" and \"that\" at once.** English separates near from far; everyday Estonian uses *see* for both. Notice how the same word is translated \"this\" in the first line and \"that\" in the fourth. There is a word *too* for the far one, but it is rarely used in ordinary conversation.",
+        "**Minu ema, mu isa.** Once again a long and a short pair. Kerli and Budi use the long form when introducing someone for the first time and the short form afterwards — not a rigid rule, but that is what sounds natural.",
+        "**Tema nimi on Sari**, not \"tema on Sari\". Estonian says \"her name is Sari\", not \"she is Sari\". To give someone else's name, this is the natural structure.",
+        "**Mul on üks õde** — literally \"at-me is one sister\". Estonian has **no verb \"to have\"** at all. This is covered fully in Unit 4; for now memorize *mul on* = \"I have\", *sul on* = \"you have\"."
+      ],
+      "grammars": [
+        {
+          "title": "Possessives — minu, sinu, tema",
+          "body": [
+            "Estonian possessives are really ordinary pronouns in their possessive form, and they go **in front of** the noun, just like English \"my\", \"your\", \"our\"."
+          ],
+          "table": {
+            "head": [
+              "Long",
+              "Short",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "*minu*",
+                "*mu*",
+                "my",
+                "*minu ema* / *mu ema* — my mother"
+              ],
+              [
+                "*sinu*",
+                "*su*",
+                "your",
+                "*sinu isa* / *su isa* — your father"
+              ],
+              [
+                "*tema*",
+                "*ta*",
+                "his; her",
+                "*tema nimi* / *ta nimi* — his/her name"
+              ],
+              [
+                "*meie*",
+                "*me*",
+                "our",
+                "*meie pere* — our family"
+              ],
+              [
+                "*teie*",
+                "*te*",
+                "your (plural)",
+                "*teie maja* — your (plural) house"
+              ],
+              [
+                "*nende*",
+                "—",
+                "their",
+                "*nende lapsed* — their children"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that the possessive forms are **almost the same** as the long pronouns from Unit 1 (*mina* → *minu*, *sina* → *sinu*, *tema*, *meie*, *teie*): they are simply those pronouns in the possessive case, so there is no big new table to memorize.",
+            "⚠️ *Nende* has no short form. If you need \"their\", there is only one choice.",
+            "The noun **does not change** because of the possessive. *Maja* stays *maja*: *minu maja*, *sinu maja*, *nende maja*. Estonian doesn't attach possessive endings the way Finnish or Turkish does."
+          ]
+        },
+        {
+          "title": "See, need, too — pointing",
+          "body": [
+            "Three pointing words, but in everyday conversation you almost always need only the first two."
+          ],
+          "table": {
+            "head": [
+              "Word",
+              "Meaning",
+              "Example",
+              "Note"
+            ],
+            "rows": [
+              [
+                "**see**",
+                "this; that",
+                "*See on mu ema.*",
+                "⚠️ Covers near **and** far. This is the one you use."
+              ],
+              [
+                "**need**",
+                "these; those",
+                "*Need on mu lapsed.*",
+                "The plural of *see*."
+              ],
+              [
+                "**too**",
+                "that (far)",
+                "*Too maja seal.*",
+                "Rare; used when you really need to tell them apart."
+              ],
+              [
+                "**nood**",
+                "those (far)",
+                "*Nood majad.*",
+                "Very rare in conversation."
+              ]
+            ]
+          },
+          "after": [
+            "*See* is also used as \"it/that\" for an idea, just like in English: *See on hea.* (That's good.) *See ei ole tõsi.* (That's not true.)",
+            "⚠️ Don't confuse it with *ta*. *See* is for things and — in casual conversation — also for a person being pointed at. *Ta* is for a person already being talked about. *Kes see on?* (Who is that?) then *Ta on arst.* (He/she is a doctor.)"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Family members",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "Say it",
+            "English",
+            "Note"
+          ],
+          "rows": [
+            [
+              "*ema*",
+              "*E-mah*",
+              "mother",
+              "Memory hook: think \"mom\"."
+            ],
+            [
+              "*isa*",
+              "*I-sah*",
+              "father",
+              ""
+            ],
+            [
+              "*vanemad*",
+              "*VAH-ne-mahd*",
+              "parents",
+              "Literally: \"the older ones\"."
+            ],
+            [
+              "*õde*",
+              "*Õ-de*",
+              "⚠️ sister (older or younger)",
+              "No distinction by age."
+            ],
+            [
+              "*vend*",
+              "*vend*",
+              "⚠️ brother (older or younger)",
+              "No distinction by age."
+            ],
+            [
+              "*poeg*",
+              "*poeg*",
+              "son",
+              ""
+            ],
+            [
+              "*tütar*",
+              "*TÜ-tahr*",
+              "daughter",
+              ""
+            ],
+            [
+              "*laps*",
+              "*lahps*",
+              "child",
+              "Plural: *lapsed*."
+            ],
+            [
+              "*mees*",
+              "*mehhs*",
+              "⚠️ man; husband",
+              "Two meanings, like \"husband/man\" in many languages."
+            ],
+            [
+              "*naine*",
+              "*NIGH-ne*",
+              "⚠️ woman; wife",
+              "Two meanings, just like *mees*."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ No \"older/younger\" sibling words",
+          "items": [
+            "Estonian is simple here, and works just like English: it **doesn't distinguish older from younger siblings** at all — *õde* is \"sister\", *vend* is \"brother\". (Languages such as Indonesian, Chinese, or Korean do make that distinction, which is why Budi's remark in the dialogue is a talking point.)",
+            "If you need to, add an adjective: *vanem õde* (older sister), *noorem vend* (younger brother).",
+            "But know that Estonians almost never feel the need to say it. If you say *mul on õde*, nobody will ask \"older or younger?\" — the question simply doesn't feel important.",
+            "The same goes for address: there are **no honorific titles** for older people, like \"Sir\" or \"Madam\". Estonians call anyone by first name, including people much older than themselves. It takes some getting used to."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Describing people",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "Say it",
+            "English",
+            "Opposite"
+          ],
+          "rows": [
+            [
+              "*noor*",
+              "*nohhr*",
+              "young",
+              "*vana* — old"
+            ],
+            [
+              "*pikk*",
+              "*pikk*",
+              "tall; long",
+              "*lühike* — short"
+            ],
+            [
+              "*ilus*",
+              "*I-loos*",
+              "beautiful, pretty",
+              "*inetu* — ugly"
+            ],
+            [
+              "*tore*",
+              "*TO-re*",
+              "nice, pleasant",
+              "*igav* — boring"
+            ],
+            [
+              "*sõbralik*",
+              "*SÕB-rah-lik*",
+              "friendly",
+              "*ebasõbralik* — unfriendly"
+            ],
+            [
+              "*tark*",
+              "*tahrk*",
+              "smart",
+              "*rumal* — stupid"
+            ],
+            [
+              "*rõõmus*",
+              "*RÕÕ-moos*",
+              "cheerful",
+              "*kurb* — sad"
+            ],
+            [
+              "*tugev*",
+              "*TOO-gev*",
+              "strong",
+              "*nõrk* — weak"
+            ],
+            [
+              "*töökas*",
+              "*TÖÖ-kahs*",
+              "hard-working",
+              "*laisk* — lazy"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the prefix **eba-** in *ebasõbralik*. It works like English \"un-\" or \"in-\", and it is productive: *ebamugav* (uncomfortable), *ebaviisakas* (impolite), *ebakindel* (uncertain). If you know the adjective, you know its opposite."
+        },
+        {
+          "type": "kotak",
+          "title": "Ready-made patterns",
+          "items": [
+            "*Minu ema on väga sõbralik.* — My mother is very friendly.",
+            "*Ta on pikk ja tugev.* — He/she is tall and strong.",
+            "*Ta näeb noor välja.* — He/she looks young. (*välja nägema* = to look like; the two parts are separated)",
+            "*Ta on noorem kui mina.* — He/she is younger than me."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking about family",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Kas sul on pere?*",
+              "Do you have a family?"
+            ],
+            [
+              "*Kas sul on lapsi?*",
+              "Do you have children?"
+            ],
+            [
+              "*Mitu last sul on?*",
+              "How many children do you have?"
+            ],
+            [
+              "*Kas sa oled abielus?*",
+              "Are you married?"
+            ],
+            [
+              "*Ei, ma olen vallaline.*",
+              "No, I'm single."
+            ],
+            [
+              "*Kus su pere elab?*",
+              "Where does your family live?"
+            ],
+            [
+              "*Kes see on?*",
+              "Who is this?"
+            ],
+            [
+              "*See on mu vend.*",
+              "This is my brother."
+            ],
+            [
+              "*Kui vana ta on?*",
+              "How old is he/she?"
+            ],
+            [
+              "*Ta on kolmkümmend aastat vana.*",
+              "He/she is thirty years old."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Kui vana ta on?* is literally \"how old is he/she\", and it is the only way to ask about age. Just like English \"how old are you\" — Estonian asks about being old, not about \"age\" as a noun."
+        },
+        {
+          "type": "p",
+          "text": "To answer: *Ma olen kakskümmend viis aastat vana* (I am twenty-five years old), or shorter and more common, *Ma olen kakskümmend viis*. The numbers themselves are unpacked in Unit 4."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "et": "pere",
+      "baca": "PE-re",
+      "en": "family"
+    },
+    {
+      "et": "ema",
+      "baca": "E-mah",
+      "en": "mother"
+    },
+    {
+      "et": "isa",
+      "baca": "I-sah",
+      "en": "father"
+    },
+    {
+      "et": "õde",
+      "baca": "Õ-de",
+      "en": "sister (older or younger)"
+    },
+    {
+      "et": "vend",
+      "baca": "vend",
+      "en": "⚠️ brother (older or younger)"
+    },
+    {
+      "et": "laps",
+      "baca": "lahps",
+      "en": "child"
+    },
+    {
+      "et": "poeg",
+      "baca": "poeg",
+      "en": "son"
+    },
+    {
+      "et": "tütar",
+      "baca": "TÜ-tahr",
+      "en": "daughter"
+    },
+    {
+      "et": "mees",
+      "baca": "mehhs",
+      "en": "laki-laki; suami"
+    },
+    {
+      "et": "naine",
+      "baca": "NIGH-ne",
+      "en": "perempuan; istri"
+    },
+    {
+      "et": "vanaema",
+      "baca": "VAH-nah-e-mah",
+      "en": "grandmother"
+    },
+    {
+      "et": "vanaisa",
+      "baca": "VAH-nah-i-sah",
+      "en": "grandfather"
+    },
+    {
+      "et": "tädi",
+      "baca": "TÄ-di",
+      "en": "aunt"
+    },
+    {
+      "et": "onu",
+      "baca": "O-noo",
+      "en": "uncle"
+    },
+    {
+      "et": "sõber",
+      "baca": "SÕ-ber",
+      "en": "friend"
+    },
+    {
+      "et": "tüdruk",
+      "baca": "TÜD-rook",
+      "en": "girl"
+    },
+    {
+      "et": "poiss",
+      "baca": "poyss",
+      "en": "boy"
+    },
+    {
+      "et": "maja",
+      "baca": "MAH-yah",
+      "en": "⚠️ house"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Estonian.",
+      "items": [
+        "This is my mother.",
+        "Her name is Sari.",
+        "My father is a doctor.",
+        "I have one sister.",
+        "How old is he/she?",
+        "Where does your family live?"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the correct possessive.",
+      "items": [
+        "____ ema on arst. (my)",
+        "____ isa elab Tartus. (your)",
+        "____ nimi on Kerli. (her)",
+        "____ pere on suur. (our)",
+        "____ maja on ilus. (your, plural)",
+        "____ lapsed on noored. (their)"
+      ]
+    },
+    {
+      "prompt": "Change to the plural demonstrative (see becomes need).",
+      "items": [
+        "See on mu vend.",
+        "See on ilus maja.",
+        "See on minu sõber.",
+        "See on vana foto.",
+        "See on tema laps.",
+        "See on suur linn."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "on / see / ema / minu",
+        "vana / ta / kui / on / ?",
+        "õde / mul / üks / on",
+        "sõbralik / väga / on / pere / meie",
+        "elab / kus / pere / su / ?"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "See on minu ema. — Tema nimi on Sari. — Minu isa on arst. — Mul on üks õde. — Kui vana ta on? — Kus su pere elab?",
+    "1": "Minu — Sinu — Tema — Meie — Teie — Nende",
+    "2": "Need on mu vennad. — Need on ilusad majad. — Need on minu sõbrad. — Need on vanad fotod. — Need on tema lapsed. — Need on suured linnad.",
+    "3": "See on minu ema. — Kui vana ta on? — Mul on üks õde. — Meie pere on väga sõbralik. — Kus su pere elab?"
+  }
+}

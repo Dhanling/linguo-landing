@@ -1,0 +1,524 @@
+{
+  "title": "Where are you going?",
+  "title_target": "Kuhu sa lähed?",
+  "goal": "Get around town — ask for directions, take public transport, and finally see **all six place endings** side by side in one table.",
+  "bekal": [
+    "use the six place endings as two parallel sets",
+    "name means of transport with the ending *-ga*",
+    "ask for directions and understand the answer"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kuidas ma saan Kadriorgu?",
+      "intro": "Budi wants to go to Kadriorg Park and asks a passerby.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Vabandust, kuidas ma saan Kadriorgu?",
+          "id": "Excuse me, how do I get to Kadriorg?",
+          "literal": "sorry, how I can-I Kadriorg-into?"
+        },
+        {
+          "speaker": "Möödakäija:",
+          "text": "Kadriorgu? Võtke tramm number üks.",
+          "id": "To Kadriorg? Take tram number one.",
+          "literal": "Kadriorg-into? take tram number one."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja kus on peatus?",
+          "id": "And where's the stop?",
+          "literal": "and where is stop?"
+        },
+        {
+          "speaker": "Möödakäija:",
+          "text": "Minge otse, siis paremale. Peatus on seal.",
+          "id": "Go straight, then right. The stop is there.",
+          "literal": "go straight, then right-to. stop is-it there."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kui kaua see võtab?",
+          "id": "How long does it take?",
+          "literal": "how long it takes-it?"
+        },
+        {
+          "speaker": "Möödakäija:",
+          "text": "Umbes viisteist minutit.",
+          "id": "About fifteen minutes.",
+          "literal": "about fifteen minute-part."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja kus ma pean väljuma?",
+          "id": "And where do I get off?",
+          "literal": "and where I must-I to-get-off?"
+        },
+        {
+          "speaker": "Möödakäija:",
+          "text": "Viimases peatuses. Kadriorg on lõpp-peatus.",
+          "id": "At the last stop. Kadriorg is the end of the line.",
+          "literal": "last-at stop-at. Kadriorg is-it end-stop."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aitäh! Kas mul on piletit vaja?",
+          "id": "Thank you! Do I need a ticket?",
+          "literal": "thanks! question me-at is ticket-part needed?"
+        },
+        {
+          "speaker": "Möödakäija:",
+          "text": "Kas te elate Tallinnas?",
+          "id": "Do you live in Tallinn?",
+          "literal": "question you live-you Tallinn-in?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jah, ma olen siin tudeng.",
+          "id": "Yes, I'm a student here.",
+          "literal": "yes, I am-I here student."
+        },
+        {
+          "speaker": "Möödakäija:",
+          "text": "Siis on tasuta. Aga te vajate ühiskaarti.",
+          "id": "Then it's free. But you need a travel card.",
+          "literal": "then is free. but you need-you common-card-part."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tasuta? Tõesti?",
+          "id": "Free? Really?",
+          "literal": "free? really?"
+        },
+        {
+          "speaker": "Möödakäija:",
+          "text": "Jah, Tallinna elanikele. Ostke kaart kioskist.",
+          "id": "Yes, for Tallinn residents. Buy the card at a kiosk.",
+          "literal": "yes, Tallinn-gen residents-to. buy card kiosk-from."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "See on uskumatu. Aitäh väga!",
+          "id": "Amazing. Thank you so much!",
+          "literal": "it is-it unbelievable. thanks very!"
+        },
+        {
+          "speaker": "Möödakäija:",
+          "text": "Palun. Head teed!",
+          "id": "You're welcome. Have a good trip!",
+          "literal": "you're-welcome. good-gen road-part!"
+        }
+      ],
+      "notes": [
+        "⚠️ **Strangers get *te*, not *sa*.** Look at everything the passerby says: *võtke*, *minge*, *te elate*, *ostke*. With people they don't know, Estonians use the plural as the polite form, like French *vous*. More on this in unit 19.",
+        "**Võtke, minge, ostke** are polite command forms. The familiar forms are *võta*, *mine*, *osta*. If you're unsure who you're talking to, the forms ending in *-ke* are always safe.",
+        "⚠️ **Parem means both \"right\" and \"better\".** You just met the second meaning in unit 14. *Paremale* = to the right, *vasakule* = to the left. Context always tells them apart — and English \"right\" has double meanings too.",
+        "⚠️ **Public transport in Tallinn really is free** for anyone registered as a city resident, including foreign students who register their address. You still have to tap your card on every trip. It's a real policy and one reason the city is so easy for newcomers."
+      ],
+      "grammars": [
+        {
+          "title": "The six place endings — all together, in one table",
+          "body": [
+            "You've used each of them separately since unit 2. This is the first time all six stand side by side, and the layout turns out to be very neat: two sets, three directions each."
+          ],
+          "table": {
+            "head": [
+              "Direction",
+              "\"Inside\" set",
+              "*maja*",
+              "\"Surface\" set",
+              "*laud*"
+            ],
+            "rows": [
+              [
+                "**in/at** (kus?)",
+                "**-s**",
+                "*majas* — in the house",
+                "**-l**",
+                "*laual* — on the table"
+              ],
+              [
+                "**from** (kust?)",
+                "**-st**",
+                "*majast* — from the house",
+                "**-lt**",
+                "*laualt* — off the table"
+              ],
+              [
+                "**to** (kuhu?)",
+                "**-sse**",
+                "*majasse* — into the house",
+                "**-le**",
+                "*lauale* — onto the table"
+              ]
+            ]
+          },
+          "after": [
+            "**Read this table down, not across.** Each column is one complete set, and each row is one direction. Six endings, and none needs to be memorized on its own — all you have to remember is three directions and two sets. (Their names: inessive, elative, illative for the inside set; adessive, ablative, allative for the surface set.)",
+            "They all attach to the **genitive**, as promised in unit 6. Now you can see how much one word pair pays off: six place forms, plus *-ga*, *-ta*, *-na*, *-ni* from unit 6. Ten forms from one thing memorized.",
+            "⚠️ The surface set is also used for **people**: *mul* (at me, i.e. I have), *mulle* (to me), *minult* (from me). You've been using all of them since units 4 and 5 without knowing they were one family."
+          ]
+        },
+        {
+          "title": "By what — the ending -ga",
+          "body": [
+            "One ending covers tools, vehicles and companions all at once."
+          ],
+          "table": {
+            "head": [
+              "Eesti keel",
+              "English",
+              "Example"
+            ],
+            "rows": [
+              [
+                "*bussi**ga***",
+                "by bus",
+                "*Ma sõidan bussiga.*"
+              ],
+              [
+                "*trammi**ga***",
+                "by tram",
+                "*Mine trammiga.*"
+              ],
+              [
+                "*rongi**ga***",
+                "by train",
+                "*Rongiga on kiirem.*"
+              ],
+              [
+                "*auto**ga***",
+                "by car",
+                "*Me tuleme autoga.*"
+              ],
+              [
+                "*lennuki**ga***",
+                "by plane",
+                "*Ma lendan lennukiga.*"
+              ],
+              [
+                "*jalgratta**ga***",
+                "by bike",
+                "*Ta sõidab jalgrattaga.*"
+              ],
+              [
+                "*sõbra**ga***",
+                "with a friend",
+                "*Ma lähen sõbraga.*"
+              ],
+              [
+                "⚠️ *jalgsi*",
+                "on foot",
+                "*Ma lähen jalgsi.*"
+              ]
+            ]
+          },
+          "after": [
+            "The last row is the only exception you need to know: \"on foot\" isn't *jalgadega* but *jalgsi*. It's a frozen form of *jalg* (foot).",
+            "The *-ga* ending also covers tools: *pastakaga* (with a pen), *noaga* (with a knife), *kaardiga* (by card — you used it in unit 4).",
+            "Its opposite is *-ta* (without): *suhkruta* (without sugar), *piimata* (without milk), *minuta* (without me). Very handy in a café."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Vehicles and travel",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "Say it",
+            "\"By ...\"",
+            "English"
+          ],
+          "rows": [
+            [
+              "*buss*",
+              "*booss*",
+              "*bussiga*",
+              "bus"
+            ],
+            [
+              "*tramm*",
+              "*trahmm*",
+              "*trammiga*",
+              "tram"
+            ],
+            [
+              "*rong*",
+              "*rong*",
+              "*rongiga*",
+              "train"
+            ],
+            [
+              "*auto*",
+              "*OW-to*",
+              "*autoga*",
+              "car"
+            ],
+            [
+              "*takso*",
+              "*TAHK-so*",
+              "*taksoga*",
+              "taxi"
+            ],
+            [
+              "*lennuk*",
+              "*LEN-nook*",
+              "*lennukiga*",
+              "plane"
+            ],
+            [
+              "*laev*",
+              "*lahev*",
+              "*laevaga*",
+              "ship"
+            ],
+            [
+              "*praam*",
+              "*praahm*",
+              "*praamiga*",
+              "ferry"
+            ],
+            [
+              "*jalgratas*",
+              "*YAHLG-rah-tahs*",
+              "*jalgrattaga*",
+              "bicycle"
+            ],
+            [
+              "*tõukeratas*",
+              "*TÕW-ke-rah-tahs*",
+              "*tõukerattaga*",
+              "e-scooter"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Places and travel words",
+          "items": [
+            "*peatus* — stop. *bussijaam* — bus station. *raudteejaam* — train station. *lennujaam* — airport. *sadam* — harbor.",
+            "*pilet* — ticket. *ühiskaart* — travel card. *tasuta* — free. *edasi-tagasi* — round trip.",
+            "*väljuma* — to get off, to depart. *sisenema* — to enter, to get on. *jõudma* — to arrive. *ümber istuma* — to change (vehicles).",
+            "⚠️ The *praam* (ferry) to Saaremaa and Hiiumaa is a normal part of travel in Estonia. If you're planning to visit the islands in summer, book your ferry ticket ahead."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking for directions",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Vabandust, kuidas ma saan ...?*",
+              "Excuse me, how do I get to ...?"
+            ],
+            [
+              "*Kus asub ...?*",
+              "Where is ...?"
+            ],
+            [
+              "*Kas see on kaugel?*",
+              "Is it far?"
+            ],
+            [
+              "*Kui kaua see võtab?*",
+              "How long does it take?"
+            ],
+            [
+              "*Ma olen eksinud.*",
+              "I'm lost."
+            ],
+            [
+              "*Minge otse.*",
+              "Go straight."
+            ],
+            [
+              "*Pöörake paremale.*",
+              "Turn right."
+            ],
+            [
+              "*Pöörake vasakule.*",
+              "Turn left."
+            ],
+            [
+              "*See on üle tee.*",
+              "It's across the street."
+            ],
+            [
+              "*See on nurga peal.*",
+              "It's on the corner."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ The last sentence is useful both ways: you'll say it when someone asks you for directions, and you'll hear it when you ask a fellow newcomer. *Pärit* means \"from (originally)\"."
+        },
+        {
+          "type": "kotak",
+          "title": "Directions and positions",
+          "items": [
+            "*otse* (straight), *paremale* (to the right), *vasakule* (to the left), *tagasi* (back).",
+            "*paremal* (on the right), *vasakul* (on the left) — notice **-le** for direction, **-l** for position. The surface set again.",
+            "*ees* (in front), *taga* (behind), *kõrval* (beside), *vastas* (opposite), *vahel* (between).",
+            "*põhi* (north), *lõuna* (south), *ida* (east), *lääne* (west). ⚠️ *Lõuna* also means midday — you met that meaning in unit 8."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "et": "tramm",
+      "baca": "trahmm",
+      "en": "tram"
+    },
+    {
+      "et": "rong",
+      "baca": "rong",
+      "en": "train"
+    },
+    {
+      "et": "lennuk",
+      "baca": "LEN-nook",
+      "en": "plane"
+    },
+    {
+      "et": "laev",
+      "baca": "lahev",
+      "en": "ship"
+    },
+    {
+      "et": "praam",
+      "baca": "praahm",
+      "en": "ferry"
+    },
+    {
+      "et": "jalgratas",
+      "baca": "YAHLG-rah-tahs",
+      "en": "bicycle"
+    },
+    {
+      "et": "peatus",
+      "baca": "PE-ah-toos",
+      "en": "stop (bus/tram)"
+    },
+    {
+      "et": "pilet",
+      "baca": "PI-let",
+      "en": "ticket"
+    },
+    {
+      "et": "tasuta",
+      "baca": "TAH-soo-tah",
+      "en": "free (of charge)"
+    },
+    {
+      "et": "sõitma",
+      "baca": "SÕIT-mah",
+      "en": "to ride, to drive"
+    },
+    {
+      "et": "väljuma",
+      "baca": "VÄL-yoo-mah",
+      "en": "to get off, to exit"
+    },
+    {
+      "et": "jõudma",
+      "baca": "YÕWD-mah",
+      "en": "to arrive, to reach"
+    },
+    {
+      "et": "pöörama",
+      "baca": "PÖÖ-rah-mah",
+      "en": "to turn"
+    },
+    {
+      "et": "kõndima",
+      "baca": "KÕN-di-mah",
+      "en": "to walk"
+    },
+    {
+      "et": "otse",
+      "baca": "OT-se",
+      "en": "straight"
+    },
+    {
+      "et": "paremale",
+      "baca": "PAH-re-mah-le",
+      "en": "to the right"
+    },
+    {
+      "et": "vasakule",
+      "baca": "VAH-sah-koo-le",
+      "en": "to the left"
+    },
+    {
+      "et": "jalgsi",
+      "baca": "YAHLG-si",
+      "en": "⚠️ on foot"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Complete the set: in, from, into.",
+      "items": [
+        "maja: majas, ____, majasse",
+        "kool: koolis, koolist, ____",
+        "laud: ____, laualt, lauale",
+        "turg: turul, ____, turule",
+        "pood: poes, poest, ____",
+        "linn: ____, linnast, linna"
+      ]
+    },
+    {
+      "prompt": "Add the ending -ga (\"by/with\").",
+      "items": [
+        "buss",
+        "rong",
+        "auto",
+        "lennuk",
+        "jalgratas",
+        "sõber"
+      ]
+    },
+    {
+      "prompt": "Translate into Estonian.",
+      "items": [
+        "Excuse me, how do I get to Kadriorg?",
+        "Take tram number one.",
+        "Go straight, then turn right.",
+        "How long does it take?",
+        "I'm lost.",
+        "I'm going on foot."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "bussiga / sõidan / ma",
+        "otse / paremale / minge / siis / ,",
+        "kaua / kui / võtab / see / ?",
+        "eksinud / ma / olen",
+        "jalgsi / lähen / ma"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "majast — koolisse — laual — turult — poodi — linnas",
+    "1": "bussiga — rongiga — autoga — lennukiga — jalgrattaga — sõbraga",
+    "2": "Vabandust, kuidas ma saan Kadriorgu? — Võtke tramm number üks. — Minge otse, siis paremale. — Kui kaua see võtab? — Ma olen eksinud. — Ma lähen jalgsi.",
+    "3": "Ma sõidan bussiga. — Minge otse, siis paremale. — Kui kaua see võtab? — Ma olen eksinud. — Ma lähen jalgsi."
+  }
+}

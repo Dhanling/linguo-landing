@@ -1,0 +1,585 @@
+{
+  "title": "At the café",
+  "title_target": "Kohvikus",
+  "goal": "Order food and drinks at three levels of politeness, and ask what's in a dish — including the question many readers of this course need most.",
+  "bekal": [
+    "order with *palun*, *ma võtan*, and *ma sooviksin*",
+    "name thirty foods and drinks you'll really find in an Estonian café",
+    "ask what a dish contains and politely decline"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kohvik vanalinnas",
+      "intro": "Kerli takes Budi to a café in Tallinn's Old Town.",
+      "lines": [
+        {
+          "speaker": "Ettekandja:",
+          "text": "Tere! Kas olete valmis tellima?",
+          "id": "Hello! Ready to order?",
+          "literal": "hello! [question] are-you(pl) ready to-order?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Jah. Mulle üks suur latte ja üks saiake, palun.",
+          "id": "Yes. A large latte for me and a sweet bun.",
+          "literal": "yes. me-to one large latte and one bun, please."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ma sooviksin teed. Kas teil on rohelist teed?",
+          "id": "I'd like tea. Do you have green tea?",
+          "literal": "I want-would-I tea-PARTITIVE. [question] you(pl)-at is green-PARTITIVE tea-PARTITIVE?"
+        },
+        {
+          "speaker": "Ettekandja:",
+          "text": "Jah, on küll. Kas soovite ka midagi süüa?",
+          "id": "Yes, we do. Would you like something to eat too?",
+          "literal": "yes, is indeed. [question] want-you(pl) also something to-eat?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vabandust, mis see on?",
+          "id": "Excuse me, what is that?",
+          "literal": "sorry, what that is-it?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "See on kohuke. Väga eestimaine.",
+          "id": "That's a kohuke. Very Estonian.",
+          "literal": "that is-it kohuke. very Estonia-ish."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kas selles on liha?",
+          "id": "Is there meat in it?",
+          "literal": "[question] it-in is meat?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ei ole. See on magus, kohupiimast ja šokolaadist.",
+          "id": "No. It's sweet, made of curd cheese and chocolate.",
+          "literal": "not is. that is-it sweet, curd-milk-from and chocolate-from."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Siis ma võtan ühe. Ja ka klaasi vett, palun.",
+          "id": "Then I'll take one. And a glass of water too, please.",
+          "literal": "then I take-I one-GEN. and also glass-GEN water-PARTITIVE, please."
+        },
+        {
+          "speaker": "Ettekandja:",
+          "text": "Kas siia või kaasa?",
+          "id": "Eat in or take away?",
+          "literal": "[question] to-here or along?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Siia, palun.",
+          "id": "Eat in, please.",
+          "literal": "to-here, please."
+        },
+        {
+          "speaker": "Ettekandja:",
+          "text": "Kokku üksteist eurot kakskümmend.",
+          "id": "That's eleven euros twenty.",
+          "literal": "altogether eleven euro-PARTITIVE two-ty."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Palun. Kas siin on vaba laud?",
+          "id": "Here you are. Is there a free table?",
+          "literal": "please. [question] here is free table?"
+        },
+        {
+          "speaker": "Ettekandja:",
+          "text": "Jah, akna kõrval. Palun võtke istet!",
+          "id": "Yes, by the window. Please take a seat!",
+          "literal": "yes, window-GEN beside. please take seat-PARTITIVE!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aitäh!",
+          "id": "Thank you!",
+          "literal": "thank-you!"
+        },
+        {
+          "speaker": "Ettekandja:",
+          "text": "Palun. Head isu!",
+          "id": "You're welcome. Enjoy!",
+          "literal": "please. good-GEN appetite-PARTITIVE!"
+        }
+      ],
+      "notes": [
+        "**Mulle, teile** — \"for me\", \"for you\". When ordering, Estonians often just say *mulle* + the item with no verb at all: *Mulle üks kohv, palun.* (\"One coffee for me, please.\") This is the shortest order and perfectly polite.",
+        "**Rohelis*t* tee*d*.** Notice that **the adjective changes too**, to match its noun: *roheline tee* becomes *rohelist teed*. This holds throughout Estonian — adjectives always copy the form of their noun (English adjectives never change, so this is new). Covered in Unit 14.",
+        "**Midagi süüa** — \"something to eat\". *Süüa* is the second form of the verb \"to eat\"; the first is *sööma*. Estonian has **two basic forms** for every verb, and which one is used depends on the words before it. Covered in Unit 10 — don't chase it now.",
+        "**Klaasi vett** — \"a glass of water\". The container is in the genitive (*klaas* → *klaasi*), the contents in the partitive (*vesi* → *vett*). Same pattern: *tass kohvi* (a cup of coffee), *pudel veini* (a bottle of wine), *taldrik suppi* (a plate of soup)."
+      ],
+      "grammars": [
+        {
+          "title": "Three ways to order, from the shortest",
+          "body": [
+            "All of them are polite. The difference isn't politeness but how careful you sound."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Example",
+              "Feels",
+              "When to use it"
+            ],
+            "rows": [
+              [
+                "*Mulle... palun.*",
+                "*Mulle üks kohv, palun.*",
+                "Short, natural",
+                "Busy café, kiosk, long queue."
+              ],
+              [
+                "*Ma võtan...*",
+                "*Ma võtan ühe kohvi.*",
+                "Confident, you know what you want",
+                "The most common among Estonians."
+              ],
+              [
+                "*Ma sooviksin...*",
+                "*Ma sooviksin kohvi.*",
+                "Soft, a little cautious",
+                "Restaurants, or when you're unsure."
+              ],
+              [
+                "*Kas ma saaksin...?*",
+                "*Kas ma saaksin kohvi?*",
+                "Softest",
+                "Asking for something off the menu."
+              ]
+            ]
+          },
+          "after": [
+            "The last two forms use the **conditional** (*-ksin*), the equivalent of English \"would\" or \"could\". You don't need to understand the form yet — just memorize *ma sooviksin* (\"I would like\") and *kas ma saaksin* (\"could I have\") as whole phrases. The form is unpacked in Unit 19.",
+            "⚠️ Don't add *palun* to every sentence. Estonian doesn't use it as often as English uses \"please\", and repeating *palun* three times in one order sounds odd. Once at the end is enough."
+          ]
+        },
+        {
+          "title": "⚠️ Why the drinks change form",
+          "body": [
+            "Notice this pattern all through the dialogue: *tee* becomes *teed*, *vesi* becomes *vett*, *kohv* becomes *kohvi*. The second form is called the **partitive**, and the reason makes sense once you say it aloud: you're not ordering **all the tea in the world**, you're ordering some of it — like English \"some tea\"."
+          ],
+          "table": {
+            "head": [
+              "Basic form",
+              "Partitive form",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*kohv*",
+                "*kohvi*",
+                "*Ma joon kohvi.*",
+                "I drink coffee."
+              ],
+              [
+                "*tee*",
+                "*teed*",
+                "*Kas teil on teed?*",
+                "Do you have tea?"
+              ],
+              [
+                "*vesi*",
+                "*vett*",
+                "*Palun klaas vett.*",
+                "A glass of water, please."
+              ],
+              [
+                "*mahl*",
+                "*mahla*",
+                "*Ma tahan mahla.*",
+                "I want juice."
+              ],
+              [
+                "*piim*",
+                "*piima*",
+                "*Kohv piimaga.*",
+                "Coffee with milk."
+              ],
+              [
+                "*supp*",
+                "*suppi*",
+                "*Ma söön suppi.*",
+                "I'm eating soup."
+              ]
+            ]
+          },
+          "after": [
+            "A practical rule for now: **things you can't count one by one — liquids, materials, shapeless food — almost always take the partitive.** That already covers nearly the whole café menu.",
+            "Compare countable things: *Ma võtan ühe saiakese* (I'll take one bun) — this uses the **genitive**, because the whole bun is taken. The difference is covered fully in Unit 13; don't force yourself to grasp it now.",
+            "If in doubt, **use the partitive**. In a café, a mistake in that direction almost never sounds wrong."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Drinks and food",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "Say it",
+            "Partitive form",
+            "English"
+          ],
+          "rows": [
+            [
+              "*kohv*",
+              "*kohv*",
+              "*kohvi*",
+              "coffee"
+            ],
+            [
+              "*tee*",
+              "*tehh*",
+              "*teed*",
+              "tea"
+            ],
+            [
+              "*vesi*",
+              "*VE-si*",
+              "*vett*",
+              "water"
+            ],
+            [
+              "*mahl*",
+              "*mahhl*",
+              "*mahla*",
+              "juice"
+            ],
+            [
+              "*piim*",
+              "*peem*",
+              "*piima*",
+              "milk"
+            ],
+            [
+              "*õlu*",
+              "*Õ-loo*",
+              "*õlut*",
+              "beer"
+            ],
+            [
+              "*leib*",
+              "*layb*",
+              "*leiba*",
+              "dark rye bread"
+            ],
+            [
+              "*sai*",
+              "*sigh*",
+              "*saia*",
+              "white bread"
+            ],
+            [
+              "*kala*",
+              "*KAH-lah*",
+              "*kala*",
+              "⚠️ fish"
+            ],
+            [
+              "*kana*",
+              "*KAH-nah*",
+              "*kana*",
+              "⚠️ chicken"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three Estonian foods you'll be offered",
+          "items": [
+            "*kohuke* — a chocolate-covered curd-cheese bar, sold in every shop. Sweet, cold, and completely meat-free. The real national snack.",
+            "*must leib* — dense, slightly sour dark rye bread. Estonians living abroad miss this more than anything.",
+            "*kama* — a flour blend of four grains, stirred with sour milk. It tastes strange at the first bite; give it a second chance.",
+            "⚠️ *verivorst* (blood sausage) turns up everywhere at Christmas. If you have dietary restrictions, learn its name."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "⚠️ Asking what's in the food",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Estonia is not a country used to religious dietary rules, and pork is in many everyday dishes — often without being named. The sentences below are not extras; for many readers of this course they are the most useful part of the unit."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Kas selles on liha?*",
+              "*kahs SEL-les on LI-hah*",
+              "Is there meat in it?"
+            ],
+            [
+              "*Kas selles on sealiha?*",
+              "*kahs SEL-les on SE-ah-li-hah*",
+              "Is there pork in it?"
+            ],
+            [
+              "*Ma ei söö sealiha.*",
+              "*mah ay söö SE-ah-li-hah*",
+              "I don't eat pork."
+            ],
+            [
+              "*Ma ei joo alkoholi.*",
+              "*mah ay yohh AHL-ko-ho-li*",
+              "I don't drink alcohol."
+            ],
+            [
+              "*Ma olen taimetoitlane.*",
+              "*mah o-len TIGH-me-toyt-lah-ne*",
+              "I'm vegetarian."
+            ],
+            [
+              "*Kas siin on midagi ilma lihata?*",
+              "*kahs seen on MI-dah-gi IL-mah LI-hah-tah*",
+              "Is there anything without meat?"
+            ],
+            [
+              "*Ma olen allergiline pähklite suhtes.*",
+              "*...PÄHK-li-te SOOH-tes*",
+              "I'm allergic to nuts."
+            ],
+            [
+              "*Kas selles on piima?*",
+              "*kahs SEL-les on PEE-mah*",
+              "Is there milk in it?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Words to recognize on labels",
+          "items": [
+            "*sealiha* — pork. Literally \"pig meat\" (*siga* = pig). ⚠️ This is the most important word on this page.",
+            "*peekon* — bacon. *sink* — ham. *vorst* — sausage. All three are almost always pork unless stated otherwise.",
+            "*veiseliha* — beef. *lambaliha* — lamb. *kanaliha* — chicken.",
+            "*alkohol* — alcohol. *alkoholivaba* — alcohol-free. ⚠️ The ending *-vaba* means \"free of\": *gluteenivaba*, *laktoosivaba*, *suhkruvaba*."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The ending **-vaba** is worth memorizing right now. It attaches to any word and means \"without\" (like English \"-free\"), so you can read labels you've never seen: *lihavaba* (meat-free), *piimavaba* (dairy-free). Compare the prefix *eba-* in Unit 3 — Estonian likes to build words from parts you can re-attach."
+        }
+      ]
+    },
+    {
+      "title": "Inside the café",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Kas siin on vaba laud?*",
+              "Is there a free table?"
+            ],
+            [
+              "*Kas see koht on vaba?*",
+              "Is this seat free?"
+            ],
+            [
+              "*Palun menüü.*",
+              "The menu, please."
+            ],
+            [
+              "*Mida te soovitate?*",
+              "What do you recommend?"
+            ],
+            [
+              "*Kas siia või kaasa?*",
+              "Eat in or take away?"
+            ],
+            [
+              "*Palun arve.*",
+              "The bill, please."
+            ],
+            [
+              "*Kas saab eraldi maksta?*",
+              "Can we pay separately?"
+            ],
+            [
+              "*Kus on tualett?*",
+              "Where is the toilet?"
+            ],
+            [
+              "*Kas siin on WiFi?*",
+              "Is there WiFi here?"
+            ],
+            [
+              "*Mis on parool?*",
+              "What's the password?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ About tipping: in Estonia tips are **not required** and not expected. In a restaurant, rounding up or leaving five to ten percent is considered generous; in an ordinary café, leaving nothing is completely normal. Don't feel obliged."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "et": "kohvik",
+      "baca": "KOH-vik",
+      "en": "café"
+    },
+    {
+      "et": "ettekandja",
+      "baca": "ET-te-kahnd-yah",
+      "en": "waiter, waitress"
+    },
+    {
+      "et": "tellima",
+      "baca": "TEL-li-mah",
+      "en": "to order"
+    },
+    {
+      "et": "soovima",
+      "baca": "SOHH-vi-mah",
+      "en": "to want"
+    },
+    {
+      "et": "sööma",
+      "baca": "SÖÖ-mah",
+      "en": "to eat"
+    },
+    {
+      "et": "jooma",
+      "baca": "YOHH-mah",
+      "en": "to drink"
+    },
+    {
+      "et": "kohv",
+      "baca": "kohv",
+      "en": "coffee"
+    },
+    {
+      "et": "tee",
+      "baca": "tehh",
+      "en": "tea; road"
+    },
+    {
+      "et": "vesi",
+      "baca": "VE-si",
+      "en": "water"
+    },
+    {
+      "et": "piim",
+      "baca": "peem",
+      "en": "milk"
+    },
+    {
+      "et": "leib",
+      "baca": "layb",
+      "en": "dark rye bread"
+    },
+    {
+      "et": "liha",
+      "baca": "LI-hah",
+      "en": "meat"
+    },
+    {
+      "et": "sealiha",
+      "baca": "SE-ah-li-hah",
+      "en": "⚠️ pork"
+    },
+    {
+      "et": "kala",
+      "baca": "KAH-lah",
+      "en": "⚠️ fish"
+    },
+    {
+      "et": "kana",
+      "baca": "KAH-nah",
+      "en": "⚠️ chicken"
+    },
+    {
+      "et": "muna",
+      "baca": "MOO-nah",
+      "en": "egg"
+    },
+    {
+      "et": "juust",
+      "baca": "yooost",
+      "en": "cheese"
+    },
+    {
+      "et": "magus",
+      "baca": "MAH-goos",
+      "en": "sweet"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Estonian.",
+      "items": [
+        "I'd like tea, please.",
+        "Do you have coffee?",
+        "A glass of water, please.",
+        "Is there pork in it?",
+        "I don't eat pork.",
+        "The bill, please."
+      ]
+    },
+    {
+      "prompt": "Change into the partitive form.",
+      "items": [
+        "kohv",
+        "tee",
+        "vesi",
+        "piim",
+        "supp",
+        "mahl"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right word from this unit.",
+      "items": [
+        "Kas siin on ____ laud? (free)",
+        "Ma ____ sealiha. (don't eat)",
+        "Palun ____ vett. (a glass of)",
+        "Kas siia või ____? (take away)",
+        "See oli väga ____. (tasty)",
+        "Palun ____. (the bill)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "sooviksin / ma / teed",
+        "on / kas / teil / kohvi / ?",
+        "vett / palun / klaas",
+        "liha / selles / kas / on / ?",
+        "või / siia / kaasa / ?"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Ma sooviksin teed, palun. — Kas teil on kohvi? — Palun klaas vett. — Kas selles on sealiha? — Ma ei söö sealiha. — Palun arve.",
+    "1": "kohvi — teed — vett — piima — suppi — mahla",
+    "2": "vaba — ei söö — klaas — kaasa — maitsev — arve",
+    "3": "Ma sooviksin teed. — Kas teil on kohvi? — Palun klaas vett. — Kas selles on liha? — Kas siia või kaasa?"
+  }
+}

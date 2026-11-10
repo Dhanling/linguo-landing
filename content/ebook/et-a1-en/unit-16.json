@@ -1,0 +1,551 @@
+{
+  "title": "Body and health",
+  "title_target": "Tervis",
+  "goal": "Say what hurts, buy medicine, and ask for help — using the sentence pattern Estonian keeps especially for pain.",
+  "bekal": [
+    "name the most common body parts and symptoms",
+    "use *mul valutab* and *mul on valus*",
+    "form commands for one person and for someone you address politely"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Apteegis",
+      "intro": "November. Budi walks into a pharmacy with a hoarse voice.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Tere. Ma tunnen end halvasti.",
+          "id": "Hello. I don't feel well.",
+          "literal": "hello. I feel-I self badly."
+        },
+        {
+          "speaker": "Apteeker:",
+          "text": "Mis teil viga on?",
+          "id": "What's wrong?",
+          "literal": "what you-at flaw is?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mul valutab pea ja kurk.",
+          "id": "My head and throat hurt.",
+          "literal": "me-at hurts-it head and throat."
+        },
+        {
+          "speaker": "Apteeker:",
+          "text": "Kas teil on palavik?",
+          "id": "Do you have a fever?",
+          "literal": "question you-at is fever?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ma ei tea. Mul on külm ja ma olen väsinud.",
+          "id": "I don't know. I'm cold and tired.",
+          "literal": "I not know. me-at is cold and I am-I tired."
+        },
+        {
+          "speaker": "Apteeker:",
+          "text": "Kui kaua see on kestnud?",
+          "id": "How long has it been?",
+          "literal": "how long it has lasted?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kaks päeva.",
+          "id": "Two days.",
+          "literal": "two day-part."
+        },
+        {
+          "speaker": "Apteeker:",
+          "text": "See on tavaline külmetus. Siin on ravim.",
+          "id": "It's an ordinary cold. Here's the medicine.",
+          "literal": "it is-it ordinary cold. here is medicine."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kuidas ma pean seda võtma?",
+          "id": "How should I take it?",
+          "literal": "how I must-I it-part to-take?"
+        },
+        {
+          "speaker": "Apteeker:",
+          "text": "Kaks tabletti päevas, pärast sööki.",
+          "id": "Two tablets a day, after meals.",
+          "literal": "two tablet-part day-in, after food-part."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aitäh. Kas ma pean arsti juurde minema?",
+          "id": "Thanks. Should I see a doctor?",
+          "literal": "thanks. question I must-I doctor-gen to-place to-go?"
+        },
+        {
+          "speaker": "Apteeker:",
+          "text": "Kui palavik ei lange kolme päevaga, siis jah.",
+          "id": "If the fever doesn't go down in three days, yes.",
+          "literal": "if fever not drop-it three day-with, then yes."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Selge. Ja kui on hädaolukord?",
+          "id": "Got it. And in an emergency?",
+          "literal": "clear. and if is emergency-situation?"
+        },
+        {
+          "speaker": "Apteeker:",
+          "text": "Helistage 112. See on tasuta ja töötab alati.",
+          "id": "Call 112. It's free and always works.",
+          "literal": "call 112. it is-it free and works-it always."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aitäh väga.",
+          "id": "Thank you very much.",
+          "literal": "thanks very."
+        },
+        {
+          "speaker": "Apteeker:",
+          "text": "Palun. Paranege ruttu!",
+          "id": "You're welcome. Get well soon!",
+          "literal": "you're-welcome. get-well quickly!"
+        }
+      ],
+      "notes": [
+        "⚠️ **Mul valutab pea** — literally \"at me hurts the head\". The thing that hurts becomes the **subject**, and its owner is marked with the ending **-l**. This pattern is used for all pain: *mul valutab kõht* (my stomach hurts), *tal valutab hammas* (his/her tooth hurts).",
+        "**Mul on külm** means \"I'm cold\", not \"I have cold\". The pattern *mul on* + adjective covers many physical states: *mul on soe* (I'm hot), *mul on igav* (I'm bored), *mul on hea meel* (I'm glad).",
+        "**Mis teil viga on?** — the standard question from pharmacists and doctors, literally \"what flaw is at you\". Don't be offended; it's completely neutral.",
+        "⚠️ **112 is the emergency number for all of Estonia** — ambulance, fire and police in one. Free from any phone, including one with no credit, and the operators speak English. Save it now."
+      ],
+      "grammars": [
+        {
+          "title": "Three ways to say it hurts",
+          "body": [
+            "All three are correct. The difference is how precisely you can point to where it hurts."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Example",
+              "English",
+              "When"
+            ],
+            "rows": [
+              [
+                "*mul valutab* + body part",
+                "*Mul valutab pea.*",
+                "My head hurts.",
+                "Pain in one specific place."
+              ],
+              [
+                "*mul on valus*",
+                "*Mul on valus.*",
+                "I'm in pain.",
+                "Pain without pointing to a place."
+              ],
+              [
+                "*mul on* + illness",
+                "*Mul on palavik.*",
+                "I have a fever.",
+                "Naming the illness."
+              ],
+              [
+                "*ma olen haige*",
+                "*Ma olen haige.*",
+                "I'm sick.",
+                "General state."
+              ],
+              [
+                "*ma tunnen end halvasti*",
+                "*Ma tunnen end halvasti.*",
+                "I don't feel well.",
+                "Not sure what it is yet."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Notice that **none of them uses a possessive**. Estonian doesn't say \"my head hurts\" with *minu pea*; it says *mul valutab pea* — \"at me, the head hurts\". The *-l* ending already takes care of ownership.",
+            "To ask: *Kus valutab?* (Where does it hurt?) or *Mis viga?* (What's wrong?). Both are very common.",
+            "*Valus* is also used as an adjective: *valus hammas* (a sore tooth), *valus koht* (a sore spot)."
+          ]
+        },
+        {
+          "title": "Commands — and their shortcut",
+          "body": [
+            "You've been using them since unit 7 (*tule sisse*, *kuula*) and unit 15 (*minge*, *võtke*). Here's the rule, and it comes with a pleasant shortcut."
+          ],
+          "table": {
+            "head": [
+              "Verb",
+              "To *sa*",
+              "To *te*",
+              "Don't (*sa*)",
+              "Don't (*te*)"
+            ],
+            "rows": [
+              [
+                "*minema*",
+                "*mine!*",
+                "*minge!*",
+                "*ära mine!*",
+                "*ärge minge!*"
+              ],
+              [
+                "*tulema*",
+                "*tule!*",
+                "*tulge!*",
+                "*ära tule!*",
+                "*ärge tulge!*"
+              ],
+              [
+                "*võtma*",
+                "*võta!*",
+                "*võtke!*",
+                "*ära võta!*",
+                "*ärge võtke!*"
+              ],
+              [
+                "*ostma*",
+                "*osta!*",
+                "*ostke!*",
+                "*ära osta!*",
+                "*ärge ostke!*"
+              ],
+              [
+                "*helistama*",
+                "*helista!*",
+                "*helistage!*",
+                "*ära helista!*",
+                "*ärge helistage!*"
+              ],
+              [
+                "*ootama*",
+                "*oota!*",
+                "*oodake!*",
+                "*ära oota!*",
+                "*ärge oodake!*"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **The shortcut: the command form for *sa* is exactly the form used after *ei*.** *Ei mine* and *mine!* use the same form. So the rule from unit 11 — take the *ma* form, drop the *-n* — also gives you every command form. One rule, two jobs.",
+            "The *te* form is made by adding **-ke** or **-ge**. It's used with people you address politely, with strangers, and with more than one person.",
+            "To say \"let's\", use the *me* form without the pronoun: *lähme!* (let's go), *sööme!* (let's eat), *vaatame!* (let's see). You've been using it since unit 7."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Body parts",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "Say it",
+            "Genitive",
+            "English"
+          ],
+          "rows": [
+            [
+              "*pea*",
+              "*pe-ah*",
+              "*pea*",
+              "head"
+            ],
+            [
+              "*juuksed*",
+              "*YOOOK-sed*",
+              "*juuste*",
+              "hair"
+            ],
+            [
+              "*nägu*",
+              "*NÄ-goo*",
+              "*näo*",
+              "face"
+            ],
+            [
+              "*silm*",
+              "*silm*",
+              "*silma*",
+              "eye"
+            ],
+            [
+              "*kõrv*",
+              "*kõrv*",
+              "*kõrva*",
+              "ear"
+            ],
+            [
+              "*nina*",
+              "*NI-nah*",
+              "*nina*",
+              "nose"
+            ],
+            [
+              "*suu*",
+              "*sooo*",
+              "*suu*",
+              "mouth"
+            ],
+            [
+              "*hammas*",
+              "*HAHM-mahs*",
+              "*hamba*",
+              "tooth"
+            ],
+            [
+              "*kurk*",
+              "*koork*",
+              "*kurgu*",
+              "throat"
+            ],
+            [
+              "*kael*",
+              "*kahel*",
+              "*kaela*",
+              "neck"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "You've already seen many of these in the list of pairs in unit 6 — *jalg – jala*, *käsi – käe*, *selg – selja*, *nägu – näo*. Body parts are among the oldest words in a language, and the oldest words are the ones that change the most."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Süda* means **heart** both as an organ and as feelings, exactly like English \"heart\". *Mul on hea süda* — I have a good heart."
+        }
+      ]
+    },
+    {
+      "title": "Illness, medicine and emergencies",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*külmetus*",
+              "*KÜL-me-toos*",
+              "a cold"
+            ],
+            [
+              "*gripp*",
+              "*gripp*",
+              "flu"
+            ],
+            [
+              "*palavik*",
+              "*PAH-lah-vik*",
+              "fever"
+            ],
+            [
+              "*köha*",
+              "*KÖ-hah*",
+              "cough"
+            ],
+            [
+              "*nohu*",
+              "*NO-hoo*",
+              "runny nose"
+            ],
+            [
+              "*peavalu*",
+              "*PE-ah-vah-loo*",
+              "headache"
+            ],
+            [
+              "*kõhuvalu*",
+              "*KÕ-hoo-vah-loo*",
+              "stomachache"
+            ],
+            [
+              "*hambavalu*",
+              "*HAHM-bah-vah-loo*",
+              "toothache"
+            ],
+            [
+              "*allergia*",
+              "*ahl-LER-gi-ah*",
+              "allergy"
+            ],
+            [
+              "*ravim, rohi*",
+              "*RAH-vim, RO-hi*",
+              "medicine"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Sentences you need to have ready now",
+          "items": [
+            "*Ma vajan arsti.* — I need a doctor.",
+            "*Palun kutsuge kiirabi!* — Please call an ambulance!",
+            "*Mul on allergia ...* — I'm allergic to ...",
+            "⚠️ **112** — the emergency number for ambulance, fire and police. Free, available twenty-four hours a day, and the operators speak English."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Terviseks does three jobs",
+          "items": [
+            "**When toasting** — *Terviseks!* means \"to health\", the equivalent of \"cheers\".",
+            "**When someone sneezes** — *Terviseks!* means \"bless you\".",
+            "**As a general good wish** — said when parting from someone who is ill.",
+            "The root word is *tervis* (health) — the same root as the greeting *tervist!* you learned in unit 1."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "et": "tervis",
+      "baca": "TER-vis",
+      "en": "health"
+    },
+    {
+      "et": "haige",
+      "baca": "HIGH-ge",
+      "en": "sick, ill"
+    },
+    {
+      "et": "valu",
+      "baca": "VAH-loo",
+      "en": "pain"
+    },
+    {
+      "et": "valus",
+      "baca": "VAH-loos",
+      "en": "sore, painful"
+    },
+    {
+      "et": "valutama",
+      "baca": "VAH-loo-tah-mah",
+      "en": "to hurt, to ache"
+    },
+    {
+      "et": "pea",
+      "baca": "pe-ah",
+      "en": "head"
+    },
+    {
+      "et": "silm",
+      "baca": "silm",
+      "en": "eye"
+    },
+    {
+      "et": "kõrv",
+      "baca": "kõrv",
+      "en": "ear"
+    },
+    {
+      "et": "nina",
+      "baca": "NI-nah",
+      "en": "nose"
+    },
+    {
+      "et": "suu",
+      "baca": "sooo",
+      "en": "mouth"
+    },
+    {
+      "et": "hammas",
+      "baca": "HAHM-mahs",
+      "en": "tooth (gen. hamba)"
+    },
+    {
+      "et": "kurk",
+      "baca": "koork",
+      "en": "throat"
+    },
+    {
+      "et": "kõht",
+      "baca": "kõht",
+      "en": "stomach (gen. kõhu)"
+    },
+    {
+      "et": "selg",
+      "baca": "selg",
+      "en": "back (gen. selja)"
+    },
+    {
+      "et": "süda",
+      "baca": "SÜ-dah",
+      "en": "heart"
+    },
+    {
+      "et": "palavik",
+      "baca": "PAH-lah-vik",
+      "en": "fever"
+    },
+    {
+      "et": "köha",
+      "baca": "KÖ-hah",
+      "en": "cough"
+    },
+    {
+      "et": "külmetus",
+      "baca": "KÜL-me-toos",
+      "en": "a cold"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Estonian.",
+      "items": [
+        "My head hurts.",
+        "I have a fever.",
+        "I don't feel well.",
+        "My stomach hurts.",
+        "I need a doctor.",
+        "Please call an ambulance!"
+      ]
+    },
+    {
+      "prompt": "Make commands for sa and for te.",
+      "items": [
+        "minema",
+        "tulema",
+        "võtma",
+        "ootama",
+        "helistama",
+        "ostma"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right body part.",
+      "items": [
+        "Mul valutab ____. (head)",
+        "Mul valutab ____. (stomach)",
+        "Mul valutab ____. (tooth)",
+        "Mul valutab ____. (throat)",
+        "Mul valutab ____. (back)",
+        "Mul valutab ____. (ear)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "valutab / pea / mul",
+        "palavik / on / mul",
+        "halvasti / tunnen / ma / end",
+        "arsti / ma / vajan",
+        "ruttu / paranege"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Mul valutab pea. — Mul on palavik. — Ma tunnen end halvasti. — Mul valutab kõht. — Ma vajan arsti. — Palun kutsuge kiirabi!",
+    "1": "mine! / minge! — tule! / tulge! — võta! / võtke! — oota! / oodake! — helista! / helistage! — osta! / ostke!",
+    "2": "pea — kõht — hammas — kurk — selg — kõrv",
+    "3": "Mul valutab pea. — Mul on palavik. — Ma tunnen end halvasti. — Ma vajan arsti. — Paranege ruttu."
+  }
+}

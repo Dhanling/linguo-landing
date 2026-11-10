@@ -1,0 +1,545 @@
+{
+  "title": "At the shop",
+  "title_target": "Poes",
+  "goal": "Buy clothes, try on sizes, and get ready for the thing that's hardest for readers from warm climates: the Estonian winter.",
+  "bekal": [
+    "name clothes and sizes, and ask to try things on",
+    "use *ilma ...-ta* to say \"without\"",
+    "know what you really need to buy before November"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Talvejopet ostmas",
+      "intro": "Early October. Kerli goes with Budi to buy his first winter jacket.",
+      "lines": [
+        {
+          "speaker": "Müüja:",
+          "text": "Tere! Kas ma saan aidata?",
+          "id": "Hello! Can I help you?",
+          "literal": "hello! question I can-I to-help?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jah, palun. Ma otsin talvejopet.",
+          "id": "Yes, please. I'm looking for a winter jacket.",
+          "literal": "yes, please. I look-for-I winter-jacket-part."
+        },
+        {
+          "speaker": "Müüja:",
+          "text": "Mis suurus teil on?",
+          "id": "What's your size?",
+          "literal": "what size you-at is?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ma ei tea täpselt. Indoneesias ma kandsin M-i.",
+          "id": "I don't know exactly. In Indonesia I wore M.",
+          "literal": "I not know exactly. Indonesia-in I wore-I M-part."
+        },
+        {
+          "speaker": "Müüja:",
+          "text": "Siin võtke pigem L. Jope peab olema avar.",
+          "id": "Just take an L here. The jacket has to be loose.",
+          "literal": "here-here take better L. jacket must-it to-be loose."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Miks avar?",
+          "id": "Why loose?",
+          "literal": "why loose?"
+        },
+        {
+          "speaker": "Müüja:",
+          "text": "Sest alla käivad kihid. Talvel kantakse kolme kihti.",
+          "id": "Because there are layers underneath. In winter people wear three layers.",
+          "literal": "because under-to go-they layers-pl. winter-in is-worn three layer-part."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kolme kihti?",
+          "id": "Three layers?",
+          "literal": "three layer-part?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Jah: soe pesu, kampsun, jope. Nii teevad kõik.",
+          "id": "Yes: thermal underwear, a sweater, a jacket. Everyone does it.",
+          "literal": "yes: warm underwear, sweater, jacket. so do-they all."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ma ei teadnud seda. Kas ma võin proovida?",
+          "id": "I didn't know that. May I try it on?",
+          "literal": "I not knew it-part. question I may-I to-try?"
+        },
+        {
+          "speaker": "Müüja:",
+          "text": "Muidugi. Proovikabiin on seal.",
+          "id": "Of course. The fitting room is over there.",
+          "literal": "of-course. try-cabin is-it there."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "See sobib hästi. Kui palju see maksab?",
+          "id": "This fits well. How much is it?",
+          "literal": "this suits-it well. how-much this costs-it?"
+        },
+        {
+          "speaker": "Müüja:",
+          "text": "Sada kakskümmend eurot. Praegu on allahindlus.",
+          "id": "A hundred and twenty euros. It's on sale right now.",
+          "literal": "hundred two-ten euro-part. now is down-down."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ma võtan selle. Ja mul on vaja mütsi ja kindaid.",
+          "id": "I'll take this one. And I need a hat and gloves.",
+          "literal": "I take-I this-gen. and me-at is need hat-part and glove-pl-part."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Tark mees. Ilma mütsita on talv väga pikk.",
+          "id": "Smart man. Without a hat, winter feels very long.",
+          "literal": "clever man. hat-without is winter very long."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ma usun sind. Sa oled siin kogu elu elanud.",
+          "id": "I believe you. You've lived here all your life.",
+          "literal": "I believe-I you-part. you are-you here whole life-part living-its."
+        }
+      ],
+      "notes": [
+        "⚠️ **European clothing sizes run differently.** The salesperson's advice in this dialogue isn't small talk: a winter jacket really is bought one size up, because it has to fit over two layers underneath. If you buy your exact size, the jacket will feel tight as soon as it gets truly cold.",
+        "**Ilma mütsita** — notice **two markers at once**: the word *ilma* in front and the ending *-ta* at the back. Estonian marks \"without\" at both ends. The *-ta* ending alone is enough (*mütsita*), but the full form with *ilma* is more common in conversation.",
+        "**Kantakse** — \"is worn (by people)\". This is the impersonal form, like English \"one wears\" or \"it is said\". You'll often see it on notices: *siin ei suitsetata* (smoking is not allowed here).",
+        "**Mul on vaja mütsi** — the \"need\" pattern from unit 6, and notice the object is in the **partitive**. *Mul on vaja abi* (I need help), *mul on vaja aega* (I need time)."
+      ],
+      "grammars": [
+        {
+          "title": "Ilma ...-ta — saying without",
+          "body": [
+            "One idea, two markers. The ending attaches to the **genitive**, as usual."
+          ],
+          "table": {
+            "head": [
+              "Nominative",
+              "Genitive",
+              "Without",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*müts*",
+                "*mütsi*",
+                "*(ilma) mütsi**ta***",
+                "without a hat"
+              ],
+              [
+                "*suhkur*",
+                "*suhkru*",
+                "*(ilma) suhkru**ta***",
+                "without sugar"
+              ],
+              [
+                "*piim*",
+                "*piima*",
+                "*(ilma) piima**ta***",
+                "without milk"
+              ],
+              [
+                "*liha*",
+                "*liha*",
+                "*(ilma) liha**ta***",
+                "without meat"
+              ],
+              [
+                "*sina*",
+                "*sinu*",
+                "*(ilma) sinu**ta***",
+                "without you"
+              ],
+              [
+                "*raha*",
+                "*raha*",
+                "*(ilma) raha**ta***",
+                "without money"
+              ]
+            ]
+          },
+          "after": [
+            "The middle rows will get plenty of use in cafés: *kohv ilma suhkruta* (coffee without sugar), *midagi ilma lihata* (something without meat). You met the second form in unit 5.",
+            "The opposite of *-ta* is *-ga* (with) from unit 15. They make a neat pair: *piimaga* (with milk) versus *piimata* (without milk).",
+            "⚠️ Don't confuse it with the suffix *-vaba* from unit 5 (*alkoholivaba*, *gluteenivaba*). *-vaba* forms **adjectives** used on product labels; *-ta* is used in ordinary sentences."
+          ]
+        },
+        {
+          "title": "In the shop — sentences that get things done",
+          "body": [
+            "These eight sentences cover almost every shopping transaction."
+          ],
+          "table": {
+            "head": [
+              "Eesti keel",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Kas ma saan aidata?*",
+                "Can I help you? (said by the salesperson)"
+              ],
+              [
+                "*Ma lihtsalt vaatan, aitäh.*",
+                "I'm just looking, thanks."
+              ],
+              [
+                "*Kas teil on seda suuremas suuruses?*",
+                "Do you have a bigger size?"
+              ],
+              [
+                "*Kas ma võin proovida?*",
+                "May I try it on?"
+              ],
+              [
+                "*See on liiga suur / väike / kallis.*",
+                "This is too big / small / expensive."
+              ],
+              [
+                "*See sobib hästi.*",
+                "This fits."
+              ],
+              [
+                "*Kas saab teise värviga?*",
+                "Do you have another color?"
+              ],
+              [
+                "*Kas ma saan seda vahetada?*",
+                "Can I exchange it?"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *Ma lihtsalt vaatan* is worth memorizing today. Estonian salespeople rarely follow shoppers around, but they'll greet you once — and this sentence is a completely polite answer.",
+            "If you want to exchange something, keep the receipt (*tšekk*). The time limit is usually fourteen days, and it's almost always printed on the receipt itself."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Clothing",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "Say it",
+            "English",
+            "Eesti keel",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*riided*",
+              "*REE-ded*",
+              "clothes",
+              "*särk*",
+              "*särk*",
+              "shirt"
+            ],
+            [
+              "*T-särk*",
+              "*TEHH-särk*",
+              "T-shirt",
+              "*pluus*",
+              "*plooos*",
+              "blouse"
+            ],
+            [
+              "*püksid*",
+              "*PÜK-sid*",
+              "trousers",
+              "*teksad*",
+              "*TEK-sahd*",
+              "jeans"
+            ],
+            [
+              "*seelik*",
+              "*SEHH-lik*",
+              "skirt",
+              "*kleit*",
+              "*klayt*",
+              "dress"
+            ],
+            [
+              "*kampsun*",
+              "*KAHMP-soon*",
+              "sweater",
+              "*jope*",
+              "*YO-pe*",
+              "jacket"
+            ],
+            [
+              "*mantel*",
+              "*MAHN-tel*",
+              "coat",
+              "*ülikond*",
+              "*Ü-li-kond*",
+              "suit"
+            ],
+            [
+              "*müts*",
+              "*müts*",
+              "winter hat",
+              "*sall*",
+              "*sahll*",
+              "scarf"
+            ],
+            [
+              "*kindad*",
+              "*KIN-dahd*",
+              "gloves",
+              "*sokid*",
+              "*SO-kid*",
+              "socks"
+            ],
+            [
+              "*kingad*",
+              "*KIN-gahd*",
+              "shoes",
+              "*saapad*",
+              "*SAAH-pahd*",
+              "boots"
+            ],
+            [
+              "*sisepesu*",
+              "*SI-se-pe-soo*",
+              "underwear",
+              "*rätik*",
+              "*RÄ-tik*",
+              "towel"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that many of these are **always plural**: *püksid*, *teksad*, *kindad*, *sokid*, *kingad*, *saapad*, *riided*. Just like English (*trousers*, *jeans*, *clothes*)."
+        },
+        {
+          "type": "kotak",
+          "title": "Sizes and trying on",
+          "items": [
+            "*suurus* — size. *Mis suurus teil on?* — What's your size?",
+            "*number* — number, used for shoes. *Mul on number nelikümmend kaks.* (My size is 42.)",
+            "*proovima* — to try. *proovikabiin* — fitting room.",
+            "*allahindlus*, *soodus* — discount. *soodushind* — sale price. ⚠️ *-50%* is read *miinus viiskümmend protsenti*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "⚠️ Surviving the Estonian winter",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This section isn't a cultural extra. For readers who've lived all their lives at twenty-five to thirty degrees, the Estonian winter is a genuinely new bodily experience, and it starts earlier than most people expect — around the end of October."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Item",
+            "Eesti keel",
+            "Why you need it"
+          ],
+          "rows": [
+            [
+              "**Winter jacket**",
+              "*talvejope*",
+              "Buy one size up. Look for windproof, not just thick."
+            ],
+            [
+              "**Winter hat**",
+              "*müts*",
+              "⚠️ The one newcomers forget most, and the one you'll feel fastest."
+            ],
+            [
+              "**Scarf**",
+              "*sall*",
+              "Protects your neck and face from the Tallinn sea wind."
+            ],
+            [
+              "**Gloves**",
+              "*kindad*",
+              "Fingers are the first part to stop working."
+            ],
+            [
+              "**Boots**",
+              "*talvesaapad*",
+              "⚠️ With a rough sole. Icy streets don't forgive smooth soles."
+            ],
+            [
+              "**Thermal underwear**",
+              "*soe pesu*",
+              "The first of three layers. It's what makes the rest work."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "What the brochures don't tell you",
+          "items": [
+            "**Three layers, not one thick jacket.** The inner layer wicks heat away from your body, the middle layer keeps it in, the outer layer blocks the wind. One thick jacket without an inner layer feels colder than three thin layers.",
+            "**It's always warm indoors.** Estonian homes, buses, offices and shops are heated well — often up to twenty-two degrees. So you need clothes that are **easy to take off**, not the thickest ones.",
+            "⚠️ **Ice is more dangerous than cold.** *Libedus* (slippery ground) is the most common cause of injury for newcomers. Walk with short steps and flat feet; don't keep your hands in your pockets.",
+            "**The darkness is harder than the temperature.** Many newcomers are surprised that what drains them most isn't minus fifteen, but coming home from work in the dark for three months. Estonians cope with bright lamps at home, vitamin D and the sauna."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "et": "riided",
+      "baca": "REE-ded",
+      "en": "clothes"
+    },
+    {
+      "et": "särk",
+      "baca": "särk",
+      "en": "shirt"
+    },
+    {
+      "et": "püksid",
+      "baca": "PÜK-sid",
+      "en": "trousers"
+    },
+    {
+      "et": "kampsun",
+      "baca": "KAHMP-soon",
+      "en": "sweater"
+    },
+    {
+      "et": "jope",
+      "baca": "YO-pe",
+      "en": "jacket"
+    },
+    {
+      "et": "mantel",
+      "baca": "MAHN-tel",
+      "en": "coat"
+    },
+    {
+      "et": "müts",
+      "baca": "müts",
+      "en": "winter hat"
+    },
+    {
+      "et": "sall",
+      "baca": "sahll",
+      "en": "scarf"
+    },
+    {
+      "et": "kindad",
+      "baca": "KIN-dahd",
+      "en": "gloves"
+    },
+    {
+      "et": "sokid",
+      "baca": "SO-kid",
+      "en": "socks"
+    },
+    {
+      "et": "kingad",
+      "baca": "KIN-gahd",
+      "en": "shoes"
+    },
+    {
+      "et": "saapad",
+      "baca": "SAAH-pahd",
+      "en": "boots"
+    },
+    {
+      "et": "suurus",
+      "baca": "SOOO-roos",
+      "en": "size"
+    },
+    {
+      "et": "kiht",
+      "baca": "kiht",
+      "en": "layer (gen. kihi)"
+    },
+    {
+      "et": "proovima",
+      "baca": "PROHH-vi-mah",
+      "en": "to try"
+    },
+    {
+      "et": "kandma",
+      "baca": "KAHND-mah",
+      "en": "to wear; to carry"
+    },
+    {
+      "et": "sobima",
+      "baca": "SO-bi-mah",
+      "en": "to suit, to fit"
+    },
+    {
+      "et": "vahetama",
+      "baca": "VAH-he-tah-mah",
+      "en": "to exchange"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Estonian.",
+      "items": [
+        "I'm looking for a winter jacket.",
+        "May I try it on?",
+        "This is too big.",
+        "This fits.",
+        "Do you have another color?",
+        "I'm just looking, thanks."
+      ]
+    },
+    {
+      "prompt": "Change to the \"without\" form (-ta).",
+      "items": [
+        "müts",
+        "suhkur",
+        "piim",
+        "liha",
+        "raha",
+        "sina"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right piece of clothing.",
+      "items": [
+        "Talvel ma kannan ____. (winter hat)",
+        "Mul on külmad käed — ma vajan ____. (gloves)",
+        "Jää on libe, ma ostan ____. (boots)",
+        "Kaelas on ____. (scarf)",
+        "Jope alla käib ____. (sweater)",
+        "Jalas on ____. (socks)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "talvejopet / ma / otsin",
+        "proovida / kas / võin / ma / ?",
+        "suur / see / liiga / on",
+        "hästi / sobib / see",
+        "mütsita / talv / ilma / pikk / on"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Ma otsin talvejopet. — Kas ma võin proovida? — See on liiga suur. — See sobib hästi. — Kas saab teise värviga? — Ma lihtsalt vaatan, aitäh.",
+    "1": "mütsita — suhkruta — piimata — lihata — rahata — sinuta",
+    "2": "mütsi — kindaid — saapad — sall — kampsun — sokid",
+    "3": "Ma otsin talvejopet. — Kas ma võin proovida? — See on liiga suur. — See sobib hästi. — Ilma mütsita on talv pikk."
+  }
+}

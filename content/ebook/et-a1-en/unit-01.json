@@ -1,0 +1,580 @@
+{
+  "title": "Hello, what's your name?",
+  "title_target": "Tere! Mis sinu nimi on?",
+  "goal": "Greet people, introduce yourself, and ask how someone is — and master the one verb that appears in nearly every Estonian sentence: *olema* (to be).",
+  "bekal": [
+    "greet and say goodbye appropriately for the time of day",
+    "give your name, job, and origin with *olema*",
+    "ask yes/no questions with *kas* — and never mix up *ja* and *jah* again"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Esimene kohtumine",
+      "intro": "Budi has just arrived in Tallinn for a semester abroad. In a campus hallway he bumps into Kerli.",
+      "lines": [
+        {
+          "speaker": "Kerli:",
+          "text": "Tere! Mina olen Kerli.",
+          "id": "Hi! I'm Kerli.",
+          "literal": "hello! I am-I Kerli."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tere! Mina olen Budi. Väga meeldiv.",
+          "id": "Hi! I'm Budi. Nice to meet you.",
+          "literal": "hello! I am-I Budi. very pleasant."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Väga meeldiv. Kuidas läheb?",
+          "id": "Nice to meet you. How are you?",
+          "literal": "very pleasant. how goes-it?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hästi, aitäh. Ja sina?",
+          "id": "Fine, thank you. And you?",
+          "literal": "well, thank-you. and you?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ka hästi. Kas sa oled siin uus?",
+          "id": "Fine too. Are you new here?",
+          "literal": "also well. is-it you are-you here new?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jah, ma olen uus. Ma olen Indoneesiast.",
+          "id": "Yes, I'm new. I'm from Indonesia.",
+          "literal": "yes, I am-I new. I am-I Indonesia-from."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Väga tore! Kas sa räägid eesti keelt?",
+          "id": "Great! Do you speak Estonian?",
+          "literal": "very good! is-it you speak-you Estonian language-(partial)?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Natuke. Ma õpin.",
+          "id": "A little. I'm learning.",
+          "literal": "a-little. I learn-I."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Sa räägid hästi!",
+          "id": "You speak well!",
+          "literal": "you speak-you well!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aitäh! Aga ma õpin veel.",
+          "id": "Thank you! But I'm still learning.",
+          "literal": "thank-you! but I learn-I still."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Kas sa oled tudeng?",
+          "id": "Are you a student?",
+          "literal": "is-it you are-you student?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jah, ma olen tudeng. Ja sina?",
+          "id": "Yes, I'm a student. And you?",
+          "literal": "yes, I am-I student. and you?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Mina olen õpetaja. Ma õpetan eesti keelt.",
+          "id": "I'm a teacher. I teach Estonian.",
+          "literal": "I am-I teacher. I teach-I Estonian language-(partial)."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Väga tore! Vabandust, ma pean minema.",
+          "id": "Great! Sorry, I have to go.",
+          "literal": "very good! sorry, I must-I to-go."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Muidugi. Nägemist, Budi!",
+          "id": "Of course. See you, Budi!",
+          "literal": "of-course. until-seeing, Budi!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Head aega, Kerli!",
+          "id": "Goodbye, Kerli!",
+          "literal": "good-having time-(partial), Kerli!"
+        }
+      ],
+      "notes": [
+        "⚠️ **Ja is not \"yes\".** *Ja* means **and**; the word for \"yes\" is *jah*, with a *h* you really pronounce. This is the number-one trap for anyone who knows German or Scandinavian languages, where *ja* means \"yes\" — and it turns up right in this dialogue (*Ja sina?* versus *Jah, ma olen*). Hold a little breath at the end of *jah* and you won't get it wrong again.",
+        "**Mina olen** and **ma olen** mean the same thing. The long forms (*mina*, *sina*, *tema*) are used when you stress who you mean — notice Kerli uses one when introducing herself and when contrasting her job with Budi's. The short forms (*ma*, *sa*, *ta*) are used on all other occasions, and they are what you will hear most often.",
+        "**Kas** goes at the **front of the sentence** to make a yes/no question. The rest of the word order doesn't change at all: *sa oled tudeng* → *kas sa oled tudeng?* English has to flip the order (\"you are\" → \"are you\"); Estonian doesn't.",
+        "⚠️ **Language names are written in lowercase**, and they are noun + noun: *eesti keel* is literally \"Estonia's language\", not an adjective. The same goes for *indoneesia keel*, *inglise keel* (English), *soome keel* (Finnish)."
+      ],
+      "grammars": [
+        {
+          "title": "Olema — the verb you will use most",
+          "body": [
+            "Some languages drop \"to be\" in sentences like \"I'm a student\" (Russian, for one). Estonian **never** drops it. Every sentence like that needs a form of *olema*."
+          ],
+          "table": {
+            "head": [
+              "Long",
+              "Short",
+              "Form of *olema*",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*mina*",
+                "*ma*",
+                "**olen**",
+                "*ma olen tudeng*",
+                "I am a student"
+              ],
+              [
+                "*sina*",
+                "*sa*",
+                "**oled**",
+                "*sa oled õpetaja*",
+                "you are a teacher"
+              ],
+              [
+                "*tema*",
+                "*ta*",
+                "**on**",
+                "*ta on Eestist*",
+                "he/she is from Estonia"
+              ],
+              [
+                "*meie*",
+                "*me*",
+                "**oleme**",
+                "*me oleme siin*",
+                "we are here"
+              ],
+              [
+                "*teie*",
+                "*te*",
+                "**olete**",
+                "*te olete uued*",
+                "you are new"
+              ],
+              [
+                "*nemad*",
+                "*nad*",
+                "**on**",
+                "*nad on tudengid*",
+                "they are students"
+              ]
+            ]
+          },
+          "after": [
+            "Notice rows three and six: **on** is used for both \"he/she\" and \"they\". There is no separate third-person plural form — one form does both jobs.",
+            "⚠️ **Tema/ta means both \"he\" and \"she\".** Estonian doesn't distinguish gender in pronouns, so there is no *he*/*she* choice to make — one less thing to worry about."
+          ]
+        },
+        {
+          "title": "Mina or ma? Which one to use when",
+          "body": [
+            "Every Estonian pronoun has two faces. The difference isn't polite versus impolite, but **stressed versus unstressed**."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "When it's used"
+            ],
+            "rows": [
+              [
+                "*Ma olen Budi.*",
+                "A normal sentence. The most common. Use this when in doubt."
+              ],
+              [
+                "***Mina** olen Budi.*",
+                "Stresses \"I\" — for example to correct someone, or when introducing yourself for the first time."
+              ],
+              [
+                "*Ta on õpetaja.*",
+                "A normal sentence."
+              ],
+              [
+                "***Tema** on õpetaja, mitte mina.*",
+                "\"**He/she** is the teacher, not me.\" A contrast."
+              ]
+            ]
+          },
+          "after": [
+            "The rule of thumb in one line: **always use the short form**, unless you are contrasting or correcting. That is how native speakers talk.",
+            "There is one place where the long form is required: when the pronoun stands alone without a verb. *Kes on siin?* — *Mina.* (Who is here? — Me.) Answering *ma* there sounds odd."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Greeting and saying goodbye",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "Say it",
+            "English",
+            "When"
+          ],
+          "rows": [
+            [
+              "*Tere!*",
+              "*TE-re*",
+              "Hello",
+              "All day, to anyone. The safest choice."
+            ],
+            [
+              "*Tere hommikust!*",
+              "*TE-re HOM-mi-koost*",
+              "Good morning",
+              "Until about eleven o'clock."
+            ],
+            [
+              "*Tere päevast!*",
+              "*TE-re PÄE-vahst*",
+              "Good afternoon",
+              "Somewhat formal; in shops and offices."
+            ],
+            [
+              "*Tere õhtust!*",
+              "*TE-re ÕH-toost*",
+              "Good evening",
+              "A greeting when meeting in the evening."
+            ],
+            [
+              "*Head ööd!*",
+              "*HE-ahd ööd*",
+              "Good night",
+              "⚠️ Only when parting to go to bed."
+            ],
+            [
+              "*Tervist!*",
+              "*TER-vist*",
+              "Greetings",
+              "Slightly more formal than *tere*."
+            ],
+            [
+              "*Nägemist!*",
+              "*NÄ-ge-mist*",
+              "See you",
+              "The most common way to part."
+            ],
+            [
+              "*Head aega!*",
+              "*HE-ahd AHE-gah*",
+              "Goodbye",
+              "A little warmer, for longer partings."
+            ],
+            [
+              "*Tšau!*",
+              "*tshow*",
+              "Bye!",
+              "Casual, among friends. From Italian, just like \"ciao\"."
+            ],
+            [
+              "*Homseni!*",
+              "*HOM-se-ni*",
+              "See you tomorrow",
+              "Literally: \"until tomorrow\"."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Note that *tere õhtust* and *head ööd* **can't be swapped**. The first is for meeting, the second for parting — just like the difference between \"good evening\" on arrival and \"good night\" on leaving."
+        },
+        {
+          "type": "kotak",
+          "title": "Asking how someone is",
+          "items": [
+            "*Kuidas läheb?* — How are you? (literally: \"how goes it?\") The most common.",
+            "*Kuidas sul läheb?* — How are you doing? A bit more personal.",
+            "*Hästi, aitäh.* — Fine, thank you. *Väga hästi.* — Very well.",
+            "*Halvasti.* — Badly. ⚠️ Use it only if you really want to talk about it; Estonians answer honestly and will ask follow-up questions."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking questions with kas",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "*Kas* is one of Estonian's biggest gifts to learners. It works like a spoken question mark: put it at the front and nothing else in the sentence changes — no flipping \"you are\" into \"are you\", no *do/does*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Statement",
+            "Question",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Sa oled tudeng.*",
+              "**Kas** *sa oled tudeng?*",
+              "Are you a student?"
+            ],
+            [
+              "*Ta on Eestist.*",
+              "**Kas** *ta on Eestist?*",
+              "Is he/she from Estonia?"
+            ],
+            [
+              "*Te räägite eesti keelt.*",
+              "**Kas** *te räägite eesti keelt?*",
+              "Do you speak Estonian?"
+            ],
+            [
+              "*See on hea.*",
+              "**Kas** *see on hea?*",
+              "Is this good?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "To answer, *jah* or *ei* is enough. For a fuller answer, repeat the verb: *Kas sa oled tudeng?* — *Jah, ma olen.* / *Ei, ma ei ole.*"
+        },
+        {
+          "type": "p",
+          "text": "Other question words take the place of *kas* rather than being added to it: *Mis see on?* (What is this?), *Kes sa oled?* (Who are you?), *Kus sa oled?* (Where are you?), *Kust sa oled?* (Where are you from?), *Kuidas läheb?* (How's it going?)"
+        }
+      ]
+    },
+    {
+      "title": "Ten phrases that rescue beginners",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Vabandust.*",
+              "*VAH-bahn-doost*",
+              "Sorry. / Excuse me."
+            ],
+            [
+              "*Palun.*",
+              "*PAH-loon*",
+              "Please. / Here you are. / You're welcome."
+            ],
+            [
+              "*Aitäh.*",
+              "*IGH-täh*",
+              "Thank you."
+            ],
+            [
+              "*Ma ei saa aru.*",
+              "*mah ay saah AH-roo*",
+              "I don't understand."
+            ],
+            [
+              "*Ma ei tea.*",
+              "*mah ay TE-ah*",
+              "I don't know."
+            ],
+            [
+              "*Palun aeglasemalt.*",
+              "*PAH-loon AHEG-lah-se-mahlt*",
+              "Slower, please."
+            ],
+            [
+              "*Palun korrake.*",
+              "*PAH-loon KOR-rah-ke*",
+              "Please repeat."
+            ],
+            [
+              "*Mida see tähendab?*",
+              "*MI-dah sehh TÄ-hen-dahb*",
+              "What does that mean?"
+            ],
+            [
+              "*Kas te räägite inglise keelt?*",
+              "*kahs te RÄÄ-gi-te ING-li-se kehhlt*",
+              "Do you speak English?"
+            ],
+            [
+              "*Ma õpin eesti keelt.*",
+              "*mah Õ-pin EHHS-ti kehhlt*",
+              "I'm learning Estonian."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Palun does three jobs at once",
+          "items": [
+            "**\"Please\"** — *Palun kohvi.* (Coffee, please.)",
+            "**\"Here you are\"** — when handing something over: *Palun!* (Here you are!)",
+            "**\"You're welcome\"** — the answer to *aitäh*: *Aitäh!* — *Palun!*",
+            "All three are the same word. Context tells them apart, and the context is never confusing."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last phrase in that table is worth memorizing today. Estonians are used to switching straight to English when they hear a foreign accent; saying *ma õpin eesti keelt* is the politest way to ask them to stay in Estonian — and it almost always works."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "et": "tere",
+      "baca": "TE-re",
+      "en": "hello"
+    },
+    {
+      "et": "aitäh",
+      "baca": "IGH-täh",
+      "en": "thank you"
+    },
+    {
+      "et": "palun",
+      "baca": "PAH-loon",
+      "en": "please; here you are; you're welcome"
+    },
+    {
+      "et": "vabandust",
+      "baca": "VAH-bahn-doost",
+      "en": "sorry; excuse me"
+    },
+    {
+      "et": "nägemist",
+      "baca": "NÄ-ge-mist",
+      "en": "see you"
+    },
+    {
+      "et": "head aega",
+      "baca": "HE-ahd AHE-gah",
+      "en": "goodbye"
+    },
+    {
+      "et": "jah",
+      "baca": "yahh",
+      "en": "yes"
+    },
+    {
+      "et": "ei",
+      "baca": "ay",
+      "en": "no"
+    },
+    {
+      "et": "ja",
+      "baca": "yah",
+      "en": "⚠️ and"
+    },
+    {
+      "et": "kas",
+      "baca": "kahs",
+      "en": "(question particle)"
+    },
+    {
+      "et": "olema",
+      "baca": "O-le-mah",
+      "en": "to be"
+    },
+    {
+      "et": "mina, ma",
+      "baca": "MI-nah, mah",
+      "en": "I"
+    },
+    {
+      "et": "sina, sa",
+      "baca": "SI-nah, sah",
+      "en": "you"
+    },
+    {
+      "et": "tema, ta",
+      "baca": "TE-mah, tah",
+      "en": "he; she"
+    },
+    {
+      "et": "meie, me",
+      "baca": "MAY-e, me",
+      "en": "we"
+    },
+    {
+      "et": "teie, te",
+      "baca": "TAY-e, te",
+      "en": "you (plural/formal)"
+    },
+    {
+      "et": "nemad, nad",
+      "baca": "NE-mahd, nahd",
+      "en": "they"
+    },
+    {
+      "et": "nimi",
+      "baca": "NI-mi",
+      "en": "name"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Estonian.",
+      "items": [
+        "Hello! I'm Budi.",
+        "Are you a teacher?",
+        "Yes, I'm a teacher.",
+        "I'm from Indonesia.",
+        "I'm learning Estonian.",
+        "See you!"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the correct form of olema.",
+      "items": [
+        "Ma ____ tudeng.",
+        "Sa ____ õpetaja.",
+        "Ta ____ Eestist.",
+        "Me ____ siin.",
+        "Te ____ uued.",
+        "Nad ____ tudengid."
+      ]
+    },
+    {
+      "prompt": "Turn into questions with kas.",
+      "items": [
+        "Sa oled uus.",
+        "Ta räägib eesti keelt.",
+        "Te olete õpetajad.",
+        "See on hea.",
+        "Nad on siin.",
+        "Ma olen Indoneesiast."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "olen / ma / tudeng",
+        "sa / kas / eesti / räägid / keelt / ?",
+        "läheb / kuidas / ?",
+        "Indoneesiast / olen / ma",
+        "õpetaja / mina / olen"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Tere! Mina olen Budi. — Kas sa oled õpetaja? — Jah, ma olen õpetaja. — Ma olen Indoneesiast. — Ma õpin eesti keelt. — Nägemist!",
+    "1": "olen — oled — on — oleme — olete — on",
+    "2": "Kas sa oled uus? — Kas ta räägib eesti keelt? — Kas te olete õpetajad? — Kas see on hea? — Kas nad on siin? — Kas ma olen Indoneesiast?",
+    "3": "Ma olen tudeng. — Kas sa räägid eesti keelt? — Kuidas läheb? — Ma olen Indoneesiast. — Mina olen õpetaja."
+  }
+}

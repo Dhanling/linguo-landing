@@ -1,0 +1,554 @@
+{
+  "title": "Where do you live?",
+  "title_target": "Kus sa elad?",
+  "goal": "Describe where you live and move into it — and find out where the third length hides and what it is for.",
+  "bekal": [
+    "name rooms and household furniture",
+    "use *-s*, *-st*, and *-sse* as one complete series",
+    "recognize the **short \"into\" form** — where the third length does its work"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kerli korteris",
+      "intro": "Kerli invites Budi over to her apartment in the Kalamaja district of Tallinn.",
+      "lines": [
+        {
+          "speaker": "Kerli:",
+          "text": "Tere tulemast! Tule sisse.",
+          "id": "Welcome! Come in.",
+          "literal": "hello arrive-from! come into."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aitäh. Kas ma pean kingad ära võtma?",
+          "id": "Thank you. Do I have to take off my shoes?",
+          "literal": "thank-you. whether I must-I shoes-plural off to-take?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Jah, palun. Eestis võtavad kõik kingad ära.",
+          "id": "Yes, please. In Estonia everyone takes their shoes off.",
+          "literal": "yes, please. Estonia-in take-they all shoes-plural off."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nagu Indoneesias! Kui suur su korter on?",
+          "id": "Just like in Indonesia! How big is your flat?",
+          "literal": "like Indonesia-in! how big your flat is-it?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Kaks tuba ja köök. Umbes viiskümmend ruutmeetrit.",
+          "id": "Two rooms and a kitchen. About fifty square meters.",
+          "literal": "two room-part and kitchen. about fifty square-meter-part."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "See on ilus. Ja väga valge.",
+          "id": "It's lovely. And very bright.",
+          "literal": "it is-it pretty. and very white."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Aitäh. Lähme kööki, ma teen kohvi.",
+          "id": "Thanks. Let's go to the kitchen, I'll make coffee.",
+          "literal": "thank-you. go-we kitchen-to, I make-I coffee."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "\"Kööki\"? Miks mitte \"köögisse\"?",
+          "id": "\"Kööki\"? Why not \"köögisse\"?",
+          "literal": "\"kitchen-to\"? why not \"kitchen-into\"?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Hea kõrv! On olemas lühike vorm ja pikk vorm.",
+          "id": "Good ear! There is a short form and a long form.",
+          "literal": "good ear! is existing short form and long form."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja mis vahe on?",
+          "id": "And what's the difference?",
+          "literal": "and what difference is-it?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Tähenduses ei ole vahet. Lühike on lihtsalt tavalisem.",
+          "id": "In meaning there is no difference. The short one is just more common.",
+          "literal": "meaning-in not is difference-part. short is-it simply more-ordinary."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aga \"kööki\" ja \"köögi\" — need on nii sarnased!",
+          "id": "But \"kööki\" and \"köögi\" — they're so similar!",
+          "literal": "but \"kitchen-to\" and \"kitchen-of\" — they-plural are-they so similar!"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Kuula: köögi. Kööki. Kas kuuled vahet?",
+          "id": "Listen: köögi. Kööki. Can you hear the difference?",
+          "literal": "listen: kitchen-of. kitchen-to. whether hear-you difference-part?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vist küll. Teine on pikem.",
+          "id": "I think so. The second is longer.",
+          "literal": "seems indeed. second is-it longer."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Just. Pikem tähendab \"sisse\", lühem tähendab \"oma\".",
+          "id": "Exactly. The longer one means \"into\", the shorter one means \"of\".",
+          "literal": "exactly. longer means-it \"into\", shorter means-it \"own\"."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nii et pikkus kannab tähendust?",
+          "id": "So length carries meaning?",
+          "literal": "so that length carries-it meaning-part?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Täpselt. Nüüd sa tead eesti keele saladuse.",
+          "id": "Precisely. Now you know the secret of Estonian.",
+          "literal": "exactly. now you know-you Estonian language-of secret-of."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Siis ma pean rohkem kuulama kui lugema.",
+          "id": "Then I need to listen more than I read.",
+          "literal": "then I must-I more to-listen than to-read."
+        }
+      ],
+      "notes": [
+        "⚠️ **Taking your shoes off indoors is absolutely mandatory in Estonia**, as in much of Asia and Northern Europe. No host will say \"it's fine\" — they consider it obvious. If you are used to keeping shoes on at home, this is a habit you do need to learn.",
+        "**Tere tulemast!** = \"Welcome!\" Its literal form is odd, so learn it whole. A simple *aitäh* is enough as a reply.",
+        "**Kaks tuba** — the partitive form after a number, and notice *tuba* does not change because its partitive happens to equal the base form. Words like *muna*, *kala*, *kana* work the same way.",
+        "**Lähme kööki** = \"let's go to the kitchen\". *Lähme* means \"let's go\" and is used all the time: *lähme koju* (let's go home), *lähme sööma* (let's go eat), *lähme välja* (let's go out)."
+      ],
+      "grammars": [
+        {
+          "title": "The inside series — in, from, into",
+          "body": [
+            "You have known the first two since unit 2. This unit adds the third and completes the series."
+          ],
+          "table": {
+            "head": [
+              "Question",
+              "Ending",
+              "*maja* (house)",
+              "*kool* (school)",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**kus?**",
+                "**-s**",
+                "*majas*",
+                "*koolis*",
+                "in (inside)"
+              ],
+              [
+                "**kust?**",
+                "**-st**",
+                "*majast*",
+                "*koolist*",
+                "from (out of)"
+              ],
+              [
+                "**kuhu?**",
+                "**-sse**",
+                "*majasse*",
+                "*koolisse*",
+                "into"
+              ]
+            ]
+          },
+          "after": [
+            "All three attach to the **possessive (genitive) form**, as promised in unit 6. *Kool* → *kooli* → *koolis, koolist, koolisse*. Once more: one pair, many forms.",
+            "The surface series works in exact parallel: **-l** (on), **-lt** (off), **-le** (onto). *Laual* (on the table), *laualt* (off the table), *lauale* (onto the table). Six endings, two series, one logic.",
+            "⚠️ Which places take which series you already know from units 2 and 6: *-maa* countries, the market, streets, squares, floors, and workplaces use the surface series. The rest use the inside series."
+          ]
+        },
+        {
+          "title": "⚠️ The short \"into\" form — and the third length",
+          "body": [
+            "The ending *-sse* is always correct and always usable. But for many everyday words, Estonians more often use a shorter form — and that short form is what carries the third length."
+          ],
+          "table": {
+            "head": [
+              "Base",
+              "Possessive",
+              "Into (short)",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*maja*",
+                "*maja*",
+                "*majja*",
+                "*MAHY-yah*",
+                "to the house"
+              ],
+              [
+                "*tuba*",
+                "*toa*",
+                "*tuppa*",
+                "*TOOP-pah*",
+                "to the room"
+              ],
+              [
+                "*köök*",
+                "*köögi*",
+                "*kööki*",
+                "*KÖÖ:-ki*",
+                "to the kitchen"
+              ],
+              [
+                "*kool*",
+                "*kooli*",
+                "*kooli*",
+                "*KOHH:-li*",
+                "to school"
+              ],
+              [
+                "*linn*",
+                "*linna*",
+                "*linna*",
+                "*LIN:-nah*",
+                "to town"
+              ],
+              [
+                "*pood*",
+                "*poe*",
+                "*poodi*",
+                "*POHH:-di*",
+                "to the shop"
+              ],
+              [
+                "*aed*",
+                "*aia*",
+                "*aeda*",
+                "*AHE:-dah*",
+                "to the garden"
+              ],
+              [
+                "*rand*",
+                "*ranna*",
+                "*randa*",
+                "*RAHN:-dah*",
+                "to the beach"
+              ]
+            ]
+          },
+          "after": [
+            "Look at the rows *kool* and *linn*: the possessive column and the \"into\" column are **spelled exactly the same**. The only difference is length, marked with **:** in this course and **not marked at all** in ordinary Estonian writing.",
+            "This answers a question you may have kept since the sounds page: what is the third length for? The answer: it does grammatical work. It is not sound decoration — it replaces a word ending.",
+            "⚠️ **Practical advice: when in doubt, use *-sse*.** *Koolisse*, *linnasse*, and *poesse* are all correct. The long form is never ambiguous. The short form will come on its own once your ear adjusts; don't chase it."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Rooms and parts of the house",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "Say it",
+            "\"In\"",
+            "English"
+          ],
+          "rows": [
+            [
+              "*maja*",
+              "*MAH-yah*",
+              "*majas*",
+              "house"
+            ],
+            [
+              "*korter*",
+              "*KOR-ter*",
+              "*korteris*",
+              "apartment"
+            ],
+            [
+              "*tuba*",
+              "*TOO-bah*",
+              "*toas*",
+              "room"
+            ],
+            [
+              "*elutuba*",
+              "*E-loo-too-bah*",
+              "*elutoas*",
+              "living room"
+            ],
+            [
+              "*magamistuba*",
+              "*MAH-gah-mis-too-bah*",
+              "*magamistoas*",
+              "bedroom"
+            ],
+            [
+              "*köök*",
+              "*köök*",
+              "*köögis*",
+              "kitchen"
+            ],
+            [
+              "*vannituba*",
+              "*VAHN-ni-too-bah*",
+              "*vannitoas*",
+              "bathroom"
+            ],
+            [
+              "*esik*",
+              "*E-sik*",
+              "*esikus*",
+              "hallway"
+            ],
+            [
+              "*rõdu*",
+              "*RÕ-doo*",
+              "*rõdul*",
+              "balcony"
+            ],
+            [
+              "*kelder*",
+              "*KEL-der*",
+              "*keldris*",
+              "basement"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Notice *rõdul*, *uksel*, *aknal*, *seinal*, *põrandal*, *trepil*, *katusel* — all the **surface** series. The reason makes sense each time: you stand **on** a balcony, hang something **on** a wall, stand **on** the stairs. The inside series is for rooms you can enter."
+        },
+        {
+          "type": "kotak",
+          "title": "Furniture you will hear often",
+          "items": [
+            "*laud – laua* (table), *tool – tooli* (chair), *voodi* (bed), *diivan* (sofa).",
+            "*kapp – kapi* (cupboard), *riiul* (shelf), *külmkapp* (fridge — literally \"cold cupboard\"), *pliit* (stove).",
+            "*lamp* (lamp), *vaip – vaiba* (carpet), *peegel – peegli* (mirror), *kell* (wall clock).",
+            "⚠️ *Külmkapp* shows Estonian's habit of gluing two words into one: *külm* (cold) + *kapp* (cupboard). Same pattern: *pesumasin* (washing machine), *tolmuimeja* (vacuum cleaner — literally \"dust sucker\")."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Describing where you live",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Kus sa elad?*",
+              "Where do you live?"
+            ],
+            [
+              "*Ma elan korteris.*",
+              "I live in an apartment."
+            ],
+            [
+              "*Ma elan kesklinnas.*",
+              "I live in the city center."
+            ],
+            [
+              "*Mul on kaks tuba.*",
+              "I have two rooms."
+            ],
+            [
+              "*Minu korter on väike, aga hubane.*",
+              "My apartment is small, but cozy."
+            ],
+            [
+              "*Kas sul on rõdu?*",
+              "Do you have a balcony?"
+            ],
+            [
+              "*Minu aknast on ilus vaade.*",
+              "The view from my window is lovely."
+            ],
+            [
+              "*Ma elan neljandal korrusel.*",
+              "I live on the fourth floor."
+            ],
+            [
+              "*Kas majas on lift?*",
+              "Is there an elevator in the building?"
+            ],
+            [
+              "*Üür on liiga kallis.*",
+              "The rent is too expensive."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Koju, kodus, kodust — the special word for \"home\"",
+          "items": [
+            "*kodu* means home in the sense of \"the place where I live\", not the building. The building is *maja*.",
+            "The forms are irregular and used constantly, so learn all three now:",
+            "*kodus* — at home. *Ma olen kodus.* (I am at home.)",
+            "*koju* — homeward, to home. *Ma lähen koju.* (I'm going home.) ⚠️ Not \"kodusse\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "et": "korter",
+      "baca": "KOR-ter",
+      "en": "apartment"
+    },
+    {
+      "et": "tuba",
+      "baca": "TOO-bah",
+      "en": "room (possessive: toa)"
+    },
+    {
+      "et": "köök",
+      "baca": "köök",
+      "en": "kitchen (possessive: köögi)"
+    },
+    {
+      "et": "vannituba",
+      "baca": "VAHN-ni-too-bah",
+      "en": "bathroom"
+    },
+    {
+      "et": "magamistuba",
+      "baca": "MAH-gah-mis-too-bah",
+      "en": "bedroom"
+    },
+    {
+      "et": "elutuba",
+      "baca": "E-loo-too-bah",
+      "en": "living room"
+    },
+    {
+      "et": "aed",
+      "baca": "ahed",
+      "en": "garden (possessive: aia)"
+    },
+    {
+      "et": "õu",
+      "baca": "õw",
+      "en": "yard, outdoors"
+    },
+    {
+      "et": "uks",
+      "baca": "ooks",
+      "en": "door (possessive: ukse)"
+    },
+    {
+      "et": "aken",
+      "baca": "AH-ken",
+      "en": "window (possessive: akna)"
+    },
+    {
+      "et": "sein",
+      "baca": "sayn",
+      "en": "wall"
+    },
+    {
+      "et": "põrand",
+      "baca": "PÕ-rahnd",
+      "en": "floor"
+    },
+    {
+      "et": "trepp",
+      "baca": "trepp",
+      "en": "stairs"
+    },
+    {
+      "et": "korrus",
+      "baca": "KOR-roos",
+      "en": "floor (storey)"
+    },
+    {
+      "et": "kodu",
+      "baca": "KO-doo",
+      "en": "⚠️ home (the place you live)"
+    },
+    {
+      "et": "koju",
+      "baca": "KO-yoo",
+      "en": "⚠️ homeward, (to) home"
+    },
+    {
+      "et": "kodus",
+      "baca": "KO-doos",
+      "en": "at home"
+    },
+    {
+      "et": "laud",
+      "baca": "lowd",
+      "en": "table (possessive: laua)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Estonian.",
+      "items": [
+        "I live in an apartment.",
+        "I am at home.",
+        "I'm going home.",
+        "Let's go to the kitchen.",
+        "My apartment is small but cozy.",
+        "Is there an elevator in the building?"
+      ]
+    },
+    {
+      "prompt": "Add the ending -sse (\"into\") to the possessive form.",
+      "items": [
+        "kool",
+        "linn",
+        "korter",
+        "maja",
+        "haigla",
+        "pank"
+      ]
+    },
+    {
+      "prompt": "Fill in kus, kust, or kuhu.",
+      "items": [
+        "____ sa elad? — Tallinnas.",
+        "____ sa oled? — Indoneesiast.",
+        "____ sa lähed? — Kooli.",
+        "____ sa tuled? — Kodust.",
+        "____ on tualett? — Seal.",
+        "____ me läheme? — Poodi."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "elan / ma / korteris",
+        "lähen / koju / ma",
+        "tuba / mul / kaks / on",
+        "kööki / lähme",
+        "on / minu / väike / korter"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Ma elan korteris. — Ma olen kodus. — Ma lähen koju. — Lähme kööki. — Minu korter on väike, aga hubane. — Kas majas on lift?",
+    "1": "koolisse — linnasse — korterisse — majasse — haiglasse — pangasse",
+    "2": "Kus — Kust — Kuhu — Kust — Kus — Kuhu",
+    "3": "Ma elan korteris. — Ma lähen koju. — Mul on kaks tuba. — Lähme kööki. — Minu korter on väike."
+  }
+}

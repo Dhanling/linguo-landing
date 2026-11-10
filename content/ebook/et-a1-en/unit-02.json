@@ -1,0 +1,577 @@
+{
+  "title": "Where are you from?",
+  "title_target": "Kust sa oled?",
+  "goal": "Say where you are from, where you live, and where a city is — and meet the first word endings that replace prepositions: *-s* and *-st*.",
+  "bekal": [
+    "name countries, nationalities, and languages without mixing up their forms",
+    "use *-s* for \"in\" and *-st* for \"from\" on place names",
+    "know when a place takes *-l* instead of *-s* — a one-line rule that saves you"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kohvikus ülikooli juures",
+      "intro": "The next day, Kerli and Budi sit in a small café near the Tallinn University campus.",
+      "lines": [
+        {
+          "speaker": "Kerli:",
+          "text": "Kust sa täpselt oled, Budi?",
+          "id": "Where exactly are you from, Budi?",
+          "literal": "from-where you exactly are-you, Budi?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ma olen Indoneesiast, Bandungist.",
+          "id": "I'm from Indonesia, from Bandung.",
+          "literal": "I am-I Indonesia-from, Bandung-from."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Kus Bandung asub?",
+          "id": "Where is Bandung?",
+          "literal": "where Bandung is-located-it?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bandung asub Jaava saarel. See on suur linn.",
+          "id": "Bandung is on the island of Java. It's a big city.",
+          "literal": "Bandung is-located-it Java island-on. it is big city."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Kui suur?",
+          "id": "How big?",
+          "literal": "how big?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Umbes kaks ja pool miljonit inimest.",
+          "id": "About two and a half million people.",
+          "literal": "about two and half million-(partial) person-(partial)."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Oi! Kogu Eestis elab ainult üks miljon inimest.",
+          "id": "Wow! In all of Estonia only one million people live.",
+          "literal": "wow! whole Estonia-in lives-it only one million person-(partial)."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tõesti? Ja sina, kust sa oled?",
+          "id": "Really? And you, where are you from?",
+          "literal": "really? and you, from-where you are-you?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ma olen Tartust, aga nüüd ma elan Tallinnas.",
+          "id": "I'm from Tartu, but now I live in Tallinn.",
+          "literal": "I am-I Tartu-from, but now I live-I Tallinn-in."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kas Tartu on kaugel?",
+          "id": "Is Tartu far?",
+          "literal": "is-it Tartu is-it far-at?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ei ole. Umbes kaks tundi bussiga.",
+          "id": "No. About two hours by bus.",
+          "literal": "no is-not. about two hour-(partial) bus-by."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja su pere? Kas nad elavad ka Tartus?",
+          "id": "And your family? Do they live in Tartu too?",
+          "literal": "and your family? is-it they live-they also Tartu-in?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ei, mu vanemad elavad Saaremaal.",
+          "id": "No, my parents live on Saaremaa.",
+          "literal": "no, my parents live-they Saaremaa-on."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Saaremaal? Miks mitte Saaremaas?",
+          "id": "Saaremaal? Why not Saaremaas?",
+          "literal": "Saaremaa-on? why not Saaremaa-in?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Hea küsimus! Kohad, mis lõpevad -maa, võtavad -l.",
+          "id": "Good question! Places ending in -maa take -l.",
+          "literal": "places, which end-they -maa, take-they -l."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Selge. Nii et Saksamaal ja Venemaal ka?",
+          "id": "I see. So Saksamaal and Venemaal too?",
+          "literal": "clear. so that Germany-on and Russia-on also?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Täpselt! Sa õpid kiiresti.",
+          "id": "Exactly! You learn fast.",
+          "literal": "exactly! you learn-you fast."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aitäh! Aga sina oled hea õpetaja.",
+          "id": "Thank you! But you really are a good teacher.",
+          "literal": "thank-you! but you are-you good teacher."
+        }
+      ],
+      "notes": [
+        "**Indoneesiast, Bandungist, Tartust** — all place names + **-st**, meaning \"from\". Notice that this ending attaches directly, with no space, and the capital letter at the start of the name stays. English puts the preposition in front (\"from Tartu\"); Estonian glues it on the back. The meaning is the same.",
+        "**Tallinnas, Tartus, Eestis** — place names + **-s**, meaning \"in\". Pair it directly with *-st* from the previous note: *Tartus* (in Tartu) versus *Tartust* (from Tartu). The difference is one letter, and that letter is clearly audible.",
+        "**Su pere, mu vanemad.** *Su* is the short form of *sinu* (your), *mu* of *minu* (my). Just like *ma* and *mina* in Unit 1: the short one for ordinary conversation, the long one for emphasis. Possessives get full treatment in Unit 3.",
+        "⚠️ **Kui suur?** means \"how big\", not \"if big\". *Kui* has two jobs: in front of an adjective it means \"how\", elsewhere it means \"if\", \"when\", or \"than\". Context keeps them apart without difficulty."
+      ],
+      "grammars": [
+        {
+          "title": "Kus, kust, kuhu — three place questions",
+          "body": [
+            "Estonian splits \"where (at)\", \"where from\", and \"where to\" into three different question words. English used to do the same (where / whence / whither), so this is a familiar idea — just three new words."
+          ],
+          "table": {
+            "head": [
+              "Question word",
+              "Meaning",
+              "Answer ending",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**kus**",
+                "where (at)",
+                "**-s**",
+                "*Kus sa elad?* — *Tallinnas.*"
+              ],
+              [
+                "**kust**",
+                "where from",
+                "**-st**",
+                "*Kust sa oled?* — *Tartust.*"
+              ],
+              [
+                "**kuhu**",
+                "where to",
+                "**-sse**",
+                "*Kuhu sa lähed?* — *Tartusse.*"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that the answer ending **follows the question word**: *kus* calls for *-s*, *kust* calls for *-st*, *kuhu* calls for *-sse*. Once you catch this pairing, you don't need to memorize a table of cases — the question itself tells you which ending to use.",
+            "This unit works on the first two. *Kuhu* and *-sse* wait until Unit 7, because that's where the third length comes into play."
+          ]
+        },
+        {
+          "title": "⚠️ When a place takes -l instead of -s",
+          "body": [
+            "Estonian has **two sets** of place endings. One means \"inside\", the other \"on the surface\". For ordinary objects the difference makes sense — *majas* (in the house) versus *laual* (on the table). For place names, the choice is fixed by tradition, and you simply follow it."
+          ],
+          "table": {
+            "head": [
+              "Set",
+              "In",
+              "From",
+              "To",
+              "Used for"
+            ],
+            "rows": [
+              [
+                "**inside**",
+                "**-s**",
+                "**-st**",
+                "**-sse**",
+                "Almost all countries and cities"
+              ],
+              [
+                "**surface**",
+                "**-l**",
+                "**-lt**",
+                "**-le**",
+                "⚠️ Places ending in *-maa*, islands, and villages"
+              ]
+            ]
+          },
+          "after": [
+            "The rule is one line: **if the place name ends in *-maa*, use *-l*.** *Saksamaal* (in Germany), *Venemaal* (in Russia), *Inglismaal* (in England), *Prantsusmaal* (in France), *Saaremaal* (on Saaremaa). Otherwise use *-s*: *Eestis*, *Soomes*, *Indoneesias*, *Jaapanis*, *Tallinnas*.",
+            "The reason happens to make sense: *maa* itself means \"land\", and people stand **on** land, not in it. English does something similar — we say \"on land\" and \"on the ground\", but \"in the country\".",
+            "A handful of exceptions will turn up later (*maal* itself means \"in the countryside\", *Hiiumaal*, *Vormsil*). Don't chase them now; the *-maa* rule already covers more than nine cases out of ten."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Countries, nationalities, languages",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The first three columns of this table follow a very regular pattern: the country name, then **-lane** for the person, then the country name in its possessive form + *keel* for the language. Once you catch the pattern, you can guess rows you haven't seen yet."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Country",
+            "Person",
+            "Language",
+            "\"In\"",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Eesti*",
+              "*eestlane*",
+              "*eesti keel*",
+              "*Eestis*",
+              "Estonia"
+            ],
+            [
+              "*Indoneesia*",
+              "*indoneeslane*",
+              "*indoneesia keel*",
+              "*Indoneesias*",
+              "Indonesia"
+            ],
+            [
+              "*Soome*",
+              "*soomlane*",
+              "*soome keel*",
+              "*Soomes*",
+              "Finland"
+            ],
+            [
+              "*Läti*",
+              "*lätlane*",
+              "*läti keel*",
+              "*Lätis*",
+              "Latvia"
+            ],
+            [
+              "*Leedu*",
+              "*leedulane*",
+              "*leedu keel*",
+              "*Leedus*",
+              "Lithuania"
+            ],
+            [
+              "*Rootsi*",
+              "*rootslane*",
+              "*rootsi keel*",
+              "*Rootsis*",
+              "Sweden"
+            ],
+            [
+              "*Saksamaa*",
+              "*sakslane*",
+              "*saksa keel*",
+              "⚠️ *Saksamaal*",
+              "Germany"
+            ],
+            [
+              "*Venemaa*",
+              "*venelane*",
+              "*vene keel*",
+              "⚠️ *Venemaal*",
+              "Russia"
+            ],
+            [
+              "*Inglismaa*",
+              "*inglane*",
+              "*inglise keel*",
+              "⚠️ *Inglismaal*",
+              "England"
+            ],
+            [
+              "*Prantsusmaa*",
+              "*prantslane*",
+              "*prantsuse keel*",
+              "⚠️ *Prantsusmaal*",
+              "France"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Look at the last four rows. The country ends in *-maa*, so its \"in\" form takes **-l**. Notice also that the nationality does **not** contain *-maa*: a German is *sakslane*, not \"saksamaalane\"."
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Three things that are easy to mix up",
+          "items": [
+            "**Language names are always lowercase**, and always two words: *eesti keel*, not \"Eesti keel\". Country names keep their capital: *Eesti*.",
+            "**Nationalities are lowercase too**: *ta on eestlane*, not \"Eestlane\". This is the opposite of English, where \"Estonian\" gets a capital.",
+            "To say \"I speak language X\", the language takes the **partial** form: *ma räägin eesti keel**t***, *ma räägin inglise keel**t***. Memorize the ending as one package with the sentence."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Cities and places in Estonia",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Place",
+            "Say it",
+            "\"In\"",
+            "Note"
+          ],
+          "rows": [
+            [
+              "*Tallinn*",
+              "*TAHL-linn*",
+              "*Tallinnas*",
+              "The capital, about 460,000 inhabitants."
+            ],
+            [
+              "*Tartu*",
+              "*TAHR-too*",
+              "*Tartus*",
+              "The oldest university town, two hours from Tallinn."
+            ],
+            [
+              "*Pärnu*",
+              "*PÄR-noo*",
+              "*Pärnus*",
+              "A beach town; lively in summer."
+            ],
+            [
+              "*Narva*",
+              "*NAHR-vah*",
+              "*Narvas*",
+              "On the Russian border; mostly Russian-speaking."
+            ],
+            [
+              "*Saaremaa*",
+              "*SAAH-re-maah*",
+              "⚠️ *Saaremaal*",
+              "The biggest island. *saar* = island."
+            ],
+            [
+              "*Hiiumaa*",
+              "*HEE-oo-maah*",
+              "⚠️ *Hiiumaal*",
+              "The second-biggest island."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Common place words",
+          "items": [
+            "*linn* — city. *suur linn* = big city, *väike linn* = small city.",
+            "*küla* — village. *maa* — land, country, countryside. ⚠️ *maal* = \"in the countryside\", not \"on land\".",
+            "*saar* — island. *saarel* = on the island. Notice it takes *-l* too.",
+            "*riik* — state (as an institution). *pealinn* — capital city (literally: \"head city\")."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ready-made sentence patterns",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Kust sa oled?*",
+              "Where are you from?"
+            ],
+            [
+              "*Ma olen Indoneesiast.*",
+              "I'm from Indonesia."
+            ],
+            [
+              "*Kus sa elad?*",
+              "Where do you live?"
+            ],
+            [
+              "*Ma elan Tallinnas.*",
+              "I live in Tallinn."
+            ],
+            [
+              "*Kaua sa oled Eestis olnud?*",
+              "How long have you been in Estonia?"
+            ],
+            [
+              "*Ma olen siin kolm kuud.*",
+              "I've been here three months."
+            ],
+            [
+              "*Kus see asub?*",
+              "Where is it?"
+            ],
+            [
+              "*See asub kesklinnas.*",
+              "It's in the city center."
+            ],
+            [
+              "*Kas see on kaugel?*",
+              "Is it far?"
+            ],
+            [
+              "*Ei, see on lähedal.*",
+              "No, it's near."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last sentence uses a form you haven't learned yet (*mulle* = \"to me\"), but it is too useful to postpone. Memorize it whole: *mulle meeldib* + thing = \"I like\". Estonian says \"to me X is pleasing\", not \"I like X\" — a structure that will make sense once you reach Unit 16."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "et": "kust",
+      "baca": "koost",
+      "en": "where from"
+    },
+    {
+      "et": "kus",
+      "baca": "koos",
+      "en": "where (at)"
+    },
+    {
+      "et": "kuhu",
+      "baca": "KOO-hoo",
+      "en": "where to"
+    },
+    {
+      "et": "elama",
+      "baca": "E-lah-mah",
+      "en": "to live"
+    },
+    {
+      "et": "asuma",
+      "baca": "AH-soo-mah",
+      "en": "to be located"
+    },
+    {
+      "et": "linn",
+      "baca": "linn",
+      "en": "city"
+    },
+    {
+      "et": "küla",
+      "baca": "KÜ-lah",
+      "en": "village"
+    },
+    {
+      "et": "maa",
+      "baca": "maah",
+      "en": "land, country, countryside"
+    },
+    {
+      "et": "saar",
+      "baca": "saahr",
+      "en": "island"
+    },
+    {
+      "et": "riik",
+      "baca": "reek",
+      "en": "country; state"
+    },
+    {
+      "et": "pealinn",
+      "baca": "PEAH-linn",
+      "en": "capital city"
+    },
+    {
+      "et": "kesklinn",
+      "baca": "KESK-linn",
+      "en": "city center"
+    },
+    {
+      "et": "vanalinn",
+      "baca": "VAH-nah-linn",
+      "en": "old town"
+    },
+    {
+      "et": "suur",
+      "baca": "sooor",
+      "en": "big"
+    },
+    {
+      "et": "väike",
+      "baca": "VÄI-ke",
+      "en": "small"
+    },
+    {
+      "et": "kaugel",
+      "baca": "KOW-gel",
+      "en": "far"
+    },
+    {
+      "et": "lähedal",
+      "baca": "LÄ-he-dahl",
+      "en": "near"
+    },
+    {
+      "et": "umbes",
+      "baca": "OOM-bes",
+      "en": "about, approximately"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Estonian.",
+      "items": [
+        "Where are you from?",
+        "I'm from Indonesia.",
+        "I live in Tallinn.",
+        "Where is Tartu?",
+        "Is it far?",
+        "No, it's near."
+      ]
+    },
+    {
+      "prompt": "Add the ending -s or -l (\"in\"). Mind the -maa rule.",
+      "items": [
+        "Eesti",
+        "Saksamaa",
+        "Indoneesia",
+        "Tallinn",
+        "Venemaa",
+        "Soome"
+      ]
+    },
+    {
+      "prompt": "Change to the -st form (\"from\").",
+      "items": [
+        "Tartu",
+        "Jaapan",
+        "Hiina",
+        "Pärnu",
+        "Itaalia",
+        "Rootsi"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "elan / Tallinnas / ma",
+        "sa / kust / oled / ?",
+        "asub / kus / Bandung / ?",
+        "vanemad / Saaremaal / elavad / mu",
+        "linn / see / suur / on"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Kust sa oled? — Ma olen Indoneesiast. — Ma elan Tallinnas. — Kus Tartu asub? — Kas see on kaugel? — Ei, see on lähedal.",
+    "1": "Eestis — Saksamaal — Indoneesias — Tallinnas — Venemaal — Soomes",
+    "2": "Tartust — Jaapanist — Hiinast — Pärnust — Itaaliast — Rootsist",
+    "3": "Ma elan Tallinnas. — Kust sa oled? — Kus Bandung asub? — Mu vanemad elavad Saaremaal. — See on suur linn."
+  }
+}

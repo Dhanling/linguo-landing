@@ -1,0 +1,564 @@
+{
+  "title": "Numbers and \"have\"",
+  "title_target": "Numbrid ja \"mul on\"",
+  "goal": "Count, ask prices, and say you have something — in a language that has **no verb \"to have\"** at all.",
+  "bekal": [
+    "count from zero up to a million without memorizing a hundred words",
+    "use *mul on* / *mul ei ole* to talk about possession",
+    "ask and understand prices in shops and markets"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Turul",
+      "intro": "Saturday morning at Balti jaam turg, the market by Tallinn's train station. Budi is shopping on his own for the first time.",
+      "lines": [
+        {
+          "speaker": "Müüja:",
+          "text": "Tere! Mida soovite?",
+          "id": "Hello! What would you like?",
+          "literal": "hello! what-PARTITIVE want-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tere! Kui palju maksavad õunad?",
+          "id": "Hello! How much are the apples?",
+          "literal": "hello! how much cost-they apple-PLURAL?"
+        },
+        {
+          "speaker": "Müüja:",
+          "text": "Kaks eurot kilo.",
+          "id": "Two euros a kilo.",
+          "literal": "two euro-PARTITIVE kilo."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ma võtan kaks kilo, palun.",
+          "id": "I'll take two kilos, please.",
+          "literal": "I take-I two kilo, please."
+        },
+        {
+          "speaker": "Müüja:",
+          "text": "Palun. Kas midagi veel?",
+          "id": "Here you go. Anything else?",
+          "literal": "please. [question] something more?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jah. Kui palju maksab see leib?",
+          "id": "Yes. How much is this bread?",
+          "literal": "yes. how much costs-it this bread?"
+        },
+        {
+          "speaker": "Müüja:",
+          "text": "Kolm eurot viiskümmend.",
+          "id": "Three euros fifty.",
+          "literal": "three euro-PARTITIVE five-ty."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hea küll. Ja üks pudel vett.",
+          "id": "All right. And a bottle of water.",
+          "literal": "good enough. and one bottle water-PARTITIVE."
+        },
+        {
+          "speaker": "Müüja:",
+          "text": "Kokku kaheksa eurot kolmkümmend senti.",
+          "id": "That's eight euros thirty cents in total.",
+          "literal": "altogether eight euro-PARTITIVE three-ty cent-PARTITIVE."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vabandust, mul ei ole sularaha. Kas kaart sobib?",
+          "id": "Sorry, I don't have any cash. Is a card OK?",
+          "literal": "sorry, me-on not is cash-money. [question] card suits-it?"
+        },
+        {
+          "speaker": "Müüja:",
+          "text": "Muidugi. Eestis maksavad kõik kaardiga.",
+          "id": "Of course. In Estonia everyone pays by card.",
+          "literal": "of-course. Estonia-in pay-they all card-with."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Isegi turul?",
+          "id": "Even at the market?",
+          "literal": "even market-on?"
+        },
+        {
+          "speaker": "Müüja:",
+          "text": "Isegi turul. Meil pole peaaegu üldse sularaha.",
+          "id": "Even at the market. We hardly have any cash at all.",
+          "literal": "even market-on. us-on not-is almost at-all cash-money."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Uskumatu. Indoneesias on vastupidi.",
+          "id": "Incredible. In Indonesia it's the opposite.",
+          "literal": "un-believable. Indonesia-in is the-opposite."
+        },
+        {
+          "speaker": "Müüja:",
+          "text": "Palun, siin on tšekk. Head päeva!",
+          "id": "Here you go, here's your receipt. Have a good day!",
+          "literal": "please, here is receipt. good-GEN day-PARTITIVE!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aitäh, teile ka!",
+          "id": "Thank you, you too!",
+          "literal": "thank-you, you-to also!"
+        }
+      ],
+      "notes": [
+        "**Maksab** for one item, **maksavad** for several. Compare *maksab see leib* (one loaf) with *maksavad õunad* (many apples). Estonian verbs change with the number of the subject, just as English \"costs\" becomes \"cost\" — this gets full treatment in Unit 10.",
+        "⚠️ **Kaks euro*t*, kolmkümmend sen*ti*.** After a number, the noun takes the **partitive** form and **stays singular**. Not \"kaks eurod\". Your English instinct is right here — \"two euros\" is already plural in English, but Estonian keeps the noun singular and just changes its ending.",
+        "**Mul ei ole** and **meil pole** mean the same thing: \"I/we don't have\". *Pole* is short for *ei ole* and is very common in conversation. Use either; both are correct.",
+        "**Kaardiga** = *kaart* + **-ga** (\"with\"). The same ending works for payment methods, tools, and vehicles: *sularahaga* (with cash), *bussiga* (by bus), *pastakaga* (with a pen)."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers — and two secrets that cut the memorizing",
+          "body": [
+            "You don't need to memorize a hundred words. Estonian builds all its numbers from ten basic words and two patterns."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Eesti keel",
+              "Number",
+              "Eesti keel",
+              "Number",
+              "Eesti keel"
+            ],
+            "rows": [
+              [
+                "0",
+                "*null*",
+                "10",
+                "*kümme*",
+                "20",
+                "*kakskümmend*"
+              ],
+              [
+                "1",
+                "*üks*",
+                "11",
+                "*üksteist*",
+                "30",
+                "*kolmkümmend*"
+              ],
+              [
+                "2",
+                "*kaks*",
+                "12",
+                "*kaksteist*",
+                "40",
+                "*nelikümmend*"
+              ],
+              [
+                "3",
+                "*kolm*",
+                "13",
+                "*kolmteist*",
+                "50",
+                "*viiskümmend*"
+              ],
+              [
+                "4",
+                "*neli*",
+                "14",
+                "*neliteist*",
+                "60",
+                "*kuuskümmend*"
+              ],
+              [
+                "5",
+                "*viis*",
+                "15",
+                "*viisteist*",
+                "70",
+                "*seitsekümmend*"
+              ],
+              [
+                "6",
+                "*kuus*",
+                "16",
+                "*kuusteist*",
+                "80",
+                "*kaheksakümmend*"
+              ],
+              [
+                "7",
+                "*seitse*",
+                "17",
+                "*seitseteist*",
+                "90",
+                "*üheksakümmend*"
+              ],
+              [
+                "8",
+                "*kaheksa*",
+                "18",
+                "*kaheksateist*",
+                "100",
+                "*sada*"
+              ],
+              [
+                "9",
+                "*üheksa*",
+                "19",
+                "*üheksateist*",
+                "1000",
+                "*tuhat*"
+              ]
+            ]
+          },
+          "after": [
+            "**Secret one: -teist.** The numbers 11–19 are the digit + *-teist*, meaning \"from the second ten\". *Üksteist* is literally \"one of the second ten\" = 11. Once you know 1–10, you know 11–19 with no extra memorizing — much like English \"-teen\".",
+            "**Secret two: 8 and 9 are subtractions.** *Kaheksa* contains *kaks* (two), *üheksa* contains *üks* (one) — they mean \"two less than ten\" and \"one less than ten\". Latin used the same trick (*undeviginti* = 19, \"one from twenty\"). Once you see it, the two words stop feeling random.",
+            "**Tens:** the digit + *-kümmend*. For the numbers in between, just add the unit on the end: *kakskümmend üks* (21), *nelikümmend seitse* (47), *üheksakümmend üheksa* (99). The order is the same as in English: tens first, then ones."
+          ]
+        },
+        {
+          "title": "⚠️ \"Have\" — without a verb \"to have\"",
+          "body": [
+            "Estonian has no equivalent of \"to have\". It builds the idea another way: **\"at me is X\"**."
+          ],
+          "table": {
+            "head": [
+              "Estonian",
+              "Literally",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Mul on auto.*",
+                "at-me is car",
+                "I have a car."
+              ],
+              [
+                "*Sul on aega?*",
+                "at-you is time-PARTITIVE?",
+                "Do you have time?"
+              ],
+              [
+                "*Tal on kaks last.*",
+                "at-him/her is two child-PARTITIVE",
+                "He/she has two children."
+              ],
+              [
+                "*Meil on suur pere.*",
+                "at-us is big family",
+                "We have a big family."
+              ],
+              [
+                "*Teil on ilus maja.*",
+                "at-you(pl) is beautiful house",
+                "You have a lovely house."
+              ],
+              [
+                "*Neil on koer.*",
+                "at-them is dog",
+                "They have a dog."
+              ]
+            ]
+          },
+          "after": [
+            "The forms *mul, sul, tal, meil, teil, neil* are the pronoun + the ending **-l**, the same ending as in *Saksamaal* in Unit 2. So you're not learning six new words — you're seeing an old ending do a new job.",
+            "**Making it negative:** *mul ei ole* or *mul pole*. *Mul pole autot.* (I don't have a car.) ⚠️ Note that after a negative, the thing owned goes into the **partitive**: *auto* → *autot*. That rule is covered in Units 11 and 13; for now just know that the ending changes.",
+            "**Asking:** *Kas sul on...?* — *Kas sul on aega?* (Do you have time?), *Kas teil on kohvi?* (Do you have coffee?). You'll use that second sentence every day in cafés and shops."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Money, prices, and counting",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Kui palju see maksab?*",
+              "*kooy PAHL-yoo sehh MAHK-sahb*",
+              "How much is this?"
+            ],
+            [
+              "*Kui palju need maksavad?*",
+              "*kooy PAHL-yoo nehhd MAHK-sah-vahd*",
+              "How much are these? (plural)"
+            ],
+            [
+              "*See maksab viis eurot.*",
+              "*sehh MAHK-sahb vees EOO-rot*",
+              "This is five euros."
+            ],
+            [
+              "*Kokku üksteist eurot.*",
+              "*KOK-koo ÜKS-tayst EOO-rot*",
+              "That's eleven euros in total."
+            ],
+            [
+              "*See on liiga kallis.*",
+              "*sehh on LEE-gah KAHL-lis*",
+              "This is too expensive."
+            ],
+            [
+              "*Kas on midagi odavamat?*",
+              "*kahs on MI-dah-gi O-dah-vah-maht*",
+              "Is there anything cheaper?"
+            ],
+            [
+              "*Ma võtan selle.*",
+              "*mah VÕ-tahn SEL-le*",
+              "I'll take this one."
+            ],
+            [
+              "*Kas kaart sobib?*",
+              "*kahs kaahrt SO-bib*",
+              "Is a card OK?"
+            ],
+            [
+              "*Mul ei ole sularaha.*",
+              "*mool ay O-le SOO-lah-rah-hah*",
+              "I don't have any cash."
+            ],
+            [
+              "*Palun tšekk.*",
+              "*PAH-loon tshekk*",
+              "The receipt, please."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Saying prices like an Estonian",
+          "items": [
+            "Full price: *kolm eurot viiskümmend senti* — three euros fifty cents.",
+            "In daily speech people shorten it: *kolm viiskümmend*, just like English \"three fifty\".",
+            "⚠️ The decimal comma is read *koma*: *3,50* = *kolm koma viis*. And the decimal mark really is a **comma**, not a point — so *3,50* is \"3.50\" in English notation.",
+            "⚠️ *odav* means cheap, *kallis* means expensive — but *kallis* also means \"dear\" when addressing someone. *Kallis Kerli!* at the start of a letter means \"Dear Kerli\", not \"Expensive Kerli\" — the same double life as English \"dear\"."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Numbers in everyday life",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Use",
+            "Estonian example",
+            "English"
+          ],
+          "rows": [
+            [
+              "Age",
+              "*Ma olen kakskümmend viis.*",
+              "I am twenty-five years old."
+            ],
+            [
+              "Number of people",
+              "*Meid on neli.*",
+              "There are four of us."
+            ],
+            [
+              "Phone number",
+              "*Viis kaks üks kolm...*",
+              "Read digit by digit."
+            ],
+            [
+              "Year",
+              "*Kaks tuhat kakskümmend kuus*",
+              "2026"
+            ],
+            [
+              "Floor",
+              "*Kolmas korrus*",
+              "Third floor"
+            ],
+            [
+              "Bus number",
+              "*Buss number kolm*",
+              "Bus number three"
+            ],
+            [
+              "Weight",
+              "*Pool kilo*",
+              "Half a kilo"
+            ],
+            [
+              "Temperature",
+              "*Miinus kümme kraadi*",
+              "Minus ten degrees"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Phone numbers in Estonia are read **digit by digit**, not grouped into pairs or chunks the way some English speakers do (\"twenty-five, forty-three\"). If you dictate a number, slow down and say each digit separately."
+        },
+        {
+          "type": "kotak",
+          "title": "Ordinal numbers — when you need them",
+          "items": [
+            "*esimene* (first), *teine* (second), *kolmas* (third), *neljas* (fourth), *viies* (fifth).",
+            "*kuues* (sixth), *seitsmes* (seventh), *kaheksas* (eighth), *üheksas* (ninth), *kümnes* (tenth).",
+            "Used for floors (*teine korrus*), dates (*kolmas mai*), and order (*esimene kord* — the first time).",
+            "⚠️ *Esimene* and *teine* follow no pattern — memorize them (like \"first\" and \"second\" in English). The rest are fairly regular: the cardinal number + *-s*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "et": "number",
+      "baca": "NOOM-ber",
+      "en": "number, figure"
+    },
+    {
+      "et": "null",
+      "baca": "nooll",
+      "en": "zero"
+    },
+    {
+      "et": "üks",
+      "baca": "üks",
+      "en": "one"
+    },
+    {
+      "et": "kaks",
+      "baca": "kahks",
+      "en": "two"
+    },
+    {
+      "et": "kolm",
+      "baca": "kolm",
+      "en": "three"
+    },
+    {
+      "et": "neli",
+      "baca": "NE-li",
+      "en": "four"
+    },
+    {
+      "et": "viis",
+      "baca": "vees",
+      "en": "five"
+    },
+    {
+      "et": "kuus",
+      "baca": "kooos",
+      "en": "six"
+    },
+    {
+      "et": "seitse",
+      "baca": "SAYT-se",
+      "en": "seven"
+    },
+    {
+      "et": "kaheksa",
+      "baca": "KAH-hek-sah",
+      "en": "eight"
+    },
+    {
+      "et": "üheksa",
+      "baca": "Ü-hek-sah",
+      "en": "nine"
+    },
+    {
+      "et": "kümme",
+      "baca": "KÜM-me",
+      "en": "ten"
+    },
+    {
+      "et": "sada",
+      "baca": "SAH-dah",
+      "en": "one hundred"
+    },
+    {
+      "et": "tuhat",
+      "baca": "TOO-haht",
+      "en": "one thousand"
+    },
+    {
+      "et": "pool",
+      "baca": "pohhl",
+      "en": "half"
+    },
+    {
+      "et": "maksma",
+      "baca": "MAHKS-mah",
+      "en": "to pay; to cost"
+    },
+    {
+      "et": "kallis",
+      "baca": "KAHL-lis",
+      "en": "expensive; dear"
+    },
+    {
+      "et": "odav",
+      "baca": "O-dahv",
+      "en": "cheap"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the numbers out in Estonian.",
+      "items": [
+        "7",
+        "13",
+        "20",
+        "48",
+        "99",
+        "365"
+      ]
+    },
+    {
+      "prompt": "Translate into Estonian.",
+      "items": [
+        "I have a car.",
+        "Do you have time?",
+        "He/she has two children.",
+        "How much is this?",
+        "This is five euros.",
+        "I don't have any cash."
+      ]
+    },
+    {
+      "prompt": "Fill in the correct form of mul on or mul ei ole.",
+      "items": [
+        "____ aega. (I have)",
+        "____ raha. (you have)",
+        "____ autot. (he/she doesn't have)",
+        "____ suur pere. (we have)",
+        "____ kaarti. (you(pl) don't have)",
+        "____ koer. (they have)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "maksab / palju / see / kui / ?",
+        "mul / auto / on",
+        "eurot / see / viis / maksab",
+        "sularaha / ei / mul / ole",
+        "sobib / kaart / kas / ?"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "seitse — kolmteist — kakskümmend — nelikümmend kaheksa — üheksakümmend üheksa — kolmsada kuuskümmend viis",
+    "1": "Mul on üks auto. — Kas sul on aega? — Tal on kaks last. — Kui palju see maksab? — See maksab viis eurot. — Mul ei ole sularaha.",
+    "2": "Mul on — Sul on — Tal ei ole — Meil on — Teil ei ole — Neil on",
+    "3": "Kui palju see maksab? — Mul on auto. — See maksab viis eurot. — Mul ei ole sularaha. — Kas kaart sobib?"
+  }
+}

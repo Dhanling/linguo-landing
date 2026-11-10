@@ -1,0 +1,533 @@
+{
+  "title": "What time is it?",
+  "title_target": "Mis kell on?",
+  "goal": "Tell the time and make appointments — with one trap: Estonian counts the half hour toward the NEXT hour, so *pool kolm* is 2:30 — a trap for English speakers.",
+  "bekal": [
+    "tell the time in both the analog and digital styles",
+    "use *pool*, *veerand*, and *kolmveerand* without calculating in your head",
+    "make appointments and name the parts of the day"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Millal me kohtume?",
+      "intro": "Budi and Kerli arrange when to meet before the afternoon lecture.",
+      "lines": [
+        {
+          "speaker": "Kerli:",
+          "text": "Mis kell praegu on?",
+          "id": "What time is it now?",
+          "literal": "what clock now is-it?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kell on kaks.",
+          "id": "It's two o'clock.",
+          "literal": "clock is-it two."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Hea. Loeng algab kell kolm.",
+          "id": "Good. The lecture starts at three.",
+          "literal": "good. lecture starts-it clock three."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Millal me kohtume?",
+          "id": "When shall we meet?",
+          "literal": "when we meet-we?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Pool kolm, kohviku ees.",
+          "id": "Half past two, in front of the café.",
+          "literal": "half three, café-of in-front."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "\"Pool kolm\" — see on kaks kolmkümmend?",
+          "id": "\"Pool kolm\" — that's two thirty?",
+          "literal": "\"half three\" — that is-it two thirty?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Jah. Miks sa küsid?",
+          "id": "Yes. Why do you ask?",
+          "literal": "yes. why you ask-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sest indoneesia keeles on täpselt sama!",
+          "id": "Because in Indonesian it works exactly the same!",
+          "literal": "because Indonesian language-in is exactly same!"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Tõesti? Inglastel on teisiti.",
+          "id": "Really? English speakers do it differently.",
+          "literal": "really? English-people-plural-at is other-way."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jah, ja see ajab mind alati segadusse.",
+          "id": "Yes, and it always confuses me.",
+          "literal": "yes, and it drives-it me-part always confusion-into."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Siis sul on eelis. Ja veerand kolm on kaks viisteist.",
+          "id": "Then you have an advantage. And veerand kolm is two fifteen.",
+          "literal": "then you-at is advantage. and quarter three is-it two fifteen."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sest see on veerand teed kolmeni?",
+          "id": "Because it's a quarter of the way to three?",
+          "literal": "because it is-it quarter way-of three-until?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Just! Sa mõtled õigesti.",
+          "id": "Exactly! You think correctly.",
+          "literal": "exactly! you think-you rightly."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja kolmveerand kolm on kaks nelikümmend viis.",
+          "id": "And kolmveerand kolm is two forty-five.",
+          "literal": "and three-quarter three is-it two forty five."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Perfektne. Kohtume siis pool kolm.",
+          "id": "Perfect. So we'll meet at half past two.",
+          "literal": "perfect. meet-we then half three."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ma olen kohal. Ma ei hiline kunagi.",
+          "id": "I'll be there. I'm never late.",
+          "literal": "I am-I there. I not late-I ever."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Hea. Eestlased ei hiline ka.",
+          "id": "Good. Estonians are never late either.",
+          "literal": "good. Estonian-plural not late too."
+        }
+      ],
+      "notes": [
+        "**Pool kolm = 2:30.** This is the big trap of the unit. Estonian counts **forward to the next hour**: *pool kolm* is \"half (way) to three\". English *half past two* counts back from the hour just passed, and British \"half three\" even means 3:30 — the opposite of *pool kolm*. That is why English-speaking learners are so often an hour off. Learn the Estonian way as its own system.",
+        "**Veerand kolm = 2:15, kolmveerand kolm = 2:45.** Same logic: a quarter of the way to three o'clock, then three quarters of the way to three o'clock. Once you accept the \"half to three\" way of counting, these two words come free.",
+        "**Kell** has two jobs: \"clock/watch\" as an object (*Mul on uus kell* — I have a new watch) and \"o'clock\" (*kell kolm* — at three o'clock).",
+        "⚠️ **Estonians are truly punctual.** Arriving five minutes late already calls for an apology; fifteen minutes is considered rude. If you are used to a looser sense of time, this is a real adjustment — better to know it now."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time — the analog way",
+          "body": [
+            "These patterns cover everyday needs. Notice that they all name the **hour being approached**, not the hour just passed."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Eesti keel",
+              "Literal",
+              "English"
+            ],
+            "rows": [
+              [
+                "**2:00**",
+                "*kell kaks*",
+                "clock two",
+                "two o'clock"
+              ],
+              [
+                "**2:15**",
+                "*veerand kolm*",
+                "quarter three",
+                "⚠️ a quarter of the way to three (2:15)"
+              ],
+              [
+                "**2:30**",
+                "*pool kolm*",
+                "half three",
+                "**half the way to three (2:30)**"
+              ],
+              [
+                "**2:45**",
+                "*kolmveerand kolm*",
+                "three-quarter three",
+                "three quarters of the way to three (2:45)"
+              ],
+              [
+                "**3:00**",
+                "*kell kolm*",
+                "clock three",
+                "three o'clock"
+              ]
+            ]
+          },
+          "after": [
+            "Read the third and fourth columns together. The **2:30** row is the one English speakers trip on: \"half three\" is 2:30 here, not 3:30. The other two rows follow the same thinking, just with different fractions.",
+            "⚠️ The one trap: *veerand kolm* is **2:15**, not 3:15. If you hesitate, translate in your head as \"a quarter of the way to three\" — you won't go wrong.",
+            "For other minutes, Estonians almost always switch to the digital way, and so should you."
+          ]
+        },
+        {
+          "title": "The digital way, and making appointments",
+          "body": [
+            "Estonian uses the twenty-four-hour clock in official writing, timetables, and tickets — just like most of continental Europe."
+          ],
+          "table": {
+            "head": [
+              "Purpose",
+              "Eesti keel",
+              "English"
+            ],
+            "rows": [
+              [
+                "Asking the time",
+                "*Mis kell on?*",
+                "What time is it?"
+              ],
+              [
+                "Answering",
+                "*Kell on kolm.*",
+                "It's three o'clock."
+              ],
+              [
+                "Digital",
+                "*Kell on kaks kolmkümmend.*",
+                "It's two thirty."
+              ],
+              [
+                "24-hour",
+                "*Kell on neliteist.*",
+                "It's fourteen hundred (2 p.m.)."
+              ],
+              [
+                "Asking about an appointment",
+                "*Mis kell me kohtume?*",
+                "What time shall we meet?"
+              ],
+              [
+                "Naming an appointment",
+                "*Kell kolm.*",
+                "At three o'clock."
+              ],
+              [
+                "From–until",
+                "*Kella kolmest viieni.*",
+                "From three to five."
+              ],
+              [
+                "When",
+                "*Millal?*",
+                "When?"
+              ],
+              [
+                "Now",
+                "*Praegu.*",
+                "Now."
+              ],
+              [
+                "Duration",
+                "*Kaks tundi.*",
+                "Two hours."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Notice the difference between *kaks tundi* (two hours' duration) and *kell kaks* (at two o'clock). The first uses the partitive because it is a quantity; the second does not.",
+            "*Kella kolmest viieni* shows two endings working together: **-st** (from) and **-ni** (until). The same pattern works for days: *esmaspäevast reedeni* (from Monday to Friday)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Parts of the day",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Time",
+            "The noun",
+            "\"At that time\"",
+            "English"
+          ],
+          "rows": [
+            [
+              "06–11",
+              "*hommik*",
+              "*hommikul*",
+              "morning"
+            ],
+            [
+              "12–13",
+              "*lõuna*",
+              "*lõunal*",
+              "midday"
+            ],
+            [
+              "11–17",
+              "*päev*",
+              "*päeval*",
+              "daytime"
+            ],
+            [
+              "17–23",
+              "*õhtu*",
+              "*õhtul*",
+              "evening"
+            ],
+            [
+              "23–06",
+              "*öö*",
+              "*öösel*",
+              "night"
+            ],
+            [
+              "12:00",
+              "*keskpäev*",
+              "*keskpäeval*",
+              "noon"
+            ],
+            [
+              "00:00",
+              "*kesköö*",
+              "*keskööl*",
+              "midnight"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "All of them take the ending **-l** — the same surface series as *tööl* and *turul*. Estonian puts time \"on top of\" the day, not \"inside\" it."
+        },
+        {
+          "type": "kotak",
+          "title": "The days around today",
+          "items": [
+            "*täna* — today. *homme* — tomorrow. *eile* — yesterday.",
+            "*ülehomme* — the day after tomorrow. *üleeile* — the day before yesterday. The prefix *üle-* means \"over one\".",
+            "*hommikul* — in the morning. *täna õhtul* — this evening. *eile õhtul* — last night.",
+            "*varsti* — soon. *hiljem* — later. *kohe* — right away."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Estonian light changes what \"morning\" and \"evening\" mean",
+          "items": [
+            "In late June, the sun sets around 10:30 p.m. and rises again at 4:00 a.m. The sky never gets truly dark. Midsummer night is called *jaaniöö*, and people stay up all night.",
+            "In late December, the sun rises at 9:15 a.m. and sets at 3:20 p.m. You go to work in the dark and come home in the dark.",
+            "The result: *õhtul* can mean a bright sky or a pitch-black one, depending on the month. Don't rely on light to guess the time.",
+            "The difference is real in your body. Newcomers from regions near the equator — where day and night are always twelve hours each — are almost always surprised in their first month."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Daily routine",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Ma ärkan kell seitse.*",
+              "I get up at seven."
+            ],
+            [
+              "*Ma söön hommikusööki.*",
+              "I have breakfast."
+            ],
+            [
+              "*Ma lähen tööle kell kaheksa.*",
+              "I leave for work at eight."
+            ],
+            [
+              "*Töö algab kell üheksa.*",
+              "Work starts at nine."
+            ],
+            [
+              "*Ma söön lõunat kell kaksteist.*",
+              "I have lunch at twelve."
+            ],
+            [
+              "*Töö lõpeb kell viis.*",
+              "Work ends at five."
+            ],
+            [
+              "*Ma tulen koju kell kuus.*",
+              "I get home at six."
+            ],
+            [
+              "*Ma söön õhtust kell seitse.*",
+              "I have dinner at seven."
+            ],
+            [
+              "*Ma lähen magama kell üksteist.*",
+              "I go to bed at eleven."
+            ],
+            [
+              "*Ma magan kaheksa tundi.*",
+              "I sleep eight hours."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Three meal names are worth learning together: *hommikusöök* (breakfast — literally \"morning meal\"), *lõunasöök* (lunch), *õhtusöök* (dinner). Each is part of the day + *söök* (food), so nothing is new except the gluing."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "et": "kell",
+      "baca": "kell",
+      "en": "clock; o'clock"
+    },
+    {
+      "et": "tund",
+      "baca": "toond",
+      "en": "hour (duration)"
+    },
+    {
+      "et": "minut",
+      "baca": "MI-noot",
+      "en": "minute"
+    },
+    {
+      "et": "pool",
+      "baca": "pohhl",
+      "en": "half"
+    },
+    {
+      "et": "veerand",
+      "baca": "VEHH-rahnd",
+      "en": "quarter"
+    },
+    {
+      "et": "kolmveerand",
+      "baca": "KOLM-vehh-rahnd",
+      "en": "three quarters"
+    },
+    {
+      "et": "praegu",
+      "baca": "PRAHE-goo",
+      "en": "now"
+    },
+    {
+      "et": "millal",
+      "baca": "MIL-lahl",
+      "en": "when"
+    },
+    {
+      "et": "hommik",
+      "baca": "HOM-mik",
+      "en": "morning"
+    },
+    {
+      "et": "päev",
+      "baca": "päev",
+      "en": "day, daytime"
+    },
+    {
+      "et": "õhtu",
+      "baca": "ÕH-too",
+      "en": "evening"
+    },
+    {
+      "et": "öö",
+      "baca": "öö",
+      "en": "night"
+    },
+    {
+      "et": "lõuna",
+      "baca": "LÕW-nah",
+      "en": "midday; south"
+    },
+    {
+      "et": "täna",
+      "baca": "TÄ-nah",
+      "en": "today"
+    },
+    {
+      "et": "homme",
+      "baca": "HOM-me",
+      "en": "tomorrow"
+    },
+    {
+      "et": "eile",
+      "baca": "AY-le",
+      "en": "yesterday"
+    },
+    {
+      "et": "varsti",
+      "baca": "VAHRS-ti",
+      "en": "soon"
+    },
+    {
+      "et": "hiljem",
+      "baca": "HIL-yem",
+      "en": "later"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the time in Estonian (analog style).",
+      "items": [
+        "3:00",
+        "4:15",
+        "5:30",
+        "6:45",
+        "9:30",
+        "11:15"
+      ]
+    },
+    {
+      "prompt": "Translate into Estonian.",
+      "items": [
+        "What time is it?",
+        "It's two o'clock now.",
+        "We'll meet at half past two.",
+        "The lecture starts at three o'clock.",
+        "I get up at seven.",
+        "Sorry, I'm late."
+      ]
+    },
+    {
+      "prompt": "Fill in the right part of the day.",
+      "items": [
+        "Ma ärkan ____. (morning)",
+        "Ma söön lõunat ____. (midday)",
+        "Ma tulen koju ____. (evening)",
+        "Ma magan ____. (night)",
+        "Ma lähen kinno ____ õhtul. (today)",
+        "Ma olen vaba ____. (tomorrow)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "kell / mis / on / ?",
+        "kolm / kohtume / pool / me",
+        "kell / algab / loeng / kolm",
+        "seitse / ma / ärkan / kell",
+        "hilinen / vabandust / ma"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "kell kolm — veerand viis — pool kuus — kolmveerand seitse — pool kümme — veerand kaksteist",
+    "1": "Mis kell on? — Kell on kaks. — Me kohtume pool kolm. — Loeng algab kell kolm. — Ma ärkan kell seitse. — Vabandust, ma hilinen.",
+    "2": "hommikul — lõunal — õhtul — öösel — täna — homme",
+    "3": "Mis kell on? — Me kohtume pool kolm. — Loeng algab kell kolm. — Ma ärkan kell seitse. — Vabandust, ma hilinen."
+  }
+}

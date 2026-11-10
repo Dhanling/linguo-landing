@@ -1,0 +1,521 @@
+{
+  "title": "Politeness and invitations",
+  "title_target": "Viisakus ja kutsed",
+  "goal": "Invite, accept and decline gracefully — and meet the biggest cultural gap between Estonia and many other cultures: a language with **almost no levels of politeness**.",
+  "bekal": [
+    "use the conditional *-ksin* to soften requests",
+    "choose correctly between *sina* and *teie*",
+    "invite, accept and decline without sounding stiff"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kutse jaanipäevale",
+      "intro": "Early June. Kerli catches up with Budi after class.",
+      "lines": [
+        {
+          "speaker": "Kerli:",
+          "text": "Budi, mul on üks küsimus.",
+          "id": "Budi, I have a question.",
+          "literal": "Budi, me-at is one question."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Palun, küsi.",
+          "id": "Go ahead, ask.",
+          "literal": "please, ask."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Kas sa tahaksid jaanipäeva minu perega veeta?",
+          "id": "Would you like to celebrate jaanipäev with my family?",
+          "literal": "question you want-would-you jaanipäev-part my family-with to-spend?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sinu perega? Kas see ei ole liiga...",
+          "id": "With your family? Isn't that too...",
+          "literal": "your family-with? question that not is too..."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Liiga mis?",
+          "id": "Too what?",
+          "literal": "too what?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Liiga isiklik? Ma ei tahaks tülitada.",
+          "id": "Too personal? I don't want to impose.",
+          "literal": "too personal? I not want-would to-impose."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Sa ei tülita. Mu ema küsis ise.",
+          "id": "You're not imposing. My mother asked herself.",
+          "literal": "you not impose. my mother asked-she herself."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tõesti? Siis ma tuleksin väga hea meelega.",
+          "id": "Really? Then I'd love to come.",
+          "literal": "really? then I come-would-I very good-heart-with."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Suurepärane. Me sõidame Saaremaale.",
+          "id": "Great. We're driving to Saaremaa.",
+          "literal": "great. we drove-we Saaremaa-onto."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kas ma peaksin midagi kaasa võtma?",
+          "id": "Should I bring something?",
+          "literal": "question I must-would-I something along to-take?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ei ole vaja. Aga kui tahad, too midagi Indoneesiast.",
+          "id": "No need. But if you want, bring something from Indonesia.",
+          "literal": "not is need. but if want-you, bring something Indonesia-from."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ma teeksin süüa. Kas see sobiks?",
+          "id": "I can cook. Would that be okay?",
+          "literal": "I make-would-I to-eat. question that suit-would-it?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "See oleks suurepärane.",
+          "id": "That would be wonderful.",
+          "literal": "that is-would-it great."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Veel üks asi. Kuidas ma su vanemaid kutsun?",
+          "id": "One more thing. How do I address your parents?",
+          "literal": "more one thing. how I your parents-part call-I?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Nimepidi. Mari ja Jaan.",
+          "id": "By name. Mari and Jaan.",
+          "literal": "name-by. Mari and Jaan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Lihtsalt nimega? Nad on minust palju vanemad.",
+          "id": "Just by name? They're much older than me.",
+          "literal": "just name-with? they are me-than much older-pl."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Eestis on nii. Meil ei ole muid tiitleid.",
+          "id": "That's how it is in Estonia. We have no other titles.",
+          "literal": "Estonia-in is so. we-at not is other-pl-part title-pl-part."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "See on mulle raske. Aga ma proovin.",
+          "id": "That's hard for me. But I'll try.",
+          "literal": "that is-it me-to hard. but I try-I."
+        }
+      ],
+      "notes": [
+        "⚠️ **This is the biggest cultural adjustment for readers of this module.** Everyday Estonian has no \"Sir\", \"Madam\", \"Mr\", \"Mrs\" or \"Professor\" in address. Estonians call lecturers, bosses, in-laws and eighty-year-old neighbors **by first name only**. This isn't rudeness; adding a title actually feels stiff and distancing.",
+        "**Tahaksid, tuleksin, peaksin, teeksin, sobiks, oleks** — six conditional forms in one dialogue. It's used to soften, not to imagine. *Kas sa tahad?* (Do you want?) sounds direct; *Kas sa tahaksid?* (Would you like?) sounds like an offer.",
+        "**Hea meelega** — \"with pleasure\". Literally \"with a good mind\". It's the warmest way to accept an invitation.",
+        "⚠️ **Ei ole vaja** means \"no need\", and Estonians mean it. In some cultures a host's \"please don't go to any trouble\" still calls for a gift. In Estonia, *ei ole vaja* means exactly what it says. Bringing something is still welcome, but bringing nothing is perfectly normal too."
+      ],
+      "grammars": [
+        {
+          "title": "The conditional — -ksin",
+          "body": [
+            "You've been using it since unit 5 (*ma sooviksin*) without taking it apart. Here is the full form."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Ending",
+              "*tahtma* (to want)",
+              "*olema* (to be)",
+              "*saama* (to be able)"
+            ],
+            "rows": [
+              [
+                "*ma*",
+                "**-ksin**",
+                "*tahaksin*",
+                "*oleksin*",
+                "*saaksin*"
+              ],
+              [
+                "*sa*",
+                "**-ksid**",
+                "*tahaksid*",
+                "*oleksid*",
+                "*saaksid*"
+              ],
+              [
+                "*ta*",
+                "**-ks**",
+                "*tahaks*",
+                "*oleks*",
+                "*saaks*"
+              ],
+              [
+                "*me*",
+                "**-ksime**",
+                "*tahaksime*",
+                "*oleksime*",
+                "*saaksime*"
+              ],
+              [
+                "*te*",
+                "**-ksite**",
+                "*tahaksite*",
+                "*oleksite*",
+                "*saaksite*"
+              ],
+              [
+                "*nad*",
+                "**-ksid**",
+                "*tahaksid*",
+                "*oleksid*",
+                "*saaksid*"
+              ]
+            ]
+          },
+          "after": [
+            "**Negating it** uses the third-row form for everyone, just like ordinary negation: *ma ei tahaks*, *sa ei tahaks*, *nad ei tahaks*. Once again, Estonian negatives take less memorizing than the positive forms.",
+            "**Two uses:** softening requests (*kas sa saaksid aidata?* — could you help?) and imagining (*kui ma oleksin rikas* — if I were rich).",
+            "⚠️ Don't overuse it. Estonian doesn't soften sentences as often as English does. One conditional in a request is enough; three sound hesitant."
+          ]
+        },
+        {
+          "title": "⚠️ Sina or teie — and why the list is so short",
+          "body": [
+            "Estonian has **two** levels of address. Some languages have a dozen. That means you have far less to think about — but also far less to show respect with."
+          ],
+          "table": {
+            "head": [
+              "To whom",
+              "Form",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Friends, peers, fellow students",
+                "*sina* / *sa*",
+                "*Kuidas sul läheb?*"
+              ],
+              [
+                "Children",
+                "*sina* / *sa*",
+                "*Kas sa tuled?*"
+              ],
+              [
+                "Colleagues, including bosses",
+                "⚠️ *sina*",
+                "*Kas sa oled vaba?*"
+              ],
+              [
+                "Strangers on the street",
+                "*teie* / *te*",
+                "*Kas te teate, kus...?*"
+              ],
+              [
+                "Officials, doctors, civil servants",
+                "*teie* / *te*",
+                "*Kas te saaksite aidata?*"
+              ],
+              [
+                "Much older people, first meeting",
+                "*teie* / *te*",
+                "*Kas te elate siin?*"
+              ]
+            ]
+          },
+          "after": [
+            "**Estonians switch to *sina* very quickly** — often within the first conversation, and almost always at work. If in doubt, start with *teie* and wait; the other person will usually offer *sina* themselves. The phrases: *Räägime sina!* or *Kas me võiksime sinatada?*",
+            "⚠️ **There are no honorific titles.** *Härra* (Mr) and *proua* (Mrs) exist in the dictionary, but in daily life they're hardly used except in formal letters. Calling someone \"Härra Tamm\" in ordinary conversation sounds like a joke.",
+            "It takes getting used to, and it's fine if it feels strange for a few months. What matters: **using a first name is not a sign of disrespect.** In Estonia respect is shown by listening and being on time, not by choice of address."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Inviting, accepting, declining",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "English",
+            "Tone"
+          ],
+          "rows": [
+            [
+              "*Kas sa tuleksid külla?*",
+              "Would you like to come over?",
+              "A warm invitation."
+            ],
+            [
+              "*Kas sul on homme aega?*",
+              "Are you free tomorrow?",
+              "A neutral invitation."
+            ],
+            [
+              "*Lähme kohvi jooma!*",
+              "Let's get coffee!",
+              "A casual suggestion."
+            ],
+            [
+              "*Kas sa liituksid meiega?*",
+              "Would you like to join us?",
+              "Polite."
+            ],
+            [
+              "*Väga hea meelega!*",
+              "With pleasure!",
+              "Accepting, warm."
+            ],
+            [
+              "*Jah, muidugi!*",
+              "Yes, sure!",
+              "Accepting, casual."
+            ],
+            [
+              "*Aitäh kutse eest.*",
+              "Thanks for the invitation.",
+              "Polite."
+            ],
+            [
+              "*Kahjuks ma ei saa.*",
+              "Unfortunately I can't.",
+              "Declining, soft."
+            ],
+            [
+              "*Mul on juba plaanid.*",
+              "I already have plans.",
+              "Declining, clear."
+            ],
+            [
+              "*Võib-olla järgmine kord.*",
+              "Maybe another time.",
+              "Declining, leaving a door open."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Ma annan teada* (\"I'll let you know\") **means you will really let them know**. In many cultures a sentence like this is a gentle way of saying no; in Estonia it's understood as a promise. If you mean no, say no — *kahjuks ma ei saa* is already completely polite."
+        }
+      ]
+    },
+    {
+      "title": "⚠️ Estonian politeness, and what it doesn't say",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Most misunderstandings between newcomers and Estonians aren't about vocabulary. They're about what counts as polite, and the cultures happen to disagree at several points."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Estonian habit",
+            "Why",
+            "⚠️ How it can read to you"
+          ],
+          "rows": [
+            [
+              "**Answering \"ei\" directly**",
+              "Honest, respects the other person's time",
+              "Can feel rude; it isn't"
+            ],
+            [
+              "**Silence in the middle of a conversation**",
+              "Pauses are normal, not awkward",
+              "Can feel cold or angry; it isn't"
+            ],
+            [
+              "**Very little small talk**",
+              "Asking how you are means really asking",
+              "Can feel unfriendly"
+            ],
+            [
+              "**Not smiling at strangers**",
+              "Smiles are saved for people you know",
+              "Can feel impolite"
+            ],
+            [
+              "**Using first names**",
+              "The language has no honorific titles",
+              "Can feel disrespectful"
+            ],
+            [
+              "**Being on time, always**",
+              "⚠️ This is the politeness that's guarded most",
+              "Fifteen minutes late is taken seriously"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "And the other way round — what you need to adjust",
+          "items": [
+            "**Don't repeat an offer three times.** If someone declines food or help, once is enough. Repeating is seen as pressure, not hospitality.",
+            "**Don't say \"yes\" to things that aren't certain.** Reliability is valued far more than the wish to please.",
+            "**Don't fill every pause.** If a conversation stops for a moment, nothing is wrong. Talking on to fill the silence actually feels pushy.",
+            "**Arrive on time, or let them know beforehand.** One short message saves the whole impression."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "et": "viisakus",
+      "baca": "VEE-sah-koos",
+      "en": "politeness"
+    },
+    {
+      "et": "kutse",
+      "baca": "KOOT-se",
+      "en": "invitation"
+    },
+    {
+      "et": "kutsuma",
+      "baca": "KOOT-soo-mah",
+      "en": "to invite; to call"
+    },
+    {
+      "et": "külla",
+      "baca": "KÜL-lah",
+      "en": "to visit, to drop by"
+    },
+    {
+      "et": "veetma",
+      "baca": "VEHHT-mah",
+      "en": "to spend (time)"
+    },
+    {
+      "et": "tülitama",
+      "baca": "TÜ-li-tah-mah",
+      "en": "to disturb, to impose on"
+    },
+    {
+      "et": "liituma",
+      "baca": "LEE-too-mah",
+      "en": "to join"
+    },
+    {
+      "et": "proovima",
+      "baca": "PROHH-vi-mah",
+      "en": "to try"
+    },
+    {
+      "et": "tooma",
+      "baca": "TOHH-mah",
+      "en": "to bring (toon – tuua)"
+    },
+    {
+      "et": "andma",
+      "baca": "AHND-mah",
+      "en": "to give (annan – anda)"
+    },
+    {
+      "et": "isiklik",
+      "baca": "I-sik-lik",
+      "en": "personal"
+    },
+    {
+      "et": "ise",
+      "baca": "I-se",
+      "en": "oneself"
+    },
+    {
+      "et": "tiitel",
+      "baca": "TEE-tel",
+      "en": "title"
+    },
+    {
+      "et": "härra",
+      "baca": "HÄR-rah",
+      "en": "Mr (rarely used)"
+    },
+    {
+      "et": "proua",
+      "baca": "PROU-ah",
+      "en": "Mrs (rarely used)"
+    },
+    {
+      "et": "nimepidi",
+      "baca": "NI-me-pi-di",
+      "en": "by name"
+    },
+    {
+      "et": "suurepärane",
+      "baca": "SOOO-re-pä-rah-ne",
+      "en": "great, wonderful"
+    },
+    {
+      "et": "meel",
+      "baca": "mehhl",
+      "en": "mind, feeling"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change to the conditional (-ksin).",
+      "items": [
+        "ma tahan",
+        "sa tuled",
+        "ta on",
+        "me saame",
+        "te teete",
+        "nad lähevad"
+      ]
+    },
+    {
+      "prompt": "Translate into Estonian.",
+      "items": [
+        "Would you like to come over?",
+        "With pleasure!",
+        "Unfortunately I can't.",
+        "Thanks for the invitation.",
+        "Are you free tomorrow?",
+        "Maybe another time."
+      ]
+    },
+    {
+      "prompt": "Choose sina or teie for each person you're talking to.",
+      "items": [
+        "A classmate",
+        "A stranger on the street",
+        "A doctor",
+        "A colleague",
+        "A small child",
+        "An immigration officer"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "tahaksid / kas / külla / sa / tulla / ?",
+        "meelega / hea / väga",
+        "ei / kahjuks / saa / ma",
+        "eest / aitäh / kutse",
+        "aega / homme / on / sul / kas / ?"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "ma tahaksin — sa tuleksid — ta oleks — me saaksime — te teeksite — nad läheksid",
+    "1": "Kas sa tuleksid külla? — Väga hea meelega! — Kahjuks ma ei saa. — Aitäh kutse eest. — Kas sul on homme aega? — Võib-olla järgmine kord.",
+    "2": "sina — teie — teie — sina — sina — teie",
+    "3": "Kas sa tahaksid külla tulla? — Väga hea meelega. — Kahjuks ma ei saa. — Aitäh kutse eest. — Kas sul on homme aega?"
+  }
+}

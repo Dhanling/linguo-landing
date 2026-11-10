@@ -1,0 +1,512 @@
+{
+  "title": "Weather and seasons",
+  "title_target": "Ilm ja aastaajad",
+  "goal": "Talk about the weather — the safest topic in Estonia — and use verbs that **have no subject at all**, just like English \"it's raining\".",
+  "bekal": [
+    "describe today's weather and read a simple forecast",
+    "use *sajab* and its subjectless relatives",
+    "name the four seasons and say something happens in that season"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Esimene lumi",
+      "intro": "Mid-November, morning. Kerli knocks on Budi's door.",
+      "lines": [
+        {
+          "speaker": "Kerli:",
+          "text": "Budi, vaata aknast välja!",
+          "id": "Budi, look out the window!",
+          "literal": "Budi, look window-from out!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mis seal on?",
+          "id": "What's out there?",
+          "literal": "what there is?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Sajab lund. Esimene lumi!",
+          "id": "It's snowing. The first snow!",
+          "literal": "falls-it snow-part. first snow!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "...",
+          "id": "...",
+          "literal": "..."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Kas kõik on korras?",
+          "id": "Are you all right?",
+          "literal": "question all is order-in?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ma... ma ei ole kunagi lund näinud.",
+          "id": "I... I've never seen snow.",
+          "literal": "I... I not am ever snow-part seen."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Mitte kunagi? Päriselt?",
+          "id": "Never? Really?",
+          "literal": "never? truly?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Indoneesias ei saja kunagi lund. Meil on ainult vihm.",
+          "id": "It never snows in Indonesia. All we have is rain.",
+          "literal": "Indonesia-in not falls ever snow-part. we-at is only rain."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Lähme õue! Kohe!",
+          "id": "Let's go outside! Right now!",
+          "literal": "go-we yard-to! immediately!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kui külm väljas on?",
+          "id": "How many degrees is it outside?",
+          "literal": "how cold outside-at is?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Umbes miinus kaks. See on soe.",
+          "id": "About minus two. That's warm.",
+          "literal": "about minus two. that is-it warm."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Soe?!",
+          "id": "Hangat?!",
+          "literal": "hangat?!"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Jaanuaris on miinus viisteist. Siis on külm.",
+          "id": "In January it's minus fifteen. That's cold.",
+          "literal": "January-in is minus fifteen. then is cold."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ma pean istuma.",
+          "id": "I need to sit down first.",
+          "literal": "I must-I to-sit."
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Ära muretse. Sa harjud ära.",
+          "id": "Don't worry. You'll get used to it.",
+          "literal": "don't worry. you get-used-you done."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kas tõesti?",
+          "id": "Really?",
+          "literal": "question really?"
+        },
+        {
+          "speaker": "Kerli:",
+          "text": "Kõik harjuvad. Ja kevad tuleb alati.",
+          "id": "Everyone gets used to it. And spring always comes.",
+          "literal": "everyone get-used-they. and spring comes-it always."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "See on ilus mõte.",
+          "id": "That's a beautiful thought.",
+          "literal": "that is-it beautiful thought."
+        }
+      ],
+      "notes": [
+        "⚠️ **Sajab has no subject.** There's no \"it\" doing the raining; the verb stands alone. Many languages do this — Spanish *llueve*, Italian *piove*, Indonesian *hujan* — while English has to add an *it* that refers to nothing.",
+        "**Sajab lund, sajab vihma.** What falls is in the **partitive**, because nobody counts all the snow or all the rain at once. The rule from unit 13 at work again.",
+        "**Lähme õue** — \"let's go outside\". *Õue* is the short illative of *õu* (yard), like *kööki* and *poodi* in unit 7. Its opposite is *tuppa* (indoors).",
+        "⚠️ **Minus two counts as warm.** That's not a joke. The Estonian winter hovers between zero and minus five for most of the time, with weeks dipping to minus twenty. Zero degrees in February feels like a real relief."
+      ],
+      "grammars": [
+        {
+          "title": "Verbs without a subject",
+          "body": [
+            "A small group of Estonian verbs talks about weather and time without saying who does it. English has the same group (with a dummy \"it\"), so this section needs no new way of thinking."
+          ],
+          "table": {
+            "head": [
+              "Eesti keel",
+              "Literal",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Sajab.*",
+                "falls",
+                "It's raining/snowing."
+              ],
+              [
+                "*Sajab vihma.*",
+                "falls rain-part",
+                "It's raining."
+              ],
+              [
+                "*Sajab lund.*",
+                "falls snow-part",
+                "It's snowing."
+              ],
+              [
+                "*Tuiskab.*",
+                "snowstorms",
+                "There's a snowstorm."
+              ],
+              [
+                "*Külmetab.*",
+                "freezes",
+                "It's freezing, below zero."
+              ],
+              [
+                "*On pilves.*",
+                "is cloud-in",
+                "It's cloudy."
+              ],
+              [
+                "*On udu.*",
+                "is fog",
+                "It's foggy."
+              ],
+              [
+                "*Läheb pimedaks.*",
+                "goes dark-to",
+                "It's getting dark."
+              ],
+              [
+                "*Läheb soojemaks.*",
+                "goes warmer-to",
+                "It's getting warmer."
+              ]
+            ]
+          },
+          "after": [
+            "The last two rows use the pattern **läheb + adjective + -ks**, meaning \"becomes\". The pattern is productive: *läheb külmaks* (getting cold), *läheb hiljaks* (getting late), *läheb paremaks* (getting better).",
+            "For things that need a subject, Estonian still uses one: *päike paistab* (the sun shines), *tuul puhub* (the wind blows), *lumi sulab* (the snow melts).",
+            "⚠️ Notice that the form is always the same as the \"he/she\" form (*-b*). If you can conjugate verbs from unit 10, you can already build every weather sentence."
+          ]
+        },
+        {
+          "title": "The four seasons",
+          "body": [
+            "Seasons take the ending **-l** — the same \"surface\" set as days and parts of the day."
+          ],
+          "table": {
+            "head": [
+              "Season",
+              "Say it",
+              "\"In that season\"",
+              "Months",
+              "What it feels like"
+            ],
+            "rows": [
+              [
+                "*kevad*",
+                "*KE-vahd*",
+                "*kevadel*",
+                "Mar–May",
+                "Snow melts, days lengthen quickly."
+              ],
+              [
+                "*suvi*",
+                "*SOO-vi*",
+                "*suvel*",
+                "Jun–Aug",
+                "Light until after midnight."
+              ],
+              [
+                "*sügis*",
+                "*SÜ-gis*",
+                "*sügisel*",
+                "Sep–Nov",
+                "Rain, wind, colored leaves."
+              ],
+              [
+                "*talv*",
+                "*tahlv*",
+                "*talvel*",
+                "Dec–Feb",
+                "Snow, darkness and sauna."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *Suvi* becomes *suvel*, not \"suvil\" — its genitive is *suve*. Once again it's the noun pairs from unit 6 that decide.",
+            "*Aastaaeg* means season (literally \"year-time\"). *Neli aastaaega* — four seasons.",
+            "To say \"every summer\", use *suviti*, like *esmaspäeviti* in unit 9."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Talking about the weather",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Eesti keel",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Milline ilm täna on?*",
+              "What's the weather like today?"
+            ],
+            [
+              "*Ilm on ilus.*",
+              "The weather is nice."
+            ],
+            [
+              "*Ilm on halb.*",
+              "The weather is bad."
+            ],
+            [
+              "*Väljas on külm.*",
+              "It's cold outside."
+            ],
+            [
+              "*Täna on soe.*",
+              "It's warm today."
+            ],
+            [
+              "*Päike paistab.*",
+              "The sun is shining."
+            ],
+            [
+              "*Sajab vihma.*",
+              "It's raining."
+            ],
+            [
+              "*Sajab lund.*",
+              "It's snowing."
+            ],
+            [
+              "*Tuul puhub.*",
+              "The wind is blowing."
+            ],
+            [
+              "*On libe.*",
+              "It's slippery."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Notice *kümme kraadi **sooja*** and *kümme kraadi **külma*** — Estonian adds \"warm\" or \"cold\" instead of plus and minus signs. In written forecasts you'll see *+10* and *−10*, but in conversation people say it in words."
+        },
+        {
+          "type": "kotak",
+          "title": "Weather is a safe topic",
+          "items": [
+            "Estonians don't make much small talk, but weather is an exception everyone accepts.",
+            "*Küll on täna ilus ilm!* — What lovely weather today!",
+            "*Küll on külm!* — It's so cold!",
+            "*Vihma sajab jälle.* — It's raining again."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The four seasons, as they really feel",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Season",
+            "Usual temperature",
+            "Daylight",
+            "What you need to know"
+          ],
+          "rows": [
+            [
+              "*kevad*",
+              "0 to +15",
+              "Lengthening fast",
+              "Melting snow turns to mud. April is often still snowy."
+            ],
+            [
+              "*suvi*",
+              "+15 to +25",
+              "19 hours of light",
+              "⚠️ Peaks can reach +30. Most homes have no air conditioning."
+            ],
+            [
+              "*sügis*",
+              "+10 falling to 0",
+              "Shortening fast",
+              "The wettest months. The wind bites harder than the temperature."
+            ],
+            [
+              "*talv*",
+              "0 to −20",
+              "6 hours of light",
+              "December is darkest, February is coldest."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Weather words you'll hear",
+          "items": [
+            "*lumi* — snow. *lumesadu* — snowfall. *jää* — ice. *libedus* — slippery ground.",
+            "*vihm* — rain. *vihmavari* — umbrella (literally \"rain shelter\"). *saabas* — boot.",
+            "*tuul* — wind. *torm* — storm. *udu* — fog. *pilv* — cloud.",
+            "⚠️ *Porilumi* — the mix of snow and mud on March streets. English has no neat equivalent, and Estonians talk about it in the tone others reserve for floods."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "et": "ilm",
+      "baca": "ilm",
+      "en": "weather"
+    },
+    {
+      "et": "aastaaeg",
+      "baca": "AAHS-tah-aheg",
+      "en": "season"
+    },
+    {
+      "et": "kevad",
+      "baca": "KE-vahd",
+      "en": "spring"
+    },
+    {
+      "et": "suvi",
+      "baca": "SOO-vi",
+      "en": "summer (gen. suve)"
+    },
+    {
+      "et": "sügis",
+      "baca": "SÜ-gis",
+      "en": "autumn"
+    },
+    {
+      "et": "talv",
+      "baca": "tahlv",
+      "en": "winter"
+    },
+    {
+      "et": "lumi",
+      "baca": "LOO-mi",
+      "en": "snow (gen. lume)"
+    },
+    {
+      "et": "vihm",
+      "baca": "vihm",
+      "en": "rain"
+    },
+    {
+      "et": "jää",
+      "baca": "yää",
+      "en": "ice"
+    },
+    {
+      "et": "tuul",
+      "baca": "toool",
+      "en": "wind"
+    },
+    {
+      "et": "torm",
+      "baca": "torm",
+      "en": "storm"
+    },
+    {
+      "et": "udu",
+      "baca": "OO-doo",
+      "en": "fog"
+    },
+    {
+      "et": "pilv",
+      "baca": "pilv",
+      "en": "cloud"
+    },
+    {
+      "et": "sadama",
+      "baca": "SAH-dah-mah",
+      "en": "to fall (rain/snow)"
+    },
+    {
+      "et": "paistma",
+      "baca": "PIGHST-mah",
+      "en": "to shine, to appear"
+    },
+    {
+      "et": "puhuma",
+      "baca": "POO-hoo-mah",
+      "en": "to blow"
+    },
+    {
+      "et": "sulama",
+      "baca": "SOO-lah-mah",
+      "en": "to melt"
+    },
+    {
+      "et": "külmuma",
+      "baca": "KÜL-moo-mah",
+      "en": "to freeze"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Estonian.",
+      "items": [
+        "What's the weather like today?",
+        "The weather is nice.",
+        "It's raining.",
+        "It's snowing.",
+        "It's cold outside.",
+        "How many degrees is it?"
+      ]
+    },
+    {
+      "prompt": "Add the ending -l (\"in that season\").",
+      "items": [
+        "kevad",
+        "suvi",
+        "sügis",
+        "talv",
+        "hommik",
+        "õhtu"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right weather word.",
+      "items": [
+        "____ vihma. (falls)",
+        "____ paistab. (sun)",
+        "Tuul ____. (blows)",
+        "Väljas on ____. (cold)",
+        "Talvel sajab ____. (snow)",
+        "Kevadel lumi ____. (melts)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ilm / on / ilus",
+        "lund / sajab",
+        "külm / väljas / on",
+        "kraadi / palju / kui / on / ?",
+        "tuleb / kevad / alati"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Milline ilm täna on? — Ilm on ilus. — Sajab vihma. — Sajab lund. — Väljas on külm. — Kui palju kraadi on?",
+    "1": "kevadel — suvel — sügisel — talvel — hommikul — õhtul",
+    "2": "Sajab — Päike — puhub — külm — lund — sulab",
+    "3": "Ilm on ilus. — Sajab lund. — Väljas on külm. — Kui palju kraadi on? — Kevad tuleb alati."
+  }
+}
