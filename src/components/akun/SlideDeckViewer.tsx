@@ -24,6 +24,7 @@ import { isImagegenA2GoalCover } from "../../data/imagegenA2Cover";
 // tampil beda antara yang diajarkan pengajar dan yang dibuka siswa.
 
 import { useCallback, useEffect, useRef, useState, type MouseEvent as ReactMouseEvent } from "react";
+import { createPortal } from "react-dom";
 import {
   ChevronLeft, ChevronRight, X, Maximize2, Minimize2, Eye, EyeOff, Volume2, Check, RotateCcw,
 } from "lucide-react";
@@ -100,6 +101,30 @@ function pecahKata(teks: string, lang: string): string[] {
 
 type Tip = { kata: string; x: number; y: number; bawah: boolean; arti: HasilArti | undefined };
 
+/* [slide-lup-aksara-v1] Permintaan owner 10 Nov 2026: kata beraksara non-Latin
+   (Arab, Kiril, Han, Thai, Devanagari, …) diperbesar seperti kaca pembesar saat
+   kursor singgah — harakat, titik, dan goresannya jadi jelas terbaca. */
+const NON_LATIN = /(?=\p{L})\P{Script=Latin}/u;
+/* Lup memakai kata APA ADANYA (harakat/tanda vokal di tepi tetap ikut) — TEPI
+   membuang tanda diakritik akhir seperti dhammah أَحْمَرُ, justru yang mau diperjelas. */
+const TEPI_LUP = /^[\s\p{P}\p{S}]+|[\s\p{P}\p{S}]+$/gu;
+type Lup = { kata: string; x: number; y: number; bawah: boolean; px: number };
+
+/* [slide-kartu-ketuk-v1] Klik di mana saja pada kartu (contoh pola, kosakata,
+   gelembung dialog) = bunyikan kalimat utamanya, tanpa harus mengenai ikon.
+   Klik yang mengenai tombol/kata sendiri dibiarkan ke penanganannya masing-masing. */
+function ketukKartuUcap(e: ReactMouseEvent) {
+  const t = e.target as HTMLElement | null;
+  if (!t || t.closest("button, a, input, textarea, [role=button]")) return;
+  const kartu = t.closest("[data-kartu-ucap]");
+  if (!kartu) return;
+  const akar = kartu.querySelector("[data-ucap-akar]");
+  const sasaran = akar?.querySelector<HTMLElement>("[data-ucap-kalimat]") || akar?.querySelector<HTMLElement>("[data-ucap]");
+  sasaran?.click();
+}
+/** Kelas kartu yang bisa diketuk: membesar halus saat kursor singgah. */
+const KARTU_KETUK = "cursor-pointer transition-[transform,box-shadow] duration-200 ease-out hover:z-10 hover:scale-[1.025] hover:shadow-lg";
+
 function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | null; kalimat?: boolean }) {
   const [aktif, setAktif] = useState<number | null>(null);
   // [tts-karaoke-v1] Indeks kepingan yang sedang dibaca saat TTS satu kalimat diputar.
@@ -107,6 +132,11 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
   const putaran = useRef(0);
   useEffect(() => () => { putaran.current++; }, []);
   const [tip, setTip] = useState<Tip | null>(null);
+  const [lup, setLup] = useState<Lup | null>(null);
+  /* Tooltip & lup di-portal ke kartu slide (acuan `fixed`-nya). Kalau tetap di
+     dalam kartu kecil yang sedang di-zoom (transform), `fixed` berpindah acuan ke
+     kartu kecil itu dan ikut terpotong wadah gulir. */
+  const [wadah, setWadah] = useState<HTMLElement | null>(null);
   const adaTip = !!tip;
   useEffect(() => {
     if (!adaTip) return;
@@ -125,6 +155,8 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
     const r = el.getBoundingClientRect();
     const bawah = r.top - k.top < k.height * 0.24;
     const ada = artiTersimpan(kata, utuh, lang);
+    setWadah(kartu as HTMLElement);
+    setLup(null);
     setTip({
       kata, bawah, arti: ada,
       x: Math.min(Math.max(r.left + r.width / 2 - k.left, k.width * 0.15), k.width * 0.85),
@@ -133,6 +165,22 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
     if (ada === undefined) {
       void artiKataEbook(kata, utuh, lang).then((h) => setTip((t) => (t && t.kata === kata ? { ...t, arti: h } : t)));
     }
+  };
+
+  const bukaLup = (kata: string, el: HTMLElement) => {
+    if (!NON_LATIN.test(kata) || !window.matchMedia?.("(hover: hover)").matches) return;
+    const kartu = el.closest("[data-slide-card]");
+    if (!kartu) return;
+    const k = kartu.getBoundingClientRect();
+    const r = el.getBoundingClientRect();
+    const bawah = r.top - k.top < k.height * 0.16;
+    const px = parseFloat(getComputedStyle(el).fontSize) || 16;
+    setWadah(kartu as HTMLElement);
+    setLup({
+      kata, bawah, px,
+      x: Math.min(Math.max(r.left + r.width / 2 - k.left, k.width * 0.12), k.width * 0.88),
+      y: (bawah ? r.bottom : r.top) - k.top,
+    });
   };
 
   const bunyikan = (apa: string, idx: number) => (e: ReactMouseEvent) => {
@@ -176,7 +224,7 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
   const banyakKata = bagian.filter((b) => /\p{L}/u.test(b)).length > 1;
 
   return (
-    <span dir="auto">
+    <span dir="auto" data-ucap-akar>
       {bagian.map((b, i) => {
         const kata = b.replace(TEPI, "");
         if (!/\p{L}/u.test(kata)) return b;
@@ -184,7 +232,8 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
           // [vc-slide-ketuk-tts-v1] data-ucap = teks yang dibunyikan; dibaca saat
           // slide dipotret untuk Kelas Video supaya kotak katanya ikut terbawa.
           <span key={i} role="button" tabIndex={-1} data-ucap={kata} data-ucap-konteks={utuh}
-            onMouseEnter={() => siapkanEbook(kata, lang)}
+            onMouseEnter={(e) => { siapkanEbook(kata, lang); bukaLup(b.replace(TEPI_LUP, ""), e.currentTarget); }}
+            onMouseLeave={() => setLup((l) => (l && l.kata === b.replace(TEPI_LUP, "") ? null : l))}
             onClick={bunyikan(kata, i)}
             className="cursor-pointer rounded-[0.25em] transition-colors hover:bg-teal-100/80"
             style={aktif === i ? { background: "#99E6DC" }
@@ -196,14 +245,26 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
         );
       })}
       {kalimat && (/\s/.test(utuh) || banyakKata) && (
-        <button type="button" onClick={bunyikan(utuh, -1)} title="Dengarkan kalimat" data-ucap={utuh}
+        <button type="button" onClick={bunyikan(utuh, -1)} title="Dengarkan kalimat" data-ucap={utuh} data-ucap-kalimat
           className="ml-[0.4em] inline-flex translate-y-[0.12em] rounded-full p-[0.15em] opacity-50 transition hover:bg-teal-100 hover:opacity-100"
           style={{ color: aktif === -1 ? "#0E7C7B" : TEAL }}>
           <Volume2 className="h-[0.95em] w-[0.95em]" />
         </button>
       )}
+      {lup && !tip && wadah && createPortal(
+        <span aria-hidden dir="auto" lang={lang}
+          className="slide-lup pointer-events-none z-30 block w-max max-w-[60cqw] rounded-[0.4em] border-2 bg-white px-[0.45em] pb-[0.15em] pt-[0.05em] font-semibold leading-[1.5] text-gray-900 shadow-2xl"
+          style={{
+            position: "fixed", left: lup.x, top: lup.y, borderColor: TEAL,
+            fontSize: Math.min(Math.max(lup.px * 2.6, 34), 84),
+            transform: `translate(-50%, ${lup.bawah ? "0.35em" : "calc(-100% - 0.35em)"})`,
+          }}>
+          {lup.kata}
+        </span>,
+        wadah,
+      )}
       {/* Layanan arti sedang tak bisa dipakai → tanpa tooltip, bunyinya tetap jalan. */}
-      {tip && tip.arti !== null && tip.arti !== "mati" && (
+      {tip && tip.arti !== null && tip.arti !== "mati" && wadah && createPortal(
         <span role="tooltip"
           className="pointer-events-none z-30 block w-max max-w-[28cqw] rounded-[0.7em] bg-gray-900 px-[0.85em] py-[0.55em] text-left text-[clamp(0.6rem,1.25cqw,0.9rem)] font-normal not-italic leading-snug text-white shadow-xl"
           style={{ position: "fixed", left: tip.x, top: tip.y, transform: `translate(-50%, ${tip.bawah ? "0.5em" : "calc(-100% - 0.5em)"})` }}>
@@ -223,7 +284,8 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
           ) : (
             <span className="block text-gray-400">Mencari arti…</span>
           )}
-        </span>
+        </span>,
+        wadah,
       )}
     </span>
   );
@@ -287,7 +349,8 @@ function KuisPilihan({ s, kunci, aksen }: { s: MateriSlide; kunci?: boolean; aks
    kuncinya dilukis ke kanvas siaran (VideoClassRoom → ImageMark.jawab). Mode
    kunci (ikon mata) tetap membuka semuanya sekaligus. */
 
-const CSS_JAWAB = `@keyframes latihanJawab{from{opacity:0;transform:translateY(-0.4em)}to{opacity:1;transform:none}}
+const CSS_JAWAB = `@keyframes lupMuncul{from{opacity:0;scale:.7}to{opacity:1;scale:1}}.slide-lup{animation:lupMuncul .14s ease-out both}
+@keyframes latihanJawab{from{opacity:0;transform:translateY(-0.4em)}to{opacity:1;transform:none}}
 .latihan-jawab{animation:latihanJawab .35s ease-out both}
 @media (prefers-reduced-motion:reduce){.latihan-jawab{animation:none}}`;
 
@@ -452,7 +515,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
         {s.type === "vocab" && (
           <ul className={`grid gap-x-[1.6cqw] gap-y-[1.2cqh] ${(s.items || []).length > 4 ? "grid-cols-2" : "grid-cols-1"}`}>
             {(s.items || []).map((it, i) => (
-              <li key={i} className={kartu} style={{ borderLeft: `0.35em solid ${tema.aksen}` }}>
+              <li key={i} data-kartu-ucap className={`${kartu} ${KARTU_KETUK}`} style={{ borderLeft: `0.35em solid ${tema.aksen}` }}>
                 <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
                   <span className="font-bold text-gray-900"><Ucap teks={it.term} lang={lang} /></span>
                   {it.translit && <span className="text-gray-900">/{it.translit}/</span>}
@@ -480,7 +543,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
             )}
             <ul className={`grid gap-x-[1.6cqw] gap-y-[1.1cqh] ${(s.examples || []).length > 4 ? "grid-cols-2" : "grid-cols-1"}`}>
               {(s.examples || []).map((e, i) => (
-                <li key={i} className={kartu}>
+                <li key={i} data-kartu-ucap className={`${kartu} ${KARTU_KETUK}`}>
                   <div className="font-semibold text-gray-900"><Ucap teks={e.target} lang={lang} /></div>
                   {e.translit && <div className="text-[0.9em] text-gray-900">{e.translit}</div>}
                   {e.meaning && <div className="text-gray-500">{e.meaning}</div>}
@@ -500,7 +563,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
               const kiri = !l.speaker || l.speaker === s.lines?.[0]?.speaker;
               return (
                 <div key={i} className={`mb-[1cqh] flex break-inside-avoid ${kiri ? "justify-start" : "justify-end"}`}>
-                  <div className={`max-w-[86%] rounded-2xl px-[2cqw] py-[0.9cqh] shadow-sm ${kiri ? "rounded-bl-sm border border-[color:var(--tepi,transparent)] bg-white" : "rounded-br-sm"}`}
+                  <div data-kartu-ucap className={`${KARTU_KETUK} max-w-[86%] rounded-2xl px-[2cqw] py-[0.9cqh] shadow-sm ${kiri ? "rounded-bl-sm border border-[color:var(--tepi,transparent)] bg-white" : "rounded-br-sm"}`}
                     style={kiri ? undefined : { background: tema.lembut }}>
                     {/* [dialog-3-baris-v1] Tiga baris: pembicara, kalimat bahasa target, arti. */}
                     {l.speaker && <div className="text-[0.76em] font-extrabold leading-tight" style={{ color: kiri ? TEAL : tema.aksen }}>{l.speaker}</div>}
@@ -594,7 +657,7 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
   return (
     // `container-type: size` bikin clamp(...cqw) menskala ikut LEBAR KARTU, bukan
     // lebar layar — itu yang bikin teks slide ikut membesar saat fullscreen.
-    <div data-slide-card className={`relative flex flex-col overflow-hidden text-left ${className}`}
+    <div data-slide-card onClick={ketukKartuUcap} className={`relative flex flex-col overflow-hidden text-left ${className}`}
       style={{ containerType: "size", contain: "layout", background: tema.bg, color: "#1f2937" }}>
       <style>{CSS_TERANG + CSS_JAWAB}</style>
       {/* [slide-tema-v1] Dekor: dua lingkaran warna + watermark logo. Semuanya
