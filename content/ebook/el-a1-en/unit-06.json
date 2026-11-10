@@ -1,0 +1,508 @@
+{
+  "title": "One coffee, please",
+  "title_target": "Έναν καφέ, παρακαλώ — Eh-nahn kah-feh, pah-rah-kah-loh",
+  "goal": "Order food and drink at a café or taverna, and face the biggest stumbling block of A1 Greek: a noun changes its ending as soon as it becomes the object of an action.",
+  "bekal": [
+    "put masculine nouns into the object form",
+    "know that feminine and neuter nouns barely change",
+    "order with θέλω and θα ήθελα",
+    "ask for the bill and pay",
+    "order Greek coffee with the right level of sweetness"
+  ],
+  "dialogs": [
+    {
+      "title": "ΔΙΑΛΟΓΟΣ — At the taverna",
+      "intro": "Ana and Nikos sit down at a small taverna in Psyrri. Watch what happens to **ο καφές** once it becomes the thing being ordered — and what does **not** happen to **η μπύρα** and **το νερό**.",
+      "lines": [
+        {
+          "speaker": "Σερβιτόρος:",
+          "text": "[Καλησπέρα|Kah-lee-SPEH-rah] [σας|sahs]! [Τι|Tee] [θα|thah] [πάρετε|PAH-reh-teh];",
+          "id": "Good evening! What would you like?",
+          "literal": "evening-good — to-you! what — will — you-take (pl.)?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Καλησπέρα|Kah-lee-SPEH-rah]. [Θέλω|THEH-loh] [έναν|EH-nahn] [καφέ|kah-FEH], [παρακαλώ|pah-rah-kah-LOH].",
+          "id": "Good evening. I'd like a coffee, please.",
+          "literal": "evening-good. I-want — a (masc. obj.) — coffee (obj.), please."
+        },
+        {
+          "speaker": "Σερβιτόρος:",
+          "text": "[Ελληνικό|Eh-lee-nee-KOH] [ή|ee] [φρέντο|FREHN-doh];",
+          "id": "Greek coffee or freddo?",
+          "literal": "Greek (neut.) — or — freddo?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Έναν|EH-nahn] [φρέντο|FREHN-doh] [εσπρέσο|eh-SPREH-soh], [χωρίς|khoh-REES] [ζάχαρη|ZAH-khah-ree].",
+          "id": "A freddo espresso, no sugar.",
+          "literal": "a (masc. obj.) — freddo — espresso, without — sugar."
+        },
+        {
+          "speaker": "Νίκος:",
+          "text": "[Και|Keh] [για|yah] [μένα|MEH-nah] [μία|MEE-ah] [μπύρα|BEE-rah] [και|keh] [ένα|EH-nah] [νερό|neh-ROH].",
+          "id": "And for me a beer and a water.",
+          "literal": "and — for — me — a (fem.) — beer — and — a (neut.) — water."
+        },
+        {
+          "speaker": "Σερβιτόρος:",
+          "text": "[Θέλετε|THEH-leh-teh] [και|keh] [κάτι|KAH-tee] [άλλο|AH-loh];",
+          "id": "Would you like anything else?",
+          "literal": "you-want (pl.) — also — something — other?"
+        },
+        {
+          "speaker": "Νίκος:",
+          "text": "[Ναι|Neh], [μία|MEE-ah] [χωριάτικη|khoh-RYAH-tee-kee] [σαλάτα|sah-LAH-tah] [και|keh] [μία|MEE-ah] [τυρόπιτα|tee-ROH-pee-tah].",
+          "id": "Yes, a village salad and a tiropita.",
+          "literal": "yes, a (fem.) — village (fem.) — salad — and — a (fem.) — cheese-pie."
+        },
+        {
+          "speaker": "Σερβιτόρος:",
+          "text": "[Αμέσως|Ah-MEH-sohs]!",
+          "id": "Coming right up!",
+          "literal": "at-once!"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Τον|Tohn] [λογαριασμό|loh-ghah-ryah-SMOH], [παρακαλώ|pah-rah-kah-LOH].",
+          "id": "The bill, please.",
+          "literal": "the (masc. obj.) — bill, please."
+        },
+        {
+          "speaker": "Σερβιτόρος:",
+          "text": "[Μάλιστα|MAH-lee-stah]. [Δεκατέσσερα|Dheh-kah-TEH-seh-rah] [ευρώ|ehv-ROH].",
+          "id": "Certainly. Fourteen euros.",
+          "literal": "certainly. fourteen — euros."
+        },
+        {
+          "speaker": "Νίκος:",
+          "text": "[Ορίστε|Oh-REE-steh]. [Ευχαριστούμε|Ehf-khah-ree-STOO-meh] [πολύ|poh-LEE]!",
+          "id": "Here you go. Thank you very much!",
+          "literal": "here-you-go. we-thank — much!"
+        }
+      ],
+      "notes": [
+        "**This is the big lesson of this unit: nouns have two outfits.** The **subject** outfit is used when the noun does the action or is being talked about: *Ο καφές είναι ζεστός.* The **object** outfit is used when the action is done to it: *Θέλω **τον καφέ**.* English does this only with pronouns (he → him); \"coffee\" stays \"coffee\" either way.",
+        "⚠️ **Very welcome news: only masculine nouns really change.** Feminine: η μπύρα → **τη** μπύρα, just the article. Neuter: το νερό → **το** νερό, no change at all. So two-thirds of Greek nouns ask practically nothing of you here.",
+        "**The masculine endings that change are easy to remember, because they all drop the -ς**: ο καφέ**ς** → τον καφέ, ο φίλο**ς** → τον φίλο, ο άντρα**ς** → τον άντρα, ο μαθητή**ς** → τον μαθητή. One letter disappears, that's all.",
+        "**Θέλω is polite, θα ήθελα is more polite.** *Θέλω έναν καφέ* is perfectly normal in Greece and doesn't sound blunt the way *I want* does in English. For something softer: *Θα ήθελα έναν καφέ* (*thah EE-theh-lah*, \"I would like\"). What Greeks themselves use most is the shortest form: *Έναν καφέ, παρακαλώ.*",
+        "**Τι θα πάρετε; literally \"what will you take?\"** — that's the waiter's standard line. If you're not ready, answer *Ένα λεπτό, παρακαλώ* — one moment, please.",
+        "**Ορίστε (*oh-REE-steh*) is the second all-purpose word after παρακαλώ.** It means \"here you are\" when handing something over, \"yes?\" when answering a call, and \"sorry, what was that?\" when you didn't catch what someone said — you'll use that last one a lot.",
+        "**Μάλιστα** means \"certainly\" or \"yes\" in a formal tone, used by waiters, officials, and soldiers. In ordinary chat, **εντάξει** is enough.",
+        "⚠️ **Χωριάτικη σαλάτα isn't the \"Greek salad\" of menus abroad.** Literally \"village salad\": tomato, cucumber, onion, olives, and a whole slab of feta on top — no lettuce at all. Ordering it by this name is the quickest way to show the waiter you know what you're doing."
+      ],
+      "grammars": [
+        {
+          "title": "The object form (αιτιατική): what changes and what doesn't",
+          "body": [
+            "Compare the two columns below. What changes is in bold — and notice how little it is."
+          ],
+          "table": {
+            "head": [
+              "Type",
+              "Subject",
+              "Object",
+              "What changes"
+            ],
+            "rows": [
+              [
+                "masc. -ος",
+                "**ο** φίλ**ος**",
+                "**τον** φίλ**ο**",
+                "article + drop ς"
+              ],
+              [
+                "masc. -ας",
+                "**ο** άντρ**ας**",
+                "**τον** άντρ**α**",
+                "article + drop ς"
+              ],
+              [
+                "masc. -ης",
+                "**ο** μαθητ**ής**",
+                "**τον** μαθητ**ή**",
+                "article + drop ς"
+              ],
+              [
+                "masc. -ές",
+                "**ο** καφ**ές**",
+                "**τον** καφ**έ**",
+                "article + drop ς"
+              ],
+              [
+                "fem. -α",
+                "**η** μπύρ**α**",
+                "**τη(ν)** μπύρ**α**",
+                "article only"
+              ],
+              [
+                "fem. -η",
+                "**η** πόλ**η**",
+                "**τη(ν)** πόλ**η**",
+                "article only"
+              ],
+              [
+                "neut. -ο",
+                "**το** νερ**ό**",
+                "**το** νερ**ό**",
+                "nothing"
+              ],
+              [
+                "neut. -ι",
+                "**το** παιδ**ί**",
+                "**το** παιδ**ί**",
+                "nothing"
+              ]
+            ]
+          },
+          "after": [
+            "For \"a / an\", ένας changes too: **ένας** → **έναν**, **μία** → **μία** (no change), **ένα** → **ένα** (no change). Again, only the masculine.",
+            "⚠️ **The -ν of τον and την often drops** when the next word begins with a soft letter (β, γ, δ, ζ, θ, λ, μ, ν, ρ, σ, φ, χ, ψ): *τη μπύρα* but *την Αθήνα*. The rule applies to feminine; for masculine, **τον** is now recommended in full every time. When in doubt, write it in full."
+          ]
+        },
+        {
+          "title": "When the object form is used",
+          "body": [
+            "There are only two situations at A1, and both are easy to spot."
+          ],
+          "table": {
+            "head": [
+              "Situation",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "After a verb that takes an object",
+                "Θέλω **τον καφέ**.",
+                "I want that coffee."
+              ],
+              [
+                "",
+                "Βλέπω **τον Νίκο**.",
+                "I see Nikos."
+              ],
+              [
+                "",
+                "Ξέρω **την Ελένη**.",
+                "I know Eleni."
+              ],
+              [
+                "After every preposition",
+                "για **τον φίλο** μου",
+                "for my friend"
+              ],
+              [
+                "",
+                "με **τον αδερφό** μου",
+                "with my brother"
+              ],
+              [
+                "",
+                "σε **την** Αθήνα → **στην** Αθήνα",
+                "in Athens"
+              ],
+              [
+                "",
+                "χωρίς **ζάχαρη**",
+                "without sugar"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Every Greek preposition takes the object form, no exceptions.** This makes life very simple: as soon as you see για, με, από, σε, χωρίς, μέχρι, you know exactly which outfit the next word wears.",
+            "The preposition **σε** merges with the article into **στον, στη(ν), στο** — that's for Unit 8, but you've already seen it twice in the last unit's dialogue."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "A menu that will last you a week in Greece",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "ΕΛΛΗΝΙΚΑ",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "ο καφές",
+              "kah-FEHS",
+              "coffee"
+            ],
+            [
+              "ο φρέντο εσπρέσο",
+              "FREHN-doh eh-SPREH-soh",
+              "iced shaken espresso"
+            ],
+            [
+              "ο ελληνικός καφές",
+              "eh-lee-nee-KOHS kah-FEHS",
+              "Greek coffee (boiled)"
+            ],
+            [
+              "το τσάι",
+              "TSAH-ee",
+              "tea"
+            ],
+            [
+              "το νερό",
+              "neh-ROH",
+              "water"
+            ],
+            [
+              "η μπύρα",
+              "BEE-rah",
+              "beer"
+            ],
+            [
+              "το κρασί",
+              "krah-SEE",
+              "wine"
+            ],
+            [
+              "ο χυμός",
+              "khee-MOHS",
+              "juice"
+            ],
+            [
+              "το ψωμί",
+              "psoh-MEE",
+              "bread"
+            ],
+            [
+              "η σαλάτα",
+              "sah-LAH-tah",
+              "salad"
+            ],
+            [
+              "η τυρόπιτα",
+              "tee-ROH-pee-tah",
+              "cheese pie"
+            ],
+            [
+              "ο γύρος",
+              "YEE-rohs",
+              "gyros"
+            ],
+            [
+              "το σουβλάκι",
+              "soo-VLAH-kee",
+              "souvlaki"
+            ],
+            [
+              "το ψάρι",
+              "PSAH-ree",
+              "fish"
+            ],
+            [
+              "το κοτόπουλο",
+              "koh-TOH-poo-loh",
+              "chicken"
+            ],
+            [
+              "το κρέας",
+              "KREH-ahs",
+              "meat"
+            ],
+            [
+              "τα λαχανικά",
+              "lah-khah-nee-KAH",
+              "vegetables"
+            ],
+            [
+              "το τζατζίκι",
+              "dzah-DZEE-kee",
+              "tzatziki"
+            ],
+            [
+              "ο λογαριασμός",
+              "loh-ghah-ryah-SMOHS",
+              "bill, check"
+            ],
+            [
+              "το γλυκό",
+              "ghlee-KOH",
+              "dessert, sweets"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Greek coffee has three levels of sweetness — and you have to choose",
+          "items": [
+            "**σκέτος** (*SKEH-tohs*) no sugar · **μέτριος** (*MEH-tree-ohs*) one spoonful · **γλυκός** (*ghlee-KOHS*) two spoonfuls. The sugar is boiled with the coffee, so it can't be added later — the waiter's question isn't small talk.",
+            "For ordinary brewed coffee: **με γάλα** with milk, **χωρίς ζάχαρη** without sugar, **με λίγη ζάχαρη** with a little sugar.",
+            "⚠️ Don't drink the whole cup of Greek coffee. The last third is grounds, and they're meant to stay there.",
+            "**Καλή όρεξη!** (*kah-LEE OH-reh-ksee*) — \"enjoy your meal\". The reply is **Επίσης!** (*eh-PEE-sees*) — \"you too\". This pair is said every time food arrives at the table."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "el": "θέλω",
+      "baca": "THEH-loh",
+      "en": "to want"
+    },
+    {
+      "el": "θα ήθελα",
+      "baca": "thah EE-theh-lah",
+      "en": "I would like (more polite)"
+    },
+    {
+      "el": "παίρνω",
+      "baca": "PEHR-noh",
+      "en": "to take, to order"
+    },
+    {
+      "el": "ο λογαριασμός",
+      "baca": "oh loh-ghah-ryah-SMOHS",
+      "en": "bill, check"
+    },
+    {
+      "el": "ο σερβιτόρος",
+      "baca": "oh sehr-vee-TOH-rohs",
+      "en": "waiter"
+    },
+    {
+      "el": "χωρίς",
+      "baca": "khoh-REES",
+      "en": "without"
+    },
+    {
+      "el": "με",
+      "baca": "meh",
+      "en": "with"
+    },
+    {
+      "el": "για",
+      "baca": "yah",
+      "en": "for"
+    },
+    {
+      "el": "η ζάχαρη",
+      "baca": "ee ZAH-khah-ree",
+      "en": "sugar"
+    },
+    {
+      "el": "το γάλα",
+      "baca": "toh GHAH-lah",
+      "en": "milk"
+    },
+    {
+      "el": "η μπύρα",
+      "baca": "ee BEE-rah",
+      "en": "beer"
+    },
+    {
+      "el": "το κρασί",
+      "baca": "toh krah-SEE",
+      "en": "wine"
+    },
+    {
+      "el": "η σαλάτα",
+      "baca": "ee sah-LAH-tah",
+      "en": "salad"
+    },
+    {
+      "el": "το ψωμί",
+      "baca": "toh psoh-MEE",
+      "en": "bread"
+    },
+    {
+      "el": "το φαγητό",
+      "baca": "toh fah-yee-TOH",
+      "en": "food"
+    },
+    {
+      "el": "κάτι άλλο",
+      "baca": "KAH-tee AH-loh",
+      "en": "something else"
+    },
+    {
+      "el": "αμέσως",
+      "baca": "ah-MEH-sohs",
+      "en": "right away"
+    },
+    {
+      "el": "ορίστε",
+      "baca": "oh-REE-steh",
+      "en": "here you are / sorry, what?"
+    },
+    {
+      "el": "μάλιστα",
+      "baca": "MAH-lee-stah",
+      "en": "certainly (formal)"
+    },
+    {
+      "el": "καλή όρεξη",
+      "baca": "kah-LEE OH-reh-ksee",
+      "en": "enjoy your meal"
+    },
+    {
+      "el": "επίσης",
+      "baca": "eh-PEE-sees",
+      "en": "you too, likewise"
+    },
+    {
+      "el": "σκέτος / μέτριος / γλυκός",
+      "baca": "SKEH-tohs / MEH-tree-ohs / ghlee-KOHS",
+      "en": "no sugar / medium / sweet"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change to the object form. Example: ο καφές → τον καφέ.",
+      "items": [
+        "ο φίλος",
+        "η μπύρα",
+        "το νερό",
+        "ο άντρας",
+        "η πόλη",
+        "ο λογαριασμός"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right object article: τον, τη(ν), or το.",
+      "items": [
+        "Θέλω ____ καφέ.",
+        "Βλέπω ____ Ελένη.",
+        "Ξέρω ____ Νίκο.",
+        "Παίρνω ____ λεωφορείο.",
+        "Θέλω ____ σαλάτα."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "καφέ / έναν / παρακαλώ",
+        "λογαριασμό / τον / παρακαλώ",
+        "ζάχαρη / χωρίς / έναν / φρέντο",
+        "άλλο / θέλετε / κάτι / ;",
+        "μένα / μία / για / μπύρα"
+      ]
+    },
+    {
+      "prompt": "Translate into Greek.",
+      "items": [
+        "I'd like a coffee, please.",
+        "The bill, please.",
+        "A beer and a water.",
+        "No sugar, please.",
+        "Enjoy your meal!"
+      ]
+    }
+  ],
+  "answers": [
+    "τον φίλο — τη μπύρα — το νερό — τον άντρα — την πόλη — τον λογαριασμό",
+    "τον — την — τον — το — τη",
+    "Έναν καφέ, παρακαλώ. — Τον λογαριασμό, παρακαλώ. — Έναν φρέντο χωρίς ζάχαρη. — Θέλετε κάτι άλλο; — Για μένα μία μπύρα.",
+    "Θέλω έναν καφέ, παρακαλώ. — Τον λογαριασμό, παρακαλώ. — Μία μπύρα και ένα νερό. — Χωρίς ζάχαρη, παρακαλώ. — Καλή όρεξη!"
+  ]
+}

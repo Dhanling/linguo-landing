@@ -1,0 +1,490 @@
+{
+  "title": "Hello, my name is Ana",
+  "title_target": "Γεια σας — Yah sahs",
+  "goal": "Greet anyone safely, give your name, ask for the other person's, and say your first correct Greek sentence — one that **must** contain the verb \"to be\".",
+  "bekal": [
+    "greet people formally and casually, and know the difference",
+    "say your name and ask other people theirs",
+    "say thank you, sorry, and excuse me",
+    "build \"I am X\" sentences with the verb είμαι",
+    "negate with δεν and answer with όχι"
+  ],
+  "dialogs": [
+    {
+      "title": "ΔΙΑΛΟΓΟΣ — First day of the course",
+      "intro": "Ana, a student from Indonesia, walks into a Greek class in Athens and sits down next to someone she doesn't know yet. Notice that almost every sentence below uses a word meaning \"am / is / are\" — and that this word can never be dropped.",
+      "lines": [
+        {
+          "speaker": "Γιάννης:",
+          "text": "[Γεια|Yah] [σας|sahs]! [Καλημέρα|Kah-lee-MEH-rah].",
+          "id": "Hello! Good morning.",
+          "literal": "health — to-you! good-morning."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Καλημέρα|Kah-lee-MEH-rah]!",
+          "id": "Good morning!",
+          "literal": "good-morning!"
+        },
+        {
+          "speaker": "Γιάννης:",
+          "text": "[Με|Meh] [λένε|LEH-neh] [Γιάννη|YAH-nee]. [Εσείς|Eh-SEES];",
+          "id": "My name is Yannis. And you?",
+          "literal": "me — they-call — Yanni. you?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Χαίρω|KHEH-roh] [πολύ|poh-LEE]. [Με|Meh] [λένε|LEH-neh] [Άννα|AH-nah]. [Είμαι|EE-meh] [από|ah-POH] [την|teen] [Ινδονησία|een-dhoh-nee-SEE-ah].",
+          "id": "Nice to meet you. My name is Ana. I'm from Indonesia.",
+          "literal": "I-rejoice — much. me — they-call — Anna. I-am — from — the — Indonesia."
+        },
+        {
+          "speaker": "Γιάννης:",
+          "text": "[Α|Ah], [την|teen] [Ινδονησία|een-dhoh-nee-SEE-ah]! [Είστε|EE-steh] [φοιτήτρια|fee-TEE-tree-ah];",
+          "id": "Ah, Indonesia! Are you a student?",
+          "literal": "ah, the — Indonesia! you-are — student (fem.)?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ναι|Neh], [είμαι|EE-meh] [φοιτήτρια|fee-TEE-tree-ah]. [Εσείς|Eh-SEES];",
+          "id": "Yes, I'm a student. And you?",
+          "literal": "yes, I-am — student (fem.). you?"
+        },
+        {
+          "speaker": "Γιάννης:",
+          "text": "[Εγώ|Eh-GHOH] [δεν|dhehn] [είμαι|EE-meh] [φοιτητής|fee-tee-TEES]. [Είμαι|EE-meh] [δάσκαλος|DHAH-skah-lohs].",
+          "id": "I'm not a student. I'm a teacher.",
+          "literal": "I — not — I-am — student. I-am — teacher."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ωχ|Ohkh], [συγγνώμη|see-GHNOH-mee]!",
+          "id": "Oops, sorry!",
+          "literal": "oops, sorry!"
+        },
+        {
+          "speaker": "Γιάννης:",
+          "text": "[Δεν|Dhehn] [πειράζει|pee-RAH-zee]! [Όλα|OH-lah] [καλά|kah-LAH].",
+          "id": "No problem! It's all fine.",
+          "literal": "not — it-bothers! all — fine."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ευχαριστώ|Ehf-khah-ree-STOH] [πολύ|poh-LEE].",
+          "id": "Thank you very much.",
+          "literal": "I-thank — much."
+        },
+        {
+          "speaker": "Γιάννης:",
+          "text": "[Παρακαλώ|Pah-rah-kah-LOH]. [Καλή|Kah-LEE] [σας|sahs] [μέρα|MEH-rah], [Άννα|AH-nah]!",
+          "id": "You're welcome. Have a good day, Ana!",
+          "literal": "please / you're-welcome. good — to-you — day, Anna!"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Γεια|Yah] [σας|sahs]!",
+          "id": "Goodbye!",
+          "literal": "health — to-you!"
+        }
+      ],
+      "notes": [
+        "**Greek needs its verb \"to be\", just like English.** *Είμαι φοιτήτρια* = \"I am a student\". ⚠️ *Εγώ φοιτήτρια* (\"me student\") is **wrong** and sounds like a telegram. In the present tense, είμαι can never go missing.",
+        "**What you *can* drop is the pronoun.** *Είμαι* already means \"I am\" — the ending **-μαι** tells you who. Use Εγώ only for emphasis or contrast, exactly as Γιάννης does: *Εγώ δεν είμαι φοιτητής* — \"*I'm* not a student, though\". Saying εγώ every time sounds as heavy as \"I myself\" would in English.",
+        "**Γεια σου is casual, Γεια σας is formal.** Γεια literally means \"health\", so a Greek greeting really says \"health to you\". Γεια σου is for friends and people your age; Γεια σας is for strangers, older people, officials — and for more than one person at once. ⚠️ This one word covers \"hello\" **and** \"goodbye\", just like *ciao*.",
+        "**Με λένε literally means \"they call me\".** Not \"my name is\". Who \"they\" are is never explained — just take it as one chunk: *Με λένε ___*. ⚠️ And your name goes in the **object** form, so Γιάννη**ς** becomes Γιάννη. Luckily, names that don't end in -ος/-ης don't change at all: *Με λένε Άννα, Με λένε Μπούντι.*",
+        "**Καλημέρα until about noon, Καλησπέρα after that, Καληνύχτα only when parting for the night.** ⚠️ Καληνύχτα is \"good night\", never \"good evening\" — saying it as you arrive at a party sounds as if you're already leaving.",
+        "**Συγγνώμη and Λυπάμαι don't weigh the same.** Συγγνώμη (*see-GHNOH-mee*) is for small things: interrupting, squeezing past, a wrong guess. Λυπάμαι (*lee-PAH-meh*), literally \"I am sad\", is for things that are truly sad — condolences, or turning down a big request. Saying Λυπάμαι after guessing someone's job wrong sounds overdone.",
+        "**Παρακαλώ: one word, three jobs.** It means \"please\", \"here you go\", and \"you're welcome\", and you'll use it dozens of times a day. On the phone it even means \"hello?\". Literally: \"I beg\".",
+        "⚠️ **Look at the question mark in this dialogue: ; not ?.** Εσείς**;** means \"And you?\" — it's not a sentence trailing off. It will look odd until about Unit 5, and then never again."
+      ],
+      "grammars": [
+        {
+          "title": "Είμαι — the one verb to learn by heart today",
+          "body": [
+            "This is the first and most frequently used verb in Greek. It's irregular, so there's no pattern to guess — learn all six lines at once, out loud, until they come out without thinking."
+          ],
+          "table": {
+            "head": [
+              "Greek",
+              "Say it",
+              "English",
+              "Notes"
+            ],
+            "rows": [
+              [
+                "είμαι",
+                "EE-meh",
+                "I am",
+                "εγώ can be dropped"
+              ],
+              [
+                "είσαι",
+                "EE-seh",
+                "you are",
+                "εσύ — to a friend"
+              ],
+              [
+                "είναι",
+                "EE-neh",
+                "he / she / it is",
+                "also \"they are\""
+              ],
+              [
+                "είμαστε",
+                "EE-mah-steh",
+                "we are",
+                "εμείς"
+              ],
+              [
+                "είστε",
+                "EE-steh",
+                "you are (plural / polite)",
+                "εσείς — polite form"
+              ],
+              [
+                "είναι",
+                "EE-neh",
+                "they are",
+                "same as the \"he/she\" form"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **είναι covers two lines at once**: \"he/she is\" and \"they are\". Only the context and the noun tell them apart. Good news — one less form to learn.",
+            "To negate, put **δεν** (*dhehn*) right before the verb: *Δεν είμαι φοιτητής* — I'm not a student. ⚠️ **δεν** negates a verb, while **όχι** (*OH-khee*) is the stand-alone answer \"no\". Don't mix them up: the question *Είσαι φοιτητής;* is answered *Όχι, δεν είμαι.*"
+          ]
+        },
+        {
+          "title": "Εσύ and εσείς — two levels of politeness",
+          "body": [
+            "Greek separates a friendly \"you\" from a polite \"you\", like French *tu* and *vous*. English lost this distinction centuries ago, but in Greek the choice is **compulsory** and you hear it straight away in the verb ending."
+          ],
+          "table": {
+            "head": [
+              "",
+              "ΕΣΥ (casual)",
+              "ΕΣΕΙΣ (polite)"
+            ],
+            "rows": [
+              [
+                "Used with",
+                "friends, people your age, family, children",
+                "strangers, older people, bosses, officials — and more than one person"
+              ],
+              [
+                "Greeting",
+                "Γεια σου!",
+                "Γεια σας!"
+              ],
+              [
+                "\"What's your name?\"",
+                "Πώς σε λένε;",
+                "Πώς σας λένε;"
+              ],
+              [
+                "\"How are you?\"",
+                "Τι κάνεις;",
+                "Τι κάνετε;"
+              ],
+              [
+                "\"Where are you from?\"",
+                "Από πού είσαι;",
+                "Από πού είστε;"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ A rule of thumb for newcomers: **use εσείς until the Greek person switches to εσύ**. The switch usually happens quietly, without announcement — as soon as the other person uses εσύ, follow suit. Using εσείς with someone your age sounds a little stiff; using εσύ with an older person or an official sounds rude. Of the two mistakes, the first is far cheaper.",
+            "Greeks switch to εσύ much faster than the French or Germans. Among people the same age, εσύ is often used from the first minute. With someone clearly older, εσείς lasts a long time."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Phrases to keep in your pocket on day one",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These twelve phrases cover nearly all first-day small talk. Learn them whole, as chunks; the grammar will untangle itself in the coming units."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "ΕΛΛΗΝΙΚΑ",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Ναι / Όχι",
+              "neh / OH-khee",
+              "Yes / No"
+            ],
+            [
+              "Ευχαριστώ",
+              "ehf-khah-ree-STOH",
+              "Thank you"
+            ],
+            [
+              "Ευχαριστώ πολύ",
+              "ehf-khah-ree-STOH poh-LEE",
+              "Thank you very much"
+            ],
+            [
+              "Παρακαλώ",
+              "pah-rah-kah-LOH",
+              "Please / Here you go / You're welcome"
+            ],
+            [
+              "Συγγνώμη",
+              "see-GHNOH-mee",
+              "Sorry, excuse me"
+            ],
+            [
+              "Δεν καταλαβαίνω",
+              "dhehn kah-tah-lah-VEH-noh",
+              "I don't understand"
+            ],
+            [
+              "Δεν μιλάω ελληνικά",
+              "dhehn mee-LAH-oh eh-lee-nee-KAH",
+              "I don't speak Greek"
+            ],
+            [
+              "Μιλάτε αγγλικά;",
+              "mee-LAH-teh ahn-glee-KAH",
+              "Do you speak English?"
+            ],
+            [
+              "Πιο αργά, παρακαλώ",
+              "pyoh ahr-GHAH pah-rah-kah-LOH",
+              "More slowly, please"
+            ],
+            [
+              "Τι είναι αυτό;",
+              "tee EE-neh ahf-TOH",
+              "What is this?"
+            ],
+            [
+              "Πώς το λένε στα ελληνικά;",
+              "pohs toh LEH-neh stah eh-lee-nee-KAH",
+              "How do you say it in Greek?"
+            ],
+            [
+              "Εντάξει",
+              "eh-DAH-ksee",
+              "OK, all right"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The two sentences near the end aren't just vocabulary — they're learning tools. Once you can ask \"what is this\" and \"how do you say it in Greek\", every Greek around you becomes a walking dictionary. And **εντάξει** will be the word you say most often for as long as you live in Greece."
+        },
+        {
+          "type": "kotak",
+          "title": "Τι κάνεις; and its little trap",
+          "items": [
+            "**Τι κάνεις;** (*tee KAH-nees*) literally means \"what are you doing?\" and is used for \"how are you?\". The polite form is **Τι κάνετε;** (*tee KAH-neh-teh*).",
+            "Standard answers: **Καλά** (fine), **Μια χαρά** (great, literally \"one joy\"), **Έτσι κι έτσι** (so-so, literally \"like this and like this\"), **Χάλια** (awful).",
+            "The polite reply adds **Εσύ;** or **Εσείς;** — \"and you?\". Leaving the question unreturned sounds cold.",
+            "⚠️ Unlike English *How are you?*, Τι κάνεις; is **not** empty small talk tossed at a cashier. You ask it of people you know, and the answer is actually listened to — sometimes for five minutes."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "el": "γεια σου / γεια σας",
+      "baca": "yah soo / yah sahs",
+      "en": "hello, goodbye (casual / formal)"
+    },
+    {
+      "el": "καλημέρα",
+      "baca": "kah-lee-MEH-rah",
+      "en": "good morning (until noon)"
+    },
+    {
+      "el": "καλησπέρα",
+      "baca": "kah-lee-SPEH-rah",
+      "en": "good afternoon/evening (when meeting)"
+    },
+    {
+      "el": "καληνύχτα",
+      "baca": "kah-lee-NEEKH-tah",
+      "en": "good night (when parting for bed)"
+    },
+    {
+      "el": "με λένε",
+      "baca": "meh LEH-neh",
+      "en": "my name is"
+    },
+    {
+      "el": "πώς σε λένε;",
+      "baca": "pohs seh LEH-neh",
+      "en": "what's your name?"
+    },
+    {
+      "el": "χαίρω πολύ",
+      "baca": "KHEH-roh poh-LEE",
+      "en": "nice to meet you"
+    },
+    {
+      "el": "εγώ",
+      "baca": "eh-GHOH",
+      "en": "I"
+    },
+    {
+      "el": "εσύ",
+      "baca": "eh-SEE",
+      "en": "you (familiar)"
+    },
+    {
+      "el": "εσείς",
+      "baca": "eh-SEES",
+      "en": "you (polite, plural)"
+    },
+    {
+      "el": "είμαι",
+      "baca": "EE-meh",
+      "en": "I am"
+    },
+    {
+      "el": "είσαι / είναι",
+      "baca": "EE-seh / EE-neh",
+      "en": "you are / he, she is"
+    },
+    {
+      "el": "ναι / όχι",
+      "baca": "neh / OH-khee",
+      "en": "yes / no"
+    },
+    {
+      "el": "δεν",
+      "baca": "dhehn",
+      "en": "not (before a verb)"
+    },
+    {
+      "el": "φοιτητής / φοιτήτρια",
+      "baca": "fee-tee-TEES / fee-TEE-tree-ah",
+      "en": "student (male / female)"
+    },
+    {
+      "el": "δάσκαλος / δασκάλα",
+      "baca": "DHAH-skah-lohs / dhah-SKAH-lah",
+      "en": "teacher (male / female)"
+    },
+    {
+      "el": "από",
+      "baca": "ah-POH",
+      "en": "from"
+    },
+    {
+      "el": "η Ινδονησία",
+      "baca": "ee een-dhoh-nee-SEE-ah",
+      "en": "Indonesia"
+    },
+    {
+      "el": "η Ελλάδα",
+      "baca": "ee eh-LAH-dhah",
+      "en": "Greece"
+    },
+    {
+      "el": "ευχαριστώ",
+      "baca": "ehf-khah-ree-STOH",
+      "en": "thank you"
+    },
+    {
+      "el": "παρακαλώ",
+      "baca": "pah-rah-kah-LOH",
+      "en": "please, here you go, you're welcome"
+    },
+    {
+      "el": "συγγνώμη",
+      "baca": "see-GHNOH-mee",
+      "en": "sorry, excuse me"
+    },
+    {
+      "el": "δεν πειράζει",
+      "baca": "dhehn pee-RAH-zee",
+      "en": "no problem, never mind"
+    },
+    {
+      "el": "καλά",
+      "baca": "kah-LAH",
+      "en": "fine, well, OK"
+    },
+    {
+      "el": "πολύ",
+      "baca": "poh-LEE",
+      "en": "very, a lot"
+    },
+    {
+      "el": "όλα",
+      "baca": "OH-lah",
+      "en": "all, everything"
+    },
+    {
+      "el": "εντάξει",
+      "baca": "eh-DAH-ksee",
+      "en": "OK, all right"
+    },
+    {
+      "el": "τι κάνεις;",
+      "baca": "tee KAH-nees",
+      "en": "how are you?"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Greek. Remember: the verb \"to be\" must never go missing.",
+      "items": [
+        "Hello! (formal)",
+        "My name is Ana.",
+        "I'm a student. (female)",
+        "He isn't a teacher.",
+        "What's your name? (polite)",
+        "I'm from Indonesia."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right form of είμαι (είμαι, είσαι, είναι, είμαστε, είστε).",
+      "items": [
+        "Εγώ ____ από την Ινδονησία.",
+        "Εσύ ____ φοιτητής;",
+        "Ο Γιάννης ____ δάσκαλος.",
+        "Εμείς ____ καλά.",
+        "Εσείς ____ από την Ελλάδα;"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "λένε / με / Άννα",
+        "δεν / φοιτητής / είμαι",
+        "πολύ / χαίρω",
+        "καλά / όλα",
+        "σας / πώς / λένε"
+      ]
+    },
+    {
+      "prompt": "Choose the right phrase. Write your answer in Greek letters.",
+      "items": [
+        "You walk into the staff room at eight in the morning. You say ____.",
+        "You didn't catch what someone said. You say ____.",
+        "You step on someone's foot on the metro. You say ____.",
+        "Someone has just helped you. You say ____.",
+        "You're leaving the office and saying goodbye to your boss. You say ____."
+      ]
+    }
+  ],
+  "answers": [
+    "Γεια σας! — Με λένε Άννα. — Είμαι φοιτήτρια. — Δεν είναι δάσκαλος. — Πώς σας λένε; — Είμαι από την Ινδονησία.",
+    "είμαι — είσαι — είναι — είμαστε — είστε",
+    "Με λένε Άννα. — Δεν είμαι φοιτητής. — Χαίρω πολύ. — Όλα καλά. — Πώς σας λένε;",
+    "Καλημέρα — Δεν καταλαβαίνω — Συγγνώμη — Ευχαριστώ — Γεια σας"
+  ]
+}

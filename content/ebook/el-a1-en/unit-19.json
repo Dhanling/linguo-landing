@@ -1,0 +1,480 @@
+{
+  "title": "Cheaper than that one",
+  "title_target": "Πιο φθηνό από αυτό — Pyoh fthee-noh ah-poh ahf-toh",
+  "goal": "Compare two things and name the most — in two equally correct ways, plus six comparison words that break the pattern.",
+  "bekal": [
+    "compare with πιο … από",
+    "use the -τερος ending instead",
+    "say \"the most\" with ο πιο and ο καλύτερος",
+    "learn the six irregular comparatives",
+    "say two things are equal with τόσο … όσο"
+  ],
+  "dialogs": [
+    {
+      "title": "ΔΙΑΛΟΓΟΣ — Looking for a souvenir",
+      "intro": "Ana is looking for a present for her sister in a small shop in Monastiraki. Notice that the seller uses two different ways of comparing in one sentence — and both are right.",
+      "lines": [
+        {
+          "speaker": "Άννα:",
+          "text": "[Ψάχνω|PSAH-khnoh] [ένα|EH-nah] [δώρο|DHOH-roh] [για|yah] [την|teen] [αδερφή|ah-dhehr-FEE] [μου|moo].",
+          "id": "I'm looking for a present for my sister.",
+          "literal": "I-look-for — a — present — for — the — sister — my."
+        },
+        {
+          "speaker": "Πωλήτρια:",
+          "text": "[Αυτή|Ahf-TEE] [η|ee] [τσάντα|TSAHN-dah] [είναι|EE-neh] [πολύ|poh-LEE] [ωραία|oh-REH-ah].",
+          "id": "This bag is very pretty.",
+          "literal": "this (f) — the — bag — it-is — very — beautiful."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ναι|Neh], [αλλά|ah-LAH] [είναι|EE-neh] [πιο|pyoh] [ακριβή|ah-kree-VEE] [από|ah-POH] [την|teen] [άλλη|AH-lee].",
+          "id": "Yes, but it's more expensive than the other one.",
+          "literal": "yes, but — it-is — more — expensive (f) — than — the — other (f)."
+        },
+        {
+          "speaker": "Πωλήτρια:",
+          "text": "[Η|Ee] [άλλη|AH-lee] [είναι|EE-neh] [φθηνότερη|fthee-NOH-teh-ree], [αλλά|ah-LAH] [αυτή|ahf-TEE] [είναι|EE-neh] [καλύτερη|kah-LEE-teh-ree].",
+          "id": "The other one is cheaper, but this one is better.",
+          "literal": "the — other — it-is — cheaper, but — this — it-is — better."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ποια|Pyah] [είναι|EE-neh] [πιο|pyoh] [μεγάλη|meh-GHAH-lee];",
+          "id": "Which one is bigger?",
+          "literal": "which (f) — it-is — more — big?"
+        },
+        {
+          "speaker": "Πωλήτρια:",
+          "text": "[Η|Ee] [μπλε|bleh]. [Είναι|EE-neh] [και|keh] [η|ee] [πιο|pyoh] [ελαφριά|eh-lah-FRYAH] [από|ah-POH] [όλες|OH-lehs].",
+          "id": "The blue one. It's also the lightest of all.",
+          "literal": "the — blue. it-is — also — the — most — light — of — all (f pl)."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Το|Toh] [ασημένιο|ah-see-MEH-nee-oh] [βραχιόλι|vrah-KHYOH-lee] [είναι|EE-neh] [πιο|pyoh] [φθηνό|fthee-NOH] [από|ah-POH] [την|teen] [τσάντα|TSAHN-dah];",
+          "id": "Is the silver bracelet cheaper than the bag?",
+          "literal": "the — silver (n) — bracelet — it-is — more — cheap — than — the — bag?"
+        },
+        {
+          "speaker": "Πωλήτρια:",
+          "text": "[Ναι|Neh], [πολύ|poh-LEE] [πιο|pyoh] [φθηνό|fthee-NOH]. [Είκοσι|EE-koh-see] [ευρώ|ehv-ROH].",
+          "id": "Yes, much cheaper. Twenty euros.",
+          "literal": "yes, much — more — cheap. twenty — euros."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Τότε|TOH-teh] [παίρνω|PEHR-noh] [το|toh] [βραχιόλι|vrah-KHYOH-lee]. [Είναι|EE-neh] [το|toh] [καλύτερο|kah-LEE-teh-roh] [δώρο|DHOH-roh].",
+          "id": "Then I'll take the bracelet. It's the perfect present.",
+          "literal": "then — I-take — the — bracelet. it-is — the — best — present."
+        },
+        {
+          "speaker": "Πωλήτρια:",
+          "text": "[Πολύ|Poh-LEE] [καλή|kah-LEE] [επιλογή|eh-pee-loh-YEE]! [Θέλετε|THEH-leh-teh] [να|nah] [το|toh] [τυλίξω|tee-LEE-ksoh];",
+          "id": "Great choice! Shall I wrap it for you?",
+          "literal": "very — good — choice! you (polite)-want — that — it — I-wrap?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ναι|Neh], [παρακαλώ|pah-rah-kah-LOH].",
+          "id": "Yes, please.",
+          "literal": "yes, please."
+        }
+      ],
+      "notes": [
+        "**There are two ways to compare, and both are equally correct.** The first puts **πιο** before the adjective: *πιο ακριβή*, *πιο μεγάλος*, *πιο φθηνό*. The second uses the ending **-τερος**: *ακριβότερη*, *μεγαλύτερος*, *φθηνότερο*. ⚠️ The first is heard more and is easier to form; the second is more common in writing. Use πιο when in doubt — it's never wrong. (Like English \"more expensive\" vs. \"cheaper\".)",
+        "**\"Than\" is από**, and the word after it takes the object form, as after every preposition: *πιο ακριβή από **την** άλλη*, *πιο μεγάλος από **τον** αδερφό μου*. ⚠️ Some speakers also use **παρά** for this, but από is far more common.",
+        "**Comparatives still agree in gender with the noun**, just like ordinary adjectives: πιο μεγάλ**ος** δρόμος, πιο μεγάλ**η** πόλη, πιο μεγάλ**ο** σπίτι. The -τερος form too: μεγαλύτερ**ος**, μεγαλύτερ**η**, μεγαλύτερ**ο**.",
+        "**For \"the most\", put an article before the comparative.** *η πιο ελαφριά* (the lightest), *το καλύτερο δώρο* (the best present), *ο πιο μεγάλος* (the biggest). Add **από όλους / όλες / όλα** for emphasis: *από όλες* = of all.",
+        "⚠️ **Six comparatives break the pattern** — and all are common: καλός → **καλύτερος** (better), κακός → **χειρότερος** (worse), μεγάλος → **μεγαλύτερος**, μικρός → **μικρότερος**, πολύ → **περισσότερο** (more), λίγο → **λιγότερο** (less). These six must be learned as they are; the rest are regular.",
+        "**Πολύ πιο = \"much more\".** *Πολύ πιο φθηνό* — much cheaper. *Λίγο πιο ακριβό* — a bit more expensive. These two boosters make your comparisons sound far more alive.",
+        "**Μεγαλύτερος and μικρότερος also mean \"older\" and \"younger\"** for siblings — just as English says \"big brother\" and \"little sister\": *ο μεγαλύτερος αδερφός μου* = my older brother.",
+        "**Θέλετε να το τυλίξω;** — \"shall I wrap it?\". Note the **το** before the verb: object pronouns stand **before** the verb, not after it. *Το ξέρω* (I know it), *Σε βλέπω* (I see you), *Τον ρωτάω* (I ask him). ⚠️ This is the reverse of English and takes time to get used to."
+      ],
+      "grammars": [
+        {
+          "title": "Two ways to compare",
+          "body": [
+            "Compare the two columns. The meanings are identical; only the tone and usage habits differ."
+          ],
+          "table": {
+            "head": [
+              "Base word",
+              "Way 1: ΠΙΟ",
+              "Way 2: -ΤΕΡΟΣ",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ακριβός",
+                "πιο ακριβός",
+                "ακριβό**τερος**",
+                "more expensive"
+              ],
+              [
+                "φθηνός",
+                "πιο φθηνός",
+                "φθηνό**τερος**",
+                "cheaper"
+              ],
+              [
+                "όμορφος",
+                "πιο όμορφος",
+                "ομορφό**τερος**",
+                "prettier"
+              ],
+              [
+                "εύκολος",
+                "πιο εύκολος",
+                "ευκολό**τερος**",
+                "easier"
+              ],
+              [
+                "ζεστός",
+                "πιο ζεστός",
+                "ζεστό**τερος**",
+                "warmer"
+              ],
+              [
+                "καλός ⚠️",
+                "πιο καλός",
+                "**καλύτερος**",
+                "better"
+              ],
+              [
+                "κακός ⚠️",
+                "πιο κακός",
+                "**χειρότερος**",
+                "worse"
+              ],
+              [
+                "μεγάλος ⚠️",
+                "πιο μεγάλος",
+                "**μεγαλύτερος**",
+                "bigger"
+              ],
+              [
+                "μικρός ⚠️",
+                "πιο μικρός",
+                "**μικρότερος**",
+                "smaller"
+              ]
+            ]
+          },
+          "after": [
+            "**The full pattern:** *Η Αθήνα είναι **πιο μεγάλη από** τη Θεσσαλονίκη.* — Athens is bigger than Thessaloniki. Or: *Η Αθήνα είναι **μεγαλύτερη από** τη Θεσσαλονίκη.*",
+            "⚠️ For adverbs (not adjectives), the form ends in -α: *Τρέχει **πιο γρήγορα**.* — He runs faster. *Μιλάει **καλύτερα** από μένα.* — She speaks better than me."
+          ]
+        },
+        {
+          "title": "The most, and the same",
+          "body": [
+            "The top degree is formed just by adding an article. No new forms to learn."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "article + πιο + adjective",
+                "**ο πιο** μεγάλος δρόμος",
+                "the biggest street"
+              ],
+              [
+                "article + -τερος form",
+                "**το** καλύτερο δώρο",
+                "the best present"
+              ],
+              [
+                "+ από όλους / όλες / όλα",
+                "η πιο ελαφριά **από όλες**",
+                "the lightest of all"
+              ],
+              [
+                "τόσο … όσο",
+                "**τόσο** μεγάλο **όσο** το άλλο",
+                "as big as the other"
+              ],
+              [
+                "ίδιος με",
+                "**ίδιος με** τον αδερφό μου",
+                "the same as my brother"
+              ],
+              [
+                "το ίδιο",
+                "Είναι **το ίδιο**.",
+                "It's all the same."
+              ]
+            ]
+          },
+          "after": [
+            "**Ο καλύτερος** on its own means \"the best\": *Είσαι ο καλύτερος!* — You're the best! A very common compliment.",
+            "⚠️ **Χειρότερος** (\"worse\") is used far more than *πιο κακός*, which sounds like you're talking about wicked character, not quality."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Shopping and choosing",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "ΕΛΛΗΝΙΚΑ",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "το δώρο",
+              "toh DHOH-roh",
+              "present"
+            ],
+            [
+              "η τσάντα",
+              "ee TSAHN-dah",
+              "bag"
+            ],
+            [
+              "το βραχιόλι",
+              "toh vrah-KHYOH-lee",
+              "bracelet"
+            ],
+            [
+              "το δαχτυλίδι",
+              "toh dhahkh-tee-LEE-dhee",
+              "ring"
+            ],
+            [
+              "ασημένιος / χρυσός",
+              "ah-see-MEH-nee-ohs / khree-SOHS",
+              "silver / gold"
+            ],
+            [
+              "τα ρούχα",
+              "tah ROO-khah",
+              "clothes"
+            ],
+            [
+              "η μπλούζα",
+              "ee BLOO-zah",
+              "blouse, T-shirt"
+            ],
+            [
+              "το παντελόνι",
+              "toh pahn-deh-LOH-nee",
+              "trousers"
+            ],
+            [
+              "τα παπούτσια",
+              "tah pah-POO-tsyah",
+              "shoes"
+            ],
+            [
+              "το μέγεθος",
+              "toh MEH-yeh-thohs",
+              "size"
+            ],
+            [
+              "το χρώμα",
+              "toh KHROH-mah",
+              "color"
+            ],
+            [
+              "η επιλογή",
+              "ee eh-pee-loh-YEE",
+              "choice"
+            ],
+            [
+              "ελαφρύς / βαρύς",
+              "eh-lah-FREES / vah-REES",
+              "light / heavy"
+            ],
+            [
+              "η έκπτωση",
+              "ee EHK-ptoh-see",
+              "discount"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Ready-made sentences for the shop",
+          "items": [
+            "**Ψάχνω ένα δώρο / μια μπλούζα.** — I'm looking for a present / a T-shirt.",
+            "**Μπορώ να το δοκιμάσω;** — Can I try it on? · **Έχετε μεγαλύτερο μέγεθος;** — Do you have a bigger size?",
+            "**Έχετε άλλο χρώμα;** — Do you have another color? · **Έχει έκπτωση;** — Is there a discount?",
+            "**Είναι λίγο ακριβό για μένα.** — It's a bit expensive for me. ⚠️ In ordinary shops bargaining isn't usual; at the Monastiraki flea market and in small souvenir shops this sentence sometimes brings the price down a little.",
+            "**Θα το σκεφτώ.** — I'll think about it. The politest way to leave without buying.",
+            "**Θέλετε να το τυλίξω;** — Shall I wrap it? Answer: *Ναι, είναι δώρο.* — Yes, it's a present."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "el": "πιο",
+      "baca": "pyoh",
+      "en": "more"
+    },
+    {
+      "el": "από",
+      "baca": "ah-POH",
+      "en": "than, from"
+    },
+    {
+      "el": "καλύτερος",
+      "baca": "kah-LEE-teh-rohs",
+      "en": "better"
+    },
+    {
+      "el": "χειρότερος",
+      "baca": "khee-ROH-teh-rohs",
+      "en": "worse"
+    },
+    {
+      "el": "μεγαλύτερος",
+      "baca": "meh-ghah-LEE-teh-rohs",
+      "en": "bigger, older"
+    },
+    {
+      "el": "μικρότερος",
+      "baca": "mee-KROH-teh-rohs",
+      "en": "smaller, younger"
+    },
+    {
+      "el": "περισσότερο / λιγότερο",
+      "baca": "peh-ree-SOH-teh-roh / lee-GHOH-teh-roh",
+      "en": "more / less"
+    },
+    {
+      "el": "ο πιο …",
+      "baca": "oh pyoh",
+      "en": "the most …"
+    },
+    {
+      "el": "από όλους",
+      "baca": "ah-POH OH-loos",
+      "en": "of all"
+    },
+    {
+      "el": "τόσο … όσο",
+      "baca": "TOH-soh … OH-soh",
+      "en": "as … as"
+    },
+    {
+      "el": "το ίδιο",
+      "baca": "toh EE-dhee-oh",
+      "en": "it's all the same"
+    },
+    {
+      "el": "το δώρο",
+      "baca": "toh DHOH-roh",
+      "en": "present"
+    },
+    {
+      "el": "η τσάντα",
+      "baca": "ee TSAHN-dah",
+      "en": "bag"
+    },
+    {
+      "el": "το βραχιόλι",
+      "baca": "toh vrah-KHYOH-lee",
+      "en": "bracelet"
+    },
+    {
+      "el": "τα ρούχα",
+      "baca": "tah ROO-khah",
+      "en": "clothes"
+    },
+    {
+      "el": "το μέγεθος",
+      "baca": "toh MEH-yeh-thohs",
+      "en": "size"
+    },
+    {
+      "el": "η επιλογή",
+      "baca": "ee eh-pee-loh-YEE",
+      "en": "choice"
+    },
+    {
+      "el": "η έκπτωση",
+      "baca": "ee EHK-ptoh-see",
+      "en": "discount"
+    },
+    {
+      "el": "ελαφρύς / βαρύς",
+      "baca": "eh-lah-FREES / vah-REES",
+      "en": "light / heavy"
+    },
+    {
+      "el": "δοκιμάζω",
+      "baca": "dhoh-kee-MAH-zoh",
+      "en": "try (on)"
+    },
+    {
+      "el": "τυλίγω",
+      "baca": "tee-LEE-ghoh",
+      "en": "wrap"
+    },
+    {
+      "el": "ψάχνω",
+      "baca": "PSAH-khnoh",
+      "en": "look for"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Make the comparative with πιο.",
+      "items": [
+        "ακριβός",
+        "όμορφη",
+        "φθηνό",
+        "εύκολος",
+        "μεγάλη"
+      ]
+    },
+    {
+      "prompt": "Fill in the right irregular form.",
+      "items": [
+        "Αυτό το δώρο είναι ____ από το άλλο. (καλός)",
+        "Ο καιρός σήμερα είναι ____ από χθες. (κακός)",
+        "Η Αθήνα είναι ____ από τη Θεσσαλονίκη. (μεγάλος)",
+        "Το σπίτι μου είναι ____ από το δικό σου. (μικρός)",
+        "Θέλω ____ νερό. (πολύ)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "από / πιο / είναι / ακριβή / άλλη / την",
+        "δώρο / το / είναι / καλύτερο",
+        "όλες / πιο / η / από / ελαφριά",
+        "φθηνό / πολύ / πιο / είναι",
+        "μεγάλη / ποια / πιο / είναι / ;"
+      ]
+    },
+    {
+      "prompt": "Translate into Greek.",
+      "items": [
+        "This bag is more expensive than that one.",
+        "The blue one is lighter.",
+        "This is the best present.",
+        "It's much cheaper.",
+        "Do you have a bigger size?"
+      ]
+    }
+  ],
+  "answers": [
+    "πιο ακριβός — πιο όμορφη — πιο φθηνό — πιο εύκολος — πιο μεγάλη",
+    "καλύτερο — χειρότερος — μεγαλύτερη — μικρότερο — περισσότερο",
+    "Είναι πιο ακριβή από την άλλη. — Το δώρο είναι καλύτερο. — Η πιο ελαφριά από όλες. — Είναι πολύ πιο φθηνό. — Ποια είναι πιο μεγάλη;",
+    "Αυτή η τσάντα είναι πιο ακριβή από την άλλη. — Η μπλε είναι πιο ελαφριά. — Είναι το καλύτερο δώρο. — Είναι πολύ πιο φθηνό. — Έχετε μεγαλύτερο μέγεθος;"
+  ]
+}

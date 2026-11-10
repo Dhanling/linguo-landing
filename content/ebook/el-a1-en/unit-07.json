@@ -1,0 +1,508 @@
+{
+  "title": "How much is it?",
+  "title_target": "Πόσο κάνει; — Poh-soh kah-nee;",
+  "goal": "Shop at the weekly market, ask about prices, use plurals, and count to a thousand.",
+  "bekal": [
+    "form plurals for all three genders",
+    "tell Πόσο κάνει from Πόσο κάνουν",
+    "give prices per kilo and ask for change",
+    "count from a hundred to a thousand",
+    "name the most common fruit and vegetables"
+  ],
+  "dialogs": [
+    {
+      "title": "ΔΙΑΛΟΓΟΣ — At the ΛΑΪΚΗ, the weekly market",
+      "intro": "Every neighborhood in Athens has a λαϊκή αγορά once a week: a whole street of fruit and vegetable stalls, much cheaper than the supermarket. Ana goes there on Tuesday morning. Notice that the verb changes too once the noun is plural.",
+      "lines": [
+        {
+          "speaker": "Πωλητής:",
+          "text": "[Ελάτε|Eh-LAH-teh], [ελάτε|eh-LAH-teh]! [Φρέσκες|FREH-skehs] [ντομάτες|doh-MAH-tehs]!",
+          "id": "Come on, come on! Fresh tomatoes!",
+          "literal": "come, come! fresh (fem. pl.) — tomatoes!"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Καλημέρα|Kah-lee-MEH-rah]. [Πόσο|POH-soh] [κάνουν|KAH-noon] [οι|ee] [ντομάτες|doh-MAH-tehs];",
+          "id": "Good morning. How much are the tomatoes?",
+          "literal": "good-morning. how-much — they-make — the (pl.) — tomatoes?"
+        },
+        {
+          "speaker": "Πωλητής:",
+          "text": "[Δύο|DHEE-oh] [ευρώ|ehv-ROH] [το|toh] [κιλό|kee-LOH]. [Πόσα|POH-sah] [θέλετε|THEH-leh-teh];",
+          "id": "Two euros a kilo. How much would you like?",
+          "literal": "two — euros — the — kilo. how-many (neut. pl.) — you-want?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ένα|EH-nah] [κιλό|kee-LOH], [παρακαλώ|pah-rah-kah-LOH]. [Και|Keh] [τα|tah] [πορτοκάλια|pohr-toh-KAH-lyah];",
+          "id": "A kilo, please. And the oranges?",
+          "literal": "one — kilo, please. and — the (neut. pl.) — oranges?"
+        },
+        {
+          "speaker": "Πωλητής:",
+          "text": "[Ενάμισι|Eh-NAH-mee-see] [ευρώ|ehv-ROH] [το|toh] [κιλό|kee-LOH]. [Είναι|EE-neh] [από|ah-POH] [την|teen] [Κρήτη|KREE-tee].",
+          "id": "One fifty a kilo. They're from Crete.",
+          "literal": "one-and-a-half — euros — the — kilo. they-are — from — the — Crete."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Δύο|DHEE-oh] [κιλά|kee-LAH] [τότε|TOH-teh]. [Πόσο|POH-soh] [κάνουν|KAH-noon] [όλα|OH-lah] [μαζί|mah-ZEE];",
+          "id": "Two kilos, then. How much is that all together?",
+          "literal": "two — kilos — then. how-much — they-make — all — together?"
+        },
+        {
+          "speaker": "Πωλητής:",
+          "text": "[Πέντε|PEHN-deh] [ευρώ|ehv-ROH] [ακριβώς|ah-kree-VOHS].",
+          "id": "Exactly five euros.",
+          "literal": "five — euros — exactly."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ορίστε|Oh-REE-steh] [δέκα|DHEH-kah].",
+          "id": "Here's ten.",
+          "literal": "here-you-go — ten."
+        },
+        {
+          "speaker": "Πωλητής:",
+          "text": "[Και|Keh] [πέντε|PEHN-deh] [ρέστα|REH-stah]. [Ευχαριστώ|Ehf-khah-ree-STOH], [κοπέλα|koh-PEH-lah] [μου|moo]!",
+          "id": "And five change. Thank you, dear!",
+          "literal": "and — five — change. I-thank, girl — my!"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Είναι|EE-neh] [πολύ|poh-LEE] [φθηνά|fthee-NAH] [εδώ|eh-DHOH]!",
+          "id": "It's so cheap here!",
+          "literal": "they-are — very — cheap (neut. pl.) — here!"
+        },
+        {
+          "speaker": "Πωλητής:",
+          "text": "[Στη|Stee] [λαϊκή|lah-ee-KEE] [πάντα|PAHN-dah]! [Καλή|Kah-LEE] [σας|sahs] [μέρα|MEH-rah]!",
+          "id": "At the market it always is! Have a nice day!",
+          "literal": "in-the — people's-market — always! good — to-you — day!"
+        }
+      ],
+      "notes": [
+        "⚠️ **Πόσο κάνει; for one item, Πόσο κάνουν; for several.** The verb goes plural along with the noun, just like \"is / are\" in English. Saying *Πόσο κάνει οι ντομάτες;* sounds as wrong to a Greek ear as \"how much is the tomatoes?\" does to yours.",
+        "**Prices per unit use the article, not a word for \"per\".** *Δύο ευρώ **το** κιλό* — literally \"two euros the kilo\". Likewise *πέντε ευρώ το άτομο* (five euros per person), *δέκα ευρώ η ώρα* (ten euros an hour).",
+        "**Ενάμισι = 1.5.** It's ένα + μισό fused together, and it changes with gender: **ενάμισι** κιλό (neuter), **ενάμισης** μήνας (masculine), **μιάμιση** ώρα (feminine). These three forms are heard often and rarely taught.",
+        "**Ρέστα (*REH-stah*) = change**, always neuter plural. *Κρατήστε τα ρέστα* means \"keep the change\" — in Greece a phrase for taxis rather than restaurants, since in restaurants the tip is left on the table.",
+        "**Κοπέλα μου, παιδί μου, αγόρι μου** — \"my girl\", \"my child\", \"my boy\" — are used by vendors, taxi drivers, and neighbors to anyone younger. ⚠️ This is **neither** flirting nor condescending; it's a close cousin of \"love\", \"dear\", or \"honey\" in British and American shop talk. Reacting stiffly is what would feel odd.",
+        "**Φρέσκος becomes φρέσκες in the feminine plural** and **φρέσκα** in the neuter plural. Adjectives go plural just as they follow gender — no new rule, just a slightly wider table.",
+        "**Λαϊκή αγορά literally means \"people's market\"**, from λαός (people) — the same word that gave English *laity* and *layman*. Each neighborhood has its own day, and prices in the last hour before closing can drop by half.",
+        "**Ακριβώς means \"exactly\"** — and ⚠️ don't confuse it with **ακριβός**, which means \"expensive\". They differ by a single letter: *ah-kree-VOHS* for both, but the spelling and use differ. Context always comes to the rescue."
+      ],
+      "grammars": [
+        {
+          "title": "Plurals: eight patterns, all predictable",
+          "body": [
+            "If you know the singular ending, you know the plural ending. There are no irregular plurals to memorize at A1."
+          ],
+          "table": {
+            "head": [
+              "Type",
+              "Singular",
+              "Plural",
+              "Other examples"
+            ],
+            "rows": [
+              [
+                "masc. -ος",
+                "ο φίλ**ος**",
+                "**οι** φίλ**οι**",
+                "δρόμος → δρόμοι"
+              ],
+              [
+                "masc. -ας",
+                "ο άντρ**ας**",
+                "**οι** άντρ**ες**",
+                "μήνας → μήνες"
+              ],
+              [
+                "masc. -ης",
+                "ο μαθητ**ής**",
+                "**οι** μαθητ**ές**",
+                "πωλητής → πωλητές"
+              ],
+              [
+                "fem. -α",
+                "η ντομάτ**α**",
+                "**οι** ντομάτ**ες**",
+                "ώρα → ώρες"
+              ],
+              [
+                "fem. -η",
+                "η πόλ**η**",
+                "**οι** πόλ**εις** ⚠️",
+                "δύναμη → δυνάμεις"
+              ],
+              [
+                "neut. -ο",
+                "το βιβλί**ο**",
+                "**τα** βιβλί**α**",
+                "αυτοκίνητο → αυτοκίνητα"
+              ],
+              [
+                "neut. -ι",
+                "το σπίτ**ι**",
+                "**τα** σπίτ**ια**",
+                "παιδί → παιδιά"
+              ],
+              [
+                "neut. -μα",
+                "το πρόβλη**μα**",
+                "**τα** προβλή**ματα**",
+                "όνομα → ονόματα"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ The **fem. -η** row is the only real surprise: η πόλη → **οι πόλεις**, not *οι πόλες*. The group is small but full of common words: πόλη (city), λέξη (word), τάξη (class), σκέψη (thought), δύναμη (strength). Learn those five and the rest can wait.",
+            "There are only three plural articles: **οι** for masculine and feminine, **τα** for neuter. In the object form: **τους / τις / τα**."
+          ]
+        },
+        {
+          "title": "A hundred to a thousand",
+          "body": [
+            "Hundreds are formed from the unit number plus -κόσια. The only thing to watch is that hundreds **change with gender**, unlike the teens and tens."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Neuter (basic form)",
+              "Feminine",
+              "Example"
+            ],
+            "rows": [
+              [
+                "100",
+                "εκατό *eh-kah-TOH*",
+                "εκατό",
+                "εκατό ευρώ"
+              ],
+              [
+                "200",
+                "διακόσια *dhyah-KOH-syah*",
+                "διακόσιες",
+                "διακόσιες μέρες"
+              ],
+              [
+                "300",
+                "τριακόσια",
+                "τριακόσιες",
+                "τριακόσια ευρώ"
+              ],
+              [
+                "400",
+                "τετρακόσια",
+                "τετρακόσιες",
+                ""
+              ],
+              [
+                "500",
+                "πεντακόσια",
+                "πεντακόσιες",
+                ""
+              ],
+              [
+                "600–900",
+                "εξακόσια, εφτακόσια, οχτακόσια, εννιακόσια",
+                "…κόσιες",
+                ""
+              ],
+              [
+                "1000",
+                "χίλια *KHEE-lyah*",
+                "χίλιες",
+                "χίλια ευρώ"
+              ],
+              [
+                "2000",
+                "δύο χιλιάδες *khee-LYAH-dhehs*",
+                "",
+                "δύο χιλιάδες ευρώ"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **101 isn't εκατό ένα but εκατόν ένα** — εκατό grows a -ν when another number follows. It's the only surprise in the whole Greek number system.",
+            "Years are said in full like ordinary numbers: 2026 = **δύο χιλιάδες είκοσι έξι** (two thousand twenty-six)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Fruit, vegetables, and measures",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Singular",
+            "Plural",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "η ντομάτα",
+              "οι ντομάτες",
+              "doh-MAH-tah / doh-MAH-tehs",
+              "tomato"
+            ],
+            [
+              "το πορτοκάλι",
+              "τα πορτοκάλια",
+              "pohr-toh-KAH-lee",
+              "orange"
+            ],
+            [
+              "το μήλο",
+              "τα μήλα",
+              "MEE-loh",
+              "apple"
+            ],
+            [
+              "η μπανάνα",
+              "οι μπανάνες",
+              "bah-NAH-nah",
+              "banana"
+            ],
+            [
+              "το λεμόνι",
+              "τα λεμόνια",
+              "leh-MOH-nee",
+              "lemon"
+            ],
+            [
+              "το σταφύλι",
+              "τα σταφύλια",
+              "stah-FEE-lee",
+              "grapes"
+            ],
+            [
+              "το καρπούζι",
+              "τα καρπούζια",
+              "kahr-POO-zee",
+              "watermelon"
+            ],
+            [
+              "η πατάτα",
+              "οι πατάτες",
+              "pah-TAH-tah",
+              "potato"
+            ],
+            [
+              "το κρεμμύδι",
+              "τα κρεμμύδια",
+              "kreh-MEE-dhee",
+              "onion"
+            ],
+            [
+              "το αγγούρι",
+              "τα αγγούρια",
+              "ahn-GOO-ree",
+              "cucumber"
+            ],
+            [
+              "η ελιά",
+              "οι ελιές",
+              "eh-LYAH",
+              "olive"
+            ],
+            [
+              "το αυγό",
+              "τα αυγά",
+              "ahv-GHOH",
+              "egg"
+            ],
+            [
+              "το τυρί",
+              "τα τυριά",
+              "tee-REE",
+              "cheese"
+            ],
+            [
+              "το κιλό",
+              "τα κιλά",
+              "kee-LOH",
+              "kilo"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Phrases to use at the market stall",
+          "items": [
+            "**Πόσο κάνει;** / **Πόσο κάνουν;** — How much is it? / How much are they?",
+            "**Ένα κιλό, παρακαλώ.** — A kilo, please. · **Μισό κιλό** — half a kilo. · **Δύο κιλά** — two kilos.",
+            "**Είναι φρέσκα;** — Are they fresh? · **Από πού είναι;** — Where are they from? Vendors at the λαϊκή love being asked this.",
+            "**Είναι λίγο ακριβό.** — It's a bit expensive. ⚠️ Haggling isn't the custom at the λαϊκή; what is customary is the **bonus**: vendors often throw in an extra handful or round the price down on their own.",
+            "**Τίποτα άλλο;** — Anything else? The answer is **Όχι, αυτά.** — No, that's all."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "el": "πόσο κάνει / κάνουν;",
+      "baca": "POH-soh KAH-nee / KAH-noon",
+      "en": "how much is it?"
+    },
+    {
+      "el": "το κιλό",
+      "baca": "toh kee-LOH",
+      "en": "kilo"
+    },
+    {
+      "el": "μισό",
+      "baca": "mee-SOH",
+      "en": "half"
+    },
+    {
+      "el": "ενάμισι",
+      "baca": "eh-NAH-mee-see",
+      "en": "one and a half"
+    },
+    {
+      "el": "τα ρέστα",
+      "baca": "tah REH-stah",
+      "en": "change (money)"
+    },
+    {
+      "el": "η λαϊκή αγορά",
+      "baca": "ee lah-ee-KEE ah-ghoh-RAH",
+      "en": "weekly street market"
+    },
+    {
+      "el": "το σουπερμάρκετ",
+      "baca": "toh soo-pehr-MAHR-keht",
+      "en": "supermarket"
+    },
+    {
+      "el": "ο πωλητής",
+      "baca": "oh poh-lee-TEES",
+      "en": "vendor, seller"
+    },
+    {
+      "el": "φρέσκος",
+      "baca": "FREH-skohs",
+      "en": "fresh"
+    },
+    {
+      "el": "μαζί",
+      "baca": "mah-ZEE",
+      "en": "together, all in all"
+    },
+    {
+      "el": "ακριβώς",
+      "baca": "ah-kree-VOHS",
+      "en": "exactly"
+    },
+    {
+      "el": "τότε",
+      "baca": "TOH-teh",
+      "en": "then, in that case"
+    },
+    {
+      "el": "τίποτα",
+      "baca": "TEE-poh-tah",
+      "en": "nothing"
+    },
+    {
+      "el": "η ντομάτα",
+      "baca": "ee doh-MAH-tah",
+      "en": "tomato"
+    },
+    {
+      "el": "το πορτοκάλι",
+      "baca": "toh pohr-toh-KAH-lee",
+      "en": "orange"
+    },
+    {
+      "el": "η πατάτα",
+      "baca": "ee pah-TAH-tah",
+      "en": "potato"
+    },
+    {
+      "el": "η ελιά",
+      "baca": "ee eh-LYAH",
+      "en": "olive, olive tree"
+    },
+    {
+      "el": "το τυρί",
+      "baca": "toh tee-REE",
+      "en": "cheese"
+    },
+    {
+      "el": "το αυγό",
+      "baca": "toh ahv-GHOH",
+      "en": "egg"
+    },
+    {
+      "el": "εκατό / χίλια",
+      "baca": "eh-kah-TOH / KHEE-lyah",
+      "en": "a hundred / a thousand"
+    },
+    {
+      "el": "οι, τα",
+      "baca": "ee, tah",
+      "en": "plural article (masc.-fem., neut.)"
+    },
+    {
+      "el": "κοπέλα μου",
+      "baca": "koh-PEH-lah moo",
+      "en": "dear, love (friendly address)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change to the plural, article included.",
+      "items": [
+        "ο φίλος",
+        "η ντομάτα",
+        "το σπίτι",
+        "ο μήνας",
+        "το πρόβλημα",
+        "η πόλη"
+      ]
+    },
+    {
+      "prompt": "Choose κάνει or κάνουν.",
+      "items": [
+        "Πόσο ____ ο καφές;",
+        "Πόσο ____ οι ντομάτες;",
+        "Πόσο ____ τα πορτοκάλια;",
+        "Πόσο ____ όλα μαζί;",
+        "Πόσο ____ αυτό το βιβλίο;"
+      ]
+    },
+    {
+      "prompt": "Write these numbers in Greek words.",
+      "items": [
+        "15",
+        "40",
+        "101",
+        "250",
+        "1000"
+      ]
+    },
+    {
+      "prompt": "Translate into Greek.",
+      "items": [
+        "How much are the tomatoes?",
+        "Two euros a kilo.",
+        "A kilo, please.",
+        "How much is it all together?",
+        "It's very cheap here."
+      ]
+    }
+  ],
+  "answers": [
+    "οι φίλοι — οι ντομάτες — τα σπίτια — οι μήνες — τα προβλήματα — οι πόλεις",
+    "κάνει — κάνουν — κάνουν — κάνουν — κάνει",
+    "δεκαπέντε — σαράντα — εκατόν ένα — διακόσια πενήντα — χίλια",
+    "Πόσο κάνουν οι ντομάτες; — Δύο ευρώ το κιλό. — Ένα κιλό, παρακαλώ. — Πόσο κάνουν όλα μαζί; — Είναι πολύ φθηνά εδώ."
+  ]
+}

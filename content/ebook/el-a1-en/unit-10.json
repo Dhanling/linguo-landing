@@ -1,0 +1,474 @@
+{
+  "title": "My family",
+  "title_target": "Η οικογένειά μου — Ee ee-koh-yeh-nee-ah moo",
+  "goal": "Name family members and say who owns what — with a possessive that stands after its noun and sometimes forces that noun to carry two accent marks at once.",
+  "bekal": [
+    "use μου, σου, του, της, μας, σας, τους",
+    "keep the article in front of the possessed noun",
+    "write the second accent on certain words",
+    "name family members",
+    "ask a third person's name with Πώς τον λένε;"
+  ],
+  "dialogs": [
+    {
+      "title": "ΔΙΑΛΟΓΟΣ — Family photos",
+      "intro": "Eleni finds Ana looking at photos on her phone. Notice that the possessive always comes **after** the noun, and that the noun keeps its article.",
+      "lines": [
+        {
+          "speaker": "Ελένη:",
+          "text": "[Τι|Tee] [είναι|EE-neh] [αυτά|ahf-TAH]; [Φωτογραφίες|Foh-toh-ghrah-FEE-ehs];",
+          "id": "What are those? Photos?",
+          "literal": "what — they-are — these (neut. pl.)? photos?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ναι|Neh], [η|ee] [οικογένειά|ee-koh-YEH-nee-ah] [μου|moo]. [Αυτός|Ahf-TOHS] [είναι|EE-neh] [ο|oh] [πατέρας|pah-TEH-rahs] [μου|moo].",
+          "id": "Yes, my family. This is my father.",
+          "literal": "yes, the — family — my. this (masc.) — he-is — the — father — my."
+        },
+        {
+          "speaker": "Ελένη:",
+          "text": "[Πώς|Pohs] [τον|tohn] [λένε|LEH-neh];",
+          "id": "What's his name?",
+          "literal": "how — him — they-call?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Τον|Tohn] [λένε|LEH-neh] [Μπαμπάνγκ|Bah-BAHNG]. [Είναι|EE-neh] [δάσκαλος|DHAH-skah-lohs] [σε|seh] [ένα|EH-nah] [σχολείο|skhoh-LEE-oh].",
+          "id": "His name is Bambang. He's a teacher at a school.",
+          "literal": "him — they-call — Bambang. he-is — teacher — at — a — school."
+        },
+        {
+          "speaker": "Ελένη:",
+          "text": "[Και|Keh] [αυτή|ahf-TEE] [είναι|EE-neh] [η|ee] [μητέρα|mee-TEH-rah] [σου|soo];",
+          "id": "And is this your mother?",
+          "literal": "and — this (fem.) — she-is — the — mother — your?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ναι|Neh]. [Το|Toh] [όνομά|Oh-noh-MAH] [της|tees] [είναι|EE-neh] [Σίτι|SEE-tee]. [Δουλεύει|Dhoo-LEH-vee] [σε|seh] [νοσοκομείο|noh-soh-koh-MEE-oh].",
+          "id": "Yes. Her name is Siti. She works at a hospital.",
+          "literal": "yes. the — name — her — it-is — Siti. she-works — at — hospital."
+        },
+        {
+          "speaker": "Ελένη:",
+          "text": "[Πολύ|Poh-LEE] [όμορφη|OH-mohr-fee]! [Και|Keh] [τα|tah] [παιδιά|peh-DHYAH];",
+          "id": "She's very pretty! And these kids?",
+          "literal": "very — pretty! and — the (pl.) — children?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Αυτά|Ahf-TAH] [είναι|EE-neh] [τα|tah] [ξαδέρφια|ksah-DHEHR-fyah] [μου|moo]. [Το|Toh] [σπίτι|SPEE-tee] [τους|toos] [είναι|EE-neh] [δίπλα|DHEE-plah] [στο|stoh] [δικό|dhee-KOH] [μας|mahs].",
+          "id": "Those are my cousins. Their house is next to ours.",
+          "literal": "these (neut. pl.) — they-are — the — cousins — my. the — house — their — it-is — next — to-the — own — our."
+        },
+        {
+          "speaker": "Ελένη:",
+          "text": "[Μεγάλη|Meh-GHAH-lee] [οικογένεια|ee-koh-YEH-nee-ah]!",
+          "id": "A big family!",
+          "literal": "big (fem.) — family!"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ναι|Neh]. [Μου|Moo] [λείπουν|LEE-poon] [πολύ|poh-LEE].",
+          "id": "Yes. I miss them a lot.",
+          "literal": "to-me — they-are-missing — much."
+        },
+        {
+          "speaker": "Ελένη:",
+          "text": "[Το|Toh] [καταλαβαίνω|kah-tah-lah-VEH-noh]. [Η|Ee] [οικογένεια|ee-koh-YEH-nee-ah] [είναι|EE-neh] [το|toh] [παν|pahn] [για|yah] [μας|mahs].",
+          "id": "I understand. Family is everything to us.",
+          "literal": "it — I-understand. the — family — it-is — the — all — for — us."
+        }
+      ],
+      "notes": [
+        "**The possessive stands AFTER the noun, and the noun keeps its article.** *το σπίτι **μου*** — literally \"the house of-me\". ⚠️ Two equally common mistakes: putting it in front, English-style (*μου το σπίτι*, wrong), and dropping the article (*σπίτι μου*, only right in forms of address such as *παιδί μου*).",
+        "**Great news: the possessive never changes to match the noun.** μου stays μου for masculine, feminine, neuter, singular, and plural: ο φίλος μου, η φίλη μου, το σπίτι μου, τα βιβλία μου — just like English \"my\". If you've ever wrestled with Italian *mio/mia/miei*, Greek is much kinder here.",
+        "⚠️ **The second accent: το όνομ**ά** μου.** If a noun is stressed on the third syllable from the end (**ό**-νο-μα, **οι**-κο-γέ-νει-α), attaching a possessive forces it to grow an extra accent on its last syllable: **το όνομά μου**, **η οικογένειά μου**, **το αυτοκίνητό του**, **ο δάσκαλός μας**. The rule: Greek doesn't allow the stress further back than the third syllable from the end, and the possessive counts as part of the word.",
+        "**Words stressed on the second-to-last or last syllable are unaffected:** το σπίτι μου, ο φίλος μου, η μητέρα μου — all keep one accent. So the second accent concerns only one group of words, and that group is easy to spot: look for an accent sitting far back.",
+        "**Πώς τον λένε; = \"what's his name?\"**, **Πώς τη λένε;** for a woman, **Πώς σε λένε;** for you, **Πώς σας λένε;** for you (polite). The pattern is exactly like *Με λένε* from Unit 1: literally \"how do they call him\".",
+        "**Δικός μου, δική μου, δικό μου = a stand-alone \"mine\".** Used when the noun isn't repeated, or for emphasis: *Το σπίτι **το δικό μου** είναι μικρό.* / *Δίπλα στο **δικό μας**.* ⚠️ Unlike plain μου, δικός **does** change with the gender of the noun.",
+        "**Μου λείπουν** literally means \"they are missing to me\" and means \"I miss them\". You'll fully unpack this reversed pattern in Unit 17 — for now, learn its two forms: *Μου λείπεις* (I miss you) and *Μου λείπουν* (I miss them).",
+        "**Ο μπαμπάς and η μαμά are casual; ο πατέρας and η μητέρα somewhat formal.** Greek adults keep calling their parents μπαμπά and μαμά all their lives — like \"Dad\" and \"Mom\" in English."
+      ],
+      "grammars": [
+        {
+          "title": "Seven possessives",
+          "body": [
+            "These seven words cover the whole Greek system of possession. They're all short and cling to the word before them like a tail."
+          ],
+          "table": {
+            "head": [
+              "Word",
+              "Say it",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "μου",
+                "moo",
+                "my",
+                "ο φίλος **μου** — my friend"
+              ],
+              [
+                "σου",
+                "soo",
+                "your",
+                "το σπίτι **σου** — your house"
+              ],
+              [
+                "του",
+                "too",
+                "his",
+                "η αδερφή **του** — his sister"
+              ],
+              [
+                "της",
+                "tees",
+                "her",
+                "το όνομά **της** — her name"
+              ],
+              [
+                "μας",
+                "mahs",
+                "our",
+                "η γειτονιά **μας** — our neighborhood"
+              ],
+              [
+                "σας",
+                "sahs",
+                "your (pl. / polite)",
+                "τα παιδιά **σας** — your children"
+              ],
+              [
+                "τους",
+                "toos",
+                "their",
+                "το σπίτι **τους** — their house"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **του and της split the job like English *his* and *her*.** *το βιβλίο **του*** means \"his book\" — and never \"her book\", which must be **της**. For English speakers this is familiar ground; just remember the choice follows the owner, not the thing owned.",
+            "**The polite form uses σας**, the same as the plural: *το όνομά σας* means both \"your name\" (polite) and \"your names\"."
+          ]
+        },
+        {
+          "title": "When the second accent appears",
+          "body": [
+            "This is the only part of the unit that really needs attention. Luckily, the rule fits in one sentence."
+          ],
+          "table": {
+            "head": [
+              "Noun",
+              "Stress on syllable",
+              "With a possessive",
+              "Changes?"
+            ],
+            "rows": [
+              [
+                "το σπίτι",
+                "second from the end",
+                "το σπίτι μου",
+                "no"
+              ],
+              [
+                "ο φίλος",
+                "second from the end",
+                "ο φίλος μου",
+                "no"
+              ],
+              [
+                "ο καφές",
+                "last",
+                "ο καφές μου",
+                "no"
+              ],
+              [
+                "το **ό**νομα",
+                "**third** from the end",
+                "το **ό**νομ**ά** μου",
+                "**yes**"
+              ],
+              [
+                "το αυτοκ**ί**νητο",
+                "**third** from the end",
+                "το αυτοκ**ί**νητ**ό** μου",
+                "**yes**"
+              ],
+              [
+                "η οικογ**έ**νεια",
+                "**third** from the end",
+                "η οικογ**έ**νει**ά** μου",
+                "**yes**"
+              ],
+              [
+                "ο δ**ά**σκαλος",
+                "**third** from the end",
+                "ο δ**ά**σκαλ**ό**ς μου",
+                "**yes**"
+              ]
+            ]
+          },
+          "after": [
+            "The rule: **Greek doesn't allow the stress further back than the third syllable from the end**, and the possessive counts. Since το όνομα + μου makes four syllables, the original stress falls too far back, so the word grows a backup stress at the end.",
+            "⚠️ Skipping the second accent is a **writing** mistake, not a speaking one — in speech you stress both places naturally if you follow the rhythm. If you don't write much yet, don't spend time on this now; just recognize it when you see it."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Family members",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "ΕΛΛΗΝΙΚΑ",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "η οικογένεια",
+              "ee ee-koh-YEH-nee-ah",
+              "family"
+            ],
+            [
+              "ο πατέρας / ο μπαμπάς",
+              "pah-TEH-rahs / bah-BAHS",
+              "father / dad (casual)"
+            ],
+            [
+              "η μητέρα / η μαμά",
+              "mee-TEH-rah / mah-MAH",
+              "mother / mom (casual)"
+            ],
+            [
+              "οι γονείς",
+              "ee ghoh-NEES",
+              "parents"
+            ],
+            [
+              "ο γιος",
+              "oh yohs",
+              "son"
+            ],
+            [
+              "η κόρη",
+              "ee KOH-ree",
+              "daughter"
+            ],
+            [
+              "ο αδερφός / η αδερφή",
+              "ah-dhehr-FOHS / ah-dhehr-FEE",
+              "brother / sister"
+            ],
+            [
+              "ο παππούς",
+              "oh pah-POOS",
+              "grandfather"
+            ],
+            [
+              "η γιαγιά",
+              "ee yah-YAH",
+              "grandmother"
+            ],
+            [
+              "ο θείος / η θεία",
+              "THEE-ohs / THEE-ah",
+              "uncle / aunt"
+            ],
+            [
+              "το ξαδέρφι",
+              "toh ksah-DHEHR-fee",
+              "cousin"
+            ],
+            [
+              "ο άντρας / η γυναίκα",
+              "AHN-drahs / yee-NEH-kah",
+              "husband / wife ⚠️ also \"man / woman\""
+            ],
+            [
+              "το εγγόνι",
+              "toh ehn-GOH-nee",
+              "grandchild"
+            ],
+            [
+              "ο συγγενής",
+              "oh seen-geh-NEES",
+              "relative"
+            ],
+            [
+              "μεγάλος / μικρός",
+              "meh-GHAH-lohs / mee-KROHS",
+              "older / younger sibling (literally: big / little)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three things about Greek names",
+          "items": [
+            "**Greek names repeat across generations by an almost fixed rule**: the first son is named after his paternal grandfather, the first daughter after her paternal grandmother. As a result, one extended family can have four people called Γιώργος. Nicknames sort out the rest.",
+            "**Ημέρα ονόματος — the name day — matters more than the birthday.** Every Greek name is tied to a saint's day, and on that day the person receives **Χρόνια πολλά** (*KHROH-nyah poh-LAH*, \"many years\") from everyone they know. The same wish is used for birthdays, Christmas, and New Year.",
+            "⚠️ **Άντρας means \"man\" and \"husband\", γυναίκα means \"woman\" and \"wife\".** Only the possessive tells them apart: *μια γυναίκα* = a woman, *η γυναίκα μου* = my wife. French *femme* and German *Frau* work the same way."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "el": "μου, σου, του, της",
+      "baca": "moo, soo, too, tees",
+      "en": "my, your, his, her (possessive)"
+    },
+    {
+      "el": "μας, σας, τους",
+      "baca": "mahs, sahs, toos",
+      "en": "our, your (pl.), their (possessive)"
+    },
+    {
+      "el": "δικός μου",
+      "baca": "dhee-KOHS moo",
+      "en": "mine (stand-alone)"
+    },
+    {
+      "el": "η οικογένεια",
+      "baca": "ee ee-koh-YEH-nee-ah",
+      "en": "family"
+    },
+    {
+      "el": "ο πατέρας / η μητέρα",
+      "baca": "pah-TEH-rahs / mee-TEH-rah",
+      "en": "father / mother"
+    },
+    {
+      "el": "ο μπαμπάς / η μαμά",
+      "baca": "bah-BAHS / mah-MAH",
+      "en": "dad / mom"
+    },
+    {
+      "el": "οι γονείς",
+      "baca": "ee ghoh-NEES",
+      "en": "parents"
+    },
+    {
+      "el": "ο γιος / η κόρη",
+      "baca": "oh yohs / ee KOH-ree",
+      "en": "son / daughter"
+    },
+    {
+      "el": "ο παππούς / η γιαγιά",
+      "baca": "pah-POOS / yah-YAH",
+      "en": "grandfather / grandmother"
+    },
+    {
+      "el": "ο θείος / η θεία",
+      "baca": "THEE-ohs / THEE-ah",
+      "en": "uncle / aunt"
+    },
+    {
+      "el": "το ξαδέρφι",
+      "baca": "toh ksah-DHEHR-fee",
+      "en": "cousin"
+    },
+    {
+      "el": "το όνομα",
+      "baca": "toh OH-noh-mah",
+      "en": "name"
+    },
+    {
+      "el": "πώς τον λένε;",
+      "baca": "pohs tohn LEH-neh",
+      "en": "what's his name?"
+    },
+    {
+      "el": "η φωτογραφία",
+      "baca": "ee foh-toh-ghrah-FEE-ah",
+      "en": "photo"
+    },
+    {
+      "el": "το νοσοκομείο",
+      "baca": "toh noh-soh-koh-MEE-oh",
+      "en": "hospital"
+    },
+    {
+      "el": "το σχολείο",
+      "baca": "toh skhoh-LEE-oh",
+      "en": "school"
+    },
+    {
+      "el": "μου λείπει / λείπουν",
+      "baca": "moo LEE-pee / LEE-poon",
+      "en": "I miss him, her / I miss them"
+    },
+    {
+      "el": "χρόνια πολλά",
+      "baca": "KHROH-nyah poh-LAH",
+      "en": "many happy returns"
+    },
+    {
+      "el": "το παν",
+      "baca": "toh pahn",
+      "en": "everything"
+    },
+    {
+      "el": "ο συγγενής",
+      "baca": "oh seen-geh-NEES",
+      "en": "relative"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate, and don't forget the article.",
+      "items": [
+        "my friend (male)",
+        "your mother",
+        "their house",
+        "our children",
+        "his sister",
+        "your name (polite)"
+      ]
+    },
+    {
+      "prompt": "Add the second accent where needed. Rewrite the whole phrase.",
+      "items": [
+        "το ονομα μου",
+        "το σπιτι μου",
+        "η οικογενεια μας",
+        "ο φιλος σου",
+        "το αυτοκινητο του"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "πατέρας / ο / είναι / αυτός / μου",
+        "λένε / πώς / τον / ;",
+        "της / όνομα / το / Σίτι / είναι",
+        "τους / δίπλα / σπίτι / είναι / το",
+        "πολύ / λείπουν / μου"
+      ]
+    },
+    {
+      "prompt": "Translate into Greek.",
+      "items": [
+        "This is my father.",
+        "What's her name?",
+        "My family is in Indonesia.",
+        "Their house is big.",
+        "I miss my mother."
+      ]
+    }
+  ],
+  "answers": [
+    "ο φίλος μου — η μητέρα σου — το σπίτι τους — τα παιδιά μας — η αδερφή του — το όνομά σας",
+    "το όνομά μου — το σπίτι μου — η οικογένειά μας — ο φίλος σου — το αυτοκίνητό του",
+    "Αυτός είναι ο πατέρας μου. — Πώς τον λένε; — Το όνομά της είναι Σίτι. — Το σπίτι τους είναι δίπλα. — Μου λείπουν πολύ.",
+    "Αυτός είναι ο πατέρας μου. — Πώς τη λένε; — Η οικογένειά μου είναι στην Ινδονησία. — Το σπίτι τους είναι μεγάλο. — Μου λείπει η μητέρα μου."
+  ]
+}

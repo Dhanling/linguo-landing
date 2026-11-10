@@ -1,0 +1,472 @@
+{
+  "title": "I have two siblings",
+  "title_target": "Έχω δύο αδέρφια — Eh-khoh dhee-oh ah-dhehr-fyah",
+  "goal": "Say what you have and don't have, give your age, and count to a hundred — including three numbers that change with the gender of the noun.",
+  "bekal": [
+    "build the six forms of έχω",
+    "count from zero to a hundred",
+    "choose ένας, μία, or ένα correctly",
+    "ask and give someone's age",
+    "tell έχω apart from υπάρχει"
+  ],
+  "dialogs": [
+    {
+      "title": "ΔΙΑΛΟΓΟΣ — Family and age",
+      "intro": "Eleni and Ana chat on the balcony. Notice that the number one changes three times in this dialogue, while the number two doesn't change at all.",
+      "lines": [
+        {
+          "speaker": "Ελένη:",
+          "text": "[Έχεις|EH-khees] [αδέρφια|ah-DHEHR-fyah], [Άννα|AH-nah];",
+          "id": "Do you have any brothers or sisters, Ana?",
+          "literal": "you-have — siblings, Anna?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ναι|Neh], [έχω|EH-khoh] [δύο|DHEE-oh]: [έναν|EH-nahn] [αδερφό|ah-dhehr-FOH] [και|keh] [μία|MEE-ah] [αδερφή|ah-dhehr-FEE].",
+          "id": "Yes, I have two: one brother and one sister.",
+          "literal": "yes, I-have — two: one (masc.) — brother — and — one (fem.) — sister."
+        },
+        {
+          "speaker": "Ελένη:",
+          "text": "[Πόσων|POH-sohn] [χρονών|khroh-NOHN] [είναι|EE-neh];",
+          "id": "How old are they?",
+          "literal": "how-many — years — they-are?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ο|Oh] [αδερφός|ah-dhehr-FOHS] [μου|moo] [είναι|EE-neh] [είκοσι|EE-koh-see] [πέντε|PEHN-deh] [και|keh] [η|ee] [αδερφή|ah-dhehr-FEE] [μου|moo] [δεκαοχτώ|dheh-kah-ohkh-TOH].",
+          "id": "My brother is twenty-five, my sister is eighteen.",
+          "literal": "the — brother — my — he-is — twenty — five — and — the — sister — my — eighteen."
+        },
+        {
+          "speaker": "Ελένη:",
+          "text": "[Κι|Kee] [εσύ|eh-SEE];",
+          "id": "And you?",
+          "literal": "and — you?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Είμαι|EE-meh] [είκοσι|EE-koh-see] [δύο|DHEE-oh]. [Εσύ|Eh-SEE] [πόσων|POH-sohn] [χρονών|khroh-NOHN] [είσαι|EE-seh];",
+          "id": "I'm twenty-two. How old are you?",
+          "literal": "I-am — twenty — two. you — how-many — years — you-are?"
+        },
+        {
+          "speaker": "Ελένη:",
+          "text": "[Είκοσι|EE-koh-see] [εννιά|eh-NYAH]. [Έχω|EH-khoh] [μόνο|MOH-noh] [μία|MEE-ah] [αδερφή|ah-dhehr-FEE].",
+          "id": "Twenty-nine. I only have one sister.",
+          "literal": "twenty — nine. I-have — only — one (fem.) — sister."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Έχετε|EH-kheh-teh] [σπίτι|SPEE-tee] [στην|steen] [Αθήνα|ah-THEE-nah];",
+          "id": "Do you have a house in Athens?",
+          "literal": "you-have (pl.) — house — in-the — Athens?"
+        },
+        {
+          "speaker": "Ελένη:",
+          "text": "[Έχουμε|EH-khoo-meh] [ένα|EH-nah] [μικρό|mee-KROH] [διαμέρισμα|dhee-ah-MEH-ree-smah] [εδώ|eh-DHOH] [και|keh] [ένα|EH-nah] [σπίτι|SPEE-tee] [στο|stoh] [χωριό|khoh-RYOH].",
+          "id": "We have a small apartment here and a house in the village.",
+          "literal": "we-have — a (neut.) — small — apartment — here — and — a (neut.) — house — in-the — village."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Τέλεια|TEH-lee-ah]! [Έχεις|EH-khees] [και|keh] [αυτοκίνητο|ahf-toh-KEE-nee-toh];",
+          "id": "Great! Do you have a car too?",
+          "literal": "perfect! you-have — also — car?"
+        },
+        {
+          "speaker": "Ελένη:",
+          "text": "[Όχι|OH-khee], [δεν|dhehn] [έχω|EH-khoh] [αυτοκίνητο|ahf-toh-KEE-nee-toh]. [Έχω|EH-khoh] [όμως|OH-mohs] [μια|myah] [μηχανή|mee-khah-NEE]!",
+          "id": "No, I don't have a car. But I have a motorbike!",
+          "literal": "no, not — I-have — car. I-have — however — a — motorbike!"
+        }
+      ],
+      "notes": [
+        "**Έχω is an ordinary group A verb** — its endings are exactly the same as μένω from the last unit: έχω, έχεις, έχει, έχουμε, έχετε, έχουν. The only thing to watch is the χ, which isn't h but *kh*, like the *ch* in Scottish *loch*.",
+        "⚠️ **Age uses είμαι, not έχω.** *Είμαι είκοσι δύο* — \"I am twenty-two\". That happens to match English, and differs from French or Spanish, which use \"have\". If you've learned either of those, watch out: *έχω είκοσι δύο* sounds as if you own twenty-two of something.",
+        "**Πόσων χρονών είσαι;** literally means \"of how many years are you?\". The answer can repeat χρονών or not: *Είμαι είκοσι δύο χρονών* or just *Είκοσι δύο*. The second is heard far more often.",
+        "⚠️ **The numbers one, three, and four change with the gender of the noun; the rest don't.** ένας αδερφός, μία αδερφή, ένα σπίτι. τρεις μέρες but τρία παιδιά. τέσσερις ώρες but τέσσερα ευρώ. Twenty-two to a hundred never change again — unless they end in one, three, or four: είκοσι **μία** ώρες.",
+        "**Έναν takes a final -ν** when the next word begins with a vowel or one of κ, π, τ, μπ, ντ, γκ, ξ, ψ: *έναν αδερφό*, *έναν καφέ*. Before other letters the -ν often drops: *ένα φίλο*. ⚠️ When in doubt, write it in full — it's never considered wrong, just slightly more formal.",
+        "**Δεν έχω αυτοκίνητο — no article.** When you say you don't have something in general, the noun stands bare, just like English \"I don't have a car\". Compare: *Δεν έχω **το** αυτοκίνητο* means \"I don't have the car\", i.e. a specific car already mentioned.",
+        "**Όμως (*OH-mohs*, \"however\") goes in the middle of the sentence**, not at the front like αλλά. *Δεν έχω αυτοκίνητο. Έχω **όμως** μια μηχανή.* The two words sit in different places but mean the same.",
+        "⚠️ **Έχω means \"have\", not \"there is\".** For \"there is / there are\", Greek uses **υπάρχει** (*ee-PAHR-khee*): *Υπάρχει μια τράπεζα εδώ κοντά;* — \"Is there a bank near here?\". The plural is **υπάρχουν**. Translating \"there is\" with έχω is a classic beginner's slip."
+      ],
+      "grammars": [
+        {
+          "title": "Έχω and the numbers one to twenty",
+          "body": [
+            "You've already mastered έχω if you know the group A endings from the last unit. What's really new here is the numbers — and three of them need attention."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Masculine",
+              "Feminine",
+              "Neuter"
+            ],
+            "rows": [
+              [
+                "1",
+                "**ένας** καφές",
+                "**μία / μια** μπύρα",
+                "**ένα** νερό"
+              ],
+              [
+                "2",
+                "**δύο** καφέδες",
+                "**δύο** μπύρες",
+                "**δύο** νερά"
+              ],
+              [
+                "3",
+                "**τρεις** καφέδες",
+                "**τρεις** μπύρες",
+                "**τρία** νερά"
+              ],
+              [
+                "4",
+                "**τέσσερις** καφέδες",
+                "**τέσσερις** μπύρες",
+                "**τέσσερα** νερά"
+              ],
+              [
+                "5–20",
+                "**πέντε, έξι…** — never change",
+                "same",
+                "same"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that **τρεις** and **τέσσερις** are used for masculine **and** feminine at once; only the neuter form differs. So there are really just two pairs to memorize.",
+            "⚠️ **μία** and **μια** are both correct. μία (*MEE-ah*, two syllables) is a bit more emphatic and used when counting; μια (*myah*, one syllable) is used when it means \"a / an\". In everyday speech, μια wins by a mile."
+          ]
+        },
+        {
+          "title": "Zero to a hundred",
+          "body": [
+            "Greek numbers are built exactly like English ones: tens first, then units, with no \"and\" in between. Είκοσι πέντε = twenty-five. No surprises at all here."
+          ],
+          "table": {
+            "head": [
+              "",
+              "",
+              "",
+              ""
+            ],
+            "rows": [
+              [
+                "0 μηδέν *mee-DHEHN*",
+                "1 ένα *EH-nah*",
+                "2 δύο *DHEE-oh*",
+                "3 τρία *TREE-ah*"
+              ],
+              [
+                "4 τέσσερα *TEH-seh-rah*",
+                "5 πέντε *PEHN-deh*",
+                "6 έξι *EH-ksee*",
+                "7 εφτά *ehf-TAH*"
+              ],
+              [
+                "8 οχτώ *ohkh-TOH*",
+                "9 εννιά *eh-NYAH*",
+                "10 δέκα *DHEH-kah*",
+                "11 έντεκα *EHN-deh-kah*"
+              ],
+              [
+                "12 δώδεκα *DHOH-dheh-kah*",
+                "13 δεκατρία",
+                "14 δεκατέσσερα",
+                "15 δεκαπέντε"
+              ],
+              [
+                "16 δεκαέξι",
+                "17 δεκαεφτά",
+                "18 δεκαοχτώ",
+                "19 δεκαεννιά"
+              ],
+              [
+                "20 είκοσι *EE-koh-see*",
+                "30 τριάντα *tree-AHN-dah*",
+                "40 σαράντα *sah-RAHN-dah*",
+                "50 πενήντα *peh-NEEN-dah*"
+              ],
+              [
+                "60 εξήντα *eh-KSEEN-dah*",
+                "70 εβδομήντα",
+                "80 ογδόντα",
+                "90 ενενήντα"
+              ],
+              [
+                "100 εκατό *eh-kah-TOH*",
+                "21 είκοσι ένα",
+                "35 τριάντα πέντε",
+                "99 ενενήντα εννιά"
+              ]
+            ]
+          },
+          "after": [
+            "Thirteen to nineteen are formed by sticking δεκα- in front: δεκα+τρία → δεκατρία. The only ones that break the pattern are έντεκα (11) and δώδεκα (12), which are older forms — much like English *eleven* and *twelve*.",
+            "⚠️ **εφτά / επτά, οχτώ / οκτώ, εννιά / εννέα** — both are used. The first is everyday, the second more formal, and it's the one printed on tickets and notice boards. Recognize both, say the first."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Having and not having",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The things most often mentioned in sentences with έχω. Remember: always learn a noun with its article, even though the article is dropped in \"don't have\" sentences."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "ΕΛΛΗΝΙΚΑ",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "το διαμέρισμα",
+              "toh dhee-ah-MEH-ree-smah",
+              "apartment"
+            ],
+            [
+              "το αυτοκίνητο",
+              "toh ahf-toh-KEE-nee-toh",
+              "car"
+            ],
+            [
+              "η μηχανή",
+              "ee mee-khah-NEE",
+              "motorbike, machine"
+            ],
+            [
+              "το ποδήλατο",
+              "toh poh-DHEE-lah-toh",
+              "bicycle"
+            ],
+            [
+              "το κινητό",
+              "toh kee-nee-TOH",
+              "mobile phone"
+            ],
+            [
+              "ο υπολογιστής",
+              "oh ee-poh-loh-yee-STEES",
+              "computer"
+            ],
+            [
+              "τα λεφτά",
+              "tah lehf-TAH",
+              "money"
+            ],
+            [
+              "το κλειδί",
+              "toh klee-DHEE",
+              "key"
+            ],
+            [
+              "η δουλειά",
+              "ee dhoo-LYAH",
+              "job, work"
+            ],
+            [
+              "ο χρόνος",
+              "oh KHROH-nohs",
+              "time"
+            ],
+            [
+              "τα αδέρφια",
+              "tah ah-DHEHR-fyah",
+              "siblings"
+            ],
+            [
+              "το χωριό",
+              "toh khoh-RYOH",
+              "village"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Έχω, υπάρχει, and the most common mistake",
+          "items": [
+            "**Έχω** = to have, to have on me. *Έχω δύο αδέρφια.* — I have two siblings.",
+            "**Υπάρχει / υπάρχουν** = there is / there are. *Υπάρχει τράπεζα εδώ κοντά;* — Is there a bank near here? *Υπάρχουν πολλά μαγαζιά.* — There are lots of shops.",
+            "⚠️ English keeps \"have\" and \"there is\" apart, so you start with an advantage. But don't be thrown when you hear *Έχει τράπεζα εδώ;* (\"does it have a bank here?\") on Greek streets — it's very casual spoken Greek. In exams, in letters, and with people you don't know yet, use υπάρχει.",
+            "For \"there isn't\": **Δεν υπάρχει πρόβλημα** — no problem. This sentence will save you many times over."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "el": "έχω",
+      "baca": "EH-khoh",
+      "en": "to have"
+    },
+    {
+      "el": "δεν έχω",
+      "baca": "dhehn EH-khoh",
+      "en": "not to have"
+    },
+    {
+      "el": "υπάρχει / υπάρχουν",
+      "baca": "ee-PAHR-khee / ee-PAHR-khoon",
+      "en": "there is, there are"
+    },
+    {
+      "el": "τα αδέρφια",
+      "baca": "tah ah-DHEHR-fyah",
+      "en": "siblings"
+    },
+    {
+      "el": "ο αδερφός / η αδερφή",
+      "baca": "oh ah-dhehr-FOHS / ee ah-dhehr-FEE",
+      "en": "brother / sister"
+    },
+    {
+      "el": "πόσων χρονών;",
+      "baca": "POH-sohn khroh-NOHN",
+      "en": "how old?"
+    },
+    {
+      "el": "ένας, μία, ένα",
+      "baca": "EH-nahs, MEE-ah, EH-nah",
+      "en": "one (masc., fem., neut.)"
+    },
+    {
+      "el": "δύο",
+      "baca": "DHEE-oh",
+      "en": "two"
+    },
+    {
+      "el": "τρεις / τρία",
+      "baca": "trees / TREE-ah",
+      "en": "three (masc.-fem. / neut.)"
+    },
+    {
+      "el": "τέσσερις / τέσσερα",
+      "baca": "TEH-seh-rees / TEH-seh-rah",
+      "en": "four (masc.-fem. / neut.)"
+    },
+    {
+      "el": "πέντε, έξι, εφτά",
+      "baca": "PEHN-deh, EH-ksee, ehf-TAH",
+      "en": "five, six, seven"
+    },
+    {
+      "el": "οχτώ, εννιά, δέκα",
+      "baca": "ohkh-TOH, eh-NYAH, DHEH-kah",
+      "en": "eight, nine, ten"
+    },
+    {
+      "el": "είκοσι",
+      "baca": "EE-koh-see",
+      "en": "twenty"
+    },
+    {
+      "el": "εκατό",
+      "baca": "eh-kah-TOH",
+      "en": "a hundred"
+    },
+    {
+      "el": "το διαμέρισμα",
+      "baca": "toh dhee-ah-MEH-ree-smah",
+      "en": "apartment"
+    },
+    {
+      "el": "το αυτοκίνητο",
+      "baca": "toh ahf-toh-KEE-nee-toh",
+      "en": "car"
+    },
+    {
+      "el": "η μηχανή",
+      "baca": "ee mee-khah-NEE",
+      "en": "motorbike, machine"
+    },
+    {
+      "el": "το κινητό",
+      "baca": "toh kee-nee-TOH",
+      "en": "mobile phone"
+    },
+    {
+      "el": "τα λεφτά",
+      "baca": "tah lehf-TAH",
+      "en": "money"
+    },
+    {
+      "el": "το χωριό",
+      "baca": "toh khoh-RYOH",
+      "en": "village"
+    },
+    {
+      "el": "μόνο",
+      "baca": "MOH-noh",
+      "en": "only"
+    },
+    {
+      "el": "όμως",
+      "baca": "OH-mohs",
+      "en": "however (mid-sentence)"
+    },
+    {
+      "el": "ο χρόνος",
+      "baca": "oh KHROH-nohs",
+      "en": "time, year"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose ένας, μία, or ένα.",
+      "items": [
+        "Έχω ____ αδερφή.",
+        "Θέλω ____ καφέ.",
+        "Έχουμε ____ σπίτι στο χωριό.",
+        "Υπάρχει ____ τράπεζα εδώ;",
+        "Είναι ____ μεγάλο πρόβλημα."
+      ]
+    },
+    {
+      "prompt": "Add the right ending of έχω.",
+      "items": [
+        "Εγώ ____ δύο αδέρφια.",
+        "Εσύ ____ αυτοκίνητο;",
+        "Η Ελένη ____ μια μηχανή.",
+        "Εμείς ____ ένα διαμέρισμα.",
+        "Αυτοί δεν ____ λεφτά."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "χρονών / πόσων / είσαι",
+        "δύο / έχω / αδέρφια",
+        "αυτοκίνητο / δεν / έχω",
+        "μία / έχω / αδερφή / μόνο",
+        "τράπεζα / υπάρχει / εδώ / ;"
+      ]
+    },
+    {
+      "prompt": "Translate into Greek.",
+      "items": [
+        "I have one sister.",
+        "I'm twenty-two.",
+        "We don't have a car.",
+        "Is there a shop near here?",
+        "He has three children."
+      ]
+    }
+  ],
+  "answers": [
+    "μία — έναν — ένα — μία — ένα",
+    "έχω — έχεις — έχει — έχουμε — έχουν",
+    "Πόσων χρονών είσαι; — Έχω δύο αδέρφια. — Δεν έχω αυτοκίνητο. — Έχω μόνο μία αδερφή. — Υπάρχει τράπεζα εδώ;",
+    "Έχω μία αδερφή. — Είμαι είκοσι δύο. — Δεν έχουμε αυτοκίνητο. — Υπάρχει μαγαζί εδώ κοντά; — Έχει τρία παιδιά."
+  ]
+}

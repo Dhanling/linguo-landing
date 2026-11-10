@@ -1,0 +1,452 @@
+{
+  "title": "What is this? Three genders",
+  "title_target": "Τι είναι αυτό; — Tee ee-neh ahf-toh;",
+  "goal": "Ask for and name objects, use the articles ο / η / το that can't be left out, and accept that every Greek noun has a gender — including tables, the sea, and problems.",
+  "bekal": [
+    "ask \"what is this?\" and \"who is that?\"",
+    "name objects together with the right article",
+    "recognize gender from the ending of the word",
+    "use αυτός / αυτή / αυτό to match the noun",
+    "use the article in front of people's names"
+  ],
+  "dialogs": [
+    {
+      "title": "ΔΙΑΛΟΓΟΣ — At Eleni's apartment",
+      "intro": "Ana is invited to drop by her classmate Eleni's place. Notice that **not a single** noun below stands alone: every one is preceded by ο, η, το, or ένας, μία, ένα.",
+      "lines": [
+        {
+          "speaker": "Ελένη:",
+          "text": "[Καλώς|Kah-LOHS] [ήρθες|EER-thehs], [Άννα|AH-nah]! [Αυτό|Ahf-TOH] [είναι|EE-neh] [το|toh] [σπίτι|SPEE-tee] [μου|moo].",
+          "id": "Welcome, Ana! This is my home.",
+          "literal": "well — you-came, Anna! this — it-is — the — house — my."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Τι|Tee] [ωραίο|oh-REH-oh]! [Τι|Tee] [είναι|EE-neh] [αυτό|ahf-TOH];",
+          "id": "How lovely! What's this?",
+          "literal": "what — beautiful! what — it-is — this?"
+        },
+        {
+          "speaker": "Ελένη:",
+          "text": "[Αυτό|Ahf-TOH] [είναι|EE-neh] [ένα|EH-nah] [φλιτζάνι|flee-DZAH-nee]. [Και|Keh] [αυτή|ahf-TEE] [είναι|EE-neh] [η|ee] [κουζίνα|koo-ZEE-nah].",
+          "id": "It's a cup. And this is the kitchen.",
+          "literal": "this — it-is — a — cup. and — this (fem.) — it-is — the — kitchen."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Και|Keh] [αυτός|ahf-TOHS]; [Ποιος|Pyohs] [είναι|EE-neh] [αυτός|ahf-TOHS];",
+          "id": "And him? Who's that?",
+          "literal": "and — this (masc.)? who — he-is — this (masc.)?"
+        },
+        {
+          "speaker": "Ελένη:",
+          "text": "[Αυτός|Ahf-TOHS] [είναι|EE-neh] [ο|oh] [Νίκος|NEE-kohs], [ο|oh] [αδερφός|ah-dhehr-FOHS] [μου|moo].",
+          "id": "That's Nikos, my brother.",
+          "literal": "this (masc.) — he-is — the — Nikos, the — brother — my."
+        },
+        {
+          "speaker": "Νίκος:",
+          "text": "[Γεια|Yah] [σου|soo]! [Είσαι|EE-seh] [η|ee] [φίλη|FEE-lee] [της|tees] [Ελένης|Eh-LEH-nees];",
+          "id": "Hi! Are you Eleni's friend?",
+          "literal": "health — to-you! you-are — the — friend (fem.) — of — Eleni?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ναι|Neh]! [Είμαι|EE-meh] [η|ee] [Άννα|AH-nah]. [Χαίρω|KHEH-roh] [πολύ|poh-LEE].",
+          "id": "Yes! I'm Ana. Nice to meet you.",
+          "literal": "yes! I-am — the — Anna. I-rejoice — much."
+        },
+        {
+          "speaker": "Νίκος:",
+          "text": "[Ο|Oh] [καφές|kah-FEHS] [είναι|EE-neh] [έτοιμος|EH-tee-mohs]. [Και|Keh] [το|toh] [νερό|neh-ROH] [είναι|EE-neh] [κρύο|KREE-oh].",
+          "id": "The coffee is ready. And the water is cold.",
+          "literal": "the — coffee — it-is — ready. and — the — water — it-is — cold."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Τέλεια|TEH-lee-ah]! [Ένα|EH-nah] [λεπτό|lehp-TOH] — [τι|tee] [είναι|EE-neh] [αυτά|ahf-TAH];",
+          "id": "Perfect! One moment — what are those?",
+          "literal": "perfect! one — minute — what — they-are — these (neut. pl.)?"
+        },
+        {
+          "speaker": "Ελένη:",
+          "text": "[Αυτά|Ahf-TAH] [είναι|EE-neh] [τα|tah] [βιβλία|vee-VLEE-ah] [μου|moo]. [Είμαι|EE-meh] [δασκάλα|dhah-SKAH-lah].",
+          "id": "Those are my books. I'm a teacher.",
+          "literal": "these (neut. pl.) — they-are — the (pl.) — books — my. I-am — teacher (fem.)."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Πολύ|Poh-LEE] [ωραία|oh-REH-ah]! [Η|Ee] [Ελλάδα|eh-LAH-dhah] [είναι|EE-neh] [όμορφη|OH-mohr-fee].",
+          "id": "Very nice! Greek is beautiful.",
+          "literal": "very — beautiful! the — Greek — it-is — lovely."
+        }
+      ],
+      "notes": [
+        "**Every Greek noun has one of three genders, and the article shows which.** ο for masculine, η for feminine, το for neuter. ⚠️ This has nothing to do with living things: **ο καφές** coffee is masculine, **η θάλασσα** the sea is feminine, **το νερό** water is neuter. There's no logic to look for — just three thousand years of habit.",
+        "**So always learn a noun together with its article.** Not *σπίτι* but **το σπίτι**. Not *καφές* but **ο καφές**. It's a small habit that saves you months later, when adjectives and articles have to agree too.",
+        "⚠️ **The article is also used in front of people's names.** *Είμαι **η** Άννα.* *Αυτός είναι **ο** Νίκος.* To English ears this sounds like \"I'm the Anna\", but to Greeks it feels warm and everyday, not odd at all. Dropping it actually sounds stiff, like an official announcement.",
+        "**Country names take the article too**: **η** Ελλάδα, **η** Ινδονησία, **η** Ιαπωνία, **η** Ιταλία, but **ο** Καναδάς and **τα** Ηνωμένα Έθνη. Most country names happen to be feminine.",
+        "**Ένα φλιτζάνι means both \"a cup\" and \"one cup\".** Greek uses the number one as its indefinite article, just like French *un/une*. English \"a\" works the same way, so this one is easy — only remember that it changes with gender.",
+        "**Καλώς ήρθες / Καλώς ήρθατε** (*kah-LOHS EER-thehs / EER-thah-teh*) = \"welcome\", casual and polite. The reply isn't \"thank you\" but **Καλώς σε βρήκα** / **Καλώς σας βρήκα** — \"glad to find you well\". This pair sounds very Greek and instantly makes your host smile.",
+        "**Ποιος; means \"who\" and changes with gender**: Ποιος είναι; (a man), Ποια είναι; (a woman), Ποιο είναι; (neuter — here it means \"which one\"). ⚠️ Don't confuse it with **Πού;** (*poo*), which means \"where\" — when written fast, they differ by a single letter."
+      ],
+      "grammars": [
+        {
+          "title": "Three genders and their articles",
+          "body": [
+            "This table is the skeleton of the whole Greek language. Everything that comes later — adjectives, pronouns, the object form — leans on it. The good news: the basic table has only six boxes."
+          ],
+          "table": {
+            "head": [
+              "",
+              "Masculine (ΑΡΣΕΝΙΚΟ)",
+              "Feminine (ΘΗΛΥΚΟ)",
+              "Neuter (ΟΥΔΕΤΕΡΟ)"
+            ],
+            "rows": [
+              [
+                "Singular",
+                "**ο** φίλος",
+                "**η** φίλη",
+                "**το** σπίτι"
+              ],
+              [
+                "Plural",
+                "**οι** φίλοι",
+                "**οι** φίλες",
+                "**τα** σπίτια"
+              ],
+              [
+                "\"A / an\"",
+                "**ένας** φίλος",
+                "**μία** φίλη",
+                "**ένα** σπίτι"
+              ],
+              [
+                "Common endings",
+                "-ος, -ας, -ης",
+                "-α, -η",
+                "-ο, -ι, -μα"
+              ],
+              [
+                "Example",
+                "ο καφές, ο δρόμος, ο άντρας",
+                "η ώρα, η πόλη, η θάλασσα",
+                "το νερό, το παιδί, το πρόβλημα"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Masculine and feminine plurals share the same article: οι.** Only the noun ending tells them apart (-οι vs -ες). One less thing to memorize.",
+            "The ending is a correct guess about eight times out of ten. The most common traps: **η οδός** (street) is feminine even though it ends in -ος, and **το κορίτσι** (girl) is **neuter** even though it clearly refers to a girl. That last one is no insult — all the little words ending in -ι are neuter, including **το αγόρι** (boy) and **το παιδί** (child)."
+          ]
+        },
+        {
+          "title": "Αυτός, αυτή, αυτό — a \"this\" that follows the noun",
+          "body": [
+            "English has one word \"this\" for everything. Greek picks its form according to the gender of the thing you're pointing at — and that form is exactly the same as the pronoun \"he / she / it\"."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Say it",
+              "Used for",
+              "Example"
+            ],
+            "rows": [
+              [
+                "αυτός",
+                "ahf-TOHS",
+                "masculine things/people",
+                "Αυτός είναι ο Νίκος. — This is Nikos."
+              ],
+              [
+                "αυτή",
+                "ahf-TEE",
+                "feminine things/people",
+                "Αυτή είναι η Ελένη. — This is Eleni."
+              ],
+              [
+                "αυτό",
+                "ahf-TOH",
+                "neuter things **and** anything not yet identified",
+                "Τι είναι αυτό; — What is this?"
+              ],
+              [
+                "αυτοί / αυτές / αυτά",
+                "ahf-TEE / ahf-TEHS / ahf-TAH",
+                "plural masc. / fem. / neut.",
+                "Αυτά είναι τα βιβλία μου."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **If you don't know what the thing is yet, use αυτό.** The question *Τι είναι αυτό;* is always neuter, because you can't know the gender before you know the name. Only after the answer does the form adjust: *Αυτή είναι η κουζίνα.*",
+            "For a more distant \"that\", Greek has **εκείνος, εκείνη, εκείνο** (*eh-KEE-nohs*). In everyday conversation αυτός covers both, so don't rush to learn it."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The things you'll point at most often",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Notice that the first column always includes the article. Cover the English with your finger and try to guess the gender — if you get eight out of twenty right, that's perfectly normal for day two."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Masculine",
+            "Feminine",
+            "Neuter"
+          ],
+          "rows": [
+            [
+              "ο καφές *kah-FEHS* — coffee",
+              "η πόρτα *POHR-tah* — door",
+              "το νερό *neh-ROH* — water"
+            ],
+            [
+              "ο δρόμος *DHROH-mohs* — road, street",
+              "η κουζίνα *koo-ZEE-nah* — kitchen",
+              "το σπίτι *SPEE-tee* — house, home"
+            ],
+            [
+              "ο φίλος *FEE-lohs* — friend (m.)",
+              "η φίλη *FEE-lee* — friend (f.)",
+              "το βιβλίο *vee-VLEE-oh* — book"
+            ],
+            [
+              "ο ήλιος *EE-lee-ohs* — sun",
+              "η θάλασσα *THAH-lah-sah* — sea",
+              "το παιδί *peh-DHEE* — child"
+            ],
+            [
+              "ο άντρας *AHN-drahs* — man",
+              "η γυναίκα *yee-NEH-kah* — woman",
+              "το κορίτσι *koh-REE-tsee* — girl"
+            ],
+            [
+              "ο ουρανός *oo-rah-NOHS* — sky",
+              "η πόλη *POH-lee* — city",
+              "το αγόρι *ah-GHOH-ree* — boy"
+            ],
+            [
+              "ο χρόνος *KHROH-nohs* — time, year",
+              "η μέρα *MEH-rah* — day",
+              "το τραπέζι *trah-PEH-zee* — table"
+            ],
+            [
+              "ο καιρός *keh-ROHS* — weather",
+              "η ώρα *OH-rah* — hour, time",
+              "το κρεβάτι *kreh-VAH-tee* — bed"
+            ],
+            [
+              "ο σκύλος *SKEE-lohs* — dog",
+              "η γάτα *GHAH-tah* — cat",
+              "το πρόβλημα *PROH-vlee-mah* — problem"
+            ],
+            [
+              "ο αδερφός *ah-dhehr-FOHS* — brother",
+              "η αδερφή *ah-dhehr-FEE* — sister",
+              "το όνομα *OH-noh-mah* — name"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three clues for guessing gender",
+          "items": [
+            "**Ends in -ος, -ας, -ης → almost always masculine.** ο δρόμος, ο άντρας, ο μαθητής. The most common exceptions: η οδός, η μέθοδος, η είσοδος.",
+            "**Ends in -α, -η → almost always feminine.** η ώρα, η πόλη, η γυναίκα. Exceptions: ο πατέρας, ο άντρας — both refer to men, so they're easy to remember.",
+            "**Ends in -ο, -ι, -μα → neuter, with no exceptions you need right now.** το βιβλίο, το σπίτι, το πρόβλημα. ⚠️ All the loanwords you already know from English — πρόβλημα, σύστημα, πρόγραμμα, θέμα, κλίμα (problem, system, program, theme, climate) — belong to the **-μα** group, and all of them are neuter. That's dozens of free words at once."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "el": "ο, η, το",
+      "baca": "oh, ee, toh",
+      "en": "article: masc., fem., neut."
+    },
+    {
+      "el": "ένας, μία, ένα",
+      "baca": "EH-nahs, MEE-ah, EH-nah",
+      "en": "a / one (masc., fem., neut.)"
+    },
+    {
+      "el": "αυτός, αυτή, αυτό",
+      "baca": "ahf-TOHS, ahf-TEE, ahf-TOH",
+      "en": "this, he/she/it, that"
+    },
+    {
+      "el": "τι;",
+      "baca": "tee",
+      "en": "what?"
+    },
+    {
+      "el": "ποιος; ποια; ποιο;",
+      "baca": "pyohs, pyah, pyoh",
+      "en": "who? which one?"
+    },
+    {
+      "el": "το σπίτι",
+      "baca": "toh SPEE-tee",
+      "en": "house, home"
+    },
+    {
+      "el": "η κουζίνα",
+      "baca": "ee koo-ZEE-nah",
+      "en": "kitchen"
+    },
+    {
+      "el": "το φλιτζάνι",
+      "baca": "toh flee-DZAH-nee",
+      "en": "cup"
+    },
+    {
+      "el": "ο καφές",
+      "baca": "oh kah-FEHS",
+      "en": "coffee"
+    },
+    {
+      "el": "το νερό",
+      "baca": "toh neh-ROH",
+      "en": "water"
+    },
+    {
+      "el": "το βιβλίο",
+      "baca": "toh vee-VLEE-oh",
+      "en": "book"
+    },
+    {
+      "el": "το τραπέζι",
+      "baca": "toh trah-PEH-zee",
+      "en": "table"
+    },
+    {
+      "el": "η πόρτα",
+      "baca": "ee POHR-tah",
+      "en": "door"
+    },
+    {
+      "el": "ο αδερφός / η αδερφή",
+      "baca": "oh ah-dhehr-FOHS / ee ah-dhehr-FEE",
+      "en": "brother / sister"
+    },
+    {
+      "el": "ο άντρας / η γυναίκα",
+      "baca": "oh AHN-drahs / ee yee-NEH-kah",
+      "en": "man / woman"
+    },
+    {
+      "el": "το παιδί",
+      "baca": "toh peh-DHEE",
+      "en": "child"
+    },
+    {
+      "el": "η θάλασσα",
+      "baca": "ee THAH-lah-sah",
+      "en": "sea"
+    },
+    {
+      "el": "η πόλη",
+      "baca": "ee POH-lee",
+      "en": "city"
+    },
+    {
+      "el": "ωραίος, ωραία, ωραίο",
+      "baca": "oh-REH-ohs, oh-REH-ah, oh-REH-oh",
+      "en": "beautiful, nice"
+    },
+    {
+      "el": "όμορφος, όμορφη, όμορφο",
+      "baca": "OH-mohr-fohs, OH-mohr-fee, OH-mohr-foh",
+      "en": "lovely, pretty"
+    },
+    {
+      "el": "κρύος / ζεστός",
+      "baca": "KREE-ohs / zeh-STOHS",
+      "en": "cold / hot"
+    },
+    {
+      "el": "έτοιμος",
+      "baca": "EH-tee-mohs",
+      "en": "ready"
+    },
+    {
+      "el": "και",
+      "baca": "keh",
+      "en": "and, also"
+    },
+    {
+      "el": "καλώς ήρθες / ήρθατε",
+      "baca": "kah-LOHS EER-thehs / EER-thah-teh",
+      "en": "welcome (casual / formal)"
+    },
+    {
+      "el": "τέλεια",
+      "baca": "TEH-lee-ah",
+      "en": "perfect, great"
+    },
+    {
+      "el": "ένα λεπτό",
+      "baca": "EH-nah lehp-TOH",
+      "en": "one moment (literally: one minute)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the right article: ο, η, or το.",
+      "items": [
+        "____ καφές είναι ζεστός.",
+        "____ θάλασσα είναι όμορφη.",
+        "____ σπίτι είναι μεγάλο.",
+        "____ Νίκος είναι ο αδερφός μου.",
+        "____ πρόβλημα δεν είναι μεγάλο.",
+        "____ πόλη είναι ωραία."
+      ]
+    },
+    {
+      "prompt": "Choose αυτός, αυτή, or αυτό to match the noun.",
+      "items": [
+        "____ είναι ο δρόμος.",
+        "____ είναι η κουζίνα.",
+        "____ είναι το βιβλίο μου.",
+        "____ είναι η Ελένη.",
+        "Τι είναι ____;"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "είναι / αυτό / τι",
+        "ο / είναι / Νίκος / αυτός",
+        "μου / το / είναι / σπίτι / αυτό",
+        "καφές / ο / έτοιμος / είναι",
+        "όμορφη / Ελλάδα / η / είναι"
+      ]
+    },
+    {
+      "prompt": "Translate into Greek. Don't forget the article.",
+      "items": [
+        "This is my home.",
+        "The water is cold.",
+        "Who is he?",
+        "I'm Ana.",
+        "Greek is beautiful."
+      ]
+    }
+  ],
+  "answers": [
+    "Ο — Η — Το — Ο — Το — Η",
+    "Αυτός — Αυτή — Αυτό — Αυτή — αυτό",
+    "Τι είναι αυτό; — Αυτός είναι ο Νίκος. — Αυτό είναι το σπίτι μου. — Ο καφές είναι έτοιμος. — Η Ελλάδα είναι όμορφη.",
+    "Αυτό είναι το σπίτι μου. — Το νερό είναι κρύο. — Ποιος είναι αυτός; — Είμαι η Άννα. — Η Ελλάδα είναι όμορφη."
+  ]
+}

@@ -1,0 +1,490 @@
+{
+  "title": "I have a headache",
+  "title_target": "Με πονάει το κεφάλι — Meh poh-nah-ee toh keh-fah-lee",
+  "goal": "Explain what's wrong at the pharmacy or the clinic — using a pattern that, once again, makes your body part the subject and you the target.",
+  "bekal": [
+    "name body parts",
+    "use με πονάει and πονάει το … μου",
+    "name symptoms: fever, cough, a cold",
+    "ask for medicine at the pharmacy",
+    "wish someone a quick recovery"
+  ],
+  "dialogs": [
+    {
+      "title": "ΔΙΑΛΟΓΟΣ — At the ΦΑΡΜΑΚΕΙΟ",
+      "intro": "Greek pharmacies are marked by a glowing green cross, and pharmacists can give many medicines without a prescription — they're the first stop for Greeks with a minor illness. Ana walks in early in the morning.",
+      "lines": [
+        {
+          "speaker": "Φαρμακοποιός:",
+          "text": "[Καλημέρα|Kah-lee-MEH-rah]! [Τι|Tee] [κάνετε|KAH-neh-teh];",
+          "id": "Good morning! How are you?",
+          "literal": "good-morning! what — you (polite)-do?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Δεν|Dhehn] [είμαι|EE-meh] [πολύ|poh-LEE] [καλά|kah-LAH]. [Με|Meh] [πονάει|poh-NAH-ee] [το|toh] [κεφάλι|keh-FAH-lee] [μου|moo].",
+          "id": "Not so well. I have a headache.",
+          "literal": "not — I-am — very — well. me (obj) — it-hurts — the — head — my."
+        },
+        {
+          "speaker": "Φαρμακοποιός:",
+          "text": "[Έχετε|EH-kheh-teh] [πυρετό|pee-reh-TOH];",
+          "id": "Do you have a fever?",
+          "literal": "you (polite)-have — fever?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Λίγο|LEE-ghoh]. [Και|Keh] [με|meh] [πονάει|poh-NAH-ee] [ο|oh] [λαιμός|leh-MOHS] [μου|moo].",
+          "id": "A little. And my throat hurts.",
+          "literal": "a-little. and — me (obj) — it-hurts — the — throat — my."
+        },
+        {
+          "speaker": "Φαρμακοποιός:",
+          "text": "[Πόσες|POH-sehs] [μέρες|MEH-rehs] [είστε|EE-steh] [έτσι|EH-tsee];",
+          "id": "How many days have you been like this?",
+          "literal": "how-many (f pl) — days — you (polite)-are — like-this?"
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Δύο|DHEE-oh] [μέρες|MEH-rehs]. [Δεν|Dhehn] [κοιμάμαι|kee-MAH-meh] [καλά|kah-LAH].",
+          "id": "Two days. I can't sleep well.",
+          "literal": "two — days. not — I-sleep — well."
+        },
+        {
+          "speaker": "Φαρμακοποιός:",
+          "text": "[Πάρτε|PAHR-teh] [αυτά|ahf-TAH] [τα|tah] [χάπια|KHAH-pyah], [δύο|dhee-oh] [φορές|foh-REHS] [τη|tee] [μέρα|MEH-rah], [μετά|meh-TAH] [το|toh] [φαγητό|fah-yee-TOH].",
+          "id": "Take these pills, twice a day, after meals.",
+          "literal": "take — these (n pl) — the — pills, two — times — the — day, after — the — food."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Χρειάζομαι|Khree-AH-zoh-meh] [συνταγή|seen-dah-YEE];",
+          "id": "Do I need a prescription?",
+          "literal": "I-need — prescription?"
+        },
+        {
+          "speaker": "Φαρμακοποιός:",
+          "text": "[Όχι|OH-khee]. [Και|Keh] [πιείτε|PEE-ee-teh] [πολύ|poh-LEE] [νερό|neh-ROH]. [Αν|Ahn] [συνεχίσει|see-neh-KHEE-see], [πηγαίνετε|pee-YEH-neh-teh] [στον|stohn] [γιατρό|yah-TROH].",
+          "id": "No. And drink plenty of water. If it goes on, see a doctor.",
+          "literal": "no. and — drink — much — water. if — it-continues, go — to-the — doctor."
+        },
+        {
+          "speaker": "Άννα:",
+          "text": "[Ευχαριστώ|Ehf-khah-ree-STOH]. [Πόσο|POH-soh] [κάνουν|KAH-noon];",
+          "id": "Thank you. How much is it?",
+          "literal": "I-thank. how-much — they-make?"
+        },
+        {
+          "speaker": "Φαρμακοποιός:",
+          "text": "[Πέντε|PEHN-deh] [ευρώ|ehv-ROH]. [Περαστικά|Peh-rah-stee-KAH]!",
+          "id": "Five euros. Get well soon!",
+          "literal": "five — euros. may-it-pass!"
+        }
+      ],
+      "notes": [
+        "⚠️ **\"I have a headache\" in Greek is \"the head hurts me\".** *Με πονάει το κεφάλι μου.* The body part is the **subject**, you are the **target**. It's the same pattern as μου αρέσει from the last unit — and once you see the pattern repeat, it stops feeling strange.",
+        "**There are two equally correct ways**: *Με πονάει το κεφάλι* and *Πονάει το κεφάλι μου*. The first uses **με** (me as target), the second **μου** (the head of mine). In conversation they're often combined: *Με πονάει το κεφάλι μου* — technically doubled up, but that's what people really say.",
+        "⚠️ **Πονάει for one part, πονάνε for several.** *Με πονάει το πόδι μου* (my foot hurts) but *Με πονάνε τα πόδια μου* (my feet hurt). The verb follows the body part, not you.",
+        "**Έχω is used for symptoms you can \"have\"**: έχω πυρετό (fever), έχω βήχα (cough), έχω γρίπη (flu), έχω αλλεργία (allergy). Pain uses πονάει. ⚠️ Telling them apart is easier than it looks: if English says \"it hurts\" or \"-ache\", use πονάει; if English says \"I have…\", use έχω.",
+        "**Είμαι άρρωστος / άρρωστη** = \"I'm sick\", a general statement. The ending follows your own gender: men say **άρρωστος**, women **άρρωστη**. The same goes for *κουρασμένος / κουρασμένη*.",
+        "**Πάρτε, πιείτε, πηγαίνετε are polite commands** — just the εσείς form with a commanding tone, and exactly what pharmacists, doctors, and officials use. The casual form drops -τε: *πάρε*, *πιες*, *πήγαινε*. ⚠️ Commands in Greek don't sound rude at all; they're the standard way to give advice and directions.",
+        "**Περαστικά!** (*peh-rah-stee-KAH*) literally \"may it pass\", is said to anyone who's ill — by the pharmacist, the neighbor, the taxi driver, anyone. It's one of the warmest words you can offer. The reply is simply **Ευχαριστώ**.",
+        "**Χρειάζομαι** (*khree-AH-zoh-meh*, \"I need\") ends in -ομαι but means something entirely ordinary — another reminder that the group isn't the passive. *Χρειάζομαι βοήθεια.* — I need help."
+      ],
+      "grammars": [
+        {
+          "title": "Saying what hurts",
+          "body": [
+            "Three patterns, and you'll hear all three. Pick one to use yourself and recognize the other two."
+          ],
+          "table": {
+            "head": [
+              "Greek",
+              "Say it",
+              "Meaning",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "Με πονάει το κεφάλι.",
+                "meh poh-NAH-ee",
+                "I have a headache.",
+                "me hurts the-head"
+              ],
+              [
+                "Πονάει το κεφάλι μου.",
+                "poh-NAH-ee",
+                "I have a headache.",
+                "hurts the-head my"
+              ],
+              [
+                "Με πονάνε τα πόδια μου.",
+                "poh-NAH-neh",
+                "My feet hurt.",
+                "me hurt the-feet my"
+              ],
+              [
+                "Σε πονάει;",
+                "seh poh-NAH-ee",
+                "Does it hurt?",
+                "you it-hurts?"
+              ],
+              [
+                "Πού πονάτε;",
+                "poo poh-NAH-teh",
+                "Where does it hurt?",
+                "where you (polite)-feel-pain?"
+              ],
+              [
+                "Δεν με πονάει τίποτα.",
+                "",
+                "Nothing hurts.",
+                "not me hurts nothing"
+              ]
+            ]
+          },
+          "after": [
+            "**The little words are the ones from unit 17**, just in the ordinary object form: **με, σε, τον/την, μας, σας, τους**. *Τον πονάει το στομάχι του.* — His stomach hurts.",
+            "⚠️ **Πονάω can also be used with no object**, meaning \"I'm in pain\" in general: *Πονάω πολύ.* A useful short sentence when there's no time to say where."
+          ]
+        },
+        {
+          "title": "Symptoms and requests at the pharmacy",
+          "body": [
+            "Two opening verbs — έχω and χρειάζομαι — cover nearly everything you need."
+          ],
+          "table": {
+            "head": [
+              "Greek",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Είμαι άρρωστος / άρρωστη.",
+                "AH-roh-stohs / AH-roh-stee",
+                "I'm sick."
+              ],
+              [
+                "Έχω πυρετό.",
+                "pee-reh-TOH",
+                "I have a fever."
+              ],
+              [
+                "Έχω βήχα.",
+                "VEE-khah",
+                "I have a cough."
+              ],
+              [
+                "Έχω κρυώσει.",
+                "kree-OH-see",
+                "I've caught a cold."
+              ],
+              [
+                "Έχω αλλεργία σε …",
+                "ah-lehr-YEE-ah",
+                "I'm allergic to …"
+              ],
+              [
+                "Δεν κοιμάμαι καλά.",
+                "",
+                "I have trouble sleeping."
+              ],
+              [
+                "Χρειάζομαι κάτι για …",
+                "khree-AH-zoh-meh",
+                "I need something for …"
+              ],
+              [
+                "Χρειάζομαι συνταγή;",
+                "seen-dah-YEE",
+                "Do I need a prescription?"
+              ],
+              [
+                "Πόσες φορές τη μέρα;",
+                "POH-sehs foh-REHS",
+                "How many times a day?"
+              ],
+              [
+                "Πριν ή μετά το φαγητό;",
+                "",
+                "Before or after meals?"
+              ]
+            ]
+          },
+          "after": [
+            "**Emergency numbers in Greece: 112** for everything, **166** for an ambulance. Sentences that should come out without thinking: **Χρειάζομαι γιατρό!** (I need a doctor) and **Βοήθεια!** (*voh-EE-thyah*, help!).",
+            "⚠️ **Greek pharmacies take turns staying open.** Closed ones post a list of **εφημερεύοντα φαρμακεία** — the pharmacies on duty that night — on the door. Look for those words if you need medicine at midnight."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Body parts",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Singular",
+            "Plural",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "το κεφάλι",
+              "τα κεφάλια",
+              "keh-FAH-lee",
+              "head"
+            ],
+            [
+              "το μάτι",
+              "τα μάτια",
+              "MAH-tee",
+              "eye"
+            ],
+            [
+              "το αυτί",
+              "τα αυτιά",
+              "ahf-TEE",
+              "ear"
+            ],
+            [
+              "η μύτη",
+              "οι μύτες",
+              "MEE-tee",
+              "nose"
+            ],
+            [
+              "το στόμα",
+              "τα στόματα",
+              "STOH-mah",
+              "mouth"
+            ],
+            [
+              "το δόντι",
+              "τα δόντια",
+              "DHOHN-dee",
+              "tooth"
+            ],
+            [
+              "ο λαιμός",
+              "οι λαιμοί",
+              "leh-MOHS",
+              "throat, neck"
+            ],
+            [
+              "το χέρι",
+              "τα χέρια",
+              "KHEH-ree",
+              "hand, arm"
+            ],
+            [
+              "το πόδι",
+              "τα πόδια",
+              "POH-dhee",
+              "foot, leg"
+            ],
+            [
+              "η πλάτη",
+              "οι πλάτες",
+              "PLAH-tee",
+              "back"
+            ],
+            [
+              "το στομάχι",
+              "τα στομάχια",
+              "stoh-MAH-khee",
+              "stomach"
+            ],
+            [
+              "η καρδιά",
+              "οι καρδιές",
+              "kahr-DHYAH",
+              "heart"
+            ],
+            [
+              "το σώμα",
+              "τα σώματα",
+              "SOH-mah",
+              "body"
+            ],
+            [
+              "το δάχτυλο",
+              "τα δάχτυλα",
+              "DHAHKH-tee-loh",
+              "finger"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Body parts you already know from English",
+          "items": [
+            "**η καρδιά** heart → *cardiology*, *cardiovascular*. **το στομάχι** stomach → *stomatitis* via στόμα (mouth). **το δέρμα** skin → *dermatology*. **το αίμα** blood → *anemia*, *hemoglobin*.",
+            "**ο εγκέφαλος** brain → *encephalitis*. **ο οφθαλμός** eye (medical term) → *ophthalmology*. **το οστό** bone → *osteoporosis*. **ο πνεύμονας** lung → *pneumonia*.",
+            "⚠️ Everyday Greek uses **different** words from the medical terms: people say *μάτι*, not *οφθαλμός*, and *καρδιά*, not *καρδία*. So English medical vocabulary teaches you the formal layer — useful at the hospital, not in conversation.",
+            "**Περαστικά!** and **Σιδερένιος!** (*see-dheh-REH-nyohs*, \"be strong as iron\") both mean get well soon. The second is for someone who has just had surgery or an accident."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "el": "με πονάει",
+      "baca": "meh poh-NAH-ee",
+      "en": "my … hurts"
+    },
+    {
+      "el": "πονάω",
+      "baca": "poh-NAH-oh",
+      "en": "hurt, be in pain"
+    },
+    {
+      "el": "άρρωστος, -η",
+      "baca": "AH-roh-stohs",
+      "en": "sick (adjective)"
+    },
+    {
+      "el": "ο πυρετός",
+      "baca": "oh pee-reh-TOHS",
+      "en": "fever"
+    },
+    {
+      "el": "ο βήχας",
+      "baca": "oh VEE-khahs",
+      "en": "cough"
+    },
+    {
+      "el": "κρυώνω / έχω κρυώσει",
+      "baca": "kree-OH-noh",
+      "en": "feel cold / catch a cold"
+    },
+    {
+      "el": "το φαρμακείο",
+      "baca": "toh fahr-mah-KEE-oh",
+      "en": "pharmacy"
+    },
+    {
+      "el": "το φάρμακο",
+      "baca": "toh FAHR-mah-koh",
+      "en": "medicine"
+    },
+    {
+      "el": "το χάπι",
+      "baca": "toh KHAH-pee",
+      "en": "pill"
+    },
+    {
+      "el": "η συνταγή",
+      "baca": "ee seen-dah-YEE",
+      "en": "prescription"
+    },
+    {
+      "el": "ο γιατρός",
+      "baca": "oh yah-TROHS",
+      "en": "doctor"
+    },
+    {
+      "el": "χρειάζομαι",
+      "baca": "khree-AH-zoh-meh",
+      "en": "need"
+    },
+    {
+      "el": "η βοήθεια",
+      "baca": "ee voh-EE-thyah",
+      "en": "help"
+    },
+    {
+      "el": "το κεφάλι",
+      "baca": "toh keh-FAH-lee",
+      "en": "head"
+    },
+    {
+      "el": "ο λαιμός",
+      "baca": "oh leh-MOHS",
+      "en": "throat"
+    },
+    {
+      "el": "το στομάχι",
+      "baca": "toh stoh-MAH-khee",
+      "en": "stomach"
+    },
+    {
+      "el": "το πόδι / το χέρι",
+      "baca": "toh POH-dhee / toh KHEH-ree",
+      "en": "foot / hand"
+    },
+    {
+      "el": "το μάτι / το αυτί",
+      "baca": "toh MAH-tee / toh ahf-TEE",
+      "en": "eye / ear"
+    },
+    {
+      "el": "η φορά",
+      "baca": "ee foh-RAH",
+      "en": "time (occasion)"
+    },
+    {
+      "el": "αν",
+      "baca": "ahn",
+      "en": "if"
+    },
+    {
+      "el": "περαστικά!",
+      "baca": "peh-rah-stee-KAH",
+      "en": "get well soon"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose πονάει or πονάνε.",
+      "items": [
+        "Με ____ το κεφάλι.",
+        "Με ____ τα πόδια.",
+        "Τον ____ το δόντι του.",
+        "Με ____ τα μάτια μου.",
+        "Σε ____ ο λαιμός;"
+      ]
+    },
+    {
+      "prompt": "Fill in έχω or με πονάει.",
+      "items": [
+        "____ πυρετό.",
+        "____ το στομάχι.",
+        "____ βήχα.",
+        "____ ο λαιμός.",
+        "____ αλλεργία."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "κεφάλι / με / πονάει / το",
+        "πυρετό / έχω / λίγο",
+        "συνταγή / χρειάζομαι / ;",
+        "μέρα / φορές / τη / δύο",
+        "γιατρό / χρειάζομαι"
+      ]
+    },
+    {
+      "prompt": "Translate into Greek.",
+      "items": [
+        "I have a headache.",
+        "I have a slight fever.",
+        "I need medicine.",
+        "Twice a day, after meals.",
+        "Get well soon!"
+      ]
+    }
+  ],
+  "answers": [
+    "πονάει — πονάνε — πονάει — πονάνε — πονάει",
+    "Έχω — Με πονάει — Έχω — Με πονάει — Έχω",
+    "Με πονάει το κεφάλι. — Έχω λίγο πυρετό. — Χρειάζομαι συνταγή; — Δύο φορές τη μέρα. — Χρειάζομαι γιατρό.",
+    "Με πονάει το κεφάλι μου. — Έχω λίγο πυρετό. — Χρειάζομαι ένα φάρμακο. — Δύο φορές τη μέρα, μετά το φαγητό. — Περαστικά!"
+  ]
+}
