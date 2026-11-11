@@ -1,0 +1,970 @@
+{
+  "title": "Time, days, and schedules",
+  "title_target": "幾點呀？ — Gei2 dim2 aa3?",
+  "goal": "Telling the time the Hong Kong way (including 個字, which no Mandarin book has), naming days and dates, and putting time words in the right place — before the verb, always.",
+  "bekal": [
+    "ask and tell the time: 三點半, 三點三個字",
+    "name the days of the week and dates",
+    "tell 琴日 · 今日 · 聽日 and the rest apart",
+    "put time words before the verb",
+    "make plans with a time and a place"
+  ],
+  "dialogs": [
+    {
+      "title": "對話 1 — What time is it?",
+      "intro": "Andi asks Wong Lai the time at a bus stop. Notice how minutes are said — the most typically Cantonese part, and the most confusing for anyone who learned from a Mandarin book.",
+      "lines": [
+        {
+          "speaker": "安迪:",
+          "text": "[唔該|M4 goi1]，[而家|ji4 gaa1][幾點呀|gei2 dim2 aa3]？",
+          "id": "Excuse me, what time is it?",
+          "literal": "excuse-me, now — how-many — o'clock — huh."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[而家|Ji4 gaa1][三點半|saam1 dim2 bun3]。",
+          "id": "It's half past three.",
+          "literal": "now — three — o'clock — half."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[吓|Haa2]？[咁遲|Gam3 ci4][㗎|gaa3]？[我以為|Ngo5 ji5 wai4][得三點|dak1 saam1 dim2]。",
+          "id": "What? That late already? I thought it was only three.",
+          "literal": "huh? that — late — emphasis. I — thought — only — three — o'clock."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[你幾點|Nei5 gei2 dim2][要返工|jiu3 faan1 gung1][呀|aa3]？",
+          "id": "What time do you start work?",
+          "literal": "you — how-many — o'clock — must — return — work — huh."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[四點|Sei3 dim2]。[仲有|Zung6 jau5][半個鐘|bun3 go3 zung1]。",
+          "id": "At four. There's still half an hour.",
+          "literal": "four — o'clock. still — have — half — classifier — hour."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[巴士|Baa1 si2][三點九|saam1 dim2 gau2][到|dou3]，[應該|jing1 goi1][趕得切|gon2 dak1 cit3]。",
+          "id": "The bus comes at 3:45, I should make it.",
+          "literal": "bus — three — o'clock — nine — arrive, should — catch — able — in-time."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[三點九|Saam1 dim2 gau2]？[即係|Zik1 hai6][幾多分|gei2 do1 fan1][呀|aa3]？",
+          "id": "三點九? How many minutes is that?",
+          "literal": "three — o'clock — nine? that — is — how — many — minute — huh."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[三點四十五分|Saam1 dim2 sei3 sap6 ng5 fan1]。[一個字|Jat1 go3 zi6][係五分鐘|hai6 ng5 fan1 zung1]。",
+          "id": "3:45. Each “字” is five minutes.",
+          "literal": "three — o'clock — four — ten — five — minute. one — classifier — character — is — five — minute — time."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[明白喇|Ming4 baak6 laa3]！[咁|Gam2][三點一個字|saam1 dim2 jat1 go3 zi6][係三點零五|hai6 saam1 dim2 ling4 ng5]？",
+          "id": "Got it! So 三點一個字 is 3:05?",
+          "literal": "understand — already. so — three — o'clock — one — classifier — character — is — three — o'clock — zero — five."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[啱晒|Ngaam1 saai3]！[你學得|Nei5 hok6 dak1][好快|hou2 faai3][喎|wo3]。",
+          "id": "Exactly! You learn fast, you know.",
+          "literal": "right — completely. you — learn — able — filler — fast — you-know."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[多謝|Do1 ze6]。[巴士嚟喇|Baa1 si2 lei4 laa3]，[我走先喇|ngo5 zau2 sin1 laa3]！",
+          "id": "Thanks. Here's the bus — I'm off!",
+          "literal": "thanks. bus — come — already, I — go — first — already."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[拜拜|Baai1 baai3]！[聽日見|Ting1 jat6 gin3]！",
+          "id": "Bye! See you tomorrow!",
+          "literal": "bye — bye. tomorrow — see."
+        }
+      ],
+      "notes": [
+        "**[而家|ji4 gaa1] = now.** A native Cantonese word; Mandarin uses 現在. 🇭🇰 Some people write it 依家, and some say *ji4 gaa1* with the *g* almost gone — it's all the same word.",
+        "**[吓|Haa2]？ = “huh?”** — the sound you make when surprised or when you didn't catch something. ⚠️ The tone must rise (tone 2). Said flat, it becomes a different word.",
+        "**Tone-3 [咁|gam3] means “so …, that …”.** [咁遲|gam3 ci4] = that late; [咁貴|gam3 gwai3] = that expensive; [咁多|gam3 do1] = that many. Compare tone-2 [咁|gam2] from Unit 4, meaning “so, then”. Same character; only the tone tells them apart.",
+        "**[鐘|zung1] is a unit of “hours long”, [點|dim2] is “o'clock”.** [三點|saam1 dim2] = three o'clock; [三個鐘|saam1 go3 zung1] = three hours long. ⚠️ These are two completely different things, and swapping them makes your sentence nonsense. Note that 鐘 always takes the classifier 個.",
+        "**[趕得切|gon2 dak1 cit3] = make it in time.** Negative: [趕唔切|gon2 m4 cit3] = not make it in time. This verb + 得/唔 + result pattern comes up all the time: [食得晒|sik6 dak1 saai3] (can eat it all), [睇唔到|tai2 m4 dou2] (can't see it).",
+        "**[啱|ngaam1] = right, correct, just right.** [啱晒|Ngaam1 saai3] = exactly right. [啱啱|ngaam1 ngaam1] = just now. [唔啱|m4 ngaam1] = wrong, not suitable. A very common word that Mandarin doesn't have.",
+        "**[我走先|Ngo5 zau2 sin1] = “I'm off first”.** ⚠️ Watch where [先|sin1] goes: in Cantonese it comes **after** the verb, the reverse of Mandarin, which puts 先 in front. [你食先|Nei5 sik6 sin1] = you eat first; [等我諗下先|Dang2 ngo5 nam2 haa5 sin1] = let me think first."
+      ],
+      "grammars": [
+        {
+          "title": "Telling time: 點, 半, and 個字",
+          "body": [
+            "Clock time in Cantonese is built with [點|dim2]. Minutes can be said in two systems: ordinary minutes ([分|fan1]), and the [個字|go3 zi6] system, which counts in fives. 🇭🇰 The 個字 system is far more common in conversation, and it comes from the numbers on an analog clock face."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Time",
+                "Cantonese",
+                "Note"
+              ],
+              "rows": [
+                [
+                  "1:00",
+                  "[一點|jat1 dim2]",
+                  ""
+                ],
+                [
+                  "2:00",
+                  "[兩點|loeng5 dim2]",
+                  "⚠️ 兩, not 二"
+                ],
+                [
+                  "3:30",
+                  "[三點半|saam1 dim2 bun3]",
+                  "半 = half"
+                ],
+                [
+                  "3:05",
+                  "[三點一個字|saam1 dim2 jat1 go3 zi6]",
+                  "1 × 5 minutes"
+                ],
+                [
+                  "3:15",
+                  "[三點三個字|saam1 dim2 saam1 go3 zi6]",
+                  "3 × 5 minutes"
+                ],
+                [
+                  "3:45",
+                  "[三點九|saam1 dim2 gau2]",
+                  "🇭🇰 個字 is often dropped"
+                ],
+                [
+                  "3:20",
+                  "[三點四|saam1 dim2 sei3]",
+                  "4 × 5 minutes"
+                ],
+                [
+                  "12:00 noon",
+                  "[十二點|sap6 ji6 dim2] / [中午|zung1 ng5]",
+                  ""
+                ],
+                [
+                  "7:40",
+                  "[七點八|cat1 dim2 baat3]",
+                  "8 × 5 minutes"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Part of day",
+                "Cantonese",
+                "Roughly"
+              ],
+              "rows": [
+                [
+                  "early morning / morning",
+                  "[朝早|ziu1 zou2]",
+                  "until 9:00"
+                ],
+                [
+                  "late morning",
+                  "[上晝|soeng6 zau3]",
+                  "9–12"
+                ],
+                [
+                  "midday",
+                  "[中午|zung1 ng5]",
+                  "12"
+                ],
+                [
+                  "afternoon",
+                  "[下晝|haa6 zau3]",
+                  "12–18"
+                ],
+                [
+                  "evening, night",
+                  "[夜晚|je6 maan5]",
+                  "18–24"
+                ],
+                [
+                  "midnight",
+                  "[半夜|bun3 je6]",
+                  "after midnight"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "**The part of the day goes BEFORE the hour**: [下晝三點|haa6 zau3 saam1 dim2] = three in the afternoon. Cantonese doesn't use a.m./p.m., and 13:00–24:00 aren't used in conversation.",
+            "⚠️ **Two o'clock is always [兩點|loeng5 dim2].** This is the 二 vs 兩 rule from Unit 2: 點 is a classifier. But the minutes stay 二: [兩點二十分|loeng5 dim2 ji6 sap6 fan1].",
+            "🇭🇰 **[個字|go3 zi6] doesn't exist in Mandarin at all**, and you won't find it in any Mandarin book. It comes from the twelve numbers on a clock face — each number five minutes apart."
+          ]
+        },
+        {
+          "title": "Time words go before the verb",
+          "body": [
+            "This is one rule that, if you hold on to it, will save you hundreds of sentences. In Cantonese, **when** something happens is always said before **what** happens. The verb itself doesn't change at all — this is what replaces past and future tenses."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Cantonese",
+                "Meaning",
+                "Structure"
+              ],
+              "rows": [
+                [
+                  "[我聽日去|Ngo5 ting1 jat6 heoi3]。",
+                  "I'm going tomorrow.",
+                  "subject + time + verb"
+                ],
+                [
+                  "[聽日我去|Ting1 jat6 ngo5 heoi3]。",
+                  "Tomorrow I'm going.",
+                  "time + subject + verb"
+                ],
+                [
+                  "[佢琴日返咗嚟|Keoi5 kam4 jat6 faan1 zo2 lei4]。",
+                  "He went home yesterday.",
+                  "time still in front"
+                ],
+                [
+                  "[我三點食飯|Ngo5 saam1 dim2 sik6 faan6]。",
+                  "I eat at three.",
+                  ""
+                ],
+                [
+                  "[我星期一返工|Ngo5 sing1 kei4 jat1 faan1 gung1]。",
+                  "I work on Mondays.",
+                  ""
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Wrong",
+                "Right"
+              ],
+              "rows": [
+                [
+                  "我去聽日。",
+                  "[我聽日去|Ngo5 ting1 jat6 heoi3]。"
+                ],
+                [
+                  "我食飯三點。",
+                  "[我三點食飯|Ngo5 saam1 dim2 sik6 faan6]。"
+                ],
+                [
+                  "佢返工星期一。",
+                  "[佢星期一返工|Keoi5 sing1 kei4 jat1 faan1 gung1]。"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "**A time word can go in two places: before the subject or after it.** Both are correct; putting it first stresses the time a little. What's **never** correct is putting it after the verb as English does.",
+            "**With several details at once, the order is: time → place → manner → verb.** [我聽日喺屋企食飯|Ngo5 ting1 jat6 hai2 uk1 kei2 sik6 faan6] = I'll eat at home tomorrow. English orders them exactly the other way around.",
+            "⚠️ **Don't look for a past tense.** [我琴日去|Ngo5 kam4 jat6 heoi3] = I went yesterday. The verb is exactly the same as in [我聽日去|Ngo5 ting1 jat6 heoi3] (I'm going tomorrow). Only the time word is different. 🔁 The marker [咗|zo2] in Unit 9 isn't a past tense — it marks completion, which is something else."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "對話 2 — Wong Lai's day",
+      "intro": "Andi asks Wong Lai about her daily routine. This whole conversation is practice in putting the time word before the verb — notice the order never changes once.",
+      "lines": [
+        {
+          "speaker": "安迪:",
+          "text": "[你|Nei5][平時|ping4 si4][幾點起身|gei2 dim2 hei2 san1][㗎|gaa3]？",
+          "id": "What time do you usually get up?",
+          "literal": "you — usual — time — how-many — o'clock — rise — body — emphasis."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[七點|Cat1 dim2]。[我八點|Ngo5 baat3 dim2][要返學|jiu3 faan1 hok6]。",
+          "id": "At seven. At eight I have to be at school.",
+          "literal": "seven — o'clock. I — eight — o'clock — must — return — school."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[咁早|Gam3 zou2]！[你幾點|Nei5 gei2 dim2][食晏呀|sik6 aan3 aa3]？",
+          "id": "That early! What time do you have lunch?",
+          "literal": "that — early. you — how-many — o'clock — eat — lunch — huh."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[一點|Jat1 dim2][喺學校食|hai2 hok6 haau6 sik6]。[你呢|Nei5 ne1]？",
+          "id": "At one, at school. And you?",
+          "literal": "one — o'clock — at — school — eat. you — how-about."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[我十二點半|Ngo5 sap6 ji6 dim2 bun3]。[我下晝|Ngo5 haa6 zau3][有三堂|jau5 saam1 tong4]。",
+          "id": "I eat at half past twelve. This afternoon I have three classes.",
+          "literal": "I — twelve — o'clock — half. I — afternoon — have — three — class-classifier."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[你星期幾|Nei5 sing1 kei4 gei2][最忙呀|zeoi3 mong4 aa3]？",
+          "id": "Which day are you busiest?",
+          "literal": "you — week — which — most — busy — huh."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[星期三|Sing1 kei4 saam1]。[朝早八點|Ziu1 zou2 baat3 dim2][做到|zou6 dou3][夜晚八點|je6 maan5 baat3 dim2]。",
+          "id": "Wednesday. From eight in the morning until eight at night.",
+          "literal": "week — three. morning — eight — o'clock — work — until — evening — eight — o'clock."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[嘩|Waa4]，[十二個鐘|sap6 ji6 go3 zung1]！[你唔攰咩|Nei5 m4 gui6 me1]？",
+          "id": "Wow, twelve hours! Aren't you tired?",
+          "literal": "wow, twelve — classifier — hour. you — not — tired — really."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[梗係攰啦|Gang2 hai6 gui6 laa1]。[但係|Daan6 hai6][星期六日|sing1 kei4 luk6 jat6][我唔使返工|ngo5 m4 sai2 faan1 gung1]。",
+          "id": "Of course I'm tired. But I'm off on weekends.",
+          "literal": "of-course — is — tired — sure. but — week — six — day — I — not — need — return — work."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[咁|Gam2][今個星期六|gam1 go3 sing1 kei4 luk6][得唔得閒呀|dak1 m4 dak1 haan4 aa3]？",
+          "id": "So, are you free this Saturday?",
+          "literal": "so — this — classifier — week — six — able — not — able — free — huh."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[得閒|Dak1 haan4]！[去邊度呀|Heoi3 bin1 dou6 aa3]？",
+          "id": "I'm free! Where to?",
+          "literal": "able — free. go — which — place — huh."
+        }
+      ],
+      "notes": [
+        "**[平時|ping4 si4] = usually, normally.** It goes where time words go, before the verb. Another option: [通常|tung1 soeng4].",
+        "**[起身|hei2 san1] = get up; [瞓覺|fan3 gaau3] = sleep.** ⚠️ [瞓|fan3] is a native Cantonese character that Mandarin doesn't have (it uses 睡). Note also [瞓着咗|fan3 zoek6 zo2] = fall asleep, not just lie down.",
+        "**[返工|faan1 gung1] and [返學|faan1 hok6] literally mean “return to work” and “return to school”.** 🇭🇰 Cantonese uses 返 for going there, not 去 — because it's a place you go to routinely. The opposites are [收工|sau1 gung1] (finish work) and [放學|fong3 hok6] (finish school).",
+        "**[食晏|sik6 aan3] = have lunch.** [晏晝|aan3 zau3] = midday. Another form: [食晏晝|sik6 aan3 zau3]. Breakfast is [食早餐|sik6 zou2 caan1], dinner [食晚飯|sik6 maan5 faan6].",
+        "**[堂|tong4] is the classifier for lessons.** [三堂|saam1 tong4] = three classes. Don't confuse it with [堂食|tong4 sik6] from Unit 4 — same character, different meaning.",
+        "**[做到|zou6 dou3] = “work until”.** [到|dou3] after a verb marks the end point. [由…到…|jau4 … dou3 …] = from … until …: [由八點到六點|jau4 baat3 dim2 dou3 luk6 dim2].",
+        "**[得閒|dak1 haan4] = free, have time.** The opposite is [唔得閒|m4 dak1 haan4] or [忙|mong4]. 🇭🇰 [得唔得閒呀|Dak1 m4 dak1 haan4 aa3]？ is the most natural way to ask whether someone can join you — far more common than asking straight out “can you?”."
+      ],
+      "grammars": [
+        {
+          "title": "Days, weeks, months, dates",
+          "body": [
+            "All Cantonese time units are built with numbers, with not a single special name to memorize separately — except Sunday."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Day",
+                "Cantonese",
+                "Spoken form 🇭🇰"
+              ],
+              "rows": [
+                [
+                  "Monday",
+                  "[星期一|sing1 kei4 jat1]",
+                  "[禮拜一|lai5 baai3 jat1]"
+                ],
+                [
+                  "Tuesday",
+                  "[星期二|sing1 kei4 ji6]",
+                  "[禮拜二|lai5 baai3 ji6]"
+                ],
+                [
+                  "Wednesday",
+                  "[星期三|sing1 kei4 saam1]",
+                  "[禮拜三|lai5 baai3 saam1]"
+                ],
+                [
+                  "Thursday",
+                  "[星期四|sing1 kei4 sei3]",
+                  "[禮拜四|lai5 baai3 sei3]"
+                ],
+                [
+                  "Friday",
+                  "[星期五|sing1 kei4 ng5]",
+                  "[禮拜五|lai5 baai3 ng5]"
+                ],
+                [
+                  "Saturday",
+                  "[星期六|sing1 kei4 luk6]",
+                  "[禮拜六|lai5 baai3 luk6]"
+                ],
+                [
+                  "Sunday",
+                  "[星期日|sing1 kei4 jat6]",
+                  "[禮拜日|lai5 baai3 jat6]"
+                ],
+                [
+                  "which day?",
+                  "[星期幾|sing1 kei4 gei2]？",
+                  "[禮拜幾|lai5 baai3 gei2]？"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Days",
+                "Cantonese",
+                "Weeks / months",
+                "Cantonese"
+              ],
+              "rows": [
+                [
+                  "the day before yesterday",
+                  "[前日|cin4 jat6]",
+                  "last week",
+                  "[上個星期|soeng6 go3 sing1 kei4]"
+                ],
+                [
+                  "yesterday",
+                  "[琴日|kam4 jat6]",
+                  "this week",
+                  "[今個星期|gam1 go3 sing1 kei4]"
+                ],
+                [
+                  "today",
+                  "[今日|gam1 jat6]",
+                  "next week",
+                  "[下個星期|haa6 go3 sing1 kei4]"
+                ],
+                [
+                  "tomorrow",
+                  "[聽日|ting1 jat6]",
+                  "last month",
+                  "[上個月|soeng6 go3 jyut6]"
+                ],
+                [
+                  "the day after tomorrow",
+                  "[後日|hau6 jat6]",
+                  "this month",
+                  "[今個月|gam1 go3 jyut6]"
+                ],
+                [
+                  "every day",
+                  "[日日|jat6 jat6]",
+                  "next month",
+                  "[下個月|haa6 go3 jyut6]"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "**Dates: month + 月 + number + 號.** [三月十五號|saam1 jyut6 sap6 ng5 hou6] = March 15. Asking: [今日幾多號呀|Gam1 jat6 gei2 do1 hou6 aa3]？ and [幾月幾號呀|Gei2 jyut6 gei2 hou6 aa3]？",
+            "⚠️ **The order goes from big to small, the reverse of English**: year → month → date → day → hour. [二零二六年三月十五號星期日下晝三點|ji6 ling4 ji6 luk6 nin4 saam1 jyut6 sap6 ng5 hou6 sing1 kei4 jat6 haa6 zau3 saam1 dim2].",
+            "**Years are read digit by digit**: 2026 = [二零二六年|ji6 ling4 ji6 luk6 nin4], not “two thousand twenty-six”."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "A day in Hong Kong",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "You'll use this daily-routine vocabulary to tell stories in Unit 12. Practice by describing your own schedule, not by memorizing the list."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Activity",
+            "Cantonese",
+            "Activity",
+            "Cantonese"
+          ],
+          "rows": [
+            [
+              "get up",
+              "[起身|hei2 san1]",
+              "sleep",
+              "[瞓覺|fan3 gaau3]"
+            ],
+            [
+              "shower",
+              "[沖涼|cung1 loeng4]",
+              "brush your teeth",
+              "[刷牙|caat3 ngaa4]"
+            ],
+            [
+              "have breakfast",
+              "[食早餐|sik6 zou2 caan1]",
+              "have lunch",
+              "[食晏|sik6 aan3]"
+            ],
+            [
+              "have dinner",
+              "[食晚飯|sik6 maan5 faan6]",
+              "cook",
+              "[煮飯|zyu2 faan6]"
+            ],
+            [
+              "go to work",
+              "[返工|faan1 gung1]",
+              "finish work",
+              "[收工|sau1 gung1]"
+            ],
+            [
+              "go to school",
+              "[返學|faan1 hok6]",
+              "finish school",
+              "[放學|fong3 hok6]"
+            ],
+            [
+              "go home",
+              "[返屋企|faan1 uk1 kei2]",
+              "go out",
+              "[出街|ceot1 gaai1]"
+            ],
+            [
+              "watch TV",
+              "[睇電視|tai2 din6 si6]",
+              "exercise",
+              "[做運動|zou6 wan6 dung6]"
+            ],
+            [
+              "study",
+              "[讀書|duk6 syu1]",
+              "rest",
+              "[休息|jau1 sik1]"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Hong Kong hours you should know",
+          "items": [
+            "🇭🇰 **MTR rush hours**: 8:00–9:30 a.m. and 6:00–7:30 p.m. At those times, [唔該借借|M4 goi1 ze3 ze3] is the phrase you'll say most often.",
+            "**Shops open late and close late.** Most shops don't open until 11:00 and close at 10 p.m. Yum cha restaurants are the opposite: they open at six in the morning.",
+            "**[放假|fong3 gaa3] = be on holiday, be off.** [今日放假|Gam1 jat6 fong3 gaa3] = today's a day off. [請假|cing2 gaa3] = take leave. [公眾假期|gung1 zung3 gaa3 kei4] = public holiday."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Making plans",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Making plans in Cantonese almost always follows the same order: ask if they're free → name the day → name the time → name the place. Four steps, each just one short sentence."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Step",
+            "Sentence",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "1. Free time",
+              "[你聽日得唔得閒呀|Nei5 ting1 jat6 dak1 m4 dak1 haan4 aa3]？",
+              "Are you free tomorrow?"
+            ],
+            [
+              "2. Suggestion",
+              "[不如一齊食飯啦|Bat1 jyu4 jat1 cai4 sik6 faan6 laa1]。",
+              "How about having a meal together."
+            ],
+            [
+              "3. Time",
+              "[幾點好呀|Gei2 dim2 hou2 aa3]？",
+              "What time works?"
+            ],
+            [
+              "4. Place",
+              "[喺邊度等呀|Hai2 bin1 dou6 dang2 aa3]？",
+              "Where shall we meet?"
+            ],
+            [
+              "Agreeing",
+              "[七點喺旺角地鐵站等|Cat1 dim2 hai2 Wong6 gok3 dei6 tit3 zaam6 dang2]。",
+              "Seven o'clock, wait at Mongkok MTR station."
+            ],
+            [
+              "Confirming",
+              "[就咁話|Zau6 gam2 waa6]，[唔好遲到呀|m4 hou2 ci4 dou3 aa3]！",
+              "Deal, don't be late!"
+            ],
+            [
+              "Canceling",
+              "[唔好意思|M4 hou2 ji3 si1]，[我今日唔得閒|ngo5 gam1 jat6 m4 dak1 haan4]。",
+              "Sorry, I can't make it today."
+            ],
+            [
+              "Postponing",
+              "[改第日得唔得呀|Goi2 dai6 jat6 dak1 m4 dak1 aa3]？",
+              "Can we change to another day?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three lifesaving phrases about time",
+          "items": [
+            "[我遲少少|Ngo5 ci4 siu2 siu2]，[等我五分鐘|dang2 ngo5 ng5 fan1 zung1]。 — I'm a little late, give me five minutes.",
+            "[我而家喺路上|Ngo5 ji4 gaa1 hai2 lou6 soeng6]。 — I'm on my way. The message most often sent on WhatsApp in Hong Kong.",
+            "[你到咗未呀|Nei5 dou3 zo2 mei6 aa3]？ — Are you there yet?"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "而家",
+      "baca": "ji4 gaa1",
+      "en": "now"
+    },
+    {
+      "zh": "點",
+      "baca": "dim2",
+      "en": "o'clock"
+    },
+    {
+      "zh": "幾點",
+      "baca": "gei2 dim2",
+      "en": "what time"
+    },
+    {
+      "zh": "半",
+      "baca": "bun3",
+      "en": "half"
+    },
+    {
+      "zh": "個字",
+      "baca": "go3 zi6",
+      "en": "five minutes"
+    },
+    {
+      "zh": "分鐘",
+      "baca": "fan1 zung1",
+      "en": "minute"
+    },
+    {
+      "zh": "個鐘",
+      "baca": "go3 zung1",
+      "en": "hour (duration)"
+    },
+    {
+      "zh": "朝早",
+      "baca": "ziu1 zou2",
+      "en": "morning"
+    },
+    {
+      "zh": "上晝",
+      "baca": "soeng6 zau3",
+      "en": "late morning"
+    },
+    {
+      "zh": "中午",
+      "baca": "zung1 ng5",
+      "en": "midday"
+    },
+    {
+      "zh": "下晝",
+      "baca": "haa6 zau3",
+      "en": "afternoon"
+    },
+    {
+      "zh": "夜晚",
+      "baca": "je6 maan5",
+      "en": "evening, night"
+    },
+    {
+      "zh": "今日",
+      "baca": "gam1 jat6",
+      "en": "today"
+    },
+    {
+      "zh": "琴日",
+      "baca": "kam4 jat6",
+      "en": "yesterday"
+    },
+    {
+      "zh": "聽日",
+      "baca": "ting1 jat6",
+      "en": "tomorrow"
+    },
+    {
+      "zh": "前日",
+      "baca": "cin4 jat6",
+      "en": "the day before yesterday"
+    },
+    {
+      "zh": "後日",
+      "baca": "hau6 jat6",
+      "en": "the day after tomorrow"
+    },
+    {
+      "zh": "日日",
+      "baca": "jat6 jat6",
+      "en": "every day"
+    },
+    {
+      "zh": "星期",
+      "baca": "sing1 kei4",
+      "en": "week"
+    },
+    {
+      "zh": "禮拜",
+      "baca": "lai5 baai3",
+      "en": "week (spoken)"
+    },
+    {
+      "zh": "月",
+      "baca": "jyut6",
+      "en": "month"
+    },
+    {
+      "zh": "號",
+      "baca": "hou6",
+      "en": "date; number"
+    },
+    {
+      "zh": "年",
+      "baca": "nin4",
+      "en": "year"
+    },
+    {
+      "zh": "平時",
+      "baca": "ping4 si4",
+      "en": "usually"
+    },
+    {
+      "zh": "起身",
+      "baca": "hei2 san1",
+      "en": "get up"
+    },
+    {
+      "zh": "瞓覺",
+      "baca": "fan3 gaau3",
+      "en": "sleep"
+    },
+    {
+      "zh": "沖涼",
+      "baca": "cung1 loeng4",
+      "en": "shower"
+    },
+    {
+      "zh": "返工",
+      "baca": "faan1 gung1",
+      "en": "go to work"
+    },
+    {
+      "zh": "收工",
+      "baca": "sau1 gung1",
+      "en": "finish work"
+    },
+    {
+      "zh": "返學",
+      "baca": "faan1 hok6",
+      "en": "go to school"
+    },
+    {
+      "zh": "放學",
+      "baca": "fong3 hok6",
+      "en": "finish school"
+    },
+    {
+      "zh": "食晏",
+      "baca": "sik6 aan3",
+      "en": "have lunch"
+    },
+    {
+      "zh": "食早餐",
+      "baca": "sik6 zou2 caan1",
+      "en": "have breakfast"
+    },
+    {
+      "zh": "食晚飯",
+      "baca": "sik6 maan5 faan6",
+      "en": "have dinner"
+    },
+    {
+      "zh": "出街",
+      "baca": "ceot1 gaai1",
+      "en": "go out"
+    },
+    {
+      "zh": "睇電視",
+      "baca": "tai2 din6 si6",
+      "en": "watch TV"
+    },
+    {
+      "zh": "休息",
+      "baca": "jau1 sik1",
+      "en": "rest"
+    },
+    {
+      "zh": "放假",
+      "baca": "fong3 gaa3",
+      "en": "be on holiday, day off"
+    },
+    {
+      "zh": "得閒",
+      "baca": "dak1 haan4",
+      "en": "free (have time)"
+    },
+    {
+      "zh": "忙",
+      "baca": "mong4",
+      "en": "busy"
+    },
+    {
+      "zh": "攰",
+      "baca": "gui6",
+      "en": "tired"
+    },
+    {
+      "zh": "遲",
+      "baca": "ci4",
+      "en": "late"
+    },
+    {
+      "zh": "早",
+      "baca": "zou2",
+      "en": "early"
+    },
+    {
+      "zh": "先",
+      "baca": "sin1",
+      "en": "first (after a verb)"
+    },
+    {
+      "zh": "到",
+      "baca": "dou3",
+      "en": "arrive; until"
+    },
+    {
+      "zh": "由",
+      "baca": "jau4",
+      "en": "from"
+    },
+    {
+      "zh": "堂",
+      "baca": "tong4",
+      "en": "classifier for lessons"
+    },
+    {
+      "zh": "啱",
+      "baca": "ngaam1",
+      "en": "right, just right"
+    },
+    {
+      "zh": "啱啱",
+      "baca": "ngaam1 ngaam1",
+      "en": "just now"
+    },
+    {
+      "zh": "明白",
+      "baca": "ming4 baak6",
+      "en": "understand"
+    },
+    {
+      "zh": "即係",
+      "baca": "zik1 hai6",
+      "en": "that is, meaning"
+    },
+    {
+      "zh": "以為",
+      "baca": "ji5 wai4",
+      "en": "think (wrongly)"
+    },
+    {
+      "zh": "應該",
+      "baca": "jing1 goi1",
+      "en": "should"
+    },
+    {
+      "zh": "但係",
+      "baca": "daan6 hai6",
+      "en": "but"
+    },
+    {
+      "zh": "巴士",
+      "baca": "baa1 si2",
+      "en": "bus"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these times in Cantonese, using the 個字 system where you can.",
+      "items": [
+        "2:00",
+        "3:30",
+        "3:05",
+        "3:45",
+        "7:20",
+        "12:15 p.m."
+      ]
+    },
+    {
+      "prompt": "Rearrange these sentences so the time word stands in the right place.",
+      "items": [
+        "[我去旺角聽日|Ngo5 heoi3 Wong6 gok3 ting1 jat6]。",
+        "[佢食飯三點|Keoi5 sik6 faan6 saam1 dim2]。",
+        "[我返工星期一|Ngo5 faan1 gung1 sing1 kei4 jat1]。",
+        "[我起身七點平時|Ngo5 hei2 san1 cat1 dim2 ping4 si4]。",
+        "[我哋見面下個星期|Ngo5 dei6 gin3 min6 haa6 go3 sing1 kei4]。"
+      ]
+    },
+    {
+      "prompt": "Put the pieces in the right order.",
+      "items": [
+        "而家 / 幾 / 點 / 呀",
+        "我 / 聽日 / 八 / 點 / 返工",
+        "你 / 星期幾 / 最 / 忙 / 呀",
+        "我 / 由 / 八點 / 做 / 到 / 六點",
+        "你 / 得 / 唔 / 得閒 / 呀",
+        "唔好 / 遲到 / 呀"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "[我平時七點起身|Ngo5 ping4 si4 cat1 dim2 hei2 san1]。",
+        "[巴士三點九到|Baa1 si2 saam1 dim2 gau2 dou3]。",
+        "[今個星期六你得唔得閒呀|Gam1 go3 sing1 kei4 luk6 nei5 dak1 m4 dak1 haan4 aa3]？",
+        "[我星期六日唔使返工|Ngo5 sing1 kei4 luk6 jat6 m4 sai2 faan1 gung1]。",
+        "[七點喺旺角地鐵站等|Cat1 dim2 hai2 Wong6 gok3 dei6 tit3 zaam6 dang2]。"
+      ]
+    },
+    {
+      "prompt": "Translate into Cantonese. Write in Jyutping.",
+      "items": [
+        "What time is it?",
+        "It's half past three.",
+        "Tomorrow I start work at eight.",
+        "I'm off today.",
+        "I have lunch at one."
+      ]
+    },
+    {
+      "prompt": "Correct these wrong sentences, then write the right version in Jyutping.",
+      "items": [
+        "[而家二點|Ji4 gaa1 ji6 dim2]。",
+        "[我食飯聽日|Ngo5 sik6 faan6 ting1 jat6]。",
+        "[我做三點鐘|Ngo5 zou6 saam1 dim2 zung1]。",
+        "[我先食|Ngo5 sin1 sik6]。",
+        "[現在三點半|Jin6 zoi6 saam1 dim2 bun3]。"
+      ]
+    }
+  ],
+  "answers": [
+    "兩點 loeng5 dim2 — 三點半 saam1 dim2 bun3 — 三點一個字 saam1 dim2 jat1 go3 zi6 — 三點九 saam1 dim2 gau2 — 七點四 cat1 dim2 sei3 — 中午十二點三個字 zung1 ng5 sap6 ji6 dim2 saam1 go3 zi6",
+    "我聽日去旺角。 — 佢三點食飯。 — 我星期一返工。 — 我平時七點起身。 — 我哋下個星期見面。",
+    "而家 幾 點 呀 — 我 聽日 八 點 返工 — 你 星期幾 最 忙 呀 — 我 由 八點 做 到 六點 — 你 得 唔 得閒 呀 — 唔好 遲到 呀",
+    "I usually get up at seven. — The bus comes at 3:45. — Are you free this Saturday? — I don't need to work on weekends. — Wait at Mongkok MTR station at seven.",
+    "Ji4 gaa1 gei2 dim2 aa3? — Ji4 gaa1 saam1 dim2 bun3. — Ngo5 ting1 jat6 baat3 dim2 faan1 gung1. — Ngo5 gam1 jat6 fong3 gaa3. — Ngo5 jat1 dim2 sik6 aan3.",
+    "Ji4 gaa1 loeng5 dim2. — Ngo5 ting1 jat6 sik6 faan6. — Ngo5 zou6 saam1 go3 zung1. — Ngo5 sik6 sin1. — Ji4 gaa1 saam1 dim2 bun3."
+  ],
+  "wave": "Five minutes before Unit 6: write your schedule for tomorrow in Cantonese — just six lines, each a full sentence with the time before the verb. Read it out loud. Then turn it all into yesterday by changing 聽日 to 琴日, and notice that the verbs don't change at all. That's the whole Cantonese time system, in five minutes."
+}

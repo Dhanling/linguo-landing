@@ -1,0 +1,614 @@
+{
+  "title": "Counting — numbers and counter words",
+  "title_target": "কয়টা? কতজন? — kôy-Ta? kôtô-jôn?",
+  "goal": "Count from one to a hundred, and use the counter words -টা and -জন — something English has only in phrases like “a piece of” or “three head of cattle”, but Bengali uses with every number.",
+  "bekal": [
+    "count ১ to ২০ and the tens up to ১০০",
+    "read the Bengali digits ০ ১ ২ ৩ ৪ ৫ ৬ ৭ ৮ ৯",
+    "attach -টা for things and -জন for people",
+    "ask কয়টা (how many things) and কতজন (how many people)",
+    "understand লাখ and কোটি, which English does not use"
+  ],
+  "dialogs": [
+    {
+      "title": "কথোপকথন — At the sweet shop",
+      "intro": "Mitali takes Ani along to buy মিষ্টি — Bengali sweets — for this afternoon's guests. Notice that every number gets a small ending stuck to it before the thing is named: that is the counter word.",
+      "lines": [
+        {
+          "speaker": "দোকানদার:",
+          "text": "[বলুন|bô-lun] [আপা|a-pa], [কী|ki] [লাগবে|lag-bé]?",
+          "id": "Yes, sister, what will you need?",
+          "literal": "say — sister, what — will-be-needed?"
+        },
+        {
+          "speaker": "মিতালি:",
+          "text": "[দশটা|dôsh-Ta] [রসগোল্লা|rôsh-gôl-la] [দিন|din], [আর|ar] [পাঁচটা|paⁿch-Ta] [সন্দেশ|sôn-désh]।",
+          "id": "Give me ten rosogolla, and five sandesh.",
+          "literal": "ten-(things) — rosogolla — give, and — five-(things) — sandesh."
+        },
+        {
+          "speaker": "দোকানদার:",
+          "text": "[আচ্ছা|ach-chha]। [বাড়িতে|ba-Ri-té] [কতজন|kô-tô-jôn] [অতিথি|ô-ti-thi]?",
+          "id": "Sure. How many guests at home?",
+          "literal": "okay. home-at — how-many-(people) — guest?"
+        },
+        {
+          "speaker": "মিতালি:",
+          "text": "[ছয়জন|chhôy-jôn]। [আর|ar] [আমরা|am-ra] [চারজন|char-jôn]।",
+          "id": "Six. And there are four of us.",
+          "literal": "six-(people). and — we — four-(people)."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[মিতালি|mi-ta-li] [দিদি|di-di], [এটা|è-Ta] [কয়টা|kôy-Ta]?",
+          "id": "Mitali, how many are in here?",
+          "literal": "mitali — sister, this — how-many-(things)?"
+        },
+        {
+          "speaker": "মিতালি:",
+          "text": "[ওই|oi] [বাক্সে|bak-sé] [বারোটা|ba-ro-Ta] [আছে|a-chhé]। [এক|èk] [ডজন|Dô-jôn]।",
+          "id": "That box has twelve. One dozen.",
+          "literal": "that — box-in — twelve-(things) — exist. one — dozen."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[আমি|a-mi] [তিনটা|tin-Ta] [নেব|né-bô]। [ঘরে|ghô-ré] [খাব|kha-bô]।",
+          "id": "I'll take three. I'll eat them in my room.",
+          "literal": "I — three-(things) — will-take. room-in — will-eat."
+        },
+        {
+          "speaker": "দোকানদার:",
+          "text": "[সব|sôb] [মিলে|mi-lé] [আঠারোটা|a-Tha-ro-Ta]। [দুশো|du-sho] [সত্তর|sôt-tôr] [টাকা|Ta-ka]।",
+          "id": "Eighteen altogether. Two hundred seventy taka.",
+          "literal": "all — together — eighteen-(things). two-hundred — seventy — taka."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[দুশো|du-sho] [সত্তর|sôt-tôr]? [একটু|èk-Tu] [আস্তে|as-té] [বলুন|bô-lun]!",
+          "id": "Two hundred seventy? Please say it a bit more slowly!",
+          "literal": "two-hundred — seventy? a-little — slowly — say!"
+        },
+        {
+          "speaker": "দোকানদার:",
+          "text": "[হা|ha] [হা|ha]! [দুই|dui]-[শো|sho]-[সত্তর|sôt-tôr]। [এই|èi] [যে|jé], [কাগজে|ka-gô-jé] [লিখে|li-khé] [দিচ্ছি|dich-chhi] — ২৭০।",
+          "id": "Ha ha! Two hun-dred se-ven-ty. Here, I'll write it on paper — 270.",
+          "literal": "ha ha! two-hundred-seventy. this — here, paper-on — writing — am-giving — 270."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[ধন্যবাদ|dhôn-nô-bad]! [বাংলা|bang-la] [সংখ্যাও|sông-khôo] [শিখছি|shikh-chhi]।",
+          "id": "Thank you! I'm learning Bengali numbers too.",
+          "literal": "thank-you! bengali — numbers-too — am-learning."
+        },
+        {
+          "speaker": "দোকানদার:",
+          "text": "[খুব|khub] [ভালো|bha-lo]! [তাহলে|ta-hô-lé] [আরও|a-ro] [একটা|èk-Ta] [ফ্রি|phri]।",
+          "id": "Very good! Then one more, free.",
+          "literal": "very — good! then — more — one-(thing) — free."
+        }
+      ],
+      "notes": [
+        "**A number never stands directly before a noun — there is always an ending in between.** You can't say *তিন বই*; the correct form is **তিনটা বই** (three books). That ending is called a counter word. English has a faint echo of it — *three **pieces** of cake*, *two **head** of cattle*, *a **sheet** of paper* — but in Bengali it is required with every number. It feels odd for a week, then becomes automatic.",
+        "**Two endings cover ninety percent of your needs: -টা for things, -জন for people.** একটা বই (a book), দুটো আম (two mangoes), তিনজন ছাত্র (three students), কতজন? (how many people?). ⚠️ **Never** use -টা for people — একটা লোক sounds like you are talking about a person as an object.",
+        "⚠️ **Some number + ending combinations change shape and must be learned as new words.** এক + টা = **একটা**; দুই + টা = **দুটো** (not *দুইটা*); দুই + জন = **দুজন** (not *দুইজন*); তিন + টা = **তিনটে · তিনটা**. From four on, the combinations become regular again: চারটা, পাঁচটা, ছয়টা.",
+        "**Every number from one to a hundred is its own word — and there is no shortcut.** Unlike English, which builds “twenty-three” from two pieces, Bengali has a single word for each number: ২১ **একুশ**, ২২ **বাইশ**, ২৩ **তেইশ**. ⚠️ The good news: at A1 you **only need ১–২০ and the tens**; the rest you can guess from resemblance, and people will understand বিশ-তিন if you hold up your fingers.",
+        "⚠️ **লাখ and কোটি — two units English does not use.** After হাজার (thousand), Bengali doesn't jump to “million” but to **লাখ** *lakh* = **one hundred thousand**, then **কোটি** *koTi* = **ten million**. So a house price is “thirty lakh” (3,000,000), not “three million”. If you hear a number that sounds impossible, the unit is probably different, not the price.",
+        "**Bengali digits are still alive on the street.** Bus numbers, prices on market boards, house numbers and page numbers are often written ০ ১ ২ ৩ ৪ ৫ ৬ ৭ ৮ ৯. There are only ten, and some look like digits you know — ২ looks like a backwards 2, ৪ like an unfinished 8. One afternoon of memorizing is enough, and it pays off at once.",
+        "**একটু আস্তে বলুন — the lifesaver for numbers.** Numbers are the fastest-spoken part of any language. Don't be shy about asking for a repeat, or asking for it in writing: **লিখে দিন** (*li-khé din* — please write it down). Any shopkeeper will gladly do it, and a phone calculator is a perfectly legitimate friend."
+      ],
+      "grammars": [
+        {
+          "title": "One to twenty",
+          "tables": [
+            {
+              "head": [
+                "Number",
+                "বাংলা",
+                "Say it",
+                "Number",
+                "বাংলা",
+                "Say it"
+              ],
+              "rows": [
+                [
+                  "১ — 1",
+                  "এক",
+                  "èk",
+                  "১১ — 11",
+                  "এগারো",
+                  "è-ga-ro"
+                ],
+                [
+                  "২ — 2",
+                  "দুই",
+                  "dui",
+                  "১২ — 12",
+                  "বারো",
+                  "ba-ro"
+                ],
+                [
+                  "৩ — 3",
+                  "তিন",
+                  "tin",
+                  "১৩ — 13",
+                  "তেরো",
+                  "té-ro"
+                ],
+                [
+                  "৪ — 4",
+                  "চার",
+                  "char",
+                  "১৪ — 14",
+                  "চোদ্দ",
+                  "chod-dô"
+                ],
+                [
+                  "৫ — 5",
+                  "পাঁচ",
+                  "paⁿch",
+                  "১৫ — 15",
+                  "পনেরো",
+                  "pô-né-ro"
+                ],
+                [
+                  "৬ — 6",
+                  "ছয়",
+                  "chhôy",
+                  "১৬ — 16",
+                  "ষোলো",
+                  "sho-lo"
+                ],
+                [
+                  "৭ — 7",
+                  "সাত",
+                  "sat",
+                  "১৭ — 17",
+                  "সতেরো",
+                  "sô-té-ro"
+                ],
+                [
+                  "৮ — 8",
+                  "আট",
+                  "aT",
+                  "১৮ — 18",
+                  "আঠারো",
+                  "a-Tha-ro"
+                ],
+                [
+                  "৯ — 9",
+                  "নয়",
+                  "nôy",
+                  "১৯ — 19",
+                  "ঊনিশ",
+                  "u-nish"
+                ],
+                [
+                  "১০ — 10",
+                  "দশ",
+                  "dôsh",
+                  "২০ — 20",
+                  "বিশ · কুড়ি",
+                  "bish · ku-Ri"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Tens",
+                "বাংলা",
+                "Say it",
+                "Big units",
+                "বাংলা",
+                "Say it"
+              ],
+              "rows": [
+                [
+                  "৩০ — 30",
+                  "ত্রিশ",
+                  "trish",
+                  "১০০ — one hundred",
+                  "একশো",
+                  "èk-sho"
+                ],
+                [
+                  "৪০ — 40",
+                  "চল্লিশ",
+                  "chôl-lish",
+                  "২০০ — two hundred",
+                  "দুশো",
+                  "du-sho"
+                ],
+                [
+                  "৫০ — 50",
+                  "পঞ্চাশ",
+                  "pôn-chash",
+                  "১০০০ — one thousand",
+                  "হাজার",
+                  "ha-jar"
+                ],
+                [
+                  "৬০ — 60",
+                  "ষাট",
+                  "shaT",
+                  "১,০০,০০০ — 100,000",
+                  "লাখ",
+                  "lakh"
+                ],
+                [
+                  "৭০ — 70",
+                  "সত্তর",
+                  "sôt-tôr",
+                  "১,০০,০০,০০০ — 10 million",
+                  "কোটি",
+                  "ko-Ti"
+                ],
+                [
+                  "৮০ — 80",
+                  "আশি",
+                  "a-shi",
+                  "half",
+                  "আধা",
+                  "a-dha"
+                ],
+                [
+                  "৯০ — 90",
+                  "নব্বই",
+                  "nôb-boi",
+                  "zero",
+                  "শূন্য",
+                  "shun-nô"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **আশি (80) and আশা (hope) differ by just one letter** — look carefully. Likewise **নয়** meaning “nine” and **নয়** meaning “is not”: two words written exactly the same, told apart only by their place in the sentence."
+          ]
+        },
+        {
+          "title": "Counter words",
+          "table": {
+            "head": [
+              "Ending",
+              "Used for",
+              "Example",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "-টা · -টি",
+                "any object",
+                "একটা বই",
+                "èk-Ta bôi",
+                "a book"
+              ],
+              [
+                "-জন",
+                "people",
+                "তিনজন ছাত্র",
+                "tin-jôn chha-trô",
+                "three students"
+              ],
+              [
+                "-খানা · -খানি",
+                "flat things",
+                "দুখানা কাগজ",
+                "du-kha-na ka-gôj",
+                "two sheets of paper"
+              ],
+              [
+                "-টুকরো",
+                "pieces",
+                "একটুকরো কেক",
+                "èk-Tuk-ro kék",
+                "a piece of cake"
+              ],
+              [
+                "কাপ · গ্লাস",
+                "cup · glass",
+                "দুকাপ চা",
+                "du-kap cha",
+                "two cups of tea"
+              ],
+              [
+                "কেজি · লিটার",
+                "kilo · liter",
+                "তিন কেজি চাল",
+                "tin ké-ji chal",
+                "three kilos of rice"
+              ],
+              [
+                "জোড়া",
+                "pair",
+                "এক জোড়া জুতো",
+                "èk jo-Ra ju-to",
+                "a pair of shoes"
+              ],
+              [
+                "কয়টা · কটা",
+                "how many (things)",
+                "কয়টা আম?",
+                "kôy-Ta am",
+                "how many mangoes?"
+              ],
+              [
+                "কতজন",
+                "how many (people)",
+                "কতজন এসেছে?",
+                "kô-tô-jôn é-sè-chhé",
+                "how many people came?"
+              ]
+            ]
+          },
+          "after": [
+            "**কত** *kôt* on its own means “how much” and is used for uncountable things — কত টাকা? (how much money?), কত দূর? (how far?). For countable things, add the ending: **কয়টা** (how many things), **কতজন** (how many people)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Numbers in everyday life",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "আমার বয়স আঠাশ।",
+              "a-mar bô-yôsh a-Tha-sh",
+              "I'm twenty-eight."
+            ],
+            [
+              "আমাদের পরিবারে পাঁচজন।",
+              "a-ma-dér pô-ri-ba-ré paⁿch-jôn",
+              "There are five of us in my family."
+            ],
+            [
+              "দুকাপ চা দিন।",
+              "du-kap cha din",
+              "Two cups of tea, please."
+            ],
+            [
+              "এটার দাম কত?",
+              "è-Tar dam kôt",
+              "How much is this?"
+            ],
+            [
+              "আমার ঘর তিন নম্বর।",
+              "a-mar ghôr tin nôm-bôr",
+              "My room is number three."
+            ],
+            [
+              "আমি দশ দিন থাকব।",
+              "a-mi dôsh din thak-bô",
+              "I'll stay for ten days."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Bengali sweets — and counting them",
+          "items": [
+            "**রসগোল্লা** *rôshgôlla* — round cheese balls in sugar syrup, spongy and moist. Bengal's pride, fought over by Bangladesh and West Bengal all the way to a geographical-indication court case.",
+            "**সন্দেশ** *sôndésh* — a firm cheese sweet, drier and finer; usually sold by the piece and boxed as a gift.",
+            "**মিষ্টি দই** *mishTi dôi* — sweet yogurt in a clay pot. ⚠️ This is no ordinary dessert; refusing it in someone's home can feel like refusing the host's hospitality.",
+            "**Bringing মিষ্টি when you visit is a custom, not a luxury.** One small box is enough, and your host will count it in front of you — so the numbers in this unit get used right away."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "A note on money. The currency of Bangladesh is the **টাকা** *Taka*, and in everyday Bengali India's currency is also called **টাকা**, even though its official name is the rupee. The word **পয়সা** *pôysa* means a small coin, but in conversation it more often means “money” in general — like saying *cash*. If someone asks **পয়সা আছে?**, they are asking whether you have money on you, not whether you have coins."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "এক · দুই · তিন",
+      "baca": "èk · dui · tin",
+      "en": "one · two · three"
+    },
+    {
+      "bn": "চার · পাঁচ · ছয়",
+      "baca": "char · paⁿch · chhôy",
+      "en": "four · five · six"
+    },
+    {
+      "bn": "সাত · আট · নয়",
+      "baca": "sat · aT · nôy",
+      "en": "seven · eight · nine"
+    },
+    {
+      "bn": "দশ",
+      "baca": "dôsh",
+      "en": "ten"
+    },
+    {
+      "bn": "বিশ · ত্রিশ",
+      "baca": "bish · trish",
+      "en": "twenty · thirty"
+    },
+    {
+      "bn": "একশো · হাজার",
+      "baca": "èk-sho · ha-jar",
+      "en": "one hundred · one thousand"
+    },
+    {
+      "bn": "লাখ · কোটি",
+      "baca": "lakh · ko-Ti",
+      "en": "one hundred thousand · ten million"
+    },
+    {
+      "bn": "শূন্য",
+      "baca": "shun-nô",
+      "en": "zero"
+    },
+    {
+      "bn": "আধা",
+      "baca": "a-dha",
+      "en": "half"
+    },
+    {
+      "bn": "-টা · -টি",
+      "baca": "-Ta · -Ti",
+      "en": "counter word (things)"
+    },
+    {
+      "bn": "-জন",
+      "baca": "-jôn",
+      "en": "counter word (people)"
+    },
+    {
+      "bn": "কয়টা · কটা",
+      "baca": "kôy-Ta · kô-Ta",
+      "en": "how many (things)"
+    },
+    {
+      "bn": "কতজন",
+      "baca": "kô-tô-jôn",
+      "en": "how many (people)"
+    },
+    {
+      "bn": "কত",
+      "baca": "kôt",
+      "en": "how much, how many"
+    },
+    {
+      "bn": "দাম",
+      "baca": "dam",
+      "en": "price"
+    },
+    {
+      "bn": "টাকা · পয়সা",
+      "baca": "Ta-ka · pôy-sa",
+      "en": "money"
+    },
+    {
+      "bn": "নম্বর",
+      "baca": "nôm-bôr",
+      "en": "number (house, room, phone)"
+    },
+    {
+      "bn": "সংখ্যা",
+      "baca": "sông-khô",
+      "en": "number, numeral"
+    },
+    {
+      "bn": "মিষ্টি",
+      "baca": "mish-Ti",
+      "en": "sweet (n.); sweet (adj.)"
+    },
+    {
+      "bn": "রসগোল্লা",
+      "baca": "rôsh-gôl-la",
+      "en": "rosogolla (round cheese sweet)"
+    },
+    {
+      "bn": "সন্দেশ",
+      "baca": "sôn-désh",
+      "en": "sandesh (firm cheese sweet)"
+    },
+    {
+      "bn": "দই",
+      "baca": "dôi",
+      "en": "yogurt"
+    },
+    {
+      "bn": "অতিথি",
+      "baca": "ô-ti-thi",
+      "en": "guest"
+    },
+    {
+      "bn": "বাক্স",
+      "baca": "bak-sô",
+      "en": "box"
+    },
+    {
+      "bn": "কাগজ",
+      "baca": "ka-gôj",
+      "en": "paper"
+    },
+    {
+      "bn": "দিন",
+      "baca": "din",
+      "en": "day; please give"
+    },
+    {
+      "bn": "লাগবে",
+      "baca": "lag-bé",
+      "en": "will be needed"
+    },
+    {
+      "bn": "আচ্ছা",
+      "baca": "ach-chha",
+      "en": "okay, all right"
+    },
+    {
+      "bn": "তাহলে",
+      "baca": "ta-hô-lé",
+      "en": "in that case, then"
+    },
+    {
+      "bn": "সব মিলে",
+      "baca": "sôb mi-lé",
+      "en": "altogether, in total"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these numbers as Bengali words.",
+      "items": [
+        "৩",
+        "৭",
+        "১২",
+        "২০",
+        "৫০",
+        "১০০"
+      ]
+    },
+    {
+      "prompt": "Choose -টা or -জন.",
+      "items": [
+        "তিন____ বই",
+        "পাঁচ____ ছাত্র",
+        "দশ____ আম",
+        "ছয়____ অতিথি",
+        "এক____ চেয়ার"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "আছে / বই / দুটো / টেবিলে",
+        "কতজন / পরিবারে / আপনাদের",
+        "দিন / চা / দুকাপ",
+        "কত / দাম / এটার",
+        "থাকব / দিন / আমি / দশ"
+      ]
+    },
+    {
+      "prompt": "Translate into Bengali.",
+      "items": [
+        "How many guests?",
+        "Give me ten rosogolla.",
+        "I'm twenty-five.",
+        "There are two chairs in the room.",
+        "How much is this?",
+        "There are four of us."
+      ]
+    }
+  ],
+  "answers": [
+    "তিন — সাত — বারো — বিশ — পঞ্চাশ — একশো",
+    "তিনটা — পাঁচজন — দশটা — ছয়জন — একটা",
+    "টেবিলে দুটো বই আছে। — আপনাদের পরিবারে কতজন? — দুকাপ চা দিন। — এটার দাম কত? — আমি দশ দিন থাকব।",
+    "কতজন অতিথি? — দশটা রসগোল্লা দিন। — আমার বয়স পঁচিশ। — ঘরে দুটো চেয়ার আছে। — এটার দাম কত? — আমরা চারজন।"
+  ]
+}

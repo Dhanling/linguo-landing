@@ -1,0 +1,559 @@
+{
+  "title": "Where's the metro?",
+  "title_target": "სად არის მეტრო? — Sad aris met'ro?",
+  "goal": "Ask for directions and understand the answer, name places around town, and use three endings that do the work of English place prepositions: -ში, -ზე, and -თან.",
+  "bekal": [
+    "ask სად არის…? and understand the answer",
+    "use -ში (in), -ზე (on), -თან (at/near)",
+    "give directions: right, left, straight on",
+    "name the important places in a city",
+    "ask people to repeat or to show you on a map"
+  ],
+  "dialogs": [
+    {
+      "title": "დიალოგი — Lost on Rustaveli Avenue",
+      "intro": "Ani is looking for the metro station and asks a man at the bus stop. Georgian answers are usually long and full of hand gestures — notice how Ani asks for a repeat without any awkwardness.",
+      "lines": [
+        {
+          "speaker": "ანი:",
+          "text": "[უკაცრავად|Uk'-ats-ra-vad], [სად|sad] [არის|a-ris] [მეტრო|met'-ro]?",
+          "id": "Excuse me, where's the metro?",
+          "literal": "excuse-me, where — is — metro?"
+        },
+        {
+          "speaker": "კაცი:",
+          "text": "[მეტრო|Met'-ro]? [აქვე|Ak-ve], [ახლოს|akh-los]. [პირდაპირ|P'ir-da-p'ir] [წადი|ts'a-di].",
+          "id": "The metro? It's right here, close by. Go straight.",
+          "literal": "metro? right-here, near. straight — go."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[პირდაპირ|P'ir-da-p'ir]… [მერე|me-re]?",
+          "id": "Straight… and then?",
+          "literal": "straight… then?"
+        },
+        {
+          "speaker": "კაცი:",
+          "text": "[მერე|Me-re] [მარჯვნივ|marj-vniv], [აფთიაქთან|ap-ti-ak-tan]. [მეტროს|Met'-ros] [შესასვლელი|she-sas-vle-li] [იქ|ik] [არის|a-ris].",
+          "id": "Then right, by the pharmacy. The metro entrance is there.",
+          "literal": "then — to-the-right, pharmacy-at. metro's — entrance — there — is."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ბოდიში|Bo-di-shi], [ვერ|ver] [გავიგე|ga-vi-ge]. [ნელა|Ne-la], [თუ|tu] [შეიძლება|she-idz-le-ba].",
+          "id": "Sorry, I didn't catch that. Slowly, please.",
+          "literal": "sorry, couldn't — I-catch. slowly, if — possible."
+        },
+        {
+          "speaker": "კაცი:",
+          "text": "[პირდაპირ|P'ir-da-p'ir]… [ას|as] [მეტრში|met'r-shi]… [მარჯვნივ|marj-vniv]. [გასაგებია|Ga-sa-ge-bi-a]?",
+          "id": "Straight… a hundred meters… then right. Got it?",
+          "literal": "straight… hundred — meter-in… to-the-right. understandable-is?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[კი|K'i], [გასაგებია|ga-sa-ge-bi-a]. [შორია|Sho-ri-a]?",
+          "id": "Yes, got it. Is it far?",
+          "literal": "yes, understandable-is. far-is?"
+        },
+        {
+          "speaker": "კაცი:",
+          "text": "[არა|A-ra], [ხუთი|khu-ti] [წუთი|ts'u-ti] [ფეხით|pe-khit].",
+          "id": "No, five minutes on foot.",
+          "literal": "no, five — minute — foot-with."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[და|Da] [სად|sad] [არის|a-ris] [ბანკი|ban-k'i]? [ფული|Pu-li] [მჭირდება|mch'ir-de-ba].",
+          "id": "And where's the bank? I need money.",
+          "literal": "and — where — is — bank? money — I-need."
+        },
+        {
+          "speaker": "კაცი:",
+          "text": "[ბანკი|Ban-k'i] [მეტროსთან|met'-ros-tan] [არის|a-ris], [სასტუმროს|sas-t'um-ros] [გვერდით|gver-dit].",
+          "id": "The bank is by the metro, next to the hotel.",
+          "literal": "bank — metro-at — is, hotel's — side-with."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[დიდი|Di-di] [მადლობა|mad-lo-ba]! [ძალიან|Dza-li-an] [დამეხმარეთ|da-me-khma-ret].",
+          "id": "Thank you so much! You've been a great help.",
+          "literal": "big — thanks! very — you-formal-helped-me."
+        },
+        {
+          "speaker": "კაცი:",
+          "text": "[არაფრის|A-rap-ris], [გენაცვალე|ge-nats-va-le]. [კარგად|K'ar-gad]!",
+          "id": "You're welcome, dear. Take care!",
+          "literal": "it's-nothing, dear. well!"
+        }
+      ],
+      "notes": [
+        "**Three endings that replace the place prepositions.** **-ში** = in (თბილის**ში** = in Tbilisi, სახლ**ში** = at home). **-ზე** = on / at (მაგიდა**ზე** = on the table, ქუჩა**ზე** = on the street). **-თან** = at / near / at someone's place (აფთიაქ**თან** = by the pharmacy, ექიმ**თან** = to the doctor's). A final -ი drops first, exactly as with -დან in unit 3.",
+        "⚠️ **Georgian doesn't distinguish \"in\" from \"into\", or \"at\" from \"to\".** *სახლში ვარ* = I'm at home; *სახლში მივდივარ* = I'm going home. Same ending; only the verb makes the difference. A big relief compared to German or Russian, which change the ending.",
+        "**ვერ, not არ.** Both mean \"not\", but **არ** = won't / doesn't, while **ვერ** = can't, beyond your ability. *არ გავიგე* means \"I didn't catch it\" (maybe you weren't listening); *ვერ გავიგე* means \"I couldn't catch it\" — and that's the right one when your Georgian isn't there yet. English uses \"didn't\" for both; Georgian doesn't.",
+        "**ვერ გავიგე — learn it as a whole.** It's the most useful sentence for your entire stay in Georgia. Its partners: *ნელა, თუ შეიძლება* (slowly, please) and *გაიმეორეთ, თუ შეიძლება* (please repeat).",
+        "**გასაგებია?** (gasagebia) — \"got it?\", and the answer is კი, გასაგებია. It often closes any explanation, from directions to lessons.",
+        "**ფეხით = on foot.** The -ით ending again, which you know from unit 5 — ფეხი (foot) → ფეხ**ით** (by foot). Unit 13 uses it for every kind of transport.",
+        "**მჭირდება = I need.** Another inverted verb: მჭირდება (I need), გჭირდება (you need), სჭირდება (he/she needs). It sounds heavy because of the ჭ inside; say m-ch'ir-de-ba slowly."
+      ],
+      "grammars": [
+        {
+          "title": "-ში, -ზე, -თან: which ending goes where",
+          "body": [
+            "The rule makes sense once you think about the shape of the place."
+          ],
+          "table": {
+            "head": [
+              "Ending",
+              "Meaning",
+              "Used for",
+              "Example"
+            ],
+            "rows": [
+              [
+                "-ში",
+                "in, into",
+                "enclosed spaces, cities, countries",
+                "სახლში, თბილისში, მაღაზიაში, ბანკში"
+              ],
+              [
+                "-ზე",
+                "on, at",
+                "surfaces, streets, events",
+                "მაგიდაზე, ქუჩაზე, გაკვეთილზე (in class)"
+              ],
+              [
+                "-თან",
+                "at, near, at someone's",
+                "people, buildings as landmarks",
+                "ექიმთან, აფთიაქთან, მეგობართან"
+              ],
+              [
+                "-დან",
+                "from",
+                "origin, starting point",
+                "სახლიდან, თბილისიდან, ბანკიდან"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Some places take **-ზე** even when English would say \"in\": ქუჩა**ზე** (in the street), ბაზრო**ბაზე** (at the bazaar), გაკვეთილ**ზე** (in class). If unsure, -ში is almost always safe for buildings and cities.",
+            "To say whose place someone is going to, use **-თან**: *ექიმთან მივდივარ* — I'm going to the doctor (literally \"to the doctor's place\")."
+          ]
+        },
+        {
+          "title": "Directions and position",
+          "table": {
+            "head": [
+              "Georgian",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "მარჯვნივ",
+                "marjvniv",
+                "to the right, on the right"
+              ],
+              [
+                "მარცხნივ",
+                "martskhniv",
+                "to the left, on the left"
+              ],
+              [
+                "პირდაპირ",
+                "p'irdap'ir",
+                "straight on"
+              ],
+              [
+                "უკან",
+                "uk'an",
+                "back, behind"
+              ],
+              [
+                "აქ / აქვე",
+                "ak / ak've",
+                "here / right here"
+              ],
+              [
+                "იქ",
+                "ik",
+                "there"
+              ],
+              [
+                "ახლოს",
+                "akhlos",
+                "near"
+              ],
+              [
+                "შორს",
+                "shors",
+                "far"
+              ],
+              [
+                "გვერდით",
+                "gverdit",
+                "next to"
+              ],
+              [
+                "პირისპირ",
+                "p'irisp'ir",
+                "opposite"
+              ],
+              [
+                "შუაში",
+                "shuashi",
+                "in the middle"
+              ],
+              [
+                "კუთხეში",
+                "k'utkheshi",
+                "in the corner"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that **მარჯვნივ** and **მარცხნივ** mean both \"to the right\" and \"on the right\" — once again, Georgian doesn't feel the need to separate movement from position here."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Places in town",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Georgian",
+            "Say it",
+            "Meaning",
+            "Georgian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ქუჩა",
+              "kucha",
+              "street",
+              "სასტუმრო",
+              "sast'umro",
+              "hotel"
+            ],
+            [
+              "მოედანი",
+              "moedani",
+              "square",
+              "აფთიაქი",
+              "aptiaki",
+              "pharmacy"
+            ],
+            [
+              "მეტრო",
+              "met'ro",
+              "metro",
+              "საავადმყოფო",
+              "saavadmq'opo",
+              "hospital"
+            ],
+            [
+              "გაჩერება",
+              "gachereba",
+              "bus stop",
+              "ბანკი",
+              "bank'i",
+              "bank"
+            ],
+            [
+              "სადგური",
+              "sadguri",
+              "station",
+              "ბანკომატი",
+              "bank'omat'i",
+              "ATM"
+            ],
+            [
+              "აეროპორტი",
+              "aerop'ort'i",
+              "airport",
+              "ეკლესია",
+              "ek'lesia",
+              "church"
+            ],
+            [
+              "მაღაზია",
+              "maghazia",
+              "shop",
+              "მუზეუმი",
+              "muzeumi",
+              "museum"
+            ],
+            [
+              "ბაზარი",
+              "bazari",
+              "market",
+              "პარკი",
+              "p'ark'i",
+              "park"
+            ],
+            [
+              "სუპერმარკეტი",
+              "sup'ermark'et'i",
+              "supermarket",
+              "უნივერსიტეტი",
+              "universit'et'i",
+              "university"
+            ],
+            [
+              "ტუალეტი",
+              "t'ualet'i",
+              "toilet",
+              "ბიბლიოთეკა",
+              "bibliotek'a",
+              "library"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Six sentences for not getting lost",
+          "items": [
+            "**სად არის…?** — Where is…?",
+            "**როგორ მივიდე…?** (rogor mivide) — How do I get to…?",
+            "**შორია?** — Is it far?",
+            "**ვერ გავიგე. ნელა, თუ შეიძლება.** — I didn't catch that. Slowly, please.",
+            "**რუკაზე მაჩვენებთ?** (rukaze machvenebt) — Can you show me on the map?",
+            "**დავიკარგე.** (davik'arge) — I'm lost."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "A practical note on asking for directions in Georgia: people almost never answer \"I don't know\". If someone isn't sure, they'll often point anyway so as not to disappoint you. So for any distance that matters, ask **two people**, and use big, clear landmarks — მეტრო, ეკლესია, მოედანი — rather than street names."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ The Tbilisi metro has two lines and bilingual signs, but the announcements inside the trains are in Georgian only. Two words that help: **შემდეგი სადგური** (shemdegi sadguri — next station) and **გასასვლელი** (gasasvleli — exit)."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ka": "სად",
+      "baca": "sad",
+      "en": "where"
+    },
+    {
+      "ka": "აქ",
+      "baca": "ak",
+      "en": "here"
+    },
+    {
+      "ka": "იქ",
+      "baca": "ik",
+      "en": "there"
+    },
+    {
+      "ka": "მარჯვნივ",
+      "baca": "marjvniv",
+      "en": "right"
+    },
+    {
+      "ka": "მარცხნივ",
+      "baca": "martskhniv",
+      "en": "left"
+    },
+    {
+      "ka": "პირდაპირ",
+      "baca": "p'irdap'ir",
+      "en": "straight on"
+    },
+    {
+      "ka": "უკან",
+      "baca": "uk'an",
+      "en": "back, behind"
+    },
+    {
+      "ka": "ახლოს",
+      "baca": "akhlos",
+      "en": "near"
+    },
+    {
+      "ka": "შორს",
+      "baca": "shors",
+      "en": "far"
+    },
+    {
+      "ka": "გვერდით",
+      "baca": "gverdit",
+      "en": "next to"
+    },
+    {
+      "ka": "-ში",
+      "baca": "-shi",
+      "en": "in"
+    },
+    {
+      "ka": "-ზე",
+      "baca": "-ze",
+      "en": "on, at"
+    },
+    {
+      "ka": "-თან",
+      "baca": "-tan",
+      "en": "at, near"
+    },
+    {
+      "ka": "ქუჩა",
+      "baca": "kucha",
+      "en": "street"
+    },
+    {
+      "ka": "მოედანი",
+      "baca": "moedani",
+      "en": "square"
+    },
+    {
+      "ka": "მეტრო",
+      "baca": "met'ro",
+      "en": "metro"
+    },
+    {
+      "ka": "გაჩერება",
+      "baca": "gachereba",
+      "en": "bus stop"
+    },
+    {
+      "ka": "სადგური",
+      "baca": "sadguri",
+      "en": "station"
+    },
+    {
+      "ka": "სასტუმრო",
+      "baca": "sast'umro",
+      "en": "hotel"
+    },
+    {
+      "ka": "აფთიაქი",
+      "baca": "aptiaki",
+      "en": "pharmacy"
+    },
+    {
+      "ka": "ბანკი",
+      "baca": "bank'i",
+      "en": "bank"
+    },
+    {
+      "ka": "ეკლესია",
+      "baca": "ek'lesia",
+      "en": "church"
+    },
+    {
+      "ka": "ტუალეტი",
+      "baca": "t'ualet'i",
+      "en": "toilet"
+    },
+    {
+      "ka": "რუკა",
+      "baca": "ruk'a",
+      "en": "map"
+    },
+    {
+      "ka": "წუთი",
+      "baca": "ts'uti",
+      "en": "minute"
+    },
+    {
+      "ka": "ფეხით",
+      "baca": "pekhit",
+      "en": "on foot"
+    },
+    {
+      "ka": "ვერ",
+      "baca": "ver",
+      "en": "can't, unable to"
+    },
+    {
+      "ka": "გავიგე",
+      "baca": "gavige",
+      "en": "I caught it, I understood"
+    },
+    {
+      "ka": "გასაგები",
+      "baca": "gasagebi",
+      "en": "clear, understandable"
+    },
+    {
+      "ka": "მჭირდება",
+      "baca": "mch'irdeba",
+      "en": "I need"
+    },
+    {
+      "ka": "შემდეგი",
+      "baca": "shemdegi",
+      "en": "next"
+    },
+    {
+      "ka": "გასასვლელი",
+      "baca": "gasasvleli",
+      "en": "exit"
+    },
+    {
+      "ka": "მერე",
+      "baca": "mere",
+      "en": "then, after that"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Add the right ending: -ში, -ზე, or -თან.",
+      "items": [
+        "თბილის__ ვარ (in Tbilisi)",
+        "მაგიდა__ წიგნია (on the table)",
+        "აფთიაქ__ არის (by the pharmacy)",
+        "ბანკ__ მივდივარ (to the bank)",
+        "ქუჩა__ ვდგავარ (in the street)",
+        "ექიმ__ მივდივარ (to the doctor's)"
+      ]
+    },
+    {
+      "prompt": "Complete the directions.",
+      "items": [
+        "____ წადი (straight)",
+        "მერე ____ (to the right)",
+        "მეტრო ____ არის (near)",
+        "ხუთი წუთი ____ (on foot)",
+        "____ გავიგე (I couldn't catch it)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "არის / სად / მეტრო / ?",
+        "წადი / პირდაპირ",
+        "არის / ახლოს / ბანკი",
+        "შეიძლება / ნელა / თუ / ,",
+        "მჭირდება / ფული"
+      ]
+    },
+    {
+      "prompt": "Translate into Georgian.",
+      "items": [
+        "Excuse me, where's the pharmacy?",
+        "Go straight, then right.",
+        "Is it far?",
+        "No, five minutes on foot.",
+        "I didn't catch that. Please repeat.",
+        "I'm lost."
+      ]
+    }
+  ],
+  "answers": [
+    "თბილისში — მაგიდაზე — აფთიაქთან — ბანკში — ქუჩაზე — ექიმთან",
+    "პირდაპირ — მარჯვნივ — ახლოს — ფეხით — ვერ",
+    "სად არის მეტრო? — პირდაპირ წადი. — ბანკი ახლოს არის. — ნელა, თუ შეიძლება. — ფული მჭირდება.",
+    "უკაცრავად, სად არის აფთიაქი? — პირდაპირ წადი, მერე მარჯვნივ. — შორია? — არა, ხუთი წუთი ფეხით. — ვერ გავიგე. გაიმეორეთ, თუ შეიძლება. — დავიკარგე."
+  ]
+}

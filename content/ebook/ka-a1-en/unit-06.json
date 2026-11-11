@@ -1,0 +1,576 @@
+{
+  "title": "How much is it?",
+  "title_target": "რამდენი ღირს? — Ramdeni ghirs?",
+  "goal": "Count to a hundred in a system that works in twenties, ask prices, bargain at the market, and understand why \"forty\" in Georgian is really \"two times twenty\".",
+  "bekal": [
+    "count 1–20 and build every number up to 100",
+    "ask the price in two ways",
+    "bargain politely at the market",
+    "give quantities and weights when buying",
+    "read prices written on shop labels"
+  ],
+  "dialogs": [
+    {
+      "title": "დიალოგი — At the Dezerter market",
+      "intro": "Tbilisi's Dezerter market: fruit, cheese, spices, and vendors who always have an opinion about what you should buy. Ani is shopping for the week. Watch the numbers closely — the system will reveal itself in the grammar box.",
+      "lines": [
+        {
+          "speaker": "ანი:",
+          "text": "[უკაცრავად|Uk'-ats-ra-vad], [ეს|es] [ატამი|a-t'a-mi] [რამდენი|ram-de-ni] [ღირს|ghirs]?",
+          "id": "Excuse me, how much are these peaches?",
+          "literal": "excuse-me, this — peach — how-much — costs?"
+        },
+        {
+          "speaker": "გამყიდველი:",
+          "text": "[კილო|K'i-lo] [ხუთი|khu-ti] [ლარი|la-ri].",
+          "id": "Five lari a kilo.",
+          "literal": "kilo — five — lari."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ორი|O-ri] [კილო|k'i-lo], [თუ|tu] [შეიძლება|she-idz-le-ba]. [ყველი|Q've-li] [გაქვთ|gakvt]?",
+          "id": "Two kilos, please. Do you have cheese?",
+          "literal": "two — kilo, if — possible. cheese — you-pl-have?"
+        },
+        {
+          "speaker": "გამყიდველი:",
+          "text": "[რა|Ra] [თქმა|tkma] [უნდა|un-da]. [სულგუნი|Sul-gu-ni] [ოცდაათი|ots-da-a-ti] [ლარი|la-ri] [კილო|k'i-lo].",
+          "id": "Of course. Sulguni is thirty lari a kilo.",
+          "literal": "what — saying — needed. sulguni — twenty-and-ten — lari — kilo."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ოცდაათი|Ots-da-a-ti]?! [ცოტა|Tso-t'a] [ძვირია|dzvi-ri-a].",
+          "id": "Thirty?! That's a bit expensive.",
+          "literal": "twenty-and-ten?! a-little — expensive-is."
+        },
+        {
+          "speaker": "გამყიდველი:",
+          "text": "[კარგი|K'ar-gi] [ყველია|q've-li-a], [სოფლის|sop-lis]. [ნახევარი|Na-khe-va-ri] [კილო|k'i-lo] [თხუთმეტი|tkhut-me-t'i].",
+          "id": "It's good cheese, from the village. Half a kilo is fifteen.",
+          "literal": "good — cheese-is, village's. half — kilo — fifteen."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ნახევარი|Na-khe-va-ri] [კილო|k'i-lo], [მაშინ|ma-shin]. [სულ|Sul] [რამდენი|ram-de-ni] [გამოვიდა|ga-mo-vi-da]?",
+          "id": "Half a kilo, then. How much is that altogether?",
+          "literal": "half — kilo, then. all — how-much — came-out?"
+        },
+        {
+          "speaker": "გამყიდველი:",
+          "text": "[ორი|O-ri] [კილო|k'i-lo] [ატამი|a-t'a-mi] [ათი|a-ti], [ყველი|q've-li] [თხუთმეტი|tkhut-me-t'i] — [ოცდახუთი|ots-da-khu-ti] [ლარი|la-ri].",
+          "id": "Two kilos of peaches ten, cheese fifteen — twenty-five lari.",
+          "literal": "two — kilo — peach — ten, cheese — fifteen — twenty-and-five — lari."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[აი|A-i], [ოცდაათი|ots-da-a-ti].",
+          "id": "Here you go, thirty.",
+          "literal": "here, twenty-and-ten."
+        },
+        {
+          "speaker": "გამყიდველი:",
+          "text": "[ხუთი|Khu-ti] [ლარი|la-ri] [ხურდა|khur-da]. [ესეც|E-sets] [ერთი|er-ti] [ატამი|a-t'a-mi], [საჩუქრად|sa-chuk-rad]!",
+          "id": "Five lari change. And here's one more peach, as a gift!",
+          "literal": "five — lari — change. this-too — one — peach, as-gift!"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ძალიან|Dza-li-an] [დიდი|di-di] [მადლობა|mad-lo-ba]!",
+          "id": "Thank you so much!",
+          "literal": "very — big — thanks!"
+        },
+        {
+          "speaker": "გამყიდველი:",
+          "text": "[არაფრის|A-rap-ris]! [კიდევ|K'i-dev] [მოდი|mo-di]!",
+          "id": "You're welcome! Come again!",
+          "literal": "it's-nothing! again — come!"
+        }
+      ],
+      "notes": [
+        "**Georgian counts in twenties, not tens.** ოცდაათი (30) literally means \"twenty and ten\". ორმოცი (40) = \"two times twenty\". French does the same (*quatre-vingts* = 80), and so does Danish — and English once had \"four score and seven\". It looks strange, but once you see the pattern, ten words are all you need for the first hundred numbers.",
+        "**ოცდახუთი = 25** — ოცი (20) + და (and) + ხუთი (5). Notice that the parts merge into a single word with no spaces. Georgian numbers are always written as one word: ორმოცდაათი (50), სამოცდაცხრამეტი (79).",
+        "**კილო needs no ending at all.** *ორი კილო ატამი* — two kilos of peaches, everything in dictionary form. No \"of\", and unlike Russian or German, no ending changes.",
+        "**ძვირია / იაფია — expensive / cheap.** To bargain politely, don't name the price you want; say *ცოტა ძვირია* (it's a bit expensive) and wait. ⚠️ At Georgian food markets, hard bargaining is **not** usual — the price per kilo is generally fixed. What can change is the quantity and the extras.",
+        "**საჩუქრად = \"as a gift\".** The **-ად** ending you know from unit 3 (ქართულ**ად**), now meaning \"as / into\". Getting a free extra at a Georgian market is an everyday thing, not a special favor — turning it down actually comes across as stiff.",
+        "**ხურდა = change (money back).** An important sentence if you pay with a big note: *ხურდა გაქვთ?* (do you have change?). In Tbilisi, paying for a bus ticket with a 50-lari note will always be refused.",
+        "**რა თქმა უნდა** (ra tkma unda) — \"of course\". Literally \"what needs to be said\". One of the most common phrases in everyday conversation; learn it as a whole."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers: ten words for a hundred numbers",
+          "body": [
+            "The first part has to be learned as it is. The second part builds itself."
+          ],
+          "tables": [
+            {
+              "head": [
+                "1–10",
+                "",
+                "11–20",
+                ""
+              ],
+              "rows": [
+                [
+                  "1 ერთი — erti",
+                  "6 ექვსი — ekvsi",
+                  "11 თერთმეტი — tertmet'i",
+                  "16 თექვსმეტი — tekvsmet'i"
+                ],
+                [
+                  "2 ორი — ori",
+                  "7 შვიდი — shvidi",
+                  "12 თორმეტი — tormet'i",
+                  "17 ჩვიდმეტი — chvidmet'i"
+                ],
+                [
+                  "3 სამი — sami",
+                  "8 რვა — rva",
+                  "13 ცამეტი — tsamet'i",
+                  "18 თვრამეტი — tvramet'i"
+                ],
+                [
+                  "4 ოთხი — otkhi",
+                  "9 ცხრა — tskhra",
+                  "14 თოთხმეტი — totkhmet'i",
+                  "19 ცხრამეტი — tskhramet'i"
+                ],
+                [
+                  "5 ხუთი — khuti",
+                  "10 ათი — ati",
+                  "15 თხუთმეტი — tkhutmet'i",
+                  "20 ოცი — otsi"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Multiples of 20",
+                "Literally",
+                "+10",
+                "Literally"
+              ],
+              "rows": [
+                [
+                  "20 ოცი",
+                  "twenty",
+                  "30 ოცდაათი",
+                  "20 and 10"
+                ],
+                [
+                  "40 ორმოცი",
+                  "2 × 20",
+                  "50 ორმოცდაათი",
+                  "2×20 and 10"
+                ],
+                [
+                  "60 სამოცი",
+                  "3 × 20",
+                  "70 სამოცდაათი",
+                  "3×20 and 10"
+                ],
+                [
+                  "80 ოთხმოცი",
+                  "4 × 20",
+                  "90 ოთხმოცდაათი",
+                  "4×20 and 10"
+                ],
+                [
+                  "100 ასი",
+                  "a hundred",
+                  "1,000 ათასი",
+                  "a thousand"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "**Numbers in between = the multiple + და + the rest.** 21 ოცდაერთი · 25 ოცდახუთი · 33 ოცდაცამეტი · 45 ორმოცდახუთი · 68 სამოცდარვა · 99 ოთხმოცდაცხრამეტი.",
+            "⚠️ **Nouns after numbers stay singular**: ხუთი ლარი, ოცი წიგნი, ასი კაცი. Never make them plural."
+          ]
+        },
+        {
+          "title": "Asking the price — three forms",
+          "table": {
+            "head": [
+              "Sentence",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "რამდენი ღირს?",
+                "ramdeni ghirs",
+                "How much is it?"
+              ],
+              [
+                "რა ღირს?",
+                "ra ghirs",
+                "How much? (shorter, very common)"
+              ],
+              [
+                "სულ რამდენი გამოვიდა?",
+                "sul ramdeni gamovida",
+                "How much altogether?"
+              ],
+              [
+                "ძვირია",
+                "dzviria",
+                "It's expensive"
+              ],
+              [
+                "იაფია",
+                "iapia",
+                "It's cheap"
+              ],
+              [
+                "ფასდაკლება გაქვთ?",
+                "pasdak'leba gakvt",
+                "Is there a discount?"
+              ]
+            ]
+          },
+          "after": [
+            "Georgia's currency is the **ლარი** (lari), divided into **თეთრი** (tetri) — literally \"white\". One lari = 100 tetri. Its symbol is ₾, and you'll see it on every price tag."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "At the market: what you see and what you say",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Georgian",
+            "Say it",
+            "Meaning",
+            "Georgian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ბაზარი",
+              "bazari",
+              "market",
+              "ხილი",
+              "khili",
+              "fruit"
+            ],
+            [
+              "მაღაზია",
+              "maghazia",
+              "shop",
+              "ბოსტნეული",
+              "bost'neuli",
+              "vegetables"
+            ],
+            [
+              "ფასი",
+              "pasi",
+              "price",
+              "ატამი",
+              "at'ami",
+              "peach"
+            ],
+            [
+              "კილო",
+              "k'ilo",
+              "kilogram",
+              "ვაშლი",
+              "vashli",
+              "apple"
+            ],
+            [
+              "ნახევარი",
+              "nakhevari",
+              "half",
+              "ყურძენი",
+              "q'urdzeni",
+              "grapes"
+            ],
+            [
+              "ცალი",
+              "tsali",
+              "piece (counter)",
+              "პომიდორი",
+              "p'omidori",
+              "tomato"
+            ],
+            [
+              "ხურდა",
+              "khurda",
+              "change (money)",
+              "კარტოფილი",
+              "k'art'opili",
+              "potato"
+            ],
+            [
+              "ფული",
+              "puli",
+              "money",
+              "მწვანილი",
+              "mts'vanili",
+              "fresh herbs"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Six sentences for a whole market visit",
+          "items": [
+            "**ეს რა ღირს?** — How much is this?",
+            "**ერთი კილო, თუ შეიძლება.** — One kilo, please.",
+            "**ნახევარი კილო.** — Half a kilo.",
+            "**ცოტა ძვირია.** — It's a bit expensive. (the most polite way to bargain)",
+            "**ხურდა გაქვთ?** — Do you have change?",
+            "**სულ რამდენი გამოვიდა?** — How much altogether?"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One word that isn't on any list but you'll hear all the time: **გენაცვალე** (genatsvale). Market vendors, taxi drivers, and grandmothers use it with strangers, and it can't really be translated — roughly \"dear\", \"sweetheart\", or \"may I take your place (in suffering)\". If someone calls you genatsvale, you're being treated warmly."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ About prices: labels in Georgian shops almost always show the price **per kilo**, not per pack — even for cheese and meat. A 30 ₾ label on a small piece of cheese most likely means thirty lari a kilo, and the piece itself costs much less. The sentence *ეს ცალი რა ღირს?* (how much is this piece?) clears up the confusion."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ka": "ერთი",
+      "baca": "erti",
+      "en": "one"
+    },
+    {
+      "ka": "ორი",
+      "baca": "ori",
+      "en": "two"
+    },
+    {
+      "ka": "სამი",
+      "baca": "sami",
+      "en": "three"
+    },
+    {
+      "ka": "ოთხი",
+      "baca": "otkhi",
+      "en": "four"
+    },
+    {
+      "ka": "ხუთი",
+      "baca": "khuti",
+      "en": "five"
+    },
+    {
+      "ka": "ექვსი",
+      "baca": "ekvsi",
+      "en": "six"
+    },
+    {
+      "ka": "შვიდი",
+      "baca": "shvidi",
+      "en": "seven"
+    },
+    {
+      "ka": "რვა",
+      "baca": "rva",
+      "en": "eight"
+    },
+    {
+      "ka": "ცხრა",
+      "baca": "tskhra",
+      "en": "nine"
+    },
+    {
+      "ka": "ათი",
+      "baca": "ati",
+      "en": "ten"
+    },
+    {
+      "ka": "თხუთმეტი",
+      "baca": "tkhutmet'i",
+      "en": "fifteen"
+    },
+    {
+      "ka": "ოცი",
+      "baca": "otsi",
+      "en": "twenty"
+    },
+    {
+      "ka": "ოცდაათი",
+      "baca": "otsdaati",
+      "en": "thirty"
+    },
+    {
+      "ka": "ორმოცი",
+      "baca": "ormotsi",
+      "en": "forty"
+    },
+    {
+      "ka": "ასი",
+      "baca": "asi",
+      "en": "a hundred"
+    },
+    {
+      "ka": "ათასი",
+      "baca": "atasi",
+      "en": "a thousand"
+    },
+    {
+      "ka": "ღირს",
+      "baca": "ghirs",
+      "en": "costs, is worth"
+    },
+    {
+      "ka": "ფასი",
+      "baca": "pasi",
+      "en": "price"
+    },
+    {
+      "ka": "ლარი",
+      "baca": "lari",
+      "en": "lari"
+    },
+    {
+      "ka": "თეთრი",
+      "baca": "tetri",
+      "en": "tetri; white"
+    },
+    {
+      "ka": "ფული",
+      "baca": "puli",
+      "en": "money"
+    },
+    {
+      "ka": "ხურდა",
+      "baca": "khurda",
+      "en": "change (money)"
+    },
+    {
+      "ka": "ძვირი",
+      "baca": "dzviri",
+      "en": "expensive"
+    },
+    {
+      "ka": "იაფი",
+      "baca": "iapi",
+      "en": "cheap"
+    },
+    {
+      "ka": "ბაზარი",
+      "baca": "bazari",
+      "en": "market"
+    },
+    {
+      "ka": "კილო",
+      "baca": "k'ilo",
+      "en": "kilogram"
+    },
+    {
+      "ka": "ნახევარი",
+      "baca": "nakhevari",
+      "en": "half"
+    },
+    {
+      "ka": "ხილი",
+      "baca": "khili",
+      "en": "fruit"
+    },
+    {
+      "ka": "ბოსტნეული",
+      "baca": "bost'neuli",
+      "en": "vegetables"
+    },
+    {
+      "ka": "ვაშლი",
+      "baca": "vashli",
+      "en": "apple"
+    },
+    {
+      "ka": "ატამი",
+      "baca": "at'ami",
+      "en": "peach"
+    },
+    {
+      "ka": "ყურძენი",
+      "baca": "q'urdzeni",
+      "en": "grapes"
+    },
+    {
+      "ka": "სულ",
+      "baca": "sul",
+      "en": "total, altogether"
+    },
+    {
+      "ka": "კიდევ",
+      "baca": "k'idev",
+      "en": "more, again"
+    },
+    {
+      "ka": "რა თქმა უნდა",
+      "baca": "ra tkma unda",
+      "en": "of course"
+    },
+    {
+      "ka": "საჩუქარი",
+      "baca": "sachukari",
+      "en": "gift"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the numbers in Georgian.",
+      "items": [
+        "7 → ____",
+        "12 → ____",
+        "20 → ____",
+        "30 → ____",
+        "40 → ____",
+        "25 → ____"
+      ]
+    },
+    {
+      "prompt": "Complete the shopping sentences.",
+      "items": [
+        "ეს რამდენი ____ ? (costs)",
+        "ორი ____ ატამი (kilo)",
+        "____ კილო ყველი (half)",
+        "ცოტა ____ (expensive)",
+        "____ გაქვთ? (change)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ღირს / რამდენი / ეს / ?",
+        "შეიძლება / კილო / ერთი / თუ / ,",
+        "ძვირია / ცოტა",
+        "გამოვიდა / რამდენი / სულ / ?",
+        "ლარი / ხუთი / ღირს"
+      ]
+    },
+    {
+      "prompt": "Translate into Georgian.",
+      "items": [
+        "How much is this?",
+        "Five lari a kilo.",
+        "Two kilos, please.",
+        "It's a bit expensive.",
+        "Do you have change?",
+        "How much altogether?"
+      ]
+    }
+  ],
+  "answers": [
+    "შვიდი — თორმეტი — ოცი — ოცდაათი — ორმოცი — ოცდახუთი",
+    "ღირს — კილო — ნახევარი — ძვირია — ხურდა",
+    "ეს რამდენი ღირს? — ერთი კილო, თუ შეიძლება. — ცოტა ძვირია. — სულ რამდენი გამოვიდა? — ხუთი ლარი ღირს.",
+    "ეს რამდენი ღირს? — კილო ხუთი ლარი. — ორი კილო, თუ შეიძლება. — ცოტა ძვირია. — ხურდა გაქვთ? — სულ რამდენი გამოვიდა?"
+  ]
+}

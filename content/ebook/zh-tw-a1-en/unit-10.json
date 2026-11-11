@@ -1,0 +1,584 @@
+{
+  "title": "Can you speak Chinese?",
+  "title_target": "你會說中文嗎？",
+  "goal": "Tell apart three Mandarin words that all translate as \"can\" — 會, 能, 可以 — a point almost every English speaker misses.",
+  "bekal": [
+    "choose correctly between 會, 能, and 可以",
+    "ask for permission and turn down requests politely",
+    "talk about your skills and how good you are"
+  ],
+  "dialogs": [
+    {
+      "title": "對話 — 借腳踏車",
+      "intro": "Budi wants to borrow A-Ming's bike to go to the morning market, but there's a small problem.",
+      "lines": [
+        {
+          "speaker": "布迪:",
+          "text": "[阿明|Ā Míng]，[我|wǒ][可以|kěyǐ][借|jiè][你的|nǐ de][腳踏車|jiǎotàchē][嗎|ma]？",
+          "id": "A-Ming, can I borrow your bike?",
+          "literal": "A-Ming, I — may — borrow — you — 's — foot-pedal-vehicle — (question)?"
+        },
+        {
+          "speaker": "阿明:",
+          "text": "[當然|Dāngrán][可以|kěyǐ]。[你|Nǐ][會|huì][騎|qí][嗎|ma]？",
+          "id": "Of course. Can you ride a bike?",
+          "literal": "of-course — may. you — know-how — ride — (question)?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[會|Huì][啊|a]！[在|Zài][印尼|Yìnní][我|wǒ][每天|měitiān][騎|qí]。",
+          "id": "Sure I can! In Indonesia I ride every day.",
+          "literal": "know-how — (wow)! at — Indonesia — I — every-day — ride."
+        },
+        {
+          "speaker": "阿明:",
+          "text": "[那|Nà][沒問題|méi wèntí]。[不過|Búguò][今天|jīntiān][下雨|xiàyǔ][耶|ye]。",
+          "id": "Then no problem. But it's raining today, you know.",
+          "literal": "then — not — have — problem. but — today — fall-rain — (you know)."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[下雨|Xiàyǔ][也|yě][能|néng][騎|qí][吧|ba]？",
+          "id": "You can still ride in the rain, right?",
+          "literal": "fall-rain — also — able — ride — (right)?"
+        },
+        {
+          "speaker": "阿明:",
+          "text": "[能|Néng][是|shì][能|néng]，[可是|kěshì][會|huì][很|hěn][危險|wéixiǎn]。",
+          "id": "You can, sure, but it's dangerous.",
+          "literal": "able — is — able, but — will — very — dangerous."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[那|Nà][我|wǒ][坐|zuò][捷運|jiéyùn][好了|hǎo le]。",
+          "id": "Then I'll just take the MRT.",
+          "literal": "then — I — sit — MRT — good — (now)."
+        },
+        {
+          "speaker": "阿明:",
+          "text": "[聰明|Cōngmíng]！[你|Nǐ][有|yǒu][悠遊卡|yōuyóukǎ][嗎|ma]？",
+          "id": "Smart! Do you have an EasyCard?",
+          "literal": "smart! you — have — leisure-travel-card — (question)?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[有|Yǒu]，[可是|kěshì][我|wǒ][不會|bú huì][加值|jiāzhí]。",
+          "id": "Yes, but I don't know how to top it up.",
+          "literal": "have, but — I — not — know-how — add-value."
+        },
+        {
+          "speaker": "阿明:",
+          "text": "[很|Hěn][簡單|jiǎndān]！[在|Zài][便利商店|biànlì shāngdiàn][就|jiù][可以|kěyǐ]。",
+          "id": "It's really easy! You can do it at any convenience store.",
+          "literal": "very — simple! at — convenience-store — just — can."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[你|Nǐ][能|néng][教|jiāo][我|wǒ][嗎|ma]？",
+          "id": "Can you show me?",
+          "literal": "you — able — teach — me — (question)?"
+        },
+        {
+          "speaker": "阿明:",
+          "text": "[可以|Kěyǐ][啊|a]，[我們|wǒmen][現在|xiànzài][去|qù]。",
+          "id": "Sure, let's go now.",
+          "literal": "may — (ah), we — now — go."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[太好了|Tài hǎo le]！[你|Nǐ][真的|zhēn de][很|hěn][會|huì][幫|bāng][人|rén]。",
+          "id": "Great! You're really good at helping people.",
+          "literal": "too — good — (now)! you — truly — (one) — very — good-at — help — people."
+        },
+        {
+          "speaker": "阿明:",
+          "text": "[不會|Bú huì][啦|la]！[走|Zǒu][吧|ba]！",
+          "id": "Oh, not really! Let's go!",
+          "literal": "not — would — (la)! go — (let's)!"
+        }
+      ],
+      "notes": [
+        "⚠️ **不會啦 here means \"oh, not at all\" — not \"can't\".** It's the Taiwanese way to deflect a compliment, alongside 哪裡哪裡. You'll hear it every time you praise someone.",
+        "**能是能，可是… is the very useful \"sure…, but…\" pattern**: *好是好，可是太貴。* (\"It's nice, sure, but it's too expensive.\") Repeat the word with 是 in the middle, then push back with 可是.",
+        "⚠️ **The 悠遊卡 (EasyCard) is the one thing you most need in Taiwan.** It works on the 捷運, buses, trains, YouBike public bikes, and for shopping at 便利商店. Buy it and top it up at any convenience store.",
+        "**腳踏車 (\"foot-pedal vehicle\") is the Taiwanese word for bicycle.** Mainland textbooks teach 自行车; using it in Taipei is understood but marks you at once as a mainland-textbook learner.",
+        "**很會 + verb means \"to be good at something\"**: 他很會唱歌 (he's a good singer), 你很會買東西 (you're a great shopper). ⚠️ Different from plain 會, which just means \"can\"."
+      ],
+      "grammars": [
+        {
+          "title": "⚠️ 會, 能, 可以: three \"cans\" you can't swap",
+          "body": [
+            "English uses one word, \"can\", for three very different things: a learned skill, an ability available right now, and permission. Mandarin keeps the three apart, and picking the wrong one is heard at once."
+          ],
+          "table": {
+            "head": [
+              "Word",
+              "Core meaning",
+              "Example",
+              "Translation"
+            ],
+            "rows": [
+              [
+                "**會**",
+                "can because you **learned it**",
+                "我**會**說中文。",
+                "I can speak Chinese."
+              ],
+              [
+                "**會**",
+                "**will** (likelihood)",
+                "明天**會**下雨。",
+                "It will rain tomorrow."
+              ],
+              [
+                "**能**",
+                "can because **circumstances allow**",
+                "我今天**不能**去。",
+                "I can't go today."
+              ],
+              [
+                "**能**",
+                "can **physically**",
+                "他**能**跑十公里。",
+                "He can run ten kilometers."
+              ],
+              [
+                "**可以**",
+                "**may** (permission)",
+                "我**可以**借嗎？",
+                "May I borrow it?"
+              ],
+              [
+                "**可以**",
+                "can as an **option**",
+                "在超商**可以**加值。",
+                "You can top up at a convenience store."
+              ]
+            ]
+          },
+          "after": [
+            "**Quick test:** if \"can\" could become **\"know how to\"** → 會. If it could become **\"be able to\"** or **\"manage to\"** → 能. If it could become **\"may\"** or **\"be allowed to\"** → 可以.",
+            "⚠️ **我不會去 and 我不能去 are very different.** The first means \"I won't go\" (a decision); the second means \"I can't go\" (something's in the way). Mixing them up could offend a friend.",
+            "**Answering: repeat the helping verb.** *你會說中文嗎？* → **會** or **不會**. *我可以借嗎？* → **可以** or **不行**."
+          ]
+        },
+        {
+          "title": "Asking for permission and saying no",
+          "body": [
+            "Ask for permission with 可以…嗎？ or the softer 可不可以…？ Saying no has several levels, and refusing too directly is considered rude in Taiwan."
+          ],
+          "table": {
+            "head": [
+              "中文",
+              "Pīnyīn",
+              "Meaning",
+              "Tone"
+            ],
+            "rows": [
+              [
+                "**可以…嗎？**",
+                "kěyǐ… ma?",
+                "May I…?",
+                "neutral"
+              ],
+              [
+                "**可不可以…？**",
+                "kě bù kěyǐ…?",
+                "Can I…, or not?",
+                "friendlier"
+              ],
+              [
+                "**請問可以…嗎？**",
+                "qǐngwèn kěyǐ… ma?",
+                "Excuse me, may I…?",
+                "polite"
+              ],
+              [
+                "**可以！**",
+                "kěyǐ!",
+                "Sure!",
+                "yes"
+              ],
+              [
+                "**當然可以**",
+                "dāngrán kěyǐ",
+                "Of course",
+                "warm yes"
+              ],
+              [
+                "**不行**",
+                "bùxíng",
+                "⚠️ No",
+                "firm no"
+              ],
+              [
+                "**不太方便**",
+                "bú tài fāngbiàn",
+                "It's not very convenient",
+                "soft no"
+              ],
+              [
+                "**可能不行耶**",
+                "kěnéng bùxíng ye",
+                "I'm afraid that might not work",
+                "softest no"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **不行 sounds firm and can sting** when said to a friend. Taiwanese people more often say 不太方便 or 可能不行耶 — refusing while leaving room. It's much like the English \"that might be a bit tricky\".",
+            "**Prohibition signs use 禁止 (*jìnzhǐ*, forbidden) or 請勿 (*qǐng wù*, please don't)**: 禁止吸菸 (no smoking), 請勿飲食 (no eating or drinking — ⚠️ enforced throughout the Taipei 捷運, even for water, and the fines are real)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Skills: what you can do",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "English"
+          ],
+          "rows": [
+            [
+              "會說中文",
+              "huì shuō Zhōngwén",
+              "can speak Chinese"
+            ],
+            [
+              "會開車",
+              "huì kāichē",
+              "can drive"
+            ],
+            [
+              "會騎車",
+              "huì qíchē",
+              "can ride a bike/scooter"
+            ],
+            [
+              "會游泳",
+              "huì yóuyǒng",
+              "can swim"
+            ],
+            [
+              "會做飯",
+              "huì zuòfàn",
+              "can cook"
+            ],
+            [
+              "會唱歌",
+              "huì chànggē",
+              "can sing"
+            ],
+            [
+              "會打球",
+              "huì dǎqiú",
+              "can play soccer"
+            ],
+            [
+              "會用電腦",
+              "huì yòng diànnǎo",
+              "can use a computer"
+            ],
+            [
+              "會寫漢字",
+              "huì xiě hànzì",
+              "can write Chinese characters"
+            ],
+            [
+              "會拍照",
+              "huì pāizhào",
+              "can take photos"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "How good are you?",
+          "items": [
+            "**我會一點。** — I can speak a little. (safest and most common)",
+            "**我會一點點。** — I can speak a tiny bit.",
+            "**我說得不好。** — I don't speak it well.",
+            "**我還在學。** — I'm still learning.",
+            "**我聽得懂，但是不會說。** — I understand, but I can't speak it yet.",
+            "⚠️ **Don't answer 我會中文 confidently** if you're still at A1 — Taiwanese people will switch to full speed at once. *我會一點* keeps the conversation slow."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking for help",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "English"
+          ],
+          "rows": [
+            [
+              "**你可以幫我嗎？**",
+              "nǐ kěyǐ bāng wǒ ma?",
+              "Can you help me?"
+            ],
+            [
+              "**請幫我一下**",
+              "qǐng bāng wǒ yíxià",
+              "Could you help me for a moment?"
+            ],
+            [
+              "**你能教我嗎？**",
+              "nǐ néng jiāo wǒ ma?",
+              "Can you teach me?"
+            ],
+            [
+              "**這個怎麼用？**",
+              "zhè ge zěnme yòng?",
+              "How do you use this?"
+            ],
+            [
+              "**可以拍照嗎？**",
+              "kěyǐ pāizhào ma?",
+              "May I take a photo?"
+            ],
+            [
+              "**可以坐這裡嗎？**",
+              "kěyǐ zuò zhèlǐ ma?",
+              "May I sit here?"
+            ],
+            [
+              "**可以借過嗎？**",
+              "kěyǐ jièguò ma?",
+              "Excuse me, can I get through?"
+            ],
+            [
+              "**我不會用**",
+              "wǒ bú huì yòng",
+              "I don't know how to use it"
+            ],
+            [
+              "**你會不會…？**",
+              "nǐ huì bú huì…?",
+              "Could you…, or not?"
+            ],
+            [
+              "**謝謝你的幫忙**",
+              "xièxie nǐ de bāngmáng",
+              "Thanks for your help"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **一下 after a verb softens a request** into \"just for a moment\": 幫我一下 (help me a sec), 看一下 (take a quick look), 等一下 (wait a moment). Without 一下, your request sounds like an order. Add it to every request until it becomes a habit."
+        }
+      ]
+    },
+    {
+      "title": "會 as \"will\"",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Besides \"can, having learned it\", 會 also expresses **future likelihood**. What follows tells the two meanings apart: a skill verb → \"can\"; an event → \"will\"."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Pīnyīn",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "明天**會**下雨。",
+              "Míngtiān huì xiàyǔ.",
+              "It will rain tomorrow."
+            ],
+            [
+              "他**會**來嗎？",
+              "Tā huì lái ma?",
+              "Will he come?"
+            ],
+            [
+              "我**不會**忘記。",
+              "Wǒ bú huì wàngjì.",
+              "I won't forget."
+            ],
+            [
+              "這樣**會**很危險。",
+              "Zhèyàng huì hěn wéixiǎn.",
+              "That would be dangerous."
+            ],
+            [
+              "我**會**說中文。",
+              "Wǒ huì shuō Zhōngwén.",
+              "I can speak Chinese."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Mandarin has no future tense.** The future is marked by time words (明天, 下星期) or helping verbs like 會 and 要. The verb itself never changes at all — no \"-s\", no \"-ed\", nothing."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "會",
+      "baca": "huì",
+      "en": "can (learned skill); will"
+    },
+    {
+      "zh": "能",
+      "baca": "néng",
+      "en": "can (circumstances allow)"
+    },
+    {
+      "zh": "可以",
+      "baca": "kěyǐ",
+      "en": "may, can (permission)"
+    },
+    {
+      "zh": "不行",
+      "baca": "bùxíng",
+      "en": "⚠️ no, not allowed (firm)"
+    },
+    {
+      "zh": "借",
+      "baca": "jiè",
+      "en": "to borrow; to lend"
+    },
+    {
+      "zh": "幫",
+      "baca": "bāng",
+      "en": "to help"
+    },
+    {
+      "zh": "教",
+      "baca": "jiāo",
+      "en": "to teach"
+    },
+    {
+      "zh": "騎",
+      "baca": "qí",
+      "en": "to ride (bike, scooter)"
+    },
+    {
+      "zh": "開車",
+      "baca": "kāichē",
+      "en": "to drive"
+    },
+    {
+      "zh": "腳踏車",
+      "baca": "jiǎotàchē",
+      "en": "bicycle (⚠️ Taiwan term)"
+    },
+    {
+      "zh": "悠遊卡",
+      "baca": "yōuyóukǎ",
+      "en": "EasyCard"
+    },
+    {
+      "zh": "簡單",
+      "baca": "jiǎndān",
+      "en": "simple, easy"
+    },
+    {
+      "zh": "危險",
+      "baca": "wéixiǎn",
+      "en": "dangerous"
+    },
+    {
+      "zh": "聰明",
+      "baca": "cōngmíng",
+      "en": "smart, clever"
+    },
+    {
+      "zh": "用",
+      "baca": "yòng",
+      "en": "to use"
+    },
+    {
+      "zh": "不過",
+      "baca": "búguò",
+      "en": "but"
+    },
+    {
+      "zh": "一下",
+      "baca": "yíxià",
+      "en": "a moment (softener)"
+    },
+    {
+      "zh": "游泳",
+      "baca": "yóuyǒng",
+      "en": "to swim"
+    },
+    {
+      "zh": "做飯",
+      "baca": "zuòfàn",
+      "en": "to cook"
+    },
+    {
+      "zh": "幫忙",
+      "baca": "bāngmáng",
+      "en": "help"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mandarin.",
+      "items": [
+        "Can you speak Chinese?",
+        "I can speak a little.",
+        "May I borrow your book?",
+        "I can't go today.",
+        "It will rain tomorrow.",
+        "Could you help me for a moment?"
+      ]
+    },
+    {
+      "prompt": "Fill in with 會, 能, or 可以.",
+      "items": [
+        "我 ____ 說中文。",
+        "我今天很忙，不 ____ 去。",
+        "____ 借過嗎？",
+        "明天 ____ 下雨。",
+        "在便利商店 ____ 加值。",
+        "他 ____ 開車，我不 ____。"
+      ]
+    },
+    {
+      "prompt": "Answer the questions by repeating the helping verb.",
+      "items": [
+        "你會說中文嗎？（yes, can）",
+        "你會游泳嗎？（no, can't）",
+        "我可以坐這裡嗎？（yes, may）",
+        "你今天能來嗎？（no, can't）",
+        "你會開車嗎？（yes, can）"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "說 / 中文 / 你 / 嗎 / 會",
+        "一點 / 會 / 我",
+        "嗎 / 借 / 可以 / 我",
+        "去 / 不能 / 我 / 今天",
+        "幫 / 你 / 嗎 / 我 / 可以"
+      ]
+    }
+  ],
+  "answers": [
+    "你會說中文嗎？ — 我會一點。 — 我可以借你的書嗎？ — 我今天不能去。 — 明天會下雨。 — 你可以幫我一下嗎？",
+    "會 — 能 — 可以 — 會 — 可以 — 會、會",
+    "會。 — 不會。 — 可以。 — 不能。 — 會。",
+    "你會說中文嗎？ — 我會一點。 — 我可以借嗎？ — 我今天不能去。 — 你可以幫我嗎？"
+  ]
+}

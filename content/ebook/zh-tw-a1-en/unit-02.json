@@ -1,0 +1,588 @@
+{
+  "title": "Where are you from?",
+  "title_target": "你是哪國人？",
+  "goal": "Say where you're from, what you do, and which languages you speak — while mastering 是, 不, and 嗎, the three words behind almost all your first sentences.",
+  "bekal": [
+    "build \"A is B\" sentences with 是 and negate them with 不是",
+    "turn any sentence into a question with 嗎 without changing the word order",
+    "avoid the biggest trap for English speakers: putting 是 before an adjective"
+  ],
+  "dialogs": [
+    {
+      "title": "對話 — 在學生餐廳",
+      "intro": "Day two. Budi and Xiaomei are lining up in the campus cafeteria. A friend of Xiaomei's joins them.",
+      "lines": [
+        {
+          "speaker": "小美:",
+          "text": "[布迪|Bùdí]，[這是|zhè shì][我朋友|wǒ péngyǒu][阿明|Ā Míng]。",
+          "id": "Budi, this is my friend A-Ming.",
+          "literal": "Budi, this — is — I — friend — A-Ming."
+        },
+        {
+          "speaker": "阿明:",
+          "text": "[你好|Nǐ hǎo]！[你是|Nǐ shì][哪國人|nǎ guó rén]？",
+          "id": "Hi! Where are you from?",
+          "literal": "you — good! you — are — which — country — person?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[我是|Wǒ shì][印尼人|Yìnní rén]。[你呢|Nǐ ne]？",
+          "id": "I'm Indonesian. And you?",
+          "literal": "I — am — Indonesia — person. you — (and)?"
+        },
+        {
+          "speaker": "阿明:",
+          "text": "[我是|Wǒ shì][台灣人|Táiwān rén]，[台南來的|Táinán lái de]。",
+          "id": "I'm Taiwanese, from Tainan.",
+          "literal": "I — am — Taiwan — person, Tainan — come — (one)."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[你們|Nǐmen][都是|dōu shì][學生|xuéshēng][嗎|ma]？",
+          "id": "Are you both students?",
+          "literal": "you-all — all — are — student — (question)?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[我是|Wǒ shì]，[可是|kěshì][阿明|Ā Míng][不是|bú shì]。",
+          "id": "I am, but A-Ming isn't.",
+          "literal": "I — am, but — A-Ming — not — is."
+        },
+        {
+          "speaker": "阿明:",
+          "text": "[我是|Wǒ shì][老師|lǎoshī]。[我教|Wǒ jiāo][英文|Yīngwén]。",
+          "id": "I'm a teacher. I teach English.",
+          "literal": "I — am — teacher. I — teach — English — language."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[真的|Zhēn de][嗎|ma]？[你|Nǐ][看起來|kànqǐlái][很年輕|hěn niánqīng]。",
+          "id": "Really? You look so young.",
+          "literal": "true — (one) — (question)? you — look — very — young."
+        },
+        {
+          "speaker": "阿明:",
+          "text": "[謝謝|Xièxie]！[你|Nǐ][學|xué][什麼|shénme]？",
+          "id": "Thanks! What do you study?",
+          "literal": "thank thank! you — study — what?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[我學|Wǒ xué][電腦|diànnǎo]。[中文|Zhōngwén][是|shì][我的|wǒ de][第二|dì-èr][專長|zhuāncháng]。",
+          "id": "I study computer science. Chinese is my second major.",
+          "literal": "I — study — computer. Chinese — is — I — 's — second — specialty."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[你|Nǐ][會說|huì shuō][印尼話|Yìnní huà][和|hàn][英文|Yīngwén][嗎|ma]？",
+          "id": "Can you speak Indonesian and English?",
+          "literal": "you — can — speak — Indonesia — speech — and — English — (question)?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[會|Huì]。[還有|Hái yǒu][一點|yìdiǎn][爪哇話|Zhǎowā huà]。",
+          "id": "Yes. Plus a little Javanese.",
+          "literal": "can. still — have — a-little — Java — speech."
+        },
+        {
+          "speaker": "阿明:",
+          "text": "[哇|Wā]，[三種|sān zhǒng][語言|yǔyán]！[你|Nǐ][不簡單|bù jiǎndān][喔|o]！",
+          "id": "Wow, three languages! That's amazing!",
+          "literal": "wow, three — kind — language! you — not — simple — (wow)!"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[在|Zài][印尼|Yìnní][很|hěn][正常|zhèngcháng][啦|la]！",
+          "id": "In Indonesia that's totally normal!",
+          "literal": "in — Indonesia — very — normal — (la)!"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[好了|Hǎo le]，[我們|wǒmen][去|qù][吃飯|chīfàn][吧|ba]！",
+          "id": "OK then, let's go eat!",
+          "literal": "good — (done), we — go — eat-rice — (let's)!"
+        }
+      ],
+      "notes": [
+        "⚠️ **和 (\"and\") is pronounced *hàn* by most Taiwanese**, not *hé* as mainland textbooks teach. Both are understood; *hàn* sounds local. It is one of the most distinctive Taiwanese pronunciations.",
+        "**呢 bounces a question back without repeating it.** *我是印尼人。你呢？* — \"I'm Indonesian. And you?\" Attach 呢 to any noun and it means \"what about …?\". Very economical, and used constantly.",
+        "**都 (*dōu*, \"all\") stands before the verb, not before the people.** *你們都是學生嗎？* — not *都你們*. The rule: 都 always comes **after** what it sums up and **before** the verb.",
+        "**啦 (*la*) and 喔 (*o*) are the two Taiwanese particles you'll hear most.** 啦 softens a sentence, a bit like \"you know\" or \"come on\"; 喔 adds a gentle warning or an affectionate tone. Without them your sentences are correct but sound like a public announcement.",
+        "⚠️ **印尼話 and 印尼文 both mean \"Indonesian\"**, but 話 stresses the **spoken** language and 文 the **written** one. To say \"I can speak Indonesian\", 印尼話 fits better."
+      ],
+      "grammars": [
+        {
+          "title": "是: the verb that links two nouns — and nothing else",
+          "body": [
+            "**是** means \"to be\", and it has just one job: linking **two nouns**. A 是 B means \"A is B\". It is negated with 不是, never with 沒是."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Pīnyīn",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "我**是**印尼人。",
+                "Wǒ shì Yìnní rén.",
+                "I'm Indonesian."
+              ],
+              [
+                "他**是**老師。",
+                "Tā shì lǎoshī.",
+                "She is a teacher."
+              ],
+              [
+                "這**是**我朋友。",
+                "Zhè shì wǒ péngyǒu.",
+                "This is my friend."
+              ],
+              [
+                "我**不是**台灣人。",
+                "Wǒ bú shì Táiwān rén.",
+                "I'm not Taiwanese."
+              ],
+              [
+                "她**不是**學生。",
+                "Tā bú shì xuéshēng.",
+                "He isn't a student."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Here is the biggest trap in this unit: 是 is NOT used before adjectives.** English says \"I *am* Indonesian\" and \"I *am* busy\" — the same \"am\" both times. Mandarin keeps the two strictly apart.",
+            "**我是忙。** ✗ wrong. **我很忙。** ✓ right. Adjectives don't need 是; what goes in front of them is 很. Unit 14 covers this in full, but plant it now: **nouns take 是, adjectives take 很.**",
+            "⚠️ Notice too that 不 before 是 is pronounced **bú**, not *bù* — because 是 is fourth tone. This book always prints the tone that is actually spoken."
+          ]
+        },
+        {
+          "title": "嗎: questions without flipping anything",
+          "body": [
+            "Here is Mandarin's gift to you. To make a yes/no question, **attach 嗎 to the end of a statement**. Nothing is flipped, nothing moves, nothing else is added."
+          ],
+          "table": {
+            "head": [
+              "Statement",
+              "As a question",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "你是學生。",
+                "你是學生**嗎**？",
+                "Are you a student?"
+              ],
+              [
+                "他會說中文。",
+                "他會說中文**嗎**？",
+                "Can he speak Chinese?"
+              ],
+              [
+                "你們都是台灣人。",
+                "你們都是台灣人**嗎**？",
+                "Are you all Taiwanese?"
+              ],
+              [
+                "這是你的書。",
+                "這是你的書**嗎**？",
+                "Is this your book?"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Your voice must not rise at the end.** This is the hardest habit for English speakers to break: we mark questions with rising intonation, and the habit carries over. In Mandarin, 嗎 already marks the question; raising your pitch only turns your last word into a different word.",
+            "**How to answer: repeat the verb.** Mandarin has no single word for \"yes\". *你是學生嗎？* is answered **是** (yes) or **不是** (no). *你會說中文嗎？* is answered **會** or **不會**.",
+            "**The A-不-A form is a second option**, a bit more casual and very common in Taiwan: *你**是不是**學生？* *你**會不會**說中文？* The meaning is exactly the same; 嗎 is never used together with this form."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Countries, people, and languages",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The pattern is very regular: **country + 人** = its people, **country + 文** = its language. Once you know the country's name, the other two words come free."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Country",
+            "Pīnyīn",
+            "Its people",
+            "Its language"
+          ],
+          "rows": [
+            [
+              "**印尼**",
+              "Yìnní",
+              "印尼人",
+              "印尼文 / 印尼話"
+            ],
+            [
+              "**台灣**",
+              "Táiwān",
+              "台灣人",
+              "中文 / 台語"
+            ],
+            [
+              "**中國**",
+              "Zhōngguó",
+              "中國人",
+              "中文"
+            ],
+            [
+              "**日本**",
+              "Rìběn",
+              "日本人",
+              "日文"
+            ],
+            [
+              "**韓國**",
+              "Hánguó",
+              "韓國人",
+              "韓文"
+            ],
+            [
+              "**美國**",
+              "Měiguó",
+              "美國人",
+              "英文"
+            ],
+            [
+              "**英國**",
+              "Yīngguó",
+              "英國人",
+              "英文"
+            ],
+            [
+              "**馬來西亞**",
+              "Mǎláixīyà",
+              "馬來西亞人",
+              "馬來文"
+            ],
+            [
+              "**新加坡**",
+              "Xīnjiāpō",
+              "新加坡人",
+              "英文 / 中文"
+            ],
+            [
+              "**泰國**",
+              "Tàiguó",
+              "泰國人",
+              "泰文"
+            ],
+            [
+              "**越南**",
+              "Yuènán",
+              "越南人",
+              "越南文"
+            ],
+            [
+              "**法國**",
+              "Fǎguó",
+              "法國人",
+              "法文"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Note that **中文** is used in both Taiwan and China for \"Chinese\". In Taiwan you'll also hear **國語** (*Guóyǔ*, \"national language\") and **華語** (*Huáyǔ*). What is **not** used in Taiwan is 普通話 (*pǔtōnghuà*) — that is the mainland term. And **台語** (*Táiyǔ*) is a different language altogether: Taiwanese Hokkien, spoken at home by more than half the population."
+        }
+      ]
+    },
+    {
+      "title": "Jobs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "English"
+          ],
+          "rows": [
+            [
+              "學生",
+              "xuéshēng",
+              "student"
+            ],
+            [
+              "老師",
+              "lǎoshī",
+              "teacher, lecturer"
+            ],
+            [
+              "醫生",
+              "yīshēng",
+              "doctor"
+            ],
+            [
+              "護士",
+              "hùshì",
+              "nurse"
+            ],
+            [
+              "工程師",
+              "gōngchéngshī",
+              "engineer"
+            ],
+            [
+              "上班族",
+              "shàngbānzú",
+              "office worker"
+            ],
+            [
+              "老闆",
+              "lǎobǎn",
+              "boss, shop owner"
+            ],
+            [
+              "司機",
+              "sījī",
+              "driver"
+            ],
+            [
+              "廚師",
+              "chúshī",
+              "cook, chef"
+            ],
+            [
+              "設計師",
+              "shèjìshī",
+              "designer"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Asking about jobs",
+          "items": [
+            "**你做什麼工作？** *Nǐ zuò shénme gōngzuò?* — What do you do?",
+            "**我是工程師。** *Wǒ shì gōngchéngshī.* — I'm an engineer.",
+            "**我在銀行工作。** *Wǒ zài yínháng gōngzuò.* — I work at a bank.",
+            "**我還是學生。** *Wǒ háishì xuéshēng.* — I'm still a student.",
+            "⚠️ **老闆 is also how you address any shopkeeper** — at a night market, a food stall, a repair shop. It is polite and warm, not flattering."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "都, 也, and 還: three little words with a fixed place",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "All three are **adverbs**, and Mandarin adverbs have one place: **after the subject, before the verb**. That place never changes, and putting them anywhere else is a mistake people hear instantly."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Word",
+            "Meaning",
+            "Example",
+            "Translation"
+          ],
+          "rows": [
+            [
+              "**都**",
+              "all, both",
+              "我們**都**是學生。",
+              "We're all students."
+            ],
+            [
+              "**也**",
+              "also, too",
+              "我**也**是印尼人。",
+              "I'm Indonesian too."
+            ],
+            [
+              "**還**",
+              "still; also",
+              "我**還**是學生。",
+              "I'm still a student."
+            ],
+            [
+              "**都不**",
+              "none of them",
+              "他們**都不**去。",
+              "None of them are going."
+            ],
+            [
+              "**也不**",
+              "not … either",
+              "我**也不**知道。",
+              "I don't know either."
+            ],
+            [
+              "**都也** ✗",
+              "—",
+              "this form doesn't exist",
+              "the order is always 也都"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ When all three appear together, the order is **也 → 都 → 還**: *我們**也都還**是學生。* \"We're all still students too.\" This order is fixed and non-negotiable — luckily, sentences with all three at once are rare."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "是",
+      "baca": "shì",
+      "en": "to be (am, is, are)"
+    },
+    {
+      "zh": "不",
+      "baca": "bù / bú",
+      "en": "not, no"
+    },
+    {
+      "zh": "嗎",
+      "baca": "ma",
+      "en": "(question particle)"
+    },
+    {
+      "zh": "呢",
+      "baca": "ne",
+      "en": "and …? what about …?"
+    },
+    {
+      "zh": "哪",
+      "baca": "nǎ",
+      "en": "which"
+    },
+    {
+      "zh": "國",
+      "baca": "guó",
+      "en": "country"
+    },
+    {
+      "zh": "人",
+      "baca": "rén",
+      "en": "person"
+    },
+    {
+      "zh": "台灣",
+      "baca": "Táiwān",
+      "en": "Taiwan"
+    },
+    {
+      "zh": "印尼",
+      "baca": "Yìnní",
+      "en": "Indonesia"
+    },
+    {
+      "zh": "學生",
+      "baca": "xuéshēng",
+      "en": "student"
+    },
+    {
+      "zh": "老師",
+      "baca": "lǎoshī",
+      "en": "teacher"
+    },
+    {
+      "zh": "朋友",
+      "baca": "péngyǒu",
+      "en": "friend"
+    },
+    {
+      "zh": "都",
+      "baca": "dōu",
+      "en": "all (⚠️ before the verb)"
+    },
+    {
+      "zh": "會",
+      "baca": "huì",
+      "en": "can (a learned skill)"
+    },
+    {
+      "zh": "說",
+      "baca": "shuō",
+      "en": "to speak, to say"
+    },
+    {
+      "zh": "學",
+      "baca": "xué",
+      "en": "to study, to learn"
+    },
+    {
+      "zh": "和",
+      "baca": "hàn / hé",
+      "en": "and (⚠️ Taiwan: hàn)"
+    },
+    {
+      "zh": "可是",
+      "baca": "kěshì",
+      "en": "but"
+    },
+    {
+      "zh": "工作",
+      "baca": "gōngzuò",
+      "en": "to work; job"
+    },
+    {
+      "zh": "中文",
+      "baca": "Zhōngwén",
+      "en": "Chinese (language)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mandarin.",
+      "items": [
+        "I'm Indonesian.",
+        "He isn't a teacher.",
+        "Are you all university students?",
+        "I can speak English too.",
+        "Where are you from?",
+        "I'm still a student."
+      ]
+    },
+    {
+      "prompt": "Fill in with 是, 不是, 很, or 都.",
+      "items": [
+        "我 ____ 台灣人。",
+        "他 ____ 學生，他是老師。",
+        "我今天 ____ 忙。",
+        "我們 ____ 是印尼人。",
+        "這 ____ 我的書。",
+        "她 ____ 高興。"
+      ]
+    },
+    {
+      "prompt": "Turn these into questions with 嗎.",
+      "items": [
+        "你是老師。",
+        "他會說中文。",
+        "你們都是學生。",
+        "她是台灣人。",
+        "你學電腦。"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "我 / 印尼人 / 是",
+        "嗎 / 你 / 學生 / 是",
+        "也 / 我 / 是 / 印尼人",
+        "都 / 我們 / 學生 / 是",
+        "不是 / 他 / 台灣人"
+      ]
+    }
+  ],
+  "answers": [
+    "我是印尼人。 — 他不是老師。 — 你們都是學生嗎？ — 我也會說英文。 — 你是哪國人？ — 我還是學生。",
+    "是 — 不是 — 很 — 都 — 是 — 很",
+    "你是老師嗎？ — 他會說中文嗎？ — 你們都是學生嗎？ — 她是台灣人嗎？ — 你學電腦嗎？",
+    "我是印尼人。 — 你是學生嗎？ — 我也是印尼人。 — 我們都是學生。 — 他不是台灣人。"
+  ]
+}

@@ -1,0 +1,602 @@
+{
+  "title": "Can, must, may, and must not",
+  "title_target": "ໄດ້ ຕ້ອງ ຄວນ ຫ້າມ — Dâi, tâwng, khuan, hàam",
+  "goal": "Ask permission, say what's required, give advice, and understand prohibitions — four things that decide whether you sound polite or like you're giving orders.",
+  "bekal": [
+    "ໄດ້ and ເປັນ for two kinds of \"can\"",
+    "ຕ້ອງ and ບໍ່ຈຳເປັນ for obligation",
+    "ຄວນ and ບໍ່ຄວນ for advice",
+    "ຫ້າມ and ຢ່າ for prohibitions",
+    "asking for help with ຊ່ວຍ…ແດ່"
+  ],
+  "dialogs": [
+    {
+      "title": "ບົດສົນທະນາ — Temple rules, before going in",
+      "intro": "Bounmy explains the rules before they enter the wat. Notice how strict prohibitions and gentle advice use different words.",
+      "lines": [
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ກ່ອນ|Kàwn][ເຂົ້າ|khào] [ຕ້ອງ|tâwng][ຖອດ|thàwt][ເກີບ|kòep][ເດີ້|dòe]",
+          "id": "Before going in, you have to take off your shoes, okay?",
+          "literal": "before — enter — must — remove — shoe — (friendly particle)."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ເຂົ້າໃຈ|Khào-jai][ແລ້ວ|lèeo] [ຖ່າຍ|Thàai][ຮູບ|hûup][ໄດ້|dâi][ບໍ່|bàw]",
+          "id": "Got it. Can I take photos?",
+          "literal": "enter-heart — already. take — picture — can — (question)?"
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ຖ່າຍ|Thàai][ຢູ່|yùu][ນອກ|nàwk][ໄດ້|dâi] [ແຕ່|Tèe][ຢູ່|yùu][ໃນ|nai][ຫ້າມ|hàam][ຖ່າຍ|thàai] [ມີ|Míi][ປ້າຍ|pâai][ຂຽນ|khǐan][ໄວ້|wâi]",
+          "id": "Outside, yes. But inside it's forbidden. There's a sign that says so.",
+          "literal": "take — at — outside — can. but — at — inside — forbid — take. have — sign — write — keep."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ຂ້ອຍ|Khàwy][ໃສ່|sài][ໂສ້ງ|sôong][ຂາ|khǎa][ສັ້ນ|sân] [ເປັນ|Pen][ຫຍັງ|nyǎng][ບໍ່|bàw]",
+          "id": "I'm wearing shorts. Is that a problem?",
+          "literal": "I — wear — pants — leg — short. be — what — (question)?"
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ບໍ່|Bàw][ຄວນ|khuan][ເດີ້|dòe] [ຕ້ອງ|Tâwng][ປົກ|pók][ຫົວ|hǔa][ເຂົ່າ|khào] [ຢືມ|Yʉʉm][ຜ້າ|phàa][ຢູ່|yùu][ທາງ|tháang][ເຂົ້າ|khào][ໄດ້|dâi]",
+          "id": "Better not. You need to cover your knees. You can borrow a cloth at the entrance.",
+          "literal": "not — should — (friendly particle). must — cover — knee. borrow — cloth — at — way — enter — can."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ດີ|Dii] [ຕ້ອງ|Tâwng][ຈ່າຍ|jàai][ຄ່າ|khàa][ເຂົ້າ|khào][ບໍ່|bàw]",
+          "id": "Okay. Do I have to pay an entrance fee?",
+          "literal": "good. must — pay — fee — enter — (question)?"
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ບໍ່|Bàw][ຈຳເປັນ|jam-pen] [ແຕ່|Tèe][ຖ້າ|thàa][ຢາກ|yàak][ບໍລິຈາກ|baw-li-jàak] [ກໍ|kaw][ໄດ້|dâi]",
+          "id": "No need. But if you want to make a donation, that's fine.",
+          "literal": "not — necessary. but — if — want — donate — also — can."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ຂ້ອຍ|Khàwy][ບໍ່|bàw][ຮູ້|hûu][ຈັກ|ják][ວິທີ|wi-thíi][ໄຫວ້|wâi] [ຊ່ວຍ|Sùay][ສອນ|sǎwn][ແດ່|dèe][ໄດ້|dâi][ບໍ່|bàw]",
+          "id": "I don't know how to do the wai. Could you show me?",
+          "literal": "I — not — know — method — wai. help — teach — a-little — can — (question)?"
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ໄດ້|Dâi][ເລີຍ|lóei] [ເອົາ|Ao][ມື|mʉʉ][ສອງ|sǎwng][ຂ້າງ|khàang][ປະ|pa][ກັນ|kan] [ແລ້ວ|Lèeo][ກໍ|kaw][ກົ້ມ|kôm][ຫົວ|hǔa][ໜ້ອຍ|nàwy][ໜຶ່ງ|nʉ̀ng]",
+          "id": "Sure. Press both hands together, then bow your head a little.",
+          "literal": "can — right-away. take — hand — two — side — press — together. then — also — bow — head — little — one."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ແບບ|Bèep][ນີ້|nîi][ບໍ່|bàw] [ຖືກ|Thʉ̀ʉk][ບໍ່|bàw]",
+          "id": "Like this? Is it right?",
+          "literal": "style — this — (question)? correct — (question)?"
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ຖືກ|Thʉ̀ʉk][ແລ້ວ|lèeo] [ເກັ່ງ|Kèng][ຫຼາຍ|lǎai] [ໄປ|Pai][ກັນ|kan][ເລີຍ|lóei]",
+          "id": "That's right. Well done. Let's go in.",
+          "literal": "correct — already. skilled — much. go — together — right-away."
+        }
+      ],
+      "notes": [
+        "**Two words for \"can\", and this is what separates advanced speakers.** *ໄດ້ dâi* = able, allowed, have the chance — used for permission and possibility. *ເປັນ pen* = can because you've learned how — used for skills. *ຖ່າຍຮູບໄດ້ບໍ່* (may I take photos?) versus *ຖ່າຍຮູບເປັນບໍ່* (can you take photos? — do you have the skill?).",
+        "**ຕ້ອງ tâwng = \"must\", and its negative ບໍ່ຕ້ອງ does NOT mean \"don't have to\".** *ບໍ່ຕ້ອງ bàw tâwng* means \"no need, don't bother\" — an offer to spare you trouble. For \"not required\", the word is *ບໍ່ຈຳເປັນ bàw jam-pen*.",
+        "**ຄວນ khuan = \"should\", ບໍ່ຄວນ = \"shouldn't\".** It's advice, not an order, and Lao people use it far more often than *ຕ້ອງ*. Saying *ບໍ່ຄວນ* to a foreigner about to break a custom is the gentlest way to stop them — and that's what you hear in this dialog.",
+        "**ຫ້າມ hàam = \"forbidden\", and it's the official word.** It's what's written on signs: *ຫ້າມຖ່າຍຮູບ* (no photography), *ຫ້າມສູບຢາ* (no smoking), *ຫ້າມຈອດ* (no parking). Whenever you see this word on a sign, stop and find out what it says.",
+        "**ຢ່າ yàa = \"don't\", used from person to person.** *ຢ່າໄປ* (don't go). The difference from *ຫ້າມ*: *ຫ້າມ* is a rule, *ຢ່າ* is a personal request. Adding *ເດີ້* at the end softens it: *ຢ່າລືມເດີ້* (don't forget, okay).",
+        "**ຊ່ວຍ… ແດ່ sùay… dèe is the most polite frame for asking a favor.** *ຊ່ວຍສອນແດ່* (please teach me), *ຊ່ວຍເປີດປະຕູແດ່* (please open the door), *ຊ່ວຍເວົ້າຊ້າໆແດ່* (please speak slowly). The two words wrap around the verb, and without them your sentence is an order.",
+        "**ຮູ້ຈັກ hûu-ják = \"know (a person), know how\", ຮູ້ hûu = \"know (a fact)\".** *ຂ້ອຍບໍ່ຮູ້* (I don't know), *ຂ້ອຍບໍ່ຮູ້ຈັກລາວ* (I don't know him). For knowing how to do something, people use *ຮູ້ຈັກວິທີ* or simply *ເຮັດບໍ່ເປັນ* (can't do it).",
+        "**ໄຫວ້ wâi is the pressed-palms gesture of respect, and its height has rules.** To peers: fingertips at chin level. To elders and teachers: at the nose. To monks and Buddha images: at the forehead. The younger person goes first; the elder returns it. When in doubt, copy the person next to you.",
+        "**Ten unwritten temple rules.** Take off your shoes, cover shoulders and knees, don't point your feet at a Buddha image, sit with your legs folded back away from the image, don't stand higher than a monk, women must not touch monks, don't speak loudly, don't photograph people praying, don't climb on images for photos, and don't hand money directly to a monk."
+      ],
+      "grammars": [
+        {
+          "title": "Four helping verbs and their negatives",
+          "table": {
+            "head": [
+              "Lao",
+              "Say it",
+              "Meaning",
+              "Negative",
+              "Meaning of negative"
+            ],
+            "rows": [
+              [
+                "…ໄດ້",
+                "*…dâi*",
+                "can, may",
+                "…ບໍ່ໄດ້",
+                "can't, may not"
+              ],
+              [
+                "…ເປັນ",
+                "*…pen*",
+                "can (skill)",
+                "…ບໍ່ເປັນ",
+                "can't (no skill yet)"
+              ],
+              [
+                "ຕ້ອງ…",
+                "*tâwng…*",
+                "must",
+                "ບໍ່ຈຳເປັນ…",
+                "not required"
+              ],
+              [
+                "ຕ້ອງ…",
+                "*tâwng…*",
+                "must",
+                "ບໍ່ຕ້ອງ…",
+                "no need, don't bother"
+              ],
+              [
+                "ຄວນ…",
+                "*khuan…*",
+                "should",
+                "ບໍ່ຄວນ…",
+                "shouldn't"
+              ],
+              [
+                "…ໄຫວ",
+                "*…wǎi*",
+                "be able to (physically)",
+                "…ບໍ່ໄຫວ",
+                "can't manage"
+              ],
+              [
+                "ຫ້າມ…",
+                "*hàam…*",
+                "forbidden",
+                "—",
+                "—"
+              ],
+              [
+                "ຢ່າ…",
+                "*yàa…*",
+                "don't",
+                "—",
+                "—"
+              ]
+            ]
+          },
+          "after": [
+            "Notice the position: *ໄດ້*, *ເປັນ*, and *ໄຫວ* come **after** the verb; *ຕ້ອງ*, *ຄວນ*, *ຫ້າມ*, and *ຢ່າ* come **before** it. That's the only thing to memorize — the rest follows naturally.",
+            "**ໄຫວ *wǎi*** means \"physically able to\". *ຍ່າງບໍ່ໄຫວ* (can't walk any more), *ກິນບໍ່ໄຫວ* (can't eat another bite). A very useful word when you're truly exhausted."
+          ]
+        },
+        {
+          "title": "Asking permission and asking for help",
+          "table": {
+            "head": [
+              "Lao",
+              "Say it",
+              "Meaning",
+              "How it feels"
+            ],
+            "rows": [
+              [
+                "…ໄດ້ບໍ່",
+                "*…dâi bàw*",
+                "…may I?",
+                "neutral, polite"
+              ],
+              [
+                "ຂໍ…ແດ່",
+                "*khǎw… dèe*",
+                "may I have…, please",
+                "polite, for things"
+              ],
+              [
+                "ຊ່ວຍ…ແດ່",
+                "*sùay… dèe*",
+                "please (do)…",
+                "polite, for actions"
+              ],
+              [
+                "ຂໍອະນຸຍາດ…",
+                "*khǎw a-nu-nyâat…*",
+                "may I have permission to…",
+                "formal"
+              ],
+              [
+                "ລົບກວນ…ແດ່",
+                "*lop-kuan… dèe*",
+                "sorry to bother you, …",
+                "very polite"
+              ],
+              [
+                "ເອົາ…ໃຫ້ແດ່",
+                "*ao… hài dèe*",
+                "get me…, would you",
+                "casual"
+              ],
+              [
+                "…ໜ້ອຍໜຶ່ງ",
+                "*…nàwy nʉ̀ng*",
+                "…for a moment / a little",
+                "softens anything"
+              ]
+            ]
+          },
+          "after": [
+            "Rule of thumb: **always add ແດ່ *dèe* or ໜ້ອຍໜຶ່ງ *nàwy nʉ̀ng*** to a request. *ເປີດປະຕູ* (open the door) is an order; *ຊ່ວຍເປີດປະຕູແດ່* is a request. Two words apart, a world of difference."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Signs you need to recognize",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Lao",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ຫ້າມເຂົ້າ",
+              "*hàam khào*",
+              "no entry"
+            ],
+            [
+              "ຫ້າມຖ່າຍຮູບ",
+              "*hàam thàai hûup*",
+              "no photography"
+            ],
+            [
+              "ຫ້າມສູບຢາ",
+              "*hàam sùup yaa*",
+              "no smoking"
+            ],
+            [
+              "ຫ້າມຈອດ",
+              "*hàam jàwt*",
+              "no parking"
+            ],
+            [
+              "ຫ້າມຖິ້ມຂີ້ເຫຍື້ອ",
+              "*hàam thîm khîi-nyʉ̂a*",
+              "no littering"
+            ],
+            [
+              "ເປີດ",
+              "*pòet*",
+              "open"
+            ],
+            [
+              "ປິດ",
+              "*pít*",
+              "closed"
+            ],
+            [
+              "ທາງເຂົ້າ",
+              "*tháang khào*",
+              "entrance"
+            ],
+            [
+              "ທາງອອກ",
+              "*tháang àwk*",
+              "exit"
+            ],
+            [
+              "ຢູ່ລະຫວ່າງສ້ອມແປງ",
+              "*yùu la-wàang sâwm-pèeng*",
+              "under repair"
+            ],
+            [
+              "ລະວັງ",
+              "*la-wáng*",
+              "caution"
+            ],
+            [
+              "ຫ້ອງນ້ຳຊາຍ / ຍິງ",
+              "*hàwng-nâm sáai / nyíng*",
+              "men's / women's restroom"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last two words are worth learning by heart: **ຊາຍ *sáai*** (men) and **ຍິງ *nyíng*** (women). In many places, that's the only marking on a restroom door — no pictures."
+        }
+      ]
+    },
+    {
+      "title": "Customs to know before you get them wrong",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Don't",
+            "Why",
+            "Instead"
+          ],
+          "rows": [
+            [
+              "touch someone's head",
+              "the head is considered most sacred",
+              "touch the shoulder if needed"
+            ],
+            [
+              "point with your foot",
+              "the feet are considered lowest",
+              "point with an open hand"
+            ],
+            [
+              "give/receive with your left hand",
+              "the left hand is for unclean things",
+              "right hand, left hand supporting the elbow"
+            ],
+            [
+              "get angry in public",
+              "both sides lose face",
+              "smile, postpone the conversation"
+            ],
+            [
+              "photograph monks up close",
+              "it disturbs the ritual",
+              "shoot from a distance, no flash"
+            ],
+            [
+              "(women) touch a monk",
+              "it breaks monastic rules",
+              "place the item on a cloth"
+            ],
+            [
+              "step over food or people",
+              "disrespectful",
+              "walk around"
+            ],
+            [
+              "stand higher than elders",
+              "high-low hierarchy is real",
+              "bow your head as you pass"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One principle explains almost every row in this table: in Lao culture, **high means honored and low means less honored** — literally. The head is up, the feet are down, and every movement of the body carries that meaning. Understand this one principle and you can guess the rest yourself."
+        },
+        {
+          "type": "p",
+          "text": "The second principle: **ບໍ່ເສຍໜ້າ bàw sǐa nâa** — don't make people lose face. Scolding someone in front of others, pushing for a firm answer, or showing anger will cost you far more than the problem you're trying to solve. What works in Laos is almost always a smile, patience, and calmly repeating your request."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "lo": "ຕ້ອງ",
+      "baca": "tâwng",
+      "en": "must, have to"
+    },
+    {
+      "lo": "ບໍ່ຕ້ອງ",
+      "baca": "bàw tâwng",
+      "en": "no need, don't bother"
+    },
+    {
+      "lo": "ຈຳເປັນ",
+      "baca": "jam-pen",
+      "en": "necessary, required"
+    },
+    {
+      "lo": "ຄວນ",
+      "baca": "khuan",
+      "en": "should"
+    },
+    {
+      "lo": "ຫ້າມ",
+      "baca": "hàam",
+      "en": "forbidden"
+    },
+    {
+      "lo": "ຢ່າ",
+      "baca": "yàa",
+      "en": "don't"
+    },
+    {
+      "lo": "ໄຫວ",
+      "baca": "wǎi",
+      "en": "be able to (physically)"
+    },
+    {
+      "lo": "ອະນຸຍາດ",
+      "baca": "a-nu-nyâat",
+      "en": "permit, allow"
+    },
+    {
+      "lo": "ລົບກວນ",
+      "baca": "lop-kuan",
+      "en": "bother, disturb"
+    },
+    {
+      "lo": "ຖອດ",
+      "baca": "thàwt",
+      "en": "take off, remove"
+    },
+    {
+      "lo": "ປົກ",
+      "baca": "pók",
+      "en": "cover"
+    },
+    {
+      "lo": "ຫົວເຂົ່າ",
+      "baca": "hǔa-khào",
+      "en": "knee"
+    },
+    {
+      "lo": "ໄຫວ້",
+      "baca": "wâi",
+      "en": "wai (pressed-palms greeting)"
+    },
+    {
+      "lo": "ກົ້ມ",
+      "baca": "kôm",
+      "en": "bow (the head)"
+    },
+    {
+      "lo": "ສອນ",
+      "baca": "sǎwn",
+      "en": "teach"
+    },
+    {
+      "lo": "ວິທີ",
+      "baca": "wi-thíi",
+      "en": "method, way"
+    },
+    {
+      "lo": "ແບບ",
+      "baca": "bèep",
+      "en": "style, way"
+    },
+    {
+      "lo": "ປ້າຍ",
+      "baca": "pâai",
+      "en": "sign"
+    },
+    {
+      "lo": "ບໍລິຈາກ",
+      "baca": "baw-li-jàak",
+      "en": "donate"
+    },
+    {
+      "lo": "ສູບຢາ",
+      "baca": "sùup yaa",
+      "en": "smoke"
+    },
+    {
+      "lo": "ຖິ້ມ",
+      "baca": "thîm",
+      "en": "throw away"
+    },
+    {
+      "lo": "ຂີ້ເຫຍື້ອ",
+      "baca": "khîi-nyʉ̂a",
+      "en": "trash"
+    },
+    {
+      "lo": "ເປີດ",
+      "baca": "pòet",
+      "en": "open, turn on"
+    },
+    {
+      "lo": "ປິດ",
+      "baca": "pít",
+      "en": "close, turn off"
+    },
+    {
+      "lo": "ທາງເຂົ້າ",
+      "baca": "tháang khào",
+      "en": "entrance"
+    },
+    {
+      "lo": "ທາງອອກ",
+      "baca": "tháang àwk",
+      "en": "exit"
+    },
+    {
+      "lo": "ລະວັງ",
+      "baca": "la-wáng",
+      "en": "be careful, caution"
+    },
+    {
+      "lo": "ຍິງ",
+      "baca": "nyíng",
+      "en": "woman, female"
+    },
+    {
+      "lo": "ຊາຍ",
+      "baca": "sáai",
+      "en": "man, male"
+    },
+    {
+      "lo": "ເສຍໜ້າ",
+      "baca": "sǐa nâa",
+      "en": "lose face"
+    },
+    {
+      "lo": "ຮູ້ຈັກ",
+      "baca": "hûu-ják",
+      "en": "know (a person), know how"
+    },
+    {
+      "lo": "ຄ່າເຂົ້າ",
+      "baca": "khàa khào",
+      "en": "entrance fee"
+    },
+    {
+      "lo": "ສ້ອມແປງ",
+      "baca": "sâwm-pèeng",
+      "en": "repair"
+    },
+    {
+      "lo": "ຂ້າງ",
+      "baca": "khàang",
+      "en": "side"
+    },
+    {
+      "lo": "ປະ",
+      "baca": "pa",
+      "en": "press, stick; leave behind"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in with ໄດ້, ເປັນ, ຕ້ອງ, ຄວນ, or ຫ້າມ.",
+      "items": [
+        "ຢູ່ໃນວັດ____ຖ່າຍຮູບ (photography is forbidden inside the temple)",
+        "ກ່ອນເຂົ້າ____ຖອດເກີບ (you must take off your shoes)",
+        "ເຈົ້າ____ໃສ່ໂສ້ງຂາສັ້ນ (you shouldn't wear shorts)",
+        "ຂ້ອຍລອຍນ້ຳບໍ່____ (I can't swim)",
+        "ຈອດຢູ່ນີ້____ບໍ່ (can I park here?)"
+      ]
+    },
+    {
+      "prompt": "Turn these blunt orders into polite requests.",
+      "items": [
+        "ເປີດປະຕູ (open the door)",
+        "ເວົ້າຊ້າໆ (speak slowly)",
+        "ສອນຂ້ອຍ (teach me)",
+        "ເອົານ້ຳມາ (bring water)",
+        "ຖ່າຍຮູບໃຫ້ຂ້ອຍ (take my photo)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ບໍ່ / ໄດ້ / ຖ່າຍຮູບ",
+        "ເດີ້ / ຖອດເກີບ / ຕ້ອງ / ກ່ອນເຂົ້າ",
+        "ຈຳເປັນ / ບໍ່",
+        "ໄດ້ບໍ່ / ແດ່ / ຊ່ວຍສອນ",
+        "ຫົວເຂົ່າ / ປົກ / ຕ້ອງ"
+      ]
+    },
+    {
+      "prompt": "Translate into Lao.",
+      "items": [
+        "Before going in, you have to take off your shoes.",
+        "Can I take photos?",
+        "Outside, yes, but inside it's forbidden.",
+        "Better not. You need to cover your knees.",
+        "Do I have to pay an entrance fee? — No need.",
+        "I don't know how. Could you show me?"
+      ]
+    }
+  ],
+  "answers": [
+    "ຫ້າມ — ຕ້ອງ — ບໍ່ຄວນ — ເປັນ — ໄດ້",
+    "ຊ່ວຍເປີດປະຕູແດ່ — ຊ່ວຍເວົ້າຊ້າໆແດ່ — ຊ່ວຍສອນຂ້ອຍແດ່ — ຊ່ວຍເອົານ້ຳມາແດ່ — ຊ່ວຍຖ່າຍຮູບໃຫ້ຂ້ອຍແດ່",
+    "ຖ່າຍຮູບໄດ້ບໍ່ — ກ່ອນເຂົ້າຕ້ອງຖອດເກີບເດີ້ — ບໍ່ຈຳເປັນ — ຊ່ວຍສອນແດ່ໄດ້ບໍ່ — ຕ້ອງປົກຫົວເຂົ່າ",
+    "ກ່ອນເຂົ້າຕ້ອງຖອດເກີບ — ຖ່າຍຮູບໄດ້ບໍ່ — ຖ່າຍຢູ່ນອກໄດ້ ແຕ່ຢູ່ໃນຫ້າມຖ່າຍ — ບໍ່ຄວນເດີ້ ຕ້ອງປົກຫົວເຂົ່າ — ຕ້ອງຈ່າຍຄ່າເຂົ້າບໍ່ (ຄຳຕອບ: ບໍ່ຈຳເປັນ) — ຂ້ອຍບໍ່ຮູ້ຈັກວິທີ ຊ່ວຍສອນແດ່ໄດ້ບໍ່"
+  ],
+  "wave": "Review Unit 15: cover the Lao, then tell the story of a trip you've taken — with ເຄີຍ, ແລ້ວ, and one thing you didn't get around to."
+}

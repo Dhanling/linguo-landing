@@ -1,0 +1,581 @@
+{
+  "title": "At the doctor's",
+  "title_target": "ექიმთან — Ekimtan",
+  "goal": "Explain what hurts, name parts of the body, buy medicine at the pharmacy — and meet a verb that builds its sentence the other way around from English.",
+  "bekal": [
+    "say which part of your body hurts",
+    "name common symptoms: fever, cough, nausea",
+    "ask for medicine at the pharmacy",
+    "mention allergies and medicine you take regularly",
+    "ask for help in an emergency"
+  ],
+  "dialogs": [
+    {
+      "title": "დიალოგი — A throat that isn't right",
+      "intro": "Ani gets sick in her fourth week of winter and goes to a clinic. Notice the verb \"hurt\" — the sentence is built the other way around, and that's how Georgian puts the person who suffers in the picture.",
+      "lines": [
+        {
+          "speaker": "ექიმი:",
+          "text": "[გამარჯობათ|Ga-mar-jo-bat]. [რა|Ra] [გჭირთ|gch'irt]?",
+          "id": "Good afternoon. What's the problem?",
+          "literal": "hello-polite. what — bothers-you?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ყელი|Q'e-li] [მტკივა|mt'k'i-va] [და|da] [თავიც|ta-vits] [მტკივა|mt'k'i-va].",
+          "id": "My throat hurts and my head hurts too.",
+          "literal": "throat — hurts-to-me — and — head-too — hurts-to-me."
+        },
+        {
+          "speaker": "ექიმი:",
+          "text": "[სიცხე|Sits-khe] [გაქვთ|gakvt]?",
+          "id": "Do you have a fever?",
+          "literal": "temperature — you-have?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[დილით|Di-lit] [ოცდათვრამეტი|ots-dat-vra-me-t'i] [იყო|i-q'o]. [ხველაც|Khve-lats] [მაქვს|makvs].",
+          "id": "It was 38 this morning. I have a cough too.",
+          "literal": "morning-by — thirty-eight — was. cough-too — I-have."
+        },
+        {
+          "speaker": "ექიმი:",
+          "text": "[რამდენი|Ram-de-ni] [დღეა|dghe-a]?",
+          "id": "How many days has it been?",
+          "literal": "how-many — day-is?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[სამი|Sa-mi] [დღეა|dghe-a]. [ღამით|Gha-mit] [უარესია|u-a-re-si-a].",
+          "id": "Three days. It's worse at night.",
+          "literal": "three — day-is. night-by — worse-is."
+        },
+        {
+          "speaker": "ექიმი:",
+          "text": "[პირი|P'i-ri] [გააღეთ|ga-a-ghet]… [კარგი|K'ar-gi]. [ვირუსია|Vi-ru-si-a], [სერიოზული|se-ri-o-zu-li] [არაფერი|a-ra-pe-ri].",
+          "id": "Open your mouth… Okay. It's a virus, nothing serious.",
+          "literal": "mouth — open… good. virus-is, serious — nothing."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[წამალი|Ts'a-ma-li] [მჭირდება|mch'ir-de-ba]?",
+          "id": "Do I need medicine?",
+          "literal": "medicine — I-need?"
+        },
+        {
+          "speaker": "ექიმი:",
+          "text": "[ეს|Es] [სამი|sa-mi] [დღე|dghe] [დალიეთ|da-li-et]. [ბევრი|Bev-ri] [თბილი|tbi-li] [წყალი|ts'q'a-li] [დალიეთ|da-li-et] [და|da] [დაისვენეთ|da-is-ve-net].",
+          "id": "Take this for three days. Drink plenty of warm water and rest.",
+          "literal": "this — three — day — drink. much — warm — water — drink — and — rest."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ალერგია|A-ler-gi-a] [მაქვს|makvs] [პენიცილინზე|p'e-ni-tsi-lin-ze].",
+          "id": "I'm allergic to penicillin.",
+          "literal": "allergy — I-have — penicillin-on."
+        },
+        {
+          "speaker": "ექიმი:",
+          "text": "[კარგია|K'ar-gi-a] [რომ|rom] [თქვით|tkvit]. [ეს|Es] [ანტიბიოტიკი|an-t'i-bi-o-t'i-k'i] [არ|ar] [არის|a-ris].",
+          "id": "Good that you told me. This isn't an antibiotic.",
+          "literal": "good-is — that — you-said. this — antibiotic — not — is."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[გმადლობთ|Gmad-lobt], [ექიმო|e-ki-mo]. [რამდენი|Ram-de-ni] [გადავიხადო|ga-da-vi-kha-do]?",
+          "id": "Thank you, doctor. How much do I owe?",
+          "literal": "thank-you, doctor-calling. how-much — I-must-pay?"
+        }
+      ],
+      "notes": [
+        "⚠️ **მტკივა builds its sentence the other way around.** *თავი მტკივა* literally means \"head hurts-to-me\" — the subject of the sentence is **the body part**, not the person. That's why there's no ვ- in front, and no need for a word for \"I\". The forms: **მ**ტკივა (hurts me), **გ**ტკივა (hurts you), **ს**ტკივა (hurts him/her).",
+        "**When more than one part hurts**, *თავი და ყელი მტკივა* is still correct: the verb could go plural, but in conversation Georgian usually keeps *მტკივა*.",
+        "**რა გჭირს? / რა გჭირთ? = \"what's the problem?\"** Literally \"what's troubling you?\". Every doctor's standard opening line. You already know a relative: მჭირდება (I need) from unit 7.",
+        "**სიცხე გაქვთ? — a fever is something you \"have\", not something you \"are\".** *სიცხე მაქვს* (I have a fever), *ხველა მაქვს* (I have a cough), *სურდო მაქვს* (I have a cold). This pattern works for almost every symptom, and you've known it since unit 4.",
+        "**Body temperature is given in Celsius, without a decimal**: ოცდათვრამეტი (38), ოცდაცხრამეტი (39). Notice that the twenties system from unit 6 comes back at the least convenient moment to do math.",
+        "**ექიმო — notice the -ო ending.** That's the form for calling someone (the vocative): ექიმ**ო** (Doctor!), ბატონ**ო** (Sir!), ქალბატონ**ო** (Ma'am!). The -ი ending turns into -ო whenever you address someone directly.",
+        "**ბატონო and ქალბატონო are polite forms of address you must know.** ბატონო for men, ქალბატონო for women — used with doctors, officials, older people, and anyone you respect. ბატონო is also often used on its own as a polite reply when someone calls you, like \"yes, sir?\"."
+      ],
+      "grammars": [
+        {
+          "title": "Parts of the body, and the verb \"hurt\"",
+          "tables": [
+            {
+              "head": [
+                "Georgian",
+                "Say it",
+                "Meaning",
+                "Georgian",
+                "Say it",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "თავი",
+                  "tavi",
+                  "head",
+                  "კუჭი",
+                  "k'uch'i",
+                  "stomach"
+                ],
+                [
+                  "ყელი",
+                  "q'eli",
+                  "throat",
+                  "ზურგი",
+                  "zurgi",
+                  "back"
+                ],
+                [
+                  "თვალი",
+                  "tvali",
+                  "eye",
+                  "ხელი",
+                  "kheli",
+                  "hand, arm"
+                ],
+                [
+                  "ყური",
+                  "q'uri",
+                  "ear",
+                  "ფეხი",
+                  "pekhi",
+                  "foot, leg"
+                ],
+                [
+                  "ცხვირი",
+                  "tskhviri",
+                  "nose",
+                  "კბილი",
+                  "k'bili",
+                  "tooth"
+                ],
+                [
+                  "პირი",
+                  "p'iri",
+                  "mouth",
+                  "გული",
+                  "guli",
+                  "heart"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Sentence",
+                "Say it",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "თავი მტკივა",
+                  "tavi mt'k'iva",
+                  "I have a headache"
+                ],
+                [
+                  "კუჭი მტკივა",
+                  "k'uch'i mt'k'iva",
+                  "I have a stomachache"
+                ],
+                [
+                  "რა გტკივა?",
+                  "ra gt'k'iva",
+                  "What hurts?"
+                ],
+                [
+                  "სიცხე მაქვს",
+                  "sitskhe makvs",
+                  "I have a fever"
+                ],
+                [
+                  "ხველა მაქვს",
+                  "khvela makvs",
+                  "I have a cough"
+                ],
+                [
+                  "სურდო მაქვს",
+                  "surdo makvs",
+                  "I have a cold"
+                ],
+                [
+                  "გულზე მერევა",
+                  "gulze mereva",
+                  "I feel sick (nauseous)"
+                ],
+                [
+                  "ავად ვარ",
+                  "avad var",
+                  "I'm ill"
+                ],
+                [
+                  "თავბრუ მეხვევა",
+                  "tavbru mekhveva",
+                  "I feel dizzy"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **ავად ვარ** (I'm ill) uses the -ად ending you already know — literally \"I am in a sick state\". The opposite: **ჯანმრთელი ვარ** (I'm healthy)."
+          ]
+        },
+        {
+          "title": "At the pharmacy",
+          "table": {
+            "head": [
+              "Sentence",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "წამალი მჭირდება",
+                "ts'amali mch'irdeba",
+                "I need medicine"
+              ],
+              [
+                "თავის ტკივილის წამალი გაქვთ?",
+                "tavis t'k'ivilis ts'amali gakvt",
+                "Do you have anything for a headache?"
+              ],
+              [
+                "რეცეპტი მჭირდება?",
+                "retsep't'i mch'irdeba",
+                "Do I need a prescription?"
+              ],
+              [
+                "დღეში რამდენჯერ?",
+                "dgheshi ramdenjer",
+                "How many times a day?"
+              ],
+              [
+                "ალერგია მაქვს …-ზე",
+                "alergia makvs …ze",
+                "I'm allergic to …"
+              ],
+              [
+                "ორსულად ვარ",
+                "orsulad var",
+                "I'm pregnant"
+              ]
+            ]
+          },
+          "after": [
+            "Pharmacies in Georgia (**აფთიაქი**) stay open late, and many medicines are sold without a prescription. The chains you'll see everywhere: PSP, Aversi, GPC. For emergencies, the single number **112** covers police, fire, and ambulance, with English-speaking operators."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "When it's urgent",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "Six emergency sentences — learn them by heart",
+          "items": [
+            "**დამეხმარეთ!** (damekhmaret) — Help me!",
+            "**სასწრაფო გამოიძახეთ!** (sasts'rapo gamoidzakhet) — Call an ambulance!",
+            "**ცუდად ვარ.** (tsudad var) — I feel unwell / I'm about to faint.",
+            "**ალერგია მაქვს.** — I have an allergy.",
+            "**ინგლისურად ლაპარაკობთ?** — Do you speak English?",
+            "**ინდონეზიის საელჩო.** (Indoneziis saelcho) — The Indonesian Embassy. (swap in your own country's name)"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Two practical things best prepared before you need them. First, **112** is the only emergency number you need to remember in Georgia, and its operators speak English. Second, write your allergies and regular medicines on a slip of paper in simple Georgian — *ალერგია მაქვს …-ზე* — and keep it in your wallet. In a panic, even the simplest sentence is hard to get out."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Georgian",
+            "Say it",
+            "Meaning",
+            "Georgian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ექიმი",
+              "ekimi",
+              "doctor",
+              "წამალი",
+              "ts'amali",
+              "medicine"
+            ],
+            [
+              "საავადმყოფო",
+              "saavadmq'opo",
+              "hospital",
+              "რეცეპტი",
+              "retsep't'i",
+              "prescription"
+            ],
+            [
+              "კლინიკა",
+              "k'linik'a",
+              "clinic",
+              "სიცხე",
+              "sitskhe",
+              "fever"
+            ],
+            [
+              "აფთიაქი",
+              "aptiaki",
+              "pharmacy",
+              "ხველა",
+              "khvela",
+              "cough"
+            ],
+            [
+              "ექთანი",
+              "ektani",
+              "nurse",
+              "სურდო",
+              "surdo",
+              "cold (illness)"
+            ],
+            [
+              "სასწრაფო",
+              "sasts'rapo",
+              "ambulance",
+              "ტკივილი",
+              "t'k'ivili",
+              "pain"
+            ],
+            [
+              "ავად",
+              "avad",
+              "ill, sick",
+              "ჯანმრთელი",
+              "janmrteli",
+              "healthy"
+            ],
+            [
+              "დაზღვევა",
+              "dazghveva",
+              "insurance",
+              "ანალიზი",
+              "analizi",
+              "lab test"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One habit that may surprise you: Georgians ask *როგორ ხარ?* and really mean it, and if you're sick they genuinely want to know. Answering *ცოტა ავად ვარ* (I'm a bit sick) will almost certainly bring offers of medicine, tea, or a ride to the doctor from someone you met a week ago. It's not just politeness, and turning all of it down only confuses them."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ka": "ექიმი",
+      "baca": "ekimi",
+      "en": "doctor"
+    },
+    {
+      "ka": "აფთიაქი",
+      "baca": "aptiaki",
+      "en": "pharmacy"
+    },
+    {
+      "ka": "საავადმყოფო",
+      "baca": "saavadmq'opo",
+      "en": "hospital"
+    },
+    {
+      "ka": "წამალი",
+      "baca": "ts'amali",
+      "en": "medicine"
+    },
+    {
+      "ka": "რეცეპტი",
+      "baca": "retsep't'i",
+      "en": "prescription"
+    },
+    {
+      "ka": "სასწრაფო",
+      "baca": "sasts'rapo",
+      "en": "ambulance"
+    },
+    {
+      "ka": "თავი",
+      "baca": "tavi",
+      "en": "head"
+    },
+    {
+      "ka": "ყელი",
+      "baca": "q'eli",
+      "en": "throat"
+    },
+    {
+      "ka": "კუჭი",
+      "baca": "k'uch'i",
+      "en": "stomach"
+    },
+    {
+      "ka": "კბილი",
+      "baca": "k'bili",
+      "en": "tooth"
+    },
+    {
+      "ka": "ზურგი",
+      "baca": "zurgi",
+      "en": "back"
+    },
+    {
+      "ka": "თვალი",
+      "baca": "tvali",
+      "en": "eye"
+    },
+    {
+      "ka": "ყური",
+      "baca": "q'uri",
+      "en": "ear"
+    },
+    {
+      "ka": "ცხვირი",
+      "baca": "tskhviri",
+      "en": "nose"
+    },
+    {
+      "ka": "ხელი",
+      "baca": "kheli",
+      "en": "hand, arm"
+    },
+    {
+      "ka": "ფეხი",
+      "baca": "pekhi",
+      "en": "foot, leg"
+    },
+    {
+      "ka": "გული",
+      "baca": "guli",
+      "en": "heart"
+    },
+    {
+      "ka": "მტკივა",
+      "baca": "mt'k'iva",
+      "en": "my … hurts"
+    },
+    {
+      "ka": "გტკივა",
+      "baca": "gt'k'iva",
+      "en": "your … hurts"
+    },
+    {
+      "ka": "ტკივილი",
+      "baca": "t'k'ivili",
+      "en": "pain"
+    },
+    {
+      "ka": "სიცხე",
+      "baca": "sitskhe",
+      "en": "fever"
+    },
+    {
+      "ka": "ხველა",
+      "baca": "khvela",
+      "en": "cough"
+    },
+    {
+      "ka": "სურდო",
+      "baca": "surdo",
+      "en": "cold (illness)"
+    },
+    {
+      "ka": "ავად",
+      "baca": "avad",
+      "en": "ill, sick"
+    },
+    {
+      "ka": "ჯანმრთელი",
+      "baca": "janmrteli",
+      "en": "healthy"
+    },
+    {
+      "ka": "ალერგია",
+      "baca": "alergia",
+      "en": "allergy"
+    },
+    {
+      "ka": "უარესი",
+      "baca": "uaresi",
+      "en": "worse"
+    },
+    {
+      "ka": "დამეხმარეთ",
+      "baca": "damekhmaret",
+      "en": "help me"
+    },
+    {
+      "ka": "ბატონო",
+      "baca": "bat'ono",
+      "en": "sir (form of address)"
+    },
+    {
+      "ka": "ქალბატონო",
+      "baca": "kalbat'ono",
+      "en": "ma'am (form of address)"
+    },
+    {
+      "ka": "დაისვენეთ",
+      "baca": "daisvenet",
+      "en": "rest"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the body part in Georgian.",
+      "items": [
+        "head → ____",
+        "throat → ____",
+        "stomach → ____",
+        "tooth → ____",
+        "foot → ____",
+        "eye → ____"
+      ]
+    },
+    {
+      "prompt": "Complete the complaints.",
+      "items": [
+        "თავი ____ (hurts me)",
+        "სიცხე ____ (I have)",
+        "ავად ____ (I am)",
+        "წამალი ____ (I need)",
+        "ალერგია ____ (I have)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "მტკივა / ყელი",
+        "გაქვთ / სიცხე / ?",
+        "გტკივა / რა / ?",
+        "მჭირდება / წამალი",
+        "ვარ / ავად"
+      ]
+    },
+    {
+      "prompt": "Translate into Georgian.",
+      "items": [
+        "My throat hurts.",
+        "I have a fever.",
+        "It's been three days.",
+        "I need medicine.",
+        "I'm allergic to penicillin.",
+        "Please call an ambulance!"
+      ]
+    }
+  ],
+  "answers": [
+    "თავი — ყელი — კუჭი — კბილი — ფეხი — თვალი",
+    "მტკივა — მაქვს — ვარ — მჭირდება — მაქვს",
+    "ყელი მტკივა. — სიცხე გაქვთ? — რა გტკივა? — წამალი მჭირდება. — ავად ვარ.",
+    "ყელი მტკივა. — სიცხე მაქვს. — სამი დღეა. — წამალი მჭირდება. — ალერგია მაქვს პენიცილინზე. — სასწრაფო გამოიძახეთ!"
+  ]
+}

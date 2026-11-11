@@ -1,0 +1,519 @@
+{
+  "title": "Days, months, and dates",
+  "title_target": "আজ কী বার? — aj ki bar?",
+  "goal": "Name the days, months, and dates — and discover that Bengali weekday names come from the same list of seven planets as English Sunday, Monday, and Saturday.",
+  "bekal": [
+    "name the seven days and recognize their Sanskrit roots",
+    "give months and dates with পয়লা, দোসরা, তেসরা",
+    "use কাল and পরশু, each of which points in two directions",
+    "say সপ্তাহ, মাস, বছর",
+    "know when the weekend falls in Bangladesh and in West Bengal"
+  ],
+  "dialogs": [
+    {
+      "title": "কথোপকথন — Planning the week",
+      "intro": "Ani and Rahim sit on the veranda making plans. Listen to the names of the days: they follow the same seven planets that gave English *Sunday*, *Monday*, and *Saturday*.",
+      "lines": [
+        {
+          "speaker": "আনি:",
+          "text": "[আজ|aj] [কী|ki] [বার|bar]?",
+          "id": "What day is it today?",
+          "literal": "today — what — day?"
+        },
+        {
+          "speaker": "রহিম:",
+          "text": "[আজ|aj] [বুধবার|budh-bar]। [কাল|kal] [বৃহস্পতিবার|bri-hôsh-pô-ti-bar]।",
+          "id": "Today is Wednesday. Tomorrow is Thursday.",
+          "literal": "today — Wednesday. tomorrow — Thursday."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[বুধবার|budh-bar]! [জাভায়|ja-bhay] [আমরা|am-ra] [বলি|bô-li] [বুদা|bu-da]।",
+          "id": "Budhbar! In Java we call it Buda.",
+          "literal": "Wednesday! java-in — we — say — buda."
+        },
+        {
+          "speaker": "রহিম:",
+          "text": "[সত্যি|sôt-ti]? [তাহলে|ta-hô-lé] [সোমবার|som-bar]? [শুক্রবার|shuk-rô-bar]?",
+          "id": "Really? Then what about Monday? Friday?",
+          "literal": "true? if-so — Monday? Friday?"
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[সোমা|so-ma] [আর|ar] [সুক্রা|suk-ra]! [একই|èk-i] [নাম|nam], [একই|èk-i] [গ্রহ|grôhô]।",
+          "id": "Soma and Sukra! Same names, same planets.",
+          "literal": "soma — and — sukra! same — name, same — planet."
+        },
+        {
+          "speaker": "রহিম:",
+          "text": "[আশ্চর্য|ash-chôr-jô]! [তাহলে|ta-hô-lé] [শুক্রবার|shuk-rô-bar] [আমাদের|a-ma-dér] [ছুটি|chhu-Ti]।",
+          "id": "Amazing! Well, Friday is our day off.",
+          "literal": "amazing! if-so — Friday — our — holiday."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[শুক্রবার|shuk-rô-bar]? [রবিবার|rô-bi-bar] [নয়|nôy]?",
+          "id": "Friday? Not Sunday?",
+          "literal": "Friday? Sunday — isn't?"
+        },
+        {
+          "speaker": "রহিম:",
+          "text": "[বাংলাদেশে|bang-la-dè-shé] [শুক্র|shuk-rô] [আর|ar] [শনি|shô-ni]। [কলকাতায়|kôl-ka-tay] [রবিবার|rô-bi-bar]।",
+          "id": "In Bangladesh it's Friday and Saturday. In Kolkata it's Sunday.",
+          "literal": "bangladesh-in — Friday — and — Saturday. kolkata-in — Sunday."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[বুঝেছি|bu-jhé-chhi]। [আর|ar] [পহেলা|pô-hé-la] [বৈশাখ|boi-shakh] [কবে|kô-bé]?",
+          "id": "I see. And when is Pohela Boishakh?",
+          "literal": "have-understood. and — first — boishakh — when?"
+        },
+        {
+          "speaker": "রহিম:",
+          "text": "[চৌদ্দই|choud-dôi] [এপ্রিল|ép-ril]। [বাংলা|bang-la] [নববর্ষ|nô-bô-bôr-shô]। [সবচেয়ে|sôb-ché-yé] [বড়|bô-Ro] [উৎসব|ut-sôb]।",
+          "id": "April fourteenth. Bengali New Year. The biggest festival.",
+          "literal": "fourteenth — april. bengali — new-year. most — big — festival."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[আমি|a-mi] [তখন|tô-khôn] [থাকব|thak-bô] [তো|to]! [কী|ki] [পরতে|pôr-té] [হয়|hôy]?",
+          "id": "I'll still be here then! What should I wear?",
+          "literal": "I — then — will-stay — you-know! what — to-wear — becomes?"
+        },
+        {
+          "speaker": "রহিম:",
+          "text": "[লাল|lal] [আর|ar] [সাদা|sa-da]। [সবাই|sô-bai] [পরে|pô-ré]। [আপনাকেও|ap-na-ké-o] [নিয়ে|ni-yé] [যাব|ja-bô]।",
+          "id": "Red and white. Everyone wears them. We'll take you along too.",
+          "literal": "red — and — white. everyone — wears. you(polite)-too — taking — will-go."
+        }
+      ],
+      "notes": [
+        "**Bengali weekday names follow the same seven heavenly bodies as the European week.** Each day is named for a planet in Sanskrit: রবি (sun) → *Sunday*, সোম (moon) → *Monday*, মঙ্গল (Mars) → French *mardi*, বুধ (Mercury) → *mercredi*, বৃহস্পতি (Jupiter) → *jeudi*, শুক্র (Venus) → *vendredi*, শনি (Saturn) → *Saturday*. ⚠️ It's no coincidence but a shared ancient system; match each day to its planet and the seven names stick quickly. (Ani knows them from the Javanese–Balinese calendar, which uses the same Sanskrit names.)",
+        "**All day names end in -বার** *bar*, meaning “day”. So “what day?” is **আজ কী বার?** — literally “today what day?”. ⚠️ In fast speech people often drop -বার: শুক্র আর শনি ছুটি (Friday and Saturday are off).",
+        "⚠️ **The weekend falls on different days on each side of the border.** In **Bangladesh**, the weekly days off are **Friday and Saturday**, since Friday is the day of congregational prayer. In **West Bengal (India)**, the day off is **Sunday**. If you schedule across the border — or email a Dhaka office on a Friday — the difference is real.",
+        "⚠️ **কাল means both yesterday and tomorrow — the verb decides.** কাল এসেছি = “I came yesterday”. কাল যাব = “I'll go tomorrow”. Bengali sees both as “the day next to today” and leaves the direction to the verb form. For clarity there are **গতকাল** (yesterday) and **আগামীকাল** (tomorrow), but in everyday talk people rarely use them.",
+        "⚠️ **পরশু also points both ways:** “the day after tomorrow” and “the day before yesterday”. পরশু আসব = I'll come the day after tomorrow; পরশু এসেছিলাম = I came the day before yesterday. Again, the verb decides. English needs two long phrases; Bengali uses one word and lets grammar do the work.",
+        "**Dates use ordinal forms, and the first four are irregular.** ১ **পয়লা** *pôyla*, ২ **দোসরা** *dosra*, ৩ **তেসরা** *tésra*, ৪ **চৌঠা** *chouTha* — much like English *first, second, third*. From the 5th on, just add **-ই** to the number: পাঁচই, ছউই, সাতই, দশই, চৌদ্দই. From the 20th on, the pattern becomes **-এ**: বাইশে, পঁচিশে.",
+        "**Bengal uses two calendars at once.** The Gregorian calendar is used for official business, but the Bangla calendar — with its own twelve months: বৈশাখ, জ্যৈষ্ঠ, আষাঢ়, শ্রাবণ, ভাদ্র, আশ্বিন, কার্তিক, অগ্রহায়ণ, পৌষ, মাঘ, ফাল্গুন, চৈত্র — lives on in festivals, farming, and poetry. ⚠️ **পহেলা বৈশাখ**, the first day of Boishakh (April 14), is Bengali New Year, the biggest festival, celebrated together by Muslims and Hindus on both sides of the border."
+      ],
+      "grammars": [
+        {
+          "title": "The seven days — সাত বার",
+          "tables": [
+            {
+              "head": [
+                "বাংলা",
+                "Say it",
+                "English",
+                "Sanskrit root",
+                "Same planet in Europe"
+              ],
+              "rows": [
+                [
+                  "রবিবার",
+                  "rô-bi-bar",
+                  "Sunday",
+                  "রবি — sun",
+                  "Sun-day"
+                ],
+                [
+                  "সোমবার",
+                  "som-bar",
+                  "Monday",
+                  "সোম — moon",
+                  "Mon-day (moon)"
+                ],
+                [
+                  "মঙ্গলবার",
+                  "mông-gôl-bar",
+                  "Tuesday",
+                  "মঙ্গল — Mars",
+                  "French mardi"
+                ],
+                [
+                  "বুধবার",
+                  "budh-bar",
+                  "Wednesday",
+                  "বুধ — Mercury",
+                  "French mercredi"
+                ],
+                [
+                  "বৃহস্পতিবার",
+                  "bri-hôsh-pô-ti-bar",
+                  "Thursday",
+                  "বৃহস্পতি — Jupiter",
+                  "French jeudi"
+                ],
+                [
+                  "শুক্রবার",
+                  "shuk-rô-bar",
+                  "Friday",
+                  "শুক্র — Venus",
+                  "French vendredi"
+                ],
+                [
+                  "শনিবার",
+                  "shô-ni-bar",
+                  "Saturday",
+                  "শনি — Saturn",
+                  "Satur-day"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "**বৃহস্পতিবার is the longest word you'll meet in this unit** — six syllables. The good news: Bengalis themselves often shorten it to **বেস্পতিবার** *bèspôtibar* in casual speech."
+          ]
+        },
+        {
+          "title": "Months, dates, and units of time",
+          "table": {
+            "head": [
+              "বাংলা",
+              "Say it",
+              "Meaning",
+              "বাংলা",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "দিন",
+                "din",
+                "day",
+                "জানুয়ারি",
+                "ja-nu-a-ri",
+                "January"
+              ],
+              [
+                "সপ্তাহ",
+                "sôp-tahô",
+                "week",
+                "ফেব্রুয়ারি",
+                "phèb-ru-a-ri",
+                "February"
+              ],
+              [
+                "মাস",
+                "mash",
+                "month",
+                "মার্চ",
+                "march",
+                "March"
+              ],
+              [
+                "বছর",
+                "bô-chhôr",
+                "year",
+                "এপ্রিল",
+                "ép-ril",
+                "April"
+              ],
+              [
+                "তারিখ",
+                "ta-rikh",
+                "date",
+                "মে",
+                "mé",
+                "May"
+              ],
+              [
+                "ছুটি",
+                "chhu-Ti",
+                "holiday, day off",
+                "জুন · জুলাই",
+                "jun · ju-lai",
+                "June · July"
+              ],
+              [
+                "উৎসব",
+                "ut-sôb",
+                "festival",
+                "আগস্ট",
+                "a-gôsT",
+                "August"
+              ],
+              [
+                "কবে",
+                "kô-bé",
+                "when (which day)",
+                "ডিসেম্বর",
+                "Di-sém-bôr",
+                "December"
+              ]
+            ]
+          },
+          "after": [
+            "**সপ্তাহ comes from সপ্ত — “seven” — a cousin of Latin *septem* and English *seven*.** Once you see it, the word stops feeling foreign: it literally means “a set of seven”.",
+            "⚠️ **কবে asks which day; কখন asks what time.** আপনি কবে আসবেন? (what day are you coming?) versus আপনি কখন আসবেন? (what time are you coming?). English uses “when” for both."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Talking about days and plans",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "আজ কী বার?",
+              "aj ki bar",
+              "What day is it today?"
+            ],
+            [
+              "আজ কত তারিখ?",
+              "aj kôt ta-rikh",
+              "What's the date today?"
+            ],
+            [
+              "আজ দোসরা মার্চ।",
+              "aj dos-ra march",
+              "Today is March 2nd."
+            ],
+            [
+              "শুক্রবার আমার ছুটি।",
+              "shuk-rô-bar a-mar chhu-Ti",
+              "I'm off on Friday."
+            ],
+            [
+              "আমি এক সপ্তাহ থাকব।",
+              "a-mi èk sôp-tahô thak-bô",
+              "I'll stay for a week."
+            ],
+            [
+              "আপনি কবে আসবেন?",
+              "ap-ni kô-bé as-bèn",
+              "What day are you coming?"
+            ],
+            [
+              "পরশু দেখা হবে।",
+              "pô-rô-shu dè-kha hô-bé",
+              "See you the day after tomorrow."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three festivals you should know",
+          "items": [
+            "**পহেলা বৈশাখ** *pôhéla boishakh* — Bengali New Year, April 14. Everyone wears red and white, the streets fill with processions, and the must-have breakfast is panta bhat — rice soaked overnight. ⚠️ It's a festival of **language and culture**, not religion, celebrated together by Muslims and Hindus.",
+            "**একুশে ফেব্রুয়ারি** *ékushé phèbruari* — February 21, International Mother Language Day. People walk barefoot to the Shohid Minar monument carrying flowers, remembering the students killed in 1952. ⚠️ The day is very quiet and deeply respected; dress simply.",
+            "**দুর্গাপূজা** *durgapuja* (September–October) and **ঈদ** *id* — the two great religious festivals. A safe greeting for both: **শুভেচ্ছা** *shubhéchchha* (best wishes) or **ঈদ মোবারক**."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One expression you'll hear often that no dictionary prepares you for: **আজকাল** *ajkal* — literally “today-tomorrow”, meaning “these days”. Bengali often builds new words by joining two related or opposite words: আসা-যাওয়া (coming-going, meaning people's comings and goings), খাওয়া-দাওয়া (eating-giving, meaning a meal or feast), লেখাপড়া (writing-reading, meaning education). ⚠️ When you hear two words you know joined together, the meaning is almost always broader than the sum of the two."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "বার",
+      "baca": "bar",
+      "en": "day (in day names)"
+    },
+    {
+      "bn": "রবিবার",
+      "baca": "rô-bi-bar",
+      "en": "Sunday"
+    },
+    {
+      "bn": "সোমবার",
+      "baca": "som-bar",
+      "en": "Monday"
+    },
+    {
+      "bn": "মঙ্গলবার",
+      "baca": "mông-gôl-bar",
+      "en": "Tuesday"
+    },
+    {
+      "bn": "বুধবার",
+      "baca": "budh-bar",
+      "en": "Wednesday"
+    },
+    {
+      "bn": "বৃহস্পতিবার",
+      "baca": "bri-hôsh-pô-ti-bar",
+      "en": "Thursday"
+    },
+    {
+      "bn": "শুক্রবার",
+      "baca": "shuk-rô-bar",
+      "en": "Friday"
+    },
+    {
+      "bn": "শনিবার",
+      "baca": "shô-ni-bar",
+      "en": "Saturday"
+    },
+    {
+      "bn": "দিন",
+      "baca": "din",
+      "en": "day"
+    },
+    {
+      "bn": "সপ্তাহ",
+      "baca": "sôp-tahô",
+      "en": "week"
+    },
+    {
+      "bn": "মাস",
+      "baca": "mash",
+      "en": "month"
+    },
+    {
+      "bn": "বছর",
+      "baca": "bô-chhôr",
+      "en": "year"
+    },
+    {
+      "bn": "তারিখ",
+      "baca": "ta-rikh",
+      "en": "date"
+    },
+    {
+      "bn": "কবে",
+      "baca": "kô-bé",
+      "en": "when (which day)"
+    },
+    {
+      "bn": "পয়লা · দোসরা",
+      "baca": "pôy-la · dos-ra",
+      "en": "1st · 2nd (date)"
+    },
+    {
+      "bn": "তেসরা · চৌঠা",
+      "baca": "tés-ra · chou-Tha",
+      "en": "3rd · 4th (date)"
+    },
+    {
+      "bn": "পরশু",
+      "baca": "pô-rô-shu",
+      "en": "day after tomorrow; day before yesterday"
+    },
+    {
+      "bn": "ছুটি",
+      "baca": "chhu-Ti",
+      "en": "holiday, day off"
+    },
+    {
+      "bn": "উৎসব",
+      "baca": "ut-sôb",
+      "en": "festival"
+    },
+    {
+      "bn": "নববর্ষ",
+      "baca": "nô-bô-bôr-shô",
+      "en": "new year"
+    },
+    {
+      "bn": "পহেলা বৈশাখ",
+      "baca": "pô-hé-la boi-shakh",
+      "en": "Bengali New Year"
+    },
+    {
+      "bn": "শুভেচ্ছা",
+      "baca": "shu-bhéch-chha",
+      "en": "best wishes"
+    },
+    {
+      "bn": "গ্রহ",
+      "baca": "grô-hô",
+      "en": "planet"
+    },
+    {
+      "bn": "সত্যি",
+      "baca": "sôt-ti",
+      "en": "really, true"
+    },
+    {
+      "bn": "আশ্চর্য",
+      "baca": "ash-chôr-jô",
+      "en": "amazing, surprising"
+    },
+    {
+      "bn": "পরা",
+      "baca": "pô-ra",
+      "en": "to wear"
+    },
+    {
+      "bn": "লাল · সাদা",
+      "baca": "lal · sa-da",
+      "en": "red · white"
+    },
+    {
+      "bn": "আজকাল",
+      "baca": "aj-kal",
+      "en": "these days"
+    },
+    {
+      "bn": "সবচেয়ে",
+      "baca": "sôb-ché-yé",
+      "en": "most"
+    },
+    {
+      "bn": "একই",
+      "baca": "èk-i",
+      "en": "the same, one and the same"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the day in Bengali.",
+      "items": [
+        "Monday",
+        "Wednesday",
+        "Friday",
+        "Sunday",
+        "Thursday"
+      ]
+    },
+    {
+      "prompt": "Choose কবে or কখন.",
+      "items": [
+        "আপনি ____ আসবেন? (what time)",
+        "আপনি ____ আসবেন? (which day)",
+        "জাদুঘর ____ বন্ধ হয়? (what time)",
+        "পহেলা বৈশাখ ____ ? (what date)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "বার / কী / আজ",
+        "ছুটি / আমার / শুক্রবার",
+        "থাকব / সপ্তাহ / আমি / এক",
+        "হবে / দেখা / পরশু",
+        "তারিখ / আজ / কত"
+      ]
+    },
+    {
+      "prompt": "Translate into Bengali.",
+      "items": [
+        "What day is it today?",
+        "Tomorrow is Thursday.",
+        "I'm off on Friday.",
+        "What day are you coming?",
+        "I'll stay for one month.",
+        "Today is April 14th."
+      ]
+    }
+  ],
+  "answers": [
+    "সোমবার — বুধবার — শুক্রবার — রবিবার — বৃহস্পতিবার",
+    "কখন — কবে — কখন — কবে",
+    "আজ কী বার? — শুক্রবার আমার ছুটি। — আমি এক সপ্তাহ থাকব। — পরশু দেখা হবে। — আজ কত তারিখ?",
+    "আজ কী বার? — কাল বৃহস্পতিবার। — শুক্রবার আমার ছুটি। — আপনি কবে আসবেন? — আমি এক মাস থাকব। — আজ চৌদ্দই এপ্রিল।"
+  ]
+}

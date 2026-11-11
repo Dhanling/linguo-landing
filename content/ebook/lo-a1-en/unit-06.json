@@ -1,0 +1,595 @@
+{
+  "title": "What time is it: time and daily routines",
+  "title_target": "ຈັກໂມງແລ້ວ — Ják móong lèeo",
+  "goal": "Tell the time, divide the day into its parts, and describe your routine from getting up to going to bed — while setting up the markers for \"in progress\" and \"usually.\"",
+  "bekal": [
+    "ask and answer ຈັກໂມງ",
+    "parts of the day: ເຊົ້າ ສວາຍ ທ່ຽງ ບ່າຍ ແລງ ກາງຄືນ",
+    "sequence activities with ແລ້ວ and ຫຼັງຈາກນັ້ນ",
+    "in-progress markers: ກຳລັງ and ຢູ່",
+    "how often: ທຸກມື້ ບາງເທື່ອ ບໍ່ເຄີຍ"
+  ],
+  "dialogs": [
+    {
+      "title": "ບົດສົນທະນາ — Waiting for the meeting to start",
+      "intro": "Bounmy and Budi chat about their schedules. Notice that the time is given with the part of the day, not as a 24-hour number.",
+      "lines": [
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ດຽວນີ້|Dǐao-nîi][ຈັກ|ják][ໂມງ|móong][ແລ້ວ|lèeo]",
+          "id": "What time is it now?",
+          "literal": "now — how-many — o'clock — already?"
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ເກົ້າ|Kào][ໂມງ|móong][ເຄິ່ງ|khòeng] [ປະຊຸມ|Pa-sum][ສິບ|síp][ໂມງ|móong]",
+          "id": "Half past nine. The meeting is at ten.",
+          "literal": "nine — o'clock — half. meeting — ten — o'clock."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ຍັງ|Nyáng][ມີ|míi][ເວລາ|wée-láa] [ເຈົ້າ|Jâo][ຕື່ນ|tʉ̀ʉn][ນອນ|náwn][ຈັກ|ják][ໂມງ|móong]",
+          "id": "There's still time. What time do you get up?",
+          "literal": "still — have — time. you — wake — sleep — how-many — o'clock?"
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ຫົກ|Hók][ໂມງ|móong][ເຊົ້າ|sâo] [ແລ້ວ|Lèeo][ກໍ|kaw][ອອກ|àwk][ກຳລັງ|kam-láng][ກາຍ|kaai][ໜ້ອຍ|nàwy][ໜຶ່ງ|nʉ̀ng]",
+          "id": "Six in the morning. Then I exercise for a bit.",
+          "literal": "six — o'clock — morning. then — also — put-out — strength — little — one."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ເຈົ້າ|Jâo][ຂະຫຍັນ|kha-nyǎn][ຫຼາຍ|lǎai] [ຂ້ອຍ|Khàwy][ຕື່ນ|tʉ̀ʉn][ເຈັດ|jét][ໂມງ|móong][ເຄິ່ງ|khòeng] [ບາງ|Baang][ເທື່ອ|thʉ̀a][ແປດ|pèet][ໂມງ|móong]",
+          "id": "You're so disciplined. I get up at half past seven. Sometimes at eight.",
+          "literal": "you — diligent — much. I — wake — seven — o'clock — half. some — times — eight — o'clock."
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ເຈົ້າ|Jâo][ກິນ|kin][ເຂົ້າ|khào][ສວຍ|sǔay][ບໍ່|bàw]",
+          "id": "Do you eat breakfast?",
+          "literal": "you — eat — rice — late-morning — (question)?"
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ກິນ|Kin][ທຸກ|thuk][ມື້|mʉ̂ʉ] [ຢູ່|Yùu][ຮ້ານ|hâan][ໃກ້|kâi][ບ້ານ|bâan] [ຫຼັງ|Lǎng][ຈາກ|jàak][ນັ້ນ|nân][ຍ່າງ|nyàang][ມາ|maa][ອອບ|áwp][ຟິດ|fit]",
+          "id": "Every day, at a stall near my house. After that I walk to the office.",
+          "literal": "eat — every — day. at — stall — near — house. back — from — that — walk — come — office."
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ເລີກ|Lôek][ວຽກ|wîak][ຈັກ|ják][ໂມງ|móong]",
+          "id": "What time do you finish work?",
+          "literal": "stop — work — how-many — o'clock?"
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ຫ້າ|Hāa][ໂມງ|móong][ແລງ|léeng] [ແຕ່|Tèe][ຕອນ|tawn][ທ້າຍ|thâai][ເດືອນ|dʉan][ຊິ|si][ດົນ|dón][ກວ່າ|kwàa][ນັ້ນ|nân]",
+          "id": "Five in the afternoon. But at the end of the month it's usually later.",
+          "literal": "five — o'clock — evening. but — part — end — month — will — long — more — that."
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ຄື|Khʉʉ][ກັນ|kan] [ດຽວນີ້|Dǐao-nîi][ຫົວໜ້າ|hǔa-nâa][ກຳລັງ|kam-láng][ຖ້າ|thàa][ຢູ່|yùu] [ໄປ|Pai][ເນາະ|nāw]",
+          "id": "Same here. The boss is waiting now. Let's go.",
+          "literal": "same — together. now — head-front — (in-progress) — wait — (ongoing). go — okay?"
+        }
+      ],
+      "notes": [
+        "**ຈັກໂມງ ják móong = \"what time,\" and ໂມງ móong = \"o'clock\" for a point in time.** Compare *ຊົ່ວໂມງ sùa-móong*, which means a length of time. *ສອງໂມງ* = two o'clock; *ສອງຊົ່ວໂມງ* = two hours.",
+        "**The part of the day is REQUIRED, because Lao uses a 12-hour clock.** *ຫ້າໂມງເຊົ້າ* (five in the morning) and *ຫ້າໂມງແລງ* (five in the afternoon) differ by one word at the end. Without it, people will ask you which one.",
+        "**ເຄິ່ງ khòeng = \"half,\" and it goes AFTER the hour.** *ເກົ້າໂມງເຄິ່ງ* is literally \"nine o'clock half\" — half past nine, just as in English. ⚠️ Lao never counts toward the next hour the way German or Dutch \"half ten\" does.",
+        "**Minutes are given with ນາທີ *náa-thíi* after the hour**: *ສິບໂມງສິບຫ້ານາທີ* (ten fifteen). For \"to,\" use *ອີກ ìik*: *ອີກສິບນາທີສິບໂມງ* (ten minutes to ten, literally \"ten more minutes, ten o'clock\").",
+        "**ກຳລັງ kam-láng = \"in the middle of,\" and it goes BEFORE the verb.** It's often paired with *ຢູ່ yùu* at the end: *ກຳລັງຖ້າຢູ່* (is waiting). Either marker can be used alone, and in casual speech people more often use *ພວມ phuam*.",
+        "**ຫຼັງຈາກນັ້ນ lǎng jàak nân = \"after that,\" and ແລ້ວກໍ lèeo kaw = \"then.\"** Both link a sequence of activities. *ແລ້ວກໍ* is far more common in conversation; *ຫຼັງຈາກນັ້ນ* sounds tidier and is used when telling a longer story.",
+        "**ບາງເທື່ອ baang thʉ̀a = \"sometimes.\"** Together with *ທຸກມື້* (every day), *ເລື້ອຍໆ lʉ̂ay-lʉ̂ay* (often), and *ບໍ່ຄ່ອຍ bàw khàwy* (rarely), these four words handle all frequency needs at A1.",
+        "**ຕື່ນນອນ tʉ̀ʉn náwn = \"wake up,\" ເຂົ້ານອນ khào náwn = \"go to bed.\"** Notice that *ນອນ náwn* on its own means both \"sleep\" and \"lie down\" — context separates them.",
+        "**ເລີກວຽກ lôek wîak = \"finish work.\"** The word *ເລີກ lôek* means \"stop, break up\": *ເລີກຮຽນ* (school's out), *ເລີກແລ້ວ* (it's over)."
+      ],
+      "grammars": [
+        {
+          "title": "Telling time: six parts of the day",
+          "table": {
+            "head": [
+              "Part of the day",
+              "Say it",
+              "Approx. hours",
+              "Example"
+            ],
+            "rows": [
+              [
+                "ຕອນເຊົ້າ",
+                "*tawn sâo*",
+                "5:00 – 10:00",
+                "*ແປດໂມງເຊົ້າ* — 8 a.m."
+              ],
+              [
+                "ຕອນສວາຍ",
+                "*tawn sǔay*",
+                "10:00 – 12:00",
+                "*ສິບເອັດໂມງສວາຍ* — 11 a.m."
+              ],
+              [
+                "ຕອນທ່ຽງ",
+                "*tawn thìang*",
+                "12:00",
+                "*ທ່ຽງ* — noon"
+              ],
+              [
+                "ຕອນບ່າຍ",
+                "*tawn bàai*",
+                "13:00 – 16:00",
+                "*ບ່າຍສາມໂມງ* — 3 p.m."
+              ],
+              [
+                "ຕອນແລງ",
+                "*tawn léeng*",
+                "16:00 – 19:00",
+                "*ຫ້າໂມງແລງ* — 5 p.m."
+              ],
+              [
+                "ຕອນກາງຄືນ",
+                "*tawn kaang-khʉ́ʉn*",
+                "19:00 – 5:00",
+                "*ສາມທຸ່ມ sǎam thùm* — 9 p.m."
+              ]
+            ]
+          },
+          "after": [
+            "Notice that *ບ່າຍ* comes **before** the number (*ບ່າຍສາມໂມງ*), while the other parts of the day come **after** it (*ຫ້າໂມງແລງ*). That's the only odd placement, and it applies only to the afternoon.",
+            "For the night, Lao has its own unit: **ທຸ່ມ *thùm***, counted from 7 p.m. *ໜຶ່ງທຸ່ມ* = 7 p.m., *ສອງທຸ່ມ* = 8 p.m., *ສາມທຸ່ມ* = 9 p.m. You can also just use *ໂມງກາງຄືນ* and still be understood."
+          ]
+        },
+        {
+          "title": "Everyday verbs, in order from waking up to going to bed",
+          "table": {
+            "head": [
+              "Lao",
+              "Say it",
+              "English",
+              "Lao",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "ຕື່ນນອນ",
+                "*tʉ̀ʉn náwn*",
+                "wake up",
+                "ອາບນ້ຳ",
+                "*àap nâm*",
+                "take a shower"
+              ],
+              [
+                "ຖູແຂ້ວ",
+                "*thǔu khêeo*",
+                "brush your teeth",
+                "ແຕ່ງຕົວ",
+                "*tèng tǒa*",
+                "get dressed"
+              ],
+              [
+                "ກິນເຂົ້າສວຍ",
+                "*kin khào sǔay*",
+                "have breakfast",
+                "ໄປເຮັດວຽກ",
+                "*pai hét wîak*",
+                "go to work"
+              ],
+              [
+                "ກິນເຂົ້າທ່ຽງ",
+                "*kin khào thìang*",
+                "have lunch",
+                "ພັກ",
+                "*phak*",
+                "rest"
+              ],
+              [
+                "ເລີກວຽກ",
+                "*lôek wîak*",
+                "finish work",
+                "ກັບບ້ານ",
+                "*kap bâan*",
+                "go home"
+              ],
+              [
+                "ກິນເຂົ້າແລງ",
+                "*kin khào léeng*",
+                "have dinner",
+                "ເບິ່ງໂທລະພາບ",
+                "*bòeng thóo-la-phâap*",
+                "watch TV"
+              ],
+              [
+                "ອ່ານປຶ້ມ",
+                "*àan pʉ̂m*",
+                "read a book",
+                "ເຂົ້ານອນ",
+                "*khào náwn*",
+                "go to bed"
+              ]
+            ]
+          },
+          "after": [
+            "With this table you can already describe a whole day. Try it now: string five activities together in order, link them with *ແລ້ວກໍ*, and read them aloud."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "How often: four words that cover everything",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Lao",
+            "Say it",
+            "English",
+            "Position",
+            "Example"
+          ],
+          "rows": [
+            [
+              "ທຸກມື້",
+              "*thuk mʉ̂ʉ*",
+              "every day",
+              "start / end",
+              "*ຂ້ອຍກິນທຸກມື້*"
+            ],
+            [
+              "ເລື້ອຍໆ",
+              "*lʉ̂ay-lʉ̂ay*",
+              "often",
+              "end",
+              "*ໄປເລື້ອຍໆ*"
+            ],
+            [
+              "ບາງເທື່ອ",
+              "*baang thʉ̀a*",
+              "sometimes",
+              "start",
+              "*ບາງເທື່ອຂ້ອຍໄປ*"
+            ],
+            [
+              "ບໍ່ຄ່ອຍ",
+              "*bàw khàwy*",
+              "rarely, not very",
+              "before the verb",
+              "*ຂ້ອຍບໍ່ຄ່ອຍໄປ*"
+            ],
+            [
+              "ບໍ່ເຄີຍ",
+              "*bàw khóei*",
+              "never (yet)",
+              "before the verb",
+              "*ຂ້ອຍບໍ່ເຄີຍໄປ*"
+            ],
+            [
+              "ເລື້ອຍ",
+              "*lʉ̂ay*",
+              "all the time",
+              "end",
+              "*ເວົ້າເລື້ອຍ*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**ບໍ່ຄ່ອຍ *bàw khàwy*** is the most useful word here and the one most often misused. It isn't \"not\" but \"not very,\" and Lao people use it to say no gently. *ບໍ່ຄ່ອຍແຊບ* (not very tasty) is far more polite than *ບໍ່ແຊບ* (not tasty), and it's often what they really mean."
+        }
+      ]
+    },
+    {
+      "title": "Time words that attach to every sentence",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Lao",
+            "Say it",
+            "English",
+            "Lao",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "ດຽວນີ້",
+              "*dǐao-nîi*",
+              "now",
+              "ຕໍ່ໄປ",
+              "*taw pai*",
+              "next"
+            ],
+            [
+              "ມື້ນີ້",
+              "*mʉ̂ʉ-nîi*",
+              "today",
+              "ດຽວ",
+              "*dǐao*",
+              "soon"
+            ],
+            [
+              "ມື້ອື່ນ",
+              "*mʉ̂ʉ-ʉ̀ʉn*",
+              "tomorrow",
+              "ກ່ອນ",
+              "*kàwn*",
+              "before, first"
+            ],
+            [
+              "ມື້ວານນີ້",
+              "*mʉ̂ʉ-waan-nîi*",
+              "yesterday",
+              "ຫຼັງ",
+              "*lǎng*",
+              "after"
+            ],
+            [
+              "ຕອນເຊົ້ານີ້",
+              "*tawn sâo-nîi*",
+              "this morning",
+              "ຍັງ",
+              "*nyáng*",
+              "still"
+            ],
+            [
+              "ຄືນນີ້",
+              "*khʉ́ʉn-nîi*",
+              "tonight",
+              "ແລ້ວ",
+              "*lèeo*",
+              "already"
+            ],
+            [
+              "ເວລາ",
+              "*wée-láa*",
+              "time",
+              "ບໍ່ທັນ",
+              "*bàw than*",
+              "not yet"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Lao time words can stand at the **start** or the **end** of a sentence, and they change nothing about the verb: *ມື້ອື່ນຂ້ອຍໄປ* and *ຂ້ອຍໄປມື້ອື່ນ* are both correct and both mean \"I'm going tomorrow.\" Putting it first stresses the time a little more."
+        },
+        {
+          "type": "p",
+          "text": "For \"not yet,\" Lao uses **ຍັງບໍ່ທັນ *nyáng bàw than*** — literally \"still not in time.\" *ຂ້ອຍຍັງບໍ່ທັນກິນ* = \"I haven't eaten yet.\" In fast speech it's often shortened to just *ຍັງ*, and that's a complete answer."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "lo": "ໂມງ",
+      "baca": "móong",
+      "en": "o'clock (point in time)"
+    },
+    {
+      "lo": "ຈັກໂມງ",
+      "baca": "ják móong",
+      "en": "what time"
+    },
+    {
+      "lo": "ເຄິ່ງ",
+      "baca": "khòeng",
+      "en": "half"
+    },
+    {
+      "lo": "ເວລາ",
+      "baca": "wée-láa",
+      "en": "time"
+    },
+    {
+      "lo": "ດຽວນີ້",
+      "baca": "dǐao-nîi",
+      "en": "now"
+    },
+    {
+      "lo": "ຕອນ",
+      "baca": "tawn",
+      "en": "time, part (of the day)"
+    },
+    {
+      "lo": "ສວາຍ",
+      "baca": "sǔay",
+      "en": "late morning"
+    },
+    {
+      "lo": "ທ່ຽງ",
+      "baca": "thìang",
+      "en": "noon"
+    },
+    {
+      "lo": "ບ່າຍ",
+      "baca": "bàai",
+      "en": "afternoon"
+    },
+    {
+      "lo": "ແລງ",
+      "baca": "léeng",
+      "en": "late afternoon, evening"
+    },
+    {
+      "lo": "ກາງຄືນ",
+      "baca": "kaang-khʉ́ʉn",
+      "en": "night"
+    },
+    {
+      "lo": "ທຸ່ມ",
+      "baca": "thùm",
+      "en": "night hour (from 7 p.m.)"
+    },
+    {
+      "lo": "ຕື່ນນອນ",
+      "baca": "tʉ̀ʉn náwn",
+      "en": "to wake up"
+    },
+    {
+      "lo": "ເຂົ້ານອນ",
+      "baca": "khào náwn",
+      "en": "to go to bed"
+    },
+    {
+      "lo": "ນອນ",
+      "baca": "náwn",
+      "en": "to sleep, to lie down"
+    },
+    {
+      "lo": "ອາບນ້ຳ",
+      "baca": "àap nâm",
+      "en": "to take a shower"
+    },
+    {
+      "lo": "ແຕ່ງຕົວ",
+      "baca": "tèng tǒa",
+      "en": "to get dressed"
+    },
+    {
+      "lo": "ກັບບ້ານ",
+      "baca": "kap bâan",
+      "en": "to go home"
+    },
+    {
+      "lo": "ເລີກ",
+      "baca": "lôek",
+      "en": "to stop, to finish"
+    },
+    {
+      "lo": "ກຳລັງ",
+      "baca": "kam-láng",
+      "en": "(in progress)"
+    },
+    {
+      "lo": "ພວມ",
+      "baca": "phuam",
+      "en": "(in progress, casual)"
+    },
+    {
+      "lo": "ຫຼັງຈາກນັ້ນ",
+      "baca": "lǎng jàak nân",
+      "en": "after that"
+    },
+    {
+      "lo": "ບາງເທື່ອ",
+      "baca": "baang thʉ̀a",
+      "en": "sometimes"
+    },
+    {
+      "lo": "ເລື້ອຍໆ",
+      "baca": "lʉ̂ay-lʉ̂ay",
+      "en": "often"
+    },
+    {
+      "lo": "ບໍ່ຄ່ອຍ",
+      "baca": "bàw khàwy",
+      "en": "rarely, not very"
+    },
+    {
+      "lo": "ຍັງບໍ່ທັນ",
+      "baca": "nyáng bàw than",
+      "en": "not yet"
+    },
+    {
+      "lo": "ຂະຫຍັນ",
+      "baca": "kha-nyǎn",
+      "en": "diligent, hardworking"
+    },
+    {
+      "lo": "ຫົວໜ້າ",
+      "baca": "hǔa-nâa",
+      "en": "boss, head"
+    },
+    {
+      "lo": "ອອບຟິດ",
+      "baca": "áwp-fit",
+      "en": "office"
+    },
+    {
+      "lo": "ໂທລະພາບ",
+      "baca": "thóo-la-phâap",
+      "en": "television"
+    },
+    {
+      "lo": "ອ່ານ",
+      "baca": "àan",
+      "en": "to read"
+    },
+    {
+      "lo": "ກວ່າ",
+      "baca": "kwàa",
+      "en": "more (comparison)"
+    },
+    {
+      "lo": "ມື້ນີ້",
+      "baca": "mʉ̂ʉ-nîi",
+      "en": "today"
+    },
+    {
+      "lo": "ມື້ອື່ນ",
+      "baca": "mʉ̂ʉ-ʉ̀ʉn",
+      "en": "tomorrow"
+    },
+    {
+      "lo": "ມື້ວານນີ້",
+      "baca": "mʉ̂ʉ-waan-nîi",
+      "en": "yesterday"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these times in Lao, including the part of the day.",
+      "items": [
+        "7:00",
+        "9:30",
+        "12:00",
+        "15:00",
+        "17:30",
+        "21:00"
+      ]
+    },
+    {
+      "prompt": "Fill in with ທຸກມື້, ບາງເທື່ອ, ບໍ່ຄ່ອຍ, or ຍັງບໍ່ທັນ.",
+      "items": [
+        "ຂ້ອຍກິນເຂົ້າສວຍ____ (I have breakfast every day)",
+        "____ຂ້ອຍໄປຕະຫຼາດ (sometimes I go to the market)",
+        "ຂ້ອຍ____ເບິ່ງໂທລະພາບ (I rarely watch TV)",
+        "ຂ້ອຍ____ກິນ (I haven't eaten yet)",
+        "ລາວ____ໄປອອບຟິດ (he rarely goes to the office)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ແລ້ວ / ຈັກໂມງ / ດຽວນີ້",
+        "ໂມງ / ຕື່ນນອນ / ຫົກ / ຂ້ອຍ / ເຊົ້າ",
+        "ຢູ່ / ຖ້າ / ກຳລັງ / ຫົວໜ້າ",
+        "ແລງ / ເລີກວຽກ / ຫ້າໂມງ",
+        "ກໍ / ແລ້ວ / ອາບນ້ຳ / ຕື່ນນອນ"
+      ]
+    },
+    {
+      "prompt": "Translate into Lao.",
+      "items": [
+        "What time is it now?",
+        "Half past nine. The meeting is at ten.",
+        "What time do you get up?",
+        "Six in the morning, then I exercise for a bit.",
+        "I have breakfast every day at a stall near my house.",
+        "The boss is waiting."
+      ]
+    }
+  ],
+  "answers": [
+    "ເຈັດໂມງເຊົ້າ — ເກົ້າໂມງເຄິ່ງ — ທ່ຽງ — ບ່າຍສາມໂມງ — ຫ້າໂມງເຄິ່ງແລງ — ສາມທຸ່ມ",
+    "ທຸກມື້ — ບາງເທື່ອ — ບໍ່ຄ່ອຍ — ຍັງບໍ່ທັນ — ບໍ່ຄ່ອຍ",
+    "ດຽວນີ້ຈັກໂມງແລ້ວ — ຂ້ອຍຕື່ນນອນຫົກໂມງເຊົ້າ — ຫົວໜ້າກຳລັງຖ້າຢູ່ — ເລີກວຽກຫ້າໂມງແລງ — ຕື່ນນອນແລ້ວກໍອາບນ້ຳ",
+    "ດຽວນີ້ຈັກໂມງແລ້ວ — ເກົ້າໂມງເຄິ່ງ ປະຊຸມສິບໂມງ — ເຈົ້າຕື່ນນອນຈັກໂມງ — ຫົກໂມງເຊົ້າ ແລ້ວກໍອອກກຳລັງກາຍໜ້ອຍໜຶ່ງ — ຂ້ອຍກິນເຂົ້າສວຍທຸກມື້ຢູ່ຮ້ານໃກ້ບ້ານ — ຫົວໜ້າກຳລັງຖ້າຢູ່"
+  ],
+  "wave": "Review Unit 4: cover the Lao, then buy five things with the right numbers and classifiers — from memory, without looking at the table."
+}

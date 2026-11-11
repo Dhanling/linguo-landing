@@ -1,0 +1,577 @@
+{
+  "title": "What day is it today?",
+  "title_target": "今天星期幾？",
+  "goal": "Say days, dates, and years — and use the one pattern that runs through all of Mandarin: from big to small.",
+  "bekal": [
+    "give days and dates in the correct Mandarin order",
+    "wish someone a happy birthday and handle invitations",
+    "tell 號 from 日, and read years digit by digit"
+  ],
+  "dialogs": [
+    {
+      "title": "對話 — 生日快樂",
+      "intro": "In the cafeteria, A-Ming asks Budi about a birthday, because they want to celebrate.",
+      "lines": [
+        {
+          "speaker": "阿明:",
+          "text": "[布迪|Bùdí]，[今天|jīntiān][星期幾|xīngqí jǐ]？",
+          "id": "Budi, what day is it today?",
+          "literal": "Budi, today — week — how-many?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[今天|Jīntiān][星期四|xīngqísì]。[怎麼了|Zěnme le]？",
+          "id": "It's Thursday. Why?",
+          "literal": "today — week-four. how — (now)?"
+        },
+        {
+          "speaker": "阿明:",
+          "text": "[下星期|Xià xīngqí][是|shì][小美|Xiǎoměi][的|de][生日|shēngrì]。",
+          "id": "Next week is Xiaomei's birthday.",
+          "literal": "below — week — is — Xiaomei — 's — birth-day."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[真的|Zhēn de][嗎|ma]？[幾月|Jǐ yuè][幾號|jǐ hào]？",
+          "id": "Really? What date?",
+          "literal": "true — (one) — (question)? how-many — month — how-many — number?"
+        },
+        {
+          "speaker": "阿明:",
+          "text": "[五月|Wǔ yuè][十二號|shí'èr hào]，[星期三|xīngqísān]。",
+          "id": "May 12th, a Wednesday.",
+          "literal": "five — month — twelve — number, week-three."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[那|Nà][我們|wǒmen][要|yào][做|zuò][什麼|shénme]？",
+          "id": "So what are we going to do?",
+          "literal": "then — we — want — do — what?"
+        },
+        {
+          "speaker": "阿明:",
+          "text": "[晚上|Wǎnshang][吃飯|chīfàn]，[然後|ránhòu][唱歌|chànggē]。[你|Nǐ][有空|yǒukòng][嗎|ma]？",
+          "id": "Dinner, then karaoke. Are you free?",
+          "literal": "evening — eat-rice, then — sing-song. you — have — time — (question)?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[有|Yǒu]！[我|Wǒ][要|yào][送|sòng][她|tā][一個|yí ge][禮物|lǐwù]。",
+          "id": "Yes! I want to give her a present.",
+          "literal": "have! I — want — give — her — one — (measure word) — gift."
+        },
+        {
+          "speaker": "阿明:",
+          "text": "[好主意|Hǎo zhǔyì]！[她|Tā][很|hěn][喜歡|xǐhuān][看書|kànshū]。",
+          "id": "Good idea! She loves reading.",
+          "literal": "good — main-idea! she — very — like — look-book."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[那|Nà][我|wǒ][送|sòng][她|tā][一本|yì běn][書|shū][好了|hǎo le]。",
+          "id": "Then I'll just give her a book.",
+          "literal": "then — I — give — her — one — (measure word) — book — good — (now)."
+        },
+        {
+          "speaker": "阿明:",
+          "text": "⚠️[不要|Bú yào][送|sòng][鐘|zhōng][喔|o]！[那|Nà][不吉利|bù jílì]。",
+          "id": "Just don't give her a clock! That's bad luck.",
+          "literal": "not — want — give — clock — (you know)! that — not — lucky."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[為什麼|Wèishénme]？",
+          "id": "Why?",
+          "literal": "for — what?"
+        },
+        {
+          "speaker": "阿明:",
+          "text": "[送鐘|Sòng zhōng][聽起來|tīngqǐlái][像|xiàng][送終|sòngzhōng]，[很|hěn][不好|bù hǎo]。",
+          "id": "\"Giving a clock\" sounds like \"seeing someone off to their death\" — really bad.",
+          "literal": "give — clock — hear-up — like — see-off — end, very — not — good."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[哇|Wā]，[還好|háihǎo][你|nǐ][說|shuō]！[我|Wǒ][差點|chàdiǎn][闖禍|chuǎnghuò]。",
+          "id": "Wow, good thing you told me! I nearly put my foot in it.",
+          "literal": "wow, still — good — you — say! I — short-a-little — hit-disaster."
+        }
+      ],
+      "notes": [
+        "⚠️ **Never give a clock as a present to a Chinese speaker.** 送鐘 (*sòng zhōng*, give a clock) sounds exactly like 送終 (*sòngzhōng*, attend someone on their deathbed). This taboo is serious and holds across the whole Chinese-speaking world.",
+        "**Other gifts to avoid:** umbrellas (傘 *sǎn* sounds like 散 *sàn*, to split up), shoes (鞋 *xié* sounds like 邪 *xié*, evil), and knives or scissors (cutting ties). Safe gifts: food, fruit, tea, books, cosmetics.",
+        "**怎麼了？ means \"what's wrong?\", \"what's up?\"** — used when you notice something unusual. Don't confuse it with 為什麼 (\"why\", looking for a reason) and 怎麼樣 (\"how is it\").",
+        "**好了 at the end of a sentence means \"…I'll just do that, then\"** — a relaxed decision. *我送她一本書好了。* It's very common and makes you sound natural.",
+        "⚠️ **還好 has two meanings:** \"luckily\" (*還好你說*) and \"OK, so-so\" (the answer to 你好嗎?). Context separates them, and the second is the most honest and most common reply in Taiwan."
+      ],
+      "grammars": [
+        {
+          "title": "Days of the week: just count",
+          "body": [
+            "Mandarin numbers its weekdays instead of naming them. **星期 (\"week\") + number** — and the count starts on Monday, not Sunday."
+          ],
+          "table": {
+            "head": [
+              "Day",
+              "中文",
+              "Pīnyīn",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "Monday",
+                "星期一",
+                "xīngqíyī",
+                "week-one"
+              ],
+              [
+                "Tuesday",
+                "星期二",
+                "xīngqí'èr",
+                "week-two"
+              ],
+              [
+                "Wednesday",
+                "星期三",
+                "xīngqísān",
+                "week-three"
+              ],
+              [
+                "Thursday",
+                "星期四",
+                "xīngqísì",
+                "week-four"
+              ],
+              [
+                "Friday",
+                "星期五",
+                "xīngqíwǔ",
+                "week-five"
+              ],
+              [
+                "Saturday",
+                "星期六",
+                "xīngqíliù",
+                "week-six"
+              ],
+              [
+                "Sunday",
+                "星期日 / 星期天",
+                "xīngqírì / xīngqítiān",
+                "⚠️ week-sun"
+              ],
+              [
+                "what day?",
+                "星期幾？",
+                "xīngqí jǐ?",
+                "week-how-many?"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Sunday is not 星期七.** That form doesn't exist. Use 星期日 (a bit formal, on calendars) or 星期天 (everyday).",
+            "⚠️ **期 in 星期 is read *qí* in Taiwan**, not *qī* as on the mainland. This tone difference is one of the most frequent markers of Taiwanese pronunciation, because the word is used every day.",
+            "**週 (*zhōu*) is a shorter, slightly formal form**: 週一, 週二, 週末 (weekend). You'll see it on timetables and notice boards."
+          ]
+        },
+        {
+          "title": "Dates: month first, and always big to small",
+          "body": [
+            "Mandarin gives dates in the order **year → month → date → weekday** — the reverse of English, which puts the weekday first and the year last (\"Wednesday, May 12, 2026\")."
+          ],
+          "table": {
+            "head": [
+              "Part",
+              "Pattern",
+              "Example",
+              "Pīnyīn"
+            ],
+            "rows": [
+              [
+                "Month",
+                "number + 月",
+                "五月",
+                "wǔ yuè (Mei)"
+              ],
+              [
+                "Date (spoken)",
+                "number + 號",
+                "十二號",
+                "shí'èr hào"
+              ],
+              [
+                "Date (written)",
+                "number + 日",
+                "十二日",
+                "shí'èr rì"
+              ],
+              [
+                "Year",
+                "digit by digit + 年",
+                "二〇二六年",
+                "èr líng èr liù nián"
+              ],
+              [
+                "Full date",
+                "year → month → date → weekday",
+                "二〇二六年五月十二號星期三",
+                "—"
+              ],
+              [
+                "Asking",
+                "幾月幾號？",
+                "今天幾月幾號？",
+                "Jǐ yuè jǐ hào?"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Years are read digit by digit, not as a number.** 2026 is *èr líng èr liù*, not *liǎngqiān líng èrshíliù*. This mistake is heard at once.",
+            "⚠️ **號 is for speaking, 日 for writing.** Calendars and formal letters use 日; everyday conversation always uses 號.",
+            "**Month names are just numbers**: 一月 January, 二月 February, through 十二月 December. No special names at all — a small gift that saves you twelve words.",
+            "⚠️ In Taiwan, official documents sometimes use **民國 (*Mínguó*)**, the Republic era: 2026 is 民國115年. The formula: Western year minus 1911. You'll see it on ID cards, train tickets, and official receipts."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Time words that come in sets",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Last",
+            "This",
+            "Next",
+            "Unit"
+          ],
+          "rows": [
+            [
+              "昨天 zuótiān",
+              "今天 jīntiān",
+              "明天 míngtiān",
+              "day"
+            ],
+            [
+              "上星期 shàng xīngqí",
+              "這星期 zhè xīngqí",
+              "下星期 xià xīngqí",
+              "week"
+            ],
+            [
+              "上個月 shàng ge yuè",
+              "這個月 zhè ge yuè",
+              "下個月 xià ge yuè",
+              "month"
+            ],
+            [
+              "去年 qùnián",
+              "今年 jīnnián",
+              "明年 míngnián",
+              "year"
+            ],
+            [
+              "前天 qiántiān",
+              "—",
+              "後天 hòutiān",
+              "two days"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Notice that the pattern is **not uniform**: days use 昨/今/明, weeks and months use 上/這/下, and years use 去/今/明. The three sets must be learned separately, and mixing them (*上天* for yesterday) is a common mistake. **月 always needs 個** in between: 上**個**月, not 上月."
+        }
+      ]
+    },
+    {
+      "title": "Birthdays and good wishes",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "English"
+          ],
+          "rows": [
+            [
+              "**你的生日是幾月幾號？**",
+              "nǐ de shēngrì shì jǐ yuè jǐ hào?",
+              "When is your birthday?"
+            ],
+            [
+              "**生日快樂！**",
+              "shēngrì kuàilè!",
+              "Happy birthday!"
+            ],
+            [
+              "**新年快樂！**",
+              "xīnnián kuàilè!",
+              "Happy New Year!"
+            ],
+            [
+              "**恭喜！**",
+              "gōngxǐ!",
+              "Congratulations!"
+            ],
+            [
+              "**恭喜發財！**",
+              "gōngxǐ fācái!",
+              "Wishing you prosperity! (Lunar New Year)"
+            ],
+            [
+              "**祝你…**",
+              "zhù nǐ…",
+              "I wish you…"
+            ],
+            [
+              "**送你一個禮物**",
+              "sòng nǐ yí ge lǐwù",
+              "A present for you"
+            ],
+            [
+              "**謝謝你的禮物**",
+              "xièxie nǐ de lǐwù",
+              "Thanks for the present"
+            ],
+            [
+              "**我請你**",
+              "wǒ qǐng nǐ",
+              "It's my treat"
+            ],
+            [
+              "**乾杯！**",
+              "gānbēi!",
+              "Cheers! (literally: dry glass)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "The song you'll hear",
+          "items": [
+            "\"Happy Birthday\" is sung in Taiwan with Mandarin lyrics: **祝你生日快樂** (*Zhù nǐ shēngrì kuàilè*), repeated four times to exactly the same tune as the English version.",
+            "**Birthday cake** is 蛋糕 (*dàngāo*), and blowing out the candles is 吹蠟燭 (*chuī làzhú*).",
+            "⚠️ **Traditional birthdays follow the lunar calendar (農曆)**, so older Taiwanese often have two different birthday dates each year. Young people generally use the Western date.",
+            "**壽星** (*shòuxīng*, \"star of long life\") is what you call the person whose birthday it is. *今天你是壽星！*"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Lucky and unlucky numbers",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Numbers in Taiwan aren't just numbers — their sound decides whether they're loved or avoided. This is no minor superstition: apartment prices, license plates, and hospital room numbers are genuinely affected."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Number",
+            "Sound",
+            "Sounds like",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**8** 八",
+              "bā",
+              "發 *fā* (get rich)",
+              "⭐ the favorite"
+            ],
+            [
+              "**6** 六",
+              "liù",
+              "流 *liú* (flow smoothly)",
+              "⭐ liked"
+            ],
+            [
+              "**9** 九",
+              "jiǔ",
+              "久 *jiǔ* (long-lasting)",
+              "⭐ liked, for love"
+            ],
+            [
+              "**4** 四",
+              "sì",
+              "死 *sǐ* (death)",
+              "⚠️ strongly avoided"
+            ],
+            [
+              "**14** 十四",
+              "shísì",
+              "實死 (certain death)",
+              "⚠️ avoided most of all"
+            ],
+            [
+              "**2** 二",
+              "èr",
+              "—",
+              "neutral; 兩兩 = in pairs, good"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Many buildings in Taiwan have no 4th floor**, jumping from 3 to 5 — just as Western buildings skip floor 13. Hospitals almost never have a room numbered 4. If you give a gift made up of several items, avoid four; **give two, six, or eight**."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "星期",
+      "baca": "xīngqí",
+      "en": "week (⚠️ Taiwan: qí)"
+    },
+    {
+      "zh": "今天",
+      "baca": "jīntiān",
+      "en": "today"
+    },
+    {
+      "zh": "月",
+      "baca": "yuè",
+      "en": "month"
+    },
+    {
+      "zh": "號",
+      "baca": "hào",
+      "en": "date (spoken)"
+    },
+    {
+      "zh": "日",
+      "baca": "rì",
+      "en": "day; date (written)"
+    },
+    {
+      "zh": "年",
+      "baca": "nián",
+      "en": "year"
+    },
+    {
+      "zh": "今年",
+      "baca": "jīnnián",
+      "en": "this year"
+    },
+    {
+      "zh": "生日",
+      "baca": "shēngrì",
+      "en": "birthday"
+    },
+    {
+      "zh": "快樂",
+      "baca": "kuàilè",
+      "en": "happy"
+    },
+    {
+      "zh": "禮物",
+      "baca": "lǐwù",
+      "en": "gift, present"
+    },
+    {
+      "zh": "送",
+      "baca": "sòng",
+      "en": "to give (as a gift); to see off"
+    },
+    {
+      "zh": "喜歡",
+      "baca": "xǐhuān",
+      "en": "to like"
+    },
+    {
+      "zh": "然後",
+      "baca": "ránhòu",
+      "en": "then, after that"
+    },
+    {
+      "zh": "唱歌",
+      "baca": "chànggē",
+      "en": "to sing"
+    },
+    {
+      "zh": "為什麼",
+      "baca": "wèishénme",
+      "en": "why"
+    },
+    {
+      "zh": "怎麼了",
+      "baca": "zěnme le",
+      "en": "what's wrong?"
+    },
+    {
+      "zh": "還好",
+      "baca": "háihǎo",
+      "en": "luckily; OK, so-so"
+    },
+    {
+      "zh": "週末",
+      "baca": "zhōumò",
+      "en": "weekend"
+    },
+    {
+      "zh": "恭喜",
+      "baca": "gōngxǐ",
+      "en": "congratulations!"
+    },
+    {
+      "zh": "主意",
+      "baca": "zhǔyì",
+      "en": "idea"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mandarin.",
+      "items": [
+        "What day is it today?",
+        "Today is Wednesday.",
+        "When is your birthday?",
+        "May 12th.",
+        "Happy birthday!",
+        "I'm not free next week."
+      ]
+    },
+    {
+      "prompt": "Write in Chinese characters.",
+      "items": [
+        "Monday",
+        "Sunday",
+        "March 3rd",
+        "The year 2026",
+        "Next month",
+        "Last year"
+      ]
+    },
+    {
+      "prompt": "Correct the sentences — each has the wrong order or the wrong word.",
+      "items": [
+        "今天星期七。",
+        "我的生日是十二號五月。",
+        "今天是二〇二六年，讀作兩千零二十六年。",
+        "上天我去了夜市。",
+        "下月我去台南。"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "星期幾 / 今天",
+        "生日 / 幾月 / 你的 / 是 / 幾號",
+        "快樂 / 生日",
+        "禮物 / 送 / 一個 / 我 / 她",
+        "有空 / 我 / 下星期 / 沒"
+      ]
+    }
+  ],
+  "answers": [
+    "今天星期幾？ — 今天星期三。 — 你的生日是幾月幾號？ — 五月十二號。 — 生日快樂！ — 下星期我沒有空。",
+    "星期一 — 星期日 — 三月三號 — 二〇二六年 — 下個月 — 去年",
+    "今天星期日。 — 我的生日是五月十二號。 — 二〇二六年讀作「èr líng èr liù」。 — 昨天我去了夜市。 — 下個月我去台南。",
+    "今天星期幾？ — 你的生日是幾月幾號？ — 生日快樂。 — 我送她一個禮物。 — 我下星期沒有空。"
+  ]
+}

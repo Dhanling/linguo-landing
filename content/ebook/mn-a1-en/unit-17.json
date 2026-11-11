@@ -1,0 +1,641 @@
+{
+  "title": "My head hurts",
+  "title_target": "Би өвдөж байна",
+  "goal": "Describing pain, going to the doctor and buying medicine — while mastering the *-аа / -ээ* suffix, which means \"one's own\".",
+  "bekal": [
+    "name body parts and say which part hurts",
+    "use the reflexive suffix *-аа / -ээ / -оо / -өө* correctly",
+    "describe symptoms to a doctor and understand instructions for taking medicine"
+  ],
+  "dialogs": [
+    {
+      "title": "Яриа — Эмнэлэгт",
+      "intro": "Budi has caught a cold after three days of wild weather swings. Sarnai takes him to the campus clinic.",
+      "lines": [
+        {
+          "speaker": "Эмч:",
+          "text": "[Сайн|Sain] [байна|BAI-n] [уу|uu]. [Хаана|KHAA-na] [тань|tan'] [өвдөж|öv-DÖJ] [байна|BAI-n] [вэ|veh]?",
+          "id": "Good afternoon. Where does it hurt?",
+          "literal": "well is Q. where your hurt-ing is Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Толгой|TOL-goi] [маань|MAAN'] [өвдөж|öv-DÖJ] [байна|BAI-n]. [Хоолой|KHŌ-loi] [ч|ch] [бас|bas].",
+          "id": "My head hurts. My throat too.",
+          "literal": "head my hurt-ing is. throat also too."
+        },
+        {
+          "speaker": "Эмч:",
+          "text": "[Хэдэн|KHEH-den] [өдөр|Ö-dör] [болж|bolj] [байна|BAI-n] [вэ|veh]?",
+          "id": "For how many days?",
+          "literal": "how-many day become-ing is Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Гурав|GU-rav] [хоног|kho-NOG] [болж|bolj] [байна|BAI-n]. [Шөнө|SHÖ-nö] [сайн|sain] [унтаж|UN-taj] [чадахгүй|CHA-dakh-güi] [байна|BAI-n].",
+          "id": "Three days now. I can't sleep properly at night.",
+          "literal": "three day become-ing is. night well sleep-ing able-not is."
+        },
+        {
+          "speaker": "Эмч:",
+          "text": "[Халуурч|kha-LUURCH] [байна|BAI-n] [уу|uu]? [Ханиаж|KHA-niaj] [байна|BAI-n] [уу|uu]?",
+          "id": "Fever? Cough?",
+          "literal": "fever-ing is Q? cough-ing is Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Бага|BA-ga] [зэрэг|DZEH-reg] [халуурч|kha-LUURCH] [байна|BAI-n]. [Ханиад|KHA-niad] [хүрсэн|KHÜR-sen] [байх|baikh].",
+          "id": "A slight fever. I think I've caught the flu.",
+          "literal": "little degree fever-ing is. flu reached probably."
+        },
+        {
+          "speaker": "Эмч:",
+          "text": "[Амаа|A-maa] [ангайгаарай|an-GAI-gaa-rai]. [За|Dza], [хоолой|KHŌ-loi] [тань|tan'] [улайсан|u-LAI-san] [байна|BAI-n].",
+          "id": "Open your mouth. OK, your throat is red.",
+          "literal": "mouth-own-object open-please. OK, throat your red-become is."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Хүнд|Khünd] [юу|yuu]?",
+          "id": "Is it serious?",
+          "literal": "serious Q?"
+        },
+        {
+          "speaker": "Эмч:",
+          "text": "[Хүнд|Khünd] [биш|bish]. [Энгийн|EN-giin] [ханиад|KHA-niad]. [Гурав|GU-rav], [дөрвөн|DÖR-vön] [хоногт|kho-NOGT] [эдгэрнэ|ED-ger-neh].",
+          "id": "Not serious. An ordinary flu. You'll be better in three or four days.",
+          "literal": "serious not. ordinary flu. three, four day-in heal."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Эм|Em] [уух|UUKH] [хэрэгтэй|KHEH-reg-tei] [юу|yuu]?",
+          "id": "Do I need to take medicine?",
+          "literal": "medicine drink need Q?"
+        },
+        {
+          "speaker": "Эмч:",
+          "text": "[Тийм|Tiim]. [Энэ|EH-neh] [эмийг|EH-miig] [өдөрт|Ö-dört] [гурван|GUR-van] [удаа|u-DAA], [хоолны|KHŌL-nii] [дараа|da-RAA] [уугаарай|UU-gaa-rai].",
+          "id": "Yes. Take this medicine three times a day, after meals.",
+          "literal": "yes. this medicine-object day-in three time, food's after drink-please."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Ойлголоо|OIL-go-lō]. [Өөр|Öör] [юу|yuu] [хийх|KHIIKH] [ёстой|YOS-toi] [вэ|veh]?",
+          "id": "I see. What else should I do?",
+          "literal": "understood. other what do must Q?"
+        },
+        {
+          "speaker": "Эмч:",
+          "text": "[Халуун|Kha-LUUN] [шингэн|SHIN-gen] [их|ikh] [уугаарай|UU-gaa-rai]. [Гэртээ|GER-tē] [амраарай|am-RAA-rai], [гадаа|ga-DAA] [битгий|BIT-gii] [удаан|u-DAAN] [яв|yav].",
+          "id": "Drink plenty of warm fluids. Rest at home, and don't stay out for long.",
+          "literal": "hot liquid much drink-please. home-at-own rest-please, outside don't long go."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Их|Ikh] [баярлалаа|ba-yar-la-LAA], [эмч|emch] [ээ|ē].",
+          "id": "Thank you very much, Doctor.",
+          "literal": "big thanks, doctor O."
+        },
+        {
+          "speaker": "Эмч:",
+          "text": "[Зүгээр|DZÜ-gēr]. [Хэрэв|KHEH-rev] [гурав|GU-rav] [хоногийн|kho-NO-giin] [дараа|da-RAA] [сайжрахгүй|SAIJ-rakh-güi] [бол|bol] [дахин|da-KHIN] [ирээрэй|i-RĒ-rei].",
+          "id": "You're welcome. If you're not better in three days, come back.",
+          "literal": "no-matter. if three day's after good-not if again come-please."
+        }
+      ],
+      "notes": [
+        "⚠️ **The suffix -аа / -ээ / -оо / -өө means \"belonging to the subject of this sentence\".** *Амаа ангай* = \"open **your own** mouth\"; *гэртээ амар* = \"rest at **your own** home\". It's like English \"own\", but used far more often: it attaches **after** the case suffix, and leaving it out makes your sentence sound broken.",
+        "**Compare these two sentences:** *Тэр гэр**тээ** харьсан* = \"He went back to **his own** home\"; *Тэр гэр**т** харьсан* = \"He went back to a home (whose, who knows)\". The difference is real, and Mongolians hear it immediately.",
+        "**For body parts, the most natural way is body part + маань / тань + өвдөж байна.** *Толгой **маань** өвдөж байна* = \"my head hurts\". ⚠️ Saying *Би толгой өвдөж байна* sounds wrong — it's the head that hurts, not the person.",
+        "**Өвдөх = to hurt (body), өвчтэй = sick (state), эмнэлэг = hospital, эмч = doctor, эм = medicine.** Notice that *эм* (medicine), *эмч* (doctor) and *эмнэлэг* (hospital) share one root — the *-ч* suffix makes a person, the *-лэг* suffix makes a place. This pattern is widespread and helps you guess new words.",
+        "**Хэрэв … бол = \"if … then\".** *Хэрэв* goes in front, *бол* after the clause. The two bracket it, like English \"if … then\". ⚠️ *Хэрэв* can be left out; *бол* can't."
+      ],
+      "grammars": [
+        {
+          "title": "The reflexive suffix -аа: \"one's own\"",
+          "body": [
+            "This is the suffix foreign speakers forget most often and native speakers notice most quickly. It attaches **after** the case suffix, and means the thing belongs to the subject of the sentence."
+          ],
+          "table": {
+            "head": [
+              "Without reflexive",
+              "Meaning",
+              "With reflexive",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*гэрт*",
+                "at home",
+                "*гэртээ*",
+                "at one's own home"
+              ],
+              [
+                "*ээжид*",
+                "to mother",
+                "*ээждээ*",
+                "to one's own mother"
+              ],
+              [
+                "*номыг*",
+                "that book",
+                "*номоо*",
+                "one's own book"
+              ],
+              [
+                "*найзтай*",
+                "with a friend",
+                "*найзтайгаа*",
+                "with one's own friend"
+              ],
+              [
+                "*хотоос*",
+                "from the city",
+                "*хотоосоо*",
+                "from one's own city"
+              ],
+              [
+                "*ажилд*",
+                "at work",
+                "*ажилдаа*",
+                "at one's own work"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **The suffix works for any subject, not just \"I\".** *Би номоо уншина* (I read my book), *чи номоо унш* (you read your book), *тэр номоо уншсан* (she read her own book). One suffix handles everyone — once again, Mongolian refuses to change for the subject.",
+            "**When is it a must?** Whenever the thing belongs to the subject and that matters. For family members, personal things, home, work and home region, Mongolians **almost always** use it. When in doubt, add it — too much reflexive is far less jarring than too little."
+          ]
+        },
+        {
+          "title": "Describing pain",
+          "body": [
+            "Three patterns cover almost everything you need to say at a clinic. Learn all three as whole chunks."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "body part + **өвдөж байна**",
+                "*Толгой маань өвдөж байна.*",
+                "My head hurts."
+              ],
+              [
+                "**Би** + state + **байна**",
+                "*Би халуурч байна.*",
+                "I have a fever."
+              ],
+              [
+                "symptom + **хүрсэн**",
+                "*Ханиад хүрсэн.*",
+                "I've caught the flu."
+              ],
+              [
+                "**… чадахгүй байна**",
+                "*Унтаж чадахгүй байна.*",
+                "I can't sleep."
+              ],
+              [
+                "**Надад … байна**",
+                "*Надад харшил байна.*",
+                "I have an allergy."
+              ],
+              [
+                "**… -д харштай**",
+                "*Би пенициллинд харштай.*",
+                "I'm allergic to penicillin."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **The last two rows can save your life and are worth memorizing before you travel.** Also write them down in Mongolian and keep the paper in your wallet — if you're unconscious, the paper speaks for you.",
+            "**Mongolia's health system provides free emergency care to anyone**, including foreigners. For further treatment, travel insurance is a must. Emergency numbers: **103** for an ambulance, **102** for the police, **101** for the fire service."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Parts of the body",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English",
+            "Монгол",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*толгой*",
+              "*TOL-goi*",
+              "head",
+              "*нүд*",
+              "*nüd*",
+              "eye"
+            ],
+            [
+              "*чих*",
+              "*chikh*",
+              "ear",
+              "*хамар*",
+              "*KHA-mar*",
+              "nose"
+            ],
+            [
+              "*ам*",
+              "*am*",
+              "mouth",
+              "*шүд*",
+              "*shüd*",
+              "tooth"
+            ],
+            [
+              "*хэл*",
+              "*khel*",
+              "tongue; language",
+              "*хоолой*",
+              "*KHŌ-loi*",
+              "throat"
+            ],
+            [
+              "*хүзүү*",
+              "*khü-DZÜÜ*",
+              "neck",
+              "*мөр*",
+              "*mör*",
+              "shoulder"
+            ],
+            [
+              "*гар*",
+              "*gar*",
+              "hand, arm",
+              "*хуруу*",
+              "*khu-RUU*",
+              "finger"
+            ],
+            [
+              "*хөл*",
+              "*khöl*",
+              "leg, foot",
+              "*өвдөг*",
+              "*ÖV-dög*",
+              "knee"
+            ],
+            [
+              "*гэдэс*",
+              "*GEH-des*",
+              "stomach",
+              "*нуруу*",
+              "*nu-RUU*",
+              "back"
+            ],
+            [
+              "*зүрх*",
+              "*dzürkh*",
+              "heart",
+              "*цус*",
+              "*tsus*",
+              "blood"
+            ],
+            [
+              "*арьс*",
+              "*ar's*",
+              "skin",
+              "*үс*",
+              "*üs*",
+              "hair"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Notice that **хэл means both \"tongue\" and \"language\"** — just like English \"mother tongue\", and like Latin *lingua*. *Монгол хэл* is literally \"the Mongolian tongue\". Likewise *зүрх* means both heart and courage: *зүрхтэй хүн* = a brave person (literally \"a person with heart\")."
+        },
+        {
+          "type": "kotak",
+          "title": "Common words for being ill",
+          "items": [
+            "*өвдөх* (öv-DÖKH) — to hurt. *Гэдэс маань өвдөж байна.*",
+            "*халуурах* (kha-LUU-rakh) — to have a fever.",
+            "*ханиах* (KHA-niakh) — to cough. *ханиад* (KHA-niad) — flu.",
+            "*бөөлжих* (BÖÖL-jikh) — to vomit. *суулгах* (SUUL-gakh) — diarrhea.",
+            "*толгой эргэх* (TOL-goi ER-gekh) — dizzy, literally \"head spinning\".",
+            "*ядрах* (YAD-rakh) — tired. *эдгэрэх* (ED-geh-rekh) — to get well."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "At the pharmacy",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*эмийн сан*",
+              "*EH-miin san*",
+              "pharmacy"
+            ],
+            [
+              "*эм*",
+              "*em*",
+              "medicine"
+            ],
+            [
+              "*жор*",
+              "*jor*",
+              "prescription"
+            ],
+            [
+              "*толгой өвдөхийн эм*",
+              "*TOL-goi öv-DÖ-khiin em*",
+              "headache medicine"
+            ],
+            [
+              "*ханиадны эм*",
+              "*KHA-niad-nii em*",
+              "flu medicine"
+            ],
+            [
+              "*халуун бууруулах эм*",
+              "*kha-LUUN BUU-ruu-lakh em*",
+              "fever reducer"
+            ],
+            [
+              "*витамин*",
+              "*vi-ta-MIN*",
+              "vitamin"
+            ],
+            [
+              "*боолт*",
+              "*bōlt*",
+              "bandage"
+            ],
+            [
+              "*өдөрт гурван удаа*",
+              "*Ö-dört GUR-van u-DAA*",
+              "three times a day"
+            ],
+            [
+              "*хоолны дараа*",
+              "*KHŌL-nii da-RAA*",
+              "after meals"
+            ],
+            [
+              "*хоолны өмнө*",
+              "*KHŌL-nii ÖM-nö*",
+              "before meals"
+            ],
+            [
+              "*өдөрт нэг ширхэг*",
+              "*Ö-dört neg SHIR-kheg*",
+              "one tablet a day"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the pattern for medicine names: **the illness takes -ын/-ийн + эм**. *Ханиад* (flu) → *ханиадны эм* (flu medicine). It's the possessive pattern you know from unit 2, and it works for almost every medicine. If you know the name of the illness, you can ask for its medicine."
+        },
+        {
+          "type": "kotak",
+          "title": "Six sentences you need at the pharmacy",
+          "items": [
+            "*Ханиадны эм байгаа юу?* — Do you have flu medicine?",
+            "*Жоргүй авч болох уу?* — Can I buy it without a prescription?",
+            "*Яаж уух вэ?* — How do I take it?",
+            "*Өдөрт хэдэн удаа уух вэ?* — How many times a day do I take it?",
+            "*Би пенициллинд харштай.* — I'm allergic to penicillin.",
+            "*Илүү хүчтэй эм байгаа юу?* — Do you have anything stronger?"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Sentences with the reflexive in daily life",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Meaning",
+            "Why reflexive"
+          ],
+          "rows": [
+            [
+              "*Би гэртээ харина.*",
+              "I'm going back to my home.",
+              "One's own home."
+            ],
+            [
+              "*Ээждээ утасдсан.*",
+              "I'm calling my mother.",
+              "One's own mother."
+            ],
+            [
+              "*Номоо уншиж байна.*",
+              "I'm reading my book.",
+              "One's own book."
+            ],
+            [
+              "*Найзтайгаа уулзсан.*",
+              "I met my friend.",
+              "One's own friend."
+            ],
+            [
+              "*Ажилдаа явлаа.*",
+              "She left for her job.",
+              "One's own job."
+            ],
+            [
+              "*Гутлаа тайл.*",
+              "Take off your shoes.",
+              "One's own shoes."
+            ],
+            [
+              "*Хүрмээ өмс.*",
+              "Put on your jacket.",
+              "One's own jacket."
+            ],
+            [
+              "*Нутаг руугаа явна.*",
+              "I'm going back to my home region.",
+              "One's own home region."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **The last row shows something important: the reflexive can also attach after the direction suffix *-руу*.** *Нутаг руу**гаа*** = to one's own home region. Mongolian stacks suffixes freely, always in a fixed order: **base → plural → case → reflexive**. Once you recognize this order, you can take apart a word of any length."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "mn": "өвдөх",
+      "baca": "öv-DÖKH",
+      "en": "to hurt (body)"
+    },
+    {
+      "mn": "эмч",
+      "baca": "emch",
+      "en": "doctor"
+    },
+    {
+      "mn": "эм",
+      "baca": "em",
+      "en": "medicine"
+    },
+    {
+      "mn": "эмнэлэг",
+      "baca": "EM-neh-leg",
+      "en": "hospital"
+    },
+    {
+      "mn": "эмийн сан",
+      "baca": "EH-miin san",
+      "en": "pharmacy"
+    },
+    {
+      "mn": "толгой",
+      "baca": "TOL-goi",
+      "en": "head"
+    },
+    {
+      "mn": "хоолой",
+      "baca": "KHŌ-loi",
+      "en": "throat"
+    },
+    {
+      "mn": "гэдэс",
+      "baca": "GEH-des",
+      "en": "stomach"
+    },
+    {
+      "mn": "гар",
+      "baca": "gar",
+      "en": "hand, arm"
+    },
+    {
+      "mn": "хөл",
+      "baca": "khöl",
+      "en": "leg, foot"
+    },
+    {
+      "mn": "нүд",
+      "baca": "nüd",
+      "en": "eye"
+    },
+    {
+      "mn": "шүд",
+      "baca": "shüd",
+      "en": "tooth"
+    },
+    {
+      "mn": "ханиад",
+      "baca": "KHA-niad",
+      "en": "flu"
+    },
+    {
+      "mn": "халуурах",
+      "baca": "kha-LUU-rakh",
+      "en": "to have a fever"
+    },
+    {
+      "mn": "ядрах",
+      "baca": "YAD-rakh",
+      "en": "tired"
+    },
+    {
+      "mn": "эдгэрэх",
+      "baca": "ED-geh-rekh",
+      "en": "to get well"
+    },
+    {
+      "mn": "харштай",
+      "baca": "KHARSH-tai",
+      "en": "allergy"
+    },
+    {
+      "mn": "хэрэв",
+      "baca": "KHEH-rev",
+      "en": "if"
+    },
+    {
+      "mn": "бол",
+      "baca": "bol",
+      "en": "then, if"
+    },
+    {
+      "mn": "сайжрах",
+      "baca": "SAIJ-rakh",
+      "en": "to get better"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mongolian.",
+      "items": [
+        "My head hurts.",
+        "I have a fever.",
+        "I can't sleep.",
+        "Do you have flu medicine?",
+        "How many times a day do I take it?",
+        "I'm allergic to penicillin."
+      ]
+    },
+    {
+      "prompt": "Fill in the reflexive suffix -аа, -ээ, -оо or -өө.",
+      "items": [
+        "Би гэрт____ харина.",
+        "Ээжид____ утасдсан.",
+        "Ном____ уншиж байна.",
+        "Ажилд____ явлаа.",
+        "Гутл____ тайл.",
+        "Хүрм____ өмс."
+      ]
+    },
+    {
+      "prompt": "Write the body part in Mongolian.",
+      "items": [
+        "head",
+        "eye",
+        "hand",
+        "leg",
+        "stomach",
+        "tooth"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "байна / өвдөж / толгой / маань",
+        "байна / халуурч / би",
+        "байна / чадахгүй / унтаж / би",
+        "юу / байгаа / эм / ханиадны",
+        "уугаарай / дараа / хоолны"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Толгой маань өвдөж байна. — Би халуурч байна. — Би унтаж чадахгүй байна. — Ханиадны эм байгаа юу? — Өдөрт хэдэн удаа уух вэ? — Би пенициллинд харштай.",
+    "1": "ээ — ээ — оо — аа — аа — ээ",
+    "2": "толгой — нүд — гар — хөл — гэдэс — шүд",
+    "3": "Толгой маань өвдөж байна. — Би халуурч байна. — Би унтаж чадахгүй байна. — Ханиадны эм байгаа юу? — Хоолны дараа уугаарай."
+  }
+}

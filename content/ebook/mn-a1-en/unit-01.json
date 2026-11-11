@@ -1,0 +1,594 @@
+{
+  "title": "Hello, what's your name?",
+  "title_target": "Сайн байна уу? Таны нэр хэн бэ?",
+  "goal": "Greet people, introduce yourself, and ask how someone is — while mastering the one verb that turns up in almost every Mongolian sentence: *байх*.",
+  "bekal": [
+    "say hello and goodbye the right way, formally or casually",
+    "give your name, job, and where you're from using *байна*",
+    "choose between *та* and *чи* without offending anyone"
+  ],
+  "dialogs": [
+    {
+      "title": "Яриа — Анхны уулзалт",
+      "intro": "Budi has just arrived in Ulaanbaatar for a semester as an exchange student. In a corridor on campus he runs into Сарнай.",
+      "lines": [
+        {
+          "speaker": "Сарнай:",
+          "text": "[Сайн|Sain] [байна|BAI-n] [уу|uu]?",
+          "id": "Hello! (How are you?)",
+          "literal": "good is Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Сайн|Sain]. [Та|Ta] [сайн|sain] [байна|BAI-n] [уу|uu]?",
+          "id": "Fine. How are you?",
+          "literal": "good. you good is Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Сайн|Sain], [баярлалаа|ba-yar-la-LAA]. [Таны|TA-nii] [нэр|ner] [хэн|khen] [бэ|beh]?",
+          "id": "Fine, thank you. What's your name?",
+          "literal": "good, thanks. your name who Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Миний|MI-nii] [нэр|ner] [Буди|BU-di]. [Таны|TA-nii] [нэр|ner] [хэн|khen] [бэ|beh]?",
+          "id": "My name is Budi. What's your name?",
+          "literal": "my name Budi. your name who Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Би|Bi] [Сарнай|sar-NAI]. [Танилцахад|ta-NIL-tsa-khad] [таатай|TAA-tai] [байна|BAI-n].",
+          "id": "I'm Sarnai. Nice to meet you.",
+          "literal": "I Sarnai. meeting-at pleasant is."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Надад|NA-dad] [ч|ch] [бас|bas] [таатай|TAA-tai] [байна|BAI-n].",
+          "id": "Nice to meet you too.",
+          "literal": "me-to too also pleasant is."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Та|Ta] [хаанаас|KHAA-naas] [ирсэн|IR-sen] [бэ|beh]?",
+          "id": "Where are you from?",
+          "literal": "you where-from came Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Би|Bi] [Индонезоос|in-do-NEH-dzōs] [ирсэн|IR-sen].",
+          "id": "I'm from Indonesia.",
+          "literal": "I Indonesia-from came."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Өө|Öö], [сонирхолтой|so-NIR-khol-toi] [юм|yum] [байна|BAI-n]! [Та|Ta] [оюутан|o-YUU-tan] [уу|uu]?",
+          "id": "Oh, how interesting! Are you a student?",
+          "literal": "oh, interesting thing is! you student Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Тийм|Tiim], [би|bi] [оюутан|o-YUU-tan]. [Та|Ta] [ч|ch] [бас|bas] [оюутан|o-YUU-tan] [уу|uu]?",
+          "id": "Yes, I'm a student. Are you a student too?",
+          "literal": "yes, I student. you too also student Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Үгүй|Ü-güi], [би|bi] [багш|baksh]. [Би|Bi] [монгол|MON-gol] [хэл|khel] [заадаг|DZAA-dag].",
+          "id": "No, I'm a teacher. I teach Mongolian.",
+          "literal": "no, I teacher. I Mongolian language teach-usually."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Гайхалтай|GAI-khal-tai]! [Би|Bi] [монгол|MON-gol] [хэл|khel] [сурч|surch] [байна|BAI-n].",
+          "id": "Great! I'm learning Mongolian.",
+          "literal": "great! I Mongolian language learn-ing is."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Та|Ta] [сайн|sain] [ярьж|yar'j] [байна|BAI-n] [шүү|shüü]!",
+          "id": "You speak it really well!",
+          "literal": "you good speak-ing is you-know!"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Баярлалаа|ba-yar-la-LAA]. [Гэхдээ|GEKH-dē] [бага|BA-ga] [зэрэг|DZEH-reg] [мэднэ|MED-neh].",
+          "id": "Thank you. But I only know a little.",
+          "literal": "thanks. but little degree know."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Уучлаарай|UUCH-laa-rai], [би|bi] [яван|YA-van] [байна|BAI-n]. [Дараа|da-RAA] [уулзъя|UULDZ-ya]!",
+          "id": "Sorry, I have to go. See you later!",
+          "literal": "sorry, I go-ing is. later let's-meet!"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Баяртай|ba-YAR-tai], [Сарнай|sar-NAI]!",
+          "id": "Goodbye, Sarnai!",
+          "literal": "joy-with, Sarnai!"
+        }
+      ],
+      "notes": [
+        "⚠️ **Сайн байна уу? is not a real question.** Literally it's \"is it good?\", but it works exactly like \"hello\" — you answer by repeating the same phrase, not by telling your news. The safest answer is one word: *Сайн.*",
+        "**Байна means \"there is\", \"to be (somewhere)\", and \"is\" all at once.** It's the busiest verb in Mongolian, and it always stands **at the end of the sentence**. Notice that in nine of the sixteen lines of this dialogue, the last word is *байна*.",
+        "**Баяртай literally means \"with joy\".** The word *баяр* means joy or celebration, and the suffix *-тай* means \"with\". You'll meet that suffix again in Unit 15, where it becomes the Mongolian way of saying \"to have\".",
+        "**Тийм = yes, үгүй = no.** ⚠️ To negate a noun, Mongolians usually use *биш*: *Би багш **биш**.* (I'm not a teacher.) *Үгүй* is used as a stand-alone answer.",
+        "**Ч бас means \"too, also\".** The two words almost always come as a pair, placed after the word they mark: *Та **ч бас** оюутан уу?* — \"Are **you** a student **too**?\""
+      ],
+      "grammars": [
+        {
+          "title": "Байх — the verb you'll use most",
+          "body": [
+            "English always needs \"am/is/are\" (\"I am a student\"). Mongolian drops it in **self-introduction sentences** — but uses *байна* as soon as the sentence describes existence, a state, or something going on right now.",
+            "And here's the first gift: **the form never changes with the subject.** One word covers everybody."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*Би энд байна.*",
+                "bi end BAI-n",
+                "I'm here."
+              ],
+              [
+                "*Чи энд байна.*",
+                "chi end BAI-n",
+                "You're here."
+              ],
+              [
+                "*Тэр энд байна.*",
+                "ter end BAI-n",
+                "He/She is here."
+              ],
+              [
+                "*Бид энд байна.*",
+                "bid end BAI-n",
+                "We're here."
+              ],
+              [
+                "*Тэд энд байна.*",
+                "ted end BAI-n",
+                "They're here."
+              ]
+            ]
+          },
+          "after": [
+            "Five lines, one verb form. Compare English, which needs *am/are/is*, or Russian, which has six forms per verb. **Mongolian leaves all that to the pronoun.**",
+            "⚠️ In simple introductions — name, job, nationality — *байна* can be left out: *Би оюутан.* is complete and natural. Adding it (*Би оюутан байна.*) sounds like \"I am currently being a student\" and is a bit odd."
+          ]
+        },
+        {
+          "title": "Та or чи? A choice you have to get right",
+          "body": [
+            "Mongolian has two words for \"you\", and picking the wrong one is a social mistake, not a grammar mistake. The rule is stricter than with French *vous*/*tu*."
+          ],
+          "table": {
+            "head": [
+              "Word",
+              "Say it",
+              "Used with",
+              "English equivalent"
+            ],
+            "rows": [
+              [
+                "*та*",
+                "ta",
+                "older people, superiors, teachers, people you've just met, anyone in a formal setting",
+                "you (Sir, Madam)"
+              ],
+              [
+                "*чи*",
+                "chi",
+                "close friends your own age, younger siblings, children",
+                "you (casual)"
+              ],
+              [
+                "*та нар*",
+                "ta nar",
+                "several people, formal",
+                "you all (polite)"
+              ],
+              [
+                "*та бүхэн*",
+                "ta BÜ-khen",
+                "an audience, readers, viewers",
+                "ladies and gentlemen"
+              ]
+            ]
+          },
+          "after": [
+            "**The practical rule fits on one line: use *та* until the other person switches to *чи* themselves.** Using *та* with a friend your age only sounds a bit stiff; using *чи* with an older person sounds rude. The risks aren't equal, so the choice is clear.",
+            "⚠️ Note that *та* is used even for **one** person. It isn't a plural form — the plural is *та нар*. That's different from Russian and French, where the polite form and the plural are the same word."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Saying hello and goodbye",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English",
+            "When"
+          ],
+          "rows": [
+            [
+              "*Сайн байна уу?*",
+              "*sain BAI-n uu*",
+              "Hello (formal)",
+              "To anyone who isn't a close friend. Safest."
+            ],
+            [
+              "*Сайн уу?*",
+              "*sain uu*",
+              "Hi (casual)",
+              "To friends your age. Short form."
+            ],
+            [
+              "*Өглөөний мэнд.*",
+              "*ÖG-löö-nii mend*",
+              "Good morning",
+              "Until about eleven. Somewhat formal."
+            ],
+            [
+              "*Өдрийн мэнд.*",
+              "*ÖD-riin mend*",
+              "Good afternoon",
+              "At the office and in shops."
+            ],
+            [
+              "*Оройн мэнд.*",
+              "*o-ROIN mend*",
+              "Good evening",
+              "When meeting in the late afternoon or evening."
+            ],
+            [
+              "*Сайхан амраарай.*",
+              "*SAI-khan am-RAA-rai*",
+              "Good night",
+              "⚠️ Only when parting to go to sleep."
+            ],
+            [
+              "*Баяртай!*",
+              "*ba-YAR-tai*",
+              "Goodbye",
+              "The most common way to say goodbye."
+            ],
+            [
+              "*Дараа уулзъя.*",
+              "*da-RAA UULDZ-ya*",
+              "See you again",
+              "Warmer, when you really will meet again."
+            ],
+            [
+              "*Маргааш уулзъя.*",
+              "*mar-GAASH UULDZ-ya*",
+              "See you tomorrow",
+              "Literally: \"tomorrow let's meet\"."
+            ],
+            [
+              "*Сайн яваарай.*",
+              "*sain ya-VAA-rai*",
+              "Have a good trip",
+              "Said by the one staying to the one leaving."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Note that the last two phrases **can't be swapped**. *Сайн яваарай* is said by the person **staying**, and the person leaving answers *Сайн сууж байгаарай* (\"stay well\"). It works like \"safe travels!\" and \"take care!\" — and saying them the wrong way round sounds instantly funny."
+        },
+        {
+          "type": "kotak",
+          "title": "Asking how someone is",
+          "items": [
+            "*Сайн байна уу?* — How are you? The most common, and it also means \"hello\".",
+            "*Юу байна?* — What's up? How's it going? ⚠️ Very casual, close friends only.",
+            "*Сайн, баярлалаа.* — Fine, thanks. *Их сайн.* — Very well.",
+            "*Тэгэх юм.* — So-so, nothing special. ⚠️ An honest answer you hear a lot; Mongolians don't feel obliged to say \"fine\"."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking questions with уу and вэ",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Mongolian marks a question at the **end** of the sentence, not the beginning. The word order before it doesn't change at all — no swapping like English \"you are\" → \"are you\"."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question type",
+            "Particle",
+            "Example",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "Yes/no, after *а, о, у*",
+              "**уу**",
+              "*Та багш **уу**?*",
+              "Are you a teacher?"
+            ],
+            [
+              "Yes/no, after *э, ө, ү*",
+              "**үү**",
+              "*Энэ гэр **үү**?*",
+              "Is this a house?"
+            ],
+            [
+              "Yes/no, after a vowel",
+              "**юу / юү**",
+              "*Энэ чиний **юу**?*",
+              "Is this yours?"
+            ],
+            [
+              "With a question word, after *н, л, м, в* and vowels",
+              "**вэ**",
+              "*Чи хаана байна **вэ**?*",
+              "Where are you?"
+            ],
+            [
+              "With a question word, after other consonants",
+              "**бэ**",
+              "*Таны нэр хэн **бэ**?*",
+              "What's your name?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Don't forget the particle.** *Та багш* without *уу* is a statement (\"You're a teacher\"), not a question. Rising intonation alone isn't enough in Mongolian — accept this early, because in casual English \"You're a teacher?\" works fine."
+        },
+        {
+          "type": "p",
+          "text": "Choosing between *вэ* and *бэ* is fiddly at first, but the test is simple: **say the sentence out loud.** *Хэн бэ* flows; *хэн вэ* stumbles. *Хаана вэ* flows; *хаана бэ* stumbles. Your mouth will choose correctly before your brain remembers the rule."
+        }
+      ]
+    },
+    {
+      "title": "Ten sentences that save beginners",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Уучлаарай.*",
+              "*UUCH-laa-rai*",
+              "Sorry. / Excuse me."
+            ],
+            [
+              "*Баярлалаа.*",
+              "*ba-yar-la-LAA*",
+              "Thank you."
+            ],
+            [
+              "*Зүгээр.*",
+              "*DZÜ-gēr*",
+              "That's OK. / You're welcome."
+            ],
+            [
+              "*Би ойлгохгүй байна.*",
+              "*bi OIL-gokh-güi BAI-n*",
+              "I don't understand."
+            ],
+            [
+              "*Би мэдэхгүй.*",
+              "*bi MEH-dekh-güi*",
+              "I don't know."
+            ],
+            [
+              "*Удаан яриач.*",
+              "*u-DAAN ya-RIA-ch*",
+              "Please speak more slowly."
+            ],
+            [
+              "*Дахин хэлээч.*",
+              "*da-KHIN kheh-LĒ-ch*",
+              "Please say that again."
+            ],
+            [
+              "*Энэ юу гэсэн үг вэ?*",
+              "*EH-neh yuu GEH-sen üg veh*",
+              "What does that mean?"
+            ],
+            [
+              "*Та англиар ярьдаг уу?*",
+              "*ta ANG-li-ar YAR'-dag uu*",
+              "Do you speak English?"
+            ],
+            [
+              "*Би монгол хэл сурч байна.*",
+              "*bi MON-gol khel surch BAI-n*",
+              "I'm learning Mongolian."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Зүгээр does three jobs at once",
+          "items": [
+            "**\"That's OK\"** — answering an apology: *Уучлаарай!* — *Зүгээр.*",
+            "**\"You're welcome\"** — answering thanks: *Баярлалаа!* — *Зүгээр.*",
+            "**\"Not bad, so-so\"** — answering \"how are you\": *Сайн байна уу?* — *Зүгээр.*",
+            "All three are the same word. Context tells them apart, and the context is never ambiguous."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last sentence in that table is worth memorizing today. Mongolians who meet a foreigner almost always assume Mongolian is too hard to learn and switch straight to English or sign language. Saying *би монгол хэл сурч байна* is the politest way to ask them to stay in Mongolian — and it is almost always met with a genuine smile."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "mn": "сайн",
+      "baca": "sain",
+      "en": "good, fine"
+    },
+    {
+      "mn": "байна",
+      "baca": "BAI-n",
+      "en": "there is; to be; is"
+    },
+    {
+      "mn": "баярлалаа",
+      "baca": "ba-yar-la-LAA",
+      "en": "thank you"
+    },
+    {
+      "mn": "уучлаарай",
+      "baca": "UUCH-laa-rai",
+      "en": "sorry, excuse me"
+    },
+    {
+      "mn": "баяртай",
+      "baca": "ba-YAR-tai",
+      "en": "goodbye"
+    },
+    {
+      "mn": "тийм",
+      "baca": "tiim",
+      "en": "yes"
+    },
+    {
+      "mn": "үгүй",
+      "baca": "Ü-güi",
+      "en": "no; not"
+    },
+    {
+      "mn": "би",
+      "baca": "bi",
+      "en": "I"
+    },
+    {
+      "mn": "чи",
+      "baca": "chi",
+      "en": "you (informal)"
+    },
+    {
+      "mn": "та",
+      "baca": "ta",
+      "en": "⚠️ you (formal)"
+    },
+    {
+      "mn": "тэр",
+      "baca": "ter",
+      "en": "he, she; that"
+    },
+    {
+      "mn": "бид",
+      "baca": "bid",
+      "en": "we"
+    },
+    {
+      "mn": "тэд",
+      "baca": "ted",
+      "en": "they"
+    },
+    {
+      "mn": "нэр",
+      "baca": "ner",
+      "en": "name"
+    },
+    {
+      "mn": "хэн",
+      "baca": "khen",
+      "en": "who"
+    },
+    {
+      "mn": "хаанаас",
+      "baca": "KHAA-naas",
+      "en": "from where"
+    },
+    {
+      "mn": "оюутан",
+      "baca": "o-YUU-tan",
+      "en": "(university) student"
+    },
+    {
+      "mn": "багш",
+      "baca": "baksh",
+      "en": "teacher"
+    },
+    {
+      "mn": "хэл",
+      "baca": "khel",
+      "en": "language; tongue"
+    },
+    {
+      "mn": "зүгээр",
+      "baca": "DZÜ-gēr",
+      "en": "that's OK; you're welcome"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mongolian.",
+      "items": [
+        "Hello! I'm Budi.",
+        "Are you a teacher?",
+        "Yes, I'm a teacher.",
+        "I'm from Indonesia.",
+        "I'm learning Mongolian.",
+        "Goodbye!"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right question particle: уу, үү, вэ, or бэ.",
+      "items": [
+        "Та багш ____?",
+        "Таны нэр хэн ____?",
+        "Чи хаана байна ____?",
+        "Энэ гэр ____?",
+        "Тэр оюутан ____?",
+        "Та хаанаас ирсэн ____?"
+      ]
+    },
+    {
+      "prompt": "Change into yes/no questions with уу or үү.",
+      "items": [
+        "Та багш.",
+        "Чи оюутан.",
+        "Тэр сайн байна.",
+        "Бид энд байна.",
+        "Энэ чиний ном.",
+        "Та монгол хүн."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "би / оюутан",
+        "нэр / миний / Буди",
+        "байна / уу / сайн",
+        "ирсэн / Индонезоос / би",
+        "хэн / нэр / бэ / таны"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Сайн байна уу! Би Буди. — Та багш уу? — Тийм, би багш. — Би Индонезоос ирсэн. — Би монгол хэл сурч байна. — Баяртай!",
+    "1": "уу — бэ — вэ — үү — уу — бэ",
+    "2": "Та багш уу? — Чи оюутан уу? — Тэр сайн байна уу? — Бид энд байна уу? — Энэ чиний ном уу? — Та монгол хүн үү?",
+    "3": "Би оюутан. — Миний нэр Буди. — Сайн байна уу? — Би Индонезоос ирсэн. — Таны нэр хэн бэ?"
+  }
+}

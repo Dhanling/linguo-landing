@@ -1,0 +1,536 @@
+{
+  "title": "What time is it? — time and appointments",
+  "title_target": "কটা বাজে? — kô-Ta ba-jé?",
+  "goal": "Tell the time and make appointments — with সাড়ে for “half past”, special words for 1:30 and 2:30, and the part of the day placed before the hour.",
+  "bekal": [
+    "ask কটা বাজে and answer it",
+    "use সাড়ে, সোয়া, and পৌনে for half and quarter hours",
+    "learn দেড়টা (1:30) and আড়াইটা (2:30), which have their own words",
+    "put সকাল, দুপুর, বিকেল, সন্ধ্যা, রাত before the hour",
+    "make an appointment with the -টায় ending"
+  ],
+  "dialogs": [
+    {
+      "title": "কথোপকথন — Making plans for tomorrow",
+      "intro": "Mitali invites Ani to the museum tomorrow. The conversation is full of clock times. Watch the word **সাড়ে**: it means “half past”, never “half to”.",
+      "lines": [
+        {
+          "speaker": "মিতালি:",
+          "text": "[কাল|kal] [জাদুঘরে|ja-du-ghô-ré] [যাবেন|ja-bèn]? [সকালে|sô-ka-lé]?",
+          "id": "Do you want to go to the museum tomorrow? In the morning?",
+          "literal": "tomorrow — museum-to — will-go? morning-in?"
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[যাব|ja-bô]! [কটার|kô-Tar] [সময়|sô-môy]?",
+          "id": "Yes! What time?",
+          "literal": "will-go! what-o'clock-'s — time?"
+        },
+        {
+          "speaker": "মিতালি:",
+          "text": "[সাড়ে|sa-Ré] [দশটায়|dôsh-Tay] [বের|bér] [হব|hô-bô]। [ঠিক|Thik] [আছে|a-chhé]?",
+          "id": "We'll leave at half past ten. OK?",
+          "literal": "half-past — ten-o'clock-at — out — will-become. fine — is?"
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[সাড়ে|sa-Ré] [দশটা|dôsh-Ta] [মানে|ma-né] [নটা|nô-Ta] [ত্রিশ|trish]?",
+          "id": "Half past ten — does that mean 9:30?",
+          "literal": "half-past — ten-o'clock — meaning — nine-o'clock — thirty?"
+        },
+        {
+          "speaker": "মিতালি:",
+          "text": "[না|na] [না|na]! [সাড়ে|sa-Ré] [দশটা|dôsh-Ta] [মানে|ma-né] [দশটা|dôsh-Ta] [ত্রিশ|trish]। [দশের|dô-shér] [পরে|pô-ré]।",
+          "id": "No, no! Half past ten means 10:30. After ten.",
+          "literal": "no — no! half-past — ten-o'clock — meaning — ten-o'clock — thirty. ten-'s — after."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[ওহ|oh]! [ইন্দোনেশিয়ায়|in-do-nè-shi-yay] [আমরা|am-ra] [উল্টো|ul-To] [বলি|bô-li]।",
+          "id": "Oh! In Indonesia we say it the other way round.",
+          "literal": "oh! indonesia-in — we — reversed — say."
+        },
+        {
+          "speaker": "মিতালি:",
+          "text": "[তাই|tai] [নাকি|na-ki]? [তাহলে|ta-hô-lé] [সাবধান|sab-dhan]! [আর|ar] [দেড়টায়|déR-Tay] [ফিরব|phir-bô]।",
+          "id": "Really? Then be careful! And we'll come back at 1:30.",
+          "literal": "so — is-it? if-so — careful! and — one-and-a-half-at — will-return."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[দেড়টা|déR-Ta]? [সাড়ে|sa-Ré] [একটা|èk-Ta] [নয়|nôy]?",
+          "id": "Deṛṭa? Not sarhe ekta?",
+          "literal": "one-and-a-half? half-past — one-o'clock — isn't?"
+        },
+        {
+          "speaker": "মিতালি:",
+          "text": "[না|na], [একটা|èk-Ta] [আর|ar] [দুটোর|du-Tor] [জন্য|jôn-nô] [আলাদা|a-la-da] [শব্দ|shôb-dô] [আছে|a-chhé]: [দেড়|déR] [আর|ar] [আড়াই|a-Rai]।",
+          "id": "No, one and two have their own words: deṛ and aṛai.",
+          "literal": "no, one-o'clock — and — two-o'clock-'s — for — separate — word — is: one-and-a-half — and — two-and-a-half."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[লিখে|li-khé] [রাখছি|rakh-chhi]। [জাদুঘর|ja-du-ghôr] [কখন|kô-khôn] [বন্ধ|bôn-dhô] [হয়|hôy]?",
+          "id": "I'm writing that down. What time does the museum close?",
+          "literal": "writing — am-keeping. museum — when — closed — becomes?"
+        },
+        {
+          "speaker": "মিতালি:",
+          "text": "[বিকেল|bi-kél] [পাঁচটায়|paⁿch-Tay]। [আমাদের|a-ma-dér] [তিন|tin] [ঘণ্টা|ghôn-Ta] [সময়|sô-môy] [আছে|a-chhé]।",
+          "id": "At five in the afternoon. We have three hours.",
+          "literal": "afternoon — five-o'clock-at. our — three — hour — time — is."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[যথেষ্ট|jô-thésh-Tô]! [আমি|a-mi] [দেরি|dé-ri] [করব|kôr-bô] [না|na], [কথা|kô-tha] [দিলাম|di-lam]।",
+          "id": "That's plenty! I won't be late, I promise.",
+          "literal": "enough! I — delay — will-do — not, word — gave."
+        }
+      ],
+      "notes": [
+        "**সাড়ে তিনটা is 3:30 — “half past three”, just as in English.** The rule: **সাড়ে + number = that hour plus thirty minutes.** সাড়ে ছটা = 6:30. সাড়ে নটা = 9:30. Ani stumbles because Indonesian (like German *halb vier*) names the **coming** hour; for English speakers, Bengali counts the familiar way.",
+        "⚠️ **1:30 and 2:30 have their own words, and সাড়ে can't be used for them.** 1:30 is **দেড়টা** *déRTa*, 2:30 is **আড়াইটা** *aRaiTa*. Saying *সাড়ে একটা* or *সাড়ে দুটো* sounds wrong at once. সাড়ে only kicks in from three: সাড়ে তিনটা, সাড়ে চারটা, and so on.",
+        "**Quarter hours have their own two words too: সোয়া and পৌনে.** **সোয়া** *soa* means “quarter past”: সোয়া তিনটা = 3:15. **পৌনে** *pouné* means “quarter to”: পৌনে চারটা = 3:45 — here the number named is the **coming** hour, the opposite of সাড়ে. If confused, just say the plain numbers: তিনটা পঁয়তাল্লিশ (3:45). Everyone understands.",
+        "**The part of the day comes first, then the hour.** সকাল আটটা (8 a.m., literally “morning eight”), দুপুর বারোটা (12 noon), বিকেল পাঁচটা (5 p.m.), রাত নটা (9 p.m.). ⚠️ This is the reverse of English “eight in the morning”. Bengali has no a.m./p.m.; the part-of-day word does that job.",
+        "**Bengal divides the day into more parts than English.** ভোর *bhor* (dawn, before sunrise), সকাল *sôkal* (morning), দুপুর *dupur* (midday), বিকেল *bikél* (afternoon), সন্ধ্যা *sôndha* (dusk), রাত *rat* (night). ⚠️ সন্ধ্যা has a special place in Bengali life: it's when lamps are lit, prayers are said, and guests start arriving.",
+        "**To say “at … o'clock”, add the place ending you already know: -য়.** তিনটা → **তিনটায়** (at three), সাড়ে দশটা → **সাড়ে দশটায়**, পাঁচটা → **পাঁচটায়**. It's the same ending as “at home” and “in Dhaka” — Bengali treats time as a place.",
+        "⚠️ **কটা বাজে? literally means “how many are striking?”** — from the bells once rung for each hour. The answer uses the same word: তিনটা বাজে (it's three o'clock). Don't be puzzled by বাজা (to strike, ring) in talk about time; it has nothing to do with music."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "tables": [
+            {
+              "head": [
+                "Time",
+                "বাংলা",
+                "Say it",
+                "Note"
+              ],
+              "rows": [
+                [
+                  "1:00",
+                  "একটা",
+                  "èk-Ta",
+                  "—"
+                ],
+                [
+                  "2:00",
+                  "দুটো",
+                  "du-To",
+                  "—"
+                ],
+                [
+                  "3:00",
+                  "তিনটে · তিনটা",
+                  "tin-Té · tin-Ta",
+                  "—"
+                ],
+                [
+                  "1:30",
+                  "দেড়টা",
+                  "déR-Ta",
+                  "⚠️ its own word"
+                ],
+                [
+                  "2:30",
+                  "আড়াইটা",
+                  "a-Rai-Ta",
+                  "⚠️ its own word"
+                ],
+                [
+                  "3:30",
+                  "সাড়ে তিনটা",
+                  "sa-Ré tin-Ta",
+                  "the hour ALREADY past"
+                ],
+                [
+                  "6:30",
+                  "সাড়ে ছটা",
+                  "sa-Ré chhô-Ta",
+                  "—"
+                ],
+                [
+                  "3:15",
+                  "সোয়া তিনটা",
+                  "so-a tin-Ta",
+                  "quarter past"
+                ],
+                [
+                  "3:45",
+                  "পৌনে চারটা",
+                  "pou-né char-Ta",
+                  "⚠️ the COMING hour"
+                ],
+                [
+                  "3:10",
+                  "তিনটা দশ",
+                  "tin-Ta dôsh",
+                  "the safest way"
+                ],
+                [
+                  "at 3",
+                  "তিনটায়",
+                  "tin-Tay",
+                  "with the -য় ending"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "**When in doubt, say the plain numbers.** সাড়ে, সোয়া, and পৌনে are more natural, but **আটটা পনেরো** (8:15) and **নটা পঁয়তাল্লিশ** (9:45) are used every day — especially at stations, airports, and formal appointments. No one will find it odd."
+          ]
+        },
+        {
+          "title": "Parts of the day and time words",
+          "table": {
+            "head": [
+              "বাংলা",
+              "Say it",
+              "Meaning",
+              "বাংলা",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ভোর",
+                "bhor",
+                "dawn",
+                "সময়",
+                "sô-môy",
+                "time"
+              ],
+              [
+                "সকাল",
+                "sô-kal",
+                "morning",
+                "ঘণ্টা",
+                "ghôn-Ta",
+                "hour"
+              ],
+              [
+                "দুপুর",
+                "du-pur",
+                "midday",
+                "মিনিট",
+                "mi-niT",
+                "minute"
+              ],
+              [
+                "বিকেল",
+                "bi-kél",
+                "afternoon",
+                "কখন",
+                "kô-khôn",
+                "when"
+              ],
+              [
+                "সন্ধ্যা",
+                "sôn-dha",
+                "dusk, evening",
+                "কতক্ষণ",
+                "kô-tôk-khôn",
+                "how long"
+              ],
+              [
+                "রাত",
+                "rat",
+                "night",
+                "দেরি",
+                "dé-ri",
+                "lateness, delay"
+              ],
+              [
+                "আজ",
+                "aj",
+                "today",
+                "তাড়াতাড়ি",
+                "ta-Ra-ta-Ri",
+                "quickly, early"
+              ],
+              [
+                "কাল",
+                "kal",
+                "yesterday · tomorrow",
+                "আগে · পরে",
+                "a-gé · pô-ré",
+                "before · after"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **কাল means both yesterday AND tomorrow** — the verb decides which. কাল এসেছি (I came yesterday) versus কাল যাব (I'll go tomorrow). To be explicit, people add **গতকাল** (*gôtôkal* — yesterday) or **আগামীকাল** (*agamikal* — tomorrow). Unit 10 goes further."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Making and changing plans",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "কটার সময় দেখা হবে?",
+              "kô-Tar sô-môy dè-kha hô-bé",
+              "What time shall we meet?"
+            ],
+            [
+              "সাড়ে চারটায় আসুন।",
+              "sa-Ré char-Tay a-sun",
+              "Come at half past four."
+            ],
+            [
+              "আমি একটু দেরি করব।",
+              "a-mi èk-Tu dé-ri kôr-bô",
+              "I'll be a little late."
+            ],
+            [
+              "আমার দশ মিনিট লাগবে।",
+              "a-mar dôsh mi-niT lag-bé",
+              "I need ten minutes."
+            ],
+            [
+              "কতক্ষণ লাগবে?",
+              "kô-tôk-khôn lag-bé",
+              "How long will it take?"
+            ],
+            [
+              "আগামীকাল সকালে?",
+              "a-ga-mi-kal sô-ka-lé",
+              "Tomorrow morning?"
+            ],
+            [
+              "দুঃখিত, আজ পারব না।",
+              "duk-khi-tô, aj par-bô na",
+              "Sorry, I can't today."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ About time and patience",
+          "items": [
+            "**Appointment times in Bengal often come with a margin**, especially for informal plans. “সাড়ে পাঁচটায় আসছি” can mean anywhere between 5:30 and 6:00. It isn't rudeness but a shared, understood habit.",
+            "**For official matters, on the other hand, be on time.** Offices, interviews, and doctor's appointments run by the clock. A safe phrase: **আমি ঠিক সময়ে আসব** (*Thik sô-mô-yé* — I'll come on time).",
+            "**If you're running late, say so early; don't stay silent.** One short message, **একটু দেরি হচ্ছে, দুঃখিত** (running a bit late, sorry), is enough, and far more appreciated than a long explanation after you arrive."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One nice thing about the word **সময়** *sômôy*. It means “time”, but also “chance” and “era” — সময় নেই (there's no time), সময় হলে (if there's a chance), সেই সময় (in those days). And there's an expression you'll often hear from older people: **সময়মতো** *sômôy-môto*, “in due time” — the answer given when someone is too impatient for something."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "কটা বাজে",
+      "baca": "kô-Ta ba-jé",
+      "en": "what time is it"
+    },
+    {
+      "bn": "সাড়ে",
+      "baca": "sa-Ré",
+      "en": "half past"
+    },
+    {
+      "bn": "সোয়া",
+      "baca": "so-a",
+      "en": "quarter past"
+    },
+    {
+      "bn": "পৌনে",
+      "baca": "pou-né",
+      "en": "quarter to"
+    },
+    {
+      "bn": "দেড়টা",
+      "baca": "déR-Ta",
+      "en": "1:30"
+    },
+    {
+      "bn": "আড়াইটা",
+      "baca": "a-Rai-Ta",
+      "en": "2:30"
+    },
+    {
+      "bn": "ঘণ্টা",
+      "baca": "ghôn-Ta",
+      "en": "hour"
+    },
+    {
+      "bn": "মিনিট",
+      "baca": "mi-niT",
+      "en": "minute"
+    },
+    {
+      "bn": "সময়",
+      "baca": "sô-môy",
+      "en": "time"
+    },
+    {
+      "bn": "কখন",
+      "baca": "kô-khôn",
+      "en": "when"
+    },
+    {
+      "bn": "কতক্ষণ",
+      "baca": "kô-tôk-khôn",
+      "en": "how long"
+    },
+    {
+      "bn": "ভোর",
+      "baca": "bhor",
+      "en": "dawn"
+    },
+    {
+      "bn": "সকাল",
+      "baca": "sô-kal",
+      "en": "morning"
+    },
+    {
+      "bn": "দুপুর",
+      "baca": "du-pur",
+      "en": "midday"
+    },
+    {
+      "bn": "বিকেল",
+      "baca": "bi-kél",
+      "en": "afternoon"
+    },
+    {
+      "bn": "সন্ধ্যা",
+      "baca": "sôn-dha",
+      "en": "dusk, evening"
+    },
+    {
+      "bn": "রাত",
+      "baca": "rat",
+      "en": "night"
+    },
+    {
+      "bn": "আজ",
+      "baca": "aj",
+      "en": "today"
+    },
+    {
+      "bn": "কাল",
+      "baca": "kal",
+      "en": "yesterday; tomorrow"
+    },
+    {
+      "bn": "আগামীকাল",
+      "baca": "a-ga-mi-kal",
+      "en": "tomorrow"
+    },
+    {
+      "bn": "গতকাল",
+      "baca": "gô-tô-kal",
+      "en": "yesterday"
+    },
+    {
+      "bn": "আগে",
+      "baca": "a-gé",
+      "en": "before, earlier"
+    },
+    {
+      "bn": "পরে",
+      "baca": "pô-ré",
+      "en": "after, later"
+    },
+    {
+      "bn": "দেরি",
+      "baca": "dé-ri",
+      "en": "lateness, delay"
+    },
+    {
+      "bn": "যথেষ্ট",
+      "baca": "jô-thésh-Tô",
+      "en": "enough"
+    },
+    {
+      "bn": "জাদুঘর",
+      "baca": "ja-du-ghôr",
+      "en": "museum"
+    },
+    {
+      "bn": "দুঃখিত",
+      "baca": "duk-khi-tô",
+      "en": "sorry"
+    },
+    {
+      "bn": "সাবধান",
+      "baca": "sab-dhan",
+      "en": "careful"
+    },
+    {
+      "bn": "উল্টো",
+      "baca": "ul-To",
+      "en": "reversed, the other way round"
+    },
+    {
+      "bn": "কথা দেওয়া",
+      "baca": "kô-tha dè-oa",
+      "en": "to promise"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the time in numbers.",
+      "items": [
+        "সাড়ে তিনটা",
+        "দেড়টা",
+        "আড়াইটা",
+        "সোয়া ছটা",
+        "পৌনে নটা",
+        "সাড়ে দশটা"
+      ]
+    },
+    {
+      "prompt": "Write in Bengali.",
+      "items": [
+        "4:30",
+        "1:30",
+        "2:30",
+        "7:15",
+        "8 o'clock in the morning"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "বাজে / কটা",
+        "যাব / সাড়ে / আমি / দশটায়",
+        "হয় / বন্ধ / পাঁচটায় / জাদুঘর / বিকেল",
+        "আছে / ঘণ্টা / আমাদের / তিন / সময়",
+        "না / করব / আমি / দেরি"
+      ]
+    },
+    {
+      "prompt": "Translate into Bengali.",
+      "items": [
+        "What time is it now?",
+        "It's half past three now.",
+        "Come at five in the afternoon.",
+        "I'll be a little late.",
+        "How long will it take?",
+        "We'll leave tomorrow morning."
+      ]
+    }
+  ],
+  "answers": [
+    "3:30 — 1:30 — 2:30 — 6:15 — 8:45 — 10:30",
+    "সাড়ে চারটা — দেড়টা — আড়াইটা — সোয়া সাতটা — সকাল আটটা",
+    "কটা বাজে? — আমি সাড়ে দশটায় যাব। — জাদুঘর বিকেল পাঁচটায় বন্ধ হয়। — আমাদের তিন ঘণ্টা সময় আছে। — আমি দেরি করব না।",
+    "এখন কটা বাজে? — এখন সাড়ে তিনটা বাজে। — বিকেল পাঁচটায় আসুন। — আমি একটু দেরি করব। — কতক্ষণ লাগবে? — আগামীকাল সকালে আমরা বের হব।"
+  ]
+}

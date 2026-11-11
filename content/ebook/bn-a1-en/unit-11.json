@@ -1,0 +1,550 @@
+{
+  "title": "At the market — prices and bargaining",
+  "title_target": "দাম কত? একটু কমান — dam kôt? èk-Tu kô-man",
+  "goal": "Ask prices, bargain without giving offense, and say weights and quantities — in sentences short enough that you'll really use them.",
+  "bekal": [
+    "ask prices with দাম কত and কেজি কত",
+    "bargain with একটু কমান and শেষ দাম কত",
+    "say কেজি, পোয়া, গ্রাম, হালি",
+    "praise and complain about goods: টাটকা, পচা, বেশি দাম",
+    "know where bargaining is fine and where it isn't"
+  ],
+  "dialogs": [
+    {
+      "title": "কথোপকথন — Bargaining for mangoes",
+      "intro": "Mango season has arrived and Ani tries bargaining for the first time. Listen to the tone: bargaining in Bengal is a friendly exchange, not a fight.",
+      "lines": [
+        {
+          "speaker": "আনি:",
+          "text": "[ভাই|bhai], [আমের|a-mér] [দাম|dam] [কত|kôt]?",
+          "id": "Brother, how much are the mangoes?",
+          "literal": "brother, mango's — price — how-much?"
+        },
+        {
+          "speaker": "বিক্রেতা:",
+          "text": "[কেজি|ké-ji] [একশো|èk-sho] [বিশ|bish]। [একদম|èk-dôm] [টাটকা|TaT-ka], [রাজশাহীর|raj-sha-hir]।",
+          "id": "A hundred and twenty a kilo. Really fresh, from Rajshahi.",
+          "literal": "kilo — hundred — twenty. totally — fresh, Rajshahi's."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[একশো|èk-sho] [বিশ|bish]? [একটু|èk-Tu] [বেশি|bè-shi] [নয়|nôy] [কি|ki]?",
+          "id": "A hundred and twenty? Isn't that a bit much?",
+          "literal": "hundred — twenty? a-little — more — not-is — [Q]?"
+        },
+        {
+          "speaker": "বিক্রেতা:",
+          "text": "[আপা|a-pa], [বাজারে|ba-ja-ré] [সবাই|sô-bai] [একশো|èk-sho] [ত্রিশ|trish] [নিচ্ছে|nich-chhé]।",
+          "id": "Sister, everyone at the market is charging a hundred and thirty.",
+          "literal": "sister, market-at — everyone — hundred — thirty — is-taking."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[একটু|èk-Tu] [কমান|kô-man] [না|na]! [দুই|dui] [কেজি|ké-ji] [নেব|né-bô]।",
+          "id": "Come down a little! I'll take two kilos.",
+          "literal": "a-little — lower-please — na! two — kilo — will-take."
+        },
+        {
+          "speaker": "বিক্রেতা:",
+          "text": "[দুই|dui] [কেজি|ké-ji] [নিলে|ni-lé] [একশো|èk-sho] [দশ|dôsh]। [এটাই|è-Ta-i] [শেষ|shésh] [দাম|dam]।",
+          "id": "If you take two kilos, a hundred and ten. That's my last price.",
+          "literal": "two — kilo — if-take — hundred — ten. this-very — last — price."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[একশো|èk-sho] [করুন|kô-run]। [আমি|a-mi] [রোজ|roj] [আসব|as-bô]।",
+          "id": "Make it a hundred. I'll come every day.",
+          "literal": "hundred — make-please. I — every-day — will-come."
+        },
+        {
+          "speaker": "বিক্রেতা:",
+          "text": "[হা|ha] [হা|ha]! [আচ্ছা|ach-chha], [আপনার|ap-nar] [জন্য|jôn-nô] [একশো|èk-sho] [পাঁচ|paⁿch]।",
+          "id": "Ha ha! All right, for you a hundred and five.",
+          "literal": "ha ha! okay, your — for — hundred — five."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[ঠিক|Thik] [আছে|a-chhé]। [আর|ar] [একটা|èk-Ta] [হালি|ha-li] [ডিম|Dim] [দিন|din]।",
+          "id": "Fine. And give me one hali of eggs.",
+          "literal": "right — is. and — one — hali — egg — give-please."
+        },
+        {
+          "speaker": "বিক্রেতা:",
+          "text": "[হালি|ha-li] [পঞ্চাশ|pôn-chash]। [সব|sôb] [মিলে|mi-lé] [দুশো|du-sho] [ষাট|shaT]।",
+          "id": "Fifty a hali. That's two hundred and sixty altogether.",
+          "literal": "hali — fifty. all — together — two-hundred — sixty."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[এই|èi] [নিন|nin] [তিনশো|tin-sho]। [ভাংতি|bhang-ti] [আছে|a-chhé]?",
+          "id": "Here's three hundred. Do you have change?",
+          "literal": "here — take-please — three-hundred. small-change — is-there?"
+        },
+        {
+          "speaker": "বিক্রেতা:",
+          "text": "[আছে|a-chhé], [চল্লিশ|chôl-lish] [ফেরত|phé-rôt]। [আবার|a-bar] [আসবেন|as-bèn] [আপা|a-pa]!",
+          "id": "Yes, forty back. Come again, sister!",
+          "literal": "is-there, forty — back. again — will-come(polite) — sister!"
+        }
+      ],
+      "notes": [
+        "**Bargaining in Bengal is a conversation, not a battle.** The tone is light, often broken by laughter, and it almost always ends with both sides feeling they won a little. ⚠️ Bargaining with a hard face or naming a price far too low actually ends the conversation — not because the money offends anyone, but because it spoils the tone of the meeting.",
+        "⚠️ **Some places are not for bargaining.** At a **বাজার** (open market), fruit carts, cloth shops and rickshaws, bargaining is normal and expected. At a **দোকান** with price tags, supermarkets, pharmacies and restaurants, the price is fixed and bargaining feels awkward. A simple rule: **if the number is printed, don't bargain.**",
+        "**The most effective bargaining line isn't a number but a relationship.** “আমি রোজ আসব” (I'll come every day) and “আমি এখানেই থাকি” (I live right here) work far better than naming a low price. Bengali traders deal in regular customers, not one-off sales.",
+        "**একটু কমান না!** *èk-Tu kô-man na* is the bargaining line you'll hear most. ⚠️ Note the **না** at the end: here it is **not** a negative but a softener, like “come on” in “come down a little, come on”. The pitch falls, not rises. Say না with a rising pitch and it means “no” again.",
+        "**There are four units of weight you need.** **কেজি** (kilogram) is used everywhere. **পোয়া** *poa* is a quarter kilo — 250 grams — and is very common for chilies, ginger and spices. **হালি** *hali* means **four pieces**, and is almost always used for eggs and limes. ⚠️ Don't be surprised to hear “one hali” — it isn't a weight but a count of four.",
+        "**ভাংতি** *bhangti* means small change, and it's a real everyday problem.** Small traders often have no change for big notes, and the sentence **ভাংতি নেই** (no change) can stop a sale. ⚠️ Keep small notes; asking **ভাংতি আছে?** before handing over a big one is a habit that makes you look like a local.",
+        "**টাটকা** *TaTka* — fresh — is the compliment traders value most, and its opposite **পচা** *pôcha* (rotten) is the complaint they fear most. If the goods aren't great, don't say পচা; just say **এটা ভালো না** (this isn't good) or point to another with **ওটা দিন** (give me that one)."
+      ],
+      "grammars": [
+        {
+          "title": "Asking prices and bargaining",
+          "tables": [
+            {
+              "head": [
+                "বাংলা",
+                "Say it",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "দাম কত?",
+                  "dam kôt",
+                  "How much is it?"
+                ],
+                [
+                  "কেজি কত?",
+                  "ké-ji kôt",
+                  "How much a kilo?"
+                ],
+                [
+                  "এটা কত করে?",
+                  "è-Ta kôt kô-ré",
+                  "How much each?"
+                ],
+                [
+                  "সব মিলে কত?",
+                  "sôb mi-lé kôt",
+                  "How much altogether?"
+                ],
+                [
+                  "একটু কমান না।",
+                  "èk-Tu kô-man na",
+                  "Come down a little, please."
+                ],
+                [
+                  "বেশি দাম চাইছেন।",
+                  "bè-shi dam chai-chhèn",
+                  "You're asking too much."
+                ],
+                [
+                  "শেষ দাম কত?",
+                  "shésh dam kôt",
+                  "What's your last price?"
+                ],
+                [
+                  "ঠিক আছে, দিন।",
+                  "Thik a-chhé, din",
+                  "All right, give it to me."
+                ],
+                [
+                  "থাক, লাগবে না।",
+                  "thak, lag-bé na",
+                  "Never mind, I don't need it."
+                ],
+                [
+                  "ভাংতি আছে?",
+                  "bhang-ti a-chhé",
+                  "Do you have change?"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **থাক, লাগবে না is the gentlest way to back out.** Literally “let it be, it's not needed”. Say it with a smile and step away slowly; the seller will often call you back with a better price. If not, you still part on good terms."
+          ]
+        },
+        {
+          "title": "Weights, quantities and money",
+          "table": {
+            "head": [
+              "বাংলা",
+              "Say it",
+              "Meaning",
+              "বাংলা",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "কেজি",
+                "ké-ji",
+                "kilogram",
+                "টাকা",
+                "Ta-ka",
+                "taka, money"
+              ],
+              [
+                "পোয়া",
+                "po-a",
+                "quarter kilo",
+                "পয়সা",
+                "pôy-sa",
+                "coins, small change"
+              ],
+              [
+                "আধা কেজি",
+                "a-dha ké-ji",
+                "half a kilo",
+                "ভাংতি",
+                "bhang-ti",
+                "small change"
+              ],
+              [
+                "গ্রাম",
+                "gram",
+                "gram",
+                "ফেরত",
+                "phé-rôt",
+                "change (money back)"
+              ],
+              [
+                "হালি",
+                "ha-li",
+                "four pieces",
+                "দাম",
+                "dam",
+                "price"
+              ],
+              [
+                "ডজন",
+                "Dô-jôn",
+                "dozen, twelve",
+                "সস্তা",
+                "sôs-ta",
+                "cheap"
+              ],
+              [
+                "জোড়া",
+                "jo-Ra",
+                "pair",
+                "দামি",
+                "da-mi",
+                "expensive"
+              ],
+              [
+                "টাটকা",
+                "TaT-ka",
+                "fresh",
+                "বেশি · কম",
+                "bè-shi · kôm",
+                "more · less"
+              ]
+            ]
+          },
+          "after": [
+            "**To say “how much each”, use কত করে** *kôt kô-ré* — literally “how much by doing”. এটা কত করে? is a sentence you'll use again and again, and the answer usually takes the form “… টাকা করে”."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Fruit, cloth and other goods",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "বাংলা",
+            "Say it",
+            "Meaning",
+            "বাংলা",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "আম",
+              "am",
+              "mango",
+              "শাড়ি",
+              "sha-Ri",
+              "sari"
+            ],
+            [
+              "কলা",
+              "kô-la",
+              "banana",
+              "পাঞ্জাবি",
+              "pan-ja-bi",
+              "panjabi (long shirt)"
+            ],
+            [
+              "কাঁঠাল",
+              "kaⁿ-Thal",
+              "jackfruit",
+              "কাপড়",
+              "ka-pôR",
+              "cloth, clothes"
+            ],
+            [
+              "পেয়ারা",
+              "pé-ya-ra",
+              "guava",
+              "জুতো",
+              "ju-to",
+              "shoes"
+            ],
+            [
+              "আনারস",
+              "a-na-rôsh",
+              "pineapple",
+              "ছাতা",
+              "chha-ta",
+              "umbrella"
+            ],
+            [
+              "নারকেল",
+              "nar-kél",
+              "coconut",
+              "ব্যাগ",
+              "bêg",
+              "bag"
+            ],
+            [
+              "লেবু",
+              "lé-bu",
+              "lime",
+              "গামছা",
+              "gam-chha",
+              "all-purpose cotton towel"
+            ],
+            [
+              "ডিম",
+              "Dim",
+              "egg",
+              "চাদর",
+              "cha-dôr",
+              "shawl, bedsheet"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Four things to know at a Bengali market",
+          "items": [
+            "**আম isn't just a fruit in Bengal — it's a season.** Between May and July people discuss mango varieties the way others discuss football: হিমসাগর, ল্যাংড়া, ফজলি, আম্রপালি. Asking **কোন আম সবচেয়ে ভালো?** opens a long, happy conversation.",
+            "**কাঁঠাল is the national fruit of Bangladesh** — the jackfruit, a huge green fruit with sweet yellow pods. Mention that it grows in your country too (or that you've tried it) and you'll make a friend on the spot.",
+            "**গামছা is a thin checked cotton cloth used for everything** — towel, headband, seat mat, strainer. It's cheap, light, and a far more memorable souvenir than a key ring.",
+            "⚠️ **Don't handle and squeeze the fruit.** Just point with **ওটা দেখান** (show me that one) and let the seller pick it up. Choosing for yourself while squeezing is seen as a bit rude at many stalls."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "A note on money in Bangladesh. The currency is the **টাকা**, and notes run from ২ to ১০০০. The numbers on the notes are written in **Bengali numerals**, not Western ones — so the script pages at the front of this book will be put to work right away in your wallet. For small payments cash is still king; but **বিকাশ** *bikash*, the mobile wallet almost everyone uses, has replaced coins at many stalls."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "দাম",
+      "baca": "dam",
+      "en": "price"
+    },
+    {
+      "bn": "কত করে",
+      "baca": "kôt kô-ré",
+      "en": "how much each"
+    },
+    {
+      "bn": "কমানো",
+      "baca": "kô-ma-no",
+      "en": "to reduce, lower"
+    },
+    {
+      "bn": "বেশি",
+      "baca": "bè-shi",
+      "en": "more, too much"
+    },
+    {
+      "bn": "কম",
+      "baca": "kôm",
+      "en": "less, a little"
+    },
+    {
+      "bn": "শেষ",
+      "baca": "shésh",
+      "en": "end, last"
+    },
+    {
+      "bn": "সস্তা",
+      "baca": "sôs-ta",
+      "en": "cheap"
+    },
+    {
+      "bn": "দামি",
+      "baca": "da-mi",
+      "en": "expensive"
+    },
+    {
+      "bn": "টাটকা",
+      "baca": "TaT-ka",
+      "en": "fresh"
+    },
+    {
+      "bn": "পচা",
+      "baca": "pô-cha",
+      "en": "rotten"
+    },
+    {
+      "bn": "কেজি",
+      "baca": "ké-ji",
+      "en": "kilogram"
+    },
+    {
+      "bn": "পোয়া",
+      "baca": "po-a",
+      "en": "quarter kilo"
+    },
+    {
+      "bn": "হালি",
+      "baca": "ha-li",
+      "en": "four pieces"
+    },
+    {
+      "bn": "ডজন",
+      "baca": "Dô-jôn",
+      "en": "dozen"
+    },
+    {
+      "bn": "ভাংতি",
+      "baca": "bhang-ti",
+      "en": "small change"
+    },
+    {
+      "bn": "ফেরত",
+      "baca": "phé-rôt",
+      "en": "change; returned"
+    },
+    {
+      "bn": "বিক্রেতা",
+      "baca": "bik-ré-ta",
+      "en": "seller"
+    },
+    {
+      "bn": "কেনা · বেচা",
+      "baca": "kè-na · bè-cha",
+      "en": "to buy · to sell"
+    },
+    {
+      "bn": "নেওয়া",
+      "baca": "nè-oa",
+      "en": "to take"
+    },
+    {
+      "bn": "দেওয়া",
+      "baca": "dè-oa",
+      "en": "to give"
+    },
+    {
+      "bn": "আম",
+      "baca": "am",
+      "en": "mango"
+    },
+    {
+      "bn": "কলা",
+      "baca": "kô-la",
+      "en": "banana"
+    },
+    {
+      "bn": "কাঁঠাল",
+      "baca": "kaⁿ-Thal",
+      "en": "jackfruit"
+    },
+    {
+      "bn": "আনারস",
+      "baca": "a-na-rôsh",
+      "en": "pineapple"
+    },
+    {
+      "bn": "লেবু",
+      "baca": "lé-bu",
+      "en": "lime"
+    },
+    {
+      "bn": "কাপড়",
+      "baca": "ka-pôR",
+      "en": "cloth, clothes"
+    },
+    {
+      "bn": "জুতো",
+      "baca": "ju-to",
+      "en": "shoes"
+    },
+    {
+      "bn": "ছাতা",
+      "baca": "chha-ta",
+      "en": "umbrella"
+    },
+    {
+      "bn": "একদম",
+      "baca": "èk-dôm",
+      "en": "totally, really"
+    },
+    {
+      "bn": "থাক",
+      "baca": "thak",
+      "en": "never mind, let it be"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Complete the bargaining sentences.",
+      "items": [
+        "আমের ____ কত? (price)",
+        "একটু ____ না! (lower)",
+        "____ দাম কত? (last)",
+        "____ আছে? (change)",
+        "সব ____ কত? (altogether)"
+      ]
+    },
+    {
+      "prompt": "Choose the right answer for each situation: bargain (হ্যাঁ) or don't bargain (না).",
+      "items": [
+        "At a roadside fruit cart → ____",
+        "At a pharmacy with printed prices → ____",
+        "Taking a rickshaw → ____",
+        "At a restaurant → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "কত / আমের / দাম",
+        "নেব / কেজি / দুই / আমি",
+        "দাম / শেষ / এটাই",
+        "আছে / ভাংতি / আপনার / কি",
+        "আসব / আমি / রোজ"
+      ]
+    },
+    {
+      "prompt": "Translate into Bengali.",
+      "items": [
+        "How much a kilo?",
+        "Come down a little, please.",
+        "I'll take two kilos.",
+        "How much altogether?",
+        "Do you have change?",
+        "Never mind, I don't need it."
+      ]
+    }
+  ],
+  "answers": [
+    "দাম — কমান — শেষ — ভাংতি — মিলে",
+    "হ্যাঁ — না — হ্যাঁ — না",
+    "আমের দাম কত? — আমি দুই কেজি নেব। — এটাই শেষ দাম। — আপনার কি ভাংতি আছে? — আমি রোজ আসব।",
+    "কেজি কত? — একটু কমান না। — আমি দুই কেজি নেব। — সব মিলে কত? — ভাংতি আছে? — থাক, লাগবে না।"
+  ]
+}

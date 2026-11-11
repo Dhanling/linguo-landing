@@ -1,0 +1,546 @@
+{
+  "title": "At the restaurant",
+  "title_target": "რესტორანში — Rest'oranshi",
+  "goal": "Order a real dinner, say what you like and don't like, and know Georgian cuisine well enough to order without pointing at the menu.",
+  "bekal": [
+    "order dishes for several people",
+    "say მიყვარს (I love/like) and მომწონს (I like this)",
+    "state dietary restrictions clearly",
+    "name ten Georgian dishes that are sure to be on the menu",
+    "praise the food and ask for the bill"
+  ],
+  "dialogs": [
+    {
+      "title": "დიალოგი — First khinkali",
+      "intro": "Ani, Nino, and Levan are having dinner at a khinkali restaurant. Notice the two different verbs for \"like\", and one eating tip that separates foreigners from people who've been taught.",
+      "lines": [
+        {
+          "speaker": "მიმტანი:",
+          "text": "[კეთილი|K'e-ti-li] [იყოს|i-q'os] [მობრძანება|mob-rdza-ne-ba]! [რას|Ras] [შეუკვეთავთ|she-uk've-tavt]?",
+          "id": "Welcome! What would you like to order?",
+          "literal": "good — let-it-be — arrival! what-obj — you-pl-will-order?"
+        },
+        {
+          "speaker": "ლევანი:",
+          "text": "[ათი|A-ti] [ხინკალი|khin-k'a-li], [ერთი|er-ti] [ხაჭაპური|kha-ch'a-p'u-ri] [და|da] [სალათი|sa-la-ti].",
+          "id": "Ten khinkali, one khachapuri, and a salad.",
+          "literal": "ten — khinkali, one — khachapuri — and — salad."
+        },
+        {
+          "speaker": "მიმტანი:",
+          "text": "[სასმელი|Sas-me-li]? [ღვინო|Ghvi-no] [გნებავთ|gne-bavt]?",
+          "id": "Drinks? Would you like wine?",
+          "literal": "drink? wine — you-pl-wish?"
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[ერთი|Er-ti] [ბოთლი|bot-li] [წითელი|ts'i-te-li] [და|da] [ერთი|er-ti] [ბოთლი|bot-li] [წყალი|ts'q'a-li].",
+          "id": "A bottle of red and a bottle of water.",
+          "literal": "one — bottle — red — and — one — bottle — water."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[მე|Me] [ხორცი|khor-tsi] [არ|ar] [მიყვარს|miq'-vars]. [ბოსტნეული|Bost'-ne-u-li] [გაქვთ|gakvt]?",
+          "id": "I don't like meat. Do you have vegetable dishes?",
+          "literal": "I — meat — not — is-loved-by-me. vegetables — you-pl-have?"
+        },
+        {
+          "speaker": "მიმტანი:",
+          "text": "[რა|Ra] [თქმა|tkma] [უნდა|un-da]. [ლობიო|Lo-bio], [ბადრიჯანი|bad-ri-ja-ni], [მწვანილი|mts'va-ni-li].",
+          "id": "Of course. Lobio, eggplant, fresh herbs.",
+          "literal": "what — saying — needed. lobio, eggplant, herbs."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[მაშინ|Ma-shin] [ლობიო|lo-bio], [თუ|tu] [შეიძლება|she-idz-le-ba].",
+          "id": "Then the lobio, please.",
+          "literal": "then — lobio, if — possible."
+        },
+        {
+          "speaker": "ლევანი:",
+          "text": "[ანი|A-ni], [ხინკალი|khin-k'a-li] [ხელით|khe-lit] [იჭმევა|ich'-me-va], [არა|a-ra] [ჩანგლით|chang-lit].",
+          "id": "Ani, khinkali are eaten by hand, not with a fork.",
+          "literal": "Ani, khinkali — hand-with — is-eaten, not — fork-with."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ხელით|Khe-lit]? [ინდონეზიაშიც|In-do-ne-zi-a-shits] [ხელით|khe-lit] [ვჭამთ|vch'amt]!",
+          "id": "By hand? In Indonesia we eat with our hands too!",
+          "literal": "hand-with? Indonesia-in-too — hand-with — we-eat!"
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[და|Da] [კუდი|k'u-di] [არ|ar] [იჭმევა|ich'-me-va] — [თეფშზე|tep-shze] [რჩება|rche-ba].",
+          "id": "And you don't eat the top knot — it stays on the plate.",
+          "literal": "and — tail — not — is-eaten — plate-on — stays."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[გასაგებია|Ga-sa-ge-bi-a]! [ძალიან|Dza-li-an] [გემრიელია|gem-ri-e-li-a]. [ლობიოც|Lo-bi-ots] [მომწონს|mom-ts'ons].",
+          "id": "Got it! It's delicious. I like the lobio too.",
+          "literal": "understandable-is! very — tasty-is. lobio-too — is-liked-by-me."
+        },
+        {
+          "speaker": "ლევანი:",
+          "text": "[მაშინ|Ma-shin] [კიდევ|k'i-dev] [ათი|a-ti] [ხინკალი|khin-k'a-li]! [გაუმარჯოს|Ga-u-mar-jos]!",
+          "id": "Then ten more khinkali! Cheers!",
+          "literal": "then — more — ten — khinkali! may-it-win!"
+        }
+      ],
+      "notes": [
+        "**მიყვარს and მომწონს both mean \"like\", but they can't be swapped.** **მიყვარს** = love, a deep and lasting liking: *ხინკალი მიყვარს* (I love khinkali — in general, for a long time). **მომწონს** = like right now, a judgment about something in front of you: *ეს ლობიო მომწონს* (I like this lobio). ⚠️ For people, მიყვარს means real love; if you've just met someone and say *შენ მიყვარხარ*, you're declaring your love.",
+        "**Both are inverted verbs**, in the same family as მაქვს and მინდა: მიყვარს (I like) / გიყვარს (you like) / უყვარს (he/she likes); მომწონს / მოგწონს / მოსწონს.",
+        "**ხელით = by hand, ჩანგლით = with a fork.** The same -ით ending from unit 5. Notice that ჩანგალი loses its ა: ჩანგ**ლ**ით.",
+        "**ინდონეზიაშიც = ინდონეზია + ში + ც.** Three endings stacked in one word: \"in Indonesia too\". Georgian loves stacking endings like this, and once you get used to unpacking them from the back, words that looked scary become easy to read.",
+        "**Eating khinkali has rules, and Georgians love teaching them.** Hold it by the top (კუდი, \"tail\"), bite a little hole in the side, slurp the broth first, then eat the rest. The top knot is **not** eaten and is left on the plate — that's also how people count how many you've had. ⚠️ Using a knife and fork on khinkali isn't a crime, but everyone at the table will notice.",
+        "**კეთილი იყოს მობრძანება = welcome.** The formal phrase written on restaurant doors and at airports. Just recognize it; you don't need to say it.",
+        "**გაუმარჯოს! = cheers.** Same root as გამარჯობა — \"victory\". Unit 19 explores the whole world that stands behind this word."
+      ],
+      "grammars": [
+        {
+          "title": "Likes, dislikes, and restrictions",
+          "table": {
+            "head": [
+              "Sentence",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ხინკალი მიყვარს",
+                "khink'ali miq'vars",
+                "I love khinkali"
+              ],
+              [
+                "ეს მომწონს",
+                "es momts'ons",
+                "I like this one"
+              ],
+              [
+                "ხორცი არ მიყვარს",
+                "khortsi ar miq'vars",
+                "I don't like meat"
+              ],
+              [
+                "ცხარე არ მიყვარს",
+                "tskhare ar miq'vars",
+                "I don't like spicy food"
+              ],
+              [
+                "ხორცს არ ვჭამ",
+                "khortss ar vch'am",
+                "I don't eat meat"
+              ],
+              [
+                "ვეგეტარიანელი ვარ",
+                "veget'arianeli var",
+                "I'm vegetarian"
+              ],
+              [
+                "ღორის ხორცს არ ვჭამ",
+                "ghoris khortss ar vch'am",
+                "I don't eat pork"
+              ],
+              [
+                "ალერგია მაქვს",
+                "alergia makvs",
+                "I have an allergy"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ If you don't eat pork — for religious or any other reasons — learn **ღორის ხორცს არ ვჭამ** as a whole: pork (ღორი) is widely used in Georgian cooking, often inside mixed-meat ხინკალი. A shorter safety phrase: *ღორი არ შეიძლება* (no pork). Beef and lamb are easy to find, and most Georgian vegetable dishes — ლობიო, ფხალი, ბადრიჯანი — contain no meat at all."
+          ]
+        },
+        {
+          "title": "Ten dishes that are sure to be on the menu",
+          "table": {
+            "head": [
+              "Dish",
+              "Say it",
+              "What it is"
+            ],
+            "rows": [
+              [
+                "ხინკალი",
+                "khink'ali",
+                "large soup dumplings, eaten by hand"
+              ],
+              [
+                "ხაჭაპური",
+                "khach'ap'uri",
+                "cheese bread; a dozen regional versions"
+              ],
+              [
+                "მწვადი",
+                "mts'vadi",
+                "grilled meat skewers"
+              ],
+              [
+                "ლობიო",
+                "lobio",
+                "spiced kidney beans, the most common vegetable dish"
+              ],
+              [
+                "ფხალი",
+                "pkhali",
+                "vegetable pâté with walnuts"
+              ],
+              [
+                "ბადრიჯანი ნიგვზით",
+                "badrijani nigvzit",
+                "eggplant rolls filled with walnut paste"
+              ],
+              [
+                "ჩახოხბილი",
+                "chakhokhbili",
+                "chicken stewed with tomatoes"
+              ],
+              [
+                "შქმერული",
+                "shkmeruli",
+                "chicken in garlic-milk sauce"
+              ],
+              [
+                "ჩაქაფული",
+                "chakapuli",
+                "lamb stewed with tarragon"
+              ],
+              [
+                "მაწონი",
+                "mats'oni",
+                "Georgian yogurt"
+              ]
+            ]
+          },
+          "after": [
+            "Two words that help at the table: **ცხარე** (tskhare, spicy) and **მარილიანი** (mariliani, salty). Georgian food is generally mild — what's called ცხარე here often just tastes pleasantly warm."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "At the table",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Georgian",
+            "Say it",
+            "Meaning",
+            "Georgian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "მიმტანი",
+              "mimt'ani",
+              "server, waiter",
+              "თეფში",
+              "tepshi",
+              "plate"
+            ],
+            [
+              "მენიუ",
+              "meniu",
+              "menu",
+              "ჭიქა",
+              "ch'ika",
+              "glass"
+            ],
+            [
+              "სასმელი",
+              "sasmeli",
+              "drink",
+              "ჩანგალი",
+              "changali",
+              "fork"
+            ],
+            [
+              "საჭმელი",
+              "sach'meli",
+              "food",
+              "კოვზი",
+              "k'ovzi",
+              "spoon"
+            ],
+            [
+              "ხორცი",
+              "khortsi",
+              "meat",
+              "დანა",
+              "dana",
+              "knife"
+            ],
+            [
+              "ქათამი",
+              "katami",
+              "chicken",
+              "ხელი",
+              "kheli",
+              "hand"
+            ],
+            [
+              "თევზი",
+              "tevzi",
+              "fish",
+              "მარილი",
+              "marili",
+              "salt"
+            ],
+            [
+              "ბრინჯი",
+              "brinji",
+              "rice",
+              "პილპილი",
+              "p'ilp'ili",
+              "pepper"
+            ],
+            [
+              "კარტოფილი",
+              "k'art'opili",
+              "potato",
+              "სალათი",
+              "salati",
+              "salad"
+            ],
+            [
+              "სუპი",
+              "sup'i",
+              "soup",
+              "ტკბილეული",
+              "t'k'bileuli",
+              "sweets, dessert"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Six sentences for a whole dinner",
+          "items": [
+            "**მენიუ, თუ შეიძლება.** — The menu, please.",
+            "**რას მირჩევთ?** (ras mirchevt) — What do you recommend?",
+            "**ეს რა არის?** — What's this? (unit 2 comes in handy again)",
+            "**ღორის ხორცი აქვს?** — Does this have pork in it?",
+            "**ძალიან გემრიელია!** — It's delicious!",
+            "**ანგარიში, თუ შეიძლება.** — The bill, please."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One thing to be ready for: portions in Georgian restaurants are big, and your host — or even the server — will push you to order more than you can finish. To decline politely, say *მადლობა, ეს საკმარისია* (madloba, es sak'marisia — thank you, this is enough). If you're invited by Georgians, remember this unwritten rule: a table that isn't overflowing means the host has failed, so don't take the amount of food as a sign of how much you're expected to finish."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ka": "რესტორანი",
+      "baca": "rest'orani",
+      "en": "restaurant"
+    },
+    {
+      "ka": "მიმტანი",
+      "baca": "mimt'ani",
+      "en": "server, waiter"
+    },
+    {
+      "ka": "საჭმელი",
+      "baca": "sach'meli",
+      "en": "food"
+    },
+    {
+      "ka": "სასმელი",
+      "baca": "sasmeli",
+      "en": "drink"
+    },
+    {
+      "ka": "ხინკალი",
+      "baca": "khink'ali",
+      "en": "khinkali"
+    },
+    {
+      "ka": "მწვადი",
+      "baca": "mts'vadi",
+      "en": "grilled meat skewers"
+    },
+    {
+      "ka": "ლობიო",
+      "baca": "lobio",
+      "en": "spiced kidney beans"
+    },
+    {
+      "ka": "ხორცი",
+      "baca": "khortsi",
+      "en": "meat"
+    },
+    {
+      "ka": "ღორის ხორცი",
+      "baca": "ghoris khortsi",
+      "en": "pork"
+    },
+    {
+      "ka": "ქათამი",
+      "baca": "katami",
+      "en": "chicken"
+    },
+    {
+      "ka": "თევზი",
+      "baca": "tevzi",
+      "en": "fish"
+    },
+    {
+      "ka": "ბრინჯი",
+      "baca": "brinji",
+      "en": "rice"
+    },
+    {
+      "ka": "კარტოფილი",
+      "baca": "k'art'opili",
+      "en": "potato"
+    },
+    {
+      "ka": "ბადრიჯანი",
+      "baca": "badrijani",
+      "en": "eggplant"
+    },
+    {
+      "ka": "სალათი",
+      "baca": "salati",
+      "en": "salad"
+    },
+    {
+      "ka": "მარილი",
+      "baca": "marili",
+      "en": "salt"
+    },
+    {
+      "ka": "ცხარე",
+      "baca": "tskhare",
+      "en": "spicy"
+    },
+    {
+      "ka": "გემრიელი",
+      "baca": "gemrieli",
+      "en": "tasty, delicious"
+    },
+    {
+      "ka": "თეფში",
+      "baca": "tepshi",
+      "en": "plate"
+    },
+    {
+      "ka": "ჩანგალი",
+      "baca": "changali",
+      "en": "fork"
+    },
+    {
+      "ka": "კოვზი",
+      "baca": "k'ovzi",
+      "en": "spoon"
+    },
+    {
+      "ka": "დანა",
+      "baca": "dana",
+      "en": "knife"
+    },
+    {
+      "ka": "ხელი",
+      "baca": "kheli",
+      "en": "hand"
+    },
+    {
+      "ka": "ბოთლი",
+      "baca": "botli",
+      "en": "bottle"
+    },
+    {
+      "ka": "წითელი",
+      "baca": "ts'iteli",
+      "en": "red"
+    },
+    {
+      "ka": "მიყვარს",
+      "baca": "miq'vars",
+      "en": "I like, I love"
+    },
+    {
+      "ka": "მომწონს",
+      "baca": "momts'ons",
+      "en": "I like (this)"
+    },
+    {
+      "ka": "საკმარისი",
+      "baca": "sak'marisi",
+      "en": "enough"
+    },
+    {
+      "ka": "გაუმარჯოს",
+      "baca": "gaumarjos",
+      "en": "cheers!"
+    },
+    {
+      "ka": "ალერგია",
+      "baca": "alergia",
+      "en": "allergy"
+    },
+    {
+      "ka": "ვეგეტარიანელი",
+      "baca": "veget'arianeli",
+      "en": "vegetarian"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose მიყვარს or მომწონს.",
+      "items": [
+        "I love khinkali (in general) → ხინკალი ____",
+        "I like this lobio → ეს ლობიო ____",
+        "I don't like meat → ხორცი არ ____",
+        "I like this restaurant → ეს რესტორანი ____",
+        "I love Georgian (deeply) → ქართული ____"
+      ]
+    },
+    {
+      "prompt": "Complete the order.",
+      "items": [
+        "____ ხინკალი, თუ შეიძლება (ten)",
+        "____ , თუ შეიძლება (the menu)",
+        "ღორის ხორცს არ ____ (I eat)",
+        "ძალიან ____ (very tasty)",
+        "____ , თუ შეიძლება (the bill)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ხინკალი / ათი / შეიძლება / თუ / ,",
+        "მიყვარს / არ / ხორცი",
+        "გემრიელია / ძალიან / ეს",
+        "ვჭამ / არ / ღორის ხორცს",
+        "გაქვთ / ბოსტნეული / ?"
+      ]
+    },
+    {
+      "prompt": "Translate into Georgian.",
+      "items": [
+        "The menu, please.",
+        "I don't eat pork.",
+        "I love khinkali.",
+        "This is delicious!",
+        "Do you have vegetable dishes?",
+        "The bill, please."
+      ]
+    }
+  ],
+  "answers": [
+    "მიყვარს — მომწონს — მიყვარს — მომწონს — მიყვარს",
+    "ათი — მენიუ — ვჭამ — გემრიელია — ანგარიში",
+    "ათი ხინკალი, თუ შეიძლება. — ხორცი არ მიყვარს. — ეს ძალიან გემრიელია. — ღორის ხორცს არ ვჭამ. — ბოსტნეული გაქვთ?",
+    "მენიუ, თუ შეიძლება. — ღორის ხორცს არ ვჭამ. — ხინკალი მიყვარს. — ეს ძალიან გემრიელია! — ბოსტნეული გაქვთ? — ანგარიში, თუ შეიძლება."
+  ],
+  "wave": "Halfway there. Go back to unit 5 and compare: the café dialogue that once felt full of strange words is now almost entirely familiar. That's a far more honest measure of progress than counting how many units you've finished."
+}

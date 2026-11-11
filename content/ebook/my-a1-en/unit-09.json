@@ -1,0 +1,570 @@
+{
+  "title": "What time is it now?",
+  "title_target": "အခု ဘယ်နှစ်နာရီလဲ — a.hkoo. bè-hna.na-yee-lè:",
+  "goal": "Tell the time, the days, and the dates — and handle the half hour, which in Burmese counts from the hour that has already passed, just like English \"half past\".",
+  "bekal": [
+    "ask and tell the time",
+    "use ခွဲ for the half hour without miscounting",
+    "put morning, midday, evening, and night in the right place",
+    "name the seven days of the week",
+    "make an appointment with …မှာ တွေ့မယ်"
+  ],
+  "dialogs": [
+    {
+      "title": "စကားပြော — Arranging lunch",
+      "intro": "Ko Zaw invites Ani to lunch. Watch one line in the middle of the dialogue: Ani miscounts သုံးနာရီခွဲ, because in her own language, Indonesian, the half hour points the other way — like German *halb*.",
+      "lines": [
+        {
+          "speaker": "ကိုဇော်:",
+          "text": "[အာနီ|a-nee]၊ [အခု|a.hkoo.] [ဘယ်နှစ်နာရီ|bè-hna.na-yee] [လဲ|lè:]။",
+          "id": "Ani, what time is it now?",
+          "literal": "ani, now — what-hour — Q?"
+        },
+        {
+          "speaker": "အာနီ:",
+          "text": "[ဆယ့်တစ်နာရီ|hsay.tik-na-yee] [နှစ်ဆယ်|hna.hsay] [မိနစ်|mee.nik] [ပါ|ba]။",
+          "id": "Twenty past eleven.",
+          "literal": "eleven-hour — twenty — minute — polite."
+        },
+        {
+          "speaker": "ကိုဇော်:",
+          "text": "[ဒါဆို|da-hsoh] [နေ့လယ်စာ|nay.-lè-za] [အတူတူ|a.too-doo] [စား|sa:] [ရအောင်|ya.-owⁿ]။ [တစ်နာရီ|ta.na-yee] [ဘယ်လို|bè-loh] [လဲ|lè:]။",
+          "id": "Then let's have lunch together. How about one o'clock?",
+          "literal": "if-so — midday-meal — together — eat — let's. one-hour — how — Q?"
+        },
+        {
+          "speaker": "အာနီ:",
+          "text": "[တစ်နာရီ|ta.na-yee] [မ|ma.] [အား|a:] [ဘူး|boo:]။ [အစည်းအဝေး|a.see:-a.way:] [ရှိ|shee.] [တယ်|dè]။",
+          "id": "I'm not free at one. I have a meeting.",
+          "literal": "one-hour — not — free — not. meeting — exist — statement."
+        },
+        {
+          "speaker": "ကိုဇော်:",
+          "text": "[ဘယ်နှစ်နာရီ|bè-hna.na-yee] [ပြီး|pyee:] [လဲ|lè:]။",
+          "id": "What time does it finish?",
+          "literal": "what-hour — finish — Q?"
+        },
+        {
+          "speaker": "အာနီ:",
+          "text": "[နှစ်နာရီခွဲ|hna.na-yee-hkwè:] [လောက်|lowk] [ပြီး|pyee:] [မယ်|mè]။",
+          "id": "It'll finish around half past two.",
+          "literal": "two-hour-half — about — finish — will."
+        },
+        {
+          "speaker": "ကိုဇော်:",
+          "text": "[ဟုတ်ကဲ့|hohk-kè.]၊ [ဒါဆို|da-hsoh] [သုံးနာရီ|thohⁿ:-na-yee] [တွေ့|tway.] [ရအောင်|ya.-owⁿ]။",
+          "id": "OK, then let's meet at three.",
+          "literal": "true-yes, if-so — three-hour — meet — let's."
+        },
+        {
+          "speaker": "အာနီ:",
+          "text": "[ဟင်|hiⁿ]၊ [သုံးနာရီခွဲ|thohⁿ:-na-yee-hkwè:] [လား|la:]။ [နှစ်နာရီခွဲ|hna.na-yee-hkwè:] [လား|la:]။ [ခွဲ|hkwè:] [က|ga.] [ရှုပ်|shohk] [တယ်|dè]။",
+          "id": "Wait, is that half past three? Or half past two? This ခွဲ is confusing.",
+          "literal": "huh, three-hour-half — Q? two-hour-half — Q? half — (topic) — tangled — statement."
+        },
+        {
+          "speaker": "ကိုဇော်:",
+          "text": "[လွယ်|lwè] [ပါတယ်|ba-dè]။ [နှစ်နာရီခွဲ|hna.na-yee-hkwè:] [က|ga.] [နှစ်နာရီ|hna.na-yee] [ပြီးမှ|pyee:-hma.] [မိနစ်|mee.nik] [သုံးဆယ်|thohⁿ:-hsay] [ပါ|ba]။",
+          "id": "It's easy. နှစ်နာရီခွဲ is two o'clock plus thirty minutes.",
+          "literal": "easy — polite-statement. two-hour-half — (topic) — two-hour — after — minute — thirty — polite."
+        },
+        {
+          "speaker": "အာနီ:",
+          "text": "[အင်း|iⁿ:]၊ [အင်ဒိုနီးရှားလို|iⁿ-doh-nee:-sha:-loh] [ဆို|hsoh] [ပြောင်းပြန်|pyowⁿ:-byaⁿ] [ပါ|ba]။ [ကျွန်မ|cha.ma.] [တို့|doh.] [နောက်|nowk] [နာရီ|na-yee] [ကို|koh] [ပြော|pyò:] [တယ်|dè]။",
+          "id": "Hmm, in Indonesian it's the other way round. We name the next hour.",
+          "literal": "hmm, indonesia-way — if — reversed — polite. I(f) — (plural) — next — hour — (object) — say — statement."
+        },
+        {
+          "speaker": "ကိုဇော်:",
+          "text": "[ဟုတ်လား|hohk-la:]! [ဒါဆို|da-hsoh] [သတိထား|tha.dee.-hta:] [ပါ|ba] [နော်|nò]။",
+          "id": "Really! Then be careful.",
+          "literal": "true-Q! if-so — mindfulness-keep — polite — right."
+        },
+        {
+          "speaker": "အာနီ:",
+          "text": "[ဟုတ်ကဲ့|hohk-kè.]၊ [သုံးနာရီ|thohⁿ:-na-yee] [ဘူတာ|boo-ta] [ရှေ့မှာ|shay.-hma] [တွေ့|tway.] [မယ်|mè] [နော်|nò]။",
+          "id": "I will. See you at three in front of the station.",
+          "literal": "true-yes, three-hour — station — front-at — meet — will — right."
+        }
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "Clock times are built as **number + နာရီ**, with the minutes added after. နာရီ (*na-yee*) means both \"hour, o'clock\" and \"watch\", and comes from Sanskrit."
+          ],
+          "tables": [
+            {
+              "head": [
+                "English",
+                "Burmese",
+                "Say it"
+              ],
+              "rows": [
+                [
+                  "what time is it?",
+                  "ဘယ်နှစ်နာရီလဲ",
+                  "*bè-hna.na-yee-lè:*"
+                ],
+                [
+                  "three o'clock",
+                  "သုံးနာရီ",
+                  "*thohⁿ:-na-yee*"
+                ],
+                [
+                  "ten past three",
+                  "သုံးနာရီ ဆယ်မိနစ်",
+                  "*thohⁿ:-na-yee hsay-mee.nik*"
+                ],
+                [
+                  "quarter past three",
+                  "သုံးနာရီ ဆယ့်ငါးမိနစ်",
+                  "*… hsay.nga:-mee.nik*"
+                ],
+                [
+                  "ten to three",
+                  "သုံးနာရီ ထိုးဖို့ ဆယ်မိနစ်",
+                  "*… htoh:-hpoh. hsay-mee.nik*"
+                ],
+                [
+                  "exactly three o'clock",
+                  "သုံးနာရီတိတိ",
+                  "*thohⁿ:-na-yee-tee.dee.*"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ For **minutes to the hour**, Burmese uses ထိုးဖို့ (*htoh:-hpoh.*, \"to strike\") — literally \"ten minutes for three to strike\". In fast speech it's often shortened, and beginners can avoid it by giving the minutes past instead."
+          ]
+        },
+        {
+          "title": "⚠️ ခွဲ — the half hour points BACK",
+          "body": [
+            "English speakers are in luck here: Burmese works like \"half past\". But if you know German, Dutch, or another language where \"half three\" means 2:30, this trap can cost you an appointment."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Burmese",
+                "Say it",
+                "Meaning",
+                "In English"
+              ],
+              "rows": [
+                [
+                  "နှစ်နာရီခွဲ",
+                  "*hna.na-yee-hkwè:*",
+                  "**2:30**",
+                  "half past two"
+                ],
+                [
+                  "သုံးနာရီခွဲ",
+                  "*thohⁿ:-na-yee-hkwè:*",
+                  "**3:30**",
+                  "half past three"
+                ],
+                [
+                  "ဆယ့်တစ်နာရီခွဲ",
+                  "*hsay.tik-na-yee-hkwè:*",
+                  "**11:30**",
+                  "half past eleven"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "Burmese names the hour that has **already passed**, then adds \"half\": နှစ်နာရီခွဲ literally means \"two o'clock, half\". German *halb drei* and Indonesian *setengah tiga* name the hour **to come** — halfway to three.",
+            "The safe way to remember: **the number you hear is the hour that has passed.** If you hear သုံး, add thirty minutes to three o'clock. Exactly like English *half past three* — and like British \"half three\"."
+          ]
+        },
+        {
+          "title": "Morning, midday, evening, night — and where they go",
+          "body": [
+            "Burmese divides the day into four parts, and the part of the day always comes **before** the clock time — the opposite of English \"seven in the morning\"."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Burmese",
+                "Say it",
+                "Part of the day",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "မနက်",
+                  "*ma.nèk*",
+                  "morning until noon",
+                  "မနက် ခုနစ်နာရီ — 7 a.m."
+                ],
+                [
+                  "နေ့လယ်",
+                  "*nay.-lè*",
+                  "midday",
+                  "နေ့လယ် တစ်နာရီ — 1 p.m."
+                ],
+                [
+                  "ညနေ",
+                  "*nya.-nay*",
+                  "late afternoon, evening",
+                  "ညနေ ငါးနာရီ — 5 p.m."
+                ],
+                [
+                  "ည",
+                  "*nya.*",
+                  "night",
+                  "ည ရှစ်နာရီ — 8 p.m."
+                ],
+                [
+                  "သန်းခေါင်",
+                  "*thaⁿ:-gowⁿ*",
+                  "midnight",
+                  ""
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ We say \"seven in the morning\"; Burmese says မနက် ခုနစ်နာရီ — \"morning seven o'clock\". The pattern again: **the big unit first, the small one after**, just like the place expressions in unit 7."
+          ]
+        },
+        {
+          "title": "Days and making appointments",
+          "body": [
+            "Like the English days (Sunday, Monday, Saturday), the Burmese days are named after the sun, the moon, and the planets — here through Sanskrit astrology. နေ့ (*nay.*) at the end means \"day\"."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Day",
+                "Burmese",
+                "Say it"
+              ],
+              "rows": [
+                [
+                  "Monday",
+                  "တနင်္လာနေ့",
+                  "*ta.niⁿ-la-nay.*"
+                ],
+                [
+                  "Tuesday",
+                  "အင်္ဂါနေ့",
+                  "*iⁿ-ga-nay.*"
+                ],
+                [
+                  "Wednesday",
+                  "ဗုဒ္ဓဟူးနေ့",
+                  "*bohk-da.hoo:-nay.*"
+                ],
+                [
+                  "Thursday",
+                  "ကြာသပတေးနေ့",
+                  "*cha-tha.pa.day:-nay.*"
+                ],
+                [
+                  "Friday",
+                  "သောကြာနေ့",
+                  "*thaw-cha-nay.*"
+                ],
+                [
+                  "Saturday",
+                  "စနေနေ့",
+                  "*sa.nay-nay.*"
+                ],
+                [
+                  "Sunday",
+                  "တနင်္ဂနွေနေ့",
+                  "*ta.niⁿ-ga.nway-nay.*"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "To make an appointment, the most common pattern is **time — place — တွေ့မယ်**: သုံးနာရီ ဘူတာရှေ့မှာ တွေ့မယ် (see you at three in front of the station). Notice that time comes before place, and the verb stays at the end."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Time, days, and saying when",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These time expressions round out what you met in unit 8. They all go at the front of the sentence, and none of them changes the verb."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Burmese",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "အခု",
+              "*a.hkoo.*",
+              "now"
+            ],
+            [
+              "ခဏနေ",
+              "*hka.na.-nay*",
+              "in a moment"
+            ],
+            [
+              "မကြာခင်",
+              "*ma.cha-hkiⁿ*",
+              "soon"
+            ],
+            [
+              "ဒီအပတ်",
+              "*dee-a.pak*",
+              "this week"
+            ],
+            [
+              "နောက်အပတ်",
+              "*nowk-a.pak*",
+              "next week"
+            ],
+            [
+              "ပြီးခဲ့တဲ့အပတ်",
+              "*pyee:-hkè.-dè.-a.pak*",
+              "last week"
+            ],
+            [
+              "ဒီလ",
+              "*dee-la.*",
+              "this month"
+            ],
+            [
+              "နောက်နှစ်",
+              "*nowk-hnik*",
+              "next year"
+            ],
+            [
+              "အားတယ်",
+              "*a:-dè*",
+              "free, available"
+            ],
+            [
+              "မအားဘူး",
+              "*ma.a:-boo:*",
+              "busy, not free"
+            ],
+            [
+              "အစည်းအဝေး",
+              "*a.see:-a.way:*",
+              "meeting"
+            ],
+            [
+              "ချိန်းတယ်",
+              "*hchayⁿ:-dè*",
+              "make an appointment"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Myanmar's clock is thirty minutes off from its neighbors",
+          "items": [
+            "Myanmar's time zone is **UTC+6:30** — half an hour behind Thailand and an hour and a half behind Singapore. Foreigners rarely remember the half hour, and it often wrecks appointments made by phone.",
+            "So when you arrange a call with someone abroad, state the time zone clearly. Ten in the morning in Yangon is 10:30 in Bangkok and 11:30 in Singapore.",
+            "For official and religious matters, people in Myanmar still use their own **lunar calendar**; the Burmese year is about 638 years behind the Western one. The full-moon day of each month, လပြည့်နေ့ (*la.-pyè.-nay.*), is a religious holiday, and many offices close."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "my": "နာရီ",
+      "baca": "na-yee",
+      "en": "hour, o'clock; watch"
+    },
+    {
+      "my": "မိနစ်",
+      "baca": "mee.nik",
+      "en": "minute"
+    },
+    {
+      "my": "ခွဲ",
+      "baca": "hkwè:",
+      "en": "half past"
+    },
+    {
+      "my": "တိတိ",
+      "baca": "tee.dee.",
+      "en": "exactly, sharp"
+    },
+    {
+      "my": "မနက်",
+      "baca": "ma.nèk",
+      "en": "morning"
+    },
+    {
+      "my": "နေ့လယ်",
+      "baca": "nay.-lè",
+      "en": "midday"
+    },
+    {
+      "my": "ည",
+      "baca": "nya.",
+      "en": "night"
+    },
+    {
+      "my": "နေ့",
+      "baca": "nay.",
+      "en": "day"
+    },
+    {
+      "my": "အပတ်",
+      "baca": "a.pak",
+      "en": "week"
+    },
+    {
+      "my": "လ",
+      "baca": "la.",
+      "en": "month"
+    },
+    {
+      "my": "အားတယ်",
+      "baca": "a:-dè",
+      "en": "free, available"
+    },
+    {
+      "my": "အစည်းအဝေး",
+      "baca": "a.see:-a.way:",
+      "en": "meeting"
+    },
+    {
+      "my": "ပြီးတယ်",
+      "baca": "pyee:-dè",
+      "en": "to finish"
+    },
+    {
+      "my": "အတူတူ",
+      "baca": "a.too-doo",
+      "en": "together"
+    },
+    {
+      "my": "တွေ့တယ်",
+      "baca": "tway.-dè",
+      "en": "to meet"
+    },
+    {
+      "my": "ချိန်းတယ်",
+      "baca": "hchayⁿ:-dè",
+      "en": "to make an appointment"
+    },
+    {
+      "my": "ဘယ်လိုလဲ",
+      "baca": "bè-loh-lè:",
+      "en": "how about it?"
+    },
+    {
+      "my": "ရှုပ်တယ်",
+      "baca": "shohk-tè",
+      "en": "complicated, confusing"
+    },
+    {
+      "my": "လွယ်တယ်",
+      "baca": "lwè-dè",
+      "en": "easy"
+    },
+    {
+      "my": "ခက်တယ်",
+      "baca": "hkèk-tè",
+      "en": "difficult"
+    },
+    {
+      "my": "ပြောင်းပြန်",
+      "baca": "pyowⁿ:-byaⁿ",
+      "en": "reversed, the other way round"
+    },
+    {
+      "my": "သတိထားတယ်",
+      "baca": "tha.dee.-hta:-dè",
+      "en": "to be careful, to pay attention"
+    },
+    {
+      "my": "ပြီးမှ",
+      "baca": "pyee:-hma.",
+      "en": "after"
+    },
+    {
+      "my": "နောက်အပတ်",
+      "baca": "nowk-a.pak",
+      "en": "next week"
+    },
+    {
+      "my": "ခဏနေ",
+      "baca": "hka.na.-nay",
+      "en": "in a moment"
+    },
+    {
+      "my": "တနင်္လာနေ့",
+      "baca": "ta.niⁿ-la-nay.",
+      "en": "Monday"
+    },
+    {
+      "my": "သောကြာနေ့",
+      "baca": "thaw-cha-nay.",
+      "en": "Friday"
+    },
+    {
+      "my": "စနေနေ့",
+      "baca": "sa.nay-nay.",
+      "en": "Saturday"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the time in digits.",
+      "items": [
+        "သုံးနာရီခွဲ",
+        "ဆယ့်တစ်နာရီခွဲ",
+        "မနက် ခုနစ်နာရီ",
+        "ည ရှစ်နာရီခွဲ",
+        "ငါးနာရီ ဆယ်မိနစ်",
+        "နှစ်နာရီတိတိ"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with မနက်, နေ့လယ်, ညနေ, or ည.",
+      "items": [
+        "7 a.m.: ____ ခုနစ်နာရီ",
+        "1 p.m.: ____ တစ်နာရီ",
+        "5 p.m.: ____ ငါးနာရီ",
+        "9 p.m.: ____ ကိုးနာရီ"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "လဲ / ဘယ်နှစ်နာရီ / အခု",
+        "မယ် / တွေ့ / ဘူတာရှေ့မှာ / သုံးနာရီ",
+        "ဘူး / မ / အား / တစ်နာရီ",
+        "ရအောင် / စား / အတူတူ / နေ့လယ်စာ"
+      ]
+    },
+    {
+      "prompt": "Translate into Burmese.",
+      "items": [
+        "What time is it now?",
+        "Twenty past eleven.",
+        "I'm not free at one.",
+        "I have a meeting.",
+        "See you at three in front of the station.",
+        "It'll finish around half past two."
+      ]
+    }
+  ],
+  "answers": [
+    "3:30 — 11:30 — 7:00 a.m. — 8:30 p.m. — 5:10 — 2:00 sharp",
+    "မနက် — နေ့လယ် — ညနေ — ည",
+    "အခု ဘယ်နှစ်နာရီလဲ။ — သုံးနာရီ ဘူတာရှေ့မှာ တွေ့မယ်။ — တစ်နာရီ မအားဘူး။ — နေ့လယ်စာ အတူတူ စားရအောင်။",
+    "အခု ဘယ်နှစ်နာရီလဲ။ — ဆယ့်တစ်နာရီ နှစ်ဆယ်မိနစ်ပါ။ — တစ်နာရီ မအားဘူး။ — အစည်းအဝေး ရှိတယ်။ — သုံးနာရီ ဘူတာရှေ့မှာ တွေ့မယ်နော်။ — နှစ်နာရီခွဲလောက် ပြီးမယ်။"
+  ]
+}

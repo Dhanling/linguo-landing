@@ -1,0 +1,596 @@
+{
+  "title": "What time is it? What day is it?",
+  "title_target": "Хэдэн цаг болж байна? Ямар гараг вэ?",
+  "goal": "Tell the time, the day, and the date, and see why the Mongolian days of the week are seven heavenly bodies.",
+  "bekal": [
+    "tell and ask the time, including half past and minutes past",
+    "name days, dates, and months, and make an appointment",
+    "use the time suffix *-д / -т* to say \"at such-and-such o'clock\""
+  ],
+  "dialogs": [
+    {
+      "title": "Яриа — Уулзалт товлох",
+      "intro": "Sarnai and Budi are arranging a time to go to the museum together. They're both busy, so it takes some back-and-forth.",
+      "lines": [
+        {
+          "speaker": "Буди:",
+          "text": "[Сарнай|Sar-NAI] [аа|aa], [бямбад|BYAM-bad] [хэдэн|KHEH-den] [цагт|tsagt] [уулзах|UUL-dzakh] [вэ|veh]?",
+          "id": "Sarnai, what time shall we meet on Saturday?",
+          "literal": "Sarnai O, Saturday-on how-many hour-at meet Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Өглөө|ÖG-löö] [аравт|A-ravt] [болох|BO-lokh] [уу|uu]?",
+          "id": "Ten in the morning, okay?",
+          "literal": "morning ten-at may Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Арав|A-rav] [эрт|ert] [байна|BAI-n]. [Арван|A-rvan] [нэгэн|NEH-gen] [цагт|tsagt] [болох|BO-lokh] [уу|uu]?",
+          "id": "Ten is too early. How about eleven?",
+          "literal": "ten early is. ten one hour-at may Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Болно|BOL-no]. [Музей|Mu-ZEY] [хэдэн|KHEH-den] [цагт|tsagt] [нээдэг|NĒ-deg] [вэ|veh]?",
+          "id": "Fine. What time does the museum open?",
+          "literal": "may. museum how-many hour-at open-usually Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Есөн|YEH-sön] [цагаас|tsa-GAAS] [зургаан|dzur-GAAN] [цаг|tsag] [хүртэл|KHÜR-tel].",
+          "id": "From nine to six.",
+          "literal": "nine hour-from six hour until."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Сайн|Sain] [байна|BAI-n]. [Хаана|KHAA-na] [уулзах|UUL-dzakh] [вэ|veh]?",
+          "id": "Great. Where shall we meet?",
+          "literal": "good is. where meet Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Талбай|TAL-bai] [дээр|dēr]. [Арван|A-rvan] [нэгэн|NEH-gen] [цаг|tsag] [хорин|KHO-rin] [минутад|mi-NU-tad] [очно|OCH-no].",
+          "id": "At the square. I'll get there at twenty past eleven.",
+          "literal": "square on. ten one hour twenty minute-at arrive."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Яагаад|YAA-gaad] [хорин|KHO-rin] [минутад|mi-NU-tad] [вэ|veh]? [Арван|A-rvan] [нэгт|negt] [гэж|gej] [ярьсан|YAR'-san] [шүү|shüü].",
+          "id": "Why twenty past? You said eleven!",
+          "literal": "why twenty minute-at Q? ten one-at so said you-know."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Уучлаарай|UUCH-laa-rai], [автобус|av-TO-bus] [удаан|u-DAAN] [явдаг|YAV-dag]. [Арван|A-rvan] [нэгт|negt] [очих|O-chikh] [гэж|gej] [хичээнэ|khi-CHĒ-neh].",
+          "id": "Sorry, the bus is slow. I'll try to make it by eleven.",
+          "literal": "sorry, bus slow go-usually. ten one-at arrive so try."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Зүгээр|DZÜ-gēr]. [Би|Bi] [ч|ch] [бас|bas] [заримдаа|DZA-rim-daa] [хоцордог|KHO-tsor-dog].",
+          "id": "No problem. I'm sometimes late too.",
+          "literal": "no-problem. I too also sometimes late-usually."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Хэдэн|KHEH-den] [цагт|tsagt] [буцах|BU-tsakh] [вэ|veh]? [Оройдоо|O-roi-dō] [ажилтай|A-jil-tai] [юу|yuu]?",
+          "id": "What time are you going back? Do you have work in the evening?",
+          "literal": "how-many hour-at return Q? evening-at-own work-with Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Гурван|GUR-van] [цаг|tsag] [хагаст|kha-GAST] [гэртээ|GER-tē] [харина|KHA-ri-na]. [Дөрөвт|DÖ-rövt] [хичээл|khi-CHĒL] [заана|DZAA-na].",
+          "id": "I'll go home at half past three. I teach at four.",
+          "literal": "three hour half-at home-to-own return. four-at lesson teach."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[За|Dza], [ойлголоо|OIL-go-lō]. [Тэгвэл|TEG-vel] [бямбад|BYAM-bad] [уулзая|UUL-dza-ya]!",
+          "id": "Okay, got it. See you on Saturday, then!",
+          "literal": "good, understood. then Saturday-on let's-meet!"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Тэгье|TEG-yeh]. [Хоцрохгүй|KHOTS-rokh-güi] [шүү|shüü]!",
+          "id": "Sounds good. Don't be late!",
+          "literal": "let's-so. late-not you-know!"
+        }
+      ],
+      "notes": [
+        "**Цаг means hour, time, and weather all at once.** *Хэдэн цаг вэ?* (what time is it), *цаг байхгүй* (there's no time), *цаг агаар* (weather). English \"time\" and \"o'clock\" grew from similar roots, so this overlap shouldn't feel strange.",
+        "⚠️ **The suffix -д / -т on a time means \"at.\"** *Арван нэгэн цаг**т*** = at eleven o'clock. It's exactly the same suffix as the place suffix in unit 4: Mongolian treats time as a place, much like English says \"**at** eleven\" and \"**at** home.\"",
+        "**Цагаас … хүртэл = from … until.** *Есөн цагаас зургаан цаг хүртэл*. The suffix *-аас* means \"from\" and works for both time and place, while *хүртэл* is a separate word that stands **after** the time.",
+        "**Гэж marks quotes and intentions.** *Арван нэгт **гэж** ярьсан* = \"you said eleven\"; *очих **гэж** хичээнэ* = \"I'll try so as to arrive.\" This word is used constantly and has no single English equivalent: it's a spoken quotation mark.",
+        "**Хагас = half, and Mongolian counts forward, not back.** *Гурван цаг хагас* = \"three hours and a half\" = 3:30. ⚠️ This differs from German and Dutch, which say \"half four\" for 3:30, but **matches English** \"half past three\": you count forward from the hour that has passed."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "The pattern: **number with -н + цаг**, then the minutes if needed. To say \"at such-and-such o'clock,\" add the suffix *-т* at the end."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Монгол",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "What time is it?",
+                "*Хэдэн цаг болж байна?*",
+                "*KHEH-den tsag bolj BAI-n*"
+              ],
+              [
+                "One o'clock",
+                "*Нэг цаг*",
+                "*neg tsag*"
+              ],
+              [
+                "Three o'clock",
+                "*Гурван цаг*",
+                "*GUR-van tsag*"
+              ],
+              [
+                "3:30",
+                "*Гурван цаг хагас*",
+                "*GUR-van tsag kha-GAS*"
+              ],
+              [
+                "3:15",
+                "*Гурван цаг арван таван минут*",
+                "*GUR-van tsag A-rvan TA-van mi-NUT*"
+              ],
+              [
+                "3:45",
+                "*Дөрвөн цаг арван таван минут дутуу*",
+                "*DÖR-vön tsag … du-TUU*"
+              ],
+              [
+                "At three o'clock",
+                "*Гурван цагт*",
+                "*GUR-van tsagt*"
+              ],
+              [
+                "At half past three",
+                "*Гурван цаг хагаст*",
+                "*GUR-van tsag kha-GAST*"
+              ],
+              [
+                "From 9 to 6",
+                "*Есөн цагаас зургаан цаг хүртэл*",
+                "*YEH-sön tsa-GAAS dzur-GAAN tsag KHÜR-tel*"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *Дутуу* means \"short of\" and is used for minutes before the next hour, just like \"to\" in \"quarter to four.\" In everyday speech people more often just say the minutes: *гурван цаг дөчин таван минут*.",
+            "**Mongolian doesn't use a twelve-hour system with \"a.m./p.m.\" like English.** To be clear, add *өглөөний* (morning), *өдрийн* (daytime), *оройн* (evening), *шөнийн* (night, small hours) **before** the time: *оройн долоон цагт* = at seven in the evening."
+          ]
+        },
+        {
+          "title": "Days, months, and dates",
+          "body": [
+            "The Mongolian days of the week come from Tibetan and name seven heavenly bodies, the same pattern as the days in Japanese and Sanskrit (and in English Sunday, Monday, Saturday). Memorizing them as one series is much easier than as seven separate words."
+          ],
+          "table": {
+            "head": [
+              "Day",
+              "Say it",
+              "Heavenly body",
+              "Number (official)"
+            ],
+            "rows": [
+              [
+                "*Даваа*",
+                "*da-VAA*",
+                "Moon",
+                "*нэг дэх өдөр*"
+              ],
+              [
+                "*Мягмар*",
+                "*MYAG-mar*",
+                "Mars",
+                "*хоёр дахь өдөр*"
+              ],
+              [
+                "*Лхагва*",
+                "*LKHAG-va*",
+                "Mercury",
+                "*гурав дахь өдөр*"
+              ],
+              [
+                "*Пүрэв*",
+                "*PÜ-rev*",
+                "Jupiter",
+                "*дөрөв дэх өдөр*"
+              ],
+              [
+                "*Баасан*",
+                "*BAA-san*",
+                "Venus",
+                "*тав дахь өдөр*"
+              ],
+              [
+                "*Бямба*",
+                "*BYAM-ba*",
+                "Saturn",
+                "*зургаа дахь өдөр*"
+              ],
+              [
+                "*Ням*",
+                "*nyam*",
+                "Sun",
+                "*долоо дахь өдөр*"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ The last column is the official form used in documents and schedules: \"day one,\" \"day two,\" and so on. In conversation people use the heavenly bodies. Both are common, so learn to recognize both.",
+            "**Months are named by number only: *нэгдүгээр сар* (first month = January), *хоёрдугаар сар* (February), up to *арван хоёрдугаар сар* (December).** That saves twelve words to memorize, and the system is the same as in Mandarin and Japanese. Dates: *арван тавны өдөр* or just *арван тавны*, \"the fifteenth.\""
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Common time words",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English",
+            "Монгол",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*цаг*",
+              "*tsag*",
+              "hour, time",
+              "*минут*",
+              "*mi-NUT*",
+              "minute"
+            ],
+            [
+              "*өдөр*",
+              "*Ö-dör*",
+              "day",
+              "*хоног*",
+              "*kho-NOG*",
+              "day and night (24 hours)"
+            ],
+            [
+              "*долоо хоног*",
+              "*do-LŌ kho-NOG*",
+              "week",
+              "*сар*",
+              "*sar*",
+              "month"
+            ],
+            [
+              "*жил*",
+              "*jil*",
+              "year",
+              "*он*",
+              "*on*",
+              "year (calendar)"
+            ],
+            [
+              "*эрт*",
+              "*ert*",
+              "early, early morning",
+              "*оройтсон*",
+              "*o-ROIT-son*",
+              "late"
+            ],
+            [
+              "*хурдан*",
+              "*KHUR-dan*",
+              "fast",
+              "*удаан*",
+              "*u-DAAN*",
+              "slow, long"
+            ],
+            [
+              "*одоо*",
+              "*o-DŌ*",
+              "now",
+              "*дараа*",
+              "*da-RAA*",
+              "later"
+            ],
+            [
+              "*эхэлдэг*",
+              "*EH-khel-deg*",
+              "to start",
+              "*дуусдаг*",
+              "*DUUS-dag*",
+              "to finish"
+            ],
+            [
+              "*нээдэг*",
+              "*NĒ-deg*",
+              "to open",
+              "*хаадаг*",
+              "*KHAA-dag*",
+              "to close"
+            ],
+            [
+              "*хоцрох*",
+              "*KHOTS-rokh*",
+              "to be late",
+              "*амрах*",
+              "*AM-rakh*",
+              "rest, day off"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Making an appointment",
+          "items": [
+            "*Хэзээ уулзах вэ?* — When shall we meet?",
+            "*Бямбад уулзая.* — Let's meet on Saturday.",
+            "*Хэдэн цагт вэ?* — What time?",
+            "*Арван нэгэн цагт.* — At eleven.",
+            "*Чөлөөтэй юу?* — Are you free?",
+            "*Уучлаарай, тэр өдөр завгүй байна.* — Sorry, I'm busy that day."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Days in sentences",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Өнөөдөр ямар гараг вэ?*",
+              "What day is it today?"
+            ],
+            [
+              "*Өнөөдөр Лхагва гараг.*",
+              "Today is Wednesday."
+            ],
+            [
+              "*Бямбад амардаг.*",
+              "I'm off on Saturday."
+            ],
+            [
+              "*Ням гарагт ажилладаггүй.*",
+              "No work on Sunday."
+            ],
+            [
+              "*Даваагаас Баасан хүртэл ажилладаг.*",
+              "Work from Monday to Friday."
+            ],
+            [
+              "*Ирэх долоо хоногт уулзая.*",
+              "See you next week."
+            ],
+            [
+              "*Өнгөрсөн сард Улаанбаатарт байсан.*",
+              "Last month I was in Ulaanbaatar."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Notice *ирэх* (coming) and *өнгөрсөн* (past) in the last two rows. Both are verb forms used as adjectives: *ирэх долоо хоног* literally means \"the coming week,\" *өнгөрсөн сар* is \"the month that passed.\" English does much the same with \"the coming week\" and \"the past month,\" so the idea is already familiar."
+        },
+        {
+          "type": "p",
+          "text": "A practical note on time in Mongolia: **office hours are usually 9:00–18:00 with a lunch break from 13:00 to 14:00, and that lunch break really is closed**: banks, post offices, and government offices lock their doors. If you have official business, ask *цайны цаг хэдэд вэ?* (when is the lunch break?) before you set out."
+        }
+      ]
+    },
+    {
+      "title": "How long?",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Answer",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Хэдэн цаг болох вэ?*",
+              "*Хоёр цаг болно.*",
+              "How long? — Two hours."
+            ],
+            [
+              "*Хэдэн хоног вэ?*",
+              "*Гурван хоног.*",
+              "How many days? — Three days."
+            ],
+            [
+              "*Хэр удаан вэ?*",
+              "*Их удаан биш.*",
+              "How long? — Not long."
+            ],
+            [
+              "*Хэзээнээс вэ?*",
+              "*Өнгөрсөн жилээс.*",
+              "Since when? — Since last year."
+            ],
+            [
+              "*Хэзээ хүртэл вэ?*",
+              "*Ирэх сар хүртэл.*",
+              "Until when? — Until next month."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Distinguish **цаг** (an hour) from **хоног** (a 24-hour day) and **өдөр** (a day as a day). *Гурван өдөр* and *гурван хоног* both mean \"three days,\" but *хоног* stresses the length of time passing, while *өдөр* stresses the days themselves. For length of stay, visas, and trip length, Mongolians almost always use *хоног*."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "mn": "цаг",
+      "baca": "tsag",
+      "en": "hour, time; weather"
+    },
+    {
+      "mn": "минут",
+      "baca": "mi-NUT",
+      "en": "minute"
+    },
+    {
+      "mn": "хагас",
+      "baca": "kha-GAS",
+      "en": "half"
+    },
+    {
+      "mn": "гараг",
+      "baca": "GA-rag",
+      "en": "day (of the week)"
+    },
+    {
+      "mn": "Даваа",
+      "baca": "da-VAA",
+      "en": "Monday"
+    },
+    {
+      "mn": "Мягмар",
+      "baca": "MYAG-mar",
+      "en": "Tuesday"
+    },
+    {
+      "mn": "Лхагва",
+      "baca": "LKHAG-va",
+      "en": "Wednesday"
+    },
+    {
+      "mn": "Пүрэв",
+      "baca": "PÜ-rev",
+      "en": "Thursday"
+    },
+    {
+      "mn": "Баасан",
+      "baca": "BAA-san",
+      "en": "Friday"
+    },
+    {
+      "mn": "Бямба",
+      "baca": "BYAM-ba",
+      "en": "Saturday"
+    },
+    {
+      "mn": "Ням",
+      "baca": "nyam",
+      "en": "Sunday"
+    },
+    {
+      "mn": "хэзээ",
+      "baca": "kheh-DZĒ",
+      "en": "when"
+    },
+    {
+      "mn": "хүртэл",
+      "baca": "KHÜR-tel",
+      "en": "until"
+    },
+    {
+      "mn": "эрт",
+      "baca": "ert",
+      "en": "early, early morning"
+    },
+    {
+      "mn": "хоцрох",
+      "baca": "KHOTS-rokh",
+      "en": "late"
+    },
+    {
+      "mn": "амрах",
+      "baca": "AM-rakh",
+      "en": "rest, day off"
+    },
+    {
+      "mn": "чөлөөтэй",
+      "baca": "CHÖ-löö-tei",
+      "en": "free (not busy)"
+    },
+    {
+      "mn": "завгүй",
+      "baca": "DZAV-güi",
+      "en": "busy"
+    },
+    {
+      "mn": "гэж",
+      "baca": "gej",
+      "en": "⚠️ quotation marker; so that"
+    },
+    {
+      "mn": "тэгвэл",
+      "baca": "TEG-vel",
+      "en": "in that case, then"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mongolian.",
+      "items": [
+        "What time is it now?",
+        "It's three o'clock now.",
+        "We'll meet at eleven.",
+        "What day is it today?",
+        "I'm off on Saturday.",
+        "From nine to six."
+      ]
+    },
+    {
+      "prompt": "Fill in the time suffix -д or -т.",
+      "items": [
+        "Гурван цаг____ уулзая.",
+        "Бямба____ амардаг.",
+        "Долоон цаг____ боссон.",
+        "Ирэх сар____ явна.",
+        "Арван нэгэн цаг____ ирнэ.",
+        "Ням гараг____ ажилладаггүй."
+      ]
+    },
+    {
+      "prompt": "Write the time in Mongolian.",
+      "items": [
+        "2:00 ____",
+        "5:30 ____",
+        "7:00 ____",
+        "9:15 ____",
+        "12:00 ____",
+        "10:30 ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "байна / болж / цаг / хэдэн",
+        "уулзая / цагт / арван / нэгэн",
+        "гараг / өнөөдөр / ямар / вэ",
+        "амардаг / бямбад / би",
+        "хүртэл / цагаас / есөн / цаг / зургаан"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Хэдэн цаг болж байна? — Одоо гурван цаг. — Арван нэгэн цагт уулзая. — Өнөөдөр ямар гараг вэ? — Бямбад амардаг. — Есөн цагаас зургаан цаг хүртэл.",
+    "1": "т — д — т — д — т — т",
+    "2": "хоёр цаг — таван цаг хагас — долоон цаг — есөн цаг арван таван минут — арван хоёр цаг — арван цаг хагас",
+    "3": "Хэдэн цаг болж байна? — Арван нэгэн цагт уулзая. — Өнөөдөр ямар гараг вэ? — Би бямбад амардаг. — Есөн цагаас зургаан цаг хүртэл."
+  }
+}

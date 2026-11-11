@@ -1,0 +1,629 @@
+{
+  "title": "Directions and places",
+  "title_target": "ផ្លូវ និង ទីកន្លែង — phlow neng tii-kan-laeng",
+  "goal": "Ask for directions and say where things are — and realize that Khmer \"prepositions\" are really nouns, so \"on the table\" is literally \"at the surface of the table\".",
+  "bekal": [
+    "ask for directions with នៅឯណា? and ទៅ … យ៉ាងម៉េច?",
+    "use ឆ្វេង, ស្ដាំ, ត្រង់ to give directions",
+    "say where things are with លើ, ក្រោម, ក្នុង, ក្រៅ, ខាង",
+    "haggle with a tuk-tuk driver and name your destination",
+    "give distances in minutes, not kilometers"
+  ],
+  "dialogs": [
+    {
+      "title": "កិច្ចសន្ទនា — Looking for the post office",
+      "intro": "Ani is lost among Phnom Penh's numbered streets. Notice that almost every place expression in this dialogue starts with ខាង (*khaang*) — a word meaning \"side\", and the backbone of the whole Khmer system of directions.",
+      "lines": [
+        {
+          "speaker": "អានី:",
+          "text": "[សូមទោស|soum-touh] [ពូ|puu]។ [ប្រៃសណីយ៍|prey-sa-nii] [នៅ|neuw] [ឯណា|'ae-naa] [ចាស|chaah]?",
+          "id": "Excuse me, uncle. Where is the post office?",
+          "literal": "sorry — uncle. post — be — where — yes(f)?"
+        },
+        {
+          "speaker": "ពូ:",
+          "text": "[ប្រៃសណីយ៍|prey-sa-nii] [ឬ|reu]? [នៅ|neuw] [ជិត|chit] [ទន្លេ|ton-lé] [បាទ|baat]។",
+          "id": "The post office? Near the river.",
+          "literal": "post — (question)? be — near — river — yes(m)."
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[ទៅ|teuw] [ទីនោះ|tii-nuh] [យ៉ាងម៉េច|yaang-méch] [ចាស|chaah]?",
+          "id": "How do I get there?",
+          "literal": "go — there — how — yes(f)?"
+        },
+        {
+          "speaker": "ពូ:",
+          "text": "[ដើរ|daeu] [ត្រង់|traang] [ទៅ|teuw] [មុខ|muk] [បន្តិច|ban-tech], [រួច|ruèch] [បត់|bat] [ស្ដាំ|sdam] [បាទ|baat]។",
+          "id": "Go straight ahead a little, then turn right.",
+          "literal": "walk — straight — go — face — a-little, then — turn — right — yes(m)."
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[បត់|bat] [ស្ដាំ|sdam] [នៅ|neuw] [ភ្លើង|phleung] [ស្តុប|sdop] [មែនទេ|mèn-té]?",
+          "id": "Turn right at the traffic light, right?",
+          "literal": "turn — right — at — light — stop — right-(question)?"
+        },
+        {
+          "speaker": "ពូ:",
+          "text": "[បាទ|baat]។ [រួច|ruèch] [ដើរ|daeu] [ត្រង់|traang] [ទៀត|tiet]។ [ប្រៃសណីយ៍|prey-sa-nii] [នៅ|neuw] [ខាងឆ្វេង|khaang-chhwéng]។",
+          "id": "Yes. Then go straight again. The post office is on the left.",
+          "literal": "yes(m). then — walk — straight — again. post — be — side-left."
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[ឆ្ងាយ|chhngaay] [ទេ|té] [ចាស|chaah]?",
+          "id": "Is it far?",
+          "literal": "far — (question) — yes(f)?"
+        },
+        {
+          "speaker": "ពូ:",
+          "text": "[អត់ទេ|'at-té]។ [ដប់|dop] [នាទី|nie-tii] [ដោយ|daoy] [ថ្មើរជើង|thmaeu-cheung] [បាទ|baat]។",
+          "id": "No. Ten minutes on foot.",
+          "literal": "no. ten — minute — by — foot-walking — yes(m)."
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[អរគុណ|'aa-kun] [ច្រើន|chraeun] [ចាស|chaah]! [ចុះ|choh] [ធនាគារ|thu-nie-kiè] [វិញ|weñ]?",
+          "id": "Thank you very much! And the bank?",
+          "literal": "thank-you — much — yes(f)! and-then — bank — in-return?"
+        },
+        {
+          "speaker": "ពូ:",
+          "text": "[ធនាគារ|thu-nie-kiè] [នៅ|neuw] [ខាងក្រោយ|khaang-kraoy] [ផ្សារ|phsaa] [បាទ|baat]។ [ជាប់|choap] [នឹង|neng] [ហាង|haang] [កាហ្វេ|kaa-fé]។",
+          "id": "The bank is behind the market. Right next to a coffee shop.",
+          "literal": "bank — be — side-back — market — yes(m). stuck — with — shop — coffee."
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[យល់|yual] [ហើយ|haeuy] [ចាស|chaah]។ [អរគុណ|'aa-kun]!",
+          "id": "Got it. Thank you!",
+          "literal": "understand — already — yes(f). thank-you!"
+        },
+        {
+          "speaker": "ពូ:",
+          "text": "[អត់អីទេ|'at-'ey-té] [បាទ|baat]។ [ដំណើរ|dam-naeu] [ល្អ|l'aa]!",
+          "id": "You're welcome. Have a good trip!",
+          "literal": "not-have-anything-no — yes(m). journey — good!"
+        }
+      ],
+      "grammars": [
+        {
+          "title": "⚠️ Khmer \"prepositions\" are really nouns",
+          "body": [
+            "Khmer has almost no true prepositions. What it uses instead are **nouns that name a part**: លើ means \"top surface\", ក្រោម means \"underside\", ក្នុង means \"inside\". So \"on the table\" is literally \"at the surface of the table\"."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Khmer",
+                "Say it",
+                "Literally",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "លើតុ",
+                  "*laeu tok*",
+                  "surface table",
+                  "on the table"
+                ],
+                [
+                  "ក្រោមតុ",
+                  "*kraom tok*",
+                  "underside table",
+                  "under the table"
+                ],
+                [
+                  "ក្នុងផ្ទះ",
+                  "*knong phteah*",
+                  "inside house",
+                  "in the house"
+                ],
+                [
+                  "ក្រៅផ្ទះ",
+                  "*kraw phteah*",
+                  "outside house",
+                  "outside the house"
+                ],
+                [
+                  "មុខផ្ទះ",
+                  "*muk phteah*",
+                  "face house",
+                  "in front of the house"
+                ],
+                [
+                  "ក្រោយផ្ទះ",
+                  "*kraoy phteah*",
+                  "back house",
+                  "behind the house"
+                ],
+                [
+                  "ចន្លោះ … និង …",
+                  "*chan-loh … neng …*",
+                  "gap A and B",
+                  "between A and B"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "This is actually good news: you don't have to memorize a list of unrelated prepositions, just the names of the parts of things. English does something similar with \"in front of\", \"on top of\", \"at the back of\" — Khmer simply drops the \"of\".",
+            "⚠️ And remember unit 2: នៅ can come before any of them when you want to say \"is at\" — ​សៀវភៅនៅលើតុ (\"the book is on the table\"). Without នៅ, សៀវភៅលើតុ means \"the book on the table\", a phrase, not a sentence."
+          ]
+        },
+        {
+          "title": "ខាង — the word that makes every direction",
+          "body": [
+            "ខាង (*khaang*) means \"side\". Put in front of a direction word, it turns it into a complete place expression. One pattern, a dozen words."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Khmer",
+                "Say it",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "ខាងឆ្វេង",
+                  "*khaang-chhwéng*",
+                  "on the left"
+                ],
+                [
+                  "ខាងស្ដាំ",
+                  "*khaang-sdam*",
+                  "on the right"
+                ],
+                [
+                  "ខាងមុខ",
+                  "*khaang-muk*",
+                  "in front"
+                ],
+                [
+                  "ខាងក្រោយ",
+                  "*khaang-kraoy*",
+                  "behind"
+                ],
+                [
+                  "ខាងលើ",
+                  "*khaang-laeu*",
+                  "above, upstairs"
+                ],
+                [
+                  "ខាងក្រោម",
+                  "*khaang-kraom*",
+                  "below, downstairs"
+                ],
+                [
+                  "ខាងជើង",
+                  "*khaang-cheung*",
+                  "north ⚠️ literally \"foot side\""
+                ],
+                [
+                  "ខាងត្បូង",
+                  "*khaang-tbong*",
+                  "south"
+                ],
+                [
+                  "ខាងកើត",
+                  "*khaang-kaeut*",
+                  "east ⚠️ literally \"rising side\""
+                ],
+                [
+                  "ខាងលិច",
+                  "*khaang-lich*",
+                  "west ⚠️ literally \"sinking side\""
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Look at **east and west**: ខាងកើត from កើត (to rise) and ខាងលិច from លិច (to sink) — the side where the sun rises and the side where it sets. English \"orient\" and \"occident\" come from exactly the same idea (Latin \"rising\" and \"falling\"). Once you see it, you'll never mix them up again."
+          ]
+        },
+        {
+          "title": "Giving and asking for directions",
+          "body": [
+            "These six verbs make up almost every direction you will hear and give."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Khmer",
+                "Say it",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "ដើរ",
+                  "*daeu*",
+                  "to walk, to go"
+                ],
+                [
+                  "បត់",
+                  "*bat*",
+                  "to turn"
+                ],
+                [
+                  "ត្រង់",
+                  "*traang*",
+                  "straight"
+                ],
+                [
+                  "ឆ្លង",
+                  "*chhlaang*",
+                  "to cross"
+                ],
+                [
+                  "ឈប់",
+                  "*chhup*",
+                  "to stop"
+                ],
+                [
+                  "ដល់",
+                  "*dal*",
+                  "to arrive at, to reach"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Key sentence",
+                "Say it",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "… នៅឯណា?",
+                  "*… neuw 'ae-naa?*",
+                  "where is …?"
+                ],
+                [
+                  "ទៅ … យ៉ាងម៉េច?",
+                  "*teuw … yaang-méch?*",
+                  "how do I get to …?"
+                ],
+                [
+                  "ឆ្ងាយទេ?",
+                  "*chhngaay té?*",
+                  "is it far?"
+                ],
+                [
+                  "ប៉ុន្មាននាទី?",
+                  "*pon-maan nie-tii?*",
+                  "how many minutes?"
+                ],
+                [
+                  "ខ្ញុំវង្វេងផ្លូវ",
+                  "*khnyom wong-wéng phlow*",
+                  "I'm lost"
+                ],
+                [
+                  "ឈប់ទីនេះ",
+                  "*chhup tii-nih*",
+                  "stop here"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **Distance in Cambodia is measured in time, not kilometers.** The question ប៉ុន្មានគីឡូម៉ែត្រ? (\"how many kilometers?\") often gets a useless guess. The question ប៉ុន្មាននាទី? always gets an answer you can use."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Taking a tuk-tuk without misunderstandings",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tuk-tuks are the most common way to get around Cambodian cities. The rules are simple: **agree on the price before you get in**, name your destination clearly, and have small change ready in riel."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Khmer",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "How much to the market?",
+              "ទៅផ្សារប៉ុន្មាន?",
+              "*teuw phsaa pon-maan?*"
+            ],
+            [
+              "That's expensive — three thousand, OK?",
+              "ថ្លៃ! បីពាន់បានទេ?",
+              "*thlay! bey poan baan té?*"
+            ],
+            [
+              "Slowly, please.",
+              "សូមបើកយឺតៗ",
+              "*soum baeuk yeut-yeut*"
+            ],
+            [
+              "Stop here.",
+              "ឈប់ទីនេះ",
+              "*chhup tii-nih*"
+            ],
+            [
+              "Wait a moment, please.",
+              "រង់ចាំបន្តិចផង",
+              "*roang-cham ban-tech phaang*"
+            ],
+            [
+              "I'm lost.",
+              "ខ្ញុំវង្វេងផ្លូវ",
+              "*khnyom wong-wéng phlow*"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Places people often ask for"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Khmer",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "ប្រៃសណីយ៍",
+              "*prey-sa-nii*",
+              "post office"
+            ],
+            [
+              "ធនាគារ",
+              "*thu-nie-kiè*",
+              "bank"
+            ],
+            [
+              "មន្ទីរពេទ្យ",
+              "*mon-tii-pèt*",
+              "hospital"
+            ],
+            [
+              "ប៉ុស្តិ៍ប៉ូលិស",
+              "*poh polih*",
+              "police station"
+            ],
+            [
+              "ស្ថានទូត",
+              "*s-thaan-tuut*",
+              "embassy"
+            ],
+            [
+              "វត្ត",
+              "*woat*",
+              "Buddhist temple, wat"
+            ],
+            [
+              "ព្រះវិហារ",
+              "*preah wi-hiè*",
+              "mosque; large place of worship"
+            ],
+            [
+              "បង្គន់",
+              "*bang-kun*",
+              "toilet"
+            ],
+            [
+              "ស្ថានីយ៍រថភ្លើង",
+              "*s-thaa-nii rot-phleung*",
+              "train station"
+            ],
+            [
+              "ព្រលានយន្តហោះ",
+              "*pra-lien yun-hah*",
+              "airport"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Why Phnom Penh's streets have numbers",
+          "items": [
+            "**Major odd-numbered streets run north–south, even-numbered ones east–west.** Once you know this you can hardly get lost: if the street numbers go up, you are walking in one fixed direction.",
+            "**Cambodians mention landmarks more often than street names.** \"Behind the market\", \"across from the wat\", \"next to the coffee shop\". Learning to name landmarks is far more useful than memorizing street names.",
+            "**The river is the biggest landmark.** ទន្លេ (*ton-lé*) means river, and in Phnom Penh it always means the Tonlé Sap riverside. Any tuk-tuk driver will understand it."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "km": "ផ្លូវ",
+      "baca": "phlow",
+      "en": "road, street"
+    },
+    {
+      "km": "ឆ្វេង",
+      "baca": "chhwéng",
+      "en": "left"
+    },
+    {
+      "km": "ស្ដាំ",
+      "baca": "sdam",
+      "en": "right"
+    },
+    {
+      "km": "ត្រង់",
+      "baca": "traang",
+      "en": "straight"
+    },
+    {
+      "km": "បត់",
+      "baca": "bat",
+      "en": "to turn"
+    },
+    {
+      "km": "ដើរ",
+      "baca": "daeu",
+      "en": "to walk, to go"
+    },
+    {
+      "km": "ឈប់",
+      "baca": "chhup",
+      "en": "to stop"
+    },
+    {
+      "km": "ដល់",
+      "baca": "dal",
+      "en": "to arrive at"
+    },
+    {
+      "km": "ខាង",
+      "baca": "khaang",
+      "en": "side"
+    },
+    {
+      "km": "លើ",
+      "baca": "laeu",
+      "en": "top, on"
+    },
+    {
+      "km": "ក្រោម",
+      "baca": "kraom",
+      "en": "under, below"
+    },
+    {
+      "km": "ក្នុង",
+      "baca": "knong",
+      "en": "inside, in"
+    },
+    {
+      "km": "ក្រៅ",
+      "baca": "kraw",
+      "en": "outside"
+    },
+    {
+      "km": "មុខ",
+      "baca": "muk",
+      "en": "face, front"
+    },
+    {
+      "km": "ក្រោយ",
+      "baca": "kraoy",
+      "en": "back, behind"
+    },
+    {
+      "km": "ចន្លោះ",
+      "baca": "chan-loh",
+      "en": "between"
+    },
+    {
+      "km": "ជាប់នឹង",
+      "baca": "choap neng",
+      "en": "right next to"
+    },
+    {
+      "km": "ទន្លេ",
+      "baca": "ton-lé",
+      "en": "river"
+    },
+    {
+      "km": "ភ្លើងស្តុប",
+      "baca": "phleung sdop",
+      "en": "traffic light"
+    },
+    {
+      "km": "ថ្មើរជើង",
+      "baca": "thmaeu-cheung",
+      "en": "on foot"
+    },
+    {
+      "km": "យ៉ាងម៉េច",
+      "baca": "yaang-méch",
+      "en": "how"
+    },
+    {
+      "km": "រួច",
+      "baca": "ruèch",
+      "en": "then, next"
+    },
+    {
+      "km": "ទៀត",
+      "baca": "tiet",
+      "en": "again, more"
+    },
+    {
+      "km": "ប្រៃសណីយ៍",
+      "baca": "prey-sa-nii",
+      "en": "post office"
+    },
+    {
+      "km": "ធនាគារ",
+      "baca": "thu-nie-kiè",
+      "en": "bank"
+    },
+    {
+      "km": "ហាង",
+      "baca": "haang",
+      "en": "shop, store"
+    },
+    {
+      "km": "វង្វេងផ្លូវ",
+      "baca": "wong-wéng phlow",
+      "en": "to get lost"
+    },
+    {
+      "km": "ដំណើរល្អ",
+      "baca": "dam-naeu l'aa",
+      "en": "have a good trip"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with លើ, ក្រោម, ក្នុង, or ក្រៅ.",
+      "items": [
+        "សៀវភៅនៅ____តុ។",
+        "ឆ្កែនៅ____តុ។",
+        "គាត់នៅ____ផ្ទះ។",
+        "ម៉ូតូនៅ____ផ្ទះ។"
+      ]
+    },
+    {
+      "prompt": "Translate the directions into English.",
+      "items": [
+        "ដើរត្រង់ទៅមុខ។",
+        "បត់ស្ដាំនៅភ្លើងស្តុប។",
+        "ធនាគារនៅខាងក្រោយផ្សារ។",
+        "ដប់នាទីដោយថ្មើរជើង។"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ឯណា / នៅ / ប្រៃសណីយ៍",
+        "យ៉ាងម៉េច / ទីនោះ / ទៅ",
+        "ខាងឆ្វេង / នៅ / ធនាគារ",
+        "ទីនេះ / ឈប់"
+      ]
+    },
+    {
+      "prompt": "Translate into Khmer.",
+      "items": [
+        "Where is the post office?",
+        "Go straight ahead.",
+        "Turn left at the traffic light.",
+        "Is it far?",
+        "Ten minutes on foot.",
+        "Stop here."
+      ]
+    }
+  ],
+  "answers": [
+    "លើ — ក្រោម — ក្នុង — ក្រៅ",
+    "Go straight ahead. — Turn right at the traffic light. — The bank is behind the market. — Ten minutes on foot.",
+    "ប្រៃសណីយ៍នៅឯណា? — ទៅទីនោះយ៉ាងម៉េច? — ធនាគារនៅខាងឆ្វេង។ — ឈប់ទីនេះ។",
+    "ប្រៃសណីយ៍នៅឯណា? — ដើរត្រង់ទៅមុខ។ — បត់ឆ្វេងនៅភ្លើងស្តុប។ — ឆ្ងាយទេ? — ដប់នាទីដោយថ្មើរជើង។ — ឈប់ទីនេះ។"
+  ]
+}

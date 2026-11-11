@@ -1,0 +1,527 @@
+{
+  "title": "How do we get there?",
+  "title_target": "ავტობუსით თუ ტაქსით? — Avt'obusit tu t'aksit?",
+  "goal": "Use public transport in Georgia, buy tickets, stop a taxi, and use the -ით ending for every kind of transport at once.",
+  "bekal": [
+    "name means of transport with the -ით ending",
+    "ask which bus goes somewhere",
+    "buy a ticket and ask how long the trip takes",
+    "give directions to a taxi driver",
+    "read transport signs and announcements"
+  ],
+  "dialogs": [
+    {
+      "title": "დიალოგი — A day trip to Mtskheta",
+      "intro": "Ani and Nino are planning a day trip to Mtskheta, an old town north of Tbilisi. Notice that every means of transport takes the same ending — the one you learned in unit 5 for \"coffee with milk\".",
+      "lines": [
+        {
+          "speaker": "ანი:",
+          "text": "[მცხეთაში|Mtskhe-tash-i] [როგორ|ro-gor] [მივიდეთ|mi-vi-det]?",
+          "id": "How do we get to Mtskheta?",
+          "literal": "Mtskheta-in — how — let's-arrive?"
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[მარშრუტკით|Marsh-rut'-k'it] [ან|an] [ტაქსით|t'ak-sit]. [მარშრუტკა|Marsh-rut'-k'a] [უფრო|up-ro] [იაფია|i-a-pi-a].",
+          "id": "By marshrutka or by taxi. The marshrutka is cheaper.",
+          "literal": "marshrutka-by — or — taxi-by. marshrutka — more — cheap-is."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[რამდენი|Ram-de-ni] [ღირს|ghirs] [მარშრუტკა|marsh-rut'-k'a]?",
+          "id": "How much is the marshrutka?",
+          "literal": "how-much — costs — marshrutka?"
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[სამი|Sa-mi] [ლარი|la-ri]. [ტაქსი|T'ak-si] [ორმოცი|or-mo-tsi] [ლარი|la-ri] [იქნება|ik-ne-ba].",
+          "id": "Three lari. A taxi would be about forty lari.",
+          "literal": "three — lari. taxi — forty — lari — will-be."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[მარშრუტკით|Marsh-rut'-k'it] [წავიდეთ|ts'a-vi-det]. [საიდან|Sa-i-dan] [გადის|ga-dis]?",
+          "id": "Let's take the marshrutka. Where does it leave from?",
+          "literal": "marshrutka-by — let's-go. from-where — departs?"
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[დიდუბის|Di-du-bis] [სადგურიდან|sad-gu-ri-dan]. [მეტროთი|Met'-ro-ti] [მივალთ|mi-valt] [იქამდე|i-kam-de].",
+          "id": "From Didube station. We'll get there by metro.",
+          "literal": "Didube-of — station-from. metro-by — we-will-arrive — there-to."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[რამდენი|Ram-de-ni] [ხანი|kha-ni] [სჭირდება|sch'ir-de-ba]?",
+          "id": "How long does the trip take?",
+          "literal": "how-much — time — is-needed?"
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[ნახევარი|Na-khe-va-ri] [საათი|sa-a-ti], [თუ|tu] [საცობი|sa-tso-bi] [არ|ar] [არის|a-ris].",
+          "id": "Half an hour, if there's no traffic.",
+          "literal": "half — hour, if — traffic-jam — not — is."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ბილეთი|Bi-le-ti] [სად|sad] [ვიყიდოთ|vi-q'i-dot]?",
+          "id": "Where do we buy tickets?",
+          "literal": "ticket — where — let's-buy?"
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[მძღოლს|Mdzghols] [გადავუხდით|ga-da-vukh-dit], [პირდაპირ|p'ir-da-p'ir]. [ხურდა|Khur-da] [გქონდეს|gkon-des]!",
+          "id": "We pay the driver directly. Have some small change ready!",
+          "literal": "driver-to — we-will-pay, directly. change — may-you-have!"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[როდის|Ro-dis] [გავიდეთ|ga-vi-det]?",
+          "id": "What time do we leave?",
+          "literal": "when — let's-go-out?"
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[ცხრა|Tskhra] [საათზე|sa-at-ze]. [მარშრუტკა|Marsh-rut'-k'a] [ყოველ|q'o-vel] [ოც|ots] [წუთში|ts'ut-shi] [გადის|ga-dis].",
+          "id": "At nine. A marshrutka leaves every twenty minutes.",
+          "literal": "nine — hour-at. marshrutka — every — twenty — minute-in — departs."
+        }
+      ],
+      "notes": [
+        "**Every means of transport takes the -ით ending — one ending for all.** ავტობუს**ით** (by bus), მეტრო**თი** (by metro), ტაქს**ით** (by taxi), მატარებლ**ით** (by train), თვითმფრინავ**ით** (by plane), ფეხ**ით** (on foot). ⚠️ There's no preposition at all; don't look for a word for \"by\" or \"on\" — the ending already does that job.",
+        "**The მარშრუტკა is the backbone of Georgian transport.** A fourteen-seat minibus that runs a fixed route but stops anywhere if you signal. The word for stopping: **გამიჩერეთ!** (gamicheret — stop for me!), or more gently *აქ გავალ* (ak gaval — I'll get off here).",
+        "**Pay the driver, and have exact change ready.** On a marshrutka you pay when you get on or when you get off, depending on the route. ⚠️ A 50 or 100 lari note will be refused; *ხურდა გქონდეს* (have change ready) is serious advice.",
+        "**წავიდეთ, მივიდეთ, გავიდეთ — three \"let's…\" forms of motion verbs.** The ending **-ეთ**/-ოთ means \"let's…\". წავიდეთ (let's go), მივიდეთ (let's get there), ვიყიდოთ (let's buy). You don't need to form them yourself yet; just recognize what they mean.",
+        "**სჭირდება = is needed.** A close relative of მჭირდება (I need) from unit 7. *რამდენი ხანი სჭირდება?* — how long does it take? The standard way to ask how long any trip takes.",
+        "**საცობი = traffic jam.** An everyday word in Tbilisi, as in any big city. *საცობია* (there's traffic), *საცობში ვარ* (I'm stuck in traffic).",
+        "**ყოველ ოც წუთში = every twenty minutes.** A handy pattern: ყოველ საათში (every hour), ყოველ დღე (every day), ყოველ კვირას (every week)."
+      ],
+      "grammars": [
+        {
+          "title": "Means of transport with the -ით ending",
+          "table": {
+            "head": [
+              "Base word",
+              "With -ით",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ავტობუსი",
+                "ავტობუსით",
+                "avt'obusit",
+                "by bus"
+              ],
+              [
+                "მარშრუტკა",
+                "მარშრუტკით",
+                "marshrut'k'it",
+                "by marshrutka"
+              ],
+              [
+                "მეტრო",
+                "მეტროთი",
+                "met'roti",
+                "by metro"
+              ],
+              [
+                "ტაქსი",
+                "ტაქსით",
+                "t'aksit",
+                "by taxi"
+              ],
+              [
+                "მანქანა",
+                "მანქანით",
+                "mankanit",
+                "by car"
+              ],
+              [
+                "მატარებელი",
+                "მატარებლით",
+                "mat'areblit",
+                "by train"
+              ],
+              [
+                "თვითმფრინავი",
+                "თვითმფრინავით",
+                "tvitmprinavit",
+                "by plane"
+              ],
+              [
+                "ველოსიპედი",
+                "ველოსიპედით",
+                "velosip'edit",
+                "by bike"
+              ],
+              [
+                "ფეხი",
+                "ფეხით",
+                "pekhit",
+                "on foot"
+              ]
+            ]
+          },
+          "after": [
+            "Notice **მეტრო → მეტროთი**: words ending in a vowel insert -თ before -ი. And **მატარებელი → მატარებლით**: the ე in the last syllable drops out. You'll get used to these two small exceptions with practice."
+          ]
+        },
+        {
+          "title": "Must-know sentences on public transport",
+          "table": {
+            "head": [
+              "Sentence",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "რომელი ავტობუსი მიდის…?",
+                "romeli avt'obusi midis",
+                "Which bus goes to…?"
+              ],
+              [
+                "ეს ავტობუსი მიდის…-ში?",
+                "es avt'obusi midis …shi",
+                "Does this bus go to…?"
+              ],
+              [
+                "სად უნდა გადავჯდე?",
+                "sad unda gadavjde",
+                "Where do I have to change?"
+              ],
+              [
+                "გამიჩერეთ, თუ შეიძლება!",
+                "gamicheret, tu sheidzleba",
+                "Stop, please!"
+              ],
+              [
+                "აქ გავალ",
+                "ak gaval",
+                "I'm getting off here"
+              ],
+              [
+                "შემდეგ გაჩერებაზე",
+                "shemdeg gacherebaze",
+                "At the next stop"
+              ],
+              [
+                "რამდენი ხანი სჭირდება?",
+                "ramdeni khani sch'irdeba",
+                "How long does it take?"
+              ],
+              [
+                "საცობია",
+                "satsobia",
+                "There's traffic"
+              ]
+            ]
+          },
+          "after": [
+            "For taxis: apps (Bolt, Yandex) are widely used in Tbilisi and spare you the haggling. If you hail one on the street, ask the price **before** you get in: *რამდენი გამიწევს …-მდე?* (ramdeni gamits'evs …mde — how much to…?)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "On the road",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Georgian",
+            "Say it",
+            "Meaning",
+            "Georgian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ავტობუსი",
+              "avt'obusi",
+              "bus",
+              "ბილეთი",
+              "bileti",
+              "ticket"
+            ],
+            [
+              "მარშრუტკა",
+              "marshrut'k'a",
+              "route minibus",
+              "მძღოლი",
+              "mdzgholi",
+              "driver"
+            ],
+            [
+              "მეტრო",
+              "met'ro",
+              "metro",
+              "მგზავრი",
+              "mgzavri",
+              "passenger"
+            ],
+            [
+              "ტაქსი",
+              "t'aksi",
+              "taxi",
+              "გაჩერება",
+              "gachereba",
+              "stop (bus stop)"
+            ],
+            [
+              "მატარებელი",
+              "mat'arebeli",
+              "train",
+              "სადგური",
+              "sadguri",
+              "station, terminal"
+            ],
+            [
+              "თვითმფრინავი",
+              "tvitmprinavi",
+              "plane",
+              "აეროპორტი",
+              "aerop'ort'i",
+              "airport"
+            ],
+            [
+              "მანქანა",
+              "mankana",
+              "car",
+              "საცობი",
+              "satsobi",
+              "traffic jam"
+            ],
+            [
+              "ველოსიპედი",
+              "velosip'edi",
+              "bicycle",
+              "გზა",
+              "gza",
+              "road (route)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three practical things about getting around Tbilisi",
+          "items": [
+            "**The metro and buses are paid by card** (მეტრომანი / Metromoney) or a contactless bank card. One ride is about one lari, and transfers within ninety minutes are free.",
+            "**Intercity marshrutkas leave from bus stations**, not from ordinary stops: დიდუბე (west and north), ისანი (east), ორთაჭალა (south). There's no fixed timetable — a minibus leaves as soon as it's full.",
+            "**The train to Batumi** leaves from სადგურის მოედანი and is far more comfortable than a marshrutka for long trips. Buy tickets online or at the station; the phrase you need: *ბილეთი ბათუმამდე* (a ticket to Batumi)."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Two words you'll see on every sign: **გასვლა** (gasvla — exit/departure) and **შესვლა** (shesvla — entrance). In metro stations, **გამოსასვლელი** means the exit. All three come from the same motion-verb root, and once you spot -სვლ- in the middle of a word, lots of signs start to make sense on their own."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ka": "ავტობუსი",
+      "baca": "avt'obusi",
+      "en": "bus"
+    },
+    {
+      "ka": "მარშრუტკა",
+      "baca": "marshrut'k'a",
+      "en": "route minibus"
+    },
+    {
+      "ka": "მეტრო",
+      "baca": "met'ro",
+      "en": "metro"
+    },
+    {
+      "ka": "ტაქსი",
+      "baca": "t'aksi",
+      "en": "taxi"
+    },
+    {
+      "ka": "მატარებელი",
+      "baca": "mat'arebeli",
+      "en": "train"
+    },
+    {
+      "ka": "თვითმფრინავი",
+      "baca": "tvitmprinavi",
+      "en": "plane"
+    },
+    {
+      "ka": "მანქანა",
+      "baca": "mankana",
+      "en": "car"
+    },
+    {
+      "ka": "ველოსიპედი",
+      "baca": "velosip'edi",
+      "en": "bicycle"
+    },
+    {
+      "ka": "ბილეთი",
+      "baca": "bileti",
+      "en": "ticket"
+    },
+    {
+      "ka": "მძღოლი",
+      "baca": "mdzgholi",
+      "en": "driver"
+    },
+    {
+      "ka": "მგზავრი",
+      "baca": "mgzavri",
+      "en": "passenger"
+    },
+    {
+      "ka": "გაჩერება",
+      "baca": "gachereba",
+      "en": "stop (bus stop)"
+    },
+    {
+      "ka": "სადგური",
+      "baca": "sadguri",
+      "en": "station, terminal"
+    },
+    {
+      "ka": "გზა",
+      "baca": "gza",
+      "en": "road, route"
+    },
+    {
+      "ka": "საცობი",
+      "baca": "satsobi",
+      "en": "traffic jam"
+    },
+    {
+      "ka": "გადის",
+      "baca": "gadis",
+      "en": "departs"
+    },
+    {
+      "ka": "მიდის",
+      "baca": "midis",
+      "en": "goes (toward)"
+    },
+    {
+      "ka": "გამიჩერეთ",
+      "baca": "gamicheret",
+      "en": "stop, please"
+    },
+    {
+      "ka": "გავალ",
+      "baca": "gaval",
+      "en": "I'll get off, I'll go out"
+    },
+    {
+      "ka": "შემდეგი",
+      "baca": "shemdegi",
+      "en": "next"
+    },
+    {
+      "ka": "სჭირდება",
+      "baca": "sch'irdeba",
+      "en": "is needed"
+    },
+    {
+      "ka": "ხანი",
+      "baca": "khani",
+      "en": "time, a while"
+    },
+    {
+      "ka": "იაფი",
+      "baca": "iapi",
+      "en": "cheap"
+    },
+    {
+      "ka": "ძვირი",
+      "baca": "dzviri",
+      "en": "expensive"
+    },
+    {
+      "ka": "ყოველ",
+      "baca": "q'ovel",
+      "en": "every"
+    },
+    {
+      "ka": "გასვლა",
+      "baca": "gasvla",
+      "en": "exit, departure"
+    },
+    {
+      "ka": "შესვლა",
+      "baca": "shesvla",
+      "en": "entrance"
+    },
+    {
+      "ka": "ხურდა",
+      "baca": "khurda",
+      "en": "small change"
+    },
+    {
+      "ka": "იქამდე",
+      "baca": "ikamde",
+      "en": "to get there"
+    },
+    {
+      "ka": "წავიდეთ",
+      "baca": "ts'avidet",
+      "en": "let's go"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change into the \"by …\" form (-ით ending).",
+      "items": [
+        "ავტობუსი → ____",
+        "ტაქსი → ____",
+        "მეტრო → ____",
+        "მანქანა → ____",
+        "ფეხი → ____",
+        "მატარებელი → ____"
+      ]
+    },
+    {
+      "prompt": "Complete the public transport sentences.",
+      "items": [
+        "____ ავტობუსი მიდის მცხეთაში? (which)",
+        "____ ღირს ბილეთი? (how much)",
+        "____ , თუ შეიძლება! (stop for me)",
+        "აქ ____ (I'll get off)",
+        "რამდენი ხანი ____ ? (is needed)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "წავიდეთ / მარშრუტკით",
+        "გადის / საიდან / ?",
+        "სჭირდება / ხანი / რამდენი / ?",
+        "იაფია / უფრო / მარშრუტკა",
+        "გქონდეს / ხურდა"
+      ]
+    },
+    {
+      "prompt": "Translate into Georgian.",
+      "items": [
+        "How do we get to Mtskheta?",
+        "By bus or by taxi.",
+        "How much is the ticket?",
+        "How long does the trip take?",
+        "Stop here, please!",
+        "I'm getting off at the next stop."
+      ]
+    }
+  ],
+  "answers": [
+    "ავტობუსით — ტაქსით — მეტროთი — მანქანით — ფეხით — მატარებლით",
+    "რომელი — რამდენი — გამიჩერეთ — გავალ — სჭირდება",
+    "მარშრუტკით წავიდეთ. — საიდან გადის? — რამდენი ხანი სჭირდება? — მარშრუტკა უფრო იაფია. — ხურდა გქონდეს.",
+    "მცხეთაში როგორ მივიდეთ? — ავტობუსით ან ტაქსით. — რამდენი ღირს ბილეთი? — რამდენი ხანი სჭირდება? — აქ გამიჩერეთ, თუ შეიძლება! — შემდეგ გაჩერებაზე გავალ."
+  ]
+}

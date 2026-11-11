@@ -1,0 +1,626 @@
+{
+  "title": "Staying over and getting around",
+  "title_target": "ຢູ່ໂຮງແຮມ ແລະ ເດີນທາງ — Yùu hoong-héem lae dòen-tháang",
+  "goal": "Book a room, complain about facilities that don't work, buy a bus or train ticket, and handle things at the border — the unit that lets you travel on your own anywhere in Laos.",
+  "bekal": [
+    "booking a room and asking about facilities",
+    "complaining with ໃຊ້ບໍ່ໄດ້ and ເພ",
+    "buying tickets and asking about schedules",
+    "ອອກ and ຮອດ for departing and arriving",
+    "documents: ໜັງສືຜ່ານແດນ and ວີຊາ"
+  ],
+  "dialogs": [
+    {
+      "title": "ບົດສົນທະນາ — Checking in at a guesthouse, Luang Prabang",
+      "intro": "Budi arrives at a small guesthouse. Notice that almost all of his questions use patterns you've already learned — *ມີ…ບໍ່*, *…ໄດ້ບໍ່*, *…ເທົ່າໃດ*.",
+      "lines": [
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ສະບາຍດີ|Sa-baai-dii] [ຂ້ອຍ|Khàwy][ຈອງ|jawng][ຫ້ອງ|hàwng][ໄວ້|wâi][ແລ້ວ|lèeo] [ຊື່|Sʉ̂ʉ][ບູດີ|Buu-dii]",
+          "id": "Hello. I've booked a room. The name is Budi.",
+          "literal": "well-good. I — book — room — keep — already. name — Budi."
+        },
+        {
+          "speaker": "ພະນັກງານ:",
+          "text": "[ສະບາຍດີ|Sa-baai-dii][ເຈົ້າ|jâo] [ຂໍ|Khǎw][ໜັງສືຜ່ານແດນ|nǎng-sʉ̌ʉ-phàan-deen][ແດ່|dèe] [ພັກ|Phak][ຈັກ|ják][ຄືນ|khʉ́ʉn]",
+          "id": "Hello. Your passport, please. How many nights are you staying?",
+          "literal": "well-good — (polite). ask-for — passport — a-little. stay — how-many — night?"
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ສອງ|Sǎwng][ຄືນ|khʉ́ʉn] [ນີ້|Nîi][ໜັງສືຜ່ານແດນ|nǎng-sʉ̌ʉ-phàan-deen] [ຄ່າ|Khàa][ຫ້ອງ|hàwng][ຄືນ|khʉ́ʉn][ລະ|la][ເທົ່າໃດ|thao-dai]",
+          "id": "Two nights. Here's my passport. How much is the room per night?",
+          "literal": "two — night. this — passport. cost — room — night — per — how-much?"
+        },
+        {
+          "speaker": "ພະນັກງານ:",
+          "text": "[ສາມ|Sǎam][ແສນ|sěen][ກີບ|kìip][ຕໍ່|taw][ຄືນ|khʉ́ʉn] [ລວມ|Lúam][ອາຫານ|aa-hǎan][ເຊົ້າ|sâo][ແລ້ວ|lèeo]",
+          "id": "Three hundred thousand kip a night. Breakfast is included.",
+          "literal": "three — hundred-thousand — kip — per — night. include — food — morning — already."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ດີ|Dii] [ມີ|Míi][ໄວໄຟ|wái-fái][ບໍ່|bàw] [ແລ້ວ|Lèeo][ນ້ຳ|nâm][ຮ້ອນ|hâwn][ມີ|míi][ບໍ່|bàw]",
+          "id": "Good. Is there Wi-Fi? And hot water?",
+          "literal": "good. have — Wi-Fi — (question)? and — water — hot — have — (question)?"
+        },
+        {
+          "speaker": "ພະນັກງານ:",
+          "text": "[ມີ|Míi][ທັງ|tháng][ສອງ|sǎwng][ຢ່າງ|yàang] [ລະຫັດ|La-hát][ໄວໄຟ|wái-fái][ຢູ່|yùu][ເທິງ|thóeng][ໂຕະ|tó] [ອາຫານ|Aa-hǎan][ເຊົ້າ|sâo][ແຕ່|tèe][ເຈັດ|jét][ຫາ|hǎa][ເກົ້າ|kào][ໂມງ|móong]",
+          "id": "We have both. The Wi-Fi password is on the table. Breakfast is from seven to nine.",
+          "literal": "have — both — two — kind. code — Wi-Fi — at — on — table. food — morning — from — seven — to — nine — o'clock."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ຂອບໃຈ|Khàwp-jai] [ຂໍ|Khǎw][ຖາມ|thǎam][ອີກ|ìik][ຂໍ້|khàw][ໜຶ່ງ|nʉ̀ng] [ປີ້|Pîi][ລົດ|lot][ໄປ|pai][ວັງວຽງ|Wáng-Wíang][ຊື້|sʉ̂ʉ][ຢູ່|yùu][ໃສ|sǎi]",
+          "id": "Thank you. One more question. Where can I buy a bus ticket to Vang Vieng?",
+          "literal": "thank-you. ask — ask — more — item — one. ticket — vehicle — go — Vang-Vieng — buy — at — where?"
+        },
+        {
+          "speaker": "ພະນັກງານ:",
+          "text": "[ຊື້|Sʉ̂ʉ][ຢູ່|yùu][ນີ້|nîi][ກໍ|kaw][ໄດ້|dâi] [ລົດ|Lot][ອອກ|àwk][ແປດ|pèet][ໂມງ|móong][ເຊົ້າ|sâo] [ຮອດ|Hâwt][ບ່າຍ|bàai][ສອງ|sǎwng][ໂມງ|móong]",
+          "id": "You can buy it here. The bus leaves at eight in the morning and arrives at two in the afternoon.",
+          "literal": "buy — at — here — also — can. vehicle — leave — eight — o'clock — morning. arrive — afternoon — two — o'clock."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ເອົາ|Ao][ໜຶ່ງ|nʉ̀ng][ໃບ|bai][ສຳລັບ|sǎm-lap][ມື້ຮື|mʉ̂ʉ-hʉ̌ʉ][ເດີ້|dòe]",
+          "id": "I'll take one for the day after tomorrow, please.",
+          "literal": "take — one — sheet — for — day-after-tomorrow — (friendly particle)."
+        },
+        {
+          "speaker": "ພະນັກງານ:",
+          "text": "[ໄດ້|Dâi][ເລີຍ|lóei] [ຫ້ອງ|Hàwng][ເຈົ້າ|jâo][ເບີ|bòe][ສິບ|síp][ສອງ|sǎwng] [ຊັ້ນ|Sân][ສອງ|sǎwng] [ນີ້|Nîi][ກະແຈ|ka-jèe]",
+          "id": "Sure. Your room is number twelve, second floor. Here's the key.",
+          "literal": "can — right-away. room — you — number — ten — two. floor — two. this — key."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ຂອບໃຈ|Khàwp-jai][ຫຼາຍໆ|lǎai-lǎai][ເດີ້|dòe]",
+          "id": "Thank you so much.",
+          "literal": "thank-you — much-much — (friendly particle)."
+        }
+      ],
+      "notes": [
+        "**ຄືນລະ khʉ́ʉn la = \"per night\", and ຕໍ່ຄືນ taw khʉ́ʉn means the same.** The first is more casual, the second a bit more formal and often written on price lists. Remember the *ລະ la* pattern from unit 14: *ຄົນລະ* (per person), *ມື້ລະ* (per day).",
+        "**ໜັງສືຜ່ານແດນ nǎng-sʉ̌ʉ-phàan-deen = \"passport\", literally \"document for crossing the border\".** It's long, and people often shorten it to *ພາສປໍ pháat-saw-páw* from English. Both are understood; forms always use the long one.",
+        "**ລວມ lúam = \"included, combined\".** *ລວມອາຫານເຊົ້າແລ້ວ* (breakfast included), *ລວມພາສີ* (tax included), *ບໍ່ລວມ* (not included). It's the word you must ask about before agreeing to any price.",
+        "**ທັງສອງຢ່າງ tháng sǎwng yàang = \"both\".** The word *ທັງ tháng* means \"whole, all\": *ທັງໝົດ* (everything), *ທັງມື້* (all day), *ທັງໂຕ* (whole body).",
+        "**ອອກ àwk = \"leave, depart\", ຮອດ hâwt = \"arrive\".** *ລົດອອກແປດໂມງ* (the bus leaves at eight), *ຮອດບ່າຍສອງໂມງ* (arrives at two in the afternoon). To ask about schedules: *ອອກຈັກໂມງ* and *ຮອດຈັກໂມງ*.",
+        "**ແຕ່… ຫາ… tèe… hǎa… = \"from… to…\".** *ແຕ່ເຈັດຫາເກົ້າໂມງ* (from seven to nine). ⚠️ Here *ແຕ່ tèe* means \"from\", not \"but\" — and the only thing that tells them apart is the *ຫາ* that follows.",
+        "**ສຳລັບ sǎm-lap = \"for\".** *ສຳລັບມື້ຮື* (for the day after tomorrow), *ສຳລັບສອງຄົນ* (for two people). The difference from *ເພື່ອ phʉ̂a* (for, in order to) in unit 16: *ສຳລັບ* marks who or what something is for, *ເພື່ອ* marks a purpose.",
+        "**ຂໍ້ khàw = the classifier for questions and points.** *ຖາມອີກຂໍ້ໜຶ່ງ* (ask one more thing), *ຂໍ້ສອງ* (point two). The same word appears in *ຂໍ້ຄວາມ* (message) and *ຂໍ້ມູນ* (data).",
+        "**About staying in Laos.** Guesthouses are required to record your passport details and report them; that's why they ask for it up front. You can ask for it back once it's copied — the sentence is *ຂໍໜັງສືຜ່ານແດນຄືນແດ່ໄດ້ບໍ່*. Keep a digital copy yourself, because losing your passport in Laos means a trip to your embassy in Vientiane."
+      ],
+      "grammars": [
+        {
+          "title": "Rooms and facilities",
+          "table": {
+            "head": [
+              "Lao",
+              "Say it",
+              "English",
+              "Lao",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "ໂຮງແຮມ",
+                "*hoong-héem*",
+                "hotel",
+                "ເຮືອນພັກ",
+                "*hʉan-phak*",
+                "guesthouse"
+              ],
+              [
+                "ຫ້ອງດ່ຽວ",
+                "*hàwng dìao*",
+                "single room",
+                "ຫ້ອງຄູ່",
+                "*hàwng khùu*",
+                "double room"
+              ],
+              [
+                "ຄ່າຫ້ອງ",
+                "*khàa hàwng*",
+                "room rate",
+                "ມັດຈຳ",
+                "*mat-jam*",
+                "deposit"
+              ],
+              [
+                "ນ້ຳຮ້ອນ",
+                "*nâm hâwn*",
+                "hot water",
+                "ເຄື່ອງແອ",
+                "*khʉ̂ang-ee*",
+                "air conditioner"
+              ],
+              [
+                "ຜ້າເຊັດໂຕ",
+                "*phàa sét tǒo*",
+                "towel",
+                "ຜ້າຫົ່ມ",
+                "*phàa hòm*",
+                "blanket"
+              ],
+              [
+                "ໝອນ",
+                "*mǎwn*",
+                "pillow",
+                "ລະຫັດ",
+                "*la-hát*",
+                "password, code"
+              ],
+              [
+                "ຊັ້ນ",
+                "*sân*",
+                "floor (level)",
+                "ຂັ້ນໄດ",
+                "*khân-dai*",
+                "stairs"
+              ],
+              [
+                "ອາຫານເຊົ້າ",
+                "*aa-hǎan sâo*",
+                "breakfast",
+                "ລວມແລ້ວ",
+                "*lúam lèeo*",
+                "included"
+              ]
+            ]
+          },
+          "after": [
+            "The most useful complaint phrase: **…ໃຊ້ບໍ່ໄດ້ *…sâi bàw dâi*** (…doesn't work). *ເຄື່ອງແອໃຊ້ບໍ່ໄດ້* (the AC doesn't work), *ໄວໄຟໃຊ້ບໍ່ໄດ້* (the Wi-Fi isn't working), *ນ້ຳຮ້ອນບໍ່ອອກ* (no hot water coming out). For something broken, the word is *ເພ phée*: *ປະຕູເພ* (the door is broken)."
+          ]
+        },
+        {
+          "title": "Tickets and schedules",
+          "table": {
+            "head": [
+              "Lao",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ປີ້ໄປ…ເທົ່າໃດ",
+                "*pîi pai… thao-dai*",
+                "how much is a ticket to…?"
+              ],
+              [
+                "ມີລົດໄປ…ບໍ່",
+                "*míi lot pai… bàw*",
+                "is there transport to…?"
+              ],
+              [
+                "ອອກຈັກໂມງ",
+                "*àwk ják móong*",
+                "what time does it leave?"
+              ],
+              [
+                "ຮອດຈັກໂມງ",
+                "*hâwt ják móong*",
+                "what time does it arrive?"
+              ],
+              [
+                "ໃຊ້ເວລາຈັກຊົ່ວໂມງ",
+                "*sâi wée-láa ják sùa-móong*",
+                "how many hours does it take?"
+              ],
+              [
+                "ມີບ່ອນນັ່ງບໍ່",
+                "*míi bàwn nàng bàw*",
+                "any seats left?"
+              ],
+              [
+                "ຈອງລ່ວງໜ້າໄດ້ບໍ່",
+                "*jawng lùang-nâa dâi bàw*",
+                "can I book in advance?"
+              ],
+              [
+                "ລົດອອກຈາກໃສ",
+                "*lot àwk jàak sǎi*",
+                "where does it leave from?"
+              ],
+              [
+                "ຢຸດພັກບໍ່",
+                "*yút phak bàw*",
+                "does it stop for a break?"
+              ],
+              [
+                "ປີ້ຄືນໄດ້ບໍ່",
+                "*pîi khʉ́ʉn dâi bàw*",
+                "can I get a refund on the ticket?"
+              ]
+            ]
+          },
+          "after": [
+            "**ບ່ອນ *bàwn*** means \"place, spot\": *ບ່ອນນັ່ງ* (seat), *ບ່ອນນອນ* (place to sleep, berth), *ບ່ອນນີ້* (this spot). It's a little more concrete than *ທີ່ thìi*, which also means place."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Complaining politely",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Lao",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ຂໍໂທດເດີ້ ມີບັນຫາໜ້ອຍໜຶ່ງ",
+              "*khǎw-thôot dòe, míi ban-hǎa nàwy nʉ̀ng*",
+              "sorry, there's a small problem"
+            ],
+            [
+              "ເຄື່ອງແອໃຊ້ບໍ່ໄດ້",
+              "*khʉ̂ang-ee sâi bàw dâi*",
+              "the AC doesn't work"
+            ],
+            [
+              "ນ້ຳຮ້ອນບໍ່ອອກ",
+              "*nâm hâwn bàw àwk*",
+              "there's no hot water"
+            ],
+            [
+              "ໄວໄຟຊ້າຫຼາຍ",
+              "*wái-fái sâa lǎai*",
+              "the Wi-Fi is really slow"
+            ],
+            [
+              "ຫ້ອງມີສຽງດັງ",
+              "*hàwng míi sǐang dang*",
+              "the room is noisy"
+            ],
+            [
+              "ປ່ຽນຫ້ອງໄດ້ບໍ່",
+              "*pìan hàwng dâi bàw*",
+              "can I change rooms?"
+            ],
+            [
+              "ຊ່ວຍມາເບິ່ງແດ່ໄດ້ບໍ່",
+              "*sùay maa bòeng dèe dâi bàw*",
+              "could you come and take a look?"
+            ],
+            [
+              "ຂໍຜ້າເຊັດໂຕຕື່ມແດ່",
+              "*khǎw phàa sét tǒo tʉ̀ʉm dèe*",
+              "could I have an extra towel?"
+            ],
+            [
+              "ຂໍອອກສວາຍໜ້ອຍໜຶ່ງໄດ້ບໍ່",
+              "*khǎw àwk sǔay nàwy nʉ̀ng dâi bàw*",
+              "may I check out a bit late?"
+            ],
+            [
+              "ຝາກກະເປົ໋າໄວ້ໄດ້ບໍ່",
+              "*fàak ka-pǎo wâi dâi bàw*",
+              "can I leave my bag here?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that **every complaint opens with *ຂໍໂທດ khǎw-thôot* and closes with *ໄດ້ບໍ່ dâi bàw***. In Laos, a complaint made as a request almost always gets fixed; a complaint made as a demand often ends with a polite smile and no change at all. It isn't about the words, it's about the manner."
+        }
+      ]
+    },
+    {
+      "title": "Documents, money, and the border",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Lao",
+            "Say it",
+            "English",
+            "Lao",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "ໜັງສືຜ່ານແດນ",
+              "*nǎng-sʉ̌ʉ-phàan-deen*",
+              "passport",
+              "ວີຊາ",
+              "*wíi-sâa*",
+              "visa"
+            ],
+            [
+              "ດ່ານ",
+              "*dàan*",
+              "border checkpoint",
+              "ຊາຍແດນ",
+              "*sáai-deen*",
+              "border"
+            ],
+            [
+              "ຕົວະດ່ານ",
+              "*tùa dàan*",
+              "immigration form",
+              "ຕາປະທັບ",
+              "*taa pa-tháp*",
+              "stamp"
+            ],
+            [
+              "ບັດປະຈຳຕົວ",
+              "*bát pa-jam-tǒa*",
+              "ID card",
+              "ໃບຂັບຂີ່",
+              "*bai khap-khìi*",
+              "driver's license"
+            ],
+            [
+              "ແລກເງິນ",
+              "*lèek ngóen*",
+              "change money",
+              "ອັດຕາແລກປ່ຽນ",
+              "*át-taa lèek-pìan*",
+              "exchange rate"
+            ],
+            [
+              "ຕູ້ເອທີເອັມ",
+              "*tûu ee-thii-em*",
+              "ATM",
+              "ຄ່າທຳນຽມ",
+              "*khàa tham-nìam*",
+              "service fee"
+            ],
+            [
+              "ປະກັນໄພ",
+              "*pa-kan-phái*",
+              "insurance",
+              "ສະຖານທູດ",
+              "*sa-thǎan-thûut*",
+              "embassy"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Citizens of ASEAN countries — Budi included — can enter Laos **without a visa** for short visits, and many other nationalities can get a visa on arrival or an e-visa — but the rules change from time to time, so check before you go. What doesn't change: your passport must be valid for at least six months."
+        },
+        {
+          "type": "p",
+          "text": "Useful phrases at a bank or exchange booth: *ຂໍແລກເງິນແດ່ khǎw lèek ngóen dèe* (I'd like to change money) and *ອັດຕາແລກປ່ຽນມື້ນີ້ເທົ່າໃດ át-taa lèek-pìan mʉ̂ʉ-nîi thao-dai* (what's today's exchange rate). Most foreign currencies are hard to exchange; bring US dollars or Thai baht."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "lo": "ໂຮງແຮມ",
+      "baca": "hoong-héem",
+      "en": "hotel"
+    },
+    {
+      "lo": "ເຮືອນພັກ",
+      "baca": "hʉan-phak",
+      "en": "guesthouse"
+    },
+    {
+      "lo": "ຈອງ",
+      "baca": "jawng",
+      "en": "book, reserve (a place)"
+    },
+    {
+      "lo": "ຄືນ",
+      "baca": "khʉ́ʉn",
+      "en": "night (for stays)"
+    },
+    {
+      "lo": "ຄ່າຫ້ອງ",
+      "baca": "khàa hàwng",
+      "en": "room rate"
+    },
+    {
+      "lo": "ລວມ",
+      "baca": "lúam",
+      "en": "included"
+    },
+    {
+      "lo": "ທັງ",
+      "baca": "tháng",
+      "en": "whole, all"
+    },
+    {
+      "lo": "ລະຫັດ",
+      "baca": "la-hát",
+      "en": "password, code"
+    },
+    {
+      "lo": "ຊັ້ນ",
+      "baca": "sân",
+      "en": "floor, level"
+    },
+    {
+      "lo": "ນ້ຳຮ້ອນ",
+      "baca": "nâm hâwn",
+      "en": "hot water"
+    },
+    {
+      "lo": "ຜ້າເຊັດໂຕ",
+      "baca": "phàa sét tǒo",
+      "en": "towel"
+    },
+    {
+      "lo": "ຜ້າຫົ່ມ",
+      "baca": "phàa hòm",
+      "en": "blanket"
+    },
+    {
+      "lo": "ໝອນ",
+      "baca": "mǎwn",
+      "en": "pillow"
+    },
+    {
+      "lo": "ເພ",
+      "baca": "phée",
+      "en": "broken"
+    },
+    {
+      "lo": "ບັນຫາ",
+      "baca": "ban-hǎa",
+      "en": "problem"
+    },
+    {
+      "lo": "ສຽງ",
+      "baca": "sǐang",
+      "en": "sound, noise"
+    },
+    {
+      "lo": "ອອກ",
+      "baca": "àwk",
+      "en": "leave, depart; go out"
+    },
+    {
+      "lo": "ປີ້",
+      "baca": "pîi",
+      "en": "ticket"
+    },
+    {
+      "lo": "ບ່ອນນັ່ງ",
+      "baca": "bàwn nàng",
+      "en": "seat"
+    },
+    {
+      "lo": "ບ່ອນ",
+      "baca": "bàwn",
+      "en": "place, spot"
+    },
+    {
+      "lo": "ລ່ວງໜ້າ",
+      "baca": "lùang-nâa",
+      "en": "in advance"
+    },
+    {
+      "lo": "ສຳລັບ",
+      "baca": "sǎm-lap",
+      "en": "for"
+    },
+    {
+      "lo": "ຂໍ້",
+      "baca": "khàw",
+      "en": "point, item (classifier)"
+    },
+    {
+      "lo": "ຖາມ",
+      "baca": "thǎam",
+      "en": "ask"
+    },
+    {
+      "lo": "ໜັງສືຜ່ານແດນ",
+      "baca": "nǎng-sʉ̌ʉ-phàan-deen",
+      "en": "passport"
+    },
+    {
+      "lo": "ວີຊາ",
+      "baca": "wíi-sâa",
+      "en": "visa"
+    },
+    {
+      "lo": "ດ່ານ",
+      "baca": "dàan",
+      "en": "border checkpoint"
+    },
+    {
+      "lo": "ແລກເງິນ",
+      "baca": "lèek ngóen",
+      "en": "change money"
+    },
+    {
+      "lo": "ອັດຕາແລກປ່ຽນ",
+      "baca": "át-taa lèek-pìan",
+      "en": "exchange rate"
+    },
+    {
+      "lo": "ຄ່າທຳນຽມ",
+      "baca": "khàa tham-nìam",
+      "en": "service fee"
+    },
+    {
+      "lo": "ສະຖານທູດ",
+      "baca": "sa-thǎan-thûut",
+      "en": "embassy"
+    },
+    {
+      "lo": "ມັດຈຳ",
+      "baca": "mat-jam",
+      "en": "deposit"
+    },
+    {
+      "lo": "ວັງວຽງ",
+      "baca": "Wáng-Wíang",
+      "en": "Vang Vieng"
+    },
+    {
+      "lo": "ຂັ້ນໄດ",
+      "baca": "khân-dai",
+      "en": "stairs"
+    },
+    {
+      "lo": "ໃຊ້",
+      "baca": "sâi",
+      "en": "use"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the right question for each situation.",
+      "items": [
+        "you want to know the room rate per night",
+        "you want to know if breakfast is included",
+        "you want to know if there's Wi-Fi",
+        "you want to know what time the bus leaves",
+        "you want to leave your bag"
+      ]
+    },
+    {
+      "prompt": "Make these complaints politely.",
+      "items": [
+        "the AC doesn't work",
+        "there's no hot water",
+        "the room is noisy",
+        "the Wi-Fi is really slow",
+        "you want to change rooms"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ຄືນ / ຈັກ / ພັກ",
+        "ແລ້ວ / ອາຫານເຊົ້າ / ລວມ",
+        "ໂມງ / ອອກ / ຈັກ / ລົດ",
+        "ບໍ່ / ໄດ້ / ຫ້ອງ / ປ່ຽນ",
+        "ໜຶ່ງ / ໃບ / ມື້ຮື / ສຳລັບ / ເອົາ"
+      ]
+    },
+    {
+      "prompt": "Translate into Lao.",
+      "items": [
+        "Hello, I've booked a room under the name Budi.",
+        "Staying two nights. How much is the room per night?",
+        "Is breakfast included?",
+        "Is there Wi-Fi and hot water?",
+        "Where can I buy a bus ticket to Vang Vieng?",
+        "The bus leaves at eight in the morning and arrives at two in the afternoon."
+      ]
+    }
+  ],
+  "answers": [
+    "ຄ່າຫ້ອງຄືນລະເທົ່າໃດ — ລວມອາຫານເຊົ້າແລ້ວບໍ່ — ມີໄວໄຟບໍ່ — ລົດອອກຈັກໂມງ — ຝາກກະເປົ໋າໄວ້ໄດ້ບໍ່",
+    "ຂໍໂທດເດີ້ ເຄື່ອງແອໃຊ້ບໍ່ໄດ້ — ນ້ຳຮ້ອນບໍ່ອອກ — ຫ້ອງມີສຽງດັງ — ໄວໄຟຊ້າຫຼາຍ — ປ່ຽນຫ້ອງໄດ້ບໍ່",
+    "ພັກຈັກຄືນ — ລວມອາຫານເຊົ້າແລ້ວ — ລົດອອກຈັກໂມງ — ປ່ຽນຫ້ອງໄດ້ບໍ່ — ເອົາໜຶ່ງໃບສຳລັບມື້ຮື",
+    "ສະບາຍດີ ຂ້ອຍຈອງຫ້ອງໄວ້ແລ້ວ ຊື່ບູດີ — ພັກສອງຄືນ ຄ່າຫ້ອງຄືນລະເທົ່າໃດ — ລວມອາຫານເຊົ້າແລ້ວບໍ່ — ມີໄວໄຟກັບນ້ຳຮ້ອນບໍ່ — ປີ້ລົດໄປວັງວຽງຊື້ຢູ່ໃສ — ລົດອອກແປດໂມງເຊົ້າ ຮອດບ່າຍສອງໂມງ"
+  ],
+  "wave": "Review Unit 17: cover the Lao, then explain five temple rules using ຕ້ອງ, ຄວນ, ຫ້າມ, and ໄດ້."
+}

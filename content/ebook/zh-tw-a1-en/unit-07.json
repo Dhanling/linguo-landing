@@ -1,0 +1,610 @@
+{
+  "title": "Where do you live?",
+  "title_target": "你住哪裡？",
+  "goal": "Name places, addresses, and where things are — while accepting the second rule that reshapes your sentences: position words stand AFTER the noun.",
+  "bekal": [
+    "use 在 as the verb \"to be at\" and as a place phrase",
+    "put 上面, 裡面, 旁邊 after the noun, not before",
+    "give an address in big-to-small order"
+  ],
+  "dialogs": [
+    {
+      "title": "對話 — 找房子",
+      "intro": "Budi wants to move out of the dorm. Xiaomei helps him call about a room for rent.",
+      "lines": [
+        {
+          "speaker": "小美:",
+          "text": "[布迪|Bùdí]，[你|nǐ][現在|xiànzài][住|zhù][哪裡|nǎlǐ]？",
+          "id": "Budi, where are you living now?",
+          "literal": "Budi, you — now — live — where?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[我|Wǒ][住|zhù][學校|xuéxiào][宿舍|sùshè]。[有點|Yǒudiǎn][吵|chǎo]。",
+          "id": "In the campus dorm. It's a bit noisy.",
+          "literal": "I — live — school — dorm. have-a-little — noisy."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[我|Wǒ][有|yǒu][一個|yí ge][朋友|péngyǒu][在|zài][租|zū][房間|fángjiān]。",
+          "id": "I have a friend who's renting out a room.",
+          "literal": "I — have — one — (measure word) — friend — (-ing) — rent — room."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[真的|Zhēn de][嗎|ma]？[在|Zài][哪裡|nǎlǐ]？",
+          "id": "Really? Where?",
+          "literal": "true — (one) — (question)? at — where?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[在|Zài][大安區|Dà'ān Qū]，[捷運站|jiéyùn zhàn][旁邊|pángbiān]。",
+          "id": "In Da'an District, right next to an MRT station.",
+          "literal": "at — Da'an — district, MRT — station — beside."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[太方便了|Tài fāngbiàn le]！[房租|Fángzū][多少|duōshǎo]？",
+          "id": "That's so convenient! How much is the rent?",
+          "literal": "too — convenient — (now)! house-rent — how-much?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[一個月|Yí ge yuè][八千|bāqiān]，[水電|shuǐdiàn][另外|lìngwài][算|suàn]。",
+          "id": "Eight thousand a month, utilities extra.",
+          "literal": "one — (measure word) — month — eight-thousand, water-electricity — other-outside — count."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[房間|Fángjiān][裡面|lǐmiàn][有|yǒu][什麼|shénme]？",
+          "id": "What's in the room?",
+          "literal": "room — inside — have — what?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[有|Yǒu][床|chuáng]、[桌子|zhuōzi]、[冷氣|lěngqì]，[還有|hái yǒu][冰箱|bīngxiāng]。",
+          "id": "A bed, a desk, air conditioning, and a fridge.",
+          "literal": "have — bed, table, cold-air, still — have — ice-box."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[附近|Fùjìn][有|yǒu][便利商店|biànlì shāngdiàn][嗎|ma]？",
+          "id": "Is there a convenience store nearby?",
+          "literal": "nearby — have — convenient-store — (question)?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[樓下|Lóu xià][就|jiù][有|yǒu][一家|yì jiā][小七|Xiǎo Qī]。",
+          "id": "There's a 7-Eleven right downstairs.",
+          "literal": "floor — below — just — have — one — (measure word) — little-seven."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[聽起來|Tīngqǐlái][很|hěn][不錯|búcuò]。[我|Wǒ][可以|kěyǐ][去|qù][看看|kànkàn][嗎|ma]？",
+          "id": "Sounds good. Can I go and take a look?",
+          "literal": "hear-up — very — not — wrong. I — can — go — look-look — (question)?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[當然|Dāngrán][可以|kěyǐ]。[地址|Dìzhǐ][我|wǒ][傳|chuán][給|gěi][你|nǐ]。",
+          "id": "Of course. I'll send you the address.",
+          "literal": "of-course — can. address — I — send — give — you."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[謝謝|Xièxie]！[妳|Nǐ][真的|zhēn de][是|shì][我|wǒ][在|zài][台灣|Táiwān][的|de][貴人|guìrén]。",
+          "id": "Thank you! You're truly my lifesaver in Taiwan.",
+          "literal": "thank thank! you — truly — (one) — are — I — at — Taiwan — 's — noble-person."
+        }
+      ],
+      "notes": [
+        "⚠️ **小七 (\"little seven\") is the friendly name for 7-Eleven** that everyone in Taiwan uses. Convenience stores in Taiwan are much more than shops: people pay bills, send parcels, buy train tickets, top up their 悠遊卡, and print documents there.",
+        "**貴人 (\"noble person\") means someone who helps you at a key moment** — not a rich person. Calling someone your 貴人 is a warm, sincere compliment, and Taiwanese people are touched to hear it.",
+        "**不錯 literally means \"not wrong\", but it means \"pretty good\".** It is the most common compliment in Taiwan, more frequent than 很好. Modest, but positive.",
+        "**就 (*jiù*) here means \"right, just\"** — stressing closeness or ease: *樓下就有* (\"there's one right downstairs\"). This little word is everywhere and hard to translate; get a feel for it rather than looking for a fixed equivalent.",
+        "⚠️ **一個月八千 means \"eight thousand a month\".** Time span first, amount after — no word for \"per\". The pattern works for everything: *一天三次* (three times a day), *一個星期兩次* (twice a week)."
+      ],
+      "grammars": [
+        {
+          "title": "在: \"to be at\" and the place phrase",
+          "body": [
+            "**在** does two jobs that English covers with \"be at/in\". The difference matters: when 在 is the only verb, it means \"to be (at)\"; when there's another verb, it becomes a place phrase and stands **before** that verb."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Subject + **在** + place",
+                "我**在**家。",
+                "I'm at home."
+              ],
+              [
+                "Subject + **在** + place + verb",
+                "我**在**家吃飯。",
+                "I eat at home."
+              ],
+              [
+                "✗ Subject + verb + 在 + place",
+                "✗ 我吃飯在家。",
+                "✗ wrong"
+              ],
+              [
+                "Negative",
+                "我**不在**家。",
+                "I'm not at home."
+              ],
+              [
+                "Question",
+                "你**在**哪裡？",
+                "Where are you?"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **我吃飯在家 is the classic English-speaker mistake**, because English says \"I eat at home\" with the place at the end. Remember the last unit's rule: **all modifiers stand before the verb** — time, place, manner, company. No exceptions at A1.",
+            "**Verbs that already contain a sense of place don't need 在**: 住 (live), 去 (go), 來 (come), 回 (return). *我住台北* is complete; *我住在台北* is also right and just as common."
+          ]
+        },
+        {
+          "title": "⚠️ Position words stand AFTER the noun",
+          "body": [
+            "English says \"**on** the table\" — position first, then the thing. Mandarin flips the order: **thing first, position after**. This reversal takes a while to feel natural."
+          ],
+          "table": {
+            "head": [
+              "中文",
+              "Pīnyīn",
+              "Literally",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "桌子**上面**",
+                "zhuōzi shàngmiàn",
+                "table top-side",
+                "on the table"
+              ],
+              [
+                "房間**裡面**",
+                "fángjiān lǐmiàn",
+                "room inside",
+                "in the room"
+              ],
+              [
+                "學校**旁邊**",
+                "xuéxiào pángbiān",
+                "school beside",
+                "next to the school"
+              ],
+              [
+                "銀行**後面**",
+                "yínháng hòumiàn",
+                "bank back-side",
+                "behind the bank"
+              ],
+              [
+                "捷運站**前面**",
+                "jiéyùn zhàn qiánmiàn",
+                "MRT station front-side",
+                "in front of the MRT station"
+              ],
+              [
+                "兩家店**中間**",
+                "liǎng jiā diàn zhōngjiān",
+                "two shops middle",
+                "between the two shops"
+              ]
+            ]
+          },
+          "after": [
+            "The full sentence combines both: **書在桌子上面。** — \"The book is on the table.\" Pattern: thing + 在 + place + position word.",
+            "⚠️ **面 and 邊 are often interchangeable** (上面 / 上邊, 裡面 / 裡邊), but in Taiwan **面** is far more common. Some forms have only one option: 旁邊 is always 邊, 中間 always 間.",
+            "**After the name of a place, 裡面 can be dropped**: *我在圖書館* (\"I'm at the library\") doesn't need 裡面. Ordinary objects are what need a position word: *在桌子上面*, not *在桌子*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Places around town",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "Meaning",
+            "中文",
+            "Pīnyīn",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "家",
+              "jiā",
+              "home",
+              "醫院",
+              "yīyuàn",
+              "hospital"
+            ],
+            [
+              "學校",
+              "xuéxiào",
+              "school",
+              "藥局",
+              "yàojú",
+              "pharmacy"
+            ],
+            [
+              "宿舍",
+              "sùshè",
+              "dormitory",
+              "郵局",
+              "yóujú",
+              "post office"
+            ],
+            [
+              "圖書館",
+              "túshūguǎn",
+              "library",
+              "銀行",
+              "yínháng",
+              "bank"
+            ],
+            [
+              "教室",
+              "jiàoshì",
+              "classroom",
+              "公園",
+              "gōngyuán",
+              "park"
+            ],
+            [
+              "餐廳",
+              "cāntīng",
+              "restaurant",
+              "市場",
+              "shìchǎng",
+              "market"
+            ],
+            [
+              "便利商店",
+              "biànlì shāngdiàn",
+              "convenience store",
+              "廟",
+              "miào",
+              "temple"
+            ],
+            [
+              "捷運站",
+              "jiéyùn zhàn",
+              "MRT station",
+              "百貨公司",
+              "bǎihuò gōngsī",
+              "department store"
+            ],
+            [
+              "火車站",
+              "huǒchē zhàn",
+              "train station",
+              "廁所",
+              "cèsuǒ",
+              "restroom"
+            ],
+            [
+              "機場",
+              "jīchǎng",
+              "airport",
+              "夜市",
+              "yèshì",
+              "night market"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **廁所 is the most urgent word to learn.** *請問，廁所在哪裡？* — \"Excuse me, where's the restroom?\" In Taiwan, clean public restrooms are easiest to find in 捷運站 and 便利商店, and anyone can use them without buying anything."
+        }
+      ]
+    },
+    {
+      "title": "Position words",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "Meaning",
+            "中文",
+            "Pīnyīn",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "上面",
+              "shàngmiàn",
+              "on, above",
+              "外面",
+              "wàimiàn",
+              "outside"
+            ],
+            [
+              "下面",
+              "xiàmiàn",
+              "under, below",
+              "旁邊",
+              "pángbiān",
+              "next to"
+            ],
+            [
+              "前面",
+              "qiánmiàn",
+              "in front",
+              "對面",
+              "duìmiàn",
+              "opposite, across from"
+            ],
+            [
+              "後面",
+              "hòumiàn",
+              "behind",
+              "中間",
+              "zhōngjiān",
+              "between, in the middle"
+            ],
+            [
+              "裡面",
+              "lǐmiàn",
+              "inside",
+              "附近",
+              "fùjìn",
+              "nearby"
+            ],
+            [
+              "左邊",
+              "zuǒbiān",
+              "on the left",
+              "右邊",
+              "yòubiān",
+              "on the right"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Five sentences to learn whole",
+          "items": [
+            "**書在桌子上面。** — The book is on the table.",
+            "**我家在學校附近。** — My home is near the school.",
+            "**廁所在二樓。** — The restroom is on the second floor.",
+            "**便利商店在捷運站旁邊。** — The convenience store is next to the MRT station.",
+            "**我的錢包在背包裡面。** — My wallet is in my backpack."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Addresses: big to small, no exceptions",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Taiwanese addresses go from the biggest unit to the smallest — the reverse of the English habit of starting with the house number. The order: **city → district → road → section → lane → number → floor**."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Part",
+            "中文",
+            "Pīnyīn",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "city",
+              "台北市",
+              "Táiběi Shì",
+              "Taipei City"
+            ],
+            [
+              "district",
+              "大安區",
+              "Dà'ān Qū",
+              "Da'an District"
+            ],
+            [
+              "road",
+              "忠孝東路",
+              "Zhōngxiào Dōng Lù",
+              "Zhongxiao East Road"
+            ],
+            [
+              "road section",
+              "四段",
+              "sì duàn",
+              "Section 4"
+            ],
+            [
+              "lane",
+              "巷",
+              "xiàng",
+              "lane"
+            ],
+            [
+              "number",
+              "號",
+              "hào",
+              "house number"
+            ],
+            [
+              "floor",
+              "樓",
+              "lóu",
+              "floor"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "A full address: **台北市大安區忠孝東路四段45巷12號3樓**. Read in order, it narrows down by itself from city to floor. ⚠️ Floors use plain numbers: 三樓 (third floor), 十樓 (tenth floor). And **一樓 is the ground floor** — as in American English, not the British \"first floor\" above it."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "在",
+      "baca": "zài",
+      "en": "at, in; to be at"
+    },
+    {
+      "zh": "住",
+      "baca": "zhù",
+      "en": "to live"
+    },
+    {
+      "zh": "家",
+      "baca": "jiā",
+      "en": "home; family"
+    },
+    {
+      "zh": "學校",
+      "baca": "xuéxiào",
+      "en": "school, campus"
+    },
+    {
+      "zh": "宿舍",
+      "baca": "sùshè",
+      "en": "dormitory"
+    },
+    {
+      "zh": "房間",
+      "baca": "fángjiān",
+      "en": "room"
+    },
+    {
+      "zh": "裡面",
+      "baca": "lǐmiàn",
+      "en": "inside"
+    },
+    {
+      "zh": "上面",
+      "baca": "shàngmiàn",
+      "en": "on, above"
+    },
+    {
+      "zh": "旁邊",
+      "baca": "pángbiān",
+      "en": "next to"
+    },
+    {
+      "zh": "附近",
+      "baca": "fùjìn",
+      "en": "nearby"
+    },
+    {
+      "zh": "捷運",
+      "baca": "jiéyùn",
+      "en": "MRT (⚠️ Taiwan term)"
+    },
+    {
+      "zh": "便利商店",
+      "baca": "biànlì shāngdiàn",
+      "en": "convenience store"
+    },
+    {
+      "zh": "圖書館",
+      "baca": "túshūguǎn",
+      "en": "library"
+    },
+    {
+      "zh": "廁所",
+      "baca": "cèsuǒ",
+      "en": "restroom, toilet"
+    },
+    {
+      "zh": "樓",
+      "baca": "lóu",
+      "en": "floor; building"
+    },
+    {
+      "zh": "地址",
+      "baca": "dìzhǐ",
+      "en": "address"
+    },
+    {
+      "zh": "方便",
+      "baca": "fāngbiàn",
+      "en": "convenient"
+    },
+    {
+      "zh": "不錯",
+      "baca": "búcuò",
+      "en": "pretty good, not bad"
+    },
+    {
+      "zh": "當然",
+      "baca": "dāngrán",
+      "en": "of course"
+    },
+    {
+      "zh": "有",
+      "baca": "yǒu",
+      "en": "to have; there is"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mandarin.",
+      "items": [
+        "Where do you live?",
+        "I live in the campus dorm.",
+        "The book is on the table.",
+        "The restroom is on the second floor.",
+        "Is there a convenience store near here?",
+        "I eat at home."
+      ]
+    },
+    {
+      "prompt": "Fill in the right position word: 上面, 裡面, 旁邊, 對面, or 附近.",
+      "items": [
+        "書在桌子 ____。",
+        "錢包在背包 ____。",
+        "便利商店在捷運站 ____。",
+        "我家在學校 ____。",
+        "餐廳在銀行 ____，要過馬路。"
+      ]
+    },
+    {
+      "prompt": "Correct the sentences — the place phrase is in the wrong place in all of them.",
+      "items": [
+        "我吃飯在家。",
+        "他念書在圖書館。",
+        "我們見面在捷運站。",
+        "她工作在銀行。",
+        "我買東西在夜市。"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "哪裡 / 你 / 住",
+        "上面 / 書 / 桌子 / 在",
+        "有 / 附近 / 嗎 / 便利商店",
+        "在 / 我 / 吃飯 / 家",
+        "旁邊 / 捷運站 / 在 / 我家"
+      ]
+    }
+  ],
+  "answers": [
+    "你住哪裡？ — 我住學校宿舍。 — 書在桌子上面。 — 廁所在二樓。 — 附近有便利商店嗎？ — 我在家吃飯。",
+    "上面 — 裡面 — 旁邊 — 附近 — 對面",
+    "我在家吃飯。 — 他在圖書館念書。 — 我們在捷運站見面。 — 她在銀行工作。 — 我在夜市買東西。",
+    "你住哪裡？ — 書在桌子上面。 — 附近有便利商店嗎？ — 我在家吃飯。 — 我家在捷運站旁邊。"
+  ]
+}

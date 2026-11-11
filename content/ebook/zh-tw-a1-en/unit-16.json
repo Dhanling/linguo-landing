@@ -1,0 +1,603 @@
+{
+  "title": "Excuse me, where's the post office?",
+  "title_target": "請問，郵局在哪裡？",
+  "goal": "Ask strangers for directions and understand the answer — a skill that decides whether you can get around Taiwan on your own.",
+  "bekal": [
+    "ask for directions with the right opener and catch the answer",
+    "use the direction verbs 往, 過, 轉, 走",
+    "give distances with 大概 and landmarks with 看到"
+  ],
+  "dialogs": [
+    {
+      "title": "對話 — 迷路了",
+      "intro": "Budi is lost looking for the post office in Tainan's old town. He asks a woman selling fruit.",
+      "lines": [
+        {
+          "speaker": "布迪:",
+          "text": "[不好意思|Bù hǎoyìsi]，[請問|qǐngwèn][郵局|yóujú][在|zài][哪裡|nǎlǐ]？",
+          "id": "Excuse me, could you tell me where the post office is?",
+          "literal": "not — good — meaning, please — ask — post-office — at — where?"
+        },
+        {
+          "speaker": "阿姨:",
+          "text": "[郵局|Yóujú][喔|o]？[你|Nǐ][往|wǎng][前面|qiánmiàn][直走|zhí zǒu]。",
+          "id": "The post office? Go straight ahead.",
+          "literal": "post-office — (softener)? you — toward — front-side — straight — walk."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[直走|Zhí zǒu][多久|duō jiǔ]？",
+          "id": "Straight for how long?",
+          "literal": "straight — walk — how — long?"
+        },
+        {
+          "speaker": "阿姨:",
+          "text": "[大概|Dàgài][五|wǔ][分鐘|fēnzhōng]。[看到|Kàndào][廟|miào][以後|yǐhòu][右轉|yòu zhuǎn]。",
+          "id": "About five minutes. When you see a temple, turn right.",
+          "literal": "about — five — minute. see-reach — temple — after — right — turn."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[看到|Kàndào][廟|miào][右轉|yòu zhuǎn]…[然後|ránhòu][呢|ne]？",
+          "id": "See the temple, turn right… and then?",
+          "literal": "see-reach — temple — right — turn… after-that — (what about)?"
+        },
+        {
+          "speaker": "阿姨:",
+          "text": "[過|Guò][一個|yí ge][紅綠燈|hónglǜdēng]，[郵局|yóujú][就|jiù][在|zài][左邊|zuǒbiān]。",
+          "id": "Go past one traffic light, and the post office is right on your left.",
+          "literal": "pass — one — (measure word) — red-green-light, post-office — just — at — left-side."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[左邊|Zuǒbiān]…[有|yǒu][什麼|shénme][招牌|zhāopái][嗎|ma]？",
+          "id": "On the left… is there a sign?",
+          "literal": "left-side… have — what — signboard — (question)?"
+        },
+        {
+          "speaker": "阿姨:",
+          "text": "[綠色|Lǜsè][的|de]，[很|hěn][大|dà]。[你|Nǐ][一定|yídìng][看得到|kàndedào]。",
+          "id": "A green one, a big one. You can't miss it.",
+          "literal": "green-color — (one), very — big. you — surely — see-can-reach."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[太|Tài][謝謝|xièxie][您|nín][了|le]！[我|Wǒ][剛剛|gānggāng][走|zǒu][錯|cuò][方向|fāngxiàng]。",
+          "id": "Thank you so much! I was going the wrong way.",
+          "literal": "too — thank — you (polite) — (change)! I — just-now — walk — wrong — direction."
+        },
+        {
+          "speaker": "阿姨:",
+          "text": "[你|Nǐ][是|shì][外國人|wàiguó rén][喔|o]？[中文|Zhōngwén][說|shuō][得|de][很|hěn][好|hǎo][耶|ye]！",
+          "id": "You're a foreigner, right? Your Chinese is really good!",
+          "literal": "you — are — outside-country-person — (softener)? Chinese — speak — (manner) — very — good — (wow)!"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[謝謝|Xièxie]！[我|Wǒ][是|shì][印尼|Yìnní][來|lái][的|de][學生|xuéshēng]。",
+          "id": "Thank you! I'm a student from Indonesia.",
+          "literal": "thanks! I — am — Indonesia — come — (one) — student."
+        },
+        {
+          "speaker": "阿姨:",
+          "text": "[歡迎|Huānyíng][歡迎|huānyíng]！[來|Lái]，[送|sòng][你|nǐ][一個|yí ge][芭樂|bālè]！",
+          "id": "Welcome! Here, have a guava!",
+          "literal": "welcome — welcome! come, give — you — one — (measure word) — guava!"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[真的|Zhēn de][嗎|ma]？[太|Tài][不好意思|bù hǎoyìsi][了|le]！",
+          "id": "Really? That's too kind!",
+          "literal": "real — (one) — (question)? too — not-good-meaning — (change)!"
+        },
+        {
+          "speaker": "阿姨:",
+          "text": "[沒關係|Méi guānxi][啦|la]！[路上|Lù shàng][小心|xiǎoxīn][喔|o]！",
+          "id": "No problem! Take care on your way!",
+          "literal": "not — have — relation — (softener)! road — on — small-heart — (softener)!"
+        }
+      ],
+      "notes": [
+        "⚠️ **請問 is the essential opener when asking a stranger something.** Asking directly without 請問 sounds like an interrogation. The most natural combination is **不好意思，請問…** — two layers of politeness at once.",
+        "**Giving fruit or food to strangers is a living custom in Taiwan**, especially in small towns and markets. Refusing can actually offend; accept it while saying *太不好意思了* and *謝謝*.",
+        "**得 in 說得很好 marks how something is done**: verb + 得 + adjective. 說得很好 (speaks well), 跑得很快 (runs fast), 吃得很多 (eats a lot). ⚠️ It's pronounced *de*, just like 的, but written differently.",
+        "**看得到 means \"can be seen\"** — a potential complement, covered in unit 18. Its opposite is 看不到 (can't be seen). This pattern comes up constantly in directions.",
+        "⚠️ **芭樂 (guava) is the most everyday fruit in Taiwan**, often sold sliced with sweet-and-sour plum powder. In slang, 芭樂 also means \"cheesy, cliché\": *芭樂歌* = a run-of-the-mill pop song."
+      ],
+      "grammars": [
+        {
+          "title": "Direction verbs: 往, 過, 轉, 走",
+          "body": [
+            "Directions in Mandarin are built from a few verbs that always come in the same order: **往 + direction**, then **走**, then a landmark, then **轉**."
+          ],
+          "table": {
+            "head": [
+              "中文",
+              "Pīnyīn",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**往**前走",
+                "wǎng qián zǒu",
+                "walk forward"
+              ],
+              [
+                "**直**走",
+                "zhí zǒu",
+                "go straight"
+              ],
+              [
+                "**左**轉 / **右**轉",
+                "zuǒ zhuǎn / yòu zhuǎn",
+                "turn left / turn right"
+              ],
+              [
+                "**過**馬路",
+                "guò mǎlù",
+                "cross the street"
+              ],
+              [
+                "**過**一個紅綠燈",
+                "guò yí ge hónglǜdēng",
+                "go past one traffic light"
+              ],
+              [
+                "**到**十字路口",
+                "dào shízì lùkǒu",
+                "reach the intersection"
+              ],
+              [
+                "**看到**…以後",
+                "kàndào… yǐhòu",
+                "after you see…"
+              ],
+              [
+                "就在**左邊**",
+                "jiù zài zuǒbiān",
+                "it's right on the left"
+              ]
+            ]
+          },
+          "after": [
+            "**十字路口 (\"road mouth shaped like the character ten\") means an intersection** — 十 really is shaped like a cross. A good example of how Chinese characters help you remember words.",
+            "⚠️ **往 is always followed by a direction, not a place**: 往前 (forward), 往左 (to the left), 往北 (northward). For places, use 去 or 到."
+          ]
+        },
+        {
+          "title": "以前 and 以後: after the noun, not before",
+          "body": [
+            "English says \"**before** eating\" and \"**after** eating\" with the word in front. Mandarin puts it **after** — just like the position words in unit 7."
+          ],
+          "table": {
+            "head": [
+              "中文",
+              "Pīnyīn",
+              "Literally",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "吃飯**以前**",
+                "chīfàn yǐqián",
+                "eat before",
+                "before eating"
+              ],
+              [
+                "吃飯**以後**",
+                "chīfàn yǐhòu",
+                "eat after",
+                "after eating"
+              ],
+              [
+                "三點**以前**",
+                "sān diǎn yǐqián",
+                "three o'clock before",
+                "before three o'clock"
+              ],
+              [
+                "看到廟**以後**",
+                "kàndào miào yǐhòu",
+                "see temple after",
+                "after you see the temple"
+              ],
+              [
+                "**以前**我住台北。",
+                "Yǐqián wǒ zhù Táiběi.",
+                "before I live Taipei",
+                "⚠️ 以前 alone = in the past"
+              ],
+              [
+                "**以後**再說。",
+                "Yǐhòu zài shuō.",
+                "after again talk",
+                "⚠️ 以後 alone = later"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **When 以前 and 以後 stand alone at the start of a sentence, their meaning changes** to \"in the past\" and \"in the future\". *以前我不會說中文* = \"I used to not speak Chinese\".",
+            "**The same pattern applies to 的時候 (\"when…\")**: 吃飯的時候 (when eating), 小的時候 (when I was little). They all attach at the end."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Asking for directions",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "English"
+          ],
+          "rows": [
+            [
+              "**請問，…在哪裡？**",
+              "qǐngwèn, … zài nǎlǐ?",
+              "Excuse me, where is…?"
+            ],
+            [
+              "**…怎麼走？**",
+              "… zěnme zǒu?",
+              "How do I get to…?"
+            ],
+            [
+              "**離這裡遠嗎？**",
+              "lí zhèlǐ yuǎn ma?",
+              "Is it far from here?"
+            ],
+            [
+              "**要走多久？**",
+              "yào zǒu duō jiǔ?",
+              "How long is the walk?"
+            ],
+            [
+              "**我迷路了**",
+              "wǒ mílù le",
+              "I'm lost"
+            ],
+            [
+              "**我走錯了**",
+              "wǒ zǒu cuò le",
+              "I took the wrong way"
+            ],
+            [
+              "**這附近有…嗎？**",
+              "zhè fùjìn yǒu… ma?",
+              "Is there a… near here?"
+            ],
+            [
+              "**可以幫我看地圖嗎？**",
+              "kěyǐ bāng wǒ kàn dìtú ma?",
+              "Could you help me with the map?"
+            ],
+            [
+              "**我不是本地人**",
+              "wǒ bú shì běndì rén",
+              "I'm not from around here"
+            ],
+            [
+              "**謝謝，我知道了**",
+              "xièxie, wǒ zhīdào le",
+              "Thanks, I've got it"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **離 (*lí*) means \"at a distance from\"** and the order is A 離 B + far/near: *我家離學校很近* (\"my place is close to campus\"). Don't confuse it with 從 (from, the starting point of a movement): *我從家裡走路去* (\"I walk there from home\")."
+        }
+      ]
+    },
+    {
+      "title": "Compass points and landmarks",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "Meaning",
+            "中文",
+            "Pīnyīn",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "東",
+              "dōng",
+              "east",
+              "馬路",
+              "mǎlù",
+              "road, main street"
+            ],
+            [
+              "西",
+              "xī",
+              "west",
+              "巷子",
+              "xiàngzi",
+              "lane, alley"
+            ],
+            [
+              "南",
+              "nán",
+              "south",
+              "紅綠燈",
+              "hónglǜdēng",
+              "traffic light"
+            ],
+            [
+              "北",
+              "běi",
+              "north",
+              "十字路口",
+              "shízì lùkǒu",
+              "intersection"
+            ],
+            [
+              "左邊",
+              "zuǒbiān",
+              "left side",
+              "轉角",
+              "zhuǎnjiǎo",
+              "corner"
+            ],
+            [
+              "右邊",
+              "yòubiān",
+              "right side",
+              "橋",
+              "qiáo",
+              "bridge"
+            ],
+            [
+              "前面",
+              "qiánmiàn",
+              "in front",
+              "地下道",
+              "dìxiàdào",
+              "underpass"
+            ],
+            [
+              "後面",
+              "hòumiàn",
+              "behind",
+              "招牌",
+              "zhāopái",
+              "signboard"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **The Mandarin order of compass points is 東西南北** (east-west-south-north), not north-east-south-west. And big street names in Taiwan often include their direction: 忠孝**東**路 (Zhongxiao Road **East**), 中山**北**路 (Zhongshan Road **North**) — very helpful when you're lost."
+        }
+      ]
+    },
+    {
+      "title": "At the post office and convenience store",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "English"
+          ],
+          "rows": [
+            [
+              "**我要寄信**",
+              "wǒ yào jì xìn",
+              "I'd like to send a letter"
+            ],
+            [
+              "**我要寄包裹**",
+              "wǒ yào jì bāoguǒ",
+              "I'd like to send a package"
+            ],
+            [
+              "**寄到印尼多少錢？**",
+              "jì dào Yìnní duōshǎo qián?",
+              "How much to Indonesia?"
+            ],
+            [
+              "**要幾天？**",
+              "yào jǐ tiān?",
+              "How many days does it take?"
+            ],
+            [
+              "**我要領錢**",
+              "wǒ yào lǐng qián",
+              "I'd like to withdraw money"
+            ],
+            [
+              "**這裡可以影印嗎？**",
+              "zhèlǐ kěyǐ yǐngyìn ma?",
+              "Can I make copies here?"
+            ],
+            [
+              "**我要繳費**",
+              "wǒ yào jiǎofèi",
+              "I'd like to pay a bill"
+            ],
+            [
+              "**悠遊卡加值**",
+              "yōuyóukǎ jiāzhí",
+              "Top up an EasyCard"
+            ],
+            [
+              "**要袋子嗎？**",
+              "yào dàizi ma?",
+              "Do you need a bag?"
+            ],
+            [
+              "**要加熱嗎？**",
+              "yào jiārè ma?",
+              "Want it heated up?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **You'll hear the last two questions every time you buy something at a 便利商店.** The answer: *要* or *不用，謝謝*. Plastic bags in Taiwan cost money (1–3 塊) since free bags were banned, so bring your own."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "請問",
+      "baca": "qǐngwèn",
+      "en": "⚠️ excuse me, may I ask"
+    },
+    {
+      "zh": "郵局",
+      "baca": "yóujú",
+      "en": "post office"
+    },
+    {
+      "zh": "往",
+      "baca": "wǎng",
+      "en": "toward"
+    },
+    {
+      "zh": "直走",
+      "baca": "zhí zǒu",
+      "en": "go straight"
+    },
+    {
+      "zh": "左轉",
+      "baca": "zuǒ zhuǎn",
+      "en": "turn left"
+    },
+    {
+      "zh": "右轉",
+      "baca": "yòu zhuǎn",
+      "en": "turn right"
+    },
+    {
+      "zh": "過",
+      "baca": "guò",
+      "en": "pass, cross"
+    },
+    {
+      "zh": "馬路",
+      "baca": "mǎlù",
+      "en": "road, main street"
+    },
+    {
+      "zh": "紅綠燈",
+      "baca": "hónglǜdēng",
+      "en": "traffic light"
+    },
+    {
+      "zh": "路口",
+      "baca": "lùkǒu",
+      "en": "intersection"
+    },
+    {
+      "zh": "看到",
+      "baca": "kàndào",
+      "en": "see (successfully)"
+    },
+    {
+      "zh": "以前",
+      "baca": "yǐqián",
+      "en": "before; in the past"
+    },
+    {
+      "zh": "以後",
+      "baca": "yǐhòu",
+      "en": "after; later"
+    },
+    {
+      "zh": "離",
+      "baca": "lí",
+      "en": "at a distance from"
+    },
+    {
+      "zh": "迷路",
+      "baca": "mílù",
+      "en": "get lost"
+    },
+    {
+      "zh": "錯",
+      "baca": "cuò",
+      "en": "wrong"
+    },
+    {
+      "zh": "小心",
+      "baca": "xiǎoxīn",
+      "en": "be careful"
+    },
+    {
+      "zh": "地圖",
+      "baca": "dìtú",
+      "en": "map"
+    },
+    {
+      "zh": "寄",
+      "baca": "jì",
+      "en": "send (by mail)"
+    },
+    {
+      "zh": "外國人",
+      "baca": "wàiguó rén",
+      "en": "foreigner"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mandarin.",
+      "items": [
+        "Excuse me, where's the post office?",
+        "Go straight for five minutes.",
+        "When you see the temple, turn right.",
+        "I'm lost.",
+        "Is it far from here?",
+        "Take care on your way!"
+      ]
+    },
+    {
+      "prompt": "Fill in with 往, 過, 轉, or 到.",
+      "items": [
+        "____ 前直走。",
+        "____ 馬路以後左 ____。",
+        "____ 十字路口右 ____。",
+        "____ 一個紅綠燈。",
+        "____ 左走五分鐘。"
+      ]
+    },
+    {
+      "prompt": "Fill in with 以前 or 以後.",
+      "items": [
+        "吃飯 ____ 要洗手。",
+        "看到廟 ____ 右轉。",
+        "三點 ____ 我有課。",
+        "____ 我住台北，現在住台南。",
+        "下課 ____ 我們去吃飯。"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "在 / 郵局 / 哪裡 / 請問",
+        "走 / 直 / 往前",
+        "轉 / 右 / 紅綠燈 / 過",
+        "了 / 我 / 迷路",
+        "遠 / 這裡 / 嗎 / 離"
+      ]
+    }
+  ],
+  "answers": [
+    "請問，郵局在哪裡？ — 直走五分鐘。 — 看到廟以後右轉。 — 我迷路了。 — 離這裡遠嗎？ — 路上小心！",
+    "往 — 過、轉 — 到、轉 — 過 — 往",
+    "以前 — 以後 — 以前 — 以前 — 以後",
+    "請問郵局在哪裡？ — 往前直走。 — 過紅綠燈右轉。 — 我迷路了。 — 離這裡遠嗎？"
+  ]
+}

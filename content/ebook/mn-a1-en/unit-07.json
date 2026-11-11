@@ -1,0 +1,565 @@
+{
+  "title": "A book or the book?",
+  "title_target": "Ном уу, номыг уу?",
+  "goal": "Master the object suffix *-ыг / -ийг*: the one place where Mongolian marks the difference English marks with *a* and *the*.",
+  "bekal": [
+    "add the object suffix only when it's needed, and know when it isn't",
+    "use *-ыг / -ийг / -г* in the right form",
+    "build sentences with two objects at once without getting lost"
+  ],
+  "dialogs": [
+    {
+      "title": "Яриа — Номын санд",
+      "intro": "Budi is looking for a book in the university library. The librarian helps him.",
+      "lines": [
+        {
+          "speaker": "Буди:",
+          "text": "[Сайн|Sain] [байна|BAI-n] [уу|uu]. [Би|Bi] [ном|nom] [хайж|khaij] [байна|BAI-n].",
+          "id": "Good afternoon. I'm looking for a book.",
+          "literal": "good is Q. I book look-ing is."
+        },
+        {
+          "speaker": "Ажилтан:",
+          "text": "[Ямар|YA-mar] [ном|nom] [бэ|beh]? [Нэр|Ner] [нь|n'] [юу|yuu] [вэ|veh]?",
+          "id": "What kind of book? What's the title?",
+          "literal": "what-kind book Q? name -the what Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "\"[Монголын|MON-go-liin] [нууц|nuuts] [товчоо|tov-CHŌ]\" [гэдэг|GEH-deg] [номыг|NO-miig] [хайж|khaij] [байна|BAI-n].",
+          "id": "I'm looking for the book called \"The Secret History of the Mongols.\"",
+          "literal": "Mongols' secret history called book-OBJ look-ing is."
+        },
+        {
+          "speaker": "Ажилтан:",
+          "text": "[Аан|Aan], [тэр|ter] [номыг|NO-miig] [мэднэ|MED-neh]. [Хоёрдугаар|kho-YOR-du-gaar] [давхарт|DAV-khart] [байгаа|bai-GAA].",
+          "id": "Oh, I know that book. It's on the second floor.",
+          "literal": "oh, that book-OBJ know. second floor-on is-that."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Түүнийг|TÜÜ-niig] [гэртээ|GER-tē] [авч|avch] [явж|yavj] [болох|BO-lokh] [уу|uu]?",
+          "id": "Can I take it home?",
+          "literal": "that-OBJ home-to-own take-ing go-ing may Q?"
+        },
+        {
+          "speaker": "Ажилтан:",
+          "text": "[Болно|BOL-no]. [Гэхдээ|GEKH-dē] [оюутны|o-YUUT-nii] [үнэмлэхээ|Ü-nem-leh-khē] [үзүүлнэ|ü-DZÜÜL-neh] [үү|üü].",
+          "id": "Yes. But please show me your student card.",
+          "literal": "may. but student's card-own-OBJ show Q."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Энэ|EH-neh] [байна|BAI-n]. [Хэдэн|KHEH-den] [хоног|kho-NOG] [авч|avch] [болох|BO-lokh] [вэ|veh]?",
+          "id": "Here it is. How many days can I borrow it?",
+          "literal": "this is. how-many day take-ing may Q?"
+        },
+        {
+          "speaker": "Ажилтан:",
+          "text": "[Хоёр|Kho-YOR] [долоо|do-LŌ] [хоног|kho-NOG]. [Хугацаа|khu-ga-TSAA] [хэтэрвэл|kheh-TER-vel] [торгууль|tor-GUUL'] [төлнө|TÖL-nö].",
+          "id": "Two weeks. If it's overdue, there's a fine.",
+          "literal": "two seven-day. time if-passes fine pay."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Ойлголоо|OIL-go-lō]. [Бас|Bas] [толь|tol'] [бичиг|BI-chig] [байгаа|bai-GAA] [юу|yuu]?",
+          "id": "I see. Do you have dictionaries too?",
+          "literal": "understood. also mirror writing is-that Q?"
+        },
+        {
+          "speaker": "Ажилтан:",
+          "text": "[Байгаа|Bai-GAA], [гэхдээ|GEKH-dē] [толь|tol'] [бичгийг|BICH-giig] [гаргаж|GAR-gaj] [болохгүй|BO-lokh-güi].",
+          "id": "Yes, but dictionaries can't be taken out.",
+          "literal": "is-that, but mirror writing-OBJ take-out-ing may-not."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Зүгээр|DZÜ-gēr], [энд|end] [уншина|UN-shi-na]. [Ширээ|Shi-RĒ] [хаана|KHAA-na] [байна|BAI-n] [вэ|veh]?",
+          "id": "That's fine, I'll read here. Where are the tables?",
+          "literal": "no-problem, here read. table where is Q?"
+        },
+        {
+          "speaker": "Ажилтан:",
+          "text": "[Цонхны|TSONKH-nii] [дэргэд|DER-ged]. [Тэр|Ter] [ширээг|shi-RĒG] [ашиглаарай|a-SHIG-laa-rai].",
+          "id": "By the window. Just use that table.",
+          "literal": "window's side. that table-OBJ use."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Их|Ikh] [баярлалаа|ba-yar-la-LAA]. [Та|Ta] [надад|NA-dad] [маш|mash] [их|ikh] [тусаллаа|TU-sal-laa].",
+          "id": "Thank you so much. You've been a big help.",
+          "literal": "big thanks. you me-to very big helped."
+        },
+        {
+          "speaker": "Ажилтан:",
+          "text": "[Зүгээр|DZÜ-gēr]. [Асуулт|A-suult] [байвал|BAI-val] [асуугаарай|a-SUU-gaa-rai].",
+          "id": "You're welcome. If you have questions, just ask.",
+          "literal": "no-problem. question if-is ask."
+        }
+      ],
+      "notes": [
+        "⚠️ **This is the heart of the unit: compare the first and third lines.** *Би **ном** хайж байна* = \"I'm looking for a book\" (any book, not one I have in mind). *Би **номыг** хайж байна* = \"I'm looking for **the** book\" (a specific book we've already talked about). The object suffix is how Mongolian says \"the.\"",
+        "**Түүнийг = \"that/him/her\" in object form.** Pronouns have their own object forms: *би* → *намайг*, *чи* → *чамайг*, *та* → *таныг*, *тэр* → *түүнийг*. They're irregular and must be memorized, because they're used constantly.",
+        "**Толь бичиг literally means \"mirror writing\" and is the word for dictionary.** Mongolian loves images like this: *гар утас* (hand phone) for a mobile phone, *галт тэрэг* (fire cart) for a train, *нисдэг тэрэг* (flying cart) for a helicopter. When you meet a strange compound, translate its parts; the meaning is usually obvious.",
+        "**Байвал and хэтэрвэл carry the suffix -вал / -вэл, meaning \"if.\"** *Асуулт **байвал*** = \"if there are questions.\" This suffix attaches to verbs and is very common; it's covered fully at A2, but learn to recognize it now.",
+        "⚠️ **Look at the word order in the last line of the dialogue: *Та надад маш их тусаллаа*.** The recipient (*надад*, to me) stands **before** the verb, like everything else. Mongolian never puts anything after the verb."
+      ],
+      "grammars": [
+        {
+          "title": "When the object takes a suffix, and when it doesn't",
+          "body": [
+            "This is the only part of Mongolian grammar that truly demands a decision every time you speak. Luckily, the rule boils down to one question: **does the listener know which thing I mean?**"
+          ],
+          "table": {
+            "head": [
+              "Use the suffix if…",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "The thing is **specific**, already mentioned",
+                "*Номыг уншлаа.*",
+                "I read the book."
+              ],
+              [
+                "The thing has a **demonstrative** энэ/тэр",
+                "*Энэ номыг ав.*",
+                "Take this book."
+              ],
+              [
+                "The thing **belongs to someone**",
+                "*Миний номыг уншсан.*",
+                "He reads my book."
+              ],
+              [
+                "The thing is **a person or a name**",
+                "*Болдыг дуудаарай.*",
+                "Call Bold."
+              ],
+              [
+                "The object is **far** from its verb",
+                "*Номыг би өчигдөр уншсан.*",
+                "The book, I read yesterday."
+              ]
+            ]
+          },
+          "after": [
+            "**And don't use the suffix when the thing is indefinite, general, or fused with the verb.** *Би ном уншина* (I read books, the activity of reading); *би хоол иднэ* (I eat, the activity of eating); *би монгол хэл сурна* (I study Mongolian).",
+            "⚠️ **English speakers' most common mistake is overusing the suffix**, because \"the\" is everywhere in English and it feels natural to mark every object you'd say \"the\" with. Mongolian is stingier: **when in doubt, leave it off.** An object without the suffix sounds neutral; a wrongly suffixed object sounds as if you're pointing at something the listener doesn't know."
+          ]
+        },
+        {
+          "title": "Forms of the object suffix",
+          "body": [
+            "Three forms, chosen by the word's last letter and its vowel group: exactly the same pattern as the possessive suffix in unit 2."
+          ],
+          "table": {
+            "head": [
+              "Word ends in",
+              "Suffix",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "consonant, back group",
+                "**-ыг**",
+                "*ном* → *ном**ыг***",
+                "the book"
+              ],
+              [
+                "consonant, front group",
+                "**-ийг**",
+                "*гэр* → *гэр**ийг***",
+                "the house"
+              ],
+              [
+                "long vowel or diphthong",
+                "**-г**",
+                "*ширээ* → *ширээ**г***",
+                "the table"
+              ],
+              [
+                "*-ь* or *-и*",
+                "**-ийг**",
+                "*морь* → *мор**ийг***",
+                "the horse"
+              ],
+              [
+                "*-н*",
+                "**-ыг / -ийг**",
+                "*хүн* → *хүн**ийг***",
+                "the person"
+              ]
+            ]
+          },
+          "after": [
+            "Pronouns have their own forms to memorize: *намайг* (me), *чамайг* (you, informal), *таныг* (you, formal), *түүнийг* (him/her/that), *биднийг* (us), *тэднийг* (them), *энийг* (this), *тэрийг* (that).",
+            "**One exercise that really helps:** take ten sentences from the unit 6 dialogue and ask of each object: \"Does the listener know which thing I mean?\" If yes, add the suffix. If not, leave it bare. Do it once and the rule sticks."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Pronouns in object form",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Subject",
+            "Object",
+            "Say it",
+            "Example"
+          ],
+          "rows": [
+            [
+              "*би*",
+              "*намайг*",
+              "*na-MAIG*",
+              "*Тэр намайг дуудсан.* — He called me."
+            ],
+            [
+              "*чи*",
+              "*чамайг*",
+              "*cha-MAIG*",
+              "*Би чамайг хүлээнэ.* — I'll wait for you."
+            ],
+            [
+              "*та*",
+              "*таныг*",
+              "*TA-niig*",
+              "*Бид таныг мэднэ.* — We know you."
+            ],
+            [
+              "*тэр*",
+              "*түүнийг*",
+              "*TÜÜ-niig*",
+              "*Би түүнийг харсан.* — I saw him."
+            ],
+            [
+              "*бид*",
+              "*биднийг*",
+              "*BID-niig*",
+              "*Тэр биднийг урьсан.* — She invited us."
+            ],
+            [
+              "*тэд*",
+              "*тэднийг*",
+              "*TED-niig*",
+              "*Би тэднийг таньдаг.* — I know them."
+            ],
+            [
+              "*энэ*",
+              "*энийг*",
+              "*EH-niig*",
+              "*Энийг ав.* — Take this."
+            ],
+            [
+              "*тэр*",
+              "*тэрийг*",
+              "*TEH-riig*",
+              "*Тэрийг өг.* — Give me that."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Notice that *тэр* has **two** object forms: *түүнийг* when it means \"him/her,\" and *тэрийг* when it means \"that\" (a thing). This is the only place Mongolian separates people from things, and even here it's optional: in casual speech people often use *түүнийг* for both."
+        },
+        {
+          "type": "kotak",
+          "title": "Verbs that almost always take a suffixed object",
+          "items": [
+            "*дуудах* (to call), *хүлээх* (to wait for), *таних* (to know a person), *урих* (to invite), *харах* (to see someone): they all target **a specific person**, so their object is almost always suffixed.",
+            "Compare: *хоол хийх* (to cook), *ном унших* (to read), *хэл сурах* (to study a language): all general activities, so their object is almost always bare.",
+            "⚠️ This isn't a grammar rule but a consequence of meaning. People are always specific; general activities aren't."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Two objects in one sentence",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Verbs like *өгөх* (to give), *хэлэх* (to tell), and *үзүүлэх* (to show) need two targets: the thing and the person. Mongolian marks them with different suffixes, so their order can be swapped without changing the meaning."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Meaning",
+            "Note"
+          ],
+          "rows": [
+            [
+              "*Би түүнд ном өгсөн.*",
+              "I gave him a book.",
+              "Person takes **-д**, thing is bare."
+            ],
+            [
+              "*Би түүнд номыг өгсөн.*",
+              "I gave him the book.",
+              "Specific book → takes **-ыг**."
+            ],
+            [
+              "*Тэр надад үнэнийг хэлсэн.*",
+              "She told me the truth.",
+              "\"The truth\" is specific."
+            ],
+            [
+              "*Багш оюутнуудад хичээл заана.*",
+              "The teacher teaches the lesson to the students.",
+              "Both roles are clear from the suffixes."
+            ],
+            [
+              "*Номыг би түүнд өгсөн.*",
+              "The book, I gave to him.",
+              "The object moves to the front for emphasis."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last row shows a big advantage of the suffix system: **because every word's role is marked, the order can change for emphasis.** English has to use a passive or a clumsy fronting (\"That book, I gave to him…\"). Mongolian just moves the word to the front."
+        }
+      ]
+    },
+    {
+      "title": "Verbs that pair with an object",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "*харах*",
+              "*KHA-rakh*",
+              "to see",
+              "*Би түүнийг харсан.*"
+            ],
+            [
+              "*хайх*",
+              "*KHAIKH*",
+              "to look for",
+              "*Ном хайж байна.*"
+            ],
+            [
+              "*олох*",
+              "*O-lokh*",
+              "to find",
+              "*Номыг оллоо.*"
+            ],
+            [
+              "*хүлээх*",
+              "*khü-LĒKH*",
+              "to wait for",
+              "*Чамайг хүлээнэ.*"
+            ],
+            [
+              "*дуудах*",
+              "*DUU-dakh*",
+              "to call",
+              "*Багшийг дууд.*"
+            ],
+            [
+              "*таних*",
+              "*ta-NIKH*",
+              "to know (a person)",
+              "*Түүнийг танихгүй.*"
+            ],
+            [
+              "*урих*",
+              "*u-RIKH*",
+              "to invite",
+              "*Найзаа урьсан.*"
+            ],
+            [
+              "*туслах*",
+              "*TUS-lakh*",
+              "to help",
+              "*Надад тусалсан.*"
+            ],
+            [
+              "*үзүүлэх*",
+              "*ü-DZÜÜ-lekh*",
+              "to show",
+              "*Зургаа үзүүл.*"
+            ],
+            [
+              "*ашиглах*",
+              "*a-SHIG-lakh*",
+              "to use, to wear",
+              "*Ширээг ашигла.*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Туслах* (to help) takes the suffix **-д**, not the object suffix: you \"help **to** someone.\" *Надад тусалсан*, not *намайг тусалсан*. There are a few verbs like this, and it's best to memorize them with their suffix, just as you learn \"depend **on**\" and not \"depend of\" in English."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "mn": "хайх",
+      "baca": "KHAIKH",
+      "en": "to look for"
+    },
+    {
+      "mn": "олох",
+      "baca": "O-lokh",
+      "en": "to find"
+    },
+    {
+      "mn": "харах",
+      "baca": "KHA-rakh",
+      "en": "to see"
+    },
+    {
+      "mn": "хүлээх",
+      "baca": "khü-LĒKH",
+      "en": "to wait for"
+    },
+    {
+      "mn": "дуудах",
+      "baca": "DUU-dakh",
+      "en": "to call"
+    },
+    {
+      "mn": "таних",
+      "baca": "ta-NIKH",
+      "en": "to know (a person)"
+    },
+    {
+      "mn": "урих",
+      "baca": "u-RIKH",
+      "en": "to invite"
+    },
+    {
+      "mn": "туслах",
+      "baca": "TUS-lakh",
+      "en": "⚠️ to help (+ -д)"
+    },
+    {
+      "mn": "ашиглах",
+      "baca": "a-SHIG-lakh",
+      "en": "to use, to wear"
+    },
+    {
+      "mn": "хэлэх",
+      "baca": "KHEH-lekh",
+      "en": "to say, to tell"
+    },
+    {
+      "mn": "асуух",
+      "baca": "a-SUUKH",
+      "en": "to ask"
+    },
+    {
+      "mn": "намайг",
+      "baca": "na-MAIG",
+      "en": "me (object)"
+    },
+    {
+      "mn": "чамайг",
+      "baca": "cha-MAIG",
+      "en": "you (informal, object)"
+    },
+    {
+      "mn": "таныг",
+      "baca": "TA-niig",
+      "en": "you (formal, object)"
+    },
+    {
+      "mn": "түүнийг",
+      "baca": "TÜÜ-niig",
+      "en": "him, her, that (object)"
+    },
+    {
+      "mn": "номын сан",
+      "baca": "NO-miin san",
+      "en": "library"
+    },
+    {
+      "mn": "толь бичиг",
+      "baca": "tol' BI-chig",
+      "en": "dictionary"
+    },
+    {
+      "mn": "давхар",
+      "baca": "DAV-khar",
+      "en": "floor (story)"
+    },
+    {
+      "mn": "асуулт",
+      "baca": "A-suult",
+      "en": "question"
+    },
+    {
+      "mn": "ямар",
+      "baca": "YA-mar",
+      "en": "what kind, which"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mongolian.",
+      "items": [
+        "I'm looking for a book.",
+        "I'm looking for the book.",
+        "Take this book.",
+        "I'll wait for you.",
+        "He called me.",
+        "Call the teacher."
+      ]
+    },
+    {
+      "prompt": "Fill in the object suffix -ыг, -ийг, or -г. If no suffix is needed, write a dash.",
+      "items": [
+        "Би ном____ уншина. (any book)",
+        "Би энэ ном____ уншина.",
+        "Тэр ширээ____ ашигласан.",
+        "Би хоол____ иднэ. (ordinary eating)",
+        "Багш оюутан____ дуудсан.",
+        "Бид гэр____ харсан."
+      ]
+    },
+    {
+      "prompt": "Change the pronoun into its object form.",
+      "items": [
+        "би",
+        "чи",
+        "та",
+        "тэр",
+        "бид",
+        "тэд"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "хүлээнэ / чамайг / би",
+        "уншина / номыг / энэ / би",
+        "өгсөн / түүнд / ном / би",
+        "тусалсан / надад / та",
+        "байна / хайж / ном / би"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Би ном хайж байна. — Би номыг хайж байна. — Энэ номыг ав. — Би чамайг хүлээнэ. — Тэр намайг дуудсан. — Тэр багшийг дууд.",
+    "1": "- — ыг — г — - — ыг — ийг",
+    "2": "намайг — чамайг — таныг — түүнийг — биднийг — тэднийг",
+    "3": "Би чамайг хүлээнэ. — Би энэ номыг уншина. — Би түүнд ном өгсөн. — Та надад тусалсан. — Би ном хайж байна."
+  }
+}

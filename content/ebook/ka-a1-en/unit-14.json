@@ -1,0 +1,521 @@
+{
+  "title": "At the clothing store",
+  "title_target": "მაღაზიაში — Maghaziashi",
+  "goal": "Shop for clothes: name colors and sizes, try things on, compare two options, and say no politely without feeling trapped.",
+  "bekal": [
+    "name ten items of clothing",
+    "name colors and use them as adjectives",
+    "ask for another size and try things on",
+    "compare two things with უფრო and -ზე",
+    "say no politely and leave without buying"
+  ],
+  "dialogs": [
+    {
+      "title": "დიალოგი — A jacket for the winter",
+      "intro": "Nino goes with Ani to buy a jacket. Notice how two things are compared — the -ზე ending shows up again, this time not for places but for \"than\".",
+      "lines": [
+        {
+          "speaker": "გამყიდველი:",
+          "text": "[გამარჯობათ|Ga-mar-jo-bat]! [რამეს|Ra-mes] [ეძებთ|e-dzebt]?",
+          "id": "Good afternoon! Looking for something?",
+          "literal": "hello-polite! something-object — you-are-looking-for?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ქურთუკი|Kur-tu-k'i] [მჭირდება|mch'ir-de-ba], [თბილი|tbi-li].",
+          "id": "I need a jacket, a warm one.",
+          "literal": "jacket — I-need, warm."
+        },
+        {
+          "speaker": "გამყიდველი:",
+          "text": "[რა|Ra] [ზომა|zo-ma] [გაცვიათ|gats-vi-at]?",
+          "id": "What size?",
+          "literal": "what — size — you-wear?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[არ|Ar] [ვიცი|vi-tsi]… [ინდონეზიაში|In-do-ne-zi-a-shi] [სხვა|skhva] [ზომებია|zo-me-bi-a].",
+          "id": "I don't know… sizes are different in Indonesia.",
+          "literal": "not — I-know… Indonesia-in — different — sizes-are."
+        },
+        {
+          "speaker": "გამყიდველი:",
+          "text": "[არა|A-ra] [უშავს|u-shavs]. [ეს|Es] [ემ|em] [არის|a-ris]. [მოიზომეთ|Mo-i-zo-met]!",
+          "id": "That's okay. This one's an M. Try it on!",
+          "literal": "not — bad-to-it. this — M — is. try-on!"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[პატარაა|P'a-t'a-ra-a]. [უფრო|Up-ro] [დიდი|di-di] [გაქვთ|gakvt]?",
+          "id": "It's too small. Do you have a bigger one?",
+          "literal": "small-is. more — big — you-have?"
+        },
+        {
+          "speaker": "გამყიდველი:",
+          "text": "[კი|K'i]. [შავი|Sha-vi] [თუ|tu] [ლურჯი|lur-ji] [გირჩევნიათ|gir-chev-ni-at]?",
+          "id": "Yes. Would you prefer black or blue?",
+          "literal": "yes. black — or — blue — you-prefer?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ლურჯი|Lur-ji]. [ნინო|Ni-no], [როგორია|ro-go-ri-a]?",
+          "id": "Blue. Nino, what do you think?",
+          "literal": "blue. Nino, how-is?"
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[ლურჯი|Lur-ji] [შავზე|shav-ze] [უკეთესია|u-k'e-te-si-a]. [ძალიან|Dza-li-an] [გიხდება|gikh-de-ba]!",
+          "id": "The blue one is nicer than the black one. It really suits you!",
+          "literal": "blue — black-than — better-is. very — suits-you!"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[რამდენი|Ram-de-ni] [ღირს|ghirs]?",
+          "id": "How much is it?",
+          "literal": "how-much — costs?"
+        },
+        {
+          "speaker": "გამყიდველი:",
+          "text": "[ორასი|O-ra-si] [ლარი|la-ri]. [ახლა|Akh-la] [ფასდაკლებაა|pas-dak'-le-ba-a] — [ას|as] [სამოცი|sa-mo-tsi].",
+          "id": "Two hundred lari. It's on sale now — one hundred sixty.",
+          "literal": "two-hundred — lari. now — discount-is — hundred — sixty."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[კარგი|K'ar-gi], [ვიყიდი|vi-q'i-di]. [ბარათით|Ba-ra-tit] [შეიძლება|she-idz-le-ba]?",
+          "id": "All right, I'll take it. Can I pay by card?",
+          "literal": "good, I-will-buy. card-by — possible?"
+        }
+      ],
+      "notes": [
+        "**Comparing: უფრო + adjective, and the -ზე ending for \"than\".** *ლურჯი შავ**ზე** უკეთესია* — the blue one is better than the black one. ⚠️ Notice the order is the reverse of English: the thing you compare against comes **first**, then the adjective. Literally \"blue black-than better-is\".",
+        "**უკეთესი = better**, a special form of კარგი. Georgian has a few irregular comparatives like this one, just like *good → better* in English. For every other adjective, **უფრო** is all you need.",
+        "**გიხდება = \"it suits you\" (about how you look).** Another reversed verb: მიხდება (it suits me), გიხდება (it suits you), უხდება (it suits him/her). The compliment you'll hear most in stores — and not always sincerely.",
+        "**Colors are ordinary adjectives and go in front of the noun**: შავი ქურთუკი (black jacket), წითელი კაბა (red dress). Some colors are made from a thing + **-ფერი** (color): ყავის**ფერი** (brown, \"coffee-colored\"), ნაცრის**ფერი** (gray, \"ash-colored\"), ვარდის**ფერი** (pink, \"rose-colored\").",
+        "**რა ზომა გაცვიათ? — literally \"what size do you wear?\"** A safe answer if you don't know: *არ ვიცი, მოვიზომავ* (I don't know, I'll try it on). Georgia uses European sizes, so if you're used to US or UK sizes, check a conversion chart first.",
+        "**ფასდაკლება = sale, discount.** A compound of ფასი (price) + დაკლება (reduction). You'll see it in shop windows as **-30%** or **ფასდაკლება**.",
+        "**Saying no politely.** If you decide not to buy, don't just slip away: *მადლობა, ვიფიქრებ* (thanks, I'll think about it) is enough, and no one will chase you. Georgian sellers rarely push; more often it's the opposite — they send you home to think it over."
+      ],
+      "grammars": [
+        {
+          "title": "Colors",
+          "table": {
+            "head": [
+              "Georgian",
+              "Say it",
+              "Meaning",
+              "Georgian",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "შავი",
+                "shavi",
+                "black",
+                "ყვითელი",
+                "q'viteli",
+                "yellow"
+              ],
+              [
+                "თეთრი",
+                "tetri",
+                "white",
+                "მწვანე",
+                "mts'vane",
+                "green"
+              ],
+              [
+                "წითელი",
+                "ts'iteli",
+                "red",
+                "ნარინჯისფერი",
+                "narinjisperi",
+                "orange"
+              ],
+              [
+                "ლურჯი",
+                "lurji",
+                "blue",
+                "ყავისფერი",
+                "q'avisperi",
+                "brown"
+              ],
+              [
+                "ცისფერი",
+                "tsisperi",
+                "light blue",
+                "ნაცრისფერი",
+                "natsrisperi",
+                "gray"
+              ],
+              [
+                "ვარდისფერი",
+                "vardisperi",
+                "pink",
+                "იისფერი",
+                "iisperi",
+                "purple"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that **ლურჯი** (dark blue) and **ცისფერი** (light blue, \"sky-colored\") count as two different colors, not two shades of the same one — the way \"red\" and \"pink\" are separate colors in English."
+          ]
+        },
+        {
+          "title": "Comparing two things",
+          "table": {
+            "head": [
+              "Sentence",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ეს უფრო დიდია",
+                "es upro didia",
+                "This one is bigger"
+              ],
+              [
+                "ეს იმაზე დიდია",
+                "es imaze didia",
+                "This one is bigger than that one"
+              ],
+              [
+                "ლურჯი შავზე უკეთესია",
+                "lurji shavze uk'etesia",
+                "Blue is nicer than black"
+              ],
+              [
+                "ეს ყველაზე კარგია",
+                "es q'velaze k'argia",
+                "This is the best one"
+              ],
+              [
+                "ეს ძალიან ძვირია",
+                "es dzalian dzviria",
+                "This is too expensive"
+              ],
+              [
+                "უფრო იაფი გაქვთ?",
+                "upro iapi gakvt",
+                "Do you have a cheaper one?"
+              ]
+            ]
+          },
+          "after": [
+            "**ყველაზე** (literally \"than all\") forms the superlative: ყველაზე დიდი (biggest), ყველაზე ლამაზი (most beautiful). One word, and that's all of Georgian comparison done."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Clothes and trying things on",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Georgian",
+            "Say it",
+            "Meaning",
+            "Georgian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ტანსაცმელი",
+              "t'ansatsmeli",
+              "clothes",
+              "ფეხსაცმელი",
+              "pekhsatsmeli",
+              "shoes"
+            ],
+            [
+              "პერანგი",
+              "p'erangi",
+              "shirt",
+              "წინდები",
+              "ts'indebi",
+              "socks"
+            ],
+            [
+              "მაისური",
+              "maisuri",
+              "T-shirt",
+              "ქუდი",
+              "kudi",
+              "hat"
+            ],
+            [
+              "შარვალი",
+              "sharvali",
+              "pants, trousers",
+              "შარფი",
+              "sharpi",
+              "scarf"
+            ],
+            [
+              "კაბა",
+              "k'aba",
+              "dress",
+              "ხელთათმანები",
+              "kheltatmanebi",
+              "gloves"
+            ],
+            [
+              "ქურთუკი",
+              "kurtuk'i",
+              "jacket",
+              "ჩანთა",
+              "chanta",
+              "bag"
+            ],
+            [
+              "პალტო",
+              "p'alt'o",
+              "coat",
+              "ქამარი",
+              "kamari",
+              "belt"
+            ],
+            [
+              "სვიტერი",
+              "svit'eri",
+              "sweater",
+              "ზომა",
+              "zoma",
+              "size"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Seven sentences for a whole trip to the store",
+          "items": [
+            "**უბრალოდ ვათვალიერებ.** (ubralod vatvaliereb) — I'm just looking. (a lifesaver when you first walk in)",
+            "**შემიძლია მოვიზომო?** (shemidzlia movizomo) — Can I try it on?",
+            "**სად არის საზომი?** (sazomi) — Where's the fitting room?",
+            "**უფრო დიდი გაქვთ?** — Do you have a bigger one?",
+            "**სხვა ფერი გაქვთ?** — Do you have another color?",
+            "**ფასდაკლება აქვს?** — Is it on sale?",
+            "**მადლობა, ვიფიქრებ.** — Thanks, I'll think about it."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ One thing that sets Georgian stores apart from big chain stores: in small shops and clothing markets, the seller often **follows you** and comments on every item you pick up. It's meant as service, not surveillance. The sentence *უბრალოდ ვათვალიერებ* makes it clear you don't need help yet, and it's almost always respected."
+        },
+        {
+          "type": "p",
+          "text": "If you prefer modest clothing: covered styles are easy to find in Tbilisi, and **შარფი** (scarves) are sold everywhere, especially as winter approaches. Useful words in the store: *გრძელი ხელი* (grdzeli kheli — long sleeves) and *გრძელი კაბა* (long dress)."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ka": "მაღაზია",
+      "baca": "maghazia",
+      "en": "store, shop"
+    },
+    {
+      "ka": "ტანსაცმელი",
+      "baca": "t'ansatsmeli",
+      "en": "clothes"
+    },
+    {
+      "ka": "პერანგი",
+      "baca": "p'erangi",
+      "en": "shirt"
+    },
+    {
+      "ka": "მაისური",
+      "baca": "maisuri",
+      "en": "T-shirt"
+    },
+    {
+      "ka": "შარვალი",
+      "baca": "sharvali",
+      "en": "pants, trousers"
+    },
+    {
+      "ka": "კაბა",
+      "baca": "k'aba",
+      "en": "dress"
+    },
+    {
+      "ka": "ქურთუკი",
+      "baca": "kurtuk'i",
+      "en": "jacket"
+    },
+    {
+      "ka": "ფეხსაცმელი",
+      "baca": "pekhsatsmeli",
+      "en": "shoes"
+    },
+    {
+      "ka": "ქუდი",
+      "baca": "kudi",
+      "en": "hat"
+    },
+    {
+      "ka": "შარფი",
+      "baca": "sharpi",
+      "en": "scarf"
+    },
+    {
+      "ka": "ზომა",
+      "baca": "zoma",
+      "en": "size"
+    },
+    {
+      "ka": "ფერი",
+      "baca": "peri",
+      "en": "color"
+    },
+    {
+      "ka": "შავი",
+      "baca": "shavi",
+      "en": "black"
+    },
+    {
+      "ka": "თეთრი",
+      "baca": "tetri",
+      "en": "white"
+    },
+    {
+      "ka": "წითელი",
+      "baca": "ts'iteli",
+      "en": "red"
+    },
+    {
+      "ka": "ლურჯი",
+      "baca": "lurji",
+      "en": "blue"
+    },
+    {
+      "ka": "მწვანე",
+      "baca": "mts'vane",
+      "en": "green"
+    },
+    {
+      "ka": "ყვითელი",
+      "baca": "q'viteli",
+      "en": "yellow"
+    },
+    {
+      "ka": "ყავისფერი",
+      "baca": "q'avisperi",
+      "en": "brown"
+    },
+    {
+      "ka": "ნაცრისფერი",
+      "baca": "natsrisperi",
+      "en": "gray"
+    },
+    {
+      "ka": "უფრო",
+      "baca": "upro",
+      "en": "more"
+    },
+    {
+      "ka": "ყველაზე",
+      "baca": "q'velaze",
+      "en": "most"
+    },
+    {
+      "ka": "უკეთესი",
+      "baca": "uk'etesi",
+      "en": "better"
+    },
+    {
+      "ka": "ფასდაკლება",
+      "baca": "pasdak'leba",
+      "en": "sale, discount"
+    },
+    {
+      "ka": "გამყიდველი",
+      "baca": "gamq'idveli",
+      "en": "seller"
+    },
+    {
+      "ka": "ვიყიდი",
+      "baca": "viq'idi",
+      "en": "I'll buy"
+    },
+    {
+      "ka": "მოვიზომავ",
+      "baca": "movizomav",
+      "en": "I'll try it on"
+    },
+    {
+      "ka": "გიხდება",
+      "baca": "gikhdeba",
+      "en": "it suits you"
+    },
+    {
+      "ka": "ვათვალიერებ",
+      "baca": "vatvaliereb",
+      "en": "I'm just looking"
+    },
+    {
+      "ka": "ვიფიქრებ",
+      "baca": "vipikreb",
+      "en": "I'll think about it"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the colors in Georgian.",
+      "items": [
+        "black → ____",
+        "white → ____",
+        "red → ____",
+        "blue → ____",
+        "green → ____",
+        "brown → ____"
+      ]
+    },
+    {
+      "prompt": "Complete the sentences in the store.",
+      "items": [
+        "____ დიდი გაქვთ? (more)",
+        "სხვა ____ გაქვთ? (color)",
+        "რა ____ გაცვიათ? (size)",
+        "____ აქვს? (discount)",
+        "მადლობა, ____ (I'll think about it)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ღირს / რამდენი / ეს / ?",
+        "უკეთესია / შავზე / ლურჯი",
+        "გაქვთ / დიდი / უფრო / ?",
+        "ვიყიდი / კარგი / ,",
+        "შეიძლება / ბარათით / ?"
+      ]
+    },
+    {
+      "prompt": "Translate into Georgian.",
+      "items": [
+        "I need a warm jacket.",
+        "Do you have a bigger one?",
+        "Do you have another color?",
+        "The blue one is nicer than the black one.",
+        "This is too expensive.",
+        "Thanks, I'll think about it."
+      ]
+    }
+  ],
+  "answers": [
+    "შავი — თეთრი — წითელი — ლურჯი — მწვანე — ყავისფერი",
+    "უფრო — ფერი — ზომა — ფასდაკლება — ვიფიქრებ",
+    "ეს რამდენი ღირს? — ლურჯი შავზე უკეთესია. — უფრო დიდი გაქვთ? — კარგი, ვიყიდი. — ბარათით შეიძლება?",
+    "თბილი ქურთუკი მჭირდება. — უფრო დიდი გაქვთ? — სხვა ფერი გაქვთ? — ლურჯი შავზე უკეთესია. — ეს ძალიან ძვირია. — მადლობა, ვიფიქრებ."
+  ]
+}

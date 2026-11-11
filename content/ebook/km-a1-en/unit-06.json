@@ -1,0 +1,589 @@
+{
+  "title": "At the market: counting and haggling",
+  "title_target": "នៅផ្សារ — neuw phsaa",
+  "goal": "Buy things, count them with the right classifier, and haggle — while discovering that Khmer counts objects in a very different order from English.",
+  "bekal": [
+    "count things in the order noun–number–classifier",
+    "use the ten classifiers that actually matter",
+    "haggle with ចុះថ្លៃបន្តិចបានទេ?",
+    "point things out with នេះ and នោះ",
+    "name colors and sizes"
+  ],
+  "dialogs": [
+    {
+      "title": "កិច្ចសន្ទនា — Psar Chas, seven in the morning",
+      "intro": "Sreymom takes Ani to the old market. Notice the order every time something is counted: **the thing first, then the number, then the classifier** — \"mango five fruit\" instead of \"five mangoes\". This is where English speakers have to rewire a habit.",
+      "lines": [
+        {
+          "speaker": "ស្រីមុំ:",
+          "text": "[បង|baang] [ចង់|chang] [ទិញ|teñ] [អ្វី|'wey] [ចាស|chaah]?",
+          "id": "What do you want to buy?",
+          "literal": "older-sibling — want — buy — what — yes(f)?"
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[ខ្ញុំ|khnyom] [ចង់|chang] [ទិញ|teñ] [ផ្លែឈើ|phlae-chheu] [និង|neng] [ត្រី|trey] [ចាស|chaah]។",
+          "id": "I want to buy fruit and fish.",
+          "literal": "I — want — buy — fruit-tree — and — fish — yes(f)."
+        },
+        {
+          "speaker": "អ្នកលក់:",
+          "text": "[ស្វាយ|swaay] [ថ្មី|thmey] [ចាស|chaah]! [ផ្អែម|ph'aem] [ណាស់|nah]។",
+          "id": "Fresh mangoes! Very sweet.",
+          "literal": "mango — new — yes(f)! sweet — very."
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[ស្វាយ|swaay] [ប្រាំ|pram] [ផ្លែ|phlae] [ថ្លៃ|thlay] [ប៉ុន្មាន|pon-maan] [ចាស|chaah]?",
+          "id": "How much for five mangoes?",
+          "literal": "mango — five — fruit — price — how-much — yes(f)?"
+        },
+        {
+          "speaker": "អ្នកលក់:",
+          "text": "[មួយ|muèy] [ម៉ឺន|meun] [រៀល|riel] [ចាស|chaah]។",
+          "id": "Ten thousand riel.",
+          "literal": "one — ten-thousand — riel — yes(f)."
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[ថ្លៃ|thlay] [ណាស់|nah]! [ចុះថ្លៃ|choh-thlay] [បន្តិច|ban-tech] [បាន|baan] [ទេ|té] [ចាស|chaah]?",
+          "id": "That's very expensive! Can you come down a little?",
+          "literal": "expensive — very! lower-price — a-little — can — (question) — yes(f)?"
+        },
+        {
+          "speaker": "អ្នកលក់:",
+          "text": "[ប្រាំបី|pram-bey] [ពាន់|poan] [ចុះ|choh]។ [ចុងក្រោយ|chong-kraoy] [ហើយ|haeuy] [ចាស|chaah]។",
+          "id": "Eight thousand, then. That's my last price.",
+          "literal": "five-three — thousand — go-down. end-last — already — yes(f)."
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[បាន|baan] [ចាស|chaah]។ [ចុះ|choh] [ត្រី|trey] [នេះ|nih]?",
+          "id": "OK. And this fish?",
+          "literal": "can — yes(f). and-then — fish — this?"
+        },
+        {
+          "speaker": "អ្នកលក់:",
+          "text": "[ត្រី|trey] [ពីរ|pii] [ក្បាល|kbaal] [ដប់ពីរ|dop-pii] [ពាន់|poan] [ចាស|chaah]។",
+          "id": "Two fish for twelve thousand.",
+          "literal": "fish — two — head — ten-two — thousand — yes(f)."
+        },
+        {
+          "speaker": "ស្រីមុំ:",
+          "text": "[បង|baang]! [យក|yòòk] [ត្រី|trey] [នោះ|nuh] [ល្អ|l'aa] [ជាង|chièng]។ [ធំ|thum] [ជាង|chièng]។",
+          "id": "Bong! Take that fish, it's better. It's bigger.",
+          "literal": "older-sibling! take — fish — that — good — more. big — more."
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[អញ្ចឹង|'añ-cheung] [យក|yòòk] [ត្រី|trey] [នោះ|nuh] [ពីរ|pii] [ក្បាល|kbaal] [ចាស|chaah]។ [ទាំងអស់|teang-'ah] [ប៉ុន្មាន|pon-maan]?",
+          "id": "In that case I'll take two of those. How much altogether?",
+          "literal": "like-that — take — fish — that — two — head — yes(f). all — how-much?"
+        },
+        {
+          "speaker": "អ្នកលក់:",
+          "text": "[ម្ភៃ|m-phey] [ពាន់|poan] [ចាស|chaah]។ [ថង់|thang] [មួយ|muèy] [ឬ|reu] [ពីរ|pii]?",
+          "id": "Twenty thousand. One bag or two?",
+          "literal": "twenty — thousand — yes(f). bag — one — or — two?"
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[មួយ|muèy] [ថង់|thang] [គ្រប់គ្រាន់|krup-kroan] [ចាស|chaah]។ [អរគុណ|'aa-kun]!",
+          "id": "One bag is enough. Thank you!",
+          "literal": "one — bag — enough — yes(f). thank-you!"
+        }
+      ],
+      "grammars": [
+        {
+          "title": "Counting things: noun first, number second",
+          "body": [
+            "Khmer counts in the order **noun – number – classifier**. English has a faint echo of the classifier in \"two *head* of cattle\" or \"three *sheets* of paper\", but Khmer uses one with almost every noun — and puts it after the number, with the noun at the very front."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Khmer",
+                "Say it",
+                "Literally",
+                "English"
+              ],
+              "rows": [
+                [
+                  "ស្វាយ ប្រាំ ផ្លែ",
+                  "*swaay pram phlae*",
+                  "mango five fruit",
+                  "five mangoes"
+                ],
+                [
+                  "ត្រី ពីរ ក្បាល",
+                  "*trey pii kbaal*",
+                  "fish two head",
+                  "two fish"
+                ],
+                [
+                  "សិស្ស ដប់ នាក់",
+                  "*seh dop neak*",
+                  "student ten person",
+                  "ten students"
+                ],
+                [
+                  "តែ មួយ កែវ",
+                  "*tae muèy kaew*",
+                  "tea one glass",
+                  "a glass of tea"
+                ],
+                [
+                  "ផ្ទះ បី ខ្នង",
+                  "*phteah bey khnaang*",
+                  "house three building",
+                  "three houses"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ This is the reverse of English (*five mangoes*). The number never goes in front of the noun. Say the thing first, as if pointing at it, then count it: \"mangoes — five of them\".",
+            "If you forget the classifier: **just repeat the noun** — ថ្ងៃ បី ថ្ងៃ (\"day three day\") is correct and common. Or **leave it out altogether** — ស្វាយ ប្រាំ sounds casual but is never wrong. Khmer is far more relaxed about this than Thai."
+          ]
+        },
+        {
+          "title": "នេះ and នោះ — pointing while you shop",
+          "body": [
+            "Demonstratives stand **after** the noun: \"fish this\" = this fish. Nothing changes for the plural."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Khmer",
+                "Say it",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "ត្រីនេះ",
+                  "*trey nih*",
+                  "this fish"
+                ],
+                [
+                  "ត្រីនោះ",
+                  "*trey nuh*",
+                  "that fish"
+                ],
+                [
+                  "ស្វាយទាំងនេះ",
+                  "*swaay teang-nih*",
+                  "these mangoes"
+                ],
+                [
+                  "យកមួយនេះ",
+                  "*yòòk muèy nih*",
+                  "take this one"
+                ],
+                [
+                  "ដូចនេះ",
+                  "*douch nih*",
+                  "one like this"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "At the market, pointing with your index finger is considered a bit rude. Cambodians point with **the whole hand, palm open and facing up**, or simply with the chin and a glance. Saying យកមួយនេះ while opening your palm is more than enough."
+          ]
+        },
+        {
+          "title": "Haggling: the unwritten rules of Psar Chas",
+          "body": [
+            "Haggling at a traditional Cambodian market is not a fight but an expected conversation. Accepting the first price actually makes the vendor feel you have no interest in chatting."
+          ],
+          "tables": [
+            {
+              "head": [
+                "English",
+                "Khmer",
+                "Say it"
+              ],
+              "rows": [
+                [
+                  "Can you come down a little?",
+                  "ចុះថ្លៃបន្តិចបានទេ?",
+                  "*choh-thlay ban-tech baan té?*"
+                ],
+                [
+                  "That's very expensive!",
+                  "ថ្លៃណាស់!",
+                  "*thlay nah!*"
+                ],
+                [
+                  "How about …?",
+                  "… បានទេ?",
+                  "*… baan té?*"
+                ],
+                [
+                  "What's your last price?",
+                  "ចុងក្រោយប៉ុន្មាន?",
+                  "*chong-kraoy pon-maan?*"
+                ],
+                [
+                  "OK, I'll take it.",
+                  "អញ្ចឹង ខ្ញុំយក",
+                  "*'añ-cheung, khnyom yòòk*"
+                ],
+                [
+                  "Maybe next time.",
+                  "លើកក្រោយចុះ",
+                  "*laeuk-kraoy choh*"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "**Offer about three quarters of the first price**, not half. Offering half — a habit of some tourists — is seen as not serious and often ends the conversation.",
+            "⚠️ **Don't haggle in shops with price tags, at food stalls, or in supermarkets.** Haggling only applies at traditional markets and with tuk-tuks. Haggling over the price of a bowl of noodles sounds like haggling over your electricity bill.",
+            "And most important: **smile**. Haggling with a straight face reads as anger. The final sentence that closes a deal is almost always said with a little laugh."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Things, colors, and sizes",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Khmer",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "ផ្លែឈើ",
+              "*phlae-chheu*",
+              "fruit"
+            ],
+            [
+              "ស្វាយ",
+              "*swaay*",
+              "mango"
+            ],
+            [
+              "ចេក",
+              "*chéék*",
+              "banana"
+            ],
+            [
+              "ដូង",
+              "*doung*",
+              "coconut"
+            ],
+            [
+              "ត្រី",
+              "*trey*",
+              "fish"
+            ],
+            [
+              "សាច់",
+              "*sach*",
+              "meat"
+            ],
+            [
+              "បន្លែ",
+              "*ban-lae*",
+              "vegetables"
+            ],
+            [
+              "អង្ករ",
+              "*'ang-kaa*",
+              "rice (uncooked)"
+            ],
+            [
+              "ស៊ុត",
+              "*sut*",
+              "egg"
+            ],
+            [
+              "ថង់",
+              "*thang*",
+              "bag"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Quality",
+            "Say it",
+            "Opposite",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "ធំ big",
+              "*thum*",
+              "តូច small",
+              "*touch*"
+            ],
+            [
+              "ថ្មី new",
+              "*thmey*",
+              "ចាស់ old",
+              "*chah*"
+            ],
+            [
+              "ថ្លៃ expensive",
+              "*thlay*",
+              "ថោក cheap",
+              "*thaok*"
+            ],
+            [
+              "ផ្អែម sweet",
+              "*ph'aem*",
+              "ជូរ sour",
+              "*chuu*"
+            ],
+            [
+              "ល្អ good",
+              "*l'aa*",
+              "អាក្រក់ bad, ugly",
+              "*'aa-krak*"
+            ],
+            [
+              "ច្រើន many",
+              "*chraeun*",
+              "តិច few",
+              "*tech*"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Colors"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Khmer",
+            "Say it",
+            "Color"
+          ],
+          "rows": [
+            [
+              "ក្រហម",
+              "*kra-haam*",
+              "red"
+            ],
+            [
+              "ខៀវ",
+              "*khiew*",
+              "blue"
+            ],
+            [
+              "បៃតង",
+              "*bay-taang*",
+              "green"
+            ],
+            [
+              "លឿង",
+              "*leuèng*",
+              "yellow"
+            ],
+            [
+              "ស",
+              "*saa*",
+              "white"
+            ],
+            [
+              "ខ្មៅ",
+              "*khmaw*",
+              "black"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Adjectives stand **after** the noun — the reverse of English: ស្វាយធំ = \"mango big\", ថង់ក្រហម = \"bag red\". And as unit 14 will explain in full, Khmer adjectives are really **verbs** — so ស្វាយធំ can also mean \"the mango is big\" as a complete sentence, with no \"is\" needed."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "km": "ទិញ",
+      "baca": "teñ",
+      "en": "to buy"
+    },
+    {
+      "km": "លក់",
+      "baca": "luèk",
+      "en": "to sell"
+    },
+    {
+      "km": "ផ្លែឈើ",
+      "baca": "phlae-chheu",
+      "en": "fruit"
+    },
+    {
+      "km": "ផ្លែ",
+      "baca": "phlae",
+      "en": "fruit (classifier for round things)"
+    },
+    {
+      "km": "ក្បាល",
+      "baca": "kbaal",
+      "en": "head; classifier for animals"
+    },
+    {
+      "km": "ត្រី",
+      "baca": "trey",
+      "en": "fish"
+    },
+    {
+      "km": "ស្វាយ",
+      "baca": "swaay",
+      "en": "mango"
+    },
+    {
+      "km": "ថ្មី",
+      "baca": "thmey",
+      "en": "new, fresh"
+    },
+    {
+      "km": "ផ្អែម",
+      "baca": "ph'aem",
+      "en": "sweet"
+    },
+    {
+      "km": "ចុះថ្លៃ",
+      "baca": "choh-thlay",
+      "en": "to lower the price"
+    },
+    {
+      "km": "ចុងក្រោយ",
+      "baca": "chong-kraoy",
+      "en": "last, final"
+    },
+    {
+      "km": "នេះ / នោះ",
+      "baca": "nih / nuh",
+      "en": "this / that"
+    },
+    {
+      "km": "ធំ / តូច",
+      "baca": "thum / touch",
+      "en": "big / small"
+    },
+    {
+      "km": "អញ្ចឹង",
+      "baca": "'añ-cheung",
+      "en": "in that case"
+    },
+    {
+      "km": "ថង់",
+      "baca": "thang",
+      "en": "bag"
+    },
+    {
+      "km": "គ្រប់គ្រាន់",
+      "baca": "krup-kroan",
+      "en": "enough"
+    },
+    {
+      "km": "បន្លែ",
+      "baca": "ban-lae",
+      "en": "vegetables"
+    },
+    {
+      "km": "សាច់",
+      "baca": "sach",
+      "en": "meat"
+    },
+    {
+      "km": "ស៊ុត",
+      "baca": "sut",
+      "en": "egg"
+    },
+    {
+      "km": "ខ្នង",
+      "baca": "khnaang",
+      "en": "building (classifier for houses)"
+    },
+    {
+      "km": "សន្លឹក",
+      "baca": "san-leuk",
+      "en": "sheet (classifier)"
+    },
+    {
+      "km": "ដប",
+      "baca": "daap",
+      "en": "bottle (classifier)"
+    },
+    {
+      "km": "គ្រាប់",
+      "baca": "kroap",
+      "en": "grain, piece (classifier)"
+    },
+    {
+      "km": "ក្រហម",
+      "baca": "kra-haam",
+      "en": "red"
+    },
+    {
+      "km": "ខ្មៅ",
+      "baca": "khmaw",
+      "en": "black"
+    },
+    {
+      "km": "លើកក្រោយ",
+      "baca": "laeuk-kraoy",
+      "en": "next time"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Rewrite in the correct Khmer order: noun – number – classifier.",
+      "items": [
+        "five mangoes",
+        "two fish",
+        "ten students",
+        "three bottles of water"
+      ]
+    },
+    {
+      "prompt": "Choose the right classifier: នាក់, ក្បាល, ផ្លែ, or កែវ.",
+      "items": [
+        "សិស្ស ប្រាំ ____",
+        "ត្រី ពីរ ____",
+        "ស្វាយ ដប់ ____",
+        "កាហ្វេ មួយ ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ទេ / បាន / បន្តិច / ចុះថ្លៃ",
+        "នោះ / យក / ខ្ញុំ / ត្រី",
+        "ប៉ុន្មាន / ទាំងអស់",
+        "ណាស់ / ថ្លៃ"
+      ]
+    },
+    {
+      "prompt": "Translate into Khmer.",
+      "items": [
+        "I want to buy fruit.",
+        "How much for five mangoes?",
+        "Can you come down a little?",
+        "That fish is bigger.",
+        "In that case, I'll take it.",
+        "One bag is enough."
+      ]
+    }
+  ],
+  "answers": [
+    "ស្វាយ ប្រាំ ផ្លែ — ត្រី ពីរ ក្បាល — សិស្ស ដប់ នាក់ — ទឹក បី ដប",
+    "នាក់ — ក្បាល — ផ្លែ — កែវ",
+    "ចុះថ្លៃបន្តិចបានទេ? — ខ្ញុំយកត្រីនោះ។ — ទាំងអស់ប៉ុន្មាន? — ថ្លៃណាស់។",
+    "ខ្ញុំចង់ទិញផ្លែឈើ។ — ស្វាយប្រាំផ្លែថ្លៃប៉ុន្មាន? — ចុះថ្លៃបន្តិចបានទេ? — ត្រីនោះធំជាង។ — អញ្ចឹង ខ្ញុំយក។ — មួយថង់គ្រប់គ្រាន់។"
+  ]
+}

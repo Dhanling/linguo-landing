@@ -1,0 +1,494 @@
+{
+  "title": "Hello, my name is Ani",
+  "title_target": "សួស្ដី ខ្ញុំឈ្មោះ អានី — sua-sdey, khnyom chhmuah 'aa-nii",
+  "goal": "Greet people, say your name, ask how someone is, and choose the right word for \"yes\" — because in Khmer that word depends on whether the speaker is a man or a woman.",
+  "bekal": [
+    "greet people with សួស្ដី and reply",
+    "say your name with ខ្ញុំឈ្មោះ …",
+    "choose between បាទ and ចាស without hesitating",
+    "ask and answer how someone is with សុខសប្បាយទេ?",
+    "say what country you're from with មកពី …"
+  ],
+  "dialogs": [
+    {
+      "title": "កិច្ចសន្ទនា — In front of a house in Phnom Penh",
+      "intro": "Ani has just arrived in Phnom Penh to work for a year. Sokha, the next-door neighbor, greets her at the gate. Notice one thing from the very first line: Sokha ends his sentences with បាទ, while Ani ends hers with ចាស — and both mean \"yes\".",
+      "lines": [
+        {
+          "speaker": "សុខា:",
+          "text": "[សួស្ដី|sua-sdey]! [ខ្ញុំ|khnyom] [ឈ្មោះ|chhmuah] [សុខា|so-khaa] [បាទ|baat]។",
+          "id": "Hello! My name is Sokha.",
+          "literal": "well-being! I — name — sokha — yes(m)."
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[សួស្ដី|sua-sdey]! [ខ្ញុំ|khnyom] [ឈ្មោះ|chhmuah] [អានី|'aa-nii] [ចាស|chaah]។",
+          "id": "Hello! My name is Ani.",
+          "literal": "well-being! I — name — ani — yes(f)."
+        },
+        {
+          "speaker": "សុខា:",
+          "text": "[អានី|'aa-nii] [មកពី|mòòk-pii] [ប្រទេស|pra-teh] [ណា|naa] [បាទ|baat]?",
+          "id": "Which country are you from, Ani?",
+          "literal": "ani — come-from — country — which — yes(m)?"
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[ខ្ញុំ|khnyom] [មកពី|mòòk-pii] [ប្រទេស|pra-teh] [ឥណ្ឌូនេស៊ី|'en-do-né-sii] [ចាស|chaah]។ [ពី|pii] [ក្រុង|krong] [ហ្សាការតា|jaa-kaa-taa]។",
+          "id": "I'm from Indonesia. From the city of Jakarta.",
+          "literal": "I — come-from — country — indonesia — yes(f). from — city — jakarta."
+        },
+        {
+          "speaker": "សុខា:",
+          "text": "[សុខសប្បាយ|sok-sap-baay] [ទេ|té]?",
+          "id": "How are you?",
+          "literal": "healthy-happy — (question)?"
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[សុខសប្បាយ|sok-sap-baay] [ចាស|chaah]។ [អរគុណ|'aa-kun]។ [បង|baang] [សុខា|so-khaa] [វិញ|weñ]?",
+          "id": "Fine. Thank you. And you, Bong Sokha?",
+          "literal": "healthy-happy — yes(f). thank-you. older-sibling — sokha — in-return?"
+        },
+        {
+          "speaker": "សុខា:",
+          "text": "[ខ្ញុំ|khnyom] [ក៏|kaa] [សុខសប្បាយ|sok-sap-baay] [ដែរ|dae] [បាទ|baat]។ [អានី|'aa-nii] [ចេះ|chéh] [ភាសា|phie-saa] [ខ្មែរ|khmae] [ទេ|té]?",
+          "id": "I'm fine too. Do you speak Khmer, Ani?",
+          "literal": "I — also — healthy-happy — too — yes(m). ani — know — language — khmer — (question)?"
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[បន្តិច|ban-tech] [ចាស|chaah]។ [ខ្ញុំ|khnyom] [កំពុង|kam-pung] [រៀន|rien]។",
+          "id": "A little. I'm learning.",
+          "literal": "a-little — yes(f). I — in-the-middle-of — study."
+        },
+        {
+          "speaker": "សុខា:",
+          "text": "[ល្អ|l'aa] [ណាស់|nah]! [នេះ|nih] [ជា|chiè] [ប្អូនស្រី|p'oun-srey] [ខ្ញុំ|khnyom] [បាទ|baat], [ឈ្មោះ|chhmuah] [ស្រីមុំ|srey-mom]។",
+          "id": "Very good! This is my younger sister, her name is Sreymom.",
+          "literal": "good — very! this — is — younger-sister — I — yes(m), name — sreymom."
+        },
+        {
+          "speaker": "ស្រីមុំ:",
+          "text": "[សួស្ដី|sua-sdey] [អានី|'aa-nii]។ [រីករាយ|riik-riey] [ដែល|dael] [បាន|baan] [ជួប|chuèp] [ចាស|chaah]។",
+          "id": "Hello, Ani. Nice to meet you.",
+          "literal": "hello — ani. glad — that — got-to — meet — yes(f)."
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[ខ្ញុំ|khnyom] [ក៏|kaa] [រីករាយ|riik-riey] [ដែរ|dae] [ចាស|chaah]។ [បង|baang] [នៅ|neuw] [ទីនេះ|tii-nih] [ទេ|té]?",
+          "id": "Nice to meet you too. Do you live here?",
+          "literal": "I — also — glad — too — yes(f). older-sibling — live — here — (question)?"
+        },
+        {
+          "speaker": "សុខា:",
+          "text": "[បាទ|baat], [នៅ|neuw] [ទីនេះ|tii-nih]។ [អញ្ជើញ|'añ-cheuñ] [ចូល|choul] [ផឹក|pheuk] [តែ|tae]។",
+          "id": "Yes, I live here. Please come in and have some tea.",
+          "literal": "yes(m), live — here. please — enter — drink — tea."
+        }
+      ],
+      "grammars": [
+        {
+          "title": "⚠️ បាទ versus ចាស — \"yes\" depends on the SPEAKER's gender",
+          "body": [
+            "English uses one word, \"yes\", for everyone. Khmer doesn't. The word you choose depends on **who is speaking**, not on who you are speaking to — and that choice never changes for the rest of your life."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Speaker",
+                "Word",
+                "Say it",
+                "Used for"
+              ],
+              "rows": [
+                [
+                  "man",
+                  "បាទ",
+                  "*baat*",
+                  "\"yes\", and a politeness word at the end of a sentence"
+                ],
+                [
+                  "woman",
+                  "ចាស",
+                  "*chaah*",
+                  "\"yes\", and a politeness word at the end of a sentence"
+                ],
+                [
+                  "both, to deny",
+                  "ទេ",
+                  "*té*",
+                  "\"no\", \"not\""
+                ],
+                [
+                  "both, very formal",
+                  "ខ្ញុំបាទ",
+                  "*khnyom-baat*",
+                  "a formal \"I\""
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "These two words do double duty. As an answer, they mean \"yes\". Attached to the end of any sentence, they become a politeness marker — like adding \"sir\" or \"ma'am\" in English. ខ្ញុំមិនយល់ means \"I don't understand\"; ខ្ញុំមិនយល់ទេ បាទ sounds much more polite.",
+            "⚠️ The most common mistake is treating them like \"yeah\" and \"yep\", which anyone can use. A man who says ចាស sounds as if he is imitating a woman; a woman who says បាទ sounds like a soldier. Nobody is offended — but everyone will smile, and you won't know why."
+          ]
+        },
+        {
+          "title": "ខ្ញុំឈ្មោះ … — introducing yourself without \"is\"",
+          "body": [
+            "ឈ្មោះ (*chhmuah*) means \"name\", but in a sentence it works as a **verb**: \"to be named\". So ខ្ញុំឈ្មោះអានី is literally \"I am-named Ani\" — there is no \"is\" anywhere, and Khmer doesn't need one."
+          ],
+          "tables": [
+            {
+              "head": [
+                "English",
+                "Khmer",
+                "Say it"
+              ],
+              "rows": [
+                [
+                  "My name is Ani.",
+                  "ខ្ញុំឈ្មោះ អានី",
+                  "*khnyom chhmuah 'aa-nii*"
+                ],
+                [
+                  "What's your name?",
+                  "អ្នកឈ្មោះអ្វី?",
+                  "*neak chhmuah 'wey?*"
+                ],
+                [
+                  "His name is Sokha.",
+                  "គាត់ឈ្មោះ សុខា",
+                  "*koat chhmuah so-khaa*"
+                ],
+                [
+                  "I'm Indonesian.",
+                  "ខ្ញុំជាជនជាតិឥណ្ឌូនេស៊ី",
+                  "*khnyom chiè chun-chiet 'en-do-né-sii*"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Look at the last row: that's where ជា (*chiè*) appears, and **that** is the Khmer word for \"is\". It is used only to link two nouns (I = an Indonesian). It is **never** used before an adjective. \"I'm happy\" is not ខ្ញុំជាសប្បាយ but ខ្ញុំសប្បាយ — because in Khmer adjectives are verbs. Unit 14 covers this in full."
+          ]
+        },
+        {
+          "title": "ទេ — one small word with two jobs",
+          "body": [
+            "ទេ (*té*) appears twice in this dialogue doing two completely different jobs, and beginners often get confused. The rule is actually simple: **the position is the same; the job depends on whether មិន stands before the verb.**"
+          ],
+          "tables": [
+            {
+              "head": [
+                "Sentence",
+                "Say it",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "ចេះភាសាខ្មែរទេ?",
+                  "*chéh phie-saa khmae té?*",
+                  "Do you speak Khmer? (asking)"
+                ],
+                [
+                  "ខ្ញុំចេះ",
+                  "*khnyom chéh*",
+                  "I do. (answering yes)"
+                ],
+                [
+                  "ខ្ញុំមិនចេះទេ",
+                  "*khnyom men chéh té*",
+                  "I don't. (denying)"
+                ],
+                [
+                  "ទេ",
+                  "*té*",
+                  "No. (short answer)"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Look at the second row. To say \"yes\" to a ចេះ…ទេ? question, Cambodians **repeat the verb** rather than saying \"yes\". English does something similar — \"Do you speak Khmer?\" \"I do.\" — so you just carry the habit over.",
+            "Khmer negation has two fences: មិន before the verb, ទេ at the end of the sentence. Forgetting ទេ is the number-one mistake in the first year, because English needs only one \"not\". Unit 4 covers it in full."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Introducing yourself in five sentences",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These five sentences are enough for a whole first introduction. Memorize them as one block, then swap in your own details. The last line uses the male politeness word; women simply change បាទ to ចាស."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Khmer",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "Hello.",
+              "សួស្ដី",
+              "*sua-sdey*"
+            ],
+            [
+              "My name is Budi.",
+              "ខ្ញុំឈ្មោះ ប៊ូឌី",
+              "*khnyom chhmuah buu-dii*"
+            ],
+            [
+              "I'm from Indonesia.",
+              "ខ្ញុំមកពីប្រទេសឥណ្ឌូនេស៊ី",
+              "*khnyom mòòk-pii pra-teh 'en-do-né-sii*"
+            ],
+            [
+              "I'm learning Khmer.",
+              "ខ្ញុំកំពុងរៀនភាសាខ្មែរ",
+              "*khnyom kam-pung rien phie-saa khmae*"
+            ],
+            [
+              "Nice to meet you.",
+              "រីករាយដែលបានជួប បាទ",
+              "*riik-riey dael baan chuèp baat*"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three things that make you sound natural right away",
+          "items": [
+            "**Press your palms together in front of your chest when you greet someone.** This is called សំពះ (*sam-peah*). The higher your hands, the more respect: chest height for people your age, mouth height for elders or superiors, forehead height for monks. Saying សួស្ដី without the សំពះ feels half-done.",
+            "**Use the other person's name, not a pronoun.** Cambodians say \"Would Ani like some tea?\" rather than \"Would you like some tea?\". Using a name sounds warm; អ្នក (\"you\") sounds distant.",
+            "**Add វិញ (*weñ*) to turn a question back.** After saying how you are, just say the other person's name followed by វិញ — សុខា វិញ? It's the same as \"and you?\" and saves a whole sentence."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "km": "សួស្ដី",
+      "baca": "sua-sdey",
+      "en": "hello"
+    },
+    {
+      "km": "ខ្ញុំ",
+      "baca": "khnyom",
+      "en": "I, me"
+    },
+    {
+      "km": "ឈ្មោះ",
+      "baca": "chhmuah",
+      "en": "name; to be named"
+    },
+    {
+      "km": "បាទ",
+      "baca": "baat",
+      "en": "yes (male speaker); politeness word"
+    },
+    {
+      "km": "ចាស",
+      "baca": "chaah",
+      "en": "yes (female speaker); politeness word"
+    },
+    {
+      "km": "ទេ",
+      "baca": "té",
+      "en": "question particle; no, not (negation)"
+    },
+    {
+      "km": "មកពី",
+      "baca": "mòòk-pii",
+      "en": "to come from"
+    },
+    {
+      "km": "ប្រទេស",
+      "baca": "pra-teh",
+      "en": "country"
+    },
+    {
+      "km": "ណា",
+      "baca": "naa",
+      "en": "which"
+    },
+    {
+      "km": "ក្រុង",
+      "baca": "krong",
+      "en": "city"
+    },
+    {
+      "km": "សុខសប្បាយ",
+      "baca": "sok-sap-baay",
+      "en": "healthy and happy; fine"
+    },
+    {
+      "km": "អរគុណ",
+      "baca": "'aa-kun",
+      "en": "thank you — literally \"acknowledge the kindness\""
+    },
+    {
+      "km": "បង",
+      "baca": "baang",
+      "en": "older sibling; address for someone a bit older"
+    },
+    {
+      "km": "វិញ",
+      "baca": "weñ",
+      "en": "in return, and you"
+    },
+    {
+      "km": "ក៏ … ដែរ",
+      "baca": "kaa … dae",
+      "en": "also"
+    },
+    {
+      "km": "ចេះ",
+      "baca": "chéh",
+      "en": "to know how to (a learned skill)"
+    },
+    {
+      "km": "ភាសា",
+      "baca": "phie-saa",
+      "en": "language"
+    },
+    {
+      "km": "ខ្មែរ",
+      "baca": "khmae",
+      "en": "Khmer, Cambodian"
+    },
+    {
+      "km": "បន្តិច",
+      "baca": "ban-tech",
+      "en": "a little"
+    },
+    {
+      "km": "កំពុង",
+      "baca": "kam-pung",
+      "en": "in the middle of (-ing)"
+    },
+    {
+      "km": "រៀន",
+      "baca": "rien",
+      "en": "to study, to learn"
+    },
+    {
+      "km": "ល្អ",
+      "baca": "l'aa",
+      "en": "good, fine"
+    },
+    {
+      "km": "ណាស់",
+      "baca": "nah",
+      "en": "very"
+    },
+    {
+      "km": "នេះ",
+      "baca": "nih",
+      "en": "this"
+    },
+    {
+      "km": "ជា",
+      "baca": "chiè",
+      "en": "to be (between two nouns)"
+    },
+    {
+      "km": "ប្អូនស្រី",
+      "baca": "p'oun-srey",
+      "en": "younger sister"
+    },
+    {
+      "km": "រីករាយ",
+      "baca": "riik-riey",
+      "en": "glad, pleased"
+    },
+    {
+      "km": "ជួប",
+      "baca": "chuèp",
+      "en": "to meet"
+    },
+    {
+      "km": "នៅ",
+      "baca": "neuw",
+      "en": "to live; to be (somewhere); in, at"
+    },
+    {
+      "km": "ទីនេះ",
+      "baca": "tii-nih",
+      "en": "here"
+    },
+    {
+      "km": "អញ្ជើញ",
+      "baca": "'añ-cheuñ",
+      "en": "please (invitation)"
+    },
+    {
+      "km": "ចូល",
+      "baca": "choul",
+      "en": "to enter, to come in"
+    },
+    {
+      "km": "ផឹក",
+      "baca": "pheuk",
+      "en": "to drink"
+    },
+    {
+      "km": "តែ",
+      "baca": "tae",
+      "en": "tea"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose បាទ or ចាស according to who is speaking.",
+      "items": [
+        "Budi says: ខ្ញុំឈ្មោះ ប៊ូឌី ____។",
+        "Sari says: ខ្ញុំមកពីប្រទេសឥណ្ឌូនេស៊ី ____។",
+        "Sokha says: សុខសប្បាយ ____។",
+        "Sreymom says: អរគុណ ____។"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with ទេ, ជា, or ក៏.",
+      "items": [
+        "អ្នកចេះភាសាខ្មែរ____?",
+        "ខ្ញុំ____ជនជាតិឥណ្ឌូនេស៊ី។",
+        "ខ្ញុំ____រីករាយដែរ។",
+        "នេះ____ប្អូនស្រីខ្ញុំ។"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order. Remember: the politeness word goes last.",
+      "items": [
+        "ចាស / អានី / ខ្ញុំ / ឈ្មោះ",
+        "ទេ / ខ្មែរ / ចេះ / ភាសា / អ្នក",
+        "បាទ / ប្រទេស / មកពី / ខ្ញុំ / កម្ពុជា",
+        "ណាស់ / កំពុង / ខ្ញុំ / ល្អ / រៀន"
+      ]
+    },
+    {
+      "prompt": "Translate into Khmer.",
+      "items": [
+        "Hello. My name is Sari.",
+        "I'm from the city of Jakarta.",
+        "How are you?",
+        "Thank you.",
+        "I'm learning Khmer.",
+        "This is my younger sister."
+      ]
+    }
+  ],
+  "answers": [
+    "បាទ — ចាស — បាទ — ចាស",
+    "ទេ — ជា — ក៏ — ជា",
+    "ខ្ញុំឈ្មោះ អានី ចាស។ — អ្នកចេះភាសាខ្មែរទេ? — ខ្ញុំមកពីប្រទេសកម្ពុជា បាទ។ — ខ្ញុំកំពុងរៀន ល្អណាស់។",
+    "សួស្ដី។ ខ្ញុំឈ្មោះ សារី ចាស។ — ខ្ញុំមកពីក្រុងហ្សាការតា។ — សុខសប្បាយទេ? — អរគុណ។ — ខ្ញុំកំពុងរៀនភាសាខ្មែរ។ — នេះជាប្អូនស្រីខ្ញុំ។"
+  ]
+}

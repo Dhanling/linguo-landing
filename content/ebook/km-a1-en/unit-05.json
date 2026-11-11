@@ -1,0 +1,582 @@
+{
+  "title": "Numbers counted on one hand",
+  "title_target": "លេខ និង លុយ — lék neng luy",
+  "goal": "Master Khmer numbers — and understand why \"six\" sounds like \"five-one\": Khmer counts in fives, a legacy of the fingers on one hand.",
+  "bekal": [
+    "count from one to a hundred",
+    "read Khmer numerals ០ to ៩ on a price board",
+    "give prices in riel and dollars",
+    "ask ថ្លៃប៉ុន្មាន? and understand the answer",
+    "use ម៉ឺន and សែន, units that English doesn't have"
+  ],
+  "dialogs": [
+    {
+      "title": "កិច្ចសន្ទនា — At the coffee stall across the street",
+      "intro": "Ani buys her first breakfast on her own. Listen carefully to the numbers: every time the vendor says a number above five, you will hear the word ប្រាំ (five) come first.",
+      "lines": [
+        {
+          "speaker": "អ្នកលក់:",
+          "text": "[សួស្ដី|sua-sdey] [បង|baang]! [ចង់|chang] [បាន|baan] [អ្វី|'wey] [ចាស|chaah]?",
+          "id": "Hello! What would you like?",
+          "literal": "hello — older-sibling! want — get — what — yes(f)?"
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[ខ្ញុំ|khnyom] [ចង់|chang] [បាន|baan] [កាហ្វេ|kaa-fé] [ពីរ|pii] [កែវ|kaew] [ចាស|chaah]។",
+          "id": "I'd like two cups of coffee.",
+          "literal": "I — want — get — coffee — two — glass — yes(f)."
+        },
+        {
+          "speaker": "អ្នកលក់:",
+          "text": "[បាន|baan] [ចាស|chaah]។ [ចង់|chang] [បាន|baan] [នំ|num] [ទេ|té]?",
+          "id": "Sure. Would you like some bread too?",
+          "literal": "can — yes(f). want — get — bread — (question)?"
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[បាទ|baat]… [អូ|'ou] [សូមទោស|soum-touh], [ចាស|chaah]។ [យក|yòòk] [នំ|num] [ប្រាំមួយ|pram-muèy]។",
+          "id": "Yes… oh sorry, yes. I'll take six rolls.",
+          "literal": "yes(m)… oh — sorry, yes(f). take — bread — five-one."
+        },
+        {
+          "speaker": "អ្នកលក់:",
+          "text": "[ប្រាំមួយ|pram-muèy] [មែនទេ|mèn-té]? [ថ្លៃ|thlay] [ទាំងអស់|teang-'ah] [ដប់ប្រាំបួន|dop-pram-buèn] [ពាន់|poan] [រៀល|riel] [ចាស|chaah]។",
+          "id": "Six, right? That's nineteen thousand riel altogether.",
+          "literal": "five-one — right-(question)? price — all — ten-five-four — thousand — riel — yes(f)."
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[សូម|soum] [និយាយ|ni-yiey] [ម្តងទៀត|mdaang-tiet] [ចាស|chaah]។ [យឺតៗ|yeut-yeut]។",
+          "id": "Please say it again. Slowly.",
+          "literal": "please — speak — once-more — yes(f). slow-slow."
+        },
+        {
+          "speaker": "អ្នកលក់:",
+          "text": "[ដប់|dop] … [ប្រាំបួន|pram-buèn] … [ពាន់|poan] [រៀល|riel] [ចាស|chaah]។ [ឬ|reu] [ប្រាំ|pram] [ដុល្លារ|dol-laa]។",
+          "id": "Nine… teen… thousand riel. Or five dollars.",
+          "literal": "ten — five-four — thousand — riel — yes(f). or — five — dollar."
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[ខ្ញុំ|khnyom] [មាន|mien] [តែ|tae] [ដប់|dop] [ដុល្លារ|dol-laa] [ចាស|chaah]។",
+          "id": "I only have ten dollars.",
+          "literal": "I — have — only — ten — dollar — yes(f)."
+        },
+        {
+          "speaker": "អ្នកលក់:",
+          "text": "[អត់អីទេ|'at-'ey-té] [ចាស|chaah]។ [ខ្ញុំ|khnyom] [អាប់|'ap] [ជូន|chuun] [ប្រាំ|pram] [ដុល្លារ|dol-laa] [វិញ|weñ]។",
+          "id": "No problem. I'll give you five dollars back.",
+          "literal": "not-have-anything-no — yes(f). I — return — give — five — dollar — back."
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[ជូន|chuun] [ជា|chiè] [រៀល|riel] [បាន|baan] [ទេ|té] [ចាស|chaah]?",
+          "id": "Can you give me the change in riel?",
+          "literal": "give — as — riel — can — (question) — yes(f)?"
+        },
+        {
+          "speaker": "អ្នកលក់:",
+          "text": "[បាន|baan] [ចាស|chaah]។ [ពីរ|pii] [ម៉ឺន|meun] [រៀល|riel]។",
+          "id": "Sure. Twenty thousand riel.",
+          "literal": "can — yes(f). two — ten-thousand — riel."
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[អរគុណ|'aa-kun] [ច្រើន|chraeun] [ចាស|chaah]!",
+          "id": "Thank you very much!",
+          "literal": "thank-you — much — yes(f)!"
+        }
+      ],
+      "grammars": [
+        {
+          "title": "⚠️ Counting in fives — why \"six\" sounds like \"five-one\"",
+          "body": [
+            "Khmer counts on **one hand**. One to five have their own words; six to nine are formed by putting ប្រាំ (five) in front. This is not a cute curiosity — it is what you will hear every time you buy something, and beginners who haven't noticed it hear ប្រាំបួន (9) and think they are hearing two numbers."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Number",
+                "Khmer",
+                "Say it",
+                "How it's built"
+              ],
+              "rows": [
+                [
+                  "1",
+                  "មួយ",
+                  "*muèy*",
+                  "—"
+                ],
+                [
+                  "2",
+                  "ពីរ",
+                  "*pii*",
+                  "—"
+                ],
+                [
+                  "3",
+                  "បី",
+                  "*bey*",
+                  "—"
+                ],
+                [
+                  "4",
+                  "បួន",
+                  "*buèn*",
+                  "—"
+                ],
+                [
+                  "5",
+                  "ប្រាំ",
+                  "*pram*",
+                  "—"
+                ],
+                [
+                  "6",
+                  "ប្រាំមួយ",
+                  "*pram-muèy*",
+                  "5 + 1"
+                ],
+                [
+                  "7",
+                  "ប្រាំពីរ",
+                  "*pram-pil*",
+                  "5 + 2 ⚠️ said *pil*"
+                ],
+                [
+                  "8",
+                  "ប្រាំបី",
+                  "*pram-bey*",
+                  "5 + 3"
+                ],
+                [
+                  "9",
+                  "ប្រាំបួន",
+                  "*pram-buèn*",
+                  "5 + 4"
+                ],
+                [
+                  "10",
+                  "ដប់",
+                  "*dop*",
+                  "—"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Look at **seven**. It is written ប្រាំពីរ (\"five-two\"), but read *pram-pil*, not *pram-pii*. It is the only number whose sound changes, and it is exactly the one beginners mishear most often.",
+            "After ten, the pattern is regular again: ដប់មួយ (11), ដប់ពីរ (12), ដប់ប្រាំមួយ (16 — \"ten-five-one\"). Long, but no surprises."
+          ]
+        },
+        {
+          "title": "The tens: the part not based on five",
+          "body": [
+            "If the five-system ran all the way up, twenty should be \"two tens\". It isn't. **The Khmer tens were borrowed from Thai and Sanskrit**, and each has its own word to learn separately."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Number",
+                "Khmer",
+                "Say it"
+              ],
+              "rows": [
+                [
+                  "20",
+                  "ម្ភៃ",
+                  "*m-phey*"
+                ],
+                [
+                  "30",
+                  "សាមសិប",
+                  "*saam-sep*"
+                ],
+                [
+                  "40",
+                  "សែសិប",
+                  "*sae-sep*"
+                ],
+                [
+                  "50",
+                  "ហាសិប",
+                  "*haa-sep*"
+                ],
+                [
+                  "60",
+                  "ហុកសិប",
+                  "*hok-sep*"
+                ],
+                [
+                  "70",
+                  "ចិតសិប",
+                  "*chet-sep*"
+                ],
+                [
+                  "80",
+                  "ប៉ែតសិប",
+                  "*paet-sep*"
+                ],
+                [
+                  "90",
+                  "កៅសិប",
+                  "*kaw-sep*"
+                ],
+                [
+                  "100",
+                  "មួយរយ",
+                  "*muèy-ròòy*"
+                ],
+                [
+                  "1,000",
+                  "មួយពាន់",
+                  "*muèy-poan*"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "The good news: from thirty on, the pattern is regular again — សិប (*sep*) is \"-ty\", and you just change the number in front. ⚠️ Only ម្ភៃ (20) truly stands alone and contains no សិប at all. That one word you simply have to memorize."
+          ]
+        },
+        {
+          "title": "⚠️ ម៉ឺន and សែន — two units English doesn't have",
+          "body": [
+            "English jumps from thousand straight to million. Khmer slips two units in between, and both are used every day for prices."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Amount",
+                "Khmer",
+                "Say it",
+                "In English"
+              ],
+              "rows": [
+                [
+                  "10,000",
+                  "មួយម៉ឺន",
+                  "*muèy-meun*",
+                  "ten thousand"
+                ],
+                [
+                  "20,000",
+                  "ពីរម៉ឺន",
+                  "*pii-meun*",
+                  "twenty thousand"
+                ],
+                [
+                  "100,000",
+                  "មួយសែន",
+                  "*muèy-saen*",
+                  "a hundred thousand"
+                ],
+                [
+                  "1,000,000",
+                  "មួយលាន",
+                  "*muèy-lien*",
+                  "a million"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "So when a vendor says ពីរម៉ឺនរៀល, your brain has to translate it as \"two × ten thousand\" = 20,000 riel, not \"two thousand\". ⚠️ Getting one of these units wrong at the market means paying ten times the price.",
+            "The good news: **ដប់ពាន់ (ten thousand) is also used** and fully understood, especially by younger people in Phnom Penh. If you're not sure of ម៉ឺន yet, use ពាន់ and you'll be safe."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Money in Cambodia: two currencies in one wallet",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cambodia uses **riel and US dollars side by side**, and you will get change in a mix of both all day long. It's confusing in the first week, then it becomes routine."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Rule of thumb",
+            "Details"
+          ],
+          "rows": [
+            [
+              "1 dollar ≈ 4,000 riel",
+              "The rate hardly ever changes; just count 4,000."
+            ],
+            [
+              "Big prices in dollars",
+              "Rent, hotels, bus tickets, electronics."
+            ],
+            [
+              "Small prices in riel",
+              "Coffee, noodles, short tuk-tuk rides, bottled water."
+            ],
+            [
+              "Change under 1 dollar is always in riel",
+              "US coins don't circulate in Cambodia at all."
+            ],
+            [
+              "Torn dollar bills are refused",
+              "⚠️ Check your bills — even a dollar with a small tear is often not accepted."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Sentences you'll use every day"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Khmer",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "How much is it?",
+              "ថ្លៃប៉ុន្មាន?",
+              "*thlay pon-maan?*"
+            ],
+            [
+              "That's very expensive!",
+              "ថ្លៃណាស់!",
+              "*thlay nah!*"
+            ],
+            [
+              "Is there a cheaper one?",
+              "មានថោកជាងនេះទេ?",
+              "*mien thaok chièng nih té?*"
+            ],
+            [
+              "Can I pay in dollars?",
+              "បង់ជាដុល្លារបានទេ?",
+              "*bang chiè dol-laa baan té?*"
+            ],
+            [
+              "Please give me the change in riel.",
+              "សូមអាប់ជារៀល",
+              "*soum 'ap chiè riel*"
+            ],
+            [
+              "I only have five dollars.",
+              "ខ្ញុំមានតែប្រាំដុល្លារ",
+              "*khnyom mien tae pram dol-laa*"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two habits that save a lot of confusion",
+          "items": [
+            "**Ask the vendor to write the number down.** សូមសរសេរលេខ (*soum saa-sé lék*). Khmer numerals ០–៩ are on the script pages of this course, and most vendors write with the familiar Western digits anyway.",
+            "**Always repeat the number aloud before paying.** The vendor will nod or correct you. This is a normal habit in Cambodia, not a sign that you don't trust them."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "km": "លេខ",
+      "baca": "lék",
+      "en": "number"
+    },
+    {
+      "km": "មួយ ពីរ បី បួន ប្រាំ",
+      "baca": "muèy pii bey buèn pram",
+      "en": "1 2 3 4 5"
+    },
+    {
+      "km": "ប្រាំមួយ",
+      "baca": "pram-muèy",
+      "en": "six"
+    },
+    {
+      "km": "ប្រាំពីរ",
+      "baca": "pram-pil",
+      "en": "seven"
+    },
+    {
+      "km": "ប្រាំបី",
+      "baca": "pram-bey",
+      "en": "eight"
+    },
+    {
+      "km": "ប្រាំបួន",
+      "baca": "pram-buèn",
+      "en": "nine"
+    },
+    {
+      "km": "ដប់",
+      "baca": "dop",
+      "en": "ten"
+    },
+    {
+      "km": "ម្ភៃ",
+      "baca": "m-phey",
+      "en": "twenty"
+    },
+    {
+      "km": "រយ",
+      "baca": "ròòy",
+      "en": "hundred"
+    },
+    {
+      "km": "ពាន់",
+      "baca": "poan",
+      "en": "thousand"
+    },
+    {
+      "km": "ម៉ឺន",
+      "baca": "meun",
+      "en": "ten thousand"
+    },
+    {
+      "km": "សែន",
+      "baca": "saen",
+      "en": "hundred thousand"
+    },
+    {
+      "km": "លាន",
+      "baca": "lien",
+      "en": "million"
+    },
+    {
+      "km": "រៀល",
+      "baca": "riel",
+      "en": "riel (Cambodian currency)"
+    },
+    {
+      "km": "ដុល្លារ",
+      "baca": "dol-laa",
+      "en": "dollar"
+    },
+    {
+      "km": "ថ្លៃ",
+      "baca": "thlay",
+      "en": "expensive; price"
+    },
+    {
+      "km": "ថោក",
+      "baca": "thaok",
+      "en": "cheap"
+    },
+    {
+      "km": "យក",
+      "baca": "yòòk",
+      "en": "to take"
+    },
+    {
+      "km": "នំ",
+      "baca": "num",
+      "en": "bread, cake"
+    },
+    {
+      "km": "កែវ",
+      "baca": "kaew",
+      "en": "glass (classifier)"
+    },
+    {
+      "km": "ទាំងអស់",
+      "baca": "teang-'ah",
+      "en": "all, altogether"
+    },
+    {
+      "km": "តែ",
+      "baca": "tae",
+      "en": "only, just"
+    },
+    {
+      "km": "ជូន",
+      "baca": "chuun",
+      "en": "to give (respectful)"
+    },
+    {
+      "km": "អាប់",
+      "baca": "'ap",
+      "en": "to give back (change)"
+    },
+    {
+      "km": "បង់",
+      "baca": "bang",
+      "en": "to pay"
+    },
+    {
+      "km": "សូម",
+      "baca": "soum",
+      "en": "please"
+    },
+    {
+      "km": "និយាយ",
+      "baca": "ni-yiey",
+      "en": "to speak"
+    },
+    {
+      "km": "ម្តងទៀត",
+      "baca": "mdaang-tiet",
+      "en": "once more, again"
+    },
+    {
+      "km": "យឺតៗ",
+      "baca": "yeut-yeut",
+      "en": "slowly"
+    },
+    {
+      "km": "ឬ",
+      "baca": "reu",
+      "en": "or"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the numbers in Latin letters, the way they are pronounced in Khmer.",
+      "items": [
+        "6",
+        "7",
+        "9",
+        "16"
+      ]
+    },
+    {
+      "prompt": "What is the value in figures?",
+      "items": [
+        "ប្រាំបី",
+        "ដប់ប្រាំ",
+        "ពីរម៉ឺន",
+        "បីពាន់ប្រាំរយ"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ប៉ុន្មាន / ថ្លៃ",
+        "កែវ / កាហ្វេ / ពីរ / ខ្ញុំចង់បាន",
+        "ដុល្លារ / តែ / មាន / ខ្ញុំ / ប្រាំ",
+        "ទេ / ជារៀល / បាន / ជូន"
+      ]
+    },
+    {
+      "prompt": "Translate into Khmer.",
+      "items": [
+        "How much is it?",
+        "That's very expensive!",
+        "I'd like six rolls.",
+        "Twenty thousand riel.",
+        "Please say it again slowly.",
+        "I only have ten dollars."
+      ]
+    }
+  ],
+  "answers": [
+    "pram-muèy — pram-pil — pram-buèn — dop-pram-muèy",
+    "8 — 15 — 20,000 — 3,500",
+    "ថ្លៃប៉ុន្មាន? — ខ្ញុំចង់បានកាហ្វេពីរកែវ។ — ខ្ញុំមានតែប្រាំដុល្លារ។ — ជូនជារៀលបានទេ?",
+    "ថ្លៃប៉ុន្មាន? — ថ្លៃណាស់! — ខ្ញុំចង់បាននំប្រាំមួយ។ — ពីរម៉ឺនរៀល។ — សូមនិយាយម្តងទៀត យឺតៗ។ — ខ្ញុំមានតែដប់ដុល្លារ។"
+  ]
+}

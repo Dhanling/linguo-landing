@@ -1,0 +1,618 @@
+{
+  "title": "How much is it?",
+  "title_target": "ဘယ်လောက်လဲ — bè-lowk-lè:",
+  "goal": "Count up to a hundred thousand, read Burmese digits, and ask prices — including the way people in Myanmar talk about money, which is built nothing like English.",
+  "bekal": [
+    "count from one to a hundred in Burmese",
+    "read the ten Burmese digits on license plates and price tags",
+    "ask the price with ဘယ်လောက်လဲ",
+    "give prices in သောင်း and သိန်း",
+    "say expensive, cheap, and I have no money"
+  ],
+  "dialogs": [
+    {
+      "title": "စကားပြော — At a bookshop near the office",
+      "intro": "Ani is looking for a dictionary. Notice how the shop owner gives prices: he doesn't count the zeros one by one; he uses the unit သောင်း (ten thousand). That's how every price is said in Myanmar, and tourists who aren't used to it almost always fall behind.",
+      "lines": [
+        {
+          "speaker": "အာနီ:",
+          "text": "[ဦးလေး|oo:-lay:]၊ [အဘိဓာန်|a.bee.da-naⁿ] [ရှိ|shee.] [လား|la:]။",
+          "id": "Excuse me, sir, do you have dictionaries?",
+          "literal": "uncle, dictionary — exist — Q?"
+        },
+        {
+          "speaker": "ဆိုင်ရှင်:",
+          "text": "[ရှိ|shee.] [ပါတယ်|ba-dè]။ [မြန်မာ|myaⁿ-ma] [အင်္ဂလိပ်|iⁿ-ga.layk] [အဘိဓာန်|a.bee.da-naⁿ] [ပါ|ba]။",
+          "id": "Yes, we do. A Burmese–English dictionary.",
+          "literal": "exist — polite-statement. myanmar — english — dictionary — polite."
+        },
+        {
+          "speaker": "အာနီ:",
+          "text": "[ဘယ်လောက်|bè-lowk] [လဲ|lè:]။",
+          "id": "How much is it?",
+          "literal": "how-much — Q?"
+        },
+        {
+          "speaker": "ဆိုင်ရှင်:",
+          "text": "[တစ်သောင်း|ta.thowⁿ:] [ငါးထောင်|nga:-htowⁿ] [ပါ|ba]။",
+          "id": "Fifteen thousand.",
+          "literal": "one-ten-thousand — five-thousand — polite."
+        },
+        {
+          "speaker": "အာနီ:",
+          "text": "[ဆယ့်ငါးထောင်|hsay.nga:-htowⁿ] [လား|la:]။ [နည်းနည်း|nè:-nè:] [ဈေးကြီး|zay:-chee:] [တယ်|dè]။",
+          "id": "Fifteen thousand? That's a bit expensive.",
+          "literal": "fifteen-thousand — Q? little — price-big — statement."
+        },
+        {
+          "speaker": "ဆိုင်ရှင်:",
+          "text": "[ဒီ|dee] [တစ်အုပ်|ta.ohk] [က|ga.] [ပိုပြီး|poh-byee:] [ပေါ|paw] [ပါတယ်|ba-dè]။ [ရှစ်ထောင်|shik-htowⁿ] [ပဲ|bè:] [ပါ|ba]။",
+          "id": "This one is cheaper. Only eight thousand.",
+          "literal": "this — one-volume — (topic) — more — cheap — polite-statement. eight-thousand — only — polite."
+        },
+        {
+          "speaker": "အာနီ:",
+          "text": "[ဒါ|da] [သေး|thay:] [တယ်|dè] [နော်|nò]။ [စာလုံး|sa-lohⁿ:] [ဘယ်နှစ်လုံး|bè-hna.lohⁿ:] [ပါ|pa] [လဲ|lè:]။",
+          "id": "This one's small, isn't it? How many words does it have?",
+          "literal": "this — small — statement — right. word — how-many-(round) — contain — Q?"
+        },
+        {
+          "speaker": "ဆိုင်ရှင်:",
+          "text": "[တစ်သောင်း|ta.thowⁿ:] [လောက်|lowk] [ပါ|pa] [ပါတယ်|ba-dè]။ [ကျောင်းသား|chowⁿ:-tha:] [တွေ|dway] [သုံး|thohⁿ:] [ကြ|cha.] [ပါတယ်|ba-dè]။",
+          "id": "About ten thousand words. School students use this one.",
+          "literal": "ten-thousand — about — contain — polite-statement. student — (plural) — use — (together) — polite-statement."
+        },
+        {
+          "speaker": "အာနီ:",
+          "text": "[ဒါဆို|da-hsoh] [ဒီ|dee] [တစ်အုပ်|ta.ohk] [ယူ|yoo] [ပါ့မယ်|ba.-mè]။",
+          "id": "In that case, I'll take this one.",
+          "literal": "if-so — this — one-volume — take — polite-will."
+        },
+        {
+          "speaker": "ဆိုင်ရှင်:",
+          "text": "[ရှစ်ထောင်|shik-htowⁿ] [ပါ|ba]။ [ဒီ|dee] [ဘောပင်|bò-piⁿ] [ကို|koh] [လက်ဆောင်|lèk-hsowⁿ] [ပေး|pay:] [မယ်|mè]။",
+          "id": "Eight thousand. I'll give you this pen as a gift.",
+          "literal": "eight-thousand — polite. this — pen — (object) — gift — give — will."
+        },
+        {
+          "speaker": "အာနီ:",
+          "text": "[ဟုတ်လား|hohk-la:]! [ကျေးဇူးတင်ပါတယ်|chay:-zoo:-tiⁿ-ba-dè] [ဦးလေး|oo:-lay:]။",
+          "id": "Really! Thank you, sir.",
+          "literal": "true-Q! thank-you — uncle."
+        },
+        {
+          "speaker": "ဆိုင်ရှင်:",
+          "text": "[ရ|ya.] [ပါတယ်|ba-dè]။ [နောက်တစ်ခေါက်|nowk-ta.hkowk] [လာ|la] [ခဲ့|hkè.] [ပါ|ba] [နော်|nò]။",
+          "id": "You're welcome. Come again.",
+          "literal": "OK — polite-statement. next-time — come — (back) — polite — right."
+        }
+      ],
+      "grammars": [
+        {
+          "title": "Numbers one to ten, then all the rest",
+          "body": [
+            "The first ten numbers must be learned by heart. After that, Burmese is very regular: tens are formed as \"how many × ten\", and the units are simply tacked on."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Number",
+                "Burmese",
+                "Say it",
+                "Number",
+                "Burmese",
+                "Say it"
+              ],
+              "rows": [
+                [
+                  "1 · ၁",
+                  "တစ်",
+                  "*tik*",
+                  "6 · ၆",
+                  "ခြောက်",
+                  "*hchowk*"
+                ],
+                [
+                  "2 · ၂",
+                  "နှစ်",
+                  "*hnik*",
+                  "7 · ၇",
+                  "ခုနစ်",
+                  "*hkoo.nik*"
+                ],
+                [
+                  "3 · ၃",
+                  "သုံး",
+                  "*thohⁿ:*",
+                  "8 · ၈",
+                  "ရှစ်",
+                  "*shik*"
+                ],
+                [
+                  "4 · ၄",
+                  "လေး",
+                  "*lay:*",
+                  "9 · ၉",
+                  "ကိုး",
+                  "*koh:*"
+                ],
+                [
+                  "5 · ၅",
+                  "ငါး",
+                  "*nga:*",
+                  "10 · ၁၀",
+                  "တစ်ဆယ်",
+                  "*ta.hsay*"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Number",
+                "Burmese",
+                "Say it",
+                "Note"
+              ],
+              "rows": [
+                [
+                  "11",
+                  "ဆယ့်တစ်",
+                  "*hsay.tik*",
+                  "ဆယ် → ဆယ့် before a digit"
+                ],
+                [
+                  "25",
+                  "နှစ်ဆယ့်ငါး",
+                  "*hna.hsay.nga:*",
+                  "literally \"two ten five\""
+                ],
+                [
+                  "100",
+                  "တစ်ရာ",
+                  "*ta.ya*",
+                  ""
+                ],
+                [
+                  "1,000",
+                  "တစ်ထောင်",
+                  "*ta.htowⁿ*",
+                  ""
+                ],
+                [
+                  "10,000",
+                  "တစ်သောင်း",
+                  "*ta.thowⁿ:*",
+                  "⚠️ has its own word"
+                ],
+                [
+                  "100,000",
+                  "တစ်သိန်း",
+                  "*ta.thayⁿ:*",
+                  "⚠️ has its own word"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Notice that **တစ်ဆယ့်ခြောက်** (16) is read *ta.hsay.hchowk*: ဆယ် turns into ဆယ့်, with a creaky tone, as soon as another digit follows it. This small change happens in every teen and every two-digit number, so get used to it now."
+          ]
+        },
+        {
+          "title": "⚠️ သောင်း and သိန်း — how Myanmar talks about money",
+          "body": [
+            "English counts money in \"thousands\" and \"millions\". Burmese slips two extra units in between, and **almost every price in Myanmar is given in those two units**."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Amount",
+                "Burmese",
+                "Say it",
+                "How it's said"
+              ],
+              "rows": [
+                [
+                  "5,000",
+                  "ငါးထောင်",
+                  "*nga:-htowⁿ*",
+                  "five thousand"
+                ],
+                [
+                  "15,000",
+                  "တစ်သောင်းငါးထောင်",
+                  "*ta.thowⁿ:-nga:-htowⁿ*",
+                  "\"one ten-thousand, five thousand\""
+                ],
+                [
+                  "30,000",
+                  "သုံးသောင်း",
+                  "*thohⁿ:-thowⁿ:*",
+                  "\"three ten-thousands\""
+                ],
+                [
+                  "200,000",
+                  "နှစ်သိန်း",
+                  "*hnik-thayⁿ:*",
+                  "\"two hundred-thousands\""
+                ],
+                [
+                  "1,500,000",
+                  "ဆယ့်ငါးသိန်း",
+                  "*hsay.nga:-thayⁿ:*",
+                  "\"fifteen hundred-thousands\""
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "The fastest way to get used to it: stop translating and start **thinking in multiples of ten thousand**. A room rent of 150,000 kyat isn't \"a hundred and fifty thousand\" but ဆယ့်ငါးသိန်း — \"fifteen\" in units of သိန်း.",
+            "The currency is the ကျပ် (*chak*), but in everyday speech the word is often **not said at all**. If someone says ရှစ်ထောင်, they certainly mean eight thousand kyat."
+          ]
+        },
+        {
+          "title": "Asking prices and bargaining",
+          "body": [
+            "Bargaining is normal at markets and small stalls, but not in big shops or anywhere with price tags. These sentences cover the whole business."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Burmese",
+                "Say it",
+                "English"
+              ],
+              "rows": [
+                [
+                  "ဘယ်လောက်လဲ",
+                  "*bè-lowk-lè:*",
+                  "how much is it?"
+                ],
+                [
+                  "ဈေးကြီးတယ်",
+                  "*zay:-chee:-dè*",
+                  "expensive"
+                ],
+                [
+                  "ဈေးပေါတယ်",
+                  "*zay:-paw-dè*",
+                  "cheap"
+                ],
+                [
+                  "နည်းနည်း လျှော့ပါ",
+                  "*nè:-nè: shaw.-ba*",
+                  "knock a little off, please"
+                ],
+                [
+                  "ပိုက်ဆံ မပါဘူး",
+                  "*paik-hsaⁿ ma.pa-boo:*",
+                  "I don't have money on me"
+                ],
+                [
+                  "ဒါ ယူပါ့မယ်",
+                  "*da yoo-ba.-mè*",
+                  "I'll take this one"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ ဈေး (*zay:*) means both \"price\" and \"market\". ဈေးကြီးတယ် literally means \"the price is big\", and ဈေးသွားတယ် means \"go to the market\". The sentence always makes the difference clear."
+          ]
+        },
+        {
+          "title": "…လောက် and …ပဲ — about and only",
+          "body": [
+            "Two small words that make price talk sound natural, and both go **after** the number."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Burmese",
+                "Say it",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "တစ်သောင်းလောက်",
+                  "*ta.thowⁿ:-lowk*",
+                  "about ten thousand"
+                ],
+                [
+                  "ရှစ်ထောင်ပဲ",
+                  "*shik-htowⁿ-bè:*",
+                  "only eight thousand"
+                ],
+                [
+                  "ငါးယောက်လောက်",
+                  "*nga:-yowk-lowk*",
+                  "about five people"
+                ],
+                [
+                  "နည်းနည်းပဲ",
+                  "*nè:-nè:-bè:*",
+                  "just a little"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "ဘယ်လောက် itself is actually built from ဘယ် (\"which\") + လောက် (\"about\") — literally \"about which\". Once you see that, it stops feeling like a new word to memorize."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Reading Burmese digits in the street",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Burmese digits are still used everywhere: license plates, city bus numbers, market price tags, house numbers, and newspaper dates. They're round like the letters, and some of them look like letters — ၀ has the same shape as the letter ဝ, and ၇ looks like ၅. Five minutes of memorizing them will save you a lot of confusion."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "၀",
+            "၁",
+            "၂",
+            "၃",
+            "၄",
+            "၅",
+            "၆",
+            "၇",
+            "၈",
+            "၉"
+          ],
+          "rows": [
+            [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Written",
+            "Read as",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "၈၀၀၀ ကျပ်",
+              "*shik-htowⁿ chak*",
+              "8,000 kyat"
+            ],
+            [
+              "၁၅၀၀၀ ကျပ်",
+              "*ta.thowⁿ: nga:-htowⁿ chak*",
+              "15,000 kyat"
+            ],
+            [
+              "ဘတ်စ်ကား ၃၆",
+              "*bak-sa.ka: thohⁿ:-hsay.hchowk*",
+              "bus number 36"
+            ],
+            [
+              "အခန်း ၂၀၄",
+              "*a.hkaⁿ: hnik-ya-lay:*",
+              "room 204"
+            ],
+            [
+              "၂၀၂၆ ခုနှစ်",
+              "*hnik-htowⁿ hna.hsay.hchowk hkoo.hnik*",
+              "the year 2026"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "The drill that sticks fastest",
+          "items": [
+            "Write your own phone number, your date of birth, and your house number in Burmese digits. You already know all three in ordinary digits, so your brain only has to attach the new shapes to familiar content.",
+            "Then read them out loud. ⚠️ Burmese digits are read in exactly the same order as ordinary digits — left to right. Nothing is reversed."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "my": "ဘယ်လောက်လဲ",
+      "baca": "bè-lowk-lè:",
+      "en": "how much is it?"
+    },
+    {
+      "my": "အဘိဓာန်",
+      "baca": "a.bee.da-naⁿ",
+      "en": "dictionary"
+    },
+    {
+      "my": "ဆိုင်",
+      "baca": "hsaiⁿ",
+      "en": "shop, stall"
+    },
+    {
+      "my": "ဆိုင်ရှင်",
+      "baca": "hsaiⁿ-shiⁿ",
+      "en": "shop owner"
+    },
+    {
+      "my": "ကျပ်",
+      "baca": "chak",
+      "en": "kyat, Myanmar's currency"
+    },
+    {
+      "my": "ထောင်",
+      "baca": "htowⁿ",
+      "en": "thousand"
+    },
+    {
+      "my": "သောင်း",
+      "baca": "thowⁿ:",
+      "en": "ten thousand"
+    },
+    {
+      "my": "သိန်း",
+      "baca": "thayⁿ:",
+      "en": "hundred thousand"
+    },
+    {
+      "my": "ရာ",
+      "baca": "ya",
+      "en": "hundred"
+    },
+    {
+      "my": "ဆယ်",
+      "baca": "hsay",
+      "en": "ten (in tens)"
+    },
+    {
+      "my": "ဈေးကြီးတယ်",
+      "baca": "zay:-chee:-dè",
+      "en": "expensive"
+    },
+    {
+      "my": "ဈေးပေါတယ်",
+      "baca": "zay:-paw-dè",
+      "en": "cheap"
+    },
+    {
+      "my": "ဈေး",
+      "baca": "zay:",
+      "en": "price; market"
+    },
+    {
+      "my": "ပိုပြီး",
+      "baca": "poh-byee:",
+      "en": "more"
+    },
+    {
+      "my": "…လောက်",
+      "baca": "lowk",
+      "en": "about, around"
+    },
+    {
+      "my": "…ပဲ",
+      "baca": "bè:",
+      "en": "only, just"
+    },
+    {
+      "my": "အုပ်",
+      "baca": "ohk",
+      "en": "classifier for books"
+    },
+    {
+      "my": "လုံး",
+      "baca": "lohⁿ:",
+      "en": "classifier for round things; letters, words"
+    },
+    {
+      "my": "စာလုံး",
+      "baca": "sa-lohⁿ:",
+      "en": "word, letter"
+    },
+    {
+      "my": "သေးတယ်",
+      "baca": "thay:-dè",
+      "en": "small"
+    },
+    {
+      "my": "ကြီးတယ်",
+      "baca": "chee:-dè",
+      "en": "big"
+    },
+    {
+      "my": "ပါတယ်",
+      "baca": "pa-dè",
+      "en": "to be included, to come with"
+    },
+    {
+      "my": "သုံးတယ်",
+      "baca": "thohⁿ:-dè",
+      "en": "to use"
+    },
+    {
+      "my": "ယူတယ်",
+      "baca": "yoo-dè",
+      "en": "to take"
+    },
+    {
+      "my": "ပေးတယ်",
+      "baca": "pay:-dè",
+      "en": "to give"
+    },
+    {
+      "my": "လက်ဆောင်",
+      "baca": "lèk-hsowⁿ",
+      "en": "gift"
+    },
+    {
+      "my": "နောက်တစ်ခေါက်",
+      "baca": "nowk-ta.hkowk",
+      "en": "next time"
+    },
+    {
+      "my": "နော်",
+      "baca": "nò",
+      "en": "right? (softens a sentence)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write in ordinary digits.",
+      "items": [
+        "၁၅",
+        "၄၀",
+        "၁၂၃",
+        "၈၀၀၀",
+        "၂၀၂၆",
+        "၉၇"
+      ]
+    },
+    {
+      "prompt": "Say these prices in Burmese.",
+      "items": [
+        "3,000 kyat",
+        "20,000 kyat",
+        "45,000 kyat",
+        "100,000 kyat"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "လဲ / ဘယ်လောက် / ဒါ",
+        "တယ် / ဈေးကြီး / နည်းနည်း",
+        "ပါ / ပဲ / ရှစ်ထောင်",
+        "ပါ့မယ် / ယူ / ဒီတစ်အုပ်"
+      ]
+    },
+    {
+      "prompt": "Translate into Burmese.",
+      "items": [
+        "Do you have dictionaries?",
+        "How much is it?",
+        "It's a bit expensive.",
+        "Only eight thousand.",
+        "In that case, I'll take this one.",
+        "I don't have money on me."
+      ]
+    }
+  ],
+  "answers": [
+    "15 — 40 — 123 — 8,000 — 2026 — 97",
+    "သုံးထောင် — နှစ်သောင်း — လေးသောင်းငါးထောင် — တစ်သိန်း",
+    "ဒါ ဘယ်လောက်လဲ။ — နည်းနည်း ဈေးကြီးတယ်။ — ရှစ်ထောင်ပဲပါ။ — ဒီတစ်အုပ် ယူပါ့မယ်။",
+    "အဘိဓာန် ရှိလား။ — ဘယ်လောက်လဲ။ — နည်းနည်း ဈေးကြီးတယ်။ — ရှစ်ထောင်ပဲပါ။ — ဒါဆို ဒီတစ်အုပ် ယူပါ့မယ်။ — ပိုက်ဆံ မပါဘူး။"
+  ]
+}

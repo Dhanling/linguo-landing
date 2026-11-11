@@ -1,0 +1,595 @@
+{
+  "title": "My family",
+  "title_target": "ჩემი ოჯახი — Chemi ojakhi",
+  "goal": "Name family members, say what you have, and face this unit's biggest trap: Georgian has two different verbs for \"to have\", and the choice depends on whether what you have is alive or not.",
+  "bekal": [
+    "name your immediate family and grandparents",
+    "use ჩემი, შენი, მისი to show possession",
+    "choose correctly between მაქვს and მყავს",
+    "say how many family members you have",
+    "ask how someone else's family is doing"
+  ],
+  "dialogs": [
+    {
+      "title": "დიალოგი — Photos on the phone",
+      "intro": "Nino wants to know about Ani's family, and Ani opens the photos on her phone. Notice the two verbs for \"to have\" taking turns throughout the conversation — and listen carefully to the word for \"father\".",
+      "lines": [
+        {
+          "speaker": "ნინო:",
+          "text": "[ეს|Es] [შენი|she-ni] [ოჯახია|o-ja-khi-a]?",
+          "id": "Is this your family?",
+          "literal": "this — your — family-is?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[კი|K'i]. [ეს|Es] [ჩემი|che-mi] [დედაა|de-da-a], [ეს|es] [კი|k'i] [ჩემი|che-mi] [მამა|ma-ma].",
+          "id": "Yes. This is my mother, and this is my father.",
+          "literal": "yes. this — my — mother-is, this — then — my — father."
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[მამა|Ma-ma]? [ინდონეზიურად|In-do-ne-zi-u-rad] [ეს|es] [დედა|de-da] [არის|a-ris], [არა|a-ra]?",
+          "id": "Mama? In Indonesian that's mother, right?",
+          "literal": "father? in-Indonesian — this — mother — is, no?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[დიახ|Di-akh]! [ქართულად|Kar-tu-lad] [პირიქითაა|p'i-ri-ki-ta-a]. [ეს|Es] [ყოველთვის|q'o-vel-tvis] [მაბნევს|mab-nevs].",
+          "id": "Yes! In Georgian it's the other way around. It always confuses me.",
+          "literal": "yes! in-Georgian — reverse-is. this — always — confuses-me."
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[და|Da] [ან|an] [ძმა|dzma] [გყავს|gq'avs]?",
+          "id": "Do you have a sister or a brother?",
+          "literal": "sister — or — brother — you-have-(living)?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ორი|O-ri] [ძმა|dzma] [მყავს|mq'avs] [და|da] [ერთი|er-ti] [და|da].",
+          "id": "I have two brothers and one sister.",
+          "literal": "two — brother — I-have-(living) — and — one — sister."
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[დიდი|Di-di] [ოჯახია|o-ja-khi-a]! [მე|Me] [ერთი|er-ti] [და|da] [მყავს|mq'avs], [სხვა|skhva] [არავინ|a-ra-vin].",
+          "id": "A big family! I only have one sister, nobody else.",
+          "literal": "big — family-is! I — one — sister — I-have-(living), other — nobody."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ბებია|Be-bi-a] [და|da] [ბაბუა|ba-bu-a] [გყავს|gq'avs]?",
+          "id": "Do you still have your grandma and grandpa?",
+          "literal": "grandmother — and — grandfather — you-have-(living)?"
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[ბებია|Be-bi-a] [მყავს|mq'avs]. [კახეთში|K'a-khet-shi] [ცხოვრობს|tskhov-robs], [დიდი|di-di] [სახლი|sakh-li] [აქვს|akvs].",
+          "id": "I have my grandma. She lives in Kakheti and has a big house.",
+          "literal": "grandmother — I-have-(living). Kakheti-in — she-lives, big — house — she-has-(thing)."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ბაღი|Ba-ghi] [აქვს|akvs]?",
+          "id": "Does she have a garden?",
+          "literal": "garden — she-has-(thing)?"
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[კი|K'i], [ვენახი|ve-na-khi] [აქვს|akvs]! [და|Da] [ორი|ori] [ძაღლი|dzagh-li] [ჰყავს|hq'avs].",
+          "id": "Yes, she has a vineyard! And two dogs.",
+          "literal": "yes, vineyard — she-has-(thing)! and — two — dog — she-has-(living)."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ვენახი|Ve-na-khi]… [ახლა|akh-la] [მესმის|mes-mis], [რატომ|ra-t'om] [არის|a-ris] [ღვინო|ghvi-no] [ასე|a-se] [მნიშვნელოვანი|mnish-vne-lo-va-ni].",
+          "id": "A vineyard… now I understand why wine is so important here.",
+          "literal": "vineyard… now — I-understand, why — is — wine — so — important."
+        }
+      ],
+      "notes": [
+        "⚠️ **დედა = mother. მამა = father.** Read that twice. For English speakers this is the most stubborn trap in the whole course, because \"mama\" has meant mother since before we could talk. Georgians will still understand from context, but this mistake will chase you for months. One way to remember it: **დედა** sounds like \"daddy\"… which is exactly what it **doesn't** mean. Remember the reversal itself, and that's what sticks.",
+        "**და has two meanings at once: \"and\" and \"sister\".** *ორი ძმა და ერთი და* = \"two brothers and one sister\". It looks troublesome, but it rarely confuses in practice — its position in the sentence decides.",
+        "**Two verbs for \"to have\", and the choice isn't about style.** **მაქვს** is for things, **მყავს** for living beings. სახლი მაქვს (I have a house), ძმა მყავს (I have a brother). ⚠️ Using მაქვს for people isn't just a grammar slip — it sounds as if you think of that person as an object.",
+        "**What changes isn't the pronoun but the prefix.** მ**აქვს** (I have), გ**აქვს** (you have), **აქვს** (he/she has). The same for living beings: მ**ყავს**, გ**ყავს**, **ჰყავს**. You already met this მ-/გ- prefix in unit 1 with მქვია/გქვია, and it comes back in units 10 and 16.",
+        "**In a \"have\" sentence, the grammatical subject is the thing, not the person.** *ორი ძმა მყავს* literally says \"two brothers are-to-me\". That's why the verb has no ვ- prefix: the subject isn't \"I\". This group of inverted verbs is small, but it's full of words you'll use every day.",
+        "**არავინ = nobody.** Notice that Georgian, unlike standard English, lets negatives stack: *არავინ არ არის* (\"nobody isn't there\" = there's nobody) is perfectly correct.",
+        "**კახეთი (Kakheti) is the wine region in eastern Georgia.** When someone mentions that their family has a ვენახი (vineyard) in Kakheti, they're saying something about who they are, not about farming. Georgia sees itself as the birthplace of wine — eight thousand years of it — and unit 19 comes back to this."
+      ],
+      "grammars": [
+        {
+          "title": "მაქვს or მყავს — alive or not",
+          "body": [
+            "There's only one question to ask before choosing: **does the thing I have breathe or not?**"
+          ],
+          "tables": [
+            {
+              "head": [
+                "For things",
+                "Say it",
+                "For living beings",
+                "Say it"
+              ],
+              "rows": [
+                [
+                  "მაქვს",
+                  "makvs",
+                  "მყავს",
+                  "mq'avs"
+                ],
+                [
+                  "გაქვს",
+                  "gakvs",
+                  "გყავს",
+                  "gq'avs"
+                ],
+                [
+                  "აქვს",
+                  "akvs",
+                  "ჰყავს",
+                  "hq'avs"
+                ],
+                [
+                  "გვაქვს (we)",
+                  "gvakvs",
+                  "გვყავს",
+                  "gvq'avs"
+                ],
+                [
+                  "გაქვთ (you pl.)",
+                  "gakvt",
+                  "გყავთ",
+                  "gq'avt"
+                ],
+                [
+                  "აქვთ (they)",
+                  "akvt",
+                  "ჰყავთ",
+                  "hq'avt"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Thing examples",
+                "Meaning",
+                "Living examples",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "მანქანა მაქვს",
+                  "I have a car",
+                  "ძმა მყავს",
+                  "I have a brother"
+                ],
+                [
+                  "ფული არ მაქვს",
+                  "I don't have money",
+                  "შვილი გყავს?",
+                  "do you have children?"
+                ],
+                [
+                  "დრო გაქვს?",
+                  "do you have time?",
+                  "კატა მყავს",
+                  "I have a cat"
+                ],
+                [
+                  "სახლი აქვს",
+                  "he/she has a house",
+                  "ძაღლი ჰყავს",
+                  "he/she has a dog"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Plants count as **things**: ვენახი მაქვს, ყვავილი მაქვს. In Georgian grammar, \"alive\" means people and animals."
+          ]
+        },
+        {
+          "title": "Possessives",
+          "body": [
+            "Possessive words go before the noun and don't change form at A1 level."
+          ],
+          "table": {
+            "head": [
+              "Possessive",
+              "Say it",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ჩემი",
+                "chemi",
+                "ჩემი დედა",
+                "my mother"
+              ],
+              [
+                "შენი",
+                "sheni",
+                "შენი ოჯახი",
+                "your family"
+              ],
+              [
+                "მისი",
+                "misi",
+                "მისი ძმა",
+                "his/her brother"
+              ],
+              [
+                "ჩვენი",
+                "chveni",
+                "ჩვენი სახლი",
+                "our house"
+              ],
+              [
+                "თქვენი",
+                "tkveni",
+                "თქვენი შვილი",
+                "your child (formal)"
+              ],
+              [
+                "მათი",
+                "mati",
+                "მათი ქალაქი",
+                "their city"
+              ]
+            ]
+          },
+          "after": [
+            "To ask \"whose\", use **ვისი?** — *ვისი ჩანთაა?* (whose bag is this?). The answer uses the person's name with the ending **-ის**, like English 's: *ანის ჩანთაა* (it's Ani's bag)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Family, and how to ask about it",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Georgian",
+            "Say it",
+            "Meaning",
+            "Georgian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ოჯახი",
+              "ojakhi",
+              "family",
+              "ბებია",
+              "bebia",
+              "grandmother"
+            ],
+            [
+              "დედა",
+              "deda",
+              "mother",
+              "ბაბუა",
+              "babua",
+              "grandfather"
+            ],
+            [
+              "მამა",
+              "mama",
+              "father",
+              "ცოლი",
+              "tsoli",
+              "wife"
+            ],
+            [
+              "ძმა",
+              "dzma",
+              "brother",
+              "ქმარი",
+              "kmari",
+              "husband"
+            ],
+            [
+              "და",
+              "da",
+              "sister",
+              "ბიძა",
+              "bidza",
+              "uncle"
+            ],
+            [
+              "შვილი",
+              "shvili",
+              "child (son/daughter)",
+              "დეიდა",
+              "deida",
+              "aunt (mother's side)"
+            ],
+            [
+              "ვაჟი",
+              "vazhi",
+              "son",
+              "მამიდა",
+              "mamida",
+              "aunt (father's side)"
+            ],
+            [
+              "ქალიშვილი",
+              "kalishvili",
+              "daughter",
+              "ბიძაშვილი",
+              "bidzashvili",
+              "cousin"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice **დეიდა** and **მამიდა**: the first is your **mother's** (დედა) sister, the second your **father's** (მამა) sister. Where English just says \"aunt\", Georgian keeps the two apart — because those relationships matter in daily life. **ბიძაშვილი** literally means \"uncle's child\", and that's the word for cousin."
+        },
+        {
+          "type": "kotak",
+          "title": "Five questions about family",
+          "items": [
+            "**ოჯახი გყავს?** (ojakhi gq'avs) — Do you have a family? (Are you married?)",
+            "**და-ძმა გყავს?** (da-dzma gq'avs) — Do you have siblings? Literally \"sister-brother\"; this compound is the general word for siblings.",
+            "**რამდენი შვილი გყავს?** (ramdeni shvili gq'avs) — How many children do you have?",
+            "**სად ცხოვრობს შენი ოჯახი?** (sad tskhovrobs sheni ojakhi) — Where does your family live?",
+            "**როგორ არიან?** (rogor arian) — How are they?"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ A useful cultural heads-up: in Georgia, questions about family, age, and marital status are **not** considered too personal, even from someone you met five minutes ago. It isn't rudeness; it's a way of placing you on the map of relationships. If you'd rather not answer, *ჯერ არა* (jer ara — not yet) is enough and won't be pushed further."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ka": "ოჯახი",
+      "baca": "ojakhi",
+      "en": "family"
+    },
+    {
+      "ka": "დედა",
+      "baca": "deda",
+      "en": "mother"
+    },
+    {
+      "ka": "მამა",
+      "baca": "mama",
+      "en": "father"
+    },
+    {
+      "ka": "ძმა",
+      "baca": "dzma",
+      "en": "brother"
+    },
+    {
+      "ka": "და",
+      "baca": "da",
+      "en": "sister; and"
+    },
+    {
+      "ka": "და-ძმა",
+      "baca": "da-dzma",
+      "en": "siblings"
+    },
+    {
+      "ka": "შვილი",
+      "baca": "shvili",
+      "en": "child (son or daughter)"
+    },
+    {
+      "ka": "ვაჟი",
+      "baca": "vazhi",
+      "en": "son"
+    },
+    {
+      "ka": "ქალიშვილი",
+      "baca": "kalishvili",
+      "en": "daughter"
+    },
+    {
+      "ka": "ბებია",
+      "baca": "bebia",
+      "en": "grandmother"
+    },
+    {
+      "ka": "ბაბუა",
+      "baca": "babua",
+      "en": "grandfather"
+    },
+    {
+      "ka": "ცოლი",
+      "baca": "tsoli",
+      "en": "wife"
+    },
+    {
+      "ka": "ქმარი",
+      "baca": "kmari",
+      "en": "husband"
+    },
+    {
+      "ka": "ბიძა",
+      "baca": "bidza",
+      "en": "uncle"
+    },
+    {
+      "ka": "დეიდა",
+      "baca": "deida",
+      "en": "aunt (mother's sister)"
+    },
+    {
+      "ka": "მაქვს",
+      "baca": "makvs",
+      "en": "I have (a thing)"
+    },
+    {
+      "ka": "გაქვს",
+      "baca": "gakvs",
+      "en": "you have (a thing)"
+    },
+    {
+      "ka": "აქვს",
+      "baca": "akvs",
+      "en": "he/she has (a thing)"
+    },
+    {
+      "ka": "მყავს",
+      "baca": "mq'avs",
+      "en": "I have (a living being)"
+    },
+    {
+      "ka": "გყავს",
+      "baca": "gq'avs",
+      "en": "you have (a living being)"
+    },
+    {
+      "ka": "ჰყავს",
+      "baca": "hq'avs",
+      "en": "he/she has (a living being)"
+    },
+    {
+      "ka": "ჩემი",
+      "baca": "chemi",
+      "en": "my, mine"
+    },
+    {
+      "ka": "შენი",
+      "baca": "sheni",
+      "en": "your, yours"
+    },
+    {
+      "ka": "მისი",
+      "baca": "misi",
+      "en": "his, her"
+    },
+    {
+      "ka": "ჩვენი",
+      "baca": "chveni",
+      "en": "our"
+    },
+    {
+      "ka": "მათი",
+      "baca": "mati",
+      "en": "their"
+    },
+    {
+      "ka": "ვისი",
+      "baca": "visi",
+      "en": "whose"
+    },
+    {
+      "ka": "სახლი",
+      "baca": "sakhli",
+      "en": "house"
+    },
+    {
+      "ka": "მანქანა",
+      "baca": "mankana",
+      "en": "car"
+    },
+    {
+      "ka": "ძაღლი",
+      "baca": "dzaghli",
+      "en": "dog"
+    },
+    {
+      "ka": "კატა",
+      "baca": "k'at'a",
+      "en": "cat"
+    },
+    {
+      "ka": "ბაღი",
+      "baca": "baghi",
+      "en": "garden"
+    },
+    {
+      "ka": "ვენახი",
+      "baca": "venakhi",
+      "en": "vineyard"
+    },
+    {
+      "ka": "არავინ",
+      "baca": "aravin",
+      "en": "nobody"
+    },
+    {
+      "ka": "სხვა",
+      "baca": "skhva",
+      "en": "other"
+    },
+    {
+      "ka": "დიდი",
+      "baca": "didi",
+      "en": "big"
+    },
+    {
+      "ka": "პატარა",
+      "baca": "p'at'ara",
+      "en": "small"
+    },
+    {
+      "ka": "მესმის",
+      "baca": "mesmis",
+      "en": "I understand"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose მაქვს or მყავს.",
+      "items": [
+        "მანქანა ____",
+        "ძმა ____",
+        "სახლი ____",
+        "ორი კატა ____",
+        "ფული არ ____",
+        "დიდი ოჯახი ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the right possessive.",
+      "items": [
+        "My mother → ____ დედა",
+        "Your family → ____ ოჯახი",
+        "His/her house → ____ სახლი",
+        "Our city → ____ ქალაქი",
+        "Your child (formal) → ____ შვილი"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "მყავს / ძმა / ორი",
+        "გყავს / და-ძმა / ?",
+        "ოჯახია / დიდი / ეს",
+        "აქვს / სახლი / ბებიას",
+        "არ / ფული / მაქვს"
+      ]
+    },
+    {
+      "prompt": "Translate into Georgian.",
+      "items": [
+        "This is my family.",
+        "I have two brothers.",
+        "Do you have siblings?",
+        "She has a big house.",
+        "This is my mother, this is my father.",
+        "I don't have a car."
+      ]
+    }
+  ],
+  "answers": [
+    "მაქვს — მყავს — მაქვს — მყავს — მაქვს — მყავს",
+    "ჩემი — შენი — მისი — ჩვენი — თქვენი",
+    "ორი ძმა მყავს. — და-ძმა გყავს? — ეს დიდი ოჯახია. — ბებიას სახლი აქვს. — ფული არ მაქვს.",
+    "ეს ჩემი ოჯახია. — ორი ძმა მყავს. — და-ძმა გყავს? — დიდი სახლი აქვს. — ეს ჩემი დედაა, ეს ჩემი მამა. — მანქანა არ მაქვს."
+  ],
+  "wave": "Before starting unit 5, go back to unit 1 and read the dialogue once more without looking at the pronunciation line. Four units are enough to make gamarjoba, var, and chemi readable without spelling them out."
+}

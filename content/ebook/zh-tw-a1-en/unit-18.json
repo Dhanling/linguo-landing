@@ -1,0 +1,592 @@
+{
+  "title": "Calling and booking a table",
+  "title_target": "打電話訂位",
+  "goal": "Make phone calls in Mandarin and say whether you've understood or not — through 聽得懂 and 聽不懂, the forms beginners need most.",
+  "bekal": [
+    "make a call, book a table, and leave a message",
+    "use result complements (看到, 聽懂, 買到) and their potential forms",
+    "ask the other person to slow down or repeat"
+  ],
+  "dialogs": [
+    {
+      "title": "對話 — 訂位",
+      "intro": "Budi calls a restaurant to book a table for five. It's his first phone call in Mandarin.",
+      "lines": [
+        {
+          "speaker": "店員:",
+          "text": "[喂|Wéi]，[您好|nín hǎo]，[小林|Xiǎo Lín][餐廳|cāntīng]。",
+          "id": "Hello, good afternoon, Xiao Lin Restaurant.",
+          "literal": "hello, you (polite) — good, little-Lin — restaurant."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[您好|Nín hǎo]，[我|wǒ][要|yào][訂位|dìngwèi]。",
+          "id": "Hello, I'd like to book a table.",
+          "literal": "you (polite) — good, I — want — book-seat."
+        },
+        {
+          "speaker": "店員:",
+          "text": "[好的|Hǎo de]，[請問|qǐngwèn][幾位|jǐ wèi]？[什麼|Shénme][時候|shíhòu]？",
+          "id": "Sure, for how many people? And when?",
+          "literal": "good — (one), please — ask — how-many — (measure word)? what — time?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[五位|Wǔ wèi]，[明天|míngtiān][晚上|wǎnshang][七點|qī diǎn]。",
+          "id": "Five people, tomorrow evening at seven.",
+          "literal": "five — (measure word), tomorrow — evening — seven — o'clock."
+        },
+        {
+          "speaker": "店員:",
+          "text": "[不好意思|Bù hǎoyìsi]，[七點|qī diǎn][客滿|kèmǎn][了|le]。[六點|Liù diǎn][半|bàn][可以|kěyǐ][嗎|ma]？",
+          "id": "Sorry, seven is fully booked. Is six thirty OK?",
+          "literal": "not — good — meaning, seven — o'clock — guest-full — (change). six — o'clock — half — can — (question)?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[不好意思|Bù hǎoyìsi]，[我|wǒ][沒|méi][聽|tīng][懂|dǒng]。[可以|Kěyǐ][說|shuō][慢|màn][一點|yìdiǎn][嗎|ma]？",
+          "id": "Sorry, I didn't catch that. Could you speak more slowly?",
+          "literal": "sorry, I — not — listen — understand. can — speak — slow — a-bit — (question)?"
+        },
+        {
+          "speaker": "店員:",
+          "text": "[沒|Méi][問題|wèntí]。[七|Qī]…[點|diǎn]…[滿|mǎn][了|le]。[六|Liù][點|diǎn][半|bàn]…[可以|kěyǐ]。",
+          "id": "No problem. Seven… o'clock… is full. Six thirty… is OK.",
+          "literal": "not — have — problem. seven… o'clock… full — (change). six — o'clock — half… can."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[啊|A]，[我|wǒ][聽|tīng][懂|dǒng][了|le]！[六點|Liù diǎn][半|bàn][沒|méi][問題|wèntí]。",
+          "id": "Ah, got it! Six thirty is no problem.",
+          "literal": "ah, I — listen — understand — (change)! six — o'clock — half — not — have — problem."
+        },
+        {
+          "speaker": "店員:",
+          "text": "[請問|Qǐngwèn][怎麼|zěnme][稱呼|chēnghū]？[電話|Diànhuà][幾號|jǐ hào]？",
+          "id": "May I have your name? And your phone number?",
+          "literal": "please — ask — how — address? phone — what — number?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[我|Wǒ][姓|xìng][布|Bù]。[電話|Diànhuà][是|shì][0912-345-678|líng jiǔ yāo èr sān sì wǔ liù qī bā]。",
+          "id": "My surname is Bu. My number is 0912-345-678.",
+          "literal": "I — surname — Bu. phone — is — 0912-345-678."
+        },
+        {
+          "speaker": "店員:",
+          "text": "[好|Hǎo]，[布|Bù][先生|xiānshēng]，[五位|wǔ wèi]，[明天|míngtiān][六點|liù diǎn][半|bàn]。",
+          "id": "All right, Mr. Bu, five people, tomorrow at six thirty.",
+          "literal": "good, Bu — mister, five — (measure word), tomorrow — six — o'clock — half."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[對|Duì]。[請問|Qǐngwèn][有|yǒu][素食|sùshí][嗎|ma]？[我|Wǒ][朋友|péngyǒu][吃素|chīsù]。",
+          "id": "Right. May I ask, do you have vegetarian dishes? My friend is vegetarian.",
+          "literal": "right. please — ask — have — vegetable-food — (question)? I — friend — eat-vegetarian."
+        },
+        {
+          "speaker": "店員:",
+          "text": "[有|Yǒu][喔|o]！[我們|Wǒmen][有|yǒu][三|sān][種|zhǒng][素食|sùshí]。",
+          "id": "We do! We have three kinds of vegetarian dishes.",
+          "literal": "have — (softener)! we — have — three — kind — vegetable-food."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[太好了|Tài hǎo le]！[謝謝|Xièxie]，[明天|míngtiān][見|jiàn]！",
+          "id": "Great! Thank you, see you tomorrow!",
+          "literal": "too — good — (change)! thanks, tomorrow — see!"
+        }
+      ],
+      "notes": [
+        "⚠️ **The number 1 is read 幺 (*yāo*), not 一 (*yī*), in phone numbers and room numbers.** The reason is practical: *yī* sounds too much like *qī* (seven) over the phone. It's a rule rarely taught but used every day.",
+        "**怎麼稱呼？ (\"how should I address you?\") is the polite way to ask someone's name** on the phone and in formal settings. Your surname is enough as an answer: *我姓布*.",
+        "**客滿 (\"guests full\") means fully booked.** You'll see it on the doors of popular restaurants, especially on weekends. ⚠️ Famous restaurants in Taiwan often have to be booked weeks in advance.",
+        "**Phoning in a foreign language is much harder than talking face to face**, because there are no lip movements or gestures to help. ⚠️ Don't lose heart if your first call is a mess; write out your sentences before you dial.",
+        "**種 (*zhǒng*, kind) is the measure word for kinds or varieties**: 三種素食 (three kinds of vegetarian dishes), 兩種語言 (two languages)."
+      ],
+      "grammars": [
+        {
+          "title": "Result complements: verbs that state their outcome",
+          "body": [
+            "Mandarin often separates the **action** from its **result**. 看 means \"look\" (the action); to say you actually **saw** it, you add the result: 看**到**. English \"look\" vs \"see\" is a similar split — but Mandarin does it with almost every verb, and that's where beginners lose half the meaning."
+          ],
+          "table": {
+            "head": [
+              "Action",
+              "+ Result",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "看",
+                "看**到**",
+                "see (successfully)",
+                "我看到他了。"
+              ],
+              [
+                "看",
+                "看**完**",
+                "finish watching/reading",
+                "我看完了。"
+              ],
+              [
+                "聽",
+                "聽**懂**",
+                "hear and understand",
+                "我聽懂了。"
+              ],
+              [
+                "聽",
+                "聽**到**",
+                "hear (it reaches you)",
+                "我沒聽到。"
+              ],
+              [
+                "買",
+                "買**到**",
+                "manage to buy",
+                "我買到票了！"
+              ],
+              [
+                "找",
+                "找**到**",
+                "find",
+                "我找到了！"
+              ],
+              [
+                "吃",
+                "吃**飽**",
+                "eat your fill",
+                "我吃飽了。"
+              ],
+              [
+                "學",
+                "學**會**",
+                "learn until you can",
+                "我學會了。"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **我看了 and 我看到了 are very different.** The first means \"I looked/watched\" (the action was done); the second means \"I saw it\" (the result was achieved). *我找了* = I looked for it; *我找到了* = I found it.",
+            "**Negate with 沒, and the whole complement stays**: *我沒聽懂* (I didn't catch it), *我沒買到* (I couldn't get one).",
+            "**吃飽了嗎？ is a very common greeting in Taiwan** — a friendly \"have you eaten?\" that works like \"how are you?\". Answer *吃飽了，謝謝*."
+          ]
+        },
+        {
+          "title": "得 and 不: can or can't reach the result",
+          "body": [
+            "Insert **得** between the verb and its result to mean \"can\"; insert **不** to mean \"can't\". This form is used constantly and is extremely useful for beginners."
+          ],
+          "table": {
+            "head": [
+              "Can",
+              "Can't",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "聽**得**懂",
+                "聽**不**懂",
+                "⚠️ can / can't catch (what's said)"
+              ],
+              [
+                "看**得**到",
+                "看**不**到",
+                "can / can't see"
+              ],
+              [
+                "買**得**到",
+                "買**不**到",
+                "can / can't buy (available or not)"
+              ],
+              [
+                "找**得**到",
+                "找**不**到",
+                "can / can't find"
+              ],
+              [
+                "吃**得**完",
+                "吃**不**完",
+                "can / can't finish eating"
+              ],
+              [
+                "來**得**及",
+                "來**不**及",
+                "in time / not in time"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **聽不懂 is the most important phrase in this unit.** It means \"I can't catch what you're saying\" — not \"I'm deaf\" and not \"I'm stupid\". Say it without embarrassment; Taiwanese people will slow down right away.",
+            "**Tell 我不懂 apart from 我聽不懂.** The first means \"I don't understand the idea\"; the second means \"my ears didn't catch the words\". For beginners, the second is almost always the right one.",
+            "**來不及 (\"not in time\") is used all the time**: *快一點，來不及了！* (\"hurry up, we'll be late!\")."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Making phone calls",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "English"
+          ],
+          "rows": [
+            [
+              "**喂？**",
+              "wéi?",
+              "Hello? (on the phone only)"
+            ],
+            [
+              "**請問…在嗎？**",
+              "qǐngwèn… zài ma?",
+              "May I ask, is … there?"
+            ],
+            [
+              "**我找…**",
+              "wǒ zhǎo…",
+              "I'm looking for…"
+            ],
+            [
+              "**請稍等**",
+              "qǐng shāo děng",
+              "Please hold on a moment"
+            ],
+            [
+              "**他不在**",
+              "tā bú zài",
+              "He/She isn't here"
+            ],
+            [
+              "**要留言嗎？**",
+              "yào liúyán ma?",
+              "Would you like to leave a message?"
+            ],
+            [
+              "**請他回電**",
+              "qǐng tā huídiàn",
+              "Please ask him/her to call me back"
+            ],
+            [
+              "**你打錯了**",
+              "nǐ dǎ cuò le",
+              "You have the wrong number"
+            ],
+            [
+              "**訊號不好**",
+              "xùnhào bù hǎo",
+              "The signal is bad"
+            ],
+            [
+              "**我等一下再打**",
+              "wǒ děng yíxià zài dǎ",
+              "I'll call again later"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **打電話 (\"hit the phone\") means to make a call** — 打 is used for many activities that have nothing to do with hitting: 打電話, 打字 (type), 打球 (play ball), 打工 (work part-time), 打折 (give a discount). It's one of the most versatile verbs in Mandarin."
+        }
+      ]
+    },
+    {
+      "title": "Lifesaver phrases when you don't understand",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "Memorize all five today",
+          "items": [
+            "**我聽不懂。** *Wǒ tīng bù dǒng.* — I don't understand (what you said).",
+            "**請說慢一點。** *Qǐng shuō màn yìdiǎn.* — Please speak more slowly.",
+            "**請再說一次。** *Qǐng zài shuō yí cì.* — Please say it again.",
+            "**可以寫下來嗎？** *Kěyǐ xiě xiàlái ma?* — Could you write it down?",
+            "**…是什麼意思？** *… shì shénme yìsi?* — What does … mean?"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **These five phrases are worth more than two hundred words of vocabulary.** As long as you can say them, any conversation can be rescued — and Taiwanese people are almost always happy to slow down. What kills a conversation isn't what you don't know; it's silence."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "English"
+          ],
+          "rows": [
+            [
+              "**這個中文怎麼說？**",
+              "zhè ge Zhōngwén zěnme shuō?",
+              "How do you say this in Mandarin?"
+            ],
+            [
+              "**怎麼寫？**",
+              "zěnme xiě?",
+              "How do you write it?"
+            ],
+            [
+              "**怎麼念？**",
+              "zěnme niàn?",
+              "How do you pronounce it?"
+            ],
+            [
+              "**你說什麼？**",
+              "nǐ shuō shénme?",
+              "What did you say?"
+            ],
+            [
+              "**對不對？**",
+              "duì bú duì?",
+              "Is that right?"
+            ],
+            [
+              "**我懂了**",
+              "wǒ dǒng le",
+              "I understand"
+            ],
+            [
+              "**原來如此**",
+              "yuánlái rúcǐ",
+              "Oh, I see"
+            ],
+            [
+              "**我不太確定**",
+              "wǒ bú tài quèdìng",
+              "I'm not too sure"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Booking and handling appointments",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "English"
+          ],
+          "rows": [
+            [
+              "**我要訂位**",
+              "wǒ yào dìngwèi",
+              "I'd like to book a table"
+            ],
+            [
+              "**幾位？**",
+              "jǐ wèi?",
+              "How many people?"
+            ],
+            [
+              "**五位**",
+              "wǔ wèi",
+              "Five people"
+            ],
+            [
+              "**幾點？**",
+              "jǐ diǎn?",
+              "What time?"
+            ],
+            [
+              "**客滿了**",
+              "kèmǎn le",
+              "It's fully booked"
+            ],
+            [
+              "**還有位子嗎？**",
+              "hái yǒu wèizi ma?",
+              "Are there any seats left?"
+            ],
+            [
+              "**怎麼稱呼？**",
+              "zěnme chēnghū?",
+              "Under what name?"
+            ],
+            [
+              "**我要取消**",
+              "wǒ yào qǔxiāo",
+              "I'd like to cancel"
+            ],
+            [
+              "**可以改時間嗎？**",
+              "kěyǐ gǎi shíjiān ma?",
+              "Can I change the time?"
+            ],
+            [
+              "**有素食嗎？**",
+              "yǒu sùshí ma?",
+              "Do you have vegetarian dishes?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Taiwanese phone numbers are read digit by digit, and 1 is read 幺 (*yāo*).** Mobile numbers always start with 09, so 0912-345-678 is read *líng jiǔ yāo èr — sān sì wǔ — liù qī bā*. Practice reading your own number until it's smooth; you'll be asked for it again and again."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "打電話",
+      "baca": "dǎ diànhuà",
+      "en": "make a phone call"
+    },
+    {
+      "zh": "電話",
+      "baca": "diànhuà",
+      "en": "telephone"
+    },
+    {
+      "zh": "訂位",
+      "baca": "dìngwèi",
+      "en": "book a table"
+    },
+    {
+      "zh": "位子",
+      "baca": "wèizi",
+      "en": "seat"
+    },
+    {
+      "zh": "客滿",
+      "baca": "kèmǎn",
+      "en": "fully booked"
+    },
+    {
+      "zh": "聽懂",
+      "baca": "tīng dǒng",
+      "en": "catch, understand (by listening)"
+    },
+    {
+      "zh": "聽不懂",
+      "baca": "tīng bù dǒng",
+      "en": "⚠️ can't catch, don't understand"
+    },
+    {
+      "zh": "看到",
+      "baca": "kàndào",
+      "en": "see (successfully)"
+    },
+    {
+      "zh": "找到",
+      "baca": "zhǎodào",
+      "en": "find"
+    },
+    {
+      "zh": "買到",
+      "baca": "mǎidào",
+      "en": "manage to buy"
+    },
+    {
+      "zh": "吃飽",
+      "baca": "chībǎo",
+      "en": "full (after eating)"
+    },
+    {
+      "zh": "來不及",
+      "baca": "lái bù jí",
+      "en": "not in time"
+    },
+    {
+      "zh": "稍等",
+      "baca": "shāo děng",
+      "en": "wait a moment"
+    },
+    {
+      "zh": "留言",
+      "baca": "liúyán",
+      "en": "leave a message"
+    },
+    {
+      "zh": "取消",
+      "baca": "qǔxiāo",
+      "en": "cancel"
+    },
+    {
+      "zh": "改",
+      "baca": "gǎi",
+      "en": "change"
+    },
+    {
+      "zh": "意思",
+      "baca": "yìsi",
+      "en": "meaning"
+    },
+    {
+      "zh": "種",
+      "baca": "zhǒng",
+      "en": "(measure word for kinds)"
+    },
+    {
+      "zh": "吃素",
+      "baca": "chīsù",
+      "en": "vegetarian"
+    },
+    {
+      "zh": "確定",
+      "baca": "quèdìng",
+      "en": "be sure; make sure"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mandarin.",
+      "items": [
+        "Hello, I'd like to book a table.",
+        "Five people, tomorrow evening at seven.",
+        "Sorry, I didn't catch that.",
+        "Please speak more slowly.",
+        "I understand!",
+        "Do you have vegetarian dishes?"
+      ]
+    },
+    {
+      "prompt": "Complete with a result complement: 到, 懂, 完, or 飽.",
+      "items": [
+        "我看 ____ 他了。",
+        "我聽 ____ 了！",
+        "這本書我看 ____ 了。",
+        "我吃 ____ 了，謝謝。",
+        "我買 ____ 票了！",
+        "我找不 ____ 我的手機。"
+      ]
+    },
+    {
+      "prompt": "Turn into the \"can't\" form by inserting 不.",
+      "items": [
+        "聽得懂",
+        "看得到",
+        "買得到",
+        "吃得完",
+        "來得及"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "訂位 / 要 / 我",
+        "位 / 五 / 七點 / 明天",
+        "懂 / 聽 / 我 / 不",
+        "說 / 請 / 一點 / 慢",
+        "意思 / 什麼 / 是 / 這個"
+      ]
+    }
+  ],
+  "answers": [
+    "喂，我要訂位。 — 五位，明天晚上七點。 — 不好意思，我聽不懂。 — 請說慢一點。 — 我懂了！ — 有素食嗎？",
+    "到 — 懂 — 完 — 飽 — 到 — 到",
+    "聽不懂 — 看不到 — 買不到 — 吃不完 — 來不及",
+    "我要訂位。 — 明天七點五位。 — 我聽不懂。 — 請說慢一點。 — 這個是什麼意思？"
+  ]
+}

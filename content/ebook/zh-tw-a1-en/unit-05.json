@@ -1,0 +1,612 @@
+{
+  "title": "One bubble tea, half sugar",
+  "title_target": "一杯珍珠奶茶，半糖少冰",
+  "goal": "Order food and drinks with exactly the sugar and ice you like — and get past the biggest wall for English speakers: measure words.",
+  "bekal": [
+    "use measure words correctly and know the way out when you forget",
+    "order a drink with sugar and ice levels like a Taiwanese",
+    "tell 吃 from 喝 and use 要 to order"
+  ],
+  "dialogs": [
+    {
+      "title": "對話 — 手搖飲料店",
+      "intro": "A hot afternoon. Budi and Xiaomei stop at the tea shop across from campus.",
+      "lines": [
+        {
+          "speaker": "店員:",
+          "text": "[歡迎光臨|Huānyíng guānglín]！[要|Yào][喝|hē][什麼|shénme]？",
+          "id": "Welcome! What would you like to drink?",
+          "literal": "welcome — light-come! want — drink — what?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[我要|Wǒ yào][一杯|yì bēi][珍珠奶茶|zhēnzhū nǎichá]，[大杯|dà bēi]。",
+          "id": "I'd like one bubble tea, large.",
+          "literal": "I — want — one — cup — pearl — milk-tea, big — cup."
+        },
+        {
+          "speaker": "店員:",
+          "text": "[甜度|Tiándù][冰塊|bīngkuài][呢|ne]？",
+          "id": "How sweet, and how much ice?",
+          "literal": "sweet-degree — ice-cubes — (what about)?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[半糖|Bàn táng]、[少冰|shǎo bīng]，[謝謝|xièxie]。",
+          "id": "Half sugar, light ice, thanks.",
+          "literal": "half — sugar, less — ice, thank thank."
+        },
+        {
+          "speaker": "店員:",
+          "text": "[好的|Hǎo de]。[先生|Xiānshēng][您|nín][呢|ne]？",
+          "id": "Sure. And for you, sir?",
+          "literal": "good — (one). sir — you — (what about)?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[呃|È]…[我|wǒ][不知道|bù zhīdào][怎麼|zěnme][說|shuō]。",
+          "id": "Um… I don't know how to say it.",
+          "literal": "um… I — not — know — how — say."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[他|Tā][第一次|dì-yī cì][喝|hē]。[給|Gěi][他|tā][一樣|yíyàng][的|de][吧|ba]。",
+          "id": "It's his first time. Just give him the same.",
+          "literal": "he — first — time — drink. give — him — one-same — (one) — (OK)."
+        },
+        {
+          "speaker": "店員:",
+          "text": "[沒問題|Méi wèntí]。[兩杯|Liǎng bēi][一共|yígòng][一百三|yìbǎi sān]。",
+          "id": "No problem. Two cups, that's 130 altogether.",
+          "literal": "not — have — problem. two — cup — altogether — hundred-three."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[我|Wǒ][請客|qǐngkè]！[小美|Xiǎoměi][幫|bāng][我|wǒ][這麼多|zhème duō]。",
+          "id": "My treat! Xiaomei, you've helped me so much.",
+          "literal": "I — invite-guest! Xiaomei — help — me — this — much."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[不用|Bú yòng][啦|la]！[下次|Xià cì][你|nǐ][請|qǐng]。",
+          "id": "No need! You can treat me next time.",
+          "literal": "not — need — (la)! below — time — you — invite."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[那|Nà][我們|wǒmen][也|yě][吃|chī][點|diǎn][東西|dōngxi][好嗎|hǎo ma]？",
+          "id": "Then shall we get something to eat too?",
+          "literal": "then — we — also — eat — a-little — thing — good — (question)?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[好啊|Hǎo a]！[隔壁|Gébì][有|yǒu][很好吃|hěn hǎochī][的|de][滷肉飯|lǔròufàn]。",
+          "id": "Sure! Next door does really good braised pork rice.",
+          "literal": "good — (ah)! next-door — have — very — tasty — (one) — braised-meat-rice."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[聽起來|Tīngqǐlái][很棒|hěn bàng]！[走|Zǒu]！",
+          "id": "Sounds great! Let's go!",
+          "literal": "hear-up — very — awesome! go!"
+        },
+        {
+          "speaker": "店員:",
+          "text": "[您的|Nín de][飲料|yǐnliào][好了|hǎo le]！[謝謝|Xièxie][光臨|guānglín]！",
+          "id": "Your drinks are ready! Thanks for coming!",
+          "literal": "you — 's — drink — good — (done)! thank thank — light-come!"
+        }
+      ],
+      "notes": [
+        "⚠️ **手搖飲料 (\"hand-shaken drinks\") is one of the most Taiwanese things there is.** There are tens of thousands of shops across the island, and almost all of them ask the same two questions: sugar level and ice level. Not answering brings the line to a halt.",
+        "**請客 means to treat someone**, literally \"invite a guest\". ⚠️ In Taiwan the person who suggests going out usually pays, and refusing once or twice before accepting is part of good manners. Splitting the bill evenly is called **AA制** (*AA zhì*).",
+        "**好嗎？ and 好啊！ are a pair.** 好嗎 softens a suggestion into a question (\"…OK?\"), and 好啊 is a warm yes. Answering with a bare 好 sounds flat, almost reluctant.",
+        "**滷肉飯 (*lǔròufàn*) is Taiwan's national dish** — rice topped with small pieces of pork slow-braised in soy sauce. A small bowl costs about 30–40 塊. ⚠️ If you don't eat pork, say *我不吃豬肉* (*wǒ bù chī zhūròu*); the safe choice is 素食 (*sùshí*, vegetarian food), which is very easy to find in Taiwan.",
+        "**歡迎光臨 is called out every time a shop door opens.** You don't need to reply at all."
+      ],
+      "grammars": [
+        {
+          "title": "⚠️ Measure words: the wall you have to get over now",
+          "body": [
+            "This is the number-one mistake for English speakers, and the reason makes sense: English **has** measure words (a cup of tea, a piece of paper) but **skips them** for most nouns — \"three books\", \"two people\". Mandarin gives you no such freedom.",
+            "The rule is one sentence: **between a number (or 這/那/幾) and the noun there MUST be a measure word.**"
+          ],
+          "table": {
+            "head": [
+              "Wrong",
+              "Right",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "✗ 三書",
+                "✓ 三**本**書",
+                "three books"
+              ],
+              [
+                "✗ 一茶",
+                "✓ 一**杯**茶",
+                "a cup of tea"
+              ],
+              [
+                "✗ 兩人",
+                "✓ 兩**個**人",
+                "two people"
+              ],
+              [
+                "✗ 這書",
+                "✓ 這**本**書",
+                "this book"
+              ],
+              [
+                "✗ 幾人",
+                "✓ 幾**個**人",
+                "how many people"
+              ]
+            ]
+          },
+          "after": [
+            "**The way out when you forget: use 個 (*ge*).** It is the general measure word and is understood with almost anything. Using 個 where another word fits better sounds like an accent; **using no measure word at all** sounds like a robot.",
+            "⚠️ Note that **when the noun is clear from the conversation, the noun can disappear but the measure word can't**: *我要三個。* — \"I'd like three.\""
+          ]
+        },
+        {
+          "title": "The measure words you'll use most",
+          "body": [
+            "You don't need to memorize them all today. The first ten rows of this table cover eighty percent of everyday conversation."
+          ],
+          "table": {
+            "head": [
+              "Measure word",
+              "Pīnyīn",
+              "Used for",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**個**",
+                "ge",
+                "⚠️ general, a fallback for anything",
+                "三個人 three people"
+              ],
+              [
+                "**杯**",
+                "bēi",
+                "cups, glasses",
+                "一杯奶茶 a cup of milk tea"
+              ],
+              [
+                "**碗**",
+                "wǎn",
+                "bowls",
+                "兩碗飯 two bowls of rice"
+              ],
+              [
+                "**份**",
+                "fèn",
+                "portions, sets",
+                "一份便當 one lunch box"
+              ],
+              [
+                "**本**",
+                "běn",
+                "books, magazines",
+                "三本書 three books"
+              ],
+              [
+                "**張**",
+                "zhāng",
+                "flat things",
+                "一張票 a ticket"
+              ],
+              [
+                "**支**",
+                "zhī",
+                "stick-shaped things",
+                "兩支筆 two pens"
+              ],
+              [
+                "**件**",
+                "jiàn",
+                "tops, matters",
+                "一件衣服 a piece of clothing"
+              ],
+              [
+                "**位**",
+                "wèi",
+                "people, politely",
+                "三位客人 three guests"
+              ],
+              [
+                "**瓶**",
+                "píng",
+                "bottles",
+                "一瓶水 a bottle of water"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Remember the last unit's rule: before a measure word, two is **兩**, not 二. 兩杯, 兩個, 兩本.",
+            "**位 is the polite version of 個 for people.** Restaurant staff will greet you with *幾位？* (\"how many people?\"), and you answer *兩位* or simply *兩個*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Ordering drinks like a Taiwanese",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Two questions always come: **甜度** (sugar level) and **冰塊** (ice level). The answers come from a fixed list, and saying them in order — sugar first, then ice — is all you need."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "甜度 sugar",
+            "Pīnyīn",
+            "Meaning",
+            "冰塊 ice",
+            "Pīnyīn",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "全糖",
+              "quán táng",
+              "full sugar",
+              "正常冰",
+              "zhèngcháng bīng",
+              "regular ice"
+            ],
+            [
+              "少糖",
+              "shǎo táng",
+              "less sugar (70%)",
+              "少冰",
+              "shǎo bīng",
+              "light ice"
+            ],
+            [
+              "半糖",
+              "bàn táng",
+              "half sugar (50%)",
+              "微冰",
+              "wéi bīng",
+              "very little ice"
+            ],
+            [
+              "微糖",
+              "wéi táng",
+              "a little sugar (30%)",
+              "去冰",
+              "qù bīng",
+              "no ice"
+            ],
+            [
+              "無糖",
+              "wú táng",
+              "no sugar",
+              "熱的",
+              "rè de",
+              "hot"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "A full order in one breath",
+          "items": [
+            "**我要一杯珍珠奶茶，大杯，半糖少冰。** — One bubble tea, large, half sugar, light ice.",
+            "**中杯紅茶，微糖去冰，謝謝。** — Medium black tea, a little sugar, no ice, thanks.",
+            "**熱的拿鐵，無糖。** — Hot latte, no sugar.",
+            "Sizes: **大杯** (large), **中杯** (medium), **小杯** (small).",
+            "⚠️ If you don't say anything, you'll get **全糖正常冰** — and Taiwanese milk tea with full sugar is far sweeter than you'd expect."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dishes you need to know by name",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "English"
+          ],
+          "rows": [
+            [
+              "滷肉飯",
+              "lǔròufàn",
+              "braised pork rice — the national dish"
+            ],
+            [
+              "牛肉麵",
+              "niúròu miàn",
+              "beef noodle soup"
+            ],
+            [
+              "便當",
+              "biàndāng",
+              "lunch box"
+            ],
+            [
+              "水餃",
+              "shuǐjiǎo",
+              "boiled dumplings"
+            ],
+            [
+              "小籠包",
+              "xiǎolóngbāo",
+              "wontons in soup"
+            ],
+            [
+              "蚵仔煎",
+              "é'ā jiān",
+              "oyster omelet (night-market classic)"
+            ],
+            [
+              "珍珠奶茶",
+              "zhēnzhū nǎichá",
+              "bubble tea"
+            ],
+            [
+              "炒飯",
+              "chǎofàn",
+              "fried rice"
+            ],
+            [
+              "雞排",
+              "jīpái",
+              "giant fried chicken cutlet"
+            ],
+            [
+              "飯糰",
+              "fàntuán",
+              "rice roll (breakfast)"
+            ],
+            [
+              "蛋餅",
+              "dànbǐng",
+              "egg crepe roll (breakfast)"
+            ],
+            [
+              "素食",
+              "sùshí",
+              "vegetarian food"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **吃 (*chī*, eat) and 喝 (*hē*, drink) can't be swapped** — English \"eats\" soup; Mandarin always says **喝湯** (drink soup). Anything liquid is drunk, no exceptions. And medicine is \"eaten\": **吃藥**, where English says \"take\"."
+        }
+      ]
+    },
+    {
+      "title": "At a restaurant",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "English"
+          ],
+          "rows": [
+            [
+              "**幾位？**",
+              "jǐ wèi?",
+              "How many people? (from the staff)"
+            ],
+            [
+              "**內用還是外帶？**",
+              "nèiyòng háishì wàidài?",
+              "⚠️ For here or to go?"
+            ],
+            [
+              "**我要點餐**",
+              "wǒ yào diǎncān",
+              "I'd like to order"
+            ],
+            [
+              "**有菜單嗎？**",
+              "yǒu càidān ma?",
+              "Do you have a menu?"
+            ],
+            [
+              "**這個怎麼賣？**",
+              "zhè ge zěnme mài?",
+              "How is this sold? (how much)"
+            ],
+            [
+              "**不要辣**",
+              "bú yào là",
+              "Not spicy, please"
+            ],
+            [
+              "**我不吃豬肉**",
+              "wǒ bù chī zhūròu",
+              "I don't eat pork"
+            ],
+            [
+              "**我吃素**",
+              "wǒ chī sù",
+              "I'm vegetarian"
+            ],
+            [
+              "**買單 / 結帳**",
+              "mǎidān / jiézhàng",
+              "The bill, please"
+            ],
+            [
+              "**很好吃！**",
+              "hěn hǎochī!",
+              "Delicious!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **內用還是外帶 is the question you'll hear most often in Taiwan** — at rice shops, drink stands, and 便利商店. Learn the two answers now: **內用** (for here) and **外帶** (to go). Answering with either one makes the whole transaction go smoothly."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "吃",
+      "baca": "chī",
+      "en": "to eat"
+    },
+    {
+      "zh": "喝",
+      "baca": "hē",
+      "en": "to drink"
+    },
+    {
+      "zh": "杯",
+      "baca": "bēi",
+      "en": "(measure word: cup)"
+    },
+    {
+      "zh": "碗",
+      "baca": "wǎn",
+      "en": "(measure word: bowl)"
+    },
+    {
+      "zh": "本",
+      "baca": "běn",
+      "en": "(measure word: book)"
+    },
+    {
+      "zh": "位",
+      "baca": "wèi",
+      "en": "(measure word: person, polite)"
+    },
+    {
+      "zh": "飯",
+      "baca": "fàn",
+      "en": "rice; meal"
+    },
+    {
+      "zh": "麵",
+      "baca": "miàn",
+      "en": "noodles"
+    },
+    {
+      "zh": "水",
+      "baca": "shuǐ",
+      "en": "water"
+    },
+    {
+      "zh": "茶",
+      "baca": "chá",
+      "en": "tea"
+    },
+    {
+      "zh": "奶茶",
+      "baca": "nǎichá",
+      "en": "milk tea"
+    },
+    {
+      "zh": "好吃",
+      "baca": "hǎochī",
+      "en": "tasty (food)"
+    },
+    {
+      "zh": "好喝",
+      "baca": "hǎohē",
+      "en": "tasty (drinks)"
+    },
+    {
+      "zh": "半",
+      "baca": "bàn",
+      "en": "half"
+    },
+    {
+      "zh": "少",
+      "baca": "shǎo",
+      "en": "little; less"
+    },
+    {
+      "zh": "冰",
+      "baca": "bīng",
+      "en": "ice"
+    },
+    {
+      "zh": "糖",
+      "baca": "táng",
+      "en": "sugar"
+    },
+    {
+      "zh": "內用",
+      "baca": "nèiyòng",
+      "en": "for here (eat in)"
+    },
+    {
+      "zh": "外帶",
+      "baca": "wàidài",
+      "en": "to go, takeout"
+    },
+    {
+      "zh": "一共",
+      "baca": "yígòng",
+      "en": "altogether, in total"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mandarin.",
+      "items": [
+        "I'd like a cup of milk tea.",
+        "Half sugar, light ice.",
+        "To go, thanks.",
+        "Two bowls of rice.",
+        "I don't eat pork.",
+        "Delicious!"
+      ]
+    },
+    {
+      "prompt": "Fill in the right measure word: 個, 杯, 碗, 本, 位, or 件.",
+      "items": [
+        "一 ____ 咖啡",
+        "三 ____ 人",
+        "兩 ____ 書",
+        "一 ____ 牛肉麵",
+        "四 ____ 客人",
+        "一 ____ 衣服"
+      ]
+    },
+    {
+      "prompt": "Fill in with 吃 or 喝.",
+      "items": [
+        "我要 ____ 飯。",
+        "他 ____ 茶。",
+        "我們 ____ 湯。",
+        "你要 ____ 什麼？",
+        "我 ____ 素。",
+        "她 ____ 珍珠奶茶。"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "一杯 / 我 / 奶茶 / 要",
+        "少冰 / 半糖",
+        "外帶 / 內用 / 還是",
+        "好吃 / 這個 / 很",
+        "一共 / 多少 / 兩杯 / 錢"
+      ]
+    }
+  ],
+  "answers": [
+    "我要一杯奶茶。 — 半糖少冰。 — 外帶，謝謝。 — 兩碗飯。 — 我不吃豬肉。 — 很好吃！",
+    "杯 — 個 — 本 — 碗 — 位 — 件",
+    "吃 — 喝 — 喝 — 吃 — 吃 — 喝",
+    "我要一杯奶茶。 — 半糖少冰。 — 內用還是外帶？ — 這個很好吃。 — 兩杯一共多少錢？"
+  ]
+}

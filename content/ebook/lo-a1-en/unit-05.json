@@ -1,0 +1,626 @@
+{
+  "title": "At the food stall: ordering and saying how good it is",
+  "title_target": "ຢູ່ຮ້ານອາຫານ — Yùu hâan aa-hǎan",
+  "goal": "Order food and drinks, ask for something added or left out, praise the taste, and ask for the bill — one sitting that covers the whole business of eating out.",
+  "bekal": [
+    "order with ເອົາ and ຂໍ",
+    "ໃສ່ and ບໍ່ໃສ່ for ingredients put in",
+    "describe taste: ແຊບ ເຜັດ ຫວານ ເຄັມ",
+    "ຫິວ and ອີ່ມ for hungry and full",
+    "ask for the bill with ຄິດເງິນແດ່"
+  ],
+  "dialogs": [
+    {
+      "title": "ບົດສົນທະນາ — A roadside feu stall, seven in the morning",
+      "intro": "Budi is having breakfast with Bounmy. Notice that ordering in Laos almost never takes a long sentence — the dish, the number, the classifier, done.",
+      "lines": [
+        {
+          "speaker": "ແມ່ຄ້າ:",
+          "text": "[ສະບາຍດີ|Sa-baai-dii] [ເອົາ|Ao][ຫຍັງ|nyǎng]",
+          "id": "Hello. What would you like?",
+          "literal": "well-good. take — what?"
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ເອົາ|Ao][ເຝີ|fǒe][ໄກ່|kài][ສອງ|sǎwng][ຖ້ວຍ|thûay][ເດີ້|dòe]",
+          "id": "Two bowls of chicken feu, please.",
+          "literal": "take — feu — chicken — two — bowl — (friendly)."
+        },
+        {
+          "speaker": "ແມ່ຄ້າ:",
+          "text": "[ໃສ່|Sài][ຜັກ|phák][ບໍ່|bàw] [ເຜັດ|Phét][ບໍ່|bàw]",
+          "id": "With vegetables? Spicy?",
+          "literal": "put-in — vegetable — (question)? spicy — (question)?"
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ໃສ່|Sài][ຜັກ|phák] [ແຕ່|Tèe][ບໍ່|bàw][ໃສ່|sài][ຜັກຫອມ|phák-hǎwm][ເດີ້|dòe] [ຂ້ອຍ|Khàwy][ບໍ່|bàw][ມັກ|mak]",
+          "id": "With vegetables, but no cilantro, please. I don't like it.",
+          "literal": "put-in — vegetable. but — not — put-in — fragrant-leaf — (friendly). I — not — like."
+        },
+        {
+          "speaker": "ແມ່ຄ້າ:",
+          "text": "[ໄດ້|Dâi] [ເຜັດ|Phét][ບໍ່|bàw]",
+          "id": "Okay. Spicy or not?",
+          "literal": "can. spicy — (question)?"
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ເຜັດ|Phét][ໜ້ອຍ|nàwy][ໜຶ່ງ|nʉ̀ng] [ຂ້ອຍ|Khàwy][ກິນ|kin][ເຜັດ|phét][ໄດ້|dâi][ແຕ່|tèe][ບໍ່|bàw][ຫຼາຍ|lǎai]",
+          "id": "A little spicy. I can eat spicy food, but not a lot.",
+          "literal": "spicy — little — one. I — eat — spicy — can — but — not — much."
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ຂໍ|Khǎw][ນ້ຳ|nâm][ສອງ|sǎwng][ແກ້ວ|kêeo][ນຳ|nám][ແດ່|dèe]",
+          "id": "Two glasses of water too, please.",
+          "literal": "ask-for — water — two — glass — along — a-bit."
+        },
+        {
+          "speaker": "ແມ່ຄ້າ:",
+          "text": "[ໄດ້|Dâi][ເລີຍ|lóei] [ຖ້າ|Thàa][ໜ້ອຍ|nàwy][ໜຶ່ງ|nʉ̀ng][ເດີ້|dòe]",
+          "id": "Sure. Wait a moment.",
+          "literal": "can — right-away. wait — little — one — (friendly)."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ແຊບ|Sèep][ຫຼາຍ|lǎai][ເນາະ|nāw] [ຮ້ານ|Hâan][ນີ້|nîi][ດີ|dii]",
+          "id": "Really delicious, isn't it? This place is good.",
+          "literal": "delicious — much — isn't-it? shop — this — good."
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ແມ່ນ|Mèen][ແລ້ວ|lèeo] [ຂ້ອຍ|Khàwy][ມາ|maa][ກິນ|kin][ທຸກ|thuk][ເຊົ້າ|sâo] [ອີ່ມ|Ìm][ບໍ່|bàw]",
+          "id": "Yes. I eat here every morning. Are you full?",
+          "literal": "right — already. I — come — eat — every — morning. full — (question)?"
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ອີ່ມ|Ìm][ຫຼາຍ|lǎai] [ຄິດ|Khit][ເງິນ|ngóen][ແດ່|dèe]",
+          "id": "Very full. The bill, please.",
+          "literal": "full — much. count — money — a-bit."
+        },
+        {
+          "speaker": "ແມ່ຄ້າ:",
+          "text": "[ສາມ|Sǎam][ສິບ|síp][ພັນ|phán][ກີບ|kìip][ເຈົ້າ|jâo]",
+          "id": "Thirty thousand kip.",
+          "literal": "three — ten — thousand — kip — yes."
+        }
+      ],
+      "notes": [
+        "**ເອົາ ao to order, ຂໍ khǎw to ask.** Both are fine at a stall, but they feel different: *ເອົາເຝີສອງຖ້ວຍ* is an order, *ຂໍນ້ຳແດ່* is a request. For something free or small — plain water, a spoon, tissues — use *ຂໍ*.",
+        "**ໃສ່ sài means \"to put in\" and is the key word for everything food-related.** *ໃສ່ຜັກ* (with vegetables), *ບໍ່ໃສ່ນ້ຳຕານ* (no sugar), *ໃສ່ນ້ຳກ້ອນ* (with ice). The same word means \"to wear\" for clothes: *ໃສ່ເສື້ອ* (put on a shirt).",
+        "**ເຜັດບໍ່ phét bàw is a question you WILL hear.** A safe answer for most visitors: *ເຜັດໜ້ອຍໜຶ່ງ* (a little spicy). If you really can't handle heat, say *ບໍ່ເຜັດ* — but be ready, because \"not spicy\" in Laos can still feel warm.",
+        "**ແຊບ sèep is the word for \"delicious,\" and it's not the Thai *อร่อย*.** It's one of the most typically Lao words — also used in Isan, northeastern Thailand. Saying it at a stall is guaranteed to make the owner smile. Stronger forms: *ແຊບຫຼາຍ* (really delicious) and *ແຊບອີ່ຫຼີ sèep ìi-lǐi* (seriously delicious).",
+        "**ຫິວ hǐu = hungry, ອີ່ມ ìm = full.** Both are adjectives, so no verb is needed: *ຂ້ອຍຫິວ* (I'm hungry). For thirsty, Lao says \"hungry for water\": *ຫິວນ້ຳ hǐu nâm*.",
+        "**ຄິດເງິນແດ່ khit ngóen dèe = \"the bill, please,\" literally \"count the money, please.\"** Small stalls have no receipts; the owner adds it up in their head and tells you the amount. You pay at the table, not at a register.",
+        "**ທຸກ thuk = \"every.\"** *ທຸກເຊົ້າ* (every morning), *ທຸກມື້* (every day), *ທຸກຄົນ* (everyone). It goes in front of the noun and needs no classifier.",
+        "**ຖ້າ thàa has twins you need to keep apart.** *ຖ້າ thàa* with a low falling tone means **\"to wait\"** (*ຖ້າໜ້ອຍໜຶ່ງ* = wait a moment), while the *ຖ້າ* you learned in Unit 3 means **\"if.\"** The spelling is the same; context separates them — and luckily they rarely appear in the same sentence.",
+        "**ເຈົ້າ jâo at the end of a seller's sentence is a polite \"yes,\"** not \"you.\" Sellers often close their sentences with it as a sign of respect for the customer."
+      ],
+      "grammars": [
+        {
+          "title": "Ordering: one pattern, every dish",
+          "body": [
+            "A Lao order can always be built from this frame. Not a single linking word is required."
+          ],
+          "table": {
+            "head": [
+              "Verb",
+              "Food",
+              "Number + classifier",
+              "Tail",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ເອົາ *ao*",
+                "ເຝີ *fǒe*",
+                "ສອງຖ້ວຍ *sǎwng thûay*",
+                "ເດີ້ *dòe*",
+                "two bowls of feu, please"
+              ],
+              [
+                "ຂໍ *khǎw*",
+                "ນ້ຳ *nâm*",
+                "ແກ້ວໜຶ່ງ *kêeo nʉ̀ng*",
+                "ແດ່ *dèe*",
+                "a glass of water, please"
+              ],
+              [
+                "ເອົາ *ao*",
+                "ກາເຟຮ້ອນ *kaa-fée hâwn*",
+                "ຈອກໜຶ່ງ *jàwk nʉ̀ng*",
+                "—",
+                "one hot coffee"
+              ],
+              [
+                "ຂໍ *khǎw*",
+                "ບ່ວງ *bùang*",
+                "ອັນໜຶ່ງ *an nʉ̀ng*",
+                "ແດ່ *dèe*",
+                "a spoon, please"
+              ]
+            ]
+          },
+          "after": [
+            "To change an order, attach *ໃສ່* or *ບໍ່ໃສ່* at the end: *ເອົາເຝີໄກ່ ບໍ່ໃສ່ຜັກຫອມ* (chicken feu, no cilantro)."
+          ]
+        },
+        {
+          "title": "Tastes and cooking methods",
+          "table": {
+            "head": [
+              "Lao",
+              "Say it",
+              "English",
+              "Lao",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "ແຊບ",
+                "*sèep*",
+                "delicious",
+                "ປີ້ງ",
+                "*pîng*",
+                "grilled"
+              ],
+              [
+                "ເຜັດ",
+                "*phét*",
+                "spicy",
+                "ຈືນ",
+                "*jʉʉn*",
+                "fried"
+              ],
+              [
+                "ຫວານ",
+                "*wǎan*",
+                "sweet",
+                "ຕົ້ມ",
+                "*tôm*",
+                "boiled"
+              ],
+              [
+                "ເຄັມ",
+                "*khem*",
+                "salty",
+                "ໜຶ້ງ",
+                "*nʉ̂ng*",
+                "steamed"
+              ],
+              [
+                "ສົ້ມ",
+                "*sôm*",
+                "sour",
+                "ຂົ້ວ",
+                "*khùa*",
+                "stir-fried"
+              ],
+              [
+                "ຂົມ",
+                "*khǒm*",
+                "bitter",
+                "ດິບ",
+                "*díp*",
+                "raw"
+              ],
+              [
+                "ຮ້ອນ",
+                "*hâwn*",
+                "hot",
+                "ສຸກ",
+                "*súk*",
+                "cooked, done"
+              ],
+              [
+                "ເຢັນ",
+                "*yén*",
+                "cold",
+                "ໄໝ້",
+                "*mài*",
+                "burnt"
+              ]
+            ]
+          },
+          "after": [
+            "Taste adjectives are complete sentences on their own: *ແຊບ* already means \"it's delicious.\" To negate, put *ບໍ່* in front: *ບໍ່ເຜັດ* (not spicy)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Food you'll really come across in Laos",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Lao",
+            "Say it",
+            "What it is"
+          ],
+          "rows": [
+            [
+              "ເຂົ້າໜຽວ",
+              "*khào-nǐao*",
+              "sticky rice — the staple, eaten by hand"
+            ],
+            [
+              "ເຝີ",
+              "*fǒe*",
+              "beef/chicken noodle soup, the national breakfast"
+            ],
+            [
+              "ຂ້າວປຽກ",
+              "*khào-pìak*",
+              "rice porridge in broth"
+            ],
+            [
+              "ຕຳໝາກຫຸ່ງ",
+              "*tam màak-hùng*",
+              "papaya salad (the Lao som tam), usually very spicy"
+            ],
+            [
+              "ລາບ",
+              "*làap*",
+              "spiced minced meat — the national dish of Laos"
+            ],
+            [
+              "ປີ້ງໄກ່",
+              "*pîng kài*",
+              "grilled chicken"
+            ],
+            [
+              "ຊີ້ນແຫ້ງ",
+              "*sîn hèeng*",
+              "beef jerky"
+            ],
+            [
+              "ແກງ",
+              "*keeng*",
+              "soup, stew"
+            ],
+            [
+              "ຂະໜົມຈີນ",
+              "*kha-nǒm jiin*",
+              "rice noodles in curry broth"
+            ],
+            [
+              "ເຂົ້າຈີ່",
+              "*khào-jìi*",
+              "baguette — a French legacy, filled with meat and vegetables"
+            ],
+            [
+              "ໝາກກ້ວຍ",
+              "*màak-kûay*",
+              "banana"
+            ],
+            [
+              "ນ້ຳໝາກນາວ",
+              "*nâm màak-náao*",
+              "lime juice"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One thing to know before eating with Lao people: **sticky rice is eaten with the right hand**, squeezed into a small ball and dipped into the dishes. Its woven basket — *ຕິບເຂົ້າ típ khào* — is opened to mark the start of the meal and closed again when you're done. Closing it signals that you're full, more clearly than words."
+        },
+        {
+          "type": "p",
+          "text": "Notice the prefix **ໝາກ *màak*** in front of almost every fruit name: *ໝາກກ້ວຍ* (banana), *ໝາກນາວ* (lime), *ໝາກຫຸ່ງ* (papaya), *ໝາກໄມ້* (fruit). If you hear *màak-* at the start of a word, it's almost certainly about fruit."
+        }
+      ]
+    },
+    {
+      "title": "Ready-to-use sentences at the table",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Lao",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ເມນູມີບໍ່",
+              "*mée-nuu míi bàw*",
+              "do you have a menu?"
+            ],
+            [
+              "ອັນນີ້ແມ່ນຫຍັງ",
+              "*an nîi mèen nyǎng*",
+              "what's this?"
+            ],
+            [
+              "ມີຫຍັງແຊບໆ",
+              "*míi nyǎng sèep-sèep*",
+              "what's good here?"
+            ],
+            [
+              "ບໍ່ໃສ່ນ້ຳຕານ",
+              "*bàw sài nâm-taan*",
+              "no sugar"
+            ],
+            [
+              "ບໍ່ໃສ່ນ້ຳກ້ອນ",
+              "*bàw sài nâm-kâwn*",
+              "no ice"
+            ],
+            [
+              "ຂໍບ່ວງແດ່",
+              "*khǎw bùang dèe*",
+              "a spoon, please"
+            ],
+            [
+              "ຂໍນ້ຳຕື່ມແດ່",
+              "*khǎw nâm tʉ̀ʉm dèe*",
+              "more water, please"
+            ],
+            [
+              "ອີ່ມແລ້ວ",
+              "*ìm lèeo*",
+              "I'm full"
+            ],
+            [
+              "ຄິດເງິນແດ່",
+              "*khit ngóen dèe*",
+              "the bill, please"
+            ],
+            [
+              "ຂ້ອຍກິນຊີ້ນບໍ່ໄດ້",
+              "*khàwy kin sîn bàw dâi*",
+              "I don't eat meat"
+            ],
+            [
+              "ຂ້ອຍກິນຊີ້ນໝູບໍ່ໄດ້",
+              "*khàwy kin sîn-mǔu bàw dâi*",
+              "I don't eat pork"
+            ],
+            [
+              "ຫ້ອງນ້ຳຢູ່ໃສ",
+              "*hàwng-nâm yùu sǎi*",
+              "where's the restroom?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The sentence *ຂ້ອຍກິນຊີ້ນໝູບໍ່ໄດ້* matters if you avoid pork, whether for religious or other reasons. Pork appears in many Lao dishes, often as a broth you can't see. An even safer sentence: *ຂ້ອຍກິນໄດ້ແຕ່ໄກ່ກັບປາ khàwy kin dâi tèe kài kap paa* — \"I can only eat chicken and fish.\""
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "lo": "ຮ້ານ",
+      "baca": "hâan",
+      "en": "shop, food stall"
+    },
+    {
+      "lo": "ອາຫານ",
+      "baca": "aa-hǎan",
+      "en": "food"
+    },
+    {
+      "lo": "ກິນ",
+      "baca": "kin",
+      "en": "to eat"
+    },
+    {
+      "lo": "ດື່ມ",
+      "baca": "dʉ̀ʉm",
+      "en": "to drink"
+    },
+    {
+      "lo": "ເຝີ",
+      "baca": "fǒe",
+      "en": "noodle soup (feu)"
+    },
+    {
+      "lo": "ໄກ່",
+      "baca": "kài",
+      "en": "chicken"
+    },
+    {
+      "lo": "ໝູ",
+      "baca": "mǔu",
+      "en": "pork, pig"
+    },
+    {
+      "lo": "ຊີ້ນ",
+      "baca": "sîn",
+      "en": "meat"
+    },
+    {
+      "lo": "ປາ",
+      "baca": "paa",
+      "en": "fish"
+    },
+    {
+      "lo": "ຜັກ",
+      "baca": "phák",
+      "en": "vegetable"
+    },
+    {
+      "lo": "ຜັກຫອມ",
+      "baca": "phák-hǎwm",
+      "en": "cilantro"
+    },
+    {
+      "lo": "ໃສ່",
+      "baca": "sài",
+      "en": "to put in; to wear"
+    },
+    {
+      "lo": "ເຜັດ",
+      "baca": "phét",
+      "en": "spicy"
+    },
+    {
+      "lo": "ແຊບ",
+      "baca": "sèep",
+      "en": "delicious"
+    },
+    {
+      "lo": "ຫວານ",
+      "baca": "wǎan",
+      "en": "sweet"
+    },
+    {
+      "lo": "ເຄັມ",
+      "baca": "khem",
+      "en": "salty"
+    },
+    {
+      "lo": "ສົ້ມ",
+      "baca": "sôm",
+      "en": "sour"
+    },
+    {
+      "lo": "ຮ້ອນ",
+      "baca": "hâwn",
+      "en": "hot"
+    },
+    {
+      "lo": "ເຢັນ",
+      "baca": "yén",
+      "en": "cold"
+    },
+    {
+      "lo": "ຫິວ",
+      "baca": "hǐu",
+      "en": "hungry"
+    },
+    {
+      "lo": "ຫິວນ້ຳ",
+      "baca": "hǐu nâm",
+      "en": "thirsty"
+    },
+    {
+      "lo": "ອີ່ມ",
+      "baca": "ìm",
+      "en": "full (after eating)"
+    },
+    {
+      "lo": "ມັກ",
+      "baca": "mak",
+      "en": "to like"
+    },
+    {
+      "lo": "ຄິດເງິນ",
+      "baca": "khit ngóen",
+      "en": "to ask for the bill"
+    },
+    {
+      "lo": "ບ່ວງ",
+      "baca": "bùang",
+      "en": "spoon"
+    },
+    {
+      "lo": "ນ້ຳຕານ",
+      "baca": "nâm-taan",
+      "en": "sugar"
+    },
+    {
+      "lo": "ນ້ຳກ້ອນ",
+      "baca": "nâm-kâwn",
+      "en": "ice"
+    },
+    {
+      "lo": "ຕື່ມ",
+      "baca": "tʉ̀ʉm",
+      "en": "to add"
+    },
+    {
+      "lo": "ຖ້າ",
+      "baca": "thàa",
+      "en": "to wait; if"
+    },
+    {
+      "lo": "ທຸກ",
+      "baca": "thuk",
+      "en": "every"
+    },
+    {
+      "lo": "ເຊົ້າ",
+      "baca": "sâo",
+      "en": "morning"
+    },
+    {
+      "lo": "ເມນູ",
+      "baca": "mée-nuu",
+      "en": "menu"
+    },
+    {
+      "lo": "ຫ້ອງນ້ຳ",
+      "baca": "hàwng-nâm",
+      "en": "restroom, bathroom"
+    },
+    {
+      "lo": "ເຂົ້າຈີ່",
+      "baca": "khào-jìi",
+      "en": "bread"
+    },
+    {
+      "lo": "ລາບ",
+      "baca": "làap",
+      "en": "laap (spiced minced meat)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in with ເອົາ, ຂໍ, ໃສ່, or ບໍ່ໃສ່.",
+      "items": [
+        "____ເຝີສອງຖ້ວຍ (two bowls of feu)",
+        "____ນ້ຳແດ່ (some water, please)",
+        "____ຜັກເດີ້ (with vegetables, please)",
+        "____ນ້ຳຕານ (no sugar)",
+        "____ບ່ວງອັນໜຶ່ງແດ່ (a spoon, please)"
+      ]
+    },
+    {
+      "prompt": "Answer the seller's questions in Lao.",
+      "items": [
+        "ເອົາຫຍັງ (you want one bowl of chicken feu)",
+        "ເຜັດບໍ່ (a little spicy)",
+        "ໃສ່ຜັກບໍ່ (yes, but no cilantro)",
+        "ດື່ມຫຍັງ (one glass of water)",
+        "ອີ່ມບໍ່ (very full)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ແດ່ / ຄິດເງິນ",
+        "ຫຼາຍ / ແຊບ / ເນາະ",
+        "ບໍ່ໄດ້ / ຊີ້ນໝູ / ຂ້ອຍ / ກິນ",
+        "ໜຶ່ງ / ເຜັດ / ໜ້ອຍ",
+        "ໃສ / ຢູ່ / ຫ້ອງນ້ຳ"
+      ]
+    },
+    {
+      "prompt": "Translate into Lao.",
+      "items": [
+        "Hello, two bowls of chicken feu, please.",
+        "With vegetables, but no cilantro.",
+        "I can eat spicy food, but not a lot.",
+        "Two glasses of water too, please.",
+        "Really delicious. This place is good.",
+        "I'm full. The bill, please."
+      ]
+    }
+  ],
+  "answers": [
+    "ເອົາ — ຂໍ — ໃສ່ — ບໍ່ໃສ່ — ຂໍ",
+    "ເອົາເຝີໄກ່ຖ້ວຍໜຶ່ງ — ເຜັດໜ້ອຍໜຶ່ງ — ໃສ່ ແຕ່ບໍ່ໃສ່ຜັກຫອມ — ຂໍນ້ຳແກ້ວໜຶ່ງ — ອີ່ມຫຼາຍ",
+    "ຄິດເງິນແດ່ — ແຊບຫຼາຍເນາະ — ຂ້ອຍກິນຊີ້ນໝູບໍ່ໄດ້ — ເຜັດໜ້ອຍໜຶ່ງ — ຫ້ອງນ້ຳຢູ່ໃສ",
+    "ສະບາຍດີ ເອົາເຝີໄກ່ສອງຖ້ວຍ — ໃສ່ຜັກ ແຕ່ບໍ່ໃສ່ຜັກຫອມ — ຂ້ອຍກິນເຜັດໄດ້ ແຕ່ບໍ່ຫຼາຍ — ຂໍນ້ຳສອງແກ້ວນຳແດ່ — ແຊບຫຼາຍ ຮ້ານນີ້ດີ — ອີ່ມແລ້ວ ຄິດເງິນແດ່"
+  ],
+  "wave": "Review Unit 3: cover the Lao, then run through the whole market bargaining scene from memory — from asking the price to getting your change."
+}

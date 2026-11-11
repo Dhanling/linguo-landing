@@ -1,0 +1,663 @@
+{
+  "title": "How much is it?",
+  "title_target": "Үнэ хэд вэ?",
+  "goal": "Counting to a million, bargaining at the market, and paying — while seeing why Mongolian numbers have two faces.",
+  "bekal": [
+    "say and understand numbers up to a million in tugrik",
+    "ask prices, ask for a lower one, and count your change",
+    "use the *-н* form of numbers before nouns without thinking"
+  ],
+  "dialogs": [
+    {
+      "title": "Яриа — Захад",
+      "intro": "Budi goes to Naran Tuul Market with Sarnai to buy wool socks and a scarf.",
+      "lines": [
+        {
+          "speaker": "Худалдагч:",
+          "text": "[Сайн|Sain] [байна|BAI-n] [уу|uu]! [Юу|Yuu] [авах|a-VAKH] [вэ|veh]?",
+          "id": "Hello! What would you like?",
+          "literal": "good is Q! what take Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Ноосон|NŌ-son] [оймс|oims] [байгаа|bai-GAA] [юу|yuu]?",
+          "id": "Do you have wool socks?",
+          "literal": "wool's socks there-is Q?"
+        },
+        {
+          "speaker": "Худалдагч:",
+          "text": "[Байгаа|Bai-GAA], [маш|mash] [сайн|sain] [ноос|nōs]. [Тэмээний|teh-MĒ-nii] [ноос|nōs].",
+          "id": "Yes, very good wool. Camel wool.",
+          "literal": "there-is, very good wool. camel's wool."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Үнэ|Ü-neh] [хэд|khed] [вэ|veh]?",
+          "id": "How much are they?",
+          "literal": "price how-much Q?"
+        },
+        {
+          "speaker": "Худалдагч:",
+          "text": "[Нэг|Neg] [хос|khos] [арван|A-rvan] [таван|TA-van] [мянга|MYAN-ga].",
+          "id": "Fifteen thousand a pair.",
+          "literal": "one pair ten five thousand."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Үнэтэй|Ü-neh-tei] [юм|yum] [байна|BAI-n]. [Хямдхан|KHYAMD-khan] [болгож|BOL-goj] [болох|BO-lokh] [уу|uu]?",
+          "id": "That's expensive. Can you lower it a bit?",
+          "literal": "price-with thing is. cheap-ish make-ing may Q?"
+        },
+        {
+          "speaker": "Худалдагч:",
+          "text": "[Хоёр|Kho-YOR] [хос|khos] [аваарай|a-VAA-rai]. [Хорин|KHO-rin] [таван|TA-van] [мянга|MYAN-ga] [болно|BOL-no].",
+          "id": "Take two pairs. That makes twenty-five thousand.",
+          "literal": "two pair take. twenty five thousand becomes."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Хоёр|Kho-YOR] [хос|khos] [хорин|KHO-rin] [мянга|MYAN-ga] [бол|bol] [авъя|AV-ya].",
+          "id": "If two pairs are twenty thousand, we'll take them.",
+          "literal": "two pair twenty thousand if let's-take."
+        },
+        {
+          "speaker": "Худалдагч:",
+          "text": "[Хорин|KHO-rin] [хоёр|kho-YOR] [мянга|MYAN-ga]. [Сүүлчийн|SÜÜL-chiin] [үнэ|ü-neh].",
+          "id": "Twenty-two thousand. Final price.",
+          "literal": "twenty two thousand. last's price."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[За|Dza], [болъё|BOL-yo]. [Тэр|Ter] [ороолт|o-RŌLT] [хэд|khed] [вэ|veh]?",
+          "id": "OK, deal. How much is that scarf?",
+          "literal": "OK, let's-deal. that scarf how-much Q?"
+        },
+        {
+          "speaker": "Худалдагч:",
+          "text": "[Гучин|GU-chin] [найман|NAI-man] [мянга|MYAN-ga]. [Ямаан|ya-MAAN] [ноолуур|nō-LUUR].",
+          "id": "Thirty-eight thousand. Goat cashmere.",
+          "literal": "thirty eight thousand. goat's cashmere."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Хоёуланг|kho-YOU-lang] [нь|n'] [авбал|AV-bal] [нийт|niit] [хэд|khed] [вэ|veh]?",
+          "id": "If we take both, what's the total?",
+          "literal": "both-the if-take total how-much Q?"
+        },
+        {
+          "speaker": "Худалдагч:",
+          "text": "[Жаран|JA-ran] [мянга|MYAN-ga]. [Хямд|Khyamd] [болголоо|BOL-go-lō].",
+          "id": "Sixty thousand. I've already given you a discount.",
+          "literal": "sixty thousand. cheap made."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[За|Dza], [баярлалаа|ba-yar-la-LAA]. [Энэ|EH-neh] [зуун|DZUUN] [мянга|MYAN-ga].",
+          "id": "OK, thank you. Here's a hundred thousand.",
+          "literal": "OK, thanks. this hundred thousand."
+        },
+        {
+          "speaker": "Худалдагч:",
+          "text": "[Дөчин|DÖ-chin] [мянган|MYAN-gan] [хариулт|kha-RIULT]. [Дахин|Da-KHIN] [ирээрэй|i-RĒ-rei]!",
+          "id": "Your change is forty thousand. Come again!",
+          "literal": "forty thousand change. again come!"
+        }
+      ],
+      "notes": [
+        "⚠️ **Хэд asks for an amount; хэдэн asks \"how many\" before a noun.** *Үнэ хэд вэ?* (How much is it?) but *Хэдэн ном вэ?* (How many books?). The difference is like \"how much is it\" versus \"how many books\".",
+        "**Мянга = thousand, and Mongolians almost always give prices in thousands without naming the currency.** *Арван таван мянга* = 15,000 tugrik. Adding *төгрөг* isn't wrong, but it sounds like filling in a form.",
+        "**За is the word you'll hear most all day in Mongolia.** It means \"good\", \"OK\", \"fine then\", \"well\", and also fills pauses like \"um\". If you could take only one word from this unit, take *за*.",
+        "**Bargaining at the market is not just allowed but expected** — at the *зах* (open market) and small shops. ⚠️ In supermarkets, modern stores, and restaurants, nobody bargains, and trying will make things awkward. The line is the same as in most countries where haggling is normal.",
+        "**The suffix -хан / -хон turns an adjective into \"rather\" or \"fairly\".** *Хямд* (cheap) → *хямдхан* (fairly cheap); *ойр* (near) → *ойрхон*. This suffix softens a request — just like \"a little\" in \"could you take a little off?\""
+      ],
+      "grammars": [
+        {
+          "title": "Numbers have two faces",
+          "body": [
+            "This is the only complication in Mongolian numbers, and once you see the pattern, it's done in five minutes. Numbers standing alone use one form; numbers **before a noun** use another form ending in **-н**."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Alone",
+              "Say it",
+              "Before a noun",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "1",
+                "*нэг*",
+                "*neg*",
+                "*нэг*",
+                "*neg*"
+              ],
+              [
+                "2",
+                "*хоёр*",
+                "*kho-YOR*",
+                "*хоёр*",
+                "*kho-YOR*"
+              ],
+              [
+                "3",
+                "*гурав*",
+                "*GU-rav*",
+                "*гурван*",
+                "*GUR-van*"
+              ],
+              [
+                "4",
+                "*дөрөв*",
+                "*DÖ-röv*",
+                "*дөрвөн*",
+                "*DÖR-vön*"
+              ],
+              [
+                "5",
+                "*тав*",
+                "*tav*",
+                "*таван*",
+                "*TA-van*"
+              ],
+              [
+                "6",
+                "*зургаа*",
+                "*dzur-GAA*",
+                "*зургаан*",
+                "*dzur-GAAN*"
+              ],
+              [
+                "7",
+                "*долоо*",
+                "*do-LŌ*",
+                "*долоон*",
+                "*do-LŌN*"
+              ],
+              [
+                "8",
+                "*найм*",
+                "*naim*",
+                "*найман*",
+                "*NAI-man*"
+              ],
+              [
+                "9",
+                "*ес*",
+                "*yes*",
+                "*есөн*",
+                "*YEH-sön*"
+              ],
+              [
+                "10",
+                "*арав*",
+                "*A-rav*",
+                "*арван*",
+                "*A-rvan*"
+              ],
+              [
+                "20",
+                "*хорь*",
+                "*khor'*",
+                "*хорин*",
+                "*KHO-rin*"
+              ],
+              [
+                "100",
+                "*зуу*",
+                "*dzuu*",
+                "*зуун*",
+                "*DZUUN*"
+              ]
+            ]
+          },
+          "after": [
+            "**The pattern is one sentence: add -н, and if the base ends in a consonant, slip in a vowel so it can be pronounced.** *Гурав* → *гурван*; *ес* → *есөн*; *хорь* → *хорин*. Only *нэг* and *хоёр* don't change at all.",
+            "⚠️ The *-н* form is the one used for **prices, ages, times, dates, and any quantity** — because they all stand before a noun. The bare form is used only when you count aloud or answer \"how many\" with a single word."
+          ]
+        },
+        {
+          "title": "Building big numbers",
+          "body": [
+            "Mongolian builds numbers much like English: from largest to smallest, with no linking word at all. No \"and\" (as in British \"a hundred and five\"), and no reversal like German."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Монгол",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "11",
+                "*арван нэг*",
+                "ten one"
+              ],
+              [
+                "25",
+                "*хорин тав*",
+                "twenty five"
+              ],
+              [
+                "48",
+                "*дөчин найм*",
+                "forty eight"
+              ],
+              [
+                "100",
+                "*зуу*",
+                "hundred"
+              ],
+              [
+                "350",
+                "*гурван зуун тавь*",
+                "three hundred fifty"
+              ],
+              [
+                "1.000",
+                "*мянга*",
+                "thousand"
+              ],
+              [
+                "5.000",
+                "*таван мянга*",
+                "five thousand"
+              ],
+              [
+                "27.500",
+                "*хорин долоон мянга таван зуу*",
+                "twenty seven thousand five hundred"
+              ],
+              [
+                "1.000.000",
+                "*сая*",
+                "one million"
+              ],
+              [
+                "2.500.000",
+                "*хоёр сая таван зуун мянга*",
+                "two million five hundred thousand"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Note the tens, each with its own shape, which you must learn: 30 *гуч*, 40 *дөч*, 50 *тавь*, 60 *жар*, 70 *дал*, 80 *ная*, 90 *ер*. Before another number, all of them take *-н*: *гучин*, *дөчин*, *тавин*, *жаран*, *далан*, *наян*, *ерэн*.",
+            "**Mongolia's currency is the төгрөг (TÖG-rög), written ₮.** One tugrik is worth very little, so everyday prices run from thousands to tens of thousands. A bottle of water is about 1,500₮, a bowl of soup 8,000₮, a bus fare 500₮."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Shopping",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Үнэ хэд вэ?*",
+              "*Ü-neh khed veh*",
+              "How much is it?"
+            ],
+            [
+              "*Энэ хэд вэ?*",
+              "*EH-neh khed veh*",
+              "How much is this?"
+            ],
+            [
+              "*Их үнэтэй байна.*",
+              "*ikh Ü-neh-tei BAI-n*",
+              "It's very expensive."
+            ],
+            [
+              "*Хямдхан болгож болох уу?*",
+              "*KHYAMD-khan BOL-goj BO-lokh uu*",
+              "Can you make it a bit cheaper?"
+            ],
+            [
+              "*Би энийг авъя.*",
+              "*bi EH-niig AV-ya*",
+              "I'll take this one."
+            ],
+            [
+              "*Өөр өнгө байгаа юу?*",
+              "*öör ÖN-gö bai-GAA yuu*",
+              "Do you have another color?"
+            ],
+            [
+              "*Үзэж болох уу?*",
+              "*Ü-dzej BO-lokh uu*",
+              "May I look?"
+            ],
+            [
+              "*Хэрэггүй, баярлалаа.*",
+              "*KHEH-reg-güi ba-yar-la-LAA*",
+              "No need, thank you."
+            ],
+            [
+              "*Картаар төлж болох уу?*",
+              "*KAR-taar TÖLJ BO-lokh uu*",
+              "Can I pay by card?"
+            ],
+            [
+              "*Хариулт өгнө үү.*",
+              "*kha-RIULT ÖG-nö üü*",
+              "My change, please."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Болох уу — the magic phrase that opens every door",
+          "items": [
+            "*болох уу?* literally means \"may it become?\" and works like \"may I …?\" / \"can I …?\" in English.",
+            "Pair it with the *-ж / -ч* form of any verb: *үзэж болох уу?* (may I look?), *орж болох уу?* (may I come in?), *суух болох уу?* (may I sit?).",
+            "The answer is *Болно* (yes, you may) or *Болохгүй* (no, you may not).",
+            "This one pattern replaces ten polite sentences. Learn it today."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Colors and sizes",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English",
+            "Монгол",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*цагаан*",
+              "*tsa-GAAN*",
+              "white",
+              "*хар*",
+              "*khar*",
+              "black"
+            ],
+            [
+              "*улаан*",
+              "*u-LAAN*",
+              "red",
+              "*шар*",
+              "*shar*",
+              "yellow"
+            ],
+            [
+              "*хөх*",
+              "*khökh*",
+              "blue",
+              "*ногоон*",
+              "*no-GŌN*",
+              "green"
+            ],
+            [
+              "*бор*",
+              "*bor*",
+              "brown",
+              "*саарал*",
+              "*SAA-ral*",
+              "gray"
+            ],
+            [
+              "*том*",
+              "*tom*",
+              "big",
+              "*жижиг*",
+              "*JI-jig*",
+              "small"
+            ],
+            [
+              "*урт*",
+              "*urt*",
+              "long",
+              "*богино*",
+              "*bo-GI-no*",
+              "short"
+            ],
+            [
+              "*өргөн*",
+              "*ÖR-gön*",
+              "wide",
+              "*нарийн*",
+              "*na-RIIN*",
+              "narrow, fine"
+            ],
+            [
+              "*үнэтэй*",
+              "*Ü-neh-tei*",
+              "expensive",
+              "*хямд*",
+              "*khyamd*",
+              "cheap"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Цагаан* (white) is one of the most culturally loaded words in Mongolian. White means pure, good, and holy: *цагаан сар* is the Mongolian New Year (\"white month\"), *цагаан идээ* means all dairy foods, and *цагаан сэтгэл* means \"a clean heart\". If you call something *цагаан*, you are praising it."
+        },
+        {
+          "type": "p",
+          "text": "Notice too that *хөх* means blue **and** bluish green — the line between blue and green in Mongolian isn't drawn exactly where English draws it. The sky is *хөх тэнгэр*, and that eternal blue sky is both a national symbol and the root of Mongolian belief before Buddhism arrived."
+        }
+      ]
+    },
+    {
+      "title": "Counting things correctly",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Нэг аяга цай.*",
+              "A cup of tea."
+            ],
+            [
+              "*Хоёр литр ус.*",
+              "Two liters of water."
+            ],
+            [
+              "*Гурван кг мах.*",
+              "Three kilos of meat."
+            ],
+            [
+              "*Таван ширхэг өндөг.*",
+              "Five eggs."
+            ],
+            [
+              "*Арван хуудас цаас.*",
+              "Ten sheets of paper."
+            ],
+            [
+              "*Хоёр хос оймс.*",
+              "Two pairs of socks."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "These counting words — *аяга* (cup), *ширхэг* (piece, item), *хуудас* (sheet), *хос* (pair) — work just like \"cup of\", \"sheet of\", and \"pair of\" in English. **You already know the idea**; you only need the vocabulary. The difference: Mongolian also uses *ширхэг* for things English counts directly, like eggs."
+        },
+        {
+          "type": "kotak",
+          "title": "Phone numbers and years",
+          "items": [
+            "Phone numbers are read **digit by digit**, using the bare form: *есөн есөн, гурав хоёр, нэг найм…*",
+            "Years are read as a whole number: 2026 = *хоёр мянга хорин зургаан он*. ⚠️ Don't split it into \"twenty twenty-six\" as in English.",
+            "*он* = year (in dates); *жил* = year (length of time). *2026 **он*** but *гурван **жил*** (three years long).",
+            "Dates: *арван таваны өдөр* or more often just *арван тавны*, \"the fifteenth\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "mn": "хэд",
+      "baca": "khed",
+      "en": "how much, how many"
+    },
+    {
+      "mn": "үнэ",
+      "baca": "Ü-neh",
+      "en": "price"
+    },
+    {
+      "mn": "төгрөг",
+      "baca": "TÖG-rög",
+      "en": "tugrik (currency)"
+    },
+    {
+      "mn": "мянга",
+      "baca": "MYAN-ga",
+      "en": "thousand"
+    },
+    {
+      "mn": "зуу",
+      "baca": "dzuu",
+      "en": "hundred"
+    },
+    {
+      "mn": "сая",
+      "baca": "sa-YA",
+      "en": "million"
+    },
+    {
+      "mn": "үнэтэй",
+      "baca": "Ü-neh-tei",
+      "en": "expensive"
+    },
+    {
+      "mn": "хямд",
+      "baca": "khyamd",
+      "en": "cheap"
+    },
+    {
+      "mn": "авах",
+      "baca": "a-VAKH",
+      "en": "to take, to buy"
+    },
+    {
+      "mn": "худалдагч",
+      "baca": "khu-DAL-dagch",
+      "en": "seller"
+    },
+    {
+      "mn": "за",
+      "baca": "dza",
+      "en": "⚠️ OK, fine, well"
+    },
+    {
+      "mn": "болох",
+      "baca": "BO-lokh",
+      "en": "to become; may, can"
+    },
+    {
+      "mn": "болно",
+      "baca": "BOL-no",
+      "en": "OK, you may, it's fine"
+    },
+    {
+      "mn": "болохгүй",
+      "baca": "BO-lokh-güi",
+      "en": "not allowed, can't"
+    },
+    {
+      "mn": "нийт",
+      "baca": "niit",
+      "en": "total, altogether"
+    },
+    {
+      "mn": "хариулт",
+      "baca": "kha-RIULT",
+      "en": "change; answer"
+    },
+    {
+      "mn": "ноос",
+      "baca": "nōs",
+      "en": "wool"
+    },
+    {
+      "mn": "цагаан",
+      "baca": "tsa-GAAN",
+      "en": "white"
+    },
+    {
+      "mn": "улаан",
+      "baca": "u-LAAN",
+      "en": "red"
+    },
+    {
+      "mn": "хөх",
+      "baca": "khökh",
+      "en": "blue"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mongolian.",
+      "items": [
+        "How much is it?",
+        "It's very expensive.",
+        "Can you make it a bit cheaper?",
+        "I'll take this one.",
+        "Do you have another color?",
+        "Can I pay by card?"
+      ]
+    },
+    {
+      "prompt": "Write the numbers out in Mongolian.",
+      "items": [
+        "3 ____ ном",
+        "8 ____ хүн",
+        "15 ____ мянга",
+        "40 ____ мянга",
+        "100 ____ төгрөг",
+        "9 ____ өдөр"
+      ]
+    },
+    {
+      "prompt": "Change into the form used before a noun.",
+      "items": [
+        "гурав",
+        "дөрөв",
+        "ес",
+        "арав",
+        "хорь",
+        "зуу"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "вэ / үнэ / хэд",
+        "байна / үнэтэй / их",
+        "уу / болох / болгож / хямдхан",
+        "авъя / энийг / би",
+        "мянга / таван / арван"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Үнэ хэд вэ? — Их үнэтэй байна. — Хямдхан болгож болох уу? — Би энийг авъя. — Өөр өнгө байгаа юу? — Картаар төлж болох уу?",
+    "1": "гурван — найман — арван таван — дөчин — зуун — есөн",
+    "2": "гурван — дөрвөн — есөн — арван — хорин — зуун",
+    "3": "Үнэ хэд вэ? — Их үнэтэй байна. — Хямдхан болгож болох уу? — Би энийг авъя. — Арван таван мянга."
+  }
+}

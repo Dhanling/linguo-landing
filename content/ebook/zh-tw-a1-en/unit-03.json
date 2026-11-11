@@ -1,0 +1,608 @@
+{
+  "title": "Whose is this?",
+  "title_target": "這是誰的？",
+  "goal": "Point at things, ask who owns them, and use 的 — one character that does the work of \"'s\", \"of\", \"who/which\", and every long description.",
+  "bekal": [
+    "tell 這 from 那 and use them with measure words",
+    "use 的 for possession — and know when to leave it out",
+    "ask questions with 誰, 什麼, 哪 without changing the word order"
+  ],
+  "dialogs": [
+    {
+      "title": "對話 — 教室裡的雨傘",
+      "intro": "An afternoon downpour in Taipei. Budi finds an umbrella left behind on a classroom bench.",
+      "lines": [
+        {
+          "speaker": "布迪:",
+          "text": "[小美|Xiǎoměi]，[這是|zhè shì][什麼|shénme]？",
+          "id": "Xiaomei, what's this?",
+          "literal": "Xiaomei, this — is — what?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[那是|Nà shì][雨傘|yǔsǎn][啊|a]。[台北|Táiběi][常常|chángcháng][下雨|xiàyǔ]。",
+          "id": "That's an umbrella. It rains a lot in Taipei.",
+          "literal": "that — is — rain-umbrella — (you know). Taipei — often-often — fall-rain."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[這|Zhè][把|bǎ][雨傘|yǔsǎn][是|shì][誰的|shéi de]？",
+          "id": "Whose umbrella is this?",
+          "literal": "this — (measure word) — umbrella — is — who — 's?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[我|Wǒ][不知道|bù zhīdào]。[不是|Bú shì][我的|wǒ de]。",
+          "id": "I don't know. It's not mine.",
+          "literal": "I — not — know. not — is — I — 's."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[那|Nà][那個|nà ge][背包|bēibāo][呢|ne]？[也|Yě][不是|bú shì][你的|nǐ de][嗎|ma]？",
+          "id": "What about that backpack? Not yours either?",
+          "literal": "then — that — (measure word) — back-bag — (what about)? also — not — is — you — 's — (question)?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[那個|Nà ge][是|shì][阿明|Ā Míng][的|de]。[他|Tā][常常|chángcháng][忘東西|wàng dōngxi]。",
+          "id": "That one's A-Ming's. He's always forgetting things.",
+          "literal": "that — (measure word) — is — A-Ming — 's. he — often-often — forget — east-west."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[哈哈|Hāhā]！[那|Nà][雨傘|yǔsǎn][應該|yīnggāi][也是|yě shì][他的|tā de][吧|ba]？",
+          "id": "Haha! So the umbrella must be his too, right?",
+          "literal": "haha! then — umbrella — should — also — is — he — 's — (right)?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[有可能|Yǒu kěnéng][喔|o]。[我們|Wǒmen][問問|wènwèn][他|tā]。",
+          "id": "Could be. Let's ask him.",
+          "literal": "have — possibility — (you know). we — ask-ask — him."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[等一下|Děng yíxià]，[這|zhè][是|shì][我的|wǒ de][手機|shǒujī][嗎|ma]？",
+          "id": "Hey, wait — is this my phone?",
+          "literal": "wait — a-moment, this — is — I — 's — hand-machine — (question)?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[你的|Nǐ de][手機|shǒujī][在|zài][你|nǐ][手上|shǒu shàng][啦|la]！",
+          "id": "Your phone is in your hand!",
+          "literal": "you — 's — phone — is-at — you — hand — on — (la)!"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[啊|A]…[不好意思|bù hǎoyìsi]。[我|Wǒ][今天|jīntiān][很|hěn][累|lèi]。",
+          "id": "Oh… sorry. I'm so tired today.",
+          "literal": "ah… not — good — meaning. I — today — very — tired."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[沒關係|Méi guānxi]。[你|Nǐ][的|de][中文|Zhōngwén][課|kè][幾點|jǐ diǎn]？",
+          "id": "No worries. What time is your Chinese class?",
+          "literal": "not — have — relation. you — 's — Chinese — class — how-many — o'clock?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[三點|Sān diǎn]。[還有|Hái yǒu][二十|èrshí][分鐘|fēnzhōng]。",
+          "id": "Three o'clock. Still twenty minutes to go.",
+          "literal": "three — o'clock. still — have — twenty — minute."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[那|Nà][快走|kuài zǒu][吧|ba]！[雨傘|Yǔsǎn][先|xiān][放|fàng][這裡|zhèlǐ]。",
+          "id": "Then hurry up! Leave the umbrella here for now.",
+          "literal": "then — quick — go — (let's)! umbrella — first — put — here."
+        }
+      ],
+      "notes": [
+        "**這 (*zhè*, this) and 那 (*nà*, that)** work just like in English. ⚠️ The difference: when a noun follows, **a measure word must sit in between**. 這**個**背包, 那**把**雨傘 — not 這背包.",
+        "⚠️ **那 does two jobs.** As a pointer it means \"that\"; at the **start of a sentence** it means \"then\", \"in that case\". *那我們走吧！* — \"Let's go, then!\" Context always tells them apart, and the second use turns up in almost every conversation.",
+        "**吧 (*ba*) softens a sentence into a suggestion or a guess.** *走吧！* \"let's go!\" *是他的吧？* \"it's his, right?\" It is never used for a real question — if you genuinely don't know, use 嗎.",
+        "**問問 and 等一下 show Mandarin's habit of softening verbs.** Doubling the verb (問問, 看看, 想想) or adding 一下 gives a sense of \"just quickly, no pressure\" — like \"have a quick look\" in English.",
+        "⚠️ **手機 = phone** (literally \"hand machine\"), and **東西 = thing, stuff** (literally \"east west\"). Two words you can't guess from their parts; learn them whole."
+      ],
+      "grammars": [
+        {
+          "title": "的: one character, three jobs",
+          "body": [
+            "**的** is the most frequent character in Mandarin, and it does three things that English handles in three different ways."
+          ],
+          "table": {
+            "head": [
+              "Job",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**Possession**",
+                "我**的**書",
+                "my book"
+              ],
+              [
+                "**Possession without the noun**",
+                "這是我**的**。",
+                "This is mine."
+              ],
+              [
+                "**Longer adjective → description**",
+                "很貴**的**東西",
+                "expensive things"
+              ],
+              [
+                "**\"Who/which\" clause**",
+                "台南來**的**朋友",
+                "the friend who came from Tainan"
+              ],
+              [
+                "**Turning a quality into a noun**",
+                "紅**的**",
+                "the red one"
+              ]
+            ]
+          },
+          "after": [
+            "The key is one sentence: **的 always stands right BEFORE the noun it describes**, and every description goes in front of it. Mandarin order is always **describer → 的 → described**. English does the same with short ones (\"my book\") but puts longer ones after the noun (\"the friend *who came from Tainan*\"); Mandarin never does.",
+            "⚠️ Practice reading from the end: 台南來的朋友 → start from 朋友 (friend), then go forward: the friend *who* came from Tainan. This reading-backwards habit will serve you all the way to B1."
+          ]
+        },
+        {
+          "title": "⚠️ When to leave 的 out",
+          "body": [
+            "There is one important case where adding 的 actually sounds wrong: **very close relationships** — family, school, country, workplace. There 的 is dropped."
+          ],
+          "table": {
+            "head": [
+              "Written",
+              "Pīnyīn",
+              "Meaning",
+              "Note"
+            ],
+            "rows": [
+              [
+                "我**媽媽**",
+                "wǒ māma",
+                "my mother",
+                "⚠️ not 我的媽媽"
+              ],
+              [
+                "我**朋友**",
+                "wǒ péngyǒu",
+                "my friend",
+                "close relationship"
+              ],
+              [
+                "我**家**",
+                "wǒ jiā",
+                "my home",
+                "⚠️ 我的家 sounds cold"
+              ],
+              [
+                "我們**學校**",
+                "wǒmen xuéxiào",
+                "our school",
+                "institution"
+              ],
+              [
+                "我們**國家**",
+                "wǒmen guójiā",
+                "our country",
+                "institution"
+              ],
+              [
+                "我**的**書",
+                "wǒ de shū",
+                "my book",
+                "✓ ordinary object, 的 required"
+              ],
+              [
+                "我**的**手機",
+                "wǒ de shǒujī",
+                "my phone",
+                "✓ ordinary object"
+              ]
+            ]
+          },
+          "after": [
+            "You can feel the reason: 的 marks ownership as something that **can change hands**. Your mother doesn't change hands, so marking her that way sounds like treating her as an object.",
+            "⚠️ This mistake won't stop people understanding you, but it is one of the quickest signs of a beginner. Fix it now while your vocabulary is still small."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Question words: just swap them in place",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Here is Mandarin's second gift, and it's a big one. To ask a question with a question word, **put the question word exactly where the answer will stand**. Nothing moves to the front as it does in English."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question word",
+            "Pīnyīn",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**誰**",
+              "shéi",
+              "who",
+              "他是**誰**？ Who is he?"
+            ],
+            [
+              "**什麼**",
+              "shénme",
+              "what",
+              "這是**什麼**？ What is this?"
+            ],
+            [
+              "**哪**",
+              "nǎ",
+              "which",
+              "**哪**個是你的？ Which one is yours?"
+            ],
+            [
+              "**哪裡 / 哪兒**",
+              "nǎlǐ",
+              "where",
+              "你在**哪裡**？ ⚠️ Taiwan uses 哪裡"
+            ],
+            [
+              "**幾**",
+              "jǐ",
+              "how many (under 10)",
+              "**幾**點？ What time?"
+            ],
+            [
+              "**多少**",
+              "duōshǎo",
+              "how many / how much",
+              "**多少**錢？ How much is it?"
+            ],
+            [
+              "**什麼時候**",
+              "shénme shíhòu",
+              "when",
+              "你**什麼時候**去？ When are you going?"
+            ],
+            [
+              "**為什麼**",
+              "wèishénme",
+              "why",
+              "你**為什麼**不去？ Why aren't you going?"
+            ],
+            [
+              "**怎麼**",
+              "zěnme",
+              "how",
+              "**怎麼**去？ How do you get there?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Compare: *他是誰？* and its answer *他是老師。* The word 誰 stands exactly where 老師 will stand. ⚠️ **Never add 嗎 to a sentence that already has a question word** — *你是誰嗎？* is wrong. One question marker per sentence is enough."
+        }
+      ]
+    },
+    {
+      "title": "Things around you",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "English",
+            "Measure word"
+          ],
+          "rows": [
+            [
+              "書",
+              "shū",
+              "book",
+              "本 běn"
+            ],
+            [
+              "筆",
+              "bǐ",
+              "pen",
+              "支 zhī"
+            ],
+            [
+              "手機",
+              "shǒujī",
+              "cell phone",
+              "支 zhī"
+            ],
+            [
+              "電腦",
+              "diànnǎo",
+              "computer, laptop",
+              "台 tái"
+            ],
+            [
+              "背包",
+              "bēibāo",
+              "backpack",
+              "個 ge"
+            ],
+            [
+              "雨傘",
+              "yǔsǎn",
+              "umbrella",
+              "把 bǎ"
+            ],
+            [
+              "鑰匙",
+              "yàoshi",
+              "key",
+              "把 bǎ"
+            ],
+            [
+              "錢包",
+              "qiánbāo",
+              "wallet",
+              "個 ge"
+            ],
+            [
+              "椅子",
+              "yǐzi",
+              "chair",
+              "張 zhāng"
+            ],
+            [
+              "桌子",
+              "zhuōzi",
+              "table, desk",
+              "張 zhāng"
+            ],
+            [
+              "卡片",
+              "kǎpiàn",
+              "card",
+              "張 zhāng"
+            ],
+            [
+              "東西",
+              "dōngxi",
+              "thing, object",
+              "個 ge"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Lost property in Taiwan",
+          "items": [
+            "**我的東西不見了。** *Wǒ de dōngxi bú jiàn le.* — I've lost my things.",
+            "**這是我的。** *Zhè shì wǒ de.* — This is mine.",
+            "**這不是我的。** *Zhè bú shì wǒ de.* — This isn't mine.",
+            "**失物招領處在哪裡？** *Shīwù zhāolǐng chù zài nǎlǐ?* — Where is the lost and found?",
+            "⚠️ Taiwan is famous as a place where lost things usually come back. The 捷運 and 便利商店 have procedures for it, and people really do hand in what they find."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "這 and 那 with measure words",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Form",
+            "Pīnyīn",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**這個**",
+              "zhè ge",
+              "this one (general)"
+            ],
+            [
+              "**那個**",
+              "nà ge",
+              "that one"
+            ],
+            [
+              "**哪個**",
+              "nǎ ge",
+              "which one"
+            ],
+            [
+              "**這本書**",
+              "zhè běn shū",
+              "this book"
+            ],
+            [
+              "**那把雨傘**",
+              "nà bǎ yǔsǎn",
+              "that umbrella"
+            ],
+            [
+              "**這些**",
+              "zhèxiē",
+              "these ⚠️ no measure word"
+            ],
+            [
+              "**那些**",
+              "nàxiē",
+              "those"
+            ],
+            [
+              "**這裡 / 那裡**",
+              "zhèlǐ / nàlǐ",
+              "here / there"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **那個 (*nà ge*) is also a filler word** while people think, just like \"um…\" or \"you know…\" in English: *那個…我想問一下。* You'll hear it many times in one conversation — don't be confused, it isn't pointing at anything."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "這",
+      "baca": "zhè",
+      "en": "this"
+    },
+    {
+      "zh": "那",
+      "baca": "nà",
+      "en": "that; then, in that case"
+    },
+    {
+      "zh": "的",
+      "baca": "de",
+      "en": "(possessive / describing particle)"
+    },
+    {
+      "zh": "誰",
+      "baca": "shéi",
+      "en": "who"
+    },
+    {
+      "zh": "個",
+      "baca": "ge",
+      "en": "(general measure word)"
+    },
+    {
+      "zh": "知道",
+      "baca": "zhīdào",
+      "en": "to know (a fact)"
+    },
+    {
+      "zh": "東西",
+      "baca": "dōngxi",
+      "en": "thing, stuff"
+    },
+    {
+      "zh": "手機",
+      "baca": "shǒujī",
+      "en": "cell phone"
+    },
+    {
+      "zh": "書",
+      "baca": "shū",
+      "en": "book"
+    },
+    {
+      "zh": "背包",
+      "baca": "bēibāo",
+      "en": "backpack"
+    },
+    {
+      "zh": "雨傘",
+      "baca": "yǔsǎn",
+      "en": "umbrella"
+    },
+    {
+      "zh": "下雨",
+      "baca": "xiàyǔ",
+      "en": "to rain"
+    },
+    {
+      "zh": "常常",
+      "baca": "chángcháng",
+      "en": "often"
+    },
+    {
+      "zh": "累",
+      "baca": "lèi",
+      "en": "tired"
+    },
+    {
+      "zh": "沒關係",
+      "baca": "méi guānxi",
+      "en": "it doesn't matter, no problem"
+    },
+    {
+      "zh": "等一下",
+      "baca": "děng yíxià",
+      "en": "wait a moment"
+    },
+    {
+      "zh": "吧",
+      "baca": "ba",
+      "en": "(suggestion / guess particle)"
+    },
+    {
+      "zh": "哪裡",
+      "baca": "nǎlǐ",
+      "en": "where (⚠️ Taiwan)"
+    },
+    {
+      "zh": "應該",
+      "baca": "yīnggāi",
+      "en": "should; must (be)"
+    },
+    {
+      "zh": "先",
+      "baca": "xiān",
+      "en": "first, beforehand"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mandarin.",
+      "items": [
+        "What is this?",
+        "Whose umbrella is this?",
+        "This isn't mine.",
+        "My mother is Indonesian.",
+        "Which one is yours?",
+        "I don't know."
+      ]
+    },
+    {
+      "prompt": "Add 的 where needed; write ✗ where it must not be used.",
+      "items": [
+        "我 ____ 手機",
+        "我 ____ 媽媽",
+        "他 ____ 書",
+        "我們 ____ 學校",
+        "老師 ____ 電腦",
+        "我 ____ 朋友"
+      ]
+    },
+    {
+      "prompt": "Fill in the right question word: 誰, 什麼, 哪裡, 幾, or 多少.",
+      "items": [
+        "他是 ____？",
+        "這是 ____？",
+        "你在 ____？",
+        "現在 ____ 點？",
+        "這個 ____ 錢？",
+        "____ 個是你的？"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "誰的 / 這 / 是",
+        "我的 / 不是 / 這",
+        "什麼 / 那 / 是",
+        "背包 / 是 / 阿明的 / 那個",
+        "媽媽 / 是 / 我 / 老師"
+      ]
+    }
+  ],
+  "answers": [
+    "這是什麼？ — 這把雨傘是誰的？ — 這不是我的。 — 我媽媽是印尼人。 — 哪個是你的？ — 我不知道。",
+    "的 — ✗ — 的 — ✗ — 的 — ✗",
+    "誰 — 什麼 — 哪裡 — 幾 — 多少 — 哪",
+    "這是誰的？ — 這不是我的。 — 那是什麼？ — 那個背包是阿明的。 — 我媽媽是老師。"
+  ]
+}

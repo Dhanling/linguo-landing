@@ -1,0 +1,593 @@
+{
+  "title": "How much is it?",
+  "title_target": "多少錢？",
+  "goal": "Count to ten thousand, give prices in 塊, and haggle at a night market — while settling the 二 vs 兩 question that trips up every beginner.",
+  "bekal": [
+    "count and read prices up to five digits",
+    "use 兩 before measure words and 二 for counting",
+    "haggle at a 夜市 with the sentences Taiwanese people actually use"
+  ],
+  "dialogs": [
+    {
+      "title": "對話 — 士林夜市",
+      "intro": "Saturday night at the Shilin night market. Budi wants to buy a T-shirt, and Xiaomei comes along to help him haggle.",
+      "lines": [
+        {
+          "speaker": "老闆:",
+          "text": "[來來來|Lái lái lái]！[看一下|Kàn yíxià]！[很便宜|Hěn piányí]！",
+          "id": "Come on in! Have a look! Really cheap!",
+          "literal": "come-come-come! look — a-bit! very — cheap!"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[老闆|Lǎobǎn]，[這件|zhè jiàn][多少錢|duōshǎo qián]？",
+          "id": "Excuse me, how much is this?",
+          "literal": "boss, this — (measure word) — how-much — money?"
+        },
+        {
+          "speaker": "老闆:",
+          "text": "[三百五|Sānbǎi wǔ]。[純棉的|Chúnmián de][喔|o]！",
+          "id": "Three fifty. Pure cotton, you know!",
+          "literal": "three-hundred-five. pure-cotton — (one) — (you know)!"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[三百五|Sānbǎi wǔ]？[有點|Yǒudiǎn][貴|guì][耶|ye]。",
+          "id": "Three fifty? That's a bit pricey.",
+          "literal": "three-hundred-five? have-a-little — expensive — (you know)."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[老闆|Lǎobǎn]，[算|suàn][便宜|piányí][一點|yìdiǎn][啦|la]！[我們|Wǒmen][買|mǎi][兩件|liǎng jiàn]。",
+          "id": "Come on, a little cheaper! We're buying two.",
+          "literal": "boss, count — cheap — a-little — (la)! we — buy — two — (measure word)."
+        },
+        {
+          "speaker": "老闆:",
+          "text": "[兩件|Liǎng jiàn][的話|de huà]，[六百|liùbǎi][好不好|hǎo bù hǎo]？",
+          "id": "For two, how about six hundred?",
+          "literal": "two — (measure word) — (if), six-hundred — good — not — good?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[五百五|Wǔbǎi wǔ][啦|la]！[我們|Wǒmen][是|shì][學生|xuéshēng][耶|ye]。",
+          "id": "Five fifty! We're students, you know.",
+          "literal": "five-hundred-five — (la)! we — are — student — (wow)."
+        },
+        {
+          "speaker": "老闆:",
+          "text": "[哎唷|Āiyō]…[好啦|Hǎo la]！[五百八|Wǔbǎi bā]，[不能|bù néng][再少|zài shǎo][了|le]。",
+          "id": "Oh man… fine! Five eighty, and I can't go any lower.",
+          "literal": "aiyo… good — (la)! five-hundred-eight, not — can — again — less — (now)."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[好|Hǎo]，[我們|wǒmen][要|yào][兩件|liǎng jiàn]。",
+          "id": "OK, we'll take two.",
+          "literal": "good, we — want — two — (measure word)."
+        },
+        {
+          "speaker": "老闆:",
+          "text": "[謝謝|Xièxie]！[要|Yào][刷卡|shuākǎ][還是|háishì][付現|fùxiàn]？",
+          "id": "Thank you! Card or cash?",
+          "literal": "thank thank! want — swipe-card — or — pay-cash?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[付現|Fùxiàn]。[這是|Zhè shì][一千|yìqiān]。",
+          "id": "Cash. Here's a thousand.",
+          "literal": "pay-cash. this — is — one-thousand."
+        },
+        {
+          "speaker": "老闆:",
+          "text": "[找|Zhǎo][你|nǐ][四百二|sìbǎi èr]。[謝謝|Xièxie][光臨|guānglín]！",
+          "id": "Four twenty is your change. Thanks for coming!",
+          "literal": "find-back — you — four-hundred-two. thank thank — light-come!"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[小美|Xiǎoměi]，[妳|nǐ][好厲害|hǎo lìhài]！",
+          "id": "Xiaomei, you're amazing!",
+          "literal": "Xiaomei, you — very — awesome!"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[在|Zài][夜市|yèshì][一定|yídìng][要|yào][殺價|shājià][啊|a]！",
+          "id": "At a night market, you've got to haggle!",
+          "literal": "at — night-market — sure — must — cut-price — (you know)!"
+        }
+      ],
+      "notes": [
+        "⚠️ **三百五 means 350, not 305.** When giving prices, a final round tens digit can be clipped: 三百五 = 三百五十, 五百八 = 五百八十, 四百二 = 四百二十. If you hear 三百五 and think 305, you'll pay the wrong amount.",
+        "**塊 (*kuài*) is the word people actually say**, while 元 (*yuán*) is what's printed on the receipt. Often both are dropped: just *三百五*. Compare \"bucks\" and \"dollars\" in English.",
+        "**還是 = \"or\" in questions**, 或是/或者 = \"or\" in statements. ⚠️ *你要茶還是咖啡？* (Tea or coffee?) is right; *你要茶或是咖啡？* sounds wrong.",
+        "**謝謝光臨** (\"thank you for coming\") is what shop staff say to customers as they leave. In a 便利商店 you'll hear it hundreds of times. You don't need to reply — a nod is enough.",
+        "⚠️ **妳 with the 女 component is \"you\" for a woman.** It sounds exactly the same: *nǐ*. Taiwan still uses this written distinction, along with 他 (he) and 她 (she), both also read *tā*."
+      ],
+      "grammars": [
+        {
+          "title": "⚠️ 二 or 兩: a one-sentence rule",
+          "body": [
+            "Mandarin has two words for the number two, and picking the wrong one is the beginner mistake you hear most often. The rule is short: **兩 before a measure word, 二 everywhere else.**"
+          ],
+          "table": {
+            "head": [
+              "Use",
+              "Situation",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**兩**",
+                "before a measure word",
+                "**兩**個人",
+                "two people"
+              ],
+              [
+                "**兩**",
+                "before a measure word",
+                "**兩**杯茶",
+                "two cups of tea"
+              ],
+              [
+                "**兩**",
+                "hundred/thousand/ten-thousand",
+                "**兩**百, **兩**千",
+                "two hundred, two thousand"
+              ],
+              [
+                "**二**",
+                "counting",
+                "一、**二**、三",
+                "one, two, three"
+              ],
+              [
+                "**二**",
+                "inside larger numbers",
+                "十**二**, **二**十**二**",
+                "twelve, twenty-two"
+              ],
+              [
+                "**二**",
+                "ordinal numbers",
+                "第**二**",
+                "second"
+              ],
+              [
+                "**二**",
+                "dates and minutes",
+                "**二**號, **二**分",
+                "the 2nd, 2 minutes"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **兩個人** is right; **二個人** is wrong and sounds odd at once. Conversely **十二** is right; **十兩** is wrong. Quick test: if a measure word follows, use 兩.",
+            "**Clock times are an exception to memorize**: two o'clock is **兩點** (*liǎng diǎn*), because 點 is a measure word. But two minutes is **兩分**… and the second of the month is **二號**. Three forms, three rules."
+          ]
+        },
+        {
+          "title": "Numbers and prices: 萬 changes how you count",
+          "body": [
+            "Up to a thousand, Mandarin counts much like English. The difference starts at ten thousand."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "中文",
+              "Pīnyīn",
+              "Note"
+            ],
+            "rows": [
+              [
+                "11",
+                "十一",
+                "shíyī",
+                "ten-one"
+              ],
+              [
+                "20",
+                "二十",
+                "èrshí",
+                "two-ten"
+              ],
+              [
+                "99",
+                "九十九",
+                "jiǔshíjiǔ",
+                ""
+              ],
+              [
+                "100",
+                "一百",
+                "yìbǎi",
+                "⚠️ 一 can't be dropped"
+              ],
+              [
+                "105",
+                "一百零五",
+                "yìbǎi líng wǔ",
+                "⚠️ 零 required for a gap"
+              ],
+              [
+                "350",
+                "三百五(十)",
+                "sānbǎi wǔ(shí)",
+                "prices: may be clipped"
+              ],
+              [
+                "1,000",
+                "一千",
+                "yìqiān",
+                ""
+              ],
+              [
+                "10,000",
+                "一萬",
+                "yíwàn",
+                "⚠️ not 十千"
+              ],
+              [
+                "25,000",
+                "兩萬五",
+                "liǎngwàn wǔ",
+                ""
+              ],
+              [
+                "1,000,000",
+                "一百萬",
+                "yìbǎiwàn",
+                "a hundred ten-thousands"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **零 (*líng*) must be used to mark a gap inside a number**, and only once, however many zeros there are: 1005 = 一千零五, 1050 = 一千零五十.",
+            "**Everyday prices in Taiwan** as a yardstick: a 便利商店 coffee about 45 塊, a 便當 lunch box about 90 塊, one 捷運 ride 20–40 塊, a 珍珠奶茶 about 60 塊, a student room 5,000–9,000 塊 a month."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Shopping: the sentences people really use",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "English"
+          ],
+          "rows": [
+            [
+              "**多少錢？**",
+              "duōshǎo qián?",
+              "How much is it?"
+            ],
+            [
+              "**這個多少？**",
+              "zhè ge duōshǎo?",
+              "How much is this one? (shortest)"
+            ],
+            [
+              "**太貴了！**",
+              "tài guì le!",
+              "That's too expensive!"
+            ],
+            [
+              "**算便宜一點**",
+              "suàn piányí yìdiǎn",
+              "Make it a bit cheaper"
+            ],
+            [
+              "**可以打折嗎？**",
+              "kěyǐ dǎzhé ma?",
+              "Is there a discount?"
+            ],
+            [
+              "**我要這個**",
+              "wǒ yào zhè ge",
+              "I want this one"
+            ],
+            [
+              "**我不要，謝謝**",
+              "wǒ bú yào, xièxie",
+              "No, thank you"
+            ],
+            [
+              "**我看看**",
+              "wǒ kànkàn",
+              "I'm just looking"
+            ],
+            [
+              "**有沒有別的？**",
+              "yǒu méi yǒu bié de?",
+              "Do you have anything else?"
+            ],
+            [
+              "**可以刷卡嗎？**",
+              "kěyǐ shuākǎ ma?",
+              "Can I pay by card?"
+            ],
+            [
+              "**給我一張收據**",
+              "gěi wǒ yì zhāng shōujù",
+              "A receipt, please"
+            ],
+            [
+              "**不用袋子，謝謝**",
+              "búyòng dàizi, xièxie",
+              "No bag, thanks"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **打折 works the opposite way from what English speakers expect.** *八折* (*bā zhé*) is not eighty percent off but **paying eighty percent** — so the discount is twenty percent. *五折* = half price. A sign saying 三折 means you pay only thirty percent; that's a huge sale."
+        }
+      ]
+    },
+    {
+      "title": "Haggling: where you can and where you can't",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "⚠️ Taiwan's unwritten rules",
+          "items": [
+            "**You can haggle:** at night markets 夜市, traditional markets 傳統市場, small clothing and accessory shops, roadside fruit sellers.",
+            "**You can't haggle:** at 便利商店, chain stores, restaurants, pharmacies, department stores, ticket machines. Haggling at 7-Eleven will confuse the cashier, not offend them.",
+            "**The most natural opener:** *算便宜一點啦！* — rather than naming a number first. Let the seller come down.",
+            "**Trump cards that really work:** buying more than one (*我買兩件*) and saying you're students (*我們是學生耶*).",
+            "**When the price can't go lower, the seller will say** *不能再少了* or *真的沒賺錢*. That's your signal to stop; pushing further is considered rude."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Your tone matters far more than your words. Haggling in Taiwan is done with a smile, with 啦 and 耶 at the end of sentences, like joking with a friend. Haggling with a stern face changes the mood and actually gets you a worse price."
+        }
+      ]
+    },
+    {
+      "title": "Colors and sizes",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "Meaning",
+            "中文",
+            "Pīnyīn",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "紅色",
+              "hóngsè",
+              "red",
+              "大",
+              "dà",
+              "big"
+            ],
+            [
+              "藍色",
+              "lánsè",
+              "blue",
+              "小",
+              "xiǎo",
+              "small"
+            ],
+            [
+              "黑色",
+              "hēisè",
+              "black",
+              "長",
+              "cháng",
+              "long"
+            ],
+            [
+              "白色",
+              "báisè",
+              "white",
+              "短",
+              "duǎn",
+              "short"
+            ],
+            [
+              "黃色",
+              "huángsè",
+              "yellow",
+              "貴",
+              "guì",
+              "expensive"
+            ],
+            [
+              "綠色",
+              "lǜsè",
+              "green",
+              "便宜",
+              "piányí",
+              "cheap"
+            ],
+            [
+              "咖啡色",
+              "kāfēisè",
+              "brown",
+              "新",
+              "xīn",
+              "new"
+            ],
+            [
+              "粉紅色",
+              "fěnhóngsè",
+              "pink",
+              "舊",
+              "jiù",
+              "old, used"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**色 means \"color\" and can be dropped** when 的 follows: *紅的* = \"the red one\". Clothing sizes use the English letters as they are, or: 大號 (L), 中號 (M), 小號 (S). To try something on: **我可以試穿嗎？** *Wǒ kěyǐ shìchuān ma?*"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "錢",
+      "baca": "qián",
+      "en": "money"
+    },
+    {
+      "zh": "多少",
+      "baca": "duōshǎo",
+      "en": "how much, how many"
+    },
+    {
+      "zh": "塊",
+      "baca": "kuài",
+      "en": "dollar (spoken)"
+    },
+    {
+      "zh": "元",
+      "baca": "yuán",
+      "en": "dollar (written)"
+    },
+    {
+      "zh": "兩",
+      "baca": "liǎng",
+      "en": "⚠️ two (+ measure word)"
+    },
+    {
+      "zh": "百",
+      "baca": "bǎi",
+      "en": "hundred"
+    },
+    {
+      "zh": "千",
+      "baca": "qiān",
+      "en": "thousand"
+    },
+    {
+      "zh": "萬",
+      "baca": "wàn",
+      "en": "⚠️ ten thousand"
+    },
+    {
+      "zh": "零",
+      "baca": "líng",
+      "en": "zero"
+    },
+    {
+      "zh": "貴",
+      "baca": "guì",
+      "en": "expensive"
+    },
+    {
+      "zh": "便宜",
+      "baca": "piányí",
+      "en": "cheap"
+    },
+    {
+      "zh": "買",
+      "baca": "mǎi",
+      "en": "to buy"
+    },
+    {
+      "zh": "賣",
+      "baca": "mài",
+      "en": "to sell"
+    },
+    {
+      "zh": "要",
+      "baca": "yào",
+      "en": "to want; to ask for"
+    },
+    {
+      "zh": "老闆",
+      "baca": "lǎobǎn",
+      "en": "boss; shopkeeper"
+    },
+    {
+      "zh": "夜市",
+      "baca": "yèshì",
+      "en": "night market"
+    },
+    {
+      "zh": "件",
+      "baca": "jiàn",
+      "en": "(measure word for clothing)"
+    },
+    {
+      "zh": "還是",
+      "baca": "háishì",
+      "en": "or (in questions)"
+    },
+    {
+      "zh": "刷卡",
+      "baca": "shuākǎ",
+      "en": "to pay by card"
+    },
+    {
+      "zh": "打折",
+      "baca": "dǎzhé",
+      "en": "⚠️ discount (counted the other way round)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mandarin.",
+      "items": [
+        "How much is it?",
+        "That's too expensive!",
+        "I want two.",
+        "Make it a bit cheaper!",
+        "Can I pay by card?",
+        "Here's a thousand."
+      ]
+    },
+    {
+      "prompt": "Fill in with 二 or 兩.",
+      "items": [
+        "我要 ____ 個。",
+        "一、____、三。",
+        "十 ____ 點。",
+        "____ 百塊。",
+        "五月 ____ 號。",
+        "____ 杯茶。"
+      ]
+    },
+    {
+      "prompt": "Write the numbers in Chinese characters.",
+      "items": [
+        "35",
+        "108",
+        "350",
+        "1,000",
+        "10,000",
+        "25,000"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "錢 / 多少 / 這個",
+        "件 / 我 / 兩 / 要",
+        "一點 / 算 / 便宜",
+        "了 / 太 / 貴",
+        "嗎 / 刷卡 / 可以"
+      ]
+    }
+  ],
+  "answers": [
+    "多少錢？ — 太貴了！ — 我要兩個。 — 算便宜一點啦！ — 可以刷卡嗎？ — 這是一千。",
+    "兩 — 二 — 二 — 兩 — 二 — 兩",
+    "三十五 — 一百零八 — 三百五十 — 一千 — 一萬 — 兩萬五千",
+    "這個多少錢？ — 我要兩件。 — 算便宜一點。 — 太貴了。 — 可以刷卡嗎？"
+  ]
+}

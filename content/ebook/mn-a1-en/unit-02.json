@@ -1,0 +1,641 @@
+{
+  "title": "What's this? Whose is that?",
+  "title_target": "Энэ юу вэ? Тэр хэний юм бэ?",
+  "goal": "Point at things, name them, and say whose they are — while seeing for the first time how Mongolian closes a sentence with *юм* and *вэ*.",
+  "bekal": [
+    "point at and name the things around you with *энэ* and *тэр*",
+    "ask *юу вэ* and *хэний юм бэ*, and answer both",
+    "use the plural only when you need it — and know when you don't"
+  ],
+  "dialogs": [
+    {
+      "title": "Яриа — Ангид",
+      "intro": "Budi's first day of class. Sarnai is tidying the desk, and Budi asks about things he doesn't know the names of yet.",
+      "lines": [
+        {
+          "speaker": "Буди:",
+          "text": "[Багш|Baksh] [аа|aa], [энэ|EH-neh] [юу|yuu] [вэ|veh]?",
+          "id": "Teacher, what's this?",
+          "literal": "teacher O, this what Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Энэ|EH-neh] [ном|nom]. [Монгол|MON-gol] [хэлний|KHEL-nii] [ном|nom].",
+          "id": "It's a book. A Mongolian book.",
+          "literal": "this book. Mongolian language's book."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Тэр|Ter] [ч|ch] [бас|bas] [ном|nom] [уу|uu]?",
+          "id": "Is that a book too?",
+          "literal": "that too also book Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Үгүй|Ü-güi], [тэр|ter] [дэвтэр|DEV-ter]. [Ном|Nom] [биш|bish].",
+          "id": "No, that's a notebook. Not a book for reading.",
+          "literal": "no, that notebook. book not."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Тэр|Ter] [дэвтэр|DEV-ter] [хэний|KHEH-nii] [юм|yum] [бэ|beh]?",
+          "id": "Whose notebook is that?",
+          "literal": "that notebook whose thing Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Тэр|Ter] [Болдын|BOL-diin] [дэвтэр|DEV-ter].",
+          "id": "It's Bold's notebook.",
+          "literal": "that Bold's notebook."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Болд|Bold] [хэн|khen] [бэ|beh]?",
+          "id": "Who's Bold?",
+          "literal": "Bold who Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Болд|Bold] [бол|bol] [миний|MI-nii] [оюутан|o-YUU-tan]. [Тэр|Ter] [маргааш|mar-GAASH] [ирнэ|IR-neh].",
+          "id": "Bold is my student. He's coming tomorrow.",
+          "literal": "Bold as-for my student. he tomorrow comes."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Энэ|EH-neh] [хэдэн|KHEH-den] [ном|nom] [бэ|beh]?",
+          "id": "How many books are these?",
+          "literal": "this how-many book Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Гурван|GUR-van] [ном|nom]. [Бүгд|Bügd] [шинэ|SHI-neh].",
+          "id": "Three books. They're all new.",
+          "literal": "three book. all new."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Энэ|EH-neh] [ном|nom] [хэдэн|KHEH-den] [төгрөг|TÖG-rög] [вэ|veh]?",
+          "id": "How many tugriks is this book?",
+          "literal": "this book how-many tugrik Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Мэдэхгүй|MEH-dekh-güi]. [Тэр|Ter] [миний|MI-nii] [ном|nom] [биш|bish], [сургуулийн|sur-GUU-liin] [ном|nom].",
+          "id": "I don't know. It's not my book, it's the school's.",
+          "literal": "know-not. that my book not, school's book."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Ойлголоо|OIL-go-lō]. [Тэгвэл|TEG-vel] [энэ|EH-neh] [бал|bal] [хэний|KHEH-nii] [бэ|beh]?",
+          "id": "I see. Then whose pen is this?",
+          "literal": "understood. then this pen whose Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Тэр|Ter] [чинийх|CHI-niikh] [шүү|shüü]! [Чи|Chi] [сая|sa-YA] [ширээн|shi-RĒN] [дээр|dēr] [тавьсан|TAV'-san].",
+          "id": "It's yours! You just put it on the desk.",
+          "literal": "that yours you-know! you just-now desk top put."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Өө|Öö], [үнэн|Ü-nen] [юм|yum] [байна|BAI-n]! [Уучлаарай|UUCH-laa-rai].",
+          "id": "Oh, that's right! Sorry.",
+          "literal": "oh, true thing is! sorry."
+        }
+      ],
+      "notes": [
+        "**Энэ = this, тэр = that.** Both can work as determiners (*энэ ном* — this book) or as pronouns (*Энэ юу вэ?* — What's this?). ⚠️ Remember that *тэр* also means \"he/she\" — *Тэр багш* can mean \"that teacher\" or \"he/she is a teacher\", and only intonation tells them apart.",
+        "**Юм means \"thing\", but at the end of a sentence it softens.** *Хэний юм бэ?* is literally \"whose thing?\", and *Үнэн юм байна* is literally \"true thing is\" — naturally, \"oh, that's right\". Think of *юм* as English \"actually\" or \"turns out\".",
+        "⚠️ **The possessive suffix -ын / -ийн attaches to the owner, not the thing owned.** *Болд**ын** дэвтэр* — \"Bold**'s** notebook\". The order is exactly like English *'s*: owner first, then the thing — so this one comes easily.",
+        "**Бол marks the topic of the sentence**, like \"as for\". *Болд **бол** миний оюутан* — \"Bold is my student\". It's optional, but it makes a sentence sound tidy when you introduce something for the first time.",
+        "**Биш negates nouns.** *Ном биш* = \"not a book\". ⚠️ Don't use *үгүй* here — *үгүй* is a stand-alone answer (\"no\"), not a negator inside a sentence."
+      ],
+      "grammars": [
+        {
+          "title": "The possessive suffix: -ын, -ийн, -ы, -и, -н",
+          "body": [
+            "Five forms, one meaning: \"of, belonging to\". What decides the form is **the last letter of the owner word** and **its vowel group** — two things you already know from the vowel harmony page at the front."
+          ],
+          "table": {
+            "head": [
+              "Word ends in",
+              "Suffix",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "consonant, back group",
+                "**-ын**",
+                "*Болд* → *Болд**ын***",
+                "Bold's"
+              ],
+              [
+                "consonant, front group",
+                "**-ийн**",
+                "*гэр* → *гэр**ийн***",
+                "the house's"
+              ],
+              [
+                "*-н*",
+                "**-ы / -ий**",
+                "*оюутан* → *оюутн**ы***",
+                "the student's"
+              ],
+              [
+                "long vowel or diphthong",
+                "**-гийн / -гын**",
+                "*эмээ* → *эмээ**гийн***",
+                "grandmother's"
+              ],
+              [
+                "*-ь* or *-и*",
+                "**-йн**",
+                "*морь* → *мор**ийн***",
+                "the horse's"
+              ]
+            ]
+          },
+          "after": [
+            "Don't memorize this table now. All you need to take away is one sentence: **the suffix always sounds like \"-iin\" or \"-in\", and it sticks to the owner.** The exact form will come by itself with use.",
+            "⚠️ For pronouns, the forms are irregular and must be memorized because they're so frequent: *би* → ***миний***, *чи* → ***чиний***, *та* → ***таны***, *тэр* → ***түүний***, *бид* → ***бидний***, *тэд* → ***тэдний***."
+          ]
+        },
+        {
+          "title": "Plurals — and why you rarely need them",
+          "body": [
+            "Mongolian has plural suffixes, but uses them far less than English. If the number is clear from a numeral or from context, the noun **stays singular** — \"three book\", \"many book\"."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Noun form",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*Гурван ном*",
+                "singular",
+                "three books"
+              ],
+              [
+                "*Олон ном*",
+                "singular",
+                "many books"
+              ],
+              [
+                "*Ном**ууд***",
+                "plural",
+                "the books (a particular group)"
+              ],
+              [
+                "*Оюутн**ууд***",
+                "plural",
+                "the students"
+              ],
+              [
+                "*Багш **нар***",
+                "plural (people)",
+                "the teachers"
+              ]
+            ]
+          },
+          "after": [
+            "There are four suffixes — *-ууд, -үүд, -ууд, -нууд* following vowel harmony — plus a separate word, ***нар***, used only for **people**: *багш нар* (teachers), *эмч нар* (doctors), *та нар* (you all).",
+            "**The practical rule: don't use a plural suffix until you're sure you really need one.** English speakers almost always make the mistake of adding too many, not too few. *Гурван номууд* is wrong; *гурван ном* is right."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Things around you",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*ном*",
+              "*nom*",
+              "book"
+            ],
+            [
+              "*дэвтэр*",
+              "*DEV-ter*",
+              "notebook"
+            ],
+            [
+              "*бал*",
+              "*bal*",
+              "pen"
+            ],
+            [
+              "*харандаа*",
+              "*kha-ran-DAA*",
+              "pencil"
+            ],
+            [
+              "*ширээ*",
+              "*shi-RĒ*",
+              "table, desk"
+            ],
+            [
+              "*сандал*",
+              "*SAN-dal*",
+              "chair"
+            ],
+            [
+              "*цонх*",
+              "*tsonkh*",
+              "window"
+            ],
+            [
+              "*хаалга*",
+              "*KHAAL-ga*",
+              "door"
+            ],
+            [
+              "*цүнх*",
+              "*tsünkh*",
+              "bag"
+            ],
+            [
+              "*утас*",
+              "*u-TAS*",
+              "telephone; thread"
+            ],
+            [
+              "*компьютер*",
+              "*kom-P'YU-ter*",
+              "computer"
+            ],
+            [
+              "*цаас*",
+              "*TSAAS*",
+              "paper"
+            ],
+            [
+              "*ус*",
+              "*us*",
+              "water"
+            ],
+            [
+              "*аяга*",
+              "*a-YA-ga*",
+              "glass, cup"
+            ],
+            [
+              "*түлхүүр*",
+              "*TÜL-khüür*",
+              "key"
+            ],
+            [
+              "*мөнгө*",
+              "*MÖN-gö*",
+              "money"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Утас* means both **telephone** and **thread**, and that's no coincidence: the phone was named after its wire, just as English still says \"on the line\". For a mobile phone, people say *гар утас* — literally \"hand phone\"."
+        },
+        {
+          "type": "kotak",
+          "title": "Three adjectives you can use right away",
+          "items": [
+            "*шинэ* (SHI-neh) — new. *хуучин* (KHUU-chin) — old, used.",
+            "*том* (tom) — big. *жижиг* (JI-jig) — small.",
+            "*сайн* (sain) — good. *муу* (muu) — bad.",
+            "⚠️ Adjectives always stand **before** the noun and never change form: *шинэ ном*, *шинэ ширээ*, *шинэ оюутнууд*. No agreement at all — just like English."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pointing: энэ, тэр, энд, тэнд",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These four words work in pairs, and all of them stand **before** the word they point to. Once you see the pattern, the four become one thing to learn, not four."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Near",
+            "Say it",
+            "Far",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*энэ*",
+              "*EH-neh*",
+              "*тэр*",
+              "*ter*",
+              "this / that"
+            ],
+            [
+              "*энд*",
+              "*end*",
+              "*тэнд*",
+              "*tend*",
+              "here / there"
+            ],
+            [
+              "*ийш*",
+              "*iish*",
+              "*тийш*",
+              "*tiish*",
+              "(to) here / (to) there"
+            ],
+            [
+              "*ингэж*",
+              "*IN-gej*",
+              "*тэгж*",
+              "*tegj*",
+              "like this / like that"
+            ],
+            [
+              "*эдгээр*",
+              "*ed-GĒR*",
+              "*тэдгээр*",
+              "*ted-GĒR*",
+              "all this / all that"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that every \"near\" word starts with **э-** and every \"far\" word starts with **тэ-**. It's a reliable pattern used in a dozen other words. Once you've spotted it, you can guess the meaning of a new word before you look it up."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Answer",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Энэ юу вэ?*",
+              "*Энэ ном.*",
+              "What's this? — It's a book."
+            ],
+            [
+              "*Тэр юу вэ?*",
+              "*Тэр цүнх.*",
+              "What's that? — It's a bag."
+            ],
+            [
+              "*Энэ хэн бэ?*",
+              "*Энэ миний багш.*",
+              "Who's this? — This is my teacher."
+            ],
+            [
+              "*Ном хаана байна вэ?*",
+              "*Ширээн дээр байна.*",
+              "Where's the book? — It's on the table."
+            ],
+            [
+              "*Энэ хэний юм бэ?*",
+              "*Миний юм.*",
+              "Whose is this? — It's mine."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Answering \"whose?\"",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "There are two ways to answer, and Mongolians use both equally often. The second is shorter and more common in casual conversation."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Way",
+            "Form",
+            "Example",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "Full",
+              "owner + thing",
+              "*Миний ном.*",
+              "My book."
+            ],
+            [
+              "Short",
+              "owner + **-х**",
+              "*Минийх.*",
+              "Mine."
+            ],
+            [
+              "Short",
+              "owner + **-х**",
+              "*Чинийх.*",
+              "Yours (informal)."
+            ],
+            [
+              "Short",
+              "owner + **-х**",
+              "*Таных.*",
+              "Yours (formal)."
+            ],
+            [
+              "Short",
+              "owner + **-х**",
+              "*Түүнийх.*",
+              "His / Hers."
+            ],
+            [
+              "Short",
+              "name + **-ынх**",
+              "*Болдынх.*",
+              "Bold's."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ The short form with **-х** has one extra use that is very common: it means **\"so-and-so's home/family\"**. *Болдынх* can mean \"Bold's (thing)\" or \"Bold's place\". *Би Болдынх руу явна* = \"I'm going to Bold's\". Exactly like English \"at Bold's\"."
+        },
+        {
+          "type": "kotak",
+          "title": "Ready-made patterns",
+          "items": [
+            "*Энэ хэний юм бэ?* — Whose is this?",
+            "*Энэ минийх.* — It's mine.",
+            "*Энэ миний ном биш.* — This isn't my book.",
+            "*Тэр Сарнайнх.* — That's Sarnai's.",
+            "*Мэдэхгүй, хэний ч биш байх.* — I don't know, maybe nobody's."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "mn": "энэ",
+      "baca": "EH-neh",
+      "en": "this"
+    },
+    {
+      "mn": "тэр",
+      "baca": "ter",
+      "en": "that; he, she"
+    },
+    {
+      "mn": "энд",
+      "baca": "end",
+      "en": "here"
+    },
+    {
+      "mn": "тэнд",
+      "baca": "tend",
+      "en": "there"
+    },
+    {
+      "mn": "юу",
+      "baca": "yuu",
+      "en": "what"
+    },
+    {
+      "mn": "юм",
+      "baca": "yum",
+      "en": "thing; actually, turns out"
+    },
+    {
+      "mn": "хэний",
+      "baca": "KHEH-nii",
+      "en": "whose"
+    },
+    {
+      "mn": "биш",
+      "baca": "bish",
+      "en": "⚠️ not (negates nouns)"
+    },
+    {
+      "mn": "бол",
+      "baca": "bol",
+      "en": "as for (topic marker)"
+    },
+    {
+      "mn": "ном",
+      "baca": "nom",
+      "en": "book"
+    },
+    {
+      "mn": "дэвтэр",
+      "baca": "DEV-ter",
+      "en": "notebook"
+    },
+    {
+      "mn": "бал",
+      "baca": "bal",
+      "en": "pen"
+    },
+    {
+      "mn": "ширээ",
+      "baca": "shi-RĒ",
+      "en": "table, desk"
+    },
+    {
+      "mn": "цүнх",
+      "baca": "tsünkh",
+      "en": "bag"
+    },
+    {
+      "mn": "мөнгө",
+      "baca": "MÖN-gö",
+      "en": "money"
+    },
+    {
+      "mn": "шинэ",
+      "baca": "SHI-neh",
+      "en": "new"
+    },
+    {
+      "mn": "хуучин",
+      "baca": "KHUU-chin",
+      "en": "old, used"
+    },
+    {
+      "mn": "том",
+      "baca": "tom",
+      "en": "big"
+    },
+    {
+      "mn": "жижиг",
+      "baca": "JI-jig",
+      "en": "small"
+    },
+    {
+      "mn": "ойлголоо",
+      "baca": "OIL-go-lō",
+      "en": "I see, I understand"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mongolian.",
+      "items": [
+        "What's this?",
+        "This is a new book.",
+        "That's not my bag.",
+        "Whose notebook is that?",
+        "It's Bold's.",
+        "This table is big."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right possessive form.",
+      "items": [
+        "Энэ ____ ном. (би)",
+        "Тэр ____ цүнх. (чи)",
+        "Энэ ____ дэвтэр. (Болд)",
+        "Тэр ____ бал. (та)",
+        "Энэ ____ ширээ. (тэр)",
+        "Тэр ____ сандал. (бид)"
+      ]
+    },
+    {
+      "prompt": "Change into the short form with -х.",
+      "items": [
+        "миний ном",
+        "чиний цүнх",
+        "таны бал",
+        "түүний дэвтэр",
+        "Болдын ширээ",
+        "Сарнайн ном"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "юу / энэ / вэ",
+        "ном / энэ / шинэ",
+        "цүнх / биш / миний / тэр",
+        "хэний / бэ / дэвтэр / тэр / юм",
+        "ном / гурван / энэ"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Энэ юу вэ? — Энэ шинэ ном. — Тэр миний цүнх биш. — Тэр дэвтэр хэний юм бэ? — Тэр Болдынх. — Энэ ширээ том.",
+    "1": "миний — чиний — Болдын — таны — түүний — бидний",
+    "2": "минийх — чинийх — таных — түүнийх — Болдынх — Сарнайнх",
+    "3": "Энэ юу вэ? — Энэ шинэ ном. — Тэр миний цүнх биш. — Тэр дэвтэр хэний юм бэ? — Энэ гурван ном."
+  }
+}

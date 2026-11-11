@@ -1,0 +1,657 @@
+{
+  "title": "The body, feeling sick, and going to the pharmacy",
+  "title_target": "ບໍ່ສະບາຍ — Bàw sa-baai",
+  "goal": "Say which part of your body hurts, describe your symptoms, buy medicine, and ask for help in an emergency — a unit you hopefully won't need, but should have.",
+  "bekal": [
+    "names of body parts",
+    "ເຈັບ for pain in one part",
+    "ບໍ່ສະບາຍ for feeling sick in general",
+    "symptoms: ໄຂ້ ໄອ ຮາກ ຖອກທ້ອງ",
+    "buying medicine and asking for help"
+  ],
+  "dialogs": [
+    {
+      "title": "ບົດສົນທະນາ — At the pharmacy near the office",
+      "intro": "Budi has felt unwell since last night. Notice that Lao complaints are always built \"hurt + body part\", not \"I have pain in…\".",
+      "lines": [
+        {
+          "speaker": "ຄົນຂາຍຢາ:",
+          "text": "[ສະບາຍດີ|Sa-baai-dii] [ເປັນ|Pen][ຫຍັງ|nyǎng]",
+          "id": "Hello. What's wrong?",
+          "literal": "well-good. be — what?"
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ຂ້ອຍ|Khàwy][ບໍ່|bàw][ສະບາຍ|sa-baai] [ເຈັບ|Jép][ຫົວ|hǔa][ແລະ|lae][ເຈັບ|jép][ຄໍ|kháw]",
+          "id": "I'm not feeling well. I have a headache and a sore throat.",
+          "literal": "I — not — well. hurt — head — and — hurt — neck."
+        },
+        {
+          "speaker": "ຄົນຂາຍຢາ:",
+          "text": "[ມີ|Míi][ໄຂ້|khài][ບໍ່|bàw] [ໄອ|Ai][ບໍ່|bàw]",
+          "id": "Any fever? A cough?",
+          "literal": "have — fever — (question)? cough — (question)?"
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ມີ|Míi][ໄຂ້|khài][ໜ້ອຍ|nàwy][ໜຶ່ງ|nʉ̀ng] [ໄອ|Ai][ແຕ່|tèe][ຕອນ|tawn][ກາງຄືນ|kaang-khʉ́ʉn]",
+          "id": "A slight fever. I only cough at night.",
+          "literal": "have — fever — little — one. cough — but — time — night."
+        },
+        {
+          "speaker": "ຄົນຂາຍຢາ:",
+          "text": "[ເປັນ|Pen][ມາ|maa][ຈັກ|ják][ມື້|mʉ̂ʉ][ແລ້ວ|lèeo]",
+          "id": "How many days has it been like this?",
+          "literal": "be — come — how-many — day — already?"
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ສອງ|Sǎwng][ມື້|mʉ̂ʉ][ແລ້ວ|lèeo] [ມື້ວານນີ້|Mʉ̂ʉ-waan-nîi][ຍັງ|nyáng][ບໍ່|bàw][ຮ້າຍແຮງ|hâai-héeng] [ມື້ນີ້|Mʉ̂ʉ-nîi][ຮ້າຍ|hâai][ກວ່າ|kwàa]",
+          "id": "Two days now. Yesterday it wasn't bad yet. Today it's worse.",
+          "literal": "two — day — already. day — yesterday — still — not — serious. day — this — bad — more."
+        },
+        {
+          "speaker": "ຄົນຂາຍຢາ:",
+          "text": "[ເອົາ|Ao][ຢາ|yaa][ນີ້|nîi] [ກິນ|Kin][ເທື່ອ|thʉ̀a][ລະ|la][ສອງ|sǎwng][ເມັດ|mét] [ມື້|Mʉ̂ʉ][ລະ|la][ສາມ|sǎam][ເທື່ອ|thʉ̀a] [ຫຼັງ|Lǎng][ອາຫານ|aa-hǎan]",
+          "id": "Take this medicine. Two tablets each time, three times a day, after meals.",
+          "literal": "take — medicine — this. eat — time — per — two — tablet. day — per — three — time. after — food."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ຢາ|Yaa][ນີ້|nîi][ເຮັດ|hét][ໃຫ້|hài][ເຫງົາ|ngǎo][ນອນ|náwn][ບໍ່|bàw] [ຂ້ອຍ|Khàwy][ຕ້ອງ|tâwng][ເຮັດ|hét][ວຽກ|wîak]",
+          "id": "Will this medicine make me drowsy? I have to work.",
+          "literal": "medicine — this — make — give — sleepy — sleep — (question)? I — must — do — work."
+        },
+        {
+          "speaker": "ຄົນຂາຍຢາ:",
+          "text": "[ບໍ່|Bàw][ເຫງົາ|ngǎo] [ແຕ່|Tèe][ຕ້ອງ|tâwng][ດື່ມ|dʉ̀ʉm][ນ້ຳ|nâm][ຫຼາຍໆ|lǎai-lǎai] [ແລະ|Lae][ພັກ|phak][ໃຫ້|hài][ພຽງພໍ|phíang-phaw]",
+          "id": "No drowsiness. But drink plenty of water and get enough rest.",
+          "literal": "not — sleepy. but — must — drink — water — much-much. and — rest — so-that — enough."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ຖ້າ|Thàa][ສາມ|sǎam][ມື້|mʉ̂ʉ][ບໍ່|bàw][ດີ|dii][ຂຶ້ນ|khʉ̂n] [ຄວນ|khuan][ເຮັດ|hét][ແນວ|neeo][ໃດ|dai]",
+          "id": "If it doesn't get better in three days, what should I do?",
+          "literal": "if — three — day — not — good — up — should — do — way — which?"
+        },
+        {
+          "speaker": "ຄົນຂາຍຢາ:",
+          "text": "[ໄປ|Pai][ຫາ|hǎa][ໝໍ|mǎw][ຢູ່|yùu][ໂຮງໝໍ|hoong-mǎw] [ຢ່າ|Yàa][ຖ້າ|thàa][ດົນ|dón][ເດີ້|dòe]",
+          "id": "Go see a doctor at the hospital. Don't wait too long, okay?",
+          "literal": "go — seek — doctor — at — hospital. don't — wait — long — (friendly particle)."
+        }
+      ],
+      "notes": [
+        "**ເຈັບ jép = \"hurt\" in one part of the body, built as ເຈັບ + body part.** *ເຈັບຫົວ* (headache), *ເຈັບທ້ອງ* (stomachache), *ເຈັບແຂ້ວ* (toothache). ⚠️ Notice the order: the word for pain comes **first** — the reverse of English \"headache\".",
+        "**ບໍ່ສະບາຍ bàw sa-baai = \"not feeling well\" in general.** Remember *ສະບາຍດີ* from unit 1 — this is its opposite. Use it to open, then give details with *ເຈັບ…*.",
+        "**ເປັນຫຍັງ pen nyǎng has two meanings, and both appear in this unit.** As a question to someone who looks ill, it means \"what's wrong?\". In other sentences it means \"why\". Tone of voice and the situation tell them apart.",
+        "**ເທື່ອລະ… thʉ̀a la… = \"… each time\", ມື້ລະ… mʉ̂ʉ la… = \"… a day\".** The word *ລະ la* means \"per, each\": *ຄົນລະ* (per person), *ອັນລະ* (per item), *ມື້ລະສາມເທື່ອ* (three times a day). You need this pattern to understand dosage instructions.",
+        "**ດີຂຶ້ນ dii khʉ̂n = \"get better\", literally \"good up\".** The word *ຂຶ້ນ khʉ̂n* (go up) after an adjective marks an upward change: *ຮ້ອນຂຶ້ນ* (getting hotter), *ແພງຂຶ້ນ* (prices are going up). The opposite is *ລົງ lóng*: *ຖືກລົງ* (getting cheaper).",
+        "**ຢ່າ yàa = \"don't\", and it goes before the verb.** *ຢ່າໄປ* (don't go), *ຢ່າລືມ* (don't forget), *ຢ່າຖ້າດົນ* (don't wait long). It's the only form of prohibition you need at A1.",
+        "**ໃຫ້ hài means \"give\" and also \"so that, make\".** *ພັກໃຫ້ພຽງພໍ* (rest so that it's enough), *ເຮັດໃຫ້ເຫງົານອນ* (make you drowsy). This second use comes up constantly; English \"make\" or \"so that\" covers it only partly.",
+        "**ຮ້າຍແຮງ hâai-héeng = \"serious, severe\".** For mild symptoms, people say *ບໍ່ຮ້າຍແຮງ* or *ໜ້ອຍໜຶ່ງ*. On its own, *ຮ້າຍ hâai* means \"bad, wicked\".",
+        "**About getting treatment in Laos.** Pharmacies — *ຮ້ານຂາຍຢາ hâan khǎai yaa* — sell many medicines without a prescription, and the staff can usually give basic advice. For anything serious, the best hospitals are in Vientiane, and many foreigners cross to Nong Khai, Thailand, less than an hour away."
+      ],
+      "grammars": [
+        {
+          "title": "Body parts",
+          "table": {
+            "head": [
+              "Lao",
+              "Say it",
+              "English",
+              "Lao",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "ຫົວ",
+                "*hǔa*",
+                "head",
+                "ໜ້າ",
+                "*nâa*",
+                "face"
+              ],
+              [
+                "ຕາ",
+                "*taa*",
+                "eye",
+                "ຫູ",
+                "*hǔu*",
+                "ear"
+              ],
+              [
+                "ດັງ",
+                "*dang*",
+                "nose",
+                "ປາກ",
+                "*pàak*",
+                "mouth"
+              ],
+              [
+                "ແຂ້ວ",
+                "*khêeo*",
+                "tooth",
+                "ລີ້ນ",
+                "*lîn*",
+                "tongue"
+              ],
+              [
+                "ຄໍ",
+                "*kháw*",
+                "neck, throat",
+                "ບ່າ",
+                "*bàa*",
+                "shoulder"
+              ],
+              [
+                "ແຂນ",
+                "*khěen*",
+                "arm",
+                "ມື",
+                "*mʉʉ*",
+                "hand"
+              ],
+              [
+                "ນິ້ວ",
+                "*nîu*",
+                "finger",
+                "ຫຼັງ",
+                "*lǎng*",
+                "back"
+              ],
+              [
+                "ທ້ອງ",
+                "*thâwng*",
+                "stomach, belly",
+                "ຫົວໃຈ",
+                "*hǔa-jai*",
+                "heart"
+              ],
+              [
+                "ຂາ",
+                "*khǎa*",
+                "leg",
+                "ຕີນ",
+                "*tiin*",
+                "foot"
+              ],
+              [
+                "ເຂົ່າ",
+                "*khào*",
+                "knee",
+                "ຜິວໜັງ",
+                "*phǐu-nǎng*",
+                "skin"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Lao distinguishes *ຂາ khǎa* (leg) from *ຕີນ tiin* (foot), just as it distinguishes *ແຂນ* (arm) from *ມື* (hand). If you twist your ankle, what hurts is your *ຕີນ*, not your *ຂາ*.",
+            "⚠️ Pointing at something with your **foot** or putting your feet on a table is a serious breach of manners in Laos. The head, on the other hand, is considered the most sacred part — don't touch other people's heads, including children's."
+          ]
+        },
+        {
+          "title": "Symptoms and complaints",
+          "table": {
+            "head": [
+              "Lao",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ບໍ່ສະບາຍ",
+                "*bàw sa-baai*",
+                "not feeling well"
+              ],
+              [
+                "ເປັນໄຂ້",
+                "*pen khài*",
+                "have a fever"
+              ],
+              [
+                "ໄອ",
+                "*ai*",
+                "cough"
+              ],
+              [
+                "ນ້ຳມູກໄຫຼ",
+                "*nâm-mûuk lǎi*",
+                "runny nose"
+              ],
+              [
+                "ເຈັບຄໍ",
+                "*jép kháw*",
+                "sore throat"
+              ],
+              [
+                "ຮາກ",
+                "*hâak*",
+                "vomit"
+              ],
+              [
+                "ຖອກທ້ອງ",
+                "*thàwk thâwng*",
+                "diarrhea"
+              ],
+              [
+                "ວິນຫົວ",
+                "*wín hǔa*",
+                "dizzy"
+              ],
+              [
+                "ເມື່ອຍ",
+                "*mʉ̂ay*",
+                "tired, sore"
+              ],
+              [
+                "ນອນບໍ່ຫຼັບ",
+                "*náwn bàw láp*",
+                "can't sleep"
+              ],
+              [
+                "ແພ້ຢາ",
+                "*phêe yaa*",
+                "allergic to medicine"
+              ],
+              [
+                "ຍຸງກັດ",
+                "*nyúng kát*",
+                "bitten by mosquitoes"
+              ]
+            ]
+          },
+          "after": [
+            "**ຖອກທ້ອງ *thàwk thâwng*** is the number-one complaint among newcomers. Prevention is simple: drink bottled water, avoid ice at quiet roadside stalls, and give your stomach time to adjust to Lao fermented seasonings — especially *ປາແດກ paa-dèek*, fermented fish that goes into almost every dish."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "At the pharmacy and the doctor's",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Lao",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ຂ້ອຍບໍ່ສະບາຍ",
+              "*khàwy bàw sa-baai*",
+              "I'm not feeling well"
+            ],
+            [
+              "ເຈັບ…ຫຼາຍ",
+              "*jép… lǎai*",
+              "my … really hurts"
+            ],
+            [
+              "ເປັນມາສອງມື້ແລ້ວ",
+              "*pen maa sǎwng mʉ̂ʉ lèeo*",
+              "it's been like this for two days"
+            ],
+            [
+              "ມີຢາແກ້…ບໍ່",
+              "*míi yaa kêe… bàw*",
+              "do you have medicine for…?"
+            ],
+            [
+              "ກິນແນວໃດ",
+              "*kin neeo-dai*",
+              "how do I take it?"
+            ],
+            [
+              "ມື້ລະຈັກເທື່ອ",
+              "*mʉ̂ʉ la ják thʉ̀a*",
+              "how many times a day?"
+            ],
+            [
+              "ກ່ອນ / ຫຼັງອາຫານ",
+              "*kàwn / lǎng aa-hǎan*",
+              "before / after meals"
+            ],
+            [
+              "ຂ້ອຍແພ້ຢາ…",
+              "*khàwy phêe yaa…*",
+              "I'm allergic to…"
+            ],
+            [
+              "ໂຮງໝໍຢູ່ໃສ",
+              "*hoong-mǎw yùu sǎi*",
+              "where's the hospital?"
+            ],
+            [
+              "ຊ່ວຍແດ່",
+              "*sùay dèe*",
+              "help!"
+            ],
+            [
+              "ໂທຫາລົດໂຮງໝໍແດ່",
+              "*thóo hǎa lot hoong-mǎw dèe*",
+              "please call an ambulance"
+            ],
+            [
+              "ຂ້ອຍຕ້ອງໄປຫາໝໍ",
+              "*khàwy tâwng pai hǎa mǎw*",
+              "I need to see a doctor"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**ຢາແກ້ *yaa kêe*** means \"medicine to fix\": *ຢາແກ້ໄຂ້* (fever medicine), *ຢາແກ້ໄອ* (cough medicine), *ຢາແກ້ປວດ* (painkiller), *ຢາແກ້ຖອກທ້ອງ* (diarrhea medicine). On its own, *ແກ້ kêe* means \"fix, solve\"."
+        },
+        {
+          "type": "p",
+          "text": "Save these two sentences on your phone: *ຂ້ອຍແພ້ຢາ… khàwy phêe yaa…* (I'm allergic to …) and *ໂທຫາລົດໂຮງໝໍແດ່ thóo hǎa lot hoong-mǎw dèe* (please call an ambulance). They're exactly the sentences you won't have time to look up when you really need them."
+        }
+      ]
+    },
+    {
+      "title": "Asking how someone is and comforting them",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Lao",
+            "Say it",
+            "Meaning",
+            "When"
+          ],
+          "rows": [
+            [
+              "ເປັນຫຍັງ",
+              "*pen nyǎng*",
+              "what's wrong?",
+              "seeing someone unwell"
+            ],
+            [
+              "ດີຂຶ້ນບໍ່",
+              "*dii khʉ̂n bàw*",
+              "feeling better?",
+              "checking in"
+            ],
+            [
+              "ພັກຜ່ອນເດີ້",
+              "*phak-phàwn dòe*",
+              "get some rest, okay",
+              "ending a conversation"
+            ],
+            [
+              "ດູແລໂຕເອງເດີ້",
+              "*duu-lee tǒo éeng dòe*",
+              "take care of yourself",
+              "saying goodbye"
+            ],
+            [
+              "ຫາຍໄວໆເດີ້",
+              "*hǎai vái-vái dòe*",
+              "get well soon",
+              "to someone sick"
+            ],
+            [
+              "ຢ່າຄິດຫຼາຍ",
+              "*yàa khit lǎai*",
+              "don't worry too much",
+              "comforting"
+            ],
+            [
+              "ບໍ່ເປັນຫຍັງດອກ",
+              "*bàw pen nyǎng dàwk*",
+              "it's nothing, really",
+              "reassuring"
+            ],
+            [
+              "ເປັນຫ່ວງເດີ້",
+              "*pen hùang dòe*",
+              "I'm worried about you",
+              "showing you care"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**ຫາຍ *hǎai*** means \"recover\" and also \"disappear\": *ຫາຍແລ້ວ* (recovered / gone). *ຫາຍໄວໆເດີ້* is the most common way to wish someone well, and you'll hear it every time you sneeze at the office."
+        },
+        {
+          "type": "p",
+          "text": "**ດອກ *dàwk*** at the end of a sentence softens a denial — a bit like \"really\" or \"at all\" in English. *ບໍ່ເປັນຫຍັງດອກ* (it's nothing, really), *ບໍ່ແພງດອກ* (it's not expensive at all). It makes you sound reassuring rather than argumentative."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "lo": "ບໍ່ສະບາຍ",
+      "baca": "bàw sa-baai",
+      "en": "not feeling well"
+    },
+    {
+      "lo": "ເຈັບ",
+      "baca": "jép",
+      "en": "hurt (body part)"
+    },
+    {
+      "lo": "ຫົວ",
+      "baca": "hǔa",
+      "en": "head"
+    },
+    {
+      "lo": "ຄໍ",
+      "baca": "kháw",
+      "en": "neck, throat"
+    },
+    {
+      "lo": "ທ້ອງ",
+      "baca": "thâwng",
+      "en": "stomach, belly"
+    },
+    {
+      "lo": "ແຂ້ວ",
+      "baca": "khêeo",
+      "en": "tooth"
+    },
+    {
+      "lo": "ຕາ",
+      "baca": "taa",
+      "en": "eye"
+    },
+    {
+      "lo": "ຫູ",
+      "baca": "hǔu",
+      "en": "ear"
+    },
+    {
+      "lo": "ດັງ",
+      "baca": "dang",
+      "en": "nose"
+    },
+    {
+      "lo": "ຂາ",
+      "baca": "khǎa",
+      "en": "leg"
+    },
+    {
+      "lo": "ຕີນ",
+      "baca": "tiin",
+      "en": "foot"
+    },
+    {
+      "lo": "ມື",
+      "baca": "mʉʉ",
+      "en": "hand"
+    },
+    {
+      "lo": "ໄຂ້",
+      "baca": "khài",
+      "en": "fever"
+    },
+    {
+      "lo": "ໄອ",
+      "baca": "ai",
+      "en": "cough"
+    },
+    {
+      "lo": "ຮາກ",
+      "baca": "hâak",
+      "en": "vomit"
+    },
+    {
+      "lo": "ຖອກທ້ອງ",
+      "baca": "thàwk thâwng",
+      "en": "diarrhea"
+    },
+    {
+      "lo": "ວິນຫົວ",
+      "baca": "wín hǔa",
+      "en": "dizzy"
+    },
+    {
+      "lo": "ເມື່ອຍ",
+      "baca": "mʉ̂ay",
+      "en": "tired, sore"
+    },
+    {
+      "lo": "ຢາ",
+      "baca": "yaa",
+      "en": "medicine"
+    },
+    {
+      "lo": "ຢາແກ້",
+      "baca": "yaa kêe",
+      "en": "medicine for…"
+    },
+    {
+      "lo": "ເມັດ",
+      "baca": "mét",
+      "en": "tablet (classifier)"
+    },
+    {
+      "lo": "ເທື່ອ",
+      "baca": "thʉ̀a",
+      "en": "time (occurrence)"
+    },
+    {
+      "lo": "ລະ",
+      "baca": "la",
+      "en": "per, each"
+    },
+    {
+      "lo": "ໝໍ",
+      "baca": "mǎw",
+      "en": "doctor"
+    },
+    {
+      "lo": "ໂຮງໝໍ",
+      "baca": "hoong-mǎw",
+      "en": "hospital"
+    },
+    {
+      "lo": "ຮ້ານຂາຍຢາ",
+      "baca": "hâan khǎai yaa",
+      "en": "pharmacy"
+    },
+    {
+      "lo": "ຫາຍ",
+      "baca": "hǎai",
+      "en": "recover; disappear"
+    },
+    {
+      "lo": "ດີຂຶ້ນ",
+      "baca": "dii khʉ̂n",
+      "en": "get better"
+    },
+    {
+      "lo": "ຮ້າຍແຮງ",
+      "baca": "hâai-héeng",
+      "en": "serious, severe"
+    },
+    {
+      "lo": "ຢ່າ",
+      "baca": "yàa",
+      "en": "don't"
+    },
+    {
+      "lo": "ພັກຜ່ອນ",
+      "baca": "phak-phàwn",
+      "en": "rest"
+    },
+    {
+      "lo": "ເຫງົານອນ",
+      "baca": "ngǎo náwn",
+      "en": "sleepy, drowsy"
+    },
+    {
+      "lo": "ແພ້",
+      "baca": "phêe",
+      "en": "be allergic; lose"
+    },
+    {
+      "lo": "ດອກ",
+      "baca": "dàwk",
+      "en": "…really (softener)"
+    },
+    {
+      "lo": "ເປັນຫ່ວງ",
+      "baca": "pen hùang",
+      "en": "worried, concerned"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these complaints in Lao using ເຈັບ + body part.",
+      "items": [
+        "headache",
+        "stomachache",
+        "toothache",
+        "sore throat",
+        "backache"
+      ]
+    },
+    {
+      "prompt": "Fill in with ໄຂ້, ໄອ, ຖອກທ້ອງ, ວິນຫົວ, or ເມື່ອຍ.",
+      "items": [
+        "ຂ້ອຍເປັນ____ ຮ້ອນທັງໂຕ (fever)",
+        "ຂ້ອຍ____ຕອນກາງຄືນ (cough)",
+        "ກິນອາຫານແປກ ແລ້ວ____ (diarrhea)",
+        "ຂ້ອຍ____ ຢາກນັ່ງລົງ (dizzy)",
+        "ເຮັດວຽກໜັກ ຂ້ອຍ____ຫຼາຍ (tired)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ບໍ່ສະບາຍ / ຂ້ອຍ",
+        "ບໍ່ / ໄຂ້ / ມີ",
+        "ເທື່ອ / ມື້ / ສາມ / ລະ",
+        "ອາຫານ / ຫຼັງ / ກິນ",
+        "ດົນ / ຖ້າ / ຢ່າ"
+      ]
+    },
+    {
+      "prompt": "Translate into Lao.",
+      "items": [
+        "I'm not feeling well. I have a headache.",
+        "A slight fever, and I only cough at night.",
+        "It's been like this for two days.",
+        "Do you have medicine for a sore throat?",
+        "How many times a day? Before or after meals?",
+        "If it doesn't get better, I have to see a doctor."
+      ]
+    }
+  ],
+  "answers": [
+    "ເຈັບຫົວ — ເຈັບທ້ອງ — ເຈັບແຂ້ວ — ເຈັບຄໍ — ເຈັບຫຼັງ",
+    "ໄຂ້ — ໄອ — ຖອກທ້ອງ — ວິນຫົວ — ເມື່ອຍ",
+    "ຂ້ອຍບໍ່ສະບາຍ — ມີໄຂ້ບໍ່ — ມື້ລະສາມເທື່ອ — ກິນຫຼັງອາຫານ — ຢ່າຖ້າດົນ",
+    "ຂ້ອຍບໍ່ສະບາຍ ເຈັບຫົວ — ມີໄຂ້ໜ້ອຍໜຶ່ງ ໄອແຕ່ຕອນກາງຄືນ — ເປັນມາສອງມື້ແລ້ວ — ມີຢາແກ້ເຈັບຄໍບໍ່ — ມື້ລະຈັກເທື່ອ ກ່ອນຫຼືຫຼັງອາຫານ — ຖ້າບໍ່ດີຂຶ້ນ ຂ້ອຍຕ້ອງໄປຫາໝໍ"
+  ],
+  "wave": "Review Unit 12: cover the Lao, then buy one item of clothing from start to finish — including asking for another size and about exchanges."
+}

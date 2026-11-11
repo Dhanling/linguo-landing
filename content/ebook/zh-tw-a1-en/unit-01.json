@@ -1,0 +1,539 @@
+{
+  "title": "Hello, what's your name?",
+  "title_target": "你好！你叫什麼名字？",
+  "goal": "Greet people, introduce yourself, and ask someone's name — and meet Mandarin's first surprise: a name is not linked with the word \"is\".",
+  "bekal": [
+    "greet people and say goodbye appropriately, formally or casually",
+    "give your name with 叫 and your surname with 姓",
+    "use 不好意思 — the one phrase that gets you out of anything in Taiwan"
+  ],
+  "dialogs": [
+    {
+      "title": "對話 — 第一次見面",
+      "intro": "Budi, an exchange student from Indonesia, has just arrived at his university in Taipei. Outside the classroom he runs into a female student.",
+      "lines": [
+        {
+          "speaker": "小美:",
+          "text": "[你好|Nǐ hǎo]！",
+          "id": "Hello!",
+          "literal": "you — good."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[你好|Nǐ hǎo]！[我叫|Wǒ jiào][布迪|Bùdí]。",
+          "id": "Hello! My name is Budi.",
+          "literal": "you — good. I — am called — Budi."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[我姓|Wǒ xìng][林|Lín]，[叫|jiào][林小美|Lín Xiǎoměi]。",
+          "id": "My surname is Lin; my name is Lin Xiaomei.",
+          "literal": "I — am surnamed — Lin, am called — Lin Xiaomei."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[很高興|Hěn gāoxìng][認識你|rènshì nǐ]。",
+          "id": "Nice to meet you.",
+          "literal": "very — happy — know — you."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[我也是|Wǒ yě shì]。[你是|Nǐ shì][新來的|xīn lái de][嗎|ma]？",
+          "id": "Me too. Are you new here?",
+          "literal": "I — also — am. you — are — newly — come — one — (question)?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[對|Duì]，[我是|wǒ shì][印尼人|Yìnní rén]。",
+          "id": "Yes, I'm Indonesian.",
+          "literal": "right, I — am — Indonesia — person."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[哇|Wā]！[你的|Nǐ de][中文|Zhōngwén][很好|hěn hǎo][耶|ye]！",
+          "id": "Wow! Your Chinese is really good!",
+          "literal": "wow! you — 's — Chinese — very — good — (wow)!"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[哪裡|Nǎlǐ][哪裡|nǎlǐ]，[我|wǒ][只會|zhǐ huì][一點點|yìdiǎndiǎn]。",
+          "id": "Oh, not at all — I only know a tiny bit.",
+          "literal": "where — where, I — only — can — a-little-little."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[不好意思|Bù hǎoyìsi]，[你|nǐ][叫|jiào][什麼|shénme][名字|míngzi]？",
+          "id": "Sorry, what was your name again?",
+          "literal": "not — good — meaning, you — are called — what — name?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[布迪|Bùdí]。[B-U-D-I|B-U-D-I]。",
+          "id": "Budi. B-U-D-I.",
+          "literal": "Budi. B-U-D-I."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[布迪|Bùdí]。[好|Hǎo]，[我記住了|wǒ jìzhù le]。",
+          "id": "Budi. OK, got it.",
+          "literal": "Budi. good, I — remember-firmly — (done)."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[謝謝|Xièxie]，[林同學|Lín tóngxué]。",
+          "id": "Thank you, Lin.",
+          "literal": "thank thank, Lin — fellow-student."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[叫我|Jiào wǒ][小美|Xiǎoměi][就好|jiù hǎo]！",
+          "id": "Just call me Xiaomei!",
+          "literal": "call — me — Xiaomei — then — fine!"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[好|Hǎo]，[小美|Xiǎoměi]。[明天見|Míngtiān jiàn]！",
+          "id": "OK, Xiaomei. See you tomorrow!",
+          "literal": "good, Xiaomei. tomorrow — see!"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[明天見|Míngtiān jiàn]！[掰掰|Bāibāi]！",
+          "id": "See you tomorrow! Bye!",
+          "literal": "tomorrow — see! bye-bye!"
+        }
+      ],
+      "notes": [
+        "⚠️ **你好 is not \"good morning\" and not \"how are you\".** Literally it is \"you good\", and it works exactly like \"hello\" — any time, day or night. The reply is the same word back: *你好*.",
+        "**哪裡哪裡 is the Taiwanese way to deflect a compliment.** Literally \"where, where\" — meaning \"oh no, I'm not that good\". Accepting praise with a plain *謝謝* can sound a little smug; brushing it off first is the polite habit.",
+        "**耶 (*ye*) at the end of a sentence is very Taiwanese.** It adds a sense of pleasant surprise or admiration — roughly \"wow\" or \"really!\" in English. You'll hear it dozens of times a day in Taipei.",
+        "**掰掰 (*bāibāi*) is \"bye-bye\" written in characters.** In Taiwan it is far more common than 再見 (*zàijiàn*) in everyday conversation; 再見 feels slightly more formal.",
+        "⚠️ **同學 (*tóngxué*) means \"classmate\", but it is also a form of address** between students, combined with the surname: 林同學. Just like 老師 for teachers and 先生/小姐 for people in general."
+      ],
+      "grammars": [
+        {
+          "title": "叫 and 姓: names don't take 是",
+          "body": [
+            "English says \"my name is Budi\" — a noun (\"name\") linked by \"is\". Mandarin uses a **verb** instead, and it has two different verbs depending on whether you are giving your given name or your surname."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Pīnyīn",
+              "Literally",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "我**叫**布迪。",
+                "Wǒ jiào Bùdí.",
+                "I am-called Budi",
+                "My name is Budi."
+              ],
+              [
+                "我**姓**林。",
+                "Wǒ xìng Lín.",
+                "I am-surnamed Lin",
+                "My surname is Lin."
+              ],
+              [
+                "你**叫**什麼名字？",
+                "Nǐ jiào shénme míngzi?",
+                "you are-called what name",
+                "What's your name?"
+              ],
+              [
+                "你**貴姓**？",
+                "Nǐ guìxìng?",
+                "you noble-surname",
+                "May I ask your surname? (polite)"
+              ],
+              [
+                "他**叫**小美。",
+                "Tā jiào Xiǎoměi.",
+                "she is-called Xiaomei",
+                "Her name is Xiaomei."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **我是布迪 is also correct**, but it means something slightly different: \"I *am* Budi\" — used when introducing yourself on stage or confirming who you are. For an ordinary introduction, 我叫 sounds more natural.",
+            "⚠️ **Never say 我是姓林.** 姓 is already a verb; putting 是 in front is like saying \"I am am-surnamed Lin\".",
+            "**貴姓 is the polite form**, used with older people, customers, or on the office phone. The answer is not 我貴姓林 but **敝姓林** (*bì xìng Lín*, \"my humble surname is Lin\") or simply **我姓林**."
+          ]
+        },
+        {
+          "title": "Chinese names: surname first, then given name",
+          "body": [
+            "**林小美**: 林 is the surname, 小美 the given name. The order is the reverse of Western habit and is never flipped, not even when written in Latin letters."
+          ],
+          "table": {
+            "head": [
+              "Full name",
+              "Surname",
+              "Given name",
+              "Nickname"
+            ],
+            "rows": [
+              [
+                "**林**小美",
+                "林 Lín",
+                "小美 Xiǎoměi",
+                "小美"
+              ],
+              [
+                "**陳**大文",
+                "陳 Chén",
+                "大文 Dàwén",
+                "大文 / 阿文"
+              ],
+              [
+                "**王**建國",
+                "王 Wáng",
+                "建國 Jiànguó",
+                "建國"
+              ],
+              [
+                "**李**美玲",
+                "李 Lǐ",
+                "美玲 Měilíng",
+                "美玲 / 阿玲"
+              ]
+            ]
+          },
+          "after": [
+            "The five most common surnames in Taiwan: **陳** (Chén), **林** (Lín), **黃** (Huáng), **張** (Zhāng), **李** (Lǐ). One in ten Taiwanese is surnamed 陳.",
+            "⚠️ **Calling someone by their bare surname sounds rude.** The surname always comes with something: 林小姐 (Miss Lin), 林老師 (Teacher Lin), 林同學 (classmate Lin), or 小林 (little Lin, friendly). The given name alone is used only by family and close friends.",
+            "**阿 (*ā*) before the last syllable of a name is a typically Taiwanese term of endearment** — inherited from Hokkien. 阿文, 阿明, 阿美. It sounds warm and down-to-earth in the best sense."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Greetings and goodbyes",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "English",
+            "When"
+          ],
+          "rows": [
+            [
+              "**你好**",
+              "nǐ hǎo",
+              "Hello",
+              "Any time, to anyone. The safest choice."
+            ],
+            [
+              "**您好**",
+              "nín hǎo",
+              "Hello (polite)",
+              "To elders, bosses, customers."
+            ],
+            [
+              "**大家好**",
+              "dàjiā hǎo",
+              "Hello, everyone",
+              "To a group of people."
+            ],
+            [
+              "**早安 / 早**",
+              "zǎo'ān / zǎo",
+              "Good morning",
+              "Until about ten o'clock."
+            ],
+            [
+              "**午安**",
+              "wǔ'ān",
+              "Good afternoon",
+              "⚠️ A bit formal; in daily life people still say 你好."
+            ],
+            [
+              "**晚安**",
+              "wǎn'ān",
+              "Good night",
+              "⚠️ Only when parting for the night, never as a greeting."
+            ],
+            [
+              "**再見**",
+              "zàijiàn",
+              "Goodbye",
+              "A bit formal. Literally \"see again\"."
+            ],
+            [
+              "**掰掰**",
+              "bāibāi",
+              "Bye",
+              "The everyday favorite."
+            ],
+            [
+              "**明天見**",
+              "míngtiān jiàn",
+              "See you tomorrow",
+              "Swap 明天 for any time word."
+            ],
+            [
+              "**慢走**",
+              "màn zǒu",
+              "Take care (on your way)",
+              "Said by the one staying to the one leaving."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ The last two lines **are not interchangeable**. *慢走* (literally \"walk slowly\") is said by a host or shopkeeper to a departing guest; the one leaving answers *謝謝* or *再見*. It works like \"take care\" from the host and \"bye, thanks\" from the guest."
+        }
+      ]
+    },
+    {
+      "title": "不好意思: the most useful phrase in Taiwan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "If you could take only one phrase from this unit, take **不好意思** (*bù hǎoyìsi*). Literally \"not-good meaning\" — and Taiwanese people use it for almost every social situation."
+        },
+        {
+          "type": "kotak",
+          "title": "Five jobs of 不好意思",
+          "items": [
+            "**Excuse me, coming through** — squeezing out of a crowded train.",
+            "**Excuse me, may I ask** — before asking a stranger for directions.",
+            "**Calling the waiter** — in a restaurant, don't wave; just say *不好意思*.",
+            "**A light apology** — bumping into someone, arriving five minutes late, causing a bother.",
+            "**Saying no politely** — *不好意思，我今天不行。* \"Sorry, I can't make it today.\""
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ For a **real** wrong — breaking something, hurting someone's feelings, breaking a promise — 不好意思 is too light. Use **對不起** (*duìbùqǐ*, \"can't face you\"). Telling the two apart is one of the quickest signs that someone actually lives in Taiwan rather than just learning from a book."
+        }
+      ]
+    },
+    {
+      "title": "Ten lifesaving sentences for beginners",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "English"
+          ],
+          "rows": [
+            [
+              "**謝謝**",
+              "xièxie",
+              "Thank you."
+            ],
+            [
+              "**不客氣**",
+              "bú kèqì",
+              "You're welcome. (literally: don't be a guest)"
+            ],
+            [
+              "**對不起**",
+              "duìbùqǐ",
+              "I'm sorry. (a real apology)"
+            ],
+            [
+              "**沒關係**",
+              "méi guānxi",
+              "That's OK."
+            ],
+            [
+              "**請問…**",
+              "qǐngwèn…",
+              "Excuse me, may I ask…"
+            ],
+            [
+              "**我不懂**",
+              "wǒ bù dǒng",
+              "I don't understand."
+            ],
+            [
+              "**我不知道**",
+              "wǒ bù zhīdào",
+              "I don't know."
+            ],
+            [
+              "**請再說一次**",
+              "qǐng zài shuō yí cì",
+              "Please say that again."
+            ],
+            [
+              "**請說慢一點**",
+              "qǐng shuō màn yìdiǎn",
+              "Please speak more slowly."
+            ],
+            [
+              "**這個中文怎麼說？**",
+              "zhè ge Zhōngwén zěnme shuō?",
+              "How do you say this in Chinese?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Learn the last sentence today. It turns everyone you meet into a teacher and everything around you into a flashcard. Point at the thing, say the sentence, listen to the answer, repeat it out loud. That is one full learning loop in ten seconds."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "你好",
+      "baca": "nǐ hǎo",
+      "en": "hello"
+    },
+    {
+      "zh": "您",
+      "baca": "nín",
+      "en": "you (polite)"
+    },
+    {
+      "zh": "我",
+      "baca": "wǒ",
+      "en": "I; me"
+    },
+    {
+      "zh": "你",
+      "baca": "nǐ",
+      "en": "you"
+    },
+    {
+      "zh": "他 / 她",
+      "baca": "tā",
+      "en": "he / she"
+    },
+    {
+      "zh": "叫",
+      "baca": "jiào",
+      "en": "to be called; to call"
+    },
+    {
+      "zh": "姓",
+      "baca": "xìng",
+      "en": "to have the surname"
+    },
+    {
+      "zh": "名字",
+      "baca": "míngzi",
+      "en": "name"
+    },
+    {
+      "zh": "什麼",
+      "baca": "shénme",
+      "en": "what"
+    },
+    {
+      "zh": "很",
+      "baca": "hěn",
+      "en": "very (⚠️ see unit 14)"
+    },
+    {
+      "zh": "高興",
+      "baca": "gāoxìng",
+      "en": "happy, glad"
+    },
+    {
+      "zh": "認識",
+      "baca": "rènshì",
+      "en": "to know (a person), to meet"
+    },
+    {
+      "zh": "也",
+      "baca": "yě",
+      "en": "also, too"
+    },
+    {
+      "zh": "對",
+      "baca": "duì",
+      "en": "right, correct"
+    },
+    {
+      "zh": "謝謝",
+      "baca": "xièxie",
+      "en": "thank you"
+    },
+    {
+      "zh": "不好意思",
+      "baca": "bù hǎoyìsi",
+      "en": "⚠️ excuse me; sorry (light)"
+    },
+    {
+      "zh": "對不起",
+      "baca": "duìbùqǐ",
+      "en": "sorry (a real apology)"
+    },
+    {
+      "zh": "再見",
+      "baca": "zàijiàn",
+      "en": "goodbye"
+    },
+    {
+      "zh": "掰掰",
+      "baca": "bāibāi",
+      "en": "bye (everyday)"
+    },
+    {
+      "zh": "同學",
+      "baca": "tóngxué",
+      "en": "classmate; form of address between students"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mandarin.",
+      "items": [
+        "Hello! My name is Budi.",
+        "My surname is Lin.",
+        "What's your name?",
+        "Nice to meet you.",
+        "Thank you!",
+        "See you tomorrow!"
+      ]
+    },
+    {
+      "prompt": "Fill in with 叫 or 姓.",
+      "items": [
+        "我 ____ 布迪。",
+        "她 ____ 林。",
+        "你 ____ 什麼名字？",
+        "我 ____ 陳，____ 陳大文。",
+        "老師 ____ 王。"
+      ]
+    },
+    {
+      "prompt": "Choose the right expression: 不好意思, 對不起, 謝謝, 不客氣, or 沒關係.",
+      "items": [
+        "You want to ask a stranger for directions: ____",
+        "You broke your friend's glass: ____",
+        "Your friend says 謝謝 to you: ____",
+        "Your friend apologizes for being late: ____",
+        "You want to call the waiter in a restaurant: ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "我 / 布迪 / 叫",
+        "名字 / 你 / 什麼 / 叫",
+        "認識 / 很 / 你 / 高興",
+        "小美 / 就好 / 我 / 叫",
+        "見 / 明天"
+      ]
+    }
+  ],
+  "answers": [
+    "你好！我叫布迪。 — 我姓林。 — 你叫什麼名字？ — 很高興認識你。 — 謝謝！ — 明天見！",
+    "叫 — 姓 — 叫 — 姓、叫 — 姓",
+    "不好意思 — 對不起 — 不客氣 — 沒關係 — 不好意思",
+    "我叫布迪。 — 你叫什麼名字？ — 很高興認識你。 — 叫我小美就好。 — 明天見。"
+  ]
+}

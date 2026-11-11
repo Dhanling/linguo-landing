@@ -1,0 +1,886 @@
+{
+  "title": "Body, illness, and the doctor",
+  "title_target": "邊度唔舒服呀？ — Bin1 dou6 m4 syu1 fuk6 aa3?",
+  "goal": "Name body parts and symptoms, talk to a doctor and a pharmacist, give advice with 應該, and forbid things with 唔好.",
+  "bekal": [
+    "name body parts and say what hurts with 痛",
+    "answer a doctor's questions about symptoms and how long",
+    "give advice with 應該 and 最好",
+    "forbid things with 唔好 and 唔可以",
+    "buy medicine at a 藥房"
+  ],
+  "dialogs": [
+    {
+      "title": "對話 1 — At the clinic",
+      "intro": "Andi goes to a clinic with a fever. A Hong Kong doctor's questions almost always come in the same order: what hurts, since when, other symptoms, allergies.",
+      "lines": [
+        {
+          "speaker": "醫生:",
+          "text": "[邊度唔舒服呀|Bin1 dou6 m4 syu1 fuk6 aa3]？",
+          "id": "What seems to be the problem?",
+          "literal": "which — place — not — comfortable — huh."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[我頭痛|Ngo5 tau4 tung3]，[仲有啲發燒|zung6 jau5 di1 faat3 siu1]。",
+          "id": "I have a headache, and a bit of a fever.",
+          "literal": "I — head — hurt, also — have — a-bit — emit — heat."
+        },
+        {
+          "speaker": "醫生:",
+          "text": "[幾時開始㗎|Gei2 si4 hoi1 ci2 gaa3]？",
+          "id": "Since when?",
+          "literal": "what — time — open — start — emphasis."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[前日開始|Cin4 jat6 hoi1 ci2]。[琴晚|Kam4 maan5][瞓唔着|fan3 m4 zoek6]。",
+          "id": "Since the day before yesterday. I couldn't sleep last night.",
+          "literal": "day-before-yesterday — open — start. yesterday — night — sleep — not — catch."
+        },
+        {
+          "speaker": "醫生:",
+          "text": "[有冇咳呀|Jau5 mou5 kat1 aa3]？[喉嚨痛唔痛|Hau4 lung4 tung3 m4 tung3]？",
+          "id": "Any cough? Sore throat?",
+          "literal": "have — not-have — cough — huh. throat — hurt — not — hurt."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[有少少咳|Jau5 siu2 siu2 kat1]，[喉嚨都痛|hau4 lung4 dou1 tung3]。[仲流鼻水|Zung6 lau4 bei6 seoi2]。",
+          "id": "A bit of a cough, and my throat hurts too. And a runny nose.",
+          "literal": "have — little — little — cough, throat — also — hurt. still — flow — nose — water."
+        },
+        {
+          "speaker": "醫生:",
+          "text": "[有冇肚痛|Jau5 mou5 tou5 tung3]？[有冇嘔呀|Jau5 mou5 au2 aa3]？",
+          "id": "Any stomachache? Vomiting?",
+          "literal": "have — not-have — belly — hurt. have — not-have — vomit — huh."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[冇|Mou5]。[但係|Daan6 hai6][冇乜胃口|mou5 mat1 wai6 hau2]。",
+          "id": "No. But I've got no appetite.",
+          "literal": "not-have. but — not-have — much — stomach — mouth."
+        },
+        {
+          "speaker": "醫生:",
+          "text": "[你有冇藥物敏感呀|Nei5 jau5 mou5 joek6 mat6 man5 gam2 aa3]？",
+          "id": "Are you allergic to any medicine?",
+          "literal": "you — have — not-have — medicine — thing — sensitive — feel — huh."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[冇|Mou5]。[嚴唔嚴重呀|Jim4 m4 jim4 zung6 aa3]？",
+          "id": "No. Is it serious?",
+          "literal": "not-have. severe — not — severe — serious — huh."
+        },
+        {
+          "speaker": "醫生:",
+          "text": "[唔嚴重|M4 jim4 zung6]，[係傷風|hai6 soeng1 fung1]。[你應該休息兩日|Nei5 jing1 goi1 jau1 sik1 loeng5 jat6]，[飲多啲水|jam2 do1 di1 seoi2]。",
+          "id": "Not serious, just a cold. You should rest for two days and drink plenty of water.",
+          "literal": "not — severe — serious, is — hurt — wind. you — should — rest — two — day, drink — more — a-bit — water."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[要唔要食藥呀|Jiu3 m4 jiu3 sik6 joek6 aa3]？[可唔可以畀張病假紙我呀|Ho2 m4 ho2 ji5 bei2 zoeng1 beng6 gaa3 zi2 ngo5 aa3]？",
+          "id": "Do I need medicine? Could I get a sick note?",
+          "literal": "need — not — need — eat — medicine — huh. can — not — can — give — classifier — sick — leave — paper — me — huh."
+        },
+        {
+          "speaker": "醫生:",
+          "text": "[冇問題|Mou5 man6 tai4]。[藥一日食三次|Joek6 jat1 jat6 sik6 saam1 ci3]，[飯後食|faan6 hau6 sik6]。[唔好飲凍嘢|M4 hou2 jam2 dung3 je5]。",
+          "id": "No problem. Take the medicine three times a day, after meals. Don't drink anything cold.",
+          "literal": "not-have — problem. medicine — one — day — eat — three — times, rice — after — eat. don't — drink — cold — stuff."
+        }
+      ],
+      "notes": [
+        "**[唔舒服|m4 syu1 fuk6] is the umbrella word for “not feeling well”.** Remember [舒服|syu1 fuk6] from Unit 8. [邊度唔舒服呀|Bin1 dou6 m4 syu1 fuk6 aa3]？ is the doctor's opening question, and it almost never changes.",
+        "**⚠️ [痛|tung3] is an adjective, not a noun, so the order is body part + 痛.** [我頭痛|Ngo5 tau4 tung3] = I have a headache — literally “I head hurt”. There's no 我有頭痛 (“I have a headache”); Cantonese adjectives stand on their own, as you learned in Unit 8.",
+        "**[發燒|faat3 siu1] = to have a fever, [咳|kat1] = to cough, [流鼻水|lau4 bei6 seoi2] = to have a runny nose.** They're all verbs, not nouns: [我發燒|Ngo5 faat3 siu1] = I have a fever. Again, there's no 我有發燒.",
+        "**[瞓唔着|fan3 m4 zoek6] = can't sleep.** [着|zoek6] after 瞓 means actually falling asleep. The verb + 唔 + result pattern you've known since Unit 5: [睇唔到|tai2 m4 dou2], [食唔晒|sik6 m4 saai3], [瞓唔着|fan3 m4 zoek6].",
+        "**[冇乜胃口|mou5 mat1 wai6 hau2] = no appetite.** [冇乜|mou5 mat1] = “not much”: [冇乜錢|mou5 mat1 cin2] (not much money), [冇乜時間|mou5 mat1 si4 gaan3] (not much time).",
+        "**[敏感|man5 gam2] = both allergic and sensitive.** [藥物敏感|joek6 mat6 man5 gam2] = drug allergy. ⚠️ This is a question you must understand and must answer honestly, so learn the whole question by heart.",
+        "**[應該|jing1 goi1] = should, ought to.** It's softer than [要|jiu3] (must). Doctors use 應該 to give advice; warning signs use [唔可以|m4 ho2 ji5] to forbid.",
+        "**[飲多啲水|jam2 do1 di1 seoi2] = drink more water.** The pattern verb + [多啲|do1 di1] / [少啲|siu2 di1] = more / less. [瞓多啲|fan3 do1 di1] (sleep more), [食少啲|sik6 siu2 di1] (eat less)."
+      ],
+      "grammars": [
+        {
+          "title": "Telling, advising, forbidding",
+          "body": [
+            "Four levels, from the softest to the strongest. What decides it isn't your tone of voice but the word you choose."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Level",
+                "Word",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "suggestion",
+                  "[不如|bat1 jyu4]",
+                  "[不如休息下啦|Bat1 jyu4 jau1 sik1 haa5 laa1]。 Why not take a rest?"
+                ],
+                [
+                  "advice",
+                  "[最好|zeoi3 hou2]",
+                  "[最好唔好出街|Zeoi3 hou2 m4 hou2 ceot1 gaai1]。 Better not go out."
+                ],
+                [
+                  "should",
+                  "[應該|jing1 goi1]",
+                  "[你應該睇醫生|Nei5 jing1 goi1 tai2 ji1 sang1]。 You should see a doctor."
+                ],
+                [
+                  "must",
+                  "[要|jiu3] / [一定要|jat1 ding6 jiu3]",
+                  "[你一定要食藥|Nei5 jat1 ding6 jiu3 sik6 joek6]。 You must take your medicine."
+                ],
+                [
+                  "no need",
+                  "[唔使|m4 sai2]",
+                  "[唔使擔心|M4 sai2 daam1 sam1]。 No need to worry."
+                ],
+                [
+                  "don't",
+                  "[唔好|m4 hou2]",
+                  "[唔好飲凍嘢|M4 hou2 jam2 dung3 je5]。 Don't drink anything cold."
+                ],
+                [
+                  "not allowed",
+                  "[唔可以|m4 ho2 ji5]",
+                  "[呢度唔可以食煙|Ni1 dou6 m4 ho2 ji5 sik6 jin1]。 No smoking here."
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **“Don't” is [唔好|m4 hou2], not 唔要.** [唔好走|M4 hou2 zau2] = don't go. 唔要走 doesn't exist. Remember too that 唔好 before an adjective means “not good” — what follows tells them apart.",
+            "🇭🇰 **A shorter “don't”: [咪|mai5].** [咪走|Mai5 zau2] = don't go; [咪咁講|Mai5 gam2 gong2] = don't say that. It sounds more casual and quicker, and is used a lot between friends.",
+            "**[唔使|m4 sai2] removes an obligation; it doesn't forbid.** [唔使去|M4 sai2 heoi3] = no need to go (you can if you want). [唔好去|M4 hou2 heoi3] = don't go (seriously)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "對話 2 — At the pharmacy, and a friend's advice",
+      "intro": "Wong Lai goes with Andi to the 藥房. This conversation is full of advice — notice how many different forms are used to say the same thing.",
+      "lines": [
+        {
+          "speaker": "黃麗:",
+          "text": "[你面色好差|Nei5 min6 sik1 hou2 caa1][喎|wo3]。[食咗藥未呀|Sik6 zo2 joek6 mei6 aa3]？",
+          "id": "You look really pale, you know. Have you taken any medicine yet?",
+          "literal": "you — face — color — filler — bad — you-know. eat — already — medicine — not-yet — huh."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[仲未|Zung6 mei6]。[我想買啲咳藥水|Ngo5 soeng2 maai5 di1 kat1 joek6 seoi2]。",
+          "id": "Not yet. I want to buy some cough syrup.",
+          "literal": "still — not-yet. I — want — buy — some — cough — medicine — water."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[藥房喺前面|Joek6 fong4 hai2 cin4 min6]。[你唔好行咁快|Nei5 m4 hou2 haang4 gam3 faai3]，[慢慢啦|maan6 maan2 laa1]。",
+          "id": "The pharmacy's just ahead. Don't walk so fast, take it slow.",
+          "literal": "medicine — house — at — front — side. you — don't — walk — so — fast, slow — slow — go-on."
+        },
+        {
+          "speaker": "藥劑師:",
+          "text": "[要咩藥呀|Jiu3 me1 joek6 aa3]？",
+          "id": "What do you need?",
+          "literal": "need — what — medicine — huh."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[我傷風|Ngo5 soeng1 fung1]，[有咳|jau5 kat1]，[喉嚨痛|hau4 lung4 tung3]。[有冇藥介紹呀|Jau5 mou5 joek6 gaai3 siu6 aa3]？",
+          "id": "I've got a cold, a cough and a sore throat. Anything you'd recommend?",
+          "literal": "I — hurt — wind, have — cough, throat — hurt. have — not-have — medicine — intro — recommend — huh."
+        },
+        {
+          "speaker": "藥劑師:",
+          "text": "[呢支咳藥水|Ni1 zi1 kat1 joek6 seoi2][同呢啲喉糖|tung4 ni1 di1 hau4 tong2]。[一日三次|Jat1 jat6 saam1 ci3]。",
+          "id": "This cough syrup and these throat lozenges. Three times a day.",
+          "literal": "this — classifier — cough — medicine — water — and — these — some — throat — candy. one — day — three — times."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[食完會唔會眼瞓㗎|Sik6 jyun4 wui5 m4 wui5 ngaan5 fan3 gaa3]？[我要返工|Ngo5 jiu3 faan1 gung1]。",
+          "id": "Will it make me drowsy? I have to work.",
+          "literal": "eat — finish — will — not — will — eye — sleep — emphasis. I — must — return — work."
+        },
+        {
+          "speaker": "藥劑師:",
+          "text": "[會有少少|Wui5 jau5 siu2 siu2]。[如果要揸車|Jyu4 gwo2 jiu3 zaa1 ce1]，[就唔好食|zau6 m4 hou2 sik6]。",
+          "id": "A little. If you need to drive, don't take it.",
+          "literal": "will — have — little — little. if — need — hold — vehicle, then — don't — eat."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[佢唔揸車㗎|Keoi5 m4 zaa1 ce1 gaa3]。[但係你今日唔好返工喇|Daan6 hai6 nei5 gam1 jat6 m4 hou2 faan1 gung1 laa3]，[真係|zan1 hai6]。",
+          "id": "He doesn't drive. But you shouldn't go to work today, seriously.",
+          "literal": "he — not — hold — vehicle — emphasis. but — you — this — day — don't — return — work — already, really — is."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[我知喇|Ngo5 zi1 laa3]。[我返去瞓覺|Ngo5 faan1 heoi3 fan3 gaau3]。",
+          "id": "OK, OK. I'll go home and sleep.",
+          "literal": "I — know — already. I — return — go — sleep."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[記住飲多啲水|Gei3 zyu6 jam2 do1 di1 seoi2]。[保重呀|Bou2 zung6 aa3]！",
+          "id": "Remember to drink lots of water. Take care!",
+          "literal": "remember — keep — drink — more — a-bit — water. keep — weighty — huh."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[多謝你|Do1 ze6 nei5]。[你真係好朋友|Nei5 zan1 hai6 hou2 pang4 jau5]。",
+          "id": "Thanks. You really are a good friend.",
+          "literal": "thank — you. you — really — are — good — friend."
+        }
+      ],
+      "notes": [
+        "**[面色|min6 sik1] = complexion, and [面色好差|min6 sik1 hou2 caa1] means you look pale or unwell.** 🇭🇰 It's a normal thing to say to a friend in Hong Kong, and it's taken as caring, not rude.",
+        "**[差|caa1] = bad, poor quality.** Its opposite is [好|hou2]. ⚠️ Don't confuse it with [差唔多|caa1 m4 do1] (about the same) from Unit 8 — same character, different expression.",
+        "**[慢慢|maan6 maan2] = slowly, take your time.** Note how the tone changes on the second syllable — the tone-change habit explained in the opening chapter. This doubled form also shows up in [快啲快啲|faai3 di1 faai3 di1] (hurry up) and [靜靜哋|zing6 zing2 dei2] (quietly).",
+        "**[介紹|gaai3 siu6] = to introduce, to recommend.** [有冇…介紹呀|Jau5 mou5 … gaai3 siu6 aa3]？ = any … you'd recommend? Handy at the pharmacy, the bookshop and restaurants.",
+        "**[如果|jyu4 gwo2] = if, and its partner is [就|zau6].** [如果落雨，就唔好去|Jyu4 gwo2 lok6 jyu5, zau6 m4 hou2 heoi3] = if it rains, don't go. 就 goes before the verb in the second clause, and it's almost always there.",
+        "**[眼瞓|ngaan5 fan3] = sleepy**, literally “eyes sleep”. A native Cantonese word that doesn't exist in Mandarin. [好眼瞓|hou2 ngaan5 fan3] = really sleepy.",
+        "**[揸車|zaa1 ce1] = to drive.** [揸|zaa1] means to grip. Another word with 揸: [揸住|zaa1 zyu6] (keep holding).",
+        "**[保重|bou2 zung6] = take care.** Said to someone who's ill or going far away. Other wishes: [早日康復|zou2 jat6 hong1 fuk6] (get well soon, a bit formal) and [好返啲未呀|Hou2 faan1 di1 mei6 aa3]？ (feeling any better?)."
+      ],
+      "grammars": [
+        {
+          "title": "如果 … 就 … and other linking pairs",
+          "body": [
+            "Cantonese links two parts of a sentence with a pair of words, both of them spoken — unlike English, where one word is usually enough."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Pair",
+                "Meaning",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "[如果|jyu4 gwo2] … [就|zau6] …",
+                  "if … then …",
+                  "[如果唔舒服，就唔好返工|Jyu4 gwo2 m4 syu1 fuk6, zau6 m4 hou2 faan1 gung1]。"
+                ],
+                [
+                  "[因為|jan1 wai6] … [所以|so2 ji5] …",
+                  "because … so …",
+                  "[因為發燒，所以請假|Jan1 wai6 faat3 siu1, so2 ji5 cing2 gaa3]。"
+                ],
+                [
+                  "[雖然|seoi1 jin4] … [但係|daan6 hai6] …",
+                  "although … but …",
+                  "[雖然食咗藥，但係都仲痛|Seoi1 jin4 sik6 zo2 joek6, daan6 hai6 dou1 zung6 tung3]。"
+                ],
+                [
+                  "[一…就…|jat1 … zau6 …]",
+                  "as soon as … then …",
+                  "[一食完藥就眼瞓|Jat1 sik6 jyun4 joek6 zau6 ngaan5 fan3]。"
+                ],
+                [
+                  "[越…越…|jyut6 … jyut6 …]",
+                  "the more … the more …",
+                  "[越食越好|Jyut6 sik6 jyut6 hou2]。"
+                ],
+                [
+                  "[先…然後…|sin1 … jin4 hau6 …]",
+                  "first … then …",
+                  "[先食飯然後食藥|Sin1 sik6 faan6 jin4 hau6 sik6 joek6]。"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **[就|zau6] can rarely be dropped.** [如果落雨唔好去|jyu4 gwo2 lok6 jyu5 m4 hou2 heoi3] sounds cut off; the natural version is [如果落雨，就唔好去|Jyu4 gwo2 lok6 jyu5, zau6 m4 hou2 heoi3].",
+            "🇭🇰 **In fast speech, [如果|jyu4 gwo2] is often dropped and only 就 remains.** [唔舒服就唔好返工|M4 syu1 fuk6 zau6 m4 hou2 faan1 gung1] = if you're not well, don't go to work. This is the form you'll hear most."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Parts of the body",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Part",
+            "Cantonese",
+            "Part",
+            "Cantonese"
+          ],
+          "rows": [
+            [
+              "body",
+              "[身體|san1 tai2]",
+              "head",
+              "[頭|tau4]"
+            ],
+            [
+              "face",
+              "[面|min6]",
+              "eye",
+              "[眼|ngaan5]"
+            ],
+            [
+              "nose",
+              "[鼻|bei6]",
+              "mouth",
+              "[口|hau2]"
+            ],
+            [
+              "ear",
+              "[耳仔|ji5 zai2]",
+              "tooth",
+              "[牙|ngaa4]"
+            ],
+            [
+              "neck",
+              "[頸|geng2]",
+              "throat",
+              "[喉嚨|hau4 lung4]"
+            ],
+            [
+              "shoulder",
+              "[膊頭|bok3 tau4]",
+              "back",
+              "[背脊|bui3 zek3]"
+            ],
+            [
+              "hand",
+              "[手|sau2]",
+              "finger",
+              "[手指|sau2 zi2]"
+            ],
+            [
+              "belly",
+              "[肚|tou5]",
+              "foot, leg",
+              "[腳|goek3]"
+            ],
+            [
+              "heart",
+              "[心|sam1]",
+              "blood",
+              "[血|hyut3]"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Symptom",
+            "Cantonese",
+            "Symptom",
+            "Cantonese"
+          ],
+          "rows": [
+            [
+              "unwell",
+              "[唔舒服|m4 syu1 fuk6]",
+              "hurt, ache",
+              "[痛|tung3]"
+            ],
+            [
+              "fever",
+              "[發燒|faat3 siu1]",
+              "cough",
+              "[咳|kat1]"
+            ],
+            [
+              "a cold",
+              "[傷風|soeng1 fung1]",
+              "flu",
+              "[感冒|gam2 mou6]"
+            ],
+            [
+              "runny nose",
+              "[流鼻水|lau4 bei6 seoi2]",
+              "dizzy",
+              "[頭暈|tau4 wan4]"
+            ],
+            [
+              "nausea, vomiting",
+              "[嘔|au2]",
+              "diarrhea",
+              "[肚屙|tou5 o1]"
+            ],
+            [
+              "tired",
+              "[攰|gui6]",
+              "sleepy",
+              "[眼瞓|ngaan5 fan3]"
+            ],
+            [
+              "injured",
+              "[受傷|sau6 soeng1]",
+              "itchy",
+              "[痕|han4]"
+            ],
+            [
+              "allergic",
+              "[敏感|man5 gam2]",
+              "can't sleep",
+              "[瞓唔着|fan3 m4 zoek6]"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Six sentences you need to say without thinking",
+          "items": [
+            "[我唔舒服|Ngo5 m4 syu1 fuk6]。 — I'm not feeling well.",
+            "[我頭痛|Ngo5 tau4 tung3]，[仲發緊燒|zung6 faat3 gan2 siu1]。 — I have a headache and a fever.",
+            "[前日開始㗎|Cin4 jat6 hoi1 ci2 gaa3]。 — It started the day before yesterday.",
+            "[我冇藥物敏感|Ngo5 mou5 joek6 mat6 man5 gam2]。 — I have no drug allergies.",
+            "[附近有冇診所呀|Fu6 gan6 jau5 mou5 can2 so2 aa3]？ — Is there a clinic nearby?",
+            "[叫白車|Giu3 baak6 ce1]！ — Call an ambulance! 🇭🇰 [白車|baak6 ce1] is literally “white car”, and the emergency number is **999**."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Seeing a doctor in Hong Kong",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Place / thing",
+            "Cantonese",
+            "Note"
+          ],
+          "rows": [
+            [
+              "clinic",
+              "[診所|can2 so2]",
+              "Private clinic, walk in, medicine included in the fee"
+            ],
+            [
+              "hospital",
+              "[醫院|ji1 jyun2]",
+              ""
+            ],
+            [
+              "A&E, ER",
+              "[急症室|gap1 zing3 sat1]",
+              "Long waits unless it's a real emergency"
+            ],
+            [
+              "pharmacy",
+              "[藥房|joek6 fong4]",
+              "Green sign; the pharmacist can suggest over-the-counter medicine"
+            ],
+            [
+              "register",
+              "[掛號|gwaa3 hou6]",
+              ""
+            ],
+            [
+              "medicine",
+              "[藥|joek6]",
+              "[食藥|sik6 joek6] = take medicine"
+            ],
+            [
+              "cough syrup",
+              "[咳藥水|kat1 joek6 seoi2]",
+              ""
+            ],
+            [
+              "sick note",
+              "[病假紙|beng6 gaa3 zi2]",
+              "Ask the doctor for one; used for work"
+            ],
+            [
+              "Chinese medicine",
+              "[中藥|zung1 joek6]",
+              "Its opposite is [西藥|sai1 joek6], Western medicine"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Dosage instructions on the packet",
+          "items": [
+            "[一日三次|jat1 jat6 saam1 ci3] — three times a day",
+            "[飯後食|faan6 hau6 sik6] — take after meals · [飯前食|faan6 cin4 sik6] — before meals",
+            "[每次一粒|mui5 ci3 jat1 nap1] — one tablet each time",
+            "[有需要時食|jau5 seoi1 jiu3 si4 sik6] — take as needed",
+            "⚠️ [唔好同酒一齊食|M4 hou2 tung4 zau2 jat1 cai4 sik6] — do not take with alcohol"
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Asking after someone who's ill",
+          "items": [
+            "[好返啲未呀|Hou2 faan1 di1 mei6 aa3]？ — Feeling any better?",
+            "[睇咗醫生未呀|Tai2 zo2 ji1 sang1 mei6 aa3]？ — Have you seen a doctor yet?",
+            "[記得食藥呀|Gei3 dak1 sik6 joek6 aa3]。 — Remember to take your medicine.",
+            "[保重|Bou2 zung6]。 / [早日康復|Zou2 jat6 hong1 fuk6]。 — Take care. / Get well soon."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "身體",
+      "baca": "san1 tai2",
+      "en": "body"
+    },
+    {
+      "zh": "頭",
+      "baca": "tau4",
+      "en": "head"
+    },
+    {
+      "zh": "面",
+      "baca": "min6",
+      "en": "face"
+    },
+    {
+      "zh": "眼",
+      "baca": "ngaan5",
+      "en": "eye"
+    },
+    {
+      "zh": "鼻",
+      "baca": "bei6",
+      "en": "nose"
+    },
+    {
+      "zh": "口",
+      "baca": "hau2",
+      "en": "mouth"
+    },
+    {
+      "zh": "耳仔",
+      "baca": "ji5 zai2",
+      "en": "ear"
+    },
+    {
+      "zh": "牙",
+      "baca": "ngaa4",
+      "en": "tooth"
+    },
+    {
+      "zh": "頸",
+      "baca": "geng2",
+      "en": "neck"
+    },
+    {
+      "zh": "喉嚨",
+      "baca": "hau4 lung4",
+      "en": "throat"
+    },
+    {
+      "zh": "手",
+      "baca": "sau2",
+      "en": "hand"
+    },
+    {
+      "zh": "腳",
+      "baca": "goek3",
+      "en": "foot, leg"
+    },
+    {
+      "zh": "肚",
+      "baca": "tou5",
+      "en": "belly, stomach"
+    },
+    {
+      "zh": "痛",
+      "baca": "tung3",
+      "en": "to hurt, ache"
+    },
+    {
+      "zh": "唔舒服",
+      "baca": "m4 syu1 fuk6",
+      "en": "unwell"
+    },
+    {
+      "zh": "發燒",
+      "baca": "faat3 siu1",
+      "en": "to have a fever"
+    },
+    {
+      "zh": "咳",
+      "baca": "kat1",
+      "en": "to cough"
+    },
+    {
+      "zh": "傷風",
+      "baca": "soeng1 fung1",
+      "en": "a cold"
+    },
+    {
+      "zh": "感冒",
+      "baca": "gam2 mou6",
+      "en": "flu"
+    },
+    {
+      "zh": "流鼻水",
+      "baca": "lau4 bei6 seoi2",
+      "en": "runny nose"
+    },
+    {
+      "zh": "頭暈",
+      "baca": "tau4 wan4",
+      "en": "dizzy"
+    },
+    {
+      "zh": "嘔",
+      "baca": "au2",
+      "en": "to vomit"
+    },
+    {
+      "zh": "肚屙",
+      "baca": "tou5 o1",
+      "en": "diarrhea"
+    },
+    {
+      "zh": "眼瞓",
+      "baca": "ngaan5 fan3",
+      "en": "sleepy"
+    },
+    {
+      "zh": "瞓唔着",
+      "baca": "fan3 m4 zoek6",
+      "en": "can't sleep"
+    },
+    {
+      "zh": "敏感",
+      "baca": "man5 gam2",
+      "en": "allergic"
+    },
+    {
+      "zh": "嚴重",
+      "baca": "jim4 zung6",
+      "en": "serious"
+    },
+    {
+      "zh": "醫生",
+      "baca": "ji1 sang1",
+      "en": "doctor"
+    },
+    {
+      "zh": "睇醫生",
+      "baca": "tai2 ji1 sang1",
+      "en": "to see a doctor"
+    },
+    {
+      "zh": "診所",
+      "baca": "can2 so2",
+      "en": "clinic"
+    },
+    {
+      "zh": "急症室",
+      "baca": "gap1 zing3 sat1",
+      "en": "A&E, emergency room"
+    },
+    {
+      "zh": "藥",
+      "baca": "joek6",
+      "en": "medicine"
+    },
+    {
+      "zh": "藥房",
+      "baca": "joek6 fong4",
+      "en": "pharmacy"
+    },
+    {
+      "zh": "食藥",
+      "baca": "sik6 joek6",
+      "en": "to take medicine"
+    },
+    {
+      "zh": "病假紙",
+      "baca": "beng6 gaa3 zi2",
+      "en": "sick note"
+    },
+    {
+      "zh": "請假",
+      "baca": "cing2 gaa3",
+      "en": "to take leave"
+    },
+    {
+      "zh": "應該",
+      "baca": "jing1 goi1",
+      "en": "should"
+    },
+    {
+      "zh": "最好",
+      "baca": "zeoi3 hou2",
+      "en": "had better"
+    },
+    {
+      "zh": "唔好",
+      "baca": "m4 hou2",
+      "en": "don't"
+    },
+    {
+      "zh": "咪",
+      "baca": "mai5",
+      "en": "don't (casual)"
+    },
+    {
+      "zh": "唔使",
+      "baca": "m4 sai2",
+      "en": "no need"
+    },
+    {
+      "zh": "擔心",
+      "baca": "daam1 sam1",
+      "en": "to worry"
+    },
+    {
+      "zh": "小心",
+      "baca": "siu2 sam1",
+      "en": "careful"
+    },
+    {
+      "zh": "如果",
+      "baca": "jyu4 gwo2",
+      "en": "if"
+    },
+    {
+      "zh": "雖然",
+      "baca": "seoi1 jin4",
+      "en": "although"
+    },
+    {
+      "zh": "然後",
+      "baca": "jin4 hau6",
+      "en": "then, afterwards"
+    },
+    {
+      "zh": "越…越…",
+      "baca": "jyut6 … jyut6 …",
+      "en": "the more … the more …"
+    },
+    {
+      "zh": "開始",
+      "baca": "hoi1 ci2",
+      "en": "to start"
+    },
+    {
+      "zh": "休息",
+      "baca": "jau1 sik1",
+      "en": "to rest"
+    },
+    {
+      "zh": "介紹",
+      "baca": "gaai3 siu6",
+      "en": "to recommend"
+    },
+    {
+      "zh": "揸車",
+      "baca": "zaa1 ce1",
+      "en": "to drive"
+    },
+    {
+      "zh": "面色",
+      "baca": "min6 sik1",
+      "en": "complexion"
+    },
+    {
+      "zh": "差",
+      "baca": "caa1",
+      "en": "bad, poor"
+    },
+    {
+      "zh": "保重",
+      "baca": "bou2 zung6",
+      "en": "take care"
+    },
+    {
+      "zh": "多啲",
+      "baca": "do1 di1",
+      "en": "more"
+    },
+    {
+      "zh": "冇乜",
+      "baca": "mou5 mat1",
+      "en": "not much"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Say these complaints in Cantonese with the pattern “body part + 痛”.",
+      "items": [
+        "I have a headache.",
+        "I have a stomachache.",
+        "I have a toothache.",
+        "I have a sore throat.",
+        "My foot hurts."
+      ]
+    },
+    {
+      "prompt": "Fill in with 應該, 唔好, 唔使, or 一定要.",
+      "items": [
+        "[你| Nei5] ___ [睇醫生|tai2 ji1 sang1]。 (strong advice)",
+        "___ [飲凍嘢|jam2 dung3 je5]。 (forbidding)",
+        "___ [擔心|daam1 sam1]，[唔嚴重|m4 jim4 zung6]。 (no need)",
+        "[你| Nei5] ___ [食藥|sik6 joek6]，[如果唔係唔會好|jyu4 gwo2 m4 hai6 m4 wui5 hou2]。 (must)",
+        "[你| Nei5] ___ [今日返工|gam1 jat6 faan1 gung1]。 (forbidding)"
+      ]
+    },
+    {
+      "prompt": "Put the pieces in the right order.",
+      "items": [
+        "邊度 / 唔 / 舒服 / 呀",
+        "我 / 頭痛 / 仲 / 有啲 / 發燒",
+        "前日 / 開始 / 㗎",
+        "你 / 應該 / 休息 / 兩 / 日",
+        "如果 / 要 / 揸車 / 就 / 唔好 / 食",
+        "記住 / 飲 / 多啲 / 水"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "[你有冇藥物敏感呀|Nei5 jau5 mou5 joek6 mat6 man5 gam2 aa3]？",
+        "[唔嚴重，係傷風|M4 jim4 zung6, hai6 soeng1 fung1]。",
+        "[藥一日食三次，飯後食|Joek6 jat1 jat6 sik6 saam1 ci3, faan6 hau6 sik6]。",
+        "[你面色好差喎|Nei5 min6 sik1 hou2 caa1 wo3]。",
+        "[好返啲未呀|Hou2 faan1 di1 mei6 aa3]？"
+      ]
+    },
+    {
+      "prompt": "Translate into Cantonese. Write in Jyutping.",
+      "items": [
+        "I'm not feeling well.",
+        "I have a fever and a cough.",
+        "You should see a doctor.",
+        "Don't drink anything cold.",
+        "Remember to drink lots of water."
+      ]
+    },
+    {
+      "prompt": "Correct these wrong sentences, then write the right version in Jyutping.",
+      "items": [
+        "[我有頭痛|Ngo5 jau5 tau4 tung3]。",
+        "[我有發燒|Ngo5 jau5 faat3 siu1]。",
+        "[唔要飲凍嘢|M4 jiu3 jam2 dung3 je5]。",
+        "[如果落雨唔好去|Jyu4 gwo2 lok6 jyu5 m4 hou2 heoi3]。",
+        "[我係唔舒服|Ngo5 hai6 m4 syu1 fuk6]。"
+      ]
+    }
+  ],
+  "answers": [
+    "我頭痛。 Ngo5 tau4 tung3. — 我肚痛。 Ngo5 tou5 tung3. — 我牙痛。 Ngo5 ngaa4 tung3. — 我喉嚨痛。 Ngo5 hau4 lung4 tung3. — 我腳痛。 Ngo5 goek3 tung3.",
+    "應該 — 唔好 — 唔使 — 一定要 — 唔好",
+    "邊度 唔 舒服 呀 — 我 頭痛 仲 有啲 發燒 — 前日 開始 㗎 — 你 應該 休息 兩 日 — 如果 要 揸車 就 唔好 食 — 記住 飲 多啲 水",
+    "Are you allergic to any medicine? — Not serious, just a cold. — Take the medicine three times a day, after meals. — You look really pale, you know. — Feeling any better?",
+    "Ngo5 m4 syu1 fuk6. — Ngo5 faat3 siu1, jau5 kat1. — Nei5 jing1 goi1 tai2 ji1 sang1. — M4 hou2 jam2 dung3 je5. — Gei3 zyu6 jam2 do1 di1 seoi2.",
+    "Ngo5 tau4 tung3. — Ngo5 faat3 siu1. — M4 hou2 jam2 dung3 je5. — Jyu4 gwo2 lok6 jyu5, zau6 m4 hou2 heoi3. — Ngo5 m4 syu1 fuk6."
+  ],
+  "wave": "Five minutes before Unit 12: imagine you're sitting in front of a Hong Kong doctor and play out the whole conversation yourself — what hurts, since when, other symptoms, allergies. Then give five pieces of advice to a friend who's ill, each in a different form: 不如, 最好, 應該, 一定要 and 唔好. If all five come out without a pause, you're ready for the last unit."
+}

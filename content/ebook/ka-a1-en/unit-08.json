@@ -1,0 +1,561 @@
+{
+  "title": "What time is it?",
+  "title_target": "რომელი საათია? — Romeli saatia?",
+  "goal": "Tell the time, the day, and the date — and understand why \"half five\" in Georgian means 4:30, not 5:30.",
+  "bekal": [
+    "ask and tell the time",
+    "name the days of the week and understand where the names come from",
+    "make an appointment for a set time with the ending -ზე",
+    "name the parts of the day: morning, midday, evening, night",
+    "give the date and the month"
+  ],
+  "dialogs": [
+    {
+      "title": "დიალოგი — Scheduling a lesson",
+      "intro": "Ani and her teacher Giorgi are setting up next week's lessons. Watch one line in the middle of the conversation — that's where Ani nearly makes the mistake that makes people show up an hour late.",
+      "lines": [
+        {
+          "speaker": "გიორგი:",
+          "text": "[ანი|A-ni], [ხვალ|khval] [გაკვეთილი|ga-k've-ti-li] [გვაქვს|gvakvs]. [რომელ|Ro-mel] [საათზე|sa-at-ze] [გირჩევნია|gir-chev-ni-a]?",
+          "id": "Ani, we have a lesson tomorrow. What time would you prefer?",
+          "literal": "Ani, tomorrow — lesson — we-have. which — hour-at — you-prefer?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[დილით|Di-lit] [შეიძლება|she-idz-le-ba]? [ათ|At] [საათზე|sa-at-ze]?",
+          "id": "Is the morning okay? At ten?",
+          "literal": "morning-in — possible? ten — hour-at?"
+        },
+        {
+          "speaker": "გიორგი:",
+          "text": "[ათ|At] [საათზე|sa-at-ze] [სხვა|skhva] [გაკვეთილი|ga-k've-ti-li] [მაქვს|makvs]. [თერთმეტ|Tert-met'] [საათზე|sa-at-ze]?",
+          "id": "At ten I have another class. At eleven?",
+          "literal": "ten — hour-at — other — lesson — I-have. eleven — hour-at?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[კარგი|K'ar-gi]. [ან|An] [თერთმეტის|tert-me-t'is] [ნახევარზე|na-khe-var-ze]?",
+          "id": "Okay. Or at half eleven?",
+          "literal": "good. or — eleven's — half-at?"
+        },
+        {
+          "speaker": "გიორგი:",
+          "text": "[თერთმეტის|Tert-me-t'is] [ნახევარი|na-khe-va-ri] [ათი|a-ti] [ოცდაათია|ots-da-a-ti-a], [არა|a-ra] [თერთმეტი|tert-me-t'i] [ოცდაათი|ots-da-a-ti].",
+          "id": "Half eleven means 10:30, not 11:30.",
+          "literal": "eleven's — half — ten — thirty-is, not — eleven — thirty."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[აჰ|Ah]! [ინდონეზიურად|In-do-ne-zi-u-rad] [იგივეა|i-gi-ve-a]. [კარგი|K'ar-gi], [თერთმეტ|tert-met'] [საათზე|sa-at-ze].",
+          "id": "Oh! It's the same in Indonesian. Okay, at eleven.",
+          "literal": "ah! in-Indonesian — same-is. good, eleven — hour-at."
+        },
+        {
+          "speaker": "გიორგი:",
+          "text": "[შესანიშნავია|She-sa-nish-na-vi-a]. [რომელი|Ro-me-li] [დღეა|dghe-a] [ხვალ|khval]?",
+          "id": "Excellent. What day is it tomorrow?",
+          "literal": "excellent-is. which — day-is — tomorrow?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ხვალ|Khval] [ოთხშაბათია|otkh-sha-ba-ti-a].",
+          "id": "Tomorrow is Wednesday.",
+          "literal": "tomorrow — four-Saturday-is."
+        },
+        {
+          "speaker": "გიორგი:",
+          "text": "[სწორია|Sts'o-ri-a]. [პარასკევს|P'a-ras-k'evs] [გამოცდა|ga-mots-da] [გვაქვს|gvakvs], [არ|ar] [დაგავიწყდეს|da-ga-vits'-q'des]!",
+          "id": "Right. On Friday we have an exam, don't forget!",
+          "literal": "correct-is. Friday-on — exam — we-have, not — may-it-be-forgotten-by-you!"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[რომელ|Ro-mel] [საათზე|sa-at-ze]?",
+          "id": "At what time?",
+          "literal": "which — hour-at?"
+        },
+        {
+          "speaker": "გიორგი:",
+          "text": "[ცხრის|Tskhris] [ნახევარზე|na-khe-var-ze] — [რვა|rva] [ოცდაათზე|ots-da-at-ze].",
+          "id": "At half nine — 8:30.",
+          "literal": "nine's — half-at — eight — thirty-at."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[გასაგებია|Ga-sa-ge-bi-a]! [რვა|Rva] [ოცდაათი|ots-da-a-ti]. [დავიმახსოვრებ|Da-vi-makh-sov-reb].",
+          "id": "Got it! 8:30. I'll remember.",
+          "literal": "understandable-is! eight — thirty. I'll-remember."
+        }
+      ],
+      "notes": [
+        "⚠️ **ნახევარი counts the half TOWARD the next hour, not past it.** *თერთმეტის ნახევარი* = \"half of eleven\" = **10:30**. German and Dutch do the same, while British \"half eleven\" means 11:30 — and this is the most common cause of foreigners arriving an hour late in Tbilisi. If in doubt, just say the numbers: *ათი ოცდაათი* (ten thirty) — always safe.",
+        "**On-the-hour times: number + საათია.** *ხუთი საათია* (it's five o'clock). To make an appointment **at** a set time, add the ending **-ზე**: *ხუთ საათზე* (at five). Notice that ხუთ**ი** loses its -ი as soon as საათ**ზე** follows.",
+        "**The days of the week are counted from Saturday.** შაბათი (Saturday, from the Hebrew *shabbat*) is the zero point, then: **ორ**შაბათი (two-Saturday = Monday), **სამ**შაბათი (three = Tuesday), **ოთხ**შაბათი (four = Wednesday), **ხუთ**შაბათი (five = Thursday). Friday has its own name: პარასკევი. If you know the numbers 2–5 from unit 6, you already know four day names.",
+        "**კვირა has two meanings: \"Sunday\" and \"week\".** *კვირას* = on Sunday; *ერთი კვირა* = one week. Once again, context decides.",
+        "**To say \"on …day\", use the ending -ს**: პარასკევ**ს** (on Friday), შაბათ**ს** (on Saturday), ორშაბათ**ს** (on Monday). This -ს ending is the one you'll meet in unit 9 as the object form.",
+        "**დილით, საღამოს, ღამით — in the morning, in the evening, at night.** Notice that they take different endings, so it's best to learn each as a single word: დილ**ით** (in the morning), შუადღეს (at midday), საღამო**ს** (in the evening), ღამ**ით** (at night).",
+        "**არ დაგავიწყდეს! = \"don't forget!\"** A whole sentence worth learning as is. The verb form is far beyond A1, but the expression is used every day."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "table": {
+            "head": [
+              "Georgian",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "რომელი საათია?",
+                "romeli saatia",
+                "What time is it?"
+              ],
+              [
+                "ერთი საათია",
+                "erti saatia",
+                "It's one o'clock"
+              ],
+              [
+                "ხუთი საათია",
+                "khuti saatia",
+                "It's five o'clock"
+              ],
+              [
+                "ხუთი და ათი წუთი",
+                "khuti da ati ts'uti",
+                "Ten past five (5:10)"
+              ],
+              [
+                "ხუთის ნახევარი",
+                "khutis nakhevari",
+                "\"Half five\" → 4:30"
+              ],
+              [
+                "ხუთს ათი წუთი აკლია",
+                "khuts ati ts'uti ak'lia",
+                "Ten to five (4:50)"
+              ],
+              [
+                "რომელ საათზე?",
+                "romel saatze",
+                "At what time?"
+              ],
+              [
+                "შვიდ საათზე",
+                "shvid saatze",
+                "At seven"
+              ],
+              [
+                "შვიდის ნახევარზე",
+                "shvidis nakhevarze",
+                "At 6:30"
+              ]
+            ]
+          },
+          "after": [
+            "In everyday life, Georgians often just read out the numbers like a digital clock: *რვა ორმოცდახუთი* (8:45). This way is always right and never misunderstood — use it when you're in a hurry."
+          ]
+        },
+        {
+          "title": "Days, parts of the day, and months",
+          "tables": [
+            {
+              "head": [
+                "Day",
+                "Say it",
+                "On that day",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "ორშაბათი",
+                  "orshabati",
+                  "ორშაბათს",
+                  "Monday"
+                ],
+                [
+                  "სამშაბათი",
+                  "samshabati",
+                  "სამშაბათს",
+                  "Tuesday"
+                ],
+                [
+                  "ოთხშაბათი",
+                  "otkhshabati",
+                  "ოთხშაბათს",
+                  "Wednesday"
+                ],
+                [
+                  "ხუთშაბათი",
+                  "khutshabati",
+                  "ხუთშაბათს",
+                  "Thursday"
+                ],
+                [
+                  "პარასკევი",
+                  "p'arask'evi",
+                  "პარასკევს",
+                  "Friday"
+                ],
+                [
+                  "შაბათი",
+                  "shabati",
+                  "შაბათს",
+                  "Saturday"
+                ],
+                [
+                  "კვირა",
+                  "k'vira",
+                  "კვირას",
+                  "Sunday"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Time",
+                "Say it",
+                "Meaning",
+                "Time",
+                "Say it",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "დღეს",
+                  "dghes",
+                  "today",
+                  "დილით",
+                  "dilit",
+                  "in the morning"
+                ],
+                [
+                  "ხვალ",
+                  "khval",
+                  "tomorrow",
+                  "შუადღეს",
+                  "shuadghes",
+                  "at midday"
+                ],
+                [
+                  "გუშინ",
+                  "gushin",
+                  "yesterday",
+                  "საღამოს",
+                  "saghamos",
+                  "in the evening"
+                ],
+                [
+                  "ზეგ",
+                  "zeg",
+                  "the day after tomorrow",
+                  "ღამით",
+                  "ghamit",
+                  "at night"
+                ],
+                [
+                  "გუშინწინ",
+                  "gushints'in",
+                  "the day before yesterday",
+                  "ახლა",
+                  "akhla",
+                  "now"
+                ],
+                [
+                  "ყოველდღე",
+                  "q'oveldghe",
+                  "every day",
+                  "მალე",
+                  "male",
+                  "soon"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "The months are almost all similar to English and easy to recognize: იანვარი, თებერვალი, მარტი, აპრილი, მაისი, ივნისი, ივლისი, აგვისტო, სექტემბერი, ოქტომბერი, ნოემბერი, დეკემბერი."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Making an appointment",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "რომელ საათზე?",
+              "romel saatze",
+              "At what time?"
+            ],
+            [
+              "როდის?",
+              "rodis",
+              "When?"
+            ],
+            [
+              "ხვალ, ხუთ საათზე",
+              "khval, khut saatze",
+              "Tomorrow, at five"
+            ],
+            [
+              "შაბათს შეიძლება?",
+              "shabats sheidzleba",
+              "Is Saturday okay?"
+            ],
+            [
+              "დროზე მოვალ",
+              "droze moval",
+              "I'll be on time"
+            ],
+            [
+              "ცოტა დავაგვიანე",
+              "tsot'a davagviane",
+              "I'm a bit late"
+            ],
+            [
+              "მაცალე ხუთი წუთი",
+              "matsale khuti ts'uti",
+              "Give me five minutes"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "About punctuality",
+          "items": [
+            "In Georgia, nine o'clock for official business — offices, doctors, classes — really means nine o'clock.",
+            "Nine o'clock for social plans — dinner, meeting friends — usually means somewhere between nine and half past, and nobody will see it as a problem.",
+            "If you're late, one sentence is enough: **ბოდიში, დავაგვიანე.** No long explanation needed.",
+            "⚠️ A dinner invitation at a Georgian home almost never has an end time. Don't make other plans afterward."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One word worth noting now, even though it'll only be useful later: **დრო** (dro) means \"time\". *დრო გაქვს?* (do you have time?) is the most common way to invite someone, and unit 15 builds a whole conversation on it."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ka": "საათი",
+      "baca": "saati",
+      "en": "hour; clock, watch"
+    },
+    {
+      "ka": "წუთი",
+      "baca": "ts'uti",
+      "en": "minute"
+    },
+    {
+      "ka": "ნახევარი",
+      "baca": "nakhevari",
+      "en": "half"
+    },
+    {
+      "ka": "დრო",
+      "baca": "dro",
+      "en": "time"
+    },
+    {
+      "ka": "დღე",
+      "baca": "dghe",
+      "en": "day"
+    },
+    {
+      "ka": "დღეს",
+      "baca": "dghes",
+      "en": "today"
+    },
+    {
+      "ka": "ხვალ",
+      "baca": "khval",
+      "en": "tomorrow"
+    },
+    {
+      "ka": "გუშინ",
+      "baca": "gushin",
+      "en": "yesterday"
+    },
+    {
+      "ka": "ზეგ",
+      "baca": "zeg",
+      "en": "the day after tomorrow"
+    },
+    {
+      "ka": "დილა",
+      "baca": "dila",
+      "en": "morning"
+    },
+    {
+      "ka": "დილით",
+      "baca": "dilit",
+      "en": "in the morning"
+    },
+    {
+      "ka": "შუადღე",
+      "baca": "shuadghe",
+      "en": "midday"
+    },
+    {
+      "ka": "საღამო",
+      "baca": "saghamo",
+      "en": "evening"
+    },
+    {
+      "ka": "ღამე",
+      "baca": "ghame",
+      "en": "night"
+    },
+    {
+      "ka": "კვირა",
+      "baca": "k'vira",
+      "en": "Sunday; week"
+    },
+    {
+      "ka": "ორშაბათი",
+      "baca": "orshabati",
+      "en": "Monday"
+    },
+    {
+      "ka": "სამშაბათი",
+      "baca": "samshabati",
+      "en": "Tuesday"
+    },
+    {
+      "ka": "ოთხშაბათი",
+      "baca": "otkhshabati",
+      "en": "Wednesday"
+    },
+    {
+      "ka": "ხუთშაბათი",
+      "baca": "khutshabati",
+      "en": "Thursday"
+    },
+    {
+      "ka": "პარასკევი",
+      "baca": "p'arask'evi",
+      "en": "Friday"
+    },
+    {
+      "ka": "შაბათი",
+      "baca": "shabati",
+      "en": "Saturday"
+    },
+    {
+      "ka": "თვე",
+      "baca": "tve",
+      "en": "month"
+    },
+    {
+      "ka": "წელი",
+      "baca": "ts'eli",
+      "en": "year"
+    },
+    {
+      "ka": "როდის",
+      "baca": "rodis",
+      "en": "when"
+    },
+    {
+      "ka": "ახლა",
+      "baca": "akhla",
+      "en": "now"
+    },
+    {
+      "ka": "მალე",
+      "baca": "male",
+      "en": "soon"
+    },
+    {
+      "ka": "ყოველდღე",
+      "baca": "q'oveldghe",
+      "en": "every day"
+    },
+    {
+      "ka": "გაკვეთილი",
+      "baca": "gak'vetili",
+      "en": "lesson"
+    },
+    {
+      "ka": "გამოცდა",
+      "baca": "gamotsda",
+      "en": "exam"
+    },
+    {
+      "ka": "დავაგვიანე",
+      "baca": "davagviane",
+      "en": "I was late"
+    },
+    {
+      "ka": "იგივე",
+      "baca": "igive",
+      "en": "the same"
+    },
+    {
+      "ka": "გირჩევნია",
+      "baca": "girchevnia",
+      "en": "you prefer"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the time in numbers (watch out for ნახევარი).",
+      "items": [
+        "ხუთი საათია → ____",
+        "შვიდის ნახევარი → ____",
+        "ათი და ოცი წუთი → ____",
+        "თერთმეტის ნახევარი → ____",
+        "ცხრა საათია → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the name of the day.",
+      "items": [
+        "The second day from Saturday = ____",
+        "The third day from Saturday = ____",
+        "The fifth day from Saturday = ____",
+        "The day before Saturday = ____",
+        "The day after Saturday = ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "საათია / რომელი / ?",
+        "საათზე / შვიდ / მოვალ",
+        "დღეა / რომელი / დღეს / ?",
+        "გვაქვს / პარასკევს / გამოცდა",
+        "გაქვს / დრო / ?"
+      ]
+    },
+    {
+      "prompt": "Translate into Georgian.",
+      "items": [
+        "What time is it?",
+        "It's five o'clock.",
+        "At what time?",
+        "Tomorrow at eleven.",
+        "On Friday we have an exam.",
+        "Do you have time?"
+      ]
+    }
+  ],
+  "answers": [
+    "5:00 — 6:30 — 10:20 — 10:30 — 9:00",
+    "ორშაბათი — სამშაბათი — ხუთშაბათი — პარასკევი — კვირა",
+    "რომელი საათია? — შვიდ საათზე მოვალ. — დღეს რომელი დღეა? — პარასკევს გამოცდა გვაქვს. — დრო გაქვს?",
+    "რომელი საათია? — ხუთი საათია. — რომელ საათზე? — ხვალ თერთმეტ საათზე. — პარასკევს გამოცდა გვაქვს. — დრო გაქვს?"
+  ],
+  "wave": "Open units 3 and 5 again. The endings -დან, -ით, and -ზე that once felt random now each have their place — read the dialogues of both units once more and notice how much of it now runs on its own."
+}

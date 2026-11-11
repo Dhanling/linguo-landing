@@ -1,0 +1,472 @@
+{
+  "title": "At the supra table",
+  "title_target": "სუფრასთან — Suprastan",
+  "goal": "Survive — and enjoy — a Georgian feast: understand the tamada's role, answer toasts, praise your hosts, and turn down seconds without offending anyone.",
+  "bekal": [
+    "understand what happens at a supra",
+    "answer and say გაუმარჯოს",
+    "praise the food and the hosts",
+    "politely turn down a drink or more food",
+    "say thank you the Georgian way when leaving"
+  ],
+  "dialogs": [
+    {
+      "title": "დიალოგი — A first supra",
+      "intro": "Ani is invited to dinner at Nino's family home in Kakheti. The table is full before everyone has even sat down. Nino's uncle, Zurab, acts as the თამადა — the head of the table.",
+      "lines": [
+        {
+          "speaker": "ზურაბი:",
+          "text": "[კეთილი|K'e-ti-li] [იყოს|i-q'os] [თქვენი|tkve-ni] [მობრძანება|mob-rdza-ne-ba]! [დაბრძანდით|Dab-rdzan-dit]!",
+          "id": "Welcome! Please sit down!",
+          "literal": "good — be — your — arrival! sit-down!"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[დიდი|Di-di] [მადლობა|mad-lo-ba]. [სუფრა|Sup-ra] [ძალიან|dza-li-an] [ლამაზია|la-ma-zi-a].",
+          "id": "Thank you so much. The table is beautiful.",
+          "literal": "big — thank-you. feast-table — very — beautiful-is."
+        },
+        {
+          "speaker": "ზურაბი:",
+          "text": "[მე|Me] [თამადა|ta-ma-da] [ვარ|var]. [პირველი|P'ir-ve-li] [სადღეგრძელო|sadghe-grdze-lo] — [მშვიდობას|mshvi-do-bas]!",
+          "id": "I'm the tamada. The first toast — to peace!",
+          "literal": "I — head-of-table — am. first — toast — peace-to!"
+        },
+        {
+          "speaker": "სტუმრები:",
+          "text": "[გაუმარჯოს|Ga-u-mar-jos]!",
+          "id": "Victory to it!",
+          "literal": "may-it-be-victorious!"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ნინო|Ni-no], [რას|ras] [ვამბობ|vam-bob] [მე|me]?",
+          "id": "Nino, what should I say?",
+          "literal": "Nino, what-object — I-say — I?"
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[არაფერი|A-ra-pe-ri]. [„გაუმარჯოს|Ga-u-mar-jos“] [თქვი|tkvi] [და|da] [დალიე|da-lie].",
+          "id": "Nothing. Just say \"gaumarjos\" and drink.",
+          "literal": "nothing. \"may-it-win\" — say — and — drink."
+        },
+        {
+          "speaker": "ზურაბი:",
+          "text": "[მეორე|Me-o-re] [სადღეგრძელო|sadghe-grdze-lo] — [სტუმრებს|st'um-rebs]! [სტუმარი|St'u-ma-ri] [ღვთისაა|ghvti-sa-a].",
+          "id": "The second toast — to our guests! A guest is a gift from God.",
+          "literal": "second — toast — guests-to! guest — God's-is."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ძალიან|Dza-li-an] [მადლობელი|mad-lo-be-li] [ვარ|var]. [ყველაფერი|Q've-la-pe-ri] [ძალიან|dza-li-an] [გემრიელია|gem-ri-e-li-a].",
+          "id": "I'm very grateful. Everything is delicious.",
+          "literal": "very — grateful — I-am. everything — very — tasty-is."
+        },
+        {
+          "speaker": "ზურაბი:",
+          "text": "[კიდევ|K'i-dev] [მიირთვი|mi-irt-vi]! [ცოტა|Tso-t'a] [ჭამე|ch'a-me]!",
+          "id": "Have some more! You've eaten so little!",
+          "literal": "more — help-yourself! little — you-ate!"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[მადლობა|Mad-lo-ba], [მაგრამ|mag-ram] [მართლა|mart-la] [ვერ|ver] [შევძლებ|shev-dzleb]. [ღვინოს|Ghvi-nos] [არ|ar] [ვსვამ|vsvam], [ბოდიში|bo-di-shi].",
+          "id": "Thank you, but I really can't. I don't drink wine, sorry.",
+          "literal": "thank-you, but — really — can't — I-will-manage. wine-object — not — I-drink, sorry."
+        },
+        {
+          "speaker": "ზურაბი:",
+          "text": "[არა|A-ra] [უშავს|u-shavs]! [წყლით|Ts'q'lit] [დალიე|da-lie] — [გული|gu-li] [მთავარია|mta-va-ri-a], [არა|a-ra] [ღვინო|ghvi-no].",
+          "id": "That's okay! Drink with water — it's the heart that matters, not the wine.",
+          "literal": "not — bad-to-it! water-with — drink — heart — main-is, not — wine."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[გმადლობთ|Gmad-lobt] [ყველაფრისთვის|q've-la-pris-tvis]. [ასეთი|A-se-ti] [სტუმრობა|st'um-ro-ba] [არასდროს|a-ras-dros] [მქონია|mko-ni-a].",
+          "id": "Thank you for everything. I've never been a guest like this before.",
+          "literal": "thank-you — everything-for. like-this — guest-visit — never — I-have-had."
+        }
+      ],
+      "notes": [
+        "**A სუფრა (supra) is more than just dinner.** It's a feast with rules: one person leads (**თამადა**, tamada), toasts are made in a set order of themes — peace, guests, parents, those who have passed away, children, the homeland, women — and no one drinks outside a toast. The table is never empty; new dishes arrive stacked on top of the old ones.",
+        "**გაუმარჯოს = \"victory to it/them\".** ⚠️ This isn't \"cheers\", and it isn't said casually. It's said by the tamada or whoever is giving the toast; **guests just repeat it and drink**. As a foreigner, no one expects a speech from you — until you want to give one, and then everyone will go quiet and listen.",
+        "**სტუმარი ღვთისაა — \"a guest is a gift from God\".** The proverb that explains almost all of Georgian hospitality. It's the source of a habit that often confuses foreigners: hosts will give more than they can afford, and turning everything down actually hurts.",
+        "**Turning down a drink is fine, and there's a right way to do it.** ⚠️ Don't cover your glass with your hand or refuse with a flat *არა*. What works: **ღვინოს არ ვსვამ** (I don't drink wine) — give a reason if you like (religion, health, driving), then **წყლით დავლევ** (I'll toast with water). Toasting with water or lemonade is completely accepted; what isn't accepted is not joining in at all.",
+        "**If you don't drink alcohol, say so at the start, not halfway through.** The full sentence: *ბოდიში, ალკოჰოლს არ ვსვამ — რელიგიის გამო* (sorry, I don't drink alcohol — for religious reasons). In Georgia this is understood without argument; the country has lived beside Muslim neighbors for centuries, and it has a sizable Muslim population of its own in Adjara.",
+        "**მიირთვი / მიირთვით = \"please, help yourself\".** A polite form of \"eat\" used especially with guests, and you'll hear it dozens of times in one evening. A good enough reply: *მადლობა, ძალიან გემრიელია.*",
+        "**Praising the hosts matters more than praising the food.** The sentences that really stay with people: *ასეთი სტუმრობა არასდროს მქონია* (I've never been a guest like this before) and *თქვენი ოჯახი ძალიან სტუმართმოყვარეა* (your family is so hospitable)."
+      ],
+      "grammars": [
+        {
+          "title": "Sentences for the whole evening",
+          "tables": [
+            {
+              "head": [
+                "Sentence",
+                "Say it",
+                "When to use it"
+              ],
+              "rows": [
+                [
+                  "გაუმარჯოს!",
+                  "gaumarjos",
+                  "to answer every toast"
+                ],
+                [
+                  "ჩვენს სტუმრებს!",
+                  "chvens st'umrebs",
+                  "to our guests!"
+                ],
+                [
+                  "მშვიდობას!",
+                  "mshvidobas",
+                  "to peace!"
+                ],
+                [
+                  "ოჯახს გაუმარჯოს!",
+                  "ojakhs gaumarjos",
+                  "to this family!"
+                ],
+                [
+                  "თქვენს ჯანმრთელობას!",
+                  "tkvens janmrtelobas",
+                  "to your health!"
+                ],
+                [
+                  "ალავერდი შენ!",
+                  "alaverdi shen",
+                  "your turn to toast (from the tamada)"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Sentence",
+                "Say it",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "ძალიან გემრიელია",
+                  "dzalian gemrielia",
+                  "It's delicious"
+                ],
+                [
+                  "ვინ მოამზადა?",
+                  "vin moamzada",
+                  "Who cooked this?"
+                ],
+                [
+                  "მადლობა, საკმარისია",
+                  "madloba, sak'marisia",
+                  "Thank you, that's enough"
+                ],
+                [
+                  "მართლა ვერ შევძლებ",
+                  "martla ver shevdzleb",
+                  "I really can't eat any more"
+                ],
+                [
+                  "ღვინოს არ ვსვამ",
+                  "ghvinos ar vsvam",
+                  "I don't drink wine"
+                ],
+                [
+                  "წყლით დავლევ",
+                  "ts'q'lit davlev",
+                  "I'll toast with water"
+                ],
+                [
+                  "ძალიან მადლობელი ვარ",
+                  "dzalian madlobeli var",
+                  "I'm very grateful"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "**ალავერდი** is when the tamada hands the turn to toast to someone else. If your name is called, one short sentence is more than enough: *მადლობა ყველაფრისთვის. ამ ოჯახს გაუმარჯოს!* — and the whole table will applaud."
+          ]
+        },
+        {
+          "title": "Words that explain Georgia",
+          "table": {
+            "head": [
+              "Word",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "სუფრა",
+                "supra",
+                "a shared feast"
+              ],
+              [
+                "თამადა",
+                "tamada",
+                "head of the table"
+              ],
+              [
+                "სადღეგრძელო",
+                "sadghegrdzelo",
+                "toast (literally \"to long life\")"
+              ],
+              [
+                "სტუმარი",
+                "st'umari",
+                "guest"
+              ],
+              [
+                "სტუმართმოყვარე",
+                "st'umartmoq'vare",
+                "hospitable"
+              ],
+              [
+                "მასპინძელი",
+                "masp'indzeli",
+                "host"
+              ],
+              [
+                "ღვინო",
+                "ghvino",
+                "wine"
+              ],
+              [
+                "ჭაჭა",
+                "ch'ach'a",
+                "Georgian grape brandy"
+              ],
+              [
+                "გენაცვალე",
+                "genatsvale",
+                "a term of endearment that can't be translated"
+              ],
+              [
+                "შენ გენაცვალე",
+                "shen genatsvale",
+                "the most Georgian expression of affection"
+              ]
+            ]
+          },
+          "after": [
+            "**გენაცვალე** literally means something like \"let me take your place\" — a declaration that the speaker is willing to bear whatever befalls you. It's used every day, with children, guests, even customers at the market. No other language has an exact equivalent."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Surviving a supra: six practical things",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "What to know before you sit down",
+          "items": [
+            "**Don't drink before there's a toast.** Glasses are raised only when a sadghegrdzelo is given. Sipping wine in between is seen as odd, not relaxed.",
+            "**Beer isn't used for toasting.** In Georgia, toasting with beer has a bad meaning — it's used to remember enemies. If you're holding a beer, raise a glass of water for the toast instead.",
+            "**Don't clean your plate to show good manners.** An empty plate means you're still hungry, and it will be refilled right away. Leaving a little is the signal that you've had enough.",
+            "**Praise the people, not just the food.** *ვინ მოამზადა?* (who cooked this?) followed by thanking that person directly means far more than praising the taste.",
+            "**Saying goodbye takes time.** Standing up and leaving right away is considered rude. Set aside fifteen minutes to say goodbye, and thank your hosts in person.",
+            "**If you don't drink alcohol, say so at the start, once, calmly.** After that it won't come up again, and your glass will be filled with lemonade or water without a single comment."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One thing is hard to prepare for with memorized sentences: a supra can last five hours, and the hosts will keep giving. What visitors often get wrong is treating it as a polite ritual to be refused again and again — in Georgia the offer is real, and refusing repeatedly only makes the hosts try harder. The way out that works best is to accept a little, praise sincerely, then stop calmly: *მადლობა, საკმარისია.*"
+        },
+        {
+          "type": "p",
+          "text": "And one thing you may carry home longer than the vocabulary. Toasting in Georgia is not a game; it follows an order, it's sincere, and it almost always mentions those who are gone and those not yet born. If someone raises a glass to **ინდონეზიას** (Indonesia — or your own country) and says your name in it, that isn't mere politeness. There's only one fitting answer, and now you know the words: **გმადლობთ. თქვენს ოჯახს გაუმარჯოს!**"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ka": "სუფრა",
+      "baca": "supra",
+      "en": "feast"
+    },
+    {
+      "ka": "თამადა",
+      "baca": "tamada",
+      "en": "head of the table"
+    },
+    {
+      "ka": "სადღეგრძელო",
+      "baca": "sadghegrdzelo",
+      "en": "toast"
+    },
+    {
+      "ka": "გაუმარჯოს",
+      "baca": "gaumarjos",
+      "en": "victory to it! (toast)"
+    },
+    {
+      "ka": "სტუმარი",
+      "baca": "st'umari",
+      "en": "guest"
+    },
+    {
+      "ka": "მასპინძელი",
+      "baca": "masp'indzeli",
+      "en": "host"
+    },
+    {
+      "ka": "სტუმართმოყვარე",
+      "baca": "st'umartmoq'vare",
+      "en": "hospitable"
+    },
+    {
+      "ka": "მშვიდობა",
+      "baca": "mshvidoba",
+      "en": "peace"
+    },
+    {
+      "ka": "ჯანმრთელობა",
+      "baca": "janmrteloba",
+      "en": "health"
+    },
+    {
+      "ka": "ღვინო",
+      "baca": "ghvino",
+      "en": "wine"
+    },
+    {
+      "ka": "ჭაჭა",
+      "baca": "ch'ach'a",
+      "en": "grape brandy"
+    },
+    {
+      "ka": "ლიმონათი",
+      "baca": "limonati",
+      "en": "lemonade"
+    },
+    {
+      "ka": "გული",
+      "baca": "guli",
+      "en": "heart"
+    },
+    {
+      "ka": "მთავარი",
+      "baca": "mtavari",
+      "en": "the main thing"
+    },
+    {
+      "ka": "მიირთვი",
+      "baca": "mi'irtvi",
+      "en": "please, help yourself"
+    },
+    {
+      "ka": "მადლობელი",
+      "baca": "madlobeli",
+      "en": "grateful"
+    },
+    {
+      "ka": "საკმარისი",
+      "baca": "sak'marisi",
+      "en": "enough"
+    },
+    {
+      "ka": "ალკოჰოლი",
+      "baca": "alk'oholi",
+      "en": "alcohol"
+    },
+    {
+      "ka": "რელიგია",
+      "baca": "religia",
+      "en": "religion"
+    },
+    {
+      "ka": "გამო",
+      "baca": "gamo",
+      "en": "because of"
+    },
+    {
+      "ka": "ასეთი",
+      "baca": "aseti",
+      "en": "like this"
+    },
+    {
+      "ka": "სტუმრობა",
+      "baca": "st'umroba",
+      "en": "being a guest, a visit"
+    },
+    {
+      "ka": "ყველაფრისთვის",
+      "baca": "q'velaprist'vis",
+      "en": "for everything"
+    },
+    {
+      "ka": "გენაცვალე",
+      "baca": "genatsvale",
+      "en": "dear (warm form of address)"
+    },
+    {
+      "ka": "ვერ შევძლებ",
+      "baca": "ver shevdzleb",
+      "en": "I can't (manage)"
+    },
+    {
+      "ka": "მოამზადა",
+      "baca": "moamzada",
+      "en": "he/she cooked, prepared"
+    },
+    {
+      "ka": "დაბრძანდით",
+      "baca": "dabrdzandit",
+      "en": "please sit down"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose the right response at the supra.",
+      "items": [
+        "The tamada makes a toast. You say: ____",
+        "The host tells you to have more, but you're full: ____ , საკმარისია",
+        "You don't drink alcohol: ღვინოს ____ ვსვამ",
+        "You join the toast with water: ____ დავლევ",
+        "The food is delicious: ძალიან ____"
+      ]
+    },
+    {
+      "prompt": "Complete the toasts.",
+      "items": [
+        "____ ! (victory to it)",
+        "ჩვენს ____ ! (to our guests)",
+        "____ ! (to peace)",
+        "თქვენს ____ ! (to your health)",
+        "____ გაუმარჯოს! (to this family)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ვარ / მადლობელი / ძალიან",
+        "ღვთისაა / სტუმარი",
+        "ვსვამ / ღვინოს / არ",
+        "გემრიელია / ყველაფერი / ძალიან",
+        "მოამზადა / ვინ / ?"
+      ]
+    },
+    {
+      "prompt": "Translate into Georgian.",
+      "items": [
+        "Thank you so much.",
+        "Everything is delicious.",
+        "Thank you, that's enough.",
+        "I don't drink wine, sorry.",
+        "I'm very grateful.",
+        "To this family!"
+      ]
+    }
+  ],
+  "answers": [
+    "გაუმარჯოს — მადლობა — არ — წყლით — გემრიელია",
+    "გაუმარჯოს — სტუმრებს — მშვიდობას — ჯანმრთელობას — ოჯახს",
+    "ძალიან მადლობელი ვარ. — სტუმარი ღვთისაა. — ღვინოს არ ვსვამ. — ყველაფერი ძალიან გემრიელია. — ვინ მოამზადა?",
+    "დიდი მადლობა. — ყველაფერი ძალიან გემრიელია. — მადლობა, საკმარისია. — ღვინოს არ ვსვამ, ბოდიში. — ძალიან მადლობელი ვარ. — ამ ოჯახს გაუმარჯოს!"
+  ]
+}

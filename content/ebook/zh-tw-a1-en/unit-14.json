@@ -1,0 +1,661 @@
+{
+  "title": "The weather is lovely",
+  "title_target": "天氣真好",
+  "goal": "Use adjectives correctly — and accept a surprising fact: 很 in front of an adjective often does NOT mean \"very\".",
+  "bekal": [
+    "build adjective sentences without 是 and with an \"empty\" 很",
+    "compare two things with 比 and express sameness with 一樣",
+    "talk about the weather and seasons in Taiwan"
+  ],
+  "dialogs": [
+    {
+      "title": "對話 — 台南的天氣",
+      "intro": "First day in Tainan. Budi is surprised at how different it feels from Taipei.",
+      "lines": [
+        {
+          "speaker": "布迪:",
+          "text": "[哇|Wā]！[台南|Táinán][的|de][天氣|tiānqì][真|zhēn][好|hǎo]！",
+          "id": "Wow! The weather in Tainan is lovely!",
+          "literal": "wow! Tainan — 's — sky-air — really — good!"
+        },
+        {
+          "speaker": "阿明:",
+          "text": "[對|Duì][啊|a]。[台南|Táinán][比|bǐ][台北|Táiběi][乾|gān][多了|duō le]。",
+          "id": "Yeah. Tainan is much drier than Taipei.",
+          "literal": "right — (softener). Tainan — compare — Taipei — dry — much — (change)."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[台北|Táiběi][真的|zhēn de][很|hěn][常|cháng][下雨|xiàyǔ]。",
+          "id": "It really does rain a lot in Taipei.",
+          "literal": "Taipei — real — (one) — very — often — fall-rain."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[冬天|Dōngtiān][更|gèng][慘|cǎn]！[又|Yòu][冷|lěng][又|yòu][濕|shī]。",
+          "id": "Winter is even worse! Cold and damp at the same time.",
+          "literal": "winter — even-more — miserable! both — cold — and — wet."
+        },
+        {
+          "speaker": "阿明:",
+          "text": "[台南|Táinán][冬天|dōngtiān][很|hěn][舒服|shūfú]，[大概|dàgài][二十|èrshí][度|dù]。",
+          "id": "Winter in Tainan is pleasant, around twenty degrees.",
+          "literal": "Tainan — winter — very — comfortable, about — twenty — degree."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[跟|Gēn][印尼|Yìnní][差不多|chàbùduō][一樣|yíyàng][啊|a]！",
+          "id": "That's about the same as Indonesia!",
+          "literal": "with — Indonesia — differ-not-much — same — (softener)!"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[可是|Kěshì][夏天|xiàtiān][呢|ne]？[台南|Táinán][夏天|xiàtiān][超|chāo][熱|rè][的|de]！",
+          "id": "But summer? Tainan summers are super hot!",
+          "literal": "but — summer — (what about)? Tainan — summer — super — hot — (one)!"
+        },
+        {
+          "speaker": "阿明:",
+          "text": "[三十六|Sānshíliù][度|dù]。[比|Bǐ][台北|Táiběi][熱|rè][一點|yìdiǎn]。",
+          "id": "Thirty-six degrees. A bit hotter than Taipei.",
+          "literal": "thirty-six — degree. compare — Taipei — hot — a-bit."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[那|Nà][跟|gēn][雅加達|Yǎjiādá][一樣|yíyàng][熱|rè]。[我|Wǒ][習慣|xíguàn][了|le]。",
+          "id": "Then it's as hot as Jakarta. I'm used to it.",
+          "literal": "then — with — Jakarta — same — hot. I — used-to — (change)."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[你|Nǐ][比|bǐ][我|wǒ][厲害|lìhài]！[我|Wǒ][怕|pà][熱|rè]。",
+          "id": "You're tougher than me! I can't stand the heat.",
+          "literal": "you — compare — I — impressive! I — fear — hot."
+        },
+        {
+          "speaker": "阿明:",
+          "text": "[別|Bié][擔心|dānxīn]。[今天|Jīntiān][沒|méi][那麼|nàme][熱|rè]。",
+          "id": "Don't worry. It's not that hot today.",
+          "literal": "don't — carry-heart. today — not — that — hot."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[天|Tiān][很|hěn][藍|lán]，[雲|yún][很|hěn][少|shǎo]。[好|Hǎo][漂亮|piàoliang]！",
+          "id": "Blue sky, hardly any clouds. So pretty!",
+          "literal": "sky — very — blue, cloud — very — few. so — pretty!"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[台南|Táinán][的|de][陽光|yángguāng][最|zuì][有名|yǒumíng]。",
+          "id": "Tainan's sunshine is what it's most famous for.",
+          "literal": "Tainan — 's — sun-light — most — have-name."
+        },
+        {
+          "speaker": "阿明:",
+          "text": "[走|Zǒu][吧|ba]！[太陽|Tàiyáng][下山|xiàshān][以前|yǐqián][還有|hái yǒu][很多|hěn duō][地方|dìfāng]！",
+          "id": "Let's go! There are still lots of places to see before sunset!",
+          "literal": "go — (suggestion)! sun — descend-mountain — before — still — have — very — many — place!"
+        }
+      ],
+      "notes": [
+        "**又…又… means \"both… and…\"** for two qualities that come together: 又冷又濕 (cold and damp), 又便宜又好吃 (cheap and tasty). ⚠️ The two qualities must be of the same kind — both good, or both bad.",
+        "**差不多 (\"the difference isn't much\") means \"about the same, roughly\"** and is used constantly. It can also mean \"that'll do\": *差不多了* = \"that's about enough, almost done\".",
+        "⚠️ **怕 means \"be afraid\" and also \"can't stand\"**: 我怕熱 (I can't stand heat), 我怕辣 (I can't handle spicy food), 我怕冷 (I can't stand the cold). This form is very handy in restaurants.",
+        "**別 = 不要, but shorter and more casual**: 別擔心 (don't worry), 別客氣 (don't mention it), 別走 (don't go). In everyday speech, 別 and 不要 are equally common.",
+        "**超…的 is a young Taiwanese frame** for \"so…, super…\": 超熱的, 超好吃的, 超便宜的. Note the 的 at the end — without it, it sounds unfinished."
+      ],
+      "grammars": [
+        {
+          "title": "⚠️ Adjectives: no 是, and a 很 that means nothing",
+          "body": [
+            "This is the most common sticking point after measure words. In Mandarin, **adjectives behave like verbs**. They don't need 是 — and in return, they almost always need something in front of them, usually 很."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Pīnyīn",
+              "Meaning",
+              "Note"
+            ],
+            "rows": [
+              [
+                "我**很**忙。",
+                "Wǒ hěn máng.",
+                "I'm busy.",
+                "⚠️ 很 doesn't mean \"very\""
+              ],
+              [
+                "✗ 我是忙。",
+                "—",
+                "—",
+                "✗ wrong"
+              ],
+              [
+                "✗ 我忙。",
+                "—",
+                "—",
+                "⚠️ sounds unfinished"
+              ],
+              [
+                "天氣**很**好。",
+                "Tiānqì hěn hǎo.",
+                "The weather is nice.",
+                "neutral"
+              ],
+              [
+                "天氣**真**好！",
+                "Tiānqì zhēn hǎo!",
+                "The weather is so nice!",
+                "really"
+              ],
+              [
+                "天氣**非常**好。",
+                "Tiānqì fēicháng hǎo.",
+                "The weather is very nice.",
+                "truly \"very\""
+              ],
+              [
+                "天氣**不**好。",
+                "Tiānqì bù hǎo.",
+                "The weather isn't nice.",
+                "⚠️ 很 disappears when negated"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **In an ordinary sentence, 很 is almost empty of meaning.** It's just a prop that makes the sentence complete. If you really want to say \"very\", use **真** (really), **非常** (extremely), **太…了** (too), or **超** (super).",
+            "**Why 很 is needed:** an adjective with no prop sounds like an unfinished comparison. *我忙* feels like \"I'm busy (and you're not)\". Adding 很 makes it neutral.",
+            "⚠️ **很 disappears in negatives and questions**: *天氣不好* ✓, *天氣好嗎？* ✓ — not *天氣不很好* or *天氣很好嗎？*"
+          ]
+        },
+        {
+          "title": "比 and 一樣: comparing",
+          "body": [
+            "**A 比 B + adjective** = \"A is more … than B\". ⚠️ Note that **很 disappears** in comparisons — using it is a very common mistake."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Pīnyīn",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "台南**比**台北熱。",
+                "Táinán bǐ Táiběi rè.",
+                "Tainan is hotter than Taipei."
+              ],
+              [
+                "✗ 台南比台北**很**熱。",
+                "—",
+                "✗ wrong — drop the 很"
+              ],
+              [
+                "台南**比**台北熱**一點**。",
+                "…rè yìdiǎn.",
+                "…a bit hotter."
+              ],
+              [
+                "台南**比**台北熱**多了**。",
+                "…rè duō le.",
+                "…much hotter."
+              ],
+              [
+                "台南**沒有**台北冷。",
+                "Táinán méi yǒu Táiběi lěng.",
+                "Tainan isn't as cold as Taipei."
+              ],
+              [
+                "台南**跟**台北**一樣**熱。",
+                "…gēn… yíyàng rè.",
+                "Tainan is as hot as Taipei."
+              ],
+              [
+                "這個**最**好。",
+                "Zhè ge zuì hǎo.",
+                "This one is the best."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **The difference stands AFTER the adjective**, not before: *熱一點* (a bit hotter), *貴五十塊* (fifty dollars more expensive), *大兩歲* (two years older). English often puts it first (\"a bit hotter\"), and that habit tends to carry over.",
+            "**Negate a comparison with 沒有, not 不比**: *台南沒有台北冷* = \"Tainan isn't as cold as Taipei\". The form 不比 exists, but its meaning is narrower and beginners rarely need it.",
+            "**最 (*zuì*, most) stands right before the adjective**: 最好, 最貴, 最喜歡. It's one of the most frequent words in everyday conversation."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Weather and seasons",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "Meaning",
+            "中文",
+            "Pīnyīn",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "天氣",
+              "tiānqì",
+              "weather",
+              "春天",
+              "chūntiān",
+              "spring"
+            ],
+            [
+              "熱",
+              "rè",
+              "hot",
+              "夏天",
+              "xiàtiān",
+              "summer"
+            ],
+            [
+              "冷",
+              "lěng",
+              "cold",
+              "秋天",
+              "qiūtiān",
+              "fall"
+            ],
+            [
+              "涼",
+              "liáng",
+              "cool",
+              "冬天",
+              "dōngtiān",
+              "winter"
+            ],
+            [
+              "溫暖",
+              "wēnnuǎn",
+              "warm",
+              "下雨",
+              "xiàyǔ",
+              "rain"
+            ],
+            [
+              "濕",
+              "shī",
+              "humid",
+              "颱風",
+              "táifēng",
+              "⚠️ typhoon"
+            ],
+            [
+              "乾",
+              "gān",
+              "dry",
+              "太陽",
+              "tàiyáng",
+              "sun"
+            ],
+            [
+              "悶",
+              "mēn",
+              "stuffy, muggy",
+              "雲",
+              "yún",
+              "cloud"
+            ],
+            [
+              "度",
+              "dù",
+              "degree",
+              "風",
+              "fēng",
+              "wind"
+            ],
+            [
+              "舒服",
+              "shūfú",
+              "comfortable",
+              "地震",
+              "dìzhèn",
+              "⚠️ earthquake"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Two things you need to know about Taiwan",
+          "items": [
+            "**颱風 (typhoons)** come between July and October, several times a year. When the government announces a **颱風假** (typhoon day off), schools and offices close — and all of Taiwan celebrates. ⚠️ Don't go out during a typhoon; flying objects are a real danger.",
+            "**地震 (earthquakes)** are frequent because Taiwan sits on a plate boundary. Small quakes happen almost weekly, and Taiwanese people don't react at all. What you need to know: take cover under a table; don't run outside.",
+            "**Useful sentences:** *今天有颱風嗎？* (is there a typhoon today?), *剛剛地震了！* (there was just an earthquake!), *你還好嗎？* (are you OK?).",
+            "Phones in Taiwan sound a loud alarm for earthquake and typhoon alerts. ⚠️ Don't turn those alerts off."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Everyday adjectives",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "Meaning",
+            "中文",
+            "Pīnyīn",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "好",
+              "hǎo",
+              "good",
+              "壞",
+              "huài",
+              "bad, broken"
+            ],
+            [
+              "大",
+              "dà",
+              "big",
+              "小",
+              "xiǎo",
+              "small"
+            ],
+            [
+              "多",
+              "duō",
+              "many, much",
+              "少",
+              "shǎo",
+              "few, little"
+            ],
+            [
+              "高",
+              "gāo",
+              "tall",
+              "矮",
+              "ǎi",
+              "short (person)"
+            ],
+            [
+              "忙",
+              "máng",
+              "busy",
+              "有空",
+              "yǒukòng",
+              "free (not busy)"
+            ],
+            [
+              "累",
+              "lèi",
+              "tired",
+              "有精神",
+              "yǒu jīngshén",
+              "refreshed"
+            ],
+            [
+              "漂亮",
+              "piàoliang",
+              "pretty",
+              "帥",
+              "shuài",
+              "handsome"
+            ],
+            [
+              "有趣",
+              "yǒuqù",
+              "interesting",
+              "無聊",
+              "wúliáo",
+              "boring"
+            ],
+            [
+              "安靜",
+              "ānjìng",
+              "quiet",
+              "吵",
+              "chǎo",
+              "noisy"
+            ],
+            [
+              "乾淨",
+              "gānjìng",
+              "clean",
+              "髒",
+              "zāng",
+              "dirty"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **好 placed before a verb makes an adjective**: 好吃 (tasty to eat), 好喝 (tasty to drink), 好看 (good-looking), 好玩 (fun), 好聽 (pleasant to hear). This pattern gives you dozens of free words. The opposite uses 難: 難吃 (tastes bad), 難看 (ugly), 難聽 (unpleasant to hear)."
+        }
+      ]
+    },
+    {
+      "title": "Expressing degree",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Form",
+            "Example",
+            "Meaning",
+            "Tone"
+          ],
+          "rows": [
+            [
+              "**有一點** + adjective",
+              "有一點貴",
+              "a bit expensive",
+              "⚠️ always a complaint"
+            ],
+            [
+              "**很** + adjective",
+              "很貴",
+              "expensive",
+              "neutral"
+            ],
+            [
+              "**真** + adjective",
+              "真貴",
+              "so expensive",
+              "amazed / surprised"
+            ],
+            [
+              "**非常** + adjective",
+              "非常貴",
+              "very expensive",
+              "formal"
+            ],
+            [
+              "**太** + adjective + **了**",
+              "太貴了",
+              "too expensive",
+              "strong complaint"
+            ],
+            [
+              "**超** + adjective + **的**",
+              "超貴的",
+              "super expensive",
+              "young people"
+            ],
+            [
+              "adjective + **極了**",
+              "貴極了",
+              "extremely expensive",
+              "written"
+            ],
+            [
+              "**最** + adjective",
+              "最貴",
+              "most expensive",
+              "—"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Compare **有一點貴** and **便宜一點**. The first means \"a bit expensive\" (a complaint); the second means \"a bit cheaper\" (a request). The difference is position: **有一點 before** the adjective is a complaint; **一點 after** the adjective is a comparison. Put it in the wrong place and the meaning flips."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "天氣",
+      "baca": "tiānqì",
+      "en": "weather"
+    },
+    {
+      "zh": "很",
+      "baca": "hěn",
+      "en": "⚠️ (adjective prop)"
+    },
+    {
+      "zh": "真",
+      "baca": "zhēn",
+      "en": "really, truly"
+    },
+    {
+      "zh": "非常",
+      "baca": "fēicháng",
+      "en": "very, extremely"
+    },
+    {
+      "zh": "太…了",
+      "baca": "tài… le",
+      "en": "too, excessively"
+    },
+    {
+      "zh": "最",
+      "baca": "zuì",
+      "en": "most"
+    },
+    {
+      "zh": "比",
+      "baca": "bǐ",
+      "en": "compared with"
+    },
+    {
+      "zh": "一樣",
+      "baca": "yíyàng",
+      "en": "same"
+    },
+    {
+      "zh": "跟",
+      "baca": "gēn",
+      "en": "with, and"
+    },
+    {
+      "zh": "差不多",
+      "baca": "chàbùduō",
+      "en": "about the same"
+    },
+    {
+      "zh": "熱",
+      "baca": "rè",
+      "en": "hot"
+    },
+    {
+      "zh": "冷",
+      "baca": "lěng",
+      "en": "cold"
+    },
+    {
+      "zh": "濕",
+      "baca": "shī",
+      "en": "humid"
+    },
+    {
+      "zh": "舒服",
+      "baca": "shūfú",
+      "en": "comfortable"
+    },
+    {
+      "zh": "漂亮",
+      "baca": "piàoliang",
+      "en": "pretty"
+    },
+    {
+      "zh": "颱風",
+      "baca": "táifēng",
+      "en": "⚠️ typhoon"
+    },
+    {
+      "zh": "地震",
+      "baca": "dìzhèn",
+      "en": "⚠️ earthquake"
+    },
+    {
+      "zh": "怕",
+      "baca": "pà",
+      "en": "be afraid of; can't stand"
+    },
+    {
+      "zh": "習慣",
+      "baca": "xíguàn",
+      "en": "be used to; habit"
+    },
+    {
+      "zh": "別",
+      "baca": "bié",
+      "en": "don't"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mandarin.",
+      "items": [
+        "The weather is nice.",
+        "I'm busy.",
+        "Tainan is hotter than Taipei.",
+        "This one is the cheapest.",
+        "It's not hot today.",
+        "Same as Indonesia."
+      ]
+    },
+    {
+      "prompt": "Correct the sentences.",
+      "items": [
+        "我是忙。",
+        "天氣不很好。",
+        "台南比台北很熱。",
+        "這個很貴嗎？",
+        "我是二十歲。"
+      ]
+    },
+    {
+      "prompt": "Fill in with 很, 比, 最, 一樣, or 太.",
+      "items": [
+        "我 ____ 累。",
+        "台北 ____ 台南冷。",
+        "這個 ____ 好吃！",
+        "____ 貴了，我不買。",
+        "他跟我 ____ 高。",
+        "夏天 ____ 熱。"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "好 / 天氣 / 很",
+        "熱 / 台北 / 台南 / 比",
+        "了 / 太 / 貴",
+        "一樣 / 我 / 跟 / 他 / 高",
+        "最 / 這個 / 好 / 便宜"
+      ]
+    }
+  ],
+  "answers": [
+    "天氣很好。 — 我很忙。 — 台南比台北熱。 — 這個最便宜。 — 今天不熱。 — 跟印尼一樣。",
+    "我很忙。 — 天氣不好。 — 台南比台北熱。 — 這個貴嗎？ — 我二十歲。",
+    "很 — 比 — 很 — 太 — 一樣 — 很",
+    "天氣很好。 — 台南比台北熱。 — 太貴了。 — 我跟他一樣高。 — 這個最便宜。"
+  ]
+}

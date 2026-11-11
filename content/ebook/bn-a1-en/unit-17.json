@@ -1,0 +1,523 @@
+{
+  "title": "Asking, telling, and forbidding",
+  "title_target": "একটু বসুন, চা খেয়ে যান — èk-Tu bô-sun, cha khé-yé jan",
+  "goal": "Tell and ask people at three levels of politeness, and forbid with a না at the end — including one gentle form that looks like the future but is really a request.",
+  "bekal": [
+    "forming commands for আপনি, তুমি, and তুই",
+    "forbidding with করবেন না, করো না",
+    "softening requests with একটু and না",
+    "using the -বেন form as the politest request",
+    "accepting and declining offers naturally"
+  ],
+  "dialogs": [
+    {
+      "title": "কথোপকথন — A guest drops by unannounced",
+      "intro": "A neighbor, Rina, drops in for a visit. The whole dialog is full of commands — but notice that almost all of them are hospitality, not orders.",
+      "lines": [
+        {
+          "speaker": "মিতালি:",
+          "text": "[রিনা|ri-na] [আপা|a-pa]! [আসুন|a-sun], [আসুন|a-sun]। [বসুন|bô-sun] [এখানে|è-kha-né]।",
+          "id": "Rina! Come in, come in. Sit here.",
+          "literal": "Rina — sister! come, come. sit — here."
+        },
+        {
+          "speaker": "রিনা:",
+          "text": "[না|na] [না|na], [বেশিক্ষণ|bè-shik-khôn] [থাকব|thak-bô] [না|na]। [কাজ|kaj] [আছে|a-chhé]।",
+          "id": "No, no, I won't stay long. I have things to do.",
+          "literal": "no — no, long — will-stay — not. business — is-there."
+        },
+        {
+          "speaker": "মিতালি:",
+          "text": "[অন্তত|ôn-tô-tô] [চা|cha] [খেয়ে|khé-yé] [যান|jan]। [আনি|a-ni], [একটু|èk-Tu] [পানি|pa-ni] [দেবেন|dé-bèn]?",
+          "id": "At least have some tea first. Ani, could you bring some water?",
+          "literal": "at-least — tea — drink-then — go. Ani, a-little — water — will-give?"
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[অবশ্যই|ô-bô-shyô-i]। [আপা|a-pa], [ঠান্ডা|Than-Da] [না|na] [গরম|gô-rôm]?",
+          "id": "Of course. Rina, cold or hot?",
+          "literal": "of-course. sister, cold — or — hot?"
+        },
+        {
+          "speaker": "রিনা:",
+          "text": "[ঠান্ডাই|Than-Da-i] [দিন|din]। [আর|ar] [শোনো|sho-no], [চিনি|chi-ni] [দিও|di-o] [না|na]।",
+          "id": "Just cold. And listen, no sugar, please.",
+          "literal": "cold-just — give. and — listen, sugar — give — don't."
+        },
+        {
+          "speaker": "মিতালি:",
+          "text": "[আপা|a-pa] [ডায়াবেটিস|Da-ya-bé-Tish]। [আনি|a-ni], [চিনি|chi-ni] [ছাড়া|chha-Ra] [বানাবেন|ba-na-bèn]।",
+          "id": "Rina is diabetic. Ani, make it without sugar.",
+          "literal": "sister — diabetes. Ani, sugar — without — will-make."
+        },
+        {
+          "speaker": "রিনা:",
+          "text": "[তোমরা|tom-ra] [ব্যস্ত|bêas-tô] [হয়ো|hô-yo] [না|na]। [আমি|a-mi] [শুধু|shu-dhu] [দেখতে|dèkh-té] [এসেছি|é-sé-chhi]।",
+          "id": "Please don't go to any trouble. I just came to see you.",
+          "literal": "you-all — busy — become — don't. I — only — see-to — have-come."
+        },
+        {
+          "speaker": "মিতালি:",
+          "text": "[একদম|èk-dôm] [ব্যস্ত|bêas-tô] [হচ্ছি|hôch-chhi] [না|na]। [একটু|èk-Tu] [অপেক্ষা|ô-pék-kha] [করুন|kô-run]।",
+          "id": "It's no trouble at all. Just a moment.",
+          "literal": "at-all — busy — am-being — not. a-little — wait — do."
+        },
+        {
+          "speaker": "রিনা:",
+          "text": "[আনি|a-ni], [তুমি|tu-mi] [কেমন|kè-mon] [আছ|achh]? [বাংলা|bang-la] [বলো|bô-lo] [তো|to] [একটু|èk-Tu]!",
+          "id": "Ani, how are you? Try speaking a little Bengali!",
+          "literal": "Ani, you — how — are? Bengali — speak — [na] — a-little!"
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[আমি|a-mi] [ভালো|bha-lo] [আছি|a-chhi], [আপা|a-pa]। [আস্তে|as-té] [বলবেন|bôl-bèn], [তাহলে|ta-hô-lé] [বুঝব|bujh-bô]।",
+          "id": "I'm fine. Please speak slowly, then I'll understand.",
+          "literal": "I — well — am, sister. slowly — will-say, then — will-understand."
+        },
+        {
+          "speaker": "রিনা:",
+          "text": "[বাহ|bah]! [চমৎকার|chô-môt-kar]! [ভয়|bhôy] [পেয়ো|pé-yo] [না|na], [তুমি|tu-mi] [পারবে|par-bé]।",
+          "id": "Wow! Wonderful! Don't be scared, you can do it.",
+          "literal": "wow! wonderful! fear — get — don't, you — will-be-able."
+        },
+        {
+          "speaker": "মিতালি:",
+          "text": "[এই|èi] [নিন|nin] [চা|cha]। [গরম|gô-rôm] [গরম|gô-rôm] [খান|khan]!",
+          "id": "Here's the tea. Drink it while it's hot!",
+          "literal": "here — take — tea. hot — hot — eat!"
+        }
+      ],
+      "notes": [
+        "**Commands have three levels, matching the three words for “you”.** For **আপনি**, the ending is **-উন**: করুন, বলুন, বসুন, শুনুন — the form to use with everyone at first. For **তুমি**, the ending is **-ও**: করো, বলো, বসো, শোনো. For **তুই**, the bare stem with no ending: কর, বল, বস, শোন.",
+        "⚠️ **A few আপনি commands are irregular and very common:** যাওয়া → **যান** (not *যাউন*), আসা → **আসুন**, খাওয়া → **খান**, দেওয়া → **দিন**, নেওয়া → **নিন**, হওয়া → **হন**. These six cover most everyday talk; learn them together.",
+        "**There's a fourth, even politer form, and it looks like the future: -বেন.** আস্তে **বলবেন** (please speak slowly), একটু **দেবেন**? (could you give me…?), **আসবেন** কিন্তু! (do come!). Literally “you will say”, but it means a gentle, unhurried request. ⚠️ It's the safest form for asking strangers for something.",
+        "**Forbidding works by putting না at the end, just like negation.** করবেন না (don't do it), যাবেন না (don't go), চিন্তা করবেন না (don't worry), ভয় পাবেন না (don't be afraid). ⚠️ Polite “don't” uses the **-বেন** form, not the -উন command: *করুন না* actually means “go on, do it” — the exact opposite of what you meant.",
+        "⚠️ **So না after a command can mean two opposite things, and the verb form decides.** **করবেন না** (-বেন form) = don't do it. **করুন না** (-উন form) = go on, do it. The key is the verb form, not the না.",
+        "**একটু softens almost any request.** একটু বসুন (sit down a moment), একটু দেখুন (take a look), একটু সরুন (move over a bit), একটু অপেক্ষা করুন (wait a moment). ⚠️ Without একটু, a command sounds like an instruction; with একটু, it becomes a request — much like *just* or *a moment* in English.",
+        "**Declining an offer in a Bengali home has its own etiquette.** Declining once is politeness; the host will offer again. A phrase that works: **সত্যিই লাগবে না, ধন্যবাদ** (I really don't need it, thank you). ⚠️ But once the tea is poured, accept it — refusing then feels like rejecting the person, not the drink. And **চা খেয়ে যান** (have some tea before you go) is one you should accept at least once."
+      ],
+      "grammars": [
+        {
+          "title": "Three levels of command",
+          "tables": [
+            {
+              "head": [
+                "Verb",
+                "আপনি (-উন)",
+                "তুমি (-ও)",
+                "তুই (bare stem)",
+                "Polite “don't”"
+              ],
+              "rows": [
+                [
+                  "করা — do",
+                  "করুন",
+                  "করো",
+                  "কর",
+                  "করবেন না"
+                ],
+                [
+                  "বলা — say",
+                  "বলুন",
+                  "বলো",
+                  "বল",
+                  "বলবেন না"
+                ],
+                [
+                  "বসা — sit",
+                  "বসুন",
+                  "বসো",
+                  "বস",
+                  "বসবেন না"
+                ],
+                [
+                  "দেখা — see",
+                  "দেখুন",
+                  "দেখো",
+                  "দেখ",
+                  "দেখবেন না"
+                ],
+                [
+                  "শোনা — hear, listen",
+                  "শুনুন",
+                  "শোনো",
+                  "শোন",
+                  "শুনবেন না"
+                ],
+                [
+                  "যাওয়া — go ⚠️",
+                  "যান",
+                  "যাও",
+                  "যা",
+                  "যাবেন না"
+                ],
+                [
+                  "আসা — come ⚠️",
+                  "আসুন",
+                  "এসো",
+                  "আয়",
+                  "আসবেন না"
+                ],
+                [
+                  "খাওয়া — eat ⚠️",
+                  "খান",
+                  "খাও",
+                  "খা",
+                  "খাবেন না"
+                ],
+                [
+                  "দেওয়া — give ⚠️",
+                  "দিন",
+                  "দাও",
+                  "দে",
+                  "দেবেন না"
+                ],
+                [
+                  "নেওয়া — take ⚠️",
+                  "নিন",
+                  "নাও",
+                  "নে",
+                  "নেবেন না"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "**The gentle -বেন request is used for things that aren't urgent and for wishes that apply later:** আসবেন (do come), লিখে দেবেন (please write it down for me later), ভালো থাকবেন (take care). ⚠️ Note that **ভালো থাকবেন** — the warmest goodbye — is actually this gentle command form."
+          ]
+        },
+        {
+          "title": "The most common requests",
+          "table": {
+            "head": [
+              "বাংলা",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "একটু বসুন।",
+                "èk-Tu bô-sun",
+                "Sit down a moment."
+              ],
+              [
+                "একটু অপেক্ষা করুন।",
+                "èk-Tu ô-pék-kha kô-run",
+                "Wait a moment."
+              ],
+              [
+                "আস্তে বলুন।",
+                "as-té bô-lun",
+                "Speak slowly."
+              ],
+              [
+                "আবার বলুন।",
+                "a-bar bô-lun",
+                "Say it again."
+              ],
+              [
+                "একটু সাহায্য করবেন?",
+                "èk-Tu sa-haj-jô kôr-bèn",
+                "Could you help a little?"
+              ],
+              [
+                "লিখে দেবেন?",
+                "li-khé dé-bèn",
+                "Could you write it down?"
+              ],
+              [
+                "চিন্তা করবেন না।",
+                "chin-ta kôr-bèn na",
+                "Don't worry."
+              ],
+              [
+                "ভয় পাবেন না।",
+                "bhôy pa-bèn na",
+                "Don't be afraid."
+              ],
+              [
+                "কিছু মনে করবেন না।",
+                "ki-chhu mô-né kôr-bèn na",
+                "Don't take it badly; sorry."
+              ],
+              [
+                "দয়া করে …",
+                "dô-ya kô-ré",
+                "Please … (formal)"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **দয়া করে sounds very formal and is rare in everyday talk.** For ordinary requests, একটু is more than enough and sounds far more natural. Save দয়া করে for letters, announcements, and earnest pleas."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Accepting and declining politely",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Say it",
+            "When to use it"
+          ],
+          "rows": [
+            [
+              "হ্যাঁ, দিন।",
+              "hèⁿ, din",
+              "Yes, please."
+            ],
+            [
+              "একটুখানি দিন।",
+              "èk-Tu-kha-ni din",
+              "Just a little."
+            ],
+            [
+              "আর লাগবে না, ধন্যবাদ।",
+              "ar lag-bé na, dhôn-nô-bad",
+              "That's enough, thank you."
+            ],
+            [
+              "সত্যিই লাগবে না।",
+              "sôt-ti-i lag-bé na",
+              "I really don't need it."
+            ],
+            [
+              "পরে খাব।",
+              "pô-ré kha-bô",
+              "I'll eat later."
+            ],
+            [
+              "আজ পারব না, দুঃখিত।",
+              "aj par-bô na, duk-khi-tô",
+              "Not today, sorry."
+            ],
+            [
+              "পরের বার নিশ্চয়ই।",
+              "pô-rér bar nish-chôy-i",
+              "Next time for sure."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ On giving and getting commands",
+          "items": [
+            "**Bengali commands sound much friendlier than their translations.** আসুন, বসুন, খান — this string of commands is a host's hospitality, not orders. Don't be offended by them, and don't be shy about using them.",
+            "**Adults use তুমি or তুই with small children**, and that's normal. But if someone uses তুই with **you** and you aren't close, it's a sign of disrespect — though often unintended by older people.",
+            "**If you're asked to speak Bengali in front of a group**, like Ani in this dialog, just answer with one sentence you know well. A short correct sentence impresses far more than a long messy one — and people will clap for both."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "An expression worth keeping: **গরম গরম খান** — “eat it while it's hot”. Bengali often repeats an adjective to stress the state: গরম গরম (piping hot), তাজা তাজা (nice and fresh), আস্তে আস্তে (slowly, little by little), তাড়াতাড়ি (quickly, from তাড়া). ⚠️ English does something similar with *nice and hot* or *slowly but surely*, but Bengali doubles the word itself."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "করুন",
+      "baca": "kô-run",
+      "en": "do it (polite)"
+    },
+    {
+      "bn": "বলুন",
+      "baca": "bô-lun",
+      "en": "say"
+    },
+    {
+      "bn": "বসুন",
+      "baca": "bô-sun",
+      "en": "sit down"
+    },
+    {
+      "bn": "আসুন",
+      "baca": "a-sun",
+      "en": "come, come in"
+    },
+    {
+      "bn": "যান",
+      "baca": "jan",
+      "en": "go"
+    },
+    {
+      "bn": "খান",
+      "baca": "khan",
+      "en": "eat"
+    },
+    {
+      "bn": "দিন · নিন",
+      "baca": "din · nin",
+      "en": "give · take"
+    },
+    {
+      "bn": "শুনুন",
+      "baca": "shu-nun",
+      "en": "listen"
+    },
+    {
+      "bn": "দেখুন",
+      "baca": "dè-khun",
+      "en": "look"
+    },
+    {
+      "bn": "করবেন না",
+      "baca": "kôr-bèn na",
+      "en": "don't do it"
+    },
+    {
+      "bn": "-বেন",
+      "baca": "-bèn",
+      "en": "gentle request ending"
+    },
+    {
+      "bn": "একটু",
+      "baca": "èk-Tu",
+      "en": "a little, a moment"
+    },
+    {
+      "bn": "একটুখানি",
+      "baca": "èk-Tu-kha-ni",
+      "en": "just a little"
+    },
+    {
+      "bn": "দয়া করে",
+      "baca": "dô-ya kô-ré",
+      "en": "please (formal)"
+    },
+    {
+      "bn": "অন্তত",
+      "baca": "ôn-tô-tô",
+      "en": "at least"
+    },
+    {
+      "bn": "ব্যস্ত",
+      "baca": "bêas-tô",
+      "en": "busy, troubled"
+    },
+    {
+      "bn": "বেশিক্ষণ",
+      "baca": "bè-shik-khôn",
+      "en": "long (time)"
+    },
+    {
+      "bn": "নিশ্চয়ই",
+      "baca": "nish-chôy-i",
+      "en": "surely"
+    },
+    {
+      "bn": "সত্যিই",
+      "baca": "sôt-ti-i",
+      "en": "really, truly"
+    },
+    {
+      "bn": "পরের বার",
+      "baca": "pô-rér bar",
+      "en": "next time"
+    },
+    {
+      "bn": "সরা",
+      "baca": "sô-ra",
+      "en": "to move over"
+    },
+    {
+      "bn": "বানানো",
+      "baca": "ba-na-no",
+      "en": "to make"
+    },
+    {
+      "bn": "ভয় পাওয়া",
+      "baca": "bhôy pa-oa",
+      "en": "to be afraid"
+    },
+    {
+      "bn": "পারা",
+      "baca": "pa-ra",
+      "en": "can, be able to"
+    },
+    {
+      "bn": "গরম গরম",
+      "baca": "gô-rôm gô-rôm",
+      "en": "while hot"
+    },
+    {
+      "bn": "আস্তে আস্তে",
+      "baca": "as-té as-té",
+      "en": "slowly"
+    },
+    {
+      "bn": "ঠান্ডা",
+      "baca": "Than-Da",
+      "en": "cold"
+    },
+    {
+      "bn": "চা",
+      "baca": "cha",
+      "en": "tea"
+    },
+    {
+      "bn": "কাজ",
+      "baca": "kaj",
+      "en": "business, work"
+    },
+    {
+      "bn": "তো",
+      "baca": "to",
+      "en": "go on, do (softener)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change into commands for আপনি.",
+      "items": [
+        "বসা → ____",
+        "যাওয়া → ____",
+        "খাওয়া → ____",
+        "দেওয়া → ____",
+        "শোনা → ____",
+        "আসা → ____"
+      ]
+    },
+    {
+      "prompt": "Change into polite “don't” with -বেন না.",
+      "items": [
+        "চিন্তা করুন। → ____",
+        "যান। → ____",
+        "ভয় পান। → ____",
+        "এখানে বসুন। → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "করুন / একটু / অপেক্ষা",
+        "না / করবেন / চিন্তা",
+        "যান / চা / খেয়ে",
+        "দেবেন / লিখে / একটু",
+        "খান / গরম / গরম"
+      ]
+    },
+    {
+      "prompt": "Translate into Bengali.",
+      "items": [
+        "Sit down a moment.",
+        "Please speak slowly.",
+        "Don't worry.",
+        "Wait a moment.",
+        "That's enough, thank you.",
+        "I can't today, sorry."
+      ]
+    }
+  ],
+  "answers": [
+    "বসুন — যান — খান — দিন — শুনুন — আসুন",
+    "চিন্তা করবেন না। — যাবেন না। — ভয় পাবেন না। — এখানে বসবেন না।",
+    "একটু অপেক্ষা করুন। — চিন্তা করবেন না। — চা খেয়ে যান। — একটু লিখে দেবেন। — গরম গরম খান।",
+    "একটু বসুন। — আস্তে বলুন। — চিন্তা করবেন না। — একটু অপেক্ষা করুন। — আর লাগবে না, ধন্যবাদ। — আজ পারব না, দুঃখিত।"
+  ]
+}

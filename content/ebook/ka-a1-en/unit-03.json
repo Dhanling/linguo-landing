@@ -1,0 +1,489 @@
+{
+  "title": "I'm from Indonesia",
+  "title_target": "ინდონეზიიდან ვარ — Indoneziidan var",
+  "goal": "Say where you're from, name nationalities and languages, and meet two endings you'll use every day: -დან (from) and -ად (in / -ly).",
+  "bekal": [
+    "answer the question საიდან ხარ?",
+    "name countries and cities with the ending -დან",
+    "give nationalities with the ending -ელი",
+    "say which languages you speak, with the ending -ად",
+    "say how well: ცოტა, კარგად, საერთოდ არა"
+  ],
+  "dialogs": [
+    {
+      "title": "დიალოგი — In the coffee queue",
+      "intro": "Ani is queuing for coffee and chatting with Levan, the man in front of her. Notice how the country name changes its ending as soon as it answers \"where from\" — and how the language name changes its ending again as soon as the talk turns to speaking.",
+      "lines": [
+        {
+          "speaker": "ლევანი:",
+          "text": "[უკაცრავად|Uk'-ats-ra-vad], [თქვენ|tkven] [ტურისტი|t'u-ris-t'i] [ხართ|khart]?",
+          "id": "Excuse me, are you a tourist?",
+          "literal": "excuse-me, you-formal — tourist — are?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[არა|A-ra], [სტუდენტი|st'u-den-t'i] [ვარ|var]. [ქართულს|Kar-tuls] [ვსწავლობ|vsts'av-lob].",
+          "id": "No, I'm a student. I'm learning Georgian.",
+          "literal": "no, student — I-am. Georgian — I-learn."
+        },
+        {
+          "speaker": "ლევანი:",
+          "text": "[მართლა|Mar-tla]? [საიდან|Sa-i-dan] [ხართ|khart]?",
+          "id": "Really? Where are you from?",
+          "literal": "really? from-where — you-formal-are?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ინდონეზიიდან|In-do-ne-zi-i-dan] [ვარ|var], [ჯაკარტიდან|Ja-k'ar-t'i-dan].",
+          "id": "I'm from Indonesia, from Jakarta.",
+          "literal": "Indonesia-from — I-am, Jakarta-from."
+        },
+        {
+          "speaker": "ლევანი:",
+          "text": "[ინდონეზიიდან|In-do-ne-zi-i-dan]?! [ძალიან|Dza-li-an] [შორია|sho-ri-a]. [მე|Me] [ლევანი|Le-va-ni] [ვარ|var], [ქართველი|kar-tve-li].",
+          "id": "From Indonesia?! That's very far. I'm Levan, I'm Georgian.",
+          "literal": "Indonesia-from?! very — far-is. I — Levan — am, Georgian."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[სასიამოვნოა|Sa-si-a-mov-no-a]. [თბილისიდან|Tbi-li-si-dan] [ხართ|khart]?",
+          "id": "Nice to meet you. Are you from Tbilisi?",
+          "literal": "pleasant-is. Tbilisi-from — you-formal-are?"
+        },
+        {
+          "speaker": "ლევანი:",
+          "text": "[არა|A-ra], [ბათუმიდან|Ba-tu-mi-dan]. [ქართულად|Kar-tu-lad] [კარგად|k'ar-gad] [ლაპარაკობთ|la-p'a-ra-k'obt]!",
+          "id": "No, from Batumi. You speak Georgian well!",
+          "literal": "no, Batumi-from. in-Georgian — well — you-formal-speak!"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[არა|A-ra], [ცოტა|tso-t'a] [ვიცი|vi-tsi]. [ინგლისურად|Ing-li-su-rad] [ლაპარაკობთ|la-p'a-ra-k'obt]?",
+          "id": "Oh no, I know a little. Do you speak English?",
+          "literal": "no, a-little — I-know. in-English — you-formal-speak?"
+        },
+        {
+          "speaker": "ლევანი:",
+          "text": "[ცოტა|Tso-t'a]. [რუსულად|Ru-su-lad] [უკეთესად|u-k'e-te-sad].",
+          "id": "A little. My Russian is better.",
+          "literal": "a-little. in-Russian — better."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[მაშინ|Ma-shin] [ქართულად|kar-tu-lad] [ვილაპარაკოთ|vi-la-p'a-ra-k'ot]!",
+          "id": "Then let's speak Georgian!",
+          "literal": "then — in-Georgian — let's-speak!"
+        },
+        {
+          "speaker": "ლევანი:",
+          "text": "[შესანიშნავია|She-sa-nish-na-vi-a]! [ინდონეზიურად|In-do-ne-zi-u-rad] [როგორ|ro-gor] [არის|a-ris] „[გამარჯობა|ga-mar-jo-ba]“?",
+          "id": "Excellent! How do you say „gamarjoba“ in Indonesian?",
+          "literal": "excellent-is! in-Indonesian — how — is „hello“?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "„[ჰალო|Ha-lo]“ [ან|an] „[სელამატ|se-la-mat] [პაგი|p'a-gi]“ — [დილა|di-la] [მშვიდობისა|mshvi-do-bi-sa].",
+          "id": "„Halo“ or „selamat pagi“ — good morning.",
+          "literal": "„halo“ — or — „selamat pagi“ — morning — peace."
+        }
+      ],
+      "notes": [
+        "**-დან means \"from\", and it sticks straight onto the place name.** A final -ი drops first: თბილის**ი** → თბილის**იდან**, ბათუმ**ი** → ბათუმ**იდან**. Names ending in -ა change it to -ი: ჯაკარტ**ა** → ჯაკარტ**იდან**, ინდონეზი**ა** → ინდონეზი**იდან** (note the two ი in a row — that's right, and both are pronounced).",
+        "**Nationalities are formed with -ელი, and very neatly.** ინდონეზია → ინდონეზი**ელი** (Indonesian person), ამერიკა → ამერიკ**ელი**, იტალია → იტალი**ელი**, ჩინეთი → ჩინ**ელი**. ⚠️ Some of the most common ones are irregular and must be memorized: **ქართველი** (Georgian), **რუსი** (Russian), **ინგლისელი** (English), **ბერძენი** (Greek).",
+        "**Language names are formed with -ური or -ული**, and they're different words from the nationality. ქართველი = a Georgian person, ქართ**ული** = the Georgian language. ინდონეზი**ელი** = an Indonesian, ინდონეზი**ური** = Indonesian (the language). ინგლის**ური**, რუს**ული**, ესპან**ური**, ჩინ**ური**.",
+        "**And as soon as you talk \"in\" that language, the ending changes again to -ად.** ქართული → ქართულ**ად** ვლაპარაკობ (I speak in Georgian). ⚠️ A classic trap: English says \"I speak Georgian\" with no extra word, so learners write *ქართული ვლაპარაკობ*, which sounds like \"I talk about the Georgian language\" — the thing, not the tool. The -ად ending turns it into \"in Georgian\".",
+        "**ქართულს ვსწავლობ — why the -ს ending?** Because in this sentence Georgian is the **object** of the action: the thing being learned. A noun that is the object takes -ს. You don't need to learn this yet; just note that Georgian nouns change their ending according to their role, and unit 9 covers it calmly.",
+        "**\"You speak Georgian well!\" — you'll hear this constantly, and almost always too early.** The right response isn't a strong denial but **არა, ცოტა ვიცი** (oh, I know a little) or **მადლობა, ვსწავლობ** (thanks, I'm learning). Overdoing the denial actually sounds odd.",
+        "**ვილაპარაკოთ = \"let's speak\".** The Georgian \"let's\" form uses the ending **-ოთ**: წავიდე**თ** (let's go), ვჭამო**თ** (let's eat), დავლიო**თ** (let's drink). Just recognize the pattern for now; unit 15 uses it for real."
+      ],
+      "grammars": [
+        {
+          "title": "Country, people, and language — three words from one root",
+          "body": [
+            "These three columns are the only important thing to memorize in this unit. Read across, not down: what needs to stick is how the three relate to each other."
+          ],
+          "table": {
+            "head": [
+              "Country",
+              "Its people",
+              "Its language",
+              "\"from there\""
+            ],
+            "rows": [
+              [
+                "ინდონეზია",
+                "ინდონეზიელი",
+                "ინდონეზიური",
+                "ინდონეზიიდან"
+              ],
+              [
+                "საქართველო",
+                "ქართველი",
+                "ქართული",
+                "საქართველოდან"
+              ],
+              [
+                "ინგლისი",
+                "ინგლისელი",
+                "ინგლისური",
+                "ინგლისიდან"
+              ],
+              [
+                "ამერიკა",
+                "ამერიკელი",
+                "ინგლისური",
+                "ამერიკიდან"
+              ],
+              [
+                "რუსეთი",
+                "რუსი",
+                "რუსული",
+                "რუსეთიდან"
+              ],
+              [
+                "გერმანია",
+                "გერმანელი",
+                "გერმანული",
+                "გერმანიიდან"
+              ],
+              [
+                "იაპონია",
+                "იაპონელი",
+                "იაპონური",
+                "იაპონიიდან"
+              ],
+              [
+                "თურქეთი",
+                "თურქი",
+                "თურქული",
+                "თურქეთიდან"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **საქართველო has nothing to do with the word \"Georgia\".** Georgians call their country Sakartvelo and themselves kartveli — the name \"Georgia\" came from outside, through Persian and Greek. Saying საქართველო correctly is the quickest way to show you're not just another tourist."
+          ]
+        },
+        {
+          "title": "How well? Four honest answers",
+          "body": [
+            "All of these use the verb **ვლაპარაკობ** (I speak) or **ვიცი** (I know), and only the word in front of it changes."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ქართულად კარგად ვლაპარაკობ",
+                "kartulad k'argad vlap'arak'ob",
+                "I speak Georgian well"
+              ],
+              [
+                "ქართულად ცოტა ვლაპარაკობ",
+                "kartulad tsot'a vlap'arak'ob",
+                "I speak a little Georgian"
+              ],
+              [
+                "ქართული ცოტა ვიცი",
+                "kartuli tsot'a vitsi",
+                "I know a little Georgian"
+              ],
+              [
+                "ქართული საერთოდ არ ვიცი",
+                "kartuli saertod ar vitsi",
+                "I don't know any Georgian at all"
+              ],
+              [
+                "ქართულს ვსწავლობ",
+                "kartuls vsts'avlob",
+                "I'm learning Georgian"
+              ]
+            ]
+          },
+          "after": [
+            "The last sentence is the most useful. It explains and asks for patience at the same time, and almost always makes people slow down."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Asking where someone's from, three levels deep",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A first conversation with a Georgian almost always walks down this ladder: country, city, then \"how long have you been here\"."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Say it",
+            "It asks"
+          ],
+          "rows": [
+            [
+              "საიდან ხარ?",
+              "saidan khar",
+              "where you're from (casual)"
+            ],
+            [
+              "საიდან ხართ?",
+              "saidan khart",
+              "where you're from (polite)"
+            ],
+            [
+              "რომელი ქვეყნიდან ხართ?",
+              "romeli kveq'nidan khart",
+              "which country (more formal)"
+            ],
+            [
+              "სად ცხოვრობ?",
+              "sad tskhovrob",
+              "where you live"
+            ],
+            [
+              "რამდენი ხანია საქართველოში?",
+              "ramdeni khania Sakartveloshi",
+              "how long you've been in Georgia"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three answers that always work",
+          "items": [
+            "**ინდონეზიიდან ვარ.** — a safe answer for anyone, anywhere.",
+            "**ინდონეზიიდან ვარ, ჯაკარტიდან.** — answers the city too. Georgians generally know Bali far better than Jakarta; *ბალი იცით? ეს ინდონეზიაა.* opens a lot of conversations.",
+            "⚠️ Don't answer *მე ინდონეზია ვარ* — that means \"I am the country of Indonesia\". The correct forms are **ინდონეზიიდან ვარ** (from) or **ინდონეზიელი ვარ** (the nationality)."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One thing that may surprise you: the question \"how long have you been here\" is often followed by a dinner invitation. That's not small talk. Hospitality to guests in Georgia has its own saying — *სტუმარი ღვთისაა* (st'umari ghvtisaa), \"a guest is God's\" — and unit 19 explores it further."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ka": "საიდან",
+      "baca": "saidan",
+      "en": "where from"
+    },
+    {
+      "ka": "-დან",
+      "baca": "-dan",
+      "en": "from (attached to the end of a word)"
+    },
+    {
+      "ka": "ქვეყანა",
+      "baca": "kveq'ana",
+      "en": "country"
+    },
+    {
+      "ka": "ქალაქი",
+      "baca": "kalaki",
+      "en": "city"
+    },
+    {
+      "ka": "ინდონეზია",
+      "baca": "Indonezia",
+      "en": "Indonesia"
+    },
+    {
+      "ka": "ინდონეზიელი",
+      "baca": "indonezieli",
+      "en": "Indonesian (person)"
+    },
+    {
+      "ka": "ინდონეზიური",
+      "baca": "indoneziuri",
+      "en": "Indonesian (language)"
+    },
+    {
+      "ka": "საქართველო",
+      "baca": "Sakartvelo",
+      "en": "Georgia (the country)"
+    },
+    {
+      "ka": "ქართველი",
+      "baca": "kartveli",
+      "en": "Georgian (person)"
+    },
+    {
+      "ka": "ქართული",
+      "baca": "kartuli",
+      "en": "Georgian (language)"
+    },
+    {
+      "ka": "თბილისი",
+      "baca": "Tbilisi",
+      "en": "Tbilisi"
+    },
+    {
+      "ka": "ბათუმი",
+      "baca": "Batumi",
+      "en": "Batumi"
+    },
+    {
+      "ka": "ინგლისური",
+      "baca": "inglisuri",
+      "en": "English (language)"
+    },
+    {
+      "ka": "რუსული",
+      "baca": "rusuli",
+      "en": "Russian (language)"
+    },
+    {
+      "ka": "ენა",
+      "baca": "ena",
+      "en": "language"
+    },
+    {
+      "ka": "ვლაპარაკობ",
+      "baca": "vlap'arak'ob",
+      "en": "I speak"
+    },
+    {
+      "ka": "ლაპარაკობ",
+      "baca": "lap'arak'ob",
+      "en": "you speak"
+    },
+    {
+      "ka": "ლაპარაკობთ",
+      "baca": "lap'arak'obt",
+      "en": "you (formal/pl.) speak"
+    },
+    {
+      "ka": "ვსწავლობ",
+      "baca": "vsts'avlob",
+      "en": "I study, I learn"
+    },
+    {
+      "ka": "ვცხოვრობ",
+      "baca": "vtskhovrob",
+      "en": "I live"
+    },
+    {
+      "ka": "ცოტა",
+      "baca": "tsot'a",
+      "en": "a little"
+    },
+    {
+      "ka": "კარგად",
+      "baca": "k'argad",
+      "en": "well"
+    },
+    {
+      "ka": "უკეთესად",
+      "baca": "uk'etesad",
+      "en": "better"
+    },
+    {
+      "ka": "საერთოდ",
+      "baca": "saertod",
+      "en": "at all"
+    },
+    {
+      "ka": "ტურისტი",
+      "baca": "t'urist'i",
+      "en": "tourist"
+    },
+    {
+      "ka": "მართლა",
+      "baca": "martla",
+      "en": "really"
+    },
+    {
+      "ka": "შორი",
+      "baca": "shori",
+      "en": "far"
+    },
+    {
+      "ka": "ახლო",
+      "baca": "akhlo",
+      "en": "near"
+    },
+    {
+      "ka": "მაშინ",
+      "baca": "mashin",
+      "en": "then, in that case"
+    },
+    {
+      "ka": "ან",
+      "baca": "an",
+      "en": "or"
+    },
+    {
+      "ka": "შესანიშნავი",
+      "baca": "shesanishnavi",
+      "en": "excellent, wonderful"
+    },
+    {
+      "ka": "რომელი",
+      "baca": "romeli",
+      "en": "which"
+    },
+    {
+      "ka": "ხანი",
+      "baca": "khani",
+      "en": "time, while"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change the place name into the \"from there\" form.",
+      "items": [
+        "ინდონეზია → ____",
+        "თბილისი → ____",
+        "ჯაკარტა → ____",
+        "საქართველო → ____",
+        "ბათუმი → ____",
+        "გერმანია → ____"
+      ]
+    },
+    {
+      "prompt": "Write the right nationality or language.",
+      "items": [
+        "A person from საქართველო is ____",
+        "A person from ინდონეზია is ____",
+        "The language of საქართველო is ____",
+        "The language of ინდონეზია is ____",
+        "A person from იაპონია is ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ხართ / საიდან / ?",
+        "ვარ / ინდონეზიიდან",
+        "ვლაპარაკობ / ცოტა / ქართულად",
+        "ვსწავლობ / ქართულს",
+        "ვარ / სტუდენტი / არა / ტურისტი"
+      ]
+    },
+    {
+      "prompt": "Translate into Georgian.",
+      "items": [
+        "Where are you from? (polite)",
+        "I'm from Indonesia, from Jakarta.",
+        "I'm Indonesian.",
+        "I speak a little Georgian.",
+        "I'm learning Georgian.",
+        "Do you speak English? (polite)"
+      ]
+    }
+  ],
+  "answers": [
+    "ინდონეზიიდან — თბილისიდან — ჯაკარტიდან — საქართველოდან — ბათუმიდან — გერმანიიდან",
+    "ქართველი — ინდონეზიელი — ქართული — ინდონეზიური — იაპონელი",
+    "საიდან ხართ? — ინდონეზიიდან ვარ. — ქართულად ცოტა ვლაპარაკობ. — ქართულს ვსწავლობ. — სტუდენტი ვარ, არა ტურისტი.",
+    "საიდან ხართ? — ინდონეზიიდან ვარ, ჯაკარტიდან. — ინდონეზიელი ვარ. — ქართულად ცოტა ვლაპარაკობ. — ქართულს ვსწავლობ. — ინგლისურად ლაპარაკობთ?"
+  ]
+}

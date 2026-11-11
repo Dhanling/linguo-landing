@@ -1,0 +1,903 @@
+{
+  "title": "Shopping and bargaining",
+  "title_target": "幾多錢？ — Gei2 do1 cin2?",
+  "goal": "Asking prices, saying Hong Kong money the way people actually do, pointing at things with 呢個 / 嗰個, asking for things with 要, and bargaining without sounding rude.",
+  "bekal": [
+    "ask prices with 幾多錢",
+    "say amounts of money: 蚊, 個半, 五個一",
+    "point at things with 呢 and 嗰",
+    "ask for things with 要 and turn them down with 唔要",
+    "bargain with 平啲得唔得"
+  ],
+  "dialogs": [
+    {
+      "title": "對話 1 — At a Mongkok street stall",
+      "intro": "Wong Lai haggles over a T-shirt at 女人街 (Ladies' Market), Mongkok's most famous street market. Notice that bargaining in Hong Kong is quick and friendly — not a fight.",
+      "lines": [
+        {
+          "speaker": "店員:",
+          "text": "[靚女|Leng3 neoi2]，[睇下啦|tai2 haa5 laa1]！",
+          "id": "Miss, come and have a look!",
+          "literal": "pretty — girl, look — a-bit — come-on."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[呢件|Ni1 gin6][幾多錢|gei2 do1 cin2][呀|aa3]？",
+          "id": "How much is this one?",
+          "literal": "this — clothing-classifier — how — much — money — huh."
+        },
+        {
+          "speaker": "店員:",
+          "text": "[一百二十蚊|Jat1 baak3 ji6 sap6 man1]。",
+          "id": "A hundred and twenty dollars.",
+          "literal": "one — hundred — two — ten — dollar."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[嘩|Waa4]，[太貴喇|taai3 gwai3 laa3]！[平啲|Peng4 di1][得唔得|dak1 m4 dak1][呀|aa3]？",
+          "id": "Wow, that's way too expensive! Can you go lower?",
+          "literal": "wow, too — expensive — already. cheap — a-bit — OK — not — OK — huh."
+        },
+        {
+          "speaker": "店員:",
+          "text": "[一百蚊啦|Jat1 baak3 man1 laa1]，[唔可以|m4 ho2 ji5][再平喇|zoi3 peng4 laa3]。",
+          "id": "A hundred, then — I can't go any lower.",
+          "literal": "one — hundred — dollar — come-on, not — can — more — cheap — already."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[八十蚊|Baat3 sap6 man1]。[我要|Ngo5 jiu3][兩件|loeng5 gin6]。",
+          "id": "Eighty. I'll take two.",
+          "literal": "eight — ten — dollar. I — want — two — clothing-classifier."
+        },
+        {
+          "speaker": "店員:",
+          "text": "[兩件|Loeng5 gin6][一百五啦|jat1 baak3 ng5 laa1]，[好唔好|hou2 m4 hou2]？",
+          "id": "Two for a hundred and fifty, how about that?",
+          "literal": "two — classifier — one — hundred — five — come-on, good — not — good."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[好|Hou2]，[就咁話|zau6 gam2 waa6]。",
+          "id": "OK, deal.",
+          "literal": "good, then — so — say."
+        },
+        {
+          "speaker": "店員:",
+          "text": "[你要|Nei5 jiu3][邊個顏色|bin1 go3 ngaan4 sik1][呀|aa3]？",
+          "id": "Which colors do you want?",
+          "literal": "you — want — which — classifier — color — huh."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[呢個藍色|Ni1 go3 laam4 sik1]，[同埋|tung4 maai4][嗰個白色|go2 go3 baak6 sik1]。",
+          "id": "This blue one, and that white one.",
+          "literal": "this — classifier — blue — color, and — that — classifier — white — color."
+        },
+        {
+          "speaker": "店員:",
+          "text": "[好|Hou2]。[有冇|Jau5 mou5][八達通|Baat3 daat6 tung1][呀|aa3]？",
+          "id": "Right. Got an Octopus card?",
+          "literal": "good. have — not-have — Octopus — huh."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[有|Jau5]，[唔該|m4 goi1]。",
+          "id": "Yes, thanks.",
+          "literal": "have, thanks."
+        }
+      ],
+      "notes": [
+        "🇭🇰 **[靚女|leng3 neoi2] and [靚仔|leng3 zai2] are ordinary ways to address strangers**, not flirting. Vendors, waiters, and taxi drivers use them all day for anyone who looks young. Literally “pretty girl” and “handsome boy”, but to Hongkongers they feel closer to “miss” and “young man”.",
+        "**[下|haa5] after a verb means “a bit, give it a try”.** [睇下|tai2 haa5] = have a look; [試下|si3 haa5] = try it; [諗下|nam2 haa5] = think it over. This is how Cantonese softens a request, and it's used constantly.",
+        "**[件|gin6] is the classifier for tops** — shirts, T-shirts, jackets. Pants take [條|tiu4]; shoes take [對|deoi3] for a pair and [隻|zek3] for one. ⚠️ Using 個 for clothes will be understood but instantly sounds foreign.",
+        "**[太…喇|taai3 … laa3] = “too … now”.** The pair almost always comes together: [太貴喇|taai3 gwai3 laa3] (too pricey), [太遲喇|taai3 ci4 laa3] (too late), [太多喇|taai3 do1 laa3] (too much). 喇 at the end marks a situation that has **become** so, and without it the sentence sounds unfinished.",
+        "**[得唔得|dak1 m4 dak1]？ = “OK or not?”** — the most useful phrase in this whole unit. You can stick it after almost anything: [平啲得唔得|peng4 di1 dak1 m4 dak1]？ (can you go lower?), [聽日得唔得|ting1 jat6 dak1 m4 dak1]？ (is tomorrow OK?). The answer is [得|Dak1] or [唔得|M4 dak1].",
+        "**[一百五|jat1 baak3 ng5] means a hundred and fifty, not a hundred and five.** When saying prices, the last digit fills the tens place and the rest is dropped. [三百二|saam1 baak3 ji6] = 320. ⚠️ If you really mean 105, say it in full: [一百零五|jat1 baak3 ling4 ng5].",
+        "**[就咁話|zau6 gam2 waa6] = “deal, that's that”.** The phrase that closes a haggle and seals the agreement. After it, bargaining further is rude."
+      ],
+      "grammars": [
+        {
+          "title": "呢 and 嗰 — this and that",
+          "body": [
+            "Cantonese points at things with two words: [呢|ni1] for near, [嗰|go2] for far. Neither one **ever stands directly before a noun** — there's always a classifier in between."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Form",
+                "Structure",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "this (thing)",
+                  "呢 + classifier + noun",
+                  "[呢件衫|ni1 gin6 saam1] this shirt"
+                ],
+                [
+                  "that (thing)",
+                  "嗰 + classifier + noun",
+                  "[嗰本書|go2 bun2 syu1] that book"
+                ],
+                [
+                  "this one",
+                  "呢 + classifier",
+                  "[呢個|ni1 go3] this one"
+                ],
+                [
+                  "that one",
+                  "嗰 + classifier",
+                  "[嗰個|go2 go3] that one"
+                ],
+                [
+                  "which one",
+                  "邊 + classifier",
+                  "[邊個|bin1 go3] which one"
+                ],
+                [
+                  "here / there",
+                  "呢度 / 嗰度",
+                  "[呢度|ni1 dou6] here · [嗰度|go2 dou6] there"
+                ],
+                [
+                  "these things",
+                  "呢啲 + noun",
+                  "[呢啲嘢|ni1 di1 je5] these things"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "🇭🇰 **[呢|ni1] is often pronounced *nei1* in fast speech**, and some people still write it 呢. They're the same; don't be thrown.",
+            "⚠️ **Don't slip in the number “one”.** [呢件衫|ni1 gin6 saam1], not 呢一件衫. 一 only appears when you're really stressing the quantity.",
+            "**[啲|di1] is the plural classifier.** [呢啲|ni1 di1] = these; [嗰啲人|go2 di1 jan4] = those people. It replaces the normal classifier rather than joining it."
+          ]
+        },
+        {
+          "title": "要 — asking, ordering, and saying no",
+          "body": [
+            "[要|jiu3] covers three meanings: **want** (ordering), **need**, and **have to**. In this unit we use the first — and it's the verb you'll say most often in shops and restaurants."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Sentence",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "[我要呢個|Ngo5 jiu3 ni1 go3]。",
+                  "I'll have this one."
+                ],
+                [
+                  "[我要兩件|Ngo5 jiu3 loeng5 gin6]。",
+                  "I'll take two."
+                ],
+                [
+                  "[我唔要喇|Ngo5 m4 jiu3 laa3]，[多謝|do1 ze6]。",
+                  "No thanks."
+                ],
+                [
+                  "[你要唔要袋呀|Nei5 jiu3 m4 jiu3 doi2 aa3]？",
+                  "Do you need a bag?"
+                ],
+                [
+                  "[要幾多|Jiu3 gei2 do1]？",
+                  "How many do you need?"
+                ],
+                [
+                  "[我要返工|Ngo5 jiu3 faan1 gung1]。",
+                  "I have to work."
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **[唔要|m4 jiu3] means “don't want”, and can sound blunt.** To decline gently, add 喇 and 多謝: [唔使喇，多謝|M4 sai2 laa3, do1 ze6]。 — “no need, thanks”. [唔使|m4 sai2] literally means “no need” and is much softer than 唔要.",
+            "🔁 **[要|jiu3] differs from [想|soeng2] (would like).** 要 is a decision already made; 想 is still a wish. The difference is covered fully in Unit 4."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "對話 2 — At the convenience store",
+      "intro": "Andi buys drinks and snacks. Notice how prices with cents are said — the part foreigners most often mishear.",
+      "lines": [
+        {
+          "speaker": "安迪:",
+          "text": "[唔該|M4 goi1]，[有冇|jau5 mou5][凍檸茶|dung3 ning4 caa4][呀|aa3]？",
+          "id": "Excuse me, do you have iced lemon tea?",
+          "literal": "excuse-me, have — not-have — iced — lemon — tea — huh."
+        },
+        {
+          "speaker": "店員:",
+          "text": "[有|Jau5]，[喺後面|hai2 hau6 min6][雪櫃度|syut3 gwai6 dou6]。",
+          "id": "Yes, in the fridge at the back.",
+          "literal": "have, at — back — side — ice — cabinet — place."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[幾多錢|Gei2 do1 cin2][一支|jat1 zi1][呀|aa3]？",
+          "id": "How much is a bottle?",
+          "literal": "how — much — money — one — bottle-classifier — huh."
+        },
+        {
+          "speaker": "店員:",
+          "text": "[十二蚊|Sap6 ji6 man1]。",
+          "id": "Twelve dollars.",
+          "literal": "ten — two — dollar."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[我要兩支|Ngo5 jiu3 loeng5 zi1]，[同埋|tung4 maai4][呢包餅乾|ni1 baau1 beng2 gon1]。",
+          "id": "I'll take two, and this pack of biscuits.",
+          "literal": "I — want — two — bottle-classifier, and — this — pack — biscuit."
+        },
+        {
+          "speaker": "店員:",
+          "text": "[一共|Jat1 gung6][三十五個半|saam1 sap6 ng5 go3 bun3]。",
+          "id": "That's thirty-five fifty altogether.",
+          "literal": "one — together — three — ten — five — classifier — half."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[呢度|Ni1 dou6][一百蚊|jat1 baak3 man1]。",
+          "id": "Here's a hundred.",
+          "literal": "this — place — one — hundred — dollar."
+        },
+        {
+          "speaker": "店員:",
+          "text": "[找返你|Zaau2 faan1 nei5][六十四個半|luk6 sap6 sei3 go3 bun3]。",
+          "id": "Your change is sixty-four fifty.",
+          "literal": "give-change — back — you — six — ten — four — classifier — half."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[多謝|Do1 ze6]。[唔該|M4 goi1][畀個袋我|bei2 go3 doi2 ngo5]。",
+          "id": "Thanks. A bag, please.",
+          "literal": "thanks. please — give — classifier — bag — me."
+        },
+        {
+          "speaker": "店員:",
+          "text": "[袋要|Doi2 jiu3][一蚊㗎|jat1 man1 gaa3]。",
+          "id": "The bag is one dollar, OK?",
+          "literal": "bag — need — one — dollar — emphasis."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[冇問題|Mou5 man6 tai4]。[唔該晒|M4 goi1 saai3]。",
+          "id": "No problem. Thanks a lot.",
+          "literal": "not-have — problem. thanks — completely."
+        }
+      ],
+      "notes": [
+        "**[個半|go3 bun3] means “a dollar fifty”, and this pattern is used for every price with cents.** [三十五個半|saam1 sap6 ng5 go3 bun3] = $35.50. Here the classifier 個 stands in for the word “dollar”. If the cents aren't fifty, the digit comes after 個: [五個二|ng5 go3 ji6] = $5.20; [十個八|sap6 go3 baat3] = $10.80.",
+        "**[支|zi1] is the classifier for stick-shaped things**: bottles, pens, umbrellas, cigarettes. Packaged snacks take [包|baau1]. ⚠️ Classifiers aren't random memorization — they follow the shape of the thing, so when in doubt, ask yourself: is it long like a stick (支), flat (張), or in a pack (包)?",
+        "**[度|dou6] marks a place, and often follows a noun.** [雪櫃度|syut3 gwai6 dou6] = in the fridge. Without 度, [喺雪櫃|hai2 syut3 gwai6] is still understood, but 度 makes it clear you mean a location. 🔁 Covered fully in Unit 7.",
+        "**[一共|jat1 gung6] = in total.** A word you'll always hear at the checkout. Another one just as common: [總共|zung2 gung6].",
+        "**[找返|zaau2 faan1] = give back change.** [返|faan1] after a verb means “back to how it was”. You'll meet 返 again in [返工|faan1 gung1] (go to work), [返學|faan1 hok6] (go to school), and [返嚟|faan1 lei4] (come back).",
+        "🇭🇰 **Plastic bags in Hong Kong have cost money for years** — a dollar each, set by law. When the cashier asks [要唔要袋呀|jiu3 m4 jiu3 doi2 aa3]？, they're telling you it will be added to the total, not offering one for free.",
+        "**[唔該晒|M4 goi1 saai3] = “thanks so much” for a service.** Compare [多謝晒|do1 ze6 saai3] for things. The 唔該 / 多謝 difference from Unit 1 still holds even with 晒 added."
+      ],
+      "grammars": [
+        {
+          "title": "Saying prices and Hong Kong money",
+          "body": [
+            "Hong Kong's currency is the Hong Kong dollar (港幣 *gong2 bai6*). Its written form is 元 *jyun4*, but **nobody says it that way** in normal conversation. What people say is 蚊 *man1*."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Amount",
+                "Cantonese",
+                "Note"
+              ],
+              "rows": [
+                [
+                  "$1",
+                  "[一蚊|jat1 man1]",
+                  "蚊 = dollar (spoken)"
+                ],
+                [
+                  "$10",
+                  "[十蚊|sap6 man1]",
+                  ""
+                ],
+                [
+                  "$100",
+                  "[一百蚊|jat1 baak3 man1]",
+                  ""
+                ],
+                [
+                  "$150",
+                  "[一百五|jat1 baak3 ng5]",
+                  "the last digit fills the tens place"
+                ],
+                [
+                  "$1.50",
+                  "[個半|go3 bun3]",
+                  "個 replaces the word dollar"
+                ],
+                [
+                  "$5.20",
+                  "[五個二|ng5 go3 ji6]",
+                  ""
+                ],
+                [
+                  "$0.50",
+                  "[五毫|ng5 hou4]",
+                  "毫 = ten cents"
+                ],
+                [
+                  "$35.50",
+                  "[三十五個半|saam1 sap6 ng5 go3 bun3]",
+                  ""
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Asking",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "[幾多錢呀|Gei2 do1 cin2 aa3]？",
+                  "How much is it?"
+                ],
+                [
+                  "[呢個幾錢呀|Ni1 go3 gei2 cin2 aa3]？",
+                  "🇭🇰 The short form people use most"
+                ],
+                [
+                  "[一共幾多錢呀|Jat1 gung6 gei2 do1 cin2 aa3]？",
+                  "How much altogether?"
+                ],
+                [
+                  "[點賣呀|Dim2 maai6 aa3]？",
+                  "How much is it sold for? (at a wet market)"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "🇭🇰 **Hong Kong discounts are counted backwards from what you might expect.** [九折|gau2 zit3] means “pay nine-tenths”, i.e. **10% off**. [八折|baat3 zit3] = 20% off. [半價|bun3 gaa3] = half price. Don't misread the sale signs.",
+            "**Ways to pay you should know**: [八達通|baat3 daat6 tung1] (Octopus card, accepted everywhere), [現金|jin6 gam1] (cash), [碌卡|luk1 kaat1] (pay by card). The cashier will ask [畀現金定係碌卡呀|Bei2 jin6 gam1 ding6 hai6 luk1 kaat1 aa3]？"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bargaining without sounding rude",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bargaining in Hong Kong only works in certain places: street stalls, night markets, small electronics shops, and vendors in Sham Shui Po. In supermarkets, chain stores, and restaurants, haggling will make everyone uncomfortable. The unwritten rule is simple — if the price is printed on a label, that price is final."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Jyutping",
+            "When to use it"
+          ],
+          "rows": [
+            [
+              "[平啲得唔得呀|Peng4 di1 dak1 m4 dak1 aa3]？",
+              "peng4 di1 dak1 m4 dak1 aa3",
+              "The standard opener. Polite, light"
+            ],
+            [
+              "[平啲啦|Peng4 di1 laa1]",
+              "peng4 di1 laa1",
+              "A little pleading, friendly"
+            ],
+            [
+              "[太貴喇|Taai3 gwai3 laa3]",
+              "taai3 gwai3 laa3",
+              "Says it's too pricey without accusing"
+            ],
+            [
+              "[平少少啦|Peng4 siu2 siu2 laa1]",
+              "peng4 siu2 siu2 laa1",
+              "“Just knock a bit off”"
+            ],
+            [
+              "[我要兩件，平啲得唔得|Ngo5 jiu3 loeng5 gin6, peng4 di1 dak1 m4 dak1]？",
+              "…",
+              "Bargaining with a number — the most effective"
+            ],
+            [
+              "[最平幾多呀|Zeoi3 peng4 gei2 do1 aa3]？",
+              "zeoi3 peng4 gei2 do1 aa3",
+              "“What's your lowest price?”"
+            ],
+            [
+              "[我諗下先|Ngo5 nam2 haa5 sin1]",
+              "ngo5 nam2 haa5 sin1",
+              "“Let me think about it” — a way to leave without offending"
+            ],
+            [
+              "[就咁話|Zau6 gam2 waa6]",
+              "zau6 gam2 waa6",
+              "Deal. Don't bargain after this"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "What vendors say, and what it means",
+          "items": [
+            "[已經好平㗎喇|Ji5 ging1 hou2 peng4 gaa3 laa3]。 — “It's already really cheap.” The standard reply to a first offer; don't give up here.",
+            "[唔賺錢㗎喇|M4 zaan6 cin2 gaa3 laa3]。 — “I'm not making any money.” Means the same as above.",
+            "[買多件平啲|Maai5 do1 gin6 peng4 di1]。 — “Buy more, it's cheaper.” This is a real offer; if you need two, take it.",
+            "[最多九折|Zeoi3 do1 gau2 zit3]。 — “Ten percent off at most.” This is a genuine final limit.",
+            "🇭🇰 If you walk away and the vendor calls you back, your offer is accepted. If they don't, the price really has hit bottom."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Colors and common purchases",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Color",
+            "Cantonese",
+            "Color",
+            "Cantonese"
+          ],
+          "rows": [
+            [
+              "red",
+              "[紅色|hung4 sik1]",
+              "blue",
+              "[藍色|laam4 sik1]"
+            ],
+            [
+              "yellow",
+              "[黃色|wong4 sik1]",
+              "green",
+              "[綠色|luk6 sik1]"
+            ],
+            [
+              "black",
+              "[黑色|hak1 sik1]",
+              "white",
+              "[白色|baak6 sik1]"
+            ],
+            [
+              "gray",
+              "[灰色|fui1 sik1]",
+              "brown",
+              "[啡色|fe1 sik1]"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Item",
+            "Cantonese",
+            "Classifier"
+          ],
+          "rows": [
+            [
+              "top (shirt)",
+              "[衫|saam1]",
+              "[件|gin6]"
+            ],
+            [
+              "pants",
+              "[褲|fu3]",
+              "[條|tiu4]"
+            ],
+            [
+              "shoes",
+              "[鞋|haai4]",
+              "[對|deoi3] a pair · [隻|zek3] one shoe"
+            ],
+            [
+              "bag",
+              "[袋|doi2]",
+              "[個|go3]"
+            ],
+            [
+              "cell phone",
+              "[電話|din6 waa2]",
+              "[部|bou6]"
+            ],
+            [
+              "drink bottle",
+              "[飲品|jam2 ban2]",
+              "[支|zi1]"
+            ],
+            [
+              "a pack of biscuits",
+              "[餅乾|beng2 gon1]",
+              "[包|baau1]"
+            ],
+            [
+              "fruit",
+              "[生果|saang1 gwo2]",
+              "[個|go3] · [斤|gan1] per catty"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Weights at the wet market",
+          "items": [
+            "🇭🇰 Hong Kong wet markets sell by the **[斤|gan1]** (catty, about 605 grams), not by the kilo. [幾多錢一斤呀|Gei2 do1 cin2 jat1 gan1 aa3]？ = how much per catty?",
+            "Half of it is [半斤|bun3 gan1]; a sixteenth is a [兩|loeng2] (tael). Digital scales convert automatically, so you just say how much you want.",
+            "[要幾多呀|Jiu3 gei2 do1 aa3]？ is answered with [一斤|jat1 gan1] or [半斤|bun3 gan1] — or by pointing and saying [咁多|gam3 do1] (this much)."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "買",
+      "baca": "maai5",
+      "en": "buy"
+    },
+    {
+      "zh": "賣",
+      "baca": "maai6",
+      "en": "sell"
+    },
+    {
+      "zh": "錢",
+      "baca": "cin2",
+      "en": "money"
+    },
+    {
+      "zh": "幾多錢",
+      "baca": "gei2 do1 cin2",
+      "en": "how much (money)"
+    },
+    {
+      "zh": "蚊",
+      "baca": "man1",
+      "en": "dollar"
+    },
+    {
+      "zh": "毫",
+      "baca": "hou4",
+      "en": "ten cents"
+    },
+    {
+      "zh": "一共",
+      "baca": "jat1 gung6",
+      "en": "in total"
+    },
+    {
+      "zh": "貴",
+      "baca": "gwai3",
+      "en": "expensive"
+    },
+    {
+      "zh": "平",
+      "baca": "peng4",
+      "en": "cheap"
+    },
+    {
+      "zh": "太",
+      "baca": "taai3",
+      "en": "too"
+    },
+    {
+      "zh": "喇",
+      "baca": "laa3",
+      "en": "particle of changed situation"
+    },
+    {
+      "zh": "得",
+      "baca": "dak1",
+      "en": "can, OK"
+    },
+    {
+      "zh": "得唔得",
+      "baca": "dak1 m4 dak1",
+      "en": "OK or not?"
+    },
+    {
+      "zh": "要",
+      "baca": "jiu3",
+      "en": "want; need; have to"
+    },
+    {
+      "zh": "唔要",
+      "baca": "m4 jiu3",
+      "en": "don't want"
+    },
+    {
+      "zh": "唔使",
+      "baca": "m4 sai2",
+      "en": "no need, don't bother"
+    },
+    {
+      "zh": "呢",
+      "baca": "ni1",
+      "en": "this"
+    },
+    {
+      "zh": "嗰",
+      "baca": "go2",
+      "en": "that"
+    },
+    {
+      "zh": "呢度",
+      "baca": "ni1 dou6",
+      "en": "here"
+    },
+    {
+      "zh": "嗰度",
+      "baca": "go2 dou6",
+      "en": "there"
+    },
+    {
+      "zh": "邊個",
+      "baca": "bin1 go3",
+      "en": "which one"
+    },
+    {
+      "zh": "睇",
+      "baca": "tai2",
+      "en": "look, watch"
+    },
+    {
+      "zh": "下",
+      "baca": "haa5",
+      "en": "a bit, have a try (after a verb)"
+    },
+    {
+      "zh": "試",
+      "baca": "si3",
+      "en": "try"
+    },
+    {
+      "zh": "諗",
+      "baca": "nam2",
+      "en": "think"
+    },
+    {
+      "zh": "件",
+      "baca": "gin6",
+      "en": "classifier for clothes, matters"
+    },
+    {
+      "zh": "條",
+      "baca": "tiu4",
+      "en": "classifier for long things"
+    },
+    {
+      "zh": "對",
+      "baca": "deoi3",
+      "en": "classifier for pairs"
+    },
+    {
+      "zh": "支",
+      "baca": "zi1",
+      "en": "classifier for bottles, sticks"
+    },
+    {
+      "zh": "包",
+      "baca": "baau1",
+      "en": "pack, packet"
+    },
+    {
+      "zh": "衫",
+      "baca": "saam1",
+      "en": "clothes"
+    },
+    {
+      "zh": "褲",
+      "baca": "fu3",
+      "en": "pants"
+    },
+    {
+      "zh": "鞋",
+      "baca": "haai4",
+      "en": "shoes"
+    },
+    {
+      "zh": "袋",
+      "baca": "doi2",
+      "en": "bag"
+    },
+    {
+      "zh": "顏色",
+      "baca": "ngaan4 sik1",
+      "en": "color"
+    },
+    {
+      "zh": "紅色",
+      "baca": "hung4 sik1",
+      "en": "red"
+    },
+    {
+      "zh": "藍色",
+      "baca": "laam4 sik1",
+      "en": "blue"
+    },
+    {
+      "zh": "白色",
+      "baca": "baak6 sik1",
+      "en": "white"
+    },
+    {
+      "zh": "黑色",
+      "baca": "hak1 sik1",
+      "en": "black"
+    },
+    {
+      "zh": "凍",
+      "baca": "dung3",
+      "en": "cold, iced"
+    },
+    {
+      "zh": "熱",
+      "baca": "jit6",
+      "en": "hot"
+    },
+    {
+      "zh": "檸茶",
+      "baca": "ning4 caa4",
+      "en": "lemon tea"
+    },
+    {
+      "zh": "餅乾",
+      "baca": "beng2 gon1",
+      "en": "biscuit"
+    },
+    {
+      "zh": "雪櫃",
+      "baca": "syut3 gwai6",
+      "en": "fridge"
+    },
+    {
+      "zh": "後面",
+      "baca": "hau6 min6",
+      "en": "back, behind"
+    },
+    {
+      "zh": "度",
+      "baca": "dou6",
+      "en": "place, there"
+    },
+    {
+      "zh": "找",
+      "baca": "zaau2",
+      "en": "give change"
+    },
+    {
+      "zh": "返",
+      "baca": "faan1",
+      "en": "back (after a verb)"
+    },
+    {
+      "zh": "八達通",
+      "baca": "baat3 daat6 tung1",
+      "en": "Octopus card"
+    },
+    {
+      "zh": "現金",
+      "baca": "jin6 gam1",
+      "en": "cash"
+    },
+    {
+      "zh": "碌卡",
+      "baca": "luk1 kaat1",
+      "en": "pay by card"
+    },
+    {
+      "zh": "折",
+      "baca": "zit3",
+      "en": "discount"
+    },
+    {
+      "zh": "冇問題",
+      "baca": "mou5 man6 tai4",
+      "en": "no problem"
+    },
+    {
+      "zh": "就咁話",
+      "baca": "zau6 gam2 waa6",
+      "en": "deal, that's that"
+    },
+    {
+      "zh": "靚",
+      "baca": "leng3",
+      "en": "pretty, nice"
+    },
+    {
+      "zh": "斤",
+      "baca": "gan1",
+      "en": "catty (about 605 grams)"
+    },
+    {
+      "zh": "咁多",
+      "baca": "gam3 do1",
+      "en": "this much"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in with 呢 or 嗰 plus the right classifier (個, 件, 支, 本).",
+      "items": [
+        "___ [衫幾多錢呀|saam1 gei2 do1 cin2 aa3]？ (this shirt)",
+        "[我要|Ngo5 jiu3] ___。 (that one)",
+        "___ [書係我嘅|syu1 hai6 ngo5 ge3]。 (this book)",
+        "[唔該畀|M4 goi1 bei2] ___ [我|ngo5]。 (that bottle)",
+        "___ [人係我朋友|jan4 hai6 ngo5 pang4 jau5]。 (that person)"
+      ]
+    },
+    {
+      "prompt": "Write these prices in spoken Cantonese.",
+      "items": [
+        "$12",
+        "$1.50",
+        "$150",
+        "$35.50",
+        "$5.20",
+        "$0.50"
+      ]
+    },
+    {
+      "prompt": "Put the pieces in the right order.",
+      "items": [
+        "呢件 / 幾多 / 錢 / 呀",
+        "平 / 啲 / 得 / 唔 / 得 / 呀",
+        "我 / 要 / 兩 / 件",
+        "太 / 貴 / 喇",
+        "唔該 / 畀 / 個 / 袋 / 我",
+        "一共 / 三十五 / 個半"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "[呢個藍色嘅幾多錢呀|Ni1 go3 laam4 sik1 ge3 gei2 do1 cin2 aa3]？",
+        "[太貴喇，平啲得唔得呀|Taai3 gwai3 laa3, peng4 di1 dak1 m4 dak1 aa3]？",
+        "[找返你六十四個半|Zaau2 faan1 nei5 luk6 sap6 sei3 go3 bun3]。",
+        "[我諗下先|Ngo5 nam2 haa5 sin1]。",
+        "[有冇八達通呀|Jau5 mou5 Baat3 daat6 tung1 aa3]？"
+      ]
+    },
+    {
+      "prompt": "Translate into Cantonese. Write in Jyutping.",
+      "items": [
+        "How much is this one?",
+        "I want two.",
+        "Can you go lower?",
+        "No thanks.",
+        "How much is it altogether?"
+      ]
+    },
+    {
+      "prompt": "Correct these wrong sentences, then write the right version in Jyutping.",
+      "items": [
+        "[呢一件衫幾多錢|Ni1 jat1 gin6 saam1 gei2 do1 cin2]？",
+        "[我要呢衫|Ngo5 jiu3 ni1 saam1]。",
+        "[呢個太貴|Ni1 go3 taai3 gwai3]。",
+        "[我要兩個衫|Ngo5 jiu3 loeng5 go3 saam1]。",
+        "[幾多錢呢個元|Gei2 do1 cin2 ni1 go3 jyun4]？"
+      ]
+    }
+  ],
+  "answers": [
+    "呢件 — 嗰個 — 呢本 — 嗰支 — 嗰個",
+    "十二蚊 sap6 ji6 man1 — 個半 go3 bun3 — 一百五 jat1 baak3 ng5 — 三十五個半 saam1 sap6 ng5 go3 bun3 — 五個二 ng5 go3 ji6 — 五毫 ng5 hou4",
+    "呢件 幾多 錢 呀 — 平 啲 得 唔 得 呀 — 我 要 兩 件 — 太 貴 喇 — 唔該 畀 個 袋 我 — 一共 三十五 個半",
+    "How much is this blue one? — Too expensive, can you go lower? — Your change is sixty-four fifty. — Let me think about it. — Do you have an Octopus card?",
+    "Ni1 go3 gei2 do1 cin2 aa3? — Ngo5 jiu3 loeng5 gin6. — Peng4 di1 dak1 m4 dak1 aa3? — M4 sai2 laa3, do1 ze6. — Jat1 gung6 gei2 do1 cin2 aa3?",
+    "Ni1 gin6 saam1 gei2 do1 cin2? — Ngo5 jiu3 ni1 gin6 saam1. — Ni1 go3 taai3 gwai3 laa3. — Ngo5 jiu3 loeng5 gin6 saam1. — Ni1 go3 gei2 do1 cin2 aa3?"
+  ],
+  "wave": "Five minutes before Unit 4: open any shopping app on your phone and say the prices of the first ten items you see in Cantonese — out loud, complete with 蚊 and 個半. Then repeat Unit 1: introduce yourself, and follow straight on with [呢個幾多錢呀|Ni1 go3 gei2 do1 cin2 aa3]？ These two sentences are the ones you'll use most on your first day in Hong Kong."
+}

@@ -1,0 +1,593 @@
+{
+  "title": "Sabaidee: greeting people and introducing yourself",
+  "title_target": "ສະບາຍດີ — Sa-baai-dii",
+  "goal": "Greet anyone at any time of day, say your name, ask someone's name, and say where you're from — four sentences you'll use on every first day, anywhere.",
+  "bekal": [
+    "greet people with ສະບາຍດີ",
+    "say your name with ຂ້ອຍຊື່…",
+    "ask ເຈົ້າຊື່ຫຍັງ",
+    "say where you're from with ເປັນຄົນ…",
+    "answer with ແມ່ນ and ບໍ່ແມ່ນ"
+  ],
+  "dialogs": [
+    {
+      "title": "ບົດສົນທະນາ — In the office lobby, first day",
+      "intro": "Budi has just arrived in Vientiane and meets a coworker. Notice how few words are used — Lao never attaches anything to its verbs, so the sentences stay short.",
+      "lines": [
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ສະບາຍດີ|Sa-baai-dii]",
+          "id": "Hello.",
+          "literal": "well-good."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ສະບາຍດີ|Sa-baai-dii] [ຂ້ອຍ|Khàwy][ຊື່|sʉ̂ʉ][ບູດີ|Buu-dii] [ເຈົ້າ|Jâo][ຊື່|sʉ̂ʉ][ຫຍັງ|nyǎng]",
+          "id": "Hello. My name is Budi. What's your name?",
+          "literal": "well-good. I — name — Budi. you — name — what?"
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ຂ້ອຍ|Khàwy][ຊື່|sʉ̂ʉ][ບຸນມີ|Bun-míi] [ຍິນດີ|Nyín-dii][ທີ່|thìi][ໄດ້|dâi][ຮູ້ຈັກ|hûu-ják]",
+          "id": "I'm Bounmy. Nice to meet you.",
+          "literal": "I — name — Bounmy. glad — that — get — know."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ຍິນດີ|Nyín-dii][ຄື|khʉʉ][ກັນ|kan] [ເຈົ້າ|Jâo][ເປັນ|pen][ຄົນ|khón][ລາວ|Láao][ບໍ່|bàw]",
+          "id": "Nice to meet you too. Are you Lao?",
+          "literal": "glad — same — together. you — be — person — Lao — (question)?"
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ແມ່ນ|Mèen][ແລ້ວ|lèeo] [ຂ້ອຍ|Khàwy][ເປັນ|pen][ຄົນ|khón][ວຽງຈັນ|Wíang-jan] [ເຈົ້າ|Jâo][ເດ|dee]",
+          "id": "Yes. I'm from Vientiane. And you?",
+          "literal": "right — already. I — be — person — Vientiane. you — how-about?"
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ຂ້ອຍ|Khàwy][ບໍ່ແມ່ນ|bàw mèen][ຄົນ|khón][ລາວ|Láao] [ຂ້ອຍ|Khàwy][ເປັນ|pen][ຄົນ|khón][ອິນໂດເນເຊຍ|in-doo-nee-sia]",
+          "id": "I'm not Lao. I'm Indonesian.",
+          "literal": "I — not — person — Lao. I — be — person — Indonesia."
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ໂອ້|Ôo] [ເຈົ້າ|Jâo][ມາ|maa][ຈາກ|jàak][ໃສ|sǎi]",
+          "id": "Oh. Where are you from?",
+          "literal": "oh. you — come — from — where?"
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ມາ|Maa][ຈາກ|jàak][ຈາກາຕາ|Jaa-kaa-taa]",
+          "id": "From Jakarta.",
+          "literal": "come — from — Jakarta."
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ເຈົ້າ|Jâo][ເວົ້າ|vâo][ພາສາ|phaa-sǎa][ລາວ|Láao][ໄດ້|dâi][ບໍ່|bàw]",
+          "id": "Can you speak Lao?",
+          "literal": "you — speak — language — Lao — can — (question)?"
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ໄດ້|Dâi][ໜ້ອຍ|nàwy][ໜຶ່ງ|nʉ̀ng] [ຂ້ອຍ|Khàwy][ຫາ|hǎa][ຮຽນ|hían][ຢູ່|yùu]",
+          "id": "A little. I'm learning.",
+          "literal": "can — little — one. I — seek — study — (ongoing)."
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ເກັ່ງ|Kèng][ຫຼາຍ|lǎai] [ຂໍ|Khǎw][ໃຫ້|hài][ໂຊກດີ|sôok-dii][ເດີ້|dòe]",
+          "id": "Very good. Good luck!",
+          "literal": "skilled — much. ask — give — luck-good — (friendly)."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ຂອບໃຈ|Khàwp-jai][ຫຼາຍໆ|lǎai-lǎai] [ພົບ|Phop][ກັນ|kan][ໃໝ່|mài]",
+          "id": "Thank you very much. See you again.",
+          "literal": "thank-you — much-much. meet — together — new."
+        }
+      ],
+      "notes": [
+        "**ສະບາຍດີ sa-baai-dii is the only greeting you need.** Literally \"well-good,\" it works morning, noon, and night, for both hello and goodbye. Lao has no separate \"good morning/good evening\" the way English does. One word, every situation.",
+        "**ຊື່ sʉ̂ʉ means both \"name\" AND \"to be named.\"** There's no \"is\" in between: *ຂ້ອຍຊື່ບູດີ* is literally \"I name Budi.\" Think of the casual English \"I'm Budi,\" just with *ຊື່* in the middle.",
+        "**ເປັນ pen means \"to be,\" but only for CATEGORIES.** *ຂ້ອຍເປັນຄົນລາວ* (I'm Lao), *ລາວເປັນອາຈານ* (he's a teacher). To point out identity or sameness, Lao uses a different word — *ແມ່ນ mèen* — and the two can't be swapped. Compare: *ຂ້ອຍເປັນນັກຮຽນ* (I'm a student) versus *ແມ່ນຂ້ອຍ* (it's me).",
+        "**ບໍ່ bàw at the END of a sentence turns it into a yes/no question.** *ເຈົ້າເປັນຄົນລາວບໍ່* = \"are you Lao?\" The same word BEFORE a verb means \"not\": *ຂ້ອຍບໍ່ໄປ* (I'm not going). Position decides, not sound.",
+        "**Answering yes/no questions: repeat the verb.** Lao has no stand-alone \"yes\" and \"no\" like English. Asked *ໄປບໍ່* (going?), you answer *ໄປ* (go) or *ບໍ່ໄປ* (not go). Asked *ແມ່ນບໍ່*, you answer *ແມ່ນ* or *ບໍ່ແມ່ນ*.",
+        "**ເຈົ້າ jâo does two jobs.** Inside a sentence it means \"you.\" On its own as an answer, it's a polite \"yes\" — used by men and women alike. ⚠️ This is a big difference from Thai, which splits *ครับ* and *ค่ะ* by the speaker's gender. Lao doesn't.",
+        "**ເດີ້ dòe at the end of a sentence softens everything.** Without it, *ໂຊກດີ* sounds like an announcement. With it, it sounds like a friend's good wishes. Use it for kind words, reminders, and goodbyes — but not in every sentence, or it sounds put on.",
+        "**ຫຼາຍ lǎai means \"much/many\" and is used for \"very.\"** It comes after the adjective: *ເກັ່ງຫຼາຍ* (very skilled), *ແພງຫຼາຍ* (very expensive). Doubled as *ຫຼາຍໆ*, it's even stronger: *ຂອບໃຈຫຼາຍໆ* = thank you so very much."
+      ],
+      "grammars": [
+        {
+          "title": "Basic word order: just like English",
+          "body": [
+            "Lao builds sentences as **subject — verb — object**, just like English, and never changes a single letter of the verb. No past forms, no plurals, no agreement of any kind."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "Verb",
+              "Object / complement",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ຂ້ອຍ *khàwy*",
+                "ຊື່ *sʉ̂ʉ*",
+                "ບູດີ *Buu-dii*",
+                "my name is Budi"
+              ],
+              [
+                "ຂ້ອຍ *khàwy*",
+                "ເປັນ *pen*",
+                "ຄົນລາວ *khón Láao*",
+                "I'm Lao"
+              ],
+              [
+                "ເຈົ້າ *jâo*",
+                "ມາຈາກ *maa jàak*",
+                "ໃສ *sǎi*",
+                "where are you from"
+              ],
+              [
+                "ລາວ *láao*",
+                "ເວົ້າ *vâo*",
+                "ພາສາລາວ *phaa-sǎa Láao*",
+                "he/she speaks Lao"
+              ]
+            ]
+          },
+          "after": [
+            "Question words stay **where the answer goes** instead of jumping to the front as in English. That's why *ເຈົ້າຊື່ຫຍັງ* is built exactly like \"you name what?\""
+          ]
+        },
+        {
+          "title": "ເປັນ, ແມ່ນ, ຢູ່ — three words for one \"to be\"",
+          "body": [
+            "English uses \"to be\" for everything. Lao splits that job among three words, and each has its own territory."
+          ],
+          "table": {
+            "head": [
+              "Word",
+              "Used for",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ເປັນ *pen*",
+                "category, job, nationality",
+                "*ຂ້ອຍເປັນອາຈານ*",
+                "I'm a teacher"
+              ],
+              [
+                "ແມ່ນ *mèen*",
+                "identity, \"that's right,\" pointing out which one",
+                "*ແມ່ນລາວ*",
+                "that's him (the one)"
+              ],
+              [
+                "ຢູ່ *yùu*",
+                "being in a place",
+                "*ຂ້ອຍຢູ່ວຽງຈັນ*",
+                "I'm in Vientiane"
+              ]
+            ]
+          },
+          "after": [
+            "The negatives: *ບໍ່ເປັນ*, *ບໍ່ແມ່ນ*, *ບໍ່ຢູ່*. The one you'll hear most is **ບໍ່ແມ່ນ** — that's how Lao people say \"no, it isn't.\"",
+            "⚠️ *ບໍ່ເປັນຫຍັງ bàw pen nyǎng* (literally \"not be what\") is a fixed phrase meaning both \"it's okay\" **and** \"you're welcome.\" Don't take it apart."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Everyday greetings and small talk",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Lao",
+            "Say it",
+            "English",
+            "When"
+          ],
+          "rows": [
+            [
+              "ສະບາຍດີ",
+              "*sa-baai-dii*",
+              "hello / good …",
+              "any time, meeting & parting"
+            ],
+            [
+              "ສະບາຍດີບໍ່",
+              "*sa-baai-dii bàw*",
+              "how are you?",
+              "to someone you already know"
+            ],
+            [
+              "ສະບາຍດີ",
+              "*sa-baai-dii*",
+              "I'm fine",
+              "the answer to the question above"
+            ],
+            [
+              "ຂອບໃຈ",
+              "*khàwp-jai*",
+              "thank you",
+              "always safe"
+            ],
+            [
+              "ຂອບໃຈຫຼາຍໆ",
+              "*khàwp-jai lǎai-lǎai*",
+              "thank you very much",
+              "when someone really helped"
+            ],
+            [
+              "ບໍ່ເປັນຫຍັງ",
+              "*bàw pen nyǎng*",
+              "you're welcome / it's okay",
+              "reply to thanks & apologies"
+            ],
+            [
+              "ຂໍໂທດ",
+              "*khǎw-thôot*",
+              "sorry / excuse me",
+              "bumping into someone, interrupting, getting past"
+            ],
+            [
+              "ພົບກັນໃໝ່",
+              "*phop kan mài*",
+              "see you again",
+              "parting from someone you'll meet again"
+            ],
+            [
+              "ໂຊກດີ",
+              "*sôok-dii*",
+              "good luck",
+              "seeing someone off"
+            ],
+            [
+              "ໄປກ່ອນເດີ້",
+              "*pai kàwn dòe*",
+              "I'm off, then",
+              "leaving a group"
+            ],
+            [
+              "ຍິນດີທີ່ໄດ້ຮູ້ຈັກ",
+              "*nyín-dii thìi dâi hûu-ják*",
+              "nice to meet you",
+              "first introductions"
+            ],
+            [
+              "ຍິນດີຄືກັນ",
+              "*nyín-dii khʉʉ kan*",
+              "nice to meet you too",
+              "the reply"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One habit worth copying: Lao people greet by **pressing their palms together in front of the chest** — this is called *ນົບ nop*. How high the hands go depends on who you're greeting: chest level for peers, higher for elders and monks. You don't have to do it, but returning it when someone greets you that way is much appreciated."
+        }
+      ]
+    },
+    {
+      "title": "Countries and nationalities: one pattern for all",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Lao has no separate word for \"Indonesian\" or \"English.\" It just puts **ຄົນ *khón*** (person) in front of the country name — \"person-Laos\" for a Lao."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Country",
+            "Say it",
+            "The people",
+            "The language"
+          ],
+          "rows": [
+            [
+              "ລາວ",
+              "*Láao*",
+              "*khón Láao*",
+              "*phaa-sǎa Láao*"
+            ],
+            [
+              "ອິນໂດເນເຊຍ",
+              "*In-doo-nee-sia*",
+              "*khón in-doo-nee-sia*",
+              "*phaa-sǎa in-doo-nee-sia*"
+            ],
+            [
+              "ໄທ",
+              "*Thái*",
+              "*khón thái*",
+              "*phaa-sǎa thái*"
+            ],
+            [
+              "ຫວຽດນາມ",
+              "*Wîat-naam*",
+              "*khón wîat-naam*",
+              "*phaa-sǎa wîat-naam*"
+            ],
+            [
+              "ຈີນ",
+              "*Jiin*",
+              "*khón jiin*",
+              "*phaa-sǎa jiin*"
+            ],
+            [
+              "ຍີ່ປຸ່ນ",
+              "*Nyìi-pùn*",
+              "*khón nyìi-pùn*",
+              "*phaa-sǎa nyìi-pùn*"
+            ],
+            [
+              "ເກົາຫຼີ",
+              "*Kao-lǐi*",
+              "*khón kao-lǐi*",
+              "*phaa-sǎa kao-lǐi*"
+            ],
+            [
+              "ອັງກິດ",
+              "*Ang-kít*",
+              "*khón ang-kít*",
+              "*phaa-sǎa ang-kít*"
+            ],
+            [
+              "ຝຣັ່ງ",
+              "*Fa-lang*",
+              "*khón fa-lang*",
+              "*phaa-sǎa fa-lang*"
+            ],
+            [
+              "ອາເມລິກາ",
+              "*Aa-mée-li-kaa*",
+              "*khón aa-mée-li-kaa*",
+              "—"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The word *ຝຣັ່ງ fa-lang* has a long history: it originally meant \"French,\" but in everyday speech it means **any white Westerner**. If you hear it at the market, it's not an insult — just the word people use. Asian visitors rarely get called that; more often they hear the guess *ຄົນໄທບໍ່* (are you Thai?)."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "lo": "ສະບາຍດີ",
+      "baca": "sa-baai-dii",
+      "en": "hello, hi (any time of day)"
+    },
+    {
+      "lo": "ຂ້ອຍ",
+      "baca": "khàwy",
+      "en": "I, me"
+    },
+    {
+      "lo": "ເຈົ້າ",
+      "baca": "jâo",
+      "en": "you; yes (polite)"
+    },
+    {
+      "lo": "ຊື່",
+      "baca": "sʉ̂ʉ",
+      "en": "name; to be named"
+    },
+    {
+      "lo": "ຫຍັງ",
+      "baca": "nyǎng",
+      "en": "what"
+    },
+    {
+      "lo": "ເປັນ",
+      "baca": "pen",
+      "en": "to be (category)"
+    },
+    {
+      "lo": "ແມ່ນ",
+      "baca": "mèen",
+      "en": "right; it is (identity)"
+    },
+    {
+      "lo": "ບໍ່ແມ່ນ",
+      "baca": "bàw mèen",
+      "en": "no, it isn't"
+    },
+    {
+      "lo": "ບໍ່",
+      "baca": "bàw",
+      "en": "not; …? (at the end)"
+    },
+    {
+      "lo": "ຄົນ",
+      "baca": "khón",
+      "en": "person"
+    },
+    {
+      "lo": "ລາວ",
+      "baca": "Láao",
+      "en": "Lao; (also) he, she"
+    },
+    {
+      "lo": "ວຽງຈັນ",
+      "baca": "Wíang-jan",
+      "en": "Vientiane"
+    },
+    {
+      "lo": "ອິນໂດເນເຊຍ",
+      "baca": "in-doo-nee-sia",
+      "en": "Indonesia"
+    },
+    {
+      "lo": "ຈາກາຕາ",
+      "baca": "Jaa-kaa-taa",
+      "en": "Jakarta"
+    },
+    {
+      "lo": "ມາ",
+      "baca": "maa",
+      "en": "to come"
+    },
+    {
+      "lo": "ຈາກ",
+      "baca": "jàak",
+      "en": "from"
+    },
+    {
+      "lo": "ໃສ",
+      "baca": "sǎi",
+      "en": "where"
+    },
+    {
+      "lo": "ເວົ້າ",
+      "baca": "vâo",
+      "en": "to speak"
+    },
+    {
+      "lo": "ພາສາ",
+      "baca": "phaa-sǎa",
+      "en": "language"
+    },
+    {
+      "lo": "ໄດ້",
+      "baca": "dâi",
+      "en": "can, be able to"
+    },
+    {
+      "lo": "ໜ້ອຍໜຶ່ງ",
+      "baca": "nàwy nʉ̀ng",
+      "en": "a little"
+    },
+    {
+      "lo": "ຮຽນ",
+      "baca": "hían",
+      "en": "to study, to learn"
+    },
+    {
+      "lo": "ຢູ່",
+      "baca": "yùu",
+      "en": "to be at; (ongoing)"
+    },
+    {
+      "lo": "ເກັ່ງ",
+      "baca": "kèng",
+      "en": "skilled, good at"
+    },
+    {
+      "lo": "ຫຼາຍ",
+      "baca": "lǎai",
+      "en": "much, many; very"
+    },
+    {
+      "lo": "ຂອບໃຈ",
+      "baca": "khàwp-jai",
+      "en": "thank you"
+    },
+    {
+      "lo": "ບໍ່ເປັນຫຍັງ",
+      "baca": "bàw pen nyǎng",
+      "en": "it's okay; you're welcome"
+    },
+    {
+      "lo": "ຂໍໂທດ",
+      "baca": "khǎw-thôot",
+      "en": "sorry, excuse me"
+    },
+    {
+      "lo": "ຍິນດີ",
+      "baca": "nyín-dii",
+      "en": "glad, pleased"
+    },
+    {
+      "lo": "ຮູ້ຈັກ",
+      "baca": "hûu-ják",
+      "en": "to know (a person)"
+    },
+    {
+      "lo": "ຄືກັນ",
+      "baca": "khʉʉ kan",
+      "en": "same, too"
+    },
+    {
+      "lo": "ພົບ",
+      "baca": "phop",
+      "en": "to meet"
+    },
+    {
+      "lo": "ໃໝ່",
+      "baca": "mài",
+      "en": "new; again"
+    },
+    {
+      "lo": "ໂຊກດີ",
+      "baca": "sôok-dii",
+      "en": "good luck"
+    },
+    {
+      "lo": "ເດີ້",
+      "baca": "dòe",
+      "en": "…okay? (friendly particle)"
+    },
+    {
+      "lo": "ແລ້ວ",
+      "baca": "lèeo",
+      "en": "already"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in with ເປັນ, ແມ່ນ, or ຢູ່.",
+      "items": [
+        "ຂ້ອຍ____ຄົນອິນໂດເນເຊຍ (I'm Indonesian)",
+        "ບຸນມີ____ວຽງຈັນ (Bounmy is in Vientiane)",
+        "____ລາວບໍ່ (is that him?)",
+        "ເຈົ້າ____ອາຈານບໍ່ (are you a teacher?)",
+        "ຂ້ອຍບໍ່____ຄົນໄທ (I'm not Thai)"
+      ]
+    },
+    {
+      "prompt": "Answer each question twice: once \"yes,\" once \"no.\" Remember, the answer is the verb itself.",
+      "items": [
+        "ເຈົ້າເປັນຄົນລາວບໍ່",
+        "ເຈົ້າເວົ້າພາສາລາວໄດ້ບໍ່",
+        "ເຈົ້າມາຈາກຈາກາຕາບໍ່",
+        "ເຈົ້າຮູ້ຈັກບຸນມີບໍ່"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ຫຍັງ / ຊື່ / ເຈົ້າ",
+        "ຄົນລາວ / ຂ້ອຍ / ບໍ່ແມ່ນ",
+        "ໃສ / ມາຈາກ / ເຈົ້າ",
+        "ບໍ່ / ໄດ້ / ພາສາລາວ / ເວົ້າ / ເຈົ້າ",
+        "ຫຼາຍໆ / ຂອບໃຈ"
+      ]
+    },
+    {
+      "prompt": "Translate into Lao.",
+      "items": [
+        "Hello. My name is Sari.",
+        "What's your name?",
+        "I'm Indonesian, from Jakarta.",
+        "Can you speak Lao?",
+        "A little.",
+        "Thank you very much. See you again."
+      ]
+    }
+  ],
+  "answers": [
+    "ເປັນ — ຢູ່ — ແມ່ນ — ເປັນ — ແມ່ນ",
+    "ແມ່ນ / ບໍ່ແມ່ນ — ໄດ້ / ບໍ່ໄດ້ — ແມ່ນ / ບໍ່ແມ່ນ — ຮູ້ຈັກ / ບໍ່ຮູ້ຈັກ",
+    "ເຈົ້າຊື່ຫຍັງ — ຂ້ອຍບໍ່ແມ່ນຄົນລາວ — ເຈົ້າມາຈາກໃສ — ເຈົ້າເວົ້າພາສາລາວໄດ້ບໍ່ — ຂອບໃຈຫຼາຍໆ",
+    "ສະບາຍດີ ຂ້ອຍຊື່ຊາຣີ — ເຈົ້າຊື່ຫຍັງ — ຂ້ອຍເປັນຄົນອິນໂດເນເຊຍ ມາຈາກຈາກາຕາ — ເຈົ້າເວົ້າພາສາລາວໄດ້ບໍ່ — ໄດ້ໜ້ອຍໜຶ່ງ — ຂອບໃຈຫຼາຍໆ ພົບກັນໃໝ່"
+  ]
+}

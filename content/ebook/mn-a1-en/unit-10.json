@@ -1,0 +1,652 @@
+{
+  "title": "Ordering food",
+  "title_target": "Хоол захиалах",
+  "goal": "Order, pay, and make small talk in a restaurant, and master the suffix *-аар / -ээр*, which means \"with,\" \"by way of,\" and \"in (a language).\"",
+  "bekal": [
+    "order food and drinks, and ask what's in a dish",
+    "use the suffix *-аар* for tools, manner, routes, and languages",
+    "decline, ask for more, and ask for the bill politely"
+  ],
+  "dialogs": [
+    {
+      "title": "Яриа — Рестораны цэсэнд",
+      "intro": "Budi and Sarnai go into a small restaurant near the university. The waiter comes over with the menu.",
+      "lines": [
+        {
+          "speaker": "Зөөгч:",
+          "text": "[Сайн|Sain] [байна|BAI-n] [уу|uu]. [Энэ|EH-neh] [цэс|tses] [байна|BAI-n]. [Юу|Yuu] [захиалах|dza-KHIA-lakh] [вэ|veh]?",
+          "id": "Welcome. Here's the menu. What would you like?",
+          "literal": "good is Q. this menu is. what order Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Цуйван|TSUI-van] [байгаа|bai-GAA] [юу|yuu]?",
+          "id": "Do you have tsuivan?",
+          "literal": "tsuivan is-that Q?"
+        },
+        {
+          "speaker": "Зөөгч:",
+          "text": "[Байгаа|Bai-GAA]. [Хонины|KHO-ni-nii] [махаар|ma-KHAAR] [хийсэн|KHII-sen].",
+          "id": "We do. It's made with mutton.",
+          "literal": "sheep's meat-with made."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Тахианы|ta-KHIA-nii] [махаар|ma-KHAAR] [хийсэн|KHII-sen] [байгаа|bai-GAA] [юу|yuu]?",
+          "id": "Is there one made with chicken?",
+          "literal": "chicken's meat-with made is-that Q?"
+        },
+        {
+          "speaker": "Зөөгч:",
+          "text": "[Байхгүй|BAIKH-güi]. [Гэхдээ|GEKH-dē] [ногоотой|no-GŌ-toi] [цуйван|TSUI-van] [байгаа|bai-GAA].",
+          "id": "No. But there's tsuivan with vegetables.",
+          "literal": "is-not. but vegetable-with tsuivan is-that."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Тэгвэл|TEG-vel] [түүнийг|TÜÜ-niig] [авъя|AV-ya]. [Мах|Makh] [багатай|BA-ga-tai] [байж|baij] [болох|BO-lokh] [уу|uu]?",
+          "id": "Then that one. Could it have just a little meat?",
+          "literal": "then that-OBJ let's-take. meat little-with be-ing may Q?"
+        },
+        {
+          "speaker": "Зөөгч:",
+          "text": "[Болно|BOL-no]. [Ундаа|Un-DAA] [юу|yuu] [авах|a-VAKH] [вэ|veh]?",
+          "id": "Sure. What would you like to drink?",
+          "literal": "may. drink what take Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Надад|NA-dad] [сүүтэй|SÜÜ-tei] [цай|tsai], [түүнд|TÜÜnd] [ус|us] [өгнө|ÖG-nö] [үү|üü].",
+          "id": "Milk tea for me, and water for her.",
+          "literal": "me-to milk-with tea, her-to water give Q."
+        },
+        {
+          "speaker": "Зөөгч:",
+          "text": "[Хүйтэн|KHÜY-ten] [ус|us] [үү|üü], [халуун|kha-LUUN] [ус|us] [уу|uu]?",
+          "id": "Cold water or hot water?",
+          "literal": "cold water Q, hot water Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Хүйтэн|KHÜY-ten] [ус|us]. [Бас|Bas] [нэг|neg] [хуушуур|khuu-SHUUR] [нэмээрэй|neh-MĒ-rei].",
+          "id": "Cold water. And please add one khuushuur too.",
+          "literal": "cold water. also one khuushuur add."
+        },
+        {
+          "speaker": "Зөөгч:",
+          "text": "[За|Dza], [ойлголоо|OIL-go-lō]. [Арван|A-rvan] [минутын|mi-NU-tiin] [дараа|da-RAA] [бэлэн|BEH-len] [болно|BOL-no].",
+          "id": "All right, got it. It'll be ready in ten minutes.",
+          "literal": "good, understood. ten minute's after ready become."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Буди|BU-di], [чи|chi] [монголоор|MON-go-lōr] [сайн|sain] [захиаллаа|dza-KHIAL-laa] [шүү|shüü]!",
+          "id": "Budi, you ordered really well in Mongolian!",
+          "literal": "Budi, you Mongolian-in well ordered-just-now you-know!"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Баярлалаа|ba-yar-la-LAA]! [Гартаа|GAR-taa] [бичгээр|BICH-gēr] [бэлдсэн|BELD-sen] [юм|yum].",
+          "id": "Thanks! I'd prepared it written on my hand.",
+          "literal": "thanks! hand-on-own writing-by prepared you-know!"
+        },
+        {
+          "speaker": "Зөөгч:",
+          "text": "[Хоол|Khōl] [ирлээ|IR-lē]. [Сайхан|SAI-khan] [хооллоорой|khōl-LŌ-roi]!",
+          "id": "Here's the food. Enjoy your meal!",
+          "literal": "food came-just-now. nicely eat!"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Баярлалаа|ba-yar-la-LAA]. [Дараа|Da-RAA] [нь|n'] [тооцоог|TŌ-tsōg] [авъя|AV-ya].",
+          "id": "Thank you. We'll get the bill later.",
+          "literal": "thanks. after -the bill-OBJ let's-take."
+        }
+      ],
+      "notes": [
+        "⚠️ **The suffix -аар / -ээр / -оор / -өөр does four jobs at once:** tool (*махаар*, with meat), manner (*бичгээр*, in writing), route (*замаар*, along the road), and language (*монголоор*, in Mongolian). They all answer the question \"by what?\", so think of it as one suffix with one flexible meaning.",
+        "**Монголоор ярих = to speak in Mongolian.** ⚠️ Notice that the suffix goes on *монгол*, not on *хэл*. Saying *монгол хэлээр* is also correct but sounds more formal; in conversation people say *монголоор*, *англиар*, *оросоор*, *индонезоор*.",
+        "**Өгнө үү literally means \"will you give?\" and works exactly like \"please.\"** *Ус өгнө үү* = water, please. It's the most polite way to ask and can be paired with any verb.",
+        "**The suffix -аарай / -ээрэй is a polite, warm command**, used for suggestions and wishes: *нэмээрэй* (please add), *сайхан хооллоорой* (enjoy your meal), *сайн яваарай* (have a safe trip). It sounds like a friendly \"won't you?\" or \"okay?\" at the end of an English sentence: it softens without changing the content.",
+        "**Тооцоо = bill, check.** *Тооцоог авъя* or *тооцоо хийе* is how you ask for the bill. ⚠️ In Mongolia, tipping isn't yet a general custom except in expensive restaurants in Ulaanbaatar; if the service was good, rounding up is more than enough."
+      ],
+      "grammars": [
+        {
+          "title": "The suffix -аар: with, by way of, in",
+          "body": [
+            "Four forms follow vowel harmony, chosen exactly as for the other suffixes you already know."
+          ],
+          "table": {
+            "head": [
+              "Vowel of the stem",
+              "Suffix",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*а, у*",
+                "**-аар**",
+                "*мах* → *мах**аар***",
+                "with meat"
+              ],
+              [
+                "*э, ү*",
+                "**-ээр**",
+                "*гэр* → *гэр**ээр***",
+                "past the house"
+              ],
+              [
+                "*о*",
+                "**-оор**",
+                "*ном* → *ном**оор***",
+                "with a book"
+              ],
+              [
+                "*ө*",
+                "**-өөр**",
+                "*өдөр* → *өдр**өөр***",
+                "per day"
+              ],
+              [
+                "ends in a vowel",
+                "**-гаар / -гээр**",
+                "*ширээ* → *ширээ**гээр***",
+                "past the table"
+              ]
+            ]
+          },
+          "after": [
+            "**The four most common uses, with examples you can use right away:**",
+            "⚠️ *Автобус**аар** явна* (go by bus): notice that Mongolian says \"go **by** bus,\" much as English does. The verb *явах* handles every means of transport: *машинаар*, *онгоцоор* (by plane), *галт тэргээр* (by train), *явганаар* (on foot)."
+          ]
+        },
+        {
+          "title": "Asking politely: three levels",
+          "body": [
+            "Mongolian has three ways to ask, and the difference is like the difference between \"take it,\" \"please take it,\" and \"could you please take it\" in English."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Example",
+              "Tone",
+              "When to use"
+            ],
+            "rows": [
+              [
+                "Bare stem",
+                "*Ус өг.*",
+                "direct",
+                "To close friends, younger siblings, children."
+              ],
+              [
+                "**-аарай / -ээрэй**",
+                "*Ус өгөөрэй.*",
+                "warm, polite",
+                "To anyone. The safest."
+              ],
+              [
+                "**… өгнө үү**",
+                "*Ус өгнө үү.*",
+                "very polite",
+                "To waiters, officials, strangers."
+              ],
+              [
+                "**… болох уу?**",
+                "*Ус авч болох уу?*",
+                "asking permission",
+                "When you're not sure it's allowed."
+              ],
+              [
+                "**битгий** + stem",
+                "*Битгий яв.*",
+                "prohibition",
+                "\"Don't go.\""
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Битгий is the only way to say \"don't\" in Mongolian, and it goes IN FRONT of the verb**: the only thing besides the object allowed to stand before the verb. *Битгий хоцроорой* = don't be late, okay?",
+            "The *-аарай* form is the most useful to learn first, because it's never out of place: polite enough for strangers, warm enough for friends. **If you memorize only one command form from this unit, make it this one.**"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Food and drink",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English",
+            "Монгол",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*хоол*",
+              "*khōl*",
+              "food",
+              "*ундаа*",
+              "*un-DAA*",
+              "drink"
+            ],
+            [
+              "*мах*",
+              "*makh*",
+              "meat",
+              "*ногоо*",
+              "*no-GŌ*",
+              "vegetable"
+            ],
+            [
+              "*хонины мах*",
+              "*KHO-ni-nii makh*",
+              "mutton",
+              "*үхрийн мах*",
+              "*ÜKH-riin makh*",
+              "beef"
+            ],
+            [
+              "*тахианы мах*",
+              "*ta-KHIA-nii makh*",
+              "chicken",
+              "*загас*",
+              "*DZA-gas*",
+              "fish"
+            ],
+            [
+              "*будаа*",
+              "*bu-DAA*",
+              "rice",
+              "*гурил*",
+              "*GU-ril*",
+              "flour, noodles"
+            ],
+            [
+              "*төмс*",
+              "*töms*",
+              "potato",
+              "*лууван*",
+              "*LUU-van*",
+              "carrot"
+            ],
+            [
+              "*сонгино*",
+              "*SON-gi-no*",
+              "onion",
+              "*байцаа*",
+              "*bai-TSAA*",
+              "cabbage"
+            ],
+            [
+              "*давс*",
+              "*davs*",
+              "salt",
+              "*элсэн чихэр*",
+              "*EL-sen CHI-kher*",
+              "sugar"
+            ],
+            [
+              "*цай*",
+              "*tsai*",
+              "tea",
+              "*кофе*",
+              "*KO-feh*",
+              "coffee"
+            ],
+            [
+              "*сүү*",
+              "*süü*",
+              "milk",
+              "*ус*",
+              "*us*",
+              "water"
+            ],
+            [
+              "*талх*",
+              "*talkh*",
+              "bread",
+              "*өндөг*",
+              "*ÖN-dög*",
+              "egg"
+            ],
+            [
+              "*жимс*",
+              "*jims*",
+              "fruit",
+              "*шөл*",
+              "*shöl*",
+              "soup, broth"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Notice the pattern for meats: **animal with -ын/-ийн + мах**. *Хонь* (sheep) → *хонины мах*; *үхэр* (cow) → *үхрийн мах*; *тахиа* (chicken) → *тахианы мах*. Literally \"the sheep's meat.\" Once you know the animal, you know the meat, unlike English, which uses completely different words (*sheep* and *mutton*)."
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ If you don't eat pork or are looking for halal food",
+          "items": [
+            "*Гахайн мах* (ga-KHAIN makh) = pork. The sentence to memorize: ***Би гахайн мах иддэггүй.*** — I don't eat pork.",
+            "Traditional Mongolian cooking is almost entirely **mutton and beef**; pork is far rarer than in China or Korea, so the risk is small. What to watch out for is Korean- and Chinese-style cooking in the city.",
+            "Ulaanbaatar has a Kazakh Muslim community and several halal restaurants, especially around *Баянгол* and in the Kazakh region of *Баян-Өлгий* province.",
+            "*Би мах иддэггүй.* — I don't eat meat. ⚠️ Be ready to explain; vegetarianism is still very unusual in Mongolia, and the questions will be sincere, not judgmental."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ready-made restaurant phrases",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Цэс өгнө үү.*",
+              "*tses ÖG-nö üü*",
+              "The menu, please."
+            ],
+            [
+              "*Юу захиалах вэ?*",
+              "*yuu dza-KHIA-lakh veh*",
+              "What would you like?"
+            ],
+            [
+              "*Энийг авъя.*",
+              "*EH-niig AV-ya*",
+              "I'll have this."
+            ],
+            [
+              "*Энэ юу вэ?*",
+              "*EH-neh yuu veh*",
+              "What is this?"
+            ],
+            [
+              "*Хурц уу?*",
+              "*khurts uu*",
+              "Is it spicy?"
+            ],
+            [
+              "*Хурц биш байг.*",
+              "*khurts bish baig*",
+              "Not spicy, please."
+            ],
+            [
+              "*Бас нэг өгнө үү.*",
+              "*bas neg ÖG-nö üü*",
+              "One more, please."
+            ],
+            [
+              "*Маш амттай байна.*",
+              "*mash AMT-tai BAI-n*",
+              "It's delicious."
+            ],
+            [
+              "*Би цатгалан боллоо.*",
+              "*bi TSAT-ga-lan BOL-lō*",
+              "I'm full."
+            ],
+            [
+              "*Тооцоо хийе.*",
+              "*TŌ-tsō KHII-yeh*",
+              "The bill, please."
+            ],
+            [
+              "*Картаар төлж болох уу?*",
+              "*KAR-taar TÖLJ BO-lokh uu*",
+              "Can I pay by card?"
+            ],
+            [
+              "*Сайхан хооллоорой!*",
+              "*SAI-khan khōl-LŌ-roi*",
+              "Enjoy your meal!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that **Mongolian has no phrase said before eating** by the eater, like Japanese *itadakimasu*. *Сайхан хооллоорой* is said **to** the person about to eat, by the waiter or host, like \"Enjoy your meal.\" If you're the one eating, just reply *баярлалаа*."
+        }
+      ]
+    },
+    {
+      "title": "Taste and food",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*амттай*",
+              "*AMT-tai*",
+              "delicious"
+            ],
+            [
+              "*амтгүй*",
+              "*AMT-güi*",
+              "tasteless, bland"
+            ],
+            [
+              "*давстай*",
+              "*DAVS-tai*",
+              "salty"
+            ],
+            [
+              "*чихэрлэг*",
+              "*CHI-kher-leg*",
+              "sweet"
+            ],
+            [
+              "*исгэлэн*",
+              "*IS-geh-len*",
+              "sour"
+            ],
+            [
+              "*гашуун*",
+              "*ga-SHUUN*",
+              "bitter"
+            ],
+            [
+              "*хурц*",
+              "*khurts*",
+              "spicy; sharp"
+            ],
+            [
+              "*халуун*",
+              "*kha-LUUN*",
+              "hot"
+            ],
+            [
+              "*хүйтэн*",
+              "*KHÜY-ten*",
+              "cold"
+            ],
+            [
+              "*шинэхэн*",
+              "*SHI-neh-khen*",
+              "fresh"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Notice the suffixes **-тай** (having) and **-гүй** (lacking) that form most of these adjectives: *амт* (taste) → *амттай* (tasty) and *амтгүй* (tasteless). This pattern is very productive, and you can use it to make new adjectives yourself: *мөнгөтэй* (having money, rich), *мөнгөгүй* (penniless), *цагтай* (having time), *цаггүй* (having no time)."
+        },
+        {
+          "type": "p",
+          "text": "One note on flavor that often surprises visitors: **Mongolian cooking uses almost no chili, garlic, or spices at all.** The seasoning is salt, and sometimes onion. It isn't a shortcoming but a choice: in a climate where vegetables barely grow for eight months a year, the flavor comes from the meat itself. If you like it hot, bring your own hot sauce; that's what many foreigners living there do."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "mn": "хоол",
+      "baca": "khōl",
+      "en": "food"
+    },
+    {
+      "mn": "ундаа",
+      "baca": "un-DAA",
+      "en": "drink"
+    },
+    {
+      "mn": "цэс",
+      "baca": "tses",
+      "en": "menu"
+    },
+    {
+      "mn": "захиалах",
+      "baca": "dza-KHIA-lakh",
+      "en": "to order"
+    },
+    {
+      "mn": "зөөгч",
+      "baca": "DZÖÖGCH",
+      "en": "waiter"
+    },
+    {
+      "mn": "тооцоо",
+      "baca": "TŌ-tsō",
+      "en": "bill, check"
+    },
+    {
+      "mn": "мах",
+      "baca": "makh",
+      "en": "meat"
+    },
+    {
+      "mn": "ногоо",
+      "baca": "no-GŌ",
+      "en": "vegetable"
+    },
+    {
+      "mn": "будаа",
+      "baca": "bu-DAA",
+      "en": "rice"
+    },
+    {
+      "mn": "сүү",
+      "baca": "süü",
+      "en": "milk"
+    },
+    {
+      "mn": "талх",
+      "baca": "talkh",
+      "en": "bread"
+    },
+    {
+      "mn": "өндөг",
+      "baca": "ÖN-dög",
+      "en": "egg"
+    },
+    {
+      "mn": "халуун",
+      "baca": "kha-LUUN",
+      "en": "hot"
+    },
+    {
+      "mn": "хүйтэн",
+      "baca": "KHÜY-ten",
+      "en": "cold"
+    },
+    {
+      "mn": "хурц",
+      "baca": "khurts",
+      "en": "spicy, sharp"
+    },
+    {
+      "mn": "нэмэх",
+      "baca": "NEH-mekh",
+      "en": "to add"
+    },
+    {
+      "mn": "бэлэн",
+      "baca": "BEH-len",
+      "en": "ready"
+    },
+    {
+      "mn": "цатгалан",
+      "baca": "TSAT-ga-lan",
+      "en": "full (after eating)"
+    },
+    {
+      "mn": "өлссөн",
+      "baca": "ÖLS-sön",
+      "en": "hungry"
+    },
+    {
+      "mn": "битгий",
+      "baca": "BIT-gii",
+      "en": "⚠️ don't (before the verb)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mongolian.",
+      "items": [
+        "The menu, please.",
+        "I'll have this.",
+        "Do you have tsuivan?",
+        "Not spicy, please.",
+        "It's delicious.",
+        "The bill, please."
+      ]
+    },
+    {
+      "prompt": "Fill in the suffix -аар, -ээр, -оор, or -өөр.",
+      "items": [
+        "Би автобус____ явна.",
+        "Тэр монгол____ ярьдаг.",
+        "Энэ мах____ хийсэн.",
+        "Би энэ зам____ явна.",
+        "Тэр бичиг____ бэлдсэн.",
+        "Бид өдр____ ажилладаг."
+      ]
+    },
+    {
+      "prompt": "Change into a polite request with -аарай, -ээрэй, -оорой, or -өөрэй.",
+      "items": [
+        "Ус өг.",
+        "Нэг нэм.",
+        "Сайхан хоол.",
+        "Битгий хоцор.",
+        "Энд суу.",
+        "Дахин ир."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "үү / өгнө / цэс",
+        "авъя / энийг / би",
+        "байна / амттай / маш",
+        "хийе / тооцоо",
+        "явна / автобусаар / би"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Цэс өгнө үү. — Би энийг авъя. — Цуйван байгаа юу? — Битгий хурц хийгээрэй. — Маш амттай байна. — Тооцоо хийе.",
+    "1": "аар — оор — аар — аар — ээр — өөр",
+    "2": "Ус өгөөрэй. — Нэг нэмээрэй. — Сайхан хооллоорой. — Битгий хоцроорой. — Энд суугаарай. — Дахин ирээрэй.",
+    "3": "Цэс өгнө үү. — Би энийг авъя. — Маш амттай байна. — Тооцоо хийе. — Би автобусаар явна."
+  }
+}

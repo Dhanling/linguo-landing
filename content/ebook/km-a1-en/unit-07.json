@@ -1,0 +1,577 @@
+{
+  "title": "Ordering food you can eat",
+  "title_target": "កុម្ម៉ង់បាយ — kom-mang baay",
+  "goal": "Order food and drinks correctly — including explaining what you don't eat in sentences that leave no room for misunderstanding.",
+  "bekal": [
+    "order with សុំ … និង …",
+    "explain dietary restrictions with ខ្ញុំមិនញ៉ាំ …",
+    "ask for something without a certain ingredient using កុំដាក់ …",
+    "praise the food with ឆ្ងាញ់ណាស់",
+    "ask for the bill and pay"
+  ],
+  "dialogs": [
+    {
+      "title": "កិច្ចសន្ទនា — A roadside noodle stall",
+      "intro": "Ani has her first lunch out. The most important sentence in this whole unit is in the fourth line — practice it until you can say it without thinking, if you need it, because you will say it almost every day in Cambodia.",
+      "lines": [
+        {
+          "speaker": "អ្នកបម្រើ:",
+          "text": "[បង|baang] [ញ៉ាំ|nyam] [អ្វី|'wey] [ចាស|chaah]?",
+          "id": "What would you like to eat?",
+          "literal": "older-sibling — eat — what — yes(f)?"
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[មាន|mien] [អ្វី|'wey] [ខ្លះ|khlah] [ចាស|chaah]?",
+          "id": "What do you have?",
+          "literal": "have — what — some — yes(f)?"
+        },
+        {
+          "speaker": "អ្នកបម្រើ:",
+          "text": "[មាន|mien] [គុយទាវ|kuy-tiew], [បាយឆា|baay-chhaa], [អាម៉ុក|'aa-mok] [ចាស|chaah]។",
+          "id": "We have kuy teav, fried rice, amok.",
+          "literal": "have — noodle-soup, rice-fried, amok — yes(f)."
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[ខ្ញុំ|khnyom] [មិន|min] [ញ៉ាំ|nyam] [សាច់ជ្រូក|sach-chruuk] [ទេ|té] [ចាស|chaah]។ [មាន|mien] [សាច់មាន់|sach-moan] [ទេ|té]?",
+          "id": "I don't eat pork. Do you have chicken?",
+          "literal": "I — not — eat — meat-pig — no — yes(f). have — meat-chicken — (question)?"
+        },
+        {
+          "speaker": "អ្នកបម្រើ:",
+          "text": "[មាន|mien] [ចាស|chaah]។ [គុយទាវ|kuy-tiew] [សាច់មាន់|sach-moan] [បាន|baan] [ទេ|té]?",
+          "id": "Yes. Is chicken kuy teav OK?",
+          "literal": "have — yes(f). noodle-soup — meat-chicken — can — (question)?"
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[បាន|baan] [ចាស|chaah]។ [ប៉ុន្តែ|pon-tae] [កុំ|kom] [ដាក់|dak] [ទឹកត្រី|teuk-trey] [ច្រើន|chraeun] [ពេក|péék]។",
+          "id": "Yes. But not too much fish sauce.",
+          "literal": "can — yes(f). but — don't — put — water-fish — much — too."
+        },
+        {
+          "speaker": "អ្នកបម្រើ:",
+          "text": "[បាទ|baat]។ [ហឹរ|hel] [បាន|baan] [ទេ|té]?",
+          "id": "OK. Spicy is fine?",
+          "literal": "yes(m). spicy — can — (question)?"
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[ហឹរ|hel] [បន្តិច|ban-tech] [បាន|baan] [ចាស|chaah]។ [កុំ|kom] [ហឹរ|hel] [ពេក|péék]។",
+          "id": "A little spicy is fine. Not too spicy.",
+          "literal": "spicy — a-little — can — yes(f). don't — spicy — too."
+        },
+        {
+          "speaker": "អ្នកបម្រើ:",
+          "text": "[ផឹក|pheuk] [អ្វី|'wey] [ចាស|chaah]?",
+          "id": "What would you like to drink?",
+          "literal": "drink — what — yes(f)?"
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[សុំ|som] [ទឹក|teuk] [មួយ|muèy] [ដប|daap] [ចាស|chaah]។ [កុំ|kom] [ដាក់|dak] [ទឹកកក|teuk-kaak]។",
+          "id": "A bottle of water, please. No ice.",
+          "literal": "ask-for — water — one — bottle — yes(f). don't — put — water-frozen."
+        },
+        {
+          "speaker": "អ្នកបម្រើ:",
+          "text": "[បាទ|baat]។ [សូម|soum] [រង់ចាំ|roang-cham] [បន្តិច|ban-tech]។",
+          "id": "OK. Please wait a moment.",
+          "literal": "yes(m). please — wait — a-little."
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[ឆ្ងាញ់|chhngañ] [ណាស់|nah] [ចាស|chaah]! [សុំ|som] [គិតលុយ|ket-luy] [ផង|phaang]។",
+          "id": "Delicious! The bill, please.",
+          "literal": "delicious — very — yes(f)! ask-for — count-money — too."
+        }
+      ],
+      "grammars": [
+        {
+          "title": "⚠️ Explaining what you don't eat so it really gets understood",
+          "body": [
+            "This is one of the most important sections of the course if you have dietary restrictions — religious, vegetarian, or medical — and it is deliberately placed early. Khmer has no word for \"halal\" or \"kosher\" that every food stall understands, so the safest approach is **to name what you don't eat, not to ask for a category**."
+          ],
+          "tables": [
+            {
+              "head": [
+                "English",
+                "Khmer",
+                "Say it"
+              ],
+              "rows": [
+                [
+                  "I don't eat pork.",
+                  "ខ្ញុំមិនញ៉ាំសាច់ជ្រូកទេ",
+                  "*khnyom min nyam sach-chruuk té*"
+                ],
+                [
+                  "I'm Muslim.",
+                  "ខ្ញុំជាមូស្លីម",
+                  "*khnyom chiè muu-sliim*"
+                ],
+                [
+                  "Do you have chicken?",
+                  "មានសាច់មាន់ទេ?",
+                  "*mien sach-moan té?*"
+                ],
+                [
+                  "Is there pork in this?",
+                  "នេះមានសាច់ជ្រូកទេ?",
+                  "*nih mien sach-chruuk té?*"
+                ],
+                [
+                  "I don't drink alcohol.",
+                  "ខ្ញុំមិនផឹកស្រាទេ",
+                  "*khnyom min pheuk sraa té*"
+                ],
+                [
+                  "I'm vegetarian.",
+                  "ខ្ញុំញ៉ាំបួស",
+                  "*khnyom nyam buèh*"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **Ask about pork specifically; don't ask \"is there meat in it?\"** In Cambodia, សាច់ (*sach*, meat) with nothing added almost always means pork — just as it often does in Chinese eateries. Asking \"is there meat?\" gets the answer \"yes\" and settles nothing.",
+            "⚠️ **Pork stock and fish sauce are almost everywhere.** The broth of គុយទាវ is usually made with pork bones. If this matters to you, look for halal restaurants — in Phnom Penh they cluster around the Nurul Ihsan mosque, Chraing Chamres, and Boeung Kak; in Siem Reap around Wat Damnak. The word **ហាឡាល់** (*haa-lal*) is understood in those restaurants, but not necessarily at roadside stalls.",
+            "**ញ៉ាំបួស** (*nyam buèh*, \"eat vegetarian\") is a phrase every Cambodian knows, because it is tied to Buddhist fasting days. If things get difficult, this is the fallback sentence that always works."
+          ]
+        },
+        {
+          "title": "សុំ, កុំ, and ពេក — three short words for ordering",
+          "body": [
+            "Almost every order you make can be built from these words. They never change form."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Word",
+                "Say it",
+                "Meaning",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "សុំ",
+                  "*som*",
+                  "may I have (for yourself)",
+                  "សុំទឹកមួយដប — a bottle of water, please"
+                ],
+                [
+                  "សូម",
+                  "*soum*",
+                  "please (more polite, for requests)",
+                  "សូមរង់ចាំ — please wait"
+                ],
+                [
+                  "កុំ",
+                  "*kom*",
+                  "don't",
+                  "កុំដាក់ទឹកកក — no ice"
+                ],
+                [
+                  "ពេក",
+                  "*péék*",
+                  "too (stands AFTER the word)",
+                  "ហឹរពេក — too spicy"
+                ],
+                [
+                  "ផង",
+                  "*phaang*",
+                  "too, please (softener at the end)",
+                  "សុំគិតលុយផង — the bill, please"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Note that **ពេក stands after** the adjective — the reverse of English \"too\", which comes before. ហឹរពេក (\"spicy too\"), not ពេកហឹរ. It's the same logic as adjectives coming after nouns: in Khmer, the describing word follows."
+          ]
+        },
+        {
+          "title": "Praising, complaining, and paying",
+          "body": [
+            "Praising the food in Cambodia isn't just politeness — it's part of eating together, and saying nothing at all reads as not liking it."
+          ],
+          "tables": [
+            {
+              "head": [
+                "English",
+                "Khmer",
+                "Say it"
+              ],
+              "rows": [
+                [
+                  "Delicious!",
+                  "ឆ្ងាញ់ណាស់!",
+                  "*chhngañ nah!*"
+                ],
+                [
+                  "Too salty.",
+                  "ប្រៃពេក",
+                  "*prey péék*"
+                ],
+                [
+                  "Not cooked enough.",
+                  "មិនទាន់ឆ្អិន",
+                  "*min-toan chh'en*"
+                ],
+                [
+                  "I'm full.",
+                  "ឆ្អែតហើយ",
+                  "*chh'aet haeuy*"
+                ],
+                [
+                  "The bill, please.",
+                  "សុំគិតលុយ",
+                  "*som ket-luy*"
+                ],
+                [
+                  "Can I take it away?",
+                  "ខ្ចប់បានទេ?",
+                  "*khchap baan té?*"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "គិតលុយ (*ket-luy*) literally means \"count the money\", and it's how you ask for the bill all over Cambodia — at roadside stalls and air-conditioned restaurants alike. Raising your hand and miming writing in the air, the European habit, isn't understood here."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The menu you'll actually come across",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Khmer",
+            "Say it",
+            "What it is"
+          ],
+          "rows": [
+            [
+              "គុយទាវ",
+              "*kuy-tiew*",
+              "breakfast noodle soup — the most common dish in Cambodia"
+            ],
+            [
+              "បាយឆា",
+              "*baay-chhaa*",
+              "fried rice"
+            ],
+            [
+              "បាយសាច់ជ្រូក",
+              "*baay sach-chruuk*",
+              "⚠️ rice with grilled pork — the best-selling breakfast; avoid if you don't eat pork"
+            ],
+            [
+              "អាម៉ុក",
+              "*'aa-mok*",
+              "fish steamed in banana leaves with coconut milk — the national dish"
+            ],
+            [
+              "សម្លម្ជូរ",
+              "*sam-laa mchuu*",
+              "sour soup"
+            ],
+            [
+              "លុតឡាក់",
+              "*lok-lak*",
+              "stir-fried beef with pepper sauce"
+            ],
+            [
+              "នំបញ្ចុក",
+              "*num-ban-chok*",
+              "rice noodles with fish curry broth"
+            ],
+            [
+              "បបរ",
+              "*baa-baa*",
+              "rice porridge"
+            ],
+            [
+              "ត្រីអាំង",
+              "*trey 'ang*",
+              "grilled fish"
+            ],
+            [
+              "ស្ងោរ",
+              "*sngao*",
+              "clear soup"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Ingredients and flavors"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Khmer",
+            "Say it",
+            "Meaning",
+            "Khmer",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "សាច់មាន់",
+              "*sach-moan*",
+              "chicken",
+              "ហឹរ",
+              "*hel*",
+              "spicy"
+            ],
+            [
+              "សាច់គោ",
+              "*sach-koo*",
+              "beef",
+              "ប្រៃ",
+              "*prey*",
+              "salty"
+            ],
+            [
+              "សាច់ជ្រូក",
+              "*sach-chruuk*",
+              "pork",
+              "ផ្អែម",
+              "*ph'aem*",
+              "sweet"
+            ],
+            [
+              "ត្រី",
+              "*trey*",
+              "fish",
+              "ជូរ",
+              "*chuu*",
+              "sour"
+            ],
+            [
+              "បង្គា",
+              "*bang-kie*",
+              "shrimp",
+              "ល្វីង",
+              "*lwiing*",
+              "bitter"
+            ],
+            [
+              "ស៊ុត",
+              "*sut*",
+              "egg",
+              "ឆ្ងាញ់",
+              "*chhngañ*",
+              "delicious"
+            ],
+            [
+              "បន្លែ",
+              "*ban-lae*",
+              "vegetables",
+              "ឆ្អិន",
+              "*chh'en*",
+              "cooked"
+            ],
+            [
+              "ទឹកត្រី",
+              "*teuk-trey*",
+              "fish sauce",
+              "ឆៅ",
+              "*chhaw*",
+              "raw"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three things about the Cambodian table",
+          "items": [
+            "**Rice is the word for eating.** បាយ (*baay*) means rice, but ញ៉ាំបាយ (\"eat rice\") means eating anything. The question ញ៉ាំបាយហើយឬនៅ? (\"Have you eaten rice yet?\") is an everyday greeting, the equivalent of \"how are you?\".",
+            "**All the dishes arrive together and are shared.** Ordering \"one just for me\" feels odd; the natural thing is to order several plates for the whole table.",
+            "**Ice in the cities is generally made from clean water**, but if your stomach isn't used to it yet, កុំដាក់ទឹកកក (no ice) is a sentence that never offends anyone."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "km": "សុំ",
+      "baca": "som",
+      "en": "to ask for, may I have"
+    },
+    {
+      "km": "សូម",
+      "baca": "soum",
+      "en": "please"
+    },
+    {
+      "km": "កុំ",
+      "baca": "kom",
+      "en": "don't"
+    },
+    {
+      "km": "ពេក",
+      "baca": "péék",
+      "en": "too (after the adjective)"
+    },
+    {
+      "km": "ផង",
+      "baca": "phaang",
+      "en": "too, please (softener)"
+    },
+    {
+      "km": "ខ្លះ",
+      "baca": "khlah",
+      "en": "some, a few"
+    },
+    {
+      "km": "គុយទាវ",
+      "baca": "kuy-tiew",
+      "en": "noodle soup"
+    },
+    {
+      "km": "បាយឆា",
+      "baca": "baay-chhaa",
+      "en": "fried rice"
+    },
+    {
+      "km": "អាម៉ុក",
+      "baca": "'aa-mok",
+      "en": "amok, spiced steamed fish"
+    },
+    {
+      "km": "សាច់ជ្រូក",
+      "baca": "sach-chruuk",
+      "en": "pork"
+    },
+    {
+      "km": "សាច់មាន់",
+      "baca": "sach-moan",
+      "en": "chicken (meat)"
+    },
+    {
+      "km": "សាច់គោ",
+      "baca": "sach-koo",
+      "en": "beef"
+    },
+    {
+      "km": "ទឹកត្រី",
+      "baca": "teuk-trey",
+      "en": "fish sauce"
+    },
+    {
+      "km": "ហឹរ",
+      "baca": "hel",
+      "en": "spicy"
+    },
+    {
+      "km": "ប្រៃ",
+      "baca": "prey",
+      "en": "salty"
+    },
+    {
+      "km": "ឆ្អិន",
+      "baca": "chh'en",
+      "en": "cooked, ripe"
+    },
+    {
+      "km": "ទឹកកក",
+      "baca": "teuk-kaak",
+      "en": "ice — literally \"frozen water\""
+    },
+    {
+      "km": "ដប",
+      "baca": "daap",
+      "en": "bottle"
+    },
+    {
+      "km": "រង់ចាំ",
+      "baca": "roang-cham",
+      "en": "to wait"
+    },
+    {
+      "km": "ឆ្ងាញ់",
+      "baca": "chhngañ",
+      "en": "delicious"
+    },
+    {
+      "km": "គិតលុយ",
+      "baca": "ket-luy",
+      "en": "the bill; to count the money"
+    },
+    {
+      "km": "ខ្ចប់",
+      "baca": "khchap",
+      "en": "to wrap, to take away"
+    },
+    {
+      "km": "ញ៉ាំបួស",
+      "baca": "nyam buèh",
+      "en": "to eat vegetarian"
+    },
+    {
+      "km": "ឆ្អែត",
+      "baca": "chh'aet",
+      "en": "full (after eating)"
+    },
+    {
+      "km": "អ្នកបម្រើ",
+      "baca": "neak-bam-raeu",
+      "en": "waiter, waitress"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with សុំ, កុំ, or ពេក.",
+      "items": [
+        "____ទឹកមួយដប។",
+        "____ដាក់ទឹកកក។",
+        "ហឹរ____។",
+        "____គិតលុយផង។"
+      ]
+    },
+    {
+      "prompt": "Match: what do you say in each situation?",
+      "items": [
+        "You don't eat pork.",
+        "The food is delicious.",
+        "You are full.",
+        "You want to take the rest away."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ទេ / ជ្រូក / ខ្ញុំ / សាច់ / មិន / ញ៉ាំ",
+        "ទេ / មាន់ / មាន / សាច់",
+        "ពេក / កុំ / ហឹរ",
+        "ដប / ទឹក / សុំ / មួយ"
+      ]
+    },
+    {
+      "prompt": "Translate into Khmer.",
+      "items": [
+        "What do you have?",
+        "I don't eat pork.",
+        "Do you have chicken?",
+        "No ice.",
+        "Delicious!",
+        "The bill, please."
+      ]
+    }
+  ],
+  "answers": [
+    "សុំ — កុំ — ពេក — សុំ",
+    "ខ្ញុំមិនញ៉ាំសាច់ជ្រូកទេ។ — ឆ្ងាញ់ណាស់! — ឆ្អែតហើយ។ — ខ្ចប់បានទេ?",
+    "ខ្ញុំមិនញ៉ាំសាច់ជ្រូកទេ។ — មានសាច់មាន់ទេ? — កុំហឹរពេក។ — សុំទឹកមួយដប។",
+    "មានអ្វីខ្លះ? — ខ្ញុំមិនញ៉ាំសាច់ជ្រូកទេ។ — មានសាច់មាន់ទេ? — កុំដាក់ទឹកកក។ — ឆ្ងាញ់ណាស់! — សុំគិតលុយ។"
+  ]
+}

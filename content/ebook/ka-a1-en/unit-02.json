@@ -1,0 +1,544 @@
+{
+  "title": "What's this, who's that",
+  "title_target": "ეს რა არის? — Es ra aris?",
+  "goal": "Point at things and people around you, ask what something is called in Georgian, answer yes and no, and form plurals with one ending that works for every word.",
+  "bekal": [
+    "tell ეს (this) and ის (that) apart",
+    "ask ეს რა არის? and ის ვინ არის?",
+    "answer with the short form -ია / -ა",
+    "use კი, დიახ, არა, and არ each in the right place",
+    "make any noun plural with the ending -ები"
+  ],
+  "dialogs": [
+    {
+      "title": "დიალოგი — In the classroom",
+      "intro": "Lesson two. Giorgi, the teacher, points at things around the room and Ani names them. Notice how the verb \"is\" sticks to the end of the noun — in this whole dialogue there's hardly a single არის standing on its own.",
+      "lines": [
+        {
+          "speaker": "გიორგი:",
+          "text": "[ანი|A-ni], [ეს|es] [რა|ra] [არის|a-ris]?",
+          "id": "Ani, what's this?",
+          "literal": "Ani, this — what — is?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ეს|Es] [წიგნია|ts'ig-ni-a].",
+          "id": "It's a book.",
+          "literal": "this — book-is."
+        },
+        {
+          "speaker": "გიორგი:",
+          "text": "[სწორია|Sts'o-ri-a]. [და|Da] [ეს|es]?",
+          "id": "Right. And this?",
+          "literal": "correct-is. and — this?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ეს|Es] [კალამია|k'a-la-mi-a]… [არა|a-ra], [ფანქარია|pan-ka-ri-a].",
+          "id": "It's a pen… no, a pencil.",
+          "literal": "this — pen-is… no, pencil-is."
+        },
+        {
+          "speaker": "გიორგი:",
+          "text": "[ყოჩაღ|Q'o-chagh]! [ის|Is] [რა|ra] [არის|a-ris]?",
+          "id": "Well done! What's that?",
+          "literal": "well-done! that — what — is?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ის|Is] [მაგიდაა|ma-gi-da-a]. [მაგიდაზე|Ma-gi-da-ze] [წიგნებია|ts'ig-ne-bi-a].",
+          "id": "That's a table. There are books on the table.",
+          "literal": "that — table-is. table-on — books-are."
+        },
+        {
+          "speaker": "გიორგი:",
+          "text": "[რამდენი|Ram-de-ni] [წიგნია|ts'ig-ni-a]?",
+          "id": "How many books are there?",
+          "literal": "how-many — book-is?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[სამი|Sa-mi] [წიგნი|ts'ig-ni]. [და|Da] [ერთი|er-ti] [ჩანთა|chan-ta].",
+          "id": "Three books. And one bag.",
+          "literal": "three — book. and — one — bag."
+        },
+        {
+          "speaker": "გიორგი:",
+          "text": "[ძალიან|Dza-li-an] [კარგი|k'ar-gi]. [ეს|Es] [კი|k'i]?",
+          "id": "Very good. And this one?",
+          "literal": "very — good. this — then?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[არ|Ar] [ვიცი|vi-tsi]. [ქართულად|Kar-tu-lad] [როგორ|ro-gor] [არის|a-ris]?",
+          "id": "I don't know. What is it in Georgian?",
+          "literal": "not — I-know. in-Georgian — how — is?"
+        },
+        {
+          "speaker": "გიორგი:",
+          "text": "[ეს|Es] [ფანჯარაა|pan-ja-ra-a]. [გაიმეორე|Ga-i-me-o-re]: [ფანჯარა|pan-ja-ra].",
+          "id": "It's a window. Repeat: panjara.",
+          "literal": "this — window-is. repeat: window."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ფანჯარა|Pan-ja-ra]. [ეს|Es] [კარია|k'a-ri-a], [არა|a-ra]?",
+          "id": "Panjara. This is a door, right?",
+          "literal": "window. this — door-is, no?"
+        },
+        {
+          "speaker": "გიორგი:",
+          "text": "[დიახ|Di-akh], [კარია|k'a-ri-a]. [ყოჩაღ|Q'o-chagh], [ანი|A-ni]!",
+          "id": "Yes, it's a door. Well done, Ani!",
+          "literal": "yes, door-is. well-done, Ani!"
+        }
+      ],
+      "notes": [
+        "**ეს = this (near), ის = that (far).** ⚠️ Notice that **ის also means \"he/she\"** — exactly the same word. *ის ვინ არის?* can mean \"who's that?\" or \"who is he/she?\", and only the situation decides: if you're pointing, it means \"that\". Georgian doesn't feel the need to separate people from things here.",
+        "**\"Is\" sticks on as -ა or -ია.** Nouns ending in **-ი** drop the -ი and add **-ია**: წიგნ**ი** → წიგნ**ია**, კარ**ი** → კარ**ია**. Nouns ending in **-ა** just add **-ა**: მაგიდა → მაგიდა**ა** (said with a slightly long a), ფანჯარა → ფანჯარა**ა**. The long form (წიგნი არის) isn't wrong, but it sounds like reading out a list.",
+        "**არ and არა are two different words.** ⚠️ A classic trap: English has \"no\" and \"not\", and Georgian splits them the same way. **არა** = \"no\" standing alone, as an answer to a question. **არ** = \"not\", placed **before the verb**: არ ვიცი (I don't know), არ არის (isn't / there isn't). Never answer a question with არ on its own.",
+        "**ვიცი means \"I know\", and it doesn't take the usual ვ- prefix.** It's one of a handful of very common irregular verbs: ვიცი (I know), იცი (you know), იცის (he/she knows). Learn all three now; you'll use them every day.",
+        "**ქართულად როგორ არის? — learn this sentence as a whole.** It means \"what is it in Georgian?\", and it lets you grow your vocabulary without a dictionary, straight from the person in front of you. The ending **-ად** in ქართულ**ად** means \"in / -ly\" and is covered fully in the next unit.",
+        "**რამდენი წიგნია? — the noun stays singular.** ⚠️ After a number or \"how many\", Georgian nouns are **not** made plural: სამი წიგნი (three book), ათი ლარი (ten lari). Unlike English, it's \"three book\" — a relief, not a trap. What's actually wrong is სამი წიგნები.",
+        "**ყოჩაღ!** (q'ochagh) — everyday praise meaning roughly \"well done, nice work\". Teachers say it to students, parents to children, friends to friends. If you hear it, you're doing something right."
+      ],
+      "grammars": [
+        {
+          "title": "Plurals: one ending for every word, no exceptions",
+          "body": [
+            "After wrestling with English plurals (child/children, mouse/mice) or Russian ones, this part feels like a gift. Georgian makes the plural with **-ები** for any word, with not a single irregular form."
+          ],
+          "table": {
+            "head": [
+              "Singular",
+              "Plural",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "წიგნი",
+                "წიგნები",
+                "ts'ignebi",
+                "books"
+              ],
+              [
+                "სახლი",
+                "სახლები",
+                "sakhlebi",
+                "houses"
+              ],
+              [
+                "კაცი",
+                "კაცები",
+                "k'atsebi",
+                "men"
+              ],
+              [
+                "ქალი",
+                "ქალები",
+                "kalebi",
+                "women"
+              ],
+              [
+                "მაგიდა",
+                "მაგიდები",
+                "magidebi",
+                "tables"
+              ],
+              [
+                "ჩანთა",
+                "ჩანთები",
+                "chantebi",
+                "bags"
+              ]
+            ]
+          },
+          "after": [
+            "There's only one rule: **the final vowel drops first**, then -ები is added. წიგნ**ი** → წიგნ**ები**, მაგიდ**ა** → მაგიდ**ები**.",
+            "⚠️ But remember the note above: **no plural after numbers**. The plural is used when the number isn't stated — *მაგიდაზე წიგნებია* (there are books on the table), but *მაგიდაზე სამი წიგნია* (there are three books on the table)."
+          ]
+        },
+        {
+          "title": "Yes, no, and not",
+          "body": [
+            "Georgian has three ways to say \"yes\" at different levels of politeness, and picking the wrong one is harmless — it just sounds too casual or too stiff."
+          ],
+          "table": {
+            "head": [
+              "Word",
+              "Say it",
+              "Meaning",
+              "When to use it"
+            ],
+            "rows": [
+              [
+                "დიახ",
+                "diakh",
+                "yes",
+                "formal, polite, to people you respect"
+              ],
+              [
+                "კი",
+                "k'i",
+                "yes",
+                "everyday, safe almost everywhere"
+              ],
+              [
+                "ჰო",
+                "ho",
+                "yeah",
+                "very casual, among close friends"
+              ],
+              [
+                "არა",
+                "ara",
+                "no",
+                "an answer standing on its own"
+              ],
+              [
+                "არ",
+                "ar",
+                "not",
+                "always placed before the verb"
+              ],
+              [
+                "არა უშავს",
+                "ara ushavs",
+                "it's okay, never mind",
+                "a gentle refusal or reassurance"
+              ]
+            ]
+          },
+          "after": [
+            "One habit that confuses foreigners: answering negative questions. If someone asks *ჩაი არ გინდა?* (don't you want tea?), the answer **კი** means \"right, I don't\" to some people and \"yes, I do!\" to others. To be safe, don't answer with one word: say **კი, მინდა** or **არა, არ მინდა**."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Things around you right now",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The fastest way to build vocabulary in week one isn't memorizing lists but naming the things actually in front of you. Read the left-hand column while pointing at each object."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Georgian",
+            "Say it",
+            "Meaning",
+            "Georgian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "წიგნი",
+              "ts'igni",
+              "book",
+              "კარი",
+              "k'ari",
+              "door"
+            ],
+            [
+              "რვეული",
+              "rveuli",
+              "notebook",
+              "ფანჯარა",
+              "panjara",
+              "window"
+            ],
+            [
+              "კალამი",
+              "k'alami",
+              "pen",
+              "სკამი",
+              "sk'ami",
+              "chair"
+            ],
+            [
+              "ფანქარი",
+              "pankari",
+              "pencil",
+              "მაგიდა",
+              "magida",
+              "table"
+            ],
+            [
+              "ჩანთა",
+              "chanta",
+              "bag",
+              "კედელი",
+              "k'edeli",
+              "wall"
+            ],
+            [
+              "ტელეფონი",
+              "t'eleponi",
+              "phone",
+              "იატაკი",
+              "iat'ak'i",
+              "floor"
+            ],
+            [
+              "კომპიუტერი",
+              "k'omp'iut'eri",
+              "computer",
+              "ჭიქა",
+              "ch'ika",
+              "glass"
+            ],
+            [
+              "გასაღები",
+              "gasaghebi",
+              "key",
+              "დაფა",
+              "dapa",
+              "blackboard"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Four sentences for any classroom",
+          "items": [
+            "**ეს ქართულად როგორ არის?** — What is this in Georgian?",
+            "**გაიმეორეთ, თუ შეიძლება.** (gaimeoret, tu sheidzleba) — Please repeat.",
+            "**ნელა, თუ შეიძლება.** (nela, tu sheidzleba) — Slowly, please.",
+            "**როგორ იწერება?** (rogor its'ereba) — How do you write it?"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice **თუ შეიძლება** (tu sheidzleba) — literally \"if it's possible\", and this is the Georgian \"please\". Like English *please*, it usually goes at the end of the sentence. You'll use it for the rest of this course, especially when ordering at the café in unit 5."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ka": "ეს",
+      "baca": "es",
+      "en": "this"
+    },
+    {
+      "ka": "ის",
+      "baca": "is",
+      "en": "that; he, she"
+    },
+    {
+      "ka": "წიგნი",
+      "baca": "ts'igni",
+      "en": "book"
+    },
+    {
+      "ka": "კალამი",
+      "baca": "k'alami",
+      "en": "pen"
+    },
+    {
+      "ka": "ფანქარი",
+      "baca": "pankari",
+      "en": "pencil"
+    },
+    {
+      "ka": "რვეული",
+      "baca": "rveuli",
+      "en": "notebook"
+    },
+    {
+      "ka": "ჩანთა",
+      "baca": "chanta",
+      "en": "bag"
+    },
+    {
+      "ka": "მაგიდა",
+      "baca": "magida",
+      "en": "table"
+    },
+    {
+      "ka": "სკამი",
+      "baca": "sk'ami",
+      "en": "chair"
+    },
+    {
+      "ka": "კარი",
+      "baca": "k'ari",
+      "en": "door"
+    },
+    {
+      "ka": "ფანჯარა",
+      "baca": "panjara",
+      "en": "window"
+    },
+    {
+      "ka": "ჭიქა",
+      "baca": "ch'ika",
+      "en": "glass"
+    },
+    {
+      "ka": "გასაღები",
+      "baca": "gasaghebi",
+      "en": "key"
+    },
+    {
+      "ka": "ტელეფონი",
+      "baca": "t'eleponi",
+      "en": "phone"
+    },
+    {
+      "ka": "კაცი",
+      "baca": "k'atsi",
+      "en": "man"
+    },
+    {
+      "ka": "ქალი",
+      "baca": "kali",
+      "en": "woman"
+    },
+    {
+      "ka": "ბიჭი",
+      "baca": "bich'i",
+      "en": "boy"
+    },
+    {
+      "ka": "გოგო",
+      "baca": "gogo",
+      "en": "girl"
+    },
+    {
+      "ka": "დიახ",
+      "baca": "diakh",
+      "en": "yes (polite)"
+    },
+    {
+      "ka": "კი",
+      "baca": "k'i",
+      "en": "yes"
+    },
+    {
+      "ka": "არა",
+      "baca": "ara",
+      "en": "no"
+    },
+    {
+      "ka": "არ",
+      "baca": "ar",
+      "en": "not (before a verb)"
+    },
+    {
+      "ka": "ვიცი",
+      "baca": "vitsi",
+      "en": "I know"
+    },
+    {
+      "ka": "არ ვიცი",
+      "baca": "ar vitsi",
+      "en": "I don't know"
+    },
+    {
+      "ka": "სწორია",
+      "baca": "sts'oria",
+      "en": "correct, right"
+    },
+    {
+      "ka": "რამდენი",
+      "baca": "ramdeni",
+      "en": "how many, how much"
+    },
+    {
+      "ka": "ერთი",
+      "baca": "erti",
+      "en": "one"
+    },
+    {
+      "ka": "ორი",
+      "baca": "ori",
+      "en": "two"
+    },
+    {
+      "ka": "სამი",
+      "baca": "sami",
+      "en": "three"
+    },
+    {
+      "ka": "ყოჩაღ",
+      "baca": "q'ochagh",
+      "en": "well done, nice work"
+    },
+    {
+      "ka": "გაიმეორე",
+      "baca": "gaimeore",
+      "en": "repeat"
+    },
+    {
+      "ka": "ნელა",
+      "baca": "nela",
+      "en": "slowly"
+    },
+    {
+      "ka": "თუ შეიძლება",
+      "baca": "tu sheidzleba",
+      "en": "please (lit. if possible)"
+    },
+    {
+      "ka": "ქართულად",
+      "baca": "kartulad",
+      "en": "in Georgian"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change into the plural.",
+      "items": [
+        "წიგნი → ____",
+        "სახლი → ____",
+        "მაგიდა → ____",
+        "ქალი → ____",
+        "ჩანთა → ____",
+        "მეგობარი → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the short form of \"is\" (-ია or -ა).",
+      "items": [
+        "ეს წიგნ____",
+        "ეს მაგიდ____",
+        "ის კარ____",
+        "ეს ფანჯარ____",
+        "ის ჩემი მეგობარ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "არის / ეს / რა / ?",
+        "წიგნია / ეს",
+        "ვიცი / არ",
+        "ვინ / ის / არის / ?",
+        "წიგნი / სამი / მაგიდაზე"
+      ]
+    },
+    {
+      "prompt": "Translate into Georgian.",
+      "items": [
+        "What's this?",
+        "It's a book.",
+        "Who's that?",
+        "I don't know.",
+        "What is it in Georgian?",
+        "Yes, that's right."
+      ]
+    }
+  ],
+  "answers": [
+    "წიგნები — სახლები — მაგიდები — ქალები — ჩანთები — მეგობრები",
+    "წიგნია — მაგიდაა — კარია — ფანჯარაა — მეგობარია",
+    "ეს რა არის? — ეს წიგნია. — არ ვიცი. — ის ვინ არის? — მაგიდაზე სამი წიგნი.",
+    "ეს რა არის? — ეს წიგნია. — ის ვინ არის? — არ ვიცი. — ქართულად როგორ არის? — დიახ, სწორია."
+  ]
+}

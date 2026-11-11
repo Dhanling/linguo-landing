@@ -1,0 +1,644 @@
+{
+  "title": "How do I get there?",
+  "title_target": "Тийшээ юугаар явах вэ?",
+  "goal": "Getting around town and out of town — and mastering the direction suffix *-руу / -лүү*, which differs from the place suffix *-д*.",
+  "bekal": [
+    "name means of transport and ask how to get somewhere",
+    "tell *-руу* (toward) apart from *-д* (at, in, to)",
+    "buy a ticket, take a taxi and ask how long the trip takes"
+  ],
+  "dialogs": [
+    {
+      "title": "Яриа — Хархорин руу",
+      "intro": "Budi wants to go to Kharkhorin, the former capital of the Mongol Empire. He asks at the bus station ticket window.",
+      "lines": [
+        {
+          "speaker": "Буди:",
+          "text": "[Сайн|Sain] [байна|BAI-n] [уу|uu]. [Хархорин|khar-KHO-rin] [руу|ruu] [явах|ya-VAKH] [автобус|av-TO-bus] [байна|BAI-n] [уу|uu]?",
+          "id": "Good afternoon. Is there a bus to Kharkhorin?",
+          "literal": "well is Q. Kharkhorin to go bus exist Q?"
+        },
+        {
+          "speaker": "Ажилтан:",
+          "text": "[Байна|BAI-n]. [Өдөрт|Ö-dört] [хоёр|kho-YOR] [удаа|u-DAA]: [өглөө|ÖG-löö] [найман|NAI-man] [цагт|tsagt], [үдээс|Ü-dēs] [хойш|khoish] [хоёр|kho-YOR] [цагт|tsagt].",
+          "id": "There is. Twice a day: eight in the morning and two in the afternoon.",
+          "literal": "day-in two time: morning eight hour-at, noon-from after two hour-at."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Хэдэн|KHEH-den] [цаг|tsag] [явах|ya-VAKH] [вэ|veh]?",
+          "id": "How many hours is the trip?",
+          "literal": "how-many hour go Q?"
+        },
+        {
+          "speaker": "Ажилтан:",
+          "text": "[Зургаа|Dzur-GAA], [долоон|do-LŌN] [цаг|tsag]. [Зам|Dzam] [ямар|YA-mar] [байхаас|BAI-khaas] [шалтгаална|SHALT-gaal-na].",
+          "id": "Six or seven hours. Depends on the road.",
+          "literal": "six, seven hour. road what-like being-from depend."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Тасалбар|TA-sal-bar] [хэд|khed] [вэ|veh]?",
+          "id": "How much is a ticket?",
+          "literal": "ticket how-much Q?"
+        },
+        {
+          "speaker": "Ажилтан:",
+          "text": "[Хорин|KHO-rin] [таван|TA-van] [мянга|MYAN-ga]. [Хэдэн|KHEH-den] [хүн|khün] [бэ|beh]?",
+          "id": "Twenty-five thousand. How many people?",
+          "literal": "twenty five thousand. how-many person Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Хоёр|Kho-YOR] [хүн|khün]. [Маргааш|Mar-GAASH] [өглөөний|ÖG-löö-nii] [автобусанд|av-TO-bu-sand] [суумаар|SUU-maar] [байна|BAI-n].",
+          "id": "Two people. We'd like to take the morning bus tomorrow.",
+          "literal": "two person. tomorrow morning's bus-on sit-want is."
+        },
+        {
+          "speaker": "Ажилтан:",
+          "text": "[Болно|BOL-no]. [Долоон|Do-LŌN] [цаг|tsag] [хагаст|kha-GAST] [ирээрэй|i-RĒ-rei]. [Автобус|Av-TO-bus] [хүлээдэггүй|khü-LĒ-deg-güi] [шүү|shüü].",
+          "id": "Fine. Be here at half past seven. The bus doesn't wait, you know.",
+          "literal": "may. seven hour half-at come-please. bus wait-usually-not you-know."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Ойлголоо|OIL-go-lō]. [Автобусны|av-TO-bus-nii] [буудал|BUU-dal] [хаана|KHAA-na] [байдаг|BAI-dag] [вэ|veh]?",
+          "id": "I see. Where's the bus station?",
+          "literal": "bus's stop where be-usually Q?"
+        },
+        {
+          "speaker": "Ажилтан:",
+          "text": "[Драгон|Dra-GON] [автобусны|av-TO-bus-nii] [буудал|BUU-dal]. [Төвөөс|TÖ-vöös] [таксигаар|TAK-si-gaar] [хорин|KHO-rin] [минут|mi-NUT].",
+          "id": "Dragon bus station. Twenty minutes by taxi from the center.",
+          "literal": "Dragon bus's stop. center-from taxi-by twenty minute."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Таксигаар|TAK-si-gaar] [хэд|khed] [болох|BO-lokh] [вэ|veh]?",
+          "id": "How much is it by taxi?",
+          "literal": "taxi-by how-much become Q?"
+        },
+        {
+          "speaker": "Ажилтан:",
+          "text": "[Найм|Naim], [есөн|YEH-sön] [мянга|MYAN-ga] [орчим|OR-chim]. [Аппаар|AP-paar] [дуудвал|DUUD-val] [хямд|khyamd].",
+          "id": "About eight or nine thousand. It's cheaper if you book through an app.",
+          "literal": "eight, nine thousand about. app-by if-call cheap."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Их|Ikh] [баярлалаа|ba-yar-la-LAA]. [Буцах|BU-tsakh] [тасалбар|TA-sal-bar] [одоо|o-DŌ] [авах|a-VAKH] [хэрэгтэй|KHEH-reg-tei] [юу|yuu]?",
+          "id": "Thank you very much. Should I buy the return ticket now?",
+          "literal": "return ticket now take need Q?"
+        },
+        {
+          "speaker": "Ажилтан:",
+          "text": "[Авбал|AV-bal] [дээр|dēr]. [Зун|Dzun] [хүн|khün] [их|ikh], [газар|GA-dzar] [дуусдаг|DUUS-dag].",
+          "id": "Better to buy it. In summer there are lots of people and seats sell out.",
+          "literal": "if-take better. summer person many, seat run-out-usually."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Тэгвэл|TEG-vel] [хоёр|kho-YOR] [талын|TA-liin] [тасалбар|TA-sal-bar] [авъя|AV-ya].",
+          "id": "Then I'll take a round-trip ticket.",
+          "literal": "then two side's ticket let's-take."
+        }
+      ],
+      "notes": [
+        "⚠️ **-руу / -лүү means \"toward\" and stresses direction, while -д means \"at, in, to\" neutrally.** *Хархорин **руу** явна* = heading toward Kharkhorin (the journey is stressed); *Хархорин**д** очно* = getting to Kharkhorin (the destination is stressed). At A1 the two can often stand in for each other — don't let this slow you down when speaking.",
+        "**The forms: -руу after back-vowel words, -рүү after front-vowel words, -луу / -лүү after words ending in -р.** *Гэр **лүү*** (to the house), *хот **руу*** (to the city), *дэлгүүр **лүү*** (to the shop).",
+        "**Юугаар вэ? = \"by what?\"** This is the standard question for transport, and the answer uses the *-аар* suffix you know from unit 10: *автобусаар*, *таксигаар*, *онгоцоор*, *явганаар*.",
+        "**Үдээс хойш = \"after noon\", үдээс өмнө = \"before noon\".** This is how Mongolian says a.m. and p.m. in timetables — literally the same idea as English \"afternoon\".",
+        "⚠️ **Автобус хүлээдэггүй is a warning to take seriously.** Long-distance buses in Mongolia leave on time and wait for no one, unlike a lot of transport elsewhere in Asia. Arrive thirty minutes early."
+      ],
+      "grammars": [
+        {
+          "title": "The direction suffix: -руу, -рүү, -луу, -лүү",
+          "body": [
+            "This suffix is young in Mongolian — it comes from the word *уруу* (downward, toward), which fused onto the end of nouns. That's why it feels more \"directional\" than the old, neutral *-д* suffix."
+          ],
+          "table": {
+            "head": [
+              "Word",
+              "Vowel group / suffix",
+              "Form",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*хот*",
+                "back",
+                "*хот **руу***",
+                "to the city"
+              ],
+              [
+                "*гэр*",
+                "ends in *-р*",
+                "*гэр **лүү***",
+                "to the house"
+              ],
+              [
+                "*дэлгүүр*",
+                "ends in *-р*, front",
+                "*дэлгүүр **лүү***",
+                "to the shop"
+              ],
+              [
+                "*зах*",
+                "back",
+                "*зах **руу***",
+                "to the market"
+              ],
+              [
+                "*Улаанбаатар*",
+                "ends in *-р*",
+                "*Улаанбаатар **луу***",
+                "to Ulaanbaatar"
+              ],
+              [
+                "*тэр*",
+                "ends in *-р*",
+                "*тийш**ээ***",
+                "that way"
+              ],
+              [
+                "*би*",
+                "pronoun",
+                "*над **руу***",
+                "toward me"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ This suffix is also used for **calling and sending**: *над **руу** залга* (call me), *чам **руу** явуулсан* (I sent it to you). In the smartphone age, this is the use you'll hear most from young Mongolians.",
+            "**For the opposite direction, use the *-аас* suffix you already know:** *хотоос* (from the city), *гэрээс* (from home), *Улаанбаатараас* (from Ulaanbaatar). The pair *-аас* and *-руу* covers the whole idea of \"from … to …\"."
+          ]
+        },
+        {
+          "title": "Asking and answering about travel",
+          "body": [
+            "These four questions cover almost everything you'll need at bus stations, airports and train stations. Learn them as whole chunks, not as word order."
+          ],
+          "table": {
+            "head": [
+              "Question",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*… руу яаж явах вэ?*",
+                "*… ruu yaaj ya-VAKH veh*",
+                "How do I get to …?"
+              ],
+              [
+                "*Хэдэн цаг явах вэ?*",
+                "*KHEH-den tsag ya-VAKH veh*",
+                "How many hours is the trip?"
+              ],
+              [
+                "*Тасалбар хэд вэ?*",
+                "*TA-sal-bar khed veh*",
+                "How much is the ticket?"
+              ],
+              [
+                "*Хэдэн цагт хөдлөх вэ?*",
+                "*KHEH-den tsagt KHÖD-lökh veh*",
+                "What time does it leave?"
+              ],
+              [
+                "*Хэзээ хүрэх вэ?*",
+                "*kheh-DZĒ KHÜ-rekh veh*",
+                "When does it arrive?"
+              ],
+              [
+                "*Энэ автобус … руу явах уу?*",
+                "*EH-neh av-TO-bus … ruu ya-VAKH uu*",
+                "Does this bus go to …?"
+              ],
+              [
+                "*Хаана буух вэ?*",
+                "*KHAA-na BUUKH veh*",
+                "Where do I get off?"
+              ],
+              [
+                "*Энд зогсооно уу.*",
+                "*end DZOG-sō-no uu*",
+                "Please stop here."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ The last two are very useful in taxis: ***Энд зогсооно уу*** to ask the driver to stop, and ***Тоолуур ажиллуулна уу*** to ask for the meter to be turned on. There aren't many official taxis in Ulaanbaatar; most \"taxis\" are private cars that stop when you hold out your hand, and the fare is charged per kilometer at a rate you agree on together.",
+            "**The sentence *Яаж явах вэ?* (how do I get there) is one of the most useful in any language.** It works for five hundred meters or five hundred kilometers, and you can almost always understand the answer from one word: the name of the transport."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Means of transport",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English",
+            "By it"
+          ],
+          "rows": [
+            [
+              "*автобус*",
+              "*av-TO-bus*",
+              "bus",
+              "*автобусаар*"
+            ],
+            [
+              "*такси*",
+              "*TAK-si*",
+              "taxi",
+              "*таксигаар*"
+            ],
+            [
+              "*машин*",
+              "*ma-SHIN*",
+              "car",
+              "*машинаар*"
+            ],
+            [
+              "*галт тэрэг*",
+              "*galt TEH-reg*",
+              "train",
+              "*галт тэргээр*"
+            ],
+            [
+              "*онгоц*",
+              "*on-GOTS*",
+              "plane",
+              "*онгоцоор*"
+            ],
+            [
+              "*дугуй*",
+              "*du-GUI*",
+              "bicycle",
+              "*дугуйгаар*"
+            ],
+            [
+              "*мотоцикл*",
+              "*mo-to-TSIKL*",
+              "motorbike",
+              "*мотоциклоор*"
+            ],
+            [
+              "*морь*",
+              "*mor'*",
+              "horse",
+              "*мориор*"
+            ],
+            [
+              "*тэмээ*",
+              "*teh-MĒ*",
+              "camel",
+              "*тэмээгээр*"
+            ],
+            [
+              "*явган*",
+              "*YAV-gan*",
+              "on foot",
+              "*явганаар*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Галт тэрэг* literally means \"fire cart\", and *онгоц* originally meant \"boat\" — Mongolian uses the word for boat for planes because both are vehicles that float. For a landlocked country, that's an interesting choice: the boat word is older than their acquaintance with the sea."
+        },
+        {
+          "type": "kotak",
+          "title": "The horse isn't a sport — it's transport",
+          "items": [
+            "Mongolia is one of the few places in the world where **horses are still everyday vehicles**, not a hobby. On the steppe, children ride horses before they can ride a bicycle.",
+            "*Морь унах* = to ride a horse. ⚠️ *Унах* means \"to ride\" **and** \"to fall\" — context tells them apart, and Mongolians find the overlap funny.",
+            "*Морьтой хүн* = a person on horseback. *Мориной уралдаан* = horse racing, one of the three events of *Наадам*.",
+            "Mongolian has more than **three hundred words** for describing horses by color, age and gait. You don't need to learn them; just know they exist, so you see how deeply the horse is rooted in this language."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "On the road",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*тасалбар*",
+              "*TA-sal-bar*",
+              "ticket"
+            ],
+            [
+              "*буудал*",
+              "*BUU-dal*",
+              "stop, station"
+            ],
+            [
+              "*нисэх онгоцны буудал*",
+              "*NI-sekh on-GOTS-nii BUU-dal*",
+              "airport"
+            ],
+            [
+              "*хөдлөх*",
+              "*KHÖD-lökh*",
+              "to depart"
+            ],
+            [
+              "*хүрэх*",
+              "*KHÜ-rekh*",
+              "to arrive"
+            ],
+            [
+              "*буух*",
+              "*BUUKH*",
+              "to get off"
+            ],
+            [
+              "*суух*",
+              "*SUUKH*",
+              "to get on, to sit"
+            ],
+            [
+              "*зогсох*",
+              "*DZOG-sokh*",
+              "to stop"
+            ],
+            [
+              "*хойш*",
+              "*khoish*",
+              "back; after"
+            ],
+            [
+              "*урагш*",
+              "*u-RAGSH*",
+              "forward"
+            ],
+            [
+              "*дараагийн*",
+              "*da-RAA-giin*",
+              "next"
+            ],
+            [
+              "*сүүлчийн*",
+              "*SÜÜL-chiin*",
+              "last"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Notice that **суух means both \"to sit\" and \"to ride (a vehicle)\"** — which makes sense, since taking a bus really means sitting in it. *Автобусанд суух* = to take the bus; *автобуснаас буух* = to get off the bus."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Энэ автобус зах руу явах уу?*",
+              "Does this bus go to the market?"
+            ],
+            [
+              "*Дараагийн буудалд бууна.*",
+              "I'm getting off at the next stop."
+            ],
+            [
+              "*Хэдэн буудал вэ?*",
+              "How many more stops?"
+            ],
+            [
+              "*Хөдлөх цаг болсон уу?*",
+              "Is it time to leave?"
+            ],
+            [
+              "*Онгоц хэдэн цагт хөдлөх вэ?*",
+              "What time does the plane leave?"
+            ],
+            [
+              "*Би замаа андуурсан.*",
+              "I went the wrong way."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Places worth going to",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Place",
+            "Say it",
+            "What's there"
+          ],
+          "rows": [
+            [
+              "*Хархорин*",
+              "*khar-KHO-rin*",
+              "Former capital of the Mongol Empire, founded in 1220. Erdene Zuu Monastery stands on its ruins."
+            ],
+            [
+              "*Тэрэлж*",
+              "*TEH-relj*",
+              "A national park two hours from Ulaanbaatar. The easiest place to stay in a ger."
+            ],
+            [
+              "*Говь*",
+              "*gov'*",
+              "The Gobi Desert. ⚠️ *Говь* means \"stony plain\", not sand desert — most of the Gobi really is rocky."
+            ],
+            [
+              "*Хөвсгөл нуур*",
+              "*KHÖVS-göl nuur*",
+              "A huge freshwater lake in the north, near Siberia. You can drink the water straight from it."
+            ],
+            [
+              "*Баян-Өлгий*",
+              "*ba-YAN-ÖL-gii*",
+              "The Kazakh province in the west. Home of hunting with golden eagles."
+            ],
+            [
+              "*Их Тэнгэрийн*",
+              "*ikh TEN-geh-riin*",
+              "A 40-meter equestrian statue of Genghis Khan, 54 km from the capital."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One practical thing to know before you plan a trip: **distance in Mongolia is measured in time, not kilometers**, because most roads are unpaved. \"Four hundred kilometers\" can mean five hours on asphalt or twelve hours on a dirt track. If you ask *хэр хол вэ?* (how far is it), the answer will almost always be in hours."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "mn": "автобус",
+      "baca": "av-TO-bus",
+      "en": "bus"
+    },
+    {
+      "mn": "галт тэрэг",
+      "baca": "galt TEH-reg",
+      "en": "train"
+    },
+    {
+      "mn": "онгоц",
+      "baca": "on-GOTS",
+      "en": "plane"
+    },
+    {
+      "mn": "морь",
+      "baca": "mor'",
+      "en": "horse"
+    },
+    {
+      "mn": "явган",
+      "baca": "YAV-gan",
+      "en": "on foot"
+    },
+    {
+      "mn": "тасалбар",
+      "baca": "TA-sal-bar",
+      "en": "ticket"
+    },
+    {
+      "mn": "буудал",
+      "baca": "BUU-dal",
+      "en": "stop, station"
+    },
+    {
+      "mn": "хөдлөх",
+      "baca": "KHÖD-lökh",
+      "en": "to depart"
+    },
+    {
+      "mn": "хүрэх",
+      "baca": "KHÜ-rekh",
+      "en": "to arrive"
+    },
+    {
+      "mn": "буух",
+      "baca": "BUUKH",
+      "en": "to get off"
+    },
+    {
+      "mn": "зогсох",
+      "baca": "DZOG-sokh",
+      "en": "to stop"
+    },
+    {
+      "mn": "унах",
+      "baca": "U-nakh",
+      "en": "to ride (a horse)"
+    },
+    {
+      "mn": "яаж",
+      "baca": "yaaj",
+      "en": "how"
+    },
+    {
+      "mn": "удаа",
+      "baca": "u-DAA",
+      "en": "time (as in \"twice\")"
+    },
+    {
+      "mn": "дараагийн",
+      "baca": "da-RAA-giin",
+      "en": "next"
+    },
+    {
+      "mn": "сүүлчийн",
+      "baca": "SÜÜL-chiin",
+      "en": "last"
+    },
+    {
+      "mn": "буцах",
+      "baca": "BU-tsakh",
+      "en": "to return, go back"
+    },
+    {
+      "mn": "залгах",
+      "baca": "DZAL-gakh",
+      "en": "to call (phone)"
+    },
+    {
+      "mn": "андуурах",
+      "baca": "an-DUU-rakh",
+      "en": "wrong, mistaken"
+    },
+    {
+      "mn": "нуур",
+      "baca": "nuur",
+      "en": "lake"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mongolian.",
+      "items": [
+        "I'm going to the city.",
+        "Two hours by bus.",
+        "How much is the ticket?",
+        "What time does it leave?",
+        "Does this bus go to the market?",
+        "Please stop here."
+      ]
+    },
+    {
+      "prompt": "Fill in the direction suffix -руу, -рүү, -луу or -лүү.",
+      "items": [
+        "Би хот____ явна.",
+        "Тэр гэр____ харина.",
+        "Бид зах____ явъя.",
+        "Дэлгүүр____ орьё.",
+        "Улаанбаатар____ нисэх онгоц.",
+        "Над____ залгаарай."
+      ]
+    },
+    {
+      "prompt": "Change the transport word into its -аар form.",
+      "items": [
+        "автобус",
+        "такси",
+        "машин",
+        "онгоц",
+        "морь",
+        "явган"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "явна / хот / би / руу",
+        "вэ / хэд / тасалбар",
+        "вэ / хөдлөх / цагт / хэдэн",
+        "уу / зогсооно / энд",
+        "явна / автобусаар / цаг / хоёр"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Би хот руу явна. — Автобусаар хоёр цаг явна. — Тасалбар хэд вэ? — Хэдэн цагт хөдлөх вэ? — Энэ автобус зах руу явах уу? — Энд зогсооно уу.",
+    "1": "руу — лүү — руу — лүү — луу — руу",
+    "2": "автобусаар — таксигаар — машинаар — онгоцоор — мориор — явганаар",
+    "3": "Би хот руу явна. — Тасалбар хэд вэ? — Хэдэн цагт хөдлөх вэ? — Энд зогсооно уу. — Автобусаар хоёр цаг явна."
+  }
+}

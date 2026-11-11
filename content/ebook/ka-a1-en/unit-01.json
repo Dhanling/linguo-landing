@@ -1,0 +1,496 @@
+{
+  "title": "Hello, I'm Ani",
+  "title_target": "გამარჯობა, მე ანი ვარ — Gamarjoba, me Ani var",
+  "goal": "Greet Georgians the right way, say who you are, ask other people's names, and say goodbye properly — all with a single verb.",
+  "bekal": [
+    "greet people with გამარჯობა and give the right reply",
+    "say მე … ვარ to give your name",
+    "ask someone's name, politely or casually",
+    "say thank you at two levels of politeness",
+    "say goodbye with the right word depending on who is leaving"
+  ],
+  "dialogs": [
+    {
+      "title": "დიალოგი — First day of class",
+      "intro": "Ani, a student from Indonesia, has just arrived in Tbilisi and today is her first Georgian class. At the door she meets Nino. Notice that the greeting and its reply are two different words — a habit English doesn't share.",
+      "lines": [
+        {
+          "speaker": "ნინო:",
+          "text": "[გამარჯობა|Ga-mar-jo-ba]! [მე|Me] [ნინო|Ni-no] [ვარ|var].",
+          "id": "Hello! I'm Nino.",
+          "literal": "hello! I — Nino — am."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[გაგიმარჯოს|Ga-gi-mar-jos]! [მე|Me] [ანი|A-ni] [ვარ|var].",
+          "id": "Hello! I'm Ani.",
+          "literal": "hello-reply! I — Ani — am."
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[ძალიან|Dza-li-an] [სასიამოვნოა|sa-si-a-mov-no-a].",
+          "id": "Very nice to meet you.",
+          "literal": "very — pleasant-is."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[მეც|Mets].",
+          "id": "Me too.",
+          "literal": "I-too."
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[როგორ|Ro-gor] [ხარ|khar], [ანი|A-ni]?",
+          "id": "How are you, Ani?",
+          "literal": "how — you-are, Ani?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[კარგად|K'ar-gad] [ვარ|var], [მადლობა|mad-lo-ba]. [შენ|Shen]?",
+          "id": "Fine, thanks. And you?",
+          "literal": "well — I-am, thanks. you?"
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[მეც|Mets] [კარგად|k'ar-gad]. [ის|Is] [ვინ|vin] [არის|a-ris]?",
+          "id": "I'm fine too. Who's that?",
+          "literal": "I-too — well. that — who — is?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ის|Is] [ჩემი|che-mi] [მასწავლებელია|mas-ts'av-le-be-li-a].",
+          "id": "That's my teacher.",
+          "literal": "that — my — teacher-is."
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[რა|Ra] [ჰქვია|hkvi-a]?",
+          "id": "What's his name?",
+          "literal": "what — is-called-to-him?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[გიორგი|Gi-or-gi] [ჰქვია|hkvi-a]. [ის|Is] [ძალიან|dza-li-an] [კარგია|k'ar-gi-a].",
+          "id": "His name is Giorgi. He's very nice.",
+          "literal": "Giorgi — is-called-to-him. he — very — good-is."
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[კარგი|K'ar-gi]. [ნახვამდის|Nakh-vam-dis], [ანი|A-ni]!",
+          "id": "All right. Goodbye, Ani!",
+          "literal": "good. until-seeing, Ani!"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[კარგად|K'ar-gad], [ნინო|Ni-no]! [მადლობა|Mad-lo-ba]!",
+          "id": "Take care, Nino! Thanks!",
+          "literal": "well, Nino! thanks!"
+        }
+      ],
+      "notes": [
+        "**გამარჯობა doesn't literally mean \"hello\" — it means \"victory to you\".** The greeting is a relic of wartime: returning soldiers were welcomed with a wish for victory. The reply is not the same word again but **გაგიმარჯოს** — \"may victory be yours\". ⚠️ This is the first trap for English speakers, who answer \"hello\" with \"hello\". Answering გამარჯობა with გამარჯობა isn't wrong and people will understand, but გაგიმარჯოს instantly sounds like someone who has really studied.",
+        "**There is no separate word for \"am/is/are\" — it's built into the verb.** მე ვარ = \"I am\". The interesting part: the subject can be dropped entirely. *ანი ვარ* alone already means \"I'm Ani\", because the **ვ-** at the front of the verb already says the subject is \"I\". You will meet that ვ- prefix on almost every verb in this course.",
+        "**არის often shrinks to -ა and sticks to the word before it.** მასწავლებელი + არის → მასწავლებელ**ია**. კარგი + არის → კარგ**ია**. The long form is still correct (ის მასწავლებელი არის), but everyday speech almost always uses the short one.",
+        "**რა გქვია? literally means \"what is called to you\", not \"who is your name\".** ⚠️ Learners are often tempted to use ვინ (who) here. Georgian uses **რა** (what) — just like English \"what's your name?\". ვინ ხარ? means \"who are you, anyway?\" and sounds like an interrogation.",
+        "**კარგად, not კარგი.** კარგი = good (adjective), კარგად = well (adverb). The ending **-ად** turns adjectives into adverbs, like English -ly, and it comes back in unit 3 with a bigger job: ქართულ**ად** = \"in Georgian\".",
+        "**მეც = მე + ც.** The particle **-ც** means \"too / also\" and always sticks to the end of a word, never standing alone. შენ**ც** (you too), ის**ც** (he/she too), დღეს**ც** (today too).",
+        "**Two ways to say goodbye, depending on who is leaving.** The person **leaving** says ნახვამდის (until we meet). The person **staying** answers კარგად (be well). If both are heading off in different directions, both can say კარგად."
+      ],
+      "grammars": [
+        {
+          "title": "ვარ, ხარ, არის — your first and most-used verb",
+          "body": [
+            "The only form you need to learn by heart today. Notice that the pronouns (მე, შენ, ის) are in brackets: they can be there or not — the verb already carries that information."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "Form",
+              "Say it",
+              "Example"
+            ],
+            "rows": [
+              [
+                "(მე) I",
+                "ვარ",
+                "var",
+                "სტუდენტი ვარ — I'm a student"
+              ],
+              [
+                "(შენ) you",
+                "ხარ",
+                "khar",
+                "სად ხარ? — where are you?"
+              ],
+              [
+                "(ის) he, she",
+                "არის / -ა",
+                "aris",
+                "ის ქართველია — he/she is Georgian"
+              ],
+              [
+                "(ჩვენ) we",
+                "ვართ",
+                "vart",
+                "აქ ვართ — we're here"
+              ],
+              [
+                "(თქვენ) you (pl./formal)",
+                "ხართ",
+                "khart",
+                "მასწავლებელი ხართ? — are you a teacher?"
+              ],
+              [
+                "(ისინი) they",
+                "არიან",
+                "arian",
+                "ისინი მეგობრები არიან — they're friends"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **თქვენ ხართ** has two uses: \"you\" (several people) and polite \"you\" (one person, formal). With anyone you've just met, especially someone older, use თქვენ. Switching to შენ is usually offered later by the other person."
+          ]
+        },
+        {
+          "title": "Asking and giving names",
+          "body": [
+            "There are two ways to give your name, and both are equally common. The second is easier for beginners because it's built just like English \"my name is\"."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Say it",
+              "Meaning",
+              "When to use it"
+            ],
+            "rows": [
+              [
+                "რა გქვია?",
+                "ra gkvia",
+                "What's your name?",
+                "to peers, children"
+              ],
+              [
+                "რა გქვიათ?",
+                "ra gkviat",
+                "What's your name? (polite)",
+                "polite — use this if unsure"
+              ],
+              [
+                "მე მქვია ანი",
+                "me mkvia Ani",
+                "My name is Ani",
+                "literally: \"to-me is-called Ani\""
+              ],
+              [
+                "ჩემი სახელია ანი",
+                "chemi sakhelia Ani",
+                "My name is Ani",
+                "literally: \"my name-is Ani\""
+              ],
+              [
+                "მას ჰქვია გიორგი",
+                "mas hkvia Giorgi",
+                "His/her name is Giorgi",
+                "for a third person"
+              ]
+            ]
+          },
+          "after": [
+            "Watch the changing prefix: **მ**ქვია (to me), **გ**ქვია (to you), **ჰ**ქვია (to him/her). This მ-/გ-/ჰ- set comes back in unit 4 with the verb \"to have\", and in unit 16 with the verb \"to hurt\". It's a small group of verbs, but you'll use them every day."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Time-of-day greetings, and five lifesaver phrases",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "გამარჯობა works any time, morning to night. But time-of-day greetings sound warmer, and all three follow the same pattern: the time of day + მშვიდობისა (\"peace\")."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Georgian",
+            "Say it",
+            "Meaning",
+            "When"
+          ],
+          "rows": [
+            [
+              "დილა მშვიდობისა",
+              "dila mshvidobisa",
+              "Good morning",
+              "until about noon"
+            ],
+            [
+              "საღამო მშვიდობისა",
+              "saghamo mshvidobisa",
+              "Good evening",
+              "from late afternoon"
+            ],
+            [
+              "ღამე მშვიდობისა",
+              "ghame mshvidobisa",
+              "Good night",
+              "only when parting for bed"
+            ],
+            [
+              "გამარჯობა",
+              "gamarjoba",
+              "Hello",
+              "any time, anyone"
+            ],
+            [
+              "გამარჯობათ",
+              "gamarjobat",
+              "Hello (polite/plural)",
+              "to several people or someone you respect"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Five phrases that will save your first day",
+          "items": [
+            "**მადლობა** (madloba) — thank you. The polite version is **გმადლობთ** (gmadlobt). The reply is **არაფრის** (arapris, \"it's nothing\").",
+            "**ბოდიში** (bodishi) — sorry, when you've done something wrong. **უკაცრავად** (uk'atsravad) — excuse me, when you want to interrupt or ask a stranger something.",
+            "**არ ვიცი** (ar vitsi) — I don't know.",
+            "**ვერ გავიგე** (ver gavige) — I didn't catch that; please repeat. The most useful sentence of your first week.",
+            "**ქართული ცოტა ვიცი** (kartuli tsot'a vitsi) — I know a little Georgian. Say this and the other person will slow down."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One small note to save you some awkwardness: Georgians almost never treat a mispronunciation as a problem. What they value isn't your fluency but the fact that you're trying at all. *ქართული ცოტა ვიცი* usually earns far more praise than you deserve — just accept it with a მადლობა."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ka": "გამარჯობა",
+      "baca": "gamarjoba",
+      "en": "hello"
+    },
+    {
+      "ka": "გაგიმარჯოს",
+      "baca": "gagimarjos",
+      "en": "hello (reply to გამარჯობა)"
+    },
+    {
+      "ka": "დილა",
+      "baca": "dila",
+      "en": "morning"
+    },
+    {
+      "ka": "საღამო",
+      "baca": "saghamo",
+      "en": "evening"
+    },
+    {
+      "ka": "ღამე",
+      "baca": "ghame",
+      "en": "night"
+    },
+    {
+      "ka": "მშვიდობისა",
+      "baca": "mshvidobisa",
+      "en": "peace (used in greetings)"
+    },
+    {
+      "ka": "მე",
+      "baca": "me",
+      "en": "I"
+    },
+    {
+      "ka": "შენ",
+      "baca": "shen",
+      "en": "you (informal)"
+    },
+    {
+      "ka": "ის",
+      "baca": "is",
+      "en": "he, she; that"
+    },
+    {
+      "ka": "ჩვენ",
+      "baca": "chven",
+      "en": "we"
+    },
+    {
+      "ka": "თქვენ",
+      "baca": "tkven",
+      "en": "you (plural / formal)"
+    },
+    {
+      "ka": "ისინი",
+      "baca": "isini",
+      "en": "they"
+    },
+    {
+      "ka": "ვარ",
+      "baca": "var",
+      "en": "(I) am"
+    },
+    {
+      "ka": "ხარ",
+      "baca": "khar",
+      "en": "(you) are"
+    },
+    {
+      "ka": "არის",
+      "baca": "aris",
+      "en": "(he/she) is"
+    },
+    {
+      "ka": "როგორ",
+      "baca": "rogor",
+      "en": "how"
+    },
+    {
+      "ka": "კარგი",
+      "baca": "k'argi",
+      "en": "good, nice"
+    },
+    {
+      "ka": "კარგად",
+      "baca": "k'argad",
+      "en": "well; take care (when parting)"
+    },
+    {
+      "ka": "ცუდი",
+      "baca": "tsudi",
+      "en": "bad"
+    },
+    {
+      "ka": "მადლობა",
+      "baca": "madloba",
+      "en": "thank you"
+    },
+    {
+      "ka": "გმადლობთ",
+      "baca": "gmadlobt",
+      "en": "thank you (polite)"
+    },
+    {
+      "ka": "არაფრის",
+      "baca": "arapris",
+      "en": "you're welcome"
+    },
+    {
+      "ka": "ბოდიში",
+      "baca": "bodishi",
+      "en": "sorry"
+    },
+    {
+      "ka": "უკაცრავად",
+      "baca": "uk'atsravad",
+      "en": "excuse me"
+    },
+    {
+      "ka": "ნახვამდის",
+      "baca": "nakhvamdis",
+      "en": "goodbye"
+    },
+    {
+      "ka": "ვინ",
+      "baca": "vin",
+      "en": "who"
+    },
+    {
+      "ka": "რა",
+      "baca": "ra",
+      "en": "what"
+    },
+    {
+      "ka": "ჩემი",
+      "baca": "chemi",
+      "en": "my"
+    },
+    {
+      "ka": "მასწავლებელი",
+      "baca": "masts'avlebeli",
+      "en": "teacher"
+    },
+    {
+      "ka": "სტუდენტი",
+      "baca": "st'udent'i",
+      "en": "student"
+    },
+    {
+      "ka": "მეგობარი",
+      "baca": "megobari",
+      "en": "friend"
+    },
+    {
+      "ka": "ძალიან",
+      "baca": "dzalian",
+      "en": "very"
+    },
+    {
+      "ka": "სასიამოვნოა",
+      "baca": "sasiamovnoa",
+      "en": "nice to meet you"
+    },
+    {
+      "ka": "-ც",
+      "baca": "-ts",
+      "en": "too, also (attached to the end of a word)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right form of \"to be\".",
+      "items": [
+        "მე სტუდენტი ____",
+        "შენ მასწავლებელი ____",
+        "ის ჩემი მეგობარი ____",
+        "ჩვენ აქ ____",
+        "თქვენ ნინო ____",
+        "ისინი კარგი მეგობრები ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the right greeting or reply.",
+      "items": [
+        "— გამარჯობა! — ____!",
+        "— მადლობა! — ____",
+        "— როგორ ხარ? — ____ ვარ.",
+        "დილის სამ საათზე არა, ცხრა საათზე: ____ მშვიდობისა.",
+        "You're the one leaving, so you say: ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ვარ / ანი / მე",
+        "ხარ / როგორ / ?",
+        "ჰქვია / რა / ?",
+        "კარგად / მეც",
+        "მასწავლებელია / ჩემი / ის"
+      ]
+    },
+    {
+      "prompt": "Translate into Georgian.",
+      "items": [
+        "Hello! I'm Budi.",
+        "How are you?",
+        "Fine, thanks.",
+        "What's your name? (polite)",
+        "He's my teacher.",
+        "Goodbye!"
+      ]
+    }
+  ],
+  "answers": [
+    "ვარ — ხარ — არის — ვართ — ხართ — არიან",
+    "გაგიმარჯოს — არაფრის — კარგად — დილა — ნახვამდის",
+    "მე ანი ვარ. — როგორ ხარ? — რა ჰქვია? — მეც კარგად. — ის ჩემი მასწავლებელია.",
+    "გამარჯობა! მე ბუდი ვარ. — როგორ ხარ? — კარგად ვარ, მადლობა. — რა გქვიათ? — ის ჩემი მასწავლებელია. — ნახვამდის!"
+  ]
+}

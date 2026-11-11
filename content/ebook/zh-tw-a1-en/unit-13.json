@@ -1,0 +1,598 @@
+{
+  "title": "How do we get there?",
+  "title_target": "怎麼去？",
+  "goal": "Ride anything in Taiwan and explain the route — using the 從…到… pattern and putting the means of transport in the right place: before the verb.",
+  "bekal": [
+    "choose between 坐, 搭, 騎, and 開 for each vehicle",
+    "use 從…到… to name the starting point and the destination",
+    "ask about routes and travel time"
+  ],
+  "dialogs": [
+    {
+      "title": "對話 — 去高鐵站",
+      "intro": "The morning they leave for Tainan. Budi has never taken the high-speed rail and asks Xiaomei.",
+      "lines": [
+        {
+          "speaker": "布迪:",
+          "text": "[小美|Xiǎoměi]，[我們|wǒmen][怎麼|zěnme][去|qù][高鐵站|gāotiě zhàn]？",
+          "id": "Xiaomei, how do we get to the high-speed rail station?",
+          "literal": "Xiaomei, we — how — go — high-rail — station?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[坐|Zuò][捷運|jiéyùn][就|jiù][可以|kěyǐ]。[大概|Dàgài][二十|èrshí][分鐘|fēnzhōng]。",
+          "id": "We can just take the MRT. About twenty minutes.",
+          "literal": "sit — MRT — just — can. about — twenty — minute."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[從|Cóng][學校|xuéxiào][到|dào][車站|chēzhàn][要|yào][轉車|zhuǎnchē][嗎|ma]？",
+          "id": "Do we have to change trains from campus to the station?",
+          "literal": "from — school — to — vehicle-station — need — turn-vehicle — (question)?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[要|Yào][轉|zhuǎn][一次|yí cì]。[在|Zài][台北車站|Táiběi chēzhàn][換|huàn][紅線|hóng xiàn]。",
+          "id": "Once. At Taipei Main Station we switch to the red line.",
+          "literal": "need — turn — one — time. at — Taipei — station — change — red — line."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[我們|Wǒmen][幾點|jǐ diǎn][出發|chūfā][比較|bǐjiào][好|hǎo]？",
+          "id": "What time should we leave?",
+          "literal": "we — how-many — o'clock — set-out — more — good?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[火車|Huǒchē][八點半|bā diǎn bàn]。[我們|Wǒmen][七點半|qī diǎn bàn][出門|chūmén][吧|ba]。",
+          "id": "The train is at eight thirty. Let's leave home at seven thirty.",
+          "literal": "fire-vehicle — eight — o'clock — half. we — seven — o'clock — half — exit-door — (suggestion)."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[那|Nà][阿明|Ā Míng][呢|ne]？[他|Tā][也|yě][坐|zuò][捷運|jiéyùn][嗎|ma]？",
+          "id": "And A-Ming? Is he taking the MRT too?",
+          "literal": "then — A-Ming — (what about)? he — also — sit — MRT — (question)?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[不|Bù]，[他|tā][騎|qí][機車|jīchē][去|qù]。[他|Tā][說|shuō][比較|bǐjiào][快|kuài]。",
+          "id": "No, he's riding his scooter. He says it's faster.",
+          "literal": "no, he — ride — machine-vehicle — go. he — say — more — fast."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[台北|Táiběi][的|de][機車|jīchē][真|zhēn][多|duō]！",
+          "id": "There are so many scooters in Taipei!",
+          "literal": "Taipei — 's — scooter — really — many!"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[全台灣|Quán Táiwān][有|yǒu][一千四百萬|yìqiān sìbǎi wàn][台|tái][機車|jīchē][喔|o]。",
+          "id": "There are fourteen million scooters in all of Taiwan, you know.",
+          "literal": "whole — Taiwan — have — one-thousand-four-hundred — ten-thousand — (measure word) — scooter — (softener)."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[比|Bǐ][印尼|Yìnní][少|shǎo]！[我們|Wǒmen][有|yǒu][一億|yí yì][多|duō]。",
+          "id": "Fewer than Indonesia! We have over a hundred million.",
+          "literal": "compare — Indonesia — few! we — have — one — hundred-million — more."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[哇|Wā]！[那|Nà][你|nǐ][應該|yīnggāi][很|hěn][會|huì][騎|qí][吧|ba]？",
+          "id": "Wow! Then you must be great at riding, right?",
+          "literal": "wow! then — you — should — very — can — ride — (right)?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[會|Huì][是|shì][會|huì]，[可是|kěshì][台灣|Táiwān][的|de][交通|jiāotōng][我|wǒ][還|hái][不熟|bù shú]。",
+          "id": "I can ride, sure, but I don't know Taiwan's traffic well yet.",
+          "literal": "can — is — can, but — Taiwan — 's — traffic — I — still — not — familiar."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[慢慢來|Mànmàn lái]！[走|Zǒu]，[捷運|jiéyùn][來|lái][了|le]！",
+          "id": "Take your time! Come on, the MRT's here!",
+          "literal": "slow-slow — come! go, MRT — come — (change)!"
+        }
+      ],
+      "notes": [
+        "⚠️ **機車 in Taiwan means a motor scooter**, and Taiwan has one of the highest scooter densities in the world — about fourteen million for twenty-three million people. ⚠️ In young people's slang, 機車 also means \"annoying, difficult\": *他很機車* (he's such a pain).",
+        "**慢慢來 (\"take it slow\") is one of the most typically Taiwanese words of encouragement.** It's said to anyone who is learning, nervous, or in a rush. You'll hear it often, and it really is soothing.",
+        "**億 (*yì*) means a hundred million.** Mandarin has its own big units: 萬 (ten thousand), 億 (a hundred million). A hundred million isn't \"a hundred millions\" but one 億 — and English big numbers, grouped in thousands, often need recalculating.",
+        "⚠️ **不熟 (\"not familiar\") is used for places, people, and skills.** *我對台北還不熟* (I don't know Taipei well yet), *我跟他不熟* (I don't know him well). A very useful word that's rarely taught.",
+        "**紅線, 藍線, 綠線** — Taipei MRT lines are known by color, not number. The map at every station uses colors, and people name them that way when giving directions."
+      ],
+      "grammars": [
+        {
+          "title": "坐, 搭, 騎, 開: choosing the verb for each vehicle",
+          "body": [
+            "English switches between \"take\", \"ride\", and \"drive\". Mandarin also picks the verb by **how you sit on or in the vehicle**."
+          ],
+          "table": {
+            "head": [
+              "Verb",
+              "Pīnyīn",
+              "Used for",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**坐**",
+                "zuò",
+                "sitting inside: bus, train, plane, taxi",
+                "**坐**捷運, **坐**飛機"
+              ],
+              [
+                "**搭**",
+                "dā",
+                "same as 坐, slightly more refined",
+                "**搭**高鐵, **搭**公車"
+              ],
+              [
+                "**騎**",
+                "qí",
+                "⚠️ sitting astride: scooter, bicycle, horse",
+                "**騎**機車, **騎**腳踏車"
+              ],
+              [
+                "**開**",
+                "kāi",
+                "driving it yourself",
+                "**開**車 drive a car"
+              ],
+              [
+                "**走路**",
+                "zǒulù",
+                "on foot",
+                "我**走路**去。"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **騎 is used for anything you straddle** — scooter, bicycle, horse. Using 坐 for a scooter sounds odd, like saying \"sit a bicycle\" in English.",
+            "**The means of transport stands BEFORE the verb of going**: *我坐捷運去學校* — \"I take the MRT to campus\". It's the same rule as for time and place: all adverbials come before the main verb.",
+            "**開 also means \"open\" and \"switch on\"**: 開門 (open the door), 開燈 (turn on the light), 開會 (have a meeting), 開始 (begin). The same character, a wide family of meanings."
+          ]
+        },
+        {
+          "title": "從…到…: from where to where, and how long",
+          "body": [
+            "**從 A 到 B** is the frame used for distance, time, and sequence alike. Both parts stand **before the verb**, like every other adverbial."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Pīnyīn",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**從**學校**到**車站",
+                "cóng xuéxiào dào chēzhàn",
+                "from campus to the station"
+              ],
+              [
+                "**從**台北**到**台南要兩小時。",
+                "Cóng Táiběi dào Táinán yào liǎng xiǎoshí.",
+                "Taipei to Tainan takes two hours."
+              ],
+              [
+                "**從**九點**到**五點",
+                "cóng jiǔ diǎn dào wǔ diǎn",
+                "from nine to five"
+              ],
+              [
+                "你**從**哪裡來？",
+                "Nǐ cóng nǎlǐ lái?",
+                "Where are you from / coming from?"
+              ],
+              [
+                "我**到**了。",
+                "Wǒ dào le.",
+                "I've arrived."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **要 here means \"need, take (time)\"**, not \"want\": *要兩小時* = \"takes two hours\". This meaning shows up whenever 要 is followed by an amount of time or money: *要多少錢？* (needs how much money = how much is it).",
+            "**Asking about travel time: 要多久？** (*yào duō jiǔ?*) — \"how long does it take?\". The answer uses a time unit placed after the verb: *要半個小時* (takes half an hour)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Getting around Taiwan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "Meaning",
+            "Its verb"
+          ],
+          "rows": [
+            [
+              "捷運",
+              "jiéyùn",
+              "MRT (Taipei, Kaohsiung)",
+              "坐 / 搭"
+            ],
+            [
+              "公車",
+              "gōngchē",
+              "city bus",
+              "坐 / 搭"
+            ],
+            [
+              "火車",
+              "huǒchē",
+              "regular train (台鐵)",
+              "坐 / 搭"
+            ],
+            [
+              "高鐵",
+              "gāotiě",
+              "high-speed rail (HSR)",
+              "坐 / 搭"
+            ],
+            [
+              "計程車",
+              "jìchéngchē",
+              "⚠️ taxi (Taiwanese word)",
+              "坐 / 搭"
+            ],
+            [
+              "飛機",
+              "fēijī",
+              "airplane",
+              "坐 / 搭"
+            ],
+            [
+              "機車",
+              "jīchē",
+              "⚠️ motor scooter",
+              "騎"
+            ],
+            [
+              "腳踏車",
+              "jiǎotàchē",
+              "⚠️ bicycle",
+              "騎"
+            ],
+            [
+              "YouBike",
+              "YouBike",
+              "public bike share",
+              "騎"
+            ],
+            [
+              "車",
+              "chē",
+              "car",
+              "開"
+            ],
+            [
+              "船",
+              "chuán",
+              "boat",
+              "坐 / 搭"
+            ],
+            [
+              "走路",
+              "zǒulù",
+              "walk",
+              "—"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Taiwan's trains: two different systems",
+          "items": [
+            "**高鐵 (HSR)** — high-speed rail along the west coast, Taipei–Kaohsiung in about 1 hour 45 minutes. Pricey, fast, stations on the edge of town.",
+            "**台鐵 (TRA)** — the regular railway circling the whole island, including the east coast to 花蓮 and 台東. Cheaper, slower, stations in the city center.",
+            "⚠️ **For 花蓮 and 台東, the only train is 台鐵** — 高鐵 doesn't run along the east coast at all.",
+            "**台鐵 classes:** 自強號 (fastest), 莒光號, 區間車 (stops everywhere). Book through the app or at a 便利商店.",
+            "**悠遊卡 works on the 捷運, 公車, YouBike, and short 台鐵 trips** — but not on the 高鐵."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking for directions",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "English"
+          ],
+          "rows": [
+            [
+              "**怎麼去？**",
+              "zěnme qù?",
+              "How do I get there?"
+            ],
+            [
+              "**要坐幾號公車？**",
+              "yào zuò jǐ hào gōngchē?",
+              "Which bus number do I take?"
+            ],
+            [
+              "**要轉車嗎？**",
+              "yào zhuǎnchē ma?",
+              "Do I need to transfer?"
+            ],
+            [
+              "**在哪裡下車？**",
+              "zài nǎlǐ xiàchē?",
+              "Where do I get off?"
+            ],
+            [
+              "**要多久？**",
+              "yào duō jiǔ?",
+              "How long does it take?"
+            ],
+            [
+              "**車票多少錢？**",
+              "chēpiào duōshǎo qián?",
+              "How much is the ticket?"
+            ],
+            [
+              "**下一班幾點？**",
+              "xià yì bān jǐ diǎn?",
+              "What time is the next one?"
+            ],
+            [
+              "**這班車去台南嗎？**",
+              "zhè bān chē qù Táinán ma?",
+              "Does this train go to Tainan?"
+            ],
+            [
+              "**我坐過站了**",
+              "wǒ zuòguò zhàn le",
+              "⚠️ I missed my stop"
+            ],
+            [
+              "**麻煩到這個地址**",
+              "máfán dào zhè ge dìzhǐ",
+              "To this address, please (to a taxi driver)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **上車 and 下車 mean getting on and off a vehicle**, using the same 上/下 pair as 上課/下課 and 上班/下班. And **麻煩** (*máfán*, \"trouble\") opens a very polite request: *麻煩你* = \"sorry to trouble you, could you…\"."
+        }
+      ]
+    },
+    {
+      "title": "Adjectives for speed and distance",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "Meaning",
+            "中文",
+            "Pīnyīn",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "快",
+              "kuài",
+              "fast",
+              "慢",
+              "màn",
+              "slow"
+            ],
+            [
+              "近",
+              "jìn",
+              "near",
+              "遠",
+              "yuǎn",
+              "far"
+            ],
+            [
+              "早",
+              "zǎo",
+              "early",
+              "晚",
+              "wǎn",
+              "late"
+            ],
+            [
+              "方便",
+              "fāngbiàn",
+              "convenient",
+              "麻煩",
+              "máfán",
+              "troublesome"
+            ],
+            [
+              "塞車",
+              "sāichē",
+              "traffic jam",
+              "順",
+              "shùn",
+              "smooth (traffic)"
+            ],
+            [
+              "準時",
+              "zhǔnshí",
+              "on time",
+              "誤點",
+              "wùdiǎn",
+              "delayed (schedule)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**塞車 (\"blocked vehicles\") means a traffic jam**, and Taipei flows far better than many big Asian cities — but try leaving town during a 連假 and you'll use this word again and again. To predict one: *可能會塞車* (\"there might be traffic\")."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "怎麼",
+      "baca": "zěnme",
+      "en": "how"
+    },
+    {
+      "zh": "坐",
+      "baca": "zuò",
+      "en": "sit; ride (as a passenger)"
+    },
+    {
+      "zh": "搭",
+      "baca": "dā",
+      "en": "take (a vehicle)"
+    },
+    {
+      "zh": "騎",
+      "baca": "qí",
+      "en": "⚠️ ride (scooter, bicycle)"
+    },
+    {
+      "zh": "開車",
+      "baca": "kāichē",
+      "en": "drive"
+    },
+    {
+      "zh": "走路",
+      "baca": "zǒulù",
+      "en": "walk"
+    },
+    {
+      "zh": "從",
+      "baca": "cóng",
+      "en": "from"
+    },
+    {
+      "zh": "到",
+      "baca": "dào",
+      "en": "to, until"
+    },
+    {
+      "zh": "高鐵",
+      "baca": "gāotiě",
+      "en": "high-speed rail"
+    },
+    {
+      "zh": "火車",
+      "baca": "huǒchē",
+      "en": "train"
+    },
+    {
+      "zh": "公車",
+      "baca": "gōngchē",
+      "en": "city bus"
+    },
+    {
+      "zh": "計程車",
+      "baca": "jìchéngchē",
+      "en": "⚠️ taxi (Taiwan)"
+    },
+    {
+      "zh": "機車",
+      "baca": "jīchē",
+      "en": "⚠️ motor scooter"
+    },
+    {
+      "zh": "車站",
+      "baca": "chēzhàn",
+      "en": "station"
+    },
+    {
+      "zh": "轉車",
+      "baca": "zhuǎnchē",
+      "en": "transfer, change vehicles"
+    },
+    {
+      "zh": "下車",
+      "baca": "xiàchē",
+      "en": "get off (a vehicle)"
+    },
+    {
+      "zh": "多久",
+      "baca": "duō jiǔ",
+      "en": "how long"
+    },
+    {
+      "zh": "大概",
+      "baca": "dàgài",
+      "en": "about, roughly"
+    },
+    {
+      "zh": "遠",
+      "baca": "yuǎn",
+      "en": "far"
+    },
+    {
+      "zh": "近",
+      "baca": "jìn",
+      "en": "near"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mandarin.",
+      "items": [
+        "How do we get to the station?",
+        "We can just take the MRT.",
+        "Taipei to Tainan takes two hours.",
+        "He rides his scooter to campus.",
+        "Do we need to transfer?",
+        "Where do we get off?"
+      ]
+    },
+    {
+      "prompt": "Fill in with 坐, 騎, 開, or 走路.",
+      "items": [
+        "我 ____ 捷運去學校。",
+        "他 ____ 機車。",
+        "我爸爸 ____ 車去上班。",
+        "很近，我們 ____ 去吧。",
+        "我們 ____ 高鐵去台南。",
+        "她 ____ 腳踏車。"
+      ]
+    },
+    {
+      "prompt": "Fill in with 從 or 到.",
+      "items": [
+        "我 ____ 印尼來。",
+        "____ 學校 ____ 車站要二十分鐘。",
+        "我八點 ____ 了。",
+        "____ 九點 ____ 五點我在上班。",
+        "這班車 ____ 高雄嗎？"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "去 / 怎麼 / 我們",
+        "捷運 / 去 / 坐 / 我 / 學校",
+        "到 / 從 / 台南 / 台北",
+        "騎 / 他 / 機車 / 去",
+        "久 / 要 / 多"
+      ]
+    }
+  ],
+  "answers": [
+    "我們怎麼去車站？ — 坐捷運就可以。 — 從台北到台南要兩小時。 — 他騎機車去學校。 — 要轉車嗎？ — 在哪裡下車？",
+    "坐 — 騎 — 開 — 走路 — 坐 — 騎",
+    "從 — 從、到 — 到 — 從、到 — 到",
+    "我們怎麼去？ — 我坐捷運去學校。 — 從台北到台南。 — 他騎機車去。 — 要多久？"
+  ]
+}

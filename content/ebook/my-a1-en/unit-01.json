@@ -1,0 +1,537 @@
+{
+  "title": "Hello, my name is Ani",
+  "title_target": "မင်္ဂလာပါ၊ ကျွန်မနာမည် အာနီပါ — miⁿ-ga-la-ba, cha.ma. na-mè a-nee ba",
+  "goal": "Greet people, say your name, ask how someone is, and choose the right word for \"I\" — because in Burmese that word depends on whether the speaker is a man or a woman.",
+  "bekal": [
+    "greet people with မင်္ဂလာပါ and greet them back",
+    "say your name with …နာမည် … ပါ",
+    "choose between ကျွန်တော် and ကျွန်မ without hesitating",
+    "ask and answer \"how are you?\" with နေကောင်းလား",
+    "say yes and no with ဟုတ်ကဲ့ and မဟုတ်ဘူး"
+  ],
+  "dialogs": [
+    {
+      "title": "စကားပြော — Outside a house in Yangon",
+      "intro": "Ani has just arrived in Yangon to work for a year. Min Aung, the next-door neighbor, greets her at the gate. Notice one thing from the very first line: Min Aung calls himself ကျွန်တော်, while Ani calls herself ကျွန်မ — and both mean \"I\".",
+      "lines": [
+        {
+          "speaker": "မင်းအောင်:",
+          "text": "[မင်္ဂလာပါ|miⁿ-ga-la-ba]။ [ကျွန်တော့်|cha.nò.] [နာမည်|na-mè] [မင်းအောင်|miⁿ:-owⁿ] [ပါ|ba]။",
+          "id": "Hello. My name is Min Aung.",
+          "literal": "blessing-be. my(m) — name — min-aung — polite."
+        },
+        {
+          "speaker": "အာနီ:",
+          "text": "[မင်္ဂလာပါ|miⁿ-ga-la-ba]။ [ကျွန်မ|cha.ma.] [နာမည်|na-mè] [အာနီ|a-nee] [ပါ|ba]။",
+          "id": "Hello. My name is Ani.",
+          "literal": "blessing-be. I(f) — name — ani — polite."
+        },
+        {
+          "speaker": "မင်းအောင်:",
+          "text": "[အာနီ|a-nee] [အင်ဒိုနီးရှား|iⁿ-doh-nee:-sha:] [က|ga.] [လား|la:]။",
+          "id": "Are you from Indonesia, Ani?",
+          "literal": "ani — indonesia — from — Q?"
+        },
+        {
+          "speaker": "အာနီ:",
+          "text": "[ဟုတ်ကဲ့|hohk-kè.]၊ [ဂျာကာတာ|ja-ka-ta] [က|ga.] [ပါ|ba]။",
+          "id": "Yes, from Jakarta.",
+          "literal": "true-yes, jakarta — from — polite."
+        },
+        {
+          "speaker": "မင်းအောင်:",
+          "text": "[နေ|nay] [ကောင်း|kowⁿ:] [လား|la:]။",
+          "id": "How are you?",
+          "literal": "live — well — Q?"
+        },
+        {
+          "speaker": "အာနီ:",
+          "text": "[နေကောင်းပါတယ်|nay-kowⁿ:-ba-dè]။ [ကျေးဇူးတင်ပါတယ်|chay:-zoo:-tiⁿ-ba-dè]။ [မင်းအောင်|miⁿ:-owⁿ] [ရော|yò:]။",
+          "id": "I'm fine, thank you. And you, Min Aung?",
+          "literal": "live-well-polite-statement. thank-you. min-aung — how about?"
+        },
+        {
+          "speaker": "မင်းအောင်:",
+          "text": "[ကျွန်တော်|cha.nò] [လည်း|lè:] [နေကောင်းပါတယ်|nay-kowⁿ:-ba-dè]။ [မြန်မာစကား|myaⁿ-ma-za.ga:] [ပြော|pyò:] [တတ်|tak] [လား|la:]။",
+          "id": "I'm fine too. Can you speak Burmese?",
+          "literal": "I(m) — also — live-well-polite-statement. myanmar-speech — speak — skilled — Q?"
+        },
+        {
+          "speaker": "အာနီ:",
+          "text": "[နည်းနည်း|nè:-nè:] [ပါ|ba]။ [ကျွန်မ|cha.ma.] [သင်|thiⁿ] [နေ|nay] [ပါတယ်|ba-dè]။",
+          "id": "A little. I'm learning.",
+          "literal": "little-little — polite. I(f) — learn — -ing — polite-statement."
+        },
+        {
+          "speaker": "မင်းအောင်:",
+          "text": "[တော်တယ်|tò-dè]! [ဒါ|da] [ကျွန်တော့်|cha.nò.] [အစ်မ|a.ma.] [ပါ|ba]၊ [မြမြ|mya.mya.]။",
+          "id": "Great! This is my older sister, Mya Mya.",
+          "literal": "clever-statement! this — my(m) — older-sister — polite, mya-mya."
+        },
+        {
+          "speaker": "မြမြ:",
+          "text": "[မင်္ဂလာပါ|miⁿ-ga-la-ba] [အာနီ|a-nee]။ [တွေ့ရတာ|tway.-ya.-da] [ဝမ်းသာပါတယ်|waⁿ:-tha-ba-dè]။",
+          "id": "Hello, Ani. Nice to meet you.",
+          "literal": "blessing-be — ani. meet-get-thing — belly-pleasant-polite-statement."
+        },
+        {
+          "speaker": "အာနီ:",
+          "text": "[ကျွန်မ|cha.ma.] [လည်း|lè:] [ဝမ်းသာပါတယ်|waⁿ:-tha-ba-dè]။ [ဒီမှာ|dee-hma] [နေ|nay] [လား|la:]။",
+          "id": "Nice to meet you too. Do you live here?",
+          "literal": "I(f) — also — glad-polite-statement. here-at — live — Q?"
+        },
+        {
+          "speaker": "မင်းအောင်:",
+          "text": "[ဟုတ်ကဲ့|hohk-kè.]၊ [ဒီမှာ|dee-hma] [နေပါတယ်|nay-ba-dè]။ [ဝင်|wiⁿ] [ပါ|ba]၊ [လက်ဖက်ရည်|la.hpèk-yay] [သောက်|thowk] [ရအောင်|ya.-owⁿ]။",
+          "id": "Yes, we live here. Come in, let's have some tea.",
+          "literal": "true-yes, here-at — live-polite-statement. enter — polite, tea — drink — let's."
+        }
+      ],
+      "grammars": [
+        {
+          "title": "⚠️ ကျွန်တော် vs ကျွန်မ — \"I\" depends on the SPEAKER'S gender",
+          "body": [
+            "English uses one word, \"I\", for everyone. Burmese doesn't. The word you choose depends on **who is speaking**, not on who you're speaking to — and that choice never changes for the rest of the conversation."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Speaker",
+                "Word",
+                "Say it",
+                "Possessive form"
+              ],
+              "rows": [
+                [
+                  "a man",
+                  "ကျွန်တော်",
+                  "*cha.nò*",
+                  "ကျွန်တော့် — *cha.nò.*"
+                ],
+                [
+                  "a woman",
+                  "ကျွန်မ",
+                  "*cha.ma.*",
+                  "ကျွန်မ — *cha.ma.*"
+                ],
+                [
+                  "casual, between friends",
+                  "ငါ",
+                  "*nga*",
+                  "ငါ့ — *nga.*"
+                ],
+                [
+                  "we",
+                  "…တို့ added",
+                  "*doh.*",
+                  "ကျွန်တော်တို့ — *cha.nò-doh.*"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "The **possessive** is made by switching the last syllable to the creaky tone — shown by the dot under တော့်. ကျွန်တော် (I) → ကျွန်တော့် (my). ကျွန်မ doesn't change at all, because its tone is already creaky.",
+            "⚠️ ငါ is only for close friends, younger siblings, or children. Using it with someone you've just met sounds rude — far ruder than a casual \"yo\" in English. For your whole first year, use ကျွန်တော်/ကျွန်မ with everyone and you'll never get it wrong."
+          ]
+        },
+        {
+          "title": "ပါ — one syllable that changes your whole tone",
+          "body": [
+            "ပါ (*ba*) has no meaning of its own. It's a politeness particle, and it's what separates a courteous sentence from one that sounds cold. It can go almost anywhere: after a name, after a verb, after a command."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Without ပါ",
+                "With ပါ",
+                "The difference"
+              ],
+              "rows": [
+                [
+                  "နေကောင်းတယ် — *nay-kowⁿ:-dè*",
+                  "နေကောင်းပါတယ် — *nay-kowⁿ:-ba-dè*",
+                  "\"fine\" → \"fine, thank you\""
+                ],
+                [
+                  "ဝင် — *wiⁿ*",
+                  "ဝင်ပါ — *wiⁿ-ba*",
+                  "\"get in!\" → \"please come in\""
+                ],
+                [
+                  "အာနီ — *a-nee*",
+                  "အာနီပါ — *a-nee-ba*",
+                  "\"Ani.\" → \"My name is Ani.\""
+                ],
+                [
+                  "မလာဘူး — *ma.la-boo:*",
+                  "မလာပါဘူး — *ma.la-ba-boo:*",
+                  "\"not coming\" → \"sorry, I can't come\""
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "It's pronounced *ba*, not *pa*, because it leans on the word before it. This p → b change happens all over Burmese and you'll meet it constantly; this book always writes the sound you **actually hear**, not the letter on the page."
+          ]
+        },
+        {
+          "title": "Greetings and goodbyes",
+          "body": [
+            "မင်္ဂလာပါ comes from the Pali word *maṅgala*, \"blessing\" — related to the Sanskrit *mangala* you may know from yoga or Buddhist chants. Use it any time, morning to night."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Burmese",
+                "Say it",
+                "English"
+              ],
+              "rows": [
+                [
+                  "မင်္ဂလာပါ",
+                  "*miⁿ-ga-la-ba*",
+                  "hello (any time)"
+                ],
+                [
+                  "နေကောင်းလား",
+                  "*nay-kowⁿ:-la:*",
+                  "how are you?"
+                ],
+                [
+                  "နေကောင်းပါတယ်",
+                  "*nay-kowⁿ:-ba-dè*",
+                  "I'm fine"
+                ],
+                [
+                  "ကျေးဇူးတင်ပါတယ်",
+                  "*chay:-zoo:-tiⁿ-ba-dè*",
+                  "thank you"
+                ],
+                [
+                  "ရပါတယ်",
+                  "*ya.-ba-dè*",
+                  "you're welcome; no problem"
+                ],
+                [
+                  "တောင်းပန်ပါတယ်",
+                  "*towⁿ:-paⁿ-ba-dè*",
+                  "sorry"
+                ],
+                [
+                  "သွားတော့မယ်",
+                  "*thwa:-dò.-mè*",
+                  "I'll be going now"
+                ],
+                [
+                  "တွေ့မယ်နော်",
+                  "*tway.-mè-nò*",
+                  "see you"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ နေကောင်းလား literally means \"live — well — Q?\", so the answer uses the verb too: နေကောင်းပါတယ်, not just \"well\". Answering with a single word sounds like you're cutting the conversation short."
+          ]
+        },
+        {
+          "title": "…လား and answering yes or no",
+          "body": [
+            "Asking a question in Burmese doesn't require flipping anything around. Just put **လား** (*la:*) at the end of the sentence, and a statement becomes a yes-or-no question."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Sentence",
+                "Say it",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "မြန်မာစကား ပြောတတ်တယ်",
+                  "*myaⁿ-ma-za.ga: pyò:-tak-tè*",
+                  "can speak Burmese"
+                ],
+                [
+                  "မြန်မာစကား ပြောတတ်လား",
+                  "*…pyò:-tak-la:*",
+                  "can (you) speak Burmese?"
+                ],
+                [
+                  "ဟုတ်ကဲ့",
+                  "*hohk-kè.*",
+                  "yes (used by women and men)"
+                ],
+                [
+                  "ဟုတ်တယ်",
+                  "*hohk-tè*",
+                  "right, that's so"
+                ],
+                [
+                  "မဟုတ်ဘူး",
+                  "*ma.hohk-boo:*",
+                  "no, it isn't"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Burmese negation uses **two** parts at once: **မ** before the verb and **ဘူး** after it. မဟုတ်ဘူး = မ + ဟုတ် + ဘူး. Forgetting one of them is the number-one beginner mistake, and you'll meet this pattern in every unit from here on."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Introducing yourself in four sentences",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These four sentences are enough for an entire first introduction. Learn them as one block, then swap in your own details. The lines use the male form; women simply swap ကျွန်တော် for ကျွန်မ."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Burmese",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "Hello.",
+              "မင်္ဂလာပါ။",
+              "*miⁿ-ga-la-ba*"
+            ],
+            [
+              "My name is Budi.",
+              "ကျွန်တော့်နာမည် ဗူဒီ ပါ။",
+              "*cha.nò. na-mè boo-dee ba*"
+            ],
+            [
+              "I'm from Indonesia.",
+              "ကျွန်တော် အင်ဒိုနီးရှား က ပါ။",
+              "*cha.nò iⁿ-doh-nee:-sha: ga. ba*"
+            ],
+            [
+              "I'm learning Burmese.",
+              "မြန်မာစကား သင်နေပါတယ်။",
+              "*myaⁿ-ma-za.ga: thiⁿ-nay-ba-dè*"
+            ],
+            [
+              "Nice to meet you.",
+              "တွေ့ရတာ ဝမ်းသာပါတယ်။",
+              "*tway.-ya.-da waⁿ:-tha-ba-dè*"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two things that make you sound natural right away",
+          "items": [
+            "**Use the other person's name, not \"you\".** People in Myanmar say \"Would Ani like some tea?\" rather than \"Would you like some tea?\". Using the name sounds warm; using a pronoun sounds distant.",
+            "**Add ရော (*yò:*) to bounce a question back.** After answering how you are, just say the other person's name followed by ရော — မင်းအောင်ရော။ It's the same as \"and you?\" and saves you a whole sentence."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "my": "မင်္ဂလာပါ",
+      "baca": "miⁿ-ga-la-ba",
+      "en": "hello — from Pali *maṅgala*, blessing"
+    },
+    {
+      "my": "ကျွန်တော်",
+      "baca": "cha.nò",
+      "en": "I (male speaker)"
+    },
+    {
+      "my": "ကျွန်မ",
+      "baca": "cha.ma.",
+      "en": "I (female speaker)"
+    },
+    {
+      "my": "နာမည်",
+      "baca": "na-mè",
+      "en": "name"
+    },
+    {
+      "my": "ပါ",
+      "baca": "ba",
+      "en": "politeness particle"
+    },
+    {
+      "my": "ဟုတ်ကဲ့",
+      "baca": "hohk-kè.",
+      "en": "yes"
+    },
+    {
+      "my": "မဟုတ်ဘူး",
+      "baca": "ma.hohk-boo:",
+      "en": "no, it isn't"
+    },
+    {
+      "my": "နေကောင်းလား",
+      "baca": "nay-kowⁿ:-la:",
+      "en": "how are you?"
+    },
+    {
+      "my": "ကောင်းတယ်",
+      "baca": "kowⁿ:-dè",
+      "en": "good, fine"
+    },
+    {
+      "my": "ကျေးဇူးတင်ပါတယ်",
+      "baca": "chay:-zoo:-tiⁿ-ba-dè",
+      "en": "thank you"
+    },
+    {
+      "my": "အင်ဒိုနီးရှား",
+      "baca": "iⁿ-doh-nee:-sha:",
+      "en": "Indonesia"
+    },
+    {
+      "my": "မြန်မာ",
+      "baca": "myaⁿ-ma",
+      "en": "Myanmar; Burmese"
+    },
+    {
+      "my": "စကား",
+      "baca": "za.ga:",
+      "en": "spoken language, speech"
+    },
+    {
+      "my": "ပြောတယ်",
+      "baca": "pyò:-dè",
+      "en": "to speak, to say"
+    },
+    {
+      "my": "တတ်တယ်",
+      "baca": "tak-tè",
+      "en": "can (through training/skill)"
+    },
+    {
+      "my": "နည်းနည်း",
+      "baca": "nè:-nè:",
+      "en": "a little"
+    },
+    {
+      "my": "သင်တယ်",
+      "baca": "thiⁿ-dè",
+      "en": "to learn, to study"
+    },
+    {
+      "my": "နေတယ်",
+      "baca": "nay-dè",
+      "en": "to live, to stay; -ing"
+    },
+    {
+      "my": "လည်း",
+      "baca": "lè:",
+      "en": "also, too"
+    },
+    {
+      "my": "ရော",
+      "baca": "yò:",
+      "en": "and …? what about …?"
+    },
+    {
+      "my": "ဒါ",
+      "baca": "da",
+      "en": "this, that"
+    },
+    {
+      "my": "ဒီမှာ",
+      "baca": "dee-hma",
+      "en": "here"
+    },
+    {
+      "my": "အစ်မ",
+      "baca": "a.ma.",
+      "en": "older sister"
+    },
+    {
+      "my": "အစ်ကို",
+      "baca": "a.koh",
+      "en": "older brother"
+    },
+    {
+      "my": "တွေ့တယ်",
+      "baca": "tway.-dè",
+      "en": "to meet"
+    },
+    {
+      "my": "ဝမ်းသာတယ်",
+      "baca": "waⁿ:-tha-dè",
+      "en": "glad, happy"
+    },
+    {
+      "my": "တော်တယ်",
+      "baca": "tò-dè",
+      "en": "clever, great"
+    },
+    {
+      "my": "ဝင်တယ်",
+      "baca": "wiⁿ-dè",
+      "en": "to enter, to come in"
+    },
+    {
+      "my": "လက်ဖက်ရည်",
+      "baca": "la.hpèk-yay",
+      "en": "tea"
+    },
+    {
+      "my": "သောက်တယ်",
+      "baca": "thowk-tè",
+      "en": "to drink"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose ကျွန်တော် or ကျွန်မ to match the speaker.",
+      "items": [
+        "Budi says: ____ နာမည် ဗူဒီ ပါ။",
+        "Sari says: ____ နာမည် ဆာရီ ပါ။",
+        "Min Aung says: ____ အင်ဒိုနီးရှား က မဟုတ်ဘူး။",
+        "Mya Mya says: ____ လည်း နေကောင်းပါတယ်။"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with ပါ, လား, or ဘူး.",
+      "items": [
+        "နေကောင်း____။",
+        "မင်္ဂလာ____။",
+        "မဟုတ်____။",
+        "မြန်မာစကား ပြောတတ်____။"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order. Remember: the verb and its ending go at the end.",
+      "items": [
+        "ပါ / နာမည် / အာနီ / ကျွန်မ",
+        "လား / စကား / ပြောတတ် / မြန်မာ",
+        "ပါတယ် / နေကောင်း / လည်း / ကျွန်တော်",
+        "ပါ / က / အင်ဒိုနီးရှား / ကျွန်မ"
+      ]
+    },
+    {
+      "prompt": "Translate into Burmese.",
+      "items": [
+        "Hello. My name is Sari.",
+        "I'm from Jakarta.",
+        "How are you?",
+        "Thank you.",
+        "I'm learning Burmese.",
+        "This is my older sister."
+      ]
+    }
+  ],
+  "answers": [
+    "ကျွန်တော် — ကျွန်မ — ကျွန်တော် — ကျွန်မ",
+    "လား — ပါ — ဘူး — လား",
+    "ကျွန်မနာမည် အာနီပါ။ — မြန်မာစကား ပြောတတ်လား။ — ကျွန်တော်လည်း နေကောင်းပါတယ်။ — ကျွန်မ အင်ဒိုနီးရှားကပါ။",
+    "မင်္ဂလာပါ။ ကျွန်မနာမည် ဆာရီပါ။ — ကျွန်မ ဂျာကာတာကပါ။ — နေကောင်းလား။ — ကျေးဇူးတင်ပါတယ်။ — မြန်မာစကား သင်နေပါတယ်။ — ဒါ ကျွန်မအစ်မပါ။"
+  ]
+}

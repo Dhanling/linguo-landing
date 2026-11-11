@@ -1,0 +1,625 @@
+{
+  "title": "Directions and transportation: getting where you're going",
+  "title_target": "ໄປແນວໃດ — Pai neeo-dai",
+  "goal": "Ask for directions, understand the answer, bargain over a tuk-tuk fare, and tell the driver to stop in the right place — in sentences short enough to use while standing at the roadside.",
+  "bekal": [
+    "ask for directions with ໄປແນວໃດ and ຢູ່ໃສ",
+    "left, right, straight, turn",
+    "bargain over the fare with ຄ່າລົດເທົ່າໃດ",
+    "tell the driver to stop with ຈອດ",
+    "ask about distance with ໄກບໍ່ and ຈັກກິໂລ"
+  ],
+  "dialogs": [
+    {
+      "title": "ບົດສົນທະນາ — To Wat Sisaket by tuk-tuk",
+      "intro": "Budi is bargaining for a ride. Notice that the price is always agreed BEFORE getting in — there's no meter, and asking halfway there is too late.",
+      "lines": [
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ສະບາຍດີ|Sa-baai-dii] [ໄປ|Pai][ວັດ|wat][ສີສະເກດ|Sǐi-sa-kèet][ບໍ່|bàw]",
+          "id": "Hello. Can you take me to Wat Sisaket?",
+          "literal": "well-good. go — temple — Sisaket — (question)?"
+        },
+        {
+          "speaker": "ຄົນຂັບ:",
+          "text": "[ໄປ|Pai] [ຄ່າ|Khàa][ລົດ|lot][ຫ້າ|hāa][ສິບ|síp][ພັນ|phán]",
+          "id": "Sure. The fare is fifty thousand.",
+          "literal": "go. cost — vehicle — five — ten — thousand."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ແພງ|Pheeng][ໄປ|pai] [ໄກ|Kai][ບໍ່|bàw] [ຈັກ|Ják][ກິໂລ|ki-lóo]",
+          "id": "Too expensive. Is it far? How many kilometers?",
+          "literal": "expensive — too. far — (question)? how-many — kilo?"
+        },
+        {
+          "speaker": "ຄົນຂັບ:",
+          "text": "[ບໍ່|Bàw][ໄກ|kai] [ສາມ|Sǎam][ກິໂລ|ki-lóo][ເທົ່າ|thao][ນັ້ນ|nân]",
+          "id": "Not far. Just three kilometers.",
+          "literal": "not — far. three — kilo — only — that."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ຄັນ|Khán][ຊັ້ນ|sân] [ສາມ|sǎam][ສິບ|síp][ພັນ|phán][ໄດ້|dâi][ບໍ່|bàw]",
+          "id": "Then would thirty thousand work?",
+          "literal": "if — so — three — ten — thousand — can — (question)?"
+        },
+        {
+          "speaker": "ຄົນຂັບ:",
+          "text": "[ສີ່|Sìi][ສິບ|síp][ພັນ|phán] [ຂຶ້ນ|Khʉ̂n][ມາ|maa][ເລີຍ|lóei]",
+          "id": "Forty thousand. Hop in.",
+          "literal": "four — ten — thousand. get-on — come — right-away."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ໄດ້|Dâi] [ໄປ|Pai][ແນວ|neeo][ໃດ|dai] [ຜ່ານ|Phàan][ຕະຫຼາດ|ta-làat][ບໍ່|bàw]",
+          "id": "Okay. Which way do we go? Past the market?",
+          "literal": "can. go — way — which? pass — market — (question)?"
+        },
+        {
+          "speaker": "ຄົນຂັບ:",
+          "text": "[ຜ່ານ|Phàan] [ໄປ|Pai][ຊື່ໆ|sʉ̂ʉ-sʉ̂ʉ][ແລ້ວ|lèeo][ລ້ຽວ|lîao][ຂວາ|khwǎa][ຢູ່|yùu][ໄຟ|fái][ແດງ|deeng]",
+          "id": "Yes. Straight ahead, then right at the traffic light.",
+          "literal": "pass. go — straight-straight — then — turn — right — at — fire — red."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ວັດ|Wat][ຢູ່|yùu][ເບື້ອງ|bʉ̂ang][ໃດ|dai]",
+          "id": "Which side is the temple on?",
+          "literal": "temple — be-at — side — which?"
+        },
+        {
+          "speaker": "ຄົນຂັບ:",
+          "text": "[ເບື້ອງ|Bʉ̂ang][ຊ້າຍ|sâai] [ຢູ່|Yùu][ກົງ|kong][ຂ້າມ|khàam][ຫໍ|hǎw][ພະແກ້ວ|Pha-Kêeo]",
+          "id": "On the left, right across from Haw Phra Kaew.",
+          "literal": "side — left. be-at — straight — across — hall — Phra-Kaew."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ຮອດ|Hâwt][ແລ້ວ|lèeo][ບອກ|bàwk][ແດ່|dèe][ເດີ້|dòe] [ຈອດ|Jàwt][ຢູ່|yùu][ນີ້|nîi][ໄດ້|dâi][ບໍ່|bàw]",
+          "id": "Tell me when we get there. Can you stop here?",
+          "literal": "arrive — already — tell — a-bit — (friendly). stop — at — here — can — (question)?"
+        },
+        {
+          "speaker": "ຄົນຂັບ:",
+          "text": "[ໄດ້|Dâi] [ຮອດ|Hâwt][ແລ້ວ|lèeo] [ວັດ|Wat][ຢູ່|yùu][ພຸ້ນ|phûn]",
+          "id": "Sure. We're here. The temple is over there.",
+          "literal": "can. arrive — already. temple — be-at — over-there."
+        }
+      ],
+      "notes": [
+        "**ໄປແນວໃດ pai neeo-dai = \"how do I get there, which way.\"** The word *ແນວໃດ neeo-dai* means \"how\" and always goes at the end. To ask where something is, use *ຢູ່ໃສ yùu sǎi*: *ວັດຢູ່ໃສ* (where's the temple).",
+        "**ຄ່າ khàa means \"cost, fee,\" and goes in front of the thing.** *ຄ່າລົດ* (fare), *ຄ່າຫ້ອງ* (room rate), *ຄ່າອາຫານ* (cost of food), *ຄ່າໄຟ* (electricity bill). ⚠️ Don't mix it up with *ຂ້າ khàa* (to kill), which has a low tone.",
+        "**ແພງໄປ pheeng pai = \"too expensive.\"** *ໄປ pai* after an adjective means \"too, overly\": *ໄກໄປ* (too far), *ນ້ອຍໄປ* (too small), *ຊ້າໄປ* (too slow). A cheap and very useful add-on.",
+        "**Agree on the price BEFORE you get in.** Tuk-tuks and songthaews have no meters, and a price you didn't agree on will be agreed for you at the destination. Asking *ຄ່າລົດເທົ່າໃດ* before stepping in is a must-do habit, not a sign of distrust.",
+        "**ຂຶ້ນ khʉ̂n = get on, go up; ລົງ lóng = get off, go down.** Both work for vehicles and stairs: *ຂຶ້ນລົດ* (get in a vehicle), *ລົງລົດ* (get out of a vehicle), *ຂຶ້ນຂັ້ນໄດ* (go up the stairs). The same word appears in *ຂຶ້ນລາຄາ* (prices go up).",
+        "**ຈອດ jàwt = \"stop and park.\"** To tell a driver to stop, say *ຈອດຢູ່ນີ້ jàwt yùu nîi* (stop here). *ຢຸດ yút* also means stop, but more in the sense of stopping movement — not pulling over.",
+        "**ຮອດ hâwt = \"to arrive, to reach.\"** *ຮອດແລ້ວ* (we're here), *ຍັງບໍ່ທັນຮອດ* (not there yet). ⚠️ This word is typically Lao; the Thai equivalent is *ถึง thʉ̌ng*, which also exists in Lao (*ເຖິງ*) but is more formal.",
+        "**ເບື້ອງ bʉ̂ang = \"side,\" used for left and right.** *ເບື້ອງຊ້າຍ* (on the left), *ເບື້ອງຂວາ* (on the right). For turning, the verb is *ລ້ຽວ lîao*: *ລ້ຽວຊ້າຍ* (turn left).",
+        "**ກົງຂ້າມ kong khàam = \"directly across from,\" and ຂ້າງ khàang = \"next to.\"** These two words cover almost every location people give when explaining the way."
+      ],
+      "grammars": [
+        {
+          "title": "Directions and positions",
+          "table": {
+            "head": [
+              "Lao",
+              "Say it",
+              "English",
+              "Lao",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "ຊື່ໆ",
+                "*sʉ̂ʉ-sʉ̂ʉ*",
+                "straight ahead",
+                "ຂ້າງ",
+                "*khàang*",
+                "next to"
+              ],
+              [
+                "ລ້ຽວຊ້າຍ",
+                "*lîao sâai*",
+                "turn left",
+                "ກົງຂ້າມ",
+                "*kong khàam*",
+                "across from"
+              ],
+              [
+                "ລ້ຽວຂວາ",
+                "*lîao khwǎa*",
+                "turn right",
+                "ຫຼັງ",
+                "*lǎng*",
+                "behind"
+              ],
+              [
+                "ເບື້ອງຊ້າຍ",
+                "*bʉ̂ang sâai*",
+                "on the left",
+                "ໜ້າ",
+                "*nâa*",
+                "in front of"
+              ],
+              [
+                "ເບື້ອງຂວາ",
+                "*bʉ̂ang khwǎa*",
+                "on the right",
+                "ໃນ",
+                "*nai*",
+                "inside"
+              ],
+              [
+                "ກັບຫຼັງ",
+                "*kap lǎng*",
+                "make a U-turn",
+                "ນອກ",
+                "*nàwk*",
+                "outside"
+              ],
+              [
+                "ຜ່ານ",
+                "*phàan*",
+                "go past",
+                "ເທິງ",
+                "*thóeng*",
+                "above, on"
+              ],
+              [
+                "ຮອດ",
+                "*hâwt*",
+                "arrive at",
+                "ລຸ່ມ",
+                "*lùm*",
+                "below, under"
+              ]
+            ]
+          },
+          "after": [
+            "To give directions, Lao people string steps together with *ແລ້ວ lèeo* (then): *ໄປຊື່ໆ ແລ້ວລ້ຽວຂວາ ແລ້ວກໍຮອດ* — \"straight, then right, then you're there.\" Simple and enough."
+          ]
+        },
+        {
+          "title": "Transportation and public places",
+          "table": {
+            "head": [
+              "Lao",
+              "Say it",
+              "English",
+              "Lao",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "ຕຸກຕຸກ",
+                "*túk-túk*",
+                "tuk-tuk",
+                "ສະຖານີລົດເມ",
+                "*sa-thǎa-níi lot-mée*",
+                "bus station"
+              ],
+              [
+                "ລົດເມ",
+                "*lot-mée*",
+                "bus",
+                "ສະໜາມບິນ",
+                "*sa-nǎam bin*",
+                "airport"
+              ],
+              [
+                "ລົດຈັກ",
+                "*lot-ják*",
+                "motorbike",
+                "ໂຮງໝໍ",
+                "*hoong-mǎw*",
+                "hospital"
+              ],
+              [
+                "ລົດຖີບ",
+                "*lot-thìip*",
+                "bicycle",
+                "ຕະຫຼາດ",
+                "*ta-làat*",
+                "market"
+              ],
+              [
+                "ລົດໄຟ",
+                "*lot-fái*",
+                "train",
+                "ທະນາຄານ",
+                "*tha-náa-kháan*",
+                "bank"
+              ],
+              [
+                "ເຮືອ",
+                "*hʉa*",
+                "boat",
+                "ໄປສະນີ",
+                "*pai-sa-níi*",
+                "post office"
+              ],
+              [
+                "ຍ່າງ",
+                "*nyàang*",
+                "on foot",
+                "ວັດ",
+                "*wat*",
+                "temple"
+              ],
+              [
+                "ແທັກຊີ",
+                "*thek-síi*",
+                "taxi",
+                "ຮ້ານກາເຟ",
+                "*hâan kaa-fée*",
+                "coffee shop"
+              ]
+            ]
+          },
+          "after": [
+            "Notice the prefix **ລົດ *lot***, meaning \"vehicle,\" which attaches in front of the type: *ລົດຈັກ* (engine vehicle = motorbike), *ລົດຖີບ* (pedal vehicle = bicycle), *ລົດໄຟ* (fire vehicle = train). If you hear *lot-* at the start, it's something that moves."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Sentences that will get you anywhere",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Lao",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ໄປ… ບໍ່",
+              "*pai… bàw*",
+              "can you take me to…? (to a driver)"
+            ],
+            [
+              "ຄ່າລົດເທົ່າໃດ",
+              "*khàa lot thao-dai*",
+              "how much is the fare?"
+            ],
+            [
+              "ແພງໄປ ຫຼຸດແດ່",
+              "*pheeng pai, lut dèe*",
+              "too expensive, lower it"
+            ],
+            [
+              "…ຢູ່ໃສ",
+              "*…yùu sǎi*",
+              "where is…?"
+            ],
+            [
+              "ໄປ…ແນວໃດ",
+              "*pai… neeo-dai*",
+              "how do I get to…?"
+            ],
+            [
+              "ໄກບໍ່",
+              "*kai bàw*",
+              "is it far?"
+            ],
+            [
+              "ຍ່າງໄປໄດ້ບໍ່",
+              "*nyàang pai dâi bàw*",
+              "can I walk there?"
+            ],
+            [
+              "ໃຊ້ເວລາຈັກນາທີ",
+              "*sâi wée-láa ják náa-thíi*",
+              "how many minutes does it take?"
+            ],
+            [
+              "ຈອດຢູ່ນີ້",
+              "*jàwt yùu nîi*",
+              "stop here"
+            ],
+            [
+              "ຮອດແລ້ວບອກແດ່",
+              "*hâwt lèeo bàwk dèe*",
+              "tell me when we get there"
+            ],
+            [
+              "ຂ້ອຍຫຼົງທາງ",
+              "*khàwy lǒng tháang*",
+              "I'm lost"
+            ],
+            [
+              "ຊ່ວຍພາໄປແດ່",
+              "*sùay phaa pai dèe*",
+              "please take me there"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last two sentences are your safety net. Saying *ຂ້ອຍຫຼົງທາງ* while showing an address on your phone almost always ends with someone taking you there — in Laos, helping a lost person counts as building *ບຸນ* (merit), and people do it gladly."
+        }
+      ]
+    },
+    {
+      "title": "Asking about distance and travel time",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Say it",
+            "Possible answers"
+          ],
+          "rows": [
+            [
+              "ໄກບໍ່",
+              "*kai bàw*",
+              "*ບໍ່ໄກ* / *ໄກໜ້ອຍໜຶ່ງ* / *ໄກຫຼາຍ*"
+            ],
+            [
+              "ຈັກກິໂລ",
+              "*ják ki-lóo*",
+              "*ສາມກິໂລ* — three kilometers"
+            ],
+            [
+              "ໃຊ້ເວລາດົນບໍ່",
+              "*sâi wée-láa dón bàw*",
+              "*ສິບນາທີ* — ten minutes"
+            ],
+            [
+              "ຍ່າງໄປໄດ້ບໍ່",
+              "*nyàang pai dâi bàw*",
+              "*ໄດ້* / *ບໍ່ໄດ້ ໄກໂພດ*"
+            ],
+            [
+              "ມີລົດເມໄປບໍ່",
+              "*míi lot-mée pai bàw*",
+              "*ມີ* / *ບໍ່ມີ*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**ໂພດ *phôot*** is the twin of *ໄປ pai* for \"too,\" and a bit stronger: *ໄກໂພດ* (way too far), *ແພງໂພດ* (way too expensive). Both are correct; *ໂພດ* sounds more Lao, *ໄປ* more neutral."
+        },
+        {
+          "type": "p",
+          "text": "A practical note about distances in Vientiane: the city is flat and small, and most sights are within three kilometers of the Mekong riverfront. Before bargaining with a tuk-tuk, first ask *ຍ່າງໄປໄດ້ບໍ່* — the answer is often \"yes,\" and walking in the late afternoon is the best way to see the city."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "lo": "ແນວໃດ",
+      "baca": "neeo-dai",
+      "en": "how"
+    },
+    {
+      "lo": "ຄ່າ",
+      "baca": "khàa",
+      "en": "cost, fee"
+    },
+    {
+      "lo": "ຄ່າລົດ",
+      "baca": "khàa lot",
+      "en": "fare"
+    },
+    {
+      "lo": "ຕຸກຕຸກ",
+      "baca": "túk-túk",
+      "en": "tuk-tuk"
+    },
+    {
+      "lo": "ລົດເມ",
+      "baca": "lot-mée",
+      "en": "bus"
+    },
+    {
+      "lo": "ລົດຈັກ",
+      "baca": "lot-ják",
+      "en": "motorbike"
+    },
+    {
+      "lo": "ຂຶ້ນ",
+      "baca": "khʉ̂n",
+      "en": "to get on, to go up"
+    },
+    {
+      "lo": "ລົງ",
+      "baca": "lóng",
+      "en": "to get off, to go down"
+    },
+    {
+      "lo": "ຈອດ",
+      "baca": "jàwt",
+      "en": "to stop, to park"
+    },
+    {
+      "lo": "ຮອດ",
+      "baca": "hâwt",
+      "en": "to arrive"
+    },
+    {
+      "lo": "ຜ່ານ",
+      "baca": "phàan",
+      "en": "to go past"
+    },
+    {
+      "lo": "ຊື່ໆ",
+      "baca": "sʉ̂ʉ-sʉ̂ʉ",
+      "en": "straight ahead"
+    },
+    {
+      "lo": "ລ້ຽວ",
+      "baca": "lîao",
+      "en": "to turn"
+    },
+    {
+      "lo": "ຊ້າຍ",
+      "baca": "sâai",
+      "en": "left"
+    },
+    {
+      "lo": "ຂວາ",
+      "baca": "khwǎa",
+      "en": "right"
+    },
+    {
+      "lo": "ເບື້ອງ",
+      "baca": "bʉ̂ang",
+      "en": "side"
+    },
+    {
+      "lo": "ກົງຂ້າມ",
+      "baca": "kong khàam",
+      "en": "across from"
+    },
+    {
+      "lo": "ຂ້າງ",
+      "baca": "khàang",
+      "en": "next to"
+    },
+    {
+      "lo": "ໄຟແດງ",
+      "baca": "fái deeng",
+      "en": "traffic light"
+    },
+    {
+      "lo": "ທາງ",
+      "baca": "tháang",
+      "en": "road, way"
+    },
+    {
+      "lo": "ຫຼົງທາງ",
+      "baca": "lǒng tháang",
+      "en": "to get lost"
+    },
+    {
+      "lo": "ບອກ",
+      "baca": "bàwk",
+      "en": "to tell"
+    },
+    {
+      "lo": "ພາ",
+      "baca": "phaa",
+      "en": "to take, to bring"
+    },
+    {
+      "lo": "ຊ່ວຍ",
+      "baca": "sùay",
+      "en": "to help; please…"
+    },
+    {
+      "lo": "ກິໂລ",
+      "baca": "ki-lóo",
+      "en": "kilometer, kilogram"
+    },
+    {
+      "lo": "ໃຊ້ເວລາ",
+      "baca": "sâi wée-láa",
+      "en": "to take (time)"
+    },
+    {
+      "lo": "ໂພດ",
+      "baca": "phôot",
+      "en": "too (much)"
+    },
+    {
+      "lo": "ວັດ",
+      "baca": "wat",
+      "en": "temple"
+    },
+    {
+      "lo": "ສະໜາມບິນ",
+      "baca": "sa-nǎam bin",
+      "en": "airport"
+    },
+    {
+      "lo": "ທະນາຄານ",
+      "baca": "tha-náa-kháan",
+      "en": "bank"
+    },
+    {
+      "lo": "ໂຮງໝໍ",
+      "baca": "hoong-mǎw",
+      "en": "hospital"
+    },
+    {
+      "lo": "ສະຖານີ",
+      "baca": "sa-thǎa-níi",
+      "en": "station"
+    },
+    {
+      "lo": "ເຮືອ",
+      "baca": "hʉa",
+      "en": "boat"
+    },
+    {
+      "lo": "ແທັກຊີ",
+      "baca": "thek-síi",
+      "en": "taxi"
+    },
+    {
+      "lo": "ຢຸດ",
+      "baca": "yút",
+      "en": "to stop"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in with ຢູ່ໃສ, ແນວໃດ, ໄກບໍ່, or ເທົ່າໃດ.",
+      "items": [
+        "ວັດ____ (where's the temple?)",
+        "ໄປຕະຫຼາດ____ (how do I get to the market?)",
+        "ຄ່າລົດ____ (how much is the fare?)",
+        "ສະໜາມບິນ____ (is the airport far?)",
+        "ຫ້ອງນ້ຳ____ (where's the restroom?)"
+      ]
+    },
+    {
+      "prompt": "Translate these directions into Lao.",
+      "items": [
+        "straight ahead",
+        "turn left at the traffic light",
+        "on the right",
+        "across from the bank",
+        "past the market"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ບໍ່ / ຈອດ / ໄດ້ / ຢູ່ນີ້",
+        "ແດ່ / ບອກ / ຮອດແລ້ວ",
+        "ໄປ / ແພງ / ຫຼຸດແດ່",
+        "ບໍ່ / ໄດ້ / ຍ່າງໄປ",
+        "ຫຼົງທາງ / ຂ້ອຍ"
+      ]
+    },
+    {
+      "prompt": "Translate into Lao.",
+      "items": [
+        "Can you take me to Wat Sisaket?",
+        "How much is the fare?",
+        "Too expensive. Is it far?",
+        "Would thirty thousand work?",
+        "Straight ahead, then right at the traffic light.",
+        "Can you stop here?"
+      ]
+    }
+  ],
+  "answers": [
+    "ຢູ່ໃສ — ແນວໃດ — ເທົ່າໃດ — ໄກບໍ່ — ຢູ່ໃສ",
+    "ໄປຊື່ໆ — ລ້ຽວຊ້າຍຢູ່ໄຟແດງ — ເບື້ອງຂວາ — ກົງຂ້າມທະນາຄານ — ຜ່ານຕະຫຼາດ",
+    "ຈອດຢູ່ນີ້ໄດ້ບໍ່ — ຮອດແລ້ວບອກແດ່ — ແພງໄປ ຫຼຸດແດ່ — ຍ່າງໄປໄດ້ບໍ່ — ຂ້ອຍຫຼົງທາງ",
+    "ໄປວັດສີສະເກດບໍ່ — ຄ່າລົດເທົ່າໃດ — ແພງໄປ ໄກບໍ່ — ສາມສິບພັນໄດ້ບໍ່ — ໄປຊື່ໆ ແລ້ວລ້ຽວຂວາຢູ່ໄຟແດງ — ຈອດຢູ່ນີ້ໄດ້ບໍ່"
+  ],
+  "wave": "Review Unit 6: cover the Lao, then describe a whole day from getting up to going to bed — with the times."
+}

@@ -1,0 +1,506 @@
+{
+  "title": "One coffee, please",
+  "title_target": "ერთი ყავა, თუ შეიძლება — Erti q'ava, tu sheidzleba",
+  "goal": "Order drinks and food at a café, say what you want, and tackle the sound ყ for the first time — in a word you'll say every morning.",
+  "bekal": [
+    "order with the pattern ერთი … თუ შეიძლება",
+    "say მინდა (I want) and არ მინდა (I don't want)",
+    "ask whether something is available: … გაქვთ?",
+    "ask for the bill and pay",
+    "pronounce ყავა with the right ყ sound"
+  ],
+  "dialogs": [
+    {
+      "title": "დიალოგი — At a café near Rustaveli",
+      "intro": "Ani walks into a small café and orders breakfast. The server, Sopo, talks fast like servers everywhere — notice how Ani uses the same single pattern for everything she orders.",
+      "lines": [
+        {
+          "speaker": "სოფო:",
+          "text": "[გამარჯობა|Ga-mar-jo-ba]! [რას|Ras] [ისურვებთ|i-sur-vebt]?",
+          "id": "Hello! What would you like?",
+          "literal": "hello! what — you-formal-wish?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[გამარჯობა|Ga-mar-jo-ba]. [ერთი|Er-ti] [ყავა|q'a-va], [თუ|tu] [შეიძლება|she-idz-le-ba].",
+          "id": "Hello. One coffee, please.",
+          "literal": "hello. one — coffee, if — possible."
+        },
+        {
+          "speaker": "სოფო:",
+          "text": "[რძით|Rdzit] [თუ|tu] [რძის|rdzis] [გარეშე|ga-re-she]?",
+          "id": "With milk or without?",
+          "literal": "milk-with — or — milk's — without?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[რძით|Rdzit], [თუ|tu] [შეიძლება|she-idz-le-ba]. [შაქარი|Sha-ka-ri] [არ|ar] [მინდა|min-da].",
+          "id": "With milk, please. No sugar.",
+          "literal": "milk-with, if — possible. sugar — not — I-want."
+        },
+        {
+          "speaker": "სოფო:",
+          "text": "[კარგი|K'ar-gi]. [სხვა|Skhva] [რამე|ra-me]?",
+          "id": "Okay. Anything else?",
+          "literal": "good. other — something?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ხაჭაპური|Kha-ch'a-p'u-ri] [გაქვთ|gakvt]?",
+          "id": "Do you have khachapuri?",
+          "literal": "khachapuri — you-pl-have?"
+        },
+        {
+          "speaker": "სოფო:",
+          "text": "[კი|K'i], [იმერული|i-me-ru-li] [და|da] [აჭარული|a-ch'a-ru-li] [გვაქვს|gvakvs].",
+          "id": "Yes, we have Imeretian and Adjarian.",
+          "literal": "yes, Imeretian — and — Adjarian — we-have."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[რა|Ra] [განსხვავებაა|gans-khva-ve-ba-a]?",
+          "id": "What's the difference?",
+          "literal": "what — difference-is?"
+        },
+        {
+          "speaker": "სოფო:",
+          "text": "[აჭარული|A-ch'a-ru-li] [კვერცხით|k'verts-khit] [არის|a-ris], [ნავივით|na-vi-vit].",
+          "id": "The Adjarian one comes with egg, shaped like a boat.",
+          "literal": "Adjarian — egg-with — is, boat-like."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[მაშინ|Ma-shin] [აჭარული|a-ch'a-ru-li], [თუ|tu] [შეიძლება|she-idz-le-ba]. [რამდენი|Ram-de-ni] [ღირს|ghirs]?",
+          "id": "Then the Adjarian one, please. How much is it?",
+          "literal": "then — Adjarian, if — possible. how-much — costs?"
+        },
+        {
+          "speaker": "სოფო:",
+          "text": "[თხუთმეტი|Tkhut-me-t'i] [ლარი|la-ri]. [აქ|Ak] [მიირთმევთ|mi-irt-mevt]?",
+          "id": "Fifteen lari. Eating in?",
+          "literal": "fifteen — lari. here — you-pl-dine?"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[კი|K'i], [აქ|ak]. [გმადლობთ|Gmad-lobt]!",
+          "id": "Yes, here. Thank you!",
+          "literal": "yes, here. thank-you!"
+        }
+      ],
+      "notes": [
+        "**ერთი … თუ შეიძლება is the only pattern you need to order anything.** Number + item + \"if possible\". *ერთი ჩაი, თუ შეიძლება* (one tea), *ორი ყავა, თუ შეიძლება* (two coffees). The noun stays in its dictionary form, completely unchanged.",
+        "**თუ შეიძლება goes at the END of the sentence.** ⚠️ Learners sometimes put it first, copying \"please, one coffee\". The natural Georgian is *ერთი ყავა, თუ შეიძლება* — the request first, the politeness after.",
+        "**მინდა means \"I want\", and it doesn't take the ვ- prefix.** It's one of the inverted verbs you met in unit 4: მინდა (I want), გინდა (you want), უნდა (he/she wants). The negative is *არ მინდა* — the most useful refusal in Georgia, because people will keep offering you food.",
+        "**რძით means \"with milk\" — one word, not two.** The ending **-ით** means \"with / using\", replacing the English preposition entirely. რძე (milk) → რძ**ით**, კვერცხი (egg) → კვერცხ**ით**, შაქარი (sugar) → შაქრ**ით**. Unit 13 uses it for transport: ავტობუს**ით** (by bus).",
+        "**გაქვთ? = \"do you (pl.) have?\" — this is how you ask whether something is available.** Not \"is there?\" but \"do you have?\". *ჩაი გაქვთ?* (do you have tea?), *წყალი გაქვთ?* (do you have water?). The answer is *კი, გვაქვს* (yes, we have) or *არა, არ გვაქვს*.",
+        "**რამდენი ღირს? = how much is it.** ღირს means \"costs, is worth\", and it doesn't change for one item or several. The next unit fills the remaining gap: the numbers.",
+        "**ხაჭაპური comes in more than twenty varieties, and every region defends its own.** The two most common: **იმერული** (round, cheese inside) and **აჭარული** (boat-shaped, with a runny egg and butter in the middle). Asking *რა განსხვავებაა?* in any café will make the server happy to explain."
+      ],
+      "grammars": [
+        {
+          "title": "მინდა — the verb \"want\" and its relatives",
+          "body": [
+            "This group is small, used constantly, and all of them work in reverse: the grammatical subject is **the thing**, while the person comes in as a prefix."
+          ],
+          "table": {
+            "head": [
+              "I",
+              "You",
+              "He/she",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "მინდა — minda",
+                "გინდა — ginda",
+                "უნდა — unda",
+                "want"
+              ],
+              [
+                "მშია — mshia",
+                "გშია — gshia",
+                "შია — shia",
+                "be hungry"
+              ],
+              [
+                "მწყურია — mts'q'uria",
+                "გწყურია — gts'q'uria",
+                "სწყურია — sts'q'uria",
+                "be thirsty"
+              ],
+              [
+                "მიყვარს — miq'vars",
+                "გიყვარს — giq'vars",
+                "უყვარს — uq'vars",
+                "love, really like"
+              ]
+            ]
+          },
+          "after": [
+            "*ყავა მინდა* literally means \"coffee is-wanted-by-me\". That's why the verb has no ვ- prefix.",
+            "⚠️ **უნდა has two jobs.** Besides \"he/she wants\", it also means \"must\" when it stands before another verb: *უნდა წავიდე* (I must go). Only what follows tells them apart."
+          ]
+        },
+        {
+          "title": "The ending -ით: with, using, by",
+          "body": [
+            "One ending that does the job of three English prepositions."
+          ],
+          "table": {
+            "head": [
+              "Base word",
+              "With the ending -ით",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "რძე — milk",
+                "რძით",
+                "rdzit",
+                "with milk"
+              ],
+              [
+                "შაქარი — sugar",
+                "შაქრით",
+                "shakrit",
+                "with sugar"
+              ],
+              [
+                "კვერცხი — egg",
+                "კვერცხით",
+                "k'verts'khit",
+                "with egg"
+              ],
+              [
+                "ყინული — ice",
+                "ყინულით",
+                "q'inulit",
+                "with ice"
+              ],
+              [
+                "კალამი — pen",
+                "კალმით",
+                "k'almit",
+                "with a pen"
+              ],
+              [
+                "მანქანა — car",
+                "მანქანით",
+                "mankanit",
+                "by car"
+              ]
+            ]
+          },
+          "after": [
+            "The opposite is **-ის გარეშე** (without) or the frame **უ-…-ოდ**: *შაქრის გარეშე* / *უშაქროდ* — without sugar. The first is easier and always safe."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The drinks list, and how to pay",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Georgian",
+            "Say it",
+            "Meaning",
+            "Georgian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ყავა",
+              "q'ava",
+              "coffee",
+              "წყალი",
+              "ts'q'ali",
+              "water"
+            ],
+            [
+              "ჩაი",
+              "chai",
+              "tea",
+              "მინერალური წყალი",
+              "mineraluri ts'q'ali",
+              "mineral water"
+            ],
+            [
+              "რძე",
+              "rdze",
+              "milk",
+              "ლიმონათი",
+              "limonati",
+              "soda (lemonade)"
+            ],
+            [
+              "წვენი",
+              "ts'veni",
+              "juice",
+              "ღვინო",
+              "ghvino",
+              "wine"
+            ],
+            [
+              "ლუდი",
+              "ludi",
+              "beer",
+              "ლიმონი",
+              "limoni",
+              "lemon"
+            ],
+            [
+              "შაქარი",
+              "shakari",
+              "sugar",
+              "ყინული",
+              "q'inuli",
+              "ice"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Six sentences for a whole café visit",
+          "items": [
+            "**ერთი ყავა, თუ შეიძლება.** — One coffee, please.",
+            "**მენიუ გაქვთ?** (meniu gakvt) — Do you have a menu?",
+            "**ეს რა არის?** — What's this? (pointing at the menu — the sentence from unit 2 again)",
+            "**ანგარიში, თუ შეიძლება.** (angarishi) — The bill, please.",
+            "**ბარათით შეიძლება?** (baratit sheidzleba) — Can I pay by card?",
+            "**ძალიან გემრიელია!** (dzalian gemrielia) — It's delicious!"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Back to the sound **ყ** once more, because it's in a word you'll say every morning. ყავა isn't \"kava\" and isn't \"khava\": close your throat at the very back of the tongue, then release it short. If you miss, you'll still get your coffee — but spend thirty seconds saying ყავა, ყველი, წყალი out loud now, before the wrong sound becomes a habit."
+        },
+        {
+          "type": "p",
+          "text": "One thing that often surprises people: in many small Tbilisi cafés you pay **after** eating, at the counter rather than at the table, and nobody will come to collect. If you've finished and no one comes over, stand up and say *ანგარიში, თუ შეიძლება* toward the counter. A 10% tip is appreciated but not required; many places already add it as *მომსახურება* (momsakhureba, service charge) on the bill."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ka": "ყავა",
+      "baca": "q'ava",
+      "en": "coffee"
+    },
+    {
+      "ka": "ჩაი",
+      "baca": "chai",
+      "en": "tea"
+    },
+    {
+      "ka": "წყალი",
+      "baca": "ts'q'ali",
+      "en": "water"
+    },
+    {
+      "ka": "რძე",
+      "baca": "rdze",
+      "en": "milk"
+    },
+    {
+      "ka": "შაქარი",
+      "baca": "shakari",
+      "en": "sugar"
+    },
+    {
+      "ka": "ღვინო",
+      "baca": "ghvino",
+      "en": "wine"
+    },
+    {
+      "ka": "ლუდი",
+      "baca": "ludi",
+      "en": "beer"
+    },
+    {
+      "ka": "წვენი",
+      "baca": "ts'veni",
+      "en": "juice"
+    },
+    {
+      "ka": "ყინული",
+      "baca": "q'inuli",
+      "en": "ice"
+    },
+    {
+      "ka": "პური",
+      "baca": "p'uri",
+      "en": "bread"
+    },
+    {
+      "ka": "ხაჭაპური",
+      "baca": "khach'ap'uri",
+      "en": "khachapuri (cheese bread)"
+    },
+    {
+      "ka": "ყველი",
+      "baca": "q'veli",
+      "en": "cheese"
+    },
+    {
+      "ka": "კვერცხი",
+      "baca": "k'verts'khi",
+      "en": "egg"
+    },
+    {
+      "ka": "მენიუ",
+      "baca": "meniu",
+      "en": "menu"
+    },
+    {
+      "ka": "ანგარიში",
+      "baca": "angarishi",
+      "en": "bill, check"
+    },
+    {
+      "ka": "ბარათი",
+      "baca": "barati",
+      "en": "card"
+    },
+    {
+      "ka": "კაფე",
+      "baca": "k'ape",
+      "en": "café"
+    },
+    {
+      "ka": "რესტორანი",
+      "baca": "rest'orani",
+      "en": "restaurant"
+    },
+    {
+      "ka": "მინდა",
+      "baca": "minda",
+      "en": "I want"
+    },
+    {
+      "ka": "გინდა",
+      "baca": "ginda",
+      "en": "you want"
+    },
+    {
+      "ka": "არ მინდა",
+      "baca": "ar minda",
+      "en": "I don't want"
+    },
+    {
+      "ka": "ღირს",
+      "baca": "ghirs",
+      "en": "costs, is worth"
+    },
+    {
+      "ka": "რამდენი ღირს",
+      "baca": "ramdeni ghirs",
+      "en": "how much is it"
+    },
+    {
+      "ka": "ლარი",
+      "baca": "lari",
+      "en": "lari (Georgian currency)"
+    },
+    {
+      "ka": "გემრიელი",
+      "baca": "gemrieli",
+      "en": "tasty, delicious"
+    },
+    {
+      "ka": "ცხელი",
+      "baca": "tskheli",
+      "en": "hot"
+    },
+    {
+      "ka": "ცივი",
+      "baca": "tsivi",
+      "en": "cold"
+    },
+    {
+      "ka": "სხვა",
+      "baca": "skhva",
+      "en": "other, else"
+    },
+    {
+      "ka": "რამე",
+      "baca": "rame",
+      "en": "something"
+    },
+    {
+      "ka": "განსხვავება",
+      "baca": "ganskhvaveba",
+      "en": "difference"
+    },
+    {
+      "ka": "თუ შეიძლება",
+      "baca": "tu sheidzleba",
+      "en": "please (lit. if possible)"
+    },
+    {
+      "ka": "გმადლობთ",
+      "baca": "gmadlobt",
+      "en": "thank you (polite)"
+    },
+    {
+      "ka": "-ით",
+      "baca": "-it",
+      "en": "with, using (ending)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change into the \"with …\" form (ending -ით).",
+      "items": [
+        "რძე → ____",
+        "შაქარი → ____",
+        "ყინული → ____",
+        "კვერცხი → ____",
+        "მანქანა → ____"
+      ]
+    },
+    {
+      "prompt": "Complete the order.",
+      "items": [
+        "ერთი ყავა, ____ ____ (please)",
+        "ჩაი ____ (do you have tea? — you pl. have)",
+        "შაქარი ____ ____ (I don't want sugar)",
+        "რამდენი ____ ? (how much is it)",
+        "____ , თუ შეიძლება (the bill)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "შეიძლება / ყავა / ერთი / თუ / ,",
+        "გაქვთ / ხაჭაპური / ?",
+        "მინდა / არ / შაქარი",
+        "ღირს / რამდენი / ?",
+        "გემრიელია / ძალიან"
+      ]
+    },
+    {
+      "prompt": "Translate into Georgian.",
+      "items": [
+        "One tea, please.",
+        "Do you have water?",
+        "I want coffee with milk.",
+        "I don't want sugar.",
+        "How much is it?",
+        "The bill, please."
+      ]
+    }
+  ],
+  "answers": [
+    "რძით — შაქრით — ყინულით — კვერცხით — მანქანით",
+    "თუ შეიძლება — გაქვთ — არ მინდა — ღირს — ანგარიში",
+    "ერთი ყავა, თუ შეიძლება. — ხაჭაპური გაქვთ? — შაქარი არ მინდა. — რამდენი ღირს? — ძალიან გემრიელია.",
+    "ერთი ჩაი, თუ შეიძლება. — წყალი გაქვთ? — ყავა რძით მინდა. — შაქარი არ მინდა. — რამდენი ღირს? — ანგარიში, თუ შეიძლება."
+  ]
+}

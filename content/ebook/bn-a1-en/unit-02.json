@@ -1,0 +1,566 @@
+{
+  "title": "What’s this? — things around you",
+  "title_target": "এটা কী? — è-Ta ki?",
+  "goal": "Name the things around you, point to what’s near and what’s far, and meet the little -টা ending that turns “a book” into “the book”.",
+  "bekal": [
+    "ask এটা কী? and answer it",
+    "tell apart এটা (this), ওটা (that, far), and সেটা (that, the one just mentioned)",
+    "attach -টা · -টি · -খানা to a specific thing",
+    "deny identity with নয়, not with না",
+    "use adjectives, which never change form"
+  ],
+  "dialogs": [
+    {
+      "title": "কথোপকথন — Mitali shows the room",
+      "intro": "Mitali takes Ani to her room on the second floor. Watch the -টা ending that appears again and again: it sticks to things when it’s clear which one is meant — exactly like English “the” in “the door”, except it goes at the end of the word.",
+      "lines": [
+        {
+          "speaker": "মিতালি:",
+          "text": "[এটা|è-Ta] [আপনার|ap-nar] [ঘর|ghôr]। [দরজাটা|dôr-ja-Ta] [নতুন|nô-tun]।",
+          "id": "This is your room. The door is new.",
+          "literal": "this — your(polite) — room. door-the — new."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[বাহ|bah], [খুব|khub] [সুন্দর|sun-dôr]! [ওটা|o-Ta] [কী|ki]?",
+          "id": "Oh, it’s lovely! What’s that?",
+          "literal": "oh, very — beautiful! that(far) — what?"
+        },
+        {
+          "speaker": "মিতালি:",
+          "text": "[ওটা|o-Ta] [আয়না|ay-na]। [আর|ar] [এটা|è-Ta] [আলমারি|al-ma-ri]।",
+          "id": "That’s a mirror. And this is a wardrobe.",
+          "literal": "that — mirror. and — this — wardrobe."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[আলমারিটা|al-ma-ri-Ta] [বড়|bô-Ro]। [জানালা|ja-na-la] [কোথায়|ko-thay]?",
+          "id": "The wardrobe is big. Where’s the window?",
+          "literal": "wardrobe-the — big. window — where?"
+        },
+        {
+          "speaker": "মিতালি:",
+          "text": "[ওই|oi] [যে|jé]। [জানালাটা|ja-na-la-Ta] [ছোট|chho-To], [কিন্তু|kin-tu] [আলো|a-lo] [ভালো|bha-lo]।",
+          "id": "It’s over there. The window is small, but the light is good.",
+          "literal": "that — the-one. window-the — small, but — light — good."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[টেবিলে|Té-bi-lé] [ওটা|o-Ta] [কী|ki]? [বই|bôi]?",
+          "id": "What’s that on the table? A book?",
+          "literal": "table-on — that — what? book?"
+        },
+        {
+          "speaker": "মিতালি:",
+          "text": "[না|na], [ওটা|o-Ta] [বই|bôi] [নয়|nôy]। [ওটা|o-Ta] [ছবির|chhô-bir] [অ্যালবাম|êal-bam]।",
+          "id": "No, that’s not a book. It’s a photo album.",
+          "literal": "no, that — book — not. that — picture-of — album."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[চাবিটা|cha-bi-Ta] [কোথায়|ko-thay]?",
+          "id": "Where’s the key?",
+          "literal": "key-the — where?"
+        },
+        {
+          "speaker": "মিতালি:",
+          "text": "[এই|èi] [যে|jé], [চাবিটা|cha-bi-Ta] [দরজায়|dôr-ja-y]। [আর|ar] [এই|èi] [বাতিটা|ba-ti-Ta] [পুরনো|pu-ró-no]।",
+          "id": "Here it is, the key is in the door. And this lamp is old.",
+          "literal": "this — the-one, key-the — door-in. and — this — lamp-the — old."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[ঠিক|Thik] [আছে|a-chhé]। [ঘরটা|ghôr-Ta] [পরিষ্কার|pô-rish-kar], [সেটাই|sé-Ta-i] [বড়|bô-Ro] [কথা|kô-tha]।",
+          "id": "That’s fine. The room is clean, that’s what matters.",
+          "literal": "fine — is. room-the — clean, that-very — big — matter."
+        },
+        {
+          "speaker": "মিতালি:",
+          "text": "[তোয়ালেটা|to-a-lé-Ta] [নতুন|nô-tun]। [আর|ar] [পানি|pa-ni] [ওই|oi] [জগে|jô-gé] [আছে|a-chhé]।",
+          "id": "The towel is new. And the water is in that jug.",
+          "literal": "towel-the — new. and — water — that — jug-in — is."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[অসংখ্য|ô-sông-khô] [ধন্যবাদ|dhôn-nô-bad], [দিদি|di-di]!",
+          "id": "Thank you so much, Didi!",
+          "literal": "countless — thanks, elder-sister!"
+        }
+      ],
+      "notes": [
+        "**-টা is English “the” — but stuck on the end.** বই *bôi* means “book” in general; **বইটা** *bôiTa* means “the book”, the one we both know about. English uses a separate word (*a book* / *the book*); Bengali glues it on as an ending. ⚠️ English speakers tend to forget it, because nothing at the end of an English noun does this job. -টা **never** means “whose” — ownership has its own ending, -র, which is Unit 4’s business.",
+        "**There are three endings, and choosing is easy.** **-টা** for anything, everyday, the most common — use it when in doubt. **-টি** means the same but sounds gentler and is written more than spoken; use it for something you respect or for small children (মেয়েটি — the girl). **-খানা** for flat, wide things: বইখানা, কাপড়খানা. For **people**, the ending is **-জন**: লোকজন, তিনজন ছাত্র.",
+        "⚠️ **Three pointing words, not two.** **এটা** *èTa* for something near the speaker (this). **ওটা** *oTa* for something far from both (that, over there). **সেটা** *séTa* for something **already mentioned** in the conversation — “that one”. English lumps the last two together as “that”, so সেটা needs practice of its own.",
+        "**এটা stands alone, এই attaches to a noun.** এটা বই = “this is a book”. **এই** বইটা = “**this** book”. Likewise ওটা versus **ওই**, and সেটা versus **সেই**. ⚠️ One of the most common beginner mistakes is saying *এটা বইটা* — both at once. The correct form is এই বইটা.",
+        "⚠️ **Denying identity uses নয়, not না.** Since “this is a book” has no verb, its negative isn’t a verb negative either. এটা বই। → এটা বই **নয়**। (this is not a book). **না** negates real verbs — আমি বুঝি না (I don’t understand) — which is Unit 6’s business. For now: **নয় = is not**, **না = do not**.",
+        "**Bengali adjectives never change form.** বড় ঘর (big room), বড় বই (big book), বড় মেয়ে (big girl) — one form for all. No gender, no plural, no endings to memorize. And they go **before** the noun, just as in English: লাল কলম = red pen.",
+        "**Many names for modern things come straight from English**, and you already know them: টেবিল, চেয়ার, ব্যাগ, ফোন, ল্যাপটপ, বাস, ট্রেন, স্কুল, ডাক্তার, হাসপাতাল. ⚠️ Say them with Bengali sounds, not English ones — ফোন is *phon* with a pure rounded o, not “fohn”. Slipping into an English accent actually makes you harder to understand."
+      ],
+      "grammars": [
+        {
+          "title": "Pointing words and their endings",
+          "tables": [
+            {
+              "head": [
+                "Standing alone",
+                "Attached",
+                "For people (polite)",
+                "Distance"
+              ],
+              "rows": [
+                [
+                  "এটা — this",
+                  "এই বইটা — this book",
+                  "ইনি — this (person)",
+                  "near the speaker"
+                ],
+                [
+                  "ওটা — that",
+                  "ওই বইটা — that book",
+                  "উনি — that (person)",
+                  "far from both"
+                ],
+                [
+                  "সেটা — that one",
+                  "সেই বইটা — that book (mentioned)",
+                  "তিনি — he/she (polite)",
+                  "already mentioned"
+                ],
+                [
+                  "এগুলো — these",
+                  "এই বইগুলো — these books",
+                  "এঁরা — these people",
+                  "plural, near"
+                ],
+                [
+                  "ওগুলো — those",
+                  "ওই বইগুলো — those books",
+                  "ওঁরা — those people",
+                  "plural, far"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "**Plurals are formed with -গুলো** *-gulo* for things and **-রা** *-ra* for people: বইগুলো (the books), ছাত্ররা (the students). ⚠️ But the plural is **often not marked at all** when the number is already clear from another word — অনেক বই (many book), তিনটা বই (three book). English speakers want to add the plural every time; Bengali sees no need."
+          ]
+        },
+        {
+          "title": "The most common adjectives",
+          "table": {
+            "head": [
+              "বাংলা",
+              "Say it",
+              "Meaning",
+              "Opposite"
+            ],
+            "rows": [
+              [
+                "বড়",
+                "bô-Ro",
+                "big",
+                "ছোট *chhoTo* — small"
+              ],
+              [
+                "নতুন",
+                "nô-tun",
+                "new",
+                "পুরনো *puróno* — old"
+              ],
+              [
+                "ভালো",
+                "bha-lo",
+                "good",
+                "খারাপ *kharap* — bad"
+              ],
+              [
+                "সুন্দর",
+                "sun-dôr",
+                "beautiful, pretty",
+                "বিশ্রী *bishri* — ugly"
+              ],
+              [
+                "পরিষ্কার",
+                "pô-rish-kar",
+                "clean",
+                "নোংরা *nongra* — dirty"
+              ],
+              [
+                "লম্বা",
+                "lôm-ba",
+                "long, tall",
+                "খাটো *khaTo* — short"
+              ],
+              [
+                "সস্তা",
+                "sôs-ta",
+                "cheap",
+                "দামি *dami* — expensive"
+              ],
+              [
+                "গরম",
+                "gô-rôm",
+                "hot",
+                "ঠান্ডা *ThanDa* — cold"
+              ],
+              [
+                "সহজ",
+                "sô-hôj",
+                "easy",
+                "কঠিন *kôThin* — difficult"
+              ],
+              [
+                "লাল · নীল · সাদা",
+                "lal · nil · sa-da",
+                "red · blue · white",
+                "কালো *kalo* — black"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **গরম means hot, and also warm, and also spicy** — context decides. গরম চা is hot tea; আজ খুব গরম means “it’s very hot today”. For the spiciness that bites your tongue, people more often say **ঝাল** *jhal*, a word you’ll badly need in Unit 12."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Things in your room",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "বাংলা",
+            "Say it",
+            "Meaning",
+            "বাংলা",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ঘর",
+              "ghôr",
+              "room; house",
+              "বাতি",
+              "ba-ti",
+              "lamp"
+            ],
+            [
+              "বাড়ি",
+              "ba-Ri",
+              "house, home",
+              "পাখা",
+              "pa-kha",
+              "fan"
+            ],
+            [
+              "দরজা",
+              "dôr-ja",
+              "door",
+              "চাবি",
+              "cha-bi",
+              "key"
+            ],
+            [
+              "জানালা",
+              "ja-na-la",
+              "window",
+              "ছবি",
+              "chhô-bi",
+              "picture, photo"
+            ],
+            [
+              "টেবিল",
+              "Té-bil",
+              "table",
+              "আয়না",
+              "ay-na",
+              "mirror"
+            ],
+            [
+              "চেয়ার",
+              "chè-yar",
+              "chair",
+              "তোয়ালে",
+              "to-a-lé",
+              "towel"
+            ],
+            [
+              "খাট",
+              "khaT",
+              "bed",
+              "সাবান",
+              "sa-ban",
+              "soap"
+            ],
+            [
+              "বালিশ",
+              "ba-lish",
+              "pillow",
+              "পানি · জল",
+              "pa-ni · jôl",
+              "water"
+            ],
+            [
+              "আলমারি",
+              "al-ma-ri",
+              "wardrobe",
+              "গ্লাস",
+              "glash",
+              "glass"
+            ],
+            [
+              "বই",
+              "bôi",
+              "book",
+              "প্লেট",
+              "plèT",
+              "plate"
+            ],
+            [
+              "কলম",
+              "kô-lôm",
+              "pen",
+              "ব্যাগ",
+              "bêg",
+              "bag"
+            ],
+            [
+              "কাগজ",
+              "ka-gôj",
+              "paper",
+              "জিনিস",
+              "ji-nish",
+              "thing"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ পানি or জল? One word, two countries",
+          "items": [
+            "Water is **পানি** *pani* in Bangladesh and **জল** *jôl* in West Bengal (Kolkata). Both are correct Bengali, both are understood everywhere, but the choice feels like an ID card: পানি sounds Bangladeshi, জল sounds Kolkata.",
+            "The same split shows up in a few other everyday words: invitation **দাওয়াত** *daoat* (Bangladesh) versus **নিমন্ত্রণ** *nimôntrôn* (Kolkata); aunt **খালা** *khala* versus **মাসি** *mashi*.",
+            "This course deliberately uses both, so your ear gets used to them. If you must pick one, pick the one used by the people you talk to most."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One pattern you can use right away to ask about anything: **এটা কী?** (what’s this?), **ওটা কার?** (whose is that?), **এটা কোথায়?** (where is this?), **এটার দাম কত?** (how much is this?). Every Bengali question word starts with the letter **ক**, and once you notice that, they’re much easier to learn — like English wh- words: কী, কে, কোথায়, কখন, কেন, কীভাবে, কত, কোন।"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "এটা",
+      "baca": "è-Ta",
+      "en": "this"
+    },
+    {
+      "bn": "ওটা",
+      "baca": "o-Ta",
+      "en": "that (far)"
+    },
+    {
+      "bn": "সেটা",
+      "baca": "sé-Ta",
+      "en": "that (already mentioned)"
+    },
+    {
+      "bn": "এই · ওই · সেই",
+      "baca": "èi · oi · séi",
+      "en": "this · that · that one (+ noun)"
+    },
+    {
+      "bn": "-টা · -টি",
+      "baca": "-Ta · -Ti",
+      "en": "ending for a specific thing (“the”)"
+    },
+    {
+      "bn": "-গুলো",
+      "baca": "-gu-lo",
+      "en": "plural ending (things)"
+    },
+    {
+      "bn": "নয়",
+      "baca": "nôy",
+      "en": "is not (denies identity)"
+    },
+    {
+      "bn": "কোথায়",
+      "baca": "ko-thay",
+      "en": "where"
+    },
+    {
+      "bn": "আর",
+      "baca": "ar",
+      "en": "and; more"
+    },
+    {
+      "bn": "কিন্তু",
+      "baca": "kin-tu",
+      "en": "but"
+    },
+    {
+      "bn": "ঘর",
+      "baca": "ghôr",
+      "en": "room; house"
+    },
+    {
+      "bn": "বাড়ি",
+      "baca": "ba-Ri",
+      "en": "house, home"
+    },
+    {
+      "bn": "দরজা",
+      "baca": "dôr-ja",
+      "en": "door"
+    },
+    {
+      "bn": "জানালা",
+      "baca": "ja-na-la",
+      "en": "window"
+    },
+    {
+      "bn": "আলমারি",
+      "baca": "al-ma-ri",
+      "en": "wardrobe"
+    },
+    {
+      "bn": "আয়না",
+      "baca": "ay-na",
+      "en": "mirror"
+    },
+    {
+      "bn": "চাবি",
+      "baca": "cha-bi",
+      "en": "key"
+    },
+    {
+      "bn": "বাতি",
+      "baca": "ba-ti",
+      "en": "lamp"
+    },
+    {
+      "bn": "তোয়ালে",
+      "baca": "to-a-lé",
+      "en": "towel"
+    },
+    {
+      "bn": "ছবি",
+      "baca": "chhô-bi",
+      "en": "picture, photo"
+    },
+    {
+      "bn": "বই",
+      "baca": "bôi",
+      "en": "book"
+    },
+    {
+      "bn": "কলম",
+      "baca": "kô-lôm",
+      "en": "pen"
+    },
+    {
+      "bn": "জিনিস",
+      "baca": "ji-nish",
+      "en": "thing"
+    },
+    {
+      "bn": "আলো",
+      "baca": "a-lo",
+      "en": "light"
+    },
+    {
+      "bn": "বড়",
+      "baca": "bô-Ro",
+      "en": "big"
+    },
+    {
+      "bn": "ছোট",
+      "baca": "chho-To",
+      "en": "small"
+    },
+    {
+      "bn": "নতুন",
+      "baca": "nô-tun",
+      "en": "new"
+    },
+    {
+      "bn": "পুরনো",
+      "baca": "pu-ró-no",
+      "en": "old, worn"
+    },
+    {
+      "bn": "সুন্দর",
+      "baca": "sun-dôr",
+      "en": "beautiful, pretty"
+    },
+    {
+      "bn": "পরিষ্কার",
+      "baca": "pô-rish-kar",
+      "en": "clean"
+    },
+    {
+      "bn": "ঠিক আছে",
+      "baca": "Thik a-chhé",
+      "en": "it’s fine; OK"
+    },
+    {
+      "bn": "দিদি · আপা",
+      "baca": "di-di · a-pa",
+      "en": "elder sister (address)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Add the -টা ending to the word in brackets.",
+      "items": [
+        "(বই) ____ টেবিলে আছে।",
+        "(দরজা) ____ নতুন।",
+        "(ঘর) ____ পরিষ্কার।",
+        "(চাবি) ____ কোথায়?",
+        "(জানালা) ____ ছোট।"
+      ]
+    },
+    {
+      "prompt": "Choose এটা, ওটা, or সেটা.",
+      "items": [
+        "Something in your hand: ____ কী?",
+        "Something far away across the street: ____ কী?",
+        "Something you were just talking about: ____ ভালো।",
+        "Something right under your nose: ____ আমার ব্যাগ।"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "নয় / বই / এটা",
+        "সুন্দর / খুব / ঘরটা",
+        "কোথায় / চাবিটা",
+        "নতুন / দরজাটা / আর / ছোট / জানালাটা",
+        "আছে / টেবিলে / বইটা"
+      ]
+    },
+    {
+      "prompt": "Translate into Bengali.",
+      "items": [
+        "What’s this?",
+        "That’s not a pen.",
+        "The wardrobe is big.",
+        "Where’s the key?",
+        "This room is clean.",
+        "Those books are new."
+      ]
+    }
+  ],
+  "answers": [
+    "বইটা — দরজাটা — ঘরটা — চাবিটা — জানালাটা",
+    "এটা — ওটা — সেটা — এটা",
+    "এটা বই নয়। — ঘরটা খুব সুন্দর। — চাবিটা কোথায়? — দরজাটা নতুন আর জানালাটা ছোট। — বইটা টেবিলে আছে।",
+    "এটা কী? — ওটা কলম নয়। — আলমারিটা বড়। — চাবিটা কোথায়? — এই ঘরটা পরিষ্কার। — ওই বইগুলো নতুন।"
+  ]
+}

@@ -1,0 +1,592 @@
+{
+  "title": "Home and rooms",
+  "title_target": "ჩემი სახლი — Chemi sakhli",
+  "goal": "Describe where you live, name what's in a room, and put adjectives in front of nouns — including when the noun changes its ending.",
+  "bekal": [
+    "name types of homes and their rooms",
+    "put adjectives in front of nouns",
+    "say there is / there isn't something somewhere",
+    "name floors and where things are",
+    "explain what's missing when renting"
+  ],
+  "dialogs": [
+    {
+      "title": "დიალოგი — Viewing a rental apartment",
+      "intro": "Ani is looking for a place to live and views an apartment with the owner, Mzia. Notice the adjectives in front of the nouns — and what happens to their endings when the noun takes another form.",
+      "lines": [
+        {
+          "speaker": "მზია:",
+          "text": "[შემობრძანდით|She-mob-rdzan-dit]! [ეს|Es] [ბინა|bi-na] [პატარაა|p'a-t'a-ra-a], [მაგრამ|mag-ram] [ნათელი|na-te-li].",
+          "id": "Come in! This apartment is small, but bright.",
+          "literal": "come-in! this — apartment — small-is, but — bright."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ლამაზია|La-ma-zi-a]. [რამდენი|Ram-de-ni] [ოთახია|o-ta-khi-a]?",
+          "id": "Nice. How many rooms are there?",
+          "literal": "pretty-is. how-many — room-is?"
+        },
+        {
+          "speaker": "მზია:",
+          "text": "[ორი|O-ri] [ოთახი|o-ta-khi]: [საძინებელი|sa-dzi-ne-be-li] [და|da] [მისაღები|mi-sa-ghe-bi]. [სამზარეულო|Sam-za-re-u-lo] [აქ|ak] [არის|a-ris].",
+          "id": "Two rooms: a bedroom and a living room. The kitchen is here.",
+          "literal": "two — room: sleep-place — and — receive-place. kitchen — here — is."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[სამზარეულოში|Sam-za-re-u-losh-i] [მაცივარი|ma-tsi-va-ri] [არის|a-ris]?",
+          "id": "Is there a fridge in the kitchen?",
+          "literal": "kitchen-in — fridge — is?"
+        },
+        {
+          "speaker": "მზია:",
+          "text": "[კი|K'i], [მაცივარი|ma-tsi-va-ri], [ღუმელი|ghu-me-li] [და|da] [სარეცხი|sa-rets-khi] [მანქანა|man-ka-na] [არის|a-ris].",
+          "id": "Yes, there's a fridge, a stove, and a washing machine.",
+          "literal": "yes, fridge, stove — and — washing — machine — is."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ცხელი|Tskhe-li] [წყალი|ts'q'a-li] [მუდამ|mu-dam] [არის|a-ris]?",
+          "id": "Is there always hot water?",
+          "literal": "hot — water — always — is?"
+        },
+        {
+          "speaker": "მზია:",
+          "text": "[დიახ|Di-akh], [მუდამ|mu-dam]. [ინტერნეტიც|In-t'er-ne-t'its] [სწრაფია|sts'ra-pi-a].",
+          "id": "Yes, always. The internet is fast, too.",
+          "literal": "yes, always. internet-also — fast-is."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[რომელ|Ro-mel] [სართულზეა|sar-tul-ze-a]?",
+          "id": "Which floor is it on?",
+          "literal": "which — floor-on-is?"
+        },
+        {
+          "speaker": "მზია:",
+          "text": "[მეოთხეზე|Me-ot-khe-ze]. [ლიფტი|Lip-t'i] [არ|ar] [არის|a-ris], [სამწუხაროდ|sam-ts'u-kha-rod].",
+          "id": "The fourth. Unfortunately there's no elevator.",
+          "literal": "fourth-on. elevator — not — is, unfortunately."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[არა|A-ra] [უშავს|u-shavs]. [რამდენი|Ram-de-ni] [ღირს|ghirs] [თვეში|tve-shi]?",
+          "id": "That's okay. How much is it a month?",
+          "literal": "not — bad-to-it. how-much — costs — month-in?"
+        },
+        {
+          "speaker": "მზია:",
+          "text": "[ხუთასი|Khu-ta-si] [ლარი|la-ri], [კომუნალურის|k'o-mu-na-lu-ris] [გარეშე|ga-re-she].",
+          "id": "Five hundred lari, utilities not included.",
+          "literal": "five-hundred — lari, utilities-of — without."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[კარგი|K'ar-gi]. [ხვალამდე|Khva-lam-de] [ვიფიქრებ|vi-pik-reb], [თუ|tu] [შეიძლება|she-idz-le-ba].",
+          "id": "All right. I'll think about it until tomorrow, if that's okay.",
+          "literal": "good. tomorrow-until — I-will-think, if — possible."
+        }
+      ],
+      "notes": [
+        "**Adjectives go in front of the noun — just like in English.** დიდი სახლი (big house), ცხელი წყალი (hot water), ლამაზი ქალაქი (beautiful city). ⚠️ Flip the order — *სახლი დიდი* — and it sounds like an unfinished sentence.",
+        "**An adjective drops its -ი ending as soon as the noun changes its ending.** დიდი სახლი → დიდ სახლ**ში** (in the big house), ცხელი ჩაი → ცხელ ჩა**ის** (the hot tea, as an object). That is the only change you need to remember at A1.",
+        "**\"There is\" and \"is\" are the same word: არის.** *სამზარეულოში მაცივარი არის* — there is a fridge in the kitchen. The negative is *არ არის* (there isn't). Georgian has no separate \"there is/there are\" construction.",
+        "**Floors use ordinal numbers, formed with მე-…-ე**: მე**ორ**ე (second), მე**სამ**ე (third), მე**ოთხ**ე (fourth), მე**ხუთ**ე (fifth). The first one is irregular: **პირველი**. The same pattern works for dates and any kind of order.",
+        "**არა უშავს = \"that's okay\".** Literally \"it's not bad for it\". One of the most common phrases for reassuring someone or accepting how things are.",
+        "**კომუნალური = utilities (electricity, water, gas).** You'll see this word in every rental ad in Georgia, usually as *კომუნალურის გარეშე* (not included). ⚠️ In winter, the gas bill for heating can reach half the rent — ask *ზამთარში რამდენია კომუნალური?* before you sign.",
+        "**ხვალამდე = until tomorrow.** The ending **-მდე** means \"until/up to\": ხვალ**ამდე**, საღამო**მდე** (until evening), თბილის**ამდე** (as far as Tbilisi)."
+      ],
+      "grammars": [
+        {
+          "title": "Adjectives: in front, and hardly changing",
+          "tables": [
+            {
+              "head": [
+                "Adjective",
+                "Say it",
+                "Meaning",
+                "Opposite"
+              ],
+              "rows": [
+                [
+                  "დიდი",
+                  "didi",
+                  "big",
+                  "პატარა — small"
+                ],
+                [
+                  "ახალი",
+                  "akhali",
+                  "new",
+                  "ძველი — old"
+                ],
+                [
+                  "ლამაზი",
+                  "lamazi",
+                  "beautiful, pretty",
+                  "უშნო — ugly"
+                ],
+                [
+                  "ცხელი",
+                  "tskheli",
+                  "hot",
+                  "ცივი — cold"
+                ],
+                [
+                  "ნათელი",
+                  "nateli",
+                  "bright",
+                  "ბნელი — dark"
+                ],
+                [
+                  "სუფთა",
+                  "supta",
+                  "clean",
+                  "ჭუჭყიანი — dirty"
+                ],
+                [
+                  "იაფი",
+                  "iapi",
+                  "cheap",
+                  "ძვირი — expensive"
+                ],
+                [
+                  "ახლო",
+                  "akhlo",
+                  "near",
+                  "შორი — far"
+                ],
+                [
+                  "სწრაფი",
+                  "sts'rapi",
+                  "fast",
+                  "ნელი — slow"
+                ],
+                [
+                  "მშვიდი",
+                  "mshvidi",
+                  "quiet, calm",
+                  "ხმაურიანი — noisy"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Base form",
+                "With an ending",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "დიდი სახლი",
+                  "დიდ სახლში",
+                  "in the big house"
+                ],
+                [
+                  "ახალი ბინა",
+                  "ახალ ბინაში",
+                  "in the new apartment"
+                ],
+                [
+                  "ცხელი ჩაი",
+                  "ცხელ ჩაის ვსვამ",
+                  "I drink hot tea"
+                ],
+                [
+                  "ლამაზი ქალაქი",
+                  "ლამაზ ქალაქში",
+                  "in the beautiful city"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Adjectives ending in **-ა** (პატარა, სუფთა) never change at all: პატარა სახლ**ში**, სუფთა ოთახ**ში**. One less thing to remember."
+          ]
+        },
+        {
+          "title": "There is / there isn't, and ordinal numbers",
+          "table": {
+            "head": [
+              "Sentence",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ოთახში მაგიდაა",
+                "otakhshi magidaa",
+                "There's a table in the room"
+              ],
+              [
+                "ლიფტი არ არის",
+                "lip't'i ar aris",
+                "There's no elevator"
+              ],
+              [
+                "ინტერნეტი გაქვთ?",
+                "int'ernet'i gakvt",
+                "Do you have internet?"
+              ],
+              [
+                "პირველი სართული",
+                "p'irveli sartuli",
+                "first floor"
+              ],
+              [
+                "მეორე სართული",
+                "meore sartuli",
+                "second floor"
+              ],
+              [
+                "მეოთხე სართული",
+                "meotkhe sartuli",
+                "fourth floor"
+              ],
+              [
+                "მეათე სართული",
+                "meate sartuli",
+                "tenth floor"
+              ]
+            ]
+          },
+          "after": [
+            "To ask which floor: **რომელ სართულზე?** (romel sartulze). The answer uses the same -ზე ending: *მეოთხეზე* (on the fourth floor)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Around the house",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Georgian",
+            "Say it",
+            "Meaning",
+            "Georgian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "სახლი",
+              "sakhli",
+              "house",
+              "საწოლი",
+              "sats'oli",
+              "bed"
+            ],
+            [
+              "ბინა",
+              "bina",
+              "apartment",
+              "მაგიდა",
+              "magida",
+              "table"
+            ],
+            [
+              "ოთახი",
+              "otakhi",
+              "room",
+              "სკამი",
+              "sk'ami",
+              "chair"
+            ],
+            [
+              "საძინებელი",
+              "sadzinebeli",
+              "bedroom",
+              "კარადა",
+              "k'arada",
+              "wardrobe, cupboard"
+            ],
+            [
+              "მისაღები",
+              "misaghebi",
+              "living room",
+              "სარკე",
+              "sark'e",
+              "mirror"
+            ],
+            [
+              "სამზარეულო",
+              "samzareulo",
+              "kitchen",
+              "მაცივარი",
+              "matsivari",
+              "fridge"
+            ],
+            [
+              "აბაზანა",
+              "abazana",
+              "bathroom",
+              "ღუმელი",
+              "ghumeli",
+              "stove, oven"
+            ],
+            [
+              "ტუალეტი",
+              "t'ualet'i",
+              "toilet",
+              "სარეცხი მანქანა",
+              "saretskhi mankana",
+              "washing machine"
+            ],
+            [
+              "აივანი",
+              "aivani",
+              "balcony",
+              "კონდიციონერი",
+              "k'onditsioneri",
+              "air conditioner"
+            ],
+            [
+              "სართული",
+              "sartuli",
+              "floor (story)",
+              "გათბობა",
+              "gatboba",
+              "heating"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Six sentences for finding a place to live",
+          "items": [
+            "**ბინა მინდა ვიქირაო.** (bina minda vikirao) — I want to rent an apartment.",
+            "**რამდენი ღირს თვეში?** — How much is it a month?",
+            "**კომუნალური შედის?** (k'omunaluri shedis) — Are utilities included?",
+            "**ცხელი წყალი მუდამ არის?** — Is there always hot water?",
+            "**რომელ სართულზეა?** — Which floor is it on?",
+            "**შემიძლია ვნახო?** (shemidzlia vnakho) — May I see it?"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Two words that can save your winter: **გათბობა** (heating) and **ცენტრალური გათბობა** (central heating). Many older buildings in Tbilisi only have a gas heater in each room, and January temperatures there can drop below freezing. The question *გათბობა როგორია?* (what's the heating like?) matters far more than it seems, especially if you come from somewhere warm."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ka": "სახლი",
+      "baca": "sakhli",
+      "en": "house"
+    },
+    {
+      "ka": "ბინა",
+      "baca": "bina",
+      "en": "apartment"
+    },
+    {
+      "ka": "ოთახი",
+      "baca": "otakhi",
+      "en": "room"
+    },
+    {
+      "ka": "საძინებელი",
+      "baca": "sadzinebeli",
+      "en": "bedroom"
+    },
+    {
+      "ka": "მისაღები",
+      "baca": "misaghebi",
+      "en": "living room"
+    },
+    {
+      "ka": "სამზარეულო",
+      "baca": "samzareulo",
+      "en": "kitchen"
+    },
+    {
+      "ka": "აბაზანა",
+      "baca": "abazana",
+      "en": "bathroom"
+    },
+    {
+      "ka": "აივანი",
+      "baca": "aivani",
+      "en": "balcony"
+    },
+    {
+      "ka": "სართული",
+      "baca": "sartuli",
+      "en": "floor, story"
+    },
+    {
+      "ka": "ლიფტი",
+      "baca": "lipt'i",
+      "en": "elevator"
+    },
+    {
+      "ka": "საწოლი",
+      "baca": "sats'oli",
+      "en": "bed"
+    },
+    {
+      "ka": "კარადა",
+      "baca": "k'arada",
+      "en": "wardrobe"
+    },
+    {
+      "ka": "მაცივარი",
+      "baca": "matsivari",
+      "en": "fridge"
+    },
+    {
+      "ka": "ღუმელი",
+      "baca": "ghumeli",
+      "en": "stove"
+    },
+    {
+      "ka": "გათბობა",
+      "baca": "gatboba",
+      "en": "heating"
+    },
+    {
+      "ka": "ცხელი წყალი",
+      "baca": "tskheli ts'q'ali",
+      "en": "hot water"
+    },
+    {
+      "ka": "ინტერნეტი",
+      "baca": "int'ernet'i",
+      "en": "internet"
+    },
+    {
+      "ka": "ახალი",
+      "baca": "akhali",
+      "en": "new"
+    },
+    {
+      "ka": "ძველი",
+      "baca": "dzveli",
+      "en": "old"
+    },
+    {
+      "ka": "ლამაზი",
+      "baca": "lamazi",
+      "en": "beautiful, pretty"
+    },
+    {
+      "ka": "ნათელი",
+      "baca": "nateli",
+      "en": "bright"
+    },
+    {
+      "ka": "ბნელი",
+      "baca": "bneli",
+      "en": "dark"
+    },
+    {
+      "ka": "სუფთა",
+      "baca": "supta",
+      "en": "clean"
+    },
+    {
+      "ka": "სწრაფი",
+      "baca": "sts'rapi",
+      "en": "fast"
+    },
+    {
+      "ka": "მშვიდი",
+      "baca": "mshvidi",
+      "en": "quiet, calm"
+    },
+    {
+      "ka": "ხმაურიანი",
+      "baca": "khmauriani",
+      "en": "noisy"
+    },
+    {
+      "ka": "მუდამ",
+      "baca": "mudam",
+      "en": "always"
+    },
+    {
+      "ka": "არა უშავს",
+      "baca": "ara ushavs",
+      "en": "that's okay"
+    },
+    {
+      "ka": "სამწუხაროდ",
+      "baca": "samts'ukharod",
+      "en": "unfortunately"
+    },
+    {
+      "ka": "კომუნალური",
+      "baca": "k'omunaluri",
+      "en": "utilities (electricity/water/gas)"
+    },
+    {
+      "ka": "გარეშე",
+      "baca": "gareshe",
+      "en": "without"
+    },
+    {
+      "ka": "-მდე",
+      "baca": "-mde",
+      "en": "until, up to"
+    },
+    {
+      "ka": "ვიფიქრებ",
+      "baca": "vipikreb",
+      "en": "I'll think (about it)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Combine the adjective and the noun (watch the -ი ending drop).",
+      "items": [
+        "დიდი + სახლი + ში → ____",
+        "ახალი + ბინა + ში → ____",
+        "ცხელი + ჩაი → ____",
+        "ლამაზი + ქალაქი + ში → ____",
+        "პატარა + ოთახი + ში → ____"
+      ]
+    },
+    {
+      "prompt": "Complete with an ordinal number.",
+      "items": [
+        "floor 1 → ____ სართული",
+        "floor 2 → ____ სართული",
+        "floor 3 → ____ სართული",
+        "floor 4 → ____ სართული",
+        "floor 10 → ____ სართული"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ოთახია / რამდენი / ?",
+        "არის / არ / ლიფტი",
+        "სართულზეა / რომელ / ?",
+        "ღირს / თვეში / რამდენი / ?",
+        "არის / წყალი / ცხელი / მუდამ"
+      ]
+    },
+    {
+      "prompt": "Translate into Georgian.",
+      "items": [
+        "This apartment is small but bright.",
+        "How many rooms are there?",
+        "There's a fridge in the kitchen.",
+        "There's no elevator.",
+        "Which floor is it on?",
+        "How much is it a month?"
+      ]
+    }
+  ],
+  "answers": [
+    "დიდ სახლში — ახალ ბინაში — ცხელი ჩაი — ლამაზ ქალაქში — პატარა ოთახში",
+    "პირველი — მეორე — მესამე — მეოთხე — მეათე",
+    "რამდენი ოთახია? — ლიფტი არ არის. — რომელ სართულზეა? — რამდენი ღირს თვეში? — ცხელი წყალი მუდამ არის.",
+    "ეს ბინა პატარაა, მაგრამ ნათელი. — რამდენი ოთახია? — სამზარეულოში მაცივარი არის. — ლიფტი არ არის. — რომელ სართულზეა? — რამდენი ღირს თვეში?"
+  ]
+}

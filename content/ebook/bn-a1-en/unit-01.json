@@ -1,0 +1,511 @@
+{
+  "title": "Hello, my name is Ani",
+  "title_target": "নমস্কার, আমার নাম আনি — nômôshkar, amar nam ani",
+  "goal": "Greet people, say your name, ask how someone is — and discover that “My name is Ani” in Bengali is just “my name Ani”, with no word for “is” at all.",
+  "bekal": [
+    "greet with নমস্কার and আসসালামু আলাইকুম, and know when to use which",
+    "say your name with আমার নাম … and no linking word at all",
+    "ask and answer “how are you” with কেমন আছেন",
+    "choose between আপনি, তুমি, and তুই",
+    "tell কী (what) apart from কি (the yes/no question marker)"
+  ],
+  "dialogs": [
+    {
+      "title": "কথোপকথন — At the guesthouse door",
+      "intro": "Ani has just arrived at a guesthouse in Dhaka. Rahim, the owner, greets her on the steps. Watch for one thing from the second line on: the sentence “my name is Ani” is only three words, with no “is” — very different from English, and from Hindi too.",
+      "lines": [
+        {
+          "speaker": "রহিম:",
+          "text": "[আসসালামু|as-sa-la-mu] [আলাইকুম|a-lai-kum]! [আমি|a-mi] [রহিম|rô-him]।",
+          "id": "Assalamu alaikum! I’m Rahim.",
+          "literal": "assalamu alaikum! I — rahim."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[ওয়ালাইকুম|oa-lai-kum] [আসসালাম|as-sa-lam]। [আমার|a-mar] [নাম|nam] [আনি|a-ni]।",
+          "id": "Wa alaikum assalam. My name is Ani.",
+          "literal": "wa alaikum assalam. my — name — ani."
+        },
+        {
+          "speaker": "রহিম:",
+          "text": "[আপনি|ap-ni] [কেমন|kè-mon] [আছেন|a-chhèn]?",
+          "id": "How are you?",
+          "literal": "you(polite) — how — are-in-a-state?"
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[আমি|a-mi] [ভালো|bha-lo] [আছি|a-chhi], [ধন্যবাদ|dhôn-nô-bad]। [আপনি|ap-ni]?",
+          "id": "I’m fine, thank you. And you?",
+          "literal": "I — well — am, thank-you. you(polite)?"
+        },
+        {
+          "speaker": "রহিম:",
+          "text": "[আমিও|a-mi-o] [ভালো|bha-lo] [আছি|a-chhi]। [আপনি|ap-ni] [কি|ki] [ইন্দোনেশিয়া|in-do-nè-shi-a] [থেকে|thè-kè]?",
+          "id": "I’m fine too. Are you from Indonesia?",
+          "literal": "I-too — well — am. you(polite) — [Q] — Indonesia — from?"
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[জি|ji] [হ্যাঁ|hèⁿ]। [আমি|a-mi] [জাকার্তা|ja-kar-ta] [থেকে|thè-kè] [এসেছি|é-sè-chhi]।",
+          "id": "Yes. I’ve come from Jakarta.",
+          "literal": "ji — yes. I — jakarta — from — have-come."
+        },
+        {
+          "speaker": "রহিম:",
+          "text": "[বাহ|bah]! [আপনি|ap-ni] [বাংলা|bang-la] [বলেন|bô-lèn]!",
+          "id": "Wow! You speak Bengali!",
+          "literal": "wow! you(polite) — bengali — speak!"
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[একটু|èk-Tu] [একটু|èk-Tu]। [আমি|a-mi] [শিখছি|shikh-chhi]।",
+          "id": "A little. I’m learning.",
+          "literal": "a-little — a-little. I — am-learning."
+        },
+        {
+          "speaker": "রহিম:",
+          "text": "[খুব|khub] [ভালো|bha-lo]। [ইনি|i-ni] [আমার|a-mar] [বোন|bon], [মিতালি|mi-ta-li]।",
+          "id": "Very good. This is my sister, Mitali.",
+          "literal": "very — good. this(polite) — my — sister, mitali."
+        },
+        {
+          "speaker": "মিতালি:",
+          "text": "[নমস্কার|nô-môsh-kar]! [আপনার|ap-nar] [সঙ্গে|sông-gé] [দেখা|dè-kha] [হয়ে|hô-yé] [ভালো|bha-lo] [লাগল|lag-lo]।",
+          "id": "Hello! Nice to meet you.",
+          "literal": "hello! you(polite) — with — meeting — having-happened — good — felt."
+        },
+        {
+          "speaker": "আনি:",
+          "text": "[আমারও|a-ma-ro]। [আপনারা|ap-na-ra] [কি|ki] [এখানে|è-kha-né] [থাকেন|tha-kèn]?",
+          "id": "Me too. Do you live here?",
+          "literal": "mine-too. you(polite, pl.) — [Q] — here — live?"
+        },
+        {
+          "speaker": "রহিম:",
+          "text": "[জি|ji], [আমরা|am-ra] [এখানেই|è-kha-né-i] [থাকি|tha-ki]। [আবার|a-bar] [দেখা|dè-kha] [হবে|hô-bé]!",
+          "id": "Yes, we live right here. See you again!",
+          "literal": "ji, we — right-here — live. again — meeting — will-happen!"
+        }
+      ],
+      "notes": [
+        "**No word for “is” — and that is correct grammar.** আমার নাম আনি means “my name is Ani”: three words, done. There is no linking verb at all, and this is not a simplification but proper Bengali. Compare English (*My name **is** Ani*) or Hindi (मेरा नाम आनी **है**), which both require one. ⚠️ English speakers instinctively hunt for an “is” to add. Resist: Bengali simply puts A next to B.",
+        "**But “how are you” uses আছেন — that’s not an exception, it’s a different verb.** Bengali drops the link for **identity** (আমি ছাত্র — I’m a student), but uses **আছা** *achha* for **existence and condition**: আপনি কেমন আছেন? (how are you doing?), আমি ভালো আছি (I’m doing well), আমি ঢাকায় আছি (I’m in Dhaka). Separate these two from day one and half the confusion of later units disappears.",
+        "**Greetings differ by religion, and it matters.** **আসসালামু আলাইকুম** is used by Muslims — so almost everywhere in Bangladesh. **নমস্কার** is used by Hindus — so almost everywhere in West Bengal (Kolkata). **আদাব** *adab* is neutral and polite anywhere. ⚠️ If unsure, নমস্কার is safe in India and আসসালামু আলাইকুম is safe in Bangladesh; and anyone will return a sincere সালাম warmly.",
+        "⚠️ **কি and কী are two different words, even though they sound the same.** **কি** (short i) is the yes/no question marker, placed inside the sentence and **not translated**: আপনি কি ছাত্র? = “Are you a student?” **কী** (long i) means “what”: আপনার নাম কী? = “What is your name?” In casual writing people often write both as কি, but knowing the difference saves you from misunderstandings.",
+        "**There are three ways to say “you”, and each one changes the verb.** **আপনি** *apni* for anyone older, newly met, or respected — the form used throughout this course. **তুমি** *tumi* for peers, younger siblings, and people you’re close to. **তুই** *tui* for very close friends and small children; to a stranger it sounds very rude. ⚠️ English has one “you” for everyone, so this choice is new. As a newcomer, use আপনি with everyone. Your host will eventually say “just call me তুমি” — and that’s a lovely moment.",
+        "**ইনি, not এ, to introduce people.** Bengali has separate **respectful** pointing words: এ · এটা for things and ordinary people, **ইনি** for respected people; likewise ও · ওটা (that) versus **উনি** (he/she, polite). Rahim uses ইনি for his sister because he is introducing her to a guest. ⚠️ Using এ for a person sounds like pointing at an object.",
+        "**দাদা, দিদি, ভাই, আপা — family words used for non-family.** Much like calling someone “brother” or “auntie”. To a man a little older: **দাদা** *dada* (India) or **ভাই** *bhai* (Bangladesh). To a woman a little older: **দিদি** *didi* (India) or **আপা** *apa* (Bangladesh). To someone much older: **কাকা** *kaka* (uncle) and **খালা** *khala* (aunt). Calling the tea seller ভাই instantly changes the mood."
+      ],
+      "grammars": [
+        {
+          "title": "আছা — to be (somewhere), to exist, to be in a state",
+          "body": [
+            "আছা (*achha*) is the verb you’ll use most in your first week. It is used for **existence** (being somewhere), **condition** (being well), and **possession** (having something). It is not used for identity — that needs no verb at all."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Subject",
+                "Say it",
+                "Form of আছা",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "আমি — I",
+                  "a-mi",
+                  "আছি",
+                  "আমি ভালো আছি"
+                ],
+                [
+                  "আমরা — we",
+                  "am-ra",
+                  "আছি",
+                  "আমরা এখানে আছি"
+                ],
+                [
+                  "তুই — you (intimate)",
+                  "tui",
+                  "আছিস",
+                  "তুই কেমন আছিস?"
+                ],
+                [
+                  "তুমি — you (familiar)",
+                  "tu-mi",
+                  "আছ",
+                  "তুমি কেমন আছ?"
+                ],
+                [
+                  "আপনি — you (polite)",
+                  "ap-ni",
+                  "আছেন",
+                  "আপনি কেমন আছেন?"
+                ],
+                [
+                  "সে · ও — he/she",
+                  "sé · o",
+                  "আছে",
+                  "সে বাড়িতে আছে"
+                ],
+                [
+                  "তিনি · উনি — he/she (polite)",
+                  "ti-ni · u-ni",
+                  "আছেন",
+                  "উনি এখানে আছেন"
+                ],
+                [
+                  "তারা — they",
+                  "ta-ra",
+                  "আছে",
+                  "তারা ভালো আছে"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **The forms for আমি and আমরা are identical** — আছি for both. That’s no accident: in modern Bengali, verbs **never** distinguish singular from plural. They only mark **who** (I · you · he/she) and **how polite**. Compare English, which separates *I am* from *we are*.",
+            "**Denying existence doesn’t use না but a separate word: নেই** *néi*. আমি এখানে আছি (I’m here) → আমি এখানে নেই (I’m not here). ⚠️ নেই never changes for the subject — one form for everyone. Unit 3 covers it fully."
+          ]
+        },
+        {
+          "title": "Sentences without a verb — identity",
+          "body": [
+            "To say “A is B”, just put A, then B. Nothing is added. This is the first sentence pattern you can use right away."
+          ],
+          "table": {
+            "head": [
+              "বাংলা",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "আমি আনি।",
+                "a-mi a-ni",
+                "I’m Ani."
+              ],
+              [
+                "আমার নাম আনি।",
+                "a-mar nam a-ni",
+                "My name is Ani."
+              ],
+              [
+                "আমি ছাত্রী।",
+                "a-mi chha-tri",
+                "I’m a student (female)."
+              ],
+              [
+                "আমি ইন্দোনেশিয়ার।",
+                "a-mi in-do-nè-shi-ar",
+                "I’m from Indonesia."
+              ],
+              [
+                "ইনি আমার বোন।",
+                "i-ni a-mar bon",
+                "This is my sister."
+              ],
+              [
+                "আপনার নাম কী?",
+                "ap-nar nam ki",
+                "What is your name?"
+              ],
+              [
+                "আপনি কি ছাত্র?",
+                "ap-ni ki chha-trô",
+                "Are you a student?"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **This pattern only works in the present.** As soon as the story moves to the past, a linking verb appears: আমি ছাত্র **ছিলাম** (I was a student). So Bengali drops the link only in the present — not always. Unit 13 deals with it."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Introducing yourself in four sentences",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These four sentences are enough for any first introduction. Learn them as one block, swap in your own details, and you have an introduction you can use anytime."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "আমার নাম আনি।",
+              "a-mar nam a-ni",
+              "My name is Ani."
+            ],
+            [
+              "আমি ইন্দোনেশিয়া থেকে এসেছি।",
+              "a-mi in-do-nè-shi-a thè-kè é-sè-chhi",
+              "I’ve come from Indonesia."
+            ],
+            [
+              "আমি এখানে কাজ করি।",
+              "a-mi è-kha-né kaj kô-ri",
+              "I work here."
+            ],
+            [
+              "আমি একটু একটু বাংলা বলি।",
+              "a-mi èk-Tu èk-Tu bang-la bô-li",
+              "I speak a little Bengali."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two sentences that will save you in your first week",
+          "items": [
+            "**আমি বাংলা বুঝি না।** (*a-mi bang-la bu-jhi na*) — “I don’t understand Bengali.” ⚠️ Note where না goes: **after** the verb, not before it like English “don’t”. Unit 6 covers this.",
+            "**একটু আস্তে বলুন।** (*èk-Tu as-té bô-lun*) — “Please speak a little more slowly.” **একটু** *èkTu* means “a little”, and it makes any request sound polite, much like “just” in “could you just…”.",
+            "⚠️ Don’t answer the compliment *আপনি বাংলা বলেন!* with a firm denial. The natural reply is **একটু একটু** (a little) or **শিখছি** (I’m learning). Denying it outright actually ends the conversation."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One thing about names. Bengalis often ask **আপনার শুভ নাম কী?** (*ap-nar shubh nam ki* — “what is your good name?”). It isn’t a different question; it’s just the polite way of asking the same thing. Simply answer with your name. And don’t be surprised if your name soon gets shortened and given a -দা or -আপা tail — not because they forgot it, but because you’re now considered family."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "নমস্কার",
+      "baca": "nô-môsh-kar",
+      "en": "hello (Hindu greeting, neutral)"
+    },
+    {
+      "bn": "আসসালামু আলাইকুম",
+      "baca": "as-sa-la-mu a-lai-kum",
+      "en": "assalamu alaikum (Muslim greeting)"
+    },
+    {
+      "bn": "আদাব",
+      "baca": "a-dab",
+      "en": "polite greeting, religion-neutral"
+    },
+    {
+      "bn": "আমি",
+      "baca": "a-mi",
+      "en": "I"
+    },
+    {
+      "bn": "আমরা",
+      "baca": "am-ra",
+      "en": "we"
+    },
+    {
+      "bn": "তুমি",
+      "baca": "tu-mi",
+      "en": "you (familiar)"
+    },
+    {
+      "bn": "তুই",
+      "baca": "tui",
+      "en": "you (intimate)"
+    },
+    {
+      "bn": "আপনি",
+      "baca": "ap-ni",
+      "en": "you (polite)"
+    },
+    {
+      "bn": "আপনারা",
+      "baca": "ap-na-ra",
+      "en": "you (plural, polite)"
+    },
+    {
+      "bn": "সে · ও",
+      "baca": "sé · o",
+      "en": "he/she"
+    },
+    {
+      "bn": "তিনি · উনি",
+      "baca": "ti-ni · u-ni",
+      "en": "he/she (polite)"
+    },
+    {
+      "bn": "এ · এটা",
+      "baca": "é · é-Ta",
+      "en": "this"
+    },
+    {
+      "bn": "ইনি",
+      "baca": "i-ni",
+      "en": "this (for a respected person)"
+    },
+    {
+      "bn": "আছা",
+      "baca": "a-chha",
+      "en": "to be (somewhere), to exist, to be in a state"
+    },
+    {
+      "bn": "নাম",
+      "baca": "nam",
+      "en": "name"
+    },
+    {
+      "bn": "আমার",
+      "baca": "a-mar",
+      "en": "my"
+    },
+    {
+      "bn": "আপনার",
+      "baca": "ap-nar",
+      "en": "your (polite)"
+    },
+    {
+      "bn": "কেমন",
+      "baca": "kè-mon",
+      "en": "how"
+    },
+    {
+      "bn": "ভালো",
+      "baca": "bha-lo",
+      "en": "good, well"
+    },
+    {
+      "bn": "খুব",
+      "baca": "khub",
+      "en": "very"
+    },
+    {
+      "bn": "ধন্যবাদ",
+      "baca": "dhôn-nô-bad",
+      "en": "thank you"
+    },
+    {
+      "bn": "হ্যাঁ",
+      "baca": "hèⁿ",
+      "en": "yes"
+    },
+    {
+      "bn": "না",
+      "baca": "na",
+      "en": "no, not"
+    },
+    {
+      "bn": "জি",
+      "baca": "ji",
+      "en": "polite particle; yes"
+    },
+    {
+      "bn": "কি",
+      "baca": "ki",
+      "en": "yes/no question marker"
+    },
+    {
+      "bn": "কী",
+      "baca": "ki",
+      "en": "what"
+    },
+    {
+      "bn": "থেকে",
+      "baca": "thè-kè",
+      "en": "from"
+    },
+    {
+      "bn": "এখানে",
+      "baca": "è-kha-né",
+      "en": "here"
+    },
+    {
+      "bn": "থাকা",
+      "baca": "tha-ka",
+      "en": "to live, to stay"
+    },
+    {
+      "bn": "বলা",
+      "baca": "bô-la",
+      "en": "to speak, to say"
+    },
+    {
+      "bn": "শেখা",
+      "baca": "shé-kha",
+      "en": "to learn"
+    },
+    {
+      "bn": "একটু",
+      "baca": "èk-Tu",
+      "en": "a little"
+    },
+    {
+      "bn": "বোন",
+      "baca": "bon",
+      "en": "sister"
+    },
+    {
+      "bn": "ভাই",
+      "baca": "bhai",
+      "en": "brother; “bro” (address)"
+    },
+    {
+      "bn": "দেখা হওয়া",
+      "baca": "dè-kha hô-oa",
+      "en": "to meet"
+    },
+    {
+      "bn": "আবার",
+      "baca": "a-bar",
+      "en": "again"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the correct form of আছা: আছি, আছ, আছেন, or আছে.",
+      "items": [
+        "আমি ভালো ____ ।",
+        "আপনি কেমন ____ ?",
+        "সে বাড়িতে ____ ।",
+        "আমরা এখানে ____ ।",
+        "তুমি কেমন ____ ?",
+        "উনি ঢাকায় ____ ।"
+      ]
+    },
+    {
+      "prompt": "Choose কি or কী.",
+      "items": [
+        "আপনার নাম ____ ?",
+        "আপনি ____ ছাত্র?",
+        "এটা ____ ?",
+        "তুমি ____ বাংলা বল?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order. Remember: the verb goes last.",
+      "items": [
+        "আনি / নাম / আমার",
+        "আছি / আমি / ভালো",
+        "আছেন / আপনি / কেমন",
+        "বোন / আমার / ইনি",
+        "থাকি / আমরা / এখানে"
+      ]
+    },
+    {
+      "prompt": "Translate into Bengali.",
+      "items": [
+        "My name is Budi.",
+        "I’m from Indonesia.",
+        "How are you? (to someone you respect)",
+        "I’m fine, thank you.",
+        "This is my brother.",
+        "See you again!"
+      ]
+    }
+  ],
+  "answers": [
+    "আছি — আছেন — আছে — আছি — আছ — আছেন",
+    "কী — কি — কী — কি",
+    "আমার নাম আনি। — আমি ভালো আছি। — আপনি কেমন আছেন? — ইনি আমার বোন। — আমরা এখানে থাকি।",
+    "আমার নাম বুদি। — আমি ইন্দোনেশিয়া থেকে এসেছি। — আপনি কেমন আছেন? — আমি ভালো আছি, ধন্যবাদ। — ইনি আমার ভাই। — আবার দেখা হবে!"
+  ]
+}

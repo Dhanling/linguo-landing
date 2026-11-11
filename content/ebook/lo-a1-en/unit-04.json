@@ -1,0 +1,627 @@
+{
+  "title": "Classifiers: counting things the right way",
+  "title_target": "ລັກສະນະນາມ — Lak-sa-na-náam",
+  "goal": "Count anything with the right classifier, order quantities at food stalls and shops, and point out \"this one, that one\" without naming the thing.",
+  "bekal": [
+    "the pattern noun + number + classifier",
+    "the most common classifiers: ຄົນ ໂຕ ອັນ ໜ່ວຍ ໃບ ຫົວ",
+    "moving \"one\" to the end",
+    "ask how many with ຈັກ + classifier",
+    "use ອັນນີ້ / ອັນນັ້ນ in place of a noun"
+  ],
+  "dialogs": [
+    {
+      "title": "ບົດສົນທະນາ — At the corner grocery store",
+      "intro": "Budi is shopping for everyday things. Count how many times a classifier appears in this dialogue — Lao almost never says a number without one.",
+      "lines": [
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ສະບາຍດີ|Sa-baai-dii] [ມີ|Míi][ນ້ຳ|nâm][ບໍ່|bàw]",
+          "id": "Hello. Do you have water?",
+          "literal": "well-good. have — water — (question)?"
+        },
+        {
+          "speaker": "ຄົນຂາຍ:",
+          "text": "[ມີ|Míi] [ເອົາ|Ao][ຈັກ|ják][ຂວດ|khùat]",
+          "id": "Yes. How many bottles?",
+          "literal": "have. take — how-many — bottle?"
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ສາມ|Sǎam][ຂວດ|khùat] [ແລ້ວ|Lèeo][ກໍ|kaw][ເບຍ|bia][ສອງ|sǎwng][ຂວດ|khùat][ນຳ|nám]",
+          "id": "Three bottles. And two bottles of beer too.",
+          "literal": "three — bottle. then — also — beer — two — bottle — along."
+        },
+        {
+          "speaker": "ຄົນຂາຍ:",
+          "text": "[ໄດ້|Dâi] [ເອົາ|Ao][ຫຍັງ|nyǎng][ອີກ|ìik][ບໍ່|bàw]",
+          "id": "Sure. Anything else?",
+          "literal": "can. take — what — more — (question)?"
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ຂໍ|Khǎw][ໄຂ່|khài][ສິບ|síp][ໜ່ວຍ|nùay] [ແລະ|Lae][ເຂົ້າໜົມ|khào-nǒm][ຖົງ|thǒng][ໜຶ່ງ|nʉ̀ng]",
+          "id": "Ten eggs, please, and a bag of snacks.",
+          "literal": "ask-for — egg — ten — piece. and — snack — bag — one."
+        },
+        {
+          "speaker": "ຄົນຂາຍ:",
+          "text": "[ເຂົ້າໜົມ|Khào-nǒm][ອັນ|an][ໃດ|dai] [ອັນ|An][ນີ້|nîi][ຫຼື|lʉ̌ʉ][ອັນ|an][ນັ້ນ|nân]",
+          "id": "Which snacks? This one or that one?",
+          "literal": "snack — piece — which? piece — this — or — piece — that?"
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ອັນ|An][ນັ້ນ|nân] [ອັນ|An][ສີ|sǐi][ຂຽວ|khǐao]",
+          "id": "That one. The green one.",
+          "literal": "piece — that. piece — color — green."
+        },
+        {
+          "speaker": "ຄົນຂາຍ:",
+          "text": "[ໄດ້|Dâi] [ໝົດ|Mót][ຫ້າ|hāa][ສິບ|síp][ພັນ|phán][ກີບ|kìip]",
+          "id": "Okay. That's fifty thousand kip altogether.",
+          "literal": "can. used-up — five — ten — thousand — kip."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ນີ້|Nîi][ເດີ້|dòe] [ຂ້ອຍ|Khàwy][ບໍ່|bàw][ມີ|míi][ຖົງ|thǒng] [ຂໍ|Khǎw][ຖົງ|thǒng][ໜຶ່ງ|nʉ̀ng][ໃບ|bai][ໄດ້|dâi][ບໍ່|bàw]",
+          "id": "Here you go. I didn't bring a bag. Could I have one?",
+          "literal": "this — (friendly). I — not — have — bag. ask-for — bag — one — sheet — can — (question)?"
+        },
+        {
+          "speaker": "ຄົນຂາຍ:",
+          "text": "[ໄດ້|Dâi][ເລີຍ|lóei] [ຂອບໃຈ|Khàwp-jai][ເດີ້|dòe]",
+          "id": "Of course. Thank you.",
+          "literal": "can — right-away. thank-you — (friendly)."
+        }
+      ],
+      "notes": [
+        "**The order is always: noun + number + classifier.** *ນ້ຳສາມຂວດ nâm sǎam khùat* = \"water three bottle.\" English puts the number first (\"three bottles of water\"); Lao puts it after the noun. The wrong order is still understood, but it sounds instantly foreign.",
+        "**For \"one,\" the number moves AFTER the classifier.** *ຖົງໜຶ່ງ thǒng nʉ̀ng* (one bag) sounds natural; *ໜຶ່ງຖົງ* sounds like reading a list. It's a habit, not a hard rule — but follow it, because everyone does.",
+        "**ຈັກ ják + classifier = \"how many.\"** *ຈັກຂວດ* (how many bottles), *ຈັກຄົນ* (how many people), *ຈັກໜ່ວຍ* (how many pieces). Notice that the classifier must still appear even though the number isn't known yet.",
+        "**ອັນ an is the emergency classifier.** It's used for small things with no special classifier — and if you forget the right one, *ອັນ* is almost always accepted. It also works as a pronoun for things: *ອັນນີ້* (this one), *ອັນນັ້ນ* (that one), *ອັນໃດ* (which one).",
+        "**A classifier can stand alone without the noun**, as long as both sides know what's meant. *ເອົາສອງໂຕ* (I'll take two of them), *ເອົາອັນສີຂຽວ* (I'll take the green one). This is what makes Lao conversation sound so compact.",
+        "**ຂໍ khǎw = \"to ask for,\" and it's the most polite way to start a request.** *ຂໍນ້ຳແດ່* (some water, please), *ຂໍເບິ່ງແດ່* (may I have a look). Compare *ເອົາ ao*, which is more like \"take\" — fine at stalls and shops, but too direct for asking a favor.",
+        "**ໝົດ mót means \"used up,\" and it's used for \"in total.\"** *ໝົດຫ້າສິບພັນ* = \"fifty thousand altogether.\" The same word means \"sold out\": *ໝົດແລ້ວ* (all gone).",
+        "**ກໍ kaw = \"also, then.\"** It comes before the verb and links the sentence to the one before: *ແລ້ວກໍເອົາເບຍນຳ* (and then beer too). Together with *ນຳ nám* (along, too) at the end, it's the most common way to add something."
+      ],
+      "grammars": [
+        {
+          "title": "Twelve classifiers that cover almost everything",
+          "table": {
+            "head": [
+              "Classifier",
+              "Say it",
+              "Used for",
+              "Example"
+            ],
+            "rows": [
+              [
+                "ຄົນ",
+                "*khón*",
+                "people",
+                "*ໝູ່ສາມຄົນ* — three friends"
+              ],
+              [
+                "ໂຕ",
+                "*tǒo*",
+                "animals, clothes, tables, chairs",
+                "*ໝາສອງໂຕ* — two dogs"
+              ],
+              [
+                "ອັນ",
+                "*an*",
+                "small things, anything",
+                "*ອັນນີ້* — this one"
+              ],
+              [
+                "ໜ່ວຍ",
+                "*nùay*",
+                "fruit, eggs, round things, phones",
+                "*ໄຂ່ສິບໜ່ວຍ* — ten eggs"
+              ],
+              [
+                "ໃບ",
+                "*bai*",
+                "sheets, bags, tickets",
+                "*ປີ້ໜຶ່ງໃບ* — one ticket"
+              ],
+              [
+                "ຫົວ",
+                "*hǔa*",
+                "books",
+                "*ປຶ້ມສອງຫົວ* — two books"
+              ],
+              [
+                "ຄັນ",
+                "*khán*",
+                "vehicles, umbrellas",
+                "*ລົດສາມຄັນ* — three cars"
+              ],
+              [
+                "ຂວດ",
+                "*khùat*",
+                "bottles",
+                "*ນ້ຳສາມຂວດ* — three bottles of water"
+              ],
+              [
+                "ແກ້ວ",
+                "*kêeo*",
+                "glasses",
+                "*ນ້ຳສອງແກ້ວ* — two glasses of water"
+              ],
+              [
+                "ຈອກ",
+                "*jàwk*",
+                "cups",
+                "*ກາເຟຈອກໜຶ່ງ* — a cup of coffee"
+              ],
+              [
+                "ຖ້ວຍ",
+                "*thûay*",
+                "bowls",
+                "*ເຝີສອງຖ້ວຍ* — two bowls of feu"
+              ],
+              [
+                "ຖົງ",
+                "*thǒng*",
+                "bags, packets",
+                "*ເຂົ້າໜົມຖົງໜຶ່ງ* — a bag of snacks"
+              ]
+            ]
+          },
+          "after": [
+            "Don't memorize the whole table today. Take the first six; the rest will stick through use, and *ອັນ* covers everything you haven't learned yet."
+          ]
+        },
+        {
+          "title": "Pointing without naming the thing",
+          "body": [
+            "Classifier + demonstrative makes a complete pronoun for things. You'll use it constantly in shops and at food stalls."
+          ],
+          "table": {
+            "head": [
+              "Lao",
+              "Say it",
+              "Meaning",
+              "When"
+            ],
+            "rows": [
+              [
+                "ອັນນີ້",
+                "*an nîi*",
+                "this one",
+                "something near you"
+              ],
+              [
+                "ອັນນັ້ນ",
+                "*an nân*",
+                "that one",
+                "something near the listener"
+              ],
+              [
+                "ອັນພຸ້ນ",
+                "*an phûn*",
+                "that one over there",
+                "something far from both of you"
+              ],
+              [
+                "ອັນໃດ",
+                "*an dai*",
+                "which one",
+                "asking someone to choose"
+              ],
+              [
+                "ໂຕນີ້",
+                "*tǒo nîi*",
+                "this one (shirt/animal)",
+                "the classifier follows the noun"
+              ],
+              [
+                "ຄົນນັ້ນ",
+                "*khón nân*",
+                "that person",
+                "pointing at a person"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Lao distinguishes **three distances**, not two: *ນີ້* (near me), *ນັ້ນ* (near you), *ພຸ້ນ* (far from both of us). Modern English uses \"that\" for the last two — older English had \"yonder\" for the third."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Everyday shopping items and their classifiers",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Lao",
+            "Say it",
+            "English",
+            "Classifier"
+          ],
+          "rows": [
+            [
+              "ນ້ຳ",
+              "*nâm*",
+              "water",
+              "ຂວດ / ແກ້ວ"
+            ],
+            [
+              "ເບຍ",
+              "*bia*",
+              "beer",
+              "ຂວດ"
+            ],
+            [
+              "ກາເຟ",
+              "*kaa-fée*",
+              "coffee",
+              "ຈອກ"
+            ],
+            [
+              "ໄຂ່",
+              "*khài*",
+              "egg",
+              "ໜ່ວຍ"
+            ],
+            [
+              "ເຂົ້າໜົມ",
+              "*khào-nǒm*",
+              "snack, sweets",
+              "ຖົງ / ອັນ"
+            ],
+            [
+              "ໝາກໄມ້",
+              "*màak-mâi*",
+              "fruit",
+              "ໜ່ວຍ"
+            ],
+            [
+              "ເຂົ້າ",
+              "*khào*",
+              "rice (cooked or raw)",
+              "ຈານ / ຖົງ"
+            ],
+            [
+              "ຢາສູບ",
+              "*yaa sùup*",
+              "cigarette",
+              "ຊອງ"
+            ],
+            [
+              "ສະບູ",
+              "*sa-buu*",
+              "soap",
+              "ກ້ອນ"
+            ],
+            [
+              "ເຈ້ຍ",
+              "*jîa*",
+              "paper, tissue",
+              "ໃບ / ຫໍ່"
+            ],
+            [
+              "ປຶ້ມ",
+              "*pʉ̂m*",
+              "book",
+              "ຫົວ"
+            ],
+            [
+              "ໂທລະສັບ",
+              "*thóo-la-sáp*",
+              "phone",
+              "ໜ່ວຍ"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice **ເຂົ້າ *khào*** (rice) and **ເຂົ້າໜົມ *khào-nǒm*** (snack): they share a word because both are made from rice. In Laos, \"rice\" almost always means **ເຂົ້າໜຽວ *khào-nǐao*** — sticky rice, eaten by hand from a woven basket. Regular rice is *ເຂົ້າຈ້າວ khào-jâao*."
+        }
+      ]
+    },
+    {
+      "title": "Colors",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Lao",
+            "Say it",
+            "English",
+            "Lao",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "ສີແດງ",
+              "*sǐi deeng*",
+              "red",
+              "ສີຟ້າ",
+              "*sǐi fâa*",
+              "light blue"
+            ],
+            [
+              "ສີຂາວ",
+              "*sǐi khǎao*",
+              "white",
+              "ສີນ້ຳເງິນ",
+              "*sǐi nâm-ngóen*",
+              "dark blue"
+            ],
+            [
+              "ສີດຳ",
+              "*sǐi dam*",
+              "black",
+              "ສີເຫຼືອງ",
+              "*sǐi lʉ̌ang*",
+              "yellow"
+            ],
+            [
+              "ສີຂຽວ",
+              "*sǐi khǐao*",
+              "green",
+              "ສີສົ້ມ",
+              "*sǐi sôm*",
+              "orange"
+            ],
+            [
+              "ສີນ້ຳຕານ",
+              "*sǐi nâm-taan*",
+              "brown",
+              "ສີມ່ວງ",
+              "*sǐi mùang*",
+              "purple"
+            ],
+            [
+              "ສີເທົາ",
+              "*sǐi thao*",
+              "gray",
+              "ສີບົວ",
+              "*sǐi bua*",
+              "pink"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that many color names are **a thing + its color**, much like English \"orange\" or \"sky blue\": *ສີນ້ຳຕານ* is literally \"sugar-water color\" (brown), *ສີບົວ* \"lotus color\" (pink), *ສີຟ້າ* \"sky color.\" The word *ສີ sǐi* in front can be dropped when it's clear: *ເສື້ອແດງ sʉ̂a deeng* (red shirt)."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "lo": "ຂວດ",
+      "baca": "khùat",
+      "en": "bottle (classifier)"
+    },
+    {
+      "lo": "ໜ່ວຍ",
+      "baca": "nùay",
+      "en": "piece, round thing (classifier)"
+    },
+    {
+      "lo": "ໃບ",
+      "baca": "bai",
+      "en": "sheet (classifier)"
+    },
+    {
+      "lo": "ຫົວ",
+      "baca": "hǔa",
+      "en": "classifier for books; head"
+    },
+    {
+      "lo": "ໂຕ",
+      "baca": "tǒo",
+      "en": "animal, item of clothing (classifier)"
+    },
+    {
+      "lo": "ອັນ",
+      "baca": "an",
+      "en": "piece, thing (general classifier)"
+    },
+    {
+      "lo": "ຖົງ",
+      "baca": "thǒng",
+      "en": "bag, packet"
+    },
+    {
+      "lo": "ຈອກ",
+      "baca": "jàwk",
+      "en": "cup"
+    },
+    {
+      "lo": "ແກ້ວ",
+      "baca": "kêeo",
+      "en": "glass"
+    },
+    {
+      "lo": "ຖ້ວຍ",
+      "baca": "thûay",
+      "en": "bowl"
+    },
+    {
+      "lo": "ຄັນ",
+      "baca": "khán",
+      "en": "classifier for vehicles"
+    },
+    {
+      "lo": "ນ້ຳ",
+      "baca": "nâm",
+      "en": "water"
+    },
+    {
+      "lo": "ເບຍ",
+      "baca": "bia",
+      "en": "beer"
+    },
+    {
+      "lo": "ກາເຟ",
+      "baca": "kaa-fée",
+      "en": "coffee"
+    },
+    {
+      "lo": "ໄຂ່",
+      "baca": "khài",
+      "en": "egg"
+    },
+    {
+      "lo": "ເຂົ້າ",
+      "baca": "khào",
+      "en": "rice (cooked or raw)"
+    },
+    {
+      "lo": "ເຂົ້າໜຽວ",
+      "baca": "khào-nǐao",
+      "en": "sticky rice"
+    },
+    {
+      "lo": "ເຂົ້າໜົມ",
+      "baca": "khào-nǒm",
+      "en": "snack, sweets"
+    },
+    {
+      "lo": "ໝາກໄມ້",
+      "baca": "màak-mâi",
+      "en": "fruit"
+    },
+    {
+      "lo": "ປຶ້ມ",
+      "baca": "pʉ̂m",
+      "en": "book"
+    },
+    {
+      "lo": "ໂທລະສັບ",
+      "baca": "thóo-la-sáp",
+      "en": "phone"
+    },
+    {
+      "lo": "ຂໍ",
+      "baca": "khǎw",
+      "en": "to ask for"
+    },
+    {
+      "lo": "ມີ",
+      "baca": "míi",
+      "en": "to have, there is"
+    },
+    {
+      "lo": "ບໍ່ມີ",
+      "baca": "bàw míi",
+      "en": "there isn't"
+    },
+    {
+      "lo": "ໝົດ",
+      "baca": "mót",
+      "en": "used up; in total"
+    },
+    {
+      "lo": "ກໍ",
+      "baca": "kaw",
+      "en": "also, then"
+    },
+    {
+      "lo": "ຫຼື",
+      "baca": "lʉ̌ʉ",
+      "en": "or"
+    },
+    {
+      "lo": "ໃດ",
+      "baca": "dai",
+      "en": "which"
+    },
+    {
+      "lo": "ນີ້",
+      "baca": "nîi",
+      "en": "this"
+    },
+    {
+      "lo": "ນັ້ນ",
+      "baca": "nân",
+      "en": "that"
+    },
+    {
+      "lo": "ພຸ້ນ",
+      "baca": "phûn",
+      "en": "that (far)"
+    },
+    {
+      "lo": "ສີຂຽວ",
+      "baca": "sǐi khǐao",
+      "en": "green"
+    },
+    {
+      "lo": "ສີແດງ",
+      "baca": "sǐi deeng",
+      "en": "red"
+    },
+    {
+      "lo": "ສີດຳ",
+      "baca": "sǐi dam",
+      "en": "black"
+    },
+    {
+      "lo": "ສີຂາວ",
+      "baca": "sǐi khǎao",
+      "en": "white"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right classifier: ຄົນ, ໂຕ, ອັນ, ໜ່ວຍ, ຂວດ, or ຫົວ.",
+      "items": [
+        "ນ້ຳສາມ____ (three bottles of water)",
+        "ໝູ່ສີ່____ (four friends)",
+        "ໄຂ່ສິບ____ (ten eggs)",
+        "ປຶ້ມສອງ____ (two books)",
+        "ໝາໜຶ່ງ____ (one dog)",
+        "____ນີ້ເທົ່າໃດ (how much is this one?)"
+      ]
+    },
+    {
+      "prompt": "Say it in Lao, in the right order.",
+      "items": [
+        "two glasses of coffee",
+        "a bag of snacks",
+        "three bowls",
+        "five pieces of fruit",
+        "one ticket"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ຂວດ / ຈັກ / ເອົາ",
+        "ບໍ່ / ມີ / ນ້ຳ",
+        "ນັ້ນ / ເອົາ / ອັນ",
+        "ໜຶ່ງ / ຂໍ / ໃບ / ຖົງ",
+        "ພັນ / ຫ້າສິບ / ໝົດ / ກີບ"
+      ]
+    },
+    {
+      "prompt": "Translate into Lao.",
+      "items": [
+        "Do you have water?",
+        "How many bottles do you want?",
+        "Three bottles, and two bottles of beer too.",
+        "Ten eggs, please.",
+        "Which one? This one or that one?",
+        "That one, the green one."
+      ]
+    }
+  ],
+  "answers": [
+    "ຂວດ — ຄົນ — ໜ່ວຍ — ຫົວ — ໂຕ — ອັນ",
+    "ກາເຟສອງຈອກ — ເຂົ້າໜົມຖົງໜຶ່ງ — ສາມຖ້ວຍ — ຫ້າໜ່ວຍ — ປີ້ໜຶ່ງໃບ",
+    "ເອົາຈັກຂວດ — ບໍ່ມີນ້ຳ — ເອົາອັນນັ້ນ — ຂໍຖົງໜຶ່ງໃບ — ໝົດຫ້າສິບພັນກີບ",
+    "ມີນ້ຳບໍ່ — ເອົາຈັກຂວດ — ສາມຂວດ ແລ້ວກໍເບຍສອງຂວດນຳ — ຂໍໄຂ່ສິບໜ່ວຍ — ອັນໃດ ອັນນີ້ຫຼືອັນນັ້ນ — ອັນນັ້ນ ອັນສີຂຽວ"
+  ],
+  "wave": "Review Unit 2: cover the Lao, then talk about your job, where you live, and how long you've been there — all from memory."
+}

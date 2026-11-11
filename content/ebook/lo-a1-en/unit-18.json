@@ -1,0 +1,644 @@
+{
+  "title": "Phone calls, messages, and swapping contacts",
+  "title_target": "ໂທລະສັບ ແລະ ຂໍ້ຄວາມ — Thóo-la-sáp lae khàw-khwáam",
+  "goal": "Make and take phone calls, swap numbers and accounts, write short messages that don't sound stiff, and deal with a bad connection.",
+  "bekal": [
+    "opening and ending a call",
+    "swapping numbers with ເບີໂທ",
+    "handling problems: ຟັງບໍ່ຄັກ",
+    "leaving a message with ຝາກບອກ",
+    "writing natural short messages"
+  ],
+  "dialogs": [
+    {
+      "title": "ບົດສົນທະນາ — Calling because you'll be late",
+      "intro": "Budi is stuck in the rain and calls Bounmy. Notice that a Lao phone call opens with a completely different word from the everyday greeting.",
+      "lines": [
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ຮາໂລ|Haa-lóo] [ແມ່ນ|Mèen][ໃຜ|phǎi][ນໍ|náw]",
+          "id": "Hello? Who's this?",
+          "literal": "hello. be — who — (particle)?"
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ຮາໂລ|Haa-lóo] [ບູດີ|Buu-dii][ເອງ|éeng] [ຟັງ|Fáng][ຄັກ|khak][ບໍ່|bàw]",
+          "id": "Hello, it's Budi. Can you hear me clearly?",
+          "literal": "hello. Budi — self. hear — clear — (question)?"
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ຟັງ|Fáng][ບໍ່|bàw][ຄັກ|khak] [ສັນຍານ|Sǎn-nyáan][ບໍ່|bàw][ດີ|dii] [ເວົ້າ|Vâo][ດັງໆ|dang-dang][ແດ່|dèe]",
+          "id": "Not very clearly. The signal's bad. Speak up a bit.",
+          "literal": "hear — not — clear. signal — not — good. speak — loud-loud — a-little."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ດຽວນີ້|Dǐao-nîi][ຄັກ|khak][ບໍ່|bàw] [ຂ້ອຍ|Khàwy][ຊິ|si][ມາ|maa][ຊ້າ|sâa][ໜ້ອຍ|nàwy][ໜຶ່ງ|nʉ̀ng] [ຝົນ|Fǒn][ຕົກ|tók][ໜັກ|nak]",
+          "id": "Is it clear now? I'm going to be a little late. It's pouring.",
+          "literal": "now — clear — (question)? I — will — come — late — little — one. rain — fall — heavy."
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ຄັກ|Khak][ແລ້ວ|lèeo] [ບໍ່ເປັນຫຍັງ|Bàw pen nyǎng] [ຊິ|Si][ຮອດ|hâwt][ຈັກ|ják][ໂມງ|móong]",
+          "id": "Clear now. No problem. About what time will you get here?",
+          "literal": "clear — already. not — be — what. will — arrive — what — o'clock?"
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ປະມານ|Pa-máan][ເຈັດ|jét][ໂມງ|móong] [ຖ້າ|Thàa][ຝົນ|fǒn][ເຊົາ|sao] [ອາດ|àat][ຊິ|si][ໄວ|vái][ກວ່າ|kwàa][ນັ້ນ|nân]",
+          "id": "Around seven. If the rain lets up, maybe earlier than that.",
+          "literal": "about — seven — o'clock. if — rain — stop — maybe — will — fast — more — that."
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ໄດ້|Dâi] [ຂ້ອຍ|Khàwy][ຊິ|si][ຖ້າ|thàa][ຢູ່|yùu][ຮ້ານ|hâan] [ຝາກ|Fàak][ບອກ|bàwk][ໝູ່|mùu][ໃຫ້|hài][ບໍ່|bàw]",
+          "id": "Okay, I'll wait at the restaurant. Should I tell the others?",
+          "literal": "can. I — will — wait — at — shop. entrust — tell — friend — give — (question)?"
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ຝາກ|Fàak][ບອກ|bàwk][ແດ່|dèe] [ບອກ|Bàwk][ວ່າ|vàa][ຢ່າ|yàa][ຖ້າ|thàa][ຂ້ອຍ|khàwy] [ສັ່ງ|Sáng][ອາຫານ|aa-hǎan][ກ່ອນ|kàwn][ເລີຍ|lóei]",
+          "id": "Please do. Tell them not to wait for me — go ahead and order.",
+          "literal": "entrust — tell — a-little. tell — that — don't — wait — me. order — food — first — right-away."
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ໄດ້|Dâi][ເລີຍ|lóei] [ສົ່ງ|Sóng][ຕຳແໜ່ງ|tam-nèng][ໃຫ້|hài][ຂ້ອຍ|khàwy][ໃນ|nai][ວອດແອັບ|wàwt-èp][ເດີ້|dòe]",
+          "id": "Sure. Send me your location on WhatsApp, okay?",
+          "literal": "can — right-away. send — location — give — me — in — WhatsApp — (friendly particle)."
+        },
+        {
+          "speaker": "ບູດີ:",
+          "text": "[ໄດ້|Dâi] [ເບີ|Bòe][ໂທ|thóo][ເຈົ້າ|jâo][ຄື|khʉʉ][ເກົ່າ|kào][ບໍ່|bàw]",
+          "id": "Okay. Is your number still the old one?",
+          "literal": "can. number — phone — you — like — old — (question)?"
+        },
+        {
+          "speaker": "ບຸນມີ:",
+          "text": "[ຄື|Khʉʉ][ເກົ່າ|kào] [ພົບ|Phop][ກັນ|kan][ຕອນ|tawn][ແລງ|léeng][ເດີ້|dòe] [ຂັບ|Khap][ລົດ|lot][ລະວັງ|la-wáng][ເດີ້|dòe]",
+          "id": "Still the same. See you this evening. Drive carefully.",
+          "literal": "like — old. meet — together — time — evening — (friendly particle). drive — vehicle — careful — (friendly particle)."
+        }
+      ],
+      "notes": [
+        "**ຮາໂລ haa-lóo is used ONLY on the phone.** Greeting someone in front of you with *ຮາໂລ* sounds odd. Face to face, stick with *ສະບາຍດີ*. The habit comes from French *allô*, and it's used across former Indochina.",
+        "**ຄັກ khak = \"clear, good, neat\", and it's a very Lao word.** *ຟັງບໍ່ຄັກ* (can't hear clearly), *ເບິ່ງບໍ່ຄັກ* (can't see clearly), *ຄັກແລ້ວ* (good, okay). In everyday speech, *ຄັກ* also means \"cool\": *ຄັກຫຼາຍ* (so cool).",
+        "**ເອງ éeng after a name = \"it's me\".** *ບູດີເອງ* is the most natural way to identify yourself on the phone — not *ຂ້ອຍແມ່ນບູດີ*, which sounds like reading out a document.",
+        "**ຝາກບອກ fàak bàwk = \"leave a message, pass on word\".** The word *ຝາກ fàak* means \"entrust, leave with someone\": *ຝາກເງິນ* (deposit money), *ຂອງຝາກ* (souvenirs — literally \"entrusted things\"). To ask someone to pass on a message: *ຝາກບອກລາວແດ່* (please tell him for me).",
+        "**ປະມານ pa-máan = \"about, around\".** *ປະມານເຈັດໂມງ* (around seven), *ປະມານສາມກິໂລ* (about three kilometers). It keeps your commitments loose in an honest way — and it's used all the time.",
+        "**ສັ່ງ sáng = \"order (food, goods), tell (someone to do)\".** *ສັ່ງອາຫານ* (order food), *ສັ່ງເຄື່ອງ* (order goods), *ສັ່ງໃຫ້ໄປ* (tell someone to go). Compare *ຈອງ jawng* (book, reserve) from unit 7.",
+        "**ດັງໆ dang-dang = \"loudly\".** Doubling an adjective in Lao both softens and clarifies it: *ຊ້າໆ* (slowly), *ໄວໆ* (quickly), *ດີໆ* (nicely, properly). It works a bit like English \"nice and slow\".",
+        "**ຄືເກົ່າ khʉʉ kào = \"same as before, as usual\".** A handy answer to any question about something that hasn't changed: phone number, address, how you're doing. *ສະບາຍດີບໍ່ — ຄືເກົ່າ* (how are you? — same old).",
+        "**About phones in Laos.** Two apps rule everything: **WhatsApp** for personal and work chats, and **Facebook** — *ເຟສບຸກ Fêet-búk* — for almost everything else, including shops, restaurants, and official announcements. Many small businesses in Laos have no website at all, only a Facebook page. Swapping Facebook accounts is as normal as swapping numbers."
+      ],
+      "grammars": [
+        {
+          "title": "Phone phrases from hello to hang-up",
+          "table": {
+            "head": [
+              "Lao",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ຮາໂລ",
+                "*haa-lóo*",
+                "hello (phone)"
+              ],
+              [
+                "ແມ່ນໃຜນໍ",
+                "*mèen phǎi náw*",
+                "who's this?"
+              ],
+              [
+                "…ເອງ",
+                "*…éeng*",
+                "it's … (your name)"
+              ],
+              [
+                "ຢູ່ບໍ່",
+                "*yùu bàw*",
+                "is … there? (asking for someone)"
+              ],
+              [
+                "ຂໍເວົ້ານຳ…ແດ່",
+                "*khǎw vâo nám… dèe*",
+                "may I speak to…?"
+              ],
+              [
+                "ລາວບໍ່ຢູ່",
+                "*láao bàw yùu*",
+                "he/she isn't here"
+              ],
+              [
+                "ຝາກບອກໄດ້ບໍ່",
+                "*fàak bàwk dâi bàw*",
+                "can I leave a message?"
+              ],
+              [
+                "ຟັງບໍ່ຄັກ",
+                "*fáng bàw khak*",
+                "I can't hear you clearly"
+              ],
+              [
+                "ສັນຍານບໍ່ດີ",
+                "*sǎn-nyáan bàw dii*",
+                "the signal's bad"
+              ],
+              [
+                "ໂທຫາໃໝ່ໄດ້ບໍ່",
+                "*thóo hǎa mài dâi bàw*",
+                "can you call back?"
+              ],
+              [
+                "ດຽວໂທຫາຄືນ",
+                "*dǐao thóo hǎa khʉ́ʉn*",
+                "I'll call you back"
+              ],
+              [
+                "ໄປກ່ອນເດີ້",
+                "*pai kàwn dòe*",
+                "I'll let you go now"
+              ]
+            ]
+          },
+          "after": [
+            "Ending a call in Lao doesn't use a formal \"goodbye\". What sounds natural: *ໄປກ່ອນເດີ້* (I'm off, okay) or just *ໂອເຄ ເດີ້ ôo-khée dòe*."
+          ]
+        },
+        {
+          "title": "Words for phones and the internet",
+          "table": {
+            "head": [
+              "Lao",
+              "Say it",
+              "English",
+              "Lao",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "ໂທລະສັບ",
+                "*thóo-la-sáp*",
+                "phone, cell phone",
+                "ເບີໂທ",
+                "*bòe thóo*",
+                "phone number"
+              ],
+              [
+                "ໂທ",
+                "*thóo*",
+                "call",
+                "ຮັບສາຍ",
+                "*hap sǎai*",
+                "answer the phone"
+              ],
+              [
+                "ວາງສາຍ",
+                "*wáang sǎai*",
+                "hang up",
+                "ສາຍຫຼຸດ",
+                "*sǎai lut*",
+                "the call dropped"
+              ],
+              [
+                "ຂໍ້ຄວາມ",
+                "*khàw-khwáam*",
+                "text message",
+                "ສົ່ງ",
+                "*sóng*",
+                "send"
+              ],
+              [
+                "ອິນເຕີເນັດ",
+                "*in-tôe-nét*",
+                "internet",
+                "ໄວໄຟ",
+                "*wái-fái*",
+                "Wi-Fi"
+              ],
+              [
+                "ແອັບ",
+                "*èp*",
+                "app",
+                "ເຟສບຸກ",
+                "*Fêet-búk*",
+                "Facebook"
+              ],
+              [
+                "ຮູບໂປຣຟາຍ",
+                "*hûup pôo-fáai*",
+                "profile picture",
+                "ຕຳແໜ່ງ",
+                "*tam-nèng*",
+                "location, position"
+              ],
+              [
+                "ແບັດໝົດ",
+                "*bèt mót*",
+                "battery's dead",
+                "ສາກໄຟ",
+                "*sàak fái*",
+                "charge (a phone)"
+              ]
+            ]
+          },
+          "after": [
+            "**ສາຍ *sǎai*** means \"cable, line\", and it's used for phone connections: *ຮັບສາຍ* (pick up), *ວາງສາຍ* (hang up), *ສາຍຫຼຸດ* (cut off). The same word also means \"bus route\" and \"bloodline\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Writing short messages that sound natural",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Lao",
+            "Say it",
+            "Meaning",
+            "When"
+          ],
+          "rows": [
+            [
+              "ສະບາຍດີເດີ້",
+              "*sa-baai-dii dòe*",
+              "hi",
+              "opening a message"
+            ],
+            [
+              "ຫວ່າງບໍ່",
+              "*wàang bàw*",
+              "you free?",
+              "before asking a favor"
+            ],
+            [
+              "ຢູ່ໃສ",
+              "*yùu sǎi*",
+              "where are you?",
+              "looking for someone"
+            ],
+            [
+              "ຮອດແລ້ວບໍ່",
+              "*hâwt lèeo bàw*",
+              "are you there yet?",
+              "waiting"
+            ],
+            [
+              "ກຳລັງໄປ",
+              "*kam-láng pai*",
+              "on my way",
+              "replying"
+            ],
+            [
+              "ດຽວມາ",
+              "*dǐao maa*",
+              "be there soon",
+              "replying"
+            ],
+            [
+              "ຂໍໂທດມາຊ້າ",
+              "*khǎw-thôot maa sâa*",
+              "sorry I'm late",
+              "apologizing"
+            ],
+            [
+              "ຂອບໃຈເດີ້",
+              "*khàwp-jai dòe*",
+              "thanks!",
+              "closing"
+            ],
+            [
+              "ໂອເຄ",
+              "*ôo-khée*",
+              "okay",
+              "agreeing"
+            ],
+            [
+              "ຮັບຊາບ",
+              "*hap sâap*",
+              "noted, will do",
+              "formal"
+            ],
+            [
+              "ນອນເດີ້",
+              "*náwn dòe*",
+              "go to sleep, okay",
+              "closing at night"
+            ],
+            [
+              "ຝັນດີ",
+              "*fǎn dii*",
+              "sweet dreams",
+              "closing at night"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Lao texting is much shorter than spoken Lao. Pronouns are often dropped completely: *ຮອດແລ້ວບໍ່* without \"you\", *ກຳລັງໄປ* without \"I\". Writing full sentences in a chat actually sounds formal — much like in English."
+        },
+        {
+          "type": "p",
+          "text": "Emoji are used a lot, and laughter is written in numbers: **555** — because the number five in Lao and Thai is *hāa*, so \"555\" is \"ha ha ha\". If someone sends you *555*, they're laughing, not sending a code."
+        }
+      ]
+    },
+    {
+      "title": "Swapping contacts",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Lao",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ຂໍເບີໂທແດ່ໄດ້ບໍ່",
+              "*khǎw bòe thóo dèe dâi bàw*",
+              "can I have your number?"
+            ],
+            [
+              "ເບີຂ້ອຍແມ່ນ…",
+              "*bòe khàwy mèen…*",
+              "my number is…"
+            ],
+            [
+              "ມີເຟສບຸກບໍ່",
+              "*míi Fêet-búk bàw*",
+              "are you on Facebook?"
+            ],
+            [
+              "ຊື່ເຟສຫຍັງ",
+              "*sʉ̂ʉ Fêet nyǎng*",
+              "what's your Facebook name?"
+            ],
+            [
+              "ຂ້ອຍຊິສົ່ງໄປໃຫ້",
+              "*khàwy si sóng pai hài*",
+              "I'll send it to you"
+            ],
+            [
+              "ບັນທຶກເບີໄວ້ແລ້ວ",
+              "*ban-thʉ́k bòe wâi lèeo*",
+              "I've saved your number"
+            ],
+            [
+              "ໂທຫາຂ້ອຍໄດ້ຕະຫຼອດ",
+              "*thóo hǎa khàwy dâi ta-làwt*",
+              "call me any time"
+            ],
+            [
+              "ຕິດຕໍ່ກັນເດີ້",
+              "*tít-taw kan dòe*",
+              "let's keep in touch"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Lao phone numbers are read **digit by digit**, not grouped into larger numbers. The number 020 5555 1234 is read *sǔun-sǎwng-sǔun hāa-hāa-hāa-hāa nʉ̀ng-sǎwng-sǎam-sìi*. All cell phone numbers start with **020**."
+        },
+        {
+          "type": "p",
+          "text": "**ຕິດຕໍ່ *tít-taw*** means \"contact\" and *ຕິດຕໍ່ກັນ* means \"stay in contact\". *ຕິດຕໍ່ກັນເດີ້* is a warm, common way to say goodbye — like \"don't be a stranger\" in English."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "lo": "ຮາໂລ",
+      "baca": "haa-lóo",
+      "en": "hello (phone)"
+    },
+    {
+      "lo": "ໂທລະສັບ",
+      "baca": "thóo-la-sáp",
+      "en": "phone, cell phone"
+    },
+    {
+      "lo": "ເບີໂທ",
+      "baca": "bòe thóo",
+      "en": "phone number"
+    },
+    {
+      "lo": "ໂທຫາ",
+      "baca": "thóo hǎa",
+      "en": "call (someone)"
+    },
+    {
+      "lo": "ຮັບສາຍ",
+      "baca": "hap sǎai",
+      "en": "answer the phone"
+    },
+    {
+      "lo": "ວາງສາຍ",
+      "baca": "wáang sǎai",
+      "en": "hang up"
+    },
+    {
+      "lo": "ສາຍ",
+      "baca": "sǎai",
+      "en": "line, connection"
+    },
+    {
+      "lo": "ສັນຍານ",
+      "baca": "sǎn-nyáan",
+      "en": "signal"
+    },
+    {
+      "lo": "ຄັກ",
+      "baca": "khak",
+      "en": "clear, good, cool"
+    },
+    {
+      "lo": "ດັງ",
+      "baca": "dang",
+      "en": "loud; famous"
+    },
+    {
+      "lo": "ຝາກ",
+      "baca": "fàak",
+      "en": "entrust, leave with someone"
+    },
+    {
+      "lo": "ຝາກບອກ",
+      "baca": "fàak bàwk",
+      "en": "leave a message"
+    },
+    {
+      "lo": "ຂໍ້ຄວາມ",
+      "baca": "khàw-khwáam",
+      "en": "text message"
+    },
+    {
+      "lo": "ສົ່ງ",
+      "baca": "sóng",
+      "en": "send"
+    },
+    {
+      "lo": "ສັ່ງ",
+      "baca": "sáng",
+      "en": "order; tell (someone to do)"
+    },
+    {
+      "lo": "ປະມານ",
+      "baca": "pa-máan",
+      "en": "about, around"
+    },
+    {
+      "lo": "ຕຳແໜ່ງ",
+      "baca": "tam-nèng",
+      "en": "location; position (job)"
+    },
+    {
+      "lo": "ອິນເຕີເນັດ",
+      "baca": "in-tôe-nét",
+      "en": "internet"
+    },
+    {
+      "lo": "ໄວໄຟ",
+      "baca": "wái-fái",
+      "en": "Wi-Fi"
+    },
+    {
+      "lo": "ເຟສບຸກ",
+      "baca": "Fêet-búk",
+      "en": "Facebook"
+    },
+    {
+      "lo": "ແອັບ",
+      "baca": "èp",
+      "en": "app"
+    },
+    {
+      "lo": "ແບັດ",
+      "baca": "bèt",
+      "en": "battery"
+    },
+    {
+      "lo": "ສາກໄຟ",
+      "baca": "sàak fái",
+      "en": "charge (a phone)"
+    },
+    {
+      "lo": "ບັນທຶກ",
+      "baca": "ban-thʉ́k",
+      "en": "save, record"
+    },
+    {
+      "lo": "ຕິດຕໍ່",
+      "baca": "tít-taw",
+      "en": "contact"
+    },
+    {
+      "lo": "ຕະຫຼອດ",
+      "baca": "ta-làwt",
+      "en": "all the time, any time"
+    },
+    {
+      "lo": "ຄືເກົ່າ",
+      "baca": "khʉʉ kào",
+      "en": "same as before"
+    },
+    {
+      "lo": "ໂອເຄ",
+      "baca": "ôo-khée",
+      "en": "okay"
+    },
+    {
+      "lo": "ຝັນດີ",
+      "baca": "fǎn dii",
+      "en": "sweet dreams"
+    },
+    {
+      "lo": "ຮັບຊາບ",
+      "baca": "hap sâap",
+      "en": "noted, will do (formal)"
+    },
+    {
+      "lo": "ຂໍ້ມູນ",
+      "baca": "khàw-múun",
+      "en": "data, information"
+    },
+    {
+      "lo": "ຫຼຸດ",
+      "baca": "lut",
+      "en": "cut off; decrease"
+    },
+    {
+      "lo": "ເອງ",
+      "baca": "éeng",
+      "en": "oneself; it's me"
+    },
+    {
+      "lo": "ຕອບ",
+      "baca": "tàwp",
+      "en": "answer, reply"
+    },
+    {
+      "lo": "ຖາມ",
+      "baca": "thǎam",
+      "en": "ask"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right phone phrase.",
+      "items": [
+        "____ (answering the phone)",
+        "____ (identifying yourself: it's Budi)",
+        "____ (I can't hear you clearly)",
+        "____ (can I leave a message?)",
+        "____ (I'll call you back)"
+      ]
+    },
+    {
+      "prompt": "Write these short messages in Lao, as short as sounds natural.",
+      "items": [
+        "you free?",
+        "are you there yet?",
+        "on my way",
+        "sorry I'm late",
+        "thanks!"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ບໍ່ / ຄັກ / ຟັງ",
+        "ແດ່ / ດັງໆ / ເວົ້າ",
+        "ໜຶ່ງ / ຊ້າ / ຊິມາ / ຂ້ອຍ / ໜ້ອຍ",
+        "ບໍ່ / ໄດ້ / ແດ່ / ຂໍເບີໂທ",
+        "ເດີ້ / ຕິດຕໍ່ກັນ"
+      ]
+    },
+    {
+      "prompt": "Translate into Lao.",
+      "items": [
+        "Hello, it's Budi. Can you hear me clearly?",
+        "Not very clearly, the signal's bad.",
+        "I'm going to be a little late, it's pouring.",
+        "Around seven.",
+        "Please tell them: don't wait for me.",
+        "Send me your location, okay? Drive carefully."
+      ]
+    }
+  ],
+  "answers": [
+    "ຮາໂລ — ບູດີເອງ — ຟັງບໍ່ຄັກ — ຝາກບອກໄດ້ບໍ່ — ດຽວໂທຫາຄືນ",
+    "ຫວ່າງບໍ່ — ຮອດແລ້ວບໍ່ — ກຳລັງໄປ — ຂໍໂທດມາຊ້າ — ຂອບໃຈເດີ້",
+    "ຟັງບໍ່ຄັກ — ເວົ້າດັງໆແດ່ — ຂ້ອຍຊິມາຊ້າໜ້ອຍໜຶ່ງ — ຂໍເບີໂທແດ່ໄດ້ບໍ່ — ຕິດຕໍ່ກັນເດີ້",
+    "ຮາໂລ ບູດີເອງ ຟັງຄັກບໍ່ — ຟັງບໍ່ຄັກ ສັນຍານບໍ່ດີ — ຂ້ອຍຊິມາຊ້າໜ້ອຍໜຶ່ງ ຝົນຕົກໜັກ — ປະມານເຈັດໂມງ — ຝາກບອກແດ່ ບອກວ່າຢ່າຖ້າຂ້ອຍ — ສົ່ງຕຳແໜ່ງໃຫ້ຂ້ອຍເດີ້ ຂັບລົດລະວັງເດີ້"
+  ],
+  "wave": "Review Unit 16: cover the Lao, then talk about three plans for next month, each with a different degree of certainty."
+}

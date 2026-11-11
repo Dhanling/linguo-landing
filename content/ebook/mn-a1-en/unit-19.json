@@ -1,0 +1,617 @@
+{
+  "title": "Customs, guests and Tsagaan Sar",
+  "title_target": "Ёс заншил, зочин, Цагаан сар",
+  "goal": "Understanding the Mongolian customs that matter most for guests — and mastering the polite phrases that get you welcomed, not just tolerated.",
+  "bekal": [
+    "behave correctly as a guest in a home and in a ger",
+    "say the Tsagaan Sar greetings and answer them",
+    "use respectful language: *та*, *хүндэтгэл*, and the right forms of address"
+  ],
+  "dialogs": [
+    {
+      "title": "Яриа — Цагаан сарын мэнд",
+      "intro": "The first day of Tsagaan Sar. Budi is invited to Sarnai's grandparents' home on the edge of town. It's his first meeting with the most senior person in the family.",
+      "lines": [
+        {
+          "speaker": "Сарнай:",
+          "text": "[Буди|BU-di], [эхлээд|EKH-lēd] [өвөөд|ö-VÖÖD] [золгоно|DZOL-go-no]. [Гараа|GA-raa] [ингэж|IN-gej] [барь|bar'].",
+          "id": "Budi, first we do zolgokh with Grandpa. Hold your arms like this.",
+          "literal": "Budi, first grandfather-to zolgokh. arm-own-object like-this hold-please."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Доод|Dōd] [гар|gar] [уу|uu], [дээд|dēd] [гар|gar] [уу|uu]?",
+          "id": "Arms underneath or on top?",
+          "literal": "under arm Q, over arm Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Чи|Chi] [залуу|dza-LUU] [учраас|uch-RAAS] [доогуур|DŌ-guur]. [Өвөө|Ö-vöö] [дээгүүр|DĒ-güür] [барина|BA-ri-na].",
+          "id": "You're younger, so underneath. Grandpa holds from above.",
+          "literal": "you young because under-through. grandfather over-through hold."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Ойлголоо|OIL-go-lō]. [Юу|Yuu] [хэлэх|KHEH-lekh] [вэ|veh]?",
+          "id": "I see. What should I say?",
+          "literal": "understood. what say Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "\"[Амар|A-mar] [байна|BAI-n] [уу|uu]?\" [гэж|gej] [хэл|khel]. [Өвөө|Ö-vöö] [хариулна|kha-RIUL-na].",
+          "id": "Say \"Amar baina uu?\" Grandpa will answer.",
+          "literal": "\"peaceful is Q?\" so say-please. grandfather answer."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Өвөө|Ö-vöö] [ээ|ē], [амар|a-MAR] [байна|BAI-n] [уу|uu]?",
+          "id": "Grandpa, amar baina uu?",
+          "literal": "grandfather O, peaceful is Q?"
+        },
+        {
+          "speaker": "Өвөө:",
+          "text": "[Амар|A-mar], [амар|a-MAR]. [Сар|Sar] [шинэдээ|SHI-neh-dē] [сайхан|SAI-khan] [шинэлэж|SHI-neh-lej] [байна|BAI-n] [уу|uu]?",
+          "id": "Peaceful, peaceful. Are you having a good New Year?",
+          "literal": "peaceful, peaceful. month new-in-own nicely new-year-ing is Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Сайхан|Sai-KHAN] [шинэлж|SHI-nelj] [байна|BAI-n]. [Танд|Tand] [эрүүл|eh-RÜÜL] [энх|enkh] [хүсье|KHÜS-yeh].",
+          "id": "A very good one. I wish you health and peace, Grandpa.",
+          "literal": "nicely new-year-ing is. you-to health peace let's-wish."
+        },
+        {
+          "speaker": "Өвөө:",
+          "text": "[Сайн|Sain] [хүү|khüü] [байна|BAI-n]. [Хол|Khol] [газраас|GA-dzraas] [ирсэн|IR-sen] [юм|yum] [байна|BAI-n]. [Суу|Suu], [цайл|tsail].",
+          "id": "What a good boy. And you've come from so far away. Sit down, have some tea.",
+          "literal": "good boy is. far place-from came thing is. sit-please, tea-please."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Баярлалаа|ba-yar-la-LAA], [өвөө|ö-VÖÖ] [ээ|ē].",
+          "id": "Thank you, Grandpa.",
+          "literal": "thanks, grandfather O."
+        },
+        {
+          "speaker": "Эмээ:",
+          "text": "[Буузнаас|BUUDZ-naas] [ид|id], [хүү|khüü] [минь|min']. [Хоосон|KHŌ-son] [бүү|büü] [суу|suu].",
+          "id": "Have some buuz, son. Don't sit there empty-handed.",
+          "literal": "buuz-from eat-please, son my. empty don't sit."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Их|Ikh] [баярлалаа|ba-yar-la-LAA]. [Маш|Mash] [амттай|AMT-tai] [байна|BAI-n].",
+          "id": "Thank you very much. It's delicious.",
+          "literal": "big thanks. very taste-with is."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Буди|BU-di], [аягыг|a-YA-giig] [хоёр|kho-YOR] [гараар|ga-RAAR] [ав|av]. [Ингэвэл|IN-geh-vel] [хүндэтгэл|KHÜN-det-gel] [болно|BOL-no].",
+          "id": "Budi, take the cup with both hands. That shows respect.",
+          "literal": "Budi, cup-object two hand-with take-please. if-so respect become."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Заа|Dzaa], [ойлголоо|OIL-go-lō]. [Индонезид|In-do-NEH-dzid] [ч|ch] [ижилхэн|i-JIL-khen] [ёс|yos] [байдаг|BAI-dag] [шүү|shüü].",
+          "id": "Yes, I see. In Indonesia we have a similar custom, you know.",
+          "literal": "yes, understood. Indonesia-in also similar custom be-usually you-know."
+        },
+        {
+          "speaker": "Эмээ:",
+          "text": "[Тийм|Tiim] [үү|üü]? [Хүн|Khün] [бүхэн|BÜ-khen] [ижилхэн|i-JIL-khen] [юм|yum] [байна|BAI-n].",
+          "id": "Is that so? People are the same everywhere.",
+          "literal": "so Q? person every similar thing is."
+        }
+      ],
+      "notes": [
+        "⚠️ **Золгох is the special Tsagaan Sar greeting, and it has no equivalent anywhere.** The younger person holds out both arms **underneath**, palms up, supporting the elder's elbows; the elder places their arms **on top**. Then the two kiss each other's cheeks or touch foreheads. Age, not rank, decides who is on top.",
+        "**Амар байна уу? is the Tsagaan Sar greeting, not an everyday one.** Literally \"is it peaceful?\", and the answer is simply a repeat: *Амар, амар.* ⚠️ Using it outside Tsagaan Sar sounds like saying \"Merry Christmas\" in September.",
+        "**Сар шинэдээ сайхан шинэлж байна уу? is the set phrase you'll hear dozens of times over the three days of Tsagaan Sar.** The answer: *Сайхан шинэлж байна, таныг ч бас.* Learn both as one chunk.",
+        "**Бүү is an older, gentler prohibition than битгий.** *Хоосон **бүү** суу* = \"don't sit empty-handed\". You'll hear it from older people and in proverbs; the *битгий* you learned in unit 10 is the everyday form.",
+        "**Хүү минь literally means \"my son\" and is used as an affectionate address for any young man**, not just one's own son. Its English equivalent is \"son\" or \"lad\". For a young woman: *охин минь*. ⚠️ If someone calls you this, you've been accepted."
+      ],
+      "grammars": [
+        {
+          "title": "Respectful language: what changes and what doesn't",
+          "body": [
+            "Mongolian **has no layered speech levels like Japanese or Korean**. There are just a few word choices, and most politeness is shown through behavior, not grammar. That's good news for beginners."
+          ],
+          "table": {
+            "head": [
+              "Plain",
+              "Respectful",
+              "Meaning",
+              "Note"
+            ],
+            "rows": [
+              [
+                "*чи*",
+                "**та**",
+                "you",
+                "The most important one. Use *та* when unsure."
+              ],
+              [
+                "*чиний*",
+                "**таны**",
+                "your",
+                "Follows *та*."
+              ],
+              [
+                "*өг*",
+                "**өгнө үү**",
+                "give / please give",
+                "Request form."
+              ],
+              [
+                "*яв*",
+                "**яваарай**",
+                "go / please go",
+                "The *-аарай* suffix softens it."
+              ],
+              [
+                "*идэх*",
+                "**зооглох**",
+                "eat",
+                "Only for someone you honor."
+              ],
+              [
+                "*үхэх*",
+                "**өөд болох**",
+                "die / pass away",
+                "⚠️ Gentle word, must be used."
+              ],
+              [
+                "*нэр*",
+                "**алдар**",
+                "name",
+                "*Таны алдар хэн бэ?* — very formal."
+              ],
+              [
+                "*гэр*",
+                "**өргөө**",
+                "home",
+                "For someone highly respected."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Of this whole table, only the first two rows are truly essential at A1.** The rest you just need to recognize when you hear them. Using *та* correctly covers ninety percent of Mongolian verbal politeness.",
+            "**Far more important than word choice is behavior:** receiving with both hands, not refusing tea, not stepping on the threshold, and letting elders go first. Mongolians forgive messy grammar without a second thought; what they notice is your hands."
+          ]
+        },
+        {
+          "title": "Wishes and congratulations",
+          "body": [
+            "Mongolian is rich in wishes, and most are formed with the suffix **-ье / -ъя** (let's) or the word **хүсье** (I wish)."
+          ],
+          "table": {
+            "head": [
+              "Монгол",
+              "Say it",
+              "When to say it"
+            ],
+            "rows": [
+              [
+                "*Сар шинэдээ сайхан шинэлж байна уу?*",
+                "*sar SHI-neh-dē SAI-khan SHI-neh-lej BAI-n uu*",
+                "Tsagaan Sar greeting."
+              ],
+              [
+                "*Амар байна уу?*",
+                "*a-MAR BAI-n uu*",
+                "Tsagaan Sar greeting, to an elder."
+              ],
+              [
+                "*Шинэ жилийн мэнд хүргэе!*",
+                "*SHI-neh JI-liin mend KHÜR-geh-yeh*",
+                "Happy New Year (January 1)."
+              ],
+              [
+                "*Төрсөн өдрийн мэнд хүргэе!*",
+                "*TÖR-sön ÖD-riin mend KHÜR-geh-yeh*",
+                "Happy birthday."
+              ],
+              [
+                "*Амжилт хүсье!*",
+                "*AM-jilt KHÜS-yeh*",
+                "Good luck!"
+              ],
+              [
+                "*Эрүүл энх байгаарай!*",
+                "*eh-RÜÜL enkh bai-GAA-rai*",
+                "Wishing you health and peace!"
+              ],
+              [
+                "*Сайхан амраарай!*",
+                "*SAI-khan am-RAA-rai*",
+                "Have a good rest!"
+              ],
+              [
+                "*Замд сайхан яваарай!*",
+                "*dzamd SAI-khan ya-VAA-rai*",
+                "Have a safe trip!"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Мэнд хүргэе literally means \"I send greetings\" and pairs with almost any celebration.** *Наадмын мэнд хүргэе* (happy Naadam), *баярын мэнд хүргэе* (happy holiday). A pattern that saves a lot of memorizing.",
+            "**Хүсье means \"I wish\" and goes at the end of the wish.** *Амжилт хүсье* (good luck), *эрүүл мэнд хүсье* (wishing you health). Notice that the thing wished comes first, following the SOV order you've already mastered."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tsagaan Sar: the white month",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "**Цагаан сар** (tsa-GAAN sar) is the Mongolian Lunar New Year, falling between late January and early March. It's the biggest celebration of the year, and the idea will feel familiar to anyone who knows Christmas or Lunar New Year: **everyone goes home to family, visits their elders and eats too much for three days.**"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "What it is"
+          ],
+          "rows": [
+            [
+              "*Битүүн*",
+              "*bi-TÜÜN*",
+              "The eve of Tsagaan Sar. Eat until completely full; leaving leftovers is bad luck."
+            ],
+            [
+              "*Шинийн нэгэн*",
+              "*SHI-niin NEH-gen*",
+              "The first day. Get up before sunrise and visit your elders."
+            ],
+            [
+              "*золгох*",
+              "*DZOL-gokh*",
+              "The special greeting with supported arms."
+            ],
+            [
+              "*идээ*",
+              "*i-DĒ*",
+              "A tower of layered biscuits on the table. The number of layers is always odd."
+            ],
+            [
+              "*ууц*",
+              "*uuts*",
+              "A whole boiled sheep's back — the main dish."
+            ],
+            [
+              "*бууз*",
+              "*buudz*",
+              "Thousands of dumplings made weeks in advance and frozen outdoors."
+            ],
+            [
+              "*хадаг*",
+              "*kha-DAG*",
+              "A blue silk scarf held during zolgokh; blue = sky."
+            ],
+            [
+              "*бэлэг*",
+              "*BEH-leg*",
+              "Gifts. Every guest goes home with something."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ If you're invited to Tsagaan Sar",
+          "items": [
+            "**Bring a small gift for the host** — chocolate, tea, a scarf. Its value doesn't matter; the gesture does.",
+            "**You'll eat at many homes in one day.** By the fourth home you won't manage much; still taste a sip of tea and a small bite. Refusing completely is the only real mistake.",
+            "**Small cash gifts for children and elders are common** — much like red envelopes at Lunar New Year.",
+            "**Don't greet anyone younger than you with zolgokh.** Your arms will be the wrong way round and everyone will notice."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Customs to know before you visit",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Custom",
+            "Why"
+          ],
+          "rows": [
+            [
+              "**Receive anything with your right hand, supported at the elbow by your left.**",
+              "The left hand alone is seen as dismissive. This is the custom people notice most."
+            ],
+            [
+              "**Taste the tea or milk you're offered.**",
+              "Tea is the home's sign of welcome; refusing it refuses the home."
+            ],
+            [
+              "**Don't step on the threshold (*босго*).**",
+              "In old belief, the threshold guards the home."
+            ],
+            [
+              "**Don't point at people or the fire with your index finger.**",
+              "Use your whole hand, palm up."
+            ],
+            [
+              "**If you bump someone's foot, shake hands at once.**",
+              "A handshake cancels the slip instantly."
+            ],
+            [
+              "**Move clockwise inside the ger.**",
+              "Following the sun's direction."
+            ],
+            [
+              "**Don't pour water or milk onto the fire.**",
+              "Fire is the spirit of the household."
+            ],
+            [
+              "**Don't whistle indoors.**",
+              "It's believed to call up wind and spirits."
+            ],
+            [
+              "**Don't leave food uneaten on Битүүн night.**",
+              "An empty plate means a year of plenty."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that **many of these customs have twins across Asia and beyond** — the right hand for giving and receiving, no pointing with the index finger, elders first, never refusing what's offered. If they're new to you, don't worry: **this table is your shortcut, and simply trying earns you a great deal of goodwill.**"
+        }
+      ]
+    },
+    {
+      "title": "Words for customs and beliefs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*ёс заншил*",
+              "*yos DZAN-shil*",
+              "customs, traditions"
+            ],
+            [
+              "*хүндэтгэл*",
+              "*KHÜN-det-gel*",
+              "respect"
+            ],
+            [
+              "*зочин*",
+              "*DZO-chin*",
+              "guest"
+            ],
+            [
+              "*зочломтгой*",
+              "*DZOCH-lomt-goi*",
+              "hospitable"
+            ],
+            [
+              "*баяр*",
+              "*ba-YAR*",
+              "celebration, joy"
+            ],
+            [
+              "*бэлэг*",
+              "*BEH-leg*",
+              "gift"
+            ],
+            [
+              "*сүм*",
+              "*süm*",
+              "temple"
+            ],
+            [
+              "*лам*",
+              "*lam*",
+              "monk"
+            ],
+            [
+              "*овоо*",
+              "*o-VŌ*",
+              "sacred stone cairn on a hilltop"
+            ],
+            [
+              "*хийд*",
+              "*khiid*",
+              "monastery"
+            ],
+            [
+              "*ерөөл*",
+              "*yeh-RÖÖL*",
+              "blessing, prayer"
+            ],
+            [
+              "*заншил*",
+              "*DZAN-shil*",
+              "habit"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **An овоо is a cairn of stones on a hilltop or at a crossroads**, often decorated with blue cloth and bones. When you pass one, the custom is to **walk around it three times clockwise** while adding a stone. Long-distance bus drivers often stop for this. Join in — it's free, quick and appreciated."
+        },
+        {
+          "type": "kotak",
+          "title": "Ten polite sentences that open doors",
+          "items": [
+            "*Танилцахад таатай байна.* — Nice to meet you.",
+            "*Урьсанд баярлалаа.* — Thank you for inviting me.",
+            "*Гэр тань маш сайхан байна.* — Your home is lovely.",
+            "*Хоол маш амттай байна.* — The food is delicious.",
+            "*Уучлаарай, би сайн ойлгосонгүй.* — Sorry, I didn't quite understand.",
+            "*Дахин хэлж өгнө үү.* — Could you say that again, please?",
+            "*Та маш сайн хүн байна.* — You're a very kind person.",
+            "*Их баярлалаа, дараа дахин уулзая.* — Thank you so much, see you again.",
+            "*Эрүүл энх байгаарай.* — Stay healthy always.",
+            "*Сайн яваарай.* — Take care on your way."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "mn": "ёс заншил",
+      "baca": "yos DZAN-shil",
+      "en": "customs, traditions"
+    },
+    {
+      "mn": "хүндэтгэл",
+      "baca": "KHÜN-det-gel",
+      "en": "respect"
+    },
+    {
+      "mn": "зочин",
+      "baca": "DZO-chin",
+      "en": "guest"
+    },
+    {
+      "mn": "золгох",
+      "baca": "DZOL-gokh",
+      "en": "⚠️ Tsagaan Sar greeting"
+    },
+    {
+      "mn": "Цагаан сар",
+      "baca": "tsa-GAAN sar",
+      "en": "Mongolian Lunar New Year"
+    },
+    {
+      "mn": "бэлэг",
+      "baca": "BEH-leg",
+      "en": "gift"
+    },
+    {
+      "mn": "баяр",
+      "baca": "ba-YAR",
+      "en": "celebration"
+    },
+    {
+      "mn": "мэнд",
+      "baca": "mend",
+      "en": "greetings, regards"
+    },
+    {
+      "mn": "хүсэх",
+      "baca": "KHÜ-sekh",
+      "en": "to wish"
+    },
+    {
+      "mn": "эрүүл",
+      "baca": "eh-RÜÜL",
+      "en": "healthy"
+    },
+    {
+      "mn": "энх",
+      "baca": "enkh",
+      "en": "peace"
+    },
+    {
+      "mn": "амжилт",
+      "baca": "AM-jilt",
+      "en": "success"
+    },
+    {
+      "mn": "өвөө",
+      "baca": "ö-VÖÖ",
+      "en": "grandfather"
+    },
+    {
+      "mn": "эмээ",
+      "baca": "eh-MĒ",
+      "en": "grandmother"
+    },
+    {
+      "mn": "бүү",
+      "baca": "büü",
+      "en": "don't (gentle)"
+    },
+    {
+      "mn": "сүм",
+      "baca": "süm",
+      "en": "temple"
+    },
+    {
+      "mn": "овоо",
+      "baca": "o-VŌ",
+      "en": "sacred stone cairn"
+    },
+    {
+      "mn": "хадаг",
+      "baca": "kha-DAG",
+      "en": "blue silk scarf"
+    },
+    {
+      "mn": "ижилхэн",
+      "baca": "i-JIL-khen",
+      "en": "similar, alike"
+    },
+    {
+      "mn": "учраас",
+      "baca": "uch-RAAS",
+      "en": "because"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mongolian.",
+      "items": [
+        "Nice to meet you.",
+        "Thank you for inviting me.",
+        "The food is delicious.",
+        "Stay healthy always.",
+        "Good luck!",
+        "Take care on your way."
+      ]
+    },
+    {
+      "prompt": "Fill in the right expression.",
+      "items": [
+        "Tsagaan Sar greeting to Grandpa: ____",
+        "Happy birthday: ____",
+        "Good luck: ____",
+        "Have a good rest: ____",
+        "Happy New Year: ____",
+        "Have a safe trip: ____"
+      ]
+    },
+    {
+      "prompt": "Change into the respectful form.",
+      "items": [
+        "чи",
+        "чиний",
+        "Ус өг.",
+        "Яв.",
+        "Ир.",
+        "Суу."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "байна / таатай / танилцахад",
+        "баярлалаа / урьсанд",
+        "байна / амттай / маш / хоол",
+        "хүсье / амжилт",
+        "яваарай / сайн"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Танилцахад таатай байна. — Урьсанд баярлалаа. — Хоол маш амттай байна. — Эрүүл энх байгаарай. — Амжилт хүсье! — Сайн яваарай.",
+    "1": "Амар байна уу? — Төрсөн өдрийн мэнд хүргэе! — Амжилт хүсье! — Сайхан амраарай! — Шинэ жилийн мэнд хүргэе! — Замд сайхан яваарай!",
+    "2": "та — таны — Ус өгнө үү. — Яваарай. — Ирээрэй. — Суугаарай.",
+    "3": "Танилцахад таатай байна. — Урьсанд баярлалаа. — Хоол маш амттай байна. — Амжилт хүсье. — Сайн яваарай."
+  }
+}

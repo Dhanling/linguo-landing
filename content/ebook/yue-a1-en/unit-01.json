@@ -1,0 +1,991 @@
+{
+  "title": "First introductions",
+  "title_target": "你好 — Nei5 hou2",
+  "goal": "Greeting people, giving your name and surname, saying where you're from and what you do, and asking yes/no questions three ways — all with a single verb: 係.",
+  "bekal": [
+    "greet and say goodbye like a real Hongkonger",
+    "give your name with 叫 and your surname with 姓",
+    "say “I'm Indonesian” and “I'm a teacher”",
+    "ask questions with 係唔係, with 呀, and with 咩",
+    "say no with 唔係"
+  ],
+  "dialogs": [
+    {
+      "title": "對話 1 — Meeting in class",
+      "intro": "Andi, a teacher from Jakarta, meets Wong Lai on his first day in Hong Kong. Notice that the whole conversation runs on just one verb.",
+      "lines": [
+        {
+          "speaker": "黃麗:",
+          "text": "[你好|Nei5 hou2]！",
+          "id": "Hello!",
+          "literal": "you — good."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[你好|Nei5 hou2]！[我叫|Ngo5 giu3][安迪|On1 dik1]。",
+          "id": "Hello! My name is Andi.",
+          "literal": "you — good. I — be-called — Andi."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[我姓|Ngo5 sing3][黃|Wong4]，[叫|giu3][黃麗|Wong4 Lai6]。",
+          "id": "My surname is Wong; my name is Wong Lai.",
+          "literal": "I — be-surnamed — Wong, be-called — Wong Lai."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[好開心|Hou2 hoi1 sam1][認識你|jing6 sik1 nei5]。",
+          "id": "Nice to meet you.",
+          "literal": "filler — happy — know — you."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[我都係|Ngo5 dou1 hai6]。[你係|Nei5 hai6][邊度人|bin1 dou6 jan4][呀|aa3]？",
+          "id": "Me too. Where are you from?",
+          "literal": "I — also — am. you — are — which — place — person — huh."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[我係|Ngo5 hai6][印尼人|Jan3 nei4 jan4]。[你呢|Nei5 ne1]？",
+          "id": "I'm Indonesian. And you?",
+          "literal": "I — am — Indonesia — person. you — how-about."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[我係|Ngo5 hai6][香港人|Hoeng1 gong2 jan4]。[你|Nei5][係唔係|hai6 m4 hai6][學生|hok6 saang1][呀|aa3]？",
+          "id": "I'm from Hong Kong. Are you a student?",
+          "literal": "I — am — Hong-Kong — person. you — are — not — are — student — huh."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[唔係|M4 hai6]，[我係|ngo5 hai6][老師|lou5 si1]。[你都係|Nei5 dou1 hai6][老師|lou5 si1][咩|me1]？",
+          "id": "No, I'm a teacher. You're a teacher too?",
+          "literal": "not — am, I — am — teacher. you — also — are — teacher — really."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[我唔係|Ngo5 m4 hai6][老師|lou5 si1]，[我係|ngo5 hai6][學生|hok6 saang1]。",
+          "id": "I'm not a teacher, I'm a student.",
+          "literal": "I — not — am — teacher, I — am — student."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[你個名|Nei5 go3 meng2][好好聽|hou2 hou2 teng1]。",
+          "id": "Your name sounds nice.",
+          "literal": "you — classifier — name — filler — nice — hear."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[多謝|Do1 ze6]！[聽日見|Ting1 jat6 gin3]！",
+          "id": "Thank you! See you tomorrow!",
+          "literal": "many — thanks. tomorrow — see."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[拜拜|Baai1 baai3]！",
+          "id": "Bye!",
+          "literal": "bye — bye."
+        }
+      ],
+      "notes": [
+        "**[你好|Nei5 hou2] literally means “you good”** — and it's a **statement**, not a question. Use it any time, with anyone, like “hello”. 🇭🇰 Worth knowing: Hongkongers almost never ask each other [你好嗎|nei5 hou2 maa3]？ That's a textbook line. What people really say to friends is [點呀|Dim2 aa3]？ or [食咗飯未呀|Sik6 zo2 faan6 mei6 aa3]？",
+        "**[姓|sing3] is only for surnames, [叫|giu3] is for names.** [我姓黃|Ngo5 sing3 Wong4] = my surname is Wong. [我叫黃麗|Ngo5 giu3 Wong4 Lai6] = my name is Wong Lai. ⚠️ Learners with a single name often say 我姓安迪 — which sounds like “my surname is Andi”. When in doubt, just use 叫; it's almost always right.",
+        "**Chinese names run in the opposite order from English ones: surname first, then given name.** 黃麗 = surname 黃, given name 麗. Chinese surnames are nearly always one syllable, and in Hong Kong they're romanized by their Cantonese sound — 黃 is *Wong*, not *Huang*; 陳 is *Chan*, not *Chen*; 李 is *Lee*, not *Li*.",
+        "**[呢|ne1] bounces a question back without repeating it.** After someone asks you something, just answer and add [你呢|Nei5 ne1]？ It saves a whole sentence and sounds very natural.",
+        "**⚠️ The Cantonese word for “not” is [唔|m4], not 不.** If you've studied Mandarin, this is the first habit to break. 唔 is said with closed lips through the nose — just *m*, no vowel at all. [唔係|m4 hai6] = no, isn't; [唔去|m4 heoi3] = not go; [唔知|m4 zi1] = don't know.",
+        "**⚠️ [都|dou1] “also” goes before the verb, never at the end of the sentence.** [我都係老師|Ngo5 dou1 hai6 lou5 si1] = I'm a teacher too. The English order “I'm a teacher too” doesn't exist in Cantonese. Note too that Cantonese 都 carries two meanings: “also” and “all”.",
+        "**[好|hou2] in [好開心|hou2 hoi1 sam1] doesn't mean “very”.** It's a required filler placed before adjectives: [我開心|ngo5 hoi1 sam1] without 好 sounds unfinished, as if more is coming. 🔁 We'll sort this out fully in Unit 8 — for now, just learn the pair by heart."
+      ],
+      "grammars": [
+        {
+          "title": "係 — one verb is enough for this whole unit",
+          "body": [
+            "[係|hai6] links two **nouns**: A 係 B means “A is B”. Cantonese verbs never change form, so 係 is exactly the same for I, you, he, we, and they — no *am / is / are* as in English.",
+            "To negate it, just put [唔|m4] in front: [唔係|m4 hai6]."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Person",
+                "Cantonese",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "I",
+                  "[我|ngo5]",
+                  "[我係老師|Ngo5 hai6 lou5 si1]。 I'm a teacher."
+                ],
+                [
+                  "you",
+                  "[你|nei5]",
+                  "[你係學生|Nei5 hai6 hok6 saang1]。 You're a student."
+                ],
+                [
+                  "he / she",
+                  "[佢|keoi5]",
+                  "[佢係醫生|Keoi5 hai6 ji1 sang1]。 He/She is a doctor."
+                ],
+                [
+                  "we",
+                  "[我哋|ngo5 dei6]",
+                  "[我哋係印尼人|Ngo5 dei6 hai6 Jan3 nei4 jan4]。 We're Indonesian."
+                ],
+                [
+                  "you (plural)",
+                  "[你哋|nei5 dei6]",
+                  "[你哋係老師|Nei5 dei6 hai6 lou5 si1]。 You're teachers."
+                ],
+                [
+                  "they",
+                  "[佢哋|keoi5 dei6]",
+                  "[佢哋係學生|Keoi5 dei6 hai6 hok6 saang1]。 They're students."
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **Spoken Cantonese doesn't distinguish “he” and “she”.** Both are [佢|keoi5]. Good news: one word to learn instead of two.",
+            "⚠️ **Plurals are made with [哋|dei6], and only for people.** [我哋|ngo5 dei6] = we. But there's no 書哋 for “books” — plural things are handled differently (see Unit 2).",
+            "🇭🇰 **Cantonese hardly uses the polite form 您.** To a boss, guest, or elder you still say [你|nei5] — politeness moves into other word choices, such as [請問|cing2 man6] before a question or [貴姓|gwai3 sing3] to ask for a surname."
+          ]
+        },
+        {
+          "title": "Three ways to ask yes/no questions",
+          "body": [
+            "Cantonese has three ways, and all three are used every day. The most common one — and the safest for you right now — is the first."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Method",
+                "Form",
+                "Example",
+                "Nuance"
+              ],
+              "rows": [
+                [
+                  "**A-唔-A**",
+                  "verb + 唔 + verb",
+                  "[你係唔係老師|Nei5 hai6 m4 hai6 lou5 si1]？",
+                  "Neutral, the most common"
+                ],
+                [
+                  "**…呀？**",
+                  "sentence + [呀|aa3]",
+                  "[你係老師呀|Nei5 hai6 lou5 si1 aa3]？",
+                  "Friendly, softening"
+                ],
+                [
+                  "**…咩？**",
+                  "sentence + [咩|me1]",
+                  "[你係老師咩|Nei5 hai6 lou5 si1 me1]？",
+                  "Surprise, disbelief: “you're a teacher?!”"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Question",
+                "Yes answer",
+                "No answer"
+              ],
+              "rows": [
+                [
+                  "[你係唔係學生|Nei5 hai6 m4 hai6 hok6 saang1]？",
+                  "[係|Hai6]。",
+                  "[唔係|M4 hai6]。"
+                ],
+                [
+                  "[你去唔去|Nei5 heoi3 m4 heoi3]？",
+                  "[去|Heoi3]。",
+                  "[唔去|M4 heoi3]。"
+                ],
+                [
+                  "[佢好唔好|Keoi5 hou2 m4 hou2]？",
+                  "[好|Hou2]。",
+                  "[唔好|M4 hou2]。"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "**Look at how to answer: Cantonese has no stand-alone words for “yes” and “no”.** Instead you **repeat the verb**, with or without 唔. Asked [你去唔去|nei5 heoi3 m4 heoi3]？, you answer [去|heoi3] or [唔去|m4 heoi3] — not “yes” or “no”.",
+            "⚠️ **Don't use Mandarin 嗎.** [你係老師嗎|nei5 hai6 lou5 si1 maa3]？ will be understood but instantly marks you as someone who learned from a Mandarin book. In Hong Kong, use A-唔-A or 呀.",
+            "⚠️ **[咩|me1] is not a substitute for 呀.** It carries surprise. [你唔去咩|Nei5 m4 heoi3 me1]？ = “Wait, you're not going?” Using it for ordinary questions makes you sound accusing."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "對話 2 — Introducing a third person",
+      "intro": "A day later, Wong Lai introduces Andi to her friend in the canteen. Notice how a third person is introduced, and how the question word sits where the answer goes.",
+      "lines": [
+        {
+          "speaker": "黃麗:",
+          "text": "[安迪|On1 dik1]，[呢位|ni1 wai2][係|hai6][我朋友|ngo5 pang4 jau5][陳生|Can4 saang1]。",
+          "id": "Andi, this is my friend, Mr. Chan.",
+          "literal": "Andi, this — polite-classifier — is — my — friend — Chan — mister."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[陳生|Can4 saang1]，[你好|nei5 hou2]。[我叫|Ngo5 giu3][安迪|On1 dik1]。",
+          "id": "Hello, Mr. Chan. My name is Andi.",
+          "literal": "Chan — mister, you — good. I — be-called — Andi."
+        },
+        {
+          "speaker": "陳生:",
+          "text": "[你好|Nei5 hou2]。[請問|Cing2 man6][你係|nei5 hai6][邊度人|bin1 dou6 jan4][呀|aa3]？",
+          "id": "Hello. May I ask where you're from?",
+          "literal": "you — good. please — ask — you — are — which — place — person — huh."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[我係|Ngo5 hai6][印尼人|Jan3 nei4 jan4]，[喺雅加達嚟|hai2 Ngaa5 gaa1 daat6 lei4]。",
+          "id": "I'm Indonesian, from Jakarta.",
+          "literal": "I — am — Indonesia — person, at — Jakarta — come."
+        },
+        {
+          "speaker": "陳生:",
+          "text": "[你做|Nei5 zou6][邊行|bin1 hong4][㗎|gaa3]？",
+          "id": "What line of work are you in?",
+          "literal": "you — do — which — line — emphasis."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[我係|Ngo5 hai6][老師|lou5 si1]。[陳生|Can4 saang1][你呢|nei5 ne1]？",
+          "id": "I'm a teacher. And you, Mr. Chan?",
+          "literal": "I — am — teacher. Chan — mister — you — how-about."
+        },
+        {
+          "speaker": "陳生:",
+          "text": "[我係|Ngo5 hai6][工程師|gung1 cing4 si1]。[佢|Keoi5][都係|dou1 hai6][工程師|gung1 cing4 si1]。",
+          "id": "I'm an engineer. She's an engineer too.",
+          "literal": "I — am — engineer. she — also — is — engineer."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[佢係|Keoi5 hai6][邊位|bin1 wai2][呀|aa3]？",
+          "id": "Who is she?",
+          "literal": "she — is — which — polite-classifier — huh."
+        },
+        {
+          "speaker": "陳生:",
+          "text": "[佢係|Keoi5 hai6][我同事|ngo5 tung4 si6]，[佢姓|keoi5 sing3][李|Lei5]。",
+          "id": "She's my colleague; her surname is Lee.",
+          "literal": "she — is — my — colleague, she — be-surnamed — Lee."
+        },
+        {
+          "speaker": "黃麗:",
+          "text": "[我哋|Ngo5 dei6][都唔係|dou1 m4 hai6][工程師|gung1 cing4 si1][喎|wo3]！",
+          "id": "Neither of us is an engineer, you know!",
+          "literal": "we — all — not — are — engineer — you-know."
+        },
+        {
+          "speaker": "陳生:",
+          "text": "[哈哈|Haa1 haa1]，[唔緊要|m4 gan2 jiu3]。[好開心|Hou2 hoi1 sam1][認識你哋|jing6 sik1 nei5 dei6]。",
+          "id": "Haha, no problem. Nice to meet you both.",
+          "literal": "ha — ha, not — important. filler — happy — know — you-all."
+        },
+        {
+          "speaker": "安迪:",
+          "text": "[我都係|Ngo5 dou1 hai6]。[再見|Zoi3 gin3]！",
+          "id": "Me too. See you!",
+          "literal": "I — also — am. again — see."
+        }
+      ],
+      "notes": [
+        "**[呢位|ni1 wai2] and [邊位|bin1 wai2] use the polite classifier [位|wai2].** For people who deserve respect — guests, customers, elders — use 位, not 個. [呢個人|ni1 go3 jan4] isn't wrong, but it sounds cold when the person is standing in front of you.",
+        "**⚠️ Cantonese question words sit where the answer goes.** [你係邊度人|Nei5 hai6 bin1 dou6 jan4]？ — 邊度 takes exactly the slot the answer will fill (印尼). Cantonese does **not** move question words to the front like English. The word order is the same as the statement.",
+        "**[生|saang1] in [陳生|Can4 saang1] is short for [先生|sin1 saang1], “Mr.”.** It goes **after** the surname. Female counterparts: [小姐|siu2 ze2] (Miss) and [太|taai2], short for [太太|taai3 taai2] (Mrs.). So 陳生 = Mr. Chan, [陳太|Can4 taai2] = Mrs. Chan, [陳小姐|Can4 siu2 ze2] = Miss Chan.",
+        "**[請問|Cing2 man6] is one word that changes the feel of your whole sentence.** Literally “please ask”, it goes before a question to a stranger. Without it, a grammatically perfect question can sound like an interrogation.",
+        "**[喺…嚟|hai2 … lei4] = “come from …”.** [我喺雅加達嚟|Ngo5 hai2 Ngaa5 gaa1 daat6 lei4] = I'm from Jakarta. 🔁 [喺|hai2] is the word you'll use constantly for “at/in”; it's covered fully in Unit 7.",
+        "**[㗎|gaa3] at the end of a question stresses that you really want to know.** It's a fusion of 嘅 + 呀. With no particle at all, [你做邊行|nei5 zou6 bin1 hong4]？ sounds abrupt; with 㗎 it sounds natural. 🔁 The whole particle family is gathered in the summary at the back of the book.",
+        "**[喎|wo3] marks news you've just realized.** [我哋都唔係工程師喎|Ngo5 dei6 dou1 m4 hai6 gung1 cing4 si1 wo3]！ = “hey, neither of us is an engineer, you know”. This particle makes sentences sound alive, and English has no neat match beyond “you know” or “oh, hey”.",
+        "**[都|dou1] in [我哋都唔係|ngo5 dei6 dou1 m4 hai6] means “all”, not “also”.** The subject decides: when it's plural, 都 leans toward “all of them”. [我哋都係印尼人|Ngo5 dei6 dou1 hai6 Jan3 nei4 jan4] = we're all Indonesian."
+      ],
+      "grammars": [
+        {
+          "title": "Question words: they sit where the answer goes",
+          "body": [
+            "This is the biggest effort-saver in all of Cantonese. Build the statement first, then **replace the part you don't know** with the question word. The word order doesn't change at all."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Question word",
+                "Jyutping",
+                "Meaning",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "[邊個|bin1 go3]",
+                  "bin1 go3",
+                  "who; which one",
+                  "[佢係邊個|Keoi5 hai6 bin1 go3]？ Who is he?"
+                ],
+                [
+                  "[邊位|bin1 wai2]",
+                  "bin1 wai2",
+                  "who (polite)",
+                  "[你搵邊位|Nei5 wan2 bin1 wai2]？ Who are you looking for?"
+                ],
+                [
+                  "[乜嘢|mat1 je5]",
+                  "mat1 je5",
+                  "what",
+                  "[呢個係乜嘢|Ni1 go3 hai6 mat1 je5]？ What is this?"
+                ],
+                [
+                  "[邊度|bin1 dou6]",
+                  "bin1 dou6",
+                  "where",
+                  "[你喺邊度|Nei5 hai2 bin1 dou6]？ Where are you?"
+                ],
+                [
+                  "[幾時|gei2 si4]",
+                  "gei2 si4",
+                  "when",
+                  "[你幾時嚟|Nei5 gei2 si4 lei4]？ When are you coming?"
+                ],
+                [
+                  "[點解|dim2 gaai2]",
+                  "dim2 gaai2",
+                  "why",
+                  "[點解唔去|Dim2 gaai2 m4 heoi3]？ Why not go?"
+                ],
+                [
+                  "[點樣|dim2 joeng2]",
+                  "dim2 joeng2",
+                  "how",
+                  "[點樣去|Dim2 joeng2 heoi3]？ How do you get there?"
+                ],
+                [
+                  "[幾多|gei2 do1]",
+                  "gei2 do1",
+                  "how many, how much",
+                  "[幾多錢|Gei2 do1 cin2]？ How much is it?"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Statement",
+                "As a question"
+              ],
+              "rows": [
+                [
+                  "[佢係老師|Keoi5 hai6 lou5 si1]。 He's a teacher.",
+                  "[佢係邊個|Keoi5 hai6 bin1 go3]？ Who is he?"
+                ],
+                [
+                  "[我去旺角|Ngo5 heoi3 Wong6 gok3]。 I'm going to Mongkok.",
+                  "[你去邊度|Nei5 heoi3 bin1 dou6]？ Where are you going?"
+                ],
+                [
+                  "[我食飯|Ngo5 sik6 faan6]。 I'm eating rice.",
+                  "[你食乜嘢|Nei5 sik6 mat1 je5]？ What are you eating?"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "🇭🇰 **[乜嘢|mat1 je5] is often shortened to [咩|me1] in fast speech.** [你叫咩名|Nei5 giu3 me1 meng2]？ = what's your name — this is the form you'll actually hear on the street. Don't confuse it with the surprise particle 咩 at the end of a sentence; this one sits in the middle, before a noun.",
+            "⚠️ **Questions with a question word don't need 呀 if you mean them neutrally… but you can add it to soften them.** [你去邊度呀|Nei5 heoi3 bin1 dou6 aa3]？ sounds friendlier than without 呀. What's wrong is adding 咩 — that turns it into an accusation.",
+            "**There are two levels for asking someone's name.** To a peer: [你叫咩名呀|Nei5 giu3 me1 meng2 aa3]？ To someone you should respect: [請問你貴姓呀|Cing2 man6 nei5 gwai3 sing3 aa3]？ — literally “what is your honorable surname”, answered with just the surname: [我姓黃|Ngo5 sing3 Wong4]。"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Greetings through the day",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "你好 is always correct, but Hongkongers rarely use it between people who already know each other. The phrases below make your greetings sound natural, not like a textbook."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Greeting",
+            "When to use it",
+            "Natural reply"
+          ],
+          "rows": [
+            [
+              "[你好|Nei5 hou2]",
+              "Any time, especially with new people",
+              "[你好|Nei5 hou2]。"
+            ],
+            [
+              "[早晨|Zou2 san4]",
+              "Morning, until about eleven. Very common at the office and in the elevator",
+              "[早晨|Zou2 san4]。"
+            ],
+            [
+              "[你哋好|Nei5 dei6 hou2]",
+              "To a group of people at once",
+              "[你好|Nei5 hou2]。"
+            ],
+            [
+              "[點呀|Dim2 aa3]？",
+              "“How's it going?” to friends — far more common than 你好嗎",
+              "[幾好|Gei2 hou2]。 / [麻麻地|Maa4 maa2 dei2]。"
+            ],
+            [
+              "[食咗飯未呀|Sik6 zo2 faan6 mei6 aa3]？",
+              "Friendly greeting, literally “eaten yet?” — not an invitation to eat",
+              "[食咗喇|Sik6 zo2 laa3]。 / [仲未|Zung6 mei6]。"
+            ],
+            [
+              "[好耐冇見|Hou2 noi6 mou5 gin3]",
+              "Long time no see",
+              "[係呀|Hai6 aa3]，[好耐喇|hou2 noi6 laa3]。"
+            ],
+            [
+              "[你好嗎|Nei5 hou2 maa3]？",
+              "In every textbook, rarely said by Hongkongers. Safe but stiff",
+              "[我好好|Ngo5 hou2 hou2]，[多謝|do1 ze6]。"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Saying goodbye",
+            "Nuance"
+          ],
+          "rows": [
+            [
+              "[拜拜|Baai1 baai3]",
+              "The most common, any situation. From “bye bye”"
+            ],
+            [
+              "[再見|Zoi3 gin3]",
+              "A bit more formal, fine anywhere"
+            ],
+            [
+              "[聽日見|Ting1 jat6 gin3]",
+              "See you tomorrow"
+            ],
+            [
+              "[遲啲見|Ci4 di1 gin3]",
+              "See you later"
+            ],
+            [
+              "[慢慢行|Maan6 maan2 haang4]",
+              "Said by the **host** to a departing guest — literally “walk slowly”"
+            ],
+            [
+              "[早唞|Zou2 tau2]",
+              "Good night, only before bed"
+            ],
+            [
+              "[得閒飲茶|Dak1 haan4 jam2 caa4]",
+              "“Let's have tea sometime” — a parting pleasantry, rarely actually scheduled"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Manners to know from day one",
+          "items": [
+            "**[唔該|M4 goi1]** — the most useful word in all of Hong Kong. It means “thank you” for a **service** (a waiter bringing tea, someone holding the elevator), and also “excuse me” to call a waiter, and “please” when asking for something.",
+            "**[多謝|Do1 ze6]** — “thank you” for **things**: gifts, souvenirs, money, compliments. ⚠️ The difference between 唔該 and 多謝 is real and instantly noticeable. When a waiter brings food, say 唔該; when a friend gives you a present, say 多謝. The reply to both: [唔使客氣|M4 sai2 haak3 hei3]。",
+            "**[對唔住|Deoi3 m4 zyu6]** — sorry, for a real mistake. The reply is [唔緊要|M4 gan2 jiu3] or [冇所謂|Mou5 so2 wai6].",
+            "**[唔好意思|M4 hou2 ji3 si1]** — “oops, sorry” for small things: cutting in, being five minutes late, bothering someone. Used far more often than 對唔住.",
+            "**[唔該借借|M4 goi1 ze3 ze3]** — “excuse me, coming through”. The phrase that will save you every day on the MTR at rush hour."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Countries, people, and jobs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Saying where you're from in Cantonese follows one pattern that never changes: **place name + 人**. No linking word, no change of form."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Country / city",
+            "Jyutping",
+            "Person"
+          ],
+          "rows": [
+            [
+              "[印尼|Jan3 nei4]",
+              "jan3 nei4",
+              "[印尼人|jan3 nei4 jan4]"
+            ],
+            [
+              "[香港|Hoeng1 gong2]",
+              "hoeng1 gong2",
+              "[香港人|hoeng1 gong2 jan4]"
+            ],
+            [
+              "[中國|Zung1 gwok3]",
+              "zung1 gwok3",
+              "[中國人|zung1 gwok3 jan4]"
+            ],
+            [
+              "[台灣|Toi4 waan1]",
+              "toi4 waan1",
+              "[台灣人|toi4 waan1 jan4]"
+            ],
+            [
+              "[馬來西亞|Maa5 loi4 sai1 aa3]",
+              "maa5 loi4 sai1 aa3",
+              "[馬來西亞人|maa5 loi4 sai1 aa3 jan4]"
+            ],
+            [
+              "[新加坡|San1 gaa3 bo1]",
+              "san1 gaa3 bo1",
+              "[新加坡人|san1 gaa3 bo1 jan4]"
+            ],
+            [
+              "[日本|Jat6 bun2]",
+              "jat6 bun2",
+              "[日本人|jat6 bun2 jan4]"
+            ],
+            [
+              "[韓國|Hon4 gwok3]",
+              "hon4 gwok3",
+              "[韓國人|hon4 gwok3 jan4]"
+            ],
+            [
+              "[泰國|Taai3 gwok3]",
+              "taai3 gwok3",
+              "[泰國人|taai3 gwok3 jan4]"
+            ],
+            [
+              "[英國|Jing1 gwok3]",
+              "jing1 gwok3",
+              "[英國人|jing1 gwok3 jan4]"
+            ],
+            [
+              "[美國|Mei5 gwok3]",
+              "mei5 gwok3",
+              "[美國人|mei5 gwok3 jan4]"
+            ],
+            [
+              "[澳洲|Ou3 zau1]",
+              "ou3 zau1",
+              "[澳洲人|ou3 zau1 jan4]"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Saying your job uses 係, exactly like saying where you're from. There's no article like English *a*: [我係老師|Ngo5 hai6 lou5 si1], not “I am a teacher” word for word."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Job",
+            "Jyutping",
+            "Job",
+            "Jyutping"
+          ],
+          "rows": [
+            [
+              "teacher",
+              "[老師|lou5 si1]",
+              "student",
+              "[學生|hok6 saang1]"
+            ],
+            [
+              "doctor",
+              "[醫生|ji1 sang1]",
+              "nurse",
+              "[護士|wu6 si6]"
+            ],
+            [
+              "engineer",
+              "[工程師|gung1 cing4 si1]",
+              "office clerk",
+              "[文員|man4 jyun4]"
+            ],
+            [
+              "driver",
+              "[司機|si1 gei1]",
+              "cook, chef",
+              "[廚師|cyu4 si1]"
+            ],
+            [
+              "shop assistant",
+              "[售貨員|sau6 fo3 jyun4]",
+              "secretary",
+              "[秘書|bei3 syu1]"
+            ],
+            [
+              "boss, owner",
+              "[老闆|lou5 baan2]",
+              "colleague",
+              "[同事|tung4 si6]"
+            ],
+            [
+              "homemaker",
+              "[家庭主婦|gaa1 ting4 zyu2 fu5]",
+              "friend",
+              "[朋友|pang4 jau5]"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Asking about jobs: three forms people really use",
+          "items": [
+            "[你做邊行㗎|Nei5 zou6 bin1 hong4 gaa3]？ — “What line of work are you in?” The most natural among adults.",
+            "[你做乜嘢工㗎|Nei5 zou6 mat1 je5 gung1 gaa3]？ — “What do you do for work?” A bit more casual.",
+            "[你係咪學生呀|Nei5 hai6 mai6 hok6 saang1 aa3]？ — 🇭🇰 [係咪|hai6 mai6] is the fast form of 係唔係, and it's what you'll actually hear most. Use either freely; both are correct."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "你好",
+      "baca": "nei5 hou2",
+      "en": "hello"
+    },
+    {
+      "zh": "早晨",
+      "baca": "zou2 san4",
+      "en": "good morning"
+    },
+    {
+      "zh": "我",
+      "baca": "ngo5",
+      "en": "I, me"
+    },
+    {
+      "zh": "你",
+      "baca": "nei5",
+      "en": "you"
+    },
+    {
+      "zh": "佢",
+      "baca": "keoi5",
+      "en": "he, she"
+    },
+    {
+      "zh": "我哋",
+      "baca": "ngo5 dei6",
+      "en": "we, us"
+    },
+    {
+      "zh": "你哋",
+      "baca": "nei5 dei6",
+      "en": "you (plural)"
+    },
+    {
+      "zh": "佢哋",
+      "baca": "keoi5 dei6",
+      "en": "they, them"
+    },
+    {
+      "zh": "係",
+      "baca": "hai6",
+      "en": "to be"
+    },
+    {
+      "zh": "唔",
+      "baca": "m4",
+      "en": "not"
+    },
+    {
+      "zh": "唔係",
+      "baca": "m4 hai6",
+      "en": "not be; no"
+    },
+    {
+      "zh": "叫",
+      "baca": "giu3",
+      "en": "be called; to call"
+    },
+    {
+      "zh": "姓",
+      "baca": "sing3",
+      "en": "be surnamed"
+    },
+    {
+      "zh": "貴姓",
+      "baca": "gwai3 sing3",
+      "en": "your surname (polite)"
+    },
+    {
+      "zh": "個",
+      "baca": "go3",
+      "en": "general classifier"
+    },
+    {
+      "zh": "位",
+      "baca": "wai2",
+      "en": "polite classifier for people"
+    },
+    {
+      "zh": "邊個",
+      "baca": "bin1 go3",
+      "en": "who; which one"
+    },
+    {
+      "zh": "邊度",
+      "baca": "bin1 dou6",
+      "en": "where"
+    },
+    {
+      "zh": "乜嘢",
+      "baca": "mat1 je5",
+      "en": "what"
+    },
+    {
+      "zh": "咩",
+      "baca": "me1",
+      "en": "what (fast); surprise particle"
+    },
+    {
+      "zh": "請問",
+      "baca": "cing2 man6",
+      "en": "excuse me, may I ask"
+    },
+    {
+      "zh": "呢",
+      "baca": "ne1",
+      "en": "what about … (bounces a question back)"
+    },
+    {
+      "zh": "呀",
+      "baca": "aa3",
+      "en": "softening particle"
+    },
+    {
+      "zh": "㗎",
+      "baca": "gaa3",
+      "en": "emphatic particle"
+    },
+    {
+      "zh": "喎",
+      "baca": "wo3",
+      "en": "particle of new information, “you know”"
+    },
+    {
+      "zh": "都",
+      "baca": "dou1",
+      "en": "also; all"
+    },
+    {
+      "zh": "好",
+      "baca": "hou2",
+      "en": "good; adjective filler"
+    },
+    {
+      "zh": "開心",
+      "baca": "hoi1 sam1",
+      "en": "happy"
+    },
+    {
+      "zh": "認識",
+      "baca": "jing6 sik1",
+      "en": "know (a person), get to know"
+    },
+    {
+      "zh": "好聽",
+      "baca": "hou2 teng1",
+      "en": "nice to hear"
+    },
+    {
+      "zh": "老師",
+      "baca": "lou5 si1",
+      "en": "teacher"
+    },
+    {
+      "zh": "學生",
+      "baca": "hok6 saang1",
+      "en": "student"
+    },
+    {
+      "zh": "醫生",
+      "baca": "ji1 sang1",
+      "en": "doctor"
+    },
+    {
+      "zh": "護士",
+      "baca": "wu6 si6",
+      "en": "nurse"
+    },
+    {
+      "zh": "工程師",
+      "baca": "gung1 cing4 si1",
+      "en": "engineer"
+    },
+    {
+      "zh": "老闆",
+      "baca": "lou5 baan2",
+      "en": "boss, owner"
+    },
+    {
+      "zh": "同事",
+      "baca": "tung4 si6",
+      "en": "colleague"
+    },
+    {
+      "zh": "朋友",
+      "baca": "pang4 jau5",
+      "en": "friend"
+    },
+    {
+      "zh": "做",
+      "baca": "zou6",
+      "en": "do, work as"
+    },
+    {
+      "zh": "人",
+      "baca": "jan4",
+      "en": "person"
+    },
+    {
+      "zh": "印尼",
+      "baca": "jan3 nei4",
+      "en": "Indonesia"
+    },
+    {
+      "zh": "香港",
+      "baca": "hoeng1 gong2",
+      "en": "Hong Kong"
+    },
+    {
+      "zh": "先生",
+      "baca": "sin1 saang1",
+      "en": "Mr., sir"
+    },
+    {
+      "zh": "唔該",
+      "baca": "m4 goi1",
+      "en": "excuse me; thanks (for a service); please"
+    },
+    {
+      "zh": "多謝",
+      "baca": "do1 ze6",
+      "en": "thank you (for a gift, a compliment)"
+    },
+    {
+      "zh": "唔使客氣",
+      "baca": "m4 sai2 haak3 hei3",
+      "en": "you're welcome"
+    },
+    {
+      "zh": "對唔住",
+      "baca": "deoi3 m4 zyu6",
+      "en": "sorry"
+    },
+    {
+      "zh": "唔好意思",
+      "baca": "m4 hou2 ji3 si1",
+      "en": "sorry (small things), excuse me"
+    },
+    {
+      "zh": "唔緊要",
+      "baca": "m4 gan2 jiu3",
+      "en": "it doesn't matter, no problem"
+    },
+    {
+      "zh": "再見",
+      "baca": "zoi3 gin3",
+      "en": "goodbye"
+    },
+    {
+      "zh": "拜拜",
+      "baca": "baai1 baai3",
+      "en": "bye"
+    },
+    {
+      "zh": "聽日見",
+      "baca": "ting1 jat6 gin3",
+      "en": "see you tomorrow"
+    },
+    {
+      "zh": "幾好",
+      "baca": "gei2 hou2",
+      "en": "pretty good"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in with 係, 唔係, or 叫.",
+      "items": [
+        "[我|Ngo5] ___ [印尼人|Jan3 nei4 jan4]。",
+        "[佢|Keoi5] ___ [老師|lou5 si1]，[佢係學生|keoi5 hai6 hok6 saang1]。",
+        "[你|Nei5] ___ [咩名|me1 meng2][呀|aa3]？",
+        "[佢|Keoi5] ___ [黃麗|Wong4 Lai6]。",
+        "[我哋|Ngo5 dei6] ___ [香港人|Hoeng1 gong2 jan4]，[我哋係印尼人|ngo5 dei6 hai6 Jan3 nei4 jan4]。",
+        "[呢位|Ni1 wai2] ___ [我朋友|ngo5 pang4 jau5]。"
+      ]
+    },
+    {
+      "prompt": "Fill in the right question word: 乜嘢, 邊個, 邊度, 咩, 呢.",
+      "items": [
+        "[佢係|Keoi5 hai6] ___ [呀|aa3]？ [佢係我同事|Keoi5 hai6 ngo5 tung4 si6]。",
+        "[你係|Nei5 hai6] ___ [人呀|jan4 aa3]？",
+        "[你叫|Nei5 giu3] ___ [名呀|meng2 aa3]？",
+        "[呢個係|Ni1 go3 hai6] ___ [呀|aa3]？",
+        "[我係學生|Ngo5 hai6 hok6 saang1]，[你|nei5] ___？"
+      ]
+    },
+    {
+      "prompt": "Put the pieces in the right order.",
+      "items": [
+        "我 / 係 / 印尼 / 人",
+        "你 / 係 / 唔 / 係 / 學生",
+        "佢 / 都 / 係 / 老師",
+        "呢位 / 係 / 我 / 朋友",
+        "我哋 / 都 / 唔係 / 工程師",
+        "好 / 開心 / 認識 / 你"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "[佢唔係醫生，佢係護士|Keoi5 m4 hai6 ji1 sang1, keoi5 hai6 wu6 si6]。",
+        "[你哋係咪印尼人呀|Nei5 dei6 hai6 mai6 Jan3 nei4 jan4 aa3]？",
+        "[佢係邊位呀|Keoi5 hai6 bin1 wai2 aa3]？",
+        "[我姓黃，叫黃麗|Ngo5 sing3 Wong4, giu3 Wong4 Lai6]。",
+        "[佢都唔係老師|Keoi5 dou1 m4 hai6 lou5 si1]。"
+      ]
+    },
+    {
+      "prompt": "Translate into Cantonese. Write in Jyutping.",
+      "items": [
+        "Hello! My name is Andi.",
+        "I'm Indonesian. And you?",
+        "He isn't a student.",
+        "Nice to meet you.",
+        "We're all teachers."
+      ]
+    },
+    {
+      "prompt": "Correct these wrong sentences, then write the right version in Jyutping.",
+      "items": [
+        "[我係都老師|Ngo5 hai6 dou1 lou5 si1]。",
+        "[你是老師嗎|Nei5 si6 lou5 si1 maa3]？",
+        "[邊個係佢呀|Bin1 go3 hai6 keoi5 aa3]？",
+        "[我姓安迪|Ngo5 sing3 On1 dik1]。",
+        "[我不係學生|Ngo5 bat1 hai6 hok6 saang1]。"
+      ]
+    }
+  ],
+  "answers": [
+    "係 — 唔係 — 叫 — 叫 — 唔係 — 係",
+    "邊個 — 邊度 — 咩 — 乜嘢 — 呢",
+    "我 係 印尼 人 — 你 係 唔 係 學生 — 佢 都 係 老師 — 呢位 係 我 朋友 — 我哋 都 唔係 工程師 — 好 開心 認識 你",
+    "He isn't a doctor, he's a nurse. — Are you (plural) Indonesian? — Who is he? — My surname is Wong; my name is Wong Lai. — He isn't a teacher either.",
+    "Nei5 hou2! Ngo5 giu3 On1 dik1. — Ngo5 hai6 Jan3 nei4 jan4. Nei5 ne1? — Keoi5 m4 hai6 hok6 saang1. — Hou2 hoi1 sam1 jing6 sik1 nei5. — Ngo5 dei6 dou1 hai6 lou5 si1.",
+    "Ngo5 dou1 hai6 lou5 si1. — Nei5 hai6 m4 hai6 lou5 si1 aa3? — Keoi5 hai6 bin1 go3 aa3? — Ngo5 giu3 On1 dik1. — Ngo5 m4 hai6 hok6 saang1."
+  ],
+  "wave": "Five minutes before Unit 2: cover the meaning column in the vocabulary list, then introduce yourself out loud six times in a row — name, surname, where you're from, job — until it comes out without thinking. Then say 唔該 and 多謝 alternately ten times while picturing the situation: a waiter brings tea (唔該), a friend gives you a present (多謝). You'll use those two words more than any other words in this whole book."
+}

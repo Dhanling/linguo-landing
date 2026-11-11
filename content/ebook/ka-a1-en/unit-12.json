@@ -1,0 +1,523 @@
+{
+  "title": "What's the weather like?",
+  "title_target": "როგორია ამინდი? — Rogoria amindi?",
+  "goal": "Talk about the weather and the seasons with verbs that have no subject at all — and get ready for a real Georgian winter.",
+  "bekal": [
+    "ask about and describe today's weather",
+    "use verbs with no subject: წვიმს, თოვს, ცხელა",
+    "name the four seasons and what they're like",
+    "give temperatures in degrees",
+    "use the weather as a conversation opener"
+  ],
+  "dialogs": [
+    {
+      "title": "დიალოგი — November in Tbilisi",
+      "intro": "Ani calls Nino before leaving the house. It's her first real winter. Notice the weather verbs — not one of them has a subject, and none of them needs a pronoun.",
+      "lines": [
+        {
+          "speaker": "ანი:",
+          "text": "[ალო|A-lo], [ნინო|Ni-no]! [როგორია|Ro-go-ri-a] [ამინდი|a-min-di] [გარეთ|ga-ret]?",
+          "id": "Hi, Nino! What's the weather like outside?",
+          "literal": "hello, Nino! how-is — weather — outside?"
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[ცივა|Tsi-va] [და|da] [წვიმს|ts'vims]. [ქოლგა|Kol-ga] [წაიღე|ts'a-i-ghe]!",
+          "id": "Cold and rainy. Take an umbrella!",
+          "literal": "cold-is — and — rain-falls. umbrella — take!"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[კიდევ|K'i-dev] [წვიმს|ts'vims]? [გუშინაც|Gu-shi-nats] [წვიმდა|ts'vim-da].",
+          "id": "Raining again? It rained yesterday too.",
+          "literal": "again — rain-falls? yesterday-too — rain-fell."
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[ნოემბერია|No-em-be-ri-a], [ანი|A-ni]. [ეს|Es] [ჩვეულებრივია|chve-u-leb-ri-vi-a].",
+          "id": "It's November, Ani. This is normal.",
+          "literal": "November-is, Ani. this — normal-is."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[რამდენი|Ram-de-ni] [გრადუსია|gra-du-si-a]?",
+          "id": "How many degrees is it?",
+          "literal": "how-many — degree-is?"
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[რვა|Rva] [გრადუსი|gra-du-si]. [ზამთარში|Zam-tar-shi] [კიდევ|k'i-dev] [უფრო|up-ro] [ცივა|tsi-va].",
+          "id": "Eight degrees. In winter it gets even colder.",
+          "literal": "eight — degree. winter-in — still — more — cold-is."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[თოვს|Tovs] [კიდეც|k'i-dets]?",
+          "id": "Does it snow too?",
+          "literal": "snow-falls — too?"
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[თბილისში|Tbi-lis-shi] [იშვიათად|ish-vi-a-tad]. [მთაში|Mta-shi] [კი|k'i] [ბევრი|bev-ri] [თოვლია|tov-li-a].",
+          "id": "Rarely in Tbilisi. But in the mountains there's a lot of snow.",
+          "literal": "Tbilisi-in — rarely. mountain-in — though — much — snow-is."
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[ინდონეზიაში|In-do-ne-zi-a-shi] [თოვლი|tov-li] [არასდროს|a-ras-dros] [არ|ar] [მოდის|mo-dis].",
+          "id": "It never snows in Indonesia.",
+          "literal": "Indonesia-in — snow — never — not — comes."
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[მართლა|Mar-tla]? [მაშინ|Ma-shin] [ზამთარში|zam-tar-shi] [გუდაურში|gu-da-ur-shi] [წავიდეთ|ts'a-vi-det]!",
+          "id": "Really? Then this winter we're going to Gudauri!",
+          "literal": "really? then — winter-in — Gudauri-in — let's-go!"
+        },
+        {
+          "speaker": "ანი:",
+          "text": "[კარგი|K'ar-gi], [მაგრამ|mag-ram] [ჯერ|jer] [თბილი|tbi-li] [ქურთუკი|kur-tu-k'i] [მჭირდება|mch'ir-de-ba].",
+          "id": "Sure, but first I need a warm jacket.",
+          "literal": "good, but — first — warm — jacket — I-need."
+        },
+        {
+          "speaker": "ნინო:",
+          "text": "[ხვალ|Khval] [ერთად|er-tad] [ვიყიდოთ|vi-q'i-dot]. [დღეს|Dghes] [ქოლგა|kol-ga] [არ|ar] [დაგავიწყდეს|da-ga-vits'-q'des]!",
+          "id": "We'll buy one together tomorrow. Today, don't forget your umbrella!",
+          "literal": "tomorrow — together — let's-buy. today — umbrella — not — forgotten-to-you!"
+        }
+      ],
+      "notes": [
+        "**Weather verbs have no subject at all.** წვიმს (it's raining), თოვს (it's snowing), ცხელა (it's hot), ცივა (it's cold), ქარია (it's windy). Unlike English (*it rains*) or German, there is no \"it\" to write — the verb alone is a complete sentence.",
+        "**ცხელა / ცივა are not the same as ცხელი / ცივი.** The **-ა** forms are complete sentences about a state: *ცივა* = \"it's cold (here)\". The **-ი** forms are adjectives that need a noun: *ცივი წყალი* (cold water). ⚠️ Don't say *ცივი არის* about the weather — just **ცივა**.",
+        "**წვიმდა = \"it rained (yesterday)\".** This is your first brush with the past tense, and we're deliberately letting it slide by. The pattern: present weather verbs end in **-ს**, past ones in **-და**. წვიმ**ს** → წვიმ**და**, თოვ**ს** → თოვ**და**. Unit 17 opens up the whole system.",
+        "**გუშინაც = გუშინ + ც (yesterday too)**, and **კიდეც** = კიდევ + ც (also, what's more). The -ც particle from unit 1 is still hard at work.",
+        "**უფრო = more.** This is how you compare at A1: *უფრო ცივა* (colder), *უფრო კარგია* (better), *უფრო დიდი* (bigger). For \"than\", use the ending **-ზე**: *თბილისი ბათუმზე დიდია* (Tbilisi is bigger than Batumi).",
+        "**თოვლი მოდის** — literally \"snow comes\", another way to say it's snowing. The verb **მოდის** (comes) from unit 9 turns up in an unexpected place.",
+        "**ჯერ = first, (not) yet.** *ჯერ არა* (not yet), *ჯერ ვერ ვლაპარაკობ* (I can't speak yet). A small word that rescues a lot of sentences."
+      ],
+      "grammars": [
+        {
+          "title": "Weather: sentences without a subject",
+          "table": {
+            "head": [
+              "Georgian",
+              "Say it",
+              "Meaning",
+              "Past form"
+            ],
+            "rows": [
+              [
+                "წვიმს",
+                "ts'vims",
+                "it's raining",
+                "წვიმდა"
+              ],
+              [
+                "თოვს",
+                "tovs",
+                "it's snowing",
+                "თოვდა"
+              ],
+              [
+                "ცხელა",
+                "tskhela",
+                "it's hot",
+                "ცხელოდა"
+              ],
+              [
+                "ცივა",
+                "tsiva",
+                "it's cold",
+                "ცივოდა"
+              ],
+              [
+                "თბილა",
+                "tbila",
+                "it's warm",
+                "თბილოდა"
+              ],
+              [
+                "ქარია",
+                "karia",
+                "it's windy",
+                "ქარი იყო"
+              ],
+              [
+                "მზიანია",
+                "mziania",
+                "it's sunny",
+                "მზიანი იყო"
+              ],
+              [
+                "ღრუბლიანია",
+                "ghrubliania",
+                "it's cloudy",
+                "ღრუბლიანი იყო"
+              ],
+              [
+                "ნისლიანია",
+                "nisliania",
+                "it's foggy",
+                "ნისლიანი იყო"
+              ]
+            ]
+          },
+          "after": [
+            "To ask: **როგორია ამინდი?** (what's the weather like?) or, shorter, **ამინდი როგორია?**. For tomorrow: **ხვალ როგორი ამინდი იქნება?** (khval rogori amindi ikneba)."
+          ]
+        },
+        {
+          "title": "The four seasons",
+          "table": {
+            "head": [
+              "Season",
+              "Say it",
+              "Months",
+              "In that season"
+            ],
+            "rows": [
+              [
+                "გაზაფხული",
+                "gazapkhuli",
+                "March–May",
+                "გაზაფხულზე"
+              ],
+              [
+                "ზაფხული",
+                "zapkhuli",
+                "June–August",
+                "ზაფხულში"
+              ],
+              [
+                "შემოდგომა",
+                "shemodgoma",
+                "September–November",
+                "შემოდგომაზე"
+              ],
+              [
+                "ზამთარი",
+                "zamtari",
+                "December–February",
+                "ზამთარში"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Notice the endings don't match: გაზაფხულ**ზე** and შემოდგომა**ზე** take -ზე, while ზაფხულ**ში** and ზამთარ**ში** take -ში. There's no sensible reason; just memorize these four forms.",
+            "Georgia has four truly distinct seasons. Temperatures in Tbilisi range from −5°C (23°F) in January to +35°C (95°F) in August."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Weather, and what to prepare",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Georgian",
+            "Say it",
+            "Meaning",
+            "Georgian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ამინდი",
+              "amindi",
+              "weather",
+              "მზე",
+              "mze",
+              "sun"
+            ],
+            [
+              "წვიმა",
+              "ts'vima",
+              "rain",
+              "ღრუბელი",
+              "ghrubeli",
+              "cloud"
+            ],
+            [
+              "თოვლი",
+              "tovli",
+              "snow",
+              "ქარი",
+              "kari",
+              "wind"
+            ],
+            [
+              "გრადუსი",
+              "gradusi",
+              "degree",
+              "ნისლი",
+              "nisli",
+              "fog"
+            ],
+            [
+              "ტემპერატურა",
+              "t'emp'erat'ura",
+              "temperature",
+              "ჭექა-ქუხილი",
+              "ch'eka-kukhili",
+              "lightning"
+            ],
+            [
+              "ქოლგა",
+              "kolga",
+              "umbrella",
+              "ყინვა",
+              "q'inva",
+              "frost"
+            ],
+            [
+              "ქურთუკი",
+              "kurtuk'i",
+              "jacket",
+              "მთა",
+              "mta",
+              "mountain"
+            ],
+            [
+              "შარფი",
+              "sharpi",
+              "scarf",
+              "ზღვა",
+              "zghva",
+              "sea"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Five weather sentences that start a conversation",
+          "items": [
+            "**როგორია ამინდი?** — What's the weather like?",
+            "**დღეს ძალიან ცივა.** — It's very cold today.",
+            "**ხვალ წვიმა იქნება?** (khval ts'vima ikneba) — Will it rain tomorrow?",
+            "**ინდონეზიაში მუდამ ცხელა.** — It's always hot in Indonesia.",
+            "**თოვლი პირველად ვნახე.** (tovli p'irvelad vnakhe) — I saw snow for the first time."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "That last sentence is worth more than it looks. To Georgians, an adult who has never seen snow is hard to imagine, and saying so almost always opens a long conversation — often ending with an invitation to the mountains. In return, a question you'll hear a lot is *ინდონეზიაში ზამთარი არ არის?* (isn't there a winter in Indonesia?)."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ A practical warning if you come from somewhere warm: a Tbilisi winter isn't just \"a bit chilly\". January regularly drops below freezing, and old buildings are often cold inside. Three things you can't do without: **თბილი ქურთუკი** (a warm jacket), **ხელთათმანები** (gloves), and shoes that won't slip on **ყინული** (ice). Buying them in Georgia is cheaper and smarter than bringing them from home."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ka": "ამინდი",
+      "baca": "amindi",
+      "en": "weather"
+    },
+    {
+      "ka": "წვიმს",
+      "baca": "ts'vims",
+      "en": "it's raining"
+    },
+    {
+      "ka": "წვიმა",
+      "baca": "ts'vima",
+      "en": "rain"
+    },
+    {
+      "ka": "თოვს",
+      "baca": "tovs",
+      "en": "it's snowing"
+    },
+    {
+      "ka": "თოვლი",
+      "baca": "tovli",
+      "en": "snow"
+    },
+    {
+      "ka": "ცხელა",
+      "baca": "tskhela",
+      "en": "it's hot (weather)"
+    },
+    {
+      "ka": "ცივა",
+      "baca": "tsiva",
+      "en": "it's cold (weather)"
+    },
+    {
+      "ka": "თბილა",
+      "baca": "tbila",
+      "en": "it's warm (weather)"
+    },
+    {
+      "ka": "მზიანია",
+      "baca": "mziania",
+      "en": "sunny"
+    },
+    {
+      "ka": "ღრუბლიანია",
+      "baca": "ghrubliania",
+      "en": "cloudy"
+    },
+    {
+      "ka": "ქარია",
+      "baca": "karia",
+      "en": "windy"
+    },
+    {
+      "ka": "მზე",
+      "baca": "mze",
+      "en": "sun"
+    },
+    {
+      "ka": "ქარი",
+      "baca": "kari",
+      "en": "wind"
+    },
+    {
+      "ka": "ღრუბელი",
+      "baca": "ghrubeli",
+      "en": "cloud"
+    },
+    {
+      "ka": "გრადუსი",
+      "baca": "gradusi",
+      "en": "degree"
+    },
+    {
+      "ka": "გაზაფხული",
+      "baca": "gazapkhuli",
+      "en": "spring"
+    },
+    {
+      "ka": "ზაფხული",
+      "baca": "zapkhuli",
+      "en": "summer"
+    },
+    {
+      "ka": "შემოდგომა",
+      "baca": "shemodgoma",
+      "en": "autumn, fall"
+    },
+    {
+      "ka": "ზამთარი",
+      "baca": "zamtari",
+      "en": "winter"
+    },
+    {
+      "ka": "ქოლგა",
+      "baca": "kolga",
+      "en": "umbrella"
+    },
+    {
+      "ka": "ქურთუკი",
+      "baca": "kurtuk'i",
+      "en": "jacket"
+    },
+    {
+      "ka": "მთა",
+      "baca": "mta",
+      "en": "mountain"
+    },
+    {
+      "ka": "ზღვა",
+      "baca": "zghva",
+      "en": "sea"
+    },
+    {
+      "ka": "გარეთ",
+      "baca": "garet",
+      "en": "outside"
+    },
+    {
+      "ka": "შიგნით",
+      "baca": "shignit",
+      "en": "inside"
+    },
+    {
+      "ka": "უფრო",
+      "baca": "upro",
+      "en": "more"
+    },
+    {
+      "ka": "ბევრი",
+      "baca": "bevri",
+      "en": "many, a lot"
+    },
+    {
+      "ka": "ჯერ",
+      "baca": "jer",
+      "en": "first, (not) yet"
+    },
+    {
+      "ka": "ერთად",
+      "baca": "ertad",
+      "en": "together"
+    },
+    {
+      "ka": "ჩვეულებრივი",
+      "baca": "chveulebrivi",
+      "en": "normal, usual"
+    },
+    {
+      "ka": "ნოემბერი",
+      "baca": "noemberi",
+      "en": "November"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Complete with the right weather verb.",
+      "items": [
+        "It's raining today → დღეს ____",
+        "It's very cold → ძალიან ____",
+        "It's snowing → ____",
+        "It's sunny → ____",
+        "It's windy → ____"
+      ]
+    },
+    {
+      "prompt": "Add the right season ending (-ში or -ზე).",
+      "items": [
+        "ზაფხულ__ (in summer)",
+        "ზამთარ__ (in winter)",
+        "გაზაფხულ__ (in spring)",
+        "შემოდგომა__ (in autumn)",
+        "ნოემბერ__ (in November)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ამინდი / როგორია / ?",
+        "წვიმს / და / ცივა",
+        "გრადუსია / რამდენი / ?",
+        "ცივა / უფრო / ზამთარში",
+        "წაიღე / ქოლგა"
+      ]
+    },
+    {
+      "prompt": "Translate into Georgian.",
+      "items": [
+        "What's the weather like today?",
+        "It's cold and rainy.",
+        "How many degrees is it?",
+        "It's colder in winter.",
+        "It never snows in Indonesia.",
+        "Take an umbrella!"
+      ]
+    }
+  ],
+  "answers": [
+    "წვიმს — ცივა — თოვს — მზიანია — ქარია",
+    "ზაფხულში — ზამთარში — გაზაფხულზე — შემოდგომაზე — ნოემბერში",
+    "როგორია ამინდი? — წვიმს და ცივა. — რამდენი გრადუსია? — ზამთარში უფრო ცივა. — ქოლგა წაიღე.",
+    "დღეს როგორია ამინდი? — ცივა და წვიმს. — რამდენი გრადუსია? — ზამთარში უფრო ცივა. — ინდონეზიაში თოვლი არასდროს არ მოდის. — ქოლგა წაიღე!"
+  ]
+}

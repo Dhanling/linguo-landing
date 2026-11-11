@@ -1,0 +1,688 @@
+{
+  "title": "Linking two events",
+  "title_target": "Хоёр үйлдлийг холбох",
+  "goal": "Linking sentences with *-ж*, *-аад* and *-вал* — three suffixes that turn short sentences into a story.",
+  "bekal": [
+    "link two events in sequence with *-аад*",
+    "express manner and simultaneous actions with *-ж / -ч*",
+    "make conditional sentences with *-вал / -бэл*"
+  ],
+  "dialogs": [
+    {
+      "title": "Яриа — Байр хайж байна",
+      "intro": "Budi wants to move from the dorm into a small apartment. Sarnai helps him call the landlord.",
+      "lines": [
+        {
+          "speaker": "Сарнай:",
+          "text": "[Буди|BU-di], [ямар|YA-mar] [байр|bair] [хайж|khaij] [байна|BAI-n]?",
+          "id": "Budi, what kind of apartment are you looking for?",
+          "literal": "Budi, what-kind apartment look-for-ing is?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Нэг|Neg] [өрөөтэй|ö-RÖÖ-tei], [сургуулиас|sur-GUU-lias] [ойрхон|OIR-khon] [байвал|BAI-val] [сайн|sain].",
+          "id": "One room and close to campus would be good.",
+          "literal": "one room-with, school-from near if-is good."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Сарын|SA-riin] [хэдэн|KHEH-den] [төгрөг|TÖG-rög] [хүртэл|KHÜR-tel] [төлж|TÖLJ] [чадах|CHA-dakh] [вэ|veh]?",
+          "id": "How many tugriks can you pay a month?",
+          "literal": "month's how-many tugrik up-to pay-ing able Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Долоон|Do-LŌN] [зуун|DZUUN] [мянга|MYAN-ga] [орчим|OR-chim]. [Илүү|I-LÜÜ] [үнэтэй|Ü-neh-tei] [бол|bol] [хэцүү|kheh-TSÜÜ].",
+          "id": "About seven hundred thousand. More than that would be hard.",
+          "literal": "seven hundred thousand about. more price-with if hard."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[За|Dza], [зар|dzar] [үзээд|ü-DZĒD] [залгая|DZAL-ga-ya]. [Энэ|EH-neh] [нэг|neg] [сайхан|SAI-khan] [байна|BAI-n].",
+          "id": "OK, let's look at the ads and then call. Here's a good one.",
+          "literal": "OK, ad look-after let's-call. this one nice is."
+        },
+        {
+          "speaker": "Эзэн:",
+          "text": "[Байна|BAI-n] [уу|uu]?",
+          "id": "Hello?",
+          "literal": "is Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Сайн|Sain] [байна|BAI-n] [уу|uu]. [Зар|Dzar] [үзээд|ü-DZĒD] [залгаж|DZAL-gaj] [байна|BAI-n]. [Байр|Bair] [түрээслэгдэх|tü-RĒS-leg-dekh] [үү|üü]?",
+          "id": "Good afternoon. I'm calling about your ad. Is the apartment still for rent?",
+          "literal": "well is Q. ad see-after call-ing is. apartment for-rent Q?"
+        },
+        {
+          "speaker": "Эзэн:",
+          "text": "[Тийм|Tiim], [байгаа|bai-GAA]. [Нэг|Neg] [өрөө|ö-RÖÖ], [гал|gal] [тогоо|to-GŌ], [угаалгын|u-GAAL-giin] [өрөөтэй|ö-RÖÖ-tei].",
+          "id": "Yes, it is. One room, a kitchen, and a bathroom.",
+          "literal": "yes, is-being. one room, fire pot, wash's room-with."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Түрээс|Tü-RĒS] [хэд|khed] [вэ|veh]? [Тооцоо|TŌ-tsō] [багтсан|BAGT-san] [уу|uu]?",
+          "id": "How much is the rent? Are bills included?",
+          "literal": "rent how-much Q? bill included Q?"
+        },
+        {
+          "speaker": "Эзэн:",
+          "text": "[Сард|Sard] [зургаан|dzur-GAAN] [зуун|DZUUN] [мянга|MYAN-ga]. [Цахилгаан|TSA-khil-gaan], [ус|us] [тусдаа|TUS-daa].",
+          "id": "Six hundred thousand a month. Electricity and water are extra.",
+          "literal": "month-in six hundred thousand. electricity, water separate."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Үзэж|Ü-dzej] [болох|BO-lokh] [уу|uu]? [Өнөөдөр|Ö-nöö-dör] [оройдоо|O-roi-dō] [очвол|OCH-vol] [болох|BO-lokh] [уу|uu]?",
+          "id": "Can we see it? Could we come this evening?",
+          "literal": "see-ing may Q? today evening-at-own if-arrive may Q?"
+        },
+        {
+          "speaker": "Эзэн:",
+          "text": "[Болно|BOL-no]. [Долоон|Do-LŌN] [цагт|tsagt] [ирээрэй|i-RĒ-rei]. [Хаяг|KHA-yag] [явуулъя|ya-VUUL-ya].",
+          "id": "Yes. Come at seven. I'll send you the address.",
+          "literal": "may. seven hour-at come-please. address let's-send."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Баярлалаа|ba-yar-la-LAA]! [Байрыг|BAI-riig] [үзээд|ü-DZĒD], [таалагдвал|TAA-lag-dval] [маргааш|mar-GAASH] [гэрээ|geh-RĒ] [байгуулъя|bai-GUUL-ya].",
+          "id": "Thank you! After we see the apartment, if we like it, let's sign the contract tomorrow.",
+          "literal": "thanks! apartment-object see-after, if-liked tomorrow contract let's-make."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Яараад|YAA-raad] [хэрэггүй|KHEH-reg-güi]. [Хоёр|Kho-YOR], [гурван|GUR-van] [байр|bair] [үзээд|ü-DZĒD] [шийдэх|SHII-dekh] [нь|n'] [дээр|dēr].",
+          "id": "No need to rush. Better to see two or three apartments first and then decide.",
+          "literal": "hurry-after need-not. two, three apartment see-after decide -the better."
+        }
+      ],
+      "notes": [
+        "⚠️ **Three linking suffixes, three sharply different meanings:** *-ж / -ч* means \"while, by way of\"; *-аад / -ээд* means \"and then, after\"; *-вал / -вэл* means \"if\". All three attach to verbs that are **not** the last verb of the sentence.",
+        "**Зар үзээд залгаж байна = \"saw the ad and then am calling\".** Notice that only the **last** verb gets a tense suffix; every verb before it takes a linking suffix. That's how Mongolian strings events together, and it can go on as long as you like.",
+        "**Таалагдвал = \"if (it's) liked\", from таалагдах + -вал.** The *-вал* suffix attaches straight to the verb root. ⚠️ For verbs ending in certain consonants, the form is *-бал / -бэл*: *ав* → *авбал* (if you take).",
+        "**Бол also means \"if\", but it's a separate word placed after a noun or adjective.** *Илүү үнэтэй **бол** хэцүү* = if it's more expensive, it's hard. Compare *-вал*, which attaches to verbs. The two are often used together without any trouble.",
+        "**Байна уу? on the phone means \"hello?\"** — literally \"is (someone) there?\", asking whether anyone is on the other end. Much like English \"hello, anyone there?\""
+      ],
+      "grammars": [
+        {
+          "title": "The three linking suffixes",
+          "body": [
+            "This table is the heart of the unit and worth reading twice. Look at the last column: the difference between the three isn't about grammar but about **how the two events relate**."
+          ],
+          "table": {
+            "head": [
+              "Suffix",
+              "Example",
+              "Meaning",
+              "How they relate"
+            ],
+            "rows": [
+              [
+                "**-ж / -ч**",
+                "*Явж байна.*",
+                "Is going.",
+                "At the same time, or manner."
+              ],
+              [
+                "**-ж / -ч**",
+                "*Гүйж ирсэн.*",
+                "Came running.",
+                "The way it's done."
+              ],
+              [
+                "**-аад / -ээд**",
+                "*Идээд явсан.*",
+                "Ate, then left.",
+                "In sequence; the first finishes first."
+              ],
+              [
+                "**-аад / -ээд**",
+                "*Гэртээ ирээд амарсан.*",
+                "Went home, then rested.",
+                "In sequence."
+              ],
+              [
+                "**-вал / -бэл**",
+                "*Явбал хэлээрэй.*",
+                "If you go, let me know.",
+                "Condition."
+              ],
+              [
+                "**-вал / -бэл**",
+                "*Мөнгө байвал авна.*",
+                "If I have money, I'll buy it.",
+                "Condition."
+              ],
+              [
+                "**-хдаа / -хдээ**",
+                "*Гэрт орохдоо гутлаа тайл.*",
+                "When you enter the house, take off your shoes.",
+                "At the same time, a point in time."
+              ],
+              [
+                "**-магц / -мэгц**",
+                "*Ирмэгц залгаарай.*",
+                "As soon as you arrive, call me.",
+                "Right after."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Tell -ж from -аад with one question: does the first event finish before the second begins?** If yes, use *-аад*. If both happen at once, or the first describes **how** the second is done, use *-ж*. *Идээд явсан* = ate first, then left. *Идэж явсан* = left while eating.",
+            "**A Mongolian sentence can chain five or six verbs in a row this way**, and only the last one marks the tense. *Босоод, цай уугаад, хувцасаа өмсөөд, ажилдаа явлаа* = \"Got up, drank tea, got dressed, then went to work.\" This is the signature sound of Mongolian, and it sounds natural precisely because it's long."
+          ]
+        },
+        {
+          "title": "Forming the linking suffixes",
+          "body": [
+            "All of them are built from the verb root (the dictionary form without *-х*), and the vowel follows the harmony you already know."
+          ],
+          "table": {
+            "head": [
+              "Dictionary form",
+              "-ж / -ч",
+              "-аад / -ээд",
+              "-вал / -бэл",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*явах*",
+                "*явж*",
+                "*яваад*",
+                "*явбал*",
+                "go"
+              ],
+              [
+                "*ирэх*",
+                "*ирж*",
+                "*ирээд*",
+                "*ирвэл*",
+                "come"
+              ],
+              [
+                "*идэх*",
+                "*идэж*",
+                "*идээд*",
+                "*идвэл*",
+                "eat"
+              ],
+              [
+                "*уух*",
+                "*ууж*",
+                "*уугаад*",
+                "*уувал*",
+                "drink"
+              ],
+              [
+                "*үзэх*",
+                "*үзэж*",
+                "*үзээд*",
+                "*үзвэл*",
+                "see"
+              ],
+              [
+                "*авах*",
+                "*авч*",
+                "*аваад*",
+                "*авбал*",
+                "take"
+              ],
+              [
+                "*өгөх*",
+                "*өгч*",
+                "*өгөөд*",
+                "*өгвөл*",
+                "give"
+              ],
+              [
+                "*байх*",
+                "*байж*",
+                "*байгаад*",
+                "*байвал*",
+                "be"
+              ],
+              [
+                "*хийх*",
+                "*хийж*",
+                "*хийгээд*",
+                "*хийвэл*",
+                "do"
+              ],
+              [
+                "*босох*",
+                "*босож*",
+                "*босоод*",
+                "*босвол*",
+                "get up"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **-ч replaces -ж after в, г, р, с and after long vowels.** *Авах* → *авч* (not *авж*); *өгөх* → *өгч*. Say both aloud and you'll pick the right one — the wrong form really is hard to pronounce.",
+            "**To make a condition negative, use *-хгүй бол*:** *Мөнгө байхгүй бол авахгүй* = if there's no money, I won't buy it. This is the form you'll hear most for negative conditions."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Housing, rent and bills",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*байр*",
+              "*bair*",
+              "apartment"
+            ],
+            [
+              "*түрээс*",
+              "*tü-RĒS*",
+              "rent"
+            ],
+            [
+              "*түрээслэх*",
+              "*tü-RĒS-lekh*",
+              "to rent"
+            ],
+            [
+              "*эзэн*",
+              "*EH-dzen*",
+              "owner, landlord"
+            ],
+            [
+              "*гэрээ*",
+              "*geh-RĒ*",
+              "contract, agreement"
+            ],
+            [
+              "*хаяг*",
+              "*KHA-yag*",
+              "address"
+            ],
+            [
+              "*зар*",
+              "*dzar*",
+              "ad"
+            ],
+            [
+              "*цахилгаан*",
+              "*TSA-khil-gaan*",
+              "electricity"
+            ],
+            [
+              "*халаалт*",
+              "*kha-LAALT*",
+              "heating"
+            ],
+            [
+              "*интернэт*",
+              "*in-ter-NET*",
+              "internet"
+            ],
+            [
+              "*тавилга*",
+              "*TA-vil-ga*",
+              "furniture"
+            ],
+            [
+              "*тусдаа*",
+              "*TUS-daa*",
+              "separate"
+            ],
+            [
+              "*багтсан*",
+              "*BAGT-san*",
+              "included"
+            ],
+            [
+              "*давхар*",
+              "*DAV-khar*",
+              "floor (story)"
+            ],
+            [
+              "*лифт*",
+              "*lift*",
+              "elevator"
+            ],
+            [
+              "*хашаа*",
+              "*kha-SHAA*",
+              "fenced yard"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Халаалт is the word that decides how comfortable your life in Ulaanbaatar will be.** Most city apartments are connected to central heating that's switched on around September 15 and off around May 15 — **with no thermostat inside the home**. If you're renting, ask *халаалттай юу?* An apartment without central heating in Mongolia isn't a lifestyle choice but a risk."
+        },
+        {
+          "type": "kotak",
+          "title": "Дүүрэг and хороо: how addresses work in Ulaanbaatar",
+          "items": [
+            "Ulaanbaatar is divided into *дүүрэг* (districts), then *хороо* (subdistricts), then building and door numbers.",
+            "Sample address: *Сүхбаатар дүүрэг, 1-р хороо, 25-р байр, 34 тоот*.",
+            "⚠️ **Street names are hardly used in conversation.** People give directions by landmarks: the name of a building, a bus stop or a shop.",
+            "If you order a taxi or send a parcel, have a **landmark** ready, not an address — something like \"behind the supermarket, just before the mosque\"."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Stringing a day together",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Read this paragraph aloud twice. It has seven verbs in a row, and only the last one marks the tense — this is what Mongolian really sounds like, and once you can say it without stumbling, you've crossed the biggest hurdle of A1."
+        },
+        {
+          "type": "kotak",
+          "title": "Өнөөдрийн минь өдөр",
+          "items": [
+            "*Өглөө зургаан цаг хагаст босоод,* — Got up at half past six in the morning, then",
+            "*нүүрээ угаагаад, цай уугаад,* — washed my face, drank tea,",
+            "*хувцасаа өмсөөд, гэрээсээ гараад,* — got dressed, left the house,",
+            "*автобусанд сууж сургуульдаа очлоо.* — took the bus and got to campus."
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Хоол идээд ном уншсан.*",
+              "Ate, then read a book."
+            ],
+            [
+              "*Гэртээ ирээд амарсан.*",
+              "Went home, then rested."
+            ],
+            [
+              "*Ажлаа дуусгаад гэртээ харина.*",
+              "Finish work, then go home."
+            ],
+            [
+              "*Цай ууж ярилцъя.*",
+              "Let's chat over tea."
+            ],
+            [
+              "*Гүйж ирсэн.*",
+              "Came running."
+            ],
+            [
+              "*Хэрэв цаг байвал уулзая.*",
+              "If we have time, let's meet."
+            ],
+            [
+              "*Бороо орвол гарахгүй.*",
+              "If it rains, I won't go out."
+            ],
+            [
+              "*Ирмэгц надад залгаарай.*",
+              "Call me as soon as you arrive."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Daily activities",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English",
+            "Монгол",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*босох*",
+              "*BO-sokh*",
+              "to get up",
+              "*унтах*",
+              "*UN-takh*",
+              "to sleep"
+            ],
+            [
+              "*угаах*",
+              "*u-GAAKH*",
+              "to wash",
+              "*өмсөх*",
+              "*ÖM-sökh*",
+              "to put on (clothes)"
+            ],
+            [
+              "*хувцаслах*",
+              "*KHUV-tsas-lakh*",
+              "to get dressed",
+              "*тайлах*",
+              "*TAI-lakh*",
+              "to take off"
+            ],
+            [
+              "*гарах*",
+              "*GA-rakh*",
+              "to go out",
+              "*орох*",
+              "*O-rokh*",
+              "to go in"
+            ],
+            [
+              "*цэвэрлэх*",
+              "*TSEH-ver-lekh*",
+              "to clean",
+              "*хоол хийх*",
+              "*khōl KHIIKH*",
+              "to cook"
+            ],
+            [
+              "*дуусгах*",
+              "*DUUS-gakh*",
+              "to finish (something)",
+              "*эхлэх*",
+              "*EKH-lekh*",
+              "to start"
+            ],
+            [
+              "*ярилцах*",
+              "*ya-RIL-tsakh*",
+              "to chat",
+              "*амрах*",
+              "*AM-rakh*",
+              "to rest"
+            ],
+            [
+              "*гүйх*",
+              "*güikh*",
+              "to run",
+              "*алхах*",
+              "*AL-khakh*",
+              "to walk"
+            ],
+            [
+              "*шийдэх*",
+              "*SHII-dekh*",
+              "to decide",
+              "*яарах*",
+              "*YAA-rakh*",
+              "to hurry"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Notice the pair **эхлэх / дуусах** (start / end) and **дуусгах** (to finish something). The suffix **-га / -гэ** turns a \"happens by itself\" verb into a \"makes it happen\" verb: *дуусах* (to end) → *дуусгах* (to finish something); *босох* (to get up) → *босгох* (to wake someone up); *сурах* (to learn) → *сургах* (to teach). It's like English pairs such as \"rise / raise\" or \"fall / fell\", only fully regular — and very productive."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "mn": "байр",
+      "baca": "bair",
+      "en": "apartment"
+    },
+    {
+      "mn": "түрээс",
+      "baca": "tü-RĒS",
+      "en": "rent"
+    },
+    {
+      "mn": "эзэн",
+      "baca": "EH-dzen",
+      "en": "owner, landlord"
+    },
+    {
+      "mn": "гэрээ",
+      "baca": "geh-RĒ",
+      "en": "contract"
+    },
+    {
+      "mn": "хаяг",
+      "baca": "KHA-yag",
+      "en": "address"
+    },
+    {
+      "mn": "зар",
+      "baca": "dzar",
+      "en": "ad"
+    },
+    {
+      "mn": "цахилгаан",
+      "baca": "TSA-khil-gaan",
+      "en": "electricity"
+    },
+    {
+      "mn": "халаалт",
+      "baca": "kha-LAALT",
+      "en": "⚠️ heating"
+    },
+    {
+      "mn": "тавилга",
+      "baca": "TA-vil-ga",
+      "en": "furniture"
+    },
+    {
+      "mn": "тусдаа",
+      "baca": "TUS-daa",
+      "en": "separate"
+    },
+    {
+      "mn": "угаах",
+      "baca": "u-GAAKH",
+      "en": "to wash"
+    },
+    {
+      "mn": "өмсөх",
+      "baca": "ÖM-sökh",
+      "en": "to put on (clothes)"
+    },
+    {
+      "mn": "цэвэрлэх",
+      "baca": "TSEH-ver-lekh",
+      "en": "to clean"
+    },
+    {
+      "mn": "дуусгах",
+      "baca": "DUUS-gakh",
+      "en": "to finish (something)"
+    },
+    {
+      "mn": "эхлэх",
+      "baca": "EKH-lekh",
+      "en": "to start"
+    },
+    {
+      "mn": "ярилцах",
+      "baca": "ya-RIL-tsakh",
+      "en": "to chat"
+    },
+    {
+      "mn": "шийдэх",
+      "baca": "SHII-dekh",
+      "en": "to decide"
+    },
+    {
+      "mn": "яарах",
+      "baca": "YAA-rakh",
+      "en": "to hurry"
+    },
+    {
+      "mn": "гүйх",
+      "baca": "güikh",
+      "en": "to run"
+    },
+    {
+      "mn": "хувцас",
+      "baca": "KHUV-tsas",
+      "en": "clothes"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mongolian.",
+      "items": [
+        "Ate, then left.",
+        "Went home, then rested.",
+        "If we have time, let's meet.",
+        "If it rains, I won't go out.",
+        "Let's chat over tea.",
+        "How much is the rent?"
+      ]
+    },
+    {
+      "prompt": "Fill in the suffix -аад, -ээд, -оод or -өөд.",
+      "items": [
+        "Хоол ид____ явсан.",
+        "Гэртээ ир____ амарсан.",
+        "Цай уу____ гарсан.",
+        "Зар үз____ залгасан.",
+        "Бос____ нүүрээ угаасан.",
+        "Ном өг____ явсан."
+      ]
+    },
+    {
+      "prompt": "Change into the conditional with -вал or -бэл.",
+      "items": [
+        "явах",
+        "ирэх",
+        "байх",
+        "авах",
+        "үзэх",
+        "өгөх"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "явсан / идээд / хоол",
+        "амарсан / ирээд / гэртээ",
+        "уулзая / байвал / цаг",
+        "гарахгүй / орвол / бороо",
+        "вэ / хэд / түрээс"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Хоол идээд явсан. — Гэртээ ирээд амарсан. — Хэрэв цаг байвал уулзая. — Бороо орвол гарахгүй. — Цай ууж ярилцъя. — Түрээс хэд вэ?",
+    "1": "ээд — ээд — гаад — ээд — оод — өөд",
+    "2": "явбал — ирвэл — байвал — авбал — үзвэл — өгвөл",
+    "3": "Хоол идээд явсан. — Гэртээ ирээд амарсан. — Цаг байвал уулзая. — Бороо орвол гарахгүй. — Түрээс хэд вэ?"
+  }
+}

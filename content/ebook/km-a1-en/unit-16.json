@@ -1,0 +1,607 @@
+{
+  "title": "When you're not feeling well",
+  "title_target": "ឈឺខ្លួន — chheu khluèn",
+  "goal": "Name parts of the body and describe symptoms at a pharmacy or clinic — with the Khmer pattern that makes the body part the object, not the subject.",
+  "bekal": [
+    "name the body parts people complain about most",
+    "describe a symptom with ខ្ញុំឈឺ + body part",
+    "tell ឈឺ, គ្រុនក្តៅ, រាគ, ក្អួត apart",
+    "ask for medicine at a pharmacy",
+    "mention allergies and call for help in an emergency"
+  ],
+  "dialogs": [
+    {
+      "title": "កិច្ចសន្ទនា — At the pharmacy near the market",
+      "intro": "Back from Siem Reap, Ani has stomach trouble. Watch how the complaints are built: not \"my head hurts\" but \"I hurt head\" — the body part is the object.",
+      "lines": [
+        {
+          "speaker": "ឱសថការី:",
+          "text": "[សួស្ដី|sua-sdey] [បង|baang]។ [មាន|mien] [រឿង|ruèng] [អ្វី|'wey] [ចាស|chaah]?",
+          "id": "Hello. What seems to be the problem?",
+          "literal": "hello — older-sibling. have — matter — what — yes(f)?"
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[ខ្ញុំ|khnyom] [ឈឺ|chheu] [ពោះ|puèh] [ចាស|chaah]។ [ពី|pii] [យប់មិញ|yup-meñ]។",
+          "id": "I have a stomachache. Since last night.",
+          "literal": "I — hurt — stomach — yes(f). since — last-night."
+        },
+        {
+          "speaker": "ឱសថការី:",
+          "text": "[រាគ|riek] [ទេ|té]?",
+          "id": "Diarrhea?",
+          "literal": "diarrhea — (question)?"
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[រាគ|riek] [ចាស|chaah]។ [ហើយ|haeuy] [ក្អួត|k'uèt] [ពីរ|pii] [ដង|daang] [ដែរ|dae]។",
+          "id": "Yes, diarrhea. And I threw up twice, too.",
+          "literal": "diarrhea — yes(f). and — vomit — two — time — too."
+        },
+        {
+          "speaker": "ឱសថការី:",
+          "text": "[មាន|mien] [គ្រុនក្តៅ|krun-kdaw] [ទេ|té] [ចាស|chaah]?",
+          "id": "Do you have a fever?",
+          "literal": "have — fever-hot — (question) — yes(f)?"
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[បន្តិច|ban-tech] [ចាស|chaah]។ [ហើយ|haeuy] [ខ្ញុំ|khnyom] [ឈឺ|chheu] [ក្បាល|kbaal] [ដែរ|dae]។",
+          "id": "A little. And I have a headache, too.",
+          "literal": "a-little — yes(f). and — I — hurt — head — too."
+        },
+        {
+          "speaker": "ឱសថការី:",
+          "text": "[បង|baang] [ញ៉ាំ|nyam] [អ្វី|'wey] [ម្សិលមិញ|msel-meñ] [ចាស|chaah]?",
+          "id": "What did you eat yesterday?",
+          "literal": "older-sibling — eat — what — yesterday — yes(f)?"
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[ខ្ញុំ|khnyom] [ញ៉ាំ|nyam] [ត្រី|trey] [នៅ|neuw] [ផ្លូវ|phlow] [ចាស|chaah]។ [ប្រហែល|pra-hael] [មិន|min] [ស្អាត|s'aat] [ទេ|té]។",
+          "id": "I ate fish from a street stall. Maybe it wasn't clean.",
+          "literal": "I — eat — fish — at — street — yes(f). maybe — not — clean — no."
+        },
+        {
+          "speaker": "ឱសថការី:",
+          "text": "[អញ្ចឹង|'añ-cheung] [ខ្ញុំ|khnyom] [ឲ្យ|'aoy] [ថ្នាំ|thnam] [រាគ|riek] [និង|neng] [អូអេស៊ែល|'ou-'é-sael] [ចាស|chaah]។ [ញ៉ាំ|nyam] [ក្រោយ|kraoy] [បាយ|baay]។",
+          "id": "Then I'll give you diarrhea medicine and oral rehydration salts. Take them after meals.",
+          "literal": "so — I — give — medicine — diarrhea — and — ORS — yes(f). eat — after — rice."
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[ថ្នាំ|thnam] [នេះ|nih] [ញ៉ាំ|nyam] [ប៉ុន្មាន|pon-maan] [ដង|daang] [មួយ|muèy] [ថ្ងៃ|thngay] [ចាស|chaah]?",
+          "id": "How many times a day do I take this medicine?",
+          "literal": "medicine — this — eat — how-many — time — one — day — yes(f)?"
+        },
+        {
+          "speaker": "ឱសថការី:",
+          "text": "[បី|bey] [ដង|daang] [ចាស|chaah]។ [បើ|baeu] [ពីរ|pii] [ថ្ងៃ|thngay] [មិន|min] [ជា|chiè] [ទេ|té], [ត្រូវ|treuw] [ទៅ|teuw] [មន្ទីរពេទ្យ|mon-tii-pèt]។",
+          "id": "Three times. If you're not better in two days, you must go to the hospital.",
+          "literal": "three — time — yes(f). if — two — day — not — recover — no, must — go — hospital."
+        },
+        {
+          "speaker": "អានី:",
+          "text": "[អរគុណ|'aa-kun] [ច្រើន|chraeun] [ចាស|chaah]។ [ខ្ញុំ|khnyom] [ទិញ|teñ] [ទឹក|teuk] [ដប|daap] [ធំ|thum] [ផង|phaang]។",
+          "id": "Thank you so much. I'll buy a big bottle of water, too.",
+          "literal": "thank-you — much — yes(f). I — buy — water — bottle — big — too."
+        }
+      ],
+      "grammars": [
+        {
+          "title": "⚠️ ឈឺ + body part — \"I hurt head\"",
+          "body": [
+            "English says \"my head hurts\" (the head is the subject) or \"I have a headache\". Khmer says **\"I hurt head\"** — the person is the subject and the body part is the object. Get this order into your head early and don't flip it."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Khmer",
+                "Say it",
+                "Literally",
+                "Translation"
+              ],
+              "rows": [
+                [
+                  "ខ្ញុំឈឺក្បាល",
+                  "*khnyom chheu kbaal*",
+                  "I hurt head",
+                  "I have a headache"
+                ],
+                [
+                  "ខ្ញុំឈឺពោះ",
+                  "*khnyom chheu puèh*",
+                  "I hurt stomach",
+                  "I have a stomachache"
+                ],
+                [
+                  "ខ្ញុំឈឺធ្មេញ",
+                  "*khnyom chheu thmeñ*",
+                  "I hurt tooth",
+                  "I have a toothache"
+                ],
+                [
+                  "ខ្ញុំឈឺបំពង់ក",
+                  "*khnyom chheu bam-puèng-kaa*",
+                  "I hurt throat",
+                  "I have a sore throat"
+                ],
+                [
+                  "ខ្ញុំឈឺខ្នង",
+                  "*khnyom chheu khnaang*",
+                  "I hurt back",
+                  "my back hurts"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ ក្បាលខ្ញុំឈឺ is also understood, but it sounds translated. The natural form, and the one you'll always hear from Cambodians, is ខ្ញុំឈឺក្បាល.",
+            "**ឈឺ also means \"sick\" in general**: ខ្ញុំឈឺ means \"I'm sick\". For something more serious, people say ឈឺធ្ងន់ (*chheu thngun*, \"seriously ill\")."
+          ]
+        },
+        {
+          "title": "Four complaints you mustn't mix up",
+          "body": [
+            "Khmer uses completely different words for four conditions that a learner might lump together as \"being sick\". Mixing them up could get you the wrong medicine."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Khmer",
+                "Say it",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "ឈឺ",
+                  "*chheu*",
+                  "hurt, ache, sick"
+                ],
+                [
+                  "គ្រុនក្តៅ",
+                  "*krun-kdaw*",
+                  "fever — literally \"shivering hot\""
+                ],
+                [
+                  "រាគ",
+                  "*riek*",
+                  "diarrhea"
+                ],
+                [
+                  "ក្អួត",
+                  "*k'uèt*",
+                  "vomit, throw up"
+                ],
+                [
+                  "ក្អក",
+                  "*k'aak*",
+                  "cough"
+                ],
+                [
+                  "ផ្តាសាយ",
+                  "*phdaa-saay*",
+                  "have a cold"
+                ],
+                [
+                  "វិលមុខ",
+                  "*wil-muk*",
+                  "dizzy — literally \"face spinning\""
+                ],
+                [
+                  "អស់កម្លាំង",
+                  "*'ah kam-lang*",
+                  "weak, exhausted"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Notice **វិលមុខ** (dizzy) and **ឈឺក្បាល** (headache) — two different things, and mixing them up is a very common mistake. វិលមុខ means the world is spinning; ឈឺក្បាល means your head aches."
+          ]
+        },
+        {
+          "title": "ដង — counting how many times",
+          "body": [
+            "ដង (*daang*) is the classifier for **occurrences**, like English \"times\". The pattern is the same as other classifiers: number + ដង."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Khmer",
+                "Say it",
+                "Translation"
+              ],
+              "rows": [
+                [
+                  "ពីរដង",
+                  "*pii daang*",
+                  "twice"
+                ],
+                [
+                  "បីដងមួយថ្ងៃ",
+                  "*bey daang muèy thngay*",
+                  "three times a day"
+                ],
+                [
+                  "ម្តង",
+                  "*mdaang*",
+                  "once ⚠️ not មួយដង"
+                ],
+                [
+                  "ម្តងទៀត",
+                  "*mdaang-tiet*",
+                  "once more, again"
+                ],
+                [
+                  "ច្រើនដង",
+                  "*chraeun daang*",
+                  "many times"
+                ],
+                [
+                  "ដងទីមួយ",
+                  "*daang tii-muèy*",
+                  "the first time"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ \"Once\" is **ម្តង** (*mdaang*), not មួយដង. It's the only number that merges into a special form; two times and up are regular again. ម្តង also means \"for a moment\" in requests: មើលម្តង (\"have a look\")."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Parts of the body",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Khmer",
+            "Say it",
+            "Meaning",
+            "Khmer",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ក្បាល",
+              "*kbaal*",
+              "head",
+              "ដៃ",
+              "*day*",
+              "hand, arm"
+            ],
+            [
+              "មុខ",
+              "*muk*",
+              "face",
+              "ម្រាមដៃ",
+              "*mriem-day*",
+              "finger"
+            ],
+            [
+              "ភ្នែក",
+              "*phnèk*",
+              "eye",
+              "ជើង",
+              "*cheung*",
+              "foot, leg"
+            ],
+            [
+              "ត្រចៀក",
+              "*tra-chiek*",
+              "ear",
+              "ក្រពះ",
+              "*kra-peah*",
+              "stomach (organ)"
+            ],
+            [
+              "ច្រមុះ",
+              "*chra-moh*",
+              "nose",
+              "ពោះ",
+              "*puèh*",
+              "belly, stomach"
+            ],
+            [
+              "មាត់",
+              "*moat*",
+              "mouth",
+              "ខ្នង",
+              "*khnaang*",
+              "back"
+            ],
+            [
+              "ធ្មេញ",
+              "*thmeñ*",
+              "tooth",
+              "ដួងចិត្ត",
+              "*duèng-chet*",
+              "heart"
+            ],
+            [
+              "អណ្តាត",
+              "*'an-daat*",
+              "tongue",
+              "ឆ្អឹង",
+              "*chh'eng*",
+              "bone"
+            ],
+            [
+              "ក",
+              "*kaa*",
+              "neck",
+              "សាច់ដុំ",
+              "*sach-dom*",
+              "muscle"
+            ],
+            [
+              "បំពង់ក",
+              "*bam-puèng-kaa*",
+              "throat",
+              "ស្បែក",
+              "*sbaek*",
+              "skin"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "At the pharmacy and clinic"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Khmer",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "I'm sick.",
+              "ខ្ញុំឈឺ",
+              "*khnyom chheu*"
+            ],
+            [
+              "Do you have medicine for …?",
+              "មានថ្នាំសម្រាប់ … ទេ?",
+              "*mien thnam sam-rap … té?*"
+            ],
+            [
+              "How many times a day do I take it?",
+              "ញ៉ាំប៉ុន្មានដងមួយថ្ងៃ?",
+              "*nyam pon-maan daang muèy thngay?*"
+            ],
+            [
+              "After meals.",
+              "ក្រោយបាយ",
+              "*kraoy baay*"
+            ],
+            [
+              "I'm allergic to …",
+              "ខ្ញុំមិនត្រូវនឹង …",
+              "*khnyom min treuw neng …*"
+            ],
+            [
+              "I need a doctor.",
+              "ខ្ញុំត្រូវការគ្រូពេទ្យ",
+              "*khnyom treuw-kaa kruu-pèt*"
+            ],
+            [
+              "Where's the hospital?",
+              "មន្ទីរពេទ្យនៅឯណា?",
+              "*mon-tii-pèt neuw 'ae-naa?*"
+            ],
+            [
+              "Help!",
+              "ជួយផង!",
+              "*chuèy phaang!*"
+            ],
+            [
+              "Call an ambulance.",
+              "ហៅរថយន្តសង្គ្រោះ",
+              "*haw rot-yun sang-kruèh*"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Three practical tips for newcomers to Cambodia",
+          "items": [
+            "**Pharmacies are much less strict than in many countries.** Lots of medicines that need a prescription elsewhere can be bought over the counter. That's convenient, but it also means you need to know what you're taking — describe your symptoms clearly and ask what the medicine is called.",
+            "**For serious illness, there are international clinics in Phnom Penh and Siem Reap.** The sentence ខ្ញុំត្រូវការគ្រូពេទ្យនិយាយភាសាអង់គ្លេស (\"I need a doctor who speaks English\") is worth having ready.",
+            "**Dengue and malaria are real in the rainy season.** If a fever doesn't go down within two days, don't wait — ទៅមន្ទីរពេទ្យ. The words ឈាម (*chhiem*, blood) and គ្រុនឈាម (dengue fever) are worth knowing."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "km": "ឈឺ",
+      "baca": "chheu",
+      "en": "hurt, ache, sick"
+    },
+    {
+      "km": "គ្រុនក្តៅ",
+      "baca": "krun-kdaw",
+      "en": "fever"
+    },
+    {
+      "km": "រាគ",
+      "baca": "riek",
+      "en": "diarrhea"
+    },
+    {
+      "km": "ក្អួត",
+      "baca": "k'uèt",
+      "en": "vomit"
+    },
+    {
+      "km": "ក្អក",
+      "baca": "k'aak",
+      "en": "cough"
+    },
+    {
+      "km": "ផ្តាសាយ",
+      "baca": "phdaa-saay",
+      "en": "cold (illness)"
+    },
+    {
+      "km": "វិលមុខ",
+      "baca": "wil-muk",
+      "en": "dizzy"
+    },
+    {
+      "km": "ថ្នាំ",
+      "baca": "thnam",
+      "en": "medicine"
+    },
+    {
+      "km": "ដង",
+      "baca": "daang",
+      "en": "time(s) (classifier for occurrences)"
+    },
+    {
+      "km": "ម្តង",
+      "baca": "mdaang",
+      "en": "once"
+    },
+    {
+      "km": "ក្បាល",
+      "baca": "kbaal",
+      "en": "head"
+    },
+    {
+      "km": "ពោះ",
+      "baca": "puèh",
+      "en": "belly, stomach"
+    },
+    {
+      "km": "ធ្មេញ",
+      "baca": "thmeñ",
+      "en": "tooth"
+    },
+    {
+      "km": "ភ្នែក",
+      "baca": "phnèk",
+      "en": "eye"
+    },
+    {
+      "km": "ដៃ",
+      "baca": "day",
+      "en": "hand, arm"
+    },
+    {
+      "km": "ជើង",
+      "baca": "cheung",
+      "en": "foot, leg"
+    },
+    {
+      "km": "ខ្នង",
+      "baca": "khnaang",
+      "en": "back"
+    },
+    {
+      "km": "បំពង់ក",
+      "baca": "bam-puèng-kaa",
+      "en": "throat"
+    },
+    {
+      "km": "ខ្លួន",
+      "baca": "khluèn",
+      "en": "body, self"
+    },
+    {
+      "km": "ជា",
+      "baca": "chiè",
+      "en": "recover, get well (also: to be)"
+    },
+    {
+      "km": "គ្រូពេទ្យ",
+      "baca": "kruu-pèt",
+      "en": "doctor"
+    },
+    {
+      "km": "មន្ទីរពេទ្យ",
+      "baca": "mon-tii-pèt",
+      "en": "hospital"
+    },
+    {
+      "km": "ឱសថស្ថាន",
+      "baca": "'ao-sat-sthaan",
+      "en": "pharmacy"
+    },
+    {
+      "km": "ត្រូវការ",
+      "baca": "treuw-kaa",
+      "en": "need"
+    },
+    {
+      "km": "ជួយផង",
+      "baca": "chuèy phaang",
+      "en": "help!"
+    },
+    {
+      "km": "រឿង",
+      "baca": "ruèng",
+      "en": "matter, problem, story"
+    },
+    {
+      "km": "ឈាម",
+      "baca": "chhiem",
+      "en": "blood"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Rewrite each complaint in the correct Khmer order.",
+      "items": [
+        "My head hurts.",
+        "My stomach hurts.",
+        "My tooth hurts.",
+        "My throat hurts."
+      ]
+    },
+    {
+      "prompt": "Choose the right word: ឈឺ, គ្រុនក្តៅ, រាគ, or វិលមុខ.",
+      "items": [
+        "Your body feels hot and you're shivering.",
+        "You keep running to the toilet.",
+        "The world feels like it's spinning.",
+        "There's a pain in your knee."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ពោះ / ខ្ញុំ / ឈឺ",
+        "ថ្ងៃ / មួយ / ដង / បី",
+        "ទេ / សម្រាប់រាគ / មាន / ថ្នាំ",
+        "ផង / ជួយ"
+      ]
+    },
+    {
+      "prompt": "Translate into Khmer.",
+      "items": [
+        "I have a stomachache.",
+        "I have a slight fever.",
+        "I threw up twice.",
+        "How many times a day do I take this medicine?",
+        "After meals.",
+        "Where's the hospital?"
+      ]
+    }
+  ],
+  "answers": [
+    "ខ្ញុំឈឺក្បាល។ — ខ្ញុំឈឺពោះ។ — ខ្ញុំឈឺធ្មេញ។ — ខ្ញុំឈឺបំពង់ក។",
+    "គ្រុនក្តៅ — រាគ — វិលមុខ — ឈឺ",
+    "ខ្ញុំឈឺពោះ។ — បីដងមួយថ្ងៃ។ — មានថ្នាំសម្រាប់រាគទេ? — ជួយផង។",
+    "ខ្ញុំឈឺពោះ។ — មានគ្រុនក្តៅបន្តិច។ — ខ្ញុំក្អួតពីរដង។ — ថ្នាំនេះញ៉ាំប៉ុន្មានដងមួយថ្ងៃ? — ក្រោយបាយ។ — មន្ទីរពេទ្យនៅឯណា?"
+  ]
+}

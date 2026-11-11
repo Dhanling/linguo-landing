@@ -1,0 +1,602 @@
+{
+  "title": "I'm not feeling well",
+  "title_target": "我不舒服",
+  "goal": "Describe being sick and visit a clinic in Taiwan — while learning to spot verbs that already carry their own object, a pattern that changes how you build sentences.",
+  "bekal": [
+    "name body parts and explain symptoms to a doctor",
+    "recognize separable verbs (看病, 吃藥, 睡覺) and insert things in the middle",
+    "handle a visit to a Taiwanese clinic and pharmacy"
+  ],
+  "dialogs": [
+    {
+      "title": "對話 — 看醫生",
+      "intro": "Morning in Tainan: Budi wakes up with a sore throat. Xiaomei takes him to the clinic across the street.",
+      "lines": [
+        {
+          "speaker": "小美:",
+          "text": "[布迪|Bùdí]，[你|nǐ][臉色|liǎnsè][不太|bú tài][好|hǎo][耶|ye]。",
+          "id": "Budi, you look pale.",
+          "literal": "Budi, you — face-color — not — too — good — (softener)."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[我|Wǒ][有點|yǒudiǎn][不舒服|bù shūfú]。[喉嚨|Hóulóng][很|hěn][痛|tòng]。",
+          "id": "I'm not feeling too well. My throat really hurts.",
+          "literal": "I — have-a-bit — not — comfortable. throat — very — hurt."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[有|Yǒu][發燒|fāshāo][嗎|ma]？[我|Wǒ][摸摸|mōmō][看|kàn]。",
+          "id": "Do you have a fever? Let me feel.",
+          "literal": "have — emit-burn — (question)? I — touch-touch — see."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[好像|Hǎoxiàng][有|yǒu][一點|yìdiǎn]。[昨天|Zuótiān][晚上|wǎnshang][沒|méi][睡|shuì][好|hǎo]。",
+          "id": "I think a little. I didn't sleep well last night.",
+          "literal": "seem — have — a-bit. yesterday — evening — not — sleep — well."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[走|Zǒu]，[我們|wǒmen][去|qù][看|kàn][醫生|yīshēng]。[對面|Duìmiàn][有|yǒu][診所|zhěnsuǒ]。",
+          "id": "Come on, let's see a doctor. There's a clinic across the street.",
+          "literal": "go, we — go — see — doctor. opposite — have — clinic."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[可是|Kěshì][我|wǒ][沒有|méi yǒu][健保卡|jiànbǎokǎ]…",
+          "id": "But I don't have a health insurance card…",
+          "literal": "but — I — not — have — health-insurance-card…"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[你|Nǐ][有|yǒu][學生|xuéshēng][保險|bǎoxiǎn][吧|ba]？[帶|Dài][護照|hùzhào][也|yě][可以|kěyǐ]。",
+          "id": "You have student insurance, right? Bringing your passport works too.",
+          "literal": "you — have — student — insurance — (right)? bring — passport — also — can."
+        },
+        {
+          "speaker": "醫生:",
+          "text": "[哪裡|Nǎlǐ][不舒服|bù shūfú]？",
+          "id": "What seems to be the problem?",
+          "literal": "where — not — comfortable?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[喉嚨|Hóulóng][痛|tòng]，[頭|tóu][也|yě][痛|tòng]，[有|yǒu][一點|yìdiǎn][咳嗽|késòu]。",
+          "id": "My throat hurts, my head hurts too, and I have a slight cough.",
+          "literal": "throat — hurt, head — also — hurt, have — a-bit — cough."
+        },
+        {
+          "speaker": "醫生:",
+          "text": "[幾天|Jǐ tiān][了|le]？[有|Yǒu][流鼻水|liú bíshuǐ][嗎|ma]？",
+          "id": "For how many days? Do you have a runny nose?",
+          "literal": "how-many — day — (change)? have — flow — nose-water — (question)?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[兩天|Liǎng tiān][了|le]。[有|Yǒu][一點|yìdiǎn]。",
+          "id": "Two days. A little.",
+          "literal": "two — day — (change). have — a-bit."
+        },
+        {
+          "speaker": "醫生:",
+          "text": "[感冒|Gǎnmào][而已|éryǐ]。[我|Wǒ][開|kāi][三天|sān tiān][的|de][藥|yào][給|gěi][你|nǐ]。",
+          "id": "It's just a cold. I'll prescribe you three days of medicine.",
+          "literal": "feel-blocked — only. I — open — three — day — 's — medicine — give — you."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[謝謝|Xièxie][醫生|yīshēng]。[藥|Yào][怎麼|zěnme][吃|chī]？",
+          "id": "Thank you, doctor. How do I take the medicine?",
+          "literal": "thanks — doctor. medicine — how — eat?"
+        },
+        {
+          "speaker": "醫生:",
+          "text": "[飯後|Fàn hòu][吃|chī]，[一天|yì tiān][三次|sān cì]。[多|Duō][喝|hē][水|shuǐ]，[多|duō][休息|xiūxí]。",
+          "id": "After meals, three times a day. Drink lots of water and get plenty of rest.",
+          "literal": "meal — after — eat, one — day — three — time. much — drink — water, much — rest."
+        }
+      ],
+      "notes": [
+        "⚠️ **健保卡 (the card for 健保, national health insurance) is one of Taiwan's proudest achievements.** A visit to a 診所 costs only about 150–200 塊, medicine included. **Foreign students who stay longer than six months are entitled to it**, and the premium is about 800 塊 a month.",
+        "**診所 (clinic) is different from 醫院 (hospital).** For a cold, a fever, or a minor illness, Taiwanese people go to a 診所 — quick, cheap, no appointment. 醫院 is for serious things. ⚠️ Going to a 醫院 for a cold means waiting for hours and paying more.",
+        "**摸摸看 shows the \"try it\" pattern**: repeated verb + 看 = \"do it and see what happens\". 試試看 (just try), 吃吃看 (try eating it), 想想看 (think it over). This pattern is very common and makes you sound friendly.",
+        "**而已 at the end of a sentence means \"that's all, just\"**, often reassuring: *感冒而已* (\"it's just a cold\"), *一百塊而已* (\"only a hundred\"). It's very Taiwanese and used more often than 只是.",
+        "⚠️ **好像 means \"seems like, I think\"** and is used to soften statements. Taiwanese people use it constantly to avoid sounding too certain — much like \"kind of\" or \"I guess\" in English."
+      ],
+      "grammars": [
+        {
+          "title": "Verbs that already carry their object",
+          "body": [
+            "Many Mandarin verbs are really a **verb + noun** stuck together. 吃飯 is literally \"eat rice\", 睡覺 \"sleep a sleep\", 看病 \"see an illness\". Why it matters: you **can't add another object after them**, and modifiers are inserted in the **middle** instead."
+          ],
+          "table": {
+            "head": [
+              "Verb",
+              "Literally",
+              "Meaning",
+              "With an insert"
+            ],
+            "rows": [
+              [
+                "**吃飯**",
+                "eat rice",
+                "eat (a meal)",
+                "吃**了**飯 / 吃**兩碗**飯"
+              ],
+              [
+                "**睡覺**",
+                "sleep a sleep",
+                "sleep",
+                "睡**了**覺 / 睡**八小時**覺"
+              ],
+              [
+                "**看病**",
+                "see an illness",
+                "see a doctor",
+                "看**了**病"
+              ],
+              [
+                "**上課**",
+                "go up to a lesson",
+                "attend class",
+                "上**了**兩節課"
+              ],
+              [
+                "**唱歌**",
+                "sing a song",
+                "sing",
+                "唱**一首**歌"
+              ],
+              [
+                "**幫忙**",
+                "help a busyness",
+                "help",
+                "幫**我的**忙"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **The classic mistake: 我吃飯麵.** Since 飯 is already the object, you can't add 麵. The right form is **我吃麵** — drop the 飯.",
+            "**Quick test:** if a two-syllable verb feels like a general activity with no specific object (eat, sleep, work, swim, sing), it's probably a separable verb. As soon as you have a clear object, drop the second half.",
+            "**幫忙 is the most common trap**: *幫忙我* ✗ wrong; *幫我* ✓ or *幫我的忙* ✓."
+          ]
+        },
+        {
+          "title": "Describing symptoms: the 哪裡 + 痛 pattern",
+          "body": [
+            "Saying what hurts in Mandarin is very simple: **body part + 痛**. No extra verb, no 是."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Pīnyīn",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "我**頭痛**。",
+                "Wǒ tóu tòng.",
+                "I have a headache."
+              ],
+              [
+                "我**肚子痛**。",
+                "Wǒ dùzi tòng.",
+                "I have a stomachache."
+              ],
+              [
+                "我**喉嚨痛**。",
+                "Wǒ hóulóng tòng.",
+                "I have a sore throat."
+              ],
+              [
+                "我**發燒**了。",
+                "Wǒ fāshāo le.",
+                "I have a fever."
+              ],
+              [
+                "我**咳嗽**。",
+                "Wǒ késòu.",
+                "I have a cough."
+              ],
+              [
+                "我**感冒**了。",
+                "Wǒ gǎnmào le.",
+                "I've caught a cold."
+              ],
+              [
+                "我**不舒服**。",
+                "Wǒ bù shūfú.",
+                "I'm not feeling well."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **痛 and 疼 both mean \"hurt\"**, but in Taiwan **痛** is far more common. Compare unit 8, where 疼 appears with the meaning \"dote on\".",
+            "**The 了 in 發燒了 and 感冒了 is the marker of change** from unit 11: healthy before, not now. Leaving it out makes the sentence sound like an odd general statement.",
+            "**The doctor's first question is always 哪裡不舒服？** — memorize your answer now: body part + 痛, plus how long it's been: *兩天了*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Body parts",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "Meaning",
+            "中文",
+            "Pīnyīn",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "頭",
+              "tóu",
+              "head",
+              "手",
+              "shǒu",
+              "hand"
+            ],
+            [
+              "眼睛",
+              "yǎnjīng",
+              "eye",
+              "腳",
+              "jiǎo",
+              "foot, leg"
+            ],
+            [
+              "鼻子",
+              "bízi",
+              "nose",
+              "背",
+              "bèi",
+              "back"
+            ],
+            [
+              "嘴巴",
+              "zuǐbā",
+              "mouth",
+              "肚子",
+              "dùzi",
+              "belly"
+            ],
+            [
+              "耳朵",
+              "ěrduo",
+              "ear",
+              "腰",
+              "yāo",
+              "waist, lower back"
+            ],
+            [
+              "牙齒",
+              "yáchǐ",
+              "tooth",
+              "心",
+              "xīn",
+              "heart"
+            ],
+            [
+              "喉嚨",
+              "hóulóng",
+              "throat",
+              "身體",
+              "shēntǐ",
+              "body"
+            ],
+            [
+              "脖子",
+              "bózi",
+              "neck",
+              "臉",
+              "liǎn",
+              "face"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Notice that many body parts end in **子** or **巴/朵/齒** in the neutral tone: 鼻**子**, 肚**子**, 脖**子**, 嘴**巴**, 耳**朵**. These tails mean nothing — they just make the word two syllables long, because modern Mandarin prefers two-syllable words."
+        }
+      ]
+    },
+    {
+      "title": "At the clinic",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "English"
+          ],
+          "rows": [
+            [
+              "**我要看醫生**",
+              "wǒ yào kàn yīshēng",
+              "I'd like to see a doctor"
+            ],
+            [
+              "**我要掛號**",
+              "wǒ yào guàhào",
+              "I'd like to register"
+            ],
+            [
+              "**我沒有健保卡**",
+              "wǒ méi yǒu jiànbǎokǎ",
+              "I don't have a 健保 card"
+            ],
+            [
+              "**這是我的護照**",
+              "zhè shì wǒ de hùzhào",
+              "Here's my passport"
+            ],
+            [
+              "**我對…過敏**",
+              "wǒ duì… guòmǐn",
+              "I'm allergic to…"
+            ],
+            [
+              "**我肚子痛**",
+              "wǒ dùzi tòng",
+              "I have a stomachache"
+            ],
+            [
+              "**我拉肚子**",
+              "wǒ lā dùzi",
+              "I have diarrhea"
+            ],
+            [
+              "**我想吐**",
+              "wǒ xiǎng tù",
+              "I feel nauseous"
+            ],
+            [
+              "**藥怎麼吃？**",
+              "yào zěnme chī?",
+              "How do I take the medicine?"
+            ],
+            [
+              "**飯後吃**",
+              "fàn hòu chī",
+              "Take it after meals"
+            ],
+            [
+              "**一天三次**",
+              "yì tiān sān cì",
+              "Three times a day"
+            ],
+            [
+              "**多喝水，多休息**",
+              "duō hē shuǐ, duō xiūxí",
+              "Drink lots of water, get plenty of rest"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "How a Taiwanese clinic works",
+          "items": [
+            "**掛號** (register) at the front desk, handing over your 健保卡 or passport. No appointment; just walk in.",
+            "**Wait for your number to be called** — usually ten to thirty minutes at a 診所.",
+            "**The doctor examines you for two to five minutes**, then prescribes medicine.",
+            "**Pick up the medicine at the window next door**, already sorted into small packets for each dose. ⚠️ You don't need to go to a separate pharmacy.",
+            "**Pay at the end**: about 150–200 塊 with 健保, about 800–1,500 塊 without.",
+            "⚠️ **藥局 (pharmacies) sell over-the-counter medicine**, but prescription drugs almost always come straight from the clinic."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "多 and 少 before a verb",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "**多** and **少** can stand before a verb to mean \"do more…\" and \"do less…\". This form is used all the time to give advice, and it sounds caring, not bossy."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**多**喝水",
+              "duō hē shuǐ",
+              "drink plenty of water"
+            ],
+            [
+              "**多**休息",
+              "duō xiūxí",
+              "get plenty of rest"
+            ],
+            [
+              "**多**運動",
+              "duō yùndòng",
+              "exercise more"
+            ],
+            [
+              "**少**吃一點",
+              "shǎo chī yìdiǎn",
+              "eat less"
+            ],
+            [
+              "**少**熬夜",
+              "shǎo áoyè",
+              "don't stay up late so often"
+            ],
+            [
+              "**多**穿一點",
+              "duō chuān yìdiǎn",
+              "dress more warmly"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **多穿一點 is something you'll hear often from older Taiwanese people**, especially when it's cold. It's a way of caring, not an order — the right reply is *好，謝謝* with a smile, not an explanation that you're not cold."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "不舒服",
+      "baca": "bù shūfú",
+      "en": "not feeling well"
+    },
+    {
+      "zh": "痛",
+      "baca": "tòng",
+      "en": "hurt, ache"
+    },
+    {
+      "zh": "頭",
+      "baca": "tóu",
+      "en": "head"
+    },
+    {
+      "zh": "肚子",
+      "baca": "dùzi",
+      "en": "belly, stomach"
+    },
+    {
+      "zh": "喉嚨",
+      "baca": "hóulóng",
+      "en": "throat"
+    },
+    {
+      "zh": "身體",
+      "baca": "shēntǐ",
+      "en": "body"
+    },
+    {
+      "zh": "發燒",
+      "baca": "fāshāo",
+      "en": "have a fever"
+    },
+    {
+      "zh": "感冒",
+      "baca": "gǎnmào",
+      "en": "cold, flu"
+    },
+    {
+      "zh": "咳嗽",
+      "baca": "késòu",
+      "en": "cough"
+    },
+    {
+      "zh": "醫生",
+      "baca": "yīshēng",
+      "en": "doctor"
+    },
+    {
+      "zh": "診所",
+      "baca": "zhěnsuǒ",
+      "en": "clinic"
+    },
+    {
+      "zh": "醫院",
+      "baca": "yīyuàn",
+      "en": "hospital"
+    },
+    {
+      "zh": "藥",
+      "baca": "yào",
+      "en": "medicine"
+    },
+    {
+      "zh": "藥局",
+      "baca": "yàojú",
+      "en": "pharmacy"
+    },
+    {
+      "zh": "健保卡",
+      "baca": "jiànbǎokǎ",
+      "en": "⚠️ health insurance card"
+    },
+    {
+      "zh": "掛號",
+      "baca": "guàhào",
+      "en": "register (at a clinic)"
+    },
+    {
+      "zh": "護照",
+      "baca": "hùzhào",
+      "en": "passport"
+    },
+    {
+      "zh": "好像",
+      "baca": "hǎoxiàng",
+      "en": "seem, I think"
+    },
+    {
+      "zh": "而已",
+      "baca": "éryǐ",
+      "en": "that's all, just"
+    },
+    {
+      "zh": "運動",
+      "baca": "yùndòng",
+      "en": "exercise"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mandarin.",
+      "items": [
+        "I'm not feeling well.",
+        "I have a headache.",
+        "I have a fever.",
+        "I'd like to see a doctor.",
+        "How do I take the medicine?",
+        "Drink lots of water, get plenty of rest."
+      ]
+    },
+    {
+      "prompt": "Correct the sentences — they're all wrong because of separable verbs.",
+      "items": [
+        "我吃飯麵。",
+        "他幫忙我。",
+        "我睡覺八小時。",
+        "我唱歌一首歌。",
+        "我上課兩節課。"
+      ]
+    },
+    {
+      "prompt": "Match each symptom with its Mandarin.",
+      "items": [
+        "Sore throat: ____",
+        "Stomachache: ____",
+        "Cough: ____",
+        "Caught a cold: ____",
+        "Diarrhea: ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "舒服 / 我 / 不",
+        "痛 / 喉嚨 / 我 / 很",
+        "醫生 / 去 / 我們 / 看",
+        "吃 / 藥 / 怎麼",
+        "水 / 多 / 喝"
+      ]
+    }
+  ],
+  "answers": [
+    "我不舒服。 — 我頭痛。 — 我發燒了。 — 我要看醫生。 — 藥怎麼吃？ — 多喝水，多休息。",
+    "我吃麵。 — 他幫我。 — 我睡了八小時。 — 我唱一首歌。 — 我上了兩節課。",
+    "喉嚨痛 — 肚子痛 — 咳嗽 — 感冒了 — 拉肚子",
+    "我不舒服。 — 我喉嚨很痛。 — 我們去看醫生。 — 藥怎麼吃？ — 多喝水。"
+  ]
+}

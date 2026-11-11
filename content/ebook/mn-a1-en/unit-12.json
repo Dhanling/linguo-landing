@@ -1,0 +1,654 @@
+{
+  "title": "Bigger, the best",
+  "title_target": "Илүү том, хамгийн сайхан",
+  "goal": "Describing and comparing — and why Mongolian \"than\" uses the same suffix as \"from\".",
+  "bekal": [
+    "use adjectives correctly, including the \"-ish\" and \"very\" degrees",
+    "compare two things with the *-аас* suffix and the word *илүү*",
+    "say \"the most\" with *хамгийн*"
+  ],
+  "dialogs": [
+    {
+      "title": "Яриа — Аль нь дээр вэ?",
+      "intro": "Budi wants to buy a winter jacket. Sarnai goes to the shop with him and they compare two options.",
+      "lines": [
+        {
+          "speaker": "Сарнай:",
+          "text": "[Аль|Al'] [нь|n'] [танд|tand] [таалагдаж|TAA-lag-daj] [байна|BAI-n] [вэ|veh]?",
+          "id": "Which one do you like?",
+          "literal": "which -the you-to liked-ing is Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Хар|Khar] [нь|n'] [сайхан|SAI-khan] [байна|BAI-n]. [Гэхдээ|GEKH-dē] [хөх|khökh] [нь|n'] [илүү|i-LÜÜ] [дулаан|du-LAAN] [байх|baikh].",
+          "id": "The black one is nice. But the blue one looks warmer.",
+          "literal": "black -the nice is. but blue -the more warm probably."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Хөх|Khökh] [нь|n'] [харнаас|KHAR-naas] [үнэтэй|Ü-neh-tei] [байх|baikh] [шүү|shüü].",
+          "id": "The blue one looks more expensive than the black one, you know.",
+          "literal": "blue -the black-from price-with probably you-know."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Хэдэн|KHEH-den] [төгрөгийн|TÖG-rö-giin] [зөрүүтэй|DZÖ-rüü-tei] [вэ|veh]?",
+          "id": "How many tugriks' difference?",
+          "literal": "how-many tugrik's difference-with Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Хорин|KHO-rin] [мянга|MYAN-ga]. [Гэхдээ|GEKH-dē] [ноосон|NŌ-son], [чанар|CHA-nar] [нь|n'] [хамаагүй|kha-MAA-güi] [дээр|dēr].",
+          "id": "Twenty thousand. But it's wool, and the quality is much better.",
+          "literal": "twenty thousand. but wool's, quality -the no-matter better."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Улаанбаатарын|u-laan-BAA-ta-riin] [өвөл|Ö-völ] [хэр|kher] [хүйтэн|KHÜY-ten] [вэ|veh]?",
+          "id": "How cold is winter in Ulaanbaatar?",
+          "literal": "Ulaanbaatar's winter how cold Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Маш|Mash] [хүйтэн|KHÜY-ten]. [Дэлхийн|DEL-khiin] [хамгийн|KHAM-giin] [хүйтэн|KHÜY-ten] [нийслэл|NIIS-lel] [шүү|shüü].",
+          "id": "Very cold. It's the coldest capital in the world, you know.",
+          "literal": "world's most cold capital you-know."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Индонезоос|In-do-NEH-dzōs] [хэр|kher] [хүйтэн|KHÜY-ten] [бэ|beh]?",
+          "id": "How cold compared to Indonesia?",
+          "literal": "Indonesia-from how cold Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Индонез|In-do-NEDZ] [гуч|guch] [хэм|khem], [энд|end] [хасах|KHA-sakh] [гуч|guch] [хэм|khem]. [Жаран|JA-ran] [хэмийн|KHEH-miin] [зөрүү|DZÖ-rüü].",
+          "id": "Indonesia is thirty degrees, here it's minus thirty. That's a sixty-degree difference.",
+          "literal": "Indonesia thirty degree, here minus thirty degree. sixty degree's difference."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Аймшигтай|AIM-shig-tai]! [Тэгвэл|TEG-vel] [хамгийн|KHAM-giin] [дулаан|du-LAAN] [хүрмийг|KHÜR-miig] [авъя|AV-ya].",
+          "id": "Terrifying! Then I'll take the warmest jacket.",
+          "literal": "scary! then most warm jacket-object let's-take."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Зөв|Dzöv] [шийдвэр|SHIID-ver]. [Хямд|Khyamd] [хүрэм|khü-REM] [авбал|AV-bal] [хожим|KHO-jim] [хоёр|kho-YOR] [дахин|da-KHIN] [авна|AV-na].",
+          "id": "Good decision. Buy a cheap jacket and you'll end up buying twice.",
+          "literal": "right decision. cheap jacket if-buy later two time buy."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Бас|Bas] [малгай|MAL-gai] [хэрэгтэй|KHEH-reg-tei] [юу|yuu]?",
+          "id": "Do I need a hat too?",
+          "literal": "also hat need-with Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Заавал|DZAA-val]! [Малгайгүй|MAL-gai-güi] [гарвал|GAR-val] [чих|chikh] [чинь|chin'] [хөлдөнө|KHÖL-dö-nö].",
+          "id": "Definitely! Go out without a hat and your ears will freeze.",
+          "literal": "surely! hat-without if-go-out ear your freeze."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[За|Dza], [хамгийн|KHAM-giin] [зузаан|dzu-DZAAN] [малгайг|MAL-gaig] [нь|n'] [аваарай|a-VAA-rai] [гэсэн|GEH-sen] [үг|üg] [үү|üü]?",
+          "id": "OK, so you mean get the thickest hat?",
+          "literal": "OK, most thick hat-object -the take-please so say Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Яг|Yag] [тийм|tiim]. [Гоо|Gō] [сайхнаас|SAIKH-naas] [дулаан|du-LAAN] [нь|n'] [чухал|CHU-khal].",
+          "id": "Exactly. Warmth matters more than looks.",
+          "literal": "exactly so. pretty beauty-from warm -the important."
+        }
+      ],
+      "notes": [
+        "⚠️ **Mongolian comparison uses the -аас suffix, the same one as \"from\".** *Харнаас үнэтэй* = \"more expensive **than** the black one\" (literally \"from the black one, pricey\"). The logic makes sense: you measure something **starting from** another point. Latin did something similar with its ablative, and English still says \"different **from**\".",
+        "**Илүү (more) is optional.** *Харнаас үнэтэй* and *харнаас илүү үнэтэй* mean the same. The *-аас* suffix alone already signals a comparison. People add *илүү* for emphasis.",
+        "**Хамгийн = most, and it sits right in front of the adjective.** *Хамгийн сайхан* (the nicest), *хамгийн хүйтэн* (the coldest). It's the only superlative form you need at A1.",
+        "**Нь is a tiny word meaning \"its / the one\" and it's used constantly.** *Хар **нь*** = \"the black one\" (literally: black-its); *чанар **нь*** = its quality. It turns an adjective into a noun and marks third-person possession at the same time.",
+        "**Байх at the end of a sentence means \"probably, seems\".** *Илүү дулаан **байх*** = it's probably warmer. ⚠️ Don't confuse it with *байх* as the dictionary form of \"to be\" — its position at the very end, after an adjective, gives it away."
+      ],
+      "grammars": [
+        {
+          "title": "Comparing two things",
+          "body": [
+            "The order: **thing compared to + -аас + adjective**. The subject comes first, then the yardstick, then the quality — the reverse of English \"bigger than that\"."
+          ],
+          "table": {
+            "head": [
+              "Монгол",
+              "Literally",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Энэ түүнээс том.*",
+                "this that-from big",
+                "This is bigger than that."
+              ],
+              [
+                "*Улаанбаатар Эрдэнэтээс том.*",
+                "Ulaanbaatar Erdenet-from big",
+                "Ulaanbaatar is bigger than Erdenet."
+              ],
+              [
+                "*Би чамаас том.*",
+                "I you-from big",
+                "I'm older than you."
+              ],
+              [
+                "*Монгол хэл англи хэлнээс хэцүү.*",
+                "Mongolian English language-from difficult",
+                "Mongolian is harder than English."
+              ],
+              [
+                "*Өнөөдөр өчигдрөөс дулаан.*",
+                "today yesterday-from warm",
+                "Today is warmer than yesterday."
+              ],
+              [
+                "*Энэ бага зэрэг хямд.*",
+                "this little degree cheap",
+                "This is a bit cheaper."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Look at the third row: *том* means \"big\" **and** \"older\". Mongolian uses one word for both, much like English \"big sister\" or \"big brother\". *Би чамаас том* in conversation almost always means age, not body size.",
+            "**To say \"as … as\" or \"the same\", use *шиг* (like) or *адилхан* (same).** *Энэ түүн **шиг** том* = this is as big as that; *хоёулаа **адилхан*** = both are the same."
+          ]
+        },
+        {
+          "title": "Degrees of adjectives",
+          "body": [
+            "Mongolian has five degrees, and three of them are made with an attached suffix — not with a separate word, as in English."
+          ],
+          "table": {
+            "head": [
+              "Degree",
+              "Form",
+              "Example (*сайхан* — nice)",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Plain",
+                "base word",
+                "*сайхан*",
+                "nice"
+              ],
+              [
+                "Somewhat",
+                "**-хан / -хон / -втар**",
+                "*сайхнаар*, *улаа**втар***",
+                "nice-ish, reddish"
+              ],
+              [
+                "Very",
+                "**маш / их / маш их**",
+                "*маш сайхан*",
+                "very nice"
+              ],
+              [
+                "More",
+                "**илүү** or **-аас**",
+                "*илүү сайхан*",
+                "nicer"
+              ],
+              [
+                "Most",
+                "**хамгийн**",
+                "*хамгийн сайхан*",
+                "the nicest"
+              ],
+              [
+                "Too",
+                "**хэт**",
+                "*хэт сайхан*",
+                "too nice"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ The suffix **-втар / -втор** makes colors \"-ish\": *улаан* (red) → *улаавтар* (reddish); *хөх* (blue) → *хөхөвтөр* (bluish); *шар* (yellow) → *шаравтар* (yellowish). It works exactly like English \"-ish\".",
+            "**Маш and их both mean \"very\", and you can combine them for extra emphasis:** *маш их сайхан* = really very nice. If you want just one, use *маш* — it's a bit stronger and more common in conversation."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The most common adjectives",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English",
+            "Opposite",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*том*",
+              "*tom*",
+              "big; older",
+              "*жижиг*",
+              "*JI-jig*",
+              "small"
+            ],
+            [
+              "*урт*",
+              "*urt*",
+              "long",
+              "*богино*",
+              "*bo-GI-no*",
+              "short"
+            ],
+            [
+              "*өндөр*",
+              "*ÖN-dör*",
+              "tall, high",
+              "*намхан*",
+              "*NAM-khan*",
+              "low, short"
+            ],
+            [
+              "*зузаан*",
+              "*dzu-DZAAN*",
+              "thick",
+              "*нимгэн*",
+              "*NIM-gen*",
+              "thin"
+            ],
+            [
+              "*хүнд*",
+              "*khünd*",
+              "heavy; hard",
+              "*хөнгөн*",
+              "*KHÖN-gön*",
+              "light"
+            ],
+            [
+              "*хэцүү*",
+              "*kheh-TSÜÜ*",
+              "difficult",
+              "*амархан*",
+              "*A-mar-khan*",
+              "easy"
+            ],
+            [
+              "*шинэ*",
+              "*SHI-neh*",
+              "new",
+              "*хуучин*",
+              "*KHUU-chin*",
+              "old (things)"
+            ],
+            [
+              "*дулаан*",
+              "*du-LAAN*",
+              "warm",
+              "*хүйтэн*",
+              "*KHÜY-ten*",
+              "cold"
+            ],
+            [
+              "*сайн*",
+              "*sain*",
+              "good",
+              "*муу*",
+              "*muu*",
+              "bad"
+            ],
+            [
+              "*сайхан*",
+              "*SAI-khan*",
+              "nice, beautiful",
+              "*муухай*",
+              "*MUU-khai*",
+              "ugly"
+            ],
+            [
+              "*хурдан*",
+              "*KHUR-dan*",
+              "fast",
+              "*удаан*",
+              "*u-DAAN*",
+              "slow"
+            ],
+            [
+              "*олон*",
+              "*o-LON*",
+              "many, much",
+              "*цөөн*",
+              "*TSÖÖN*",
+              "few, little"
+            ],
+            [
+              "*чухал*",
+              "*CHU-khal*",
+              "important",
+              "*энгийн*",
+              "*EN-giin*",
+              "ordinary"
+            ],
+            [
+              "*залуу*",
+              "*dza-LUU*",
+              "young",
+              "*хөгшин*",
+              "*KHÖG-shin*",
+              "old (people)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Tell **сайн** and **сайхан** apart: *сайн* means \"good\" in quality and morals (*сайн хүн* — a good person), while *сайхан* means \"beautiful, pleasant\" (*сайхан өдөр* — a lovely day). Beginners mix them up often, and the result is funny but not fatal: *сайхан хүн* means \"a good-looking person\", not \"a good person\"."
+        },
+        {
+          "type": "kotak",
+          "title": "Adjectives go BEFORE the noun, always",
+          "items": [
+            "*том ном* (big book), *шинэ гэр* (new home), *хамгийн сайхан өдөр* (the loveliest day).",
+            "⚠️ Same as English, so this one comes naturally. Just don't let other languages you know (French, Spanish) tempt you into *ном том*.",
+            "**Adjectives never change form** — not for plural, not for case. *Том ном*, *том номууд*, *том номыг*: the adjective stays *том*.",
+            "When an adjective comes after the noun, it becomes the **predicate**: *Ном том.* = \"The book is big.\" Different position, different role — just like \"a big book\" versus \"the book is big\"."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Comparing in conversation",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Аль нь дээр вэ?*",
+              "Which one is better?"
+            ],
+            [
+              "*Энэ нь дээр.*",
+              "This one is better."
+            ],
+            [
+              "*Хэр том бэ?*",
+              "How big?"
+            ],
+            [
+              "*Ямар нь илүү хямд вэ?*",
+              "Which one is cheaper?"
+            ],
+            [
+              "*Хоёулаа адилхан.*",
+              "Both are the same."
+            ],
+            [
+              "*Ялгаагүй.*",
+              "There's no difference."
+            ],
+            [
+              "*Энэ хамгийн сайн нь.*",
+              "This one is the best."
+            ],
+            [
+              "*Надад энэ илүү таалагдаж байна.*",
+              "I prefer this one."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Таалагдах* means \"to be liked\" and works **backwards** compared with English: the thing liked is the subject, and the person takes the *-д* suffix. *Надад энэ таалагдаж байна* is literally \"to me this is pleasing\". It's exactly like Spanish *me gusta*, or English \"this appeals to me\"."
+        },
+        {
+          "type": "p",
+          "text": "For a simpler \"like\", use *дуртай* (fond of): *Би цайнд дуртай* = \"I like tea\". The person is the subject, and the thing liked takes *-д*. This form is much easier and just as correct — use it at A1."
+        }
+      ]
+    },
+    {
+      "title": "Weather and temperature",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*цаг агаар*",
+              "*tsag a-GAAR*",
+              "weather"
+            ],
+            [
+              "*хэм*",
+              "*khem*",
+              "degree"
+            ],
+            [
+              "*хасах гуч хэм*",
+              "*KHA-sakh guch khem*",
+              "minus thirty degrees"
+            ],
+            [
+              "*хүйтэн байна*",
+              "*KHÜY-ten BAI-n*",
+              "cold"
+            ],
+            [
+              "*халуун байна*",
+              "*kha-LUUN BAI-n*",
+              "hot"
+            ],
+            [
+              "*салхитай*",
+              "*SAL-khi-tai*",
+              "windy"
+            ],
+            [
+              "*нартай*",
+              "*NAR-tai*",
+              "sunny"
+            ],
+            [
+              "*үүлтэй*",
+              "*ÜÜL-tei*",
+              "cloudy"
+            ],
+            [
+              "*бороотой*",
+              "*bo-RŌ-toi*",
+              "rainy"
+            ],
+            [
+              "*цастай*",
+              "*TSAS-tai*",
+              "snowy"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the **-тай** suffix you already know: *салхи* (wind) → *салхитай* (windy); *цас* (snow) → *цастай* (snowy). Mongolian describes weather as something **the day has** — a lot like English \"-y\" in \"windy\" and \"snowy\"."
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Numbers you should take seriously",
+          "items": [
+            "Ulaanbaatar is **the coldest capital in the world**, with a yearly average of about −1°C (30°F).",
+            "January averages **−25°C (−13°F)**, and −40°C is nothing unusual. Jakarta on the same day is about +30°C — **a seventy-degree difference.**",
+            "Summer can reach +35°C. Mongolia has the largest yearly temperature swing of any capital in the world.",
+            "That's why *хүрэм* (jacket), *малгай* (hat), *бээлий* (gloves) and *гутал* (boots) aren't accessories but survival gear. Buy them in Mongolia — what's sold there is actually made for those temperatures."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "mn": "илүү",
+      "baca": "i-LÜÜ",
+      "en": "more"
+    },
+    {
+      "mn": "хамгийн",
+      "baca": "KHAM-giin",
+      "en": "most"
+    },
+    {
+      "mn": "хэт",
+      "baca": "khet",
+      "en": "too"
+    },
+    {
+      "mn": "маш",
+      "baca": "mash",
+      "en": "very"
+    },
+    {
+      "mn": "адилхан",
+      "baca": "A-dil-khan",
+      "en": "same"
+    },
+    {
+      "mn": "ялгаагүй",
+      "baca": "yal-GAA-güi",
+      "en": "no difference"
+    },
+    {
+      "mn": "аль",
+      "baca": "al'",
+      "en": "which one"
+    },
+    {
+      "mn": "нь",
+      "baca": "n'",
+      "en": "⚠️ its, the one"
+    },
+    {
+      "mn": "хэр",
+      "baca": "kher",
+      "en": "how much, how"
+    },
+    {
+      "mn": "дулаан",
+      "baca": "du-LAAN",
+      "en": "warm"
+    },
+    {
+      "mn": "зузаан",
+      "baca": "dzu-DZAAN",
+      "en": "thick"
+    },
+    {
+      "mn": "хэцүү",
+      "baca": "kheh-TSÜÜ",
+      "en": "difficult"
+    },
+    {
+      "mn": "амархан",
+      "baca": "A-mar-khan",
+      "en": "easy"
+    },
+    {
+      "mn": "чухал",
+      "baca": "CHU-khal",
+      "en": "important"
+    },
+    {
+      "mn": "чанар",
+      "baca": "CHA-nar",
+      "en": "quality"
+    },
+    {
+      "mn": "хүрэм",
+      "baca": "khü-REM",
+      "en": "jacket"
+    },
+    {
+      "mn": "малгай",
+      "baca": "MAL-gai",
+      "en": "hat"
+    },
+    {
+      "mn": "хэрэгтэй",
+      "baca": "KHEH-reg-tei",
+      "en": "need"
+    },
+    {
+      "mn": "дуртай",
+      "baca": "DUR-tai",
+      "en": "fond of, like"
+    },
+    {
+      "mn": "цаг агаар",
+      "baca": "tsag a-GAAR",
+      "en": "weather"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mongolian.",
+      "items": [
+        "This is bigger than that.",
+        "Today is warmer than yesterday.",
+        "This one is the best.",
+        "Mongolian is difficult.",
+        "I like tea.",
+        "Both are the same."
+      ]
+    },
+    {
+      "prompt": "Fill in the comparison suffix -аас, -ээс, -оос or -өөс.",
+      "items": [
+        "Энэ түүн____ том.",
+        "Өнөөдөр өчигдр____ дулаан.",
+        "Би чам____ том.",
+        "Хөх нь хар____ үнэтэй.",
+        "Улаанбаатар Эрдэнэт____ том.",
+        "Ном____ сонин илүү хямд."
+      ]
+    },
+    {
+      "prompt": "Write the opposite.",
+      "items": [
+        "том",
+        "урт",
+        "шинэ",
+        "хүйтэн",
+        "хурдан",
+        "хэцүү"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "том / энэ / түүнээс",
+        "сайхан / хамгийн / энэ",
+        "дуртай / цайнд / би",
+        "адилхан / хоёулаа",
+        "вэ / нь / дээр / аль"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Энэ түүнээс том. — Өнөөдөр өчигдрөөс дулаан. — Энэ хамгийн сайхан нь. — Монгол хэл хэцүү. — Би цайнд дуртай. — Хоёулаа адилхан.",
+    "1": "ээс — өөс — аас — аас — ээс — оос",
+    "2": "жижиг — богино — хуучин — халуун — удаан — амархан",
+    "3": "Энэ түүнээс том. — Энэ хамгийн сайхан. — Би цайнд дуртай. — Хоёулаа адилхан. — Аль нь дээр вэ?"
+  }
+}

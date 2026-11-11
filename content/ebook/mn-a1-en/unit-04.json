@@ -1,0 +1,590 @@
+{
+  "title": "Where? Where to?",
+  "title_target": "Хаана байна вэ? Хаашаа явж байна вэ?",
+  "goal": "Naming places — and mastering the suffix *-д / -т*, one suffix that does the job of three English prepositions at once: in/at, to, and toward.",
+  "bekal": [
+    "say where something is and where you are going",
+    "use *дээр*, *дотор*, *доор*, *дэргэд* to pinpoint locations",
+    "ask for directions in the city and understand the answer"
+  ],
+  "dialogs": [
+    {
+      "title": "Яриа — Сүхбаатарын талбай хаана вэ?",
+      "intro": "Budi is lost in downtown Ulaanbaatar. He asks a woman at a bus stop.",
+      "lines": [
+        {
+          "speaker": "Буди:",
+          "text": "[Уучлаарай|UUCH-laa-rai], [эгч|egch] [ээ|ē]. [Сүхбаатарын|sükh-BAA-ta-riin] [талбай|TAL-bai] [хаана|KHAA-na] [байна|BAI-n] [вэ|veh]?",
+          "id": "Excuse me, ma'am. Where is Sukhbaatar Square?",
+          "literal": "sorry, older-sister O. Sukhbaatar's square where is Q?"
+        },
+        {
+          "speaker": "Эгч:",
+          "text": "[Тэнд|Tend], [банкны|BANK-nii] [ард|ard] [байна|BAI-n]. [Хол|Khol] [биш|bish].",
+          "id": "Over there, behind the bank. It's not far.",
+          "literal": "there, bank's back is. far not."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Явган|YAV-gan] [явж|yavj] [болох|BO-lokh] [уу|uu]?",
+          "id": "Can I walk there?",
+          "literal": "foot go-ing may Q?"
+        },
+        {
+          "speaker": "Эгч:",
+          "text": "[Болно|BOL-no]. [Арван|A-rvan] [минут|mi-NUT]. [Энэ|EH-neh] [замаар|dza-MAAR] [чигээрээ|chi-GĒ-rē] [яв|yav].",
+          "id": "Yes. Ten minutes. Take this road and go straight.",
+          "literal": "may. ten minute. this road-by straight-self go."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Ойлголоо|OIL-go-lō]. [Ойролцоо|OI-rol-tsō] [банк|bank] [байгаа|bai-GAA] [юу|yuu]?",
+          "id": "I see. Is there a bank near here?",
+          "literal": "understood. nearby bank there-is Q?"
+        },
+        {
+          "speaker": "Эгч:",
+          "text": "[Байгаа|Bai-GAA]. [Дэлгүүрийн|del-GÜÜ-riin] [дэргэд|DER-ged] [байна|BAI-n].",
+          "id": "Yes. Next to the shop.",
+          "literal": "there-is. shop's next-to is."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Баярлалаа|ba-yar-la-LAA]. [Бас|Bas] [нэг|neg] [юм|yum] [асууя|a-SUU-ya]. [Та|Ta] [Улаанбаатарт|u-laan-BAA-tart] [амьдардаг|AM'-dar-dag] [уу|uu]?",
+          "id": "Thank you. May I ask one more thing? Do you live in Ulaanbaatar?",
+          "literal": "thanks. also one thing let's-ask. you Ulaanbaatar-in live-usually Q?"
+        },
+        {
+          "speaker": "Эгч:",
+          "text": "[Тийм|Tiim], [би|bi] [энд|end] [төрсөн|TÖR-sön]. [Та|Ta] [аялж|a-YALJ] [байна|BAI-n] [уу|uu]?",
+          "id": "Yes, I was born here. Are you traveling?",
+          "literal": "yes, I here was-born. you travel-ing is Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Үгүй|Ü-güi], [би|bi] [энд|end] [сурч|surch] [байна|BAI-n]. [Их|Ikh] [сургуульд|sur-GUUL'D].",
+          "id": "No, I'm studying here. At the university.",
+          "literal": "no, I here study-ing is. big school-at."
+        },
+        {
+          "speaker": "Эгч:",
+          "text": "[Аан|Aan], [Үндэсний|ün-DES-nii] [их|ikh] [сургуульд|sur-GUUL'D] [уу|uu]?",
+          "id": "Oh, at the National University?",
+          "literal": "oh, national big school-at Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Тийм|Tiim]. [Тэр|Ter] [сургууль|sur-GUUL'] [хаана|KHAA-na] [байдаг|BAI-dag] [вэ|veh]? [Би|Bi] [маргааш|mar-GAASH] [тийшээ|TII-shē] [явна|YAV-na].",
+          "id": "Yes. Where is that campus? I'm going there tomorrow.",
+          "literal": "yes. that school where is-usually Q? I tomorrow there go."
+        },
+        {
+          "speaker": "Эгч:",
+          "text": "[Талбайн|TAL-bain] [баруун|ba-RUUN] [талд|tald]. [Автобусаар|av-TO-bu-saar] [яв|yav], [хурдан|KHUR-dan].",
+          "id": "On the west side of the square. Just take the bus, it's faster.",
+          "literal": "square's west side-on. bus-by go, fast."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Хэдэн|KHEH-den] [дугаарын|du-GAA-riin] [автобус|av-TO-bus] [вэ|veh]?",
+          "id": "Which bus number?",
+          "literal": "how-many number's bus Q?"
+        },
+        {
+          "speaker": "Эгч:",
+          "text": "[Хорин|KHO-rin] [нэг|neg] [дугаар|du-GAAR]. [Буудал|BUU-dal] [энд|end], [замын|dza-MIIN] [нөгөө|NÖ-göö] [талд|tald].",
+          "id": "Number twenty-one. The stop is here, across the road.",
+          "literal": "twenty one number. stop here, road's opposite side-on."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Их|Ikh] [баярлалаа|ba-yar-la-LAA], [эгч|egch] [ээ|ē]!",
+          "id": "Thank you so much, ma'am!",
+          "literal": "big thanks, older-sister O!"
+        },
+        {
+          "speaker": "Эгч:",
+          "text": "[Зүгээр|DZÜ-gēr]. [Сайн|Sain] [яваарай|ya-VAA-rai]!",
+          "id": "You're welcome. Take care on the way!",
+          "literal": "no-problem. well go!"
+        }
+      ],
+      "notes": [
+        "⚠️ **One suffix, three English prepositions.** *Сургуульд* can mean \"**at** school\", \"**to** school\", or \"**toward** the school\". What decides is not the suffix but **the verb**: *байна* (to be) → \"at\"; *явна* (go) → \"to\"; *хэлнэ* (say) → \"to (someone)\". It saves a lot of memorizing, but it means reading the sentence to the end before you translate.",
+        "**Хаана = where, хаашаа = where to, хаанаас = where from.** All three grow from *хаа*, and their suffixes are the same as on ordinary nouns. The same pattern works for *энд/ийшээ/эндээс* and *тэнд/тийшээ/тэндээс*.",
+        "**Байгаа is not just another form of байна.** *Байна* states a present situation; *байгаа* is a \"hanging\" form, used when asking whether something exists (*Банк байгаа юу?* — Is there a bank?) or to describe a noun. For now, learn *байгаа юу?* as one ready-made chunk: \"is there …?\"",
+        "**Их сургууль literally means \"big school\" and means university.** This pattern is common: *их дэлгүүр* (department store), *их эмч* (head doctor). ⚠️ Don't mix it up with *том*, which also means big — *их* is for abstract size and degree, *том* for physical size.",
+        "**The suffix -аар / -ээр on замаар and автобусаар means \"along\" and \"by\".** *Замаар* = along the road; *автобусаар* = by bus; *монголоор* = in Mongolian. This suffix gets full treatment in unit 10; just recognize its shape here."
+      ],
+      "grammars": [
+        {
+          "title": "The place suffix: when -д, when -т",
+          "body": [
+            "After *байна*, this is the suffix you will use most. Its two forms are chosen purely by **the sound of the last letter** of the base word — not by vowel group."
+          ],
+          "table": {
+            "head": [
+              "Word ends in",
+              "Suffix",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*в, г, р, с* and long vowels",
+                "**-т**",
+                "*гэр* → *гэр**т***",
+                "at home"
+              ],
+              [
+                "other consonants",
+                "**-д**",
+                "*ном* → *ном**д***",
+                "in the book"
+              ],
+              [
+                "*-н*",
+                "**-д**",
+                "*хүн* → *хүн**д***",
+                "to a person"
+              ],
+              [
+                "short vowels",
+                "**-д**",
+                "*ширээ* → *ширээ**н дээр***",
+                "on the table"
+              ],
+              [
+                "place names ending in *-р, -т*",
+                "**-т**",
+                "*Улаанбаатар* → *…бааар**т***",
+                "in Ulaanbaatar"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Row four shows something important: for things with a **surface**, Mongolians don't use the place suffix alone but add a position word (*дээр*, *дотор*). *Ширээд* sounds wrong; *ширээн дээр* is right.",
+            "If you pick *-д* instead of *-т*, nobody will misunderstand you. It's a slip on the level of saying \"in the weekend\" instead of \"on the weekend\" — slightly off, nothing more. **Don't put off speaking to memorize this table.**"
+          ]
+        },
+        {
+          "title": "Position words: дээр, дотор, доор, дэргэд",
+          "body": [
+            "English puts \"on\" **before** the noun. Mongolian puts it **after** — and that is the only difference you need to remember."
+          ],
+          "table": {
+            "head": [
+              "Монгол",
+              "Say it",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "*дээр*",
+                "*dēr*",
+                "on, on top of",
+                "*ширээн **дээр*** — on the table"
+              ],
+              [
+                "*дотор*",
+                "*DO-tor*",
+                "inside",
+                "*цүнхэн **дотор*** — inside the bag"
+              ],
+              [
+                "*доор*",
+                "*dōr*",
+                "under",
+                "*сандлын **доор*** — under the chair"
+              ],
+              [
+                "*дэргэд*",
+                "*DER-ged*",
+                "next to",
+                "*банкны **дэргэд*** — next to the bank"
+              ],
+              [
+                "*ард*",
+                "*ard*",
+                "behind",
+                "*гэрийн **ард*** — behind the house"
+              ],
+              [
+                "*өмнө*",
+                "*ÖM-nö*",
+                "in front of",
+                "*сургуулийн **өмнө*** — in front of the school"
+              ],
+              [
+                "*хажууд*",
+                "*kha-JUUD*",
+                "beside",
+                "*миний **хажууд*** — beside me"
+              ],
+              [
+                "*дунд*",
+                "*dund*",
+                "in the middle of",
+                "*хотын **дунд*** — in the middle of the city"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Notice that the noun changes shape before the position word: *ширээ* → *ширээ**н***, *цүнх* → *цүнх**эн***, *банк* → *банк**ны***, *гэр* → *гэр**ийн***. Some take the possessive suffix (*-ын/-ийн*), some take a hidden *-н*. At A1, just copy the pattern from the examples; the system becomes clear at A2.",
+            "**Өмнө has two meanings at once: \"in front of\" (place) and \"before\" (time).** *Сургуулийн өмнө* = in front of the school; *хоолны өмнө* = before the meal. English does the same with \"before\" (\"before the king\", \"before dinner\"), so this is nothing strange."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Places in the city",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*хот*",
+              "*khot*",
+              "city, town"
+            ],
+            [
+              "*гэр*",
+              "*ger*",
+              "home, ger"
+            ],
+            [
+              "*сургууль*",
+              "*sur-GUUL'*",
+              "school"
+            ],
+            [
+              "*их сургууль*",
+              "*ikh sur-GUUL'*",
+              "university"
+            ],
+            [
+              "*дэлгүүр*",
+              "*del-GÜÜR*",
+              "shop, store"
+            ],
+            [
+              "*зах*",
+              "*dzakh*",
+              "market"
+            ],
+            [
+              "*банк*",
+              "*bank*",
+              "bank"
+            ],
+            [
+              "*эмнэлэг*",
+              "*EM-neh-leg*",
+              "hospital"
+            ],
+            [
+              "*эмийн сан*",
+              "*EH-miin san*",
+              "pharmacy"
+            ],
+            [
+              "*ресторан*",
+              "*res-to-RAN*",
+              "restaurant"
+            ],
+            [
+              "*зочид буудал*",
+              "*DZO-chid BUU-dal*",
+              "hotel"
+            ],
+            [
+              "*музей*",
+              "*mu-ZEY*",
+              "museum"
+            ],
+            [
+              "*талбай*",
+              "*TAL-bai*",
+              "square, plaza"
+            ],
+            [
+              "*буудал*",
+              "*BUU-dal*",
+              "bus stop, station"
+            ],
+            [
+              "*зам*",
+              "*dzam*",
+              "road, street"
+            ],
+            [
+              "*гудамж*",
+              "*GU-damj*",
+              "small street, alley"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Гэр* is one of the most important words in Mongolian and means both **home** and the **round traditional tent** the outside world often calls a \"yurt\". Mongolians themselves never use the word \"yurt\" — it's a Turkic word that came through Russian. If you're invited to someone's *гэрт*, you're invited to their home, whatever shape it has."
+        },
+        {
+          "type": "kotak",
+          "title": "Four direction words you must know",
+          "items": [
+            "*баруун* (ba-RUUN) — west; right.",
+            "*зүүн* (DZÜÜN) — east; left.",
+            "*хойд* (khoid) — north; back.",
+            "*өмнөд* (ÖM-nöd) — south; front.",
+            "⚠️ This system assumes you are **facing south** — an old habit from the ger door, which always faces south. That is why \"right\" is west and \"front\" is south. It sounds odd until you stand in front of a ger; after that, it makes sense for life."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking for and giving directions",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*… хаана байна вэ?*",
+              "*… KHAA-na BAI-n veh*",
+              "Where is …?"
+            ],
+            [
+              "*Энэ хаана вэ?*",
+              "*EH-neh KHAA-na veh*",
+              "Where is this?"
+            ],
+            [
+              "*Чигээрээ яв.*",
+              "*chi-GĒ-rē yav*",
+              "Go straight ahead."
+            ],
+            [
+              "*Баруун тийшээ эргэ.*",
+              "*ba-RUUN TII-shē ER-geh*",
+              "Turn right."
+            ],
+            [
+              "*Зүүн тийшээ эргэ.*",
+              "*DZÜÜN TII-shē ER-geh*",
+              "Turn left."
+            ],
+            [
+              "*Хол уу?*",
+              "*khol uu*",
+              "Is it far?"
+            ],
+            [
+              "*Ойрхон.*",
+              "*OIR-khon*",
+              "It's close."
+            ],
+            [
+              "*Явган явж болно.*",
+              "*YAV-gan yavj BOL-no*",
+              "You can walk."
+            ],
+            [
+              "*Такси барих уу?*",
+              "*TAK-si BA-rikh uu*",
+              "Should I just take a taxi?"
+            ],
+            [
+              "*Би төөрчихлөө.*",
+              "*bi TÖÖR-chikh-löö*",
+              "I'm lost."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "That last sentence — *Би төөрчихлөө* — is worth memorizing before you land in Ulaanbaatar. The city has no consistent street names; even locals give addresses by landmarks (\"behind shop X, across from stop Y\"). If you say you're lost, a Mongolian will very likely not just point the way but walk you there."
+        },
+        {
+          "type": "kotak",
+          "title": "Answering \"is there …?\"",
+          "items": [
+            "*Ойролцоо банк байгаа юу?* — Is there a bank near here?",
+            "*Байгаа.* — There is. / *Байхгүй.* — There isn't.",
+            "⚠️ *Байхгүй* is the opposite of *байна* and one of the words you'll hear most in shops and markets: \"there isn't\", \"sold out\", \"don't have\".",
+            "*Мэдэхгүй.* — I don't know. Also very common, and not considered rude."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "mn": "хаана",
+      "baca": "KHAA-na",
+      "en": "where"
+    },
+    {
+      "mn": "хаашаа",
+      "baca": "KHAA-shaa",
+      "en": "where to"
+    },
+    {
+      "mn": "энд",
+      "baca": "end",
+      "en": "here"
+    },
+    {
+      "mn": "тэнд",
+      "baca": "tend",
+      "en": "there"
+    },
+    {
+      "mn": "дээр",
+      "baca": "dēr",
+      "en": "on, on top of"
+    },
+    {
+      "mn": "дотор",
+      "baca": "DO-tor",
+      "en": "inside"
+    },
+    {
+      "mn": "доор",
+      "baca": "dōr",
+      "en": "under"
+    },
+    {
+      "mn": "дэргэд",
+      "baca": "DER-ged",
+      "en": "next to"
+    },
+    {
+      "mn": "өмнө",
+      "baca": "ÖM-nö",
+      "en": "in front of; before"
+    },
+    {
+      "mn": "ард",
+      "baca": "ard",
+      "en": "behind"
+    },
+    {
+      "mn": "хот",
+      "baca": "khot",
+      "en": "city, town"
+    },
+    {
+      "mn": "гэр",
+      "baca": "ger",
+      "en": "home; Mongolian ger"
+    },
+    {
+      "mn": "сургууль",
+      "baca": "sur-GUUL'",
+      "en": "school"
+    },
+    {
+      "mn": "дэлгүүр",
+      "baca": "del-GÜÜR",
+      "en": "shop, store"
+    },
+    {
+      "mn": "зах",
+      "baca": "dzakh",
+      "en": "market"
+    },
+    {
+      "mn": "зам",
+      "baca": "dzam",
+      "en": "road, street"
+    },
+    {
+      "mn": "хол",
+      "baca": "khol",
+      "en": "far"
+    },
+    {
+      "mn": "ойрхон",
+      "baca": "OIR-khon",
+      "en": "near"
+    },
+    {
+      "mn": "баруун",
+      "baca": "ba-RUUN",
+      "en": "right; west"
+    },
+    {
+      "mn": "зүүн",
+      "baca": "DZÜÜN",
+      "en": "left; east"
+    },
+    {
+      "mn": "байхгүй",
+      "baca": "BAIKH-güi",
+      "en": "there isn't, there's no"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mongolian.",
+      "items": [
+        "I'm at home.",
+        "The book is on the table.",
+        "Where is the bank?",
+        "The shop is next to the bank.",
+        "Tomorrow I'm going to school.",
+        "It's not far."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the place suffix -д or -т.",
+      "items": [
+        "Би гэр____ байна.",
+        "Тэр ном____ бичсэн.",
+        "Ээж сургууль____ ажилладаг.",
+        "Бид хот____ амьдардаг.",
+        "Тэр Улаанбаатар____ байна.",
+        "Би эмнэлэг____ явна."
+      ]
+    },
+    {
+      "prompt": "Change using the right position word for the meaning in brackets.",
+      "items": [
+        "ширээн ____ (on)",
+        "цүнхэн ____ (inside)",
+        "сандлын ____ (under)",
+        "банкны ____ (next to)",
+        "гэрийн ____ (behind)",
+        "сургуулийн ____ (in front of)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "байна / гэрт / би",
+        "дээр / ном / ширээн / байна",
+        "вэ / хаана / банк / байна",
+        "явна / би / сургуульд / маргааш",
+        "биш / хол"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Би гэрт байна. — Ном ширээн дээр байна. — Банк хаана байна вэ? — Дэлгүүр банкны дэргэд байна. — Би маргааш сургуульд явна. — Хол биш.",
+    "1": "т — д — д — д — т — т",
+    "2": "дээр — дотор — доор — дэргэд — ард — өмнө",
+    "3": "Би гэрт байна. — Ном ширээн дээр байна. — Банк хаана байна вэ? — Би маргааш сургуульд явна. — Хол биш."
+  }
+}

@@ -1,0 +1,617 @@
+{
+  "title": "What time is it?",
+  "title_target": "現在幾點？",
+  "goal": "Tell the time, make plans, and accept one rule that governs every sentence you build from now on: time words stand BEFORE the verb.",
+  "bekal": [
+    "say hours, minutes, and parts of the day correctly",
+    "put time words in the right place — and know why they go there",
+    "make and cancel plans politely"
+  ],
+  "dialogs": [
+    {
+      "title": "對話 — 約時間",
+      "intro": "Budi and Xiaomei want to study together before an exam. They're looking for a time that works.",
+      "lines": [
+        {
+          "speaker": "布迪:",
+          "text": "[小美|Xiǎoměi]，[妳|nǐ][明天|míngtiān][有空|yǒukòng][嗎|ma]？",
+          "id": "Xiaomei, are you free tomorrow?",
+          "literal": "Xiaomei, you — tomorrow — have — free-time — (question)?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[明天|Míngtiān][早上|zǎoshang][有課|yǒu kè]，[下午|xiàwǔ][可以|kěyǐ]。",
+          "id": "I have class tomorrow morning, but the afternoon works.",
+          "literal": "tomorrow — morning — have — class, afternoon — can."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[下午|Xiàwǔ][幾點|jǐ diǎn][比較|bǐjiào][好|hǎo]？",
+          "id": "What time in the afternoon is better?",
+          "literal": "afternoon — how-many — o'clock — comparatively — good?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[兩點|Liǎng diǎn][半|bàn][怎麼樣|zěnmeyàng]？",
+          "id": "How about two thirty?",
+          "literal": "two — o'clock — half — how-like?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[兩點半|Liǎng diǎn bàn][我|wǒ][還在|hái zài][上課|shàngkè][耶|ye]。",
+          "id": "At two thirty I'm still in class.",
+          "literal": "two — o'clock — half — I — still — (-ing) — go-up-class — (you know)."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[那|Nà][你|nǐ][幾點|jǐ diǎn][下課|xiàkè]？",
+          "id": "Then what time does your class finish?",
+          "literal": "then — you — how-many — o'clock — go-down-class?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[三點|Sān diǎn][十分|shí fēn]。[三點半|Sān diǎn bàn][可以|kěyǐ][嗎|ma]？",
+          "id": "At 3:10. Is three thirty OK?",
+          "literal": "three — o'clock — ten — minute. three — o'clock — half — can — (question)?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[可以|Kěyǐ]。[我們|Wǒmen][在|zài][圖書館|túshūguǎn][見|jiàn]。",
+          "id": "Sure. Let's meet at the library.",
+          "literal": "can. we — at — library — see."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[好|Hǎo]。[圖書館|Túshūguǎn][幾點|jǐ diǎn][關門|guānmén]？",
+          "id": "OK. What time does the library close?",
+          "literal": "good. library — how-many — o'clock — close-door?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[晚上|Wǎnshang][十點|shí diǎn]。[時間|Shíjiān][很多|hěn duō]。",
+          "id": "Ten at night. Plenty of time.",
+          "literal": "evening — ten — o'clock. time — very — many."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[太好了|Tài hǎo le]！[那|Nà][我們|wǒmen][晚上|wǎnshang][一起|yìqǐ][吃飯|chīfàn][吧|ba]。",
+          "id": "Great! Then let's have dinner together afterwards.",
+          "literal": "too — good — (now)! then — we — evening — together — eat-rice — (OK)."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[好啊|Hǎo a]！[六點|Liù diǎn][還是|háishì][七點|qī diǎn]？",
+          "id": "Sure! Six or seven?",
+          "literal": "good — (ah)! six — o'clock — or — seven — o'clock?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[六點|Liù diǎn][吧|ba]，[太晚|tài wǎn][我|wǒ][會|huì][餓|è]。",
+          "id": "Six, I think — any later and I'll be starving.",
+          "literal": "six — o'clock — (la), too — late — I — will — hungry."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[哈哈|Hāhā]，[好|hǎo]！[明天|Míngtiān][三點半|sān diǎn bàn][見|jiàn]！",
+          "id": "Haha, OK! See you tomorrow at three thirty!",
+          "literal": "haha, good! tomorrow — three — o'clock — half — see!"
+        }
+      ],
+      "notes": [
+        "⚠️ **Two o'clock is 兩點, not 二點.** 點 is a measure word, and before a measure word two is always 兩. It is the only hour that uses 兩; all the others use the ordinary numbers.",
+        "**上課 and 下課 are used by teachers and students alike.** 上課 = class is on / go to class; 下課 = class is over. The same 上/下 pattern appears in 上班 (start work) and 下班 (finish work), 上車 (get on a vehicle) and 下車 (get off).",
+        "**怎麼樣？ (\"how about it?\") is the most natural way to suggest something.** *兩點半怎麼樣？* — \"How about two thirty?\" It's also used to ask for opinions: *這家餐廳怎麼樣？*",
+        "**比較 (*bǐjiào*, \"comparatively, more\") is used far more often than you'd expect.** Taiwanese people use it to soften opinions: *我比較喜歡這個* (\"I kind of prefer this one\") sounds gentler than stating a choice outright.",
+        "⚠️ **太…了 is a complete frame that must not be split.** *太好了！* (great!), *太貴了！* (way too expensive!), *太晚了！* (too late!). Dropping 了 leaves it hanging."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "Hours use **點** (*diǎn*, literally \"dot\") and minutes use **分** (*fēn*). The order goes from big to small, like every time expression in Mandarin."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "中文",
+              "Pīnyīn",
+              "Note"
+            ],
+            "rows": [
+              [
+                "1:00",
+                "一點",
+                "yì diǎn",
+                ""
+              ],
+              [
+                "2:00",
+                "**兩**點",
+                "liǎng diǎn",
+                "⚠️ not 二點"
+              ],
+              [
+                "3:10",
+                "三點十分",
+                "sān diǎn shí fēn",
+                ""
+              ],
+              [
+                "3:05",
+                "三點零五分",
+                "sān diǎn líng wǔ fēn",
+                "⚠️ 零 for minutes under 10"
+              ],
+              [
+                "3:15",
+                "三點十五分 / 三點一刻",
+                "sān diǎn yí kè",
+                "刻 = quarter"
+              ],
+              [
+                "3:30",
+                "三點半",
+                "sān diǎn bàn",
+                "半 = half"
+              ],
+              [
+                "3:45",
+                "三點四十五分 / 三點三刻",
+                "sān diǎn sān kè",
+                ""
+              ],
+              [
+                "2:55",
+                "差五分三點",
+                "chà wǔ fēn sān diǎn",
+                "five minutes to three"
+              ],
+              [
+                "12:00 noon",
+                "中午十二點",
+                "zhōngwǔ shí'èr diǎn",
+                ""
+              ]
+            ]
+          },
+          "after": [
+            "**三點半 means 3:30.** Mandarin counts the half **after** the hour, just like English \"half past three\" — so 兩點半 is 2:30, never 1:30. (Learners who know German or Dutch \"halb drei\" should take note.)",
+            "**The part of the day always stands IN FRONT of the hour**: 早上八點 (8 a.m.), 下午三點 (3 p.m.), 晚上十點 (10 p.m.). Taiwan uses the twelve-hour clock in conversation; train timetables use the twenty-four-hour clock."
+          ]
+        },
+        {
+          "title": "⚠️ Time goes BEFORE the verb",
+          "body": [
+            "This is the rule English speakers break most often, because English usually puts time at the end: \"I'm going tomorrow\", \"We meet at three thirty\".",
+            "Mandarin allows only two places, and both are **before the verb**."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Pīnyīn",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**我明天去。**",
+                "Wǒ míngtiān qù.",
+                "✓ I'm going tomorrow."
+              ],
+              [
+                "**明天我去。**",
+                "Míngtiān wǒ qù.",
+                "✓ Tomorrow I'm going. (time stressed)"
+              ],
+              [
+                "✗ 我去明天。",
+                "—",
+                "✗ wrong, never used"
+              ],
+              [
+                "我**每天七點**起床。",
+                "Wǒ měitiān qī diǎn qǐchuáng.",
+                "I get up at seven every day."
+              ],
+              [
+                "我們**三點半**見。",
+                "Wǒmen sān diǎn bàn jiàn.",
+                "We'll meet at three thirty."
+              ]
+            ]
+          },
+          "after": [
+            "**With several time words, the order is big to small**: *明天下午三點* (tomorrow afternoon at three) — not *三點下午明天*. This big-to-small rule also applies to dates and addresses, without exception.",
+            "⚠️ This rule isn't just about time. **All modifiers** — place (在…), manner (怎麼), company (跟…) — stand before the verb in Mandarin. Once you accept this, half of Mandarin word order is sorted.",
+            "One full sentence holding everything: **我明天下午在圖書館跟小美一起念書。** — \"Tomorrow afternoon I'm studying with Xiaomei at the library.\" Time → place → company → verb."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Parts of the day and time words",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "Meaning",
+            "中文",
+            "Pīnyīn",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "早上",
+              "zǎoshang",
+              "morning",
+              "現在",
+              "xiànzài",
+              "now"
+            ],
+            [
+              "上午",
+              "shàngwǔ",
+              "late morning",
+              "今天",
+              "jīntiān",
+              "today"
+            ],
+            [
+              "中午",
+              "zhōngwǔ",
+              "noon",
+              "明天",
+              "míngtiān",
+              "tomorrow"
+            ],
+            [
+              "下午",
+              "xiàwǔ",
+              "afternoon",
+              "昨天",
+              "zuótiān",
+              "yesterday"
+            ],
+            [
+              "晚上",
+              "wǎnshang",
+              "evening",
+              "後天",
+              "hòutiān",
+              "the day after tomorrow"
+            ],
+            [
+              "半夜",
+              "bànyè",
+              "midnight",
+              "前天",
+              "qiántiān",
+              "the day before yesterday"
+            ],
+            [
+              "早",
+              "zǎo",
+              "early",
+              "每天",
+              "měitiān",
+              "every day"
+            ],
+            [
+              "晚",
+              "wǎn",
+              "late",
+              "有時候",
+              "yǒu shíhòu",
+              "sometimes"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **後天 (\"back day\") means the day after tomorrow and 前天 (\"front day\") means the day before yesterday** — the opposite of what English speakers guess, since we think of the future as \"ahead\". Mandarin pictures time like a queue: what has **already passed** stands in front of you, where you can see it; what hasn't come yet is behind."
+        }
+      ]
+    },
+    {
+      "title": "Daily routine",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "English"
+          ],
+          "rows": [
+            [
+              "起床",
+              "qǐchuáng",
+              "to get up"
+            ],
+            [
+              "洗澡",
+              "xǐzǎo",
+              "to take a shower"
+            ],
+            [
+              "吃早餐",
+              "chī zǎocān",
+              "to have breakfast"
+            ],
+            [
+              "上班 / 上課",
+              "shàngbān / shàngkè",
+              "to start work / go to class"
+            ],
+            [
+              "下班 / 下課",
+              "xiàbān / xiàkè",
+              "to finish work / finish class"
+            ],
+            [
+              "吃午餐",
+              "chī wǔcān",
+              "to have lunch"
+            ],
+            [
+              "念書 / 讀書",
+              "niànshū / dúshū",
+              "to study, to read"
+            ],
+            [
+              "回家",
+              "huí jiā",
+              "to go home"
+            ],
+            [
+              "吃晚餐",
+              "chī wǎncān",
+              "to have dinner"
+            ],
+            [
+              "睡覺",
+              "shuìjiào",
+              "to sleep"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "A day in Budi's life — and word-order practice",
+          "items": [
+            "**我每天七點起床。** — I get up at seven every day.",
+            "**我早上八點上課。** — I go to class at eight in the morning.",
+            "**我中午十二點半吃午餐。** — I have lunch at twelve thirty.",
+            "**我下午五點回家。** — I go home at five in the afternoon.",
+            "**我晚上十一點睡覺。** — I go to bed at eleven at night.",
+            "⚠️ Notice that in all five sentences the verb always comes **last**, after every time word."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Making plans",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "English"
+          ],
+          "rows": [
+            [
+              "**你有空嗎？**",
+              "nǐ yǒukòng ma?",
+              "Are you free?"
+            ],
+            [
+              "**你什麼時候有空？**",
+              "nǐ shénme shíhòu yǒukòng?",
+              "When are you free?"
+            ],
+            [
+              "**幾點比較好？**",
+              "jǐ diǎn bǐjiào hǎo?",
+              "What time suits you better?"
+            ],
+            [
+              "**三點怎麼樣？**",
+              "sān diǎn zěnmeyàng?",
+              "How about three o'clock?"
+            ],
+            [
+              "**我們幾點見？**",
+              "wǒmen jǐ diǎn jiàn?",
+              "What time shall we meet?"
+            ],
+            [
+              "**我沒空**",
+              "wǒ méi kòng",
+              "I don't have time"
+            ],
+            [
+              "**我今天有事**",
+              "wǒ jīntiān yǒu shì",
+              "I've got something on today"
+            ],
+            [
+              "**改天好嗎？**",
+              "gǎitiān hǎo ma?",
+              "Another day, OK?"
+            ],
+            [
+              "**我會遲到十分鐘**",
+              "wǒ huì chídào shí fēnzhōng",
+              "I'll be ten minutes late"
+            ],
+            [
+              "**不好意思，我遲到了**",
+              "bù hǎoyìsi, wǒ chídào le",
+              "Sorry I'm late"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **A flat no sounds rude; give a reason, then offer another time.** *我今天有事，改天好嗎？* is far more natural than 我不要. This \"reason + 改天好嗎\" pattern will save you again and again."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "現在",
+      "baca": "xiànzài",
+      "en": "now"
+    },
+    {
+      "zh": "幾",
+      "baca": "jǐ",
+      "en": "how many (under 10)"
+    },
+    {
+      "zh": "點",
+      "baca": "diǎn",
+      "en": "o'clock"
+    },
+    {
+      "zh": "分",
+      "baca": "fēn",
+      "en": "minute"
+    },
+    {
+      "zh": "半",
+      "baca": "bàn",
+      "en": "half"
+    },
+    {
+      "zh": "早上",
+      "baca": "zǎoshang",
+      "en": "morning"
+    },
+    {
+      "zh": "下午",
+      "baca": "xiàwǔ",
+      "en": "afternoon"
+    },
+    {
+      "zh": "晚上",
+      "baca": "wǎnshang",
+      "en": "evening"
+    },
+    {
+      "zh": "明天",
+      "baca": "míngtiān",
+      "en": "tomorrow"
+    },
+    {
+      "zh": "昨天",
+      "baca": "zuótiān",
+      "en": "yesterday"
+    },
+    {
+      "zh": "每天",
+      "baca": "měitiān",
+      "en": "every day"
+    },
+    {
+      "zh": "時間",
+      "baca": "shíjiān",
+      "en": "time"
+    },
+    {
+      "zh": "有空",
+      "baca": "yǒukòng",
+      "en": "to be free (have time)"
+    },
+    {
+      "zh": "上課",
+      "baca": "shàngkè",
+      "en": "to have class"
+    },
+    {
+      "zh": "下課",
+      "baca": "xiàkè",
+      "en": "to finish class"
+    },
+    {
+      "zh": "見",
+      "baca": "jiàn",
+      "en": "to meet, to see"
+    },
+    {
+      "zh": "一起",
+      "baca": "yìqǐ",
+      "en": "together"
+    },
+    {
+      "zh": "怎麼樣",
+      "baca": "zěnmeyàng",
+      "en": "how; how about"
+    },
+    {
+      "zh": "比較",
+      "baca": "bǐjiào",
+      "en": "comparatively, more"
+    },
+    {
+      "zh": "遲到",
+      "baca": "chídào",
+      "en": "to be late"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mandarin.",
+      "items": [
+        "What time is it now?",
+        "It's 3:30 now.",
+        "Are you free tomorrow?",
+        "I get up at seven every day.",
+        "We'll meet at the library at four in the afternoon.",
+        "Sorry I'm late."
+      ]
+    },
+    {
+      "prompt": "Write the times in Chinese characters.",
+      "items": [
+        "2:00",
+        "3:30",
+        "8:05",
+        "12:15",
+        "10:45",
+        "7:20 p.m."
+      ]
+    },
+    {
+      "prompt": "Correct the sentences — the time word is in the wrong place in all of them.",
+      "items": [
+        "我去明天。",
+        "他吃飯七點。",
+        "我起床每天六點。",
+        "我們見三點半。",
+        "她回家晚上十點。"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "點 / 現在 / 幾",
+        "有空 / 嗎 / 你 / 明天",
+        "起床 / 我 / 七點 / 每天",
+        "見 / 我們 / 三點半",
+        "吃飯 / 晚上 / 一起 / 我們"
+      ]
+    }
+  ],
+  "answers": [
+    "現在幾點？ — 現在三點半。 — 你明天有空嗎？ — 我每天七點起床。 — 我們下午四點在圖書館見。 — 不好意思，我遲到了。",
+    "兩點 — 三點半 — 八點零五分 — 十二點十五分 — 十點四十五分 — 晚上七點二十分",
+    "我明天去。 — 他七點吃飯。 — 我每天六點起床。 — 我們三點半見。 — 她晚上十點回家。",
+    "現在幾點？ — 你明天有空嗎？ — 我每天七點起床。 — 我們三點半見。 — 我們晚上一起吃飯。"
+  ]
+}

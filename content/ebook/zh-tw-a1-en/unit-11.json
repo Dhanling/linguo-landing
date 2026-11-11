@@ -1,0 +1,578 @@
+{
+  "title": "I'm eating",
+  "title_target": "我在吃飯",
+  "goal": "Say what is happening right now and what has changed — and clear up the biggest misunderstanding about Mandarin: 了 is not a past tense.",
+  "bekal": [
+    "use 在 before a verb to say something is \"in progress\"",
+    "use 了 correctly — as a marker of change, not of the past",
+    "negate events with 沒 and drop 了 when you do"
+  ],
+  "dialogs": [
+    {
+      "title": "對話 — 電話裡的午餐",
+      "intro": "Xiaomei calls Budi around midday. Budi is in the middle of something.",
+      "lines": [
+        {
+          "speaker": "小美:",
+          "text": "[喂|Wéi]？[布迪|Bùdí]，[你|nǐ][在|zài][做|zuò][什麼|shénme]？",
+          "id": "Hello? Budi, what are you doing?",
+          "literal": "hello? Budi, you — (in progress) — do — what?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[我|Wǒ][在|zài][吃飯|chīfàn]。[妳|Nǐ][吃|chī][了|le][嗎|ma]？",
+          "id": "I'm eating. Have you eaten?",
+          "literal": "I — (in progress) — eat-rice. you — eat — (change) — (question)?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[還|Hái][沒|méi]。[我|Wǒ][還|hái][在|zài][上課|shàngkè]。",
+          "id": "Not yet. I'm still in class.",
+          "literal": "still — not. I — still — (in progress) — attend-class."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[妳|Nǐ][不是|bú shì][三點|sān diǎn][下課|xiàkè][嗎|ma]？[現在|Xiànzài][四點|sì diǎn][了|le]。",
+          "id": "Doesn't your class end at three? It's already four.",
+          "literal": "you — not-be — three — o'clock — end-class — (question)? now — four — o'clock — (change)."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[老師|Lǎoshī][拖堂|tuōtáng][了|le][啦|la]！[我|Wǒ][快|kuài][餓死|èsǐ][了|le]。",
+          "id": "The professor ran over time! I'm about to starve to death.",
+          "literal": "teacher — drag-class — (change) — (emphasis)! I — about-to — hungry-die — (change)."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[我|Wǒ][幫|bāng][妳|nǐ][買|mǎi][一個|yí ge][便當|biàndāng][好嗎|hǎo ma]？",
+          "id": "Shall I buy you a lunch box?",
+          "literal": "I — help — you — buy — one — (measure word) — lunch-box — good — (question)?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[太好了|Tài hǎo le]！[你|Nǐ][真|zhēn][好|hǎo]！",
+          "id": "That'd be great! You're so sweet!",
+          "literal": "too — good — (change)! you — really — good!"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[妳|Nǐ][要|yào][什麼|shénme]？[排骨|Páigǔ][還是|háishì][雞腿|jītuǐ]？",
+          "id": "What do you want? Pork chop or chicken leg?",
+          "literal": "you — want — what? rib-bone — or — chicken-leg?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[雞腿|Jītuǐ]！[不要|Bú yào][辣|là]，[謝謝|xièxie]。",
+          "id": "Chicken leg! Not spicy, thanks.",
+          "literal": "chicken-leg! not — want — spicy, thanks."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[好|Hǎo]。[我|Wǒ][吃|chī][完|wán][就|jiù][去|qù][買|mǎi]。",
+          "id": "OK. As soon as I finish eating I'll go buy it.",
+          "literal": "good. I — eat — finish — then — go — buy."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[下課|Xiàkè][了|le]！[我|Wǒ][現在|xiànzài][過去|guòqù][找|zhǎo][你|nǐ]。",
+          "id": "Class is over! I'm coming to find you now.",
+          "literal": "end-class — (change)! I — now — pass-go — look-for — you."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[好|Hǎo]，[我|wǒ][在|zài][學生餐廳|xuéshēng cāntīng][等|děng][妳|nǐ]。",
+          "id": "OK, I'll wait for you in the cafeteria.",
+          "literal": "good, I — at — student — restaurant — wait — you."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[我|Wǒ][五分鐘|wǔ fēnzhōng][到|dào]！[不要|Bú yào][吃|chī][完|wán][喔|o]！",
+          "id": "I'll be there in five minutes! Don't eat it all!",
+          "literal": "I — five — minute — arrive! not — want — eat — finish — (softener)!"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[哈哈|Hāhā]，[我|wǒ][已經|yǐjīng][吃|chī][完|wán][了|le]！",
+          "id": "Haha, I've already finished!",
+          "literal": "haha, I — already — eat — finish — (change)!"
+        }
+      ],
+      "notes": [
+        "**喂 (*wéi*) is only used to answer the phone**, never to greet someone standing in front of you. The tone usually rises to *wéi*, even though dictionaries write *wèi*.",
+        "**拖堂 (\"dragging the class\") means a teacher who doesn't stop on time** — a word every Taiwanese student knows. Its opposite, 提早下課 (finishing early), is greeted with cheers.",
+        "⚠️ **快…了 means \"almost\", \"any minute now\"**: 快餓死了 (starving to death), 快到了 (almost there), 快下雨了 (it's about to rain). The frame is complete with 了 at the end and can't be split.",
+        "**餓死了 (\"hungry to death\") is the everyday Taiwanese way to exaggerate**: 熱死了 (so hot), 累死了 (so tired), 笑死了 (LOL). It isn't rude at all.",
+        "⚠️ **完 after a verb means \"finished, used up\"**: 吃完 (finish eating), 看完 (finish reading), 做完 (finish doing). It's a result complement — a form covered fully in unit 18."
+      ],
+      "grammars": [
+        {
+          "title": "在 + verb: in progress",
+          "body": [
+            "To say that something is happening **right now**, put **在** directly in front of the verb. That's it; the verb itself doesn't change at all."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Pīnyīn",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "我**在**吃飯。",
+                "Wǒ zài chīfàn.",
+                "I'm eating."
+              ],
+              [
+                "他**在**睡覺。",
+                "Tā zài shuìjiào.",
+                "He's sleeping."
+              ],
+              [
+                "你**在**做什麼？",
+                "Nǐ zài zuò shénme?",
+                "What are you doing?"
+              ],
+              [
+                "我**正在**上課。",
+                "Wǒ zhèngzài shàngkè.",
+                "I'm in class right now. (more emphatic)"
+              ],
+              [
+                "我**還在**等。",
+                "Wǒ hái zài děng.",
+                "I'm still waiting."
+              ],
+              [
+                "我**沒有在**看電視。",
+                "Wǒ méi yǒu zài kàn diànshì.",
+                "I'm not watching TV."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Don't confuse it with 在 meaning \"at\" from unit 7.** The difference is simple: **在 + place** = at a place; **在 + verb** = in progress. When both appear together, the place wins: *我在圖書館看書* (I'm reading at the library) — and 在 appears only once.",
+            "**正在 is more emphatic than 在** and stresses \"at this very moment\". In everyday conversation, 在 alone is enough."
+          ]
+        },
+        {
+          "title": "⚠️ 了 is not a past tense",
+          "body": [
+            "This is the biggest misunderstanding almost every beginner brings along, and it's an understandable one: textbooks often translate 了 as \"already\" or treat it as the past tense. What 了 really marks is **change** — something that wasn't so before and is now; or something that has been completed.",
+            "Proof that it isn't a past tense: past sentences often come **without** 了, and future sentences often come **with** 了."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Pīnyīn",
+              "Meaning",
+              "Time"
+            ],
+            "rows": [
+              [
+                "我吃**了**。",
+                "Wǒ chī le.",
+                "I've eaten.",
+                "past"
+              ],
+              [
+                "現在四點**了**。",
+                "Xiànzài sì diǎn le.",
+                "It's four o'clock now.",
+                "⚠️ present"
+              ],
+              [
+                "下雨**了**！",
+                "Xiàyǔ le!",
+                "It's (started) raining!",
+                "⚠️ present"
+              ],
+              [
+                "我明天到**了**再打給你。",
+                "Wǒ míngtiān dào le zài dǎ gěi nǐ.",
+                "I'll call you tomorrow once I arrive.",
+                "⚠️ future"
+              ],
+              [
+                "我小時候住台南。",
+                "Wǒ xiǎo shíhòu zhù Táinán.",
+                "As a child I lived in Tainan.",
+                "⚠️ past, no 了"
+              ],
+              [
+                "我**沒**吃。",
+                "Wǒ méi chī.",
+                "I haven't eaten.",
+                "⚠️ 了 disappears"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **The most important rule in this unit: 了 DISAPPEARS when the sentence is negated.** *我吃了* → *我沒吃*, not *我沒吃了*. This mistake is very common and very easy to fix — memorize it now.",
+            "**還沒 = \"not yet\"**, and it's the most common answer to questions with the pattern 你…了嗎？ *你吃了嗎？* → *還沒。*",
+            "**Asking with 了: …了嗎？ or …了沒？** The second form is very Taiwanese and sounds casual: *你吃了沒？* It's even used as a greeting, much like \"How's it going?\" in English."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Everyday verbs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "Meaning",
+            "中文",
+            "Pīnyīn",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "做",
+              "zuò",
+              "make, do",
+              "等",
+              "děng",
+              "wait"
+            ],
+            [
+              "看",
+              "kàn",
+              "look, read",
+              "找",
+              "zhǎo",
+              "look for"
+            ],
+            [
+              "聽",
+              "tīng",
+              "listen",
+              "帶",
+              "dài",
+              "bring"
+            ],
+            [
+              "寫",
+              "xiě",
+              "write",
+              "拿",
+              "ná",
+              "take, pick up"
+            ],
+            [
+              "念",
+              "niàn",
+              "read aloud, study",
+              "給",
+              "gěi",
+              "give"
+            ],
+            [
+              "睡覺",
+              "shuìjiào",
+              "sleep",
+              "打",
+              "dǎ",
+              "hit; make (a phone call)"
+            ],
+            [
+              "工作",
+              "gōngzuò",
+              "work",
+              "洗",
+              "xǐ",
+              "wash"
+            ],
+            [
+              "休息",
+              "xiūxí",
+              "rest",
+              "到",
+              "dào",
+              "arrive"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "The \"what are you up to?\" patterns you'll use every day",
+          "items": [
+            "**你在做什麼？** — What are you up to? (the most common question in messaging apps)",
+            "**我在忙。** — I'm busy.",
+            "**我在上班。** — I'm at work.",
+            "**我在回家的路上。** — I'm on my way home.",
+            "**我在等你。** — I'm waiting for you.",
+            "⚠️ The short reply **在忙** (\"busy\") is the politest way of saying \"I'll get back to you later\"."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Three ways to use 了, and one prohibition",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Use",
+            "Example",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**Completed action** (了 after the verb)",
+              "我買**了**一本書。",
+              "I bought a book."
+            ],
+            [
+              "**Change of state** (了 at the end)",
+              "我餓**了**。",
+              "I'm (getting) hungry."
+            ],
+            [
+              "**Change of state**",
+              "他長大**了**。",
+              "He's all grown up."
+            ],
+            [
+              "**Any minute now** (快…了)",
+              "快到**了**。",
+              "We're almost there."
+            ],
+            [
+              "**Too** (太…了)",
+              "太貴**了**！",
+              "That's so expensive!"
+            ],
+            [
+              "⚠️ **Not allowed** with 沒",
+              "✗ 我沒吃**了**。",
+              "✗ wrong — drop the 了"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Compare these two sentences until you feel the difference: **我餓了** means \"I've gotten hungry\" — I wasn't before, now I am. **我很餓** means \"I'm hungry\" — just a state, with no story of change. English often translates both as \"I'm hungry\", and that's exactly where 了 slips out of a beginner's head."
+        }
+      ]
+    },
+    {
+      "title": "The lunch box: a culture lesson in one box",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "**便當 (*biàndāng*) is a loanword from Japanese *bentō*** — a legacy of fifty years of Japanese rule in Taiwan, and one of hundreds of Japanese words still alive here. It's the standard lunch all over Taiwan: rice, one main dish, three or four vegetable sides, all in one box for 80–100 塊."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "排骨便當",
+              "páigǔ biàndāng",
+              "fried pork chop lunch box"
+            ],
+            [
+              "雞腿便當",
+              "jītuǐ biàndāng",
+              "chicken leg lunch box"
+            ],
+            [
+              "魚排便當",
+              "yúpái biàndāng",
+              "fried fish lunch box"
+            ],
+            [
+              "素食便當",
+              "sùshí biàndāng",
+              "vegetarian lunch box"
+            ],
+            [
+              "要不要加飯？",
+              "yào bú yào jiā fàn?",
+              "want extra rice? (⚠️ often free)"
+            ],
+            [
+              "要辣嗎？",
+              "yào là ma?",
+              "want it spicy?"
+            ],
+            [
+              "幫我加熱",
+              "bāng wǒ jiārè",
+              "please heat it up"
+            ],
+            [
+              "要湯嗎？",
+              "yào tāng ma?",
+              "want soup? (⚠️ usually free)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Soup and extra rice are usually free at Taiwanese 便當 shops**, and the seller may genuinely be hurt if you turn them down thinking you'd have to pay. Just take them, and say 謝謝."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "在",
+      "baca": "zài",
+      "en": "(in progress) (+ verb)"
+    },
+    {
+      "zh": "正在",
+      "baca": "zhèngzài",
+      "en": "in the middle of (emphatic)"
+    },
+    {
+      "zh": "了",
+      "baca": "le",
+      "en": "⚠️ (marker of change)"
+    },
+    {
+      "zh": "還沒",
+      "baca": "hái méi",
+      "en": "not yet"
+    },
+    {
+      "zh": "做",
+      "baca": "zuò",
+      "en": "make, do"
+    },
+    {
+      "zh": "等",
+      "baca": "děng",
+      "en": "wait"
+    },
+    {
+      "zh": "找",
+      "baca": "zhǎo",
+      "en": "look for"
+    },
+    {
+      "zh": "完",
+      "baca": "wán",
+      "en": "finished, used up"
+    },
+    {
+      "zh": "餓",
+      "baca": "è",
+      "en": "hungry"
+    },
+    {
+      "zh": "渴",
+      "baca": "kě",
+      "en": "thirsty"
+    },
+    {
+      "zh": "睡覺",
+      "baca": "shuìjiào",
+      "en": "sleep"
+    },
+    {
+      "zh": "休息",
+      "baca": "xiūxí",
+      "en": "rest"
+    },
+    {
+      "zh": "便當",
+      "baca": "biàndāng",
+      "en": "lunch box (⚠️ from Japanese)"
+    },
+    {
+      "zh": "辣",
+      "baca": "là",
+      "en": "spicy"
+    },
+    {
+      "zh": "湯",
+      "baca": "tāng",
+      "en": "soup"
+    },
+    {
+      "zh": "喂",
+      "baca": "wéi",
+      "en": "hello (on the phone)"
+    },
+    {
+      "zh": "快",
+      "baca": "kuài",
+      "en": "fast; almost"
+    },
+    {
+      "zh": "到",
+      "baca": "dào",
+      "en": "arrive"
+    },
+    {
+      "zh": "就",
+      "baca": "jiù",
+      "en": "then right away; exactly"
+    },
+    {
+      "zh": "電視",
+      "baca": "diànshì",
+      "en": "television"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mandarin.",
+      "items": [
+        "What are you doing?",
+        "I'm eating.",
+        "Have you eaten?",
+        "Not yet.",
+        "It's already four o'clock.",
+        "It's about to rain."
+      ]
+    },
+    {
+      "prompt": "Negate the sentences — remember what happens to 了.",
+      "items": [
+        "我吃了。",
+        "他去了。",
+        "我買了一本書。",
+        "她來了。",
+        "我看了那部電影。"
+      ]
+    },
+    {
+      "prompt": "Fill in with 在, 了, or 還沒.",
+      "items": [
+        "我 ____ 吃飯，等一下打給你。",
+        "現在五點 ____。",
+        "你吃了嗎？ ____。",
+        "下雨 ____！",
+        "他 ____ 睡覺，不要吵他。",
+        "我 ____ 做完，再給我十分鐘。"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "什麼 / 做 / 你 / 在",
+        "吃飯 / 我 / 在",
+        "嗎 / 吃 / 你 / 了",
+        "了 / 四點 / 現在",
+        "了 / 快 / 到"
+      ]
+    }
+  ],
+  "answers": [
+    "你在做什麼？ — 我在吃飯。 — 你吃了嗎？ — 還沒。 — 現在四點了。 — 快下雨了。",
+    "我沒吃。 — 他沒去。 — 我沒買書。 — 她沒來。 — 我沒看那部電影。",
+    "在 — 了 — 還沒 — 了 — 在 — 還沒",
+    "你在做什麼？ — 我在吃飯。 — 你吃了嗎？ — 現在四點了。 — 快到了。"
+  ]
+}

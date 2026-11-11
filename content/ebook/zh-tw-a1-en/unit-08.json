@@ -1,0 +1,549 @@
+{
+  "title": "How many people are in your family?",
+  "title_target": "你家有幾個人？",
+  "goal": "Talk about your family and ages with 有 and 沒有 — and accept that in Mandarin \"brother\" and \"sister\" are not one word each but two.",
+  "bekal": [
+    "use 有 for having and negate it ONLY with 沒有",
+    "name family members with the right word for age and side of the family",
+    "ask and give ages in three different forms"
+  ],
+  "dialogs": [
+    {
+      "title": "對話 — 看照片",
+      "intro": "In the dorm dining room, Xiaomei sees a family photo on Budi's phone.",
+      "lines": [
+        {
+          "speaker": "小美:",
+          "text": "[這|Zhè][是|shì][你|nǐ][家人|jiārén][嗎|ma]？[好|Hǎo][多|duō][人|rén][喔|o]！",
+          "id": "Is this your family? So many people!",
+          "literal": "this — is — you — home-people — (question)? very — many — people — (wow)!"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[對|Duì]。[我|Wǒ][家|jiā][有|yǒu][六|liù][口|kǒu][人|rén]。",
+          "id": "Yes. There are six of us.",
+          "literal": "right. I — home — have — six — (measure word) — people."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[哇|Wā]！[你|Nǐ][有|yǒu][兄弟姐妹|xiōngdì jiěmèi][嗎|ma]？",
+          "id": "Wow! Do you have brothers and sisters?",
+          "literal": "wow! you — have — older-brother-younger-brother-older-sister-younger-sister — (question)?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[有|Yǒu]。[一個|Yí ge][哥哥|gēge]，[兩個|liǎng ge][妹妹|mèimei]。",
+          "id": "Yes. One older brother and two younger sisters.",
+          "literal": "have. one — (measure word) — older-brother, two — (measure word) — younger-sister."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[你|Nǐ][哥哥|gēge][幾歲|jǐ suì]？[不對|Bú duì]…[多大|duō dà]？",
+          "id": "How old is your brother? Oops — I mean, how old is he?",
+          "literal": "you — older-brother — how-many — years? not — right… how — big?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[他|Tā][二十八歲|èrshíbā suì]。[他|Tā][已經|yǐjīng][結婚|jiéhūn][了|le]。",
+          "id": "He's twenty-eight. He's married.",
+          "literal": "he — twenty-eight — years. he — already — tie-marriage — (now)."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[他|Tā][有|yǒu][小孩|xiǎohái][嗎|ma]？",
+          "id": "Does he have kids?",
+          "literal": "he — have — small-child — (question)?"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[有|Yǒu][一個|yí ge][女兒|nǚ'ér]，[兩歲|liǎng suì]。[超|Chāo][可愛|kě'ài]！",
+          "id": "One daughter, two years old. Super cute!",
+          "literal": "have — one — (measure word) — female-child, two — years. super — can-be-loved!"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[那|Nà][你|nǐ][是|shì][叔叔|shūshu][了|le]！",
+          "id": "So you're an uncle now!",
+          "literal": "then — you — are — uncle — (now)!"
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[對啊|Duì a]！[妳|Nǐ][呢|ne]？[妳|Nǐ][家|jiā][有|yǒu][幾個|jǐ ge][人|rén]？",
+          "id": "That's right! And you? How many in your family?",
+          "literal": "right — (wow)! you — (what about)? you — home — have — how-many — (measure word) — people?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[三|Sān][口|kǒu]。[爸爸|Bàba]、[媽媽|māma][和|hàn][我|wǒ]。",
+          "id": "Three. Dad, Mom, and me.",
+          "literal": "three — (measure word). dad, mom — and — I."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[妳|Nǐ][沒有|méi yǒu][兄弟姐妹|xiōngdì jiěmèi][嗎|ma]？",
+          "id": "You don't have any brothers or sisters?",
+          "literal": "you — not — have — siblings — (question)?"
+        },
+        {
+          "speaker": "小美:",
+          "text": "[沒有|Méi yǒu]。[在|Zài][台灣|Táiwān]，[這|zhè][很|hěn][普遍|pǔbiàn]。",
+          "id": "No. That's very common in Taiwan.",
+          "literal": "not — have. at — Taiwan, this — very — common-widespread."
+        },
+        {
+          "speaker": "布迪:",
+          "text": "[那|Nà][妳|nǐ][爸媽|bàmā][一定|yídìng][很|hěn][疼|téng][妳|nǐ]。",
+          "id": "Then your parents must really dote on you.",
+          "literal": "then — you — father-mother — surely — very — dote-on — you."
+        },
+        {
+          "speaker": "小美:",
+          "text": "[太疼了|Tài téng le]！[所以|Suǒyǐ][我|wǒ][還|hái][住|zhù][家裡|jiālǐ][啊|a]！",
+          "id": "Way too much! That's why I still live at home!",
+          "literal": "too — dote-on — (now)! so — I — still — live — home-inside — (wow)!"
+        }
+      ],
+      "notes": [
+        "⚠️ **口 is a special measure word for family members** and is used for nothing else. *我家有六口人* sounds warm and traditional; *六個人* is also correct and just as common among young people.",
+        "⚠️ **幾歲 is only for small children.** Asking an adult's age with 幾歲 sounds like talking to a kindergartner. For people your own age use **多大**, for much older people use **您貴庚** (*nín guìgēng*) — and safest of all, don't ask.",
+        "**The 了 in 結婚了 and 我是叔叔了 is not a past tense** but a marker of **change of state**: not before, now yes. Unit 11 covers it fully; for now, just get a feel for the pattern.",
+        "**超 (*chāo*, \"super\") is young Taiwanese slang** that replaces 很: 超可愛, 超好吃, 超累. It's casual and everywhere, but don't use it in formal writing.",
+        "⚠️ **疼 means \"to dote on\" when it's about people, and \"to hurt\" when it's about the body.** *我媽媽很疼我* (my mom dotes on me) vs *我頭很疼* (my head hurts). Context always separates them."
+      ],
+      "grammars": [
+        {
+          "title": "⚠️ 有 is negated ONLY with 沒, never with 不",
+          "body": [
+            "Mandarin has two negative words, and the split is simple but rigid: **不** for almost every verb, **沒** for 有 and for things that didn't happen. No exceptions."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Pīnyīn",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "我**有**兩個妹妹。",
+                "Wǒ yǒu liǎng ge mèimei.",
+                "I have two younger sisters."
+              ],
+              [
+                "我**沒有**兄弟姐妹。",
+                "Wǒ méi yǒu xiōngdì jiěmèi.",
+                "I don't have any siblings."
+              ],
+              [
+                "我**沒有**錢。",
+                "Wǒ méi yǒu qián.",
+                "I don't have any money."
+              ],
+              [
+                "✗ 我不有錢。",
+                "—",
+                "✗ wrong, never used"
+              ],
+              [
+                "我**不**喝咖啡。",
+                "Wǒ bù hē kāfēi.",
+                "I don't drink coffee. (habit)"
+              ],
+              [
+                "我**沒**喝咖啡。",
+                "Wǒ méi hē kāfēi.",
+                "I didn't drink (the) coffee."
+              ]
+            ]
+          },
+          "after": [
+            "**沒有 can be shortened to 沒** before another verb: *我沒去* (I didn't go). But when it negates 有 itself, it usually stays whole: *我沒有錢*.",
+            "⚠️ Compare the last two rows once more. **不 negates habits or will; 沒 negates events.** *我不吃豬肉* = I don't eat pork (a principle). *我沒吃* = I haven't eaten (a fact about today)."
+          ]
+        },
+        {
+          "title": "Age: three forms, three levels of politeness",
+          "body": [
+            "Mandarin picks the question word for age depending on who is being asked. Using the wrong one isn't a grammar mistake, but it sounds off at once."
+          ],
+          "table": {
+            "head": [
+              "Question",
+              "Pīnyīn",
+              "Asking",
+              "Answer"
+            ],
+            "rows": [
+              [
+                "**你幾歲？**",
+                "Nǐ jǐ suì?",
+                "children under ten",
+                "我五歲。"
+              ],
+              [
+                "**你多大？**",
+                "Nǐ duō dà?",
+                "peers, teenagers, young adults",
+                "我二十歲。"
+              ],
+              [
+                "**您貴庚？**",
+                "Nín guìgēng?",
+                "⚠️ much older people, very polite",
+                "我六十五歲。"
+              ],
+              [
+                "**你今年幾年級？**",
+                "Nǐ jīnnián jǐ niánjí?",
+                "students — asks the year of study, not age",
+                "我大二。"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Giving your age doesn't need 是**: *我二十歲* — not *我是二十歲*. Number + 歲 already works like an adjective, and adjectives don't take 是. This is the first taste of a rule unit 14 covers in full.",
+            "**大一, 大二, 大三, 大四** are years at university (first to fourth year) — short for 大學一年級. Asking *你大幾？* is the most natural way for students in Taiwan to get acquainted."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "⚠️ Family: \"brother\" and \"sister\" each split in two",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "English marks brother vs. sister but not older vs. younger — you add \"big\" or \"little\" if it matters. Mandarin **builds both into the word itself**, and has no single-character word for \"sibling\"."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "Meaning",
+            "中文",
+            "Pīnyīn",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "爸爸",
+              "bàba",
+              "father",
+              "媽媽",
+              "māma",
+              "mother"
+            ],
+            [
+              "哥哥",
+              "gēge",
+              "older brother",
+              "姐姐",
+              "jiějie",
+              "older sister"
+            ],
+            [
+              "弟弟",
+              "dìdi",
+              "younger brother",
+              "妹妹",
+              "mèimei",
+              "younger sister"
+            ],
+            [
+              "兒子",
+              "érzi",
+              "son",
+              "女兒",
+              "nǚ'ér",
+              "daughter"
+            ],
+            [
+              "先生",
+              "xiānshēng",
+              "husband; Mr.",
+              "太太",
+              "tàitai",
+              "wife; Mrs."
+            ],
+            [
+              "爺爺",
+              "yéye",
+              "grandfather (father's side)",
+              "奶奶",
+              "nǎinai",
+              "grandmother (father's side)"
+            ],
+            [
+              "外公",
+              "wàigōng",
+              "grandfather (mother's side)",
+              "外婆",
+              "wàipó",
+              "grandmother (mother's side)"
+            ],
+            [
+              "叔叔",
+              "shūshu",
+              "uncle (father's younger brother)",
+              "阿姨",
+              "āyí",
+              "aunt (mother's side)"
+            ],
+            [
+              "家人",
+              "jiārén",
+              "family member",
+              "小孩",
+              "xiǎohái",
+              "child (small)"
+            ],
+            [
+              "兄弟姐妹",
+              "xiōngdì jiěmèi",
+              "siblings (all of them)",
+              "父母",
+              "fùmǔ",
+              "parents"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ The full system is far more complex — Mandarin has different words for uncles on the father's and the mother's side, and for those older and younger than your father. At A1, the first ten rows are enough. **外 (\"outside\") in 外公 and 外婆 marks the mother's side**, a relic of the days when children were considered part of the father's family."
+        },
+        {
+          "type": "kotak",
+          "title": "阿姨 and 叔叔 are also for strangers",
+          "items": [
+            "In Taiwan, children call any woman their mother's age **阿姨** and any man their father's age **叔叔**, even if they're not related at all.",
+            "Adults call much older people **阿伯** (*ābó*, \"uncle\", for an older man) and **阿姨** or **阿嬤** (*āmà*, from Hokkien, \"grandma\").",
+            "⚠️ Calling an older waitress **阿姨** sounds warm; calling her **小姐** sounds cold.",
+            "**帥哥** (*shuàigē*, \"handsome\") and **美女** (*měinǚ*, \"beautiful\") are what night-market sellers call any customer. It's not flirting — just a friendly greeting."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "有 and 沒有 in everyday use",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "中文",
+            "Pīnyīn",
+            "English"
+          ],
+          "rows": [
+            [
+              "**你有嗎？**",
+              "nǐ yǒu ma?",
+              "Do you have it?"
+            ],
+            [
+              "**有沒有？**",
+              "yǒu méi yǒu?",
+              "Got any? (most common)"
+            ],
+            [
+              "**有！**",
+              "yǒu!",
+              "Yes, we do!"
+            ],
+            [
+              "**沒有**",
+              "méi yǒu",
+              "No, there isn't"
+            ],
+            [
+              "**我沒有錢**",
+              "wǒ méi yǒu qián",
+              "I don't have any money"
+            ],
+            [
+              "**這裡有沒有廁所？**",
+              "zhèlǐ yǒu méi yǒu cèsuǒ?",
+              "Is there a restroom here?"
+            ],
+            [
+              "**有問題嗎？**",
+              "yǒu wèntí ma?",
+              "Any questions?"
+            ],
+            [
+              "**沒問題！**",
+              "méi wèntí!",
+              "No problem!"
+            ],
+            [
+              "**有一點…**",
+              "yǒu yìdiǎn…",
+              "a bit… (⚠️ always negative)"
+            ],
+            [
+              "**沒關係**",
+              "méi guānxi",
+              "It's nothing / never mind"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **有一點 always introduces something unpleasant**: 有一點貴 (a bit pricey), 有一點累 (a bit tired), 有一點吵 (a bit noisy). For pleasant things, people use 一點 without 有, or a different word: *便宜一點* (a little cheaper). The mistake *有一點好* sounds strange to Taiwanese ears."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "zh": "有",
+      "baca": "yǒu",
+      "en": "to have; there is"
+    },
+    {
+      "zh": "沒有",
+      "baca": "méi yǒu",
+      "en": "⚠️ not have; there isn't"
+    },
+    {
+      "zh": "家人",
+      "baca": "jiārén",
+      "en": "family member"
+    },
+    {
+      "zh": "口",
+      "baca": "kǒu",
+      "en": "(measure word for family members)"
+    },
+    {
+      "zh": "爸爸",
+      "baca": "bàba",
+      "en": "dad"
+    },
+    {
+      "zh": "媽媽",
+      "baca": "māma",
+      "en": "mom"
+    },
+    {
+      "zh": "哥哥",
+      "baca": "gēge",
+      "en": "older brother"
+    },
+    {
+      "zh": "姐姐",
+      "baca": "jiějie",
+      "en": "older sister"
+    },
+    {
+      "zh": "弟弟",
+      "baca": "dìdi",
+      "en": "younger brother"
+    },
+    {
+      "zh": "妹妹",
+      "baca": "mèimei",
+      "en": "younger sister"
+    },
+    {
+      "zh": "兄弟姐妹",
+      "baca": "xiōngdì jiěmèi",
+      "en": "siblings"
+    },
+    {
+      "zh": "小孩",
+      "baca": "xiǎohái",
+      "en": "child"
+    },
+    {
+      "zh": "歲",
+      "baca": "suì",
+      "en": "year(s) old"
+    },
+    {
+      "zh": "多大",
+      "baca": "duō dà",
+      "en": "how old"
+    },
+    {
+      "zh": "結婚",
+      "baca": "jiéhūn",
+      "en": "to get married"
+    },
+    {
+      "zh": "已經",
+      "baca": "yǐjīng",
+      "en": "already"
+    },
+    {
+      "zh": "可愛",
+      "baca": "kě'ài",
+      "en": "cute, adorable"
+    },
+    {
+      "zh": "一定",
+      "baca": "yídìng",
+      "en": "surely, must"
+    },
+    {
+      "zh": "所以",
+      "baca": "suǒyǐ",
+      "en": "so, that's why"
+    },
+    {
+      "zh": "問題",
+      "baca": "wèntí",
+      "en": "problem; question"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mandarin.",
+      "items": [
+        "How many people are in your family?",
+        "There are five people in my family.",
+        "I have one older brother and two younger sisters.",
+        "I don't have any brothers or sisters.",
+        "How old is your older brother?",
+        "No problem!"
+      ]
+    },
+    {
+      "prompt": "Fill in with 不 or 沒.",
+      "items": [
+        "我 ____ 有錢。",
+        "我 ____ 喝咖啡，我喝茶。",
+        "他 ____ 是台灣人。",
+        "我今天 ____ 吃早餐。",
+        "她 ____ 有兄弟姐妹。",
+        "我 ____ 知道。"
+      ]
+    },
+    {
+      "prompt": "Choose the right family word.",
+      "items": [
+        "Older sister: ____",
+        "Younger brother: ____",
+        "Grandmother on your mother's side: ____",
+        "Daughter: ____",
+        "Parents: ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "人 / 家 / 幾個 / 有 / 你",
+        "妹妹 / 我 / 兩個 / 有",
+        "兄弟姐妹 / 我 / 沒有",
+        "歲 / 他 / 二十八",
+        "了 / 已經 / 他 / 結婚"
+      ]
+    }
+  ],
+  "answers": [
+    "你家有幾個人？ — 我家有五口人。 — 我有一個哥哥和兩個妹妹。 — 我沒有兄弟姐妹。 — 你哥哥多大？ — 沒問題！",
+    "沒 — 不 — 不 — 沒 — 沒 — 不",
+    "姐姐 — 弟弟 — 外婆 — 女兒 — 父母",
+    "你家有幾個人？ — 我有兩個妹妹。 — 我沒有兄弟姐妹。 — 他二十八歲。 — 他已經結婚了。"
+  ]
+}

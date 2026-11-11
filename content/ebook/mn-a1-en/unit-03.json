@@ -1,0 +1,626 @@
+{
+  "title": "My family",
+  "title_target": "Манай гэр бүл",
+  "goal": "Talk about your family — and, along the way, put vowel harmony into your own hands, because almost every family word needs a suffix.",
+  "bekal": [
+    "name family members and say how many there are",
+    "use *манай* and *танай* — two words Mongolians use every day",
+    "pick the right suffix vowel without opening a table"
+  ],
+  "dialogs": [
+    {
+      "title": "Яриа — Гэр бүлийн зураг",
+      "intro": "Sarnai shows Budi a family photo on her phone. Budi asks about each person.",
+      "lines": [
+        {
+          "speaker": "Сарнай:",
+          "text": "[Энэ|EH-neh] [манай|MA-nai] [гэр|ger] [бүлийн|BÜ-liin] [зураг|DZU-rag].",
+          "id": "This is a photo of our family.",
+          "literal": "this our home group's picture."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Танай|TA-nai] [гэр|ger] [бүл|bül] [хэдэн|KHEH-den] [хүнтэй|KHÜN-tei] [вэ|veh]?",
+          "id": "How many people are in your family?",
+          "literal": "your home group how-many person-with Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Таван|TA-van] [хүнтэй|KHÜN-tei]. [Аав|AAV], [ээж|ĒJ], [ах|akh], [эгч|egch], [би|bi].",
+          "id": "Five. Father, mother, older brother, older sister, and me.",
+          "literal": "five person-with. father, mother, older-brother, older-sister, I."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Танай|TA-nai] [аав|aav] [юу|yuu] [хийдэг|KHII-deg] [вэ|veh]?",
+          "id": "What does your father do?",
+          "literal": "your father what do-usually Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Аав|Aav] [маань|MAAN'] [эмч|emch]. [Эмнэлэгт|EM-neh-legt] [ажилладаг|a-JIL-la-dag].",
+          "id": "My father is a doctor. He works at a hospital.",
+          "literal": "our father doctor. hospital-at work-usually."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Ээж|Ēj] [тань|tan'] [ч|ch] [ажилладаг|a-JIL-la-dag] [уу|uu]?",
+          "id": "Does your mother work too?",
+          "literal": "mother your too work-usually Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Тийм|Tiim], [ээж|ēj] [маань|MAAN'] [багш|baksh]. [Сургуульд|sur-GUUL'D] [ажилладаг|a-JIL-la-dag].",
+          "id": "Yes, my mother is a teacher. She works at a school.",
+          "literal": "yes, our mother teacher. school-at work-usually."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Ах|Akh] [тань|tan'] [хэдэн|KHEH-den] [настай|NAS-tai] [вэ|veh]?",
+          "id": "How old is your older brother?",
+          "literal": "older-brother your how-many age-with Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Хорин|KHO-rin] [долоон|do-LŌN] [настай|NAS-tai]. [Тэр|Ter] [гэрлэсэн|GER-leh-sen].",
+          "id": "Twenty-seven. He's married.",
+          "literal": "twenty seven age-with. he married."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Хүүхэдтэй|KHÜÜ-khed-tei] [юу|yuu]?",
+          "id": "Does he have children?",
+          "literal": "child-with Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Тийм|Tiim], [нэг|neg] [охинтой|o-KHIN-toi]. [Гурван|GUR-van] [настай|NAS-tai].",
+          "id": "Yes, one daughter. She's three.",
+          "literal": "yes, one daughter-with. three age-with."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Хөөрхөн|KHÖÖR-khön] [байх|baikh] [нь|n']. [Танай|TA-nai] [эгч|egch] [хаана|KHAA-na] [байдаг|BAI-dag] [вэ|veh]?",
+          "id": "She must be adorable. Where does your older sister live?",
+          "literal": "sweet is -the. your older-sister where be-usually Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Эгч|Egch] [маань|MAAN'] [Эрдэнэтэд|er-DEH-neh-ted] [байдаг|BAI-dag]. [Улаанбаатарт|u-laan-BAA-tart] [биш|bish].",
+          "id": "My older sister lives in Erdenet. Not in Ulaanbaatar.",
+          "literal": "our older-sister Erdenet-in be-usually. Ulaanbaatar-in not."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Танай|TA-nai] [гэр|ger] [бүл|bül] [сайхан|SAI-khan] [байна|BAI-n]. [Манай|MA-nai] [гэр|ger] [бүл|bül] [дөрвөн|DÖR-vön] [хүнтэй|KHÜN-tei].",
+          "id": "What a lovely family. There are four of us in my family.",
+          "literal": "your home group nice is. our home group four person-with."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Дүү|Düü] [байгаа|bai-GAA] [юу|yuu]?",
+          "id": "Do you have younger siblings?",
+          "literal": "younger-sibling there-is Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Тийм|Tiim], [нэг|neg] [эмэгтэй|EH-meg-tei] [дүүтэй|DÜÜ-tei]. [Тэр|Ter] [Жакартад|ja-KAR-tad] [сурдаг|SUR-dag].",
+          "id": "Yes, one younger sister. She goes to school in Jakarta.",
+          "literal": "yes, one female younger-sibling-with. she Jakarta-in study-usually."
+        }
+      ],
+      "notes": [
+        "⚠️ **Манай isn't \"we\" but \"our\" — and Mongolians use it where English says \"my\".** *Манай гэр бүл* is literally \"our family\", but it means \"my family\". Saying *миний гэр бүл* sounds cold, as if your family were your property. Think of how English speakers say \"our house\" even when talking alone.",
+        "**Танай is its polite partner**: \"your\", used for the other person's family, home, office, country. *Танай гэр бүл*, *танай улс*, *танай компани*. It's one of the most frequent words in polite conversation.",
+        "**Маань and тань stick to the end of a noun** and mean \"my/our …\" and \"your …\". *Аав **маань*** = my father; *ээж **тань*** = your mother. This is warmer than *миний аав*, and it's almost always used for family members.",
+        "⚠️ **Mongolian distinguishes older brother from older sister, but not younger siblings.** *Ах* = older brother, *эгч* = older sister, *дүү* = younger sibling (either sex). To be specific: *эрэгтэй дүү* (younger brother), *эмэгтэй дүү* (younger sister). English splits by sex instead of by age — Mongolian splits by age first.",
+        "**The suffix -тай / -тэй / -той that appears ten times in this dialogue means \"having\".** *Хүнтэй* = \"with people\", *настай* = \"aged\", *хүүхэдтэй* = \"with children\". It's the main way Mongolian expresses having, and Unit 15 covers it fully. For now, take it as a pattern: **noun + -тай = having that noun.**"
+      ],
+      "grammars": [
+        {
+          "title": "Choosing the suffix vowel: vowel harmony in your own hands",
+          "body": [
+            "This is the first place you really have to use the rule from the front pages. The suffix *-тай* has three faces, and the **last vowel** of the base word decides which."
+          ],
+          "table": {
+            "head": [
+              "Last vowel of the base word",
+              "Suffix",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*а, у*, or *и* following them",
+                "**-тай**",
+                "*нас* → *нас**тай***",
+                "aged"
+              ],
+              [
+                "*о*",
+                "**-той**",
+                "*охин* → *охин**той***",
+                "having a daughter"
+              ],
+              [
+                "*э, ө, ү*",
+                "**-тэй**",
+                "*хүн* → *хүн**тэй***",
+                "having people"
+              ],
+              [
+                "*ө* in the last syllable",
+                "**-тэй**",
+                "*мөнгө* → *мөнгө**тэй***",
+                "having money"
+              ],
+              [
+                "*и* only",
+                "**-тэй**",
+                "*чи* → *чам**тай***",
+                "with you"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that **о** gets its own suffix (*-той*), while **ө** goes with the front group (*-тэй*). It's the only extra complication beyond the two-group split, and it applies to every suffix with a vowel, not just *-тай*.",
+            "**Test it with your ear, not the table.** Say *номтой* and *номтэй* out loud. The second feels like tripping, because your mouth has to jump from the back group to the front group mid-word. That's all vowel harmony really is: a mouth that refuses to jump."
+          ]
+        },
+        {
+          "title": "Saying your age — and why there's no verb",
+          "body": [
+            "Mongolian gives age with no verb at all. The pattern is **number + нас + -тай**, literally \"having so many years\"."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*Би хорин настай.*",
+                "*bi KHO-rin NAS-tai*",
+                "I'm twenty."
+              ],
+              [
+                "*Чи хэдэн настай вэ?*",
+                "*chi KHEH-den NAS-tai veh*",
+                "How old are you? (informal)"
+              ],
+              [
+                "*Та хэдэн настай вэ?*",
+                "*ta KHEH-den NAS-tai veh*",
+                "How old are you? (formal)"
+              ],
+              [
+                "*Дүү маань арван настай.*",
+                "*düü MAAN' A-rvan NAS-tai*",
+                "My younger sibling is ten."
+              ],
+              [
+                "*Тэр гучин настай биш.*",
+                "*ter GU-chin NAS-tai bish*",
+                "He/She isn't thirty."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Numbers before a noun use **the form ending in -н**: *хорь* → *хорин*, *гурав* → *гурван*, *тав* → *таван*, *долоо* → *долоон*. The bare form (*хорь*, *гурав*) is used only when the number stands alone: *Хэд вэ?* — *Гурав.*",
+            "**Asking an older person's age is not considered rude in Mongolia**, unlike in many Western countries. Questions about age, marital status, and number of children are a normal part of a first meeting."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Family members",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English",
+            "Note"
+          ],
+          "rows": [
+            [
+              "*аав*",
+              "*AAV*",
+              "father",
+              "Both as a form of address and when talking about him."
+            ],
+            [
+              "*ээж*",
+              "*ĒJ*",
+              "mother",
+              "One of the most frequent words of all."
+            ],
+            [
+              "*ах*",
+              "*akh*",
+              "older brother",
+              "Also a way to address any older man who isn't family."
+            ],
+            [
+              "*эгч*",
+              "*egch*",
+              "older sister",
+              "Also a way to address an older woman."
+            ],
+            [
+              "*дүү*",
+              "*düü*",
+              "younger sibling",
+              "⚠️ No distinction of sex."
+            ],
+            [
+              "*хүү*",
+              "*khüü*",
+              "son",
+              "*хүү минь* = \"my boy\" (affectionate)."
+            ],
+            [
+              "*охин*",
+              "*o-KHIN*",
+              "daughter",
+              "Also means \"girl\"."
+            ],
+            [
+              "*хүүхэд*",
+              "*KHÜÜ-khed*",
+              "child (general)",
+              "About age, not blood relation."
+            ],
+            [
+              "*эхнэр*",
+              "*EKH-ner*",
+              "wife",
+              "—"
+            ],
+            [
+              "*нөхөр*",
+              "*NÖ-khör*",
+              "husband",
+              "⚠️ Also means \"friend, companion\"."
+            ],
+            [
+              "*өвөө*",
+              "*ö-VÖÖ*",
+              "grandfather",
+              "—"
+            ],
+            [
+              "*эмээ*",
+              "*eh-MĒ*",
+              "grandmother",
+              "—"
+            ],
+            [
+              "*гэр бүл*",
+              "*ger bül*",
+              "family",
+              "Literally: \"home group\"."
+            ],
+            [
+              "*төрөл*",
+              "*TÖ-röl*",
+              "relatives",
+              "—"
+            ],
+            [
+              "*найз*",
+              "*naidz*",
+              "friend",
+              "—"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Ах* and *эгч* are used far more widely than their literal meaning. You call an older waitress *эгч ээ*, a taxi driver *ах аа*, and a middle-aged neighbor *ах*. It's a bit like calling people \"sir\" or \"ma'am\", but warmer — and addressing someone by their bare name with no title can feel cold."
+        },
+        {
+          "type": "kotak",
+          "title": "The suffix -аа for calling someone",
+          "items": [
+            "*аав **аа*** — \"Dad!\" *ээж **ээ*** — \"Mom!\" *ах **аа*** — \"Brother!\" *эгч **ээ*** — \"Sister!\"",
+            "The vowel follows harmony: *аав* (back group) → *аа*; *ээж* (front group) → *ээ*.",
+            "⚠️ Without this suffix, calling someone sounds like mentioning them, not calling them. Compare \"Mom\" in a sentence with \"Mo-om!\" across the house.",
+            "The same works for names: *Болд **оо***, *Сарнай **аа***."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Jobs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*багш*",
+              "*baksh*",
+              "teacher"
+            ],
+            [
+              "*эмч*",
+              "*emch*",
+              "doctor"
+            ],
+            [
+              "*сувилагч*",
+              "*su-VI-lagch*",
+              "nurse"
+            ],
+            [
+              "*оюутан*",
+              "*o-YUU-tan*",
+              "(university) student"
+            ],
+            [
+              "*сурагч*",
+              "*SU-ragch*",
+              "pupil, schoolchild"
+            ],
+            [
+              "*жолооч*",
+              "*jo-LŌCH*",
+              "driver"
+            ],
+            [
+              "*худалдагч*",
+              "*khu-DAL-dagch*",
+              "shop assistant"
+            ],
+            [
+              "*инженер*",
+              "*in-jeh-NER*",
+              "engineer"
+            ],
+            [
+              "*малчин*",
+              "*MAL-chin*",
+              "herder"
+            ],
+            [
+              "*тогооч*",
+              "*to-GŌCH*",
+              "cook"
+            ],
+            [
+              "*цагдаа*",
+              "*tsag-DAA*",
+              "police officer"
+            ],
+            [
+              "*ажилгүй*",
+              "*A-jil-güi*",
+              "not working"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the suffixes **-ч** and **-чин** in *жолооч*, *малчин*, *тогооч*, *худалдагч*. They mean \"a person who does\" — just like English \"-er\". *Мал* (livestock) → *малчин* (herder); *тогоо* (pot) → *тогооч* (cook). Once you recognize these suffixes, you can guess dozens of job names yourself."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Answer",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Та юу хийдэг вэ?*",
+              "*Би багш.*",
+              "What do you do? — I'm a teacher."
+            ],
+            [
+              "*Хаана ажилладаг вэ?*",
+              "*Сургуульд ажилладаг.*",
+              "Where do you work? — At a school."
+            ],
+            [
+              "*Та ажилладаг уу?*",
+              "*Үгүй, би оюутан.*",
+              "Do you work? — No, I'm a student."
+            ],
+            [
+              "*Танай аав юу хийдэг вэ?*",
+              "*Аав маань малчин.*",
+              "What does your father do? — My father is a herder."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking about family",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "Six questions that always come up",
+          "items": [
+            "*Танай гэр бүл хэдэн хүнтэй вэ?* — How many people are in your family?",
+            "*Та хэдэн настай вэ?* — How old are you?",
+            "*Та гэрлэсэн үү?* — Are you married?",
+            "*Хүүхэдтэй юу?* — Do you have children?",
+            "*Ах дүү хэдүүлээ вэ?* — How many siblings are you?",
+            "*Танайх хаана байдаг вэ?* — Where does your family live?"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ The answer to the fifth question uses a special form: *Бид гурвуулаа* (\"the three of us\"), *дөрвүүлээ* (the four of us), *тавуулаа* (the five of us). The suffix **-уулаа / -үүлээ** means \"all together, so many people\"; English needs a whole phrase for it."
+        },
+        {
+          "type": "p",
+          "text": "A useful cultural note: in Mongolia, **questions about family are not small talk**. People really want to know, and a one-word answer feels closed off. If you're asked how many siblings you have, also mention where they live and what they do — just two extra sentences are enough to turn a formal conversation into a warm one."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "mn": "гэр бүл",
+      "baca": "ger bül",
+      "en": "family"
+    },
+    {
+      "mn": "манай",
+      "baca": "MA-nai",
+      "en": "⚠️ our; my"
+    },
+    {
+      "mn": "танай",
+      "baca": "TA-nai",
+      "en": "your (formal)"
+    },
+    {
+      "mn": "аав",
+      "baca": "AAV",
+      "en": "father"
+    },
+    {
+      "mn": "ээж",
+      "baca": "ĒJ",
+      "en": "mother"
+    },
+    {
+      "mn": "ах",
+      "baca": "akh",
+      "en": "older brother"
+    },
+    {
+      "mn": "эгч",
+      "baca": "egch",
+      "en": "older sister"
+    },
+    {
+      "mn": "дүү",
+      "baca": "düü",
+      "en": "⚠️ younger sibling (m or f)"
+    },
+    {
+      "mn": "хүүхэд",
+      "baca": "KHÜÜ-khed",
+      "en": "child"
+    },
+    {
+      "mn": "охин",
+      "baca": "o-KHIN",
+      "en": "daughter; girl"
+    },
+    {
+      "mn": "хүү",
+      "baca": "khüü",
+      "en": "son"
+    },
+    {
+      "mn": "эхнэр",
+      "baca": "EKH-ner",
+      "en": "wife"
+    },
+    {
+      "mn": "нөхөр",
+      "baca": "NÖ-khör",
+      "en": "husband; companion"
+    },
+    {
+      "mn": "нас",
+      "baca": "nas",
+      "en": "age"
+    },
+    {
+      "mn": "хүн",
+      "baca": "khün",
+      "en": "person"
+    },
+    {
+      "mn": "эмч",
+      "baca": "emch",
+      "en": "doctor"
+    },
+    {
+      "mn": "малчин",
+      "baca": "MAL-chin",
+      "en": "herder"
+    },
+    {
+      "mn": "ажиллах",
+      "baca": "a-JIL-lakh",
+      "en": "to work"
+    },
+    {
+      "mn": "гэрлэх",
+      "baca": "GER-lekh",
+      "en": "to marry"
+    },
+    {
+      "mn": "найз",
+      "baca": "naidz",
+      "en": "friend"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mongolian.",
+      "items": [
+        "There are five people in my family.",
+        "My father is a doctor.",
+        "My mother works at a school.",
+        "I'm twenty.",
+        "My younger sibling is ten.",
+        "How many people are in your family?"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the suffix -тай, -тэй, or -той.",
+      "items": [
+        "Би хорин нас____.",
+        "Тэр хүүхэд____.",
+        "Манай гэр бүл таван хүн____.",
+        "Сарнай нэг охин____.",
+        "Би мөнгө____.",
+        "Тэр ном____."
+      ]
+    },
+    {
+      "prompt": "Change the numbers into the form used before a noun.",
+      "items": [
+        "гурав ____ ном",
+        "тав ____ хүн",
+        "долоо ____ өдөр",
+        "дөрөв ____ сандал",
+        "найм ____ оюутан",
+        "хорь ____ нас"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "аав / эмч / маань",
+        "бүл / манай / хүнтэй / гэр / таван",
+        "настай / би / хорин",
+        "ажилладаг / ээж / сургуульд / маань",
+        "вэ / настай / хэдэн / та"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Манай гэр бүл таван хүнтэй. — Аав маань эмч. — Ээж маань сургуульд ажилладаг. — Би хорин настай. — Дүү маань арван настай. — Танай гэр бүл хэдэн хүнтэй вэ?",
+    "1": "тай — тэй — тэй — той — тэй — той",
+    "2": "гурван — таван — долоон — дөрвөн — найман — хорин",
+    "3": "Аав маань эмч. — Манай гэр бүл таван хүнтэй. — Би хорин настай. — Ээж маань сургуульд ажилладаг. — Та хэдэн настай вэ?"
+  }
+}

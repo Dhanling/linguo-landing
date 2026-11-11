@@ -1,0 +1,599 @@
+{
+  "title": "Yesterday I went",
+  "title_target": "Өчигдөр би явлаа",
+  "goal": "Talk about what has happened, and see why Mongolian has three past forms where English mostly gets by with one.",
+  "bekal": [
+    "tell today's events with *-лаа* and older events with *-сан*",
+    "tell the three past forms apart and choose the natural one",
+    "negate past sentences correctly"
+  ],
+  "dialogs": [
+    {
+      "title": "Яриа — Амралтын өдөр юу хийсэн бэ?",
+      "intro": "Monday morning in the university cafeteria. Sarnai asks how Budi's weekend was.",
+      "lines": [
+        {
+          "speaker": "Сарнай:",
+          "text": "[Буди|BU-di], [амралтын|AM-ral-tiin] [өдрүүдэд|ÖD-rüü-ded] [юу|yuu] [хийсэн|KHII-sen] [бэ|beh]?",
+          "id": "Budi, what did you do last weekend?",
+          "literal": "Budi, rest's day-s-on what did Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Бямбад|BYAM-bad] [музей|mu-ZEY] [үзсэн|ÜDZ-sen]. [Ням|Nyam] [гарагт|ga-RAGT] [гэртээ|GER-tē] [амарсан|A-mar-san].",
+          "id": "On Saturday I saw a museum. On Sunday I rested at home.",
+          "literal": "Saturday-on museum saw. Sunday day-on home-at-own rested."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Музей|Mu-ZEY] [сонирхолтой|so-NIR-khol-toi] [байсан|BAI-san] [уу|uu]?",
+          "id": "Was the museum interesting?",
+          "literal": "museum interesting was Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Маш|Mash] [их|ikh]! [Чингис|CHIN-gis] [хааны|KHAA-nii] [тухай|TU-khai] [маш|mash] [их|ikh] [юм|yum] [үзсэн|ÜDZ-sen].",
+          "id": "Very! I saw so much about Genghis Khan.",
+          "literal": "very big! Genghis king's about very big thing saw."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Хэдэн|KHEH-den] [цаг|tsag] [байсан|BAI-san] [бэ|beh]?",
+          "id": "How many hours were you there?",
+          "literal": "how-many hour was Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Гурван|GUR-van] [цаг|tsag] [орчим|OR-chim]. [Дараа|Da-RAA] [нь|n'] [ресторанд|res-to-RAND] [хоол|khōl] [идсэн|ID-sen].",
+          "id": "About three hours. After that I ate at a restaurant.",
+          "literal": "three hour about. after -the restaurant-at food ate."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Юу|Yuu] [идсэн|ID-sen] [бэ|beh]? [Бууз|Buudz] [идсэн|ID-sen] [үү|üü]?",
+          "id": "What did you eat? Buuz?",
+          "literal": "what ate Q? buuz ate Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Тийм|Tiim], [бууз|buudz] [идлээ|ID-lē]. [Маш|Mash] [амттай|AMT-tai] [байлаа|BAI-laa].",
+          "id": "Yes, I had buuz. They were delicious.",
+          "literal": "yes, buuz ate-just-now. very taste-with was-just-now."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Ням|Nyam] [гарагт|ga-RAGT] [гадаа|ga-DAA] [гарсангүй|GAR-san-güi] [юу|yuu]?",
+          "id": "You didn't go out at all on Sunday?",
+          "literal": "Sunday day-on out went-out-not Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Гарсангүй|GAR-san-güi]. [Өдөржин|Ö-dör-jin] [ном|nom] [уншсан|UNSH-san], [бага|BA-ga] [зэрэг|DZEH-reg] [унтсан|UNT-san].",
+          "id": "I didn't go out. I read all day and napped a bit.",
+          "literal": "went-out-not. all-day book read, little degree slept."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Аан|Aan]. [Өнөөдөр|Ö-nöö-dör] [өглөө|ÖG-löö] [хэдэд|KHEH-ded] [боссон|BOS-son] [бэ|beh]?",
+          "id": "Oh. What time did you get up this morning?",
+          "literal": "oh. today morning how-many-at got-up Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Зургаан|Dzur-GAAN] [цаг|tsag] [хагаст|kha-GAST] [бослоо|BOS-lō]. [Автобусаа|Av-TO-bu-saa] [алдсангүй|ALD-san-güi].",
+          "id": "At half past six. I didn't miss the bus.",
+          "literal": "six hour half-at got-up-just-now. bus-own-OBJ lost-not."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Сайн|Sain] [байна|BAI-n]. [Би|Bi] [харин|KHA-rin] [хоцорлоо|KHO-tsor-lō]. [Такси|TAK-si] [барьсан|BAR'-san].",
+          "id": "Good for you. I was late, actually. I took a taxi.",
+          "literal": "good is. I instead late-just-now. taxi held."
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Хэд|Khed] [төлсөн|TÖL-sön] [бэ|beh]?",
+          "id": "How much did you pay?",
+          "literal": "how-much paid Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Найман|NAI-man] [мянга|MYAN-ga]. [Их|Ikh] [үнэтэй|Ü-neh-tei] [байлаа|BAI-laa].",
+          "id": "Eight thousand. Really expensive.",
+          "literal": "eight thousand. big price-with was-just-now."
+        }
+      ],
+      "notes": [
+        "⚠️ **Mongolian has three past forms.** That sounds scary, but the difference is a lot like the difference between \"just now,\" \"yesterday,\" and \"long ago\" in English; Mongolian simply puts it **in the verb** instead of in an adverb.",
+        "**-лаа / -лээ / -лоо / -лөө = just now, today, still felt.** *Бослоо* (I've just got up), *хоцорлоо* (I've just been late). This form carries the tone \"and the result is still here now,\" much like the English present perfect.",
+        "**-сан / -сэн / -сон / -сөн = done, yesterday, earlier, neutral.** *Боссон* (got up), *үзсэн* (saw). This is the safest form and the one most used for telling stories. **When in doubt, use -сан.**",
+        "**-в = the formal, written form.** *Боллов*, *ирэв*. You'll see it in newspapers, books, and announcements, but you'll almost never hear it in conversation. Just recognize it; you don't need to use it at A1.",
+        "⚠️ **The past is negated with -сангүй, not plain -гүй.** *Гарсан* (went out) → *гарсан**гүй*** (didn't go out). Notice that the past suffix stays and *-гүй* attaches after it. This differs from the present, which uses *-хгүй*: *гарахгүй* (won't go out)."
+      ],
+      "grammars": [
+        {
+          "title": "Three past forms, and how to choose",
+          "body": [
+            "This table is the heart of the unit. Read the \"Feel\" column first: that's where the difference lies, not in the spelling of the suffix."
+          ],
+          "table": {
+            "head": [
+              "Suffix",
+              "Example (*явах*)",
+              "Feel",
+              "English equivalent"
+            ],
+            "rows": [
+              [
+                "**-лаа / -лээ**",
+                "*явлаа*",
+                "just now, today, result still felt",
+                "\"has just gone,\" \"he's gone\""
+              ],
+              [
+                "**-сан / -сэн**",
+                "*явсан*",
+                "neutral, yesterday, earlier, plain fact",
+                "\"went,\" \"has gone\""
+              ],
+              [
+                "**-в**",
+                "*явав*",
+                "formal, written, reports",
+                "\"departed\""
+              ],
+              [
+                "**-жээ / -чээ**",
+                "*явжээ*",
+                "so it turns out, I've just learned, folk tales",
+                "\"apparently went\""
+              ]
+            ]
+          },
+          "after": [
+            "**The practical rule fits in two lines.** For something that **just happened today**: *-лаа*. For everything else: *-сан*. With those two forms you can tell anything at A1 without ever sounding odd.",
+            "⚠️ A fourth form, *-жээ*, is worth recognizing even though you'll rarely use it yourself: it means \"it turns out\" and is used for things you've **just found out** or for stories you didn't witness. All Mongolian folk tales and legends are told in this form, so it's the signature sound of storytelling, like \"once upon a time…\" in English."
+          ]
+        },
+        {
+          "title": "Forming and negating the past",
+          "body": [
+            "From the dictionary form, drop *-х*, then add the suffix following vowel harmony. To negate, add *-гүй* **after** the past suffix."
+          ],
+          "table": {
+            "head": [
+              "Dictionary form",
+              "Just now",
+              "Neutral",
+              "Negative",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*явах*",
+                "*явлаа*",
+                "*явсан*",
+                "*явсангүй*",
+                "to go"
+              ],
+              [
+                "*ирэх*",
+                "*ирлээ*",
+                "*ирсэн*",
+                "*ирсэнгүй*",
+                "to come"
+              ],
+              [
+                "*идэх*",
+                "*идлээ*",
+                "*идсэн*",
+                "*идсэнгүй*",
+                "to eat"
+              ],
+              [
+                "*уух*",
+                "*уулаа*",
+                "*уусан*",
+                "*уусангүй*",
+                "to drink"
+              ],
+              [
+                "*унших*",
+                "*уншлаа*",
+                "*уншсан*",
+                "*уншсангүй*",
+                "to read"
+              ],
+              [
+                "*үзэх*",
+                "*үзлээ*",
+                "*үзсэн*",
+                "*үзсэнгүй*",
+                "to watch"
+              ],
+              [
+                "*босох*",
+                "*бослоо*",
+                "*боссон*",
+                "*боссонгүй*",
+                "to get up"
+              ],
+              [
+                "*өгөх*",
+                "*өглөө*",
+                "*өгсөн*",
+                "*өгсөнгүй*",
+                "to give"
+              ],
+              [
+                "*байх*",
+                "*байлаа*",
+                "*байсан*",
+                "*байсангүй*",
+                "to be"
+              ],
+              [
+                "*хийх*",
+                "*хийлээ*",
+                "*хийсэн*",
+                "*хийсэнгүй*",
+                "to do"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Look at the eighth row: *өгөх* → *өглөө*, which looks exactly like the word *өглөө* (morning). Mongolian has a few pairs like this, and context always separates them, just like \"bank\" (money) and \"bank\" (river) in English.",
+            "**There's a second negative form you'll hear more often in conversation: *-аагүй / -ээгүй / -оогүй / -өөгүй*.** *Яваагүй* = hasn't gone yet; *идээгүй* = hasn't eaten yet. The difference from *-сангүй* is subtle: *-сангүй* means \"didn't,\" *-аагүй* means \"not yet.\" For A1, *-сангүй* is enough, but recognize the other one, because you'll hear it often."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Telling about yesterday",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Өчигдөр юу хийсэн бэ?*",
+              "*ö-CHIG-dör yuu KHII-sen beh*",
+              "What did you do yesterday?"
+            ],
+            [
+              "*Өглөө эрт боссон.*",
+              "*ÖG-löö ert BOS-son*",
+              "I got up early in the morning."
+            ],
+            [
+              "*Ажилдаа явсан.*",
+              "*A-jil-daa YAV-san*",
+              "I went to work."
+            ],
+            [
+              "*Үдэд хоол идсэн.*",
+              "*Ü-ded khōl ID-sen*",
+              "I had lunch."
+            ],
+            [
+              "*Оройдоо гэртээ харьсан.*",
+              "*O-roi-dō GER-tē KHAR'-san*",
+              "In the evening I went home."
+            ],
+            [
+              "*Найзтайгаа уулзсан.*",
+              "*NAIDZ-tai-gaa UULDZ-san*",
+              "I met a friend."
+            ],
+            [
+              "*Кино үзсэн.*",
+              "*KI-no ÜDZ-sen*",
+              "I watched a movie."
+            ],
+            [
+              "*Эрт унтсан.*",
+              "*ert UNT-san*",
+              "I went to bed early."
+            ],
+            [
+              "*Юу ч хийсэнгүй.*",
+              "*yuu ch KHII-sen-güi*",
+              "I didn't do anything."
+            ],
+            [
+              "*Сайхан амарсан.*",
+              "*SAI-khan A-mar-san*",
+              "I had a good rest."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Notice *юу ч хийсэнгүй*, \"didn't do anything.\" Mongolian uses **question word + ч + negative** to say \"nothing,\" \"nobody,\" \"nowhere\": *хэн ч байхгүй* (there's nobody), *хаана ч яваагүй* (didn't go anywhere), *хэзээ ч үгүй* (never). It works like English \"any-\": \"not … anything,\" \"not … anywhere.\""
+        },
+        {
+          "type": "kotak",
+          "title": "Four words that link a story",
+          "items": [
+            "*дараа нь* (da-RAA n') — after that, then.",
+            "*тэгээд* (teh-GĒD) — and then, so. ⚠️ This is the one used most in conversation.",
+            "*гэхдээ* (GEKH-dē) — but.",
+            "*учир нь* (u-CHIR n') — because, the reason is."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking about the past",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Meaning",
+            "Sample answer"
+          ],
+          "rows": [
+            [
+              "*Хэзээ ирсэн бэ?*",
+              "When did you come?",
+              "*Өнгөрсөн сард ирсэн.*"
+            ],
+            [
+              "*Хаана байсан бэ?*",
+              "Where were you earlier?",
+              "*Номын санд байсан.*"
+            ],
+            [
+              "*Хэнтэй уулзсан бэ?*",
+              "Who did you meet?",
+              "*Найзтайгаа уулзсан.*"
+            ],
+            [
+              "*Юу идсэн бэ?*",
+              "What did you eat?",
+              "*Бууз идсэн.*"
+            ],
+            [
+              "*Хэд төлсөн бэ?*",
+              "How much did you pay?",
+              "*Найман мянга.*"
+            ],
+            [
+              "*Яагаад ирсэнгүй вэ?*",
+              "Why didn't you come?",
+              "*Өвчтэй байсан.*"
+            ],
+            [
+              "*Сайхан амарсан уу?*",
+              "Did you have a good rest?",
+              "*Тийм, маш сайхан.*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last row is a question you'll hear every Monday morning in Mongolia, as often as \"how are you\" on other days. A natural answer isn't just \"yes\" but one extra sentence about what you did, just as you'd answer \"How was your weekend?\" in English with a short story, not a single word."
+        }
+      ]
+    },
+    {
+      "title": "Mongolian food you'll come across",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "What it is"
+          ],
+          "rows": [
+            [
+              "*бууз*",
+              "*buudz*",
+              "Steamed dumplings filled with mutton. The national dish; a must-try."
+            ],
+            [
+              "*хуушуур*",
+              "*khuu-SHUUR*",
+              "Flat fried pastries filled with meat. Buuz's fried twin."
+            ],
+            [
+              "*цуйван*",
+              "*TSUI-van*",
+              "Stir-fried noodles with meat and vegetables. The easiest for a newcomer's palate."
+            ],
+            [
+              "*гуляш*",
+              "*GU-lyash*",
+              "Meat stir-fried with potatoes, from Russian."
+            ],
+            [
+              "*банштай цай*",
+              "*BANSH-tai tsai*",
+              "Salty milk tea with small dumplings in it."
+            ],
+            [
+              "*сүүтэй цай*",
+              "*SÜÜ-tei tsai*",
+              "⚠️ SALTY milk tea, not sweet. An everyday drink."
+            ],
+            [
+              "*айраг*",
+              "*AI-rag*",
+              "Fermented mare's milk, slightly alcoholic. Summer only."
+            ],
+            [
+              "*ааруул*",
+              "*AA-ruul*",
+              "Hard dried curd. Very sour, very hard, very Mongolian."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ One warning that saves many visitors: **Mongolian tea comes with salt, not sugar.** *Сүүтэй цай* is tea, milk, salt, and sometimes a little fat. If you ask for *цай*, that's what you'll get. For sweet tea, ask for *хар цай* (black tea) and add sugar yourself."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "mn": "өчигдөр",
+      "baca": "ö-CHIG-dör",
+      "en": "yesterday"
+    },
+    {
+      "mn": "өнгөрсөн",
+      "baca": "ÖN-gör-sön",
+      "en": "past, last"
+    },
+    {
+      "mn": "амралт",
+      "baca": "AM-ralt",
+      "en": "rest, day off"
+    },
+    {
+      "mn": "гарах",
+      "baca": "GA-rakh",
+      "en": "to go out"
+    },
+    {
+      "mn": "харих",
+      "baca": "KHA-rikh",
+      "en": "to go home"
+    },
+    {
+      "mn": "төлөх",
+      "baca": "TÖ-lökh",
+      "en": "to pay"
+    },
+    {
+      "mn": "барих",
+      "baca": "BA-rikh",
+      "en": "to hold; to take (a taxi)"
+    },
+    {
+      "mn": "алдах",
+      "baca": "AL-dakh",
+      "en": "to lose, to miss"
+    },
+    {
+      "mn": "бууз",
+      "baca": "buudz",
+      "en": "Mongolian steamed dumplings"
+    },
+    {
+      "mn": "хуушуур",
+      "baca": "khuu-SHUUR",
+      "en": "fried meat pastry"
+    },
+    {
+      "mn": "цуйван",
+      "baca": "TSUI-van",
+      "en": "stir-fried noodles"
+    },
+    {
+      "mn": "амттай",
+      "baca": "AMT-tai",
+      "en": "delicious"
+    },
+    {
+      "mn": "тэгээд",
+      "baca": "teh-GĒD",
+      "en": "and then, so"
+    },
+    {
+      "mn": "гэхдээ",
+      "baca": "GEKH-dē",
+      "en": "but"
+    },
+    {
+      "mn": "дараа нь",
+      "baca": "da-RAA n'",
+      "en": "after that"
+    },
+    {
+      "mn": "учир нь",
+      "baca": "u-CHIR n'",
+      "en": "because"
+    },
+    {
+      "mn": "харин",
+      "baca": "KHA-rin",
+      "en": "instead, actually"
+    },
+    {
+      "mn": "орчим",
+      "baca": "OR-chim",
+      "en": "about, roughly"
+    },
+    {
+      "mn": "өдөржин",
+      "baca": "Ö-dör-jin",
+      "en": "all day"
+    },
+    {
+      "mn": "тухай",
+      "baca": "TU-khai",
+      "en": "about (a topic)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mongolian.",
+      "items": [
+        "Yesterday I went to the museum.",
+        "I ate buuz.",
+        "On Sunday I rested at home.",
+        "I didn't go out.",
+        "Who did you meet?",
+        "How much did you pay?"
+      ]
+    },
+    {
+      "prompt": "Fill in the past form -сан, -сэн, -сон, or -сөн.",
+      "items": [
+        "Би өчигдөр яв____.",
+        "Тэр ном унш____.",
+        "Бид хоол ид____.",
+        "Чи хэзээ ир____ бэ?",
+        "Тэр надад ном өг____.",
+        "Би зургаан цагт бос____."
+      ]
+    },
+    {
+      "prompt": "Change into the negative past form.",
+      "items": [
+        "Би явсан.",
+        "Тэр ирсэн.",
+        "Бид идсэн.",
+        "Чи уншсан.",
+        "Тэд үзсэн.",
+        "Би гарсан."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "үзсэн / музей / өчигдөр / би",
+        "идсэн / бууз / би",
+        "амарсан / гэртээ / би / гарагт / ням",
+        "бэ / уулзсан / хэнтэй / чи",
+        "байлаа / үнэтэй / их"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Өчигдөр би музей үзсэн. — Би бууз идсэн. — Ням гарагт би гэртээ амарсан. — Би гарсангүй. — Хэнтэй уулзсан бэ? — Хэд төлсөн бэ?",
+    "1": "сан — сан — сэн — сэн — сөн — сон",
+    "2": "Би явсангүй. — Тэр ирсэнгүй. — Бид идсэнгүй. — Чи уншсангүй. — Тэд үзсэнгүй. — Би гарсангүй.",
+    "3": "Өчигдөр би музей үзсэн. — Би бууз идсэн. — Ням гарагт би гэртээ амарсан. — Чи хэнтэй уулзсан бэ? — Их үнэтэй байлаа."
+  }
+}

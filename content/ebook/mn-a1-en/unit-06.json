@@ -1,0 +1,716 @@
+{
+  "title": "The verb stands at the end",
+  "title_target": "Үйл үг өгүүлбэрийн төгсгөлд",
+  "goal": "Mastering the first verb form — *-на / -нэ / -но / -нө* — and training your ear to a word order that is the reverse of English.",
+  "bekal": [
+    "build full sentences with the verb at the end",
+    "use the *-на* form for habits, present situations, and plans",
+    "tell *-на* apart from *-ж байна*, which means \"right now, at this moment\""
+  ],
+  "dialogs": [
+    {
+      "title": "Яриа — Өдөр бүр юу хийдэг вэ?",
+      "intro": "Sarnai and Budi chat in the campus cafeteria about how their days go.",
+      "lines": [
+        {
+          "speaker": "Сарнай:",
+          "text": "[Буди|BU-di], [чи|chi] [өглөө|ÖG-löö] [хэдэн|KHEH-den] [цагт|tsagt] [босдог|BOS-dog] [вэ|veh]?",
+          "id": "Budi, what time do you get up in the morning?",
+          "literal": "Budi, you morning how-many hour-at get-up-usually Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Долоон|Do-LŌN] [цагт|tsagt] [босдог|BOS-dog]. [Дараа|Da-RAA] [нь|n'] [цай|tsai] [уудаг|UU-dag].",
+          "id": "At seven. Then I drink tea.",
+          "literal": "seven hour-at get-up-usually. after -the tea drink-usually."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Өглөөний|ÖG-löö-nii] [хоол|khōl] [иддэг|ID-deg] [үү|üü]?",
+          "id": "Do you eat breakfast?",
+          "literal": "morning's food eat-usually Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Заримдаа|DZA-rim-daa]. [Ихэвчлэн|I-khev-chlen] [цай|tsai] [л|l] [уугаад|UU-gaad] [явна|YAV-na].",
+          "id": "Sometimes. Usually I just drink tea and go.",
+          "literal": "sometimes. usually tea only drink-after go."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Сургуульд|Sur-GUUL'D] [яаж|yaaj] [явдаг|YAV-dag] [вэ|veh]?",
+          "id": "How do you get to campus?",
+          "literal": "school-to how go-usually Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Автобусаар|Av-TO-bu-saar] [явна|YAV-na]. [Хорин|KHO-rin] [минут|mi-NUT] [болно|BOL-no].",
+          "id": "By bus. It takes twenty minutes.",
+          "literal": "bus-by go. twenty minute becomes."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Оройдоо|O-roi-dō] [юу|yuu] [хийдэг|KHII-deg] [вэ|veh]?",
+          "id": "What do you usually do in the evening?",
+          "literal": "evening-in-own what do-usually Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Гэртээ|GER-tē] [ном|nom] [уншина|UN-shi-na]. [Заримдаа|DZA-rim-daa] [кино|KI-no] [үзнэ|ÜDZ-neh].",
+          "id": "I read books at home. Sometimes I watch a movie.",
+          "literal": "home-at-own book read. sometimes movie watch."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Одоо|O-dō] [юу|yuu] [хийж|khiij] [байна|BAI-n]?",
+          "id": "What are you doing right now?",
+          "literal": "now what do-ing is?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Одоо|O-dō] [би|bi] [цай|tsai] [ууж|uuj] [байна|BAI-n]. [Мөн|Mön] [чамтай|CHAM-tai] [ярьж|yar'j] [байна|BAI-n].",
+          "id": "Right now I'm drinking tea. And talking with you.",
+          "literal": "now I tea drink-ing is. also you-with talk-ing is."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Маргааш|Mar-GAASH] [юу|yuu] [хийх|khiikh] [вэ|veh]?",
+          "id": "What are you doing tomorrow?",
+          "literal": "tomorrow what do Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Маргааш|Mar-GAASH] [музей|mu-ZEY] [рүү|rüü] [явна|YAV-na]. [Чи|Chi] [ирэх|i-REKH] [үү|üü]?",
+          "id": "Tomorrow I'm going to the museum. Will you come?",
+          "literal": "tomorrow museum to go. you come Q?"
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[Маргааш|Mar-GAASH] [би|bi] [ажиллана|A-jil-la-na]. [Бямбад|BYAM-bad] [болох|BO-lokh] [уу|uu]?",
+          "id": "Tomorrow I work. Is Saturday OK?",
+          "literal": "tomorrow I work. Saturday-on may Q?"
+        },
+        {
+          "speaker": "Буди:",
+          "text": "[Болно|BOL-no]. [Бямбад|BYAM-bad] [уулзана|UUL-dza-na].",
+          "id": "Yes. Let's meet on Saturday.",
+          "literal": "may. Saturday-on meet."
+        },
+        {
+          "speaker": "Сарнай:",
+          "text": "[За|Dza], [тэгье|TEG-yeh]. [Би|Bi] [одоо|o-dō] [хичээлд|khi-CHĒLD] [орно|OR-no].",
+          "id": "OK, that's settled. I'm going to class now.",
+          "literal": "OK, let's-so. I now lesson-to enter."
+        }
+      ],
+      "notes": [
+        "⚠️ **The Mongolian verb always comes last.** Notice that in the fourteen lines of this dialogue, not a single sentence ends with a noun. English says \"I drink tea\"; Mongolian says \"I tea drink\". The sentence can't be understood until you reach the end — and that is the listening habit that takes longest to build.",
+        "**The -на / -нэ / -но / -нө form covers three things at once: habits, present situations, and plans.** *Би автобусаар явна* can mean \"I usually take the bus\", \"I take the bus\", or \"I will take the bus\". English does something similar — \"I'm taking the bus\" can be now or tomorrow. **Mongolian has no separate future tense**; context does the work.",
+        "**The -даг / -дэг / -дог / -дөг form stresses habit.** *Уншдаг* = \"usually reads\", *явдаг* = \"usually goes\". The difference from *-на* is slight: *-даг* stresses routine, *-на* is neutral. When in doubt, use *-на*.",
+        "**The -ж / -ч байна form means \"right now, at this moment\".** *Ууж байна* = is drinking. ⚠️ This is the one place Mongolian really separates \"right now\" from \"usually\", and the line is sharp — don't use it for habits.",
+        "**Гэртээ and оройдоо use the suffix -даа / -дээ / -доо / -дөө**, meaning \"one's own …\": *гэртээ* = at one's own home, *оройдоо* = in the evening (of one's day). This suffix is covered in unit 17. For now, accept it as one chunk."
+      ],
+      "grammars": [
+        {
+          "title": "Word order: SOV, and why it makes sense",
+          "body": [
+            "English orders **Subject – Verb – Object**. Mongolian orders **Subject – Object – Verb**. All the extra information — time, place, manner — stands before the verb, and its order among itself is fairly free."
+          ],
+          "table": {
+            "head": [
+              "English",
+              "Монгол",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "I drink tea.",
+                "*Би цай уудаг.*",
+                "I tea drink-usually"
+              ],
+              [
+                "I read books at home.",
+                "*Би гэртээ ном уншдаг.*",
+                "I home-at book read-usually"
+              ],
+              [
+                "Tomorrow I'm going to the museum.",
+                "*Маргааш би музей рүү явна.*",
+                "tomorrow I museum to go"
+              ],
+              [
+                "I take the bus to school.",
+                "*Би автобусаар сургуульд явна.*",
+                "I bus-by school-to go"
+              ],
+              [
+                "She speaks Mongolian well.",
+                "*Тэр монголоор сайн ярьдаг.*",
+                "she Mongolian-in well speak-usually"
+              ]
+            ]
+          },
+          "after": [
+            "**The way to practice is not memorizing rules but flipping English sentences out loud.** Take your own sentence, move the verb to the end, and say it. \"I eat rice at home\" → \"I at home rice eat\". Do it ten times a day for a week and the habit is set.",
+            "⚠️ One consequence that often surprises people: **the question word doesn't move to the front.** *Чи юу хийж байна?* — literally \"you what do-ing?\", not \"what are you doing\". The question word stands exactly where its answer will stand. English does this in echo questions (\"You're doing what?\"), so the pattern isn't entirely foreign."
+          ]
+        },
+        {
+          "title": "Forming -на and its relatives",
+          "body": [
+            "From the dictionary form ending in **-х**, drop the *-х*, then add **-на / -нэ / -но / -нө** following vowel harmony. That's all — nothing changes for the person."
+          ],
+          "table": {
+            "head": [
+              "Dictionary form",
+              "Vowel",
+              "Now/later",
+              "Habit",
+              "Right now",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*явах*",
+                "а",
+                "*явна*",
+                "*явдаг*",
+                "*явж байна*",
+                "go"
+              ],
+              [
+                "*ирэх*",
+                "э",
+                "*ирнэ*",
+                "*ирдэг*",
+                "*ирж байна*",
+                "come"
+              ],
+              [
+                "*унших*",
+                "и/а",
+                "*уншина*",
+                "*уншдаг*",
+                "*уншиж байна*",
+                "read"
+              ],
+              [
+                "*үзэх*",
+                "ү/э",
+                "*үзнэ*",
+                "*үздэг*",
+                "*үзэж байна*",
+                "watch"
+              ],
+              [
+                "*уух*",
+                "у",
+                "*ууна*",
+                "*уудаг*",
+                "*ууж байна*",
+                "drink"
+              ],
+              [
+                "*идэх*",
+                "э",
+                "*иднэ*",
+                "*иддэг*",
+                "*идэж байна*",
+                "eat"
+              ],
+              [
+                "*орох*",
+                "о",
+                "*орно*",
+                "*ордог*",
+                "*орж байна*",
+                "enter"
+              ],
+              [
+                "*өгөх*",
+                "ө",
+                "*өгнө*",
+                "*өгдөг*",
+                "*өгч байна*",
+                "give"
+              ],
+              [
+                "*хийх*",
+                "и",
+                "*хийнэ*",
+                "*хийдэг*",
+                "*хийж байна*",
+                "do"
+              ],
+              [
+                "*ажиллах*",
+                "а",
+                "*ажиллана*",
+                "*ажилладаг*",
+                "*ажиллаж байна*",
+                "work"
+              ]
+            ]
+          },
+          "after": [
+            "Look at the second column: the suffix vowel **always** follows the last vowel of the base. *Явах* is back-group → *явна*; *ирэх* is front-group → *ирнэ*; *орох* has *о* → *орно*; *өгөх* has *ө* → *өгнө*. There are no exceptions you need to learn at A1.",
+            "⚠️ For the *-ж байна* form, some verbs take **-ч** instead of *-ж*: after *в, г, р, с* and after long vowels. *Өгөх* → *өгч байна*, not *өгж байна*. Say it aloud and you'll choose correctly — *өгж* really is hard to pronounce."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The twenty most common verbs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Dictionary form",
+            "Say it",
+            "Now",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*байх*",
+              "*BAI-kh*",
+              "*байна*",
+              "to be, to be located"
+            ],
+            [
+              "*явах*",
+              "*ya-VAKH*",
+              "*явна*",
+              "to go"
+            ],
+            [
+              "*ирэх*",
+              "*i-REKH*",
+              "*ирнэ*",
+              "to come"
+            ],
+            [
+              "*идэх*",
+              "*i-DEKH*",
+              "*иднэ*",
+              "to eat"
+            ],
+            [
+              "*уух*",
+              "*UUKH*",
+              "*ууна*",
+              "to drink"
+            ],
+            [
+              "*хийх*",
+              "*KHIIKH*",
+              "*хийнэ*",
+              "to do, to make"
+            ],
+            [
+              "*үзэх*",
+              "*ü-DZEKH*",
+              "*үзнэ*",
+              "to look, to watch"
+            ],
+            [
+              "*унших*",
+              "*un-SHIKH*",
+              "*уншина*",
+              "to read"
+            ],
+            [
+              "*бичих*",
+              "*bi-CHIKH*",
+              "*бичнэ*",
+              "to write"
+            ],
+            [
+              "*ярих*",
+              "*ya-RIKH*",
+              "*ярина*",
+              "to speak"
+            ],
+            [
+              "*сонсох*",
+              "*SON-sokh*",
+              "*сонсоно*",
+              "to hear, to listen"
+            ],
+            [
+              "*мэдэх*",
+              "*meh-DEKH*",
+              "*мэднэ*",
+              "to know"
+            ],
+            [
+              "*ойлгох*",
+              "*OIL-gokh*",
+              "*ойлгоно*",
+              "to understand"
+            ],
+            [
+              "*өгөх*",
+              "*ö-GÖKH*",
+              "*өгнө*",
+              "to give"
+            ],
+            [
+              "*авах*",
+              "*a-VAKH*",
+              "*авна*",
+              "to take, to buy"
+            ],
+            [
+              "*суух*",
+              "*SUUKH*",
+              "*сууна*",
+              "to sit, to live"
+            ],
+            [
+              "*босох*",
+              "*BO-sokh*",
+              "*босно*",
+              "to get up, to stand"
+            ],
+            [
+              "*унтах*",
+              "*UN-takh*",
+              "*унтана*",
+              "to sleep"
+            ],
+            [
+              "*ажиллах*",
+              "*a-JIL-lakh*",
+              "*ажиллана*",
+              "to work"
+            ],
+            [
+              "*сурах*",
+              "*su-RAKH*",
+              "*сурна*",
+              "to study, to learn"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Notice that **every dictionary form ends in -х**. That's a very handy marker: whenever you see a word ending in *-х* in the dictionary, you know it's a verb. This form also works as a verbal noun — *унших* means both \"to read\" and \"reading\", just like English \"reading\"."
+        }
+      ]
+    },
+    {
+      "title": "Time words",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Монгол",
+            "Say it",
+            "English",
+            "Монгол",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*өнөөдөр*",
+              "*ö-NÖÖ-dör*",
+              "today",
+              "*маргааш*",
+              "*mar-GAASH*",
+              "tomorrow"
+            ],
+            [
+              "*өчигдөр*",
+              "*ö-CHIG-dör*",
+              "yesterday",
+              "*нөгөөдөр*",
+              "*NÖ-göö-dör*",
+              "the day after tomorrow"
+            ],
+            [
+              "*одоо*",
+              "*o-DŌ*",
+              "now",
+              "*дараа*",
+              "*da-RAA*",
+              "later, after"
+            ],
+            [
+              "*өглөө*",
+              "*ÖG-löö*",
+              "morning",
+              "*орой*",
+              "*o-ROI*",
+              "evening"
+            ],
+            [
+              "*өдөр*",
+              "*Ö-dör*",
+              "daytime, day",
+              "*шөнө*",
+              "*SHÖ-nö*",
+              "early morning, before dawn"
+            ],
+            [
+              "*үргэлж*",
+              "*ÜR-gelj*",
+              "always",
+              "*хэзээ ч үгүй*",
+              "*kheh-DZĒ ch Ü-güi*",
+              "never"
+            ],
+            [
+              "*ихэвчлэн*",
+              "*I-khev-chlen*",
+              "usually",
+              "*заримдаа*",
+              "*DZA-rim-daa*",
+              "sometimes"
+            ],
+            [
+              "*өдөр бүр*",
+              "*Ö-dör bür*",
+              "every day",
+              "*долоо хоногт*",
+              "*do-LŌ kho-NOGT*",
+              "once a week"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Time words almost always stand **at the start of the sentence**, before the subject: *Маргааш би музей рүү явна.* Putting them elsewhere isn't wrong, but the start is the most natural spot — just as in English \"Tomorrow I'm going to the museum\"."
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Долоо хоног = week, literally \"seven nights\"",
+          "items": [
+            "*хоног* means \"one full day-and-night cycle\", twenty-four whole hours. English has no everyday word for this — the old word \"nychthemeron\" is all we have.",
+            "*Долоо хоног* (seven khonog) = one week. *Хоёр долоо хоног* = two weeks.",
+            "*сар* = month. *жил* = year.",
+            "*Гурван хоног болно* = \"it takes three days\" — used for duration, not for dates."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Flipping sentences: ear training",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This isn't a table to glance at but one to read aloud from top to bottom, twice. Read the English column, cover the other two, then say the Mongolian before you look. Ten minutes a day for a week is enough."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Монгол"
+          ],
+          "rows": [
+            [
+              "I eat.",
+              "*Би иднэ.*"
+            ],
+            [
+              "I eat meat.",
+              "*Би мах иднэ.*"
+            ],
+            [
+              "I eat meat at home.",
+              "*Би гэртээ мах иднэ.*"
+            ],
+            [
+              "In the evening I eat meat at home.",
+              "*Орой би гэртээ мах иднэ.*"
+            ],
+            [
+              "She reads a book.",
+              "*Тэр ном уншина.*"
+            ],
+            [
+              "She reads a book every day.",
+              "*Тэр өдөр бүр ном уншина.*"
+            ],
+            [
+              "We go to the market.",
+              "*Бид зах руу явна.*"
+            ],
+            [
+              "Tomorrow we're taking the bus to the market.",
+              "*Маргааш бид автобусаар зах руу явна.*"
+            ],
+            [
+              "What are you doing?",
+              "*Чи юу хийж байна?*"
+            ],
+            [
+              "I'm studying Mongolian.",
+              "*Би монгол хэл сурч байна.*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Watch how the sentence grows: the verb never leaves the end, and every addition slips in **in front of it**. This is the most useful mental picture for Mongolian — **the verb is the wall at the end of the room, and everything else lines up facing it.**"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "mn": "хийх",
+      "baca": "KHIIKH",
+      "en": "to do, to make"
+    },
+    {
+      "mn": "унших",
+      "baca": "un-SHIKH",
+      "en": "to read"
+    },
+    {
+      "mn": "бичих",
+      "baca": "bi-CHIKH",
+      "en": "to write"
+    },
+    {
+      "mn": "идэх",
+      "baca": "i-DEKH",
+      "en": "to eat"
+    },
+    {
+      "mn": "уух",
+      "baca": "UUKH",
+      "en": "to drink"
+    },
+    {
+      "mn": "үзэх",
+      "baca": "ü-DZEKH",
+      "en": "to look, to watch"
+    },
+    {
+      "mn": "босох",
+      "baca": "BO-sokh",
+      "en": "to get up, to stand"
+    },
+    {
+      "mn": "унтах",
+      "baca": "UN-takh",
+      "en": "to sleep"
+    },
+    {
+      "mn": "суух",
+      "baca": "SUUKH",
+      "en": "to sit, to live"
+    },
+    {
+      "mn": "сурах",
+      "baca": "su-RAKH",
+      "en": "to study, to learn"
+    },
+    {
+      "mn": "уулзах",
+      "baca": "UUL-dzakh",
+      "en": "to meet"
+    },
+    {
+      "mn": "орох",
+      "baca": "O-rokh",
+      "en": "to enter"
+    },
+    {
+      "mn": "цай",
+      "baca": "tsai",
+      "en": "tea"
+    },
+    {
+      "mn": "хоол",
+      "baca": "khōl",
+      "en": "food, meal"
+    },
+    {
+      "mn": "кино",
+      "baca": "KI-no",
+      "en": "film, movie"
+    },
+    {
+      "mn": "одоо",
+      "baca": "o-DŌ",
+      "en": "now"
+    },
+    {
+      "mn": "ихэвчлэн",
+      "baca": "I-khev-chlen",
+      "en": "usually"
+    },
+    {
+      "mn": "заримдаа",
+      "baca": "DZA-rim-daa",
+      "en": "sometimes"
+    },
+    {
+      "mn": "өдөр бүр",
+      "baca": "Ö-dör bür",
+      "en": "every day"
+    },
+    {
+      "mn": "долоо хоног",
+      "baca": "do-LŌ kho-NOG",
+      "en": "⚠️ week (7 days)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Mongolian.",
+      "items": [
+        "I drink tea.",
+        "She reads a book at home.",
+        "Tomorrow I'm going to the market.",
+        "Right now I'm studying.",
+        "I take the bus every day.",
+        "What are you doing?"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with -на, -нэ, -но, or -нө.",
+      "items": [
+        "Би маргааш яв____.",
+        "Тэр ном унши____.",
+        "Бид цай уу____.",
+        "Чи хэзээ ир____?",
+        "Тэр надад ном өг____.",
+        "Би хичээлд ор____."
+      ]
+    },
+    {
+      "prompt": "Change into the \"right now\" form with -ж байна or -ч байна.",
+      "items": [
+        "Би цай ууна.",
+        "Тэр ном уншина.",
+        "Бид хоол иднэ.",
+        "Чи юу хийнэ?",
+        "Тэд кино үзнэ.",
+        "Би монгол хэл сурна."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "уудаг / цай / би",
+        "уншина / ном / тэр / гэртээ",
+        "явна / зах / маргааш / руу / би",
+        "байна / сурч / хэл / би / монгол",
+        "вэ / байна / юу / чи / хийж"
+      ]
+    }
+  ],
+  "answers": {
+    "0": "Би цай ууна. — Тэр гэртээ ном уншина. — Маргааш би зах руу явна. — Одоо би сурч байна. — Өдөр бүр би автобусаар явна. — Чи юу хийж байна?",
+    "1": "на — на — на — нэ — нө — но",
+    "2": "Би цай ууж байна. — Тэр ном уншиж байна. — Бид хоол идэж байна. — Чи юу хийж байна? — Тэд кино үзэж байна. — Би монгол хэл сурч байна.",
+    "3": "Би цай уудаг. — Тэр гэртээ ном уншина. — Маргааш би зах руу явна. — Би монгол хэл сурч байна. — Чи юу хийж байна?"
+  }
+}
