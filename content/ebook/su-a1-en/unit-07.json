@@ -1,0 +1,558 @@
+{
+  "title": "Eating: food stalls, restaurants, and Sundanese cooking",
+  "title_target": "Dahar: warung, rumah makan, jeung masakan Sunda",
+  "goal": "Order food, describe tastes and cooking methods, and understand Sundanese table manners — including the raw vegetables and chili sauce that go with every meal.",
+  "bekal": [
+    "order at a food stall or restaurant at the right speech level",
+    "the names of Sundanese dishes and how they are cooked",
+    "taste words: *amis*, *asin*, *haseum*, *pait*, *lada*, *ngeunah*"
+  ],
+  "dialogs": [
+    {
+      "title": "Paguneman — At a Sundanese restaurant",
+      "intro": "Midday at a Sundanese restaurant in Setiabudi. Rani and Sari sit on the floor mats in a *saung*, a little bamboo hut. A waiter comes over with the menu.",
+      "lines": [
+        {
+          "speaker": "Pelayan:",
+          "text": "Wilujeng sumping. Badé tuang naon, Téh?",
+          "id": "Welcome. What would you like to eat?",
+          "literal": "welcome. will eat what, Téh?"
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Abdi mah nasi timbel komplit hiji.",
+          "id": "One nasi timbel with everything for me.",
+          "literal": "I [mah] rice timbel complete one."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Abdi… naon nya nu teu lada teuing?",
+          "id": "And I'll have… what isn't too spicy?",
+          "literal": "I… what [nya] which not spicy too?"
+        },
+        {
+          "speaker": "Pelayan:",
+          "text": "Aya pepes lauk, Téh. Éta mah teu lada. Atawa ayam bakakak.",
+          "id": "There's pepes lauk — that's not spicy. Or ayam bakakak.",
+          "literal": "there-is pepes fish, Téh. that [mah] not spicy. or chicken bakakak."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Pepes lauk waé atuh. Sareng cai hérang.",
+          "id": "The pepes lauk, then. And plain water.",
+          "literal": "pepes fish just atuh. and water clear."
+        },
+        {
+          "speaker": "Pelayan:",
+          "text": "Lalabna kumaha, Téh? Diasupkeun sadayana?",
+          "id": "And the lalab? Shall I bring all of it?",
+          "literal": "lalab-the how, Téh? put-in all?"
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Lalab téh naon nya?",
+          "id": "What is lalab?",
+          "literal": "lalab [téh] what [nya]?"
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Sayuran seger, teu dipasak. Dahar jeung sambel. Wajib, Téh.",
+          "id": "Fresh vegetables, uncooked. You eat them with sambal. A must.",
+          "literal": "vegetables fresh, not cooked. eat with sambal. must, Téh."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Atah pisan kitu? Kuring can pernah…",
+          "id": "Completely raw? I've never…",
+          "literal": "raw very like-that? I never-yet…"
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Cobian heula sakeudik. Ulah loba sambelna, sok lada.",
+          "id": "Try a little first. Go easy on the sambal, it's hot.",
+          "literal": "try first a-little. don't much sambal-the, tends spicy."
+        },
+        {
+          "speaker": "Pelayan:",
+          "text": "Sambelna sambel dadak, Téh. Enggal disayogikeun.",
+          "id": "It's sambel dadak. We'll have it ready right away.",
+          "literal": "sambal-the sambal sudden, Téh. right-away prepared."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Mangga. Hatur nuhun.",
+          "id": "Please. Thank you.",
+          "literal": "please. thank-you."
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Engké ari tos ngeunah mah, Téh moal daék dahar tanpa lalab deui.",
+          "id": "Once you get a taste for it, you'll never want to eat without lalab again.",
+          "literal": "later when already tasty [mah], Téh won't willing eat without lalab again."
+        }
+      ],
+      "notes": [
+        "**Lada** = spicy (hot). ⚠️ In Indonesian *lada* is the name of a spice (pepper); in Sundanese it is an adjective. *Teu lada* = not spicy. The Indonesian word *pedas* isn't used.",
+        "**Ngeunah** = tasty, delicious. It's the main praise for food, and is also used for comfort in general: *ngeunah saré* = sleeping well. The lemes form is **raos**. The opposite is **teu ngeunah** or **hambar** (bland).",
+        "**Atah** = raw. The opposite is **asak** (cooked, ripe). For meat that's half done: *satengah asak*.",
+        "**Cai hérang** literally means \"clear water\" and is plain drinking water — the most common drink order. **Cai téh** = tea, **cai kalapa** = coconut water, **cai jeruk** = fresh orange juice.",
+        "**Lalab** (or *lalapan*) is raw vegetables served with sambal, and it isn't a garnish but a fixed part of a Sundanese meal. Typically: cucumber, lemon basil, boiled cassava leaves, small round eggplants, long beans, watercress. Refusing lalab is fine, but you'll be asked why.",
+        "**Sambel dadak** = sambal (chili sauce) ground fresh on the spot, in front of you, in a stone mortar. *Dadak* means sudden, made on the spot. It's the mark of a serious Sundanese restaurant.",
+        "**Enggal** = right away (lemes); loma: **buru-buru** or **gancang**. *Enggal disayogikeun* = it will be prepared right away."
+      ],
+      "grammars": [
+        {
+          "title": "Cooking methods: one word, one technique",
+          "body": [
+            "Sundanese has a separate verb for almost every way of cooking, and dish names are often taken straight from those verbs. Recognize the pattern and you can read a menu without asking."
+          ],
+          "table": {
+            "head": [
+              "Verb",
+              "Technique",
+              "Dish name",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**ngagoréng**",
+                "to fry",
+                "*goréngan*",
+                "hayam goréng"
+              ],
+              [
+                "**ngaduruk / ngabakar**",
+                "to grill, burn",
+                "*bakakak*",
+                "ayam bakakak"
+              ],
+              [
+                "**mais / mepes**",
+                "to wrap in leaves and steam",
+                "*pais / pepes*",
+                "pepes lauk"
+              ],
+              [
+                "**ngukus**",
+                "to steam",
+                "*kukusan*",
+                "sampeu kukus"
+              ],
+              [
+                "**ngasak / nyangu**",
+                "to cook rice",
+                "*sangu*",
+                "sangu liwet"
+              ],
+              [
+                "**ngulek**",
+                "to grind in a mortar",
+                "*sambel*",
+                "sambel dadak"
+              ],
+              [
+                "**nyeupan**",
+                "to steam in a rice steamer",
+                "*seupan*",
+                "seupan cau"
+              ],
+              [
+                "**ngaliwet**",
+                "to cook rice with spices & coconut milk",
+                "*liwet*",
+                "nasi liwet"
+              ],
+              [
+                "**ngagéhan / nyeungeut**",
+                "to stir-fry",
+                "*tumis*",
+                "tumis kangkung"
+              ]
+            ]
+          },
+          "after": [
+            "Notice the prefix **N-**, which changes shape to match the first letter of the root: *goréng* → **ngagoréng**, *pais* → **mais**, *kukus* → **ngukus**, *sangu* → **nyangu**. This is how Sundanese forms active verbs, covered fully in Unit 10 — for now, just recognize it.",
+            "⚠️ **Pais** and **pepes** are the same word; *pepes* is the form better known outside West Java. In Sundanese-speaking restaurants you'll see *pais lauk* (fish), *pais oncom*, *pais jamur* (mushroom)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Ordering food",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "Ordering phrases",
+          "items": [
+            "**Badé tuang naon?** — What would you like to eat? (asked of you)",
+            "**Abdi badé neda ____.** — I'd like to eat ____. (about yourself)",
+            "**Aya naon waé di dieu?** — What do you have here?",
+            "**Nu teu lada aya?** — Is there anything that isn't spicy?",
+            "**Sambelna misah waé.** — The sambal on the side, please.",
+            "**Tambih sangu sakedik.** — A little more rice, please. (*tambih* = add, lemes)",
+            "**Sadayana sabaraha?** — How much is it altogether?",
+            "**Punten, tiasa bungkus?** — Excuse me, can I get it to take away?"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Look again at the golden rule from Unit 3, because it gets tested most at the table. The waiter asks you *badé tuang naon?* — column 3, because you are the one being honored. You answer with column 2: *abdi badé neda…*. Answering *abdi badé tuang* is a mistake everyone will hear at once."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Taste",
+            "Meaning",
+            "Taste",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**amis**",
+              "sweet ⚠️",
+              "**lada**",
+              "spicy ⚠️"
+            ],
+            [
+              "**asin**",
+              "salty",
+              "**pait**",
+              "bitter"
+            ],
+            [
+              "**haseum**",
+              "sour",
+              "**peuheur**",
+              "astringent"
+            ],
+            [
+              "**ngeunah / raos**",
+              "tasty",
+              "**hambar**",
+              "bland"
+            ],
+            [
+              "**seuseur**",
+              "oily, rich",
+              "**gurih**",
+              "savory"
+            ],
+            [
+              "**tiis**",
+              "cold",
+              "**panas**",
+              "hot (temperature)"
+            ],
+            [
+              "**haneut**",
+              "warm",
+              "**seger**",
+              "fresh, refreshing"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Sundanese dishes worth knowing",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Name",
+            "What it is",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "**nasi timbel**",
+              "rice wrapped in banana leaf",
+              "usually *komplit*: chicken, tofu, tempeh, lalab, sambal"
+            ],
+            [
+              "**nasi liwet**",
+              "rice cooked with coconut milk & spices",
+              "shared, eaten straight from the pot"
+            ],
+            [
+              "**karedok**",
+              "**raw** vegetables with peanut sauce",
+              "unlike gado-gado, which is boiled"
+            ],
+            [
+              "**lotek**",
+              "**boiled** vegetables with peanut sauce",
+              "closer to gado-gado"
+            ],
+            [
+              "**pepes / pais**",
+              "wrapped in leaves and steamed",
+              "filling: fish, oncom, mushrooms, tofu"
+            ],
+            [
+              "**ayam bakakak**",
+              "whole chicken split open and grilled",
+              "a feast dish"
+            ],
+            [
+              "**sayur asem**",
+              "sour vegetable soup",
+              "the sourness comes from tamarind"
+            ],
+            [
+              "**oncom**",
+              "fermented soybean or tofu pulp",
+              "typical of West Java, found nowhere else"
+            ],
+            [
+              "**tutug oncom**",
+              "rice pounded with grilled oncom",
+              "from Tasikmalaya"
+            ],
+            [
+              "**seblak**",
+              "soft crackers in spicy broth",
+              "Bandung street food; aromatic ginger (*kencur*) is a must"
+            ],
+            [
+              "**cireng, cimol, cilok**",
+              "tapioca snacks",
+              "*aci* = tapioca starch"
+            ],
+            [
+              "**comro / misro**",
+              "grated cassava filled with oncom / palm sugar",
+              "*misro* = *amis di jero* (sweet inside)"
+            ],
+            [
+              "**peuyeum**",
+              "fermented cassava",
+              "a Bandung specialty"
+            ],
+            [
+              "**surabi**",
+              "rice-flour pancake from a clay stove",
+              "savory (oncom) or sweet (palm-sugar syrup)"
+            ],
+            [
+              "**colenak**",
+              "grilled peuyeum with coconut sugar",
+              "*dicocol énak* (tasty when dipped)"
+            ],
+            [
+              "**bandrék / bajigur**",
+              "warm ginger drinks",
+              "drunk at night when it's cool"
+            ],
+            [
+              "**és cendol / és goyobod**",
+              "sweet iced drinks",
+              "Bandung specialties"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Some Sundanese food names are shortened sentences, and that is part of the fun: **comro** from *oncom di jero* (oncom inside), **misro** from *amis di jero* (sweet inside), **colenak** from *dicocol énak* (tasty when dipped), **cilok** from *aci dicolok* (skewered tapioca), **cireng** from *aci digoréng* (fried tapioca). Once you can take a name apart, you're halfway to understanding the language."
+        },
+        {
+          "type": "kotak",
+          "title": "Sundanese table manners",
+          "items": [
+            "**Mangga tuang.** — Please, eat. Said by the host; don't start before you hear it.",
+            "**Punten, ti payun.** — Excuse me, I'll go first. Said if you finish before others.",
+            "**Tos wareg, hatur nuhun.** — I'm full, thank you. (*wareg* = full)",
+            "**Ngeunah pisan!** — Delicious! Praise that is always welcome.",
+            "Eating with your right hand, without a spoon — **dahar ku leungeun** — is normal and not rude; Sundanese restaurants even provide a finger bowl for it.",
+            "To decline a second helping, **cekap, hatur nuhun** with a smile is enough. Declining twice is taken to mean you really mean it."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "su": "dahar / neda / tuang",
+      "baca": "dah-HAHR · nuh-DAH · too-AHNG",
+      "en": "eat (3 levels)"
+    },
+    {
+      "su": "nginum / ngaleueut",
+      "baca": "ngee-NOOM · ngah-leu-EUT",
+      "en": "drink"
+    },
+    {
+      "su": "sangu",
+      "baca": "sah-NGOO",
+      "en": "rice (cooked)"
+    },
+    {
+      "su": "lauk",
+      "baca": "lah-OOK",
+      "en": "fish ⚠️"
+    },
+    {
+      "su": "hayam",
+      "baca": "hah-YAHM",
+      "en": "chicken"
+    },
+    {
+      "su": "lalab",
+      "baca": "lah-LAHB",
+      "en": "raw vegetables served with a meal"
+    },
+    {
+      "su": "sambel",
+      "baca": "sahm-BUHL",
+      "en": "chili sauce"
+    },
+    {
+      "su": "lada",
+      "baca": "lah-DAH",
+      "en": "spicy ⚠️"
+    },
+    {
+      "su": "ngeunah / raos",
+      "baca": "ngeu-NAHH · rah-OHS",
+      "en": "tasty, delicious"
+    },
+    {
+      "su": "hambar",
+      "baca": "hahm-BAHR",
+      "en": "bland"
+    },
+    {
+      "su": "atah / asak",
+      "baca": "ah-TAHH · ah-SAHK",
+      "en": "raw / cooked, ripe"
+    },
+    {
+      "su": "wareg",
+      "baca": "wah-RUHG",
+      "en": "full (after eating)"
+    },
+    {
+      "su": "lapar",
+      "baca": "lah-PAHR",
+      "en": "hungry"
+    },
+    {
+      "su": "hanaang",
+      "baca": "hah-nah-AHNG",
+      "en": "thirsty"
+    },
+    {
+      "su": "cai hérang",
+      "baca": "chah-EE heh-RAHNG",
+      "en": "plain water"
+    },
+    {
+      "su": "ngagoréng",
+      "baca": "ngah-goh-REHNG",
+      "en": "to fry"
+    },
+    {
+      "su": "mais / mepes",
+      "baca": "mah-EES · muh-PUHS",
+      "en": "to wrap in leaves and steam"
+    },
+    {
+      "su": "ngukus",
+      "baca": "ngoo-KOOS",
+      "en": "to steam"
+    },
+    {
+      "su": "ngulek",
+      "baca": "ngoo-LUHK",
+      "en": "to grind in a mortar"
+    },
+    {
+      "su": "ngaliwet",
+      "baca": "ngah-lee-WUHT",
+      "en": "to cook nasi liwet"
+    },
+    {
+      "su": "tambih / tambah",
+      "baca": "tahm-BEEH · tahm-BAHH",
+      "en": "to add, more"
+    },
+    {
+      "su": "misah",
+      "baca": "mee-SAHH",
+      "en": "separate, on the side"
+    },
+    {
+      "su": "bungkus",
+      "baca": "boong-KOOS",
+      "en": "to wrap; packet"
+    },
+    {
+      "su": "enggal / gancang",
+      "baca": "uhng-GAHL · gahn-CHAHNG",
+      "en": "right away, quickly"
+    },
+    {
+      "su": "cobian / cobi",
+      "baca": "choh-bee-AHN · CHOH-bee",
+      "en": "try (lemes)"
+    },
+    {
+      "su": "moal",
+      "baca": "moh-AHL",
+      "en": "will not"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right taste word.",
+      "items": [
+        "The sambal sets your tongue on fire: ____",
+        "Peuyeum tastes like sugar: ____",
+        "Sayur asem tastes: ____",
+        "Food without salt: ____",
+        "Praise for a delicious dish: ____",
+        "You can't eat another bite: ____"
+      ]
+    },
+    {
+      "prompt": "What is the name of this Sundanese dish?",
+      "items": [
+        "Raw vegetables with peanut sauce: ____",
+        "Rice wrapped in banana leaf: ____",
+        "Fish wrapped in leaves and steamed: ____",
+        "Grated cassava filled with oncom: ____",
+        "Bandung's fermented cassava: ____",
+        "Soft crackers in a spicy ginger broth: ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Sundanese at the right level.",
+      "items": [
+        "I'd like to eat the pepes fish. (to the waiter)",
+        "Is there anything that isn't spicy?",
+        "The sambal on the side, please.",
+        "How much is it altogether?",
+        "I'm full, thank you.",
+        "It's delicious, ma'am!"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "naon / badé / tuang / ?",
+        "lada / nu / aya / teu / ?",
+        "waé / misah / sambelna",
+        "nuhun / wareg / hatur / tos",
+        "bungkus / punten / tiasa / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "lada — amis — haseum — hambar — ngeunah/raos — wareg",
+    "karedok — nasi timbel — pepes/pais lauk — comro — peuyeum — seblak",
+    "Abdi badé neda pepes lauk. — Nu teu lada aya? — Sambelna misah waé. — Sadayana sabaraha? — Tos wareg, hatur nuhun. — Ngeunah pisan, Bu!",
+    "Badé tuang naon? — Aya nu teu lada? — Sambelna misah waé. — Tos wareg, hatur nuhun. — Punten, tiasa bungkus?"
+  ]
+}

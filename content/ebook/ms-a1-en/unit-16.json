@@ -1,0 +1,600 @@
+{
+  "title": "Banks, phones and official business",
+  "title_target": "Nak buka akaun boleh?",
+  "goal": "Getting through the unavoidable — opening a bank account, filling in forms, buying a SIM card, and dealing with government counters.",
+  "bekal": [
+    "filling in Malaysian official forms without guessing",
+    "opening a bank account and sorting out a phone",
+    "understanding immigration terms and official documents"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — At the bank counter",
+      "intro": "Sarah needs a local bank account to receive her scholarship. She takes a queue number and waits forty minutes before she's called.",
+      "lines": [
+        {
+          "speaker": "Pegawai:",
+          "text": "Nombor sembilan puluh tiga. Ya cik, apa yang boleh saya bantu?",
+          "id": "Number ninety-three. Yes, miss, how can I help you?",
+          "literal": "number nine ten three. yes miss, what that can I help?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Saya nak buka akaun simpanan.",
+          "id": "I'd like to open a savings account.",
+          "literal": "I want open account savings."
+        },
+        {
+          "speaker": "Pegawai:",
+          "text": "Cik warganegara Malaysia?",
+          "id": "Are you a Malaysian citizen, miss?",
+          "literal": "miss citizen Malaysia?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Bukan, saya pelajar antarabangsa dari Indonesia.",
+          "id": "No, I'm an international student from Indonesia.",
+          "literal": "not, I student international from Indonesia."
+        },
+        {
+          "speaker": "Pegawai:",
+          "text": "Kalau macam tu saya perlu pasport, visa pelajar, dan surat pengesahan universiti.",
+          "id": "In that case I need your passport, student visa and a confirmation letter from the university.",
+          "literal": "if like that I need passport, visa student, and letter confirmation university."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Semua ada. Ni pasport, ni surat dari pejabat antarabangsa.",
+          "id": "I have everything. Here's my passport, here's the letter from the international office.",
+          "literal": "all have. this passport, this letter from office international."
+        },
+        {
+          "speaker": "Pegawai:",
+          "text": "Bagus. Sila isi borang ni. Guna huruf besar.",
+          "id": "Good. Please fill in this form. Use capital letters.",
+          "literal": "good. please fill form this. use letter big."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Encik, ruangan 'alamat tetap' ni maksudnya apa?",
+          "id": "Sir, what does this 'permanent address' field mean?",
+          "literal": "sir, field 'address permanent' this meaning what?"
+        },
+        {
+          "speaker": "Pegawai:",
+          "text": "Alamat rumah kekal cik kat Indonesia. Yang bawah tu alamat semasa kat Malaysia.",
+          "id": "Your permanent home address in Indonesia. The one below is your current address in Malaysia.",
+          "literal": "address house permanent miss at Indonesia. the below that address current at Malaysia."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Faham. Deposit permulaan berapa?",
+          "id": "Got it. How much is the initial deposit?",
+          "literal": "understand. deposit initial how-much?"
+        },
+        {
+          "speaker": "Pegawai:",
+          "text": "Dua puluh ringgit. Kad debit siap dalam tujuh hari bekerja.",
+          "id": "Twenty ringgit. The debit card will be ready in seven working days.",
+          "literal": "two ten ringgit. card debit ready in seven day working."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Boleh guna perbankan internet terus?",
+          "id": "Can I use online banking straight away?",
+          "literal": "can use banking internet directly?"
+        },
+        {
+          "speaker": "Pegawai:",
+          "text": "Boleh. Saya daftarkan sekali. Sila tandatangan kat sini dan sini.",
+          "id": "Yes. I'll register you at the same time. Please sign here and here.",
+          "literal": "can. I register at-once. please sign at here and here."
+        }
+      ],
+      "notes": [
+        "**Akaun** = account (from English). *Akaun simpanan* = savings account, *akaun semasa* = current (checking) account. (Indonesian says *rekening* — not used in Malaysia.)",
+        "**Pengesahan** = confirmation, verification. *Surat pengesahan* = official confirmation letter. The word family: *sah* (valid, legal), *mengesahkan* (to confirm, certify), *disahkan* (certified). Any document that needs an official stamp is *disahkan*.",
+        "**Ruangan** on a form means a **field, box** — not a physical room. *Ruangan nama* = name field. A very Malaysian use that confuses many people at first.",
+        "**Kekal** = permanent. *Alamat kekal* = permanent address; a permanent resident is a *pemastautin tetap*.",
+        "**Semasa** = current, present. *Alamat semasa* = current address, *isu semasa* = current affairs. ⚠️ It also means \"during\" (*semasa cuti* = during the holidays), so read the context. It's on every form."
+      ],
+      "grammars": [
+        {
+          "title": "Reading Malaysian official forms",
+          "body": [
+            "Almost every errand in Malaysia starts with a form (*borang*), and the terms are standard everywhere — banks, universities, immigration, hospitals. Learn this table once and you'll never get lost on any form."
+          ],
+          "table": {
+            "head": [
+              "On the form",
+              "English"
+            ],
+            "rows": [
+              [
+                "**Nama penuh**",
+                "Full name"
+              ],
+              [
+                "**No. Kad Pengenalan / No. Pasport**",
+                "ID card no. / Passport no."
+              ],
+              [
+                "**Tarikh lahir**",
+                "Date of birth"
+              ],
+              [
+                "**Tempat lahir**",
+                "Place of birth"
+              ],
+              [
+                "**Jantina**",
+                "Sex ⚠️"
+              ],
+              [
+                "**Lelaki / Perempuan**",
+                "Male / Female"
+              ],
+              [
+                "**Bangsa / Kaum**",
+                "Race, ethnic group"
+              ],
+              [
+                "**Warganegara**",
+                "Nationality"
+              ],
+              [
+                "**Agama**",
+                "Religion"
+              ],
+              [
+                "**Taraf perkahwinan**",
+                "Marital status ⚠️"
+              ],
+              [
+                "**Bujang / Berkahwin / Duda / Janda**",
+                "Single / Married / Widower or divorced man / Widow or divorced woman"
+              ],
+              [
+                "**Alamat kekal**",
+                "Permanent address"
+              ],
+              [
+                "**Alamat semasa / surat-menyurat**",
+                "Current / correspondence address"
+              ],
+              [
+                "**Poskod**",
+                "Postcode ⚠️"
+              ],
+              [
+                "**Negeri**",
+                "State ⚠️"
+              ],
+              [
+                "**No. telefon bimbit**",
+                "Mobile phone no."
+              ],
+              [
+                "**Pekerjaan / Jawatan**",
+                "Occupation / Position"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Negeri** means **state**, not \"country\". Malaysia has 13 *negeri* (Selangor, Johor, Pahang…) and 3 *Wilayah Persekutuan* (Federal Territories). \"Country\" is **negara**. If a form asks for *Negeri*, it wants the state you live in in Malaysia — not your home country.",
+            "⚠️ **Jantina** = sex, gender. It's on every Malaysian form. **Taraf** = status, level: *taraf perkahwinan* (marital status), *taraf pendidikan* (level of education), *taraf hidup* (standard of living)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Banks and money",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Malay",
+            "English"
+          ],
+          "rows": [
+            [
+              "**akaun simpanan / semasa**",
+              "savings / current account"
+            ],
+            [
+              "**baki**",
+              "balance ⚠️"
+            ],
+            [
+              "**semak baki**",
+              "check balance"
+            ],
+            [
+              "**deposit / masuk duit**",
+              "deposit money"
+            ],
+            [
+              "**keluarkan duit / pengeluaran**",
+              "withdraw cash / withdrawal"
+            ],
+            [
+              "**pindahan wang / transfer**",
+              "transfer"
+            ],
+            [
+              "**caj / yuran**",
+              "charge / fee ⚠️"
+            ],
+            [
+              "**faedah**",
+              "interest (bank) ⚠️"
+            ],
+            [
+              "**pinjaman**",
+              "loan"
+            ],
+            [
+              "**ansuran / bayaran bulanan**",
+              "installment / monthly payment"
+            ],
+            [
+              "**kad debit / kad kredit**",
+              "debit card / credit card"
+            ],
+            [
+              "**mesin ATM**",
+              "ATM"
+            ],
+            [
+              "**penyata bank**",
+              "bank statement"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Baki** = balance, remainder. *Semak baki* = check balance, *baki kredit* = remaining credit. You'll see it on every Malaysian ATM screen."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Faedah** at the bank means **interest**; in general it means **benefit**. *Kadar faedah* = interest rate. Islamic banks use completely different terms (*keuntungan* = profit, *ujrah* = fee), because interest isn't charged. **Caj** (from *charge*) = a charge, fee, and **yuran** = a fee, dues, tuition."
+        },
+        {
+          "type": "sub",
+          "text": "Phones and the internet"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Malay",
+            "English"
+          ],
+          "rows": [
+            [
+              "**telefon bimbit**",
+              "mobile phone ⚠️"
+            ],
+            [
+              "**SIM kad / kad prabayar**",
+              "SIM card / prepaid card"
+            ],
+            [
+              "**tambah nilai / top up**",
+              "top up ⚠️"
+            ],
+            [
+              "**kredit**",
+              "phone credit ⚠️"
+            ],
+            [
+              "**pakej data**",
+              "data plan"
+            ],
+            [
+              "**pascabayar / prabayar**",
+              "postpaid / prepaid"
+            ],
+            [
+              "**liputan**",
+              "coverage, signal ⚠️"
+            ],
+            [
+              "**talian**",
+              "line, network ⚠️"
+            ],
+            [
+              "**dalam talian / luar talian**",
+              "online / offline ⚠️"
+            ],
+            [
+              "**mesej / SMS**",
+              "message / SMS"
+            ],
+            [
+              "**panggilan**",
+              "phone call"
+            ],
+            [
+              "**hubungi**",
+              "contact, call"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Kredit** = phone credit. *Kredit saya dah habis* = I've run out of credit. **Dalam talian** (\"in the line\") = online — on every Malaysian government website (*permohonan dalam talian* = online application)."
+        },
+        {
+          "type": "p",
+          "text": "**Kata laluan** = password, literally \"word for passing through\". Malay coined its own word here rather than borrowing the English one."
+        }
+      ]
+    },
+    {
+      "title": "Government counters and immigration",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Malay",
+            "English"
+          ],
+          "rows": [
+            [
+              "**Jabatan Imigresen**",
+              "Immigration Department"
+            ],
+            [
+              "**pas pelajar**",
+              "student pass"
+            ],
+            [
+              "**permit kerja**",
+              "work permit"
+            ],
+            [
+              "**visa**",
+              "visa"
+            ],
+            [
+              "**pasport**",
+              "passport"
+            ],
+            [
+              "**cop masuk / keluar**",
+              "entry / exit stamp"
+            ],
+            [
+              "**tempoh sah laku**",
+              "validity period ⚠️"
+            ],
+            [
+              "**lanjutkan / perbaharui**",
+              "extend / renew"
+            ],
+            [
+              "**denda**",
+              "fine"
+            ],
+            [
+              "**Kad Pengenalan / MyKad**",
+              "identity card"
+            ],
+            [
+              "**MyKAD / MyPR / MyTentera**",
+              "types of Malaysian ID card"
+            ],
+            [
+              "**Jabatan Pendaftaran Negara**",
+              "National Registration Department"
+            ],
+            [
+              "**Balai Polis**",
+              "police station"
+            ],
+            [
+              "**laporan polis**",
+              "police report"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Tempoh sah laku** = validity period. **Tempoh** means a period of time (not \"tempo\"). *Tempoh sah laku pasport* = passport validity."
+        },
+        {
+          "type": "p",
+          "text": "**Perkhidmatan** = service. A big word family: *khidmat* (service), *berkhidmat* (to serve), *perkhidmatan awam* (public service, civil service)."
+        },
+        {
+          "type": "kotak",
+          "title": "Phrases for any counter",
+          "items": [
+            "**Saya nak urus …** — I'd like to sort out …",
+            "**Perlu dokumen apa?** — What documents do I need?",
+            "**Borang ni kena isi semua ke?** — Do I have to fill in the whole form?",
+            "**Ruangan ni maksudnya apa?** — What does this field mean?",
+            "**Berapa lama proses ni?** — How long does this take?",
+            "**Ada bayaran tak?** — Is there a fee?",
+            "**Saya kena datang balik bila?** — When do I need to come back?",
+            "**Boleh buat dalam talian tak?** — Can I do it online?"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One practical tip for every Malaysian counter: **bring copies** (photocopies) of every document, and bring the originals too. Words you'll hear: *salinan* (copy), *asal* (original), *disahkan* (certified). The full sentence: *Perlu salinan yang disahkan tak?* = \"Do you need certified copies?\""
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ms": "akaun",
+      "baca": "ah-kown",
+      "en": "account"
+    },
+    {
+      "ms": "baki",
+      "baca": "bah-kee",
+      "en": "balance, remainder ⚠️"
+    },
+    {
+      "ms": "faedah",
+      "baca": "fah-eh-dahh",
+      "en": "interest; benefit ⚠️"
+    },
+    {
+      "ms": "caj / yuran",
+      "baca": "chahj · yoo-rahn",
+      "en": "charge / fee"
+    },
+    {
+      "ms": "borang",
+      "baca": "boh-rahng",
+      "en": "form"
+    },
+    {
+      "ms": "ruangan",
+      "baca": "roo-ah-ngahn",
+      "en": "field (on a form) ⚠️"
+    },
+    {
+      "ms": "jantina",
+      "baca": "jahn-tee-nuh",
+      "en": "sex, gender ⚠️"
+    },
+    {
+      "ms": "taraf",
+      "baca": "tah-rahf",
+      "en": "status, level"
+    },
+    {
+      "ms": "bujang",
+      "baca": "boo-jahng",
+      "en": "single"
+    },
+    {
+      "ms": "kekal",
+      "baca": "kuh-kahl",
+      "en": "permanent"
+    },
+    {
+      "ms": "semasa",
+      "baca": "suh-mah-suh",
+      "en": "current; during ⚠️"
+    },
+    {
+      "ms": "negeri",
+      "baca": "nuh-guh-ree",
+      "en": "state ⚠️"
+    },
+    {
+      "ms": "poskod",
+      "baca": "pohs-kohd",
+      "en": "postcode"
+    },
+    {
+      "ms": "salinan",
+      "baca": "sah-lee-nahn",
+      "en": "copy, photocopy"
+    },
+    {
+      "ms": "telefon bimbit",
+      "baca": "teh-leh-fohn beem-beet",
+      "en": "mobile phone"
+    },
+    {
+      "ms": "kredit",
+      "baca": "kreh-deet",
+      "en": "phone credit ⚠️"
+    },
+    {
+      "ms": "liputan",
+      "baca": "lee-poo-tahn",
+      "en": "coverage, signal ⚠️"
+    },
+    {
+      "ms": "dalam talian",
+      "baca": "dah-lahm tah-lee-ahn",
+      "en": "online ⚠️"
+    },
+    {
+      "ms": "kata laluan",
+      "baca": "kah-tuh lah-loo-ahn",
+      "en": "password"
+    },
+    {
+      "ms": "tempoh",
+      "baca": "tehm-pohh",
+      "en": "period (of time) ⚠️"
+    },
+    {
+      "ms": "perkhidmatan",
+      "baca": "puhr-kheed-mah-tahn",
+      "en": "service"
+    },
+    {
+      "ms": "imigresen",
+      "baca": "ee-mee-greh-suhn",
+      "en": "immigration"
+    },
+    {
+      "ms": "nombor giliran",
+      "baca": "nohm-boh gee-lee-rahn",
+      "en": "queue number"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "What should you write in each field of the form?",
+      "items": [
+        "Jantina",
+        "Taraf perkahwinan",
+        "Alamat kekal",
+        "Alamat semasa",
+        "Negeri",
+        "Poskod"
+      ]
+    },
+    {
+      "prompt": "Write the Malay term.",
+      "items": [
+        "balance",
+        "phone credit",
+        "online",
+        "password",
+        "form",
+        "queue number"
+      ]
+    },
+    {
+      "prompt": "Translate into Malay.",
+      "items": [
+        "I'd like to open a savings account.",
+        "How much is the initial deposit?",
+        "What does this field mean?",
+        "How long does this take?",
+        "Is there a fee?",
+        "Can I do it online?"
+      ]
+    },
+    {
+      "prompt": "What does this word mean in Malaysia?",
+      "items": [
+        "baki",
+        "semasa",
+        "negeri",
+        "kredit (telefon)",
+        "tempoh sah laku"
+      ]
+    }
+  ],
+  "answers": [
+    "Sex (Lelaki/Perempuan) — Marital status (Bujang/Berkahwin) — Permanent address in your home country — Current address in Malaysia — State in Malaysia — Postcode",
+    "baki — kredit — dalam talian — kata laluan — borang — nombor giliran",
+    "Saya nak buka akaun simpanan. — Deposit permulaan berapa? — Ruangan ni maksudnya apa? — Berapa lama proses ni? — Ada bayaran tak? — Boleh buat dalam talian tak?",
+    "balance, remainder — current, present — state — phone credit — validity period"
+  ]
+}

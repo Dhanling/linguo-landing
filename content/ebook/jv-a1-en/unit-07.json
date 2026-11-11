@@ -1,0 +1,610 @@
+{
+  "title": "Directions and places",
+  "title_target": "Lor, kidul, wétan, kulon",
+  "goal": "Ask for and give directions — and face the Javanese habit that baffles outsiders most: pointing the way by compass, not by left and right.",
+  "bekal": [
+    "use *menyang* / *dhateng* for where you're going and *saka* / *saking* for where you're from",
+    "recognize the four compass points and use them the way Javanese people do",
+    "ask how far a place is and how to get there"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Takon dalan ing prapatan",
+      "intro": "Dian is lost near the Tugu monument and asks a parking attendant for help. He is older, so Dian uses krama; he answers in a mix of levels, the way real people do.",
+      "lines": [
+        {
+          "speaker": "Dian:",
+          "text": "Nuwun sèwu, Pak. Badhé nyuwun pirsa.",
+          "id": "Excuse me, sir. May I ask you something?",
+          "literal": "beg thousand, Sir. will beg know."
+        },
+        {
+          "speaker": "Pak parkir:",
+          "text": "Nggih, Mbak. Pripun?",
+          "id": "Yes, miss. What is it?",
+          "literal": "yes, Miss. how?"
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Stasiun Tugu menika arahipun pundi, nggih?",
+          "id": "Which way is Tugu Station?",
+          "literal": "station Tugu this direction-its where, yes?"
+        },
+        {
+          "speaker": "Pak parkir:",
+          "text": "Saking mriki ngidul, Mbak. Mengko ana prapatan, ménggok ngulon.",
+          "id": "From here go south, miss. You'll come to a crossroads — turn west.",
+          "literal": "from here to-south, Miss. later there-is crossroads, turn to-west."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Ngidul… menika ingkang pundi, Pak?",
+          "id": "South… which way is that, sir?",
+          "literal": "to-south… that which where, Sir?"
+        },
+        {
+          "speaker": "Pak parkir:",
+          "text": "Ha ha, njenengan mesthi saking Jakarta. Ngidul niku ngiwa, Mbak.",
+          "id": "Ha ha, you must be from Jakarta. South is to the left, miss.",
+          "literal": "ha ha, you surely from Jakarta. to-south that to-left, Miss."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "O, inggih. Tebih boten, Pak?",
+          "id": "Oh, right. Is it far, sir?",
+          "literal": "oh, yes. far not, Sir?"
+        },
+        {
+          "speaker": "Pak parkir:",
+          "text": "Boten. Mlampah gangsal menit sampun dugi.",
+          "id": "No. Five minutes' walk and you're there.",
+          "literal": "no. walk five minute already arrive."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Matur nuwun sanget, Pak.",
+          "id": "Thank you very much, sir.",
+          "literal": "thank-you very, Sir."
+        },
+        {
+          "speaker": "Pak parkir:",
+          "text": "Sami-sami. Ngatos-atos, nggih.",
+          "id": "You're welcome. Take care.",
+          "literal": "same-same. careful, yes."
+        }
+      ],
+      "notes": [
+        "**Nyuwun pirsa** literally \"I beg (you) to know\" — the most polite way to open a question to a stranger. The ngoko form is *arep takon*. Put *nuwun sèwu* in front and you have a safe opener anywhere in Java.",
+        "**Njenengan** and **niku** in the attendant's mouth are **madya** — a middle level between ngoko and krama that people use constantly on the street. *Njenengan* is a relaxed form of *panjenengan*, *niku* of *menika*. You don't need to use them; you just need to **recognize** them, because you'll hear them often.",
+        "**Ménggok** means \"to turn\"; same in krama. Related words: *bèlok* (turn, borrowed from Indonesian) and *minggir* (pull over to the side).",
+        "**Mlampah** is the krama for *mlaku* (to walk). *Mlaku* also means \"to run, work\" for machines — *motoré mlaku* (the motorbike's running) — just like English \"the engine runs\".",
+        "**Dugi** (krama) / **tekan** (ngoko) means \"to arrive, reach\". *Wis tekan* = we're there. *Tekan* also marks a limit: *tekan kono waé* (just as far as there).",
+        "**Ngatos-atos** is the krama of *ngati-ati* (be careful). It's a very common goodbye to someone setting off, and saying it back is a cheap courtesy that's always right."
+      ],
+      "grammars": [
+        {
+          "title": "The four compass points, and why Javanese people use them",
+          "body": [
+            "This is the part of the unit that confuses newcomers most, and the most typically Javanese. Javanese people — especially in Yogyakarta and Solo — give directions with **north, south, east, west**, even for something as close as where the bathroom is. \"Left\" and \"right\" exist, but are used far less for directions."
+          ],
+          "table": {
+            "head": [
+              "Direction",
+              "Noun",
+              "Towards it",
+              "On that side"
+            ],
+            "rows": [
+              [
+                "north",
+                "*lor*",
+                "*ngalor* (northwards)",
+                "*ing lor* (in the north)"
+              ],
+              [
+                "south",
+                "*kidul*",
+                "*ngidul*",
+                "*ing kidul*"
+              ],
+              [
+                "east",
+                "*wétan*",
+                "*ngétan*",
+                "*ing wétan*"
+              ],
+              [
+                "west",
+                "*kulon*",
+                "*ngulon*",
+                "*ing kulon*"
+              ],
+              [
+                "left",
+                "*kiwa*",
+                "*ngiwa*",
+                "*ing kiwa*"
+              ],
+              [
+                "right",
+                "*tengen*",
+                "*nengen*",
+                "*ing tengen*"
+              ],
+              [
+                "straight on",
+                "*jejeg*, *terus*",
+                "*lurus waé*",
+                "—"
+              ]
+            ]
+          },
+          "after": [
+            "Notice the pattern: the prefix **ng-** turns a direction word into \"heading that way\". You'll meet the same prefix again in Unit 8, where it forms active verbs.",
+            "**Why the compass?** Yogyakarta and Solo are laid out on a straight north–south line between Mount Merapi and the Southern Sea, and the volcano is visible from almost everywhere. Javanese people grow up with a map stuck in their heads. If you're lost in Yogyakarta, find Merapi: that's north.",
+            "You **may** answer with *kiwa* and *tengen*, and people will understand. But you need to **understand** *ngalor* and *ngidul* when people say them, because they will."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "To where, from where, by which way",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Ngoko",
+            "Krama"
+          ],
+          "rows": [
+            [
+              "to",
+              "*menyang*, *nyang*, *marang*",
+              "*dhateng*"
+            ],
+            [
+              "from",
+              "*saka*",
+              "*saking*"
+            ],
+            [
+              "in, at",
+              "*ing*, *nang*",
+              "*wonten ing*"
+            ],
+            [
+              "via, past",
+              "*liwat*",
+              "*langkung*"
+            ],
+            [
+              "as far as, arrive",
+              "*tekan*",
+              "*dugi*"
+            ],
+            [
+              "near",
+              "*cedhak*",
+              "*celak*"
+            ],
+            [
+              "far",
+              "*adoh*",
+              "*tebih*"
+            ],
+            [
+              "Where are you going?",
+              "*Arep nyang ngendi?*",
+              "*Badhé tindak pundi?*"
+            ],
+            [
+              "Where from?",
+              "*Saka ngendi?*",
+              "*Saking pundi?*"
+            ],
+            [
+              "Where (is it)?",
+              "*Ing ngendi?*",
+              "*Wonten pundi?*"
+            ],
+            [
+              "How far?",
+              "*Adohé pira?*",
+              "*Tebihipun pinten?*"
+            ],
+            [
+              "How do I get there?",
+              "*Piyé carané nyang kana?*",
+              "*Kadospundi caranipun dhateng mrika?*"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Arep nyang ngendi? — the question that isn't a question",
+          "items": [
+            "When a neighbor greets you with *arep nyang ngendi?* (where are you going?) as you step out the door, they are **not asking for your plans**. It's a greeting, about as literal as \"how are you?\" in English.",
+            "The right answer is vague too: **\"Niki, mriki mawon\"** (oh, just over here) or **\"Arep nyang ngarep\"** (just going out front). Explaining where you're going in detail actually confuses the person asking.",
+            "The krama form you'll hear from older people: *badhé tindak pundi?* — with *tindak*, the krama inggil word for \"go\"."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Places and getting around",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Ngoko",
+            "Krama",
+            "English"
+          ],
+          "rows": [
+            [
+              "*dalan*",
+              "*margi*",
+              "road, street"
+            ],
+            [
+              "*prapatan*",
+              "*prapatan*",
+              "crossroads"
+            ],
+            [
+              "*pertelon*",
+              "*pertelon*",
+              "T-junction"
+            ],
+            [
+              "*bangjo*",
+              "*bangjo*",
+              "traffic lights"
+            ],
+            [
+              "*kutha*",
+              "*kitha*",
+              "town, city"
+            ],
+            [
+              "*désa*",
+              "*dhusun*",
+              "village"
+            ],
+            [
+              "*pasar*",
+              "*peken*",
+              "market"
+            ],
+            [
+              "*sekolahan*",
+              "*sekolahan*",
+              "school"
+            ],
+            [
+              "*mesjid*",
+              "*mesjid*",
+              "mosque"
+            ],
+            [
+              "*rumah sakit*",
+              "*griya sakit*",
+              "hospital"
+            ],
+            [
+              "*kantor*",
+              "*kantor*",
+              "office"
+            ],
+            [
+              "*stasiun*",
+              "*stasiun*",
+              "train station"
+            ],
+            [
+              "*warung*",
+              "*warung*",
+              "small shop, food stall"
+            ],
+            [
+              "*kali*",
+              "*lèpèn*",
+              "river"
+            ],
+            [
+              "*gunung*",
+              "*redi*",
+              "mountain"
+            ],
+            [
+              "*sawah*",
+              "*sabin*",
+              "rice field"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Bangjo** is one of the most delightful modern Javanese words: short for *abang-ijo*, \"red-green\". It's used all over Yogyakarta and Solo for traffic lights, and you'll hear it in almost every set of directions."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Getting there",
+            "Ngoko",
+            "Krama"
+          ],
+          "rows": [
+            [
+              "on foot",
+              "*mlaku*",
+              "*mlampah*"
+            ],
+            [
+              "to ride, take (a vehicle)",
+              "*numpak*",
+              "*nitih*"
+            ],
+            [
+              "by motorbike",
+              "*numpak motor*",
+              "*nitih motor*"
+            ],
+            [
+              "by bus",
+              "*numpak bis*",
+              "*nitih bis*"
+            ],
+            [
+              "by pedicab",
+              "*numpak bécak*",
+              "*nitih bécak*"
+            ],
+            [
+              "to set off",
+              "*mangkat*",
+              "*bidhal*"
+            ],
+            [
+              "to go home",
+              "*mulih*",
+              "*wangsul*"
+            ],
+            [
+              "to arrive",
+              "*tekan*",
+              "*dugi*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Mulih** (to go home) is a word you'll use and hear constantly, because going home is a big theme in Javanese conversation: *wis mulih?*, *arep mulih*, *durung mulih*. Krama is *wangsul*, and the krama inggil is *kondur* — used for respected people: *Bapak sampun kondur* (Father has come home)."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "jv": "lor",
+      "krama": "lèr",
+      "baca": "LOR",
+      "en": "north"
+    },
+    {
+      "jv": "kidul",
+      "krama": "kidul",
+      "baca": "KEE-dool",
+      "en": "south"
+    },
+    {
+      "jv": "wétan",
+      "krama": "wétan",
+      "baca": "WAY-tahn",
+      "en": "east"
+    },
+    {
+      "jv": "kulon",
+      "krama": "kilèn",
+      "baca": "KOO-lon · KEE-lehn",
+      "en": "west"
+    },
+    {
+      "jv": "kiwa",
+      "krama": "kiwa",
+      "baca": "KEE-wo",
+      "en": "left"
+    },
+    {
+      "jv": "tengen",
+      "krama": "tengen",
+      "baca": "TUH-nguhn",
+      "en": "right"
+    },
+    {
+      "jv": "menyang, nyang",
+      "krama": "dhateng",
+      "baca": "muh-NYAHNG · DHAH-tuhng",
+      "en": "to (a place)"
+    },
+    {
+      "jv": "liwat",
+      "krama": "langkung",
+      "baca": "LEE-waht",
+      "en": "via, past"
+    },
+    {
+      "jv": "tekan",
+      "krama": "dugi",
+      "baca": "TUH-kahn · DOO-gee",
+      "en": "to arrive; as far as"
+    },
+    {
+      "jv": "ménggok",
+      "krama": "ménggok",
+      "baca": "MAYNG-go'",
+      "en": "to turn"
+    },
+    {
+      "jv": "mlaku",
+      "krama": "mlampah",
+      "baca": "m-LAH-koo",
+      "en": "to walk"
+    },
+    {
+      "jv": "numpak",
+      "krama": "nitih",
+      "baca": "NOOM-pah' · NEE-tih",
+      "en": "to ride, take (a vehicle)"
+    },
+    {
+      "jv": "mangkat",
+      "krama": "bidhal",
+      "baca": "MAHNG-kaht",
+      "en": "to set off"
+    },
+    {
+      "jv": "mulih",
+      "krama": "wangsul",
+      "baca": "MOO-lih · WAHNG-sool",
+      "en": "to go home"
+    },
+    {
+      "jv": "lunga",
+      "krama": "késah",
+      "baca": "LOONG-o · KAY-sah",
+      "en": "to go, leave"
+    },
+    {
+      "jv": "teka",
+      "krama": "rawuh",
+      "baca": "TUH-ko · RAH-wooh",
+      "en": "to come"
+    },
+    {
+      "jv": "dalan",
+      "krama": "margi",
+      "baca": "DAH-lahn · MAHR-gee",
+      "en": "road, street"
+    },
+    {
+      "jv": "prapatan",
+      "krama": "prapatan",
+      "baca": "prah-PAH-tahn",
+      "en": "crossroads"
+    },
+    {
+      "jv": "bangjo",
+      "krama": "bangjo",
+      "baca": "BAHNG-jo",
+      "en": "traffic lights"
+    },
+    {
+      "jv": "kutha",
+      "krama": "kitha",
+      "baca": "KOO-tho · KEE-tho",
+      "en": "town, city"
+    },
+    {
+      "jv": "désa",
+      "krama": "dhusun",
+      "baca": "DAY-so · DHOO-soon",
+      "en": "village"
+    },
+    {
+      "jv": "kali",
+      "krama": "lèpèn",
+      "baca": "KAH-lee · LEH-pehn",
+      "en": "river"
+    },
+    {
+      "jv": "gunung",
+      "krama": "redi",
+      "baca": "GOO-noong · RUH-dee",
+      "en": "mountain"
+    },
+    {
+      "jv": "sawah",
+      "krama": "sabin",
+      "baca": "SAH-wah · SAH-bin",
+      "en": "rice field"
+    },
+    {
+      "jv": "takon",
+      "krama": "nyuwun pirsa",
+      "baca": "TAH-kon",
+      "en": "to ask"
+    },
+    {
+      "jv": "ngati-ati",
+      "krama": "ngatos-atos",
+      "baca": "ngah-tee-AH-tee",
+      "en": "careful, take care"
+    },
+    {
+      "jv": "mesthi",
+      "krama": "mesthi",
+      "baca": "MUHS-thee",
+      "en": "surely, must"
+    },
+    {
+      "jv": "menit",
+      "krama": "menit",
+      "baca": "MUH-nit",
+      "en": "minute"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Turn these direction words into the \"heading that way\" form.",
+      "items": [
+        "lor",
+        "kidul",
+        "wétan",
+        "kulon",
+        "kiwa",
+        "tengen"
+      ]
+    },
+    {
+      "prompt": "Fill in *menyang*, *saka*, *ing* or *liwat*.",
+      "items": [
+        "Aku arep ____ pasar.",
+        "Dhèwèké teka ____ Klaten.",
+        "Bukuné ____ ndhuwur méja.",
+        "Awaké dhéwé ____ dalan cilik waé.",
+        "Rini mulih ____ omahé jam wolu."
+      ]
+    },
+    {
+      "prompt": "Translate into Javanese (**krama**).",
+      "items": [
+        "Excuse me, sir. May I ask something?",
+        "Where's the station?",
+        "From here, go south.",
+        "Is it far, sir?",
+        "Five minutes' walk and you're there.",
+        "Thank you very much. Take care."
+      ]
+    },
+    {
+      "prompt": "**Review of Unit 5.** Cover Unit 5, then write the Javanese sentences.",
+      "items": [
+        "How much is it? (krama)",
+        "That's expensive. Can't you go lower? (ngoko)",
+        "I'll take two. (krama)",
+        "How much change? (ngoko)",
+        "That's fifty thousand altogether. (ngoko)"
+      ]
+    }
+  ],
+  "answers": [
+    "ngalor — ngidul — ngétan — ngulon — ngiwa — nengen",
+    "menyang — saka — ing — liwat — menyang",
+    "Nuwun sèwu, Pak. Badhé nyuwun pirsa. — Stasiunipun wonten pundi, nggih? — Saking mriki ngidul. — Tebih boten, Pak? — Mlampah gangsal menit sampun dugi. — Matur nuwun sanget. Ngatos-atos, nggih.",
+    "Pinten reginipun? — Larang. Ora éntuk kurang? — Kula pendhet kalih. — Susuké pira? — Kabèh dadi sèket èwu."
+  ]
+}

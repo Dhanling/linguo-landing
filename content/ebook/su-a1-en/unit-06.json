@@ -1,0 +1,584 @@
+{
+  "title": "At the market: buying and bargaining",
+  "title_target": "Meuli jeung nawar di pasar",
+  "goal": "Ask prices, bargain in a way people accept, and name quantities, sizes, and everyday goods.",
+  "bekal": [
+    "ask the price and bargain without sounding rude",
+    "counting words and units: *sakilo*, *saikat*, *sasiki*, *sabungkus*",
+    "colors, sizes, and adjectives for choosing what to buy"
+  ],
+  "dialogs": [
+    {
+      "title": "Paguneman — At Kosambi Market",
+      "intro": "Saturday morning. Rani and Sari are shopping at the market. Rani is trying to bargain on her own for the first time, and Sari stands behind her trying not to laugh.",
+      "lines": [
+        {
+          "speaker": "Rani:",
+          "text": "Punten, Bi. Cabé na sabaraha sakilo?",
+          "id": "Excuse me, Bi. How much are the chilies per kilo?",
+          "literal": "excuse-me, Bi. chili-the how-much one-kilo?"
+        },
+        {
+          "speaker": "Bi Éncum:",
+          "text": "Opat puluh rébu, Néng. Seger kénéh, kakara datang isuk.",
+          "id": "Forty thousand, Néng. Still fresh, they came in this morning.",
+          "literal": "four ten thousand, Néng. fresh still, just came morning."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Aduh, awis pisan. Teu tiasa kirang?",
+          "id": "Oh dear, that's very expensive. Can't you go lower?",
+          "literal": "oh-dear, expensive very. not can less?"
+        },
+        {
+          "speaker": "Bi Éncum:",
+          "text": "Sabaraha atuh maunya?",
+          "id": "So how much do you want to pay?",
+          "literal": "how-much atuh want-the?"
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Tilu puluh rébu kumaha?",
+          "id": "How about thirty thousand?",
+          "literal": "three ten thousand how?"
+        },
+        {
+          "speaker": "Bi Éncum:",
+          "text": "Ih, teu nutup Néng. Tilu puluh lima waé, nya?",
+          "id": "Oh, that doesn't cover my costs, Néng. Thirty-five, all right?",
+          "literal": "oh, not closing Néng. three ten five just, [nya]?"
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Mangga atuh. Sakilo waé.",
+          "id": "All right then. Just one kilo.",
+          "literal": "go-ahead atuh. one-kilo just."
+        },
+        {
+          "speaker": "Bi Éncum:",
+          "text": "Sok. Aya deui nu badé dipésér?",
+          "id": "There you go. Anything else you'd like to buy?",
+          "literal": "go-ahead. there-is more which will bought?"
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Bawang beureum saparapat kilo, sareng tomat sakilo.",
+          "id": "A quarter kilo of shallots, and a kilo of tomatoes.",
+          "literal": "onion red one-quarter kilo, and tomato one-kilo."
+        },
+        {
+          "speaker": "Bi Éncum:",
+          "text": "Sadayana genep puluh rébu, Néng. Digenepan waé, jadi lima puluh lima.",
+          "id": "That's sixty thousand altogether, Néng. Let's round it down — fifty-five.",
+          "literal": "all six ten thousand, Néng. rounded just, become five ten five."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Nuhun pisan, Bi! Ieu artosna.",
+          "id": "Thank you so much, Bi! Here's the money.",
+          "literal": "thanks very, Bi! this money-the."
+        },
+        {
+          "speaker": "Bi Éncum:",
+          "text": "Sami-sami. Mugia sing seueur rejeki, Néng.",
+          "id": "You're welcome. May your fortune be plentiful, Néng.",
+          "literal": "same-same. may [sing] much fortune, Néng."
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Téh, tos tiasa nawar geuning! Sabulan deui mah janten urang Bandung.",
+          "id": "Look at you, you can bargain already! Another month and you'll be a real Bandung girl.",
+          "literal": "Téh, already can bargain it-turns-out! one-month more [mah] become person Bandung."
+        }
+      ],
+      "notes": [
+        "**Awis** = expensive (lemes); loma: **mahal**. The opposite is **mirah** (lemes) / **murah** (loma). Bargaining with *awis pisan* sounds polite; with *mahal teuing* it sounds like complaining.",
+        "**Kirang** = less (lemes); loma: **kurang**. *Teu tiasa kirang?* (\"can't it be less?\") is the gentlest and safest bargaining line — it asks without naming a number, so a seller who lowers the price doesn't feel pushed.",
+        "**Pésér / mésér** = buy (lemes); loma: **meuli**. The passive is *dipésér* (bought). Sell = **ngical** (lemes) / **ngajual** (loma).",
+        "**Teu nutup** literally \"doesn't close\" — traders' talk for \"doesn't cover my costs\". It is a gentle refusal of your offer, not an insult. The natural response is to go up a little or accept a price in the middle.",
+        "**Digenepan** looks like *genep* (six), but here it means \"rounded off\" (to an even amount), rounded down to make it easy. Sundanese traders often do this themselves as a sign of goodwill, and it signals that the bargaining has ended well.",
+        "**Sareng** = and, with (lemes); loma: **jeung**. You will meet these two in almost every longer sentence from now on.",
+        "**Mugia** = may, hopefully (lemes); loma: **muga-muga**. *Mugia sing seueur rejeki* (\"may your fortune be plentiful\") is a blessing traders often say at the end — just answer *aamiin* or *hatur nuhun*."
+      ],
+      "grammars": [
+        {
+          "title": "Units and quantities",
+          "body": [
+            "Sundanese uses the prefix **sa-** to mean \"one\" with units of measure — like \"a\" in \"a kilo\". Some of the unit words themselves are worth learning."
+          ],
+          "table": {
+            "head": [
+              "Unit",
+              "Meaning",
+              "Used for",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**sakilo**",
+                "a kilo",
+                "weight",
+                "*cabé sakilo*"
+              ],
+              [
+                "**saparapat**",
+                "a quarter",
+                "weight, portions",
+                "*bawang saparapat*"
+              ],
+              [
+                "**satengah**",
+                "a half",
+                "weight, portions",
+                "*gula satengah kilo*"
+              ],
+              [
+                "**saikat**",
+                "a bunch",
+                "vegetables, firewood",
+                "*bayam saikat*"
+              ],
+              [
+                "**sasiki**",
+                "one (item)",
+                "fruit, eggs",
+                "*endog sasiki*"
+              ],
+              [
+                "**sabungkus**",
+                "a packet",
+                "wrapped food",
+                "*nasi sabungkus*"
+              ],
+              [
+                "**sagelas**",
+                "a glass",
+                "drinks",
+                "*cai sagelas*"
+              ],
+              [
+                "**sapotong**",
+                "a piece",
+                "cake, meat",
+                "*roti sapotong*"
+              ],
+              [
+                "**saléhér**",
+                "a bottle",
+                "bottles",
+                "*kécap saléhér*"
+              ],
+              [
+                "**sapasang**",
+                "a pair",
+                "sandals, shoes",
+                "*sendal sapasang*"
+              ],
+              [
+                "**sarébu**",
+                "a thousand",
+                "money",
+                "*sarébu perak*"
+              ]
+            ]
+          },
+          "after": [
+            "For amounts other than one, the number simply goes in front: *dua kilo*, *tilu ikat*, *opat siki*, *lima bungkus*. The *sa-* prefix drops away as soon as the number isn't one.",
+            "⚠️ **Siki** means \"seed, item\" and is used for anything counted one by one: eggs, fruit, buttons, even people in casual talk (*dua siki* = two people, friendly and a bit jokey). For people, politely, use **urang**: *tilu urang* = three people.",
+            "For money, the word **perak** (literally \"silver\") is still alive and means rupiah: *lima rébu perak* = five thousand rupiah. It's optional, but you will hear it constantly at the market."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bargaining the accepted way",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bargaining at a Sundanese market has a set rhythm, and following it gets you treated like a local. These four steps almost always work:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Greet first; don't ask the price straight away.** *Punten, Bi.* That one word changes the whole tone of the conversation.",
+            "**Ask the price without naming your offer.** *Sabaraha sakilo?* Listen first.",
+            "**Push back gently, not with a number.** *Aduh, awis pisan. Teu tiasa kirang?* — let the seller come down first.",
+            "**Name your number once, then accept a price in the middle.** More than two rounds of bargaining is considered unpleasant, and offering far below the price is seen as belittling someone's goods."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Bargaining phrases",
+          "items": [
+            "**Sabaraha hargana?** — How much is it?",
+            "**Sabaraha sakilo?** — How much per kilo?",
+            "**Teu tiasa kirang?** — Can't you go lower?",
+            "**Awis teuing, Bi.** — That's too expensive, Bi.",
+            "**Tilu puluh waé kumaha?** — How about just thirty?",
+            "**Mangga atuh.** — All right then. (accepting)",
+            "**Hapunten, badé ningali heula.** — Sorry, I'll just look around first. (declining politely)",
+            "**Aya deui nu séjén?** — Do you have anything else?"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ That polite way of declining matters. Walking off without a word after asking a price is considered impolite. *Hapunten, badé ningali heula* gives both sides a comfortable way out, and the seller will usually answer *mangga* without taking offense."
+        }
+      ]
+    },
+    {
+      "title": "Goods, colors, and qualities",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Basa Sunda",
+            "English",
+            "Basa Sunda",
+            "English"
+          ],
+          "rows": [
+            [
+              "**béas**",
+              "rice (uncooked)",
+              "**endog**",
+              "egg"
+            ],
+            [
+              "**sangu**",
+              "rice (cooked)",
+              "**daging**",
+              "meat"
+            ],
+            [
+              "**lauk**",
+              "fish ⚠️",
+              "**hayam**",
+              "chicken"
+            ],
+            [
+              "**cabé**",
+              "chili",
+              "**bawang beureum**",
+              "shallot"
+            ],
+            [
+              "**bawang bodas**",
+              "garlic",
+              "**tomat**",
+              "tomato"
+            ],
+            [
+              "**gula**",
+              "sugar",
+              "**uyah**",
+              "salt"
+            ],
+            [
+              "**minyak**",
+              "oil",
+              "**kécap**",
+              "sweet soy sauce"
+            ],
+            [
+              "**bayam**",
+              "spinach",
+              "**kangkung**",
+              "water spinach"
+            ],
+            [
+              "**cau**",
+              "banana",
+              "**gedang**",
+              "papaya"
+            ],
+            [
+              "**jeruk**",
+              "orange, citrus",
+              "**salak**",
+              "snake fruit"
+            ],
+            [
+              "**ubi / boléd**",
+              "sweet potato",
+              "**sampeu**",
+              "cassava"
+            ],
+            [
+              "**baju**",
+              "shirt, top",
+              "**calana**",
+              "trousers"
+            ],
+            [
+              "**sendal**",
+              "sandals",
+              "**sapatu**",
+              "shoes"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Colors and qualities for choosing what to buy:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Color",
+            "Meaning",
+            "Quality",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**beureum**",
+              "red",
+              "**gedé / ageung**",
+              "big (loma/lemes)"
+            ],
+            [
+              "**bodas**",
+              "white",
+              "**leutik / alit**",
+              "small (loma/lemes)"
+            ],
+            [
+              "**hideung**",
+              "black",
+              "**panjang**",
+              "long"
+            ],
+            [
+              "**héjo**",
+              "green",
+              "**pondok**",
+              "short"
+            ],
+            [
+              "**konéng**",
+              "yellow",
+              "**seger**",
+              "fresh"
+            ],
+            [
+              "**bulao**",
+              "blue",
+              "**buruk**",
+              "rotten, broken"
+            ],
+            [
+              "**hérang**",
+              "clear (water)",
+              "**anyar**",
+              "new"
+            ],
+            [
+              "**bulao kolot**",
+              "dark blue",
+              "**heubeul**",
+              "old, worn"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Choosing things",
+          "items": [
+            "**Aya nu langkung ageung?** — Do you have a bigger one?",
+            "**Nu ieu seger teu?** — Is this one fresh?",
+            "**Abdi milarian nu warna bodas.** — I'm looking for a white one. (*milarian* = look for, lemes)",
+            "**Ieu anyar atanapi heubeul?** — Is this new or old? (*atanapi* = or, lemes; loma *atawa*)",
+            "**Nu itu waé, nu paling ageung.** — That one over there, the biggest.",
+            "**Cekap, hatur nuhun.** — That's enough, thank you."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "su": "meuli / mésér",
+      "baca": "meu-LEE · meh-SEHR",
+      "en": "to buy (loma/lemes)"
+    },
+    {
+      "su": "ngajual / ngical",
+      "baca": "ngah-JOO-ahl · ngee-CHAHL",
+      "en": "to sell"
+    },
+    {
+      "su": "nawar",
+      "baca": "nah-WAHR",
+      "en": "to bargain"
+    },
+    {
+      "su": "harga",
+      "baca": "hahr-GAH",
+      "en": "price"
+    },
+    {
+      "su": "awis / mahal",
+      "baca": "ah-WEES · mah-HAHL",
+      "en": "expensive"
+    },
+    {
+      "su": "mirah / murah",
+      "baca": "mee-RAHH · moo-RAHH",
+      "en": "cheap"
+    },
+    {
+      "su": "kirang / kurang",
+      "baca": "kee-RAHNG · koo-RAHNG",
+      "en": "less"
+    },
+    {
+      "su": "sakilo",
+      "baca": "sah-kee-LOH",
+      "en": "a kilo"
+    },
+    {
+      "su": "saparapat",
+      "baca": "sah-pah-rah-PAHT",
+      "en": "a quarter"
+    },
+    {
+      "su": "sasiki",
+      "baca": "sah-see-KEE",
+      "en": "one (item)"
+    },
+    {
+      "su": "saikat",
+      "baca": "sah-ee-KAHT",
+      "en": "a bunch"
+    },
+    {
+      "su": "sareng / jeung",
+      "baca": "sah-RUHNG · jeung",
+      "en": "and, with"
+    },
+    {
+      "su": "atanapi / atawa",
+      "baca": "ah-tah-nah-PEE · ah-tah-WAH",
+      "en": "or"
+    },
+    {
+      "su": "béas",
+      "baca": "beh-AHS",
+      "en": "rice (uncooked)"
+    },
+    {
+      "su": "endog",
+      "baca": "uhn-DOHG",
+      "en": "egg"
+    },
+    {
+      "su": "uyah",
+      "baca": "oo-YAHH",
+      "en": "salt"
+    },
+    {
+      "su": "cau",
+      "baca": "chah-OO",
+      "en": "banana"
+    },
+    {
+      "su": "sampeu",
+      "baca": "sahm-PEU",
+      "en": "cassava"
+    },
+    {
+      "su": "gedé / ageung",
+      "baca": "guh-DEH · ah-GEUNG",
+      "en": "big"
+    },
+    {
+      "su": "leutik / alit",
+      "baca": "leu-TEEK · ah-LEET",
+      "en": "small"
+    },
+    {
+      "su": "seger",
+      "baca": "suh-GUHR",
+      "en": "fresh"
+    },
+    {
+      "su": "anyar / heubeul",
+      "baca": "ah-NYAHR · heu-BEUL",
+      "en": "new / old"
+    },
+    {
+      "su": "milarian / néangan",
+      "baca": "mee-lah-ree-AHN · neh-AH-ngahn",
+      "en": "to look for"
+    },
+    {
+      "su": "cekap / cukup",
+      "baca": "chuh-KAHP · choo-KOOP",
+      "en": "enough"
+    },
+    {
+      "su": "mugia",
+      "baca": "moo-GEE-ah",
+      "en": "may, hopefully"
+    },
+    {
+      "su": "rejeki",
+      "baca": "ruh-juh-KEE",
+      "en": "fortune, livelihood"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right unit.",
+      "items": [
+        "Two eggs: endog dua ____.",
+        "One kilo of chilies: cabé ____.",
+        "A quarter kilo of shallots: bawang ____.",
+        "A bunch of spinach: bayam ____.",
+        "A packet of rice: sangu ____.",
+        "Three people: tilu ____."
+      ]
+    },
+    {
+      "prompt": "Give the opposite in Sundanese.",
+      "items": [
+        "awis → ____",
+        "ageung → ____",
+        "anyar → ____",
+        "panjang → ____",
+        "beureum (its contrasting color) → ____",
+        "seueur → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into polite (lemes) Sundanese.",
+      "items": [
+        "Excuse me, how much is it?",
+        "Oh dear, that's very expensive. Can't you go lower?",
+        "Do you have a bigger one?",
+        "Sorry, I'll just look around first.",
+        "How much is it altogether, Bi?",
+        "That's enough, thank you very much."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "sakilo / sabaraha / cabé / na / ?",
+        "kirang / tiasa / teu / ?",
+        "waé / puluh / kumaha / tilu / ?",
+        "dipésér / badé / nu / aya / deui / ?",
+        "artosna / ieu / nuhun / hatur"
+      ]
+    }
+  ],
+  "answers": [
+    "siki — sakilo — saparapat — saikat — sabungkus — urang",
+    "mirah/murah — leutik/alit — heubeul — pondok — bodas — saeutik/sakedik",
+    "Punten, sabaraha hargana? — Aduh, awis pisan. Teu tiasa kirang? — Aya nu langkung ageung? — Hapunten, badé ningali heula. — Sadayana sabaraha, Bi? — Cekap, hatur nuhun pisan.",
+    "Cabé na sabaraha sakilo? — Teu tiasa kirang? — Tilu puluh waé kumaha? — Aya deui nu badé dipésér? — Ieu artosna, hatur nuhun."
+  ]
+}

@@ -1,0 +1,593 @@
+{
+  "title": "The Sundanese script",
+  "title_target": "Aksara Sunda Baku",
+  "goal": "Read street, office and station signs in West Java written in Sundanese script, and write your own name in it.",
+  "bekal": [
+    "the seven aksara swara (vowels) and twenty-three aksara ngalagena (consonants)",
+    "rarangkén: the marks that change a letter's sound",
+    "reading real signs in Bandung"
+  ],
+  "dialogs": [
+    {
+      "title": "Paguneman — The street sign on Jalan Asia Afrika",
+      "intro": "Rani stops in front of a street sign with two lines: one in Latin letters, one in a script she's never seen. Sari explains.",
+      "lines": [
+        {
+          "speaker": "Rani:",
+          "text": "Sar, tulisan nu di handap téh naon? Kawas aksara Bali.",
+          "id": "Sar, what's that writing underneath? It looks like Balinese script.",
+          "literal": "Sar, writing that at below [téh] what? like script Bali."
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Éta aksara Sunda. Sarua jeung nu di luhurna, ngan hurufna béda.",
+          "id": "That's Sundanese script. It says the same as the line above, just in different letters.",
+          "literal": "that script Sundanese. same with that at above-it, only letters-the different."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Jadi maca na sarua Asia Afrika?",
+          "id": "So it reads \"Asia Afrika\" too?",
+          "literal": "so reading-its same Asia Afrika?"
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Heueuh. Ti taun 2000-an sadaya papan jalan di Jabar kudu dua rupa.",
+          "id": "Yes. Since the 2000s, every street sign in West Java has to be in both scripts.",
+          "literal": "yes. from year 2000s all board street in West-Java must two forms."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Urang Sunda mah bisa maca kabéh?",
+          "id": "Can all Sundanese people read it?",
+          "literal": "people Sundanese [mah] can read all?"
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Ah, henteu. Kuring ogé kudu mikir heula. Diajarna di SD, tapi tara dipaké.",
+          "id": "Oh, no. I have to think about it too. We learn it in elementary school, but never use it.",
+          "literal": "ah, no. I also must think first. learning-its at elementary-school, but never used."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Hésé teu diajarna?",
+          "id": "Is it hard to learn?",
+          "literal": "hard not learning-its?"
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Teu pati hésé. Hurufna geus mawa bunyi a. Tinggal nambahan tanda.",
+          "id": "Not too hard. Each letter already has an \"a\" sound built in. You just add marks.",
+          "literal": "not too hard. letters-the already carry sound a. just add marks."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Kawas hangeul Korea kitu?",
+          "id": "Like Korean hangeul?",
+          "literal": "like hangeul Korea like-that?"
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Leuwih kawas aksara Jawa jeung Bali. Sadulur kabéh.",
+          "id": "More like Javanese and Balinese script. They're all related.",
+          "literal": "more like script Java and Bali. siblings all."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Cik ajarkeun ngaran kuring dina aksara Sunda!",
+          "id": "Teach me how to write my name in Sundanese script!",
+          "literal": "try teach name my in script Sundanese!"
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Sok. Ra-ni. Aksara ra, terus na dibéré panghulu jadi ni. ᮛᮔᮤ",
+          "id": "Sure. Ra-ni. The letter ra, then na with a panghulu, which makes ni. ᮛᮔᮤ",
+          "literal": "please. Ra-ni. letter ra, then na given panghulu becomes ni. ᮛᮔᮤ"
+        }
+      ],
+      "notes": [
+        "**Aksara Sunda Baku** (standard Sundanese script) was set in 1997 and made official by a West Java regional regulation in 2003. Since then, street signs, government offices and stations across West Java must show it beneath the Latin writing.",
+        "**Teu pati** = not too, not very. It pairs with *pati*, \"too\": *teu pati hésé* = not too hard. It's a very common, handy way to soften a judgment.",
+        "**Sadulur** = related, like siblings. Sundanese script really is a relative of Javanese script (Hanacaraka) and Balinese script: all three descend from Kawi script, which comes from the Pallava script of southern India.",
+        "**Nambahan** comes from *tambah* + *N-* + *-an* = to add to. Compare *nambahkeun* (to add something): the endings *-an* and *-keun* change the direction of the action, as you learned in Unit 10.",
+        "**Panghulu** is the name of one of the marks in Sundanese script: the one that changes the *a* sound to *i*. You'll meet the names of all these marks in the next table.",
+        "⚠️ Don't be discouraged if you feel slow: most Sundanese people read this script slowly too. The goal of this unit isn't fluency. It's making signs stop being just pictures."
+      ],
+      "grammars": [
+        {
+          "title": "How Sundanese script works",
+          "body": [
+            "Sundanese script is an **abugida**, not an alphabet. The difference matters: every consonant letter already carries the vowel *a*. The letter ᮊ isn't read \"k\" but **ka**. To change the vowel, you add a small mark called a **rarangkén**."
+          ],
+          "table": {
+            "head": [
+              "To make",
+              "Mark",
+              "Name of mark",
+              "Example"
+            ],
+            "rows": [
+              [
+                "ka → **ki**",
+                "ᮤ (above)",
+                "**panghulu**",
+                "ᮊᮤ"
+              ],
+              [
+                "ka → **ku**",
+                "ᮥ (below)",
+                "**panyuku**",
+                "ᮊᮥ"
+              ],
+              [
+                "ka → **ké**",
+                "ᮦ (in front)",
+                "**panéléng**",
+                "ᮊᮦ"
+              ],
+              [
+                "ka → **ko**",
+                "ᮧ (on both sides)",
+                "**panolong**",
+                "ᮊᮧ"
+              ],
+              [
+                "ka → **ke**",
+                "ᮨ (above)",
+                "**pamepet**",
+                "ᮊᮨ"
+              ],
+              [
+                "ka → **keu**",
+                "ᮩ (above)",
+                "**paneuleung**",
+                "ᮊᮩ"
+              ],
+              [
+                "ka → **k** (no vowel)",
+                "᮪ (after)",
+                "**pamaéh**",
+                "ᮊ᮪"
+              ],
+              [
+                "ka → **kang**",
+                "ᮀ",
+                "**panyecek**",
+                "ᮊᮀ"
+              ],
+              [
+                "ka → **kar**",
+                "ᮁ",
+                "**panglayar**",
+                "ᮊᮁ"
+              ],
+              [
+                "ka → **kah**",
+                "ᮂ",
+                "**pangwisad**",
+                "ᮊᮂ"
+              ],
+              [
+                "ka → **kra**",
+                "ᮢ",
+                "**panyakra**",
+                "ᮊᮢ"
+              ],
+              [
+                "ka → **kla**",
+                "ᮣ",
+                "**panyiku**",
+                "ᮊᮣ"
+              ],
+              [
+                "ka → **kya**",
+                "ᮡ",
+                "**pamingkal**",
+                "ᮊᮡ"
+              ]
+            ]
+          },
+          "after": [
+            "Thirteen marks sounds like a lot, but the first six cover almost every sign you'll read: *panghulu*, *panyuku*, *panéléng*, *panolong*, *pamepet* and *pamaéh*.",
+            "⚠️ **Pamaéh** (᮪) is the most important one for reading signs, because it kills the built-in vowel. Without it, you'd read *Bandung* as *Bandunga*.",
+            "If the script on this page shows up as empty boxes on your device, the Sundanese font isn't installed. Recent Android phones and iPhones have it; on older devices, install *Noto Sans Sundanese* from Google Fonts."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Aksara swara and ngalagena",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "**Aksara swara** are the seven stand-alone vowel letters, used when a word begins with a vowel:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Letter",
+            "Sound",
+            "Letter",
+            "Sound"
+          ],
+          "rows": [
+            [
+              "ᮃ",
+              "**a**",
+              "ᮄ",
+              "**i**"
+            ],
+            [
+              "ᮅ",
+              "**u**",
+              "ᮆ",
+              "**é**"
+            ],
+            [
+              "ᮇ",
+              "**o**",
+              "ᮈ",
+              "**e** (schwa)"
+            ],
+            [
+              "ᮉ",
+              "**eu**",
+              "—",
+              "—"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Aksara ngalagena** are the consonant letters, each already carrying the sound *a*. The first eighteen are native Sundanese letters; the last five were added for loanwords."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Letter",
+            "Sound",
+            "Letter",
+            "Sound",
+            "Letter",
+            "Sound"
+          ],
+          "rows": [
+            [
+              "ᮊ",
+              "**ka**",
+              "ᮌ",
+              "**ga**",
+              "ᮍ",
+              "**nga**"
+            ],
+            [
+              "ᮎ",
+              "**ca**",
+              "ᮏ",
+              "**ja**",
+              "ᮑ",
+              "**nya**"
+            ],
+            [
+              "ᮒ",
+              "**ta**",
+              "ᮓ",
+              "**da**",
+              "ᮔ",
+              "**na**"
+            ],
+            [
+              "ᮕ",
+              "**pa**",
+              "ᮘ",
+              "**ba**",
+              "ᮙ",
+              "**ma**"
+            ],
+            [
+              "ᮚ",
+              "**ya**",
+              "ᮛ",
+              "**ra**",
+              "ᮜ",
+              "**la**"
+            ],
+            [
+              "ᮝ",
+              "**wa**",
+              "ᮞ",
+              "**sa**",
+              "ᮠ",
+              "**ha**"
+            ],
+            [
+              "ᮖ",
+              "**fa**",
+              "ᮗ",
+              "**va**",
+              "ᮐ",
+              "**qa**"
+            ],
+            [
+              "ᮟ",
+              "**xa**",
+              "ᮝ᮪ᮏ",
+              "**za**",
+              "—",
+              "—"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ The order isn't a-b-c; it follows sound groups, and schoolchildren in West Java learn it as a chant: *ka-ga-nga, ca-ja-nya, ta-da-na, pa-ba-ma, ya-ra-la, wa-sa-ha*. Six groups of three, eighteen native letters. Once you know those six lines, you've mastered the hardest part."
+        }
+      ]
+    },
+    {
+      "title": "Reading real signs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Now the useful part. Here are names that really appear on signs in and around Bandung, broken down syllable by syllable:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sundanese script",
+            "Breakdown",
+            "Latin"
+          ],
+          "rows": [
+            [
+              "ᮘᮔ᮪ᮓᮥᮀ",
+              "ba + na(pamaéh) + du(panyuku) + ng(panyecek)",
+              "**Bandung**"
+            ],
+            [
+              "ᮞᮥᮔ᮪ᮓ",
+              "sa + na(pamaéh) + da",
+              "**Sunda**"
+            ],
+            [
+              "ᮏᮝ ᮘᮛᮒ᮪",
+              "ja + wa · ba + ra + ta(pamaéh)",
+              "**Jawa Barat**"
+            ],
+            [
+              "ᮘᮧᮌᮧᮁ",
+              "bo(panolong) + go + r(panglayar)",
+              "**Bogor**"
+            ],
+            [
+              "ᮎᮤᮛᮨᮘᮧᮔ᮪",
+              "ci + re + bo + na(pamaéh)",
+              "**Cirebon**"
+            ],
+            [
+              "ᮌᮛᮥᮒ᮪",
+              "ga + ru + ta(pamaéh)",
+              "**Garut**"
+            ],
+            [
+              "ᮒᮞᮤᮊ᮪ᮙᮜᮚ",
+              "ta + si + ka(pamaéh) + ma + la + ya",
+              "**Tasikmalaya**"
+            ],
+            [
+              "ᮓᮌᮧ",
+              "da + go(panolong)",
+              "**Dago**"
+            ],
+            [
+              "ᮕᮞᮤᮁ",
+              "pa + si + r(panglayar)",
+              "**Pasir**"
+            ],
+            [
+              "ᮜᮨᮙ᮪ᮘᮀ",
+              "le(pamepet) + ma(pamaéh) + ba + ng(panyecek)",
+              "**Lembang**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the recurring pattern: many Sundanese place names start with **Ci-** (from *cai*, water) and **Pa-**. Once you can spot those two opening syllables in the script (ᮎᮤ and ᮕ), half the signs in West Java become readable."
+        },
+        {
+          "type": "kotak",
+          "title": "The most useful five-minute practice",
+          "items": [
+            "Learn the six ngalagena lines as a chant: *ka-ga-nga · ca-ja-nya · ta-da-na · pa-ba-ma · ya-ra-la · wa-sa-ha*.",
+            "Learn just three marks first: **panghulu** (i), **panyuku** (u), **pamaéh** (kills the vowel).",
+            "Every time you pass a street sign, read the bottom line before looking at the top line. Check your answer.",
+            "Write your own name. That's the first word that will stick.",
+            "Don't chase speed. The goal isn't fluent reading; it's no longer seeing the script as decoration."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "su": "aksara",
+      "baca": "ahk-sah-RAH",
+      "en": "script, letter"
+    },
+    {
+      "su": "aksara swara",
+      "baca": "ahk-sah-RAH swah-RAH",
+      "en": "vowel letter"
+    },
+    {
+      "su": "aksara ngalagena",
+      "baca": "ngah-lah-guh-NAH",
+      "en": "consonant letter"
+    },
+    {
+      "su": "rarangkén",
+      "baca": "rah-rahng-KEHN",
+      "en": "sound-changing mark"
+    },
+    {
+      "su": "panghulu",
+      "baca": "pahng-hoo-LOO",
+      "en": "mark for i"
+    },
+    {
+      "su": "panyuku",
+      "baca": "pah-nyoo-KOO",
+      "en": "mark for u"
+    },
+    {
+      "su": "panéléng",
+      "baca": "pah-neh-LEHNG",
+      "en": "mark for é"
+    },
+    {
+      "su": "panolong",
+      "baca": "pah-noh-LOHNG",
+      "en": "mark for o"
+    },
+    {
+      "su": "pamepet",
+      "baca": "pah-muh-PUHT",
+      "en": "mark for e"
+    },
+    {
+      "su": "paneuleung",
+      "baca": "pah-neu-LEUNG",
+      "en": "mark for eu"
+    },
+    {
+      "su": "pamaéh",
+      "baca": "pah-mah-EHH",
+      "en": "vowel-killing mark"
+    },
+    {
+      "su": "panyecek",
+      "baca": "pah-nyuh-CHUHK",
+      "en": "mark for ng"
+    },
+    {
+      "su": "panglayar",
+      "baca": "pahng-lah-YAHR",
+      "en": "mark for r"
+    },
+    {
+      "su": "pangwisad",
+      "baca": "pahng-wee-SAHD",
+      "en": "mark for h"
+    },
+    {
+      "su": "huruf",
+      "baca": "hoo-ROOF",
+      "en": "letter"
+    },
+    {
+      "su": "tulisan",
+      "baca": "too-lee-SAHN",
+      "en": "writing"
+    },
+    {
+      "su": "papan nami",
+      "baca": "PAH-pahn NAH-mee",
+      "en": "sign, signboard"
+    },
+    {
+      "su": "maca / maos",
+      "baca": "mah-CHAH · mah-OHS",
+      "en": "to read"
+    },
+    {
+      "su": "nulis / nyerat",
+      "baca": "noo-LEES · nyuh-RAHT",
+      "en": "to write"
+    },
+    {
+      "su": "sadulur",
+      "baca": "sah-doo-LOOR",
+      "en": "related, like siblings"
+    },
+    {
+      "su": "teu pati",
+      "baca": "teu PAH-tee",
+      "en": "not too"
+    },
+    {
+      "su": "nambahan",
+      "baca": "nahm-bah-HAHN",
+      "en": "to add to"
+    },
+    {
+      "su": "béda / sarua",
+      "baca": "beh-DAH · sah-roo-AH",
+      "en": "different / same"
+    },
+    {
+      "su": "ngajarkeun",
+      "baca": "ngah-jahr-KEUN",
+      "en": "to teach"
+    },
+    {
+      "su": "hurup",
+      "baca": "hoo-ROOP",
+      "en": "letter (Sundanese word)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Name the rarangkén mark for each sound change.",
+      "items": [
+        "ka becomes ki: ____",
+        "ka becomes ku: ____",
+        "ka becomes ko: ____",
+        "ka becomes keu: ____",
+        "ka becomes k (no vowel): ____",
+        "ka becomes kang: ____"
+      ]
+    },
+    {
+      "prompt": "Break these place names into syllables, as in the examples.",
+      "items": [
+        "Sunda → ____",
+        "Garut → ____",
+        "Dago → ____",
+        "Bogor → ____",
+        "Cirebon → ____",
+        "Lembang → ____"
+      ]
+    },
+    {
+      "prompt": "Complete the six-line ngalagena chant.",
+      "items": [
+        "ka - ga - ____",
+        "ca - ____ - nya",
+        "____ - da - na",
+        "pa - ba - ____",
+        "ya - ____ - la",
+        "wa - sa - ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Sundanese.",
+      "items": [
+        "What's that writing underneath?",
+        "That's Sundanese script.",
+        "Is it hard to learn?",
+        "Not too hard.",
+        "Teach me how to write my name in Sundanese script.",
+        "I have to think about it too."
+      ]
+    }
+  ],
+  "answers": [
+    "panghulu — panyuku — panolong — paneuleung — pamaéh — panyecek",
+    "sa + na(pamaéh) + da — ga + ru + ta(pamaéh) — da + go — bo + go + r(panglayar) — ci + re + bo + na(pamaéh) — le + ma(pamaéh) + ba + ng(panyecek)",
+    "nga — ja — ta — ma — ra — ha",
+    "Tulisan nu di handap téh naon? — Éta aksara Sunda. — Hésé teu diajarna? — Teu pati hésé. — Cik ajarkeun ngaran kuring dina aksara Sunda. — Kuring ogé kudu mikir heula."
+  ]
+}

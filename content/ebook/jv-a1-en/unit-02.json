@@ -1,0 +1,604 @@
+{
+  "title": "This, that, and the things around you",
+  "title_target": "Iki apa? Kuwi apa?",
+  "goal": "Point at things, ask what they're called, and say whether something is there or not — while learning that Javanese has three words for \"this/that\" but krama needs only one.",
+  "bekal": [
+    "tell *iki*, *kuwi* and *kaé* apart by distance from the speaker",
+    "ask *apa iki?* and answer with the name of the thing",
+    "use *ana* / *ora ana* to say something is or isn't there"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Rini nuduhaké kamar",
+      "intro": "Rini shows Dian around the boarding house: her room, the bathroom, the shared kitchen. She speaks ngoko because they're the same age.",
+      "lines": [
+        {
+          "speaker": "Rini:",
+          "text": "Iki kamarmu. Rada cilik, nanging resik.",
+          "id": "This is your room. It's a bit small, but clean.",
+          "literal": "this room-your. rather small, but clean."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Ora apa-apa. Kuwi apa?",
+          "id": "That's fine. What's that?",
+          "literal": "not what-what. that what?"
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Kuwi lemari. Lawang lemariné rada seret.",
+          "id": "That's the wardrobe. Its door sticks a bit.",
+          "literal": "that wardrobe. door wardrobe-the rather stiff."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Ana kunciné?",
+          "id": "Is there a key?",
+          "literal": "there-is key-the?"
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Ana. Iki kunci kamar, kuwi kunci lemari.",
+          "id": "Yes. This is the room key, that's the wardrobe key.",
+          "literal": "there-is. this key room, that key wardrobe."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Kamar mandiné ngendi?",
+          "id": "Where's the bathroom?",
+          "literal": "bathroom-the where?"
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Kaé, sing cèt biru. Banyuné akèh, aja kuwatir.",
+          "id": "Over there, the one painted blue. There's plenty of water, don't worry.",
+          "literal": "that-over-there, which paint blue. water-the much, don't worry."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Pawoné uga ing kono?",
+          "id": "Is the kitchen there too?",
+          "literal": "kitchen-the also at there?"
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Ora. Pawon ing ngisor. Ing ndhuwur ora ana pawon.",
+          "id": "No. The kitchen is downstairs. There's no kitchen upstairs.",
+          "literal": "no. kitchen at below. at above not there-is kitchen."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Oh, ngono. Matur nuwun, Rin.",
+          "id": "Oh, I see. Thanks, Rin.",
+          "literal": "oh, like-that. thank-you, Rin."
+        }
+      ],
+      "notes": [
+        "**Rada** means \"rather, a bit\": *rada cilik* (a bit small), *rada adoh* (rather far), *rada larang* (a bit expensive). Its krama form is *radi*.",
+        "**Ora apa-apa** — literally \"not what-what\": \"it's nothing, no problem\". The krama form is *boten punapa-punapa*, which is very long and so is often shortened to *boten napa-napa*.",
+        "**Lemariné** = *lemari* + *-né*. The ending *-é* / *-né* can mean \"his/her\" (*lemariné Rini*, Rini's wardrobe) or simply \"the one we're talking about\" (\"the wardrobe\"). The rule is simple: words ending in a consonant take **-é** (*lawang* → *lawangé*), words ending in a vowel take **-né** (*lemari* → *lemariné*).",
+        "**Ana kunciné?** — to ask \"is there…?\", Javanese needs no question word at all. Just raise your voice at the end, as you can in English (\"There's a key?\"). To be clearer, put *apa* in front: *apa ana kunciné?*",
+        "**Sing cèt biru** — *sing* means \"the one that, which\", and it's used constantly for pointing things out: *sing gedhé* (the big one), *sing kuwi* (that one), *sing anyar* (the new one). Its krama form is *ingkang*, often shortened to *kang*.",
+        "**Aja** is \"don't\", and it's only for telling people not to do something. Ordinary statements are negated with *ora*. Compare: *aja lunga* (don't go) with *ora lunga* (not going). The krama form of *aja* is *sampun* — and yes, it's exactly the same word as *sampun* \"already\". Tone and position tell them apart.",
+        "**Ngono** means \"like that\", sibling of *ngéné* (like this) and *ngana* (like that, further away). *Oh, ngono* is the most common reply when someone has just understood something — \"oh, I see\"."
+      ],
+      "grammars": [
+        {
+          "title": "Three distances in ngoko, one in krama",
+          "body": [
+            "Javanese splits \"this/that\" into three by distance — like old English \"this / that / yon\" — where modern English has only two."
+          ],
+          "table": {
+            "head": [
+              "Distance",
+              "Thing (ngoko)",
+              "Place (ngoko)",
+              "Krama (thing)",
+              "Krama (place)"
+            ],
+            "rows": [
+              [
+                "near **me**",
+                "**iki** (this)",
+                "**kéné** (here)",
+                "menika",
+                "ngriki"
+              ],
+              [
+                "near **you**",
+                "**kuwi** (that)",
+                "**kono** (there)",
+                "menika",
+                "ngriku"
+              ],
+              [
+                "far from **both of us**",
+                "**kaé** (that over there)",
+                "**kana** (over there)",
+                "menika",
+                "ngrika"
+              ]
+            ]
+          },
+          "after": [
+            "Look at the fourth column: **krama flattens all three into *menika***. Good news — in polite conversation you need only one word. *Punika* is also used and means the same; *menika* is heard more in Yogyakarta and Solo.",
+            "Short forms are very common in fast speech: *kuwi* is often just **kuwi** or **ki** depending on the region, and *iki* is often said as just **ki** — *ki apa?* for \"what's this?\". You'll hear it a lot; no need to copy it yet.",
+            "Pointing words can also follow a noun: *buku iki* (book this = this book), *omah kuwi* (that house), *gunung kaé* (that mountain over there)."
+          ]
+        },
+        {
+          "title": "Ana and ora ana",
+          "body": [
+            "To say something is or isn't there, Javanese uses a single word — *ana*, \"there is\"."
+          ],
+          "table": {
+            "head": [
+              "English",
+              "Ngoko",
+              "Krama"
+            ],
+            "rows": [
+              [
+                "There's water.",
+                "*Ana banyu.*",
+                "*Wonten toya.*"
+              ],
+              [
+                "There's no water.",
+                "*Ora ana banyu.*",
+                "*Boten wonten toya.*"
+              ],
+              [
+                "Is there a key?",
+                "*Ana kunciné?*",
+                "*Wonten kuncinipun?*"
+              ],
+              [
+                "There's a wardrobe in the room.",
+                "*Ing kamar ana lemari.*",
+                "*Ing kamar wonten lemari.*"
+              ],
+              [
+                "There's no kitchen here.",
+                "*Ing kéné ora ana pawon.*",
+                "*Ing ngriki boten wonten pawon.*"
+              ]
+            ]
+          },
+          "after": [
+            "**Ana** also means \"to be (somewhere)\": *Rini ana ing kamar* (Rini is in the room). One word, two jobs.",
+            "To negate a **noun** — \"it's not X\" — use **dudu**, not *ora*: *iki dudu kunciku* (this isn't my key). *Ora* negates verbs and adjectives; *dudu* negates nouns. The krama form of *dudu* is *sanès*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Things in your room and around the house",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This unit's words were chosen from things that are really around you right now. Read the table while pointing at each object — two rounds are usually enough to make them stick."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Ngoko",
+            "Krama",
+            "English"
+          ],
+          "rows": [
+            [
+              "*lawang*",
+              "*kori*",
+              "door"
+            ],
+            [
+              "*jendhéla*",
+              "–",
+              "window"
+            ],
+            [
+              "*méja*",
+              "–",
+              "table"
+            ],
+            [
+              "*kursi*",
+              "–",
+              "chair"
+            ],
+            [
+              "*amben*",
+              "*patileman*",
+              "bed"
+            ],
+            [
+              "*kasur*",
+              "–",
+              "mattress"
+            ],
+            [
+              "*lemari*",
+              "–",
+              "wardrobe, cupboard"
+            ],
+            [
+              "*kunci*",
+              "–",
+              "key"
+            ],
+            [
+              "*sapu*",
+              "–",
+              "broom"
+            ],
+            [
+              "*ember*",
+              "–",
+              "bucket"
+            ],
+            [
+              "*klambi*",
+              "*rasukan*",
+              "clothes, shirt"
+            ],
+            [
+              "*sandhal*",
+              "–",
+              "sandals"
+            ],
+            [
+              "*tas*",
+              "–",
+              "bag"
+            ],
+            [
+              "*buku*",
+              "–",
+              "book"
+            ],
+            [
+              "*banyu*",
+              "*toya*",
+              "water"
+            ],
+            [
+              "*listrik*",
+              "–",
+              "electricity"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Count the rows with **–** in the krama column. Fourteen of the sixteen words in this table are **the same** in ngoko and krama. That's what undha-usuk really looks like: not two complete vocabularies, but one vocabulary in which about two hundred words split in two."
+        }
+      ]
+    },
+    {
+      "title": "Position: above, below, inside, outside",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Position words in Javanese are almost always preceded by *ing* or *nang* (\"at, in\"), then the direction word: *ing ndhuwur méja* = at top table = on the table."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Ngoko",
+            "Krama",
+            "English",
+            "Example"
+          ],
+          "rows": [
+            [
+              "*ndhuwur*",
+              "*nginggil*",
+              "top, above",
+              "*ing ndhuwur méja* — on the table"
+            ],
+            [
+              "*ngisor*",
+              "*ngandhap*",
+              "bottom, below",
+              "*ing ngisor kursi* — under the chair"
+            ],
+            [
+              "*jero*",
+              "*lebet*",
+              "inside",
+              "*ing jero tas* — in the bag"
+            ],
+            [
+              "*njaba*",
+              "*jawi*",
+              "outside",
+              "*ing njaba* — outside"
+            ],
+            [
+              "*ngarep*",
+              "*ngajeng*",
+              "front",
+              "*ing ngarep kos* — in front of the boarding house"
+            ],
+            [
+              "*mburi*",
+              "*wingking*",
+              "back",
+              "*ing mburi omah* — behind the house"
+            ],
+            [
+              "*kiwa*",
+              "–",
+              "left",
+              "*ing kiwa lawang* — left of the door"
+            ],
+            [
+              "*tengen*",
+              "–",
+              "right",
+              "*ing tengen lemari* — right of the wardrobe"
+            ],
+            [
+              "*sandhing*",
+              "*sisih*",
+              "beside, next to",
+              "*ing sandhingku* — next to me"
+            ],
+            [
+              "*tengah*",
+              "*tengah*",
+              "middle",
+              "*ing tengah kamar* — in the middle of the room"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Ing** and **nang** both mean \"at, in\" and are interchangeable. *Ing* is a little neater and more common in writing; *nang* is more casual and more common in speech. There's also *ana ing* for emphasis. The krama form is *wonten ing*, often shortened to *wonten*."
+        },
+        {
+          "type": "kotak",
+          "title": "A small trap: ndhuwur and ngisor",
+          "items": [
+            "Both start with a cluster: *ndhuwur* has **n + dh**, not plain *d*; *ngisor* starts with **ng**, the sound at the end of *sing*, not a plain *n*. Words starting with *ng* and *ny* are perfectly normal in Javanese, even if they feel strange to an English tongue.",
+            "The base words are *dhuwur* (high) and *isor*, and the prefix *n-* / *ng-* turns them into place words. You'll meet this prefix again in Unit 8, where it does a much bigger job."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "jv": "iki",
+      "krama": "menika, punika",
+      "baca": "EE-kee · muh-NEE-kah",
+      "en": "this"
+    },
+    {
+      "jv": "kuwi",
+      "krama": "menika",
+      "baca": "KOO-wee",
+      "en": "that (near you)"
+    },
+    {
+      "jv": "kaé",
+      "krama": "menika",
+      "baca": "kah-AY",
+      "en": "that (over there)"
+    },
+    {
+      "jv": "kéné",
+      "krama": "ngriki",
+      "baca": "kay-NAY · ngree-KEE",
+      "en": "here"
+    },
+    {
+      "jv": "kono",
+      "krama": "ngriku",
+      "baca": "KO-no · ngree-KOO",
+      "en": "there (near you)"
+    },
+    {
+      "jv": "kana",
+      "krama": "ngrika",
+      "baca": "KO-no · ngree-KO",
+      "en": "over there"
+    },
+    {
+      "jv": "apa",
+      "krama": "punapa, napa",
+      "baca": "O-po · poo-NAH-po",
+      "en": "what"
+    },
+    {
+      "jv": "sing",
+      "krama": "ingkang",
+      "baca": "SING · ING-kahng",
+      "en": "which, the one that, who"
+    },
+    {
+      "jv": "ana",
+      "krama": "wonten",
+      "baca": "O-no · WON-tuhn",
+      "en": "there is; to be (somewhere)"
+    },
+    {
+      "jv": "dudu",
+      "krama": "sanès",
+      "baca": "DOO-doo · SAH-nehs",
+      "en": "not (with nouns)"
+    },
+    {
+      "jv": "aja",
+      "krama": "sampun",
+      "baca": "O-jo · sahm-POON",
+      "en": "don't"
+    },
+    {
+      "jv": "rada",
+      "krama": "radi",
+      "baca": "RO-do · RAH-dee",
+      "en": "rather, a bit"
+    },
+    {
+      "jv": "kamar",
+      "krama": "kamar",
+      "baca": "KAH-mahr",
+      "en": "room"
+    },
+    {
+      "jv": "kamar mandi",
+      "krama": "jedhing",
+      "baca": "juh-DHING",
+      "en": "bathroom"
+    },
+    {
+      "jv": "pawon",
+      "krama": "pawon",
+      "baca": "PAH-won",
+      "en": "kitchen"
+    },
+    {
+      "jv": "lawang",
+      "krama": "kori",
+      "baca": "LAH-wahng · KO-ree",
+      "en": "door"
+    },
+    {
+      "jv": "banyu",
+      "krama": "toya",
+      "baca": "BAH-nyoo · TO-yo",
+      "en": "water"
+    },
+    {
+      "jv": "klambi",
+      "krama": "rasukan",
+      "baca": "KLAHM-bee · rah-SOO-kahn",
+      "en": "clothes, shirt"
+    },
+    {
+      "jv": "gedhé",
+      "krama": "ageng",
+      "baca": "guh-DHAY · AH-guhng",
+      "en": "big"
+    },
+    {
+      "jv": "cilik",
+      "krama": "alit",
+      "baca": "chee-LI' · AH-lit",
+      "en": "small"
+    },
+    {
+      "jv": "resik",
+      "krama": "resik",
+      "baca": "RUH-si'",
+      "en": "clean"
+    },
+    {
+      "jv": "reged",
+      "krama": "reged",
+      "baca": "RUH-guht",
+      "en": "dirty"
+    },
+    {
+      "jv": "akèh",
+      "krama": "kathah",
+      "baca": "AH-keh · KAH-thah",
+      "en": "many, much, a lot"
+    },
+    {
+      "jv": "lawas",
+      "krama": "lami",
+      "baca": "LAH-wahs · LAH-mee",
+      "en": "old, worn"
+    },
+    {
+      "jv": "ndhuwur",
+      "krama": "nginggil",
+      "baca": "n-DHOO-woor",
+      "en": "top, above"
+    },
+    {
+      "jv": "ngisor",
+      "krama": "ngandhap",
+      "baca": "ngee-SOR",
+      "en": "bottom, below"
+    },
+    {
+      "jv": "jero",
+      "krama": "lebet",
+      "baca": "JUH-ro · LUH-buht",
+      "en": "inside"
+    },
+    {
+      "jv": "njaba",
+      "krama": "jawi",
+      "baca": "n-JO-bo · JAH-wee",
+      "en": "outside"
+    },
+    {
+      "jv": "ngono",
+      "krama": "mekaten",
+      "baca": "ngo-NO · muh-KAH-tuhn",
+      "en": "like that"
+    },
+    {
+      "jv": "ngéné",
+      "krama": "mekaten",
+      "baca": "ngay-NAY",
+      "en": "like this"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in *iki*, *kuwi* or *kaé* according to the hint in brackets.",
+      "items": [
+        "____ tasku. (in my hand)",
+        "____ apa? (near the person you're talking to)",
+        "Gunung ____ dhuwur banget. (visible far away)",
+        "____ kunci kamarku. (I'm holding it)",
+        "Omah ____ anyar. (across the road, far)"
+      ]
+    },
+    {
+      "prompt": "Answer with *ana* or *ora ana*, then write the krama form too.",
+      "items": [
+        "Ing kamar ____ lemari. (there is)",
+        "Ing ndhuwur ____ pawon. (there isn't)",
+        "____ banyu ing ember? (is there?)",
+        "Ing tas ____ buku loro. (there is)",
+        "Ing njaba ____ wong. (there isn't)"
+      ]
+    },
+    {
+      "prompt": "Translate into Javanese (ngoko).",
+      "items": [
+        "This is my room.",
+        "That's not my key.",
+        "Where's the bathroom?",
+        "There are clothes in the wardrobe.",
+        "There's plenty of water, don't worry.",
+        "The book is on the table."
+      ]
+    },
+    {
+      "prompt": "Change into krama.",
+      "items": [
+        "Iki apa?",
+        "Ora ana banyu.",
+        "Kamar mandiné ing ngendi?",
+        "Iki dudu kunciku.",
+        "Ing jero tas ana buku."
+      ]
+    }
+  ],
+  "answers": [
+    "Iki — Kuwi — kaé — Iki — kaé",
+    "ana (wonten) — ora ana (boten wonten) — Ana (Wonten) — ana (wonten) — ora ana (boten wonten)",
+    "Iki kamarku. — Kuwi dudu kunciku. — Kamar mandiné ngendi? — Ing jero lemari ana klambi. — Banyuné akèh, aja kuwatir. — Bukuné ing ndhuwur méja.",
+    "Menika punapa? — Boten wonten toya. — Jedhingipun wonten pundi? — Menika sanès kunci kula. — Ing lebet tas wonten buku."
+  ]
+}

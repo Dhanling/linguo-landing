@@ -1,0 +1,557 @@
+{
+  "title": "The body, feeling ill, and seeing a doctor",
+  "title_target": "Awak, gering, jeung ka dokter",
+  "goal": "Name parts of the body, describe symptoms, and talk at a pharmacy or health center using the right speech level.",
+  "bekal": [
+    "parts of the body and their two speech levels",
+    "describing illness: *nyeri*, *muriang*, *utah*, *lieur*",
+    "asking after a sick person, and answering"
+  ],
+  "dialogs": [
+    {
+      "title": "Paguneman — At the pharmacy",
+      "intro": "Rani wakes up with a heavy head and a sore throat. Sari takes her to the pharmacy at the end of the alley.",
+      "lines": [
+        {
+          "speaker": "Apotéker:",
+          "text": "Wilujeng énjing. Aya nu tiasa dibantosan?",
+          "id": "Good morning. How can I help?",
+          "literal": "good morning. is-there what can be-helped?"
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Punten, abdi teu damang ti kamari.",
+          "id": "Excuse me, I haven't been feeling well since yesterday.",
+          "literal": "excuse-me, I not well since yesterday."
+        },
+        {
+          "speaker": "Apotéker:",
+          "text": "Nu karaos naon, Téh?",
+          "id": "What are your symptoms, Téh?",
+          "literal": "what is-felt what, Téh?"
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Sirah nyeri, tikoro ogé nyeri upami neureuy.",
+          "id": "My head hurts, and my throat hurts when I swallow.",
+          "literal": "head hurt, throat also hurt if swallow."
+        },
+        {
+          "speaker": "Apotéker:",
+          "text": "Panas henteu awakna? Muriang?",
+          "id": "Do you feel hot? A fever?",
+          "literal": "hot not body-the? fever?"
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Wengi tadi muriang. Ayeuna mah ngan lieur.",
+          "id": "I had a fever last night. Now I'm just dizzy.",
+          "literal": "night past fever. now [mah] only dizzy."
+        },
+        {
+          "speaker": "Apotéker:",
+          "text": "Tos ngaleueut obat naon waé?",
+          "id": "What medicine have you taken?",
+          "literal": "already drink medicine what just?"
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Teu acan nanaon. Sieun lepat.",
+          "id": "Nothing yet. I was afraid of taking the wrong thing.",
+          "literal": "not-yet anything. afraid wrong."
+        },
+        {
+          "speaker": "Apotéker:",
+          "text": "Saé. Ieu kanggo tikoro, diseuseup tilu kali sadinten.",
+          "id": "Good. This is for your throat, suck one three times a day.",
+          "literal": "good. this for throat, be-sucked three times a-day."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Ari kanggo sirah?",
+          "id": "And for my head?",
+          "literal": "as-for for head?"
+        },
+        {
+          "speaker": "Apotéker:",
+          "text": "Ieu, saatos tuang. Ulah dina beuteung kosong.",
+          "id": "This one, after eating. Not on an empty stomach.",
+          "literal": "this, after eat. don't in stomach empty."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Upami tilu dinten teu cageur, kumaha?",
+          "id": "What if I'm not better in three days?",
+          "literal": "if three day not recover, how?"
+        },
+        {
+          "speaker": "Apotéker:",
+          "text": "Kedah ka dokter. Puskésmas caket, hareupeun pasar.",
+          "id": "Then see a doctor. The health center is close, opposite the market.",
+          "literal": "must to doctor. health-center near, at front market."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Hatur nuhun pisan. Sabaraha sadayana?",
+          "id": "Thank you very much. How much is it all together?",
+          "literal": "thank you very. how-much all-of-it?"
+        }
+      ],
+      "notes": [
+        "**Teu damang** = not well, under the weather (lemes). It's the most polite way to say you're ill. The loma form is **gering**. ⚠️ For someone you respect, use **udur**: *Ibu nuju udur* = Mother is ill.",
+        "**Nyeri** = hurting, a pain in part of the body. Compare *gering*, being ill as a state. *Sirah nyeri* = my head hurts; *kuring gering* = I'm ill.",
+        "**Muriang** = fever, feverish. Indonesian has the same word (*meriang*), so if you know some Indonesian, it's an easy one.",
+        "**Lieur** = dizzy, a headache. ⚠️ Say it as two beats, *lee-EUR*. It's also used for being confused: *lieur mikiranana* = it makes my head spin just thinking about it.",
+        "**Neureuy** = to swallow. One of those double-*eu* words worth practicing: *neu-REUY*.",
+        "**Cageur** = recovered, healthy. It's part of a famous Sundanese saying: **cageur, bageur, bener, pinter, singer**: healthy, kind, honest, clever, skillful, the five qualities hoped for in a good Sundanese person."
+      ],
+      "grammars": [
+        {
+          "title": "Describing symptoms",
+          "body": [
+            "A Sundanese complaint is very simple: **body part + how it feels**, with no verb at all."
+          ],
+          "table": {
+            "head": [
+              "Basa Sunda",
+              "English",
+              "Pattern"
+            ],
+            "rows": [
+              [
+                "*Sirah nyeri.*",
+                "My head hurts.",
+                "head + hurting"
+              ],
+              [
+                "*Beuteung nyeri.*",
+                "My stomach hurts.",
+                "stomach + hurting"
+              ],
+              [
+                "*Huntu nyeri.*",
+                "I have a toothache.",
+                "tooth + hurting"
+              ],
+              [
+                "*Awak panas.*",
+                "I'm running a temperature.",
+                "body + hot"
+              ],
+              [
+                "*Sukuna bareuh.*",
+                "His/her foot is swollen.",
+                "foot + swollen"
+              ],
+              [
+                "*Tikoro garing.*",
+                "My throat is dry.",
+                "throat + dry"
+              ]
+            ]
+          },
+          "after": [
+            "To make clear whose head it is, add a pronoun: *Sirah abdi nyeri*. But plain *Sirah nyeri* is more natural: context tells you whose it is.",
+            "Some complaints have their own verbs: **utah** (to vomit), **budah** (diarrhea), **batuk** (cough), **beuki** (a cold; the same word also means \"more and more,\" and context tells them apart), **teu tuang** (no appetite), **teu tiasa kulem** (can't sleep).",
+            "⚠️ When asking someone else, use the respectful lemes forms: *Naon nu karaos?* (what are you feeling), *Tos dipariksa?* (have you been examined), *Tos ngaleueut obat?* (have you taken medicine). Asking *tos nginum obat?* sounds too casual for someone who's ill."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Parts of the body",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Loma",
+            "Lemes",
+            "English",
+            "Loma",
+            "Lemes",
+            "English"
+          ],
+          "rows": [
+            [
+              "**hulu / sirah**",
+              "mastaka",
+              "head",
+              "**buuk**",
+              "rambut",
+              "hair"
+            ],
+            [
+              "**panon**",
+              "soca",
+              "eye",
+              "**ceuli**",
+              "cepil",
+              "ear"
+            ],
+            [
+              "**irung**",
+              "pangambung",
+              "nose",
+              "**biwir**",
+              "lambey",
+              "lip"
+            ],
+            [
+              "**baham / sungut**",
+              "baham",
+              "mouth",
+              "**huntu**",
+              "waos",
+              "tooth"
+            ],
+            [
+              "**létah**",
+              "létah",
+              "tongue",
+              "**tikoro**",
+              "tikoro",
+              "throat"
+            ],
+            [
+              "**beuheung**",
+              "tenggek",
+              "neck",
+              "**taktak**",
+              "taktak",
+              "shoulder"
+            ],
+            [
+              "**leungeun**",
+              "panangan",
+              "hand, arm",
+              "**ramo**",
+              "ramo",
+              "finger"
+            ],
+            [
+              "**dada**",
+              "dada",
+              "chest",
+              "**beuteung**",
+              "patuangan",
+              "stomach"
+            ],
+            [
+              "**tonggong**",
+              "pungkur",
+              "back",
+              "**cangkéng**",
+              "cangkéng",
+              "waist"
+            ],
+            [
+              "**suku**",
+              "sampéan",
+              "foot, leg",
+              "**dengkul**",
+              "dengkul",
+              "knee"
+            ],
+            [
+              "**awak**",
+              "salira",
+              "body",
+              "**kulit**",
+              "kulit",
+              "skin"
+            ],
+            [
+              "**getih**",
+              "rah",
+              "blood",
+              "**tulang**",
+              "tulang",
+              "bone"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Notice **leungeun** (hand) and **panangan** (hand, lemes). The polite *panangan* also turns up in courteous phrases: *punten, panangan abdi kotor* = sorry, my hands are dirty. For feet, the lemes form is **sampéan**, which in Javanese means \"you,\" so don't mix them up."
+        },
+        {
+          "type": "kotak",
+          "title": "Words for symptoms",
+          "items": [
+            "**nyeri** — pain, hurting",
+            "**muriang** — fever",
+            "**lieur** — dizzy",
+            "**utah** — to vomit",
+            "**budah / mencrét** — diarrhea",
+            "**batuk** — cough",
+            "**bareuh** — swollen",
+            "**tunduh** — sleepy",
+            "**cape / lungsé** — tired",
+            "**tiris** — cold, shivering"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "At the doctor's and the pharmacy",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "What the patient says",
+          "items": [
+            "**Abdi teu damang ti kamari.** — I've been ill since yesterday.",
+            "**Sirah nyeri sareng muriang.** — I have a headache and a fever.",
+            "**Tos tilu dinten kieu.** — It's been like this for three days.",
+            "**Teu acan ngaleueut obat.** — I haven't taken any medicine yet.",
+            "**Abdi alérgi ka ____.** — I'm allergic to ____.",
+            "**Kedah dipariksa henteu?** — Do I need to be examined?",
+            "**Obatna diseuseup sabaraha kali sadinten?** — How many times a day do I take it?",
+            "**Aya efék sampingna teu?** — Are there any side effects?"
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "What you'll hear",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Nu karaos naon?*",
+              "What are you feeling?"
+            ],
+            [
+              "*Tos sabaraha lami kieu?*",
+              "How long has it been like this?"
+            ],
+            [
+              "*Mangga calik, urang pariksa.*",
+              "Please sit down, let's take a look."
+            ],
+            [
+              "*Tilu kali sadinten, saatos tuang.*",
+              "Three times a day, after meals."
+            ],
+            [
+              "*Kedah seueur ngaleueut cai.*",
+              "Drink plenty of water."
+            ],
+            [
+              "*Kedah ngaso, ulah damel heula.*",
+              "You need rest, no work for now."
+            ],
+            [
+              "*Upami teu cageur, wangsul deui ka dieu.*",
+              "If you don't get better, come back here."
+            ],
+            [
+              "*Mugia énggal damang.*",
+              "Get well soon."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Mugia énggal damang** is the standard way to say \"get well soon,\" and you'll hear it from almost everyone who knows you're ill. Just answer *aamiin, hatur nuhun*. The loma form: *muga-muga geura cageur*."
+        },
+        {
+          "type": "kotak",
+          "title": "Visiting someone who's ill",
+          "items": [
+            "**Kumaha damang, Bu?** — How are you feeling, ma'am?",
+            "**Tos raraosan?** — Feeling a bit better?",
+            "**Tos tiasa tuang?** — Can you eat yet?",
+            "**Ulah seueur teuing ngalih.** — Don't move around too much.",
+            "**Mugia énggal damang.** — Get well soon.",
+            "**Upami peryogi naon-naon, wartosan waé.** — If you need anything, just let me know."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "su": "gering / teu damang",
+      "baca": "guh-REENG · teu dah-MAHNG",
+      "en": "ill ⚠️"
+    },
+    {
+      "su": "udur",
+      "baca": "oo-DOOR",
+      "en": "ill (lemes, for others)"
+    },
+    {
+      "su": "cageur / damang",
+      "baca": "chah-GEUR · dah-MAHNG",
+      "en": "recovered, healthy"
+    },
+    {
+      "su": "nyeri",
+      "baca": "nyuh-REE",
+      "en": "hurting, pain"
+    },
+    {
+      "su": "muriang",
+      "baca": "moo-ree-AHNG",
+      "en": "fever"
+    },
+    {
+      "su": "lieur",
+      "baca": "lee-EUR",
+      "en": "dizzy"
+    },
+    {
+      "su": "utah",
+      "baca": "oo-TAHH",
+      "en": "to vomit"
+    },
+    {
+      "su": "bareuh",
+      "baca": "bah-REUH",
+      "en": "swollen"
+    },
+    {
+      "su": "tunduh",
+      "baca": "toon-DOOH",
+      "en": "sleepy"
+    },
+    {
+      "su": "cape / lungsé",
+      "baca": "chah-PEH · loong-SEH",
+      "en": "tired"
+    },
+    {
+      "su": "sirah / hulu",
+      "baca": "see-RAHH · hoo-LOO",
+      "en": "head"
+    },
+    {
+      "su": "panon / soca",
+      "baca": "pah-NOHN · soh-CHAH",
+      "en": "eye"
+    },
+    {
+      "su": "ceuli / cepil",
+      "baca": "cheu-LEE · chuh-PEEL",
+      "en": "ear"
+    },
+    {
+      "su": "huntu / waos",
+      "baca": "hoon-TOO · wah-OHS",
+      "en": "tooth"
+    },
+    {
+      "su": "tikoro",
+      "baca": "tee-koh-ROH",
+      "en": "throat"
+    },
+    {
+      "su": "leungeun / panangan",
+      "baca": "leu-NGEUN · pah-nah-NGAHN",
+      "en": "hand, arm"
+    },
+    {
+      "su": "suku / sampéan",
+      "baca": "soo-KOO · sahm-PEH-ahn",
+      "en": "foot, leg"
+    },
+    {
+      "su": "beuteung / patuangan",
+      "baca": "beu-TEUNG",
+      "en": "stomach"
+    },
+    {
+      "su": "tonggong",
+      "baca": "tohng-GOHNG",
+      "en": "back"
+    },
+    {
+      "su": "awak / salira",
+      "baca": "ah-WAHK · sah-lee-RAH",
+      "en": "body"
+    },
+    {
+      "su": "neureuy",
+      "baca": "neu-REUY",
+      "en": "to swallow"
+    },
+    {
+      "su": "obat",
+      "baca": "oh-BAHT",
+      "en": "medicine"
+    },
+    {
+      "su": "dipariksa",
+      "baca": "dee-pah-reek-SAH",
+      "en": "to be examined"
+    },
+    {
+      "su": "sadinten / sapoé",
+      "baca": "sah-deen-TUHN · sah-poh-EH",
+      "en": "a day, per day"
+    },
+    {
+      "su": "saatos / sanggeus",
+      "baca": "sah-AH-tohs",
+      "en": "after"
+    },
+    {
+      "su": "peryogi / butuh",
+      "baca": "puhr-yoh-GEE · boo-TOOH",
+      "en": "to need"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Give the Sundanese for these parts of the body (loma form).",
+      "items": [
+        "head → ____",
+        "eye → ____",
+        "ear → ____",
+        "stomach → ____",
+        "hand → ____",
+        "foot → ____"
+      ]
+    },
+    {
+      "prompt": "Say these complaints in Sundanese.",
+      "items": [
+        "My head hurts. → ____",
+        "My stomach hurts. → ____",
+        "I'm running a temperature. → ____",
+        "I have a toothache. → ____",
+        "My throat hurts when I swallow. → ____",
+        "His foot is swollen. → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into polite (lemes) Sundanese.",
+      "items": [
+        "I've been ill since yesterday.",
+        "I haven't taken any medicine yet.",
+        "It's been like this for three days.",
+        "How many times a day do I take it?",
+        "Get well soon, ma'am.",
+        "You need rest, no work for now."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "damang / abdi / kamari / teu / ti",
+        "naon / karaos / nu / ?",
+        "obat / acan / ngaleueut / teu",
+        "damang / mugia / énggal",
+        "tuang / saatos / ieu"
+      ]
+    }
+  ],
+  "answers": [
+    "hulu/sirah — panon — ceuli — beuteung — leungeun — suku",
+    "Sirah nyeri. — Beuteung nyeri. — Awak panas. — Huntu nyeri. — Tikoro nyeri upami neureuy. — Sukuna bareuh.",
+    "Abdi teu damang ti kamari. — Teu acan ngaleueut obat. — Tos tilu dinten kieu. — Obatna diseuseup sabaraha kali sadinten? — Mugia énggal damang, Bu. — Kedah ngaso, ulah damel heula.",
+    "Abdi teu damang ti kamari. — Nu karaos naon? — Teu acan ngaleueut obat. — Mugia énggal damang. — Ieu saatos tuang."
+  ]
+}

@@ -1,0 +1,609 @@
+{
+  "title": "’addēsh — prices, big numbers and bargaining",
+  "title_target": "قَدِّيش؟",
+  "goal": "Ask prices, understand numbers up to a thousand, bargain without giving offense, and know the currencies of the four Levantine countries.",
+  "bekal": [
+    "ask a price with قَدِّيش and understand the answer",
+    "count in tens, hundreds and thousands",
+    "bargain with the expressions locals actually use"
+  ],
+  "dialogs": [
+    {
+      "title": "حَكِي — بِسُوق الْحَمِيدِيِّة",
+      "intro": "The biggest covered market in Damascus. Budi wants to buy a scarf for his mother, and the trader names his first price.",
+      "lines": [
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "أَهْلًا! تْفَضَّل، شُوف.",
+          "baca": "ahlan! tfaḍḍal, shuuf.",
+          "id": "Welcome! Go ahead, have a look.",
+          "literal": "family! please, look."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "يِسْلَمُوا. قَدِّيش هَاد الشَّال؟",
+          "baca": "yislamu. ’addēsh haad esh-shaal?",
+          "id": "Thanks. How much is this scarf?",
+          "literal": "may-they-be-safe. how-much this the-scarf?"
+        },
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "هَاد بِخَمْسِين أَلْف. صُوف أَصْلِي.",
+          "baca": "haad bikhamsiin alf. ṣuuf aṣli.",
+          "id": "This one's fifty thousand. Real wool.",
+          "literal": "this for-fifty thousand. wool original."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "خَمْسِين؟ غَالِي شْوَي.",
+          "baca": "khamsiin? ghaali shway.",
+          "id": "Fifty? That's a bit expensive.",
+          "literal": "fifty? expensive a-little."
+        },
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "وَاللَّه هَاد أَحْسَن نَوْع عِنَّا.",
+          "baca": "walla haad ahsan nō‘ ‘inna.",
+          "id": "Honestly, it's the best kind we have.",
+          "literal": "by-God this best kind at-us."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "فِي شِي أَرْخَص؟",
+          "baca": "fi shi arkhaṣ?",
+          "id": "Is there anything cheaper?",
+          "literal": "there-is something cheaper?"
+        },
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "أَكِيد. هَيّ بِتْلَاتِين، بَسّ مِش صُوف.",
+          "baca": "akiid. hayy bitlaatiin, bass mish ṣuuf.",
+          "id": "Sure. This one's thirty, but it's not wool.",
+          "literal": "sure. this for-thirty, but not wool."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "بَدِّي هَاد الْأَوَّل. آخِر سِعِر قَدِّيش؟",
+          "baca": "baddi haad el-awwal. aakhir si‘ir ’addēsh?",
+          "id": "I want the first one. What's your final price?",
+          "literal": "want-my this the-first. last price how-much?"
+        },
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "لَإِنَّك إِنْتَ… أَرْبَعِين. وْخَلَص.",
+          "baca": "la’innak inta… arba‘iin. w khalaṣ.",
+          "id": "For you… forty. That's it.",
+          "literal": "for-you you… forty. and done."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "خَمْسَة وْتْلَاتِين وْبَاخْدُو هَلَّق.",
+          "baca": "khamse w tlaatiin w baakhdo halla’.",
+          "id": "Thirty-five and I'll take it now.",
+          "literal": "five and-thirty and I-take-it now."
+        },
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "يَلَّا، مِن عْيُونِي. خَدُو.",
+          "baca": "yalla, min ‘yuuni. khudo.",
+          "id": "Oh, all right, for you. Take it.",
+          "literal": "come-on, from eyes-my. take-it."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "يِسْلَمُوا كْتِير. تْفَضَّل الْمَصَارِي.",
+          "baca": "yislamu ktiir. tfaḍḍal el-maṣaari.",
+          "id": "Thanks a lot. Here's the money.",
+          "literal": "may-they-be-safe much. please the-money."
+        },
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "هَيّ الْبَاقِي. خَمْسِة.",
+          "baca": "hayy el-baa’i. khamse.",
+          "id": "Here's your change. Five.",
+          "literal": "this the-rest. five."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مَبْرُوك عَلَيِّي؟",
+          "baca": "mabruuk ‘aleyyi?",
+          "id": "Congratulations to me?",
+          "literal": "blessed on-me?"
+        },
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "مَبْرُوك! تِلْبْسُو بِالْهَنَا.",
+          "baca": "mabruuk! tilbso bil-hana.",
+          "id": "Congratulations! Wear it in good health.",
+          "literal": "blessed! may-you-wear-it with-happiness."
+        }
+      ],
+      "notes": [
+        "**The word قَدِّيش is the only \"how much\" you need.** It's used for prices (قَدِّيش هَاد؟), age (قَدِّيش عُمْرَك؟), distance, time and quantity. The Fusha form كَم does exist in the Levant, but it sounds formal.",
+        "**Prices are given with the prefix بِـ.** The phrase بِخَمْسِين أَلْف means \"for fifty thousand\", just like English \"for fifty\". Saying the number alone without بِـ is still understood and very common.",
+        "**Bargaining isn't an insult; it's part of the deal.** In traditional markets the first price is expected to be bargained down, and the trader is actually a little disappointed if you agree straight away. On the other hand, **in modern shops and supermarkets prices are fixed** — bargaining there is out of place.",
+        "**The unwritten rule is simple: offer about a third less, then meet in the middle.** The sentence that opens bargaining politely is آخِر سِعِر قَدِّيش؟ (\"what's your final price?\"). Never bargain for something you don't intend to buy.",
+        "**The phrase مِن عْيُونِي literally means \"from my eyes\".** It means \"all right, for you\" and is used when someone grants a request. Together with تَكْرَم عَيْنَك from unit 3, it belongs to a family of Levantine expressions that all involve the eyes.",
+        "**The word مَبْرُوك is said for any purchase.** For clothes there's a special version: تِلْبْسُو بِالْهَنَا (\"may you wear it happily\"), answered with يِسْلَمُوا or اَللَّه يْخَلِّيك."
+      ],
+      "grammars": [
+        {
+          "title": "Tens, hundreds, thousands",
+          "table": {
+            "head": [
+              "Number",
+              "Levantine",
+              "Say it",
+              "Number",
+              "Levantine",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "20",
+                "عِشْرِين",
+                "‘ishriin",
+                "100",
+                "مِيِّة",
+                "miyye"
+              ],
+              [
+                "30",
+                "تْلَاتِين",
+                "tlaatiin",
+                "200",
+                "مِيتَين",
+                "miitēn"
+              ],
+              [
+                "40",
+                "أَرْبَعِين",
+                "arba‘iin",
+                "300",
+                "تْلَات مِيِّة",
+                "tlaat miyye"
+              ],
+              [
+                "50",
+                "خَمْسِين",
+                "khamsiin",
+                "500",
+                "خَمْس مِيِّة",
+                "khams miyye"
+              ],
+              [
+                "60",
+                "سِتِّين",
+                "sittiin",
+                "1.000",
+                "أَلْف",
+                "alf"
+              ],
+              [
+                "70",
+                "سَبْعِين",
+                "sab‘iin",
+                "2.000",
+                "أَلْفَين",
+                "alfēn"
+              ],
+              [
+                "80",
+                "تْمَانِين",
+                "tmaaniin",
+                "5.000",
+                "خَمْس تْلَاف",
+                "khams tlaaf"
+              ],
+              [
+                "90",
+                "تِسْعِين",
+                "tis‘iin",
+                "1.000.000",
+                "مِلْيُون",
+                "milyōn"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ In compound numbers, **the units come first**: خَمْسَة وْتْلَاتِين *khamse w tlaatiin* is literally \"five and thirty\" for 35 — like the old English \"four-and-twenty blackbirds\". It takes conscious practice; if in doubt, say the number slowly and let the other person correct you.",
+            "Notice that all the tens end in ـِين — one pattern for eight numbers. Once you catch it, the whole series falls into place."
+          ]
+        },
+        {
+          "title": "Currencies and how to say prices",
+          "table": {
+            "head": [
+              "Country",
+              "Currency",
+              "Say it",
+              "Sample price",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Syria",
+                "لِيرَة",
+                "liira",
+                "خَمْسِين أَلْف لِيرَة",
+                "50,000 lira"
+              ],
+              [
+                "Lebanon",
+                "لِيرَة",
+                "liira",
+                "مِيت أَلْف لِيرَة",
+                "100,000 lira"
+              ],
+              [
+                "Jordan",
+                "دِينَار",
+                "diinaar",
+                "خَمْس دَنَانِير",
+                "5 dinars"
+              ],
+              [
+                "Palestine",
+                "شِيكِل",
+                "shiikil",
+                "عِشْرِين شِيكِل",
+                "20 shekels"
+              ],
+              [
+                "Anywhere",
+                "دُولَار",
+                "dōlaar",
+                "عَشْر دُولَار",
+                "10 dollars"
+              ]
+            ]
+          },
+          "after": [
+            "In everyday conversation **the name of the currency is almost always dropped** when it's clear from context. The answer بِخَمْسِين is enough, and adding لِيرَة actually sounds like reading out a price list.",
+            "⚠️ In Lebanon and Syria, strings of zeros are often trimmed in speech: a price of \"a hundred thousand\" may be said as just مِيِّة. If the number seems too small for the item, ask again with قَدِّيش بِالضَّبْط؟ (\"how much exactly?\")."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Sentences for shopping",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Levantine",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "قَدِّيش هَاد؟",
+              "’addēsh haad?",
+              "how much is this?"
+            ],
+            [
+              "قَدِّيش الْكِيلُو؟",
+              "’addēsh el-kiilu?",
+              "how much is a kilo?"
+            ],
+            [
+              "غَالِي شْوَي",
+              "ghaali shway",
+              "it's a bit expensive"
+            ],
+            [
+              "فِي شِي أَرْخَص؟",
+              "fi shi arkhaṣ?",
+              "is there anything cheaper?"
+            ],
+            [
+              "آخِر سِعِر قَدِّيش؟",
+              "aakhir si‘ir ’addēsh?",
+              "what's your final price?"
+            ],
+            [
+              "بَدِّي شُوف بَسّ",
+              "baddi shuuf bass",
+              "I'm just looking"
+            ],
+            [
+              "بَاخْدُو",
+              "baakhdo",
+              "I'll take it"
+            ],
+            [
+              "مَا بَدِّي، شُكْرًا",
+              "ma baddi, shukran",
+              "no, thank you"
+            ],
+            [
+              "فِي بَاقِي؟",
+              "fi baa’i?",
+              "do you have change?"
+            ],
+            [
+              "بَقْبَل كَرْت؟",
+              "ba’bal kart?",
+              "do you take cards?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The sentence بَدِّي شُوف بَسّ is a lifesaver in any market. It says politely that you're just looking, and Levantine traders will respect it — usually while still offering you a glass of tea."
+        },
+        {
+          "type": "kotak",
+          "title": "Saying no without offending",
+          "items": [
+            "The gentlest: اَللَّه يْسَهِّل *alla ysahhil* — literally \"may God make it easy\". It's a blessing and a refusal at once, and nobody takes offense.",
+            "Direct but still polite: مَا بَدِّي، شُكْرًا. Say it with a smile and keep walking.",
+            "⚠️ Don't bargain and then walk away once the trader accepts your offer. Across the Levant that's considered bad form — accepting an offer counts as a done deal."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "At the grocery store",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Levantine",
+            "Say it",
+            "Meaning",
+            "Levantine",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "خُبْز",
+              "khubz",
+              "bread",
+              "جِبْنِة",
+              "jibne",
+              "cheese"
+            ],
+            [
+              "حَلِيب",
+              "haliib",
+              "milk",
+              "لَبَن",
+              "laban",
+              "yogurt"
+            ],
+            [
+              "بَيْض",
+              "bēḍ",
+              "eggs",
+              "زَيْت",
+              "zēt",
+              "oil"
+            ],
+            [
+              "سِكَّر",
+              "sikkar",
+              "sugar",
+              "مِلِح",
+              "milih",
+              "salt"
+            ],
+            [
+              "رِزّ",
+              "rizz",
+              "rice",
+              "تُفَّاح",
+              "tuffaah",
+              "apples"
+            ],
+            [
+              "مَوْز",
+              "mōz",
+              "bananas",
+              "بَنْدُورَة",
+              "banduura",
+              "tomatoes"
+            ],
+            [
+              "خِيَار",
+              "khiyaar",
+              "cucumbers",
+              "بَطَاطَا",
+              "baṭaaṭa",
+              "potatoes"
+            ],
+            [
+              "دَجَاج",
+              "dajaaj",
+              "chicken",
+              "لَحْمِة",
+              "lahme",
+              "meat"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that لَبَن in the Levant means **yogurt**, not milk — a trap for anyone who learned \"laban = milk\" from Fusha or from Gulf Arabic. Milk is حَلِيب. Mix them up and you'll go home with a liter of yogurt."
+        },
+        {
+          "type": "kotak",
+          "title": "Buying by the unit",
+          "items": [
+            "Weight: كِيلُو *kiilu* (kilo) and نُصّ كِيلُو *nuṣṣ kiilu* (half a kilo). The full sentence is كِيلُو تُفَّاح مِن فَضْلَك.",
+            "Counting units: حَبِّة *habbe* for fruit and eggs (تْلَات حَبَّات means \"three of them\"), and رَبْطَة *rabṭa* for a bunch of vegetables.",
+            "To ask for more: كَمَان شْوَي *kamaan shway* (\"a little more\"). To stop: هَيْك بَسّ *hēk bass* or خَلَص."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "قَدِّيش",
+      "baca": "’addēsh",
+      "en": "how much, how many"
+    },
+    {
+      "ar": "سِعِر",
+      "baca": "si‘ir",
+      "en": "price"
+    },
+    {
+      "ar": "غَالِي",
+      "baca": "ghaali",
+      "en": "expensive"
+    },
+    {
+      "ar": "رْخِيص",
+      "baca": "rkhiiṣ",
+      "en": "cheap"
+    },
+    {
+      "ar": "أَرْخَص",
+      "baca": "arkhaṣ",
+      "en": "cheaper"
+    },
+    {
+      "ar": "أَحْسَن",
+      "baca": "ahsan",
+      "en": "better, best"
+    },
+    {
+      "ar": "شْوَي",
+      "baca": "shway",
+      "en": "a little, a bit"
+    },
+    {
+      "ar": "لِيرَة",
+      "baca": "liira",
+      "en": "lira"
+    },
+    {
+      "ar": "دِينَار",
+      "baca": "diinaar",
+      "en": "dinar"
+    },
+    {
+      "ar": "أَلْف",
+      "baca": "alf",
+      "en": "a thousand"
+    },
+    {
+      "ar": "مِيِّة",
+      "baca": "miyye",
+      "en": "a hundred"
+    },
+    {
+      "ar": "نُصّ",
+      "baca": "nuṣṣ",
+      "en": "half"
+    },
+    {
+      "ar": "كِيلُو",
+      "baca": "kiilu",
+      "en": "kilogram"
+    },
+    {
+      "ar": "حَبِّة",
+      "baca": "habbe",
+      "en": "piece, one (counting unit)"
+    },
+    {
+      "ar": "خَلَص",
+      "baca": "khalaṣ",
+      "en": "that's it, enough"
+    },
+    {
+      "ar": "آخِر",
+      "baca": "aakhir",
+      "en": "last, final"
+    },
+    {
+      "ar": "أَصْلِي",
+      "baca": "aṣli",
+      "en": "original, real"
+    },
+    {
+      "ar": "نَوْع",
+      "baca": "nō‘",
+      "en": "kind, type"
+    },
+    {
+      "ar": "لَبَن",
+      "baca": "laban",
+      "en": "yogurt"
+    },
+    {
+      "ar": "حَلِيب",
+      "baca": "haliib",
+      "en": "milk"
+    },
+    {
+      "ar": "سُوق",
+      "baca": "suu’",
+      "en": "market"
+    },
+    {
+      "ar": "بَاخِد",
+      "baca": "baakhid",
+      "en": "I'll take"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Levantine Arabic.",
+      "items": [
+        "How much is this?",
+        "It's a bit expensive.",
+        "Is there anything cheaper?",
+        "What's your final price?",
+        "I'll take this one.",
+        "I'm just looking."
+      ]
+    },
+    {
+      "prompt": "Write the number in Levantine Arabic.",
+      "items": [
+        "35",
+        "48",
+        "70",
+        "150",
+        "600",
+        "2.500"
+      ]
+    },
+    {
+      "prompt": "Fill in the right word.",
+      "items": [
+        "____ هَاد الشَّال؟ (how much)",
+        "هَاد ____ شْوَي. (expensive)",
+        "فِي شِي ____؟ (cheaper)",
+        "بَدِّي كِيلُو ____ مِن فَضْلَك. (apples)",
+        "هَيّ الْ____. خَمْسِة. (change)",
+        "____، مَا بَدِّي شِي تَانِي. (that's it)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "هَاد / قَدِّيش / ؟",
+        "غَالِي / كْتِير / هَاد",
+        "أَرْخَص / فِي / ؟ / شِي",
+        "بِتْلَاتِين / هَيّ / أَلْف",
+        "بَاخْدُو / وْ / خَمْسَة / تْلَاتِين / وْ",
+        "بَسّ / شُوف / بَدِّي"
+      ]
+    }
+  ],
+  "answers": [
+    "قَدِّيش هَاد؟ — غَالِي شْوَي. — فِي شِي أَرْخَص؟ — آخِر سِعِر قَدِّيش؟ — بَاخِد هَاد. — بَدِّي شُوف بَسّ.",
+    "خَمْسَة وْتْلَاتِين — تْمَانْيِة وْأَرْبَعِين — سَبْعِين — مِيِّة وْخَمْسِين — سِتّ مِيِّة — أَلْفَين وْخَمْس مِيِّة",
+    "قَدِّيش — غَالِي — أَرْخَص — تُفَّاح — بَاقِي — خَلَص",
+    "قَدِّيش هَاد؟ — هَاد غَالِي كْتِير. — فِي شِي أَرْخَص؟ — هَيّ بِتْلَاتِين أَلْف. — خَمْسَة وْتْلَاتِين وْبَاخْدُو. — بَدِّي شُوف بَسّ."
+  ],
+  "wave": "Say ten random prices out loud — from 21 to 999 — and remember: the units always come first."
+}

@@ -1,0 +1,572 @@
+{
+  "title": "Verbs: the prefixes N- and di-",
+  "title_target": "Kecap pagawéan: rarangkén N- jeung di-",
+  "goal": "Make active and passive verbs from roots, and use the suffixes *-keun* and *-an* (cousins of Indonesian *-kan* and *-i*).",
+  "bekal": [
+    "how the prefix N- changes shape with the first letter of the root",
+    "the passive with *di-*, and *ku* for \"by\"",
+    "the suffixes *-keun*, *-an*, and *-eun* — the last has no English equivalent"
+  ],
+  "dialogs": [
+    {
+      "title": "Paguneman — Helping Bu Imas",
+      "intro": "Sunday morning. Bu Imas is clearing out the storeroom and Rani offers to help. This short conversation contains nine verbs with prefixes or suffixes.",
+      "lines": [
+        {
+          "speaker": "Rani:",
+          "text": "Bu, aya nu tiasa dibantosan?",
+          "id": "Ma'am, is there anything I can help with?",
+          "literal": "Ma'am, there-is which can helped?"
+        },
+        {
+          "speaker": "Bu Imas:",
+          "text": "Eh, nuhun Néng. Ieu Ibu keur mérésan gudang.",
+          "id": "Oh, thanks, Néng. I'm tidying up the storeroom.",
+          "literal": "oh, thanks Néng. this Ma'am is tidying storeroom."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Abdi tiasa nyapuan atanapi ngépél.",
+          "id": "I can sweep or mop.",
+          "literal": "I can sweep-over or mop."
+        },
+        {
+          "speaker": "Bu Imas:",
+          "text": "Mangga, sapuan waé heula. Ibu mah rék mindahkeun lomari.",
+          "id": "Go ahead, just sweep first. I'm going to move the wardrobe.",
+          "literal": "please, swept just first. Ma'am [mah] will move wardrobe."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Éta lomari beurat teuing, Bu. Hayu urang angkat duaan.",
+          "id": "That wardrobe is too heavy, ma'am. Let's lift it together.",
+          "literal": "that wardrobe heavy too, Ma'am. come-on we lift both."
+        },
+        {
+          "speaker": "Bu Imas:",
+          "text": "Sok atuh. Cekel nu palih ditu, Ibu nu dieu.",
+          "id": "All right then. You hold that side, I'll take this one.",
+          "literal": "go-ahead atuh. hold which side there, Ma'am which here."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Hiji, dua, tilu… Aduh, beurat pisan!",
+          "id": "One, two, three… Oof, it's really heavy!",
+          "literal": "one, two, three… oof, heavy very!"
+        },
+        {
+          "speaker": "Bu Imas:",
+          "text": "Ulah dipaksakeun. Simpen waé di dieu heula.",
+          "id": "Don't force it. Just put it down here for now.",
+          "literal": "don't forced. put just at here first."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Ieu buku-buku dikumahakeun, Bu? Dipiceun?",
+          "id": "What should I do with these books, ma'am? Throw them out?",
+          "literal": "this books how-ed, Ma'am? thrown-away?"
+        },
+        {
+          "speaker": "Bu Imas:",
+          "text": "Ulah dipiceun. Dibikeun waé ka madrasah. Aya nu maca deui.",
+          "id": "Don't throw them out. Just give them to the madrasa. Someone will read them again.",
+          "literal": "don't thrown-away. given just to madrasa. there-is who read again."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Saé pisan. Abdi nu ngantunkeun ka ditu engké.",
+          "id": "That's great. I'll take them over there later.",
+          "literal": "good very. I who deliver to there later."
+        },
+        {
+          "speaker": "Bu Imas:",
+          "text": "Nuhun pisan, Néng. Ku Ibu didoakeun sing lancar sagalana.",
+          "id": "Thank you so much, Néng. I pray everything goes smoothly for you.",
+          "literal": "thanks very, Néng. by Ma'am prayed-for may smooth everything."
+        }
+      ],
+      "notes": [
+        "**Dibantosan** from *bantos* (help, lemes) + *di-…-an*. The loma form is *dibantuan*, from *bantu*. The suffix *-an* here doesn't make a noun; it marks an action done to or for a person.",
+        "**Mérésan** from *bérés* (tidy, done) → *N-* + *bérés* + *-an* = to tidy up. The *b* melts into *m*: *bérés* → *mérésan*. This \"melting\" pattern is explained in the grammar box.",
+        "**Dikumahakeun** from *kumaha* (how) — literally \"be how-ed\", i.e. \"what should be done with it?\". Even question words can take affixes, a very Sundanese feature with no parallel in English.",
+        "**Dipiceun** = thrown away, from *piceun*. The active form is *miceun*. ⚠️ Don't confuse it with *mikeun*/*dibikeun* (give/given), which sounds similar but means the opposite.",
+        "**Ngantunkeun** has two meanings, told apart by context: **to take someone/something somewhere** (from *antun*) and **to leave behind / pass away** (a gentle word for dying). In this dialogue it's the first.",
+        "**Ku** marks the doer in a passive sentence: *ku Ibu didoakeun* = \"prayed for by me (Ma'am)\". It's like English \"by\", and it can go at the front of the sentence — in fact that's the most common order."
+      ],
+      "grammars": [
+        {
+          "title": "The prefix N-: one prefix, five shapes",
+          "body": [
+            "Grammar books write the Sundanese active-verb prefix as **N-**, but its shape changes with the first letter of the root — much as English \"in-\" becomes \"im-\" in *impossible* and \"il-\" in *illegal*, only more systematically."
+          ],
+          "table": {
+            "head": [
+              "First letter",
+              "Shape of N-",
+              "Root",
+              "Becomes",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "b, p",
+                "**m-** (replaces it)",
+                "*bérés*, *pais*",
+                "**mérésan**, **mais**",
+                "to tidy up, to steam in leaves"
+              ],
+              [
+                "d, t, c, j, s",
+                "**n-** / **ny-** (replaces it)",
+                "*tulis*, *sapu*",
+                "**nulis**, **nyapu**",
+                "to write, to sweep"
+              ],
+              [
+                "k, g, h, vowel",
+                "**ng-**",
+                "*kirim*, *ala*",
+                "**ngirim**, **ngala**",
+                "to send, to pick, take"
+              ],
+              [
+                "l, r, m, n, w, y",
+                "**nga-**",
+                "*léngkah*, *rasa*",
+                "**ngaléngkah**, **ngarasa**",
+                "to step, to feel"
+              ],
+              [
+                "two syllables, any letter",
+                "**nga-** (optional)",
+                "*bantu*",
+                "**ngabantu**",
+                "to help"
+              ]
+            ]
+          },
+          "after": [
+            "The good news: the pattern is **regular**, so once you know it your guesses will usually be right. (If you know Indonesian, it works much like *me-/mem-/men-/meng-/meny-*; the extra shape **nga-** is used for roots starting with *l, r, m, n, w, y*, and freely with many other words.)",
+            "⚠️ Some very common words have irregular forms to memorize: *dahar* → **ngadahar** (not *nahar*), *bawa* → **mawa**, *béré* → **méré**, *indit* → **indit** (no prefix), *balik* → **balik** (no prefix). Verbs of motion like *indit*, *balik*, *datang*, *diuk* don't take the prefix at all.",
+            "The passive is much easier: **di-** is simply attached with no changes. *tulis* → *ditulis* (written), *bawa* → *dibawa* (carried), *piceun* → *dipiceun* (thrown away). The doer is marked with **ku**: *ditulis ku kuring* = written by me."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The suffixes -keun, -an, and -eun",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Suffix",
+            "Function",
+            "Example",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**-keun**",
+              "do for / to something",
+              "*bawa* → **mawakeun**",
+              "to carry for someone"
+            ],
+            [
+              "**-keun**",
+              "make into",
+              "*bérés* → **bérésan**",
+              "to tidy up"
+            ],
+            [
+              "**-an**",
+              "repeatedly, many targets",
+              "*sapu* → **nyapuan**",
+              "to sweep all over"
+            ],
+            [
+              "**-an**",
+              "done to a person",
+              "*bantu* → **mantuan**",
+              "to help (someone)"
+            ],
+            [
+              "**-eun**",
+              "something to be / that must be",
+              "*dahar* → **daharaneun**",
+              "food (something to eat)"
+            ],
+            [
+              "**-eun**",
+              "a state that befalls you",
+              "*poho* → **pohoeun**",
+              "to become forgetful"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**-keun** often works like English \"-ify\" or \"for someone\" (and matches Indonesian *-kan*); **-an** suggests repetition or an action aimed at someone (like Indonesian *-i*). You'll usually guess them right from context. What's truly new is **-eun**."
+        },
+        {
+          "type": "p",
+          "text": "**-eun** has no real equivalent, and it is very productive. Attach it to a verb to make \"a thing to be…-ed\":"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Root",
+            "With -eun",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*dahar* (eat)",
+              "**daharaneun**",
+              "food, something to eat"
+            ],
+            [
+              "*inum* (drink)",
+              "**inumeun**",
+              "a drink"
+            ],
+            [
+              "*maca* (read)",
+              "**bacaeun**",
+              "reading matter, something to read"
+            ],
+            [
+              "*paké* (use)",
+              "**paké-eun**",
+              "something to use or wear"
+            ],
+            [
+              "*ceurik* (cry)",
+              "**pikaceurikeun**",
+              "sad, heartbreaking"
+            ],
+            [
+              "*seuri* (laugh)",
+              "**pikaseurieun**",
+              "funny"
+            ],
+            [
+              "*sieun* (afraid)",
+              "**pikasieuneun**",
+              "scary"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last three rows use the combination **pika-…-eun**, meaning \"making people…\" — much like English \"-ing\" in *heartbreaking*, *frightening*. It's very often used to judge things: *pikaresepeun* (pleasant), *pikabungaheun* (delightful), *pikangeunaheun* (comfortable)."
+        }
+      ]
+    },
+    {
+      "title": "Everyday verbs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Loma",
+            "Lemes",
+            "Meaning",
+            "Loma",
+            "Lemes",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**nulis**",
+              "nyerat",
+              "write",
+              "**maca**",
+              "maos",
+              "read"
+            ],
+            [
+              "**nyapu**",
+              "nyapu",
+              "sweep",
+              "**ngumbah**",
+              "ngumbah",
+              "wash"
+            ],
+            [
+              "**masak**",
+              "masak",
+              "cook",
+              "**meuli**",
+              "mésér",
+              "buy"
+            ],
+            [
+              "**mawa**",
+              "nyandak",
+              "bring, carry",
+              "**méré**",
+              "masihan",
+              "give"
+            ],
+            [
+              "**muka**",
+              "muka",
+              "open",
+              "**nutup**",
+              "nutup",
+              "close"
+            ],
+            [
+              "**nempo**",
+              "ningal",
+              "see",
+              "**ngadéngé**",
+              "ngadangu",
+              "hear"
+            ],
+            [
+              "**ngomong**",
+              "nyarios",
+              "speak",
+              "**nanya**",
+              "naros",
+              "ask"
+            ],
+            [
+              "**diajar**",
+              "diajar",
+              "learn",
+              "**ngajar**",
+              "ngawulang",
+              "teach"
+            ],
+            [
+              "**digawé**",
+              "damel",
+              "work",
+              "**ngaso**",
+              "ngaso",
+              "rest"
+            ],
+            [
+              "**lumpat**",
+              "lumpat",
+              "run",
+              "**leumpang**",
+              "nyacat",
+              "walk"
+            ],
+            [
+              "**cicing**",
+              "calik",
+              "stay still; live",
+              "**hudang**",
+              "gugah",
+              "wake up"
+            ],
+            [
+              "**mantuan**",
+              "ngabantosan",
+              "help",
+              "**miceun**",
+              "miceun",
+              "throw away"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Sentences with prefixed and suffixed verbs",
+          "items": [
+            "**Abdi nuju nyerat serat.** — I'm writing a letter.",
+            "**Bukuna dibaca ku adi.** — The book is being read by my little brother/sister.",
+            "**Tulung candakkeun cai.** — Please fetch me some water.",
+            "**Ulah dipaksakeun.** — Don't force it.",
+            "**Aya daharaneun teu?** — Is there anything to eat?",
+            "**Pilemna pikaseurieun pisan.** — The film is really funny."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "su": "nulis / nyerat",
+      "baca": "noo-LEES · nyuh-RAHT",
+      "en": "to write"
+    },
+    {
+      "su": "maca / maos",
+      "baca": "mah-CHAH · mah-OHS",
+      "en": "to read"
+    },
+    {
+      "su": "nyapu",
+      "baca": "nyah-POO",
+      "en": "to sweep"
+    },
+    {
+      "su": "ngépél",
+      "baca": "ngeh-PEHL",
+      "en": "to mop"
+    },
+    {
+      "su": "mérésan",
+      "baca": "meh-reh-SAHN",
+      "en": "to tidy up"
+    },
+    {
+      "su": "mindahkeun",
+      "baca": "meen-dahh-KEUN",
+      "en": "to move (something)"
+    },
+    {
+      "su": "mawa / nyandak",
+      "baca": "mah-WAH · nyahn-DAHK",
+      "en": "to bring, carry"
+    },
+    {
+      "su": "mikeun / masihan",
+      "baca": "mee-KEUN · mah-see-HAHN",
+      "en": "to give"
+    },
+    {
+      "su": "miceun",
+      "baca": "mee-CHEUN",
+      "en": "to throw away"
+    },
+    {
+      "su": "nyekel / nyepeng",
+      "baca": "nyuh-KUHL · nyuh-PUHNG",
+      "en": "to hold"
+    },
+    {
+      "su": "nyimpen",
+      "baca": "nyeem-PUHN",
+      "en": "to keep, put away"
+    },
+    {
+      "su": "ngantunkeun",
+      "baca": "ngahn-toon-KEUN",
+      "en": "to take (someone/something) somewhere ⚠️"
+    },
+    {
+      "su": "mantuan / ngabantosan",
+      "baca": "mahn-too-AHN · ngah-bahn-toh-SAHN",
+      "en": "to help"
+    },
+    {
+      "su": "maksakeun",
+      "baca": "mahk-sah-KEUN",
+      "en": "to force"
+    },
+    {
+      "su": "ku",
+      "baca": "koo",
+      "en": "by (in passives)"
+    },
+    {
+      "su": "daharaneun",
+      "baca": "dah-hah-rah-NEUN",
+      "en": "food"
+    },
+    {
+      "su": "inumeun",
+      "baca": "ee-noo-MEUN",
+      "en": "a drink"
+    },
+    {
+      "su": "pikaseurieun",
+      "baca": "pee-kah-seu-ree-EUN",
+      "en": "funny"
+    },
+    {
+      "su": "pikaresepeun",
+      "baca": "pee-kah-ruh-suh-PEUN",
+      "en": "pleasant, enjoyable"
+    },
+    {
+      "su": "beurat / hampang",
+      "baca": "beu-RAHT · hahm-PAHNG",
+      "en": "heavy / light"
+    },
+    {
+      "su": "bérés",
+      "baca": "beh-REHS",
+      "en": "tidy, done"
+    },
+    {
+      "su": "gudang",
+      "baca": "goo-DAHNG",
+      "en": "storeroom"
+    },
+    {
+      "su": "lancar",
+      "baca": "lahn-CHAHR",
+      "en": "smooth, fluent"
+    },
+    {
+      "su": "ngaso",
+      "baca": "ngah-SOH",
+      "en": "to rest"
+    },
+    {
+      "su": "tulung",
+      "baca": "too-LOONG",
+      "en": "please (help)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Make the active verb with the right form of N-.",
+      "items": [
+        "tulis → ____",
+        "sapu → ____",
+        "kirim → ____",
+        "bawa → ____",
+        "rasa → ____",
+        "béré → ____"
+      ]
+    },
+    {
+      "prompt": "Turn into a passive sentence with di- and ku.",
+      "items": [
+        "Kuring maca buku. → Buku ____ kuring.",
+        "Ibu masak sangu. → Sangu ____ Ibu.",
+        "Adi nyapu tepas. → Tepas ____ adi.",
+        "Manéhna mawa koper. → Koper ____ manéhna.",
+        "Abdi nyerat serat. → Serat ____ abdi.",
+        "Bapa mikeun buku. → Buku ____ Bapa."
+      ]
+    },
+    {
+      "prompt": "Make a noun with the suffix -eun.",
+      "items": [
+        "Something to eat: ____",
+        "Something to drink: ____",
+        "Something you must read: ____",
+        "Something funny: ____",
+        "Something pleasant: ____",
+        "Something scary: ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "nyerat / abdi / serat / nuju",
+        "ku / dibaca / adi / bukuna",
+        "cai / candakkeun / tulung",
+        "dipaksakeun / ulah",
+        "teu / aya / daharaneun / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "nulis — nyapu — ngirim — mawa — ngarasa — méré",
+    "dibaca ku — dimasak ku — disapu ku — dibawa ku — diserat ku — dipikeun ku",
+    "daharaneun — inumeun — bacaeun — pikaseurieun — pikaresepeun — pikasieuneun",
+    "Abdi nuju nyerat serat. — Bukuna dibaca ku adi. — Tulung candakkeun cai. — Ulah dipaksakeun. — Aya daharaneun teu?"
+  ]
+}

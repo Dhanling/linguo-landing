@@ -1,0 +1,572 @@
+{
+  "title": "Marhaba — nice to meet you",
+  "title_target": "مَرْحَبَا",
+  "goal": "Greet people the way they really do in the Levant, say your name and where you're from, and understand why Levantine Arabic has no word for \"is\".",
+  "bekal": [
+    "greet with مَرْحَبَا and answer it the typical Levantine way",
+    "ask how someone is, with the right form for a man and for a woman",
+    "build complete sentences without a single verb"
+  ],
+  "dialogs": [
+    {
+      "title": "حَكِي — بِالْمَقْهَى",
+      "intro": "A coffee shop in Beirut, late afternoon. Budi has been in Lebanon for two days and is sitting at the table next to a man about his age.",
+      "lines": [
+        {
+          "speaker": "سَامِر:",
+          "text": "مَرْحَبَا!",
+          "baca": "marhaba!",
+          "id": "Hi!",
+          "literal": "welcome!"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مَرْحَبْتَين.",
+          "baca": "marhabtēn.",
+          "id": "Hi to you too.",
+          "literal": "two-welcomes."
+        },
+        {
+          "speaker": "سَامِر:",
+          "text": "أَهْلًا وْسَهْلًا. كِيفَك؟",
+          "baca": "ahlan w sahlan. kēfak?",
+          "id": "Welcome. How are you?",
+          "literal": "family and easy. how-you?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مْنِيح، اَلْحَمْدُ لِلَّه. وْإِنْتَ؟",
+          "baca": "mniih, alhamdulilla. w inta?",
+          "id": "Fine, thank God. And you?",
+          "literal": "good, praise be to God. and you?"
+        },
+        {
+          "speaker": "سَامِر:",
+          "text": "اَلْحَمْدُ لِلَّه. شُو اِسْمَك؟",
+          "baca": "alhamdulilla. shu ismak?",
+          "id": "Thank God. What's your name?",
+          "literal": "praise be to God. what name-your?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "اِسْمِي بُودِي. وْإِنْتَ؟",
+          "baca": "ismi Buudi. w inta?",
+          "id": "My name is Budi. And you?",
+          "literal": "name-my Budi. and you?"
+        },
+        {
+          "speaker": "سَامِر:",
+          "text": "أَنَا سَامِر. تْشَرَّفْنَا.",
+          "baca": "ana Saamir. tsharrafna.",
+          "id": "I'm Samer. Nice to meet you.",
+          "literal": "I Samer. we-were-honored."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "تْشَرَّفْنَا. إِنْتَ مِن هُون؟",
+          "baca": "tsharrafna. inta min hōn?",
+          "id": "Nice to meet you. Are you from here?",
+          "literal": "we-were-honored. you from here?"
+        },
+        {
+          "speaker": "سَامِر:",
+          "text": "إِيه، أَنَا مِن بَيْرُوت. وْإِنْتَ؟",
+          "baca": "ēh, ana min Bēruut. w inta?",
+          "id": "Yes, I'm from Beirut. And you?",
+          "literal": "yes, I from Beirut. and you?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "أَنَا مِن إِنْدُونِيسْيَا. أَنَا طَالِب هُون.",
+          "baca": "ana min Induuniisya. ana ṭaalib hōn.",
+          "id": "I'm from Indonesia. I'm a student here.",
+          "literal": "I from Indonesia. I student here."
+        },
+        {
+          "speaker": "سَامِر:",
+          "text": "عَنْجَدّ؟ عَرَبِيِّتَك مْنِيحَة!",
+          "baca": "‘anjadd? ‘arabiyytak mniiha!",
+          "id": "Really? Your Arabic is good!",
+          "literal": "really? Arabic-your good!"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "يِسْلَمُوا. لِسَّا عَم بِتْعَلَّم.",
+          "baca": "yislamu. lissa ‘am bit‘allam.",
+          "id": "Thanks. I'm still learning.",
+          "literal": "may-they-be-safe. still -ing I-learn."
+        },
+        {
+          "speaker": "سَامِر:",
+          "text": "بِتْوَفَّق إِنْ شَاءَ اللَّه.",
+          "baca": "bitwaffa’ inshaalla.",
+          "id": "Good luck.",
+          "literal": "you-will-succeed if God wills."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "يَلَّا، بَشُوفَك بُكْرَا.",
+          "baca": "yalla, bashuufak bukra.",
+          "id": "OK, see you tomorrow.",
+          "literal": "come-on, I-see-you tomorrow."
+        },
+        {
+          "speaker": "سَامِر:",
+          "text": "سَلَام. تِصْبَح عَ خَير.",
+          "baca": "salaam. tiṣbah ‘a khēr.",
+          "id": "Bye. Good night.",
+          "literal": "peace. may-you-wake on good."
+        }
+      ],
+      "notes": [
+        "**A greeting that doubles itself.** The most common greeting in the Levant is مَرْحَبَا *marhaba*, and the answer isn't the same word again but **the word multiplied**: مَرْحَبْتَين *marhabtēn* (\"marhaba twice\"). The same pattern works for أَهْلًا *ahlan*, answered with أَهْلَين *ahlēn*. Answering with the same word is still understood, but it sounds like a foreigner reciting a textbook.",
+        "**There are two forms of \"you\", and you can't pick at random.** To a man: كِيفَك *kēfak*. To a woman: كِيفِك *kēfik*. The difference is just one vowel, but using the wrong one is instantly noticeable. The rule applies to almost every word in this book that ends in ـَك or ـِك.",
+        "**There is no word for \"is\".** The sentence أَنَا طَالِب *ana ṭaalib* is literally just \"I student\", and that is already a complete, correct sentence. This is where Arabic is easier than English, which insists on *am*.",
+        "**The most typically Levantine \"thank you\" is not شُكْرًا.** What you'll hear most is يِسْلَمُوا *yislamu*, literally \"may (your hands) be safe\". The word شُكْرًا *shukran* is still correct and used, but it feels a little more formal.",
+        "**The little word عَم marks \"-ing\".** In عَم بِتْعَلَّم *‘am bit‘allam* (\"I'm learning\"), the word عَم has no meaning of its own — it only tells you the action is happening now. We take it apart in unit 8; for now, learn the sentence as a whole.",
+        "**Saying goodbye comes with many options, all of them polite.** Neutral: سَلَام *salaam*. Warm: بَشُوفَك *bashuufak* (\"see you\"). Night-time only: تِصْبَح عَ خَير *tiṣbah ‘a khēr*, answered with وْإِنْتَ مِن أَهْلُو *w inta min ahlu*."
+      ],
+      "grammars": [
+        {
+          "title": "Personal pronouns — and the two forms of \"you\"",
+          "body": [
+            "Levantine Arabic has eight personal pronouns, one more than English, because \"you\" is split into male and female. Learn this table now: almost every unit after this one leans on it."
+          ],
+          "table": {
+            "head": [
+              "Meaning",
+              "Levantine",
+              "Say it",
+              "Example",
+              "Meaning of example"
+            ],
+            "rows": [
+              [
+                "I",
+                "أَنَا",
+                "ana",
+                "أَنَا طَالِب",
+                "I'm a student"
+              ],
+              [
+                "you (m)",
+                "إِنْتَ",
+                "inta",
+                "إِنْتَ مْنِيح",
+                "you're fine"
+              ],
+              [
+                "you (f)",
+                "إِنْتِي",
+                "inti",
+                "إِنْتِي مْنِيحَة",
+                "you're fine"
+              ],
+              [
+                "he",
+                "هُوِّ",
+                "huwwe",
+                "هُوِّ مِن بَيْرُوت",
+                "he's from Beirut"
+              ],
+              [
+                "she",
+                "هِيِّ",
+                "hiyye",
+                "هِيِّ مِن عَمَّان",
+                "she's from Amman"
+              ],
+              [
+                "we",
+                "نِحْنَا",
+                "nihna",
+                "نِحْنَا طُلَّاب",
+                "we're students"
+              ],
+              [
+                "you (pl)",
+                "إِنْتُو",
+                "intu",
+                "إِنْتُو مِن وَين",
+                "where are you all from"
+              ],
+              [
+                "they",
+                "هِنِّي",
+                "hinne",
+                "هِنِّي هُون",
+                "they're here"
+              ]
+            ]
+          },
+          "after": [
+            "Notice the forms for \"he\" and \"she\", which end in a doubled ـِّي, as in هُوِّ and in هِيِّ. In Fusha (Modern Standard Arabic) they are هُوَ and هِيَ. Small changes like this are the quickest sign that what you're hearing is dialect, not the TV news.",
+            "The words سِتّ and رِجَّال are not used as pronouns. To speak politely to someone older, Levantine speakers still use إِنْتَ — only the tone changes."
+          ]
+        },
+        {
+          "title": "Sentences without a verb",
+          "body": [
+            "This is the first sentence type you need to master, and the good news is that it's simpler than English: no \"am\", \"is\" or \"are\". Just put the who, then the what."
+          ],
+          "table": {
+            "head": [
+              "Who",
+              "What",
+              "Full sentence",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "أَنَا",
+                "طَالِب",
+                "أَنَا طَالِب",
+                "ana ṭaalib",
+                "I'm a student"
+              ],
+              [
+                "إِنْتِي",
+                "مُدَرِّسَة",
+                "إِنْتِي مُدَرِّسَة",
+                "inti mudarrise",
+                "you're a teacher"
+              ],
+              [
+                "هُوِّ",
+                "مِن بَيْرُوت",
+                "هُوِّ مِن بَيْرُوت",
+                "huwwe min Bēruut",
+                "he's from Beirut"
+              ],
+              [
+                "نِحْنَا",
+                "هُون",
+                "نِحْنَا هُون",
+                "nihna hōn",
+                "we're here"
+              ],
+              [
+                "اِسْمِي",
+                "بُودِي",
+                "اِسْمِي بُودِي",
+                "ismi Buudi",
+                "my name is Budi"
+              ]
+            ]
+          },
+          "after": [
+            "To make it a question, you **don't need to add anything** — just raise your voice at the end. The sentence إِنْتَ طَالِب can mean \"you're a student\" or \"you're a student?\", just like casual spoken English.",
+            "To negate it, put مِش *mish* in front of the second part: أَنَا مِش طَالِب *ana mish ṭaalib* (\"I'm not a student\"). This مِش is the \"not\" for nouns and adjectives; verbs have a different \"not\", which we cover in unit 2."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Greetings from morning to night",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "When",
+            "Greeting",
+            "Say it",
+            "The reply"
+          ],
+          "rows": [
+            [
+              "Any time",
+              "مَرْحَبَا",
+              "marhaba",
+              "مَرْحَبْتَين"
+            ],
+            [
+              "Any time",
+              "أَهْلًا",
+              "ahlan",
+              "أَهْلَين"
+            ],
+            [
+              "Any time",
+              "اَلسَّلَامُ عَلَيْكُم",
+              "as-salaamu ‘alēkum",
+              "وْعَلَيْكُم السَّلَام"
+            ],
+            [
+              "Morning",
+              "صَبَاح الْخَير",
+              "ṣabaah el-khēr",
+              "صَبَاح النُّور"
+            ],
+            [
+              "Afternoon and evening",
+              "مَسَا الْخَير",
+              "masa el-khēr",
+              "مَسَا النُّور"
+            ],
+            [
+              "Leaving",
+              "سَلَام",
+              "salaam",
+              "سَلَام"
+            ],
+            [
+              "Leaving",
+              "بَشُوفَك",
+              "bashuufak",
+              "بَشُوفَك"
+            ],
+            [
+              "Before bed",
+              "تِصْبَح عَ خَير",
+              "tiṣbah ‘a khēr",
+              "وْإِنْتَ مِن أَهْلُو"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice how صَبَاح الْخَير is answered with صَبَاح النُّور: \"morning of goodness\" is answered with \"morning of light\". Levantine speakers like to raise the stakes — you'll also hear صَبَاح الْوَرْد (\"morning of roses\") and صَبَاح الْيَاسْمِين (\"morning of jasmine\"), especially in Damascus, the city of jasmine."
+        },
+        {
+          "type": "kotak",
+          "title": "When to use the Islamic greeting, when a neutral one",
+          "items": [
+            "The greeting اَلسَّلَامُ عَلَيْكُم is used widely all over the Levant, including at work and on TV, and not only among Muslims.",
+            "In Lebanon and parts of Syria, where people follow many faiths, the neutral greeting that is always safe is مَرْحَبَا or أَهْلًا. Both are polite and carry no religious overtones.",
+            "With someone clearly older or more senior, add a respectful title after your greeting: أُسْتَاذ *ustaaz* for a man and مَدَام *madaam* for a woman."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Small talk that isn't small",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "In many places, \"how are you?\" can be skipped when you're in a hurry. In the Levant it almost can't — and it's usually asked more than once, in different words, before getting down to business. Skipping it feels cold."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Say it",
+            "Literally",
+            "Usual answer"
+          ],
+          "rows": [
+            [
+              "كِيفَك؟",
+              "kēfak?",
+              "how you?",
+              "مْنِيح، اَلْحَمْدُ لِلَّه"
+            ],
+            [
+              "شُو أَخْبَارَك؟",
+              "shu akhbaarak?",
+              "what your-news?",
+              "كِلّ شِي تَمَام"
+            ],
+            [
+              "كِيف الصِّحَّة؟",
+              "kēf eṣ-ṣihha?",
+              "how the health?",
+              "اَلْحَمْدُ لِلَّه"
+            ],
+            [
+              "شُو عَمْ تَعْمُل؟",
+              "shu ‘am ta‘mul?",
+              "what are you doing?",
+              "وَلَا شِي"
+            ],
+            [
+              "كِيف الشُّغْل؟",
+              "kēf esh-shughl?",
+              "how the work?",
+              "مَاشِي الْحَال"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The answer مَاشِي الْحَال *maashi el-haal* (\"the situation is walking\") is roughly \"not bad\" or \"so-so\": nothing wrong, nothing special, and it invites no follow-up questions. If things really are great, use كِلّ شِي تَمَام *kill shi tamaam* (\"everything's fine\")."
+        },
+        {
+          "type": "kotak",
+          "title": "Three filler words that make you sound natural",
+          "items": [
+            "The word يَعْنِي *ya‘ni* works exactly like \"like\" or \"I mean\" — a filler while you build the next sentence in your head. Very handy for beginners.",
+            "The word خَلَص *khalaṣ* means \"done\", \"enough\" or \"oh well\", depending on the tone. It ends conversations, turns down offers and accepts how things are.",
+            "The word يَلَّا *yalla* means \"come on\" and also \"OK, then\". It moves the conversation to the next step, and people in the Levant say it dozens of times a day."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "مَرْحَبَا",
+      "baca": "marhaba",
+      "en": "hi, hello"
+    },
+    {
+      "ar": "مَرْحَبْتَين",
+      "baca": "marhabtēn",
+      "en": "hi to you too (reply)"
+    },
+    {
+      "ar": "أَهْلًا وْسَهْلًا",
+      "baca": "ahlan w sahlan",
+      "en": "welcome"
+    },
+    {
+      "ar": "كِيفَك / كِيفِك",
+      "baca": "kēfak / kēfik",
+      "en": "how are you (m / f)"
+    },
+    {
+      "ar": "مْنِيح / مْنِيحَة",
+      "baca": "mniih / mniiha",
+      "en": "fine, good (m / f)"
+    },
+    {
+      "ar": "شُو",
+      "baca": "shu",
+      "en": "what"
+    },
+    {
+      "ar": "اِسْم",
+      "baca": "ism",
+      "en": "name"
+    },
+    {
+      "ar": "مِين",
+      "baca": "miin",
+      "en": "who"
+    },
+    {
+      "ar": "وَين",
+      "baca": "wēn",
+      "en": "where"
+    },
+    {
+      "ar": "مِن وَين",
+      "baca": "min wēn",
+      "en": "where from"
+    },
+    {
+      "ar": "هُون",
+      "baca": "hōn",
+      "en": "here"
+    },
+    {
+      "ar": "إِيه",
+      "baca": "ēh",
+      "en": "yes"
+    },
+    {
+      "ar": "لَا",
+      "baca": "la’",
+      "en": "no"
+    },
+    {
+      "ar": "مِش",
+      "baca": "mish",
+      "en": "not"
+    },
+    {
+      "ar": "طَالِب / طَالْبِة",
+      "baca": "ṭaalib / ṭaalbe",
+      "en": "student (m / f)"
+    },
+    {
+      "ar": "مُدَرِّس / مُدَرِّسِة",
+      "baca": "mudarris / mudarrise",
+      "en": "teacher (m / f)"
+    },
+    {
+      "ar": "يِسْلَمُوا",
+      "baca": "yislamu",
+      "en": "thank you"
+    },
+    {
+      "ar": "شُكْرًا",
+      "baca": "shukran",
+      "en": "thank you (more formal)"
+    },
+    {
+      "ar": "عَفْوًا",
+      "baca": "‘afwan",
+      "en": "you're welcome; excuse me"
+    },
+    {
+      "ar": "يَلَّا",
+      "baca": "yalla",
+      "en": "come on; OK then"
+    },
+    {
+      "ar": "بُكْرَا",
+      "baca": "bukra",
+      "en": "tomorrow"
+    },
+    {
+      "ar": "عَنْجَدّ",
+      "baca": "‘anjadd",
+      "en": "really? seriously?"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Levantine Arabic. Write the vowel marks.",
+      "items": [
+        "Hi! How are you? (to a man)",
+        "Fine, thank God.",
+        "What's your name? (to a woman)",
+        "My name is Budi.",
+        "I'm from Indonesia.",
+        "Are you a student here? (to a man)"
+      ]
+    },
+    {
+      "prompt": "Fill in the right pronoun.",
+      "items": [
+        "____ طَالِب مِن إِنْدُونِيسْيَا. (I)",
+        "____ مِن بَيْرُوت؟ (you, man)",
+        "____ مُدَرِّسَة مْنِيحَة. (she)",
+        "____ هُون كِلّ يَوْم. (we)",
+        "____ مِن وَين؟ (you, plural)",
+        "____ مِش طَالِب. (he)"
+      ]
+    },
+    {
+      "prompt": "Choose the right answer to each greeting. Write it out in full.",
+      "items": [
+        "Your friend says مَرْحَبَا. You answer ____.",
+        "Your friend says أَهْلًا. You answer ____.",
+        "You walk into a shop at eight in the morning and greet with ____.",
+        "The shopkeeper answers your morning greeting with ____.",
+        "Before bed your friend says تِصْبَح عَ خَير. You answer ____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "طَالِب / أَنَا / هُون",
+        "اِسْمَك / شُو / ؟",
+        "بَيْرُوت / مِن / هُوِّ",
+        "مْنِيحَة / إِنْتِي / ؟",
+        "مِن / نِحْنَا / إِنْدُونِيسْيَا",
+        "مِش / أَنَا / مُدَرِّس"
+      ]
+    }
+  ],
+  "answers": [
+    "مَرْحَبَا! كِيفَك؟ — مْنِيح، اَلْحَمْدُ لِلَّه. — شُو اِسْمِك؟ — اِسْمِي بُودِي. — أَنَا مِن إِنْدُونِيسْيَا. — إِنْتَ طَالِب هُون؟",
+    "أَنَا — إِنْتَ — هِيِّ — نِحْنَا — إِنْتُو — هُوِّ",
+    "مَرْحَبْتَين. — أَهْلَين. — صَبَاح الْخَير. — صَبَاح النُّور. — وْإِنْتَ مِن أَهْلُو.",
+    "أَنَا طَالِب هُون. — شُو اِسْمَك؟ — هُوِّ مِن بَيْرُوت. — إِنْتِي مْنِيحَة؟ — نِحْنَا مِن إِنْدُونِيسْيَا. — أَنَا مِش مُدَرِّس."
+  ],
+  "wave": "Today, greet five people in your head — three men and two women — and make sure you use كِيفَك and كِيفِك in the right places."
+}

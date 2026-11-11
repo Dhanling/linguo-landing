@@ -1,0 +1,546 @@
+{
+  "title": "Prices, the market, and bargaining",
+  "title_target": "Pinten reginipun, Mbak?",
+  "goal": "Ask the price, bargain without sounding rude, and complete a whole purchase at the market — all in krama, because that is the right level for an older stallholder.",
+  "bekal": [
+    "ask the price with *pira regané* / *pinten reginipun*",
+    "bargain with *kirang* and *mangga* without sounding pushy",
+    "use *tuku* / *tumbas* (buy) and the units *kilo*, *iji*, *ikat*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ing peken Kranggan",
+      "intro": "Dian goes shopping with Rini at Kranggan Market. The stallholder, Mbak Sri, is much older — so Dian uses krama. Notice that Mbak Sri answers in a mix of ngoko and krama, and that's normal: an older seller doesn't have to step up to krama.",
+      "lines": [
+        {
+          "speaker": "Dian:",
+          "text": "Nuwun sèwu, Mbak. Gedhang menika pinten reginipun?",
+          "id": "Excuse me, Mbak. How much are these bananas?",
+          "literal": "beg thousand, Mbak. banana this how-much price-its?"
+        },
+        {
+          "speaker": "Mbak Sri:",
+          "text": "Rolas èwu sasisir, Mbak.",
+          "id": "Twelve thousand a bunch, Mbak.",
+          "literal": "twelve thousand one-bunch, Mbak."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Menapa boten saged kirang?",
+          "id": "Couldn't you make it a bit less?",
+          "literal": "whether not can less?"
+        },
+        {
+          "speaker": "Mbak Sri:",
+          "text": "Sepuluh èwu waé, wis. Sing iki isih anyar kok.",
+          "id": "Ten thousand, then, fine. These are still fresh, you know.",
+          "literal": "ten thousand just, done. which this still new kok."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Inggih, kula pendhet kalih sisir. Lombokipun pinten sekilo?",
+          "id": "All right, I'll take two bunches. How much are the chilies per kilo?",
+          "literal": "yes, I take two bunch. chili-the how-much one-kilo?"
+        },
+        {
+          "speaker": "Mbak Sri:",
+          "text": "Lombok abang selawé èwu, lombok ijo wolulas.",
+          "id": "Red chilies are twenty-five thousand, green ones eighteen.",
+          "literal": "chili red twenty-five thousand, chili green eighteen."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Awis nggih. Setengah kilo mawon.",
+          "id": "That's expensive. Just half a kilo, then.",
+          "literal": "expensive yes. half kilo just."
+        },
+        {
+          "speaker": "Mbak Sri:",
+          "text": "Iya. Sedaya dados telung puluh telung èwu.",
+          "id": "Sure. That makes thirty-three thousand altogether.",
+          "literal": "yes. all become thirty three thousand."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Menika sèket èwu, Mbak.",
+          "id": "Here's fifty thousand, Mbak.",
+          "literal": "this fifty thousand, Mbak."
+        },
+        {
+          "speaker": "Mbak Sri:",
+          "text": "Susukipun pitulas èwu. Matur nuwun, nggih.",
+          "id": "Your change is seventeen thousand. Thank you.",
+          "literal": "change-the seventeen thousand. thank you, yes."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Sami-sami, Mbak. Mangga.",
+          "id": "You're welcome, Mbak. Bye now.",
+          "literal": "same-same, Mbak. please."
+        }
+      ],
+      "notes": [
+        "**Mangga** is one of the most useful words in all of Javanese, and its meaning shifts with the situation: \"please, go ahead\", \"come on\", \"excuse me\", \"let's\", and — said as you walk off — \"I'll be going\". The ngoko forms are *ayo* or *monggo* (a casual spelling of *mangga*). If you learn only ten Javanese words, make this one of them.",
+        "**Nggih** is the casual form of *inggih* (yes), and it's very often tacked onto the end of a sentence as a softener, much like \"…, right?\" or \"…, OK?\" in English: *awis nggih* (that's pricey, isn't it), *matur nuwun nggih*. The ngoko form is *ya*.",
+        "**Mawon** is the krama for *waé* (just, only); its full form is often written *kémawon*. It's used constantly to soften a request: *setengah kilo mawon* (\"just half a kilo\") sounds much gentler than a bare *setengah kilo*.",
+        "**Kok** at the end of a sentence is not a question word. It's an emphatic \"you know, actually\", used to gently contradict what the other person seems to think: *isih anyar kok* — \"they're still fresh, you know\".",
+        "**Dados** (krama) and **dadi** (ngoko) mean \"become\". In this dialogue it means \"the total comes to\". It also works as the linking word \"so\": *dadi aku ora lunga* (so I didn't go).",
+        "**Pendhet** (krama) / **jupuk** (ngoko) means \"take\". At the market, saying *kula pendhet kalih* (\"I'll take two\") is the standard way to close the bargaining and show that you're buying.",
+        "**Susuk** means \"change\" (the money you get back) — one handy word. The krama is also *susuk*; only the ending changes, to *susukipun*."
+      ],
+      "grammars": [
+        {
+          "title": "Asking and giving prices",
+          "body": [
+            "Several patterns are all correct and used interchangeably. Pick one, memorize it, and you can already go shopping."
+          ],
+          "table": {
+            "head": [
+              "English",
+              "Ngoko",
+              "Krama"
+            ],
+            "rows": [
+              [
+                "How much is it?",
+                "*Pira regané?*",
+                "*Pinten reginipun?*"
+              ],
+              [
+                "How much is this?",
+                "*Iki pira?*",
+                "*Menika pinten?*"
+              ],
+              [
+                "How much per kilo?",
+                "*Sekilo pira?*",
+                "*Sekilo pinten?*"
+              ],
+              [
+                "How much altogether?",
+                "*Kabèh pira?*",
+                "*Sedaya pinten?*"
+              ],
+              [
+                "Expensive.",
+                "*Larang.*",
+                "*Awis.*"
+              ],
+              [
+                "Cheap.",
+                "*Murah.*",
+                "*Mirah.*"
+              ],
+              [
+                "Can't you make it less?",
+                "*Ora éntuk kurang?*",
+                "*Menapa boten saged kirang?*"
+              ],
+              [
+                "I'll take two.",
+                "*Tak jupuk loro.*",
+                "*Kula pendhet kalih.*"
+              ],
+              [
+                "How much is the change?",
+                "*Susuké pira?*",
+                "*Susukipun pinten?*"
+              ]
+            ]
+          },
+          "after": [
+            "**Tak** in front of a verb means \"I\" as the one doing the action — *tak jupuk* (I'll take), *tak tuku* (I'll buy), *tak deleng* (I'll look). It's a very typically Javanese form and is covered fully in Unit 18. For now, learn these as fixed chunks.",
+            "**Éntuk** means \"may, be allowed\" (krama *angsal*), unlike *bisa*, which means \"be able\" (krama *saged*). *Ora éntuk* = not allowed; *ora bisa* = not able. Like English \"can\", everyday speech often blurs the two, so take care here."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Shopping and units",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Ngoko",
+            "Krama",
+            "English"
+          ],
+          "rows": [
+            [
+              "*beras*",
+              "*uwos*",
+              "rice (uncooked)"
+            ],
+            [
+              "*sega*",
+              "*sekul*",
+              "rice (cooked)"
+            ],
+            [
+              "*gedhang*",
+              "*pisang*",
+              "banana"
+            ],
+            [
+              "*jeruk*",
+              "–",
+              "orange, citrus"
+            ],
+            [
+              "*lombok*",
+              "*lombok*",
+              "chili"
+            ],
+            [
+              "*brambang*",
+              "–",
+              "shallot"
+            ],
+            [
+              "*bawang*",
+              "–",
+              "garlic"
+            ],
+            [
+              "*janganan*, *sayur*",
+              "*jangan*",
+              "vegetables"
+            ],
+            [
+              "*iwak*",
+              "*ulam*",
+              "fish; meat or fish dish"
+            ],
+            [
+              "*endhog*",
+              "*tigan*",
+              "egg"
+            ],
+            [
+              "*gula*",
+              "*gendhis*",
+              "sugar"
+            ],
+            [
+              "*uyah*",
+              "*sarem*",
+              "salt"
+            ],
+            [
+              "*tempé*",
+              "–",
+              "tempeh"
+            ],
+            [
+              "*tahu*",
+              "–",
+              "tofu"
+            ],
+            [
+              "*klapa*",
+              "*kalapa*",
+              "coconut"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Market units are simple: put the prefix *sa-* / *se-*, meaning \"one\", in front of the unit:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Unit",
+            "Used for",
+            "Example"
+          ],
+          "rows": [
+            [
+              "*sekilo*",
+              "weight",
+              "*lombok sekilo* — a kilo of chilies"
+            ],
+            [
+              "*sasisir*",
+              "bananas",
+              "*gedhang sasisir* — a bunch of bananas"
+            ],
+            [
+              "*seiji*, *siji*",
+              "single items",
+              "*endhog seiji* — one egg"
+            ],
+            [
+              "*seiket*",
+              "vegetables, firewood",
+              "*kangkung seiket* — a bundle of water spinach"
+            ],
+            [
+              "*sabungkus*",
+              "anything wrapped",
+              "*sega sabungkus* — a wrapped portion of rice"
+            ],
+            [
+              "*sagelas*",
+              "drinks",
+              "*ès tèh sagelas* — a glass of iced tea"
+            ],
+            [
+              "*sapiring*",
+              "food",
+              "*sega sapiring* — a plate of rice"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Bargaining without sounding rude",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bargaining at a Javanese market isn't a fight; it's a conversation. Sellers expect it, and bargaining gently often gets you a better price than pushing. These three sentences cover everything you need."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Menapa boten saged kirang, Bu?** — \"Couldn't you make it less, ma'am?\" The standard opener. Say it with a smile, not a demanding tone.",
+            "**Kirangi sekedhik nggih.** — \"Take a little off, OK?\" Even softer, because it names no number and leaves the decision to the seller.",
+            "**Kalih dasa mawon pripun?** — \"How about just twenty?\" It names a number, but wrapping it in the question *pripun* (how about) keeps it from sounding like an ultimatum."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Unwritten rules",
+          "items": [
+            "**Don't bargain over things that are obviously cheap**, like a bundle of vegetables for a thousand rupiah. Haggling over a thousand rupiah reads as an insult, not thrift.",
+            "**If you've bargained and the seller agrees, you must buy.** Bargaining and then walking away is the one thing market etiquette treats as truly rude.",
+            "**Close with *matur nuwun* and *mangga*.** Those two words turn a transaction into an acquaintance, and market sellers remember faces — tomorrow's price may differ because of it."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "jv": "tuku",
+      "krama": "tumbas",
+      "baca": "TOO-koo · TOOM-bahs",
+      "en": "buy"
+    },
+    {
+      "jv": "adol",
+      "krama": "sadé",
+      "baca": "AH-dol · sah-DAY",
+      "en": "sell"
+    },
+    {
+      "jv": "rega",
+      "krama": "regi",
+      "baca": "RUH-go · RUH-gee",
+      "en": "price"
+    },
+    {
+      "jv": "larang",
+      "krama": "awis",
+      "baca": "LAH-rahng · AH-wis",
+      "en": "expensive"
+    },
+    {
+      "jv": "murah",
+      "krama": "mirah",
+      "baca": "MOO-rah · MEE-rah",
+      "en": "cheap"
+    },
+    {
+      "jv": "jupuk",
+      "krama": "pendhet",
+      "baca": "JOO-poo' · PUHN-dhuht",
+      "en": "take"
+    },
+    {
+      "jv": "susuk",
+      "krama": "susuk",
+      "baca": "SOO-soo'",
+      "en": "change (money)"
+    },
+    {
+      "jv": "peken",
+      "krama": "peken",
+      "baca": "PUH-kuhn",
+      "en": "market (krama)"
+    },
+    {
+      "jv": "éntuk",
+      "krama": "angsal",
+      "baca": "AYN-too' · AHNG-sahl",
+      "en": "may, be allowed; get"
+    },
+    {
+      "jv": "mangga",
+      "krama": "mangga",
+      "baca": "MAHNG-go",
+      "en": "please, go ahead; excuse me"
+    },
+    {
+      "jv": "mawon",
+      "krama": "mawon",
+      "baca": "MAH-won",
+      "en": "just, only (krama)"
+    },
+    {
+      "jv": "nggih",
+      "krama": "nggih",
+      "baca": "NGGIH",
+      "en": "yes (casual, krama)"
+    },
+    {
+      "jv": "dadi",
+      "krama": "dados",
+      "baca": "DAH-dee · DAH-dos",
+      "en": "become; so"
+    },
+    {
+      "jv": "sega",
+      "krama": "sekul",
+      "baca": "SUH-go · SUH-kool",
+      "en": "rice (cooked)"
+    },
+    {
+      "jv": "gedhang",
+      "krama": "pisang",
+      "baca": "guh-DHAHNG",
+      "en": "banana"
+    },
+    {
+      "jv": "lombok",
+      "krama": "lombok",
+      "baca": "LOM-bo'",
+      "en": "chili"
+    },
+    {
+      "jv": "endhog",
+      "krama": "tigan",
+      "baca": "uhn-DHOG · TEE-gahn",
+      "en": "egg"
+    },
+    {
+      "jv": "iwak",
+      "krama": "ulam",
+      "baca": "EE-wah' · OO-lahm",
+      "en": "fish; meat or fish dish"
+    },
+    {
+      "jv": "gula",
+      "krama": "gendhis",
+      "baca": "GOO-lo · GUHN-dhis",
+      "en": "sugar"
+    },
+    {
+      "jv": "uyah",
+      "krama": "sarem",
+      "baca": "OO-yah · SAH-ruhm",
+      "en": "salt"
+    },
+    {
+      "jv": "abang",
+      "krama": "abrit",
+      "baca": "AH-bahng · AH-brit",
+      "en": "red"
+    },
+    {
+      "jv": "ijo",
+      "krama": "ijem",
+      "baca": "EE-jo · EE-juhm",
+      "en": "green"
+    },
+    {
+      "jv": "putih",
+      "krama": "pethak",
+      "baca": "POO-tih · PUH-thah'",
+      "en": "white"
+    },
+    {
+      "jv": "ireng",
+      "krama": "cemeng",
+      "baca": "EE-ruhng · CHUH-muhng",
+      "en": "black"
+    },
+    {
+      "jv": "setengah",
+      "krama": "setengah",
+      "baca": "suh-TUH-ngah",
+      "en": "half"
+    },
+    {
+      "jv": "pripun, piyé",
+      "krama": "pripun",
+      "baca": "PREE-poon",
+      "en": "how"
+    },
+    {
+      "jv": "kirang",
+      "krama": "kirang",
+      "baca": "KEE-rahng",
+      "en": "less (krama)"
+    },
+    {
+      "jv": "dhuwit",
+      "krama": "arta",
+      "baca": "DHOO-wit",
+      "en": "money"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Complete this market conversation in **krama**.",
+      "items": [
+        "Nuwun sèwu, Bu. Lombok menika ____ reginipun? (how much)",
+        "____ boten saged kirang? (whether)",
+        "____ nggih, Bu. (expensive)",
+        "Kula ____ setengah kilo. (take)",
+        "____ pinten, Bu? (everything)",
+        "____ kula pinten? (change)"
+      ]
+    },
+    {
+      "prompt": "Write these prices out in words, in Javanese (ngoko).",
+      "items": [
+        "Rp12,000",
+        "Rp25,000",
+        "Rp50,000",
+        "Rp3,500",
+        "Rp160,000"
+      ]
+    },
+    {
+      "prompt": "Translate into Javanese (ngoko).",
+      "items": [
+        "How much are these bananas?",
+        "That's expensive. Can't you make it less?",
+        "I'll take two kilos.",
+        "Are the eggs still fresh?",
+        "The change is seventeen thousand.",
+        "I want to buy one wrapped portion of rice."
+      ]
+    },
+    {
+      "prompt": "**Review of Unit 3.** Cover Unit 3, then write the Javanese sentences.",
+      "items": [
+        "I have two siblings. (ngoko)",
+        "My father is a teacher. (krama)",
+        "Is your younger brother still at school? (ngoko)",
+        "My house is far away. (krama)",
+        "Here's the book. (ngoko)"
+      ]
+    }
+  ],
+  "answers": [
+    "pinten — Menapa — Awis — pendhet — Sedaya — Susukipun",
+    "rolas èwu — selawé èwu — sèket èwu — telung èwu limang atus — satus sewidak èwu",
+    "Gedhang iki pira regané? — Larang. Ora éntuk kurang? — Tak jupuk rong kilo. — Endhogé isih anyar? — Susuké pitulas èwu. — Aku arep tuku sega sabungkus.",
+    "Aku duwé sedulur loro. — Rama kula guru. — Adhimu isih sekolah? — Griya kula tebih. — Iki bukuné."
+  ]
+}

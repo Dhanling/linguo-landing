@@ -1,0 +1,556 @@
+{
+  "title": "At the food stall",
+  "title_target": "Nak makan apa?",
+  "goal": "Order food and drinks at a mamak restaurant, a hawker stall or a food court — the first place that really tests your Malay, and the place where mistakes are forgiven fastest.",
+  "bekal": [
+    "order food and drinks the way real people do",
+    "use *nak*, *boleh*, *tolong* and *sila* in the right places",
+    "read a mamak menu without guessing"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — A mamak stall at night",
+      "intro": "Ten o'clock at night. Haziq takes Sarah to the mamak restaurant across from the college — open twenty-four hours and full of people at all sorts of odd times.",
+      "lines": [
+        {
+          "speaker": "Pelayan:",
+          "text": "Nak makan apa, adik?",
+          "id": "What would you like to eat, young lady?",
+          "literal": "want eat what, younger-sibling?"
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Roti canai dua, teh tarik satu. Sarah, awak nak apa?",
+          "id": "Two roti canai, one teh tarik. Sarah, what do you want?",
+          "literal": "roti canai two, tea pulled one. Sarah, you want what?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Ada nasi lemak tak?",
+          "id": "Do you have nasi lemak?",
+          "literal": "there-is nasi lemak not?"
+        },
+        {
+          "speaker": "Pelayan:",
+          "text": "Ada. Nak pedas ke tak pedas?",
+          "id": "Yes. Spicy or not spicy?",
+          "literal": "there-is. want spicy or not spicy?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Pedas sikit je. Dengan air apa yang tak manis?",
+          "id": "Just a little spicy. And what drink isn't sweet?",
+          "literal": "spicy little only. with drink what that not sweet?"
+        },
+        {
+          "speaker": "Pelayan:",
+          "text": "Teh o kosong. Tak ada gula langsung.",
+          "id": "Black tea, plain. No sugar at all.",
+          "literal": "tea o empty. not there-is sugar at-all."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Okey, teh o kosong satu. Sejuk boleh?",
+          "id": "OK, one plain black tea. Can I have it cold?",
+          "literal": "okay, tea o empty one. cold can?"
+        },
+        {
+          "speaker": "Pelayan:",
+          "text": "Boleh. Teh o ais kosong. Makan sini ke bungkus?",
+          "id": "Sure. Iced black tea, no sugar. Eating here or takeaway?",
+          "literal": "can. tea o ice empty. eat here or wrap?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Makan sini.",
+          "id": "Eating here.",
+          "literal": "eat here."
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Tambah satu telur mata, bang.",
+          "id": "And one fried egg, bro.",
+          "literal": "add one egg eye, brother."
+        },
+        {
+          "speaker": "Pelayan:",
+          "text": "Baik. Sekejap ya.",
+          "id": "OK. Just a moment.",
+          "literal": "good. moment yes."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Haziq, sedap tak nasi lemak sini?",
+          "id": "Haziq, is the nasi lemak here good?",
+          "literal": "Haziq, tasty not nasi lemak here?"
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Sedap gila. Sambal dia power.",
+          "id": "Crazy good. The sambal really packs a punch.",
+          "literal": "tasty crazy. sambal he power."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Nanti kita kira sekali ya. Saya belanja.",
+          "id": "Let's pay all together later. My treat.",
+          "literal": "later we count once yes. I treat."
+        }
+      ],
+      "notes": [
+        "**Nak** (from *hendak*) is the most frequent word in Malaysian conversation. It means **want**, and also marks the near future (\"going to\"). *Nak makan apa?* = what do you want to eat? *Saya nak balik* = I'm going home. The formal forms are *hendak* or *mahu*, but you'll rarely hear them in speech.",
+        "**Air** means **drink** in general, not just water. *Nak air apa?* = \"What would you like to drink?\" For plain water people say *air kosong* (\"empty water\") or *air suam* (warm water).",
+        "**Kosong** at a stall means **no sugar**. So *teh o kosong* = tea, no milk, no sugar. Mamak drink orders work like a code: *teh* (with milk), *teh o* (no milk), *ais* (iced), *kosong* (no sugar), *kurang manis* (less sweet), *peng* (iced, from Hokkien).",
+        "**Bungkus** = to wrap, i.e. takeaway. The slang word is **tapau** (from Cantonese), and it's what you'll hear most: *nak tapau* = I want it to go.",
+        "**Sekejap** = a moment, for a bit. It's everywhere in Malaysian speech. The short form is *kejap*: *kejap ya* = just a sec."
+      ],
+      "grammars": [
+        {
+          "title": "Four ways to ask — and when to use which",
+          "body": [
+            "English uses \"please\" for almost everything. Malay splits requests across four words, and choosing wrong sounds off — not a grammar mistake, but the wrong tone."
+          ],
+          "table": {
+            "head": [
+              "Word",
+              "Used for",
+              "Example",
+              "Tone"
+            ],
+            "rows": [
+              [
+                "**nak**",
+                "saying what you want",
+                "Saya nak teh tarik.",
+                "Neutral, everyday."
+              ],
+              [
+                "**boleh**",
+                "asking permission / whether something's possible",
+                "Boleh tambah gula?",
+                "Polite, not pushy."
+              ],
+              [
+                "**tolong**",
+                "asking someone to do something",
+                "Tolong bungkuskan.",
+                "Asking for help."
+              ],
+              [
+                "**sila**",
+                "INVITING someone to do something",
+                "Sila duduk.",
+                "⚠️ Not for asking!"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ The most common learner mistake: using **sila** to ask for something. *Sila* is the \"please\" of \"please, have a seat\" — you're offering, not asking. *Sila duduk* = \"please sit down\" (you're the host). To ask for help, use *tolong*: *Tolong bungkuskan* = please wrap it up for me.",
+            "The safest order pattern in any stall: **[item] + [number]**, with no verb at all. *Teh tarik satu.* *Roti canai dua.* *Nasi lemak tiga bungkus.* This is exactly what Malaysians themselves say, and it's quicker than a full sentence."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Reading a mamak menu",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A *kedai mamak* is an Indian-Muslim eatery that stays open most of the night and is where everyone in Malaysia hangs out. Menus are rarely translated, so here's what you need to know:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Dish",
+            "What it is",
+            "Closest English idea"
+          ],
+          "rows": [
+            [
+              "**nasi lemak**",
+              "coconut rice, sambal, anchovies, egg, cucumber",
+              "the national breakfast"
+            ],
+            [
+              "**roti canai**",
+              "flaky layered flatbread, eaten with dal curry",
+              "paratha"
+            ],
+            [
+              "**roti telur**",
+              "roti canai with egg",
+              "—"
+            ],
+            [
+              "**maggi goreng**",
+              "instant noodles fried mamak-style",
+              "fried instant noodles"
+            ],
+            [
+              "**mi goreng mamak**",
+              "spicy-sweet fried noodles",
+              "fried noodles"
+            ],
+            [
+              "**nasi goreng kampung**",
+              "\"village\" fried rice with anchovies, spicy",
+              "fried rice"
+            ],
+            [
+              "**nasi kandar**",
+              "rice with a choice of curries, pick your own",
+              "rice-and-curry buffet"
+            ],
+            [
+              "**mee rebus / mee soto**",
+              "noodles in thick gravy / in soto broth",
+              "—"
+            ],
+            [
+              "**murtabak**",
+              "flatbread stuffed with minced meat",
+              "stuffed pancake"
+            ],
+            [
+              "**tosai**",
+              "Indian rice crêpe (dosa)",
+              "dosa"
+            ],
+            [
+              "**telur mata / mata kerbau**",
+              "fried egg, sunny side up",
+              "fried egg"
+            ],
+            [
+              "**ikan bilis**",
+              "small dried anchovies",
+              "anchovies"
+            ],
+            [
+              "**kangkung goreng belacan**",
+              "water spinach stir-fried with shrimp paste",
+              "stir-fried greens"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Note **telur mata kerbau** — a fried egg is \"buffalo's-eye egg\" in Malay (Indonesian says \"cow's-eye\"; English says \"sunny side up\"). And **belacan** is fermented shrimp paste, the backbone of many sambals."
+        },
+        {
+          "type": "sub",
+          "text": "Drinks: a code worth learning"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Order",
+            "What you get"
+          ],
+          "rows": [
+            [
+              "**teh tarik**",
+              "milk tea \"pulled\" until frothy — the national drink"
+            ],
+            [
+              "**teh o**",
+              "tea without milk (*o* = \"black\" in Hokkien)"
+            ],
+            [
+              "**teh o ais**",
+              "iced tea without milk"
+            ],
+            [
+              "**teh o ais limau**",
+              "iced lime tea"
+            ],
+            [
+              "**kopi / kopi o**",
+              "coffee with milk / black coffee"
+            ],
+            [
+              "**kosong**",
+              "no sugar — added at the end of the order"
+            ],
+            [
+              "**kurang manis**",
+              "less sugar"
+            ],
+            [
+              "**air suam**",
+              "warm water"
+            ],
+            [
+              "**air sejuk**",
+              "cold water ⚠️ (*sejuk* = cold)"
+            ],
+            [
+              "**milo ais / milo dinosaur**",
+              "iced Milo / iced Milo heaped with Milo powder"
+            ],
+            [
+              "**sirap bandung**",
+              "rose syrup with milk, bright pink"
+            ],
+            [
+              "**limau ais**",
+              "iced lime juice"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The order of an order: **drink + temperature + sugar**. *Teh o ais kosong* = tea, no milk, iced, no sugar. *Kopi kurang manis* = coffee with milk, less sugar. Once you get the sequence, you can build any order without memorizing the list."
+        },
+        {
+          "type": "kotak",
+          "title": "Stall phrases you need",
+          "items": [
+            "**Ada … tak?** — Do you have …? (*Ada nasi lemak tak?*)",
+            "**Nak … satu.** — One …, please. (the quickest pattern)",
+            "**Jangan letak …** — Don't put in … (*Jangan letak cili.* = no chilli)",
+            "**Kurang pedas / kurang manis** — Less spicy / less sweet.",
+            "**Makan sini ke bungkus?** — Eating here or takeaway? (you'll be asked this)",
+            "**Berapa semua?** — How much is it altogether?",
+            "**Nak kira.** / **Bill.** — The bill, please.",
+            "**Halal ke?** — Is it halal? (an ordinary question, not awkward at all in Malaysia)"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Taste and opinions",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Malay",
+            "English",
+            "Note"
+          ],
+          "rows": [
+            [
+              "**sedap**",
+              "delicious, tasty",
+              "The standard word in Malaysia."
+            ],
+            [
+              "**tak sedap**",
+              "not tasty",
+              "—"
+            ],
+            [
+              "**manis / masin**",
+              "sweet / salty",
+              "⚠️ *masin* (Indonesian: *asin*)."
+            ],
+            [
+              "**masam**",
+              "sour",
+              "⚠️ Indonesian: *asam*."
+            ],
+            [
+              "**pahit / tawar**",
+              "bitter / bland",
+              "—"
+            ],
+            [
+              "**pedas**",
+              "spicy hot",
+              "—"
+            ],
+            [
+              "**panas / sejuk**",
+              "hot / cold",
+              "⚠️ *sejuk* = cold."
+            ],
+            [
+              "**kenyang / lapar**",
+              "full / hungry",
+              "—"
+            ],
+            [
+              "**dahaga**",
+              "thirsty",
+              "*Haus* is also used, but *dahaga* is more common."
+            ],
+            [
+              "**muak / jelak**",
+              "sick of (a food)",
+              "*Jelak* is typically Malaysian."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Intensifiers in Malaysian speech: **sangat** (very, standard), **sungguh** (rather formal), **betul** (*sedap betul* = really tasty), **gila** (crazy, very casual), **giler** (its slang spelling) — and most typical of all, **sangat** placed **after** the adjective: *sedap sangat*, *pedas sangat*, *mahal sangat*. In formal Malay *sangat* goes before; in conversation it almost always comes after. This one small change makes you sound instantly Malaysian."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ms": "nak (hendak)",
+      "baca": "nahk",
+      "en": "want; going to"
+    },
+    {
+      "ms": "air",
+      "baca": "ai",
+      "en": "drink; water ⚠️"
+    },
+    {
+      "ms": "kosong",
+      "baca": "koh-sohng",
+      "en": "no sugar ⚠️"
+    },
+    {
+      "ms": "ais",
+      "baca": "ah-ees",
+      "en": "ice, iced"
+    },
+    {
+      "ms": "sejuk",
+      "baca": "suh-jook",
+      "en": "cold ⚠️"
+    },
+    {
+      "ms": "suam",
+      "baca": "soo-ahm",
+      "en": "warm"
+    },
+    {
+      "ms": "bungkus / tapau",
+      "baca": "boong-koos · tah-pow",
+      "en": "takeaway, to go"
+    },
+    {
+      "ms": "sedap",
+      "baca": "suh-dahp",
+      "en": "delicious"
+    },
+    {
+      "ms": "masin",
+      "baca": "mah-seen",
+      "en": "salty"
+    },
+    {
+      "ms": "masam",
+      "baca": "mah-sahm",
+      "en": "sour"
+    },
+    {
+      "ms": "dahaga",
+      "baca": "dah-hah-guh",
+      "en": "thirsty"
+    },
+    {
+      "ms": "sekejap",
+      "baca": "suh-kuh-jahp",
+      "en": "a moment"
+    },
+    {
+      "ms": "kira",
+      "baca": "kee-ruh",
+      "en": "to count; the bill"
+    },
+    {
+      "ms": "belanja",
+      "baca": "buh-lahn-juh",
+      "en": "to treat (someone) ⚠️"
+    },
+    {
+      "ms": "letak",
+      "baca": "luh-tahk",
+      "en": "to put, add (seasoning)"
+    },
+    {
+      "ms": "cili",
+      "baca": "chee-lee",
+      "en": "chilli"
+    },
+    {
+      "ms": "belacan",
+      "baca": "buh-lah-chahn",
+      "en": "shrimp paste"
+    },
+    {
+      "ms": "ikan bilis",
+      "baca": "ee-kahn bee-lees",
+      "en": "anchovies"
+    },
+    {
+      "ms": "telur mata",
+      "baca": "tuh-loh mah-tuh",
+      "en": "fried egg"
+    },
+    {
+      "ms": "gerai",
+      "baca": "guh-rai",
+      "en": "stall, kiosk"
+    },
+    {
+      "ms": "medan selera",
+      "baca": "meh-dahn suh-luh-ruh",
+      "en": "food court"
+    },
+    {
+      "ms": "sila",
+      "baca": "see-luh",
+      "en": "please (inviting) ⚠️"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "What will you get if you order this?",
+      "items": [
+        "Teh o ais kosong",
+        "Kopi kurang manis",
+        "Air suam",
+        "Nasi lemak bungkus",
+        "Telur mata satu",
+        "Milo ais"
+      ]
+    },
+    {
+      "prompt": "Fill in *nak*, *boleh*, *tolong* or *sila*.",
+      "items": [
+        "Saya ____ teh tarik satu.",
+        "____ tambah gula sikit? (asking permission)",
+        "____ bungkuskan nasi ni. (asking for help)",
+        "____ duduk, encik. (inviting a guest)",
+        "Awak ____ makan apa?",
+        "____ saya bayar guna kad? (asking permission)"
+      ]
+    },
+    {
+      "prompt": "Translate into Malay (use the quick stall pattern).",
+      "items": [
+        "Do you have fried rice?",
+        "Two teh tarik, one roti canai.",
+        "No chilli, please.",
+        "Eating here.",
+        "How much is it altogether?",
+        "Really delicious!"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "apa / nak / awak / makan / ?",
+        "sini / ke / makan / bungkus / ?",
+        "je / pedas / sikit",
+        "sangat / nasi lemak / sedap / ni",
+        "semua / berapa / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Iced tea, no milk, no sugar — Coffee with milk and a little sugar — Warm water — Nasi lemak to take away — One fried egg — Iced Milo",
+    "nak — Boleh — Tolong — Sila — nak — Boleh",
+    "Ada nasi goreng tak? — Teh tarik dua, roti canai satu. — Jangan letak cili. — Makan sini. — Berapa semua? — Sedap sangat!",
+    "Awak nak makan apa? — Makan sini ke bungkus? — Pedas sikit je. — Nasi lemak ni sedap sangat. — Berapa semua?"
+  ]
+}

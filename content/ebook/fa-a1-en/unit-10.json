@@ -1,0 +1,499 @@
+{
+  "title": "Eating out — and an object marker English doesn't have",
+  "title_target": "غذا و رستوران",
+  "goal": "Order food and drinks, read a menu — and use را, the one piece of Persian grammar with no counterpart at all in English.",
+  "bekal": [
+    "order, ask for the bill, and explain what you don't eat",
+    "use را with specific objects and leave it off the others",
+    "recognize the Iranian dishes you'll see most on a menu"
+  ],
+  "dialogs": [
+    {
+      "title": "گفتگو — در رستوران",
+      "intro": "Maryam takes Budi to lunch at a traditional restaurant near the language institute.",
+      "lines": [
+        {
+          "speaker": "گارسون:",
+          "text": "سلام، خوش آمدید. منو را بفرمایید.",
+          "baca": "salâm, khosh âmadid. meno râ befarmâyid.",
+          "id": "Hello, welcome. Here's the menu.",
+          "literal": "hello, good came-you. menu [obj] please."
+        },
+        {
+          "speaker": "مریم:",
+          "text": "ممنون. بودی، چه می‌خورید؟",
+          "baca": "mamnun. Budi, che mikhorid?",
+          "id": "Thank you. Budi, what would you like to eat?",
+          "literal": "grateful-I. Budi, what eat-you?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "نمی‌دانم. این غذا را نمی‌شناسم. چیست؟",
+          "baca": "nemidânam. in ghazâ râ nemishenâsam. chist?",
+          "id": "I don't know. I don't know these dishes. What's this?",
+          "literal": "not-know-I. this food [obj] not-know-I. what-is?"
+        },
+        {
+          "speaker": "مریم:",
+          "text": "قورمه‌سبزی است. خورشتِ سبزی با گوشت و لوبیا.",
+          "baca": "ghorme-sabzi ast. khoresht-e sabzi bâ gusht va lubiyâ.",
+          "id": "That's ghorme sabzi. A green herb stew with meat and beans.",
+          "literal": "ghorme-sabzi is. stew-of greens with meat and beans."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "تند است؟ من غذایِ تند دوست ندارم.",
+          "baca": "tond ast? man ghazâ-ye tond dust nadâram.",
+          "id": "Is it spicy? I don't like spicy food.",
+          "literal": "spicy is? I food-of spicy friend not-have-I."
+        },
+        {
+          "speaker": "مریم:",
+          "text": "نه، غذایِ ایرانی اصلاً تند نیست. ترش است.",
+          "baca": "na, ghazâ-ye irâni aslan tond nist. torsh ast.",
+          "id": "No, Iranian food isn't spicy at all. It's sour.",
+          "literal": "no, food-of Iran at-all spicy is-not. sour is."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "جالب است. پس همان را می‌خواهم.",
+          "baca": "jâleb ast. pas hamân râ mikhâham.",
+          "id": "Interesting. Then I'll have that.",
+          "literal": "interesting is. so that-too [obj] want-I."
+        },
+        {
+          "speaker": "مریم:",
+          "text": "من چلوکباب می‌گیرم. نوشیدنی چه می‌خواهید؟",
+          "baca": "man chelow-kabâb migiram. nushidani che mikhâhid?",
+          "id": "I'll take chelow kabab. What would you like to drink?",
+          "literal": "I rice-kabab take-I. drink what want-you?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "دوغ چطور است؟ تا حالا نخورده‌ام.",
+          "baca": "dugh chetowr ast? tâ hâlâ nakhorde-am.",
+          "id": "How about dugh? I've never tried it.",
+          "literal": "dugh how is? until now not-eaten-I."
+        },
+        {
+          "speaker": "مریم:",
+          "text": "حتماً امتحان کنید. ماستِ شور با نعناع است.",
+          "baca": "hatman emtehân konid. mâst-e shur bâ na'nâ' ast.",
+          "id": "You must try it. It's salty yogurt with mint.",
+          "literal": "surely trying do-you. yogurt-of salty with mint is."
+        },
+        {
+          "speaker": "گارسون:",
+          "text": "غذایتان را آوردم. نوشِ جان!",
+          "baca": "ghazâyetân râ âvardam. nush-e jân!",
+          "id": "Here's your food. Enjoy your meal!",
+          "literal": "food-your [obj] bring-I. delight-of soul!"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "خیلی خوشمزه است! دستِ آشپز درد نکند.",
+          "baca": "kheyli khoshmaze ast! dast-e âshpaz dard nakonad.",
+          "id": "Delicious! My compliments to the chef.",
+          "literal": "very tasty is! hand-of cook pain not-do."
+        },
+        {
+          "speaker": "مریم:",
+          "text": "خوشحالم که خوشتان آمد. حساب با من است.",
+          "baca": "khoshhâlam ke khoshetân âmad. hesâb bâ man ast.",
+          "id": "I'm glad you like it. The bill's on me.",
+          "literal": "glad-I that liking-your came. bill with me is."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "نه، خواهش می‌کنم! دفعهٔ بعد با شما.",
+          "baca": "na, khâhesh mikonam! daf'e-ye ba'd bâ shomâ.",
+          "id": "No, please! Next time, then.",
+          "literal": "no, request do-I! time-of next with you."
+        }
+      ],
+      "notes": [
+        "⚠️ **The marker را flags a SPECIFIC object, and English has nothing quite like it.** Compare غذا می‌خورم (\"I eat\" — any food) with غذا **را** می‌خورم (\"I eat the food\" — the food we've been talking about). The difference is exactly \"I'm buying a book\" versus \"I'm buying **the** book\" — and that's the best handle you have: **را roughly does the job of \"the\" on an object**, except it comes after the noun.",
+        "**When را is required:** when the object has این or آن, is a name, has a possessive ending, or has already been mentioned. **When را is left out:** when the object is general and not specific. کتاب می‌خرم (\"I buy books\") — no را. کتاب **را** می‌خرم (\"I buy the book\") — with را.",
+        "**In speech it's رو (*ro*), or just an attached ـو.** منو رو بده (*meno ro bede*), اینو می‌خوام (*ino mikhâm*, from این را می‌خواهم). The short form is what you'll hear; full را is mostly what you'll read.",
+        "⚠️ **Iranian food is not spicy — which surprises many visitors.** The backbone of Iranian cooking is **sour** (dried limes, pomegranate, sour fruit) and **fragrant** (saffron, cinnamon, turmeric), not hot. If you can't eat without chili sauce, bring your own; فلفل (pepper) is on the table, but you won't find hot chilies in an Iranian kitchen.",
+        "***Nush-e jân!*** **(نوشِ جان) = \"enjoy your meal\"**, literally \"a delight to the soul\". Said by waiters, hosts, or anyone who sees you start eating. The reply: ممنون.",
+        "⚠️ **The phrase حساب با من است is not empty politeness.** In Iran, fighting over the bill is a national sport. Whoever invited usually really will pay, and refusing once or twice is part of the etiquette. If you truly want to pay, do it quietly before the bill arrives — that's the move that wins. The whole mechanism is taken apart in unit 15."
+      ],
+      "grammars": [
+        {
+          "title": "The marker را — for specific objects",
+          "body": [
+            "Persian marks the direct object with را, but **only when the object is specific**. This is the one part of Persian grammar that feels truly foreign to English speakers, and mastering it takes weeks, not minutes."
+          ],
+          "table": {
+            "head": [
+              "Without را",
+              "Meaning",
+              "With را",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "کتاب می‌خرم",
+                "I buy books",
+                "کتاب را می‌خرم",
+                "I buy the book"
+              ],
+              [
+                "غذا می‌خورم",
+                "I eat",
+                "غذا را می‌خورم",
+                "I eat the food"
+              ],
+              [
+                "چای می‌نوشم",
+                "I drink tea",
+                "چای را می‌نوشم",
+                "I drink the tea"
+              ],
+              [
+                "نامه می‌نویسم",
+                "I write letters",
+                "نامه را می‌نویسم",
+                "I write the letter"
+              ],
+              [
+                "فیلم می‌بینم",
+                "I watch films",
+                "این فیلم را می‌بینم",
+                "I watch this film"
+              ]
+            ]
+          },
+          "after": [
+            "**The marker را is required** when the object: has این or آن (این کتاب را), is a name (مریم را دیدم), has a possessive ending (کتابم را), or has been mentioned before.",
+            "**The marker را is not used** when the object is general, non-specific, or part of a compound verb: کار می‌کنم (not کار را می‌کنم), غذا می‌خورم, فارسی صحبت می‌کنم.",
+            "⚠️ **The marker را is only for direct objects.** If the noun has a preposition in front (به، از، با، در), را is not allowed: به مریم گفتم (not به مریم را گفتم).",
+            "With pronouns, را can merge into one word: من را → **مرا** (*marâ*), تو را → **ترا** or تو را, then او را, ما را, شما را, آنها را. In conversation they all use رو: منو، تورو، اونو."
+          ]
+        },
+        {
+          "title": "Ordering and asking",
+          "table": {
+            "head": [
+              "Persian",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "منو لطفاً",
+                "meno lotfan",
+                "The menu, please"
+              ],
+              [
+                "چه پیشنهاد می‌کنید؟",
+                "che pishnehâd mikonid?",
+                "What do you recommend?"
+              ],
+              [
+                "... می‌خواهم",
+                "... mikhâham",
+                "I'd like ..."
+              ],
+              [
+                "یکی از این لطفاً",
+                "yeki az in lotfan",
+                "One of these, please"
+              ],
+              [
+                "بدونِ گوشت لطفاً",
+                "bedun-e gusht lotfan",
+                "No meat, please"
+              ],
+              [
+                "کم‌نمک لطفاً",
+                "kam-namak lotfan",
+                "Less salt, please"
+              ],
+              [
+                "آب لطفاً",
+                "âb lotfan",
+                "Water, please"
+              ],
+              [
+                "حساب لطفاً",
+                "hesâb lotfan",
+                "The bill, please"
+              ],
+              [
+                "برایِ بردن",
+                "barâye bordan",
+                "To go"
+              ],
+              [
+                "دستشویی کجاست؟",
+                "dastshuyi kojâst?",
+                "Where's the restroom?"
+              ]
+            ]
+          },
+          "after": [
+            "***Bedun-e*** **(بدونِ, \"without\")** is a key word for anyone with dietary needs: بدونِ گوشت، بدونِ پیاز، بدونِ شکر. For allergies: به ... حساسیت دارم (*be ... hassâsiyat dâram*, \"I'm allergic to ...\")."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "On an Iranian menu",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Persian",
+            "Say it",
+            "What it is"
+          ],
+          "rows": [
+            [
+              "چلوکباب",
+              "chelow-kabâb",
+              "white rice with kabab — the national dish"
+            ],
+            [
+              "کبابِ کوبیده",
+              "kabâb-e kubide",
+              "ground-meat kabab on a wide skewer"
+            ],
+            [
+              "جوجه‌کباب",
+              "juje-kabâb",
+              "saffron chicken kabab"
+            ],
+            [
+              "قورمه‌سبزی",
+              "ghorme-sabzi",
+              "green herb stew with meat and beans"
+            ],
+            [
+              "قیمه",
+              "gheyme",
+              "yellow split-pea stew topped with fries"
+            ],
+            [
+              "فسنجان",
+              "fesenjân",
+              "walnut and pomegranate stew, sweet and sour"
+            ],
+            [
+              "آبگوشت",
+              "âbgusht",
+              "meat and chickpea stew, mashed at the table"
+            ],
+            [
+              "دیزی",
+              "dizi",
+              "another name for آبگوشت, served in a stone pot"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Drinks",
+            "Say it",
+            "What it is"
+          ],
+          "rows": [
+            [
+              "چای",
+              "châi",
+              "black tea, served all day"
+            ],
+            [
+              "دوغ",
+              "dugh",
+              "salty yogurt drink with mint, sometimes fizzy"
+            ],
+            [
+              "آبِ معدنی",
+              "âb-e ma'dani",
+              "mineral water"
+            ],
+            [
+              "نوشابه",
+              "nushâbe",
+              "soda"
+            ],
+            [
+              "آبِ پرتقال",
+              "âb-e porteghâl",
+              "orange juice"
+            ],
+            [
+              "شربتِ آلبالو",
+              "sharbat-e âlbâlu",
+              "sour cherry syrup drink"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "How Iranians drink tea",
+          "items": [
+            "**Tea is drunk with no sugar in it.** A sugar lump (قند — the root of English *candy*) goes between your teeth, and you sip the tea through it. This is called چای قندپهلو (*châi ghand-pahlu*, \"tea with sugar on the side\"). The glass is small, clear, and narrow-waisted — an استکان (*estekân*).",
+            "⚠️ **Turning down the first glass of tea is normal; turning down the third needs words.** بس است، ممنون (*bas ast, mamnun*, \"that's enough, thanks\") or سیر شدم (*sir shodam*, \"I'm full\"). Covering the glass with your palm is understood everywhere too."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Four sentences that make a host happy",
+          "items": [
+            "\"It's delicious.\" — خیلی خوشمزه است.",
+            "\"Thank you for all your trouble.\" — دستتان درد نکند.",
+            "\"I'm full, thank you.\" — سیر شدم، ممنون.",
+            "\"How do you make this?\" — این را چطور درست می‌کنید؟ This last one almost always earns you the full recipe, a second helping, and an invitation to come back."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fa": "غذا",
+      "baca": "ghazâ",
+      "en": "food"
+    },
+    {
+      "fa": "رستوران",
+      "baca": "resturân",
+      "en": "restaurant"
+    },
+    {
+      "fa": "منو",
+      "baca": "meno",
+      "en": "menu"
+    },
+    {
+      "fa": "گارسون",
+      "baca": "gârson",
+      "en": "waiter"
+    },
+    {
+      "fa": "را",
+      "baca": "râ",
+      "en": "specific-object marker"
+    },
+    {
+      "fa": "شناختن",
+      "baca": "shenâkhtan",
+      "en": "know (be familiar with)"
+    },
+    {
+      "fa": "خورشت",
+      "baca": "khoresht",
+      "en": "stew"
+    },
+    {
+      "fa": "سبزی",
+      "baca": "sabzi",
+      "en": "greens, herbs"
+    },
+    {
+      "fa": "لوبیا",
+      "baca": "lubiyâ",
+      "en": "beans"
+    },
+    {
+      "fa": "تند",
+      "baca": "tond",
+      "en": "spicy, hot; fast"
+    },
+    {
+      "fa": "ترش",
+      "baca": "torsh",
+      "en": "sour"
+    },
+    {
+      "fa": "شیرین",
+      "baca": "shirin",
+      "en": "sweet"
+    },
+    {
+      "fa": "شور",
+      "baca": "shur",
+      "en": "salty"
+    },
+    {
+      "fa": "خوشمزه",
+      "baca": "khoshmaze",
+      "en": "tasty, delicious"
+    },
+    {
+      "fa": "نوشیدنی",
+      "baca": "nushidani",
+      "en": "drink"
+    },
+    {
+      "fa": "دوغ",
+      "baca": "dugh",
+      "en": "salty yogurt drink"
+    },
+    {
+      "fa": "نعناع",
+      "baca": "na'nâ'",
+      "en": "mint"
+    },
+    {
+      "fa": "امتحان کردن",
+      "baca": "emtehân kardan",
+      "en": "try"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Persian.",
+      "items": [
+        "The menu, please.",
+        "I'd like chelow kabab.",
+        "I don't like spicy food.",
+        "Delicious!",
+        "The bill, please."
+      ]
+    },
+    {
+      "prompt": "Fill in را where needed; leave the blank empty where it isn't.",
+      "items": [
+        "من کتاب ____ می‌خرم. (any book)",
+        "من این کتاب ____ می‌خرم.",
+        "او فارسی ____ صحبت می‌کند.",
+        "ما غذایمان ____ خوردیم.",
+        "آنها چای ____ می‌نوشند. (any tea)"
+      ]
+    },
+    {
+      "prompt": "Fill in the right taste or state word.",
+      "items": [
+        "Iranian food tastes sour, not spicy: غذایِ ایرانی ____ است.",
+        "I can't eat another bite: ____ شدم.",
+        "My stomach is empty: ____ هستم.",
+        "This food tastes great: این غذا ____ است.",
+        "Iranian tea is drunk with a sugar lump, so the tea itself: ____ نیست."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "لطفاً / منو",
+        "می‌خواهم / چلوکباب / من",
+        "است / خوشمزه / خیلی",
+        "نکند / درد / دستتان",
+        "نمی‌شناسم / را / غذا / این / من"
+      ]
+    }
+  ],
+  "answers": [
+    "منو لطفاً. — من چلوکباب می‌خواهم. — من غذایِ تند دوست ندارم. — خیلی خوشمزه است! — حساب لطفاً.",
+    "بدون را — را — بدون را — را — بدون را",
+    "ترش — سیر — گرسنه — خوشمزه — شیرین",
+    "منو لطفاً. — من چلوکباب می‌خواهم. — خیلی خوشمزه است. — دستتان درد نکند. — من این غذا را نمی‌شناسم."
+  ],
+  "wave": "Find a recipe for قورمه‌سبزی in Persian online and count how many را it contains. You'll see the pattern right away."
+}

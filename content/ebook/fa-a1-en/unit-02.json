@@ -1,0 +1,517 @@
+{
+  "title": "Origin, languages, and jobs",
+  "title_target": "ملیت و شغل",
+  "goal": "Say your country, nationality, the languages you speak, and your job — with one magic ending that builds them all.",
+  "bekal": [
+    "form nationality words and language names from country names",
+    "say which languages you speak, and how well",
+    "name your job without \"a\" or \"an\""
+  ],
+  "dialogs": [
+    {
+      "title": "گفتگو — در کافهٔ مؤسسهٔ زبان",
+      "intro": "A small café next to a language institute. Budi sits alone with a book open; a woman at the next table speaks to him.",
+      "lines": [
+        {
+          "speaker": "مریم:",
+          "text": "ببخشید، شما دانشجو هستید؟",
+          "baca": "bebakhshid, shomâ dâneshju hastid?",
+          "id": "Excuse me, are you a student?",
+          "literal": "forgive, you student are-you?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "بله، من دانشجویِ زبانِ فارسی هستم.",
+          "baca": "bale, man dâneshju-ye zabân-e fârsi hastam.",
+          "id": "Yes, I'm a student of Persian.",
+          "literal": "yes, I student-of language-of Persian am-I."
+        },
+        {
+          "speaker": "مریم:",
+          "text": "چه جالب! شما اهلِ کجایید؟",
+          "baca": "che jâleb! shomâ ahl-e kojâyid?",
+          "id": "How interesting! Where are you from?",
+          "literal": "what interesting! you native-of where-you?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "من اندونزیایی هستم، اهلِ جاکارتا. شما؟",
+          "baca": "man andoneziyâyi hastam, ahl-e Jâkârtâ. shomâ?",
+          "id": "I'm Indonesian, from Jakarta. And you?",
+          "literal": "I Indonesia-i am-I, native-of Jakarta. you?"
+        },
+        {
+          "speaker": "مریم:",
+          "text": "من ایرانی‌ام. اسمِ من مریم است. مترجمم.",
+          "baca": "man irâni-am. esm-e man Maryam ast. motarjemam.",
+          "id": "I'm Iranian. My name is Maryam. I'm a translator.",
+          "literal": "I Iran-i-I. name-of I Maryam is. translator-I."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "چند زبان بلدید؟",
+          "baca": "chand zabân baladid?",
+          "id": "How many languages do you speak?",
+          "literal": "how-many language know-you?"
+        },
+        {
+          "speaker": "مریم:",
+          "text": "فارسی، عربی و انگلیسی. کمی هم ترکی.",
+          "baca": "fârsi, arabi va engelisi. kami ham torki.",
+          "id": "Persian, Arabic, and English. A little Turkish too.",
+          "literal": "Persian, Arabic and English. a-little also Turkish."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "عالی است! من فقط اندونزیایی و کمی فارسی بلدم.",
+          "baca": "âli ast! man faghat andoneziyâyi va kami fârsi baladam.",
+          "id": "Amazing! I only speak Indonesian and a little Persian.",
+          "literal": "amazing is! I only Indonesia-i and a-little Persian know-I."
+        },
+        {
+          "speaker": "مریم:",
+          "text": "فارسیِ شما خیلی خوب است!",
+          "baca": "fârsi-ye shomâ kheyli khub ast!",
+          "id": "Your Persian is very good!",
+          "literal": "Persian-of you very good is!"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "لطف دارید. من هنوز مبتدی هستم.",
+          "baca": "lotf dârid. man hanuz mobtadi hastam.",
+          "id": "That's kind of you. I'm still a beginner.",
+          "literal": "kindness have-you. I still beginner am-I."
+        },
+        {
+          "speaker": "مریم:",
+          "text": "شما اینجا دانشجویید یا کارمند؟",
+          "baca": "shomâ injâ dâneshjuyid yâ kârmand?",
+          "id": "Are you here as a student or an employee?",
+          "literal": "you here student-you or employee?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "من مهندسم. اینجا برایِ کار هستم.",
+          "baca": "man mohandesam. injâ barâye kâr hastam.",
+          "id": "I'm an engineer. I'm here for work.",
+          "literal": "I engineer-I. here for-of work am-I."
+        },
+        {
+          "speaker": "مریم:",
+          "text": "پس خوش آمدید به ایران!",
+          "baca": "pas khosh âmadid be Irân!",
+          "id": "Well then, welcome to Iran!",
+          "literal": "so well came-you to Iran!"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "خیلی ممنون.",
+          "baca": "kheyli mamnun.",
+          "id": "Thank you very much.",
+          "literal": "very grateful."
+        }
+      ],
+      "notes": [
+        "⚠️ **Nationality words don't change for gender.** Reza اندونزیایی, Maryam also اندونزیایی. If you've studied Arabic (اندونيسي / اندونيسية) or Russian (индонезиец / индонезийка), this is a real relief: Persian nouns carry no trace of gender at all.",
+        "**Jobs take no article.** من مهندسم = \"I'm engineer\", never \"I'm *an* engineer\". Persian has no *a* / *an* / ال here, so drop the article you'd use in English — just as French *je suis ingénieur* does.",
+        "***Che*** **+ word = an exclamation.** چه جالب! (\"how interesting!\"), چه خوب! (\"how nice!\"), چه گرم! (\"how hot!\"). With a noun and adjective, add the ending ـی at the end: چه روزِ خوبی! (\"what a lovely day!\") — that pattern returns in unit 3.",
+        "⚠️ **You will almost certainly hear** فارسیِ شما خیلی خوب است **(\"your Persian is very good\").** Say three words of Persian in Iran and someone will praise you lavishly. Don't take it literally and don't argue at length — answer لطف دارید (*lotf dârid*, \"you're very kind\") or خواهش می‌کنم. This is your first taste of تعارف (*ta'arof*), the layered etiquette of compliments and refusals covered fully in unit 15.",
+        "***Ahl-e kojâyid?*** **= اهلِ کجا + ید.** The شما \"to be\" ending (ـید) attaches straight to کجا, and since کجا ends in a vowel, a ی is inserted: کجایید. The long form اهلِ کجا هستید؟ is just as correct and easier for beginners — use whichever feels comfortable.",
+        "**Spoken Tehran forms for this dialogue:** اهلِ کجایین؟ (*ahl-e kojâyin?*), چند زبون بلدین؟ (*chand zabun baladin?*), فارسیتون خیلی خوبه (*fârsitun kheyli khube*). Notice three changes: ـید → ـین, ân → un (زبان → زبون), and است → ـه. All three are explained in full in unit 14."
+      ],
+      "grammars": [
+        {
+          "title": "The ending ـی: country → nationality → language",
+          "body": [
+            "The ending ـی (*-i*) is one of the most productive tools in Persian. Attach it to a country name and you get the nationality and the language name in one go — like English *Iraq → Iraqi*."
+          ],
+          "table": {
+            "head": [
+              "Country",
+              "Say it",
+              "Person / language",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ایران",
+                "Irân",
+                "ایرانی",
+                "irâni",
+                "Iranian"
+              ],
+              [
+                "اندونزی",
+                "Andonezi",
+                "اندونزیایی",
+                "andoneziyâyi",
+                "Indonesian"
+              ],
+              [
+                "مالزی",
+                "Mâlezi",
+                "مالزیایی",
+                "mâleziyâyi",
+                "Malaysian"
+              ],
+              [
+                "ژاپن",
+                "Zhâpon",
+                "ژاپنی",
+                "zhâponi",
+                "Japanese"
+              ],
+              [
+                "آلمان",
+                "Âlmân",
+                "آلمانی",
+                "âlmâni",
+                "German"
+              ],
+              [
+                "فرانسه",
+                "Farânse",
+                "فرانسوی",
+                "farânsavi",
+                "French"
+              ],
+              [
+                "ترکیه",
+                "Torkiye",
+                "ترکی",
+                "torki",
+                "Turkish"
+              ],
+              [
+                "عربستان",
+                "Arabestân",
+                "عربی",
+                "arabi",
+                "Arabic (language)"
+              ],
+              [
+                "انگلستان",
+                "Engelestân",
+                "انگلیسی",
+                "engelisi",
+                "English"
+              ],
+              [
+                "چین",
+                "Chin",
+                "چینی",
+                "chini",
+                "Chinese"
+              ],
+              [
+                "هند",
+                "Hend",
+                "هندی",
+                "hendi",
+                "Indian / Hindi"
+              ],
+              [
+                "کره",
+                "Kore",
+                "کره‌ای",
+                "kore'i",
+                "Korean"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ The name of the Persian language itself is **not** ایرانی but **فارسی** (*Fârsi*) — from فارس (Fars), a province in southern Iran (the Greeks' \"Persis\", hence \"Persian\"). Calling it \"Iranian\" isn't a big mistake, but saying فارسی instantly sounds right.",
+            "The same ending also makes adjectives from ordinary nouns: آب (\"water\") → آبی (\"blue\"), خاک (\"soil, dust\") → خاکی (\"earth-colored\" — the source of English *khaki*), جنوب (\"south\") → جنوبی (\"southern\").",
+            "Notice the pattern ـستان in country names: عربستان (\"land of the Arabs\"), افغانستان, تاجیکستان, هندوستان. ستان means \"place, land\" — a native Persian ending you'll find across a third of the map of Asia (Pakistan, Kazakhstan, Uzbekistan…)."
+          ]
+        },
+        {
+          "title": "Asking questions without extra words",
+          "body": [
+            "Persian makes questions the easy way: **the word order doesn't change at all.** No \"do\", no swapping \"you are\" to \"are you\" — just raise your voice at the end, as in a casual English \"You're a student?\""
+          ],
+          "table": {
+            "head": [
+              "Statement",
+              "Say it",
+              "Question",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "شما دانشجو هستید.",
+                "shomâ dâneshju hastid.",
+                "شما دانشجو هستید؟",
+                "shomâ dâneshju hastid?"
+              ],
+              [
+                "او ایرانی است.",
+                "u irâni ast.",
+                "او ایرانی است؟",
+                "u irâni ast?"
+              ],
+              [
+                "فارسی بلدید.",
+                "fârsi baladid.",
+                "فارسی بلدید؟",
+                "fârsi baladid?"
+              ]
+            ]
+          },
+          "after": [
+            "For a more formal tone — in letters, interviews, the news — put آیا (*âyâ*) at the start: آیا شما ایرانی هستید؟ In everyday conversation آیا is almost never used.",
+            "Note that the Persian question mark faces the other way: **؟** — a mirror image of the Latin one, because the script runs leftward. The same goes for the comma: **،**",
+            "For questions asking for information, the question word goes **where the answer will stand** — it does not move to the front as in English: شما اهلِ **کجا** هستید؟ → من اهلِ **اندونزی** هستم. Literally \"you are from *where*?\" — the same order as the answer."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Jobs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Persian",
+            "Say it",
+            "Meaning",
+            "Persian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "معلم",
+              "mo'allem",
+              "teacher",
+              "استاد",
+              "ostâd",
+              "university lecturer"
+            ],
+            [
+              "دانشجو",
+              "dâneshju",
+              "(university) student",
+              "دانش‌آموز",
+              "dânesh-âmuz",
+              "school student"
+            ],
+            [
+              "مهندس",
+              "mohandes",
+              "engineer",
+              "دکتر",
+              "doktor",
+              "doctor"
+            ],
+            [
+              "پرستار",
+              "parastâr",
+              "nurse",
+              "مترجم",
+              "motarjem",
+              "translator"
+            ],
+            [
+              "راننده",
+              "rânande",
+              "driver",
+              "فروشنده",
+              "forushande",
+              "seller"
+            ],
+            [
+              "آشپز",
+              "âshpaz",
+              "cook",
+              "نانوا",
+              "nânvâ",
+              "baker"
+            ],
+            [
+              "کارمند",
+              "kârmand",
+              "employee",
+              "کارگر",
+              "kârgar",
+              "worker"
+            ],
+            [
+              "خبرنگار",
+              "khabarnegâr",
+              "journalist",
+              "نویسنده",
+              "nevisande",
+              "writer"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the ending **ـنده** in راننده، فروشنده، نویسنده. It attaches to a verb stem and means \"one who does\", like English *-er*: راندن (\"to drive\") → راننده, فروختن (\"to sell\") → فروشنده, نوشتن (\"to write\") → نویسنده. Once you know the verb stems in unit 9, you can guess dozens of job names yourself."
+        },
+        {
+          "type": "kotak",
+          "title": "European words that became Persian",
+          "items": [
+            "Persian borrowed heavily from French in the 19th century — not from English. That's why the sounds are often surprising: مرسی (*mersi*, thanks), دوش (*dush*, shower), آسانسور (*âsânsor*, elevator), مانتو (*mânto*, coat), املت (*omlet*), بلیت (*belit*, ticket), کلاس (*kelâs*, class), دکتر (*doktor*). The traffic went both ways: English *bazaar*, *caravan*, and *pajamas* are Persian words.",
+            "If you're stuck for a modern word, try the English word with a French accent — your chances are decent. But don't overdo it: \"computer\" is indeed کامپیوتر and a cell phone is موبایل, but \"airplane\" has its own native Persian word, هواپیما (*havâpeymâ*, literally \"air-measurer\")."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three sentences to introduce yourself anywhere",
+          "items": [
+            "*Salâm, esm-e man ... ast. man ahl-e Andonezi hastam.* — سلام، اسمِ من ... است. من اهلِ اندونزی هستم. (\"Hello, my name is ... I'm from Indonesia.\")",
+            "*Man ... hastam va injâ barâye kâr / barâye dars hastam.* — من ... هستم و اینجا برایِ کار / برایِ درس هستم. (\"I'm a ... and I'm here for work / to study.\")",
+            "*Fârsi-ye man hanuz khub nist, vali yâd migiram.* — فارسیِ من هنوز خوب نیست، ولی یاد می‌گیرم. (\"My Persian isn't good yet, but I'm learning.\") This last sentence gets a warm welcome wherever you say it."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fa": "دانشجو",
+      "baca": "dâneshju",
+      "en": "(university) student"
+    },
+    {
+      "fa": "زبان",
+      "baca": "zabân",
+      "en": "language; tongue"
+    },
+    {
+      "fa": "فارسی",
+      "baca": "fârsi",
+      "en": "Persian (language)"
+    },
+    {
+      "fa": "جالب",
+      "baca": "jâleb",
+      "en": "interesting"
+    },
+    {
+      "fa": "اندونزیایی",
+      "baca": "andoneziyâyi",
+      "en": "Indonesian"
+    },
+    {
+      "fa": "مترجم",
+      "baca": "motarjem",
+      "en": "translator"
+    },
+    {
+      "fa": "چند",
+      "baca": "chand",
+      "en": "how many"
+    },
+    {
+      "fa": "بلد بودن",
+      "baca": "balad budan",
+      "en": "knowing how (a skill)"
+    },
+    {
+      "fa": "عربی",
+      "baca": "arabi",
+      "en": "Arabic (language)"
+    },
+    {
+      "fa": "انگلیسی",
+      "baca": "engelisi",
+      "en": "English (language)"
+    },
+    {
+      "fa": "ترکی",
+      "baca": "torki",
+      "en": "Turkish (language)"
+    },
+    {
+      "fa": "کمی",
+      "baca": "kami",
+      "en": "a little"
+    },
+    {
+      "fa": "عالی",
+      "baca": "âli",
+      "en": "amazing, great"
+    },
+    {
+      "fa": "فقط",
+      "baca": "faghat",
+      "en": "only"
+    },
+    {
+      "fa": "هنوز",
+      "baca": "hanuz",
+      "en": "still, (not) yet"
+    },
+    {
+      "fa": "مبتدی",
+      "baca": "mobtadi",
+      "en": "beginner"
+    },
+    {
+      "fa": "یا",
+      "baca": "yâ",
+      "en": "or"
+    },
+    {
+      "fa": "کارمند",
+      "baca": "kârmand",
+      "en": "employee"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Persian. Use the formal form (شما).",
+      "items": [
+        "I'm Indonesian.",
+        "How many languages do you speak?",
+        "I only speak a little Persian.",
+        "She is a translator.",
+        "Are you a student or an employee?"
+      ]
+    },
+    {
+      "prompt": "Form the nationality or language name from each country name.",
+      "items": [
+        "ایران ← ____",
+        "ژاپن ← ____",
+        "آلمان ← ____",
+        "اندونزی ← ____",
+        "چین ← ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the right word of degree.",
+      "items": [
+        "You don't know a single word of Turkish: ترکی ____ بلد نیستم.",
+        "You know a few words of Persian: ____ فارسی بلدم.",
+        "Your English is very good: انگلیسیِ من ____ خوب است.",
+        "You've just started and aren't fluent: من ____ مبتدی هستم.",
+        "You speak only Indonesian: ____ اندونزیایی بلدم."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "هستم / اندونزیایی / من",
+        "بلدید / زبان / چند / ؟",
+        "است / مترجم / او",
+        "هستم / کار / برایِ / اینجا / من",
+        "نیستم / بلد / اصلاً / ترکی / من"
+      ]
+    }
+  ],
+  "answers": [
+    "من اندونزیایی هستم. — شما چند زبان بلدید؟ — من فقط کمی فارسی بلدم. — او مترجم است. — شما دانشجویید یا کارمند؟",
+    "ایرانی — ژاپنی — آلمانی — اندونزیایی — چینی",
+    "اصلاً — کمی — خیلی — هنوز — فقط",
+    "من اندونزیایی هستم. — شما چند زبان بلدید؟ — او مترجم است. — من اینجا برایِ کار هستم. — من اصلاً ترکی بلد نیستم."
+  ],
+  "wave": "Before unit 3, write three sentences introducing yourself in a notebook — name, origin, job — then say them out loud without looking."
+}

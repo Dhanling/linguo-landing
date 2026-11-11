@@ -1,0 +1,602 @@
+{
+  "title": "Food and ordering at a warung",
+  "title_target": "Pesen sega goréng siji, Mbak",
+  "goal": "Order food and drink from start to payment, choose how spicy you want it, and understand what the seller asks you.",
+  "bekal": [
+    "order with *pesen* / *mesen* and say how many",
+    "describe tastes: *enak*, *pedhes*, *legi*, *asin*",
+    "close the deal: ask for the bill, pay, say thank you"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ing warungé Bu Sri",
+      "intro": "Dian and Rini finally reach the warung (a small family-run eatery). Bu Sri is much older, so both use krama; Bu Sri answers in a mix of krama and ngoko, like most real sellers.",
+      "lines": [
+        {
+          "speaker": "Bu Sri:",
+          "text": "Mangga, Mbak. Badhé dhahar punapa?",
+          "id": "Come in, miss. What would you like to eat?",
+          "literal": "please, Miss. will eat what?"
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Sega goréng wonten, Bu?",
+          "id": "Do you have fried rice, ma'am?",
+          "literal": "rice fried there-is, Ma'am?"
+        },
+        {
+          "speaker": "Bu Sri:",
+          "text": "Wonten. Pedhes napa boten?",
+          "id": "Yes. Spicy or not?",
+          "literal": "there-is. spicy or not?"
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Sekedhik mawon, Bu. Kula boten kiyat pedhes.",
+          "id": "Just a little, ma'am. I can't handle spicy food.",
+          "literal": "a-little just, Ma'am. I not strong spicy."
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Kula pecel mawon, Bu. Sambelipun kathah.",
+          "id": "I'll just have pecel, ma'am. Lots of chili sauce.",
+          "literal": "I pecel just, Ma'am. chili-sauce-its much."
+        },
+        {
+          "speaker": "Bu Sri:",
+          "text": "Ngunjuk napa? Ès tèh napa tèh anget?",
+          "id": "Anything to drink? Iced tea or hot tea?",
+          "literal": "drink what? ice tea or tea warm?"
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Ès tèh kalih, Bu. Sing boten kathah gendhisipun.",
+          "id": "Two iced teas, ma'am. Not too sweet.",
+          "literal": "ice tea two, Ma'am. that not much sugar-its."
+        },
+        {
+          "speaker": "Bu Sri:",
+          "text": "Nggih. Sekedhap nggih, taksih dipun-goréng.",
+          "id": "Right. Just a moment — it's still frying.",
+          "literal": "yes. a-moment yes, still being-fried."
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Nggih, Bu. Boten kesesa.",
+          "id": "Sure, ma'am. No hurry.",
+          "literal": "yes, Ma'am. not hurried."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Bu, sedanten pinten?",
+          "id": "Ma'am, how much is it altogether?",
+          "literal": "Ma'am, all how-much?"
+        },
+        {
+          "speaker": "Bu Sri:",
+          "text": "Kalih dasa gangsal èwu, Mbak.",
+          "id": "Twenty-five thousand, miss.",
+          "literal": "two ten five thousand, Miss."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Menika. Matur nuwun, Bu. Éca sanget.",
+          "id": "Here you are. Thank you, ma'am. It was delicious.",
+          "literal": "this. thank-you, Ma'am. tasty very."
+        }
+      ],
+      "notes": [
+        "**Badhé dhahar punapa?** — Bu Sri uses *dhahar* (krama inggil) for her customer's action, and Dian talks about herself without *dhahar*. The pattern from Unit 9 repeats here, and it will repeat every day.",
+        "**Napa** is the madya (middle-level) form of *punapa*, and at a warung you'll hear it far more than the full form. *Pedhes napa boten?* = spicy or not? Here *napa* means \"or\" — a job you already saw *apa* do in Unit 3.",
+        "**Kiyat** (krama) / **kuwat** (ngoko) means \"strong\". *Boten kiyat pedhes* (I can't handle spicy) is the standard way to refuse chili — gentler than saying you don't like it.",
+        "**Dipun-goréng** is the krama passive: the prefix *di-* becomes *dipun-* in krama. The ngoko form is *digoréng*. Passives are covered fully in Unit 18; for now just recognize *dipun-* before a verb as \"being …-ed\".",
+        "**Kesesa** means \"in a hurry\". *Boten kesesa* (no hurry) is a polite, very useful line when a seller apologizes for the wait — it eases things at once.",
+        "**Éca** is the krama of *énak* (tasty). Praising the food after you eat isn't just politeness in Java; it's part of the transaction, and the seller remembers it.",
+        "**Sedanten** is another form of *sedaya* (all), common in Yogyakarta. Both are correct."
+      ],
+      "grammars": [
+        {
+          "title": "Ordering: a pattern that always works",
+          "body": [
+            "One pattern works at almost every warung in Java, and it has three parts: **dish + number + softener**."
+          ],
+          "table": {
+            "head": [
+              "English",
+              "Ngoko",
+              "Krama"
+            ],
+            "rows": [
+              [
+                "Do you have fried rice?",
+                "*Ana sega goréng?*",
+                "*Sega goréng wonten?*"
+              ],
+              [
+                "One fried rice.",
+                "*Sega goréng siji.*",
+                "*Sega goréng setunggal.*"
+              ],
+              [
+                "Two, please.",
+                "*Pesen loro, ya.*",
+                "*Pesen kalih, nggih.*"
+              ],
+              [
+                "Not spicy, please.",
+                "*Sing ora pedhes.*",
+                "*Ingkang boten pedhes.*"
+              ],
+              [
+                "No chili sauce.",
+                "*Ora nganggo sambel.*",
+                "*Boten ngangge sambel.*"
+              ],
+              [
+                "To take away, please.",
+                "*Dibungkus, ya.*",
+                "*Dipun-bungkus, nggih.*"
+              ],
+              [
+                "To eat here.",
+                "*Mangan ing kéné.*",
+                "*Nedha wonten ngriki.*"
+              ],
+              [
+                "How much altogether?",
+                "*Kabèh pira?*",
+                "*Sedaya pinten?*"
+              ],
+              [
+                "Where do I pay?",
+                "*Mbayaré ing ngendi?*",
+                "*Mbayaripun wonten pundi?*"
+              ],
+              [
+                "Very tasty.",
+                "*Énak banget.*",
+                "*Éca sanget.*"
+              ]
+            ]
+          },
+          "after": [
+            "**The number follows the item**, not the other way round: *sega goréng siji* (\"fried rice one\"), not *siji sega goréng* — the opposite of English.",
+            "**Nganggo** means \"to use, with\" and covers anything added: *nganggo sambel* (with chili sauce), *nganggo endhog* (with egg), *nganggo gula* (with sugar). Krama *ngangge*.",
+            "If you get really stuck, **pointing and saying *menika setunggal, Bu*** (\"one of these, ma'am\") will settle any order in Java. Nothing wrong with that."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Food, drink and flavor",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Ngoko",
+            "Krama",
+            "English"
+          ],
+          "rows": [
+            [
+              "*sega*",
+              "*sekul*",
+              "(cooked) rice"
+            ],
+            [
+              "*sega goréng*",
+              "*sekul goréng*",
+              "fried rice"
+            ],
+            [
+              "*jangan*",
+              "*jangan*",
+              "vegetable soup, curry"
+            ],
+            [
+              "*iwak*",
+              "*ulam*",
+              "fish; meat or fish dish"
+            ],
+            [
+              "*sambel*",
+              "*sambel*",
+              "chili sauce"
+            ],
+            [
+              "*krupuk*",
+              "*krupuk*",
+              "crackers"
+            ],
+            [
+              "*tèh*",
+              "*tèh*",
+              "tea"
+            ],
+            [
+              "*kopi*",
+              "*kopi*",
+              "coffee"
+            ],
+            [
+              "*banyu putih*",
+              "*toya pethak*",
+              "plain water"
+            ],
+            [
+              "*wédang*",
+              "*wédang*",
+              "hot drink"
+            ],
+            [
+              "*ès*",
+              "*ès*",
+              "ice"
+            ],
+            [
+              "*roti*",
+              "*roti*",
+              "bread"
+            ],
+            [
+              "*jajan*",
+              "*jajanan*",
+              "snacks"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Wédang** has no exact English match: it means any **hot** drink. *Wédang jahé* (ginger), *wédang uwuh*, *wédang tèh*. In Yogyakarta, the roadside night stalls that sell wédang are called **angkringan**, and their tiny rice packets are **sega kucing** — \"cat rice\", because the portion is about the size of a cat's dinner."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Taste",
+            "Ngoko",
+            "Krama"
+          ],
+          "rows": [
+            [
+              "tasty",
+              "*énak*",
+              "*éca*"
+            ],
+            [
+              "sweet",
+              "*legi*",
+              "*legi*"
+            ],
+            [
+              "salty",
+              "*asin*",
+              "*asin*"
+            ],
+            [
+              "spicy",
+              "*pedhes*",
+              "*pedhes*"
+            ],
+            [
+              "sour",
+              "*kecut*",
+              "*kecut*"
+            ],
+            [
+              "bitter",
+              "*pait*",
+              "*pait*"
+            ],
+            [
+              "savory",
+              "*gurih*",
+              "*gurih*"
+            ],
+            [
+              "bland",
+              "*anyep*",
+              "*anyep*"
+            ],
+            [
+              "hot",
+              "*panas*",
+              "*benter*"
+            ],
+            [
+              "warm",
+              "*anget*",
+              "*anget*"
+            ],
+            [
+              "cold",
+              "*adhem*",
+              "*asrep*"
+            ],
+            [
+              "full (after eating)",
+              "*wareg*",
+              "*tuwuk*"
+            ],
+            [
+              "hungry",
+              "*luwé*",
+              "*luwé*"
+            ],
+            [
+              "thirsty",
+              "*ngelak*",
+              "*ngelak*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Legi** (sweet) is also the name of one of the market days from Unit 6 — exactly the same word. Javanese is full of double-duty words like this, and context always separates them."
+        }
+      ]
+    },
+    {
+      "title": "Being offered food: what's really going on",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "If you visit someone in Java, you'll be served something. If you walk past people eating, you'll be invited to join. It isn't empty talk, but it isn't an invitation you must accept either. There's an etiquette, and it's quite simple."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "What they say",
+            "Meaning",
+            "The right reply"
+          ],
+          "rows": [
+            [
+              "*Mangga, dipun-dhahar.*",
+              "Please, help yourself.",
+              "*Nggih, matur nuwun.*"
+            ],
+            [
+              "*Monggo, sareng-sareng.*",
+              "Come, join us (eating).",
+              "*Matur nuwun, sampun.*"
+            ],
+            [
+              "*Ayo mangan.*",
+              "Come and eat. (ngoko)",
+              "*Wis, matur nuwun.*"
+            ],
+            [
+              "*Ngunjuk rumiyin.*",
+              "Have a drink first.",
+              "*Nggih, matur nuwun.*"
+            ],
+            [
+              "*Sampun dhahar dèrèng?*",
+              "Have you eaten yet?",
+              "*Sampun, Bu.* / *Dèrèng, Bu.*"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three unwritten rules",
+          "items": [
+            "**Touch what you're served**, even if it's just a sip. Refusing outright reads as keeping your distance. If you truly can't, give a reason: *nuwun sèwu, kula sawek boten sakéca* (sorry, I'm not feeling well).",
+            "**An invitation from someone already eating at a warung** is almost always just politeness. The right reply is *matur nuwun, sampun* (thank you, I've eaten), not sitting down with them.",
+            "**Wait to be invited before you start.** The key word is *mangga*. Until the host says it, the food on the table is just for looking at."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "jv": "pesen",
+      "krama": "pesen",
+      "baca": "PUH-suhn",
+      "en": "to order"
+    },
+    {
+      "jv": "énak",
+      "krama": "éca",
+      "baca": "AY-nah' · AY-cho",
+      "en": "tasty, delicious"
+    },
+    {
+      "jv": "pedhes",
+      "krama": "pedhes",
+      "baca": "PUH-dhuhs",
+      "en": "spicy"
+    },
+    {
+      "jv": "legi",
+      "krama": "legi",
+      "baca": "LUH-gee",
+      "en": "sweet"
+    },
+    {
+      "jv": "asin",
+      "krama": "asin",
+      "baca": "AH-sin",
+      "en": "salty"
+    },
+    {
+      "jv": "pait",
+      "krama": "pait",
+      "baca": "PAH-it",
+      "en": "bitter"
+    },
+    {
+      "jv": "kecut",
+      "krama": "kecut",
+      "baca": "KUH-choot",
+      "en": "sour"
+    },
+    {
+      "jv": "wareg",
+      "krama": "tuwuk",
+      "baca": "WAH-ruhg · TOO-woo'",
+      "en": "full (after eating)"
+    },
+    {
+      "jv": "anget",
+      "krama": "anget",
+      "baca": "AH-nguht",
+      "en": "warm"
+    },
+    {
+      "jv": "wédang",
+      "krama": "wédang",
+      "baca": "WAY-dahng",
+      "en": "hot drink"
+    },
+    {
+      "jv": "goréng",
+      "krama": "goréng",
+      "baca": "go-RAYNG",
+      "en": "fried; to fry"
+    },
+    {
+      "jv": "godhog",
+      "krama": "godhog",
+      "baca": "GO-dhog",
+      "en": "boiled; to boil"
+    },
+    {
+      "jv": "bakar",
+      "krama": "bakar",
+      "baca": "BAH-kahr",
+      "en": "grilled; to grill"
+    },
+    {
+      "jv": "sambel",
+      "krama": "sambel",
+      "baca": "SAHM-buhl",
+      "en": "chili sauce"
+    },
+    {
+      "jv": "nganggo",
+      "krama": "ngangge",
+      "baca": "ngahng-GO",
+      "en": "to use, with"
+    },
+    {
+      "jv": "bungkus",
+      "krama": "bungkus",
+      "baca": "BOONG-koos",
+      "en": "to wrap; take-away"
+    },
+    {
+      "jv": "mbayar",
+      "krama": "mbayar",
+      "baca": "m-BAH-yahr",
+      "en": "to pay"
+    },
+    {
+      "jv": "piring",
+      "krama": "piring",
+      "baca": "PEE-ring",
+      "en": "plate"
+    },
+    {
+      "jv": "gelas",
+      "krama": "gelas",
+      "baca": "GUH-lahs",
+      "en": "glass"
+    },
+    {
+      "jv": "séndhok",
+      "krama": "séndhok",
+      "baca": "SAYN-dho'",
+      "en": "spoon"
+    },
+    {
+      "jv": "kuwat",
+      "krama": "kiyat",
+      "baca": "KOO-waht · KEE-yaht",
+      "en": "strong; able to handle"
+    },
+    {
+      "jv": "kesesa",
+      "krama": "kesesa",
+      "baca": "kuh-SUH-so",
+      "en": "in a hurry"
+    },
+    {
+      "jv": "sedaya, sedanten",
+      "krama": "sedaya",
+      "baca": "suh-DO-yo",
+      "en": "all (krama)"
+    },
+    {
+      "jv": "banget",
+      "krama": "sanget",
+      "baca": "BAH-nguht · SAH-nguht",
+      "en": "very"
+    },
+    {
+      "jv": "tambah",
+      "krama": "tambah",
+      "baca": "TAHM-bah",
+      "en": "to add; more"
+    },
+    {
+      "jv": "sakéca",
+      "krama": "sakéca",
+      "baca": "sah-KAY-cho",
+      "en": "comfortable, feeling well"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Complete these orders in **krama**.",
+      "items": [
+        "Sega goréng ____, Bu. (one)",
+        "____ boten pedhes, nggih. (that, which)",
+        "Kula ____ kalih. (order)",
+        "Ès tèh ____ boten kathah gendhisipun. (that, which)",
+        "____ pinten, Bu? (all)",
+        "____ sanget, Bu. (tasty)"
+      ]
+    },
+    {
+      "prompt": "Match each taste to its food. Write a full ngoko sentence, e.g. *Sambelé pedhes banget.*",
+      "items": [
+        "sambel — spicy",
+        "tèh — sweet",
+        "kopi — bitter",
+        "jeruk — sour",
+        "sega goréng — tasty"
+      ]
+    },
+    {
+      "prompt": "Translate into Javanese (ngoko).",
+      "items": [
+        "Do you have fried rice?",
+        "I can't handle spicy food.",
+        "No chili sauce, please.",
+        "Just wrap it to take away.",
+        "How much altogether?",
+        "I'm full, thank you."
+      ]
+    },
+    {
+      "prompt": "**Review of Unit 8.** Cover Unit 8, then turn these roots into active verbs.",
+      "items": [
+        "tulis",
+        "waca",
+        "jupuk",
+        "sapu",
+        "ombé"
+      ]
+    }
+  ],
+  "answers": [
+    "setunggal — Ingkang — pesen — ingkang — Sedaya — Éca",
+    "Sambelé pedhes banget. — Tèhé legi banget. — Kopiné pait. — Jeruké kecut. — Sega goréngé énak banget.",
+    "Ana sega goréng? — Aku ora kuwat pedhes. — Ora nganggo sambel, ya. — Dibungkus waé. — Kabèh pira? — Aku wis wareg, matur nuwun.",
+    "nulis — maca — njupuk — nyapu — ngombé"
+  ]
+}

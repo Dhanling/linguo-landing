@@ -1,0 +1,594 @@
+{
+  "title": "Numbers, prices, and haggling",
+  "title_target": "بكام؟",
+  "goal": "Count up to a hundred, ask prices, and haggle — plus one rule that goes against instinct: after big numbers, the noun goes back to singular.",
+  "bekal": [
+    "count from one to a hundred and read the Arabic digits ٠١٢٣",
+    "ask prices and say amounts in Egyptian pounds",
+    "haggle with natural phrases, not word-for-word translations"
+  ],
+  "dialogs": [
+    {
+      "title": "حوار — في خان الخليلي",
+      "intro": "Budi goes to the Khan el-Khalili bazaar in old Cairo. He stops at a scarf stall, and the vendor greets him right away.",
+      "lines": [
+        {
+          "speaker": "البياع:",
+          "text": "اتفضل يا باشا! اتفرج من غير فلوس.",
+          "baca": "itfaḍḍal ya baasha! itfarrag min ghēr fuluus.",
+          "id": "Come on in, sir! Looking is free.",
+          "literal": "please O pasha! look from without money."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "الشال ده بكام؟",
+          "baca": "ish-shaal da bikaam?",
+          "id": "How much is this scarf?",
+          "literal": "the-scarf this for-how-much?"
+        },
+        {
+          "speaker": "البياع:",
+          "text": "ده بمية وخمسين جنيه. صوف أصلي.",
+          "baca": "da bi-miyya wi khamsiin ginēh. ṣuuf aṣli.",
+          "id": "That's a hundred and fifty pounds. Pure wool.",
+          "literal": "this for-hundred and fifty pound. wool original."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "مية وخمسين؟ ده غالي أوي!",
+          "baca": "miyya wi khamsiin? da ghaali ’awi!",
+          "id": "A hundred and fifty? That's really expensive!",
+          "literal": "hundred and fifty? this expensive very!"
+        },
+        {
+          "speaker": "البياع:",
+          "text": "غالي؟ لأ يا باشا، ده سعر خاص ليك.",
+          "baca": "ghaali? la’ ya baasha, da si‘r khaaṣ liik.",
+          "id": "Expensive? No, sir, it's a special price for you.",
+          "literal": "expensive? no O pasha, this price special for-you."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "عندي تمانين جنيه بس.",
+          "baca": "‘andi tamaniin ginēh bas.",
+          "id": "I've only got eighty pounds.",
+          "literal": "at-me eighty pound only."
+        },
+        {
+          "speaker": "البياع:",
+          "text": "تمانين؟ ده مش سعره. خليها مية وعشرين.",
+          "baca": "tamaniin? da mish si‘ru. khalliiha miyya wi ‘ishriin.",
+          "id": "Eighty? That's not its price. Make it a hundred and twenty.",
+          "literal": "eighty? this not its-price. let-it hundred and twenty."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "تسعين، وآخد اتنين.",
+          "baca": "tis‘iin, wi aakhud itnēn.",
+          "id": "Ninety, and I'll take two.",
+          "literal": "ninety, and I-take two."
+        },
+        {
+          "speaker": "البياع:",
+          "text": "اتنين؟ طيب، مية لكل واحد. آخر كلام.",
+          "baca": "itnēn? ṭayyib, miyya likulli waahid. aakhir kalaam.",
+          "id": "Two? Okay, a hundred each. Final offer.",
+          "literal": "two? okay, hundred for-every one. last word."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "خمسة وتسعين، ونمشي.",
+          "baca": "khamsa wi tis‘iin, wi nimshi.",
+          "id": "Ninety-five, and we're done.",
+          "literal": "five and ninety, and we-walk."
+        },
+        {
+          "speaker": "البياع:",
+          "text": "ماشي، عشان خاطرك. مية وتسعين للاتنين.",
+          "baca": "maashi, ‘ashaan khaaṭrak. miyya wi tis‘iin lil-itnēn.",
+          "id": "Fine, just for you. A hundred and ninety for the two.",
+          "literal": "walking, for-sake your-heart. hundred and ninety for-the-two."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "اتفقنا. اتفضل الفلوس.",
+          "baca": "itafa’na. itfaḍḍal il-fuluus.",
+          "id": "Deal. Here's the money.",
+          "literal": "we-agreed. please the-money."
+        },
+        {
+          "speaker": "البياع:",
+          "text": "تسلم إيدك. عايز حاجة تانية؟",
+          "baca": "tislam iidak. ‘aayiz haaga tanya?",
+          "id": "Thank you. Anything else?",
+          "literal": "be-safe your-hand. want thing other?"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "شكراً، كفاية كده. مع السلامة.",
+          "baca": "shukran, kifaaya kida. ma‘a s-salaama.",
+          "id": "Thanks, that's enough. Goodbye.",
+          "literal": "thanks, enough like-that. with the-safety."
+        },
+        {
+          "speaker": "البياع:",
+          "text": "شرفتنا يا باشا. تعالى تاني!",
+          "baca": "sharraftina ya baasha. ta‘aala taani!",
+          "id": "It was an honor, sir. Come again!",
+          "literal": "you-honored-us O pasha. come again!"
+        }
+      ],
+      "notes": [
+        "**The word بكام combines بـ and كام** — literally \"for how much\". The preposition بـ is used for prices across Arabic: بمية جنيه (for a hundred pounds). Don't be tempted to ask a price with كام alone; كام just means \"how many\", not \"how much does it cost\".",
+        "**The address يا باشا is a leftover Ottoman title that's now a vendor's flattery.** A whole row of similar titles is used freely on the streets of Cairo: يا باشا، يا بيه، يا ريس، يا أسطى، يا حاج. None of them means anything literally; they all mean \"I'm showing you respect so you'll buy something\".",
+        "**Haggling in Egypt is a conversation, not a fight.** The unwritten rule: the vendor opens high, you counter at about half, and you meet in the middle. What matters isn't the number but the tone — keep smiling, and don't haggle if you don't intend to buy.",
+        "**The phrase آخر كلام means \"final price\", and it's rarely really final.** If you want to end the haggling for real, what works is walking away slowly while saying معلش، شكراً. Eight times out of ten you'll be called back.",
+        "**The phrase عشان خاطرك literally means \"for your heart's sake\", and it's a key phrase in Egypt.** It signals that the giver is doing it as a personal favor, not because they lost the haggle. The reply is تسلم *tislam* or ربنا يخليك.",
+        "**The phrase تسلم إيدك is used far more widely than you'd expect.** Literally \"may your hand be safe\", it's said to someone who cooks for you, gives you something, or fixes something. The reply is وإيدك *w iidak*."
+      ],
+      "grammars": [
+        {
+          "title": "One to ten, and the form that goes with a noun",
+          "body": [
+            "Egyptian numbers have two forms for the units: a stand-alone form used when counting, and a short form used in front of a noun."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Stand-alone",
+              "Before a noun",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "١",
+                "واحد wahid",
+                "—",
+                "كتاب واحد",
+                "one book"
+              ],
+              [
+                "٢",
+                "اتنين itnēn",
+                "—",
+                "كتابين",
+                "two books"
+              ],
+              [
+                "٣",
+                "تلاتة talaata",
+                "تلات talat",
+                "تلات كتب",
+                "three books"
+              ],
+              [
+                "٤",
+                "أربعة arba‘a",
+                "أربع arba‘",
+                "أربع كتب",
+                "four books"
+              ],
+              [
+                "٥",
+                "خمسة khamsa",
+                "خمس khamas",
+                "خمس كتب",
+                "five books"
+              ],
+              [
+                "٦",
+                "ستة sitta",
+                "ست sitt",
+                "ست كتب",
+                "six books"
+              ],
+              [
+                "٧",
+                "سبعة sab‘a",
+                "سبع saba‘",
+                "سبع كتب",
+                "seven books"
+              ],
+              [
+                "٨",
+                "تمانية tamanya",
+                "تمن taman",
+                "تمن كتب",
+                "eight books"
+              ],
+              [
+                "٩",
+                "تسعة tis‘a",
+                "تسع tisa‘",
+                "تسع كتب",
+                "nine books"
+              ],
+              [
+                "١٠",
+                "عشرة ‘ashara",
+                "عشر ‘ashar",
+                "عشر كتب",
+                "ten books"
+              ]
+            ]
+          },
+          "after": [
+            "The number one goes **after** the noun, like an adjective: كتاب واحد. The number two isn't used at all — instead the noun takes the ending ـين, giving كتابين *kitabēn*, يومين *yomēn*, مرتين *marritēn*.",
+            "From three to ten, the short form is used and the noun is **plural**. If you've studied Fusha, it's the same pattern, just without the i'raab endings.",
+            "The Arabic digits ٠١٢٣٤٥٦٧٨٩ are used all over Egypt for prices, house numbers, and phone numbers. They're written left to right like Western digits, even though the text around them runs right to left."
+          ]
+        },
+        {
+          "title": "Eleven and up — and the surprise",
+          "body": [
+            "From eleven on, Arabic does something that feels backwards to English speakers: the noun goes back to **singular**, not plural."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "مصري",
+              "Say it",
+              "With a noun",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "١١",
+                "حداشر",
+                "hidaashar",
+                "حداشر كتاب",
+                "eleven books"
+              ],
+              [
+                "١٢",
+                "اتناشر",
+                "itnaashar",
+                "اتناشر كتاب",
+                "twelve books"
+              ],
+              [
+                "٢٠",
+                "عشرين",
+                "‘ishriin",
+                "عشرين كتاب",
+                "twenty books"
+              ],
+              [
+                "٣٠",
+                "تلاتين",
+                "talatiin",
+                "تلاتين جنيه",
+                "thirty pounds"
+              ],
+              [
+                "٤٠",
+                "أربعين",
+                "arbi‘iin",
+                "أربعين سنة",
+                "forty years"
+              ],
+              [
+                "٥٠",
+                "خمسين",
+                "khamsiin",
+                "خمسين يوم",
+                "fifty days"
+              ],
+              [
+                "٦٠",
+                "ستين",
+                "sittiin",
+                "ستين دقيقة",
+                "sixty minutes"
+              ],
+              [
+                "٧٠",
+                "سبعين",
+                "sab‘iin",
+                "سبعين جنيه",
+                "seventy pounds"
+              ],
+              [
+                "٨٠",
+                "تمانين",
+                "tamaniin",
+                "تمانين طالب",
+                "eighty students"
+              ],
+              [
+                "٩٠",
+                "تسعين",
+                "tis‘iin",
+                "تسعين دقيقة",
+                "ninety minutes"
+              ],
+              [
+                "١٠٠",
+                "مية",
+                "miyya",
+                "مية جنيه",
+                "a hundred pounds"
+              ],
+              [
+                "١٠٠٠",
+                "ألف",
+                "alf",
+                "ألف جنيه",
+                "a thousand pounds"
+              ]
+            ]
+          },
+          "after": [
+            "The units are read **first**: خمسة وتسعين is literally \"five and ninety\" for ninety-five, and مية وخمسين for a hundred and fifty. It's like the old English \"four-and-twenty blackbirds\" — and still normal in German and Dutch.",
+            "The noun rule in short: **1 singular, 2 with the ending ـين, 3 to 10 plural, 11 and up singular again**. That last rule is the one foreigners get wrong most often, because instinct says big numbers take a plural."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Egyptian money and how to say it",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "مصري",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "جنيه",
+              "ginēh",
+              "Egyptian pound"
+            ],
+            [
+              "قرش",
+              "’irsh",
+              "piaster, a hundredth of a pound"
+            ],
+            [
+              "فلوس",
+              "fuluus",
+              "money"
+            ],
+            [
+              "فكة",
+              "fakka",
+              "small change"
+            ],
+            [
+              "كاش",
+              "kaash",
+              "cash"
+            ],
+            [
+              "فيزا",
+              "fiiza",
+              "card"
+            ],
+            [
+              "الباقي",
+              "il-baa’i",
+              "the rest, the change"
+            ],
+            [
+              "حساب",
+              "hisaab",
+              "bill, check"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The name جنيه comes from the English *guinea* by way of the Ottoman era, and it has long since become *ginēh* — with ج read as g, as usual. The قرش is almost worthless as money now, but the word lives on in expressions: مافيش ولا قرش (not a penny to my name)."
+        },
+        {
+          "type": "kotak",
+          "title": "Phrases that save you at the till",
+          "items": [
+            "The phrase معنديش فكة *ma‘andiish fakka* means \"I don't have small change\", and you'll hear it more often than you say it — the shortage of small change is a national problem in Egypt.",
+            "The phrase الباقي كام؟ *il-baa’i kaam?* asks how much change you get. If you want to leave the change as a tip: خليك بالباقي *khalliik bil-baa’i*.",
+            "The phrase الحساب من فضلك *il-hisaab min faḍlak* asks for the bill at a restaurant. To split it: كل واحد يدفع لنفسه."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Haggling naturally",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The following phrases are arranged in the order of a typical haggle, from opening to closing. Learn the order, not just the words."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "مصري",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "بكام ده؟",
+              "bikaam da?",
+              "how much is this?"
+            ],
+            [
+              "ده غالي أوي",
+              "da ghaali ’awi",
+              "this is really expensive"
+            ],
+            [
+              "فيه أرخص؟",
+              "fiih arkhaṣ?",
+              "is there anything cheaper?"
+            ],
+            [
+              "ممكن تنزل شوية؟",
+              "mumkin tinzil shuwayya?",
+              "can you go down a bit?"
+            ],
+            [
+              "حافكر وأرجع",
+              "hafakkar wi arga‘",
+              "I'll think about it and come back"
+            ],
+            [
+              "معلش، شكراً",
+              "ma‘lesh, shukran",
+              "never mind, thanks"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that the last two phrases aren't rude at all. Leaving without buying is a normal part of the game, and Egyptian vendors won't be offended — as long as you keep smiling and say something. What is considered rude is turning away in silence."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "كام",
+      "baca": "kaam",
+      "en": "how many"
+    },
+    {
+      "ar": "بكام",
+      "baca": "bikaam",
+      "en": "how much (price)"
+    },
+    {
+      "ar": "سعر",
+      "baca": "si‘r",
+      "en": "price"
+    },
+    {
+      "ar": "جنيه",
+      "baca": "ginēh",
+      "en": "Egyptian pound"
+    },
+    {
+      "ar": "فكة",
+      "baca": "fakka",
+      "en": "small change"
+    },
+    {
+      "ar": "غالي",
+      "baca": "ghaali",
+      "en": "expensive"
+    },
+    {
+      "ar": "رخيص",
+      "baca": "rikhiiṣ",
+      "en": "cheap"
+    },
+    {
+      "ar": "واحد",
+      "baca": "waahid",
+      "en": "one"
+    },
+    {
+      "ar": "اتنين",
+      "baca": "itnēn",
+      "en": "two"
+    },
+    {
+      "ar": "تلاتة",
+      "baca": "talaata",
+      "en": "three"
+    },
+    {
+      "ar": "أربعة",
+      "baca": "arba‘a",
+      "en": "four"
+    },
+    {
+      "ar": "خمسة",
+      "baca": "khamsa",
+      "en": "five"
+    },
+    {
+      "ar": "عشرة",
+      "baca": "‘ashara",
+      "en": "ten"
+    },
+    {
+      "ar": "عشرين",
+      "baca": "‘ishriin",
+      "en": "twenty"
+    },
+    {
+      "ar": "خمسين",
+      "baca": "khamsiin",
+      "en": "fifty"
+    },
+    {
+      "ar": "مية",
+      "baca": "miyya",
+      "en": "a hundred"
+    },
+    {
+      "ar": "ألف",
+      "baca": "alf",
+      "en": "a thousand"
+    },
+    {
+      "ar": "نص",
+      "baca": "nuṣṣ",
+      "en": "half"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these numbers in Latin letters, the way Egyptians say them.",
+      "items": [
+        "7",
+        "12",
+        "35",
+        "60",
+        "95"
+      ]
+    },
+    {
+      "prompt": "Fill in the right form of the noun after the number.",
+      "items": [
+        "عندي تلات ____. (كتاب)",
+        "استنى ____. (دقيقة، two)",
+        "في الفصل عشرين ____. (طالب)",
+        "خمس ____ بس. (جنيه)",
+        "أنا هنا من ____. (يوم، two)"
+      ]
+    },
+    {
+      "prompt": "Translate into Egyptian Arabic.",
+      "items": [
+        "How much is this scarf?",
+        "That's really expensive!",
+        "I've only got eighty pounds.",
+        "Can you go down a bit?",
+        "Deal. Here's the money."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "بكام / ده / الشال / ؟",
+        "أوي / غالي / ده",
+        "بس / تمانين / عندي / جنيه",
+        "شوية / تنزل / ممكن / ؟",
+        "كده / كفاية / شكراً"
+      ]
+    }
+  ],
+  "answers": [
+    "sab‘a — itnaashar — khamsa wi talatiin — sittiin — khamsa wi tis‘iin",
+    "كتب — دقيقتين — طالب — جنيه — يومين",
+    "الشال ده بكام؟ — ده غالي أوي! — عندي تمانين جنيه بس. — ممكن تنزل شوية؟ — اتفقنا. اتفضل الفلوس.",
+    "الشال ده بكام؟ — ده غالي أوي. — عندي تمانين جنيه بس. — ممكن تنزل شوية؟ — كفاية كده، شكراً."
+  ],
+  "wave": "Tonight, say out loud the prices of ten things around you in Egyptian pounds. Say the units first, like an Egyptian."
+}

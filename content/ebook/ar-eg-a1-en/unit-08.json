@@ -1,0 +1,561 @@
+{
+  "title": "What time, what day",
+  "title_target": "الساعة كام؟",
+  "goal": "Tell the time and the day, make appointments — and get the hang of a clock that counts forward from the hour, with a few extras English doesn't have.",
+  "bekal": [
+    "say any time precisely, including quarters and thirds of an hour",
+    "name the days, and know when the Egyptian weekend falls",
+    "make and change appointments"
+  ],
+  "dialogs": [
+    {
+      "title": "حوار — مواعيد الأسبوع",
+      "intro": "Mona and Budi are planning when they can study together. Both of them open their phones.",
+      "lines": [
+        {
+          "speaker": "منى:",
+          "text": "نذاكر مع بعض إمتى؟ إيه رأيك في بكرة؟",
+          "baca": "nizaakir ma‘a ba‘ḍ imta? ’ēh ra’yak fi bukra?",
+          "id": "When shall we study together? How about tomorrow?",
+          "literal": "we-study with each-other when? what your-opinion in tomorrow?"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "بكرة إيه؟ التلات ولا الأربع؟",
+          "baca": "bukra ’ēh? it-talaat walla l-arba‘?",
+          "id": "Tomorrow's what? Tuesday or Wednesday?",
+          "literal": "tomorrow what? the-third or the-fourth?"
+        },
+        {
+          "speaker": "منى:",
+          "text": "النهاردة الاتنين، يبقى بكرة التلات.",
+          "baca": "innaharda l-itnēn, yib’a bukra t-talaat.",
+          "id": "Today's Monday, so tomorrow's Tuesday.",
+          "literal": "today the-second, becomes tomorrow the-third."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "التلات عندي درس لحد الساعة تلاتة.",
+          "baca": "it-talaat ‘andi dars lihadd is-saa‘a talaata.",
+          "id": "On Tuesday I have class until three.",
+          "literal": "the-third at-me lesson until the-hour three."
+        },
+        {
+          "speaker": "منى:",
+          "text": "طيب، نتقابل الساعة أربعة إلا ربع؟",
+          "baca": "ṭayyib, nit’aabil is-saa‘a arba‘a illa rub‘?",
+          "id": "Okay, shall we meet at a quarter to four?",
+          "literal": "okay, we-meet the-hour four except quarter?"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "ماشي. فين؟",
+          "baca": "maashi. fēn?",
+          "id": "Fine. Where?",
+          "literal": "walking. where?"
+        },
+        {
+          "speaker": "منى:",
+          "text": "في مكتبة الجامعة. بتفتح لحد تمانية بالليل.",
+          "baca": "fi maktabit ig-gam‘a. bitiftah lihadd tamanya bil-lēl.",
+          "id": "At the university library. It's open until eight in the evening.",
+          "literal": "in library the-university. it-opens until eight at-the-night."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "تمام. بس ممكن أتأخر شوية، المترو زحمة.",
+          "baca": "tamaam. bas mumkin at’akhkhar shuwayya, il-mitro zahma.",
+          "id": "Perfect. But I might be a little late — the metro's packed.",
+          "literal": "complete. but possible I-am-late a-little, the-metro crowded."
+        },
+        {
+          "speaker": "منى:",
+          "text": "ولا يهمك. أنا حستناك.",
+          "baca": "wala yihimmak. ana hastannaak.",
+          "id": "Don't worry about it. I'll wait for you.",
+          "literal": "not it-concerns-you. I will-wait-for-you."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "والخميس؟ عندك وقت؟",
+          "baca": "wil-khamiis? ‘andik wa’t?",
+          "id": "And Thursday? Do you have time?",
+          "literal": "and-the-Thursday? at-you time?"
+        },
+        {
+          "speaker": "منى:",
+          "text": "الخميس صعب. بروح البلد عند العيلة.",
+          "baca": "il-khamiis ṣa‘b. baruuh il-balad ‘and il-‘ēla.",
+          "id": "Thursday's difficult. I go home to my family.",
+          "literal": "the-Thursday difficult. I-go the-hometown at the-family."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "صح، الجمعة والسبت أجازة عندكم.",
+          "baca": "ṣahh, ig-gum‘a wis-sabt agaaza ‘anduku.",
+          "id": "Right, Friday and Saturday are the weekend here.",
+          "literal": "right, the-Friday and-the-Saturday holiday at-you(pl)."
+        },
+        {
+          "speaker": "منى:",
+          "text": "أيوه. الأسبوع بيبدأ الأحد.",
+          "baca": "aywa. il-usbuu‘ biyibda l-hadd.",
+          "id": "Yes. The week starts on Sunday.",
+          "literal": "yes. the-week it-starts the-Sunday."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "غريبة عليا لسه. عندنا السبت والحد شغل.",
+          "baca": "ghariiba ‘alayya lissa. ‘andina s-sabt wil-hadd shughl.",
+          "id": "Still strange for me. Back home Saturday and Sunday are days off.",
+          "literal": "strange on-me still. at-us the-Saturday and-the-Sunday work."
+        },
+        {
+          "speaker": "منى:",
+          "text": "حتتعود. يلا، بكرة أربعة إلا ربع.",
+          "baca": "hatit‘awwid. yalla, bukra arba‘a illa rub‘.",
+          "id": "You'll get used to it. Okay, tomorrow at a quarter to four.",
+          "literal": "you-will-get-used. come-on, tomorrow four except quarter."
+        }
+      ],
+      "notes": [
+        "**The word ونص means half PAST.** الساعة سبعة ونص means 7:30 — \"seven and a half\", just like British \"half seven\". Egyptian counts **forward** from the hour that has passed. If your own language says \"half eight\" for 7:30, as German or Dutch does, this is the place to be careful.",
+        "**The word إلا means \"to\", literally \"except\".** أربعة إلا ربع means 3:45 — a quarter to four. This is the only place Egyptian counts backwards, and only for the last quarter and third of the hour.",
+        "**Egyptian days are numbered, not named.** الاتنين is literally \"the second\", التلات \"the third\", الأربع \"the fourth\". Since the count starts on Sunday, the day is clear as soon as you know the number — so you've actually been able to name the days since unit five.",
+        "**The Egyptian weekend falls on Friday and Saturday**, and the working week starts on Sunday. This isn't just a calendar detail; it changes how every appointment is made. If you work remotely with Egyptians, their Sunday is your Monday.",
+        "**The word لحد means \"until\" or \"as far as\", for both time and place.** لحد الساعة تلاتة (until three o'clock), لحد المحطة (as far as the station). It combines لـ and حد, and it's used much more often than the Fusha حتى.",
+        "**The word زحمة means \"crowded, jammed\", and it's practically Cairo's official adjective.** الشارع زحمة، المترو زحمة، الدنيا زحمة. As a noun it means the traffic jam itself: فيه زحمة النهاردة."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "The pattern always starts with the word الساعة, then the number in its stand-alone form, then the minutes added on."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "مصري",
+              "Say it",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "7:00",
+                "الساعة سبعة",
+                "is-saa‘a sab‘a",
+                "the-hour seven"
+              ],
+              [
+                "7:05",
+                "سبعة وخمس دقايق",
+                "sab‘a wi khamas da’aayi’",
+                "seven and five minutes"
+              ],
+              [
+                "7:10",
+                "سبعة وعشرة",
+                "sab‘a wi ‘ashara",
+                "seven and ten"
+              ],
+              [
+                "7:15",
+                "سبعة وربع",
+                "sab‘a wi rub‘",
+                "seven and quarter"
+              ],
+              [
+                "7:20",
+                "سبعة وتلت",
+                "sab‘a wi tilt",
+                "seven and third"
+              ],
+              [
+                "7:30",
+                "سبعة ونص",
+                "sab‘a wi nuṣṣ",
+                "seven and half"
+              ],
+              [
+                "7:40",
+                "تمانية إلا تلت",
+                "tamanya illa tilt",
+                "eight except third"
+              ],
+              [
+                "7:45",
+                "تمانية إلا ربع",
+                "tamanya illa rub‘",
+                "eight except quarter"
+              ],
+              [
+                "7:50",
+                "تمانية إلا عشرة",
+                "tamanya illa ‘ashara",
+                "eight except ten"
+              ],
+              [
+                "12:00",
+                "الساعة اتناشر",
+                "is-saa‘a itnaashar",
+                "the-hour twelve"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that Egyptian has a special word for **a third of an hour** — تلت, twenty minutes. English has nothing like it, and beginners often skip it even though it's heard as often as \"quarter\".",
+            "To tell morning from evening, add الصبح or بالليل after it: الساعة سبعة الصبح، الساعة سبعة بالليل. Midnight is نص الليل.",
+            "To ask: الساعة كام؟ (what time is it?) — and the same phrase is used to ask what time something happens; context tells them apart. To be clearer: حنتقابل الساعة كام؟"
+          ]
+        },
+        {
+          "title": "The days, and how they're numbered",
+          "body": [
+            "Seven days, six of them simply numbers. Day names always take الـ."
+          ],
+          "table": {
+            "head": [
+              "Day",
+              "مصري",
+              "Say it",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "Sunday",
+                "الحد",
+                "il-hadd",
+                "the first"
+              ],
+              [
+                "Monday",
+                "الاتنين",
+                "il-itnēn",
+                "the second"
+              ],
+              [
+                "Tuesday",
+                "التلات",
+                "it-talaat",
+                "the third"
+              ],
+              [
+                "Wednesday",
+                "الأربع",
+                "il-arba‘",
+                "the fourth"
+              ],
+              [
+                "Thursday",
+                "الخميس",
+                "il-khamiis",
+                "the fifth"
+              ],
+              [
+                "Friday",
+                "الجمعة",
+                "ig-gum‘a",
+                "the day of gathering"
+              ],
+              [
+                "Saturday",
+                "السبت",
+                "is-sabt",
+                "the day of rest"
+              ]
+            ]
+          },
+          "after": [
+            "Only two days have real names: الجمعة, the day people gather for Friday prayers, and السبت, which shares a root with the Jewish Sabbath — the same word that gave English *Sabbath*.",
+            "To say \"on a day\", just say the day with no preposition: بشتغل السبت (I work on Saturday). If it's every week, put كل in front, as in كل جمعة."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Making and changing appointments",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "مصري",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "عندك وقت بكرة؟",
+              "‘andak wa’t bukra?",
+              "do you have time tomorrow?"
+            ],
+            [
+              "نتقابل إمتى؟",
+              "nit’aabil imta?",
+              "when shall we meet?"
+            ],
+            [
+              "نتقابل فين؟",
+              "nit’aabil fēn?",
+              "where shall we meet?"
+            ],
+            [
+              "إيه رأيك في الساعة خمسة؟",
+              "’ēh ra’yak fis-saa‘a khamsa?",
+              "how about five o'clock?"
+            ],
+            [
+              "تمام، اتفقنا",
+              "tamaam, itafa’na",
+              "great, it's a deal"
+            ],
+            [
+              "أنا آسف، مش حاقدر",
+              "ana aasif, mish ha’dar",
+              "sorry, I can't make it"
+            ],
+            [
+              "ممكن نأجلها؟",
+              "mumkin na’aggilha?",
+              "can we postpone it?"
+            ],
+            [
+              "حاتأخر شوية",
+              "hat’akhkhar shuwayya",
+              "I'll be a little late"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The phrase أنا في الطريق (\"I'm on my way\") deserves a note of its own. In Egypt it's said with a wide range of honesty, from \"I'm at the door\" to \"I've just woken up\". Don't be offended — and don't use it with the same latitude until you really know your circle."
+        },
+        {
+          "type": "kotak",
+          "title": "Egyptian time, and how to read it",
+          "items": [
+            "An 8:00 p.m. appointment in Cairo often means anywhere between eight and nine. That's not rudeness but a shared habit, and Egyptians understand each other perfectly.",
+            "What is **not** flexible: official appointments, office business, and the doctor. There, punctuality is fully expected.",
+            "If you really need precision, add بالظبط *biz-ẓabṭ* (exactly): الساعة تمانية بالظبط. It sounds firm and is understood as a serious request."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Months, seasons, and the calendar",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Egypt uses the Gregorian calendar for everyday life and the Hijri calendar for religious matters. Egyptian month names use the European forms, unlike the Levant, which uses ancient Semitic names."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "مصري",
+            "Say it",
+            "Meaning",
+            "مصري",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "يناير",
+              "yanaayir",
+              "January",
+              "يوليو",
+              "yulyu",
+              "July"
+            ],
+            [
+              "فبراير",
+              "fibraayir",
+              "February",
+              "أغسطس",
+              "aghusṭus",
+              "August"
+            ],
+            [
+              "مارس",
+              "maaris",
+              "March",
+              "سبتمبر",
+              "sibtimbir",
+              "September"
+            ],
+            [
+              "أبريل",
+              "abriil",
+              "April",
+              "أكتوبر",
+              "uktōbar",
+              "October"
+            ],
+            [
+              "مايو",
+              "maayu",
+              "May",
+              "نوفمبر",
+              "nufimbir",
+              "November"
+            ],
+            [
+              "يونيو",
+              "yunyu",
+              "June",
+              "ديسمبر",
+              "disimbir",
+              "December"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that the month names are almost the same as in English, because both come from Latin. The Hijri month you'll hear most is of course رمضان *ramaḍaan*, along with the two big holidays: عيد الفطر *‘iid il-fiṭr* and عيد الأضحى *‘iid il-aḍa*."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "الساعة",
+      "baca": "is-saa‘a",
+      "en": "hour, o'clock; watch"
+    },
+    {
+      "ar": "دقيقة",
+      "baca": "di’ii’a",
+      "en": "minute"
+    },
+    {
+      "ar": "ربع",
+      "baca": "rub‘",
+      "en": "quarter"
+    },
+    {
+      "ar": "تلت",
+      "baca": "tilt",
+      "en": "third, twenty minutes"
+    },
+    {
+      "ar": "نص",
+      "baca": "nuṣṣ",
+      "en": "half"
+    },
+    {
+      "ar": "إلا",
+      "baca": "illa",
+      "en": "to (the hour), except"
+    },
+    {
+      "ar": "النهاردة",
+      "baca": "innaharda",
+      "en": "today"
+    },
+    {
+      "ar": "إمبارح",
+      "baca": "imbaarih",
+      "en": "yesterday"
+    },
+    {
+      "ar": "بكرة",
+      "baca": "bukra",
+      "en": "tomorrow"
+    },
+    {
+      "ar": "بعد بكرة",
+      "baca": "ba‘d bukra",
+      "en": "the day after tomorrow"
+    },
+    {
+      "ar": "أسبوع",
+      "baca": "usbuu‘",
+      "en": "week"
+    },
+    {
+      "ar": "أجازة",
+      "baca": "agaaza",
+      "en": "holiday, day off"
+    },
+    {
+      "ar": "ميعاد",
+      "baca": "mi‘aad",
+      "en": "appointment"
+    },
+    {
+      "ar": "نتقابل",
+      "baca": "nit’aabil",
+      "en": "we meet"
+    },
+    {
+      "ar": "لحد",
+      "baca": "lihadd",
+      "en": "until"
+    },
+    {
+      "ar": "زحمة",
+      "baca": "zahma",
+      "en": "crowded, jammed"
+    },
+    {
+      "ar": "بدري",
+      "baca": "badri",
+      "en": "early"
+    },
+    {
+      "ar": "متأخر",
+      "baca": "mit’akhkhar",
+      "en": "late"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these times in Egyptian Arabic.",
+      "items": [
+        "5:00",
+        "6:15",
+        "9:30",
+        "11:20",
+        "2:45"
+      ]
+    },
+    {
+      "prompt": "Fill in the right day.",
+      "items": [
+        "النهاردة الحد، يبقى بكرة ____.",
+        "النهاردة الخميس، يبقى بكرة ____.",
+        "في مصر الأجازة ____ والسبت.",
+        "الأسبوع بيبدأ يوم ____.",
+        "النهاردة التلات، يبقى إمبارح كان ____."
+      ]
+    },
+    {
+      "prompt": "Translate into Egyptian Arabic.",
+      "items": [
+        "What time is it now?",
+        "Let's meet at a quarter to four.",
+        "I have class until three.",
+        "I might be a little late.",
+        "Do you have time tomorrow? (to a woman)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "كام / الساعة / ؟",
+        "ربع / إلا / نتقابل / أربعة / الساعة",
+        "تلاتة / الساعة / درس / لحد / عندي",
+        "زحمة / المترو / شوية / حاتأخر / و",
+        "والسبت / أجازة / الجمعة"
+      ]
+    }
+  ],
+  "answers": [
+    "الساعة خمسة. — الساعة ستة وربع. — الساعة تسعة ونص. — الساعة حداشر وتلت. — الساعة تلاتة إلا ربع.",
+    "الاتنين — الجمعة — الجمعة — الحد — الاتنين",
+    "الساعة كام دلوقتي؟ — نتقابل الساعة أربعة إلا ربع. — عندي درس لحد الساعة تلاتة. — ممكن أتأخر شوية. — عندك وقت بكرة؟",
+    "الساعة كام؟ — نتقابل الساعة أربعة إلا ربع. — عندي درس لحد الساعة تلاتة. — حاتأخر شوية والمترو زحمة. — الجمعة والسبت أجازة."
+  ],
+  "wave": "Tonight, say out loud what time you did six things today. Remember: ونص always means half past."
+}

@@ -1,0 +1,1727 @@
+{
+  "brand": "LINGUO",
+  "cover": "cover.png",
+  "title": "فارسی 101",
+  "subtitle": "A self-study course in Persian (Farsi) for beginners",
+  "level": "Level A1 (CEFR) · Persian (Farsi), Iran",
+  "edition": "English Edition",
+  "ruby": false,
+  "rtl": true,
+  "labels": {
+    "unit": "Unit",
+    "dialog": "گفتگو Goftogu",
+    "notes": "Notes",
+    "vocab": "Vocabulary in this unit",
+    "exercises": "Exercises",
+    "answers": "Answer key",
+    "bekal": "By the end of this unit you can:",
+    "literal": "literally:",
+    "wave": "Wave review:",
+    "bagian": "Part"
+  },
+  "page_margin": "8mm 7.5mm 7.5mm",
+  "font_size": "8.6pt",
+  "font_rtl": "\"Geeza Pro\", \"Noto Naskh Arabic\", \"Baghdad\", \"Times New Roman\"",
+  "vocab_columns": [
+    {
+      "head": "فارسی",
+      "key": "fa"
+    },
+    {
+      "head": "Say it",
+      "key": "baca"
+    },
+    {
+      "head": "English",
+      "key": "en"
+    }
+  ],
+  "cover_design": {
+    "bg": "#153A6B",
+    "accent": "#E8B84B",
+    "label": "PERSIAN",
+    "judul": "فارسی",
+    "judul_size": "185px",
+    "cap": "ف",
+    "pola_opacity": 0.42,
+    "pola": "background-image:repeating-linear-gradient(60deg, rgba(255,255,255,.09) 0 2px, transparent 2px 30px),repeating-linear-gradient(-60deg, rgba(255,255,255,.09) 0 2px, transparent 2px 30px),repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 2px, transparent 2px 60px);",
+    "ringkas": "A self-study course in Persian (Farsi) for beginners — from letters you can learn in a week to telling the story of yesterday.",
+    "catatan": "Persian script, a pronunciation guide, and a word-for-word translation on every line.",
+    "merek_sub": "SELF-STUDY MODULE",
+    "kaki_sub": "units · dialogues · exercises · answer key"
+  },
+  "product": {
+    "slug": "modul-persia-101-en",
+    "title": "Persian 101 - A1 (English Edition)",
+    "type": "ebook",
+    "language": "Persian",
+    "level": "A1",
+    "file": "farsi-101-a1-en.pdf",
+    "description": "Twenty Assimil-style self-study units that take you from zero to A1 in Iranian Persian (Farsi): Persian script with a pronunciation guide under every line of dialogue, word-for-word translations that show how Persian builds its sentences, grammar notes, vocabulary, exercises, and an answer key. Includes a table of all 32 letters with their joined forms, the Persian numerals ۰–۹, an A1 grammar summary, and a list of the fifty most frequent verbs with their present and past stems. Persian is a cousin of English — no gender, no word for \"the\", a perfectly regular past tense — and it gave English bazaar, caravan, and paradise. Written for English speakers, each unit targets one of the spots that actually trip learners up, from the ezafe nobody writes to the ta'arof you are not supposed to take at face value.",
+    "pages": 147
+  },
+  "front": [
+    {
+      "title": "Foreword",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Open any page of this module and you will see the Arabic script — the same letters used for Arabic, Urdu, and Pashto, plus four that Arabic doesn't have: پ، چ، ژ، گ. If you already know some Arabic script, you will save weeks. If you don't, the alphabet chapter takes you through all 32 letters before unit 1, and the pronunciation guide under every line of dialogue means you never have to guess a sound."
+        },
+        {
+          "type": "p",
+          "text": "But let's be honest from page one: **the script is misleading.** Persian is not Arabic at all. It belongs to the same family as English, French, and Hindi — the Indo-European family. مادر (*mâdar*) is a blood relative of *mother*, برادر (*barâdar*) of *brother*, دو (*do*) of *two*, نام (*nâm*) of *name*. What Persian took from Arabic is vocabulary, the way English took thousands of words from French: lots of loans, but the backbone of the sentence is not Arabic in the slightest."
+        },
+        {
+          "type": "p",
+          "text": "The practical result is huge. Everything that makes Arabic heavy — gendered nouns, shifting case endings, verbs that change with the gender of the subject, a separate dual form — **none of it exists in Persian.** If you ever tried Arabic and gave up, start again here: this module will very likely feel much lighter than you expect."
+        },
+        {
+          "type": "sub",
+          "text": "You already speak a little Persian"
+        },
+        {
+          "type": "p",
+          "text": "English has been borrowing from Persian for over two thousand years — through Greek and Latin, through Arabic and Turkish traders, and later through British India. You have used these words all your life without knowing where they came from:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Persian",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "bazaar",
+              "بازار",
+              "bâzâr"
+            ],
+            [
+              "caravan",
+              "کاروان",
+              "kârvân"
+            ],
+            [
+              "paradise",
+              "پردیس",
+              "pardis"
+            ],
+            [
+              "khaki",
+              "خاکی",
+              "khâki"
+            ],
+            [
+              "pajamas",
+              "پاجامه",
+              "pâjâme"
+            ],
+            [
+              "shawl",
+              "شال",
+              "shâl"
+            ],
+            [
+              "divan",
+              "دیوان",
+              "divân"
+            ],
+            [
+              "kiosk",
+              "کوشک",
+              "kushk"
+            ],
+            [
+              "checkmate",
+              "شاه مات",
+              "shâh mât"
+            ],
+            [
+              "rook (chess)",
+              "رخ",
+              "rokh"
+            ],
+            [
+              "candy",
+              "قند",
+              "ghand"
+            ],
+            [
+              "spinach",
+              "اسفناج",
+              "esfenâj"
+            ],
+            [
+              "orange",
+              "نارنج",
+              "nârenj"
+            ],
+            [
+              "lemon",
+              "لیمو",
+              "limu"
+            ],
+            [
+              "jasmine",
+              "یاسمن",
+              "yâsaman"
+            ],
+            [
+              "lilac",
+              "لیلک",
+              "lilak"
+            ],
+            [
+              "azure",
+              "لاجورد",
+              "lâjvard"
+            ],
+            [
+              "julep",
+              "گلاب",
+              "golâb"
+            ],
+            [
+              "magic",
+              "مغ",
+              "mogh"
+            ],
+            [
+              "dervish",
+              "درویش",
+              "darvish"
+            ],
+            [
+              "pistachio",
+              "پسته",
+              "peste"
+            ],
+            [
+              "musk",
+              "مشک",
+              "moshk"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at how *khâki* is built: خاک (*khâk*) means \"dust, earth\", and the ending ـی turns it into \"earthy, dust-colored\". That ending is still alive and productive in Persian today — ایرانی (*irâni*, \"Iranian\"), تهرانی (*tehrâni*, \"from Tehran\") — and you will use it from unit 1. *Pâjâme* is just as transparent: پا (*pâ*, \"leg\") + جامه (*jâme*, \"garment\")."
+        },
+        {
+          "type": "sub",
+          "text": "Three gifts"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**No gender. None at all.** The one word او (*u*) means both \"he\" **and** \"she\". No noun is masculine or feminine, and no adjective has to agree. Learners of French, Russian, and Arabic spend months on this; you get past it in one sentence.",
+            "**Adjectives come after the noun**, as in French or Spanish: خانهٔ بزرگ (*khâne-ye bozorg*) = \"house big\", i.e. \"a big house\". All you add is one linking sound, -e, and that is the lesson of unit 3.",
+            "**No word for \"the\".** Persian has no *the* and no Arabic ال. *Ketâb* (کتاب) can mean \"book\", \"a book\", or \"the book\" — context decides."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Three traps this module prepares you for"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Arabic letters, Persian sounds.** Don't read Persian with an Arabic accent. محمد is *Mohammad*, not *Muhammad*; صبح is *sobh*; و is **v**, not **w**. The \"Sounds of Persian\" chapter before unit 1 deals with this, and the module gives a pronunciation guide under **every** line of dialogue so you never have to guess.",
+            "**Ezafe — the sound nobody writes.** The linking -e that joins a noun to its owner or its adjective is almost never printed in Iranian newspapers. This module prints it (خانهٔ من and کتابِ او) so you don't misread — and warns you that in the real world the mark disappears.",
+            "**Written and spoken Persian are two registers.** Books write می‌روم (*miravam*), but people in Tehran say می‌رم (*miram*). This isn't slang you can ignore — it is how every Iranian talks. Most beginner books hide it, and their learners get a shock in month three. This module gives it a unit of its own, unit 14, and slips spoken forms into the notes from unit 1."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Each of the twenty units ahead holds one dialogue and about twenty to thirty minutes of work. Do one unit every two days, and in forty days you can introduce yourself, shop, order food, haggle over a taxi fare, talk about yesterday, and turn down a fourth cup of tea without offending your host. That's not an empty promise — it is exactly what the contents page lists."
+        },
+        {
+          "type": "p",
+          "text": "Good luck — *movaffagh bâshid*, موفق باشید."
+        }
+      ]
+    },
+    {
+      "type": "isi",
+      "title": "Contents",
+      "intro": "Work through the units in order — each one reuses what the previous ones set up."
+    },
+    {
+      "title": "How to use this module",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This module follows the Assimil method: instead of memorizing rules and then trying to build sentences, you absorb whole sentences first and let the rules follow. That is why the order of steps in each unit matters."
+        },
+        {
+          "type": "sub",
+          "text": "Six steps for each unit"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Read the dialogue once, out loud, without looking at the meaning.** Under each Persian line is a small green line with its pronunciation, so you never have to guess how a word sounds. Sound first, meaning later.",
+            "**Read it again with the lines underneath.** The second line (green) is the pronunciation, the third natural English, the fourth (italic) a **word-for-word** translation in Persian word order. That fourth line teaches you to think in Persian — don't skip it.",
+            "**Read the notes.** That is where the real content of the module lives. The notes don't repeat word meanings; they explain why a sentence is built the way it is, and flag the spots that most often trip up English speakers.",
+            "**Read the grammar box**, then go back to the dialogue and find the examples there. You will see the rule you just read at work straight away.",
+            "**Do the exercises on paper, not in your head.** Writing Persian by hand is the fastest way to learn the joined letter shapes. The answer key is on the next page — check when you have finished, not as you go.",
+            "**The next day, reread yesterday's dialogue once, out loud.** Five minutes. This is the step people skip most often, and the one that matters most."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "What each unit contains"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Section",
+            "What's in it"
+          ],
+          "rows": [
+            [
+              "Goal & takeaways",
+              "What you can do once the unit is finished"
+            ],
+            [
+              "گفتگو Goftogu",
+              "One full dialogue: Persian script, pronunciation, natural translation, literal translation"
+            ],
+            [
+              "Notes",
+              "Line-by-line explanations — habits, manners, and traps"
+            ],
+            [
+              "Grammar box",
+              "One or two rules, with tables and examples"
+            ],
+            [
+              "Extra section",
+              "Topic tables: numbers, time, food, directions, and more"
+            ],
+            [
+              "واژه‌ها Vâzhe-hâ",
+              "The unit's vocabulary in three columns"
+            ],
+            [
+              "تمرین Tamrin",
+              "Four exercises: translation, fill-in, choice, word order"
+            ],
+            [
+              "Answer key",
+              "Full answers to all four"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Three habits that make this module work"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Write by hand.** Persian script is joined, and your hand learns the joins much faster than your eyes. An ordinary notebook is enough.",
+            "**Say it out loud.** The sounds â and kh will never stick if you only read them silently.",
+            "**Don't wait for perfect understanding before moving on.** If eighty percent has sunk in, keep going. The next units reuse the rest, and it will fall into place by itself."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "A note on what this module teaches",
+          "items": [
+            "The language taught here is standard **Iranian** Persian (فارسی, *Fârsi*). Dari in Afghanistan and Tajik in Tajikistan are close siblings — mutually intelligible, but different in pronunciation and some vocabulary.",
+            "The dialogues use the **written** form, which you can take anywhere: polite, correct, and accepted across the Persian-speaking world. The **spoken** Tehran forms appear in the notes and get full treatment in unit 14, so you won't sound like a book when you get there."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The Persian alphabet: 32 letters and their joined forms",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "If you already read Arabic script fluently, skim this page as a refresher — watch the **sound column**, not the shapes, because that is where Persian differs. If you are starting from zero, stay here for two or three days before unit 1."
+        },
+        {
+          "type": "p",
+          "text": "Persian is written **from right to left**, and the letters join. Each letter has up to four shapes depending on its position in the word. Seven letters (ا د ذ ر ز ژ و) join only from the right — after them the chain breaks and the next letter takes its initial form again."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Name",
+            "Alone",
+            "Initial",
+            "Medial",
+            "Final",
+            "Sound"
+          ],
+          "rows": [
+            [
+              "alef",
+              "ا",
+              "ا",
+              "ـا",
+              "ـا",
+              "long â / vowel carrier"
+            ],
+            [
+              "be",
+              "ب",
+              "بـ",
+              "ـبـ",
+              "ـب",
+              "b"
+            ],
+            [
+              "pe",
+              "پ",
+              "پـ",
+              "ـپـ",
+              "ـپ",
+              "p — not in Arabic"
+            ],
+            [
+              "te",
+              "ت",
+              "تـ",
+              "ـتـ",
+              "ـت",
+              "t"
+            ],
+            [
+              "se",
+              "ث",
+              "ثـ",
+              "ـثـ",
+              "ـث",
+              "s"
+            ],
+            [
+              "jim",
+              "ج",
+              "جـ",
+              "ـجـ",
+              "ـج",
+              "j"
+            ],
+            [
+              "che",
+              "چ",
+              "چـ",
+              "ـچـ",
+              "ـچ",
+              "ch — not in Arabic"
+            ],
+            [
+              "he-ye jimi",
+              "ح",
+              "حـ",
+              "ـحـ",
+              "ـح",
+              "h"
+            ],
+            [
+              "khe",
+              "خ",
+              "خـ",
+              "ـخـ",
+              "ـخ",
+              "kh"
+            ],
+            [
+              "dâl",
+              "د",
+              "د",
+              "ـد",
+              "ـد",
+              "d"
+            ],
+            [
+              "zâl",
+              "ذ",
+              "ذ",
+              "ـذ",
+              "ـذ",
+              "z"
+            ],
+            [
+              "re",
+              "ر",
+              "ر",
+              "ـر",
+              "ـر",
+              "r"
+            ],
+            [
+              "ze",
+              "ز",
+              "ز",
+              "ـز",
+              "ـز",
+              "z"
+            ],
+            [
+              "zhe",
+              "ژ",
+              "ژ",
+              "ـژ",
+              "ـژ",
+              "zh — as in \"measure\"; not in Arabic"
+            ],
+            [
+              "sin",
+              "س",
+              "سـ",
+              "ـسـ",
+              "ـس",
+              "s"
+            ],
+            [
+              "shin",
+              "ش",
+              "شـ",
+              "ـشـ",
+              "ـش",
+              "sh"
+            ],
+            [
+              "sâd",
+              "ص",
+              "صـ",
+              "ـصـ",
+              "ـص",
+              "s"
+            ],
+            [
+              "zâd",
+              "ض",
+              "ضـ",
+              "ـضـ",
+              "ـض",
+              "z"
+            ],
+            [
+              "tâ",
+              "ط",
+              "طـ",
+              "ـطـ",
+              "ـط",
+              "t"
+            ],
+            [
+              "zâ",
+              "ظ",
+              "ظـ",
+              "ـظـ",
+              "ـظ",
+              "z"
+            ],
+            [
+              "eyn",
+              "ع",
+              "عـ",
+              "ـعـ",
+              "ـع",
+              "glottal stop, often dropped"
+            ],
+            [
+              "gheyn",
+              "غ",
+              "غـ",
+              "ـغـ",
+              "ـغ",
+              "gh"
+            ],
+            [
+              "fe",
+              "ف",
+              "فـ",
+              "ـفـ",
+              "ـف",
+              "f"
+            ],
+            [
+              "ghâf",
+              "ق",
+              "قـ",
+              "ـقـ",
+              "ـق",
+              "gh — not Arabic q"
+            ],
+            [
+              "kâf",
+              "ک",
+              "کـ",
+              "ـکـ",
+              "ـک",
+              "k"
+            ],
+            [
+              "gâf",
+              "گ",
+              "گـ",
+              "ـگـ",
+              "ـگ",
+              "g — not in Arabic"
+            ],
+            [
+              "lâm",
+              "ل",
+              "لـ",
+              "ـلـ",
+              "ـل",
+              "l"
+            ],
+            [
+              "mim",
+              "م",
+              "مـ",
+              "ـمـ",
+              "ـم",
+              "m"
+            ],
+            [
+              "nun",
+              "ن",
+              "نـ",
+              "ـنـ",
+              "ـن",
+              "n"
+            ],
+            [
+              "vâv",
+              "و",
+              "و",
+              "ـو",
+              "ـو",
+              "v / u / ow"
+            ],
+            [
+              "he-ye do-cheshm",
+              "ه",
+              "هـ",
+              "ـهـ",
+              "ـه",
+              "h; at the end of a word = e"
+            ],
+            [
+              "ye",
+              "ی",
+              "یـ",
+              "ـیـ",
+              "ـی",
+              "y / i / ey"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Four letters Arabic doesn't have",
+          "items": [
+            "All four — **پ چ ژ گ** — are made by adding dots or a stroke to a similar Arabic letter: ب → پ; ج → چ; ز → ژ; ک → گ. They sound exactly like English p, ch, and hard g, plus zh, the \"s\" in *measure*.",
+            "Words as basic as **پدر** (*pedar*, father), **چهار** (*chahâr*, four), and **بزرگ** (*bozorg*, big) use them, so all four will feel familiar quickly."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two letters shaped differently from Arabic",
+          "items": [
+            "The letter **ک** (kâf) is written without the little 'head' of Arabic ك. This Persian form is used throughout the module.",
+            "The letter **ی** (ye) is written **without its two dots** at the end of a word: می (*mi*), نمی (*nami*). Arabic books write it ي, with dots. When you write by hand, use the Persian form — Iranians notice the difference at once."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The sounds of Persian: vowels, consonants, and stress",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This is the most important page at the front of the module. If you learned Arabic script for reading the Qur'an, most of those pronunciation habits must be **switched off** here — otherwise you will sound like an Arab reading Persian, which Iranian ears find surprisingly hard to follow."
+        },
+        {
+          "type": "sub",
+          "text": "Six vowels"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Written",
+            "Say it",
+            "Sounds like",
+            "Example",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ـَ (zebar)",
+              "a",
+              "short a, as in \"cat\"",
+              "بد — *bad*",
+              "bad"
+            ],
+            [
+              "ـِ (zir)",
+              "e",
+              "e as in \"bed\" — **not i**",
+              "به — *be*",
+              "to"
+            ],
+            [
+              "ـُ (pish)",
+              "o",
+              "o as in \"more\" (a pure o) — **not u**",
+              "پل — *pol*",
+              "bridge"
+            ],
+            [
+              "ا / آ",
+              "â",
+              "long a with slightly rounded lips, between \"father\" and \"law\"",
+              "بابا — *bâbâ*",
+              "father"
+            ],
+            [
+              "و",
+              "u",
+              "long u, as in \"food\"",
+              "دور — *dur*",
+              "far"
+            ],
+            [
+              "ی",
+              "i",
+              "long i, as in \"machine\"",
+              "بیل — *bil*",
+              "shovel"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Two of these break Arabic habits: **ـُ is read o, not u**, and **ـِ is read e, not i**. That is why محمد is *Mohammad*, not *Muhammad*; اسلام is *Eslâm*, not *Islam*; عمر is *Omar*. Persian has no short u or short i at all."
+        },
+        {
+          "type": "kotak",
+          "title": "â — the one sound that matters most",
+          "items": [
+            "The sound **â** is the signature of Persian. It is not just a long \"a\": the mouth is more closed and the lips slightly rounded, so English ears often hear something between the vowels of *father* and *law*. Iranians say سلام closer to *solâm* than *salaam*.",
+            "Throughout the module, **â** always wears its hat. Ignore the hat, and بد (*bad*, \"bad\") and باد (*bâd*, \"wind\") become the same word — the kind of mistake that really does stop a conversation.",
+            "Quickest drill: say a long \"aw\" as in *law*, then open your mouth little by little toward the \"a\" of *father*. The point halfway along is **â**."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Consonants to watch"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Letter",
+            "Say it",
+            "Explanation"
+          ],
+          "rows": [
+            [
+              "و",
+              "**v**",
+              "A real **v** (teeth on lip), **never w**. وقت = *vaght*, not Arabic *waqt*."
+            ],
+            [
+              "خ",
+              "kh",
+              "Like \"ch\" in Scottish *loch* or German *Bach*, rough, from the back of the throat."
+            ],
+            [
+              "ق and غ",
+              "gh",
+              "Both letters sound **the same** in Iran: a g made far back in the throat, close to a French r. ق is **not** read like Arabic q."
+            ],
+            [
+              "ژ",
+              "zh",
+              "The \"s\" in *measure* and *pleasure*, or the French j in *bonjour*. English has it, just never at the start of a word."
+            ],
+            [
+              "ع",
+              "'",
+              "In Iran it almost always fades to a tiny pause or disappears. سعید = *Sa'id*, معلم = *mo'allem*."
+            ],
+            [
+              "ه at the end of a word",
+              "e",
+              "خانه = *khâne* (\"house\"), نه = *na* (\"no\"). **Not** \"khânah\" — the Arabic tâ marbûta habit doesn't apply here."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Different letters, same sound"
+        },
+        {
+          "type": "p",
+          "text": "This is good news and bad news at once. The good news: **reading** Persian is easier than Arabic, because the Arabic \"heavy\" and \"light\" letters merge into one sound each. The bad news: **spelling** gets harder, because one sound has several letters and you have to learn which word uses which — rather like English *right*, *write*, and *rite*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sound",
+            "Letters used",
+            "Example"
+          ],
+          "rows": [
+            [
+              "s",
+              "س ث ص",
+              "سلام *salâm* · مثل *mesl* · صبح *sobh*"
+            ],
+            [
+              "z",
+              "ز ذ ض ظ",
+              "زن *zan* · لذت *lezzat* · حاضر *hâzer* · ظهر *zohr*"
+            ],
+            [
+              "t",
+              "ت ط",
+              "تو *to* · طلا *talâ*"
+            ],
+            [
+              "h",
+              "ه ح",
+              "هفت *haft* · حال *hâl*"
+            ],
+            [
+              "gh",
+              "ق غ",
+              "قند *ghand* · غذا *ghazâ*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Rule of thumb: the letters ث ذ ض ظ ص ط ح ع almost always mark **a loanword from Arabic**. If you know a word from Arabic, or from Islamic terms in English (حال *hâl* \"state\", وقت *vaght* \"time\", صبر *sabr* \"patience\", علم *elm* \"knowledge\"), its spelling is usually exactly what you would expect."
+        },
+        {
+          "type": "sub",
+          "text": "Word stress"
+        },
+        {
+          "type": "p",
+          "text": "Persian stresses the **last syllable** of almost every word: *ketâb*, *bozorg*, *khâhesh mikonam*. Because the rule is that regular, this module **does not mark stress at all** — a big relief compared with Russian or English. Two exceptions to know: interjections and forms of address pull the stress forward (**نه** *na*, \"no\"), and the possessive endings ـم ـت ـش never take the stress (the plural ـها does)."
+        },
+        {
+          "type": "kotak",
+          "title": "How this module writes pronunciation",
+          "items": [
+            "The long vowel with a hat: **â** (*father*/*law*). The others: a (*cat*), e (*bed*), i (*machine*), o (*more*), u (*food*).",
+            "**kh, gh, ch, sh, zh** are each one sound, not two separate letters.",
+            "The mark **'** is a glottal stop, from ع or ء: *mo'allem*, *ba'd*.",
+            "A hyphenated **-e** at the end of a word is the ezafe link, which you will learn in unit 3: *ketâb-e man* = \"my book\".",
+            "Persian words that made it into English are still written the Persian way: بازار = *bâzâr*, the source of English \"bazaar\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "back": [
+    {
+      "title": "A1 grammar summary",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These pages are for quick reference, not for learning. Everything here is explained step by step in the units; unit numbers are given so you can go back to the full explanation."
+        },
+        {
+          "type": "sub",
+          "text": "Personal pronouns (units 1, 5)"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Persian",
+            "Say it",
+            "Meaning",
+            "Verb ending",
+            "Possessive ending"
+          ],
+          "rows": [
+            [
+              "من",
+              "man",
+              "I",
+              "ـَم -am",
+              "ـَم -am"
+            ],
+            [
+              "تو",
+              "to",
+              "you (informal)",
+              "ـی -i",
+              "ـَت -at"
+            ],
+            [
+              "او",
+              "u",
+              "he/she",
+              "ـَد -ad",
+              "ـَش -ash"
+            ],
+            [
+              "ما",
+              "mâ",
+              "we",
+              "ـیم -im",
+              "ـِمان -emân"
+            ],
+            [
+              "شما",
+              "shomâ",
+              "you (formal); you all",
+              "ـید -id",
+              "ـِتان -etân"
+            ],
+            [
+              "آنها",
+              "ânhâ",
+              "they",
+              "ـَند -and",
+              "ـِشان -eshân"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**The pronoun او covers both \"he\" and \"she\".** For things and animals, use آن (*ân*, \"it\"). Spoken forms: تو stays تو; او becomes اون (*un*); آنها becomes اونا (*unâ*)."
+        },
+        {
+          "type": "sub",
+          "text": "The verb \"to be\" (unit 1)"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Short form",
+            "Say it",
+            "Long form",
+            "Example"
+          ],
+          "rows": [
+            [
+              "ـَم",
+              "-am",
+              "هستم hastam",
+              "من معلمم / من معلم هستم"
+            ],
+            [
+              "ـی",
+              "-i",
+              "هستی hasti",
+              "تو خوبی؟"
+            ],
+            [
+              "است",
+              "ast",
+              "هست hast",
+              "او ایرانی است"
+            ],
+            [
+              "ـیم",
+              "-im",
+              "هستیم hastim",
+              "ما خسته‌ایم"
+            ],
+            [
+              "ـید",
+              "-id",
+              "هستید hastid",
+              "شما آماده‌اید؟"
+            ],
+            [
+              "ـَند",
+              "-and",
+              "هستند hastand",
+              "آنها اینجا هستند"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Ezafe — the linking -e (unit 3)"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Possession:** کتابِ من (*ketâb-e man*) = \"my book\". The thing owned comes **first**, the owner after it.",
+            "**Description:** کتابِ خوب (*ketâb-e khub*) = \"a good book\". The adjective always comes **after** the noun.",
+            "**After a vowel**, ezafe is written with ی or hamze: خانهٔ من (*khâne-ye man*), دانشجویِ ایرانی (*dâneshju-ye irâni*).",
+            "**It can be chained:** کتابِ فارسیِ من (*ketâb-e fârsi-ye man*) = \"my Persian book\".",
+            "⚠️ In the real world the mark ـِ is **not printed**. This module prints it to help you; Iranian newspapers don't."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Plurals (units 4, 6)"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Ending",
+            "Used for",
+            "Example"
+          ],
+          "rows": [
+            [
+              "ـها -hâ",
+              "all nouns; always safe",
+              "کتاب‌ها *ketâb-hâ*, خانه‌ها *khâne-hâ*"
+            ],
+            [
+              "ـان -ân",
+              "people and living things; a bit formal",
+              "مردان *mardân*, دوستان *dustân*, درختان *derakhtân*"
+            ],
+            [
+              "Arabic plural",
+              "some Arabic loanwords",
+              "کتب *kotob*, معلمین *mo'allemin* — learn them one by one"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**After a number, the noun stays singular:** سه کتاب (*se ketâb*) = \"three books\" — never سه کتاب‌ها. Literally \"three book\"."
+        },
+        {
+          "type": "sub",
+          "text": "The object marker را (unit 10)"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Used **only** when the object is specific: غذا را خوردم (*ghazâ râ khordam*) = \"I ate the food\".",
+            "Not used for a nonspecific object: غذا خوردم (*ghazâ khordam*) = \"I ate\" (some food or other).",
+            "It goes **after the object**, not after the verb. Spoken form: رو (*ro*) or ـو."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Word order"
+        },
+        {
+          "type": "p",
+          "text": "Persian puts **the verb at the end of the sentence**: من فردا به تهران می‌روم — literally \"I tomorrow to Tehran go\". This is the one big word-order difference from English, and the quickest way to get used to it is to read the literal translation on the fourth line of each dialogue."
+        },
+        {
+          "type": "sub",
+          "text": "The present tense (unit 9)"
+        },
+        {
+          "type": "p",
+          "text": "**Formula: می + present stem + personal ending.** می‌روم (*miravam*) = \"I go / I am going\". One form, two meanings — Persian does not separate \"go\" from \"am going\"."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **The present stem can't be guessed from the infinitive.** رفتن → رو; دیدن → بین; خواستن → خواه. The full list is on the next pages, and that is the page you will open most often."
+        },
+        {
+          "type": "sub",
+          "text": "The past tense (unit 16)"
+        },
+        {
+          "type": "p",
+          "text": "**Past stem = infinitive minus ـن**, without exception: رفتن → رفت; خوردن → خورد; دیدن → دید. Add the personal endings: رفتم، رفتی، رفت، رفتیم، رفتید، رفتند. Note the او form: **no ending at all** (رفت). The Persian past tense is actually easier than the present."
+        },
+        {
+          "type": "sub",
+          "text": "The subjunctive (التزامی) — the second verb (unit 18)"
+        },
+        {
+          "type": "p",
+          "text": "When two verbs follow each other, the second takes **بـ + present stem**, without می. For example **می‌خواهم بروم** (*mikhâham beravam*) = \"I want to go\". Used after می‌خواهم، باید، می‌توانم، شاید. ⚠️ The number-one learner mistake is to say می‌خواهم می‌روم (\"I want I go\")."
+        },
+        {
+          "type": "sub",
+          "text": "Negation"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Form",
+            "How to form it",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Present",
+              "نمی + stem",
+              "نمی‌روم *namiravam* — I don't go"
+            ],
+            [
+              "Past",
+              "نـ + past stem",
+              "نرفتم *naraftam* — I didn't go"
+            ],
+            [
+              "\"to be\"",
+              "نیست *nist*",
+              "او ایرانی نیست — he/she isn't Iranian"
+            ],
+            [
+              "\"to have\"",
+              "ندارم *nadâram*",
+              "پول ندارم — I have no money"
+            ],
+            [
+              "Command",
+              "نـ + present stem",
+              "نرو *naro* — don't go"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Question words"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Persian",
+            "Say it",
+            "Meaning",
+            "Persian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "چه / چی",
+              "che / chi",
+              "what",
+              "کجا",
+              "kojâ",
+              "where"
+            ],
+            [
+              "کی",
+              "ki",
+              "who",
+              "کِی",
+              "key",
+              "when"
+            ],
+            [
+              "چرا",
+              "cherâ",
+              "why",
+              "چطور",
+              "chetowr",
+              "how"
+            ],
+            [
+              "چند",
+              "chand",
+              "how many",
+              "چقدر",
+              "cheghadr",
+              "how much"
+            ],
+            [
+              "کدام",
+              "kodâm",
+              "which",
+              "آیا",
+              "âyâ",
+              "(yes/no question marker)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "In yes/no questions the word آیا **can be dropped** — a rising tone is enough, just as in \"You're Iranian?\": شما ایرانی هستید؟"
+        },
+        {
+          "type": "sub",
+          "text": "Prepositions"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Persian",
+            "Say it",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "در",
+              "dar",
+              "in, at",
+              "در تهران — in Tehran"
+            ],
+            [
+              "به",
+              "be",
+              "to",
+              "به بازار — to the bazaar"
+            ],
+            [
+              "از",
+              "az",
+              "from; than",
+              "از ایران — from Iran"
+            ],
+            [
+              "با",
+              "bâ",
+              "with; by",
+              "با اتوبوس — by bus"
+            ],
+            [
+              "برای",
+              "barâye",
+              "for",
+              "برای شما — for you"
+            ],
+            [
+              "تا",
+              "tâ",
+              "until, as far as",
+              "تا فردا — until tomorrow"
+            ],
+            [
+              "بدون",
+              "bedun-e",
+              "without",
+              "بدونِ شکر — without sugar"
+            ],
+            [
+              "روی",
+              "ru-ye",
+              "on, on top of",
+              "رویِ میز — on the table"
+            ],
+            [
+              "زیر",
+              "zir-e",
+              "under",
+              "زیرِ صندلی — under the chair"
+            ],
+            [
+              "کنار",
+              "kenâr-e",
+              "next to",
+              "کنارِ در — next to the door"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Comparison (unit 11)"
+        },
+        {
+          "type": "p",
+          "text": "For \"more … than\", use **ـتر + از**: این بهتر از آن است (*in behtar az ân ast*). For \"most\", put **ـترین before the noun**: بهترین رستوران (*behtarin resturân*). ⚠️ The \"most\" form is the only adjective that stands **before** its noun."
+        }
+      ]
+    },
+    {
+      "title": "The fifty most common verbs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This is the page you will open most often. The Persian present tense is built on the **present stem**, and that stem can't be guessed from the infinitive — رفتن (\"to go\") has the stem رو, while دیدن (\"to see\") has بین. The past stem, by contrast, is always the infinitive minus ـن. Learn the third column; the fourth comes free."
+        },
+        {
+          "type": "p",
+          "text": "How to use this table: **می + present stem + ending** for the present, **بـ + present stem + ending** after می‌خواهم or باید, and **past stem + ending** for the past."
+        },
+        {
+          "type": "sub",
+          "text": "Simple verbs"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Infinitive",
+            "Say it",
+            "Present stem",
+            "Past stem",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "بودن",
+              "budan",
+              "باش bâsh",
+              "بود bud",
+              "to be"
+            ],
+            [
+              "داشتن",
+              "dâshtan",
+              "دار dâr",
+              "داشت dâsht",
+              "to have"
+            ],
+            [
+              "کردن",
+              "kardan",
+              "کن kon",
+              "کرد kard",
+              "to do, to make"
+            ],
+            [
+              "شدن",
+              "shodan",
+              "شو shav",
+              "شد shod",
+              "to become"
+            ],
+            [
+              "رفتن",
+              "raftan",
+              "رو rav",
+              "رفت raft",
+              "to go"
+            ],
+            [
+              "آمدن",
+              "âmadan",
+              "آی ây",
+              "آمد âmad",
+              "to come"
+            ],
+            [
+              "گفتن",
+              "goftan",
+              "گو gu",
+              "گفت goft",
+              "to say"
+            ],
+            [
+              "دیدن",
+              "didan",
+              "بین bin",
+              "دید did",
+              "to see"
+            ],
+            [
+              "خوردن",
+              "khordan",
+              "خور khor",
+              "خورد khord",
+              "to eat, to drink"
+            ],
+            [
+              "دادن",
+              "dâdan",
+              "ده deh",
+              "داد dâd",
+              "to give"
+            ],
+            [
+              "گرفتن",
+              "gereftan",
+              "گیر gir",
+              "گرفت gereft",
+              "to take, to get"
+            ],
+            [
+              "خواستن",
+              "khâstan",
+              "خواه khâh",
+              "خواست khâst",
+              "to want, to ask for"
+            ],
+            [
+              "توانستن",
+              "tavânestan",
+              "توان tavân",
+              "توانست tavânest",
+              "to be able"
+            ],
+            [
+              "دانستن",
+              "dânestan",
+              "دان dân",
+              "دانست dânest",
+              "to know (facts)"
+            ],
+            [
+              "شناختن",
+              "shenâkhtan",
+              "شناس shenâs",
+              "شناخت shenâkht",
+              "to know (people)"
+            ],
+            [
+              "نوشتن",
+              "neveshtan",
+              "نویس nevis",
+              "نوشت nevesht",
+              "to write"
+            ],
+            [
+              "خواندن",
+              "khândan",
+              "خوان khân",
+              "خواند khând",
+              "to read, to sing"
+            ],
+            [
+              "شنیدن",
+              "shenidan",
+              "شنو shenav",
+              "شنید shenid",
+              "to hear"
+            ],
+            [
+              "فهمیدن",
+              "fahmidan",
+              "فهم fahm",
+              "فهمید fahmid",
+              "to understand"
+            ],
+            [
+              "آوردن",
+              "âvardan",
+              "آور âvar",
+              "آورد âvard",
+              "to bring"
+            ],
+            [
+              "بردن",
+              "bordan",
+              "بر bar",
+              "برد bord",
+              "to take (away)"
+            ],
+            [
+              "خریدن",
+              "kharidan",
+              "خر khar",
+              "خرید kharid",
+              "to buy"
+            ],
+            [
+              "فروختن",
+              "forukhtan",
+              "فروش forush",
+              "فروخت forukht",
+              "to sell"
+            ],
+            [
+              "نشستن",
+              "neshastan",
+              "نشین neshin",
+              "نشست neshast",
+              "to sit"
+            ],
+            [
+              "ایستادن",
+              "istâdan",
+              "ایست ist",
+              "ایستاد istâd",
+              "to stand, to stop"
+            ],
+            [
+              "خوابیدن",
+              "khâbidan",
+              "خواب khâb",
+              "خوابید khâbid",
+              "to sleep"
+            ],
+            [
+              "پرسیدن",
+              "porsidan",
+              "پرس pors",
+              "پرسید porsid",
+              "to ask"
+            ],
+            [
+              "رسیدن",
+              "residan",
+              "رس res",
+              "رسید resid",
+              "to arrive"
+            ],
+            [
+              "ماندن",
+              "mândan",
+              "مان mân",
+              "ماند mând",
+              "to stay, to remain"
+            ],
+            [
+              "گذاشتن",
+              "gozâshtan",
+              "گذار gozâr",
+              "گذاشت gozâsht",
+              "to put"
+            ],
+            [
+              "برداشتن",
+              "bardâshtan",
+              "بردار bardâr",
+              "برداشت bardâsht",
+              "to pick up"
+            ],
+            [
+              "زدن",
+              "zadan",
+              "زن zan",
+              "زد zad",
+              "to hit; to call (زنگ زدن)"
+            ],
+            [
+              "کشیدن",
+              "keshidan",
+              "کش kesh",
+              "کشید keshid",
+              "to pull; to take (time)"
+            ],
+            [
+              "پوشیدن",
+              "pushidan",
+              "پوش push",
+              "پوشید pushid",
+              "to wear, to put on"
+            ],
+            [
+              "بستن",
+              "bastan",
+              "بند band",
+              "بست bast",
+              "to close, to tie"
+            ],
+            [
+              "پختن",
+              "pokhtan",
+              "پز paz",
+              "پخت pokht",
+              "to cook"
+            ],
+            [
+              "افتادن",
+              "oftâdan",
+              "افت oft",
+              "افتاد oftâd",
+              "to fall, to happen"
+            ],
+            [
+              "ترسیدن",
+              "tarsidan",
+              "ترس tars",
+              "ترسید tarsid",
+              "to be afraid"
+            ],
+            [
+              "پرداختن",
+              "pardâkhtan",
+              "پرداز pardâz",
+              "پرداخت pardâkht",
+              "to pay"
+            ],
+            [
+              "فرستادن",
+              "ferestâdan",
+              "فرست ferest",
+              "فرستاد ferestâd",
+              "to send"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Compound verbs"
+        },
+        {
+          "type": "p",
+          "text": "Modern Persian prefers to build verbs as **noun + کردن/شدن/داشتن/زدن** rather than use a single verb — much like English \"take a shower\" or \"make a call\". Only the verb part changes; the noun stays put. So once you know کردن and شدن, you have hundreds of verbs at once."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Compound",
+            "Say it",
+            "Meaning",
+            "Present-tense example"
+          ],
+          "rows": [
+            [
+              "کار کردن",
+              "kâr kardan",
+              "to work",
+              "کار می‌کنم *kâr mikonam*"
+            ],
+            [
+              "صحبت کردن",
+              "sohbat kardan",
+              "to talk",
+              "صحبت می‌کنم *sohbat mikonam*"
+            ],
+            [
+              "زندگی کردن",
+              "zendegi kardan",
+              "to live",
+              "زندگی می‌کنم *zendegi mikonam*"
+            ],
+            [
+              "فکر کردن",
+              "fekr kardan",
+              "to think",
+              "فکر می‌کنم *fekr mikonam*"
+            ],
+            [
+              "نگاه کردن",
+              "negâh kardan",
+              "to look, to watch",
+              "نگاه می‌کنم *negâh mikonam*"
+            ],
+            [
+              "درست کردن",
+              "dorost kardan",
+              "to make, to fix",
+              "درست می‌کنم *dorost mikonam*"
+            ],
+            [
+              "باز کردن",
+              "bâz kardan",
+              "to open",
+              "باز می‌کنم *bâz mikonam*"
+            ],
+            [
+              "تمیز کردن",
+              "tamiz kardan",
+              "to clean",
+              "تمیز می‌کنم *tamiz mikonam*"
+            ],
+            [
+              "پیدا کردن",
+              "peydâ kardan",
+              "to find",
+              "پیدا می‌کنم *peydâ mikonam*"
+            ],
+            [
+              "گوش کردن",
+              "gush kardan",
+              "to listen",
+              "گوش می‌کنم *gush mikonam*"
+            ],
+            [
+              "استراحت کردن",
+              "esterâhat kardan",
+              "to rest",
+              "استراحت می‌کنم *esterâhat mikonam*"
+            ],
+            [
+              "تمام شدن",
+              "tamâm shodan",
+              "to end, to be finished",
+              "تمام می‌شود *tamâm mishavad*"
+            ],
+            [
+              "بیدار شدن",
+              "bidâr shodan",
+              "to wake up",
+              "بیدار می‌شوم *bidâr mishavam*"
+            ],
+            [
+              "خسته شدن",
+              "khaste shodan",
+              "to get tired",
+              "خسته می‌شوم *khaste mishavam*"
+            ],
+            [
+              "دوست داشتن",
+              "dust dâshtan",
+              "to like, to love",
+              "دوست دارم *dust dâram*"
+            ],
+            [
+              "نیاز داشتن",
+              "niyâz dâshtan",
+              "to need",
+              "نیاز دارم *niyâz dâram*"
+            ],
+            [
+              "زنگ زدن",
+              "zang zadan",
+              "to phone",
+              "زنگ می‌زنم *zang mizanam*"
+            ],
+            [
+              "قدم زدن",
+              "ghadam zadan",
+              "to go for a walk",
+              "قدم می‌زنم *ghadam mizanam*"
+            ],
+            [
+              "یاد گرفتن",
+              "yâd gereftan",
+              "to learn",
+              "یاد می‌گیرم *yâd migiram*"
+            ],
+            [
+              "دوش گرفتن",
+              "dush gereftan",
+              "to take a shower",
+              "دوش می‌گیرم *dush migiram*"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two things that make this table much lighter than it looks",
+          "items": [
+            "**The past stem is always regular.** You don't need to memorize the fourth column at all — just drop ـن from the infinitive and you are always right. Compare English *go/went*, *see/saw*, *eat/ate*.",
+            "**Compound verbs have no stems of their own.** There are hundreds of compounds with کردن, and they all change in exactly the same way: کن، می‌کنم، کردم. Learn one verb, get hundreds."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "What's next",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "If you reach this page after working through all twenty units, you have something real: about 1,000 words, the full present, past, and subjunctive (التزامی) verb forms, and enough courtesy habits not to be misunderstood by Iranians. That is a complete A1 — a far firmer footing than a half-finished B1."
+        },
+        {
+          "type": "sub",
+          "text": "Your next three steps, in order"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Switch fully to the spoken language.** Reread unit 14, then watch anything from Iran with Persian subtitles. Your brain already has the written forms; all that is left is to match them with the sounds of Tehran. It takes a month or two, and after that real conversation becomes possible.",
+            "**Add the present perfect (ماضی نقلی).** رفته‌ام (*rafte-am*, \"I have gone\"), plus the future (آینده). These two forms alone take you into A2.",
+            "**Start reading short, repetitive texts.** News briefs, recipes, product labels. Texts on topics you already know are far more useful than literature you can't follow."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "What this module deliberately leaves out"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**The perfect and the past continuous** (رفته بودم، می‌رفتم) — beyond A1, and teaching them now would only fatten the module without improving your speaking.",
+            "**The passive** (دیده می‌شود) — rare in conversation, common in the news. Wait until you start reading.",
+            "**Poetic and classical Persian.** Hafez and Rumi use a beautiful language that nobody uses to order a taxi. Visit them later; they have been waiting eight hundred years."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Persian is generous to beginners: no gender, no word for \"the\", a perfectly regular past tense, and a family tie to English you can hear in *mother*, *brother*, and *name*. All it asks of you is patience with the unwritten ezafe, and an ear willing to accept that books and mouths speak in two different ways."
+        },
+        {
+          "type": "p",
+          "text": "*Khaste nabâshid* — خسته نباشید, \"may you not be tired\". That is what Iranians say to anyone who has just finished a job of work. This module says it to you."
+        }
+      ]
+    }
+  ]
+}

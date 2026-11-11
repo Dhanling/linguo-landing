@@ -1,0 +1,553 @@
+{
+  "title": "At the bazaar — prices, haggling, and one big trap",
+  "title_target": "در بازار",
+  "goal": "Ask prices, haggle politely, pay — and avoid the two things that trip up nearly every newcomer: tomans versus rials, and the seller's تعارف.",
+  "bekal": [
+    "ask about prices and amounts in three different ways",
+    "haggle without sounding rude",
+    "understand why the price the seller says is ten times smaller than the one on the banknote"
+  ],
+  "dialogs": [
+    {
+      "title": "گفتگو — در بازارِ تجریش",
+      "intro": "Tajrish Bazaar in north Tehran. Budi stops at a stall selling spices and nuts.",
+      "lines": [
+        {
+          "speaker": "بودی:",
+          "text": "سلام. این زعفران چقدر است؟",
+          "baca": "salâm. in za'farân cheghadr ast?",
+          "id": "Hello. How much is this saffron?",
+          "literal": "hello. this saffron how-much is?"
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "سلام. یک گرم دویست هزار تومان.",
+          "baca": "salâm. yek geram devist hezâr tomân.",
+          "id": "Hello. Two hundred thousand tomans a gram.",
+          "literal": "hello. one gram two-hundred thousand toman."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "گران است! ارزان‌تر ندارید؟",
+          "baca": "gerân ast! arzântar nadârid?",
+          "id": "That's expensive! Don't you have anything cheaper?",
+          "literal": "expensive is! cheaper not-have-you?"
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "این بهترین زعفرانِ قائنات است. ولی برایِ شما صد و هشتاد.",
+          "baca": "in behtarin za'farân-e Ghâ'enât ast. vali barâye shomâ sad o hashtâd.",
+          "id": "This is the best Qa'enat saffron. But for you, a hundred and eighty.",
+          "literal": "this best saffron-of Qa'enat is. but for-of you hundred and eighty."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "صد و پنجاه چطور است؟",
+          "baca": "sad o panjâh chetowr ast?",
+          "id": "How about a hundred and fifty?",
+          "literal": "hundred and fifty how is?"
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "قابل نداره! صد و شصت، آخرش.",
+          "baca": "ghâbel nadâre! sad o shast, âkharesh.",
+          "id": "Oh, it's nothing, no need to pay! A hundred and sixty, final price.",
+          "literal": "worth not-has! hundred and sixty, end-its."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "باشد، قبول. پستهٔ تازه هم دارید؟",
+          "baca": "bâshad, ghabul. peste-ye tâze ham dârid?",
+          "id": "All right, deal. Do you have fresh pistachios too?",
+          "literal": "let-it-be, accepted. pistachio-of fresh also have-you?"
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "بله، پستهٔ کرمان. کیلویی سیصد و پنجاه هزار.",
+          "baca": "bale, peste-ye Kermân. kiluyi sisad o panjâh hezâr.",
+          "id": "Yes, Kerman pistachios. Three hundred and fifty thousand a kilo.",
+          "literal": "yes, pistachio-of Kerman. per-kilo three-hundred and fifty thousand."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "نیم کیلو لطفاً. و دو کیلو خرما.",
+          "baca": "nim kilu lotfan. va do kilu khormâ.",
+          "id": "Half a kilo, please. And two kilos of dates.",
+          "literal": "half kilo please. and two kilo date."
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "چشم. همه‌اش می‌شود پانصد و ده هزار تومان.",
+          "baca": "chashm. hame-ash mishavad pânsad o dah hezâr tomân.",
+          "id": "Sure thing. That comes to five hundred and ten thousand tomans.",
+          "literal": "eye. all-of-it becomes five-hundred and ten thousand toman."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "کارت می‌کشید؟",
+          "baca": "kârt mikeshid?",
+          "id": "Can I pay by card?",
+          "literal": "card pull-you?"
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "بله، دستگاه اینجاست. رمزتان را بزنید.",
+          "baca": "bale, dastgâh injâst. ramzetân râ bezanid.",
+          "id": "Yes, the machine is here. Enter your PIN.",
+          "literal": "yes, machine here-is. code-your [obj] hit-you."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "ممنون. کیسه دارید؟",
+          "baca": "mamnun. kise dârid?",
+          "id": "Thanks. Do you have a bag?",
+          "literal": "grateful. bag have-you?"
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "بفرمایید. خرید مبارک!",
+          "baca": "befarmâyid. kharid mobârak!",
+          "id": "Here you are. Enjoy your shopping!",
+          "literal": "please. purchase blessed!"
+        }
+      ],
+      "notes": [
+        "⚠️ **Tomans versus rials (تومان / ریال) — the money trap that catches most newcomers.** Iran's official currency is the **rial**, and that is what is printed on the banknotes. But nobody quotes prices in rials. Everyone — sellers, drivers, waiters, cashiers — talks in **tomans**, and **one toman = ten rials**. If the seller says صد هزار تومان, the card machine will show ۱٬۰۰۰٬۰۰۰ ریال. Don't panic: add a zero and everything matches.",
+        "⚠️ **And there's a second layer: the word هزار is often dropped.** Since prices in Iran run into the hundreds of thousands, people in Tehran shorten them: صد و هشتاد in this dialogue means صد و هشتاد **هزار** تومان. A rule of thumb that always helps: **if a price sounds impossibly cheap, the هزار has been dropped.** If in doubt, ask: هزار تومان؟ — nobody will be offended.",
+        "⚠️⚠️ **The phrase قابل نداره is the most dangerous sentence in this book, and you must NOT believe it.** Literally \"it's not worthy (of you)\" — meaning \"take it, it's free\". The seller does **not** mean to give you anything for free. This is تعارف, a ritual of polite self-effacement that must be said and must be declined. Your reply: خواهش می‌کنم، چقدر تقدیم کنم؟ (*khâhesh mikonam, cheghadr taghdim konam?*, \"how much may I offer you?\"), or simply ask the price again. If you take the goods and walk off, you are stealing. The whole تعارف system is taken apart in unit 15.",
+        "**Both نیم and نصف mean \"half\", but they aren't interchangeable.** نیم goes before a measure: نیم کیلو (\"half a kilo\"), نیم ساعت (\"half an hour\"). نصف is for splitting something: نصفِ نان (\"half the bread\"), نصفِ پول (\"half the money\").",
+        "***Kârt mikeshid?*** **(کارت می‌کشید؟) literally means \"do you pull a card?\"** — from the motion of swiping it through the machine. Almost every stall in Iran takes local debit cards, but ⚠️ **international credit cards (Visa, Mastercard) don't work in Iran at all.** Bring cash or get a local tourist card before you go.",
+        "***Kharid mobârak!*** **(خرید مبارک) = \"enjoy your purchase!\"** What the seller says as you leave. مبارک appears in many congratulations: تولدت مبارک (\"happy birthday\"), عیدت مبارک (\"happy holiday\"), مبارک باشد (\"may it bring blessings\"). It's the same word as the *Mubarak* in \"Eid Mubarak\"."
+      ],
+      "grammars": [
+        {
+          "title": "Three ways to ask the price",
+          "table": {
+            "head": [
+              "Persian",
+              "Say it",
+              "Literally",
+              "Used for"
+            ],
+            "rows": [
+              [
+                "چند است؟",
+                "chand ast?",
+                "how-much is?",
+                "the price of one item"
+              ],
+              [
+                "چقدر است؟",
+                "cheghadr ast?",
+                "how-much is?",
+                "price, amount, quantity"
+              ],
+              [
+                "قیمتش چند است؟",
+                "ghymatash chand ast?",
+                "price-its how-much is?",
+                "clearest and most polite"
+              ],
+              [
+                "چند می‌شود؟",
+                "chand mishavad?",
+                "how-much becomes?",
+                "the total bill"
+              ],
+              [
+                "همه‌اش چقدر شد؟",
+                "hame-ash cheghadr shod?",
+                "all-of-it how-much became?",
+                "when you're about to pay"
+              ],
+              [
+                "کیلویی چند؟",
+                "kiluyi chand?",
+                "per-kilo how-much?",
+                "goods sold by weight"
+              ]
+            ]
+          },
+          "after": [
+            "**The word چند** asks about countable numbers, **چقدر** about quantity or price in general. For prices, both are correct and equally common.",
+            "Spoken forms: چنده؟ (*chande?*), چقدره؟ (*cheghadre?*), قیمتش چنده؟ (*ghymatash chande?*). You'll hear these short forms far more often than the long ones."
+          ]
+        },
+        {
+          "title": "Haggling without sounding rude",
+          "body": [
+            "Haggling is normal in traditional bazaars (بازار), carpet shops, and street taxis — and **not** in supermarkets, shops with price tags, or restaurants. The key isn't being tough but being friendly: haggling in Iran is a conversation, not a fight."
+          ],
+          "table": {
+            "head": [
+              "Persian",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "گران است.",
+                "gerân ast.",
+                "It's expensive."
+              ],
+              [
+                "ارزان‌تر ندارید؟",
+                "arzântar nadârid?",
+                "Don't you have anything cheaper?"
+              ],
+              [
+                "تخفیف بدهید لطفاً.",
+                "takhfif bedahid lotfan.",
+                "A discount, please."
+              ],
+              [
+                "آخرش چند؟",
+                "âkharesh chand?",
+                "What's your final price?"
+              ],
+              [
+                "... چطور است؟",
+                "... chetowr ast?",
+                "How about ...?"
+              ],
+              [
+                "باشد، قبول.",
+                "bâshad, ghabul.",
+                "All right, deal."
+              ],
+              [
+                "فعلاً نه، ممنون.",
+                "fe'lan na, mamnun.",
+                "Not right now, thanks."
+              ],
+              [
+                "فکر می‌کنم.",
+                "fekr mikonam.",
+                "I'll think about it."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Don't haggle with a stern face or a pushy tone.** What works in Iran is a smile, praise for the goods, and a willingness to walk away. Saying فعلاً نه، ممنون as you slowly step off often gets you a new price before you reach the door.",
+            "**A reasonable opening offer is about 70-80 percent of the asking price**, not half. Offering too little is seen as rude, not clever.",
+            "If the seller says **قیمت مقطوع است** (*ghymat maghtu' ast*, \"fixed price\") or you see a printed price tag, stop — haggling doesn't apply there."
+          ]
+        },
+        {
+          "title": "Weights, measures, and packaging",
+          "table": {
+            "head": [
+              "Persian",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "کیلو",
+                "kilu",
+                "kilogram"
+              ],
+              [
+                "نیم کیلو",
+                "nim kilu",
+                "half a kilo"
+              ],
+              [
+                "گرم",
+                "geram",
+                "gram"
+              ],
+              [
+                "دانه / تا",
+                "dâne / tâ",
+                "piece, item"
+              ],
+              [
+                "بسته",
+                "baste",
+                "pack, package"
+              ],
+              [
+                "جعبه",
+                "ja'be",
+                "box"
+              ],
+              [
+                "کیسه",
+                "kise",
+                "bag"
+              ],
+              [
+                "شیشه",
+                "shishe",
+                "bottle; glass"
+              ],
+              [
+                "قوطی",
+                "ghuti",
+                "can, tin"
+              ],
+              [
+                "دسته",
+                "daste",
+                "bunch (of vegetables)"
+              ]
+            ]
+          },
+          "after": [
+            "To order: **number + measure + item**. دو کیلو خرما، یک بسته چای، سه تا سیب، نیم کیلو پسته. The order is just like English \"two kilos of dates\", only without the \"of\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "What's sold at an Iranian bazaar",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Persian",
+            "Say it",
+            "Meaning",
+            "Persian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "نان",
+              "nân",
+              "bread",
+              "برنج",
+              "berenj",
+              "rice"
+            ],
+            [
+              "گوشت",
+              "gusht",
+              "meat",
+              "مرغ",
+              "morgh",
+              "chicken"
+            ],
+            [
+              "ماهی",
+              "mâhi",
+              "fish",
+              "تخم‌مرغ",
+              "tokhm-e morgh",
+              "egg"
+            ],
+            [
+              "شیر",
+              "shir",
+              "milk",
+              "پنیر",
+              "panir",
+              "cheese"
+            ],
+            [
+              "ماست",
+              "mâst",
+              "yogurt",
+              "کره",
+              "kare",
+              "butter"
+            ],
+            [
+              "سیب",
+              "sib",
+              "apple",
+              "پرتقال",
+              "porteghâl",
+              "orange"
+            ],
+            [
+              "انگور",
+              "angur",
+              "grapes",
+              "خرما",
+              "khormâ",
+              "dates"
+            ],
+            [
+              "هندوانه",
+              "hendevâne",
+              "watermelon",
+              "انار",
+              "anâr",
+              "pomegranate"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Note two words that carry history: **سیب‌زمینی** (\"potato\") is literally \"earth apple\" (just like French *pomme de terre*), and **گوجه‌فرنگی** (\"tomato\") is literally \"foreign plum\" — tomatoes really did come from the Americas via Europe. The word فرنگی (\"Frankish, European\") also appears in توت‌فرنگی (\"strawberry\", literally \"foreign mulberry\")."
+        },
+        {
+          "type": "kotak",
+          "title": "Words you already know",
+          "items": [
+            "*Bâzâr* **بازار** → \"bazaar\". *Peste* **پسته** → \"pistachio\". *Limu* **لیمو** → \"lemon\". *Nârenj* **نارنج** → \"orange\". *Ghand* **قند** (\"sugar lump\") → \"candy\". Trade words that traveled west from Persia along the old caravan routes — the ones you \"learn\" now you only need to recognize again.",
+            "⚠️ But watch out for words with several meanings: **شیر** (*shir*) means \"milk\" — and also \"lion\" and \"tap\". Context always separates them, but a sign saying شیر on a bathroom wall is not promising you milk. And **ماست** (*mâst*) is **yogurt**, a staple at every meal."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Six phrases for a whole shopping trip",
+          "items": [
+            "\"How much is this?\" — این چقدر است؟",
+            "\"Two kilos, please.\" — دو کیلو لطفاً.",
+            "\"Don't you have anything cheaper?\" — ارزان‌تر ندارید؟",
+            "\"How much is it altogether?\" — همه‌اش چقدر شد؟",
+            "\"Can I pay by card?\" — کارت می‌کشید؟",
+            "\"Do you have a bag?\" — کیسه دارید؟ These six phrases cover all your shopping in Iran, and five of them work in restaurants and taxis too."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fa": "بازار",
+      "baca": "bâzâr",
+      "en": "bazaar, market"
+    },
+    {
+      "fa": "فروشنده",
+      "baca": "forushande",
+      "en": "seller"
+    },
+    {
+      "fa": "زعفران",
+      "baca": "za'farân",
+      "en": "saffron"
+    },
+    {
+      "fa": "پسته",
+      "baca": "peste",
+      "en": "pistachio"
+    },
+    {
+      "fa": "خرما",
+      "baca": "khormâ",
+      "en": "dates"
+    },
+    {
+      "fa": "گران",
+      "baca": "gerân",
+      "en": "expensive"
+    },
+    {
+      "fa": "ارزان",
+      "baca": "arzân",
+      "en": "cheap"
+    },
+    {
+      "fa": "تخفیف",
+      "baca": "takhfif",
+      "en": "discount"
+    },
+    {
+      "fa": "قبول",
+      "baca": "ghabul",
+      "en": "accepted, agreed"
+    },
+    {
+      "fa": "چشم",
+      "baca": "chashm",
+      "en": "sure, will do (literally: eye)"
+    },
+    {
+      "fa": "کیلو",
+      "baca": "kilu",
+      "en": "kilogram"
+    },
+    {
+      "fa": "نیم",
+      "baca": "nim",
+      "en": "half (of a measure)"
+    },
+    {
+      "fa": "گرم",
+      "baca": "geram",
+      "en": "gram"
+    },
+    {
+      "fa": "بسته",
+      "baca": "baste",
+      "en": "pack, package"
+    },
+    {
+      "fa": "کیسه",
+      "baca": "kise",
+      "en": "bag"
+    },
+    {
+      "fa": "پول",
+      "baca": "pul",
+      "en": "money"
+    },
+    {
+      "fa": "نقد",
+      "baca": "naghd",
+      "en": "cash"
+    },
+    {
+      "fa": "کارت",
+      "baca": "kârt",
+      "en": "card"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Persian.",
+      "items": [
+        "How much is this?",
+        "That's very expensive!",
+        "Don't you have anything cheaper?",
+        "Half a kilo, please.",
+        "How much is it altogether?"
+      ]
+    },
+    {
+      "prompt": "Fill in the right word.",
+      "items": [
+        "Asking the price per kilo: ____ چند؟",
+        "Asking for a discount: ____ بدهید لطفاً.",
+        "Agreeing to a price: باشد، ____.",
+        "Asking for the total: همه‌اش چقدر ____؟",
+        "Asking for a bag: ____ دارید؟"
+      ]
+    },
+    {
+      "prompt": "Answer with numbers in Persian.",
+      "items": [
+        "The seller says صد هزار تومان. How many rials is that? ____ ریال",
+        "Half of دویست هزار is ____",
+        "Twice پنجاه هزار is ____",
+        "Ten percent of صد هزار is ____",
+        "A hundred and fifty thousand, written in words: ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "است / چقدر / زعفران / این / ؟",
+        "ندارید / ارزان‌تر / ؟",
+        "لطفاً / کیلو / نیم",
+        "می‌کشید / کارت / ؟",
+        "شد / چقدر / همه‌اش / ؟"
+      ]
+    }
+  ],
+  "answers": [
+    "این چقدر است؟ — خیلی گران است! — ارزان‌تر ندارید؟ — نیم کیلو لطفاً. — همه‌اش چقدر شد؟",
+    "کیلویی — تخفیف — قبول — شد — کیسه",
+    "یک میلیون — صد هزار — صد هزار — ده هزار — صد و پنجاه هزار",
+    "این زعفران چقدر است؟ — ارزان‌تر ندارید؟ — نیم کیلو لطفاً. — کارت می‌کشید؟ — همه‌اش چقدر شد؟"
+  ],
+  "wave": "Run through one whole haggle in your head: ask the price, say it's expensive, make an offer, agree, pay. Six sentences, and you're ready for any bazaar."
+}

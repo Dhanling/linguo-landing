@@ -1,0 +1,607 @@
+{
+  "title": "Bil-bēt — home and what's in it",
+  "title_target": "بِالْبَيْت",
+  "goal": "Describe where you live, say where things are, and handle renting from first questions to complaints.",
+  "bekal": [
+    "name the rooms and furniture in a home",
+    "describe where things are with the right preposition",
+    "handle renting: ask, bargain, and report something broken"
+  ],
+  "dialogs": [
+    {
+      "title": "حَكِي — شَقَّة لَلْإِيجَار",
+      "intro": "Budi is looking at a small apartment with its owner, Umm Rami.",
+      "lines": [
+        {
+          "speaker": "أُمّ رَامِي:",
+          "text": "تْفَضَّل، هَيّ الشَّقَّة.",
+          "baca": "tfaḍḍal, hayy esh-sha’’a.",
+          "id": "Come in, this is the apartment.",
+          "literal": "go-ahead, this the-apartment."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "حِلْوِة. قَدِّيش أُوضَة فِيهَا؟",
+          "baca": "hilwe. ’addēsh ōḍa fiiha?",
+          "id": "Nice. How many rooms are there?",
+          "literal": "sweet. how-many room in-it?"
+        },
+        {
+          "speaker": "أُمّ رَامِي:",
+          "text": "أُوضْتَين، صَالُون، مَطْبَخ، وْحَمَّام.",
+          "baca": "ōḍtēn, ṣaaluun, maṭbakh, w hammaam.",
+          "id": "Two bedrooms, a living room, a kitchen, and a bathroom.",
+          "literal": "two-rooms, salon, kitchen, and bathroom."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مَفْرُوشَة؟",
+          "baca": "mafruushe?",
+          "id": "Is it furnished?",
+          "literal": "furnished?"
+        },
+        {
+          "speaker": "أُمّ رَامِي:",
+          "text": "إِيه. فِي تَخِت وْخَزَانِة وْطَاوْلِة وْكَرَاسِي.",
+          "baca": "ēh. fi takht w khazaane w ṭaawle w karaasi.",
+          "id": "Yes. There's a bed, a wardrobe, a table, and chairs.",
+          "literal": "yes. there-is bed and wardrobe and table and chairs."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "وَالْمَطْبَخ؟ فِي بَرَّاد؟",
+          "baca": "wel-maṭbakh? fi barraad?",
+          "id": "And the kitchen? Is there a fridge?",
+          "literal": "and-the-kitchen? there-is fridge?"
+        },
+        {
+          "speaker": "أُمّ رَامِي:",
+          "text": "فِي بَرَّاد وْغَاز. بَسّ مَا فِي غَسَّالِة.",
+          "baca": "fi barraad w ghaaz. bass ma fi ghassaale.",
+          "id": "There's a fridge and a stove. But no washing machine.",
+          "literal": "there-is fridge and gas. but not there-is washer."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مَاشِي. قَدِّيش الْإِيجَار بِالشَّهْر؟",
+          "baca": "maashi. ’addēsh el-iijaar bish-shahr?",
+          "id": "OK. How much is the rent a month?",
+          "literal": "walking. how-much the-rent in-the-month?"
+        },
+        {
+          "speaker": "أُمّ رَامِي:",
+          "text": "مِيتَين، وَالْكَهْرَبَا عَلَيْك.",
+          "baca": "miitēn, wel-kahraba ‘alēk.",
+          "id": "Two hundred, and electricity is on you.",
+          "literal": "two-hundred, and-the-electricity on-you."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "وَالْمَي؟",
+          "baca": "wel-mayy?",
+          "id": "And water?",
+          "literal": "and-the-water?"
+        },
+        {
+          "speaker": "أُمّ رَامِي:",
+          "text": "اَلْمَي عَلَيِّي. بَسّ لَازِم تِدْفَع شَهْرَين مُقَدَّم.",
+          "baca": "el-mayy ‘aleyyi. bass laazim tidfa‘ shahrēn mu’addam.",
+          "id": "Water's on me. But you have to pay two months in advance.",
+          "literal": "the-water on-me. but must you-pay two-months in-advance."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "شَهْرَين كْتِير. مُمْكِن شَهِر وَاحِد؟",
+          "baca": "shahrēn ktiir. mumkin shahr waahid?",
+          "id": "Two months is a lot. Could it be one?",
+          "literal": "two-months much. possible month one?"
+        },
+        {
+          "speaker": "أُمّ رَامِي:",
+          "text": "طَيِّب، لَإِنَّك طَالِب. شَهِر وَاحِد.",
+          "baca": "ṭayyib, la’innak ṭaalib. shahr waahid.",
+          "id": "All right, since you're a student. One month.",
+          "literal": "good, because-you student. month one."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "يِسْلَمُوا. إِمْتَى فِيني إِنْتِقِل؟",
+          "baca": "yislamu. imta fiini inti’il?",
+          "id": "Thank you. When can I move in?",
+          "literal": "may-they-be-safe. when can-I I-move?"
+        },
+        {
+          "speaker": "أُمّ رَامِي:",
+          "text": "مِن أَوَّل الشَّهِر. اَلْبَيْت بَيْتَك.",
+          "baca": "min awwal esh-shahr. el-bēt bētak.",
+          "id": "From the start of the month. Make yourself at home.",
+          "literal": "from start the-month. the-house house-your."
+        }
+      ],
+      "notes": [
+        "**The phrase اَلْبَيْت بَيْتَك is as Levantine as it gets.** Literally \"the house is your house,\" it's what hosts say to guests and landlords to tenants. The reply: يِسْلَمُوا or اَللَّه يْخَلِّيلَك يَاه.",
+        "**With money, عَلَيْك means \"on you.\"** اَلْكَهْرَبَا عَلَيْك means the electricity is your responsibility. In reverse, عَلَيِّي means \"it's on me,\" which is exactly what someone says when they want to pay for your meal at a restaurant.",
+        "**The word صَالُون means living room**, and it came from French by way of Lebanon. In Jordan you'll also hear غُرْفَة الْجُلُوس. Levantine homes almost always have a separate living room for guests, and it's central to the etiquette of hospitality.",
+        "**The word مَفْرُوش means \"furnished,\" and it's a must-ask question when looking for a place.** The feminine form is مَفْرُوشَة, and the opposite is عَ الْعَظِم (literally \"on the bone,\" meaning completely bare).",
+        "**Paying in advance is normal throughout the Levant.** One to three months is usual, and it's negotiable — especially if you're a student. The لَإِنِّي طَالِب argument really works and isn't seen as demeaning.",
+        "**The word شَقَّة means apartment, and بَيْت means house or home in general.** People in the Levant call their own apartment بَيْت without a second thought, just as English speakers say \"home\" for wherever they live."
+      ],
+      "grammars": [
+        {
+          "title": "Describing where things are, step by step",
+          "body": [
+            "The prepositions from unit 11 now go to work around the house, and they can take possessive endings to point to yourself."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "اَلتَّخِت جَنْب الشُّبَّاك",
+                "et-takht janb esh-shubbaak",
+                "the bed is next to the window"
+              ],
+              [
+                "اَلْخَزَانِة وَرَا الْبَاب",
+                "el-khazaane wara el-baab",
+                "the wardrobe is behind the door"
+              ],
+              [
+                "اَلْكْتُب فَوْق الطَّاوْلِة",
+                "el-kitub fō’ eṭ-ṭaawle",
+                "the books are on the table"
+              ],
+              [
+                "اَلشَّنْطَة تَحِت التَّخِت",
+                "esh-shanṭa taht et-takht",
+                "the bag is under the bed"
+              ],
+              [
+                "اَلْمَطْبَخ قِدَّامِي",
+                "el-maṭbakh ’iddaami",
+                "the kitchen is in front of me"
+              ],
+              [
+                "اَلْحَمَّام آخِر الْمَمَرّ",
+                "el-hammaam aakhir el-mamarr",
+                "the bathroom is at the end of the hall"
+              ],
+              [
+                "اَلْبَرَّاد بْجُوَّا الْمَطْبَخ",
+                "el-barraad bjuwwa el-maṭbakh",
+                "the fridge is inside the kitchen"
+              ]
+            ]
+          },
+          "after": [
+            "To ask, just replace the location with وَين — for example وَين الْخَزَانِة؟ The answer is preposition + place, with no verb needed at all.",
+            "To say something \"is in\" a place, use فِي from unit 5 followed by the place: فِي بَرَّاد بِالْمَطْبَخ (\"there's a fridge in the kitchen\"). The difference from the table: this one introduces the thing, while the table places things already known."
+          ]
+        },
+        {
+          "title": "Adjectives for where you live",
+          "table": {
+            "head": [
+              "Levantine",
+              "Say it",
+              "Meaning",
+              "Opposite",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "كْبِير",
+                "kbiir",
+                "big",
+                "زْغِير",
+                "zghiir"
+              ],
+              [
+                "وَاسِع",
+                "waasi‘",
+                "spacious",
+                "ضَيِّق",
+                "ḍayyi’"
+              ],
+              [
+                "جْدِيد",
+                "jdiid",
+                "new",
+                "قَدِيم",
+                "’adiim"
+              ],
+              [
+                "نْضِيف",
+                "nḍiif",
+                "clean",
+                "وِسِخ",
+                "wisikh"
+              ],
+              [
+                "مْرَتَّب",
+                "mrattab",
+                "tidy",
+                "مْبَعْثَر",
+                "mba‘thar"
+              ],
+              [
+                "مْنَوَّر",
+                "mnawwar",
+                "bright",
+                "عَتِم",
+                "‘atim"
+              ],
+              [
+                "هَادِي",
+                "haadi",
+                "quiet",
+                "دَعْجِة",
+                "da‘je"
+              ],
+              [
+                "مَفْرُوش",
+                "mafruush",
+                "furnished",
+                "عَ الْعَظِم",
+                "‘a el-‘aẓm"
+              ]
+            ]
+          },
+          "after": [
+            "Adjectives always come **after** the noun, the reverse of English: بَيْت كْبِير (\"a big house\"), أُوضَة نْضِيفَة (\"a clean room\").",
+            "⚠️ If the noun has اَل, the adjective **must** have اَل too — for example اَلْبَيْت الْكْبِير (\"the big house\"). Without اَل on the adjective, it turns into a sentence: اَلْبَيْت كْبِير (\"the house is big\"). This difference matters and is often missed."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Rooms and furniture",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Levantine",
+            "Say it",
+            "Meaning",
+            "Levantine",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "شَقَّة",
+              "sha’’a",
+              "apartment",
+              "بِنَايِة",
+              "binaaye",
+              "building"
+            ],
+            [
+              "أُوضَة نَوْم",
+              "ōḍat nōm",
+              "bedroom",
+              "صَالُون",
+              "ṣaaluun",
+              "living room"
+            ],
+            [
+              "مَطْبَخ",
+              "maṭbakh",
+              "kitchen",
+              "حَمَّام",
+              "hammaam",
+              "bathroom"
+            ],
+            [
+              "بَلْكُون",
+              "balkuun",
+              "balcony",
+              "دَرَج",
+              "daraj",
+              "stairs"
+            ],
+            [
+              "تَخِت",
+              "takht",
+              "bed",
+              "خَزَانِة",
+              "khazaane",
+              "wardrobe"
+            ],
+            [
+              "كَنَبَايِة",
+              "kanabaaye",
+              "sofa",
+              "سِجَّادِة",
+              "sijjaade",
+              "carpet"
+            ],
+            [
+              "بَرَّاد",
+              "barraad",
+              "fridge",
+              "غَاز",
+              "ghaaz",
+              "stove"
+            ],
+            [
+              "غَسَّالِة",
+              "ghassaale",
+              "washing machine",
+              "مِكْيَاف",
+              "mikyaaf",
+              "air conditioner"
+            ],
+            [
+              "ضَوّ",
+              "ḍaww",
+              "light, electricity",
+              "سَخَّان",
+              "sakhkhaan",
+              "water heater"
+            ],
+            [
+              "مِفْتَاح",
+              "miftaah",
+              "key",
+              "جَرَس",
+              "jaras",
+              "doorbell"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The word ضَوّ means both \"light\" and \"electricity\" in everyday use. رَاح الضَّوّ (\"the power's out\") is one of the most common sentences in Syria and Lebanon, and you'll hear it several times a day."
+        },
+        {
+          "type": "kotak",
+          "title": "Complaining and asking for repairs",
+          "items": [
+            "The pattern: فِي مُشْكِلِة بِالـ… — for example فِي مُشْكِلِة بِالسَّخَّان (\"there's a problem with the water heater\").",
+            "If something's broken: اَلْبَرَّاد خَرْبَان *el-barraad kharbaan* (\"the fridge is broken\"). خَرْبَان is used for anything that doesn't work.",
+            "To ask for a repair: مُمْكِن تْصَلِّحُو؟ *mumkin tṣallho?* (\"can you fix it?\"). Add لَو سَمَحْت and you're always safe."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Renting",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Levantine",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "قَدِّيش الْإِيجَار؟",
+              "’addēsh el-iijaar?",
+              "how much is the rent?"
+            ],
+            [
+              "بِالشَّهْر وَلَّا بِالسِّنِة؟",
+              "bish-shahr walla bis-sine?",
+              "monthly or yearly?"
+            ],
+            [
+              "اَلْكَهْرَبَا دَاخْلِة؟",
+              "el-kahraba daakhle?",
+              "is electricity included?"
+            ],
+            [
+              "مَفْرُوشَة وَلَّا لَا؟",
+              "mafruushe walla la’?",
+              "furnished or not?"
+            ],
+            [
+              "قَدِّيش مُقَدَّم؟",
+              "’addēsh mu’addam?",
+              "how many months in advance?"
+            ],
+            [
+              "فِي عَقِد؟",
+              "fi ‘a’d?",
+              "is there a contract?"
+            ],
+            [
+              "إِمْتَى فِيني إِنْتِقِل؟",
+              "imta fiini inti’il?",
+              "when can I move in?"
+            ],
+            [
+              "اَلْجِيرَان هَادْيِين؟",
+              "el-jiiraan haadyiin?",
+              "are the neighbors quiet?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The word وَلَّا *walla* means \"or\" in either-or questions, and it's different from وَاللَّه *walla* meaning \"by God\" — two words that look alike and are told apart by context. For \"or\" in ordinary statements, Levantine Arabic uses أَو."
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Three things to ask that people often forget",
+          "items": [
+            "**Electricity and water.** In Syria and Lebanon, scheduled power cuts are common, and many buildings have a separate generator subscription: فِي اِشْتِرَاك مُوَلِّدَة؟",
+            "**The water heater.** Ask whether it's electric or gas: اَلسَّخَّان كَهْرَبَا وَلَّا غَاز؟ It decides your monthly costs.",
+            "**A written contract.** Verbal rentals are common among students, but at least ask for a receipt: مُمْكِن وَصِل؟"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "شَقَّة",
+      "baca": "sha’’a",
+      "en": "apartment"
+    },
+    {
+      "ar": "إِيجَار",
+      "baca": "iijaar",
+      "en": "rent"
+    },
+    {
+      "ar": "مَفْرُوش",
+      "baca": "mafruush",
+      "en": "furnished"
+    },
+    {
+      "ar": "أُوضَة نَوْم",
+      "baca": "ōḍat nōm",
+      "en": "bedroom"
+    },
+    {
+      "ar": "صَالُون",
+      "baca": "ṣaaluun",
+      "en": "living room"
+    },
+    {
+      "ar": "مَطْبَخ",
+      "baca": "maṭbakh",
+      "en": "kitchen"
+    },
+    {
+      "ar": "بَلْكُون",
+      "baca": "balkuun",
+      "en": "balcony"
+    },
+    {
+      "ar": "تَخِت",
+      "baca": "takht",
+      "en": "bed"
+    },
+    {
+      "ar": "خَزَانِة",
+      "baca": "khazaane",
+      "en": "wardrobe"
+    },
+    {
+      "ar": "كَنَبَايِة",
+      "baca": "kanabaaye",
+      "en": "sofa"
+    },
+    {
+      "ar": "غَسَّالِة",
+      "baca": "ghassaale",
+      "en": "washing machine"
+    },
+    {
+      "ar": "كَهْرَبَا",
+      "baca": "kahraba",
+      "en": "electricity"
+    },
+    {
+      "ar": "ضَوّ",
+      "baca": "ḍaww",
+      "en": "light, electricity"
+    },
+    {
+      "ar": "سَخَّان",
+      "baca": "sakhkhaan",
+      "en": "water heater"
+    },
+    {
+      "ar": "خَرْبَان",
+      "baca": "kharbaan",
+      "en": "broken"
+    },
+    {
+      "ar": "نْضِيف / وِسِخ",
+      "baca": "nḍiif / wisikh",
+      "en": "clean / dirty"
+    },
+    {
+      "ar": "وَاسِع / ضَيِّق",
+      "baca": "waasi‘ / ḍayyi’",
+      "en": "spacious / cramped"
+    },
+    {
+      "ar": "هَادِي",
+      "baca": "haadi",
+      "en": "quiet"
+    },
+    {
+      "ar": "جِيرَان",
+      "baca": "jiiraan",
+      "en": "neighbor"
+    },
+    {
+      "ar": "مُقَدَّم",
+      "baca": "mu’addam",
+      "en": "deposit, advance payment"
+    },
+    {
+      "ar": "عَقِد",
+      "baca": "‘a’d",
+      "en": "contract"
+    },
+    {
+      "ar": "وَلَّا",
+      "baca": "walla",
+      "en": "or"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Levantine Arabic.",
+      "items": [
+        "How many rooms are there in this apartment?",
+        "How much is the rent a month?",
+        "Is electricity included?",
+        "The fridge is broken.",
+        "The room is clean and spacious.",
+        "When can I move in?"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right preposition of place.",
+      "items": [
+        "اَلتَّخِت ____ الشُّبَّاك. (next to)",
+        "اَلْكْتُب ____ الطَّاوْلِة. (on)",
+        "اَلشَّنْطَة ____ التَّخِت. (under)",
+        "اَلْبَرَّاد ____ الْمَطْبَخ. (inside)",
+        "اَلْخَزَانِة ____ الْبَاب. (behind)",
+        "اَلْبَلْكُون ____ الصَّالُون. (in front of)"
+      ]
+    },
+    {
+      "prompt": "Add اَل where needed, then translate.",
+      "items": [
+        "بَيْت كْبِير (the house is big)",
+        "بَيْت كْبِير (the big house)",
+        "أُوضَة نْضِيفَة (the room is clean)",
+        "أُوضَة نْضِيفَة (the clean room)",
+        "شَقَّة مَفْرُوشَة (the apartment is furnished)",
+        "شَقَّة مَفْرُوشَة (the furnished apartment)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "الْإِيجَار / قَدِّيش / ؟",
+        "أُوضْتَين / فِيهَا / اَلشَّقَّة",
+        "خَرْبَان / اَلسَّخَّان",
+        "دَاخْلِة / اَلْكَهْرَبَا / ؟",
+        "جَنْب / اَلتَّخِت / اَلشُّبَّاك",
+        "إِنْتِقِل / إِمْتَى / فِيني / ؟"
+      ]
+    }
+  ],
+  "answers": [
+    "قَدِّيش أُوضَة فِي هَالشَّقَّة؟ — قَدِّيش الْإِيجَار بِالشَّهْر؟ — اَلْكَهْرَبَا دَاخْلِة؟ — اَلْبَرَّاد خَرْبَان. — اَلْأُوضَة نْضِيفَة وْوَاسْعَة. — إِمْتَى فِيني إِنْتِقِل؟",
+    "جَنْب — فَوْق — تَحِت — بْجُوَّا — وَرَا — قِدَّام",
+    "اَلْبَيْت كْبِير — اَلْبَيْت الْكْبِير — اَلْأُوضَة نْضِيفَة — اَلْأُوضَة النْضِيفَة — اَلشَّقَّة مَفْرُوشَة — اَلشَّقَّة الْمَفْرُوشَة",
+    "قَدِّيش الْإِيجَار؟ — اَلشَّقَّة فِيهَا أُوضْتَين. — اَلسَّخَّان خَرْبَان. — اَلْكَهْرَبَا دَاخْلِة؟ — اَلتَّخِت جَنْب الشُّبَّاك. — إِمْتَى فِيني إِنْتِقِل؟"
+  ],
+  "wave": "Draw a floor plan of your room and write where six things in it are, each with a different preposition."
+}

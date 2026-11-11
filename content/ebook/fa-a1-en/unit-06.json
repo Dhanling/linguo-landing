@@ -1,0 +1,608 @@
+{
+  "title": "Numbers — and ten shapes you don't know yet",
+  "title_target": "عددها",
+  "goal": "Read and write Persian digits, give a phone number, count things, and use ordinals (first, second, third).",
+  "bekal": [
+    "recognize the ten Persian digits ۰ to ۹ and how they differ from Arabic ones",
+    "say numbers into the thousands and read out a phone number",
+    "use ordinals for floors, units, and order"
+  ],
+  "dialogs": [
+    {
+      "title": "گفتگو — خریدِ سیم‌کارت",
+      "intro": "Budi walks into a phone shop in a mall to buy a SIM card.",
+      "lines": [
+        {
+          "speaker": "بودی:",
+          "text": "سلام آقا. یک سیم‌کارت می‌خواهم.",
+          "baca": "salâm âghâ. yek sim-kârt mikhâham.",
+          "id": "Hello, sir. I'd like a SIM card.",
+          "literal": "hello sir. one SIM-card want-I."
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "سلام. پاسپورتتان لطفاً.",
+          "baca": "salâm. pâsporetân lotfan.",
+          "id": "Hello. Your passport, please.",
+          "literal": "hello. passport-your please."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "بفرمایید. قیمتش چند است؟",
+          "baca": "befarmâyid. ghymatash chand ast?",
+          "id": "Here you are. How much is it?",
+          "literal": "please. price-its how-much is?"
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "صد و پنجاه هزار تومان.",
+          "baca": "sad o panjâh hezâr tomân.",
+          "id": "A hundred and fifty thousand tomans.",
+          "literal": "hundred and fifty thousand toman."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "چند گیگ اینترنت دارد؟",
+          "baca": "chand gig internet dârad?",
+          "id": "How many gigs of data does it have?",
+          "literal": "how-many gig internet has-it?"
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "بیست گیگ برایِ سی روز.",
+          "baca": "bist gig barâye si ruz.",
+          "id": "Twenty gigs for thirty days.",
+          "literal": "twenty gig for-of thirty day."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "خوب است. شمارهٔ من چه می‌شود؟",
+          "baca": "khub ast. shomâre-ye man che mishavad?",
+          "id": "Good. What will my number be?",
+          "literal": "good is. number-of I what becomes?"
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "صفر نهصد و دوازده، سه چهار پنج، شش هفت هشت نه.",
+          "baca": "sefr nohsad o davâzdah, se chahâr panj, shesh haft hasht noh.",
+          "id": "Zero nine hundred twelve, three four five, six seven eight nine.",
+          "literal": "zero nine-hundred and twelve, three four five, six seven eight nine."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "ببخشید، دوباره لطفاً. آهسته‌تر.",
+          "baca": "bebakhshid, dobâre lotfan. âheste-tar.",
+          "id": "Sorry, once more, please. Slower.",
+          "literal": "forgive, again please. slower."
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "۰۹۱۲ ـ ۳۴۵ ـ ۶۷۸۹. رویِ کارت هم نوشته است.",
+          "baca": "sefr noh yek do, se chahâr panj, shesh haft hasht noh. ru-ye kârt ham neveshte ast.",
+          "id": "0912-345-6789. It's also written on the card.",
+          "literal": "zero nine one two, three four five, six seven eight nine. on-of card also written is."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "ممنون. مغازهٔ شما در طبقهٔ چندم است؟",
+          "baca": "mamnun. maghâze-ye shomâ dar tabaghe-ye chandom ast?",
+          "id": "Thanks. Which floor is your shop on?",
+          "literal": "grateful. shop-of you on floor-of which-th is?"
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "طبقهٔ دوم. ولی ما شعبهٔ اول هم داریم.",
+          "baca": "tabaghe-ye dovvom. vali mâ sho'be-ye avval ham dârim.",
+          "id": "The second floor. But we also have a first branch.",
+          "literal": "floor-of second. but we branch-of first also have-we."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "خیلی ممنون. کارتِ ویزیت دارید؟",
+          "baca": "kheyli mamnun. kârt-e vizit dârid?",
+          "id": "Thanks a lot. Do you have a business card?",
+          "literal": "very grateful. card-of visit have-you?"
+        },
+        {
+          "speaker": "فروشنده:",
+          "text": "بله، بفرمایید. شمارهٔ ما آخرش سه صفر است.",
+          "baca": "bale, befarmâyid. shomâre-ye mâ âkharash se sefr ast.",
+          "id": "Yes, here you are. Our number ends in three zeros.",
+          "literal": "yes, please. number-of we end-its three zero is."
+        }
+      ],
+      "notes": [
+        "⚠️ **Persian digits are not Arabic digits, even though they look alike.** Three of them have different shapes: **۴** (four, Arabic ٤), **۵** (five, Arabic ٥), **۶** (six, Arabic ٦). If you have learned the digits used in Arabic, these three are the ones that will trip you up — and, unluckily, they turn up all the time in prices and phone numbers.",
+        "**Two lifesavers: دوباره لطفاً and آهسته‌تر.** You will use them more than any other phrase in this book, especially when people say numbers. Nobody minds; Iranians repeat numbers for each other all the time too.",
+        "**The \"and\" (و) between tens and units is always said.** بیست و یک (\"twenty-one\"), صد و پنجاه (\"a hundred and fifty\"), هزار و نهصد (\"one thousand nine hundred\"). Inside numbers it is pronounced *o*, not *va*.",
+        "***Tabaghe-ye chandom?*** **(طبقهٔ چندم؟) = \"which floor?\"** The ending ـم makes ordinals: دو → دوم (\"second\"), سه → سوم (\"third\"). The question word چندم (\"which number, -th\") is different from چند (\"how many\"). English has no single word for it; think \"the how-many-th floor?\"",
+        "⚠️ **\"First\" is irregular.** It is not یکم but **اول** (*avval*), an Arabic loanword. یکم does exist, but only for dates (یکمِ مهر). For ordinary order, always use اول.",
+        "**Spoken Tehran forms:** قیمتش چنده؟ (*ghymatash chande?*), چند گیگ داره؟ (*chand gig dâre?*), طبقهٔ چندمه؟ (*tabaghe-ye chandome?*). Once again است turns into ـه — the pattern you will meet most often, and the quickest way to sound natural."
+      ],
+      "grammars": [
+        {
+          "title": "The ten Persian digits",
+          "body": [
+            "Persian numbers are written **left to right**, even though the letters run right to left. ۱۳۹۸ reads as usual: one thousand three hundred ninety-eight. It is the only part of Persian writing that runs the other way, and your brain will get used to it within a day."
+          ],
+          "table": {
+            "head": [
+              "Persian",
+              "Arabic",
+              "Western",
+              "Word",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "۰",
+                "٠",
+                "0",
+                "صفر",
+                "sefr"
+              ],
+              [
+                "۱",
+                "١",
+                "1",
+                "یک",
+                "yek"
+              ],
+              [
+                "۲",
+                "٢",
+                "2",
+                "دو",
+                "do"
+              ],
+              [
+                "۳",
+                "٣",
+                "3",
+                "سه",
+                "se"
+              ],
+              [
+                "۴",
+                "٤",
+                "4",
+                "چهار",
+                "chahâr"
+              ],
+              [
+                "۵",
+                "٥",
+                "5",
+                "پنج",
+                "panj"
+              ],
+              [
+                "۶",
+                "٦",
+                "6",
+                "شش",
+                "shesh"
+              ],
+              [
+                "۷",
+                "٧",
+                "7",
+                "هفت",
+                "haft"
+              ],
+              [
+                "۸",
+                "٨",
+                "8",
+                "هشت",
+                "hasht"
+              ],
+              [
+                "۹",
+                "٩",
+                "9",
+                "نه",
+                "noh"
+              ]
+            ]
+          },
+          "after": [
+            "Compare the first two columns closely: **۴ ۵ ۶** versus **٤ ٥ ٦**. Those three are the only shapes you need to relearn; the other seven are identical.",
+            "⚠️ Note also that **نه** means \"nine\" **and** \"no\". The only difference is stress and tone: نه \"nine\" is flat, نه \"no\" is sharper and often drawn out. Context almost always tells them apart.",
+            "In Iran today, Western digits (0-9) are also widely used on prices, street signs, and phones. You need to read both, but you can write with either."
+          ]
+        },
+        {
+          "title": "Numbers into the thousands",
+          "table": {
+            "head": [
+              "Number",
+              "Persian",
+              "Say it",
+              "Number",
+              "Persian",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "۱۰",
+                "ده",
+                "dah",
+                "۲۰",
+                "بیست",
+                "bist"
+              ],
+              [
+                "۱۱",
+                "یازده",
+                "yâzdah",
+                "۳۰",
+                "سی",
+                "si"
+              ],
+              [
+                "۱۲",
+                "دوازده",
+                "davâzdah",
+                "۴۰",
+                "چهل",
+                "chehel"
+              ],
+              [
+                "۱۳",
+                "سیزده",
+                "sizdah",
+                "۵۰",
+                "پنجاه",
+                "panjâh"
+              ],
+              [
+                "۱۴",
+                "چهارده",
+                "chahârdah",
+                "۶۰",
+                "شصت",
+                "shast"
+              ],
+              [
+                "۱۵",
+                "پانزده",
+                "pânzdah",
+                "۷۰",
+                "هفتاد",
+                "haftâd"
+              ],
+              [
+                "۱۶",
+                "شانزده",
+                "shânzdah",
+                "۸۰",
+                "هشتاد",
+                "hashtâd"
+              ],
+              [
+                "۱۷",
+                "هفده",
+                "hevdah",
+                "۹۰",
+                "نود",
+                "navad"
+              ],
+              [
+                "۱۸",
+                "هجده",
+                "hejdah",
+                "۱۰۰",
+                "صد",
+                "sad"
+              ],
+              [
+                "۱۹",
+                "نوزده",
+                "nuzdah",
+                "۱۰۰۰",
+                "هزار",
+                "hezâr"
+              ]
+            ]
+          },
+          "after": [
+            "**Tens and units are joined with و**, pronounced *o*: بیست و یک (21), چهل و پنج (45), نود و نه (99).",
+            "**Hundreds:** دویست (200), سیصد (300), چهارصد (400), پانصد (500), ششصد (600), هفتصد (700), هشتصد (800), نهصد (900). Note that 200 and 500 are irregular — دویست, not دوصد; پانصد, not پنج‌صد.",
+            "**Above a thousand:** ده هزار (10,000), صد هزار (100,000), یک میلیون (1,000,000). Since prices in Iran often run into the hundreds of thousands, هزار will be the word you hear most at the checkout.",
+            "⚠️ **After a number, the noun stays singular:** five book (پنج کتاب), twenty day (بیست روز), a hundred person (صد نفر). Never add ـها after a number."
+          ]
+        },
+        {
+          "title": "Ordinal numbers",
+          "table": {
+            "head": [
+              "Persian",
+              "Say it",
+              "Meaning",
+              "Persian",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "اول",
+                "avval",
+                "first",
+                "ششم",
+                "sheshom",
+                "sixth"
+              ],
+              [
+                "دوم",
+                "dovvom",
+                "second",
+                "هفتم",
+                "haftom",
+                "seventh"
+              ],
+              [
+                "سوم",
+                "sevvom",
+                "third",
+                "هشتم",
+                "hashtom",
+                "eighth"
+              ],
+              [
+                "چهارم",
+                "chahârom",
+                "fourth",
+                "نهم",
+                "nohom",
+                "ninth"
+              ],
+              [
+                "پنجم",
+                "panjom",
+                "fifth",
+                "دهم",
+                "dahom",
+                "tenth"
+              ],
+              [
+                "آخر",
+                "âkhar",
+                "last",
+                "چندم",
+                "chandom",
+                "which (-th)?"
+              ]
+            ]
+          },
+          "after": [
+            "The rule: **add ـم to the ordinary number.** Three don't quite follow it: اول (not یکم), دوم (from دو, with a double v), سوم (from سه).",
+            "Ordinals stand **after** the noun, linked by ezafe: طبقهٔ دوم (\"the second floor\"), روزِ اول (\"the first day\"), بارِ آخر (\"the last time\").",
+            "There is also a second form ending in ـمین that stands **before** the noun: دومین بار (\"the second time\"), اولین روز (\"the first day\"). Same meaning; this form feels more emphatic."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Counting and asking how many",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Persian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "چند تا؟",
+              "chand tâ?",
+              "How many (things)?"
+            ],
+            [
+              "چند نفر؟",
+              "chand nafar?",
+              "How many people?"
+            ],
+            [
+              "چقدر؟",
+              "cheghadr?",
+              "How much? How much does it cost?"
+            ],
+            [
+              "قیمتش چند است؟",
+              "ghymatash chand ast?",
+              "How much is it?"
+            ],
+            [
+              "چندم؟",
+              "chandom?",
+              "Which one (in order)?"
+            ],
+            [
+              "نصف",
+              "nesf",
+              "half"
+            ],
+            [
+              "ربع",
+              "rob'",
+              "quarter"
+            ],
+            [
+              "دوتا",
+              "do tâ",
+              "two (things)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**The word تا is an all-purpose counter** for any object: دو تا کتاب، سه تا سیب، چند تا؟ It isn't required — دو کتاب is also correct — but in conversation it is almost always there. For people, use نفر: سه نفر، چند نفر؟"
+        },
+        {
+          "type": "kotak",
+          "title": "Numbers that mean something in Iran",
+          "items": [
+            "**Emergency numbers:** police **۱۱۰**, ambulance **۱۱۵**, fire brigade **۱۲۵**. These three are worth memorizing before you travel.",
+            "**Thirteen (۱۳)** is unlucky in Iran, as in many countries, and there is a special holiday to \"throw out\" its bad luck: سیزده‌بدر (*sizdah-bedar*, \"thirteen out\"), the thirteenth day of the Persian New Year, when the whole country goes out for a picnic. You'll meet it again in unit 12.",
+            "**Forty (۴۰, چهل)** shows up in many sayings and places: چهلم (the memorial on the fortieth day after a death), چهل‌ستون (\"forty columns\", a famous palace in Isfahan that actually has twenty — the other twenty are their reflection in the pool)."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Four phrases for surviving numbers",
+          "items": [
+            "\"Once more, please.\" — دوباره لطفاً. *dobâre lotfan.*",
+            "\"Slower, please.\" — آهسته‌تر لطفاً. *âheste-tar lotfan.*",
+            "\"Digit by digit, please.\" — رقم به رقم لطفاً. *raghm be raghm lotfan.*",
+            "\"Could you write it down, please?\" — می‌نویسید لطفاً؟ *minevisid lotfan?* This last one solves nine out of ten number problems, and nobody minds writing it down for you."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fa": "عدد",
+      "baca": "adad",
+      "en": "number, digit"
+    },
+    {
+      "fa": "صفر",
+      "baca": "sefr",
+      "en": "zero"
+    },
+    {
+      "fa": "یک",
+      "baca": "yek",
+      "en": "one"
+    },
+    {
+      "fa": "دو",
+      "baca": "do",
+      "en": "two"
+    },
+    {
+      "fa": "سه",
+      "baca": "se",
+      "en": "three"
+    },
+    {
+      "fa": "چهار",
+      "baca": "chahâr",
+      "en": "four"
+    },
+    {
+      "fa": "پنج",
+      "baca": "panj",
+      "en": "five"
+    },
+    {
+      "fa": "شش",
+      "baca": "shesh",
+      "en": "six"
+    },
+    {
+      "fa": "هفت",
+      "baca": "haft",
+      "en": "seven"
+    },
+    {
+      "fa": "هشت",
+      "baca": "hasht",
+      "en": "eight"
+    },
+    {
+      "fa": "نه",
+      "baca": "noh",
+      "en": "nine"
+    },
+    {
+      "fa": "ده",
+      "baca": "dah",
+      "en": "ten"
+    },
+    {
+      "fa": "بیست",
+      "baca": "bist",
+      "en": "twenty"
+    },
+    {
+      "fa": "سی",
+      "baca": "si",
+      "en": "thirty"
+    },
+    {
+      "fa": "صد",
+      "baca": "sad",
+      "en": "a hundred"
+    },
+    {
+      "fa": "هزار",
+      "baca": "hezâr",
+      "en": "a thousand"
+    },
+    {
+      "fa": "میلیون",
+      "baca": "milyun",
+      "en": "million"
+    },
+    {
+      "fa": "تا",
+      "baca": "tâ",
+      "en": "counter word for things"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the numbers out in Persian words.",
+      "items": [
+        "21",
+        "45",
+        "99",
+        "150",
+        "365"
+      ]
+    },
+    {
+      "prompt": "Fill in the right ordinal.",
+      "items": [
+        "the second floor: طبقهٔ ____",
+        "the first day: روزِ ____",
+        "the third time: بارِ ____",
+        "which floor: طبقهٔ ____؟",
+        "the last time: بارِ ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the right Persian digit.",
+      "items": [
+        "The digit four in Persian script: ____",
+        "The digit five in Persian script: ____",
+        "The digit six in Persian script: ____",
+        "The digit zero in Persian script: ____",
+        "The digit nine in Persian script: ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "است / چند / قیمتش / ؟",
+        "دارد / روز / سی / برایِ / گیگ / بیست",
+        "است / دوم / طبقهٔ / مغازه",
+        "لطفاً / دوباره / ، / آهسته‌تر",
+        "دارم / کتاب / تا / پنج / من"
+      ]
+    }
+  ],
+  "answers": [
+    "بیست و یک — چهل و پنج — نود و نه — صد و پنجاه — سیصد و شصت و پنج",
+    "دوم — اول — سوم — چندم — آخر",
+    "۴ — ۵ — ۶ — ۰ — ۹",
+    "قیمتش چند است؟ — بیست گیگ برایِ سی روز دارد. — مغازه طبقهٔ دوم است. — دوباره لطفاً، آهسته‌تر. — من پنج تا کتاب دارم."
+  ],
+  "wave": "Write your own phone number in Persian digits in your notebook, then read it aloud three times."
+}

@@ -1,0 +1,597 @@
+{
+  "title": "Numbers, time and dates",
+  "title_target": "Pukul berapa sekarang?",
+  "goal": "Say numbers, times, days, months and dates the Malaysian way — including the half-hour, which Malay says just like English but Indonesian says the other way round, so it has made plenty of people an hour late.",
+  "bekal": [
+    "say numbers, prices and phone numbers the Malaysian way",
+    "tell the time without getting lost in *setengah* (half)",
+    "name the days and months, several of which come straight from English"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — An appointment that nearly went wrong",
+      "intro": "Aina knocks on Sarah's door. There's an extra class tomorrow, and they need to be sure about the time.",
+      "lines": [
+        {
+          "speaker": "Aina:",
+          "text": "Sarah, esok ada kelas tambahan. Pukul tiga setengah petang.",
+          "id": "Sarah, there's an extra class tomorrow. At half past three in the afternoon.",
+          "literal": "Sarah, tomorrow there-is class extra. o'clock three half afternoon."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Pukul tiga setengah? Maksudnya pukul setengah tiga?",
+          "id": "Three-half? You mean half past two?",
+          "literal": "o'clock three half? its-meaning o'clock half three?"
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Eh, tak. Tiga setengah tu 3.30. Lepas tiga, sebelum empat.",
+          "id": "Oh, no. Three-half is 3:30. After three, before four.",
+          "literal": "eh, no. three half that 3.30. past three, before four."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Ya Allah. Kat Indonesia \"setengah empat\" tu 3.30. Kami kira ke depan.",
+          "id": "Oh my God. In Indonesia \"half four\" is 3:30. We count forward.",
+          "literal": "O God. at Indonesia \"half four\" that 3.30. we count to front."
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Wah, bahaya tu. Kalau macam tu, sebut je nombor: tiga tiga puluh.",
+          "id": "Wow, that's dangerous. In that case, just say the numbers: three thirty.",
+          "literal": "wow, danger that. if like that, say just number: three three-ten."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Setuju. Kelas tu hari apa? Khamis ke Jumaat?",
+          "id": "Agreed. What day is the class? Thursday or Friday?",
+          "literal": "agree. class that day what? Thursday or Friday?"
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Khamis. Lima belas haribulan.",
+          "id": "Thursday. The fifteenth.",
+          "literal": "Thursday. five teen day-month."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Lima belas bulan apa?",
+          "id": "The fifteenth of which month?",
+          "literal": "five teen month what?"
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Mac. Lima belas Mac.",
+          "id": "Mac. The fifteenth of March.",
+          "literal": "March. five teen March."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Mac? Bukan Mac makanan tu?",
+          "id": "Mac? Not Mac like the fast food?",
+          "literal": "Mac? not Mac food that?"
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Hahaha! Mac tu bulan ketiga. March. Kat Indonesia Maret kan?",
+          "id": "Hahaha! Mac is the third month. March. In Indonesia it's Maret, right?",
+          "literal": "hahaha! Mac that month third. March. at Indonesia Maret right?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Betul. Ada berapa lagi bulan yang lain namanya?",
+          "id": "Right. How many other months have different names?",
+          "literal": "right. there-is how-many more month that different its-name?"
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Tiga je: Mac, Jun, Julai, Ogos. Eh, empat.",
+          "id": "Just three: Mac, Jun, Julai, Ogos. Oh, four.",
+          "literal": "three only: Mac, Jun, Julai, Ogos. eh, four."
+        }
+      ],
+      "notes": [
+        "**Good news for English speakers:** Malay says the half-hour in English order. *Pukul tiga setengah* is literally \"o'clock three half\" = three-thirty, 3:30. The trap is Indonesian (and Dutch and German), which counts **forward**: *setengah empat*, \"half four\", is half-way **to** four = 3:30. And British \"half four\" means 4:30! If you've learned Indonesian, don't translate word for word, or you'll be a full hour off.",
+        "**Haribulan** (\"day-month\", written as one word) is the Malaysian word for **date** when you say the day of the month. *Lima belas haribulan* = the fifteenth. *Tarikh* also means date, but it's used more in writing and on forms: *Tarikh lahir* = date of birth.",
+        "**Ke** in the middle of a question means **or**: *Khamis ke Jumaat?* = \"Thursday or Friday?\" This is different from the question *ke* at the end of a sentence (unit 1) and from *ke* meaning \"to (a place)\". Three different *ke*, told apart by position.",
+        "**Lepas** = past, after. *Lepas tiga* = past three. It also means \"after (doing)\": *lepas makan* = after eating.",
+        "**Kira** = to count, to calculate. *Kami kira ke depan* = we count forward. ⚠️ Don't confuse it with *kira-kira* (= about, roughly)."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "The pattern: **pukul** (o'clock) + number + extra. Malay uses *jam* (hour) mainly for **a length of time** (*tiga jam* = three hours) and **pukul** for **a point in time** (*pukul tiga* = three o'clock)."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Malay",
+              "English"
+            ],
+            "rows": [
+              [
+                "3:00",
+                "pukul tiga",
+                "three o'clock"
+              ],
+              [
+                "3:05",
+                "pukul tiga lima minit",
+                "five past three"
+              ],
+              [
+                "3:15",
+                "pukul tiga suku",
+                "quarter past three"
+              ],
+              [
+                "3:30",
+                "**pukul tiga setengah** ⚠️",
+                "**half past three**"
+              ],
+              [
+                "3:45",
+                "pukul empat kurang suku",
+                "quarter to four"
+              ],
+              [
+                "3:50",
+                "pukul empat kurang sepuluh minit",
+                "ten to four"
+              ],
+              [
+                "12:00 noon",
+                "pukul dua belas tengah hari",
+                "twelve noon"
+              ],
+              [
+                "12:00 midnight",
+                "pukul dua belas tengah malam",
+                "midnight"
+              ]
+            ]
+          },
+          "after": [
+            "**Suku** means quarter. *Pukul tiga suku* = 3:15. *Kurang* means \"less\": *empat kurang suku* = four less a quarter = 3:45. Don't confuse *suku* with *suku* meaning \"tribe\"; same word, and context tells them apart.",
+            "**Minit** = minute (from English), **saat** = second — and also \"moment\". Clock hands are *jarum* (needles)."
+          ]
+        },
+        {
+          "title": "Numbers",
+          "body": [
+            "Malay numbers are completely regular: learn one to ten and the rest builds itself — *belas* = -teen, *puluh* = tens, *ratus* = hundreds, *ribu* = thousands, and *se-* = one."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Malay",
+              "Literally",
+              "Note"
+            ],
+            "rows": [
+              [
+                "0",
+                "**kosong** / sifar",
+                "empty / zero",
+                "*Kosong* in speech, *sifar* in maths."
+              ],
+              [
+                "1–7",
+                "satu, dua, tiga, empat, lima, enam, tujuh",
+                "—",
+                "Learn these by heart."
+              ],
+              [
+                "8",
+                "**lapan**",
+                "—",
+                "⚠️ Indonesian: *delapan*."
+              ],
+              [
+                "9",
+                "sembilan",
+                "—",
+                "—"
+              ],
+              [
+                "10–19",
+                "sepuluh, sebelas, dua belas…",
+                "one-ten, one-teen, two-teen…",
+                "*belas* = -teen."
+              ],
+              [
+                "20, 30",
+                "dua puluh, tiga puluh",
+                "two-ten, three-ten",
+                "*puluh* = tens."
+              ],
+              [
+                "100",
+                "seratus",
+                "one-hundred",
+                "*se-* = one."
+              ],
+              [
+                "1,000",
+                "seribu",
+                "one-thousand",
+                "—"
+              ],
+              [
+                "1,000,000",
+                "sejuta",
+                "one-million",
+                "—"
+              ],
+              [
+                "1.5",
+                "**satu perpuluhan lima**",
+                "one decimal five",
+                "⚠️ The decimal point is read *perpuluhan*."
+              ]
+            ]
+          },
+          "after": [
+            "Numbers combine just as you'd expect: *dua puluh lima* = 25, *lapan belas* = 18, *lapan puluh* = 80, *seratus dua puluh* = 120. Ordinals take *ke-*: *ketiga* = third, *kelapan* = eighth (except *pertama* = first).",
+            "**Decimal point, not comma.** Malaysia follows the English convention: *RM12.50* (read *dua belas ringgit lima puluh sen*), *1,000* for a thousand — exactly as in English. ⚠️ Indonesia does the opposite (Rp12.500), so watch out if you read Indonesian prices."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Days and months",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Most Malay day names come from Arabic. Learn the seven as a set:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Malay",
+            "English",
+            "Note"
+          ],
+          "rows": [
+            [
+              "**Isnin**",
+              "Monday",
+              "From Arabic *ithnain* (two)."
+            ],
+            [
+              "Selasa",
+              "Tuesday",
+              "—"
+            ],
+            [
+              "Rabu",
+              "Wednesday",
+              "—"
+            ],
+            [
+              "**Khamis**",
+              "Thursday",
+              "With *kh*."
+            ],
+            [
+              "**Jumaat**",
+              "Friday",
+              "With double *a*."
+            ],
+            [
+              "Sabtu",
+              "Saturday",
+              "From *sabbath*."
+            ],
+            [
+              "**Ahad**",
+              "Sunday",
+              "From Arabic *ahad* (one)."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Ahad** is Sunday. The word *minggu* means **week** (a seven-day period) — *minggu depan* (next week), *dua minggu lagi* (in two weeks) — but it isn't a day name in Malaysia. (Indonesians call Sunday *Minggu*; Malaysians will understand it, but it marks you out at once.)"
+        },
+        {
+          "type": "p",
+          "text": "The month names come from English, so they're easy for you — just note the Malay spelling:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Malay",
+            "English",
+            "Malay",
+            "English"
+          ],
+          "rows": [
+            [
+              "Januari",
+              "January",
+              "Julai ⚠️",
+              "July"
+            ],
+            [
+              "Februari",
+              "February",
+              "Ogos ⚠️",
+              "August"
+            ],
+            [
+              "Mac ⚠️",
+              "March",
+              "September",
+              "September"
+            ],
+            [
+              "April",
+              "April",
+              "Oktober",
+              "October"
+            ],
+            [
+              "Mei",
+              "May",
+              "November",
+              "November"
+            ],
+            [
+              "Jun ⚠️",
+              "June",
+              "Disember ⚠️",
+              "December"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Aina miscounts in the dialogue: there are five that differ from Indonesian, not four — **Disember** with an *i* is easy to miss. For you, the ones to watch are the spellings *Mac*, *Jun*, *Julai*, *Ogos* and *Disember*. When you fill in a form in Malaysia, these are the spellings used."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Time word",
+            "Malay",
+            "Note"
+          ],
+          "rows": [
+            [
+              "today",
+              "**hari ni**",
+              "Formal: *hari ini*."
+            ],
+            [
+              "yesterday",
+              "**semalam** ⚠️",
+              "Not \"last night\"."
+            ],
+            [
+              "the day before yesterday",
+              "**kelmarin** ⚠️",
+              "—"
+            ],
+            [
+              "tomorrow",
+              "**esok**",
+              "—"
+            ],
+            [
+              "the day after tomorrow",
+              "**lusa**",
+              "—"
+            ],
+            [
+              "last night",
+              "**malam tadi**",
+              "\"night earlier\"."
+            ],
+            [
+              "next week",
+              "**minggu depan**",
+              "*depan* = front."
+            ],
+            [
+              "last month",
+              "**bulan lepas** ⚠️",
+              "*lepas* = past."
+            ],
+            [
+              "last year",
+              "**tahun lepas** ⚠️",
+              "—"
+            ],
+            [
+              "now",
+              "**sekarang**",
+              "—"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Lepas** is the word for \"last\" with past time: *minggu lepas*, *bulan lepas*, *tahun lepas*. The form *yang lalu* is also correct and used in formal writing, but in conversation it's almost always *lepas*."
+        },
+        {
+          "type": "kotak",
+          "title": "Writing dates",
+          "items": [
+            "**The order is day-month-year**, as in British English: *15 Mac 2026*.",
+            "On official forms: *15/03/2026* or *15-03-2026*.",
+            "⚠️ Don't use the American order (*03/15/2026*) — it isn't used in Malaysia and will be misread.",
+            "*Tarikh lahir* = date of birth. *Tarikh tamat tempoh* = expiry date (on food and cards).",
+            "Years are read as a whole number: *dua ribu dua puluh enam* (two thousand twenty-six), never split into \"twenty twenty-six\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ms": "pukul",
+      "baca": "poo-kool",
+      "en": "o'clock (point in time)"
+    },
+    {
+      "ms": "minit",
+      "baca": "mee-neet",
+      "en": "minute"
+    },
+    {
+      "ms": "suku",
+      "baca": "soo-koo",
+      "en": "quarter"
+    },
+    {
+      "ms": "setengah",
+      "baca": "suh-tuh-ngahh",
+      "en": "half ⚠️"
+    },
+    {
+      "ms": "lapan",
+      "baca": "lah-pahn",
+      "en": "eight"
+    },
+    {
+      "ms": "kosong",
+      "baca": "koh-sohng",
+      "en": "zero; empty"
+    },
+    {
+      "ms": "haribulan",
+      "baca": "hah-ree-boo-lahn",
+      "en": "date (day of the month)"
+    },
+    {
+      "ms": "tarikh",
+      "baca": "tah-reekh",
+      "en": "date ⚠️"
+    },
+    {
+      "ms": "Isnin",
+      "baca": "ees-neen",
+      "en": "Monday"
+    },
+    {
+      "ms": "Khamis",
+      "baca": "khah-mees",
+      "en": "Thursday"
+    },
+    {
+      "ms": "Jumaat",
+      "baca": "joo-mah-aht",
+      "en": "Friday"
+    },
+    {
+      "ms": "Ahad",
+      "baca": "ah-hahd",
+      "en": "Sunday"
+    },
+    {
+      "ms": "Mac",
+      "baca": "mahch",
+      "en": "March"
+    },
+    {
+      "ms": "Jun / Julai",
+      "baca": "joon · joo-lai",
+      "en": "June / July"
+    },
+    {
+      "ms": "Ogos",
+      "baca": "oh-gohs",
+      "en": "August"
+    },
+    {
+      "ms": "Disember",
+      "baca": "dee-sehm-buh",
+      "en": "December"
+    },
+    {
+      "ms": "semalam",
+      "baca": "suh-mah-lahm",
+      "en": "yesterday ⚠️"
+    },
+    {
+      "ms": "kelmarin",
+      "baca": "kuhl-mah-reen",
+      "en": "the day before yesterday ⚠️"
+    },
+    {
+      "ms": "esok",
+      "baca": "eh-sohk",
+      "en": "tomorrow"
+    },
+    {
+      "ms": "lepas",
+      "baca": "luh-pahs",
+      "en": "past; last; after"
+    },
+    {
+      "ms": "macam mana",
+      "baca": "mah-chahm mah-nuh",
+      "en": "how"
+    },
+    {
+      "ms": "kira",
+      "baca": "kee-ruh",
+      "en": "to count"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these times in Malay (use *setengah* and *suku* where you can).",
+      "items": [
+        "7:00",
+        "9:15",
+        "2:30",
+        "5:45",
+        "12:00 noon",
+        "8:30 p.m."
+      ]
+    },
+    {
+      "prompt": "Fill in the right Malay day or month.",
+      "items": [
+        "Hari sesudah Rabu ialah ____.",
+        "Hari sebelum Sabtu ialah ____.",
+        "Hari pertama minggu bekerja ialah ____.",
+        "Hari cuti hujung minggu ialah Sabtu dan ____.",
+        "Bulan ketiga ialah ____.",
+        "Bulan kelapan ialah ____."
+      ]
+    },
+    {
+      "prompt": "Translate into Malay.",
+      "items": [
+        "It's half past three now.",
+        "The class is on Thursday, the fifteenth of March.",
+        "My phone number is zero one two, three four five.",
+        "I came yesterday.",
+        "Last month I went to Singapore.",
+        "Tomorrow at eight in the morning."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "sekarang / berapa / pukul / ?",
+        "setengah / pukul / kelas / tiga / petang",
+        "haribulan / lima belas / Khamis / Mac",
+        "tak / semalam / dia / datang",
+        "esok / saya / pergi / pukul / lapan"
+      ]
+    }
+  ],
+  "answers": [
+    "pukul tujuh — pukul sembilan suku — pukul dua setengah — pukul enam kurang suku — pukul dua belas tengah hari — pukul lapan setengah malam",
+    "Khamis — Jumaat — Isnin — Ahad — Mac — Ogos",
+    "Sekarang pukul tiga setengah. — Kelas tu hari Khamis, lima belas haribulan Mac. — Nombor telefon saya kosong satu dua, tiga empat lima. — Saya datang semalam. — Bulan lepas saya ke Singapura. — Esok pukul lapan pagi.",
+    "Pukul berapa sekarang? — Kelas pukul tiga setengah petang. — Khamis, lima belas haribulan Mac. — Dia tak datang semalam. — Esok saya pergi pukul lapan."
+  ]
+}

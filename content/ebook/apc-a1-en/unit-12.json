@@ -1,0 +1,591 @@
+{
+  "title": "Bil-maṭ‘am — eating out",
+  "title_target": "بِالْمَطْعَم",
+  "goal": "Order food from a menu, ask about ingredients and flavor, ask for the bill, and understand the polite phrases around eating.",
+  "bekal": [
+    "order a full meal from starters to dessert",
+    "ask what's in a dish and whether it's spicy or halal",
+    "ask for the bill and pay with the right phrases"
+  ],
+  "dialogs": [
+    {
+      "title": "حَكِي — مَطْعَم شَعْبِي",
+      "intro": "A simple restaurant in Damascus. Budi and Laila sit down and the waiter brings the menu.",
+      "lines": [
+        {
+          "speaker": "اَلْجَرْسُون:",
+          "text": "أَهْلًا وْسَهْلًا. تْفَضَّلُوا الْمِينْيُو.",
+          "baca": "ahlan w sahlan. tfaḍḍalu el-minyu.",
+          "id": "Welcome. Here's the menu.",
+          "literal": "family and ease. here-you-are menu."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "شُكْرًا. بُودِي، جَرِّب الْمْسَخَّن.",
+          "baca": "shukran. Buudi, jarrib el-msakhkhan.",
+          "id": "Thanks. Budi, try the musakhan.",
+          "literal": "thanks. Budi, try musakhan."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "شُو فِيه؟ حَارّ؟",
+          "baca": "shu fii? haarr?",
+          "id": "What's in it? Is it spicy?",
+          "literal": "what in-it? hot?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "لَا، مِش حَارّ. دَجَاج وْبَصَل وْسُمَّاق.",
+          "baca": "la’, mish haarr. dajaaj w baṣal w summaa’.",
+          "id": "It's not spicy. Chicken, onion, and sumac.",
+          "literal": "no, not hot. chicken and onion and sumac."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "طَيِّب، بَدِّي وَاحِد. وْمَزَّة كَمَان.",
+          "baca": "ṭayyib, baddi waahid. w mazze kamaan.",
+          "id": "OK, I'll have one. And some mezze too.",
+          "literal": "good, want-I one. and mezze also."
+        },
+        {
+          "speaker": "اَلْجَرْسُون:",
+          "text": "أَيّ مَزَّة؟ عِنَّا حُمُّص وْمْتَبَّل وْتَبُّولِة.",
+          "baca": "ayy mazze? ‘inna hummuṣ w mtabbal w tabbuule.",
+          "id": "Which mezze? We have hummus, mutabbal, and tabbouleh.",
+          "literal": "which mezze? at-us hummus and mutabbal and tabbouleh."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "حُمُّص وْتَبُّولِة، لَو سَمَحْت.",
+          "baca": "hummuṣ w tabbuule, law samaht.",
+          "id": "Hummus and tabbouleh, please.",
+          "literal": "hummus and tabbouleh, if you-permit."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "وْأَنَا بَدِّي فَتُّوش وْشِيش طَاوُوق.",
+          "baca": "w ana baddi fattuush w shiish ṭaawuu’.",
+          "id": "I'd like fattoush and shish tawook.",
+          "literal": "and I want-I fattoush and shish tawook."
+        },
+        {
+          "speaker": "اَلْجَرْسُون:",
+          "text": "وْتِشْرَبُوا شُو؟",
+          "baca": "w tishrabu shu?",
+          "id": "What would you like to drink?",
+          "literal": "and you-drink what?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "عَيْرَان لَإِلِي، وْمَي لَلطَّاوْلِة.",
+          "baca": "‘ayraan la-ili, w mayy la-eṭ-ṭaawle.",
+          "id": "An ayran for me, and water for the table.",
+          "literal": "ayran for-me, and water for-the-table."
+        },
+        {
+          "speaker": "اَلْجَرْسُون:",
+          "text": "حَاضِر. عَشِر دَقَايِق.",
+          "baca": "haaḍir. ‘ashr da’aayi’.",
+          "id": "Sure. Ten minutes.",
+          "literal": "ready. ten minutes."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "لَو سَمَحْت، اَلدَّجَاج حَلَال؟",
+          "baca": "law samaht, ed-dajaaj halaal?",
+          "id": "Excuse me, is the chicken halal?",
+          "literal": "if you-permit, chicken halal?"
+        },
+        {
+          "speaker": "اَلْجَرْسُون:",
+          "text": "أَكِيد. كِلّ شِي عِنَّا حَلَال.",
+          "baca": "akiid. kill shi ‘inna halaal.",
+          "id": "Of course. Everything here is halal.",
+          "literal": "sure. every thing at-us halal."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "بَعِد الْأَكِل، لَو سَمَحْت الْحْسَاب.",
+          "baca": "ba‘d el-akl, law samaht el-hsaab.",
+          "id": "After the meal, the bill, please.",
+          "literal": "after the-food, if you-permit the-bill."
+        },
+        {
+          "speaker": "اَلْجَرْسُون:",
+          "text": "عَ رَاسِي. صَحْتَين مُقَدَّمًا.",
+          "baca": "‘a raasi. sahtēn mu’addaman.",
+          "id": "With pleasure. Enjoy your meal.",
+          "literal": "on head-my. two-healths in-advance."
+        }
+      ],
+      "notes": [
+        "**The word مَزَّة is the key to eating in the Levant.** It means a spread of small dishes eaten together before, or instead of, a main course — hummus, mutabbal, tabbouleh, fattoush, and dozens more. Ordering three or four مَزَّة for two people is completely normal.",
+        "**The phrase شُو فِيه؟ means \"what's in it?\"** Literally \"what inside it,\" it's the most useful question in this unit. For a feminine dish, the form is شُو فِيهَا؟",
+        "**The word حَارّ means spicy, not hot in temperature.** For temperature, use سُخْن. Levantine food is mostly **not spicy** — if you want heat, ask for شَطَّة (chili sauce) on the side.",
+        "**Asking about halal is perfectly normal and not offensive.** In Syria and Jordan almost all meat is halal; in Lebanon, it depends on the area. A more targeted question is فِي لَحِم خِنْزِير؟ (\"is there pork?\") rather than asking in general.",
+        "**The phrase عَ رَاسِي literally means \"on my head.\"** It means \"sure, with pleasure,\" like حَاضِر but warmer. Together with مِن عْيُونِي and تَكْرَم عَيْنَك, these are the Levantine ways of saying \"you got it.\"",
+        "**The word لَإِلِي means \"for me.\"** It combines لَـ (for) with a possessive ending. Other forms: لَإِلَك، لَإِلِك، لَإِلُو، لَإِلَا. If that feels complicated, you can just say أَنَا بَدِّي…"
+      ],
+      "grammars": [
+        {
+          "title": "Ordering: four patterns",
+          "table": {
+            "head": [
+              "Pattern",
+              "Example",
+              "Say it",
+              "Meaning",
+              "Tone"
+            ],
+            "rows": [
+              [
+                "بَدِّي +",
+                "بَدِّي حُمُّص",
+                "baddi hummuṣ",
+                "I'd like hummus",
+                "neutral"
+              ],
+              [
+                "جِيبْلِي +",
+                "جِيبْلِي شَاي",
+                "jiibli shaay",
+                "bring me tea",
+                "casual"
+              ],
+              [
+                "مُمْكِن +",
+                "مُمْكِن مَي؟",
+                "mumkin mayy?",
+                "could I have some water?",
+                "polite"
+              ],
+              [
+                "لَو سَمَحْت +",
+                "لَو سَمَحْت الْحْسَاب",
+                "law samaht el-hsaab",
+                "the bill, please",
+                "polite"
+              ],
+              [
+                "وَاحِد +",
+                "وَاحِد شِيش طَاوُوق",
+                "waahid shiish ṭaawuu’",
+                "one shish tawook",
+                "short"
+              ],
+              [
+                "عَطِينِي +",
+                "عَطِينِي تْنَين",
+                "‘aṭiini tnēn",
+                "give me two",
+                "casual"
+              ]
+            ]
+          },
+          "after": [
+            "To say how many portions, put the number in front with no extra word: تْلَات حُمُّص means \"three hummus.\" You don't need a word like \"portion\" or \"plate\" unless you want to stress it.",
+            "To cancel or change an order: لَحْظَة، غَيَّرِت رَأْيِي *lahẓa, ghayyart ra’yi* (\"one moment, I changed my mind\"). That's perfectly fine as long as the order hasn't come out yet."
+          ]
+        },
+        {
+          "title": "Adjectives for food",
+          "table": {
+            "head": [
+              "Levantine",
+              "Say it",
+              "Meaning",
+              "Opposite",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "طَيِّب",
+                "ṭayyib",
+                "good, tasty",
+                "مِش طَيِّب",
+                "mish ṭayyib",
+                "not good"
+              ],
+              [
+                "زَاكِي",
+                "zaaki",
+                "delicious",
+                "بَايِخ",
+                "baayikh",
+                "bland"
+              ],
+              [
+                "حَارّ",
+                "haarr",
+                "spicy",
+                "مِش حَارّ",
+                "mish haarr",
+                "not spicy"
+              ],
+              [
+                "سُخْن",
+                "sukhn",
+                "hot",
+                "بَارِد",
+                "baarid",
+                "cold"
+              ],
+              [
+                "حِلُو",
+                "hilu",
+                "sweet",
+                "مَالِح",
+                "maalih",
+                "salty"
+              ],
+              [
+                "دَسِم",
+                "dasim",
+                "greasy, rich",
+                "خَفِيف",
+                "khafiif",
+                "light"
+              ],
+              [
+                "طَازَة",
+                "ṭaaza",
+                "fresh",
+                "قَدِيم",
+                "’adiim",
+                "not fresh"
+              ]
+            ]
+          },
+          "after": [
+            "The word طَيِّب does double duty again: as an adjective it means \"good, tasty,\" and as an exclamation it means \"OK then,\" as in unit 3. The context always makes it clear.",
+            "To praise someone's cooking, the must-say phrase is تِسْلَم إِيدَيْك *tislam iidēk* (\"bless your hands\") to a man or تِسْلَم إِيدَيْكِي to a woman. It's not small talk — skipping it comes across as ungrateful."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Dishes you'll come across",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Levantine",
+            "Say it",
+            "What it is"
+          ],
+          "rows": [
+            [
+              "حُمُّص",
+              "hummuṣ",
+              "chickpea dip with tahini"
+            ],
+            [
+              "مْتَبَّل",
+              "mtabbal",
+              "smoky eggplant dip"
+            ],
+            [
+              "تَبُّولِة",
+              "tabbuule",
+              "parsley and bulgur salad"
+            ],
+            [
+              "فَتُّوش",
+              "fattuush",
+              "vegetable salad with fried bread"
+            ],
+            [
+              "وَرَق عِنَب",
+              "wara’ ‘inab",
+              "vine leaves stuffed with rice"
+            ],
+            [
+              "كِبِّة",
+              "kibbe",
+              "bulgur balls stuffed with meat"
+            ],
+            [
+              "شِيش طَاوُوق",
+              "shiish ṭaawuu’",
+              "chicken skewers in yogurt marinade"
+            ],
+            [
+              "مْسَخَّن",
+              "msakhkhan",
+              "sumac chicken on flatbread"
+            ],
+            [
+              "مَنْسَف",
+              "mansaf",
+              "Jordanian rice and lamb dish"
+            ],
+            [
+              "شَاوَرْمَا",
+              "shaawarma",
+              "rotisserie meat in bread"
+            ],
+            [
+              "فَلَافِل",
+              "falaafil",
+              "chickpea fritters"
+            ],
+            [
+              "مَنَاقِيش",
+              "manaa’iish",
+              "flatbread with za'atar"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The dish مَنْسَف has a special place in Jordan: it's not just food but a mark of honor, served at big occasions and eaten together from one platter. If you're invited to a مَنْسَف, it's not an invitation to turn down."
+        },
+        {
+          "type": "kotak",
+          "title": "Three things that surprise newcomers",
+          "items": [
+            "**Bread, not rice, is the staple.** Bread (خُبْز) comes with every meal without being ordered.",
+            "**Eating with your right hand is completely normal**, especially for mezze and bread. Cutlery is there, but optional.",
+            "**Portions are big and your host will keep adding more.** Answer their صَحْتَين with عَ قَلْبَك, and to stop, say خَلَص، شَبْعِت، اَللَّه يْخَلِّيك."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Paying and saying thanks",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Levantine",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "لَو سَمَحْت الْحْسَاب",
+              "law samaht el-hsaab",
+              "the bill, please"
+            ],
+            [
+              "قَدِّيش الْحْسَاب؟",
+              "’addēsh el-hsaab?",
+              "how much is it altogether?"
+            ],
+            [
+              "بَقْبَل كَرْت؟",
+              "ba’bal kart?",
+              "do you take cards?"
+            ],
+            [
+              "اَلْبَاقِي إِلَك",
+              "el-baa’i ilak",
+              "keep the change"
+            ],
+            [
+              "تِسْلَم إِيدَيْك",
+              "tislam iidēk",
+              "bless your hands (the cooking was great)"
+            ],
+            [
+              "اَلْأَكِل كَان زَاكِي",
+              "el-akl kaan zaaki",
+              "the food was delicious"
+            ],
+            [
+              "شَبْعِت، يِسْلَمُوا",
+              "shabi‘t, yislamu",
+              "I'm full, thank you"
+            ],
+            [
+              "دَايْمًا",
+              "daayman",
+              "reply to praise for the food"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The word دَايْمًا literally means \"always,\" and hosts say it when guests praise the food — roughly \"may this table always be full.\" The full form is سُفْرَة دَايْمِة, and hearing it means you've been made welcome."
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Who pays",
+          "items": [
+            "In the Levant, whoever invites usually pays for everyone, and arguing over the bill is part of the expected politeness.",
+            "If you really want to pay, tell the waiter early, not at the table. If you lose the argument, accept with اَللَّه يْخَلِّيك and offer to pay next time: اَلْمَرَّة الْجَايِة عَلَيِّي.",
+            "A tip of about ten percent is usual in restaurants, and not expected at small cafés or street stalls."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "مَطْعَم",
+      "baca": "maṭ‘am",
+      "en": "restaurant"
+    },
+    {
+      "ar": "مِينْيُو",
+      "baca": "minyu",
+      "en": "menu"
+    },
+    {
+      "ar": "مَزَّة",
+      "baca": "mazze",
+      "en": "small dishes"
+    },
+    {
+      "ar": "أَكِل",
+      "baca": "akl",
+      "en": "food"
+    },
+    {
+      "ar": "حْسَاب",
+      "baca": "hsaab",
+      "en": "bill, check"
+    },
+    {
+      "ar": "طَيِّب / زَاكِي",
+      "baca": "ṭayyib / zaaki",
+      "en": "good / delicious"
+    },
+    {
+      "ar": "حَارّ",
+      "baca": "haarr",
+      "en": "spicy"
+    },
+    {
+      "ar": "مَالِح",
+      "baca": "maalih",
+      "en": "salty"
+    },
+    {
+      "ar": "حَلَال",
+      "baca": "halaal",
+      "en": "halal"
+    },
+    {
+      "ar": "لَحْمِة",
+      "baca": "lahme",
+      "en": "meat"
+    },
+    {
+      "ar": "دَجَاج",
+      "baca": "dajaaj",
+      "en": "chicken"
+    },
+    {
+      "ar": "سَمَك",
+      "baca": "samak",
+      "en": "fish"
+    },
+    {
+      "ar": "خُضْرَة",
+      "baca": "khuḍra",
+      "en": "vegetables"
+    },
+    {
+      "ar": "رِزّ",
+      "baca": "rizz",
+      "en": "rice"
+    },
+    {
+      "ar": "شَطَّة",
+      "baca": "shaṭṭa",
+      "en": "chili sauce"
+    },
+    {
+      "ar": "عَيْرَان",
+      "baca": "‘ayraan",
+      "en": "salty yogurt drink"
+    },
+    {
+      "ar": "حَاضِر",
+      "baca": "haaḍir",
+      "en": "sure, OK"
+    },
+    {
+      "ar": "عَ رَاسِي",
+      "baca": "‘a raasi",
+      "en": "with pleasure"
+    },
+    {
+      "ar": "تِسْلَم إِيدَيْك",
+      "baca": "tislam iidēk",
+      "en": "bless your hands (your cooking is great)"
+    },
+    {
+      "ar": "شَبْعِت",
+      "baca": "shabi‘t",
+      "en": "I'm full"
+    },
+    {
+      "ar": "طَازَة",
+      "baca": "ṭaaza",
+      "en": "fresh"
+    },
+    {
+      "ar": "مُقَدَّمًا",
+      "baca": "mu’addaman",
+      "en": "in advance"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Levantine Arabic.",
+      "items": [
+        "What's in it? Is it spicy?",
+        "I'd like hummus and tabbouleh.",
+        "Is the chicken halal?",
+        "The bill, please.",
+        "The food is really good.",
+        "I'm full, thank you."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks.",
+      "items": [
+        "لَو سَمَحْت، اَلْ____. (bill)",
+        "هَاد الْأَكِل ____ كْتِير. (good)",
+        "مِش ____، مَا بْحِبّ الشَّطَّة. (spicy)",
+        "بَدِّي ____ لَو سَمَحْت. (a glass of water)",
+        "____ إِيدَيْك، كَان زَاكِي. (bless)",
+        "اَلْمَي ____، بَدِّي وَحْدِة بَارْدِة. (hot)"
+      ]
+    },
+    {
+      "prompt": "Match each description with its dish. Write the name of the dish in Arabic.",
+      "items": [
+        "Chickpea dip with tahini",
+        "Parsley and bulgur salad",
+        "Chicken skewers in yogurt marinade",
+        "Chickpea fritters",
+        "Rotisserie meat in bread",
+        "Jordanian rice and lamb dish"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "فِيه / شُو / ؟",
+        "حُمُّص / بَدِّي / وْتَبُّولِة",
+        "حَلَال / اَلدَّجَاج / ؟",
+        "الْحْسَاب / لَو سَمَحْت",
+        "زَاكِي / كَان / اَلْأَكِل",
+        "يِسْلَمُوا / شَبْعِت / ،"
+      ]
+    }
+  ],
+  "answers": [
+    "شُو فِيه؟ حَارّ؟ — بَدِّي حُمُّص وْتَبُّولِة. — اَلدَّجَاج حَلَال؟ — لَو سَمَحْت الْحْسَاب. — اَلْأَكِل زَاكِي كْتِير. — شَبْعِت، يِسْلَمُوا.",
+    "حْسَاب — طَيِّب — حَارّ — كُبَّايِة مَي — تِسْلَم — سُخْنِة",
+    "حُمُّص — تَبُّولِة — شِيش طَاوُوق — فَلَافِل — شَاوَرْمَا — مَنْسَف",
+    "شُو فِيه؟ — بَدِّي حُمُّص وْتَبُّولِة. — اَلدَّجَاج حَلَال؟ — لَو سَمَحْت الْحْسَاب. — اَلْأَكِل كَان زَاكِي. — شَبْعِت، يِسْلَمُوا."
+  ],
+  "wave": "Put together a full order for two — two mezze, two mains, two drinks — then say the whole thing in one breath."
+}

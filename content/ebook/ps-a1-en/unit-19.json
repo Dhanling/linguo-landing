@@ -1,0 +1,568 @@
+{
+  "title": "Asking the way",
+  "title_target": "لار پوښتل",
+  "goal": "Asking for directions, understanding the answer, and getting around by public transport — a unit that brings back the prepositions of unit 6, the commands of unit 16, and the numbers of unit 7 in one real task.",
+  "bekal": [
+    "ask for directions and understand the answer",
+    "name means of transport and haggle over the fare",
+    "talk about distance and travel time"
+  ],
+  "dialogs": [
+    {
+      "title": "خبرې اترې — د کوڅې پر سر",
+      "intro": "Budi is lost among the lanes of the old bazaar. The map on his phone is no help, but a bread seller has more time than any map.",
+      "lines": [
+        {
+          "speaker": "بودي:",
+          "text": "بخښنه غواړم، یوه پوښتنه لرم.",
+          "baca": "bakhṣəna ghwāṛəm, yawa pūṣtəna larəm.",
+          "id": "Excuse me, can I ask you something?",
+          "literal": "sorry want-I, one question have-I."
+        },
+        {
+          "speaker": "ناناوی:",
+          "text": "ووایه، ورورجانه.",
+          "baca": "wə́wāya, wrorjāna.",
+          "id": "Go ahead, brother.",
+          "literal": "say, brother-dear."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "زه د پښتنو باغ لټوم. چېرته دی؟",
+          "baca": "zə də paṣtano bāgh laṭawəm. cherta day?",
+          "id": "I'm looking for Pashtunistan Park. Where is it?",
+          "literal": "I of Pashtun garden look-for-I. where is?"
+        },
+        {
+          "speaker": "ناناوی:",
+          "text": "لرې نه دی. مخ ته ولاړ شه، بیا ښي لور ته.",
+          "baca": "lare nə day. makh ta wlāṛ sha, byā ṣəy lor ta.",
+          "id": "It's not far. Go straight, then turn right.",
+          "literal": "far not is. front to going become, then right direction to."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "څومره مخ ته؟",
+          "baca": "tsomra makh ta?",
+          "id": "Straight for how far?",
+          "literal": "how-much front to?"
+        },
+        {
+          "speaker": "ناناوی:",
+          "text": "شاوخوا درې سوه متره. د جومات تر څنګه تېر شه.",
+          "baca": "shāwkhwā dre swa metra. də jumāt tər tsanga ter sha.",
+          "id": "About three hundred meters. Go past the mosque.",
+          "literal": "about three hundred meters. of mosque from side past become."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "له جومات وروسته څه شته؟",
+          "baca": "lə jumāt wrūsta tsə shta?",
+          "id": "What's after the mosque?",
+          "literal": "from mosque after what is?"
+        },
+        {
+          "speaker": "ناناوی:",
+          "text": "یو لوی څلورلاری. هلته کیڼ لور ته وګرځه.",
+          "baca": "yaw loy tsalorlārī. halta kīṇ lor ta wə́gardza.",
+          "id": "A big crossroads. Turn left there.",
+          "literal": "one big crossroads. there left direction to turning become."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "او باغ به ښکاره وي؟",
+          "baca": "aw bāgh ba ṣkāra wī?",
+          "id": "And will I see the park?",
+          "literal": "and garden will visible usually-is?"
+        },
+        {
+          "speaker": "ناناوی:",
+          "text": "هو، سمدلاسه. لویه دروازه یې شنه ده.",
+          "baca": "ho, samdlāsa. lawya darwāza ye shna da.",
+          "id": "Yes, right away. Its big gate is green.",
+          "literal": "yes, at-once. big gate of-it green is."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "په پښو څومره وخت نیسي؟",
+          "baca": "pə ṣpo tsomra wakht nīsī?",
+          "id": "How long does it take on foot?",
+          "literal": "with feet how-much time takes-it?"
+        },
+        {
+          "speaker": "ناناوی:",
+          "text": "لس دقیقې، نه ډېر. که ستړی یې، رکشه ونیسه.",
+          "baca": "las daqīqe, nə ḍer. ka stəṛay ye, riksha wə́nīsa.",
+          "id": "Ten minutes, no more. If you're tired, take a rickshaw.",
+          "literal": "ten minutes, not much. if tired are-you, rickshaw take."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "رکشه څومره اخلي؟",
+          "baca": "riksha tsomra akhlī?",
+          "id": "How much does a rickshaw charge?",
+          "literal": "rickshaw how-much takes-it?"
+        },
+        {
+          "speaker": "ناناوی:",
+          "text": "پنځوس افغانۍ. خو مخکې بیه وټاکه!",
+          "baca": "pindzos afghānəy. kho məkhke bīya wə́ṭāka!",
+          "id": "Fifty afghani. But agree on the price first!",
+          "literal": "fifty afghani. but before price set!"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "ډېره مننه. ستړی مه شې!",
+          "baca": "ḍera manana. stəṛay ma she!",
+          "id": "Thanks a lot. May you not get tired!",
+          "literal": "much thank-you. tired don't become-you!"
+        }
+      ],
+      "notes": [
+        "The greeting ورورجانه means \"dear brother\", and Afghans use it with strangers of about their own age. Other forms you'll hear: **لالا** *lālā* (older brother, to someone older), **کاکا** *kākā* (uncle, to a much older man), **خورجانې** to a woman.",
+        "Directions in Pashto use the command form for ته, even with strangers. مخ ته ولاړ شه isn't rude; it's the usual way to give directions, and even a friendly bread seller will use it.",
+        "The word لور means \"direction\" and always pairs with the postposition ته — for example ښي **لور ته** for to the right · کیڼ **لور ته** for to the left. Note that this لور is not the same word as لور meaning daughter; the two just happen to be spelled alike.",
+        "The phrase تر څنګه تېر شه means \"go past it\". The verb تېرېدل (to pass) turns up in lots of directions, and it pairs with تر ... څنګه like the pairs in unit 6.",
+        "⚠️ The advice مخکې بیه وټاکه (agree on the price first) applies to taxis, rickshaws, and anything without a meter. Asking the price after you arrive is the quickest way to pay double, and that's true everywhere, not just in Afghanistan.",
+        "Distance is often given as travel time, not meters. The answers you'll hear most are لس دقیقې (ten minutes) or نږدې دی (it's close), and figures in meters are actually rare. If you need precision, ask twice in different ways."
+      ],
+      "grammars": [
+        {
+          "title": "Asking the way, and understanding the answer",
+          "body": [
+            "The three questions in the first rows of the table cover almost every need. The harder part is understanding the answer, which is why rows four to eight are worth memorizing as whole sounds.",
+            "If you don't catch the answer, don't just nod. Say **بخښنه، بیا ووایه** or point with your hand and ask **دې لور ته؟** — people will happily correct you."
+          ],
+          "table": {
+            "head": [
+              "Pashto",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "... چېرته دی؟",
+                "... cherta day",
+                "Where is ...?"
+              ],
+              [
+                "... ته څنګه ولاړ شم؟",
+                "... ta tsənga wlāṛ shəm",
+                "How do I get to ...?"
+              ],
+              [
+                "دلته نږدې ... شته؟",
+                "dəlta nəẓde ... shta",
+                "Is there a ... near here?"
+              ],
+              [
+                "مخ ته ولاړ شه",
+                "makh ta wlāṛ sha",
+                "Go straight"
+              ],
+              [
+                "ښي لور ته وګرځه",
+                "ṣəy lor ta wə́gardza",
+                "Turn right"
+              ],
+              [
+                "کیڼ لور ته وګرځه",
+                "kīṇ lor ta wə́gardza",
+                "Turn left"
+              ],
+              [
+                "بېرته وګرځه",
+                "berta wə́gardza",
+                "Turn back"
+              ],
+              [
+                "تر څنګه تېر شه",
+                "tər tsanga ter sha",
+                "Go past it"
+              ],
+              [
+                "څلورلاری",
+                "tsalorlārī",
+                "crossroads"
+              ],
+              [
+                "دویمه کوڅه",
+                "dwayama kūcha",
+                "the second lane"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "Distance and travel time",
+          "body": [
+            "Pashto gives distance with the verb **وخت نیسي** (it takes time) or simply with how long it lasts. For the way you travel, it uses the pair **په ... کې** for a closed vehicle and **په پښو** for on foot.",
+            "Note the form په پښو: the word پښه (foot) stands in the oblique plural پښو. This is the form you set up in unit 6, and here it works without any postposition."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "څومره لرې دی؟",
+                "tsomra lare day",
+                "How far is it?"
+              ],
+              [
+                "څومره وخت نیسي؟",
+                "tsomra wakht nīsī",
+                "How long does it take?"
+              ],
+              [
+                "لس دقیقې په پښو",
+                "las daqīqe pə ṣpo",
+                "Ten minutes on foot"
+              ],
+              [
+                "نږدې دی",
+                "nəẓde day",
+                "It's close"
+              ],
+              [
+                "ډېر لرې دی",
+                "ḍer lare day",
+                "It's very far"
+              ],
+              [
+                "په موټر کې نیم ساعت",
+                "pə moṭar ke nīm sā'at",
+                "Half an hour by car"
+              ],
+              [
+                "شاوخوا درې سوه متره",
+                "shāwkhwā dre swa metra",
+                "About three hundred meters"
+              ],
+              [
+                "دوه ساعته لار ده",
+                "dwa sā'ata lār da",
+                "It's a two-hour trip"
+              ]
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Vehicles, places, and getting around",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Pashto",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "موټر",
+              "moṭar",
+              "car"
+            ],
+            [
+              "ټکسي",
+              "ṭaksī",
+              "taxi"
+            ],
+            [
+              "رکشه",
+              "riksha",
+              "auto-rickshaw"
+            ],
+            [
+              "بس",
+              "bas",
+              "bus"
+            ],
+            [
+              "ملي بس",
+              "millī bas",
+              "city minibus"
+            ],
+            [
+              "بایسکل",
+              "bāysikl",
+              "bicycle"
+            ],
+            [
+              "موټرسایکل",
+              "moṭarsāykl",
+              "motorcycle"
+            ],
+            [
+              "الوتکه",
+              "alwatka",
+              "airplane"
+            ],
+            [
+              "هوایي ډګر",
+              "hawāyī ḍagar",
+              "airport"
+            ],
+            [
+              "اډه",
+              "aḍa",
+              "station, stop"
+            ],
+            [
+              "ټکټ",
+              "ṭikaṭ",
+              "ticket"
+            ],
+            [
+              "سفر",
+              "safar",
+              "trip, journey"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Places you need to be able to ask for"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pashto",
+            "Say it",
+            "Meaning",
+            "Pashto",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "بانک",
+              "bānk",
+              "bank",
+              "پارک",
+              "pārk",
+              "park"
+            ],
+            [
+              "پوسته خانه",
+              "posta khāna",
+              "post office",
+              "موزیم",
+              "mūzyam",
+              "museum"
+            ],
+            [
+              "دواخانه",
+              "dawākhāna",
+              "pharmacy",
+              "کتابتون",
+              "kitābtūn",
+              "library"
+            ],
+            [
+              "روغتون",
+              "roghtūn",
+              "hospital",
+              "سفارت",
+              "safārat",
+              "embassy"
+            ],
+            [
+              "هوټل",
+              "hoṭal",
+              "hotel",
+              "پولیس",
+              "polīs",
+              "police"
+            ],
+            [
+              "جومات",
+              "jumāt",
+              "mosque",
+              "تشناب",
+              "tashnāb",
+              "restroom"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Four phrases that keep you from ever being truly lost",
+          "items": [
+            "To open: **بخښنه غواړم، یوه پوښتنه لرم** — \"excuse me, can I ask you something?\". This phrase opens doors anywhere.",
+            "To check: **دې لور ته؟** *de lor ta* — \"this way?\", pointing with your whole hand, not one finger.",
+            "To ask for a repeat: **بخښنه، بیا ووایه** — \"sorry, please say it again\". Add **ورو** if you need it slower.",
+            "To give up politely: **زه دلته نوی یم** *zə dəlta naway yəm* — \"I'm new here\". This almost always brings more patient help, and sometimes someone to walk you all the way there."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Pointing, and the small things that matter",
+          "items": [
+            "Point the way with your **whole open hand**, not your index finger. Pointing at people with a finger is considered rude in most of Afghanistan.",
+            "If you're a woman asking a man you don't know, a calm distance and tone matter more than the words. Asking another woman or a stallholder is the most comfortable choice.",
+            "Afghans rarely say \"I don't know\" to a question about directions, because it feels like refusing to help. If the answer sounds unsure, ask a second person before walking far.",
+            "Street addresses are hardly used. Landmarks are: **د جومات تر څنګه** (beside the mosque), **د بانک مخې ته** (in front of the bank). Learn to name landmarks, not house numbers."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ps": "لار",
+      "baca": "lār",
+      "en": "road, route"
+    },
+    {
+      "ps": "لور",
+      "baca": "lor",
+      "en": "direction"
+    },
+    {
+      "ps": "ښي لور",
+      "baca": "ṣəy lor",
+      "en": "right (direction)"
+    },
+    {
+      "ps": "کیڼ لور",
+      "baca": "kīṇ lor",
+      "en": "left (direction)"
+    },
+    {
+      "ps": "مخ ته",
+      "baca": "makh ta",
+      "en": "straight ahead"
+    },
+    {
+      "ps": "څلورلاری",
+      "baca": "tsalorlārī",
+      "en": "crossroads"
+    },
+    {
+      "ps": "ګرځېدل",
+      "baca": "gardzedəl",
+      "en": "to turn, to go around"
+    },
+    {
+      "ps": "تېرېدل",
+      "baca": "teredəl",
+      "en": "to pass, to cross"
+    },
+    {
+      "ps": "لټول",
+      "baca": "laṭawəl",
+      "en": "to look for"
+    },
+    {
+      "ps": "نیول",
+      "baca": "nīwəl",
+      "en": "to take, to hold"
+    },
+    {
+      "ps": "ټاکل",
+      "baca": "ṭākəl",
+      "en": "to set, to fix"
+    },
+    {
+      "ps": "رکشه",
+      "baca": "riksha",
+      "en": "auto-rickshaw"
+    },
+    {
+      "ps": "اډه",
+      "baca": "aḍa",
+      "en": "station, stop"
+    },
+    {
+      "ps": "ټکټ",
+      "baca": "ṭikaṭ",
+      "en": "ticket"
+    },
+    {
+      "ps": "سفر",
+      "baca": "safar",
+      "en": "trip, journey"
+    },
+    {
+      "ps": "متره",
+      "baca": "metra",
+      "en": "meter"
+    },
+    {
+      "ps": "شاوخوا",
+      "baca": "shāwkhwā",
+      "en": "about, approximately"
+    },
+    {
+      "ps": "ښکاره",
+      "baca": "ṣkāra",
+      "en": "visible, clear"
+    },
+    {
+      "ps": "سمدلاسه",
+      "baca": "samdlāsa",
+      "en": "at once, right away"
+    },
+    {
+      "ps": "ورورجان",
+      "baca": "wrorjān",
+      "en": "dear brother (greeting)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Pashto.",
+      "items": [
+        "Excuse me, can I ask you something?",
+        "Where is the park?",
+        "How do I get to the airport?",
+        "How far is it?",
+        "I'm new here."
+      ]
+    },
+    {
+      "prompt": "Complete the directions.",
+      "items": [
+        "مخ ته ____. (go)",
+        "ښي لور ته ____. (turn)",
+        "کیڼ لور ته ____. (turn)",
+        "د جومات تر څنګه ____. (go past)",
+        "بېرته ____. (turn back)"
+      ]
+    },
+    {
+      "prompt": "Name the place in Pashto.",
+      "items": [
+        "hospital",
+        "pharmacy",
+        "bank",
+        "mosque",
+        "restroom"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "دی / چېرته / باغ / ؟",
+        "شه / ولاړ / ته / مخ",
+        "وګرځه / ته / لور / ښي",
+        "نیسي / وخت / څومره / ؟",
+        "یم / نوی / دلته / زه"
+      ]
+    }
+  ],
+  "answers": [
+    "بخښنه غواړم، یوه پوښتنه لرم. — باغ چېرته دی؟ — هوایي ډګر ته څنګه ولاړ شم؟ — څومره لرې دی؟ — زه دلته نوی یم.",
+    "ولاړ شه — وګرځه — وګرځه — تېر شه — وګرځه",
+    "روغتون — دواخانه — بانک — جومات — تشناب",
+    "باغ چېرته دی؟ — مخ ته ولاړ شه. — ښي لور ته وګرځه. — څومره وخت نیسي؟ — زه دلته نوی یم."
+  ],
+  "wave": "Picture the route from your home to work or school, then say the directions in Pashto as if to a stranger. Four sentences are enough, and if you get stuck at a turn, that's the word to add tomorrow."
+}

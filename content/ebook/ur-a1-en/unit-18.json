@@ -1,0 +1,500 @@
+{
+  "title": "The body, feeling sick, and seeing a doctor",
+  "title_target": "صحت اور بیماری",
+  "goal": "Name parts of the body, describe symptoms to a doctor, and use the illness pattern where the subject isn't \"I\".",
+  "bekal": [
+    "naming fifteen parts of the body",
+    "describing pain with درد ہے and لگ رہا ہے",
+    "understanding simple instructions from a doctor and a pharmacist"
+  ],
+  "dialogs": [
+    {
+      "title": "مکالمہ — ڈاکٹر کے پاس",
+      "intro": "Budi has been feeling unwell since last night. Ayesha takes him to the clinic near campus.",
+      "lines": [
+        {
+          "speaker": "ڈاکٹر:",
+          "text": "آئیے، بیٹھیے۔ کیا تکلیف ہے؟",
+          "baca": "āiye, baiṭhiye. kyā taklīf hai?",
+          "id": "Come in, have a seat. What's the trouble?",
+          "literal": "come-please, sit-please. what trouble is?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "مجھے سر درد ہے اور بخار بھی ہے۔",
+          "baca": "mujhe sar dard hai aur buḵār bhī hai.",
+          "id": "I have a headache, and a fever too.",
+          "literal": "to-me head pain is and fever also is."
+        },
+        {
+          "speaker": "ڈاکٹر:",
+          "text": "کب سے؟",
+          "baca": "kab se?",
+          "id": "Since when?",
+          "literal": "when since?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "کل رات سے۔ مجھے نیند بھی نہیں آئی۔",
+          "baca": "kal rāt se. mujhe nīnd bhī nahīñ āī.",
+          "id": "Since last night. I couldn't sleep either.",
+          "literal": "yesterday night since. to-me sleep also not came(f)."
+        },
+        {
+          "speaker": "ڈاکٹر:",
+          "text": "گلے میں درد ہے؟",
+          "baca": "gale meñ dard hai?",
+          "id": "Does your throat hurt?",
+          "literal": "throat in pain is?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "جی، تھوڑا۔ اور کھانسی بھی ہے۔",
+          "baca": "jī, thoṛā. aur khāñsī bhī hai.",
+          "id": "Yes, a little. And I have a cough too.",
+          "literal": "yes, a-little. and cough also is."
+        },
+        {
+          "speaker": "ڈاکٹر:",
+          "text": "منہ کھولیے۔ ہاں… گلا سرخ ہے۔ آپ نے کل کیا کھایا؟",
+          "baca": "muñh kholiye. hāñ… galā surḵ hai. āp ne kal kyā khāyā?",
+          "id": "Open your mouth. Yes… your throat is red. What did you eat yesterday?",
+          "literal": "mouth open-please. yes… throat red is. you (ne) yesterday what eaten?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "باہر سے کھانا کھایا تھا۔ بہت تیز تھا۔",
+          "baca": "bāhar se khānā khāyā thā. bahut tez thā.",
+          "id": "I'd eaten food from outside. It was very spicy.",
+          "literal": "outside from food eaten had. very spicy was."
+        },
+        {
+          "speaker": "ڈاکٹر:",
+          "text": "کوئی خطرے کی بات نہیں۔ یہ دوا لیجیے، تین دن۔",
+          "baca": "koī ḵatre kī bāt nahīñ. ye davā lījiye, tīn din.",
+          "id": "It's nothing serious. Take this medicine for three days.",
+          "literal": "any danger of(f) matter not. this medicine take-please, three days."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "کھانے سے پہلے یا بعد میں؟",
+          "baca": "khāne se pahle yā bād meñ?",
+          "id": "Before or after meals?",
+          "literal": "food from before or after in?"
+        },
+        {
+          "speaker": "ڈاکٹر:",
+          "text": "کھانے کے بعد۔ اور آرام کیجیے، پانی زیادہ پیجیے۔",
+          "baca": "khāne ke bād. aur ārām kījiye, pānī zyāda pījiye.",
+          "id": "After meals. And get some rest, drink plenty of water.",
+          "literal": "food of after. and rest do-please, water more drink-please."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "بہت شکریہ ڈاکٹر صاحب۔",
+          "baca": "bahut shukriya ḍākṭar sāhab.",
+          "id": "Thank you so much, Doctor.",
+          "literal": "very thanks doctor sir."
+        }
+      ],
+      "notes": [
+        "**Pain is expressed with the dative pattern, not with \"I hurt\".** مجھے سر درد ہے is literally \"to me, head pain is\". The subject of the sentence is **the pain**, not the person. A form that's also correct and a bit more detailed: میرے سر میں درد ہے (\"there's pain in my head\").",
+        "**Doctors use the word تکلیف to open an examination.** کیا تکلیف ہے؟ = \"what's the trouble?\", literally \"what's the hardship?\". The same word is used for putting someone out: تکلیف کے لیے معذرت (\"sorry for the trouble\"), آپ کو تکلیف ہوئی (\"I've put you to trouble\").",
+        "**Fever, cough, and a cold each have their own noun.** The words بخار (fever) · کھانسی (cough) · زکام (cold) · قے (vomiting) · دست (diarrhea). All are used with ہے, and the subject is مجھے — مجھے بخار ہے · مجھے کھانسی ہے · مجھے زکام ہے.",
+        "**The phrase کب سے means \"since when\", and the answer uses سے too.** کل سے (since yesterday), دو دن سے (for two days), صبح سے (since this morning). The postposition سے here means \"since\" — its fourth job, after \"from\", \"with\", and \"than\".",
+        "**The form کھایا تھا means \"had eaten\".** Adding تھا after a past verb marks that the event happened even **earlier** than the event being told — just like the English past perfect. You don't need to use it actively yet, but recognizing it will often help.",
+        "**The word تیز means both \"fast\" and \"spicy\".** کھانا تیز ہے = \"the food is spicy\". Related words to keep apart: گرم (hot in temperature), مصالحہ دار (heavily spiced), کڑوا (bitter), میٹھا (sweet), نمکین (salty), کھٹا (sour)."
+      ],
+      "grammars": [
+        {
+          "title": "Describing your symptoms",
+          "body": [
+            "There are two patterns, and both are correct. The first is shorter and more common; the second is more detailed and names the body part as a place."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "… کو … درد ہے",
+                "مجھے سر درد ہے۔",
+                "I have a headache."
+              ],
+              [
+                "… کے … میں درد ہے",
+                "میرے پیٹ میں درد ہے۔",
+                "I have a stomachache."
+              ],
+              [
+                "… کو … ہے",
+                "مجھے بخار ہے۔",
+                "I have a fever."
+              ],
+              [
+                "… کو … لگ رہا ہے",
+                "مجھے ٹھنڈ لگ رہی ہے۔",
+                "I feel cold."
+              ],
+              [
+                "… کی طبیعت …",
+                "میری طبیعت ٹھیک نہیں۔",
+                "I'm not feeling well."
+              ],
+              [
+                "… کو … آ رہا ہے",
+                "مجھے چکر آ رہے ہیں۔",
+                "I feel dizzy."
+              ]
+            ]
+          },
+          "after": [
+            "The sentence you'll need most, and the one to memorize whole: **میری طبیعت ٹھیک نہیں ہے۔** (\"I'm not feeling well\"). It covers every complaint at once and is always understood."
+          ]
+        },
+        {
+          "title": "Parts of the body",
+          "body": [
+            "Body parts always use the ordinary possessive — میرا سر · میری آنکھیں — never کے پاس. The rule from unit 17 applies fully."
+          ],
+          "table": {
+            "head": [
+              "Urdu",
+              "Say it",
+              "Meaning",
+              "Gender"
+            ],
+            "rows": [
+              [
+                "سر",
+                "sar",
+                "head",
+                "m"
+              ],
+              [
+                "آنکھ",
+                "āñkh",
+                "eye",
+                "f"
+              ],
+              [
+                "ناک",
+                "nāk",
+                "nose",
+                "f"
+              ],
+              [
+                "کان",
+                "kān",
+                "ear",
+                "m"
+              ],
+              [
+                "منہ",
+                "muñh",
+                "mouth",
+                "m"
+              ],
+              [
+                "دانت",
+                "dāñt",
+                "tooth",
+                "m"
+              ],
+              [
+                "گلا",
+                "galā",
+                "throat",
+                "m"
+              ],
+              [
+                "ہاتھ",
+                "hāth",
+                "hand",
+                "m"
+              ],
+              [
+                "پاؤں",
+                "pāoñ",
+                "foot, leg",
+                "m"
+              ],
+              [
+                "پیٹ",
+                "peṭ",
+                "stomach",
+                "m"
+              ],
+              [
+                "دل",
+                "dil",
+                "heart (also feelings)",
+                "m"
+              ],
+              [
+                "کمر",
+                "kamar",
+                "lower back, waist",
+                "f"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Body parts that come in pairs are usually **plural**: میری آنکھیں دکھ رہی ہیں (\"my eyes hurt\"), میرے پاؤں تھک گئے (\"my feet are tired\"). Saying them in the singular sounds as if only one side has a problem — which is sometimes exactly what you mean.",
+            "The word دل does two jobs, just as \"heart\" does in English: the organ and the feelings. میرا دل نہیں چاہتا = \"I don't feel like it\", literally \"my heart doesn't want\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "At the clinic and the pharmacy",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Urdu",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ڈاکٹر",
+              "ḍākṭar",
+              "doctor"
+            ],
+            [
+              "اسپتال",
+              "ispatāl",
+              "hospital"
+            ],
+            [
+              "دوا",
+              "davā",
+              "medicine"
+            ],
+            [
+              "گولی",
+              "golī",
+              "tablet, pill"
+            ],
+            [
+              "انجکشن",
+              "injakshan",
+              "injection"
+            ],
+            [
+              "بخار",
+              "buḵār",
+              "fever"
+            ],
+            [
+              "کھانسی",
+              "khāñsī",
+              "cough"
+            ],
+            [
+              "زکام",
+              "zukām",
+              "cold (illness)"
+            ],
+            [
+              "درد",
+              "dard",
+              "pain, ache"
+            ],
+            [
+              "تکلیف",
+              "taklīf",
+              "trouble, complaint"
+            ],
+            [
+              "آرام",
+              "ārām",
+              "rest"
+            ],
+            [
+              "بیمار",
+              "bīmār",
+              "sick, ill"
+            ],
+            [
+              "صحت",
+              "sehat",
+              "health"
+            ],
+            [
+              "خطرہ",
+              "ḵatra",
+              "danger"
+            ],
+            [
+              "نسخہ",
+              "nusḵa",
+              "prescription"
+            ],
+            [
+              "ٹیسٹ",
+              "ṭesṭ",
+              "test, checkup"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Eight sentences for the clinic",
+          "items": [
+            "Opening: میری طبیعت ٹھیک نہیں ہے۔ (\"I'm not feeling well\") · مجھے دو دن سے بخار ہے۔ (\"I've had a fever for two days\")",
+            "Pointing to the problem: مجھے یہاں درد ہے۔ (\"it hurts here\") — while pointing, and it's the most useful sentence there is.",
+            "Asking about medicine: یہ دوا کیسے لینی ہے؟ (\"how should I take this medicine?\") · دن میں کتنی بار؟ (\"how many times a day?\") · کھانے سے پہلے یا بعد میں؟",
+            "Wishing well: **جلد صحت یاب ہوں۔** (\"get well soon\") — a sentence you'll **receive** from everyone, so it's good to know how to say it back. A shorter and very common one: اللہ شفا دے۔"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ur": "درد",
+      "baca": "dard",
+      "en": "pain, ache"
+    },
+    {
+      "ur": "بخار",
+      "baca": "buḵār",
+      "en": "fever"
+    },
+    {
+      "ur": "کھانسی",
+      "baca": "khāñsī",
+      "en": "cough"
+    },
+    {
+      "ur": "دوا",
+      "baca": "davā",
+      "en": "medicine"
+    },
+    {
+      "ur": "بیمار",
+      "baca": "bīmār",
+      "en": "sick, ill"
+    },
+    {
+      "ur": "طبیعت",
+      "baca": "tabī'at",
+      "en": "health, how one feels"
+    },
+    {
+      "ur": "سر",
+      "baca": "sar",
+      "en": "head"
+    },
+    {
+      "ur": "پیٹ",
+      "baca": "peṭ",
+      "en": "stomach"
+    },
+    {
+      "ur": "گلا",
+      "baca": "galā",
+      "en": "throat"
+    },
+    {
+      "ur": "آنکھ",
+      "baca": "āñkh",
+      "en": "eye"
+    },
+    {
+      "ur": "ہاتھ",
+      "baca": "hāth",
+      "en": "hand"
+    },
+    {
+      "ur": "دل",
+      "baca": "dil",
+      "en": "heart; feelings"
+    },
+    {
+      "ur": "آرام",
+      "baca": "ārām",
+      "en": "rest"
+    },
+    {
+      "ur": "تکلیف",
+      "baca": "taklīf",
+      "en": "trouble, complaint"
+    },
+    {
+      "ur": "صحت",
+      "baca": "sehat",
+      "en": "health"
+    },
+    {
+      "ur": "کب سے",
+      "baca": "kab se",
+      "en": "since when"
+    },
+    {
+      "ur": "تیز",
+      "baca": "tez",
+      "en": "spicy; fast"
+    },
+    {
+      "ur": "کھولنا",
+      "baca": "kholnā",
+      "en": "to open"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Urdu. Remember: the subject is مجھے.",
+      "items": [
+        "I have a headache.",
+        "I have a fever.",
+        "I have a stomachache.",
+        "I have a cough.",
+        "I'm not feeling well."
+      ]
+    },
+    {
+      "prompt": "Name the body part described.",
+      "items": [
+        "What you see with.",
+        "What you hear with.",
+        "What hurts if you eat too much.",
+        "What hurts if you shout all day.",
+        "What you walk with."
+      ]
+    },
+    {
+      "prompt": "Complete the conversation at the clinic.",
+      "items": [
+        "The doctor asks what's wrong: ____؟",
+        "You say you've had a fever since yesterday: ____",
+        "You ask how to take the medicine: ____؟",
+        "You ask whether it's before or after meals: ____؟",
+        "You thank the doctor: ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ہے / درد / مجھے / سر",
+        "ہے / بخار / بھی / مجھے",
+        "ہے / نہیں / طبیعت / میری / ٹھیک",
+        "لیجیے / دوا / یہ",
+        "کیجیے / آرام / اور"
+      ]
+    }
+  ],
+  "answers": [
+    "مجھے سر درد ہے۔ — مجھے بخار ہے۔ — میرے پیٹ میں درد ہے۔ — مجھے کھانسی ہے۔ — میری طبیعت ٹھیک نہیں ہے۔",
+    "آنکھ — کان — پیٹ — گلا — پاؤں",
+    "کیا تکلیف ہے — مجھے کل سے بخار ہے۔ — یہ دوا کیسے لینی ہے — کھانے سے پہلے یا بعد میں — بہت شکریہ ڈاکٹر صاحب۔",
+    "مجھے سر درد ہے۔ — مجھے بھی بخار ہے۔ — میری طبیعت ٹھیک نہیں ہے۔ — یہ دوا لیجیے۔ — اور آرام کیجیے۔"
+  ],
+  "wave": "Memorize one sentence: میری طبیعت ٹھیک نہیں ہے۔ It's enough to start a conversation with any doctor in Pakistan."
+}

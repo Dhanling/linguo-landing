@@ -1,0 +1,590 @@
+{
+  "title": "Verbs and affixes",
+  "title_target": "Buat, buatkan, dibuat, kena buat",
+  "goal": "Use Malay prefixes and suffixes in the right places — a small, regular system that does the work English does with \"-ed\", \"by\", \"for someone\" and \"have to\".",
+  "bekal": [
+    "know when Malay uses the affixed form of a verb and when the bare root",
+    "use *kena* as the everyday passive",
+    "recognize the everyday verbs Malaysians actually use"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — An assignment that's almost late",
+      "intro": "Saturday night in the college reading room. Sarah and Haziq are finishing an assignment that has to be handed in tomorrow morning.",
+      "lines": [
+        {
+          "speaker": "Haziq:",
+          "text": "Awak dah siapkan tugasan tu?",
+          "id": "Have you finished that assignment?",
+          "literal": "you already finish-kan assignment that?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Belum habis. Saya kena tulis dua muka surat lagi.",
+          "id": "Not yet. I still have to write two more pages.",
+          "literal": "not-yet finished. I must write two face letter more."
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Bila kena hantar?",
+          "id": "When does it have to be handed in?",
+          "literal": "when must send?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Esok pukul sepuluh pagi. Kena muat naik kat portal.",
+          "id": "Tomorrow at ten in the morning. It has to be uploaded to the portal.",
+          "literal": "tomorrow o'clock ten morning. must load up at portal."
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Kalau lambat, markah kena potong.",
+          "id": "If it's late, marks get deducted.",
+          "literal": "if late, marks get cut."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Saya tahu. Boleh awak semakkan sekejap?",
+          "id": "I know. Could you check it for me for a moment?",
+          "literal": "I know. can you check-kan moment?"
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Boleh. Hantar kat WhatsApp saya.",
+          "id": "Sure. Send it to my WhatsApp.",
+          "literal": "can. send at WhatsApp my."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Dah hantar. Awak tengok bahagian kesimpulan tu.",
+          "id": "Sent. Look at the conclusion.",
+          "literal": "already send. you look part conclusion that."
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Hmm. Ayat ni panjang sangat. Cuba pendekkan.",
+          "id": "Hmm. This sentence is too long. Try shortening it.",
+          "literal": "hmm. sentence this long very. try short-kan."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Betul juga. Saya betulkan sekarang.",
+          "id": "You're right. I'll fix it now.",
+          "literal": "right also. I right-kan now."
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Lepas tu simpan dalam PDF. Portal tak terima Word.",
+          "id": "Then save it as a PDF. The portal doesn't accept Word.",
+          "literal": "after that save in PDF. portal not accept Word."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Nasib baik awak beritahu. Terima kasih banyak!",
+          "id": "Lucky you told me. Thanks so much!",
+          "literal": "fate good you tell. receive love many!"
+        }
+      ],
+      "notes": [
+        "**Muka surat** (\"face of the letter\") = page. *Dua muka surat* = two pages. ⚠️ Malay *halaman* means a yard or garden (in Indonesian it means \"page\") — a trap that turns up in academic life.",
+        "**Hantar** means both **send** AND **take someone somewhere**. *Hantar tugasan* = hand in an assignment, *hantar saya balik* = take me home. Context decides.",
+        "**Markah** = marks, grades (from English *mark*). *Markah penuh* = full marks.",
+        "**Semak** = to check. *Semakkan* = check (for someone). You'll see it everywhere: *semak baki* (check balance), *semak keputusan* (check results).",
+        "**Ayat** means **sentence** — and also a verse of the Quran. *Ayat ni panjang sangat* = \"this sentence is too long\". Context tells them apart."
+      ],
+      "grammars": [
+        {
+          "title": "Affixes: a small kit that builds most words",
+          "body": [
+            "Malay builds words by adding a few prefixes and suffixes to a root, the way English turns *write* into *writer* and *writing*. The system is regular, and the table covers what you need at A1. In everyday speech, many affixes are simply dropped — but you need to recognize them for reading."
+          ],
+          "table": {
+            "head": [
+              "Affix",
+              "Use",
+              "Malay examples",
+              "Note"
+            ],
+            "rows": [
+              [
+                "**me(N)-**",
+                "active verb",
+                "menulis, membaca, menghantar",
+                "Often dropped in speech: *saya tulis*, *dia baca*."
+              ],
+              [
+                "**ber-**",
+                "having, doing (intransitive)",
+                "berjalan, berkahwin, berniaga",
+                "Very productive: *berhampiran*, *bersiar-siar*."
+              ],
+              [
+                "**di-**",
+                "passive (\"is …-ed\")",
+                "ditulis, dihantar",
+                "Speech prefers *kena*."
+              ],
+              [
+                "**-kan**",
+                "causing / doing for someone",
+                "betulkan, pendekkan, semakkan",
+                "⚠️ Very common in Malay."
+              ],
+              [
+                "**-i**",
+                "repeated / aimed at something",
+                "menandatangani, melalui",
+                "Less common."
+              ],
+              [
+                "**pe(N)-**",
+                "doer / tool (-er)",
+                "penulis, penyapu, pemandu",
+                "writer, broom, driver."
+              ],
+              [
+                "**pe(N)-…-an**",
+                "process (-ing, -tion)",
+                "penulisan, pentadbiran",
+                "⚠️ Malay loves these long forms."
+              ],
+              [
+                "**ke-…-an**",
+                "state, matter (-ness, -ty)",
+                "kesihatan, kecemasan, keselamatan",
+                "health, emergency, safety."
+              ],
+              [
+                "**-an**",
+                "result, thing (-ment)",
+                "tugasan, jemputan, cadangan",
+                "⚠️ assignment, invitation, suggestion."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **The suffix *-kan* is a hallmark of Malay.** It makes something happen (\"make short\" → *pendekkan* = shorten) or does something for someone: *betulkan* (correct, fix), *semakkan* (check for someone), *hantarkan*, *tolongkan*, *bukakan* (open for someone), *ambilkan* (fetch for someone), *belikan* (buy for someone). If you want one habit that quickly makes your sentences sound Malay, this is it.",
+            "⚠️ **Nouns in *-an* are very productive too:** *tugasan* (assignment), *jemputan* (invitation), *cadangan* (suggestion), *tempahan* (booking), *bayaran* (payment), *muatan* (load), *simpanan* (savings), *tuntutan* (claim). Find the root and you can often guess the meaning."
+          ]
+        },
+        {
+          "title": "*Kena* — the passive people really use",
+          "body": [
+            "Malay has a passive with *di-* (*ditulis* = is written), used fully in writing. But in conversation Malaysians far more often use **kena** (\"get\") — much like English \"get\" in \"get fined\", \"get told off\"."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Example",
+              "English"
+            ],
+            "rows": [
+              [
+                "**kena** + root (passive)",
+                "Markah kena potong.",
+                "The marks get cut."
+              ],
+              [
+                "**kena** + root (obligation)",
+                "Saya kena pergi.",
+                "I have to go."
+              ],
+              [
+                "**kena** + noun (be hit by)",
+                "Dia kena denda.",
+                "He got a fine."
+              ],
+              [
+                "**di-** (written passive)",
+                "Tugasan dihantar semalam.",
+                "The assignment was sent yesterday."
+              ],
+              [
+                "**ter-** (accidental)",
+                "Saya terjatuh.",
+                "I fell (by accident)."
+              ],
+              [
+                "**kena marah**",
+                "Saya kena marah.",
+                "I got told off."
+              ]
+            ]
+          },
+          "after": [
+            "Note that *kena* carries **two loads at once**: passive and obligation. *Saya kena bayar* can mean \"I got charged\" — but \"I have to pay\" is far more common. Context separates them, and in practice it's rarely ambiguous.",
+            "⚠️ If you **don't** use *kena* in Malaysia, your sentences sound bookish. *Markah dipotong* is correct; *markah kena potong* is what people say."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Everyday verbs to know",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These are the verbs you'll hear most in Malaysian conversation, in rough order of how often you'll need them."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Malay",
+            "English",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**tengok**",
+              "to look, to watch",
+              "Nak tengok wayang tak?"
+            ],
+            [
+              "**cakap**",
+              "to speak, to say",
+              "Dia cakap apa?"
+            ],
+            [
+              "**hantar**",
+              "to send; to take (someone)",
+              "Hantar e-mel tu."
+            ],
+            [
+              "**semak**",
+              "to check",
+              "Semak baki akaun."
+            ],
+            [
+              "**guna / gunakan**",
+              "to use",
+              "Guna pen biru."
+            ],
+            [
+              "**buat**",
+              "to do, to make; for",
+              "Awak buat apa?"
+            ],
+            [
+              "**balik**",
+              "to go home, to return",
+              "Saya nak balik."
+            ],
+            [
+              "**jalan**",
+              "to walk; to set off",
+              "Jom jalan!"
+            ],
+            [
+              "**duduk**",
+              "to sit; to live",
+              "Saya duduk kat KL."
+            ],
+            [
+              "**bagi**",
+              "to give",
+              "Bagi saya satu."
+            ],
+            [
+              "**letak**",
+              "to put, to place",
+              "Letak kat meja."
+            ],
+            [
+              "**ambik / ambil**",
+              "to take, to fetch",
+              "Ambik kunci tu."
+            ],
+            [
+              "**basuh**",
+              "to wash (clothes, hands)",
+              "Basuh baju."
+            ],
+            [
+              "**cuci**",
+              "to clean (cars, dishes)",
+              "Cuci kereta."
+            ],
+            [
+              "**tolak**",
+              "to push; to subtract",
+              "Tolak sepuluh peratus."
+            ],
+            [
+              "**naik / turun**",
+              "to go up, get on / go down, get off",
+              "Naik LRT."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Three that catch learners out: **siap** means **finished, ready** (*dah siap?* = done yet?), **ingat** means both \"remember\" and **think, assume** (*Saya ingat awak dah balik* = \"I thought you'd gone home\"), and **rosak** means broken. All three come up every day."
+        },
+        {
+          "type": "kotak",
+          "title": "Commands and invitations",
+          "items": [
+            "**Jom!** — Let's go! Come on! (most common)",
+            "**Marilah.** — Come on, let's. (more formal)",
+            "**Cubalah.** — Go on, try it.",
+            "**Tunggu sekejap.** — Wait a moment.",
+            "**Tolong …** — Please … (asking for help)",
+            "**Jangan …** — Don't …",
+            "**Sila …** — Please … (inviting)",
+            "**Usah risau.** — Don't worry. (*usah* = no need, rather formal)"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Helper words: already, not yet, -ing, will",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Malay verbs never change form for tense: *makan* is eat, ate, eaten and eating. Time is shown with small helper words placed before the verb — and spoken Malay has short Malaysian forms for most of them."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Formal",
+            "Spoken",
+            "English",
+            "Example"
+          ],
+          "rows": [
+            [
+              "sudah",
+              "**dah**",
+              "already, have done",
+              "Saya dah makan."
+            ],
+            [
+              "belum",
+              "**belum**",
+              "not yet",
+              "Belum lagi."
+            ],
+            [
+              "sedang",
+              "**tengah**",
+              "-ing (in progress)",
+              "Dia tengah tidur."
+            ],
+            [
+              "akan",
+              "**nak**",
+              "will, going to",
+              "Saya nak balik."
+            ],
+            [
+              "masih",
+              "**lagi**",
+              "still",
+              "Dia ada lagi kat sana."
+            ],
+            [
+              "pernah",
+              "**pernah**",
+              "have ever",
+              "Saya pernah ke Penang."
+            ],
+            [
+              "baru sahaja",
+              "**baru je**",
+              "have just",
+              "Dia baru je keluar."
+            ],
+            [
+              "hampir",
+              "**dekat**",
+              "almost",
+              "Dah dekat siap."
+            ],
+            [
+              "tidak akan",
+              "**takkan**",
+              "won't, never",
+              "Takkan saya lupa."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Tengah** as the \"-ing\" marker is one of the strongest signs of spoken Malaysian Malay. *Saya tengah makan* = \"I'm eating\". *Tengah* still also means \"middle\" (*tengah hari* = midday, *di tengah* = in the middle); position tells you which: before a verb = in the middle of doing it."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Lagi** has an extra meaning in Malay: **still**. *Dia lagi kat sana* = \"he's still there\". Elsewhere *lagi* means \"more, again\" (*satu lagi* = one more). (In Indonesian, *lagi* before a verb means \"-ing\" — so if you've met Indonesian, beware: a Malaysian saying *dia lagi kat rumah* means \"she's still at home\".)"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ms": "tengok",
+      "baca": "teh-ngohk",
+      "en": "to look, to watch"
+    },
+    {
+      "ms": "cakap",
+      "baca": "chah-kahp",
+      "en": "to speak, to say"
+    },
+    {
+      "ms": "hantar",
+      "baca": "hahn-tah",
+      "en": "to send; to take (someone)"
+    },
+    {
+      "ms": "semak",
+      "baca": "suh-mahk",
+      "en": "to check ⚠️"
+    },
+    {
+      "ms": "bagi",
+      "baca": "bah-gee",
+      "en": "to give"
+    },
+    {
+      "ms": "basuh",
+      "baca": "bah-sooh",
+      "en": "to wash"
+    },
+    {
+      "ms": "tempah",
+      "baca": "tuhm-pahh",
+      "en": "to book, to order"
+    },
+    {
+      "ms": "rosak",
+      "baca": "roh-sahk",
+      "en": "broken"
+    },
+    {
+      "ms": "siap",
+      "baca": "see-ahp",
+      "en": "finished, ready ⚠️"
+    },
+    {
+      "ms": "balik",
+      "baca": "bah-leek",
+      "en": "to go home, to return"
+    },
+    {
+      "ms": "kena",
+      "baca": "kuh-nuh",
+      "en": "must; to get (passive) ⚠️"
+    },
+    {
+      "ms": "tengah",
+      "baca": "tuh-ngahh",
+      "en": "in the middle of (-ing) ⚠️"
+    },
+    {
+      "ms": "dah (sudah)",
+      "baca": "dahh",
+      "en": "already"
+    },
+    {
+      "ms": "lagi",
+      "baca": "lah-gee",
+      "en": "still; more, again ⚠️"
+    },
+    {
+      "ms": "takkan",
+      "baca": "tahk-kahn",
+      "en": "won't, will never"
+    },
+    {
+      "ms": "ayat",
+      "baca": "ah-yaht",
+      "en": "sentence ⚠️"
+    },
+    {
+      "ms": "muka surat",
+      "baca": "moo-kuh soo-raht",
+      "en": "page ⚠️"
+    },
+    {
+      "ms": "markah",
+      "baca": "mahr-kahh",
+      "en": "marks, grade"
+    },
+    {
+      "ms": "tugasan",
+      "baca": "too-gah-sahn",
+      "en": "assignment"
+    },
+    {
+      "ms": "nasib baik",
+      "baca": "nah-seeb bah-eek",
+      "en": "luckily, fortunately"
+    },
+    {
+      "ms": "betulkan",
+      "baca": "buh-tool-kahn",
+      "en": "to correct, to fix"
+    },
+    {
+      "ms": "muat naik / turun",
+      "baca": "moo-aht nah-eek / too-roon",
+      "en": "upload / download"
+    },
+    {
+      "ms": "usah",
+      "baca": "oo-sahh",
+      "en": "no need, don't"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the *-kan* form, as Malay likes to.",
+      "items": [
+        "fix, correct → ____",
+        "check (for someone) → ____",
+        "shorten → ____",
+        "send (for someone) → ____",
+        "open (for someone) → ____",
+        "buy (for someone) → ____"
+      ]
+    },
+    {
+      "prompt": "Replace the *di-* passive with *kena*, as people say it in Malaysia.",
+      "items": [
+        "Markah saya dipotong.",
+        "Saya dimarahi cikgu.",
+        "Dia didenda lima puluh ringgit.",
+        "Tugasan itu harus dikirim esok.",
+        "Kereta saya diambil orang."
+      ]
+    },
+    {
+      "prompt": "Translate into Malay (use spoken forms).",
+      "items": [
+        "Are you done?",
+        "I'm eating.",
+        "She's still at home.",
+        "I have to go now.",
+        "Lucky you told me.",
+        "This sentence is too long."
+      ]
+    },
+    {
+      "prompt": "What does the bold word mean in Malaysia?",
+      "items": [
+        "Dah **siap** ke?",
+        "Saya **ingat** awak dah balik.",
+        "**Ayat** ni panjang sangat.",
+        "Tolong **semak** dulu.",
+        "Kereta saya **rosak**."
+      ]
+    }
+  ],
+  "answers": [
+    "betulkan — semakkan — pendekkan — hantarkan — bukakan — belikan",
+    "Markah saya kena potong. — Saya kena marah dengan cikgu. — Dia kena denda lima puluh ringgit. — Tugasan tu kena hantar esok. — Kereta saya kena ambil orang.",
+    "Awak dah siap? — Saya tengah makan. — Dia lagi kat rumah. — Saya kena pergi sekarang. — Nasib baik awak beritahu. — Ayat ni panjang sangat.",
+    "finished, ready — thought, assumed — sentence — check — broken"
+  ]
+}

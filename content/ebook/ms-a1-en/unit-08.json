@@ -1,0 +1,549 @@
+{
+  "title": "Asking questions",
+  "title_target": "Macam mana nak tanya?",
+  "goal": "Build questions with the full Malay toolkit — including three question markers that decide whether your question sounds formal, casual or blunt.",
+  "bekal": [
+    "use *apa, siapa, mana, bila, kenapa, macam mana, berapa* in Malay word order",
+    "choose between *-kah*, *ke* and tone of voice to mark a question",
+    "soften questions so they don't sound like an interrogation"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Questions at the college counter",
+      "intro": "Sarah goes to the college office to collect her room key. The clerk at the counter asks her one question after another, and Sarah asks some back.",
+      "lines": [
+        {
+          "speaker": "Kerani:",
+          "text": "Ya, boleh saya bantu?",
+          "id": "Yes, can I help you?",
+          "literal": "yes, can I help?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Saya nak ambil kunci bilik. Bilik dua belas.",
+          "id": "I'd like to collect my room key. Room twelve.",
+          "literal": "I want take key room. room two teen."
+        },
+        {
+          "speaker": "Kerani:",
+          "text": "Nama penuh siapa?",
+          "id": "Your full name?",
+          "literal": "name full who?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Sarah Amelia Putri.",
+          "id": "Sarah Amelia Putri.",
+          "literal": "Sarah Amelia Putri."
+        },
+        {
+          "speaker": "Kerani:",
+          "text": "Nombor matrik berapa?",
+          "id": "What's your student ID number?",
+          "literal": "number matric how-many?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Sekejap… S dua kosong lapan tiga empat.",
+          "id": "Just a moment… S two zero eight three four.",
+          "literal": "moment… S two zero eight three four."
+        },
+        {
+          "speaker": "Kerani:",
+          "text": "Adakah cik pelajar antarabangsa?",
+          "id": "Are you an international student, miss?",
+          "literal": "is-it miss student international?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Ya, saya dari Indonesia.",
+          "id": "Yes, I'm from Indonesia.",
+          "literal": "yes, I from Indonesia."
+        },
+        {
+          "speaker": "Kerani:",
+          "text": "Bila cik sampai Malaysia?",
+          "id": "When did you arrive in Malaysia, miss?",
+          "literal": "when miss arrive Malaysia?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Tiga hari lepas. Encik, kunci ni kena pulangkan bila?",
+          "id": "Three days ago. Sir, when do I have to return this key?",
+          "literal": "three day past. sir, key this must return when?"
+        },
+        {
+          "speaker": "Kerani:",
+          "text": "Hujung semester. Kalau hilang, kena denda lima puluh ringgit.",
+          "id": "At the end of the semester. If you lose it, there's a fifty-ringgit fine.",
+          "literal": "end semester. if lost, get fine five ten ringgit."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Kenapa mahal sangat?",
+          "id": "Why so expensive?",
+          "literal": "why expensive very?"
+        },
+        {
+          "speaker": "Kerani:",
+          "text": "Sebab kena tukar mangga pintu sekali. Jaga elok-elok ya.",
+          "id": "Because the door padlock has to be changed too. Take good care of it.",
+          "literal": "because must change padlock door together. guard well-well yes."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Baik. Terima kasih, encik.",
+          "id": "OK. Thank you, sir.",
+          "literal": "good. receive love, sir."
+        }
+      ],
+      "notes": [
+        "**Adakah** is the **formal** question marker, placed at the **start** of a sentence, a bit like \"Is it the case that…?\": *Adakah cik pelajar antarabangsa?* In everyday speech it's hardly ever used — people say *Cik pelajar antarabangsa ke?* You need to **recognize** it (it appears on forms, in letters and at official counters), but you don't have to use it.",
+        "**Antarabangsa** = international, literally \"between nations\" (*antara* + *bangsa*). Malay likes to build its own words: *sejagat* (global), *antarabangsa*. The airport sign *Ketibaan Antarabangsa* = International Arrivals.",
+        "**Kena** means **have to, must** — one of the most useful words in spoken Malay. *Kena pulangkan* = have to return it, *kena bayar* = have to pay, *saya kena pergi* = I have to go. It also means \"to be hit by, to get\" (*kena denda* = get a fine), and both senses live side by side.",
+        "**Sebab** = because, the everyday word. *Sebab kena tukar* = because it has to be changed. *Kerana* is also correct and more formal.",
+        "**Mangga** here isn't the fruit — in Malay *mangga* also means **padlock**. The fruit is *mangga* too, and context tells them apart. A small, fun trap."
+      ],
+      "grammars": [
+        {
+          "title": "Question words",
+          "body": [
+            "Malay questions are easier than English ones: you **don't swap** subject and verb, and there's no \"do/does/did\". The question word can go at the front or stay where the answer would be: *Awak nak apa?* = \"You want what?\" = What do you want?"
+          ],
+          "table": {
+            "head": [
+              "Malay",
+              "English",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**apa**",
+                "what",
+                "Awak nak apa?"
+              ],
+              [
+                "**siapa**",
+                "who",
+                "Siapa nama awak?"
+              ],
+              [
+                "**mana / kat mana**",
+                "where",
+                "Awak duduk kat mana?"
+              ],
+              [
+                "**ke mana**",
+                "where to",
+                "Nak ke mana?"
+              ],
+              [
+                "**dari mana**",
+                "where from",
+                "Awak dari mana?"
+              ],
+              [
+                "**bila**",
+                "when ⚠️",
+                "Bila awak sampai?"
+              ],
+              [
+                "**kenapa / mengapa**",
+                "why",
+                "Kenapa lambat?"
+              ],
+              [
+                "**macam mana**",
+                "how ⚠️",
+                "Macam mana nak pergi?"
+              ],
+              [
+                "**berapa**",
+                "how much, how many",
+                "Berapa harga ni?"
+              ],
+              [
+                "**yang mana**",
+                "which one",
+                "Yang mana punya awak?"
+              ],
+              [
+                "**bukan?**",
+                "…, isn't it? / …, right?",
+                "Awak orang Indonesia, bukan?"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Bila** means **when** (a question). For \"if\" Malay uses **kalau**. (In Indonesian *bila* can also mean \"if\" — another subtle trap if you've met Indonesian.)",
+            "⚠️ **Macam mana** (\"like which\") is the everyday \"how\". *Bagaimana* is correct and appears in formal writing, but in speech almost everyone says *macam mana* — or, faster still, **camne**. *Macam mana nak pergi?* = \"How do I get there?\""
+          ]
+        },
+        {
+          "title": "Ways to turn a sentence into a question",
+          "body": [
+            "This is genuinely new. English changes the word order (\"You are…\" → \"Are you…?\"). Malay keeps the order and adds a marker — and which one you choose shows how formal you are."
+          ],
+          "table": {
+            "head": [
+              "Marker",
+              "Position",
+              "Example",
+              "Feel"
+            ],
+            "rows": [
+              [
+                "**Adakah / Apakah**",
+                "start of sentence",
+                "Adakah awak pelajar?",
+                "Very formal — letters, forms, news."
+              ],
+              [
+                "**-kah**",
+                "attached to the word in question",
+                "Betulkah? Awakkah yang datang?",
+                "Formal, alive in writing."
+              ],
+              [
+                "**ke**",
+                "end of sentence",
+                "Awak pelajar ke?",
+                "Conversational — what people actually use."
+              ],
+              [
+                "**tak**",
+                "end of sentence",
+                "Sedap tak?",
+                "Conversational, yes/no (\"or not?\")."
+              ],
+              [
+                "**kan?**",
+                "end of sentence",
+                "Sedap kan?",
+                "Asks for agreement (\"isn't it?\")."
+              ],
+              [
+                "**bukan?**",
+                "end of sentence",
+                "Awak dari Indonesia, bukan?",
+                "Formal form of *kan?*."
+              ]
+            ]
+          },
+          "after": [
+            "**Ke** and **tak** are the pair you'll hear most. The difference is subtle: *ke* asks **whether something is so** (*Awak pelajar ke?* = Are you a student?), while *tak* asks **yes or no, want or not** (*Nak makan tak?* = Want to eat or not?, *Ada duit tak?* = Got any money?). When in doubt, they can almost always be swapped without a mistake.",
+            "⚠️ Worth knowing: **a question with no softener can sound sharp.** *Awak buat apa?* in a flat voice can sound accusing. Add *-lah*, *ya* or a title, and the whole sentence changes: *Awak buat apa tu?* or *Encik nak ke mana ya?*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Answering: yes, no and in between",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Malay",
+            "English",
+            "Note"
+          ],
+          "rows": [
+            [
+              "**Ya.**",
+              "Yes.",
+              "—"
+            ],
+            [
+              "**Tak / Tidak.**",
+              "No.",
+              "*Tak* in speech."
+            ],
+            [
+              "**Bukan.**",
+              "No, it isn't.",
+              "For denying a noun."
+            ],
+            [
+              "**Belum.**",
+              "Not yet.",
+              "—"
+            ],
+            [
+              "**Dah.**",
+              "Already. / Yes, I have.",
+              "*Dah* from *sudah*."
+            ],
+            [
+              "**Ada.** / **Takde.**",
+              "There is. / There isn't.",
+              "—"
+            ],
+            [
+              "**Boleh.** / **Tak boleh.**",
+              "Can. / Can't.",
+              "—"
+            ],
+            [
+              "**Entah.**",
+              "Dunno.",
+              "Casual, a bit lazy."
+            ],
+            [
+              "**Tak tahu / tak pasti.**",
+              "I don't know / not sure.",
+              "—"
+            ],
+            [
+              "**Mungkin. / Kot.**",
+              "Maybe. / Probably.",
+              "*Kot* at the end of a sentence."
+            ],
+            [
+              "**Betul / Betul tu.**",
+              "Right / That's right.",
+              "Agreeing."
+            ],
+            [
+              "**Tak apa. / Takpe.**",
+              "It's OK. / No problem.",
+              "*Takpe* is very common."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "A Malay habit worth copying: **answer by repeating the verb**, not with \"yes\". Asked *Awak dah makan?* (Have you eaten?), the answer is *Dah* (already) — not *Ya*. Asked *Ada duit tak?*, the answer is *Ada* or *Takde*. It's like answering \"Have you eaten?\" with \"I have\"; in Malaysia it's practically the rule, and answering \"yes\" to everything sounds like a translation."
+        },
+        {
+          "type": "kotak",
+          "title": "Softening a no",
+          "items": [
+            "**Tak apalah.** — No thanks, it's fine. (turning down an offer politely)",
+            "**Lain kali ya.** — Another time, OK?",
+            "**Saya tengok dulu.** — I'm just looking. (in a shop, to avoid pressure)",
+            "**Nanti saya beritahu.** — I'll let you know.",
+            "**Susah sikit.** — That's a bit difficult. (a gentle no)",
+            "⚠️ Saying no directly (*Tak nak.* = Don't want) isn't wrong, but without *-lah* or a smile it sounds firm. Malaysians say no in very roundabout ways, and recognizing a soft no matters as much as being able to say one."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Questions you'll use every day",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Malay",
+            "English"
+          ],
+          "rows": [
+            [
+              "Siapa nama awak?",
+              "What's your name?"
+            ],
+            [
+              "Awak duduk kat mana?",
+              "Where do you live?"
+            ],
+            [
+              "Awak buat apa kat sini?",
+              "What are you doing here?"
+            ],
+            [
+              "Bila awak sampai?",
+              "When did you arrive?"
+            ],
+            [
+              "Berapa lama awak kat sini?",
+              "How long are you here for?"
+            ],
+            [
+              "Macam mana nak ke sana?",
+              "How do I get there?"
+            ],
+            [
+              "Kenapa lambat?",
+              "Why are you late?"
+            ],
+            [
+              "Berapa harga ni?",
+              "How much is this?"
+            ],
+            [
+              "Ada … tak?",
+              "Do you have …?"
+            ],
+            [
+              "Boleh tolong saya tak?",
+              "Can you help me?"
+            ],
+            [
+              "Awak dah makan?",
+              "Have you eaten?"
+            ],
+            [
+              "Nak ikut tak?",
+              "Want to come along?"
+            ],
+            [
+              "Ini apa?",
+              "What's this?"
+            ],
+            [
+              "Perkataan ni maksudnya apa?",
+              "What does this word mean?"
+            ],
+            [
+              "Betul ke?",
+              "Really?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "If you learn just one table from this unit, make it this one. These sentences cover most of the conversations you'll really need in your first week."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ms": "bila",
+      "baca": "bee-luh",
+      "en": "when ⚠️"
+    },
+    {
+      "ms": "kalau",
+      "baca": "kah-low",
+      "en": "if"
+    },
+    {
+      "ms": "macam mana",
+      "baca": "mah-chahm mah-nuh",
+      "en": "how"
+    },
+    {
+      "ms": "sebab / kerana",
+      "baca": "suh-bahb · kuh-rah-nuh",
+      "en": "because"
+    },
+    {
+      "ms": "adakah",
+      "baca": "ah-duh-kahh",
+      "en": "is it…? (formal question)"
+    },
+    {
+      "ms": "kena",
+      "baca": "kuh-nuh",
+      "en": "must; to be hit by ⚠️"
+    },
+    {
+      "ms": "antarabangsa",
+      "baca": "ahn-tah-ruh-bahng-suh",
+      "en": "international"
+    },
+    {
+      "ms": "ramai",
+      "baca": "rah-mai",
+      "en": "many (people), crowded ⚠️"
+    },
+    {
+      "ms": "takpe (tak apa)",
+      "baca": "tahk-peh",
+      "en": "never mind, it's OK"
+    },
+    {
+      "ms": "pulangkan",
+      "baca": "poo-lahng-kahn",
+      "en": "to return (something)"
+    },
+    {
+      "ms": "tukar",
+      "baca": "too-kah",
+      "en": "to change, to exchange"
+    },
+    {
+      "ms": "mangga",
+      "baca": "mahng-guh",
+      "en": "padlock; mango ⚠️"
+    },
+    {
+      "ms": "kerani",
+      "baca": "kuh-rah-nee",
+      "en": "clerk"
+    },
+    {
+      "ms": "nombor matrik",
+      "baca": "nohm-boh mah-treek",
+      "en": "student ID number"
+    },
+    {
+      "ms": "lambat",
+      "baca": "lahm-baht",
+      "en": "late; slow ⚠️"
+    },
+    {
+      "ms": "pasti",
+      "baca": "pahs-tee",
+      "en": "sure, certain"
+    },
+    {
+      "ms": "elok-elok",
+      "baca": "eh-lohk-eh-lohk",
+      "en": "carefully, properly"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right Malay question word.",
+      "items": [
+        "____ nama awak? (who)",
+        "____ awak sampai Malaysia? (when)",
+        "Awak duduk kat ____? (where)",
+        "____ nak ke stesen? (how)",
+        "____ harga baju ni? (how much)",
+        "____ awak lambat? (why)"
+      ]
+    },
+    {
+      "prompt": "Turn these formal questions into conversational ones (use *ke* or *tak*).",
+      "items": [
+        "Adakah awak pelajar baru?",
+        "Adakah makanan ini sedap?",
+        "Adakah awak mahu ikut?",
+        "Adakah ada wifi di sini?",
+        "Adakah awak faham?"
+      ]
+    },
+    {
+      "prompt": "Translate into Malay.",
+      "items": [
+        "Where do you live?",
+        "When did you arrive?",
+        "How do I get there?",
+        "Can you help me?",
+        "What does this word mean?",
+        "Where's the toilet?"
+      ]
+    },
+    {
+      "prompt": "Answer the Malay way — repeat the verb, don't say \"yes\".",
+      "items": [
+        "Awak dah makan? (already)",
+        "Ada duit tak? (there isn't)",
+        "Boleh tolong saya? (can)",
+        "Awak faham tak? (understand)",
+        "Nak ikut tak? (don't want)"
+      ]
+    }
+  ],
+  "answers": [
+    "Siapa — Bila — mana — Macam mana — Berapa — Kenapa",
+    "Awak pelajar baru ke? — Makanan ni sedap tak? — Awak nak ikut tak? — Ada wifi kat sini tak? — Awak faham tak?",
+    "Awak duduk kat mana? — Bila awak sampai? — Macam mana nak ke sana? — Boleh tolong saya tak? — Perkataan ni maksudnya apa? — Tandas kat mana ya?",
+    "Dah. — Takde. — Boleh. — Faham. — Tak nak."
+  ]
+}

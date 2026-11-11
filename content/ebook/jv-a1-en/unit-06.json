@@ -1,0 +1,625 @@
+{
+  "title": "Time, days and market days",
+  "title_target": "Jam pira saiki?",
+  "goal": "Tell the time, name the days and the parts of the day — then meet something no Western calendar has: five market days that rotate alongside the ordinary seven.",
+  "bekal": [
+    "tell the time, including the *setengah* (half) pattern that counts forward, not back",
+    "name the seven weekdays and the five market days",
+    "use *saiki*, *mau*, *mengko*, *wingi*, *sésuk* to place events in time"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Janjian karo Rini",
+      "intro": "Dian and Rini are planning a trip to Malioboro, Yogyakarta's famous shopping street. The talk is ngoko, fast and full of time words — exactly like making real plans.",
+      "lines": [
+        {
+          "speaker": "Dian:",
+          "text": "Rin, sésuk kowé sibuk?",
+          "id": "Rin, are you busy tomorrow?",
+          "literal": "Rin, tomorrow you busy?"
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Ésuk kuliah, awan kosong. Ana apa?",
+          "id": "Classes in the morning, free in the afternoon. What's up?",
+          "literal": "morning lecture, midday empty. there-is what?"
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Aku péngin nyang Malioboro. Melu, ora?",
+          "id": "I want to go to Malioboro. Coming or not?",
+          "literal": "I want to Malioboro. join, not?"
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Gelem. Jam pira?",
+          "id": "Sure. What time?",
+          "literal": "willing. hour how-many?"
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Jam telu piyé?",
+          "id": "How about three o'clock?",
+          "literal": "hour three how?"
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Rada awan. Setengah papat waé, luwih adhem.",
+          "id": "A bit too hot then. Let's say half past three, it's cooler.",
+          "literal": "rather midday. half four just, more cool."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Setengah papat kuwi jam telu luwih telung puluh, ta?",
+          "id": "\"Setengah papat\" means three thirty, right?",
+          "literal": "half four that hour three more three ten, right?"
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Bener. Setengah nuju ing jam papat, dudu setengahé jam papat.",
+          "id": "Right. It's halfway to four, not half of four.",
+          "literal": "right. half heading to hour four, not half-of hour four."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Oh, ngono. Sésuk dina apa, ya?",
+          "id": "Oh, I see. What day is it tomorrow?",
+          "literal": "oh, like-that. tomorrow day what, yeah?"
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Setu Kliwon. Pasar Beringharjo rame banget nèk Kliwon.",
+          "id": "Saturday Kliwon. Beringharjo Market is really busy on Kliwon.",
+          "literal": "Saturday Kliwon. market Beringharjo busy very if Kliwon."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Kliwon kuwi apa?",
+          "id": "What's Kliwon?",
+          "literal": "Kliwon that what?"
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Dina pasaran. Mengko tak critani ing dalan.",
+          "id": "A market day. I'll tell you about it on the way.",
+          "literal": "day market. later I tell-to-you on road."
+        }
+      ],
+      "notes": [
+        "**Ta** at the end of a sentence asks for confirmation, like English \"…, right?\" or \"isn't it?\". *Ya?* does the same job; in East Java *ta?* is said more emphatically.",
+        "**Gelem** means \"willing, happy to\"; krama *purun*. Keep it apart from *arep* (going to, will) and *péngin* (want). *Aku gelem* accepts an invitation; *aku arep* states a plan; *aku péngin* states a wish.",
+        "**Melu** means \"to come along, join\"; krama *ndhèrèk*. *Ndhèrèk* is also a polite phrase when passing through someone's home: *ndhèrèk langkung* (excuse me, may I pass).",
+        "**Nèk** is the short form of *menawa* (if, when), and the one you'll hear most. Krama *menawi*. You'll use it in almost every conversation: *nèk ana wektu* (if there's time), *nèk kesel* (if you're tired).",
+        "**Tak critani** — the *tak* + verb form from Unit 5, here with the ending *-i*, meaning \"to someone\". *Tak critani* = \"I'll tell you about it\". The endings *-i* and *-aké* are covered in Unit 18.",
+        "**Rame** means \"lively, crowded\", and in Java it is almost always positive — busy means alive, fun, full of people. Krama is also *ramé*."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time: the half that counts forward",
+          "body": [
+            "Telling the time in Javanese is simple — except for one thing you must get right now, because a mix-up here can make you an hour late."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Ngoko",
+              "Krama"
+            ],
+            "rows": [
+              [
+                "3:00",
+                "*jam telu*",
+                "*jam tiga*"
+              ],
+              [
+                "3:10",
+                "*jam telu luwih sepuluh*",
+                "*jam tiga langkung sedasa*"
+              ],
+              [
+                "3:15",
+                "*jam telu luwih seprapat*",
+                "*jam tiga langkung saprapat*"
+              ],
+              [
+                "**3:30**",
+                "***setengah papat***",
+                "***setengah sekawan***"
+              ],
+              [
+                "3:45",
+                "*jam papat kurang seprapat*",
+                "*jam sekawan kirang saprapat*"
+              ],
+              [
+                "4:00",
+                "*jam papat*",
+                "*jam sekawan*"
+              ],
+              [
+                "What time?",
+                "*Jam pira?*",
+                "*Jam pinten?*"
+              ],
+              [
+                "What time is it now?",
+                "*Saiki jam pira?*",
+                "*Sakmenika jam pinten?*"
+              ]
+            ]
+          },
+          "after": [
+            "**Setengah papat means 3:30, not 4:30.** Javanese counts *halfway towards* four, not \"half past\" four. Dutch and German work the same way, and the pattern came into Javanese in colonial times.",
+            "If you're unsure, avoid it altogether and just say the numbers: *jam telu telung puluh* (three thirty). That's correct, understood and risk-free. But you still need to **understand** *setengah* when others use it — and they will.",
+            "**Luwih** (past, literally \"more\") and **kurang** (to, literally \"less\") frame the minutes. Krama *langkung* and *kirang*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Weekdays, and the market days turning behind them",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The seven ordinary weekdays come from Arabic and Portuguese, like their Indonesian counterparts:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Ngoko",
+            "Krama",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Senèn*",
+              "*Senèn*",
+              "Monday"
+            ],
+            [
+              "*Selasa*",
+              "*Selasa*",
+              "Tuesday"
+            ],
+            [
+              "*Rebo*",
+              "*Rebo*",
+              "Wednesday"
+            ],
+            [
+              "*Kemis*",
+              "*Kemis*",
+              "Thursday"
+            ],
+            [
+              "*Jemuwah*",
+              "*Jumuwah*",
+              "Friday"
+            ],
+            [
+              "*Setu*",
+              "*Setu*",
+              "Saturday"
+            ],
+            [
+              "*Minggu*, *Akad*",
+              "*Akad*",
+              "Sunday"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "What no Western calendar has is the **pasaran** — a **five-day** cycle running alongside the seven-day week. Its days are **Legi, Pahing, Pon, Wagé, Kliwon**. Because five and seven turn together, any given combination — say *Setu Kliwon* — comes back once every thirty-five days. That thirty-five-day span is called a **selapan**."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Market day",
+            "Say it",
+            "Good to know"
+          ],
+          "rows": [
+            [
+              "*Legi*",
+              "LUH-gee",
+              "often used in the names of markets and village market days"
+            ],
+            [
+              "*Pahing*",
+              "PAH-hing",
+              "also written *Paing*"
+            ],
+            [
+              "*Pon*",
+              "PON",
+              "many small towns have a Pon market"
+            ],
+            [
+              "*Wagé*",
+              "wah-GAY",
+              "also written *Wage*"
+            ],
+            [
+              "*Kliwon*",
+              "KLEE-won",
+              "considered the most special; *Jemuwah Kliwon* and *Setu Kliwon* carry particular meaning in tradition"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Weton: why people ask what day you were born",
+          "items": [
+            "The weekday plus market day of someone's birth is their **weton** — for example *Rebo Pon*. It's used to choose wedding dates, good days to move house, and days for a *selamatan* (ritual communal meal).",
+            "If an older person asks *wetonmu apa?*, they want that combination, not the date. The honest answer \"kula boten mangertos\" (I don't know) is perfectly acceptable — plenty of young Javanese don't know either.",
+            "At A1 you don't need to calculate a weton. Just **recognize the five market-day names** when you hear them, so you know *Setu Kliwon* is a day, not a place."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Placing events in time",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Ngoko",
+            "Krama"
+          ],
+          "rows": [
+            [
+              "now",
+              "*saiki*",
+              "*sakmenika*"
+            ],
+            [
+              "earlier, just now",
+              "*mau*",
+              "*wau*"
+            ],
+            [
+              "later",
+              "*mengko*",
+              "*mangké*"
+            ],
+            [
+              "yesterday",
+              "*wingi*",
+              "*kala wingi*"
+            ],
+            [
+              "tomorrow",
+              "*sésuk*",
+              "*bénjing*"
+            ],
+            [
+              "the day after tomorrow",
+              "*sésuk émbèn*",
+              "*bénjing émbèn*"
+            ],
+            [
+              "in the past, long ago",
+              "*biyèn*",
+              "*rumiyin*"
+            ],
+            [
+              "this afternoon (later)",
+              "*mengko soré*",
+              "*mangké sonten*"
+            ],
+            [
+              "this morning (earlier)",
+              "*mau ésuk*",
+              "*wau énjing*"
+            ],
+            [
+              "every day",
+              "*saben dina*",
+              "*saben dinten*"
+            ],
+            [
+              "sometimes",
+              "*kadhang-kadhang*",
+              "*kadhang-kadhang*"
+            ],
+            [
+              "never yet",
+              "*durung tau*",
+              "*dèrèng naté*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The parts of the day combine with the words above, just as in English (\"this morning\", \"tomorrow night\"):"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Ngoko",
+            "Krama",
+            "English",
+            "Roughly"
+          ],
+          "rows": [
+            [
+              "*ésuk*",
+              "*énjing*",
+              "morning",
+              "dawn to 10:00"
+            ],
+            [
+              "*awan*",
+              "*siyang*",
+              "midday",
+              "10:00 to 15:00"
+            ],
+            [
+              "*soré*",
+              "*sonten*",
+              "afternoon",
+              "15:00 to sunset prayer"
+            ],
+            [
+              "*bengi*",
+              "*dalu*",
+              "night",
+              "after sunset"
+            ],
+            [
+              "*dina*",
+              "*dinten*",
+              "day",
+              "—"
+            ],
+            [
+              "*minggu*",
+              "*minggu*",
+              "week",
+              "—"
+            ],
+            [
+              "*sasi*",
+              "*wulan*",
+              "month",
+              "—"
+            ],
+            [
+              "*taun*",
+              "*taun*, *warsa*",
+              "year",
+              "—"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Sasi** means \"month\" **and** \"moon\" — like the two English words, which share a root. When you need the heavenly body specifically, say *rembulan*."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "jv": "saiki",
+      "krama": "sakmenika",
+      "baca": "sah-EE-kee",
+      "en": "now"
+    },
+    {
+      "jv": "mau",
+      "krama": "wau",
+      "baca": "MOW · WOW",
+      "en": "earlier, just now"
+    },
+    {
+      "jv": "mengko",
+      "krama": "mangké",
+      "baca": "MUHNG-ko",
+      "en": "later"
+    },
+    {
+      "jv": "wingi",
+      "krama": "kala wingi",
+      "baca": "WEE-ngee",
+      "en": "yesterday"
+    },
+    {
+      "jv": "sésuk",
+      "krama": "bénjing",
+      "baca": "SAY-soo' · BAYN-jing",
+      "en": "tomorrow"
+    },
+    {
+      "jv": "biyèn",
+      "krama": "rumiyin",
+      "baca": "bee-YEHN",
+      "en": "in the past"
+    },
+    {
+      "jv": "dina",
+      "krama": "dinten",
+      "baca": "DEE-no · DIN-tuhn",
+      "en": "day"
+    },
+    {
+      "jv": "sasi",
+      "krama": "wulan",
+      "baca": "SO-see · WOO-lahn",
+      "en": "month; moon"
+    },
+    {
+      "jv": "ésuk",
+      "krama": "énjing",
+      "baca": "AY-soo'",
+      "en": "morning"
+    },
+    {
+      "jv": "awan",
+      "krama": "siyang",
+      "baca": "AH-wahn",
+      "en": "midday"
+    },
+    {
+      "jv": "soré",
+      "krama": "sonten",
+      "baca": "so-RAY",
+      "en": "afternoon"
+    },
+    {
+      "jv": "bengi",
+      "krama": "dalu",
+      "baca": "BUH-ngee · DAH-loo",
+      "en": "night"
+    },
+    {
+      "jv": "jam",
+      "krama": "jam",
+      "baca": "JAHM",
+      "en": "hour, o'clock; clock"
+    },
+    {
+      "jv": "luwih",
+      "krama": "langkung",
+      "baca": "LOO-wih",
+      "en": "more; past (in times)"
+    },
+    {
+      "jv": "seprapat",
+      "krama": "saprapat",
+      "baca": "suh-PRAH-paht",
+      "en": "a quarter"
+    },
+    {
+      "jv": "pasaran",
+      "krama": "pasaran",
+      "baca": "pah-SAH-rahn",
+      "en": "market day"
+    },
+    {
+      "jv": "gelem",
+      "krama": "purun",
+      "baca": "GUH-luhm · POO-roon",
+      "en": "willing, happy to"
+    },
+    {
+      "jv": "péngin",
+      "krama": "kepéngin",
+      "baca": "PAY-ngin",
+      "en": "to want"
+    },
+    {
+      "jv": "melu",
+      "krama": "ndhèrèk",
+      "baca": "MUH-loo · n-DHEH-reh'",
+      "en": "to come along, join"
+    },
+    {
+      "jv": "nèk, menawa",
+      "krama": "menawi",
+      "baca": "NEH' · muh-NAH-wo",
+      "en": "if, when"
+    },
+    {
+      "jv": "sibuk",
+      "krama": "sibuk",
+      "baca": "SEE-boo'",
+      "en": "busy"
+    },
+    {
+      "jv": "rame",
+      "krama": "rame",
+      "baca": "RAH-may",
+      "en": "lively, crowded"
+    },
+    {
+      "jv": "sepi",
+      "krama": "sepen",
+      "baca": "SUH-pee · SUH-puhn",
+      "en": "quiet, deserted"
+    },
+    {
+      "jv": "adhem",
+      "krama": "asrep",
+      "baca": "AH-dhuhm · AHS-ruhp",
+      "en": "cold, cool"
+    },
+    {
+      "jv": "panas",
+      "krama": "benter",
+      "baca": "PAH-nahs · BUHN-tuhr",
+      "en": "hot"
+    },
+    {
+      "jv": "kuliah",
+      "krama": "kuliah",
+      "baca": "koo-LEE-ah",
+      "en": "to attend university; lectures"
+    },
+    {
+      "jv": "dalan",
+      "krama": "margi",
+      "baca": "DAH-lahn · MAHR-gee",
+      "en": "road, street"
+    },
+    {
+      "jv": "crita",
+      "krama": "cariyos",
+      "baca": "CHREE-to · chah-REE-yos",
+      "en": "story"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these times in Javanese (ngoko).",
+      "items": [
+        "2:00",
+        "5:30",
+        "7:15",
+        "8:45",
+        "11:10",
+        "9:30"
+      ]
+    },
+    {
+      "prompt": "Fill in the right time word: *saiki*, *mau*, *mengko*, *wingi*, *sésuk*.",
+      "items": [
+        "____ aku wis mangan, mula ora luwé.",
+        "____ jam pira? Aku ora nggawa jam.",
+        "____ soré aku arep nyang Malioboro.",
+        "____ aku ora kuliah, amarga dina Minggu.",
+        "____ aku arep tangi ésuk, jam lima."
+      ]
+    },
+    {
+      "prompt": "Change into krama.",
+      "items": [
+        "Saiki jam pira?",
+        "Sésuk aku arep nyang pasar.",
+        "Mengko soré waé.",
+        "Wingi aku ora mangan.",
+        "Saben dina aku sinau."
+      ]
+    },
+    {
+      "prompt": "**Review of Unit 4.** Cover Unit 4, then write these numbers in Javanese (ngoko).",
+      "items": [
+        "25",
+        "50",
+        "60",
+        "22",
+        "3,500"
+      ]
+    }
+  ],
+  "answers": [
+    "jam loro — setengah enem — jam pitu luwih seprapat — jam sanga kurang seprapat — jam sewelas luwih sepuluh — setengah sepuluh",
+    "Mau — Saiki — Mengko — Wingi — Sésuk",
+    "Sakmenika jam pinten? — Bénjing kula badhé dhateng peken. — Mangké sonten mawon. — Kala wingi kula boten nedha. — Saben dinten kula sinau.",
+    "selawé — sèket — sewidak — rolikur — telung èwu limang atus"
+  ]
+}

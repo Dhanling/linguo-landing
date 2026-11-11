@@ -1,0 +1,592 @@
+{
+  "title": "What time is it?",
+  "title_target": "وخت او ورځې",
+  "goal": "Tell the time, name the days, and make appointments — and learn the habit that trips up many learners: Pashto counts the half hour FORWARD, like English \"half past seven\", not backward like German \"halb acht\".",
+  "bekal": [
+    "ask and tell the time, including half and quarter hours",
+    "name the seven days of the week and five parts of the day",
+    "make appointments and agree on a time to meet"
+  ],
+  "dialogs": [
+    {
+      "title": "خبرې اترې — وعده",
+      "intro": "Late afternoon. Najib has to work tomorrow, so they agree on when to meet and where to go.",
+      "lines": [
+        {
+          "speaker": "نجیب:",
+          "text": "بودي، سبا څو بجې پاڅېږئ؟",
+          "baca": "Būdī, sabā tso baje pātsīẓəy?",
+          "id": "Budi, what time do you get up tomorrow?",
+          "literal": "Budi, tomorrow how-many o'clock get-up-you(pl)?"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "زه تل شپږ بجې پاڅېږم. ولې؟",
+          "baca": "zə təl shpaẓ baje pātsīẓəm. wale?",
+          "id": "I always get up at six. Why?",
+          "literal": "I always six o'clock get-up-I. why?"
+        },
+        {
+          "speaker": "نجیب:",
+          "text": "زه اته بجې کار ته ځم. مونږ اووه نیمې بجې ډوډۍ خورو.",
+          "baca": "zə atə baje kār ta dzəm. mūẓ owə nīme baje ḍoḍəy khorū.",
+          "id": "I leave for work at eight. We'll have breakfast at half past seven.",
+          "literal": "I eight o'clock work to go-I. we seven half o'clock food eat-we."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "اووه نیمې بجې؟ دا اووه پنځه دېرش دی؟",
+          "baca": "owə nīme baje? dā owə pindzə-dersh day?",
+          "id": "Seven and a half? Does that mean 7:35?",
+          "literal": "seven half o'clock? this seven five-thirty is?"
+        },
+        {
+          "speaker": "نجیب:",
+          "text": "نه، اووه دېرش. نیمه تل مخکې ساعت ته اضافه کېږي.",
+          "baca": "nə, owə dersh. nīma təl məkhke sā'at ta izāfa keẓī.",
+          "id": "No, 7:30. The half is always added to the hour that has passed.",
+          "literal": "no, seven thirty. half always front hour to added becomes."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "آه، دا زمونږ برعکس دی. مونږ وایو نیمه اته.",
+          "baca": "āh, dā zmūẓ bar'aks day. mūẓ wāyū nīma atə.",
+          "id": "Ah, that's the opposite of ours. In Indonesian we say \"half eight\".",
+          "literal": "ah, this of-us opposite is. we say-we half eight."
+        },
+        {
+          "speaker": "نجیب:",
+          "text": "هو، خارجیان تل دلته تېروځي.",
+          "baca": "ho, khārijiyān təl dəlta terodzī.",
+          "id": "Yes, foreigners always get lost here.",
+          "literal": "yes, foreigners always here go-wrong-they."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "ښه، اوس پوهېږم. تاسو کله بېرته راځئ؟",
+          "baca": "ṣa, os poheẓəm. tāso kəla berta rādzəy?",
+          "id": "OK, now I understand. When do you get back?",
+          "literal": "good, now understand-I. you(pl) when back come-you(pl)?"
+        },
+        {
+          "speaker": "نجیب:",
+          "text": "ماسپښین څلور بجې. بیا پارک ته ځو.",
+          "baca": "māspaṣīn tsalor baje. byā pārk ta dzū.",
+          "id": "At four in the afternoon. Then we'll go to the park.",
+          "literal": "afternoon four o'clock. then park to go-we."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "او جمعه؟ جمعه هم کار کوئ؟",
+          "baca": "aw juma? juma ham kār kawəy?",
+          "id": "And Friday? Do you work on Friday too?",
+          "literal": "and Friday? Friday also work do-you(pl)?"
+        },
+        {
+          "speaker": "نجیب:",
+          "text": "نه، جمعه رخصتي ده. هره جمعه کورنۍ راټولېږي.",
+          "baca": "nə, juma rukhsatī da. hara juma kornəy rāṭoleẓī.",
+          "id": "No, Friday is the day off. Every Friday the family gets together.",
+          "literal": "no, Friday holiday is. every Friday family gathers."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "په اندونیزیا کې یکشنبه رخصتي وي.",
+          "baca": "pə Indonezyā ke yakshanbe rukhsatī wī.",
+          "id": "In Indonesia, Sunday is the day off.",
+          "literal": "in Indonesia in Sunday holiday usually-is."
+        },
+        {
+          "speaker": "نجیب:",
+          "text": "زمونږ اونۍ له شنبې څخه پیل کېږي.",
+          "baca": "zmūẓ onəy lə shanbe tsəkha pīl keẓī.",
+          "id": "Our week starts on Saturday.",
+          "literal": "of-us week from Saturday-from from start becomes."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "نو سبا کومه ورځ ده؟",
+          "baca": "no sabā kūma wradz da?",
+          "id": "So what day is tomorrow?",
+          "literal": "so tomorrow which day is?"
+        },
+        {
+          "speaker": "نجیب:",
+          "text": "سبا سه شنبه ده. اووه نیمې بجې! هېر یې نه کړئ.",
+          "baca": "sabā se-shanbe da. owə nīme baje! her ye nə kṛəy.",
+          "id": "Tomorrow is Tuesday. Half past seven! Don't forget.",
+          "literal": "tomorrow Tuesday is. seven half o'clock! forgotten it not do-you(pl)."
+        }
+      ],
+      "notes": [
+        "⚠️ This is the trap of the unit — for some learners. Pashto counts the half hour **forward**: اووه نیمې بجې literally means \"seven and a half\", and it means 7:30 — just like English \"half past seven\" (or British \"half seven\"). Languages such as German, Dutch, and Indonesian count it **backward** (\"half eight\" = 7:30), which is why Budi gets lost. Portuguese, Hungarian, and Persian count forward, like Pashto.",
+        "The safest way never to get it wrong: picture the hour that has already passed, then add. If the minute hand has just left the seven, you are at اووه نیمې. If in doubt in front of someone, just say the plain numbers: اووه دېرش.",
+        "The word بجې *baje* means \"o'clock\", and it is used in the plural: درې **بجې** دي. The word ساعت *sā'at* means an hour as a length of time, and also a watch: درې **ساعته** انتظار وکړم (I waited three hours).",
+        "The names of the days are borrowed whole from Persian and use numbers: دوشنبه literally \"two after Saturday\", سه شنبه \"three after Saturday\", and so on. Once you know that شنبه means Saturday, you can work out five of the other days yourself.",
+        "The day off in Afghanistan is **Friday**, not Sunday, and the work week starts on **Saturday**. If you make plans for \"the weekend\", make sure you are both talking about the same days — this causes misunderstandings far more often than getting the time wrong.",
+        "The sentence هېر یې نه کړئ means \"don't forget\". A prohibition properly uses مه, but the form نه کړئ is also common and sounds a little softer. Commands and prohibitions are covered fully in unit 16."
+      ],
+      "grammars": [
+        {
+          "title": "⚠️ Telling the time: the half counts FORWARD",
+          "body": [
+            "The question is always the same: څو بجې دي؟ *tso baje dī*, \"what time is it?\". The answer is a number plus بجې, with the plural verb دي or the past form وې.",
+            "For a quarter to the next hour, Pashto uses the Persian borrowing **پونې** *pūne*: پونې څلور means 3:45. You can skip this part for now; saying the plain numbers is always safe."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Pashto",
+              "Say it",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "03.00",
+                "درې بجې دي",
+                "dre baje dī",
+                "three o'clock are"
+              ],
+              [
+                "03.10",
+                "درې بجې او لس دقیقې",
+                "dre baje aw las daqīqe",
+                "three o'clock and ten minutes"
+              ],
+              [
+                "03.15",
+                "درې او پاو",
+                "dre aw pāw",
+                "three and a quarter"
+              ],
+              [
+                "03.30",
+                "درې نیمې بجې",
+                "dre nīme baje",
+                "⚠️ three and a half o'clock"
+              ],
+              [
+                "03.45",
+                "پونې څلور",
+                "pūne tsalor",
+                "quarter-less four"
+              ],
+              [
+                "07.30",
+                "اووه نیمې بجې",
+                "owə nīme baje",
+                "⚠️ seven and a half — not 6:30"
+              ],
+              [
+                "12.00",
+                "دولس بجې",
+                "dwolas baje",
+                "twelve o'clock"
+              ],
+              [
+                "What time is it now?",
+                "څو بجې دي؟",
+                "tso baje dī",
+                "how-many o'clock are?"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "Seven days and five parts of the day",
+          "body": [
+            "The names of the days are borrowed from Persian and built from numbers, with شنبه (Saturday) as the starting point. In Afghanistan the native Pashto forms څلورشنبه and پنځشنبه are also heard, and they are just as correct as the Persian ones.",
+            "The parts of the day matter more than they seem, because Afghans make appointments by part of the day more often than by the clock: سهار (morning), ماسپښین (afternoon), ماښام (dusk)."
+          ],
+          "table": {
+            "head": [
+              "Day",
+              "Pashto",
+              "Say it",
+              "Part of the day",
+              "Pashto",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "Saturday",
+                "شنبه",
+                "shanbe",
+                "morning",
+                "سهار",
+                "sahār"
+              ],
+              [
+                "Sunday",
+                "یکشنبه",
+                "yakshanbe",
+                "midday",
+                "غرمه",
+                "gharma"
+              ],
+              [
+                "Monday",
+                "دوشنبه",
+                "do-shanbe",
+                "afternoon",
+                "ماسپښین",
+                "māspaṣīn"
+              ],
+              [
+                "Tuesday",
+                "سه شنبه",
+                "se-shanbe",
+                "dusk",
+                "ماښام",
+                "māṣām"
+              ],
+              [
+                "Wednesday",
+                "څلورشنبه",
+                "tsalor-shanbe",
+                "night",
+                "شپه",
+                "shpa"
+              ],
+              [
+                "Thursday",
+                "پنځشنبه",
+                "pindzə-shanbe",
+                "today",
+                "نن",
+                "nən"
+              ],
+              [
+                "Friday ⚠️ day off",
+                "جمعه",
+                "juma",
+                "tomorrow",
+                "سبا",
+                "sabā"
+              ],
+              [
+                "week",
+                "اونۍ",
+                "onəy",
+                "yesterday",
+                "پرون",
+                "parūn"
+              ]
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Making appointments, and time words you'll use every day",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "څو بجې دي؟",
+              "tso baje dī",
+              "What time is it?"
+            ],
+            [
+              "کله ګورو یو بل؟",
+              "kəla gorū yaw bəl",
+              "When shall we meet?"
+            ],
+            [
+              "سبا اته بجې څنګه؟",
+              "sabā atə baje tsənga",
+              "How about tomorrow at eight?"
+            ],
+            [
+              "زه چمتو یم",
+              "zə chamto yəm",
+              "I'm ready"
+            ],
+            [
+              "زه ناوخته یم",
+              "zə nāwakhta yəm",
+              "I'm late"
+            ],
+            [
+              "لږ انتظار وکړئ",
+              "ləẓ intizār wəkṛəy",
+              "Wait a moment"
+            ],
+            [
+              "وخت نه لرم",
+              "wakht nə larəm",
+              "I don't have time"
+            ],
+            [
+              "وعده کوم",
+              "wa'da kawəm",
+              "I promise"
+            ],
+            [
+              "هېر یې نه کړئ",
+              "her ye nə kṛəy",
+              "Don't forget"
+            ],
+            [
+              "بیا ګورو",
+              "byā gorū",
+              "See you again"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "The time words you'll use most"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pashto",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "اوس",
+              "os",
+              "now"
+            ],
+            [
+              "تل",
+              "təl",
+              "always"
+            ],
+            [
+              "کله کله",
+              "kəla kəla",
+              "sometimes"
+            ],
+            [
+              "هېڅکله",
+              "hetskəla",
+              "never"
+            ],
+            [
+              "مخکې",
+              "məkhke",
+              "before, earlier"
+            ],
+            [
+              "وروسته",
+              "wrūsta",
+              "after, later"
+            ],
+            [
+              "ژر",
+              "zhər",
+              "quickly, soon"
+            ],
+            [
+              "ورو",
+              "wro",
+              "slowly"
+            ],
+            [
+              "ناوخته",
+              "nāwakhta",
+              "late"
+            ],
+            [
+              "هره ورځ",
+              "hara wradz",
+              "every day"
+            ],
+            [
+              "دا اونۍ",
+              "dā onəy",
+              "this week"
+            ],
+            [
+              "بله اونۍ",
+              "bəla onəy",
+              "next week"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Afghan time, and what to make allowances for",
+          "items": [
+            "Afghanistan is half an hour off the round hours (UTC+4:30): 12:00 noon in Kabul is 7:30 a.m. in London (GMT) and 12:30 in Pakistan. Afghans think nothing of this half-hour difference.",
+            "The official calendar is not the Gregorian one but the Persian solar year, and the new year falls on **نوروز** *Nawroz*, the first day of spring, around March 21. The year 2026 is roughly the year ۱۴۰۵.",
+            "Spoken promises are often closed with **انشاءالله** *inshā'allāh* (\"God willing\"). It is not a way of dodging; it is a fixed part of any sentence about plans, as it is across the Muslim world.",
+            "⚠️ Prayer times are used as reference points for appointments more often than the clock: د مازدیګر لمانځه وروسته (after the afternoon prayer) is a very common way to set a time, and more precise than naming a number."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Months, seasons, and a little weather",
+          "items": [
+            "Four seasons: **پسرلی** *psarlay* (spring) · **اوړی** *oṛay* (summer) · **منی** *manay* (autumn) · **ژمی** *zhamay* (winter).",
+            "In Kabul the winter is snowy and temperatures drop below zero; Jalalabad is hardly ever cold. The phrases people use: **ژمی سوړ دی** (winter is cold) and **اوړی ګرم دی** (summer is hot).",
+            "The month names follow the solar calendar: **وری، غویی، غبرګولی، چنګاښ، زمری، وږی، تله، لړم، لیندۍ، مرغومی، سلواغه، کب**. You don't need to memorize these twelve names now; just know that they exist and that they are not January."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ps": "وخت",
+      "baca": "wakht",
+      "en": "time"
+    },
+    {
+      "ps": "بجې",
+      "baca": "baje",
+      "en": "o'clock"
+    },
+    {
+      "ps": "ساعت",
+      "baca": "sā'at",
+      "en": "hour (length), watch"
+    },
+    {
+      "ps": "دقیقه",
+      "baca": "daqīqa",
+      "en": "minute"
+    },
+    {
+      "ps": "نیم",
+      "baca": "nīm",
+      "en": "half"
+    },
+    {
+      "ps": "پاو",
+      "baca": "pāw",
+      "en": "quarter"
+    },
+    {
+      "ps": "ورځ",
+      "baca": "wradz",
+      "en": "day"
+    },
+    {
+      "ps": "اونۍ",
+      "baca": "onəy",
+      "en": "week"
+    },
+    {
+      "ps": "میاشت",
+      "baca": "myāsht",
+      "en": "month"
+    },
+    {
+      "ps": "سهار",
+      "baca": "sahār",
+      "en": "morning"
+    },
+    {
+      "ps": "ماسپښین",
+      "baca": "māspaṣīn",
+      "en": "afternoon"
+    },
+    {
+      "ps": "ماښام",
+      "baca": "māṣām",
+      "en": "dusk"
+    },
+    {
+      "ps": "شپه",
+      "baca": "shpa",
+      "en": "night"
+    },
+    {
+      "ps": "پرون",
+      "baca": "parūn",
+      "en": "yesterday"
+    },
+    {
+      "ps": "رخصتي",
+      "baca": "rukhsatī",
+      "en": "day off, holiday"
+    },
+    {
+      "ps": "وعده",
+      "baca": "wa'da",
+      "en": "promise"
+    },
+    {
+      "ps": "پاڅېږم",
+      "baca": "pātsīẓəm",
+      "en": "I get up"
+    },
+    {
+      "ps": "ناوخته",
+      "baca": "nāwakhta",
+      "en": "late"
+    },
+    {
+      "ps": "ژر",
+      "baca": "zhər",
+      "en": "quickly, soon"
+    },
+    {
+      "ps": "هره ورځ",
+      "baca": "hara wradz",
+      "en": "every day"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these times in Pashto.",
+      "items": [
+        "3:00",
+        "7:30",
+        "9:15",
+        "12:00",
+        "5:30"
+      ]
+    },
+    {
+      "prompt": "Translate into Pashto.",
+      "items": [
+        "What time is it?",
+        "I always get up at six.",
+        "Tomorrow is Tuesday.",
+        "Friday is the day off.",
+        "I don't have time."
+      ]
+    },
+    {
+      "prompt": "Complete with the right day.",
+      "items": [
+        "The day off in Afghanistan: ____",
+        "The first day of the work week: ____",
+        "The day after شنبه: ____",
+        "The second day after شنبه: ____",
+        "The day before جمعه: ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "دي / بجې / څو / ؟",
+        "پاڅېږم / زه / بجې / شپږ / تل",
+        "ده / رخصتي / جمعه",
+        "ځو / بجې / څلور / پارک / ته",
+        "ده / سه شنبه / سبا"
+      ]
+    }
+  ],
+  "answers": [
+    "درې بجې دي — اووه نیمې بجې — نهه او پاو — دولس بجې — پنځه نیمې بجې",
+    "څو بجې دي؟ — زه تل شپږ بجې پاڅېږم. — سبا سه شنبه ده. — جمعه رخصتي ده. — زه وخت نه لرم.",
+    "جمعه — شنبه — یکشنبه — دوشنبه — پنځشنبه",
+    "څو بجې دي؟ — زه تل شپږ بجې پاڅېږم. — جمعه رخصتي ده. — څلور بجې پارک ته ځو. — سبا سه شنبه ده."
+  ],
+  "wave": "Every time you look at a clock today, say the time in Pashto. If the hand is at the half, pause for a second and make sure you name the hour that has PASSED, not the one that is coming."
+}

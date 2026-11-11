@@ -1,0 +1,509 @@
+{
+  "title": "Numbers, age, and phone numbers",
+  "title_target": "گنتی، عمر، اور نمبر",
+  "goal": "Count to twenty, say your age, read out phone numbers, and use کتنا / کتنی / کتنے correctly.",
+  "bekal": [
+    "say the numbers 1–20 without thinking",
+    "ask and give someone's age in the right form",
+    "say and write a Pakistani phone number"
+  ],
+  "dialogs": [
+    {
+      "title": "مکالمہ — زبان کے اسکول میں",
+      "intro": "Budi is signing up for an Urdu course. The receptionist fills in the form as she asks him questions.",
+      "lines": [
+        {
+          "speaker": "کلرک:",
+          "text": "السلام علیکم۔ آپ کا پورا نام کیا ہے؟",
+          "baca": "as-salāmu alaikum. āp kā pūrā nām kyā hai?",
+          "id": "Peace be upon you. What's your full name?",
+          "literal": "peace upon you. you of full name what is?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "بودی سنتوسو۔ میں انڈونیشیا سے ہوں۔",
+          "baca": "Būdī Santoso. maiñ Inḍonesiyā se hūñ.",
+          "id": "Budi Santoso. I'm from Indonesia.",
+          "literal": "Budi Santoso. I Indonesia from am."
+        },
+        {
+          "speaker": "کلرک:",
+          "text": "آپ کی عمر کتنی ہے؟",
+          "baca": "āp kī umr kitnī hai?",
+          "id": "How old are you?",
+          "literal": "you of-(f) age how-much-(f) is?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "میری عمر چوبیس سال ہے۔",
+          "baca": "merī umr chaubīs sāl hai.",
+          "id": "I'm twenty-four.",
+          "literal": "my age twenty-four year is."
+        },
+        {
+          "speaker": "کلرک:",
+          "text": "اور آپ کا فون نمبر؟",
+          "baca": "aur āp kā fon nambar?",
+          "id": "And your phone number?",
+          "literal": "and you of phone number?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "صفر تین ایک دو — چار پانچ چھ — سات آٹھ نو صفر۔",
+          "baca": "sifar tīn ek do — chār pāñch chhe — sāt āṭh nau sifar.",
+          "id": "Zero three one two — four five six — seven eight nine zero.",
+          "literal": "zero three one two — four five six — seven eight nine zero."
+        },
+        {
+          "speaker": "کلرک:",
+          "text": "شکریہ۔ کلاس میں کتنے طالب علم ہیں، معلوم ہے؟",
+          "baca": "shukriya. klās meñ kitne tālib-e-ilm haiñ, ma'lūm hai?",
+          "id": "Thank you. Do you know how many students are in the class?",
+          "literal": "thanks. class in how-many students are, known is?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "نہیں۔ کتنے ہیں؟",
+          "baca": "nahīñ. kitne haiñ?",
+          "id": "No. How many are there?",
+          "literal": "no. how-many are?"
+        },
+        {
+          "speaker": "کلرک:",
+          "text": "بارہ۔ آٹھ لڑکیاں اور چار لڑکے۔",
+          "baca": "bārah. āṭh laṛkiyāñ aur chār laṛke.",
+          "id": "Twelve. Eight girls and four boys.",
+          "literal": "twelve. eight girls and four boys."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "اچھا۔ کلاس کتنے گھنٹے کی ہے؟",
+          "baca": "achchhā. klās kitne ghanṭe kī hai?",
+          "id": "OK. How long is the class?",
+          "literal": "OK. class how-many hours of-(f) is?"
+        },
+        {
+          "speaker": "کلرک:",
+          "text": "دو گھنٹے، ہفتے میں تین دن۔",
+          "baca": "do ghanṭe, hafte meñ tīn din.",
+          "id": "Two hours, three days a week.",
+          "literal": "two hours, week in three days."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "بہت اچھا۔ فیس کتنی ہے؟",
+          "baca": "bahut achchhā. fīs kitnī hai?",
+          "id": "Very good. How much is the fee?",
+          "literal": "very good. fee how-much-(f) is?"
+        }
+      ],
+      "notes": [
+        "**Age is expressed with a possessive, not with \"to be … old\".** The question آپ کی عمر کتنی ہے؟ literally means \"your age how much is?\". Notice کی and کتنی — both are feminine because **عمر is feminine**. A shorter form that's also correct and more casual: آپ کتنے سال کے ہیں؟",
+        "**After a number, the noun often stays singular.** For example چوبیس سال, not چوبیس سالیں. With units of time, money, and measurement, Urdu uses the singular after a number — a bit like English \"a twenty-four-year-old\" or \"a ten-dollar bill\". But with countable things, the plural is used: آٹھ لڑکیاں and چار لڑکے.",
+        "**The word کتنا changes three ways.** کتنا پانی؟ (water, masculine) · کتنی چائے؟ (tea, feminine) · کتنے لوگ؟ (people, masculine plural). It ends in ـا, so it belongs to the adjectives that change — the rule from unit 2 applies exactly.",
+        "**Phone numbers are read digit by digit.** Pakistanis read 0312 as صفر، تین، ایک، دو, not as \"three hundred twelve\". Zero is صفر (*sifar*) — the word that traveled through Arabic to become \"cipher\" and \"zero\" in European languages, and the concept itself came from India. Pakistani mobile numbers always start with 03.",
+        "**The word معلوم is Urdu's way of saying \"know\".** The question معلوم ہے؟ = \"do you know?\", literally \"is it known?\". The full forms: مجھے معلوم ہے (\"I know\") and مجھے نہیں معلوم (\"I don't know\"). Notice the subject is مجھے, not میں — this is a dative sentence, and unit 10 is all about the pattern.",
+        "**The word اچھا works like English \"OK\".** Besides meaning \"good\", it's used on its own to show you're listening and accept what was said: اچھا۔ With a rising tone, اچھا؟ means \"oh really?\" or \"is that so?\". It's the word you'll say most after جی."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers 1 to 20",
+          "body": [
+            "There's no shortcut: Urdu has a separate word for every number up to a hundred, and the first twenty need to be in your head so firmly that they come out without thinking. Learn them in groups of five, out loud, counting on your fingers."
+          ],
+          "table": {
+            "head": [
+              "",
+              "Urdu",
+              "Say it",
+              "",
+              "Urdu",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "1",
+                "ایک",
+                "ek",
+                "11",
+                "گیارہ",
+                "gyārah"
+              ],
+              [
+                "2",
+                "دو",
+                "do",
+                "12",
+                "بارہ",
+                "bārah"
+              ],
+              [
+                "3",
+                "تین",
+                "tīn",
+                "13",
+                "تیرہ",
+                "terah"
+              ],
+              [
+                "4",
+                "چار",
+                "chār",
+                "14",
+                "چودہ",
+                "chaudah"
+              ],
+              [
+                "5",
+                "پانچ",
+                "pāñch",
+                "15",
+                "پندرہ",
+                "pandrah"
+              ],
+              [
+                "6",
+                "چھ",
+                "chhe",
+                "16",
+                "سولہ",
+                "solah"
+              ],
+              [
+                "7",
+                "سات",
+                "sāt",
+                "17",
+                "سترہ",
+                "satrah"
+              ],
+              [
+                "8",
+                "آٹھ",
+                "āṭh",
+                "18",
+                "اٹھارہ",
+                "aṭhārah"
+              ],
+              [
+                "9",
+                "نو",
+                "nau",
+                "19",
+                "انیس",
+                "unnīs"
+              ],
+              [
+                "10",
+                "دس",
+                "das",
+                "20",
+                "بیس",
+                "bīs"
+              ]
+            ]
+          },
+          "after": [
+            "Two things help you remember. **First**, the word دو sounds like \"two\" and they really are related — both come from the same Indo-European word, as do تین and \"three\". **Second**, the numbers 11–18 all end in **ـرہ / ـہ**, a worn-down form of دس (ten), while 19 is already reaching for 20: انیس literally means \"one less than twenty\". That \"one less\" pattern repeats at 29, 39, 49, and so on — see the numbers page at the back of the book.",
+            "Zero is صفر (*sifar*), and half is آدھا (*ādhā*)."
+          ]
+        },
+        {
+          "title": "Asking about amounts and prices",
+          "body": [
+            "The sentences below cover almost every number question you'll ask in your first weeks. Learn them as whole sentences, not as formulas."
+          ],
+          "table": {
+            "head": [
+              "Urdu",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "آپ کی عمر کتنی ہے؟",
+                "āp kī umr kitnī hai?",
+                "How old are you?"
+              ],
+              [
+                "یہ کتنے کا ہے؟",
+                "ye kitne kā hai?",
+                "How much is this? (masc. item)"
+              ],
+              [
+                "یہ کتنے کی ہے؟",
+                "ye kitne kī hai?",
+                "How much is this? (fem. item)"
+              ],
+              [
+                "کتنے لوگ ہیں؟",
+                "kitne log haiñ?",
+                "How many people are there?"
+              ],
+              [
+                "کتنا وقت ہے؟",
+                "kitnā vaqt hai?",
+                "How much time is there?"
+              ],
+              [
+                "آپ کا نمبر کیا ہے؟",
+                "āp kā nambar kyā hai?",
+                "What's your number?"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Notice that prices are asked with **کتنے کا**, not کتنا. Literally it means \"of how many\" — the item is \"worth\" so many rupees. What decides کا or کی is **the item asked about**, not the money: یہ قمیض کتنے کی ہے؟ because قمیض is feminine."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Numbers in daily life",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Urdu",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "عمر",
+              "umr",
+              "age"
+            ],
+            [
+              "سال",
+              "sāl",
+              "year"
+            ],
+            [
+              "مہینہ",
+              "mahīna",
+              "month"
+            ],
+            [
+              "ہفتہ",
+              "hafta",
+              "week"
+            ],
+            [
+              "دن",
+              "din",
+              "day"
+            ],
+            [
+              "گھنٹہ",
+              "ghanṭa",
+              "hour (duration)"
+            ],
+            [
+              "منٹ",
+              "minaṭ",
+              "minute"
+            ],
+            [
+              "نمبر",
+              "nambar",
+              "number"
+            ],
+            [
+              "فون",
+              "fon",
+              "phone"
+            ],
+            [
+              "پتہ",
+              "pata",
+              "address"
+            ],
+            [
+              "فیس",
+              "fīs",
+              "fee, tuition"
+            ],
+            [
+              "روپیہ",
+              "rūpayā",
+              "rupee"
+            ],
+            [
+              "قیمت",
+              "qīmat",
+              "price"
+            ],
+            [
+              "پہلا",
+              "pahlā",
+              "first"
+            ],
+            [
+              "دوسرا",
+              "dūsrā",
+              "second"
+            ],
+            [
+              "تیسرا",
+              "tīsrā",
+              "third"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Ordinal numbers, and three irregular ones",
+          "items": [
+            "The ordinals \"first, second, third\" in Urdu are پہلا، دوسرا، تیسرا, and all three are **impossible to guess** from ایک، دو، تین — much like English *first* and *second*. From the fourth on, the pattern is regular: number + ـواں — چوتھا (fourth, still a bit special), پانچواں، چھٹا، ساتواں، آٹھواں، نواں، دسواں.",
+            "They all end in ـا, so they all change: پہلا دن (the first day), پہلی کتاب (the first book), پہلے دن (on the first day).",
+            "The word دوسرا does two jobs: \"second\" and also \"other\". The phrase دوسرا آدمی can mean \"the second man\" or \"another man\", depending on context. If you want to say \"another\" clearly, use **اور ایک** or **کوئی اور**."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ur": "ایک",
+      "baca": "ek",
+      "en": "one"
+    },
+    {
+      "ur": "دو",
+      "baca": "do",
+      "en": "two"
+    },
+    {
+      "ur": "تین",
+      "baca": "tīn",
+      "en": "three"
+    },
+    {
+      "ur": "چار",
+      "baca": "chār",
+      "en": "four"
+    },
+    {
+      "ur": "پانچ",
+      "baca": "pāñch",
+      "en": "five"
+    },
+    {
+      "ur": "دس",
+      "baca": "das",
+      "en": "ten"
+    },
+    {
+      "ur": "بیس",
+      "baca": "bīs",
+      "en": "twenty"
+    },
+    {
+      "ur": "صفر",
+      "baca": "sifar",
+      "en": "zero"
+    },
+    {
+      "ur": "عمر",
+      "baca": "umr",
+      "en": "age"
+    },
+    {
+      "ur": "سال",
+      "baca": "sāl",
+      "en": "year"
+    },
+    {
+      "ur": "دن",
+      "baca": "din",
+      "en": "day"
+    },
+    {
+      "ur": "گھنٹہ",
+      "baca": "ghanṭa",
+      "en": "hour (duration)"
+    },
+    {
+      "ur": "نمبر",
+      "baca": "nambar",
+      "en": "number"
+    },
+    {
+      "ur": "کتنا",
+      "baca": "kitnā",
+      "en": "how much, how many"
+    },
+    {
+      "ur": "معلوم",
+      "baca": "ma'lūm",
+      "en": "known"
+    },
+    {
+      "ur": "پورا",
+      "baca": "pūrā",
+      "en": "full, whole"
+    },
+    {
+      "ur": "فیس",
+      "baca": "fīs",
+      "en": "fee"
+    },
+    {
+      "ur": "پہلا",
+      "baca": "pahlā",
+      "en": "first"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these numbers as Urdu words.",
+      "items": [
+        "7",
+        "12",
+        "19",
+        "4",
+        "20"
+      ]
+    },
+    {
+      "prompt": "Choose the right form: کتنا، کتنی، or کتنے.",
+      "items": [
+        "آپ کی عمر ____ ہے؟",
+        "یہ کتاب ____ کی ہے؟",
+        "کلاس میں ____ لوگ ہیں؟",
+        "____ پانی ہے؟",
+        "____ وقت ہے؟"
+      ]
+    },
+    {
+      "prompt": "Translate into Urdu.",
+      "items": [
+        "I'm twenty years old.",
+        "There are twelve students in the class.",
+        "What's your phone number?",
+        "The class is two hours long.",
+        "I don't know."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ہے / عمر / کتنی / کی / آپ / ؟",
+        "ہے / سال / میری / بیس / عمر",
+        "ہیں / بارہ / کلاس / طالب علم / میں",
+        "ہے / گھنٹے / کی / دو / کلاس",
+        "ہے / نہیں / معلوم / مجھے"
+      ]
+    }
+  ],
+  "answers": [
+    "سات — بارہ — انیس — چار — بیس",
+    "کتنی — کتنے — کتنے — کتنا — کتنا",
+    "میری عمر بیس سال ہے۔ — کلاس میں بارہ طالب علم ہیں۔ — آپ کا فون نمبر کیا ہے؟ — کلاس دو گھنٹے کی ہے۔ — مجھے نہیں معلوم۔",
+    "آپ کی عمر کتنی ہے؟ — میری عمر بیس سال ہے۔ — کلاس میں بارہ طالب علم ہیں۔ — کلاس دو گھنٹے کی ہے۔ — مجھے معلوم نہیں ہے۔"
+  ],
+  "wave": "Count backward from بیس to ایک out loud before bed, three nights in a row. After that, you won't need to think about the numbers anymore."
+}

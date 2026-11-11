@@ -1,0 +1,564 @@
+{
+  "title": "Daily routine",
+  "title_target": "Kagiatan sapopoé",
+  "goal": "Describe your routine from getting up to going to bed, and place events in time with *keur*, *geus*, *rék* and *can*.",
+  "bekal": [
+    "four time markers that replace an entire tense system",
+    "putting activities in order with *heula*, *terus*, *sanggeus*, *saméméh*",
+    "talking about habits with *sok*, *mindeng*, *tara*"
+  ],
+  "dialogs": [
+    {
+      "title": "Paguneman — A day in Rani's life",
+      "intro": "Sari is curious how Rani spends her working day. This conversation packs every Sundanese time marker onto one page.",
+      "lines": [
+        {
+          "speaker": "Sari:",
+          "text": "Téh, biasana hudang tabuh sabaraha?",
+          "id": "What time do you usually get up?",
+          "literal": "Téh, usually get-up hour how-many?"
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Tabuh lima. Sanggeus solat subuh, kuring sok olahraga saeutik.",
+          "id": "Five. After the dawn prayer I like to do a bit of exercise.",
+          "literal": "hour five. after prayer dawn, I like exercise a-little."
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Wah, rajin. Ari kuring mah tara hudang saméméh tabuh genep.",
+          "id": "Wow, how disciplined. Me, I never get up before six.",
+          "literal": "wow, diligent. as-for I [mah] never get-up before hour six."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Terus mandi, dahar, tuluy indit ka kantor tabuh tujuh.",
+          "id": "Then I shower, eat, and leave for the office at seven.",
+          "literal": "then bathe, eat, then go to office hour seven."
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Naék naon ka kantorna?",
+          "id": "How do you get to the office?",
+          "literal": "ride what to office-the?"
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Angkot. Kadang ojég lamun geus telat.",
+          "id": "Angkot. Sometimes an ojek if I'm running late.",
+          "literal": "angkot. sometimes ojek if already late."
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Ayeuna keur naon? Can indit?",
+          "id": "What are you doing now? Haven't you left yet?",
+          "literal": "now [keur] what? not-yet go?"
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Can. Keur ngadagoan hujan eureun heula.",
+          "id": "Not yet. I'm waiting for the rain to stop first.",
+          "literal": "not-yet. [keur] waiting rain stop first."
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Balikna biasana tabuh sabaraha?",
+          "id": "What time do you usually get home?",
+          "literal": "going-home-the usually hour how-many?"
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Tabuh lima soré. Tapi mindeng nepi ka imah tabuh tujuh, macét.",
+          "id": "Five in the afternoon. But I often only get home at seven, traffic.",
+          "literal": "hour five afternoon. but often reach to house hour seven, jammed."
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Peutingna sok naon?",
+          "id": "What do you like to do in the evening?",
+          "literal": "night-the like what?"
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Ngadéngékeun musik, maca, kadang diajar basa Sunda.",
+          "id": "Listen to music, read, sometimes study Sundanese.",
+          "literal": "listen music, read, sometimes study language Sundanese."
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Saréna tabuh sabaraha?",
+          "id": "What time do you go to bed?",
+          "literal": "sleeping-the hour how-many?"
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Sabenerna rék saré tabuh sapuluh, tapi sok kabablasan.",
+          "id": "I mean to sleep at ten, but I often stay up way too late.",
+          "literal": "actually will sleep hour ten, but like overshoot."
+        }
+      ],
+      "notes": [
+        "**Tuluy** = then, next (loma); lemes **teras**. Different from **terus**, \"straight on, right away.\" In conversation the two are often used interchangeably.",
+        "**Saméméh** = before (loma); lemes **sateuacan**. Its partner is **sanggeus** = after (loma); lemes **saatos**.",
+        "**Mindeng** = often (loma); lemes **sering**. Together with **sok** (usually, tend to) and **tara** (never), these make up the Sundanese frequency system.",
+        "**Kadang / kadang-kadang** = sometimes (the same word as in Indonesian). The more Sundanese choice: **sakapeung**.",
+        "**Kabablasan** = to overshoot, go too far. The prefix *ka-* plus the ending *-an* again, marking something that happens by accident. Same pattern: *kabeurangan* (to oversleep), *kahujanan* (to get caught in the rain), *kalaparan* (to go hungry).",
+        "**Sabenerna** = actually. From *bener* (true, right). The lemes form is *saleresna*, from *leres*."
+      ],
+      "grammars": [
+        {
+          "title": "Four time markers",
+          "body": [
+            "Sundanese never changes the verb to show time: no \"eat / ate / eaten.\" The whole job is done by four little words placed **before** the verb."
+          ],
+          "table": {
+            "head": [
+              "Loma",
+              "Lemes",
+              "English",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**keur**",
+                "nuju",
+                "in the middle of (-ing)",
+                "*Keur dahar.* — I'm eating."
+              ],
+              [
+                "**geus / enggeus**",
+                "parantos / tos",
+                "already",
+                "*Geus dahar.* — I've eaten."
+              ],
+              [
+                "**rék**",
+                "badé",
+                "going to, want to",
+                "*Rék dahar.* — I'm going to eat."
+              ],
+              [
+                "**can / acan**",
+                "teu acan",
+                "not yet",
+                "*Can dahar.* — I haven't eaten yet."
+              ],
+              [
+                "**kakara**",
+                "nembé",
+                "just (a moment ago)",
+                "*Kakara dahar.* — I've just eaten."
+              ],
+              [
+                "**tacan**",
+                "teu acan kantos",
+                "never yet, not ever",
+                "*Tacan ka ditu.* — I've never been there."
+              ],
+              [
+                "**tara**",
+                "tara",
+                "never (as a habit)",
+                "*Tara dahar isuk.* — I never have breakfast."
+              ],
+              [
+                "**sok**",
+                "sok",
+                "usually, tend to",
+                "*Sok dahar di dinya.* — I usually eat there."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ The lemes form **tos** is short for *parantos* and you'll hear it far more often. *Tos tuang?* = have you eaten? Formal writing uses *parantos*; conversation almost always *tos*.",
+            "Watch the difference between **can** and **tacan**: *can* means not yet (but it will happen); *tacan* means never, not even once. *Kuring can dahar* = I haven't eaten yet (but I will). *Kuring tacan ka Ciwidey* = I've never been to Ciwidey.",
+            "The difference between **tara** and **teu**: *teu* negates a single event; *tara* negates a habit. *Manéhna teu datang* = he didn't come (this time). *Manéhna tara datang* = he never comes."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Routine from morning to night",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Time of day",
+            "Basa Sunda",
+            "English"
+          ],
+          "rows": [
+            [
+              "Dawn",
+              "*hudang / gugah*",
+              "to get up"
+            ],
+            [
+              "",
+              "*solat subuh*",
+              "to say the dawn prayer"
+            ],
+            [
+              "Morning",
+              "*mandi / ibak*",
+              "to bathe, shower"
+            ],
+            [
+              "",
+              "*dahar isuk / neda énjing*",
+              "to have breakfast"
+            ],
+            [
+              "",
+              "*dangdan*",
+              "to get dressed, get ready"
+            ],
+            [
+              "",
+              "*indit ka kantor / mios ka kantor*",
+              "to leave for the office"
+            ],
+            [
+              "Midday",
+              "*digawé / damel*",
+              "to work"
+            ],
+            [
+              "",
+              "*dahar beurang*",
+              "to have lunch"
+            ],
+            [
+              "",
+              "*ngaso sakedap*",
+              "to take a short break"
+            ],
+            [
+              "Afternoon",
+              "*balik / wangsul*",
+              "to go home"
+            ],
+            [
+              "",
+              "*ngumbah baju*",
+              "to do the laundry"
+            ],
+            [
+              "",
+              "*beberesih imah*",
+              "to clean the house"
+            ],
+            [
+              "Evening",
+              "*masak / nyangu*",
+              "to cook"
+            ],
+            [
+              "",
+              "*dahar peuting*",
+              "to have dinner"
+            ],
+            [
+              "",
+              "*lalajo TV*",
+              "to watch TV"
+            ],
+            [
+              "",
+              "*ngobrol jeung batur*",
+              "to chat with friends"
+            ],
+            [
+              "",
+              "*saré / mondok*",
+              "to sleep"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Lalajo** = to watch (loma); lemes **ningali**. It's a typically Sundanese word, not found in Indonesian: *lalajo bal* = to watch soccer, *lalajo pilem* = to watch a movie."
+        },
+        {
+          "type": "kotak",
+          "title": "Putting activities in order",
+          "items": [
+            "**heula** — first: *Mandi heula.* — Shower first.",
+            "**terus / tuluy / teras** — then: *Terus dahar.* — Then eat.",
+            "**sanggeus / saatos** — after: *Sanggeus dahar, indit.* — After eating, leave.",
+            "**saméméh / sateuacan** — before: *Saméméh saré, maca.* — Before sleeping, read.",
+            "**bari** — while: *Dahar bari lalajo.* — Eat while watching.",
+            "**sabot / basa** — when: *Basa keur dahar, hujan.* — While (we were) eating, it rained."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Talking about habits",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "To say what you usually do, combine a frequency word with a time expression. Word order is free, but the most natural place for the time expression is at the start or the end."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Frequency",
+            "English",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**salawasna**",
+              "always",
+              "*Salawasna hudang tabuh lima.*"
+            ],
+            [
+              "**sering / mindeng**",
+              "often",
+              "*Mindeng telat ka kantor.*"
+            ],
+            [
+              "**sok**",
+              "usually, tend to",
+              "*Sok olahraga isuk-isuk.*"
+            ],
+            [
+              "**kadang / sakapeung**",
+              "sometimes",
+              "*Sakapeung naék ojég.*"
+            ],
+            [
+              "**jarang**",
+              "rarely",
+              "*Jarang lalajo TV.*"
+            ],
+            [
+              "**tara**",
+              "never (as a habit)",
+              "*Tara dahar isuk.*"
+            ],
+            [
+              "**tacan pernah**",
+              "never yet, not ever",
+              "*Tacan pernah ka Ciwidey.*"
+            ],
+            [
+              "**unggal poé**",
+              "every day",
+              "*Unggal poé diajar basa Sunda.*"
+            ],
+            [
+              "**saminggu sakali**",
+              "once a week",
+              "*Saminggu sakali wangsul ka Jakarta.*"
+            ],
+            [
+              "**sabulan sakali**",
+              "once a month",
+              "*Sabulan sakali ka dokter.*"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Asking about activities",
+          "items": [
+            "**Ayeuna keur naon?** — What are you doing now?",
+            "**Biasana hudang tabuh sabaraha?** — What time do you usually get up?",
+            "**Tos tuang?** — Have you eaten?",
+            "**Badé naon engké?** — What are you going to do later?",
+            "**Kamari ka mana waé?** — Where did you go yesterday?",
+            "**Peutingna sok naon?** — What do you usually do in the evening?",
+            "**Sok olahraga henteu?** — Do you exercise?",
+            "**Unggal poé kitu?** — Like that every day?"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Describing your day is the best A1 practice there is: the vocabulary repeats and the sentences are simple. Try writing a paragraph about your own day using the four time markers and three frequency words."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "su": "keur / nuju",
+      "baca": "keur · noo-JOO",
+      "en": "in the middle of (-ing)"
+    },
+    {
+      "su": "geus / tos",
+      "baca": "geus · tohs",
+      "en": "already"
+    },
+    {
+      "su": "rék / badé",
+      "baca": "rehk · bah-DEH",
+      "en": "going to, want to"
+    },
+    {
+      "su": "can / teu acan",
+      "baca": "chahn",
+      "en": "not yet"
+    },
+    {
+      "su": "kakara / nembé",
+      "baca": "kah-kah-RAH · nuhm-BEH",
+      "en": "just (a moment ago)"
+    },
+    {
+      "su": "tacan",
+      "baca": "tah-CHAHN",
+      "en": "never yet, not ever"
+    },
+    {
+      "su": "tara",
+      "baca": "tah-RAH",
+      "en": "never (as a habit)"
+    },
+    {
+      "su": "sok",
+      "baca": "sohk",
+      "en": "usually, tend to"
+    },
+    {
+      "su": "mindeng / sering",
+      "baca": "meen-DUHNG",
+      "en": "often"
+    },
+    {
+      "su": "sakapeung",
+      "baca": "sah-kah-PEUNG",
+      "en": "sometimes"
+    },
+    {
+      "su": "salawasna",
+      "baca": "sah-lah-wahs-NAH",
+      "en": "always"
+    },
+    {
+      "su": "heula",
+      "baca": "heu-LAH",
+      "en": "first (before anything else)"
+    },
+    {
+      "su": "tuluy / teras",
+      "baca": "too-LOOY · tuh-RAHS",
+      "en": "then, next"
+    },
+    {
+      "su": "saméméh / sateuacan",
+      "baca": "sah-meh-MEHH",
+      "en": "before"
+    },
+    {
+      "su": "sanggeus / saatos",
+      "baca": "sahng-GEUS",
+      "en": "after"
+    },
+    {
+      "su": "bari",
+      "baca": "bah-REE",
+      "en": "while"
+    },
+    {
+      "su": "hudang / gugah",
+      "baca": "hoo-DAHNG · goo-GAHH",
+      "en": "to get up"
+    },
+    {
+      "su": "dangdan",
+      "baca": "dahng-DAHN",
+      "en": "to get dressed, get ready"
+    },
+    {
+      "su": "lalajo",
+      "baca": "lah-lah-JOH",
+      "en": "to watch"
+    },
+    {
+      "su": "ngobrol / ngawangkong",
+      "baca": "ngohb-ROHL",
+      "en": "to chat"
+    },
+    {
+      "su": "beberesih",
+      "baca": "buh-buh-ruh-SEEH",
+      "en": "to clean up"
+    },
+    {
+      "su": "ngumbah",
+      "baca": "ngoom-BAHH",
+      "en": "to wash"
+    },
+    {
+      "su": "kabablasan",
+      "baca": "kah-bahb-lah-SAHN",
+      "en": "to overshoot, go too far"
+    },
+    {
+      "su": "telat",
+      "baca": "tuh-LAHT",
+      "en": "late"
+    },
+    {
+      "su": "rajin / bageur",
+      "baca": "rah-JEEN",
+      "en": "diligent, hardworking"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right time marker: keur, geus, rék or can.",
+      "items": [
+        "Eating right now: ____ dahar.",
+        "Finished eating: ____ dahar.",
+        "Going to eat soon: ____ dahar.",
+        "Haven't eaten at all today: ____ dahar.",
+        "Just finished eating: ____ dahar.",
+        "Never has breakfast: ____ dahar isuk."
+      ]
+    },
+    {
+      "prompt": "Fill in a sequence word: heula, tuluy, sanggeus, saméméh or bari.",
+      "items": [
+        "Mandi ____, terus makan.",
+        "Mandi, ____ dahar.",
+        "____ dahar, kuring indit.",
+        "____ saré, kuring maca buku.",
+        "Dahar ____ lalajo TV.",
+        "Solat subuh ____, kakara olahraga."
+      ]
+    },
+    {
+      "prompt": "Translate into Sundanese.",
+      "items": [
+        "What are you doing now?",
+        "Not yet, I'm waiting for the rain to stop.",
+        "I usually get up at five.",
+        "Me, I never get up before six.",
+        "I often only get home at seven, traffic.",
+        "I study Sundanese every day."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "naon / ayeuna / keur / ?",
+        "eureun / hujan / ngadagoan / keur / heula",
+        "genep / saméméh / tara / hudang / kuring / tabuh",
+        "sok / isuk-isuk / olahraga",
+        "diajar / poé / Sunda / unggal / basa"
+      ]
+    }
+  ],
+  "answers": [
+    "keur — geus — rék — can — kakara — tara",
+    "heula — tuluy — Sanggeus — Saméméh — bari — heula",
+    "Ayeuna keur naon? — Can, keur ngadagoan hujan eureun. — Biasana hudang tabuh lima. — Kuring mah tara hudang saméméh tabuh genep. — Mindeng nepi ka imah tabuh tujuh, macét. — Unggal poé diajar basa Sunda.",
+    "Ayeuna keur naon? — Keur ngadagoan hujan eureun heula. — Kuring tara hudang saméméh tabuh genep. — Sok olahraga isuk-isuk. — Unggal poé diajar basa Sunda."
+  ]
+}

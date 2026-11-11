@@ -1,0 +1,568 @@
+{
+  "title": "Where are you from, what do you do",
+  "title_target": "انت منين؟",
+  "goal": "Say where you're from, your nationality, and your job — and understand why one word can change shape three times depending on who you're talking about.",
+  "bekal": [
+    "ask and answer about origin, nationality, and job",
+    "make nationality adjectives yourself from country names",
+    "negate sentences without a verb using مش"
+  ],
+  "dialogs": [
+    {
+      "title": "حوار — في استراحة المعهد",
+      "intro": "First break. Budi gets a tea at the institute cafeteria, and a female student says hello.",
+      "lines": [
+        {
+          "speaker": "منى:",
+          "text": "أهلاً! انت الطالب الجديد، صح؟",
+          "baca": "ahlan! inta it-ṭaalib ig-gidiid, ṣahh?",
+          "id": "Hi! You're the new student, right?",
+          "literal": "hi! you the-student the-new, right?"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "أيوه، أنا بودي. وانتي؟",
+          "baca": "aywa, ana Buudi. w inti?",
+          "id": "Yes, I'm Budi. And you?",
+          "literal": "yes, I Budi. and you(f)?"
+        },
+        {
+          "speaker": "منى:",
+          "text": "أنا منى. انت منين؟",
+          "baca": "ana Mona. inta minēn?",
+          "id": "I'm Mona. Where are you from?",
+          "literal": "I Mona. you from-where?"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "أنا من إندونيسيا، من جاكرتا.",
+          "baca": "ana min Indunisya, min Gakarta.",
+          "id": "I'm from Indonesia, from Jakarta.",
+          "literal": "I from Indonesia, from Jakarta."
+        },
+        {
+          "speaker": "منى:",
+          "text": "إندونيسي؟ جميل أوي! وانت بتشتغل إيه؟",
+          "baca": "indunisi? gamiil ’awi! w inta bitishtaghal ’ēh?",
+          "id": "Indonesian? How lovely! And what do you do?",
+          "literal": "Indonesian? beautiful very! and you you-work what?"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "أنا مهندس، بس دلوقتي أنا طالب هنا.",
+          "baca": "ana muhandis, bas dilwa’ti ana ṭaalib hina.",
+          "id": "I'm an engineer, but right now I'm a student here.",
+          "literal": "I engineer, but now I student here."
+        },
+        {
+          "speaker": "منى:",
+          "text": "وانت هنا من إمتى؟",
+          "baca": "w inta hina min imta?",
+          "id": "And how long have you been here?",
+          "literal": "and you here from when?"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "من أسبوع بس. لسه جديد أوي.",
+          "baca": "min usbuu‘ bas. lissa gidiid ’awi.",
+          "id": "Just a week. I'm still very new.",
+          "literal": "from week only. still new very."
+        },
+        {
+          "speaker": "منى:",
+          "text": "وعائلتك معاك؟",
+          "baca": "wi ‘eltak ma‘aak?",
+          "id": "Is your family with you?",
+          "literal": "and your-family with-you?"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "لأ، هما في إندونيسيا. أنا لوحدي.",
+          "baca": "la’, humma fi Indunisya. ana liwahdi.",
+          "id": "No, they're in Indonesia. I'm on my own.",
+          "literal": "no, they in Indonesia. I by-myself."
+        },
+        {
+          "speaker": "منى:",
+          "text": "معلش. مصر بلد كبيرة وأهلها طيبين.",
+          "baca": "ma‘lesh. Maṣr balad kibiira wi ahlaha ṭayyibiin.",
+          "id": "Hang in there. Egypt is a big country and its people are kind.",
+          "literal": "never-mind. Egypt country big and its-people kind."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "أيوه، حاسس بكده. وانتي منين في مصر؟",
+          "baca": "aywa, haasis bikida. w inti minēn fi Maṣr?",
+          "id": "Yes, I can feel that. And where in Egypt are you from?",
+          "literal": "yes, feeling with-that. and you(f) from-where in Egypt?"
+        },
+        {
+          "speaker": "منى:",
+          "text": "أنا من أسوان، بس ساكنة في القاهرة.",
+          "baca": "ana min Aswaan, bas sakna fil-Qaahira.",
+          "id": "I'm from Aswan, but I live in Cairo.",
+          "literal": "I from Aswan, but living(f) in Cairo."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "أسوان بعيدة، مش كده؟",
+          "baca": "Aswaan bi‘iida, mish kida?",
+          "id": "Aswan is far, isn't it?",
+          "literal": "Aswan far, not like-that?"
+        },
+        {
+          "speaker": "منى:",
+          "text": "بعيدة شوية، بس حلوة أوي. لازم تزورها.",
+          "baca": "bi‘iida shuwayya, bas hilwa ’awi. laazim tizurha.",
+          "id": "A bit far, but really beautiful. You have to visit it.",
+          "literal": "far a-little, but sweet very. must you-visit-it."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "إن شاء الله. الفرصة سعيدة يا منى.",
+          "baca": "insha’allah. il-furṣah sa‘iida ya Mona.",
+          "id": "God willing. Nice to meet you, Mona.",
+          "literal": "if-God-wills. the-occasion happy, O Mona."
+        }
+      ],
+      "notes": [
+        "**The word منين combines من and فين.** Literally \"from where\", and like every Egyptian question word it sits at the end: انت منين؟ In Fusha the same sentence is مِنْ أَيْنَ أَنْتَ, in reverse order.",
+        "**The word صح works like \"right?\" in English.** Tack it onto the end of a sentence to ask for agreement. Its twin is مش كده؟, literally \"not like that?\" — like \"isn't it?\" — and the two are interchangeable.",
+        "**Country names become adjectives by adding ـي.** مصر becomes مصري *maṣri*, لبنان becomes لبناني *libnaani*, إندونيسيا becomes إندونيسي *indunisi*. For a woman add ـة; for a group of people add ـين. You may know this ending from English words like *Iraqi*, *Saudi*, or *Pakistani*.",
+        "**The word دلوقتي means \"now\", and it's typically Egyptian.** The Fusha الآن is hardly ever heard in conversation. It comes from دي الوقت — literally \"this time\" — which gradually fused into one word.",
+        "**The word لوحدي means \"on my own\", and it changes with the person.** لوحدي *liwahdi* for me, لوحدك *liwahdak* for you, لوحده *liwahdu* for him. The ending attached here is exactly the same as the possessive ending.",
+        "**Note ساكنة, not بتسكن.** For living somewhere, sitting, standing, carrying, and knowing, Egyptian prefers an active participle (a verbal adjective) over a verb. This important feature is covered in full in unit 17; for now just learn it as it is."
+      ],
+      "grammars": [
+        {
+          "title": "From country name to nationality adjective",
+          "body": [
+            "Egyptian makes nationality words with one recipe that has almost no exceptions: drop a final ـا from the country name if there is one, then add ـي."
+          ],
+          "table": {
+            "head": [
+              "Country",
+              "Masculine",
+              "Feminine",
+              "Plural (people)",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "مصر",
+                "مصري",
+                "مصرية",
+                "مصريين",
+                "Egypt"
+              ],
+              [
+                "إندونيسيا",
+                "إندونيسي",
+                "إندونيسية",
+                "إندونيسيين",
+                "Indonesia"
+              ],
+              [
+                "السعودية",
+                "سعودي",
+                "سعودية",
+                "سعوديين",
+                "Saudi Arabia"
+              ],
+              [
+                "سوريا",
+                "سوري",
+                "سورية",
+                "سوريين",
+                "Syria"
+              ],
+              [
+                "اليابان",
+                "ياباني",
+                "يابانية",
+                "يابانيين",
+                "Japan"
+              ],
+              [
+                "أمريكا",
+                "أمريكاني",
+                "أمريكانية",
+                "أمريكان",
+                "America"
+              ],
+              [
+                "إنجلترا",
+                "إنجليزي",
+                "إنجليزية",
+                "إنجليز",
+                "England"
+              ]
+            ]
+          },
+          "after": [
+            "The last two rows are irregular, and both are among the most frequently used words — so learn them as they are. Their plurals are أمريكان and إنجليز, not forms ending in ـين.",
+            "The nationality adjective also serves as the name of the language, with الـ in front: العربي *il-‘arabi* (Arabic), الإنجليزي *il-ingliizi* (English), الإندونيسي *il-indunisi* (Indonesian).",
+            "Notice that **أنا مصري** means \"I'm Egyptian\", while **أنا من مصر** means \"I'm from Egypt\". Both are correct, and Egyptians use them interchangeably."
+          ]
+        },
+        {
+          "title": "The word مش — one word for every non-verb negation",
+          "body": [
+            "The word مش goes right in front of the part being negated. It never changes form, whether masculine, feminine, singular, or plural."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Say it",
+              "Negated",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "أنا طالب",
+                "ana ṭaalib",
+                "أنا مش طالب",
+                "ana mish ṭaalib",
+                "I'm not a student"
+              ],
+              [
+                "هي مصرية",
+                "hiyya maṣreyya",
+                "هي مش مصرية",
+                "hiyya mish maṣreyya",
+                "she's not Egyptian"
+              ],
+              [
+                "الأكل حلو",
+                "il-akl hilw",
+                "الأكل مش حلو",
+                "il-akl mish hilw",
+                "the food isn't good"
+              ],
+              [
+                "أنا فاهم",
+                "ana faahim",
+                "أنا مش فاهم",
+                "ana mish faahim",
+                "I don't understand"
+              ],
+              [
+                "احنا هنا",
+                "ihna hina",
+                "احنا مش هنا",
+                "ihna mish hina",
+                "we're not here"
+              ],
+              [
+                "ده كبير",
+                "da kibiir",
+                "ده مش كبير",
+                "da mish kibiir",
+                "this isn't big"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that this one word مش covers both \"not\" with nouns and \"not\" with adjectives — and even \"don't\" with words like فاهم. Egyptian makes no distinction.",
+            "What is **not** negated with مش is a verb marked with بـ. For that there's the wrapper مـ...ـش, covered in full in unit 10 — for example مابشتغلش *mabashtaghalsh* (I don't work)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The most common jobs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Masculine",
+            "Feminine",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "طالب",
+              "طالبة",
+              "ṭaalib / ṭaaliba",
+              "student"
+            ],
+            [
+              "مدرس",
+              "مدرسة",
+              "mudarris / mudarrisa",
+              "teacher"
+            ],
+            [
+              "دكتور",
+              "دكتورة",
+              "duktuur / duktuura",
+              "doctor (medical or PhD)"
+            ],
+            [
+              "مهندس",
+              "مهندسة",
+              "muhandis / muhandisa",
+              "engineer"
+            ],
+            [
+              "موظف",
+              "موظفة",
+              "muwaẓẓaf / muwaẓẓafa",
+              "employee, office worker"
+            ],
+            [
+              "محامي",
+              "محامية",
+              "muhaami / muhamiyya",
+              "lawyer"
+            ],
+            [
+              "ممرض",
+              "ممرضة",
+              "mumarriḍ / mumarriḍa",
+              "nurse"
+            ],
+            [
+              "صحفي",
+              "صحفية",
+              "ṣahafi / ṣahafeyya",
+              "journalist"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "There are two ways to ask someone's job, and both are equally common: انت بتشتغل إيه؟ *inta bitishtaghal ’ēh?* (\"what do you work?\") and انت شغلك إيه؟ *inta shughlak ’ēh?* (\"your job what?\"). The second is a little more casual."
+        },
+        {
+          "type": "kotak",
+          "title": "Titles used to address people",
+          "items": [
+            "The word أستاذ *ustaaz* is used for any adult man, not just teachers — much like \"sir\" or \"Mr.\" in English. Its feminine form أستاذة *ustaaza* works like \"ma'am\".",
+            "The word دكتور is used for medical doctors and for university lecturers with a PhD. In Egypt the title is used with pride and never skipped.",
+            "The word مدام *madaam* is for a married woman and آنسة *aanisa* for an unmarried one. When in doubt, أستاذة is always safe."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Countries and cities you'll hear often",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Egypt is the crossroads of the Arab world, and people from the whole region gather in Cairo. The following names come up in conversation almost every day."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "مصري",
+            "Say it",
+            "Meaning",
+            "مصري",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "مصر",
+              "Maṣr",
+              "Egypt; also Cairo",
+              "القاهرة",
+              "il-Qaahira",
+              "Cairo"
+            ],
+            [
+              "الإسكندرية",
+              "Iskindireyya",
+              "Alexandria",
+              "أسوان",
+              "Aswaan",
+              "Aswan"
+            ],
+            [
+              "الأقصر",
+              "il-U’ṣur",
+              "Luxor",
+              "الجيزة",
+              "ig-Giiza",
+              "Giza"
+            ],
+            [
+              "السعودية",
+              "is-Su‘udeyya",
+              "Saudi Arabia",
+              "الأردن",
+              "il-Urdun",
+              "Jordan"
+            ],
+            [
+              "سوريا",
+              "Surya",
+              "Syria",
+              "لبنان",
+              "Libnaan",
+              "Lebanon"
+            ],
+            [
+              "المغرب",
+              "il-Maghrib",
+              "Morocco",
+              "الإمارات",
+              "il-Imaraat",
+              "United Arab Emirates"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that the word مصر means two things: the country of Egypt and — for villagers and older people — the city of Cairo. This habit is thousands of years old, and Cairenes themselves still say رايح مصر when they mean \"going downtown\"."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "منين",
+      "baca": "minēn",
+      "en": "where from"
+    },
+    {
+      "ar": "بلد",
+      "baca": "balad",
+      "en": "country, hometown"
+    },
+    {
+      "ar": "مدينة",
+      "baca": "madiina",
+      "en": "city"
+    },
+    {
+      "ar": "ساكن",
+      "baca": "saakin",
+      "en": "living, staying (m)"
+    },
+    {
+      "ar": "دلوقتي",
+      "baca": "dilwa’ti",
+      "en": "now"
+    },
+    {
+      "ar": "إمتى",
+      "baca": "imta",
+      "en": "when"
+    },
+    {
+      "ar": "أسبوع",
+      "baca": "usbuu‘",
+      "en": "week"
+    },
+    {
+      "ar": "شهر",
+      "baca": "shahr",
+      "en": "month"
+    },
+    {
+      "ar": "سنة",
+      "baca": "sana",
+      "en": "year"
+    },
+    {
+      "ar": "عائلة",
+      "baca": "‘ēla",
+      "en": "family"
+    },
+    {
+      "ar": "لوحدي",
+      "baca": "liwahdi",
+      "en": "on my own, alone"
+    },
+    {
+      "ar": "شغل",
+      "baca": "shughl",
+      "en": "work, job"
+    },
+    {
+      "ar": "مهندس",
+      "baca": "muhandis",
+      "en": "engineer"
+    },
+    {
+      "ar": "مدرس",
+      "baca": "mudarris",
+      "en": "teacher"
+    },
+    {
+      "ar": "موظف",
+      "baca": "muwaẓẓaf",
+      "en": "employee"
+    },
+    {
+      "ar": "جامعة",
+      "baca": "gam‘a",
+      "en": "university"
+    },
+    {
+      "ar": "كبير",
+      "baca": "kibiir",
+      "en": "big; old"
+    },
+    {
+      "ar": "صغير",
+      "baca": "ṣughayyar",
+      "en": "small; young"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Egyptian Arabic.",
+      "items": [
+        "Where are you from? (to a woman)",
+        "I'm from Indonesia, from Bandung.",
+        "He's Egyptian, from Alexandria.",
+        "I'm an engineer, but now I'm a student.",
+        "We're not American."
+      ]
+    },
+    {
+      "prompt": "Fill in the right nationality form.",
+      "items": [
+        "منى بنت من مصر. هي ____.",
+        "بودي راجل من إندونيسيا. هو ____.",
+        "أحمد ومحمود من السعودية. هما ____.",
+        "سارة بنت من اليابان. هي ____.",
+        "جون راجل من أمريكا. هو ____."
+      ]
+    },
+    {
+      "prompt": "Make these sentences negative with مش.",
+      "items": [
+        "أنا مصري.",
+        "هي مدرسة.",
+        "الأكل حلو أوي.",
+        "احنا فاهمين.",
+        "أسوان قريبة من القاهرة."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "منين / انتي / ؟",
+        "من / أنا / إندونيسيا",
+        "مهندس / أنا / بس / طالب / دلوقتي / أنا",
+        "في / ساكنة / القاهرة / هي",
+        "كده / مش / ؟ / بعيدة / أسوان"
+      ]
+    }
+  ],
+  "answers": [
+    "انتي منين؟ — أنا من إندونيسيا، من باندونج. — هو مصري، من الإسكندرية. — أنا مهندس، بس دلوقتي أنا طالب. — احنا مش أمريكان.",
+    "مصرية — إندونيسي — سعوديين — يابانية — أمريكاني",
+    "أنا مش مصري. — هي مش مدرسة. — الأكل مش حلو أوي. — احنا مش فاهمين. — أسوان مش قريبة من القاهرة.",
+    "انتي منين؟ — أنا من إندونيسيا. — أنا مهندس بس دلوقتي أنا طالب. — هي ساكنة في القاهرة. — أسوان بعيدة، مش كده؟"
+  ],
+  "wave": "Before starting unit three, close this page and describe yourself out loud in four sentences: name, where you're from, job, how long you've been in Egypt."
+}

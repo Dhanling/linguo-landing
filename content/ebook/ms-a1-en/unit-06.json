@@ -1,0 +1,587 @@
+{
+  "title": "Shopping",
+  "title_target": "Berapa harga ni?",
+  "goal": "Ask prices, bargain and pay — while picking up *duit*, *ringgit*, *sen* and the whole set of colors, sizes and counting words used in shops.",
+  "bekal": [
+    "ask the price and bargain without sounding rude",
+    "talk about size, color and number of items with the right classifier",
+    "read Malaysian shop signs: *jualan murah*, *diskaun*, *tukar*, *bayar di kaunter*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — At the night market",
+      "intro": "Monday night, at the roadside night market near the college. Sarah wants to buy a sweater because her lecture hall is far too air-conditioned.",
+      "lines": [
+        {
+          "speaker": "Sarah:",
+          "text": "Bang, berapa harga baju sejuk ni?",
+          "id": "Excuse me, how much is this sweater?",
+          "literal": "brother, how-much price shirt cold this?"
+        },
+        {
+          "speaker": "Peniaga:",
+          "text": "Yang tu empat puluh lima ringgit. Ada saiz S sampai XL.",
+          "id": "That one's forty-five ringgit. We have sizes S to XL.",
+          "literal": "the-one that four ten five ringgit. there-is size S until XL."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Mahalnya. Boleh kurang tak?",
+          "id": "That's expensive. Can you go lower?",
+          "literal": "expensive-nya. can less not?"
+        },
+        {
+          "speaker": "Peniaga:",
+          "text": "Empat puluh je untuk adik. Dah murah tu.",
+          "id": "Forty, just for you. That's already cheap.",
+          "literal": "four ten only for younger-sibling. already cheap that."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Tiga puluh lima boleh? Saya ambil dua.",
+          "id": "How about thirty-five? I'll take two.",
+          "literal": "three ten five can? I take two."
+        },
+        {
+          "speaker": "Peniaga:",
+          "text": "Dua helai? Alah, boleh. Tujuh puluh dua-dua.",
+          "id": "Two of them? Oh, all right. Seventy for both.",
+          "literal": "two piece? alah, can. seven ten two-two."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Setuju. Ada warna lain tak? Yang ni terlalu terang.",
+          "id": "Deal. Do you have other colors? This one's too bright.",
+          "literal": "agree. there-is color other not? the-one this too bright."
+        },
+        {
+          "speaker": "Peniaga:",
+          "text": "Ada hitam, kelabu, biru gelap. Nak yang mana?",
+          "id": "There's black, grey, dark blue. Which one do you want?",
+          "literal": "there-is black, grey, blue dark. want the-one which?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Satu hitam, satu kelabu. Boleh cuba dulu?",
+          "id": "One black, one grey. Can I try them on first?",
+          "literal": "one black, one grey. can try first?"
+        },
+        {
+          "speaker": "Peniaga:",
+          "text": "Boleh, tapi kat sini takde bilik cuba. Sarung atas baju je.",
+          "id": "Sure, but there's no fitting room here. Just pull it over your top.",
+          "literal": "can, but at here not-there-is room try. slip-on top shirt only."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Okey. Muat. Saya bayar guna kad boleh?",
+          "id": "OK. It fits. Can I pay by card?",
+          "literal": "okay. fit. I pay use card can?"
+        },
+        {
+          "speaker": "Peniaga:",
+          "text": "Kat pasar malam tunai je, adik. Ada QR pun boleh.",
+          "id": "At the night market it's cash only, miss. QR is fine too.",
+          "literal": "at market night cash only, younger-sibling. there-is QR also can."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Baik, saya scan. Terima kasih, bang!",
+          "id": "OK, I'll scan. Thanks, bro!",
+          "literal": "good, I scan. receive love, brother!"
+        }
+      ],
+      "notes": [
+        "**Berapa harga ni?** (\"how-much price this?\") is the most common way to ask a price in Malaysia. Other common forms: *Ni berapa?* (this, how much?) and *Berapa satu?* (how much each?).",
+        "**Mahalnya!** — *-nya* on the end of an adjective makes an **exclamation**, not a possessive. *Mahalnya!* = \"So expensive!\", *Cantiknya!* = \"How pretty!\", *Panasnya!* = \"It's so hot!\". Malaysians use it constantly.",
+        "**Boleh kurang tak?** (\"can less, or not?\") is the standard bargaining line. Others: *Kurang sikit boleh?*, *Ada diskaun tak?*, *Harga last berapa?* (what's your last price?). Bargaining is normal at night markets and street markets; in mall shops and supermarkets it is **not**.",
+        "**Alah** is a half-hearted \"oh, all right then\" — the sound of giving in. Its cousins: *aiya*, *ala*, *ish*.",
+        "**Takde** is the spoken form of *tak ada* / *tiada* (there isn't). *Takde bilik cuba* = there's no fitting room. You'll hear it all the time; the formal form **tiada** mostly appears in writing."
+      ],
+      "grammars": [
+        {
+          "title": "Duit, ringgit, sen — and how to say prices",
+          "body": [
+            "Malaysia's currency is the **ringgit** (RM), divided into **sen**. One ringgit = 100 sen. Prices are written with a decimal **point**, just as in English."
+          ],
+          "table": {
+            "head": [
+              "Written",
+              "Read as",
+              "Note"
+            ],
+            "rows": [
+              [
+                "RM1",
+                "seringgit",
+                "*se-* = one"
+              ],
+              [
+                "RM2.50",
+                "dua ringgit lima puluh sen",
+                "—"
+              ],
+              [
+                "RM10",
+                "sepuluh ringgit",
+                "—"
+              ],
+              [
+                "RM45",
+                "empat puluh lima ringgit",
+                "—"
+              ],
+              [
+                "RM1,200",
+                "seribu dua ratus ringgit",
+                "Comma = thousands, as in English."
+              ],
+              [
+                "50 sen",
+                "lima puluh sen",
+                "—"
+              ]
+            ]
+          },
+          "after": [
+            "Good news: **commas and points work exactly as in English** — RM1,200.50 is one thousand two hundred ringgit fifty sen. (⚠️ Indonesia swaps them: Rp1.200,50. If a price ever looks a thousand times off, check the marks.)",
+            "**Duit** and **wang** both mean money. *Duit* is everyday (like \"cash\"), *wang* is more formal and used at banks and on forms. The Indonesian word *uang* **isn't used** in Malaysia."
+          ]
+        },
+        {
+          "title": "Classifiers — counting words",
+          "body": [
+            "English has a few counting words — \"a **piece** of paper\", \"a **pair** of shoes\", \"two **head** of cattle\". Standard Malay uses them for almost everything you count, and a wrong one is noticed at once."
+          ],
+          "table": {
+            "head": [
+              "Classifier",
+              "For",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**orang**",
+                "people",
+                "tiga orang pelajar"
+              ],
+              [
+                "**ekor**",
+                "animals (\"tail\")",
+                "dua ekor kucing"
+              ],
+              [
+                "**buah**",
+                "big things, buildings, books (\"fruit\")",
+                "sebuah kereta, dua buah rumah"
+              ],
+              [
+                "**helai**",
+                "thin things: clothes, paper, towels (\"sheet\")",
+                "dua helai baju"
+              ],
+              [
+                "**batang**",
+                "long things: pens, cigarettes, trees (\"stick\")",
+                "sebatang pen"
+              ],
+              [
+                "**biji**",
+                "small round things: eggs, fruit (\"seed\")",
+                "lima biji telur"
+              ],
+              [
+                "**keping**",
+                "flat things: bread, cards, pictures (\"slice\")",
+                "sekeping roti"
+              ],
+              [
+                "**cawan / gelas**",
+                "drinks (\"cup / glass\")",
+                "secawan kopi"
+              ],
+              [
+                "**bungkus**",
+                "wrapped food (\"pack\")",
+                "dua bungkus nasi lemak"
+              ],
+              [
+                "**pasang**",
+                "things in pairs: shoes, trousers (\"pair\")",
+                "sepasang kasut"
+              ]
+            ]
+          },
+          "after": [
+            "Note the attached **se-**: *sebuah*, *seorang*, *sehelai*, *secawan* — it means \"one\" (or \"a\") and is written as one word.",
+            "⚠️ In everyday speech Malaysians often drop the classifier: *dua baju*, *tiga kopi*. That's fine in conversation. But in **writing**, school essays and forms, the right classifier is expected — which is why it's still taught."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Colors, sizes and describing things",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Malay",
+            "English",
+            "Malay",
+            "English"
+          ],
+          "rows": [
+            [
+              "merah",
+              "red",
+              "kelabu ⚠️",
+              "grey"
+            ],
+            [
+              "biru",
+              "blue",
+              "perang ⚠️",
+              "brown"
+            ],
+            [
+              "kuning",
+              "yellow",
+              "ungu",
+              "purple"
+            ],
+            [
+              "hijau",
+              "green",
+              "merah jambu ⚠️",
+              "pink"
+            ],
+            [
+              "hitam",
+              "black",
+              "oren",
+              "orange"
+            ],
+            [
+              "putih",
+              "white",
+              "emas / perak",
+              "gold / silver"
+            ],
+            [
+              "gelap",
+              "dark (color)",
+              "cerah / terang",
+              "light, bright"
+            ],
+            [
+              "besar / kecil",
+              "big / small",
+              "panjang / pendek",
+              "long / short"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Three colors to note: **kelabu** (grey), **perang** (brown — ⚠️ in Indonesian *perang* means war!) and **merah jambu** (pink, literally \"rose-apple red\"). And \"thin\" is **nipis**."
+        },
+        {
+          "type": "p",
+          "text": "For dark and light shades, Malay puts **gelap** (dark) and **cerah/muda** (light, \"young\") after the color: *biru gelap* (dark blue), *hijau muda* (light green). Colors, like all adjectives, come **after** the noun: *baju hitam* = a black shirt."
+        },
+        {
+          "type": "sub",
+          "text": "Clothes"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Malay",
+            "English"
+          ],
+          "rows": [
+            [
+              "**baju**",
+              "shirt, top; clothes"
+            ],
+            [
+              "**kemeja**",
+              "shirt (with collar)"
+            ],
+            [
+              "**baju-T**",
+              "T-shirt"
+            ],
+            [
+              "**baju sejuk**",
+              "sweater, jacket ⚠️"
+            ],
+            [
+              "**seluar**",
+              "trousers ⚠️"
+            ],
+            [
+              "**seluar pendek**",
+              "shorts"
+            ],
+            [
+              "**kasut**",
+              "shoes ⚠️"
+            ],
+            [
+              "**selipar**",
+              "flip-flops (from *slipper*)"
+            ],
+            [
+              "**stoking**",
+              "socks"
+            ],
+            [
+              "**tudung**",
+              "headscarf"
+            ],
+            [
+              "**baju kurung**",
+              "traditional Malay women's dress"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Four words to learn now: **seluar** (trousers), **kasut** (shoes), **cermin mata** (glasses, \"mirror eyes\") and **baju sejuk** (sweater, \"cold shirt\"). All four are used every day."
+        }
+      ]
+    },
+    {
+      "title": "Where to shop and the signs you'll see",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Malay",
+            "English"
+          ],
+          "rows": [
+            [
+              "**kedai**",
+              "shop"
+            ],
+            [
+              "**kedai runcit**",
+              "grocery shop, corner shop"
+            ],
+            [
+              "**pasaraya**",
+              "supermarket"
+            ],
+            [
+              "**pasar raya besar / hipermarket**",
+              "hypermarket"
+            ],
+            [
+              "**pusat membeli-belah**",
+              "shopping mall"
+            ],
+            [
+              "**pasar malam**",
+              "night market"
+            ],
+            [
+              "**pasar tani**",
+              "farmers' market"
+            ],
+            [
+              "**gerai**",
+              "stall, kiosk"
+            ],
+            [
+              "**kaunter**",
+              "counter, checkout"
+            ],
+            [
+              "**troli**",
+              "trolley, shopping cart"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Signs you'll see",
+          "items": [
+            "**JUALAN MURAH** / **JUALAN GUDANG** — sale / warehouse sale.",
+            "**DISKAUN SEHINGGA 70%** — up to 70% off.",
+            "**BELI 1 PERCUMA 1** — buy one, get one free. (⚠️ *percuma* = free)",
+            "**HABIS STOK** — out of stock.",
+            "**BAYAR DI KAUNTER** — pay at the counter.",
+            "**TOLAK** / **TARIK** — push / pull (on doors).",
+            "**DILARANG MASUK** — no entry."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The word **kecemasan** means **emergency**. *Pintu kecemasan* = emergency exit, *bilik kecemasan* = the hospital emergency room. (Indonesian *kecemasan* means \"anxiety\", so Indonesian visitors often misread this sign.)"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ms": "berapa harga",
+      "baca": "buh-rah-puh hahr-guh",
+      "en": "how much is it"
+    },
+    {
+      "ms": "duit / wang",
+      "baca": "doo-eet · wahng",
+      "en": "money"
+    },
+    {
+      "ms": "kad",
+      "baca": "kahd",
+      "en": "card"
+    },
+    {
+      "ms": "diskaun",
+      "baca": "dees-kown",
+      "en": "discount"
+    },
+    {
+      "ms": "jualan murah",
+      "baca": "joo-ah-lahn moo-rahh",
+      "en": "sale"
+    },
+    {
+      "ms": "kurang",
+      "baca": "koo-rahng",
+      "en": "less; to lower the price"
+    },
+    {
+      "ms": "saiz",
+      "baca": "sah-eez",
+      "en": "size"
+    },
+    {
+      "ms": "muat",
+      "baca": "moo-aht",
+      "en": "to fit"
+    },
+    {
+      "ms": "cuba",
+      "baca": "choo-buh",
+      "en": "to try"
+    },
+    {
+      "ms": "takde (tiada)",
+      "baca": "tahk-deh",
+      "en": "there isn't, there's no"
+    },
+    {
+      "ms": "seluar",
+      "baca": "suh-loo-ah",
+      "en": "trousers ⚠️"
+    },
+    {
+      "ms": "kasut",
+      "baca": "kah-soot",
+      "en": "shoes ⚠️"
+    },
+    {
+      "ms": "baju sejuk",
+      "baca": "bah-joo suh-jook",
+      "en": "sweater, jacket ⚠️"
+    },
+    {
+      "ms": "cermin mata",
+      "baca": "chuhr-meen mah-tuh",
+      "en": "glasses ⚠️"
+    },
+    {
+      "ms": "kelabu",
+      "baca": "kuh-lah-boo",
+      "en": "grey ⚠️"
+    },
+    {
+      "ms": "perang",
+      "baca": "puh-rahng",
+      "en": "brown ⚠️"
+    },
+    {
+      "ms": "merah jambu",
+      "baca": "meh-rahh jahm-boo",
+      "en": "pink"
+    },
+    {
+      "ms": "nipis",
+      "baca": "nee-pees",
+      "en": "thin"
+    },
+    {
+      "ms": "resit",
+      "baca": "reh-seet",
+      "en": "receipt"
+    },
+    {
+      "ms": "kaunter",
+      "baca": "kown-tuh",
+      "en": "counter, checkout"
+    },
+    {
+      "ms": "kecemasan",
+      "baca": "kuh-chuh-mah-sahn",
+      "en": "emergency ⚠️"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right classifier.",
+      "items": [
+        "dua ____ pelajar",
+        "tiga ____ kucing",
+        "se____ kereta",
+        "dua ____ baju",
+        "lima ____ telur",
+        "se____ kasut"
+      ]
+    },
+    {
+      "prompt": "Write the Malay word for these things.",
+      "items": [
+        "trousers",
+        "shoes",
+        "sweater",
+        "glasses",
+        "plastic bag",
+        "receipt"
+      ]
+    },
+    {
+      "prompt": "Translate into Malay.",
+      "items": [
+        "How much is this, bro?",
+        "So expensive! Can you go lower?",
+        "Do you have other colors?",
+        "Can I try it on first?",
+        "Can I pay by card?",
+        "Is there a discount?"
+      ]
+    },
+    {
+      "prompt": "What do these signs mean?",
+      "items": [
+        "BELI 1 PERCUMA 1",
+        "JUALAN MURAH",
+        "PINTU KECEMASAN",
+        "BAYAR DI KAUNTER",
+        "HABIS STOK"
+      ]
+    }
+  ],
+  "answers": [
+    "orang — ekor — buah — helai — biji — pasang",
+    "seluar — kasut — baju sejuk — cermin mata — beg plastik — resit",
+    "Berapa harga ni, bang? — Mahalnya! Boleh kurang tak? — Ada warna lain tak? — Boleh cuba dulu? — Saya bayar guna kad boleh? — Ada diskaun tak?",
+    "Buy one, get one free — Sale — Emergency exit — Pay at the counter — Out of stock"
+  ]
+}

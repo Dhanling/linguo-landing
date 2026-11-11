@@ -1,0 +1,633 @@
+{
+  "title": "Wēn el-mahatta — asking the way",
+  "title_target": "وَين الْمَحَطَّة؟",
+  "goal": "Ask for directions and actually understand the answer, use commands, and say where things are in relation to each other.",
+  "bekal": [
+    "ask where a place is with three different patterns",
+    "understand the commands رُوح، لِف، اِمْشِي and their feminine forms",
+    "give directions and locations with the right preposition"
+  ],
+  "dialogs": [
+    {
+      "title": "حَكِي — عَ الطَّرِيق",
+      "intro": "Budi is lost looking for a bus stop in Amman and asks a man standing outside a shop.",
+      "lines": [
+        {
+          "speaker": "بُودِي:",
+          "text": "لَو سَمَحْت، وَين مَحَطَّة الْبَاص؟",
+          "baca": "law samaht, wēn mahaṭṭat el-baaṣ?",
+          "id": "Excuse me, where's the bus stop?",
+          "literal": "if you-permit, where stop the-bus?"
+        },
+        {
+          "speaker": "اَلرِّجَّال:",
+          "text": "أَهْلًا. قَرِيبِة، تْقَرِيبًا خَمْس دَقَايِق مَشِي.",
+          "baca": "ahlan. ’ariibe, ta’riiban khams da’aayi’ mashi.",
+          "id": "Hello. It's close, about five minutes' walk.",
+          "literal": "family. near, roughly five minutes walking."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "كِيف بُوصَل؟",
+          "baca": "kēf buuṣal?",
+          "id": "How do I get there?",
+          "literal": "how I-arrive?"
+        },
+        {
+          "speaker": "اَلرِّجَّال:",
+          "text": "اِمْشِي دُغْرِي لَآخِر الشَّارِع.",
+          "baca": "imshi dughri la-aakhir esh-shaari‘.",
+          "id": "Walk straight to the end of the street.",
+          "literal": "walk straight to-end the-street."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "طَيِّب. وْبَعْدَين؟",
+          "baca": "ṭayyib. w ba‘dēn?",
+          "id": "OK. And then?",
+          "literal": "good. and after-that?"
+        },
+        {
+          "speaker": "اَلرِّجَّال:",
+          "text": "لِف عَ الْيَمِين عِنْد الصَّيْدَلِيِّة.",
+          "baca": "lif ‘a el-yamiin ‘ind eṣ-ṣaydaliyye.",
+          "id": "Turn right at the pharmacy.",
+          "literal": "turn on the-right at the-pharmacy."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "عَ الْيَمِين… مَاشِي.",
+          "baca": "‘a el-yamiin… maashi.",
+          "id": "To the right… OK.",
+          "literal": "on the-right… walking."
+        },
+        {
+          "speaker": "اَلرِّجَّال:",
+          "text": "اِمْشِي شْوَي كَمَان، بْتْشُوف بَنْك عَ الشِّمَال.",
+          "baca": "imshi shway kamaan, btshuuf bank ‘a esh-shimaal.",
+          "id": "Walk a bit more and you'll see a bank on the left.",
+          "literal": "walk a-little also, you-see bank on the-left."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "وَالْمَحَطَّة قِدَّام الْبَنْك؟",
+          "baca": "wel-mahaṭṭa ’iddaam el-bank?",
+          "id": "And the stop is in front of the bank?",
+          "literal": "and-the-stop in-front-of the-bank?"
+        },
+        {
+          "speaker": "اَلرِّجَّال:",
+          "text": "لَا، وَرَا الْبَنْك. جَنْب الْجَامِع.",
+          "baca": "la’, wara el-bank. janb el-jaami‘.",
+          "id": "No, behind the bank. Next to the mosque.",
+          "literal": "no, behind the-bank. beside the-mosque."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "فْهِمِت. وْأَيّ بَاص بْيَاخُدْنِي عَ وَسَط الْبَلَد؟",
+          "baca": "fhimt. w ayy baaṣ byaakhudni ‘a wasaṭ el-balad?",
+          "id": "Got it. And which bus goes downtown?",
+          "literal": "I-understood. and which bus it-takes-me on center the-town?"
+        },
+        {
+          "speaker": "اَلرِّجَّال:",
+          "text": "رَقَم سِتَّة. بَسّ اِسْأَل السَّوَّاق لَتْأَكَّد.",
+          "baca": "ra’m sitte. bass is’al es-sawwaa’ lat’akkad.",
+          "id": "Number six. But ask the driver to make sure.",
+          "literal": "number six. but ask the-driver to-you-make-sure."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "يِسْلَمُوا كْتِير. اَللَّه يْخَلِّيك.",
+          "baca": "yislamu ktiir. alla ykhalliik.",
+          "id": "Thanks a lot. God keep you.",
+          "literal": "may-they-be-safe much. God may-keep-you."
+        },
+        {
+          "speaker": "اَلرِّجَّال:",
+          "text": "وْلَا يْهِمَّك. أَهْلًا وْسَهْلًا فِيك.",
+          "baca": "wala yhimmak. ahlan w sahlan fiik.",
+          "id": "No problem at all. You're welcome.",
+          "literal": "and-not it-troubles-you. family and ease in-you."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "اَللَّه يْسَلِّمَك. مَع السَّلَامِة.",
+          "baca": "alla ysallmak. ma‘ es-salaame.",
+          "id": "God keep you safe. Goodbye.",
+          "literal": "God may-keep-you-safe. with the-safety."
+        }
+      ],
+      "notes": [
+        "**Commands are made by dropping the prefix from the \"you\" form.** بْتِمْشِي (\"you walk\") becomes اِمْشِي (\"walk!\"). For a woman add ـِي — اِمْشِي stays اِمْشِي, but رُوح becomes رُوحِي and لِف becomes لِفِّي.",
+        "**The word دُغْرِي means \"straight,\" and it isn't originally Arabic.** It comes from Turkish, a leftover of four centuries of Ottoman rule, and is used all over the Levant. You'll hear it in every set of directions.",
+        "**Right and left take the preposition عَ.** The forms are عَ الْيَمِين and عَ الشِّمَال. In parts of Lebanon and Palestine, \"left\" is عَ الْيَسَار — both are correct and understood everywhere.",
+        "**The word عِنْد means \"at\" for landmarks, not just \"have.\"** عِنْد الصَّيْدَلِيِّة means \"at the pharmacy\" as a reference point, exactly like \"at the lights\" or \"by the church\" in English directions.",
+        "**The phrase وْلَا يْهِمَّك is the most typically Levantine reply to thanks.** Literally \"may it not trouble you,\" it means \"no problem at all.\" It's much warmer than عَفْوًا, and using it instantly makes you sound like less of a tourist.",
+        "**Don't be shy about asking twice.** Directions come fast and are often long. Your lifesavers: مُمْكِن تْعِيد؟ (\"could you repeat?\") and شْوَي شْوَي لَو سَمَحْت (\"slowly, please\"). Both are polite and always work."
+      ],
+      "grammars": [
+        {
+          "title": "Commands",
+          "table": {
+            "head": [
+              "To a man",
+              "To a woman",
+              "To a group",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "رُوح",
+                "رُوحِي",
+                "رُوحُوا",
+                "ruuh / ruuhi / ruuhu",
+                "go!"
+              ],
+              [
+                "تَعَال",
+                "تَعَالِي",
+                "تَعَالُوا",
+                "ta‘aal / ta‘aali / ta‘aalu",
+                "come here!"
+              ],
+              [
+                "اِمْشِي",
+                "اِمْشِي",
+                "اِمْشُوا",
+                "imshi / imshi / imshu",
+                "walk!"
+              ],
+              [
+                "لِف",
+                "لِفِّي",
+                "لِفُّوا",
+                "lif / liffi / liffu",
+                "turn!"
+              ],
+              [
+                "اِسْأَل",
+                "اِسْأَلِي",
+                "اِسْأَلُوا",
+                "is’al / is’ali / is’alu",
+                "ask!"
+              ],
+              [
+                "شُوف",
+                "شُوفِي",
+                "شُوفُوا",
+                "shuuf / shuufi / shuufu",
+                "look!"
+              ],
+              [
+                "اِسْتَنَّى",
+                "اِسْتَنِّي",
+                "اِسْتَنُّوا",
+                "istanna / istanni / istannu",
+                "wait!"
+              ],
+              [
+                "خُدْ",
+                "خُدِي",
+                "خُدُوا",
+                "khud / khudi / khudu",
+                "take!"
+              ]
+            ]
+          },
+          "after": [
+            "To forbid, put لَا before the **ordinary verb without b-**, not before the command form: لَا تْرُوح (\"don't go\"), لَا تِسْأَل (\"don't ask\"). لَا رُوح is wrong and sounds off right away.",
+            "⚠️ Bare commands sound blunter in English than in Arabic. تَعَال to a friend is perfectly normal. But to someone older or a stranger, add لَو سَمَحْت, or turn it into a question: مُمْكِن تِيجِي؟"
+          ]
+        },
+        {
+          "title": "Prepositions of place",
+          "table": {
+            "head": [
+              "Levantine",
+              "Say it",
+              "Meaning",
+              "Example",
+              "Example meaning"
+            ],
+            "rows": [
+              [
+                "قِدَّام",
+                "’iddaam",
+                "in front of",
+                "قِدَّام الْبَنْك",
+                "in front of the bank"
+              ],
+              [
+                "وَرَا",
+                "wara",
+                "behind",
+                "وَرَا الْبَيْت",
+                "behind the house"
+              ],
+              [
+                "جَنْب",
+                "janb",
+                "next to",
+                "جَنْب الْجَامِع",
+                "next to the mosque"
+              ],
+              [
+                "بَين",
+                "bēn",
+                "between",
+                "بَين الْبَنْك وَالْمَحَلّ",
+                "between the bank and the shop"
+              ],
+              [
+                "فَوْق",
+                "fō’",
+                "on, above",
+                "فَوْق الطَّاوْلِة",
+                "on the table"
+              ],
+              [
+                "تَحِت",
+                "taht",
+                "under, below",
+                "تَحِت الْبَيْت",
+                "under the house"
+              ],
+              [
+                "حَدّ",
+                "hadd",
+                "right beside",
+                "حَدّ الْبَاب",
+                "right beside the door"
+              ],
+              [
+                "مُقَابِل",
+                "mu’aabil",
+                "opposite",
+                "مُقَابِل الْمَدْرَسِة",
+                "opposite the school"
+              ],
+              [
+                "بْجُوَّا",
+                "bjuwwa",
+                "inside",
+                "بْجُوَّا الْمَحَلّ",
+                "inside the shop"
+              ],
+              [
+                "بَرَّا",
+                "barra",
+                "outside",
+                "بَرَّا الْبَيْت",
+                "outside the house"
+              ]
+            ]
+          },
+          "after": [
+            "These words also take the possessive endings from unit 4: قِدَّامِي (\"in front of me\"), وَرَايِ (\"behind me\"), جَنْبَك (\"next to you\"). These forms are very common for saying where something is relative to you.",
+            "The words فَوْق and تَحِت are also used for floors of a building: الطَّابِق فَوْق (\"upstairs\"), تَحِت (\"downstairs\"). In tall buildings, floors are given with ordinary numbers: اَلطَّابِق التَّالِت."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Places you'll look for most",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Levantine",
+            "Say it",
+            "Meaning",
+            "Levantine",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "مَحَطَّة",
+              "mahaṭṭa",
+              "stop, station",
+              "مَطَار",
+              "maṭaar",
+              "airport"
+            ],
+            [
+              "بَنْك",
+              "bank",
+              "bank",
+              "صَرَّاف",
+              "ṣarraaf",
+              "money changer"
+            ],
+            [
+              "صَيْدَلِيِّة",
+              "ṣaydaliyye",
+              "pharmacy",
+              "مَشْفَى",
+              "mashfa",
+              "hospital"
+            ],
+            [
+              "جَامِع",
+              "jaami‘",
+              "mosque",
+              "كْنِيسَة",
+              "kniise",
+              "church"
+            ],
+            [
+              "سُوق",
+              "suu’",
+              "market",
+              "مَوْل",
+              "mōl",
+              "mall"
+            ],
+            [
+              "مَطْعَم",
+              "maṭ‘am",
+              "restaurant",
+              "فُرْن",
+              "furn",
+              "bakery"
+            ],
+            [
+              "فُنْدُق",
+              "fundu’",
+              "hotel",
+              "سِفَارَة",
+              "sifaara",
+              "embassy"
+            ],
+            [
+              "شَارِع",
+              "shaari‘",
+              "street",
+              "سَاحَة",
+              "saaha",
+              "square"
+            ],
+            [
+              "حَمَّام",
+              "hammaam",
+              "restroom",
+              "مَخْفَر",
+              "makhfar",
+              "police station"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The word حَمَّام does double duty: it means the bathroom at home and the public restroom anywhere else. وَين الْحَمَّام؟ is always understood and isn't considered rude anywhere in the Levant."
+        },
+        {
+          "type": "kotak",
+          "title": "Three ways to ask, and how they differ",
+          "items": [
+            "For location: وَين + place + ؟ — وَين الْبَنْك؟ The most direct.",
+            "For how to get there: كِيف بُوصَل عَ…؟ — كِيف بُوصَل عَ الْمَطَار؟ The answer is a set of directions.",
+            "For whether it exists: فِي + place + هُون؟ — فِي صَيْدَلِيِّة قَرِيبِة؟ The answer is simply yes or no."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Getting around",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Levantine",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "بَاص",
+              "baaṣ",
+              "bus"
+            ],
+            [
+              "سِرْفِيس",
+              "sirviis",
+              "shared minibus"
+            ],
+            [
+              "تَاكْسِي",
+              "taaksi",
+              "taxi"
+            ],
+            [
+              "عَ وَسَط الْبَلَد لَو سَمَحْت",
+              "‘a wasaṭ el-balad law samaht",
+              "downtown, please"
+            ],
+            [
+              "قَدِّيش الْأُجْرَة؟",
+              "’addēsh el-ujra?",
+              "how much is the fare?"
+            ],
+            [
+              "عَ الْعَدَّاد لَو سَمَحْت",
+              "‘a el-‘addaad law samaht",
+              "by the meter, please"
+            ],
+            [
+              "وَقِّف هُون",
+              "wa’’if hōn",
+              "stop here"
+            ],
+            [
+              "عَ الزَّاوِيِة",
+              "‘a ez-zaawye",
+              "at the corner"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The word سِرْفِيس refers to a shared van that runs a fixed route and stops anywhere along it. It's much cheaper than a taxi, and riding one is the fastest way to feel you really live in the city."
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Taxis and meters",
+          "items": [
+            "In Amman and Beirut, ask for عَ الْعَدَّاد (\"by the meter\") before you get in. If the driver refuses, agree on the price first: قَدِّيش لَـ…؟",
+            "Agreeing on a price before you set off isn't a sign of distrust — it's simply what everyone does.",
+            "To get out, say وَقِّف هُون لَو سَمَحْت or, more typically, عَ جَنْب (\"pull over a moment\")."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "وَين",
+      "baca": "wēn",
+      "en": "where"
+    },
+    {
+      "ar": "مَحَطَّة",
+      "baca": "mahaṭṭa",
+      "en": "stop, station"
+    },
+    {
+      "ar": "شَارِع",
+      "baca": "shaari‘",
+      "en": "street"
+    },
+    {
+      "ar": "دُغْرِي",
+      "baca": "dughri",
+      "en": "straight"
+    },
+    {
+      "ar": "يَمِين / شِمَال",
+      "baca": "yamiin / shimaal",
+      "en": "right / left"
+    },
+    {
+      "ar": "لِف",
+      "baca": "lif",
+      "en": "turn! (command)"
+    },
+    {
+      "ar": "اِمْشِي",
+      "baca": "imshi",
+      "en": "walk! (command)"
+    },
+    {
+      "ar": "رُوح",
+      "baca": "ruuh",
+      "en": "go!"
+    },
+    {
+      "ar": "تَعَال",
+      "baca": "ta‘aal",
+      "en": "come here!"
+    },
+    {
+      "ar": "قِدَّام / وَرَا",
+      "baca": "’iddaam / wara",
+      "en": "in front of / behind"
+    },
+    {
+      "ar": "جَنْب",
+      "baca": "janb",
+      "en": "next to"
+    },
+    {
+      "ar": "بَين",
+      "baca": "bēn",
+      "en": "between"
+    },
+    {
+      "ar": "فَوْق / تَحِت",
+      "baca": "fō’ / taht",
+      "en": "on, above / under, below"
+    },
+    {
+      "ar": "صَيْدَلِيِّة",
+      "baca": "ṣaydaliyye",
+      "en": "pharmacy"
+    },
+    {
+      "ar": "جَامِع",
+      "baca": "jaami‘",
+      "en": "mosque"
+    },
+    {
+      "ar": "فُنْدُق",
+      "baca": "fundu’",
+      "en": "hotel"
+    },
+    {
+      "ar": "حَمَّام",
+      "baca": "hammaam",
+      "en": "restroom"
+    },
+    {
+      "ar": "وَسَط الْبَلَد",
+      "baca": "wasaṭ el-balad",
+      "en": "downtown"
+    },
+    {
+      "ar": "سِرْفِيس",
+      "baca": "sirviis",
+      "en": "shared minibus"
+    },
+    {
+      "ar": "أُجْرَة",
+      "baca": "ujra",
+      "en": "fare"
+    },
+    {
+      "ar": "تْقَرِيبًا",
+      "baca": "ta’riiban",
+      "en": "about, roughly"
+    },
+    {
+      "ar": "وْلَا يْهِمَّك",
+      "baca": "wala yhimmak",
+      "en": "no problem at all"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Levantine Arabic.",
+      "items": [
+        "Excuse me, where's the bus stop?",
+        "Walk straight to the end of the street.",
+        "Turn right at the pharmacy.",
+        "The stop is behind the bank.",
+        "How do I get to the airport?",
+        "Stop here, please."
+      ]
+    },
+    {
+      "prompt": "Make these into commands to a woman.",
+      "items": [
+        "رُوح",
+        "تَعَال",
+        "لِف",
+        "شُوف",
+        "اِسْأَل",
+        "خُدْ"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right preposition of place.",
+      "items": [
+        "اَلْمَحَطَّة ____ الْبَنْك. (behind)",
+        "اَلْمَحَلّ ____ الْجَامِع. (next to)",
+        "اَلْكْتَاب ____ الطَّاوْلِة. (on)",
+        "اَلْفُنْدُق ____ الْبَنْك وَالْمَحَلّ. (between)",
+        "اَلصَّيْدَلِيِّة ____ الْمَدْرَسِة. (opposite)",
+        "اَلْحَمَّام ____. (inside)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "الْبَاص / وَين / مَحَطَّة / ؟",
+        "دُغْرِي / اِمْشِي",
+        "الْيَمِين / لِف / عَ",
+        "الْبَنْك / وَرَا / اَلْمَحَطَّة",
+        "بُوصَل / كِيف / عَ الْمَطَار / ؟",
+        "لَو سَمَحْت / هُون / وَقِّف"
+      ]
+    }
+  ],
+  "answers": [
+    "لَو سَمَحْت، وَين مَحَطَّة الْبَاص؟ — اِمْشِي دُغْرِي لَآخِر الشَّارِع. — لِف عَ الْيَمِين عِنْد الصَّيْدَلِيِّة. — اَلْمَحَطَّة وَرَا الْبَنْك. — كِيف بُوصَل عَ الْمَطَار؟ — وَقِّف هُون لَو سَمَحْت.",
+    "رُوحِي — تَعَالِي — لِفِّي — شُوفِي — اِسْأَلِي — خُدِي",
+    "وَرَا — جَنْب — فَوْق — بَين — مُقَابِل — بْجُوَّا",
+    "وَين مَحَطَّة الْبَاص؟ — اِمْشِي دُغْرِي. — لِف عَ الْيَمِين. — اَلْمَحَطَّة وَرَا الْبَنْك. — كِيف بُوصَل عَ الْمَطَار؟ — وَقِّف هُون لَو سَمَحْت."
+  ],
+  "wave": "Picture the walk from your home to the nearest market, then describe the route in Levantine Arabic — use دُغْرِي and لِف at least once each."
+}

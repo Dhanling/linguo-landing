@@ -1,0 +1,579 @@
+{
+  "title": "Es-saa‘a kam — time, days and appointments",
+  "title_target": "اَلسَّاعَة كَم؟",
+  "goal": "Tell the time the Levantine way, name the days and parts of the day, and make a simple appointment — including the \"half seven\" trap.",
+  "bekal": [
+    "ask and say what time it is",
+    "name the days of the week and the parts of the day",
+    "make an appointment with a clear time and day"
+  ],
+  "dialogs": [
+    {
+      "title": "حَكِي — مَوْعِد بُكْرَا",
+      "intro": "Samer invites Budi on a walk through the old city, and the two of them settle on a time.",
+      "lines": [
+        {
+          "speaker": "سَامِر:",
+          "text": "بُودِي، بُكْرَا فَاضِي؟",
+          "baca": "Buudi, bukra faaḍi?",
+          "id": "Budi, are you free tomorrow?",
+          "literal": "Budi, tomorrow free?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "بُكْرَا شُو، اَلتَّلَاتَا؟",
+          "baca": "bukra shu, et-talaata?",
+          "id": "What's tomorrow, Tuesday?",
+          "literal": "tomorrow what, Tuesday?"
+        },
+        {
+          "speaker": "سَامِر:",
+          "text": "إِيه، اَلتَّلَاتَا. بَدِّي نْرُوح عَ الْبَلَد الْقَدِيمِة.",
+          "baca": "ēh, et-talaata. baddi nruuh ‘a el-balad el-’adiime.",
+          "id": "Yes, Tuesday. I'd like us to go to the old city.",
+          "literal": "yes, Tuesday. want-my we-go to the-city the-old."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "حِلْو. اَلسَّاعَة كَم؟",
+          "baca": "hilw. es-saa‘a kam?",
+          "id": "Nice. What time?",
+          "literal": "sweet. the-hour how-much?"
+        },
+        {
+          "speaker": "سَامِر:",
+          "text": "اَلسَّاعَة عَشَرَة الصُّبِح؟",
+          "baca": "es-saa‘a ‘ashara es-subh?",
+          "id": "Ten in the morning?",
+          "literal": "the-hour ten the-morning?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "بَكِّير شْوَي. عِنْدِي صَفّ لَلْعَشَرَة وْنُصّ.",
+          "baca": "bakkiir shway. ‘indi ṣaff la-el-‘ashara w nuṣṣ.",
+          "id": "A bit early. I have class until half past ten.",
+          "literal": "early a-little. at-me class until-ten and half."
+        },
+        {
+          "speaker": "سَامِر:",
+          "text": "طَيِّب، اَلْحْدَعْش وْرُبِع؟",
+          "baca": "ṭayyib, el-hda‘sh w rubi‘?",
+          "id": "OK, a quarter past eleven?",
+          "literal": "good, eleven and quarter?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "تَمَام. وَين بْنِلْتِقِي؟",
+          "baca": "tamaam. wēn bniltiqi?",
+          "id": "Perfect. Where shall we meet?",
+          "literal": "perfect. where we-meet?"
+        },
+        {
+          "speaker": "سَامِر:",
+          "text": "قِدَّام الْجَامِع الْأُمَوِي. بْتَعْرِفُو؟",
+          "baca": "’iddaam el-jaami‘ el-Umawi. bta‘rifo?",
+          "id": "In front of the Umayyad Mosque. Do you know it?",
+          "literal": "in-front-of mosque the-Umayyads. you-know-it?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "بَعْرِفُو. بَسّ لَا تْتَأَخَّر.",
+          "baca": "ba‘rifo. bass la tit’akhkhar.",
+          "id": "I know it. But don't be late.",
+          "literal": "I-know-it. but don't you-be-late."
+        },
+        {
+          "speaker": "سَامِر:",
+          "text": "أَنَا؟ أَنَا دَايْمًا عَ الْوَقْت!",
+          "baca": "ana? ana daayman ‘a el-wa’t!",
+          "id": "Me? I'm always on time!",
+          "literal": "I? I always on the-time!"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "إِنْ شَاءَ اللَّه. لَلْكَم بِنْضَلّ هْنِيك؟",
+          "baca": "inshaalla. la-kam binḍall hniik?",
+          "id": "Let's hope. Until what time will we stay there?",
+          "literal": "if God wills. until-how-much we-stay there?"
+        },
+        {
+          "speaker": "سَامِر:",
+          "text": "لَبَعِد الضُّهِر. بْنَاكُل هْنِيك وْبْنِرْجَع.",
+          "baca": "laba‘d eḍ-ḍuhr. bnaakul hniik w bnirja‘.",
+          "id": "Until the afternoon. We'll eat there and come back.",
+          "literal": "until-after the-noon. we-eat there and we-return."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مَاشِي. بْشُوفَك بُكْرَا الْحْدَعْش وْرُبِع.",
+          "baca": "maashi. bshuufak bukra el-hda‘sh w rubi‘.",
+          "id": "OK. See you tomorrow at a quarter past eleven.",
+          "literal": "walking. I-see-you tomorrow eleven and quarter."
+        },
+        {
+          "speaker": "سَامِر:",
+          "text": "اِتَّفَقْنَا. تِصْبَح عَ خَير.",
+          "baca": "ittafa’na. tiṣbah ‘a khēr.",
+          "id": "Deal. Good night.",
+          "literal": "we-agreed. may-you-wake on good."
+        }
+      ],
+      "notes": [
+        "**⚠️ Arabic counts the half hour FORWARD.** The phrase اَلسَّاعَة سِتِّة وْنُصّ means **6:30** — just like British \"half six\". If your own language (German, Dutch, Scandinavian, Polish…) says \"half seven\" for 6:30, this is your number-one trap, and it costs you an hour on every appointment.",
+        "**Minutes are added with وْ and taken away with إِلَّا.** The form وْرُبِع means \"a quarter past\", إِلَّا رُبِع means \"a quarter to\". Only four are used all the time: وْرُبِع، وْنُصّ، إِلَّا رُبِع، وْعَشَرَة.",
+        "**Days of the week take اَل in front.** The forms are اَلتَّلَاتَا (Tuesday), اَلْأَرْبَعَا (Wednesday). Dropping اَل sounds like reading a calendar, not talking.",
+        "**The Levantine week starts on Sunday, and the days off vary.** In Syria and Jordan the weekend is Friday and Saturday. In Lebanon, Saturday and Sunday. This isn't about language, but it decides when the shops are closed.",
+        "**Parts of the day are often marked by prayer times, even by people who don't pray.** The phrases قَبِل الْمَغْرِب and بَعِد الضُّهِر are used every day by everyone, including in religiously mixed Lebanon. They work as neutral time markers.",
+        "**The word لَا in front of a verb means \"don't\".** The form لَا تْتَأَخَّر means \"don't be late\". We cover it fully in unit 16; for now, just recognize that لَا + verb = a prohibition."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "table": {
+            "head": [
+              "Time",
+              "Levantine",
+              "Say it",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "07.00",
+                "اَلسَّاعَة سَبْعَة",
+                "es-saa‘a sab‘a",
+                "the hour seven"
+              ],
+              [
+                "07.15",
+                "اَلسَّاعَة سَبْعَة وْرُبِع",
+                "es-saa‘a sab‘a w rubi‘",
+                "seven and a quarter"
+              ],
+              [
+                "07.30",
+                "اَلسَّاعَة سَبْعَة وْنُصّ",
+                "es-saa‘a sab‘a w nuṣṣ",
+                "seven and a half"
+              ],
+              [
+                "07.20",
+                "اَلسَّاعَة سَبْعَة وْتِلِت",
+                "es-saa‘a sab‘a w tilit",
+                "seven and a third"
+              ],
+              [
+                "07.45",
+                "اَلسَّاعَة تْمَانْيِة إِلَّا رُبِع",
+                "es-saa‘a tmaanye illa rubi‘",
+                "eight minus a quarter"
+              ],
+              [
+                "07.10",
+                "اَلسَّاعَة سَبْعَة وْعَشَرَة",
+                "es-saa‘a sab‘a w ‘ashara",
+                "seven and ten"
+              ],
+              [
+                "07.50",
+                "اَلسَّاعَة تْمَانْيِة إِلَّا عَشَرَة",
+                "es-saa‘a tmaanye illa ‘ashara",
+                "eight minus ten"
+              ],
+              [
+                "12.00",
+                "اَلسَّاعَة تْنَعْش",
+                "es-saa‘a tna‘sh",
+                "the hour twelve"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Once more, because this is what goes wrong most often: **وْنُصّ means half PAST.** The time سِتِّة وْنُصّ is 6:30. If you mean 5:30, say خَمْسِة وْنُصّ.",
+            "To make morning or evening clear, add الصُّبِح (morning), بَعِد الضُّهِر (midday), الْعَصِر (afternoon) or اَلْمَسَا (evening) after it. The 24-hour clock is almost never used in conversation."
+          ]
+        },
+        {
+          "title": "Days and parts of the day",
+          "table": {
+            "head": [
+              "Day",
+              "Say it",
+              "Part of the day",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "اَلْأَحَد",
+                "el-ahad",
+                "اَلصُّبِح",
+                "es-subh",
+                "morning"
+              ],
+              [
+                "اَلتَّنَين",
+                "et-tanēn",
+                "اَلضُّهِر",
+                "eḍ-ḍuhr",
+                "noon"
+              ],
+              [
+                "اَلتَّلَاتَا",
+                "et-talaata",
+                "بَعِد الضُّهِر",
+                "ba‘d eḍ-ḍuhr",
+                "early afternoon"
+              ],
+              [
+                "اَلْأَرْبَعَا",
+                "el-arba‘a",
+                "اَلْعَصِر",
+                "el-‘aṣr",
+                "late afternoon"
+              ],
+              [
+                "اَلْخَمِيس",
+                "el-khamiis",
+                "اَلْمَغْرِب",
+                "el-maghrib",
+                "dusk"
+              ],
+              [
+                "اَلْجُمْعَة",
+                "el-jum‘a",
+                "اَلْمَسَا",
+                "el-masa",
+                "evening, night"
+              ],
+              [
+                "اَلسَّبِت",
+                "es-sabt",
+                "اَللَّيْل",
+                "el-lēl",
+                "late at night"
+              ]
+            ]
+          },
+          "after": [
+            "Time words that go with them: اَلْيَوْم *el-yōm* (today), بُكْرَا *bukra* (tomorrow), مْبَارِح *mbaarih* (yesterday), بَعِد بُكْرَا *ba‘d bukra* (the day after tomorrow), وَّل مْبَارِح *awwal mbaarih* (the day before yesterday).",
+            "⚠️ The word غَدَا *ghada* means **lunch**, not \"tomorrow\" — even though in Fusha غَدًا does mean tomorrow. It's a direct trap for anyone who has studied Fusha: a lunch invitation can sound like a plan for tomorrow."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Making and changing appointments",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Levantine",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "اَلسَّاعَة كَم؟",
+              "es-saa‘a kam?",
+              "what time is it?"
+            ],
+            [
+              "إِمْتَى بْنِلْتِقِي؟",
+              "imta bniltiqi?",
+              "when shall we meet?"
+            ],
+            [
+              "بُكْرَا فَاضِي؟",
+              "bukra faaḍi?",
+              "are you free tomorrow?"
+            ],
+            [
+              "بْيِنَاسْبَك السَّاعَة تْلَاتِة؟",
+              "byinaasbak es-saa‘a tlaate?",
+              "does three o'clock suit you?"
+            ],
+            [
+              "مَا فِيني بُكْرَا",
+              "ma fiini bukra",
+              "I can't tomorrow"
+            ],
+            [
+              "مُمْكِن نْأَجِّلُو؟",
+              "mumkin n’ajjilo?",
+              "can we push it back?"
+            ],
+            [
+              "أَنَا مِتْأَخِّر شْوَي",
+              "ana mit’akhkhir shway",
+              "I'll be a bit late"
+            ],
+            [
+              "اِتَّفَقْنَا",
+              "ittafa’na",
+              "deal, agreed"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The phrase اِتَّفَقْنَا is the neatest way to seal an agreement on a time, and it works like a handshake. After it, people usually don't confirm the time again — except you, who as a beginner should still repeat it once."
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Time in the Levant is more relaxed",
+          "items": [
+            "A social meeting at seven often means somewhere between seven and half past, and that's no sign of disrespect. Work meetings and doctor's appointments, on the other hand, are kept.",
+            "If you need precision, add بِالضَّبْط *biḍ-ḍabṭ* (\"exactly\"): اَلسَّاعَة سَبْعَة بِالضَّبْط. Everyone understands that as a serious request.",
+            "Saying إِنْ شَاءَ اللَّه about an appointment **doesn't always mean \"yes\"**. Often it means \"hopefully\", with a chance it won't happen. If you need certainty, ask again: يَعْنِي أَكِيد؟"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Units of time",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Levantine",
+            "Say it",
+            "Meaning",
+            "Plural",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "ثَانْيِة",
+              "taanye",
+              "second",
+              "ثَوَانِي",
+              "tawaani"
+            ],
+            [
+              "دَقِيقَة",
+              "da’ii’a",
+              "minute",
+              "دَقَايِق",
+              "da’aayi’"
+            ],
+            [
+              "سَاعَة",
+              "saa‘a",
+              "hour",
+              "سَاعَات",
+              "saa‘aat"
+            ],
+            [
+              "يَوْم",
+              "yōm",
+              "day",
+              "أَيَّام",
+              "ayyaam"
+            ],
+            [
+              "أُسْبُوع",
+              "usbuu‘",
+              "week",
+              "أَسَابِيع",
+              "asaabii‘"
+            ],
+            [
+              "شَهْر",
+              "shahr",
+              "month",
+              "شْهُور",
+              "shhuur"
+            ],
+            [
+              "سِنِة",
+              "sine",
+              "year",
+              "سْنِين",
+              "sniin"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The word سَاعَة does double duty: it means \"clock, watch\", \"hour\" as a unit of time, and it opens a time phrase as in اَلسَّاعَة كَم. Only context tells them apart, and it's never confusing."
+        },
+        {
+          "type": "kotak",
+          "title": "Saying how long something lasts",
+          "items": [
+            "For a length of time, say the number followed by the unit: تْلَات سَاعَات (three hours), عَشْر دَقَايِق (ten minutes).",
+            "For \"since\" or \"ago\", use مِن *min*: مِن سَاعَة (an hour ago), مِن شَهْر (for a month).",
+            "For \"until\", use لَـ *la-*: لَلْعَشَرَة (until ten o'clock), لَبُكْرَا (until tomorrow)."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "اَلسَّاعَة",
+      "baca": "es-saa‘a",
+      "en": "hour, clock, o'clock"
+    },
+    {
+      "ar": "كَم",
+      "baca": "kam",
+      "en": "how much (for time)"
+    },
+    {
+      "ar": "رُبِع",
+      "baca": "rubi‘",
+      "en": "quarter"
+    },
+    {
+      "ar": "نُصّ",
+      "baca": "nuṣṣ",
+      "en": "half"
+    },
+    {
+      "ar": "إِلَّا",
+      "baca": "illa",
+      "en": "minus, to (the hour)"
+    },
+    {
+      "ar": "اَلصُّبِح",
+      "baca": "es-subh",
+      "en": "morning"
+    },
+    {
+      "ar": "بَعِد الضُّهِر",
+      "baca": "ba‘d eḍ-ḍuhr",
+      "en": "early afternoon"
+    },
+    {
+      "ar": "اَلْمَسَا",
+      "baca": "el-masa",
+      "en": "evening, night"
+    },
+    {
+      "ar": "اَلْيَوْم",
+      "baca": "el-yōm",
+      "en": "today"
+    },
+    {
+      "ar": "بُكْرَا",
+      "baca": "bukra",
+      "en": "tomorrow"
+    },
+    {
+      "ar": "مْبَارِح",
+      "baca": "mbaarih",
+      "en": "yesterday"
+    },
+    {
+      "ar": "اَلتَّنَين",
+      "baca": "et-tanēn",
+      "en": "Monday"
+    },
+    {
+      "ar": "اَلتَّلَاتَا",
+      "baca": "et-talaata",
+      "en": "Tuesday"
+    },
+    {
+      "ar": "اَلْجُمْعَة",
+      "baca": "el-jum‘a",
+      "en": "Friday"
+    },
+    {
+      "ar": "مَوْعِد",
+      "baca": "mō‘id",
+      "en": "appointment, meeting"
+    },
+    {
+      "ar": "فَاضِي",
+      "baca": "faaḍi",
+      "en": "free, not busy"
+    },
+    {
+      "ar": "بَكِّير",
+      "baca": "bakkiir",
+      "en": "early"
+    },
+    {
+      "ar": "مِتْأَخِّر",
+      "baca": "mit’akhkhir",
+      "en": "late"
+    },
+    {
+      "ar": "تَمَام",
+      "baca": "tamaam",
+      "en": "perfect, all good"
+    },
+    {
+      "ar": "قِدَّام",
+      "baca": "’iddaam",
+      "en": "in front of"
+    },
+    {
+      "ar": "بِالضَّبْط",
+      "baca": "biḍ-ḍabṭ",
+      "en": "exactly"
+    },
+    {
+      "ar": "اِتَّفَقْنَا",
+      "baca": "ittafa’na",
+      "en": "agreed, deal"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Levantine Arabic.",
+      "items": [
+        "What time is it?",
+        "It's a quarter past nine.",
+        "We'll meet tomorrow at eleven.",
+        "I have class until one.",
+        "I'm free on Friday.",
+        "Don't be late."
+      ]
+    },
+    {
+      "prompt": "Write the time in Levantine Arabic.",
+      "items": [
+        "08.00",
+        "08.15",
+        "08.30",
+        "08.45",
+        "10.10",
+        "12.00"
+      ]
+    },
+    {
+      "prompt": "Fill in the right word.",
+      "items": [
+        "اَلسَّاعَة سِتِّة ____. (half past)",
+        "اَلسَّاعَة تِسْعَة ____ رُبِع. (to, minus)",
+        "____ عِنْدِي صَفّ. (tomorrow)",
+        "بْنِلْتِقِي يَوْم ____. (Tuesday)",
+        "بُوصَل ____ الصُّبِح. (morning)",
+        "____، بْشُوفَك بُكْرَا. (agreed)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "كَم / اَلسَّاعَة / ؟",
+        "وْنُصّ / اَلسَّاعَة / سَبْعَة",
+        "بْنِلْتِقِي / إِمْتَى / ؟",
+        "فَاضِي / بُكْرَا / ؟",
+        "الْجَامِع / قِدَّام / بْنِلْتِقِي",
+        "تْتَأَخَّر / لَا"
+      ]
+    }
+  ],
+  "answers": [
+    "اَلسَّاعَة كَم؟ — اَلسَّاعَة تِسْعَة وْرُبِع. — بْنِلْتِقِي بُكْرَا السَّاعَة حْدَعْش. — عِنْدِي صَفّ لَلْوَحْدِة. — يَوْم الْجُمْعَة أَنَا فَاضِي. — لَا تْتَأَخَّر.",
+    "اَلسَّاعَة تْمَانْيِة — اَلسَّاعَة تْمَانْيِة وْرُبِع — اَلسَّاعَة تْمَانْيِة وْنُصّ — اَلسَّاعَة تِسْعَة إِلَّا رُبِع — اَلسَّاعَة عَشَرَة وْعَشَرَة — اَلسَّاعَة تْنَعْش",
+    "وْنُصّ — إِلَّا — بُكْرَا — اَلتَّلَاتَا — اَلصُّبِح — اِتَّفَقْنَا",
+    "اَلسَّاعَة كَم؟ — اَلسَّاعَة سَبْعَة وْنُصّ. — إِمْتَى بْنِلْتِقِي؟ — بُكْرَا فَاضِي؟ — بْنِلْتِقِي قِدَّام الْجَامِع. — لَا تْتَأَخَّر."
+  ],
+  "wave": "Look at your watch six times today and say the time out loud in Levantine Arabic. Remember: وْنُصّ means half past."
+}

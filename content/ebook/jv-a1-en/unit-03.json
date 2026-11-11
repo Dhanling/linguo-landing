@@ -1,0 +1,540 @@
+{
+  "title": "Family and possession",
+  "title_target": "Kulawargaku, kulawarga kula",
+  "goal": "Name family members, say what you have, and attach the three possessive endings — *-ku*, *-mu*, *-é* — plus see how krama replaces them.",
+  "bekal": [
+    "name family members in ngoko and krama",
+    "use *duwé* / *gadhah* to say what you have",
+    "replace *-ku* and *-mu* with *kula* and *panjenengan* in krama"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ngobrol karo Rini bab kulawarga",
+      "intro": "First night at the boarding house. Dian and Rini sit on the porch. Rini asks about Dian's family, and the conversation is ngoko from start to finish.",
+      "lines": [
+        {
+          "speaker": "Rini:",
+          "text": "Kowé duwé sedulur pira?",
+          "id": "How many brothers and sisters do you have?",
+          "literal": "you have sibling how-many?"
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Loro. Aku duwé kakang siji lan adhi siji.",
+          "id": "Two. I have an older brother and a younger sister.",
+          "literal": "two. I have older-brother one and younger-sibling one."
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Adhimu lanang apa wédok?",
+          "id": "Is your little one a boy or a girl?",
+          "literal": "younger-sibling-your male or female?"
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Wédok. Jenengé Sari, isih sekolah.",
+          "id": "A girl. Her name's Sari, she's still at school.",
+          "literal": "female. name-her Sari, still school."
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Bapak ibumu ing Jakarta uga?",
+          "id": "Are your mom and dad in Jakarta too?",
+          "literal": "father mother-your at Jakarta also?"
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Iya. Bapakku guru, ibuku dodolan ing pasar.",
+          "id": "Yes. My dad's a teacher, my mom sells things at the market.",
+          "literal": "yes. father-my teacher, mother-my selling at market."
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Wah, padha. Ibuku uga dodolan.",
+          "id": "Oh, same here. My mom sells things too.",
+          "literal": "wow, same. mother-my also selling."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Kowé dhéwé duwé sedulur?",
+          "id": "And you, do you have brothers or sisters?",
+          "literal": "you self have sibling?"
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Ora. Aku anak siji-sijiné.",
+          "id": "No. I'm an only child.",
+          "literal": "no. I child one-one-the."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Simbahmu isih ana?",
+          "id": "Are your grandparents still alive?",
+          "literal": "grandparent-your still there-is?"
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Isih. Simbah putri isih sehat, manggon ing Klaten.",
+          "id": "Yes. Grandma is still healthy, she lives in Klaten.",
+          "literal": "still. grandparent female still healthy, live at Klaten."
+        }
+      ],
+      "notes": [
+        "**Duwé** (to have) goes straight before the thing owned: *aku duwé buku* (I have a book), *dhèwèké duwé omah* (she has a house). Its krama form is *gadhah*, and for someone highly respected there's the krama inggil (honorific) form *kagungan* — *Bapak kagungan mobil* (Father has a car).",
+        "**Lanang** and **wédok** are \"male\" and \"female\" for people in ngoko. The krama forms are *jaler* and *èstri*. The ngoko words are also used for animals; but calling people *jaler/èstri* in casual chat sounds like filling in a form.",
+        "**Isih** means \"still\", krama *taksih*: *isih sekolah* (still at school), *isih ana* (still there, still alive), *isih adoh* (still far).",
+        "**Jenengé Sari** — the ending *-é* here means \"her\": **her** name is Sari. The same ending also means \"the\", and context tells them apart.",
+        "**Apa** in the middle of a sentence means \"or\": *lanang apa wédok?* (boy or girl?). So *apa* has three jobs — \"what\", \"or\", and a yes/no question marker at the start of a sentence (*apa kowé wis mangan?*, have you eaten?). Its krama form is *punapa* for all three.",
+        "**Simbah** means grandfather or grandmother. To specify: *simbah kakung* (grandfather) and *simbah putri* (grandmother). *Kakung* and *putri* are the polite markers for male and female, and they turn up in other forms of address too.",
+        "**Padha** means \"same\" — *wah, padha* is the natural reaction when you find something in common. It also marks a plural doer, as in *padha mangan* (they all eat). Krama: *sami*."
+      ],
+      "grammars": [
+        {
+          "title": "Three possessive endings, and what happens in krama",
+          "body": [
+            "In ngoko, possession works with endings stuck to the noun: *omahku* = house-my. Watch the right-hand column: in krama, two of the three endings **come off and become separate words**."
+          ],
+          "table": {
+            "head": [
+              "Owner",
+              "Ngoko",
+              "Example",
+              "Krama"
+            ],
+            "rows": [
+              [
+                "I",
+                "**-ku**",
+                "*omahku* (my house)",
+                "*griya kula*"
+              ],
+              [
+                "you",
+                "**-mu**",
+                "*omahmu* (your house)",
+                "*griya panjenengan*"
+              ],
+              [
+                "he, she / the",
+                "**-é / -né**",
+                "*omahé* (his/her house)",
+                "*griyanipun*"
+              ],
+              [
+                "we",
+                "*awaké dhéwé*",
+                "*omahé awaké dhéwé*",
+                "*griya kita*"
+              ],
+              [
+                "they",
+                "*dhèwèké kabèh*",
+                "*omahé dhèwèké kabèh*",
+                "*griyanipun*"
+              ]
+            ]
+          },
+          "after": [
+            "**-é** versus **-né** depends only on the last letter: words ending in a **consonant** take *-é* (*lawang* → *lawangé*, *anak* → *anaké*), words ending in a **vowel** take *-né* (*buku* → *bukuné*, *méja* → *méjané*).",
+            "In krama, *-é/-né* becomes **-ipun** (after a consonant) or **-nipun** (after a vowel): *lawangipun*, *bukunipun*. This is one of the most regular swaps in all of Javanese — learn it once, use it everywhere.",
+            "To say something belongs to **a named person**, put the name after the thing, with *-é/-né* on the thing: *omahé Rini* (Rini's house), *bukuné Dian* (Dian's book), *anaké Pak Broto* (Mr. Broto's child). Javanese almost always includes that *-é/-né*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Family members",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Notice that the words for your own parents and someone else's parents **sit at different levels**. When talking about your own father to someone you respect, you still say *bapak*; when talking about **that person's** father, you go up to *rama*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Ngoko",
+            "Krama",
+            "English"
+          ],
+          "rows": [
+            [
+              "*bapak*",
+              "*rama*",
+              "father"
+            ],
+            [
+              "*ibu*, *mbok*",
+              "*ibu*",
+              "mother"
+            ],
+            [
+              "*anak*",
+              "*putra*",
+              "child"
+            ],
+            [
+              "*kakang*, *mas*",
+              "*raka*",
+              "older brother"
+            ],
+            [
+              "*mbakyu*, *mbak*",
+              "*mbakyu*",
+              "older sister"
+            ],
+            [
+              "*adhi*",
+              "*rayi*",
+              "younger brother or sister"
+            ],
+            [
+              "*sedulur*",
+              "*sedhèrèk*",
+              "sibling, relative"
+            ],
+            [
+              "*simbah*",
+              "*éyang*",
+              "grandparent"
+            ],
+            [
+              "*putu*",
+              "*wayah*",
+              "grandchild"
+            ],
+            [
+              "*bojo*",
+              "*sémah*, *garwa*",
+              "husband, wife"
+            ],
+            [
+              "*paklik*, *lik*",
+              "*paman*",
+              "uncle"
+            ],
+            [
+              "*bulik*",
+              "*bibi*",
+              "aunt"
+            ],
+            [
+              "*kulawarga*",
+              "*kulawarga*",
+              "family"
+            ],
+            [
+              "*lanang*",
+              "*jaler*",
+              "male"
+            ],
+            [
+              "*wédok*",
+              "*èstri*",
+              "female"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Mas, Mbak, Pak, Bu — the titles you must use",
+          "items": [
+            "Javanese people rarely call someone by their bare name. They use **title + name**: *Mas Ahmad*, *Mbak Rini*, *Pak Broto*, *Bu Sri*. Calling out just \"Rini!\" to someone you don't know well sounds rude.",
+            "**Mas** for a man your age or a bit older; **Mbak** for a woman your age or a bit older; **Dhik** or **Dik** for someone younger; **Pak** (sir) and **Bu** (ma'am) for someone much older or in a senior position.",
+            "If you're unsure between *Mas* and *Pak*, choose **Pak**. Going one step too high just makes people smile; going one step too low offends."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking about people",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Ngoko",
+            "Krama"
+          ],
+          "rows": [
+            [
+              "How many siblings do you have?",
+              "*Kowé duwé sedulur pira?*",
+              "*Panjenengan gadhah sedhèrèk pinten?*"
+            ],
+            [
+              "Who's this?",
+              "*Iki sapa?*",
+              "*Menika sinten?*"
+            ],
+            [
+              "What's his/her name?",
+              "*Jenengé sapa?*",
+              "*Naminipun sinten?*"
+            ],
+            [
+              "What does he/she do?",
+              "*Dhèwèké kerja apa?*",
+              "*Piyambakipun nyambut damel punapa?*"
+            ],
+            [
+              "Where do you live?",
+              "*Manggon ing ngendi?*",
+              "*Manggèn wonten pundi?*"
+            ],
+            [
+              "Still at school?",
+              "*Isih sekolah?*",
+              "*Taksih sekolah?*"
+            ],
+            [
+              "Are you married?",
+              "*Wis rabi?*",
+              "*Sampun palakrama?*"
+            ],
+            [
+              "Which child are you (first, second…)?",
+              "*Anak nomer pira?*",
+              "*Putra nomer pinten?*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "These questions will come at you, not just from you. Asking about family, home town and marital status is normal small talk in Java — not nosiness but a way of showing interest. Preparing your answers is more useful than memorizing the questions."
+        },
+        {
+          "type": "kotak",
+          "title": "An important difference: duwé, ana, and the possessive",
+          "items": [
+            "*Aku duwé buku* — I **have** a book (possession).",
+            "*Ana buku* — **there is** a book (existence).",
+            "*Iki bukuku* — this is **my** book (naming the owner). No verb needed at all.",
+            "Beginners mix these up. *Aku ana buku* is wrong and sounds odd. For \"have\", use *duwé*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "jv": "kulawarga",
+      "krama": "kulawarga",
+      "baca": "koo-lah-WAHR-go",
+      "en": "family"
+    },
+    {
+      "jv": "bapak",
+      "krama": "rama",
+      "baca": "BAH-pah' · RO-mo",
+      "en": "father"
+    },
+    {
+      "jv": "ibu",
+      "krama": "ibu",
+      "baca": "EE-boo",
+      "en": "mother"
+    },
+    {
+      "jv": "anak",
+      "krama": "putra",
+      "baca": "AH-nah' · POO-tro",
+      "en": "child"
+    },
+    {
+      "jv": "kakang, mas",
+      "krama": "raka",
+      "baca": "KAH-kahng · RO-ko",
+      "en": "older brother"
+    },
+    {
+      "jv": "mbakyu, mbak",
+      "krama": "mbakyu",
+      "baca": "m-BAH'-yoo",
+      "en": "older sister"
+    },
+    {
+      "jv": "adhi",
+      "krama": "rayi",
+      "baca": "AH-dhee · RAH-yee",
+      "en": "younger brother or sister"
+    },
+    {
+      "jv": "sedulur",
+      "krama": "sedhèrèk",
+      "baca": "suh-DOO-loor · suh-DHEH-reh'",
+      "en": "sibling, relative"
+    },
+    {
+      "jv": "simbah",
+      "krama": "éyang",
+      "baca": "sim-BAH · AY-yahng",
+      "en": "grandparent"
+    },
+    {
+      "jv": "bojo",
+      "krama": "sémah, garwa",
+      "baca": "BO-jo · GAHR-wo",
+      "en": "husband, wife"
+    },
+    {
+      "jv": "putu",
+      "krama": "wayah",
+      "baca": "POO-too · WAH-yah",
+      "en": "grandchild"
+    },
+    {
+      "jv": "duwé",
+      "krama": "gadhah",
+      "baca": "doo-WAY · GAH-dhah",
+      "en": "to have, own"
+    },
+    {
+      "jv": "lanang",
+      "krama": "jaler",
+      "baca": "LAH-nahng · JAH-luhr",
+      "en": "male"
+    },
+    {
+      "jv": "wédok",
+      "krama": "èstri",
+      "baca": "WAY-do' · EHS-tree",
+      "en": "female"
+    },
+    {
+      "jv": "isih",
+      "krama": "taksih",
+      "baca": "EE-sih · TAH'-sih",
+      "en": "still"
+    },
+    {
+      "jv": "padha",
+      "krama": "sami",
+      "baca": "PO-dho · SAH-mee",
+      "en": "same; (plural marker)"
+    },
+    {
+      "jv": "dhéwé",
+      "krama": "piyambak",
+      "baca": "dhay-WAY · pee-YAHM-bah'",
+      "en": "self, own"
+    },
+    {
+      "jv": "manggon",
+      "krama": "manggèn",
+      "baca": "MAHNG-gon",
+      "en": "to live, reside"
+    },
+    {
+      "jv": "sekolah",
+      "krama": "sekolah",
+      "baca": "suh-KO-lah",
+      "en": "school; to go to school"
+    },
+    {
+      "jv": "guru",
+      "krama": "guru",
+      "baca": "GOO-roo",
+      "en": "teacher"
+    },
+    {
+      "jv": "dodolan",
+      "krama": "sadéyan",
+      "baca": "do-DO-lahn",
+      "en": "to sell things, run a stall"
+    },
+    {
+      "jv": "kerja, nyambut gawé",
+      "krama": "nyambut damel",
+      "baca": "nyahm-boot GAH-way",
+      "en": "to work"
+    },
+    {
+      "jv": "pasar",
+      "krama": "peken",
+      "baca": "PAH-sahr · PUH-kuhn",
+      "en": "market"
+    },
+    {
+      "jv": "omah",
+      "krama": "griya, dalem",
+      "baca": "O-mah · GREE-yo",
+      "en": "house, home"
+    },
+    {
+      "jv": "sehat",
+      "krama": "saras",
+      "baca": "SAY-haht · SAH-rahs",
+      "en": "healthy"
+    },
+    {
+      "jv": "pira",
+      "krama": "pinten",
+      "baca": "PEE-ro · PIN-tuhn",
+      "en": "how many, how much"
+    },
+    {
+      "jv": "rabi",
+      "krama": "palakrama",
+      "baca": "RAH-bee",
+      "en": "to marry, be married"
+    },
+    {
+      "jv": "kanca",
+      "krama": "kanca, réncang",
+      "baca": "KAHN-cho · RAYN-chahng",
+      "en": "friend"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Add the right possessive ending (*-ku*, *-mu*, *-é* or *-né*).",
+      "items": [
+        "Iki omah____ . (my house)",
+        "Adhi____ jenengé sapa? (your younger sibling)",
+        "Buku____ ing ndhuwur méja. (his book)",
+        "Bapak____ guru. (my father)",
+        "Kunci____ ilang. (the key)",
+        "Méja____ gedhé. (the table)"
+      ]
+    },
+    {
+      "prompt": "Change these ngoko sentences into krama. Watch the possessive endings.",
+      "items": [
+        "Omahku adoh.",
+        "Adhimu isih sekolah?",
+        "Bapakku guru.",
+        "Aku duwé sedulur loro.",
+        "Bukuné ing ngendi?"
+      ]
+    },
+    {
+      "prompt": "Translate into Javanese (ngoko).",
+      "items": [
+        "I have one younger sister.",
+        "My older brother works at the market.",
+        "My grandmother is still healthy.",
+        "This isn't my house.",
+        "How many siblings do you have?",
+        "Her name's Sari, she's still at school."
+      ]
+    },
+    {
+      "prompt": "**Review of Unit 1.** Cover Unit 1, then write these sentences in Javanese.",
+      "items": [
+        "My name is Dian. (ngoko)",
+        "Where are you from? (krama)",
+        "I'm learning Javanese. (ngoko)",
+        "Good afternoon, sir. (krama)",
+        "Fine, thanks. (ngoko)"
+      ]
+    }
+  ],
+  "answers": [
+    "omahku — Adhimu — Bukuné — Bapakku — Kunciné — Méjané",
+    "Griya kula tebih. — Rayi panjenengan taksih sekolah? — Rama kula guru. — Kula gadhah sedhèrèk kalih. — Bukunipun wonten pundi?",
+    "Aku duwé adhi wédok siji. — Kakangku kerja ing pasar. — Simbahku isih sehat. — Iki dudu omahku. — Kowé duwé sedulur pira? — Jenengé Sari, isih sekolah.",
+    "Jenengku Dian. — Panjenengan saking pundi? — Aku lagi sinau basa Jawa. — Sugeng sonten, Pak. — Apik-apik waé."
+  ]
+}

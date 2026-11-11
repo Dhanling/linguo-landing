@@ -1,0 +1,528 @@
+{
+  "title": "Already, now, going to, not yet",
+  "title_target": "Wis, lagi, arep, durung",
+  "goal": "Place events in time without changing a single letter of the verb — using four little markers that work like \"already, in the middle of, going to, not yet\".",
+  "bekal": [
+    "use *wis*, *lagi*, *arep*, *durung* and their krama partners",
+    "answer an \"already?\" question correctly — including when you must say *durung*, not *ora*",
+    "use *tau* / *naté* for experience (\"ever\")"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Wis mangan durung?",
+      "intro": "Early evening on the boarding-house porch. Pak Broto walks past and greets Dian with a question that in Java works as a greeting, not a real question. Dian answers in krama; then Rini arrives and the talk drops to ngoko.",
+      "lines": [
+        {
+          "speaker": "Pak Broto:",
+          "text": "Mbak Dian, sampun dhahar dèrèng?",
+          "id": "Mbak Dian, have you eaten yet?",
+          "literal": "Miss Dian, already eat not-yet?"
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Dèrèng, Pak. Nembé badhé mangkat pados nedhan.",
+          "id": "Not yet, sir. I'm just about to go and find something to eat.",
+          "literal": "not-yet, Sir. just will set-off look-for food."
+        },
+        {
+          "speaker": "Pak Broto:",
+          "text": "O, nggih. Warungipun Bu Sri sampun bikak kok.",
+          "id": "Oh, right. Bu Sri's stall is already open, you know.",
+          "literal": "oh, yes. stall-of Mrs Sri already open you-know."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Matur nuwun, Pak.",
+          "id": "Thank you, sir.",
+          "literal": "thank-you, Sir."
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Yan! Arep nyang endi?",
+          "id": "Yan! Where are you off to?",
+          "literal": "Yan! will to where?"
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Arep mangan. Kowé wis?",
+          "id": "To eat. Have you eaten?",
+          "literal": "will eat. you already?"
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Durung. Aku lagi ngenteni kirimanku.",
+          "id": "Not yet. I'm waiting for my parcel.",
+          "literal": "not-yet. I in-the-middle-of wait parcel-my."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Wis tekan endi kirimané?",
+          "id": "Where's the parcel got to?",
+          "literal": "already reach where parcel-the?"
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Ora ngerti. Ket mau durung ana kabar.",
+          "id": "No idea. There's been no news since earlier.",
+          "literal": "not know. since earlier not-yet there-is news."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Wis, mangan dhisik waé. Kowé wis tau mangan ing warungé Bu Sri?",
+          "id": "Oh, never mind — eat first. Have you ever eaten at Bu Sri's stall?",
+          "literal": "enough, eat first just. you already ever eat at stall-of Mrs Sri?"
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Durung tau. Ayo, saiki waé.",
+          "id": "Never. Come on, let's go now.",
+          "literal": "not-yet ever. come-on, now just."
+        }
+      ],
+      "notes": [
+        "**Sampun dhahar dèrèng?** is a greeting, not an invitation to dinner. An honest answer — *sampun* (yes) or *dèrèng* (not yet) — is all that's needed. You don't have to say what you ate.",
+        "**Notice Pak Broto uses *dhahar*, not *nedha***. He's talking about **Dian's** action, and raising the person you speak to is ordinary courtesy. Dian answers with *mangan* — for her own action she must never raise herself.",
+        "**Nembé** (krama) / **lagi** (ngoko) has two close but different meanings: \"in the middle of\" (*lagi mangan* — eating right now) and \"just\" (*lagi teka* — just arrived). Context tells them apart.",
+        "**Pados** is the krama of *golèk* (to look for). *Golèk* also means \"puppet\" in *wayang golèk* (wooden puppet theater) — and they really are the same word.",
+        "**Dhisik** means \"first\" (before something else), not \"in the old days\". *Mangan dhisik* = eat first. For \"in the old days\" use *biyèn*. Krama for *dhisik* is *rumiyin*.",
+        "**Ayo** is the ngoko \"come on, let's\"; krama *mangga*. More urgent: *ayo ta!* or *ayo gek!*"
+      ],
+      "grammars": [
+        {
+          "title": "Four markers, and a verb that never moves",
+          "body": [
+            "All these markers stand **in front of** the verb, and the verb itself doesn't change at all — no *-ed*, no *-ing*, no *will*. All you need is the vocabulary."
+          ],
+          "table": {
+            "head": [
+              "Meaning",
+              "Ngoko",
+              "Krama",
+              "Ngoko example"
+            ],
+            "rows": [
+              [
+                "already",
+                "**wis**",
+                "*sampun*",
+                "*aku wis mangan*"
+              ],
+              [
+                "in the middle of; just",
+                "**lagi**",
+                "*nembé*",
+                "*aku lagi mangan*"
+              ],
+              [
+                "going to, will",
+                "**arep**",
+                "*badhé*",
+                "*aku arep mangan*"
+              ],
+              [
+                "not yet",
+                "**durung**",
+                "*dèrèng*",
+                "*aku durung mangan*"
+              ],
+              [
+                "not",
+                "**ora**",
+                "*boten*",
+                "*aku ora mangan*"
+              ],
+              [
+                "still",
+                "**isih**",
+                "*taksih*",
+                "*aku isih mangan*"
+              ],
+              [
+                "ever",
+                "**tau**",
+                "*naté*",
+                "*aku wis tau mangan*"
+              ],
+              [
+                "never yet",
+                "**durung tau**",
+                "*dèrèng naté*",
+                "*aku durung tau mangan*"
+              ]
+            ]
+          },
+          "after": [
+            "**Durung is not ora.** This is the most common beginner's mistake. *Aku ora mangan* means I'm not eating, full stop (maybe fasting, maybe not hungry); *aku durung mangan* means I haven't eaten yet but will.",
+            "**To answer a \"wis … durung?\" question**, one word is enough: *wis* or *durung*. Answering *ora* sounds wrong and a little curt.",
+            "**Wis also means \"enough, never mind\"** when it opens a sentence to wrap something up: *wis, mangan dhisik waé* (never mind, just eat first). You'll hear it constantly."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Four questions you'll be asked every day",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Question (ngoko)",
+            "Krama",
+            "Meaning",
+            "Short answer"
+          ],
+          "rows": [
+            [
+              "*Wis mangan durung?*",
+              "*Sampun dhahar dèrèng?*",
+              "Have you eaten yet?",
+              "*Wis.* / *Durung.*"
+            ],
+            [
+              "*Wis mulih?*",
+              "*Sampun wangsul?*",
+              "Are you back home?",
+              "*Wis.* / *Durung.*"
+            ],
+            [
+              "*Lagi apa?*",
+              "*Nembé punapa?*",
+              "What are you doing?",
+              "*Lagi sinau.*"
+            ],
+            [
+              "*Arep nyang endi?*",
+              "*Badhé tindak pundi?*",
+              "Where are you going?",
+              "*Arep nyang pasar.*"
+            ],
+            [
+              "*Wis tau nyang Solo?*",
+              "*Sampun naté dhateng Solo?*",
+              "Have you ever been to Solo?",
+              "*Wis.* / *Durung tau.*"
+            ],
+            [
+              "*Isih adoh?*",
+              "*Taksih tebih?*",
+              "Is it still far?",
+              "*Isih.* / *Wis cedhak.*"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Why Javanese people always ask \"have you eaten?\"",
+          "items": [
+            "The question is a sign of care — not empty small talk and not an invitation. It shows the other person treats you as someone whose well-being is worth asking about.",
+            "The safest reply: **honest, short, then return it**. *Dèrèng, Pak. Panjenengan sampun?* — Not yet, sir. Have you?",
+            "If you say *dèrèng* in someone's home, you'll very likely be served food. It isn't a trap; that's how it works. If you don't want to eat, say *sampun, matur nuwun* (I have, thank you)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Building full sentences",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "You now have enough to build complete sentences. The order is the same as in English — doer, marker, verb, object, extras:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Doer",
+            "Marker",
+            "Verb",
+            "Object / extras"
+          ],
+          "rows": [
+            [
+              "*Aku*",
+              "*wis*",
+              "*mangan*",
+              "*sega*"
+            ],
+            [
+              "*Rini*",
+              "*lagi*",
+              "*maca*",
+              "*buku ing kamar*"
+            ],
+            [
+              "*Dhèwèké*",
+              "*arep*",
+              "*tuku*",
+              "*gedhang ing pasar*"
+            ],
+            [
+              "*Kula*",
+              "*dèrèng*",
+              "*nedha*",
+              "*ket wau énjing*"
+            ],
+            [
+              "*Bapak*",
+              "*sampun*",
+              "*kondur*",
+              "*saking kantor*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Time expressions can move to the front** for emphasis, just as in English: *sésuk aku arep nyang pasar* and *aku arep nyang pasar sésuk* are both correct. What can't move is the marker-then-verb order."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Common combinations",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*wis tau*",
+              "have ever, have already"
+            ],
+            [
+              "*durung tau*",
+              "have never (yet)"
+            ],
+            [
+              "*ora tau*",
+              "never (at all)"
+            ],
+            [
+              "*isih durung*",
+              "still not yet"
+            ],
+            [
+              "*wis ora*",
+              "no longer"
+            ],
+            [
+              "*arep ora*",
+              "will not — rare; *ora bakal* is more usual"
+            ],
+            [
+              "*lagi waé*",
+              "just now"
+            ],
+            [
+              "*mèh*",
+              "almost"
+            ],
+            [
+              "*kudu*",
+              "must"
+            ],
+            [
+              "*ora éntuk*",
+              "may not, not allowed"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Mèh** (almost) is very useful and easily forgotten: *mèh tekan* (almost there), *mèh rampung* (almost done), *mèh waé tiba* (very nearly fell). Krama is *ambèng*, or more often *mèh* too."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "jv": "wis",
+      "krama": "sampun",
+      "baca": "WIS · sahm-POON",
+      "en": "already"
+    },
+    {
+      "jv": "durung",
+      "krama": "dèrèng",
+      "baca": "DOO-roong · DEH-rehng",
+      "en": "not yet"
+    },
+    {
+      "jv": "arep",
+      "krama": "badhé",
+      "baca": "AH-ruhp · bah-DHAY",
+      "en": "going to, will"
+    },
+    {
+      "jv": "lagi",
+      "krama": "nembé",
+      "baca": "LAH-gee · nuhm-BAY",
+      "en": "in the middle of; just"
+    },
+    {
+      "jv": "tau",
+      "krama": "naté",
+      "baca": "TOW · nah-TAY",
+      "en": "ever"
+    },
+    {
+      "jv": "isih",
+      "krama": "taksih",
+      "baca": "EE-sih",
+      "en": "still"
+    },
+    {
+      "jv": "dhisik",
+      "krama": "rumiyin",
+      "baca": "DHEE-si'",
+      "en": "first, beforehand"
+    },
+    {
+      "jv": "mèh",
+      "krama": "mèh",
+      "baca": "MEH",
+      "en": "almost"
+    },
+    {
+      "jv": "golèk",
+      "krama": "pados",
+      "baca": "go-LEH' · PAH-dos",
+      "en": "to look for"
+    },
+    {
+      "jv": "ayo",
+      "krama": "mangga",
+      "baca": "AH-yo",
+      "en": "come on, let's"
+    },
+    {
+      "jv": "rampung",
+      "krama": "rampung",
+      "baca": "RAHM-poong",
+      "en": "finished"
+    },
+    {
+      "jv": "wiwit",
+      "krama": "wiwit",
+      "baca": "WEE-wit",
+      "en": "to start"
+    },
+    {
+      "jv": "bikak, bukak",
+      "krama": "bikak",
+      "baca": "BOO-kah'",
+      "en": "open; to open"
+    },
+    {
+      "jv": "tutup",
+      "krama": "tutup",
+      "baca": "TOO-toop",
+      "en": "closed; to close"
+    },
+    {
+      "jv": "kiriman",
+      "krama": "kiriman",
+      "baca": "kee-REE-mahn",
+      "en": "parcel, delivery"
+    },
+    {
+      "jv": "kabar",
+      "krama": "kabar",
+      "baca": "KAH-bahr",
+      "en": "news"
+    },
+    {
+      "jv": "luwé",
+      "krama": "luwé",
+      "baca": "loo-WAY",
+      "en": "hungry"
+    },
+    {
+      "jv": "ngelak",
+      "krama": "ngelak",
+      "baca": "nguh-LAH'",
+      "en": "thirsty"
+    },
+    {
+      "jv": "kesel",
+      "krama": "sayah",
+      "baca": "KUH-suhl · SAH-yah",
+      "en": "tired"
+    },
+    {
+      "jv": "warung",
+      "krama": "warung",
+      "baca": "WAH-roong",
+      "en": "food stall"
+    },
+    {
+      "jv": "panganan",
+      "krama": "nedhan",
+      "baca": "pah-NGAH-nahn",
+      "en": "food"
+    },
+    {
+      "jv": "ombèn-ombèn",
+      "krama": "unjukan",
+      "baca": "om-BEHN-om-BEHN",
+      "en": "drinks"
+    },
+    {
+      "jv": "bakal",
+      "krama": "badhé",
+      "baca": "BAH-kahl",
+      "en": "will (future)"
+    },
+    {
+      "jv": "kepeksa",
+      "krama": "kepeksa",
+      "baca": "kuh-PUH'-so",
+      "en": "forced to, have to"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in *wis*, *lagi*, *arep* or *durung*.",
+      "items": [
+        "Aku ____ mangan, mula ora luwé.",
+        "Rini ____ maca buku ing kamaré saiki.",
+        "Sésuk aku ____ nyang Solo.",
+        "Aku ____ tau nyang Bali. (never yet)",
+        "Kowé ____ mulih? Isih ésuk, lho.",
+        "Bapak ____ kondur saka kantor."
+      ]
+    },
+    {
+      "prompt": "Answer each question with one correct word.",
+      "items": [
+        "Wis mangan durung?  (not yet)",
+        "Wis tau nyang Solo?  (yes, already)",
+        "Isih adoh?  (still)",
+        "Wis rampung?  (not yet)",
+        "Kowé arep melu?  (willing)"
+      ]
+    },
+    {
+      "prompt": "Change into krama.",
+      "items": [
+        "Aku wis mangan.",
+        "Aku durung tau nyang Solo.",
+        "Rini lagi maca buku.",
+        "Sésuk aku arep nyang pasar.",
+        "Aku isih ngenteni."
+      ]
+    },
+    {
+      "prompt": "**Review of Unit 7.** Cover Unit 7, then write the Javanese sentences.",
+      "items": [
+        "From here, go south. (krama)",
+        "You'll come to a crossroads — turn left. (ngoko)",
+        "Is it far, sir? (krama)",
+        "I'm going to the market. (ngoko)",
+        "Take care. (krama)"
+      ]
+    }
+  ],
+  "answers": [
+    "wis — lagi — arep — durung — arep — wis",
+    "Durung. — Wis. — Isih. — Durung. — Gelem.",
+    "Kula sampun nedha. — Kula dèrèng naté dhateng Solo. — Rini nembé maos buku. — Bénjing kula badhé dhateng peken. — Kula taksih ngentosi.",
+    "Saking mriki ngidul. — Mengko ana prapatan, ménggok ngiwa. — Tebih boten, Pak? — Aku arep nyang pasar. — Ngatos-atos, nggih."
+  ]
+}

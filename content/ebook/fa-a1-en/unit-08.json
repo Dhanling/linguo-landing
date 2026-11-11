@@ -1,0 +1,578 @@
+{
+  "title": "What time is it? — and why \"seven and a half\" means 7:30",
+  "title_target": "ساعت چند است؟",
+  "goal": "Tell the time, name the days, and make appointments — and steer clear of the one-hour mix-up that catches Budi out.",
+  "bekal": [
+    "tell any time of day accurately",
+    "name the days of the Iranian week, which starts on Saturday",
+    "make and accept appointments"
+  ],
+  "dialogs": [
+    {
+      "title": "گفتگو — قرارِ فردا",
+      "intro": "Maryam calls Budi to set up a meeting at the language institute.",
+      "lines": [
+        {
+          "speaker": "مریم:",
+          "text": "سلام بودی. فردا وقت دارید؟",
+          "baca": "salâm Budi. fardâ vaght dârid?",
+          "id": "Hi Budi. Do you have time tomorrow?",
+          "literal": "peace Budi. tomorrow time have-you?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "سلام. بله، فردا آزادم. ساعتِ چند؟",
+          "baca": "salâm. bale, fardâ âzâdam. sâ'at-e chand?",
+          "id": "Hi. Yes, I'm free tomorrow. What time?",
+          "literal": "peace. yes, tomorrow free-I. hour-of how-many?"
+        },
+        {
+          "speaker": "مریم:",
+          "text": "ساعتِ ده و نیمِ صبح خوب است؟",
+          "baca": "sâ'at-e dah o nim-e sobh khub ast?",
+          "id": "How about 10:30 in the morning?",
+          "literal": "hour-of ten and half-of morning good is?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "ببخشید، ده و نیم یعنی ۱۰:۳۰؟",
+          "baca": "bebakhshid, dah o nim ya'ni dah o si daghighe?",
+          "id": "Sorry, \"ten and a half\" means 10:30?",
+          "literal": "forgive, ten and half means ten and thirty minute?"
+        },
+        {
+          "speaker": "مریم:",
+          "text": "بله، ۱۰:۳۰. چطور مگر؟",
+          "baca": "bale, dah o si. chetowr magar?",
+          "id": "Yes, 10:30. Why do you ask?",
+          "literal": "yes, ten and thirty. how then?"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "در زبانِ ما \"نیمِ ده\" یعنی ۹:۳۰. همیشه اشتباه می‌کنم.",
+          "baca": "dar zabân-e mâ nim-e dah ya'ni noh o si. hamishe eshtebâh mikonam.",
+          "id": "In my language, \"half ten\" means 9:30. I always get it wrong.",
+          "literal": "in language-of we half-of ten means nine and thirty. always mistake do-I."
+        },
+        {
+          "speaker": "مریم:",
+          "text": "جالب است! پس ده و نیم، نه نه و نیم.",
+          "baca": "jâleb ast! pas dah o nim, na noh o nim.",
+          "id": "Interesting! So ten thirty, not nine thirty.",
+          "literal": "interesting is! so ten and half, not nine and half."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "روشن شد. کجا؟",
+          "baca": "rowshan shod. kojâ?",
+          "id": "Got it. Where?",
+          "literal": "bright became. where?"
+        },
+        {
+          "speaker": "مریم:",
+          "text": "در کافهٔ مؤسسه. من معمولاً ساعتِ نه آنجا هستم.",
+          "baca": "dar kâfe-ye mo'assese. man ma'mulan sâ'at-e noh ânjâ hastam.",
+          "id": "At the institute café. I'm usually there by nine.",
+          "literal": "in café-of institute. I usually hour-of nine there am-I."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "فردا چه روزی است؟ سه‌شنبه؟",
+          "baca": "fardâ che ruzi ast? se-shanbe?",
+          "id": "What day is tomorrow? Tuesday?",
+          "literal": "tomorrow what day-a is? three-Saturday?"
+        },
+        {
+          "speaker": "مریم:",
+          "text": "نه، فردا چهارشنبه است. پنج‌شنبه و جمعه تعطیلیم.",
+          "baca": "na, fardâ chahâr-shanbe ast. panj-shanbe va jom'e ta'tilim.",
+          "id": "No, tomorrow is Wednesday. We're off on Thursday and Friday.",
+          "literal": "no, tomorrow four-Saturday is. five-Saturday and Friday off-we."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "آها، آخرِ هفتهٔ شما پنج‌شنبه و جمعه است؟",
+          "baca": "âhâ, âkhar-e hafte-ye shomâ panj-shanbe va jom'e ast?",
+          "id": "Oh, so your weekend is Thursday and Friday?",
+          "literal": "oh, end-of week-of you five-Saturday and Friday is?"
+        },
+        {
+          "speaker": "مریم:",
+          "text": "بله. هفتهٔ ما شنبه شروع می‌شود.",
+          "baca": "bale. hafte-ye mâ shanbe shoru' mishavad.",
+          "id": "Yes. Our week starts on Saturday.",
+          "literal": "yes. week-of we Saturday start becomes."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "پس تا فردا، ساعتِ ده و نیم. حتماً.",
+          "baca": "pas tâ fardâ, sâ'at-e dah o nim. hatman.",
+          "id": "Then see you tomorrow at 10:30. Definitely.",
+          "literal": "so until tomorrow, hour-of ten and half. surely."
+        }
+      ],
+      "notes": [
+        "⚠️⚠️ **This is the one-hour trap that catches Budi — and many Europeans.** Persian counts time **forward**: ده و نیم is literally \"ten and a half\" = **10:30**, just like English \"half past ten\" (or British \"half ten\"). Indonesian, German, and Dutch count **backward**: \"half ten\" there means 9:30, halfway *toward* ten. Same words, two times a full hour apart.",
+        "⚠️ **The Iranian week starts on Saturday.** Saturday (شنبه) is the first working day, and the weekly day off is **Friday (جمعه)** — with Thursday (پنج‌شنبه) often a half day or a day off too. Sunday (یکشنبه) is an ordinary working day. Book something for \"the weekend\" without naming the day, and you and the other person are talking about two different things.",
+        "**The word یعنی = \"it means, that is\".** You'll use it dozens of times a day while learning: این یعنی چه؟ (\"what does this mean?\"), and on its own یعنی چه؟ (\"what do you mean?\"). It's an Arabic loan, and Persian speakers drop it into sentences the way English speakers say \"I mean…\".",
+        "**The phrase چطور مگر؟ = \"why do you ask?\"** A casual way to ask the reason behind someone's question. Polite, light, and very common.",
+        "***Rowshan shod*** **(روشن شد) = \"got it\"**, literally \"it became bright\". You met روشن in unit 5 as \"bright\"; here it is used for understanding — just as English says \"it's clear now\" or \"that sheds light on it\".",
+        "**Spoken forms:** ساعت چنده؟ (*sâ'at chande?*), ده و نیمِ صبح خوبه؟ (*dah o nim-e sobh khube?*), فردا چه روزیه؟ (*fardâ che ruziye?*), تعطیلیم (*ta'tilim* — unchanged)."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "Every time expression starts with ساعت (\"hour\"), then the number, then any minutes. To ask the time: **ساعت چند است؟**"
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Persian",
+              "Say it",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "7:00",
+                "ساعتِ هفت",
+                "sâ'at-e haft",
+                "hour seven"
+              ],
+              [
+                "7:05",
+                "هفت و پنج دقیقه",
+                "haft o panj daghighe",
+                "seven and five minutes"
+              ],
+              [
+                "7:15",
+                "هفت و ربع",
+                "haft o rob'",
+                "seven and a quarter"
+              ],
+              [
+                "7:30",
+                "هفت و نیم",
+                "haft o nim",
+                "seven and a half"
+              ],
+              [
+                "7:45",
+                "یک ربع به هشت",
+                "yek rob' be hasht",
+                "a quarter to eight"
+              ],
+              [
+                "7:45",
+                "هشت ربع کم",
+                "hasht rob' kam",
+                "eight less a quarter"
+              ],
+              [
+                "7:50",
+                "ده دقیقه به هشت",
+                "dah daghighe be hasht",
+                "ten minutes to eight"
+              ],
+              [
+                "12:00",
+                "ظهر",
+                "zohr",
+                "noon"
+              ],
+              [
+                "24:00",
+                "نیمه‌شب",
+                "nime-shab",
+                "midnight"
+              ]
+            ]
+          },
+          "after": [
+            "**Up to half past, use و (\"and\"); after that, use به or کم.** The line falls at about the 30-minute mark: past it, Iranians prefer to count down to the next hour — just like English \"past\" and \"to\".",
+            "⚠️ Once more, because this one is costly: **هفت و نیم = 7:30, not 6:30.** If you have learned German or Dutch \"half seven\" (= 6:30), switch it off here, or you will turn up an hour early — or an hour late, depending on who got it wrong.",
+            "The part of the day is attached with ezafe: هفتِ صبح (\"seven in the morning\"), سهِ بعدازظهر (\"three in the afternoon\"), نهِ شب (\"nine at night\"). Iran uses the 24-hour clock in official timetables, but everyday speech uses the 12-hour clock plus the part of the day."
+          ]
+        },
+        {
+          "title": "The days, and a week that starts on Saturday",
+          "table": {
+            "head": [
+              "Persian",
+              "Say it",
+              "Literally",
+              "Day"
+            ],
+            "rows": [
+              [
+                "شنبه",
+                "shanbe",
+                "—",
+                "Saturday (first working day)"
+              ],
+              [
+                "یکشنبه",
+                "yek-shanbe",
+                "one-Saturday",
+                "Sunday (working day)"
+              ],
+              [
+                "دوشنبه",
+                "do-shanbe",
+                "two-Saturday",
+                "Monday"
+              ],
+              [
+                "سه‌شنبه",
+                "se-shanbe",
+                "three-Saturday",
+                "Tuesday"
+              ],
+              [
+                "چهارشنبه",
+                "chahâr-shanbe",
+                "four-Saturday",
+                "Wednesday"
+              ],
+              [
+                "پنج‌شنبه",
+                "panj-shanbe",
+                "five-Saturday",
+                "Thursday (half day)"
+              ],
+              [
+                "جمعه",
+                "jom'e",
+                "—",
+                "Friday (day off)"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Friday (جمعه) is Iran's day off, not Sunday.** Offices, schools, and most shops are closed, while museums and sights are packed. If you have official business, don't schedule it for a Friday.",
+            "In Iran, **آخرِ هفته** (\"the weekend\") means Thursday and Friday, and **اولِ هفته** (\"the start of the week\") means Saturday.",
+            "To say \"on Fridays\", make it plural: جمعه‌ها (*jom'e-hâ*). You saw this in unit 5."
+          ]
+        },
+        {
+          "title": "Yesterday, today, tomorrow",
+          "table": {
+            "head": [
+              "Persian",
+              "Say it",
+              "Meaning",
+              "Persian",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "امروز",
+                "emruz",
+                "today",
+                "امشب",
+                "emshab",
+                "tonight"
+              ],
+              [
+                "دیروز",
+                "diruz",
+                "yesterday",
+                "دیشب",
+                "dishab",
+                "last night"
+              ],
+              [
+                "فردا",
+                "fardâ",
+                "tomorrow",
+                "فردا شب",
+                "fardâ shab",
+                "tomorrow night"
+              ],
+              [
+                "پریروز",
+                "pariruz",
+                "the day before yesterday",
+                "پس‌فردا",
+                "pas-fardâ",
+                "the day after tomorrow"
+              ],
+              [
+                "صبح",
+                "sobh",
+                "morning",
+                "ظهر",
+                "zohr",
+                "noon"
+              ],
+              [
+                "بعدازظهر",
+                "ba'd az zohr",
+                "afternoon",
+                "عصر",
+                "asr",
+                "late afternoon"
+              ],
+              [
+                "شب",
+                "shab",
+                "night, evening",
+                "نیمه‌شب",
+                "nime-shab",
+                "midnight"
+              ],
+              [
+                "هفته",
+                "hafte",
+                "week",
+                "ماه",
+                "mâh",
+                "month; moon"
+              ],
+              [
+                "امسال",
+                "emsâl",
+                "this year",
+                "پارسال",
+                "pârsâl",
+                "last year"
+              ],
+              [
+                "الان",
+                "alân",
+                "now",
+                "بعداً",
+                "ba'dan",
+                "later"
+              ]
+            ]
+          },
+          "after": [
+            "Notice the prefix **ام** (\"this\") in امروز (\"today\"), امشب (\"tonight\") and امسال (\"this year\") — all meaning \"the current one\". And the prefix **دی** in دیروز and دیشب means \"the one just past\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Making an appointment",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Persian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ساعت چند است؟",
+              "sâ'at chand ast?",
+              "What time is it?"
+            ],
+            [
+              "کِی؟",
+              "key?",
+              "When?"
+            ],
+            [
+              "فردا وقت دارید؟",
+              "fardâ vaght dârid?",
+              "Do you have time tomorrow?"
+            ],
+            [
+              "ساعتِ چند خوب است؟",
+              "sâ'at-e chand khub ast?",
+              "What time suits you?"
+            ],
+            [
+              "من آزادم.",
+              "man âzâdam.",
+              "I'm free."
+            ],
+            [
+              "متأسفانه وقت ندارم.",
+              "mota'assefâne vaght nadâram.",
+              "Unfortunately, I don't have time."
+            ],
+            [
+              "زودتر می‌شود؟",
+              "zudtar mishavad?",
+              "Could we make it earlier?"
+            ],
+            [
+              "دیرتر بهتر است.",
+              "dirtar behtar ast.",
+              "Later is better."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The word **قرار** (*gharâr*) means \"appointment\". قرار داشتن = \"to have an appointment\", قرار گذاشتن = \"to make an appointment\", and قرارمان ساعتِ ده = \"our appointment is at ten\"."
+        },
+        {
+          "type": "kotak",
+          "title": "Time in Iran: what really happens",
+          "items": [
+            "⚠️ **Social times in Iran are loose; official ones are not.** Arriving at a dinner invitation at exactly eight is actually too early — your hosts may not be ready. But appointments with an office, a doctor, or a bank mean exactly what they say.",
+            "A word you will hear at the end of every plan: **ایشالله** (*ishâllâ*, from ان‌شاءالله), \"God willing\". It carries the same layers it has across the Muslim world: sincere, but not fully binding — a bit like \"hopefully\" in English."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three dates that bring all of Iran to a halt",
+          "items": [
+            "**1 Farvardin (۱ فروردین) — Nowruz (نوروز)**, the Persian New Year and the biggest holiday. The whole country stops for about two weeks, offices close, and everyone travels. Don't plan any business for the first two weeks of Farvardin.",
+            "**13 Farvardin (۱۳ فروردین) — Sizdah Bedar (سیزده‌بدر)**, the thirteenth day of the new year: everyone must leave the house and have a picnic. The cities empty, the parks fill up.",
+            "**Tasua and Ashura (تاسوعا و عاشورا)** in the month of Muharram (محرم; on the Islamic lunar calendar, so the dates shift every year) — two days of mourning for Imam Hossein. Many shops and restaurants close, and the streets fill with processions."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fa": "ساعت",
+      "baca": "sâ'at",
+      "en": "hour; clock; watch"
+    },
+    {
+      "fa": "دقیقه",
+      "baca": "daghighe",
+      "en": "minute"
+    },
+    {
+      "fa": "ثانیه",
+      "baca": "sâniye",
+      "en": "second"
+    },
+    {
+      "fa": "ربع",
+      "baca": "rob'",
+      "en": "quarter"
+    },
+    {
+      "fa": "نیم",
+      "baca": "nim",
+      "en": "half"
+    },
+    {
+      "fa": "کم",
+      "baca": "kam",
+      "en": "less; little"
+    },
+    {
+      "fa": "صبح",
+      "baca": "sobh",
+      "en": "morning"
+    },
+    {
+      "fa": "ظهر",
+      "baca": "zohr",
+      "en": "noon"
+    },
+    {
+      "fa": "بعدازظهر",
+      "baca": "ba'd az zohr",
+      "en": "afternoon"
+    },
+    {
+      "fa": "شب",
+      "baca": "shab",
+      "en": "night, evening"
+    },
+    {
+      "fa": "امروز",
+      "baca": "emruz",
+      "en": "today"
+    },
+    {
+      "fa": "دیروز",
+      "baca": "diruz",
+      "en": "yesterday"
+    },
+    {
+      "fa": "فردا",
+      "baca": "fardâ",
+      "en": "tomorrow"
+    },
+    {
+      "fa": "پس‌فردا",
+      "baca": "pas-fardâ",
+      "en": "the day after tomorrow"
+    },
+    {
+      "fa": "هفته",
+      "baca": "hafte",
+      "en": "week"
+    },
+    {
+      "fa": "ماه",
+      "baca": "mâh",
+      "en": "month; moon"
+    },
+    {
+      "fa": "سال",
+      "baca": "sâl",
+      "en": "year"
+    },
+    {
+      "fa": "شنبه",
+      "baca": "shanbe",
+      "en": "Saturday"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the times in Persian.",
+      "items": [
+        "7:00",
+        "7:15",
+        "7:30",
+        "7:45",
+        "10:30 a.m."
+      ]
+    },
+    {
+      "prompt": "Fill in the right time (in Western digits).",
+      "items": [
+        "ساعتِ هشت و نیم = ____",
+        "ساعتِ شش و ربع = ____",
+        "یک ربع به نه = ____",
+        "ساعتِ ده و نیم = ____",
+        "بیست دقیقه به پنج = ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the right day.",
+      "items": [
+        "The first working day in Iran: ____",
+        "The weekly day off in Iran: ____",
+        "The day after دوشنبه: ____",
+        "The day before جمعه: ____",
+        "The day called Sunday in English: ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "است / چند / ساعت / ؟",
+        "دارید / فردا / وقت / ؟",
+        "است / نیم / و / ده / ساعتِ / قرارمان",
+        "تعطیل / جمعه / است",
+        "است / چهارشنبه / فردا"
+      ]
+    }
+  ],
+  "answers": [
+    "ساعتِ هفت — هفت و ربع — هفت و نیم — یک ربع به هشت — ده و نیمِ صبح",
+    "8:30 — 6:15 — 8:45 — 10:30 — 4:40",
+    "شنبه — جمعه — سه‌شنبه — پنج‌شنبه — یکشنبه",
+    "ساعت چند است؟ — فردا وقت دارید؟ — قرارمان ساعتِ ده و نیم است. — جمعه تعطیل است. — فردا چهارشنبه است."
+  ],
+  "wave": "Tonight, say the time in Persian — then say it again every time you look at a clock tomorrow. Ten times, and the \"half\" trap is gone for good."
+}

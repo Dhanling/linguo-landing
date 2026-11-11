@@ -1,0 +1,717 @@
+{
+  "title": "Numbers and counting",
+  "title_target": "Siji, loro, telu… selawe, sèket, sewidak",
+  "goal": "Count from one to a thousand, give your age, and deal with three surprises in Javanese numbers that you won't find in any other language you know: the *likur* series, *selawé* and *sèket*.",
+  "bekal": [
+    "count 1–100 in ngoko and krama",
+    "use the combining forms *rong*, *telung*, *patang* before *puluh*, *atus*, *èwu*",
+    "give your age and ask someone else's with *pira* / *pinten*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ngitung ing teras",
+      "intro": "Rini is counting the boarding house's shared cash on the porch. Dian sits down with her, and the conversation turns to age — a question that's perfectly normal in Java, not rude.",
+      "lines": [
+        {
+          "speaker": "Rini:",
+          "text": "Sedhéla, aku lagi ngitung. Siji, loro, telu… ah, kliru manèh.",
+          "id": "Hang on, I'm counting. One, two, three… argh, wrong again.",
+          "literal": "a-moment, I currently count. one, two, three… ah, wrong again."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Ngitung apa?",
+          "id": "Counting what?",
+          "literal": "counting what?"
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Dhuwit kas kos. Kudune ana rong atus sèket èwu.",
+          "id": "The house kitty. There should be two hundred and fifty thousand.",
+          "literal": "money cash boarding-house. should-the there-is two hundred fifty thousand."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Kurang pira?",
+          "id": "How much is missing?",
+          "literal": "short how-much?"
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Kurang selawé èwu. Anak kos ing kéné ana sewelas.",
+          "id": "Twenty-five thousand short. There are eleven of us living here.",
+          "literal": "short twenty-five thousand. child boarding-house at here there-is eleven."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Sewelas? Aku kira mung wolu.",
+          "id": "Eleven? I thought only eight.",
+          "literal": "eleven? I think only eight."
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Telu lagi mulih. Umurmu pira, Yan?",
+          "id": "Three have gone home. How old are you, Yan?",
+          "literal": "three currently go-home. age-your how-much, Yan?"
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Rolikur. Kowé?",
+          "id": "Twenty-two. You?",
+          "literal": "twenty-two. you?"
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Padha. Aku uga rolikur, lair taun sangang puluh telu.",
+          "id": "Same. I'm twenty-two too, born in ninety-three.",
+          "literal": "same. I also twenty-two, born year ninety three."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Angka Jawa kuwi angèl, ya.",
+          "id": "Javanese numbers are hard, aren't they?",
+          "literal": "number Javanese that hard, yes."
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Sing angèl mung telu: likur, selawé, sèket. Liyané gampang.",
+          "id": "Only three are hard: likur, selawé, sèket. The rest are easy.",
+          "literal": "which hard only three: likur, selawé, sèket. other-the easy."
+        }
+      ],
+      "notes": [
+        "**Kudune** means \"should, is supposed to\", from *kudu* (must) + the ending *-né*. *Kudu* itself is very common: *aku kudu lunga* (I have to go). Krama: *kedah*.",
+        "**Mung** means \"only, just\", krama *namung* or *namung kémawon*. It overlaps with *waé*, but *mung* goes **before** what it limits (*mung wolu*, only eight) while *waé* goes **after** (*wolu waé*, eight only).",
+        "**Kliru** means \"wrong, mistaken\" — a counting error or the wrong person. For \"wrong\" in the sense of guilty, use *salah*. Krama: *lepat*.",
+        "**Lair** (born) and **taun** (year) — Javanese shares a huge number of words like these with Indonesian, often with a dropped *h* or a shifted vowel (Indonesian *lahir*, *tahun*). If you know some Indonesian, spotting the pattern will speed you up enormously.",
+        "**Umurmu pira?** (How old are you?) is an everyday question in Java, asked of new acquaintances without any awkwardness. It isn't idle chat: the answer decides which title people will use for you and which speech level is right. The krama form is *yuswa panjenengan pinten?* — with *yuswa*, the honorific word for age.",
+        "**Sedhéla** means \"a moment\" (*sekedhap* in krama). It's *sedhéla* with **dh**, not plain *d* — and it's one of the words you'll say most often every day."
+      ],
+      "grammars": [
+        {
+          "title": "One to ten, two levels",
+          "body": [
+            "The first ten numbers are the foundation of the whole system. Learn both columns as pairs from the start — don't do ngoko first and krama later."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Ngoko",
+              "Krama",
+              "Say it (ngoko)"
+            ],
+            "rows": [
+              [
+                "1",
+                "*siji*",
+                "*setunggal*",
+                "SEE-jee"
+              ],
+              [
+                "2",
+                "*loro*",
+                "*kalih*",
+                "LO-ro"
+              ],
+              [
+                "3",
+                "*telu*",
+                "*tiga*",
+                "TUH-loo"
+              ],
+              [
+                "4",
+                "*papat*",
+                "*sekawan*",
+                "PAH-paht"
+              ],
+              [
+                "5",
+                "*lima*",
+                "*gangsal*",
+                "LEE-mo"
+              ],
+              [
+                "6",
+                "*enem*",
+                "*enem*",
+                "UH-nuhm"
+              ],
+              [
+                "7",
+                "*pitu*",
+                "*pitu*",
+                "PEE-too"
+              ],
+              [
+                "8",
+                "*wolu*",
+                "*wolu*",
+                "WO-loo"
+              ],
+              [
+                "9",
+                "*sanga*",
+                "*sanga*",
+                "SO-ngo"
+              ],
+              [
+                "10",
+                "*sepuluh*",
+                "*sedasa*",
+                "suh-POO-looh"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that **six to nine are the same** at both levels. You only need to learn the first five and ten twice.",
+            "**Zero** is *nul* or *kosong* at both levels."
+          ]
+        },
+        {
+          "title": "Eleven to nineteen, and the famous likur series",
+          "body": [
+            "Here Javanese differs from any language you probably know. The numbers 21–29 don't use \"twenty\" at all; they have their own series ending in ***-likur***. And in the middle of that series sits one word with no pattern whatsoever: **selawé** for 25."
+          ],
+          "table": {
+            "head": [
+              "",
+              "11–19 (ngoko)",
+              "",
+              "21–29 (ngoko)"
+            ],
+            "rows": [
+              [
+                "11",
+                "*sewelas*",
+                "21",
+                "*selikur*"
+              ],
+              [
+                "12",
+                "*rolas*",
+                "22",
+                "*rolikur*"
+              ],
+              [
+                "13",
+                "*telulas*",
+                "23",
+                "*telulikur*"
+              ],
+              [
+                "14",
+                "*patbelas*",
+                "24",
+                "*patlikur*"
+              ],
+              [
+                "15",
+                "*limalas*",
+                "**25**",
+                "***selawé***"
+              ],
+              [
+                "16",
+                "*nembelas*",
+                "26",
+                "*nemlikur*"
+              ],
+              [
+                "17",
+                "*pitulas*",
+                "27",
+                "*pitulikur*"
+              ],
+              [
+                "18",
+                "*wolulas*",
+                "28",
+                "*wolulikur*"
+              ],
+              [
+                "19",
+                "*sangalas*",
+                "29",
+                "*sangalikur*"
+              ]
+            ]
+          },
+          "after": [
+            "**The *-likur* series exists only for 21–29.** After 29 the system goes back to normal: 31 is *telung puluh siji* (three tens one), not anything ending in *-likur*.",
+            "**Selawé (25)** is the word you'll hear most from this whole series, because it's used for money: *selawé èwu* = Rp25,000. Learn it before the rest.",
+            "In krama, many speakers keep the *-likur* series as it is, but the standard form uses *kalih dasa* + number: *kalih dasa setunggal* (21), *kalih dasa gangsal* (25). At A1, using ngoko *selawé* inside a krama sentence still sounds perfectly natural."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tens, hundreds, thousands — and the combining forms",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "To make tens, hundreds and thousands, the unit number first **changes shape** (a bit like *two* → *twen-* in English). The change is regular and only needs learning once."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Number",
+            "On its own",
+            "Combining form",
+            "Example"
+          ],
+          "rows": [
+            [
+              "1",
+              "*siji*",
+              "**se-**",
+              "*sepuluh*, *satus*, *sèwu*"
+            ],
+            [
+              "2",
+              "*loro*",
+              "**rong**",
+              "*rong puluh*, *rong atus*, *rong èwu*"
+            ],
+            [
+              "3",
+              "*telu*",
+              "**telung**",
+              "*telung puluh*, *telung atus*"
+            ],
+            [
+              "4",
+              "*papat*",
+              "**patang**",
+              "*patang puluh*, *patang atus*"
+            ],
+            [
+              "5",
+              "*lima*",
+              "**limang**",
+              "*limang puluh*, *limang atus*"
+            ],
+            [
+              "6",
+              "*enem*",
+              "**nem**",
+              "*nem puluh*, *nem atus*"
+            ],
+            [
+              "7",
+              "*pitu*",
+              "**pitung**",
+              "*pitung puluh*, *pitung atus*"
+            ],
+            [
+              "8",
+              "*wolu*",
+              "**wolung**",
+              "*wolung puluh*, *wolung atus*"
+            ],
+            [
+              "9",
+              "*sanga*",
+              "**sangang**",
+              "*sangang puluh*, *sangang atus*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "After that, the tens hold one last surprise: **50 and 60 have names of their own** instead of being built."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Number",
+            "Ngoko",
+            "Krama",
+            "Note"
+          ],
+          "rows": [
+            [
+              "20",
+              "*rong puluh*",
+              "*kalih dasa*",
+              "regular"
+            ],
+            [
+              "30",
+              "*telung puluh*",
+              "*tigang dasa*",
+              "regular"
+            ],
+            [
+              "40",
+              "*patang puluh*",
+              "*kawan dasa*",
+              "regular"
+            ],
+            [
+              "**50**",
+              "***sèket***",
+              "***sèket***",
+              "**irregular — memorize**"
+            ],
+            [
+              "**60**",
+              "***sewidak***",
+              "***sewidak***",
+              "**irregular — memorize**"
+            ],
+            [
+              "70",
+              "*pitung puluh*",
+              "*pitung dasa*",
+              "regular"
+            ],
+            [
+              "80",
+              "*wolung puluh*",
+              "*wolung dasa*",
+              "regular"
+            ],
+            [
+              "90",
+              "*sangang puluh*",
+              "*sangang dasa*",
+              "regular"
+            ],
+            [
+              "100",
+              "*satus*",
+              "*satus*",
+              "*rong atus*, *telung atus*, …"
+            ],
+            [
+              "1,000",
+              "*sèwu*",
+              "*sèwu*",
+              "*rong èwu*, *telung èwu*, …"
+            ],
+            [
+              "1,000,000",
+              "*sayuta*",
+              "*sayuta*",
+              "*rong yuta*, *telung yuta*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Big numbers are built just like in English — largest to smallest, with no \"and\": *rong atus sèket èwu* (250,000), *telung èwu limang atus* (3,500), *sèket loro* (52)."
+        },
+        {
+          "type": "kotak",
+          "title": "Four things to memorize; the rest follows a pattern",
+          "items": [
+            "**selawé** (25) · **sèket** (50) · **sewidak** (60) · the **-likur** series (21–29).",
+            "These four are the whole difficulty of Javanese numbers. Every other number is built by the rules above.",
+            "More good news: in big cities, Javanese speakers themselves often switch to Indonesian numbers for large, complicated amounts. What stays in Javanese is small numbers and prices."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Age, order and fractions",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Ngoko",
+            "Krama"
+          ],
+          "rows": [
+            [
+              "How old are you?",
+              "*Umurmu pira?*",
+              "*Yuswa panjenengan pinten?*"
+            ],
+            [
+              "I'm 22.",
+              "*Umurku rolikur taun.*",
+              "*Yuswa kula kalih dasa kalih taun.*"
+            ],
+            [
+              "Which child are you (first, second…)?",
+              "*Anak nomer pira?*",
+              "*Putra nomer pinten?*"
+            ],
+            [
+              "First, second, third",
+              "*kapisan, kapindho, katelu*",
+              "*kaping setunggal, kaping kalih, kaping tiga*"
+            ],
+            [
+              "Half",
+              "*setengah*",
+              "*setengah*"
+            ],
+            [
+              "A quarter",
+              "*seprapat*",
+              "*seprapat*"
+            ],
+            [
+              "Once, twice",
+              "*sepisan, kaping pindho*",
+              "*kaping setunggal, kaping kalih*"
+            ],
+            [
+              "All",
+              "*kabèh*",
+              "*sedaya*"
+            ],
+            [
+              "Some, several",
+              "*sawetara*",
+              "*sawetawis*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Kapindho** (second) has one small oddity: *pindho* doesn't come from *loro* but from an old root related to Sanskrit *dwi* (two). It also appears in *ping pindho* (twice). Otherwise, order words are formed regularly with the prefix *ka-*."
+        },
+        {
+          "type": "kotak",
+          "title": "Number practice that actually works",
+          "items": [
+            "Count backwards from 30 to 20 out loud. The *-likur* series will feel strange exactly where it should, and that's what makes it stick.",
+            "Read every price you see today in Javanese: coffee, fuel, the balance on your screen. Numbers stick only through use, never through memorizing lists.",
+            "If you forget one mid-conversation, just say it in English or Indonesian and carry on. Young Javanese speakers mix like this every day."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "jv": "siji",
+      "krama": "setunggal",
+      "baca": "SEE-jee",
+      "en": "one"
+    },
+    {
+      "jv": "loro",
+      "krama": "kalih",
+      "baca": "LO-ro · KAH-lih",
+      "en": "two"
+    },
+    {
+      "jv": "telu",
+      "krama": "tiga",
+      "baca": "TUH-loo · TEE-go",
+      "en": "three"
+    },
+    {
+      "jv": "papat",
+      "krama": "sekawan",
+      "baca": "PAH-paht · suh-KAH-wahn",
+      "en": "four"
+    },
+    {
+      "jv": "lima",
+      "krama": "gangsal",
+      "baca": "LEE-mo · GAHNG-sahl",
+      "en": "five"
+    },
+    {
+      "jv": "sepuluh",
+      "krama": "sedasa",
+      "baca": "suh-POO-looh · suh-DO-so",
+      "en": "ten"
+    },
+    {
+      "jv": "sewelas",
+      "krama": "setunggal welas",
+      "baca": "suh-WUH-lahs",
+      "en": "eleven"
+    },
+    {
+      "jv": "rolikur",
+      "krama": "kalih dasa kalih",
+      "baca": "ro-LEE-koor",
+      "en": "twenty-two"
+    },
+    {
+      "jv": "selawé",
+      "krama": "selawé",
+      "baca": "suh-lah-WAY",
+      "en": "twenty-five"
+    },
+    {
+      "jv": "sèket",
+      "krama": "sèket",
+      "baca": "SEH-kuht",
+      "en": "fifty"
+    },
+    {
+      "jv": "sewidak",
+      "krama": "sewidak",
+      "baca": "suh-WEE-dah'",
+      "en": "sixty"
+    },
+    {
+      "jv": "satus",
+      "krama": "satus",
+      "baca": "SAH-toos",
+      "en": "one hundred"
+    },
+    {
+      "jv": "sèwu",
+      "krama": "sèwu",
+      "baca": "SEH-woo",
+      "en": "one thousand"
+    },
+    {
+      "jv": "sayuta",
+      "krama": "sayuta",
+      "baca": "sah-YOO-to",
+      "en": "one million"
+    },
+    {
+      "jv": "pira",
+      "krama": "pinten",
+      "baca": "PEE-ro · PIN-tuhn",
+      "en": "how many, how much"
+    },
+    {
+      "jv": "ngitung",
+      "krama": "ngétang",
+      "baca": "ngee-TOONG · ngay-TAHNG",
+      "en": "to count"
+    },
+    {
+      "jv": "dhuwit",
+      "krama": "arta, yatra",
+      "baca": "DHOO-wit · AHR-to",
+      "en": "money"
+    },
+    {
+      "jv": "umur",
+      "krama": "yuswa",
+      "baca": "OO-moor · YOOS-wo",
+      "en": "age"
+    },
+    {
+      "jv": "taun",
+      "krama": "taun, warsa",
+      "baca": "TAH-oon · WAHR-so",
+      "en": "year"
+    },
+    {
+      "jv": "lair",
+      "krama": "lair, miyos",
+      "baca": "LAH-ir · MEE-yos",
+      "en": "to be born"
+    },
+    {
+      "jv": "kabèh",
+      "krama": "sedaya",
+      "baca": "kah-BEH · suh-DO-yo",
+      "en": "all"
+    },
+    {
+      "jv": "mung",
+      "krama": "namung",
+      "baca": "MOONG · nah-MOONG",
+      "en": "only, just"
+    },
+    {
+      "jv": "kurang",
+      "krama": "kirang",
+      "baca": "KOO-rahng · KEE-rahng",
+      "en": "short (of), less"
+    },
+    {
+      "jv": "kudu",
+      "krama": "kedah",
+      "baca": "KOO-doo · KUH-dah",
+      "en": "must, have to"
+    },
+    {
+      "jv": "kliru",
+      "krama": "lepat",
+      "baca": "KLEE-roo · LUH-paht",
+      "en": "wrong, mistaken"
+    },
+    {
+      "jv": "sedhéla",
+      "krama": "sekedhap",
+      "baca": "suh-DHAY-lo",
+      "en": "a moment"
+    },
+    {
+      "jv": "angèl",
+      "krama": "awrat",
+      "baca": "AH-ngehl · OW-raht",
+      "en": "difficult"
+    },
+    {
+      "jv": "gampang",
+      "krama": "gampil",
+      "baca": "GAHM-pahng · GAHM-pil",
+      "en": "easy"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these numbers in Javanese (ngoko).",
+      "items": [
+        "7",
+        "12",
+        "23",
+        "25",
+        "50",
+        "60",
+        "84",
+        "250"
+      ]
+    },
+    {
+      "prompt": "Write in krama.",
+      "items": [
+        "1",
+        "3",
+        "4",
+        "5",
+        "10",
+        "20",
+        "40",
+        "100"
+      ]
+    },
+    {
+      "prompt": "Translate into Javanese (ngoko).",
+      "items": [
+        "I have two younger siblings.",
+        "I'm twenty-two years old.",
+        "It's twenty-five thousand short.",
+        "There are eleven people living in this boarding house.",
+        "The money is only fifty thousand.",
+        "I have to count again."
+      ]
+    },
+    {
+      "prompt": "**Review of Unit 2.** Cover Unit 2, then write the Javanese sentences.",
+      "items": [
+        "This is my room. (ngoko)",
+        "There are clothes in the wardrobe. (ngoko)",
+        "There's no water. (krama)",
+        "That's not my key. (ngoko)",
+        "The kitchen is downstairs. (ngoko)"
+      ]
+    }
+  ],
+  "answers": [
+    "pitu — rolas — telulikur — selawé — sèket — sewidak — wolung puluh papat — rong atus sèket",
+    "setunggal — tiga — sekawan — gangsal — sedasa — kalih dasa — kawan dasa — satus",
+    "Aku duwé adhi loro. — Umurku rolikur taun. — Kurang selawé èwu. — Anak kos ing kéné ana sewelas. — Dhuwité mung sèket èwu. — Aku kudu ngitung manèh.",
+    "Iki kamarku. — Ing jero lemari ana klambi. — Boten wonten toya. — Kuwi dudu kunciku. — Pawoné ing ngisor."
+  ]
+}

@@ -1,0 +1,563 @@
+{
+  "title": "Invitations and تعارف — the courtesy you're meant to refuse",
+  "title_target": "دعوت و تعارف",
+  "goal": "Invite, accept, and decline — and understand an Iranian custom that, if misread, can make you look greedy or rude.",
+  "bekal": [
+    "invite someone and respond to an invitation the right way",
+    "recognize تعارف and know how many times to say no",
+    "decline something without offending anyone"
+  ],
+  "dialogs": [
+    {
+      "title": "گفتگو — دعوت به شام",
+      "intro": "Maryam invites Budi to dinner at her family's home. Budi doesn't know yet that this conversation has rules of its own.",
+      "lines": [
+        {
+          "speaker": "مریم:",
+          "text": "بودی، جمعه شب بیایید خانهٔ ما شام.",
+          "baca": "Budi, jom'e shab biyâyid khâne-ye mâ shâm.",
+          "id": "Budi, come to our place for dinner on Friday night.",
+          "literal": "Budi, Friday night come-you house-of we dinner."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "وای، مزاحمتان می‌شوم.",
+          "baca": "vây, mozâhemetân mishavam.",
+          "id": "Oh, I'd only be a bother to you.",
+          "literal": "oh, bother-your become-I."
+        },
+        {
+          "speaker": "مریم:",
+          "text": "این چه حرفی است! باعثِ افتخار است.",
+          "baca": "in che harfi ast! bâ'es-e eftekhâr ast.",
+          "id": "Oh, don't say that! It would be an honor.",
+          "literal": "this what word-a is! cause-of pride is."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "واقعاً؟ پس با کمالِ میل.",
+          "baca": "vâghe'an? pas bâ kamâl-e meyl.",
+          "id": "Really? Then I'd be delighted.",
+          "literal": "really? so with perfection-of desire."
+        },
+        {
+          "speaker": "مریم:",
+          "text": "ساعتِ هشت. چیزی نیاورید، فقط خودتان بیایید.",
+          "baca": "sâ'at-e hasht. chizi nayâvarid, faghat khodetân biyâyid.",
+          "id": "Eight o'clock. Don't bring anything, just bring yourself.",
+          "literal": "hour-of eight. thing don't-bring-you, only self-your come-you."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "چشم. ولی یک شیرینی می‌آورم.",
+          "baca": "chashm. vali yek shirini miyâvaram.",
+          "id": "All right. But I'll bring some sweets.",
+          "literal": "eye. but one sweet bring-I."
+        },
+        {
+          "speaker": "مریم:",
+          "text": "لازم نیست، ولی هرطور راحتید.",
+          "baca": "lâzem nist, vali hartowr râhatid.",
+          "id": "There's no need, but as you like.",
+          "literal": "need is-not, but however comfortable-you-are."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "خانوادهٔ شما هم هستند؟",
+          "baca": "khânevâde-ye shomâ ham hastand?",
+          "id": "Will your family be there too?",
+          "literal": "family-of you also are-they?"
+        },
+        {
+          "speaker": "مریم:",
+          "text": "بله، پدر و مادرم مشتاقِ دیدنِ شما هستند.",
+          "baca": "bale, pedar o mâdaram moshtâgh-e didan-e shomâ hastand.",
+          "id": "Yes, my parents are dying to meet you.",
+          "literal": "yes, father and mother-my longing-of seeing-of you are-they."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "باعثِ خوشحالی است. آدرس را می‌فرستید؟",
+          "baca": "bâ'es-e khoshhâli ast. âdres râ miferestid?",
+          "id": "That makes me very happy. Will you send me the address?",
+          "literal": "cause-of happiness is. address [obj] send-you?"
+        },
+        {
+          "speaker": "مریم:",
+          "text": "همین حالا. کفش را دمِ در دربیاورید، یادتان باشد.",
+          "baca": "hamin hâlâ. kafsh râ dam-e dar dar biyâvarid, yâdetân bâshad.",
+          "id": "Right now. Take your shoes off at the door, don't forget.",
+          "literal": "this-too now. shoes [obj] mouth-of door take-off-you, memory-your be."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "مثلِ خانه‌هایِ ما. مشکلی نیست.",
+          "baca": "mesl-e khânehâ-ye mâ. moshkeli nist.",
+          "id": "Just like at our homes. No problem.",
+          "literal": "like-of houses-of we. problem-a is-not."
+        },
+        {
+          "speaker": "مریم:",
+          "text": "و یک چیزِ دیگر: هر تعارفی را قبول نکنید!",
+          "baca": "va yek chiz-e digar: har ta'ârofi râ ghabul nakonid!",
+          "id": "And one more thing: don't accept every offer!",
+          "literal": "and one thing-of other: every taarof-a [obj] accept don't-do-you!"
+        },
+        {
+          "speaker": "بودی:",
+          "text": "یعنی چه؟ باید فکر کنم…",
+          "baca": "ya'ni che? bâyad fekr konam...",
+          "id": "What do you mean? I need to think about this...",
+          "literal": "meaning what? must thought do-I..."
+        }
+      ],
+      "notes": [
+        "⚠️ **The custom تعارف is a ritual of layered offering and refusing, and it governs nearly every social situation in Iran.** It works like this: the person offering must offer more than they mean, and the person offered must refuse several times before accepting. The mistake isn't accepting — it's accepting **too quickly**.",
+        "**A rule of thumb that almost always works: refuse twice, accept the third time.** If an offer is repeated three times in earnest, it's real. If it's made once and never repeated, it was just politeness.",
+        "⚠️ **And the costly exception: a shopkeeper's or driver's تعارف is never real.** The seller's قابل نداره (\"no need to pay\") — which you met in unit 7 — is pure courtesy. The answer isn't to say thanks and leave, but to ask the price again. This is the only kind of تعارف that can get you into real trouble.",
+        "**The phrase با کمالِ میل = \"with pleasure\"**, literally \"with the perfection of desire\". The most polite way to accept an invitation, and worth memorizing whole.",
+        "⚠️ **\"Don't bring anything\" (چیزی نیاورید) is تعارف, and you must still bring something.** The usual choices: شیرینی (a box of pastries), گل (flowers), or میوه (fruit). Showing up empty-handed at an Iranian home is one of the few things that truly looks bad.",
+        "**Spoken forms:** جمعه شب بیاین خونهٔ ما (*jom'e shab biyâyn khune-ye mâ*), مزاحمتون می‌شم (*mozâhemetun misham*), این چه حرفیه! (*in che harfiye!*), با کمالِ میل (unchanged)."
+      ],
+      "grammars": [
+        {
+          "title": "Inviting, accepting, declining",
+          "table": {
+            "head": [
+              "Persian",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "دعوتتان می‌کنم",
+                "da'vatetân mikonam",
+                "I'd like to invite you"
+              ],
+              [
+                "بیایید خانهٔ ما",
+                "biyâyid khâne-ye mâ",
+                "Come to our place"
+              ],
+              [
+                "می‌آیید؟",
+                "miyâyid?",
+                "Will you come?"
+              ],
+              [
+                "با کمالِ میل",
+                "bâ kamâl-e meyl",
+                "With pleasure"
+              ],
+              [
+                "حتماً می‌آیم",
+                "hatman miyâyam",
+                "I'll definitely come"
+              ],
+              [
+                "ممنون از دعوتتان",
+                "mamnun az da'vatetân",
+                "Thank you for the invitation"
+              ],
+              [
+                "مزاحمتان می‌شوم",
+                "mozâhemetân mishavam",
+                "I'd only be a bother"
+              ],
+              [
+                "متأسفانه نمی‌توانم",
+                "mota'assefâne nemitavânam",
+                "Unfortunately I can't"
+              ],
+              [
+                "کار دارم",
+                "kâr dâram",
+                "I have something on"
+              ],
+              [
+                "ایشالله دفعهٔ بعد",
+                "ishâllâ daf'e-ye ba'd",
+                "God willing, next time"
+              ],
+              [
+                "شرمنده",
+                "sharmande",
+                "I'm so sorry (lit. I'm ashamed)"
+              ],
+              [
+                "خیلی دوست داشتم بیایم",
+                "kheyli dust dâshtam biyâyam",
+                "I'd really love to come"
+              ]
+            ]
+          },
+          "after": [
+            "**Turning down a real invitation takes a reason and regret**, not just \"no\". A safe pattern: **regret + reason + hope for next time** — متأسفانه نمی‌توانم، کار دارم. ایشالله دفعهٔ بعد.",
+            "**A plain \"no\" (نه ساده) is almost never used on its own** to turn down an invitation. It sounds cold, even rude. Even a firm refusal is wrapped in شرمنده or متأسفانه."
+          ]
+        },
+        {
+          "title": "Reading تعارف: real or not?",
+          "table": {
+            "head": [
+              "What's said",
+              "Say it",
+              "What it seems",
+              "What it really is"
+            ],
+            "rows": [
+              [
+                "قابل نداره",
+                "ghâbel nadâre",
+                "\"It's free for you\"",
+                "Courtesy — pay anyway"
+              ],
+              [
+                "چیزی نیاورید",
+                "chizi nayâvarid",
+                "\"Don't bring anything\"",
+                "Courtesy — bring something anyway"
+              ],
+              [
+                "خانهٔ خودتان است",
+                "khâne-ye khodetân ast",
+                "\"Make yourself at home\"",
+                "Warm courtesy"
+              ],
+              [
+                "بفرمایید شام",
+                "befarmâyid shâm",
+                "\"Come for dinner\"",
+                "If repeated: real"
+              ],
+              [
+                "حساب با من است",
+                "hesâb bâ man ast",
+                "\"Let me pay\"",
+                "Almost always real"
+              ],
+              [
+                "باز هم بیایید",
+                "bâz ham biyâyid",
+                "\"Come again\"",
+                "Real if there's a date"
+              ],
+              [
+                "ماشین می‌رسانمتان",
+                "mâshin miresânametân",
+                "\"I'll give you a ride\"",
+                "Real if they stand up"
+              ],
+              [
+                "نوکرتم",
+                "nowkaretam",
+                "\"I'm your servant\"",
+                "Just \"you're welcome\""
+              ]
+            ]
+          },
+          "after": [
+            "**Signs of a real offer:** it's repeated more than twice, comes with details (time, date, address), or with body language — the person actually stands up, grabs their keys, pulls out their phone.",
+            "**Signs of pure courtesy:** it's said once, with no details, and the conversation moves straight on to something else.",
+            "And the most helpful tip: **when in doubt, refuse once more.** Refusing one time too many hurts no one; accepting one time too soon can make things awkward."
+          ]
+        },
+        {
+          "title": "Words and phrases that smooth everything over",
+          "table": {
+            "head": [
+              "Persian",
+              "Say it",
+              "Literally",
+              "Used for"
+            ],
+            "rows": [
+              [
+                "قربان شما",
+                "ghorbân-e shomâ",
+                "your sacrifice",
+                "warm thanks"
+              ],
+              [
+                "نوکرتم",
+                "nowkaretam",
+                "I'm your servant",
+                "you're welcome (casual)"
+              ],
+              [
+                "لطف دارید",
+                "lotf dârid",
+                "you have kindness",
+                "replying to a compliment"
+              ],
+              [
+                "خواهش می‌کنم",
+                "khâhesh mikonam",
+                "I beg",
+                "you're welcome"
+              ],
+              [
+                "شرمنده",
+                "sharmande",
+                "I'm ashamed",
+                "sorry; declining"
+              ],
+              [
+                "دستتان درد نکند",
+                "dastetân dard nakonad",
+                "may your hand not hurt",
+                "thanks for someone's work"
+              ],
+              [
+                "خسته نباشید",
+                "khaste nabâshid",
+                "may you not be tired",
+                "to someone working"
+              ],
+              [
+                "ان‌شاءالله",
+                "ishâllâ",
+                "if God wills",
+                "for plans"
+              ],
+              [
+                "ماشاءالله",
+                "mâshâllâ",
+                "what God has willed",
+                "when praising"
+              ],
+              [
+                "به سلامتی",
+                "be salâmati",
+                "to health",
+                "cheers; bon voyage"
+              ]
+            ]
+          },
+          "after": [
+            "Six of these ten phrases are Arabic loans used across much of the Muslim world. Saying them is easy — what you need to learn is when Iranians use them, and that comes with practice."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Invitations, gifts, and timing",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Persian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "دعوت",
+              "da'vat",
+              "invitation"
+            ],
+            [
+              "مهمانی",
+              "mehmâni",
+              "party, feast"
+            ],
+            [
+              "مهمان",
+              "mehmân",
+              "guest"
+            ],
+            [
+              "میزبان",
+              "mizbân",
+              "host"
+            ],
+            [
+              "شیرینی",
+              "shirini",
+              "sweets, pastries"
+            ],
+            [
+              "گل",
+              "gol",
+              "flower"
+            ],
+            [
+              "میوه",
+              "mive",
+              "fruit"
+            ],
+            [
+              "هدیه",
+              "hediye",
+              "gift"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Arriving on time for an Iranian dinner invitation is actually too early.** Arriving fifteen to thirty minutes after the stated time is normal, and the host expects it. If you show up at eight sharp, there's a real chance your host is still in the shower. Formal appointments are the opposite: they run exactly on time."
+        },
+        {
+          "type": "kotak",
+          "title": "What to bring, and what not to",
+          "items": [
+            "**Always right:** a box of شیرینی from a pastry shop (not homemade unless you've been asked), a bouquet of flowers, or a basket of fruit.",
+            "**What not to bring:** alcohol (it isn't sold and isn't wanted), and don't bring a main dish unless asked — it can read as if you doubt the host's cooking.",
+            "**If there are children in the home**, bringing a small something for them is always warmly received."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "For Muslim travelers: two things you don't need to worry about",
+          "items": [
+            "**Halal food is the default in Iran.** No restaurant serves pork, and alcohol isn't served in public or in most homes. The worries that come with travel to many other countries don't apply here.",
+            "**Prayer times are easy to keep.** Mosques are everywhere, many offices and shopping malls have a نمازخانه (prayer room), and no one will think it odd if you excuse yourself for a moment. The sentence: ببخشید، برایِ نماز می‌روم (\"excuse me, I'm going to pray\")."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fa": "دعوت",
+      "baca": "da'vat",
+      "en": "invitation"
+    },
+    {
+      "fa": "تعارف",
+      "baca": "ta'ârof",
+      "en": "ritual courtesy"
+    },
+    {
+      "fa": "مهمانی",
+      "baca": "mehmâni",
+      "en": "feast, party"
+    },
+    {
+      "fa": "میزبان",
+      "baca": "mizbân",
+      "en": "host"
+    },
+    {
+      "fa": "شام",
+      "baca": "shâm",
+      "en": "dinner"
+    },
+    {
+      "fa": "مزاحم",
+      "baca": "mozâhem",
+      "en": "bother, nuisance"
+    },
+    {
+      "fa": "افتخار",
+      "baca": "eftekhâr",
+      "en": "honor, pride"
+    },
+    {
+      "fa": "باعث",
+      "baca": "bâ'es",
+      "en": "cause"
+    },
+    {
+      "fa": "میل",
+      "baca": "meyl",
+      "en": "desire, liking"
+    },
+    {
+      "fa": "کمال",
+      "baca": "kamâl",
+      "en": "perfection"
+    },
+    {
+      "fa": "واقعاً",
+      "baca": "vâghe'an",
+      "en": "really"
+    },
+    {
+      "fa": "شیرینی",
+      "baca": "shirini",
+      "en": "sweets, pastries"
+    },
+    {
+      "fa": "لازم",
+      "baca": "lâzem",
+      "en": "need, necessary"
+    },
+    {
+      "fa": "هرطور",
+      "baca": "hartowr",
+      "en": "however, anyway"
+    },
+    {
+      "fa": "مشتاق",
+      "baca": "moshtâgh",
+      "en": "longing, eager"
+    },
+    {
+      "fa": "آدرس",
+      "baca": "âdres",
+      "en": "address"
+    },
+    {
+      "fa": "فرستادن",
+      "baca": "ferestâdan",
+      "en": "to send"
+    },
+    {
+      "fa": "کفش",
+      "baca": "kafsh",
+      "en": "shoes"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Persian.",
+      "items": [
+        "Thank you for the invitation.",
+        "With pleasure.",
+        "Unfortunately I can't.",
+        "I'm full, thank you.",
+        "God willing, next time."
+      ]
+    },
+    {
+      "prompt": "Fill in the right تعارف phrase.",
+      "items": [
+        "Replying to praise of your Persian: ____ دارید.",
+        "Thanking a host who cooked: دستتان ____ نکند.",
+        "To someone who has just finished working: ____ نباشید.",
+        "Turning down a fourth cup of tea: ____ است، ممنون.",
+        "Accepting an invitation politely: با کمالِ ____."
+      ]
+    },
+    {
+      "prompt": "Real or just تعارف? Write واقعی or تعارف.",
+      "items": [
+        "A shopkeeper says قابل نداره: ____",
+        "A host says چیزی نیاورید: ____",
+        "A host repeats the invitation three times, with a date and time: ____",
+        "A landlord says خانهٔ خودتان است: ____",
+        "A friend stands up, grabs the car keys, and says می‌رسانمتان: ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "می‌شوم / مزاحمتان",
+        "است / افتخار / باعثِ",
+        "میل / با / کمالِ",
+        "نمی‌توانم / متأسفانه",
+        "نکنید / قبول / را / تعارفی / هر"
+      ]
+    }
+  ],
+  "answers": [
+    "ممنون از دعوتتان. — با کمالِ میل. — متأسفانه نمی‌توانم. — سیر شدم، ممنون. — ایشالله دفعهٔ بعد.",
+    "لطف — درد — خسته — بس — میل",
+    "تعارف — تعارف — واقعی — تعارف — واقعی",
+    "مزاحمتان می‌شوم. — باعثِ افتخار است. — با کمالِ میل. — متأسفانه نمی‌توانم. — هر تعارفی را قبول نکنید."
+  ],
+  "wave": "Practice four invitation sentences until they come out without thinking: مزاحمتان می‌شوم / این چه حرفی است / با کمالِ میل / لازم نیست. Two minutes a day for a week."
+}

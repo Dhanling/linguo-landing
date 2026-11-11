@@ -1,0 +1,612 @@
+{
+  "title": "Numbers, time, and days",
+  "title_target": "Wilangan, wanci, jeung poé",
+  "goal": "Count, tell the time, name the days and months, and place events in the past and future.",
+  "bekal": [
+    "Sundanese numbers, including the ones that differ from Indonesian: *hiji*, *salapan*, *dalapan*",
+    "telling the time with *tabuh*, and a way of dividing the day that may not match yours",
+    "time words: *kamari*, *isukan*, *pagéto*, *mangkukna*"
+  ],
+  "dialogs": [
+    {
+      "title": "Paguneman — Making plans with Néng Sari",
+      "intro": "Rani and Sari are sitting on the porch. Sari offers to show Rani around Bandung, and they try to agree on a time.",
+      "lines": [
+        {
+          "speaker": "Sari:",
+          "text": "Téh, isukan aya acara teu?",
+          "id": "Hey, are you doing anything tomorrow?",
+          "literal": "Téh, tomorrow there-is plan not?"
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Isukan mah henteu. Kunaon?",
+          "id": "Not tomorrow. Why?",
+          "literal": "tomorrow [mah] no. why?"
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Hayu urang ka Lembang. Kuring nyaho tempat nu alus.",
+          "id": "Let's go to Lembang. I know a great place.",
+          "literal": "come-on we to Lembang. I know place which good."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Hayu waé. Tabuh sabaraha indit na?",
+          "id": "Sure, let's. What time are we leaving?",
+          "literal": "come-on just. o'clock how-many going-the?"
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Isuk-isuk waé, tabuh tujuh. Ulah beurang teuing, sok macét.",
+          "id": "Early, at seven. Not too late, the traffic gets bad.",
+          "literal": "morning-morning just, o'clock seven. don't midday too, tends jammed."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Tabuh tujuh téh isuk pisan nya. Balik na iraha?",
+          "id": "Seven is really early. When do we come back?",
+          "literal": "o'clock seven [téh] morning very [nya]. returning-the when?"
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Soré, kira-kira tabuh opat. Ké urang dahar heula di ditu.",
+          "id": "In the afternoon, around four. We'll eat over there first.",
+          "literal": "afternoon, about o'clock four. later we eat first at over-there."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Sabaraha ongkosna kira-kira?",
+          "id": "Roughly how much will it cost?",
+          "literal": "how-much fare-the roughly?"
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Tilu puluh rébu bulak-balik mah. Kadaharan mah séjén deui.",
+          "id": "Thirty thousand there and back. Food is extra.",
+          "literal": "three ten thousand back-forth [mah]. food [mah] other again."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Sip. Poé naon ayeuna téh, Sabtu?",
+          "id": "Great. What day is it today — Saturday?",
+          "literal": "great. day what now [téh], Saturday?"
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Ayeuna Jumaah. Isukan Saptu, cocog keur ulin.",
+          "id": "Today's Friday. Tomorrow's Saturday — perfect for an outing.",
+          "literal": "now Friday. tomorrow Saturday, suitable for play."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Sok atuh. Kuring hudang tabuh genep, nya.",
+          "id": "OK then. I'll get up at six.",
+          "literal": "go-ahead atuh. I wake-up o'clock six, [nya]."
+        },
+        {
+          "speaker": "Sari:",
+          "text": "Ulah kabeurangan! Kuring mah tara ngadagoan lila.",
+          "id": "Don't oversleep! I never wait long.",
+          "literal": "don't overslept! I [mah] never wait long."
+        }
+      ],
+      "notes": [
+        "**Tabuh** = o'clock. It is always used for clock time: *tabuh tujuh* (seven o'clock). The loma form is also *tabuh*, so there is nothing to choose. To ask: **tabuh sabaraha?** = what time is it?",
+        "**Isuk** = morning; **isuk-isuk** = early in the morning; **isukan** = tomorrow. ⚠️ All three share a root and are very easy to mix up. Remember: the one ending in *-an* jumps to the next day.",
+        "**Beurang** = midday, daytime. *Kabeurangan* = to oversleep (literally \"caught by midday\"). The pattern *ka-…-an* here means \"affected by, without meaning to\" — the same pattern as *kahujanan* (caught in the rain), *katinggaleun* (left behind).",
+        "**Tara** = never, in the sense of habit. It differs from **tacan** (not yet, but might). *Kuring tara ngadagoan* = I don't do waiting; *kuring tacan ka Lembang* = I haven't been to Lembang yet.",
+        "**Hayu** = come on, let's (loma); the lemes form is **mangga**. *Hayu urang…* = \"let's…\". Note that *urang* here means \"we\", not \"person\".",
+        "**Ké / engké** = later. The short form *ké* is very common in speech: *ké heula* = hang on, just a moment.",
+        "**Ongkos** (fare, cost) and **rébu** (thousand) are borrowed from Indonesian. The Sundanese form is *rébu*, not Indonesian *ribu* — the same kind of small sound shift you see in other loans: *jaman*, *lampu*, *korsi*."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers and how to use them",
+          "body": [
+            "Many Sundanese numbers look like their Indonesian cousins, but several of the first ten are quite different and simply have to be learned."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Basa Sunda",
+              "English",
+              "Notes"
+            ],
+            "rows": [
+              [
+                "1",
+                "**hiji**",
+                "one",
+                "⚠️ Indonesian: satu"
+              ],
+              [
+                "2",
+                "**dua**",
+                "two",
+                "same as Indonesian"
+              ],
+              [
+                "3",
+                "**tilu**",
+                "three",
+                "⚠️ Indonesian: tiga"
+              ],
+              [
+                "4",
+                "**opat**",
+                "four",
+                "⚠️ Indonesian: empat"
+              ],
+              [
+                "5",
+                "**lima**",
+                "five",
+                "same as Indonesian"
+              ],
+              [
+                "6",
+                "**genep**",
+                "six",
+                "⚠️ Indonesian: enam"
+              ],
+              [
+                "7",
+                "**tujuh**",
+                "seven",
+                "same as Indonesian"
+              ],
+              [
+                "8",
+                "**dalapan**",
+                "eight",
+                "close to Indonesian"
+              ],
+              [
+                "9",
+                "**salapan**",
+                "nine",
+                "⚠️ Indonesian: sembilan"
+              ],
+              [
+                "10",
+                "**sapuluh**",
+                "ten",
+                "close to Indonesian"
+              ],
+              [
+                "11",
+                "**sabelas**",
+                "eleven",
+                "close to Indonesian"
+              ],
+              [
+                "20",
+                "**dua puluh**",
+                "twenty",
+                "same as Indonesian"
+              ],
+              [
+                "25",
+                "**dua puluh lima**",
+                "twenty-five",
+                "same as Indonesian"
+              ],
+              [
+                "100",
+                "**saratus**",
+                "a hundred",
+                "close to Indonesian"
+              ],
+              [
+                "1,000",
+                "**sarébu**",
+                "a thousand",
+                "close to Indonesian"
+              ],
+              [
+                "1,000,000",
+                "**sajuta**",
+                "a million",
+                "close to Indonesian"
+              ]
+            ]
+          },
+          "after": [
+            "The prefix **sa-** means \"one, a\": *sapuluh* (ten), *saratus* (a hundred), *sarébu* (a thousand), *sajuta* (a million), *sapoé* (one day), *sataun* (one year), *sabulan* (one month). The pattern is everywhere and you can apply it yourself.",
+            "Ordinal numbers use **ka-**: *nu kahiji* (the first), *nu kadua* (the second), *nu katilu* (the third). To ask: **nu ka sabaraha?** = which number (in order)?",
+            "⚠️ Halves and quarters: **satengah** (half), **saparapat** (quarter). For clock time, *tabuh tujuh satengah* means half past seven — the hour named is the one **already passed**, just as in English. Indonesian does the opposite (*setengah delapan*, \"half to eight\", = 7:30), and because the two clash, many people in Bandung now use the Indonesian way: *satengah dalapan* = 7:30. Follow the person you're talking to, and double-check times that matter."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Times of day",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Basa Sunda",
+            "When",
+            "English"
+          ],
+          "rows": [
+            [
+              "**subuh**",
+              "before sunrise",
+              "dawn"
+            ],
+            [
+              "**isuk**",
+              "about 5:00–10:00",
+              "morning"
+            ],
+            [
+              "**beurang**",
+              "about 10:00–15:00",
+              "midday"
+            ],
+            [
+              "**soré / sonten**",
+              "about 15:00 to sunset",
+              "afternoon (*sonten* = lemes)"
+            ],
+            [
+              "**peuting / wengi**",
+              "after sunset",
+              "night (*wengi* = lemes)"
+            ],
+            [
+              "**tengah peuting**",
+              "the middle of the night",
+              "midnight"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "To say when something happens, these are the time words you'll use most:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Basa Sunda",
+            "Meaning",
+            "Lemes"
+          ],
+          "rows": [
+            [
+              "**ayeuna**",
+              "now",
+              "ayeuna"
+            ],
+            [
+              "**tadi**",
+              "earlier, just now",
+              "kapungkur (long ago)"
+            ],
+            [
+              "**engké / ké**",
+              "later",
+              "engké"
+            ],
+            [
+              "**poé ieu**",
+              "today",
+              "dinten ieu"
+            ],
+            [
+              "**kamari**",
+              "yesterday",
+              "kamari"
+            ],
+            [
+              "**mangkukna**",
+              "the day before yesterday",
+              "mangkukna"
+            ],
+            [
+              "**isukan**",
+              "tomorrow",
+              "énjing"
+            ],
+            [
+              "**pagéto**",
+              "the day after tomorrow",
+              "pagéto"
+            ],
+            [
+              "**minggu kamari**",
+              "last week",
+              "minggu kapengker"
+            ],
+            [
+              "**minggu hareup**",
+              "next week",
+              "minggu payun"
+            ],
+            [
+              "**baheula**",
+              "long ago",
+              "kapungkur"
+            ],
+            [
+              "**sok / mindeng**",
+              "often",
+              "sering"
+            ],
+            [
+              "**tara**",
+              "never (as a habit)",
+              "tara"
+            ],
+            [
+              "**can pernah / tacan**",
+              "never yet, not yet",
+              "teu acan kantos"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Telling the time",
+          "items": [
+            "**Tabuh sabaraha ayeuna?** — What time is it now?",
+            "**Tabuh salapan leuwih sapuluh menit.** — Ten past nine.",
+            "**Tabuh dalapan kurang lima.** — Five to eight.",
+            "**Satengah dalapan.** — 7:30 (Indonesian-style \"half to eight\").",
+            "**Tabuh tujuh isuk-isuk.** — Seven in the morning. (add the time of day to be clear)",
+            "**Tabuh dua beurang.** — Two in the afternoon."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Days, months, and years",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Basa Sunda",
+            "English"
+          ],
+          "rows": [
+            [
+              "**Senén**",
+              "Monday"
+            ],
+            [
+              "**Salasa**",
+              "Tuesday"
+            ],
+            [
+              "**Rebo**",
+              "Wednesday"
+            ],
+            [
+              "**Kemis**",
+              "Thursday"
+            ],
+            [
+              "**Jumaah**",
+              "Friday"
+            ],
+            [
+              "**Saptu**",
+              "Saturday"
+            ],
+            [
+              "**Minggu / Ahad**",
+              "Sunday"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Month names are borrowed, with small sound changes: *Januari, Pébruari, Maret, April, Méi, Juni, Juli, Agustus, Séptémber, Oktober, Nopémber, Désémber*. Notice *Pébruari* and *Nopémber* — *f* and *v* become *p*, the habit you met in Unit 2."
+        },
+        {
+          "type": "p",
+          "text": "Longer units of time: **poé** (day), **minggu** (week), **bulan** (month), **taun** (year), **windu** (eight years), **abad** (century). To ask the date: **Ping sabaraha ayeuna?** (what's the date today?) — *ping* is the Sundanese word for a date, although many people simply say *tanggal*."
+        },
+        {
+          "type": "kotak",
+          "title": "Common time sentences",
+          "items": [
+            "**Iraha badé mulih?** — When are you going home?",
+            "**Poé naon ayeuna?** — What day is it today?",
+            "**Ping sabaraha ayeuna?** — What's the date today?",
+            "**Abdi di Bandung tos tilu bulan.** — I've been in Bandung for three months.",
+            "**Kuring can pernah ka Ciwidey.** — I've never been to Ciwidey.",
+            "**Sok ka dieu unggal Minggu.** — (I) often come here every Sunday. (*unggal* = every)"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "su": "hiji, dua, tilu",
+      "baca": "hee-JEE · doo-AH · tee-LOO",
+      "en": "one, two, three"
+    },
+    {
+      "su": "opat, lima, genep",
+      "baca": "oh-PAHT · lee-MAH · guh-NUHP",
+      "en": "four, five, six"
+    },
+    {
+      "su": "tujuh, dalapan, salapan",
+      "baca": "too-JOOH · dah-lah-PAHN · sah-lah-PAHN",
+      "en": "seven, eight, nine"
+    },
+    {
+      "su": "sapuluh, saratus, sarébu",
+      "baca": "sah-poo-LOOH · sah-rah-TOOS · sah-REH-boo",
+      "en": "ten, a hundred, a thousand"
+    },
+    {
+      "su": "sabaraha",
+      "baca": "sah-bah-RAH-hah",
+      "en": "how many, how much"
+    },
+    {
+      "su": "tabuh",
+      "baca": "tah-BOOH",
+      "en": "o'clock"
+    },
+    {
+      "su": "wanci",
+      "baca": "wahn-CHEE",
+      "en": "time, moment"
+    },
+    {
+      "su": "isuk",
+      "baca": "ee-SOOK",
+      "en": "morning"
+    },
+    {
+      "su": "beurang",
+      "baca": "beu-RAHNG",
+      "en": "midday"
+    },
+    {
+      "su": "soré / sonten",
+      "baca": "soh-REH · sohn-TUHN",
+      "en": "afternoon"
+    },
+    {
+      "su": "peuting / wengi",
+      "baca": "peu-TEENG · wuh-NGEE",
+      "en": "night"
+    },
+    {
+      "su": "ayeuna",
+      "baca": "ah-yeu-NAH",
+      "en": "now"
+    },
+    {
+      "su": "kamari",
+      "baca": "kah-mah-REE",
+      "en": "yesterday"
+    },
+    {
+      "su": "isukan",
+      "baca": "ee-soo-KAHN",
+      "en": "tomorrow"
+    },
+    {
+      "su": "pagéto",
+      "baca": "pah-GEH-toh",
+      "en": "the day after tomorrow"
+    },
+    {
+      "su": "mangkukna",
+      "baca": "mahng-KOOK-nah",
+      "en": "the day before yesterday"
+    },
+    {
+      "su": "engké / ké",
+      "baca": "uhng-KEH · keh",
+      "en": "later"
+    },
+    {
+      "su": "baheula",
+      "baca": "bah-heu-LAH",
+      "en": "long ago"
+    },
+    {
+      "su": "unggal",
+      "baca": "oong-GAHL",
+      "en": "every"
+    },
+    {
+      "su": "tara",
+      "baca": "tah-RAH",
+      "en": "never (as a habit)"
+    },
+    {
+      "su": "poé / dinten",
+      "baca": "poh-EH · deen-TUHN",
+      "en": "day"
+    },
+    {
+      "su": "taun",
+      "baca": "tah-OON",
+      "en": "year"
+    },
+    {
+      "su": "hudang",
+      "baca": "hoo-DAHNG",
+      "en": "to wake up, get up"
+    },
+    {
+      "su": "ngadagoan",
+      "baca": "ngah-dah-goh-AHN",
+      "en": "to wait (for)"
+    },
+    {
+      "su": "hayu",
+      "baca": "hah-YOO",
+      "en": "come on, let's"
+    },
+    {
+      "su": "kabeurangan",
+      "baca": "kah-beu-RAH-ngahn",
+      "en": "to oversleep"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these numbers in Sundanese.",
+      "items": [
+        "3 → ____",
+        "6 → ____",
+        "9 → ____",
+        "11 → ____",
+        "100 → ____",
+        "25 → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the right time word.",
+      "items": [
+        "The day after today: ____",
+        "The day before yesterday: ____",
+        "Two days after today: ____",
+        "The time between 10:00 and 15:00: ____",
+        "The time after sunset (lemes): ____",
+        "Every Sunday: ____ Minggu"
+      ]
+    },
+    {
+      "prompt": "Translate into Sundanese.",
+      "items": [
+        "What time is it now?",
+        "Seven in the morning.",
+        "What day is it today?",
+        "I've been in Bandung for three months.",
+        "I've never been to Ciwidey. (loma)",
+        "When are you going home, ma'am?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "tabuh / indit / sabaraha / na / ?",
+        "ka / hayu / urang / Lembang",
+        "genep / hudang / kuring / tabuh",
+        "ngadagoan / tara / kuring / lila",
+        "Jumaah / poé / ayeuna / naon / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "tilu — genep — salapan — sabelas — saratus — dua puluh lima",
+    "isukan — mangkukna — pagéto — beurang — wengi — unggal",
+    "Tabuh sabaraha ayeuna? — Tabuh tujuh isuk-isuk. — Poé naon ayeuna? — Abdi di Bandung tos tilu bulan. — Kuring can pernah ka Ciwidey. — Iraha badé mulih, Bu?",
+    "Tabuh sabaraha indit na? — Hayu urang ka Lembang. — Kuring hudang tabuh genep. — Kuring tara ngadagoan lila. — Poé naon ayeuna?"
+  ]
+}

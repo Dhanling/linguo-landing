@@ -1,0 +1,535 @@
+{
+  "title": "Directions and the angkot",
+  "title_target": "Néangan jalan jeung naék angkot",
+  "goal": "Ask for directions, understand the answer, and get around Bandung by angkot, ojek and train.",
+  "bekal": [
+    "directions: *katuhu*, *kénca*, *lempeng*, *balik deui*",
+    "place words: *palih*, *caket*, *tukang*, *hareup*, *gigir*",
+    "must-know angkot lines: *kénca, Pa!* and *punten, hilir!*"
+  ],
+  "dialogs": [
+    {
+      "title": "Paguneman — On the angkot",
+      "intro": "Rani takes a green angkot (shared minibus) for the first time, heading for Jalan Braga. She sits by the door and asks the woman next to her.",
+      "lines": [
+        {
+          "speaker": "Rani:",
+          "text": "Punten, Bu. Angkot ieu ngalangkungan Braga henteu?",
+          "id": "Excuse me, ma'am. Does this angkot go past Braga?",
+          "literal": "excuse-me, Bu. angkot this pass Braga not?"
+        },
+        {
+          "speaker": "Ibu:",
+          "text": "Henteu, Néng. Ieu mah ka Cicaheum. Kedah ngalih di alun-alun.",
+          "id": "No, Néng. This one goes to Cicaheum. You have to change at the town square.",
+          "literal": "no, Néng. this [mah] to Cicaheum. must move at town-square."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Alun-alun tebih teu ti dieu?",
+          "id": "Is the town square far from here?",
+          "literal": "town-square far not from here?"
+        },
+        {
+          "speaker": "Ibu:",
+          "text": "Teu tebih. Kirang langkung sapuluh menit deui.",
+          "id": "Not far. About ten more minutes.",
+          "literal": "not far. less more ten minute more."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Hatur nuhun, Bu. Kumaha nyarios ka supirna upami badé turun?",
+          "id": "Thank you, ma'am. What do I say to the driver when I want to get off?",
+          "literal": "thank you, Bu. how say to driver-the if will get-off?"
+        },
+        {
+          "speaker": "Ibu:",
+          "text": "Cukup nyebat kénca, Pa! Atawa punten, hilir!",
+          "id": "Just say \"kénca, Pa!\" Or \"punten, hilir!\"",
+          "literal": "enough say left, Pa! or excuse-me, getting-off!"
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Kénca hartina kiri nya? Naha lain turun?",
+          "id": "Kénca means left, right? Why not \"get off\"?",
+          "literal": "left meaning-its left [nya]? why not get-off?"
+        },
+        {
+          "speaker": "Ibu:",
+          "text": "Heueuh, sabab angkot eureunna sok minggir ka kénca.",
+          "id": "Yes, because the angkot always pulls over to the left to stop.",
+          "literal": "yes, because angkot stopping-its usually pull-over to left."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Ooh. Ari ongkosna sabaraha, Bu?",
+          "id": "Ooh. And how much is the fare, ma'am?",
+          "literal": "ooh. as-for fare-the how-much, Bu?"
+        },
+        {
+          "speaker": "Ibu:",
+          "text": "Lima rébu waé. Bayarna pas rék turun.",
+          "id": "Just five thousand. You pay when you get off.",
+          "literal": "five thousand just. paying-its when will get-off."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Alun-alun tos caket, Bu?",
+          "id": "Are we close to the town square now, ma'am?",
+          "literal": "town-square already near, Bu?"
+        },
+        {
+          "speaker": "Ibu:",
+          "text": "Sakedap deui. Tuh, sanggeus masjid ageung éta.",
+          "id": "Almost. Look, just after that big mosque.",
+          "literal": "moment more. there, after mosque big that."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Kénca, Pa! Punten, hilir!",
+          "id": "Left here, sir! Excuse me, getting off!",
+          "literal": "left, Pa! excuse-me, getting-off!"
+        }
+      ],
+      "notes": [
+        "**Kénca** = left, **katuhu** = right. ⚠️ Learn them as a pair. A memory hook for *katuhu*: it's related to *tuhu* (loyal, true), and the right hand is the \"proper\" hand in local custom.",
+        "**Hilir** is what you say on a Bandung angkot for \"I want to get off here.\" It comes from *hilir* (downstream) and has become a traffic word. *Punten, hilir!* is a line you'll say almost every day.",
+        "**Ngalangkungan** = to go past (lemes, polite); loma (casual): **ngaliwatan**. Asking *ngalangkungan X henteu?* is the clearest way to check an angkot's route.",
+        "**Ngalih** = to move, change (lemes); loma: **pindah**. To change vehicles people also say *oper* or *ganti angkot*.",
+        "**Kirang langkung** = more or less, about (lemes); loma: **kurang leuwih**. Very common for estimating distance and time.",
+        "**Eureun** = to stop. *Eureun heula!* = stop for a moment! It also means to stop doing something: *eureun ngaroko* = to quit smoking."
+      ],
+      "grammars": [
+        {
+          "title": "Place and direction words",
+          "body": [
+            "Sundanese uses **palih** (lemes) or **beulah** (loma) for \"side,\" and it shows up in almost every set of directions."
+          ],
+          "table": {
+            "head": [
+              "Basa Sunda",
+              "English",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**palih katuhu / beulah katuhu**",
+                "on the right",
+                "*Bumina palih katuhu.*"
+              ],
+              [
+                "**palih kénca / beulah kénca**",
+                "on the left",
+                "*Warungna palih kénca.*"
+              ],
+              [
+                "**lempeng / terus**",
+                "straight on",
+                "*Lempeng waé heula.*"
+              ],
+              [
+                "**balik deui**",
+                "back, turn around",
+                "*Kedah balik deui sakedik.*"
+              ],
+              [
+                "**hareup / payun**",
+                "front",
+                "*Di payun masjid.*"
+              ],
+              [
+                "**tukang / pengker**",
+                "back, rear",
+                "*Di pengker pasar.*"
+              ],
+              [
+                "**gigir / gédéng**",
+                "side",
+                "*Gigir apotek.*"
+              ],
+              [
+                "**luhur / handap**",
+                "above / below",
+                "*Di luhur jambatan.*"
+              ],
+              [
+                "**jero / luar**",
+                "inside / outside",
+                "*Di jero gang.*"
+              ],
+              [
+                "**caket / tebih**",
+                "near / far",
+                "*Caket ka dieu.*"
+              ],
+              [
+                "**hareupeun**",
+                "in front of",
+                "*Hareupeun sakola.*"
+              ],
+              [
+                "**tukangeun**",
+                "behind",
+                "*Tukangeun imah.*"
+              ]
+            ]
+          },
+          "after": [
+            "Notice the ending **-eun** again, with a different job here: attached to a place word, it means \"in that position relative to something.\" *Hareup* = front; *hareupeun sakola* = in front of the school. Same pattern: *tukangeun* (behind), *gigireun* (beside), *handapeun* (under), *luhureun* (on top of).",
+            "⚠️ Sundanese directions usually use landmarks, not street names: *sanggeus masjid*, *hareupeun Indomaret*, *palih katuhu apotek*. If you ask using a street name and the answer names buildings, nobody misunderstood you. That's just how it's done."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Asking the way",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "Questions to ask",
+          "items": [
+            "**Punten, badé naros. Jalan Braga palih mana?** — Excuse me, may I ask? Which way is Jalan Braga?",
+            "**Kumaha jalanna ka ____?** — How do I get to ____?",
+            "**Tebih teu ti dieu?** — Is it far from here?",
+            "**Tiasa dileumpangan?** — Can I walk there?",
+            "**Angkot naon nu ka ____?** — Which angkot goes to ____?",
+            "**Ieu ngalangkungan ____ henteu?** — Does this go past ____?",
+            "**Turunna di mana?** — Where do I get off?",
+            "**Ongkosna sabaraha?** — How much is the fare?"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The answers you hear are usually short and full of place words. Here are some typical ones, with translations:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "What you'll hear",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Lempeng waé, engké aya parapatan.*",
+              "Go straight, you'll come to a crossroads."
+            ],
+            [
+              "*Ka katuhu sanggeus masjid.*",
+              "Turn right after the mosque."
+            ],
+            [
+              "*Palih kénca, gigireun apotek.*",
+              "On the left, next to the pharmacy."
+            ],
+            [
+              "*Kedah balik deui sakedik.*",
+              "You need to go back a little."
+            ],
+            [
+              "*Caket, sakedap ogé dugi.*",
+              "It's close, you'll be there in no time."
+            ],
+            [
+              "*Tebih, mending naék angkot.*",
+              "It's far, better take an angkot."
+            ],
+            [
+              "*Turun di parapatan, terus leumpang.*",
+              "Get off at the crossroads, then walk."
+            ],
+            [
+              "*Duka teuing, abdi ogé sanés urang dieu.*",
+              "No idea, I'm not from around here either."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Vehicles and roads",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Basa Sunda",
+            "English",
+            "Basa Sunda",
+            "English"
+          ],
+          "rows": [
+            [
+              "**angkot**",
+              "angkot (shared minibus)",
+              "**beus**",
+              "bus"
+            ],
+            [
+              "**ojég**",
+              "ojek (motorbike taxi)",
+              "**taksi**",
+              "taxi"
+            ],
+            [
+              "**motor**",
+              "motorbike",
+              "**mobil**",
+              "car"
+            ],
+            [
+              "**sapédah**",
+              "bicycle",
+              "**karéta**",
+              "train"
+            ],
+            [
+              "**delman / sado**",
+              "horse cart",
+              "**becak**",
+              "pedicab"
+            ],
+            [
+              "**jalan**",
+              "road, street",
+              "**gang**",
+              "alley"
+            ],
+            [
+              "**parapatan**",
+              "crossroads",
+              "**pertigaan**",
+              "T-junction"
+            ],
+            [
+              "**jambatan**",
+              "bridge",
+              "**tanjakan**",
+              "uphill road"
+            ],
+            [
+              "**pudunan**",
+              "downhill road",
+              "**tikungan**",
+              "bend"
+            ],
+            [
+              "**halte**",
+              "bus stop",
+              "**terminal**",
+              "bus terminal"
+            ],
+            [
+              "**stasion**",
+              "train station",
+              "**bandara**",
+              "airport"
+            ],
+            [
+              "**macét**",
+              "jammed (traffic)",
+              "**rame**",
+              "busy, crowded"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Lines for inside the vehicle",
+          "items": [
+            "**Kénca, Pa!** — Left here, sir! (asking to stop)",
+            "**Punten, hilir!** — Excuse me, getting off!",
+            "**Eureun heula, Pa.** — Stop for a moment, sir.",
+            "**Alon-alon waé, Pa.** — Slowly, please, sir.",
+            "**Punten, tiasa geser sakedik?** — Excuse me, could you move over a bit?",
+            "**Ieu artosna, Pa. Nuhun.** — Here's the money, sir. Thanks.",
+            "**Aya kembalian teu?** — Do you have change?",
+            "**Macét pisan nya poé ieu.** — Traffic's really bad today, huh."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Bandung angkots are told apart by the **color** and the **route** painted on the side, not by number. Ask *angkot naon nu ka Dago?* and you'll get a color: *nu héjo* (the green one), *nu konéng* (the yellow one). Memorizing the two or three route colors you use every day is more useful than learning street names."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "su": "kénca",
+      "baca": "kehn-CHAH",
+      "en": "left ⚠️"
+    },
+    {
+      "su": "katuhu",
+      "baca": "kah-too-HOO",
+      "en": "right ⚠️"
+    },
+    {
+      "su": "lempeng",
+      "baca": "luhm-PUHNG",
+      "en": "straight"
+    },
+    {
+      "su": "palih / beulah",
+      "baca": "pah-LEEH · beu-LAHH",
+      "en": "side"
+    },
+    {
+      "su": "hareup / payun",
+      "baca": "hah-REUP · pah-YOON",
+      "en": "front"
+    },
+    {
+      "su": "tukang / pengker",
+      "baca": "too-KAHNG · puhng-KUHR",
+      "en": "back, rear"
+    },
+    {
+      "su": "gigir",
+      "baca": "gee-GEER",
+      "en": "side, beside"
+    },
+    {
+      "su": "luhur / handap",
+      "baca": "loo-HOOR · hahn-DAHP",
+      "en": "above / below"
+    },
+    {
+      "su": "caket / tebih",
+      "baca": "chah-KUHT · tuh-BEEH",
+      "en": "near / far"
+    },
+    {
+      "su": "eureun",
+      "baca": "eu-REUN",
+      "en": "to stop"
+    },
+    {
+      "su": "hilir",
+      "baca": "hee-LEER",
+      "en": "to get off (an angkot)"
+    },
+    {
+      "su": "naék / turun",
+      "baca": "nah-EHK · too-ROON",
+      "en": "to get on / to get off"
+    },
+    {
+      "su": "ngalangkungan",
+      "baca": "ngah-lahng-koo-NGAHN",
+      "en": "to go past"
+    },
+    {
+      "su": "ngalih / pindah",
+      "baca": "ngah-LEEH · peen-DAHH",
+      "en": "to move, to change"
+    },
+    {
+      "su": "leumpang",
+      "baca": "leum-PAHNG",
+      "en": "to walk"
+    },
+    {
+      "su": "kirang langkung",
+      "baca": "kee-RAHNG lahng-KOONG",
+      "en": "more or less, about"
+    },
+    {
+      "su": "parapatan",
+      "baca": "pah-rah-pah-TAHN",
+      "en": "crossroads"
+    },
+    {
+      "su": "jambatan",
+      "baca": "jahm-bah-TAHN",
+      "en": "bridge"
+    },
+    {
+      "su": "tanjakan / pudunan",
+      "baca": "tahn-jah-KAHN · poo-doo-NAHN",
+      "en": "uphill / downhill road"
+    },
+    {
+      "su": "ongkos",
+      "baca": "ohng-KOHS",
+      "en": "fare"
+    },
+    {
+      "su": "macét",
+      "baca": "mah-CHEHT",
+      "en": "jammed (traffic)"
+    },
+    {
+      "su": "alon-alon",
+      "baca": "ah-LOHN ah-LOHN",
+      "en": "slowly"
+    },
+    {
+      "su": "dugi / nepi",
+      "baca": "doo-GEE · nuh-PEE",
+      "en": "to arrive, to reach"
+    },
+    {
+      "su": "supir",
+      "baca": "soo-PEER",
+      "en": "driver"
+    },
+    {
+      "su": "sanggeus / sasampun",
+      "baca": "sahng-GEUS",
+      "en": "after"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right direction word.",
+      "items": [
+        "Opposite of katuhu: ____",
+        "Keep going without turning: ____",
+        "In front of the school: ____ sakola",
+        "Next to the pharmacy: ____ apotek",
+        "Not far from here: ____ ka dieu",
+        "You have to turn back: kedah ____ sakedik"
+      ]
+    },
+    {
+      "prompt": "Translate these directions into English.",
+      "items": [
+        "Lempeng waé, engké aya parapatan. → ____",
+        "Ka katuhu sanggeus masjid. → ____",
+        "Palih kénca, gigireun apotek. → ____",
+        "Turun di parapatan, terus leumpang. → ____",
+        "Tebih, mending naék angkot. → ____",
+        "Caket, sakedap ogé dugi. → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Sundanese.",
+      "items": [
+        "Excuse me, may I ask? Which way is Jalan Braga?",
+        "Is it far from here?",
+        "Which angkot goes to Dago?",
+        "How much is the fare, sir?",
+        "Left here, sir!",
+        "Slowly, please, sir."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "henteu / Braga / ngalangkungan / ieu / ?",
+        "dieu / teu / ti / tebih / ?",
+        "hilir / punten / !",
+        "sabaraha / ongkosna / ?",
+        "masjid / katuhu / sanggeus / ka"
+      ]
+    }
+  ],
+  "answers": [
+    "kénca — lempeng — hareupeun — gigireun — caket — balik deui",
+    "Go straight, you'll come to a crossroads. — Turn right after the mosque. — On the left, next to the pharmacy. — Get off at the crossroads, then walk. — It's far, better take an angkot. — It's close, you'll be there in no time.",
+    "Punten, badé naros. Jalan Braga palih mana? — Tebih teu ti dieu? — Angkot naon nu ka Dago? — Ongkosna sabaraha, Pa? — Kénca, Pa! — Alon-alon waé, Pa.",
+    "Ieu ngalangkungan Braga henteu? — Tebih teu ti dieu? — Punten, hilir! — Ongkosna sabaraha? — Ka katuhu sanggeus masjid."
+  ]
+}

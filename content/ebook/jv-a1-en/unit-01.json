@@ -1,0 +1,643 @@
+{
+  "title": "Greetings and names",
+  "title_target": "Aku Dian, kula Dian",
+  "goal": "Greet people, say your name and say where you're from — in two speech levels at once, so you see from the very first minute that ngoko and krama are not two languages but two vocabularies on top of one grammar.",
+  "bekal": [
+    "greet friends your own age in ngoko and older people in krama",
+    "say your name and where you're from with *jenengku* / *nami kula* and *saka* / *saking*",
+    "use six personal pronouns with one and the same verb form"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue 1 — Ing koridor kos (ngoko)",
+      "intro": "It's Dian's first day at a boarding house (*kos*) in Sagan, a neighborhood of Yogyakarta. She is opening her door when a young woman her age comes out of the next room carrying a bucket.",
+      "lines": [
+        {
+          "speaker": "Rini:",
+          "text": "Éh, kowé sing kamar telu, ya?",
+          "id": "Hey, you're the one in room three, right?",
+          "literal": "eh, you who room three, yes?"
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Iya, bener. Aku Dian.",
+          "id": "Yes, that's right. I'm Dian.",
+          "literal": "yes, right. I Dian."
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Aku Rini. Kamarku sebelah. Kowé wong ngendi?",
+          "id": "I'm Rini. My room's next door. Where are you from?",
+          "literal": "I Rini. room-my next-door. you person where?"
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Aku saka Jakarta. Aku mahasiswa anyar ing kéné.",
+          "id": "I'm from Jakarta. I'm a new student here.",
+          "literal": "I from Jakarta. I student new at here."
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Wah, adoh, ya. Aku wong Klaten.",
+          "id": "Wow, that's far. I'm from Klaten.",
+          "literal": "wow, far, yes. I person Klaten."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Piyé kabarmu, Rin?",
+          "id": "How are you, Rin?",
+          "literal": "how news-your, Rin?"
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Apik-apik waé. Kowé bisa basa Jawa?",
+          "id": "Fine. Can you speak Javanese?",
+          "literal": "good-good just. you can language Javanese?"
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Sithik. Aku lagi sinau.",
+          "id": "A little. I'm learning.",
+          "literal": "a-little. I currently learn."
+        },
+        {
+          "speaker": "Rini:",
+          "text": "Ya wis, ngobrol nganggo basa Jawa waé, ya?",
+          "id": "Well then, let's just chat in Javanese, OK?",
+          "literal": "yes already, chat using language Javanese just, yes?"
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Iya, matur nuwun, Rin!",
+          "id": "Yes, thanks, Rin!",
+          "literal": "yes, thank-you, Rin!"
+        }
+      ],
+      "notes": [
+        "**Aku Dian** — \"I Dian\", with no word for *am*. Javanese has no linking verb in sentences like this. *Aku mahasiswa* (I [am a] student), *aku wong Klaten*, *kamarku sebelah*: you simply put the parts side by side.",
+        "**Jenengku** and **kamarku** — the owner is attached to the **end** of the word instead of standing in front of it. The endings are *-ku* (my), *-mu* (your), and *-é* or *-né* (his/her, or \"the\"): *jenengku* = my name, *kamarmu* = your room.",
+        "**Kowé** is pronounced **ko-WAY**. Use it with friends your age and with younger people. With older people or people you've just met, switch to *sampeyan* (fairly polite) or *panjenengan* (fully polite) — and once you use either, the other words in the sentence usually move up to krama too.",
+        "**Wong ngendi** is literally \"person where\". To ask where someone is from, Javanese uses this pattern more often than \"from where\". The answer matches it: *aku wong Klaten*, \"I'm a Klaten person\". If you'd rather use \"from\": *aku saka Jakarta*.",
+        "**Piyé** (how) has several twins that mean exactly the same: *kepriyé*, *keprié*, and in some areas *kepiyé*. All are correct; *piyé* is the one you'll hear most. Its krama form is *kadospundi*.",
+        "**Apik-apik waé** — the doubled word means \"so-so, nothing special\", softened by *waé* (\"just\"). It's the standard answer to *piyé kabaré?*, as automatic as \"fine, thanks\" in English.",
+        "**Matur nuwun** is the \"thank you\" that's safe at every level — with friends and with people you respect. The short form is just *nuwun*, and the most casual is *suwun*. For extra respect: *matur nuwun sanget* (thank you very much)."
+      ],
+      "grammars": [
+        {
+          "title": "Verbs don't change for the person",
+          "body": [
+            "This is why Javanese grammar feels light. Read the table from top to bottom and notice that the last three columns don't move at all."
+          ],
+          "table": {
+            "head": [
+              "Pronoun",
+              "Meaning",
+              "*sinau* (learn)",
+              "*mangan* (eat)",
+              "*lunga* (go)"
+            ],
+            "rows": [
+              [
+                "**aku**",
+                "I",
+                "sinau",
+                "mangan",
+                "lunga"
+              ],
+              [
+                "**kowé**",
+                "you",
+                "sinau",
+                "mangan",
+                "lunga"
+              ],
+              [
+                "**dhèwèké**",
+                "he / she",
+                "sinau",
+                "mangan",
+                "lunga"
+              ],
+              [
+                "**awaké dhéwé**",
+                "we",
+                "sinau",
+                "mangan",
+                "lunga"
+              ],
+              [
+                "**kowé kabèh**",
+                "you (plural)",
+                "sinau",
+                "mangan",
+                "lunga"
+              ],
+              [
+                "**dhèwèké kabèh**",
+                "they",
+                "sinau",
+                "mangan",
+                "lunga"
+              ]
+            ]
+          },
+          "after": [
+            "No *am/is/are*, no *-s* for he/she, no six-line conjugation table. One form for everyone: \"I eat, he eat, they eat\".",
+            "Notice that **\"we\" and \"they\" aren't single words** but phrases. *Awaké dhéwé* is literally \"our own body\", and *dhèwèké kabèh* is \"he/she all\". Javanese also uses *kita* (we, borrowed from Indonesian, used freely) and *padha* to mark a plural doer: *padha mangan* — \"(they) all eat\".",
+            "**Dhèwèké** doesn't distinguish male from female — it means both \"he\" and \"she\". The short form *dèké* is also common."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dialogue 2 — Ing ngarep kos (krama)",
+      "intro": "That afternoon Dian meets a man in his sixties sweeping the yard. He turns out to be the owner of the boarding house. Notice that the conversation is almost exactly the same as the first one — only the vocabulary changes.",
+      "lines": [
+        {
+          "speaker": "Pak Broto:",
+          "text": "Sugeng sonten, Mbak. Panjenengan ingkang énggal?",
+          "id": "Good afternoon, Miss. Are you the new one?",
+          "literal": "good afternoon, Miss. you who new?"
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Inggih, Pak. Nami kula Dian.",
+          "id": "Yes, sir. My name is Dian.",
+          "literal": "yes, sir. name my Dian."
+        },
+        {
+          "speaker": "Pak Broto:",
+          "text": "Kula Broto, ingkang gadhah kos menika.",
+          "id": "I'm Broto, the owner of this boarding house.",
+          "literal": "I Broto, who own boarding-house this."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Sugeng pinanggih, Pak.",
+          "id": "Nice to meet you, sir.",
+          "literal": "blessed meeting, sir."
+        },
+        {
+          "speaker": "Pak Broto:",
+          "text": "Panjenengan saking pundi?",
+          "id": "Where are you from?",
+          "literal": "you from where?"
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Kula saking Jakarta. Kula mahasiswi énggal.",
+          "id": "I'm from Jakarta. I'm a new student.",
+          "literal": "I from Jakarta. I student new."
+        },
+        {
+          "speaker": "Pak Broto:",
+          "text": "O, tebih. Sugeng rawuh ing Ngayogyakarta.",
+          "id": "Oh, that's far. Welcome to Yogyakarta.",
+          "literal": "oh, far. blessed arrival in Yogyakarta."
+        },
+        {
+          "speaker": "Dian:",
+          "text": "Matur nuwun, Pak.",
+          "id": "Thank you, sir.",
+          "literal": "thank-you, sir."
+        }
+      ],
+      "notes": [
+        "Compare the two dialogues word for word and you'll see that **the sentence patterns are identical**. *Kowé wong ngendi?* and *Panjenengan saking pundi?* are built the same way: pronoun first, question word at the end. Only the word choice changes.",
+        "**Sugeng** opens every krama greeting and good wish: *sugeng énjing* (morning), *sugeng siyang* (midday), *sugeng sonten* (afternoon), *sugeng dalu* (night), *sugeng rawuh* (welcome), *sugeng tindak* (have a good trip, to someone leaving), *sugeng pinanggih* (nice to meet you), *sugeng sinau* (happy studying). One word, ten greetings. Mbak and Pak are polite address words for a young woman and an older man.",
+        "**Inggih** is the krama \"yes\", the partner of *iya*. It's used constantly, often repeated (*inggih, inggih*), and often on its own to show you're listening — like \"mm-hm, yes\" in English.",
+        "**Panjenengan** is the most respectful \"you\". One step below it is *sampeyan*, for someone a little older or your equal whom you don't know well. With Pak Broto, who is much older, *panjenengan* is right.",
+        "**Kula** replaces *aku* in krama. There are even humbler forms, *kawula* and *dalem*, but they sound very formal — used in speeches, at the royal court, or to someone of far higher standing. For everyday life, *kula* is enough.",
+        "**Ngayogyakarta** is the official Javanese name of Yogyakarta. In daily life people say *Jogja* or *Yogya* — no need for the long form."
+      ],
+      "grammars": [
+        {
+          "title": "Same sentence, two levels",
+          "body": [
+            "Keep this table. It holds the whole of Unit 1 in one place, and you'll see the same pattern repeat in the next nineteen units."
+          ],
+          "table": {
+            "head": [
+              "English",
+              "Ngoko",
+              "Krama"
+            ],
+            "rows": [
+              [
+                "My name is Dian.",
+                "*Jenengku Dian.*",
+                "*Nami kula Dian.*"
+              ],
+              [
+                "What's your name?",
+                "*Jenengmu sapa?*",
+                "*Nami panjenengan sinten?*"
+              ],
+              [
+                "I'm from Jakarta.",
+                "*Aku saka Jakarta.*",
+                "*Kula saking Jakarta.*"
+              ],
+              [
+                "Where are you from?",
+                "*Kowé saka ngendi?*",
+                "*Panjenengan saking pundi?*"
+              ],
+              [
+                "Yes.",
+                "*Iya.*",
+                "*Inggih.*"
+              ],
+              [
+                "No.",
+                "*Ora.*",
+                "*Boten.*"
+              ],
+              [
+                "I'm learning Javanese.",
+                "*Aku sinau basa Jawa.*",
+                "*Kula sinau basa Jawi.*"
+              ],
+              [
+                "Nice to meet you.",
+                "*Seneng ketemu.*",
+                "*Sugeng pinanggih.*"
+              ]
+            ]
+          },
+          "after": [
+            "The second-to-last row hides a small surprise: **even \"Javanese\" has a krama form, *Jawi***. So do the names of some places and frequently mentioned things. Don't chase them now — just know they exist.",
+            "You may have noticed that **ora** and **boten** haven't appeared in any dialogue yet. They're placed here on purpose because you'll need them tomorrow: these two words negate anything in Javanese, and there's no other form to memorize."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Greetings by time of day",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Time-of-day greetings in Javanese **exist only in krama**. There's no ngoko version, and that's not a gap — Javanese people simply don't say \"good morning\" to friends their age. They say *piyé?* (how's it going?) or *arep menyang ngendi?* (where are you off to?), or just call the person's name."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Time",
+            "Greeting",
+            "Say it",
+            "Roughly when"
+          ],
+          "rows": [
+            [
+              "morning",
+              "*Sugeng énjing*",
+              "soo-GUHNG ayn-JING",
+              "before 11:00"
+            ],
+            [
+              "midday",
+              "*Sugeng siyang*",
+              "soo-GUHNG see-YAHNG",
+              "11:00–15:00"
+            ],
+            [
+              "afternoon",
+              "*Sugeng sonten*",
+              "soo-GUHNG SON-tuhn",
+              "15:00–18:00"
+            ],
+            [
+              "evening",
+              "*Sugeng dalu*",
+              "soo-GUHNG DAH-loo",
+              "after sunset"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The reply is the same greeting, handed straight back: if someone says *sugeng énjing*, you answer *sugeng énjing*. That's all there is to it."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Ngoko",
+            "Krama"
+          ],
+          "rows": [
+            [
+              "Hello / hi",
+              "*Halo*",
+              "*Halo*"
+            ],
+            [
+              "How are you?",
+              "*Piyé kabaré?*",
+              "*Kadospundi kabaripun?*"
+            ],
+            [
+              "Fine, thanks.",
+              "*Apik-apik waé.*",
+              "*Saé-saé kémawon.*"
+            ],
+            [
+              "Excuse me (to pass / to speak)",
+              "*Nuwun sèwu*",
+              "*Nuwun sèwu*"
+            ],
+            [
+              "Thank you",
+              "*Matur nuwun*",
+              "*Matur nuwun*"
+            ],
+            [
+              "You're welcome",
+              "*Padha-padha*",
+              "*Sami-sami*"
+            ],
+            [
+              "See you",
+              "*Sesuk manèh*",
+              "*Ngantos pinanggih malih*"
+            ],
+            [
+              "I'll be off, then",
+              "*Tak dhisik, ya*",
+              "*Kula rumiyin, nggih*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Nuwun sèwu** literally means \"I ask a thousand\" — a thousand pardons. Use it to squeeze past someone, to interrupt, and to open a question to a stranger. If you can memorize only three Javanese words today, make this one of them: it opens almost every conversation in Java."
+        }
+      ]
+    },
+    {
+      "title": "Why this first unit feels easy",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The first unit of most language courses already crashes you into a grammar wall. Here there's no wall, and that's no accident — Javanese simply doesn't have four things that make other languages hard:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Verbs don't change for the person.** *Aku mangan, kowé mangan, dhèwèké mangan* — I eat, you eat, she eat. One form, always.",
+            "**No special \"-ing\" form.** If you need to show something is in progress, just add *lagi*: *aku sinau* (I study) → *aku lagi sinau* (I'm studying). The verb itself never changes.",
+            "**No articles.** No *the*, no *a*. *Omah* can mean \"house\", \"a house\" or \"the house\" as needed; if you need to be specific, the ending *-é* does it: *omahé*, \"the house\".",
+            "**Familiar word order.** Doer, verb, object, as in English; but adjectives come after the noun (*omah gedhé*, house big = a big house), and question words stay where the answer would go (*kowé wong ngendi?*, you person where?)."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Only **one** thing is truly new — undha-usuk, the speech levels — and this course starts it in Unit 1 precisely because it's the one thing that takes time. The rest is vocabulary, and vocabulary comes by itself through repetition."
+        },
+        {
+          "type": "kotak",
+          "title": "Don't be afraid to mix",
+          "items": [
+            "If you run out of krama words mid-sentence, don't stop — slip in an ngoko (or even Indonesian) word and keep going. Javanese speakers do it every day.",
+            "What you must **not** mix is switching from *panjenengan* or *sampeyan* to *kowé* in the middle of a conversation with an older person. Pronouns are what people hear most. Guard that one, and the rest is forgiven."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "jv": "aku",
+      "krama": "kula",
+      "baca": "AH-koo · KOO-lah",
+      "en": "I, me"
+    },
+    {
+      "jv": "kowé",
+      "krama": "panjenengan, sampeyan",
+      "baca": "ko-WAY · pahn-juh-NUHNG-ahn",
+      "en": "you"
+    },
+    {
+      "jv": "dhèwèké",
+      "krama": "piyambakipun",
+      "baca": "dheh-weh-KAY",
+      "en": "he, she"
+    },
+    {
+      "jv": "jeneng",
+      "krama": "nami, asma",
+      "baca": "JUH-nuhng · NAH-mee",
+      "en": "name"
+    },
+    {
+      "jv": "iya",
+      "krama": "inggih",
+      "baca": "EE-yo · ING-gih",
+      "en": "yes"
+    },
+    {
+      "jv": "ora",
+      "krama": "boten",
+      "baca": "O-ro · BO-tuhn",
+      "en": "no, not"
+    },
+    {
+      "jv": "sapa",
+      "krama": "sinten",
+      "baca": "SO-po · SIN-tuhn",
+      "en": "who"
+    },
+    {
+      "jv": "ngendi",
+      "krama": "pundi",
+      "baca": "nguhn-DEE · POON-dee",
+      "en": "where, which"
+    },
+    {
+      "jv": "saka",
+      "krama": "saking",
+      "baca": "SO-ko · SAH-king",
+      "en": "from"
+    },
+    {
+      "jv": "ing, nang",
+      "krama": "wonten ing",
+      "baca": "ING · NAHNG",
+      "en": "in, at"
+    },
+    {
+      "jv": "kéné",
+      "krama": "ngriki",
+      "baca": "kay-NAY · ngree-KEE",
+      "en": "here"
+    },
+    {
+      "jv": "wong",
+      "krama": "tiyang",
+      "baca": "WONG · TEE-yahng",
+      "en": "person, people"
+    },
+    {
+      "jv": "anyar",
+      "krama": "énggal",
+      "baca": "AH-nyahr · AYNG-gahl",
+      "en": "new"
+    },
+    {
+      "jv": "adoh",
+      "krama": "tebih",
+      "baca": "AH-doh · TUH-bih",
+      "en": "far"
+    },
+    {
+      "jv": "cedhak",
+      "krama": "celak",
+      "baca": "chuh-DHAH' · CHUH-lah'",
+      "en": "near"
+    },
+    {
+      "jv": "apik",
+      "krama": "saé",
+      "baca": "AH-pi' · sah-AY",
+      "en": "good, nice"
+    },
+    {
+      "jv": "kabar",
+      "krama": "kabar",
+      "baca": "KAH-bahr",
+      "en": "news"
+    },
+    {
+      "jv": "piyé, kepriyé",
+      "krama": "kadospundi",
+      "baca": "pee-YAY · kah-dos-POON-dee",
+      "en": "how"
+    },
+    {
+      "jv": "sinau",
+      "krama": "–",
+      "baca": "see-NOW",
+      "en": "to learn, to study"
+    },
+    {
+      "jv": "basa",
+      "krama": "basa",
+      "baca": "BO-so",
+      "en": "language"
+    },
+    {
+      "jv": "bisa",
+      "krama": "saged",
+      "baca": "BEE-so · SAH-guhd",
+      "en": "can, be able to"
+    },
+    {
+      "jv": "sithik",
+      "krama": "sekedhik",
+      "baca": "see-THI' · suh-kuh-DHI'",
+      "en": "a little"
+    },
+    {
+      "jv": "lagi",
+      "krama": "nembé",
+      "baca": "LAH-gee · nuhm-BAY",
+      "en": "currently, in the middle of (-ing)"
+    },
+    {
+      "jv": "waé",
+      "krama": "kémawon",
+      "baca": "wah-AY · kay-MAH-won",
+      "en": "just, only"
+    },
+    {
+      "jv": "uga",
+      "krama": "ugi",
+      "baca": "OO-go · OO-gee",
+      "en": "also, too"
+    },
+    {
+      "jv": "bener",
+      "krama": "leres",
+      "baca": "BUH-nuhr · LUH-ruhs",
+      "en": "right, correct"
+    },
+    {
+      "jv": "sebelah",
+      "krama": "sebelah",
+      "baca": "suh-buh-LAH",
+      "en": "next door, beside"
+    },
+    {
+      "jv": "matur nuwun",
+      "krama": "matur nuwun",
+      "baca": "MAH-toor NOO-woon",
+      "en": "thank you"
+    },
+    {
+      "jv": "nuwun sèwu",
+      "krama": "nuwun sèwu",
+      "baca": "NOO-woon SEH-woo",
+      "en": "excuse me, sorry"
+    },
+    {
+      "jv": "sugeng",
+      "krama": "sugeng",
+      "baca": "soo-GUHNG",
+      "en": "blessed, \"happy/good\" (in greetings)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right pronoun. (Hint: the verb never needs to change.)",
+      "items": [
+        "____ Dian. Aku saka Jakarta.",
+        "____ wong ngendi, Rin?",
+        "____ lagi sinau basa Jawa. (he/she)",
+        "Nami ____ Dian, Pak. (I, krama)",
+        "____ saking pundi, Bu? (you, krama)",
+        "____ kabèh mahasiswa. (they)"
+      ]
+    },
+    {
+      "prompt": "Change these ngoko sentences into krama.",
+      "items": [
+        "Aku saka Jakarta.",
+        "Jenengmu sapa?",
+        "Kowé saka ngendi?",
+        "Iya, bener.",
+        "Aku ora bisa basa Jawa.",
+        "Omahku adoh."
+      ]
+    },
+    {
+      "prompt": "Translate into Javanese (**ngoko**).",
+      "items": [
+        "My name is Ahmad.",
+        "I'm from Klaten.",
+        "Are you a new student?",
+        "How are you?",
+        "I'm learning a little.",
+        "See you tomorrow!"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "Dian / jenengku",
+        "ngendi / kowé / wong / ?",
+        "Jakarta / saka / aku",
+        "basa / sinau / lagi / Jawa / aku",
+        "pundi / panjenengan / saking / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Aku — Kowé — Dhèwèké — kula — Panjenengan — Dhèwèké",
+    "Kula saking Jakarta. — Nami panjenengan sinten? — Panjenengan saking pundi? — Inggih, leres. — Kula boten saged basa Jawi. — Griya kula tebih.",
+    "Jenengku Ahmad. — Aku wong Klaten. — Kowé mahasiswa anyar? — Piyé kabaré? — Aku lagi sinau sithik. — Sesuk manèh!",
+    "Jenengku Dian. — Kowé wong ngendi? — Aku saka Jakarta. — Aku lagi sinau basa Jawa. — Panjenengan saking pundi?"
+  ]
+}

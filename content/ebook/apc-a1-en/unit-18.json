@@ -1,0 +1,592 @@
+{
+  "title": "‘ind ed-duktuur — the body and being ill",
+  "title_target": "عِنْد الدُّكْتُور",
+  "goal": "Name parts of the body, say what hurts the Arabic way, and deal with the pharmacy and the doctor.",
+  "bekal": [
+    "name parts of the body and the most common complaints",
+    "use بِوجَعْني — sentences where the part that hurts is the subject",
+    "buy medicine and describe symptoms at the pharmacy"
+  ],
+  "dialogs": [
+    {
+      "title": "حَكِي — بِالْعِيَادَة",
+      "intro": "Budi has had a fever for two days and goes to the clinic near his home.",
+      "lines": [
+        {
+          "speaker": "اَلدُّكْتُور:",
+          "text": "تْفَضَّل. شُو عَم تِشْكِي؟",
+          "baca": "tfaḍḍal. shu ‘am tishki?",
+          "id": "Come in. What's the problem?",
+          "literal": "go-ahead. what you-are-complaining?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "رَاسِي عَم بِوجَعْنِي وْعِنْدِي سُخُونِة.",
+          "baca": "raasi ‘am byuuja‘ni w ‘indi sukhuune.",
+          "id": "I have a headache and a fever.",
+          "literal": "head-my it-is-hurting-me and at-me heat."
+        },
+        {
+          "speaker": "اَلدُّكْتُور:",
+          "text": "مِن إِمْتَى؟",
+          "baca": "min imta?",
+          "id": "Since when?",
+          "literal": "from when?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مِن يَوْمَين. وْحَلْقِي وَاجِعْنِي كَمَان.",
+          "baca": "min yōmēn. w hal’i waaji‘ni kamaan.",
+          "id": "For two days. My throat hurts too.",
+          "literal": "from two-days. and throat-my hurting-me also."
+        },
+        {
+          "speaker": "اَلدُّكْتُور:",
+          "text": "عَم تِسْعُل؟",
+          "baca": "‘am tis‘ul?",
+          "id": "Are you coughing?",
+          "literal": "you-are-coughing?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "شْوَي. وْمَا فِيني آكُل مْنِيح.",
+          "baca": "shway. w ma fiini aakul mniih.",
+          "id": "A little. And I can't eat properly.",
+          "literal": "a-little. and not can-I I-eat well."
+        },
+        {
+          "speaker": "اَلدُّكْتُور:",
+          "text": "خَلِّينِي شُوف. اِفْتَح تِمَّك.",
+          "baca": "khalliini shuuf. iftah timmak.",
+          "id": "Let me have a look. Open your mouth.",
+          "literal": "let-me I-see. open mouth-your."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "فِي شِي خَطِير؟",
+          "baca": "fi shi khaṭiir?",
+          "id": "Is it anything serious?",
+          "literal": "there-is thing dangerous?"
+        },
+        {
+          "speaker": "اَلدُّكْتُور:",
+          "text": "لَا، اِلْتِهَاب بَسِيط. مَا فِي دَاعِي تِخَاف.",
+          "baca": "la’, iltihaab basiiṭ. ma fi daa‘i tikhaaf.",
+          "id": "No, a mild infection. Nothing to worry about.",
+          "literal": "no, inflammation simple. not there-is reason you-fear."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "اَلْحَمْدُ لِلَّه. شُو لَازِم آخُد؟",
+          "baca": "alhamdulilla. shu laazim aakhud?",
+          "id": "Thank God. What should I take?",
+          "literal": "the-praise to-God. what must I-take?"
+        },
+        {
+          "speaker": "اَلدُّكْتُور:",
+          "text": "رَح إِكْتِبْلَك دَوَا. حَبِّة تْلَات مَرَّات بِالْيَوْم.",
+          "baca": "rah iktiblak dawa. habbe tlaat marraat bil-yōm.",
+          "id": "I'll write you a prescription. One pill three times a day.",
+          "literal": "will I-write-for-you medicine. pill three times in-the-day."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "لَكَم يَوْم؟",
+          "baca": "la-kam yōm?",
+          "id": "For how many days?",
+          "literal": "for-how-many day?"
+        },
+        {
+          "speaker": "اَلدُّكْتُور:",
+          "text": "خَمْس تْيَام. وْاِشْرَب مَي كْتِير وْاِرْتَاح.",
+          "baca": "khams tyaam. w ishrab mayy ktiir w irtaah.",
+          "id": "Five days. And drink lots of water and rest.",
+          "literal": "five days. and drink water much and rest."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "يِسْلَمُوا يَا دُكْتُور. قَدِّيش الْمُعَايَنَة؟",
+          "baca": "yislamu ya duktuur. ’addēsh el-mu‘aayane?",
+          "id": "Thank you, doctor. How much is it?",
+          "literal": "may-they-be-safe O doctor. how-much the-examination?"
+        },
+        {
+          "speaker": "اَلدُّكْتُور:",
+          "text": "اِدْفَع بَرَّا. سَلَامْتَك.",
+          "baca": "idfa‘ barra. salaamtak.",
+          "id": "Pay outside. Get well soon.",
+          "literal": "pay outside. safety-your."
+        }
+      ],
+      "notes": [
+        "**⚠️ The part that hurts is the subject, not you.** Instead of \"I have a headache,\" Levantine Arabic says رَاسِي بِوجَعْنِي — literally \"my head is hurting me,\" with the head as the **subject** and you as the **object**. The word order feels very strange at first, then becomes second nature.",
+        "**The form وَاجِعْنِي is the active participle, and it's used more than the verb.** رَاسِي وَاجِعْنِي (\"my head hurts\") is more common than رَاسِي بِوجَعْنِي. For a feminine body part, the form is وَاجْعِتْنِي — for example إِيدِي وَاجْعِتْنِي.",
+        "**The word سُخُونِة means fever**, and it comes from سُخْن (heat), which you met in unit 5. You say it with عِنْد — for example عِنْدِي سُخُونِة (\"I have a fever\"), the same pattern as عِنْدِي وَقْت.",
+        "**The phrase سَلَامْتَك is a must-say to anyone who's ill.** Literally \"your safety,\" it means \"get well soon.\" The reply: اَللَّه يْسَلِّمَك. To a woman: سَلَامْتِك.",
+        "**The phrase مَا فِي دَاعِي means \"there's no need.\"** It's used to reassure and to decline gently: مَا فِي دَاعِي تِتْعَب حَالَك (\"don't go to any trouble\"). One of the most useful phrases for the hosting and visiting in unit 20.",
+        "**Health care in the Levant often starts at the pharmacy, not the doctor.** Pharmacists in Syria, Lebanon, and Jordan routinely give advice for minor complaints and sell many medicines without a prescription. For a cold or a headache, going straight to the pharmacy is perfectly normal."
+      ],
+      "grammars": [
+        {
+          "title": "Saying what hurts",
+          "table": {
+            "head": [
+              "Sentence",
+              "Say it",
+              "Literally",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "رَاسِي وَاجِعْنِي",
+                "raasi waaji‘ni",
+                "my head is hurting me",
+                "I have a headache"
+              ],
+              [
+                "بَطْنِي وَاجِعْنِي",
+                "baṭni waaji‘ni",
+                "my stomach is hurting me",
+                "I have a stomachache"
+              ],
+              [
+                "إِيدِي وَاجْعِتْنِي",
+                "iidi waaj‘etni",
+                "my hand is hurting me",
+                "my hand hurts"
+              ],
+              [
+                "ضَهْرِي وَاجِعْنِي",
+                "ḍahri waaji‘ni",
+                "my back is hurting me",
+                "my back hurts"
+              ],
+              [
+                "سْنَانِي وَاجْعِينِي",
+                "snaani waaj‘iini",
+                "my tooth is hurting me",
+                "I have a toothache"
+              ],
+              [
+                "عِنْدِي سُخُونِة",
+                "‘indi sukhuune",
+                "at me heat",
+                "I have a fever"
+              ],
+              [
+                "حَاسِس بِدَوْخَة",
+                "haasis bidōwkha",
+                "I feel dizzy",
+                "I'm dizzy"
+              ],
+              [
+                "تَعْبَان كْتِير",
+                "ta‘baan ktiir",
+                "tired much",
+                "I feel weak"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that the participle changes with the body part: وَاجِعْنِي for masculine ones (رَاس، بَطِن، ضَهِر), وَاجْعِتْنِي for feminine ones (إِيد، رِجِل), and وَاجْعِينِي for plurals (سْنَان، عْيُون).",
+            "To ask someone else: شُو وَاجْعَك؟ (\"what hurts?\") or وَين عَم بِوجَعَك؟ (\"where does it hurt?\"). The answer just names the body part."
+          ]
+        },
+        {
+          "title": "Parts of the body",
+          "table": {
+            "head": [
+              "Levantine",
+              "Say it",
+              "Meaning",
+              "Levantine",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "رَاس",
+                "raas",
+                "head",
+                "شَعِر",
+                "sha‘r",
+                "hair"
+              ],
+              [
+                "عَين / عْيُون",
+                "‘ēn / ‘yuun",
+                "eye",
+                "إِذِن",
+                "idhin",
+                "ear"
+              ],
+              [
+                "مَنْخَار",
+                "mankhaar",
+                "nose",
+                "تِمّ",
+                "timm",
+                "mouth"
+              ],
+              [
+                "سِنّ / سْنَان",
+                "sinn / snaan",
+                "tooth",
+                "لْسَان",
+                "lsaan",
+                "tongue"
+              ],
+              [
+                "حَلِق",
+                "hal’",
+                "throat",
+                "رَقَبِة",
+                "ra’abe",
+                "neck"
+              ],
+              [
+                "إِيد",
+                "iid",
+                "hand",
+                "إِصْبَع",
+                "iṣba‘",
+                "finger"
+              ],
+              [
+                "كْتَاف",
+                "ktaaf",
+                "shoulder",
+                "ضَهِر",
+                "ḍahr",
+                "back"
+              ],
+              [
+                "بَطِن",
+                "baṭn",
+                "stomach",
+                "قَلِب",
+                "’alb",
+                "heart"
+              ],
+              [
+                "رِجِل",
+                "rijl",
+                "leg, foot",
+                "رُكْبِة",
+                "rukbe",
+                "knee"
+              ]
+            ]
+          },
+          "after": [
+            "The word قَلِب means the heart as an organ and also the \"heart\" of feelings, just as in English. The phrase عَ قَلْبَك you used in unit 7 comes from it.",
+            "Paired body parts (eyes, hands, legs, ears) take the dual form from unit 5: عَيْنَين، إِيدَين، رِجْلَين. These forms are very common and worth memorizing."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The most common complaints",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Levantine",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "عِنْدِي رَشِح",
+              "‘indi rashh",
+              "I have a cold"
+            ],
+            [
+              "عَم بِسْعُل",
+              "‘am bis‘ul",
+              "I have a cough"
+            ],
+            [
+              "عِنْدِي إِسْهَال",
+              "‘indi is-haal",
+              "I have diarrhea"
+            ],
+            [
+              "حَاسِس بِغَثَيَان",
+              "haasis bighathayaan",
+              "I feel sick"
+            ],
+            [
+              "مَا فِيني نَام",
+              "ma fiini naam",
+              "I can't sleep"
+            ],
+            [
+              "عِنْدِي حَسَاسِيِّة",
+              "‘indi hasaasiyye",
+              "I have an allergy"
+            ],
+            [
+              "جَرَحِت إِيدِي",
+              "jaraht iidi",
+              "I cut my hand"
+            ],
+            [
+              "حَاسِس حَالِي مِش مْنِيح",
+              "haasis haali mish mniih",
+              "I don't feel well"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The phrase حَاسِس حَالِي مِش مْنِيح is the most common way to say \"I don't feel well\" without going into detail. The feminine form is حَاسْسِة حَالِي مِش مْنِيحَة. It's enough to start a conversation with any pharmacist."
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Allergies: sentences to learn by heart",
+          "items": [
+            "The pattern: عِنْدِي حَسَاسِيِّة مِن… — for example عِنْدِي حَسَاسِيِّة مِن الْبِنِسِلِين.",
+            "For food: مَا بَاكُل… لَإِنّ عِنْدِي حَسَاسِيِّة (\"I don't eat… because I'm allergic\").",
+            "In an emergency, one word always works: إِسْعَاف *is‘aaf* (ambulance). Emergency numbers differ from country to country — look yours up on your first day, don't wait."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "At the pharmacy",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Levantine",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "بَدِّي شِي لَلرَّشِح",
+              "baddi shi lar-rashh",
+              "I'd like something for a cold"
+            ],
+            [
+              "فِي شِي لَوَجَع الرَّاس؟",
+              "fi shi lawaja‘ er-raas?",
+              "do you have anything for a headache?"
+            ],
+            [
+              "مِن غَير وَصْفَة؟",
+              "min ghēr waṣfe?",
+              "without a prescription?"
+            ],
+            [
+              "قَدِّيش حَبِّة بِالْيَوْم؟",
+              "’addēsh habbe bil-yōm?",
+              "how many pills a day?"
+            ],
+            [
+              "قَبِل وَلَّا بَعِد الْأَكِل؟",
+              "’abl walla ba‘d el-akl?",
+              "before or after meals?"
+            ],
+            [
+              "فِي أَعْرَاض جَانْبِيِّة؟",
+              "fi a‘raaḍ jaanbiyye?",
+              "are there side effects?"
+            ],
+            [
+              "دَوَا",
+              "dawa",
+              "medicine"
+            ],
+            [
+              "مَرْهَم",
+              "marham",
+              "ointment"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The word حَبِّة, which meant \"a piece of fruit\" in unit 6, here means \"a pill\" — same word, same counting unit, different context. For syrup, use شَرَاب; for an injection, إِبْرَة."
+        },
+        {
+          "type": "kotak",
+          "title": "What to say to someone who's ill, and the replies",
+          "items": [
+            "To someone who's ill: **سَلَامْتَك** *salaamtak*. The reply: **اَللَّه يْسَلِّمَك**.",
+            "To someone who's just recovered: **اَلْحَمْدُ لِلَّه عَ السَّلَامِة** *alhamdulilla ‘a es-salaame*.",
+            "A deeper wish for someone seriously ill: **اَللَّه يِشْفِيك** *alla yishfiik* (\"may God heal you\")."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "دُكْتُور",
+      "baca": "duktuur",
+      "en": "doctor"
+    },
+    {
+      "ar": "عِيَادَة",
+      "baca": "‘iyaade",
+      "en": "clinic"
+    },
+    {
+      "ar": "صَيْدَلِيِّة",
+      "baca": "ṣaydaliyye",
+      "en": "pharmacy"
+    },
+    {
+      "ar": "دَوَا",
+      "baca": "dawa",
+      "en": "medicine"
+    },
+    {
+      "ar": "وَصْفَة",
+      "baca": "waṣfe",
+      "en": "prescription"
+    },
+    {
+      "ar": "رَاس",
+      "baca": "raas",
+      "en": "head"
+    },
+    {
+      "ar": "بَطِن",
+      "baca": "baṭn",
+      "en": "stomach"
+    },
+    {
+      "ar": "ضَهِر",
+      "baca": "ḍahr",
+      "en": "back"
+    },
+    {
+      "ar": "إِيد / رِجِل",
+      "baca": "iid / rijl",
+      "en": "hand / leg"
+    },
+    {
+      "ar": "عَين / إِذِن",
+      "baca": "‘ēn / idhin",
+      "en": "eye / ear"
+    },
+    {
+      "ar": "حَلِق",
+      "baca": "hal’",
+      "en": "throat"
+    },
+    {
+      "ar": "سِنّ / سْنَان",
+      "baca": "sinn / snaan",
+      "en": "tooth"
+    },
+    {
+      "ar": "وَاجِعْنِي",
+      "baca": "waaji‘ni",
+      "en": "hurting (me)"
+    },
+    {
+      "ar": "سُخُونِة",
+      "baca": "sukhuune",
+      "en": "fever"
+    },
+    {
+      "ar": "رَشِح",
+      "baca": "rashh",
+      "en": "a cold"
+    },
+    {
+      "ar": "بِسْعُل",
+      "baca": "bis‘ul",
+      "en": "I'm coughing"
+    },
+    {
+      "ar": "دَوْخَة",
+      "baca": "dōwkha",
+      "en": "dizziness"
+    },
+    {
+      "ar": "حَسَاسِيِّة",
+      "baca": "hasaasiyye",
+      "en": "allergy"
+    },
+    {
+      "ar": "حَبِّة",
+      "baca": "habbe",
+      "en": "pill"
+    },
+    {
+      "ar": "سَلَامْتَك",
+      "baca": "salaamtak",
+      "en": "get well soon"
+    },
+    {
+      "ar": "مَا فِي دَاعِي",
+      "baca": "ma fi daa‘i",
+      "en": "there's no need"
+    },
+    {
+      "ar": "خَطِير",
+      "baca": "khaṭiir",
+      "en": "dangerous, serious"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Levantine Arabic.",
+      "items": [
+        "I have a headache.",
+        "I've had a fever for two days.",
+        "My throat hurts too.",
+        "Do you have anything for a headache?",
+        "How many pills a day?",
+        "Get well soon."
+      ]
+    },
+    {
+      "prompt": "Fill in the right form of وَاجِع.",
+      "items": [
+        "رَاسِي ____.",
+        "إِيدِي ____.",
+        "بَطْنِي ____.",
+        "سْنَانِي ____.",
+        "ضَهْرِي ____.",
+        "رِجْلِي ____."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks.",
+      "items": [
+        "عِنْدِي ____، حَرَارْتِي عَالْيِة. (fever)",
+        "بَدِّي ____ لَلرَّشِح. (medicine)",
+        "عِنْدِي ____ مِن الْبِنِسِلِين. (allergy)",
+        "مَا فِي ____ تِخَاف. (need)",
+        "____، اَللَّه يِشْفِيك. (get well soon)",
+        "خَمْس ____ بِالْيَوْم. (pill)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "وَاجِعْنِي / رَاسِي",
+        "سُخُونِة / عِنْدِي",
+        "إِمْتَى / مِن / ؟",
+        "لَوَجَع الرَّاس / فِي / ؟ / شِي",
+        "بِالْيَوْم / تْلَات / حَبِّة / مَرَّات",
+        "يْسَلِّمَك / اَللَّه"
+      ]
+    }
+  ],
+  "answers": [
+    "رَاسِي وَاجِعْنِي. — عِنْدِي سُخُونِة مِن يَوْمَين. — حَلْقِي وَاجِعْنِي كَمَان. — فِي شِي لَوَجَع الرَّاس؟ — قَدِّيش حَبِّة بِالْيَوْم؟ — سَلَامْتَك.",
+    "وَاجِعْنِي — وَاجْعِتْنِي — وَاجِعْنِي — وَاجْعِينِي — وَاجِعْنِي — وَاجْعِتْنِي",
+    "سُخُونِة — دَوَا — حَسَاسِيِّة — دَاعِي — سَلَامْتَك — حَبَّات",
+    "رَاسِي وَاجِعْنِي. — عِنْدِي سُخُونِة. — مِن إِمْتَى؟ — فِي شِي لَوَجَع الرَّاس؟ — حَبِّة تْلَات مَرَّات بِالْيَوْم. — اَللَّه يْسَلِّمَك."
+  ],
+  "wave": "Name twelve parts of the body while pointing to them, then make three وَاجِعْنِي sentences with different forms."
+}

@@ -1,0 +1,643 @@
+{
+  "title": "‘indi — having, and numbers up to twenty",
+  "title_target": "عِنْدِي",
+  "goal": "Say what you have and don't have, count to twenty, and understand why Arabic has no verb \"to have\" at all.",
+  "bekal": [
+    "use عِنْد and negate it with مَا",
+    "count from one to twenty and count things",
+    "tell apart عِنْد · فِي and مَع, three words with close meanings"
+  ],
+  "dialogs": [
+    {
+      "title": "حَكِي — بِالسَّكَن",
+      "intro": "Budi has just moved into a rented room and is checking it out with the landlord, Abu Sami.",
+      "lines": [
+        {
+          "speaker": "أَبُو سَامِي:",
+          "text": "تْفَضَّل، هَيّ الْأُوضَة.",
+          "baca": "tfaḍḍal, hayy el-ōḍa.",
+          "id": "Here you are, this is the room.",
+          "literal": "please, this the-room."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "حِلْوِة. فِي مَي سُخْنِة؟",
+          "baca": "hilwe. fi mayy sukhne?",
+          "id": "Nice. Is there hot water?",
+          "literal": "sweet. there-is water hot?"
+        },
+        {
+          "speaker": "أَبُو سَامِي:",
+          "text": "أَكِيد فِي. وْفِي بَرَّاد كَمَان.",
+          "baca": "akiid fi. w fi barraad kamaan.",
+          "id": "Of course there is. And there's a fridge too.",
+          "literal": "sure there-is. and there-is fridge too."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "طَيِّب. قَدِّيش أُوَض بِالْبَيْت؟",
+          "baca": "ṭayyib. ’addēsh ōwaḍ bil-bēt?",
+          "id": "Good. How many rooms are there in the house?",
+          "literal": "good. how-many room in-the-house?"
+        },
+        {
+          "speaker": "أَبُو سَامِي:",
+          "text": "أَرْبَع أُوَض. تْلَاتِة مَأْجُورِين وْوَحْدِة فَاضْيِة.",
+          "baca": "arba‘ ōwaḍ. tlaate ma’juuriin w wahde faaḍye.",
+          "id": "Four rooms. Three are rented and one is empty.",
+          "literal": "four rooms. three rented and one empty."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "وْعِنْدْكُن إِنْتِرْنِت؟",
+          "baca": "w ‘indkun intirnit?",
+          "id": "And do you have internet?",
+          "literal": "and at-you(pl) internet?"
+        },
+        {
+          "speaker": "أَبُو سَامِي:",
+          "text": "إِيه، بَسّ مَا عِنَّا وَاي فَاي بِكِلّ أُوضَة.",
+          "baca": "ēh, bass ma ‘inna waay faay bikill ōḍa.",
+          "id": "Yes, but we don't have wifi in every room.",
+          "literal": "yes, but not at-us wifi in-every room."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مَاشِي. عِنْدِي كَرْت مِن الشَّرِكَة.",
+          "baca": "maashi. ‘indi kart min esh-shirke.",
+          "id": "That's OK. I have a SIM card from the phone company.",
+          "literal": "walking. at-me card from the-company."
+        },
+        {
+          "speaker": "أَبُو سَامِي:",
+          "text": "مْنِيح. مَعَك مَصَارِي هَلَّق؟",
+          "baca": "mniih. ma‘ak maṣaari halla’?",
+          "id": "Good. Do you have money on you now?",
+          "literal": "good. with-you money now?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مَعِي مِيتَين، بَسّ مَا مَعِي أَكْتَر.",
+          "baca": "ma‘i miitēn, bass ma ma‘i aktar.",
+          "id": "I have two hundred on me, but no more.",
+          "literal": "with-me two-hundred, but not with-me more."
+        },
+        {
+          "speaker": "أَبُو سَامِي:",
+          "text": "مَاشِي الْحَال. اَلْبَاقِي بُكْرَا.",
+          "baca": "maashi el-haal. el-baa’i bukra.",
+          "id": "No problem. The rest tomorrow.",
+          "literal": "walking the-situation. the-rest tomorrow."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "يِسْلَمُوا. عِنْدِي سُؤَال كَمَان.",
+          "baca": "yislamu. ‘indi su’aal kamaan.",
+          "id": "Thanks. I have one more question.",
+          "literal": "may-they-be-safe. at-me question too."
+        },
+        {
+          "speaker": "أَبُو سَامِي:",
+          "text": "تْفَضَّل يَا بُودِي.",
+          "baca": "tfaḍḍal ya Buudi.",
+          "id": "Go ahead, Budi.",
+          "literal": "please O Budi."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "فِي مَحَلّ قَرِيب؟ بَدِّي خُبْز وْمَي.",
+          "baca": "fi mahall ’ariib? baddi khubz w mayy.",
+          "id": "Is there a shop nearby? I want bread and water.",
+          "literal": "there-is shop near? want-my bread and water."
+        },
+        {
+          "speaker": "أَبُو سَامِي:",
+          "text": "إِيه، تْحِت عَ الزَّاوِيِة. مَفْتُوح لَلْعَشَرَة.",
+          "baca": "ēh, tiht ‘a ez-zaawye. maftuuh la-el-‘ashara.",
+          "id": "Yes, downstairs on the corner. It's open until ten.",
+          "literal": "yes, down on-the-corner. open until-ten."
+        }
+      ],
+      "notes": [
+        "**Arabic has no verb \"to have\" at all.** Instead it uses the preposition عِنْد (\"at\") plus a possessive ending: عِنْدِي *‘indi* means \"at me\", and that's how you say \"I have\". This isn't a gap in the language — Russian and Turkish do the same thing.",
+        "**Because عِنْد isn't a noun, its negative is مَا, not مِش.** The correct form is مَا عِنْدِي *ma ‘indi*. The form مِش عِنْدِي sounds wrong straight away, although it's still understood.",
+        "**Three similar words, and the difference matters.** The word عِنْدِي means \"I have\" in general; مَعِي *ma‘i* means \"I have it on me\"; فِي *fi* means \"there is\", without naming an owner. The answer عِنْدِي مَصَارِي may mean your money is in the bank, while مَعِي مَصَارِي means it's in your pocket right now.",
+        "**Numbers three to ten use a short form in front of a noun.** The stand-alone form تْلَاتِة becomes تْلَات when a noun follows: تْلَات أُوَض *tlaat ōwaḍ* (\"three rooms\"). The long form is used for counting on its own or giving a number.",
+        "**From eleven up, the noun goes back to singular.** The phrase خَمْسْتَعْش كْتَاب is literally \"fifteen book (singular)\". That actually makes life easier — no plural to worry about.",
+        "**The replies مَاشِي and مَاشِي الْحَال mean \"that's fine\", not \"walking\".** It's one of the most frequent expressions in the Levant, used to accept a situation, agree to a suggestion, or calm someone's worries."
+      ],
+      "grammars": [
+        {
+          "title": "The words عِنْد, مَع and فِي",
+          "table": {
+            "head": [
+              "Form",
+              "Say it",
+              "Meaning",
+              "Negative",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "عِنْدِي",
+                "‘indi",
+                "I have",
+                "مَا عِنْدِي",
+                "ma ‘indi"
+              ],
+              [
+                "عِنْدَك / عِنْدِك",
+                "‘indak / ‘indik",
+                "you have (m / f)",
+                "مَا عِنْدَك",
+                "ma ‘indak"
+              ],
+              [
+                "عِنْدُو / عِنْدَا",
+                "‘indo / ‘inda",
+                "he / she has",
+                "مَا عِنْدُو",
+                "ma ‘indo"
+              ],
+              [
+                "عِنَّا",
+                "‘inna",
+                "we have",
+                "مَا عِنَّا",
+                "ma ‘inna"
+              ],
+              [
+                "عِنْدْكُن",
+                "‘indkun",
+                "you (pl) have",
+                "مَا عِنْدْكُن",
+                "ma ‘indkun"
+              ],
+              [
+                "عِنْدْهُن",
+                "‘ind-hun",
+                "they have",
+                "مَا عِنْدْهُن",
+                "ma ‘ind-hun"
+              ],
+              [
+                "مَعِي",
+                "ma‘i",
+                "I have on me",
+                "مَا مَعِي",
+                "ma ma‘i"
+              ],
+              [
+                "فِي",
+                "fi",
+                "there is",
+                "مَا فِي",
+                "ma fi"
+              ]
+            ]
+          },
+          "after": [
+            "Notice the irregular \"we\" form: عِنَّا *‘inna*, not عِنْدْنَا. Its د has melted away. It's the only form that breaks the pattern — and the one you'll use most when talking about your family.",
+            "To ask a question, nothing changes — just raise your voice: عِنْدَك وَقْت؟ (\"do you have time?\"). The short answers are إِيه، عِنْدِي or لَا، مَا عِنْدِي."
+          ]
+        },
+        {
+          "title": "Numbers from one to twenty",
+          "table": {
+            "head": [
+              "Number",
+              "On its own",
+              "Say it",
+              "Before a noun",
+              "Example"
+            ],
+            "rows": [
+              [
+                "1",
+                "وَاحِد",
+                "waahid",
+                "(not used)",
+                "كْتَاب وَاحِد"
+              ],
+              [
+                "2",
+                "تْنَين",
+                "tnēn",
+                "(not used)",
+                "كْتَابَين"
+              ],
+              [
+                "3",
+                "تْلَاتِة",
+                "tlaate",
+                "تْلَات",
+                "تْلَات كْتُب"
+              ],
+              [
+                "4",
+                "أَرْبَعَة",
+                "arba‘a",
+                "أَرْبَع",
+                "أَرْبَع أُوَض"
+              ],
+              [
+                "5",
+                "خَمْسِة",
+                "khamse",
+                "خَمْس",
+                "خَمْس دَقَايِق"
+              ],
+              [
+                "6",
+                "سِتِّة",
+                "sitte",
+                "سِتّ",
+                "سِتّ سْنِين"
+              ],
+              [
+                "7",
+                "سَبْعَة",
+                "sab‘a",
+                "سَبْع",
+                "سَبْع أَيَّام"
+              ],
+              [
+                "8",
+                "تْمَانْيِة",
+                "tmaanye",
+                "تْمَان",
+                "تْمَان سَاعَات"
+              ],
+              [
+                "9",
+                "تِسْعَة",
+                "tis‘a",
+                "تِسْع",
+                "تِسْع كْتُب"
+              ],
+              [
+                "10",
+                "عَشَرَة",
+                "‘ashara",
+                "عَشْر",
+                "عَشْر دَقَايِق"
+              ],
+              [
+                "11",
+                "حْدَعْش",
+                "hda‘sh",
+                "حْدَعْش",
+                "حْدَعْش كْتَاب"
+              ],
+              [
+                "12",
+                "تْنَعْش",
+                "tna‘sh",
+                "تْنَعْش",
+                "تْنَعْش شَهْر"
+              ],
+              [
+                "15",
+                "خَمْسْتَعْش",
+                "khamsta‘sh",
+                "خَمْسْتَعْش",
+                "خَمْسْتَعْش يَوْم"
+              ],
+              [
+                "20",
+                "عِشْرِين",
+                "‘ishriin",
+                "عِشْرِين",
+                "عِشْرِين دَقِيقَة"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ For **two**, Arabic doesn't use the number but changes the noun: كْتَاب becomes كْتَابَين *ktaabēn* (\"two books\"), يَوْم becomes يَوْمَين *yōmēn* (\"two days\"). This form is called the *muthanna* (dual), and in dialect it's much simpler than in Fusha: just add ـَين.",
+            "For **one**, the number goes **after** the noun and is often left out altogether: كْتَاب means \"a book\" with nothing added. The word وَاحِد is used only when you want to stress \"just one\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Counting things in a sentence",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "عِنْدِي كْتَاب",
+              "‘indi ktaab",
+              "I have a book"
+            ],
+            [
+              "عِنْدِي كْتَابَين",
+              "‘indi ktaabēn",
+              "I have two books"
+            ],
+            [
+              "عِنْدِي تْلَات كْتُب",
+              "‘indi tlaat kitub",
+              "I have three books"
+            ],
+            [
+              "عِنْدِي عَشْر كْتُب",
+              "‘indi ‘ashr kitub",
+              "I have ten books"
+            ],
+            [
+              "عِنْدِي حْدَعْش كْتَاب",
+              "‘indi hda‘sh ktaab",
+              "I have eleven books"
+            ],
+            [
+              "مَا عِنْدِي وَلَا كْتَاب",
+              "ma ‘indi wala ktaab",
+              "I don't have a single book"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last row shows how to make a negative emphatic: the word وَلَا before the noun means \"not a single one\". It's much stronger than مَا عِنْدِي كْتُب, and works just like \"not a single…\" in English."
+        },
+        {
+          "type": "kotak",
+          "title": "Three plural forms to accept as they are",
+          "items": [
+            "Arabic plurals can hardly be guessed from the singular: كْتَاب becomes كْتُب · بَيْت becomes بْيُوت · وَلَد becomes وْلَاد · أُوضَة becomes أُوَض.",
+            "The good news at A1: you **don't need to produce them**. You only need to recognize them when you hear them, and learn the plurals of the ten to fifteen most common words.",
+            "Feminine nouns often form the plural just by adding ـَات, and that's the easiest kind: سَاعَة becomes سَاعَات · مَجَلِّة becomes مَجَلَّات · سَيَّارَة becomes سَيَّارَات."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Things people often ask about",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Levantine",
+            "Say it",
+            "Meaning",
+            "Levantine",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "مَي",
+              "mayy",
+              "water",
+              "خُبْز",
+              "khubz",
+              "bread"
+            ],
+            [
+              "أُوضَة",
+              "ōḍa",
+              "room",
+              "بَيْت",
+              "bēt",
+              "house"
+            ],
+            [
+              "بَرَّاد",
+              "barraad",
+              "fridge",
+              "سَخَّان",
+              "sakhkhaan",
+              "water heater"
+            ],
+            [
+              "مَصَارِي",
+              "maṣaari",
+              "money",
+              "كَرْت",
+              "kart",
+              "card"
+            ],
+            [
+              "مَحَلّ",
+              "mahall",
+              "shop",
+              "سُوق",
+              "suu’",
+              "market"
+            ],
+            [
+              "سَيَّارَة",
+              "sayyaara",
+              "car",
+              "بَاص",
+              "baaṣ",
+              "bus"
+            ],
+            [
+              "تِلِفُون",
+              "tilifōn",
+              "phone",
+              "شَاحِن",
+              "shaahin",
+              "charger"
+            ],
+            [
+              "مَفْتُوح",
+              "maftuuh",
+              "open",
+              "مْسَكَّر",
+              "msakkar",
+              "closed"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The word مَي *mayy* is one of the most frequent words in the whole Levant, and it's far from the Fusha مَاء. If you say the Fusha form, people will understand, but you'll instantly sound like you're reading aloud."
+        },
+        {
+          "type": "kotak",
+          "title": "Asking whether something is available",
+          "items": [
+            "There's just one formula: فِي + thing + ؟ — for example فِي مَي سُخْنِة؟ (\"is there hot water?\").",
+            "A yes is simply إِيه، فِي. A no is لَا، مَا فِي. No need to repeat the thing.",
+            "If you're asking about a place rather than a thing, swap فِي for وَين — for example وَين الْمَحَلّ؟ (\"where's the shop?\")."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "عِنْدِي",
+      "baca": "‘indi",
+      "en": "I have"
+    },
+    {
+      "ar": "مَعِي",
+      "baca": "ma‘i",
+      "en": "I have on me"
+    },
+    {
+      "ar": "فِي / مَا فِي",
+      "baca": "fi / ma fi",
+      "en": "there is / there isn't"
+    },
+    {
+      "ar": "وَاحِد / تْنَين",
+      "baca": "waahid / tnēn",
+      "en": "one / two"
+    },
+    {
+      "ar": "تْلَاتِة / أَرْبَعَة",
+      "baca": "tlaate / arba‘a",
+      "en": "three / four"
+    },
+    {
+      "ar": "خَمْسِة / سِتِّة",
+      "baca": "khamse / sitte",
+      "en": "five / six"
+    },
+    {
+      "ar": "سَبْعَة / تْمَانْيِة",
+      "baca": "sab‘a / tmaanye",
+      "en": "seven / eight"
+    },
+    {
+      "ar": "تِسْعَة / عَشَرَة",
+      "baca": "tis‘a / ‘ashara",
+      "en": "nine / ten"
+    },
+    {
+      "ar": "عِشْرِين",
+      "baca": "‘ishriin",
+      "en": "twenty"
+    },
+    {
+      "ar": "أُوضَة",
+      "baca": "ōḍa",
+      "en": "room"
+    },
+    {
+      "ar": "مَي",
+      "baca": "mayy",
+      "en": "water"
+    },
+    {
+      "ar": "خُبْز",
+      "baca": "khubz",
+      "en": "bread"
+    },
+    {
+      "ar": "مَصَارِي",
+      "baca": "maṣaari",
+      "en": "money"
+    },
+    {
+      "ar": "مَحَلّ",
+      "baca": "mahall",
+      "en": "shop"
+    },
+    {
+      "ar": "قَرِيب",
+      "baca": "’ariib",
+      "en": "near"
+    },
+    {
+      "ar": "بَعِيد",
+      "baca": "ba‘iid",
+      "en": "far"
+    },
+    {
+      "ar": "مَفْتُوح",
+      "baca": "maftuuh",
+      "en": "open"
+    },
+    {
+      "ar": "مْسَكَّر",
+      "baca": "msakkar",
+      "en": "closed"
+    },
+    {
+      "ar": "أَكِيد",
+      "baca": "akiid",
+      "en": "sure, of course"
+    },
+    {
+      "ar": "مَاشِي",
+      "baca": "maashi",
+      "en": "that's fine, OK"
+    },
+    {
+      "ar": "سُخْن / بَارِد",
+      "baca": "sukhn / baarid",
+      "en": "hot / cold"
+    },
+    {
+      "ar": "بَاقِي",
+      "baca": "baa’i",
+      "en": "the rest"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Levantine Arabic.",
+      "items": [
+        "I have three books.",
+        "We don't have time today.",
+        "Is there hot water?",
+        "I don't have money on me.",
+        "She has two rooms.",
+        "There's no shop nearby."
+      ]
+    },
+    {
+      "prompt": "Fill in the right form of عِنْد, مَع or فِي (with its ending).",
+      "items": [
+        "____ سَيَّارَة جْدِيدِة. (he has)",
+        "مَا ____ مَصَارِي هَلَّق. (I have on me)",
+        "____ مَحَلّ قَرِيب مِن هُون. (there is)",
+        "مَا ____ إِنْتِرْنِت بِالْبَيْت. (we have)",
+        "____ وَقْت بُكْرَا؟ (you, woman, have)",
+        "مَا ____ حَدَا بِالصَّفّ. (there is)"
+      ]
+    },
+    {
+      "prompt": "Write the number in Levantine Arabic.",
+      "items": [
+        "4 rooms",
+        "2 days",
+        "7 books",
+        "12 months",
+        "15 minutes",
+        "20 years"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "كْتُب / عِنْدِي / تْلَات",
+        "مَي / فِي / ؟ / سُخْنِة",
+        "مَصَارِي / مَا / مَعِي",
+        "أُوَض / بِالْبَيْت / أَرْبَع",
+        "عِنَّا / مَا / وَقْت",
+        "قَرِيب / اَلْمَحَلّ / كْتِير"
+      ]
+    }
+  ],
+  "answers": [
+    "عِنْدِي تْلَات كْتُب. — مَا عِنَّا وَقْت الْيَوْم. — فِي مَي سُخْنِة؟ — مَا مَعِي مَصَارِي. — عِنْدَا أُوضْتَين. — مَا فِي مَحَلّ قَرِيب.",
+    "عِنْدُو — مَعِي — فِي — عِنَّا — عِنْدِك — فِي",
+    "أَرْبَع أُوَض — يَوْمَين — سَبْع كْتُب — تْنَعْش شَهْر — خَمْسْتَعْش دَقِيقَة — عِشْرِين سِنِة",
+    "عِنْدِي تْلَات كْتُب. — فِي مَي سُخْنِة؟ — مَا مَعِي مَصَارِي. — أَرْبَع أُوَض بِالْبَيْت. — مَا عِنَّا وَقْت. — اَلْمَحَلّ قَرِيب كْتِير."
+  ],
+  "wave": "Count what's in your bag out loud in Levantine Arabic. Stop at each item and say the right عِنْدِي or مَعِي."
+}

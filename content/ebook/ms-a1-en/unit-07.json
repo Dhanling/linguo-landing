@@ -1,0 +1,564 @@
+{
+  "title": "Directions and transport",
+  "title_target": "Tumpang tanya, stesen kat mana?",
+  "goal": "Ask the way, ride the LRT and buses, and give directions to a Grab driver — with the Malaysian road vocabulary you'll see on every sign.",
+  "bekal": [
+    "open a question to a stranger with *tumpang tanya*",
+    "give and follow directions: turn, straight on, junction, roundabout",
+    "name Malaysian transport without mixing up the false friends"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Lost in Kuala Lumpur",
+      "intro": "Sarah got off at the wrong station and is now standing at a junction, holding a phone with an almost dead battery.",
+      "lines": [
+        {
+          "speaker": "Sarah:",
+          "text": "Tumpang tanya, pak cik. Stesen LRT kat mana ya?",
+          "id": "Excuse me, uncle. Where's the LRT station?",
+          "literal": "borrow ask, uncle. station LRT at where yes?"
+        },
+        {
+          "speaker": "Pak cik:",
+          "text": "LRT yang mana? Ada dua kat sini.",
+          "id": "Which LRT? There are two around here.",
+          "literal": "LRT the-one which? there-is two at here."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Yang ke Universiti.",
+          "id": "The one to Universiti.",
+          "literal": "the-one to Universiti."
+        },
+        {
+          "speaker": "Pak cik:",
+          "text": "Oh, jalan lurus sampai lampu isyarat, lepas tu belok kiri.",
+          "id": "Oh, go straight to the traffic lights, then turn left.",
+          "literal": "oh, walk straight until light signal, after that turn left."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Lepas belok kiri?",
+          "id": "After turning left?",
+          "literal": "after turn left?"
+        },
+        {
+          "speaker": "Pak cik:",
+          "text": "Jalan lagi dalam dua ratus meter. Stesen kat sebelah kanan, depan masjid.",
+          "id": "Walk on for about two hundred meters. The station's on the right, opposite the mosque.",
+          "literal": "walk more in two hundred meter. station at side right, front mosque."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Jauh tak jalan kaki?",
+          "id": "Is it far on foot?",
+          "literal": "far not walk foot?"
+        },
+        {
+          "speaker": "Pak cik:",
+          "text": "Tak jauh. Lima minit je. Tapi panas ni, adik.",
+          "id": "Not far. Just five minutes. But it's hot, young lady.",
+          "literal": "not far. five minute only. but hot this, younger-sibling."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Tak apa. Kalau naik teksi berapa tambang?",
+          "id": "That's OK. How much would a taxi cost?",
+          "literal": "not what. if ride taxi how-much fare?"
+        },
+        {
+          "speaker": "Pak cik:",
+          "text": "Dekat sangat, teksi tak mahu. Naik Grab pun mahal — minimum lapan ringgit.",
+          "id": "It's very close, taxis won't take you. Grab is expensive too — eight ringgit minimum.",
+          "literal": "near very, taxi not want. ride Grab also expensive — minimum eight ringgit."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Kalau macam tu saya jalan je. Terima kasih banyak, pak cik.",
+          "id": "In that case I'll just walk. Thank you very much, uncle.",
+          "literal": "if like that I walk only. receive love many, uncle."
+        },
+        {
+          "speaker": "Pak cik:",
+          "text": "Sama-sama. Hati-hati melintas jalan tau.",
+          "id": "You're welcome. Be careful crossing the road, OK?",
+          "literal": "same-same. careful cross road know."
+        }
+      ],
+      "notes": [
+        "**Tumpang tanya** (\"may I borrow a question\") is the standard opener when asking a stranger — like \"excuse me, can I ask…\". It's the first phrase to learn before you leave the house in Malaysia. A more formal alternative: *Maaf, boleh saya tanya?*",
+        "**Lepas tu** = after that, then. It's the most common sentence linker in Malaysian conversation. *Lepas tu belok kiri* = \"then turn left\".",
+        "**Lampu isyarat** (\"signal lights\") = traffic lights. That's the official term; people also just say *traffic light*.",
+        "**Tambang** = fare — for buses, taxis and ferries. *Berapa tambang?* = How much is the fare?",
+        "**Dalam** before a number means **about, around**. *Dalam dua ratus meter* = about two hundred meters, *dalam pukul tiga* = around three o'clock. Normally *dalam* means \"in, inside\", so this can puzzle you at first."
+      ],
+      "grammars": [
+        {
+          "title": "Giving directions",
+          "body": [
+            "Directions in Malay are simple: a verb, then left or right. This table covers almost everything you'll need."
+          ],
+          "table": {
+            "head": [
+              "Malay",
+              "English",
+              "Note"
+            ],
+            "rows": [
+              [
+                "**jalan lurus / terus**",
+                "go straight on",
+                "*jalan* = walk, road."
+              ],
+              [
+                "**belok kiri / kanan**",
+                "turn left / right",
+                "—"
+              ],
+              [
+                "**pusing balik**",
+                "make a U-turn ⚠️",
+                "*Pusing* = turn around."
+              ],
+              [
+                "**simpang**",
+                "junction, intersection",
+                "*Simpang empat* (crossroads), *simpang tiga* (T-junction)."
+              ],
+              [
+                "**bulatan**",
+                "roundabout",
+                "From *bulat* (round)."
+              ],
+              [
+                "**lampu isyarat**",
+                "traffic lights",
+                "—"
+              ],
+              [
+                "**jalan sehala**",
+                "one-way street",
+                "*Sehala* = one direction."
+              ],
+              [
+                "**lebuh raya**",
+                "highway, expressway",
+                "Usually tolled."
+              ],
+              [
+                "**tol / plaza tol**",
+                "toll / toll plaza",
+                "—"
+              ],
+              [
+                "**jejambat**",
+                "flyover",
+                "—"
+              ],
+              [
+                "**lorong**",
+                "lane, alley; traffic lane",
+                "Two meanings."
+              ],
+              [
+                "**bulatan pertama / kedua**",
+                "first / second roundabout",
+                "—"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Pusing balik** means **turn back, make a U-turn** — the most common use of *pusing* in Malaysia, and Grab drivers will say it to you. (In Indonesian *pusing* means dizzy; for a headache in Malay, say **pening**.)",
+            "Position words: **di depan** (in front of), **di belakang** (behind), **di sebelah** (next to), **di tepi** (beside, at the edge of), **berhampiran** (near) and **bertentangan dengan** (opposite)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Getting around Malaysia",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Malay",
+            "English",
+            "Note"
+          ],
+          "rows": [
+            [
+              "**kereta**",
+              "car ⚠️",
+              "The most famous false friend."
+            ],
+            [
+              "**keretapi / kereta api**",
+              "train",
+              "KTM = intercity trains."
+            ],
+            [
+              "**motosikal / motor**",
+              "motorcycle",
+              "*Motor* in speech."
+            ],
+            [
+              "**basikal**",
+              "bicycle",
+              "From *bicycle*."
+            ],
+            [
+              "**bas**",
+              "bus",
+              "*Bas mini*, *bas ekspres*."
+            ],
+            [
+              "**teksi**",
+              "taxi",
+              "—"
+            ],
+            [
+              "**e-hailing / Grab**",
+              "ride-hailing",
+              "Grab is the dominant app."
+            ],
+            [
+              "**lori**",
+              "lorry, truck",
+              "From *lorry*."
+            ],
+            [
+              "**van**",
+              "van",
+              "—"
+            ],
+            [
+              "**kapal terbang**",
+              "plane",
+              "Also *pesawat* in formal writing."
+            ],
+            [
+              "**feri**",
+              "ferry",
+              "—"
+            ],
+            [
+              "**LRT / MRT / monorel**",
+              "light rail / metro / monorail",
+              "The backbone of KL."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Note **kapal terbang** (\"flying ship\") for a plane. On signs and official documents you'll also see *pesawat*, and both are fine."
+        },
+        {
+          "type": "sub",
+          "text": "Taking the LRT and buses"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Malay",
+            "English"
+          ],
+          "rows": [
+            [
+              "**tambang**",
+              "fare"
+            ],
+            [
+              "**tiket / kad Touch 'n Go**",
+              "ticket / Touch 'n Go card"
+            ],
+            [
+              "**tambah nilai**",
+              "top up (\"add value\")"
+            ],
+            [
+              "**pintu masuk / keluar**",
+              "entrance / exit"
+            ],
+            [
+              "**platform / pelantar**",
+              "platform"
+            ],
+            [
+              "**tukar tren di …**",
+              "change trains at …"
+            ],
+            [
+              "**stesen seterusnya**",
+              "next station"
+            ],
+            [
+              "**hentian akhir**",
+              "last stop, terminus"
+            ],
+            [
+              "**berhenti di sini**",
+              "stop here"
+            ],
+            [
+              "**sesak**",
+              "crowded, jammed ⚠️"
+            ],
+            [
+              "**waktu puncak**",
+              "rush hour (\"peak time\")"
+            ],
+            [
+              "**jadual**",
+              "timetable, schedule"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Touch 'n Go** is the card used for tolls and public transport in Malaysia, much like an Oyster card. Topping it up is **tambah nilai**, a phrase you'll see on every machine."
+        },
+        {
+          "type": "kotak",
+          "title": "Phrases for a Grab or taxi driver",
+          "items": [
+            "**Nak ke [tempat], boleh?** — Can you take me to …?",
+            "**Berapa tambang ke sana?** — How much is the fare there?",
+            "**Guna meter ya, bang.** — Use the meter, please.",
+            "**Boleh berhenti kat depan tu?** — Can you stop just up ahead?",
+            "**Saya kat pintu masuk utama.** — I'm at the main entrance.",
+            "**Lambat sikit tak apa.** — It's fine if we're a bit late.",
+            "**Jalan mana yang tak sesak?** — Which road isn't jammed?"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Far, near and how long",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Malay",
+            "English"
+          ],
+          "rows": [
+            [
+              "Jauh tak dari sini?",
+              "Is it far from here?"
+            ],
+            [
+              "Dekat je.",
+              "It's close."
+            ],
+            [
+              "Berapa lama nak sampai?",
+              "How long to get there?"
+            ],
+            [
+              "Dalam lima belas minit.",
+              "About fifteen minutes."
+            ],
+            [
+              "Kalau jalan kaki, lama tak?",
+              "Is it long on foot?"
+            ],
+            [
+              "Sesat pula saya.",
+              "Now I'm lost."
+            ],
+            [
+              "Saya tak biasa kat sini.",
+              "I don't know this area."
+            ],
+            [
+              "Ikut jalan ni sampai hujung.",
+              "Follow this road to the end."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Sesat** = lost. It also has a religious sense (*ajaran sesat* = heresy), but in everyday talk it's plain: *saya sesat* = I'm lost."
+        },
+        {
+          "type": "p",
+          "text": "One more word for your collection: **jem** (from English *jam*). *Jalan jem* = the roads are jammed. Alternatives: *sesak*, *tersekat*."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ms": "tumpang tanya",
+      "baca": "toom-pahng tah-nyuh",
+      "en": "excuse me, may I ask"
+    },
+    {
+      "ms": "lepas tu",
+      "baca": "luh-pahs too",
+      "en": "after that, then"
+    },
+    {
+      "ms": "lampu isyarat",
+      "baca": "lahm-poo ee-shah-raht",
+      "en": "traffic lights"
+    },
+    {
+      "ms": "simpang",
+      "baca": "seem-pahng",
+      "en": "junction"
+    },
+    {
+      "ms": "bulatan",
+      "baca": "boo-lah-tahn",
+      "en": "roundabout"
+    },
+    {
+      "ms": "pusing balik",
+      "baca": "poo-seeng bah-leek",
+      "en": "U-turn ⚠️"
+    },
+    {
+      "ms": "jalan sehala",
+      "baca": "jah-lahn suh-hah-luh",
+      "en": "one-way street"
+    },
+    {
+      "ms": "lebuh raya",
+      "baca": "luh-booh rah-yuh",
+      "en": "highway"
+    },
+    {
+      "ms": "jejambat",
+      "baca": "juh-jahm-baht",
+      "en": "flyover"
+    },
+    {
+      "ms": "tambang",
+      "baca": "tahm-bahng",
+      "en": "fare ⚠️"
+    },
+    {
+      "ms": "teksi",
+      "baca": "tehk-see",
+      "en": "taxi"
+    },
+    {
+      "ms": "bas",
+      "baca": "bahs",
+      "en": "bus"
+    },
+    {
+      "ms": "lori",
+      "baca": "loh-ree",
+      "en": "lorry, truck"
+    },
+    {
+      "ms": "basikal",
+      "baca": "bah-see-kahl",
+      "en": "bicycle"
+    },
+    {
+      "ms": "kapal terbang",
+      "baca": "kah-pahl tuhr-bahng",
+      "en": "plane"
+    },
+    {
+      "ms": "lapangan terbang",
+      "baca": "lah-pah-ngahn tuhr-bahng",
+      "en": "airport"
+    },
+    {
+      "ms": "perhentian bas",
+      "baca": "puhr-huhn-tee-ahn bahs",
+      "en": "bus stop"
+    },
+    {
+      "ms": "tambah nilai",
+      "baca": "tahm-bahh nee-lai",
+      "en": "top up"
+    },
+    {
+      "ms": "sesak / jem",
+      "baca": "suh-sahk · jehm",
+      "en": "jammed, crowded"
+    },
+    {
+      "ms": "sesat",
+      "baca": "suh-saht",
+      "en": "lost"
+    },
+    {
+      "ms": "melintas",
+      "baca": "muh-leen-tahs",
+      "en": "to cross (the road)"
+    },
+    {
+      "ms": "hujung",
+      "baca": "hoo-joong",
+      "en": "end"
+    },
+    {
+      "ms": "berhampiran",
+      "baca": "buhr-hahm-pee-rahn",
+      "en": "near"
+    },
+    {
+      "ms": "jadual",
+      "baca": "jah-doo-ahl",
+      "en": "timetable"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the Malay word.",
+      "items": [
+        "car",
+        "bicycle",
+        "truck",
+        "airport",
+        "bus stop",
+        "highway"
+      ]
+    },
+    {
+      "prompt": "Complete the directions.",
+      "items": [
+        "Jalan ____ sampai lampu isyarat. (straight on)",
+        "Lepas tu ____ kiri. (turn)",
+        "Stesen kat ____ kanan. (side)",
+        "Ikut jalan ni sampai ____. (end)",
+        "Kalau terlepas, ____ balik. (turn around)",
+        "Kedai tu ____ masjid. (near)"
+      ]
+    },
+    {
+      "prompt": "Translate into Malay.",
+      "items": [
+        "Excuse me, where is the LRT station?",
+        "Is it far on foot?",
+        "How much is the fare there?",
+        "Can you stop just up ahead?",
+        "I'm lost.",
+        "The roads are really jammed."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "kat / stesen / mana / tanya / tumpang / ?",
+        "kiri / tu / lepas / belok",
+        "je / dekat / minit / lima",
+        "sini / tak / dari / jauh / ?",
+        "kat / berhenti / boleh / depan / tu / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "kereta — basikal — lori — lapangan terbang — perhentian bas — lebuh raya",
+    "lurus / terus — belok — sebelah — hujung — pusing — berhampiran",
+    "Tumpang tanya, stesen LRT kat mana? — Jauh tak kalau jalan kaki? — Berapa tambang ke sana? — Boleh berhenti kat depan tu? — Saya sesat. — Jalan sesak sangat. / Jalan jem sangat.",
+    "Tumpang tanya, stesen kat mana? — Lepas tu belok kiri. — Lima minit je dekat. / Dekat, lima minit je. — Jauh tak dari sini? — Boleh berhenti kat depan tu?"
+  ]
+}

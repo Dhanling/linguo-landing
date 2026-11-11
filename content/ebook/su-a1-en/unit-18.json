@@ -1,0 +1,467 @@
+{
+  "title": "Messages, phone calls and invitations",
+  "title_target": "Pesen, nelepon, jeung ondangan",
+  "goal": "Write natural WhatsApp messages, make polite phone calls, and read a Sundanese invitation without getting lost.",
+  "bekal": [
+    "how to open and close a written message in Sundanese",
+    "abbreviations Sundanese speakers use on WhatsApp",
+    "reading a celebration invitation and its set phrases"
+  ],
+  "dialogs": [
+    {
+      "title": "Paguneman — Calling Kang Yayan",
+      "intro": "Rani needs to ask about a file she left at the office. She calls her colleague, and the whole rhythm of a Sundanese phone call plays out here.",
+      "lines": [
+        {
+          "speaker": "Kang Yayan:",
+          "text": "Halo, assalamualaikum.",
+          "id": "Hello, assalamualaikum.",
+          "literal": "hello, assalamualaikum."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Waalaikumsalam. Punten Kang, ieu Rani.",
+          "id": "Waalaikumsalam. Excuse me, Kang, it's Rani.",
+          "literal": "waalaikumsalam. excuse-me Kang, this Rani."
+        },
+        {
+          "speaker": "Kang Yayan:",
+          "text": "Oh Téh Rani. Kumaha, aya naon?",
+          "id": "Oh, Rani. Hi, what's up?",
+          "literal": "oh Téh Rani. how, there-is what?"
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Punten ngaganggu wengi-wengi. Nuju sibuk teu?",
+          "id": "Sorry to bother you so late. Are you busy?",
+          "literal": "excuse-me disturb night-night. [nuju] busy not?"
+        },
+        {
+          "speaker": "Kang Yayan:",
+          "text": "Henteu, mangga waé. Aya naon, Téh?",
+          "id": "No, go ahead. What is it?",
+          "literal": "no, please just. there-is what, Téh?"
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Berkas laporan téh kantun di méja abdi henteu?",
+          "id": "Did I leave that report file on my desk?",
+          "literal": "file report [téh] left-behind at desk my not?"
+        },
+        {
+          "speaker": "Kang Yayan:",
+          "text": "Sakedap, abdi tingali heula… Muhun, aya di dieu.",
+          "id": "Hang on, let me look… Yes, it's here.",
+          "literal": "moment, I look first… yes, there-is at here."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Alhamdulillah. Tiasa dipotokeun teu, Kang?",
+          "id": "Thank goodness. Could you take a photo of it, Kang?",
+          "literal": "alhamdulillah. can be-photographed not, Kang?"
+        },
+        {
+          "speaker": "Kang Yayan:",
+          "text": "Tangtos. Engké abdi kirimkeun ka WA.",
+          "id": "Sure. I'll send it to you on WhatsApp.",
+          "literal": "certainly. later I send to WA."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Hatur nuhun pisan, Kang. Punten ngarepotkeun.",
+          "id": "Thank you so much, Kang. Sorry for the trouble.",
+          "literal": "thank you very, Kang. excuse-me troubling."
+        },
+        {
+          "speaker": "Kang Yayan:",
+          "text": "Sami-sami. Wios waé, teu ngarepotkeun.",
+          "id": "You're welcome. It's fine, no trouble at all.",
+          "literal": "same-same. no what-what just, not troubling."
+        },
+        {
+          "speaker": "Rani:",
+          "text": "Nuhun deui, Kang. Assalamualaikum.",
+          "id": "Thanks again, Kang. Assalamualaikum.",
+          "literal": "thank you again, Kang. assalamualaikum."
+        }
+      ],
+      "notes": [
+        "**Kantun** has two common meanings: **left behind** (as here) and **left over, remaining** (*kantun dua* = only two left). The loma forms are **tinggaleun** and **kari**.",
+        "**Wios** = it's fine, no problem (lemes); loma: **teu nanaon**. It's very common in phone calls and texts, often written *wios waé* or just *wios*.",
+        "**Dipotokeun** comes from *poto* (photo) + *di-…-keun* = to have a photo taken of it. Notice how easily loanwords slot into Sundanese affixes: *di-WA-keun* (sent by WhatsApp), *dichat-keun*, *diprint-keun* are all normal office talk.",
+        "**Nuju sibuk teu?** (are you busy?) is an almost mandatory way to open a call. Calling and getting straight to the point without asking feels rushed.",
+        "**Punten ngaganggu wengi-wengi**: apologizing for the time of the call. Its morning partner is *punten ngaganggu énjing-énjing*. It's a formality that's always appreciated.",
+        "In West Java, phone calls almost always open and close with **assalamualaikum**, even for work. If the person you're talking to isn't Muslim, *wilujeng énjing/wengi* (good morning/evening) and *hatur nuhun* are enough."
+      ],
+      "grammars": [
+        {
+          "title": "Written Sundanese on screen",
+          "body": [
+            "WhatsApp messages in Sundanese have their own habits, and knowing them lets you read what comes in. What surprises newcomers most: the accent on *é* nearly always disappears, and lots of words get shortened."
+          ],
+          "table": {
+            "head": [
+              "Written",
+              "Full form",
+              "English"
+            ],
+            "rows": [
+              [
+                "*hatur nuhun* / *nuhun* / *hn*",
+                "hatur nuhun",
+                "thank you"
+              ],
+              [
+                "*punten* / *ptn*",
+                "punten",
+                "excuse me"
+              ],
+              [
+                "*mangga* / *mgga*",
+                "mangga",
+                "please, go ahead"
+              ],
+              [
+                "*tos*",
+                "parantos",
+                "already"
+              ],
+              [
+                "*teu acan* / *tacan*",
+                "teu acan",
+                "not yet"
+              ],
+              [
+                "*wios*",
+                "wios",
+                "it's fine"
+              ],
+              [
+                "*sae*",
+                "saé",
+                "good"
+              ],
+              [
+                "*kmh*",
+                "kumaha",
+                "how"
+              ],
+              [
+                "*insya Allah* / *IA*",
+                "insya Allah",
+                "God willing"
+              ],
+              [
+                "*mgkn*",
+                "meureun / mungkin",
+                "maybe"
+              ],
+              [
+                "*td*",
+                "tadi",
+                "earlier"
+              ],
+              [
+                "*bsk* / *enjing*",
+                "isukan / énjing",
+                "tomorrow"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Because the accent on *é* disappears, words like *sae*, *bade*, *tehna* have to be read from context. That's exactly the skill you practiced in Unit 2, and this is where it pays off.",
+            "A polite Sundanese message almost always opens with **punten** and closes with **hatur nuhun**. A message without them feels hurried, even if the content is fine.",
+            "For formal messages (to a boss, a teacher or an older person) the order is fixed: **greeting, punten, introduce yourself, your message, hatur nuhun, greeting**. Skipping the self-introduction is the most common newcomer mistake, since your number may not be saved in their phone."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Calling and texting",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "On the phone",
+          "items": [
+            "**Halo, assalamualaikum.** — Hello, assalamualaikum.",
+            "**Punten, ieu sareng saha?** — Excuse me, who am I speaking to?",
+            "**Ieu abdi, ____.** — It's me, ____.",
+            "**Nuju sibuk teu?** — Are you busy?",
+            "**Punten ngaganggu.** — Sorry to bother you.",
+            "**Sakedap nya, abdi tingali heula.** — Hang on, let me have a look.",
+            "**Sorana teu kadangu.** — I can't hear you.",
+            "**Tiasa diulang deui?** — Could you say that again?",
+            "**Engké abdi telepon deui.** — I'll call you back later.",
+            "**Hatur nuhun, assalamualaikum.** — Thank you, assalamualaikum."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "A polite written message to a boss, in full:"
+        },
+        {
+          "type": "kotak",
+          "title": "Sample message",
+          "items": [
+            "*Assalamualaikum, Pa Dadang.*",
+            "*Punten ngaganggu wengi-wengi.*",
+            "*Ieu abdi Rani ti bagian laporan.*",
+            "*Badé ngawartosan, laporan kanggo rapat énjing parantos rengse. Filena tos dikirim ka email Bapa.*",
+            "*Upami aya nu kedah dirévisi, mangga wartosan waé.*",
+            "*Hatur nuhun. Assalamualaikum.*"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Reading an invitation",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Celebration invitations in West Java are often written in high lemes Sundanese, with words that differ from everyday speech. These lines turn up almost every time:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Invitation line",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Sinareng asmana Alloh Nu Maha Welas*",
+              "In the name of God, the Most Merciful"
+            ],
+            [
+              "*Kalayan pangersa Gusti Nu Maha Suci*",
+              "By the grace of God, the Most Holy"
+            ],
+            [
+              "*Mugi kersa ngaluuhan*",
+              "We kindly request your presence"
+            ],
+            [
+              "*Dina raraga nikahkeun putra-putri simkuring*",
+              "On the occasion of the marriage of our son/daughter"
+            ],
+            [
+              "*Anu baris dilaksanakeun dina:*",
+              "To be held on:"
+            ],
+            [
+              "*Dinten / Ping / Wanci / Tempat*",
+              "Day / Date / Time / Place"
+            ],
+            [
+              "*Kasumpingan Bapa/Ibu mangrupi kabingahan kanggo simkuring*",
+              "Your presence would be a great joy to us"
+            ],
+            [
+              "*Hatur nuhun kana perhatosanana*",
+              "Thank you for your attention"
+            ],
+            [
+              "*Wassalamu'alaikum warahmatullahi wabarakatuh*",
+              "May peace be upon you…"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Simkuring** (or *sim kuring*) is the humblest form of \"I/we,\" used in formal writing and speeches. You don't need it in conversation, but you'll read it on every invitation."
+        },
+        {
+          "type": "kotak",
+          "title": "Replying to an invitation",
+          "items": [
+            "**Insya Allah abdi ngiring sumping.** — God willing, I'll be there.",
+            "**Ngiring bingah kana rencangna.** — I share in your joy.",
+            "**Hapunten abdi teu tiasa ngaluuhan.** — Sorry, I'm unable to attend.",
+            "**Mugia acarana lancar sareng barokah.** — May the event go smoothly and be blessed.",
+            "**Wilujeng, mugia janten kulawarga sakinah.** — Congratulations, may you have a happy, peaceful family.",
+            "**Titip amplop waé nya, punten teu tiasa sumping.** — I'll send an envelope, sorry I can't come."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "su": "nelepon",
+      "baca": "nuh-luh-POHN",
+      "en": "to phone"
+    },
+    {
+      "su": "pesen / talatah",
+      "baca": "puh-SUHN · tah-lah-TAHH",
+      "en": "message"
+    },
+    {
+      "su": "ngawartosan / ngabéjaan",
+      "baca": "ngah-wahr-toh-SAHN",
+      "en": "to let know, inform"
+    },
+    {
+      "su": "wartos / béja",
+      "baca": "wahr-TOHS · beh-JAH",
+      "en": "news"
+    },
+    {
+      "su": "wios",
+      "baca": "wee-OHS",
+      "en": "it's fine (lemes)"
+    },
+    {
+      "su": "kantun",
+      "baca": "kahn-TOON",
+      "en": "left behind; left over"
+    },
+    {
+      "su": "sibuk",
+      "baca": "see-BOOK",
+      "en": "busy"
+    },
+    {
+      "su": "sakedap",
+      "baca": "sah-kuh-DAHP",
+      "en": "a moment"
+    },
+    {
+      "su": "kadangu / kadéngé",
+      "baca": "kah-dah-NGOO",
+      "en": "to be heard"
+    },
+    {
+      "su": "diulang",
+      "baca": "dee-oo-LAHNG",
+      "en": "to be repeated"
+    },
+    {
+      "su": "dikirimkeun",
+      "baca": "dee-kee-reem-KEUN",
+      "en": "to be sent"
+    },
+    {
+      "su": "dipotokeun",
+      "baca": "dee-poh-toh-KEUN",
+      "en": "to be photographed"
+    },
+    {
+      "su": "dirévisi",
+      "baca": "dee-reh-VEE-see",
+      "en": "to be revised"
+    },
+    {
+      "su": "ondangan",
+      "baca": "ohn-dah-NGAHN",
+      "en": "invitation"
+    },
+    {
+      "su": "ngaluuhan",
+      "baca": "ngah-loo-oo-HAHN",
+      "en": "to attend (high lemes)"
+    },
+    {
+      "su": "sumping",
+      "baca": "soom-PEENG",
+      "en": "to come (lemes, for others)"
+    },
+    {
+      "su": "simkuring",
+      "baca": "seem-koo-REENG",
+      "en": "I/we (very humble)"
+    },
+    {
+      "su": "kabingahan",
+      "baca": "kah-bee-ngah-HAHN",
+      "en": "joy, happiness"
+    },
+    {
+      "su": "ngiring bingah",
+      "baca": "ngee-REENG bee-NGAHH",
+      "en": "to share in someone's joy"
+    },
+    {
+      "su": "raraga",
+      "baca": "rah-rah-GAH",
+      "en": "on the occasion of"
+    },
+    {
+      "su": "dilaksanakeun",
+      "baca": "dee-lahk-sah-nah-KEUN",
+      "en": "to be held"
+    },
+    {
+      "su": "perhatosan",
+      "baca": "puhr-hah-toh-SAHN",
+      "en": "attention"
+    },
+    {
+      "su": "barokah",
+      "baca": "bah-roh-KAHH",
+      "en": "blessed"
+    },
+    {
+      "su": "berkas",
+      "baca": "buhr-KAHS",
+      "en": "file, document"
+    },
+    {
+      "su": "méja",
+      "baca": "MEH-jah",
+      "en": "desk, table"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right phone phrase.",
+      "items": [
+        "Opening a call: ____",
+        "Asking who's calling: ____",
+        "Asking if the other person is busy: ____",
+        "Apologizing for bothering them: ____",
+        "Asking them to hold on: ____",
+        "Ending the call: ____"
+      ]
+    },
+    {
+      "prompt": "What's the full form or meaning of these message abbreviations?",
+      "items": [
+        "tos → ____",
+        "wios → ____",
+        "hn → ____",
+        "kmh → ____",
+        "sae → ____",
+        "tacan → ____"
+      ]
+    },
+    {
+      "prompt": "Translate these invitation lines into English.",
+      "items": [
+        "Mugi kersa ngaluuhan. → ____",
+        "Dina raraga nikahkeun putra simkuring. → ____",
+        "Kasumpingan Bapa/Ibu mangrupi kabingahan. → ____",
+        "Hatur nuhun kana perhatosanana. → ____",
+        "Insya Allah abdi ngiring sumping. → ____",
+        "Mugia acarana lancar sareng barokah. → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "teu / sibuk / nuju / ?",
+        "heula / abdi / sakedap / tingali / nya",
+        "WA / kirimkeun / abdi / ka / engké",
+        "ngarepotkeun / punten / nuhun / hatur",
+        "sumping / ngiring / Allah / abdi / insya"
+      ]
+    }
+  ],
+  "answers": [
+    "Halo, assalamualaikum. — Punten, ieu sareng saha? — Nuju sibuk teu? — Punten ngaganggu. — Sakedap nya, abdi tingali heula. — Hatur nuhun, assalamualaikum.",
+    "parantos (already) — it's fine — hatur nuhun (thank you) — kumaha (how) — saé (good) — teu acan (not yet)",
+    "We kindly request your presence. — On the occasion of our son's marriage. — Your presence would be a great joy. — Thank you for your attention. — God willing, I'll be there. — May the event go smoothly and be blessed.",
+    "Nuju sibuk teu? — Sakedap nya, abdi tingali heula. — Engké abdi kirimkeun ka WA. — Punten ngarepotkeun, hatur nuhun. — Insya Allah abdi ngiring sumping."
+  ]
+}

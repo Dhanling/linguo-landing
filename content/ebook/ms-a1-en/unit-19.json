@@ -1,0 +1,478 @@
+{
+  "title": "Jawi script",
+  "title_target": "Rumi dan Jawi — dua wajah satu bahasa",
+  "goal": "Read the Jawi on Malaysian signs, mosque names and banknotes — the Arabic script adapted for Malay, used for six hundred years before the Latin alphabet arrived.",
+  "bekal": [
+    "recognizing the six extra letters that make Jawi different from the Arabic alphabet",
+    "reading short Malay words written in Jawi",
+    "knowing where Jawi is still used today and why it matters"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Road signs in Kota Bharu",
+      "intro": "Sarah goes home with Aina to Kelantan. From the car window she sees road signs written in two lines — one in Latin letters, one in Arabic script.",
+      "lines": [
+        {
+          "speaker": "Sarah:",
+          "text": "Aina, kenapa papan tanda kat sini ada tulisan Arab?",
+          "id": "Aina, why do the signs here have Arabic writing?",
+          "literal": "Aina, why board sign at here have writing Arabic?"
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Tu bukan Arab. Tu Jawi — bahasa Melayu, tulisan Arab.",
+          "id": "That's not Arabic. That's Jawi — Malay language, Arabic script.",
+          "literal": "that not Arabic. that Jawi — language Malay, writing Arabic."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Maksudnya kalau saya baca, keluar perkataan Melayu?",
+          "id": "You mean if I read it, Malay words come out?",
+          "literal": "meaning if I read, come-out word Malay?"
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Betul. Cuba baca yang tu — bunyinya 'Kota Bharu'.",
+          "id": "Exactly. Try reading that one — it says 'Kota Bharu'.",
+          "literal": "right. try read the that — sound-it 'Kota Bharu'."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Saya boleh baca huruf Arab sikit sebab belajar mengaji. Tapi tak faham.",
+          "id": "I can read Arabic letters a little because I learned to read the Quran. But I don't understand it.",
+          "literal": "I can read letter Arabic little because learn Quran-reading. but not understand."
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Kalau macam tu awak dah separuh jalan. Bunyi sama, cuma bahasanya Melayu.",
+          "id": "Then you're already halfway there. The sounds are the same, only the language is Malay.",
+          "literal": "if like that you already half way. sound same, only language-the Malay."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Tapi ada huruf yang saya tak pernah nampak.",
+          "id": "But there are letters I've never seen.",
+          "literal": "but have letter that I not ever see."
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Ada enam huruf tambahan. Untuk bunyi yang tak ada dalam bahasa Arab — 'p', 'g', 'ng', 'ny', 'c', 'v'.",
+          "id": "There are six extra letters. For sounds that don't exist in Arabic — 'p', 'g', 'ng', 'ny', 'c', 'v'.",
+          "literal": "have six letter extra. for sound that not have in language Arabic — 'p', 'g', 'ng', 'ny', 'c', 'v'."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Orang sini masih guna Jawi tak? Atau papan tanda je?",
+          "id": "Do people here still use Jawi? Or just on signs?",
+          "literal": "people here still use Jawi not? or board sign just?"
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Kelantan dan Terengganu paling banyak. Papan tanda, akhbar, surat kerajaan negeri.",
+          "id": "Kelantan and Terengganu the most. Signs, newspapers, state government letters.",
+          "literal": "Kelantan and Terengganu most many. board sign, newspaper, letter government state."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Kat KL pun ada tak?",
+          "id": "Is there any in KL too?",
+          "literal": "at KL also have not?"
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Ada — kat masjid, kat wang kertas, kat nama jabatan kerajaan. Cuba tengok duit awak.",
+          "id": "Yes — on mosques, on banknotes, on government department names. Look at your money.",
+          "literal": "have — at mosque, at money paper, at name department government. try look money your."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Eh betul! 'Bank Negara Malaysia' ada tulisan Jawi bawah tu.",
+          "id": "Oh, you're right! 'Bank Negara Malaysia' has Jawi writing underneath.",
+          "literal": "eh right! 'Bank Negara Malaysia' have writing Jawi below that."
+        }
+      ],
+      "notes": [
+        "**Jawi** is the Arabic script adapted to write Malay. It has been used since around the 14th century, and for six hundred years **it was the only way Malay was written** — tales (*hikayat*), sultans' letters, religious books, laws and the first Malay newspapers were all in Jawi. The Latin alphabet (called **Rumi** in Malaysia) only replaced it in the 20th century under colonial rule.",
+        "**Rumi** is the Malaysian name for the Latin alphabet. *Tulisan Rumi* = Latin script. The word appears in all Malaysian language documents, including the name of the joint Indonesian–Malaysian spelling agreement (*Ejaan Rumi Bersama*).",
+        "**Mengaji** = to learn to read the Quran. Many Muslims learn this as children, so they **can already read the script** — what they haven't realized is that the same script can spell Malay words. A big head start that often goes unnoticed.",
+        "**Nampak** = to see, to be visible. *Tak pernah nampak* = have never seen. Very common in Malaysia, replacing *lihat* in many situations: *nampak tak?* = can you see it?",
+        "**Akhbar** = newspaper (from Arabic). *Akhbar harian* = daily newspaper."
+      ],
+      "grammars": [
+        {
+          "title": "The six letters that make Jawi not Arabic",
+          "body": [
+            "The Jawi alphabet uses all 28 Arabic letters and adds letters for Malay sounds that Arabic lacks. If you already read Arabic script, these are the only truly new ones."
+          ],
+          "table": {
+            "head": [
+              "Jawi letter",
+              "Sound",
+              "Formed from",
+              "Example word"
+            ],
+            "rows": [
+              [
+                "چ",
+                "c (= ch)",
+                "ج (jim) + three dots",
+                "cinta"
+              ],
+              [
+                "ڠ",
+                "ng (as in *sing*)",
+                "غ (ghain) + three dots",
+                "ngeri"
+              ],
+              [
+                "ڤ",
+                "p",
+                "ف (fa) + three dots",
+                "pagi"
+              ],
+              [
+                "ݢ",
+                "g",
+                "ک (kaf) + one dot",
+                "gula"
+              ],
+              [
+                "ڽ",
+                "ny (as in *canyon*)",
+                "ن (nun) + three dots",
+                "nyala"
+              ],
+              [
+                "ۏ",
+                "v",
+                "و (wau) + three dots",
+                "universiti"
+              ]
+            ]
+          },
+          "after": [
+            "Notice the pattern: **almost all of them add three dots** to the Arabic letter with the nearest sound. That's no accident — the designers picked the closest Arabic letter and marked it. Urdu, Persian and Ottoman Turkish scripts used the same trick for the same problem.",
+            "⚠️ The letter **ݢ** (ga) is the most distinctively Jawi — Persian and Urdu use a different shape for the same sound. If you see this letter, you're almost certainly looking at Malay, not Arabic, Persian or Urdu."
+          ]
+        },
+        {
+          "title": "How Jawi spells vowels",
+          "body": [
+            "This is the second big difference from Arabic, and it's exactly what makes Jawi **easier** to read than Arabic text without vowel marks."
+          ],
+          "table": {
+            "head": [
+              "Malay vowel",
+              "Written with",
+              "Rumi example",
+              "Jawi example"
+            ],
+            "rows": [
+              [
+                "a",
+                "ا (alif)",
+                "apa",
+                "اڤ"
+              ],
+              [
+                "i",
+                "ي (ya)",
+                "ini",
+                "اين"
+              ],
+              [
+                "u",
+                "و (wau)",
+                "buku",
+                "بوکو"
+              ],
+              [
+                "e (as in *bed*)",
+                "ي (ya)",
+                "meja",
+                "ميجا"
+              ],
+              [
+                "e (weak *uh*)",
+                "usually not written",
+                "beras",
+                "براس"
+              ],
+              [
+                "o",
+                "و (wau)",
+                "kota",
+                "کوتا"
+              ]
+            ]
+          },
+          "after": [
+            "Arabic writes short vowels with small marks (harakat) that are usually left out, so readers have to know the word already. **Jawi writes its vowels with full letters** — alif for *a*, ya for *i* and *e*, wau for *u* and *o*. So a Malay word in Jawi can be read even if you don't know it yet.",
+            "The only vowel usually **not** written is the weak **e** (ə, like the *a* in *about*) — that's why *beras* is written with just four letters (ب ر ا س becomes براس). It's also why beginners need to guess a little."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Words you'll see",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Malaysian signs use the same handful of words again and again. Learn their shapes — not spelling them out letter by letter, but recognizing the whole word, just as you recognize a familiar English word at a glance."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Rumi",
+            "Jawi",
+            "English"
+          ],
+          "rows": [
+            [
+              "Malaysia",
+              "مليسيا",
+              "Malaysia"
+            ],
+            [
+              "Melayu",
+              "ملايو",
+              "Malay"
+            ],
+            [
+              "bahasa",
+              "بهاس",
+              "language"
+            ],
+            [
+              "negeri",
+              "نݢري",
+              "state"
+            ],
+            [
+              "kerajaan",
+              "کراجأن",
+              "government"
+            ],
+            [
+              "jalan",
+              "جالن",
+              "road, street"
+            ],
+            [
+              "masjid",
+              "مسجد",
+              "mosque"
+            ],
+            [
+              "sekolah",
+              "سکوله",
+              "school"
+            ],
+            [
+              "pejabat",
+              "ڤجابت",
+              "office"
+            ],
+            [
+              "selamat datang",
+              "سلامت داتڠ",
+              "welcome"
+            ],
+            [
+              "bank",
+              "بڠک",
+              "bank"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at **ڤجابت** (pejabat) and **ڤوليس** (polis) — both start with the three-dotted ڤ, the typically Jawi *p*. Once your eyes get used to that shape, signs start to become readable."
+        },
+        {
+          "type": "sub",
+          "text": "Eye training: five real signs"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "What the sign says",
+            "Rumi",
+            "English"
+          ],
+          "rows": [
+            [
+              "دوان بهاس دان ڤوستاک",
+              "Dewan Bahasa dan Pustaka",
+              "Institute of Language and Literature"
+            ],
+            [
+              "کراجأن نݢري کلنتن",
+              "Kerajaan Negeri Kelantan",
+              "Kelantan State Government"
+            ],
+            [
+              "بڠک نݢارا مليسيا",
+              "Bank Negara Malaysia",
+              "Central Bank of Malaysia"
+            ],
+            [
+              "سلامت داتڠ ک ترڠݢانو",
+              "Selamat datang ke Terengganu",
+              "Welcome to Terengganu"
+            ],
+            [
+              "جابتن اݢام اسلام",
+              "Jabatan Agama Islam",
+              "Islamic Religious Department"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Where Jawi is still alive",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "**Kelantan and Terengganu** — two states that require business signs to show Jawi alongside Rumi. This is where Jawi is most visible in daily life.",
+            "**Brunei** — Jawi has a strong position; government signs, department names and official publications use it widely.",
+            "**Banknotes and coins** — every ringgit note carries Jawi.",
+            "**Mosques and religious schools** — names, signs and publications.",
+            "**The Utusan Melayu newspaper** — a Malay-language paper in Jawi with a long history.",
+            "**Government department names** — many official Malaysian logos include the body's name in Jawi.",
+            "**Schools** — Jawi is taught in Islamic Education classes in Malaysian national schools.",
+            "**Patani, southern Thailand** — the Malay community there uses Jawi to write Patani Malay."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "To be honest: Jawi's place is **a debated issue** in Malaysia. Some see it as Malay cultural heritage that should be revived; others, especially in non-Malay communities, question teaching it in schools. As a newcomer, the safest attitude is to appreciate it as historical heritage and stay out of the debate."
+        },
+        {
+          "type": "kotak",
+          "title": "Why this unit is in an A1 module",
+          "items": [
+            "**You may already know half of it.** If you've learned to read Arabic script (for example, for the Quran), you already know twenty-eight of the thirty-four letters.",
+            "**Signs are unavoidable.** If you go to Kelantan, Terengganu or Brunei, Jawi is on every street corner.",
+            "**It opens the door to history.** All classical Malay literature — *Hikayat Hang Tuah*, *Sejarah Melayu* (the Malay Annals), sultans' letters — is written in Jawi.",
+            "**It's not a requirement.** You can skip this unit entirely and still speak good Malay. It's a gift, not homework."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "If you want to go further, Dewan Bahasa dan Pustaka publishes a guide to standard Jawi spelling, and there are Jawi keyboards for phones and online Rumi–Jawi converters. Start by writing your own name — it's always the first word people learn, and always the one they remember best."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ms": "Jawi",
+      "baca": "jah-wee",
+      "en": "Arabic-based Malay script"
+    },
+    {
+      "ms": "Rumi",
+      "baca": "roo-mee",
+      "en": "Latin alphabet ⚠️"
+    },
+    {
+      "ms": "mengaji",
+      "baca": "muh-ngah-jee",
+      "en": "learn to read the Quran"
+    },
+    {
+      "ms": "nampak",
+      "baca": "nahm-pahk",
+      "en": "see, be visible"
+    },
+    {
+      "ms": "akhbar",
+      "baca": "ahkh-bah",
+      "en": "newspaper ⚠️"
+    },
+    {
+      "ms": "wang kertas",
+      "baca": "wahng kuhr-tahs",
+      "en": "banknote"
+    },
+    {
+      "ms": "syiling",
+      "baca": "shee-leeng",
+      "en": "coin"
+    },
+    {
+      "ms": "papan tanda",
+      "baca": "pah-pahn tahn-duh",
+      "en": "sign, signboard"
+    },
+    {
+      "ms": "kekunci / papan kekunci",
+      "baca": "kuh-koon-chee / pah-pahn kuh-koon-chee",
+      "en": "key / keyboard ⚠️"
+    },
+    {
+      "ms": "penukar",
+      "baca": "puh-noo-kah",
+      "en": "converter"
+    },
+    {
+      "ms": "sastera",
+      "baca": "sahs-tuh-ruh",
+      "en": "literature"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "What sound does this Jawi letter stand for?",
+      "items": [
+        "چ",
+        "ڠ",
+        "ڤ",
+        "ݢ",
+        "ڽ",
+        "ۏ"
+      ]
+    },
+    {
+      "prompt": "What does this Jawi sign mean?",
+      "items": [
+        "ملايو",
+        "جالن",
+        "مسجد",
+        "سکوله",
+        "دلارڠ"
+      ]
+    },
+    {
+      "prompt": "True or false?",
+      "items": [
+        "Jawi ialah bahasa Arab yang ditulis dengan huruf Melayu.",
+        "Jawi mempunyai enam huruf tambahan yang tiada dalam abjad Arab.",
+        "Jawi menulis vokal dengan huruf penuh, bukan harakat.",
+        "Huruf Latin dipanggil 'Rumi' di Malaysia.",
+        "Jawi sudah tidak dipakai di mana-mana pun hari ini."
+      ]
+    },
+    {
+      "prompt": "Translate into Malay.",
+      "items": [
+        "That's not Arabic, that's Jawi.",
+        "I can read Arabic letters a little.",
+        "There are six extra letters.",
+        "That newspaper is written in Jawi.",
+        "Look at your banknotes."
+      ]
+    }
+  ],
+  "answers": [
+    "c — ng — p — g — ny — v",
+    "Malay — road, street — mosque — school — forbidden",
+    "False (it's Malay written in Arabic script) — True — True — True — False (still used in Kelantan, Terengganu, Brunei, on banknotes and mosques)",
+    "Tu bukan Arab, tu Jawi. — Saya boleh baca huruf Arab sikit. — Ada enam huruf tambahan. — Akhbar tu bertulisan Jawi. — Cuba tengok wang kertas awak."
+  ]
+}

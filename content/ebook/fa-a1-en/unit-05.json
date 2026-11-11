@@ -1,0 +1,631 @@
+{
+  "title": "At home — there is, there isn't",
+  "title_target": "در خانه",
+  "goal": "Name rooms and furniture, say that something is or isn't somewhere, and make nouns plural.",
+  "bekal": [
+    "use هست and نیست to say that something exists",
+    "put things in their place with رویِ، زیرِ، تویِ، پشتِ، جلویِ، کنارِ",
+    "form plurals with ـها and know when you don't need one"
+  ],
+  "dialogs": [
+    {
+      "title": "گفتگو — بازدید از آپارتمان",
+      "intro": "Budi is looking for a place to live. A landlady, Mrs. Ahmadi, shows him a small apartment in north Tehran.",
+      "lines": [
+        {
+          "speaker": "خانمِ احمدی:",
+          "text": "بفرمایید تو. این آپارتمانِ ما است.",
+          "baca": "befarmâyid tu. in âpârtemân-e mâ ast.",
+          "id": "Please come in. This is our apartment.",
+          "literal": "please inside. this apartment-of we is."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "چه روشن است! چند اتاق دارد؟",
+          "baca": "che rowshan ast! chand otâgh dârad?",
+          "id": "It's so bright! How many rooms does it have?",
+          "literal": "what bright is! how-many room has-it?"
+        },
+        {
+          "speaker": "خانمِ احمدی:",
+          "text": "دو اتاقِ خواب، یک نشیمن، آشپزخانه و حمام.",
+          "baca": "do otâgh-e khâb, yek neshiman, âshpazkhâne va hammâm.",
+          "id": "Two bedrooms, a living room, a kitchen, and a bathroom.",
+          "literal": "two room-of sleep, one living-room, kitchen and bathroom."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "در آشپزخانه یخچال هست؟",
+          "baca": "dar âshpazkhâne yakhchâl hast?",
+          "id": "Is there a fridge in the kitchen?",
+          "literal": "in kitchen fridge there-is?"
+        },
+        {
+          "speaker": "خانمِ احمدی:",
+          "text": "بله، یخچال و اجاق هست. ولی ماشینِ لباسشویی نیست.",
+          "baca": "bale, yakhchâl va ojâgh hast. vali mâshin-e lebâsshuyi nist.",
+          "id": "Yes, there's a fridge and a stove. But there's no washing machine.",
+          "literal": "yes, fridge and stove there-is. but machine-of wash-clothes there-isn't."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "اشکالی ندارد. تختِ خواب چطور؟",
+          "baca": "eshkâli nadârad. takht-e khâb chetowr?",
+          "id": "No problem. What about beds?",
+          "literal": "problem-a not-has. bed-of sleep how?"
+        },
+        {
+          "speaker": "خانمِ احمدی:",
+          "text": "در اتاقِ اول یک تخت هست. کمد هم کنارِ پنجره است.",
+          "baca": "dar otâgh-e avval yek takht hast. komod ham kenâr-e panjere ast.",
+          "id": "There's a bed in the first room. And the wardrobe is next to the window.",
+          "literal": "in room-of first one bed there-is. wardrobe also side-of window is."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "زیرِ پنجره چیست؟",
+          "baca": "zir-e panjere chist?",
+          "id": "What's that under the window?",
+          "literal": "under-of window what-is?"
+        },
+        {
+          "speaker": "خانمِ احمدی:",
+          "text": "شوفاژ است. زمستان‌ها اینجا خیلی گرم می‌شود.",
+          "baca": "shufâzh ast. zemestânhâ injâ kheyli garm mishavad.",
+          "id": "That's the radiator. In winter it gets very warm here.",
+          "literal": "radiator is. winters here very warm becomes."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "همسایه‌ها چطورند؟",
+          "baca": "hamsâye-hâ chetowrand?",
+          "id": "What are the neighbors like?",
+          "literal": "neighbors how-they?"
+        },
+        {
+          "speaker": "خانمِ احمدی:",
+          "text": "خیلی خوب. طبقهٔ پایین یک خانوادهٔ کوچک است.",
+          "baca": "kheyli khub. tabaghe-ye pâyin yek khânevâde-ye kuchak ast.",
+          "id": "Very nice. There's a small family on the floor below.",
+          "literal": "very good. floor-of below one family-of small is."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "آسانسور هست؟",
+          "baca": "âsânsor hast?",
+          "id": "Is there an elevator?",
+          "literal": "elevator there-is?"
+        },
+        {
+          "speaker": "خانمِ احمدی:",
+          "text": "متأسفانه نیست. ولی فقط سه طبقه است.",
+          "baca": "mota'assefâne nist. vali faghat se tabaghe ast.",
+          "id": "Unfortunately not. But it's only three floors.",
+          "literal": "unfortunately there-isn't. but only three floor is."
+        },
+        {
+          "speaker": "بودی:",
+          "text": "خوب است. خیلی ممنون از وقتتان.",
+          "baca": "khub ast. kheyli mamnun az vaghtetân.",
+          "id": "Good. Thank you very much for your time.",
+          "literal": "good is. very grateful from time-your."
+        },
+        {
+          "speaker": "خانمِ احمدی:",
+          "text": "خواهش می‌کنم. خانهٔ خودتان است.",
+          "baca": "khâhesh mikonam. khâne-ye khodetân ast.",
+          "id": "You're welcome. Make yourself at home.",
+          "literal": "request do-I. house-of self-your is."
+        }
+      ],
+      "notes": [
+        "**Both have the same negative: نیست.** یخچال نیست can mean \"it isn't a fridge\" or \"there is no fridge\", and context decides. This is the only place where the two meanings overlap.",
+        "**\"No problem\" is اشکالی ندارد.** Learn it whole, along with its siblings عیبی ندارد (*eybi nadârad*) and مشکلی نیست (*moshkeli nist*). All three mean the same and are equally common. Notice that all three use the little ـی ending you learned in unit 3.",
+        "**Look at همسایه‌ها چطورند؟** and the ending ـند on چطور: even a question word takes the plural \"be\" ending, because the question is about several people. Persian is very tidy about this.",
+        "**Three French words, آسانسور، شوفاژ، کمد,** have settled into Persian (*ascenseur*, *chauffage*, *commode* — the last one is in English too). As mentioned in unit 2: if you don't know the name of a modern object, the French word is often a good guess.",
+        "**\"This is your own home\": خانهٔ خودتان است.** It isn't a real offer; it's تعارف, a courtesy phrase hosts say to guests. Don't respond by moving your suitcases in. Just answer ممنون or لطف دارید. The details come in unit 15.",
+        "**Spoken forms in this dialogue:** بفرمایید تو (*befarmâyin tu*), یخچال هست؟ (*yakhchâl hast?* — unchanged), نیست (*nist* — unchanged), همسایه‌ها چطورن؟ (*hamsâyehâ chetowran?*). Notice that هست and نیست are among the words that **don't change** between written and spoken Persian — a small gift."
+      ],
+      "grammars": [
+        {
+          "title": "هست / نیست — there is, there isn't",
+          "body": [
+            "To say that something exists or is available somewhere, Persian uses هست, and for the opposite نیست. The sentence puts **the place first**, the thing in the middle, and هست at the end."
+          ],
+          "table": {
+            "head": [
+              "Persian",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "در اتاق یک میز هست.",
+                "dar otâgh yek miz hast.",
+                "There is a table in the room."
+              ],
+              [
+                "رویِ میز کتاب هست.",
+                "ru-ye miz ketâb hast.",
+                "There is a book on the table."
+              ],
+              [
+                "اینجا آسانسور نیست.",
+                "injâ âsânsor nist.",
+                "There is no elevator here."
+              ],
+              [
+                "در خانه کسی نیست.",
+                "dar khâne kasi nist.",
+                "There is nobody at home."
+              ],
+              [
+                "مشکلی نیست.",
+                "moshkeli nist.",
+                "There is no problem."
+              ],
+              [
+                "وقت نداریم.",
+                "vaght nadârim.",
+                "We don't have time."
+              ]
+            ]
+          },
+          "after": [
+            "To ask a question, nothing changes but your tone of voice: آسانسور هست؟ (\"is there an elevator?\").",
+            "**The word هست can also be an emphatic \"is\".** او اینجا هست (\"he really is here\") sounds firmer than او اینجا است. The difference is subtle and won't trip you up at A1.",
+            "⚠️ Don't confuse نیست (\"there isn't / is not\") with ندارد (\"he/she doesn't have\"). یخچال نیست = \"there is no fridge\" (in that place). یخچال ندارم = \"I don't have a fridge\"."
+          ]
+        },
+        {
+          "title": "Prepositions of place — they all use ezafe",
+          "body": [
+            "Almost all Persian prepositions of place are really **nouns** (\"top\", \"bottom\", \"inside\") linked to the next word with ezafe. That's why they all end in -e."
+          ],
+          "table": {
+            "head": [
+              "Persian",
+              "Say it",
+              "Meaning",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "رویِ",
+                "ru-ye",
+                "on",
+                "رویِ میز",
+                "on the table"
+              ],
+              [
+                "زیرِ",
+                "zir-e",
+                "under",
+                "زیرِ صندلی",
+                "under the chair"
+              ],
+              [
+                "تویِ",
+                "tu-ye",
+                "in, inside",
+                "تویِ کیف",
+                "in the bag"
+              ],
+              [
+                "پشتِ",
+                "posht-e",
+                "behind",
+                "پشتِ در",
+                "behind the door"
+              ],
+              [
+                "جلویِ",
+                "jelo-ye",
+                "in front of",
+                "جلویِ خانه",
+                "in front of the house"
+              ],
+              [
+                "کنارِ",
+                "kenâr-e",
+                "next to",
+                "کنارِ پنجره",
+                "next to the window"
+              ],
+              [
+                "بینِ",
+                "beyn-e",
+                "between",
+                "بینِ دو میز",
+                "between two tables"
+              ],
+              [
+                "وسطِ",
+                "vasat-e",
+                "in the middle of",
+                "وسطِ اتاق",
+                "in the middle of the room"
+              ],
+              [
+                "بالایِ",
+                "bâlâ-ye",
+                "above (high up)",
+                "بالایِ کوه",
+                "at the top of the mountain"
+              ],
+              [
+                "نزدیکِ",
+                "nazdik-e",
+                "near",
+                "نزدیکِ بازار",
+                "near the market"
+              ]
+            ]
+          },
+          "after": [
+            "**The exception is در** (\"in\"): it is a true preposition and takes **no** ezafe — در خانه (\"at home\"), در تهران (\"in Tehran\"). In conversation it is almost always replaced by **تو**: تویِ خانه (*tu-ye khune*).",
+            "When the preposition stands alone with no noun after it, the ezafe disappears: کتاب رویِ میز است (\"the book is on the table\") but کتاب بالا است (\"the book is up there\")."
+          ]
+        },
+        {
+          "title": "Plurals — and when you don't need one",
+          "table": {
+            "head": [
+              "Singular",
+              "Plural",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "کتاب",
+                "کتاب‌ها",
+                "ketâb-hâ",
+                "books"
+              ],
+              [
+                "خانه",
+                "خانه‌ها",
+                "khâne-hâ",
+                "houses"
+              ],
+              [
+                "همسایه",
+                "همسایه‌ها",
+                "hamsâye-hâ",
+                "neighbors"
+              ],
+              [
+                "دانشجو",
+                "دانشجوها",
+                "dâneshju-hâ",
+                "students"
+              ],
+              [
+                "دوست",
+                "دوستان",
+                "dust-ân",
+                "friends (formal)"
+              ],
+              [
+                "مرد",
+                "مردان",
+                "mard-ân",
+                "men (formal)"
+              ]
+            ]
+          },
+          "after": [
+            "**The ending ـها is always safe**, for things and people alike, in every situation. **ـان** is only for living beings and sounds more formal or literary. When in doubt, use ـها.",
+            "⚠️ **After a number, the noun stays singular**: سه کتاب (\"three books\", literally \"three book\"), not سه کتاب‌ها. This is exactly where English speakers trip — resist the urge to add a plural.",
+            "Persian also often **uses no plural at all** when the number doesn't matter: کتاب می‌خرم can mean \"I'm buying books\" — one or many, it doesn't matter, much like English \"I'm buying bread\".",
+            "Tehran speech shortens ـها to **ـا**: کتابا (*ketâbâ*), خونه‌ها (*khunehâ*), بچه‌ها (*bachehâ*)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Rooms and furniture",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Persian",
+            "Say it",
+            "Meaning",
+            "Persian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "خانه",
+              "khâne",
+              "house, home",
+              "آپارتمان",
+              "âpârtemân",
+              "apartment"
+            ],
+            [
+              "اتاقِ خواب",
+              "otâgh-e khâb",
+              "bedroom",
+              "نشیمن",
+              "neshiman",
+              "living room"
+            ],
+            [
+              "آشپزخانه",
+              "âshpazkhâne",
+              "kitchen",
+              "حمام",
+              "hammâm",
+              "bathroom"
+            ],
+            [
+              "دستشویی",
+              "dastshuyi",
+              "toilet",
+              "بالکن",
+              "bâlkon",
+              "balcony"
+            ],
+            [
+              "حیاط",
+              "hayât",
+              "yard, courtyard",
+              "راهرو",
+              "râhrow",
+              "hallway"
+            ],
+            [
+              "طبقه",
+              "tabaghe",
+              "floor (story)",
+              "پله",
+              "pelle",
+              "stairs"
+            ],
+            [
+              "تختِ خواب",
+              "takht-e khâb",
+              "bed",
+              "کمد",
+              "komod",
+              "wardrobe"
+            ],
+            [
+              "یخچال",
+              "yakhchâl",
+              "fridge",
+              "اجاق",
+              "ojâgh",
+              "stove"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the pattern **ـخانه** (\"house, place\"), which builds the names of rooms and public places: آشپزخانه (\"cook-house\" = kitchen), کتابخانه (\"book-house\" = library), داروخانه (\"medicine-house\" = pharmacy), قهوه‌خانه (\"coffee-house\" = teahouse), چاپخانه (\"print-house\"). Like English *-house* in *greenhouse* or *lighthouse*: once you see خانه at the end of a word, you can almost always guess the meaning."
+        },
+        {
+          "type": "sub",
+          "text": "Choosing between تو and شما"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Talking to",
+            "Use",
+            "Why"
+          ],
+          "rows": [
+            [
+              "Parents, siblings, children",
+              "تو",
+              "Family always uses تو"
+            ],
+            [
+              "Close friends, people your age",
+              "تو",
+              "After meeting a few times"
+            ],
+            [
+              "Young children",
+              "تو",
+              "Always"
+            ],
+            [
+              "People you've just met",
+              "شما",
+              "No exceptions"
+            ],
+            [
+              "Shopkeepers, drivers, waiters",
+              "شما",
+              "No exceptions"
+            ],
+            [
+              "Older people",
+              "شما",
+              "Until they offer تو themselves"
+            ],
+            [
+              "Bosses, teachers, doctors",
+              "شما",
+              "Even after knowing them a long time"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The practical rule is simple: **when in doubt, use شما.** Using شما with a close friend only makes you sound stiff and polite; using تو with someone you don't know well sounds condescending. The second mistake costs far more than the first."
+        },
+        {
+          "type": "p",
+          "text": "Persian also has a third, even more respectful level, used for elders and respected figures: **ایشان** (*ishân*) replaces او, and the verb goes into the plural. You don't need to use it yet, but you will hear it — and now you know it doesn't mean \"they\"."
+        },
+        {
+          "type": "kotak",
+          "title": "یخچال — a fridge older than electricity",
+          "items": [
+            "The word یخچال is literally \"ice pit\" (یخ \"ice\" + چال \"pit\"). Before electricity, Iranians built huge mud-brick domes in the desert to store ice through the summer — some still stand in Yazd and Kerman today. When electric fridges arrived, they simply took the name.",
+            "Persian words are often built from honest, literal compounds like this: هواپیما (\"air-measurer\" = airplane), دستشویی (\"hand-washing\" = toilet), چشم‌پزشک (\"eye doctor\"). When you meet a long, unfamiliar word, try breaking it up first — the meaning often pops right out."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "آقا and خانم — two words that are always safe",
+          "items": [
+            "The words **آقا** (*âghâ*, \"sir, Mr.\") and **خانم** (*khânom*, \"madam, Mrs./Ms.\") are used far more often than \"sir\" and \"madam\" in English. They can stand alone to address a stranger (ببخشید آقا، ...) or go with a name: آقای احمدی، خانمِ رضایی.",
+            "⚠️ Notice that آقا becomes **آقای** (*âghâ-ye*) before a name, because of ezafe — while خانم becomes خانمِ. Both go **before** the family name, as in English."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fa": "هست",
+      "baca": "hast",
+      "en": "there is; available"
+    },
+    {
+      "fa": "نیست",
+      "baca": "nist",
+      "en": "there isn't; is not"
+    },
+    {
+      "fa": "بفرمایید",
+      "baca": "befarmâyid",
+      "en": "please (go ahead)"
+    },
+    {
+      "fa": "آپارتمان",
+      "baca": "âpârtemân",
+      "en": "apartment"
+    },
+    {
+      "fa": "روشن",
+      "baca": "rowshan",
+      "en": "bright; switched on"
+    },
+    {
+      "fa": "اتاقِ خواب",
+      "baca": "otâgh-e khâb",
+      "en": "bedroom"
+    },
+    {
+      "fa": "آشپزخانه",
+      "baca": "âshpazkhâne",
+      "en": "kitchen"
+    },
+    {
+      "fa": "حمام",
+      "baca": "hammâm",
+      "en": "bathroom"
+    },
+    {
+      "fa": "دستشویی",
+      "baca": "dastshuyi",
+      "en": "toilet"
+    },
+    {
+      "fa": "یخچال",
+      "baca": "yakhchâl",
+      "en": "fridge"
+    },
+    {
+      "fa": "اجاق",
+      "baca": "ojâgh",
+      "en": "stove"
+    },
+    {
+      "fa": "تخت",
+      "baca": "takht",
+      "en": "bed"
+    },
+    {
+      "fa": "کمد",
+      "baca": "komod",
+      "en": "wardrobe"
+    },
+    {
+      "fa": "آسانسور",
+      "baca": "âsânsor",
+      "en": "elevator"
+    },
+    {
+      "fa": "طبقه",
+      "baca": "tabaghe",
+      "en": "floor, story"
+    },
+    {
+      "fa": "همسایه",
+      "baca": "hamsâye",
+      "en": "neighbor"
+    },
+    {
+      "fa": "روی",
+      "baca": "ru-ye",
+      "en": "on, on top of"
+    },
+    {
+      "fa": "زیر",
+      "baca": "zir-e",
+      "en": "under"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Persian.",
+      "items": [
+        "There is a fridge in the kitchen.",
+        "There is no elevator here.",
+        "The book is on the table.",
+        "The wardrobe is next to the window.",
+        "There is nobody at home."
+      ]
+    },
+    {
+      "prompt": "Fill in with هست، نیست، است, or ندارد.",
+      "items": [
+        "در آشپزخانه یخچال ____.",
+        "این یخچال ____ (is not).",
+        "اینجا آسانسور ____ (there isn't).",
+        "کتاب رویِ میز ____.",
+        "او خانه ____ (doesn't have)."
+      ]
+    },
+    {
+      "prompt": "Fill in the right preposition of place.",
+      "items": [
+        "The book is on the table: کتاب ____ میز است.",
+        "The bag is under the chair: کیف ____ صندلی است.",
+        "The wardrobe is next to the window: کمد ____ پنجره است.",
+        "The yard is behind the house: حیاط ____ خانه است.",
+        "The market is near the school: بازار ____ مدرسه است."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "هست / یخچال / آشپزخانه / در",
+        "نیست / اینجا / آسانسور",
+        "است / میز / کتاب / رویِ",
+        "دارد / اتاق / این / دو / آپارتمان",
+        "چطورند / همسایه‌ها / ؟"
+      ]
+    }
+  ],
+  "answers": [
+    "در آشپزخانه یخچال هست. — اینجا آسانسور نیست. — کتاب رویِ میز است. — کمد کنارِ پنجره است. — در خانه کسی نیست.",
+    "هست — نیست — نیست — است — ندارد",
+    "رویِ — زیرِ — کنارِ — پشتِ — نزدیکِ",
+    "در آشپزخانه یخچال هست. — اینجا آسانسور نیست. — کتاب رویِ میز است. — این آپارتمان دو اتاق دارد. — همسایه‌ها چطورند؟"
+  ],
+  "wave": "Walk around your own home and name five things and where they are: کتاب رویِ میز است، کیف زیرِ صندلی است."
+}
