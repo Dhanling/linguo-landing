@@ -45,7 +45,7 @@ import { promoAmountFor } from "@/lib/promoMerdeka";
 import { KODE_WA_WAJIB, PESAN_WA_WAJIB, pastikanWaPembeli } from "@/lib/waPembeli";
 import { hitungPaketLengkap, type ModulDimiliki } from "@/lib/bundelEbook";
 import { amanIlike } from "@/lib/amanIlike"; // [audit9-ilike-escape-v1]
-import { hargaPromoAfiliator, kodeAfiliatorSah, rapikanKode } from "@/lib/elearningPromoAfiliator";
+import { hargaPromoAfiliator, idAfiliatorDariKode, rapikanKode } from "@/lib/elearningPromoAfiliator";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -318,7 +318,10 @@ async function buatInvoice(req: NextRequest): Promise<NextResponse> {
     modulDimiliki,
   );
   // [elearning-promo-afiliator-v1] E-Learning 6 bulan + kode afiliator aktif → Rp29.000.
-  const kodeSah = sah.some((x) => x.prod.type === "elearning") ? await kodeAfiliatorSah(admin, referralCode) : false;
+  // affiliate_id ikut diisi: mesin komisi di xendit-webhook (processAffiliateCommission)
+  // melewati baris tanpa affiliate_id — dulu komisi keranjang tak pernah tercatat.
+  const affiliateId = referralCode ? await idAfiliatorDariKode(admin, referralCode) : null;
+  const kodeSah = affiliateId !== null;
   if (kodeSah) referralCode = rapikanKode(referralCode);
   const hargaBaris = (x: { prod: Prod; tier: Tier }) =>
     paket.harga.get(x.prod.id) ??
@@ -355,6 +358,7 @@ async function buatInvoice(req: NextRequest): Promise<NextResponse> {
     source: "xendit",
     ...(authUserId ? { auth_user_id: authUserId } : {}),
     ...(referralCode ? { affiliate_ref_code: referralCode } : {}),
+    ...(affiliateId ? { affiliate_id: affiliateId } : {}),
   }));
 
   let barisIds: string[] = [];

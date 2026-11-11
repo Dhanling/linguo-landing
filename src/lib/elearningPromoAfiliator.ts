@@ -36,13 +36,20 @@ export function hargaPromoAfiliator(
 }
 
 export function rapikanKode(kode: string | null | undefined): string {
-  return decodeURIComponent(String(kode ?? "")).trim().toUpperCase().replace(/[^A-Z0-9_-]/g, "");
+  let k = String(kode ?? "");
+  try { k = decodeURIComponent(k); } catch { /* % rusak — pakai apa adanya */ }
+  return k.trim().toUpperCase().replace(/[^A-Z0-9_-]/g, "");
 }
 
 /** Kode afiliator aktif? (dipakai server dengan service role). */
 export async function kodeAfiliatorSah(admin: SupabaseClient, kode: string | null | undefined): Promise<boolean> {
+  return (await idAfiliatorDariKode(admin, kode)) !== null;
+}
+
+/** id afiliator aktif untuk kode ini, atau null. */
+export async function idAfiliatorDariKode(admin: SupabaseClient, kode: string | null | undefined): Promise<string | null> {
   const k = rapikanKode(kode);
-  if (k.length < 3 || k.length > 40) return false;
+  if (k.length < 3 || k.length > 40) return null;
   const { data } = await admin
     .from("affiliates")
     .select("id")
@@ -50,5 +57,5 @@ export async function kodeAfiliatorSah(admin: SupabaseClient, kode: string | nul
     .eq("status", "active")
     .is("archived_at", null)
     .limit(1);
-  return (data ?? []).length > 0;
+  return (data?.[0] as { id: string } | undefined)?.id ?? null;
 }
