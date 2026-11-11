@@ -1,0 +1,524 @@
+{
+  "title": "Hello, my name is Ani",
+  "title_target": "Здравейте — Zdraveyte",
+  "goal": "Greet anyone safely, say your name, ask other people's names, and say your first correct Bulgarian sentence — one that uses the word \"is\" but never puts it first.",
+  "bekal": [
+    "greet formally and informally, and know the difference",
+    "say your name in two ways",
+    "ask other people's names and jobs",
+    "use the six forms of the verb **съм** in the right position",
+    "say thank you, excuse me, and you're welcome"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — First day of the course",
+      "intro": "Ani, a student from Indonesia, walks into a Bulgarian class in Sofia and sits next to someone she doesn't know. Watch where the little words **съм** and **е** go — neither of them ever stands at the start of a sentence.",
+      "lines": [
+        {
+          "speaker": "Ани:",
+          "text": "[Здравейте|Zdra-VEY-teh]!",
+          "id": "Hello!",
+          "literal": "be-healthy-(formal)!"
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Здравейте|Zdra-VEY-teh]! [Аз|Az] [съм|săm] [Иван|ee-VAN]. [А|A] [вие|VEE-eh]?",
+          "id": "Hello! I'm Ivan. And you?",
+          "literal": "be-healthy-(formal)! I — am — Ivan. and — you?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Казвам|KAZ-vam] [се|seh] [Ани|A-nee]. [Приятно|Pree-YAT-no] [ми|mee] [е|eh].",
+          "id": "My name is Ani. Nice to meet you.",
+          "literal": "call — myself — Ani. pleasant — to-me — is."
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[И|Ee] [на|na] [мен|men] [ми|mee] [е|eh] [приятно|pree-YAT-no]. [Вие|Vee-eh] [студентка|stoo-DENT-ka] [ли|lee] [сте|steh]?",
+          "id": "Nice to meet you too. Are you a student?",
+          "literal": "also — to — me — to-me — is — pleasant. you — student-(f) — (question) — are?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Да|Da], [студентка|stoo-DENT-ka] [съм|săm]. [А|A] [вие|VEE-eh]?",
+          "id": "Yes, I'm a student. What about you?",
+          "literal": "yes, student-(f) — am. and — you?"
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Аз|Az] [не|neh] [съм|săm] [студент|stoo-DENT]. [Учител|OO-chee-tel] [съм|săm].",
+          "id": "I'm not a student. I'm a teacher.",
+          "literal": "I — not — am — student. teacher — am."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[О|O], [извинете|eez-vee-NEH-teh]!",
+          "id": "Oh, sorry!",
+          "literal": "oh, excuse-(formal)!"
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Няма|NYA-ma] [нищо|NEESH-to]. [Всичко|FSEECH-ko] [е|eh] [наред|na-RED].",
+          "id": "No problem. Everything's fine.",
+          "literal": "there-isn't — nothing. everything — is — in-order."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Благодаря|Bla-go-da-RYA].",
+          "id": "Thank you.",
+          "literal": "thank-you."
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Моля|MO-lya]. [Приятен|Pree-YA-ten] [ден|den], [Ани|A-nee]!",
+          "id": "You're welcome. Have a nice day, Ani!",
+          "literal": "please. pleasant — day, Ani!"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Довиждане|Do-VEEZH-da-neh]!",
+          "id": "Goodbye!",
+          "literal": "until — seeing!"
+        }
+      ],
+      "notes": [
+        "**Bulgarian has a word for \"is\", and you must use it.** Just like English — and unlike Russian. *Аз съм студент* — \"I am a student\". Leaving out *съм* isn't just casual; the sentence is incomplete. ⚠️ If you've learned some Russian, your instinct may be to write *Аз студент* — and that's wrong.",
+        "**But съм can never stand at the start of a sentence.** *Съм студент* is wrong, even though the meaning is clear. It belongs to a group of little words that always lean on something before them — Bulgarian grammar calls them *клитики* (clitics). If you want to drop *аз*, another word has to move to the front: **Студентка съм.** Both are correct and mean the same; *Аз съм студентка* just puts a bit more weight on \"I\".",
+        "**Здравейте is formal; Здравей and Здрасти are casual.** Use Здравейте with strangers, older people, teachers, officials — anyone you call *вие*. Здравей (*zdra-VEY*) is for one friend, and Здрасти (*ZDRAS-tee*) is even more relaxed. ⚠️ Saying Здрасти to a passport officer sounds like a child patting an adult on the shoulder.",
+        "**Казвам се literally means \"I call myself\".** Not \"my name is\". The *се* means \"oneself\", and you'll see it stuck to verbs all the time. To ask back, just say **А вие?** — no need to repeat the whole sentence.",
+        "**Ли is a question mark in the form of a word.** Bulgarian doesn't flip the word order to ask a question the way English does (\"you are\" → \"are you\"). Instead it puts *ли* right after **the word being asked about**. *Вие студентка ли сте?* asks whether she is a student; *Вие ли сте студентка?* asks whether **she** is the student. Moving it moves the target of the question.",
+        "**Извинете and Съжалявам both mean \"sorry\", but they're not equally heavy.** Извинете (*eez-vee-NEH-teh*) is for small things: interrupting, squeezing past, guessing wrong. Съжалявам (*să-zha-LYA-vam*) literally means \"I regret\" and is for real mistakes or for offering condolences.",
+        "**Моля: one word, three jobs.** It means \"please\", \"here you are\", and \"you're welcome\" all at once. Said on its own with a rising tone — *Моля?* — it means \"Sorry? Could you repeat that?\" You'll use it dozens of times a day.",
+        "**Няма нищо literally means \"there isn't nothing\" — a double negative.** Bulgarian stacks negatives, and that's the correct form; Unit 13 covers it in full. For now, learn it as one fixed chunk."
+      ],
+      "grammars": [
+        {
+          "title": "Съм — the verb \"to be\"",
+          "body": [
+            "This is the most important verb in Bulgarian and it's irregular, so learn it right now. Its forms look nothing like each other — just like *am / is / are* in English."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Bulgarian",
+              "Say it",
+              "Example sentence"
+            ],
+            "rows": [
+              [
+                "аз (I)",
+                "съм",
+                "săm",
+                "Аз съм Ани."
+              ],
+              [
+                "ти (you, informal)",
+                "си",
+                "see",
+                "Ти си студент."
+              ],
+              [
+                "той / тя / то (he / she / it)",
+                "е",
+                "eh",
+                "Той е учител."
+              ],
+              [
+                "ние (we)",
+                "сме",
+                "smeh",
+                "Ние сме от Индонезия."
+              ],
+              [
+                "вие (you, plural / formal)",
+                "сте",
+                "steh",
+                "Вие сте учител."
+              ],
+              [
+                "те (they)",
+                "са",
+                "sa",
+                "Те са студенти."
+              ]
+            ]
+          },
+          "after": [
+            "To make it negative, just put **не** right in front: *не съм, не си, не е, не сме, не сте, не са*. And unlike the positive form, **не съм can** start a sentence, because now *не* is the first word: *Не съм студент.*"
+          ]
+        },
+        {
+          "title": "The word-order rule that decides everything",
+          "body": [
+            "Bulgarian has a set of small unstressed words — *съм, се, ми, те, го, ли* and friends. They all obey one single rule: **they can never be the first word in a sentence.** Everything else you can arrange fairly freely."
+          ],
+          "table": {
+            "head": [
+              "Wrong",
+              "Right",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*Съм студент.*",
+                "**Аз съм студент.** / **Студент съм.**",
+                "I'm a student."
+              ],
+              [
+                "*Ми е приятно.*",
+                "**Приятно ми е.**",
+                "Nice to meet you."
+              ],
+              [
+                "*Се казвам Ани.*",
+                "**Казвам се Ани.**",
+                "My name is Ani."
+              ],
+              [
+                "*Ли сте студент?*",
+                "**Студент ли сте?**",
+                "Are you a student?"
+              ]
+            ]
+          },
+          "after": [
+            "The easiest way to remember it: **a Bulgarian sentence never opens with an unstressed word.** If one of the little words is about to end up in front, push any stressed word ahead of it as a buffer."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Must-have phrases for day one",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These ten phrases cover almost all the small talk of your first day. Learn them as whole chunks; the grammar will untangle itself in the coming units."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Български",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Добро утро",
+              "dob-RO OO-tro",
+              "Good morning (until about 10:00)"
+            ],
+            [
+              "Добър ден",
+              "DO-băr den",
+              "Good day (general greeting, all day)"
+            ],
+            [
+              "Добър вечер",
+              "DO-băr VEH-cher",
+              "Good evening"
+            ],
+            [
+              "Лека нощ",
+              "LEH-ka nosht",
+              "Good night"
+            ],
+            [
+              "Как сте?",
+              "kak steh",
+              "How are you? (formal)"
+            ],
+            [
+              "Как си?",
+              "kak see",
+              "How are you? (informal)"
+            ],
+            [
+              "Добре съм, благодаря",
+              "dob-REH săm, bla-go-da-RYA",
+              "Fine, thank you"
+            ],
+            [
+              "Не разбирам",
+              "neh raz-BEE-ram",
+              "I don't understand"
+            ],
+            [
+              "Говорите ли английски?",
+              "go-VO-ree-teh lee ang-LEEY-skee",
+              "Do you speak English?"
+            ],
+            [
+              "Как се казва това?",
+              "kak seh KAZ-va to-VA",
+              "What is this called?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Note **Добър ден**: it isn't limited to a narrow \"afternoon\" slot. From morning to early evening, whenever you're unsure which greeting to use, say *Добър ден* and you'll never be wrong."
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Shaking your head means YES",
+          "items": [
+            "This isn't a joke or a tourist legend. In Bulgaria **the head movement for \"yes\" is a side-to-side shake**, and \"no\" is a single upward nod, often with a little *ts* sound. The exact opposite of what you're used to.",
+            "On day one the effect is very real: you ask \"Is there a room free?\", the clerk shakes his head, you turn to leave — when he's just said yes. While you're new, **always rely on the words *да* and *не*, not the head**, and give your own answers in words, not gestures.",
+            "Bulgarians who deal with foreigners a lot sometimes flip their gestures on purpose to help you — which only makes things more confusing. When in doubt, just ask: *Да или не?* (da EE-lee neh) — \"Yes or no?\""
+          ]
+        }
+      ]
+    },
+    {
+      "title": "You can already read more than you think",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Before moving on, test yourself on the ten words below. They're all borrowed from European languages and you already know them in English — the only obstacle is the alphabet. Cover the right-hand column."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Cyrillic",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "такси",
+              "tak-SEE",
+              "taxi"
+            ],
+            [
+              "хотел",
+              "ho-TEL",
+              "hotel"
+            ],
+            [
+              "ресторант",
+              "res-to-RANT",
+              "restaurant"
+            ],
+            [
+              "паспорт",
+              "pas-PORT",
+              "passport"
+            ],
+            [
+              "банка",
+              "BAN-ka",
+              "bank"
+            ],
+            [
+              "апартамент",
+              "a-par-ta-MENT",
+              "apartment"
+            ],
+            [
+              "телефон",
+              "teh-leh-FON",
+              "telephone"
+            ],
+            [
+              "интернет",
+              "een-ter-NET",
+              "internet"
+            ],
+            [
+              "полиция",
+              "po-LEE-tsee-ya",
+              "police"
+            ],
+            [
+              "билет",
+              "bee-LET",
+              "ticket"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Ten words in two minutes, without memorizing anything. That's how Cyrillic works: once the letters stick, hundreds of words open up at once."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bg": "здравейте",
+      "baca": "zdra-VEY-teh",
+      "en": "hello (formal, to anyone)"
+    },
+    {
+      "bg": "здравей",
+      "baca": "zdra-VEY",
+      "en": "hi (casual, to one friend)"
+    },
+    {
+      "bg": "довиждане",
+      "baca": "do-VEEZH-da-neh",
+      "en": "goodbye"
+    },
+    {
+      "bg": "чао",
+      "baca": "chao",
+      "en": "bye (very casual)"
+    },
+    {
+      "bg": "казвам се",
+      "baca": "KAZ-vam seh",
+      "en": "my name is"
+    },
+    {
+      "bg": "как се казвате?",
+      "baca": "kak seh KAZ-va-teh",
+      "en": "what's your name? (formal)"
+    },
+    {
+      "bg": "приятно ми е",
+      "baca": "pree-YAT-no mee eh",
+      "en": "nice to meet you"
+    },
+    {
+      "bg": "аз",
+      "baca": "az",
+      "en": "I"
+    },
+    {
+      "bg": "ти",
+      "baca": "tee",
+      "en": "you (informal)"
+    },
+    {
+      "bg": "той / тя",
+      "baca": "toy / tya",
+      "en": "he / she"
+    },
+    {
+      "bg": "ние",
+      "baca": "NEE-eh",
+      "en": "we"
+    },
+    {
+      "bg": "вие",
+      "baca": "VEE-eh",
+      "en": "you (plural); you (formal)"
+    },
+    {
+      "bg": "те",
+      "baca": "teh",
+      "en": "they"
+    },
+    {
+      "bg": "студент / студентка",
+      "baca": "stoo-DENT / stoo-DENT-ka",
+      "en": "student (m / f)"
+    },
+    {
+      "bg": "учител / учителка",
+      "baca": "OO-chee-tel / oo-chee-TEL-ka",
+      "en": "teacher (m / f)"
+    },
+    {
+      "bg": "да",
+      "baca": "da",
+      "en": "yes"
+    },
+    {
+      "bg": "не",
+      "baca": "neh",
+      "en": "no, not"
+    },
+    {
+      "bg": "моля",
+      "baca": "MO-lya",
+      "en": "please; here you are; you're welcome"
+    },
+    {
+      "bg": "благодаря",
+      "baca": "bla-go-da-RYA",
+      "en": "thank you"
+    },
+    {
+      "bg": "извинете",
+      "baca": "eez-vee-NEH-teh",
+      "en": "sorry, excuse me (formal)"
+    },
+    {
+      "bg": "няма нищо",
+      "baca": "NYA-ma NEESH-to",
+      "en": "no problem, it's nothing"
+    },
+    {
+      "bg": "добре",
+      "baca": "dob-REH",
+      "en": "well, fine, OK"
+    },
+    {
+      "bg": "всичко",
+      "baca": "FSEECH-ko",
+      "en": "everything"
+    },
+    {
+      "bg": "наред",
+      "baca": "na-RED",
+      "en": "fine, in order"
+    },
+    {
+      "bg": "ден",
+      "baca": "den",
+      "en": "day"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Bulgarian. Remember: the word \"is/am/are\" must be there, but never first.",
+      "items": [
+        "Hello! (formal)",
+        "My name is Ani.",
+        "I'm a student. (f)",
+        "He isn't a teacher.",
+        "Are you a student? (formal)",
+        "Goodbye!"
+      ]
+    },
+    {
+      "prompt": "Fill in the right form of съм.",
+      "items": [
+        "Аз ____ студент.",
+        "Ти ____ от Индонезия.",
+        "Той ____ учител.",
+        "Ние ____ студенти.",
+        "Те ____ от София."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order. Remember the rule for the little words.",
+      "items": [
+        "се / Ани / казвам",
+        "съм / не / студент / аз",
+        "ми / приятно / е",
+        "ли / сте / вие / студентка",
+        "наред / всичко / е"
+      ]
+    },
+    {
+      "prompt": "Choose the right phrase. Write the answer in Cyrillic.",
+      "items": [
+        "You walk into the lecturers' office at nine in the morning. You say ____.",
+        "You didn't catch what someone said. You say ____.",
+        "You step on someone's foot on the tram. You say ____.",
+        "Someone has just helped you. You say ____.",
+        "You leave the office, formally. You say ____."
+      ]
+    }
+  ],
+  "answers": [
+    "Здравейте! — Казвам се Ани. — Студентка съм. — Той не е учител. — Вие студент ли сте? — Довиждане!",
+    "съм — си — е — сме — са",
+    "Казвам се Ани. — Аз не съм студент. — Приятно ми е. — Вие студентка ли сте? — Всичко е наред.",
+    "Добро утро — Моля? — Извинете — Благодаря — Довиждане"
+  ]
+}

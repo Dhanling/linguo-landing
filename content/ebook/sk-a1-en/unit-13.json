@@ -1,0 +1,568 @@
+{
+  "title": "Yesterday I was at home",
+  "title_target": "Včera som bol doma",
+  "goal": "Talk about the past, and deal with two things at once: past-tense verbs that change with the speaker's gender, and the little word *som* that must stand in second place.",
+  "bekal": [
+    "form past-tense sentences for any subject, with the right gender ending",
+    "put *som/si/sme/ste* in the right place — second place, always",
+    "tell someone about last weekend"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Aký si mal víkend?",
+      "intro": "Monday morning in class. Eva and Budi swap stories about the weekend.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Ahoj! Aký si mal víkend?",
+          "id": "Hi! How was your weekend?",
+          "literal": "hello! what-kind you-are had-m weekend?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Veľmi dobrý. Bol som v Košiciach.",
+          "id": "Really good. I went to Košice.",
+          "literal": "very good. been-m I-am in Košice-loc."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Naozaj? A čo si tam robil?",
+          "id": "Really? What did you do there?",
+          "literal": "really? and what you-are there done-m?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Chodil som po meste a fotil som staré domy.",
+          "id": "I walked around the town and took photos of old houses.",
+          "literal": "walked-m I-am around town-loc and photographed-m I-am old-pl houses-pl."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Videl si Dóm svätej Alžbety?",
+          "id": "Did you see St. Elisabeth's Cathedral?",
+          "literal": "seen-m you-are cathedral holy-gen Alžbeta-gen?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Áno! Bol som tam dvakrát. Je nádherný.",
+          "id": "Yes! I went there twice. It's beautiful.",
+          "literal": "yes! been-m I-am there twice. it-is beautiful."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "A čo si jedol?",
+          "id": "And what did you eat?",
+          "literal": "and what you-are eaten-m?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Konečne som ochutnal bryndzové halušky.",
+          "id": "I finally tried bryndzové halušky.",
+          "literal": "finally I-am tasted-m bryndza-pl halušky."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "A ako ti chutili?",
+          "id": "Did you like them?",
+          "literal": "and how to-you they-tasted-good-pl?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Prvýkrát mi nechutili, druhýkrát áno.",
+          "id": "Not the first time, but the second time, yes.",
+          "literal": "first-time to-me not-they-tasted-good, second-time yes."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ja som bola doma. Nič som nerobila.",
+          "id": "I stayed at home. I didn't do anything.",
+          "literal": "I I-am been-f at-home. nothing I-am not-done-f."
+        }
+      ],
+      "notes": [
+        "**Bol som but bola som.** Budi is a man, so he says *bol som*; Eva is a woman, so she says *bola som*. Slovak past-tense verbs **always** follow the gender of the subject — including when the subject is you. Learners from languages without grammatical gender forget this for months.",
+        "**Som always comes second.** Notice how the word order shifts in the dialogue: *Bol som v Košiciach*, *Ja som bol doma*, *Konečne som ochutnal*, *Nič som nerobila*. Whatever stands first, *som* comes straight after it — never at the start, never at the end.",
+        "**The third person uses nothing.** *Bol som* (I), *bol si* (you), but just *bol* for \"he\". Slovak drops *je* here, because the *-l* ending already carries the gender.",
+        "**Nič som nerobila** — a double negative again, and notice how *som* slips in between *nič* and *nerobila*. Short words always go into the second slot, even if that splits something that feels like one unit.",
+        "**Chodil som po meste** — the preposition *po* + locative means \"around\", not \"after\". *Chodiť po meste* = to walk around town. The same preposition means \"after\" when followed by a time: *po obede* (after lunch)."
+      ],
+      "grammars": [
+        {
+          "title": "The past tense — stem + l + som",
+          "body": [
+            "The Slovak past tense has two parts: **a verb ending in *-l* that follows the gender of the subject**, plus **the present form of *byť*** to mark who the subject is. The third person leaves out the second part entirely."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "*robiť* (male)",
+              "*robiť* (female)",
+              "Negative"
+            ],
+            "rows": [
+              [
+                "ja",
+                "robi**l som**",
+                "robi**la som**",
+                "nerobil som"
+              ],
+              [
+                "ty",
+                "robi**l si**",
+                "robi**la si**",
+                "nerobil si"
+              ],
+              [
+                "on",
+                "robi**l**",
+                "—",
+                "nerobil"
+              ],
+              [
+                "ona",
+                "—",
+                "robi**la**",
+                "nerobila"
+              ],
+              [
+                "ono",
+                "robi**lo**",
+                "robi**lo**",
+                "nerobilo"
+              ],
+              [
+                "my",
+                "robi**li sme**",
+                "robi**li sme**",
+                "nerobili sme"
+              ],
+              [
+                "vy",
+                "robi**li ste**",
+                "robi**li ste**",
+                "nerobili ste"
+              ],
+              [
+                "oni / ony",
+                "robi**li**",
+                "robi**li**",
+                "nerobili"
+              ]
+            ]
+          },
+          "after": [
+            "**How to form it: drop the *-ť* from the dictionary form and add *-l*.** *Robiť → robil*. *Čítať → čítal*. *Bývať → býval*. *Hovoriť → hovoril*. *Pracovať → pracoval*. For most verbs, that's all you need to know.",
+            "**The plural is always *-li*, whatever the gender** — good news that saves you half the table. (Formal writing distinguishes *-li* and *-ly*, but they sound exactly the same and that rule is no longer part of modern Slovak.)",
+            "**For the negative, just add *ne-* to the *-l* word.** *Nerobil som*, *nebol som*, *nevidel som*. The word *som* doesn't get negated."
+          ]
+        },
+        {
+          "title": "Second place — the law that governs all short words",
+          "body": [
+            "Slovak short words — *som, si, sme, ste*, *sa, si*, *mi, ti, mu, jej*, *ma, ťa, ho, ju* — are never stressed, and so they can never stand at the start of a sentence. They all gather in **second place**, right after the first part of the sentence."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "First place",
+              "Short word",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Bol **som** doma.*",
+                "Bol",
+                "som",
+                "I was at home."
+              ],
+              [
+                "*Včera **som** bol doma.*",
+                "Včera",
+                "som",
+                "Yesterday I was at home."
+              ],
+              [
+                "*Ja **som** bol doma.*",
+                "Ja",
+                "som",
+                "I was the one at home."
+              ],
+              [
+                "*Nič **som** nerobil.*",
+                "Nič",
+                "som",
+                "I didn't do anything."
+              ],
+              [
+                "*Páčil **sa mi** film.*",
+                "Páčil",
+                "sa mi",
+                "I liked the film."
+              ],
+              [
+                "*Kúpil **som si** knihu.*",
+                "Kúpil",
+                "som si",
+                "I bought a book."
+              ],
+              [
+                "*Dal **som mu ju**.*",
+                "Dal",
+                "som mu ju",
+                "I gave it to him."
+              ]
+            ]
+          },
+          "after": [
+            "**The order inside the group is fixed:** *som/si/sme/ste* first, then *sa/si*, then the dative (*mi, ti, mu*), then the accusative (*ma, ťa, ho, ju*). This order never changes, and after a few weeks your ear will reject any other order before your brain can explain why.",
+            "**The most common mistake:** putting *som* at the start of the sentence (*Som bol doma* — wrong) or at the end (*Včera bol doma som* — wrong). If in doubt, ask: \"what's the first word?\" Then slip *som* in right after it.",
+            "**Why does the rule exist?** Because these words have no stress of their own, they have to lean on a word that does. Second place is where they can lean on the first word without breaking the rhythm. Czech, Polish, Serbian, and Ancient Greek do the same."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Irregular past-tense verbs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Most verbs just drop *-ť* and add *-l*. The nine below don't, and all of them are used every day — so learning them now is far cheaper than repeating the mistakes later."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Dictionary form",
+            "Past (m)",
+            "Past (f)",
+            "English"
+          ],
+          "rows": [
+            [
+              "**byť**",
+              "bol",
+              "bola",
+              "be"
+            ],
+            [
+              "**ísť**",
+              "**išiel**",
+              "**išla**",
+              "go"
+            ],
+            [
+              "**prísť**",
+              "**prišiel**",
+              "**prišla**",
+              "come"
+            ],
+            [
+              "**jesť**",
+              "**jedol**",
+              "**jedla**",
+              "eat"
+            ],
+            [
+              "**piť**",
+              "pil",
+              "pila",
+              "drink"
+            ],
+            [
+              "**môcť**",
+              "**mohol**",
+              "**mohla**",
+              "can; be able"
+            ],
+            [
+              "**chcieť**",
+              "**chcel**",
+              "**chcela**",
+              "want"
+            ],
+            [
+              "**vedieť**",
+              "**vedel**",
+              "**vedela**",
+              "know"
+            ],
+            [
+              "**vidieť**",
+              "videl",
+              "videla",
+              "see"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the pattern in the second column: **-šiel/-šla** for verbs of motion (*išiel, prišiel*), and **-ol/-la** for a few others (*mohol, jedol*). The masculine form slips in a vowel that disappears again in the feminine — *mohol* but *mohla*, *jedol* but *jedla*."
+        },
+        {
+          "type": "kotak",
+          "title": "One tip that saves a lot of sentences",
+          "items": [
+            "With irregular verbs, the feminine form is almost always **shorter** than the masculine: *mohol/mohla*, *jedol/jedla*, *išiel/išla*.",
+            "If you're a woman and unsure, try dropping the last vowel of the masculine form and adding *-a*. It's right far more often than not."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Talking about the past",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Time word",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**včera**",
+              "FCHEH-rah",
+              "yesterday"
+            ],
+            [
+              "**predvčerom**",
+              "PREHT-fcheh-rohm",
+              "the day before yesterday"
+            ],
+            [
+              "**minulý týždeň**",
+              "MEE-noo-lee TEESH-dyehny",
+              "last week"
+            ],
+            [
+              "**minulý mesiac**",
+              "MEE-noo-lee MEH-syahts",
+              "last month"
+            ],
+            [
+              "**minulý rok**",
+              "MEE-noo-lee rohk",
+              "last year"
+            ],
+            [
+              "**pred rokom**",
+              "preht ROH-kohm",
+              "a year ago"
+            ],
+            [
+              "**pred chvíľou**",
+              "preht KHVEE-lyohw",
+              "a moment ago"
+            ],
+            [
+              "**kedysi**",
+              "KEH-dee-see",
+              "a long time ago"
+            ],
+            [
+              "**naposledy**",
+              "NAH-poh-sleh-dee",
+              "last time"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Questions and answers",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Aký si mal víkend?*",
+              "How was your weekend? (to a man)"
+            ],
+            [
+              "*Aký si mala víkend?*",
+              "How was your weekend? (to a woman)"
+            ],
+            [
+              "*Čo si robil / robila?*",
+              "What did you do?"
+            ],
+            [
+              "*Kde si bol / bola?*",
+              "Where did you go?"
+            ],
+            [
+              "*Bolo to super!*",
+              "It was great!"
+            ],
+            [
+              "*Nič som nerobil.*",
+              "I didn't do anything."
+            ],
+            [
+              "*Oddýchol som si.*",
+              "I had a rest."
+            ],
+            [
+              "*Bol som prvýkrát v …*",
+              "It was my first time in …"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that **even the question follows the gender of the person you're talking to**: *Kde si bol?* to a man, *Kde si bola?* to a woman. You have to decide the form before the sentence comes out — which is why this part feels hard in the first week and stops feeling like anything by the third."
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 11",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "How do I get to Košice?",
+              "*Ako sa dostanem do Košíc?*"
+            ],
+            [
+              "You can take the train.",
+              "*Môžeš ísť vlakom.*"
+            ],
+            [
+              "I go there once a month.",
+              "*Chodím tam raz za mesiac.*"
+            ],
+            [
+              "When is the next train?",
+              "*Kedy ide ďalší vlak?*"
+            ],
+            [
+              "I'm going to the doctor.",
+              "*Idem k lekárovi.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "včera",
+      "baca": "FCHEH-rah",
+      "en": "yesterday"
+    },
+    {
+      "sk": "minulý",
+      "baca": "MEE-noo-lee",
+      "en": "ago; last"
+    },
+    {
+      "sk": "konečne",
+      "baca": "KOH-nyehch-neh",
+      "en": "finally"
+    },
+    {
+      "sk": "naposledy",
+      "baca": "NAH-poh-sleh-dee",
+      "en": "last time"
+    },
+    {
+      "sk": "prvýkrát",
+      "baca": "PR-vee-kraht",
+      "en": "for the first time"
+    },
+    {
+      "sk": "dvakrát",
+      "baca": "DVAH-kraht",
+      "en": "twice"
+    },
+    {
+      "sk": "ochutnať",
+      "baca": "OH-khoot-naht",
+      "en": "taste, try"
+    },
+    {
+      "sk": "fotiť",
+      "baca": "FOH-tyeet",
+      "en": "take photos"
+    },
+    {
+      "sk": "oddýchnuť si",
+      "baca": "OHD-deekh-noot see",
+      "en": "rest"
+    },
+    {
+      "sk": "stretnúť",
+      "baca": "STREHT-noot",
+      "en": "meet"
+    },
+    {
+      "sk": "zostať",
+      "baca": "ZOHS-taht",
+      "en": "live; stay"
+    },
+    {
+      "sk": "vrátiť sa",
+      "baca": "VRAH-tyeet sah",
+      "en": "come back, return"
+    },
+    {
+      "sk": "dóm",
+      "baca": "dohm",
+      "en": "cathedral (m)"
+    },
+    {
+      "sk": "nádherný",
+      "baca": "NAHD-hehr-nee",
+      "en": "beautiful"
+    },
+    {
+      "sk": "svätý",
+      "baca": "SVEH-tee",
+      "en": "holy; saint"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Slovak. Use the masculine form for \"I\".",
+      "items": [
+        "Yesterday I was at home.",
+        "I went to Košice.",
+        "What did you do there?",
+        "I walked around the town.",
+        "I didn't do anything.",
+        "I finally tried bryndzové halušky."
+      ]
+    },
+    {
+      "prompt": "Put into the past tense. Use ja, masculine.",
+      "items": [
+        "Robím. → ____",
+        "Čítam. → ____",
+        "Bývam v Bratislave. → ____",
+        "Hovorím po slovensky. → ____",
+        "Pracujem. → ____",
+        "Vidím ju. → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "si / víkend / aký / mal / ?",
+        "Košiciach / som / bol / v",
+        "robil / si / tam / čo / ?",
+        "nerobila / som / nič",
+        "chutili / ti / ako / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Včera som bol doma. — Bol som v Košiciach. — Čo si tam robil? — Chodil som po meste. — Nič som nerobil. — Konečne som ochutnal bryndzové halušky.",
+    "Robil som. — Čítal som. — Býval som v Bratislave. — Hovoril som po slovensky. — Pracoval som. — Videl som ju.",
+    "Aký si mal víkend? — Bol som v Košiciach. — Čo si tam robil? — Nič som nerobila. — Ako ti chutili?"
+  ]
+}

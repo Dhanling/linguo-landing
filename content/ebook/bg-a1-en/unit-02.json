@@ -1,0 +1,528 @@
+{
+  "title": "Where are you from?",
+  "title_target": "Откъде сте? — Otkăde ste?",
+  "goal": "Say which country and city you're from, ask where others are from, and recognize the gender of a Bulgarian noun just from its last letter — knowledge you'll use in every unit after this one.",
+  "bekal": [
+    "ask and answer \"where from?\"",
+    "say nationalities in their male and female forms",
+    "guess a noun's gender from its last letter",
+    "use **нали** to ask for agreement",
+    "respond to a welcome the right way"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — At a café near campus",
+      "intro": "Ani is sitting in a café in Sofia and works up the courage to talk to the woman at the next table. Notice that the word for \"Bulgarian person\" changes shape depending on who you're talking about.",
+      "lines": [
+        {
+          "speaker": "Ани:",
+          "text": "[Извинете|Eez-vee-NEH-teh], [вие|VEE-eh] [българка|BĂL-gar-ka] [ли|lee] [сте|steh]?",
+          "id": "Excuse me, are you Bulgarian?",
+          "literal": "excuse-(formal), you — Bulgarian-woman — (question) — are?"
+        },
+        {
+          "speaker": "Мария:",
+          "text": "[Да|Da], [българка|BĂL-gar-ka] [съм|săm]. [От|Ot] [Пловдив|PLOV-deev]. [А|A] [вие|VEE-eh] [откъде|ot-kă-DEH] [сте|steh]?",
+          "id": "Yes, I'm Bulgarian. From Plovdiv. And where are you from?",
+          "literal": "yes, Bulgarian-woman — am. from — Plovdiv. and — you — from-where — are?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[От|Ot] [Индонезия|Een-do-NEH-zee-ya]. [От|Ot] [Джакарта|Dzha-KAR-ta].",
+          "id": "From Indonesia. From Jakarta.",
+          "literal": "from — Indonesia. from — Jakarta."
+        },
+        {
+          "speaker": "Мария:",
+          "text": "[Индонезия|Een-do-NEH-zee-ya]! [Много|MNO-go] [далече|da-LEH-cheh]. [Как|Kak] [е|eh] [там|tam]?",
+          "id": "Indonesia! That's very far. What's it like there?",
+          "literal": "Indonesia! much — far. how — is — there?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Топло|TOP-lo] [е|eh]. [Винаги|VEE-na-gee] [е|eh] [топло|TOP-lo].",
+          "id": "It's hot. It's always hot.",
+          "literal": "warm — is. always — is — warm."
+        },
+        {
+          "speaker": "Мария:",
+          "text": "[А|A] [тук|took] [е|eh] [студено|stoo-DEH-no], [нали|na-LEE]?",
+          "id": "And here it's cold, isn't it?",
+          "literal": "and — here — is — cold, isn't-it?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Малко|MAL-ko]. [Но|No] [София|SO-fee-ya] [е|eh] [хубав|HOO-bav] [град|grad].",
+          "id": "A little. But Sofia is a lovely city.",
+          "literal": "a-little. but — Sofia — is — lovely — city."
+        },
+        {
+          "speaker": "Мария:",
+          "text": "[Благодаря|Bla-go-da-RYA]! [Аз|Az] [съм|săm] [Мария|Ma-REE-ya]. [Учителка|OO-chee-tel-ka] [съм|săm].",
+          "id": "Thank you! I'm Maria. I'm a teacher.",
+          "literal": "thank-you! I — am — Maria. teacher-(f) — am."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Аз|Az] [съм|săm] [Ани|A-nee], [студентка|stoo-DENT-ka]. [Приятно|Pree-YAT-no] [ми|mee] [е|eh].",
+          "id": "I'm Ani, a student. Nice to meet you.",
+          "literal": "I — am — Ani, student-(f). pleasant — to-me — is."
+        },
+        {
+          "speaker": "Мария:",
+          "text": "[И|Ee] [на|na] [мен|men]. [Добре|Dob-REH] [дошла|dosh-LA] [в|v] [България|Băl-GA-ree-ya]!",
+          "id": "Likewise. Welcome to Bulgaria!",
+          "literal": "also — to — me. well — come-(f) — in — Bulgaria!"
+        }
+      ],
+      "notes": [
+        "**Nationality follows the gender of the PERSON, not the country.** A man is a *българин*, a woman is a *българка*. ⚠️ This is a classic slip: English has one word for everyone — \"Bulgarian\" — so learners end up using *българин* for a woman. It sounds as jarring as calling a woman \"sir\".",
+        "**Almost all country names end in -ия and are feminine.** *Индонезия, България, Русия, Италия, Германия.* Those that don't end in -ия are usually still feminine if they end in -а: *Америка, Гърция*. Exceptions worth remembering: *Китай* (China) and *Виетнам* are masculine, while *Мароко* is neuter.",
+        "**Много means both \"much/many\" AND \"very\".** *Много хора* = many people; *много далече* = very far. Bulgarian doesn't distinguish the two, so you'll use this one word constantly. Its opposite is *малко* — \"a little\", also \"a bit, rather\".",
+        "**Нали is Bulgarian's \"isn't it?\", and it never changes.** English demands *isn't it? / don't you? / haven't we?*, switching every time; Bulgarian has a single word for all of them, like a tag \"right?\". One big burden simply gone.",
+        "**Добре дошъл / дошла / дошли — even \"welcome\" follows gender.** To a man: *Добре дошъл!* To a woman: *Добре дошла!* To more than one person: *Добре дошли!* ⚠️ The reply isn't \"thank you\" but **Добре заварил** (said by a man) or **Добре заварила** (by a woman) — literally \"well I've found (you, in good health)\". Answering *благодаря* isn't wrong, but answering *добре заварила* will make people pleasantly surprised.",
+        "**Тук and там — \"here\" and \"there\", with no change of form.** Russian uses different words for \"here\" and \"to here\"; Bulgarian doesn't. *Тук* covers both — just like English \"come here\" / \"I'm here\". It's the first of many simplifications that make Bulgarian lighter than its relatives.",
+        "**Weather sentences have no subject.** *Топло е* — \"warm is\", with no word for \"it\" or \"the weather\". English needs a dummy \"it\" (\"it's warm\"); Bulgarian doesn't. The only thing that must stay is *е*."
+      ],
+      "grammars": [
+        {
+          "title": "Three noun genders — recognize them by the last letter",
+          "body": [
+            "Every Bulgarian noun has a gender, and you can almost always guess it from the last letter. This isn't decorative knowledge: the definite article, adjectives and numbers all adjust to it. Invest five minutes in this table and the next ten units get much lighter."
+          ],
+          "table": {
+            "head": [
+              "Gender",
+              "Ends in",
+              "Example",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Masculine",
+                "consonant",
+                "град",
+                "grad",
+                "city"
+              ],
+              [
+                "",
+                "",
+                "мъж",
+                "măzh",
+                "man"
+              ],
+              [
+                "",
+                "-й",
+                "чай",
+                "chai",
+                "tea"
+              ],
+              [
+                "Feminine",
+                "-а",
+                "книга",
+                "KNEE-ga",
+                "book"
+              ],
+              [
+                "",
+                "-я",
+                "стая",
+                "STA-ya",
+                "room"
+              ],
+              [
+                "",
+                "(some) consonant",
+                "вечер",
+                "VEH-cher",
+                "evening"
+              ],
+              [
+                "Neuter",
+                "-о",
+                "мляко",
+                "MLYA-ko",
+                "milk"
+              ],
+              [
+                "",
+                "-е",
+                "море",
+                "mo-REH",
+                "sea"
+              ],
+              [
+                "",
+                "-ие",
+                "списание",
+                "spee-SA-nee-eh",
+                "magazine"
+              ]
+            ]
+          },
+          "after": [
+            "The most common exceptions: a small group of feminine nouns ending in a consonant — *вечер* (evening), *нощ* (night), *пролет* (spring), *есен* (autumn), *сол* (salt), *любов* (love). There aren't many; learn these six and the rest will rarely trouble you.",
+            "⚠️ English has no noun gender at all, so this instinct has to be built from scratch. The good news: **learn each word together with its last letter**, not with a \"masculine/feminine\" label. If you know a word ends in -а, you automatically know the rest."
+          ]
+        },
+        {
+          "title": "Откъде сте? — where you're from",
+          "body": [
+            "One preposition, **от**, is all you need, and the place name never changes form. Compare Russian, where every preposition demands a different form of the noun."
+          ],
+          "table": {
+            "head": [
+              "Question / answer",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Откъде сте?",
+                "ot-kă-DEH steh",
+                "Where are you from? (formal)"
+              ],
+              [
+                "Откъде си?",
+                "ot-kă-DEH see",
+                "Where are you from? (informal)"
+              ],
+              [
+                "От Индонезия съм.",
+                "ot een-do-NEH-zee-ya săm",
+                "I'm from Indonesia."
+              ],
+              [
+                "Живея в София.",
+                "zhee-VEH-ya f SO-fee-ya",
+                "I live in Sofia."
+              ],
+              [
+                "Отивам в Пловдив.",
+                "o-TEE-vam f PLOV-deev",
+                "I'm going to Plovdiv."
+              ]
+            ]
+          },
+          "after": [
+            "Look at the last two rows: **в** means \"in\" **and** \"to\", and the city name doesn't change one bit. The verb tells you which is meant — *живея* (I live) means staying put, *отивам* (I go) means moving. Where English needs two prepositions, Bulgarian lets the verb do the work."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Countries, nationalities and languages",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Three columns, three different forms from the same root. Notice that language names always end in **-ски** and are never capitalized."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Country",
+            "Man",
+            "Woman",
+            "Language"
+          ],
+          "rows": [
+            [
+              "България",
+              "българин",
+              "българка",
+              "български"
+            ],
+            [
+              "Индонезия",
+              "индонезиец",
+              "индонезийка",
+              "индонезийски"
+            ],
+            [
+              "Англия",
+              "англичанин",
+              "англичанка",
+              "английски"
+            ],
+            [
+              "Русия",
+              "руснак",
+              "рускиня",
+              "руски"
+            ],
+            [
+              "Германия",
+              "германец",
+              "германка",
+              "немски"
+            ],
+            [
+              "Турция",
+              "турчин",
+              "туркиня",
+              "турски"
+            ],
+            [
+              "Гърция",
+              "грък",
+              "гъркиня",
+              "гръцки"
+            ],
+            [
+              "Китай",
+              "китаец",
+              "китайка",
+              "китайски"
+            ],
+            [
+              "Япония",
+              "японец",
+              "японка",
+              "японски"
+            ],
+            [
+              "Америка",
+              "американец",
+              "американка",
+              "английски"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ The word for German, **немски**, looks nothing like the country name *Германия*. Its root is the old Slavic word *ням* — \"mute\": people whose language we can't understand. The same oddity runs through all the Slavic languages."
+        },
+        {
+          "type": "p",
+          "text": "To say \"I speak language X\", the language word takes the prefix **по-**: *Говоря по български* (I speak Bulgarian), *Говорите ли по английски?* (Do you speak English?). Without *по-*, *български език* means \"the Bulgarian language\" as a thing."
+        }
+      ]
+    },
+    {
+      "title": "Five cities you'll hear about all the time",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "City",
+            "Say it",
+            "Why it matters"
+          ],
+          "rows": [
+            [
+              "София",
+              "SO-fee-ya",
+              "The capital, at the foot of Mount Витоша"
+            ],
+            [
+              "Пловдив",
+              "PLOV-deev",
+              "Europe's oldest continuously inhabited city, older than Rome and Athens"
+            ],
+            [
+              "Варна",
+              "VAR-na",
+              "The biggest port on the Black Sea"
+            ],
+            [
+              "Бургас",
+              "boor-GAS",
+              "The second seaside city, gateway to summer"
+            ],
+            [
+              "Велико Търново",
+              "VEH-lee-ko TĂR-no-vo",
+              "Former royal capital, a city on the cliffs"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "If someone asks *Харесва ли ти София?* (Do you like Sofia?) and you can't give a long answer yet, two words are enough: **Много хубаво!** People will smile and keep talking — and that's how real learning happens."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bg": "откъде",
+      "baca": "ot-kă-DEH",
+      "en": "where from"
+    },
+    {
+      "bg": "от",
+      "baca": "ot",
+      "en": "from"
+    },
+    {
+      "bg": "в",
+      "baca": "v / f",
+      "en": "in; to"
+    },
+    {
+      "bg": "тук",
+      "baca": "took",
+      "en": "here"
+    },
+    {
+      "bg": "там",
+      "baca": "tam",
+      "en": "there"
+    },
+    {
+      "bg": "град",
+      "baca": "grad",
+      "en": "city, town"
+    },
+    {
+      "bg": "страна",
+      "baca": "stra-NA",
+      "en": "country"
+    },
+    {
+      "bg": "българин / българка",
+      "baca": "BĂL-ga-reen / BĂL-gar-ka",
+      "en": "Bulgarian (m / f)"
+    },
+    {
+      "bg": "чужденец",
+      "baca": "CHOOZH-deh-nets",
+      "en": "foreigner"
+    },
+    {
+      "bg": "много",
+      "baca": "MNO-go",
+      "en": "much, many; very"
+    },
+    {
+      "bg": "малко",
+      "baca": "MAL-ko",
+      "en": "a little; rather"
+    },
+    {
+      "bg": "далече",
+      "baca": "da-LEH-cheh",
+      "en": "far"
+    },
+    {
+      "bg": "близо",
+      "baca": "BLEE-zo",
+      "en": "near"
+    },
+    {
+      "bg": "топло",
+      "baca": "TOP-lo",
+      "en": "warm, hot"
+    },
+    {
+      "bg": "студено",
+      "baca": "stoo-DEH-no",
+      "en": "cold"
+    },
+    {
+      "bg": "хубав",
+      "baca": "HOO-bav",
+      "en": "nice, lovely, beautiful"
+    },
+    {
+      "bg": "винаги",
+      "baca": "VEE-na-gee",
+      "en": "always"
+    },
+    {
+      "bg": "но",
+      "baca": "no",
+      "en": "but"
+    },
+    {
+      "bg": "нали",
+      "baca": "na-LEE",
+      "en": "isn't it?, right?"
+    },
+    {
+      "bg": "добре дошъл",
+      "baca": "dob-REH DO-shăl",
+      "en": "welcome (to a man)"
+    },
+    {
+      "bg": "живея",
+      "baca": "zhee-VEH-ya",
+      "en": "I live"
+    },
+    {
+      "bg": "говоря",
+      "baca": "go-VO-rya",
+      "en": "I speak"
+    },
+    {
+      "bg": "език",
+      "baca": "eh-ZEEK",
+      "en": "language; tongue"
+    },
+    {
+      "bg": "как",
+      "baca": "kak",
+      "en": "how"
+    },
+    {
+      "bg": "стая",
+      "baca": "STA-ya",
+      "en": "room"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Bulgarian.",
+      "items": [
+        "Where are you from? (formal)",
+        "I'm from Indonesia.",
+        "She is Bulgarian.",
+        "Sofia is a lovely city.",
+        "It's cold here, isn't it?",
+        "Welcome to Bulgaria! (to a woman)"
+      ]
+    },
+    {
+      "prompt": "Write the gender of each noun: м (masculine), ж (feminine), or ср (neuter).",
+      "items": [
+        "книга ____",
+        "град ____",
+        "мляко ____",
+        "стая ____",
+        "море ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "съм / Индонезия / от",
+        "е / далече / много",
+        "град / е / хубав / София",
+        "ли / сте / българка / вие",
+        "в / живея / София"
+      ]
+    },
+    {
+      "prompt": "Fill in the right nationality.",
+      "items": [
+        "Мария е от София. Тя е ____.",
+        "Иван е от София. Той е ____.",
+        "Ани е от Джакарта. Тя е ____.",
+        "Джон е от Лондон. Той е ____.",
+        "Юки е от Токио. Тя е ____."
+      ]
+    }
+  ],
+  "answers": [
+    "Откъде сте? — От Индонезия съм. — Тя е българка. — София е хубав град. — Тук е студено, нали? — Добре дошла в България!",
+    "ж — м — ср — ж — ср",
+    "От Индонезия съм. — Много далече е. — София е хубав град. — Вие българка ли сте? — Живея в София.",
+    "българка — българин — индонезийка — англичанин — японка"
+  ]
+}

@@ -1,0 +1,495 @@
+{
+  "title": "Where are you from?",
+  "title_target": "Hvaðan ertu?",
+  "goal": "Say where you're from, where you live, and which languages you speak; then face one big difference from English: the word \"not\" sits AFTER the verb, with no \"do\" to lean on.",
+  "bekal": [
+    "ask and answer where someone is from with *hvaðan* and *frá*",
+    "make any sentence negative by putting *ekki* in the right place",
+    "say you're in the middle of doing something with *ég er að …*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Í kaffihúsi",
+      "intro": "The next day, in a café on Laugavegur street. Anna is reading when Búdí walks by and sits down with her.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Hvaðan ertu, Búdí?",
+          "id": "Where are you from, Budi?",
+          "literal": "from-where are-you, Budi?"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Ég er frá Indónesíu, frá Jakarta.",
+          "id": "I'm from Indonesia, from Jakarta.",
+          "literal": "I am from Indonesia, from Jakarta."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Býrðu í Reykjavík núna?",
+          "id": "Do you live in Reykjavík now?",
+          "literal": "live-you in Reykjavík now?"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Já, ég bý í Reykjavík. Ég bý ekki í Jakarta lengur.",
+          "id": "Yes, I live in Reykjavík. I don't live in Jakarta anymore.",
+          "literal": "yes, I live in Reykjavík. I live not in Jakarta longer."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Hvaða mál talar þú?",
+          "id": "What languages do you speak?",
+          "literal": "which language speak you?"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Ég tala indónesísku og ensku. Ég tala ekki þýsku.",
+          "id": "I speak Indonesian and English. I don't speak German.",
+          "literal": "I speak Indonesian and English. I speak not German."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Talarðu ekki íslensku?",
+          "id": "You don't speak Icelandic?",
+          "literal": "speak-you not Icelandic?"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Ég er að læra. Það er erfitt en skemmtilegt.",
+          "id": "I'm learning. It's hard but fun.",
+          "literal": "I am to learn. it is hard but fun."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Íslenska er ekki erfið, hún er bara ný fyrir þig!",
+          "id": "Icelandic isn't hard, it's just new to you!",
+          "literal": "Icelandic is not hard, she is only new for you!"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Hvað ertu að gera hér?",
+          "id": "What are you doing here?",
+          "literal": "what are-you to do here?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Ég er að lesa. Ég er íslenskukennari.",
+          "id": "I'm reading. I'm an Icelandic teacher.",
+          "literal": "I am to read. I am Icelandic-teacher."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Nei, er það satt? Þá þarf ég hjálp!",
+          "id": "No way, really? Then I need help!",
+          "literal": "no, is it true? then need I help!"
+        }
+      ],
+      "notes": [
+        "**Ekki sits AFTER the verb.** *Ég tala ekki þýsku* — literally \"I speak not German\". English needs a helper and puts \"not\" in front of the main verb (\"I don't speak\"); Icelandic has no \"do\" and simply follows the verb with *ekki*. Practice the pairs as one sound: *tala-ekki*, *bý-ekki*, *er-ekki*.",
+        "**Býrðu = býr + þú.** The glued-on *þú* shows up again, this time on verbs ending in -r: *býrðu*, *talarðu*, *lærirðu*. The **ð** in the middle is what's left of a melted *þ*.",
+        "**Ég er að læra literally \"I am to learn\".** This is the \"-ing\" form — and Icelandic is **the only Nordic language** with a progressive like the English *-ing*. The pattern never changes: *vera* + *að* + the infinitive.",
+        "**Language names change form after tala.** The basic forms are *íslenska*, *enska*, *þýska*; after *tala* the ending becomes **-u**: *tala íslensku*, *tala ensku*, *tala þýsku*. You're seeing the **þolfall** case for the first time; it gets its name in Unit 8.",
+        "**Erfitt, erfið, erfiður — one adjective, three forms.** The form follows the gender of the word it describes: *það er erfitt* (neuter), *íslenska er erfið* (feminine), *tími er erfiður* (masculine). These three noun genders are what Unit 3 is about.",
+        "**Nei, er það satt? is not a denial.** Literally \"no, is that true?\", but it works exactly like \"No way, really?\" — a pleased expression of surprise. Icelanders use it several times in one conversation."
+      ],
+      "grammars": [
+        {
+          "title": "Ekki — fixed place, clear meaning",
+          "body": [
+            "One word for every kind of \"not\", and it almost always stands right **after the verb**."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Negative",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Ég tala íslensku.*",
+                "Ég tala **ekki** íslensku.",
+                "I don't speak Icelandic."
+              ],
+              [
+                "*Hún er hér.*",
+                "Hún er **ekki** hér.",
+                "She isn't here."
+              ],
+              [
+                "*Ég bý í Jakarta.*",
+                "Ég bý **ekki** í Jakarta.",
+                "I don't live in Jakarta."
+              ],
+              [
+                "*Ég skil þig.*",
+                "Ég skil þig **ekki**.",
+                "I don't understand you."
+              ],
+              [
+                "*Talarðu ensku?*",
+                "Talarðu **ekki** ensku?",
+                "Don't you speak English?"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ If the object is a **pronoun** (*þig*, *hana*, *það*), *ekki* jumps behind it: *Ég skil þig ekki*. If the object is an ordinary noun, *ekki* stays in front: *Ég skil bókina ekki* also sounds natural, but *Ég skil ekki bókina* is more common.",
+            "Answering a negative question: if you really **can't**, answer *nei*; if you **can**, answer **jú**, not *já*. *Talarðu ekki íslensku?* — *Jú, ég tala íslensku!* Icelandic has a special word for contradicting a negative, something English lacks (like French *si* or German *doch*)."
+          ]
+        },
+        {
+          "title": "Er að — the \"-ing\" form",
+          "body": [
+            "The pattern is *vera* + *að* + the infinitive. Only the form of *vera* changes; the main verb stays put."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "English",
+              "Note"
+            ],
+            "rows": [
+              [
+                "*Ég er að læra.*",
+                "I'm learning.",
+                "*að* isn't translated"
+              ],
+              [
+                "*Þú ert að lesa.*",
+                "You're reading.",
+                ""
+              ],
+              [
+                "*Hún er að tala í símann.*",
+                "She's talking on the phone.",
+                ""
+              ],
+              [
+                "*Við erum að borða.*",
+                "We're eating.",
+                ""
+              ],
+              [
+                "*Ég er ekki að grínast.*",
+                "I'm not joking.",
+                "*ekki* after *vera*"
+              ]
+            ]
+          },
+          "after": [
+            "The difference from the plain form is small but real: *ég læri íslensku* means \"I learn Icelandic\" (in general, as an activity), while *ég er að læra íslensku* means \"I'm learning Icelandic\" (now, this very minute).",
+            "English uses *be* + *-ing* for exactly this, so you already think this way — the only new thing is the pattern."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Countries, people, and languages",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Three words for one country, each with a different form. Language names are always written in **lowercase**; names of countries and nationalities always take a **capital**."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Country",
+            "Person",
+            "Language",
+            "English"
+          ],
+          "rows": [
+            [
+              "Ísland",
+              "Íslendingur",
+              "íslenska",
+              "Iceland"
+            ],
+            [
+              "Indónesía",
+              "Indónesi",
+              "indónesíska",
+              "Indonesia"
+            ],
+            [
+              "England",
+              "Englendingur",
+              "enska",
+              "England"
+            ],
+            [
+              "Þýskaland",
+              "Þjóðverji",
+              "þýska",
+              "Germany"
+            ],
+            [
+              "Danmörk",
+              "Dani",
+              "danska",
+              "Denmark"
+            ],
+            [
+              "Noregur",
+              "Norðmaður",
+              "norska",
+              "Norway"
+            ],
+            [
+              "Frakkland",
+              "Frakki",
+              "franska",
+              "France"
+            ],
+            [
+              "Spánn",
+              "Spánverji",
+              "spænska",
+              "Spain"
+            ],
+            [
+              "Kína",
+              "Kínverji",
+              "kínverska",
+              "China"
+            ],
+            [
+              "Japan",
+              "Japani",
+              "japanska",
+              "Japan"
+            ],
+            [
+              "Bandaríkin",
+              "Bandaríkjamaður",
+              "enska",
+              "United States"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two very Icelandic words",
+          "items": [
+            "*Bandaríkin* literally means \"the allied states\" — note that Icelanders do **not** use the word \"America\" for the country. The habit of building their own words, mentioned in the foreword, works even on country names.",
+            "*Norðmaður* literally means \"north-man\"; *Þjóðverji* literally means \"nation-defender\". When a nationality doesn't look like its country's name, that's almost always why."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking where people are from and where they live",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Íslenska",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Hvaðan ertu?",
+              "KVAH-dhahn EHR-tü",
+              "Where are you from?"
+            ],
+            [
+              "Ég er frá Indónesíu.",
+              "yehgh ehr frow IN-doh-neh-see-ü",
+              "I'm from Indonesia."
+            ],
+            [
+              "Hvar býrðu?",
+              "kvahr BEER-dhü",
+              "Where do you live?"
+            ],
+            [
+              "Ég bý í Reykjavík.",
+              "yehgh bee ee RAY-kyah-veek",
+              "I live in Reykjavík."
+            ],
+            [
+              "Hvaða mál talar þú?",
+              "KVAH-dhah mowl TAH-lahr thoo",
+              "What languages do you speak?"
+            ],
+            [
+              "Ég tala smá íslensku.",
+              "yehgh TAH-lah smow EES-lehn-skü",
+              "I speak a little Icelandic."
+            ],
+            [
+              "Hvað ertu að gera?",
+              "kvahdh EHR-tü ahdh GEH-rah",
+              "What are you doing?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Note that *hvar* (where) and *hvaðan* (where from) are two different words and can't be swapped. Icelandic also has *hvert* (where to), which appears in Unit 11 — three words where English mostly gets by with \"where\"."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "is": "hvaðan",
+      "baca": "KVAH-dhahn",
+      "en": "where from"
+    },
+    {
+      "is": "hvar",
+      "baca": "kvahr",
+      "en": "where"
+    },
+    {
+      "is": "búa",
+      "baca": "BOO-ah",
+      "en": "to live, to reside"
+    },
+    {
+      "is": "núna",
+      "baca": "NOO-nah",
+      "en": "now"
+    },
+    {
+      "is": "lengur",
+      "baca": "LAYN-gür",
+      "en": "anymore (in negative sentences)"
+    },
+    {
+      "is": "mál",
+      "baca": "mowl",
+      "en": "language; matter"
+    },
+    {
+      "is": "tungumál",
+      "baca": "TOON-gü-mowl",
+      "en": "language"
+    },
+    {
+      "is": "læra",
+      "baca": "LAI-rah",
+      "en": "to learn, to study"
+    },
+    {
+      "is": "lesa",
+      "baca": "LEH-sah",
+      "en": "to read"
+    },
+    {
+      "is": "gera",
+      "baca": "GEH-rah",
+      "en": "to do"
+    },
+    {
+      "is": "erfitt",
+      "baca": "EHR-vihht",
+      "en": "hard, difficult"
+    },
+    {
+      "is": "skemmtilegt",
+      "baca": "SKEHM-tih-lehgt",
+      "en": "fun, enjoyable"
+    },
+    {
+      "is": "en",
+      "baca": "ehn",
+      "en": "but"
+    },
+    {
+      "is": "og",
+      "baca": "awgh",
+      "en": "and"
+    },
+    {
+      "is": "kennari",
+      "baca": "KEHN-nah-rih",
+      "en": "teacher"
+    },
+    {
+      "is": "kaffihús",
+      "baca": "KAH-fih-hoos",
+      "en": "café"
+    },
+    {
+      "is": "satt",
+      "baca": "sahht",
+      "en": "true"
+    },
+    {
+      "is": "þá",
+      "baca": "thow",
+      "en": "then, in that case"
+    },
+    {
+      "is": "þurfa",
+      "baca": "THÜR-vah",
+      "en": "to need"
+    },
+    {
+      "is": "hjálp",
+      "baca": "hyowlp",
+      "en": "help"
+    },
+    {
+      "is": "jú",
+      "baca": "yoo",
+      "en": "yes (contradicting a negative)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Make these sentences negative by putting *ekki* in the right place.",
+      "items": [
+        "Ég tala þýsku.",
+        "Hún er hér.",
+        "Við búum í Jakarta.",
+        "Þú ert kennari.",
+        "Ég skil þig.",
+        "Þau eru að læra."
+      ]
+    },
+    {
+      "prompt": "Translate into Icelandic.",
+      "items": [
+        "Where are you from?",
+        "I live in Reykjavík.",
+        "I don't speak German.",
+        "I'm learning Icelandic.",
+        "What are you doing?",
+        "What languages do you speak?"
+      ]
+    },
+    {
+      "prompt": "Fill in the right language or nationality.",
+      "items": [
+        "Anna er frá Íslandi. Hún er ____.",
+        "Hann er frá Danmörku. Hann talar ____.",
+        "Ég er frá Indónesíu. Ég tala ____.",
+        "Þeir eru frá Þýskalandi. Þeir tala ____.",
+        "Hún er frá Frakklandi. Hún er ____."
+      ]
+    },
+    {
+      "prompt": "Change to the \"-ing\" form with *er að*.",
+      "items": [
+        "Ég læri íslensku.",
+        "Þú lest bók.",
+        "Hún talar í símann.",
+        "Við borðum.",
+        "Þeir vinna."
+      ]
+    }
+  ],
+  "answers": [
+    "Ég tala ekki þýsku. — Hún er ekki hér. — Við búum ekki í Jakarta. — Þú ert ekki kennari. — Ég skil þig ekki. — Þau eru ekki að læra.",
+    "Hvaðan ertu? — Ég bý í Reykjavík. — Ég tala ekki þýsku. — Ég er að læra íslensku. — Hvað ertu að gera? — Hvaða mál talar þú?",
+    "Íslendingur — dönsku — indónesísku — þýsku — Frakki",
+    "Ég er að læra íslensku. — Þú ert að lesa bók. — Hún er að tala í símann. — Við erum að borða. — Þeir eru að vinna."
+  ]
+}

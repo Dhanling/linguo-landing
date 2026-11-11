@@ -1,0 +1,547 @@
+{
+  "title": "At the café",
+  "title_target": "V kaviarni",
+  "goal": "Order drinks and food, and set up the first of the six cases: the accusative — the form a noun takes when it is the target of an action.",
+  "bekal": [
+    "order in three ways: *prosím si*, *dám si*, and *chcel by som*",
+    "put any noun into the accusative — including knowing when it doesn't change at all",
+    "use the object pronouns *ma, ťa, ho, ju*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Objednávka",
+      "intro": "Eva and Budi walk into a café in Staré Mesto, Bratislava. The waiter comes over.",
+      "lines": [
+        {
+          "speaker": "Čašník:",
+          "text": "Dobrý deň! Prosím?",
+          "id": "Good afternoon! What can I get you?",
+          "literal": "good-m day! I-ask?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Dobrý deň. Prosím si jednu kávu.",
+          "id": "Good afternoon. I'd like a coffee, please.",
+          "literal": "good-m day. I-ask self one-acc coffee-acc."
+        },
+        {
+          "speaker": "Čašník:",
+          "text": "Veľkú alebo malú?",
+          "id": "A large one or a small one?",
+          "literal": "large-acc or small-acc?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Veľkú, prosím. A pohár vody.",
+          "id": "A large one, please. And a glass of water.",
+          "literal": "large-acc, I-ask. and glass water-gen."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja si dám jedno pivo a jeden koláč.",
+          "id": "I'll have a beer and a cake.",
+          "literal": "I self I-will-give one-n beer and one-m cake."
+        },
+        {
+          "speaker": "Čašník:",
+          "text": "Aké pivo si dáte?",
+          "id": "Which beer would you like?",
+          "literal": "what-kind-n beer self you-will-give?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Neviem. Čo odporúčate?",
+          "id": "I don't know. What do you recommend?",
+          "literal": "not-I-know. what you-recommend?"
+        },
+        {
+          "speaker": "Čašník:",
+          "text": "Máme Šariš a Zlatý Bažant. Oba sú dobré.",
+          "id": "We have Šariš and Zlatý Bažant. Both are good.",
+          "literal": "we-have Šariš and Zlatý Bažant. both they-are good-pl."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tak Zlatý Bažant, prosím.",
+          "id": "Zlatý Bažant, then, please.",
+          "literal": "so Zlatý Bažant, I-ask."
+        },
+        {
+          "speaker": "Čašník:",
+          "text": "Hneď to bude. Ešte niečo?",
+          "id": "Coming right up. Anything else?",
+          "literal": "right-away it will-be. still something?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Nie, ďakujeme. To je všetko.",
+          "id": "No, thank you. That's all.",
+          "literal": "no, we-thank. that is all."
+        }
+      ],
+      "notes": [
+        "**Prosím si and dám si — two ways to order, both with *si*.** The little word means \"for oneself\", so *dám si pivo* is literally \"I'll give myself a beer\". Slovaks almost always add it when ordering; leaving it out makes your sentence sound like a command.",
+        "**Kávu, not káva.** This is the accusative, the heart of this unit. Feminine nouns ending in *-a* change to *-u* when they are the target: *káva → kávu*, *voda → vodu*, *polievka → polievku*. It's the ending you'll need most in everyday life, and the quickest to feel natural.",
+        "**Pivo and koláč don't change.** Neuter nouns never change in the accusative, and neither do masculine nouns for **things**. So of the six groups of nouns, three ask nothing of you in this case. Good news that grammar books rarely mention.",
+        "**Pohár vody uses yet another form** — the genitive, for the contents of a container: \"a glass of water\". Just like *šálka kávy* (a cup of coffee) and *fľaša vína* (a bottle of wine). The form is set out in unit 9; for now learn it as a chunk.",
+        "**Jednu, jedno, jeden.** The number one behaves exactly like an adjective: it follows gender **and** case. *Jeden koláč* (m), *jedno pivo* (n), *jednu kávu* (f, accusative). Numbers from two up are far more relaxed, and they're covered in unit 5."
+      ],
+      "grammars": [
+        {
+          "title": "The accusative — the first of six cases",
+          "body": [
+            "The accusative is the form a noun takes when it is the **direct target** of an action: what you order, see, buy, or have. Its questions are *koho?* (whom) and *čo?* (what).",
+            "The full rule fits in one table, and half its rows demand no change at all."
+          ],
+          "table": {
+            "head": [
+              "Noun type",
+              "Ending",
+              "Nominative",
+              "Accusative"
+            ],
+            "rows": [
+              [
+                "**m animate**",
+                "**-a**",
+                "*brat, muž, učiteľ*",
+                "*Mám brat**a**. Vidím muž**a**.*"
+              ],
+              [
+                "**m inanimate**",
+                "**no change**",
+                "*stôl, chlieb, koláč*",
+                "*Vidím stôl. Mám chlieb.*"
+              ],
+              [
+                "**f ending in -a**",
+                "**-u**",
+                "*káva, voda, kniha*",
+                "*Prosím si káv**u**. Mám knih**u**.*"
+              ],
+              [
+                "**f soft letter**",
+                "**no change**",
+                "*posteľ, dlaň*",
+                "*Mám posteľ.*"
+              ],
+              [
+                "**n**",
+                "**no change**",
+                "*pivo, mesto, auto*",
+                "*Dám si pivo. Vidím mesto.*"
+              ]
+            ]
+          },
+          "after": [
+            "**The adjective changes along with its noun.** The endings: m animate **-ého** (*vidím dobrého učiteľa*), m inanimate **-ý** unchanged (*vidím veľký stôl*), f **-ú** (*prosím si veľkú kávu*), n **-é** unchanged (*dám si dobré pivo*).",
+            "**Why are male living beings different?** Because Slovak needs to tell who does what to whom, while its word order is very free. *Brat vidí otca* and *Otca vidí brat* both mean \"the brother sees the father\" — the ending decides, not the order. With things that confusion rarely arises, so the language doesn't bother.",
+            "**Verbs that take the accusative** are the ones with a target: *mať* (to have), *vidieť* (to see), *kupovať* (to buy), *prosiť si* (to ask for), *dať si* (to order), *hľadať* (to look for), *poznať* (to know someone), *piť* (to drink), *jesť* (to eat), *čítať* (to read), *písať* (to write)."
+          ]
+        },
+        {
+          "title": "Pronouns as objects",
+          "body": [
+            "When the target is a person, the pronoun also has its own accusative form. Most are very short, and like *som* and *sa*, they are never stressed."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Short object",
+              "Long object",
+              "Example"
+            ],
+            "rows": [
+              [
+                "ja",
+                "**ma**",
+                "mňa",
+                "*Vidíš ma?* — Can you see me?"
+              ],
+              [
+                "ty",
+                "**ťa**",
+                "teba",
+                "*Vidím ťa.* — I see you."
+              ],
+              [
+                "on",
+                "**ho**",
+                "jeho",
+                "*Poznám ho.* — I know him."
+              ],
+              [
+                "ona",
+                "**ju**",
+                "ňu",
+                "*Poznám ju.* — I know her."
+              ],
+              [
+                "ono",
+                "**ho**",
+                "—",
+                "*Mám ho.*"
+              ],
+              [
+                "my",
+                "**nás**",
+                "nás",
+                "*Vidí nás.* — He sees us."
+              ],
+              [
+                "vy",
+                "**vás**",
+                "vás",
+                "*Poznám vás.* — I know you."
+              ],
+              [
+                "oni",
+                "**ich**",
+                "ich",
+                "*Vidím ich.* — I see them."
+              ]
+            ]
+          },
+          "after": [
+            "**The short form is used almost always**, and it takes **second place** in the sentence, right after the first word: *Ja ťa vidím*, *Zajtra ťa vidím*, *Vidím ťa*. It never stands at the start of a sentence.",
+            "**The long form is used only for emphasis** or after a preposition: *Mňa nevidíš?* (\"You don't see **me**?\"), *pre teba* (for you), *bez neho* (without him).",
+            "When two short words come in a row, the order is fixed: *som/si* first, then *sa/si*, then the object. *Videl som ťa* = \"I saw you (yesterday)\". The order becomes automatic once your ear is used to it, and until then, copy whole sentences."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Drinks and snacks",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**káva** (f)",
+              "KAH-vah",
+              "coffee"
+            ],
+            [
+              "**čaj** (m)",
+              "chai",
+              "tea"
+            ],
+            [
+              "**voda** (f)",
+              "VOH-dah",
+              "water"
+            ],
+            [
+              "**minerálka** (f)",
+              "MEE-neh-rahl-kah",
+              "sparkling mineral water"
+            ],
+            [
+              "**pivo** (n)",
+              "PEE-voh",
+              "beer"
+            ],
+            [
+              "**víno** (n)",
+              "VEE-noh",
+              "wine"
+            ],
+            [
+              "**džús** (m)",
+              "joos",
+              "juice"
+            ],
+            [
+              "**mlieko** (n)",
+              "MLYEH-koh",
+              "milk"
+            ],
+            [
+              "**chlieb** (m)",
+              "khlyehp",
+              "bread"
+            ],
+            [
+              "**zmrzlina** (f)",
+              "ZMRZ-lee-nah",
+              "ice cream"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Coffee in Slovakia",
+          "items": [
+            "*Presso* or *espresso* = espresso. *Kapucíno* = cappuccino. *Viedenská káva* = coffee with whipped cream, a Viennese legacy that's still alive.",
+            "If you just order *káva*, you'll usually get a small espresso. For a longer coffee, ask for *veľká káva* or *lungo*.",
+            "*Turecká káva* still survives in old-style bars: ground coffee brewed right in the cup, unfiltered — strong, thick, and worth trying once."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at *zmrzlina*: a cluster of consonants up front, with no vowel letter until the second syllable. It's said *ZMRZ-lee-nah* — let the *r* carry the syllable. Slovak children learn to say it before most other words, because the reward is worth it."
+        }
+      ]
+    },
+    {
+      "title": "Three ways to order, from casual to most polite",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Tone",
+            "Literally"
+          ],
+          "rows": [
+            [
+              "**Dám si kávu.**",
+              "casual, most common",
+              "I-will-give self coffee"
+            ],
+            [
+              "**Prosím si kávu.**",
+              "polite, neutral — the safest",
+              "I-ask self coffee"
+            ],
+            [
+              "**Chcel by som kávu.**",
+              "very polite (man speaking)",
+              "I-wanted would I coffee"
+            ],
+            [
+              "**Chcela by som kávu.**",
+              "very polite (woman speaking)",
+              "I-wanted-f would I coffee"
+            ],
+            [
+              "**Môžem poprosiť kávu?**",
+              "very polite, as a question",
+              "may-I ask-for coffee?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Prosím si** is the safest choice for beginners: polite without sounding stiff, and used by Slovaks themselves all day long. **Chcel/chcela by som** is the conditional — notice that it follows the gender of **the speaker**, not the listener. This is the only place in A1 where you have to know your own gender to choose a word."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "More café phrases",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Ešte jedno pivo, prosím.*",
+              "One more beer, please."
+            ],
+            [
+              "*Máte jedálny lístok?*",
+              "Do you have a menu?"
+            ],
+            [
+              "*Čo odporúčate?*",
+              "What do you recommend?"
+            ],
+            [
+              "*Je to ostré?*",
+              "Is it spicy?"
+            ],
+            [
+              "*Som vegetarián / vegetariánka.*",
+              "I'm a vegetarian."
+            ],
+            [
+              "*Nejem bravčové mäso.*",
+              "I don't eat pork."
+            ],
+            [
+              "*Účet, prosím.* / *Zaplatím, prosím.*",
+              "The bill, please. / I'd like to pay."
+            ],
+            [
+              "*Môžem platiť kartou?*",
+              "Can I pay by card?"
+            ],
+            [
+              "*Dobrú chuť!*",
+              "Enjoy your meal!"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two table customs worth knowing",
+          "items": [
+            "**Dobrú chuť** is said before eating, by anyone to anyone at the table — including the waiter to the guests. The reply is *ďakujem, navzájom* (\"thank you, same to you\").",
+            "**Tips** are given by naming the rounded total as you pay, not by leaving money on the table. If the bill is €8.60 and you hand over ten euros saying *deväť* (nine), the waiter gives you one euro back and the rest is the tip. Usually five to ten percent."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 2",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Slovak column, read the English, and rebuild the sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "Where are you from? — I'm from Indonesia.",
+              "*Odkiaľ si? — Som z Indonézie.*"
+            ],
+            [
+              "Now I live in Bratislava.",
+              "*Teraz bývam v Bratislave.*"
+            ],
+            [
+              "I don't speak well yet.",
+              "*Ešte nehovorím dobre.*"
+            ],
+            [
+              "What languages do you speak?",
+              "*Aké jazyky vieš?*"
+            ],
+            [
+              "Never mind.",
+              "*Nevadí.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "kaviareň",
+      "baca": "KAH-vyah-rehny",
+      "en": "café (f)"
+    },
+    {
+      "sk": "čašník / čašníčka",
+      "baca": "CHAHSH-neek / -neech-kah",
+      "en": "waiter / waitress (m / f)"
+    },
+    {
+      "sk": "prosiť si",
+      "baca": "PROH-seet see",
+      "en": "to ask for (when ordering)"
+    },
+    {
+      "sk": "dať si",
+      "baca": "daht see",
+      "en": "to have, to order (for oneself)"
+    },
+    {
+      "sk": "chcieť",
+      "baca": "khtsyeht",
+      "en": "to want"
+    },
+    {
+      "sk": "piť",
+      "baca": "peet",
+      "en": "to drink"
+    },
+    {
+      "sk": "jesť",
+      "baca": "yehst",
+      "en": "to eat"
+    },
+    {
+      "sk": "vidieť",
+      "baca": "VEE-dyeht",
+      "en": "to see"
+    },
+    {
+      "sk": "poznať",
+      "baca": "POHZ-naht",
+      "en": "to know (someone)"
+    },
+    {
+      "sk": "odporúčať",
+      "baca": "OHT-poh-roo-chaht",
+      "en": "to recommend"
+    },
+    {
+      "sk": "platiť",
+      "baca": "PLAH-tyeet",
+      "en": "to pay"
+    },
+    {
+      "sk": "alebo",
+      "baca": "AH-leh-boh",
+      "en": "or"
+    },
+    {
+      "sk": "tak",
+      "baca": "tahk",
+      "en": "so; then"
+    },
+    {
+      "sk": "hneď",
+      "baca": "hnyehd",
+      "en": "right away"
+    },
+    {
+      "sk": "potom",
+      "baca": "POH-tohm",
+      "en": "then; afterwards"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Slovak.",
+      "items": [
+        "Good afternoon. I'd like a coffee, please.",
+        "A large one or a small one?",
+        "I'll have a beer and a cake.",
+        "What do you recommend?",
+        "The bill, please.",
+        "Can I pay by card?"
+      ]
+    },
+    {
+      "prompt": "Put into the accusative.",
+      "items": [
+        "Prosím si ____ . (káva)",
+        "Dám si ____ . (pivo)",
+        "Mám ____ . (brat)",
+        "Vidím ____ . (stôl)",
+        "Čítam ____ . (kniha)",
+        "Poznám ____ . (učiteľ)",
+        "Kupujem ____ . (chlieb)",
+        "Pijem ____ . (voda)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "kávu / si / prosím / jednu",
+        "pivo / dám / jedno / si",
+        "odporúčate / čo / ?",
+        "prosím / účet / ,",
+        "je / to / všetko"
+      ]
+    }
+  ],
+  "answers": [
+    "Dobrý deň. Prosím si jednu kávu. — Veľkú alebo malú? — Dám si jedno pivo a jeden koláč. — Čo odporúčate? — Účet, prosím. — Môžem platiť kartou?",
+    "kávu — pivo — brata — stôl — knihu — učiteľa — chlieb — vodu",
+    "Prosím si jednu kávu. — Dám si jedno pivo. — Čo odporúčate? — Účet, prosím. — To je všetko."
+  ]
+}

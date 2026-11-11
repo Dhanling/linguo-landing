@@ -1,0 +1,604 @@
+{
+  "title": "What time is it?",
+  "title_target": "Koľko je hodín?",
+  "goal": "Tell the time and the day, make arrangements, and face the one point that trips up almost every beginner: *pol siedmej* means \"half to seven\", and that's 6:30.",
+  "bekal": [
+    "tell the time in two ways: the official style and the conversational style",
+    "use *o* + an ordinal form to say \"at what time\"",
+    "name the days and say when something happens"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kedy sa stretneme?",
+      "intro": "Eva and Budi arrange to go to the cinema.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Budi, nechceš ísť v piatok do kina?",
+          "id": "Budi, do you want to go to the cinema on Friday?",
+          "literal": "Budi, not-you-want to-go on Friday to cinema-gen?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Rád. O koľkej?",
+          "id": "I'd love to. What time?",
+          "literal": "gladly. at how-many-loc?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Film začína o pol ôsmej.",
+          "id": "The film starts at half past seven.",
+          "literal": "film it-starts at half eighth-loc."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "O pol ôsmej? To je o siedmej tridsať?",
+          "id": "\"Half eight\"? Does that mean seven thirty?",
+          "literal": "at half eighth-loc? that is at seventh-loc thirty?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Presne tak. Sedem tridsať.",
+          "id": "Exactly. Seven thirty.",
+          "literal": "exactly so. seven thirty."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aha. U nás pol ôsmej znamená osem tridsať.",
+          "id": "Oh. Where I'm from, \"half eight\" means eight thirty.",
+          "literal": "aha. at us half eighth-loc it-means eight thirty."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Naozaj? To je dobré vedieť!",
+          "id": "Really? That's good to know!",
+          "literal": "really? that is good to-know!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dobre. Kedy sa stretneme?",
+          "id": "OK. When shall we meet?",
+          "literal": "good. when self we-will-meet?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "O štvrť na osem pred kinom. Stačí?",
+          "id": "At a quarter past seven in front of the cinema. All right?",
+          "literal": "at quarter toward eight in-front-of cinema-ins. enough?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Stačí. Ale ja väčšinou chodím neskoro.",
+          "id": "All right. But I'm usually late.",
+          "literal": "enough. but I mostly I-come late."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Tak príď o sedem. Budem čakať.",
+          "id": "Then come at seven. I'll be waiting.",
+          "literal": "so come at seventh-loc. I-will-be waiting."
+        }
+      ],
+      "notes": [
+        "**Pol ôsmej = 7:30, not 8:30.** This is the point that makes people miss appointments in Slovakia most often. Slovak counts **toward** the next hour: *pol ôsmej* literally means \"half of the eighth\" — halfway on the way to eight o'clock. German and Hungarian do the same; English doesn't.",
+        "**English speakers, beware.** In British English \"half eight\" means 8:30 — the opposite direction. Slovak *pol ôsmej* is 7:30. If you think in \"half past\", translate the Slovak in your head as \"half **to**\" eight.",
+        "**Štvrť na osem = 7:15.** Literally \"a quarter toward eight\" — counting forward again. And *trištvrte na osem* = 7:45, \"three quarters toward eight\". All three forms (*štvrť na*, *pol*, *trištvrte na*) count toward the next hour, no exceptions.",
+        "**O koľkej?** = \"at what time?\" The form *koľkej* is feminine locative, because the dropped word *hodina* (hour) is feminine. Every way of saying the time uses the feminine for the same reason.",
+        "**V piatok takes the accusative, not the locative.** Odd, since *v* usually wants the locative — but for days, Slovak uses the accusative: *v pondelok, v stredu, v sobotu*. Ten seconds to learn, and it lasts a lifetime."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time — two styles",
+          "body": [
+            "Slovak has an official style (train timetables, the news, doctor's appointments) and a conversational style. The first is easy; the second is the one that needs practice."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Official style",
+              "Conversational style"
+            ],
+            "rows": [
+              [
+                "7:00",
+                "*sedem hodín*",
+                "*sedem*"
+              ],
+              [
+                "7:15",
+                "*sedem pätnásť*",
+                "*štvrť na osem*"
+              ],
+              [
+                "7:30",
+                "*sedem tridsať*",
+                "*pol ôsmej*"
+              ],
+              [
+                "7:45",
+                "*sedem štyridsaťpäť*",
+                "*trištvrte na osem*"
+              ],
+              [
+                "7:10",
+                "*sedem desať*",
+                "*desať po siedmej*"
+              ],
+              [
+                "7:50",
+                "*sedem päťdesiat*",
+                "*desať minút do ôsmej*"
+              ],
+              [
+                "13:00",
+                "*trinásť hodín*",
+                "*jedna* (afternoon)"
+              ],
+              [
+                "20:00",
+                "*dvadsať hodín*",
+                "*osem* (evening)"
+              ]
+            ]
+          },
+          "after": [
+            "**The official style uses the 24-hour clock and plain numbers** — just like a digital display. When in doubt, use this: it's always correct and never misunderstood.",
+            "**The conversational style uses the 12-hour clock** and relies on ordinal forms (\"the seventh\", \"the eighth\"). This is what you'll hear from friends, and what you need to recognize even before you dare to use it.",
+            "**There are two questions**: *Koľko je hodín?* (what time is it now) and *O koľkej?* (at what time does something happen). Don't mix them up — the first asks the time, the second asks for a schedule."
+          ]
+        },
+        {
+          "title": "O + ordinal: at what time",
+          "body": [
+            "To say \"at … o'clock\", Slovak uses *o* followed by a feminine ordinal in the locative. It sounds complicated; the table covers everything."
+          ],
+          "table": {
+            "head": [
+              "Hour",
+              "o + …",
+              "Say it",
+              "Half to it"
+            ],
+            "rows": [
+              [
+                "1",
+                "*o jednej*",
+                "oh YEHD-nay",
+                "*pol druhej* = 1:30"
+              ],
+              [
+                "2",
+                "*o druhej*",
+                "oh DROO-hay",
+                "*pol tretej* = 2:30"
+              ],
+              [
+                "3",
+                "*o tretej*",
+                "oh TREH-tyay",
+                "*pol štvrtej* = 3:30"
+              ],
+              [
+                "4",
+                "*o štvrtej*",
+                "oh SHTVR-tay",
+                "*pol piatej* = 4:30"
+              ],
+              [
+                "5",
+                "*o piatej*",
+                "oh PYAH-tay",
+                "*pol šiestej* = 5:30"
+              ],
+              [
+                "6",
+                "*o šiestej*",
+                "oh SHYEHS-tay",
+                "*pol siedmej* = 6:30"
+              ],
+              [
+                "7",
+                "*o siedmej*",
+                "oh SYEHD-may",
+                "*pol ôsmej* = 7:30"
+              ],
+              [
+                "8",
+                "*o ôsmej*",
+                "oh WOHS-may",
+                "*pol deviatej* = 8:30"
+              ],
+              [
+                "9",
+                "*o deviatej*",
+                "oh DEH-vyah-tay",
+                "*pol desiatej* = 9:30"
+              ],
+              [
+                "10",
+                "*o desiatej*",
+                "oh DEH-syah-tay",
+                "*pol jedenástej* = 10:30"
+              ],
+              [
+                "11",
+                "*o jedenástej*",
+                "oh YEH-deh-nahs-tay",
+                "*pol dvanástej* = 11:30"
+              ],
+              [
+                "12",
+                "*o dvanástej*",
+                "oh DVAH-nahs-tay",
+                "*pol jednej* = 12:30"
+              ]
+            ]
+          },
+          "after": [
+            "**They all end in *-ej*** because they're all feminine locative. Once you see that pattern, you only need to learn the stems: *jedn-, druh-, tret-, štvrt-, piat-, šiest-, siedm-, ôsm-, deviat-, desiat-*.",
+            "**The last column is where the trap is.** *Pol* always pairs with the **next** hour. To say half past six (6:30), you have to say **seven**: *pol siedmej*. Read that column aloud a few times; it won't feel natural until you do.",
+            "**Morning or evening?** Add *ráno*, *popoludní*, *večer*, or *v noci*: *o siedmej ráno* (7 a.m.), *o siedmej večer* (7 p.m.). In everyday speech people often drop it when the context makes it clear."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Days, months, and seasons",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Day",
+            "Say it",
+            "On that day",
+            "What the root means"
+          ],
+          "rows": [
+            [
+              "**pondelok**",
+              "POHN-dyeh-lohk",
+              "*v pondelok*",
+              "\"after the no-work day\""
+            ],
+            [
+              "**utorok**",
+              "OO-toh-rohk",
+              "*v utorok*",
+              "\"the second\""
+            ],
+            [
+              "**streda**",
+              "STREH-dah",
+              "*v stredu*",
+              "\"middle\" — midweek"
+            ],
+            [
+              "**štvrtok**",
+              "SHTVR-tohk",
+              "*vo štvrtok*",
+              "\"the fourth\""
+            ],
+            [
+              "**piatok**",
+              "PYAH-tohk",
+              "*v piatok*",
+              "\"the fifth\""
+            ],
+            [
+              "**sobota**",
+              "SOH-boh-tah",
+              "*v sobotu*",
+              "from \"Sabbath\""
+            ],
+            [
+              "**nedeľa**",
+              "NEH-dyeh-lyah",
+              "*v nedeľu*",
+              "\"the day without work\""
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last column isn't just a story: it makes all seven almost unnecessary to memorize. The Slovak week **starts on Monday**, so *utorok* is the second day, *streda* is in the middle, *štvrtok* the fourth, *piatok* the fifth. And *nedeľa* — from *ne-delať*, \"not working\" — explains why *pondelok* means \"after nedeľa\"."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Month",
+            "Say it",
+            "Month",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "**január**",
+              "YAH-noo-ahr",
+              "**júl**",
+              "yool"
+            ],
+            [
+              "**február**",
+              "FEHB-roo-ahr",
+              "**august**",
+              "OW-goost"
+            ],
+            [
+              "**marec**",
+              "MAH-rehts",
+              "**september**",
+              "SEHP-tehm-behr"
+            ],
+            [
+              "**apríl**",
+              "AHP-reel",
+              "**október**",
+              "OHK-toh-behr"
+            ],
+            [
+              "**máj**",
+              "mai",
+              "**november**",
+              "NOH-vehm-behr"
+            ],
+            [
+              "**jún**",
+              "yoon",
+              "**december**",
+              "DEH-tsehm-behr"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The Slovak month names are borrowed from Latin, so you already know them all. That's unlike Czech and Polish, which use native Slavic month names (*leden, únor* in Czech) that have to be learned one by one. A small gift from history."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Season",
+            "Say it",
+            "In that season"
+          ],
+          "rows": [
+            [
+              "**jar** (f)",
+              "yahr",
+              "*na jar* — in spring"
+            ],
+            [
+              "**leto** (n)",
+              "LEH-toh",
+              "*v lete* — in summer"
+            ],
+            [
+              "**jeseň** (f)",
+              "YEH-sehny",
+              "*na jeseň* — in autumn"
+            ],
+            [
+              "**zima** (f)",
+              "ZEE-mah",
+              "*v zime* — in winter"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Zima* means winter **and** cold: *Je mi zima* = \"I'm cold\". Likewise *leto* — summer and, in old-fashioned counting, a year. Notice that two seasons take *na* and two take *v*; this is pure habit and has to be learned in pairs."
+        }
+      ]
+    },
+    {
+      "title": "Making arrangements",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Koľko je hodín?*",
+              "What time is it?"
+            ],
+            [
+              "*O koľkej?*",
+              "What time? (schedule)"
+            ],
+            [
+              "*Kedy sa stretneme?*",
+              "When shall we meet?"
+            ],
+            [
+              "*Kedy máš čas?*",
+              "When are you free?"
+            ],
+            [
+              "*Máš čas v piatok?*",
+              "Are you free on Friday?"
+            ],
+            [
+              "*Hodí sa ti to?*",
+              "Does that suit you?"
+            ],
+            [
+              "*Stačí.* / *Platí!*",
+              "That works. / Deal!"
+            ],
+            [
+              "*Bohužiaľ nemôžem.*",
+              "Unfortunately I can't."
+            ],
+            [
+              "*Mám iný program.*",
+              "I have other plans."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Punctuality in Slovakia",
+          "items": [
+            "Social arrangements are kept to within five minutes. Arriving fifteen minutes late without warning is considered rude, and arriving at someone's home **early** is even worse — the host may not be ready.",
+            "If you're running late, send a message: *Meškám desať minút, prepáč.* That one sentence settles the whole thing.",
+            "For official appointments — the doctor, an office, an interview — arrive five minutes early. Counters in Slovakia really do close at the time written on the door."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 6",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "Where is the post office?",
+              "*Kde je pošta?*"
+            ],
+            [
+              "Go straight on and then turn left.",
+              "*Choďte rovno a potom doľava.*"
+            ],
+            [
+              "I work in town.",
+              "*Pracujem v meste.*"
+            ],
+            [
+              "I live in Slovakia.",
+              "*Bývam na Slovensku.*"
+            ],
+            [
+              "Is it far?",
+              "*Je to ďaleko?*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "hodina",
+      "baca": "HOH-dyee-nah",
+      "en": "hour; lesson (f)"
+    },
+    {
+      "sk": "minúta",
+      "baca": "MEE-noo-tah",
+      "en": "minute (f)"
+    },
+    {
+      "sk": "čas",
+      "baca": "chahs",
+      "en": "time (m)"
+    },
+    {
+      "sk": "kedy",
+      "baca": "KEH-dee",
+      "en": "when"
+    },
+    {
+      "sk": "pol",
+      "baca": "pohl",
+      "en": "half"
+    },
+    {
+      "sk": "štvrť",
+      "baca": "shtvrt",
+      "en": "quarter"
+    },
+    {
+      "sk": "deň",
+      "baca": "dehny",
+      "en": "day (m)"
+    },
+    {
+      "sk": "kino",
+      "baca": "KEE-noh",
+      "en": "cinema (n)"
+    },
+    {
+      "sk": "začínať",
+      "baca": "ZAH-chee-naht",
+      "en": "to begin"
+    },
+    {
+      "sk": "končiť",
+      "baca": "KOHN-cheet",
+      "en": "to end"
+    },
+    {
+      "sk": "stretnúť sa",
+      "baca": "STREHT-noot sah",
+      "en": "to meet"
+    },
+    {
+      "sk": "čakať",
+      "baca": "CHAH-kaht",
+      "en": "to wait"
+    },
+    {
+      "sk": "prísť",
+      "baca": "preest",
+      "en": "to come"
+    },
+    {
+      "sk": "meškať",
+      "baca": "MEHSH-kaht",
+      "en": "to be late"
+    },
+    {
+      "sk": "neskoro",
+      "baca": "NEHS-koh-roh",
+      "en": "late"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Slovak.",
+      "items": [
+        "What time is it?",
+        "The film starts at half past seven.",
+        "When shall we meet?",
+        "Are you free on Friday?",
+        "I'm five minutes late.",
+        "Unfortunately I can't."
+      ]
+    },
+    {
+      "prompt": "Write the time in the conversational style.",
+      "items": [
+        "5:00 = o ____",
+        "7:30 = ____",
+        "9:15 = ____",
+        "12:00 = o ____",
+        "3:30 = ____",
+        "10:45 = ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "hodín / koľko / je / ?",
+        "ôsmej / o / začína / film / pol",
+        "stretneme / kedy / sa / ?",
+        "čas / máš / piatok / v / ?",
+        "minút / meškám / päť"
+      ]
+    }
+  ],
+  "answers": [
+    "Koľko je hodín? — Film začína o pol ôsmej. — Kedy sa stretneme? — Máš čas v piatok? — Meškám päť minút. — Bohužiaľ nemôžem.",
+    "piatej — pol ôsmej — štvrť na desať — dvanástej — pol štvrtej — trištvrte na jedenásť",
+    "Koľko je hodín? — Film začína o pol ôsmej. — Kedy sa stretneme? — Máš čas v piatok? — Meškám päť minút."
+  ]
+}

@@ -1,0 +1,558 @@
+{
+  "title": "The two of us — dvojina",
+  "title_target": "Midva sva dva",
+  "goal": "Install Slovenian's most distinctive feature: the form for EXACTLY TWO. After this unit you won't be able to mention two people without pausing to count — and that's precisely the point.",
+  "bekal": [
+    "use *midva/midve*, *vidva/vidve*, *onadva/onidve* with their verbs",
+    "choose *-va* or *-ve* according to the pair's gender, and know why the masculine always wins",
+    "put nouns into the dual: *brat* → *brata*, *sestra* → *sestri*, *okno* → *okni*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Zakaj \"greva\", ne \"gremo\"?",
+      "intro": "Outside the lecture building. Maja arrives with her friend Eva. Budi gets a grammar lesson he didn't ask for.",
+      "lines": [
+        {
+          "speaker": "Maja:",
+          "text": "Živjo, Budi! To je Eva. Midve sva sošolki.",
+          "id": "Hi, Budi! This is Eva. We're classmates.",
+          "literal": "hi, Budi! this is Eva. we-two-f are classmates-two-f."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Me veseli, Eva. Vidve sta iz Ljubljane?",
+          "id": "Nice to meet you, Eva. Are you two from Ljubljana?",
+          "literal": "me pleases, Eva. you-two-f are from Ljubljana?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Jaz sem iz Ljubljane, Maja pa iz Kopra.",
+          "id": "I'm from Ljubljana, and Maja's from Koper.",
+          "literal": "I am from Ljubljana, Maja but from Koper."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aha. In kaj delata danes?",
+          "id": "I see. And what are you two doing today?",
+          "literal": "aha. and what you-two-do today?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Greva na kavo. Greš z nama?",
+          "id": "We're going for coffee. Want to come with us?",
+          "literal": "we-two-go to coffee. you-go with us-two?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Z veseljem! Ampak zakaj \"greva\", ne \"gremo\"?",
+          "id": "Gladly! But why \"greva\" and not \"gremo\"?",
+          "literal": "with joy! but why \"we-two-go\", not \"we-go\"?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ker sva dve. Za tri je \"gremo\".",
+          "id": "Because we're two. For three it's \"gremo\".",
+          "literal": "because we-two-are two-f. for three is \"we-go\"."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "In če grem zraven, smo trije?",
+          "id": "So if I come along, we're three?",
+          "literal": "and if I-go along, we-are three-m?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Točno. Dvojine ni več.",
+          "id": "Exactly. The dual is gone.",
+          "literal": "exactly. of-dual is-not anymore."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Torej dvojina umre, ko pride tretji.",
+          "id": "So the dual dies as soon as a third person arrives.",
+          "literal": "so dual dies, when comes third."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Zato je tako romantična. Gremo!",
+          "id": "That's why it's so romantic. Let's go!",
+          "literal": "therefore is so romantic. we-go!"
+        }
+      ],
+      "notes": [
+        "**Midve, not midva — because both are women.** Slovenian sorts pairs by gender: **midve** when both are women, **midva** for everything else. \"Everything else\" means two men *and also* one man with one woman. In a mixed pair the masculine form wins — the same rule holds across the Slavic languages, and Slovenians themselves have long joked about it.",
+        "**Dvojina is not a style choice.** Saying *mi smo* for two people isn't \"a bit sloppy\", it's wrong — like saying \"all three of us\" while pointing at two people. So every time you're about to mention more than one person, Slovenian makes you **count first**. That habit is what this unit is really about.",
+        "**The nouns change too, not just the verbs.** Look at *sošolki* in the first line: it's not *sošolka* (one) or *sošolke* (three or more), but the dual form. The same happens with adjectives: *lepa hiša* (one beautiful house), *lepi hiši* (two beautiful houses), *lepe hiše* (three or more beautiful houses).",
+        "**Z nama = \"with the two of us\".** Dual pronouns have their own form for each case, and *nama* is one of them. Don't memorize the table now; memorize the three chunks you'll use most: *z nama* (with us two), *z vama* (with you two), *naju* (us two, as the object).",
+        "**Trije, not tri.** Even numbers have gender in Slovenian: *trije* for masculine, *tri* for feminine and things. Likewise *dva* versus *dve*. The number system is taken apart fully in unit 5; for now, just know that Slovenian numbers aren't entirely neutral."
+      ],
+      "grammars": [
+        {
+          "title": "Dvojina — three lanes, not two",
+          "body": [
+            "This is the table that sets Slovenian apart from some seven thousand other languages. The middle column is what English, most European languages, and every Slavic language lack — except for Slovenian's little cousin in eastern Germany."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "One (ednina)",
+              "Two (dvojina)",
+              "Three or more (množina)"
+            ],
+            "rows": [
+              [
+                "I / we",
+                "**jaz sem**",
+                "**midva sva** / midve sva",
+                "**mi smo** / me smo"
+              ],
+              [
+                "you / you all",
+                "**ti si**",
+                "**vidva sta** / vidve sta",
+                "**vi ste** / ve ste"
+              ],
+              [
+                "he, she / they",
+                "**on je** / ona je",
+                "**onadva sta** / onidve sta",
+                "**oni so** / one so"
+              ],
+              [
+                "go",
+                "**grem**",
+                "**greva**",
+                "**gremo**"
+              ],
+              [
+                "speak",
+                "**govorim**",
+                "**govoriva**",
+                "**govorimo**"
+              ],
+              [
+                "work",
+                "**delam**",
+                "**delava**",
+                "**delamo**"
+              ],
+              [
+                "have",
+                "**imam**",
+                "**imava**",
+                "**imamo**"
+              ],
+              [
+                "know",
+                "**vem**",
+                "**veva**",
+                "**vemo**"
+              ]
+            ]
+          },
+          "after": [
+            "The sound rule is very simple: **swap the plural ending *-mo* for *-va***, and you have the dual form for \"we two\". For \"you two\" and \"they two\", swap *-te* or *-jo* for **-ta**.",
+            "Since *vidva* and *onadva* share the same verb form (*sta*, *govorita*, *delata*), you really only need to learn **two** new endings: *-va* and *-ta*. That's the whole cost of the dual in verbs."
+          ]
+        },
+        {
+          "title": "Nouns in the dual",
+          "body": [
+            "Nouns have their own form for two as well. This table uses all three Slovenian noun genders at once — masculine, feminine, and neuter — which get taken apart fully in unit 4."
+          ],
+          "table": {
+            "head": [
+              "Type",
+              "One",
+              "Two",
+              "Three or more"
+            ],
+            "rows": [
+              [
+                "masculine",
+                "*brat* (brother)",
+                "**brata**",
+                "*bratje*"
+              ],
+              [
+                "masculine",
+                "*prijatelj* (friend)",
+                "**prijatelja**",
+                "*prijatelji*"
+              ],
+              [
+                "feminine",
+                "*sestra* (sister)",
+                "**sestri**",
+                "*sestre*"
+              ],
+              [
+                "feminine",
+                "*knjiga* (book)",
+                "**knjigi**",
+                "*knjige*"
+              ],
+              [
+                "neuter",
+                "*okno* (window)",
+                "**okni**",
+                "*okna*"
+              ],
+              [
+                "neuter",
+                "*mesto* (city)",
+                "**mesti**",
+                "*mesta*"
+              ]
+            ]
+          },
+          "after": [
+            "The pattern: masculine words add **-a**, feminine and neuter words add **-i**. Three lines to memorize, and most A1 nouns are covered.",
+            "Watch out for one neat trap: *brata* can mean \"two brothers\" (dual) **or** \"of a brother\" (Genitive singular, like *iz Maribora*). The forms are twins. Only the sentence tells them apart — *Imam brata* = \"I have a brother\", while *Brata sta doma* = \"The two brothers are at home\". The verb gives away which one is meant."
+          ]
+        },
+        {
+          "title": "Oba in obe — \"both\"",
+          "body": [
+            "A word that lives only inside the dual, and one you'll need often once you start talking about two people."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Say it",
+              "Used for",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**oba**",
+                "OH-bah",
+                "two men, or mixed",
+                "*Oba sta doma.* — Both are at home."
+              ],
+              [
+                "**obe**",
+                "OH-bay",
+                "two women or two things",
+                "*Obe sestri sta študentki.* — Both sisters are students."
+              ],
+              [
+                "**dva**",
+                "dvah",
+                "number two, masculine",
+                "*dva brata* — two brothers"
+              ],
+              [
+                "**dve**",
+                "dvay",
+                "number two, feminine/neuter",
+                "*dve sestri* — two sisters"
+              ]
+            ]
+          },
+          "after": [
+            "*Oba* and *obe* are used just like English \"both\", but they pull in a dual verb: *Oba sta* — not *Oba so*.",
+            "If you want to stress that two people do something **together**, add *skupaj*: *Greva skupaj* = \"We're going together\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Družina — family",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Family is where the dual shows up most in everyday conversation — there are two parents, two pairs of grandparents, and a couple is, by definition, two."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**družina**",
+              "droo-ZHEE-nah",
+              "family"
+            ],
+            [
+              "**mama**",
+              "MAH-mah",
+              "mother"
+            ],
+            [
+              "**oče**",
+              "AW-chay",
+              "father"
+            ],
+            [
+              "**starši**",
+              "STAHR-shee",
+              "parents (always plural)"
+            ],
+            [
+              "**brat**",
+              "braht",
+              "brother"
+            ],
+            [
+              "**sestra**",
+              "SAYS-trah",
+              "sister"
+            ],
+            [
+              "**sin**",
+              "seen",
+              "son"
+            ],
+            [
+              "**hči**",
+              "hchee",
+              "daughter"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at **starši** (parents): it has no singular and no dual form — it's always plural, even though there are clearly two people. Slovenian treats them as one group, not a pair. If you want to stress both of them, use *oba starša*."
+        },
+        {
+          "type": "p",
+          "text": "Note too that, like English, Slovenian doesn't have separate everyday words for older and younger siblings. *Brat* means brother, whatever his age. If you need to be precise: *starejši brat* (older brother), *mlajši brat* (younger brother)."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Imam brata in sestro.*",
+              "EE-mahm BRAH-tah een SAYS-troh",
+              "I have a brother and a sister."
+            ],
+            [
+              "*Imam dva brata.*",
+              "EE-mahm dvah BRAH-tah",
+              "I have two brothers."
+            ],
+            [
+              "*Imam dve sestri.*",
+              "EE-mahm dvay SAYS-tree",
+              "I have two sisters."
+            ],
+            [
+              "*Nimam bratov.*",
+              "NEE-mahm BRAH-tohw",
+              "I don't have any brothers."
+            ],
+            [
+              "*Moja starša sta doma.*",
+              "MOH-yah STAHR-shah stah DAW-mah",
+              "Both my parents are at home."
+            ],
+            [
+              "*Sva poročena.*",
+              "svah poh-roh-CHAY-nah",
+              "The two of us are married."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Why Slovenians are proud of the dual",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "In Slovenia the dual isn't just a grammar footnote; it's part of how people tell the story of who they are. T-shirts, greeting cards, and tourism posters use it as a national in-joke, and the joke is always the same: their language has a special form for **a pair**."
+        },
+        {
+          "type": "p",
+          "text": "The sentence *Midva sva* — two words — already announces that exactly two people are speaking, no more and no less. English needs *the two of us*. Slovenian has already settled it in the verb ending."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Midva sva par.*",
+              "MEED-vah svah pahr",
+              "We're a couple."
+            ],
+            [
+              "*Se vidiva!*",
+              "suh VEE-dee-vah",
+              "See you! (to one person)"
+            ],
+            [
+              "*Se slišiva!*",
+              "suh SLEE-shee-vah",
+              "Talk to you later!"
+            ],
+            [
+              "*Greva na pijačo?*",
+              "GRAY-vah nah pee-YAH-choh",
+              "Shall we two go for a drink?"
+            ],
+            [
+              "*Kaj delata?*",
+              "kai DAY-lah-tah",
+              "What are you two up to?"
+            ],
+            [
+              "*Sta brat in sestra.*",
+              "stah braht een SAYS-trah",
+              "They're brother and sister."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at *Se vidiva* and *Se slišiva*: the two most common goodbyes in Slovenia, and both are dual — because the people parting are two, you and the person you're talking to. If you say goodbye to three friends at once, they become *Se vidimo* and *Se slišimo*."
+        },
+        {
+          "type": "kotak",
+          "title": "A habit to install now",
+          "items": [
+            "Before mentioning more than one person, stop for half a second and **count**. Two? Use *-va* or *-ta*. Three or more? Only then *-mo*, *-te*, *-jo*.",
+            "That half second feels awkward for two weeks, then it disappears. After that you choose the form without noticing — and from then on, Slovenians stop hearing the most glaring mistake foreigners make."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "midva",
+      "baca": "MEED-vah",
+      "en": "we two (at least one male)"
+    },
+    {
+      "sl": "midve",
+      "baca": "MEED-vay",
+      "en": "we two (both female)"
+    },
+    {
+      "sl": "vidva",
+      "baca": "VEED-vah",
+      "en": "you two"
+    },
+    {
+      "sl": "onadva",
+      "baca": "oh-NAHD-vah",
+      "en": "they two"
+    },
+    {
+      "sl": "oba",
+      "baca": "OH-bah",
+      "en": "both (m / mixed)"
+    },
+    {
+      "sl": "obe",
+      "baca": "OH-bay",
+      "en": "both (f / things)"
+    },
+    {
+      "sl": "dva",
+      "baca": "dvah",
+      "en": "two (m)"
+    },
+    {
+      "sl": "dve",
+      "baca": "dvay",
+      "en": "two (f / n)"
+    },
+    {
+      "sl": "iti",
+      "baca": "EE-tee",
+      "en": "to go"
+    },
+    {
+      "sl": "grem",
+      "baca": "graym",
+      "en": "I go"
+    },
+    {
+      "sl": "delati",
+      "baca": "DAY-lah-tee",
+      "en": "to work; to do"
+    },
+    {
+      "sl": "imeti",
+      "baca": "ee-MAY-tee",
+      "en": "to have"
+    },
+    {
+      "sl": "sošolka",
+      "baca": "soh-SHAWOO-kah",
+      "en": "classmate (f)"
+    },
+    {
+      "sl": "družina",
+      "baca": "droo-ZHEE-nah",
+      "en": "family"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change into the dual (dvojina).",
+      "items": [
+        "Mi smo iz Ljubljane. (two people, at least one male)",
+        "Oni govorijo slovensko. (two people)",
+        "Vi ste sošolci. (two people)",
+        "Me smo študentke. (two women)",
+        "Gremo na kavo. (two people)",
+        "Imamo dva brata. (two people)"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the noun form asked for.",
+      "items": [
+        "Imam dva ____. (brat)",
+        "Imam dve ____. (sestra)",
+        "Na mizi sta dve ____. (knjiga)",
+        "V hiši sta dve ____. (okno)",
+        "Onadva sta dobra ____. (prijatelj)",
+        "____ sta doma. (oba, starš)"
+      ]
+    },
+    {
+      "prompt": "Translate into Slovenian.",
+      "items": [
+        "The two of us are from Indonesia.",
+        "Are you two classmates?",
+        "The two of them speak Slovenian.",
+        "I have two sisters.",
+        "Both my parents are at home.",
+        "See you! (to one person)"
+      ]
+    },
+    {
+      "prompt": "Wave review — unit 1. Translate into Slovenian without looking back at the unit.",
+      "items": [
+        "Good morning! What's your name?",
+        "My name is Maja.",
+        "How are you?",
+        "Fine, thanks.",
+        "I'm not Slovenian. (said by a man)"
+      ]
+    }
+  ],
+  "answers": [
+    "Midva sva iz Ljubljane. — Onadva govorita slovensko. — Vidva sta sošolca. — Midve sva študentki. — Greva na kavo. — Imava dva brata.",
+    "brata — sestri — knjigi — okni — prijatelja — Oba starša",
+    "Midva sva iz Indonezije. — Vidva sta sošolca? — Onadva govorita slovensko. — Imam dve sestri. — Moja starša sta doma. — Se vidiva!",
+    "Dobro jutro! Kako ti je ime? — Ime mi je Maja. — Kako si? — Hvala, dobro sem. — Nisem Slovenec."
+  ]
+}

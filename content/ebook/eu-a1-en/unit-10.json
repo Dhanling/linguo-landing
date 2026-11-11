@@ -1,0 +1,611 @@
+{
+  "title": "What are you doing right now?",
+  "title_target": "Zer ari zara egiten?",
+  "goal": "Say what's happening right now with ari izan, make phone calls, and talk about how you feel with egon.",
+  "bekal": [
+    "build \"-ing\" sentences with *-t(z)en ari naiz* and make them negative",
+    "tell a habit (*ikasten dut*) from something in progress (*ikasten ari naiz*)",
+    "handle a phone call: answer, ask how someone is, and hang up"
+  ],
+  "dialogs": [
+    {
+      "title": "Elkarrizketa — Telefonoz",
+      "intro": "Saturday, midday. Budi calls Maite from the euskaltegi library.",
+      "lines": [
+        {
+          "speaker": "Maite:",
+          "text": "Bai? Nor da?",
+          "id": "Hello? Who's this?",
+          "literal": "yes? who is?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kaixo Maite, Budi naiz. Zer ari zara egiten?",
+          "id": "Hi Maite, it's Budi. What are you doing?",
+          "literal": "hello Maite, Budi am. what busy are doing?"
+        },
+        {
+          "speaker": "Maite:",
+          "text": "Bazkaria prestatzen ari naiz. Eta zu?",
+          "id": "I'm making lunch. And you?",
+          "literal": "lunch-the preparing busy am. and you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Euskaltegian nago, ikasten ari naiz.",
+          "id": "I'm at the euskaltegi, studying.",
+          "literal": "euskaltegi-at am(located), studying busy am."
+        },
+        {
+          "speaker": "Maite:",
+          "text": "Larunbatean ere ikasten?! Deskantsatu behar duzu!",
+          "id": "Studying on a Saturday too?! You need a break!",
+          "literal": "Saturday-on also studying?! rest need you-have-it!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Badakit... baina azterketa hurbil dago.",
+          "id": "I know... but the exam is coming up.",
+          "literal": "yes-I-know-it... but exam-the near is(located)."
+        },
+        {
+          "speaker": "Maite:",
+          "text": "Entzun: gaur eguraldi ederra dago. Eguzkia ateratzen ari da.",
+          "id": "Listen: the weather's lovely today. The sun's coming out.",
+          "literal": "listen: today weather beautiful-the is(located). sun-the coming-out busy is."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Egia da. Kanpora joan nahi duzu?",
+          "id": "That's true. Do you want to go out?",
+          "literal": "truth-the is. outside-to go want you-have-it?"
+        },
+        {
+          "speaker": "Maite:",
+          "text": "Bai! Lagunak parkean daude, futbolean ari dira.",
+          "id": "Yes! Our friends are in the park, playing soccer.",
+          "literal": "friend-the(pl) park-in are(located), soccer-in busy are."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ondo, banoa. Ordu erdi barru han naiz.",
+          "id": "OK, I'm on my way. I'll be there in half an hour.",
+          "literal": "fine, yes-I-go. hour half within there am."
+        },
+        {
+          "speaker": "Maite:",
+          "text": "Ez iritsi berandu! Zain gaude.",
+          "id": "Don't be late! We're waiting.",
+          "literal": "not arrive late! waiting are(located)-we."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Lasai, korrika noa. Gero arte!",
+          "id": "Relax, I'll run. See you!",
+          "literal": "calm, running I-go. later until!"
+        }
+      ],
+      "notes": [
+        "**Ari naiz always takes izan, even when the verb has an object.** Here's a pleasant surprise: *euskara ikasten **dut*** (a habit, with *ukan*) but *euskara ikasten ari **naiz*** (in progress, with *izan*). As soon as *ari* comes in, the whole sentence switches to *izan*, and the doer's hat *-k* disappears too: just *ni*, not *nik*.",
+        "**Banoa and noa — verbs that stand without an auxiliary.** A handful of Basque verbs have short forms that need no auxiliary at all: *noa* (I'm going), *zoaz* (you're going), *doa* (he/she's going). The prefix *ba-* adds emphasis: *banoa* = \"I'm on my way\". These are called synthetic verbs; there are only a few, and all of them are very common.",
+        "**Futbolean ari dira — ari works with activities too.** Besides the *-t(z)en* form, *ari izan* can attach directly to the name of an activity with the ending *-an*: *futbolean ari dira* (they're playing soccer), *lanean ari naiz* (I'm working), *jolasean ari dira* (they're playing).",
+        "**Zain gaude — waiting is a state.** Literally \"we are in a state of waiting\". Basque uses *egon* + a state word a lot: *zain egon* (to be waiting), *lanpetuta egon* (to be busy), *pozik egon* (to be happy). The third section of this unit collects the most common ones."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Ari izan: what's in progress",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The formula fits on one line: **verb in the -t(z)en form + ari + izan**. No doer's hat, no *ukan* auxiliary, whether or not the verb has an object."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Person",
+            "Form",
+            "Example",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ni",
+              "**ari naiz**",
+              "Ikasten ari naiz.",
+              "I'm studying."
+            ],
+            [
+              "zu",
+              "**ari zara**",
+              "Zer ari zara egiten?",
+              "What are you doing?"
+            ],
+            [
+              "hura",
+              "**ari da**",
+              "Euria ari du.*",
+              "It's raining."
+            ],
+            [
+              "gu",
+              "**ari gara**",
+              "Jaten ari gara.",
+              "We're eating."
+            ],
+            [
+              "zuek",
+              "**ari zarete**",
+              "Lanean ari zarete?",
+              "Are you all working?"
+            ],
+            [
+              "haiek",
+              "**ari dira**",
+              "Futbolean ari dira.",
+              "They're playing soccer."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*The weather row is a famous exception: rain and snow take *du*, not *da* — *euria ari du*, *elurra ari du*. Basque treats the sky as an unnamed doer. Weather is covered fully in Unit 19."
+        },
+        {
+          "type": "sub",
+          "text": "Habit or right now? Compare"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Habit",
+            "In progress",
+            "The difference"
+          ],
+          "rows": [
+            [
+              "Euskara ikasten dut.",
+              "Euskara ikasten ari naiz.",
+              "every day / right now"
+            ],
+            [
+              "Kafea edaten dut.",
+              "Kafea edaten ari naiz.",
+              "usually / cup in hand"
+            ],
+            [
+              "Bilbon lan egiten dut.",
+              "Lanean ari naiz.",
+              "my job / busy working"
+            ],
+            [
+              "Ez dut telebistarik ikusten.",
+              "Ez naiz telebista ikusten ari.",
+              "never / not at the moment"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Typical mistakes of English speakers",
+          "items": [
+            "Using *ari* for habits or longer periods. English says \"I'm studying Basque this year\"; Basque doesn't use *ari* that way. *Egunero ikasten **ari naiz*** sounds odd — use *egunero ikasten dut*.",
+            "Keeping the doer's hat: ***Nik ikasten ari naiz*** is wrong. The right form is *Ni ikasten ari naiz*, or just *Ikasten ari naiz*.",
+            "Forgetting that the verb stays in the *-t(z)en* form: *jan ari naiz* is wrong; the right form is *ja**ten** ari naiz*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Phone calls and messages",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Bai? / Esan!",
+              "BAH-ee / eh-SAHN",
+              "Hello? (answering the phone)"
+            ],
+            [
+              "Nor da?",
+              "NOHR dah",
+              "Who's this?"
+            ],
+            [
+              "… naiz.",
+              "NAH-ees",
+              "It's …"
+            ],
+            [
+              "Maiterekin hitz egin nahi dut.",
+              "MAH-ee-teh-reh-keen",
+              "I'd like to speak to Maite."
+            ],
+            [
+              "Momentu bat, mesedez.",
+              "moh-MEHN-too baht",
+              "One moment, please."
+            ],
+            [
+              "Ez dago hemen.",
+              "ehs DAH-goh EH-mehn",
+              "She's not here."
+            ],
+            [
+              "Gero deituko dizut.",
+              "GEH-roh deh-ee-TOO-koh",
+              "I'll call you back later."
+            ],
+            [
+              "Ez zaitut ondo entzuten.",
+              "ehs SAH-ee-toot",
+              "I can't hear you well."
+            ],
+            [
+              "Mezu bat bidali dizut.",
+              "MEH-soo baht bee-DAH-lee",
+              "I've sent you a message."
+            ],
+            [
+              "Gero arte!",
+              "GEH-roh AHR-teh",
+              "See you later!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that Basques answer the phone with *bai?* (\"yes?\") or *esan!* (\"go ahead!\", literally \"say!\"), not with \"hello\". It may sound very short to an English ear, but that's simply the custom — and it isn't rude at all."
+        },
+        {
+          "type": "kotak",
+          "title": "Words you'll see on your phone screen",
+          "items": [
+            "*deitu* (call), *mezua* (message), *bidali* (send), *jaso* (receive), *erantzun* (reply).",
+            "*Sarea* (network), *bateria* (battery), *kargatu* (charge), *deskargatu* (download).",
+            "Common texting abbreviations: *eskerrik asko* → *eskrk*, *gero arte* → *g.a.*, *musu bat* (\"a kiss\", the usual sign-off between friends)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Egon: states and feelings",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "*Egon* means \"to be (somewhere or in some state)\" — both in a place and in a condition. Its forms need memorizing, and it stands on its own with no auxiliary."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Person",
+            "Form",
+            "Say it",
+            "Example"
+          ],
+          "rows": [
+            [
+              "ni",
+              "**nago**",
+              "NAH-goh",
+              "Nekatuta nago."
+            ],
+            [
+              "zu",
+              "**zaude**",
+              "SAH-oo-deh",
+              "Non zaude?"
+            ],
+            [
+              "hura",
+              "**dago**",
+              "DAH-goh",
+              "Bilbon dago."
+            ],
+            [
+              "gu",
+              "**gaude**",
+              "GAH-oo-deh",
+              "Zain gaude."
+            ],
+            [
+              "zuek",
+              "**zaudete**",
+              "sah-oo-DEH-teh",
+              "Pozik zaudete?"
+            ],
+            [
+              "haiek",
+              "**daude**",
+              "DAH-oo-deh",
+              "Parkean daude."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "The most common states"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "English",
+            "Euskara",
+            "English"
+          ],
+          "rows": [
+            [
+              "pozik",
+              "happy",
+              "triste",
+              "sad"
+            ],
+            [
+              "nekatuta",
+              "tired",
+              "gaixorik",
+              "sick, ill"
+            ],
+            [
+              "lanpetuta",
+              "busy",
+              "libre",
+              "free"
+            ],
+            [
+              "haserre",
+              "angry",
+              "lasai",
+              "calm"
+            ],
+            [
+              "urduri",
+              "nervous",
+              "aspertuta",
+              "bored"
+            ],
+            [
+              "gose",
+              "hungry",
+              "egarri",
+              "thirsty"
+            ],
+            [
+              "zain",
+              "waiting",
+              "prest",
+              "ready"
+            ],
+            [
+              "galduta",
+              "lost",
+              "beldurtuta",
+              "scared"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Gose naiz or gose nago?",
+          "items": [
+            "You'll hear both in the street, and both are understood. *Gose naiz* is more standard and more common in books; *gose nago* is also widely used in conversation.",
+            "With states ending in *-ta* and *-rik* (*nekatuta*, *gaixorik*, *galduta*), **always** use *egon*: *nekatuta **nago***, not *naiz*.",
+            "For permanent traits, **always** use *izan*: *Alaia **naiz*** (I'm a cheerful person) is different from *Pozik **nago*** (I'm happy right now)."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "eu": "ari izan",
+      "baca": "AH-ree",
+      "en": "to be (doing), in progress"
+    },
+    {
+      "eu": "prestatu",
+      "baca": "prehs-TAH-too",
+      "en": "to prepare"
+    },
+    {
+      "eu": "deitu",
+      "baca": "DEH-ee-too",
+      "en": "to call, to phone"
+    },
+    {
+      "eu": "mezu",
+      "baca": "MEH-soo",
+      "en": "message"
+    },
+    {
+      "eu": "bidali",
+      "baca": "bee-DAH-lee",
+      "en": "to send"
+    },
+    {
+      "eu": "erantzun",
+      "baca": "eh-rahn-TSOON",
+      "en": "to answer, to reply"
+    },
+    {
+      "eu": "entzun",
+      "baca": "ehn-TSOON",
+      "en": "to hear, to listen"
+    },
+    {
+      "eu": "azterketa",
+      "baca": "ahs-tehr-KEH-tah",
+      "en": "exam"
+    },
+    {
+      "eu": "hurbil",
+      "baca": "OOR-beel",
+      "en": "near"
+    },
+    {
+      "eu": "kanpo",
+      "baca": "KAHN-poh",
+      "en": "outside"
+    },
+    {
+      "eu": "parke",
+      "baca": "PAHR-keh",
+      "en": "park"
+    },
+    {
+      "eu": "futbol",
+      "baca": "FOOT-bohl",
+      "en": "soccer, football"
+    },
+    {
+      "eu": "korrika",
+      "baca": "koh-RREE-kah",
+      "en": "running"
+    },
+    {
+      "eu": "zain egon",
+      "baca": "SAH-een",
+      "en": "to be waiting"
+    },
+    {
+      "eu": "pozik",
+      "baca": "POH-seek",
+      "en": "happy"
+    },
+    {
+      "eu": "triste",
+      "baca": "TREES-teh",
+      "en": "sad"
+    },
+    {
+      "eu": "haserre",
+      "baca": "ah-SEH-rreh",
+      "en": "angry"
+    },
+    {
+      "eu": "urduri",
+      "baca": "oor-DOO-ree",
+      "en": "nervous"
+    },
+    {
+      "eu": "lanpetuta",
+      "baca": "lahn-peh-TOO-tah",
+      "en": "busy"
+    },
+    {
+      "eu": "aspertuta",
+      "baca": "ahs-pehr-TOO-tah",
+      "en": "bored"
+    },
+    {
+      "eu": "gaixorik",
+      "baca": "gah-ee-SHOH-reek",
+      "en": "sick, ill"
+    },
+    {
+      "eu": "egarri",
+      "baca": "eh-GAH-rree",
+      "en": "thirsty"
+    },
+    {
+      "eu": "galduta",
+      "baca": "gahl-DOO-tah",
+      "en": "lost"
+    },
+    {
+      "eu": "eguraldi",
+      "baca": "eh-goo-RAHL-dee",
+      "en": "weather"
+    },
+    {
+      "eu": "eguzki",
+      "baca": "eh-GOOS-kee",
+      "en": "sun"
+    },
+    {
+      "eu": "euria",
+      "baca": "eh-OO-ree-ah",
+      "en": "rain"
+    },
+    {
+      "eu": "egia",
+      "baca": "eh-GEE-ah",
+      "en": "true; truth"
+    },
+    {
+      "eu": "barru",
+      "baca": "BAH-rroo",
+      "en": "inside; in (time)"
+    },
+    {
+      "eu": "momentu",
+      "baca": "moh-MEHN-too",
+      "en": "moment"
+    },
+    {
+      "eu": "eder",
+      "baca": "eh-DEHR",
+      "en": "beautiful"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change to the \"in progress\" form with *ari*.",
+      "items": [
+        "Euskara ikasten dut.",
+        "Kafea edaten du.",
+        "Telebista ikusten dute.",
+        "Bazkaria prestatzen dugu.",
+        "Liburua irakurtzen duzu.",
+        "Lan egiten dut."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right form of *egon* (nago, zaude, dago, gaude, zaudete, daude).",
+      "items": [
+        "Ni nekatuta ____.",
+        "Non ____ zu?",
+        "Maite parkean ____.",
+        "Gu zain ____.",
+        "Zuek pozik ____?",
+        "Lagunak tabernan ____."
+      ]
+    },
+    {
+      "prompt": "Translate into Basque.",
+      "items": [
+        "What are you doing?",
+        "I'm studying euskara.",
+        "Hello? Who's this?",
+        "I'm tired.",
+        "They're playing soccer.",
+        "One moment, please."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "naiz / ikasten / ari",
+        "zara / zer / egiten / ari / ?",
+        "dira / futbolean / ari / lagunak",
+        "nago / nekatuta / oso",
+        "gaude / zain / hemen",
+        "da / ateratzen / eguzkia / ari"
+      ]
+    }
+  ],
+  "answers": [
+    "Euskara ikasten ari naiz. — Kafea edaten ari da. — Telebista ikusten ari dira. — Bazkaria prestatzen ari gara. — Liburua irakurtzen ari zara. — Lanean ari naiz.",
+    "nago — zaude — dago — gaude — zaudete — daude",
+    "Zer ari zara egiten? — Euskara ikasten ari naiz. — Bai? Nor da? — Nekatuta nago. — Futbolean ari dira. — Momentu bat, mesedez.",
+    "Ikasten ari naiz. — Zer ari zara egiten? — Lagunak futbolean ari dira. — Oso nekatuta nago. — Hemen zain gaude. — Eguzkia ateratzen ari da."
+  ]
+}

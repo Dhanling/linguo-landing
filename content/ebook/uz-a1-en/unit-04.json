@@ -1,0 +1,598 @@
+{
+  "title": "Where is it? The ending -da and the missing verb \"to have\"",
+  "title_target": "Qayerda? -da qoʻshimchasi va \"bor\"",
+  "goal": "Say where things are with the ending *-da*, use *bor* and *yoʻq*, and express ownership as \"there is … at me\" — because Uzbek has no verb \"to have\" at all.",
+  "bekal": [
+    "ask *Qayerda?* and answer with *-da*",
+    "use *bor* / *yoʻq* to say something is there or isn't",
+    "say \"I have\" as *Menda … bor* — literally \"at me … there is\""
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Chorsu bozori qayerda?",
+      "intro": "Budi is lost near Tashkent's old town. He walks up to an older man sitting in front of his shop.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Kechirasiz, aka. Chorsu bozori qayerda?",
+          "id": "Excuse me, sir. Where's Chorsu Bazaar?",
+          "literal": "sorry, brother. Chorsu bazaar-its where?"
+        },
+        {
+          "speaker": "Aka:",
+          "text": "Bozor bu yerdan uzoq emas. Metro bekati yonida.",
+          "id": "The bazaar isn't far from here. It's next to the metro station.",
+          "literal": "bazaar this place-from far not. metro stop-its side-its-at."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Metro bekati qayerda?",
+          "id": "Where's the metro station?",
+          "literal": "metro stop-its where?"
+        },
+        {
+          "speaker": "Aka:",
+          "text": "Anavi katta masjid oldida. Koʻring, gumbazi koʻk.",
+          "id": "In front of that big mosque. Look, its dome is blue.",
+          "literal": "that-over-there big mosque front-its-at. look, dome-its blue."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tushundim. Yaqinda bank bormi?",
+          "id": "I see. Is there a bank near here?",
+          "literal": "understand-I. near-at bank there-is-?"
+        },
+        {
+          "speaker": "Aka:",
+          "text": "Ha, bor. Bozorning ichida bank ham bor, dorixona ham.",
+          "id": "Yes, there is. Inside the bazaar there's a bank, and a pharmacy too.",
+          "literal": "yes, there-is. bazaar-of inside-its-at bank also there-is, pharmacy also."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Rahmat! Sizda telefon raqami bormi?",
+          "id": "Thank you! Do you have a phone number?",
+          "literal": "thanks! you-at phone number-its there-is-?"
+        },
+        {
+          "speaker": "Aka:",
+          "text": "Menda telefon bor, lekin raqamim yodimda yoʻq.",
+          "id": "I have a phone, but I don't remember my number.",
+          "literal": "me-at phone there-is, but number-my memory-my-in there-isn't."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Muammo yoʻq. Bu yerda doʻkoningiz bormi?",
+          "id": "No problem. Is your shop here?",
+          "literal": "problem there-isn't. this place-at shop-your there-is-?"
+        },
+        {
+          "speaker": "Aka:",
+          "text": "Ha, mana — eshik yonida. Choy bor, marhamat!",
+          "id": "Yes, there it is — next to the door. There's tea, please come in!",
+          "literal": "yes, here — door side-its-at. tea there-is, please!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Katta rahmat, aka. Siz juda mehribonsiz.",
+          "id": "Thank you so much, sir. You're very kind.",
+          "literal": "big thanks, brother. you very kind-you-are."
+        }
+      ],
+      "notes": [
+        "**Chorsu bozori, not \"bozor Chorsu\".** When two nouns are joined — Chorsu Bazaar, metro station, phone number — the **second** one gets the ending *-i*: *bozor**i***, *bekat**i***, *raqam**i***. Like English \"Chorsu Bazaar\", the name comes first; the extra *-i* is the only new part.",
+        "**Place words attach after the thing.** *Yon* (side) → *yonida* (at its side), *old* (front) → *oldida*, *ich* (inside) → *ichida*. These are all nouns with the possessive *-i* and the locative *-da* — not prepositions.",
+        "**Anavi = \"that one over there\".** A pointing word that's farther and more emphatic than *u*. It's often used while pointing with your chin or hand. Its counterpart is *manavi* (\"this one right here\").",
+        "**Yodimda yoʻq = \"it's not in my memory\".** Uzbek treats memory as a place: *yodimda bor* (I remember), *yodimda yoʻq* (I've forgotten). The same way of thinking comes back in unit 17 for pain.",
+        "**Mehribonsiz = \"you are kind\".** The predicate ending from unit 1 is already at work here. *Mehribon* comes from Persian: *mehr* (love, kindness) + *bon* (keeper) — literally \"keeper of kindness\"."
+      ],
+      "grammars": [
+        {
+          "title": "-da: one ending for \"in\", \"at\", and \"on\"",
+          "body": [
+            "The first of six endings that do the job of English prepositions. Its form **never changes** — whatever the vowels in the word, it's always *-da*."
+          ],
+          "table": {
+            "head": [
+              "Base word",
+              "With -da",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*uy* (rumah)",
+                "*uy**da***",
+                "uy-DÅ",
+                "at home"
+              ],
+              [
+                "*bozor* (pasar)",
+                "*bozor**da***",
+                "bå-zår-DÅ",
+                "at the bazaar"
+              ],
+              [
+                "*xona* (kamar)",
+                "*xona**da***",
+                "khå-nå-DÅ",
+                "in the room"
+              ],
+              [
+                "*Toshkent*",
+                "*Toshkent**da***",
+                "tåsh-kent-DÅ",
+                "in Tashkent"
+              ],
+              [
+                "*men* (I)",
+                "*men**da***",
+                "men-DÅ",
+                "at me, with me"
+              ],
+              [
+                "*stol* (table)",
+                "*stol**da***",
+                "stål-DÅ",
+                "on the table"
+              ]
+            ]
+          },
+          "after": [
+            "If the noun already has a possessive ending, *-da* comes **last**: *xona-m-da* (in my room), *uy-ingiz-da* (at your house), *qishloq-lar-i-da* (in their villages). The order is fixed: **noun → plural → possessive → place**.",
+            "The question word is *qayerda* — literally \"what-place-at\". One word with *-da* is enough to answer: *Qayerdasiz?* — *Uydaman.* (Where are you? — I'm at home.)",
+            "For \"on the table\" and similar phrases, there are two layers: **[thing]-ning [position]-i-da**. *stolning ustida* (on top of the table), *uyning oldida* (in front of the house), *bozorning ichida* (inside the bazaar). It looks long, but the shape is always the same."
+          ]
+        },
+        {
+          "title": "Bor, yoʻq, and owning disguised as \"being there\"",
+          "body": [
+            "Uzbek has no verb \"to have\" — not because it's missing something, but because it chose another route. Owning something is expressed as that thing being located somewhere, and that \"somewhere\" is the owner."
+          ],
+          "table": {
+            "head": [
+              "Uzbek sentence",
+              "Literally",
+              "What it means"
+            ],
+            "rows": [
+              [
+                "*Menda pul bor.*",
+                "at-me money there-is",
+                "I have money."
+              ],
+              [
+                "*Sizda vaqt bormi?*",
+                "at-you time there-is-?",
+                "Do you have time?"
+              ],
+              [
+                "*Unda mashina yoʻq.*",
+                "at-him car there-isn't",
+                "He doesn't have a car."
+              ],
+              [
+                "*Bizda muammo yoʻq.*",
+                "at-us problem there-isn't",
+                "We don't have any problems."
+              ],
+              [
+                "*Mening akam bor.*",
+                "my older-brother-my there-is",
+                "I have an older brother."
+              ],
+              [
+                "*Xonada stol yoʻq.*",
+                "room-in table there-isn't",
+                "There's no table in the room."
+              ]
+            ]
+          },
+          "after": [
+            "Look at the last two rows: for **things you can carry** you use *[person]-da … bor*, but for **family, body parts, and things that are part of you** you just use the possessive ending: *akam bor*, *vaqtim bor*, *ishim bor*. The line is loose, and Uzbeks themselves use both.",
+            "*Bor* and *yoʻq* are adjectives, not verbs — so they can take the unit 1 endings directly: *Men bu yerdaman* (I'm here), *Bormisiz?* (Are you there?), *Yoʻqman* (I'm not here / I'm not available).",
+            "⚠️ Don't mix up *yoʻq* and *emas*. *Yoʻq* = there isn't; *emas* = is not. *Kitob yoʻq* (there's no book) is different from *Bu kitob emas* (this isn't a book)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Places in town",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Say each word twice: once bare, once with *-da*. *Bozor — bozorda. Bank — bankda.* Ten seconds per word, and the locative ending stops being theory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**bozor**",
+              "bå-ZÅR",
+              "bazaar, market"
+            ],
+            [
+              "**doʻkon**",
+              "do-KÅN",
+              "shop"
+            ],
+            [
+              "**magazin**",
+              "må-gå-ZIN",
+              "shop, convenience store"
+            ],
+            [
+              "**restoran**",
+              "res-tå-RAN",
+              "restaurant"
+            ],
+            [
+              "**choyxona**",
+              "chåy-khå-NÅ",
+              "teahouse"
+            ],
+            [
+              "**mehmonxona**",
+              "meh-mån-khå-NÅ",
+              "hotel"
+            ],
+            [
+              "**kasalxona**",
+              "kå-sål-khå-NÅ",
+              "hospital"
+            ],
+            [
+              "**dorixona**",
+              "då-ri-khå-NÅ",
+              "pharmacy"
+            ],
+            [
+              "**bank**",
+              "bånk",
+              "bank"
+            ],
+            [
+              "**pochta**",
+              "PÅCH-tå",
+              "post office"
+            ],
+            [
+              "**bekat**",
+              "be-KAT",
+              "stop, station"
+            ],
+            [
+              "**koʻcha**",
+              "ko-CHÅ",
+              "street"
+            ],
+            [
+              "**maydon**",
+              "måy-DÅN",
+              "square"
+            ],
+            [
+              "**masjid**",
+              "mås-JID",
+              "mosque"
+            ],
+            [
+              "**muzey**",
+              "mu-ZEY",
+              "museum"
+            ],
+            [
+              "**universitet**",
+              "u-ni-ver-si-TET",
+              "university"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the ending **-xona**: it means \"house, place\" and comes from Persian (*khāna*). *Choy* + *xona* = tea place. *Kasal* (sick) + *xona* = hospital. *Mehmon* (guest) + *xona* = guest place, hotel. Once you know this, a dozen new words open up on their own: *oshxona* (kitchen, canteen), *kutubxona* (library), *yotoqxona* (dormitory)."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Doʻkon* (shop) comes from the Arabic *dukkān* (stall), and the same word turned into *dükkân* in Turkish and *dukan* in Hindi-Urdu. If you've ever haggled in a Middle Eastern market, it may already sound familiar."
+        }
+      ]
+    },
+    {
+      "title": "Showing position: eight words are enough",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "They all use the same pattern: **[thing]-ning [position]-ida**."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kata dasar",
+            "Form in use",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "*ust*",
+              "**ustida**",
+              "on, on top of",
+              "*stolning ustida* = on the table"
+            ],
+            [
+              "*tag* / *ost*",
+              "**tagida**",
+              "under",
+              "*stolning tagida*"
+            ],
+            [
+              "*ich*",
+              "**ichida**",
+              "inside",
+              "*sumkaning ichida*"
+            ],
+            [
+              "*old*",
+              "**oldida**",
+              "in front of",
+              "*uyning oldida*"
+            ],
+            [
+              "*orqa*",
+              "**orqasida**",
+              "behind",
+              "*bankning orqasida*"
+            ],
+            [
+              "*yon*",
+              "**yonida**",
+              "next to",
+              "*masjid yonida*"
+            ],
+            [
+              "*oʻrta*",
+              "**oʻrtasida**",
+              "in the middle of",
+              "*maydonning oʻrtasida*"
+            ],
+            [
+              "*roʻpara*",
+              "**roʻparasida**",
+              "opposite",
+              "*bekatning roʻparasida*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "In fast speech, *-ning* is often dropped: *masjid yonida* sounds just as correct as *masjidning yonida*. What you **can't** drop is the *-i-da* ending on the position word."
+        },
+        {
+          "type": "p",
+          "text": "Two distance words round it off: *yaqin* (near) and *uzoq* (far). *Bu yerdan uzoq emas* = not far from here. *Bozor yaqin* = the bazaar is close."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uz": "qayerda",
+      "baca": "qå-YER-då",
+      "en": "where"
+    },
+    {
+      "uz": "bu yerda",
+      "baca": "bu YER-då",
+      "en": "here"
+    },
+    {
+      "uz": "u yerda",
+      "baca": "u YER-då",
+      "en": "there"
+    },
+    {
+      "uz": "bozor",
+      "baca": "bå-ZÅR",
+      "en": "bazaar, market"
+    },
+    {
+      "uz": "doʻkon",
+      "baca": "do-KÅN",
+      "en": "shop"
+    },
+    {
+      "uz": "mehmonxona",
+      "baca": "meh-mån-khå-NÅ",
+      "en": "hotel"
+    },
+    {
+      "uz": "kasalxona",
+      "baca": "kå-sål-khå-NÅ",
+      "en": "hospital"
+    },
+    {
+      "uz": "dorixona",
+      "baca": "då-ri-khå-NÅ",
+      "en": "pharmacy"
+    },
+    {
+      "uz": "choyxona",
+      "baca": "chåy-khå-NÅ",
+      "en": "teahouse"
+    },
+    {
+      "uz": "oshxona",
+      "baca": "åsh-khå-NÅ",
+      "en": "kitchen; canteen"
+    },
+    {
+      "uz": "kutubxona",
+      "baca": "ku-tub-khå-NÅ",
+      "en": "library"
+    },
+    {
+      "uz": "bekat",
+      "baca": "be-KAT",
+      "en": "stop, station"
+    },
+    {
+      "uz": "koʻcha",
+      "baca": "ko-CHÅ",
+      "en": "street"
+    },
+    {
+      "uz": "maydon",
+      "baca": "måy-DÅN",
+      "en": "square"
+    },
+    {
+      "uz": "masjid",
+      "baca": "mås-JID",
+      "en": "mosque"
+    },
+    {
+      "uz": "yonida",
+      "baca": "yå-ni-DÅ",
+      "en": "next to"
+    },
+    {
+      "uz": "oldida",
+      "baca": "ål-di-DÅ",
+      "en": "in front of"
+    },
+    {
+      "uz": "orqasida",
+      "baca": "år-qå-si-DÅ",
+      "en": "behind"
+    },
+    {
+      "uz": "ichida",
+      "baca": "i-chi-DÅ",
+      "en": "inside"
+    },
+    {
+      "uz": "ustida",
+      "baca": "us-ti-DÅ",
+      "en": "on top of"
+    },
+    {
+      "uz": "tagida",
+      "baca": "tå-gi-DÅ",
+      "en": "under"
+    },
+    {
+      "uz": "yaqin",
+      "baca": "yå-QIN",
+      "en": "near"
+    },
+    {
+      "uz": "uzoq",
+      "baca": "u-ZÅQ",
+      "en": "far; long (time)"
+    },
+    {
+      "uz": "pul",
+      "baca": "pul",
+      "en": "money"
+    },
+    {
+      "uz": "vaqt",
+      "baca": "våqt",
+      "en": "time"
+    },
+    {
+      "uz": "raqam",
+      "baca": "rå-QAM",
+      "en": "number"
+    },
+    {
+      "uz": "muammo",
+      "baca": "mu-åm-MÅ",
+      "en": "problem"
+    },
+    {
+      "uz": "mashina",
+      "baca": "må-SHI-nå",
+      "en": "car"
+    },
+    {
+      "uz": "mehribon",
+      "baca": "meh-ri-BÅN",
+      "en": "kind, caring"
+    },
+    {
+      "uz": "anavi",
+      "baca": "å-nå-VI",
+      "en": "that one (over there)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Uzbek.",
+      "items": [
+        "Where's the bazaar?",
+        "I'm at home.",
+        "The bank is next to the mosque.",
+        "I have money.",
+        "He doesn't have a car.",
+        "Do you have time?"
+      ]
+    },
+    {
+      "prompt": "Attach the ending -da to the given word.",
+      "items": [
+        "bozor → ____",
+        "xonam → ____",
+        "Toshkent → ____",
+        "uyingiz → ____",
+        "men → ____",
+        "koʻcha → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in with bor, yoʻq, or emas.",
+      "items": [
+        "Menda pul ____. (have)",
+        "Bu kitob ____. (not a book)",
+        "Xonada stol ____. (there isn't)",
+        "Yaqinda dorixona ____mi? (there is)",
+        "U shifokor ____. (not a doctor)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "qayerda / bozor / ?",
+        "bor / menda / pul",
+        "yonida / bank / masjid",
+        "yoʻq / xonada / stol",
+        "uzoq / bu yerdan / emas"
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 2. Translate into Uzbek without looking back at the unit.",
+      "items": [
+        "What's this?",
+        "These books are new.",
+        "That room is very big.",
+        "The dictionary isn't expensive.",
+        "Whose is this?"
+      ]
+    }
+  ],
+  "answers": [
+    "Bozor qayerda? — Men uydaman. — Bank masjid yonida. — Menda pul bor. — Unda mashina yoʻq. — Sizda vaqt bormi?",
+    "bozorda — xonamda — Toshkentda — uyingizda — menda — koʻchada",
+    "bor — emas — yoʻq — bor — emas",
+    "Bozor qayerda? — Menda pul bor. — Bank masjid yonida. — Xonada stol yoʻq. — Bu yerdan uzoq emas.",
+    "Bu nima? — Bu kitoblar yangi. — U xona juda katta. — Lugʻat qimmat emas. — Bu kimniki?"
+  ]
+}

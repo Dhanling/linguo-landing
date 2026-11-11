@@ -1,0 +1,681 @@
+{
+  "title": "Where's the shop?",
+  "title_target": "Cá bhfuil an siopa?",
+  "goal": "Asking where places are and pointing them out, using prepositions of place, and saying where you live.",
+  "bekal": [
+    "ask *Cá bhfuil …?* and understand that *cá* brings urú",
+    "use *i, ar, ag, in aice le, os comhair* to say where things are",
+    "say where you live with *Tá mé i mo chónaí i …*"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — Ag siúl sa chathair",
+      "intro": "Late afternoon. Seán takes Budi for a walk around the centre of Galway to show him the important places.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "A Sheáin, cá bhfuil an siopa?",
+          "id": "Seán, where's the shop?",
+          "literal": "O Seán, where is the shop?"
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Tá an siopa ar an tsráid seo, in aice leis an mbanc.",
+          "id": "The shop's on this street, next to the bank.",
+          "literal": "is the shop on the street this, in nearness with the bank."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Agus cá bhfuil oifig an phoist?",
+          "id": "And where's the post office?",
+          "literal": "and where is office of-the post?"
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Tá sí thall ansin, os comhair na heaglaise.",
+          "id": "It's over there, opposite the church.",
+          "literal": "is she over there, in front of-the church."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "An bhfuil sí i bhfad ó seo?",
+          "id": "Is it far from here?",
+          "literal": "Q is she in length from this?"
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Níl. Tá sí cúpla nóiméad ar shiúl.",
+          "id": "No. It's just a few minutes' walk.",
+          "literal": "is-not. is she couple minute on walk."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cá bhfuil tú i do chónaí?",
+          "id": "Where do you live?",
+          "literal": "where is you in your dwelling?"
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Tá mé i mo chónaí anseo i nGaillimh, in aice leis an bhfarraige.",
+          "id": "I live here in Galway, near the sea.",
+          "literal": "is I in my dwelling here in Galway, in nearness with the sea."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá mé i mo chónaí in Iacárta, i lár na cathrach.",
+          "id": "I live in Jakarta, in the city centre.",
+          "literal": "is I in my dwelling in Jakarta, in middle of-the city."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "An bhfuil an chathair mór?",
+          "id": "Is the city big?",
+          "literal": "Q is the city big?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá sí ollmhór. Tá deich milliún duine ann.",
+          "id": "It's huge. There are ten million people there.",
+          "literal": "is she huge. is ten million person in-it."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Ó, tá Gaillimh beag mar sin! Tá ochtó míle duine anseo.",
+          "id": "Oh, so Galway is small! There are eighty thousand people here.",
+          "literal": "oh, is Galway small like that! is eighty thousand person here."
+        }
+      ],
+      "notes": [
+        "**Cá bhfuil — a question word that brings urú.** *Cá* means \"where\", and it's always followed by the form *bhfuil*, not *tá*. It's exactly the form that appears after *an* in ordinary questions. The short rule: as soon as *an* or *cá* comes first, *tá* becomes *bhfuil*.",
+        "**Ar an tsráid, leis an mbanc — preposition + an brings a change.** When the article *an* follows a preposition like *ar*, *ag*, *le*, *ó*, the noun gets urú: *ar an mbord*, *leis an mbanc*, *faoin gcathaoir*. The exception is words beginning with *s*: they get a *t* in front, *an tsráid*, and that *tsr-* is pronounced \"tr\". In Ulster séimhiú is used instead of urú (*ar an bhord*) — both are correct.",
+        "**Tá mé i mo chónaí — \"I am in my dwelling\".** Irish has no single verb for \"to live, to reside\". Instead it uses *i* + possessive + *cónaí*: *i mo chónaí* (I), *i do chónaí* (you), *ina chónaí* (he), *ina cónaí* (she). The possessive is what changes, not the verb.",
+        "**Os comhair na heaglaise — the second word changes form.** After compound prepositions like *os comhair* (in front of), *in aice* (near), *i lár* (in the middle of), the next noun goes into the possessive form: *eaglais* → *na heaglaise*, *cathair* → *na cathrach*. This form is called the genitive and is covered fully at A2; for now, just learn each pair as a unit."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Cá bhfuil …? — asking where",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "One pattern for everything: *Cá bhfuil* + thing. The answer is *Tá sé/sí* + place."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Cá bhfuil an siopa?",
+              "kaw WIL an SHOO-puh",
+              "Where's the shop?"
+            ],
+            [
+              "Cá bhfuil an leithreas?",
+              "kaw WIL an LEH-hras",
+              "Where's the toilet?"
+            ],
+            [
+              "Cá bhfuil an stáisiún?",
+              "kaw WIL an STAW-shoon",
+              "Where's the station?"
+            ],
+            [
+              "Cá bhfuil an t-ospidéal?",
+              "kaw WIL an TOS-pih-dyayl",
+              "Where's the hospital?"
+            ],
+            [
+              "Cá bhfuil tú?",
+              "kaw WIL TOO",
+              "Where are you?"
+            ],
+            [
+              "Cá bhfuil sé ina chónaí?",
+              "kaw WIL shay ih-nuh KHOH-nee",
+              "Where does he live?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "For direction rather than location, you also use *cá*, but with a different verb: *Cá bhfuil tú ag dul?* — \"where are you going?\" The answer uses *go*: *Tá mé ag dul go Gaillimh*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Place",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "siopa",
+              "SHOO-puh",
+              "shop"
+            ],
+            [
+              "banc",
+              "BANK",
+              "bank"
+            ],
+            [
+              "oifig an phoist",
+              "EH-fig an FWISHT",
+              "post office"
+            ],
+            [
+              "eaglais",
+              "AH-glish",
+              "church"
+            ],
+            [
+              "scoil",
+              "SKOL",
+              "school"
+            ],
+            [
+              "ospidéal",
+              "OS-pih-dyayl",
+              "hospital"
+            ],
+            [
+              "stáisiún",
+              "STAW-shoon",
+              "station"
+            ],
+            [
+              "aerfort",
+              "AYR-fort",
+              "airport"
+            ],
+            [
+              "bialann",
+              "BEE-uh-lan",
+              "restaurant"
+            ],
+            [
+              "teach tábhairne",
+              "tyakh TAW-wir-nyuh",
+              "pub"
+            ],
+            [
+              "leabharlann",
+              "LYOW-ar-lan",
+              "library"
+            ],
+            [
+              "margadh",
+              "MAH-ruh-guh",
+              "market"
+            ],
+            [
+              "sráid",
+              "SRAWJ",
+              "street"
+            ],
+            [
+              "farraige",
+              "FAH-rih-guh",
+              "sea"
+            ],
+            [
+              "cathair",
+              "KAH-hir",
+              "city"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Prepositions of place",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These ten prepositions cover nearly everything you need day to day. Watch the last column: some of them change the first letter of the next word."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "Meaning",
+            "Change it brings"
+          ],
+          "rows": [
+            [
+              "i / in",
+              "ih / in",
+              "in",
+              "urú: *i nGaillimh*; *in* is used before a vowel"
+            ],
+            [
+              "ar",
+              "ER",
+              "on",
+              "séimhiú: *ar bhord*"
+            ],
+            [
+              "ag",
+              "EG",
+              "at",
+              "none"
+            ],
+            [
+              "le",
+              "LEH",
+              "with",
+              "none"
+            ],
+            [
+              "ó",
+              "OH",
+              "from",
+              "séimhiú: *ó bhaile*"
+            ],
+            [
+              "go",
+              "GOO",
+              "to (a place)",
+              "none"
+            ],
+            [
+              "faoi",
+              "FWEE",
+              "under",
+              "séimhiú: *faoi bhord*; *faoin* + urú: *faoin mbord*"
+            ],
+            [
+              "idir",
+              "IH-dyir",
+              "between",
+              "séimhiú only in the sense \"both … and\""
+            ],
+            [
+              "in aice le",
+              "in AH-kuh leh",
+              "next to",
+              "none"
+            ],
+            [
+              "os comhair",
+              "os KOH-ir",
+              "in front of, opposite",
+              "genitive form"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Literally",
+            "English"
+          ],
+          "rows": [
+            [
+              "Tá an leabhar ar an mbord.",
+              "is the book on the table",
+              "The book is on the table."
+            ],
+            [
+              "Tá an cat faoin gcathaoir.",
+              "is the cat under-the chair",
+              "The cat is under the chair."
+            ],
+            [
+              "Tá Seán sa siopa.",
+              "is Seán in-the shop",
+              "Seán is in the shop."
+            ],
+            [
+              "Tá mé i mo chónaí i mBaile Átha Cliath.",
+              "is I in my dwelling in Dublin",
+              "I live in Dublin."
+            ],
+            [
+              "Tá an banc in aice leis an eaglais.",
+              "is the bank in nearness with the church",
+              "The bank is next to the church."
+            ],
+            [
+              "Tá an bia ar an mbord idir an dá chathaoir.",
+              "is the food on the table between the two chair",
+              "The food is on the table between the two chairs."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Sa — the most common preposition, and the trickiest",
+          "items": [
+            "*Sa* is *i* + *an* fused, so it means \"in the\". *Sa siopa* = in the shop. *Sa bhaile* = at home.",
+            "*Sa* brings **séimhiú**, not urú: *sa charr*, *sa bhaile*, *sa chistin*. But it doesn't touch *d, t, s*: *sa doras*, *sa teach*, *sa siopa*.",
+            "Before a vowel it becomes *san*: *san oifig*, *san uisce*. And for plurals it's *sna*: *sna siopaí* (in the shops).",
+            "*Sa bhaile* means \"at home\", while *abhaile* means \"home(wards)\". Two words that sound almost the same but point in opposite directions."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Anseo, ansin, ansiúd — three distances",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Irish splits \"here\" and \"there\" into three distances, much like the old English here–there–yonder."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "Distance",
+            "Matching pointer word"
+          ],
+          "rows": [
+            [
+              "anseo",
+              "an-SHUH",
+              "here, near the speaker",
+              "seo (this)"
+            ],
+            [
+              "ansin",
+              "an-SHIN",
+              "there, near the listener",
+              "sin (that)"
+            ],
+            [
+              "ansiúd",
+              "an-SHOOD",
+              "over there, far from both",
+              "siúd (yon)"
+            ],
+            [
+              "thall",
+              "HAL",
+              "over there, across",
+              "—"
+            ],
+            [
+              "thíos",
+              "HEES",
+              "down there",
+              "—"
+            ],
+            [
+              "thuas",
+              "HOO-as",
+              "up there",
+              "—"
+            ],
+            [
+              "istigh",
+              "ish-TYEE",
+              "inside",
+              "—"
+            ],
+            [
+              "amuigh",
+              "uh-MWEE",
+              "outside",
+              "—"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "They're often combined for precision: *thall ansin* (\"over there\"), *thíos ansiúd* (\"down yonder\"), *istigh anseo* (\"in here\"). These combinations sound very natural and are worth copying."
+        },
+        {
+          "type": "kotak",
+          "title": "Don't mix them up: seo/sin attach, anseo/ansin stand alone",
+          "items": [
+            "*Seo* and *sin* describe a thing and come **after** the noun: *an teach seo* (this house), *an fear sin* (that man).",
+            "*Anseo* and *ansin* describe a place and stand on their own: *Tá mé anseo* (I'm here), *Tá sé ansin* (it's there).",
+            "To point while introducing, use *Seo é* (here he/it is) and *Seo í* (here she is): *Seo é Seán*, *Seo í Máire*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "cá bhfuil?",
+      "baca": "kaw WIL",
+      "en": "where (is)?"
+    },
+    {
+      "ga": "siopa",
+      "baca": "SHOO-puh",
+      "en": "shop"
+    },
+    {
+      "ga": "sráid",
+      "baca": "SRAWJ",
+      "en": "street"
+    },
+    {
+      "ga": "in aice le",
+      "baca": "in AH-kuh leh",
+      "en": "next to"
+    },
+    {
+      "ga": "banc",
+      "baca": "BANK",
+      "en": "bank"
+    },
+    {
+      "ga": "oifig",
+      "baca": "EH-fig",
+      "en": "office"
+    },
+    {
+      "ga": "post",
+      "baca": "POST",
+      "en": "post, mail"
+    },
+    {
+      "ga": "thall",
+      "baca": "HAL",
+      "en": "over there"
+    },
+    {
+      "ga": "os comhair",
+      "baca": "os KOH-ir",
+      "en": "in front of, opposite"
+    },
+    {
+      "ga": "eaglais",
+      "baca": "AH-glish",
+      "en": "church"
+    },
+    {
+      "ga": "cúpla",
+      "baca": "KOOP-luh",
+      "en": "a couple, a few"
+    },
+    {
+      "ga": "nóiméad",
+      "baca": "NOH-mayd",
+      "en": "minute"
+    },
+    {
+      "ga": "ar shiúl",
+      "baca": "er HYOOL",
+      "en": "away"
+    },
+    {
+      "ga": "cónaí",
+      "baca": "KOH-nee",
+      "en": "dwelling, residence"
+    },
+    {
+      "ga": "farraige",
+      "baca": "FAH-rih-guh",
+      "en": "sea"
+    },
+    {
+      "ga": "lár",
+      "baca": "LAWR",
+      "en": "middle, centre"
+    },
+    {
+      "ga": "cathair",
+      "baca": "KAH-hir",
+      "en": "city"
+    },
+    {
+      "ga": "ollmhór",
+      "baca": "OL-wohr",
+      "en": "huge"
+    },
+    {
+      "ga": "duine",
+      "baca": "DIH-nyuh",
+      "en": "person"
+    },
+    {
+      "ga": "míle",
+      "baca": "MEE-luh",
+      "en": "a thousand"
+    },
+    {
+      "ga": "milliún",
+      "baca": "MIH-lyoon",
+      "en": "million"
+    },
+    {
+      "ga": "mar sin",
+      "baca": "mar SHIN",
+      "en": "so, then"
+    },
+    {
+      "ga": "scoil",
+      "baca": "SKOL",
+      "en": "school"
+    },
+    {
+      "ga": "ospidéal",
+      "baca": "OS-pih-dyayl",
+      "en": "hospital"
+    },
+    {
+      "ga": "stáisiún",
+      "baca": "STAW-shoon",
+      "en": "station"
+    },
+    {
+      "ga": "bialann",
+      "baca": "BEE-uh-lan",
+      "en": "restaurant"
+    },
+    {
+      "ga": "leabharlann",
+      "baca": "LYOW-ar-lan",
+      "en": "library"
+    },
+    {
+      "ga": "leithreas",
+      "baca": "LEH-hras",
+      "en": "toilet"
+    },
+    {
+      "ga": "sa",
+      "baca": "suh",
+      "en": "in the"
+    },
+    {
+      "ga": "faoi",
+      "baca": "FWEE",
+      "en": "under, about"
+    },
+    {
+      "ga": "idir",
+      "baca": "IH-dyir",
+      "en": "between"
+    },
+    {
+      "ga": "ansin",
+      "baca": "an-SHIN",
+      "en": "there (near you)"
+    },
+    {
+      "ga": "ansiúd",
+      "baca": "an-SHOOD",
+      "en": "over there (far)"
+    },
+    {
+      "ga": "istigh",
+      "baca": "ish-TYEE",
+      "en": "inside"
+    },
+    {
+      "ga": "amuigh",
+      "baca": "uh-MWEE",
+      "en": "outside"
+    },
+    {
+      "ga": "cathaoir",
+      "baca": "KAH-hir",
+      "en": "chair"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Make a *Cá bhfuil …?* question for each place.",
+      "items": [
+        "the shop",
+        "the bank",
+        "the school",
+        "the hospital",
+        "the post office",
+        "the toilet"
+      ]
+    },
+    {
+      "prompt": "Fill in the right preposition (ar, sa, in aice le, os comhair, faoi, idir).",
+      "items": [
+        "Tá an leabhar ____ an mbord. (on)",
+        "Tá Seán ____ siopa. (in)",
+        "Tá an banc ____ an mbialann. (next to)",
+        "Tá an cat ____ gcathaoir. (under)",
+        "Tá an eaglais ____ na hoifige. (in front of)",
+        "Tá an bord ____ an dá chathaoir. (between)"
+      ]
+    },
+    {
+      "prompt": "Translate into Irish.",
+      "items": [
+        "I live in Jakarta.",
+        "He lives in Galway.",
+        "Where do you live?",
+        "The shop's on this street.",
+        "The city is very big.",
+        "The bank isn't far from here."
+      ]
+    },
+    {
+      "prompt": "Choose *anseo*, *ansin*, *ansiúd*, *istigh* or *amuigh* to fit the description.",
+      "items": [
+        "You point at the chair beside you: Tá an chathaoir ____ .",
+        "You point at a shop near the person you're talking to: Tá an siopa ____ .",
+        "You point at a distant mountain: Tá an sliabh ____ .",
+        "The children are playing outside the house: Tá na páistí ____ .",
+        "Máire is inside the house: Tá Máire ____ .",
+        "You say that you yourself are here: Tá mé ____ ."
+      ]
+    }
+  ],
+  "answers": [
+    "Cá bhfuil an siopa? — Cá bhfuil an banc? — Cá bhfuil an scoil? — Cá bhfuil an t-ospidéal? — Cá bhfuil oifig an phoist? — Cá bhfuil an leithreas?",
+    "ar — sa — in aice leis — faoin — os comhair — idir",
+    "Tá mé i mo chónaí in Iacárta. — Tá sé ina chónaí i nGaillimh. — Cá bhfuil tú i do chónaí? — Tá an siopa ar an tsráid seo. — Tá an chathair an-mhór. — Níl an banc i bhfad ó seo.",
+    "anseo — ansin — ansiúd — amuigh — istigh — anseo"
+  ]
+}

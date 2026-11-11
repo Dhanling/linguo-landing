@@ -1,0 +1,486 @@
+{
+  "title": "Hello, what's your name?",
+  "title_target": "Dober dan! Kako ti je ime?",
+  "goal": "Greet people at the right time of day and the right level of politeness, say your name, ask how someone is, and see for the first time that Slovenian verbs have THREE number lanes, not two.",
+  "bekal": [
+    "greet people with *dober dan*, *dobro jutro*, *živjo*, and *pozdravljeni*, each in its proper place",
+    "say your name with *ime mi je…* or *jaz sem…*, and ask other people theirs",
+    "use the verb *biti* for one person — and recognize the two other lanes waiting for you in unit 3"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Prvi dan v jezikovni šoli",
+      "intro": "The first day of a language course at a jezikovna šola in Ljubljana. Two new students sit next to each other.",
+      "lines": [
+        {
+          "speaker": "Maja:",
+          "text": "Dober dan! Kako ti je ime?",
+          "id": "Hello! What's your name?",
+          "literal": "good day! how to-you is name?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dober dan! Ime mi je Budi. Pa ti?",
+          "id": "Hello! My name is Budi. And you?",
+          "literal": "good day! name to-me is Budi. and you?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Jaz sem Maja. Me veseli!",
+          "id": "I'm Maja. Nice to meet you!",
+          "literal": "I am Maja. me pleases!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mene tudi veseli. Kako si?",
+          "id": "Nice to meet you too. How are you?",
+          "literal": "me also pleases. how you-are?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Hvala, dobro sem. Pa ti?",
+          "id": "Fine, thanks. And you?",
+          "literal": "thanks, well I-am. and you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tudi jaz sem dobro. Si Slovenka?",
+          "id": "I'm fine too. Are you Slovenian?",
+          "literal": "also I am well. you-are Slovenian-woman?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Ja, sem iz Ljubljane. Ti si Kitajec?",
+          "id": "Yes, I'm from Ljubljana. Are you Chinese?",
+          "literal": "yes, I-am from Ljubljana. you are Chinese-man?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ne, Indonezijec sem. Iz Jakarte.",
+          "id": "No, I'm Indonesian. From Jakarta.",
+          "literal": "no, Indonesian-man I-am. from Jakarta."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Kako zanimivo! Dobrodošel v Sloveniji!",
+          "id": "How interesting! Welcome to Slovenia!",
+          "literal": "how interesting! welcome in Slovenia!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Najlepša hvala! Se vidiva jutri, Maja.",
+          "id": "Thank you so much! See you tomorrow, Maja.",
+          "literal": "most-beautiful thanks! self we-two-see tomorrow, Maja."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Nasvidenje! Adijo!",
+          "id": "Goodbye! Bye!",
+          "literal": "till-seeing! bye!"
+        }
+      ],
+      "notes": [
+        "**Kako ti je ime? is not \"what is your name\".** Literally it is \"how to-you is name?\" — your name is treated as something that *is with you*, not something *you have*. The answer follows the same shape: *Ime mi je Budi* (\"name to-me is Budi\"). Shorter and just as correct: *Jaz sem Budi*. The polite form swaps *ti* for *vam*: **Kako vam je ime?**",
+        "**Me veseli has no subject.** Literally \"(it) pleases me\" — there is no \"I\" and no \"it\" in it. Slovenian is full of sentences like this, and the same pattern comes back in unit 15 for \"my head hurts\". The long form is *Me veseli, da sva se spoznala* — for now, the two words are enough.",
+        "**Ja and da both mean \"yes\".** *Ja* was borrowed from German and is used all day in casual talk; *da* sounds tidier and shows up more in writing or with people you treat formally. There is only one opposite: *ne*.",
+        "**Slovenka and Slovenec are two different words.** Slovenian makes you pick a gender for every nationality: *Slovenec* (man), *Slovenka* (woman), *Indonezijec* and *Indonezijka*, *Kitajec* and *Kitajka*. English never asks for this, so get used to learning both forms together from now on, not just one.",
+        "**Se vidiva — your first peek at dvojina.** Look at the ending: *-va*. That is not a plural, it is the form for **exactly two people**. If three people were saying goodbye, the sentence would become *se vidimo*. This is the antique that made Slovenian famous, and it gets a unit of its own in unit 3 — for now, just use *se vidiva* as one memorized chunk."
+      ],
+      "grammars": [
+        {
+          "title": "Biti — the verb \"to be\" with three number lanes",
+          "body": [
+            "The first verb you must master, and your first glimpse of what sets Slovenian apart from the rest of Europe. Verb tables in French, German, or Russian have two number columns: singular and plural. Slovenian has **three**."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Say it",
+              "biti",
+              "meaning"
+            ],
+            "rows": [
+              [
+                "**jaz**",
+                "yahs",
+                "**sem**",
+                "I am"
+              ],
+              [
+                "**ti**",
+                "tee",
+                "**si**",
+                "you are"
+              ],
+              [
+                "**on / ona**",
+                "ohn / OH-nah",
+                "**je**",
+                "he / she is"
+              ],
+              [
+                "**midva / midve**",
+                "MEED-vah / MEED-vay",
+                "**sva**",
+                "we two are"
+              ],
+              [
+                "**vidva / vidve**",
+                "VEED-vah / VEED-vay",
+                "**sta**",
+                "you two are"
+              ],
+              [
+                "**onadva / onidve**",
+                "oh-NAHD-vah / oh-NEED-vay",
+                "**sta**",
+                "they two are"
+              ],
+              [
+                "**mi / me**",
+                "mee / may",
+                "**smo**",
+                "we are (3+)"
+              ],
+              [
+                "**vi / ve**",
+                "vee / vay",
+                "**ste**",
+                "you are (3+)"
+              ],
+              [
+                "**mi / me**",
+                "mee / may",
+                "**smo**",
+                "we are (3+)"
+              ],
+              [
+                "**vi / ve**",
+                "vee / vay",
+                "**ste**",
+                "you are (3+)"
+              ],
+              [
+                "**oni / one**",
+                "OH-nee / OH-nay",
+                "**so**",
+                "they are (3+)"
+              ]
+            ]
+          },
+          "after": [
+            "For this unit you only need the first three rows. The other rows are on display now on purpose, so you know they exist — many books hide them until chapter ten, and their readers get a shock.",
+            "Paired forms like *midva / midve* sort by gender: *midve* when **both are women**, *midva* for everything else. The same rule applies to *vidva/vidve* and *onadva/onidve*."
+          ]
+        },
+        {
+          "title": "Vikanje — two ways to say \"you\"",
+          "body": [
+            "Slovenian splits the person you're talking to in two, just like French or German. There is only one thing to remember: the polite form uses a **plural verb**, even for one person."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Example",
+              "Used with"
+            ],
+            "rows": [
+              [
+                "**tikanje** (*ti*)",
+                "*Kako si?* — How are you?",
+                "friends, peers, children, family"
+              ],
+              [
+                "**vikanje** (*vi*)",
+                "*Kako ste?* — How are you?",
+                "strangers, older people, shop staff, teachers, doctors"
+              ],
+              [
+                "**tikanje**",
+                "*Kako ti je ime?*",
+                "informal"
+              ],
+              [
+                "**vikanje**",
+                "*Kako vam je ime?*",
+                "polite"
+              ],
+              [
+                "**tikanje**",
+                "*Živjo!* / *Adijo!*",
+                "informal"
+              ],
+              [
+                "**vikanje**",
+                "*Pozdravljeni!* / *Nasvidenje!*",
+                "polite"
+              ]
+            ]
+          },
+          "after": [
+            "The practical rule is simple: **start with vi**, and wait for the Slovenian to offer to switch. The offer usually sounds like *Lahko sva na ti?* — \"Can we just use *ti*?\" Answering *Ja, seveda!* is always right.",
+            "Unlike German, Slovenian *vi* does not have to be capitalized. In formal letters people often write *Vi* with a capital as a sign of respect, but that's a choice, not a rule."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Survival phrases",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These ten phrases are not grammar to memorize — they are emergency tools. Learn the whole forms now, understand how they're built later."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Ja / Ne",
+              "yah / nay",
+              "Yes / No"
+            ],
+            [
+              "Hvala",
+              "HVAH-lah",
+              "Thank you"
+            ],
+            [
+              "Prosim",
+              "PROH-seem",
+              "Please; you're welcome; here you go"
+            ],
+            [
+              "Oprostite",
+              "oh-prohs-TEE-tay",
+              "Sorry; excuse me (polite)"
+            ],
+            [
+              "Ne razumem",
+              "nay rah-ZOO-muhm",
+              "I don't understand"
+            ],
+            [
+              "Ne vem",
+              "nay vaym",
+              "I don't know"
+            ],
+            [
+              "Govorite angleško?",
+              "goh-voh-REE-tay ahn-GLAYSH-koh",
+              "Do you speak English?"
+            ],
+            [
+              "Kako se reče …?",
+              "KAH-koh suh RAY-chay",
+              "How do you say …?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Prosim* is the most versatile word in Slovenian. It means \"please\" when asking, \"go ahead\" when offering, \"you're welcome\" after someone thanks you, \"hello?\" when picking up the phone, and \"sorry, what was that?\" when you didn't catch something. If you could learn only one word on this page, learn this one."
+        },
+        {
+          "type": "p",
+          "text": "*Oprostite* is for politely getting a stranger's attention; the informal form is *oprosti*. For a real apology people more often say *Se opravičujem* — but *oprostite* is always safe."
+        }
+      ]
+    },
+    {
+      "title": "Greetings by time of day and politeness",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Slovenian sorts greetings along two axes at once: what time it is, and how close you are to the other person. This table covers both."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Say it",
+            "When to use"
+          ],
+          "rows": [
+            [
+              "**Dobro jutro!**",
+              "DAW-broh YOO-troh",
+              "Good morning — until about 10:00"
+            ],
+            [
+              "**Dober dan!**",
+              "DAW-buhr dahn",
+              "Good day / Hello — the safest polite greeting"
+            ],
+            [
+              "**Dober večer!**",
+              "DAW-buhr vay-CHAYR",
+              "Good evening — from dusk on"
+            ],
+            [
+              "**Lahko noč!**",
+              "LAHKH-koh nawch",
+              "Good night — only when parting for the night"
+            ],
+            [
+              "**Pozdravljeni!**",
+              "pohz-drow-LYAY-nee",
+              "Hello — polite, to anyone"
+            ],
+            [
+              "**Živjo!**",
+              "ZHEEW-yoh",
+              "Hi — informal, used constantly"
+            ],
+            [
+              "**Adijo!**",
+              "ah-DEE-yoh",
+              "Bye — informal"
+            ],
+            [
+              "**Nasvidenje!**",
+              "nahs-VEE-day-nyay",
+              "Goodbye — fully polite"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Pozdravljeni* is actually a plural form, and that's exactly why it's polite: you greet one person as if they were more than one. To one close male friend the form is *pozdravljen*, to one female friend *pozdravljena* — but as a beginner, *pozdravljeni* is always correct and never rude."
+        },
+        {
+          "type": "p",
+          "text": "One habit worth copying: in Slovenia, **walking into a small space means saying hello**. An elevator, a doctor's waiting room, a train compartment, a small village shop — people say *dober dan* to strangers, and staying silent is what feels rude."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "dober dan",
+      "baca": "DAW-buhr dahn",
+      "en": "good day, hello"
+    },
+    {
+      "sl": "dobro jutro",
+      "baca": "DAW-broh YOO-troh",
+      "en": "good morning"
+    },
+    {
+      "sl": "dober večer",
+      "baca": "DAW-buhr vay-CHAYR",
+      "en": "good evening"
+    },
+    {
+      "sl": "živjo",
+      "baca": "ZHEEW-yoh",
+      "en": "hi (informal)"
+    },
+    {
+      "sl": "adijo",
+      "baca": "ah-DEE-yoh",
+      "en": "bye (informal)"
+    },
+    {
+      "sl": "nasvidenje",
+      "baca": "nahs-VEE-day-nyay",
+      "en": "goodbye (polite)"
+    },
+    {
+      "sl": "ime",
+      "baca": "EE-may",
+      "en": "name"
+    },
+    {
+      "sl": "kako",
+      "baca": "KAH-koh",
+      "en": "how"
+    },
+    {
+      "sl": "jaz",
+      "baca": "yahs",
+      "en": "I"
+    },
+    {
+      "sl": "ti",
+      "baca": "tee",
+      "en": "you (informal)"
+    },
+    {
+      "sl": "sem",
+      "baca": "suhm",
+      "en": "I am"
+    },
+    {
+      "sl": "si",
+      "baca": "see",
+      "en": "you are"
+    },
+    {
+      "sl": "je",
+      "baca": "yay",
+      "en": "he / she / it is"
+    },
+    {
+      "sl": "hvala",
+      "baca": "HVAH-lah",
+      "en": "thank you"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Slovenian.",
+      "items": [
+        "Hello! What's your name?",
+        "My name is Budi.",
+        "I'm Indonesian.",
+        "How are you?",
+        "Fine, thanks.",
+        "Are you Slovenian? (to a woman)"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right form of biti.",
+      "items": [
+        "Jaz ____ Budi.",
+        "Ti ____ Slovenka?",
+        "Maja ____ iz Ljubljane.",
+        "Midva ____ iz Jakarte.",
+        "Vi ____ zdravnik?",
+        "Oni ____ dobro."
+      ]
+    },
+    {
+      "prompt": "Choose the right greeting. Write out the whole sentence.",
+      "items": [
+        "You walk into a bakery at seven in the morning. To the baker you say ____.",
+        "You run into a classmate in the cafeteria at eleven. You say ____.",
+        "You walk into a restaurant at eight in the evening. To the waiter you say ____.",
+        "You part from your professor at the end of the hallway, politely. You say ____.",
+        "You say goodnight to your roommate before bed. You say ____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "sem / Maja / jaz",
+        "si / Slovenka / ti / ?",
+        "ti / kako / ime / je / ?",
+        "sem / hvala / dobro / ,",
+        "Slovenec / nisem / jaz"
+      ]
+    }
+  ],
+  "answers": [
+    "Dober dan! Kako ti je ime? — Ime mi je Budi. — Indonezijec sem. — Kako si? — Hvala, dobro sem. — Si Slovenka?",
+    "sem — si — je — sva — ste — so",
+    "Dobro jutro! — Živjo! — Dober večer! — Nasvidenje! — Lahko noč!",
+    "Jaz sem Maja. — Ti si Slovenka? — Kako ti je ime? — Hvala, dobro sem. — Jaz nisem Slovenec."
+  ]
+}

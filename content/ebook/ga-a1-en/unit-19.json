@@ -1,0 +1,594 @@
+{
+  "title": "All the letter-change rules",
+  "title_target": "Séimhiú agus urú",
+  "goal": "Gather every séimhiú and urú rule from this book, and learn to take a word's \"hat\" off to look it up in the dictionary.",
+  "bekal": [
+    "say which words bring séimhiú and which bring urú",
+    "apply the right change without stopping to think",
+    "find the base form of a changed word so you can look it up in the dictionary"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — An comhartha ar an mbóthar",
+      "intro": "Budi saw a sign at the entrance to a small town and asks Aoife about it after class.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "A Aoife, chonaic mé comhartha inné: \"Fáilte go dtí ár mBaile\".",
+          "id": "Aoife, yesterday I saw a sign: \"Welcome to our town\".",
+          "literal": "O Aoife, saw I sign yesterday: \"welcome to our town\"."
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "Sin urú. \"Baile\" a bhí ann, agus chuir \"ár\" urú air.",
+          "id": "That's urú. The original word is \"baile\", and \"ár\" puts urú on it.",
+          "literal": "that eclipsis. \"town\" that is in-it, and put \"our\" eclipsis on-it."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Agus cén fáth \"mo bhaile\" ach \"ár mBaile\"?",
+          "id": "So why is it \"mo bhaile\" but \"ár mBaile\"?",
+          "literal": "and what reason \"my town\" but \"our town\"?"
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "Mar go gcuireann \"mo\" séimhiú, agus \"ár\" urú. Sin an difríocht ar fad.",
+          "id": "Because \"mo\" brings séimhiú and \"ár\" brings urú. That's the only difference.",
+          "literal": "because that puts \"my\" lenition, and \"our\" eclipsis. that the difference on length."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "An bhfuil liosta ann?",
+          "id": "Is there a list?",
+          "literal": "question is list in-it?"
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "Tá. Séimhiú i ndiaidh mo, do, ní, agus na huimhreacha a dó go sé.",
+          "id": "There is. Séimhiú after mo, do, ní, and the numbers two to six.",
+          "literal": "is. lenition in after my, your, not, and the numbers the two to six."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Agus urú?",
+          "id": "And urú?",
+          "literal": "and eclipsis?"
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "I ndiaidh i, ár, bhur, a (iolra), an, cá, agus a seacht go deich.",
+          "id": "After i, ár, bhur, a (plural), an, cá, and the numbers seven to ten.",
+          "literal": "in after in, our, your-pl, their (plural), question, where, and the seven to ten."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cad a dhéanfaidh mé leis an bhfoclóir?",
+          "id": "What about the dictionary?",
+          "literal": "what that will-do I with the dictionary?"
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "Bain an hata den fhocal. \"Bhean\" — bain an h. \"MBaile\" — bain an m.",
+          "id": "Take the hat off the word. \"Bhean\" — drop the h. \"MBaile\" — drop the m.",
+          "literal": "take the hat off-the word. \"woman\" — take the h. \"town\" — take the m."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Agus \"bhfuil\"?",
+          "id": "And \"bhfuil\"?",
+          "literal": "and \"is\"?"
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "Bain dhá litir: \"fuil\", ó \"bí\". Sin an ceann is deacra ar fad!",
+          "id": "Drop two letters: \"fuil\", from \"bí\". That's the hardest one of all!",
+          "literal": "take two letters: \"fuil\", from \"be\". that the one is hardest on length!"
+        }
+      ],
+      "notes": [
+        "**Séimhiú and urú aren't decoration — they carry meaning.** You saw the proof in Unit 8: *a theach*, *a teach*, and *a dteach* are all written with the same word *a*, and only the letter change tells you whether the house belongs to a man, a woman, or a group of people. Ignoring the letter changes means ignoring a large part of the grammar.",
+        "**The change always comes from the word in front.** It isn't the noun that \"has\" séimhiú; it's *mo*, *an*, *dhá*, *ar* that put it there. So the list to learn is the list of **triggers**, not of words — and there are only about twenty little trigger words, all of which you've already used in earlier units.",
+        "**Only seven letters can take urú.** *b, c, d, f, g, p, t* — plus vowels, which get *n-*. The letters *l, m, n, r, s* and the clusters *sc-, sm-, sp-, st-* are never touched by urú. For séimhiú it's nine letters: *b, c, d, f, g, m, p, s, t*.",
+        "**If you're unsure in conversation, keep talking.** Séimhiú and urú mistakes are the ones beginners make most, and native speakers still understand without any trouble. The proverb at the back of this book isn't just a pleasantry: *Is fearr Gaeilge bhriste ná Béarla cliste* — broken Irish is better than clever English."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Séimhiú — all the triggers",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Séimhiú inserts an **h** after the first letter. The nine letters that can take it: *b, c, d, f, g, m, p, s, t*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Trigger",
+            "Example",
+            "Unit"
+          ],
+          "rows": [
+            [
+              "*an* + feminine noun",
+              "an bhean, an chathaoir, an mhí",
+              "4"
+            ],
+            [
+              "*mo, do, a* (his)",
+              "mo theach, do charr, a mhac",
+              "8"
+            ],
+            [
+              "the numbers *dhá, trí, ceithre, cúig, sé*",
+              "dhá bhord, trí chathaoir, sé phunt",
+              "5"
+            ],
+            [
+              "*beirt*",
+              "beirt fhear, beirt bhan",
+              "5"
+            ],
+            [
+              "the prepositions *ar, do, de, faoi, ó, roimh, trí, mar*",
+              "ar bhord, ó bhaile, faoi chathaoir",
+              "3"
+            ],
+            [
+              "*sa* (in the)",
+              "sa charr, sa bhaile, sa chistin",
+              "3"
+            ],
+            [
+              "*ní* (not, present & future)",
+              "ní thuigim, ní cheannóidh mé",
+              "10, 18"
+            ],
+            [
+              "*níor* and *ar* (past tense)",
+              "níor cheannaigh mé, ar thuig tú?",
+              "17"
+            ],
+            [
+              "past tense, verbs starting with a consonant",
+              "cheannaigh mé, ghlan sé, thuig sí",
+              "17"
+            ],
+            [
+              "*a* when addressing someone",
+              "a Sheáin, a Mháire, a Bhudi",
+              "1"
+            ],
+            [
+              "relative *a* (who, that)",
+              "an fear a thagann, cad a dhéanann tú?",
+              "9"
+            ],
+            [
+              "the prefixes *an-* and *ró-*",
+              "an-mhaith, rófhuar, an-chiúin",
+              "2"
+            ],
+            [
+              "adjective after a feminine noun",
+              "léine bhán, scairf chorcra, peil Ghaelach",
+              "16"
+            ],
+            [
+              "*cé* + méad",
+              "cé mhéad",
+              "5"
+            ],
+            [
+              "*den* and *don*",
+              "den fhocal, don fhear, den bhord",
+              "19"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "When séimhiú doesn't happen even with a trigger",
+          "items": [
+            "**After *an*, the letters *d* and *t* aren't softened.** *An deoch*, *an tine* — even though both are feminine.",
+            "**The letters *l, n, r* can never be softened.** *Mo lámh*, *níor labhair mé*, *rith mé*.",
+            "**The clusters *sc-, sm-, sp-, st-* aren't softened.** *Mo scoil*, *níor stop mé*, *an scoil*.",
+            "**Vowels aren't softened** — but *mo* and *do* shorten in front of them: *m'athair*, *d'aghaidh*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Urú — all the triggers",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Urú writes a new letter **in front of** the first letter, and the original letter stops being pronounced. The seven pairs: *mb, gc, nd, bhf, ng, bp, dt*. Vowels get *n-*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Trigger",
+            "Example",
+            "Unit"
+          ],
+          "rows": [
+            [
+              "*i* (in)",
+              "i nGaillimh, i mBaile Átha Cliath",
+              "3"
+            ],
+            [
+              "*ár, bhur, a* (their)",
+              "ár dteach, bhur gcarr, a bpáistí",
+              "8"
+            ],
+            [
+              "the numbers *seacht, ocht, naoi, deich*",
+              "seacht mbord, naoi gcathaoir",
+              "5"
+            ],
+            [
+              "*an* + verb (question)",
+              "an bhfuil, an dtuigeann tú?",
+              "2, 10"
+            ],
+            [
+              "*cá* (where)",
+              "cá bhfuil, cá dtéann tú?",
+              "3, 11"
+            ],
+            [
+              "*nach* and *go*",
+              "nach dtuigeann tú?, go bhfuil",
+              "12"
+            ],
+            [
+              "preposition + *an*",
+              "ar an mbord, leis an gcaife, faoin gcathaoir, ón mbaile",
+              "3, 13"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Spelling",
+            "Sounds like",
+            "Spelling",
+            "Sounds like"
+          ],
+          "rows": [
+            [
+              "mb-",
+              "m",
+              "ng-",
+              "ng"
+            ],
+            [
+              "gc-",
+              "g",
+              "bp-",
+              "b"
+            ],
+            [
+              "nd-",
+              "n",
+              "dt-",
+              "d"
+            ],
+            [
+              "bhf-",
+              "w or v",
+              "n- + vowel",
+              "n"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Northern Irish uses séimhiú where others use urú",
+          "items": [
+            "In Donegal and Ulster, *ar an mbord* often becomes *ar an bhord*, and *leis an gcaife* becomes *leis an chaife*.",
+            "This book uses urú because it is the form of *An Caighdeán Oifigiúil* and the one you'll meet most in books; the Ulster forms are widely accepted in use, though not standard.",
+            "If you learn from Ulster speakers and hear séimhiú where this book says urú, don't be confused — they aren't wrong."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Taking a word's hat off — how to use the dictionary",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Dictionaries store words in their bare form. If the word you're looking for isn't there, it's almost certainly wearing a hat. These three steps solve nine cases out of ten."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Is the second letter *h*?** Drop the *h*. *Bhean* → *bean*. *Chathaoir* → *cathaoir*. *Thuig* → *tuig*. *Mháthair* → *máthair*.",
+            "**Are the first two letters one of the urú pairs?** Drop the first letter. *MBaile* → *baile*. *Gcarr* → *carr*. *Ndoras* → *doras*. *Dteach* → *teach*. *Bpáiste* → *páiste*.",
+            "**Does it start with *bhf-*?** Drop **two** letters. *Bhfuil* → *fuil* (from the verb *bí*). *Bhfeiceann* → *feiceann* (from *feic*).",
+            "**Does it start with *d'*, *n-*, *t-*, or *h-*?** Drop that part along with the hyphen. *D'ól* → *ól*. *N-athair* → *athair*. *T-arán* → *arán*. *HÉireann* → *Éire*.",
+            "**Still can't find it?** The word may be a changed form of an irregular verb. Check the tables in Units 11, 17, and 18 — that's where *chuaigh*, *rinne*, *fuair*, *tugaim*, *deirim*, and *rachaidh* are hiding."
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "What you see",
+            "The hat",
+            "Base word",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "an bhean",
+              "séimhiú from an",
+              "bean",
+              "woman"
+            ],
+            [
+              "mo charr",
+              "séimhiú from mo",
+              "carr",
+              "car"
+            ],
+            [
+              "ár gcarr",
+              "urú from ár",
+              "carr",
+              "car"
+            ],
+            [
+              "i nGaillimh",
+              "urú from i",
+              "Gaillimh",
+              "Galway"
+            ],
+            [
+              "an bhfuil?",
+              "urú from an",
+              "bí",
+              "be"
+            ],
+            [
+              "ní fhaca mé",
+              "séimhiú from ní",
+              "feic",
+              "see"
+            ],
+            [
+              "d'fhan mé",
+              "d' + séimhiú, past",
+              "fan",
+              "wait, stay"
+            ],
+            [
+              "a Sheáin",
+              "séimhiú from addressing a",
+              "Seán",
+              "the name Seán"
+            ],
+            [
+              "na hoifigí",
+              "h from na",
+              "oifig",
+              "office"
+            ],
+            [
+              "an t-arán",
+              "t from an",
+              "arán",
+              "bread"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "comhartha",
+      "baca": "KOHR-huh",
+      "en": "sign"
+    },
+    {
+      "ga": "bóthar",
+      "baca": "BOH-har",
+      "en": "road"
+    },
+    {
+      "ga": "liosta",
+      "baca": "LIS-tuh",
+      "en": "list"
+    },
+    {
+      "ga": "foclóir",
+      "baca": "FOK-lohr",
+      "en": "dictionary"
+    },
+    {
+      "ga": "focal",
+      "baca": "FUH-kal",
+      "en": "word"
+    },
+    {
+      "ga": "litir",
+      "baca": "LIH-tyir",
+      "en": "letter (of the alphabet; mail)"
+    },
+    {
+      "ga": "difríocht",
+      "baca": "DIH-free-akht",
+      "en": "difference"
+    },
+    {
+      "ga": "uimhir",
+      "baca": "IH-vir",
+      "en": "number"
+    },
+    {
+      "ga": "uimhreacha",
+      "baca": "IV-ruh-khuh",
+      "en": "numbers"
+    },
+    {
+      "ga": "iolra",
+      "baca": "IL-ruh",
+      "en": "plural"
+    },
+    {
+      "ga": "uatha",
+      "baca": "OO-uh-huh",
+      "en": "singular"
+    },
+    {
+      "ga": "i ndiaidh",
+      "baca": "ih NYAI",
+      "en": "after"
+    },
+    {
+      "ga": "bain",
+      "baca": "BAN",
+      "en": "take, take off"
+    },
+    {
+      "ga": "hata",
+      "baca": "HAH-tuh",
+      "en": "hat"
+    },
+    {
+      "ga": "den",
+      "baca": "DYEN",
+      "en": "from the"
+    },
+    {
+      "ga": "deacair",
+      "baca": "DYAH-kir",
+      "en": "difficult"
+    },
+    {
+      "ga": "is deacra",
+      "baca": "is DYAH-kruh",
+      "en": "hardest, harder"
+    },
+    {
+      "ga": "furasta",
+      "baca": "FOO-ras-tuh",
+      "en": "easy"
+    },
+    {
+      "ga": "mar",
+      "baca": "MAR",
+      "en": "because; like"
+    },
+    {
+      "ga": "chuir",
+      "baca": "KHIR",
+      "en": "put (past)"
+    },
+    {
+      "ga": "briste",
+      "baca": "BRIS-tyuh",
+      "en": "broken"
+    },
+    {
+      "ga": "cliste",
+      "baca": "KLIS-tyuh",
+      "en": "clever"
+    },
+    {
+      "ga": "riail",
+      "baca": "REE-il",
+      "en": "rule"
+    },
+    {
+      "ga": "rialacha",
+      "baca": "REE-uh-luh-khuh",
+      "en": "rules"
+    },
+    {
+      "ga": "eisceacht",
+      "baca": "ESH-kyakht",
+      "en": "exception"
+    },
+    {
+      "ga": "gramadach",
+      "baca": "GRAH-muh-dakh",
+      "en": "grammar"
+    },
+    {
+      "ga": "canúint",
+      "baca": "KAH-noontch",
+      "en": "dialect"
+    },
+    {
+      "ga": "caighdeán",
+      "baca": "KAI-dyawn",
+      "en": "standard"
+    },
+    {
+      "ga": "consan",
+      "baca": "KON-san",
+      "en": "consonant"
+    },
+    {
+      "ga": "guta",
+      "baca": "GOO-tuh",
+      "en": "vowel"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Add séimhiú where needed.",
+      "items": [
+        "mo + teach",
+        "an + bean",
+        "trí + cathaoir",
+        "ní + tuigim",
+        "a (his) + mac",
+        "ar + bord"
+      ]
+    },
+    {
+      "prompt": "Add urú where needed.",
+      "items": [
+        "i + Gaillimh",
+        "ár + carr",
+        "naoi + cathaoir",
+        "an + tuigeann tú?",
+        "cá + téann tú?",
+        "ar an + bord"
+      ]
+    },
+    {
+      "prompt": "Take the hat off. Write the base word you would look up in the dictionary.",
+      "items": [
+        "bhean",
+        "gcarr",
+        "bhfuil",
+        "d'ól",
+        "na hoifigí",
+        "an t-arán"
+      ]
+    },
+    {
+      "prompt": "Choose the right form, then give the reason in one sentence in English.",
+      "items": [
+        "mo (bhaile or mbaile)?",
+        "ár (bhaile or mBaile)?",
+        "an (bhean or mbean)?",
+        "trí (chathaoir or gcathaoir)?",
+        "naoi (chathaoir or gcathaoir)?",
+        "ní (thuigim or dtuigim)?"
+      ]
+    }
+  ],
+  "answers": [
+    "mo theach — an bhean — trí chathaoir — ní thuigim — a mhac — ar bhord",
+    "i nGaillimh — ár gcarr — naoi gcathaoir — an dtuigeann tú? — cá dtéann tú? — ar an mbord",
+    "bean — carr — bí (via fuil) — ól — oifig — arán",
+    "mo bhaile (séimhiú: *mo* always softens) — ár mBaile (urú: *ár* always eclipses) — an bhean (séimhiú: *bean* is feminine) — trí chathaoir (séimhiú: numbers 2–6 soften) — naoi gcathaoir (urú: numbers 7–10 eclipse) — ní thuigim (séimhiú: *ní* softens)"
+  ]
+}

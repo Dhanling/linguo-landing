@@ -1,0 +1,495 @@
+{
+  "title": "I'm going to school",
+  "title_target": "Idem do školy",
+  "goal": "Talk about getting around, and meet a distinction English doesn't make: two verbs for \"go\" — one for a trip happening now, one for habits.",
+  "bekal": [
+    "tell *ísť* from *chodiť* and pick the right one without stopping to think",
+    "name a destination with *do*, *na*, or *k*, depending on the kind of place",
+    "name means of transport and ask about schedules"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ako sa dostanem do Košíc?",
+      "intro": "Budi is planning to visit Košice this weekend. He asks Eva in class.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Eva, ako sa dostanem do Košíc?",
+          "id": "Eva, how do I get to Košice?",
+          "literal": "Eva, how self I-will-get to Košice-gen?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Môžeš ísť vlakom alebo autobusom.",
+          "id": "You can take the train or the bus.",
+          "literal": "you-can go train-ins or bus-ins."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Čo je rýchlejšie?",
+          "id": "Which is faster?",
+          "literal": "what is more-fast?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Vlak. Ide päť a pol hodiny.",
+          "id": "The train. Five and a half hours.",
+          "literal": "train. it-goes five and half hour-gen."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "To je dlho! A ty chodíš do Košíc často?",
+          "id": "That's long! And do you go to Košice often?",
+          "literal": "that is long! and you you-go to Košice-gen often?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Chodím raz za mesiac. Rodičia tam bývajú.",
+          "id": "Once a month. My parents live there.",
+          "literal": "I-go once per month. parents there they-live."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A kedy ideš najbližšie?",
+          "id": "And when are you going next?",
+          "literal": "and when you-go most-near?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Idem tento piatok. Chceš ísť so mnou?",
+          "id": "I'm going this Friday. Want to come with me?",
+          "literal": "I-go this Friday. you-want go with me-ins?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Veľmi rád! Odkiaľ ide vlak?",
+          "id": "I'd love to! Where does the train leave from?",
+          "literal": "very glad-m! from-where it-goes train?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Z hlavnej stanice. Chodím tam pešo, je to blízko.",
+          "id": "From the main station. I usually walk there, it's close.",
+          "literal": "from main-gen station-gen. I-go there on-foot, is it close."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Tak pôjdeme spolu. Stretneme sa pred domom.",
+          "id": "Then we'll go together. Let's meet in front of the house.",
+          "literal": "so we-will-go together. we-will-meet self in-front-of house-ins."
+        }
+      ],
+      "notes": [
+        "**Idem and chodím are two different verbs, not two forms.** *Idem tento piatok* = I'm going this Friday, one specific trip. *Chodím raz za mesiac* = I go once a month, a repeated habit. English uses the same verb for both and leaves the difference to the adverbs; Slovak changes the verb.",
+        "**Vlakom, autobusom, električkou** — the vehicle goes in the **instrumental**, with no preposition at all. Literally \"by-train\", but no word for \"by\" is written; the ending already says it. The full case comes in unit 17; for now, learn these forms as chunks.",
+        "**Do Košíc** uses the genitive plural, because *Košice* is a plural name — like *Athens* in English. Several Slovak towns are plural: *Košice, Piešťany, Levice, Michalovce*. They always take a plural verb: *Košice **sú** krásne*.",
+        "**Ide päť hodín** — the verb *ísť* is also used for how long a trip takes and for vehicles that run: *vlak ide*, *autobus ide*, *film ide* (the film is showing). Same verb, four jobs.",
+        "**Pôjdeme** is the future of *ísť* — and it's irregular: not *budeme ísť* but *pôjdem, pôjdeš, pôjde, pôjdeme, pôjdete, pôjdu*. It's the only imperfective verb with its own future form. Learn it separately; you'll use it every day."
+      ],
+      "grammars": [
+        {
+          "title": "Ísť or chodiť — once or repeatedly",
+          "body": [
+            "Slovak has two verbs for almost every kind of movement. One describes a single trip that is happening or about to happen; the other describes a habit, or the ability to move in general."
+          ],
+          "table": {
+            "head": [
+              "Once (specific)",
+              "Repeatedly (habit)",
+              "English"
+            ],
+            "rows": [
+              [
+                "**ísť** — idem",
+                "**chodiť** — chodím",
+                "go (on foot)"
+              ],
+              [
+                "**ísť autom** — idem autom",
+                "**jazdiť** — jazdím",
+                "go (by vehicle)"
+              ],
+              [
+                "**letieť** — letím",
+                "**lietať** — lietam",
+                "fly"
+              ],
+              [
+                "**niesť** — nesiem",
+                "**nosiť** — nosím",
+                "carry"
+              ],
+              [
+                "**bežať** — bežím",
+                "**behať** — behám",
+                "run"
+              ]
+            ]
+          },
+          "after": [
+            "**How to choose in two seconds: ask \"once or often?\"** *Teraz idem do školy* (I'm on my way to school now — once). *Každý deň chodím do školy* (I go to school every day — repeatedly). The time word in the sentence almost always gives you the answer.",
+            "**Chodiť also means \"can walk\"** and \"attend regularly\": *Dieťa už chodí* (the child can walk now), *Chodím na hodiny slovenčiny* (I take Slovak classes). It's much broader than just \"go often\".",
+            "**For beginners, this mistake won't block understanding** — Slovaks will still get you. But choosing correctly is one of the quickest signs that someone is really learning the language, because you can't guess it from any other language you may know."
+          ]
+        },
+        {
+          "title": "Do, na, or k — three ways to say \"to\"",
+          "body": [
+            "All three mean \"to\", and each one forces a different case. Luckily the choice follows the pattern you learned in unit 6: places that take *v* take *do*, places that take *na* keep *na*."
+          ],
+          "table": {
+            "head": [
+              "Where to",
+              "Case",
+              "Where (unit 6)",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**do** + genitive",
+                "genitive",
+                "*v* + locative",
+                "*do školy* → *v škole*"
+              ],
+              [
+                "**do** + genitive",
+                "genitive",
+                "*v* + locative",
+                "*do obchodu* → *v obchode*"
+              ],
+              [
+                "**na** + accusative",
+                "accusative",
+                "*na* + locative",
+                "*na poštu* → *na pošte*"
+              ],
+              [
+                "**na** + accusative",
+                "accusative",
+                "*na* + locative",
+                "*na Slovensko* → *na Slovensku*"
+              ],
+              [
+                "**k** + dative",
+                "dative",
+                "*u* + genitive",
+                "*k lekárovi* → *u lekára*"
+              ],
+              [
+                "**k** + dative",
+                "dative",
+                "*u* + genitive",
+                "*k bratovi* → *u brata*"
+              ]
+            ]
+          },
+          "after": [
+            "**The rule that covers almost everything: pair it with the \"at\" form.** If you know *v škole*, you know *do školy*. If you know *na pošte*, you know *na poštu*. You're not learning a new list — you're using the unit 6 list from the other direction.",
+            "**K is for people, not places.** *Idem k lekárovi* (I'm going to the doctor), *idem k Eve* (I'm going to Eva's). To say \"at someone's place\", Slovak uses *u* + genitive: *som u lekára*, *bývam u brata*.",
+            "**Notice that *na* + accusative means motion, *na* + locative means rest.** One preposition, two cases, two meanings. It's the same pattern as *doprava/vpravo* in unit 6 — Slovak separates motion from rest wherever it can."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Getting around",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The third column is the form you'll actually use — instrumental, no preposition. Learn that column directly; the basic form rarely shows up in travel sentences."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Say it",
+            "By …",
+            "English"
+          ],
+          "rows": [
+            [
+              "**auto** (n)",
+              "OW-toh",
+              "*autom*",
+              "car"
+            ],
+            [
+              "**autobus** (m)",
+              "OW-toh-boos",
+              "*autobusom*",
+              "bus"
+            ],
+            [
+              "**vlak** (m)",
+              "vlahk",
+              "*vlakom*",
+              "train"
+            ],
+            [
+              "**električka** (f)",
+              "EH-lehk-treech-kah",
+              "*električkou*",
+              "tram"
+            ],
+            [
+              "**trolejbus** (m)",
+              "TROH-lay-boos",
+              "*trolejbusom*",
+              "trolleybus"
+            ],
+            [
+              "**metro** (n)",
+              "MEHT-roh",
+              "*metrom*",
+              "subway"
+            ],
+            [
+              "**lietadlo** (n)",
+              "LYEH-tahd-loh",
+              "*lietadlom*",
+              "plane"
+            ],
+            [
+              "**bicykel** (m)",
+              "BEE-tsee-kehl",
+              "*na bicykli*",
+              "bicycle"
+            ],
+            [
+              "**taxík** (m)",
+              "TAH-kseek",
+              "*taxíkom*",
+              "taxi"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Two exceptions: the **bicycle** takes *na bicykli* (on the bike, locative), not the instrumental — because you sit **on** it, not **in** it. And **on foot** is *pešo*, a fixed word that never changes. The same goes for *na koni* (on horseback) and *na motorke* (by motorbike)."
+        },
+        {
+          "type": "kotak",
+          "title": "Bratislava without a metro",
+          "items": [
+            "Bratislava is one of the few European capitals without a metro — construction began in the 1980s and was then stopped, and the tunnels are still underground. People use the *električka* (tram), the *trolejbus*, and the *autobus*.",
+            "Buy your ticket before boarding, and you **must validate it** in the yellow machine inside the vehicle. An unvalidated ticket counts as no ticket, and inspectors (*revízor*) wear plain clothes. The fine is fifty euros — far more than this book."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Travel and timetables",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Ako sa dostanem do …?*",
+              "How do I get to …?"
+            ],
+            [
+              "*Kedy ide ďalší vlak?*",
+              "When is the next train?"
+            ],
+            [
+              "*Odkiaľ ide autobus?*",
+              "Where does the bus leave from?"
+            ],
+            [
+              "*Z ktorého nástupišťa?*",
+              "From which platform?"
+            ],
+            [
+              "*Ako dlho to trvá?*",
+              "How long does it take?"
+            ],
+            [
+              "*Kde si mám kúpiť lístok?*",
+              "Where should I buy a ticket?"
+            ],
+            [
+              "*Jeden lístok do Košíc, prosím.*",
+              "One ticket to Košice, please."
+            ],
+            [
+              "*Spiatočný alebo jednosmerný?*",
+              "Round trip or one way?"
+            ],
+            [
+              "*Musím prestupovať?*",
+              "Do I have to change?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Vystupujete?** is a phrase you must recognize on a crowded tram. The person behind you asks it to find out whether they need to squeeze past. The answer is *áno* or *nie*, and it's not small talk — it's a hint that you should move aside if the answer is no."
+        },
+        {
+          "type": "kotak",
+          "title": "Free trains for students",
+          "items": [
+            "Students under 26 who are enrolled in Slovakia — including international students — ride domestic trains **for free**; you just register at a station ticket office.",
+            "If you're living in Slovakia to study, that's reason enough to visit the *hlavná stanica* in your first week. Bring your passport and a letter from your school."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 9",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "A kilo of potatoes, please.",
+              "*Kilo zemiakov, prosím.*"
+            ],
+            [
+              "I'll buy a bottle of water.",
+              "*Kúpim fľašu vody.*"
+            ],
+            [
+              "Coffee without sugar.",
+              "*Káva bez cukru.*"
+            ],
+            [
+              "I'm going to the shop.",
+              "*Idem do obchodu.*"
+            ],
+            [
+              "My brother's book.",
+              "*Kniha brata.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "ísť",
+      "baca": "eest",
+      "en": "go (once)"
+    },
+    {
+      "sk": "chodiť",
+      "baca": "KHOH-dyeet",
+      "en": "go (repeatedly)"
+    },
+    {
+      "sk": "jazdiť",
+      "baca": "YAHZ-dyeet",
+      "en": "drive, ride (repeatedly)"
+    },
+    {
+      "sk": "prísť",
+      "baca": "preest",
+      "en": "come; arrive"
+    },
+    {
+      "sk": "odísť",
+      "baca": "OH-dyeest",
+      "en": "leave, depart"
+    },
+    {
+      "sk": "dostať sa",
+      "baca": "DOHS-taht sah",
+      "en": "get to"
+    },
+    {
+      "sk": "prestupovať",
+      "baca": "PREHS-too-poh-vaht",
+      "en": "change (trains, buses)"
+    },
+    {
+      "sk": "vystupovať",
+      "baca": "VEES-too-poh-vaht",
+      "en": "get off"
+    },
+    {
+      "sk": "nastupovať",
+      "baca": "NAHS-too-poh-vaht",
+      "en": "get on"
+    },
+    {
+      "sk": "trvať",
+      "baca": "TR-vaht",
+      "en": "last; take (time)"
+    },
+    {
+      "sk": "vlak",
+      "baca": "vlahk",
+      "en": "train (m)"
+    },
+    {
+      "sk": "autobus",
+      "baca": "OW-toh-boos",
+      "en": "bus (m)"
+    },
+    {
+      "sk": "električka",
+      "baca": "EH-lehk-treech-kah",
+      "en": "tram (f)"
+    },
+    {
+      "sk": "lietadlo",
+      "baca": "LYEH-tahd-loh",
+      "en": "plane (n)"
+    },
+    {
+      "sk": "lístok",
+      "baca": "LEES-tohk",
+      "en": "ticket (m)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Slovak.",
+      "items": [
+        "How do I get to Košice?",
+        "You can take the train or the bus.",
+        "I'm going this Friday.",
+        "When is the next train?",
+        "How long does it take?",
+        "One ticket to Bratislava, please."
+      ]
+    },
+    {
+      "prompt": "Choose ísť or chodiť. Write the ja form.",
+      "items": [
+        "Teraz ____ do školy.",
+        "Každý deň ____ do práce.",
+        "Zajtra ____ do Košíc.",
+        "Raz za mesiac ____ k rodičom.",
+        "Tento piatok ____ do kina.",
+        "Väčšinou ____ pešo."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "Košíc / sa / do / dostanem / ako / ?",
+        "vlakom / môžeš / ísť",
+        "piatok / idem / tento",
+        "mesiac / chodím / za / raz",
+        "spolu / pôjdeme"
+      ]
+    }
+  ],
+  "answers": [
+    "Ako sa dostanem do Košíc? — Môžeš ísť vlakom alebo autobusom. — Idem tento piatok. — Kedy ide ďalší vlak? — Ako dlho to trvá? — Jeden lístok do Bratislavy, prosím.",
+    "idem — chodím — idem — chodím — idem — chodím",
+    "Ako sa dostanem do Košíc? — Môžeš ísť vlakom. — Idem tento piatok. — Chodím raz za mesiac. — Pôjdeme spolu."
+  ]
+}

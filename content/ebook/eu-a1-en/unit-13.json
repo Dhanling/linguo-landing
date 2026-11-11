@@ -1,0 +1,629 @@
+{
+  "title": "At home",
+  "title_target": "Etxean",
+  "goal": "Name rooms and furniture, describe where you live, and share out the housework.",
+  "bekal": [
+    "name all the rooms and the most common furniture",
+    "describe a home or room with *badago*, *daude*, and place words",
+    "share out housework with *behar dut* and *nik … dut, zuk … duzu*"
+  ],
+  "dialogs": [
+    {
+      "title": "Elkarrizketa — Pisua garbitzen",
+      "intro": "Saturday morning in the apartment. Unai stands in the middle of the living room, hands on his hips.",
+      "lines": [
+        {
+          "speaker": "Unai:",
+          "text": "Budi, pisua nahiko zikina dago.",
+          "id": "Budi, the apartment is pretty dirty.",
+          "literal": "Budi, apartment-the quite dirty-the is."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Egia da. Gaur garbitu behar dugu.",
+          "id": "That's true. We have to clean today.",
+          "literal": "true-the is. today clean need we-have."
+        },
+        {
+          "speaker": "Unai:",
+          "text": "Nik sukaldea garbitzen dut. Zuk komuna?",
+          "id": "I'll clean the kitchen. You do the bathroom?",
+          "literal": "I-k kitchen-the cleaning I-have. you-k toilet-the?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ados. Eta egongela?",
+          "id": "Deal. And the living room?",
+          "literal": "agreed. and sitting-room-the?"
+        },
+        {
+          "speaker": "Unai:",
+          "text": "Egongela biok garbitzen dugu, azkarragoa da.",
+          "id": "We'll do the living room together, it's faster.",
+          "literal": "sitting-room-the we-two cleaning we-have, fast-er-the is."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Non dago erratza?",
+          "id": "Where's the broom?",
+          "literal": "where is broom-the?"
+        },
+        {
+          "speaker": "Unai:",
+          "text": "Armairuan dago, atearen ondoan.",
+          "id": "In the closet, next to the door.",
+          "literal": "closet-in is, door-of side-at."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eta zaborra? Non bota behar dut?",
+          "id": "And the trash? Where do I throw it out?",
+          "literal": "and trash-the? where throw need I-have?"
+        },
+        {
+          "speaker": "Unai:",
+          "text": "Kalean, atariaren ondoan. Bihar goizean jasotzen dute.",
+          "id": "On the street, next to the entrance. They collect it tomorrow morning.",
+          "literal": "street-on, entrance-of side-at. tomorrow morning-in collecting they-have."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ondo. Nire logela ere txukundu behar dut.",
+          "id": "OK. I also have to tidy my room.",
+          "literal": "good. my bedroom-the also tidy need I-have."
+        },
+        {
+          "speaker": "Unai:",
+          "text": "Bai! Zure mahaia liburuz beteta dago.",
+          "id": "Yes! Your desk is full of books.",
+          "literal": "yes! your table-the book-with full is."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Badakit... Ikaslearen bizitza!",
+          "id": "I know... Student life!",
+          "literal": "indeed-I-know... student-of life!"
+        }
+      ],
+      "notes": [
+        "**Pisua means apartment, not floor.** All over the region people call their home *pisua* (from Spanish *piso*), or *etxebizitza* in more formal language. *Etxea* is used both for a house and for \"home\" as the place you go back to.",
+        "**Biok — the two of us.** Basque has special words for groups of a set size: *biok* (the two of us), *hirurok* (the three of us), *denok* (all of us), *zuek biok* (you two). These words also show that the speaker is part of the group.",
+        "**Liburuz beteta — full of what.** The ending *-z* you know from means of transport also means \"with\": *liburuz beteta* (full of books), *jendez beteta* (full of people), *urez beteta* (full of water). The order is the reverse of English: the contents first, then \"full\".",
+        "**Nik … dut, zuk … duzu — sharing out tasks.** Since the auxiliary already shows who does it, adding *nik* and *zuk* in front stresses the split: \"**I**'ll take the kitchen, **you** take the bathroom\". Without that stress, the pronouns are simply dropped."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Rooms and parts of the house",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "etxebizitza / pisua",
+              "eh-cheh-bee-SEE-tsah",
+              "apartment"
+            ],
+            [
+              "sukaldea",
+              "soo-KAHL-deh-ah",
+              "kitchen"
+            ],
+            [
+              "egongela",
+              "eh-GOHN-geh-lah",
+              "living room"
+            ],
+            [
+              "logela",
+              "loh-GEH-lah",
+              "bedroom"
+            ],
+            [
+              "komuna",
+              "koh-MOO-nah",
+              "restroom, toilet"
+            ],
+            [
+              "bainugela",
+              "bah-ee-noo-GEH-lah",
+              "bathroom"
+            ],
+            [
+              "jangela",
+              "KHAHN-geh-lah",
+              "dining room"
+            ],
+            [
+              "korridorea",
+              "koh-rree-DOH-reh-ah",
+              "hallway"
+            ],
+            [
+              "balkoia",
+              "bahl-KOH-ee-ah",
+              "balcony"
+            ],
+            [
+              "terraza",
+              "teh-RRAH-sah",
+              "terrace"
+            ],
+            [
+              "ataria",
+              "ah-TAH-ree-ah",
+              "building entrance hall"
+            ],
+            [
+              "igogailua",
+              "ee-goh-GAH-ee-loo-ah",
+              "elevator"
+            ],
+            [
+              "eskailerak",
+              "ehs-kah-ee-LEH-rahk",
+              "stairs"
+            ],
+            [
+              "ganbara",
+              "gahn-BAH-rah",
+              "attic"
+            ],
+            [
+              "garajea",
+              "gah-RAH-kheh-ah",
+              "garage"
+            ],
+            [
+              "lorategia",
+              "loh-rah-TEH-gee-ah",
+              "garden"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the ending *-gela*, meaning \"room\" — the Latin word *cella* you met in the opening chapter: *lo**gela*** (sleeping room), *jan**gela*** (eating room), *bainu**gela*** (bath room), *ikas**gela*** (classroom). Once you see the pattern, half of the house vocabulary comes for free."
+        },
+        {
+          "type": "kotak",
+          "title": "Baserria — the Basque farmhouse",
+          "items": [
+            "A *baserria* is a traditional farmhouse: one big stone building with the animals downstairs and the family above. It's more than a house — it's also a family name. Many Basque surnames are farmhouse names (*Etxeberria* = new house, *Elizalde* = by the church, *Mendizabal* = wide mountain).",
+            "*Baserritarra* means someone who lives on a baserri, and at the town market it means a farmer selling their own produce.",
+            "When you read a Basque street name or surname, you're almost always reading a description of a place: *etxe* (house), *mendi* (mountain), *ibai* (river), *zabal* (wide), *berri* (new), *zahar* (old)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Furniture and household items",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "English",
+            "Euskara",
+            "English"
+          ],
+          "rows": [
+            [
+              "ohea",
+              "bed",
+              "hozkailua",
+              "fridge"
+            ],
+            [
+              "armairua",
+              "closet",
+              "labea",
+              "oven"
+            ],
+            [
+              "mahaia",
+              "table",
+              "sukaldea",
+              "stove"
+            ],
+            [
+              "aulkia",
+              "chair",
+              "garbigailua",
+              "washing machine"
+            ],
+            [
+              "sofa",
+              "sofa",
+              "harraska",
+              "sink"
+            ],
+            [
+              "apala",
+              "shelf",
+              "dutxa",
+              "shower"
+            ],
+            [
+              "alfonbra",
+              "rug",
+              "ispilua",
+              "mirror"
+            ],
+            [
+              "gortina",
+              "curtain",
+              "toalla",
+              "towel"
+            ],
+            [
+              "lanpara",
+              "lamp",
+              "izara",
+              "sheet"
+            ],
+            [
+              "argia",
+              "light",
+              "burkoa",
+              "pillow"
+            ],
+            [
+              "telebista",
+              "TV",
+              "platera",
+              "plate"
+            ],
+            [
+              "giltza",
+              "key",
+              "basoa",
+              "glass"
+            ],
+            [
+              "leihoa",
+              "window",
+              "koilara",
+              "spoon"
+            ],
+            [
+              "atea",
+              "door",
+              "sardexka",
+              "fork"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Sukaldea* means both the kitchen and the stove, depending on the sentence — a bit like \"the range\" can mean a whole cooker. To be precise, the stove is *sukalde-plaka* or simply *su* (\"fire\")."
+        },
+        {
+          "type": "kotak",
+          "title": "Describing where you live",
+          "items": [
+            "*Nire pisuak hiru logela ditu.* — My apartment has three bedrooms.",
+            "*Sukaldea txikia da baina argitsua.* — The kitchen is small but bright.",
+            "*Bigarren solairuan bizi naiz.* — I live on the second floor.",
+            "*Igogailurik ez dago.* — There's no elevator.",
+            "*Balkoitik itsasoa ikusten da.* — You can see the sea from the balcony.",
+            "*Alokairua garestia da Bilbon.* — Rent is expensive in Bilbo."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Housework",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English",
+            "Auxiliary"
+          ],
+          "rows": [
+            [
+              "garbitu",
+              "gahr-BEE-too",
+              "clean",
+              "dut"
+            ],
+            [
+              "txukundu",
+              "choo-KOON-doo",
+              "tidy up",
+              "dut"
+            ],
+            [
+              "jaso",
+              "KHAH-soh",
+              "put away, pick up",
+              "dut"
+            ],
+            [
+              "bota",
+              "BOH-tah",
+              "throw away",
+              "dut"
+            ],
+            [
+              "erosi",
+              "eh-ROH-see",
+              "buy, shop",
+              "dut"
+            ],
+            [
+              "kozinatu",
+              "koh-see-NAH-too",
+              "cook",
+              "dut"
+            ],
+            [
+              "prestatu",
+              "prehs-TAH-too",
+              "prepare",
+              "dut"
+            ],
+            [
+              "arropa garbitu",
+              "ah-RROH-pah",
+              "do the laundry",
+              "dut"
+            ],
+            [
+              "platerak garbitu",
+              "plah-TEH-rahk",
+              "do the dishes",
+              "ditut"
+            ],
+            [
+              "ohea egin",
+              "OH-eh-ah eh-geen",
+              "make the bed",
+              "dut"
+            ],
+            [
+              "lisatu",
+              "lee-SAH-too",
+              "iron",
+              "dut"
+            ],
+            [
+              "erregatu",
+              "eh-rreh-GAH-too",
+              "water the plants",
+              "dut"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "To share out tasks, just combine the doer wearing its hat (*nik*) with *behar dut*: *Nik platerak garbitu behar ditut* (I have to do the dishes). Notice that the auxiliary is plural too because there are many plates — *ditut*, not *dut*."
+        },
+        {
+          "type": "kotak",
+          "title": "Looking for a place to live",
+          "items": [
+            "*iragarkia* (ad), *alokairua* (rent), *fidantza* (deposit), *gastuak* (bills), *jabea* (owner), *bizilaguna* (roommate), *hutsik* (empty).",
+            "*Logela bat alokatu nahi dut.* — I'd like to rent a room.",
+            "*Zenbat da hilean?* — How much is it per month?",
+            "*Gastuak barne daude?* — Are bills included?",
+            "In Bilbo and Donostia, room ads are usually written in Spanish; but asking a Basque-speaking owner about it in euskara often makes the conversation much warmer."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "eu": "pisu",
+      "baca": "PEE-soo",
+      "en": "apartment"
+    },
+    {
+      "eu": "sukalde",
+      "baca": "soo-KAHL-deh",
+      "en": "kitchen"
+    },
+    {
+      "eu": "egongela",
+      "baca": "eh-GOHN-geh-lah",
+      "en": "living room"
+    },
+    {
+      "eu": "logela",
+      "baca": "loh-GEH-lah",
+      "en": "bedroom"
+    },
+    {
+      "eu": "bainugela",
+      "baca": "bah-ee-noo-GEH-lah",
+      "en": "bathroom"
+    },
+    {
+      "eu": "balkoi",
+      "baca": "bahl-KOH-ee",
+      "en": "balcony"
+    },
+    {
+      "eu": "eskailera",
+      "baca": "ehs-kah-ee-LEH-rah",
+      "en": "stairs"
+    },
+    {
+      "eu": "igogailu",
+      "baca": "ee-goh-GAH-ee-loo",
+      "en": "elevator"
+    },
+    {
+      "eu": "solairu",
+      "baca": "soh-LAH-ee-roo",
+      "en": "floor (story)"
+    },
+    {
+      "eu": "ohe",
+      "baca": "OH-eh",
+      "en": "bed"
+    },
+    {
+      "eu": "armairu",
+      "baca": "ahr-MAH-ee-roo",
+      "en": "closet"
+    },
+    {
+      "eu": "hozkailu",
+      "baca": "ohs-KAH-ee-loo",
+      "en": "fridge"
+    },
+    {
+      "eu": "garbigailu",
+      "baca": "gahr-bee-GAH-ee-loo",
+      "en": "washing machine"
+    },
+    {
+      "eu": "ispilu",
+      "baca": "ees-PEE-loo",
+      "en": "mirror"
+    },
+    {
+      "eu": "giltza",
+      "baca": "GEEL-tsah",
+      "en": "key"
+    },
+    {
+      "eu": "argi",
+      "baca": "AHR-gee",
+      "en": "light; bright"
+    },
+    {
+      "eu": "plater",
+      "baca": "plah-TEHR",
+      "en": "plate"
+    },
+    {
+      "eu": "baso",
+      "baca": "BAH-soh",
+      "en": "glass"
+    },
+    {
+      "eu": "koilara",
+      "baca": "koh-ee-LAH-rah",
+      "en": "spoon"
+    },
+    {
+      "eu": "arropa",
+      "baca": "ah-RROH-pah",
+      "en": "clothes"
+    },
+    {
+      "eu": "zabor",
+      "baca": "SAH-bohr",
+      "en": "trash"
+    },
+    {
+      "eu": "erratz",
+      "baca": "eh-RRAHTS",
+      "en": "broom"
+    },
+    {
+      "eu": "garbitu",
+      "baca": "gahr-BEE-too",
+      "en": "clean (verb)"
+    },
+    {
+      "eu": "txukundu",
+      "baca": "choo-KOON-doo",
+      "en": "tidy up"
+    },
+    {
+      "eu": "bota",
+      "baca": "BOH-tah",
+      "en": "throw away"
+    },
+    {
+      "eu": "kozinatu",
+      "baca": "koh-see-NAH-too",
+      "en": "cook"
+    },
+    {
+      "eu": "zikin",
+      "baca": "see-KEEN",
+      "en": "dirty"
+    },
+    {
+      "eu": "garbi",
+      "baca": "GAHR-bee",
+      "en": "clean (adj.)"
+    },
+    {
+      "eu": "beteta",
+      "baca": "beh-TEH-tah",
+      "en": "full"
+    },
+    {
+      "eu": "hutsik",
+      "baca": "OO-tseek",
+      "en": "empty"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Which room is this thing usually in? Answer with the ending -an.",
+      "items": [
+        "hozkailua → ____",
+        "ohea → ____",
+        "dutxa → ____",
+        "sofa → ____",
+        "mahaia eta aulkiak → ____",
+        "kotxea → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Basque.",
+      "items": [
+        "My apartment has two bedrooms.",
+        "The kitchen is small but clean.",
+        "I have to do the dishes.",
+        "The key is on the table.",
+        "There's no elevator.",
+        "My room is full of books."
+      ]
+    },
+    {
+      "prompt": "Fill in the right housework verb.",
+      "items": [
+        "Platerak ____ behar ditut. (wash)",
+        "Zaborra ____ behar dut. (throw away)",
+        "Logela ____ behar dut. (tidy up)",
+        "Afaria ____ behar dut. (cook)",
+        "Arropa ____ behar dut. (wash)",
+        "Erosketak ____ behar ditut. (do)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "dago / non / giltza / ?",
+        "dago / mahaiaren / giltza / gainean",
+        "ditu / hiru / nire / logela / pisuak",
+        "dugu / garbitu / behar / gaur",
+        "dago / beteta / liburuz / mahaia",
+        "da / txikia / sukaldea / baina / argitsua"
+      ]
+    }
+  ],
+  "answers": [
+    "sukaldean — logelan — bainugelan — egongelan — jangelan — garajean",
+    "Nire pisuak bi logela ditu. — Sukaldea txikia da baina garbia. — Platerak garbitu behar ditut. — Giltza mahaiaren gainean dago. — Ez dago igogailurik. — Nire logela liburuz beteta dago.",
+    "garbitu — bota — txukundu — kozinatu — garbitu — egin",
+    "Non dago giltza? — Giltza mahaiaren gainean dago. — Nire pisuak hiru logela ditu. — Gaur garbitu behar dugu. — Mahaia liburuz beteta dago. — Sukaldea txikia da baina argitsua."
+  ]
+}

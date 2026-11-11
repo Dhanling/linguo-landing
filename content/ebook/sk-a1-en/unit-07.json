@@ -1,0 +1,519 @@
+{
+  "title": "What are you doing?",
+  "title_target": "Čo robíš?",
+  "goal": "Talk about your daily activities, complete all three verb classes, and set up the rhythm rule — a sound rule no other European language has, which explains many endings that look wrong.",
+  "bekal": [
+    "use all three Slovak verb classes and recognize the class from the *ja* form",
+    "describe your daily routine with time expressions",
+    "recognize and apply the rhythm rule"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Bežný deň",
+      "intro": "Eva and Budi are waiting for the bus. The conversation turns to their routines.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Čo robíš cez týždeň?",
+          "id": "What do you do during the week?",
+          "literal": "what you-do through week?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ráno sa učím po slovensky a popoludní pracujem.",
+          "id": "In the morning I study Slovak, and in the afternoon I work.",
+          "literal": "morning self I-teach in-the-way Slovak and after-noon I-work."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Kde pracuješ?",
+          "id": "Where do you work?",
+          "literal": "where you-work?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "V malej firme v centre. Píšem programy.",
+          "id": "At a small company in the center. I write programs.",
+          "literal": "in small-loc company-loc in center-loc. I-write programs."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "To znie zaujímavo. A čo robíš večer?",
+          "id": "That sounds interesting. And what do you do in the evening?",
+          "literal": "that it-sounds interesting. and what you-do evening?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Väčšinou čítam alebo pozerám filmy. Niekedy varím.",
+          "id": "I usually read or watch films. Sometimes I cook.",
+          "literal": "mostly I-read or I-watch films. sometimes I-cook."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ty vieš variť? Ja vôbec neviem.",
+          "id": "You can cook? I can't at all.",
+          "literal": "you you-know cook? I at-all not-I-know."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Trochu. Indonézske jedlo je jednoduché.",
+          "id": "A little. Indonesian food is simple.",
+          "literal": "a-little. Indonesian-n food is simple."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ja každý deň jem v jedálni. Je to rýchle.",
+          "id": "I eat in the canteen every day. It's quick.",
+          "literal": "I every day I-eat in canteen-loc. is it fast."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A cez víkend? Čo robievaš?",
+          "id": "And at the weekend? What do you usually do?",
+          "literal": "and through weekend? what you-usually-do?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Chodím do hôr. Milujem Tatry.",
+          "id": "I go to the mountains. I love the Tatras.",
+          "literal": "I-go to mountains-gen-pl. I-love Tatras-pl."
+        }
+      ],
+      "notes": [
+        "**Píšem, pracujem — the third class.** Its ending is *-em*, and it's the one that most often changes its stem: *písať → píšem* (s becomes š), *brať → beriem*, *ísť → idem*. The good news: the change is the same for all six persons, so you only need to learn the *ja* form and the rest flows.",
+        "**Verbs in -ovať always become -ujem.** *Pracovať → pracujem*, *študovať → študujem*, *kupovať → kupujem*, *ďakovať → ďakujem*. This is the most predictable group in all of Slovak, and it's huge — almost every modern borrowed verb joins it: *telefonovať, informovať, organizovať*.",
+        "**Sa učím, not učím.** The verb *učiť sa* always carries *sa*: literally \"to teach oneself\". Without *sa*, *učiť* means \"to teach others\". One little word reverses the direction of the action.",
+        "**Robievaš** is the habitual form — made by slipping in *-ieva-*, it means \"to usually do, again and again\". You don't need to produce it at A1, but recognize it when you hear it: *robiť → robievať*, *chodiť → chodievať*, *piť → pijavať*.",
+        "**Do hôr** = to the mountains. Notice *hora → hôr*: the vowel *o* lengthens to *ô* when the genitive plural ending disappears — exactly the pattern from unit 5."
+      ],
+      "grammars": [
+        {
+          "title": "The three verb classes — the full table",
+          "body": [
+            "Every Slovak verb belongs to one of these three classes. The class is recognized from **the *ja* form**, not the dictionary form — that's why a good dictionary always lists both."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "**-ám** *volať*",
+              "**-ím** *robiť*",
+              "**-em** *písať*",
+              "**-ujem** *pracovať*"
+            ],
+            "rows": [
+              [
+                "ja",
+                "vol**ám**",
+                "rob**ím**",
+                "píš**em**",
+                "prac**ujem**"
+              ],
+              [
+                "ty",
+                "vol**áš**",
+                "rob**íš**",
+                "píš**eš**",
+                "prac**uješ**"
+              ],
+              [
+                "on / ona",
+                "vol**á**",
+                "rob**í**",
+                "píš**e**",
+                "prac**uje**"
+              ],
+              [
+                "my",
+                "vol**áme**",
+                "rob**íme**",
+                "píš**eme**",
+                "prac**ujeme**"
+              ],
+              [
+                "vy",
+                "vol**áte**",
+                "rob**íte**",
+                "píš**ete**",
+                "prac**ujete**"
+              ],
+              [
+                "oni",
+                "vol**ajú**",
+                "rob**ia**",
+                "píš**u**",
+                "prac**ujú**"
+              ]
+            ]
+          },
+          "after": [
+            "**The fourth column is really part of the third** — every *-ovať* verb is an *-em* verb with an inserted *-uj-*. It's shown separately because the group is large and its pattern is perfect.",
+            "**The last row is the one most often wrong**: *-ajú*, *-ia*, *-u*, *-ujú*. Four different endings for the same person. If you drill only one row of this table, drill this one.",
+            "**Irregular verbs** that must be learned separately: *byť* (som), *mať* (mám — actually regular), *jesť* (jem, ješ, je, jeme, jete, jedia), *ísť* (idem, ideš, ide, ideme, idete, idú), *vedieť* (viem, vieš, vie, vieme, viete, vedia), *chcieť* (chcem), *môcť* (môžem). Seven words, and all seven are used every day — so they'll stick on their own through use."
+          ]
+        },
+        {
+          "title": "The rhythm rule — why endings are sometimes \"wrong\"",
+          "body": [
+            "A rule no other Slavic language has, not even Czech, which is so close. It's simple: **two long syllables may not follow each other in one word**. If the syllable before is already long, an ending that should be long is shortened."
+          ],
+          "table": {
+            "head": [
+              "Base form",
+              "Expected ending",
+              "Result",
+              "Why"
+            ],
+            "rows": [
+              [
+                "*volať* (short)",
+                "*-ám*",
+                "vol**ám**",
+                "*vo-* is short, the ending stays long"
+              ],
+              [
+                "*písať* (long)",
+                "*-em*",
+                "píš**em**",
+                "this ending is short anyway, unaffected"
+              ],
+              [
+                "*chváliť* (long)",
+                "*-im*",
+                "chvál**im**",
+                "*chvá-* is long → *-ím* becomes *-im*"
+              ],
+              [
+                "*pekný* (short)",
+                "*-á* f",
+                "pekn**á**",
+                "*pek-* is short"
+              ],
+              [
+                "*krásny* (long)",
+                "*-á* f",
+                "krásn**a**",
+                "*krás-* is long → short *-a*"
+              ],
+              [
+                "*žena* (short)",
+                "*-ám* dative",
+                "žen**ám**",
+                "*že-* is short"
+              ],
+              [
+                "*práca* (long)",
+                "*-ám* dative",
+                "prác**am**",
+                "*prá-* is long → short *-am*"
+              ]
+            ]
+          },
+          "after": [
+            "**What counts as long**: vowels with a mark (*á é í ó ú ý*), the glides (*ia ie iu*), *ô*, and *ŕ ĺ*. Everything else is short.",
+            "**Why does this matter now?** Because without this rule, half the endings you see in this course would look like typos. *Krásna* next to *pekná*, *prácam* next to *ženám* — both are correct, and the only difference is the length of the syllable before.",
+            "**At A1 you don't need to produce it perfectly.** What matters: don't \"correct\" what you see. If you write *krásná* because the pattern seems to call for it, a native speaker will instantly mark it as not Slovak — and as Czech.",
+            "**The exceptions are few and can be ignored for now**: some plural noun endings (*-ie*, *-ia*) and a few prefixes stay long even though they break the rule. You'll meet five at most in all of A1."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Daily activities",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Dictionary form",
+            "ja …",
+            "English"
+          ],
+          "rows": [
+            [
+              "**vstávať**",
+              "vstávam",
+              "to get up"
+            ],
+            [
+              "**raňajkovať**",
+              "raňajkujem",
+              "to have breakfast"
+            ],
+            [
+              "**obedovať**",
+              "obedujem",
+              "to have lunch"
+            ],
+            [
+              "**večerať**",
+              "večeriam",
+              "to have dinner"
+            ],
+            [
+              "**pracovať**",
+              "pracujem",
+              "to work"
+            ],
+            [
+              "**študovať**",
+              "študujem",
+              "to study (at university)"
+            ],
+            [
+              "**učiť sa**",
+              "učím sa",
+              "to learn"
+            ],
+            [
+              "**čítať**",
+              "čítam",
+              "to read"
+            ],
+            [
+              "**písať**",
+              "píšem",
+              "to write"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice how many end in **-ovať** and therefore take *-ujem*. This group keeps growing: almost every new word that enters Slovak from another language ends up here. *Googlovať → googlujem*. *Četovať → četujem*."
+        },
+        {
+          "type": "kotak",
+          "title": "Verbs for meals",
+          "items": [
+            "*Raňajky* (breakfast), *obed* (lunch), *večera* (dinner) are nouns, and all three have their own verbs: *raňajkovať, obedovať, večerať*. English needs two words (\"have lunch\"); Slovak has one.",
+            "*Obed* in Slovakia is the main meal of the day, usually between 11:30 and 1:00, and it almost always starts with soup. Turning down soup in a Slovak home needs a good excuse."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Time expressions",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**ráno**",
+              "RAH-noh",
+              "in the morning"
+            ],
+            [
+              "**doobeda**",
+              "DOH-oh-beh-dah",
+              "before noon"
+            ],
+            [
+              "**napoludnie**",
+              "NAH-poh-lood-nyeh",
+              "at midday"
+            ],
+            [
+              "**popoludní**",
+              "POH-poh-lood-nyee",
+              "in the afternoon"
+            ],
+            [
+              "**večer**",
+              "VEH-chehr",
+              "in the evening"
+            ],
+            [
+              "**v noci**",
+              "v NOH-tsee",
+              "at night"
+            ],
+            [
+              "**dnes**",
+              "dnyehs",
+              "today"
+            ],
+            [
+              "**včera**",
+              "FCHEH-rah",
+              "yesterday"
+            ],
+            [
+              "**zajtra**",
+              "ZAI-trah",
+              "tomorrow"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Time expressions usually stand **at the start of the sentence**, with the verb after them: *Ráno sa učím*, *Večer varím*, *Cez víkend chodím do hôr*. That order isn't required — Slovak word order is very free because the case endings already mark each word's role — but it sounds the most natural."
+        },
+        {
+          "type": "kotak",
+          "title": "Nikdy demands a double negative",
+          "items": [
+            "*Nikdy nepijem kávu.* — \"I never drink coffee.\" Two negatives in one sentence, and both are required. *Nikdy pijem kávu* isn't just wrong; it means nothing.",
+            "The same rule applies to *nič* (nothing), *nikto* (nobody), *nikde* (nowhere): *Nič nevidím*, *Nikto tu nie je*, *Nikde ho nenájdem*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 5",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "How much is it?",
+              "*Koľko to stojí?*"
+            ],
+            [
+              "Two euros a kilo.",
+              "*Dve eurá za kilo.*"
+            ],
+            [
+              "Five coffees, please.",
+              "*Päť káv, prosím.*"
+            ],
+            [
+              "That's a bit expensive.",
+              "*To je trochu drahé.*"
+            ],
+            [
+              "I only have twenty euros.",
+              "*Mám len dvadsať eur.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "robiť",
+      "baca": "ROH-beet",
+      "en": "to do; to make"
+    },
+    {
+      "sk": "písať",
+      "baca": "PEE-saht",
+      "en": "to write"
+    },
+    {
+      "sk": "čítať",
+      "baca": "CHEE-taht",
+      "en": "to read"
+    },
+    {
+      "sk": "variť",
+      "baca": "VAH-reet",
+      "en": "to cook"
+    },
+    {
+      "sk": "pozerať",
+      "baca": "POH-zeh-raht",
+      "en": "to watch"
+    },
+    {
+      "sk": "počúvať",
+      "baca": "POH-choo-vaht",
+      "en": "to listen"
+    },
+    {
+      "sk": "učiť sa",
+      "baca": "OO-cheet sah",
+      "en": "to learn"
+    },
+    {
+      "sk": "spať",
+      "baca": "spaht",
+      "en": "to sleep"
+    },
+    {
+      "sk": "vstávať",
+      "baca": "FSTAH-vaht",
+      "en": "to get up"
+    },
+    {
+      "sk": "chodiť",
+      "baca": "KHOH-dyeet",
+      "en": "to go (regularly)"
+    },
+    {
+      "sk": "milovať",
+      "baca": "MEE-loh-vaht",
+      "en": "to love"
+    },
+    {
+      "sk": "firma",
+      "baca": "FEER-mah",
+      "en": "company (f)"
+    },
+    {
+      "sk": "centrum",
+      "baca": "TSEHN-troom",
+      "en": "town center (n)"
+    },
+    {
+      "sk": "jedlo",
+      "baca": "YEHD-loh",
+      "en": "food; dish (n)"
+    },
+    {
+      "sk": "jedáleň",
+      "baca": "YEH-dah-lehny",
+      "en": "canteen (f)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Slovak.",
+      "items": [
+        "What do you do during the week?",
+        "In the morning I study Slovak.",
+        "Where do you work?",
+        "I usually read or watch films.",
+        "I eat in the canteen every day.",
+        "I never drink coffee."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right verb form.",
+      "items": [
+        "Ja ____ program. (písať)",
+        "Ty ____ v škole? (pracovať)",
+        "On ____ knihu. (čítať)",
+        "My ____ večeru. (variť)",
+        "Vy ____ film. (pozerať)",
+        "Oni ____ po slovensky. (učiť sa)",
+        "Ja ____ o siedmej. (vstávať)",
+        "Ona ____ hudbu. (počúvať)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "robíš / týždeň / čo / cez / ?",
+        "sa / ráno / učím / slovensky / po",
+        "pracujem / firme / v / malej",
+        "varím / niekedy / večer",
+        "nepijem / kávu / nikdy"
+      ]
+    }
+  ],
+  "answers": [
+    "Čo robíš cez týždeň? — Ráno sa učím po slovensky. — Kde pracuješ? — Väčšinou čítam alebo pozerám filmy. — Každý deň jem v jedálni. — Nikdy nepijem kávu.",
+    "píšem — pracuješ — číta — varíme — pozeráte — učia sa — vstávam — počúva",
+    "Čo robíš cez týždeň? — Ráno sa učím po slovensky. — Pracujem v malej firme. — Niekedy večer varím. — Nikdy nepijem kávu."
+  ]
+}

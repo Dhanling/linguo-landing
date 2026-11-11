@@ -1,0 +1,518 @@
+{
+  "title": "Is there a pharmacy nearby?",
+  "title_target": "Има ли аптека наблизо?",
+  "goal": "Use the two most frequent words in all of Bulgarian — **има** and **няма** — to talk about having and about existence, and see that one word covers both English \"has\" and \"there is\".",
+  "bekal": [
+    "say what you have and don't have",
+    "ask whether something is somewhere",
+    "tell **има** \"he/she has\" from **има** \"there is\"",
+    "answer thank you with **няма защо**",
+    "say where things are with seven place prepositions"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Asking in the street",
+      "intro": "Ani stops on the sidewalk and asks a passer-by. Count how many times **има** and **няма** come up — and notice that they don't always mean the same thing.",
+      "lines": [
+        {
+          "speaker": "Ани:",
+          "text": "[Извинете|Eez-vee-NEH-teh], [има|EE-ma] [ли|lee] [аптека|ap-TEH-ka] [наблизо|na-BLEE-zo]?",
+          "id": "Excuse me, is there a pharmacy nearby?",
+          "literal": "excuse-(formal), there-is — (question) — pharmacy — nearby?"
+        },
+        {
+          "speaker": "Минувач:",
+          "text": "[Да|Da], [има|EE-ma]. [Ето|EH-to] [там|tam], [до|do] [банката|BAN-ka-ta].",
+          "id": "Yes, there is. Over there, next to the bank.",
+          "literal": "yes, there-is. here-is — there, next-to — bank-the."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[А|A] [банкомат|ban-ko-MAT]? [Имам|EE-mam] [само|SA-mo] [големи|go-LEH-mee] [банкноти|bank-NO-tee].",
+          "id": "And an ATM? I only have big notes.",
+          "literal": "and — ATM? have-I — only — big — banknotes."
+        },
+        {
+          "speaker": "Минувач:",
+          "text": "[Банкомат|Ban-ko-MAT] [няма|NYA-ma] [тук|took]. [Има|EE-ma] [в|v] [мола|MO-lă].",
+          "id": "There's no ATM here. There's one in the mall.",
+          "literal": "ATM — there-isn't — here. there-is — in — mall-the."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Далече|Da-LEH-cheh] [ли|lee] [е|eh] [молът|MO-lăt]?",
+          "id": "Is the mall far?",
+          "literal": "far — (question) — is — mall-the?"
+        },
+        {
+          "speaker": "Минувач:",
+          "text": "[Не|Neh], [десет|DEH-set] [минути|mee-NOO-tee] [пеша|peh-SHA]. [Имате|EE-ma-teh] [ли|lee] [карта|KAR-ta]?",
+          "id": "No, ten minutes on foot. Do you have a map?",
+          "literal": "no, ten — minutes — on-foot. have-you-(formal) — (question) — map?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Имам|EE-mam] [телефон|teh-leh-FON], [но|no] [нямам|NYA-mam] [интернет|een-ter-NET].",
+          "id": "I have a phone, but I don't have internet.",
+          "literal": "have-I — phone, but — don't-have-I — internet."
+        },
+        {
+          "speaker": "Минувач:",
+          "text": "[Няма|NYA-ma] [проблем|prob-LEM]. [Вървете|Văr-VEH-teh] [направо|na-PRA-vo] [и|ee] [после|PO-sleh] [надясно|na-DYAS-no].",
+          "id": "No problem. Go straight ahead and then turn right.",
+          "literal": "there-isn't — problem. walk-(formal) — straight — and — then — to-the-right."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Благодаря|Bla-go-da-RYA] [много|MNO-go]!",
+          "id": "Thank you very much!",
+          "literal": "thank-you — much!"
+        },
+        {
+          "speaker": "Минувач:",
+          "text": "[Няма|NYA-ma] [защо|zash-TO]. [Приятен|Pree-YA-ten] [ден|den]!",
+          "id": "You're welcome. Have a nice day!",
+          "literal": "there-isn't — what-for. pleasant — day!"
+        }
+      ],
+      "notes": [
+        "**Има has two jobs.** As an ordinary verb it means \"has\": *Той има кола* — he has a car. With no subject it means \"there is / there are\": *Има кола* — there's a car. The only difference is whether there's a subject in front. Spanish *hay* and French *il y a* work in a similar way — one word where English needs \"there is\".",
+        "**Няма is one word for \"there isn't\", not two.** Bulgarian doesn't say *не има*; that combination has fused into *няма*. The same goes for \"I don't have\": not *не имам* but **нямам**.",
+        "⚠️ **After има and няма, the noun does NOT take the article.** *Има аптека* — there's a pharmacy (some pharmacy). If you add the article — *Има аптеката* — the sentence sounds odd, because *има*'s job is to introduce something new. Once the thing is known, you switch to *е*: *Аптеката е там.* English does the same: \"there's **a** pharmacy\", not \"there's the pharmacy\".",
+        "**Има and няма never change form when they mean \"there is\".** One thing or a thousand, male or female: *Има човек* (there's a person), *Има хора* (there are people). Compare English, which demands *there is* and *there are*.",
+        "**Няма защо literally means \"there's nothing to (thank me) for\" and it's \"you're welcome\".** It's the most common answer to *благодаря*, a bit warmer than *моля*. If you only learn one, learn this one.",
+        "**Няма проблем has become an everyday phrase** and is used exactly like English \"no problem\". You'll hear it dozens of times a day.",
+        "**Само means \"only\", and it goes right in front of the word it limits.** *Имам само телефон* (I only have a phone) is different from *Само аз имам телефон* (only I have a phone). Moving *само* moves the whole meaning of the sentence.",
+        "**Пеша means \"on foot\" and never changes.** *Десет минути пеша* — ten minutes on foot. You'll hear it a lot in Sofia, a city most of which you can cover by walking."
+      ],
+      "grammars": [
+        {
+          "title": "Имам and нямам — have and don't have",
+          "body": [
+            "This verb belongs to Group III, the most regular and the biggest verb group in Bulgarian. Learn the six forms below and you've learned the pattern for hundreds of other verbs."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Have",
+              "Say it",
+              "Don't have",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "аз",
+                "имам",
+                "EE-mam",
+                "нямам",
+                "NYA-mam"
+              ],
+              [
+                "ти",
+                "имаш",
+                "EE-mash",
+                "нямаш",
+                "NYA-mash"
+              ],
+              [
+                "той / тя / то",
+                "има",
+                "EE-ma",
+                "няма",
+                "NYA-ma"
+              ],
+              [
+                "ние",
+                "имаме",
+                "EE-ma-meh",
+                "нямаме",
+                "NYA-ma-meh"
+              ],
+              [
+                "вие",
+                "имате",
+                "EE-ma-teh",
+                "нямате",
+                "NYA-ma-teh"
+              ],
+              [
+                "те",
+                "имат",
+                "EE-mat",
+                "нямат",
+                "NYA-mat"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that the negative isn't *не* + verb, but a separate word whose first letters change: **и- → ня-**. This is the only Bulgarian verb that behaves this way, so there's no other pattern to worry about."
+          ]
+        },
+        {
+          "title": "Има / няма with no subject — \"there is\" and \"there isn't\"",
+          "body": [
+            "In their second job, the forms freeze in the third person singular and never change. Only the noun that follows changes."
+          ],
+          "table": {
+            "head": [
+              "Bulgarian",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Има аптека.",
+                "EE-ma ap-TEH-ka",
+                "There's a pharmacy."
+              ],
+              [
+                "Няма аптека.",
+                "NYA-ma ap-TEH-ka",
+                "There's no pharmacy."
+              ],
+              [
+                "Има ли аптека?",
+                "EE-ma lee ap-TEH-ka",
+                "Is there a pharmacy?"
+              ],
+              [
+                "Има много хора.",
+                "EE-ma MNO-go ho-RA",
+                "There are a lot of people."
+              ],
+              [
+                "Тук няма никой.",
+                "took NYA-ma NEE-koy",
+                "There's nobody here."
+              ],
+              [
+                "Няма нищо за ядене.",
+                "NYA-ma NEESH-to za YA-deh-neh",
+                "There's nothing to eat."
+              ]
+            ]
+          },
+          "after": [
+            "The last two rows show the stacked negatives you met in Unit 1: *няма никой* is literally \"there-isn't nobody\". In Bulgarian this isn't a mistake but a requirement — the negative must be repeated. Unit 13 covers it in full."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Seven place prepositions that cover almost everything",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Because Bulgarian nouns don't change form, the preposition is the only thing you need to choose correctly — the noun just goes after it as it is. Compare Russian, where every preposition demands a different form of the noun."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Preposition",
+            "Say it",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "в / във",
+              "v / văv",
+              "in, to (inside)",
+              "в стаята — in the room"
+            ],
+            [
+              "на",
+              "na",
+              "on, at, to",
+              "на масата — on the table"
+            ],
+            [
+              "до",
+              "do",
+              "next to",
+              "до банката — next to the bank"
+            ],
+            [
+              "пред",
+              "pred",
+              "in front of",
+              "пред хотела — in front of the hotel"
+            ],
+            [
+              "зад",
+              "zad",
+              "behind",
+              "зад къщата — behind the house"
+            ],
+            [
+              "под",
+              "pod",
+              "under",
+              "под масата — under the table"
+            ],
+            [
+              "между",
+              "MEZH-doo",
+              "between",
+              "между банката и аптеката"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ The difference between **в** and **на** is the only one that needs practice. **В** means being *inside* something with space: *в стаята, в България, в колата*. **На** means being *on a surface* or *at a place of activity*: *на масата* (on the table), *на работа* (at work), *на море* (at the sea, meaning on a beach holiday)."
+        },
+        {
+          "type": "p",
+          "text": "The form **във** is used only when the next word begins with **в** or **ф** — *във Варна*, *във Франция* — so you don't trip over the sounds. The same rule gives **със** instead of **с**: *със сестра ми*."
+        }
+      ]
+    },
+    {
+      "title": "Има and няма in everyday phrases",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Phrase",
+            "Say it",
+            "Literally",
+            "Used for"
+          ],
+          "rows": [
+            [
+              "Няма защо.",
+              "NYA-ma zash-TO",
+              "there's nothing for what",
+              "You're welcome."
+            ],
+            [
+              "Няма проблем.",
+              "NYA-ma prob-LEM",
+              "there's no problem",
+              "No problem."
+            ],
+            [
+              "Няма значение.",
+              "NYA-ma zna-CHEH-nee-eh",
+              "there's no meaning",
+              "It doesn't matter, whatever."
+            ],
+            [
+              "Няма време.",
+              "NYA-ma VREH-meh",
+              "there's no time",
+              "No time."
+            ],
+            [
+              "Има време.",
+              "EE-ma VREH-meh",
+              "there's time",
+              "There's still time, relax."
+            ],
+            [
+              "Има ли някой?",
+              "EE-ma lee NYA-koy",
+              "is-there (question) someone",
+              "Anybody there? (knocking)"
+            ],
+            [
+              "Какво има?",
+              "kak-VO EE-ma",
+              "what there-is",
+              "What's up? What's wrong?"
+            ],
+            [
+              "Няма ги.",
+              "NYA-ma gee",
+              "there-isn't them",
+              "They're not here."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last row shows something typical: **няма** can take a short pronoun to say that someone isn't there. *Няма го* — he isn't here. *Няма я* — she isn't here. *Няма ме* — I'm not around. You'll hear it often in offices and on the phone."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bg": "имам",
+      "baca": "EE-mam",
+      "en": "I have"
+    },
+    {
+      "bg": "нямам",
+      "baca": "NYA-mam",
+      "en": "I don't have"
+    },
+    {
+      "bg": "има",
+      "baca": "EE-ma",
+      "en": "there is/are; he/she has"
+    },
+    {
+      "bg": "няма",
+      "baca": "NYA-ma",
+      "en": "there isn't/aren't; he/she doesn't have"
+    },
+    {
+      "bg": "аптека",
+      "baca": "ap-TEH-ka",
+      "en": "pharmacy"
+    },
+    {
+      "bg": "банка",
+      "baca": "BAN-ka",
+      "en": "bank"
+    },
+    {
+      "bg": "банкомат",
+      "baca": "ban-ko-MAT",
+      "en": "ATM"
+    },
+    {
+      "bg": "пари",
+      "baca": "pa-REE",
+      "en": "money"
+    },
+    {
+      "bg": "карта",
+      "baca": "KAR-ta",
+      "en": "map; card"
+    },
+    {
+      "bg": "наблизо",
+      "baca": "na-BLEE-zo",
+      "en": "nearby"
+    },
+    {
+      "bg": "пеша",
+      "baca": "peh-SHA",
+      "en": "on foot"
+    },
+    {
+      "bg": "минута",
+      "baca": "mee-NOO-ta",
+      "en": "minute"
+    },
+    {
+      "bg": "направо",
+      "baca": "na-PRA-vo",
+      "en": "straight ahead"
+    },
+    {
+      "bg": "надясно",
+      "baca": "na-DYAS-no",
+      "en": "to the right"
+    },
+    {
+      "bg": "наляво",
+      "baca": "na-LYA-vo",
+      "en": "to the left"
+    },
+    {
+      "bg": "после",
+      "baca": "PO-sleh",
+      "en": "then, afterwards"
+    },
+    {
+      "bg": "само",
+      "baca": "SA-mo",
+      "en": "only"
+    },
+    {
+      "bg": "проблем",
+      "baca": "prob-LEM",
+      "en": "problem"
+    },
+    {
+      "bg": "време",
+      "baca": "VREH-meh",
+      "en": "time; weather"
+    },
+    {
+      "bg": "някой",
+      "baca": "NYA-koy",
+      "en": "someone"
+    },
+    {
+      "bg": "никой",
+      "baca": "NEE-koy",
+      "en": "nobody"
+    },
+    {
+      "bg": "хора",
+      "baca": "ho-RA",
+      "en": "people"
+    },
+    {
+      "bg": "маса",
+      "baca": "MA-sa",
+      "en": "table"
+    },
+    {
+      "bg": "кола",
+      "baca": "ko-LA",
+      "en": "car"
+    },
+    {
+      "bg": "между",
+      "baca": "MEZH-doo",
+      "en": "between"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Bulgarian.",
+      "items": [
+        "Is there a pharmacy nearby?",
+        "I don't have any money.",
+        "There's no ATM here.",
+        "We have a map.",
+        "You're welcome.",
+        "There are a lot of people."
+      ]
+    },
+    {
+      "prompt": "Fill in the right form of имам or нямам.",
+      "items": [
+        "Аз ____ телефон, но нямам интернет.",
+        "Ти ____ ли карта?",
+        "Ние не ____ време.",
+        "Те ____ голяма къща.",
+        "Вие ____ ли резервация?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ли / аптека / има / наблизо",
+        "банкомат / тук / няма",
+        "само / имам / телефон",
+        "хора / много / има",
+        "защо / няма"
+      ]
+    },
+    {
+      "prompt": "Fill in the right preposition: в, на, до, пред, под.",
+      "items": [
+        "Аптеката е ____ банката.",
+        "Книгата е ____ масата.",
+        "Живея ____ София.",
+        "Колата е ____ хотела.",
+        "Ключът е ____ книгата."
+      ]
+    }
+  ],
+  "answers": [
+    "Има ли аптека наблизо? — Нямам пари. — Тук няма банкомат. — Имаме карта. — Няма защо. — Има много хора.",
+    "имам — имаш — нямаме — имат — имате",
+    "Има ли аптека наблизо? — Тук няма банкомат. — Имам само телефон. — Има много хора. — Няма защо.",
+    "до — на — в — пред — под"
+  ]
+}

@@ -1,0 +1,577 @@
+{
+  "title": "What time is it? — and the half that counts forward",
+  "title_target": "Koliko je ura?",
+  "goal": "Tell the time, make appointments, and avoid the most expensive mistake a learner of Slovenian can make: taking *pol treh* as British \"half three\". It means 14:30 — the clock is heading TOWARD three.",
+  "bekal": [
+    "give the time on the hour, quarter past, half past, and in minutes with *čez* and *do*",
+    "make appointments with *ob* and its special number forms: *ob treh*, *ob petih*, *ob pol šestih*",
+    "split the day with *zjutraj*, *dopoldne*, *popoldne*, *zvečer*, *ponoči*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Se dobiva ob petih?",
+      "intro": "Maja and Budi are standing in a university hallway. Budi thinks he's already figured out how to tell the time. He hasn't.",
+      "lines": [
+        {
+          "speaker": "Maja:",
+          "text": "Koliko je ura?",
+          "id": "What time is it?",
+          "literal": "how-much is hour?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ura je pol treh.",
+          "id": "It's half past two — 14:30.",
+          "literal": "hour is half of-three."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Že? Ob treh imam predavanje.",
+          "id": "Already? I have a lecture at three.",
+          "literal": "already? at three-loc I-have lecture."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kdaj se konča?",
+          "id": "When does it end?",
+          "literal": "when self ends?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Ob pol petih. Se dobiva potem?",
+          "id": "At half past four. Shall we meet after?",
+          "literal": "at half of-five. self we-two-meet then?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Velja. Ob petih pred knjižnico?",
+          "id": "Deal. At five in front of the library?",
+          "literal": "is-valid. at five-loc in-front-of library-ins?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Raje četrt na šest. Rada zamujam.",
+          "id": "Better quarter past five. I like being late.",
+          "literal": "rather quarter to six. glad-f I-am-late."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ampak pol treh je pol do treh, ne pol čez dve?",
+          "id": "But \"pol treh\" is half toward three, not half past two?",
+          "literal": "but half of-three is half up-to three, not half past two?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Točno. Ura teče proti trem, ne nazaj.",
+          "id": "Exactly. The clock runs toward three, not backward.",
+          "literal": "exactly. clock runs toward three-dat, not back."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Torej pol enajstih je deset trideset?",
+          "id": "So \"pol enajstih\" is ten thirty?",
+          "literal": "so half of-eleven is ten thirty?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Tako je. Vsi tujci se enkrat zmotijo.",
+          "id": "That's right. Every foreigner gets it wrong once.",
+          "literal": "so is. all foreigners self once err."
+        }
+      ],
+      "notes": [
+        "**Pol treh = 14:30, not 15:30.** This is the one thing in this unit that can genuinely make you miss a train. Slovenian counts **forward**, to the hour that's coming: *pol treh* literally means \"half of the third\" — halfway to three o'clock. German, Dutch, Danish, Croatian, and Hungarian do the same; English does the opposite — and British \"half three\" (3:30) is exactly the wrong way round.",
+        "**A way to remember it that never fails:** *pol* + the next number = thirty minutes **before** that number. *Pol enih* = 12:30, *pol dveh* = 13:30, *pol treh* = 14:30. If you're unsure in front of someone, just say the numbers: *ob štirinajst trideset*. The twenty-four-hour clock is used on all official timetables and is never misunderstood.",
+        "**Ob takes a special form of the number.** *Tri* becomes *ob treh*, *pet* becomes *ob petih*, *osem* becomes *ob osmih*. That *-ih* form is the mestnik (Locative) — the same place case from unit 8, borrowed for time. Learn the twelve forms as one list; you'll use it every day.",
+        "**Četrt na šest = 17:15.** Same logic as *pol*: a quarter of the way **toward** six o'clock. And *tri četrt na šest* = 17:45, three-quarters of the way to six. Once you accept that Slovenian always points to the next hour, all three become one rule, not three.",
+        "**Rada zamujam — rad follows gender.** *Rad* means \"glad, fond\" and is used with a verb to mean \"like doing\": *rad berem* (I like reading, a man), *rada berem* (a woman), *radi beremo* (we like reading). It's not a verb but an adjective attached to the speaker — so it changes according to **who is speaking**, not what is liked."
+      ],
+      "grammars": [
+        {
+          "title": "Koliko je ura? — telling the time",
+          "body": [
+            "To say what time it is now, use *Ura je …*. Notice that full hours use the ordinary number, while half and quarter hours pull in the Genitive."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Slovenščina",
+              "Say it",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "13:00",
+                "*Ura je ena.*",
+                "OO-rah yay AY-nah",
+                "the hour is one"
+              ],
+              [
+                "14:00",
+                "*Ura je dve.*",
+                "OO-rah yay dvay",
+                "the hour is two"
+              ],
+              [
+                "14:15",
+                "*Ura je četrt na tri.*",
+                "chay-TUHRT nah tree",
+                "a quarter toward three"
+              ],
+              [
+                "14:30",
+                "*Ura je pol treh.*",
+                "pohw traykh",
+                "half of-three"
+              ],
+              [
+                "14:45",
+                "*Ura je tri četrt na tri.*",
+                "tree chay-TUHRT nah tree",
+                "three-quarters toward three"
+              ],
+              [
+                "14:05",
+                "*Ura je pet čez dve.*",
+                "payt chayz dvay",
+                "five past two"
+              ],
+              [
+                "14:50",
+                "*Ura je deset do treh.*",
+                "day-SAYT doh traykh",
+                "ten up-to three"
+              ],
+              [
+                "12:00",
+                "*Ura je dvanajst.* / *Poldne je.*",
+                "POHW-dnay yay",
+                "noon"
+              ]
+            ]
+          },
+          "after": [
+            "The three middle rows are the ones that matter: **četrt na**, **pol**, and **tri četrt na** all point to the **next** hour. If you only have time to learn one, learn *pol* — it's the most used and the most misunderstood.",
+            "*Čez* (past) and *do* (to) work just like English and hide no traps: *pet čez dve* = five past two, *deset do treh* = ten to three."
+          ]
+        },
+        {
+          "title": "Ob — at what time",
+          "body": [
+            "To say *at* what time something happens, Slovenian uses *ob* and turns the number into a form ending in **-ih**. Twelve forms, and then you're done for good."
+          ],
+          "table": {
+            "head": [
+              "Hour",
+              "ob …",
+              "Say it",
+              "Half past"
+            ],
+            "rows": [
+              [
+                "1",
+                "**ob enih**",
+                "ohp AY-neekh",
+                "*ob pol enih* — 12:30"
+              ],
+              [
+                "2",
+                "**ob dveh**",
+                "ohp dvaykh",
+                "*ob pol dveh* — 13:30"
+              ],
+              [
+                "3",
+                "**ob treh**",
+                "ohp traykh",
+                "*ob pol treh* — 14:30"
+              ],
+              [
+                "4",
+                "**ob štirih**",
+                "ohp SHTEE-reekh",
+                "*ob pol štirih* — 15:30"
+              ],
+              [
+                "5",
+                "**ob petih**",
+                "ohp PAY-teekh",
+                "*ob pol petih* — 16:30"
+              ],
+              [
+                "6",
+                "**ob šestih**",
+                "ohp SHAYS-teekh",
+                "*ob pol šestih* — 17:30"
+              ],
+              [
+                "7",
+                "**ob sedmih**",
+                "ohp SAYD-meekh",
+                "*ob pol sedmih* — 18:30"
+              ],
+              [
+                "8",
+                "**ob osmih**",
+                "ohp AWS-meekh",
+                "*ob pol osmih* — 19:30"
+              ],
+              [
+                "9",
+                "**ob devetih**",
+                "ohp day-VAY-teekh",
+                "*ob pol devetih* — 20:30"
+              ],
+              [
+                "10",
+                "**ob desetih**",
+                "ohp day-SAY-teekh",
+                "*ob pol desetih* — 21:30"
+              ],
+              [
+                "11",
+                "**ob enajstih**",
+                "ohp ay-NAIS-teekh",
+                "*ob pol enajstih* — 22:30"
+              ],
+              [
+                "12",
+                "**ob dvanajstih**",
+                "ohp dvah-NAIS-teekh",
+                "*ob pol dvanajstih* — 23:30"
+              ]
+            ]
+          },
+          "after": [
+            "Notice the three forms that don't follow the pattern: *sedem* → *sedmih*, *osem* → *osmih*, and *ena* → *enih*. The vowel disappears, as usually happens with a schwa.",
+            "To ask: *Ob kateri uri?* (at what time?) or, more casually, *Kdaj?* (when?). To answer roughly: *okrog petih* (around five), *točno ob petih* (at five sharp)."
+          ]
+        },
+        {
+          "title": "Parts of the day",
+          "body": [
+            "Slovenian cuts the day into a handful of slices, and the slices are used as adverbs — with no preposition at all."
+          ],
+          "table": {
+            "head": [
+              "Slovenščina",
+              "Say it",
+              "Roughly",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**zjutraj**",
+                "ZYOO-trai",
+                "5:00-9:00",
+                "*Zjutraj pijem kavo.*"
+              ],
+              [
+                "**dopoldne**",
+                "doh-POHW-dnay",
+                "9:00-12:00",
+                "*Dopoldne sem v šoli.*"
+              ],
+              [
+                "**opoldne**",
+                "oh-POHW-dnay",
+                "12:00",
+                "*Opoldne jem kosilo.*"
+              ],
+              [
+                "**popoldne**",
+                "poh-POHW-dnay",
+                "12:00-18:00",
+                "*Popoldne delam.*"
+              ],
+              [
+                "**zvečer**",
+                "zvay-CHAYR",
+                "18:00-23:00",
+                "*Zvečer gledam film.*"
+              ],
+              [
+                "**ponoči**",
+                "poh-NAW-chee",
+                "23:00-5:00",
+                "*Ponoči spim.*"
+              ]
+            ]
+          },
+          "after": [
+            "These words stand alone without *v* or *ob*: *zjutraj*, not \"v zjutraj\". The meaning \"at that time\" is already built in.",
+            "To make the time clear in casual speech, combine the two: *ob osmih zjutraj* (eight in the morning), *ob osmih zvečer* (eight in the evening). This is used more than the twenty-four-hour clock in everyday conversation."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Time in everyday life",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Besides clock times, there are a dozen time words used every day that demand no case at all — a small gift in the middle of a unit full of numbers."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**zdaj**",
+              "zdai",
+              "now"
+            ],
+            [
+              "**danes**",
+              "DAH-nuhs",
+              "today"
+            ],
+            [
+              "**jutri**",
+              "YOO-tree",
+              "tomorrow"
+            ],
+            [
+              "**včeraj**",
+              "oo-CHAY-rai",
+              "yesterday"
+            ],
+            [
+              "**pojutrišnjem**",
+              "poh-YOO-treesh-nyuhm",
+              "the day after tomorrow"
+            ],
+            [
+              "**predvčerajšnjim**",
+              "pruht-oo-CHAY-raish-nyeem",
+              "the day before yesterday"
+            ],
+            [
+              "**kmalu**",
+              "KMAH-loo",
+              "soon"
+            ],
+            [
+              "**takoj**",
+              "tah-KAWY",
+              "right away"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Predvčerajšnjim* (the day before yesterday) is one of the longest words in everyday use in Slovenia, and Slovenians are proud of it. You don't have to use it — *pred dvema dnevoma* (two days ago) is just as correct — but saying it right even once will make the person you're talking to laugh with delight."
+        },
+        {
+          "type": "p",
+          "text": "**Nikoli** (never) requires the verb to stay negative: *Nikoli ne pijem kave* — literally \"never not I-drink coffee\". A double negative isn't a mistake in Slovenian; it's required. The same pattern applies to *nič* (nothing) and *nihče* (nobody): *Nič ne razumem*, *Nihče ne ve*."
+        }
+      ]
+    },
+    {
+      "title": "Making appointments",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The sentences below cover almost every everyday appointment — from suggesting a time to politely canceling."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Se dobiva ob petih?*",
+              "suh doh-BEE-vah ohp PAY-teekh",
+              "Shall we meet at five? (the two of us)"
+            ],
+            [
+              "*Se dobimo ob petih?*",
+              "suh doh-BEE-moh",
+              "Shall we meet at five? (three or more)"
+            ],
+            [
+              "*Kdaj ti ustreza?*",
+              "kdai tee oos-TRAY-zah",
+              "When suits you?"
+            ],
+            [
+              "*Meni ustreza.*",
+              "MAY-nee oos-TRAY-zah",
+              "That works for me."
+            ],
+            [
+              "*Velja!*",
+              "VAY-lyah",
+              "Deal!"
+            ],
+            [
+              "*Se vidiva jutri.*",
+              "suh VEE-dee-vah YOO-tree",
+              "See you tomorrow."
+            ],
+            [
+              "*Zamujam petnajst minut.*",
+              "zah-MOO-yahm puht-NAIST mee-NOOT",
+              "I'm running fifteen minutes late."
+            ],
+            [
+              "*Oprosti, ne morem.*",
+              "oh-PRAWS-tee, nay MOH-ruhm",
+              "Sorry, I can't."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Velja* literally means \"it's valid\" and is used exactly like \"deal\" or \"OK, done\" — one word to seal an agreement. It's one of the words you'll hear most among friends, and using it just once makes you sound far more relaxed."
+        },
+        {
+          "type": "kotak",
+          "title": "About punctuality",
+          "items": [
+            "When it comes to clocks, Slovenia is firmly Central European: an appointment at five means five, and arriving ten minutes late already calls for *Oprosti, zamujam*.",
+            "Trains and buses leave **exactly** at the minute printed. Timetables in Slovenia are not estimates.",
+            "But a dinner invitation at someone's home has its own rule: arriving five to ten minutes after the stated time is actually considered polite, so the host has time to finish."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One last sentence worth keeping: **Nimam časa** (I don't have time). Look at the form — *čas* becomes *časa*, because the sentence is negative, exactly the rule from unit 7. The opposite: *Imam čas.*"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "ura",
+      "baca": "OO-rah",
+      "en": "hour; clock"
+    },
+    {
+      "sl": "minuta",
+      "baca": "mee-NOO-tah",
+      "en": "minute"
+    },
+    {
+      "sl": "pol",
+      "baca": "pohw",
+      "en": "half"
+    },
+    {
+      "sl": "četrt",
+      "baca": "chay-TUHRT",
+      "en": "quarter"
+    },
+    {
+      "sl": "čez",
+      "baca": "chayz",
+      "en": "past; across"
+    },
+    {
+      "sl": "ob",
+      "baca": "ohp",
+      "en": "at (a time)"
+    },
+    {
+      "sl": "kdaj",
+      "baca": "kdai",
+      "en": "when"
+    },
+    {
+      "sl": "zjutraj",
+      "baca": "ZYOO-trai",
+      "en": "in the morning"
+    },
+    {
+      "sl": "popoldne",
+      "baca": "poh-POHW-dnay",
+      "en": "in the afternoon"
+    },
+    {
+      "sl": "zvečer",
+      "baca": "zvay-CHAYR",
+      "en": "in the evening"
+    },
+    {
+      "sl": "ponoči",
+      "baca": "poh-NAW-chee",
+      "en": "at night"
+    },
+    {
+      "sl": "poldne",
+      "baca": "POHW-dnay",
+      "en": "noon"
+    },
+    {
+      "sl": "danes",
+      "baca": "DAH-nuhs",
+      "en": "today"
+    },
+    {
+      "sl": "jutri",
+      "baca": "YOO-tree",
+      "en": "tomorrow"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the time in Slovenian.",
+      "items": [
+        "14:30 — Ura je ____.",
+        "17:15 — Ura je ____.",
+        "20:45 — Ura je ____.",
+        "10:05 — Ura je ____.",
+        "12:00 — ____ je.",
+        "22:30 — Ura je ____."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right form after ob.",
+      "items": [
+        "Predavanje se začne ob ____. (3)",
+        "Se dobiva ob ____. (5)",
+        "Vlak gre ob ____. (7)",
+        "Trgovina se zapre ob ____. (8)",
+        "Kosilo je ob ____. (12)",
+        "Film se začne ob pol ____. (9)"
+      ]
+    },
+    {
+      "prompt": "Translate into Slovenian.",
+      "items": [
+        "What time is it?",
+        "It's half past two.",
+        "I have a lecture at three.",
+        "Shall we meet at five? (the two of us)",
+        "Sorry, I'm running ten minutes late.",
+        "I don't have time."
+      ]
+    },
+    {
+      "prompt": "Wave review — unit 7. Translate into Slovenian without looking back at the unit.",
+      "items": [
+        "How much are the apples?",
+        "A kilo, please.",
+        "How much is that altogether?",
+        "I don't have any change.",
+        "Can I pay by card?"
+      ]
+    }
+  ],
+  "answers": [
+    "pol treh — četrt na šest — tri četrt na devet — pet čez deset — Poldne — pol enajstih",
+    "treh — petih — sedmih — osmih — dvanajstih — devetih",
+    "Koliko je ura? — Ura je pol treh. — Ob treh imam predavanje. — Se dobiva ob petih? — Oprosti, zamujam deset minut. — Nimam časa.",
+    "Koliko stanejo jabolka? — En kilogram, prosim. — Koliko je vse skupaj? — Nimam drobiža. — Lahko plačam s kartico?"
+  ]
+}

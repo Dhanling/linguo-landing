@@ -1,0 +1,544 @@
+{
+  "title": "Shopping and paying",
+  "title_target": "Í búðinni",
+  "goal": "Order, ask the price, and pay — while meeting for the first time the expression *mig langar*, which puts \"I\" not as the doer but as the target.",
+  "bekal": [
+    "order food and drinks with *ég ætla að fá* and *mig langar í*",
+    "ask the price and pay by card",
+    "make adjectives agree when they describe an object"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Á kaffihúsinu",
+      "intro": "A small bakery in the town center. Búdí orders on his own for the first time and leaves with a culinary discovery.",
+      "lines": [
+        {
+          "speaker": "Afgreiðslukona:",
+          "text": "Góðan daginn! Get ég aðstoðað þig?",
+          "id": "Good afternoon! Can I help you?",
+          "literal": "good day-the! can I help you?"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Já, takk. Mig langar í kaffi og einn snúð.",
+          "id": "Yes, thanks. I'd like a coffee and a snúður.",
+          "literal": "me(object) longs into coffee and one snúður."
+        },
+        {
+          "speaker": "Afgreiðslukona:",
+          "text": "Viltu stóran eða lítinn bolla?",
+          "id": "Large or small cup?",
+          "literal": "want-you big or small cup?"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Stóran, takk. Hvað kostar þetta?",
+          "id": "Large, thanks. How much is this?",
+          "literal": "big, thanks. what costs this?"
+        },
+        {
+          "speaker": "Afgreiðslukona:",
+          "text": "Sjö hundruð og fimmtíu krónur.",
+          "id": "Seven hundred fifty krónur.",
+          "literal": "seven hundred and fifty krónur."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Get ég borgað með korti?",
+          "id": "Can I pay by card?",
+          "literal": "can I paid with card?"
+        },
+        {
+          "speaker": "Afgreiðslukona:",
+          "text": "Að sjálfsögðu. Allir borga með korti hér.",
+          "id": "Of course. Everyone pays by card here.",
+          "literal": "of-course self-said. all pay with card here."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Gott, því ég á engan pening.",
+          "id": "Good, because I don't have any cash.",
+          "literal": "good, because I have no money."
+        },
+        {
+          "speaker": "Afgreiðslukona:",
+          "text": "Það þarf enginn. Viltu kvittun?",
+          "id": "Nobody needs it. Would you like a receipt?",
+          "literal": "it needs nobody. want-you receipt?"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Nei, takk. Eitt enn: hvað heitir þetta brauð?",
+          "id": "No, thanks. One more thing: what is this bread called?",
+          "literal": "no, thanks. one more: what is-called this bread?"
+        },
+        {
+          "speaker": "Afgreiðslukona:",
+          "text": "Það er rúgbrauð. Það er bakað í jörðinni!",
+          "id": "That's rúgbrauð. It's baked in the ground!",
+          "literal": "it is rye-bread. it is baked in ground-the."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Í jörðinni? Þá verð ég að smakka það.",
+          "id": "In the ground? Then I have to try it.",
+          "literal": "in ground-the? then must I to taste it."
+        }
+      ],
+      "notes": [
+        "**Mig langar í kaffi — and \"I\" in this sentence is not the doer.** The form is *mig*, not *ég*: literally \"me longs into coffee\". Icelandic has a whole set of expressions like this, and they all put the person as the target, not the doer. Unit 14 covers them fully; for now use this one as a ready-made phrase.",
+        "**Three ways to order, from most casual to most polite**: *Ég ætla að fá …* (I'll have …), *Mig langar í …* (I'd like …), *Gæti ég fengið …?* (could I get …?). All three are polite; the first is the one you'll hear most at the counter.",
+        "**Adjectives change too when they describe an object**: *stór* → *stóran*, *lítill* → *lítinn*. The endings **-an** and **-inn** mark þolfall karlkyn — the form you'll need most often, because so many things are kk.",
+        "**Engan pening — \"no money at all\".** *Enginn* (no, none) changes form like an adjective: *enginn* → *engan* as an object. Notice the sentence does **not** use *ekki*; *enginn* already carries its own negation.",
+        "**Iceland has almost completely given up cash.** Cards are accepted everywhere, including hot dog stands and public toilets. Carrying banknotes is often more trouble than it's worth — many places have no change.",
+        "**Rúgbrauð really is baked in the ground.** Rye dough is buried in hot sand near a hot spring for 24 hours. It's sweet and dense, served with butter and herring — one of the foods most worth trying in Iceland."
+      ],
+      "grammars": [
+        {
+          "title": "Vilja and mig langar",
+          "body": [
+            "Two ways to say \"want\", and the difference isn't politeness but **grammar**: one uses *ég*, the other uses *mig*."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Example",
+              "English",
+              "Note"
+            ],
+            "rows": [
+              [
+                "*ég vil*",
+                "*Ég vil kaffi.*",
+                "I want coffee.",
+                "normal subject"
+              ],
+              [
+                "*viltu?*",
+                "*Viltu kaffi?*",
+                "Do you want coffee?",
+                "= *vilt þú*"
+              ],
+              [
+                "*mig langar í*",
+                "*Mig langar í kaffi.*",
+                "I'd like coffee.",
+                "**mig**, not *ég*"
+              ],
+              [
+                "*þig langar í*",
+                "*Langar þig í kaffi?*",
+                "Would you like coffee?",
+                "**þig**"
+              ],
+              [
+                "*ég ætla að fá*",
+                "*Ég ætla að fá kaffi.*",
+                "I'll have a coffee.",
+                "most common at the counter"
+              ],
+              [
+                "*gæti ég fengið*",
+                "*Gæti ég fengið kaffi?*",
+                "Could I have a coffee?",
+                "most polite"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *Vil* means **want**, not \"will\". *Ég vil fara* = I want to go, not I will go. English speakers fall into this trap constantly — the words look alike, but the meaning can shift a lot.",
+            "The six forms of *vilja*: *ég vil, þú vilt, hann vill, við viljum, þið viljið, þeir vilja*. Note *vill* with double l for *hann* — the only form with a doubled letter."
+          ]
+        },
+        {
+          "title": "Adjectives describing an object",
+          "body": [
+            "After describing the subject (unit 3), adjectives now describe the object. Only the karlkyn form really changes; the other two barely move."
+          ],
+          "table": {
+            "head": [
+              "English",
+              "kk object",
+              "kvk object",
+              "hk object",
+              "Example"
+            ],
+            "rows": [
+              [
+                "big",
+                "*stóran*",
+                "*stóra*",
+                "*stórt*",
+                "*Ég vil stóran bolla.*"
+              ],
+              [
+                "small",
+                "*lítinn*",
+                "*litla*",
+                "*lítið*",
+                "*Ég vil lítinn bolla.*"
+              ],
+              [
+                "new",
+                "*nýjan*",
+                "*nýja*",
+                "*nýtt*",
+                "*Ég kaupi nýjan bíl.*"
+              ],
+              [
+                "good",
+                "*góðan*",
+                "*góða*",
+                "*gott*",
+                "*Ég vil góðan kaffibolla.*"
+              ],
+              [
+                "black",
+                "*svartan*",
+                "*svarta*",
+                "*svart*",
+                "*Ég drekk svart kaffi.*"
+              ]
+            ]
+          },
+          "after": [
+            "The markers to recognize: **-an** for kk, **-a** for kvk, and hk stays as the base form. If in doubt, listen to the ending — those two letters make the difference.",
+            "The *Góðan daginn!* you've been saying since unit 1 turns out to be adjective + noun in **þolfall**: literally \"(may you have) a good day\". The greeting you already know has been quietly teaching you the grammar."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Ready-made phrases for stores and cafés",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Íslenska",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Ég ætla að fá …",
+              "yehgh AIT-lah ahdh fow",
+              "I'll have …"
+            ],
+            [
+              "Mig langar í …",
+              "migh LOWN-gahr ee",
+              "I'd like …"
+            ],
+            [
+              "Hvað kostar þetta?",
+              "kvahdh KAWS-tahr THEHH-tah",
+              "How much is this?"
+            ],
+            [
+              "Er þetta á tilboði?",
+              "ehr THEHH-tah ow TIL-baw-dhih",
+              "Is this on sale?"
+            ],
+            [
+              "Get ég borgað með korti?",
+              "geht yehgh BAWR-ghahdh mehdh KAWR-tih",
+              "Can I pay by card?"
+            ],
+            [
+              "Viltu poka?",
+              "VIL-tü PAW-kah",
+              "Would you like a bag?"
+            ],
+            [
+              "Nei, takk, ég er með poka.",
+              "nay tahhk yehgh ehr mehdh PAW-kah",
+              "No thanks, I have a bag."
+            ],
+            [
+              "Hvar er …?",
+              "kvahr ehr",
+              "Where is …?"
+            ],
+            [
+              "Áttu þetta í stærri stærð?",
+              "OWH-tü THEHH-tah ee STAI-rih stairdh",
+              "Do you have this in a bigger size?"
+            ],
+            [
+              "Ég er bara að skoða.",
+              "yehgh ehr BAH-rah ahdh SKAW-dhah",
+              "I'm just looking."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Food and drinks",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Íslenska",
+            "Gender",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*kaffi*",
+              "hk",
+              "KAH-fih",
+              "coffee"
+            ],
+            [
+              "*te*",
+              "hk",
+              "teh",
+              "tea"
+            ],
+            [
+              "*mjólk*",
+              "kvk",
+              "myohlk",
+              "milk"
+            ],
+            [
+              "*vatn*",
+              "hk",
+              "vahhtn",
+              "water"
+            ],
+            [
+              "*brauð*",
+              "hk",
+              "​​​bröidh",
+              "bread"
+            ],
+            [
+              "*smjör*",
+              "hk",
+              "smyör",
+              "butter"
+            ],
+            [
+              "*ostur*",
+              "kk",
+              "AWS-tür",
+              "cheese"
+            ],
+            [
+              "*fiskur*",
+              "kk",
+              "FIS-kür",
+              "fish"
+            ],
+            [
+              "*kjöt*",
+              "hk",
+              "kyöt",
+              "meat"
+            ],
+            [
+              "*súpa*",
+              "kvk",
+              "SOO-pah",
+              "soup"
+            ],
+            [
+              "*grænmeti*",
+              "hk",
+              "GRAIN-meh-tih",
+              "vegetables"
+            ],
+            [
+              "*ávextir*",
+              "kk",
+              "OW-vehx-tihr",
+              "fruit"
+            ],
+            [
+              "*skyr*",
+              "hk",
+              "skihr",
+              "skyr (Icelandic yogurt)"
+            ],
+            [
+              "*pylsa*",
+              "kvk",
+              "PIL-sah",
+              "sausage, hot dog"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two foods you should know by name",
+          "items": [
+            "**Skyr** isn't yogurt but a fat-free soft cheese, eaten like yogurt, and made by Icelanders since the settlement age. It's the national breakfast and in every supermarket.",
+            "**Pylsa** is the Icelandic hot dog, and the standard order is *ein með öllu* — \"one with everything\": sweet mustard, remoulade, fried onions, and raw onions. That's the only sentence you need at a hot dog stand."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "is": "afgreiðslukona",
+      "baca": "AHV-graydhs-lü-kaw-nah",
+      "en": "shop assistant (female)"
+    },
+    {
+      "is": "aðstoða",
+      "baca": "AHDH-staw-dhah",
+      "en": "help"
+    },
+    {
+      "is": "langa",
+      "baca": "LOWN-gah",
+      "en": "want, long for"
+    },
+    {
+      "is": "snúður",
+      "baca": "SNOO-dhür",
+      "en": "cinnamon roll"
+    },
+    {
+      "is": "bolli",
+      "baca": "BAWT-lih",
+      "en": "cup"
+    },
+    {
+      "is": "borga",
+      "baca": "BAWR-ghah",
+      "en": "pay"
+    },
+    {
+      "is": "kort",
+      "baca": "kawrt",
+      "en": "card"
+    },
+    {
+      "is": "peningur",
+      "baca": "PEH-nin-gür",
+      "en": "money"
+    },
+    {
+      "is": "kvittun",
+      "baca": "KVIH-tün",
+      "en": "receipt"
+    },
+    {
+      "is": "brauð",
+      "baca": "bröidh",
+      "en": "bread"
+    },
+    {
+      "is": "rúgbrauð",
+      "baca": "ROOGH-bröidh",
+      "en": "rye bread"
+    },
+    {
+      "is": "baka",
+      "baca": "BAH-kah",
+      "en": "bake"
+    },
+    {
+      "is": "smakka",
+      "baca": "SMAHH-kah",
+      "en": "taste, try"
+    },
+    {
+      "is": "verða að",
+      "baca": "VEHR-dhah ahdh",
+      "en": "must, have to"
+    },
+    {
+      "is": "að sjálfsögðu",
+      "baca": "ahdh SYOWLV-sög-dhü",
+      "en": "of course"
+    },
+    {
+      "is": "því",
+      "baca": "thvee",
+      "en": "because"
+    },
+    {
+      "is": "tilboð",
+      "baca": "TIL-bawdh",
+      "en": "offer, sale"
+    },
+    {
+      "is": "poki",
+      "baca": "PAW-kih",
+      "en": "bag"
+    },
+    {
+      "is": "stærð",
+      "baca": "stairdh",
+      "en": "size"
+    },
+    {
+      "is": "dýrt / ódýrt",
+      "baca": "deert / OH-deert",
+      "en": "expensive / cheap"
+    },
+    {
+      "is": "allir",
+      "baca": "AHT-lihr",
+      "en": "everyone"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the right form of *vilja*.",
+      "items": [
+        "Ég ____ kaffi.",
+        "____ þú te?",
+        "Hún ____ ekki mjólk.",
+        "Við ____ borga með korti.",
+        "Þið ____ poka?",
+        "Þeir ____ stóran bolla."
+      ]
+    },
+    {
+      "prompt": "Choose the right adjective form for the object.",
+      "items": [
+        "Ég vil ____ (stór, stóran) bolla.",
+        "Hún kaupir ____ (nýr, nýjan) bíl.",
+        "Ég drekk ____ (svart, svartan) kaffi.",
+        "Við viljum ____ (lítill, lítinn) skammt.",
+        "Ég ætla að fá ____ (góð, góða) súpu."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "langar / mig / kaffi / í",
+        "kostar / þetta / hvað",
+        "borgað / ég / get / með korti",
+        "þarf / það / enginn",
+        "fá / ég / ætla / að / snúð / einn"
+      ]
+    },
+    {
+      "prompt": "Translate into Icelandic.",
+      "items": [
+        "Can I help you?",
+        "I'd like a coffee.",
+        "How much is this?",
+        "Can I pay by card?",
+        "I don't have any cash.",
+        "I'm just looking."
+      ]
+    }
+  ],
+  "answers": [
+    "vil — Vilt — vill — viljum — viljið — vilja",
+    "stóran — nýjan — svart — lítinn — góða",
+    "Mig langar í kaffi. — Hvað kostar þetta? — Get ég borgað með korti? — Það þarf enginn. — Ég ætla að fá einn snúð.",
+    "Get ég aðstoðað þig? — Mig langar í kaffi. — Hvað kostar þetta? — Get ég borgað með korti? — Ég á engan pening. — Ég er bara að skoða."
+  ]
+}

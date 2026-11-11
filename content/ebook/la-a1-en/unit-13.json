@@ -1,0 +1,597 @@
+{
+  "title": "Already happened",
+  "title_target": "Quid vidisti?",
+  "goal": "Tell about completed events with the perfect, find the perfect stem in the third dictionary form, and choose between the imperfect and the perfect.",
+  "bekal": [
+    "form all six perfect forms from any stem",
+    "memorize the five most common perfect-stem patterns",
+    "decide for yourself when to use *ambulabam* and when *ambulavi*"
+  ],
+  "dialogs": [
+    {
+      "title": "Colloquium — Elephantus in foro",
+      "intro": "Marcus comes home from the forum with news that's hard to believe.",
+      "lines": [
+        {
+          "speaker": "Iulia:",
+          "text": "Marce! Ubi fuisti?",
+          "id": "Marcus! Where have you been?",
+          "literal": "Marcus-call! where are-you-did?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "In foro fui. Rem miram vidi!",
+          "id": "I was in the forum. I saw something amazing!",
+          "literal": "in forum-in am-I-did. thing-obj amazing-obj see-I-did!"
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Quid vidisti?",
+          "id": "What did you see?",
+          "literal": "what see-you-did?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Elephantum vidi! Mercator elephantum ex Africa duxit.",
+          "id": "I saw an elephant! A merchant brought it from Africa.",
+          "literal": "elephant-obj see-I-did! merchant elephant-obj from Africa-from lead-he-did."
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Elephantum? Non credo!",
+          "id": "An elephant? I don't believe it!",
+          "literal": "elephant-obj? not believe-I!"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Vera dixi! Multi cives venerunt et clamaverunt.",
+          "id": "I'm telling the truth! Lots of citizens came and shouted.",
+          "literal": "true-pl-neut-obj say-I-did! many-pl citizen-pl come-they-did and shout-they-did."
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Et tu? Quid fecisti?",
+          "id": "And you? What did you do?",
+          "literal": "and you? what do-you-did?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Stabam et spectabam. Deinde elephantus me spectavit!",
+          "id": "I was standing and watching. Then the elephant looked at me!",
+          "literal": "stand-I-was and watch-I-was. then elephant me-obj look-he-did!"
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Timuistine?",
+          "id": "Were you scared?",
+          "literal": "fear-you-did-Q?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Minime! Sed Sextus timuit et in aquam cecidit.",
+          "id": "Not at all! But Sextus got scared and fell into the water.",
+          "literal": "not-at-all! but Sextus fear-he-did and into water-obj fall-he-did."
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Sextus semper cadit! Quid postea accidit?",
+          "id": "Sextus is always falling! What happened next?",
+          "literal": "Sextus always fall-he! what afterwards happen-it-did?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Mercator elephantum ad portum duxit. Ego domum cucurri.",
+          "id": "The merchant led the elephant to the harbor. I ran home.",
+          "literal": "merchant elephant-obj to harbor-obj lead-he-did. I home-obj run-I-did."
+        }
+      ],
+      "notes": [
+        "**The perfect endings are unlike any other tense.** *-i, -isti, -it, -imus, -istis, -erunt*. Note that the \"I\" form ends in *-i* and the \"they\" form in *-erunt* — two endings that appear in no other tense. As soon as you see them, you know the sentence is about something already finished.",
+        "**Vidi, dixi, duxi, veni — the stem must be memorized.** The perfect is not built on the ordinary stem but on a stem of its own, listed in the dictionary as the third part: *video, videre, **vidi***; *dico, dicere, **dixi***; *venio, venire, **veni***. This is the only part of the Latin verb system that really has to be learned word by word.",
+        "**Stabam et spectabam, deinde spectavit.** Look at the switch in line eight. The first two verbs use the imperfect because they paint an ongoing state; the third uses the perfect because one sudden event cuts in. This is how every Latin author tells a story: the scene in the imperfect, the surprise in the perfect.",
+        "**Cecidit and cucurri — stems that repeat a syllable.** A group of old verbs forms its perfect stem by repeating the first syllable: *cado* → *cecidi*, *curro* → *cucurri*, *do* → *dedi*, *cano* → *cecini*, *disco* → *didici*. These doubled forms are left over from a layer of the language much older than Rome itself."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The perfect: one set of endings for every group",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Unlike the other tenses, the perfect doesn't care which group a verb belongs to. Take the perfect stem, add the same six endings, done."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Subject",
+            "Ending",
+            "portavi (carry)",
+            "vidi (see)",
+            "dixi (say)",
+            "veni (come)"
+          ],
+          "rows": [
+            [
+              "I",
+              "-i",
+              "portav**i**",
+              "vid**i**",
+              "dix**i**",
+              "ven**i**"
+            ],
+            [
+              "you",
+              "-isti",
+              "portav**isti**",
+              "vid**isti**",
+              "dix**isti**",
+              "ven**isti**"
+            ],
+            [
+              "he/she",
+              "-it",
+              "portav**it**",
+              "vid**it**",
+              "dix**it**",
+              "ven**it**"
+            ],
+            [
+              "we",
+              "-imus",
+              "portav**imus**",
+              "vid**imus**",
+              "dix**imus**",
+              "ven**imus**"
+            ],
+            [
+              "you (pl)",
+              "-istis",
+              "portav**istis**",
+              "vid**istis**",
+              "dix**istis**",
+              "ven**istis**"
+            ],
+            [
+              "they",
+              "-erunt",
+              "portav**erunt**",
+              "vid**erunt**",
+              "dix**erunt**",
+              "ven**erunt**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "You get the perfect stem by dropping the *-i* from the third dictionary form: *portavi* → *portav-*, *vidi* → *vid-*, *dixi* → *dix-*. No insert, no linking letter, no difference between groups."
+        },
+        {
+          "type": "kotak",
+          "title": "Two traps to watch for",
+          "items": [
+            "*venit* can mean \"he comes\" (present) **or** \"he came\". The Romans told them apart by vowel length, which isn't written. Context helps you: if you see *heri*, *deinde*, or *subito*, it's almost certainly the perfect.",
+            "*legit*, *fugit*, *vertit* have the same kind of twin. The list is short, and all are group-three verbs whose perfect stem matches the ordinary stem.",
+            "*Vidimus* is always \"we saw\", never \"we see\" — because the present is *videmus*, with an *e*. That one-letter difference matters."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Five perfect-stem patterns",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Perfect stems do have to be memorized, but they aren't completely random. Almost all of them fall into one of the five patterns below, and recognizing the pattern makes memorizing much lighter."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pattern",
+            "Sign",
+            "Example",
+            "Mainly in group"
+          ],
+          "rows": [
+            [
+              "adds **-v-**",
+              "stem + vi",
+              "porto → portavi; amo → amavi; audio → audivi",
+              "I and IV"
+            ],
+            [
+              "adds **-u-**",
+              "stem + ui",
+              "habeo → habui; doceo → docui; timeo → timui",
+              "II"
+            ],
+            [
+              "adds **-s-** or **-x-**",
+              "consonant changes",
+              "dico → dixi; duco → duxi; scribo → scripsi; mitto → misi",
+              "III"
+            ],
+            [
+              "lengthens or changes the vowel",
+              "form almost the same",
+              "video → vidi; venio → veni; lego → legi; facio → **feci** (a becomes e)",
+              "II and III"
+            ],
+            [
+              "repeats a syllable",
+              "first syllable doubled",
+              "cado → cecidi; curro → cucurri; do → dedi; disco → didici",
+              "III (old verbs)"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "The thirty most common stems"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Present",
+            "Perfect",
+            "Present",
+            "Perfect"
+          ],
+          "rows": [
+            [
+              "sum",
+              "fui",
+              "facio",
+              "feci"
+            ],
+            [
+              "possum",
+              "potui",
+              "capio",
+              "cepi"
+            ],
+            [
+              "eo",
+              "ii",
+              "fugio",
+              "fugi"
+            ],
+            [
+              "volo",
+              "volui",
+              "venio",
+              "veni"
+            ],
+            [
+              "fero",
+              "tuli",
+              "audio",
+              "audivi"
+            ],
+            [
+              "do",
+              "dedi",
+              "invenio",
+              "inveni"
+            ],
+            [
+              "habeo",
+              "habui",
+              "dico",
+              "dixi"
+            ],
+            [
+              "video",
+              "vidi",
+              "duco",
+              "duxi"
+            ],
+            [
+              "moveo",
+              "movi",
+              "scribo",
+              "scripsi"
+            ],
+            [
+              "rideo",
+              "risi",
+              "mitto",
+              "misi"
+            ],
+            [
+              "respondeo",
+              "respondi",
+              "lego",
+              "legi"
+            ],
+            [
+              "timeo",
+              "timui",
+              "vinco",
+              "vici"
+            ],
+            [
+              "teneo",
+              "tenui",
+              "vivo",
+              "vixi"
+            ],
+            [
+              "sedeo",
+              "sedi",
+              "pono",
+              "posui"
+            ],
+            [
+              "doceo",
+              "docui",
+              "curro",
+              "cucurri"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice three you have known all your life: *vici* from Caesar's *veni, vidi, vici*; *fui*, which appears on Roman tombstones; and *dixi*, still used to close a speech — \"I have spoken\"."
+        }
+      ]
+    },
+    {
+      "title": "Imperfect or perfect?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "English often lets you blur the two with a simple past; Latin makes you choose. Luckily, the choice comes down to one question: does the action have an end point?"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Imperfect",
+            "Perfect",
+            "The difference"
+          ],
+          "rows": [
+            [
+              "Romae **habitabam**.",
+              "Romae **habitavi**.",
+              "\"I used to live in Rome\" — versus — \"I lived in Rome (and that's over)\""
+            ],
+            [
+              "Fabulam **narrabat**.",
+              "Fabulam **narravit**.",
+              "\"he was telling a story\" — versus — \"he told a story\""
+            ],
+            [
+              "Cotidie **currebam**.",
+              "Semel **cucurri**.",
+              "a habit — versus — one time"
+            ],
+            [
+              "Schola parva **erat**.",
+              "Schola parva **fuit**.",
+              "a description of the scene — versus — a finished statement"
+            ],
+            [
+              "**Timebam**.",
+              "**Timui**.",
+              "\"I was afraid\" — versus — \"I got scared\""
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Close cousins not taught yet",
+          "items": [
+            "**Had done** (*pluperfect*): perfect stem + *-eram*. *Veneram* — \"I had come (before something else happened)\". Easy to guess once you know the perfect stem.",
+            "**Will have done** (*future perfect*): perfect stem + *-ero*. *Venero* — \"I will have come\". Common in clauses with *si* and *cum*.",
+            "Neither is practiced in this book, but you already have all the pieces. If you meet them in a text, identify the stem first, then the ending."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "la": "fui, fuisti",
+      "baca": "FOO-ee",
+      "en": "I was, you were (from sum)"
+    },
+    {
+      "la": "vidi, vidisti",
+      "baca": "WEE-dee",
+      "en": "I saw"
+    },
+    {
+      "la": "dixi, dixisti",
+      "baca": "DIK-see",
+      "en": "I said"
+    },
+    {
+      "la": "veni, venisti",
+      "baca": "WEH-nee",
+      "en": "I came"
+    },
+    {
+      "la": "feci, fecisti",
+      "baca": "FEH-kee",
+      "en": "I made, I did"
+    },
+    {
+      "la": "cepi, cepisti",
+      "baca": "KEH-pee",
+      "en": "I took"
+    },
+    {
+      "la": "duxi, scripsi, misi",
+      "baca": "DOOK-see, SKRIP-see, MEE-see",
+      "en": "led, wrote, sent"
+    },
+    {
+      "la": "vici",
+      "baca": "WEE-kee",
+      "en": "I won"
+    },
+    {
+      "la": "cecidi",
+      "baca": "KEH-kee-dee",
+      "en": "I fell"
+    },
+    {
+      "la": "cucurri",
+      "baca": "koo-KOOR-ree",
+      "en": "I ran"
+    },
+    {
+      "la": "dedi",
+      "baca": "DEH-dee",
+      "en": "I gave"
+    },
+    {
+      "la": "tuli",
+      "baca": "TOO-lee",
+      "en": "I carried (from fero)"
+    },
+    {
+      "la": "cado, cadere, cecidi",
+      "baca": "KAH-doh",
+      "en": "to fall"
+    },
+    {
+      "la": "accido, accidere, accidi",
+      "baca": "AHK-kee-doh",
+      "en": "to happen"
+    },
+    {
+      "la": "sto, stare, steti",
+      "baca": "STOH",
+      "en": "to stand"
+    },
+    {
+      "la": "vinco, vincere, vici",
+      "baca": "WIN-koh",
+      "en": "to win, to defeat"
+    },
+    {
+      "la": "vivo, vivere, vixi",
+      "baca": "WEE-woh",
+      "en": "to live"
+    },
+    {
+      "la": "moveo, movere, movi",
+      "baca": "MOH-weh-oh",
+      "en": "to move"
+    },
+    {
+      "la": "mercator, mercatoris",
+      "baca": "mehr-KAH-tohr",
+      "en": "merchant"
+    },
+    {
+      "la": "elephantus, elephanti",
+      "baca": "eh-leh-PHAHN-toos",
+      "en": "elephant"
+    },
+    {
+      "la": "portus, portus",
+      "baca": "POHR-toos",
+      "en": "harbor"
+    },
+    {
+      "la": "Africa, Africae",
+      "baca": "AH-free-kah",
+      "en": "Africa"
+    },
+    {
+      "la": "res, rei",
+      "baca": "REHS",
+      "en": "thing, matter"
+    },
+    {
+      "la": "mirus, mira, mirum",
+      "baca": "MEE-roos",
+      "en": "amazing, astonishing"
+    },
+    {
+      "la": "semel, bis",
+      "baca": "SEH-mehl, BIS",
+      "en": "once, twice"
+    },
+    {
+      "la": "deinde",
+      "baca": "DEH-in-deh",
+      "en": "then, next"
+    },
+    {
+      "la": "postea",
+      "baca": "POHS-teh-ah",
+      "en": "afterwards"
+    },
+    {
+      "la": "subito",
+      "baca": "SOO-bee-toh",
+      "en": "suddenly"
+    },
+    {
+      "la": "timeo, timere, timui",
+      "baca": "TEE-meh-oh",
+      "en": "to fear, to be afraid"
+    },
+    {
+      "la": "clamo, clamare, clamavi",
+      "baca": "KLAH-moh",
+      "en": "to shout"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change to the perfect, keeping the same subject.",
+      "items": [
+        "porto",
+        "video",
+        "dico",
+        "venio",
+        "sum",
+        "facio"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the correct perfect form.",
+      "items": [
+        "Heri elephantum ____ . (videre, I)",
+        "Cives in forum ____ . (venire, they)",
+        "Quid ____ ? (facere, you)",
+        "Epistulam ____ . (scribere, we)",
+        "Sextus in aquam ____ . (cadere, he)",
+        "Ubi ____ ? (esse, you pl)"
+      ]
+    },
+    {
+      "prompt": "Choose: imperfect or perfect.",
+      "items": [
+        "Cotidie ad forum ____ . (ambulare, I)",
+        "Heri ad forum ____ . (ambulare, I)",
+        "Schola parva ____ semper. (esse, it)",
+        "Subito magister ____ . (clamare, he)",
+        "Marcus legebat, Iulia ____ . (cantare, she)",
+        "Denique mercator elephantum ____ . (ducere, he)"
+      ]
+    },
+    {
+      "prompt": "Translate into Latin.",
+      "items": [
+        "I saw an elephant.",
+        "The citizens came and shouted.",
+        "What did you say?",
+        "We wrote a letter.",
+        "Sextus fell into the water.",
+        "I came, I saw, I conquered."
+      ]
+    }
+  ],
+  "answers": [
+    "portavi — vidi — dixi — veni — fui — feci",
+    "vidi — venerunt — fecisti — scripsimus — cecidit — fuistis",
+    "ambulabam — ambulavi — erat — clamavit — cantabat — duxit",
+    "Elephantum vidi. — Cives venerunt et clamaverunt. — Quid dixisti? — Epistulam scripsimus. — Sextus in aquam cecidit. — Veni, vidi, vici."
+  ]
+}

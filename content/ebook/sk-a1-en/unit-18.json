@@ -1,0 +1,622 @@
+{
+  "title": "Bigger, best",
+  "title_target": "Väčší, najlepší",
+  "goal": "Compare and describe, and watch the rhythm rule at work where it's easiest to see: adjective endings.",
+  "bekal": [
+    "form the comparative and superlative of any adjective",
+    "compare two things with *ako* and *než*",
+    "describe people, things, and places with colors and qualities"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ktorý byt je lepší?",
+      "intro": "Budi is looking for a room to rent. Eva helps him compare two options on her phone screen.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Pozri, tento byt je väčší, ale drahší.",
+          "id": "Look, this apartment is bigger, but more expensive.",
+          "literal": "look, this apartment is bigger, but more-expensive."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "O koľko drahší?",
+          "id": "How much more expensive?",
+          "literal": "by how-much more-expensive?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "O sto eur mesačne. Ale je bližšie k centru.",
+          "id": "A hundred euros a month. But it's closer to the center.",
+          "literal": "by hundred euros-gen monthly. but it-is closer to center-dat."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A ten druhý? Je menší?",
+          "id": "And the second one? Is it smaller?",
+          "literal": "and that second? it-is smaller?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Menší a starší, ale má krajší výhľad.",
+          "id": "Smaller and older, but it has a nicer view.",
+          "literal": "smaller and older, but it-has more-beautiful view."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Výhľad nie je najdôležitejší.",
+          "id": "The view isn't the most important thing.",
+          "literal": "view not is most-important."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "A čo je pre teba najdôležitejšie?",
+          "id": "So what's most important for you?",
+          "literal": "and what is for you most-important?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cena. Som študent, nie riaditeľ banky.",
+          "id": "The price. I'm a student, not a bank director.",
+          "literal": "price. I-am student, not director bank-gen."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Dobre. Potom je ten menší lepší.",
+          "id": "OK. Then the smaller one is better.",
+          "literal": "good. then is that smaller better."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A je tam električka?",
+          "id": "And is there a tram there?",
+          "literal": "and is there tram?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Áno. Tak je to najlepšia možnosť.",
+          "id": "Yes. So that's the best option.",
+          "literal": "yes. so is that best-f option."
+        }
+      ],
+      "notes": [
+        "**Väčší, menší, lepší, krajší** — four irregular comparatives, and all four are among the most frequently used in the language. Their base forms (*veľký, malý, dobrý, pekný*) can't be seen in them at all. Learn them in pairs from now on.",
+        "**O koľko drahší?** — the difference is expressed with *o* + accusative: *o sto eur* (a hundred euros more), *o dva roky starší* (two years older), *o hodinu neskôr* (an hour later). A very useful and easy pattern.",
+        "**Rýchlejšie ako odtiaľto** — the thing you compare with is introduced by *ako* (or *než*, which is slightly more formal). The word after it stays in its basic form: *väčší ako ja*, not *väčší ako mňa*.",
+        "**Najdôležitejší, najlepšia** — the superlative is formed by putting *naj-* in front of the comparative. One prefix, the whole system. This is one of the cheapest parts of all Slovak grammar.",
+        "**Bližšie and rýchlejšie are adverbs, not adjectives.** Notice the ending *-ie*, not *-í*. *Je bližší* (it is closer — a quality of the thing) but *Je bližšie* (it's located closer — an adverb). The difference is slight and beginners often ignore it."
+      ],
+      "grammars": [
+        {
+          "title": "Comparative and superlative",
+          "body": [
+            "The comparative is formed with the ending **-ší** or **-ejší**. The superlative is formed by adding the prefix **naj-** to the comparative. There is no third step."
+          ],
+          "table": {
+            "head": [
+              "Base form",
+              "Comparative",
+              "Superlative",
+              "English"
+            ],
+            "rows": [
+              [
+                "*starý*",
+                "star**ší**",
+                "**naj**starší",
+                "old"
+              ],
+              [
+                "*mladý*",
+                "mlad**ší**",
+                "**naj**mladší",
+                "young"
+              ],
+              [
+                "*dlhý*",
+                "dlh**ší**",
+                "**naj**dlhší",
+                "long"
+              ],
+              [
+                "*drahý*",
+                "drah**ší**",
+                "**naj**drahší",
+                "expensive"
+              ],
+              [
+                "*lacný*",
+                "lacn**ejší**",
+                "**naj**lacnejší",
+                "cheap"
+              ],
+              [
+                "*rýchly*",
+                "rýchl**ejší**",
+                "**naj**rýchlejší",
+                "fast"
+              ],
+              [
+                "*teplý*",
+                "tepl**ejší**",
+                "**naj**teplejší",
+                "warm"
+              ],
+              [
+                "*dôležitý*",
+                "dôležit**ejší**",
+                "**naj**dôležitejší",
+                "important"
+              ]
+            ]
+          },
+          "after": [
+            "**When -ší and when -ejší?** Short adjectives whose stem ends in one consonant take **-ší** (*starší, mladší, dlhší*). Adjectives whose stem ends in two consonants take **-ejší** (*lacnejší, rýchlejší*), because three consonants in a row are hard to pronounce. If in doubt, use *-ejší* — it's right more often.",
+            "**The ending still changes with gender**, like any adjective: *starší brat* (m), *staršia sestra* (f), *staršie mesto* (n), *starší ľudia* (masculine plural). You're not learning a new system, just attaching it to a longer stem.",
+            "**Five irregular ones, and all five must be learned:** *veľký → **väčší***, *malý → **menší***, *dobrý → **lepší***, *zlý → **horší***, *pekný/krásny → **krajší***. All five are among the most common adjectives — so learning them now is far cheaper than repeating the mistakes later."
+          ]
+        },
+        {
+          "title": "The rhythm rule, up close",
+          "body": [
+            "Adjective endings are the best place to watch the rhythm rule at work, because here you see it on the same word, side by side."
+          ],
+          "table": {
+            "head": [
+              "Stem",
+              "m",
+              "f",
+              "n",
+              "Why"
+            ],
+            "rows": [
+              [
+                "*pekn-* (short)",
+                "pekn**ý**",
+                "pekn**á**",
+                "pekn**é**",
+                "previous syllable is short"
+              ],
+              [
+                "*krásn-* (long)",
+                "krásn**y**",
+                "krásn**a**",
+                "krásn**e**",
+                "*krás-* long → short ending"
+              ],
+              [
+                "*mlad-* (short)",
+                "mlad**ý**",
+                "mlad**á**",
+                "mlad**é**",
+                "short"
+              ],
+              [
+                "*biel-* (long)",
+                "biel**y**",
+                "biel**a**",
+                "biel**e**",
+                "*bie-* diphthong = long"
+              ],
+              [
+                "*dobr-* (short)",
+                "dobr**ý**",
+                "dobr**á**",
+                "dobr**é**",
+                "short"
+              ],
+              [
+                "*múdr-* (long)",
+                "múdr**y**",
+                "múdr**a**",
+                "múdr**e**",
+                "*mú-* long → short ending"
+              ]
+            ]
+          },
+          "after": [
+            "**What counts as long**: vowels with an accent mark (*á é í ó ú ý*), diphthongs (*ia ie iu*), *ô*, and *ŕ ĺ*. Look at the fourth row: *biely* has a short ending because *ie* is a diphthong, and diphthongs count as long even without a mark.",
+            "**The comparative almost always takes a short ending**, because its stem already contains a long syllable: *krajší* (not *krajšý*), *staršia* (not *staršiá*), *najlepšie*. You practically don't need to think about it here.",
+            "**If you write a long ending where it should be short**, your sentence reads as Czech, not as an ordinary mistake. Czech has no rhythm rule and writes *krásná*. Slovaks hear the difference immediately."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The most common adjectives",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Adjective",
+            "Opposite",
+            "English"
+          ],
+          "rows": [
+            [
+              "**veľký**",
+              "**malý**",
+              "big / small"
+            ],
+            [
+              "**dobrý**",
+              "**zlý**",
+              "good / bad"
+            ],
+            [
+              "**nový**",
+              "**starý**",
+              "new / old"
+            ],
+            [
+              "**mladý**",
+              "**starý**",
+              "young / old"
+            ],
+            [
+              "**dlhý**",
+              "**krátky**",
+              "long / short"
+            ],
+            [
+              "**vysoký**",
+              "**nízky**",
+              "tall, high / low"
+            ],
+            [
+              "**drahý**",
+              "**lacný**",
+              "expensive / cheap"
+            ],
+            [
+              "**rýchly**",
+              "**pomalý**",
+              "fast / slow"
+            ],
+            [
+              "**ľahký**",
+              "**ťažký**",
+              "easy, light / hard, heavy"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that **starý** appears twice — it's the opposite of *nový* (for things) and of *mladý* (for people). Slovak, just like English with *old*, uses one word for both."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Color (m)",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**biely**",
+              "BYEH-lee",
+              "white"
+            ],
+            [
+              "**čierny**",
+              "CHYEHR-nee",
+              "black"
+            ],
+            [
+              "**červený**",
+              "CHEHR-veh-nee",
+              "red"
+            ],
+            [
+              "**modrý**",
+              "MOHD-ree",
+              "blue"
+            ],
+            [
+              "**zelený**",
+              "ZEH-leh-nee",
+              "green"
+            ],
+            [
+              "**žltý**",
+              "ZHL-tee",
+              "yellow"
+            ],
+            [
+              "**hnedý**",
+              "HNYEH-dee",
+              "brown"
+            ],
+            [
+              "**sivý**",
+              "SEE-vee",
+              "gray"
+            ],
+            [
+              "**ružový**",
+              "ROO-zhoh-vee",
+              "pink"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Colors behave exactly like other adjectives: *biely dom* (m), *biela káva* (f), *biele auto* (n). Notice that *biely* and *čierny* take a short ending because the stem is long — *bie-* is a diphthong, *čier-* is a diphthong. The rhythm rule again."
+        }
+      ]
+    },
+    {
+      "title": "Comparing",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Structure",
+            "Example",
+            "English"
+          ],
+          "rows": [
+            [
+              "**… + comparative + ako / než + …**",
+              "*Je vyšší ako ja.*",
+              "He's taller than me."
+            ],
+            [
+              "**taký … ako**",
+              "*Je taký vysoký ako ja.*",
+              "He's as tall as me."
+            ],
+            [
+              "**o + accusative**",
+              "*Je o rok starší.*",
+              "He's a year older."
+            ],
+            [
+              "**čoraz + comparative**",
+              "*Je čoraz teplejšie.*",
+              "It's getting warmer and warmer."
+            ],
+            [
+              "**najviac / najmenej**",
+              "*Toto sa mi páči najviac.*",
+              "I like this one the most."
+            ],
+            [
+              "**oveľa + comparative**",
+              "*Je oveľa lepší.*",
+              "Much better."
+            ],
+            [
+              "**trochu + comparative**",
+              "*Je trochu drahší.*",
+              "A little more expensive."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Ako and než mean the same thing**, and both are correct. *Ako* is heard more in conversation; *než* is slightly more formal and more common in writing. Pick one and stick with it."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Adverb",
+            "Comparative",
+            "Superlative",
+            "English"
+          ],
+          "rows": [
+            [
+              "**dobre**",
+              "**lepšie**",
+              "**najlepšie**",
+              "well"
+            ],
+            [
+              "**zle**",
+              "**horšie**",
+              "**najhoršie**",
+              "badly"
+            ],
+            [
+              "**veľa**",
+              "**viac**",
+              "**najviac**",
+              "a lot"
+            ],
+            [
+              "**málo**",
+              "**menej**",
+              "**najmenej**",
+              "a little"
+            ],
+            [
+              "**rýchlo**",
+              "**rýchlejšie**",
+              "**najrýchlejšie**",
+              "fast"
+            ],
+            [
+              "**ďaleko**",
+              "**ďalej**",
+              "**najďalej**",
+              "far"
+            ],
+            [
+              "**blízko**",
+              "**bližšie**",
+              "**najbližšie**",
+              "near"
+            ],
+            [
+              "**skoro**",
+              "**skôr**",
+              "**najskôr**",
+              "early"
+            ],
+            [
+              "**neskoro**",
+              "**neskôr**",
+              "**najneskôr**",
+              "late"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 16",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "May I ask something?",
+              "*Môžem sa niečo opýtať?*"
+            ],
+            [
+              "You need to fill in this form.",
+              "*Musíte vyplniť tento formulár.*"
+            ],
+            [
+              "You don't have to come.",
+              "*Nemusíš prísť.*"
+            ],
+            [
+              "No smoking here.",
+              "*Tu sa nesmie fajčiť.*"
+            ],
+            [
+              "I don't know.",
+              "*Neviem.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "väčší",
+      "baca": "VEHCH-shee",
+      "en": "bigger"
+    },
+    {
+      "sk": "menší",
+      "baca": "MEHN-shee",
+      "en": "smaller"
+    },
+    {
+      "sk": "lepší",
+      "baca": "LEHP-shee",
+      "en": "better"
+    },
+    {
+      "sk": "horší",
+      "baca": "HOHR-shee",
+      "en": "worse"
+    },
+    {
+      "sk": "krajší",
+      "baca": "KRAI-shee",
+      "en": "more beautiful"
+    },
+    {
+      "sk": "vysoký",
+      "baca": "VEE-soh-kee",
+      "en": "tall, high"
+    },
+    {
+      "sk": "nízky",
+      "baca": "NEES-kee",
+      "en": "low"
+    },
+    {
+      "sk": "krátky",
+      "baca": "KRAHT-kee",
+      "en": "short"
+    },
+    {
+      "sk": "dlhý",
+      "baca": "DL-hee",
+      "en": "long"
+    },
+    {
+      "sk": "pomalý",
+      "baca": "POH-mah-lee",
+      "en": "slow"
+    },
+    {
+      "sk": "čistý",
+      "baca": "CHEES-tee",
+      "en": "clean"
+    },
+    {
+      "sk": "špinavý",
+      "baca": "SHPEE-nah-vee",
+      "en": "dirty"
+    },
+    {
+      "sk": "tichý",
+      "baca": "TYEE-khee",
+      "en": "quiet"
+    },
+    {
+      "sk": "hlučný",
+      "baca": "HLOOCH-nee",
+      "en": "noisy"
+    },
+    {
+      "sk": "dôležitý",
+      "baca": "DWOH-leh-zhee-tee",
+      "en": "important"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Slovak.",
+      "items": [
+        "This apartment is bigger, but more expensive.",
+        "How much more expensive?",
+        "It's closer to the center.",
+        "The view isn't the most important thing.",
+        "That's the best option.",
+        "Could you speak more slowly?"
+      ]
+    },
+    {
+      "prompt": "Write the comparative.",
+      "items": [
+        "starý → ____",
+        "mladý → ____",
+        "veľký → ____",
+        "malý → ____",
+        "dobrý → ____",
+        "zlý → ____",
+        "lacný → ____",
+        "rýchly → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "drahší / väčší / je / ale / byt / tento / ,",
+        "centru / bližšie / je / k",
+        "najdôležitejší / nie / výhľad / je",
+        "možnosť / to / najlepšia / je",
+        "ja / vyšší / ako / je"
+      ]
+    }
+  ],
+  "answers": [
+    "Tento byt je väčší, ale drahší. — O koľko drahší? — Je bližšie k centru. — Výhľad nie je najdôležitejší. — To je najlepšia možnosť. — Mohli by ste hovoriť pomalšie?",
+    "starší — mladší — väčší — menší — lepší — horší — lacnejší — rýchlejší",
+    "Tento byt je väčší, ale drahší. — Je bližšie k centru. — Výhľad nie je najdôležitejší. — To je najlepšia možnosť. — Je vyšší ako ja."
+  ]
+}

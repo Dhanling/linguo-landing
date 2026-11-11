@@ -1,0 +1,594 @@
+{
+  "title": "What's this? Things around you",
+  "title_target": "Bu nima? Atrofdagi narsalar",
+  "goal": "Point at things near and far, make plurals with *-lar*, put adjectives in front of nouns, and enjoy the fact that Uzbek has no *a*, no *the*, and no grammatical gender.",
+  "bekal": [
+    "ask *Bu nima?* and answer it with one word",
+    "tell apart *bu* (this), *shu* (that, nearby), and *u* (that, far away)",
+    "attach *-lar* for the plural, and know when it is **not** used"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Yotoqxonadagi xona",
+      "intro": "Nilufar shows Budi to his new dorm room. She points at things one by one, as if giving him his first lesson.",
+      "lines": [
+        {
+          "speaker": "Nilufar:",
+          "text": "Mana, bu sizning xonangiz.",
+          "id": "Well, this is your room.",
+          "literal": "well, this your room-your."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Juda chiroyli! Bu nima?",
+          "id": "It's lovely! What's this?",
+          "literal": "very beautiful! this what?"
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Bu stol, bu esa stul. Ular yangi.",
+          "id": "This is a table, and this is a chair. Both are new.",
+          "literal": "this table, this as-for chair. they new."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "U nima? U yerda, derazaning yonida.",
+          "id": "What's that? Over there, by the window.",
+          "literal": "that what? that place-at, window-of side-its-at."
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "U kitob javoni. Bu yerda kitoblar bor.",
+          "id": "That's a bookshelf. There are books here.",
+          "literal": "that book shelf-its. this place-at books there-are."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bu kitoblar oʻzbekchami?",
+          "id": "Are these books in Uzbek?",
+          "literal": "these books Uzbek-language-?"
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Ha, hammasi oʻzbekcha. Bu lugʻat, bular darsliklar.",
+          "id": "Yes, they're all in Uzbek. This is a dictionary, and these are textbooks.",
+          "literal": "yes, all-of-them Uzbek-language. this dictionary, these lesson-books."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Lugʻat eskimi yoki yangimi?",
+          "id": "Is the dictionary old or new?",
+          "literal": "dictionary old-? or new-?"
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Eski, lekin juda yaxshi. U qimmat emas.",
+          "id": "Old, but very good. It's not expensive.",
+          "literal": "old, but very good. it expensive not."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ajoyib! Bu xona menga yoqadi.",
+          "id": "Wonderful! I like this room.",
+          "literal": "wonderful! this room to-me pleasing."
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Xursandman. Mana kalit — bu sizniki.",
+          "id": "I'm glad. Here's the key — it's yours.",
+          "literal": "glad-I-am. here key — this yours."
+        }
+      ],
+      "notes": [
+        "**No a, an, or the.** *Kitob* can mean \"book\", \"a book\", or \"the book\" — context decides. If you really need to stress \"that book\", just point: *bu kitob*, *shu kitob*, *u kitob*.",
+        "**Bu esa means \"and this one, on the other hand\".** The little word *esa* contrasts two things in a row: *Bu stol, bu esa stul*. It's polite, neutral, and very common in writing.",
+        "**Hammasi = \"all of them\".** The root *hamma* (all) plus the ending *-si* (\"its/their\"). You'll meet that ending again in unit 3, where it becomes one of the most important tools in Uzbek.",
+        "**Yoki means \"or\", and either-or questions use -mi twice.** *Eskimi yoki yangimi?* — literally \"old-? or new-?\". Uzbek puts the question marker on both choices, whereas English asks only once.",
+        "**Sizniki means \"yours\" as a standalone word.** *Bu sizniki* = \"This is yours\". The pattern: pronoun + *-niki*. So *meniki* (mine), *seniki*, *uniki*, *bizniki*, *sizniki*, *ularniki*."
+      ],
+      "grammars": [
+        {
+          "title": "Bu, shu, u — three distances, not two",
+          "body": [
+            "English has \"this\" and \"that\". Uzbek adds one step in the middle, and once you see the pattern, it's easy."
+          ],
+          "table": {
+            "head": [
+              "Bentuk",
+              "Say it",
+              "Distance",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**bu**",
+                "bu",
+                "this — in your hand, right in front of you",
+                "*Bu kitob* = this book"
+              ],
+              [
+                "**shu**",
+                "shu",
+                "that — nearby, or just mentioned",
+                "*Shu kun* = that day"
+              ],
+              [
+                "**u**",
+                "u",
+                "that — far away, over there",
+                "*U uy* = that house"
+              ],
+              [
+                "**bular**",
+                "bu-LÅR",
+                "these",
+                "*Bular darsliklar*"
+              ],
+              [
+                "**shular**",
+                "shu-LÅR",
+                "those (nearby)",
+                "*Shular meniki*"
+              ],
+              [
+                "**ular**",
+                "u-LÅR",
+                "those (far away); they",
+                "*Ular talabalar*"
+              ]
+            ]
+          },
+          "after": [
+            "Look at the last row: **u and ular also mean \"he/she\" and \"they\"**. Uzbek doesn't separate people and things here. *U kim?* = \"Who is he/she?\"; *U nima?* = \"What is that?\". Only the question word tells them apart.",
+            "*Shu* is the safest choice when you mean something **just mentioned in the conversation**, rather than something you're pointing at. In English both are simply \"that\".",
+            "For places, all three take the word *yer* (place): *bu yerda* (here), *shu yerda* (right there), *u yerda* (over there). You'll see these constantly from unit 4 on."
+          ]
+        },
+        {
+          "title": "-lar for plurals, and adjectives that never change",
+          "body": [
+            "Two short rules that save you months compared with Russian or French."
+          ],
+          "table": {
+            "head": [
+              "Singular",
+              "Plural",
+              "With an adjective",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*kitob*",
+                "*kitoblar*",
+                "*yangi kitoblar*",
+                "new books"
+              ],
+              [
+                "*talaba*",
+                "*talabalar*",
+                "*yaxshi talabalar*",
+                "good students"
+              ],
+              [
+                "*uy*",
+                "*uylar*",
+                "*katta uylar*",
+                "big houses"
+              ],
+              [
+                "*doʻst*",
+                "*doʻstlar*",
+                "*eski doʻstlar*",
+                "old friends"
+              ],
+              [
+                "*bola*",
+                "*bolalar*",
+                "*kichik bolalar*",
+                "little children"
+              ]
+            ]
+          },
+          "after": [
+            "**Adjectives always come before the noun, and they never change form.** *Katta uy*, *katta uylar*, *katta uyda* — *katta* stays *katta* forever. No agreement in gender, number, or case as in Russian or French.",
+            "⚠️ **After a number, -lar is dropped.** *Uch kitob* (three books), not *uch kitoblar*. It makes sense: the number already shows how many, so marking it twice is seen as redundant. Turkish works the same way.",
+            "*-lar* is also used to show respect: *ustozlar keldilar* = \"The teacher has come\" (one person, but made plural as a sign of respect). You'll see this habit again in unit 10."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Things around you",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Point at each object in your room right now and say its name out loud. Ten minutes now saves ten hours later."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**kitob**",
+              "ki-TÅB",
+              "book"
+            ],
+            [
+              "**daftar**",
+              "dåf-TAR",
+              "notebook"
+            ],
+            [
+              "**qalam**",
+              "qå-LAM",
+              "pencil, pen"
+            ],
+            [
+              "**ruchka**",
+              "RUCH-kå",
+              "ballpoint pen"
+            ],
+            [
+              "**stol**",
+              "stål",
+              "table"
+            ],
+            [
+              "**stul**",
+              "stul",
+              "chair"
+            ],
+            [
+              "**eshik**",
+              "e-SHIK",
+              "door"
+            ],
+            [
+              "**deraza**",
+              "de-rå-ZÅ",
+              "window"
+            ],
+            [
+              "**xona**",
+              "khå-NÅ",
+              "room"
+            ],
+            [
+              "**uy**",
+              "uy",
+              "house, home"
+            ],
+            [
+              "**sumka**",
+              "SUM-kå",
+              "bag"
+            ],
+            [
+              "**telefon**",
+              "te-le-FÅN",
+              "telephone"
+            ],
+            [
+              "**kalit**",
+              "kå-LIT",
+              "key"
+            ],
+            [
+              "**lugʻat**",
+              "lu-GHAT",
+              "dictionary"
+            ],
+            [
+              "**darslik**",
+              "dårs-LIK",
+              "textbook"
+            ],
+            [
+              "**narsa**",
+              "når-SÅ",
+              "thing"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Four of these come from Russian and have barely changed: *stol*, *stul*, *ruchka*, *sumka*. Uzbekistan spent seventy years in the Soviet Union, and it shows most in words for modern things — *avtobus*, *magazin*, *kompyuter*, *bank*, *pochta*. If you don't know a modern noun, try the Russian one; chances are good it's the right word."
+        }
+      ]
+    },
+    {
+      "title": "The most common adjectives",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Eight pairs of opposites. Learning them in pairs is much faster than one at a time."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "Meaning",
+            "Opposite"
+          ],
+          "rows": [
+            [
+              "**katta**",
+              "kåt-TÅ",
+              "big",
+              "**kichik** (ki-CHIK) small"
+            ],
+            [
+              "**yangi**",
+              "yån-GI",
+              "new",
+              "**eski** (es-KI) old"
+            ],
+            [
+              "**yaxshi**",
+              "yåkh-SHI",
+              "good",
+              "**yomon** (yå-MÅN) bad"
+            ],
+            [
+              "**qimmat**",
+              "qim-MAT",
+              "expensive",
+              "**arzon** (år-ZÅN) cheap"
+            ],
+            [
+              "**uzun**",
+              "u-ZUN",
+              "long",
+              "**qisqa** (qis-QÅ) short"
+            ],
+            [
+              "**issiq**",
+              "is-SIQ",
+              "hot",
+              "**sovuq** (så-VUQ) cold"
+            ],
+            [
+              "**oson**",
+              "å-SÅN",
+              "easy",
+              "**qiyin** (qi-YIN) difficult"
+            ],
+            [
+              "**chiroyli**",
+              "chi-råy-LI",
+              "beautiful, pretty",
+              "**xunuk** (khu-NUK) ugly"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Note **qimmat**: it means **expensive**. Its root is the Arabic word for \"value\" (*qīma*), so literally \"of high value\"."
+        },
+        {
+          "type": "p",
+          "text": "To strengthen an adjective, just put *juda* (very) in front: *juda katta*, *juda arzon*, *juda chiroyli*. To soften it, use *biroz* (a bit): *biroz qimmat* = a bit expensive."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uz": "bu",
+      "baca": "bu",
+      "en": "this"
+    },
+    {
+      "uz": "shu",
+      "baca": "shu",
+      "en": "that (nearby)"
+    },
+    {
+      "uz": "bular",
+      "baca": "bu-LÅR",
+      "en": "these"
+    },
+    {
+      "uz": "mana",
+      "baca": "MÅ-nå",
+      "en": "well, here it is"
+    },
+    {
+      "uz": "kitob",
+      "baca": "ki-TÅB",
+      "en": "book"
+    },
+    {
+      "uz": "daftar",
+      "baca": "dåf-TAR",
+      "en": "notebook"
+    },
+    {
+      "uz": "qalam",
+      "baca": "qå-LAM",
+      "en": "pencil, pen"
+    },
+    {
+      "uz": "stol",
+      "baca": "stål",
+      "en": "table"
+    },
+    {
+      "uz": "stul",
+      "baca": "stul",
+      "en": "chair"
+    },
+    {
+      "uz": "eshik",
+      "baca": "e-SHIK",
+      "en": "door"
+    },
+    {
+      "uz": "deraza",
+      "baca": "de-rå-ZÅ",
+      "en": "window"
+    },
+    {
+      "uz": "xona",
+      "baca": "khå-NÅ",
+      "en": "room"
+    },
+    {
+      "uz": "uy",
+      "baca": "uy",
+      "en": "house, home"
+    },
+    {
+      "uz": "kalit",
+      "baca": "kå-LIT",
+      "en": "key"
+    },
+    {
+      "uz": "lugʻat",
+      "baca": "lu-GHAT",
+      "en": "dictionary"
+    },
+    {
+      "uz": "darslik",
+      "baca": "dårs-LIK",
+      "en": "textbook"
+    },
+    {
+      "uz": "javon",
+      "baca": "jå-VÅN",
+      "en": "shelf, cupboard"
+    },
+    {
+      "uz": "narsa",
+      "baca": "når-SÅ",
+      "en": "thing"
+    },
+    {
+      "uz": "bola",
+      "baca": "bå-LÅ",
+      "en": "child"
+    },
+    {
+      "uz": "katta",
+      "baca": "kåt-TÅ",
+      "en": "big"
+    },
+    {
+      "uz": "kichik",
+      "baca": "ki-CHIK",
+      "en": "small"
+    },
+    {
+      "uz": "yangi",
+      "baca": "yån-GI",
+      "en": "new"
+    },
+    {
+      "uz": "eski",
+      "baca": "es-KI",
+      "en": "old (things)"
+    },
+    {
+      "uz": "chiroyli",
+      "baca": "chi-råy-LI",
+      "en": "beautiful, pretty"
+    },
+    {
+      "uz": "qimmat",
+      "baca": "qim-MAT",
+      "en": "expensive"
+    },
+    {
+      "uz": "arzon",
+      "baca": "år-ZÅN",
+      "en": "cheap"
+    },
+    {
+      "uz": "yomon",
+      "baca": "yå-MÅN",
+      "en": "bad, ugly"
+    },
+    {
+      "uz": "ajoyib",
+      "baca": "å-jå-YIB",
+      "en": "wonderful, great"
+    },
+    {
+      "uz": "hamma",
+      "baca": "håm-MÅ",
+      "en": "all"
+    },
+    {
+      "uz": "lekin",
+      "baca": "le-KIN",
+      "en": "but"
+    },
+    {
+      "uz": "yoki",
+      "baca": "yå-KI",
+      "en": "or"
+    },
+    {
+      "uz": "esa",
+      "baca": "e-SÅ",
+      "en": "whereas, as for"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Uzbek.",
+      "items": [
+        "What's this?",
+        "This is a book.",
+        "That (far away) is a door.",
+        "These books are new.",
+        "That room is big.",
+        "This dictionary isn't expensive."
+      ]
+    },
+    {
+      "prompt": "Fill in with bu, shu, u, bular, or ular.",
+      "items": [
+        "____ nima? — Bu qalam.",
+        "____ yerda kitoblar bor. (here)",
+        "____ uy juda katta. (a house far away)",
+        "____ darsliklar meniki. (the ones in my hand)",
+        "____ talabalar oʻzbek. (the ones far away)"
+      ]
+    },
+    {
+      "prompt": "Make plural, then add a suitable adjective. Example: kitob → yangi kitoblar.",
+      "items": [
+        "talaba",
+        "uy",
+        "eshik",
+        "doʻst",
+        "bola",
+        "xona"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "nima / bu / ?",
+        "kitoblar / bu / yangi",
+        "emas / lugʻat / qimmat / bu",
+        "chiroyli / xona / juda / u",
+        "meniki / kalit / bu"
+      ]
+    }
+  ],
+  "answers": [
+    "Bu nima? — Bu kitob. — U eshik. — Bu kitoblar yangi. — U xona katta. — Bu lugʻat qimmat emas.",
+    "Bu — Bu — U — Bular — Ular",
+    "yaxshi talabalar — katta uylar — yangi eshiklar — eski doʻstlar — kichik bolalar — chiroyli xonalar",
+    "Bu nima? — Bu kitoblar yangi. — Bu lugʻat qimmat emas. — U xona juda chiroyli. — Bu kalit meniki."
+  ]
+}

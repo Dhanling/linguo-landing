@@ -1,0 +1,553 @@
+{
+  "title": "At the café — and nouns as objects",
+  "title_target": "V kavarni",
+  "goal": "Order drinks and snacks with four forms that are always polite — and install the tožilnik (Accusative), the form a noun takes when it is the OBJECT of an action, not the one doing it.",
+  "bekal": [
+    "order with *Prosim…*, *Jaz bi…*, *Želim…*, and *Lahko dobim…?*",
+    "turn feminine words into objects: *kava* → *kavo*, *voda* → *vodo*, *solata* → *solato*",
+    "use two verbs that don't play by the rules: *jesti* (to eat) and *piti* (to drink)"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Tri naročila in en račun",
+      "intro": "Afternoon at a kavarna on the banks of the Ljubljanica. Maja, Eva, and Budi sit outside; the waiter comes over with a notepad.",
+      "lines": [
+        {
+          "speaker": "Natakar:",
+          "text": "Dober dan. Kaj želite?",
+          "id": "Hello. What would you like?",
+          "literal": "good day. what you-want?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Jaz bi eno kavo, prosim.",
+          "id": "I'd like a coffee, please.",
+          "literal": "I would one coffee-acc, please."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Zame čaj. Zeleni čaj, prosim.",
+          "id": "Tea for me. Green tea, please.",
+          "literal": "for-me tea. green tea, please."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "In jaz bi vodo in eno pivo.",
+          "id": "And I'd like water and a beer.",
+          "literal": "and I would water-acc and one beer."
+        },
+        {
+          "speaker": "Natakar:",
+          "text": "Veliko ali malo pivo?",
+          "id": "Large or small beer?",
+          "literal": "big or small beer?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Malo, prosim. Imate kaj za pod zob?",
+          "id": "Small, please. Do you have any snacks?",
+          "literal": "small, please. you-have something for under tooth?"
+        },
+        {
+          "speaker": "Natakar:",
+          "text": "Imamo burek, sendvič in solato.",
+          "id": "We have burek, sandwiches, and salad.",
+          "literal": "we-have burek, sandwich and salad."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Potem eno solato, prosim.",
+          "id": "Then a salad, please.",
+          "literal": "then one salad-acc, please."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "In račun kar skupaj.",
+          "id": "And just one bill for all of us.",
+          "literal": "and bill just together."
+        },
+        {
+          "speaker": "Natakar:",
+          "text": "Seveda. Takoj pridem.",
+          "id": "Of course. I'll be right back.",
+          "literal": "of-course. right-away I-come."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hvala lepa! Dober tek vsem!",
+          "id": "Thanks a lot! Enjoy, everyone!",
+          "literal": "thanks beautiful! good appetite to-all!"
+        }
+      ],
+      "notes": [
+        "**Jaz bi … — the way you'll hear people order most.** Literally \"I would\", with the verb deliberately dropped: *Jaz bi eno kavo* is really cut down from *Jaz bi rad eno kavo* (\"I would like a coffee\"). The short form is polite, warm, and used by Slovenians every day — far more often than *Želim*, which sounds like a form you fill in.",
+        "**Kava becomes kavo, voda becomes vodo, solata becomes solato.** This is the tožilnik (Accusative): the form a noun takes when it's the **object** of an action. The rule for feminine words is a single line — swap *-a* for *-o* — and it works on thousands of words.",
+        "**But čaj, burek, and sendvič don't change at all.** Masculine nouns that aren't living things use the same form whether they're the subject or the object. So half your worry about cases just evaporated: *Pijem čaj*, *Čaj je vroč* — the forms are twins.",
+        "**Zame = za + mene.** The preposition *za* (for) merges with its pronoun: *zame* (for me), *zate* (for you), *zanj* (for him), *zanjo* (for her), *za naju* (for us two). Fused forms like this are common in Slovenian and are always shorter than the long version.",
+        "**Kaj za pod zob** is literally \"something for under the tooth\" — the everyday expression for a snack. Slovenian is full of body images like this, and phrases like these are what make people smile when you use them. **Kar** in *račun kar skupaj* is a softener, like English \"just\": it makes a request sound relaxed, not demanding."
+      ],
+      "grammars": [
+        {
+          "title": "Tožilnik — the object form",
+          "body": [
+            "Slovenian marks who does what to whom through the **form of the noun**, not through word order. That's why the order can be shuffled without the sentence changing its meaning."
+          ],
+          "table": {
+            "head": [
+              "Type",
+              "Subject (imenovalnik)",
+              "Object (tožilnik)",
+              "Example"
+            ],
+            "rows": [
+              [
+                "feminine",
+                "*kav**a***",
+                "**kav*o***",
+                "*Pijem kavo.* — I drink coffee."
+              ],
+              [
+                "feminine",
+                "*vod**a***",
+                "**vod*o***",
+                "*Prosim vodo.* — Water, please."
+              ],
+              [
+                "masculine, thing",
+                "*čaj*",
+                "**čaj**",
+                "*Pijem čaj.* — I drink tea."
+              ],
+              [
+                "masculine, thing",
+                "*kruh*",
+                "**kruh**",
+                "*Jem kruh.* — I eat bread."
+              ],
+              [
+                "masculine, living",
+                "*brat*",
+                "**brat*a***",
+                "*Vidim brata.* — I see my brother."
+              ],
+              [
+                "masculine, living",
+                "*pes*",
+                "**ps*a***",
+                "*Imam psa.* — I have a dog."
+              ],
+              [
+                "neuter",
+                "*pivo*",
+                "**pivo**",
+                "*Pijem pivo.* — I drink beer."
+              ],
+              [
+                "neuter",
+                "*mesto*",
+                "**mesto**",
+                "*Vidim mesto.* — I see the city."
+              ]
+            ]
+          },
+          "after": [
+            "Three of the four groups ask nothing of you: masculine words that aren't alive and **all** neuter words keep the same form. The only real work is two things: *-a* → *-o* for feminine words, and an added *-a* for living masculine ones.",
+            "The living/non-living split is taken seriously: *Vidim brata* (I see my brother) but *Vidim stol* (I see a chair). Living means people and animals — not plants, and not cars, however much their owners love them."
+          ]
+        },
+        {
+          "title": "Four ways to order that are always right",
+          "body": [
+            "Here are the forms, from the most relaxed to the most formal. All are polite; none of them can make you sound rude."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Say it",
+              "Feel",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**Prosim …**",
+                "PROH-seem",
+                "short, neutral",
+                "*Prosim eno kavo.*"
+              ],
+              [
+                "**Jaz bi …**",
+                "yahs bee",
+                "warm, the most common",
+                "*Jaz bi eno pivo.*"
+              ],
+              [
+                "**Lahko dobim …?**",
+                "LAHKH-koh doh-BEEM",
+                "a question, very polite",
+                "*Lahko dobim vodo?*"
+              ],
+              [
+                "**Želim …**",
+                "zhay-LEEM",
+                "formal, a bit stiff",
+                "*Želim čaj.*"
+              ],
+              [
+                "**Za mene …**",
+                "zah MAY-nay",
+                "pointing out your own order",
+                "*Zame čaj, prosim.*"
+              ],
+              [
+                "**Še …, prosim.**",
+                "shay",
+                "ordering more",
+                "*Še eno kavo, prosim.*"
+              ]
+            ]
+          },
+          "after": [
+            "The last row is very handy: **še** means \"more\" or \"another\". *Še enkrat, prosim* = \"once more, please\" — a sentence you'll use every day when people talk too fast.",
+            "To ask for the bill: *Račun, prosim* or *Plačal bi* (I'd like to pay; a woman says *Plačala bi*). To pay separately: *Vsak zase, prosim* — literally \"each for himself\"."
+          ]
+        },
+        {
+          "title": "Jesti in piti — two verbs that don't play by the rules",
+          "body": [
+            "The two verbs used most at the table, and both have forms that follow no pattern. Learn them as chunks."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "jesti (eat)",
+              "piti (drink)",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "jaz",
+                "**jem**",
+                "**pijem**",
+                "yaym / PEE-yuhm"
+              ],
+              [
+                "ti",
+                "**ješ**",
+                "**piješ**",
+                "yaysh / PEE-yuhsh"
+              ],
+              [
+                "on / ona",
+                "**je**",
+                "**pije**",
+                "yay / PEE-yay"
+              ],
+              [
+                "midva",
+                "**jeva**",
+                "**pijeva**",
+                "YAY-vah / PEE-yay-vah"
+              ],
+              [
+                "vidva / onadva",
+                "**jesta**",
+                "**pijeta**",
+                "YAYS-tah / PEE-yay-tah"
+              ],
+              [
+                "mi",
+                "**jemo**",
+                "**pijemo**",
+                "YAY-moh / PEE-yay-moh"
+              ],
+              [
+                "vi",
+                "**jeste**",
+                "**pijete**",
+                "YAYS-tay / PEE-yay-tay"
+              ],
+              [
+                "oni",
+                "**jedo**",
+                "**pijejo**",
+                "YAY-doh / PEE-yay-yoh"
+              ]
+            ]
+          },
+          "after": [
+            "Notice the lovely trap in the third row: **je** means \"he/she eats\" **and** \"he/she is\". *Ona je* can mean \"she is\" or \"she eats\", and only what follows tells them apart. *Ona je učiteljica* = she's a teacher. *Ona je kruh* = she's eating bread. Slovenians themselves make jokes about it.",
+            "The negative of *jesti*: **ne jem** is written as two words but said as one. For \"not have\", the form is *nimam*, and whatever is missing always takes the Genitive: *Nimam časa* (I don't have time), *Ni piva* (there's no beer)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Pijača in prigrizki — drinks and snacks",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Every word below is given twice: its basic form, then the form you say when ordering. Learn the second column — that's what comes out of your mouth in a café."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Basic form",
+            "When ordering",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*kava*",
+              "**eno kavo**",
+              "AY-noh KAH-voh",
+              "coffee"
+            ],
+            [
+              "*voda*",
+              "**vodo**",
+              "VAW-doh",
+              "water"
+            ],
+            [
+              "*čaj*",
+              "**čaj**",
+              "chai",
+              "tea"
+            ],
+            [
+              "*pivo*",
+              "**eno pivo**",
+              "AY-noh PEE-voh",
+              "beer"
+            ],
+            [
+              "*vino*",
+              "**vino**",
+              "VEE-noh",
+              "wine"
+            ],
+            [
+              "*sok*",
+              "**sok**",
+              "sawk",
+              "juice"
+            ],
+            [
+              "*mleko*",
+              "**mleko**",
+              "MLAY-koh",
+              "milk"
+            ],
+            [
+              "*limonada*",
+              "**limonado**",
+              "lee-moh-NAH-doh",
+              "lemonade"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Coffee in Slovenia has its own vocabulary: **bela kava** (white coffee), **kava z mlekom** (coffee with milk), **espresso**, and **makijato**. If you just order *kava*, you'll get a short espresso — not a big mug of filter coffee. For a longer one, ask for *podaljšano kavo*."
+        },
+        {
+          "type": "p",
+          "text": "**Burek** is a layered pastry filled with meat or cheese, a legacy of the Yugoslav era, and the lifesaver of every Ljubljana student at two in the morning. It's sold by the piece and doesn't change form when you order it — a small gift for the hungry language learner."
+        }
+      ]
+    },
+    {
+      "title": "Table manners in Slovenia",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A few habits that aren't written in any grammar book, but that people notice right away if you break them."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Say it",
+            "When to use"
+          ],
+          "rows": [
+            [
+              "**Dober tek!**",
+              "DAW-buhr tayk",
+              "Before eating — \"enjoy your meal\""
+            ],
+            [
+              "**Na zdravje!**",
+              "nah ZDROW-yay",
+              "A toast — \"to your health\""
+            ],
+            [
+              "**Izvolite.**",
+              "eez-VAW-lee-tay",
+              "Here you go; here's your order"
+            ],
+            [
+              "**Račun, prosim.**",
+              "rah-CHOON, PROH-seem",
+              "Asking for the bill"
+            ],
+            [
+              "**Vsak zase, prosim.**",
+              "oosahk ZAH-say",
+              "Paying separately"
+            ],
+            [
+              "**Obdržite drobiž.**",
+              "ohb-DUHR-zhee-tay DROH-beesh",
+              "Keep the change"
+            ],
+            [
+              "**Je bilo odlično.**",
+              "yay BEE-loh ohd-LEECH-noh",
+              "That was delicious"
+            ],
+            [
+              "**Še eno, prosim.**",
+              "shay AY-noh, PROH-seem",
+              "One more, please"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Dober tek** is said to anyone who is eating or about to eat — including strangers at the next table. Walking past people eating without a word feels a little cold, just like not saying hello when you step into an elevator."
+        },
+        {
+          "type": "p",
+          "text": "**Na zdravje!** comes with one rule people take seriously: when you clink glasses, **look the other person in the eye**. Not at the glass — in the eye. Slovenians, like their Austrian and German neighbors, see staring at the glass as a sign of insincerity, and some will even tell you what bad luck follows. The same phrase is also said when someone sneezes."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "kavarna",
+      "baca": "kah-VAHR-nah",
+      "en": "café"
+    },
+    {
+      "sl": "natakar",
+      "baca": "nah-tah-KAHR",
+      "en": "waiter"
+    },
+    {
+      "sl": "naročiti",
+      "baca": "nah-ROH-chee-tee",
+      "en": "to order"
+    },
+    {
+      "sl": "kava",
+      "baca": "KAH-vah",
+      "en": "coffee"
+    },
+    {
+      "sl": "voda",
+      "baca": "VAW-dah",
+      "en": "water"
+    },
+    {
+      "sl": "čaj",
+      "baca": "chai",
+      "en": "tea"
+    },
+    {
+      "sl": "pivo",
+      "baca": "PEE-voh",
+      "en": "beer"
+    },
+    {
+      "sl": "vino",
+      "baca": "VEE-noh",
+      "en": "wine"
+    },
+    {
+      "sl": "kruh",
+      "baca": "krookh",
+      "en": "bread"
+    },
+    {
+      "sl": "solata",
+      "baca": "soh-LAH-tah",
+      "en": "salad"
+    },
+    {
+      "sl": "jesti",
+      "baca": "YAYS-tee",
+      "en": "to eat"
+    },
+    {
+      "sl": "piti",
+      "baca": "PEE-tee",
+      "en": "to drink"
+    },
+    {
+      "sl": "račun",
+      "baca": "rah-CHOON",
+      "en": "bill; check"
+    },
+    {
+      "sl": "izvolite",
+      "baca": "eez-VAW-lee-tay",
+      "en": "here you go; please (offering)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change into the object form (tožilnik).",
+      "items": [
+        "Pijem ____. (kava)",
+        "Prosim ____. (voda)",
+        "Jem ____. (kruh)",
+        "Naročim ____. (solata)",
+        "Vidim ____. (brat)",
+        "Pijem ____. (pivo)"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right form of jesti or piti.",
+      "items": [
+        "Jaz ____ kavo. (piti)",
+        "Ti ____ kruh. (jesti)",
+        "Maja ____ čaj. (piti)",
+        "Midva ____ solato. (jesti)",
+        "Mi ____ vodo. (piti)",
+        "Oni ____ burek. (jesti)"
+      ]
+    },
+    {
+      "prompt": "Translate into Slovenian.",
+      "items": [
+        "Hello. What would you like?",
+        "I'd like a coffee, please.",
+        "Tea for me, please.",
+        "Do you have any snacks?",
+        "Just one bill for all of us.",
+        "One more, please."
+      ]
+    },
+    {
+      "prompt": "Wave review — unit 4. Translate into Slovenian without looking back at the unit.",
+      "items": [
+        "What's this?",
+        "It's a new book.",
+        "This room is small.",
+        "That window is big.",
+        "Whose is that table?"
+      ]
+    }
+  ],
+  "answers": [
+    "kavo — vodo — kruh — solato — brata — pivo",
+    "pijem — ješ — pije — jeva — pijemo — jedo",
+    "Dober dan. Kaj želite? — Jaz bi eno kavo, prosim. — Zame čaj, prosim. — Imate kaj za pod zob? — Račun kar skupaj. — Še eno, prosim.",
+    "Kaj je to? — To je nova knjiga. — Ta soba je majhna. — Tisto okno je veliko. — Čigava je tista miza?"
+  ]
+}

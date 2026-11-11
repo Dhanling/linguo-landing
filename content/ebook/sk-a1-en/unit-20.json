@@ -1,0 +1,543 @@
+{
+  "title": "Visiting",
+  "title_target": "Na návšteve",
+  "goal": "Visit a Slovak home without putting a foot wrong, turn down second helpings without giving offense, and close this book with something no grammar table covers: manners.",
+  "bekal": [
+    "behave correctly from the front door to saying goodbye",
+    "decline and accept offers of food with the right phrases",
+    "switch from *vy* to *ty* at the right moment — and know who gets to offer it"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — U Evy doma",
+      "intro": "Eva has invited Budi to dinner at her parents' home in Košice. Her mother opens the door.",
+      "lines": [
+        {
+          "speaker": "Mama:",
+          "text": "Dobrý večer! Poďte ďalej, prosím.",
+          "id": "Good evening! Come in, please.",
+          "literal": "good evening! come-you-pl further, I-ask."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dobrý večer. Toto je pre vás.",
+          "id": "Good evening. This is for you.",
+          "literal": "good evening. this is for you-pl-acc."
+        },
+        {
+          "speaker": "Mama:",
+          "text": "Ó, kvety! To ste nemuseli. Ďakujem pekne.",
+          "id": "Oh, flowers! You shouldn't have. Thank you so much.",
+          "literal": "oh, flowers-pl! that you-pl-are not-had-to-pl. I-thank nicely."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mám si vyzuť topánky?",
+          "id": "Should I take my shoes off?",
+          "literal": "must-I self take-off shoes-pl?"
+        },
+        {
+          "speaker": "Mama:",
+          "text": "Áno, prosím. Tu máte papuče.",
+          "id": "Yes, please. Here are some slippers.",
+          "literal": "yes, I-ask. here you-pl-have slippers-pl."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Mami, Budi rozumie po slovensky. Môžeš mu tykať.",
+          "id": "Mom, Budi understands Slovak. You can say \"ty\" to him.",
+          "literal": "mother, Budi he-understands in Slovak. you-can to-him say-ty."
+        },
+        {
+          "speaker": "Mama:",
+          "text": "Naozaj? Tak si sadni, Budi. Dáš si polievku?",
+          "id": "Really? Then sit down, Budi. Would you like some soup?",
+          "literal": "really? so self sit-down, Budi. you-will-give self soup-acc?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Rád. Voňa je nádherná.",
+          "id": "Yes, please. It smells wonderful.",
+          "literal": "glad-m. smell is beautiful-f."
+        },
+        {
+          "speaker": "Mama:",
+          "text": "Je to kapustnica. Dobrú chuť!",
+          "id": "It's kapustnica. Enjoy your meal!",
+          "literal": "is it kapustnica. good-acc appetite!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ďakujem, navzájom. Je vynikajúca!",
+          "id": "Thank you, you too. It's delicious!",
+          "literal": "I-thank, mutually. it-is excellent-f!"
+        },
+        {
+          "speaker": "Mama:",
+          "text": "Ešte trochu? Máme veľa.",
+          "id": "A little more? There's plenty.",
+          "literal": "still a-little? we-have lots."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ďakujem, už naozaj nemôžem. Bolo to výborné.",
+          "id": "Thank you, I really can't eat any more. It was delicious.",
+          "literal": "I-thank, already really not-I-can. been-n it excellent-n."
+        }
+      ],
+      "notes": [
+        "**Poďte ďalej** literally \"come further\" — the standard phrase for inviting someone in. The informal form is *poď ďalej*. There's no literal \"come in\" in Slovak; you're invited to come **forward**, not in.",
+        "**To ste nemuseli** literally \"you didn't have to\" — the standard reply when receiving a gift. It's not a refusal; it's an acknowledgment that the gift goes beyond what was expected. Just smile in return, or say *maličkosť* (\"it's nothing much\").",
+        "**Môžeš mu tykať** — Eva lets her mother switch to *ty*. Notice who offers it: **the older person, or the one of higher status**. As a young guest, Budi must not offer it first. The verbs are *tykať* (to say *ty*) and *vykať* (to say *vy*) — two verbs made from the pronouns themselves.",
+        "**Mám si vyzuť topánky?** is a question you should ask once; in Slovakia the answer is almost always yes. Taking your shoes off in someone's home is an unspoken rule, and hosts usually keep *papuče* (house slippers) for their guests.",
+        "**Ďakujem, navzájom** is the standard reply to *dobrú chuť*. The word *navzájom* means \"mutually\", and it's also used to return any kind of good wishes: *Šťastný nový rok!* — *Navzájom!*"
+      ],
+      "grammars": [
+        {
+          "title": "Tykať and vykať — and who decides",
+          "body": [
+            "Switching from *vy* to *ty* is a real social event in Slovakia, not just a grammar choice. There are rules, and they aren't written down anywhere except on pages like this one."
+          ],
+          "table": {
+            "head": [
+              "Situation",
+              "Form",
+              "Note"
+            ],
+            "rows": [
+              [
+                "people your age, new acquaintances at a party",
+                "**ty**",
+                "almost always straight away"
+              ],
+              [
+                "classmates, colleagues your age",
+                "**ty**",
+                "straight away"
+              ],
+              [
+                "children and teenagers",
+                "**ty**",
+                "always"
+              ],
+              [
+                "shop assistants, waiters, drivers",
+                "**vy**",
+                "always, even if younger"
+              ],
+              [
+                "lecturers, doctors, officials",
+                "**vy**",
+                "always"
+              ],
+              [
+                "a friend's parents",
+                "**vy**",
+                "until *ty* is offered"
+              ],
+              [
+                "your boss at work",
+                "**vy**",
+                "until it's offered"
+              ],
+              [
+                "parents-in-law",
+                "**vy**",
+                "often for life"
+              ]
+            ]
+          },
+          "after": [
+            "**The one who offers is always the older person or the one of higher status.** The phrase: *Môžeme si tykať?* The answer: *Áno, samozrejme* or *Rád / rada*. After that there's no going back — switching back to *vy* would read as a rift in the relationship.",
+            "**If you're not sure, use *vy* and wait.** That's not excessive caution; it's what Slovaks do themselves. Using *ty* too soon with an older person is one of the few language mistakes that genuinely comes across as rude.",
+            "**A useful exception:** among young people, online, and between fellow hikers, *ty* is used almost at once. On mountain trails, even strangers greet each other with *ahoj* — a habit that survives from the old hiking clubs."
+          ]
+        },
+        {
+          "title": "Accepting and declining",
+          "body": [
+            "A Slovak host will offer more at least twice, and the first refusal is often taken as mere politeness. That's why a refusal that works needs a particular structure."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "What it really means",
+              "When to use it"
+            ],
+            "rows": [
+              [
+                "*Rád / rada.*",
+                "Yes, I'd love some.",
+                "accepting"
+              ],
+              [
+                "*Áno, prosím.*",
+                "Yes, please.",
+                "accepting"
+              ],
+              [
+                "*Ešte trochu, prosím.*",
+                "A little more, please.",
+                "accepting more"
+              ],
+              [
+                "*Ďakujem, stačí.*",
+                "That's enough, thank you.",
+                "gentle refusal"
+              ],
+              [
+                "*Ďakujem, už nemôžem.*",
+                "I really can't eat any more.",
+                "a refusal that works"
+              ],
+              [
+                "*Bolo to výborné.*",
+                "It was delicious.",
+                "must be added"
+              ],
+              [
+                "*Som plný / plná.*",
+                "I'm full.",
+                "informal"
+              ],
+              [
+                "*Nabudúce určite.*",
+                "Next time for sure.",
+                "a friendly close"
+              ]
+            ]
+          },
+          "after": [
+            "**Don't use *nechcem* (I don't want) to turn down food.** It sounds like you're rejecting the cooking, not the amount. *Nemôžem* moves the reason to your stomach, not to the food — and that difference is felt.",
+            "**Praise is required, not optional.** *Bolo to výborné* or *veľmi mi chutilo* is part of the refusal, not separate small talk. Declining without praising is the part foreign guests most often miss.",
+            "**If you have dietary restrictions, say so early, not at the table.** *Nejem bravčové mäso* or *Jem len halal* is said when you're invited, by message, a few days ahead. A Slovak host will adjust the whole menu without complaint — but only if they know before they start cooking."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Slovak dishes you must try",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Say it",
+            "What it is"
+          ],
+          "rows": [
+            [
+              "**bryndzové halušky**",
+              "BREEN-dzoh-veh HAH-loosh-kee",
+              "potato dumplings with sheep's cheese — the national dish"
+            ],
+            [
+              "**kapustnica**",
+              "KAH-poost-nyee-tsah",
+              "sour cabbage soup with sausage and mushrooms"
+            ],
+            [
+              "**parenica**",
+              "PAH-reh-nyee-tsah",
+              "rolled smoked sheep's cheese"
+            ],
+            [
+              "**pirohy**",
+              "PEE-roh-hee",
+              "dumplings filled with potato or cheese"
+            ],
+            [
+              "**lokše**",
+              "LOHK-sheh",
+              "thin potato flatbread"
+            ],
+            [
+              "**vyprážaný syr**",
+              "VEE-prah-zhah-nee seer",
+              "breaded fried cheese"
+            ],
+            [
+              "**guláš**",
+              "GOO-lahsh",
+              "paprika beef stew, a Hungarian legacy"
+            ],
+            [
+              "**rezeň**",
+              "REH-zehny",
+              "thin breaded fried cutlet"
+            ],
+            [
+              "**trdelník**",
+              "TR-dyehl-neek",
+              "rolled pastry baked into a tube"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Bryndza** is a soft sheep's cheese at the heart of Slovak cooking, salty and sharp. Many foreigners don't like it at first bite; almost all change their minds by the third try. If you want one dish that explains the country, *bryndzové halušky* is the answer."
+        },
+        {
+          "type": "kotak",
+          "title": "Toasting",
+          "items": [
+            "*Na zdravie!* — \"To health!\" The same phrase is used when someone sneezes.",
+            "The rule to follow: **look each other in the eye** as the glasses clink, one by one, all around the table. Looking at the glass instead of the eyes is considered impolite, and in some families it's said to bring bad luck.",
+            "*Slivovica* is usually poured before the meal, not after — and you can decline with *ďakujem, nepijem alkohol*. This refusal is fully respected and needs no explanation."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "A visit from the door to goodbye",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Stage",
+            "Sentence",
+            "English"
+          ],
+          "rows": [
+            [
+              "**arriving**",
+              "*Dobrý večer, ďakujem za pozvanie.*",
+              "Good evening, thank you for the invitation."
+            ],
+            [
+              "**gift**",
+              "*Toto je pre vás.*",
+              "This is for you."
+            ],
+            [
+              "**shoes**",
+              "*Mám si vyzuť topánky?*",
+              "Should I take my shoes off?"
+            ],
+            [
+              "**sitting down**",
+              "*Kde si mám sadnúť?*",
+              "Where should I sit?"
+            ],
+            [
+              "**eating**",
+              "*Dobrú chuť!* — *Navzájom!*",
+              "Enjoy your meal! — You too!"
+            ],
+            [
+              "**praising**",
+              "*Je to vynikajúce.*",
+              "This is delicious."
+            ],
+            [
+              "**declining**",
+              "*Ďakujem, už nemôžem.*",
+              "Thank you, I really can't eat any more."
+            ],
+            [
+              "**helping**",
+              "*Môžem pomôcť?*",
+              "Can I help?"
+            ],
+            [
+              "**leaving**",
+              "*Už musím ísť. Bolo to krásne.*",
+              "I have to go home. It was lovely."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three small things people notice",
+          "items": [
+            "**Flowers in odd numbers.** Even-numbered bunches are for funerals. Three, five, or seven stems — not four or six.",
+            "**Arrive on time, not early.** Five minutes late is safe; ten minutes early makes the host panic.",
+            "**Offer to help clear the table.** Your offer will almost certainly be turned down, but making it gets noticed — and not making it gets noticed too."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — units 18 and 19",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "This one is bigger, but more expensive.",
+              "*Toto je väčšie, ale drahšie.*"
+            ],
+            [
+              "That's the best option.",
+              "*To je najlepšia možnosť.*"
+            ],
+            [
+              "Could you speak more slowly?",
+              "*Mohli by ste hovoriť pomalšie?*"
+            ],
+            [
+              "Hi, it's Budi.",
+              "*Haló, tu je Budi.*"
+            ],
+            [
+              "Hold on a moment, please.",
+              "*Počkajte, prosím.*"
+            ],
+            [
+              "Let me know.",
+              "*Ozvi sa.*"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Twenty units, and what comes next",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "If you've reached this page after working through all twenty units, it's worth looking back for a moment. You started this book without a single word, and now you can introduce yourself, ask for directions, order food, shop in the right quantities, say you're ill, talk about last weekend, make plans for next week, and visit someone's home without putting a foot wrong."
+        },
+        {
+          "type": "p",
+          "text": "More importantly: you've used **all six cases** of Slovak, each for a clear everyday job, not as a table to memorize. And you've made it through **perfective and imperfective verb pairs** — the part with no real equivalent in English, and the one that makes many people give up in the second month."
+        },
+        {
+          "type": "kotak",
+          "title": "Three things that will move you forward fastest now",
+          "items": [
+            "**Speak before you're ready.** Slovaks rarely meet foreigners who want to learn their language, and even the smallest effort is welcomed with a warmth that may surprise you. A wrong sentence spoken teaches more than a correct sentence only read.",
+            "**Note nouns with their gender, and verbs with their partner.** This ten-second habit is what separates people who keep progressing from people who get stuck at A2.",
+            "**Listen to something every day, even if you don't understand it yet.** Your ear is built by time, not talent. Radio, songs, children's news — anything, as long as it's every day."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Veľa šťastia — a dovidenia na Slovensku!*"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "návšteva",
+      "baca": "NAHV-shtyeh-vah",
+      "en": "visit; guest (f)"
+    },
+    {
+      "sk": "pozvanie",
+      "baca": "POHZ-vah-nyeh",
+      "en": "invitation (n)"
+    },
+    {
+      "sk": "tykať / vykať",
+      "baca": "TEE-kaht / VEE-kaht",
+      "en": "say ty / say vy"
+    },
+    {
+      "sk": "vyzuť si",
+      "baca": "VEE-zoot see",
+      "en": "take off (shoes)"
+    },
+    {
+      "sk": "papuče",
+      "baca": "PAH-poo-cheh",
+      "en": "house slippers (pl)"
+    },
+    {
+      "sk": "kvety",
+      "baca": "KVEH-tee",
+      "en": "flowers (pl)"
+    },
+    {
+      "sk": "vôňa",
+      "baca": "VWOH-nyah",
+      "en": "smell, aroma (f)"
+    },
+    {
+      "sk": "chuť",
+      "baca": "khoot",
+      "en": "taste; appetite (f)"
+    },
+    {
+      "sk": "navzájom",
+      "baca": "NAHV-zah-yohm",
+      "en": "mutually; you too"
+    },
+    {
+      "sk": "vynikajúci",
+      "baca": "VEE-nyee-kah-yoo-tsee",
+      "en": "excellent, outstanding"
+    },
+    {
+      "sk": "výborný",
+      "baca": "VEE-bohr-nee",
+      "en": "excellent; delicious"
+    },
+    {
+      "sk": "bryndza",
+      "baca": "BREEN-dzah",
+      "en": "sheep's cheese (f)"
+    },
+    {
+      "sk": "kapustnica",
+      "baca": "KAH-poost-nyee-tsah",
+      "en": "sour cabbage soup (f)"
+    },
+    {
+      "sk": "alkohol",
+      "baca": "AHL-koh-hohl",
+      "en": "alcohol (m)"
+    },
+    {
+      "sk": "plný",
+      "baca": "PL-nee",
+      "en": "full"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Slovak. Use the polite form (vy) when speaking to the host.",
+      "items": [
+        "Good evening, thank you for the invitation.",
+        "This is for you.",
+        "Should I take my shoes off?",
+        "Enjoy your meal!",
+        "This is delicious.",
+        "Thank you, I really can't eat any more."
+      ]
+    },
+    {
+      "prompt": "Choose ty or vy for each person.",
+      "items": [
+        "a classmate your age → ____",
+        "a waiter in a restaurant → ____",
+        "your friend's parents, first meeting → ____",
+        "the neighbors' young child → ____",
+        "your lecturer → ____",
+        "someone your age you meet at a party → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "prosím / ďalej / poďte / ,",
+        "vás / je / pre / toto",
+        "topánky / si / mám / vyzuť / ?",
+        "chuť / dobrú / !",
+        "nemôžem / už / ďakujem / naozaj / ,"
+      ]
+    }
+  ],
+  "answers": [
+    "Dobrý večer, ďakujem za pozvanie. — Toto je pre vás. — Mám si vyzuť topánky? — Dobrú chuť! — Je to vynikajúce. — Ďakujem, už nemôžem.",
+    "ty — vy — vy — ty — vy — ty",
+    "Poďte ďalej, prosím. — Toto je pre vás. — Mám si vyzuť topánky? — Dobrú chuť! — Ďakujem, už naozaj nemôžem."
+  ]
+}

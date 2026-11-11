@@ -1,0 +1,610 @@
+{
+  "title": "At the bar: ordering food and drinks",
+  "title_target": "Tabernan",
+  "goal": "Order drinks and pintxos, say what you want with nahi izan, and ask about prices.",
+  "bekal": [
+    "order with *… nahi dut, mesedez* and answer *zer nahi duzu?*",
+    "name the drinks and pintxos you'll find in almost every Basque bar",
+    "ask about and understand prices: *zenbat da?*"
+  ],
+  "dialogs": [
+    {
+      "title": "Elkarrizketa — Alde Zaharreko taberna batean",
+      "intro": "Late afternoon in Bilbo's Old Town. Budi and Maite walk into a bar with pintxos laid out along the counter.",
+      "lines": [
+        {
+          "speaker": "Zerbitzaria:",
+          "text": "Kaixo! Zer nahi duzue?",
+          "id": "Hello! What would you like?",
+          "literal": "hello! what want you(pl)-have-it?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kafe huts bat nahi dut, mesedez.",
+          "id": "A black coffee, please.",
+          "literal": "coffee empty one want I-have-it, please."
+        },
+        {
+          "speaker": "Maite:",
+          "text": "Niretzat kafesnea eta tortilla pintxo bat.",
+          "id": "For me a white coffee and a tortilla pintxo.",
+          "literal": "me-for coffee-milk-the and tortilla pintxo one."
+        },
+        {
+          "speaker": "Zerbitzaria:",
+          "text": "Ondo. Zerbait gehiago?",
+          "id": "Fine. Anything else?",
+          "literal": "fine. something more?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bai, pintxo bat niretzat ere. Zer duzue?",
+          "id": "Yes, a pintxo for me too. What have you got?",
+          "literal": "yes, pintxo one me-for also. what you(pl)-have-it?"
+        },
+        {
+          "speaker": "Zerbitzaria:",
+          "text": "Tortilla, gilda, bakailaoa eta txistorra ditugu.",
+          "id": "We've got tortilla, gilda, salt cod, and txistorra sausage.",
+          "literal": "tortilla, gilda, cod-the and txistorra-the we-have-them."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Barkatu, gilda zer da?",
+          "id": "Sorry, what's a gilda?",
+          "literal": "sorry, gilda what is?"
+        },
+        {
+          "speaker": "Maite:",
+          "text": "Piperra, oliba eta antxoa. Oso gozoa da!",
+          "id": "Green pepper, olive, and anchovy. It's delicious!",
+          "literal": "pepper-the, olive and anchovy. very tasty-the is!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Orduan, gilda bat, mesedez.",
+          "id": "Then one gilda, please.",
+          "literal": "then, gilda one, please."
+        },
+        {
+          "speaker": "Zerbitzaria:",
+          "text": "Marchando! Hemen duzue.",
+          "id": "Coming up! Here you are.",
+          "literal": "coming-up! here you(pl)-have-it."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eskerrik asko. Zenbat da dena?",
+          "id": "Thank you. How much is everything?",
+          "literal": "thanks many. how-much is all-the?"
+        },
+        {
+          "speaker": "Zerbitzaria:",
+          "text": "Zortzi euro eta hogei zentimo.",
+          "id": "Eight euros twenty.",
+          "literal": "eight euro and twenty cent."
+        }
+      ],
+      "notes": [
+        "**A pintxo is not a tapa.** In Euskal Herria, bar snacks are called *pintxos* — from *pintxatu*, \"to pierce\", because they were originally speared onto a slice of bread with a toothpick. Unlike Spanish tapas, pintxos are almost always paid for (not free with your drink) and laid out on the counter so you can point. Pointing and saying *hori, mesedez* is a perfectly proper way to order.",
+        "**Niretzat — the \"for\" ending.** *-entzat* means \"for\": *niretzat* (for me), *zuretzat* (for you), *Jonentzat* (for Jon), *guretzat* (for us). At the bar, *niretzat kafesnea* is the most natural way to order — even more common than a full sentence.",
+        "**Nahi dut wants a thing — or a dictionary-form verb.** *Kafea nahi dut* (I want coffee). If what you want is an action, the verb goes in its dictionary form in front of *nahi*: *Kafea edan nahi dut* (I want to drink coffee) — literally \"coffee drink want I-have-it\", the reverse of the English order.",
+        "**Marchando isn't Basque.** It's a Spanish word that every bar in the region has adopted — roughly \"coming right up!\". Bar talk is mixed; don't be surprised if the waiter answers you in euskara and then shouts to the kitchen in Spanish."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Standard phrases at the bar",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Zer nahi duzu?",
+              "sehr NAH-ee doo-soo",
+              "What would you like?"
+            ],
+            [
+              "Zer hartuko duzu?",
+              "sehr ahr-TOO-koh doo-soo",
+              "What will you have?"
+            ],
+            [
+              "… nahi dut, mesedez.",
+              "NAH-ee doot meh-SEH-dehs",
+              "I'd like …, please."
+            ],
+            [
+              "Niretzat …",
+              "nee-REH-tsaht",
+              "For me …"
+            ],
+            [
+              "Hori, mesedez.",
+              "OH-ree",
+              "That one, please."
+            ],
+            [
+              "Zerbait gehiago?",
+              "sehr-BAH-eet geh-EE-ah-goh",
+              "Anything else?"
+            ],
+            [
+              "Ez, eskerrik asko.",
+              "ehs ehs-KEH-rreek AHS-koh",
+              "No, thank you."
+            ],
+            [
+              "Zenbat da?",
+              "sehn-BAHT dah",
+              "How much is it?"
+            ],
+            [
+              "Ordaindu nahi dut.",
+              "ohr-DAH-een-doo",
+              "I'd like to pay."
+            ],
+            [
+              "Txartelarekin, mesedez.",
+              "chahr-teh-LAH-reh-keen",
+              "By card, please."
+            ],
+            [
+              "On egin!",
+              "ohn eh-GEEN",
+              "Enjoy your meal!"
+            ],
+            [
+              "Topa!",
+              "TOH-pah",
+              "Cheers!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*On egin* literally means \"may it do you good\" — said to someone who is eating, like \"enjoy your meal\" or *bon appétit*. If someone says it to you, just reply *baita zuri ere* (\"you too\")."
+        },
+        {
+          "type": "kotak",
+          "title": "Bar customs you should know",
+          "items": [
+            "In many bars you eat first and pay afterwards — on your honor. Say honestly how many pintxos you had.",
+            "*Poteo* or *txikiteo* is the custom of moving from one bar to the next, one small glass at each, with your *kuadrilla* — a fixed group of friends who have usually been together since childhood.",
+            "Small drinks have their own names: *zurito* (a small beer), *txikito* (a small glass of wine), *katxi* (a big plastic cup for festivals)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The menu: drinks and pintxos",
+      "blocks": [
+        {
+          "type": "sub",
+          "text": "Edariak — drinks"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "kafe hutsa",
+              "KAH-feh OO-tsah",
+              "black coffee"
+            ],
+            [
+              "kafesnea",
+              "kah-fehs-NEH-ah",
+              "white coffee, coffee with milk"
+            ],
+            [
+              "ebakia",
+              "eh-bah-KEE-ah",
+              "coffee with a dash of milk"
+            ],
+            [
+              "tea",
+              "TEH-ah",
+              "tea"
+            ],
+            [
+              "ura",
+              "OO-rah",
+              "water"
+            ],
+            [
+              "zukua",
+              "SOO-koo-ah",
+              "juice"
+            ],
+            [
+              "garagardoa",
+              "gah-rah-gahr-DOH-ah",
+              "beer"
+            ],
+            [
+              "ardo beltza",
+              "AHR-doh BEHL-tsah",
+              "red wine"
+            ],
+            [
+              "ardo zuria",
+              "AHR-doh SOO-ree-ah",
+              "white wine"
+            ],
+            [
+              "txakolina",
+              "chah-koh-LEE-nah",
+              "txakoli, Basque white wine"
+            ],
+            [
+              "sagardoa",
+              "sah-gahr-DOH-ah",
+              "sagardo, apple cider"
+            ],
+            [
+              "kalimotxoa",
+              "kah-lee-moh-CHOH-ah",
+              "red wine mixed with cola"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Jatekoa — food"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "tortilla",
+              "tohr-TEE-lyah",
+              "potato omelet"
+            ],
+            [
+              "gilda",
+              "GEEL-dah",
+              "pepper, olive, and anchovy skewer"
+            ],
+            [
+              "bakailaoa",
+              "bah-kah-ee-LAH-oh-ah",
+              "salt cod"
+            ],
+            [
+              "txistorra",
+              "chees-TOH-rrah",
+              "thin red sausage"
+            ],
+            [
+              "gazta",
+              "GAHS-tah",
+              "cheese"
+            ],
+            [
+              "urdaiazpikoa",
+              "oor-dah-ee-ahs-PEE-koh-ah",
+              "ham"
+            ],
+            [
+              "txipiroiak",
+              "chee-pee-ROH-ee-ahk",
+              "baby squid"
+            ],
+            [
+              "arraina",
+              "ah-RRAH-ee-nah",
+              "fish"
+            ],
+            [
+              "haragia",
+              "ah-rah-GEE-ah",
+              "meat"
+            ],
+            [
+              "barazkiak",
+              "bah-rahs-KEE-ahk",
+              "vegetables"
+            ],
+            [
+              "patatak",
+              "pah-TAH-tahk",
+              "potatoes"
+            ],
+            [
+              "marmitakoa",
+              "mahr-mee-TAH-koh-ah",
+              "tuna and potato stew"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Txakolina* and *sagardoa* are the region's two signature drinks. Txakoli is poured from a height so it fizzes; sagardo is drunk in a *sagardotegi* (cider house) straight from the barrel, to shouts of *txotx!* — the signal that the next barrel is being opened."
+        }
+      ]
+    },
+    {
+      "title": "Nahi izan and behar izan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "You'll use these two verbs every day, and they work exactly the same way: the thing or action first, *nahi/behar* in the middle, the auxiliary at the end."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Literally",
+            "English"
+          ],
+          "rows": [
+            [
+              "Kafea **nahi dut**.",
+              "coffee-the want I-have-it",
+              "I want coffee."
+            ],
+            [
+              "Kafea edan **nahi dut**.",
+              "coffee-the drink want I-have-it",
+              "I want to drink coffee."
+            ],
+            [
+              "Etxera joan **nahi dut**.",
+              "home-to go want I-have-it",
+              "I want to go home."
+            ],
+            [
+              "Ura **behar dut**.",
+              "water-the need I-have-it",
+              "I need water."
+            ],
+            [
+              "Orain joan **behar dut**.",
+              "now go need I-have-it",
+              "I have to go now."
+            ],
+            [
+              "**Ez dut** ezer nahi.",
+              "not I-have-it anything want",
+              "I don't want anything."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that the verb is in its **dictionary** form (*edan*, *joan*), not the *-t(z)en* form. The *-t(z)en* form is only for habits; after *nahi* and *behar* it's always the dictionary form."
+        },
+        {
+          "type": "kotak",
+          "title": "Paying and saying thanks",
+          "items": [
+            "*Zenbat da?* — how much is it. *Zenbat da dena?* if you ordered several things.",
+            "*Hemen duzu* — \"here you are\" (when handing over money or something else).",
+            "*Aldaketa* or *kanbioa* — change. *Ez daukat sentimorik* — \"I don't have any small change\".",
+            "Tipping isn't expected in Euskal Herria; rounding up to the nearest euro is more than enough."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "eu": "taberna",
+      "baca": "tah-BEHR-nah",
+      "en": "bar, tavern"
+    },
+    {
+      "eu": "zerbitzari",
+      "baca": "sehr-bee-TSAH-ree",
+      "en": "waiter, waitress"
+    },
+    {
+      "eu": "pintxo",
+      "baca": "PEEN-choh",
+      "en": "pintxo, bar snack"
+    },
+    {
+      "eu": "edari",
+      "baca": "eh-DAH-ree",
+      "en": "drink"
+    },
+    {
+      "eu": "janari",
+      "baca": "khah-NAH-ree",
+      "en": "food"
+    },
+    {
+      "eu": "ur",
+      "baca": "OOR",
+      "en": "water"
+    },
+    {
+      "eu": "garagardo",
+      "baca": "gah-rah-GAHR-doh",
+      "en": "beer"
+    },
+    {
+      "eu": "ardo",
+      "baca": "AHR-doh",
+      "en": "wine"
+    },
+    {
+      "eu": "sagardo",
+      "baca": "sah-GAHR-doh",
+      "en": "apple cider"
+    },
+    {
+      "eu": "zuku",
+      "baca": "SOO-koo",
+      "en": "juice"
+    },
+    {
+      "eu": "gazta",
+      "baca": "GAHS-tah",
+      "en": "cheese"
+    },
+    {
+      "eu": "arrain",
+      "baca": "ah-RRAH-een",
+      "en": "fish"
+    },
+    {
+      "eu": "haragi",
+      "baca": "ah-RAH-gee",
+      "en": "meat"
+    },
+    {
+      "eu": "barazki",
+      "baca": "bah-RAHS-kee",
+      "en": "vegetables"
+    },
+    {
+      "eu": "piper",
+      "baca": "PEE-pehr",
+      "en": "pepper (chili, bell)"
+    },
+    {
+      "eu": "oliba",
+      "baca": "oh-LEE-bah",
+      "en": "olive"
+    },
+    {
+      "eu": "gatz",
+      "baca": "GAHTS",
+      "en": "salt"
+    },
+    {
+      "eu": "azukre",
+      "baca": "ah-SOO-kreh",
+      "en": "sugar"
+    },
+    {
+      "eu": "gozo",
+      "baca": "GOH-soh",
+      "en": "tasty, sweet"
+    },
+    {
+      "eu": "mikatz",
+      "baca": "MEE-kahts",
+      "en": "bitter"
+    },
+    {
+      "eu": "beroa",
+      "baca": "beh-ROH-ah",
+      "en": "hot"
+    },
+    {
+      "eu": "hotza",
+      "baca": "OH-tsah",
+      "en": "cold"
+    },
+    {
+      "eu": "zerbait",
+      "baca": "sehr-BAH-eet",
+      "en": "something"
+    },
+    {
+      "eu": "ezer",
+      "baca": "EH-sehr",
+      "en": "anything (in negatives)"
+    },
+    {
+      "eu": "dena",
+      "baca": "DEH-nah",
+      "en": "everything"
+    },
+    {
+      "eu": "gehiago",
+      "baca": "geh-EE-ah-goh",
+      "en": "more"
+    },
+    {
+      "eu": "orduan",
+      "baca": "ohr-DOO-ahn",
+      "en": "then, in that case"
+    },
+    {
+      "eu": "behar izan",
+      "baca": "beh-AHR",
+      "en": "to need, to have to"
+    },
+    {
+      "eu": "ordaindu",
+      "baca": "ohr-DAH-een-doo",
+      "en": "to pay"
+    },
+    {
+      "eu": "txartel",
+      "baca": "CHAHR-tehl",
+      "en": "card"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Basque.",
+      "items": [
+        "I'd like a black coffee.",
+        "For me, a beer.",
+        "Anything else? — No, thank you.",
+        "How much is everything?",
+        "I'd like to pay by card.",
+        "I don't want anything."
+      ]
+    },
+    {
+      "prompt": "Complete with *nahi dut* or *behar dut*.",
+      "items": [
+        "Egarri naiz. Ura ____.",
+        "Bihar azterketa dut. Ikasi ____.",
+        "Gose naiz. Pintxo bat ____.",
+        "Berandu da. Etxera joan ____.",
+        "Kafe hau hotza dago. Beste bat ____.",
+        "Ez dut dirurik. Diru pixka bat ____."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right word from this unit.",
+      "items": [
+        "Kafe ____ = black coffee, no milk.",
+        "____ = coffee with milk.",
+        "____ = the Basque apple cider.",
+        "____ = potato omelet.",
+        "____ = pepper, olive, and anchovy skewer.",
+        "____! = what you say for a toast."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "dut / kafea / nahi / mesedez",
+        "duzu / zer / nahi / ?",
+        "da / zenbat / dena / ?",
+        "dut / joan / etxera / behar",
+        "ditugu / pintxo / bi / nahi",
+        "nahi / ez / ezer / dut"
+      ]
+    }
+  ],
+  "answers": [
+    "Kafe huts bat nahi dut, mesedez. — Niretzat, garagardoa. — Zerbait gehiago? Ez, eskerrik asko. — Zenbat da dena? — Txartelarekin ordaindu nahi dut. — Ez dut ezer nahi.",
+    "behar dut — behar dut — nahi dut — behar dut — nahi dut — behar dut",
+    "hutsa — Kafesnea — Sagardoa — Tortilla — Gilda — Topa",
+    "Kafea nahi dut, mesedez. — Zer nahi duzu? — Zenbat da dena? — Etxera joan behar dut. — Bi pintxo nahi ditugu. — Ez dut ezer nahi."
+  ]
+}

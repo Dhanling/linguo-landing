@@ -1,0 +1,609 @@
+{
+  "title": "Days and months — a week that's really a counter",
+  "title_target": "Kateri dan je danes?",
+  "goal": "Name days, months, and dates — and discover that Slovenian day names aren't names at all but frozen ordinal numbers, with Wednesday meaning \"middle\".",
+  "bekal": [
+    "name the seven days and twelve months, plus the forms *v ponedeljek* / *v sredo*",
+    "give dates with the Genitive: *petnajstega marca*",
+    "use the ordinals *prvi, drugi, tretji* for dates, floors, and queue numbers"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Izpit je v petek",
+      "intro": "Eva and Budi are sitting in the university cafeteria. Budi is copying the timetable into his phone and discovers that Slovenian day names hide some arithmetic.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Kateri dan je danes?",
+          "id": "What day is it today?",
+          "literal": "which day is today?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sreda. Zakaj?",
+          "id": "Wednesday. Why?",
+          "literal": "Wednesday. why?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ker imamo izpit v petek.",
+          "id": "Because we have an exam on Friday.",
+          "literal": "because we-have exam on Friday."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "V petek? Mislil sem, da je v četrtek.",
+          "id": "On Friday? I thought it was on Thursday.",
+          "literal": "on Friday? thought I-am, that is on Thursday."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ne, četrtek je prost. Petek, petnajstega.",
+          "id": "No, Thursday is free. Friday the fifteenth.",
+          "literal": "no, Thursday is free. Friday, of-fifteenth."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zanimivo — sreda pomeni sredino, ne?",
+          "id": "Interesting — sreda means \"middle\", right?",
+          "literal": "interesting — Wednesday means middle, no?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ja. In torek je drugi dan, četrtek četrti.",
+          "id": "Yes. And torek is the second day, četrtek the fourth.",
+          "literal": "yes. and Tuesday is second day, Thursday fourth."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Torej teden je pravzaprav števec.",
+          "id": "So the week is really a counter.",
+          "literal": "so week is actually counter."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ponedeljek pa pride po nedelji.",
+          "id": "And ponedeljek comes after Sunday.",
+          "literal": "Monday but comes after Sunday-loc."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vse se ujema. Ob kateri uri je izpit?",
+          "id": "It all fits. What time is the exam?",
+          "literal": "all self fits. at which hour-loc is exam?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ob desetih zjutraj. Ne zamudi!",
+          "id": "At ten in the morning. Don't be late!",
+          "literal": "at ten-loc morning. not be-late!"
+        }
+      ],
+      "notes": [
+        "**Slovenian day names are ordinal numbers.** *Torek* comes from *drugi* (second), *četrtek* from *četrti* (fourth), *petek* from *peti* (fifth). The prettiest is *sreda* — from *sredina*, middle — because in the old count the week started on Monday, so Wednesday sits exactly in the middle. German does the same with *Mittwoch*.",
+        "**Ponedeljek = po nedelji**, \"after Sunday\". And *nedelja* itself means \"the day without work\" — from *ne delati*, not to work. So the whole Slovenian week reads like one sentence: no-work day, the day after no-work day, the second, the middle, the fourth, the fifth, and then *sobota* — the only one from outside, via Hebrew *shabbat*.",
+        "**V ponedeljek, but v sredo.** To say \"on (a day)\", use *v* with the **object** form — not the place form. The masculine days don't change (*v ponedeljek, v torek, v četrtek, v petek*), but *sreda*, *sobota*, and *nedelja* are feminine, so their ending becomes *-o*: **v sredo, v soboto, v nedeljo**.",
+        "**Dates use the Genitive.** *Petnajstega* = \"on the fifteenth\". The month follows suit: *petnajstega marca* (March 15), *prvega maja* (May 1). If you're just stating today's date without \"on\", the form is ordinary: *Danes je petnajsti marec.*",
+        "**Mislil sem** and **Ne zamudi!** are two sneak previews. The first is the past tense — notice the *-l* ending, said **MEES-leew**; a woman says *mislila sem*. The second is an imperative. Both are installed fully in units 12 and 19; for now, learn them as chunks."
+      ],
+      "grammars": [
+        {
+          "title": "Dnevi v tednu — the seven days and where they come from",
+          "body": [
+            "The last column is the one you'll use most. Notice that three days are feminine, and only those three change form."
+          ],
+          "table": {
+            "head": [
+              "Slovenščina",
+              "Say it",
+              "Origin",
+              "On that day"
+            ],
+            "rows": [
+              [
+                "**ponedeljek**",
+                "poh-nay-DAY-lyuhk",
+                "after *nedelja*",
+                "*v ponedeljek*"
+              ],
+              [
+                "**torek**",
+                "TAW-ruhk",
+                "from *drugi* (second)",
+                "*v torek*"
+              ],
+              [
+                "**sreda** (f)",
+                "SRAY-dah",
+                "from *sredina* (middle)",
+                "*v sredo*"
+              ],
+              [
+                "**četrtek**",
+                "chay-TUHR-tuhk",
+                "from *četrti* (fourth)",
+                "*v četrtek*"
+              ],
+              [
+                "**petek**",
+                "PAY-tuhk",
+                "from *peti* (fifth)",
+                "*v petek*"
+              ],
+              [
+                "**sobota** (f)",
+                "soh-BAW-tah",
+                "from *shabbat*",
+                "*v soboto*"
+              ],
+              [
+                "**nedelja** (f)",
+                "nay-DAY-lyah",
+                "from *ne delati* (not to work)",
+                "*v nedeljo*"
+              ]
+            ]
+          },
+          "after": [
+            "To say \"every Monday\", use *ob* with the plural: *ob ponedeljkih*, *ob sredah*, *ob petkih*. This is the form you'll see on course timetables and shop opening hours.",
+            "*Teden* means week as a stretch of time (seven days), while *nedelja* means Sunday. Don't mix them up: *naslednji teden* = next week, *naslednja nedelja* = next Sunday."
+          ]
+        },
+        {
+          "title": "Meseci in datumi — months and dates",
+          "body": [
+            "Slovenian month names are almost the same as English ones, because both borrowed from the same Latin source. All you need to learn is their form when used in a date."
+          ],
+          "table": {
+            "head": [
+              "Month",
+              "Say it",
+              "In a date",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**januar**",
+                "YAH-noo-ahr",
+                "*januarja*",
+                "*prvega januarja* — January 1"
+              ],
+              [
+                "**februar**",
+                "FAY-broo-ahr",
+                "*februarja*",
+                "*osmega februarja* — February 8"
+              ],
+              [
+                "**marec**",
+                "MAH-ruhts",
+                "*marca*",
+                "*petnajstega marca* — March 15"
+              ],
+              [
+                "**april**",
+                "ah-PREEW",
+                "*aprila*",
+                "*prvega aprila* — April 1"
+              ],
+              [
+                "**maj**",
+                "mai",
+                "*maja*",
+                "*prvega maja* — May 1"
+              ],
+              [
+                "**junij**",
+                "YOO-neey",
+                "*junija*",
+                "*petindvajsetega junija* — June 25"
+              ],
+              [
+                "**julij**",
+                "YOO-leey",
+                "*julija*",
+                "*desetega julija* — July 10"
+              ],
+              [
+                "**avgust**",
+                "ow-GOOST",
+                "*avgusta*",
+                "*petnajstega avgusta* — August 15"
+              ],
+              [
+                "**september**",
+                "suhp-TAYM-buhr",
+                "*septembra*",
+                "*prvega septembra* — September 1"
+              ],
+              [
+                "**oktober**",
+                "ohk-TAW-buhr",
+                "*oktobra*",
+                "*tretjega oktobra* — October 3"
+              ],
+              [
+                "**november**",
+                "noh-VAYM-buhr",
+                "*novembra*",
+                "*prvega novembra* — November 1"
+              ],
+              [
+                "**december**",
+                "day-TSAYM-buhr",
+                "*decembra*",
+                "*petindvajsetega decembra* — December 25"
+              ]
+            ]
+          },
+          "after": [
+            "In writing, Slovenian dates use **points**, not slashes: **15. 3. 2026**. The order is day-month-year, as in British English — never the American month-first order.",
+            "To ask the date: *Kateri datum je danes?* (what's the date today?). The answer uses the ordinary form: *Danes je petnajsti marec.* But as soon as you say something **happens on** that date, the form changes: *Izpit je petnajstega marca.*"
+          ]
+        },
+        {
+          "title": "Vrstilni števniki — ordinal numbers",
+          "body": [
+            "Ordinals are used for dates, floors, queue numbers, and any kind of order. They behave like adjectives, so they follow the gender and number of their noun."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Slovenščina",
+              "Say it",
+              "Number",
+              "Slovenščina"
+            ],
+            "rows": [
+              [
+                "1.",
+                "**prvi**",
+                "PUHR-vee",
+                "7.",
+                "**sedmi**"
+              ],
+              [
+                "2.",
+                "**drugi**",
+                "DROO-gee",
+                "8.",
+                "**osmi**"
+              ],
+              [
+                "3.",
+                "**tretji**",
+                "TRAYT-yee",
+                "9.",
+                "**deveti**"
+              ],
+              [
+                "4.",
+                "**četrti**",
+                "chay-TUHR-tee",
+                "10.",
+                "**deseti**"
+              ],
+              [
+                "5.",
+                "**peti**",
+                "PAY-tee",
+                "11.",
+                "**enajsti**"
+              ],
+              [
+                "6.",
+                "**šesti**",
+                "SHAYS-tee",
+                "20.",
+                "**dvajseti**"
+              ]
+            ]
+          },
+          "after": [
+            "The pattern: add **-i** to the ordinary number. The only irregular ones are the first four — *prvi*, *drugi*, *tretji*, *četrti* — and that's natural; the first numbers are always the oldest in any language (think *first, second* in English).",
+            "Because they're adjectives, the ending follows the noun: *prvi dan* (the first day), *prva knjiga* (the first book), *prvo nadstropje* (the first floor). In compounds, only the last number changes: *enaindvajseti* (twenty-first)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Letni časi in prazniki — seasons and holidays",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Slovenia has four genuinely distinct seasons, and people talk about them every day. Notice that the seasons use *spomladi*, *poleti*, *jeseni*, *pozimi* as adverbs — with no preposition."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Season",
+            "Say it",
+            "In that season",
+            "English"
+          ],
+          "rows": [
+            [
+              "**pomlad** (f)",
+              "pohm-LAHT",
+              "*spomladi*",
+              "spring"
+            ],
+            [
+              "**poletje** (n)",
+              "poh-LAYT-yay",
+              "*poleti*",
+              "summer"
+            ],
+            [
+              "**jesen** (f)",
+              "yay-SAYN",
+              "*jeseni*",
+              "autumn, fall"
+            ],
+            [
+              "**zima** (f)",
+              "ZEE-mah",
+              "*pozimi*",
+              "winter"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at **jesen**: it ends in a consonant but is **feminine** — one of the exceptions listed in unit 4. *Dolga jesen*, not *dolg jesen*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Holiday",
+            "Date",
+            "English"
+          ],
+          "rows": [
+            [
+              "**novo leto**",
+              "January 1-2",
+              "New Year"
+            ],
+            [
+              "**Prešernov dan**",
+              "February 8",
+              "Culture Day"
+            ],
+            [
+              "**velika noč**",
+              "varies",
+              "Easter"
+            ],
+            [
+              "**dan upora**",
+              "April 27",
+              "Resistance Day"
+            ],
+            [
+              "**praznik dela**",
+              "May 1-2",
+              "Labor Day"
+            ],
+            [
+              "**dan državnosti**",
+              "June 25",
+              "Statehood Day"
+            ],
+            [
+              "**dan reformacije**",
+              "October 31",
+              "Reformation Day"
+            ],
+            [
+              "**dan spomina na mrtve**",
+              "November 1",
+              "Remembrance Day"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Prešernov dan** on February 8 deserves a closer look: Slovenia is one of the few countries in the world to make the death day of a **poet** a national holiday. France Prešeren wrote the poem whose stanza is now the national anthem — and the stanza chosen isn't about war or glory, but about the hope that all nations might live in peace. If you want one sentence that instantly warms a Slovenian to you, mention that you know who Prešeren was."
+        }
+      ]
+    },
+    {
+      "title": "Planning the week",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The following sentences use days, dates, and times together — exactly what you need to set up a schedule with a Slovenian."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Kateri dan je danes?*",
+              "kah-TAY-ree dahn yay DAH-nuhs",
+              "What day is it today?"
+            ],
+            [
+              "*Kateri datum je danes?*",
+              "kah-TAY-ree DAH-toom",
+              "What's the date today?"
+            ],
+            [
+              "*V ponedeljek imam izpit.*",
+              "oo poh-nay-DAY-lyuhk",
+              "I have an exam on Monday."
+            ],
+            [
+              "*V sredo grem v Maribor.*",
+              "oo SRAY-doh graym",
+              "On Wednesday I'm going to Maribor."
+            ],
+            [
+              "*Ob petkih ne delam.*",
+              "ohp PAYT-keekh nay DAY-lahm",
+              "I don't work on Fridays."
+            ],
+            [
+              "*Naslednji teden.*",
+              "nah-SLAYD-nyee TAY-duhn",
+              "Next week."
+            ],
+            [
+              "*Prejšnji teden.*",
+              "PRAY-shee TAY-duhn",
+              "Last week."
+            ],
+            [
+              "*Ta konec tedna.*",
+              "tah KOH-nayts TAYD-nah",
+              "This weekend."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that **čez** is used for time ahead (*čez tri dni* = in three days) and **pred** for time behind (*pred tremi dnevi* = three days ago). The same two prepositions are used for space too — *čez most* (across the bridge), *pred pošto* (in front of the post office) — and Slovenian sees no need to keep them apart."
+        },
+        {
+          "type": "kotak",
+          "title": "The rhythm of the week in Slovenia",
+          "items": [
+            "Offices and schools start **very early**: many offices open at 7:00, and the first lecture is often just after seven. In return, the afternoon starts at three.",
+            "Large stores close on Sundays, and some small shops close early on Saturdays. Plan your shopping for Saturday morning.",
+            "A long weekend in Slovenia means people vanish into the mountains or to the Adriatic coast. If you want to invite someone for Saturday, ask early."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "ponedeljek",
+      "baca": "poh-nay-DAY-lyuhk",
+      "en": "Monday"
+    },
+    {
+      "sl": "torek",
+      "baca": "TAW-ruhk",
+      "en": "Tuesday"
+    },
+    {
+      "sl": "sreda",
+      "baca": "SRAY-dah",
+      "en": "Wednesday"
+    },
+    {
+      "sl": "četrtek",
+      "baca": "chay-TUHR-tuhk",
+      "en": "Thursday"
+    },
+    {
+      "sl": "petek",
+      "baca": "PAY-tuhk",
+      "en": "Friday"
+    },
+    {
+      "sl": "sobota",
+      "baca": "soh-BAW-tah",
+      "en": "Saturday"
+    },
+    {
+      "sl": "nedelja",
+      "baca": "nay-DAY-lyah",
+      "en": "Sunday"
+    },
+    {
+      "sl": "teden",
+      "baca": "TAY-duhn",
+      "en": "week"
+    },
+    {
+      "sl": "mesec",
+      "baca": "MAY-suhts",
+      "en": "month"
+    },
+    {
+      "sl": "datum",
+      "baca": "DAH-toom",
+      "en": "date"
+    },
+    {
+      "sl": "praznik",
+      "baca": "PRAHZ-neek",
+      "en": "holiday"
+    },
+    {
+      "sl": "pomlad",
+      "baca": "pohm-LAHT",
+      "en": "spring"
+    },
+    {
+      "sl": "poletje",
+      "baca": "poh-LAYT-yay",
+      "en": "summer"
+    },
+    {
+      "sl": "jesen",
+      "baca": "yay-SAYN",
+      "en": "autumn, fall"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the right form of the day after v.",
+      "items": [
+        "Izpit je v ____. (petek)",
+        "Grem v Maribor v ____. (sreda)",
+        "Delam v ____. (ponedeljek)",
+        "Počivam v ____. (nedelja)",
+        "Se dobiva v ____. (sobota)",
+        "Predavanje je v ____. (četrtek)"
+      ]
+    },
+    {
+      "prompt": "Write the dates in Slovenian (on that date).",
+      "items": [
+        "January 1 — ____",
+        "February 8 — ____",
+        "March 15 — ____",
+        "May 1 — ____",
+        "June 25 — ____",
+        "December 25 — ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Slovenian.",
+      "items": [
+        "What day is it today?",
+        "Wednesday.",
+        "We have an exam on Friday.",
+        "I don't work on Fridays.",
+        "Next week I'm going to Maribor.",
+        "When do you have time?"
+      ]
+    },
+    {
+      "prompt": "Wave review — unit 8. Translate into Slovenian without looking back at the unit.",
+      "items": [
+        "Excuse me, where's the post office?",
+        "Is it far?",
+        "Turn left.",
+        "I'm at school.",
+        "I'm going to school."
+      ]
+    }
+  ],
+  "answers": [
+    "petek — sredo — ponedeljek — nedeljo — soboto — četrtek",
+    "prvega januarja — osmega februarja — petnajstega marca — prvega maja — petindvajsetega junija — petindvajsetega decembra",
+    "Kateri dan je danes? — Sreda. — V petek imamo izpit. — Ob petkih ne delam. — Naslednji teden grem v Maribor. — Kdaj imaš čas?",
+    "Oprostite, kje je pošta? — Je daleč? — Zavijte levo. — Sem v šoli. — Grem v šolo."
+  ]
+}

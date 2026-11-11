@@ -1,0 +1,464 @@
+{
+  "title": "Hello, what's your name?",
+  "title_target": "Ahoj! Ako sa voláš?",
+  "goal": "Greet people at the right level of politeness, give your name, ask how someone is, and see from the very first line that Slovak has no articles at all.",
+  "bekal": [
+    "greet people with *ahoj*, *dobrý deň*, and *dobré ráno*, each in its proper place",
+    "give your name with *volám sa…* and ask someone else's name at two levels of politeness",
+    "use all six forms of *byť* and negate them with *nie som* — the only verb whose negative takes two words"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Prvý deň v jazykovej škole",
+      "intro": "The first day of a language course at a language school in Bratislava. Two new students sit side by side.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Ahoj! Ako sa voláš?",
+          "id": "Hi! What's your name?",
+          "literal": "hi! how self you-call?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ahoj! Volám sa Budi. A ty?",
+          "id": "Hi! My name is Budi. And you?",
+          "literal": "hi! I-call self Budi. and you?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ja som Eva. Teší ma!",
+          "id": "I'm Eva. Nice to meet you!",
+          "literal": "I I-am Eva. it-pleases me!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mňa tiež. Ako sa máš?",
+          "id": "Me too. How are you?",
+          "literal": "me too. how self you-have?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ďakujem, mám sa dobre. A ty?",
+          "id": "Thanks, I'm fine. And you?",
+          "literal": "I-thank, I-have self well. and you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tiež dobre. Si Slovenka?",
+          "id": "Fine too. Are you Slovak?",
+          "literal": "too well. you-are Slovak-woman?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Áno, som Slovenka. Ty si Číňan?",
+          "id": "Yes, I'm Slovak. Are you Chinese?",
+          "literal": "yes, I-am Slovak-woman. you you-are Chinese-man?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nie, nie som Číňan. Som Indonézan.",
+          "id": "No, I'm not Chinese. I'm Indonesian.",
+          "literal": "no, not I-am Chinese-man. I-am Indonesian-man."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "To je zaujímavé! Vitaj na Slovensku!",
+          "id": "Oh, how interesting! Welcome to Slovakia!",
+          "literal": "that is interesting! be-welcome in Slovakia!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ďakujem pekne! Zajtra sa uvidíme, Eva.",
+          "id": "Thank you very much! See you tomorrow, Eva.",
+          "literal": "I-thank nicely! tomorrow self we-will-see, Eva."
+        }
+      ],
+      "notes": [
+        "**Ahoj works both ways.** One word for \"hi\" and \"bye\" — just like Italian *ciao*. It's casual: for friends, fellow students, and people your age. With people you don't know, use *dobrý deň*.",
+        "**Ako sa voláš? is not \"what is your name\".** Literally it's \"how do you call yourself\" — you're asking how the person **calls themselves**. So the answer mirrors it: *volám sa Budi* = \"I call myself Budi\". The little word *sa* is that mirror, and it will appear with dozens of other verbs throughout this course.",
+        "**Teší ma literally means \"it pleases me\".** The subject is the introduction itself, not you. The full form is *teší ma, že vás spoznávam*, but the two words are enough and you'll actually hear them more often.",
+        "**No articles. None at all.** Look at *Som Slovenka* — no *a* or *the* in front, and not a single one in this whole dialogue. *Kniha* means \"book\", \"a book\", and \"the book\" all at once, and you never have to choose. Context does the work English gives to *a* and *the*; after a week you'll stop missing them.",
+        "**Áno and nie.** *Áno* = yes (the casual form *hej* is very common among young people). *Nie* = no/not. Notice that *nie* appears twice in Budi's line with different jobs: the first answers the question, the second negates the verb."
+      ],
+      "grammars": [
+        {
+          "title": "Byť — the only verb whose negative takes two words",
+          "body": [
+            "The first verb you must master, and also the most irregular. Learn these two columns together from the start — separating them only makes it harder."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Say it",
+              "byť",
+              "Negative",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ja",
+                "yah",
+                "**som**",
+                "**nie som**",
+                "I am"
+              ],
+              [
+                "ty",
+                "tee",
+                "**si**",
+                "**nie si**",
+                "you are"
+              ],
+              [
+                "on / ona / ono",
+                "ohn / OH-nah / OH-noh",
+                "**je**",
+                "**nie je**",
+                "he / she / it is"
+              ],
+              [
+                "my",
+                "mee",
+                "**sme**",
+                "**nie sme**",
+                "we are"
+              ],
+              [
+                "vy",
+                "vee",
+                "**ste**",
+                "**nie ste**",
+                "you are (plural / polite)"
+              ],
+              [
+                "oni / ony",
+                "OH-nee / OH-nee",
+                "**sú**",
+                "**nie sú**",
+                "they are"
+              ]
+            ]
+          },
+          "after": [
+            "**The pronoun can be dropped.** The verb ending already carries the subject, so *Som Slovenka* can only mean \"I'm Slovak\". *Ja* is used only when you want **emphasis**: *Ja som Eva* = \"Me, I'm Eva\". In the dialogue above Eva uses it for exactly that — she's taking her turn.",
+            "**All other verbs negate with a joined prefix *ne-***: *nemám* (I don't have), *nerozumiem* (I don't understand), *nechcem* (I don't want). Only *byť* uses the separate word *nie*. If you hear yourself say *nesom*, that is the one place the general rule doesn't apply.",
+            "**The word *som* is never stressed.** It clings to the word before it like a tail, so *volám sa* sounds like one word: **VOH**-lahm-sah. This holds for the whole family of short words — *som, si, je, sme, ste, sú, sa, si, ma, ťa* — and explains why Slovak sounds flowing even though its stress is stuck at the front."
+          ]
+        },
+        {
+          "title": "Ty and vy — two kinds of \"you\", and the choice isn't about number",
+          "body": [
+            "Slovak sorts the person you're talking to the way French and German do. What confuses beginners: *vy* has two jobs at once."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Say it",
+              "Used with",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**ty**",
+                "tee",
+                "one person, casual — friends, people your age, children, family",
+                "*Ako sa voláš?*"
+              ],
+              [
+                "**vy**",
+                "vee",
+                "one person, polite — strangers, shop staff, lecturers, older people",
+                "*Ako sa voláte?*"
+              ],
+              [
+                "**vy**",
+                "vee",
+                "several people, casual or polite",
+                "*Ako sa voláte?*"
+              ]
+            ]
+          },
+          "after": [
+            "**The verb form is the same for both jobs of *vy*.** So *Ako sa voláte?* can mean \"What is your name?\" (polite) or \"What are your names?\" — the situation tells you which. That saves you a whole table.",
+            "**A practical rule for beginners: when in doubt, use *vy*.** Using *vy* with a friend sounds a bit stiff and is instantly forgiven; using *ty* with an older stranger sounds rude. Slovaks usually offer to switch to *ty* first, with the sentence *Môžeme si tykať?* (\"Can we say *ty* to each other?\"). Answer *Áno, samozrejme!*",
+            "The greeting *ahoj* and the form *vy* never go together. The pairs are locked: **ahoj + ty**, **dobrý deň + vy**. If you remember one thing from this page, remember those pairs."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Survival phrases",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The ten phrases below aren't grammar to memorize — they're an emergency toolkit. Learn them whole now; understand how they're built later."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Áno / Nie",
+              "AH-noh / nyeh",
+              "Yes / No"
+            ],
+            [
+              "Ďakujem",
+              "DYAH-koo-yehm",
+              "Thank you"
+            ],
+            [
+              "Prosím",
+              "PROH-seem",
+              "You're welcome; please; here you are"
+            ],
+            [
+              "Prepáčte",
+              "PREH-pahch-tyeh",
+              "Sorry; excuse me"
+            ],
+            [
+              "Nerozumiem",
+              "NEH-roh-zoo-myehm",
+              "I don't understand"
+            ],
+            [
+              "Neviem",
+              "NEH-vyehm",
+              "I don't know"
+            ],
+            [
+              "Hovoríte po anglicky?",
+              "HOH-voh-ree-tyeh poh AHN-gleets-kee",
+              "Do you speak English?"
+            ],
+            [
+              "Ako sa to povie po slovensky?",
+              "AH-koh sah toh POH-vyeh poh SLOH-vehn-skee",
+              "How do you say that in Slovak?"
+            ],
+            [
+              "Pomaly, prosím",
+              "POH-mah-lee PROH-seem",
+              "Slowly, please"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Prosím* is the most versatile word in Slovak. It means \"please, go ahead\" when offering a seat, \"here you are\" when handing something over, \"hello?\" when answering the phone, \"yes?\" when a waiter comes to your table, and \"you're welcome\" in reply to thanks. If you could learn only one word from this page, learn this one."
+        },
+        {
+          "type": "p",
+          "text": "*Prepáčte* is the polite form; to a friend say *prepáč*. It covers two jobs — apologizing and getting someone's attention. To squeeze past in a crowd, Slovaks more often say *s dovolením* (\"with permission\")."
+        },
+        {
+          "type": "p",
+          "text": "Look at *po slovensky* and *po anglicky*. This *po …-sky* form is what you use for \"in … (language)\", not the name of the language. So: *po slovensky, po anglicky, po indonézsky, po nemecky*. It never changes form, so you can treat it as one fixed word."
+        }
+      ]
+    },
+    {
+      "title": "Greetings by time of day and politeness",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Slovak sorts greetings along two axes at once: what time it is, and how close you are to the other person. This table covers both."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Say it",
+            "When to use it"
+          ],
+          "rows": [
+            [
+              "**Dobré ráno!**",
+              "DOHB-reh RAH-noh",
+              "Good morning — until about 9"
+            ],
+            [
+              "**Dobrý deň!**",
+              "DOHB-ree dehny",
+              "Good day — all day, the safest polite greeting"
+            ],
+            [
+              "**Dobrý večer!**",
+              "DOHB-ree VEH-chehr",
+              "Good evening — from dusk"
+            ],
+            [
+              "**Dobrú noc!**",
+              "DOHB-roo nohts",
+              "Good night — only when parting for bed"
+            ],
+            [
+              "**Ahoj!**",
+              "AH-hoy",
+              "Hi/bye — casual"
+            ],
+            [
+              "**Čau!**",
+              "chow",
+              "Hi/bye — very casual, young people"
+            ],
+            [
+              "**Servus!**",
+              "SEHR-voos",
+              "Hi/bye — casual, sounds a little old-fashioned and warm"
+            ],
+            [
+              "**Dovidenia!**",
+              "DOH-vee-dyeh-nyah",
+              "Goodbye — polite, works anywhere"
+            ],
+            [
+              "**Maj sa!**",
+              "mai sah",
+              "Take care — casual, when parting"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The one you'll need most is **dobrý deň**. It's polite, never wrong, and works from morning to evening. If you're unsure what time of day it is by Slovak standards, just use this."
+        },
+        {
+          "type": "p",
+          "text": "One habit worth copying: in Slovakia, **entering a small space means greeting**. A lift, a doctor's waiting room, a train compartment, a small shop — people say *dobrý deň* to strangers, and silence actually feels rude. When you leave, say *dovidenia*."
+        },
+        {
+          "type": "kotak",
+          "title": "Dobrý, dobré, dobrú — why does it keep changing?",
+          "items": [
+            "It's not a typo. Slovak adjectives follow the gender of their noun: *deň* (day) masculine → *dobrý deň*; *ráno* (morning) neuter → *dobré ráno*; *noc* (night) feminine → *dobrú noc*.",
+            "For now, learn the four greetings as whole chunks. The rule is introduced gradually in unit 3 and completed in unit 18. But if you can already see the pattern, you're halfway there."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "ahoj",
+      "baca": "AH-hoy",
+      "en": "hi; bye (casual)"
+    },
+    {
+      "sk": "dobrý deň",
+      "baca": "DOHB-ree dehny",
+      "en": "good day (polite)"
+    },
+    {
+      "sk": "dobré ráno",
+      "baca": "DOHB-reh RAH-noh",
+      "en": "good morning"
+    },
+    {
+      "sk": "dobrý večer",
+      "baca": "DOHB-ree VEH-chehr",
+      "en": "good evening"
+    },
+    {
+      "sk": "dovidenia",
+      "baca": "DOH-vee-dyeh-nyah",
+      "en": "goodbye"
+    },
+    {
+      "sk": "ako",
+      "baca": "AH-koh",
+      "en": "how"
+    },
+    {
+      "sk": "volať sa",
+      "baca": "VOH-laht sah",
+      "en": "to be called"
+    },
+    {
+      "sk": "ja",
+      "baca": "yah",
+      "en": "I"
+    },
+    {
+      "sk": "ty",
+      "baca": "tee",
+      "en": "you (casual)"
+    },
+    {
+      "sk": "vy",
+      "baca": "vee",
+      "en": "you (polite; plural)"
+    },
+    {
+      "sk": "som",
+      "baca": "sohm",
+      "en": "I am"
+    },
+    {
+      "sk": "si",
+      "baca": "see",
+      "en": "you are"
+    },
+    {
+      "sk": "je",
+      "baca": "yeh",
+      "en": "he/she/it is"
+    },
+    {
+      "sk": "a",
+      "baca": "ah",
+      "en": "and"
+    },
+    {
+      "sk": "tiež",
+      "baca": "tyehzh",
+      "en": "also, too"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Slovak.",
+      "items": [
+        "Hi! What's your name?",
+        "My name is Budi.",
+        "I'm Indonesian.",
+        "How are you?",
+        "Thanks, I'm fine.",
+        "Are you Slovak? (to a woman)"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right form of byť.",
+      "items": [
+        "Ja ____ Eva.",
+        "Ty ____ Slovák?",
+        "On ____ Indonézan.",
+        "My ____ študenti.",
+        "Vy ____ učiteľka?",
+        "Oni ____ doma."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "sa / Budi / volám",
+        "si / Slovenka / ty / ?",
+        "sa / ako / máš / ?",
+        "som / nie / Číňan / ja",
+        "ma / teší"
+      ]
+    }
+  ],
+  "answers": [
+    "Ahoj! Ako sa voláš? — Volám sa Budi. — Som Indonézan. — Ako sa máš? — Ďakujem, mám sa dobre. — Si Slovenka?",
+    "som — si — je — sme — ste — sú",
+    "Volám sa Budi. — Ty si Slovenka? — Ako sa máš? — Ja nie som Číňan. — Teší ma."
+  ]
+}

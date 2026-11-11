@@ -1,0 +1,634 @@
+{
+  "title": "Counting — and four ways to attach a number",
+  "title_target": "Koliko?",
+  "goal": "Count from zero to a million, give your age and phone number — and install the rule that trips up almost every learner: nouns change form according to the NUMBER in front of them, in four different patterns.",
+  "bekal": [
+    "say the numbers 0-100 and recognize the back-to-front order of *enaindvajset* (one-and-twenty)",
+    "choose the noun form according to the number: 1, 2, 3-4, and 5 and up",
+    "give your age with *star sem … let* and ask about quantities with *koliko*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — V knjižnici",
+      "intro": "Budi is signing up at the city library. The librarian is patient, and accidentally gives him an important grammar lesson.",
+      "lines": [
+        {
+          "speaker": "Uslužbenka:",
+          "text": "Dober dan. Koliko ste stari?",
+          "id": "Hello. How old are you?",
+          "literal": "good day. how-much you-are old?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Star sem triindvajset let.",
+          "id": "I'm twenty-three.",
+          "literal": "old I-am three-and-twenty of-years."
+        },
+        {
+          "speaker": "Uslužbenka:",
+          "text": "In vaša telefonska številka?",
+          "id": "And your phone number?",
+          "literal": "and your phone-adj number?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nič štiri ena, dve tri, pet šest sedem.",
+          "id": "Zero four one, two three, five six seven.",
+          "literal": "zero four one, two three, five six seven."
+        },
+        {
+          "speaker": "Uslužbenka:",
+          "text": "Hvala. Koliko knjig želite?",
+          "id": "Thank you. How many books would you like?",
+          "literal": "thanks. how-many of-books you-want?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Pet knjig, prosim.",
+          "id": "Five books, please.",
+          "literal": "five of-books, please."
+        },
+        {
+          "speaker": "Uslužbenka:",
+          "text": "Pet knjig za tri tedne.",
+          "id": "Five books for three weeks.",
+          "literal": "five of-books for three weeks."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zakaj \"pet knjig\", ne \"pet knjige\"?",
+          "id": "Why \"pet knjig\" and not \"pet knjige\"?",
+          "literal": "why \"five of-books\", not \"five books-pl\"?"
+        },
+        {
+          "speaker": "Uslužbenka:",
+          "text": "Ker je pet. Do štiri je drugače.",
+          "id": "Because it's five. Up to four it's different.",
+          "literal": "because is five. up-to four is different."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Torej dve knjigi, tri knjige, pet knjig?",
+          "id": "So dve knjigi, tri knjige, pet knjig?",
+          "literal": "so two books-two, three books-pl, five of-books?"
+        },
+        {
+          "speaker": "Uslužbenka:",
+          "text": "Točno tako. Zdaj znate šteti.",
+          "id": "Exactly. Now you know how to count.",
+          "literal": "exactly so. now you-know to-count."
+        }
+      ],
+      "notes": [
+        "**Age is measured, not owned.** Slovenian doesn't say \"I have 23 years\" (like French or Spanish), and it doesn't just say \"I'm 23\" (like English). It says *Star sem triindvajset let* — \"I am old by twenty-three years\". A woman says *Stara sem*, because *star* is an adjective and adjectives follow gender.",
+        "**Triindvajset = three-and-twenty.** Numbers 21 to 99 are said back to front: the ones first, then *in* (and), then the tens. It's exactly how German and Dutch do it (and old English \"four-and-twenty blackbirds\") — no coincidence, given Slovenia's long history under Vienna.",
+        "**Nič for zero, but not always in phone numbers.** When counting, zero is *nič*. Reading out phone numbers, Slovenians also often use *nula*. Notice too that phone numbers are read in small groups, and the two comes out as *dve* — habit, not a rule.",
+        "**Koliko always pulls in the Genitive.** *Koliko knjig?* (how many books?), *Koliko ljudi?* (how many people?), *Koliko časa?* (how long?). That form is the same as the one after five and up, so once you've mastered one, you've mastered both.",
+        "**Za tri tedne — the number three takes the ordinary plural.** This is the heart of the unit: one, two, three-four, and five-plus demand four different noun forms. English handles it with just two — \"one book, two books, five books\" — so this part really does need repeating until it's a reflex."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers 0 to 20",
+          "body": [
+            "Eleven to nineteen all end in **-najst** — one ending, nine numbers. Learn one to ten properly and the rest build themselves."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Slovenščina",
+              "Say it",
+              "Number",
+              "Slovenščina",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "0",
+                "**nič**",
+                "neech",
+                "11",
+                "**enajst**",
+                "ay-NAIST"
+              ],
+              [
+                "1",
+                "**ena / en**",
+                "AY-nah / uhn",
+                "12",
+                "**dvanajst**",
+                "dvah-NAIST"
+              ],
+              [
+                "2",
+                "**dve / dva**",
+                "dvay / dvah",
+                "13",
+                "**trinajst**",
+                "tree-NAIST"
+              ],
+              [
+                "3",
+                "**tri / trije**",
+                "tree / TREE-yay",
+                "14",
+                "**štirinajst**",
+                "shtee-ree-NAIST"
+              ],
+              [
+                "4",
+                "**štiri / štirje**",
+                "SHTEE-ree / SHTEER-yay",
+                "15",
+                "**petnajst**",
+                "puht-NAIST"
+              ],
+              [
+                "5",
+                "**pet**",
+                "payt",
+                "16",
+                "**šestnajst**",
+                "shuhst-NAIST"
+              ],
+              [
+                "6",
+                "**šest**",
+                "shayst",
+                "17",
+                "**sedemnajst**",
+                "say-duhm-NAIST"
+              ],
+              [
+                "7",
+                "**sedem**",
+                "SAY-duhm",
+                "18",
+                "**osemnajst**",
+                "oh-suhm-NAIST"
+              ],
+              [
+                "8",
+                "**osem**",
+                "AW-suhm",
+                "18",
+                "**osemnajst**",
+                "oh-suhm-NAIST"
+              ],
+              [
+                "9",
+                "**devet**",
+                "day-VAYT",
+                "19",
+                "**devetnajst**",
+                "day-vuht-NAIST"
+              ],
+              [
+                "10",
+                "**deset**",
+                "day-SAYT",
+                "20",
+                "**dvajset**",
+                "DVAI-suht"
+              ],
+              [
+                "100",
+                "**sto**",
+                "stoh",
+                "1,000",
+                "**tisoč**",
+                "TEE-sohch"
+              ]
+            ]
+          },
+          "after": [
+            "The first four numbers have **gender**: *en brat* but *ena knjiga* but *eno okno*; *dva brata* but *dve knjigi*; *trije bratje* but *tri knjige*; *štirje bratje* but *štiri knjige*. From five on, the numbers stop caring — and that's quite a relief.",
+            "The forms ending in *-je* (*trije*, *štirje*) are used **only** for groups of men or mixed groups of people. For things, feminine, and neuter, use *tri* and *štiri*."
+          ]
+        },
+        {
+          "title": "Tens and compound numbers",
+          "body": [
+            "Tens are built with *-deset* (from *deset*, ten), and compound numbers are put together back to front with *in* in the middle."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Slovenščina",
+              "Say it",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "20",
+                "**dvajset**",
+                "DVAI-suht",
+                "two tens"
+              ],
+              [
+                "21",
+                "**enaindvajset**",
+                "ay-nah-een-DVAI-suht",
+                "one-and-twenty"
+              ],
+              [
+                "25",
+                "**petindvajset**",
+                "pay-teen-DVAI-suht",
+                "five-and-twenty"
+              ],
+              [
+                "30",
+                "**trideset**",
+                "TREE-day-suht",
+                "three tens"
+              ],
+              [
+                "42",
+                "**dvainštirideset**",
+                "dvah-een-SHTEE-ree-day-suht",
+                "two-and-forty"
+              ],
+              [
+                "50",
+                "**petdeset**",
+                "payt-day-suht",
+                "five tens"
+              ],
+              [
+                "67",
+                "**sedeminšestdeset**",
+                "SAY-day-meen-shayst-day-suht",
+                "seven-and-sixty"
+              ],
+              [
+                "80",
+                "**osemdeset**",
+                "AW-suhm-day-suht",
+                "eight tens"
+              ],
+              [
+                "80",
+                "**osemdeset**",
+                "AW-suhm-day-suht",
+                "eight tens"
+              ],
+              [
+                "99",
+                "**devetindevetdeset**",
+                "day-VAY-teen-day-vuht-day-suht",
+                "nine-and-ninety"
+              ],
+              [
+                "100",
+                "**sto**",
+                "stoh",
+                "a hundred"
+              ],
+              [
+                "1,000,000",
+                "**milijon**",
+                "mee-lee-YAWN",
+                "a million"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that \"a hundred\" and \"a thousand\" do **not** use the word \"one\": *sto*, not *en sto*; *tisoč*, not *en tisoč*. For 200 and up, the number sticks on: *dvesto*, *tristo*, *štiristo*, *petsto*.",
+            "The back-to-front order feels strange for a few days, then stops feeling like anything. What matters: when you hear a price or a house number, **listen to the end** — *enaindvajset* and *dvaindvajset* differ only in the first syllable, and a hurried ear often gets it wrong."
+          ]
+        },
+        {
+          "title": "Four patterns: number + noun",
+          "body": [
+            "This is the rule that makes Slovenian feel different from every language you've seen. The noun form is decided by the **last number** spoken, not by how big the number is."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Noun form",
+              "knjiga (f)",
+              "brat (m)",
+              "okno (n)"
+            ],
+            "rows": [
+              [
+                "**1**",
+                "ordinary singular",
+                "*ena knjiga*",
+                "*en brat*",
+                "*eno okno*"
+              ],
+              [
+                "**2**",
+                "dual",
+                "*dve knjig**i***",
+                "*dva brat**a***",
+                "*dve okn**i***"
+              ],
+              [
+                "**3, 4**",
+                "ordinary plural",
+                "*tri knjig**e***",
+                "*trije brat**je***",
+                "*tri okn**a***"
+              ],
+              [
+                "**5 and up**",
+                "**Genitive plural**",
+                "*pet knjig*",
+                "*pet brat**ov***",
+                "*pet ok**en***"
+              ],
+              [
+                "**Koliko?**",
+                "Genitive plural",
+                "*koliko knjig?*",
+                "*koliko bratov?*",
+                "*koliko oken?*"
+              ],
+              [
+                "**21, 101**",
+                "back to singular",
+                "*enaindvajset knjig**a***",
+                "*enaindvajset brat**ov****",
+                "*sto ena knjig**a***"
+              ]
+            ]
+          },
+          "after": [
+            "The last row is a pleasant surprise: since the **last** number decides, *enaindvajset knjiga* takes the singular — 21 ends in \"one\". Likewise *dvaindvajset knjigi* takes the dual, and *triindvajset knjige* the plural. The system cycles every ten numbers.",
+            "The **Genitive plural** used from five up often has no ending at all on feminine words (*knjiga* → *knjig*, *ura* → *ur*, *miza* → *miz*) and ends in *-ov* on masculine words (*brat* → *bratov*, *evro* → *evrov*, *dan* → *dni*). Neuter words usually slip in a vowel: *okno* → *oken*, *mesto* → *mest*, *pismo* → *pisem*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Age, years, and numbers",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Numbers are used most for four things: age, quantity, price, and time. The first two are on this page; prices wait in unit 7, telling time in unit 9."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Koliko si star?*",
+              "KOH-lee-koh see stahr",
+              "How old are you? (to a man)"
+            ],
+            [
+              "*Koliko si stara?*",
+              "KOH-lee-koh see STAH-rah",
+              "How old are you? (to a woman)"
+            ],
+            [
+              "*Star sem dvajset let.*",
+              "stahr suhm DVAI-suht layt",
+              "I'm twenty."
+            ],
+            [
+              "*Stara sem enaintrideset let.*",
+              "STAH-rah suhm ay-nah-een-TREE-day-suht layt",
+              "I'm thirty-one."
+            ],
+            [
+              "*Ima eno leto.*",
+              "EE-mah AY-noh LAY-toh",
+              "He's / she's one year old."
+            ],
+            [
+              "*Ima dve leti.*",
+              "EE-mah dvay LAY-tee",
+              "He's / she's two years old."
+            ],
+            [
+              "*Koliko je ljudi?*",
+              "KOH-lee-koh yay lyoo-DEE",
+              "How many people are there?"
+            ],
+            [
+              "*Nas je pet.*",
+              "nahs yay payt",
+              "There are five of us."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at *leto* (year) passing through all four patterns at once: *eno leto* (1), *dve leti* (2), *tri leta* (3), *pet let* (5+). If you only have time to learn one noun in four forms, learn this one — it comes up every time someone asks your age."
+        },
+        {
+          "type": "p",
+          "text": "*Ljudje* (people) is a word that doesn't play along: its plural is completely different from the singular *človek*, and after five it becomes *ljudi*. *Pet ljudi* = five people. For two people, Slovenians say *dva človeka*."
+        },
+        {
+          "type": "kotak",
+          "title": "Reading numbers and dates",
+          "items": [
+            "Phone numbers are read in groups of two or three digits: *nič štiri ena — dve tri — pet šest sedem*.",
+            "Years are read whole, not split up as in English: 1991 = *tisoč devetsto enaindevetdeset*, not \"nineteen ninety-one\".",
+            "House numbers and bus numbers are read as one whole number: *avtobus številka dvajset* (bus number twenty)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Numbers in everyday life",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The following phrases use numbers in the forms you'll hear most often in the street, in shops, and in class."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Koliko stane?*",
+              "KOH-lee-koh STAH-nay",
+              "How much is it?"
+            ],
+            [
+              "*Deset evrov, prosim.*",
+              "day-SAYT AYW-rohw, PROH-seem",
+              "Ten euros, please."
+            ],
+            [
+              "*Dva kilograma, prosim.*",
+              "dvah kee-loh-GRAH-mah",
+              "Two kilos, please."
+            ],
+            [
+              "*Sedem dni.*",
+              "SAY-duhm dnee",
+              "Seven days."
+            ],
+            [
+              "*Tri tedne.*",
+              "tree TAYD-nay",
+              "Three weeks."
+            ],
+            [
+              "*Pet mesecev.*",
+              "payt MAY-say-tsohw",
+              "Five months."
+            ],
+            [
+              "*Prva stran.*",
+              "PUHR-vah strahn",
+              "Page one."
+            ],
+            [
+              "*Številka dve.*",
+              "SHTAY-veel-kah dvay",
+              "Number two."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Note that **veliko** (a lot) and **malo** (a little) behave exactly like numbers from five up: both pull in the Genitive. *Veliko ljudi*, *malo denarja*, *veliko časa* (lots of time). Once you've mastered that form for numbers, you get every quantity word for free."
+        },
+        {
+          "type": "p",
+          "text": "At the market, *kilogram* is almost always shortened to **kilo** — and *kilo* doesn't change form, so *dva kilo* and *pet kilo* both sound natural. One of the few places where Slovenian gives you a shortcut."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "koliko",
+      "baca": "KOH-lee-koh",
+      "en": "how much, how many"
+    },
+    {
+      "sl": "številka",
+      "baca": "SHTAY-veel-kah",
+      "en": "number"
+    },
+    {
+      "sl": "šteti",
+      "baca": "SHTAY-tee",
+      "en": "to count"
+    },
+    {
+      "sl": "leto",
+      "baca": "LAY-toh",
+      "en": "year"
+    },
+    {
+      "sl": "teden",
+      "baca": "TAY-duhn",
+      "en": "week"
+    },
+    {
+      "sl": "mesec",
+      "baca": "MAY-suhts",
+      "en": "month"
+    },
+    {
+      "sl": "dan",
+      "baca": "dahn",
+      "en": "day"
+    },
+    {
+      "sl": "ura",
+      "baca": "OO-rah",
+      "en": "hour; clock"
+    },
+    {
+      "sl": "človek",
+      "baca": "CHLAW-vuhk",
+      "en": "person"
+    },
+    {
+      "sl": "ljudje",
+      "baca": "lyood-YAY",
+      "en": "people"
+    },
+    {
+      "sl": "denar",
+      "baca": "day-NAHR",
+      "en": "money"
+    },
+    {
+      "sl": "knjižnica",
+      "baca": "knyee-ZHNEE-tsah",
+      "en": "library"
+    },
+    {
+      "sl": "veliko",
+      "baca": "vay-LEE-koh",
+      "en": "a lot, many"
+    },
+    {
+      "sl": "nekaj",
+      "baca": "NAY-kai",
+      "en": "some; something"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the numbers out in words.",
+      "items": [
+        "7 — ____",
+        "13 — ____",
+        "21 — ____",
+        "44 — ____",
+        "68 — ____",
+        "100 — ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right noun form.",
+      "items": [
+        "ena ____, dve ____, pet ____ (knjiga)",
+        "en ____, dva ____, pet ____ (brat)",
+        "eno ____, dve ____, pet ____ (okno)",
+        "Star sem dvajset ____. (leto)",
+        "Koliko ____ je tukaj? (človek)",
+        "Za tri ____. (teden)"
+      ]
+    },
+    {
+      "prompt": "Translate into Slovenian.",
+      "items": [
+        "I'm twenty-three. (said by a man)",
+        "How many books do you want?",
+        "Five books, please.",
+        "I have two brothers.",
+        "How many people are here?",
+        "Three weeks."
+      ]
+    },
+    {
+      "prompt": "Wave review — unit 3. Translate into Slovenian without looking back at the unit.",
+      "items": [
+        "The two of us are from Indonesia.",
+        "Do you two speak Slovenian?",
+        "The two of them are at home.",
+        "Both my parents are in Jakarta.",
+        "See you! (to one person)"
+      ]
+    }
+  ],
+  "answers": [
+    "sedem — trinajst — enaindvajset — štiriinštirideset — oseminšestdeset — sto",
+    "ena knjiga, dve knjigi, pet knjig — en brat, dva brata, pet bratov — eno okno, dve okni, pet oken — let — ljudi — tedne",
+    "Star sem triindvajset let. — Koliko knjig želiš? — Pet knjig, prosim. — Imam dva brata. — Koliko ljudi je tukaj? — Tri tedne.",
+    "Midva sva iz Indonezije. — Vidva govorita slovensko? — Onadva sta doma. — Moja starša sta v Jakarti. — Se vidiva!"
+  ]
+}

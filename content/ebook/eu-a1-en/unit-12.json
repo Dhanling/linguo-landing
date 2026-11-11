@@ -1,0 +1,639 @@
+{
+  "title": "Where are you going?",
+  "title_target": "Nora zoaz?",
+  "goal": "Say where a trip goes to and comes from with -ra and -tik, use the short forms of joan and etorri, and buy a ticket.",
+  "bekal": [
+    "tell apart *-ra* (to), *-tik* (from), *-raino* (as far as), and *-rantz* (toward)",
+    "use the short forms *noa, zoaz, doa* and *nator, zatoz, dator*",
+    "buy a ticket and ask for departure times"
+  ],
+  "dialogs": [
+    {
+      "title": "Elkarrizketa — Abandoko geltokian",
+      "intro": "Budi wants to spend Saturday in Donostia and is waiting in line at the ticket office of Abando station in Bilbo.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Egun on. Donostiarako txartel bat, mesedez.",
+          "id": "Good morning. One ticket to Donostia, please.",
+          "literal": "day good. Donostia-for ticket one, please."
+        },
+        {
+          "speaker": "Langilea:",
+          "text": "Joan-etorrikoa ala joatekoa bakarrik?",
+          "id": "Round trip or one way only?",
+          "literal": "go-come-of or going-for-of only?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Joan-etorrikoa. Noiz irteten da hurrengo trena?",
+          "id": "Round trip. When does the next train leave?",
+          "literal": "go-come-of. when leaving is next train-the?"
+        },
+        {
+          "speaker": "Langilea:",
+          "text": "Hamaiketan irteten da eta ordu bata eta erdietan iristen da.",
+          "id": "It leaves at eleven and arrives at half past one.",
+          "literal": "eleven-pl-at leaving is and hour one-the and half-pl-at arriving is."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zenbat balio du?",
+          "id": "How much is it?",
+          "literal": "how-much value it-has?"
+        },
+        {
+          "speaker": "Langilea:",
+          "text": "Hogeita bi euro. Bost nasatik irteten da.",
+          "id": "Twenty-two euros. It leaves from platform five.",
+          "literal": "twenty-and two euro. five platform-from leaving is."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eskerrik asko. Autobusa merkeagoa da?",
+          "id": "Thank you. Is the bus cheaper?",
+          "literal": "thanks many. bus-the cheap-er-the is?"
+        },
+        {
+          "speaker": "Langilea:",
+          "text": "Bai, baina motelagoa. Trena azkarragoa da.",
+          "id": "Yes, but slower. The train is faster.",
+          "literal": "yes, but slow-er-the. train-the fast-er-the is."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ondo, orduan trenez noa.",
+          "id": "OK, then I'll go by train.",
+          "literal": "good, then train-by I-go."
+        },
+        {
+          "speaker": "Langilea:",
+          "text": "Hemen duzu txartela. Bide ona!",
+          "id": "Here's your ticket. Have a good trip!",
+          "literal": "here you-have ticket-the. road good-the!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eta Donostiatik Bilbora, azken trena noiz da?",
+          "id": "And from Donostia to Bilbo, when is the last train?",
+          "literal": "and Donostia-from Bilbo-to, last train-the when is?"
+        },
+        {
+          "speaker": "Langilea:",
+          "text": "Gaueko hamarretan. Ez galdu!",
+          "id": "At ten at night. Don't miss it!",
+          "literal": "night-of ten-pl-at. not lose!"
+        }
+      ],
+      "notes": [
+        "**Donostiarako — the ending for a destination.** *-rako* means \"for going to\": a ticket **for going to** Donostia. Compare three similar forms: *Donostia**ra*** (to Donostia), *Donostia**ko*** (of/in Donostia, as a describer), *Donostia**rako*** (for Donostia, bound for Donostia).",
+        "**Trenez noa — a short form with no auxiliary.** *Joan* has a synthetic form used for a trip happening now or very soon: *noa* (I'm going), *zoaz*, *doa*, *goaz*, *zoazte*, *doaz*. The long form *joaten naiz* is for habits: *egunero lanera joaten naiz*.",
+        "**Irten and iritsi — leave and arrive.** Both take the auxiliary *izan*: *trena hamaiketan irteten **da***, *ordu batean iristen **da***. Other words you'll often see at the station: *nasa* (platform), *txartela* (ticket), *atzerapena* (delay), *aldapa*.",
+        "**Ez galdu! — a negative command.** The simplest command is just the dictionary form of the verb: *ez galdu* (don't lose/miss it), *ez ahaztu* (don't forget), *etorri hona* (come here), *entzun* (listen). More polite commands come at A2."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "To where, from where, as far as where",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Ending",
+            "Example",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**nora?** (where to)",
+              "-ra",
+              "Bilbo**ra**, etxe**ra**",
+              "to Bilbo, home"
+            ],
+            [
+              "**nondik?** (where from)",
+              "-tik",
+              "Bilbo**tik**, etxe**tik**",
+              "from Bilbo, from home"
+            ],
+            [
+              "**noraino?** (how far)",
+              "-raino",
+              "Bilbo**raino**",
+              "as far as Bilbo"
+            ],
+            [
+              "**norantz?** (which way)",
+              "-rantz",
+              "Bilbo**rantz**",
+              "toward Bilbo"
+            ],
+            [
+              "**non?** (where)",
+              "-n / -an",
+              "Bilbo**n**, etxe**an**",
+              "in Bilbo, at home"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "These four direction endings are one family, all built on the same place ending. If you know *etxean, etxera, etxetik*, you already have the whole system — the rest is just swapping the noun."
+        },
+        {
+          "type": "sub",
+          "text": "Here, there, over there"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "At",
+            "To",
+            "From",
+            "English"
+          ],
+          "rows": [
+            [
+              "hemen",
+              "**hona**",
+              "hemendik",
+              "here / to here / from here"
+            ],
+            [
+              "hor",
+              "**horra**",
+              "hortik",
+              "there / to there / from there (near you)"
+            ],
+            [
+              "han",
+              "**hara**",
+              "handik",
+              "over there / to there / from there"
+            ],
+            [
+              "non?",
+              "**nora?**",
+              "nondik?",
+              "where? / where to? / where from?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Places with irregular forms",
+          "items": [
+            "*etxe* → *etxe**ra*** (to the house), but when it means \"home\" it's used as is: *etxera noa* (I'm going home).",
+            "*kanpo* → *kanpo**ra*** (outside), *barru* → *barru**ra*** (inside).",
+            "*mendi* → *mendi**ra*** (to the mountains) — the sentence you'll hear most on weekends in Euskal Herria.",
+            "For people, use *-rengana*: *amarengana noa* (I'm going to Mom's). It's often used for the doctor: *medikuarengana*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Joan and etorri: short forms",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The two most common motion verbs have forms that stand alone, with no auxiliary. Learn them like a song — they come up in every conversation."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Person",
+            "joan (go)",
+            "etorri (come)",
+            "Example"
+          ],
+          "rows": [
+            [
+              "ni",
+              "**noa**",
+              "**nator**",
+              "Etxera noa."
+            ],
+            [
+              "zu",
+              "**zoaz**",
+              "**zatoz**",
+              "Nora zoaz?"
+            ],
+            [
+              "hura",
+              "**doa**",
+              "**dator**",
+              "Trena badator."
+            ],
+            [
+              "gu",
+              "**goaz**",
+              "**gatoz**",
+              "Mendira goaz."
+            ],
+            [
+              "zuek",
+              "**zoazte**",
+              "**zatozte**",
+              "Nondik zatozte?"
+            ],
+            [
+              "haiek",
+              "**doaz**",
+              "**datoz**",
+              "Lagunak datoz."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The prefix *ba-* adds emphasis: *banoa* (\"I'm off now\"), *badator* (\"he's on his way\"). The negative uses the same forms: *ez noa* (I'm not going), *ez dator* (she isn't coming)."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Habit (long)",
+            "Now (short)",
+            "Difference"
+          ],
+          "rows": [
+            [
+              "Egunero lanera joaten naiz.",
+              "Orain lanera noa.",
+              "every day / now"
+            ],
+            [
+              "Astero etortzen da.",
+              "Gaur badator.",
+              "every week / today"
+            ],
+            [
+              "Mendira joaten gara.",
+              "Mendira goaz.",
+              "usually / now"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Joan or etorri?",
+          "items": [
+            "*Joan* = moving away from the speaker. *Etorri* = moving toward the speaker.",
+            "When a friend calls you from outside and you answer \"I'm coming!\", Basque says *banoa!* — because you're moving **away from where you are**. English says \"coming\" here. This flip catches many learners.",
+            "*Etorri hona* (come here), *joan hara* (go there) — two short sentences to check which one is right."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Traveling: tickets and transportation",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Donostiarako txartel bat.",
+              "doh-nohs-tee-ah-RAH-koh",
+              "One ticket to Donostia."
+            ],
+            [
+              "Joan-etorrikoa.",
+              "khoh-ahn-eh-toh-RREE-koh-ah",
+              "Round trip."
+            ],
+            [
+              "Noiz irteten da?",
+              "NOH-ees eer-TEH-tehn dah",
+              "When does it leave?"
+            ],
+            [
+              "Noiz iristen da?",
+              "ee-REES-tehn dah",
+              "When does it arrive?"
+            ],
+            [
+              "Zenbat denbora behar du?",
+              "dehn-BOH-rah",
+              "How long does it take?"
+            ],
+            [
+              "Zein nasatatik?",
+              "NAH-sah-tah-teek",
+              "From which platform?"
+            ],
+            [
+              "Hemen jaisten naiz.",
+              "KHAH-ees-tehn",
+              "I get off here."
+            ],
+            [
+              "Non aldatu behar dut?",
+              "ahl-DAH-too",
+              "Where do I have to change?"
+            ],
+            [
+              "Trena berandu dabil.",
+              "beh-RAHN-doo DAH-beel",
+              "The train is running late."
+            ],
+            [
+              "Bide ona!",
+              "BEE-deh OH-nah",
+              "Have a good trip!"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Transportation"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "English",
+            "With -z",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "trena",
+              "train",
+              "trenez",
+              "by train"
+            ],
+            [
+              "autobusa",
+              "bus",
+              "autobusez",
+              "by bus"
+            ],
+            [
+              "metroa",
+              "subway",
+              "metroz",
+              "by subway"
+            ],
+            [
+              "tranbia",
+              "tram",
+              "tranbiaz",
+              "by tram"
+            ],
+            [
+              "kotxea",
+              "car",
+              "kotxez",
+              "by car"
+            ],
+            [
+              "taxia",
+              "taxi",
+              "taxiz",
+              "by taxi"
+            ],
+            [
+              "hegazkina",
+              "plane",
+              "hegazkinez",
+              "by plane"
+            ],
+            [
+              "itsasontzia",
+              "ship",
+              "itsasontziz",
+              "by ship"
+            ],
+            [
+              "bizikleta",
+              "bicycle",
+              "bizikletaz",
+              "by bike"
+            ],
+            [
+              "oinak",
+              "feet",
+              "oinez",
+              "on foot"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "In Bilbo, the local train is called *Euskotren* and the city subway *Metro Bilbao*; signs are bilingual, and station names always show the Basque form first. Reading those signs is free reading practice every day — *irteera* (exit), *sarrera* (entrance), *hurrengo geltokia* (next station)."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "eu": "joan",
+      "baca": "KHOH-ahn",
+      "en": "go"
+    },
+    {
+      "eu": "etorri",
+      "baca": "eh-TOH-rree",
+      "en": "come"
+    },
+    {
+      "eu": "irten",
+      "baca": "EER-tehn",
+      "en": "leave, go out"
+    },
+    {
+      "eu": "iritsi",
+      "baca": "ee-REE-tsee",
+      "en": "arrive"
+    },
+    {
+      "eu": "jaitsi",
+      "baca": "KHAH-ee-tsee",
+      "en": "get off, go down"
+    },
+    {
+      "eu": "igo",
+      "baca": "ee-GOH",
+      "en": "get on, go up"
+    },
+    {
+      "eu": "aldatu",
+      "baca": "ahl-DAH-too",
+      "en": "change"
+    },
+    {
+      "eu": "ibili",
+      "baca": "ee-BEE-lee",
+      "en": "walk, go around"
+    },
+    {
+      "eu": "txartel",
+      "baca": "CHAHR-tehl",
+      "en": "ticket, card"
+    },
+    {
+      "eu": "geltoki",
+      "baca": "gehl-TOH-kee",
+      "en": "station, stop"
+    },
+    {
+      "eu": "nasa",
+      "baca": "NAH-sah",
+      "en": "platform"
+    },
+    {
+      "eu": "bidaia",
+      "baca": "bee-DAH-ee-ah",
+      "en": "trip"
+    },
+    {
+      "eu": "bide",
+      "baca": "BEE-deh",
+      "en": "road, way"
+    },
+    {
+      "eu": "hurrengo",
+      "baca": "oo-RREHN-goh",
+      "en": "next"
+    },
+    {
+      "eu": "azken",
+      "baca": "AHS-kehn",
+      "en": "last"
+    },
+    {
+      "eu": "lehen",
+      "baca": "LEH-ehn",
+      "en": "first; before"
+    },
+    {
+      "eu": "azkar",
+      "baca": "ahs-KAHR",
+      "en": "fast"
+    },
+    {
+      "eu": "motel",
+      "baca": "moh-TEHL",
+      "en": "slow"
+    },
+    {
+      "eu": "denbora",
+      "baca": "dehn-BOH-rah",
+      "en": "time"
+    },
+    {
+      "eu": "hegazkin",
+      "baca": "eh-gahs-KEEN",
+      "en": "plane"
+    },
+    {
+      "eu": "itsasontzi",
+      "baca": "ee-tsah-SOHN-tsee",
+      "en": "ship"
+    },
+    {
+      "eu": "metro",
+      "baca": "MEH-troh",
+      "en": "subway"
+    },
+    {
+      "eu": "taxi",
+      "baca": "TAH-ksee",
+      "en": "taxi"
+    },
+    {
+      "eu": "sarrera",
+      "baca": "sah-RREH-rah",
+      "en": "entrance"
+    },
+    {
+      "eu": "irteera",
+      "baca": "eer-TEH-eh-rah",
+      "en": "exit"
+    },
+    {
+      "eu": "hona",
+      "baca": "OH-nah",
+      "en": "(to) here"
+    },
+    {
+      "eu": "hara",
+      "baca": "AH-rah",
+      "en": "(to) there"
+    },
+    {
+      "eu": "hemendik",
+      "baca": "eh-MEHN-deek",
+      "en": "from here"
+    },
+    {
+      "eu": "galdu",
+      "baca": "GAHL-doo",
+      "en": "lose, miss"
+    },
+    {
+      "eu": "ahaztu",
+      "baca": "ah-AHS-too",
+      "en": "forget"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Add the right direction ending (-ra, -tik, -n).",
+      "items": [
+        "Bilbo____ noa. (to)",
+        "Donostia____ nator. (from)",
+        "Etxe____ nago. (at)",
+        "Mendi____ goaz. (to)",
+        "Euskaltegi____ dator. (from)",
+        "Hondartza____ zoaz? (to)"
+      ]
+    },
+    {
+      "prompt": "Fill in the short form of *joan* or *etorri*.",
+      "items": [
+        "Ni etxera ____. (go)",
+        "Zu nora ____? (go)",
+        "Trena ____. (come)",
+        "Gu mendira ____. (go)",
+        "Lagunak ____. (come)",
+        "Nondik ____ zu? (come)"
+      ]
+    },
+    {
+      "prompt": "Translate into Basque.",
+      "items": [
+        "One ticket to Donostia, please.",
+        "Round trip.",
+        "When does the train leave?",
+        "I get off here.",
+        "The bus is cheaper but slower.",
+        "Have a good trip!"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "zoaz / nora / ?",
+        "noa / etxera / orain",
+        "da / trena / irteten / hamaiketan",
+        "da / merkeagoa / autobusa",
+        "gatoz / Donostiatik / gu",
+        "dut / txartel / bat / nahi"
+      ]
+    }
+  ],
+  "answers": [
+    "Bilbora — Donostiatik — Etxean — Mendira — Euskaltegitik — Hondartzara",
+    "noa — zoaz — dator — goaz — datoz — zatoz",
+    "Donostiarako txartel bat, mesedez. — Joan-etorrikoa. — Noiz irteten da trena? — Hemen jaisten naiz. — Autobusa merkeagoa da baina motelagoa. — Bide ona!",
+    "Nora zoaz? — Orain etxera noa. — Trena hamaiketan irteten da. — Autobusa merkeagoa da. — Gu Donostiatik gatoz. — Txartel bat nahi dut."
+  ]
+}

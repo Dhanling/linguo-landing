@@ -1,0 +1,522 @@
+{
+  "title": "Three noun genders",
+  "title_target": "Þrjú kyn",
+  "goal": "Face the most typical rule of Icelandic: every noun — including table, chair, and book — has a gender, and that gender decides the form of the adjectives and pronouns that go with it.",
+  "bekal": [
+    "name the gender of a noun and guess it from the word's ending",
+    "use *hann*, *hún*, and *það* for **things**, not just for people",
+    "make adjectives agree: *nýr* – *ný* – *nýtt*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Í kennslustofunni",
+      "intro": "In the classroom. Anna holds up a few objects and points to them one by one; Búdí has just discovered the rule that confuses him most.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Búdí, hvað er þetta?",
+          "id": "Budi, what's this?",
+          "literal": "Budi, what is this?"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Það er bók.",
+          "id": "It's a book.",
+          "literal": "it is book."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Rétt. Bókin er ný. Hún er líka dýr.",
+          "id": "Right. The book is new. It's also expensive.",
+          "literal": "right. book-the is new. she is also expensive."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "„Hún\"? En bókin er ekki kona!",
+          "id": "\"She\"? But the book isn't a woman!",
+          "literal": "she? but book-the is not woman!"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Nei, en bók er kvenkyn. Þess vegna segjum við „hún\".",
+          "id": "No, but bók is feminine. That's why we say \"hún\".",
+          "literal": "no, but book is feminine-gender. that's why say we she."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Þá er þetta erfitt. Hvað með borðið?",
+          "id": "Then this is hard. What about the table?",
+          "literal": "then is this hard. what with table-the?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Borð er hvorugkyn. Þess vegna: það er stórt og það er brúnt.",
+          "id": "Borð is neuter. So: it's big and it's brown.",
+          "literal": "table is neuter-gender. that's why: it is big and it is brown."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Og stóllinn?",
+          "id": "And the chair?",
+          "literal": "and chair-the?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Stóll er karlkyn. Hann er nýr og hann er þægilegur.",
+          "id": "Stóll is masculine. It's new and it's comfortable.",
+          "literal": "chair is masculine-gender. he is new and he is comfortable."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Svo hver hlutur hefur kyn? Hvernig veit ég það?",
+          "id": "So every object has a gender? How do I know?",
+          "literal": "so every object has gender? how know I it?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Endingin segir þér það oftast. Ekki hafa áhyggjur — þú lærir þetta smám saman.",
+          "id": "The ending usually tells you. Don't worry — you'll learn it little by little.",
+          "literal": "ending-the says to-you it most-often. not have worries — you learn this small-by-small together."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Gott. Þá er bókin mín kvenkyn og stóllinn minn karlkyn!",
+          "id": "Good. Then my book is feminine and my chair is masculine!",
+          "literal": "good. then is book-the mine feminine and chair-the mine masculine!"
+        }
+      ],
+      "notes": [
+        "**Hann and hún are used for THINGS, not just for people.** This is the biggest shift in thinking in the whole course. *Bókin? Hún er ný.* — \"The book? **She**'s new.\" Translating it as \"she\" feels odd in English, and it should: what's marked is not maleness or femaleness but a **grammatical class**. In normal English you simply say \"it\".",
+        "**The three genders have plain, honest names**: *karlkyn* (masculine, abbreviated **kk**), *kvenkyn* (feminine, **kvk**), *hvorugkyn* (neuter, **hk**). Icelandic dictionaries always print these abbreviations next to the noun, so get used to reading them now.",
+        "**Þetta and það both mean \"this/that\", but they aren't interchangeable.** *Þetta* is used when you **point at** something new to the conversation: *Hvað er þetta?* *Það* is used for something **already** mentioned, or as \"it\": *Það er bók.*",
+        "**The adjective changes form too, and that's not optional.** *Nýr* for kk, *ný* for kvk, *nýtt* for hk — and the same pattern holds for almost all adjectives. This is the main reason you need to know a noun's gender: without it, you can't choose the adjective form.",
+        "**Ekki hafa áhyggjur — a negative command.** Literally \"don't have worries\". Notice that *ekki* stands at the very front of a command, the only place where it comes before its verb. Commands are covered in full in Unit 13.",
+        "**Smám saman means \"little by little\", and it's serious advice.** No Icelander memorizes genders from a list; they learn each noun **together with its article** — not *bók* but *bókin*. Do the same from Unit 4 on."
+      ],
+      "grammars": [
+        {
+          "title": "Three genders and their pronouns",
+          "body": [
+            "What decides is not the meaning of the word but its form. *Kona* (woman) is indeed kvenkyn, but *skip* (ship) is hvorugkyn and *bíll* (car) is karlkyn for no reason you could put your finger on."
+          ],
+          "table": {
+            "head": [
+              "Gender",
+              "Example",
+              "Pronoun",
+              "\"… the … is new\""
+            ],
+            "rows": [
+              [
+                "**karlkyn** (kk)",
+                "*stóll* chair, *bíll* car, *maður* man, person",
+                "**hann**",
+                "*Stóllinn er nýr.*"
+              ],
+              [
+                "**kvenkyn** (kvk)",
+                "*bók* book, *borg* city, *kona* woman",
+                "**hún**",
+                "*Bókin er ný.*"
+              ],
+              [
+                "**hvorugkyn** (hk)",
+                "*borð* table, *hús* house, *barn* child",
+                "**það**",
+                "*Borðið er nýtt.*"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Note that *barn* (child) is **neuter**, neither masculine nor feminine — so even a little boy is *það* if the word used is *barn*. Only with *strákur* (boy) do you say *hann*.",
+            "The plural has its own pronouns: *þeir* (kk), *þær* (kvk), *þau* (hk **and** mixed). A family of a father and a mother is always *þau*, because it's mixed."
+          ]
+        },
+        {
+          "title": "Adjectives follow the noun's gender",
+          "body": [
+            "The ending pattern repeats across almost all adjectives: **-ur / — / -t**. Memorize the pattern, not each word."
+          ],
+          "table": {
+            "head": [
+              "English",
+              "kk (hann)",
+              "kvk (hún)",
+              "hk (það)"
+            ],
+            "rows": [
+              [
+                "new",
+                "*nýr*",
+                "*ný*",
+                "*nýtt*"
+              ],
+              [
+                "good",
+                "*góður*",
+                "*góð*",
+                "*gott*"
+              ],
+              [
+                "big",
+                "*stór*",
+                "*stór*",
+                "*stórt*"
+              ],
+              [
+                "small",
+                "*lítill*",
+                "*lítil*",
+                "*lítið*"
+              ],
+              [
+                "expensive",
+                "*dýr*",
+                "*dýr*",
+                "*dýrt*"
+              ],
+              [
+                "beautiful",
+                "*fallegur*",
+                "*falleg*",
+                "*fallegt*"
+              ],
+              [
+                "difficult",
+                "*erfiður*",
+                "*erfið*",
+                "*erfitt*"
+              ]
+            ]
+          },
+          "after": [
+            "The **hk** form almost always ends in **-t**, and that's the most useful clue: if you hear an adjective ending in -t, the word it describes is almost certainly neuter.",
+            "When there's no clear noun — for example when describing a situation or the weather — Icelandic uses the **hk** form: *það er gott*, *það er kalt*, *þetta er erfitt*. Neuter is the language's default form."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Guessing the gender from the ending",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "No rule works a hundred percent of the time, but there are tendencies that cover most everyday words. Use them as a first guess, not as law."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Ending",
+            "Usually",
+            "Example",
+            "Exceptions"
+          ],
+          "rows": [
+            [
+              "**-ur**",
+              "karlkyn",
+              "*hestur*, *matur*, *litur*",
+              "*systur*, *dóttur* (kvk)"
+            ],
+            [
+              "**-i**",
+              "karlkyn",
+              "*tími*, *pabbi*, *bekkurinn*",
+              "*hjarta* (hk)"
+            ],
+            [
+              "**-ll**, **-nn**",
+              "karlkyn",
+              "*stóll*, *bíll*, *steinn*",
+              "—"
+            ],
+            [
+              "**-a**",
+              "kvenkyn",
+              "*kona*, *stofa*, *saga*",
+              "*herra* (kk)"
+            ],
+            [
+              "**-ing**, **-un**",
+              "kvenkyn",
+              "*ending*, *verslun*",
+              "—"
+            ],
+            [
+              "one syllable, no ending",
+              "kvenkyn or hvorugkyn",
+              "*bók* (kvk), *borð* (hk)",
+              "must be memorized"
+            ],
+            [
+              "**-i** on things",
+              "hvorugkyn",
+              "*herbergi*, *ríki*",
+              "—"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "A way of memorizing that really works",
+          "items": [
+            "Never memorize a bare noun. Learn it **with its article**: not *bók* but **bókin**, not *borð* but **borðið**, not *stóll* but **stóllinn**. The ending itself tells you the gender, so you learn two things at once with no extra effort.",
+            "This also explains why the next unit goes straight to the article: it isn't a separate grammar chapter but a **memory tool** for the rest of this course."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Things around you, with their genders",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Íslenska",
+            "Gender",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*stóll*",
+              "kk",
+              "stohtl",
+              "chair"
+            ],
+            [
+              "*bíll*",
+              "kk",
+              "beetl",
+              "car"
+            ],
+            [
+              "*sími*",
+              "kk",
+              "SEE-mih",
+              "phone"
+            ],
+            [
+              "*lykill*",
+              "kk",
+              "LIH-kitl",
+              "key"
+            ],
+            [
+              "*bók*",
+              "kvk",
+              "bohk",
+              "book"
+            ],
+            [
+              "*klukka*",
+              "kvk",
+              "KLÜH-kah",
+              "clock"
+            ],
+            [
+              "*taska*",
+              "kvk",
+              "TAHS-kah",
+              "bag"
+            ],
+            [
+              "*mynd*",
+              "kvk",
+              "mihnd",
+              "picture, photo"
+            ],
+            [
+              "*borð*",
+              "hk",
+              "bawrdh",
+              "table"
+            ],
+            [
+              "*hús*",
+              "hk",
+              "hoos",
+              "house"
+            ],
+            [
+              "*blað*",
+              "hk",
+              "blahdh",
+              "paper, newspaper"
+            ],
+            [
+              "*glas*",
+              "hk",
+              "glahs",
+              "glass"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "You'll use these twelve words again and again in Units 4 to 12. Say each one with its pronoun — *stóll, hann*; *bók, hún*; *borð, það* — until the pairs stick without thinking."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "is": "kyn",
+      "baca": "kin",
+      "en": "(grammatical) gender"
+    },
+    {
+      "is": "karlkyn (kk)",
+      "baca": "KAHRDL-kin",
+      "en": "masculine"
+    },
+    {
+      "is": "kvenkyn (kvk)",
+      "baca": "KVEHN-kin",
+      "en": "feminine"
+    },
+    {
+      "is": "hvorugkyn (hk)",
+      "baca": "KVAW-rüg-kin",
+      "en": "neuter"
+    },
+    {
+      "is": "þetta",
+      "baca": "THEHH-tah",
+      "en": "this (pointing)"
+    },
+    {
+      "is": "rétt",
+      "baca": "ryehht",
+      "en": "right, correct"
+    },
+    {
+      "is": "líka",
+      "baca": "LEE-kah",
+      "en": "also, too"
+    },
+    {
+      "is": "dýr",
+      "baca": "deer",
+      "en": "expensive"
+    },
+    {
+      "is": "kona",
+      "baca": "KAW-nah",
+      "en": "woman, wife"
+    },
+    {
+      "is": "maður",
+      "baca": "MAH-dhür",
+      "en": "person, man"
+    },
+    {
+      "is": "barn",
+      "baca": "bahrdn",
+      "en": "child"
+    },
+    {
+      "is": "þess vegna",
+      "baca": "thehs VEHG-nah",
+      "en": "that's why, therefore"
+    },
+    {
+      "is": "stór",
+      "baca": "stohr",
+      "en": "big"
+    },
+    {
+      "is": "lítill",
+      "baca": "LEE-titl",
+      "en": "small"
+    },
+    {
+      "is": "brúnn",
+      "baca": "broodn",
+      "en": "brown"
+    },
+    {
+      "is": "þægilegur",
+      "baca": "THAI-yih-leh-ghür",
+      "en": "comfortable"
+    },
+    {
+      "is": "hlutur",
+      "baca": "HLÜ-tür",
+      "en": "thing, object"
+    },
+    {
+      "is": "vita",
+      "baca": "VIH-tah",
+      "en": "to know (a fact)"
+    },
+    {
+      "is": "ending",
+      "baca": "EHN-ding",
+      "en": "ending (of a word)"
+    },
+    {
+      "is": "áhyggjur",
+      "baca": "OW-hig-yür",
+      "en": "worries"
+    },
+    {
+      "is": "smám saman",
+      "baca": "smowm SAH-mahn",
+      "en": "little by little"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Give the gender of each noun: kk, kvk, or hk.",
+      "items": [
+        "stóll",
+        "bók",
+        "borð",
+        "kona",
+        "hús",
+        "sími"
+      ]
+    },
+    {
+      "prompt": "Replace the noun with the right pronoun: *hann*, *hún*, or *það*.",
+      "items": [
+        "Bókin er ný. ____ er líka dýr.",
+        "Stóllinn er brúnn. ____ er þægilegur.",
+        "Húsið er stórt. ____ er nýtt.",
+        "Klukkan er lítil. ____ er falleg.",
+        "Blaðið er gamalt. ____ er ekki gott."
+      ]
+    },
+    {
+      "prompt": "Fill in the right form of the adjective.",
+      "items": [
+        "Bíllinn er ____ (nýr, ný, nýtt).",
+        "Taskan er ____ (stór, stórt).",
+        "Borðið er ____ (góður, góð, gott).",
+        "Síminn er ____ (dýr, dýrt).",
+        "Húsið er ____ (fallegur, falleg, fallegt).",
+        "Bókin er ____ (lítill, lítil, lítið)."
+      ]
+    },
+    {
+      "prompt": "Translate into Icelandic.",
+      "items": [
+        "What's this?",
+        "It's a book.",
+        "The book is new and expensive.",
+        "The table is big.",
+        "The chair is comfortable.",
+        "The house is small but good."
+      ]
+    }
+  ],
+  "answers": [
+    "kk — kvk — hk — kvk — hk — kk",
+    "Hún — Hann — Það — Hún — Það",
+    "nýr — stór — gott — dýr — fallegt — lítil",
+    "Hvað er þetta? — Það er bók. — Bókin er ný og dýr. — Borðið er stórt. — Stóllinn er þægilegur. — Húsið er lítið en gott."
+  ]
+}

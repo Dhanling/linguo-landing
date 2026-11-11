@@ -1,0 +1,593 @@
+{
+  "title": "Tomorrow, and commands",
+  "title_target": "Cras ibimus!",
+  "goal": "Form the future in all four groups, give commands to one or many people, and forbid with noli.",
+  "bekal": [
+    "tell the two future patterns apart and know which groups use which",
+    "make singular and plural commands from any verb",
+    "forbid politely with *noli* and *nolite*"
+  ],
+  "dialogs": [
+    {
+      "title": "Colloquium — Ante iter",
+      "intro": "The night before the trip. Quintus hands out jobs, and not all of them are welcomed.",
+      "lines": [
+        {
+          "speaker": "Quintus:",
+          "text": "Cras ad villam ibimus. Mane surgetis!",
+          "id": "Tomorrow we're going to the farmhouse. You'll get up early!",
+          "literal": "tomorrow to house-obj go-we-will. early get-up-you-pl-will!"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Quando exibimus, pater?",
+          "id": "When will we leave, Father?",
+          "literal": "when go-out-we-will, father-call?"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Hora prima exibimus. Nolite tardi esse!",
+          "id": "We'll leave at the first hour. Don't be late!",
+          "literal": "hour first-in go-out-we-will. don't-you-pl late-pl be!"
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Quid portabimus?",
+          "id": "What will we carry?",
+          "literal": "what-obj carry-we-will?"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Vos cibum portabitis. Ego pecuniam portabo.",
+          "id": "You'll carry the food. I'll carry the money.",
+          "literal": "you-pl food-obj carry-you-pl-will. I money-obj carry-I-will."
+        },
+        {
+          "speaker": "Cornelia:",
+          "text": "Marce, audi me: aquam quoque porta!",
+          "id": "Marcus, listen to me: take some water too!",
+          "literal": "Marcus-call, listen me-obj: water-obj too carry!"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Audio, mater. Aquam portabo.",
+          "id": "I'm listening, Mother. I'll take the water.",
+          "literal": "listen-I, mother-call. water-obj carry-I-will."
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Eritne longum iter?",
+          "id": "Will it be a long trip?",
+          "literal": "is-it-will-Q long-neut journey?"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Longum erit, sed pulchrum. Videbitis mare!",
+          "id": "It'll be long, but beautiful. You'll see the sea!",
+          "literal": "long-neut is-it-will, but beautiful-neut. see-you-pl-will sea-obj!"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Mare! Natare potero?",
+          "id": "The sea! Will I be able to swim?",
+          "literal": "sea! swim can-I-will?"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Poteris. Sed noli solus natare!",
+          "id": "You will. But don't swim alone!",
+          "literal": "can-you-will. but don't-you alone-masc swim!"
+        },
+        {
+          "speaker": "Cornelia:",
+          "text": "Et nolite clamare in via. Dormire volo!",
+          "id": "And don't shout on the road. I want to sleep!",
+          "literal": "and don't-you-pl shout on road-in. sleep want-I!"
+        }
+      ],
+      "notes": [
+        "**Two patterns for one tense.** Groups I and II use *-bo, -bis, -bit* (*portabo*, *videbo*); groups III and IV use *-am, -es, -et* (*mittam*, *audiam*). There's no reason; these are leftovers of two different methods in the parent language, and both froze side by side in Latin.",
+        "**Mittet and mittit differ by one letter.** *Mittit* means \"he sends\", *mittet* means \"he will send\". A difference that small decides the meaning of the whole sentence, and it is one more reason why reading to the very last letter is non-negotiable.",
+        "**Porta! Audi! — commands are made by cutting.** Take the infinitive, cut off *-re*, and what is left is a command to one person: *portare* → *porta!*, *audire* → *audi!*, *videre* → *vide!*. For several people, add *-te*: *portate!*, *audite!*, *videte!* You have been using these since Unit 1 without noticing: *salve* and *salvete*, *vale* and *valete*.",
+        "**Noli, nolite — the polite \"don't\".** Latin does not forbid with *non* + command. It uses the command form of *nolo* (\"be unwilling\") plus the infinitive: *noli clamare!* — literally \"be unwilling to shout\". For several people: *nolite clamare!*"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The future: two patterns",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Which group uses which pattern is fixed once and for all, so as soon as you know a verb's group, you know its pattern."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Subject",
+            "I: portare",
+            "II: videre",
+            "III: mittere",
+            "IV: audire"
+          ],
+          "rows": [
+            [
+              "I",
+              "porta**bo**",
+              "vide**bo**",
+              "mitt**am**",
+              "audi**am**"
+            ],
+            [
+              "you",
+              "porta**bis**",
+              "vide**bis**",
+              "mitt**es**",
+              "audi**es**"
+            ],
+            [
+              "he/she",
+              "porta**bit**",
+              "vide**bit**",
+              "mitt**et**",
+              "audi**et**"
+            ],
+            [
+              "we",
+              "porta**bimus**",
+              "vide**bimus**",
+              "mitt**emus**",
+              "audi**emus**"
+            ],
+            [
+              "you (pl)",
+              "porta**bitis**",
+              "vide**bitis**",
+              "mitt**etis**",
+              "audi**etis**"
+            ],
+            [
+              "they",
+              "porta**bunt**",
+              "vide**bunt**",
+              "mitt**ent**",
+              "audi**ent**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Mixed group three follows group four: *facio* → *faciam, facies, faciet*. Note that only the \"I\" form of the second pattern ends in *-am*; the rest follow a tidy *-e-* pattern."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Present",
+            "Future",
+            "Meaning",
+            "Note"
+          ],
+          "rows": [
+            [
+              "sum",
+              "**ero**, eris, erit",
+              "I will be",
+              "erimus, eritis, **erunt**"
+            ],
+            [
+              "possum",
+              "**potero**, poteris",
+              "I will be able",
+              "poterimus, poterunt"
+            ],
+            [
+              "eo",
+              "**ibo**, ibis, ibit",
+              "I will go",
+              "ibimus, ibitis, ibunt"
+            ],
+            [
+              "volo",
+              "**volam**, voles",
+              "I will want",
+              "second pattern"
+            ],
+            [
+              "fero",
+              "**feram**, feres",
+              "I will carry",
+              "second pattern"
+            ],
+            [
+              "adsum",
+              "**adero**",
+              "I will be present",
+              "follows *ero*"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Traps you must recognize",
+          "items": [
+            "*erunt* means \"they will be\"; *erant* means \"they were\". One letter moves the sentence from the future to the past.",
+            "*mittet* (will send) versus *mittit* (sends); *audiet* (will hear) versus *audit* (hears).",
+            "*portabis* can never be confused with anything — the *-bo* pattern really is safer. It's the second pattern that needs your attention."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Commands",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Commands have only two forms: one for one person, one for several. Both are made from the infinitive."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Infinitive",
+            "To one person",
+            "To several people",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "portare",
+              "porta!",
+              "portate!",
+              "carry!"
+            ],
+            [
+              "videre",
+              "vide!",
+              "videte!",
+              "look!"
+            ],
+            [
+              "mittere",
+              "mitte!",
+              "mittite!",
+              "send!"
+            ],
+            [
+              "audire",
+              "audi!",
+              "audite!",
+              "listen!"
+            ],
+            [
+              "esse",
+              "es!",
+              "este!",
+              "be!"
+            ],
+            [
+              "ire",
+              "i!",
+              "ite!",
+              "go!"
+            ],
+            [
+              "tacere",
+              "tace!",
+              "tacete!",
+              "be quiet!"
+            ],
+            [
+              "venire",
+              "veni!",
+              "venite!",
+              "come!"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Four shortened commands"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Verb",
+            "Singular command",
+            "Plural command",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "dicere",
+              "**dic!**",
+              "dicite!",
+              "say!"
+            ],
+            [
+              "ducere",
+              "**duc!**",
+              "ducite!",
+              "lead! take!"
+            ],
+            [
+              "facere",
+              "**fac!**",
+              "facite!",
+              "make! do!"
+            ],
+            [
+              "ferre",
+              "**fer!**",
+              "ferte!",
+              "carry!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "These four lose the final *e*, and only these four. Learn them as one string of sounds: *dic, duc, fac, fer*. You will meet them in famous sentences: *fac ut vivas* (\"act so that you live\") and *dic mihi* (\"tell me\")."
+        },
+        {
+          "type": "kotak",
+          "title": "Asking politely",
+          "items": [
+            "*Quaeso* — \"I beg you\". Slipped into the middle of a sentence: *Dic mihi, quaeso.*",
+            "*Sis* (short for *si vis*, \"if you want\") — the equivalent of \"please\": *Veni, sis.*",
+            "*Amabo te* — literally \"I will love you\", used exactly like \"pretty please\": *Amabo te, tace!*",
+            "*Cave!* — \"watch out!\" This gives the sentence set into the floors of Roman houses: *Cave canem* — \"beware of the dog\".",
+            "To forbid, never use *non* + command. Always *noli* or *nolite* + infinitive."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Talking about plans",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Latin uses the future much more strictly than English. If the action hasn't happened yet, Latin demands the future — including in clauses where English uses the present (\"if you come\")."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Latin",
+            "Translation"
+          ],
+          "rows": [
+            [
+              "Cras ad villam **ibimus**.",
+              "Tomorrow we will go to the farmhouse."
+            ],
+            [
+              "Mane te **exspectabo**.",
+              "I will wait for you in the morning."
+            ],
+            [
+              "Iter longum **erit**.",
+              "The trip will be long."
+            ],
+            [
+              "**Videbitis** mare et **natare poteritis**.",
+              "You will see the sea and be able to swim."
+            ],
+            [
+              "Si **veneris**, gaudebo.",
+              "If you come, I will be glad."
+            ],
+            [
+              "Quid **facies** cras?",
+              "What will you do tomorrow?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The fifth sentence uses a form not taught yet — *veneris*, \"you will have come\". Latin uses it in clauses whose action comes before the main one. You don't need to make it yourself; just recognize it when you meet it."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "la": "surgo, surgere, surrexi",
+      "baca": "SOOR-goh",
+      "en": "to get up, to rise"
+    },
+    {
+      "la": "exeo, exire",
+      "baca": "EHK-seh-oh",
+      "en": "to go out, to set off"
+    },
+    {
+      "la": "redeo, redire",
+      "baca": "REH-deh-oh",
+      "en": "to go back, to return home"
+    },
+    {
+      "la": "noli, nolite",
+      "baca": "NOH-lee, noh-LEE-teh",
+      "en": "don't"
+    },
+    {
+      "la": "quaeso",
+      "baca": "KWYE-soh",
+      "en": "I beg you, please"
+    },
+    {
+      "la": "cave!",
+      "baca": "KAH-weh",
+      "en": "watch out!"
+    },
+    {
+      "la": "amabo te",
+      "baca": "ah-MAH-boh TEH",
+      "en": "please (gentle request)"
+    },
+    {
+      "la": "mane",
+      "baca": "MAH-neh",
+      "en": "early in the morning"
+    },
+    {
+      "la": "tardus, tarda",
+      "baca": "TAHR-doos",
+      "en": "late, slow"
+    },
+    {
+      "la": "solus, sola, solum",
+      "baca": "SOH-loos",
+      "en": "alone"
+    },
+    {
+      "la": "iter, itineris",
+      "baca": "EE-tehr",
+      "en": "journey"
+    },
+    {
+      "la": "gaudeo, gaudere",
+      "baca": "GOW-deh-oh",
+      "en": "to rejoice, to be glad"
+    },
+    {
+      "la": "spero, sperare",
+      "baca": "SPEH-roh",
+      "en": "to hope"
+    },
+    {
+      "la": "paro, parare",
+      "baca": "PAH-roh",
+      "en": "to prepare"
+    },
+    {
+      "la": "relinquo, relinquere",
+      "baca": "reh-LIN-kwoh",
+      "en": "to leave behind"
+    },
+    {
+      "la": "quaero, quaerere",
+      "baca": "KWYE-roh",
+      "en": "to look for, to ask"
+    },
+    {
+      "la": "peto, petere",
+      "baca": "PEH-toh",
+      "en": "to head for, to ask for"
+    },
+    {
+      "la": "aperio, aperire",
+      "baca": "ah-PEH-ree-oh",
+      "en": "to open"
+    },
+    {
+      "la": "claudo, claudere",
+      "baca": "KLOW-doh",
+      "en": "to close"
+    },
+    {
+      "la": "sino, sinere",
+      "baca": "SEE-noh",
+      "en": "to let, to allow"
+    },
+    {
+      "la": "canis, canis",
+      "baca": "KAH-nis",
+      "en": "dog"
+    },
+    {
+      "la": "casa, casae",
+      "baca": "KAH-sah",
+      "en": "hut, cottage"
+    },
+    {
+      "la": "porta, portae",
+      "baca": "POHR-tah",
+      "en": "gate"
+    },
+    {
+      "la": "custos, custodis",
+      "baca": "KOOS-tohs",
+      "en": "guard"
+    },
+    {
+      "la": "sarcina, sarcinae",
+      "baca": "SAHR-kee-nah",
+      "en": "luggage"
+    },
+    {
+      "la": "vestis, vestis",
+      "baca": "WEHS-tis",
+      "en": "clothing"
+    },
+    {
+      "la": "calceus, calcei",
+      "baca": "KAHL-keh-oos",
+      "en": "shoe"
+    },
+    {
+      "la": "lectus, lecti",
+      "baca": "LEHK-toos",
+      "en": "bed"
+    },
+    {
+      "la": "somnus, somni",
+      "baca": "SOHM-noos",
+      "en": "sleep, dream"
+    },
+    {
+      "la": "fortuna, fortunae",
+      "baca": "fohr-TOO-nah",
+      "en": "fate, fortune"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change to the future, keeping the same subject.",
+      "items": [
+        "porto",
+        "video",
+        "mitto",
+        "audio",
+        "sum",
+        "possum"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the correct future form.",
+      "items": [
+        "Cras ad villam ____ . (ire, we)",
+        "Mane te ____ . (exspectare, I)",
+        "Iter longum ____ . (esse, it)",
+        "Vos mare ____ . (videre, you pl)",
+        "Marcus epistulam ____ . (mittere, he)",
+        "Pueri fabulam ____ . (audire, they)"
+      ]
+    },
+    {
+      "prompt": "Make commands, first to one person, then to several.",
+      "items": [
+        "portare",
+        "audire",
+        "tacere",
+        "venire",
+        "dicere",
+        "facere"
+      ]
+    },
+    {
+      "prompt": "Translate into Latin.",
+      "items": [
+        "Tomorrow we will set off.",
+        "You (pl) will see the sea.",
+        "Take the water! (to one person)",
+        "Don't shout! (to several people)",
+        "I will wait for you.",
+        "Beware of the dog!"
+      ]
+    }
+  ],
+  "answers": [
+    "portabo — videbo — mittam — audiam — ero — potero",
+    "ibimus — exspectabo — erit — videbitis — mittet — audient",
+    "porta / portate — audi / audite — tace / tacete — veni / venite — dic / dicite — fac / facite",
+    "Cras exibimus. — Mare videbitis. — Aquam porta! — Nolite clamare! — Te exspectabo. — Cave canem!"
+  ]
+}

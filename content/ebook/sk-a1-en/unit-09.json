@@ -1,0 +1,621 @@
+{
+  "title": "At the shop",
+  "title_target": "V obchode",
+  "goal": "Shop for groceries, and set up the third case: the genitive — the form for possession, the form for \"of\" and \"from\", and the form you've been using quietly since unit 5.",
+  "bekal": [
+    "state quantities and measures correctly",
+    "put nouns into the genitive after *do, z, od, bez* and after measures",
+    "show possession without a word like \"'s\""
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Nákup na večeru",
+      "intro": "Budi is shopping to cook dinner. Eva comes along and gives advice in the aisles.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Čo potrebuješ do polievky?",
+          "id": "What do you need for the soup?",
+          "literal": "what you-need into soup-gen?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kilo zemiakov, dve cibule a kúsok mäsa.",
+          "id": "A kilo of potatoes, two onions, and a piece of meat.",
+          "literal": "kilo potatoes-gen-pl, two onions and piece meat-gen."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "A niečo na pitie? Máš doma vodu?",
+          "id": "And something to drink? Do you have water at home?",
+          "literal": "and something to drink? you-have at-home water-acc?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nemám nič. Kúpim fľašu vody a liter mlieka.",
+          "id": "I don't have anything. I'll buy a bottle of water and a liter of milk.",
+          "literal": "not-I-have nothing. I-will-buy bottle water-gen and liter milk-gen."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "A chlieb? Bez chleba to nebude ono.",
+          "id": "And bread? It won't be right without bread.",
+          "literal": "and bread? without bread-gen that not-will-be it."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Pravda. Kde je pekáreň?",
+          "id": "True. Where's the bakery section?",
+          "literal": "truth. where is bakery?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Vedľa vchodu, hneď pri pokladni.",
+          "id": "Next to the entrance, right by the checkout.",
+          "literal": "next-to entrance-gen, right-away by checkout-loc."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dobre. Ešte kávu bez cukru pre teba?",
+          "id": "Good. And coffee without sugar for you?",
+          "literal": "good. still coffee-acc without sugar-gen for you-acc?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ty si si zapamätal! Áno, prosím.",
+          "id": "You remembered! Yes, please.",
+          "literal": "you you-are self remembered! yes, I-ask."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "To je všetko. Ideme k pokladni.",
+          "id": "That's everything. Let's go to the checkout.",
+          "literal": "that is all. we-go toward checkout-dat."
+        }
+      ],
+      "notes": [
+        "**Kilo zemiakov, fľaša vody, liter mlieka, kúsok mäsa** — every measure is followed by the genitive. This is the genitive job you'll need most in daily life, and it already appeared in unit 4 (*pohár vody*) without explanation. Now the pattern is complete.",
+        "**Bez chleba, bez cukru** — the preposition *bez* always takes the genitive. Notice two different endings for two masculine words: *chlieb → chleba* takes *-a*, *cukor → cukru* takes *-u*. Both are right for their own word, and the choice has to be learned word by word.",
+        "**Do polievky** — the preposition *do* also takes the genitive. It means \"into\" for direction (*do školy*, *do obchodu*) and \"for\" when talking about ingredients (*do polievky* = to go into the soup).",
+        "**Nemám nič** — a double negative again. *Nič* on its own already means \"nothing\", and the verb must still be negated.",
+        "**Pre teba** takes the accusative, not the genitive. The preposition *pre* (for) is one of the few that demand the accusative — along with *na* and *cez* when they express direction or purpose. Don't confuse it with *bez* and *do*, which sit right next to it in the same sentence."
+      ],
+      "grammars": [
+        {
+          "title": "The genitive — the third case, and the busiest",
+          "body": [
+            "The genitive answers *koho?* (of whom) and *čoho?* (of what). It has five different jobs, and you've already used three of them without noticing."
+          ],
+          "table": {
+            "head": [
+              "Noun type",
+              "Ending",
+              "Nominative",
+              "Genitive"
+            ],
+            "rows": [
+              [
+                "**m animate**",
+                "**-a**",
+                "*brat, učiteľ, muž*",
+                "*bez brat**a**, od učiteľ**a***"
+              ],
+              [
+                "**m inanimate (solid things)**",
+                "**-a**",
+                "*chlieb, syr, stôl*",
+                "*bez chleb**a**, kúsok syr**a***"
+              ],
+              [
+                "**m inanimate (others)**",
+                "**-u**",
+                "*obchod, cukor, park*",
+                "*do obchod**u**, bez cukr**u***"
+              ],
+              [
+                "**f ending in -a**",
+                "**-y**",
+                "*voda, škola, káva*",
+                "*fľaša vod**y**, do škol**y***"
+              ],
+              [
+                "**f soft letter**",
+                "**-e**",
+                "*ulica, kaviareň*",
+                "*z ulic**e**, do kaviarn**e***"
+              ],
+              [
+                "**n**",
+                "**-a**",
+                "*mlieko, mesto, pivo*",
+                "*liter mliek**a**, do mest**a***"
+              ]
+            ]
+          },
+          "after": [
+            "**The adjective**: m and n take **-ého** (*bez dobrého chleba*), f takes **-ej** (*do novej školy*). Two more endings, just like the locative.",
+            "**Rows two and three are the only ones that need learning word by word.** The tendency: solid things you can hold and count take *-a* (*chleba, syra, stola*), while places, shapeless materials, and abstract things take *-u* (*obchodu, cukru, času*). The tendency leaks in many places, so note the ending down with the word.",
+            "**The five jobs of the genitive**, all already seen in this course: (1) after numbers 5 and up — unit 5; (2) after measures — *kilo, fľaša, pohár, kúsok*; (3) possession — *kniha brata*; (4) after the prepositions *do, z, od, bez, okrem, počas*; (5) after *veľa, málo, koľko*."
+          ]
+        },
+        {
+          "title": "Possession without \"'s\"",
+          "body": [
+            "Slovak shows possession by putting **the owner** into the genitive and placing it **after** the thing owned. No linking word at all."
+          ],
+          "table": {
+            "head": [
+              "Slovak",
+              "Literally",
+              "English"
+            ],
+            "rows": [
+              [
+                "*kniha brat**a***",
+                "book of-brother",
+                "my brother's book"
+              ],
+              [
+                "*auto otc**a***",
+                "car of-father",
+                "father's car"
+              ],
+              [
+                "*dom sestr**y***",
+                "house of-sister",
+                "my sister's house"
+              ],
+              [
+                "*centrum mest**a***",
+                "center of-town",
+                "the town center"
+              ],
+              [
+                "*začiatok film**u***",
+                "beginning of-film",
+                "the start of the film"
+              ],
+              [
+                "*meno učiteľ**a***",
+                "name of-teacher",
+                "the teacher's name"
+              ]
+            ]
+          },
+          "after": [
+            "**The order is the one English uses with \"of\"**: the thing first, the owner after — \"the book of the brother\", never \"the brother's book\". *Kniha brata* follows exactly that order; all Slovak adds is the ending.",
+            "**For an owner you'd name with a pronoun, the possessive is more natural**: *moja kniha* (my book), not *kniha mňa*. The genitive is used when the owner is a noun, not a pronoun.",
+            "**People's names change too**: *auto Evy* (Eva's car), *kniha Budiho* (Budi's book). Foreign male names usually get *-a* or *-ho*, female names ending in *-a* get *-y*. Slovaks do this to foreign names without hesitation — don't be surprised when your own name changes shape."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Groceries",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Say it",
+            "English",
+            "Genitive"
+          ],
+          "rows": [
+            [
+              "**chlieb** (m)",
+              "khlyehp",
+              "bread",
+              "*chleba*"
+            ],
+            [
+              "**syr** (m)",
+              "seer",
+              "cheese",
+              "*syra*"
+            ],
+            [
+              "**maslo** (n)",
+              "MAHS-loh",
+              "butter",
+              "*masla*"
+            ],
+            [
+              "**vajce** (n)",
+              "VAI-tseh",
+              "egg",
+              "*vajca*"
+            ],
+            [
+              "**mlieko** (n)",
+              "MLYEH-koh",
+              "milk",
+              "*mlieka*"
+            ],
+            [
+              "**mäso** (n)",
+              "MEH-soh",
+              "meat",
+              "*mäsa*"
+            ],
+            [
+              "**kura** (n)",
+              "KOO-rah",
+              "chicken",
+              "*kuraťa*"
+            ],
+            [
+              "**ryba** (f)",
+              "REE-bah",
+              "fish",
+              "*ryby*"
+            ],
+            [
+              "**ryža** (f)",
+              "REE-zhah",
+              "rice",
+              "*ryže*"
+            ],
+            [
+              "**cesnak** (m)",
+              "TSEHS-nahk",
+              "garlic",
+              "*cesnaku*"
+            ],
+            [
+              "**paradajka** (f)",
+              "PAH-rah-dai-kah",
+              "tomato",
+              "*paradajky*"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Words with a story",
+          "items": [
+            "*Ryža* and *cesnak* may sound strange, but *paradajka* (tomato) has a story: it comes from *paradajské jablko*, \"apple of paradise\". Just like Hungarian *paradicsom*.",
+            "*Kuracie mäso* = chicken meat. To order chicken in a restaurant, that's the form you need, not *kura*.",
+            "*Bravčové* = pork, *hovädzie* = beef, *kuracie* = chicken. All three are adjectives, and you need to recognize all three if you avoid certain meats.",
+            "To state a dietary rule: *Nejem bravčové mäso* (I don't eat pork) or *Jem len halal* (I only eat halal). Bratislava has a few halal restaurants; in small towns, ask with the first sentence."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Measures and containers",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Every word in the left column is followed by the genitive. Learn the pairs whole, and the genitive will feel natural within a week."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Measure",
+            "Full example",
+            "English"
+          ],
+          "rows": [
+            [
+              "**kilo**",
+              "*kilo zemiakov*",
+              "a kilo of potatoes"
+            ],
+            [
+              "**pol kila**",
+              "*pol kila syra*",
+              "half a kilo of cheese"
+            ],
+            [
+              "**deko**",
+              "*dvadsať deka šunky*",
+              "two hundred grams of ham"
+            ],
+            [
+              "**liter**",
+              "*liter mlieka*",
+              "a liter of milk"
+            ],
+            [
+              "**fľaša**",
+              "*fľaša vody*",
+              "a bottle of water"
+            ],
+            [
+              "**pohár**",
+              "*pohár piva*",
+              "a glass of beer"
+            ],
+            [
+              "**šálka**",
+              "*šálka kávy*",
+              "a cup of coffee"
+            ],
+            [
+              "**kúsok**",
+              "*kúsok chleba*",
+              "a piece of bread"
+            ],
+            [
+              "**balík**",
+              "*balík ryže*",
+              "a packet of rice"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at **deko**: in Slovakia and the Czech Republic, cheese and cold cuts are sold in *deka* (decagrams, 10 grams each). *Dvadsať deka* means 200 grams. It's confusing until you've heard it twice; after that it's natural."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Phrases in the shop",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Máte …?*",
+              "Do you have …?"
+            ],
+            [
+              "*Kde nájdem …?*",
+              "Where can I find …?"
+            ],
+            [
+              "*Prosím si pol kila syra.*",
+              "I'd like half a kilo of cheese."
+            ],
+            [
+              "*Ešte niečo?* — *To je všetko.*",
+              "Anything else? — That's all."
+            ],
+            [
+              "*Bez cukru, prosím.*",
+              "Without sugar, please."
+            ],
+            [
+              "*Je to čerstvé?*",
+              "Is it fresh?"
+            ],
+            [
+              "*Máte tašku?*",
+              "Do you have a bag?"
+            ],
+            [
+              "*Platím kartou / v hotovosti.*",
+              "I'll pay by card / in cash."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Prepositions that take the genitive",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Preposition",
+            "Meaning",
+            "Example",
+            "English"
+          ],
+          "rows": [
+            [
+              "**do**",
+              "into, to",
+              "*Idem do obchodu.*",
+              "I'm going to the shop."
+            ],
+            [
+              "**z / zo**",
+              "from (out of)",
+              "*Prichádzam z práce.*",
+              "I'm coming from work."
+            ],
+            [
+              "**od**",
+              "from (a person); since",
+              "*List od brata.*",
+              "A letter from my brother."
+            ],
+            [
+              "**bez**",
+              "without",
+              "*Káva bez cukru.*",
+              "Coffee without sugar."
+            ],
+            [
+              "**okrem**",
+              "except",
+              "*Všetci okrem Evy.*",
+              "Everyone except Eva."
+            ],
+            [
+              "**počas**",
+              "during",
+              "*Počas víkendu.*",
+              "During the weekend."
+            ],
+            [
+              "**vedľa**",
+              "next to",
+              "*Vedľa pošty.*",
+              "Next to the post office."
+            ],
+            [
+              "**podľa**",
+              "according to",
+              "*Podľa mňa.*",
+              "In my opinion."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Do for going in, z for coming out.** These two always work together: *do školy* / *zo školy*, *do obchodu* / *z obchodu*, *do Bratislavy* / *z Bratislavy*. Learn one and you get the other for free."
+        },
+        {
+          "type": "p",
+          "text": "**Od for people, z for places.** *Idem od lekára* (I'm coming from the doctor — the person), *idem z nemocnice* (I'm coming from the hospital — the building). The distinction is subtle and beginners often ignore it; getting it right sounds very polished."
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 7",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "What do you do during the week?",
+              "*Čo robíš cez týždeň?*"
+            ],
+            [
+              "In the morning I study, in the afternoon I work.",
+              "*Ráno sa učím, popoludní pracujem.*"
+            ],
+            [
+              "I usually watch films.",
+              "*Väčšinou pozerám filmy.*"
+            ],
+            [
+              "Sometimes I cook.",
+              "*Niekedy varím.*"
+            ],
+            [
+              "I never drink coffee.",
+              "*Nikdy nepijem kávu.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "obchod",
+      "baca": "OHP-khoht",
+      "en": "shop (m)"
+    },
+    {
+      "sk": "potraviny",
+      "baca": "POH-trah-vee-nee",
+      "en": "grocery store (pl)"
+    },
+    {
+      "sk": "pekáreň",
+      "baca": "PEH-kah-rehny",
+      "en": "bakery (f)"
+    },
+    {
+      "sk": "pokladňa",
+      "baca": "POH-klahd-nyah",
+      "en": "checkout (f)"
+    },
+    {
+      "sk": "vchod",
+      "baca": "fkhoht",
+      "en": "entrance (m)"
+    },
+    {
+      "sk": "taška",
+      "baca": "TAHSH-kah",
+      "en": "bag (f)"
+    },
+    {
+      "sk": "nákup",
+      "baca": "NAH-koop",
+      "en": "shopping (m)"
+    },
+    {
+      "sk": "kupovať / kúpiť",
+      "baca": "KOO-poh-vaht / KOO-peet",
+      "en": "to buy"
+    },
+    {
+      "sk": "potrebovať",
+      "baca": "POH-treh-boh-vaht",
+      "en": "to need"
+    },
+    {
+      "sk": "nájsť",
+      "baca": "naist",
+      "en": "to find"
+    },
+    {
+      "sk": "bez",
+      "baca": "behs",
+      "en": "without"
+    },
+    {
+      "sk": "do",
+      "baca": "doh",
+      "en": "into, to"
+    },
+    {
+      "sk": "od",
+      "baca": "oht",
+      "en": "from (a person); since"
+    },
+    {
+      "sk": "okrem",
+      "baca": "OH-krehm",
+      "en": "except"
+    },
+    {
+      "sk": "pre",
+      "baca": "preh",
+      "en": "for"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Slovak.",
+      "items": [
+        "What do you need for the soup?",
+        "A kilo of potatoes and a piece of meat.",
+        "I'll buy a bottle of water.",
+        "Coffee without sugar, please.",
+        "Where can I find bread?",
+        "I'll pay by card."
+      ]
+    },
+    {
+      "prompt": "Put into the genitive.",
+      "items": [
+        "fľaša ____ (voda)",
+        "liter ____ (mlieko)",
+        "kúsok ____ (chlieb)",
+        "bez ____ (cukor)",
+        "do ____ (škola)",
+        "z ____ (obchod)",
+        "kilo ____ (syr)",
+        "do ____ (mesto)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "polievky / potrebuješ / do / čo / ?",
+        "zemiakov / kilo / prosím / si",
+        "vody / kúpim / fľašu",
+        "cukru / kávu / bez",
+        "kartou / platím"
+      ]
+    }
+  ],
+  "answers": [
+    "Čo potrebuješ do polievky? — Kilo zemiakov a kúsok mäsa. — Kúpim fľašu vody. — Kávu bez cukru, prosím. — Kde nájdem chlieb? — Platím kartou.",
+    "vody — mlieka — chleba — cukru — školy — obchodu — syra — mesta",
+    "Čo potrebuješ do polievky? — Prosím si kilo zemiakov. — Kúpim fľašu vody. — Kávu bez cukru. — Platím kartou."
+  ]
+}

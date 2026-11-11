@@ -1,0 +1,674 @@
+{
+  "title": "What time is it?",
+  "title_target": "Cén t-am é?",
+  "goal": "Tell the time, name days and months, and make an appointment.",
+  "bekal": [
+    "tell the time with *a chlog*, *tar éis*, and *chun*",
+    "use *ar a …* to say at what time something happens",
+    "name days with *Dé …* and months with *i mí …*"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — Coinne a dhéanamh",
+      "intro": "In a college corridor. Niamh is in a hurry, and Budi wants to invite her to a match.",
+      "lines": [
+        {
+          "speaker": "Niamh:",
+          "text": "Cén t-am é anois?",
+          "id": "What time is it?",
+          "literal": "what time it now?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá sé ceathrú chun a dó.",
+          "id": "It's a quarter to two.",
+          "literal": "is it quarter to the two."
+        },
+        {
+          "speaker": "Niamh:",
+          "text": "Ó, tá mé déanach! Tosaíonn an rang ar a dó.",
+          "id": "Oh, I'm late! The class starts at two.",
+          "literal": "oh, am I late! starts the class on the two."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cén lá atá an rang?",
+          "id": "What days is the class?",
+          "literal": "what day that-is the class?"
+        },
+        {
+          "speaker": "Niamh:",
+          "text": "Dé Luain agus Déardaoin, ar a dó. Agus Dé hAoine ar a deich ar maidin.",
+          "id": "Monday and Thursday at two. And Friday at ten in the morning.",
+          "literal": "day Monday and Thursday, on the two. and day Friday on the ten in the morning."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "An bhfuil tú saor Dé Sathairn?",
+          "id": "Are you free on Saturday?",
+          "literal": "question are you free day Saturday?"
+        },
+        {
+          "speaker": "Niamh:",
+          "text": "Tá. Cén fáth?",
+          "id": "Yes. Why?",
+          "literal": "am. what reason?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá cluiche ann ar a trí. Ar mhaith leat teacht?",
+          "id": "There's a match at three. Would you like to come?",
+          "literal": "is match in-it on the three. question-would good with-you come?"
+        },
+        {
+          "speaker": "Niamh:",
+          "text": "Ba mhaith! Cén t-am?",
+          "id": "I'd love to! What time?",
+          "literal": "would good! what time?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ar leathuair tar éis a dó, ag an stáisiún.",
+          "id": "At half past two, at the station.",
+          "literal": "on half-hour after the two, at the station."
+        },
+        {
+          "speaker": "Niamh:",
+          "text": "Go breá. Feicfidh mé thú Dé Sathairn.",
+          "id": "Great. See you on Saturday.",
+          "literal": "fine. will-see I you day Saturday."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Slán go fóill!",
+          "id": "See you soon!",
+          "literal": "safe till a-while!"
+        }
+      ],
+      "notes": [
+        "**Clock times use the counting numbers, *a* and all.** *Tá sé a dó a chlog* — \"it's two o'clock\". The word *a chlog* (from English *o'clock*, itself from *of the clock*) is softened by the little word *a* before it — not by the number. The numbers themselves soften nothing here: compare *deich nóiméad* and *cúig euro*, which stay intact. For times that aren't on the hour, *a chlog* is dropped: *ceathrú chun a dó*, not *ceathrú chun a dó a chlog*.",
+        "**Tar éis for past, chun for to.** *Deich tar éis a trí* = \"ten after three\", i.e. 3:10. *Deich chun a trí* = \"ten to three\", i.e. 2:50. Like English, Irish counts back from the next hour once you pass the half hour.",
+        "**Ar a dó — at two.** To say **when** something happens, put *ar* before the number: *ar a hocht* (at eight), *ar leathuair tar éis a naoi* (at half past nine). It's the same *ar* as in *Tá ocras orm*; Irish puts the time \"on\" the event.",
+        "**Dé Luain, Déardaoin — the word Dé already means \"on the day of\".** So *Dé Luain* already means \"on Monday\", with no extra preposition needed. To name the day itself as a noun — \"Monday\" as a thing — use *an Luan*. Note *Déardaoin* (Thursday), fused into one word, and *Dé hAoine* (Friday), which gets an *h* because *Aoine* starts with a vowel."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Cén t-am é?",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Tá sé a haon a chlog.",
+              "taw shay uh HAYN uh KHLOG",
+              "It's one o'clock."
+            ],
+            [
+              "Tá sé a cúig a chlog.",
+              "taw shay uh KOO-ig uh KHLOG",
+              "It's five o'clock."
+            ],
+            [
+              "Tá sé leathuair tar éis a dó.",
+              "LYAH-huh-ir tar ESH uh DOH",
+              "It's half past two."
+            ],
+            [
+              "Tá sé ceathrú tar éis a trí.",
+              "KYAH-roo tar ESH uh TREE",
+              "It's a quarter past three."
+            ],
+            [
+              "Tá sé ceathrú chun a ceathair.",
+              "KYAH-roo khun uh KYAH-hir",
+              "It's a quarter to four."
+            ],
+            [
+              "Tá sé deich tar éis a sé.",
+              "DEH tar ESH uh SHAY",
+              "It's ten past six."
+            ],
+            [
+              "Tá sé fiche chun a seacht.",
+              "FIH-khuh khun uh SHAKHT",
+              "It's twenty to seven."
+            ],
+            [
+              "Tá sé meán lae.",
+              "taw shay myawn LAY",
+              "It's noon."
+            ],
+            [
+              "Tá sé meán oíche.",
+              "taw shay myawn EE-khuh",
+              "It's midnight."
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "ar a hocht",
+              "er uh HOKHT",
+              "at eight o'clock"
+            ],
+            [
+              "ar leathuair tar éis a naoi",
+              "er LYAH-huh-ir",
+              "at half past nine"
+            ],
+            [
+              "ar maidin",
+              "er MAH-dyin",
+              "in the morning"
+            ],
+            [
+              "tráthnóna",
+              "traw-NOH-nuh",
+              "in the afternoon, evening"
+            ],
+            [
+              "san oíche",
+              "san EE-khuh",
+              "at night"
+            ],
+            [
+              "go luath",
+              "guh LOO-uh",
+              "early"
+            ],
+            [
+              "déanach",
+              "DYAY-nakh",
+              "late"
+            ],
+            [
+              "in am",
+              "in AM",
+              "on time"
+            ],
+            [
+              "nóiméad",
+              "NOH-mayd",
+              "minute"
+            ],
+            [
+              "uair an chloig",
+              "OO-ir an KHLIG",
+              "an hour (length of time)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Uair has two meanings — watch the sentence",
+          "items": [
+            "*Uair* means **hour** as a length of time: *uair an chloig* = a full hour, *dhá uair an chloig* = two hours.",
+            "*Uair* also means **time** as in \"once, twice\": *uair amháin* = once, *trí huaire* = three times. Note the plural *huaire* with an h.",
+            "To ask how long: *Cé chomh fada?* (kyay khoh FAH-duh). To ask how many times: *Cé mhéad uair?*"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Days",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "On …",
+            "Say it",
+            "The day itself",
+            "English"
+          ],
+          "rows": [
+            [
+              "Dé Luain",
+              "dyay LOO-in",
+              "an Luan",
+              "Monday"
+            ],
+            [
+              "Dé Máirt",
+              "dyay MAWRTCH",
+              "an Mháirt",
+              "Tuesday"
+            ],
+            [
+              "Dé Céadaoin",
+              "dyay KYAY-dayn",
+              "an Chéadaoin",
+              "Wednesday"
+            ],
+            [
+              "Déardaoin",
+              "dyayr-DAYN",
+              "an Déardaoin",
+              "Thursday"
+            ],
+            [
+              "Dé hAoine",
+              "dyay HAY-nyuh",
+              "an Aoine",
+              "Friday"
+            ],
+            [
+              "Dé Sathairn",
+              "dyay SAH-harn",
+              "an Satharn",
+              "Saturday"
+            ],
+            [
+              "Dé Domhnaigh",
+              "dyay DOH-nee",
+              "an Domhnach",
+              "Sunday"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "inniu",
+              "ih-NYOO",
+              "today"
+            ],
+            [
+              "inné",
+              "ih-NYAY",
+              "yesterday"
+            ],
+            [
+              "amárach",
+              "uh-MAW-rakh",
+              "tomorrow"
+            ],
+            [
+              "arú inné",
+              "uh-ROO ih-NYAY",
+              "the day before yesterday"
+            ],
+            [
+              "arú amárach",
+              "uh-ROO uh-MAW-rakh",
+              "the day after tomorrow"
+            ],
+            [
+              "anocht",
+              "uh-NOKHT",
+              "tonight"
+            ],
+            [
+              "aréir",
+              "uh-RAYR",
+              "last night"
+            ],
+            [
+              "an tseachtain seo caite",
+              "an TYAKH-tin shuh KAH-tyuh",
+              "last week"
+            ],
+            [
+              "an tseachtain seo chugainn",
+              "an TYAKH-tin shuh KHOO-gin",
+              "next week"
+            ],
+            [
+              "deireadh seachtaine",
+              "DYEH-ruh SHAKH-tih-nyuh",
+              "weekend"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Months and seasons",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "Month",
+            "Gaeilge",
+            "Say it",
+            "Month"
+          ],
+          "rows": [
+            [
+              "Eanáir",
+              "AH-nawr",
+              "January",
+              "Iúil",
+              "OO-il",
+              "July"
+            ],
+            [
+              "Feabhra",
+              "FYOW-ruh",
+              "February",
+              "Lúnasa",
+              "LOO-nuh-suh",
+              "August"
+            ],
+            [
+              "Márta",
+              "MAWR-tuh",
+              "March",
+              "Meán Fómhair",
+              "myawn FOH-war",
+              "September"
+            ],
+            [
+              "Aibreán",
+              "AH-bryawn",
+              "April",
+              "Deireadh Fómhair",
+              "DYEH-ruh FOH-war",
+              "October"
+            ],
+            [
+              "Bealtaine",
+              "BYAL-tih-nyuh",
+              "May",
+              "Samhain",
+              "SOW-in",
+              "November"
+            ],
+            [
+              "Meitheamh",
+              "MEH-huh",
+              "June",
+              "Nollaig",
+              "NUH-lig",
+              "December"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "To say \"in (the month of) …\" use *i mí*: *i mí Eanáir*, *i mí Lúnasa*, *i mí na Nollag* (December takes the possessive form because *an Nollaig* also means \"Christmas\")."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "English",
+            "Months"
+          ],
+          "rows": [
+            [
+              "earrach",
+              "AH-rakh",
+              "spring",
+              "Feabhra – Aibreán"
+            ],
+            [
+              "samhradh",
+              "SOW-ruh",
+              "summer",
+              "Bealtaine – Iúil"
+            ],
+            [
+              "fómhar",
+              "FOH-war",
+              "autumn, fall",
+              "Lúnasa – Deireadh Fómhair"
+            ],
+            [
+              "geimhreadh",
+              "GYIV-ruh",
+              "winter",
+              "Samhain – Eanáir"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Four month names with a history of their own",
+          "items": [
+            "*Bealtaine* (May) is the name of a mid-spring fire festival older than Christianity in Ireland.",
+            "*Lúnasa* (August) comes from *Lugh*, a god in Irish folklore, and his harvest festival *Lughnasadh*.",
+            "*Samhain* (November) was the start of the year in the old calendar — and the origin of **Halloween**, still called *Oíche Shamhna* in Ireland today.",
+            "*Meán Fómhair* and *Deireadh Fómhair* literally mean \"middle of autumn\" and \"end of autumn\", so the two month names also tell you when autumn happens."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "cén t-am é?",
+      "baca": "kyayn TAM AY",
+      "en": "what time is it?"
+    },
+    {
+      "ga": "a chlog",
+      "baca": "uh KHLOG",
+      "en": "o'clock"
+    },
+    {
+      "ga": "leathuair",
+      "baca": "LYAH-huh-ir",
+      "en": "half an hour"
+    },
+    {
+      "ga": "ceathrú",
+      "baca": "KYAH-roo",
+      "en": "quarter"
+    },
+    {
+      "ga": "tar éis",
+      "baca": "tar ESH",
+      "en": "after, past"
+    },
+    {
+      "ga": "chun",
+      "baca": "KHUN",
+      "en": "to (before the hour)"
+    },
+    {
+      "ga": "meán lae",
+      "baca": "myawn LAY",
+      "en": "noon"
+    },
+    {
+      "ga": "meán oíche",
+      "baca": "myawn EE-khuh",
+      "en": "midnight"
+    },
+    {
+      "ga": "déanach",
+      "baca": "DYAY-nakh",
+      "en": "late"
+    },
+    {
+      "ga": "in am",
+      "baca": "in AM",
+      "en": "on time"
+    },
+    {
+      "ga": "uair an chloig",
+      "baca": "OO-ir an KHLIG",
+      "en": "an hour (long)"
+    },
+    {
+      "ga": "coinne",
+      "baca": "KIH-nyuh",
+      "en": "appointment"
+    },
+    {
+      "ga": "Dé Luain",
+      "baca": "dyay LOO-in",
+      "en": "Monday"
+    },
+    {
+      "ga": "Dé Máirt",
+      "baca": "dyay MAWRTCH",
+      "en": "Tuesday"
+    },
+    {
+      "ga": "Dé Céadaoin",
+      "baca": "dyay KYAY-dayn",
+      "en": "Wednesday"
+    },
+    {
+      "ga": "Déardaoin",
+      "baca": "dyayr-DAYN",
+      "en": "Thursday"
+    },
+    {
+      "ga": "Dé hAoine",
+      "baca": "dyay HAY-nyuh",
+      "en": "Friday"
+    },
+    {
+      "ga": "Dé Sathairn",
+      "baca": "dyay SAH-harn",
+      "en": "Saturday"
+    },
+    {
+      "ga": "Dé Domhnaigh",
+      "baca": "dyay DOH-nee",
+      "en": "Sunday"
+    },
+    {
+      "ga": "inné",
+      "baca": "ih-NYAY",
+      "en": "yesterday"
+    },
+    {
+      "ga": "amárach",
+      "baca": "uh-MAW-rakh",
+      "en": "tomorrow"
+    },
+    {
+      "ga": "anocht",
+      "baca": "uh-NOKHT",
+      "en": "tonight"
+    },
+    {
+      "ga": "aréir",
+      "baca": "uh-RAYR",
+      "en": "last night"
+    },
+    {
+      "ga": "seo caite",
+      "baca": "shuh KAH-tyuh",
+      "en": "last (week etc.)"
+    },
+    {
+      "ga": "seo chugainn",
+      "baca": "shuh KHOO-gin",
+      "en": "next (week etc.)"
+    },
+    {
+      "ga": "mí",
+      "baca": "MEE",
+      "en": "month"
+    },
+    {
+      "ga": "Nollaig",
+      "baca": "NUH-lig",
+      "en": "December; Christmas"
+    },
+    {
+      "ga": "samhradh",
+      "baca": "SOW-ruh",
+      "en": "summer"
+    },
+    {
+      "ga": "geimhreadh",
+      "baca": "GYIV-ruh",
+      "en": "winter"
+    },
+    {
+      "ga": "earrach",
+      "baca": "AH-rakh",
+      "en": "spring"
+    },
+    {
+      "ga": "fómhar",
+      "baca": "FOH-war",
+      "en": "autumn, fall"
+    },
+    {
+      "ga": "slán go fóill",
+      "baca": "slawn guh FOHL",
+      "en": "see you soon"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the time in Irish.",
+      "items": [
+        "1:00",
+        "5:00",
+        "2:30",
+        "3:15",
+        "3:45",
+        "6:10"
+      ]
+    },
+    {
+      "prompt": "Write the day in the *Dé …* form.",
+      "items": [
+        "Monday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ]
+    },
+    {
+      "prompt": "Translate into Irish.",
+      "items": [
+        "What time is it?",
+        "The class starts at two.",
+        "I'm free on Saturday.",
+        "See you tomorrow.",
+        "There's a match at three.",
+        "I'm late!"
+      ]
+    },
+    {
+      "prompt": "Answer the questions in full sentences.",
+      "items": [
+        "Cén t-am é anois?",
+        "Cén lá é inniu?",
+        "An bhfuil tú saor Dé Sathairn?",
+        "Cén mhí í seo?",
+        "Cén t-am a éiríonn tú?",
+        "Cén séasúr is fearr leat?"
+      ]
+    }
+  ],
+  "answers": [
+    "Tá sé a haon a chlog. — Tá sé a cúig a chlog. — Tá sé leathuair tar éis a dó. — Tá sé ceathrú tar éis a trí. — Tá sé ceathrú chun a ceathair. — Tá sé deich tar éis a sé.",
+    "Dé Luain — Dé Céadaoin — Déardaoin — Dé hAoine — Dé Sathairn — Dé Domhnaigh",
+    "Cén t-am é anois? — Tosaíonn an rang ar a dó. — Tá mé saor Dé Sathairn. — Feicfidh mé thú amárach. — Tá cluiche ann ar a trí. — Tá mé déanach!",
+    "Tá sé a deich a chlog. — Dé Luain atá ann inniu. — Tá, tá mé saor Dé Sathairn. — Mí Eanáir. — Éirím ar a seacht. — Is fearr liom an samhradh."
+  ]
+}

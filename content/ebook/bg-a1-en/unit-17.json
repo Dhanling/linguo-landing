@@ -1,0 +1,546 @@
+{
+  "title": "I like the music",
+  "title_target": "Харесва ми музиката",
+  "goal": "Say what you like, dislike and miss with a pattern that flips your instincts: the subject of the sentence is not you, but **the thing you like**.",
+  "bekal": [
+    "using **харесва ми** and matching it to the number of things",
+    "telling **харесва ми** apart from **обичам**",
+    "saying you miss something with **липсва ми**",
+    "expressing feelings with **… ми е**",
+    "naming free-time activities"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Music and free time",
+      "intro": "Maria and Ani chat after a concert. Notice that in *харесва ми*, the subject is the thing — and the verb agrees with that thing, not with the person.",
+      "lines": [
+        {
+          "speaker": "Мария:",
+          "text": "[Харесва|Ha-RES-va] [ли|lee] [ти|tee] [българската|BĂL-gar-ska-ta] [музика|MOO-zee-ka]?",
+          "id": "Do you like Bulgarian music?",
+          "literal": "pleases — (question) — to-you — Bulgarian-the — music?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Много|MNO-go] [ми|mee] [харесва|ha-RES-va]! [Особено|O-so-beh-no] [гайдата|GAI-da-ta].",
+          "id": "I love it! Especially the gaida.",
+          "literal": "very — to-me — pleases! especially — bagpipe-the."
+        },
+        {
+          "speaker": "Мария:",
+          "text": "[А|A] [народните|na-ROD-nee-teh] [песни|PES-nee]?",
+          "id": "And the folk songs?",
+          "literal": "and — folk-the — songs?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Обичам|O-bee-cham] [ги|gee]. [Но|No] [не|neh] [разбирам|raz-BEE-ram] [думите|DOO-mee-teh].",
+          "id": "I love them. But I don't understand the words.",
+          "literal": "I-love — them. but — not — I-understand — words-the."
+        },
+        {
+          "speaker": "Мария:",
+          "text": "[Няма|NYA-ma] [нищо|NEESH-to]. [И|Ee] [на|na] [мен|men] [ми|mee] [е|eh] [трудно|TROOD-no] [понякога|po-NYA-ko-ga].",
+          "id": "Never mind. Sometimes it's hard for me too.",
+          "literal": "nothing — at-all. also — for — me — to-me — is — hard — sometimes."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Какво|Kak-VO] [още|OSH-teh] [обичаш|o-BEE-chash] [да|da] [правиш|PRA-veesh]?",
+          "id": "What else do you like doing?",
+          "literal": "what — else — you-love — that — you-do?"
+        },
+        {
+          "speaker": "Мария:",
+          "text": "[Обичам|O-bee-cham] [да|da] [чета|cheh-TA] [и|ee] [да|da] [готвя|GOT-vya]. [А|A] [ти|tee]?",
+          "id": "I love reading and cooking. And you?",
+          "literal": "I-love — that — I-read — and — that — I-cook. and — you?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[На|Na] [мен|men] [ми|mee] [харесва|ha-RES-va] [да|da] [ходя|HO-dya] [на|na] [кино|kee-NO].",
+          "id": "I like going to the cinema.",
+          "literal": "for — me — to-me — pleases — that — I-go — to — cinema."
+        },
+        {
+          "speaker": "Мария:",
+          "text": "[Липсва|LEEP-sva] [ли|lee] [ти|tee] [Индонезия|Een-do-NEH-zee-ya]?",
+          "id": "Do you miss Indonesia?",
+          "literal": "is-missing — (question) — to-you — Indonesia?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Понякога|Po-NYA-ko-ga]. [Липсват|LEEP-svat] [ми|mee] [семейството|seh-MEY-stvo-to] [и|ee] [топлото|TOP-lo-to] [време|VREH-meh].",
+          "id": "Sometimes. I miss my family and the warm weather.",
+          "literal": "sometimes. are-missing — to-me — family-the — and — warm-the — weather."
+        }
+      ],
+      "notes": [
+        "⚠️ **Харесва ми flips the sentence around.** Literally it means \"it pleases me\". The subject is **the thing that is liked**, and you are the receiver. The direct result: **the verb agrees with the number of things, not the number of people.** *Харесва ми филмът* (one thing) but **Харесват** *ми филмите* (several things).",
+        "**English actually has a similar pattern, and it can help you.** \"I like the film\" is straightforward, but \"the film **appeals to me**\" works exactly like Bulgarian. If you get confused, first think of it as \"… appeals to me\", then build the sentence.",
+        "**Харесва ми and обичам are not the same.** *Обичам* means \"love\" or \"like deeply and lastingly\" — used for people, activities, food you always enjoy: *Обичам майка си*, *Обичам да чета*. *Харесва ми* is lighter and often about a particular impression: *Харесва ми този филм* (I like this film).",
+        "⚠️ **Харесвам without ми means something else entirely.** *Харесвам те* means \"I'm attracted to you\" in a romantic sense. If you mean \"I like you\" as a friend, the pattern is *Харесваш ми* — and even that can still sound like a confession. To be safe: talk about things and activities, not people.",
+        "**Липсва ми literally means \"it is missing to me\" and means \"I miss it\".** It flips like *харесва ми*, and the verb also agrees with the number of things: *Липсва ми морето* (one), *Липсват ми родителите ми* (several). ⚠️ Don't say *Липсвам Индонезия*; that means \"I am missing to Indonesia\".",
+        "**И на мен ми е трудно uses the long and short forms together** — the pattern you saw in Unit 11. It stresses that the same is true for the speaker. Roughly: \"for me too\".",
+        "**Гайда is the Bulgarian bagpipe**, and it sounds very different from the Scottish one — deeper and heavier. The Rhodope version, **каба гайда**, has a big bag and makes a sound that seems to come from underground.",
+        "**Народните песни — Bulgarian folk music is famous for its odd scales and rhythms.** Many songs use seven, eleven or fifteen beats per bar — patterns almost unknown in Western European music. The recordings *Le Mystère des Voix Bulgares* took it around the world in the 1980s, and one Bulgarian song even flew on the Golden Record of the Voyager spacecraft."
+      ],
+      "grammars": [
+        {
+          "title": "Харесва ми — the verb follows the thing",
+          "body": [
+            "Look at the first column: what changes is the verb, following the thing in the third column. The word for the person never changes the verb."
+          ],
+          "table": {
+            "head": [
+              "Bulgarian",
+              "Say it",
+              "Literally",
+              "English"
+            ],
+            "rows": [
+              [
+                "Харесва ми филмът.",
+                "ha-RES-va mee FEEL-măt",
+                "pleases to-me film-the",
+                "I like the film."
+              ],
+              [
+                "Харесват ми филмите.",
+                "ha-RES-vat mee FEEL-mee-teh",
+                "please(pl) to-me",
+                "I like the films."
+              ],
+              [
+                "Харесва ти София.",
+                "ha-RES-va tee SO-fee-ya",
+                "pleases to-you Sofia",
+                "You like Sofia."
+              ],
+              [
+                "Не му харесва.",
+                "neh moo ha-RES-va",
+                "not to-him pleases",
+                "He doesn't like it."
+              ],
+              [
+                "Хареса ми.",
+                "ha-REH-sa mee",
+                "pleased to-me (past)",
+                "I liked it."
+              ],
+              [
+                "Ще ти хареса.",
+                "shteh tee ha-REH-sa",
+                "will to-you please",
+                "You'll love it."
+              ]
+            ]
+          },
+          "after": [
+            "The person word uses the short forms you've known since Unit 6: *ми, ти, му, ѝ, ни, ви, им*. It follows the same position rule — it can never be the first word of the sentence.",
+            "Other verbs with this flipped pattern: **липсва ми** (I miss), **стига ми** (it's enough for me), **трябва ми** (I need), **става ми** (it fits me), **омръзна ми** (I'm fed up)."
+          ]
+        },
+        {
+          "title": "… ми е — feelings and states without a subject",
+          "body": [
+            "Neuter adjective + short person word + **е**. This pattern covers almost every statement about feelings and how your body feels."
+          ],
+          "table": {
+            "head": [
+              "Bulgarian",
+              "Say it",
+              "Literally",
+              "English"
+            ],
+            "rows": [
+              [
+                "Студено ми е.",
+                "stoo-DEH-no mee eh",
+                "cold to-me is",
+                "I'm cold."
+              ],
+              [
+                "Топло ми е.",
+                "TOP-lo mee eh",
+                "warm to-me is",
+                "I'm hot."
+              ],
+              [
+                "Трудно ми е.",
+                "TROOD-no mee eh",
+                "hard to-me is",
+                "It's hard for me."
+              ],
+              [
+                "Лесно ти е.",
+                "LES-no tee eh",
+                "easy to-you is",
+                "It's easy for you."
+              ],
+              [
+                "Скучно ми е.",
+                "SKOOCH-no mee eh",
+                "boring to-me is",
+                "I'm bored."
+              ],
+              [
+                "Приятно ни е.",
+                "pree-YAT-no nee eh",
+                "pleasant to-us is",
+                "We're glad."
+              ],
+              [
+                "Интересно ми е.",
+                "een-teh-RES-no mee eh",
+                "interesting to-me is",
+                "I find it interesting."
+              ],
+              [
+                "Все ми е едно.",
+                "fseh mee eh ed-NO",
+                "all to-me is one",
+                "Whatever, it's all the same to me."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Compare two sentences that are easy to mix up: **Студено е** means \"it's cold (weather)\", while **Студено ми е** means \"I'm cold\". One small word moves the whole meaning from the world to your body.",
+            "The past replaces *е* with *беше* or *бе*: *Студено ми беше.* The future: *Ще ми бъде студено.*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Free-time activities",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bulgarian",
+            "Say it",
+            "English",
+            "Bulgarian",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "чета книги",
+              "cheh-TA KNEE-gee",
+              "read books",
+              "готвя",
+              "GOT-vya",
+              "cook"
+            ],
+            [
+              "слушам музика",
+              "SLOO-sham MOO-zee-ka",
+              "listen to music",
+              "танцувам",
+              "tan-TSOO-vam",
+              "dance"
+            ],
+            [
+              "гледам филми",
+              "GLEH-dam FEEL-mee",
+              "watch films",
+              "пея",
+              "PEH-ya",
+              "sing"
+            ],
+            [
+              "ходя на кино",
+              "HO-dya na kee-NO",
+              "go to the cinema",
+              "рисувам",
+              "ree-SOO-vam",
+              "draw"
+            ],
+            [
+              "спортувам",
+              "spor-TOO-vam",
+              "do sports",
+              "снимам",
+              "SNEE-mam",
+              "take photos"
+            ],
+            [
+              "плувам",
+              "PLOO-vam",
+              "swim",
+              "пътувам",
+              "pă-TOO-vam",
+              "travel"
+            ],
+            [
+              "карам колело",
+              "KA-ram ko-leh-LO",
+              "ride a bike",
+              "играя",
+              "eeg-RA-ya",
+              "play"
+            ],
+            [
+              "ходя на планина",
+              "HO-dya na pla-nee-NA",
+              "go hiking in the mountains",
+              "почивам",
+              "po-CHEE-vam",
+              "relax"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "To build sentences, combine them with the *да* pattern from Unit 8: *Обичам да готвя.* (I love cooking.) *Не обичам да танцувам.* (I don't like dancing.) *Харесва ми да пътувам.* (I like traveling.)"
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Notice **ходя**, which appears twice. It means \"go regularly, usually go\", not \"be going right now\". For something in progress, use *отивам*. *Ходя на кино* = I usually go to the cinema; *Отивам на кино* = I'm on my way to the cinema."
+        }
+      ]
+    },
+    {
+      "title": "Хоро — the dance that will pull you in",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sooner or later you'll be at a Bulgarian party when the music changes, everyone stands up, holds hands or belts, and forms a winding chain. That's the **хоро** (*ho-RO*), and sitting it out is not really an option."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bulgarian",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "хоро",
+              "ho-RO",
+              "Bulgarian circle dance"
+            ],
+            [
+              "Хайде на хорото!",
+              "HAI-deh na ho-RO-to",
+              "Come and dance!"
+            ],
+            [
+              "Не мога да танцувам.",
+              "neh MO-ga da tan-TSOO-vam",
+              "I can't dance."
+            ],
+            [
+              "Ще те науча.",
+              "shteh teh na-OO-cha",
+              "I'll teach you."
+            ],
+            [
+              "Само гледай краката ми.",
+              "SA-mo GLEH-dai kra-KA-ta mee",
+              "Just watch my feet."
+            ],
+            [
+              "Наздраве!",
+              "naz-DRA-veh",
+              "Cheers!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The basic step is simple and repeats; what makes it tricky is the odd rhythm. All you need to do is hold the hand of the person next to you and copy their feet. Nobody notices your mistakes — everyone is busy watching the feet of their own neighbor."
+        },
+        {
+          "type": "kotak",
+          "title": "Sentences you'll need that night",
+          "items": [
+            "**Обичам българската музика.** — I love Bulgarian music. This sentence will make everyone in the room turn around.",
+            "**Как се казва тази песен?** — What's this song called? Be ready for a long list of recommendations.",
+            "**Не мога, но ще опитам!** — I can't, but I'll try! This is the right answer to an invitation to dance, and the only one that will be accepted."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bg": "харесва ми",
+      "baca": "ha-RES-va mee",
+      "en": "I like"
+    },
+    {
+      "bg": "липсва ми",
+      "baca": "LEEP-sva mee",
+      "en": "I miss"
+    },
+    {
+      "bg": "обичам",
+      "baca": "o-BEE-cham",
+      "en": "I love"
+    },
+    {
+      "bg": "музика",
+      "baca": "MOO-zee-ka",
+      "en": "music"
+    },
+    {
+      "bg": "песен / песни",
+      "baca": "PEH-sen / PES-nee",
+      "en": "song (sing. / pl.)"
+    },
+    {
+      "bg": "дума",
+      "baca": "DOO-ma",
+      "en": "word"
+    },
+    {
+      "bg": "народен",
+      "baca": "na-RO-den",
+      "en": "folk, traditional"
+    },
+    {
+      "bg": "гайда",
+      "baca": "GAI-da",
+      "en": "gaida (Bulgarian bagpipe)"
+    },
+    {
+      "bg": "хоро",
+      "baca": "ho-RO",
+      "en": "circle dance"
+    },
+    {
+      "bg": "кино",
+      "baca": "kee-NO",
+      "en": "cinema"
+    },
+    {
+      "bg": "готвя",
+      "baca": "GOT-vya",
+      "en": "I cook"
+    },
+    {
+      "bg": "слушам",
+      "baca": "SLOO-sham",
+      "en": "I listen"
+    },
+    {
+      "bg": "танцувам",
+      "baca": "tan-TSOO-vam",
+      "en": "I dance"
+    },
+    {
+      "bg": "пея",
+      "baca": "PEH-ya",
+      "en": "I sing"
+    },
+    {
+      "bg": "плувам",
+      "baca": "PLOO-vam",
+      "en": "I swim"
+    },
+    {
+      "bg": "спортувам",
+      "baca": "spor-TOO-vam",
+      "en": "I do sports"
+    },
+    {
+      "bg": "трудно",
+      "baca": "TROOD-no",
+      "en": "hard, difficult"
+    },
+    {
+      "bg": "лесно",
+      "baca": "LES-no",
+      "en": "easy"
+    },
+    {
+      "bg": "скучно",
+      "baca": "SKOOCH-no",
+      "en": "boring"
+    },
+    {
+      "bg": "интересно",
+      "baca": "een-teh-RES-no",
+      "en": "interesting"
+    },
+    {
+      "bg": "особено",
+      "baca": "O-so-beh-no",
+      "en": "especially"
+    },
+    {
+      "bg": "понякога",
+      "baca": "po-NYA-ko-ga",
+      "en": "sometimes"
+    },
+    {
+      "bg": "опитвам",
+      "baca": "o-PEET-vam",
+      "en": "I try"
+    },
+    {
+      "bg": "уча някого",
+      "baca": "OO-cha NYA-ko-go",
+      "en": "I teach (someone)"
+    },
+    {
+      "bg": "крак / крака",
+      "baca": "krak / kra-KA",
+      "en": "foot, leg (sing. / pl.)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in харесва or харесват.",
+      "items": [
+        "____ ми филмът.",
+        "____ ми песните.",
+        "____ ти ли София?",
+        "Не ми ____ тези обувки.",
+        "____ ми българската музика.",
+        "Не му ____ хорото."
+      ]
+    },
+    {
+      "prompt": "Fill in the right short person word.",
+      "items": [
+        "Харесва ____ музиката. (to me)",
+        "Липсва ____ семейството. (to you, informal)",
+        "Не ____ харесва филмът. (to him)",
+        "Трудно ____ е. (to us)",
+        "Студено ____ е. (to them)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ти / харесва / музиката / ли",
+        "ми / много / харесва",
+        "ми / семейството / липсва",
+        "е / ми / трудно / понякога",
+        "да / обичам / готвя"
+      ]
+    },
+    {
+      "prompt": "Translate into Bulgarian.",
+      "items": [
+        "I like it a lot.",
+        "I miss the sea.",
+        "I'm cold.",
+        "It's hard for me.",
+        "I love reading."
+      ]
+    }
+  ],
+  "answers": [
+    "Харесва — Харесват — Харесва — харесват — Харесва — харесва",
+    "ми — ти — му — ни — им",
+    "Харесва ли ти музиката? — Много ми харесва. — Липсва ми семейството. — Понякога ми е трудно. — Обичам да готвя.",
+    "Много ми харесва. — Липсва ми морето. — Студено ми е. — Трудно ми е. — Обичам да чета."
+  ]
+}

@@ -1,0 +1,539 @@
+{
+  "title": "Happening right now: -yap",
+  "title_target": "Hozirgi zamon davom feʼli: -yap",
+  "goal": "Tell \"I read\" from \"I'm reading\", use the *-yap* form on the phone and in quick conversation, and recognize its written form *-moqda*.",
+  "bekal": [
+    "form *oʻqiyapman, oʻqiyapsan, oʻqiyapti…* from any verb stem",
+    "choose correctly between the habitual and the progressive form",
+    "make a phone call in Uzbek from hello to goodbye"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Alo, hozir nima qilyapsiz?",
+      "intro": "The phone rings. Nilufar is calling Budi, who is out in the street.",
+      "lines": [
+        {
+          "speaker": "Nilufar:",
+          "text": "Alo, Budi? Eshityapsizmi?",
+          "id": "Hello, Budi? Can you hear me?",
+          "literal": "hello, Budi? hear-ing-you-?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ha, eshityapman. Salom, Nilufar!",
+          "id": "Yes, I can hear you. Hi, Nilufar!",
+          "literal": "yes, hear-ing-I. hi, Nilufar!"
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Hozir nima qilyapsiz?",
+          "id": "What are you doing right now?",
+          "literal": "now what do-ing-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bekatga ketyapman. Avtobus kutyapman.",
+          "id": "I'm heading to the bus stop. I'm waiting for the bus.",
+          "literal": "stop-to leave-ing-I. bus wait-ing-I."
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Yomgʻir yogʻyaptimi?",
+          "id": "Is it raining?",
+          "literal": "rain fall-ing-?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Yoʻq, yogʻmayapti. Lekin shamol kuchli.",
+          "id": "No, it isn't raining. But the wind is strong.",
+          "literal": "no, fall-not-ing. but wind strong."
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Men choyxonada oʻtiribman. Ustozim ham keldi.",
+          "id": "I'm sitting in the teahouse. My teacher has come too.",
+          "literal": "I teahouse-in sitting-I. teacher-my also came."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ular nima qilyaptilar?",
+          "id": "What are they doing?",
+          "literal": "they what do-ing-they?"
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Choy ichyaptilar va gaplashyaptilar.",
+          "id": "They're drinking tea and chatting.",
+          "literal": "tea drink-ing-they and chat-ing-they."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Yaxshi. Yigirma daqiqadan keyin yetib boraman.",
+          "id": "OK. I'll be there in twenty minutes.",
+          "literal": "good. twenty minute-from after reach go-I."
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Kutamiz. Ehtiyot boʻling!",
+          "id": "We'll wait. Take care!",
+          "literal": "wait-ing-we. careful be!"
+        }
+      ],
+      "notes": [
+        "**-yap is the spoken form; -moqda is the written form.** They mean the same. *Ketyapman* and *ketmoqdaman* both mean \"I'm leaving\", but you hear the first in the street and read the second in the newspaper. This course uses *-yap* because that's what you'll use.",
+        "**The third person ends in -yapti, not -yapdi.** *U ketyapti* (he's leaving), *Yomgʻir yogʻyapti* (it's raining). This is the only form you need to learn separately.",
+        "**Oʻtiribman = \"I'm sitting\".** A few verbs of position — sit, stand, lie, wear — use the *-ib* form + person ending instead of *-yap*: *oʻtiribman*, *turibman*, *yotibman*. *Oʻtiryapman* is also used, but it stresses the act of sitting down, not the state of already sitting.",
+        "**Yetib bormoq = \"to arrive\".** A compound verb: *yetmoq* (to reach) + *bormoq* (to go). Uzbek chains two verbs to add a sense of direction or completion — a tool you'll start to recognize on your own over time, a bit like English phrasal verbs."
+      ],
+      "grammars": [
+        {
+          "title": "Stem + -yap + person",
+          "body": [
+            "The formula is that short. Take the stem, attach *-yap*, then the person ending you've known since unit 1."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Ending",
+              "*ket-* (leave)",
+              "*oʻqi-* (read)",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*men*",
+                "**-yapman**",
+                "*ketyapman*",
+                "*oʻqiyapman*",
+                "I'm …ing"
+              ],
+              [
+                "*sen*",
+                "**-yapsan**",
+                "*ketyapsan*",
+                "*oʻqiyapsan*",
+                "you're …ing"
+              ],
+              [
+                "*u*",
+                "**-yapti**",
+                "*ketyapti*",
+                "*oʻqiyapti*",
+                "he/she is …ing"
+              ],
+              [
+                "*biz*",
+                "**-yapmiz**",
+                "*ketyapmiz*",
+                "*oʻqiyapmiz*",
+                "we're …ing"
+              ],
+              [
+                "*siz*",
+                "**-yapsiz**",
+                "*ketyapsiz*",
+                "*oʻqiyapsiz*",
+                "you're …ing"
+              ],
+              [
+                "*ular*",
+                "**-yaptilar**",
+                "*ketyaptilar*",
+                "*oʻqiyaptilar*",
+                "they're …ing"
+              ]
+            ]
+          },
+          "after": [
+            "Unlike the habitual form, **there's no choice between -a and -y** here: *-yap* attaches straight to the stem, whatever its last letter. *bor-yapman*, *ishla-yapman*, *ich-yapman*.",
+            "**The negative inserts -ma- before -yap**: *bormayapman* (I'm not going), *yogʻmayapti* (it isn't raining). The order stays fixed: stem → *-ma-* → *-yap* → person.",
+            "Questions work as usual, with *-mi* at the end: *Eshityapsizmi?* (Can you hear me?), *Nima qilyapti?* (What is he doing?)."
+          ]
+        },
+        {
+          "title": "Habitual or progressive? One question decides",
+          "body": [
+            "English already separates \"I read\" from \"I'm reading\", so this distinction will feel familiar. Ask yourself: **is this happening right now?**"
+          ],
+          "table": {
+            "head": [
+              "Habitual form",
+              "Meaning",
+              "Progressive form",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*Men kitob oʻqiyman.*",
+                "I read books (as a habit).",
+                "*Men kitob oʻqiyapman.*",
+                "I'm reading a book."
+              ],
+              [
+                "*U Toshkentda ishlaydi.*",
+                "He works in Tashkent.",
+                "*U hozir ishlayapti.*",
+                "He's working right now."
+              ],
+              [
+                "*Yomgʻir yogʻadi.*",
+                "It often rains here.",
+                "*Yomgʻir yogʻyapti.*",
+                "It's raining."
+              ],
+              [
+                "*Ertaga boraman.*",
+                "I'm going tomorrow.",
+                "—",
+                "(plans don't use -yap)"
+              ]
+            ]
+          },
+          "after": [
+            "Look at the last row: **future plans use the habitual form**, not the progressive. *Ertaga boraman* = \"I'm going tomorrow\". Unlike English \"I'm going\", the *-yap* form is only for things actually in progress as you speak.",
+            "Time words that usually go with *-yap*: *hozir* (now), *ayni paytda* (at the moment), *hozirda*. Those that go with the habitual: *har kuni*, *odatda* (usually), *har doim*.",
+            "When in doubt, choose the habitual form. It's broader and rarely sounds wrong; *-yap* used in the wrong place sounds odd straight away."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Making a phone call from start to finish",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The phone is the scariest place for beginners because there's no face to read. These ten phrases cover almost all of it."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**Alo!**",
+              "å-LÅ",
+              "Hello!"
+            ],
+            [
+              "**Kim gapiryapti?**",
+              "kim gå-pir-YÅP-ti",
+              "Who's speaking?"
+            ],
+            [
+              "**Men Budiman.**",
+              "men BU-di-mån",
+              "It's Budi."
+            ],
+            [
+              "**Eshityapsizmi?**",
+              "e-shit-YÅP-si-zmi",
+              "Can you hear me?"
+            ],
+            [
+              "**Yaxshi eshitilmayapti.**",
+              "yåkh-SHI e-shi-til-må-YÅP-ti",
+              "I can't hear you well."
+            ],
+            [
+              "**Bir daqiqa kuting.**",
+              "bir då-qi-QÅ ku-TING",
+              "Wait a minute."
+            ],
+            [
+              "**Band ekansiz, keyin qilaman.**",
+              "bånd e-KAN-siz",
+              "You're busy, I'll call back later."
+            ],
+            [
+              "**Qoʻngʻiroq qiling.**",
+              "qon-ghi-RÅQ qi-LING",
+              "Call me."
+            ],
+            [
+              "**Xabar yuboraman.**",
+              "khå-BAR yu-bå-rå-MAN",
+              "I'll send a message."
+            ],
+            [
+              "**Ehtiyot boʻling!**",
+              "eh-ti-YÅT bo-LING",
+              "Take care!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Qoʻngʻiroq* literally means \"bell\", and *qoʻngʻiroq qilmoq* means \"to ring the bell\" — the Uzbek way of saying \"to call\" (compare English \"give me a ring\"). The short form *telefon qilmoq* is also common."
+        }
+      ]
+    },
+    {
+      "title": "Weather: a topic that's always safe",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Uzbekistan has a continental desert climate: summers can hit 45 °C, winters can drop below zero. So weather isn't empty small talk there — it really shapes people's day."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "Meaning",
+            "Oʻzbekcha",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**havo**",
+              "hå-VÅ",
+              "weather, air",
+              "**yomgʻir**",
+              "yåm-GHIR",
+              "rain"
+            ],
+            [
+              "**issiq**",
+              "is-SIQ",
+              "hot",
+              "**qor**",
+              "qår",
+              "snow"
+            ],
+            [
+              "**sovuq**",
+              "så-VUQ",
+              "cold",
+              "**shamol**",
+              "shå-MÅL",
+              "wind"
+            ],
+            [
+              "**iliq**",
+              "i-LIQ",
+              "warm",
+              "**quyosh**",
+              "qu-YÅSH",
+              "sun"
+            ],
+            [
+              "**bulutli**",
+              "bu-lut-LI",
+              "cloudy",
+              "**ochiq**",
+              "å-CHIQ",
+              "clear, open"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The most common question: *Bugun havo qanday?* (What's the weather like today?) — answered with *Havo issiq*, *Havo sovuq*, *Yomgʻir yogʻyapti*, *Qor yogʻyapti*. Notice that rain and snow use the same verb, *yogʻmoq* (to fall from the sky)."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Havo* means **air and weather** at once — from the Arabic *hawāʾ* (air). *Issiq* (hot) and *sovuq* (cold), on the other hand, are native Turkic words: Turkish has *sıcak* and *soğuk*."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uz": "hozir",
+      "baca": "hå-ZIR",
+      "en": "now"
+    },
+    {
+      "uz": "eshitmoq",
+      "baca": "e-shit-MÅQ",
+      "en": "to hear"
+    },
+    {
+      "uz": "gaplashmoq",
+      "baca": "gåp-låsh-MÅQ",
+      "en": "to chat"
+    },
+    {
+      "uz": "qoʻngʻiroq qilmoq",
+      "baca": "qon-ghi-RÅQ qil-MÅQ",
+      "en": "to phone"
+    },
+    {
+      "uz": "xabar",
+      "baca": "khå-BAR",
+      "en": "news, message"
+    },
+    {
+      "uz": "yubormoq",
+      "baca": "yu-bår-MÅQ",
+      "en": "to send"
+    },
+    {
+      "uz": "yetib bormoq",
+      "baca": "ye-TIB bår-MÅQ",
+      "en": "to arrive, to reach"
+    },
+    {
+      "uz": "ehtiyot",
+      "baca": "eh-ti-YÅT",
+      "en": "careful, cautious"
+    },
+    {
+      "uz": "havo",
+      "baca": "hå-VÅ",
+      "en": "weather, air"
+    },
+    {
+      "uz": "yomgʻir",
+      "baca": "yåm-GHIR",
+      "en": "rain"
+    },
+    {
+      "uz": "qor",
+      "baca": "qår",
+      "en": "snow"
+    },
+    {
+      "uz": "shamol",
+      "baca": "shå-MÅL",
+      "en": "wind"
+    },
+    {
+      "uz": "quyosh",
+      "baca": "qu-YÅSH",
+      "en": "sun"
+    },
+    {
+      "uz": "issiq",
+      "baca": "is-SIQ",
+      "en": "hot"
+    },
+    {
+      "uz": "sovuq",
+      "baca": "så-VUQ",
+      "en": "cold"
+    },
+    {
+      "uz": "iliq",
+      "baca": "i-LIQ",
+      "en": "warm"
+    },
+    {
+      "uz": "bulutli",
+      "baca": "bu-lut-LI",
+      "en": "cloudy"
+    },
+    {
+      "uz": "yogʻmoq",
+      "baca": "yågh-MÅQ",
+      "en": "to fall (rain/snow)"
+    },
+    {
+      "uz": "kuchli",
+      "baca": "kuch-LI",
+      "en": "strong"
+    },
+    {
+      "uz": "turmoq",
+      "baca": "tur-MÅQ",
+      "en": "to stand; to get up"
+    },
+    {
+      "uz": "odatda",
+      "baca": "å-dåt-DÅ",
+      "en": "usually"
+    },
+    {
+      "uz": "ovqatlanmoq",
+      "baca": "åv-qåt-lån-MÅQ",
+      "en": "to eat (have a meal)"
+    },
+    {
+      "uz": "tayyorlamoq",
+      "baca": "tåy-yår-lå-MÅQ",
+      "en": "to prepare"
+    },
+    {
+      "uz": "alo",
+      "baca": "å-LÅ",
+      "en": "hello (on the phone)"
+    },
+    {
+      "uz": "ayni paytda",
+      "baca": "åy-NI påyt-DÅ",
+      "en": "at the moment"
+    },
+    {
+      "uz": "ekan",
+      "baca": "e-KAN",
+      "en": "it turns out"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Uzbek with the -yap form.",
+      "items": [
+        "I'm reading a book.",
+        "She's working.",
+        "It's raining.",
+        "They're drinking tea.",
+        "What are you doing?",
+        "I'm not eating."
+      ]
+    },
+    {
+      "prompt": "Change into the progressive (-yap) form for the person given.",
+      "items": [
+        "bormoq + men → ____",
+        "ishlamoq + u → ____",
+        "kutmoq + biz → ____",
+        "oʻqimoq + siz → ____",
+        "gaplashmoq + ular → ____",
+        "ichmoq + sen → ____"
+      ]
+    },
+    {
+      "prompt": "Choose the right form: habitual or progressive. Write the full sentence.",
+      "items": [
+        "Har kuni men kitob (oʻqiyman or oʻqiyapman).",
+        "Hozir u choy (ichadi or ichyapti).",
+        "Ertaga biz bozorga (boramiz or boryapmiz).",
+        "Odatda yomgʻir kam (yogʻadi or yogʻyapti).",
+        "Kuting, men (kelaman or kelayapman)."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "qilyapsiz / nima / hozir / ?",
+        "ketyapman / bekatga / men",
+        "yogʻyapti / yomgʻir",
+        "ichyaptilar / choy / ular",
+        "boʻling / ehtiyot"
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 8. Translate into Uzbek without looking back at the unit.",
+      "items": [
+        "I'm going to the airport.",
+        "She comes from Jakarta.",
+        "I go by bus.",
+        "Turn left.",
+        "Thank you for your help."
+      ]
+    }
+  ],
+  "answers": [
+    "Men kitob oʻqiyapman. — U ishlayapti. — Yomgʻir yogʻyapti. — Ular choy ichyaptilar. — Siz nima qilyapsiz? — Men ovqatlanmayapman.",
+    "boryapman — ishlayapti — kutyapmiz — oʻqiyapsiz — gaplashyaptilar — ichyapsan",
+    "Har kuni men kitob oʻqiyman. — Hozir u choy ichyapti. — Ertaga biz bozorga boramiz. — Odatda yomgʻir kam yogʻadi. — Kuting, men kelayapman.",
+    "Hozir nima qilyapsiz? — Men bekatga ketyapman. — Yomgʻir yogʻyapti. — Ular choy ichyaptilar. — Ehtiyot boʻling.",
+    "Men aeroportga boraman. — U Jakartadan keladi. — Men avtobus bilan boraman. — Chapga buriling. — Yordamingiz uchun rahmat."
+  ]
+}

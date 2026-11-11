@@ -1,0 +1,520 @@
+{
+  "title": "Comparing, and the fourth case",
+  "title_target": "Kaldara en í gær",
+  "goal": "Compare two things and name the \"most\" — while meeting the last case, eignarfall, which handles possession and a few important prepositions.",
+  "bekal": [
+    "form *kaldari* and *kaldastur* from *kaldur*",
+    "use *en* for \"than\" and recognize five irregular comparisons",
+    "form eignarfall for possession and after *til*, *vegna*, *án*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Veðrið og nafnið",
+      "intro": "Early January, and a north wind is blowing. A chat about the weather leads to a thousand-year-old lie.",
+      "lines": [
+        {
+          "speaker": "Búdí:",
+          "text": "Í dag er kaldara en í gær.",
+          "id": "Today is colder than yesterday.",
+          "literal": "in day is colder than in yesterday."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Já, og á morgun verður enn kaldara.",
+          "id": "Yes, and tomorrow will be even colder.",
+          "literal": "yes, and on morrow becomes still colder."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Er veturinn alltaf svona langur?",
+          "id": "Is the winter always this long?",
+          "literal": "is winter-the always so long?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Hann er lengri en á Spáni, en styttri en í Síberíu.",
+          "id": "It's longer than in Spain, but shorter than in Siberia.",
+          "literal": "it is longer than in Spain, but shorter than in Siberia."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Það er lítil huggun! Hver er kaldasti mánuðurinn?",
+          "id": "That's small comfort! Which month is the coldest?",
+          "literal": "that is small comfort! which is coldest month-the?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Janúar. En veðrið í Reykjavík er mildara en margir halda.",
+          "id": "January. But the weather in Reykjavík is milder than many people think.",
+          "literal": "January. but weather-the in Reykjavík is milder than many think."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Hvers vegna?",
+          "id": "Why?",
+          "literal": "of-what way?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Vegna Golfstraumsins. Hitastig sjávarins bjargar okkur.",
+          "id": "Because of the Gulf Stream. The sea temperature saves us.",
+          "literal": "because-of Gulf-Stream-the. temperature sea-the's saves us."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Svo nafn landsins er villandi?",
+          "id": "So the country's name is misleading?",
+          "literal": "so name country-the's is misleading?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Algjörlega. Grænland er ísi lagt, og Ísland er grænt.",
+          "id": "Completely. Greenland is covered in ice, and Iceland is green.",
+          "literal": "completely. Green-land is ice-laid, and Ice-land is green."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Hver gaf landinu nafnið?",
+          "id": "Who gave the country that name?",
+          "literal": "who gave country-the name-the?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Víkingur sem var í vondu skapi. Sagan er lengri en það, auðvitað.",
+          "id": "A Viking in a bad mood. The story is longer than that, of course.",
+          "literal": "Viking who was in bad mood. story-the is longer than that, of-course."
+        }
+      ],
+      "notes": [
+        "**En means two things: \"but\" and \"than\".** *Hann er lengri **en** á Spáni* (than), but *lengri **en** styttri* (but). What decides is whether a comparative comes before it. English uses two different words, so this takes a little getting used to.",
+        "**Comparatives are formed with -ari or -ri**: *kaldur → kaldari*, *langur → lengri*, *mildur → mildari*. The *most* form takes **-astur** or **-stur**: *kaldastur*, *lengstur* — like English *-er* and *-est*.",
+        "**Hvers vegna is literally \"of what way\".** *Hvers* is the eignarfall form of *hver*. The phrase is frozen — used as it is and freely swapped with *af hverju*, which you've known since unit 10.",
+        "**Vegna and til are always followed by eignarfall (genitive)**: *vegna Golfstraums**ins***, *til Reykjavík**ur***, *nafn lands**ins***. This is the fourth and last case — the least used, which is why it comes last.",
+        "**Nafn landsins — how Icelandic expresses possession.** The pattern: the thing first, then the owner in eignarfall. *Bíll Önnu* (Anna's car), *hús Jóns* (Jón's house). The order is like English \"the car of Anna\" — but the ending works like English *'s*.",
+        "**The two countries' names really are swapped, and on purpose.** According to *Landnámabók*, Eiríkur rauði (Erik the Red) named the ice island \"Green Land\" so people would want to move there with him. Iceland, meanwhile, was named \"Ice Land\" by one of its first settlers after seeing pack ice in a fjord — and according to the saga, he was in a very bad mood."
+      ],
+      "grammars": [
+        {
+          "title": "-er and -est",
+          "body": [
+            "Two endings to learn, and five irregular words — which happen to be the ones you'll use most."
+          ],
+          "table": {
+            "head": [
+              "Base",
+              "More …",
+              "Most …",
+              "English"
+            ],
+            "rows": [
+              [
+                "*kaldur*",
+                "*kaldari*",
+                "*kaldastur*",
+                "cold"
+              ],
+              [
+                "*fallegur*",
+                "*fallegri*",
+                "*fallegastur*",
+                "beautiful"
+              ],
+              [
+                "*langur*",
+                "*lengri*",
+                "*lengstur*",
+                "long"
+              ],
+              [
+                "**góður**",
+                "**betri**",
+                "**bestur**",
+                "good"
+              ],
+              [
+                "**vondur**",
+                "**verri**",
+                "**verstur**",
+                "bad"
+              ],
+              [
+                "**mikill**",
+                "**meiri**",
+                "**mestur**",
+                "much, big"
+              ],
+              [
+                "**lítill**",
+                "**minni**",
+                "**minnstur**",
+                "little, small"
+              ],
+              [
+                "**gamall**",
+                "**eldri**",
+                "**elstur**",
+                "old"
+              ]
+            ]
+          },
+          "after": [
+            "The five words in bold are irregular — just as irregular as English *good–better–best*, because they come from the same roots. If you know the English pattern, you practically know this one already.",
+            "The *most* form usually takes an article: *kaldast**i** mánuðurinn* (the coldest month), *best**a** bókin* (the best book). The endings **-i** and **-a** are the marker.",
+            "To say \"as … as\": *jafn … og* — *Ísland er jafn stórt og Jáva.* For \"not as … as\": *ekki eins … og*."
+          ]
+        },
+        {
+          "title": "Eignarfall — the fourth case",
+          "body": [
+            "The rarest case, but you can't avoid it: it handles possession and three very common prepositions."
+          ],
+          "table": {
+            "head": [
+              "Gender",
+              "Nefnifall",
+              "Eignarfall",
+              "With article",
+              "Example"
+            ],
+            "rows": [
+              [
+                "kk",
+                "*hestur*",
+                "*hests*",
+                "*hestsins*",
+                "*nafn hestsins*"
+              ],
+              [
+                "kk",
+                "*Jón*",
+                "*Jóns*",
+                "—",
+                "*hús Jóns*"
+              ],
+              [
+                "kvk",
+                "*kirkja*",
+                "*kirkju*",
+                "*kirkjunnar*",
+                "*turn kirkjunnar*"
+              ],
+              [
+                "kvk",
+                "*Anna*",
+                "*Önnu*",
+                "—",
+                "*bíll Önnu*"
+              ],
+              [
+                "hk",
+                "*land*",
+                "*lands*",
+                "*landsins*",
+                "*nafn landsins*"
+              ],
+              [
+                "hk",
+                "*barn*",
+                "*barns*",
+                "*barnsins*",
+                "*nafn barnsins*"
+              ]
+            ]
+          },
+          "after": [
+            "The marker is easiest to spot in karlkyn and hvorugkyn: the ending **-s**, and **-sins** with the article. Kvenkyn takes **-u** or **-ar**, with the article **-nnar**.",
+            "Three prepositions that require it: **til** (to, until), **vegna** (because of), **án** (without). *Til Reykjavíkur*, *vegna veðursins*, *án hjálpar*.",
+            "Place names follow too: *til Ísland**s***, *til Akureyr**ar***, *til Reykjavík**ur***. If you've ever seen a road sign in Iceland, you've seen eignarfall dozens of times without knowing its name."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Weather — and why it's always the topic",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Íslenska",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Hvernig er veðrið?",
+              "KVEHR-nigh ehr VEHDH-ridh",
+              "What's the weather like?"
+            ],
+            [
+              "Það er kalt / hlýtt.",
+              "thahdh ehr kahlt / hlihht",
+              "It's cold / warm."
+            ],
+            [
+              "Það rignir.",
+              "thahdh RIG-nihr",
+              "It's raining."
+            ],
+            [
+              "Það snjóar.",
+              "thahdh SNYOH-ahr",
+              "It's snowing."
+            ],
+            [
+              "Það er hvasst.",
+              "thahdh ehr kvahst",
+              "It's windy."
+            ],
+            [
+              "Það er sól.",
+              "thahdh ehr sohl",
+              "It's sunny."
+            ],
+            [
+              "Það er þoka.",
+              "thahdh ehr THAW-kah",
+              "It's foggy."
+            ],
+            [
+              "Veðrið er verra en í gær.",
+              "VEHDH-ridh ehr VEH-rah ehn ee gyair",
+              "The weather is worse than yesterday."
+            ],
+            [
+              "Það lægir bráðum.",
+              "thahdh LAI-yihr BROW-düm",
+              "The wind will die down soon."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Wind, not cold",
+          "items": [
+            "Reykjavík's average January temperature is around **zero degrees** — warmer than Oslo, Helsinki, or Moscow, and much warmer than people expect. What makes Iceland feel cold isn't the number but **the wind**.",
+            "That's why Icelanders rarely ask how many degrees it is; they ask *er hvasst?* — is it windy? And they complain about it every day, all year round, without ever getting tired of it."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Possession in everyday sentences",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Íslenska",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*bíll Önnu*",
+              "beetl Ö-nü",
+              "Anna's car"
+            ],
+            [
+              "*hús Jóns*",
+              "hoos yohns",
+              "Jón's house"
+            ],
+            [
+              "*nafn landsins*",
+              "nahbn LAHNDS-ins",
+              "the country's name"
+            ],
+            [
+              "*höfuðborg Íslands*",
+              "HÖ-vüdh-bawrgh EES-lahnds",
+              "the capital of Iceland"
+            ],
+            [
+              "*vegna veðursins*",
+              "VEHG-nah VEH-dhür-sins",
+              "because of the weather"
+            ],
+            [
+              "*án hjálpar*",
+              "own HYOWL-pahr",
+              "without help"
+            ],
+            [
+              "*til Reykjavíkur*",
+              "til RAY-kyah-vee-kür",
+              "to Reykjavík"
+            ],
+            [
+              "*til hamingju!*",
+              "til HAH-min-gyü",
+              "congratulations!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Til hamingju* is literally \"to happiness\" — and *hamingju* is the eignarfall of *hamingja*. The congratulations you've heard since the start turn out to be one more grammar lesson you'd quietly mastered already."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "is": "kaldari",
+      "baca": "KAHL-dah-rih",
+      "en": "colder"
+    },
+    {
+      "is": "lengri",
+      "baca": "LAYN-grih",
+      "en": "longer"
+    },
+    {
+      "is": "styttri",
+      "baca": "STIHH-trih",
+      "en": "shorter"
+    },
+    {
+      "is": "betri / bestur",
+      "baca": "BEH-trih / BEHS-tür",
+      "en": "better / best"
+    },
+    {
+      "is": "verri / verstur",
+      "baca": "VEH-rih / VEHRS-tür",
+      "en": "worse / worst"
+    },
+    {
+      "is": "eldri / elstur",
+      "baca": "EHL-drih / EHLS-tür",
+      "en": "older / oldest"
+    },
+    {
+      "is": "huggun",
+      "baca": "HÜ-ghün",
+      "en": "comfort, consolation"
+    },
+    {
+      "is": "mildur",
+      "baca": "MIL-dür",
+      "en": "mild"
+    },
+    {
+      "is": "halda",
+      "baca": "HAHL-dah",
+      "en": "think; hold"
+    },
+    {
+      "is": "hvers vegna",
+      "baca": "kvehrs VEHG-nah",
+      "en": "why"
+    },
+    {
+      "is": "vegna",
+      "baca": "VEHG-nah",
+      "en": "because of"
+    },
+    {
+      "is": "hitastig",
+      "baca": "HIH-tah-stigh",
+      "en": "temperature"
+    },
+    {
+      "is": "sjór",
+      "baca": "syohr",
+      "en": "sea"
+    },
+    {
+      "is": "bjarga",
+      "baca": "BYAHR-ghah",
+      "en": "save, rescue"
+    },
+    {
+      "is": "land",
+      "baca": "lahnd",
+      "en": "country, land"
+    },
+    {
+      "is": "villandi",
+      "baca": "VIT-lahn-dih",
+      "en": "misleading"
+    },
+    {
+      "is": "algjörlega",
+      "baca": "AHL-györ-leh-ghah",
+      "en": "completely"
+    },
+    {
+      "is": "ís",
+      "baca": "ees",
+      "en": "ice"
+    },
+    {
+      "is": "grænn",
+      "baca": "graidn",
+      "en": "green"
+    },
+    {
+      "is": "skap",
+      "baca": "skahp",
+      "en": "mood"
+    },
+    {
+      "is": "án",
+      "baca": "own",
+      "en": "without"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the *-er* and *-est* forms of these adjectives.",
+      "items": [
+        "kaldur",
+        "fallegur",
+        "góður",
+        "vondur",
+        "gamall",
+        "lítill"
+      ]
+    },
+    {
+      "prompt": "Complete the comparisons.",
+      "items": [
+        "Í dag er ____ (kaldur) en í gær.",
+        "Þetta er ____ (góður) bókin sem ég hef lesið.",
+        "Veturinn er ____ (langur) en á Spáni.",
+        "Hún er ____ (gamall) en ég.",
+        "Veðrið er ____ (vondur) en í gær."
+      ]
+    },
+    {
+      "prompt": "Change into eignarfall.",
+      "items": [
+        "Anna → bíll ____",
+        "Jón → hús ____",
+        "landið → nafn ____",
+        "kirkjan → turn ____",
+        "Reykjavík → til ____",
+        "Ísland → til ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Icelandic.",
+      "items": [
+        "Today is colder than yesterday.",
+        "Which month is the coldest?",
+        "The weather is worse than yesterday.",
+        "Because of the weather, we're not going.",
+        "The country's name is misleading.",
+        "We're going to Reykjavík."
+      ]
+    }
+  ],
+  "answers": [
+    "kaldari, kaldastur — fallegri, fallegastur — betri, bestur — verri, verstur — eldri, elstur — minni, minnstur",
+    "kaldara — besta — lengri — eldri — verra",
+    "Önnu — Jóns — landsins — kirkjunnar — Reykjavíkur — Íslands",
+    "Í dag er kaldara en í gær. — Hver er kaldasti mánuðurinn? — Veðrið er verra en í gær. — Vegna veðursins förum við ekki. — Nafn landsins er villandi. — Við förum til Reykjavíkur."
+  ]
+}

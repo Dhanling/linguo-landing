@@ -1,0 +1,613 @@
+{
+  "title": "Even words have a gender",
+  "title_target": "Quis es et qualis es?",
+  "goal": "Recognize the three genders of Latin nouns, use the two most common groups of endings, and match adjectives to their nouns.",
+  "bekal": [
+    "guess a noun's gender from its ending",
+    "pair *bonus*, *bona* or *bonum* with the right noun",
+    "describe people and things with the most common adjectives"
+  ],
+  "dialogs": [
+    {
+      "title": "Colloquium — Schola et hortus",
+      "intro": "Marcus shows Lydia around. Everything they point at stays in the subject form, so you can focus on the endings.",
+      "lines": [
+        {
+          "speaker": "Marcus:",
+          "text": "Ecce schola! Parva est, sed pulchra.",
+          "id": "Here's the school! It's small, but nice.",
+          "literal": "look school! small-fem is-it, but beautiful-fem."
+        },
+        {
+          "speaker": "Lydia:",
+          "text": "Ita, pulchra est. Et hortus magnus est.",
+          "id": "Yes, it's nice. And the garden is big.",
+          "literal": "yes, beautiful-fem is-it. and garden big-masc is-it."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Et ecce tabula. Tabula nigra et lata est.",
+          "id": "And look, the board. The board is black and wide.",
+          "literal": "and look board. board black-fem and wide-fem is-it."
+        },
+        {
+          "speaker": "Lydia:",
+          "text": "Quid est ibi? Liberne est?",
+          "id": "What's over there? A book?",
+          "literal": "what is-it there? book-Q is-it?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Ita, liber est. Liber longus est, sed bonus.",
+          "id": "Yes, a book. The book is long, but good.",
+          "literal": "yes, book is-it. book long-masc is-it, but good-masc."
+        },
+        {
+          "speaker": "Lydia:",
+          "text": "Et ibi? Templumne est?",
+          "id": "And over there? Is that a temple?",
+          "literal": "and there? temple-Q is-it?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Ita. Templum antiquum et altum est.",
+          "id": "Yes. The temple is old and tall.",
+          "literal": "yes. temple old-neut and tall-neut is-it."
+        },
+        {
+          "speaker": "Lydia:",
+          "text": "Quis est puella parva?",
+          "id": "Who's the little girl?",
+          "literal": "who is-she girl small-fem?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Iulia est, amica mea. Puella laeta et benigna est.",
+          "id": "That's Iulia, my friend. She's a cheerful, kind girl.",
+          "literal": "Iulia is-she, friend-fem my-fem. girl happy-fem and kind-fem is-she."
+        },
+        {
+          "speaker": "Lydia:",
+          "text": "Et puer? Quis est puer?",
+          "id": "And the boy? Who's the boy?",
+          "literal": "and boy? who is-he boy?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Sextus est, amicus meus. Bonus est, sed piger.",
+          "id": "That's Sextus, my friend. He's nice, but lazy.",
+          "literal": "Sextus is-he, friend-masc my-masc. good-masc is-he, but lazy-masc."
+        },
+        {
+          "speaker": "Lydia:",
+          "text": "Schola bona est, Marce. Laeta sum!",
+          "id": "The school is good, Marcus. I'm happy!",
+          "literal": "school good-fem is-it, Marcus-call. happy-fem am-I!"
+        }
+      ],
+      "notes": [
+        "**Every Latin noun has a gender, and it has nothing to do with biology.** *Schola* (school) is feminine, *hortus* (garden) is masculine, *templum* (temple) is neuter — yet all three are objects. What decides is not the thing itself but its group of endings. Don't look for reasons; learn each word together with its ending.",
+        "**Adjectives change clothes to match their noun.** Notice one kind of word appearing with three faces: *pulchra* (for *schola*), *bonus* (for *Sextus*), *antiquum* (for *templum*). The adjective stays the same word; only its ending changes to fit what it describes. This is the single most-used rule in all of Latin.",
+        "**Adjectives usually stand after the noun.** *Puella parva*, *templum antiquum*, *hortus magnus* — the reverse of English: \"girl small\", \"temple old\". Put the adjective in front and it stands out, like stressing \"the *little* girl\".",
+        "**Liber has two lives.** *Liber* ending in *-er* means \"book\" (think *library*); *liber, libera, liberum* means \"free\" (think *liberty*). They're two different words that look alike. If in doubt, check whether it's used as a thing or as a description."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Three genders, two groups of endings",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Latin nouns fall into five groups of endings called declensions. The first two alone cover more than half the words you'll meet, and both are easy to spot from their dictionary form."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Group",
+            "Subject-form ending",
+            "Gender",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "1st declension",
+              "**-a**",
+              "almost always feminine",
+              "puella, schola, tabula, villa, aqua, fabula"
+            ],
+            [
+              "2nd declension",
+              "**-us**",
+              "almost always masculine",
+              "hortus, amicus, dominus, servus, liber*"
+            ],
+            [
+              "2nd declension",
+              "**-um**",
+              "always neuter",
+              "templum, oppidum, verbum, donum, forum"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*A few masculine 2nd-declension words don't end in *-us* but in *-er* or *-ir*: *puer* (boy), *magister* (teacher), *ager* (field), *liber* (book), *vir* (man). Everything else about them behaves exactly like *hortus*, so it's just one form to remember."
+        },
+        {
+          "type": "sub",
+          "text": "Exceptions to know from the start"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Word",
+            "Ending",
+            "But its gender is",
+            "Why"
+          ],
+          "rows": [
+            [
+              "nauta",
+              "-a",
+              "masculine",
+              "it means \"sailor\" — a man's job in the Roman world"
+            ],
+            [
+              "poeta",
+              "-a",
+              "masculine",
+              "it means \"poet\""
+            ],
+            [
+              "agricola",
+              "-a",
+              "masculine",
+              "it means \"farmer\""
+            ],
+            [
+              "humus",
+              "-us",
+              "feminine",
+              "it means \"ground, soil\""
+            ],
+            [
+              "pirata",
+              "-a",
+              "masculine",
+              "it means \"pirate\""
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "These words keep the 1st-declension endings, but their adjective must be masculine: *nauta bonus*, not *nauta bona*. There are only a few, and almost all are job names."
+        }
+      ]
+    },
+    {
+      "title": "Adjectives: one word, three outfits",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Latin adjectives appear in the dictionary with three forms at once: *bonus, bona, bonum*. They aren't three words but one word in three outfits: masculine, feminine and neuter. You pick the outfit that fits the noun it describes."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Noun",
+            "Its gender",
+            "Adjective used",
+            "Translation"
+          ],
+          "rows": [
+            [
+              "amicus",
+              "masculine",
+              "amicus **bonus**",
+              "a good friend"
+            ],
+            [
+              "puella",
+              "feminine",
+              "puella **bona**",
+              "a good girl"
+            ],
+            [
+              "templum",
+              "neuter",
+              "templum **bonum**",
+              "a fine temple"
+            ],
+            [
+              "hortus",
+              "masculine",
+              "hortus **magnus**",
+              "a big garden"
+            ],
+            [
+              "villa",
+              "feminine",
+              "villa **magna**",
+              "a big house"
+            ],
+            [
+              "oppidum",
+              "neuter",
+              "oppidum **magnum**",
+              "a big town"
+            ],
+            [
+              "nauta",
+              "masculine (despite -a)",
+              "nauta **bonus**",
+              "a good sailor"
+            ],
+            [
+              "puer",
+              "masculine (no -us)",
+              "puer **bonus**",
+              "a good boy"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last two rows are the real test. An adjective doesn't copy the noun's **ending**; it follows its **gender**. *Nauta* ends in *-a* but is masculine, so the adjective is *bonus*. *Puer* has no *-us* ending but is masculine, so the adjective is also *bonus*."
+        },
+        {
+          "type": "kotak",
+          "title": "Typical mistakes",
+          "items": [
+            "Matching the adjective's ending to the noun's ending. *Nauta bona* is wrong; it's *nauta bonus*. Match the **gender**, not the letters.",
+            "Forgetting that the adjective also changes when it stands alone after *est*: *Schola pulchra est*, not *Schola pulcher est*.",
+            "Looking for a word for \"a\" or \"the\". *Puella bona* already means \"a good girl\" or \"the good girl\"; nothing needs to be added.",
+            "Thinking word order decides the meaning. *Bona puella* and *puella bona* are both correct and mean the same — the first just stresses the quality."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The most useful first adjectives",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Nearly every adjective below follows the *bonus, bona, bonum* pattern, so once you know one, you can use them all. Only the masculine form is listed here. Many of them live on in English: *magnify*, *longitude*, *altitude*, *novel*, *antique*, *clarity*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Latin",
+            "Meaning",
+            "Opposite",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "magnus",
+              "big, great",
+              "parvus",
+              "small"
+            ],
+            [
+              "longus",
+              "long",
+              "—",
+              "(short: *brevis*, another group)"
+            ],
+            [
+              "latus",
+              "wide",
+              "angustus",
+              "narrow"
+            ],
+            [
+              "altus",
+              "high, deep",
+              "—",
+              "(low: *humilis*, another group)"
+            ],
+            [
+              "bonus",
+              "good",
+              "malus",
+              "bad, evil"
+            ],
+            [
+              "novus",
+              "new",
+              "antiquus",
+              "ancient, old"
+            ],
+            [
+              "pulcher",
+              "beautiful, handsome",
+              "foedus",
+              "ugly"
+            ],
+            [
+              "albus",
+              "white",
+              "niger",
+              "black"
+            ],
+            [
+              "clarus",
+              "bright, famous",
+              "obscurus",
+              "dark, unknown"
+            ],
+            [
+              "plenus",
+              "full",
+              "vacuus",
+              "empty"
+            ],
+            [
+              "laetus",
+              "happy",
+              "iratus",
+              "angry"
+            ],
+            [
+              "strenuus",
+              "hard-working",
+              "piger",
+              "lazy"
+            ],
+            [
+              "doctus",
+              "learned",
+              "indoctus",
+              "unlearned"
+            ],
+            [
+              "benignus",
+              "kind, generous",
+              "durus",
+              "hard, harsh"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at *pulcher* and *piger*: both lose their *e* when they change outfits — *pulcher, pulchra, pulchrum* and *piger, pigra, pigrum*. It's the same pattern as *liber* (book), whose other form is *libri*. Adjectives ending in *-er* behave this way, and there are only a few of them."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "la": "schola",
+      "baca": "SKOH-lah",
+      "en": "school"
+    },
+    {
+      "la": "hortus",
+      "baca": "HOHR-toos",
+      "en": "garden"
+    },
+    {
+      "la": "tabula",
+      "baca": "TAH-boo-lah",
+      "en": "board, writing tablet"
+    },
+    {
+      "la": "liber",
+      "baca": "LEE-behr",
+      "en": "book"
+    },
+    {
+      "la": "villa",
+      "baca": "WIL-lah",
+      "en": "country house, farmhouse"
+    },
+    {
+      "la": "ianua",
+      "baca": "YAH-noo-ah",
+      "en": "door"
+    },
+    {
+      "la": "fenestra",
+      "baca": "feh-NEHS-trah",
+      "en": "window"
+    },
+    {
+      "la": "templum",
+      "baca": "TEHM-ploom",
+      "en": "temple"
+    },
+    {
+      "la": "forum",
+      "baca": "FOH-room",
+      "en": "forum, town square"
+    },
+    {
+      "la": "oppidum",
+      "baca": "OHP-pee-doom",
+      "en": "town"
+    },
+    {
+      "la": "verbum",
+      "baca": "WEHR-boom",
+      "en": "word"
+    },
+    {
+      "la": "donum",
+      "baca": "DOH-noom",
+      "en": "gift"
+    },
+    {
+      "la": "puer",
+      "baca": "POO-ehr",
+      "en": "boy"
+    },
+    {
+      "la": "puella",
+      "baca": "poo-EHL-lah",
+      "en": "girl"
+    },
+    {
+      "la": "vir",
+      "baca": "WEER",
+      "en": "man"
+    },
+    {
+      "la": "femina",
+      "baca": "FEH-mee-nah",
+      "en": "woman"
+    },
+    {
+      "la": "amicus, amica",
+      "baca": "ah-MEE-koos",
+      "en": "friend (m, f)"
+    },
+    {
+      "la": "nauta",
+      "baca": "NOW-tah",
+      "en": "sailor"
+    },
+    {
+      "la": "poeta",
+      "baca": "poh-EH-tah",
+      "en": "poet"
+    },
+    {
+      "la": "agricola",
+      "baca": "ah-GREE-koh-lah",
+      "en": "farmer"
+    },
+    {
+      "la": "magnus",
+      "baca": "MAHG-noos",
+      "en": "big, great"
+    },
+    {
+      "la": "parvus",
+      "baca": "PAHR-woos",
+      "en": "small"
+    },
+    {
+      "la": "longus",
+      "baca": "LOHN-goos",
+      "en": "long"
+    },
+    {
+      "la": "latus",
+      "baca": "LAH-toos",
+      "en": "wide"
+    },
+    {
+      "la": "altus",
+      "baca": "AHL-toos",
+      "en": "high, tall, deep"
+    },
+    {
+      "la": "pulcher, pulchra",
+      "baca": "POOL-khehr",
+      "en": "beautiful, handsome"
+    },
+    {
+      "la": "niger, nigra",
+      "baca": "NEE-gehr",
+      "en": "black"
+    },
+    {
+      "la": "albus",
+      "baca": "AHL-boos",
+      "en": "white"
+    },
+    {
+      "la": "antiquus",
+      "baca": "ahn-TEE-kwoos",
+      "en": "ancient, old"
+    },
+    {
+      "la": "benignus",
+      "baca": "beh-NIG-noos",
+      "en": "kind, generous"
+    },
+    {
+      "la": "piger, pigra",
+      "baca": "PEE-gehr",
+      "en": "lazy"
+    },
+    {
+      "la": "iratus",
+      "baca": "ee-RAH-toos",
+      "en": "angry"
+    },
+    {
+      "la": "ecce",
+      "baca": "EHK-keh",
+      "en": "look! here is!"
+    },
+    {
+      "la": "ibi",
+      "baca": "EE-bee",
+      "en": "there"
+    },
+    {
+      "la": "cur?",
+      "baca": "KOOR",
+      "en": "why?"
+    },
+    {
+      "la": "semper",
+      "baca": "SEHM-pehr",
+      "en": "always"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the gender of each noun: masculine, feminine or neuter.",
+      "items": [
+        "hortus",
+        "puella",
+        "templum",
+        "nauta",
+        "verbum",
+        "puer"
+      ]
+    },
+    {
+      "prompt": "Choose the right adjective outfit (bonus, bona or bonum).",
+      "items": [
+        "amicus ____",
+        "schola ____",
+        "donum ____",
+        "poeta ____",
+        "villa ____",
+        "oppidum ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the correct form of magnus.",
+      "items": [
+        "Hortus ____ est.",
+        "Tabula ____ est.",
+        "Templum ____ est.",
+        "Vir ____ est.",
+        "Fenestra ____ est.",
+        "Forum ____ est."
+      ]
+    },
+    {
+      "prompt": "Translate into Latin. Put the adjective after the noun.",
+      "items": [
+        "a big garden",
+        "a happy girl",
+        "an old temple",
+        "a long book",
+        "a good sailor",
+        "a small town"
+      ]
+    }
+  ],
+  "answers": [
+    "masculine — feminine — neuter — masculine (despite ending in -a) — neuter — masculine",
+    "bonus — bona — bonum — bonus — bona — bonum",
+    "magnus — magna — magnum — magnus — magna — magnum",
+    "hortus magnus — puella laeta — templum antiquum — liber longus — nauta bonus — oppidum parvum"
+  ]
+}

@@ -1,0 +1,640 @@
+{
+  "title": "How much is it?",
+  "title_target": "Koľko to stojí?",
+  "goal": "Count, ask prices, and set up Slovak's most surprising number rule: from five upward, the noun changes its form.",
+  "bekal": [
+    "say the numbers 0 to 1,000 and read prices in euros",
+    "choose the right noun form after 1, after 2-4, and after 5 and up",
+    "ask prices and haggle politely at the market"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Na trhu",
+      "intro": "Saturday morning at the Miletičova market in Bratislava. Budi is shopping for fruit on his own for the first time.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Dobrý deň. Koľko stoja jablká?",
+          "id": "Good morning. How much are the apples?",
+          "literal": "good day. how-much they-stand apples?"
+        },
+        {
+          "speaker": "Predavačka:",
+          "text": "Dve eurá za kilo.",
+          "id": "Two euros a kilo.",
+          "literal": "two euros-pl for kilo."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dám si dve kilá, prosím.",
+          "id": "I'll take two kilos, please.",
+          "literal": "I-will-give self two kilos-pl, I-ask."
+        },
+        {
+          "speaker": "Predavačka:",
+          "text": "Nech sa páči. Ešte niečo?",
+          "id": "Here you are. Anything else?",
+          "literal": "let self it-please. still something?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Áno. Koľko stojí to víno?",
+          "id": "Yes. How much is that wine?",
+          "literal": "yes. how-much it-stands that wine?"
+        },
+        {
+          "speaker": "Predavačka:",
+          "text": "Sedem eur päťdesiat.",
+          "id": "Seven fifty.",
+          "literal": "seven euros-gen fifty."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "To je trochu drahé. Máte lacnejšie?",
+          "id": "That's a bit expensive. Do you have anything cheaper?",
+          "literal": "that is a-little expensive. you-have cheaper?"
+        },
+        {
+          "speaker": "Predavačka:",
+          "text": "Toto stojí päť eur. Je tiež dobré.",
+          "id": "This one is five euros. It's good too.",
+          "literal": "this it-stands five euros-gen. it-is also good."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dobre, beriem ho. Koľko to je spolu?",
+          "id": "OK, I'll take it. How much is that altogether?",
+          "literal": "good, I-take it. how-much that is together?"
+        },
+        {
+          "speaker": "Predavačka:",
+          "text": "Deväť eur. Máte drobné?",
+          "id": "Nine euros. Do you have the exact change?",
+          "literal": "nine euros-gen. you-have small-change?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bohužiaľ nie. Mám len dvadsať eur.",
+          "id": "I'm afraid not. I only have twenty euros.",
+          "literal": "unfortunately not. I-have only twenty euros-gen."
+        }
+      ],
+      "notes": [
+        "**Koľko stojí?** literally \"how much does it stand?\" — Slovak uses *stáť* (to stand) for prices, just like German *kosten* and Russian *стоить*. If what you're asking about is plural, the verb is plural too: *koľko **stoja** jablká?*",
+        "**Dve eurá but sedem eur.** This is the heart of this unit. After the numbers 2, 3, 4 the noun takes the ordinary plural (*eurá*); after 5 and up it takes the **genitive plural** (*eur*). Slovak does this with every noun, no exceptions, for life.",
+        "**Dve, not dva.** The number two follows gender: *dva* for masculine (*dva stoly*), *dve* for feminine and neuter (*dve kávy*, *dve piva*). The numbers 3 and 4 don't care — *tri, štyri* for everything. So only one number needs attention.",
+        "**Nech sa páči** is a ready-made phrase meaning \"here you are\" when handing something over, \"come in\" when inviting someone inside, or \"have a seat\". Literally \"may it please you\". You'll hear it a dozen times a day.",
+        "**Beriem ho** — *ho* stands for *víno*. Notice that *víno* is neuter, and the neuter object pronoun is the same as the masculine one: *ho*."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers and the noun after them — three groups",
+          "body": [
+            "This rule has no equivalent in English, and it applies in every sentence that contains a number. Luckily there are only three groups."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Noun form",
+              "Example (m)",
+              "Example (f)",
+              "Example (n)"
+            ],
+            "rows": [
+              [
+                "**1**",
+                "singular, number matches gender",
+                "*jeden stôl*",
+                "*jedna káva*",
+                "*jedno pivo*"
+              ],
+              [
+                "**2, 3, 4**",
+                "nominative plural",
+                "*dva stoly*",
+                "*dve kávy*",
+                "*dve pivá*"
+              ],
+              [
+                "**5 and up**",
+                "**genitive plural**",
+                "*päť stolov*",
+                "*päť káv*",
+                "*päť pív*"
+              ],
+              [
+                "**koľko** (how many)",
+                "**genitive plural**",
+                "*koľko stolov?*",
+                "*koľko káv?*",
+                "*koľko pív?*"
+              ],
+              [
+                "**veľa / málo**",
+                "**genitive plural**",
+                "*veľa ľudí*",
+                "*málo kníh*",
+                "*veľa miest*"
+              ]
+            ]
+          },
+          "after": [
+            "**Compound numbers follow their last part?** Not quite — Slovak says *dvadsaťjeden rokov* with the genitive, because compound numbers above twenty always take the genitive plural. For A1, hold on to this simple rule: **every number from five up takes the genitive plural**, including those ending in 1, 2, 3, or 4 inside a bigger number.",
+            "**Why does this exist?** It's a leftover from the time when Slavic languages had a special form for \"two things\". The numbers 2, 3, 4 inherited that form, while 5 and up were once treated as nouns in their own right — \"five of tables\". The genitive ending is the trace of that long-lost \"of\".",
+            "**The verb follows too.** *Dve kávy **stoja** štyri eurá* (plural), but *Päť káv **stojí** desať eur* (singular). After five, the noun is grammatically no longer a plural subject, so the verb goes back to the singular. It's subtle and beginners often ignore it — get it right and native speakers will notice at once."
+          ]
+        },
+        {
+          "title": "The genitive plural: an ending that often disappears",
+          "body": [
+            "The form numbers from 5 up demand. What confuses beginners: for two of the three genders, the ending is not added but **dropped** — and a vowel inside the word often lengthens instead."
+          ],
+          "table": {
+            "head": [
+              "Type",
+              "Ending",
+              "Example",
+              "Genitive plural"
+            ],
+            "rows": [
+              [
+                "**m (all)**",
+                "**-ov**",
+                "*stôl, brat, cent, dom*",
+                "*stolov, bratov, centov, domov*"
+              ],
+              [
+                "**f -a**",
+                "**none**",
+                "*káva, kniha, žena, škola*",
+                "*káv, kníh, žien, škôl*"
+              ],
+              [
+                "**n -o**",
+                "**none**",
+                "*pivo, mesto, auto, euro*",
+                "*pív, miest, áut, eur*"
+              ],
+              [
+                "**f soft letter**",
+                "**-í**",
+                "*posteľ, dlaň*",
+                "*postelí, dlaní*"
+              ],
+              [
+                "**irregular**",
+                "—",
+                "*človek, dieťa, rok, peniaze*",
+                "*ľudí, detí, rokov, peňazí*"
+              ]
+            ]
+          },
+          "after": [
+            "**The vowel lengthening has rules of its own**, and it looks odd until you see the pattern: *e → ie* (*žena → žien*), *o → ô* (*škola → škôl*), *a → á* (*auto → áut*), *i → í* (*kniha → kníh*). The last vowel of the stem lengthens to make up for the missing ending.",
+            "**Words whose vowel is already long don't change**, because the rhythm rule forbids two longs side by side — and because there's nothing left to lengthen: *káva → káv*, *práca → prác*.",
+            "**For A1, learn the seven most frequent forms** and let the rest come slowly: *eur, centov, rokov, ľudí, detí, korún, kíl*. Those seven words cover almost every sentence with a number you'll say in your first month."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Numbers 0 to 1,000",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "Slovenčina",
+            "Say it",
+            "",
+            "Slovenčina",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "**0**",
+              "nula",
+              "NOO-lah",
+              "**11**",
+              "jedenásť",
+              "YEH-deh-nahst"
+            ],
+            [
+              "**1**",
+              "jeden / jedna / jedno",
+              "YEH-dehn",
+              "**12**",
+              "dvanásť",
+              "DVAH-nahst"
+            ],
+            [
+              "**2**",
+              "dva / dve",
+              "dvah / dveh",
+              "**13**",
+              "trinásť",
+              "TREE-nahst"
+            ],
+            [
+              "**3**",
+              "tri",
+              "tree",
+              "**14**",
+              "štrnásť",
+              "SHTR-nahst"
+            ],
+            [
+              "**4**",
+              "štyri",
+              "SHTEE-ree",
+              "**15**",
+              "pätnásť",
+              "PEHT-nahst"
+            ],
+            [
+              "**5**",
+              "päť",
+              "peht",
+              "**16**",
+              "šestnásť",
+              "SHEHST-nahst"
+            ],
+            [
+              "**6**",
+              "šesť",
+              "shehst",
+              "**17**",
+              "sedemnásť",
+              "SEH-dyehm-nahst"
+            ],
+            [
+              "**7**",
+              "sedem",
+              "SEH-dyehm",
+              "**18**",
+              "osemnásť",
+              "OH-sehm-nahst"
+            ],
+            [
+              "**8**",
+              "osem",
+              "OH-sehm",
+              "**19**",
+              "devätnásť",
+              "DEH-veht-nahst"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "Slovenčina",
+            "Say it",
+            "",
+            "Slovenčina",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "**30**",
+              "tridsať",
+              "TREET-saht",
+              "**80**",
+              "osemdesiat",
+              "OH-sehm-dyeh-syaht"
+            ],
+            [
+              "**40**",
+              "štyridsať",
+              "SHTEE-reet-saht",
+              "**90**",
+              "deväťdesiat",
+              "DEH-veht-dyeh-syaht"
+            ],
+            [
+              "**50**",
+              "päťdesiat",
+              "PEHT-dyeh-syaht",
+              "**100**",
+              "sto",
+              "stoh"
+            ],
+            [
+              "**60**",
+              "šesťdesiat",
+              "SHEHST-dyeh-syaht",
+              "**200**",
+              "dvesto",
+              "DVEHS-toh"
+            ],
+            [
+              "**70**",
+              "sedemdesiat",
+              "SEH-dyehm-dyeh-syaht",
+              "**1,000**",
+              "tisíc",
+              "TEE-seets"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the pattern that saves a lot of memorizing: **11-19 = unit + -násť** (like English *-teen*), and **20-90 = unit + -dsať or -desiat** (like *-ty*). Once you know 1 to 10, the rest is practically guessable. Only two break the pattern: *štrnásť* (14, not *štyrinásť*) and *pätnásť* (15, with *ä*)."
+        },
+        {
+          "type": "p",
+          "text": "Compound numbers are joined without spaces or linking words: *dvadsaťjeden* (21), *tridsaťpäť* (35), *stodvadsať* (120), *tisícdeväťstodeväťdesiatosem* (1998). That monster really is written as one word — which is why Slovaks themselves prefer to write it in figures."
+        },
+        {
+          "type": "kotak",
+          "title": "Štrnásť: a small, useful drill",
+          "items": [
+            "*Štrnásť* (14) has no vowel in its first syllable: *št-r-násť*, said *SHTR-nahst*. It belongs with *štvrtok* (Thursday) and *štvrť* (quarter).",
+            "If you can say all three smoothly, you've cleared most of the sound hurdles Slovak has."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Money and prices",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Slovakia has used the euro since 2009. Its noun forms follow the number rule above, which makes it perfect daily practice."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Amount",
+            "euro (n)",
+            "cent (m)"
+          ],
+          "rows": [
+            [
+              "1",
+              "*jedno euro*",
+              "*jeden cent*"
+            ],
+            [
+              "2, 3, 4",
+              "*dve / tri / štyri **eurá***",
+              "*dva / tri / štyri **centy***"
+            ],
+            [
+              "5 and up",
+              "*päť **eur***",
+              "*päť **centov***"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Written",
+            "Said as",
+            "English"
+          ],
+          "rows": [
+            [
+              "1,20 €",
+              "*jedno euro dvadsať*",
+              "one euro twenty"
+            ],
+            [
+              "2,50 €",
+              "*dve eurá päťdesiat*",
+              "two euros fifty"
+            ],
+            [
+              "7,90 €",
+              "*sedem eur deväťdesiat*",
+              "seven euros ninety"
+            ],
+            [
+              "15 €",
+              "*pätnásť eur*",
+              "fifteen euros"
+            ],
+            [
+              "0,80 €",
+              "*osemdesiat centov*",
+              "eighty cents"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that Slovak writes prices with a **decimal comma** and the € sign after the number. And **the word *cent* is dropped** when it follows an amount in euros: *dve eurá päťdesiat*, not *dve eurá päťdesiat centov* — just as English speakers say \"two fifty\". The word *cent* is used in full only when there are no euros at all."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Koľko to stojí?*",
+              "How much is it?"
+            ],
+            [
+              "*Koľko stoja?*",
+              "How much are they?"
+            ],
+            [
+              "*Koľko to je spolu?*",
+              "How much is that altogether?"
+            ],
+            [
+              "*To je drahé.* / *To je lacné.*",
+              "That's expensive. / That's cheap."
+            ],
+            [
+              "*Máte niečo lacnejšie?*",
+              "Do you have anything cheaper?"
+            ],
+            [
+              "*Beriem to.*",
+              "I'll take it."
+            ],
+            [
+              "*Máte drobné?*",
+              "Do you have the exact change?"
+            ],
+            [
+              "*Platím kartou.*",
+              "I'll pay by card."
+            ],
+            [
+              "*Môžem dostať bloček?*",
+              "Can I have the receipt?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "The koruna still alive in people's mouths",
+          "items": [
+            "Before the euro, Slovakia's currency was the *slovenská koruna* (Sk). It was worth about 30 korunas to the euro.",
+            "Twenty years after the switch, older people still often count in korunas in their heads, and sometimes say it out loud at the market. If you hear a number that sounds thirty times too big, that's why."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 3",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "This is my family.",
+              "*Toto je moja rodina.*"
+            ],
+            [
+              "That's my father. He's a teacher.",
+              "*To je môj otec. Je učiteľ.*"
+            ],
+            [
+              "I have two sisters.",
+              "*Mám dve sestry.*"
+            ],
+            [
+              "He's fifty.",
+              "*Má päťdesiat rokov.*"
+            ],
+            [
+              "That house is big.",
+              "*Ten dom je veľký.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "koľko",
+      "baca": "KOHL-koh",
+      "en": "how much; how many"
+    },
+    {
+      "sk": "stáť",
+      "baca": "staht",
+      "en": "to stand; to cost"
+    },
+    {
+      "sk": "euro",
+      "baca": "EH-oo-roh",
+      "en": "euro (n)"
+    },
+    {
+      "sk": "cent",
+      "baca": "tsehnt",
+      "en": "cent (m)"
+    },
+    {
+      "sk": "peniaze",
+      "baca": "PEH-nyah-zeh",
+      "en": "money (pl)"
+    },
+    {
+      "sk": "drobné",
+      "baca": "DROHB-neh",
+      "en": "small change"
+    },
+    {
+      "sk": "drahý",
+      "baca": "DRAH-hee",
+      "en": "expensive"
+    },
+    {
+      "sk": "lacný",
+      "baca": "LAHTS-nee",
+      "en": "cheap"
+    },
+    {
+      "sk": "trh",
+      "baca": "trkh",
+      "en": "market (m)"
+    },
+    {
+      "sk": "predavač / predavačka",
+      "baca": "PREH-dah-vahch / -kah",
+      "en": "seller (m / f)"
+    },
+    {
+      "sk": "jablko",
+      "baca": "YAH-bl-koh",
+      "en": "apple (n)"
+    },
+    {
+      "sk": "kilo",
+      "baca": "KEE-loh",
+      "en": "kilo (n)"
+    },
+    {
+      "sk": "brať",
+      "baca": "braht",
+      "en": "to take"
+    },
+    {
+      "sk": "spolu",
+      "baca": "SPOH-loo",
+      "en": "together; altogether"
+    },
+    {
+      "sk": "naspäť",
+      "baca": "NAHS-peht",
+      "en": "back"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Slovak.",
+      "items": [
+        "How much are the apples?",
+        "Two euros a kilo.",
+        "How much is that altogether?",
+        "That's a bit expensive.",
+        "Do you have anything cheaper?",
+        "I only have twenty euros."
+      ]
+    },
+    {
+      "prompt": "Choose the right noun form.",
+      "items": [
+        "dve ____ (káva)",
+        "päť ____ (káva)",
+        "jeden ____ (stôl)",
+        "tri ____ (stôl)",
+        "sedem ____ (stôl)",
+        "dve ____ (pivo)",
+        "desať ____ (pivo)",
+        "osem ____ (euro)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "stojí / to / koľko / ?",
+        "eurá / dve / kilo / za",
+        "je / drahé / to / trochu",
+        "lacnejšie / máte / ?",
+        "to / beriem"
+      ]
+    }
+  ],
+  "answers": [
+    "Koľko stoja jablká? — Dve eurá za kilo. — Koľko to je spolu? — To je trochu drahé. — Máte niečo lacnejšie? — Mám len dvadsať eur.",
+    "kávy — káv — stôl — stoly — stolov — pivá — pív — eur",
+    "Koľko to stojí? — Dve eurá za kilo. — To je trochu drahé. — Máte lacnejšie? — Beriem to."
+  ]
+}

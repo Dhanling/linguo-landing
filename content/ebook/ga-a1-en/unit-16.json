@@ -1,0 +1,567 @@
+{
+  "title": "Shopping",
+  "title_target": "Ag siopadóireacht",
+  "goal": "Go shopping: ask prices, name colors and sizes, and pay.",
+  "bekal": [
+    "ask and understand prices with *Cé mhéad …?*",
+    "name colors, and know that colors change after feminine nouns",
+    "use standard shop phrases: trying on, asking for another size, paying"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — Sa siopa éadaigh",
+      "intro": "The weather is turning cold and Budi needs a sweater. He goes into a clothes shop on the main street.",
+      "lines": [
+        {
+          "speaker": "Siopadóir:",
+          "text": "Dia duit. An bhfuil cabhair uait?",
+          "id": "Hello. Can I help you?",
+          "literal": "God to-you. question is help from-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá, go raibh maith agat. Tá geansaí uaim.",
+          "id": "Yes, thanks. I'm looking for a sweater.",
+          "literal": "is, may-be good at-you. is sweater from-me."
+        },
+        {
+          "speaker": "Siopadóir:",
+          "text": "Cén dath atá uait?",
+          "id": "What color would you like?",
+          "literal": "what color that-is from-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ceann gorm nó ceann glas, b'fhéidir.",
+          "id": "A blue one or a green one, maybe.",
+          "literal": "one blue or one green, maybe."
+        },
+        {
+          "speaker": "Siopadóir:",
+          "text": "Seo geansaí gorm. Tá sé an-te agus tá sé déanta in Éirinn.",
+          "id": "Here's a blue sweater. It's very warm and it's made in Ireland.",
+          "literal": "here sweater blue. is it very-warm and is it made in Ireland."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá sé go hálainn. Cé mhéad atá air?",
+          "id": "It's lovely. How much is it?",
+          "literal": "is it lovely. how much that-is on-it?"
+        },
+        {
+          "speaker": "Siopadóir:",
+          "text": "Caoga euro. Tá sé ar lascaine — bhí sé seachtó.",
+          "id": "Fifty euro. It's on sale — it was seventy.",
+          "literal": "fifty euro. is it on discount — was it seventy."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "An bhfuil ceann níos mó agaibh?",
+          "id": "Do you have a bigger one?",
+          "literal": "question is one bigger at-you-all?"
+        },
+        {
+          "speaker": "Siopadóir:",
+          "text": "Tá. Seo é an ceann mór. Bain triail as.",
+          "id": "Yes. Here's the large one. Try it on.",
+          "literal": "is. here the one big. take try out-of-it."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá sé foirfe. Tógfaidh mé é.",
+          "id": "It's perfect. I'll take it.",
+          "literal": "is it perfect. will-take I it."
+        },
+        {
+          "speaker": "Siopadóir:",
+          "text": "Go hiontach. Airgead nó cárta?",
+          "id": "Great. Cash or card?",
+          "literal": "wonderful. money or card?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cárta, le do thoil. Go raibh míle maith agat!",
+          "id": "Card, please. Thanks a lot!",
+          "literal": "card, with your will. may-be thousand good at-you!"
+        }
+      ],
+      "notes": [
+        "**Tá geansaí uaim — \"a sweater is from me\".** To say \"I need\" or \"I want\", Irish uses the preposition *ó* (\"from\") with its pronoun forms: *uaim, uait, uaidh, uaithi, uainn, uaibh, uathu*. Literally \"something is wanted **from** me\". This is the fourth preposition that swallows its pronoun, after *ag*, *ar*, and *le*.",
+        "**Ceann gorm — ceann means \"one\" for things.** The word *ceann* (originally \"head\") is used just like English \"one\": *ceann gorm* (\"a blue one\"), *ceann mór* (\"a big one\"), *ceann eile* (\"another one\"), *an ceann seo* (\"this one\"). It stands in for a noun that is already clear from the conversation.",
+        "**Níos mó — how to compare.** *Níos* + the comparative form: *níos mó* (bigger), *níos lú* (smaller), *níos fearr* (better), *níos measa* (worse), *níos daoire* (more expensive), *níos saoire* (cheaper). To say what you're comparing with, use *ná*: *níos mó ná é seo* (\"bigger than this one\").",
+        "**Bain triail as — commands with a preposition at the end.** Many Irish expressions keep a prepositional pronoun at the end: *Bain triail as* (\"try it\"), *Suigh síos* (\"sit down\"), *Tar isteach* (\"come in\"), *Éist liom* (\"listen to me\"). Phrases like these are best learned whole."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Dathanna — colors",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "English",
+            "Example"
+          ],
+          "rows": [
+            [
+              "bán",
+              "BAWN",
+              "white",
+              "léine bhán"
+            ],
+            [
+              "dubh",
+              "DOOW",
+              "black",
+              "bróga dubha"
+            ],
+            [
+              "dearg",
+              "DYAH-rag",
+              "red",
+              "cóta dearg"
+            ],
+            [
+              "gorm",
+              "GUH-rum",
+              "blue",
+              "geansaí gorm"
+            ],
+            [
+              "glas",
+              "GLAS",
+              "green (natural)",
+              "féar glas"
+            ],
+            [
+              "uaine",
+              "OO-uh-nyuh",
+              "green (bright, artificial)",
+              "gúna uaine"
+            ],
+            [
+              "buí",
+              "BWEE",
+              "yellow",
+              "grian bhuí"
+            ],
+            [
+              "donn",
+              "DOWN",
+              "brown",
+              "hata donn"
+            ],
+            [
+              "liath",
+              "LEE-uh",
+              "gray",
+              "spéir liath"
+            ],
+            [
+              "bándearg",
+              "BAWN-dyuh-rag",
+              "pink",
+              "sciorta bándearg"
+            ],
+            [
+              "oráiste",
+              "uh-RAWS-tyuh",
+              "orange",
+              "úll oráiste"
+            ],
+            [
+              "corcra",
+              "KOR-kruh",
+              "purple",
+              "scairf chorcra"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Irish has **two** words for green, and the choice is about origin, not shade. *Glas* is for green that grows — grass, leaves, the sea. *Uaine* is for man-made green — paint, fabric, traffic lights. Swapping them doesn't make a sentence wrong, but it instantly sounds bookish."
+        },
+        {
+          "type": "kotak",
+          "title": "Colors change after feminine nouns",
+          "items": [
+            "An adjective attached to a feminine noun gets séimhiú: *léine bhán* (a white shirt; *léine* is feminine), *scairf chorcra*, *grian bhuí*.",
+            "After masculine nouns there's no change: *cóta dearg*, *geansaí gorm*, *hata donn*.",
+            "After plural nouns, the adjective adds *-a* or turns slender: *bróga dubha*, *tithe bána*, *fir mhóra*.",
+            "When the adjective comes after *tá*, it never changes: *Tá an léine bán*, *Tá na bróga dubh*. The change only happens when it is attached directly to its noun."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Éadaí agus siopadóireacht",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "English",
+            "Gaeilge",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "éadaí",
+              "AY-dee",
+              "clothes",
+              "bróga",
+              "BROH-guh",
+              "shoes"
+            ],
+            [
+              "léine",
+              "LYAY-nyuh",
+              "shirt",
+              "stocaí",
+              "STUH-kee",
+              "socks"
+            ],
+            [
+              "geansaí",
+              "GYAN-see",
+              "sweater",
+              "hata",
+              "HAH-tuh",
+              "hat"
+            ],
+            [
+              "cóta",
+              "KOH-tuh",
+              "coat",
+              "scairf",
+              "SKARF",
+              "scarf"
+            ],
+            [
+              "gúna",
+              "GOO-nuh",
+              "dress",
+              "lámhainní",
+              "LAW-wih-nee",
+              "gloves"
+            ],
+            [
+              "sciorta",
+              "SKYUR-tuh",
+              "skirt",
+              "mála",
+              "MAW-luh",
+              "bag"
+            ],
+            [
+              "bríste",
+              "BREESH-tyuh",
+              "trousers, pants",
+              "spéaclaí",
+              "SPYAY-klee",
+              "glasses"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Cé mhéad atá air?",
+              "kyay vayd uh-TAW er",
+              "How much is it?"
+            ],
+            [
+              "Tá sé daor.",
+              "taw shay DAYR",
+              "It's expensive."
+            ],
+            [
+              "Tá sé saor.",
+              "taw shay SAYR",
+              "It's cheap."
+            ],
+            [
+              "Tá sé ar lascaine.",
+              "taw shay er LAS-kih-nyuh",
+              "It's on sale."
+            ],
+            [
+              "An bhfuil ceann eile agaibh?",
+              "an wil kyown EH-luh AH-giv",
+              "Do you have another one?"
+            ],
+            [
+              "An bhfuil ceann níos mó agaibh?",
+              "… nyees MOH",
+              "Do you have a bigger one?"
+            ],
+            [
+              "Bain triail as.",
+              "ban TREE-al AS",
+              "Try it on."
+            ],
+            [
+              "Tá sé foirfe.",
+              "taw shay FOR-fuh",
+              "It's perfect."
+            ],
+            [
+              "Tógfaidh mé é.",
+              "TOHG-hee may AY",
+              "I'll take it."
+            ],
+            [
+              "Airgead nó cárta?",
+              "AH-rih-gyad noh KAWR-tuh",
+              "Cash or card?"
+            ],
+            [
+              "An bhfuil sóinseáil agat?",
+              "an wil SOHN-shawl AH-gut",
+              "Do you have change?"
+            ],
+            [
+              "Tá sin go leor.",
+              "taw shin guh LYOHR",
+              "That's enough."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The most common comparatives: *níos mó* (bigger), *níos lú* (smaller), *níos daoire* (more expensive), *níos saoire* (cheaper), *níos fearr* (better), *níos measa* (worse). Note that *níos fearr* and *níos measa* look nothing like their base words *maith* and *olc* — just like English \"good / better\" and \"bad / worse\"."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "siopadóireacht",
+      "baca": "SHOO-puh-doh-rakht",
+      "en": "shopping"
+    },
+    {
+      "ga": "siopadóir",
+      "baca": "SHOO-puh-dohr",
+      "en": "shopkeeper"
+    },
+    {
+      "ga": "éadaí",
+      "baca": "AY-dee",
+      "en": "clothes"
+    },
+    {
+      "ga": "geansaí",
+      "baca": "GYAN-see",
+      "en": "sweater"
+    },
+    {
+      "ga": "léine",
+      "baca": "LYAY-nyuh",
+      "en": "shirt"
+    },
+    {
+      "ga": "cóta",
+      "baca": "KOH-tuh",
+      "en": "coat"
+    },
+    {
+      "ga": "bróga",
+      "baca": "BROH-guh",
+      "en": "shoes"
+    },
+    {
+      "ga": "hata",
+      "baca": "HAH-tuh",
+      "en": "hat"
+    },
+    {
+      "ga": "uaim",
+      "baca": "OO-im",
+      "en": "from me; I need"
+    },
+    {
+      "ga": "uait",
+      "baca": "OO-itch",
+      "en": "from you; you need"
+    },
+    {
+      "ga": "cabhair",
+      "baca": "KOHW-ir",
+      "en": "help"
+    },
+    {
+      "ga": "ceann",
+      "baca": "KYOWN",
+      "en": "one (thing); head"
+    },
+    {
+      "ga": "gorm",
+      "baca": "GUH-rum",
+      "en": "blue"
+    },
+    {
+      "ga": "glas",
+      "baca": "GLAS",
+      "en": "green (natural)"
+    },
+    {
+      "ga": "uaine",
+      "baca": "OO-uh-nyuh",
+      "en": "green (bright)"
+    },
+    {
+      "ga": "bán",
+      "baca": "BAWN",
+      "en": "white"
+    },
+    {
+      "ga": "dubh",
+      "baca": "DOOW",
+      "en": "black"
+    },
+    {
+      "ga": "dearg",
+      "baca": "DYAH-rag",
+      "en": "red"
+    },
+    {
+      "ga": "buí",
+      "baca": "BWEE",
+      "en": "yellow"
+    },
+    {
+      "ga": "donn",
+      "baca": "DOWN",
+      "en": "brown"
+    },
+    {
+      "ga": "liath",
+      "baca": "LEE-uh",
+      "en": "gray"
+    },
+    {
+      "ga": "corcra",
+      "baca": "KOR-kruh",
+      "en": "purple"
+    },
+    {
+      "ga": "déanta",
+      "baca": "DYAYN-tuh",
+      "en": "made, finished"
+    },
+    {
+      "ga": "ar lascaine",
+      "baca": "er LAS-kih-nyuh",
+      "en": "on sale"
+    },
+    {
+      "ga": "daor",
+      "baca": "DEER",
+      "en": "expensive"
+    },
+    {
+      "ga": "saor",
+      "baca": "SEER",
+      "en": "cheap; free"
+    },
+    {
+      "ga": "níos mó",
+      "baca": "nyees MOH",
+      "en": "bigger"
+    },
+    {
+      "ga": "níos lú",
+      "baca": "nyees LOO",
+      "en": "smaller"
+    },
+    {
+      "ga": "bain triail as",
+      "baca": "ban TREE-al AS",
+      "en": "try it"
+    },
+    {
+      "ga": "foirfe",
+      "baca": "FOR-fuh",
+      "en": "perfect"
+    },
+    {
+      "ga": "cárta",
+      "baca": "KAWR-tuh",
+      "en": "card"
+    },
+    {
+      "ga": "sóinseáil",
+      "baca": "SOHN-shawl",
+      "en": "change (money)"
+    },
+    {
+      "ga": "spéir",
+      "baca": "SPYAYR",
+      "en": "sky"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate the color and attach it to its noun in the right form.",
+      "items": [
+        "a blue sweater (geansaí — masculine)",
+        "a white shirt (léine — feminine)",
+        "black shoes (bróga — plural)",
+        "a red coat (cóta — masculine)",
+        "a purple scarf (scairf — feminine)",
+        "a brown hat (hata — masculine)"
+      ]
+    },
+    {
+      "prompt": "Translate into Irish.",
+      "items": [
+        "How much is it?",
+        "It's expensive.",
+        "Do you have a bigger one?",
+        "I'm looking for a sweater.",
+        "I'll take it.",
+        "Cash or card?"
+      ]
+    },
+    {
+      "prompt": "Fill in the comparative (níos mó, níos lú, níos fearr, níos daoire, níos saoire, níos measa).",
+      "items": [
+        "Tá an geansaí seo ____ . (bigger)",
+        "Tá an ceann sin ____ . (smaller)",
+        "Tá an bia anseo ____ . (better)",
+        "Tá an cóta ____ ná an léine. (more expensive)",
+        "Tá na bróga ____ inniu. (cheaper)",
+        "Tá an aimsir ____ inniu. (worse)"
+      ]
+    },
+    {
+      "prompt": "Build a short conversation in a shop. Write an Irish sentence for each line.",
+      "items": [
+        "You greet the shopkeeper.",
+        "You say you're looking for a coat.",
+        "You're asked what color you want; you say black.",
+        "You ask the price.",
+        "You say it's expensive.",
+        "You say you'll take it, and thank them."
+      ]
+    }
+  ],
+  "answers": [
+    "geansaí gorm — léine bhán — bróga dubha — cóta dearg — scairf chorcra — hata donn",
+    "Cé mhéad atá air? — Tá sé daor. — An bhfuil ceann níos mó agaibh? — Tá geansaí uaim. — Tógfaidh mé é. — Airgead nó cárta?",
+    "níos mó — níos lú — níos fearr — níos daoire — níos saoire — níos measa",
+    "Dia duit. — Tá cóta uaim. — Ceann dubh, le do thoil. — Cé mhéad atá air? — Tá sé daor. — Tógfaidh mé é, go raibh maith agat."
+  ]
+}

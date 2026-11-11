@@ -1,0 +1,587 @@
+{
+  "title": "Being done, not doing",
+  "title_target": "Aedificatur",
+  "goal": "Turn sentences into the passive in three tenses, name the doer with a or ab, and recognize deponent verbs that look passive but mean active.",
+  "bekal": [
+    "change *aedificat* into *aedificatur* and back",
+    "tell a doer (*a fabris*) from a tool (*equis*)",
+    "not be surprised by *loquitur*, which looks passive but means \"he speaks\""
+  ],
+  "dialogs": [
+    {
+      "title": "Colloquium — Thermae novae",
+      "intro": "Beside the main road, public baths are being built. Marcus wants to know everything.",
+      "lines": [
+        {
+          "speaker": "Marcus:",
+          "text": "Pater, quid hic aedificatur?",
+          "id": "Father, what's being built here?",
+          "literal": "father-call, what here be-built-it?"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Thermae novae aedificantur. A civibus amantur!",
+          "id": "New baths are being built. The citizens love them!",
+          "literal": "baths-pl new-pl be-built-they. by citizen-pl-by be-loved-they!"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "A quo aedificantur?",
+          "id": "Who are they being built by?",
+          "literal": "by whom-by be-built-they?"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "A fabris. Lapides ex montibus portantur.",
+          "id": "By the builders. The stones are carried from the mountains.",
+          "literal": "by builder-pl-by. stone-pl from mountain-pl-from be-carried-they."
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Quomodo portantur? Equis?",
+          "id": "How are they carried? By horse?",
+          "literal": "how be-carried-they? horse-pl-with?"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Equis et navibus portantur. Via Appia longa est.",
+          "id": "By horse and by ship. The Via Appia is long.",
+          "literal": "horse-pl-with and ship-pl-with be-carried-they. road Appian long-fem is-it."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Et aqua? Unde aqua in urbem ducitur?",
+          "id": "And the water? Where is the water brought into the city from?",
+          "literal": "and water? from-where water into city-obj be-led-it?"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Per aquaeductum ducitur. Opus mirum est!",
+          "id": "It's brought through an aqueduct. An amazing piece of work!",
+          "literal": "through aqueduct-obj be-led-it. work amazing-neut is-it!"
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Ego quoque aedificare volo. Sed a matre non sinor.",
+          "id": "I want to build too. But Mom won't let me.",
+          "literal": "I too build want-I. but by mother-by not be-allowed-I."
+        },
+        {
+          "speaker": "Cornelia:",
+          "text": "Parva es adhuc, Iulia. Sed olim docebis me!",
+          "id": "You're still little, Iulia. But one day you'll teach me!",
+          "literal": "small-fem are-you still, Iulia. but one-day teach-you-will me-obj!"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Pater, quando thermae aperientur?",
+          "id": "Father, when will the baths open?",
+          "literal": "father-call, when baths-pl be-opened-they-will?"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Post duos annos aperientur. Tum omnes lavabimur!",
+          "id": "In two years. Then we'll all bathe there!",
+          "literal": "after two-obj year-pl-obj be-opened-they-will. then all-pl be-washed-we-will!"
+        }
+      ],
+      "notes": [
+        "**Aedificat becomes aedificatur.** The passive ending is an *-r* added to the ordinary person ending, sometimes with a small change: *-o* → *-or*, *-t* → *-tur*, *-nt* → *-ntur*. That's why most passive forms feel one syllable heavier, and they're easy to spot from a distance.",
+        "**A fabris but equis.** If the doer is a **person**, Latin puts *a* or *ab* in front: *a fabris*, *a matre*, *a civibus*. If it's a **tool or means**, the preposition is dropped completely: *equis portantur* (\"carried by horse\"), *gladio vulneratur* (\"wounded with a sword\").",
+        "**Thermae is always plural.** Some Latin words have no singular at all: *thermae* (public baths), *castra* (camp), *litterae* in the sense of a letter, *arma* (weapons), *divitiae* (wealth). Adjectives and verbs with them must be plural too, even when one building is meant.",
+        "**Sinor — the passive \"I\" form ends in -or.** Iulia says *non sinor*, \"I am not allowed\". Note that this *-or* looks exactly like the ending of nouns such as *mercator* and *doctor*. The resemblance is a coincidence — the passive ending and the doer-noun ending come from two different sources — so don't mix them up: *mercator* is a noun, *sinor* is a verb."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Passive endings in three tenses",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Six passive endings are used in every group and in every tense you've learned, except the perfect. Learn the six just once."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Subject",
+            "Active ending",
+            "Passive ending",
+            "Example (amare)"
+          ],
+          "rows": [
+            [
+              "I",
+              "-o",
+              "**-or**",
+              "am**or** — I am loved"
+            ],
+            [
+              "you",
+              "-s",
+              "**-ris**",
+              "ama**ris** — you are loved"
+            ],
+            [
+              "he/she",
+              "-t",
+              "**-tur**",
+              "ama**tur** — he is loved"
+            ],
+            [
+              "we",
+              "-mus",
+              "**-mur**",
+              "ama**mur** — we are loved"
+            ],
+            [
+              "you (pl)",
+              "-tis",
+              "**-mini**",
+              "ama**mini** — you (pl) are loved"
+            ],
+            [
+              "they",
+              "-nt",
+              "**-ntur**",
+              "ama**ntur** — they are loved"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Tense",
+            "I: amare",
+            "II: videre",
+            "III: mittere",
+            "IV: audire"
+          ],
+          "rows": [
+            [
+              "present",
+              "amatur",
+              "videtur",
+              "mittitur",
+              "auditur"
+            ],
+            [
+              "",
+              "amantur",
+              "videntur",
+              "mittuntur",
+              "audiuntur"
+            ],
+            [
+              "imperfect",
+              "amabatur",
+              "videbatur",
+              "mittebatur",
+              "audiebatur"
+            ],
+            [
+              "",
+              "amabantur",
+              "videbantur",
+              "mittebantur",
+              "audiebantur"
+            ],
+            [
+              "future",
+              "amabitur",
+              "videbitur",
+              "mittetur",
+              "audietur"
+            ],
+            [
+              "",
+              "amabuntur",
+              "videbuntur",
+              "mittentur",
+              "audientur"
+            ],
+            [
+              "infinitive",
+              "amari",
+              "videri",
+              "mitti",
+              "audiri"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at the passive infinitive. Groups I, II, and IV just swap *-re* for *-ri*: *amare* → *amari*. Group III shrinks all the way: *mittere* → *mitti*, *legere* → *legi*, *duci* from *ducere*. This form shows up in sentences like *Amari volo* — \"I want to be loved\"."
+        }
+      ]
+    },
+    {
+      "title": "Turning sentences around",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Turning an active sentence into a passive one swaps two roles: the object becomes the subject, and the old subject moves behind *a* or *ab*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Active",
+            "Passive",
+            "Translation"
+          ],
+          "rows": [
+            [
+              "Faber murum aedificat.",
+              "Murus **a fabro** aedificatur.",
+              "The wall is being built by the builder."
+            ],
+            [
+              "Magister discipulos laudat.",
+              "Discipuli **a magistro** laudantur.",
+              "The pupils are praised by the teacher."
+            ],
+            [
+              "Cives thermas amant.",
+              "Thermae **a civibus** amantur.",
+              "The baths are loved by the citizens."
+            ],
+            [
+              "Mater me non sinit.",
+              "**A matre** non sinor.",
+              "I'm not allowed by Mom."
+            ],
+            [
+              "Equi lapides portant.",
+              "Lapides **equis** portantur.",
+              "The stones are carried by horse."
+            ],
+            [
+              "Aqua urbem servat.",
+              "Urbs **aqua** servatur.",
+              "The city is saved by water."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last two rows show the rule people forget most: horses and water aren't people, so both stand without a preposition. If you write *ab equis*, the sentence changes to \"by the horses as conscious doers\" — something that only makes sense in a fairy tale."
+        },
+        {
+          "type": "kotak",
+          "title": "Why Latin so often chooses the passive",
+          "items": [
+            "Because the doer is unimportant or unknown: *dicitur* — \"it is said\", \"they say\".",
+            "Because the thing itself is what matters: *thermae aedificantur* puts the focus on the building, not the builders.",
+            "Because official writing sounds that way. Roman laws, inscriptions, and announcements are almost entirely passive — much like legal English today.",
+            "*Videtur* has a special, very common meaning: not \"he is seen\" but \"it seems\". *Mihi videtur* — \"it seems to me\"."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The perfect passive, and deponent verbs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "For the perfect, Latin doesn't use passive endings at all. It uses two words: an adjective form of the verb, plus *sum*. That adjective form changes its endings like *bonus*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Latin",
+            "Literal",
+            "Translation"
+          ],
+          "rows": [
+            [
+              "Murus **aedificatus est**.",
+              "wall built is-it",
+              "The wall has been built."
+            ],
+            [
+              "Villa **aedificata est**.",
+              "house built-fem is-it",
+              "The house has been built."
+            ],
+            [
+              "Templa **aedificata sunt**.",
+              "temple-pl built-pl are-they",
+              "The temples have been built."
+            ],
+            [
+              "Epistula **scripta est**.",
+              "letter written is-it",
+              "The letter has been written."
+            ],
+            [
+              "Urbs **capta est**.",
+              "city captured is-it",
+              "The city has been captured."
+            ],
+            [
+              "**Missus sum**.",
+              "sent am-I",
+              "I have been sent."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "This adjective form — called a participle — comes from the fourth part of the dictionary form: *amo, amare, amavi, **amatum***. It's studied fully at the next level, but you already know many of them as English words: *fact* from *factum*, *dictum* from *dictum*, *data* from *datum*, *script* from *scriptum*."
+        },
+        {
+          "type": "sub",
+          "text": "Verbs that look passive but mean active"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Latin",
+            "Looks like",
+            "Actually means"
+          ],
+          "rows": [
+            [
+              "loquitur",
+              "\"he is spoken\"",
+              "**he speaks**"
+            ],
+            [
+              "sequitur",
+              "\"he is followed\"",
+              "**he follows**"
+            ],
+            [
+              "patitur",
+              "\"he is suffered\"",
+              "**he suffers**"
+            ],
+            [
+              "moritur",
+              "\"he is killed\"",
+              "**he dies**"
+            ],
+            [
+              "nascitur",
+              "\"he is given birth\"",
+              "**he is born**"
+            ],
+            [
+              "conatur",
+              "\"he is attempted\"",
+              "**he tries**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Verbs like these are called deponents — literally \"having laid aside\" their active form. There aren't many, but they're common, and you already know their traces: *sequitur* gives *sequence* and *consequence*, *nascitur* gives *natal* and *nation*, *patitur* gives *patient* and *passive*."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "la": "aedifico, aedificare",
+      "baca": "eye-DEE-fee-koh",
+      "en": "to build"
+    },
+    {
+      "la": "sino, sinere, sivi",
+      "baca": "SEE-noh",
+      "en": "to allow, to let"
+    },
+    {
+      "la": "lavo, lavare",
+      "baca": "LAH-woh",
+      "en": "to wash, to bathe"
+    },
+    {
+      "la": "servo, servare",
+      "baca": "SEHR-woh",
+      "en": "to guard, to save"
+    },
+    {
+      "la": "vulnero, vulnerare",
+      "baca": "WOOL-neh-roh",
+      "en": "to wound"
+    },
+    {
+      "la": "capio, capere, cepi, captum",
+      "baca": "KAH-pee-oh",
+      "en": "to capture, to take"
+    },
+    {
+      "la": "loquor, loqui",
+      "baca": "LOH-kwohr",
+      "en": "to speak (deponent)"
+    },
+    {
+      "la": "sequor, sequi",
+      "baca": "SEH-kwohr",
+      "en": "to follow (deponent)"
+    },
+    {
+      "la": "morior, mori",
+      "baca": "MOH-ree-ohr",
+      "en": "to die (deponent)"
+    },
+    {
+      "la": "nascor, nasci",
+      "baca": "NAHS-kohr",
+      "en": "to be born (deponent)"
+    },
+    {
+      "la": "conor, conari",
+      "baca": "KOH-nohr",
+      "en": "to try (deponent)"
+    },
+    {
+      "la": "patior, pati",
+      "baca": "PAH-tee-ohr",
+      "en": "to suffer, to allow (deponent)"
+    },
+    {
+      "la": "thermae, thermarum",
+      "baca": "THEHR-mye",
+      "en": "public baths (always pl)"
+    },
+    {
+      "la": "faber, fabri",
+      "baca": "FAH-behr",
+      "en": "builder, craftsman"
+    },
+    {
+      "la": "lapis, lapidis",
+      "baca": "LAH-pis",
+      "en": "stone"
+    },
+    {
+      "la": "murus, muri",
+      "baca": "MOO-roos",
+      "en": "wall"
+    },
+    {
+      "la": "opus, operis",
+      "baca": "OH-poos",
+      "en": "work, building"
+    },
+    {
+      "la": "aquaeductus, aquaeductus",
+      "baca": "ah-kwye-DOOK-toos",
+      "en": "aqueduct"
+    },
+    {
+      "la": "via, viae",
+      "baca": "WEE-ah",
+      "en": "road"
+    },
+    {
+      "la": "pons, pontis",
+      "baca": "POHNS",
+      "en": "bridge"
+    },
+    {
+      "la": "columna, columnae",
+      "baca": "koh-LOOM-nah",
+      "en": "column"
+    },
+    {
+      "la": "tectum, tecti",
+      "baca": "TEHK-toom",
+      "en": "roof"
+    },
+    {
+      "la": "castra, castrorum",
+      "baca": "KAHS-trah",
+      "en": "camp (always pl)"
+    },
+    {
+      "la": "divitiae, divitiarum",
+      "baca": "dee-WEE-tee-eye",
+      "en": "wealth (always pl)"
+    },
+    {
+      "la": "gladius, gladii",
+      "baca": "GLAH-dee-oos",
+      "en": "sword"
+    },
+    {
+      "la": "dicitur",
+      "baca": "DEE-kee-toor",
+      "en": "it is said, they say"
+    },
+    {
+      "la": "videtur",
+      "baca": "wee-DEH-toor",
+      "en": "it seems"
+    },
+    {
+      "la": "factum, facti",
+      "baca": "FAHK-toom",
+      "en": "deed, fact"
+    },
+    {
+      "la": "datum, dati",
+      "baca": "DAH-toom",
+      "en": "something given, data"
+    },
+    {
+      "la": "scriptum, scripti",
+      "baca": "SKRIP-toom",
+      "en": "writing"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change to the passive, keeping the same person and tense.",
+      "items": [
+        "amat",
+        "amant",
+        "videt",
+        "mittit",
+        "audit",
+        "portamus"
+      ]
+    },
+    {
+      "prompt": "Turn these active sentences into the passive.",
+      "items": [
+        "Faber murum aedificat.",
+        "Magister discipulos laudat.",
+        "Cives thermas amant.",
+        "Mater epistulam scribit.",
+        "Milites urbem servant.",
+        "Puella librum legit."
+      ]
+    },
+    {
+      "prompt": "Choose: a or ab, or no preposition at all.",
+      "items": [
+        "Murus ____ fabro aedificatur.",
+        "Lapides ____ equis portantur.",
+        "Discipuli ____ magistro laudantur.",
+        "Urbs ____ aqua servatur.",
+        "Epistula ____ matre scribitur.",
+        "Hostis ____ gladio vulneratur."
+      ]
+    },
+    {
+      "prompt": "Translate into Latin.",
+      "items": [
+        "The baths are being built.",
+        "We are praised by the teacher.",
+        "Stones are carried by ship.",
+        "The letter has been written.",
+        "So it seems.",
+        "He is speaking."
+      ]
+    }
+  ],
+  "answers": [
+    "amatur — amantur — videtur — mittitur — auditur — portamur",
+    "Murus a fabro aedificatur. — Discipuli a magistro laudantur. — Thermae a civibus amantur. — Epistula a matre scribitur. — Urbs a militibus servatur. — Liber a puella legitur.",
+    "a — (no preposition) — a — (no preposition) — a — (no preposition)",
+    "Thermae aedificantur. — A magistro laudamur. — Lapides navibus portantur. — Epistula scripta est. — Ita videtur. — Loquitur."
+  ]
+}

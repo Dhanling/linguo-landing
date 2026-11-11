@@ -1,0 +1,575 @@
+{
+  "title": "What I did yesterday",
+  "title_target": "Zer egin zenuen atzo?",
+  "goal": "Talk about past actions with the past forms of ukan, and tell a story in order.",
+  "bekal": [
+    "use *nuen, zenuen, zuen, genuen, zenuten, zuten* and the plural form *nituen*",
+    "tell the story of a weekend or a trip from start to finish",
+    "use story linkers: *gero, ondoren, azkenean, bat-batean*"
+  ],
+  "dialogs": [
+    {
+      "title": "Elkarrizketa — Kontatu asteburua",
+      "intro": "Maite pulls up a chair and sits down across from Budi, clearly wanting to hear everything.",
+      "lines": [
+        {
+          "speaker": "Maite:",
+          "text": "Kontatu! Zer egin zenuen asteburuan?",
+          "id": "Tell me! What did you do this weekend?",
+          "literal": "tell! what do you-had-it weekend-in?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Larunbatean Guggenheim museoa ikusi nuen.",
+          "id": "On Saturday I saw the Guggenheim Museum.",
+          "literal": "Saturday-on Guggenheim museum-the see I-had-it."
+        },
+        {
+          "speaker": "Maite:",
+          "text": "Gustatu zitzaizun?",
+          "id": "Did you like it?",
+          "literal": "pleased to-you-it-was?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Asko! Argazki pila bat atera nituen.",
+          "id": "A lot! I took tons of photos.",
+          "literal": "much! photo pile one take-out I-had-them."
+        },
+        {
+          "speaker": "Maite:",
+          "text": "Eta gero?",
+          "id": "And then?",
+          "literal": "and later?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Gero pintxoak jan genituen Alde Zaharrean.",
+          "id": "Then we ate pintxos in the Old Town.",
+          "literal": "later pintxo-the(pl) eat we-had-them Side Old-in."
+        },
+        {
+          "speaker": "Maite:",
+          "text": "Zer jan zenuten?",
+          "id": "What did you eat?",
+          "literal": "what eat you(pl)-had-it?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bakailaoa, tortilla eta gilda batzuk. Txakolina ere edan genuen.",
+          "id": "Salt cod, Spanish omelet, and a few gildas. We also drank txakoli.",
+          "literal": "cod-the, omelet and gilda some. txakoli-the also drink we-had-it."
+        },
+        {
+          "speaker": "Maite:",
+          "text": "Ederra! Eta igandean zer egin zenuen?",
+          "id": "Lovely! And what did you do on Sunday?",
+          "literal": "beautiful-the! and Sunday-on what do you-had-it?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ezer ez. Egun osoan lo egin nuen!",
+          "id": "Nothing. I slept all day!",
+          "literal": "anything not. day whole-in sleep do I-had-it!"
+        },
+        {
+          "speaker": "Maite:",
+          "text": "Ha, ha! Beharrezkoa zen, ziur.",
+          "id": "Ha, ha! You needed it, for sure.",
+          "literal": "ha, ha! necessary-the was, sure."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bai. Eta orain berriro prest nago.",
+          "id": "Yes. And now I'm ready again.",
+          "literal": "yes. and now again ready I-am."
+        }
+      ],
+      "notes": [
+        "**Past of ukan: add n, change the prefix.** *Dut* → *nuen*, *duzu* → *zenuen*, *du* → *zuen*. The *d-* at the start becomes *n-* or *z-*, and everything ends in *-n*. It looks complicated in a table, but the first three forms cover almost every conversation.",
+        "**The verb takes its dictionary form, not -t(z)en.** *Ikusi nuen* (I saw), not *ikusten nuen*. In the past, the *-t(z)en* form means a habit: *lehen egunero ikusten nuen* (I used to see it every day). Exactly the same split as in Unit 16.",
+        "**Gustatu zitzaizun? — the past of zaizu.** Verbs like *gustatu* have past forms too: *zitzaidan* (to me), *zitzaizun* (to you), *zitzaion* (to him/her). For now, just learn two sentences: *Gustatu zitzaizun?* and *Bai, asko gustatu zitzaidan.*",
+        "**Pila bat — \"a pile\", the natural way to say \"tons\".** *Argazki pila bat* (tons of photos), *jende pila bat* (tons of people). Other words: *asko* (many), *batzuk* (some), *gutxi batzuk* (just a few), *ezer ez* (nothing at all)."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Past of ukan: nuen, zenuen, zuen",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Doer",
+            "Singular object",
+            "Plural object",
+            "Example"
+          ],
+          "rows": [
+            [
+              "nik",
+              "**nuen**",
+              "**nituen**",
+              "Museoa ikusi nuen."
+            ],
+            [
+              "zuk",
+              "**zenuen**",
+              "**zenituen**",
+              "Zer egin zenuen?"
+            ],
+            [
+              "hark",
+              "**zuen**",
+              "**zituen**",
+              "Jonek kafea hartu zuen."
+            ],
+            [
+              "guk",
+              "**genuen**",
+              "**genituen**",
+              "Pintxoak jan genituen."
+            ],
+            [
+              "zuek",
+              "**zenuten**",
+              "**zenituzten**",
+              "Non afaldu zenuten?"
+            ],
+            [
+              "haiek",
+              "**zuten**",
+              "**zituzten**",
+              "Etxera eraman zuten."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Put them next to the present forms and the pattern jumps out: *dut → nuen*, *duzu → zenuen*, *du → zuen*, *dugu → genuen*, *duzue → zenuten*, *dute → zuten*. The *-it-* insert for plural objects stays where it is: *ditut → nituen*."
+        },
+        {
+          "type": "sub",
+          "text": "Negatives and questions in the past"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "English"
+          ],
+          "rows": [
+            [
+              "Ez nuen ezer egin.",
+              "I didn't do anything."
+            ],
+            [
+              "Ez genuen kaferik hartu.",
+              "We didn't have any coffee."
+            ],
+            [
+              "Zer egin zenuen atzo?",
+              "What did you do yesterday?"
+            ],
+            [
+              "Non afaldu zenuen?",
+              "Where did you have dinner?"
+            ],
+            [
+              "Zenbat ordaindu zenuen?",
+              "How much did you pay?"
+            ],
+            [
+              "Nork esan zuen hori?",
+              "Who said that?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two past sentences for every verb",
+          "items": [
+            "**Happened once:** *Atzo pintxoak jan nituen.* — Yesterday I ate pintxos.",
+            "**Past habit:** *Lehen pintxoak jaten nituen egunero.* — I used to eat pintxos every day.",
+            "The only difference is the verb form: *jan* (once) and *jaten* (habit). The auxiliary is the same.",
+            "When in doubt, use the dictionary form. Weekend stories are almost always about one-time events, not habits."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Telling a story",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "lehenengo",
+              "leh-eh-NEHN-goh",
+              "first"
+            ],
+            [
+              "gero",
+              "GEH-roh",
+              "then"
+            ],
+            [
+              "ondoren",
+              "ohn-DOH-rehn",
+              "after that"
+            ],
+            [
+              "gainera",
+              "gah-ee-NEH-rah",
+              "besides, also"
+            ],
+            [
+              "bat-batean",
+              "baht-bah-TEH-ahn",
+              "suddenly"
+            ],
+            [
+              "azkenean",
+              "ahs-keh-NEH-ahn",
+              "finally"
+            ],
+            [
+              "orduan",
+              "ohr-DOO-ahn",
+              "at that time, then"
+            ],
+            [
+              "hala ere",
+              "AH-lah EH-reh",
+              "even so"
+            ],
+            [
+              "beraz",
+              "BEH-rahs",
+              "so, therefore"
+            ],
+            [
+              "adibidez",
+              "ah-dee-BEE-dehs",
+              "for example"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Read the following paragraph out loud; it uses every past form in this unit, and you can copy it by swapping in your own content."
+        },
+        {
+          "type": "kotak",
+          "title": "Nire asteburua",
+          "items": [
+            "*Larunbat goizean goiz esnatu nintzen. Gosaldu nuen eta Donostiara joan nintzen trenez. Lehenengo Zurriola hondartza ikusi nuen; jendez beteta zegoen. Gero Alde Zaharrera joan ginen eta pintxo batzuk jan genituen. Arratsaldean euria hasi zuen, beraz museo batera sartu ginen. Azkenean, gaueko hamarretan Bilbora itzuli nintzen. Oso nekatuta nengoen, baina egun ederra izan zen.*",
+            "Notice how the auxiliary switches: *joan **nintzen*** (no object), *ikusi **nuen*** (with an object). The whole story moves back and forth between the two — that's the natural rhythm of Basque."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking about the past",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "English"
+          ],
+          "rows": [
+            [
+              "Zer egin zenuen atzo?",
+              "What did you do yesterday?"
+            ],
+            [
+              "Nora joan zinen?",
+              "Where did you go?"
+            ],
+            [
+              "Norekin joan zinen?",
+              "Who did you go with?"
+            ],
+            [
+              "Zer moduz joan zen?",
+              "How did it go?"
+            ],
+            [
+              "Gustatu zitzaizun?",
+              "Did you like it?"
+            ],
+            [
+              "Zenbat denbora egon zinen?",
+              "How long were you there?"
+            ],
+            [
+              "Noiz itzuli zinen?",
+              "When did you get back?"
+            ],
+            [
+              "Zer ikusi zenuen?",
+              "What did you see?"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Short answers"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "English"
+          ],
+          "rows": [
+            [
+              "Oso ondo pasatu nuen.",
+              "I had a great time."
+            ],
+            [
+              "Primeran!",
+              "Awesome!"
+            ],
+            [
+              "Ez zen oso ondo joan.",
+              "It didn't go very well."
+            ],
+            [
+              "Asko gustatu zitzaidan.",
+              "I liked it a lot."
+            ],
+            [
+              "Ez nuen ezer berezirik egin.",
+              "I didn't do anything special."
+            ],
+            [
+              "Etxean geratu nintzen.",
+              "I just stayed home."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Ondo pasatu — a must-have expression",
+          "items": [
+            "*Ondo pasatu nuen* — I had a good time (literally \"I spent it well\").",
+            "*Ondo pasa!* — Have fun! Said to someone heading off on vacation or to a party.",
+            "*Primeran pasatu genuen* — we had a great time.",
+            "This expression comes up in every after-the-weekend conversation; mastering it makes your Monday-morning chat sound really natural."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "eu": "kontatu",
+      "baca": "kohn-TAH-too",
+      "en": "tell (a story)"
+    },
+    {
+      "eu": "esan",
+      "baca": "eh-SAHN",
+      "en": "say"
+    },
+    {
+      "eu": "galdetu",
+      "baca": "gahl-DEH-too",
+      "en": "ask"
+    },
+    {
+      "eu": "atera",
+      "baca": "ah-TEH-rah",
+      "en": "take out, take (a photo)"
+    },
+    {
+      "eu": "eraman",
+      "baca": "eh-RAH-mahn",
+      "en": "take (away)"
+    },
+    {
+      "eu": "ekarri",
+      "baca": "eh-KAH-rree",
+      "en": "bring"
+    },
+    {
+      "eu": "itzuli",
+      "baca": "ee-TSOO-lee",
+      "en": "return, come back"
+    },
+    {
+      "eu": "geratu",
+      "baca": "geh-RAH-too",
+      "en": "stay, remain"
+    },
+    {
+      "eu": "pasatu",
+      "baca": "pah-SAH-too",
+      "en": "spend, pass"
+    },
+    {
+      "eu": "gertatu",
+      "baca": "gehr-TAH-too",
+      "en": "happen"
+    },
+    {
+      "eu": "aurkitu",
+      "baca": "ah-oor-KEE-too",
+      "en": "find"
+    },
+    {
+      "eu": "erabaki",
+      "baca": "eh-rah-BAH-kee",
+      "en": "decide"
+    },
+    {
+      "eu": "argazki",
+      "baca": "ahr-GAHS-kee",
+      "en": "photo"
+    },
+    {
+      "eu": "pila bat",
+      "baca": "PEE-lah baht",
+      "en": "tons, lots"
+    },
+    {
+      "eu": "batzuk",
+      "baca": "bah-TSOOK",
+      "en": "some, a few"
+    },
+    {
+      "eu": "osoa",
+      "baca": "oh-SOH-ah",
+      "en": "whole"
+    },
+    {
+      "eu": "berezi",
+      "baca": "beh-REH-see",
+      "en": "special"
+    },
+    {
+      "eu": "berriro",
+      "baca": "beh-RREE-roh",
+      "en": "again"
+    },
+    {
+      "eu": "azkenean",
+      "baca": "ahs-keh-NEH-ahn",
+      "en": "finally"
+    },
+    {
+      "eu": "bat-batean",
+      "baca": "baht-bah-TEH-ahn",
+      "en": "suddenly"
+    },
+    {
+      "eu": "gainera",
+      "baca": "gah-ee-NEH-rah",
+      "en": "besides, also"
+    },
+    {
+      "eu": "beraz",
+      "baca": "BEH-rahs",
+      "en": "so, therefore"
+    },
+    {
+      "eu": "hala ere",
+      "baca": "AH-lah EH-reh",
+      "en": "even so"
+    },
+    {
+      "eu": "adibidez",
+      "baca": "ah-dee-BEE-dehs",
+      "en": "for example"
+    },
+    {
+      "eu": "ziur",
+      "baca": "SEE-oor",
+      "en": "sure, certain"
+    },
+    {
+      "eu": "beharrezko",
+      "baca": "beh-ah-RREHS-koh",
+      "en": "necessary"
+    },
+    {
+      "eu": "Alde Zaharra",
+      "baca": "AHL-deh SAH-ah-rrah",
+      "en": "Old Town"
+    },
+    {
+      "eu": "museo",
+      "baca": "moo-SEH-oh",
+      "en": "museum"
+    },
+    {
+      "eu": "ondo pasatu",
+      "baca": "OHN-doh pah-SAH-too",
+      "en": "have a good time"
+    },
+    {
+      "eu": "egun osoan",
+      "baca": "eh-GOON oh-SOH-ahn",
+      "en": "all day"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change to the past tense.",
+      "items": [
+        "Museoa ikusten dut. → Museoa ikusi ____.",
+        "Pintxoak jaten ditugu. → Pintxoak jan ____.",
+        "Zer egiten duzu? → Zer egin ____?",
+        "Kafea hartzen du. → Kafea hartu ____.",
+        "Liburuak erosten dituzte. → Liburuak erosi ____.",
+        "Non afaltzen duzue? → Non afaldu ____?"
+      ]
+    },
+    {
+      "prompt": "Translate into Basque.",
+      "items": [
+        "What did you do yesterday?",
+        "I saw the museum.",
+        "We ate pintxos.",
+        "I didn't do anything.",
+        "I had a great time.",
+        "I got back at ten at night."
+      ]
+    },
+    {
+      "prompt": "Choose the right auxiliary: *nintzen* or *nuen*.",
+      "items": [
+        "Donostiara joan ____.",
+        "Museoa ikusi ____.",
+        "Goiz esnatu ____.",
+        "Pintxo bat jan ____.",
+        "Etxean geratu ____.",
+        "Argazki bat atera ____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "zenuen / zer / atzo / egin / ?",
+        "nuen / museoa / ikusi / larunbatean",
+        "genituen / pintxoak / jan",
+        "nuen / ez / egin / ezer",
+        "nintzen / etxean / geratu / igandean",
+        "zitzaidan / gustatu / asko"
+      ]
+    }
+  ],
+  "answers": [
+    "nuen — genituen — zenuen — zuen — zituzten — zenuten",
+    "Zer egin zenuen atzo? — Museoa ikusi nuen. — Pintxoak jan genituen. — Ez nuen ezer egin. — Oso ondo pasatu nuen. — Gaueko hamarretan itzuli nintzen.",
+    "nintzen — nuen — nintzen — nuen — nintzen — nuen",
+    "Zer egin zenuen atzo? — Larunbatean museoa ikusi nuen. — Pintxoak jan genituen. — Ez nuen ezer egin. — Igandean etxean geratu nintzen. — Asko gustatu zitzaidan."
+  ]
+}

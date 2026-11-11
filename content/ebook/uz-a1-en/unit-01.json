@@ -1,0 +1,563 @@
+{
+  "title": "Hello, what's your name?",
+  "title_target": "Assalomu alaykum! Ismingiz nima?",
+  "goal": "Greet people the right way, say your name and where you're from, ask how someone is, and see why the Uzbek word for \"is/am/are\" sticks to the end of a word instead of standing alone.",
+  "bekal": [
+    "greet people with *assalomu alaykum*, *salom*, and *xayrli tong*, each in the right situation",
+    "say your name and nationality with the ending *-man*, and ask about them with *-misiz*",
+    "build third-person sentences with no verb at all — just like Russian or Arabic"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Toshkentda birinchi kun",
+      "intro": "First day in Tashkent. Budi, a student from Jakarta, is sitting next to a young woman in the university waiting room.",
+      "lines": [
+        {
+          "speaker": "Nilufar:",
+          "text": "Assalomu alaykum!",
+          "id": "Peace be upon you! (Hello!)",
+          "literal": "peace upon-you!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vaalaykum assalom!",
+          "id": "And upon you be peace! (Hello!)",
+          "literal": "and-upon-you peace!"
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Mening ismim Nilufar. Ismingiz nima?",
+          "id": "My name is Nilufar. What's your name?",
+          "literal": "my name-my Nilufar. name-your what?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ismim Budi. Tanishganimdan xursandman.",
+          "id": "My name is Budi. Nice to meet you.",
+          "literal": "name-my Budi. meeting-my-from glad-I-am."
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Men ham xursandman. Qalaysiz?",
+          "id": "I'm glad too. How are you?",
+          "literal": "I also glad-I-am. how-you-are?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Rahmat, yaxshiman. Siz-chi?",
+          "id": "Thanks, I'm fine. And you?",
+          "literal": "thanks, fine-I-am. you-and?"
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Men ham yaxshiman. Siz oʻzbekmisiz?",
+          "id": "I'm fine too. Are you Uzbek?",
+          "literal": "I also fine-I-am. you Uzbek-?-you-are?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Yoʻq, men oʻzbek emasman. Men indoneziyalikman.",
+          "id": "No, I'm not Uzbek. I'm Indonesian.",
+          "literal": "no, I Uzbek not-I-am. I Indonesia-from-I-am."
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Voy, juda qiziq! U ham indoneziyalikmi?",
+          "id": "Oh, how interesting! Is she Indonesian too?",
+          "literal": "oh, very interesting! she also Indonesia-from-?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ha, u mening doʻstim. Uning ismi Rina.",
+          "id": "Yes, she's my friend. Her name is Rina.",
+          "literal": "yes, she my friend-my. her name-her Rina."
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Oʻzbekistonga xush kelibsiz! Koʻrishguncha!",
+          "id": "Welcome to Uzbekistan! See you!",
+          "literal": "Uzbekistan-to happy you-came! each-other-seeing-until!"
+        }
+      ],
+      "notes": [
+        "**Assalomu alaykum works all day long.** It's the Arabic greeting \"peace be upon you\", used across the Muslim world, and it sounds almost the same in Uzbekistan. It's the safest greeting for anyone, at any time, anywhere — and the reply is always the same: *vaalaykum assalom*. Among friends your own age, a simple *salom* is enough.",
+        "**Ismingiz nima? literally means \"name-your what?\".** There's no word for \"who\" in it. Uzbek asks *nima* (what) about a name, exactly like English *what is your name*. To answer, *Ismim Budi* is enough — two words, no \"is\".",
+        "**Emas is the only way to say \"not\" with a noun.** *Men oʻzbek emasman* = \"I Uzbek not-I-am\". Notice that the ending *-man* moves onto *emas* instead of staying on the noun. You'll use this pattern hundreds of times.",
+        "**Siz-chi? means \"what about you?\".** The ending *-chi* bounces the same question back to the other person without repeating the sentence. *Men yaxshiman. Siz-chi?* A tiny piece that makes your conversation sound alive right away.",
+        "**No he or she.** *U* means \"he\", \"she\", or \"it\" — whatever the gender. Uzbek has no *he/she* split, no articles (no *a* or *the*), and no adjectives that change form. That's a lot less to learn."
+      ],
+      "grammars": [
+        {
+          "title": "The predicate ending — an \"am/is/are\" stuck on the end",
+          "body": [
+            "Uzbek has no separate word for \"am/is/are\". Instead, a short ending is attached to the last word of the sentence. Learn these six rows now; you'll use them in every unit after this one."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Say it",
+              "Ending",
+              "*talaba* (student)",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**men**",
+                "men",
+                "**-man**",
+                "*talabaman*",
+                "I am a student"
+              ],
+              [
+                "**sen**",
+                "sen",
+                "**-san**",
+                "*talabasan*",
+                "you are a student"
+              ],
+              [
+                "**u**",
+                "u",
+                "— *(none)*",
+                "*talaba*",
+                "he/she is a student"
+              ],
+              [
+                "**biz**",
+                "biz",
+                "**-miz**",
+                "*talabamiz*",
+                "we are students"
+              ],
+              [
+                "**siz**",
+                "siz",
+                "**-siz**",
+                "*talabasiz*",
+                "you are a student/students"
+              ],
+              [
+                "**ular**",
+                "u-LÅR",
+                "**-lar**",
+                "*talabalar*",
+                "they are students"
+              ]
+            ]
+          },
+          "after": [
+            "The third row is empty on purpose: **\"he/she is\" has no ending at all**. *U talaba* = \"He/She is a student\" — two words, period. Russian and Arabic work the same way; English speakers just need to get used to leaving the verb out.",
+            "*Men*, *sen*, *biz*, and *siz* can be dropped, because the ending already tells you who it is: *Yaxshiman* can only mean \"I'm fine\". Use the pronoun when you want **emphasis**: *Men yaxshiman* = \"Me, I'm fine\".",
+            "⚠️ *Siz* means \"you\" (polite) **and** \"you all\". *Sen* is only for close friends, younger siblings, and small children. When in doubt, use *siz* — in Uzbekistan, saying *sen* to someone you've just met feels like slapping a stranger on the back."
+          ]
+        },
+        {
+          "title": "Asking with -mi, negating with emas",
+          "body": [
+            "Two basic tools. Both work the same way: they slip in between the noun and the person ending."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Statement",
+                "*Men talabaman.*",
+                "I'm a student."
+              ],
+              [
+                "Question",
+                "*Siz talaba**mi**siz?*",
+                "Are you a student?"
+              ],
+              [
+                "Negative",
+                "*Men talaba **emas**man.*",
+                "I'm not a student."
+              ],
+              [
+                "Negative + question",
+                "*U talaba **emasmi**?*",
+                "Isn't he a student?"
+              ],
+              [
+                "Short answer",
+                "*Ha, talabaman. / Yoʻq, emasman.*",
+                "Yes, I'm a student. / No, I'm not."
+              ]
+            ]
+          },
+          "after": [
+            "The order never changes: **noun + -mi + person ending**. So *oʻzbek* + *-mi* + *-siz* → *oʻzbekmisiz*. It looks long on paper, but you say it in one breath.",
+            "For *u* and *ular*, which have no ending, the question stops at *-mi*: *U oʻzbekmi?* — that's already a full sentence.",
+            "⚠️ *Yoʻq* means \"no\" as an answer and \"there isn't\" inside a sentence. It is **not** used to negate a noun; that's what *emas* is for."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Survival phrases",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These ten phrases aren't grammar to study — they're your emergency kit. Learn them whole now and work out how they're built later."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Ha / Yoʻq",
+              "hå / yoq",
+              "Yes / No"
+            ],
+            [
+              "Rahmat",
+              "rah-MAT",
+              "Thank you"
+            ],
+            [
+              "Katta rahmat",
+              "kåt-TÅ rah-MAT",
+              "Thank you very much"
+            ],
+            [
+              "Arzimaydi",
+              "år-zi-MÅY-di",
+              "You're welcome"
+            ],
+            [
+              "Kechirasiz",
+              "ke-chi-rå-SIZ",
+              "Excuse me; sorry"
+            ],
+            [
+              "Iltimos",
+              "il-ti-MÅS",
+              "Please"
+            ],
+            [
+              "Marhamat",
+              "mår-hå-MAT",
+              "Please, go ahead; here you are"
+            ],
+            [
+              "Tushunmadim",
+              "tu-shun-må-DIM",
+              "I don't understand"
+            ],
+            [
+              "Bilmayman",
+              "bil-MÅY-mån",
+              "I don't know"
+            ],
+            [
+              "Sekin gapiring",
+              "se-KIN gå-pi-RING",
+              "Please speak slowly"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Marhamat* is the most versatile word on this page. It means \"please, have a seat\" when offering a chair, \"here you are\" when handing something over, and \"come on in\" when inviting someone into the house. If you could learn only one word from this unit, make it this one."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Rahmat* comes from the Arabic word for \"mercy\", but in Uzbekistan it means **thank you**, and you'll say it fifty times a day. It's also a common man's name, so don't be surprised if someone introduces himself as Rahmat."
+        }
+      ]
+    },
+    {
+      "title": "Greetings by time of day and politeness",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Uzbek sorts greetings along two lines at once: what time it is, and how close you are to the person. This table covers both."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "When to use it"
+          ],
+          "rows": [
+            [
+              "**Assalomu alaykum!**",
+              "ås-så-LÅ-mu å-låy-KUM",
+              "The safest greeting — all day, to anyone"
+            ],
+            [
+              "**Salom!**",
+              "så-LÅM",
+              "Hi — casual, to friends your own age"
+            ],
+            [
+              "**Xayrli tong!**",
+              "KHÅYR-li tång",
+              "Good morning — until about 10:00"
+            ],
+            [
+              "**Xayrli kun!**",
+              "KHÅYR-li kun",
+              "Good afternoon"
+            ],
+            [
+              "**Xayrli kech!**",
+              "KHÅYR-li kech",
+              "Good evening — from dusk on"
+            ],
+            [
+              "**Xayrli tun!**",
+              "KHÅYR-li tun",
+              "Good night — only when parting for bed"
+            ],
+            [
+              "**Xayr!**",
+              "khåyr",
+              "Bye — casual, when leaving"
+            ],
+            [
+              "**Koʻrishguncha!**",
+              "ko-rish-gun-CHÅ",
+              "See you — literally \"until we see each other\""
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at *xayrli*: this one word means \"bringing good\", and it's used for all four times of day. It comes from the Arabic *khayr* (\"good\"), the same root as in the Arabic name *Khairi*."
+        },
+        {
+          "type": "p",
+          "text": "One habit worth copying: in Uzbekistan the **younger person greets first**, and **whoever enters a room greets those already inside**. In a lift, a waiting room, a small office — saying *assalomu alaykum* to strangers is normal, and staying silent feels cold."
+        },
+        {
+          "type": "p",
+          "text": "When greeting someone much older, people often add a respectful title: *aka* (to a man, literally \"older brother\"), *opa* (to a woman), *amaki* or *ota* (to an older man). It's not a name but a form of address — a bit like \"sir\" or \"ma'am\", only far more common."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uz": "assalomu alaykum",
+      "baca": "ås-så-LÅ-mu å-låy-KUM",
+      "en": "peace be upon you (hello)"
+    },
+    {
+      "uz": "salom",
+      "baca": "så-LÅM",
+      "en": "hi; greetings"
+    },
+    {
+      "uz": "xayrli tong",
+      "baca": "KHÅYR-li tång",
+      "en": "good morning"
+    },
+    {
+      "uz": "xayrli kun",
+      "baca": "KHÅYR-li kun",
+      "en": "good afternoon"
+    },
+    {
+      "uz": "xayrli kech",
+      "baca": "KHÅYR-li kech",
+      "en": "good evening"
+    },
+    {
+      "uz": "xayr",
+      "baca": "khåyr",
+      "en": "bye, goodbye"
+    },
+    {
+      "uz": "koʻrishguncha",
+      "baca": "ko-rish-gun-CHÅ",
+      "en": "see you"
+    },
+    {
+      "uz": "ism",
+      "baca": "ism",
+      "en": "name"
+    },
+    {
+      "uz": "nima",
+      "baca": "NI-må",
+      "en": "what"
+    },
+    {
+      "uz": "kim",
+      "baca": "kim",
+      "en": "who"
+    },
+    {
+      "uz": "men",
+      "baca": "men",
+      "en": "I"
+    },
+    {
+      "uz": "sen",
+      "baca": "sen",
+      "en": "you (informal)"
+    },
+    {
+      "uz": "u",
+      "baca": "u",
+      "en": "he, she; that"
+    },
+    {
+      "uz": "biz",
+      "baca": "biz",
+      "en": "we"
+    },
+    {
+      "uz": "siz",
+      "baca": "siz",
+      "en": "you (polite); you all"
+    },
+    {
+      "uz": "ular",
+      "baca": "u-LÅR",
+      "en": "they"
+    },
+    {
+      "uz": "talaba",
+      "baca": "tå-lå-BÅ",
+      "en": "student"
+    },
+    {
+      "uz": "oʻqituvchi",
+      "baca": "o-qi-tuv-CHI",
+      "en": "teacher"
+    },
+    {
+      "uz": "doʻst",
+      "baca": "dost",
+      "en": "friend"
+    },
+    {
+      "uz": "oʻzbek",
+      "baca": "oz-BEK",
+      "en": "Uzbek (person)"
+    },
+    {
+      "uz": "indoneziyalik",
+      "baca": "in-då-ne-zi-yå-LIK",
+      "en": "Indonesian (person)"
+    },
+    {
+      "uz": "yaxshi",
+      "baca": "yåkh-SHI",
+      "en": "good, fine"
+    },
+    {
+      "uz": "ham",
+      "baca": "håm",
+      "en": "also, too"
+    },
+    {
+      "uz": "xursand",
+      "baca": "khur-SAND",
+      "en": "glad, happy"
+    },
+    {
+      "uz": "qiziq",
+      "baca": "qi-ZIQ",
+      "en": "interesting; funny"
+    },
+    {
+      "uz": "juda",
+      "baca": "ju-DÅ",
+      "en": "very"
+    },
+    {
+      "uz": "emas",
+      "baca": "e-MÅS",
+      "en": "not (with nouns)"
+    },
+    {
+      "uz": "ha",
+      "baca": "hå",
+      "en": "yes"
+    },
+    {
+      "uz": "yoʻq",
+      "baca": "yoq",
+      "en": "no; there isn't"
+    },
+    {
+      "uz": "rahmat",
+      "baca": "rah-MAT",
+      "en": "thank you"
+    },
+    {
+      "uz": "kechirasiz",
+      "baca": "ke-chi-rå-SIZ",
+      "en": "sorry; excuse me"
+    },
+    {
+      "uz": "qalaysiz",
+      "baca": "qå-låy-SIZ",
+      "en": "how are you? (polite)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Uzbek.",
+      "items": [
+        "Hello! What's your name?",
+        "My name is Budi.",
+        "I'm Indonesian.",
+        "How are you?",
+        "Thanks, I'm fine.",
+        "Are you Uzbek?"
+      ]
+    },
+    {
+      "prompt": "Complete with the right predicate ending (-man, -san, -miz, -siz, -lar, or none).",
+      "items": [
+        "Men talaba____.",
+        "Siz oʻqituvchi____.",
+        "U oʻzbek____.",
+        "Biz doʻst____.",
+        "Sen yaxshi____.",
+        "Ular talaba____."
+      ]
+    },
+    {
+      "prompt": "Turn into a question with -mi, then answer in the negative with emas. Write both.",
+      "items": [
+        "Siz oʻzbeksiz. → ____",
+        "U talaba. → ____",
+        "Sen oʻqituvchisan. → ____",
+        "Ular indoneziyalik. → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "Budi / ismim",
+        "emasman / men / oʻzbek",
+        "nima / ismingiz / ?",
+        "xursandman / men / ham",
+        "doʻstim / u / mening"
+      ]
+    }
+  ],
+  "answers": [
+    "Assalomu alaykum! Ismingiz nima? — Ismim Budi. — Men indoneziyalikman. — Qalaysiz? — Rahmat, yaxshiman. — Siz oʻzbekmisiz?",
+    "talabaman — oʻqituvchisiz — oʻzbek — doʻstmiz — yaxshisan — talabalar",
+    "Siz oʻzbekmisiz? Yoʻq, men oʻzbek emasman. — U talabami? Yoʻq, u talaba emas. — Sen oʻqituvchimisan? Yoʻq, men oʻqituvchi emasman. — Ular indoneziyalikmi? Yoʻq, ular indoneziyalik emas.",
+    "Ismim Budi. — Men oʻzbek emasman. — Ismingiz nima? — Men ham xursandman. — U mening doʻstim."
+  ]
+}

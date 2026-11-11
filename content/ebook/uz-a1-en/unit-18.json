@@ -1,0 +1,536 @@
+{
+  "title": "Can, may, don't need to",
+  "title_target": "Ola olmoq, mumkin, kerak emas",
+  "goal": "Express ability with *-a olmoq*, ask permission with *mumkin*, and tell \"not allowed\" apart from \"not necessary\" — two things that often get mixed up.",
+  "bekal": [
+    "forming *bora olaman* (I can go) and *bora olmayman*",
+    "asking permission with *…-sam boʻladimi?* and *mumkinmi?*",
+    "telling *mumkin emas* (not allowed) apart from *kerak emas* (not necessary)"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kirsam boʻladimi?",
+      "intro": "Budi knocks on the door of a lecturer's office. He needs a signature on a scholarship form.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Assalomu alaykum, ustoz. Kirsam boʻladimi?",
+          "id": "Assalamu alaikum, professor. May I come in?",
+          "literal": "peace upon-you, teacher. enter-if-I becomes-?"
+        },
+        {
+          "speaker": "Ustoz:",
+          "text": "Vaalaykum assalom. Kiring, mumkin.",
+          "id": "Wa alaikum assalam. Come in, please do.",
+          "literal": "and-upon-you peace. enter, allowed."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bir savolim bor edi. Vaqtingiz bormi?",
+          "id": "I have a question. Do you have a moment?",
+          "literal": "one question-my exists was. time-your exists-?"
+        },
+        {
+          "speaker": "Ustoz:",
+          "text": "Bor, ammo koʻp emas. Oʻn daqiqadan keyin majlisim bor.",
+          "id": "Yes, but not much. I have a meeting in ten minutes.",
+          "literal": "exists, but much not. ten minute-from after meeting-my exists."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tez boʻladi. Bu hujjatga imzo qoʻya olasizmi?",
+          "id": "It'll be quick. Could you sign this document?",
+          "literal": "quick becomes. this document-to signature put can-you-?"
+        },
+        {
+          "speaker": "Ustoz:",
+          "text": "Koʻrsating... Bu bugun kerakmi?",
+          "id": "Let me see... Do you need it today?",
+          "literal": "show... this today needed-?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bugun kerak emas, ertaga topshiraman.",
+          "id": "Not today — I'm handing it in tomorrow.",
+          "literal": "today needed not, tomorrow hand-in-I."
+        },
+        {
+          "speaker": "Ustoz:",
+          "text": "Yaxshi. Lekin bu yerga qalam bilan yozish mumkin emas.",
+          "id": "Good. But you can't write in pencil here.",
+          "literal": "good. but this place-to pencil with writing allowed not."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ruchkangizni bir daqiqaga olsam boʻladimi?",
+          "id": "May I borrow your pen for a minute?",
+          "literal": "pen-your-(object) one minute-for take-if-I becomes-?"
+        },
+        {
+          "speaker": "Ustoz:",
+          "text": "Marhamat. Mana, imzo ham qoʻydim.",
+          "id": "Here you go. There — I've signed it too.",
+          "literal": "please. here, signature also put-I."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Katta rahmat, ustoz! Endi ketsam boʻladimi?",
+          "id": "Thank you so much, professor! May I go now?",
+          "literal": "big thanks, teacher! now leave-if-I becomes-?"
+        }
+      ],
+      "notes": [
+        "**Kirsam boʻladimi? is the most polite way to ask permission.** The pattern: stem + *-sa* + possessive ending + *boʻladimi*. Literally \"if I come in, is it OK?\". The *-sa* form is fully unpacked in unit 19; for now just learn the pattern.",
+        "**Kerak emas ≠ mumkin emas.** *Bugun kerak emas* means \"not needed today\" — you may, but you don't have to. *Yozish mumkin emas* means \"you may not write\" — it's forbidden. Swap them and you could break a rule while feeling perfectly polite.",
+        "**Imzo qoʻymoq = to sign**, literally \"to put a signature\". Another compound verb, and as usual *qoʻymoq* loses its original meaning here.",
+        "**Majlis means meeting** — an Arabic word for an assembly or council. In Uzbekistan it's also the name of the parliament: *Oliy Majlis*."
+      ],
+      "grammars": [
+        {
+          "title": "-a olmoq: being able to do something",
+          "body": [
+            "The formula: stem + *-a* (or *-y* after a vowel) + a conjugated *olmoq*. Two separate words, but said as one."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Example",
+              "Negative",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "stem + **-a olaman**",
+                "*bora olaman*",
+                "*bora olmayman*",
+                "I can go"
+              ],
+              [
+                "",
+                "*qila olaman*",
+                "*qila olmayman*",
+                "I can do"
+              ],
+              [
+                "stem + **-y olaman**",
+                "*oʻqiy olaman*",
+                "*oʻqiy olmayman*",
+                "I can read"
+              ],
+              [
+                "",
+                "*ishlay olaman*",
+                "*ishlay olmayman*",
+                "I can work"
+              ],
+              [
+                "past",
+                "*bora oldim*",
+                "*bora olmadim*",
+                "I managed / didn't manage to go"
+              ],
+              [
+                "question",
+                "*bora olasizmi?*",
+                "—",
+                "can you go?"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **The negative goes on *olmoq*, not on the stem.** *Bora olmayman* — not *bormay olaman*. This mistake is instantly noticeable, so practice the negative as much as the positive.",
+            "Don't confuse this with *bilmoq* + *-(i)sh* in unit 16. *Suzishni bilaman* = \"I can swim\" (I've learned; it's a skill I have). *Suza olaman* = \"I can swim\" (right now, in this situation, I'm able to).",
+            "The past *-a olmadim* is very handy for apologizing: *Kela olmadim, kechirasiz* = \"I couldn't come, sorry\"."
+          ]
+        },
+        {
+          "title": "Mumkin, kerak emas, mumkin emas",
+          "body": [
+            "Three expressions that cover all of permission and prohibition at A1."
+          ],
+          "table": {
+            "head": [
+              "Expression",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**mumkin**",
+                "*Kirish mumkin.*",
+                "You may come in."
+              ],
+              [
+                "**mumkinmi?**",
+                "*Kirsam mumkinmi?*",
+                "May I come in?"
+              ],
+              [
+                "**mumkin emas**",
+                "*Chekish mumkin emas.*",
+                "No smoking."
+              ],
+              [
+                "**kerak**",
+                "*Borish kerak.*",
+                "You have to go."
+              ],
+              [
+                "**kerak emas**",
+                "*Borish kerak emas.*",
+                "You don't need to go."
+              ],
+              [
+                "**shart emas**",
+                "*Toʻlash shart emas.*",
+                "Payment isn't required."
+              ]
+            ]
+          },
+          "after": [
+            "Note that they all use the *-(i)sh* form from unit 16: *kirish*, *chekish*, *borish*, *toʻlash*. The verb has to become a noun before *mumkin* or *kerak* can follow it.",
+            "For a more casual permission, *boʻladimi?* — \"OK?\" — is enough. To refuse politely: *Kechirasiz, boʻlmaydi* (sorry, that's not possible).",
+            "Signs in Uzbekistan often use short forms: *Chekish taqiqlanadi* (smoking prohibited), *Kirish taqiqlangan* (no entry), *Ehtiyot boʻling!* (caution)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Paperwork and offices",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Not romantic vocabulary, but unavoidable for anyone living, studying, or working in Uzbekistan."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "Meaning",
+            "Oʻzbekcha",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**hujjat**",
+              "huj-JAT",
+              "document",
+              "**imzo**",
+              "im-ZÅ",
+              "signature"
+            ],
+            [
+              "**pasport**",
+              "PÅS-pårt",
+              "passport",
+              "**viza**",
+              "VI-zå",
+              "visa"
+            ],
+            [
+              "**ariza**",
+              "å-ri-ZÅ",
+              "application letter",
+              "**ruxsat**",
+              "rukh-SAT",
+              "permission"
+            ],
+            [
+              "**idora**",
+              "i-då-RÅ",
+              "office",
+              "**majlis**",
+              "måj-LIS",
+              "meeting"
+            ],
+            [
+              "**muhr**",
+              "muhr",
+              "stamp, seal",
+              "**nusxa**",
+              "NUS-khå",
+              "copy"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Almost every word in this table comes from Arabic: *hujjat* (proof → document), *ariza* (petition → application), *ruxsat* (license → permission), *idora* (administration → office), *muhr* (seal), *nusxa* (manuscript → copy). If you know any Arabic, Persian, or Turkish, it pays off again here."
+        },
+        {
+          "type": "p",
+          "text": "Useful sentences: *Bu hujjatga imzo kerakmi?* (does this document need a signature?), *Nusxasini olsam boʻladimi?* (may I take a copy?), *Ruxsat bering, iltimos* (may I, please)."
+        }
+      ]
+    },
+    {
+      "title": "Signs you'll read",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Ten signs found on doors, walls, and windows all over Uzbekistan."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sign",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**OCHIQ**",
+              "å-CHIQ",
+              "OPEN"
+            ],
+            [
+              "**YOPIQ**",
+              "yå-PIQ",
+              "CLOSED"
+            ],
+            [
+              "**KIRISH**",
+              "ki-RISH",
+              "ENTRANCE"
+            ],
+            [
+              "**CHIQISH**",
+              "chi-QISH",
+              "EXIT"
+            ],
+            [
+              "**ITARING**",
+              "i-tå-RING",
+              "PUSH"
+            ],
+            [
+              "**TORTING**",
+              "tår-TING",
+              "PULL"
+            ],
+            [
+              "**CHEKISH MUMKIN EMAS**",
+              "che-KISH mum-KIN e-MÅS",
+              "NO SMOKING"
+            ],
+            [
+              "**KIRISH TAQIQLANADI**",
+              "ki-RISH tå-qiq-lå-nå-DI",
+              "NO ENTRY"
+            ],
+            [
+              "**BEPUL**",
+              "be-PUL",
+              "FREE"
+            ],
+            [
+              "**SOTILADI**",
+              "så-ti-lå-DI",
+              "FOR SALE"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Bepul* literally means \"without money\" — the Persian prefix *be-* means \"without\", a cousin of *-siz*. You'll meet it again in *bechora* (poor thing, \"without a way out\") and *behuda* (in vain)."
+        },
+        {
+          "type": "p",
+          "text": "Note too that many signs are still written in Cyrillic, especially on older buildings and in small towns: **ОЧИҚ** = *ochiq*, **ЁПИҚ** = *yopiq*. If you meet a sign you can't read, it's most likely not another language — just another alphabet."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uz": "olmoq",
+      "baca": "ål-MÅQ",
+      "en": "to take; can (helper verb)"
+    },
+    {
+      "uz": "mumkin",
+      "baca": "mum-KIN",
+      "en": "allowed, may"
+    },
+    {
+      "uz": "mumkin emas",
+      "baca": "mum-KIN e-MÅS",
+      "en": "not allowed"
+    },
+    {
+      "uz": "kerak emas",
+      "baca": "ke-RAK e-MÅS",
+      "en": "not necessary"
+    },
+    {
+      "uz": "shart emas",
+      "baca": "shårt e-MÅS",
+      "en": "not required"
+    },
+    {
+      "uz": "taqiqlanadi",
+      "baca": "tå-qiq-lå-nå-DI",
+      "en": "is prohibited"
+    },
+    {
+      "uz": "hujjat",
+      "baca": "huj-JAT",
+      "en": "document"
+    },
+    {
+      "uz": "imzo",
+      "baca": "im-ZÅ",
+      "en": "signature"
+    },
+    {
+      "uz": "ariza",
+      "baca": "å-ri-ZÅ",
+      "en": "application letter"
+    },
+    {
+      "uz": "ruxsat",
+      "baca": "rukh-SAT",
+      "en": "permission"
+    },
+    {
+      "uz": "idora",
+      "baca": "i-då-RÅ",
+      "en": "office"
+    },
+    {
+      "uz": "majlis",
+      "baca": "måj-LIS",
+      "en": "meeting"
+    },
+    {
+      "uz": "nusxa",
+      "baca": "NUS-khå",
+      "en": "copy"
+    },
+    {
+      "uz": "pasport",
+      "baca": "PÅS-pårt",
+      "en": "passport"
+    },
+    {
+      "uz": "topshirmoq",
+      "baca": "tåp-shir-MÅQ",
+      "en": "to hand in"
+    },
+    {
+      "uz": "chekmoq",
+      "baca": "chek-MÅQ",
+      "en": "to smoke"
+    },
+    {
+      "uz": "ochiq",
+      "baca": "å-CHIQ",
+      "en": "open"
+    },
+    {
+      "uz": "yopiq",
+      "baca": "yå-PIQ",
+      "en": "closed"
+    },
+    {
+      "uz": "kirish",
+      "baca": "ki-RISH",
+      "en": "entrance"
+    },
+    {
+      "uz": "chiqish",
+      "baca": "chi-QISH",
+      "en": "exit"
+    },
+    {
+      "uz": "itarmoq",
+      "baca": "i-tår-MÅQ",
+      "en": "to push"
+    },
+    {
+      "uz": "bepul",
+      "baca": "be-PUL",
+      "en": "free (of charge)"
+    },
+    {
+      "uz": "savol",
+      "baca": "så-VÅL",
+      "en": "question"
+    },
+    {
+      "uz": "koʻp",
+      "baca": "kop",
+      "en": "many, much"
+    },
+    {
+      "uz": "kam",
+      "baca": "kåm",
+      "en": "few, little"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Put into the \"can\" form (-a/-y olmoq) for the given subject.",
+      "items": [
+        "bormoq + men → ____",
+        "qilmoq + siz → ____",
+        "oʻqimoq + u → ____",
+        "ishlamoq + biz → ____",
+        "kelmoq + men, negative → ____",
+        "suzmoq + sen → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Uzbek.",
+      "items": [
+        "May I come in?",
+        "No smoking here.",
+        "You don't need to pay today.",
+        "Could you sign this?",
+        "I couldn't come, sorry.",
+        "May I borrow your pen?"
+      ]
+    },
+    {
+      "prompt": "Fill in with mumkin, mumkin emas, kerak, or kerak emas.",
+      "items": [
+        "Bu yerda chekish ____. (not allowed)",
+        "Ertaga borish ____. (not necessary)",
+        "Kirish ____mi? (allowed?)",
+        "Dori ichish ____. (must)",
+        "Toʻlash ____. (not necessary)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "boʻladimi / kirsam / ?",
+        "emas / mumkin / chekish / bu yerda",
+        "olasizmi / imzo / qoʻya / ?",
+        "olmadim / kela / men",
+        "emas / kerak / bugun"
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 16. Translate into Uzbek without looking back at the unit.",
+      "items": [
+        "I like plov.",
+        "I like reading books.",
+        "She doesn't like cold weather.",
+        "What do you do in your free time?",
+        "I think it's good."
+      ]
+    }
+  ],
+  "answers": [
+    "bora olaman — qila olasiz — oʻqiy oladi — ishlay olamiz — kela olmayman — suza olasan",
+    "Kirsam boʻladimi? — Bu yerda chekish mumkin emas. — Bugun toʻlash kerak emas. — Bunga imzo qoʻya olasizmi? — Kela olmadim, kechirasiz. — Ruchkangizni olsam boʻladimi?",
+    "mumkin emas — kerak emas — mumkin — kerak — kerak emas",
+    "Kirsam boʻladimi? — Bu yerda chekish mumkin emas. — Imzo qoʻya olasizmi? — Men kela olmadim. — Bugun kerak emas.",
+    "Menga osh yoqadi. — Men kitob oʻqishni yoqtiraman. — Unga sovuq havo yoqmaydi. — Boʻsh vaqtingizda nima qilasiz? — Menimcha, yaxshi."
+  ]
+}

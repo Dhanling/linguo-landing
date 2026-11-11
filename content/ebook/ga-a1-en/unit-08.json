@@ -1,0 +1,760 @@
+{
+  "title": "My house, my father",
+  "title_target": "Mo theach, m'athair",
+  "goal": "Use possessives with the letter changes they bring, and talk about feelings and aches with the preposition *ar*.",
+  "bekal": [
+    "put *mo, do, a, ár, bhur, a* in front of nouns with the right séimhiú or urú",
+    "know that *a* has three meanings, told apart only by the letter change after it",
+    "say *Tá ocras orm*, *Tá tinneas cinn orm*, and answer *Cad tá ort?*"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — Níl mé go maith inniu",
+      "intro": "Morning. Budi hasn't come down to breakfast as usual, and Máire goes up to his room to see how he is.",
+      "lines": [
+        {
+          "speaker": "Máire:",
+          "text": "A Bhudi, tá tú an-chiúin. Cad tá ort?",
+          "id": "Budi, you're very quiet. What's wrong?",
+          "literal": "O Budi, are you very-quiet. what is on-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá tinneas cinn orm. Agus tá tuirse orm.",
+          "id": "I have a headache. And I'm tired.",
+          "literal": "is sickness of-head on-me. and is tiredness on-me."
+        },
+        {
+          "speaker": "Máire:",
+          "text": "An bhfuil slaghdán ort?",
+          "id": "Do you have a cold?",
+          "literal": "question is cold on-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Níl a fhios agam. Tá mo scornach tinn.",
+          "id": "I don't know. My throat's sore.",
+          "literal": "not-is its-knowledge at-me. is my throat sore."
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Ó, tá d'aghaidh dearg. Tá fiabhras ort, is dócha.",
+          "id": "Oh, your face is red. You have a fever, I'd say.",
+          "literal": "oh, is your-face red. is fever on-you, is likely."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá brón orm. Níl mé in ann dul chuig an rang inniu.",
+          "id": "I'm sorry. I can't go to class today.",
+          "literal": "is sorrow on-me. not-am I in ability go to the class today."
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Ná bí buartha. Fan sa leaba.",
+          "id": "Don't worry. Stay in bed.",
+          "literal": "don't be worried. stay in-the bed."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Go raibh maith agat. Tá tú an-lách.",
+          "id": "Thank you. You're very kind.",
+          "literal": "may-be good at-you. are you very-kind."
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Seo é do thae agus do leabhar. An bhfuil aon rud eile uait?",
+          "id": "Here's your tea and your book. Do you need anything else?",
+          "literal": "this it your tea and your book. question is any thing other from-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá m'fhón i mo mhála, le do thoil.",
+          "id": "My phone's in my bag, please.",
+          "literal": "is my-phone in my bag, with your will."
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Seo é. Agus ól an t-uisce seo.",
+          "id": "Here it is. And drink this water.",
+          "literal": "this it. and drink the water this."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá tú go hiontach. Tá áthas orm a bheith anseo.",
+          "id": "You're wonderful. I'm glad to be here.",
+          "literal": "are you wonderfully. is joy on-me to be here."
+        }
+      ],
+      "notes": [
+        "**Mo theach, do thae — possessives bring séimhiú.** *Mo* (\"my\") and *do* (\"your\") always soften the next letter: *teach* → *mo theach*, *tae* → *do thae*, *carr* → *mo charr*, *mála* → *mo mhála*. If the noun starts with a vowel, the possessive shrinks: *mo athair* becomes **m'athair**, *do aghaidh* becomes **d'aghaidh** — like English \"I'm\". The same happens before *f*: séimhiú makes *f* silent, so *mo fón* becomes **m'fhón** and *do fear* becomes **d'fhear**.",
+        "**Tá tinneas cinn orm — even pain sits on top of you.** Irish doesn't say \"I have a headache\" but \"there's a headache on me\". You saw this pattern in Unit 2 with *ocras* (hunger), and now it's complete: nearly all feelings and physical complaints use *ar*, while *tá … agam* (Unit 7) is for possessions. *Tá slaghdán orm*, not *agam*.",
+        "**Tá mo scornach tinn — body parts use the possessive.** When you name the body part itself, Irish goes back to the ordinary pattern: *Tá mo scornach tinn* (\"my throat is sore\"), *Tá mo chos tinn* (\"my leg hurts\"). The short rule: **feelings** take *ar*, **body parts** take a possessive.",
+        "**Ná bí buartha — saying \"don't\".** Commands use the base form of the verb (*fan* = stay, *ól* = drink). To say \"don't\", put *ná* in front: *Ná bí buartha* (\"don't worry\"), *Ná téigh* (\"don't go\"), *Ná déan sin* (\"don't do that\"). *Ná* causes no letter change."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Possessives and the letter changes they bring",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Six possessives, three patterns of change. Read this table alongside the séimhiú and urú tables in the pronunciation chapter — this is where those two rules are used most."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Possessive",
+            "Change",
+            "teach",
+            "carr",
+            "athair",
+            "fón"
+          ],
+          "rows": [
+            [
+              "mo (my)",
+              "séimhiú; shortened before a vowel",
+              "mo theach",
+              "mo charr",
+              "m'athair",
+              "m'fhón"
+            ],
+            [
+              "do (your)",
+              "séimhiú; shortened before a vowel",
+              "do theach",
+              "do charr",
+              "d'athair",
+              "d'fhón"
+            ],
+            [
+              "a (his)",
+              "séimhiú",
+              "a theach",
+              "a charr",
+              "a athair",
+              "a fhón"
+            ],
+            [
+              "a (her)",
+              "no change; h- before a vowel",
+              "a teach",
+              "a carr",
+              "a hathair",
+              "a fón"
+            ],
+            [
+              "ár (our)",
+              "urú; n- before a vowel",
+              "ár dteach",
+              "ár gcarr",
+              "ár n-athair",
+              "ár bhfón"
+            ],
+            [
+              "bhur (your, pl.)",
+              "urú; n- before a vowel",
+              "bhur dteach",
+              "bhur gcarr",
+              "bhur n-athair",
+              "bhur bhfón"
+            ],
+            [
+              "a (their)",
+              "urú; n- before a vowel",
+              "a dteach",
+              "a gcarr",
+              "a n-athair",
+              "a bhfón"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three a's spelled exactly alike",
+          "items": [
+            "*A theach* (with séimhiú) = **his** house.",
+            "*A teach* (no change) = **her** house.",
+            "*A dteach* (with urú) = **their** house.",
+            "All three are written with the same *a* and pronounced the same short vowel. The only thing that tells them apart is the change to the next word. This is the strongest reason séimhiú and urú can't be ignored: here they aren't decoration, they carry the meaning."
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Literally",
+            "English"
+          ],
+          "rows": [
+            [
+              "Tá mo mhála anseo.",
+              "is my bag here",
+              "My bag is here."
+            ],
+            [
+              "Cá bhfuil do charr?",
+              "where is your car",
+              "Where's your car?"
+            ],
+            [
+              "Tá a theach mór.",
+              "is his house big",
+              "His house is big."
+            ],
+            [
+              "Tá a teach mór.",
+              "is her house big",
+              "Her house is big."
+            ],
+            [
+              "Tá ár dteach beag.",
+              "is our house small",
+              "Our house is small."
+            ],
+            [
+              "Tá a gcarr nua.",
+              "is their car new",
+              "Their car is new."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ar — feelings that sit on top of you",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Form",
+            "Say it",
+            "Literally",
+            "Example"
+          ],
+          "rows": [
+            [
+              "orm",
+              "UH-rum",
+              "on-me",
+              "Tá ocras orm."
+            ],
+            [
+              "ort",
+              "ORT",
+              "on-you",
+              "Cad tá ort?"
+            ],
+            [
+              "air",
+              "ER",
+              "on-him",
+              "Tá tuirse air."
+            ],
+            [
+              "uirthi",
+              "IR-hih",
+              "on-her",
+              "Tá áthas uirthi."
+            ],
+            [
+              "orainn",
+              "UH-rin",
+              "on-us",
+              "Tá eagla orainn."
+            ],
+            [
+              "oraibh",
+              "UH-riv",
+              "on-you (pl.)",
+              "Tá brón oraibh."
+            ],
+            [
+              "orthu",
+              "OR-huh",
+              "on-them",
+              "Tá fearg orthu."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Watch out for *uirthi* (\"on her\") — it strays far from the others and is said \"IR-hih\". It's the only one you need to learn separately."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Tá ocras orm.",
+              "taw UH-kras UH-rum",
+              "I'm hungry."
+            ],
+            [
+              "Tá tart orm.",
+              "taw TART UH-rum",
+              "I'm thirsty."
+            ],
+            [
+              "Tá tuirse orm.",
+              "taw TIR-shuh UH-rum",
+              "I'm tired."
+            ],
+            [
+              "Tá áthas orm.",
+              "taw AW-has UH-rum",
+              "I'm happy."
+            ],
+            [
+              "Tá brón orm.",
+              "taw BROHN UH-rum",
+              "I'm sad / I'm sorry."
+            ],
+            [
+              "Tá fearg orm.",
+              "taw FAH-rag UH-rum",
+              "I'm angry."
+            ],
+            [
+              "Tá eagla orm.",
+              "taw AH-gluh UH-rum",
+              "I'm afraid."
+            ],
+            [
+              "Tá náire orm.",
+              "taw NAW-ruh UH-rum",
+              "I'm embarrassed."
+            ],
+            [
+              "Tá slaghdán orm.",
+              "taw SLAI-dawn UH-rum",
+              "I have a cold."
+            ],
+            [
+              "Tá fiabhras orm.",
+              "taw FEE-uh-vras UH-rum",
+              "I have a fever."
+            ],
+            [
+              "Tá tinneas cinn orm.",
+              "taw TIH-nyas KIN UH-rum",
+              "I have a headache."
+            ],
+            [
+              "Tá deifir orm.",
+              "taw DYEH-fir UH-rum",
+              "I'm in a hurry."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tá brón orm — the most useful apology",
+          "items": [
+            "Literally \"there's sorrow on me\", and it's used just like \"I'm sorry\" — for regret, not for \"excuse me\".",
+            "For **excuse me** — interrupting someone, passing in front of them, getting attention — use *Gabh mo leithscéal* (\"take my excuse\").",
+            "To offer condolences: *Ba mhaith liom comhbhrón a dhéanamh leat* — or, far more often, *Tá brón orm faoi do chailliúint* (\"sorry for your loss\")."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "An corp — the body, and saying you feel unwell",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "ceann",
+              "KYOWN",
+              "head"
+            ],
+            [
+              "aghaidh",
+              "AI",
+              "face"
+            ],
+            [
+              "gruaig",
+              "GROO-ig",
+              "hair"
+            ],
+            [
+              "súil",
+              "SOOL",
+              "eye"
+            ],
+            [
+              "srón",
+              "SROHN",
+              "nose"
+            ],
+            [
+              "béal",
+              "BYAYL",
+              "mouth"
+            ],
+            [
+              "cluas",
+              "KLOO-as",
+              "ear"
+            ],
+            [
+              "fiacail",
+              "FEE-uh-kil",
+              "tooth"
+            ],
+            [
+              "teanga",
+              "TYAN-guh",
+              "tongue, language"
+            ],
+            [
+              "scornach",
+              "SKOR-nakh",
+              "throat"
+            ],
+            [
+              "muineál",
+              "MWIH-nyawl",
+              "neck"
+            ],
+            [
+              "lámh",
+              "LAWV",
+              "hand, arm"
+            ],
+            [
+              "méar",
+              "MYAYR",
+              "finger"
+            ],
+            [
+              "cos",
+              "KOS",
+              "leg, foot"
+            ],
+            [
+              "bolg",
+              "BUH-log",
+              "stomach"
+            ],
+            [
+              "droim",
+              "DRIM",
+              "back"
+            ],
+            [
+              "croí",
+              "KREE",
+              "heart"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Literally",
+            "English"
+          ],
+          "rows": [
+            [
+              "Cad tá ort?",
+              "what is on-you",
+              "What's wrong?"
+            ],
+            [
+              "Níl mé go maith.",
+              "not-am I well",
+              "I'm not well."
+            ],
+            [
+              "Tá mo bholg tinn.",
+              "is my stomach sore",
+              "My stomach hurts."
+            ],
+            [
+              "Tá mo chos tinn.",
+              "is my leg sore",
+              "My leg hurts."
+            ],
+            [
+              "Tá pian i mo dhroim.",
+              "is pain in my back",
+              "My back hurts."
+            ],
+            [
+              "Tá mé tinn.",
+              "am I sick",
+              "I'm sick."
+            ],
+            [
+              "Teastaíonn dochtúir uaim.",
+              "is-needed doctor from-me",
+              "I need a doctor."
+            ],
+            [
+              "Bíodh biseach ort!",
+              "may-there-be recovery on-you",
+              "Get well soon!"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Teanga — one word, two meanings",
+          "items": [
+            "*Teanga* means both **tongue** and **language**, just like English \"mother tongue\" or Latin *lingua*.",
+            "*An Ghaeilge — ár dteanga féin* means \"Irish — our own language\", a line you'll often see on posters and school signs.",
+            "Notice *ár dteanga*: the possessive \"our\" brings urú, so the *t* is covered by a *d*. The word is said with a d sound — \"awr DYAN-guh\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "mo",
+      "baca": "muh",
+      "en": "my"
+    },
+    {
+      "ga": "do",
+      "baca": "duh",
+      "en": "your"
+    },
+    {
+      "ga": "a",
+      "baca": "uh",
+      "en": "his, her, their"
+    },
+    {
+      "ga": "ár",
+      "baca": "AWR",
+      "en": "our"
+    },
+    {
+      "ga": "bhur",
+      "baca": "WUR",
+      "en": "your (plural)"
+    },
+    {
+      "ga": "orm",
+      "baca": "UH-rum",
+      "en": "on me"
+    },
+    {
+      "ga": "ort",
+      "baca": "ORT",
+      "en": "on you"
+    },
+    {
+      "ga": "air",
+      "baca": "ER",
+      "en": "on him"
+    },
+    {
+      "ga": "uirthi",
+      "baca": "IR-hih",
+      "en": "on her"
+    },
+    {
+      "ga": "orainn",
+      "baca": "UH-rin",
+      "en": "on us"
+    },
+    {
+      "ga": "oraibh",
+      "baca": "UH-riv",
+      "en": "on you (plural)"
+    },
+    {
+      "ga": "orthu",
+      "baca": "OR-huh",
+      "en": "on them"
+    },
+    {
+      "ga": "tinneas",
+      "baca": "TIH-nyas",
+      "en": "sickness, ache"
+    },
+    {
+      "ga": "tinn",
+      "baca": "TEEN",
+      "en": "sick, sore"
+    },
+    {
+      "ga": "tuirse",
+      "baca": "TIR-shuh",
+      "en": "tiredness"
+    },
+    {
+      "ga": "slaghdán",
+      "baca": "SLAI-dawn",
+      "en": "a cold"
+    },
+    {
+      "ga": "fiabhras",
+      "baca": "FEE-uh-vras",
+      "en": "fever"
+    },
+    {
+      "ga": "scornach",
+      "baca": "SKOR-nakh",
+      "en": "throat"
+    },
+    {
+      "ga": "aghaidh",
+      "baca": "AI",
+      "en": "face"
+    },
+    {
+      "ga": "dearg",
+      "baca": "DYAH-rag",
+      "en": "red"
+    },
+    {
+      "ga": "is dócha",
+      "baca": "is DOH-khuh",
+      "en": "probably, I suppose"
+    },
+    {
+      "ga": "brón",
+      "baca": "BROHN",
+      "en": "sorrow, sadness"
+    },
+    {
+      "ga": "áthas",
+      "baca": "AW-has",
+      "en": "joy, gladness"
+    },
+    {
+      "ga": "fearg",
+      "baca": "FAH-rag",
+      "en": "anger"
+    },
+    {
+      "ga": "eagla",
+      "baca": "AH-gluh",
+      "en": "fear"
+    },
+    {
+      "ga": "in ann",
+      "baca": "in OWN",
+      "en": "able, can"
+    },
+    {
+      "ga": "chuig",
+      "baca": "KHIG",
+      "en": "to, toward"
+    },
+    {
+      "ga": "ná",
+      "baca": "NAW",
+      "en": "don't"
+    },
+    {
+      "ga": "buartha",
+      "baca": "BOO-ar-huh",
+      "en": "worried"
+    },
+    {
+      "ga": "fan",
+      "baca": "FAN",
+      "en": "stay, wait"
+    },
+    {
+      "ga": "leaba",
+      "baca": "LYAH-buh",
+      "en": "bed"
+    },
+    {
+      "ga": "lách",
+      "baca": "LAWKH",
+      "en": "kind, nice"
+    },
+    {
+      "ga": "mála",
+      "baca": "MAW-luh",
+      "en": "bag"
+    },
+    {
+      "ga": "fón",
+      "baca": "FOHN",
+      "en": "phone"
+    },
+    {
+      "ga": "eile",
+      "baca": "EH-luh",
+      "en": "other, else"
+    },
+    {
+      "ga": "pian",
+      "baca": "PEE-an",
+      "en": "pain"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Put the possessive *mo* in front of these nouns, with the right letter change.",
+      "items": [
+        "teach",
+        "carr",
+        "mála",
+        "athair",
+        "bord",
+        "peann"
+      ]
+    },
+    {
+      "prompt": "Translate. Remember that *a* has three meanings, told apart by the letter change.",
+      "items": [
+        "his house",
+        "her house",
+        "their house",
+        "our car",
+        "her father",
+        "their father"
+      ]
+    },
+    {
+      "prompt": "Fill in the right form of *ar* (orm, ort, air, uirthi, orainn, orthu).",
+      "items": [
+        "Tá ocras ____ . (I)",
+        "Cad tá ____ ? (you)",
+        "Tá tuirse ____ . (he)",
+        "Tá áthas ____ . (she)",
+        "Tá eagla ____ . (we)",
+        "Tá fearg ____ . (they)"
+      ]
+    },
+    {
+      "prompt": "Translate into Irish.",
+      "items": [
+        "I'm thirsty.",
+        "I have a headache.",
+        "What's wrong?",
+        "I have a cold.",
+        "My throat is sore.",
+        "Don't worry."
+      ]
+    }
+  ],
+  "answers": [
+    "mo theach — mo charr — mo mhála — m'athair — mo bhord — mo pheann",
+    "a theach — a teach — a dteach — ár gcarr — a hathair — a n-athair",
+    "orm — ort — air — uirthi — orainn — orthu",
+    "Tá tart orm. — Tá tinneas cinn orm. — Cad tá ort? — Tá slaghdán orm. — Tá mo scornach tinn. — Ná bí buartha."
+  ]
+}

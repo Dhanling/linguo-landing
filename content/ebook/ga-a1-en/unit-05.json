@@ -1,0 +1,698 @@
+{
+  "title": "How many?",
+  "title_target": "Cé mhéad?",
+  "goal": "Counting to a hundred, telling apart three different sets of numbers, counting people, and saying your age.",
+  "bekal": [
+    "use numbers for counting, for things and for people — three different sets",
+    "know that numbers 2–6 bring séimhiú and 7–10 bring urú",
+    "ask *Cé mhéad …?* and give your age with *… bliain d'aois*"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — Ag ullmhú don dinnéar",
+      "intro": "Late afternoon in the kitchen. Máire is getting dinner ready for guests, and Budi helps count the chairs.",
+      "lines": [
+        {
+          "speaker": "Máire:",
+          "text": "A Bhudi, an bhfuil tú saor tráthnóna?",
+          "id": "Budi, are you free this evening?",
+          "literal": "O Budi, Q is you free evening?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá. Cad atá ar siúl?",
+          "id": "I am. What's going on?",
+          "literal": "is. what that-is on walk?"
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Tá dinnéar mór againn. Tá seachtar ag teacht.",
+          "id": "We're having a big dinner. Seven people are coming.",
+          "literal": "is dinner big at-us. is seven-people at coming."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Seachtar! Cé mhéad cathaoir atá againn?",
+          "id": "Seven! How many chairs have we got?",
+          "literal": "seven-people! how-many chair that-is at-us?"
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Tá sé chathaoir sa chistin agus trí chathaoir sa seomra suí.",
+          "id": "There are six chairs in the kitchen and three chairs in the sitting room.",
+          "literal": "is six chair in-the kitchen and three chair in-the room sitting."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Naoi gcathaoir ar fad. Tá sin go leor.",
+          "id": "Nine chairs altogether. That's enough.",
+          "literal": "nine chair on length. is that enough."
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Agus tá dhá bhord againn — bord mór agus bord beag.",
+          "id": "And we have two tables — a big table and a small table.",
+          "literal": "and is two table at-us — table big and table small."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cé mhéad duine atá sa teaghlach?",
+          "id": "How many people are in the family?",
+          "literal": "how-many person that-is in-the family?"
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Ceathrar: mise, Seán, agus beirt iníonacha.",
+          "id": "Four: me, Seán and two daughters.",
+          "literal": "four-people: me, Seán, and two-people daughters."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cén aois iad?",
+          "id": "How old are they?",
+          "literal": "what age them?"
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Tá Sinéad sé bliana déag d'aois agus tá Órla deich mbliana d'aois.",
+          "id": "Sinéad is sixteen and Órla is ten.",
+          "literal": "is Sinéad six year teen of-age and is Órla ten year of-age."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá mé fiche bliain d'aois. Tá mé níos sine ná iad!",
+          "id": "I'm twenty. I'm older than them!",
+          "literal": "is I twenty year of-age. is I more old than them!"
+        }
+      ],
+      "notes": [
+        "**Three sets of numbers, and you need to know which goes where.** For counting with no noun — phone numbers, house numbers, counting one-two-three — you use the forms with *a*: *a haon, a dó, a trí*. For things you use the bare forms: *dhá bhord, trí chathaoir*. For people there's a completely different set: *beirt, triúr, ceathrar*. Using the wrong set is no small slip — *trí* and *triúr* are as different as \"three\" and \"a trio\".",
+        "**Sé chathaoir but naoi gcathaoir.** Numbers 2 to 6 bring **séimhiú**: *dhá bhord*, *trí chathaoir*, *ceithre chathaoir*, *cúig bhord*, *sé chathaoir*. Numbers 7 to 10 bring **urú**: *seacht mbord*, *ocht gcathaoir*, *naoi gcathaoir*, *deich mbord*. The number 1 and numbers above 10 change nothing.",
+        "**The noun stays singular.** *Naoi gcathaoir*, not *naoi gcathaoireacha* — literally \"nine chair\". English uses a plural after numbers, so this takes a moment to get used to; think of \"ten-pound note\" or \"a six-foot man\". The only exceptions are a handful of words with special counting forms, like *bliain*, which becomes *bliana* after 3 to 10.",
+        "**Beirt iníonacha, ceathrar — people have their own set.** These ten words (*duine amháin, beirt, triúr, ceathrar, cúigear, seisear, seachtar, ochtar, naonúr, deichniúr*) are used only for human beings, and each one already contains the meaning \"people\". So *Tá seachtar ag teacht* is complete without the word *duine* — literally \"a seven are coming\"."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Three sets of numbers",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Read this table from left to right, one number per row. The second column is for bare counting, the third for things, the fourth for people."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "Counting",
+            "For things (leabhar)",
+            "For people",
+            "Say it (people)"
+          ],
+          "rows": [
+            [
+              "1",
+              "a haon",
+              "leabhar amháin",
+              "duine amháin",
+              "DIH-nyuh uh-WAWN"
+            ],
+            [
+              "2",
+              "a dó",
+              "dhá leabhar",
+              "beirt",
+              "BERTCH"
+            ],
+            [
+              "3",
+              "a trí",
+              "trí leabhar",
+              "triúr",
+              "TROOR"
+            ],
+            [
+              "4",
+              "a ceathair",
+              "ceithre leabhar",
+              "ceathrar",
+              "KYAH-rar"
+            ],
+            [
+              "5",
+              "a cúig",
+              "cúig leabhar",
+              "cúigear",
+              "KOO-gyar"
+            ],
+            [
+              "6",
+              "a sé",
+              "sé leabhar",
+              "seisear",
+              "SHEH-shar"
+            ],
+            [
+              "7",
+              "a seacht",
+              "seacht leabhar",
+              "seachtar",
+              "SHAKH-tar"
+            ],
+            [
+              "8",
+              "a hocht",
+              "ocht leabhar",
+              "ochtar",
+              "OKH-tar"
+            ],
+            [
+              "9",
+              "a naoi",
+              "naoi leabhar",
+              "naonúr",
+              "NAY-noor"
+            ],
+            [
+              "10",
+              "a deich",
+              "deich leabhar",
+              "deichniúr",
+              "DEH-nyoor"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice three things in the \"for things\" column: 2 uses the form *dhá* (not *dó*), 4 uses *ceithre* (not *ceathair*), and 1 goes **after** the noun as *amháin*. All three are exceptions to learn by heart."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Number",
+            "Counting",
+            "Say it",
+            "Number",
+            "Counting",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "11",
+              "a haon déag",
+              "uh HAYN DYAYG",
+              "20",
+              "fiche",
+              "FIH-khuh"
+            ],
+            [
+              "12",
+              "a dó dhéag",
+              "uh DOH YAYG",
+              "30",
+              "tríocha",
+              "TREE-uh-khuh"
+            ],
+            [
+              "13",
+              "a trí déag",
+              "uh TREE DYAYG",
+              "40",
+              "daichead",
+              "DAH-had"
+            ],
+            [
+              "14",
+              "a ceathair déag",
+              "uh KYAH-hir DYAYG",
+              "50",
+              "caoga",
+              "KAY-guh"
+            ],
+            [
+              "15",
+              "a cúig déag",
+              "uh KOO-ig DYAYG",
+              "60",
+              "seasca",
+              "SHAS-kuh"
+            ],
+            [
+              "16",
+              "a sé déag",
+              "uh SHAY DYAYG",
+              "70",
+              "seachtó",
+              "SHAKH-toh"
+            ],
+            [
+              "17",
+              "a seacht déag",
+              "uh SHAKHT DYAYG",
+              "80",
+              "ochtó",
+              "OKH-toh"
+            ],
+            [
+              "18",
+              "a hocht déag",
+              "uh HOKHT DYAYG",
+              "90",
+              "nócha",
+              "NOH-khuh"
+            ],
+            [
+              "19",
+              "a naoi déag",
+              "uh NAY DYAYG",
+              "100",
+              "céad",
+              "KYAYD"
+            ],
+            [
+              "20",
+              "fiche",
+              "FIH-khuh",
+              "1,000",
+              "míle",
+              "MEE-luh"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Why there's an a and an h before the numbers",
+          "items": [
+            "The *a* before counting numbers is an empty marker showing that the number stands alone, with no noun. It's said very lightly, like the *a* in \"about\".",
+            "*A haon* and *a hocht* get an **h** because both start with a vowel — the same pattern as *go hiontach* in Unit 2. Likewise *a haon déag* and *a hocht déag*.",
+            "For phone numbers and house numbers, always use this set: *a náid* (zero), *a haon*, *a dó* … The number 087 is read *a náid, a hocht, a seacht*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Counting people, and saying your age",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The ten words for counting people already contain the meaning \"people\", so each can stand alone as a full answer."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Literally",
+            "English"
+          ],
+          "rows": [
+            [
+              "Tá beirt anseo.",
+              "is two-people here",
+              "There are two people here."
+            ],
+            [
+              "Tá triúr fear ag obair.",
+              "is three-people man at work",
+              "Three men are working."
+            ],
+            [
+              "Tá beirt bhan sa siopa.",
+              "is two-people woman in-the shop",
+              "There are two women in the shop."
+            ],
+            [
+              "Cé mhéad duine atá ann?",
+              "how-many person that-is in-it",
+              "How many people are there?"
+            ],
+            [
+              "Ceathrar.",
+              "four-people",
+              "Four."
+            ],
+            [
+              "Tá seisear páistí sa rang.",
+              "is six-people children in-the class",
+              "There are six children in the class."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Beirt* — and only *beirt* — lenites the next word: *beirt fhear*, *beirt bhan*, *beirt mhac*. The other people-counters change nothing."
+        },
+        {
+          "type": "sub",
+          "text": "Age"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Cén aois tú?",
+              "kyayn AYSH TOO",
+              "How old are you?"
+            ],
+            [
+              "Tá mé bliain d'aois.",
+              "taw may BLEE-in DAYSH",
+              "I'm one year old."
+            ],
+            [
+              "Tá mé dhá bhliain d'aois.",
+              "taw may ghaw VLEE-in DAYSH",
+              "I'm two years old."
+            ],
+            [
+              "Tá mé cúig bliana d'aois.",
+              "taw may KOO-ig BLEE-uh-nuh",
+              "I'm five years old."
+            ],
+            [
+              "Tá mé deich mbliana d'aois.",
+              "taw may deh MLEE-uh-nuh",
+              "I'm ten years old."
+            ],
+            [
+              "Tá mé fiche bliain d'aois.",
+              "taw may FIH-khuh BLEE-in",
+              "I'm twenty years old."
+            ],
+            [
+              "Tá sé sé bliana déag d'aois.",
+              "taw shay shay BLEE-uh-nuh DYAYG",
+              "He's sixteen years old."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Bliain, bliana, mbliana — one word, three shapes",
+          "items": [
+            "After 1 and 2, and after numbers above 20: **bliain**. *Bliain amháin*, *dhá bhliain*, *fiche bliain*, *tríocha bliain*.",
+            "After 3 to 6: **bliana**. *Trí bliana*, *ceithre bliana*, *cúig bliana*, *sé bliana*.",
+            "After 7 to 10: **mbliana**. *Seacht mbliana*, *ocht mbliana*, *naoi mbliana*, *deich mbliana*. The *m* in front is ordinary urú, and the *b* after it goes silent.",
+            "*D'aois* literally means \"of age\" and always goes on the end. Without it, *Tá mé fiche bliain* means \"I've been (here) for twenty years\"."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Cé mhéad — asking how many and how much",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "*Cé mhéad* is pronounced kyay VAYD, literally \"what amount\". The noun after it is always **singular**."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Cé mhéad duine?",
+              "kyay vayd DIH-nuh",
+              "How many people?"
+            ],
+            [
+              "Cé mhéad leabhar?",
+              "kyay vayd LYOW-er",
+              "How many books?"
+            ],
+            [
+              "Cé mhéad uair?",
+              "kyay vayd OO-ir",
+              "How many times? / How many hours?"
+            ],
+            [
+              "Cé mhéad atá air?",
+              "kyay vayd uh-TAW ER",
+              "How much is it?"
+            ],
+            [
+              "Cé mhéad atá ar an gcaife?",
+              "kyay vayd uh-TAW er an GAH-fuh",
+              "How much is the coffee?"
+            ],
+            [
+              "Tá sé euro air.",
+              "taw shay YOO-roh ER",
+              "It's six euro."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that even a price sits **on** the item: *Tá trí euro air* literally means \"there are three euro on it\". You've already seen the same *ar* pattern in *Tá ocras orm* in Unit 2, and it comes back in Unit 8."
+        },
+        {
+          "type": "kotak",
+          "title": "Numbers you'll use every day",
+          "items": [
+            "**Phone numbers** are read digit by digit using the counting set: 086 231 4457 → *a náid, a hocht, a sé — a dó, a trí, a haon — a ceathair, a ceathair, a cúig, a seacht*.",
+            "**Prices** use euro and *cent*: *dhá euro caoga* (€2.50), *seacht euro* (€7).",
+            "**Compound numbers above twenty** are built with *a*: *fiche a haon* (21), *tríocha a cúig* (35), *céad a deich* (110). The older form with *is* — *aon is fiche* — is still heard in songs and poems."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "saor",
+      "baca": "SEER",
+      "en": "free; cheap"
+    },
+    {
+      "ga": "tráthnóna",
+      "baca": "traw-NOH-nuh",
+      "en": "afternoon, evening"
+    },
+    {
+      "ga": "ar siúl",
+      "baca": "er SHOOL",
+      "en": "going on"
+    },
+    {
+      "ga": "dinnéar",
+      "baca": "dih-NYAYR",
+      "en": "dinner"
+    },
+    {
+      "ga": "againn",
+      "baca": "AH-gin",
+      "en": "at us"
+    },
+    {
+      "ga": "ag teacht",
+      "baca": "eg TYAKHT",
+      "en": "coming"
+    },
+    {
+      "ga": "cé mhéad?",
+      "baca": "kyay VAYD",
+      "en": "how many? how much?"
+    },
+    {
+      "ga": "seomra suí",
+      "baca": "SHOHM-ruh SEE",
+      "en": "sitting room"
+    },
+    {
+      "ga": "ar fad",
+      "baca": "er FAD",
+      "en": "altogether, completely"
+    },
+    {
+      "ga": "teaghlach",
+      "baca": "TYAI-lakh",
+      "en": "family, household"
+    },
+    {
+      "ga": "iníon",
+      "baca": "ih-NYEEN",
+      "en": "daughter"
+    },
+    {
+      "ga": "aois",
+      "baca": "AYSH",
+      "en": "age"
+    },
+    {
+      "ga": "bliain",
+      "baca": "BLEE-in",
+      "en": "year"
+    },
+    {
+      "ga": "níos sine",
+      "baca": "nyees SHIH-nuh",
+      "en": "older"
+    },
+    {
+      "ga": "níos óige",
+      "baca": "nyees OH-gyuh",
+      "en": "younger"
+    },
+    {
+      "ga": "ná",
+      "baca": "NAW",
+      "en": "than"
+    },
+    {
+      "ga": "a haon",
+      "baca": "uh HAYN",
+      "en": "one"
+    },
+    {
+      "ga": "a dó",
+      "baca": "uh DOH",
+      "en": "two"
+    },
+    {
+      "ga": "a trí",
+      "baca": "uh TREE",
+      "en": "three"
+    },
+    {
+      "ga": "a ceathair",
+      "baca": "uh KYAH-hir",
+      "en": "four"
+    },
+    {
+      "ga": "a cúig",
+      "baca": "uh KOO-ig",
+      "en": "five"
+    },
+    {
+      "ga": "a sé",
+      "baca": "uh SHAY",
+      "en": "six"
+    },
+    {
+      "ga": "a seacht",
+      "baca": "uh SHAKHT",
+      "en": "seven"
+    },
+    {
+      "ga": "a hocht",
+      "baca": "uh HOKHT",
+      "en": "eight"
+    },
+    {
+      "ga": "a naoi",
+      "baca": "uh NAY",
+      "en": "nine"
+    },
+    {
+      "ga": "a deich",
+      "baca": "uh DEH",
+      "en": "ten"
+    },
+    {
+      "ga": "a náid",
+      "baca": "uh NAWJ",
+      "en": "zero"
+    },
+    {
+      "ga": "fiche",
+      "baca": "FIH-khuh",
+      "en": "twenty"
+    },
+    {
+      "ga": "céad",
+      "baca": "KYAYD",
+      "en": "a hundred"
+    },
+    {
+      "ga": "beirt",
+      "baca": "BERTCH",
+      "en": "two people"
+    },
+    {
+      "ga": "triúr",
+      "baca": "TROOR",
+      "en": "three people"
+    },
+    {
+      "ga": "ceathrar",
+      "baca": "KYAH-rar",
+      "en": "four people"
+    },
+    {
+      "ga": "seachtar",
+      "baca": "SHAKH-tar",
+      "en": "seven people"
+    },
+    {
+      "ga": "uair",
+      "baca": "OO-ir",
+      "en": "hour, time (occasion)"
+    },
+    {
+      "ga": "euro",
+      "baca": "YOO-roh",
+      "en": "euro"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the numbers in counting form (with *a*).",
+      "items": [
+        "3",
+        "8",
+        "10",
+        "1",
+        "9",
+        "11"
+      ]
+    },
+    {
+      "prompt": "Put the number and noun together. Remember séimhiú for 2–6 and urú for 7–10.",
+      "items": [
+        "2 + bord",
+        "3 + cathaoir",
+        "5 + leabhar",
+        "7 + bord",
+        "9 + cathaoir",
+        "10 + peann"
+      ]
+    },
+    {
+      "prompt": "Fill in the right word for counting people (beirt, triúr, ceathrar, cúigear, seisear, seachtar).",
+      "items": [
+        "Tá ____ sa teaghlach. (4 people)",
+        "Tá ____ ag teacht. (7 people)",
+        "Tá ____ fear ag obair. (3 people)",
+        "Tá ____ bhan sa siopa. (2 people)",
+        "Tá ____ páistí sa rang. (6 people)",
+        "Tá ____ ag fanacht. (5 people)"
+      ]
+    },
+    {
+      "prompt": "Translate into Irish.",
+      "items": [
+        "How old are you?",
+        "I'm twenty years old.",
+        "He's ten years old.",
+        "How many chairs are there?",
+        "There are nine chairs.",
+        "How much is it?"
+      ]
+    }
+  ],
+  "answers": [
+    "a trí — a hocht — a deich — a haon — a naoi — a haon déag",
+    "dhá bhord — trí chathaoir — cúig leabhar — seacht mbord — naoi gcathaoir — deich bpeann",
+    "ceathrar — seachtar — triúr — beirt — seisear — cúigear",
+    "Cén aois tú? — Tá mé fiche bliain d'aois. — Tá sé deich mbliana d'aois. — Cé mhéad cathaoir atá ann? — Tá naoi gcathaoir ann. — Cé mhéad atá air?"
+  ]
+}

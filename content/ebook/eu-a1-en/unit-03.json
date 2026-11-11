@@ -1,0 +1,635 @@
+{
+  "title": "Where do you live?",
+  "title_target": "Non bizi zara?",
+  "goal": "Say where you're from and where you live, use the place ending -n, give your age and job, and count to a hundred.",
+  "bekal": [
+    "answer *nongoa zara?* and *non bizi zara?* in full",
+    "attach the place ending *-n/-an* to city names and ordinary nouns",
+    "count to a hundred the Basque way, in twenties"
+  ],
+  "dialogs": [
+    {
+      "title": "Elkarrizketa — Euskaltegiko lehen klasea",
+      "intro": "The first class at the euskaltegi. Ainhoa goes around asking her new students about themselves.",
+      "lines": [
+        {
+          "speaker": "Ainhoa:",
+          "text": "Egun on denoi! Nor zara zu?",
+          "id": "Good morning, everyone! Who are you?",
+          "literal": "day good all-to! who are you?"
+        },
+        {
+          "speaker": "Marie:",
+          "text": "Marie naiz. Baionakoa naiz.",
+          "id": "I'm Marie. I'm from Baiona.",
+          "literal": "Marie am. Baiona-from-one am."
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Eta non bizi zara orain?",
+          "id": "And where do you live now?",
+          "literal": "and where living are now?"
+        },
+        {
+          "speaker": "Marie:",
+          "text": "Orain Bilbon bizi naiz, ikasle etxe batean.",
+          "id": "Now I live in Bilbo, in a student residence.",
+          "literal": "now Bilbo-in living am, student house one-in."
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Eta zu, Budi? Nongoa zara?",
+          "id": "And you, Budi? Where are you from?",
+          "literal": "and you, Budi? where-from-one are?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Indonesiakoa naiz, Jakartakoa. Baina orain Bilbon bizi naiz.",
+          "id": "I'm from Indonesia, from Jakarta. But now I live in Bilbo.",
+          "literal": "Indonesia-from-one am, Jakarta-from-one. but now Bilbo-in living am."
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Zenbat urte dituzu?",
+          "id": "How old are you?",
+          "literal": "how-many year you-have-them?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hogeita bost urte ditut. Eta zu, Marie?",
+          "id": "I'm twenty-five. And you, Marie?",
+          "literal": "twenty-and five year I-have-them. and you, Marie?"
+        },
+        {
+          "speaker": "Marie:",
+          "text": "Hogeita hamar. Zaharra naiz!",
+          "id": "Thirty. I'm old!",
+          "literal": "twenty-and ten. old-the am!"
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Ez zara zaharra! Eta zu, Iker? Non bizi zara?",
+          "id": "You're not old! And you, Iker? Where do you live?",
+          "literal": "not are old-the! and you, Iker? where living are?"
+        },
+        {
+          "speaker": "Iker:",
+          "text": "Donostian bizi naiz, baina Bilbon lan egiten dut.",
+          "id": "I live in Donostia, but I work in Bilbo.",
+          "literal": "Donostia-in living am, but Bilbo-in work doing I-have-it."
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Ondo. Ongi etorri denoi, eta has gaitezen!",
+          "id": "Good. Welcome, everyone, and let's begin!",
+          "literal": "good. well come all-to, and begin let-us."
+        }
+      ],
+      "notes": [
+        "**Bizi naiz — two words, one meaning.** *Bizi izan* means \"to live\". The *bizi* part never changes; only the *izan* after it does: *bizi naiz*, *bizi zara*, *bizi da*, *bizi gara*. You'll meet this \"fixed word + auxiliary\" pattern again and again — *lan egin*, *hitz egin*, *lo egin*.",
+        "**Nongoa and non ask two different things.** *Nongoa zara?* asks about **origin** (\"where are you from?\"), *Non bizi zara?* about **where you live now**. Budi answers them differently: he's from Jakarta, he lives in Bilbo. Keep the two questions apart.",
+        "**Zenbat urte dituzu? — you \"have\" your age.** Literally \"how many years do you have?\" — just like Spanish and French. The answer is *… urte ditut*. *Ditut/dituzu* is the auxiliary for **plural** things; it's unpacked fully in Unit 5. For now, memorize these two sentences as they are.",
+        "**Baina, eta, edo — the three most common linking words.** *Eta* (and), *baina* (but), *edo* (or). All three stand between the two parts of a sentence, exactly as in English. This is one corner of Basque with no surprises at all."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Where? — the ending -n",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Basque has no word for \"in\" or \"at\". It glues *-n* onto the end of the place word instead. The exact form depends on the word's last letter."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Word type",
+            "Rule",
+            "Example",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "city name ending in a vowel",
+              "+ **n**",
+              "Bilbo → **Bilbon**",
+              "in Bilbo"
+            ],
+            [
+              "",
+              "",
+              "Donostia → **Donostian**",
+              "in Donostia"
+            ],
+            [
+              "",
+              "",
+              "Jakarta → **Jakartan**",
+              "in Jakarta"
+            ],
+            [
+              "city name ending in a consonant",
+              "+ **en**",
+              "Paris → **Parisen**",
+              "in Paris"
+            ],
+            [
+              "",
+              "",
+              "Madril → **Madrilen**",
+              "in Madrid"
+            ],
+            [
+              "ordinary noun",
+              "+ **an**",
+              "etxe → **etxean**",
+              "at home, in the house"
+            ],
+            [
+              "",
+              "",
+              "gela → **gelan**",
+              "in the room"
+            ],
+            [
+              "",
+              "",
+              "taberna → **tabernan**",
+              "in the bar"
+            ],
+            [
+              "plural noun",
+              "+ **etan**",
+              "etxe → **etxeetan**",
+              "in the houses"
+            ],
+            [
+              "indefinite (one)",
+              "+ **batean**",
+              "etxe **batean**",
+              "in a house"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that ordinary nouns take *-an*, which is really the article *-a* plus *-n*: *etxe + a + n* → *etxean*, \"house-the-in\". A word that already ends in *-a* just adds *-n*: *gela* → *gelan*."
+        },
+        {
+          "type": "sub",
+          "text": "Saying where you're from: -ko and -tar"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Literally",
+            "English"
+          ],
+          "rows": [
+            [
+              "Jakarta**koa** naiz.",
+              "Jakarta-from-one am",
+              "I'm from Jakarta."
+            ],
+            [
+              "Bilbo**koa** da.",
+              "Bilbo-from-one is",
+              "He's from Bilbo."
+            ],
+            [
+              "Indonesia**koa** naiz.",
+              "Indonesia-from-one am",
+              "I'm from Indonesia."
+            ],
+            [
+              "indonesiar**ra** naiz.",
+              "Indonesia-person-the am",
+              "I'm Indonesian."
+            ],
+            [
+              "euskal**duna** da.",
+              "euskara-having-the is",
+              "She's Basque."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Basque cities have two faces",
+          "items": [
+            "Many cities have a Basque name and a Spanish name that are very different: **Bilbo** = Bilbao, **Donostia** = San Sebastián, **Gasteiz** = Vitoria, **Iruñea** = Pamplona, **Baiona** = Bayonne.",
+            "Inside a Basque sentence, use the Basque name. Dropping \"San Sebastián\" into the middle of a euskara sentence sounds like mixing two languages in one breath.",
+            "*Euskal Herria* is the name of the whole region — literally \"the land of euskara\". It's not a country but a cultural region covering seven provinces in two countries."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Numbers from twenty to a hundred",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Here Basque shows off its distinctive way of counting: the basic unit isn't ten but **twenty**. Forty is \"two times twenty\", sixty \"three times twenty\", eighty \"four times twenty\"."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Number",
+            "Euskara",
+            "Literally",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "20",
+              "hogei",
+              "twenty",
+              "oh-GEH-ee"
+            ],
+            [
+              "21",
+              "hogeita bat",
+              "twenty and one",
+              "oh-geh-ee-tah BAHT"
+            ],
+            [
+              "25",
+              "hogeita bost",
+              "twenty and five",
+              "oh-geh-ee-tah BOHST"
+            ],
+            [
+              "30",
+              "hogeita hamar",
+              "twenty and ten",
+              "oh-geh-ee-tah ah-MAHR"
+            ],
+            [
+              "35",
+              "hogeita hamabost",
+              "twenty and fifteen",
+              "oh-geh-ee-tah ah-mah-BOHST"
+            ],
+            [
+              "40",
+              "berrogei",
+              "two-times twenty",
+              "beh-rroh-GEH-ee"
+            ],
+            [
+              "50",
+              "berrogeita hamar",
+              "two-times twenty and ten",
+              "beh-rroh-geh-ee-tah ah-MAHR"
+            ],
+            [
+              "60",
+              "hirurogei",
+              "three-times twenty",
+              "ee-roo-roh-GEH-ee"
+            ],
+            [
+              "70",
+              "hirurogeita hamar",
+              "three-times twenty and ten",
+              "ee-roo-roh-geh-ee-tah ah-MAHR"
+            ],
+            [
+              "80",
+              "laurogei",
+              "four-times twenty",
+              "lah-oo-roh-GEH-ee"
+            ],
+            [
+              "90",
+              "laurogeita hamar",
+              "four-times twenty and ten",
+              "lah-oo-roh-geh-ee-tah ah-MAHR"
+            ],
+            [
+              "100",
+              "ehun",
+              "a hundred",
+              "EH-oon"
+            ],
+            [
+              "1,000",
+              "mila",
+              "a thousand",
+              "MEE-lah"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "There's really only one pattern: take the nearest multiple of twenty below, add *-ta*, then the rest. *Berrogeita hamazazpi* = 40 + 17 = 57. It sounds long, and it is — even native speakers often use Spanish numbers for prices in shops. But for ages, dates, and small amounts, the Basque forms are used every day."
+        },
+        {
+          "type": "kotak",
+          "title": "Age: years are something you have",
+          "items": [
+            "*Zenbat urte dituzu?* — \"How old are you?\" (literally: how many years do you have?)",
+            "*Hogeita bost urte ditut.* — \"I'm 25.\"",
+            "*Nire aitak berrogeita hamar urte ditu.* — \"My father is 50.\"",
+            "Notice that *urte* stays bare, without *-a*: after a number, a noun never takes the article."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ten question words",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English",
+            "Example"
+          ],
+          "rows": [
+            [
+              "nor",
+              "NOHR",
+              "who",
+              "Nor zara zu?"
+            ],
+            [
+              "zer",
+              "SEHR",
+              "what",
+              "Zer da hau?"
+            ],
+            [
+              "non",
+              "NOHN",
+              "where",
+              "Non bizi zara?"
+            ],
+            [
+              "nora",
+              "NOH-rah",
+              "where to",
+              "Nora zoaz?"
+            ],
+            [
+              "nondik",
+              "nohn-DEEK",
+              "where from",
+              "Nondik zatoz?"
+            ],
+            [
+              "noiz",
+              "NOH-ees",
+              "when",
+              "Noiz da klasea?"
+            ],
+            [
+              "nola",
+              "NOH-lah",
+              "how",
+              "Nola duzu izena?"
+            ],
+            [
+              "zenbat",
+              "sehn-BAHT",
+              "how many, how much",
+              "Zenbat urte dituzu?"
+            ],
+            [
+              "zergatik",
+              "sehr-GAH-teek",
+              "why",
+              "Zergatik ikasten duzu euskara?"
+            ],
+            [
+              "zein",
+              "SEH-een",
+              "which",
+              "Zein liburu nahi duzu?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the *n*- family: *nor*, *non*, *nora*, *nondik*, *noiz*, *nola*, *nongo* — they all start with the same sound, much like the English wh- words. Learning them as one group is far easier than one by one."
+        },
+        {
+          "type": "kotak",
+          "title": "The word-order rule that matters",
+          "items": [
+            "The question word must stand **right before the verb**. *Non **bizi zara**?* is right; ***Non zara bizi?*** is wrong.",
+            "The same rule applies to answers: whatever matters most goes right before the verb. *Bilbon bizi naiz* answers \"where\"; *ni bizi naiz Bilbon* sounds like a sentence whose words got scattered.",
+            "For yes/no questions, just raise your voice at the end — or slip *al* in before the verb: *Euskalduna **al** zara?* (\"Are you Basque?\"). *Al* is polite and very typically Basque."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "eu": "bizi izan",
+      "baca": "BEE-see ee-SAHN",
+      "en": "to live"
+    },
+    {
+      "eu": "lan egin",
+      "baca": "LAHN eh-GEEN",
+      "en": "to work"
+    },
+    {
+      "eu": "orain",
+      "baca": "oh-RAH-een",
+      "en": "now"
+    },
+    {
+      "eu": "baina",
+      "baca": "BAH-ee-nah",
+      "en": "but"
+    },
+    {
+      "eu": "edo",
+      "baca": "EH-doh",
+      "en": "or"
+    },
+    {
+      "eu": "urte",
+      "baca": "OOR-teh",
+      "en": "year"
+    },
+    {
+      "eu": "herri",
+      "baca": "EH-rree",
+      "en": "town, country"
+    },
+    {
+      "eu": "hiri",
+      "baca": "EE-ree",
+      "en": "city"
+    },
+    {
+      "eu": "auzo",
+      "baca": "AH-oo-soh",
+      "en": "neighborhood"
+    },
+    {
+      "eu": "kale",
+      "baca": "KAH-leh",
+      "en": "street"
+    },
+    {
+      "eu": "plaza",
+      "baca": "PLAH-sah",
+      "en": "square"
+    },
+    {
+      "eu": "euskaltegi",
+      "baca": "eh-oos-kahl-TEH-gee",
+      "en": "Basque language school"
+    },
+    {
+      "eu": "unibertsitate",
+      "baca": "oo-nee-behr-tsee-TAH-teh",
+      "en": "university"
+    },
+    {
+      "eu": "bulego",
+      "baca": "boo-LEH-goh",
+      "en": "office"
+    },
+    {
+      "eu": "denda",
+      "baca": "DEHN-dah",
+      "en": "shop"
+    },
+    {
+      "eu": "taberna",
+      "baca": "tah-BEHR-nah",
+      "en": "bar, tavern"
+    },
+    {
+      "eu": "ospitale",
+      "baca": "ohs-pee-TAH-leh",
+      "en": "hospital"
+    },
+    {
+      "eu": "langile",
+      "baca": "lahn-GEE-leh",
+      "en": "worker"
+    },
+    {
+      "eu": "mediku",
+      "baca": "meh-DEE-koo",
+      "en": "doctor"
+    },
+    {
+      "eu": "erizain",
+      "baca": "eh-ree-SAH-een",
+      "en": "nurse"
+    },
+    {
+      "eu": "ingeniari",
+      "baca": "een-geh-nee-AH-ree",
+      "en": "engineer"
+    },
+    {
+      "eu": "kazetari",
+      "baca": "kah-seh-TAH-ree",
+      "en": "journalist"
+    },
+    {
+      "eu": "dendari",
+      "baca": "dehn-DAH-ree",
+      "en": "shop assistant"
+    },
+    {
+      "eu": "informatikari",
+      "baca": "een-fohr-mah-tee-KAH-ree",
+      "en": "IT person"
+    },
+    {
+      "eu": "Euskal Herria",
+      "baca": "eh-oos-KAHL eh-RREE-ah",
+      "en": "the Basque Country"
+    },
+    {
+      "eu": "Bilbo",
+      "baca": "BEEL-boh",
+      "en": "Bilbao"
+    },
+    {
+      "eu": "Donostia",
+      "baca": "doh-NOHS-tee-ah",
+      "en": "San Sebastián"
+    },
+    {
+      "eu": "Iruñea",
+      "baca": "ee-ROO-nyeh-ah",
+      "en": "Pamplona"
+    },
+    {
+      "eu": "denok",
+      "baca": "DEH-nohk",
+      "en": "everyone, all of us"
+    },
+    {
+      "eu": "zergatik",
+      "baca": "sehr-GAH-teek",
+      "en": "why"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Add the right place ending.",
+      "items": [
+        "Ni Bilbo____ bizi naiz.",
+        "Marie Donostia____ bizi da.",
+        "Nire lagunak Paris____ bizi dira.",
+        "Ikasleak gela____ daude.",
+        "Iker taberna____ dago.",
+        "Etxe bat____ bizi naiz."
+      ]
+    },
+    {
+      "prompt": "Write the numbers out in words.",
+      "items": [
+        "22",
+        "31",
+        "40",
+        "55",
+        "67",
+        "100"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right question word (nor, zer, non, nora, noiz, zenbat).",
+      "items": [
+        "____ zara zu? — Budi naiz.",
+        "____ bizi zara? — Bilbon.",
+        "____ urte dituzu? — Hogeita bost.",
+        "____ da hau? — Hiztegia da.",
+        "____ da klasea? — Bihar.",
+        "____ zoaz? — Etxera."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "naiz / bizi / Bilbon / ni",
+        "zara / non / bizi / ?",
+        "ditut / hogeita / urte / bost",
+        "naiz / Jakartakoa / ni",
+        "bizi / Donostian / da / Iker",
+        "zara / nongoa / zu / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Bilbon — Donostian — Parisen — gelan — tabernan — Etxe batean",
+    "hogeita bi — hogeita hamaika — berrogei — berrogeita hamabost — hirurogeita zazpi — ehun",
+    "Nor — Non — Zenbat — Zer — Noiz — Nora",
+    "Ni Bilbon bizi naiz. — Non bizi zara? — Hogeita bost urte ditut. — Ni Jakartakoa naiz. — Iker Donostian bizi da. — Zu nongoa zara?"
+  ]
+}

@@ -1,0 +1,551 @@
+{
+  "title": "At the restaurant: want, need, and must",
+  "title_target": "Restoranda: -moqchi va kerak",
+  "goal": "Order a meal from start to paying the bill, express intention with *-moqchi*, and express need with *kerak* — two forms that cover almost every \"I want to\" and \"I have to\".",
+  "bekal": [
+    "using *bormoqchiman* for \"I want/intend to go\"",
+    "telling *Menga suv kerak* apart from *Borishim kerak*",
+    "ordering, asking for more, and asking for the bill"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Nima buyurtma qilmoqchisiz?",
+      "intro": "A plov restaurant in Tashkent at one in the afternoon — the busiest hour. The waiter comes over with a menu.",
+      "lines": [
+        {
+          "speaker": "Ofitsiant:",
+          "text": "Xush kelibsiz! Nima buyurtma qilmoqchisiz?",
+          "id": "Welcome! What would you like to order?",
+          "literal": "glad came-you! what order do-want-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Menyuni koʻrmoqchiman. Bugun nima bor?",
+          "id": "I'd like to see the menu. What do you have today?",
+          "literal": "menu-(object) see-want-I. today what exists?"
+        },
+        {
+          "speaker": "Ofitsiant:",
+          "text": "Osh bor, shoʻrva bor, manti ham bor.",
+          "id": "There's plov, there's soup, and there's manti too.",
+          "literal": "plov exists, soup exists, manti also exists."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bitta osh va bitta shoʻrva bering, iltimos.",
+          "id": "One plov and one soup, please.",
+          "literal": "one plov and one soup give, please."
+        },
+        {
+          "speaker": "Ofitsiant:",
+          "text": "Ichimlik nima olasiz?",
+          "id": "What would you like to drink?",
+          "literal": "drink what take-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Menga koʻk choy kerak. Muzli suv ham kerak.",
+          "id": "I need green tea. And iced water too.",
+          "literal": "me-to green tea needed. ice-with water also needed."
+        },
+        {
+          "speaker": "Ofitsiant:",
+          "text": "Xoʻp. Osh goʻshtli boʻlsinmi?",
+          "id": "OK. Should the plov have meat?",
+          "literal": "OK. plov meat-with let-it-be-?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ha, lekin achchiq boʻlmasin. Men achchiq yey olmayman.",
+          "id": "Yes, but not spicy. I can't eat spicy food.",
+          "literal": "yes, but spicy let-it-not-be. I spicy eat can-not-I."
+        },
+        {
+          "speaker": "Ofitsiant:",
+          "text": "Tushunarli. Yana biror narsa kerakmi?",
+          "id": "Understood. Do you need anything else?",
+          "literal": "understandable. more some thing needed-?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Yoʻq, rahmat. Hisobni ham olib kelmoqchimisiz?",
+          "id": "No, thank you. Will you bring the bill too?",
+          "literal": "no, thanks. bill-(object) also take come-want-you-?"
+        },
+        {
+          "speaker": "Ofitsiant:",
+          "text": "Ovqatdan keyin olib kelaman. Yoqimli ishtaha!",
+          "id": "I'll bring it after the meal. Enjoy your meal!",
+          "literal": "meal-from after take come-I. pleasant appetite!"
+        }
+      ],
+      "notes": [
+        "**Buyurtma qilmoq = to order.** One of dozens of compound verbs on the pattern *[noun] + qilmoq*. Others: *ish qilmoq* (to work), *xarid qilmoq* (to shop), *taklif qilmoq* (to invite), *hazil qilmoq* (to joke).",
+        "**Menga … kerak means \"I need\".** Literally \"to me … is needed\". Note that the subject is **the thing**, not you — the same pattern as *menga yoqadi* (I like it) in unit 16 and *boshim ogʻriyapti* (my head hurts) in unit 17.",
+        "**Boʻlsinmi? = \"shall it be so?\"** The third-person *-sin* form, used by waiters to offer a choice. Just answer *ha* or *boʻlmasin* (no, don't).",
+        "**Yoqimli ishtaha! = \"enjoy your meal\".** Literally \"pleasant appetite\", a calque of a Russian phrase. For a more Uzbek version: *Osh boʻlsin!* — \"may it be good food\"."
+      ],
+      "grammars": [
+        {
+          "title": "-moqchi: intention, plans, wanting",
+          "body": [
+            "The formula: take the dictionary form in *-moq*, add *-chi*, then the person endings from unit 1. No sound changes at all."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Form",
+              "*bormoq*",
+              "*yemoq*",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*men*",
+                "**-moqchiman**",
+                "*bormoqchiman*",
+                "*yemoqchiman*",
+                "I want to go"
+              ],
+              [
+                "*sen*",
+                "**-moqchisan**",
+                "*bormoqchisan*",
+                "*yemoqchisan*",
+                "you want to go"
+              ],
+              [
+                "*u*",
+                "**-moqchi**",
+                "*bormoqchi*",
+                "*yemoqchi*",
+                "he/she wants to go"
+              ],
+              [
+                "*biz*",
+                "**-moqchimiz**",
+                "*bormoqchimiz*",
+                "*yemoqchimiz*",
+                "we want to go"
+              ],
+              [
+                "*siz*",
+                "**-moqchisiz**",
+                "*bormoqchisiz*",
+                "*yemoqchisiz*",
+                "you (polite) want to go"
+              ],
+              [
+                "*ular*",
+                "**-moqchilar**",
+                "*bormoqchilar*",
+                "*yemoqchilar*",
+                "they want to go"
+              ]
+            ]
+          },
+          "after": [
+            "**The negative doesn't use -ma- but emas**: *bormoqchi **emasman*** (I don't intend to go). It's the only verb form in this book negated the way a noun sentence is.",
+            "Don't confuse it with the habitual form: *Ertaga boraman* = \"I'm going tomorrow\" (certain, scheduled). *Ertaga bormoqchiman* = \"I want to go tomorrow\" (an intention, not yet certain).",
+            "Its past form expresses a plan that fell through: *Bormoqchi edim* = \"I was going to go\". A very useful sentence for apologizing."
+          ]
+        },
+        {
+          "title": "Kerak: needing a thing, or needing to do something",
+          "body": [
+            "One word, two patterns. Which one you use depends on what you need: a thing, or an action."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**[person]ga [thing] kerak**",
+                "*Menga suv kerak.*",
+                "I need water."
+              ],
+              [
+                "",
+                "*Sizga yordam kerakmi?*",
+                "Do you need help?"
+              ],
+              [
+                "**stem + -(i)sh + possessive + kerak**",
+                "*Borishim kerak.*",
+                "I have to go."
+              ],
+              [
+                "",
+                "*Ishlashingiz kerak.*",
+                "You have to work."
+              ],
+              [
+                "",
+                "*Kutishimiz kerak.*",
+                "We have to wait."
+              ],
+              [
+                "**kerak emas**",
+                "*Bunga pul kerak emas.*",
+                "You don't need money for this."
+              ]
+            ]
+          },
+          "after": [
+            "The second pattern is built from a **verbal noun**: stem + *-(i)sh* gives \"the act of\". *bor-ish* = going, *ishla-sh* = working, *kut-ish* = waiting. Attach a possessive ending and you get \"my going\", \"your working\" — then *kerak* closes it.",
+            "A more formal cousin of *kerak* is *lozim* (an Arabic word) for official writing, and *shart* (\"condition\") for non-negotiable obligations: *Borish shart* = \"going is a must\".",
+            "For \"not allowed\", use *mumkin emas*: *Bu yerda chekish mumkin emas* = no smoking here."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Uzbek dishes you have to try",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Uzbek cooking is hearty, warming, and centered on one national dish that even has its own day of celebration."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "What it is"
+          ],
+          "rows": [
+            [
+              "**osh / palov**",
+              "åsh / på-LÅV",
+              "plov — rich rice with carrots, meat, and onion"
+            ],
+            [
+              "**somsa**",
+              "såm-SÅ",
+              "baked meat pastry from the tandoor"
+            ],
+            [
+              "**manti**",
+              "mån-TI",
+              "large steamed dumplings"
+            ],
+            [
+              "**shoʻrva**",
+              "shor-VÅ",
+              "meat and vegetable soup"
+            ],
+            [
+              "**lagʻmon**",
+              "lågh-MÅN",
+              "hand-pulled noodles in broth, a Uyghur legacy"
+            ],
+            [
+              "**shashlik**",
+              "shåsh-LIK",
+              "grilled meat skewers"
+            ],
+            [
+              "**norin**",
+              "nå-RIN",
+              "cold chopped noodles with horse meat"
+            ],
+            [
+              "**chuchvara**",
+              "chuch-vå-RÅ",
+              "small dumplings in broth"
+            ],
+            [
+              "**non**",
+              "nån",
+              "round tandoor bread"
+            ],
+            [
+              "**qatiq**",
+              "qå-TIQ",
+              "sour yogurt"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Osh* is cooked in a big cauldron called a *qozon*, and in many families cooking it is men's work. There's also the custom of *nahorgi osh* — morning plov served from six o'clock to hundreds of guests as part of a wedding. If you're invited, come hungry."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Halol* and *harom* mean halal and haram, and almost all meat in Uzbekistan is halal by default. The thing to ask is actually *choʻchqa goʻshti bormi?* (is there pork?) at Russian or Korean restaurants, of which Tashkent has quite a few."
+        }
+      ]
+    },
+    {
+      "title": "Restaurant phrases",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Ten sentences, in order from walking in to walking out."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**Menyuni bering.**",
+              "men-yu-NI be-RING",
+              "The menu, please."
+            ],
+            [
+              "**Nima maslahat berasiz?**",
+              "NI-må mås-lå-HAT be-rå-siz",
+              "What do you recommend?"
+            ],
+            [
+              "**Bu nima?**",
+              "bu NI-må",
+              "What's this?"
+            ],
+            [
+              "**Bitta osh, iltimos.**",
+              "bit-TÅ åsh",
+              "One plov, please."
+            ],
+            [
+              "**Achchiq boʻlmasin.**",
+              "åch-CHIQ bol-må-SIN",
+              "Not spicy, please."
+            ],
+            [
+              "**Goʻshtsiz boʻladimi?**",
+              "gosht-SIZ bo-lå-di-mi",
+              "Can it be without meat?"
+            ],
+            [
+              "**Yana bir piyola choy.**",
+              "yå-NÅ bir pi-yå-LÅ chåy",
+              "One more bowl of tea."
+            ],
+            [
+              "**Hisob, iltimos.**",
+              "hi-SÅB il-ti-MÅS",
+              "The bill, please."
+            ],
+            [
+              "**Karta bilan toʻlasam boʻladimi?**",
+              "KÅR-tå bi-LAN",
+              "Can I pay by card?"
+            ],
+            [
+              "**Juda mazali edi, rahmat!**",
+              "ju-DÅ må-zå-LI e-DI",
+              "That was delicious, thank you!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Note the ending **-siz** in *goʻshtsiz* (without meat): it means \"without\", like English \"-less\", and its partner *-li* means \"with\". *Goʻshtli* (with meat), *muzli* (iced), *shakarsiz* (sugar-free), *tuzsiz* (unsalted). These two endings unlock dozens of words at once."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uz": "restoran",
+      "baca": "res-tå-RAN",
+      "en": "restaurant"
+    },
+    {
+      "uz": "menyu",
+      "baca": "MEN-yu",
+      "en": "menu"
+    },
+    {
+      "uz": "buyurtma qilmoq",
+      "baca": "bu-yurt-MÅ qil-MÅQ",
+      "en": "to order"
+    },
+    {
+      "uz": "hisob",
+      "baca": "hi-SÅB",
+      "en": "bill, count"
+    },
+    {
+      "uz": "ovqat",
+      "baca": "åv-QAT",
+      "en": "food, meal"
+    },
+    {
+      "uz": "ichimlik",
+      "baca": "i-chim-LIK",
+      "en": "drink"
+    },
+    {
+      "uz": "osh",
+      "baca": "åsh",
+      "en": "plov"
+    },
+    {
+      "uz": "shoʻrva",
+      "baca": "shor-VÅ",
+      "en": "soup"
+    },
+    {
+      "uz": "somsa",
+      "baca": "såm-SÅ",
+      "en": "somsa, baked pastry"
+    },
+    {
+      "uz": "manti",
+      "baca": "mån-TI",
+      "en": "manti, steamed dumplings"
+    },
+    {
+      "uz": "lagʻmon",
+      "baca": "lågh-MÅN",
+      "en": "pulled noodles in broth"
+    },
+    {
+      "uz": "shashlik",
+      "baca": "shåsh-LIK",
+      "en": "kebab skewers"
+    },
+    {
+      "uz": "goʻsht",
+      "baca": "gosht",
+      "en": "meat"
+    },
+    {
+      "uz": "suv",
+      "baca": "suv",
+      "en": "water"
+    },
+    {
+      "uz": "muz",
+      "baca": "muz",
+      "en": "ice"
+    },
+    {
+      "uz": "achchiq",
+      "baca": "åch-CHIQ",
+      "en": "spicy; bitter"
+    },
+    {
+      "uz": "shirin",
+      "baca": "shi-RIN",
+      "en": "sweet"
+    },
+    {
+      "uz": "nordon",
+      "baca": "når-DÅN",
+      "en": "sour"
+    },
+    {
+      "uz": "kerak",
+      "baca": "ke-RAK",
+      "en": "needed, must"
+    },
+    {
+      "uz": "mumkin",
+      "baca": "mum-KIN",
+      "en": "allowed, possible"
+    },
+    {
+      "uz": "shart",
+      "baca": "shårt",
+      "en": "a must; condition"
+    },
+    {
+      "uz": "toʻlamoq",
+      "baca": "to-lå-MÅQ",
+      "en": "to pay"
+    },
+    {
+      "uz": "karta",
+      "baca": "KÅR-tå",
+      "en": "card"
+    },
+    {
+      "uz": "maslahat",
+      "baca": "mås-lå-HAT",
+      "en": "advice"
+    },
+    {
+      "uz": "biror narsa",
+      "baca": "bi-RÅR når-SÅ",
+      "en": "something"
+    },
+    {
+      "uz": "olib kelmoq",
+      "baca": "å-LIB kel-MÅQ",
+      "en": "to bring"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Uzbek.",
+      "items": [
+        "What would you like to order?",
+        "I want to eat plov.",
+        "I need water.",
+        "I have to go.",
+        "Not spicy, please.",
+        "The bill, please."
+      ]
+    },
+    {
+      "prompt": "Put into the -moqchi form for the given subject.",
+      "items": [
+        "bormoq + men → ____",
+        "yemoq + biz → ____",
+        "koʻrmoq + siz → ____",
+        "olmoq + u → ____",
+        "oʻqimoq + sen → ____",
+        "qaytmoq + ular → ____"
+      ]
+    },
+    {
+      "prompt": "Choose the right kerak pattern and fill in the blank.",
+      "items": [
+        "____ suv kerak. (I need water)",
+        "____ kerak. (I have to go — bormoq)",
+        "____ yordam kerakmi? (Do you need help?)",
+        "____ kerak. (We have to wait — kutmoq)",
+        "____ kerak. (You have to work — ishlamoq)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "qilmoqchisiz / nima / buyurtma / ?",
+        "kerak / menga / choy / koʻk",
+        "bering / iltimos / osh / bitta / ,",
+        "boʻlmasin / achchiq",
+        "iltimos / hisob / ,"
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 11. Translate into Uzbek without looking back at the unit.",
+      "items": [
+        "I went to Samarkand.",
+        "We ate plov twice.",
+        "I didn't buy any souvenirs.",
+        "The hotel was cheap.",
+        "He came back on Sunday."
+      ]
+    }
+  ],
+  "answers": [
+    "Nima buyurtma qilmoqchisiz? — Men osh yemoqchiman. — Menga suv kerak. — Borishim kerak. — Achchiq boʻlmasin. — Hisob, iltimos.",
+    "bormoqchiman — yemoqchimiz — koʻrmoqchisiz — olmoqchi — oʻqimoqchisan — qaytmoqchilar",
+    "Menga — Borishim — Sizga — Kutishimiz — Ishlashingiz",
+    "Nima buyurtma qilmoqchisiz? — Menga koʻk choy kerak. — Bitta osh bering, iltimos. — Achchiq boʻlmasin. — Hisob, iltimos.",
+    "Men Samarqandga bordim. — Biz ikki marta osh yedik. — Men sovgʻa sotib olmadim. — Mehmonxona arzon edi. — U yakshanba kuni qaytdi."
+  ]
+}

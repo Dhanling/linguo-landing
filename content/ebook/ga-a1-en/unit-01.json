@@ -1,0 +1,644 @@
+{
+  "title": "Hello, what's your name?",
+  "title_target": "Dia duit! Cén t-ainm atá ort?",
+  "goal": "Greeting people and answering a greeting, saying your name and where you're from, asking how someone is, and meeting the two different verbs for \"to be\".",
+  "bekal": [
+    "greet people with *Dia duit* and answer correctly",
+    "say your name with *Is mise …* and *… is ainm dom*",
+    "use *tá mé / tá tú / tá sé* to say how someone is"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — An chéad lá i nGaillimh",
+      "intro": "First day in Galway. Budi has just stepped off the bus and arrived at the home of the family he'll be staying with. Máire, the mother of the house, opens the door.",
+      "lines": [
+        {
+          "speaker": "Máire:",
+          "text": "Dia duit! Fáilte go Gaillimh.",
+          "id": "Hello! Welcome to Galway.",
+          "literal": "God to-you! welcome to Galway."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dia is Muire duit. Go raibh maith agat.",
+          "id": "Hello. Thank you.",
+          "literal": "God and Mary to-you. may-there-be good at-you."
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Is mise Máire. Cén t-ainm atá ort?",
+          "id": "I'm Máire. What's your name?",
+          "literal": "is me Máire. what name that-is on-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Budi is ainm dom.",
+          "id": "My name's Budi.",
+          "literal": "Budi is name to-me."
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Conas atá tú, a Bhudi?",
+          "id": "How are you, Budi?",
+          "literal": "how is you, O Budi?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá mé go maith, go raibh maith agat. Agus tú féin?",
+          "id": "I'm well, thank you. And yourself?",
+          "literal": "is I in-a-good-way, may-there-be good at-you. and you self?"
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Tá mé go breá. Seo é Seán, mo mhac.",
+          "id": "I'm great. This is Seán, my son.",
+          "literal": "is I fine-ly. this him Seán, my son."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Dia duit, a Bhudi. Cé as tú?",
+          "id": "Hello, Budi. Where are you from?",
+          "literal": "God to-you, O Budi. who from you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Is as an Indinéis mé. As Iacárta.",
+          "id": "I'm from Indonesia. From Jakarta.",
+          "literal": "is from the Indonesia me. from Jakarta."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Tá sé sin i bhfad ó bhaile!",
+          "id": "That's a long way from home!",
+          "literal": "is it that in length from home!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá. Tá mé ag foghlaim Gaeilge.",
+          "id": "It is. I'm learning Irish.",
+          "literal": "is. is I at learning Irish."
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Go hiontach! Tar isteach. Tá an tae réidh.",
+          "id": "Wonderful! Come in. The tea's ready.",
+          "literal": "wonderful-ly! come inside. is the tea ready."
+        }
+      ],
+      "notes": [
+        "**Dia duit literally means \"God to you\".** It's an everyday greeting, as neutral as \"hello\", used by believers and non-believers alike. The reply isn't a repeat but an addition: *Dia is Muire duit* — \"God and Mary to you\". If a third person greets after that, they add again: *Dia is Muire duit is Pádraig*. To more than one person: *Dia daoibh*.",
+        "**A Bhudi — calling someone changes the first letter of their name.** To address someone, Irish puts a little word *a* before the name, and that *a* brings séimhiú (lenition): *Budi* → *a Bhudi*, *Máire* → *a Mháire*, *Seán* → *a Sheáin*. The *a* itself is barely heard. It's the last trace of the old \"calling\" form (the vocative) that once existed across European languages, and Irish still uses it every day.",
+        "**Two ways to give your name, two different word orders.** *Is mise Budi* means \"I am Budi\" — right for introducing yourself. *Budi is ainm dom* is literally \"Budi is a name to me\", the standard answer to *Cén t-ainm atá ort?* — which itself literally means \"what name is on you?\". Irish puts a name **on** a person rather than giving it to them.",
+        "**Tá mé, not is mé.** Irish has two verbs for \"to be\". *Tá* is for states that can change — *Tá mé go maith* (I'm well), *Tá an tae réidh* (the tea's ready). *Is* is for identity — *Is mise Máire*, *Is as an Indinéis mé*. Mixing them up is the most common beginner mistake, and Unit 13 is devoted to it."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Survival phrases",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These twelve phrases aren't grammar material — they're an emergency kit. Learn them whole now; understand how they're built later."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Sea / Ní hea",
+              "SHAH / nee HAH",
+              "Yes / No (to identity questions)"
+            ],
+            [
+              "Go raibh maith agat",
+              "guh ROV MAH AH-gut",
+              "Thank you"
+            ],
+            [
+              "Tá fáilte romhat",
+              "taw FAWL-tyuh ROH-at",
+              "You're welcome"
+            ],
+            [
+              "Le do thoil",
+              "leh duh HOL",
+              "Please"
+            ],
+            [
+              "Gabh mo leithscéal",
+              "gohw muh LESH-kyayl",
+              "Sorry / Excuse me"
+            ],
+            [
+              "Níl a fhios agam",
+              "neel uh IS AH-gum",
+              "I don't know"
+            ],
+            [
+              "Ní thuigim",
+              "nee HIH-gyim",
+              "I don't understand"
+            ],
+            [
+              "Abair arís é, le do thoil",
+              "AH-bir uh-REESH ay, leh duh HOL",
+              "Say it again, please"
+            ],
+            [
+              "Go mall, le do thoil",
+              "guh MAL, leh duh HOL",
+              "Slowly, please"
+            ],
+            [
+              "An bhfuil Béarla agat?",
+              "an WIL BYAYR-luh AH-gut",
+              "Do you speak English?"
+            ],
+            [
+              "Cad é seo as Gaeilge?",
+              "kod ay SHUH as GAYL-guh",
+              "What's this in Irish?"
+            ],
+            [
+              "Cabhair, le do thoil!",
+              "KOHW-ir, leh duh HOL",
+              "Help!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Níl a fhios agam* literally means \"its knowledge is not at me\" — notice *fhios*, whose f is completely silent, so it sounds like \"IS\". A short form just as common in speech: *N'fheadar* (NYAH-dar) in Munster."
+        },
+        {
+          "type": "kotak",
+          "title": "One sentence that changes your experience of Ireland",
+          "items": [
+            "*Tá mé ag foghlaim Gaeilge. An bhfuil Gaeilge agat?* — \"I'm learning Irish. Do you speak Irish?\"",
+            "Every Irish speaker is also fluent in English, so they switch automatically the moment they hear a foreign accent. The sentence above stops the switch — and it's almost always met with a smile, because outsiders who learn their language are still rare.",
+            "Notice how it's built: Irish doesn't say \"you speak Irish\" but \"is there Irish **at** you\". Even an ability is treated as something you have. Unit 7 covers this in full."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Greetings for every time and situation",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Irish doesn't split greetings by the clock the way English does with \"good morning\" and \"good evening\". *Dia duit* works all day. What changes with the time of day is the **goodbye** and the night-time blessing."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "When to use it"
+          ],
+          "rows": [
+            [
+              "Dia duit",
+              "DYEE-uh GHWIT",
+              "greeting one person, any time"
+            ],
+            [
+              "Dia daoibh",
+              "DYEE-uh GHEEV",
+              "greeting more than one person"
+            ],
+            [
+              "Dia is Muire duit",
+              "DYEE-uh is MIH-ruh GHWIT",
+              "answering a greeting"
+            ],
+            [
+              "Haigh / Heileo",
+              "HAI / HEH-lee-oh",
+              "casual hi between friends"
+            ],
+            [
+              "Slán",
+              "SLAWN",
+              "goodbye (said by the one leaving or the one staying)"
+            ],
+            [
+              "Slán abhaile",
+              "SLAWN uh-WAH-luh",
+              "to someone heading home"
+            ],
+            [
+              "Slán go fóill",
+              "slawn guh FOHL",
+              "see you later"
+            ],
+            [
+              "Oíche mhaith",
+              "EE-khuh WAH",
+              "good night (when parting)"
+            ],
+            [
+              "Codladh sámh",
+              "KUH-luh SAWV",
+              "sleep well"
+            ],
+            [
+              "Feicfidh mé thú",
+              "FEK-hee may HOO",
+              "see you again"
+            ],
+            [
+              "Go n-éirí leat",
+              "guh NAY-ree LYAT",
+              "good luck (may it go well)"
+            ],
+            [
+              "Ádh mór ort",
+              "aw MOHR ORT",
+              "good luck"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three ways to answer \"Conas atá tú?\"",
+          "items": [
+            "*Tá mé go maith* (taw may guh MAH) — well. The neutral answer that's always safe.",
+            "*Tá mé go breá* (taw may guh BRAW) — great. A little warmer.",
+            "*Níl mé go maith* (neel may guh MAH) — I'm not well. Notice that *níl* replaces the whole of *tá*; it doesn't add a \"not\" in front.",
+            "The word *go* before an adjective turns it into an adverb, like English \"-ly\". If the adjective begins with a vowel, *go* adds an h: *go hiontach*, *go hálainn*."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The \"how are you\" question itself varies by region, and all three are correct: *Conas atá tú?* (the south and the standard), *Cén chaoi a bhfuil tú?* (kyayn KHEE uh WIL too — Galway and Connacht), *Cad é mar atá tú?* (kod ay mar uh-TAW too — Donegal and Ulster). This course uses the first because it's shortest, but don't be surprised to hear the other two."
+        }
+      ]
+    },
+    {
+      "title": "Tá — your first verb",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "*Tá* means \"is/am/are\" or \"there is\", and it's the most used verb in Irish. Notice two things at once: it stands **before** the subject, and it **doesn't change** for different people — only the pronoun changes."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "tá mé",
+              "taw MAY",
+              "I am"
+            ],
+            [
+              "tá tú",
+              "taw TOO",
+              "you are"
+            ],
+            [
+              "tá sé",
+              "taw SHAY",
+              "he is"
+            ],
+            [
+              "tá sí",
+              "taw SHEE",
+              "she is"
+            ],
+            [
+              "tá muid",
+              "taw MID",
+              "we are"
+            ],
+            [
+              "tá sibh",
+              "taw SHIV",
+              "you (plural) are"
+            ],
+            [
+              "tá siad",
+              "taw SHEE-ad",
+              "they are"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "For \"I\" and \"we\" there are short fused forms: *táim* (TAW-im) and *táimid* (TAW-mid). They're just as correct as *tá mé* and *tá muid*, and more common in the south. This course uses the separate forms because their structure is easier to see."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Literally",
+            "English"
+          ],
+          "rows": [
+            [
+              "Tá mé tuirseach.",
+              "is I tired",
+              "I'm tired."
+            ],
+            [
+              "Tá sé fuar.",
+              "is it cold",
+              "It's cold."
+            ],
+            [
+              "Tá Máire sásta.",
+              "is Máire happy",
+              "Máire is happy."
+            ],
+            [
+              "Tá an tae te.",
+              "is the tea hot",
+              "The tea is hot."
+            ],
+            [
+              "Tá muid anseo.",
+              "is we here",
+              "We're here."
+            ],
+            [
+              "Tá siad sa bhaile.",
+              "is they at-home",
+              "They're at home."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Trap: the verb sits up front",
+          "items": [
+            "English says \"Máire is happy\"; Irish says \"is Máire happy\" — *Tá Máire sásta*. The verb is **always** the first word in a statement.",
+            "So never start a sentence with a name or a pronoun. *Mé tá go maith* is wrong; the right form is *Tá mé go maith*.",
+            "This order is called verb–subject–object, and Irish shares it with Arabic, Welsh and Tagalog — not with English."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "Dia duit",
+      "baca": "DYEE-uh GHWIT",
+      "en": "hello (to one person)"
+    },
+    {
+      "ga": "Dia is Muire duit",
+      "baca": "DYEE-uh is MIH-ruh GHWIT",
+      "en": "hello (reply)"
+    },
+    {
+      "ga": "fáilte",
+      "baca": "FAWL-tyuh",
+      "en": "welcome"
+    },
+    {
+      "ga": "go",
+      "baca": "guh",
+      "en": "to; also adverb marker"
+    },
+    {
+      "ga": "Gaillimh",
+      "baca": "GAH-liv",
+      "en": "Galway"
+    },
+    {
+      "ga": "go raibh maith agat",
+      "baca": "guh ROV MAH AH-gut",
+      "en": "thank you"
+    },
+    {
+      "ga": "is mise",
+      "baca": "is MIH-shuh",
+      "en": "I am (introducing yourself)"
+    },
+    {
+      "ga": "ainm",
+      "baca": "AH-nim",
+      "en": "name"
+    },
+    {
+      "ga": "cén t-ainm atá ort?",
+      "baca": "kyayn TAH-nim uh-TAW ORT",
+      "en": "what's your name?"
+    },
+    {
+      "ga": "dom",
+      "baca": "DOM",
+      "en": "to me, for me"
+    },
+    {
+      "ga": "conas atá tú?",
+      "baca": "KUH-nas uh-TAW TOO",
+      "en": "how are you?"
+    },
+    {
+      "ga": "tá",
+      "baca": "TAW",
+      "en": "is, am, are"
+    },
+    {
+      "ga": "níl",
+      "baca": "NEEL",
+      "en": "is not, isn't"
+    },
+    {
+      "ga": "mé",
+      "baca": "MAY",
+      "en": "I, me"
+    },
+    {
+      "ga": "tú",
+      "baca": "TOO",
+      "en": "you"
+    },
+    {
+      "ga": "sé",
+      "baca": "SHAY",
+      "en": "he, it"
+    },
+    {
+      "ga": "sí",
+      "baca": "SHEE",
+      "en": "she"
+    },
+    {
+      "ga": "muid",
+      "baca": "MID",
+      "en": "we"
+    },
+    {
+      "ga": "sibh",
+      "baca": "SHIV",
+      "en": "you (plural)"
+    },
+    {
+      "ga": "siad",
+      "baca": "SHEE-ad",
+      "en": "they"
+    },
+    {
+      "ga": "go maith",
+      "baca": "guh MAH",
+      "en": "well, good"
+    },
+    {
+      "ga": "go breá",
+      "baca": "guh BRAW",
+      "en": "great, fine"
+    },
+    {
+      "ga": "féin",
+      "baca": "FAYN",
+      "en": "self"
+    },
+    {
+      "ga": "seo",
+      "baca": "SHUH",
+      "en": "this"
+    },
+    {
+      "ga": "sin",
+      "baca": "SHIN",
+      "en": "that"
+    },
+    {
+      "ga": "mac",
+      "baca": "MAK",
+      "en": "son"
+    },
+    {
+      "ga": "cé as tú?",
+      "baca": "KYAY as TOO",
+      "en": "where are you from?"
+    },
+    {
+      "ga": "an Indinéis",
+      "baca": "an IN-dih-naysh",
+      "en": "Indonesia"
+    },
+    {
+      "ga": "i bhfad",
+      "baca": "ih WAD",
+      "en": "far"
+    },
+    {
+      "ga": "baile",
+      "baca": "BAH-luh",
+      "en": "home, town"
+    },
+    {
+      "ga": "ag foghlaim",
+      "baca": "eg FOHW-lim",
+      "en": "learning"
+    },
+    {
+      "ga": "Gaeilge",
+      "baca": "GAYL-guh",
+      "en": "Irish (language)"
+    },
+    {
+      "ga": "go hiontach",
+      "baca": "guh HEEN-takh",
+      "en": "wonderful, great"
+    },
+    {
+      "ga": "tar isteach",
+      "baca": "tar is-TYAKH",
+      "en": "come in"
+    },
+    {
+      "ga": "tae",
+      "baca": "TAY",
+      "en": "tea"
+    },
+    {
+      "ga": "réidh",
+      "baca": "RAY",
+      "en": "ready, done"
+    },
+    {
+      "ga": "tuirseach",
+      "baca": "TIR-shakh",
+      "en": "tired"
+    },
+    {
+      "ga": "sásta",
+      "baca": "SAWS-tuh",
+      "en": "happy, satisfied"
+    },
+    {
+      "ga": "anseo",
+      "baca": "an-SHUH",
+      "en": "here"
+    },
+    {
+      "ga": "slán",
+      "baca": "SLAWN",
+      "en": "goodbye"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Irish.",
+      "items": [
+        "Hello! I'm Budi.",
+        "How are you?",
+        "I'm well, thank you.",
+        "What's your name?",
+        "I'm learning Irish.",
+        "Goodbye!"
+      ]
+    },
+    {
+      "prompt": "Fill in the right pronoun (mé, tú, sé, sí, muid, sibh, siad).",
+      "items": [
+        "Tá ____ go maith. (I)",
+        "Tá ____ tuirseach. (you)",
+        "Tá ____ sásta. (she)",
+        "Tá ____ anseo. (we)",
+        "Tá ____ sa bhaile. (they)",
+        "Tá ____ go breá. (he)"
+      ]
+    },
+    {
+      "prompt": "Choose the right greeting or reply. Write it out in full.",
+      "items": [
+        "Someone greets you with *Dia duit*. You answer ____.",
+        "You thank someone. You say ____.",
+        "You say goodbye to a friend who's going home. You say ____.",
+        "You don't understand what someone said. You say ____.",
+        "You want someone to repeat what they said. You say ____.",
+        "You part from your host before bed. You say ____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order. Remember: the verb comes first.",
+      "items": [
+        "mé / tá / maith / go",
+        "Máire / tá / sásta",
+        "an / tá / te / tae",
+        "mise / Budi / is",
+        "tú / cé / as / ?",
+        "foghlaim / mé / tá / Gaeilge / ag"
+      ]
+    }
+  ],
+  "answers": [
+    "Dia duit! Is mise Budi. — Conas atá tú? — Tá mé go maith, go raibh maith agat. — Cén t-ainm atá ort? — Tá mé ag foghlaim Gaeilge. — Slán!",
+    "mé — tú — sí — muid — siad — sé",
+    "Dia is Muire duit. — Go raibh maith agat. — Slán abhaile. — Ní thuigim. — Abair arís é, le do thoil. — Oíche mhaith.",
+    "Tá mé go maith. — Tá Máire sásta. — Tá an tae te. — Is mise Budi. — Cé as tú? — Tá mé ag foghlaim Gaeilge."
+  ]
+}

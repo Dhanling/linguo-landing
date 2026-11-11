@@ -1,0 +1,678 @@
+{
+  "title": "How many, what time",
+  "title_target": "Quot? Quota hora est?",
+  "goal": "Count to a thousand, use ordinal numbers, give your age and the time the Roman way, and read Roman numerals on buildings and in books.",
+  "bekal": [
+    "count to a hundred and write the numbers in Roman numerals",
+    "answer *quot annos habes?* correctly",
+    "tell the time with *hora* and an ordinal number"
+  ],
+  "dialogs": [
+    {
+      "title": "Colloquium — In taberna Publii",
+      "intro": "At Publius's grain shop. Quintus never pays the first price.",
+      "lines": [
+        {
+          "speaker": "Publius:",
+          "text": "Salve, Quinte! Quid hodie emis?",
+          "id": "Hello, Quintus! What are you buying today?",
+          "literal": "be-well, Quintus-call! what today buy-you?"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Frumentum emo. Quot modii in taberna sunt?",
+          "id": "I'm buying grain. How many measures are in the shop?",
+          "literal": "grain-obj buy-I. how-many measure-pl in shop-in are-they?"
+        },
+        {
+          "speaker": "Publius:",
+          "text": "Viginti modii sunt. Et boni sunt!",
+          "id": "There are twenty measures. And they're good!",
+          "literal": "twenty measure-pl are-they. and good-pl are-they!"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Bene. Quot denarios postulas?",
+          "id": "Good. How many denarii are you asking?",
+          "literal": "well. how-many denarius-pl-obj demand-you?"
+        },
+        {
+          "speaker": "Publius:",
+          "text": "Decem denarios. Pretium bonum est!",
+          "id": "Ten denarii. That's a good price!",
+          "literal": "ten denarius-pl-obj. price good-neut is-it!"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Decem? Nimium est! Octo do.",
+          "id": "Ten? That's too much! I'll give eight.",
+          "literal": "ten? too-much is-it! eight give-I."
+        },
+        {
+          "speaker": "Publius:",
+          "text": "Octo? Novem, et frumentum tuum est.",
+          "id": "Eight? Nine, and the grain is yours.",
+          "literal": "eight? nine, and grain your-neut is-it."
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Novem. Bene! Ecce pecunia.",
+          "id": "Nine. All right! Here's the money.",
+          "literal": "nine. well! look money."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Pater, quota hora est?",
+          "id": "Dad, what time is it?",
+          "literal": "father-call, which-numbered hour is-it?"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Hora quinta est. Cena hora nona est.",
+          "id": "It's the fifth hour. Dinner is at the ninth hour.",
+          "literal": "hour fifth is-it. dinner hour-with ninth-with is-it."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Quattuor horae! Esurio iam nunc!",
+          "id": "Four hours! I'm hungry already!",
+          "literal": "four hour-pl! be-hungry-I already now!"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Patientia, fili! Quot annos habes? Tredecim — iam vir es.",
+          "id": "Patience, son! How old are you? Thirteen — you're a man already.",
+          "literal": "patience, son-call! how-many year-pl-obj have-you? thirteen — already man are-you."
+        }
+      ],
+      "notes": [
+        "**Quot annos habes? — age is something you \"have\".** Literally \"how many years do you have?\", and the answer is *… annos habeo*. Spanish, French and Italian inherited this from Latin (*tengo trece años*), whereas English says \"I am thirteen\". A second way also appears often on gravestones: *annos tredecim natus* — \"born thirteen years\".",
+        "**Hora quinta isn't five in the morning.** The Romans split the time between sunrise and sunset into twelve equal hours. Because daylight changes with the seasons, an *hora* in June was longer than one in December. *Hora prima* began at sunrise, so *hora quinta* fell around ten or eleven in the morning.",
+        "**Quota hora est? — an ordinal, not a counting number.** Romans didn't ask the time with counting numbers, but with ordinals: \"which-numbered hour?\". The answer is an ordinal too: *hora prima, secunda, tertia*. The habit survives in church bells and in how we number centuries.",
+        "**Denarius, modius — units best left as they are.** A *denarius* was a silver coin roughly equal to a laborer's daily wage; a *modius* was a grain measure of about eight to nine liters. *Denarius* lives on in the *dinar*, and in the *d* that stood for \"penny\" in old British money."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Counting to a thousand",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Good news for beginners: apart from the first three numbers and the hundreds from two hundred up, Latin counting numbers **never change form**. You only need to learn how they sound."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Number",
+            "Latin",
+            "Say it",
+            "Number",
+            "Latin",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "1",
+              "unus",
+              "OO-noos",
+              "11",
+              "undecim",
+              "OON-deh-kim"
+            ],
+            [
+              "2",
+              "duo",
+              "DOO-oh",
+              "12",
+              "duodecim",
+              "doo-OH-deh-kim"
+            ],
+            [
+              "3",
+              "tres",
+              "TREHS",
+              "13",
+              "tredecim",
+              "TREH-deh-kim"
+            ],
+            [
+              "4",
+              "quattuor",
+              "KWAHT-too-ohr",
+              "14",
+              "quattuordecim",
+              "kwaht-too-OHR-deh-kim"
+            ],
+            [
+              "5",
+              "quinque",
+              "KWIN-kweh",
+              "15",
+              "quindecim",
+              "KWIN-deh-kim"
+            ],
+            [
+              "6",
+              "sex",
+              "SEHKS",
+              "16",
+              "sedecim",
+              "SEH-deh-kim"
+            ],
+            [
+              "7",
+              "septem",
+              "SEHP-tehm",
+              "17",
+              "septendecim",
+              "sehp-TEHN-deh-kim"
+            ],
+            [
+              "8",
+              "octo",
+              "OHK-toh",
+              "18",
+              "duodeviginti",
+              "doo-oh-deh-wee-GIN-tee"
+            ],
+            [
+              "9",
+              "novem",
+              "NOH-wehm",
+              "19",
+              "undeviginti",
+              "oon-deh-wee-GIN-tee"
+            ],
+            [
+              "10",
+              "decem",
+              "DEH-kehm",
+              "20",
+              "viginti",
+              "wee-GIN-tee"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at 18 and 19. Latin counts them backward from twenty: *duodeviginti* means \"two taken from twenty\", *undeviginti* means \"one taken from twenty\". The pattern repeats in every ten: 28 is *duodetriginta*, 29 is *undetriginta*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Number",
+            "Latin",
+            "Number",
+            "Latin"
+          ],
+          "rows": [
+            [
+              "30",
+              "triginta",
+              "80",
+              "octoginta"
+            ],
+            [
+              "40",
+              "quadraginta",
+              "90",
+              "nonaginta"
+            ],
+            [
+              "50",
+              "quinquaginta",
+              "100",
+              "centum"
+            ],
+            [
+              "60",
+              "sexaginta",
+              "200",
+              "ducenti"
+            ],
+            [
+              "70",
+              "septuaginta",
+              "1,000",
+              "mille"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Compound numbers go big-first with *et* in the middle, or small-first without *et*: 21 can be *viginti unus* or *unus et viginti* (like old English \"one-and-twenty\"). Both are correct and equally common."
+        }
+      ]
+    },
+    {
+      "title": "Three numbers that change, and ordinals",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Only *unus*, *duo* and *tres* change outfits like adjectives. The rest stay put, even when their noun changes."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Job",
+            "one (masc, fem, neut)",
+            "two",
+            "three"
+          ],
+          "rows": [
+            [
+              "subject",
+              "unus, una, unum",
+              "duo, duae, duo",
+              "tres, tres, tria"
+            ],
+            [
+              "object",
+              "unum, unam, unum",
+              "duos, duas, duo",
+              "tres, tres, tria"
+            ],
+            [
+              "of",
+              "unius",
+              "duorum, duarum",
+              "trium"
+            ],
+            [
+              "with/in",
+              "uno, una, uno",
+              "duobus, duabus",
+              "tribus"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "For example: *unus amicus* (one friend), *unam epistulam scribo* (I'm writing one letter), *cum duabus puellis* (with two girls), *tria templa* (three temples). From four on, nothing changes: *quattuor puellas video*, *cum quattuor amicis*."
+        },
+        {
+          "type": "sub",
+          "text": "Ordinal numbers"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Order",
+            "Latin",
+            "Order",
+            "Latin"
+          ],
+          "rows": [
+            [
+              "1st",
+              "primus, prima, primum",
+              "7th",
+              "septimus"
+            ],
+            [
+              "2nd",
+              "secundus",
+              "8th",
+              "octavus"
+            ],
+            [
+              "3rd",
+              "tertius",
+              "9th",
+              "nonus"
+            ],
+            [
+              "4th",
+              "quartus",
+              "10th",
+              "decimus"
+            ],
+            [
+              "5th",
+              "quintus",
+              "100th",
+              "centesimus"
+            ],
+            [
+              "6th",
+              "sextus",
+              "last",
+              "ultimus"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Ordinals behave like ordinary adjectives and change outfits to match their noun: *hora prima*, *liber primus*, *bellum primum*. Roman names like Quintus and Sextus really do come from ordinals — the fifth child and the sixth child."
+        },
+        {
+          "type": "kotak",
+          "title": "Latin numbers you already use",
+          "items": [
+            "*unus* → **uni**versity, **uni**form, **uni**que. *duo* → **du**et, **du**al. *tres* → **tri**o, **tri**ple.",
+            "*quattuor* → **quar**tet, **quar**ter. *quinque* → **quin**tet. *sex* → **sex**tet. *centum* → **cent**ury, per**cent**.",
+            "*primus* → **prim**e, **prim**ary. *secundus* → **second**. *ultimus* → **ultim**atum.",
+            "*mille* → **mil**limeter, **mill**ennium. Note that *mille* means a thousand, while *milia* means thousands."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Roman hours and Roman numerals",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "To tell the time in Latin, use an ordinal with the word *hora*. The form used is the \"with/in\" form, because time counts as a circumstance."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Latin",
+            "Meaning",
+            "Roughly covers"
+          ],
+          "rows": [
+            [
+              "hora prima",
+              "the first hour",
+              "6:00–7:00 a.m. — starts at sunrise"
+            ],
+            [
+              "hora tertia",
+              "the third hour",
+              "8:00–9:00 a.m."
+            ],
+            [
+              "hora sexta",
+              "the sixth hour",
+              "11:00 a.m.–12:00 — ends at midday"
+            ],
+            [
+              "hora nona",
+              "the ninth hour",
+              "2:00–3:00 p.m."
+            ],
+            [
+              "hora duodecima",
+              "the twelfth hour",
+              "5:00–6:00 p.m. — until sunset"
+            ],
+            [
+              "media nocte",
+              "midnight",
+              "12:00 a.m."
+            ],
+            [
+              "mane",
+              "in the morning",
+              "—"
+            ],
+            [
+              "vespere",
+              "in the evening",
+              "—"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Hora sexta* is midday, and from it Spanish got *siesta* — the nap at the sixth hour. *Hora nona* gave English the word *noon*, even though its meaning shifted three hours during the Middle Ages."
+        },
+        {
+          "type": "sub",
+          "text": "Roman numerals"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sign",
+            "Value",
+            "Sign",
+            "Value"
+          ],
+          "rows": [
+            [
+              "I",
+              "1",
+              "C",
+              "100"
+            ],
+            [
+              "V",
+              "5",
+              "D",
+              "500"
+            ],
+            [
+              "X",
+              "10",
+              "M",
+              "1,000"
+            ],
+            [
+              "L",
+              "50",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Reading Roman numerals",
+          "items": [
+            "A smaller sign **after** a bigger one is added: VI = 6, XII = 12, LX = 60.",
+            "A smaller sign **before** a bigger one is subtracted: IV = 4, IX = 9, XL = 40, XC = 90, CM = 900.",
+            "The Romans themselves often wrote IIII, not IV — look at old clocks that still use it. The subtraction rule only became standard long after Roman times.",
+            "Practice: MCMXLV = 1945; MMXXVI = 2026; XIX = 19; XLIV = 44."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "la": "unus, duo, tres",
+      "baca": "OO-noos, DOO-oh, TREHS",
+      "en": "one, two, three"
+    },
+    {
+      "la": "quattuor, quinque",
+      "baca": "KWAHT-too-ohr, KWIN-kweh",
+      "en": "four, five"
+    },
+    {
+      "la": "sex, septem, octo",
+      "baca": "SEHKS, SEHP-tehm, OHK-toh",
+      "en": "six, seven, eight"
+    },
+    {
+      "la": "novem, decem",
+      "baca": "NOH-wehm, DEH-kehm",
+      "en": "nine, ten"
+    },
+    {
+      "la": "viginti",
+      "baca": "wee-GIN-tee",
+      "en": "twenty"
+    },
+    {
+      "la": "centum",
+      "baca": "KEHN-toom",
+      "en": "a hundred"
+    },
+    {
+      "la": "mille",
+      "baca": "MIL-leh",
+      "en": "a thousand"
+    },
+    {
+      "la": "primus, secundus",
+      "baca": "PREE-moos, seh-KOON-doos",
+      "en": "first, second"
+    },
+    {
+      "la": "tertius, quartus",
+      "baca": "TEHR-tee-oos, KWAHR-toos",
+      "en": "third, fourth"
+    },
+    {
+      "la": "ultimus",
+      "baca": "OOL-tee-moos",
+      "en": "last"
+    },
+    {
+      "la": "quot?",
+      "baca": "KWOHT",
+      "en": "how many?"
+    },
+    {
+      "la": "quota hora est?",
+      "baca": "KWOH-tah HOH-rah EHST",
+      "en": "what time is it?"
+    },
+    {
+      "la": "hora, horae",
+      "baca": "HOH-rah",
+      "en": "hour"
+    },
+    {
+      "la": "annus, anni",
+      "baca": "AHN-noos",
+      "en": "year"
+    },
+    {
+      "la": "dies",
+      "baca": "DEE-ehs",
+      "en": "day"
+    },
+    {
+      "la": "nox, noctis",
+      "baca": "NOHKS",
+      "en": "night"
+    },
+    {
+      "la": "mane",
+      "baca": "MAH-neh",
+      "en": "in the morning"
+    },
+    {
+      "la": "vespere",
+      "baca": "WEHS-peh-reh",
+      "en": "in the evening"
+    },
+    {
+      "la": "emo, emere",
+      "baca": "EH-moh",
+      "en": "to buy"
+    },
+    {
+      "la": "vendo, vendere",
+      "baca": "WEHN-doh",
+      "en": "to sell"
+    },
+    {
+      "la": "postulo, postulare",
+      "baca": "POHS-too-loh",
+      "en": "to demand, to ask for"
+    },
+    {
+      "la": "do, dare",
+      "baca": "DOH, DAH-reh",
+      "en": "to give"
+    },
+    {
+      "la": "esurio, esurire",
+      "baca": "eh-SOO-ree-oh",
+      "en": "to be hungry"
+    },
+    {
+      "la": "denarius, denarii",
+      "baca": "deh-NAH-ree-oos",
+      "en": "denarius, silver coin"
+    },
+    {
+      "la": "modius, modii",
+      "baca": "MOH-dee-oos",
+      "en": "grain measure"
+    },
+    {
+      "la": "pecunia, pecuniae",
+      "baca": "peh-KOO-nee-ah",
+      "en": "money"
+    },
+    {
+      "la": "nimium",
+      "baca": "NEE-mee-oom",
+      "en": "too much"
+    },
+    {
+      "la": "patientia, patientiae",
+      "baca": "pah-tee-EHN-tee-ah",
+      "en": "patience"
+    },
+    {
+      "la": "iam",
+      "baca": "YAHM",
+      "en": "already, now"
+    },
+    {
+      "la": "mensis, mensis",
+      "baca": "MEHN-sis",
+      "en": "month"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the numbers out in Latin.",
+      "items": [
+        "7",
+        "12",
+        "19",
+        "20",
+        "40",
+        "100"
+      ]
+    },
+    {
+      "prompt": "Turn these Roman numerals into ordinary numbers.",
+      "items": [
+        "XIV",
+        "XL",
+        "LXXVII",
+        "XCIX",
+        "MCMXCV",
+        "MMXXVI"
+      ]
+    },
+    {
+      "prompt": "Choose the correct form of the number.",
+      "items": [
+        "____ amicus venit. (one)",
+        "____ puellae cantant. (two)",
+        "____ templa spectamus. (three)",
+        "Cum ____ amicis ambulo. (two)",
+        "____ libros lego. (four)",
+        "Hora ____ est. (fifth)"
+      ]
+    },
+    {
+      "prompt": "Translate into Latin.",
+      "items": [
+        "I am twenty years old.",
+        "It is the third hour.",
+        "I am buying ten books.",
+        "We wait two hours.",
+        "The first book is long.",
+        "How many denarii are you asking?"
+      ]
+    }
+  ],
+  "answers": [
+    "septem — duodecim — undeviginti — viginti — quadraginta — centum",
+    "14 — 40 — 77 — 99 — 1995 — 2026",
+    "Unus — Duae — Tria — duobus — Quattuor — quinta",
+    "Viginti annos habeo. — Hora tertia est. — Decem libros emo. — Duas horas exspectamus. — Liber primus longus est. — Quot denarios postulas?"
+  ]
+}

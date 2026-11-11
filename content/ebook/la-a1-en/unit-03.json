@@ -1,0 +1,591 @@
+{
+  "title": "What are you carrying?",
+  "title_target": "Quid portas?",
+  "goal": "Mark the object of an action with the endings -am and -um, use the six forms of 1st-group verbs, and build complete subject-object-verb sentences.",
+  "bekal": [
+    "turn a noun into its object form and know why it matters",
+    "say *I carry, you carry, we carry* with one pattern",
+    "build a correct three-word sentence without relying on word order"
+  ],
+  "dialogs": [
+    {
+      "title": "Colloquium — Cena paratur",
+      "intro": "Evening at Quintus's house. Cornelia is getting dinner ready, and everyone is carrying something.",
+      "lines": [
+        {
+          "speaker": "Cornelia:",
+          "text": "Marce! Quid portas?",
+          "id": "Marcus! What are you carrying?",
+          "literal": "Marcus-call! what carry-you?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Aquam porto, mater. Aqua frigida est.",
+          "id": "I'm carrying water, Mom. The water is cold.",
+          "literal": "water-obj carry-I, mother-call. water cold-fem is-it."
+        },
+        {
+          "speaker": "Cornelia:",
+          "text": "Bene. Et Iulia? Quid parat?",
+          "id": "Good. And Iulia? What is she making?",
+          "literal": "well. and Iulia? what prepare-she?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Iulia cenam parat. Sed cantat quoque!",
+          "id": "Iulia is making dinner. But she's singing too!",
+          "literal": "Iulia dinner-obj prepare-she. but sing-she also!"
+        },
+        {
+          "speaker": "Cornelia:",
+          "text": "Iulia semper cantat. Fabulamne narrat?",
+          "id": "Iulia is always singing. Is she telling a story too?",
+          "literal": "Iulia always sing-she. story-obj-Q tell-she?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Ita, fabulam longam narrat. Sextus fabulam laudat.",
+          "id": "Yes, a long one. Sextus is praising her story.",
+          "literal": "yes, story-obj long-obj tell-she. Sextus story-obj praise-he."
+        },
+        {
+          "speaker": "Cornelia:",
+          "text": "Ubi est Sextus? Cur non laborat?",
+          "id": "Where's Sextus? Why isn't he working?",
+          "literal": "where is-he Sextus? why not work-he?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Sextus ambulat et cantat. Non laborat!",
+          "id": "Sextus is walking around and singing. He isn't working!",
+          "literal": "Sextus walk-he and sing-he. not work-he!"
+        },
+        {
+          "speaker": "Cornelia:",
+          "text": "Sextum voco. Cenam exspectamus!",
+          "id": "I'll call Sextus. We're waiting for dinner!",
+          "literal": "Sextus-obj call-I. dinner-obj await-we!"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Ego mensam porto. Iulia aquam portat.",
+          "id": "I'm carrying the table. Iulia is carrying the water.",
+          "literal": "I table-obj carry-I. Iulia water-obj carry-she."
+        },
+        {
+          "speaker": "Cornelia:",
+          "text": "Bonus filius es, Marce. Te laudo.",
+          "id": "You're a good son, Marcus. I'm proud of you.",
+          "literal": "good-masc son-masc are-you, Marcus-call. you-obj praise-I."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Gratias, mater! Nunc cenam paramus.",
+          "id": "Thanks, Mom! Now let's get dinner ready.",
+          "literal": "thanks, mother-call! now dinner-obj prepare-we."
+        }
+      ],
+      "notes": [
+        "**Aqua and aquam are two different things.** *Aqua frigida est* — \"the water is cold\"; here the water is the subject. *Aquam porto* — \"I'm carrying water\"; here the water is what the action is done to, and its ending changes to *-am*. This one-letter change does the job that word order does in English.",
+        "**Adjectives wear the object hat too.** Look at *fabulam longam*: because *fabulam* has the object ending, *longam* must follow. An adjective always wears exactly the same outfit as its noun — gender, number and job must all match.",
+        "**All the verbs in this dialogue follow one pattern.** *Porto, parat, narrat, laudat, laborat, ambulat, cantat, voco, exspectamus, paramus* — ten verbs, one pattern. This group is called the first conjugation, and it's the biggest and most regular in all of Latin.",
+        "**Te laudo — pronouns have an object form too.** *Ego* becomes *me*, *tu* becomes *te* — just like English *I/me*. So *te laudo* means \"I praise you\" and *me laudas* means \"you praise me\". You can swap the order without changing the meaning, because the endings do the work."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The object form: the -am and -um hat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "When a noun is the object of an action — the thing carried, seen or called — it takes a special form. In grammar books it's called the accusative; in this course it's marked `-obj` in the literal line."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Group",
+            "Subject",
+            "Object",
+            "Example sentence"
+          ],
+          "rows": [
+            [
+              "1st declension (-a)",
+              "puella",
+              "puell**am**",
+              "Marcus **puellam** vocat."
+            ],
+            [
+              "",
+              "aqua",
+              "aqu**am**",
+              "**Aquam** porto."
+            ],
+            [
+              "",
+              "fabula",
+              "fabul**am**",
+              "Iulia **fabulam** narrat."
+            ],
+            [
+              "2nd declension (-us)",
+              "amicus",
+              "amic**um**",
+              "**Amicum** exspecto."
+            ],
+            [
+              "",
+              "hortus",
+              "hort**um**",
+              "Servus **hortum** curat."
+            ],
+            [
+              "",
+              "Sextus",
+              "Sext**um**",
+              "**Sextum** voco."
+            ],
+            [
+              "2nd declension (-um)",
+              "templum",
+              "templ**um**",
+              "**Templum** specto."
+            ],
+            [
+              "",
+              "donum",
+              "don**um**",
+              "**Donum** porto."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at the last rows: neuter words **don't change at all**. *Templum* is both subject and object, and only the sentence tells you which is meant. This rule holds in all five declensions without exception — neuter words always have twin subject and object forms."
+        },
+        {
+          "type": "kotak",
+          "title": "Why this is such a powerful tool",
+          "items": [
+            "*Puella puerum vocat* and *Puerum puella vocat* mean the same: the girl calls the boy. The endings already say who does what, so word order is free to be used for emphasis.",
+            "*Puellam puer vocat* means the opposite, even though the words are the same. Read the endings first, not the order.",
+            "So when reading a Latin sentence, get into the habit of looking for the object ending first. It almost always attaches to the verb."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The first conjugation: -are verbs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A Latin verb's dictionary form starts with the \"I\" form: *porto, portare* — \"I carry, to carry\". If the second form ends in *-are*, the verb belongs to the first group, and you can build all its forms yourself. Here's how: drop the *-re* from *portare*, leaving *porta-*, then attach the six person endings."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Latin",
+            "Literal",
+            "English"
+          ],
+          "rows": [
+            [
+              "port**o**",
+              "carry-I",
+              "I carry"
+            ],
+            [
+              "port**as**",
+              "carry-you",
+              "you carry"
+            ],
+            [
+              "port**at**",
+              "carry-he",
+              "he/she carries"
+            ],
+            [
+              "port**amus**",
+              "carry-we",
+              "we carry"
+            ],
+            [
+              "port**atis**",
+              "carry-you-pl",
+              "you (all) carry"
+            ],
+            [
+              "port**ant**",
+              "carry-they",
+              "they carry"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Those six endings — *-o, -s, -t, -mus, -tis, -nt* — are the person endings for **all** Latin verbs, in every group, in almost every tense. You've just learned a third of the whole Latin verb system. The only thing that differs between groups is the linking vowel before the ending."
+        },
+        {
+          "type": "p",
+          "text": "Notice that the \"I\" form swallows the *a*: not *portao* but *porto*. That's the only quirk in the first group, and it applies to all of them: *amo*, *voco*, *laboro*, *specto*."
+        },
+        {
+          "type": "sub",
+          "text": "One sentence, three parts"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Subject",
+            "Object",
+            "Verb",
+            "Translation"
+          ],
+          "rows": [
+            [
+              "Marcus",
+              "aquam",
+              "portat",
+              "Marcus carries water."
+            ],
+            [
+              "Iulia",
+              "fabulam",
+              "narrat",
+              "Iulia tells a story."
+            ],
+            [
+              "Cornelia",
+              "cenam",
+              "parat",
+              "Cornelia prepares dinner."
+            ],
+            [
+              "(I)",
+              "Sextum",
+              "voco",
+              "I call Sextus."
+            ],
+            [
+              "Discipuli",
+              "magistrum",
+              "laudant",
+              "The pupils praise the teacher."
+            ],
+            [
+              "Nauta",
+              "villam",
+              "spectat",
+              "The sailor looks at the house."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The subject slot can stay empty, because the verb ending already names it. The object slot can stay empty too if the action isn't done to anything: *Sextus ambulat* — \"Sextus walks\"."
+        }
+      ]
+    },
+    {
+      "title": "Twenty of the most useful -are verbs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Learn this list and you can already build hundreds of simple sentences. They all follow exactly the same pattern as *porto*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Latin",
+            "Meaning",
+            "Latin",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "amo, amare",
+              "to love",
+              "laboro, laborare",
+              "to work"
+            ],
+            [
+              "porto, portare",
+              "to carry",
+              "laudo, laudare",
+              "to praise"
+            ],
+            [
+              "paro, parare",
+              "to prepare",
+              "narro, narrare",
+              "to tell"
+            ],
+            [
+              "voco, vocare",
+              "to call",
+              "canto, cantare",
+              "to sing"
+            ],
+            [
+              "specto, spectare",
+              "to watch, to look at",
+              "clamo, clamare",
+              "to shout"
+            ],
+            [
+              "ambulo, ambulare",
+              "to walk",
+              "intro, intrare",
+              "to enter"
+            ],
+            [
+              "habito, habitare",
+              "to live, to dwell",
+              "exspecto, exspectare",
+              "to wait for"
+            ],
+            [
+              "rogo, rogare",
+              "to ask",
+              "saluto, salutare",
+              "to greet"
+            ],
+            [
+              "puto, putare",
+              "to think, to suppose",
+              "curo, curare",
+              "to look after, to care for"
+            ],
+            [
+              "nato, natare",
+              "to swim",
+              "aedifico, aedificare",
+              "to build"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "English words that help you remember",
+          "items": [
+            "*Amare* → **amateur**: someone who does something for love, not for pay.",
+            "*Portare* → **porter, transport, portable**: all about carrying.",
+            "*Laborare* → **laboratory, collaborate**: a place and a way of working.",
+            "*Spectare* → **spectator, inspect, spectacular**: all about looking.",
+            "*Aedificare* → **edifice**; *curare* → **curator, cure**; *clamare* → **exclaim, proclaim**."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "la": "porto, portare",
+      "baca": "POHR-toh",
+      "en": "to carry"
+    },
+    {
+      "la": "paro, parare",
+      "baca": "PAH-roh",
+      "en": "to prepare"
+    },
+    {
+      "la": "voco, vocare",
+      "baca": "WOH-koh",
+      "en": "to call"
+    },
+    {
+      "la": "laudo, laudare",
+      "baca": "LOW-doh",
+      "en": "to praise"
+    },
+    {
+      "la": "narro, narrare",
+      "baca": "NAHR-roh",
+      "en": "to tell"
+    },
+    {
+      "la": "canto, cantare",
+      "baca": "KAHN-toh",
+      "en": "to sing"
+    },
+    {
+      "la": "laboro, laborare",
+      "baca": "lah-BOH-roh",
+      "en": "to work"
+    },
+    {
+      "la": "ambulo, ambulare",
+      "baca": "AHM-boo-loh",
+      "en": "to walk"
+    },
+    {
+      "la": "exspecto, exspectare",
+      "baca": "ehks-SPEHK-toh",
+      "en": "to wait for"
+    },
+    {
+      "la": "specto, spectare",
+      "baca": "SPEHK-toh",
+      "en": "to look at, to watch"
+    },
+    {
+      "la": "amo, amare",
+      "baca": "AH-moh",
+      "en": "to love, to like"
+    },
+    {
+      "la": "habito, habitare",
+      "baca": "HAH-bee-toh",
+      "en": "to live, to dwell"
+    },
+    {
+      "la": "rogo, rogare",
+      "baca": "ROH-goh",
+      "en": "to ask"
+    },
+    {
+      "la": "saluto, salutare",
+      "baca": "sah-LOO-toh",
+      "en": "to greet"
+    },
+    {
+      "la": "curo, curare",
+      "baca": "KOO-roh",
+      "en": "to look after, to care for"
+    },
+    {
+      "la": "clamo, clamare",
+      "baca": "KLAH-moh",
+      "en": "to shout"
+    },
+    {
+      "la": "intro, intrare",
+      "baca": "IN-troh",
+      "en": "to enter"
+    },
+    {
+      "la": "puto, putare",
+      "baca": "POO-toh",
+      "en": "to think, to suppose"
+    },
+    {
+      "la": "aqua",
+      "baca": "AH-kwah",
+      "en": "water"
+    },
+    {
+      "la": "cena",
+      "baca": "KEH-nah",
+      "en": "dinner"
+    },
+    {
+      "la": "mensa",
+      "baca": "MEHN-sah",
+      "en": "table"
+    },
+    {
+      "la": "filius, filia",
+      "baca": "FEE-lee-oos",
+      "en": "son, daughter"
+    },
+    {
+      "la": "mater",
+      "baca": "MAH-tehr",
+      "en": "mother"
+    },
+    {
+      "la": "pater",
+      "baca": "PAH-tehr",
+      "en": "father"
+    },
+    {
+      "la": "servus",
+      "baca": "SEHR-woos",
+      "en": "enslaved person, unfree servant"
+    },
+    {
+      "la": "dominus, domina",
+      "baca": "DOH-mee-noos",
+      "en": "master, mistress of the house"
+    },
+    {
+      "la": "epistula",
+      "baca": "eh-PIS-too-lah",
+      "en": "letter"
+    },
+    {
+      "la": "frigidus",
+      "baca": "FREE-gee-doos",
+      "en": "cold"
+    },
+    {
+      "la": "calidus",
+      "baca": "KAH-lee-doos",
+      "en": "hot, warm"
+    },
+    {
+      "la": "me, te",
+      "baca": "MEH, TEH",
+      "en": "me, you (object)"
+    },
+    {
+      "la": "nos, vos",
+      "baca": "NOHS, WOHS",
+      "en": "we/us, you (pl)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change into the object form.",
+      "items": [
+        "aqua",
+        "hortus",
+        "templum",
+        "fabula",
+        "amicus",
+        "donum"
+      ]
+    },
+    {
+      "prompt": "Complete the verb to match its subject.",
+      "items": [
+        "Ego cenam par____.",
+        "Tu aquam port____.",
+        "Marcus fabulam narr____.",
+        "Nos amicum exspect____.",
+        "Vos magistrum laud____.",
+        "Puellae cant____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order, verb at the end.",
+      "items": [
+        "portat / aquam / Iulia",
+        "voco / amicum / ego",
+        "parant / cenam / servi",
+        "laudas / magistrum / tu",
+        "spectat / templum / nauta",
+        "narramus / fabulam / nos"
+      ]
+    },
+    {
+      "prompt": "Translate into Latin.",
+      "items": [
+        "I am waiting for a friend.",
+        "You are carrying water.",
+        "Cornelia is preparing dinner.",
+        "We praise the teacher.",
+        "The girl is singing.",
+        "Sextus is not working."
+      ]
+    }
+  ],
+  "answers": [
+    "aquam — hortum — templum — fabulam — amicum — donum",
+    "paro — portas — narrat — exspectamus — laudatis — cantant",
+    "Iulia aquam portat. — Ego amicum voco. — Servi cenam parant. — Tu magistrum laudas. — Nauta templum spectat. — Nos fabulam narramus.",
+    "Amicum exspecto. — Aquam portas. — Cornelia cenam parat. — Magistrum laudamus. — Puella cantat. — Sextus non laborat."
+  ]
+}

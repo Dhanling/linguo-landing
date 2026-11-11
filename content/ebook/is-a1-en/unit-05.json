@@ -1,0 +1,602 @@
+{
+  "title": "Numbers and age",
+  "title_target": "Tölur og aldur",
+  "goal": "Count from one to a hundred, give your age and phone number, and accept the fact that the first four Icelandic numbers change form with the gender of what's being counted.",
+  "bekal": [
+    "count 1–100 and give prices in króna",
+    "choose *einn*, *ein*, or *eitt* according to the gender of the noun that goes with it",
+    "ask and answer about age with *hvað ertu gamall / gömul*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Í móttökunni",
+      "intro": "The front desk of the language school. Búdí is signing up for the next course; the clerk fills in the form as she asks questions.",
+      "lines": [
+        {
+          "speaker": "Starfsmaður:",
+          "text": "Góðan daginn. Hvað heitir þú fullu nafni?",
+          "id": "Good afternoon. What's your full name?",
+          "literal": "good day-the. what are-called you full name?"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Ég heiti Búdí Santoso.",
+          "id": "My name is Budi Santoso.",
+          "literal": "I am-called Budi Santoso."
+        },
+        {
+          "speaker": "Starfsmaður:",
+          "text": "Hvað ertu gamall?",
+          "id": "How old are you?",
+          "literal": "what are-you old?"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Ég er tuttugu og fimm ára.",
+          "id": "I'm twenty-five.",
+          "literal": "I am twenty and five years."
+        },
+        {
+          "speaker": "Starfsmaður:",
+          "text": "Og símanúmerið þitt?",
+          "id": "And your phone number?",
+          "literal": "and phone-number-the yours?"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Sex — fjórir — tveir — níu — átta — einn — núll.",
+          "id": "Six, four, two, nine, eight, one, zero.",
+          "literal": "six four two nine eight one zero."
+        },
+        {
+          "speaker": "Starfsmaður:",
+          "text": "Takk. Hvar áttu heima?",
+          "id": "Thanks. Where do you live?",
+          "literal": "thanks. where own-you home?"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Á Laugavegi þrjátíu og þrjú.",
+          "id": "At Laugavegur thirty-three.",
+          "literal": "on Laugavegur thirty and three."
+        },
+        {
+          "speaker": "Starfsmaður:",
+          "text": "Gott. Þú ert í hópi tvö. Þið eruð tólf í hópnum.",
+          "id": "Good. You're in group two. There are twelve of you in the group.",
+          "literal": "good. you are in group two. you-all are twelve in group-the."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Hvað kostar námskeiðið?",
+          "id": "How much is the course?",
+          "literal": "what costs course-the?"
+        },
+        {
+          "speaker": "Starfsmaður:",
+          "text": "Þrjátíu og fimm þúsund krónur. Þrír tímar á viku.",
+          "id": "Thirty-five thousand krónur. Three hours a week.",
+          "literal": "thirty and five thousand krónur. three hours on week."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Fínt. Ein spurning enn: hvenær byrjar það?",
+          "id": "Fine. One more question: when does it start?",
+          "literal": "fine. one question more: when begins it?"
+        }
+      ],
+      "notes": [
+        "**Hvað ertu gamall? literally \"what are you old?\"** — and the word *gamall* follows the gender of the person asked. To a man: *Hvað ertu **gamall**?*; to a woman: *Hvað ertu **gömul**?* Getting it wrong isn't just a grammar slip; it sounds as if you've mistaken who you're talking to.",
+        "**Ára never changes.** *Ég er tuttugu og fimm ára*, *hún er þriggja ára*, *hann er níutíu ára* — one form for every age. It's one of the few words in Icelandic that truly stays still.",
+        "**The first four numbers change with the noun's gender**, and you can see it twice in this dialogue: *ein spurning* (*spurning* is kvk) but *þrír tímar* (*tími* is kk). From 5 up, numbers never change, so the load is limited — but 1–4 are exactly the numbers you use most.",
+        "**House numbers and any number standing on its own use the neuter form**: *þrjátíu og þrjú*, not *þrjátíu og þrír*. Hvorugkyn is the language's default form — the same pattern you saw with adjectives in Unit 3.",
+        "**Að eiga heima literally \"to own home\"**, and it means \"to live (somewhere)\". It's freely interchangeable with *búa* from Unit 2: *Hvar áttu heima?* = *Hvar býrðu?*",
+        "**Krónur sound like a lot, and the numbers are indeed big.** A cup of coffee is about 700 krónur, a course 35,000. Don't be surprised to hear thousands in everyday conversation; that's why *þúsund* is one of the words you'll hear most at the checkout."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers 1–4 change with the gender",
+          "body": [
+            "Four numbers, three forms each. The rest — from five up — never change at all."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "kk (hann)",
+              "kvk (hún)",
+              "hk (það)",
+              "Example"
+            ],
+            "rows": [
+              [
+                "1",
+                "*einn*",
+                "*ein*",
+                "*eitt*",
+                "*einn stóll*, *ein bók*, *eitt borð*"
+              ],
+              [
+                "2",
+                "*tveir*",
+                "*tvær*",
+                "*tvö*",
+                "*tveir bílar*, *tvær bækur*, *tvö börn*"
+              ],
+              [
+                "3",
+                "*þrír*",
+                "*þrjár*",
+                "*þrjú*",
+                "*þrír tímar*, *þrjár konur*, *þrjú hús*"
+              ],
+              [
+                "4",
+                "*fjórir*",
+                "*fjórar*",
+                "*fjögur*",
+                "*fjórir menn*, *fjórar myndir*, *fjögur ár*"
+              ],
+              [
+                "5 and up",
+                "*fimm*",
+                "*fimm*",
+                "*fimm*",
+                "never change"
+              ]
+            ]
+          },
+          "after": [
+            "Since only 1–4 change, learn these twelve forms as one block and leave the rest alone. Those twelve forms cover more than half the numbers you say in a day.",
+            "⚠️ When a number stands on its own — counting, giving a number, saying a year — use the **hvorugkyn** form: *einn, tveir, þrír* are used when counting in sequence, but *eitt, tvö, þrjú* for numbers and stand-alone figures. In practice, listen first to how Icelanders count; you'll hear both."
+          ]
+        },
+        {
+          "title": "Asking about quantity and price",
+          "body": [
+            "One question word, three forms — again according to the gender of the noun being counted."
+          ],
+          "table": {
+            "head": [
+              "Question",
+              "For",
+              "Example",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Hvað margir …?*",
+                "kk",
+                "*Hvað margir tímar?*",
+                "How many hours?"
+              ],
+              [
+                "*Hvað margar …?*",
+                "kvk",
+                "*Hvað margar bækur?*",
+                "How many books?"
+              ],
+              [
+                "*Hvað mörg …?*",
+                "hk",
+                "*Hvað mörg börn?*",
+                "How many children?"
+              ],
+              [
+                "*Hvað kostar …?*",
+                "price",
+                "*Hvað kostar þetta?*",
+                "How much is this?"
+              ],
+              [
+                "*Hvað ertu gamall/gömul?*",
+                "age",
+                "—",
+                "How old are you?"
+              ]
+            ]
+          },
+          "after": [
+            "*Hvað kostar* uses the singular even when asking about several things: *Hvað kosta bækurnar?* with plural *kosta* is also correct and just as common.",
+            "To answer about a price, the number alone is enough: *Sjö hundruð krónur* — or even just *sjö hundruð*, since the currency is obvious."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Numbers from one to a hundred",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Number",
+            "Íslenska",
+            "Say it",
+            "Number",
+            "Íslenska",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "0",
+              "*núll*",
+              "nütl",
+              "11",
+              "*ellefu*",
+              "EHT-leh-vü"
+            ],
+            [
+              "1",
+              "*einn*",
+              "aydn",
+              "12",
+              "*tólf*",
+              "tohlv"
+            ],
+            [
+              "2",
+              "*tveir*",
+              "tvayr",
+              "13",
+              "*þrettán*",
+              "THREHH-town"
+            ],
+            [
+              "3",
+              "*þrír*",
+              "threer",
+              "14",
+              "*fjórtán*",
+              "FYOHR-town"
+            ],
+            [
+              "4",
+              "*fjórir*",
+              "FYOH-rihr",
+              "15",
+              "*fimmtán*",
+              "FIM-town"
+            ],
+            [
+              "5",
+              "*fimm*",
+              "fim",
+              "16",
+              "*sextán*",
+              "SEHX-town"
+            ],
+            [
+              "6",
+              "*sex*",
+              "sehx",
+              "17",
+              "*sautján*",
+              "SÖIT-yown"
+            ],
+            [
+              "7",
+              "*sjö*",
+              "syö",
+              "18",
+              "*átján*",
+              "OWT-yown"
+            ],
+            [
+              "8",
+              "*átta*",
+              "OWH-tah",
+              "19",
+              "*nítján*",
+              "NEET-yown"
+            ],
+            [
+              "9",
+              "*níu*",
+              "NEE-ü",
+              "20",
+              "*tuttugu*",
+              "TÜH-tü-ghü"
+            ],
+            [
+              "10",
+              "*tíu*",
+              "TEE-ü",
+              "100",
+              "*hundrað*",
+              "HÜND-rahdh"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Tens",
+            "Íslenska",
+            "Say it",
+            "Combined example",
+            "English"
+          ],
+          "rows": [
+            [
+              "30",
+              "*þrjátíu*",
+              "THRYOW-tee-ü",
+              "*þrjátíu og þrjú*",
+              "33"
+            ],
+            [
+              "40",
+              "*fjörutíu*",
+              "FYÖ-rü-tee-ü",
+              "*fjörutíu og fimm*",
+              "45"
+            ],
+            [
+              "50",
+              "*fimmtíu*",
+              "FIM-tee-ü",
+              "*fimmtíu og sjö*",
+              "57"
+            ],
+            [
+              "60",
+              "*sextíu*",
+              "SEHX-tee-ü",
+              "*sextíu og átta*",
+              "68"
+            ],
+            [
+              "70",
+              "*sjötíu*",
+              "SYÖ-tee-ü",
+              "*sjötíu og níu*",
+              "79"
+            ],
+            [
+              "80",
+              "*áttatíu*",
+              "OWH-tah-tee-ü",
+              "*áttatíu og einn*",
+              "81"
+            ],
+            [
+              "90",
+              "*níutíu*",
+              "NEE-ü-tee-ü",
+              "*níutíu og tvö*",
+              "92"
+            ],
+            [
+              "1000",
+              "*þúsund*",
+              "THOO-sünd",
+              "*fimm þúsund*",
+              "5,000"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Combined numbers always have **og** in the middle: *tuttugu **og** fimm*, *níutíu **og** níu*. There's no short form like English \"twenty-five\" without \"and\" — the word *og* is required."
+        }
+      ]
+    },
+    {
+      "title": "Phone numbers, dates, and prices",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Íslenska",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Hvað er símanúmerið þitt?",
+              "kvahdh ehr SEE-mah-noo-meh-ridh thihht",
+              "What's your phone number?"
+            ],
+            [
+              "Hvað kostar þetta?",
+              "kvahdh KAWS-tahr THEHH-tah",
+              "How much is this?"
+            ],
+            [
+              "Það kostar sjö hundruð krónur.",
+              "thahdh KAWS-tahr syö HÜND-rüdh KROH-nür",
+              "It costs seven hundred krónur."
+            ],
+            [
+              "Hvað ertu gamall?",
+              "kvahdh EHR-tü GAH-mahtl",
+              "How old are you? (to a man)"
+            ],
+            [
+              "Hvað ertu gömul?",
+              "kvahdh EHR-tü GÖ-mül",
+              "How old are you? (to a woman)"
+            ],
+            [
+              "Ég er þrjátíu ára.",
+              "yehgh ehr THRYOW-tee-ü OW-rah",
+              "I'm thirty."
+            ],
+            [
+              "Hvað eruð þið mörg?",
+              "kvahdh EH-rüdh thidh mörgh",
+              "How many of you are there?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Phone numbers are read digit by digit",
+          "items": [
+            "Icelandic phone numbers have seven digits and are read **one digit at a time**, not in pairs: *sex, fjórir, tveir, níu, átta, einn, núll*.",
+            "Dates use ordinal forms you haven't learned yet (*fyrsti*, *annar*, *þriðji*), but in casual conversation ordinary numbers are used too: *þriðja mars* — the third of March."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "is": "tala (kk: tölur)",
+      "baca": "TAH-lah",
+      "en": "number"
+    },
+    {
+      "is": "aldur",
+      "baca": "AHL-dür",
+      "en": "age"
+    },
+    {
+      "is": "gamall / gömul",
+      "baca": "GAH-mahtl / GÖ-mül",
+      "en": "old (kk / kvk)"
+    },
+    {
+      "is": "ára",
+      "baca": "OW-rah",
+      "en": "years (old)"
+    },
+    {
+      "is": "ár",
+      "baca": "owr",
+      "en": "year"
+    },
+    {
+      "is": "númer",
+      "baca": "NOO-mehr",
+      "en": "number (phone, house)"
+    },
+    {
+      "is": "sími",
+      "baca": "SEE-mih",
+      "en": "phone"
+    },
+    {
+      "is": "króna",
+      "baca": "KROH-nah",
+      "en": "króna (currency)"
+    },
+    {
+      "is": "kosta",
+      "baca": "KAWS-tah",
+      "en": "to cost"
+    },
+    {
+      "is": "námskeið",
+      "baca": "NOWMS-kaydh",
+      "en": "course"
+    },
+    {
+      "is": "hópur",
+      "baca": "HOH-pür",
+      "en": "group"
+    },
+    {
+      "is": "tími",
+      "baca": "TEE-mih",
+      "en": "class hour; time"
+    },
+    {
+      "is": "vika",
+      "baca": "VIH-kah",
+      "en": "week"
+    },
+    {
+      "is": "spurning",
+      "baca": "SPÜRD-ning",
+      "en": "question"
+    },
+    {
+      "is": "hvenær",
+      "baca": "KVEH-nair",
+      "en": "when"
+    },
+    {
+      "is": "byrja",
+      "baca": "BIHR-yah",
+      "en": "to begin, to start"
+    },
+    {
+      "is": "enn",
+      "baca": "ehdn",
+      "en": "more, still"
+    },
+    {
+      "is": "fínt",
+      "baca": "feent",
+      "en": "fine, okay"
+    },
+    {
+      "is": "starfsmaður",
+      "baca": "STAHRFS-mah-dhür",
+      "en": "clerk, employee"
+    },
+    {
+      "is": "eiga heima",
+      "baca": "AY-ghah HAY-mah",
+      "en": "to live (somewhere)"
+    },
+    {
+      "is": "margir / margar / mörg",
+      "baca": "MAHR-yihr / MAHR-ghahr / mörgh",
+      "en": "many"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the numbers in words.",
+      "items": [
+        "7",
+        "12",
+        "20",
+        "33",
+        "58",
+        "91"
+      ]
+    },
+    {
+      "prompt": "Choose the right form of the number for the noun's gender.",
+      "items": [
+        "____ (einn, ein, eitt) bók",
+        "____ (tveir, tvær, tvö) börn",
+        "____ (þrír, þrjár, þrjú) tímar",
+        "____ (fjórir, fjórar, fjögur) myndir",
+        "____ (einn, ein, eitt) stóll",
+        "____ (tveir, tvær, tvö) bílar"
+      ]
+    },
+    {
+      "prompt": "Answer the questions in full sentences, using the information in brackets.",
+      "items": [
+        "Hvað ertu gamall? (25)",
+        "Hvað kostar bókin? (3,500 krónur)",
+        "Hvað eruð þið mörg? (12)",
+        "Hvað margir tímar á viku? (3)",
+        "Hvað er símanúmerið þitt? (642 9810)"
+      ]
+    },
+    {
+      "prompt": "Translate into Icelandic.",
+      "items": [
+        "How old are you?",
+        "I'm thirty.",
+        "How much is this?",
+        "It costs seven hundred krónur.",
+        "When does it start?",
+        "One more question."
+      ]
+    }
+  ],
+  "answers": [
+    "sjö — tólf — tuttugu — þrjátíu og þrjú — fimmtíu og átta — níutíu og einn",
+    "ein — tvö — þrír — fjórar — einn — tveir",
+    "Ég er tuttugu og fimm ára. — Hún kostar þrjú þúsund og fimm hundruð krónur. — Við erum tólf. — Þrír tímar á viku. — Sex fjórir tveir níu átta einn núll.",
+    "Hvað ertu gamall? — Ég er þrjátíu ára. — Hvað kostar þetta? — Það kostar sjö hundruð krónur. — Hvenær byrjar það? — Ein spurning enn."
+  ]
+}

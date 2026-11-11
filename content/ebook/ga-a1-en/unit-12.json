@@ -1,0 +1,566 @@
+{
+  "title": "Who, what, where, when",
+  "title_target": "Cé, cad, cá, cathain",
+  "goal": "Master the ten Irish question words and the letter changes they bring.",
+  "bekal": [
+    "use *cé, cad, cá, cathain, conas, cén fáth, cé mhéad* correctly",
+    "build questions with *cén* + noun",
+    "know which words bring séimhiú and which bring urú"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — An cheolchoirm",
+      "intro": "Niamh mentions a traditional music concert this weekend. Budi wants to know everything.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Cathain atá an cheolchoirm?",
+          "id": "When is the concert?",
+          "literal": "when that-is the concert?"
+        },
+        {
+          "speaker": "Niamh:",
+          "text": "Dé hAoine, ar a hocht.",
+          "id": "On Friday, at eight.",
+          "literal": "day Friday, on the eight."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cá bhfuil sí ar siúl?",
+          "id": "Where is it?",
+          "literal": "where is it on way?"
+        },
+        {
+          "speaker": "Niamh:",
+          "text": "Sa teach tábhairne ar an tsráid mhór.",
+          "id": "In the pub on the main street.",
+          "literal": "in-the house drinking-of on the street big."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cé mhéad atá air?",
+          "id": "How much is it?",
+          "literal": "how much that-is on-it?"
+        },
+        {
+          "speaker": "Niamh:",
+          "text": "Deich euro — nó cúig euro do mhic léinn.",
+          "id": "Ten euro — or five euro for students.",
+          "literal": "ten euro — or five euro for children learning-of."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cé atá ag seinm?",
+          "id": "Who's playing?",
+          "literal": "who that-is at playing?"
+        },
+        {
+          "speaker": "Niamh:",
+          "text": "Grúpa as Conamara. Is é Liam an ceoltóir is fearr acu.",
+          "id": "A group from Conamara. Liam is the best musician of them.",
+          "literal": "group from Conamara. is he Liam the musician is best at-them."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cén sórt ceoil é?",
+          "id": "What kind of music is it?",
+          "literal": "what sort music-of it?"
+        },
+        {
+          "speaker": "Niamh:",
+          "text": "Ceol traidisiúnta — fidil, bodhrán, feadóg mhór.",
+          "id": "Traditional music — fiddle, bodhrán drum, flute.",
+          "literal": "music traditional — fiddle, bodhrán, flute big."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Conas a théann muid ann?",
+          "id": "How do we get there?",
+          "literal": "how that go we in-it?"
+        },
+        {
+          "speaker": "Niamh:",
+          "text": "Siúlaimid. Níl sé ach deich nóiméad ó seo.",
+          "id": "We walk. It's only ten minutes from here.",
+          "literal": "walk-we. not-is it but ten minutes from this."
+        }
+      ],
+      "notes": [
+        "**Irish has no helper words like \"do\" standing on their own.** You make a question by swapping the first word of the sentence. *Tá sé anseo* (\"he is here\") becomes *An bhfuil sé anseo?* (\"is he here?\") or *Cá bhfuil sé?* (\"where is he?\"). The rest of the sentence doesn't move at all — much simpler than English, which has to flip the word order and add *do* as well.",
+        "**Cén is cé + an, and it is always followed by a noun.** *Cén t-am?* (what time), *Cén aois?* (what age), *Cén sórt?* (what kind), *Cén fáth?* (what reason, i.e. why), *Cén dath?* (what color). Because *cén* already contains the article *an*, don't add another *an*: *Cén t-am é?*, not *Cén an t-am é?*",
+        "**Cé hé, cé hí — the h slips in again.** To ask who someone is, use *Cé hé sin?* (a man), *Cé hí sin?* (a woman), *Cé hiad sin?* (plural). The *h* appears because the next word starts with a vowel — the same pattern as *go hiontach*, *a hocht*, and *ní hea* from earlier units.",
+        "**Cé mhéad — with séimhiú, and a singular noun.** *Cé mhéad euro?*, *Cé mhéad duine?*, *Cé mhéad leabhar?* The word *méad* is softened because it comes after *cé*, and the noun is never made plural. To ask a price, the most common form is *Cé mhéad atá air?* — literally \"how much is on it?\", using the same *ar* pattern as *Tá ocras orm*."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Ten question words",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "cé?",
+              "KYAY",
+              "who",
+              "Cé atá ansin?"
+            ],
+            [
+              "cé hé / cé hí?",
+              "kyay HAY / kyay HEE",
+              "who is he / she",
+              "Cé hí an bhean sin?"
+            ],
+            [
+              "cad? / céard?",
+              "KOD / KYAYRD",
+              "what",
+              "Cad é sin?"
+            ],
+            [
+              "cá? (+urú)",
+              "KAW",
+              "where",
+              "Cá bhfuil tú?"
+            ],
+            [
+              "cathain?",
+              "KAH-hin",
+              "when",
+              "Cathain atá an rang?"
+            ],
+            [
+              "conas?",
+              "KUH-nas",
+              "how",
+              "Conas atá tú?"
+            ],
+            [
+              "cén fáth?",
+              "kyayn FAW",
+              "why",
+              "Cén fáth a bhfuil tú anseo?"
+            ],
+            [
+              "cé mhéad?",
+              "kyay VAYD",
+              "how many, how much",
+              "Cé mhéad duine?"
+            ],
+            [
+              "cé leis?",
+              "kyay LESH",
+              "whose",
+              "Cé leis an leabhar seo?"
+            ],
+            [
+              "cé acu?",
+              "kyay AH-kuh",
+              "which one",
+              "Cé acu is fearr leat?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Cad* and *céard* mean the same and are equally correct; *cad* is more common in the south, *céard* in Connacht. To ask about a thing you are pointing at, both usually go with *é*: *Cad é sin?* or *Céard é sin?* — \"what's that?\""
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Answer",
+            "English"
+          ],
+          "rows": [
+            [
+              "Cé hé sin?",
+              "Is é sin Seán.",
+              "Who's that? — That's Seán."
+            ],
+            [
+              "Cad é seo?",
+              "Is peann é.",
+              "What's this? — It's a pen."
+            ],
+            [
+              "Cá bhfuil an siopa?",
+              "Tá sé ar an tsráid seo.",
+              "Where's the shop? — On this street."
+            ],
+            [
+              "Cathain atá an rang?",
+              "Ar a deich.",
+              "When's the class? — At ten."
+            ],
+            [
+              "Conas atá tú?",
+              "Tá mé go maith.",
+              "How are you? — Fine."
+            ],
+            [
+              "Cé mhéad atá air?",
+              "Tá cúig euro air.",
+              "How much is it? — Five euro."
+            ],
+            [
+              "Cé leis an mála seo?",
+              "Is liomsa é.",
+              "Whose bag is this? — It's mine."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Cén + noun",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Cén t-am é?",
+              "kyayn TAM AY",
+              "What time is it?"
+            ],
+            [
+              "Cén aois tú?",
+              "kyayn AYSH TOO",
+              "How old are you?"
+            ],
+            [
+              "Cén t-ainm atá ort?",
+              "kyayn TAH-nim uh-TAW ORT",
+              "What's your name?"
+            ],
+            [
+              "Cén sórt ceoil é?",
+              "kyayn SORT KYOL AY",
+              "What kind of music is it?"
+            ],
+            [
+              "Cén dath atá air?",
+              "kyayn DAH uh-TAW ER",
+              "What color is it?"
+            ],
+            [
+              "Cén fáth?",
+              "kyayn FAW",
+              "Why?"
+            ],
+            [
+              "Cén lá é inniu?",
+              "kyayn LAW ay ih-NYOO",
+              "What day is it today?"
+            ],
+            [
+              "Cén mhí í seo?",
+              "kyayn VEE ee SHUH",
+              "What month is this?"
+            ],
+            [
+              "Cén chaoi a bhfuil tú?",
+              "kyayn KHEE uh WIL TOO",
+              "How are you? (Connacht)"
+            ],
+            [
+              "Cén uair?",
+              "kyayn OO-ir",
+              "What time? When?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Cén t-am, cén chaoi — why the letters change",
+          "items": [
+            "*Cén* contains the article *an*, so the noun after it behaves exactly as after an ordinary *an* (Unit 4). **Masculine** words starting with a vowel get *t-*: *cén t-am*, *cén t-ainm*.",
+            "**Feminine** words get séimhiú: *cén chaoi* (from *caoi*), *cén cheist* (from *ceist*), *cén bhliain* (from *bliain*).",
+            "So there's no new rule to learn — just remember that *cén* = *cé* + *an*, and everything you already know about *an* applies as is."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Three little words, three behaviors",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Now the pattern can be gathered together. For the rest of this book, these are the words that most often change a first letter."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Word",
+            "Meaning",
+            "Change",
+            "Example"
+          ],
+          "rows": [
+            [
+              "ní",
+              "not",
+              "séimhiú",
+              "ní thuigim, ní chanaim, ní dhéanaim"
+            ],
+            [
+              "an",
+              "question marker",
+              "urú",
+              "an dtuigeann tú?, an gcanann tú?"
+            ],
+            [
+              "cá",
+              "where",
+              "urú",
+              "cá bhfuil?, cá dtéann tú?"
+            ],
+            [
+              "nach",
+              "isn't it, don't you",
+              "urú",
+              "nach dtuigeann tú?"
+            ],
+            [
+              "go",
+              "that",
+              "urú",
+              "go bhfuil, go dtuigeann"
+            ],
+            [
+              "a (who/that)",
+              "who, that",
+              "séimhiú",
+              "an fear a thagann"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "If the verb starts with a vowel",
+          "items": [
+            "A vowel can't be softened or eclipsed, so usually nothing happens: *ní ólaim*, *an ólann tú?*",
+            "The exceptions are *cá*, *go*, and *nach*, which put **n-** before a vowel: *cá n-itheann tú?*, *go n-ólann sé*, *nach n-itheann tú?*",
+            "The letters *l, n, r* never change either — no séimhiú and no urú for these three. *Ní labhraím*, *an labhraíonn tú?*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "cé?",
+      "baca": "KYAY",
+      "en": "who?"
+    },
+    {
+      "ga": "cad? / céard?",
+      "baca": "KOD / KYAYRD",
+      "en": "what?"
+    },
+    {
+      "ga": "cathain?",
+      "baca": "KAH-hin",
+      "en": "when?"
+    },
+    {
+      "ga": "conas?",
+      "baca": "KUH-nas",
+      "en": "how?"
+    },
+    {
+      "ga": "cén fáth?",
+      "baca": "kyayn FAW",
+      "en": "why?"
+    },
+    {
+      "ga": "cé leis?",
+      "baca": "kyay LESH",
+      "en": "whose?"
+    },
+    {
+      "ga": "cé acu?",
+      "baca": "kyay AH-kuh",
+      "en": "which one?"
+    },
+    {
+      "ga": "cén sórt?",
+      "baca": "kyayn SORT",
+      "en": "what kind?"
+    },
+    {
+      "ga": "cén dath?",
+      "baca": "kyayn DAH",
+      "en": "what color?"
+    },
+    {
+      "ga": "cén uair?",
+      "baca": "kyayn OO-ir",
+      "en": "what time?"
+    },
+    {
+      "ga": "cén chaoi?",
+      "baca": "kyayn KHEE",
+      "en": "how? (Connacht)"
+    },
+    {
+      "ga": "nach",
+      "baca": "NAKH",
+      "en": "isn't it, don't you"
+    },
+    {
+      "ga": "go",
+      "baca": "guh",
+      "en": "that (conjunction)"
+    },
+    {
+      "ga": "ceolchoirm",
+      "baca": "KYOHL-khirim",
+      "en": "concert"
+    },
+    {
+      "ga": "Dé hAoine",
+      "baca": "dyay HAY-nyuh",
+      "en": "Friday"
+    },
+    {
+      "ga": "teach tábhairne",
+      "baca": "tyakh TAW-wir-nyuh",
+      "en": "pub"
+    },
+    {
+      "ga": "grúpa",
+      "baca": "GROO-puh",
+      "en": "group"
+    },
+    {
+      "ga": "traidisiúnta",
+      "baca": "TRAH-dih-shoon-tuh",
+      "en": "traditional"
+    },
+    {
+      "ga": "fidil",
+      "baca": "FIH-dyil",
+      "en": "fiddle, violin"
+    },
+    {
+      "ga": "bodhrán",
+      "baca": "BOHW-rawn",
+      "en": "Irish frame drum"
+    },
+    {
+      "ga": "feadóg mhór",
+      "baca": "FAH-dohg WOHR",
+      "en": "flute"
+    },
+    {
+      "ga": "ag seinm",
+      "baca": "eg SHEH-nim",
+      "en": "playing music"
+    },
+    {
+      "ga": "dath",
+      "baca": "DAH",
+      "en": "color"
+    },
+    {
+      "ga": "sórt",
+      "baca": "SORT",
+      "en": "sort, kind"
+    },
+    {
+      "ga": "táille",
+      "baca": "TAW-lyuh",
+      "en": "cost, charge"
+    },
+    {
+      "ga": "is fearr leat",
+      "baca": "is FAWR lyat",
+      "en": "you prefer"
+    },
+    {
+      "ga": "liomsa",
+      "baca": "LYUM-suh",
+      "en": "mine (emphatic)"
+    },
+    {
+      "ga": "ann",
+      "baca": "OWN",
+      "en": "there, to there"
+    },
+    {
+      "ga": "Conamara",
+      "baca": "KUH-nuh-muh-ruh",
+      "en": "Conamara (a Gaeltacht region)"
+    },
+    {
+      "ga": "anocht",
+      "baca": "uh-NOKHT",
+      "en": "tonight"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose the right question word (cé, cad, cá, cathain, conas, cé mhéad).",
+      "items": [
+        "____ atá ansin? (who)",
+        "____ é sin? (what)",
+        "____ bhfuil an siopa? (where)",
+        "____ atá an rang? (when)",
+        "____ atá tú? (how)",
+        "____ duine atá anseo? (how many)"
+      ]
+    },
+    {
+      "prompt": "Make a question with *cén* to ask the following.",
+      "items": [
+        "what time it is",
+        "how old you are",
+        "what your name is",
+        "what color it is",
+        "what day it is today",
+        "what month it is"
+      ]
+    },
+    {
+      "prompt": "Turn these sentences into *Cá …?* questions. Remember: *cá* brings urú.",
+      "items": [
+        "Tá sé anseo.",
+        "Téann sí go Gaillimh.",
+        "Ceannaíonn tú bia.",
+        "Fanann siad anocht.",
+        "Cónaíonn sé i mBaile Átha Cliath.",
+        "Itheann sibh dinnéar."
+      ]
+    },
+    {
+      "prompt": "Translate into Irish.",
+      "items": [
+        "When is the concert?",
+        "How much is it?",
+        "Who's playing?",
+        "What kind of music is it?",
+        "How do we get there?",
+        "Whose bag is this?"
+      ]
+    }
+  ],
+  "answers": [
+    "Cé — Cad — Cá — Cathain — Conas — Cé mhéad",
+    "Cén t-am é? — Cén aois tú? — Cén t-ainm atá ort? — Cén dath atá air? — Cén lá é inniu? — Cén mhí í seo?",
+    "Cá bhfuil sé? — Cá dtéann sí? — Cá gceannaíonn tú bia? — Cá bhfanann siad anocht? — Cá gcónaíonn sé? — Cá n-itheann sibh dinnéar?",
+    "Cathain atá an cheolchoirm? — Cé mhéad atá air? — Cé atá ag seinm? — Cén sórt ceoil é? — Conas a théann muid ann? — Cé leis an mála seo?"
+  ]
+}

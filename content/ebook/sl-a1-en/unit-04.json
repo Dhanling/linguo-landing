@@ -1,0 +1,572 @@
+{
+  "title": "What's this? — three noun genders",
+  "title_target": "Kaj je to?",
+  "goal": "Name the things around you, read a noun's gender from its last letter, and attach adjectives that change to match their noun — across three genders and three numbers at once.",
+  "bekal": [
+    "guess a noun's gender from its last letter, and spot the handful of feminine words in disguise",
+    "make adjectives agree: *nov slovar*, *nova knjiga*, *novo okno*",
+    "use *to je* to introduce things, and *ta / tisti* to point at them"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Nova soba",
+      "intro": "Maja comes to see Budi's rented room for the first time. Some of the things in it belonged to the previous tenant.",
+      "lines": [
+        {
+          "speaker": "Maja:",
+          "text": "Lepa soba! Kaj je to?",
+          "id": "Nice room! What's this?",
+          "literal": "beautiful room! what is this?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "To je slovar. Nov je in zelo debel.",
+          "id": "It's a dictionary. It's new and really thick.",
+          "literal": "this is dictionary. new is and very thick."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "In tam? Kaj sta tisti dve knjigi?",
+          "id": "And over there? What are those two books?",
+          "literal": "and there? what are-two those-two-f two books?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Stara učbenika. Nista moja.",
+          "id": "Two old textbooks. They're not mine.",
+          "literal": "old two-textbooks. not-are-two mine-two."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Čigava sta?",
+          "id": "Whose are they?",
+          "literal": "whose-two are-two?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Od Luke. Miza je tudi njegova.",
+          "id": "Luka's. The table's his too.",
+          "literal": "from Luka. table is also his-f."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Aha. In to okno je veliko — soba je svetla.",
+          "id": "I see. And this window is big — the room is bright.",
+          "literal": "aha. and this window is big — room is bright."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja, ampak zunaj je hrupno.",
+          "id": "Yes, but it's noisy outside.",
+          "literal": "yes, but outside is noisy."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Kje pa je tvoja postelja?",
+          "id": "So where's your bed?",
+          "literal": "where but is your-f bed?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tam. Majhna je, ampak udobna.",
+          "id": "Over there. It's small, but comfortable.",
+          "literal": "there. small-f is, but comfortable-f."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Super. Soba je res prijetna.",
+          "id": "Great. The room is really nice.",
+          "literal": "super. room is really pleasant-f."
+        }
+      ],
+      "notes": [
+        "**To je never changes.** To introduce anything at all, the form is always *To je…* — *To je slovar* (masculine), *To je knjiga* (feminine), *To je okno* (neuter). Only the number changes: *To sta…* for two, *To so…* for three or more. So the most useful sentence in this unit is the one that asks nothing of you.",
+        "**Adjectives stick to their noun's gender.** *Nov slovar*, *nova knjiga*, *novo okno* — one adjective, three endings. English writes \"new\" the same way every time; Slovenian doesn't have that option. The good news: the endings match the noun's endings exactly, so once you know the gender, the adjective follows by itself.",
+        "**Nista moja — both are dual.** *Nista* is the negative of *sta*, and *moja* here is not the feminine form but the masculine dual of *moj*. Twin forms like this will pop up often; the verb is always what gives them away.",
+        "**Čigav = \"whose\", and it's an adjective itself.** So it changes too: *Čigav slovar?* (masculine), *Čigava knjiga?* (feminine), *Čigavo okno?* (neuter), *Čigava sta?* (two). English gets by with \"whose\" for all of them.",
+        "**Hrupno and svetla — adjectives describing a state.** In *Soba je svetla*, the adjective is feminine because *soba* is feminine. But in *Zunaj je hrupno* there's no noun at all — so Slovenian uses the **neuter** as its fallback form. The same pattern is used for weather in unit 16: *Toplo je* (it's warm), *Mrzlo je* (it's cold)."
+      ],
+      "grammars": [
+        {
+          "title": "Three noun genders — read from the last letter",
+          "body": [
+            "Unlike German or French, Slovenian noun gender can almost always be **seen**, not memorized. The last letter tells you."
+          ],
+          "table": {
+            "head": [
+              "Gender",
+              "Ends in",
+              "Examples",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "**moški** (masculine)",
+                "a consonant",
+                "*slovar*, *stol*, *avto*, *dan*",
+                "sloh-VAHR, stohw, OW-toh, dahn"
+              ],
+              [
+                "**ženski** (feminine)",
+                "**-a**",
+                "*knjiga*, *miza*, *soba*, *hiša*",
+                "KNYEE-gah, MEE-zah, SAW-bah, HEE-shah"
+              ],
+              [
+                "**srednji** (neuter)",
+                "**-o** or **-e**",
+                "*okno*, *mesto*, *morje*, *sonce*",
+                "AWK-noh, MAYS-toh, MAWR-yay, SAWN-tsay"
+              ]
+            ]
+          },
+          "after": [
+            "Those three lines cover maybe nine out of ten nouns you'll meet at A1. Notice that *avto* (car) ends in *-o* but is still **masculine** — it's a loanword that brought its own gender, like *radio* and *kino*.",
+            "There's one group of exceptions you really do need to memorize: **feminine words ending in a consonant**. There aren't many, but they're all common: *noč* (night), *stvar* (thing), *misel* (thought), *ljubezen* (love), *pomoč* (help), *jesen* (autumn)."
+          ]
+        },
+        {
+          "title": "Adjectives: three genders times three numbers",
+          "body": [
+            "This is a table to look at once in full, then you can leave it. It shows the adjective *lep* (beautiful) attached to nouns of all three genders."
+          ],
+          "table": {
+            "head": [
+              "Gender",
+              "One",
+              "Two",
+              "Three or more"
+            ],
+            "rows": [
+              [
+                "masculine",
+                "**lep** slovar",
+                "**lepa** slovarja",
+                "**lepi** slovarji"
+              ],
+              [
+                "feminine",
+                "**lepa** knjiga",
+                "**lepi** knjigi",
+                "**lepe** knjige"
+              ],
+              [
+                "neuter",
+                "**lepo** okno",
+                "**lepi** okni",
+                "**lepa** okna"
+              ],
+              [
+                "masculine",
+                "**nov** stol",
+                "**nova** stola",
+                "**novi** stoli"
+              ],
+              [
+                "feminine",
+                "**nova** miza",
+                "**novi** mizi",
+                "**nove** mize"
+              ],
+              [
+                "neuter",
+                "**novo** mesto",
+                "**novi** mesti",
+                "**nova** mesta"
+              ]
+            ]
+          },
+          "after": [
+            "What helps: **the adjective ending and the noun ending rhyme**. *Nova miza*, *novi mizi*, *nove mize* — once your ear is used to it, your hand picks the ending without opening the table.",
+            "Watch for one neat twin: the form **lepa** appears twice — for one feminine thing (*lepa knjiga*) and for two masculine things (*lepa slovarja*). Again, the verb gives it away: *je* for one, *sta* for two."
+          ]
+        },
+        {
+          "title": "Ta in tisti — this and that",
+          "body": [
+            "Slovenian splits distance in two, just like English. Both words are adjectives, so both change."
+          ],
+          "table": {
+            "head": [
+              "Distance",
+              "masculine",
+              "feminine",
+              "neuter",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "near",
+                "**ta** slovar",
+                "**ta** knjiga",
+                "**to** okno",
+                "this"
+              ],
+              [
+                "far",
+                "**tisti** slovar",
+                "**tista** knjiga",
+                "**tisto** okno",
+                "that"
+              ],
+              [
+                "near, two",
+                "**ta** slovarja",
+                "**ti** knjigi",
+                "**ti** okni",
+                "these two"
+              ],
+              [
+                "far, two",
+                "**tista** slovarja",
+                "**tisti** knjigi",
+                "**tisti** okni",
+                "those two"
+              ],
+              [
+                "near, 3+",
+                "**ti** slovarji",
+                "**te** knjige",
+                "**ta** okna",
+                "these"
+              ],
+              [
+                "far, 3+",
+                "**tisti** slovarji",
+                "**tiste** knjige",
+                "**tista** okna",
+                "those"
+              ]
+            ]
+          },
+          "after": [
+            "Don't mix up **ta** as a pointer (*ta knjiga* = this book) with **to** as a sentence opener (*To je knjiga* = this is a book). The first attaches to a noun; the second stands alone and never changes.",
+            "In everyday speech, Slovenians often add *-le*: *tale* (this one here), *tistile* (that one there). It adds a finger-pointing feel, and you'll hear it constantly at the market."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "V sobi — things around you",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The fastest way to lock in the three genders is to learn each noun together with an adjective, not on its own. So don't learn *miza*; learn *velika miza*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Say it",
+            "Gender",
+            "English"
+          ],
+          "rows": [
+            [
+              "**stol**",
+              "stohw",
+              "masculine",
+              "chair"
+            ],
+            [
+              "**slovar**",
+              "sloh-VAHR",
+              "masculine",
+              "dictionary"
+            ],
+            [
+              "**telefon**",
+              "tay-lay-FOHN",
+              "masculine",
+              "telephone"
+            ],
+            [
+              "**računalnik**",
+              "rah-choo-NOW-neek",
+              "masculine",
+              "computer"
+            ],
+            [
+              "**ključ**",
+              "klyooch",
+              "masculine",
+              "key"
+            ],
+            [
+              "**miza**",
+              "MEE-zah",
+              "feminine",
+              "table"
+            ],
+            [
+              "**knjiga**",
+              "KNYEE-gah",
+              "feminine",
+              "book"
+            ],
+            [
+              "**soba**",
+              "SAW-bah",
+              "feminine",
+              "room"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at **računalnik** (computer): the *l* in the middle falls before a consonant, so it's said **rah-choo-NOW-neek**. This word is also a good example of the Slovenian habit of resisting loanwords — many languages use \"computer\"; Slovenian built its own word from *računati* (to calculate)."
+        },
+        {
+          "type": "kotak",
+          "title": "Three sentences that unlock every object",
+          "items": [
+            "*Kaj je to?* — What's this? The answer: *To je …*",
+            "*Kako se reče \"table\" po slovensko?* — How do you say \"table\" in Slovenian?",
+            "*Kaj pomeni \"miza\"?* — What does \"miza\" mean?"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The most common adjectives",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These pairs cover almost everything you'll need to say about things at A1. All are given in the masculine singular — the dictionary form."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Say it",
+            "English",
+            "Opposite"
+          ],
+          "rows": [
+            [
+              "**velik**",
+              "vay-LEEK",
+              "big",
+              "*majhen* (MAI-huhn) — small"
+            ],
+            [
+              "**nov**",
+              "nohw",
+              "new",
+              "*star* (stahr) — old"
+            ],
+            [
+              "**dober**",
+              "DAW-buhr",
+              "good",
+              "*slab* (slahp) — bad"
+            ],
+            [
+              "**lep**",
+              "layp",
+              "beautiful, pretty",
+              "*grd* (guhrt) — ugly"
+            ],
+            [
+              "**drag**",
+              "drahk",
+              "expensive",
+              "*poceni* (poh-TSAY-nee) — cheap"
+            ],
+            [
+              "**topel**",
+              "TAW-puhw",
+              "warm",
+              "*mrzel* (MUHR-zuhw) — cold"
+            ],
+            [
+              "**težek**",
+              "TAY-zhuhk",
+              "heavy, difficult",
+              "*lahek* (LAH-huhk) — light, easy"
+            ],
+            [
+              "**dolg**",
+              "dohwk",
+              "long",
+              "*kratek* (KRAH-tuhk) — short"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at *grd* — an adjective with no vowel at all, said **guhrt** with a schwa before the *r*, just as promised on the pronunciation page. And *poceni* (cheap) is the only one on this list that **never changes form**: *poceni knjiga*, *poceni slovar*, *poceni okno*. It's the one free gift on this page."
+        },
+        {
+          "type": "p",
+          "text": "To strengthen, put *zelo* (very) in front: *zelo velik*, *zelo lepa*, *zelo poceni*. To soften, use *precej* (fairly) or *malo* (a bit): *precej velik*, *malo star*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Ta soba je zelo lepa.*",
+              "tah SAW-bah yay zay-LOH LAY-pah",
+              "This room is really nice."
+            ],
+            [
+              "*Tisti slovar je predrag.*",
+              "TEES-tee sloh-VAHR yay pray-DRAHK",
+              "That dictionary is too expensive."
+            ],
+            [
+              "*Knjiga je nova.*",
+              "KNYEE-gah yay NAW-vah",
+              "The book is new."
+            ],
+            [
+              "*Okno je veliko.*",
+              "AWK-noh yay vay-LEE-koh",
+              "The window is big."
+            ],
+            [
+              "*Stola sta stara.*",
+              "STAW-lah stah STAH-rah",
+              "The two chairs are old."
+            ],
+            [
+              "*Mize so čiste.*",
+              "MEE-zay soh CHEES-tay",
+              "The tables are clean."
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "kaj",
+      "baca": "kai",
+      "en": "what"
+    },
+    {
+      "sl": "to",
+      "baca": "toh",
+      "en": "this (sentence opener)"
+    },
+    {
+      "sl": "ta",
+      "baca": "tah",
+      "en": "this (pointing at a thing)"
+    },
+    {
+      "sl": "tisti",
+      "baca": "TEES-tee",
+      "en": "that"
+    },
+    {
+      "sl": "tam",
+      "baca": "tahm",
+      "en": "there"
+    },
+    {
+      "sl": "zunaj",
+      "baca": "ZOO-nai",
+      "en": "outside"
+    },
+    {
+      "sl": "soba",
+      "baca": "SAW-bah",
+      "en": "room"
+    },
+    {
+      "sl": "miza",
+      "baca": "MEE-zah",
+      "en": "table"
+    },
+    {
+      "sl": "stol",
+      "baca": "stohw",
+      "en": "chair"
+    },
+    {
+      "sl": "okno",
+      "baca": "AWK-noh",
+      "en": "window"
+    },
+    {
+      "sl": "postelja",
+      "baca": "pohs-TAY-lyah",
+      "en": "bed"
+    },
+    {
+      "sl": "slovar",
+      "baca": "sloh-VAHR",
+      "en": "dictionary"
+    },
+    {
+      "sl": "učbenik",
+      "baca": "ooch-BAY-neek",
+      "en": "textbook"
+    },
+    {
+      "sl": "velik",
+      "baca": "vay-LEEK",
+      "en": "big"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the right form of the adjective.",
+      "items": [
+        "To je ____ slovar. (nov)",
+        "To je ____ knjiga. (nov)",
+        "To je ____ okno. (nov)",
+        "Soba je ____. (majhen)",
+        "Mesto je ____. (velik)",
+        "Mizi sta ____. (star)"
+      ]
+    },
+    {
+      "prompt": "Write the noun's gender: moški, ženski, or srednji.",
+      "items": [
+        "hiša — ____",
+        "stol — ____",
+        "morje — ____",
+        "avto — ____",
+        "noč — ____",
+        "stanovanje — ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Slovenian.",
+      "items": [
+        "What's this?",
+        "It's a book. The book is new.",
+        "This room is small, but comfortable.",
+        "That window is big.",
+        "That dictionary is too expensive.",
+        "Whose are those two books?"
+      ]
+    },
+    {
+      "prompt": "Wave review — unit 2. Translate into Slovenian without looking back at the unit.",
+      "items": [
+        "Where are you from?",
+        "I'm from Indonesia.",
+        "Where do you live?",
+        "I live in Ljubljana.",
+        "I speak a little Slovenian."
+      ]
+    }
+  ],
+  "answers": [
+    "nov — nova — novo — majhna — veliko — stari",
+    "ženski — moški — srednji — moški — ženski — srednji",
+    "Kaj je to? — To je knjiga. Knjiga je nova. — Ta soba je majhna, ampak udobna. — Tisto okno je veliko. — Tisti slovar je predrag. — Čigavi sta tisti dve knjigi?",
+    "Od kod si? — Iz Indonezije sem. — Kje živiš? — Živim v Ljubljani. — Govorim malo slovensko."
+  ]
+}

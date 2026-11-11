@@ -1,0 +1,670 @@
+{
+  "title": "Reading real Latin",
+  "title_target": "Latine legimus",
+  "goal": "Take apart authentic Latin sentences step by step, read inscriptions and proverbs without a translation, and finish two real, unsimplified readings.",
+  "bekal": [
+    "take apart long sentences with five steps that never change",
+    "read twenty authentic Latin sentences and know where they come from",
+    "finish two real readings: Caesar's opening and the first three verses of Genesis"
+  ],
+  "dialogs": [
+    {
+      "title": "Colloquium — Schola ultima",
+      "intro": "The last lesson. Today Titus hasn't brought a textbook, but sentences that people really wrote.",
+      "lines": [
+        {
+          "speaker": "Titus:",
+          "text": "Hodie ultima schola est. Nunc verba vera Romanorum legemus.",
+          "id": "Today is the last lesson. Now we'll read the real words of the Romans.",
+          "literal": "today last-fem school is-it. now word-pl-obj true-pl-obj Roman-pl-of read-we-will."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Vera verba? Non fabulas?",
+          "id": "Real words? Not made-up stories?",
+          "literal": "true-pl word-pl? not story-pl-obj?"
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Non fabulas. Ecce: \"Veni, vidi, vici.\" Quis haec dixit?",
+          "id": "Not stories. Look: \"Veni, vidi, vici.\" Who said this?",
+          "literal": "not story-pl-obj. look: \"come-I-did, see-I-did, win-I-did.\" who this-pl-neut-obj say-he-did?"
+        },
+        {
+          "speaker": "Lydia:",
+          "text": "Caesar dixit! Tria verba, tres res.",
+          "id": "Caesar! Three words, three events.",
+          "literal": "Caesar say-he-did! three-neut word-pl, three thing-pl."
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Optime. Et hoc: \"Alea iacta est.\" Quid significat?",
+          "id": "Excellent. And this: \"Alea iacta est.\" What does it mean?",
+          "literal": "best. and this-neut: \"die thrown-fem is-it.\" what mean-it?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "\"The die is cast.\" Iacta est — passive!",
+          "id": "\"The die is cast.\" Iacta est is passive!",
+          "literal": "\"the-die is cast.\" thrown-fem is-it — passive!"
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Recte. Caesar flumen transiit et bellum incepit.",
+          "id": "Right. Caesar crossed the river and the war began.",
+          "literal": "rightly. Caesar river-obj cross-he-did and war-obj begin-he-did."
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Magister, in muro scriptum est: \"Marcus Spendusam amat.\"",
+          "id": "Sir, it says on the wall: \"Marcus loves Spendusa.\"",
+          "literal": "teacher-call, on wall-in written-neut is-it: \"Marcus Spendusa-obj love-he.\""
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Ita. Muri Pompeiorum pleni sunt talibus verbis.",
+          "id": "Yes. The walls of Pompeii are full of words like that.",
+          "literal": "yes. wall-pl Pompeii-pl-of full-pl are-they such-pl-with word-pl-with."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Ergo pueri antiqui quoque in muris scribebant, et nos verba eorum legimus!",
+          "id": "So kids in the old days wrote on walls too, and we're reading their words!",
+          "literal": "so boy-pl ancient-pl also on wall-pl-in write-they-was, and we word-pl-obj them-of read-we!"
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Ergo verba nostra quoque manebunt?",
+          "id": "So will our words last too?",
+          "literal": "so word-pl our-pl also stay-they-will?"
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Fortasse. Verba volant, scripta manent.",
+          "id": "Perhaps. Spoken words fly away; written words remain.",
+          "literal": "perhaps. word-pl fly-they, writing-pl stay-they."
+        }
+      ],
+      "notes": [
+        "**Alea iacta est — the perfect passive in two words.** Exactly the pattern you saw in Unit 18: the adjective form *iacta* plus *est*. *Alea* is feminine, so the adjective form is *iacta*, not *iactum*. Suetonius wrote it in the order *iacta alea est*, and according to Plutarch Caesar actually said it in Greek. Caesar is said to have spoken it while crossing the Rubicon in 49 BC, and ever since it has meant \"there's no turning back\".",
+        "**Marcus Spendusam amat — real wall graffiti.** This sentence really was scratched on a wall in Pompeii and can still be read today. You've had everything you need to read it since Unit 3: subject, object ending in *-am*, a group-one verb at the end.",
+        "**Verba volant, scripta manent.** Four words, two sentences, not a single conjunction. Latin loves parallel structures like this, and that's what makes its proverbs easy to remember: *verba* against *scripta*, *volant* against *manent*.",
+        "**Muri Pompeiorum pleni sunt talibus verbis.** Note that *plenus* is followed by the with/in form. Some Latin adjectives demand a particular form after them: *plenus* (full of), *dignus* (worthy of), *similis* (similar to, with the \"of\" form). These are things you learn fastest by reading, not from tables."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Five steps to take a sentence apart",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Real Latin sentences are often long, and their order isn't what you expect. Don't read them left to right as you would English. Use this order, always the same, until it becomes a habit."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**One — find the verb.** Usually at the end. Its ending tells you both who the subject is and when it happens. If it ends in *-t*, the subject is one person; if *-nt*, several; if *-tur*, the sentence is passive.",
+            "**Two — find the subject.** A noun in the subject form whose number matches the verb. If there isn't one, the subject is already contained in the verb itself.",
+            "**Three — find the object.** A word ending in *-m* in the singular, or *-s* in the plural. If there isn't one, the verb may simply not need an object.",
+            "**Four — gather the extra details.** Prepositions with their nouns, with/in forms standing alone, time words.",
+            "**Five — attach adjectives and clauses where they belong.** An adjective attaches to the noun with exactly the same gender, number, and job; *qui* attaches to the nearest noun that matches its gender and number."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "An example taken apart together"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Step",
+            "What you find",
+            "Working conclusion"
+          ],
+          "rows": [
+            [
+              "sentence",
+              "*Puellae quae in horto cantabant epistulas magistro miserunt.*",
+              "—"
+            ],
+            [
+              "1. verb",
+              "*miserunt* (and *cantabant* inside the clause)",
+              "\"they sent\""
+            ],
+            [
+              "2. subject",
+              "*puellae* — plural, matches *miserunt*",
+              "\"the girls sent\""
+            ],
+            [
+              "3. object",
+              "*epistulas* — plural, ending in *-as*",
+              "\"sent letters\""
+            ],
+            [
+              "4. details",
+              "*magistro* (to), *in horto* (in)",
+              "\"to the teacher\", \"in the garden\""
+            ],
+            [
+              "5. clause",
+              "*quae … cantabant* attaches to *puellae*",
+              "\"who were singing in the garden\""
+            ],
+            [
+              "result",
+              "—",
+              "The girls who were singing in the garden sent letters to the teacher."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that the English translation reverses almost the entire original order. That's normal — in fact it's a sign that you're reading the endings, not the positions."
+        }
+      ]
+    },
+    {
+      "title": "Twenty sentences people really wrote",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the right-hand column and try first on your own. You've learned all the grammar, except for a few wish forms that are marked."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Latin",
+            "Translation",
+            "Source"
+          ],
+          "rows": [
+            [
+              "Veni, vidi, vici.",
+              "I came, I saw, I conquered.",
+              "Caesar"
+            ],
+            [
+              "Alea iacta est.",
+              "The die is cast.",
+              "Caesar, at the Rubicon"
+            ],
+            [
+              "Errare humanum est.",
+              "To err is human.",
+              "late Latin proverb; the idea is from Cicero, *Phil.* XII.2"
+            ],
+            [
+              "Dum spiro, spero.",
+              "While I breathe, I hope.",
+              "proverb"
+            ],
+            [
+              "Verba volant, scripta manent.",
+              "Spoken words fly away; written words remain.",
+              "proverb"
+            ],
+            [
+              "Labor omnia vincit.",
+              "Work conquers all.",
+              "modern motto, adapted from Vergil *Georgics* I.145 (*labor omnia vicit improbus*)"
+            ],
+            [
+              "Ars longa, vita brevis.",
+              "Art is long, life is short.",
+              "Hippocrates, via Latin"
+            ],
+            [
+              "Divide et impera.",
+              "Divide and rule.",
+              "political maxim"
+            ],
+            [
+              "Nosce te ipsum.",
+              "Know yourself.",
+              "temple at Delphi, via Latin"
+            ],
+            [
+              "Sic transit gloria mundi.",
+              "Thus passes the glory of the world.",
+              "papal ceremony"
+            ],
+            [
+              "Panem et circenses.",
+              "Bread and circuses.",
+              "Juvenal, mocking politics"
+            ],
+            [
+              "Homo homini lupus.",
+              "Man is a wolf to man.",
+              "Plautus, later Hobbes"
+            ],
+            [
+              "Repetitio est mater studiorum.",
+              "Repetition is the mother of learning.",
+              "school proverb"
+            ],
+            [
+              "Non scholae sed vitae discimus.",
+              "We learn not for school but for life.",
+              "Seneca, later reversed"
+            ],
+            [
+              "Vox populi, vox Dei.",
+              "The voice of the people is the voice of God.",
+              "recorded by Alcuin (c. AD 798) in order to reject it"
+            ],
+            [
+              "Senatus Populusque Romanus.",
+              "The Senate and People of Rome.",
+              "SPQR, all over the city"
+            ],
+            [
+              "Vixit annos XXV.",
+              "He lived twenty-five years.",
+              "Roman tombstone"
+            ],
+            [
+              "Non fui, fui, non sum, non curo.",
+              "I was not, I was, I am not, I don't care.",
+              "Roman tombstone"
+            ],
+            [
+              "Sit tibi terra levis.",
+              "May the earth lie light on you. (wish form)",
+              "Roman tombstone, abbreviated S T T L"
+            ],
+            [
+              "Carpe diem.",
+              "Seize the day. (command)",
+              "Horace"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Two of them deserve a second reading. *Non fui, fui, non sum, non curo* uses four verbs you've known since Units 1 and 13 — and it's one of the boldest sentences ever carved in stone. *Vixit annos XXV* shows the object form for length of time, exactly as you learned in Unit 17."
+        },
+        {
+          "type": "kotak",
+          "title": "Where you'll find them",
+          "items": [
+            "Many universities still carry Latin mottoes on their crests — *Veritas* (Harvard), *Lux et veritas* (Yale), *Dominus illuminatio mea* (Oxford) — and now you can take them apart yourself.",
+            "The scientific names of plants and animals are all Latin: *Homo sapiens* (\"wise human\"), *Rafflesia arnoldii*, *Oryza sativa* (\"cultivated rice\").",
+            "Legal terms: *in dubio pro reo*, *nemo iudex in causa sua*, *pacta sunt servanda*, *actus reus*.",
+            "Medical and pharmacy terms are almost entirely Latin, including prescription abbreviations such as *p.r.n.* (*pro re nata*, \"as needed\") and *b.i.d.* (*bis in die*, \"twice a day\")."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Two real readings",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The two texts below are not simplified at all. Both are among the most famous opening sentences in the history of Latin, and you can now read both."
+        },
+        {
+          "type": "sub",
+          "text": "One — Caesar opens his book (De Bello Gallico I.1)"
+        },
+        {
+          "type": "p",
+          "text": "*Gallia est omnis divisa in partes tres, quarum unam incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, nostra Galli appellantur.*"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Word",
+            "Its form",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "Gallia est omnis divisa",
+              "perfect passive",
+              "Gaul as a whole is divided"
+            ],
+            [
+              "in partes tres",
+              "object, with movement",
+              "into three parts"
+            ],
+            [
+              "quarum",
+              "\"of\" plural feminine, from *qui*",
+              "of which; \"of the three\""
+            ],
+            [
+              "unam incolunt Belgae",
+              "object + verb + subject",
+              "one part the Belgae inhabit"
+            ],
+            [
+              "aliam Aquitani",
+              "object + subject",
+              "another the Aquitani"
+            ],
+            [
+              "tertiam",
+              "object",
+              "the third part"
+            ],
+            [
+              "qui … appellantur",
+              "clause, passive",
+              "who are called …"
+            ],
+            [
+              "ipsorum lingua",
+              "with/in, means",
+              "in their own language"
+            ],
+            [
+              "nostra",
+              "with/in, means",
+              "in ours"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The translation: \"Gaul as a whole is divided into three parts; one is inhabited by the Belgae, another by the Aquitani, and the third by those who in their own language are called Celts, in ours Gauls.\" Note that Caesar writes *nostra* without repeating the word *lingua* — a very Latin habit."
+        },
+        {
+          "type": "sub",
+          "text": "Two — the first three verses of Genesis (Vulgate)"
+        },
+        {
+          "type": "p",
+          "text": "*In principio creavit Deus caelum et terram. Terra autem erat inanis et vacua, et tenebrae super faciem abyssi, et spiritus Dei ferebatur super aquas. Dixitque Deus: \"Fiat lux.\" Et facta est lux.*"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Word",
+            "Its form",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "in principio",
+              "with/in",
+              "in the beginning"
+            ],
+            [
+              "creavit Deus",
+              "perfect + subject",
+              "God created"
+            ],
+            [
+              "caelum et terram",
+              "object",
+              "the heaven and the earth"
+            ],
+            [
+              "terra autem erat",
+              "*autem* in second place + imperfect",
+              "and the earth was"
+            ],
+            [
+              "inanis et vacua",
+              "adjectives, subject",
+              "without form, and void"
+            ],
+            [
+              "tenebrae",
+              "subject plural",
+              "darkness"
+            ],
+            [
+              "super faciem abyssi",
+              "object + \"of\"",
+              "upon the face of the deep"
+            ],
+            [
+              "ferebatur",
+              "passive, imperfect",
+              "was moving, was borne"
+            ],
+            [
+              "dixitque",
+              "perfect + *-que* at the end",
+              "and he said"
+            ],
+            [
+              "fiat lux",
+              "wish form",
+              "let there be light"
+            ],
+            [
+              "facta est lux",
+              "perfect passive",
+              "and there was light"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Fiat lux* uses the only form you've never met: the wish form, which this book deliberately saves for the next level. Apart from those two words, the whole passage is built from material already in your head."
+        },
+        {
+          "type": "kotak",
+          "title": "How far you've come",
+          "items": [
+            "You have just read Caesar and the Vulgate without a side-by-side translation. That's no small thing: two thousand years stand between those sentences and this page.",
+            "The only thing you don't have yet is one big family of forms — the wish forms and participles. That's what the next level holds, and it builds on everything you've memorized rather than replacing it.",
+            "From today, your best way to learn changes: not memorizing new tables, but reading as many easy sentences as you can. Look for illustrated Latin readers for beginners and read every day.",
+            "*Macte virtute* — keep going. This language will never change again, and whatever you learn today will still be right a hundred years from now."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "la": "alea, aleae",
+      "baca": "AH-leh-ah",
+      "en": "die (dice)"
+    },
+    {
+      "la": "iacio, iacere, ieci, iactum",
+      "baca": "YAH-kee-oh",
+      "en": "to throw"
+    },
+    {
+      "la": "significo, significare",
+      "baca": "sig-NEE-fee-koh",
+      "en": "to mean, to signify"
+    },
+    {
+      "la": "recte",
+      "baca": "REHK-teh",
+      "en": "correctly, right"
+    },
+    {
+      "la": "incipio, incipere, incepi",
+      "baca": "in-KEE-pee-oh",
+      "en": "to begin"
+    },
+    {
+      "la": "bellum, belli",
+      "baca": "BEHL-loom",
+      "en": "war"
+    },
+    {
+      "la": "flumen, fluminis",
+      "baca": "FLOO-mehn",
+      "en": "river"
+    },
+    {
+      "la": "plenus, plena",
+      "baca": "PLEH-noos",
+      "en": "full"
+    },
+    {
+      "la": "talis, tale",
+      "baca": "TAH-lis",
+      "en": "such, of that kind"
+    },
+    {
+      "la": "volo, volare",
+      "baca": "WOH-loh",
+      "en": "to fly"
+    },
+    {
+      "la": "ars, artis",
+      "baca": "AHRS",
+      "en": "art, skill"
+    },
+    {
+      "la": "gloria, gloriae",
+      "baca": "GLOH-ree-ah",
+      "en": "glory"
+    },
+    {
+      "la": "mundus, mundi",
+      "baca": "MOON-doos",
+      "en": "world"
+    },
+    {
+      "la": "populus, populi",
+      "baca": "POH-poo-loos",
+      "en": "people, nation"
+    },
+    {
+      "la": "lupus, lupi",
+      "baca": "LOO-poos",
+      "en": "wolf"
+    },
+    {
+      "la": "repetitio, repetitionis",
+      "baca": "reh-peh-TEE-tee-oh",
+      "en": "repetition"
+    },
+    {
+      "la": "studium, studii",
+      "baca": "STOO-dee-oom",
+      "en": "study, eagerness"
+    },
+    {
+      "la": "curo, curare",
+      "baca": "KOO-roh",
+      "en": "to care, to look after"
+    },
+    {
+      "la": "principium, principii",
+      "baca": "prin-KEE-pee-oom",
+      "en": "beginning"
+    },
+    {
+      "la": "creo, creare, creavi",
+      "baca": "KREH-oh",
+      "en": "to create"
+    },
+    {
+      "la": "tenebrae, tenebrarum",
+      "baca": "TEH-neh-brye",
+      "en": "darkness (always pl)"
+    },
+    {
+      "la": "facies, faciei",
+      "baca": "FAH-kee-ehs",
+      "en": "face, surface"
+    },
+    {
+      "la": "spiritus, spiritus",
+      "baca": "SPEE-ree-toos",
+      "en": "breath, spirit"
+    },
+    {
+      "la": "inanis, inane",
+      "baca": "ee-NAH-nis",
+      "en": "empty"
+    },
+    {
+      "la": "vacuus, vacua",
+      "baca": "WAH-koo-oos",
+      "en": "void"
+    },
+    {
+      "la": "pars, partis",
+      "baca": "PAHRS",
+      "en": "part"
+    },
+    {
+      "la": "lingua, linguae",
+      "baca": "LIN-gwah",
+      "en": "tongue, language"
+    },
+    {
+      "la": "incolo, incolere",
+      "baca": "IN-koh-loh",
+      "en": "to inhabit"
+    },
+    {
+      "la": "appello, appellare",
+      "baca": "ahp-PEHL-loh",
+      "en": "to call, to name"
+    },
+    {
+      "la": "macte virtute",
+      "baca": "MAHK-teh weer-TOO-teh",
+      "en": "keep going, well done"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate these authentic sentences into English.",
+      "items": [
+        "Veni, vidi, vici.",
+        "Alea iacta est.",
+        "Verba volant, scripta manent.",
+        "Labor omnia vincit.",
+        "Dum spiro, spero.",
+        "Vixit annos XXV."
+      ]
+    },
+    {
+      "prompt": "Name the form of the word in brackets: subject, object, of, to, or with/in.",
+      "items": [
+        "In principio creavit Deus (caelum).",
+        "Muri (Pompeiorum) pleni sunt.",
+        "Epistulas (magistro) miserunt.",
+        "In (partes) tres divisa est.",
+        "(Puellae) in horto cantabant.",
+        "Ipsorum (lingua) Celtae appellantur."
+      ]
+    },
+    {
+      "prompt": "Complete these famous sentences.",
+      "items": [
+        "Errare ____ est. (human)",
+        "Ars longa, vita ____ . (short)",
+        "Nosce te ____ . (yourself)",
+        "Vox populi, vox ____ . (God, \"of\" form)",
+        "Divide et ____ . (rule!)",
+        "Carpe ____ . (day, object)"
+      ]
+    },
+    {
+      "prompt": "Translate into Latin.",
+      "items": [
+        "In the beginning God created the heaven and the earth.",
+        "Their words still remain.",
+        "The children write on the walls.",
+        "We read the words of the Romans.",
+        "Work conquers all.",
+        "I came, I saw, I conquered."
+      ]
+    }
+  ],
+  "answers": [
+    "I came, I saw, I conquered. — The die is cast. — Spoken words fly away; written words remain. — Work conquers all. — While I breathe, I hope. — He lived twenty-five years.",
+    "object — of — to — object — subject — with/in",
+    "humanum — brevis — ipsum — Dei — impera — diem",
+    "In principio creavit Deus caelum et terram. — Verba eorum adhuc manent. — Pueri in muris scribunt. — Verba Romanorum legimus. — Labor omnia vincit. — Veni, vidi, vici."
+  ]
+}

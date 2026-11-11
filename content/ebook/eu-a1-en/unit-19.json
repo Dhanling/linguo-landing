@@ -1,0 +1,587 @@
+{
+  "title": "Weather and festivals",
+  "title_target": "Eguraldia eta jaiak",
+  "goal": "Talk about the weather, get to know the Basque festival calendar, and give or accept invitations.",
+  "bekal": [
+    "describe the weather with three different patterns: *egiten du*, *ari du*, *dago*",
+    "recognize the big festivals of Euskal Herria and the greetings that go with them",
+    "invite, accept, and politely decline invitations"
+  ],
+  "dialogs": [
+    {
+      "title": "Elkarrizketa — Aste Nagusia dator",
+      "intro": "Early August in Bilbo. Unai walks into the apartment carrying a blue scarf printed with the name of his group.",
+      "lines": [
+        {
+          "speaker": "Unai:",
+          "text": "Budi, datorren astean Aste Nagusia da!",
+          "id": "Budi, next week is Aste Nagusia!",
+          "literal": "Budi, coming week-in Week Big-the is!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zer da hori?",
+          "id": "What's that?",
+          "literal": "what is that?"
+        },
+        {
+          "speaker": "Unai:",
+          "text": "Bilboko jai handiak. Bederatzi egun kalean.",
+          "id": "Bilbo's big festival. Nine days out in the streets.",
+          "literal": "Bilbo-of festival big-the(pl). nine day street-in."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eta zer egiten da?",
+          "id": "And what happens?",
+          "literal": "and what doing is?"
+        },
+        {
+          "speaker": "Unai:",
+          "text": "Kontzertuak, dantzak eta su artifizialak gauero.",
+          "id": "Concerts, dances, and fireworks every night.",
+          "literal": "concert-pl, dance-pl and fire artificial-pl night-every."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zoragarria! Eguraldi ona egingo du?",
+          "id": "Amazing! Will the weather be good?",
+          "literal": "wonderful-the! weather good-the do-will it-has?"
+        },
+        {
+          "speaker": "Unai:",
+          "text": "Ez dakit. Abuztuan euria egiten du batzuetan.",
+          "id": "I don't know. In August it sometimes rains.",
+          "literal": "not I-know. August-in rain-the doing it-has sometimes."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Berdin dio. Etorriko naiz!",
+          "id": "Doesn't matter. I'll be there!",
+          "literal": "same it-says. come-will I-am!"
+        },
+        {
+          "speaker": "Unai:",
+          "text": "Primeran. Gure konpartsan egongo gara, plaza ondoan.",
+          "id": "Great. We'll be at our group's tent, next to the square.",
+          "literal": "great. our group-at be-will we-are, square side-at."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zer eraman behar dut?",
+          "id": "What should I bring?",
+          "literal": "what bring need I-have-it?"
+        },
+        {
+          "speaker": "Unai:",
+          "text": "Ezer ez. Poza eta gogoa besterik ez!",
+          "id": "Nothing. Just good spirits and enthusiasm!",
+          "literal": "anything not. joy and desire other-any not!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ados! Gora Bilbo!",
+          "id": "Deal! Gora Bilbo!",
+          "literal": "agreed! up Bilbo!"
+        }
+      ],
+      "notes": [
+        "**Weather has three patterns, and you have to learn all three as they are.** *Euria **egiten du*** (it rains, as a weather habit), *euria **ari du*** (it's raining right now), *eguraldi ona **dago*** (the weather is good). The most common mistake: using *da* — *euria da* isn't a Basque sentence.",
+        "**Berdin dio — doesn't matter.** Literally \"it says the same\". Similar expressions: *ez dio axolarik* (it's not important), *berdin zait* (it's all the same to me), *ez da ezer* (it's nothing). All are used to reassure someone or let a small thing go.",
+        "**Konpartsa — the heart of Bilbo's festival.** During Aste Nagusia, the squares fill with big tents run by *konpartsak*, local clubs that each have their own name, colors, and music. Anyone can walk in. It's not a festival to watch but one to join — which is why Unai's answer to \"what should I bring?\" is \"nothing\".",
+        "**Gora …! — long live …!** A cheer you'll hear at every festival and every match: *Gora Bilbo!*, *Gora euskara!*, *Gora gu!* The opposite is *behera* (\"down\"), but you'll rarely need it."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Eguraldia — the weather",
+      "blocks": [
+        {
+          "type": "sub",
+          "text": "With egin: weather as a habit or forecast"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Eguraldi ona egiten du.",
+              "eh-goo-RAHL-dee OH-nah",
+              "The weather is nice."
+            ],
+            [
+              "Eguraldi txarra egiten du.",
+              "CHAH-rrah",
+              "The weather is bad."
+            ],
+            [
+              "Hotz egiten du.",
+              "OHTS",
+              "It's cold."
+            ],
+            [
+              "Bero egiten du.",
+              "BEH-roh",
+              "It's hot."
+            ],
+            [
+              "Haize egiten du.",
+              "AH-ee-seh",
+              "It's windy."
+            ],
+            [
+              "Eguzkia egiten du.",
+              "eh-GOOS-kee-ah",
+              "It's sunny."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "With ari: weather happening right now"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "English"
+          ],
+          "rows": [
+            [
+              "Euria ari du.",
+              "It's raining."
+            ],
+            [
+              "Elurra ari du.",
+              "It's snowing."
+            ],
+            [
+              "Txingorra ari du.",
+              "It's hailing."
+            ],
+            [
+              "Zirimiria ari du.",
+              "It's drizzling."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "With egon: the state of the sky"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "English"
+          ],
+          "rows": [
+            [
+              "Eguraldi ederra dago.",
+              "The weather is beautiful."
+            ],
+            [
+              "Lainotuta dago.",
+              "It's cloudy."
+            ],
+            [
+              "Hodeitsu dago.",
+              "It's overcast."
+            ],
+            [
+              "Hezetasuna dago.",
+              "It's humid."
+            ],
+            [
+              "Zer eguraldi dago?",
+              "What's the weather like?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Sirimiri — the region's signature rain",
+          "items": [
+            "*Zirimiria* (in Spanish *sirimiri*) is a fine drizzle that can fall all day without ever really soaking you — and without ever really stopping. It's the most typical weather on the northern side of Euskal Herria.",
+            "That's why umbrellas are rarely used; locals just pull up their hoods and keep walking.",
+            "The southern side (Araba, Nafarroa) is much drier and hotter in summer. So \"Basque weather\" is really two different climates, separated by a mountain range."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Jaiak — festivals",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Festival",
+            "When",
+            "Where",
+            "What happens"
+          ],
+          "rows": [
+            [
+              "**San Fermin**",
+              "July 6–14",
+              "Iruñea",
+              "running with the bulls, white clothes and a red sash"
+            ],
+            [
+              "**Aste Nagusia**",
+              "August",
+              "Bilbo",
+              "nine days of concerts, dances, fireworks"
+            ],
+            [
+              "**Semana Grande**",
+              "August",
+              "Donostia",
+              "international fireworks contest"
+            ],
+            [
+              "**Danborrada**",
+              "January 20",
+              "Donostia",
+              "twenty-four hours of nonstop drumming"
+            ],
+            [
+              "**Santo Tomas**",
+              "December 21",
+              "Bilbo & Donostia",
+              "farmers' market, txistorra, sagardo"
+            ],
+            [
+              "**Olentzero**",
+              "December 24",
+              "everywhere",
+              "the charcoal maker who brings Christmas presents"
+            ],
+            [
+              "**San Juan**",
+              "June 23",
+              "everywhere",
+              "bonfires on the shortest night, jumping over the flames"
+            ],
+            [
+              "**Korrika**",
+              "every two years",
+              "the whole region",
+              "a relay run of thousands of kilometers for euskara"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Olentzero* deserves a special mention: instead of Santa Claus, Basque children wait for a chubby charcoal maker who comes down from the mountains on Christmas Eve. He's pictured smoking a pipe, wearing a beret, and loving his food. This figure is much older than Christmas itself."
+        },
+        {
+          "type": "kotak",
+          "title": "Greetings and wishes",
+          "items": [
+            "*Zorionak!* — Congratulations! / Happy birthday! (for anything)",
+            "*Urte berri on!* — Happy New Year!",
+            "*Eguberri on!* — Merry Christmas!",
+            "*Ondo pasa!* — Have fun!",
+            "*On egin!* — Enjoy your meal!",
+            "*Topa!* — Cheers!",
+            "*Zorte on!* — Good luck!"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Inviting and answering",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "English"
+          ],
+          "rows": [
+            [
+              "Etorri nahi duzu?",
+              "Do you want to come?"
+            ],
+            [
+              "Gonbidatuta zaude.",
+              "You're invited."
+            ],
+            [
+              "Zer moduz larunbatean?",
+              "How about Saturday?"
+            ],
+            [
+              "Zer ordutan geratzen gara?",
+              "What time shall we meet?"
+            ],
+            [
+              "Non geratzen gara?",
+              "Where shall we meet?"
+            ],
+            [
+              "Plazan, zortzietan.",
+              "In the square, at eight."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Accepting and declining"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Accepting",
+            "Declining"
+          ],
+          "rows": [
+            [
+              "Bai, noski!",
+              "Ezin dut, sentitzen dut."
+            ],
+            [
+              "Primeran!",
+              "Beste egun batean, mesedez."
+            ],
+            [
+              "Gogoz!",
+              "Lanpetuta nago."
+            ],
+            [
+              "Han izango naiz.",
+              "Beharbada hurrengoan."
+            ],
+            [
+              "Zer eraman behar dut?",
+              "Eskerrik asko gonbidapenagatik."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Sentitzen dut* literally means \"I feel it\" and is used just like \"I'm sorry\" in English — both to turn something down gently and to offer condolences. Don't mix it up with *barkatu*, which is for apologizing for a mistake or getting someone's attention."
+        },
+        {
+          "type": "kotak",
+          "title": "Festival customs worth knowing",
+          "items": [
+            "At street festivals, everyone stands and moves around; sitting at one table all night isn't the local way.",
+            "Drinks are paid in rounds, not split: one person pays for the whole round, then the next person takes a turn. Offering to pay separately comes across as a bit stiff — but nobody will be offended if you explain that you don't know the custom yet.",
+            "The *kuadrilla* — a fixed group of friends for life — is the most important social unit here. Being brought into a kuadrilla is a far bigger sign of acceptance than a simple invitation."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "eu": "eguraldi",
+      "baca": "eh-goo-RAHL-dee",
+      "en": "weather"
+    },
+    {
+      "eu": "euri",
+      "baca": "EH-oo-ree",
+      "en": "rain"
+    },
+    {
+      "eu": "elur",
+      "baca": "eh-LOOR",
+      "en": "snow"
+    },
+    {
+      "eu": "haize",
+      "baca": "AH-ee-seh",
+      "en": "wind"
+    },
+    {
+      "eu": "hodei",
+      "baca": "oh-DEH-ee",
+      "en": "cloud"
+    },
+    {
+      "eu": "eguzki",
+      "baca": "eh-GOOS-kee",
+      "en": "sun"
+    },
+    {
+      "eu": "hotz",
+      "baca": "OHTS",
+      "en": "cold"
+    },
+    {
+      "eu": "bero",
+      "baca": "BEH-roh",
+      "en": "hot"
+    },
+    {
+      "eu": "zirimiri",
+      "baca": "see-ree-MEE-ree",
+      "en": "fine drizzle"
+    },
+    {
+      "eu": "lainotuta",
+      "baca": "lah-ee-noh-TOO-tah",
+      "en": "cloudy"
+    },
+    {
+      "eu": "jai",
+      "baca": "KHAH-ee",
+      "en": "festival, holiday"
+    },
+    {
+      "eu": "jaialdi",
+      "baca": "khah-ee-AHL-dee",
+      "en": "festival (event)"
+    },
+    {
+      "eu": "kontzertu",
+      "baca": "kohn-TSEHR-too",
+      "en": "concert"
+    },
+    {
+      "eu": "dantza",
+      "baca": "DAHN-tsah",
+      "en": "dance"
+    },
+    {
+      "eu": "su artifizial",
+      "baca": "SOO ahr-tee-fee-see-AHL",
+      "en": "fireworks"
+    },
+    {
+      "eu": "konpartsa",
+      "baca": "kohn-PAHR-tsah",
+      "en": "festival club"
+    },
+    {
+      "eu": "kuadrilla",
+      "baca": "koo-ah-DREE-lyah",
+      "en": "group of friends"
+    },
+    {
+      "eu": "gonbidatu",
+      "baca": "gohn-bee-DAH-too",
+      "en": "invite"
+    },
+    {
+      "eu": "gonbidapen",
+      "baca": "gohn-bee-DAH-pehn",
+      "en": "invitation"
+    },
+    {
+      "eu": "geratu",
+      "baca": "geh-RAH-too",
+      "en": "meet up"
+    },
+    {
+      "eu": "poz",
+      "baca": "POHS",
+      "en": "joy"
+    },
+    {
+      "eu": "zorionak",
+      "baca": "soh-ree-OH-nahk",
+      "en": "congratulations!"
+    },
+    {
+      "eu": "zorte on",
+      "baca": "SOHR-teh OHN",
+      "en": "good luck"
+    },
+    {
+      "eu": "urte berri on",
+      "baca": "OOR-teh BEH-rree OHN",
+      "en": "Happy New Year"
+    },
+    {
+      "eu": "sentitzen dut",
+      "baca": "sehn-TEE-tsehn",
+      "en": "I'm sorry"
+    },
+    {
+      "eu": "berdin dio",
+      "baca": "behr-DEEN DEE-oh",
+      "en": "doesn't matter"
+    },
+    {
+      "eu": "gora",
+      "baca": "GOH-rah",
+      "en": "long live …! (cheer)"
+    },
+    {
+      "eu": "gauero",
+      "baca": "gah-oo-EH-roh",
+      "en": "every night"
+    },
+    {
+      "eu": "besterik ez",
+      "baca": "BEHS-teh-reek EHS",
+      "en": "that's all"
+    },
+    {
+      "eu": "eraman",
+      "baca": "eh-RAH-mahn",
+      "en": "bring, take"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in *egiten du*, *ari du*, or *dago*.",
+      "items": [
+        "Hotz ____ neguan.",
+        "Euria ____ orain.",
+        "Eguraldi ederra ____ gaur.",
+        "Bero ____ udan.",
+        "Elurra ____ mendian orain.",
+        "Lainotuta ____ gaur goizean."
+      ]
+    },
+    {
+      "prompt": "Translate into Basque.",
+      "items": [
+        "What's the weather like today?",
+        "It's raining.",
+        "It's cold in winter.",
+        "Happy birthday!",
+        "Have fun!",
+        "Sorry, I can't."
+      ]
+    },
+    {
+      "prompt": "Which festival? Answer with its name.",
+      "items": [
+        "Running with the bulls in Iruñea, in July → ____",
+        "Nine days of street festival in Bilbo, in August → ____",
+        "The charcoal maker who brings Christmas presents → ____",
+        "Twenty-four hours of drumming in Donostia → ____",
+        "Bonfires on the shortest night, June 23 → ____",
+        "A relay run for the Basque language → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "du / euria / ari",
+        "du / hotz / neguan / egiten",
+        "dago / gaur / eguraldi / ederra",
+        "duzu / etorri / nahi / ?",
+        "gara / non / geratzen / ?",
+        "dut / ezin / sentitzen / dut"
+      ]
+    }
+  ],
+  "answers": [
+    "egiten du — ari du — dago — egiten du — ari du — dago",
+    "Zer eguraldi dago gaur? — Euria ari du. — Neguan hotz egiten du. — Zorionak! — Ondo pasa! — Sentitzen dut, ezin dut.",
+    "San Fermin — Aste Nagusia — Olentzero — Danborrada — San Juan — Korrika",
+    "Euria ari du. — Neguan hotz egiten du. — Gaur eguraldi ederra dago. — Etorri nahi duzu? — Non geratzen gara? — Ezin dut, sentitzen dut."
+  ]
+}

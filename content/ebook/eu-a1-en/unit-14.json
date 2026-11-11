@@ -1,0 +1,658 @@
+{
+  "title": "Body and health",
+  "title_target": "Gorputza eta osasuna",
+  "goal": "Name parts of the body, say what hurts, and get by at the pharmacy or the doctor's office.",
+  "bekal": [
+    "name the body parts people talk about most",
+    "use the pattern *…ko mina dut* for any kind of pain",
+    "describe symptoms and understand how to take medicine"
+  ],
+  "dialogs": [
+    {
+      "title": "Elkarrizketa — Farmazian",
+      "intro": "Budi walks into the pharmacy on the corner with a hoarse voice and a tired face.",
+      "lines": [
+        {
+          "speaker": "Farmazialaria:",
+          "text": "Egun on. Zer moduz zaude?",
+          "id": "Good morning. How are you feeling?",
+          "literal": "day good. what way-of you-are?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ez oso ondo. Buruko mina dut.",
+          "id": "Not great. I have a headache.",
+          "literal": "not very well. head-of pain-the I-have."
+        },
+        {
+          "speaker": "Farmazialaria:",
+          "text": "Sukarrik baduzu?",
+          "id": "Do you have a fever?",
+          "literal": "fever-any you-have?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Uste dut baietz. Eta eztarriko mina ere bai.",
+          "id": "I think so. And a sore throat too.",
+          "literal": "think I-have yes-that. and throat-of pain-the also yes."
+        },
+        {
+          "speaker": "Farmazialaria:",
+          "text": "Noiztik zaude horrela?",
+          "id": "How long have you been like this?",
+          "literal": "when-from you-are like-that?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Herenegundik. Gaur okerrago nago.",
+          "id": "Since the day before yesterday. Today I'm worse.",
+          "literal": "day-before-yesterday-from. today bad-er I-am."
+        },
+        {
+          "speaker": "Farmazialaria:",
+          "text": "Katarroa duzu, ziur asko. Hartu pastilla hauek.",
+          "id": "You've got a cold, most likely. Take these tablets.",
+          "literal": "cold-the you-have, sure much. take tablet these."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zenbat hartu behar ditut?",
+          "id": "How many do I have to take?",
+          "literal": "how-many take need I-have-them?"
+        },
+        {
+          "speaker": "Farmazialaria:",
+          "text": "Bat egunean hirutan, bazkalostean.",
+          "id": "One, three times a day, after lunch.",
+          "literal": "one day-in three-times, lunch-after-at."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ados. Eta eztarrirako zerbait?",
+          "id": "OK. And something for the throat?",
+          "literal": "agreed. and throat-for something?"
+        },
+        {
+          "speaker": "Farmazialaria:",
+          "text": "Xarabe hau ona da. Eta ur asko edan, e!",
+          "id": "This syrup is good. And drink lots of water, OK!",
+          "literal": "syrup this good-the is. and water much drink, eh!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eskerrik asko. Osasuna lehenengo!",
+          "id": "Thank you. Health comes first!",
+          "literal": "thanks many. health-the first!"
+        }
+      ],
+      "notes": [
+        "**Buruko mina dut — one pattern for every ache.** The formula: body part + *-ko* + *mina dut*. *Buru**ko** mina* (headache), *sabel**eko** mina* (stomachache), *hortz**etako** mina* (toothache), *bizkar**reko** mina* (backache). This one pattern replaces dozens of sentences.",
+        "**Uste dut baietz — \"I think so\".** *Baietz* is a special \"yes\" used after verbs of thinking; its partner is *ezetz* (\"no\"). *Uste dut baietz* (I think so), *uste dut ezetz* (I don't think so). Two ready-made sentences that rescue many conversations.",
+        "**Noiztik — since when.** The ending *-tik* you learned for places (\"from Bilbo\") also works for time: *herenegun**dik*** (since the day before yesterday), *atzo**tik*** (since yesterday), *goize**tik*** (since this morning). Its partner is *noiz arte* (\"until when\").",
+        "**Egunean hirutan — how many times a day.** The pattern: the time unit with *-an*, then the number of times with *-tan*. *Egunean bitan* (twice a day), *astean behin* (once a week), *hilean bitan* (twice a month). Note that \"once\" is irregular: *behin*, not *batetan*."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Gorputza — the body",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English",
+            "Euskara",
+            "English"
+          ],
+          "rows": [
+            [
+              "burua",
+              "boo-ROO-ah",
+              "head",
+              "eskua",
+              "hand"
+            ],
+            [
+              "ilea",
+              "ee-LEH-ah",
+              "hair",
+              "besoa",
+              "arm"
+            ],
+            [
+              "aurpegia",
+              "ah-oor-PEH-gee-ah",
+              "face",
+              "hatza",
+              "finger"
+            ],
+            [
+              "begiak",
+              "beh-GEE-ahk",
+              "eyes",
+              "hanka",
+              "leg"
+            ],
+            [
+              "sudurra",
+              "soo-DOO-rrah",
+              "nose",
+              "oina",
+              "foot"
+            ],
+            [
+              "ahoa",
+              "ah-OH-ah",
+              "mouth",
+              "belauna",
+              "knee"
+            ],
+            [
+              "belarriak",
+              "beh-LAH-rree-ahk",
+              "ears",
+              "bizkarra",
+              "back"
+            ],
+            [
+              "hortzak",
+              "OHR-tsahk",
+              "teeth",
+              "sabela",
+              "stomach"
+            ],
+            [
+              "mihia",
+              "mee-EE-ah",
+              "tongue",
+              "bihotza",
+              "heart"
+            ],
+            [
+              "eztarria",
+              "ehs-TAH-rree-ah",
+              "throat",
+              "odola",
+              "blood"
+            ],
+            [
+              "lepoa",
+              "leh-POH-ah",
+              "neck",
+              "azala",
+              "skin"
+            ],
+            [
+              "sorbalda",
+              "sohr-BAHL-dah",
+              "shoulder",
+              "hezurra",
+              "bone"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Body parts that come in pairs are usually said in the plural: *begiak* (eyes), *belarriak* (ears), *eskuak* (hands). If you mean just one, say which side: *esku eskuina* (right hand), *ezkerreko begia* (left eye)."
+        },
+        {
+          "type": "kotak",
+          "title": "Body parts in everyday expressions",
+          "items": [
+            "*Buruz ikasi* — learn by heart (literally: learn by head).",
+            "*Bihotzez eskerrak* — heartfelt thanks.",
+            "*Eskuak garbitu* — wash your hands; *esku bat eman* — lend a hand.",
+            "*Hankaz gora* — upside down, a total mess (literally: legs up)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Saying what hurts",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Literally",
+            "English"
+          ],
+          "rows": [
+            [
+              "Buruko mina dut.",
+              "head-of pain-the I-have",
+              "I have a headache."
+            ],
+            [
+              "Sabeleko mina dut.",
+              "stomach-of pain-the I-have",
+              "I have a stomachache."
+            ],
+            [
+              "Eztarriko mina dut.",
+              "throat-of pain-the I-have",
+              "I have a sore throat."
+            ],
+            [
+              "Hortzetako mina dut.",
+              "teeth-of pain-the I-have",
+              "I have a toothache."
+            ],
+            [
+              "Gaixorik nago.",
+              "sick I-am",
+              "I'm sick."
+            ],
+            [
+              "Sukarra dut.",
+              "fever-the I-have",
+              "I have a fever."
+            ],
+            [
+              "Eztula dut.",
+              "cough-the I-have",
+              "I have a cough."
+            ],
+            [
+              "Ondo sentitzen naiz.",
+              "well feeling I-am",
+              "I feel good."
+            ],
+            [
+              "Hobeto nago.",
+              "better I-am",
+              "I'm feeling better."
+            ],
+            [
+              "Okerrago nago.",
+              "worse I-am",
+              "I'm getting worse."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "The most common illnesses"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "English",
+            "Euskara",
+            "English"
+          ],
+          "rows": [
+            [
+              "katarroa",
+              "cold",
+              "alergia",
+              "allergy"
+            ],
+            [
+              "gripea",
+              "flu",
+              "beherakoa",
+              "diarrhea"
+            ],
+            [
+              "sukarra",
+              "fever",
+              "goragalea",
+              "nausea"
+            ],
+            [
+              "eztula",
+              "cough",
+              "zauria",
+              "wound"
+            ],
+            [
+              "mina",
+              "pain",
+              "haustura",
+              "fracture"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Min dut and min ematen dit",
+          "items": [
+            "*Buruko mina dut* — \"I have head pain\", the most common and safest way.",
+            "*Buruak min ematen dit* — \"my head gives me pain\", a pattern that uses the three-way auxiliary (NORK-NORI-NOR). It sounds very natural from native speakers, and you'll master it at A2.",
+            "At A1, the first form is enough. What matters is that the doctor understands you — and *buruko mina dut* does the job."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "At the pharmacy and the doctor's",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Medikuarengana joan behar dut.",
+              "meh-dee-koo-ah-REHN-gah-nah",
+              "I need to see a doctor."
+            ],
+            [
+              "Hitzordua nahi dut.",
+              "ee-tsohr-DOO-ah",
+              "I'd like to make an appointment."
+            ],
+            [
+              "Zer duzu?",
+              "sehr DOO-soo",
+              "What's wrong?"
+            ],
+            [
+              "Noiztik zaude horrela?",
+              "NOH-ees-teek",
+              "How long have you been like this?"
+            ],
+            [
+              "Errezeta behar duzu.",
+              "eh-rreh-SEH-tah",
+              "You need a prescription."
+            ],
+            [
+              "Botika hau hartu.",
+              "boh-TEE-kah",
+              "Take this medicine."
+            ],
+            [
+              "Egunean bitan.",
+              "eh-goo-NEH-ahn BEE-tahn",
+              "Twice a day."
+            ],
+            [
+              "Bazkalostean.",
+              "bahs-kahl-ohs-TEH-ahn",
+              "After lunch."
+            ],
+            [
+              "Alergikoa naiz …ri.",
+              "ah-lehr-GEE-koh-ah",
+              "I'm allergic to …"
+            ],
+            [
+              "Larrialdietara joan.",
+              "lah-rree-ahl-DEE-eh-tah-rah",
+              "Go to the ER."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "What's in the medicine cabinet"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "English",
+            "Euskara",
+            "English"
+          ],
+          "rows": [
+            [
+              "botika",
+              "medicine",
+              "tirita",
+              "Band-Aid"
+            ],
+            [
+              "pastilla",
+              "tablet",
+              "gasa",
+              "gauze"
+            ],
+            [
+              "xarabea",
+              "cough syrup",
+              "termometroa",
+              "thermometer"
+            ],
+            [
+              "ukendua",
+              "ointment",
+              "errezeta",
+              "prescription"
+            ],
+            [
+              "bendak",
+              "bandages",
+              "txertoa",
+              "vaccine"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "In an emergency",
+          "items": [
+            "The emergency number throughout Euskal Herria (and all of Europe) is **112**. Operators speak Basque, Spanish, French, and English.",
+            "*Lagundu, mesedez!* — Help!",
+            "*Anbulantzia bat behar dugu.* — We need an ambulance.",
+            "*Istripu bat egon da.* — There's been an accident.",
+            "*Non dago ospitalea?* — Where's the hospital?",
+            "The European Health Insurance Card (*Osasun Txartela*) is valid here; visitors from outside Europe should bring travel insurance."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "eu": "gorputz",
+      "baca": "gohr-POOTS",
+      "en": "body"
+    },
+    {
+      "eu": "buru",
+      "baca": "BOO-roo",
+      "en": "head"
+    },
+    {
+      "eu": "begi",
+      "baca": "BEH-gee",
+      "en": "eye"
+    },
+    {
+      "eu": "sudur",
+      "baca": "soo-DOOR",
+      "en": "nose"
+    },
+    {
+      "eu": "aho",
+      "baca": "AH-oh",
+      "en": "mouth"
+    },
+    {
+      "eu": "belarri",
+      "baca": "beh-LAH-rree",
+      "en": "ear"
+    },
+    {
+      "eu": "hortz",
+      "baca": "OHRTS",
+      "en": "tooth"
+    },
+    {
+      "eu": "eztarri",
+      "baca": "ehs-TAH-rree",
+      "en": "throat"
+    },
+    {
+      "eu": "esku",
+      "baca": "EHS-koo",
+      "en": "hand"
+    },
+    {
+      "eu": "beso",
+      "baca": "BEH-soh",
+      "en": "arm"
+    },
+    {
+      "eu": "hanka",
+      "baca": "AHN-kah",
+      "en": "leg"
+    },
+    {
+      "eu": "oin",
+      "baca": "OH-een",
+      "en": "foot"
+    },
+    {
+      "eu": "sabel",
+      "baca": "sah-BEHL",
+      "en": "stomach, belly"
+    },
+    {
+      "eu": "bizkar",
+      "baca": "bees-KAHR",
+      "en": "back"
+    },
+    {
+      "eu": "bihotz",
+      "baca": "bee-OHTS",
+      "en": "heart"
+    },
+    {
+      "eu": "ile",
+      "baca": "EE-leh",
+      "en": "hair"
+    },
+    {
+      "eu": "min",
+      "baca": "MEEN",
+      "en": "pain, ache"
+    },
+    {
+      "eu": "osasun",
+      "baca": "oh-sah-SOON",
+      "en": "health"
+    },
+    {
+      "eu": "gaixo",
+      "baca": "GAH-ee-shoh",
+      "en": "sick; sick person"
+    },
+    {
+      "eu": "sukar",
+      "baca": "soo-KAHR",
+      "en": "fever"
+    },
+    {
+      "eu": "eztul",
+      "baca": "ehs-TOOL",
+      "en": "cough"
+    },
+    {
+      "eu": "katarro",
+      "baca": "kah-TAH-rroh",
+      "en": "cold (illness)"
+    },
+    {
+      "eu": "mediku",
+      "baca": "meh-DEE-koo",
+      "en": "doctor"
+    },
+    {
+      "eu": "farmazia",
+      "baca": "fahr-MAH-see-ah",
+      "en": "pharmacy"
+    },
+    {
+      "eu": "botika",
+      "baca": "boh-TEE-kah",
+      "en": "medicine"
+    },
+    {
+      "eu": "pastilla",
+      "baca": "pahs-TEE-lyah",
+      "en": "tablet"
+    },
+    {
+      "eu": "errezeta",
+      "baca": "eh-rreh-SEH-tah",
+      "en": "prescription"
+    },
+    {
+      "eu": "hitzordu",
+      "baca": "ee-TSOHR-doo",
+      "en": "appointment"
+    },
+    {
+      "eu": "larrialdi",
+      "baca": "lah-rree-AHL-dee",
+      "en": "emergency"
+    },
+    {
+      "eu": "hobeto",
+      "baca": "oh-BEH-toh",
+      "en": "better (feeling)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Say which body part hurts.",
+      "items": [
+        "head → ____ mina dut.",
+        "stomach → ____ mina dut.",
+        "throat → ____ mina dut.",
+        "teeth → ____ mina dut.",
+        "back → ____ mina dut.",
+        "ear → ____ mina dut."
+      ]
+    },
+    {
+      "prompt": "Translate into Basque.",
+      "items": [
+        "I'm sick.",
+        "I have a fever and a cough.",
+        "How long have you been like this?",
+        "Since yesterday.",
+        "How many times a day?",
+        "Twice a day, after lunch."
+      ]
+    },
+    {
+      "prompt": "Fill in the right word.",
+      "items": [
+        "____ = medicine",
+        "____ = doctor's prescription",
+        "____ = pharmacy",
+        "____ = fever",
+        "____ = doctor's appointment",
+        "____ = health"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "dut / mina / buruko",
+        "nago / gaixorik / gaur",
+        "zaude / noiztik / horrela / ?",
+        "dut / joan / medikuarengana / behar",
+        "ditut / zenbat / hartu / behar / ?",
+        "nago / hobeto / gaur"
+      ]
+    }
+  ],
+  "answers": [
+    "Buruko — Sabeleko — Eztarriko — Hortzetako — Bizkarreko — Belarriko",
+    "Gaixorik nago. — Sukarra eta eztula ditut. — Noiztik zaude horrela? — Atzotik. — Egunean zenbat aldiz? — Egunean bitan, bazkalostean.",
+    "botika — errezeta — farmazia — sukarra — hitzordua — osasuna",
+    "Buruko mina dut. — Gaur gaixorik nago. — Noiztik zaude horrela? — Medikuarengana joan behar dut. — Zenbat hartu behar ditut? — Gaur hobeto nago."
+  ]
+}

@@ -1,0 +1,600 @@
+{
+  "title": "Yesterday I went to Conamara",
+  "title_target": "Chuaigh mé go Conamara inné",
+  "goal": "Talk about what happened using the past tense, and make it negative or a question.",
+  "bekal": [
+    "form the past tense: *d'ól mé*, *cheannaigh mé*, *d'fhan mé*",
+    "use *níor* and *ar*, which both bring séimhiú",
+    "recognize the eleven irregular past forms"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — An deireadh seachtaine a bhí ann",
+      "intro": "Monday morning in class. Aoife asks Budi how his weekend was.",
+      "lines": [
+        {
+          "speaker": "Aoife:",
+          "text": "Dia duit, a Bhudi. Conas a bhí an deireadh seachtaine?",
+          "id": "Hi, Budi. How was your weekend?",
+          "literal": "God to-you, O Budi. how that was the end week-of?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bhí sé ar fheabhas! Chuaigh mé go Conamara Dé Sathairn.",
+          "id": "Amazing! I went to Conamara on Saturday.",
+          "literal": "was it on excellence! went I to Conamara day Saturday."
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "Ar thaitin sé leat?",
+          "id": "Did you enjoy it?",
+          "literal": "question-past pleased it with-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Thaitin go mór. Chonaic mé an fharraige agus na sléibhte.",
+          "id": "Very much. I saw the sea and the mountains.",
+          "literal": "pleased greatly. saw I the sea and the mountains."
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "An raibh an aimsir go maith?",
+          "id": "Was the weather good?",
+          "literal": "question was the weather good?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ní raibh! Bhí sé ag cur báistí ar maidin. Ach ghlan sé tráthnóna.",
+          "id": "No! It rained in the morning. But it cleared up in the afternoon.",
+          "literal": "wasn't! was it at putting rain-of in the morning. but cleared it afternoon."
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "Cad a rinne tú ansin?",
+          "id": "And what did you do then?",
+          "literal": "what that did you then?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "D'ith mé dinnéar i mbialann bheag agus d'ól mé tae.",
+          "id": "I had dinner in a little restaurant and drank tea.",
+          "literal": "ate I dinner in restaurant small and drank I tea."
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "Ar labhair tú Gaeilge?",
+          "id": "Did you speak Irish?",
+          "literal": "question-past spoke you Irish?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Labhair! Bhí gach duine ag labhairt Gaeilge ansin.",
+          "id": "I did! Everyone there was speaking Irish.",
+          "literal": "spoke! was every person at speaking Irish there."
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "Sin an Ghaeltacht duit. Ar cheannaigh tú aon rud?",
+          "id": "That's the Gaeltacht for you. Did you buy anything?",
+          "literal": "that the Gaeltacht to-you. question-past bought you any thing?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cheannaigh mé leabhar. Níor fhan mé i bhfad, ach bhí lá iontach agam.",
+          "id": "I bought a book. I didn't stay long, but it was a wonderful day.",
+          "literal": "bought I book. not-past stayed I in length, but was day wonderful at-me."
+        }
+      ],
+      "notes": [
+        "**The past tense changes the first letter, not the ending.** Verbs starting with a **consonant** get séimhiú: *ceannaigh* → *cheannaigh mé*, *glan* → *ghlan mé*, *tuig* → *thuig mé*. Verbs starting with a **vowel or f** get *d'* in front: *ól* → *d'ól mé*, *ith* → *d'ith mé*, *fan* → *d'fhan mé*, *éirigh* → *d'éirigh mé*. There are no endings to learn for different persons — *cheannaigh mé*, *cheannaigh tú*, *cheannaigh sé* are all the same.",
+        "**Níor and ar both bring séimhiú.** Unlike the present, where *ní* brings séimhiú but *an* brings urú, in the past **both** bring séimhiú: *níor cheannaigh mé*, *ar cheannaigh tú?* Note too that *d'* disappears once *níor* or *ar* comes in front: *d'ól mé* → *níor ól mé*, *ar ól tú?*",
+        "**Answers still repeat the verb, in the past form.** *Ar cheannaigh tú leabhar?* is answered *Cheannaigh* or *Níor cheannaigh*. *Ar thaitin sé leat?* is answered *Thaitin* or *Níor thaitin*. Notice Budi answers *Labhair!* — one word, and it's a full answer.",
+        "**Chuaigh, chonaic, rinne, bhí — the irregulars.** Eleven Irish verbs have past forms you can't guess, and this is where they stray furthest. *Téigh* becomes *chuaigh*; *feic* becomes *chonaic*; *déan* becomes *rinne*; *tar* becomes *tháinig*; *faigh* becomes *fuair*. The table is below, and those five are the ones you'll need most."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Past tense, regular verbs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Base form",
+            "Meaning",
+            "Past",
+            "Negative",
+            "Question"
+          ],
+          "rows": [
+            [
+              "ól",
+              "drink",
+              "d'ól mé",
+              "níor ól mé",
+              "ar ól tú?"
+            ],
+            [
+              "ith",
+              "eat",
+              "d'ith mé",
+              "níor ith mé",
+              "ar ith tú?"
+            ],
+            [
+              "éirigh",
+              "get up",
+              "d'éirigh mé",
+              "níor éirigh mé",
+              "ar éirigh tú?"
+            ],
+            [
+              "fan",
+              "wait, stay",
+              "d'fhan mé",
+              "níor fhan mé",
+              "ar fhan tú?"
+            ],
+            [
+              "féach",
+              "look",
+              "d'fhéach mé",
+              "níor fhéach mé",
+              "ar fhéach tú?"
+            ],
+            [
+              "ceannaigh",
+              "buy",
+              "cheannaigh mé",
+              "níor cheannaigh mé",
+              "ar cheannaigh tú?"
+            ],
+            [
+              "glan",
+              "clean",
+              "ghlan mé",
+              "níor ghlan mé",
+              "ar ghlan tú?"
+            ],
+            [
+              "tuig",
+              "understand",
+              "thuig mé",
+              "níor thuig mé",
+              "ar thuig tú?"
+            ],
+            [
+              "can",
+              "sing",
+              "chan mé",
+              "níor chan mé",
+              "ar chan tú?"
+            ],
+            [
+              "dún",
+              "close",
+              "dhún mé",
+              "níor dhún mé",
+              "ar dhún tú?"
+            ],
+            [
+              "scríobh",
+              "write",
+              "scríobh mé",
+              "níor scríobh mé",
+              "ar scríobh tú?"
+            ],
+            [
+              "labhair",
+              "speak",
+              "labhair mé",
+              "níor labhair mé",
+              "ar labhair tú?"
+            ],
+            [
+              "léigh",
+              "read",
+              "léigh mé",
+              "níor léigh mé",
+              "ar léigh tú?"
+            ],
+            [
+              "rith",
+              "run",
+              "rith mé",
+              "níor rith mé",
+              "ar rith tú?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Why the last four rows don't change",
+          "items": [
+            "The letters **l, n, r** can't be softened in Irish spelling, so *labhair*, *léigh*, and *rith* look the same in the past and as commands. Only the pronoun tells them apart: *Léigh!* (\"read!\") versus *Léigh mé* (\"I read\").",
+            "An **s** followed by a hard consonant (*sc-, sm-, sp-, st-*) isn't softened either: *scríobh mé*, *stop mé*.",
+            "Every other verb starting with a consonant is **always** softened. When in doubt, soften — you'll be right nine times out of ten."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The \"we\" form has its own ending: *d'ólamar*, *cheannaíomar*, *ghlanamar*. The separate form *d'ól muid* is also correct and heard more often in everyday speech, so you can use either."
+        }
+      ]
+    },
+    {
+      "title": "Eleven irregular verbs, past tense",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Base form",
+            "Meaning",
+            "Past",
+            "Negative",
+            "Question"
+          ],
+          "rows": [
+            [
+              "bí",
+              "be",
+              "bhí mé",
+              "ní raibh mé",
+              "an raibh tú?"
+            ],
+            [
+              "abair",
+              "say",
+              "dúirt mé",
+              "ní dúirt mé",
+              "an ndúirt tú?"
+            ],
+            [
+              "beir",
+              "catch",
+              "rug mé",
+              "níor rug mé",
+              "ar rug tú?"
+            ],
+            [
+              "clois",
+              "hear",
+              "chuala mé",
+              "níor chuala mé",
+              "ar chuala tú?"
+            ],
+            [
+              "déan",
+              "make, do",
+              "rinne mé",
+              "ní dhearna mé",
+              "an ndearna tú?"
+            ],
+            [
+              "faigh",
+              "get",
+              "fuair mé",
+              "ní bhfuair mé",
+              "an bhfuair tú?"
+            ],
+            [
+              "feic",
+              "see",
+              "chonaic mé",
+              "ní fhaca mé",
+              "an bhfaca tú?"
+            ],
+            [
+              "ith",
+              "eat",
+              "d'ith mé",
+              "níor ith mé",
+              "ar ith tú?"
+            ],
+            [
+              "tabhair",
+              "give",
+              "thug mé",
+              "níor thug mé",
+              "ar thug tú?"
+            ],
+            [
+              "tar",
+              "come",
+              "tháinig mé",
+              "níor tháinig mé",
+              "ar tháinig tú?"
+            ],
+            [
+              "téigh",
+              "go",
+              "chuaigh mé",
+              "ní dheachaigh mé",
+              "an ndeachaigh tú?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "How to say them: *bhí* = VEE, *dúirt* = DOORTCH, *chuala* = KHOO-uh-luh, *rinne* = RIH-nyuh, *fuair* = FOO-ir, *chonaic* = KHUH-nik, *thug* = HUG, *tháinig* = HAW-nig, *chuaigh* = KHOO-uh."
+        },
+        {
+          "type": "kotak",
+          "title": "The five you really need right now",
+          "items": [
+            "*Bhí mé* (I was) and *ní raibh mé* (I wasn't) — the most common of them all.",
+            "*Chuaigh mé* (I went) — and note its odd negative, *ní dheachaigh mé*.",
+            "*Chonaic mé* (I saw) — negative *ní fhaca mé*, said \"nee AH-kuh\" because *fh* is silent.",
+            "*Rinne mé* (I did) — negative *ní dhearna mé*.",
+            "*Fuair mé* (I got) — negative *ní bhfuair mé*, the only one that takes urú after *ní*.",
+            "The other six you can just recognize for now; they'll stick on their own with use."
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Past time words",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "inné",
+              "ih-NYAY",
+              "yesterday"
+            ],
+            [
+              "aréir",
+              "uh-RAYR",
+              "last night"
+            ],
+            [
+              "arú inné",
+              "uh-ROO ih-NYAY",
+              "the day before yesterday"
+            ],
+            [
+              "an tseachtain seo caite",
+              "an TYAKH-tin shuh KAH-tyuh",
+              "last week"
+            ],
+            [
+              "an mhí seo caite",
+              "an VEE shuh KAH-tyuh",
+              "last month"
+            ],
+            [
+              "anuraidh",
+              "uh-NOO-ree",
+              "last year"
+            ],
+            [
+              "ar ball",
+              "er BAL",
+              "a while ago, just now"
+            ],
+            [
+              "fadó",
+              "fuh-DOH",
+              "long ago"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "bhí",
+      "baca": "VEE",
+      "en": "was, were"
+    },
+    {
+      "ga": "ní raibh",
+      "baca": "nee ROV",
+      "en": "wasn't, weren't"
+    },
+    {
+      "ga": "an raibh?",
+      "baca": "an ROV",
+      "en": "was ...? were ...?"
+    },
+    {
+      "ga": "chuaigh mé",
+      "baca": "KHOO-uh may",
+      "en": "I went"
+    },
+    {
+      "ga": "chonaic mé",
+      "baca": "KHUH-nik may",
+      "en": "I saw"
+    },
+    {
+      "ga": "rinne mé",
+      "baca": "RIH-nyuh may",
+      "en": "I did"
+    },
+    {
+      "ga": "fuair mé",
+      "baca": "FOO-ir may",
+      "en": "I got"
+    },
+    {
+      "ga": "thug mé",
+      "baca": "HUG may",
+      "en": "I gave"
+    },
+    {
+      "ga": "tháinig mé",
+      "baca": "HAW-nig may",
+      "en": "I came"
+    },
+    {
+      "ga": "dúirt mé",
+      "baca": "DOORTCH may",
+      "en": "I said"
+    },
+    {
+      "ga": "chuala mé",
+      "baca": "KHOO-uh-luh may",
+      "en": "I heard"
+    },
+    {
+      "ga": "níor",
+      "baca": "NYEER",
+      "en": "not (past)"
+    },
+    {
+      "ga": "ar",
+      "baca": "er",
+      "en": "question marker (past)"
+    },
+    {
+      "ga": "ar fheabhas",
+      "baca": "er OW-as",
+      "en": "excellent, amazing"
+    },
+    {
+      "ga": "thaitin",
+      "baca": "HAH-tyin",
+      "en": "pleased (past)"
+    },
+    {
+      "ga": "go mór",
+      "baca": "guh MOHR",
+      "en": "greatly, very much"
+    },
+    {
+      "ga": "sliabh",
+      "baca": "SHLEE-oow",
+      "en": "mountain"
+    },
+    {
+      "ga": "sléibhte",
+      "baca": "SHLYAY-tyuh",
+      "en": "mountains"
+    },
+    {
+      "ga": "Gaeltacht",
+      "baca": "GAYL-takht",
+      "en": "Irish-speaking region"
+    },
+    {
+      "ga": "aon rud",
+      "baca": "ayn RUD",
+      "en": "anything, something"
+    },
+    {
+      "ga": "inné",
+      "baca": "ih-NYAY",
+      "en": "yesterday"
+    },
+    {
+      "ga": "aréir",
+      "baca": "uh-RAYR",
+      "en": "last night"
+    },
+    {
+      "ga": "anuraidh",
+      "baca": "uh-NOO-ree",
+      "en": "last year"
+    },
+    {
+      "ga": "fadó",
+      "baca": "fuh-DOH",
+      "en": "long ago"
+    },
+    {
+      "ga": "ar ball",
+      "baca": "er BAL",
+      "en": "a while ago, just now"
+    },
+    {
+      "ga": "seo caite",
+      "baca": "shuh KAH-tyuh",
+      "en": "last (week etc.)"
+    },
+    {
+      "ga": "d'ól",
+      "baca": "DOHL",
+      "en": "drank"
+    },
+    {
+      "ga": "d'ith",
+      "baca": "DYIH",
+      "en": "ate"
+    },
+    {
+      "ga": "cheannaigh",
+      "baca": "KHYAH-nee",
+      "en": "bought"
+    },
+    {
+      "ga": "d'fhan",
+      "baca": "DAN",
+      "en": "stayed, waited"
+    },
+    {
+      "ga": "ghlan",
+      "baca": "GHLAN",
+      "en": "cleaned"
+    },
+    {
+      "ga": "labhair",
+      "baca": "LOHW-ir",
+      "en": "spoke (past & command)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Put into the past tense (\"I\" form).",
+      "items": [
+        "ól",
+        "ith",
+        "ceannaigh",
+        "glan",
+        "fan",
+        "tuig"
+      ]
+    },
+    {
+      "prompt": "Make these sentences negative. Remember: *níor* brings séimhiú, and *d'* disappears.",
+      "items": [
+        "D'ól mé tae.",
+        "Cheannaigh mé leabhar.",
+        "D'fhan mé sa bhaile.",
+        "Ghlan sí an chistin.",
+        "Thuig sé an cheist.",
+        "D'ith siad dinnéar."
+      ]
+    },
+    {
+      "prompt": "Write the past form of these irregular verbs (\"I\" form).",
+      "items": [
+        "téigh",
+        "feic",
+        "déan",
+        "faigh",
+        "tar",
+        "bí"
+      ]
+    },
+    {
+      "prompt": "Translate into Irish.",
+      "items": [
+        "I went to Conamara on Saturday.",
+        "I saw the sea.",
+        "The weather wasn't good.",
+        "I had dinner in a little restaurant.",
+        "Did you buy anything?",
+        "I didn't stay long."
+      ]
+    }
+  ],
+  "answers": [
+    "d'ól mé — d'ith mé — cheannaigh mé — ghlan mé — d'fhan mé — thuig mé",
+    "Níor ól mé tae. — Níor cheannaigh mé leabhar. — Níor fhan mé sa bhaile. — Níor ghlan sí an chistin. — Níor thuig sé an cheist. — Níor ith siad dinnéar.",
+    "chuaigh mé — chonaic mé — rinne mé — fuair mé — tháinig mé — bhí mé",
+    "Chuaigh mé go Conamara Dé Sathairn. — Chonaic mé an fharraige. — Ní raibh an aimsir go maith. — D'ith mé dinnéar i mbialann bheag. — Ar cheannaigh tú aon rud? — Níor fhan mé i bhfad."
+  ]
+}

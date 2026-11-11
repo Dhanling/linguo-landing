@@ -1,0 +1,475 @@
+{
+  "title": "My day — and the little words that always sit in second place",
+  "title_target": "Moj dan",
+  "goal": "Talk about your daily routine, use *se* for actions that turn back on yourself, and master the strictest word-order rule in all of Slovenian: clitics (*naslonke*) always go in second place.",
+  "bekal": [
+    "describing a routine from getting up to going to bed",
+    "using *se* verbs: *zbudim se*, *stuširam se*, *oblečem se*",
+    "putting *se*, *sem*, *mi*, *ga* in the right spot — second place, always"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Se ti mudi?",
+      "intro": "Maja and Budi are waiting for the bus. Budi realizes that the smallest words in Slovenian are the most stubborn ones.",
+      "lines": [
+        {
+          "speaker": "Maja:",
+          "text": "Kako izgleda tvoj dan?",
+          "id": "So what's your day usually like?",
+          "literal": "how looks your day?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zbudim se ob šestih. Potem se stuširam.",
+          "id": "I wake up at six. Then I take a shower.",
+          "literal": "I-wake self at of-six. then self I-shower."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Tako zgodaj? Jaz se zbudim ob osmih.",
+          "id": "That early? I wake up at eight.",
+          "literal": "so early? I self I-wake at of-eight."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zajtrkujem doma, potem grem na univerzo.",
+          "id": "I have breakfast at home, then I head to the university.",
+          "literal": "I-breakfast at-home, then I-go to university."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Se ti mudi zjutraj?",
+          "id": "Are you in a rush in the mornings?",
+          "literal": "self to-you hurries morning?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vedno. Nikoli si ne vzamem časa.",
+          "id": "Always. I never take my time.",
+          "literal": "always. never to-self not I-take of-time."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Dobro poveš. In besedni red je pravilen.",
+          "id": "You say that well. And your word order is right.",
+          "literal": "well you-say. and word-of order is correct."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zakaj se ti mudi, ne ti se mudi?",
+          "id": "Why \"se ti mudi\" and not \"ti se mudi\"?",
+          "literal": "why self to-you hurries, not to-you self hurries?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Male besede vedno skačejo naprej.",
+          "id": "Little words always jump to the front.",
+          "literal": "small-pl word-pl always they-jump forward."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Potem se moram navaditi.",
+          "id": "Then I'll have to get used to it.",
+          "literal": "then self I-must get-used."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Se boš. Vsi se navadimo.",
+          "id": "You will. We all get used to it.",
+          "literal": "self you-will. all self we-get-used."
+        }
+      ],
+      "notes": [
+        "**Se marks an action that turns back on the doer.** *Zbudim* means \"I wake (someone else) up\"; *zbudim **se*** means \"I wake myself up\", i.e. \"I wake up\". English handles some of this with \"-self\" or with a plain intransitive verb: get dressed, get used to it. The difference is that in Slovenian *se* is a separate word that moves around freely.",
+        "**And that's the catch: se never sits where you expect.** It belongs to the **clitics** (*naslonke*) — tiny unstressed words that must sit in **second place** in the sentence. Not after the subject, not before the verb: second place, counting from the start of the sentence.",
+        "**Nikoli si ne vzamem časa — negatives that don't cancel out.** *Nikoli* (never) and *ne* appear together, and that's compulsory. Slovenian insists the negation be repeated on the verb, just like Russian and Spanish. Dropping *ne* actually makes the sentence wrong.",
+        "**Zajtrkujem, kosim, večerjam — three meals, three verbs of their own.** Slovenian has separate verbs for having breakfast, lunch and dinner. The nouns are *zajtrk*, *kosilo*, *večerja*. You can say *jem zajtrk*, but Slovenians almost always use the verb.",
+        "**Se boš** (you will) is the future form, covered in full in unit 17. Notice that the main verb is dropped entirely because it's obvious from the previous sentence — a very Slovenian habit, and one that makes everyday conversation sound much shorter than the grammar would suggest."
+      ],
+      "grammars": [
+        {
+          "title": "Clitics — the second seat that nobody else may take",
+          "body": [
+            "Slovenian has a group of tiny unstressed words: *se, si, sem, si, je, smo, ste, so, bi, me, te, ga, jo, jih, mi, ti, mu, ji*. They must all gather in **second place** in the sentence — after the first word or first phrase, whatever it happens to be."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "In second place",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*Ime **mi je** Budi.*",
+                "*mi je*",
+                "My name is Budi."
+              ],
+              [
+                "*Kako **ti je** ime?*",
+                "*ti je*",
+                "What's your name?"
+              ],
+              [
+                "*Zbudil **sem se** ob šestih.*",
+                "*sem se*",
+                "I woke up at six."
+              ],
+              [
+                "*Danes **se mi** mudi.*",
+                "*se mi*",
+                "I'm in a hurry today."
+              ],
+              [
+                "*Rad **te** imam.*",
+                "*te*",
+                "I love you."
+              ],
+              [
+                "*Knjigo **mu jo** dam.*",
+                "*mu jo*",
+                "I'll give him the book."
+              ]
+            ]
+          },
+          "after": [
+            "The order inside the cluster is fixed too, and it never changes: **bi → sem/si/je → se → mi/ti/mu (indirect object) → me/te/ga/jo (direct object)**. So it's always *sem se*, never *se sem*; always *mu jo*, never *jo mu*.",
+            "If the sentence starts with a conjunction such as *da*, *ker*, *ki* or *če*, that conjunction counts as the first word: *Vem, **da se ti** mudi* (I know you're in a hurry)."
+          ]
+        },
+        {
+          "title": "Three verb endings: -am, -im, -em",
+          "body": [
+            "Every Slovenian verb falls into one of three groups, and the only difference is a single vowel before the ending. The endings themselves — *-m, -š, -∅, -va, -ta, -mo, -te, -jo* — are always the same."
+          ],
+          "table": {
+            "head": [
+              "Group",
+              "I",
+              "You",
+              "We two",
+              "They"
+            ],
+            "rows": [
+              [
+                "**-am** *delati* (work)",
+                "del**am**",
+                "del**aš**",
+                "del**ava**",
+                "del**ajo**"
+              ],
+              [
+                "**-am** *zajtrkovati* (have breakfast)",
+                "zajtrku**jem**",
+                "zajtrku**ješ**",
+                "zajtrku**jeva**",
+                "zajtrku**jejo**"
+              ],
+              [
+                "**-im** *govoriti* (speak)",
+                "govor**im**",
+                "govor**iš**",
+                "govor**iva**",
+                "govor**ijo**"
+              ],
+              [
+                "**-im** *spati* (sleep)",
+                "sp**im**",
+                "sp**iš**",
+                "sp**iva**",
+                "sp**ijo**"
+              ],
+              [
+                "**-em** *brati* (read)",
+                "ber**em**",
+                "ber**eš**",
+                "ber**eva**",
+                "ber**ejo**"
+              ],
+              [
+                "**-em** *iti* (go)",
+                "gr**em**",
+                "gr**eš**",
+                "gr**eva**",
+                "gr**edo**"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that the dictionary form (*delati*, *govoriti*, *brati*) doesn't always tell you the group — *brati* ends in *-ati* but belongs to the *-em* group, and its \"I\" form even changes root to *berem*. So learn every verb in **two forms**: the dictionary form and the \"I\" form.",
+            "The *-am* group is the biggest and friendliest: almost all new verbs and loanwords go there. *Kliknem*, *guglam*, *parkiram* — they all follow the *delam* pattern."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Moj dan — from getting up to going to bed",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The sentences below run in order through a whole day. Say them all out loud once a day for a week, and you'll be able to describe your day without thinking."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Zbudim se ob šestih.*",
+              "ZBOO-deem suh ohp SHAYS-teekh",
+              "I wake up at six."
+            ],
+            [
+              "*Vstanem takoj.*",
+              "OOSTAH-nuhm tah-KAWY",
+              "I get up right away."
+            ],
+            [
+              "*Stuširam se.*",
+              "stoo-SHEE-rahm suh",
+              "I take a shower."
+            ],
+            [
+              "*Oblečem se.*",
+              "oh-BLAY-chuhm suh",
+              "I get dressed."
+            ],
+            [
+              "*Zajtrkujem doma.*",
+              "zai-tuhr-KOO-yuhm DAW-mah",
+              "I have breakfast at home."
+            ],
+            [
+              "*Grem na univerzo.*",
+              "graym nah oo-nee-VEHR-zoh",
+              "I head to the university."
+            ],
+            [
+              "*Delam do petih.*",
+              "DAY-lahm doh PAY-teekh",
+              "I work until five."
+            ],
+            [
+              "*Kosim opoldne.*",
+              "KOH-seem oh-POHW-dnay",
+              "I have lunch at noon."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice **grem spat** (I'm going to bed): *spat* is a special form that only appears after verbs of motion. *Grem jest* (I'm going to eat), *grem plavat* (I'm going swimming), *grem delat* (I'm going to work). It sounds very everyday, and using it just once makes your sentence sound natural right away."
+        },
+        {
+          "type": "p",
+          "text": "And notice *kosim* — from *kosilo* (lunch), not from the word for mowing. Slovenian's three eating verbs: **zajtrkovati** (have breakfast), **kositi** (have lunch), **večerjati** (have dinner)."
+        }
+      ]
+    },
+    {
+      "title": "How often — and stacked negatives",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Frequency words move freely in the sentence, usually before the verb. But three of them drag *ne* into the sentence, and that's compulsory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Say it",
+            "Example",
+            "English"
+          ],
+          "rows": [
+            [
+              "**vedno**",
+              "VAYD-noh",
+              "*Vedno pijem kavo.*",
+              "always"
+            ],
+            [
+              "**pogosto**",
+              "poh-GAWS-toh",
+              "*Pogosto berem.*",
+              "often"
+            ],
+            [
+              "**včasih**",
+              "oo-CHAH-seekh",
+              "*Včasih kuham.*",
+              "sometimes"
+            ],
+            [
+              "**redko**",
+              "RAYT-koh",
+              "*Redko gledam film.*",
+              "rarely"
+            ],
+            [
+              "**nikoli … ne**",
+              "nee-KAW-lee nay",
+              "*Nikoli **ne** pijem piva.*",
+              "never"
+            ],
+            [
+              "**nič … ne**",
+              "neech nay",
+              "*Nič **ne** razumem.*",
+              "nothing"
+            ],
+            [
+              "**nihče … ne**",
+              "NEEKH-chay nay",
+              "*Nihče **ne** ve.*",
+              "nobody"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last three rows are **stacked negatives**, and they feel strange exactly once. *Nikoli ne pijem piva* is literally \"never not I-drink of-beer\" — and notice that *pivo* becomes *piva* because the sentence is negative, just like the rule in unit 7. One sentence, two rules at once."
+        },
+        {
+          "type": "p",
+          "text": "Standard English treats two negatives as cancelling each other out; Slovenian treats them as reinforcing each other. There's nothing to argue about — just accept that *ne* has to come along, and your sentence is instantly right."
+        },
+        {
+          "type": "kotak",
+          "title": "Three sentences to use today",
+          "items": [
+            "*Vsak dan se zbudim ob šestih.* — I wake up at six every day.",
+            "*Danes se mi ne mudi.* — I'm not in a hurry today.",
+            "*Nikoli ne zamujam.* — I'm never late. (Say it with a smile.)"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "zbuditi se",
+      "baca": "ZBOO-dee-tee suh",
+      "en": "wake up"
+    },
+    {
+      "sl": "vstati",
+      "baca": "OOSTAH-tee",
+      "en": "get up; stand up"
+    },
+    {
+      "sl": "stuširati se",
+      "baca": "stoo-SHEE-rah-tee suh",
+      "en": "take a shower"
+    },
+    {
+      "sl": "obleči se",
+      "baca": "oh-BLAY-chee suh",
+      "en": "get dressed"
+    },
+    {
+      "sl": "zajtrk",
+      "baca": "ZAI-tuhrk",
+      "en": "breakfast"
+    },
+    {
+      "sl": "kosilo",
+      "baca": "koh-SEE-loh",
+      "en": "lunch"
+    },
+    {
+      "sl": "večerja",
+      "baca": "vay-CHAYR-yah",
+      "en": "dinner"
+    },
+    {
+      "sl": "spati",
+      "baca": "SPAH-tee",
+      "en": "sleep"
+    },
+    {
+      "sl": "brati",
+      "baca": "BRAH-tee",
+      "en": "read"
+    },
+    {
+      "sl": "gledati",
+      "baca": "GLAY-dah-tee",
+      "en": "watch; look"
+    },
+    {
+      "sl": "kuhati",
+      "baca": "KOO-hah-tee",
+      "en": "cook"
+    },
+    {
+      "sl": "mudi se mi",
+      "baca": "MOO-dee suh mee",
+      "en": "I'm in a hurry"
+    },
+    {
+      "sl": "navaditi se",
+      "baca": "nah-VAH-dee-tee suh",
+      "en": "get used to"
+    },
+    {
+      "sl": "beseda",
+      "baca": "bay-SAY-dah",
+      "en": "word"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right form of the verb.",
+      "items": [
+        "Jaz se ____ ob šestih. (zbuditi)",
+        "Ti ____ do petih. (delati)",
+        "Maja ____ knjigo. (brati)",
+        "Midva ____ doma. (spati)",
+        "Mi ____ večerjo. (kuhati)",
+        "Oni ____ film. (gledati)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order, with the clitics in the right place.",
+      "items": [
+        "mi / ime / Budi / je",
+        "se / ob / zbudim / šestih",
+        "ti / kako / ime / je / ?",
+        "mudi / se / mi / danes",
+        "imam / rad / te"
+      ]
+    },
+    {
+      "prompt": "Translate into Slovenian.",
+      "items": [
+        "I wake up at six.",
+        "Then I take a shower.",
+        "I have breakfast at home.",
+        "I'm in a hurry today.",
+        "I never drink beer.",
+        "I sleep eight hours."
+      ]
+    },
+    {
+      "prompt": "Wave review — unit 9. Translate into Slovenian without looking back at the unit.",
+      "items": [
+        "What time is it?",
+        "It's half past two.",
+        "Shall we meet at five?",
+        "I'm ten minutes late.",
+        "I don't have time."
+      ]
+    }
+  ],
+  "answers": [
+    "zbudim — delaš — bere — spiva — kuhamo — gledajo",
+    "Ime mi je Budi. — Zbudim se ob šestih. — Kako ti je ime? — Danes se mi mudi. — Rad te imam.",
+    "Zbudim se ob šestih. — Potem se stuširam. — Zajtrkujem doma. — Danes se mi mudi. — Nikoli ne pijem piva. — Spim osem ur.",
+    "Koliko je ura? — Ura je pol treh. — Se dobiva ob petih? — Zamujam deset minut. — Nimam časa."
+  ]
+}

@@ -1,0 +1,588 @@
+{
+  "title": "This is my mother, this is my father",
+  "title_target": "Това е майка ми, това е баща ми",
+  "goal": "Talk about family members and possession the Bulgarian way: short possessive words that stick to the back of the noun — \"mother-my\" instead of \"my mother\".",
+  "bekal": [
+    "name ten close family members",
+    "use the short possessives: **ми, ти, му, ѝ, ни, ви, им**",
+    "know when the noun takes the article and when it doesn't",
+    "ask and give ages with **на … години**",
+    "say someone is married using the right form"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Family photos on the phone",
+      "intro": "Maria is looking at the photos on Ani's phone. Notice the pattern repeated throughout the dialogue: the noun comes first, and the possessive follows behind it.",
+      "lines": [
+        {
+          "speaker": "Мария:",
+          "text": "[Това|To-VA] [ли|lee] [е|eh] [семейството|seh-MEY-stvo-to] [ти|tee]?",
+          "id": "Is this your family?",
+          "literal": "this — (question) — is — family-the — your?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Да|Da]. [Това|To-VA] [е|eh] [майка|MAI-ka] [ми|mee], [а|a] [това|to-VA] [е|eh] [баща|bash-TA] [ми|mee].",
+          "id": "Yes. This is my mother, and this is my father.",
+          "literal": "yes. this — is — mother — my, and — this — is — father — my."
+        },
+        {
+          "speaker": "Мария:",
+          "text": "[А|A] [това|to-VA] [момиче|mo-MEE-cheh] [коя|ko-YA] [е|eh]?",
+          "id": "And who's this girl?",
+          "literal": "and — this — girl — who-(f) — is?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Това|To-VA] [е|eh] [сестра|ses-TRA] [ми|mee]. [Казва|KAZ-va] [се|seh] [Дина|DEE-na].",
+          "id": "This is my sister. Her name is Dina.",
+          "literal": "this — is — sister — my. calls — herself — Dina."
+        },
+        {
+          "speaker": "Мария:",
+          "text": "[На|Na] [колко|KOL-ko] [години|go-DEE-nee] [е|eh]?",
+          "id": "How old is she?",
+          "literal": "at — how-many — years — is?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[На|Na] [деветнайсет|deh-vet-NAI-set] [години|go-DEE-nee] [е|eh]. [Учи|OO-chee] [в|v] [университета|oo-nee-ver-see-TEH-tă].",
+          "id": "She's nineteen. She's at university.",
+          "literal": "at — nineteen — years — is. studies — in — university-the."
+        },
+        {
+          "speaker": "Мария:",
+          "text": "[Имаш|EE-mash] [ли|lee] [брат|brat]?",
+          "id": "Do you have a brother?",
+          "literal": "have-you — (question) — brother?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Да|Da], [имам|EE-mam] [по-голям|po-go-LYAM] [брат|brat]. [Той|Toy] [е|eh] [женен|ZHEH-nen] [и|ee] [има|EE-ma] [две|dveh] [деца|deh-TSA].",
+          "id": "Yes, I have an older brother. He's married and has two children.",
+          "literal": "yes, have-I — more-big — brother. he — is — married-(m) — and — has — two — children."
+        },
+        {
+          "speaker": "Мария:",
+          "text": "[Значи|ZNA-chee] [си|see] [леля|LEH-lya]!",
+          "id": "So you're an aunt!",
+          "literal": "means — are-you — aunt!"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Да|Da]! [А|A] [твоето|TVO-eh-to] [семейство|seh-MEY-stvo]?",
+          "id": "Yes! And your family?",
+          "literal": "yes! and — your-the — family?"
+        },
+        {
+          "speaker": "Мария:",
+          "text": "[Родителите|Ro-DEE-teh-lee-teh] [ми|mee] [живеят|zhee-VEH-yat] [във|văv] [Варна|VAR-na]. [Имам|EE-mam] [една|ed-NA] [сестра|ses-TRA].",
+          "id": "My parents live in Varna. I have one sister.",
+          "literal": "parents-the — my — live-they — in — Varna. have-I — one — sister."
+        }
+      ],
+      "notes": [
+        "**The short possessives come AFTER the noun.** *Книгата ми* = my book. *Книгата ти* = your book. *Книгата му* = his book. The noun goes first and the possessive follows — the reverse of English \"my book\". Think \"book-the my\" and you've got it.",
+        "⚠️ **For ordinary things, the noun MUST take the article first.** Not *книга ми* but **книгата ми**. It makes sense: if it's yours, it's clear which one is meant. Think of it like this — *книгата ми* is literally \"the book of mine\".",
+        "⚠️ **But for the closest family members, the article is NOT used.** *Майка ми*, not *майката ми*. *Баща ми*, *брат ми*, *сестра ми*, *син ми*, *дъщеря ми*, *жена ми*, *мъж ми*. It's a small, closed group: parents, siblings, children and spouse. For more distant relatives the article comes back: *лелята ми* (my aunt), *братовчедът ми* (my cousin).",
+        "**The short possessives follow the same position rule as съм.** They can't be the first word in a sentence, and they stand right after the word they belong to. *Майка ми е учителка* — my mother is a teacher.",
+        "**Ѝ with an accent means \"her\".** Without the accent, *и* means \"and\". That one little stroke separates *книгата ѝ* (her book) from *книгата и*, which means nothing. People often skip it in handwriting and texts, but you should write it correctly.",
+        "**Age uses \"at\": на колко години си?** Literally \"at how many years are you?\" — and the answer is *На двайсет години съм.* The word *години* is never dropped, the way English can drop \"years old\". ⚠️ Don't say *Имам двайсет години*; that's French and Spanish word order, not Bulgarian.",
+        "**Женен for men, омъжена for women — and the roots are different.** *Женен* comes from *жена* (wife): \"wived\". *Омъжена* comes from *мъж* (husband): \"husbanded\". ⚠️ A woman who says *женена съм* immediately sounds like a foreign learner.",
+        "**Значи means \"so, that means\" and is used as a conversation linker.** Bulgarians use it as often as English speakers use \"so\" at the start of a sentence. Slipping it in makes your speech sound much more natural."
+      ],
+      "grammars": [
+        {
+          "title": "Short possessives — seven words that cover everything",
+          "body": [
+            "Their form never changes with the thing owned; they only show **who the owner is**. Compare French or German, which demand double agreement."
+          ],
+          "table": {
+            "head": [
+              "Owner",
+              "Word",
+              "Ordinary thing",
+              "Family member",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "I",
+                "ми",
+                "книгата ми",
+                "майка ми",
+                "my book / my mother"
+              ],
+              [
+                "you",
+                "ти",
+                "книгата ти",
+                "баща ти",
+                "your book / your father"
+              ],
+              [
+                "he",
+                "му",
+                "книгата му",
+                "брат му",
+                "his book / his brother"
+              ],
+              [
+                "she",
+                "ѝ",
+                "книгата ѝ",
+                "сестра ѝ",
+                "her book / her sister"
+              ],
+              [
+                "we",
+                "ни",
+                "книгата ни",
+                "детето ни",
+                "our book / our child"
+              ],
+              [
+                "you (pl / formal)",
+                "ви",
+                "книгата ви",
+                "стаята ви",
+                "your book / your room"
+              ],
+              [
+                "they",
+                "им",
+                "книгата им",
+                "децата им",
+                "their book / their children"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that these are exactly the same words as the \"to me / to you\" forms you've already used in *Приятно ми е* and *Дайте ми*. Bulgarian uses one set of little words for two jobs, and their position tells you which is meant."
+          ]
+        },
+        {
+          "title": "Long forms — when you want emphasis",
+          "body": [
+            "There are also long possessive forms. They behave like adjectives: they agree in gender and number with the thing owned, and carry their own definite article. They're used when the ownership is being stressed or contrasted."
+          ],
+          "table": {
+            "head": [
+              "Owner",
+              "Masculine",
+              "Feminine",
+              "Neuter",
+              "Plural"
+            ],
+            "rows": [
+              [
+                "I",
+                "моят",
+                "моята",
+                "моето",
+                "моите"
+              ],
+              [
+                "you",
+                "твоят",
+                "твоята",
+                "твоето",
+                "твоите"
+              ],
+              [
+                "he",
+                "неговият",
+                "неговата",
+                "неговото",
+                "неговите"
+              ],
+              [
+                "she",
+                "нейният",
+                "нейната",
+                "нейното",
+                "нейните"
+              ],
+              [
+                "we",
+                "нашият",
+                "нашата",
+                "нашето",
+                "нашите"
+              ],
+              [
+                "you (pl)",
+                "вашият",
+                "вашата",
+                "вашето",
+                "вашите"
+              ],
+              [
+                "they",
+                "техният",
+                "тяхната",
+                "тяхното",
+                "техните"
+              ]
+            ]
+          },
+          "after": [
+            "*Това е моята книга, не твоята.* — This is **my** book, not yours. Outside contrasts like that, Bulgarians almost always use the short form. **When in doubt, use the short form** — it's shorter, more common, and needs no agreement at all."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The family tree",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bulgarian",
+            "Say it",
+            "Meaning",
+            "Bulgarian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "майка",
+              "MAI-ka",
+              "mother",
+              "баща",
+              "bash-TA",
+              "father"
+            ],
+            [
+              "мама",
+              "MA-ma",
+              "mom",
+              "татко",
+              "TAT-ko",
+              "dad"
+            ],
+            [
+              "син",
+              "seen",
+              "son",
+              "дъщеря",
+              "dăsh-teh-RYA",
+              "daughter"
+            ],
+            [
+              "брат",
+              "brat",
+              "brother",
+              "сестра",
+              "ses-TRA",
+              "sister"
+            ],
+            [
+              "баба",
+              "BA-ba",
+              "grandmother",
+              "дядо",
+              "DYA-do",
+              "grandfather"
+            ],
+            [
+              "леля",
+              "LEH-lya",
+              "aunt",
+              "чичо",
+              "CHEE-cho",
+              "uncle (father's brother)"
+            ],
+            [
+              "братовчед",
+              "bra-tov-CHED",
+              "cousin (m)",
+              "братовчедка",
+              "bra-tov-CHED-ka",
+              "cousin (f)"
+            ],
+            [
+              "жена",
+              "zheh-NA",
+              "wife; woman",
+              "мъж",
+              "măzh",
+              "husband; man"
+            ],
+            [
+              "родители",
+              "ro-DEE-teh-lee",
+              "parents",
+              "деца",
+              "deh-TSA",
+              "children"
+            ],
+            [
+              "семейство",
+              "seh-MEY-stvo",
+              "family",
+              "роднини",
+              "rod-NEE-nee",
+              "relatives"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Like English, Bulgarian has no separate words for older and younger siblings.** *Брат* just means brother. If age matters, an adjective is added: *по-голям брат* (older brother) and *по-малък брат* (younger brother) — literally \"bigger\" and \"smaller\"."
+        },
+        {
+          "type": "p",
+          "text": "Elsewhere Bulgarian is more detailed than English: there are different words for an uncle on your father's side (*чичо*) and on your mother's side (*вуйчо*). In everyday city speech *чичо* is often used for both, so don't worry."
+        }
+      ]
+    },
+    {
+      "title": "Age, status, and questions you're allowed to ask",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bulgarian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "На колко години си?",
+              "na KOL-ko go-DEE-nee see",
+              "How old are you?"
+            ],
+            [
+              "На двайсет и пет години съм.",
+              "na DVAI-set ee pet go-DEE-nee săm",
+              "I'm twenty-five."
+            ],
+            [
+              "Женен ли си?",
+              "ZHEH-nen lee see",
+              "Are you married? (to a man)"
+            ],
+            [
+              "Омъжена ли си?",
+              "o-MĂ-zheh-na lee see",
+              "Are you married? (to a woman)"
+            ],
+            [
+              "Не съм женен.",
+              "neh săm ZHEH-nen",
+              "I'm not married. (man)"
+            ],
+            [
+              "Имам две деца.",
+              "EE-mam dveh deh-TSA",
+              "I have two children."
+            ],
+            [
+              "Нямам деца.",
+              "NYA-mam deh-TSA",
+              "I don't have children."
+            ],
+            [
+              "Живея сам.",
+              "zhee-VEH-ya sam",
+              "I live alone."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Questions about age, marital status and work are considered normal and friendly in Bulgaria, not nosy — quite different from much of Western Europe. If you get asked all of them in the first five minutes, the conversation is going well."
+        },
+        {
+          "type": "kotak",
+          "title": "Имен ден — the name day, sometimes bigger than a birthday",
+          "items": [
+            "Most Bulgarian names are tied to a saint, and that saint's day is the **имен ден** — name day — celebrated like a birthday. Everyone named Иван celebrates **Ивановден** on January 7; everyone named Георги celebrates **Гергьовден** on May 6.",
+            "The difference from a birthday: on a name day, **you don't need an invitation**. People can just drop by, and the person celebrating is expected to treat them. The greeting: *Честит имен ден!* (*ches-TEET EE-men den*).",
+            "If your Bulgarian colleague suddenly brings cake to the office for no obvious reason, this is most likely why."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bg": "семейство",
+      "baca": "seh-MEY-stvo",
+      "en": "family"
+    },
+    {
+      "bg": "майка",
+      "baca": "MAI-ka",
+      "en": "mother"
+    },
+    {
+      "bg": "баща",
+      "baca": "bash-TA",
+      "en": "father"
+    },
+    {
+      "bg": "брат",
+      "baca": "brat",
+      "en": "brother"
+    },
+    {
+      "bg": "сестра",
+      "baca": "ses-TRA",
+      "en": "sister"
+    },
+    {
+      "bg": "син",
+      "baca": "seen",
+      "en": "son"
+    },
+    {
+      "bg": "дъщеря",
+      "baca": "dăsh-teh-RYA",
+      "en": "daughter"
+    },
+    {
+      "bg": "родители",
+      "baca": "ro-DEE-teh-lee",
+      "en": "parents"
+    },
+    {
+      "bg": "баба",
+      "baca": "BA-ba",
+      "en": "grandmother"
+    },
+    {
+      "bg": "дядо",
+      "baca": "DYA-do",
+      "en": "grandfather"
+    },
+    {
+      "bg": "леля",
+      "baca": "LEH-lya",
+      "en": "aunt"
+    },
+    {
+      "bg": "момиче",
+      "baca": "mo-MEE-cheh",
+      "en": "girl"
+    },
+    {
+      "bg": "момче",
+      "baca": "mom-CHEH",
+      "en": "boy"
+    },
+    {
+      "bg": "година",
+      "baca": "go-DEE-na",
+      "en": "year"
+    },
+    {
+      "bg": "женен",
+      "baca": "ZHEH-nen",
+      "en": "married (m)"
+    },
+    {
+      "bg": "омъжена",
+      "baca": "o-MĂ-zheh-na",
+      "en": "married (f)"
+    },
+    {
+      "bg": "по-голям",
+      "baca": "po-go-LYAM",
+      "en": "bigger; older"
+    },
+    {
+      "bg": "по-малък",
+      "baca": "po-MA-lăk",
+      "en": "smaller; younger"
+    },
+    {
+      "bg": "учи",
+      "baca": "OO-chee",
+      "en": "he/she studies"
+    },
+    {
+      "bg": "университет",
+      "baca": "oo-nee-ver-see-TET",
+      "en": "university"
+    },
+    {
+      "bg": "значи",
+      "baca": "ZNA-chee",
+      "en": "so, that means"
+    },
+    {
+      "bg": "кой / коя",
+      "baca": "koy / ko-YA",
+      "en": "who (m / f)"
+    },
+    {
+      "bg": "сам",
+      "baca": "sam",
+      "en": "alone"
+    },
+    {
+      "bg": "живея",
+      "baca": "zhee-VEH-ya",
+      "en": "I live"
+    },
+    {
+      "bg": "честит",
+      "baca": "ches-TEET",
+      "en": "happy (in greetings)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Bulgarian. Watch which ones need the article.",
+      "items": [
+        "my mother",
+        "my book",
+        "your father (informal)",
+        "your room (formal)",
+        "my sister",
+        "their children"
+      ]
+    },
+    {
+      "prompt": "Fill in the right short possessive.",
+      "items": [
+        "Това е майка ____. (my)",
+        "Книгата ____ е на масата. (your, informal)",
+        "Брат ____ живее във Варна. (her)",
+        "Стаята ____ е на втория етаж. (your, formal)",
+        "Родителите ____ са в София. (our)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "е / това / ми / майка",
+        "години / на / е / деветнайсет",
+        "ли / брат / имаш",
+        "е / женен / той",
+        "ми / живеят / родителите / във Варна"
+      ]
+    },
+    {
+      "prompt": "Answer about yourself in Bulgarian.",
+      "items": [
+        "На колко години си? ____",
+        "Имаш ли брат или сестра? ____",
+        "Къде живеят родителите ти? ____",
+        "Женен ли си? Омъжена ли си? ____",
+        "Как се казва майка ти? ____"
+      ]
+    }
+  ],
+  "answers": [
+    "майка ми — книгата ми — баща ти — стаята ви — сестра ми — децата им",
+    "ми — ти — ѝ — ви — ни",
+    "Това е майка ми. — На деветнайсет години е. — Имаш ли брат? — Той е женен. — Родителите ми живеят във Варна.",
+    "На двайсет и пет години съм. — Да, имам една сестра. — Родителите ми живеят в Джакарта. — Не, не съм женен. — Майка ми се казва Сити."
+  ]
+}

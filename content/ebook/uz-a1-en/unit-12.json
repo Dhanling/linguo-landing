@@ -1,0 +1,537 @@
+{
+  "title": "Commands and requests: from \"kel\" to \"kelingiz\"",
+  "title_target": "Buyruq mayli: kel, keling, kelingiz",
+  "goal": "Tell, invite, offer, and forbid at the right level of politeness — the tools Uzbeks use most when hosting guests.",
+  "bekal": [
+    "forming three levels of command: *kel*, *keling*, *kelingiz*",
+    "forbidding with *-mang* and inviting with *-aylik*",
+    "softening commands with *iltimos*, *marhamat*, and the suffix *-chi*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Mehmon boʻling!",
+      "intro": "Budi visits Nilufar's family home for the first time. Nilufar's mother opens the door.",
+      "lines": [
+        {
+          "speaker": "Ona:",
+          "text": "Keling, keling! Xush kelibsiz!",
+          "id": "Come in, come in! Welcome!",
+          "literal": "come, come! glad came-you!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Rahmat, opa. Mana, kichkina sovgʻa.",
+          "id": "Thank you, ma'am. Here, a little gift.",
+          "literal": "thanks, elder-sister. here, small gift."
+        },
+        {
+          "speaker": "Ona:",
+          "text": "Voy, ovora boʻlmang! Kiring, oyoq kiyimni yeching.",
+          "id": "Oh, you shouldn't have! Come in, take off your shoes.",
+          "literal": "oh, bother don't-be! enter, foot clothing-(object) take-off."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Xoʻp. Qayerga oʻtiray?",
+          "id": "OK. Where shall I sit?",
+          "literal": "OK. where-to sit-I?"
+        },
+        {
+          "speaker": "Ona:",
+          "text": "Toʻrga oʻting! Dasturxonga marhamat.",
+          "id": "Take the seat of honor! Please come to the table.",
+          "literal": "seat-of-honor-to pass! spread-to please."
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Choy quyay. Koʻk choymi yoki qora choymi?",
+          "id": "Let me pour the tea. Green tea or black tea?",
+          "literal": "tea pour-I. green tea-? or black tea-?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Koʻk choy, iltimos. Rahmat!",
+          "id": "Green tea, please. Thank you!",
+          "literal": "green tea, please. thanks!"
+        },
+        {
+          "speaker": "Ona:",
+          "text": "Nondan oling, uyalmang. Oshni ham torting.",
+          "id": "Have some bread, don't be shy. Try the plov too.",
+          "literal": "bread-from take, don't-be-shy. plov-(object) also pull."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Juda mazali! Retseptini bering-chi?",
+          "id": "It's delicious! Could I have the recipe?",
+          "literal": "very tasty! recipe-its-(object) give-(soft)?"
+        },
+        {
+          "speaker": "Ona:",
+          "text": "Albatta. Lekin avval yeng, keyin yozing!",
+          "id": "Of course. But eat first, write later!",
+          "literal": "of-course. but first eat, then write!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Xoʻp boʻladi. Yana keling deb aytmang — men oʻzim kelaman!",
+          "id": "All right. Don't tell me \"come again\" — I'll come on my own!",
+          "literal": "OK becomes. again come saying don't-say — I myself come-I!"
+        }
+      ],
+      "notes": [
+        "**Keling is said twice, and on purpose.** Repeating a command is how Uzbek warms it up: *keling-keling*, *oling-oling*, *mayli-mayli*. Once sounds like an order; twice sounds like a welcome.",
+        "**Toʻr is the seat of honor** — the side of the room farthest from the door. Guests are guided there, and refusing it only troubles the host. If you're told *toʻrga oʻting*, just go.",
+        "**Dasturxon** isn't a table but the cloth spread out with food — and also the name for the whole meal. *Dasturxonga marhamat* is the most typical invitation to eat.",
+        "**Ovora boʻlmang = \"don't go to any trouble\".** Paired with *uyalmang* (don't be shy), these are must-know phrases for any guest in Uzbekistan. The host will keep offering; refusing once is seen as politeness, so if you're really full, say *rahmat, toʻydim* (thank you, I'm full)."
+      ],
+      "grammars": [
+        {
+          "title": "Three levels of command, and one invitation",
+          "body": [
+            "The basic form is the bare verb stem — no ending at all. Politeness is added from there."
+          ],
+          "table": {
+            "head": [
+              "Level",
+              "Form",
+              "*kelmoq*",
+              "*oʻtirmoq*",
+              "Used with"
+            ],
+            "rows": [
+              [
+                "Familiar",
+                "bare stem",
+                "*kel!*",
+                "*oʻtir!*",
+                "younger siblings, children, close friends"
+              ],
+              [
+                "Polite",
+                "stem + **-ing**",
+                "*keling!*",
+                "*oʻtiring!*",
+                "everyone else — the safest form"
+              ],
+              [
+                "Very polite",
+                "stem + **-ingiz**",
+                "*kelingiz!*",
+                "*oʻtiringiz!*",
+                "elders, superiors, formal writing"
+              ],
+              [
+                "Invitation",
+                "stem + **-aylik**",
+                "*kelaylik!*",
+                "*oʻtiraylik!*",
+                "\"let's…\""
+              ],
+              [
+                "Yourself",
+                "stem + **-ay**",
+                "*kelay*",
+                "*oʻtiray*",
+                "\"let me…\", asking permission"
+              ]
+            ]
+          },
+          "after": [
+            "**Use -ing until you're really sure.** The bare form sounds rude to people you've just met, and there's no harm in sounding a little too polite.",
+            "The last row is very handy: *Choy quyay* (let me pour the tea), *Kiray?* (may I come in?), *Koʻray* (let me see). The *-ay* form is the gentlest way to offer yourself.",
+            "⚠️ Stems ending in a vowel insert *-y-*: *oʻqi-* → *oʻqi**y**ing*, *ishla-* → *ishla**y**ing*. And *-ing* on stems ending in *-k/-q* softens them: *yoq-* → *yoqing*, but *toʻk-* → *toʻking*."
+          ]
+        },
+        {
+          "title": "Forbidding, and softening",
+          "body": [
+            "A prohibition uses the same *-ma-* as an ordinary negative, inserted before the command ending."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "stem + **-ma**",
+                "*kelma!*",
+                "don't come (familiar)"
+              ],
+              [
+                "stem + **-mang**",
+                "*kelmang!*",
+                "don't come (polite)"
+              ],
+              [
+                "stem + **-mangiz**",
+                "*kelmangiz!*",
+                "don't come (very polite)"
+              ],
+              [
+                "+ **iltimos**",
+                "*Iltimos, kuting.*",
+                "please wait"
+              ],
+              [
+                "+ **-chi**",
+                "*Ayting-chi.*",
+                "go on, tell me"
+              ],
+              [
+                "+ **marhamat**",
+                "*Marhamat, oling.*",
+                "please, help yourself"
+              ]
+            ]
+          },
+          "after": [
+            "**-chi is the most typically Uzbek softener.** It turns a command into a friendly request: *Bering* (give) → *Bering-chi* (could I have it?). The closest English is a friendly \"go on\" or a tag like \"would you?\".",
+            "*Iltimos* can go before or after: *Iltimos, kuting* or *Kuting, iltimos*. Both are equally polite.",
+            "For a gentler prohibition, the *kerak emas* form is used: *Bormasangiz ham boʻladi* (it's fine if you don't go). That form waits for unit 18; for now *-mang* covers every situation."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Being a guest in an Uzbek home",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Hosting guests in Uzbekistan isn't extra friendliness but a duty seen as sacred. There's a proverb: *Mehmon otangdan ulugʻ* — \"a guest is greater than your father\". These ten sentences cover a whole first visit."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**Xush kelibsiz!**",
+              "khush ke-LIB-siz",
+              "Welcome!"
+            ],
+            [
+              "**Kiring, marhamat.**",
+              "ki-RING mår-hå-MAT",
+              "Come in, please."
+            ],
+            [
+              "**Ovora boʻlmang.**",
+              "å-vå-RÅ bol-MANG",
+              "Don't go to any trouble."
+            ],
+            [
+              "**Uyalmang, oling.**",
+              "u-yål-MANG å-LING",
+              "Don't be shy, help yourself."
+            ],
+            [
+              "**Juda mazali!**",
+              "ju-DÅ må-zå-LI",
+              "It's delicious!"
+            ],
+            [
+              "**Rahmat, toʻydim.**",
+              "rah-MAT TOY-dim",
+              "Thank you, I'm full."
+            ],
+            [
+              "**Qoʻlingiz dard koʻrmasin!**",
+              "QO-lin-giz dård kor-må-SIN",
+              "May your hands never ache (praise for the cooking)"
+            ],
+            [
+              "**Uyingiz obod boʻlsin!**",
+              "u-YIN-giz å-BÅD bol-SIN",
+              "May your home prosper."
+            ],
+            [
+              "**Endi ketaman.**",
+              "en-DI ke-tå-MAN",
+              "I'll be going now."
+            ],
+            [
+              "**Yana keling!**",
+              "yå-NÅ ke-LING",
+              "Come again!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The two blessings in the middle of the table — *Qoʻlingiz dard koʻrmasin* and *Uyingiz obod boʻlsin* — use the *-sin* form, a command for the third person (\"may it…\"). It isn't taught as grammar in this book; just learn them whole, and people will be impressed."
+        }
+      ]
+    },
+    {
+      "title": "At home: things and rooms",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Vocabulary you'll use the moment you're invited."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "Meaning",
+            "Oʻzbekcha",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**dasturxon**",
+              "dås-tur-KHÅN",
+              "food spread",
+              "**choynak**",
+              "chåy-NAK",
+              "teapot"
+            ],
+            [
+              "**piyola**",
+              "pi-yå-LÅ",
+              "tea bowl",
+              "**likop**",
+              "li-KÅP",
+              "plate"
+            ],
+            [
+              "**qoshiq**",
+              "qå-SHIQ",
+              "spoon",
+              "**pichoq**",
+              "pi-CHÅQ",
+              "knife"
+            ],
+            [
+              "**oshxona**",
+              "åsh-khå-NÅ",
+              "kitchen",
+              "**hammom**",
+              "håm-MÅM",
+              "bathroom"
+            ],
+            [
+              "**hovli**",
+              "håv-LI",
+              "courtyard",
+              "**gilam**",
+              "gi-LAM",
+              "carpet"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "A *piyola* is a handleless tea bowl, and pouring it has its own rules: the host fills it **only a third of the way**. It isn't stinginess — the more often they pour, the more often they attend to you, and that's the respect. A full bowl actually means \"time to go home\"."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Hammom* (bathroom) is a cousin of Turkish \"hamam\" and Arabic \"hammam\". But if you're looking for the toilet, the right word is *hojatxona* or, in public places, simply *tualet*."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uz": "mehmon",
+      "baca": "meh-MÅN",
+      "en": "guest"
+    },
+    {
+      "uz": "xush kelibsiz",
+      "baca": "khush ke-LIB-siz",
+      "en": "welcome"
+    },
+    {
+      "uz": "kirmoq",
+      "baca": "kir-MÅQ",
+      "en": "to enter"
+    },
+    {
+      "uz": "yechmoq",
+      "baca": "yech-MÅQ",
+      "en": "to take off (clothes)"
+    },
+    {
+      "uz": "oyoq kiyim",
+      "baca": "å-YÅQ ki-YIM",
+      "en": "footwear, shoes"
+    },
+    {
+      "uz": "toʻr",
+      "baca": "tor",
+      "en": "seat of honor"
+    },
+    {
+      "uz": "dasturxon",
+      "baca": "dås-tur-KHÅN",
+      "en": "meal; food spread"
+    },
+    {
+      "uz": "piyola",
+      "baca": "pi-yå-LÅ",
+      "en": "tea bowl"
+    },
+    {
+      "uz": "choynak",
+      "baca": "chåy-NAK",
+      "en": "teapot"
+    },
+    {
+      "uz": "qoshiq",
+      "baca": "qå-SHIQ",
+      "en": "spoon"
+    },
+    {
+      "uz": "pichoq",
+      "baca": "pi-CHÅQ",
+      "en": "knife"
+    },
+    {
+      "uz": "likop",
+      "baca": "li-KÅP",
+      "en": "plate"
+    },
+    {
+      "uz": "hovli",
+      "baca": "håv-LI",
+      "en": "courtyard"
+    },
+    {
+      "uz": "gilam",
+      "baca": "gi-LAM",
+      "en": "carpet"
+    },
+    {
+      "uz": "hammom",
+      "baca": "håm-MÅM",
+      "en": "bathroom"
+    },
+    {
+      "uz": "mazali",
+      "baca": "må-zå-LI",
+      "en": "delicious"
+    },
+    {
+      "uz": "toʻymoq",
+      "baca": "toy-MÅQ",
+      "en": "to be full (after eating)"
+    },
+    {
+      "uz": "uyalmoq",
+      "baca": "u-yål-MÅQ",
+      "en": "to be shy, embarrassed"
+    },
+    {
+      "uz": "ovora",
+      "baca": "å-vå-RÅ",
+      "en": "bothered, troubled"
+    },
+    {
+      "uz": "tortmoq",
+      "baca": "tårt-MÅQ",
+      "en": "to pull; to taste"
+    },
+    {
+      "uz": "retsept",
+      "baca": "ret-SEPT",
+      "en": "recipe"
+    },
+    {
+      "uz": "iltimos",
+      "baca": "il-ti-MÅS",
+      "en": "please"
+    },
+    {
+      "uz": "marhamat",
+      "baca": "mår-hå-MAT",
+      "en": "please, go ahead"
+    },
+    {
+      "uz": "xoʻp",
+      "baca": "khop",
+      "en": "OK, all right"
+    },
+    {
+      "uz": "oʻzim",
+      "baca": "o-ZIM",
+      "en": "myself"
+    },
+    {
+      "uz": "kichkina",
+      "baca": "kich-ki-NÅ",
+      "en": "small"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Make a polite command (-ing).",
+      "items": [
+        "kelmoq → ____",
+        "oʻtirmoq → ____",
+        "olmoq → ____",
+        "kutmoq → ____",
+        "yozmoq → ____",
+        "oʻqimoq → ____"
+      ]
+    },
+    {
+      "prompt": "Make a polite prohibition (-mang).",
+      "items": [
+        "Kelmoq → ____",
+        "Kechikmoq → ____",
+        "Uyalmoq → ____",
+        "Ovora boʻlmoq → ____",
+        "Unutmoq → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Uzbek.",
+      "items": [
+        "Please come in!",
+        "Wait a moment, please.",
+        "Don't be shy, help yourself.",
+        "Let's go to the market.",
+        "Let me pour the tea.",
+        "Don't be late!"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "keling / marhamat / ,",
+        "boʻlmang / ovora",
+        "oling / uyalmang / ,",
+        "quyay / choy / men",
+        "bering-chi / retseptini"
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 10. Translate into Uzbek without looking back at the unit.",
+      "items": [
+        "What are you doing now?",
+        "I'm waiting for the bus.",
+        "It's raining.",
+        "They're chatting.",
+        "Be careful!"
+      ]
+    }
+  ],
+  "answers": [
+    "keling — oʻtiring — oling — kuting — yozing — oʻqiying",
+    "Kelmang — Kechikmang — Uyalmang — Ovora boʻlmang — Unutmang",
+    "Kiring, marhamat! — Iltimos, bir daqiqa kuting. — Uyalmang, oling. — Bozorga boraylik. — Choy quyay. — Kechikmang!",
+    "Marhamat, keling. — Ovora boʻlmang. — Uyalmang, oling. — Men choy quyay. — Retseptini bering-chi.",
+    "Hozir nima qilyapsiz? — Men avtobus kutyapman. — Yomgʻir yogʻyapti. — Ular gaplashyaptilar. — Ehtiyot boʻling!"
+  ]
+}

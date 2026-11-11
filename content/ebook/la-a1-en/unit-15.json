@@ -1,0 +1,617 @@
+{
+  "title": "He, this, that, who",
+  "title_target": "Is, hic, ille, qui",
+  "goal": "Point to people and things with three demonstratives, use third-person pronouns, and join two sentences with a qui clause.",
+  "bekal": [
+    "tell *hic* (this, near me) from *ille* (that, far away)",
+    "use *is, ea, id* for \"he/she/it\" and \"his/her/its\"",
+    "build *qui* clauses with the right form"
+  ],
+  "dialogs": [
+    {
+      "title": "Colloquium — In foro, ante tabernam",
+      "intro": "Quintus's family runs into people — not all of whom they know.",
+      "lines": [
+        {
+          "speaker": "Cornelia:",
+          "text": "Quis est ille vir? Eum non novi.",
+          "id": "Who is that man? I don't know him.",
+          "literal": "who is-he that-masc man? him-obj not know-I-did."
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Ille est Publius, mercator. Eius taberna in foro est.",
+          "id": "That's Publius, a merchant. His shop is in the forum.",
+          "literal": "that-masc is-he Publius, merchant. him-of shop in forum-in is-it."
+        },
+        {
+          "speaker": "Cornelia:",
+          "text": "Et haec femina? Estne uxor eius?",
+          "id": "And this woman? Is she his wife?",
+          "literal": "and this-fem woman? is-she-Q wife him-of?"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Ita. Haec est Flavia. Ea Graeca est.",
+          "id": "Yes. This is Flavia. She's Greek.",
+          "literal": "yes. this-fem is-she Flavia. she Greek-fem is-she."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Pater, quis est puer qui cum eis ambulat?",
+          "id": "Father, who is the boy walking with them?",
+          "literal": "father-call, who is-he boy who with them-with walk-he?"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Is est filius eorum. Nomen ei est Gaius.",
+          "id": "He's their son. His name is Gaius.",
+          "literal": "he is-he son them-of. name him-to is-it Gaius."
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Gaius! Puer quem heri in schola vidi!",
+          "id": "Gaius! The boy I saw at school yesterday!",
+          "literal": "Gaius! boy whom-obj yesterday in school-in see-I-did!"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Hic puer? Minime. Ille quem vidisti alius erat.",
+          "id": "This boy? No. The one you saw was someone else.",
+          "literal": "this-masc boy? not-at-all. that-masc whom-obj see-you-did other is-he-was."
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Ipsa vidi, Marce! Oculi mei boni sunt.",
+          "id": "I saw him myself, Marcus! My eyes are good.",
+          "literal": "self-fem see-I-did, Marcus-call! eye-pl my-pl good-pl are-they."
+        },
+        {
+          "speaker": "Cornelia:",
+          "text": "Eos ad cenam invitare debemus.",
+          "id": "We should invite them to dinner.",
+          "literal": "them-obj to dinner-obj invite must-we."
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Ita. Cena quam Cornelia parat optima est!",
+          "id": "Yes. The dinner Cornelia makes is the best!",
+          "literal": "yes. dinner which-obj Cornelia prepare-she best-fem is-it!"
+        },
+        {
+          "speaker": "Cornelia:",
+          "text": "Id verum est. Sed hodie tu cenam paras!",
+          "id": "That's true. But today you're making dinner!",
+          "literal": "that-neut true-neut is-it. but today you dinner-obj prepare-you!"
+        }
+      ],
+      "notes": [
+        "**Hic, ille, is — three different distances.** *Hic* points to what is near the speaker (\"this\"), *ille* to what is far away (\"that, over there\"), and *is* to what has already been mentioned (\"he, the one just named\"). English uses \"this\", \"that\", and \"he/she/it\" for the same distinctions.",
+        "**Eius means \"his/her/its\", belonging to someone else.** Look at *taberna eius* (\"his shop\") and *uxor eius* (\"his wife\"). *Eius* never changes its ending — one form for masculine, feminine, and neuter. It differs from *suus*, which is used when the owner is the subject of the sentence itself.",
+        "**Puer quem vidi — the linking word takes its form from its own clause.** *Quem* is in the object form because inside the clause it is the object of *vidi*. Its gender and number come from *puer*, but its job comes from its own clause. This two-source rule is the heart of the whole unit.",
+        "**Ipsa vidi — \"I saw it myself\".** *Ipse, ipsa, ipsum* means \"self\" and is used for emphasis. Iulia is female, so she says *ipsa*. This word gives the phrase *ipso facto* — \"by the act itself\"."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Three demonstratives",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "All three change endings like adjectives, but they share two special endings: the \"of\" form ends in *-ius* and the \"to\" form in *-i*. Learn those two endings once, and all three become easy."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Job",
+            "is, ea, id (he, the one mentioned)",
+            "hic, haec, hoc (this)",
+            "ille, illa, illud (that)"
+          ],
+          "rows": [
+            [
+              "subject",
+              "is / ea / id",
+              "hic / haec / hoc",
+              "ille / illa / illud"
+            ],
+            [
+              "object",
+              "eum / eam / id",
+              "hunc / hanc / hoc",
+              "illum / illam / illud"
+            ],
+            [
+              "of",
+              "eius",
+              "huius",
+              "illius"
+            ],
+            [
+              "to",
+              "ei",
+              "huic",
+              "illi"
+            ],
+            [
+              "with/in",
+              "eo / ea / eo",
+              "hoc / hac / hoc",
+              "illo / illa / illo"
+            ],
+            [
+              "subject pl",
+              "ei / eae / ea",
+              "hi / hae / haec",
+              "illi / illae / illa"
+            ],
+            [
+              "object pl",
+              "eos / eas / ea",
+              "hos / has / haec",
+              "illos / illas / illa"
+            ],
+            [
+              "of pl",
+              "eorum / earum",
+              "horum / harum",
+              "illorum / illarum"
+            ],
+            [
+              "to, with/in pl",
+              "eis",
+              "his",
+              "illis"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "All three can stand alone (\"that one\", \"he\") or go with a noun (\"that man\"). *Ille vir* means \"that man\"; *ille* by itself means \"he over there\". The form is the same either way."
+        },
+        {
+          "type": "kotak",
+          "title": "Their traces in modern languages",
+          "items": [
+            "*ille* gave French its article *le*, Italian *il*, and Spanish *el*. Latin had no articles; its daughters made them from this demonstrative.",
+            "*ipse* gave us *ipso facto* and *ipse dixit* (\"he said it himself\").",
+            "*idem, eadem, idem* means \"the same\", and is still used in footnotes as *ibid.* and *id.*",
+            "*hic et nunc* — \"here and now\" — uses *hic* in its sense of place, not \"this\"."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The linking word qui, quae, quod",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A \"who/which …\" clause is joined with *qui*. Its form comes from two places at once, and that is the only thing that needs practice."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Job",
+            "Masculine",
+            "Feminine",
+            "Neuter"
+          ],
+          "rows": [
+            [
+              "subject",
+              "qui",
+              "quae",
+              "quod"
+            ],
+            [
+              "object",
+              "quem",
+              "quam",
+              "quod"
+            ],
+            [
+              "of",
+              "cuius",
+              "cuius",
+              "cuius"
+            ],
+            [
+              "to",
+              "cui",
+              "cui",
+              "cui"
+            ],
+            [
+              "with/in",
+              "quo",
+              "qua",
+              "quo"
+            ],
+            [
+              "subject pl",
+              "qui",
+              "quae",
+              "quae"
+            ],
+            [
+              "object pl",
+              "quos",
+              "quas",
+              "quae"
+            ],
+            [
+              "of pl",
+              "quorum",
+              "quarum",
+              "quorum"
+            ],
+            [
+              "to, with/in pl",
+              "quibus",
+              "quibus",
+              "quibus"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "The two-source rule"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Translation",
+            "Why it has that form"
+          ],
+          "rows": [
+            [
+              "Puer **qui** venit amicus meus est.",
+              "The boy who is coming is my friend.",
+              "masculine singular from *puer*; subject because he does the coming"
+            ],
+            [
+              "Puer **quem** vidi amicus meus est.",
+              "The boy whom I saw is my friend.",
+              "masculine singular from *puer*; object because he is the one seen"
+            ],
+            [
+              "Puella **cuius** librum lego …",
+              "The girl whose book I'm reading …",
+              "feminine singular; \"of\" because it's her book"
+            ],
+            [
+              "Amicus **cui** epistulam misi …",
+              "The friend to whom I sent a letter …",
+              "masculine singular; \"to\" because he receives it"
+            ],
+            [
+              "Cena **quam** paras optima est.",
+              "The dinner you're making is the best.",
+              "feminine singular from *cena*; object in its clause"
+            ],
+            [
+              "Milites **qui** urbem servant fortes sunt.",
+              "The soldiers who guard the city are brave.",
+              "masculine plural; subject in its clause"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "How to check: cover the main sentence and ask, \"inside this clause, is it doing the action or receiving it?\" The answer decides the form. Gender and number are simply copied from the word it describes."
+        },
+        {
+          "type": "p",
+          "text": "*Qui* can also stand without a word to describe, meaning \"the one who\": *qui vult, potest* — \"the one who wants, can\". Its neuter means \"what\": *quod dicis verum est* — \"what you say is true\"."
+        }
+      ]
+    },
+    {
+      "title": "Asking with pronouns",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The question words *quis* and *quid* use almost the same table as *qui*, and you have been using some of their forms since Unit 1."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Job",
+            "Person",
+            "Thing",
+            "Example"
+          ],
+          "rows": [
+            [
+              "subject",
+              "quis?",
+              "quid?",
+              "Quis venit? — Who's coming?"
+            ],
+            [
+              "object",
+              "quem?",
+              "quid?",
+              "Quem vides? — Who do you see?"
+            ],
+            [
+              "of",
+              "cuius?",
+              "cuius?",
+              "Cuius liber est? — Whose book is this?"
+            ],
+            [
+              "to",
+              "cui?",
+              "cui?",
+              "Cui scribis? — Who are you writing to?"
+            ],
+            [
+              "with/in",
+              "quo?",
+              "quo?",
+              "Cum quo ambulas? — Who are you walking with?"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Other question word",
+            "Meaning",
+            "Other question word",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ubi?",
+              "where?",
+              "unde?",
+              "where from?"
+            ],
+            [
+              "quo?",
+              "where to?",
+              "qua?",
+              "which way?"
+            ],
+            [
+              "quando?",
+              "when?",
+              "quam diu?",
+              "how long?"
+            ],
+            [
+              "cur?",
+              "why?",
+              "quomodo?",
+              "how?"
+            ],
+            [
+              "quot?",
+              "how many?",
+              "quantus?",
+              "how big?"
+            ],
+            [
+              "qualis?",
+              "what kind?",
+              "uter?",
+              "which of two?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that almost every Latin question word starts with *qu-*. That's no accident: English has the same pattern with *wh-*, and both inherited it from the same parent language, thousands of years before Rome was founded."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "la": "is, ea, id",
+      "baca": "IS, EH-ah, ID",
+      "en": "he, she, it (already mentioned)"
+    },
+    {
+      "la": "hic, haec, hoc",
+      "baca": "HIK, HIKE, HOHK",
+      "en": "this"
+    },
+    {
+      "la": "ille, illa, illud",
+      "baca": "IL-leh",
+      "en": "that, the one over there"
+    },
+    {
+      "la": "ipse, ipsa, ipsum",
+      "baca": "IP-seh",
+      "en": "-self (himself, herself, itself)"
+    },
+    {
+      "la": "idem, eadem, idem",
+      "baca": "EE-dehm",
+      "en": "the same"
+    },
+    {
+      "la": "qui, quae, quod",
+      "baca": "KWEE, KWYE, KWOHD",
+      "en": "who, which"
+    },
+    {
+      "la": "eius",
+      "baca": "EH-yoos",
+      "en": "his, her, its"
+    },
+    {
+      "la": "eorum, earum",
+      "baca": "eh-OH-room, eh-AH-room",
+      "en": "their"
+    },
+    {
+      "la": "quando?",
+      "baca": "KWAHN-doh",
+      "en": "when?"
+    },
+    {
+      "la": "unde?",
+      "baca": "OON-deh",
+      "en": "where from?"
+    },
+    {
+      "la": "quo?",
+      "baca": "KWOH",
+      "en": "where to?"
+    },
+    {
+      "la": "quomodo?",
+      "baca": "KWOH-moh-doh",
+      "en": "how?"
+    },
+    {
+      "la": "qualis?",
+      "baca": "KWAH-lis",
+      "en": "what kind?"
+    },
+    {
+      "la": "quantus?",
+      "baca": "KWAHN-toos",
+      "en": "how big?"
+    },
+    {
+      "la": "alius, alia, aliud",
+      "baca": "AH-lee-oos",
+      "en": "other, another"
+    },
+    {
+      "la": "alter, altera, alterum",
+      "baca": "AHL-tehr",
+      "en": "the other (of two)"
+    },
+    {
+      "la": "nosco, noscere, novi",
+      "baca": "NOHS-koh",
+      "en": "to get to know; perfect: to know"
+    },
+    {
+      "la": "invito, invitare",
+      "baca": "IN-wee-toh",
+      "en": "to invite"
+    },
+    {
+      "la": "saluto, salutare",
+      "baca": "sah-LOO-toh",
+      "en": "to greet"
+    },
+    {
+      "la": "Graecus, Graeca",
+      "baca": "GRYE-koos",
+      "en": "Greek (person)"
+    },
+    {
+      "la": "mercator, mercatoris",
+      "baca": "mehr-KAH-tohr",
+      "en": "merchant"
+    },
+    {
+      "la": "uxor, uxoris",
+      "baca": "OOK-sohr",
+      "en": "wife"
+    },
+    {
+      "la": "oculus, oculi",
+      "baca": "OH-koo-loos",
+      "en": "eye"
+    },
+    {
+      "la": "auris, auris",
+      "baca": "OW-ris",
+      "en": "ear"
+    },
+    {
+      "la": "manus, manus",
+      "baca": "MAH-noos",
+      "en": "hand"
+    },
+    {
+      "la": "amicitia, amicitiae",
+      "baca": "ah-mee-KEE-tee-ah",
+      "en": "friendship"
+    },
+    {
+      "la": "veritas, veritatis",
+      "baca": "WEH-ree-tahs",
+      "en": "truth"
+    },
+    {
+      "la": "hic et nunc",
+      "baca": "HIK eht NOONK",
+      "en": "here and now"
+    },
+    {
+      "la": "ipso facto",
+      "baca": "IP-soh FAHK-toh",
+      "en": "by the act itself"
+    },
+    {
+      "la": "idem",
+      "baca": "EE-dehm",
+      "en": "the same thing"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose the form of hic that matches the noun.",
+      "items": [
+        "____ puer (subject)",
+        "____ puella (subject)",
+        "____ templum (subject)",
+        "____ puerum (object)",
+        "____ puellam (object)",
+        "____ pueri (pl, subject)"
+      ]
+    },
+    {
+      "prompt": "Replace the given word with the right form of is, ea, id.",
+      "items": [
+        "Marcum video. (replace Marcum)",
+        "Iuliae librum do. (replace Iuliae)",
+        "Cum Sexto ambulo. (replace Sexto)",
+        "Liber Marci est. (replace Marci)",
+        "Pueros voco. (replace Pueros)",
+        "Puellis fabulam narro. (replace Puellis)"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the correct form of qui.",
+      "items": [
+        "Puer ____ venit amicus meus est.",
+        "Puella ____ vidi Lydia est.",
+        "Liber ____ lego longus est.",
+        "Amicus ____ epistulam misi Romae habitat.",
+        "Milites ____ urbem servant fortes sunt.",
+        "Femina ____ filius aeger est tristis est."
+      ]
+    },
+    {
+      "prompt": "Translate into Latin.",
+      "items": [
+        "That man is a merchant.",
+        "This boy is my friend.",
+        "I don't know him.",
+        "His shop is in the forum.",
+        "The boy I saw yesterday is Gaius.",
+        "What you say is true."
+      ]
+    }
+  ],
+  "answers": [
+    "hic — haec — hoc — hunc — hanc — hi",
+    "eum — ei — eo — eius — eos — eis",
+    "qui — quam — quem — cui — qui — cuius",
+    "Ille vir mercator est. — Hic puer amicus meus est. — Eum non novi. — Taberna eius in foro est. — Puer quem heri vidi Gaius est. — Quod dicis verum est."
+  ]
+}

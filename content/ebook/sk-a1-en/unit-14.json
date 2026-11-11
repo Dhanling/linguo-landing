@@ -1,0 +1,497 @@
+{
+  "title": "Tomorrow I will…",
+  "title_target": "Zajtra budem…",
+  "goal": "Make plans, and discover that Slovak has two different ways to talk about the future — one with a helping verb, one with no helping verb at all.",
+  "bekal": [
+    "form future sentences with *budem* + the dictionary form",
+    "recognize verbs whose present form already means the future",
+    "talk about the weather and make weekend plans"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Plány na víkend",
+      "intro": "Thursday afternoon. Eva and Budi make plans for the weekend.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Čo budeš robiť cez víkend?",
+          "id": "What are you doing this weekend?",
+          "literal": "what you-will-be doing over weekend?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ešte neviem. Asi budem doma.",
+          "id": "I don't know yet. Probably just staying home.",
+          "literal": "still not-I-know. probably I-will-be at-home."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ideme s kamarátmi do Tatier. Prídeš?",
+          "id": "We're going to the Tatras with friends. Want to come?",
+          "literal": "we-go with friends-ins-pl to Tatras-gen. you-will-come?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Rád! Ale nemám poriadne topánky.",
+          "id": "I'd love to! But I don't have the right shoes.",
+          "literal": "glad-m! but not-I-have right-pl shoes-pl."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Zajtra kúpime nejaké. Poznám dobrý obchod.",
+          "id": "We'll buy some tomorrow. I know a good shop.",
+          "literal": "tomorrow we-will-buy some. I-know good shop."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Super. A aké bude počasie?",
+          "id": "Great. And what will the weather be like?",
+          "literal": "super. and what-kind it-will-be weather?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Bude pekne, ale v horách bude chladno.",
+          "id": "Nice, but it'll be cold in the mountains.",
+          "literal": "it-will-be nice, but in mountains-loc-pl it-will-be cold."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nebude pršať?",
+          "id": "Won't it rain?",
+          "literal": "not-it-will-be raining?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "V sobotu nie. V nedeľu možno áno.",
+          "id": "Not on Saturday. Maybe on Sunday.",
+          "literal": "on Saturday no. on Sunday maybe yes."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tak sa vrátime v sobotu večer.",
+          "id": "Then we'll come back on Saturday evening.",
+          "literal": "so self we-will-return on Saturday evening."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Presne tak. Napíšem ti podrobnosti.",
+          "id": "Exactly. I'll send you the details.",
+          "literal": "exactly so. I-will-write to-you details-pl."
+        }
+      ],
+      "notes": [
+        "**Two ways to talk about the future in one dialogue.** *Budem robiť*, *budem čakať*, *bude pršať* use a helping verb. But *prídeš*, *kúpime*, *vrátime sa*, *napíšem* use no helping verb at all — they look exactly like the present, yet they still mean the future. The reason is the topic of the next unit.",
+        "**A temporary rule that's enough for now:** verbs with a **prefix** (*pri-, kú-, vrá-, na-*) usually already mean the future in their present form. Verbs without a prefix use *budem*. The rule leaks in places, but it covers most A1 sentences.",
+        "**Bude pekne, bude chladno** — weather is expressed with no subject at all. There's no \"it\" and no \"the weather\" — just *bude* + an adverb. English has to add *it*: \"it will be cold\"; Slovak doesn't.",
+        "**Pršať means \"to rain\", one word for the whole event.** *Prší* = it's raining. *Pršalo* = it was raining. *Bude pršať* = it will rain. Notice that it's the only verb in this dialogue that keeps *bude* while talking about the future — because it's imperfective.",
+        "**Ďakujem, že…** — how to thank someone for something specific. The word *že* means \"that\" and is always preceded by a comma in writing. Notice also *si ma pozvala* with the feminine ending: Eva did the inviting, so the ending is *-la*."
+      ],
+      "grammars": [
+        {
+          "title": "Budem + the dictionary form",
+          "body": [
+            "The first way, and the easiest: pair the future form of *byť* with the dictionary form of the verb. Just like English *will*."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "*byť* future",
+              "Example",
+              "English"
+            ],
+            "rows": [
+              [
+                "ja",
+                "**budem**",
+                "*budem robiť*",
+                "I will do"
+              ],
+              [
+                "ty",
+                "**budeš**",
+                "*budeš čítať*",
+                "you will read"
+              ],
+              [
+                "on / ona",
+                "**bude**",
+                "*bude pracovať*",
+                "he / she will work"
+              ],
+              [
+                "my",
+                "**budeme**",
+                "*budeme variť*",
+                "we will cook"
+              ],
+              [
+                "vy",
+                "**budete**",
+                "*budete čakať*",
+                "you will wait"
+              ],
+              [
+                "oni",
+                "**budú**",
+                "*budú spať*",
+                "they will sleep"
+              ]
+            ]
+          },
+          "after": [
+            "**Budem on its own means \"I will be\"**: *Budem doma* (I'll be at home), *Bude tam veľa ľudí* (there will be lots of people there). Without a second verb, it stands alone as \"will be\".",
+            "**The negative merges into *budem***: *nebudem, nebudeš, nebude, nebudeme, nebudete, nebudú*. Notice that this is **different** from the present of *byť*, which uses a separate word, *nie som*. The future goes back to the general rule.",
+            "**One verb has its own future form: *ísť*.** Not *budem ísť* but **pôjdem, pôjdeš, pôjde, pôjdeme, pôjdete, pôjdu**. Learn it separately — it's used every day, and *budem ísť* sounds wrong straight away."
+          ]
+        },
+        {
+          "title": "Present forms that already mean the future",
+          "body": [
+            "The second way, and one with no equivalent in English: some Slovak verbs **cannot** be used for the present. Their present form automatically means the future."
+          ],
+          "table": {
+            "head": [
+              "Imperfective — use budem",
+              "Perfective — already future",
+              "English"
+            ],
+            "rows": [
+              [
+                "*budem robiť*",
+                "**urobím**",
+                "I will do (and finish)"
+              ],
+              [
+                "*budem písať*",
+                "**napíšem**",
+                "I will write (and finish)"
+              ],
+              [
+                "*budem čítať*",
+                "**prečítam**",
+                "I will read (to the end)"
+              ],
+              [
+                "*budem kupovať*",
+                "**kúpim**",
+                "I will buy"
+              ],
+              [
+                "*budem platiť*",
+                "**zaplatím**",
+                "I will pay"
+              ],
+              [
+                "*budem prichádzať*",
+                "**prídem**",
+                "I will come"
+              ],
+              [
+                "*budem sa vracať*",
+                "**vrátim sa**",
+                "I will come back"
+              ],
+              [
+                "*budem variť*",
+                "**uvarím**",
+                "I will cook (until it's ready)"
+              ]
+            ]
+          },
+          "after": [
+            "**The difference isn't time but completion.** *Budem písať list* = I'll spend time writing a letter (the activity). *Napíšem list* = I'll finish the letter (the result). Both talk about the future; what differs is whether the focus is on the process or on getting it done.",
+            "**That's why perfective verbs have no present.** You can't be \"in the middle of finishing\" — once it's finished, it's already past. That's why the present form jumps into the future; there's nowhere else for it to go.",
+            "**For now, just recognize the pattern**: the prefixes *u-, na-, pre-, z-, za-, pri-, vy-* usually mark a perfective verb. The whole system comes in full in the next unit — the hardest unit in this book, and the one that opens the most doors."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The weather",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**Aké je počasie?**",
+              "AH-keh yeh POH-chah-syeh",
+              "What's the weather like?"
+            ],
+            [
+              "**Je pekne.**",
+              "yeh PEHK-nyeh",
+              "It's nice."
+            ],
+            [
+              "**Je slnečno.**",
+              "yeh SL-nyehch-noh",
+              "It's sunny."
+            ],
+            [
+              "**Je teplo.**",
+              "yeh TEHP-loh",
+              "It's warm."
+            ],
+            [
+              "**Je horúco.**",
+              "yeh HOH-roo-tsoh",
+              "It's hot."
+            ],
+            [
+              "**Je chladno.**",
+              "yeh KHLAHD-noh",
+              "It's cold."
+            ],
+            [
+              "**Je zima.**",
+              "yeh ZEE-mah",
+              "It's freezing."
+            ],
+            [
+              "**Prší.**",
+              "PR-shee",
+              "It's raining."
+            ],
+            [
+              "**Sneží.**",
+              "SNYEH-zhee",
+              "It's snowing."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that weather almost always uses **sentences with no subject**: *je pekne*, *prší*, *sneží*. There's no word for \"it\" or \"the weather\" — the verb stands on its own. English must add *it*; Slovak doesn't."
+        },
+        {
+          "type": "kotak",
+          "title": "Four very different seasons",
+          "items": [
+            "Slovakia has four distinct seasons. Summer can reach 35°C in Bratislava, winter drops to −15°C in the mountains, and snow in the Tatras lasts from November to April.",
+            "For readers arriving from warmer climates, two things often come as a surprise: **the sun sets at four in the afternoon** in December, and **it's light until nine in the evening** in June. That's a five-hour difference, and the body needs time to adjust."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Making plans",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Čo budeš robiť …?*",
+              "What are you going to do …?"
+            ],
+            [
+              "*Máš plány na víkend?*",
+              "Any plans for the weekend?"
+            ],
+            [
+              "*Nechceš ísť …?*",
+              "Don't you want to go …?"
+            ],
+            [
+              "*Poď s nami!*",
+              "Come with us!"
+            ],
+            [
+              "*Rád / rada pôjdem.*",
+              "I'd love to come."
+            ],
+            [
+              "*Ešte neviem.*",
+              "I don't know yet."
+            ],
+            [
+              "*Možno.*",
+              "Maybe."
+            ],
+            [
+              "*Musím sa spýtať doma.*",
+              "I have to ask at home first."
+            ],
+            [
+              "*Bohužiaľ nemôžem.*",
+              "Unfortunately I can't."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Nechceš ísť …?** — Slovak often invites with a **negative question**, and it actually sounds more polite, not less. *Nechceš kávu?* = \"Would you like some coffee?\" It takes time to get used to if you're used to hearing a negative as a refusal."
+        },
+        {
+          "type": "kotak",
+          "title": "The Tatras: a must-see",
+          "items": [
+            "The **Vysoké Tatry** (High Tatras) are the smallest alpine mountain range in the world — only 26 kilometers long — but their highest peak reaches 2,655 meters (Gerlachovský štít). You can see them in a single weekend.",
+            "*Štrbské Pleso*, *Hrebienok*, and *Skalnaté pleso* can be reached by rack railway or cable car, so you don't have to hike to enjoy the views.",
+            "One serious warning: the weather there changes within minutes, and the marked trails are closed from November 1 to June 15. Bring a jacket even if it's thirty degrees in Bratislava."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 12",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "I don't feel well.",
+              "*Nie je mi dobre.*"
+            ],
+            [
+              "I have a headache.",
+              "*Bolí ma hlava.*"
+            ],
+            [
+              "I'm cold.",
+              "*Je mi zima.*"
+            ],
+            [
+              "Where's the nearest pharmacy?",
+              "*Kde je najbližšia lekáreň?*"
+            ],
+            [
+              "I'm already better.",
+              "*Už mi je lepšie.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "budem",
+      "baca": "BOO-dyehm",
+      "en": "I will be"
+    },
+    {
+      "sk": "pôjdem",
+      "baca": "PWOY-dyehm",
+      "en": "I will go"
+    },
+    {
+      "sk": "počasie",
+      "baca": "POH-chah-syeh",
+      "en": "weather (n)"
+    },
+    {
+      "sk": "pršať",
+      "baca": "PR-shaht",
+      "en": "rain"
+    },
+    {
+      "sk": "snežiť",
+      "baca": "SNYEH-zheet",
+      "en": "snow"
+    },
+    {
+      "sk": "vietor",
+      "baca": "VYEH-tohr",
+      "en": "wind (m)"
+    },
+    {
+      "sk": "slnko",
+      "baca": "SLN-koh",
+      "en": "sun (n)"
+    },
+    {
+      "sk": "stupeň",
+      "baca": "STOO-pehny",
+      "en": "degree (m)"
+    },
+    {
+      "sk": "teplo",
+      "baca": "TEHP-loh",
+      "en": "warm"
+    },
+    {
+      "sk": "chladno",
+      "baca": "KHLAHD-noh",
+      "en": "cold"
+    },
+    {
+      "sk": "horúco",
+      "baca": "HOH-roo-tsoh",
+      "en": "hot"
+    },
+    {
+      "sk": "plán",
+      "baca": "plahn",
+      "en": "plan (m)"
+    },
+    {
+      "sk": "možno",
+      "baca": "MOHZH-noh",
+      "en": "maybe"
+    },
+    {
+      "sk": "asi",
+      "baca": "AH-see",
+      "en": "probably; maybe"
+    },
+    {
+      "sk": "určite",
+      "baca": "OOR-chee-tyeh",
+      "en": "definitely"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Slovak.",
+      "items": [
+        "What are you doing this weekend?",
+        "I don't know yet. Probably just staying home.",
+        "What's the weather like?",
+        "Nice, but it's cold in the mountains.",
+        "Won't it rain?",
+        "I'll let you know later."
+      ]
+    },
+    {
+      "prompt": "Put into the future with budem.",
+      "items": [
+        "Robím. → ____",
+        "Čítaš. → ____",
+        "Pracuje. → ____",
+        "Varíme. → ____",
+        "Čakáte. → ____",
+        "Spia. → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "robiť / budeš / víkend / čo / cez / ?",
+        "doma / budem / asi",
+        "počasie / bude / aké / ?",
+        "pršať / nebude / ?",
+        "ti / napíšem"
+      ]
+    }
+  ],
+  "answers": [
+    "Čo budeš robiť cez víkend? — Ešte neviem. Asi budem doma. — Aké je počasie? — Bude pekne, ale v horách bude chladno. — Nebude pršať? — Napíšem ti.",
+    "Budem robiť. — Budeš čítať. — Bude pracovať. — Budeme variť. — Budete čakať. — Budú spať.",
+    "Čo budeš robiť cez víkend? — Asi budem doma. — Aké bude počasie? — Nebude pršať? — Napíšem ti."
+  ]
+}

@@ -1,0 +1,513 @@
+{
+  "title": "Hello, what's your name?",
+  "title_target": "Halló! Hvað heitir þú?",
+  "goal": "Greet people correctly for the time of day and for the gender of the person you're greeting, say your name, ask how someone is, and face the first surprise: Icelandic verbs change with the person.",
+  "bekal": [
+    "greet with *halló*, *sæll/sæl*, *góðan daginn*, and *gott kvöld*, each in its right place",
+    "say your own name with *ég heiti* and ask other people theirs",
+    "put together the six forms of *vera* — the only verb you really must memorize in this unit"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Fyrsti dagurinn í skólanum",
+      "intro": "The first day of a language course at a school in Reykjavík. Two new students sit side by side before class begins.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Halló! Ég heiti Anna. Hvað heitir þú?",
+          "id": "Hello! I'm Anna. What's your name?",
+          "literal": "hello! I am-called Anna. what are-called you?"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Sæl, Anna! Ég heiti Búdí.",
+          "id": "Hi, Anna! My name is Budi.",
+          "literal": "happy, Anna! I am-called Budi."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Gaman að kynnast þér! Hvernig hefur þú það?",
+          "id": "Nice to meet you! How are you?",
+          "literal": "fun to get-acquainted with-you! how have you it?"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Ég hef það gott, þakka þér fyrir. Og þú?",
+          "id": "I'm fine, thank you. And you?",
+          "literal": "I have it good, thank you for. and you?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Allt gott! Ert þú nýr hér?",
+          "id": "All good! Are you new here?",
+          "literal": "all good! are you new here?"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Já, ég er nýr. Ég er frá Indónesíu.",
+          "id": "Yes, I'm new. I'm from Indonesia.",
+          "literal": "yes, I am new. I am from Indonesia."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Vá! Ert þú stúdent?",
+          "id": "Wow! Are you a student?",
+          "literal": "wow! are you student?"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Já, ég er stúdent. Ertu Íslendingur?",
+          "id": "Yes, I'm a student. Are you Icelandic?",
+          "literal": "yes, I am student. are-you Icelander?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Ég er Íslendingur, frá Akureyri. Talar þú íslensku?",
+          "id": "I'm Icelandic, from Akureyri. Do you speak Icelandic?",
+          "literal": "I am Icelander, from Akureyri. speak you Icelandic?"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Bara smá. Ég skil ekki vel.",
+          "id": "Just a little. I don't understand very well.",
+          "literal": "only little. I understand not well."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Það er allt í lagi! Sjáumst á morgun.",
+          "id": "That's okay! See you tomorrow.",
+          "literal": "it is all in order! see-each-other on morning."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Sjáumst! Bless!",
+          "id": "See you! Bye!",
+          "literal": "see-each-other! bless!"
+        }
+      ],
+      "notes": [
+        "**Sæll and sæl — a greeting that changes with the person you GREET, not the person greeting.** Literally \"blessed, happy\". To a man: *sæll*; to a woman: *sæl*. Anna is a woman, so Búdí greets her with *sæl*. No other Nordic language demands this, and English has nothing like it — so get used to checking who's in front of you before you open your mouth.",
+        "**Hvernig hefur þú það? literally \"how have you it\".** That's why the answer also uses \"have\": *ég hef það gott* — \"I have it good\". Answering *ég er góður* (\"I am good\") is wrong; it means \"I'm a good person\".",
+        "**Ég heiti is not \"my name is\".** *Heita* is a verb of its own meaning \"to be called\": *ég heiti* I'm called, *þú heitir* you're called, *hún heitir* she's called. The word *nafn* (name) doesn't appear at all.",
+        "**Ertu = ert þú, shortened.** Everyday Icelandic glues *þú* onto the end of the verb: *ertu*, *talarðu*, *heitirðu*, *viltu*. The long form isn't wrong, it just sounds a little more careful — and in this dialogue Anna uses both.",
+        "**Bless comes from the word \"blessed\".** It's used for goodbye in every situation, from the cashier to your boss. For a more formal goodbye there's *vertu sæll* (to a man) and *vertu sæl* (to a woman) — the same greeting, used for parting.",
+        "**Here is the first surprise: the verb CHANGES with the person.** *Ég er*, *þú ert*, *hún er*, *við erum*. Norwegian, Danish, and Swedish have dropped these changes completely; Icelandic has kept them intact since the age of the sagas. Six forms for one verb — and that goes for every verb, not just this one."
+      ],
+      "grammars": [
+        {
+          "title": "Vera — the verb \"to be\"",
+          "body": [
+            "The first verb you must master, and the most irregular of them all. The good news: after *vera*, almost every other verb follows a neat pattern."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "Say it",
+              "vera",
+              "English"
+            ],
+            "rows": [
+              [
+                "ég",
+                "yehgh",
+                "**er**",
+                "I am"
+              ],
+              [
+                "þú",
+                "thoo",
+                "**ert**",
+                "you are"
+              ],
+              [
+                "hann / hún / það",
+                "hahn / hoon / thahdh",
+                "**er**",
+                "he / she / it is"
+              ],
+              [
+                "við",
+                "vidh",
+                "**erum**",
+                "we are"
+              ],
+              [
+                "þið",
+                "thidh",
+                "**eruð**",
+                "you (pl.) are"
+              ],
+              [
+                "þeir / þær / þau",
+                "thayr / thair / thöi",
+                "**eru**",
+                "they are"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Three words for \"they\".** *Þeir* if they're all men, *þær* if they're all women, *þau* if mixed or if you're talking about neuter things. English gets by with one word; here you have to look first at who is meant.",
+            "**The pronoun may NOT be dropped**, unlike in Spanish or Italian. *Er stúdent* on its own means nothing; it has to be *ég er stúdent*.",
+            "The form *þið eruð* ends in the letter **ð**. It sounds like \"eh-rüdh\" — soft, almost a hum, not a hard \"d\"."
+          ]
+        },
+        {
+          "title": "Asking questions: just swap the order",
+          "body": [
+            "Icelandic has no question word like \"do\" or \"does\". A statement becomes a question by **moving the verb in front of the subject** — and nothing else changes."
+          ],
+          "table": {
+            "head": [
+              "Statement",
+              "Question",
+              "Short form",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Þú ert nýr.*",
+                "**Ert** þú nýr?",
+                "*Ertu nýr?*",
+                "Are you new?"
+              ],
+              [
+                "*Þú heitir Anna.*",
+                "**Heitir** þú Anna?",
+                "*Heitirðu Anna?*",
+                "Is your name Anna?"
+              ],
+              [
+                "*Þú talar íslensku.*",
+                "**Talar** þú íslensku?",
+                "*Talarðu íslensku?*",
+                "Do you speak Icelandic?"
+              ],
+              [
+                "*Hún er hér.*",
+                "**Er** hún hér?",
+                "—",
+                "Is she here?"
+              ],
+              [
+                "*Þið eruð stúdentar.*",
+                "**Eruð** þið stúdentar?",
+                "*Eruð þið?*",
+                "Are you (pl.) students?"
+              ]
+            ]
+          },
+          "after": [
+            "If there's a question word (*hvað*, *hver*, *hvernig*, *hvaðan*), it sits at the very front and the verb stays in second place: *Hvað heitir þú?* — not *Hvað þú heitir?*",
+            "This \"verb in second place\" rule works throughout Icelandic and you'll meet it again in every unit. It is the one word-order rule that is never broken."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Greeting by the clock and by the person",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Icelandic chooses a greeting by the time of day **and** by who is being greeted. Getting it wrong isn't a grammar mistake but a social one — and that is even more noticeable."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Greeting",
+            "Say it",
+            "When",
+            "Tone"
+          ],
+          "rows": [
+            [
+              "Halló",
+              "HAH-loh",
+              "any time",
+              "neutral, the most widely used"
+            ],
+            [
+              "Hæ",
+              "hai",
+              "any time",
+              "casual, to friends"
+            ],
+            [
+              "Sæll",
+              "saitl",
+              "any time, **to a man**",
+              "warm, a bit more personal"
+            ],
+            [
+              "Sæl",
+              "sail",
+              "any time, **to a woman**",
+              "warm, a bit more personal"
+            ],
+            [
+              "Góðan daginn",
+              "GOH-dhahn DAH-yin",
+              "morning to late afternoon",
+              "formal, to staff and strangers"
+            ],
+            [
+              "Gott kvöld",
+              "gawht kvöld",
+              "evening",
+              "formal"
+            ],
+            [
+              "Góða nótt",
+              "GOH-dhah nohht",
+              "when parting at night",
+              "= good night, not a greeting"
+            ],
+            [
+              "Bless",
+              "blehs",
+              "goodbye",
+              "neutral, the most common"
+            ],
+            [
+              "Vertu sæll / sæl",
+              "VEHR-tü saitl / sail",
+              "goodbye",
+              "formal or warm"
+            ],
+            [
+              "Sjáumst",
+              "SYOW-ümst",
+              "goodbye",
+              "= see you, if you'll meet again"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Watch out for two things",
+          "items": [
+            "*Góða nótt* is **not** an evening greeting. It's used only when parting for the night, like \"good night\" in English. Greeting someone with *góða nótt* as you walk into a restaurant will earn you a puzzled smile — use *gott kvöld*.",
+            "To two or more people, *sæll/sæl* changes too: *sælir* (all men), *sælar* (all women), *sæl* (mixed). When in doubt, use *halló* — it's never wrong."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Eight first sentences to have ready",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Íslenska",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Ég heiti …",
+              "yehgh HAY-tih",
+              "My name is …"
+            ],
+            [
+              "Ég er frá Indónesíu.",
+              "yehgh ehr frow IN-doh-neh-see-ü",
+              "I'm from Indonesia."
+            ],
+            [
+              "Ég skil ekki.",
+              "yehgh skil EHH-kih",
+              "I don't understand."
+            ],
+            [
+              "Talar þú ensku?",
+              "TAH-lahr thoo EHN-skü",
+              "Do you speak English?"
+            ],
+            [
+              "Hvað segir þú?",
+              "kvahdh SEH-yihr thoo",
+              "What did you say? (please repeat)"
+            ],
+            [
+              "Hægar, takk.",
+              "HAI-ghahr tahhk",
+              "Slower, please."
+            ],
+            [
+              "Þakka þér fyrir.",
+              "THAHH-kah thyehr FIH-rihr",
+              "Thank you."
+            ],
+            [
+              "Það er allt í lagi.",
+              "thahdh ehr ahlt ee LAH-yih",
+              "That's okay."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "These eight sentences cover nine out of ten needs on your first day in Reykjavík. Memorize the sound, not the spelling — and say each one out loud ten times before moving on to Unit 2."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "is": "halló",
+      "baca": "HAH-loh",
+      "en": "hello"
+    },
+    {
+      "is": "hæ",
+      "baca": "hai",
+      "en": "hi (casual)"
+    },
+    {
+      "is": "sæll / sæl",
+      "baca": "saitl / sail",
+      "en": "hi (to a man / to a woman)"
+    },
+    {
+      "is": "bless",
+      "baca": "blehs",
+      "en": "bye, goodbye"
+    },
+    {
+      "is": "sjáumst",
+      "baca": "SYOW-ümst",
+      "en": "see you"
+    },
+    {
+      "is": "vera",
+      "baca": "VEH-rah",
+      "en": "to be"
+    },
+    {
+      "is": "heita",
+      "baca": "HAY-tah",
+      "en": "to be called"
+    },
+    {
+      "is": "hvað",
+      "baca": "kvahdh",
+      "en": "what"
+    },
+    {
+      "is": "hver",
+      "baca": "kvehr",
+      "en": "who"
+    },
+    {
+      "is": "hvernig",
+      "baca": "KVEHR-nigh",
+      "en": "how"
+    },
+    {
+      "is": "hafa",
+      "baca": "HAH-vah",
+      "en": "to have"
+    },
+    {
+      "is": "gott / góður",
+      "baca": "gawht / GOH-dhür",
+      "en": "good"
+    },
+    {
+      "is": "nýr",
+      "baca": "neer",
+      "en": "new"
+    },
+    {
+      "is": "hér",
+      "baca": "hyehr",
+      "en": "here"
+    },
+    {
+      "is": "frá",
+      "baca": "frow",
+      "en": "from"
+    },
+    {
+      "is": "stúdent",
+      "baca": "STOO-dehnt",
+      "en": "(university) student"
+    },
+    {
+      "is": "Íslendingur",
+      "baca": "EES-lehn-din-gür",
+      "en": "Icelander"
+    },
+    {
+      "is": "tala",
+      "baca": "TAH-lah",
+      "en": "to speak"
+    },
+    {
+      "is": "skilja",
+      "baca": "SKIL-yah",
+      "en": "to understand"
+    },
+    {
+      "is": "ekki",
+      "baca": "EHH-kih",
+      "en": "not"
+    },
+    {
+      "is": "bara smá",
+      "baca": "BAH-rah smow",
+      "en": "just a little"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Icelandic.",
+      "items": [
+        "Hello! What's your name?",
+        "My name is Budi.",
+        "I'm from Indonesia.",
+        "How are you?",
+        "I'm fine, thank you.",
+        "Are you a student?"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right form of *vera*.",
+      "items": [
+        "Ég ____ stúdent.",
+        "Þú ____ nýr hér.",
+        "Hún ____ frá Akureyri.",
+        "Við ____ í skólanum.",
+        "Þið ____ Íslendingar.",
+        "Þau ____ ekki hér."
+      ]
+    },
+    {
+      "prompt": "Turn these into questions by swapping the order.",
+      "items": [
+        "Þú ert nýr hér.",
+        "Hún er Íslendingur.",
+        "Þú talar íslensku.",
+        "Þið eruð stúdentar.",
+        "Hann heitir Jón."
+      ]
+    },
+    {
+      "prompt": "Choose the right greeting. Write one word or one phrase.",
+      "items": [
+        "You walk into a bakery at eight in the morning. To the baker you say ____.",
+        "You greet Anna, a female classmate, warmly. You say ____.",
+        "You greet Jón, a male classmate, warmly. You say ____.",
+        "You walk into a restaurant at eight in the evening. To the waiter you say ____.",
+        "You say goodbye to the cashier at the supermarket. You say ____."
+      ]
+    }
+  ],
+  "answers": [
+    "Halló! Hvað heitir þú? — Ég heiti Búdí. — Ég er frá Indónesíu. — Hvernig hefur þú það? — Ég hef það gott, þakka þér fyrir. — Ert þú stúdent?",
+    "er — ert — er — erum — eruð — eru",
+    "Ert þú nýr hér? — Er hún Íslendingur? — Talar þú íslensku? — Eruð þið stúdentar? — Heitir hann Jón?",
+    "Góðan daginn. — Sæl. — Sæll. — Gott kvöld. — Bless."
+  ]
+}

@@ -1,0 +1,505 @@
+{
+  "title": "This is my family",
+  "title_target": "Toto je moja rodina",
+  "goal": "Introduce your family, use the verb *mať*, and set up the rule that applies to every adjective in Slovak: its ending follows the gender of its noun.",
+  "bekal": [
+    "name family members and their ages with *mať*",
+    "use *môj/moja/moje* and *ten/tá/to* with the right endings",
+    "form the nominative plural and see why male persons have an ending of their own"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Fotky v telefóne",
+      "intro": "Eva shows Budi photos of her family on her phone.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Pozri, toto je moja rodina.",
+          "id": "Look, this is my family.",
+          "literal": "look, this is my-f family."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Pekná fotka! Kto je ten pán?",
+          "id": "Nice photo! Who's that man?",
+          "literal": "nice-f photo! who is that-m gentleman?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "To je môj otec. Má päťdesiat rokov.",
+          "id": "That's my father. He's fifty.",
+          "literal": "that is my-m father. he-has fifty years."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A tá pani vedľa neho?",
+          "id": "And the woman next to him?",
+          "literal": "and that-f lady next-to him?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "To je moja mama. Je učiteľka.",
+          "id": "That's my mother. She's a teacher.",
+          "literal": "that is my-f mother. she-is teacher-f."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Máš súrodencov?",
+          "id": "Do you have brothers and sisters?",
+          "literal": "you-have siblings?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Áno, mám brata a dve sestry. Tu sú.",
+          "id": "Yes, I have a brother and two sisters. Here they are.",
+          "literal": "yes, I-have brother and two sisters. here they-are."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aké malé deti! Sú tvoje?",
+          "id": "What cute kids! Are they yours?",
+          "literal": "what-kind little-pl children! they-are yours?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Nie, to sú deti mojej sestry. Nemám deti.",
+          "id": "No, those are my sister's kids. I don't have children.",
+          "literal": "no, those they-are children my-f-gen sister-gen. not-I-have children."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Máte peknú rodinu.",
+          "id": "You have a lovely family.",
+          "literal": "you-have nice-acc family-acc."
+        }
+      ],
+      "notes": [
+        "**To je is used to point at anyone, anything.** Notice Eva says *to je môj otec* — not *ten je*. When you introduce or point, the form is always **to je** (singular) or **to sú** (plural), whatever the gender of what you're pointing at. *Toto* is a more emphatic form: \"this, right here\".",
+        "**Mať for age: literally \"to have years\".** *Má päťdesiat rokov* = \"he has fifty years\". Slovak counts age like French and Spanish, not like English. The question: *Koľko máš rokov?* — \"How many years do you have?\"",
+        "**Mám brata, not mám brat.** A verb's object changes the ending of its noun, and for **masculine nouns for living beings** the ending is *-a*. This is the accusative case, set out fully in the next unit. Notice also *peknú rodinu* and *veľkú rodinu* — the adjective and the noun change together.",
+        "**Nemám deti, not nemám dieťa.** Slovak uses the plural to say \"I don't have children\", because what's being denied is children in general. The word *dieťa* (child) has an irregular plural: *deti*, and that plural is **feminine**, even though the singular is neuter.",
+        "**Deti mojej sestry** = \"my sister's children\". Possession is shown by changing the ending of **the owner**, not with a word like \"'s\": literally \"children of-my-sister\". This is the genitive case, unit 9. For now just notice that the word that changes is the one **behind**."
+      ],
+      "grammars": [
+        {
+          "title": "Adjectives: one word, three endings",
+          "body": [
+            "Every Slovak adjective adjusts its ending to the gender of the noun it describes. The good news: there are only three endings, very regular, and you've already met them in the four greetings of unit 1."
+          ],
+          "table": {
+            "head": [
+              "Noun type",
+              "Ending",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**m**",
+                "**-ý**",
+                "*pekn**ý** dom*, *dobr**ý** deň*, *veľk**ý** stôl*",
+                "a nice house"
+              ],
+              [
+                "**f**",
+                "**-á**",
+                "*pekn**á** kniha*, *dobr**á** káva*, *veľk**á** škola*",
+                "a nice book"
+              ],
+              [
+                "**n**",
+                "**-é**",
+                "*pekn**é** mesto*, *dobr**é** ráno*, *veľk**é** auto*",
+                "a nice town"
+              ],
+              [
+                "**plural**",
+                "**-é**",
+                "*pekn**é** knihy*, *mal**é** deti*",
+                "nice books"
+              ],
+              [
+                "**plural, male persons**",
+                "**-í**",
+                "*pekn**í** chlapci*, *dobr**í** ľudia*",
+                "handsome boys"
+              ]
+            ]
+          },
+          "after": [
+            "**Learn three letters: ý – á – é.** That's the core of it. If you know the noun's gender (unit 2), you know the adjective ending, with no exceptions.",
+            "**The last row is where male persons show up again.** The ordinary plural uses *-é*, but the plural for male persons uses *-í*, and the consonant before it often softens: *dobrý* → *dobrí*, *pekný* → *pekní*, *slovenský* → *slovenskí*. This is the part of A1 beginners most often ignore, and native speakers hear it very clearly.",
+            "**The rhythm rule applies here too.** If the syllable before the ending is already long, the ending is shortened: *krásny* (not *krásný*), *krásna* (not *krásná*), *krásne*. Compare *pekný, pekná, pekné*, whose first syllable is short. The rule is set out fully in unit 7."
+          ]
+        },
+        {
+          "title": "My, your, and that",
+          "body": [
+            "Possessives and demonstratives use the same ending pattern as adjectives, so you're not learning a new table — you're reusing one you already have."
+          ],
+          "table": {
+            "head": [
+              "Meaning",
+              "m",
+              "f",
+              "n",
+              "plural"
+            ],
+            "rows": [
+              [
+                "my",
+                "**môj**",
+                "**moja**",
+                "**moje**",
+                "**moje / moji**"
+              ],
+              [
+                "your (casual)",
+                "**tvoj**",
+                "**tvoja**",
+                "**tvoje**",
+                "**tvoje / tvoji**"
+              ],
+              [
+                "his",
+                "**jeho**",
+                "jeho",
+                "jeho",
+                "jeho"
+              ],
+              [
+                "her",
+                "**jej**",
+                "jej",
+                "jej",
+                "jej"
+              ],
+              [
+                "our",
+                "**náš**",
+                "**naša**",
+                "**naše**",
+                "**naše / naši**"
+              ],
+              [
+                "your (polite / plural)",
+                "**váš**",
+                "**vaša**",
+                "**vaše**",
+                "**vaše / vaši**"
+              ],
+              [
+                "their",
+                "**ich**",
+                "ich",
+                "ich",
+                "ich"
+              ],
+              [
+                "that (near the listener)",
+                "**ten**",
+                "**tá**",
+                "**to**",
+                "**tie / tí**"
+              ]
+            ]
+          },
+          "after": [
+            "**Three rows never change: *jeho*, *jej*, *ich*.** A small free gift. When you talk about what belongs to a third person, there's nothing to think about.",
+            "**The second form in the plural column is for male persons**, just like adjectives: *moji bratia* (my brothers), *naši učitelia* (our male teachers), but *moje sestry* and *naše knihy*.",
+            "**Ten/tá/to is not an article.** It means \"that\" and is used only when you're really pointing or contrasting: *Ten dom je pekný* = \"**That** house is nice\" (not the other one). To just say \"the house is nice\", *Dom je pekný* is enough. English speakers often sprinkle *ten* everywhere because they take it for *the*; don't."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Family",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**rodina** (f)",
+              "ROH-dyee-nah",
+              "family"
+            ],
+            [
+              "**otec** (m)",
+              "OH-tyehts",
+              "father"
+            ],
+            [
+              "**mama / matka** (f)",
+              "MAH-mah / MAHT-kah",
+              "mom / mother"
+            ],
+            [
+              "**rodičia** (pl)",
+              "ROH-dyee-chyah",
+              "parents"
+            ],
+            [
+              "**brat** (m)",
+              "braht",
+              "brother"
+            ],
+            [
+              "**sestra** (f)",
+              "SEHS-trah",
+              "sister"
+            ],
+            [
+              "**súrodenci** (pl)",
+              "SOO-roh-dehn-tsee",
+              "siblings"
+            ],
+            [
+              "**syn** (m)",
+              "seen",
+              "son"
+            ],
+            [
+              "**dcéra** (f)",
+              "TSEH-rah",
+              "daughter"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the **-ka** pattern that keeps coming up: *manžel → manželka*, *priateľ → priateľka*, *učiteľ → učiteľka*, *Slovák → Slovenka*. This ending makes a female counterpart for almost any noun for a person, and the result is always feminine. Once you know the male form, you practically get the female form for free."
+        },
+        {
+          "type": "kotak",
+          "title": "Priateľ: friend or boyfriend?",
+          "items": [
+            "Both, and the situation decides. *Môj priateľ* usually means \"my boyfriend\"; for just a male friend Slovaks more often say *kamarát* (f: *kamarátka*).",
+            "So when you introduce a classmate, say *toto je môj kamarát* — unless you really mean something else."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Dcéra* is written with *d* and *c* in a row, but the *d* almost disappears in everyday speech: it sounds like *TSEH-rah*. This is one of the few words whose spelling isn't fully honest, and saying it letter by letter instantly marks you as a foreigner."
+        }
+      ]
+    },
+    {
+      "title": "The nominative plural",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The basic plural — the one used as the subject of a sentence. Its ending is decided by the noun's gender, and once again male living beings stand apart."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Type",
+            "Ending",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**m animate**",
+              "**-i** (the letter before softens)",
+              "*študent → študent**i***, *Slovák → Slováci*, *chlapec → chlapci*"
+            ],
+            [
+              "**m inanimate**",
+              "**-y**",
+              "*stôl → stol**y***, *dom → dom**y***, *obchod → obchod**y***"
+            ],
+            [
+              "**f ending in -a**",
+              "**-y**",
+              "*žena → žen**y***, *kniha → knih**y***, *škola → škol**y***"
+            ],
+            [
+              "**f ending in a soft letter**",
+              "**-e**",
+              "*posteľ → postel**e***, *dlaň → dlan**e***"
+            ],
+            [
+              "**n ending in -o**",
+              "**-á**",
+              "*mesto → mest**á***, *okno → okn**á***, *pivo → piv**á***"
+            ],
+            [
+              "**n ending in -e**",
+              "**-ia**",
+              "*more → mor**ia***, *pole → pol**ia***"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Only the first row needs attention.** The *-i* ending for male living beings softens the letter before it, and that softening sometimes changes the letter: *k → c* (*Slovák → Slováci*), *ch → s* (*Čech → Česi*), *h → z* (*sluha → sluhovia*). At A1 you only need to recognize it when you hear it, not produce it perfectly."
+        },
+        {
+          "type": "p",
+          "text": "Some family words have plurals of their own that must be memorized: *brat → **bratia***, *dieťa → **deti***, *človek → **ľudia*** (person → people), *rodič → **rodičia***. All four are used constantly, so learning them now saves a lot of time."
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 1",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Slovak column, read the English, and rebuild the Slovak sentence from memory. Only then uncover the column to check."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "Hi! What's your name?",
+              "*Ahoj! Ako sa voláš?*"
+            ],
+            [
+              "My name is Budi.",
+              "*Volám sa Budi.*"
+            ],
+            [
+              "I'm not Chinese.",
+              "*Nie som Číňan.*"
+            ],
+            [
+              "Good day! How are you?",
+              "*Dobrý deň! Ako sa máte?*"
+            ],
+            [
+              "I don't understand. Slowly, please.",
+              "*Nerozumiem. Pomaly, prosím.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "mať",
+      "baca": "maht",
+      "en": "to have"
+    },
+    {
+      "sk": "toto",
+      "baca": "TOH-toh",
+      "en": "this"
+    },
+    {
+      "sk": "ten / tá / to",
+      "baca": "tehn / tah / toh",
+      "en": "that (m / f / n)"
+    },
+    {
+      "sk": "môj / moja / moje",
+      "baca": "mwoy / MOH-yah / MOH-yeh",
+      "en": "my"
+    },
+    {
+      "sk": "tvoj / tvoja / tvoje",
+      "baca": "tvoy / TVOH-yah / TVOH-yeh",
+      "en": "your (casual)"
+    },
+    {
+      "sk": "náš / naša / naše",
+      "baca": "nahsh / NAH-shah / NAH-sheh",
+      "en": "our"
+    },
+    {
+      "sk": "váš / vaša / vaše",
+      "baca": "vahsh / VAH-shah / VAH-sheh",
+      "en": "your (polite; plural)"
+    },
+    {
+      "sk": "jeho",
+      "baca": "YEH-hoh",
+      "en": "his"
+    },
+    {
+      "sk": "jej",
+      "baca": "yay",
+      "en": "her"
+    },
+    {
+      "sk": "kto",
+      "baca": "ktoh",
+      "en": "who"
+    },
+    {
+      "sk": "čo",
+      "baca": "choh",
+      "en": "what"
+    },
+    {
+      "sk": "pán",
+      "baca": "pahn",
+      "en": "Mr.; gentleman (m)"
+    },
+    {
+      "sk": "pani",
+      "baca": "PAH-nee",
+      "en": "Mrs.; lady (f)"
+    },
+    {
+      "sk": "pekný",
+      "baca": "PEHK-nee",
+      "en": "nice; pretty"
+    },
+    {
+      "sk": "veľký",
+      "baca": "VEHL-kee",
+      "en": "big"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Slovak.",
+      "items": [
+        "This is my family.",
+        "That's my father. He's a teacher.",
+        "Do you have brothers and sisters?",
+        "I have two sisters.",
+        "He's fifty.",
+        "Those children are small."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right adjective ending.",
+      "items": [
+        "pekn____ dom (m)",
+        "veľk____ škola (f)",
+        "mal____ mesto (n)",
+        "dobr____ káva (f)",
+        "star____ knihy (plural)",
+        "mlad____ študenti (plural, male)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "rodina / moja / je / toto",
+        "otec / je / to / môj",
+        "sestry / mám / dve",
+        "rokov / má / päťdesiat",
+        "deti / nemám"
+      ]
+    }
+  ],
+  "answers": [
+    "Toto je moja rodina. — To je môj otec. Je učiteľ. — Máš súrodencov? — Mám dve sestry. — Má päťdesiat rokov. — Tie deti sú malé.",
+    "pekný — veľká — malé — dobrá — staré — mladí",
+    "Toto je moja rodina. — To je môj otec. — Mám dve sestry. — Má päťdesiat rokov. — Nemám deti."
+  ]
+}

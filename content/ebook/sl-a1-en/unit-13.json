@@ -1,0 +1,541 @@
+{
+  "title": "My family — possessives that have a dual too",
+  "title_target": "Moja družina",
+  "goal": "Talk about your family and your job — and pick up two things English doesn't have: special possessives for exactly TWO owners, and the word *svoj*, which you must use when the owner is the subject of the sentence.",
+  "bekal": [
+    "using *moj*, *tvoj*, *njegov*, *njen*, *naš*, *njihov* with endings that match the thing owned",
+    "recognizing *najin*, *vajin*, *njun* — possessives for exactly two owners",
+    "choosing *svoj* when the owner is the subject of the sentence"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Fotografije družine",
+      "intro": "Budi shows Maja photos of his family on his phone. Maja is more interested in the grammar than in the photos.",
+      "lines": [
+        {
+          "speaker": "Maja:",
+          "text": "Je to tvoja družina?",
+          "id": "Is this your family?",
+          "literal": "is this your-f family?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja. To sta moja starša, to pa moja sestra.",
+          "id": "Yes. These are my parents, and this is my sister.",
+          "literal": "yes. this are-du my-du parents, this but my-f sister."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Kako ji je ime?",
+          "id": "What's her name?",
+          "literal": "how to-her is name?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sari. Njen mož je učitelj.",
+          "id": "Sari. Her husband is a teacher.",
+          "literal": "Sari. her husband is teacher."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "In ta fant?",
+          "id": "And this boy?",
+          "literal": "and this boy?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Njun sin. Star je pet let.",
+          "id": "Their son. He's five.",
+          "literal": "their-du son. old is five of-years."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Njun? Ne njihov?",
+          "id": "\"Njun\"? Not \"njihov\"?",
+          "literal": "their-du? not their?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Njun je za dva lastnika.",
+          "id": "\"Njun\" is for two owners.",
+          "literal": "their-du is for two owner-du."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Seveda — celo svojina ima dvojino.",
+          "id": "Of course — even possession has a dual.",
+          "literal": "of-course — even possession has dual-acc."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Rad gledam svoje fotografije.",
+          "id": "I like looking at my own photos.",
+          "literal": "glad-m I-look own-pl photo-pl."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Svoje — ker si ti tisti, ki gleda.",
+          "id": "\"Svoje\" — because you're the one looking.",
+          "literal": "own-pl — because you-are you that-one, who looks."
+        }
+      ],
+      "notes": [
+        "**Possessives agree with the THING owned, not with the owner.** *Njen mož* means \"her husband\" — *njen* shows the owner is female, but the ending is empty because *mož* is masculine. If the thing owned is feminine, the ending follows: *njena sestra*. Two pieces of information in one word.",
+        "**Njun = belonging to the two of them.** The dual spreads everywhere, including possession. There are three special possessives for two owners: **najin** (ours, the two of us), **vajin** (yours, the two of you), **njun** (theirs, the two of them). English handles all of this by just adding \"both\" or \"the two of\".",
+        "**Kako ji je ime? — to her, not her.** Compare with unit 1: *Kako **ti** je ime?* (your name), *Kako **mu** je ime?* (his name), *Kako **ji** je ime?* (her name). All three are clitics, so all three sit in second place.",
+        "**Svoj is used when the owner is the subject of the sentence.** English doesn't make this distinction and learners often ignore it — yet it changes the meaning. *Ana bere **svojo** knjigo* = Ana is reading her own book. *Ana bere **njeno** knjigo* = Ana is reading another woman's book. English writes both as \"Ana is reading her book\".",
+        "**Fant** means both boy and boyfriend; **punca** means both girl and girlfriend. Only context tells them apart — and Slovenians have been joking about it since middle school. For married couples the words are different: *mož* (husband) and *žena* (wife)."
+      ],
+      "grammars": [
+        {
+          "title": "Svojilni zaimki — possessives",
+          "body": [
+            "Ten forms, and three of them are just for two owners. They all behave like adjectives, so their ending follows the thing owned."
+          ],
+          "table": {
+            "head": [
+              "Owner",
+              "masculine",
+              "feminine",
+              "neuter",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "I",
+                "**moj** brat",
+                "**moja** sestra",
+                "**moje** okno",
+                "my"
+              ],
+              [
+                "you",
+                "**tvoj** brat",
+                "**tvoja** sestra",
+                "**tvoje** okno",
+                "your"
+              ],
+              [
+                "he",
+                "**njegov** brat",
+                "**njegova** sestra",
+                "**njegovo** okno",
+                "his"
+              ],
+              [
+                "she",
+                "**njen** brat",
+                "**njena** sestra",
+                "**njeno** okno",
+                "her"
+              ],
+              [
+                "we two",
+                "**najin** brat",
+                "**najina** sestra",
+                "**najino** okno",
+                "our (two of us)"
+              ],
+              [
+                "you two",
+                "**vajin** brat",
+                "**vajina** sestra",
+                "**vajino** okno",
+                "your (two of you)"
+              ],
+              [
+                "they two",
+                "**njun** brat",
+                "**njuna** sestra",
+                "**njuno** okno",
+                "their (two of them)"
+              ],
+              [
+                "we (3+)",
+                "**naš** brat",
+                "**naša** sestra",
+                "**naše** okno",
+                "our"
+              ],
+              [
+                "you (3+)",
+                "**vaš** brat",
+                "**vaša** sestra",
+                "**vaše** okno",
+                "your (plural)"
+              ],
+              [
+                "they (3+)",
+                "**njihov** brat",
+                "**njihova** sestra",
+                "**njihovo** okno",
+                "their"
+              ]
+            ]
+          },
+          "after": [
+            "*Vaš* is also the polite **your** when addressing someone formally: *vaša knjiga* (your book). Just like the verbs, the polite form borrows the plural.",
+            "In everyday speech the possessive is often dropped entirely when it's obvious: *Grem k mami* (I'm going to Mom's) — no need for *k moji mami*. Slovenian saves words here, where English would always say \"my\"."
+          ]
+        },
+        {
+          "title": "Svoj — belonging to the subject itself",
+          "body": [
+            "When the owner of something is the **subject of the sentence**, Slovenian requires *svoj* rather than *moj*, *tvoj* or *njegov*. The comparison below shows this isn't a matter of style — the meaning really changes."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Meaning",
+              "Who owns it"
+            ],
+            "rows": [
+              [
+                "*Ana bere **svojo** knjigo.*",
+                "Ana is reading her own book.",
+                "Ana"
+              ],
+              [
+                "*Ana bere **njeno** knjigo.*",
+                "Ana is reading another woman's book.",
+                "someone else"
+              ],
+              [
+                "*Peter kliče **svojega** brata.*",
+                "Peter is calling his own brother.",
+                "Peter"
+              ],
+              [
+                "*Peter kliče **njegovega** brata.*",
+                "Peter is calling another man's brother.",
+                "someone else"
+              ],
+              [
+                "*Berem **svojo** knjigo.*",
+                "I'm reading my book.",
+                "me"
+              ],
+              [
+                "*Imaš **svoj** ključ?*",
+                "Do you have your own key?",
+                "you"
+              ]
+            ]
+          },
+          "after": [
+            "The rule boils down to one question: **is the owner the same as the subject of the sentence?** If yes, use *svoj*. If not, use the ordinary possessive.",
+            "With \"I\" and \"you\", using *moj* or *tvoj* is still understood and often heard — *Berem mojo knjigo* causes no confusion. But with he, she and they, the wrong choice really changes the meaning, and that's where *svoj* needs your attention."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Talking about your family",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A handful of sentences that cover almost every A1 conversation about family — from how many siblings you have to whether you're married."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Imaš brate in sestre?*",
+              "EE-mahsh BRAH-tay een SAYS-tray",
+              "Do you have any brothers and sisters?"
+            ],
+            [
+              "*Imam eno sestro.*",
+              "EE-mahm AY-noh SAYS-troh",
+              "I have one sister."
+            ],
+            [
+              "*Nimam bratov.*",
+              "NEE-mahm BRAH-tohw",
+              "I don't have any brothers."
+            ],
+            [
+              "*Sem najstarejši.*",
+              "suhm nai-stah-RAY-shee",
+              "I'm the eldest."
+            ],
+            [
+              "*Sem najmlajša.*",
+              "suhm nai-MLAI-shah",
+              "I'm the youngest. (female)"
+            ],
+            [
+              "*Moji starši živijo v Jakarti.*",
+              "MOH-yee STAHR-shee zhee-VEE-yoh",
+              "My parents live in Jakarta."
+            ],
+            [
+              "*Sem poročen.*",
+              "suhm poh-ROH-chuhn",
+              "I'm married. (male)"
+            ],
+            [
+              "*Sem samska.*",
+              "suhm SAHM-skah",
+              "I'm single. (female)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice *Nimam bratov* and *Imam fanta*: the first uses the genitive (*rodilnik*) because it's negative, the second uses the animate accusative (*tožilnik*). Two old rules turn up again on one page — and that's how Slovenian rules stick: by repetition in new places."
+        },
+        {
+          "type": "p",
+          "text": "*Pogrešam* (I miss) is a verb that takes its object directly, with no preposition: *Pogrešam mamo*, *Pogrešam dom*, *Pogrešam indonezijsko hrano*. It's one of the words people living far from home need most."
+        }
+      ]
+    },
+    {
+      "title": "Poklici — jobs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Almost every job has two forms. The female form usually adds *-ica* or *-ka*, and using the male form for a woman sounds wrong — not polite, not neutral, just wrong."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Male",
+            "Female",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**učitelj**",
+              "*učiteljica*",
+              "oo-CHEE-tuhly / oo-chee-TAY-lyee-tsah",
+              "teacher"
+            ],
+            [
+              "**zdravnik**",
+              "*zdravnica*",
+              "zdrow-NEEK / zdrow-NEE-tsah",
+              "doctor"
+            ],
+            [
+              "**študent**",
+              "*študentka*",
+              "shtoo-DAYNT / shtoo-DAYNT-kah",
+              "student"
+            ],
+            [
+              "**natakar**",
+              "*natakarica*",
+              "nah-tah-KAHR / nah-tah-KAH-ree-tsah",
+              "waiter / waitress"
+            ],
+            [
+              "**prodajalec**",
+              "*prodajalka*",
+              "proh-dah-YAH-luhts / proh-dah-YOW-kah",
+              "salesperson"
+            ],
+            [
+              "**inženir**",
+              "*inženirka*",
+              "een-zhay-NEER / een-zhay-NEER-kah",
+              "engineer"
+            ],
+            [
+              "**kuhar**",
+              "*kuharica*",
+              "KOO-hahr / koo-HAH-ree-tsah",
+              "cook"
+            ],
+            [
+              "**novinar**",
+              "*novinarka*",
+              "noh-vee-NAHR / noh-vee-NAHR-kah",
+              "journalist"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "To say what you do, there's no word for \"a\": *Sem učitelj*, *Sem študentka*, *Sem zdravnica*. Two words, done — unlike English, which insists on *a*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Kaj si po poklicu?*",
+              "kai see poh poh-KLEE-tsoo",
+              "What do you do?"
+            ],
+            [
+              "*Kje delaš?*",
+              "kyay DAY-lahsh",
+              "Where do you work?"
+            ],
+            [
+              "*Delam v šoli.*",
+              "DAY-lahm oo SHAW-lee",
+              "I work at a school."
+            ],
+            [
+              "*Še študiram.*",
+              "shay shtoo-DEE-rahm",
+              "I'm still studying."
+            ],
+            [
+              "*Iščem službo.*",
+              "EESH-chuhm SLOOZH-boh",
+              "I'm looking for a job."
+            ],
+            [
+              "*Delam od doma.*",
+              "DAY-lahm oht DAW-mah",
+              "I work from home."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Kaj si po poklicu?* is literally \"what are you by profession?\" — and it sounds much more natural than a word-for-word \"what is your job\". It's one of the questions that comes up most when adults introduce themselves in Slovenia, right after name and where you're from."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "moj",
+      "baca": "moy",
+      "en": "my"
+    },
+    {
+      "sl": "tvoj",
+      "baca": "tvoy",
+      "en": "your"
+    },
+    {
+      "sl": "njegov",
+      "baca": "nyay-GAWOO",
+      "en": "his"
+    },
+    {
+      "sl": "njen",
+      "baca": "nyayn",
+      "en": "her"
+    },
+    {
+      "sl": "najin",
+      "baca": "NAH-yeen",
+      "en": "our (two of us)"
+    },
+    {
+      "sl": "njun",
+      "baca": "nyoon",
+      "en": "their (two of them)"
+    },
+    {
+      "sl": "naš",
+      "baca": "nahsh",
+      "en": "our"
+    },
+    {
+      "sl": "njihov",
+      "baca": "NYEE-hohw",
+      "en": "their"
+    },
+    {
+      "sl": "svoj",
+      "baca": "svoy",
+      "en": "one's own"
+    },
+    {
+      "sl": "lastnik",
+      "baca": "LAHST-neek",
+      "en": "owner"
+    },
+    {
+      "sl": "fant",
+      "baca": "fahnt",
+      "en": "boy; boyfriend"
+    },
+    {
+      "sl": "punca",
+      "baca": "POON-tsah",
+      "en": "girl; girlfriend"
+    },
+    {
+      "sl": "sin",
+      "baca": "seen",
+      "en": "son"
+    },
+    {
+      "sl": "hči",
+      "baca": "hchee",
+      "en": "daughter"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right form of the possessive.",
+      "items": [
+        "To je ____ brat. (moj)",
+        "To je ____ sestra. (moj)",
+        "To je ____ okno. (naš)",
+        "To je ____ mož. (njen)",
+        "To je ____ sin. (njun)",
+        "To so ____ starši. (njegov)"
+      ]
+    },
+    {
+      "prompt": "Choose svoj or the ordinary possessive.",
+      "items": [
+        "Ana bere ____ knjigo. (her own book)",
+        "Ana bere ____ knjigo. (another woman's book)",
+        "Berem ____ knjigo. (my book)",
+        "Peter kliče ____ brata. (his own brother)",
+        "Imaš ____ ključ? (your own key)",
+        "To je ____ hiša. (their house)"
+      ]
+    },
+    {
+      "prompt": "Translate into Slovenian.",
+      "items": [
+        "This is my family.",
+        "I have one sister.",
+        "Her husband is a teacher.",
+        "My parents live in Jakarta.",
+        "What do you do?",
+        "I'm still studying."
+      ]
+    },
+    {
+      "prompt": "Wave review — unit 11. Translate into Slovenian without looking back at the unit.",
+      "items": [
+        "I wake up at six.",
+        "Then I take a shower.",
+        "I'm in a hurry today.",
+        "I never drink beer.",
+        "I sleep eight hours."
+      ]
+    }
+  ],
+  "answers": [
+    "moj — moja — naše — njen — njun — njegovi",
+    "svojo — njeno — svojo — svojega — svoj — njihova",
+    "To je moja družina. — Imam eno sestro. — Njen mož je učitelj. — Moji starši živijo v Jakarti. — Kaj si po poklicu? — Še študiram.",
+    "Zbudim se ob šestih. — Potem se stuširam. — Danes se mi mudi. — Nikoli ne pijem piva. — Spim osem ur."
+  ]
+}

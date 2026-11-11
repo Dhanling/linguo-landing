@@ -1,0 +1,533 @@
+{
+  "title": "What do you like?",
+  "title_target": "Čo máš rád?",
+  "goal": "Say what you like and dislike, and set up the fourth case: the dative — the case of the receiver, which Slovak uses in places you wouldn't expect, including to say that something tastes good.",
+  "bekal": [
+    "tell *mať rád* and *páčiť sa* apart — two ways of saying \"like\" that can't be swapped",
+    "use the dative pronouns *mi, ti, mu, jej, nám, vám, im*",
+    "talk about your hobbies and free time"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Čo robíš vo voľnom čase?",
+      "intro": "After the film, Eva and Budi walk along the Danube (Dunaj) and ask each other about their hobbies.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Páčil sa ti ten film?",
+          "id": "Did you like the film?",
+          "literal": "pleased self to-you that film?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Veľmi. Mám rád staré filmy.",
+          "id": "Very much. I like old films.",
+          "literal": "very. I-have glad-m old-pl films."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ja tiež. A čo ešte robíš vo voľnom čase?",
+          "id": "Me too. And what else do you do in your free time?",
+          "literal": "I too. and what still you-do in free-loc time-loc?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Rád varím a rád čítam. A ty?",
+          "id": "I like cooking and I like reading. And you?",
+          "literal": "glad-m I-cook and glad-m I-read. and you?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Rada chodím do prírody. Nemám rada mestá.",
+          "id": "I like going out into nature. I don't like cities.",
+          "literal": "glad-f I-go to nature-gen. not-I-have glad-f cities."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zaujímavé. A páči sa ti Bratislava?",
+          "id": "Interesting. And do you like Bratislava?",
+          "literal": "interesting. and pleases self to-you Bratislava?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Páči, ale Košice sa mi páčia viac.",
+          "id": "I do, but I like Košice more.",
+          "literal": "it-pleases, but Košice self to-me they-please more."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mne sa páči všetko. Ešte je to nové.",
+          "id": "I like everything. It's all still new.",
+          "literal": "to-me self it-pleases all. still is it new."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "A chutí ti slovenské jedlo?",
+          "id": "And do you like Slovak food?",
+          "literal": "and it-tastes-good to-you Slovak-n food?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bryndzové halušky mi veľmi chutia!",
+          "id": "I love bryndzové halušky!",
+          "literal": "bryndza-pl halušky to-me very they-taste-good!"
+        }
+      ],
+      "notes": [
+        "**Two ways to say \"like\", and they can't be swapped.** *Mám rád* means lasting liking — a settled preference. *Páči sa mi* means liking that comes from an impression — something appeals to you. The film *páčil sa mi* (I enjoyed it last night), but old films in general *mám rád* (I'm a real fan).",
+        "**Rád follows the speaker's gender, not the thing liked.** Budi says *mám rád*, Eva says *mám rada*. This is one of the few places in A1 where you have to know your own gender to choose a word — along with *chcel/chcela by som* and the past tense in unit 13.",
+        "**Rád + verb = to like doing.** *Rád varím* = I like cooking. Not \"I cook gladly\" — even though that's the literal meaning. This is the most natural way to talk about hobbies that are activities, and far more common than any alternative.",
+        "**Páči sa mi uses reversed order.** The subject of the sentence is **the thing liked**, and the person goes into the dative. *Košice sa mi páčia* literally means \"Košice pleases me\" — and since Košice is plural, the verb is plural too. Exactly like Spanish *gustar*.",
+        "**Chutí mi works the same way.** *Halušky mi chutia* = \"halušky taste good to me\". Again the food is the subject. If you can use *páči sa mi*, you can use *chutí mi* straight away — it's one pattern."
+      ],
+      "grammars": [
+        {
+          "title": "The dative — the case of the receiver",
+          "body": [
+            "The dative answers *komu?* (to whom) and *čomu?* (to what). Its main job: marking the person who receives something, or who experiences something."
+          ],
+          "table": {
+            "head": [
+              "Noun type",
+              "Ending",
+              "Nominative",
+              "Dative"
+            ],
+            "rows": [
+              [
+                "**m animate**",
+                "**-ovi**",
+                "*brat, učiteľ, lekár*",
+                "*bratovi, učiteľovi, lekárovi*"
+              ],
+              [
+                "**m inanimate**",
+                "**-u**",
+                "*stôl, dom, obchod*",
+                "*stolu, domu, obchodu*"
+              ],
+              [
+                "**f ending in -a**",
+                "**-e**",
+                "*žena, sestra, škola*",
+                "*žene, sestre, škole*"
+              ],
+              [
+                "**f soft letter**",
+                "**-i**",
+                "*ulica, pokladňa*",
+                "*ulici, pokladni*"
+              ],
+              [
+                "**n**",
+                "**-u**",
+                "*mesto, pivo, auto*",
+                "*mestu, pivu, autu*"
+              ]
+            ]
+          },
+          "after": [
+            "**Notice that the feminine dative is exactly the same as the feminine locative**: *žene, škole, ulici*. One form, two jobs — a small gift that means nothing new to learn for half the nouns.",
+            "**The adjective**: m and n take **-ému** (*môjmu dobrému bratovi*), f takes **-ej** (*mojej sestre*). The feminine *-ej* now appears in three cases at once — genitive, dative, locative. Learn it once, use it three times.",
+            "**Verbs that take the dative** are the ones with a receiver: *dať* (to give), *povedať* (to say), *pomôcť* (to help), *ďakovať* (to thank), *volať* (to call), *veriť* (to believe), *rozumieť* (to understand). And the two \"feeling\" verbs at the heart of this unit: *páčiť sa* and *chutiť*. (Careful: *boleť* — to hurt — takes the accusative, not the dative; it's covered in unit 12.)",
+            "**Prepositions with the dative: *k* and *ku*.** *Idem k lekárovi* (I'm going to the doctor's), *ku škole* (toward the school). Unlike *do*: *k* means heading toward, *do* means going inside."
+          ]
+        },
+        {
+          "title": "Dative pronouns",
+          "body": [
+            "Like the accusative, dative pronouns have a short and a long form. The short form is used constantly and is never stressed."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Short",
+              "Long",
+              "Example"
+            ],
+            "rows": [
+              [
+                "ja",
+                "**mi**",
+                "mne",
+                "*Páči sa mi to.* — I like it."
+              ],
+              [
+                "ty",
+                "**ti**",
+                "tebe",
+                "*Chutí ti to?* — Do you like the taste?"
+              ],
+              [
+                "on / ono",
+                "**mu**",
+                "jemu",
+                "*Dám mu knihu.* — I'll give him a book."
+              ],
+              [
+                "ona",
+                "**jej**",
+                "jej",
+                "*Povedz jej to.* — Tell her."
+              ],
+              [
+                "my",
+                "**nám**",
+                "nám",
+                "*Pomôž nám.* — Help us."
+              ],
+              [
+                "vy",
+                "**vám**",
+                "vám",
+                "*Ďakujem vám.* — Thank you."
+              ],
+              [
+                "oni",
+                "**im**",
+                "im",
+                "*Volám im.* — I'm calling them."
+              ]
+            ]
+          },
+          "after": [
+            "**The short form sits in second place** in the sentence, just like *som* and *sa*: *Ten film sa mi páčil*, *Veľmi mi chutí*. If you want to put it first for emphasis, you must use the long form: *Mne sa to páči*.",
+            "**The order is fixed when there are several short words**: *som/si* first, then *sa/si*, then the dative, then the accusative. *Páčil **sa mi** ten film.* *Dal **som mu ju**.* This order never changes, and after a few weeks your ear will reject any other.",
+            "**Mi and si are easy to mix up.** *Mi* = to me (dative). *Si* = you are (byť) **or** for oneself (*dám si*). The situation keeps them apart, and in practice it rarely confuses."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Mať rád or páčiť sa — choosing correctly",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "*mať rád*",
+            "*páčiť sa*"
+          ],
+          "rows": [
+            [
+              "**Kind of liking**",
+              "settled preference",
+              "impression; appeal"
+            ],
+            [
+              "**Subject of the sentence**",
+              "**you**",
+              "**the thing liked**"
+            ],
+            [
+              "**Form of the person**",
+              "nominative — *ja*",
+              "dative — *mi*"
+            ],
+            [
+              "**Form of the thing**",
+              "accusative — *kávu*",
+              "nominative — *káva*"
+            ],
+            [
+              "**Example**",
+              "*Mám rád kávu.*",
+              "*Páči sa mi tá káva.*"
+            ],
+            [
+              "**Meaning**",
+              "I'm a coffee lover.",
+              "I like that coffee."
+            ],
+            [
+              "**For people**",
+              "*Mám ju rád.* (I'm fond of her)",
+              "*Páči sa mi.* (I fancy her)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**The last row matters for your social life.** *Mám ťa rád* means \"I'm fond of you / I love you\" — said to family, close friends, and partners. *Páčiš sa mi* means \"I find you attractive\" — a confession of a crush. Swapping them can send a conversation in a very different direction."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Mám rád / rada …*",
+              "I like … (m / f)"
+            ],
+            [
+              "*Nemám rád / rada …*",
+              "I don't like …"
+            ],
+            [
+              "*Rád / rada …-m*",
+              "I like doing …"
+            ],
+            [
+              "*Páči sa mi …*",
+              "I like … (impression)"
+            ],
+            [
+              "*Nepáči sa mi …*",
+              "I don't like …"
+            ],
+            [
+              "*Chutí mi …*",
+              "… tastes good to me"
+            ],
+            [
+              "*Nechutí mi …*",
+              "… doesn't taste good to me"
+            ],
+            [
+              "*Milujem …*",
+              "I love …"
+            ],
+            [
+              "*Neznášam …*",
+              "I hate …"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "One form trap",
+          "items": [
+            "*Páči sa mi* for one thing, *páčia sa mi* for several. The verb follows the thing, not you: *Páči sa mi tá kniha*, but *Páčia sa mi tie knihy*.",
+            "The past tense follows the thing too: *Páčil sa mi film* (m), *Páčila sa mi kniha* (f), *Páčilo sa mi mesto* (n), *Páčili sa mi Košice* (pl)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Free time",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**voľný čas**",
+              "VOHL-nee chahs",
+              "free time"
+            ],
+            [
+              "**hudba** (f)",
+              "HOOD-bah",
+              "music"
+            ],
+            [
+              "**šport** (m)",
+              "shpohrt",
+              "sport"
+            ],
+            [
+              "**futbal** (m)",
+              "FOOD-bahl",
+              "soccer, football"
+            ],
+            [
+              "**hokej** (m)",
+              "HOH-kay",
+              "ice hockey"
+            ],
+            [
+              "**turistika** (f)",
+              "TOO-rees-tee-kah",
+              "hiking"
+            ],
+            [
+              "**príroda** (f)",
+              "PREE-roh-dah",
+              "nature"
+            ],
+            [
+              "**cestovanie** (n)",
+              "TSEHS-toh-vah-nyeh",
+              "traveling"
+            ],
+            [
+              "**fotografovanie** (n)",
+              "FOH-toh-grah-foh-vah-nyeh",
+              "photography"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "For sports, Slovak uses *hrať* (to play) for ball games and *chodiť na* for other activities: *hrám futbal*, *hrám hokej*, but *chodím plávať* (I go swimming), *chodím na turistiku*. Musical instruments also take *hrať na*: *hrám na gitare*."
+        },
+        {
+          "type": "kotak",
+          "title": "Two things that bind Slovaks together",
+          "items": [
+            "**Ice hockey** is the national sport, and a match against the Czechs brings the country to a standstill. If you want one conversation opener that never fails, this is it.",
+            "**Turistika** — hiking in the mountains — is an almost universal weekend activity. Slovakia has a network of color-marked trails more than 13,000 kilometers long, and almost everyone has childhood memories of the Tatras. Asking *Chodíš na turistiku?* will almost always open up a long story."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 8",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "What time is it?",
+              "*Koľko je hodín?*"
+            ],
+            [
+              "The film starts at half past seven.",
+              "*Film začína o pol ôsmej.*"
+            ],
+            [
+              "Are you free on Friday?",
+              "*Máš čas v piatok?*"
+            ],
+            [
+              "Let's meet at five.",
+              "*Stretneme sa o piatej.*"
+            ],
+            [
+              "I'm ten minutes late.",
+              "*Meškám desať minút.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "mať rád / rada",
+      "baca": "maht raht / RAH-dah",
+      "en": "to like (m / f)"
+    },
+    {
+      "sk": "páčiť sa",
+      "baca": "PAH-cheet sah",
+      "en": "to please; to be liked"
+    },
+    {
+      "sk": "chutiť",
+      "baca": "KHOO-tyeet",
+      "en": "to taste good"
+    },
+    {
+      "sk": "milovať",
+      "baca": "MEE-loh-vaht",
+      "en": "to love"
+    },
+    {
+      "sk": "neznášať",
+      "baca": "NEHZ-nah-shaht",
+      "en": "to hate"
+    },
+    {
+      "sk": "dať",
+      "baca": "daht",
+      "en": "to give"
+    },
+    {
+      "sk": "povedať",
+      "baca": "POH-veh-daht",
+      "en": "to say, to tell"
+    },
+    {
+      "sk": "pomôcť",
+      "baca": "POH-mwohts",
+      "en": "to help"
+    },
+    {
+      "sk": "veriť",
+      "baca": "VEH-reet",
+      "en": "to believe"
+    },
+    {
+      "sk": "hrať",
+      "baca": "hraht",
+      "en": "to play"
+    },
+    {
+      "sk": "k / ku",
+      "baca": "k / koo",
+      "en": "to; toward"
+    },
+    {
+      "sk": "voľný",
+      "baca": "VOHL-nee",
+      "en": "free (time); vacant"
+    },
+    {
+      "sk": "hudba",
+      "baca": "HOOD-bah",
+      "en": "music (f)"
+    },
+    {
+      "sk": "šport",
+      "baca": "shpohrt",
+      "en": "sport (m)"
+    },
+    {
+      "sk": "príroda",
+      "baca": "PREE-roh-dah",
+      "en": "nature (f)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Slovak. If there are two options, use the masculine form.",
+      "items": [
+        "Did you like the film?",
+        "I like old films.",
+        "I like cooking and I like reading.",
+        "I don't like cities.",
+        "I like Slovak food.",
+        "It's all the same to me."
+      ]
+    },
+    {
+      "prompt": "Put into the dative.",
+      "items": [
+        "Dám knihu ____ . (brat)",
+        "Povedz to ____ . (sestra)",
+        "Idem k ____ . (lekár)",
+        "Pomôžem ____ . (učiteľka)",
+        "Ďakujem ____ . (mama)",
+        "Volám ____ . (otec)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ti / film / sa / páčil / ten / ?",
+        "filmy / mám / staré / rád",
+        "varím / rád",
+        "mi / chutia / halušky",
+        "páči / mne / všetko / sa"
+      ]
+    }
+  ],
+  "answers": [
+    "Páčil sa ti ten film? — Mám rád staré filmy. — Rád varím a rád čítam. — Nemám rád mestá. — Slovenské jedlo mi chutí. — Je mi to jedno.",
+    "bratovi — sestre — lekárovi — učiteľke — mame — otcovi",
+    "Páčil sa ti ten film? — Mám rád staré filmy. — Rád varím. — Halušky mi chutia. — Mne sa páči všetko."
+  ]
+}

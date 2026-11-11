@@ -1,0 +1,549 @@
+{
+  "title": "Where do you work?",
+  "title_target": "Къде работиш?",
+  "goal": "Get your sentences moving with real verbs. Three groups, eighteen endings, and one simple way to guess the group of any new verb you meet.",
+  "bekal": [
+    "form the present tense for all three verb groups",
+    "guess a verb's group from its dictionary form",
+    "talk about jobs and daily activities",
+    "use **си** for \"one's own\"",
+    "make negative sentences with **не**"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — After class",
+      "intro": "Ivan and Ani are chatting in the university corridor. All the verbs in this dialogue are in the present tense; watch the endings, because three different patterns appear side by side.",
+      "lines": [
+        {
+          "speaker": "Иван:",
+          "text": "[Къде|Kă-DEH] [работиш|ra-BO-teesh], [Ани|A-nee]?",
+          "id": "Where do you work, Ani?",
+          "literal": "where — work-you, Ani?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Още|OSH-teh] [не|neh] [работя|ra-BO-tya]. [Уча|OO-cha] [български|BĂL-gar-skee] [в|v] [университета|oo-nee-ver-see-TEH-tă].",
+          "id": "I don't work yet. I study Bulgarian at the university.",
+          "literal": "still — not — work-I. study-I — Bulgarian — in — university-the."
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Колко|KOL-ko] [часа|cha-SA] [учиш|OO-cheesh] [на|na] [ден|den]?",
+          "id": "How many hours a day do you study?",
+          "literal": "how-many — hours — study-you — on — day?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Три|Tree] [или|EE-lee] [четири|CHEH-tee-ree]. [Сутрин|SOO-treen] [чета|cheh-TA], [а|a] [следобед|sled-O-bed] [пиша|PEE-sha] [упражнения|oop-razh-NEH-nee-ya].",
+          "id": "Three or four. In the morning I read, and in the afternoon I write exercises.",
+          "literal": "three — or — four. mornings — read-I, and — afternoon — write-I — exercises."
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Разбираш|Raz-BEE-rash] [ли|lee] [всичко|FSEECH-ko]?",
+          "id": "Do you understand everything?",
+          "literal": "understand-you — (question) — everything?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Не|Neh] [всичко|FSEECH-ko]. [Когато|Ko-GA-to] [хората|HO-ra-ta] [говорят|go-VO-ryat] [бързо|BĂR-zo], [не|neh] [разбирам|raz-BEE-ram].",
+          "id": "Not everything. When people speak fast, I don't understand.",
+          "literal": "not — everything. when — people-the — speak-they — fast, not — understand-I."
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Нормално|Nor-MAL-no] [е|eh]. [Аз|Az] [преподавам|preh-po-DA-vam] [история|ees-TO-ree-ya] [в|v] [едно|ed-NO] [училище|oo-CHEE-leesh-teh].",
+          "id": "That's normal. I teach history at a school.",
+          "literal": "normal — is. I — teach-I — history — in — one — school."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Обичаш|O-bee-chash] [ли|lee] [работата|ra-BO-ta-ta] [си|see]?",
+          "id": "Do you like your job?",
+          "literal": "love-you — (question) — work-the — one's-own?"
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Много|MNO-go]. [Децата|Deh-TSA-ta] [питат|PEE-tat] [интересни|een-teh-RES-nee] [неща|nesh-TA].",
+          "id": "Very much. The kids ask interesting things.",
+          "literal": "very. children-the — ask-they — interesting — things."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Значи|ZNA-chee] [работим|ra-BO-teem] [и|ee] [двамата|DVA-ma-ta] — [ти|tee] [с|s] [деца|deh-TSA], [аз|az] [с|s] [граматика|gra-MA-tee-ka]!",
+          "id": "So we both work — you with children, me with grammar!",
+          "literal": "means — work-we — also — two-the — you — with — children, I — with — grammar!"
+        }
+      ],
+      "notes": [
+        "**The dictionary form of a Bulgarian verb is the \"I\" form, not a base form.** The dictionary lists *работя* (I work), not \"to work\". The reason is simple: Bulgarian **has no infinitive at all** — there's no form equivalent to \"to work\" standing on its own. Unit 8 is all about how the language lives without it.",
+        "**Pronouns can be dropped, and usually are.** *Работя* already means \"I work\" without *аз*. The ending already tells you who's doing it, so *аз* is used only for emphasis. ⚠️ English speakers tend to put a pronoun in every sentence because English requires it; here that habit makes your speech sound heavy.",
+        "**Сутрин, следобед, вечер are used without a preposition.** *Сутрин чета* — in the morning I read. No *в* or *на* needed. These forms already work as time expressions, like English \"mornings, I read\".",
+        "**Работата си means \"one's own job\".** The word **си** is used when the owner is the same as the subject of the sentence. *Обичаш ли работата си?* — do you like **your own** job? With *ти* the meaning changes: *Обичам работата ти* — I like **your** job. ⚠️ The practical rule: if owner = subject, use *си*.",
+        "**Когато means \"when\" in statements; кога means \"when?\" in questions.** *Кога работиш?* (When do you work?) vs *Когато работя…* (When I work…). Similar pairs: *къде / където*, *какво / каквото*.",
+        "**Неща is the irregular plural of нещо** (thing, something). Bulgarian has a small group of neuter nouns whose plural ends in -а with a sound change: *нещо → неща*, *дете → деца*, *име → имена*. Learn them as you meet them; there aren't many.",
+        "**И двамата means \"both of us\" or \"both of you\".** The *и* here isn't \"and\" but \"also, both\". *Двамата* uses the special number for people you learned in Unit 5, this time with the article."
+      ],
+      "grammars": [
+        {
+          "title": "The three verb groups",
+          "body": [
+            "Every Bulgarian verb uses one of three sets of endings. What decides it is **the last vowel before the ending in the \"he/she\" form**: -е means Group I, -и means Group II, -а means Group III."
+          ],
+          "table": {
+            "head": [
+              "",
+              "I — чета (read)",
+              "II — говоря (speak)",
+              "III — искам (want)"
+            ],
+            "rows": [
+              [
+                "аз",
+                "чет**а**",
+                "говор**я**",
+                "иск**ам**"
+              ],
+              [
+                "ти",
+                "чет**еш**",
+                "говор**иш**",
+                "иск**аш**"
+              ],
+              [
+                "той / тя / то",
+                "чет**е**",
+                "говор**и**",
+                "иск**а**"
+              ],
+              [
+                "ние",
+                "чет**ем**",
+                "говор**им**",
+                "иск**аме**"
+              ],
+              [
+                "вие",
+                "чет**ете**",
+                "говор**ите**",
+                "иск**ате**"
+              ],
+              [
+                "те",
+                "чет**ат**",
+                "говор**ят**",
+                "иск**ат**"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that the *аз* and *те* forms look alike in all groups (**-а/-я** and **-ат/-ят**); what really sets them apart are the four forms in the middle. If you know the *ти* form of a verb, you automatically know its whole group.",
+            "**Group III is the biggest and the most regular.** Every verb whose dictionary form ends in **-ам** or **-ям** belongs here without exception: *имам, искам, питам, разбирам, преподавам, плащам, работя*… ⚠️ except the last one. *Работя* ends in -я and belongs to Group II: *работиш, работи*."
+          ]
+        },
+        {
+          "title": "Negation: one word, one place",
+          "body": [
+            "To make a verb negative, put **не** right in front of it. No helper verb, no change to the verb. This is one of the easiest parts of all Bulgarian."
+          ],
+          "table": {
+            "head": [
+              "Positive",
+              "Negative",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Работя.",
+                "**Не** работя.",
+                "I don't work."
+              ],
+              [
+                "Разбирам.",
+                "**Не** разбирам.",
+                "I don't understand."
+              ],
+              [
+                "Той е учител.",
+                "Той **не** е учител.",
+                "He isn't a teacher."
+              ],
+              [
+                "Имам пари.",
+                "**Нямам** пари.",
+                "I don't have any money."
+              ],
+              [
+                "Говоря ли бързо?",
+                "**Не** говоря ли бързо?",
+                "Don't I speak fast?"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ The only exception is *имам*, whose negative fuses into **нямам** — you learned it in Unit 4.",
+            "In speech, **не** pulls the stress onto itself and the verb after it loses its stress: *не рабОтя* is said almost as one word, *NEH-ra-bo-tya*. That makes negation easy to hear even in fast speech."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Thirty verbs that cover everyday conversation",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Arranged by group, so you know the endings straight away. The forms listed are dictionary forms (\"I\")."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Group I",
+            "Meaning",
+            "Group II",
+            "Meaning",
+            "Group III",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "чета",
+              "read",
+              "говоря",
+              "speak",
+              "искам",
+              "want"
+            ],
+            [
+              "пиша",
+              "write",
+              "работя",
+              "work",
+              "имам",
+              "have"
+            ],
+            [
+              "живея",
+              "live",
+              "уча",
+              "study",
+              "питам",
+              "ask"
+            ],
+            [
+              "пия",
+              "drink",
+              "мисля",
+              "think",
+              "разбирам",
+              "understand"
+            ],
+            [
+              "ям",
+              "eat",
+              "правя",
+              "make, do",
+              "плащам",
+              "pay"
+            ],
+            [
+              "мога",
+              "can",
+              "виждам",
+              "see",
+              "обичам",
+              "love, like"
+            ],
+            [
+              "дойда",
+              "come",
+              "купя",
+              "buy",
+              "играя",
+              "play"
+            ],
+            [
+              "взема",
+              "take",
+              "платя",
+              "pay (once)",
+              "гледам",
+              "watch"
+            ],
+            [
+              "кажа",
+              "say",
+              "обичам",
+              "—",
+              "отивам",
+              "go"
+            ],
+            [
+              "дам",
+              "give",
+              "спя",
+              "sleep",
+              "започвам",
+              "begin"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Two Group I verbs are highly irregular and are best learned whole right now: **ям** (eat) → *ям, ядеш, яде, ядем, ядете, ядат*, and **мога** (can) → *мога, можеш, може, можем, можете, могат*. You'll use both every day."
+        }
+      ]
+    },
+    {
+      "title": "Times of day and how often",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bulgarian",
+            "Say it",
+            "Meaning",
+            "Bulgarian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "сутрин",
+              "SOO-treen",
+              "in the morning",
+              "винаги",
+              "VEE-na-gee",
+              "always"
+            ],
+            [
+              "по обед",
+              "po O-bed",
+              "at midday",
+              "обикновено",
+              "o-beek-no-VEH-no",
+              "usually"
+            ],
+            [
+              "следобед",
+              "sled-O-bed",
+              "in the afternoon",
+              "често",
+              "CHES-to",
+              "often"
+            ],
+            [
+              "вечер",
+              "VEH-cher",
+              "in the evening",
+              "понякога",
+              "po-NYA-ko-ga",
+              "sometimes"
+            ],
+            [
+              "през нощта",
+              "prez nosht-TA",
+              "at night",
+              "рядко",
+              "RYAD-ko",
+              "rarely"
+            ],
+            [
+              "всеки ден",
+              "FSEH-kee den",
+              "every day",
+              "никога",
+              "NEE-ko-ga",
+              "never"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Никога demands a double negative.** *Никога не работя вечер* — literally \"never not work-I evening\", meaning \"I never work in the evening\". Dropping *не* makes the sentence wrong, not shorter. This pattern applies to the whole family of negative words and is covered in full in Unit 13."
+        },
+        {
+          "type": "p",
+          "text": "Frequency words usually stand **before the verb**: *Често чета вечер.* But Bulgarian is fairly relaxed about word order; moving them to the end doesn't make the sentence wrong, it just shifts the emphasis."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bg": "работя",
+      "baca": "ra-BO-tya",
+      "en": "I work"
+    },
+    {
+      "bg": "уча",
+      "baca": "OO-cha",
+      "en": "I study, I learn"
+    },
+    {
+      "bg": "чета",
+      "baca": "cheh-TA",
+      "en": "I read"
+    },
+    {
+      "bg": "пиша",
+      "baca": "PEE-sha",
+      "en": "I write"
+    },
+    {
+      "bg": "говоря",
+      "baca": "go-VO-rya",
+      "en": "I speak"
+    },
+    {
+      "bg": "разбирам",
+      "baca": "raz-BEE-ram",
+      "en": "I understand"
+    },
+    {
+      "bg": "питам",
+      "baca": "PEE-tam",
+      "en": "I ask"
+    },
+    {
+      "bg": "преподавам",
+      "baca": "preh-po-DA-vam",
+      "en": "I teach"
+    },
+    {
+      "bg": "обичам",
+      "baca": "o-BEE-cham",
+      "en": "I like, I love"
+    },
+    {
+      "bg": "мисля",
+      "baca": "MEES-lya",
+      "en": "I think"
+    },
+    {
+      "bg": "правя",
+      "baca": "PRA-vya",
+      "en": "I make, I do"
+    },
+    {
+      "bg": "работа",
+      "baca": "ra-BO-ta",
+      "en": "work, job"
+    },
+    {
+      "bg": "училище",
+      "baca": "oo-CHEE-leesh-teh",
+      "en": "school"
+    },
+    {
+      "bg": "упражнение",
+      "baca": "oop-razh-NEH-nee-eh",
+      "en": "exercise"
+    },
+    {
+      "bg": "граматика",
+      "baca": "gra-MA-tee-ka",
+      "en": "grammar"
+    },
+    {
+      "bg": "история",
+      "baca": "ees-TO-ree-ya",
+      "en": "history"
+    },
+    {
+      "bg": "нещо / неща",
+      "baca": "NESH-to / nesh-TA",
+      "en": "thing, something (sg / pl)"
+    },
+    {
+      "bg": "час",
+      "baca": "chas",
+      "en": "hour"
+    },
+    {
+      "bg": "още",
+      "baca": "OSH-teh",
+      "en": "still, more"
+    },
+    {
+      "bg": "или",
+      "baca": "EE-lee",
+      "en": "or"
+    },
+    {
+      "bg": "когато",
+      "baca": "ko-GA-to",
+      "en": "when (in statements)"
+    },
+    {
+      "bg": "бързо",
+      "baca": "BĂR-zo",
+      "en": "fast"
+    },
+    {
+      "bg": "бавно",
+      "baca": "BAV-no",
+      "en": "slowly"
+    },
+    {
+      "bg": "интересен",
+      "baca": "een-teh-REH-sen",
+      "en": "interesting"
+    },
+    {
+      "bg": "нормално",
+      "baca": "nor-MAL-no",
+      "en": "normal(ly)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right verb form for the given subject.",
+      "items": [
+        "Аз ____ български. (уча)",
+        "Ти ____ ли бавно? (говоря)",
+        "Той ____ в училище. (работя)",
+        "Ние не ____ всичко. (разбирам)",
+        "Те ____ упражнения. (пиша)",
+        "Вие ____ ли кафе? (пия)"
+      ]
+    },
+    {
+      "prompt": "Make these sentences negative.",
+      "items": [
+        "Работя вечер. ____",
+        "Разбирам всичко. ____",
+        "Той е учител. ____",
+        "Имам време. ____",
+        "Те четат бързо. ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "работиш / къде / ти",
+        "чета / сутрин / аз",
+        "бързо / когато / говорят / хората",
+        "си / ли / работата / обичаш",
+        "в / преподавам / училище / едно"
+      ]
+    },
+    {
+      "prompt": "Translate into Bulgarian.",
+      "items": [
+        "I study Bulgarian.",
+        "You speak very fast.",
+        "We don't understand everything.",
+        "He teaches history.",
+        "The children ask interesting things."
+      ]
+    }
+  ],
+  "answers": [
+    "уча — говориш — работи — разбираме — пишат — пиете",
+    "Не работя вечер. — Не разбирам всичко. — Той не е учител. — Нямам време. — Те не четат бързо.",
+    "Къде работиш? — Сутрин чета. — Когато хората говорят бързо… — Обичаш ли работата си? — Преподавам в едно училище.",
+    "Уча български. — Говориш много бързо. — Не разбираме всичко. — Той преподава история. — Децата питат интересни неща."
+  ]
+}

@@ -1,0 +1,454 @@
+{
+  "title": "Where are you from?",
+  "title_target": "Odkiaľ si?",
+  "goal": "Say where you come from and where you live, say which languages you speak, and set up the rule that drives the rest of this course: a noun's gender can be guessed from its last letter.",
+  "bekal": [
+    "answer *Odkiaľ si?* and *Kde bývaš?* with the right forms",
+    "guess the gender of any noun from its last letter — right more than nine times out of ten",
+    "negate any verb with the joined prefix *ne-*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — V kaviarni po hodine",
+      "intro": "After class, Eva and Budi sit in the café across from the school. Eva wants to know more.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Budi, odkiaľ si?",
+          "id": "Budi, where are you from?",
+          "literal": "Budi, from-where you-are?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Som z Indonézie. A ty?",
+          "id": "I'm from Indonesia. And you?",
+          "literal": "I-am from Indonesia. and you?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ja som z Košíc, ale teraz bývam v Bratislave.",
+          "id": "I'm from Košice, but now I live in Bratislava.",
+          "literal": "I I-am from Košice, but now I-live in Bratislava."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja tu bývam len dva mesiace.",
+          "id": "I've only lived here for two months.",
+          "literal": "I here I-live only two months."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "A hovoríš už po slovensky!",
+          "id": "And you already speak Slovak!",
+          "literal": "and you-speak already in-the-way Slovak!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Trochu. Ešte nehovorím dobre.",
+          "id": "A little. I don't speak well yet.",
+          "literal": "a-little. still not-I-speak well."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Nevadí. Aké jazyky vieš?",
+          "id": "Never mind. What languages do you speak?",
+          "literal": "not-it-bothers. what-kind languages you-know?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Po indonézsky, po anglicky a trochu po nemecky.",
+          "id": "Indonesian, English, and a little German.",
+          "literal": "in-the-way Indonesian, in-the-way English and a-little in-the-way German."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "To je super! Ja neviem po nemecky.",
+          "id": "That's great! I don't speak German.",
+          "literal": "that is super! I not-I-know in-the-way German."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ale vieš po slovensky. To je ťažší jazyk.",
+          "id": "But you speak Slovak. That's a harder language.",
+          "literal": "but you-know in-the-way Slovak. that is harder language."
+        }
+      ],
+      "notes": [
+        "**Z + place name = \"from\".** It forces a special form that is set out fully in unit 9: *Indonézia → z Indonézie*, *Košice → z Košíc*, *Slovensko → zo Slovenska*. For now learn the ready-made forms; the pattern will become clear on its own later.",
+        "**Z becomes zo before words starting with s or z.** *zo Slovenska*, *zo Zvolena*. Slovak does this with several short prepositions: *v/vo*, *s/so*, *k/ku*, *z/zo*. The reason is purely physical — two hissing sounds in a row are hard to say.",
+        "**Nehovorím, neviem, nevadí — the prefix ne- joins on.** This is the general rule for every verb except *byť*. Notice that the stress moves to the prefix: *HOH-voh-reem* becomes *NEH-hoh-voh-reem*. The prefix *ne-* becomes the first syllable, and the first syllable is always stressed.",
+        "**Nevadí is a complete sentence.** Literally \"it doesn't bother\" — used exactly like \"never mind\" and \"no problem\". You'll hear it dozens of times a day in Slovakia.",
+        "**Vedieť is not poznať.** *Vieš po slovensky* = you **can speak** Slovak (a skill). For \"to know someone\" Slovak uses *poznať*: *Poznám Evu*. The difference is the same as French *savoir* and *connaître*, and it is set out fully in unit 16."
+      ],
+      "grammars": [
+        {
+          "title": "Noun gender — twenty seconds that decide the rest of this course",
+          "body": [
+            "Every Slovak noun has one of three genders, and that gender decides which case endings it takes. The good news: you can almost always guess it from **the last letter of the basic form**, without memorizing anything."
+          ],
+          "table": {
+            "head": [
+              "Ending in",
+              "Gender",
+              "Abbreviation",
+              "Example"
+            ],
+            "rows": [
+              [
+                "a consonant",
+                "masculine",
+                "**m**",
+                "*dom* (house), *stôl* (table), *obchod* (shop), *chlieb* (bread)"
+              ],
+              [
+                "**-a**",
+                "feminine",
+                "**f**",
+                "*žena* (woman), *škola* (school), *káva* (coffee), *kniha* (book)"
+              ],
+              [
+                "**-o**",
+                "neuter",
+                "**n**",
+                "*mesto* (town), *okno* (window), *pivo* (beer), *auto* (car)"
+              ],
+              [
+                "**-e, -ie**",
+                "neuter",
+                "**n**",
+                "*more* (sea), *námestie* (square), *pole* (field)"
+              ],
+              [
+                "**-osť**",
+                "feminine",
+                "**f**",
+                "*radosť* (joy), *možnosť* (possibility)"
+              ],
+              [
+                "**-ď, -ť, -ň, -ľ**",
+                "feminine",
+                "**f**",
+                "*posteľ* (bed), *dlaň* (palm), *smrť* (death)"
+              ]
+            ]
+          },
+          "after": [
+            "**The last two rows are the only ones that need attention.** A word ending in a consonant is usually masculine, unless that consonant is a soft *ď, ť, ň, ľ* or the ending *-osť* — then it's feminine. Learn that exception and your accuracy rises to about ninety percent.",
+            "**One exception that makes sense: people.** Nouns ending in *-a* that name a man stay masculine: *kolega* (colleague), *turista* (tourist), *dedo* (grandpa), *futbalista*. Slovak puts reality above spelling — just like Italian with *il poeta*.",
+            "**Why does this matter now, not later?** Because from unit 4 on, every noun you use will change its ending, and the right ending is decided entirely by this table. The ten seconds you spend writing *(m)*, *(f)*, or *(n)* next to a new word will save you hours of confusion in unit 9."
+          ]
+        },
+        {
+          "title": "Bývať and hovoriť — the first two verb classes",
+          "body": [
+            "Slovak verbs fall into three classes according to the vowel in their endings. You've already met two of them in the dialogue; the third comes in unit 7."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "*bývať* (to live)",
+              "*hovoriť* (to speak)",
+              "Negative"
+            ],
+            "rows": [
+              [
+                "ja",
+                "býv**am**",
+                "hovor**ím**",
+                "ne**bývam**, ne**hovorím**"
+              ],
+              [
+                "ty",
+                "býv**aš**",
+                "hovor**íš**",
+                "nebývaš, nehovoríš"
+              ],
+              [
+                "on / ona",
+                "býv**a**",
+                "hovor**í**",
+                "nebýva, nehovorí"
+              ],
+              [
+                "my",
+                "býv**ame**",
+                "hovor**íme**",
+                "nebývame, nehovoríme"
+              ],
+              [
+                "vy",
+                "býv**ate**",
+                "hovor**íte**",
+                "nebývate, nehovoríte"
+              ],
+              [
+                "oni",
+                "býv**ajú**",
+                "hovor**ia**",
+                "nebývajú, nehovoria"
+              ]
+            ]
+          },
+          "after": [
+            "**How to spot the class: look at the *ja* form.** If it ends in *-ám*, the whole row follows *a*. If it ends in *-ím*, the whole row follows *i*. That's why a good Slovak dictionary always lists the *ja* form next to the dictionary form — and why this course does the same in the list at the back.",
+            "**Look at the last row.** The *-ám* class uses *-ajú*, the *-ím* class uses *-ia*. These two are the ones most often wrong at first, because they sound alike and don't follow the pattern of the rows above.",
+            "Other verbs in the *-ám* class: *mať* (mám), *volať* (volám), *čakať* (čakám), *poznať* (poznám), *pracovať*… no, that last one is the third class. Verbs in the *-ím* class: *robiť* (robím), *učiť sa* (učím sa), *prosiť* (prosím), *myslieť* (myslím), *sedieť* (sedím)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Countries, nationalities, and languages",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Three columns that always come up at a first meeting. Notice that all three are built from the same root but are never quite the same — which is exactly why this table exists."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Country",
+            "The person (m / f)",
+            "The language"
+          ],
+          "rows": [
+            [
+              "**Slovensko**",
+              "Slovák / Slovenka",
+              "po slovensky"
+            ],
+            [
+              "**Indonézia**",
+              "Indonézan / Indonézanka",
+              "po indonézsky"
+            ],
+            [
+              "**Česko**",
+              "Čech / Češka",
+              "po česky"
+            ],
+            [
+              "**Poľsko**",
+              "Poliak / Poľka",
+              "po poľsky"
+            ],
+            [
+              "**Maďarsko**",
+              "Maďar / Maďarka",
+              "po maďarsky"
+            ],
+            [
+              "**Rakúsko**",
+              "Rakúšan / Rakúšanka",
+              "po nemecky"
+            ],
+            [
+              "**Nemecko**",
+              "Nemec / Nemka",
+              "po nemecky"
+            ],
+            [
+              "**Anglicko**",
+              "Angličan / Angličanka",
+              "po anglicky"
+            ],
+            [
+              "**Francúzsko**",
+              "Francúz / Francúzka",
+              "po francúzsky"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice how many country names end in **-sko**: *Slovensko, Poľsko, Nemecko, Anglicko, Maďarsko, Japonsko*. The ending practically means \"land\" — so *Slovensko* is \"the land of the Slováks\". When you meet a new country name ending in *-sko*, you can guess the nationality, and vice versa."
+        },
+        {
+          "type": "kotak",
+          "title": "Neighbors on every side",
+          "items": [
+            "Slovakia borders **five** countries: Česko, Poľsko, Ukrajina, Maďarsko, and Rakúsko. Bratislava is the only capital in the world that borders two countries at once — Austria and Hungary, both reachable by bike from the city center.",
+            "Of those five neighbors, **Czech is practically the same language**. Slovaks and Czechs each speak their own language and understand each other fully, without ever learning the other one."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking where someone is from and lives",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The questions below cover almost every introduction. The first two are about origin, the last ones about where things stand now — and Slovak uses a different preposition for each."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Meaning",
+            "Answer"
+          ],
+          "rows": [
+            [
+              "**Odkiaľ si?**",
+              "Where are you from?",
+              "*Som z Indonézie.*"
+            ],
+            [
+              "**Odkiaľ ste?**",
+              "Where are you from? (polite)",
+              "*Som zo Slovenska.*"
+            ],
+            [
+              "**Kde bývaš?**",
+              "Where do you live?",
+              "*Bývam v Bratislave.*"
+            ],
+            [
+              "**Kde pracuješ?**",
+              "Where do you work?",
+              "*Pracujem v škole.*"
+            ],
+            [
+              "**Ako dlho tu si?**",
+              "How long have you been here?",
+              "*Dva mesiace.*"
+            ],
+            [
+              "**Aké jazyky vieš?**",
+              "What languages do you speak?",
+              "*Po anglicky a trochu po nemecky.*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Z** for origin, **v** for where you are now. Each forces a different noun form, and each gets its own unit later — *v* in unit 6, *z* in unit 9. For now treat pairs like *z Indonézie* and *v Bratislave* as whole chunks."
+        },
+        {
+          "type": "p",
+          "text": "One small trap: **odkiaľ** (where from) and **kde** (where) must not be swapped. Answering *Odkiaľ si?* with *Bývam v Bratislave* gives the wrong information — you've named where you live, not where you're from. Slovaks notice the difference, because almost everyone in Bratislava comes from another town."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "odkiaľ",
+      "baca": "OHT-kyahl",
+      "en": "where from"
+    },
+    {
+      "sk": "kde",
+      "baca": "kdyeh",
+      "en": "where"
+    },
+    {
+      "sk": "z / zo",
+      "baca": "z / zoh",
+      "en": "from"
+    },
+    {
+      "sk": "v / vo",
+      "baca": "v / voh",
+      "en": "in"
+    },
+    {
+      "sk": "bývať",
+      "baca": "BEE-vaht",
+      "en": "to live (reside)"
+    },
+    {
+      "sk": "hovoriť",
+      "baca": "HOH-voh-reet",
+      "en": "to speak"
+    },
+    {
+      "sk": "vedieť",
+      "baca": "VEH-dyeht",
+      "en": "to know; can (a skill)"
+    },
+    {
+      "sk": "pracovať",
+      "baca": "PRAH-tsoh-vaht",
+      "en": "to work"
+    },
+    {
+      "sk": "jazyk",
+      "baca": "YAH-zeek",
+      "en": "language; tongue (m)"
+    },
+    {
+      "sk": "teraz",
+      "baca": "TEH-rahs",
+      "en": "now"
+    },
+    {
+      "sk": "už",
+      "baca": "oozh",
+      "en": "already"
+    },
+    {
+      "sk": "ešte",
+      "baca": "EHSH-tyeh",
+      "en": "still; yet"
+    },
+    {
+      "sk": "ale",
+      "baca": "AH-leh",
+      "en": "but"
+    },
+    {
+      "sk": "len",
+      "baca": "lehn",
+      "en": "only"
+    },
+    {
+      "sk": "trochu",
+      "baca": "TROH-khoo",
+      "en": "a little"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Slovak.",
+      "items": [
+        "Where are you from?",
+        "I'm from Indonesia.",
+        "Now I live in Bratislava.",
+        "I don't speak well yet.",
+        "What languages do you speak?",
+        "I don't speak German."
+      ]
+    },
+    {
+      "prompt": "Write the gender: m, f, or n.",
+      "items": [
+        "škola ____",
+        "obchod ____",
+        "pivo ____",
+        "posteľ ____",
+        "kniha ____",
+        "námestie ____",
+        "kolega ____",
+        "radosť ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "si / odkiaľ / ?",
+        "Indonézie / som / z",
+        "Bratislave / bývam / v / teraz",
+        "po / nehovorím / dobre / slovensky / ešte",
+        "jazyky / aké / vieš / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Odkiaľ si? — Som z Indonézie. — Teraz bývam v Bratislave. — Ešte nehovorím dobre. — Aké jazyky vieš? — Neviem po nemecky.",
+    "f — m — n — f — f — n — m — f",
+    "Odkiaľ si? — Som z Indonézie. — Teraz bývam v Bratislave. — Ešte nehovorím dobre po slovensky. — Aké jazyky vieš?"
+  ]
+}

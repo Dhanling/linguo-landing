@@ -1,0 +1,545 @@
+{
+  "title": "Going there, or being there?",
+  "title_target": "Í bæinn eða í bænum?",
+  "goal": "Master one rule that governs every expression of place in Icelandic: the same preposition takes two different cases, and what decides is not the place but whether there is movement.",
+  "bekal": [
+    "choose þolfall for direction and þágufall for location after *í* and *á*",
+    "use the pairs *heim/heima*, *út/úti*, *inn/inni*",
+    "tell *hvert*, *hvar*, and *hvaðan* apart"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Hvert ertu að fara?",
+      "intro": "Búdí runs into Sigga on the sidewalk of Laugavegur. One grammar question turns into an explanation that finally makes everything click.",
+      "lines": [
+        {
+          "speaker": "Sigga:",
+          "text": "Hæ, Búdí! Hvert ertu að fara?",
+          "id": "Hi, Budi! Where are you going?",
+          "literal": "hi, Budi! where-to are-you to go?"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Ég er að fara í búðina. Og þú?",
+          "id": "I'm going to the store. And you?",
+          "literal": "I am to go into store-the. and you?"
+        },
+        {
+          "speaker": "Sigga:",
+          "text": "Ég er í vinnunni til fimm. Svo fer ég heim.",
+          "id": "I'm at work until five. Then I'm going home.",
+          "literal": "I am in work-the until five. then go I home."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Ég skil ekki. „Í búðina\" en „í vinnunni\"?",
+          "id": "I don't get it. \"Í búðina\" but \"í vinnunni\"?",
+          "literal": "I understand not. into store-the but in work-the?"
+        },
+        {
+          "speaker": "Sigga:",
+          "text": "Já! Þegar þú hreyfir þig: „í búðina\". Þegar þú ert kyrr: „í búðinni\".",
+          "id": "Yes! When you're moving: í búðina. When you're staying put: í búðinni.",
+          "literal": "yes! when you move yourself: into store-the. when you are still: in store-the."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Svo kemur endingin af hreyfingunni, ekki af staðnum?",
+          "id": "So the ending comes from the movement, not from the place?",
+          "literal": "so comes ending-the from movement-the, not from place-the?"
+        },
+        {
+          "speaker": "Sigga:",
+          "text": "Nákvæmlega. Ég fer á kaffihús — ég sit á kaffihúsi.",
+          "id": "Exactly. I go to a café — I sit at a café.",
+          "literal": "exactly. I go to café — I sit at café."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Og „heim\" og „heima\"?",
+          "id": "And \"heim\" and \"heima\"?",
+          "literal": "and home(ward) and at-home?"
+        },
+        {
+          "speaker": "Sigga:",
+          "text": "Sama hugsun. Ég fer heim, en ég er heima.",
+          "id": "Same idea. I go home, but I am at home.",
+          "literal": "same thought. I go home(ward), but I am at-home."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Í indónesísku segjum við líka tvö orð: „pulang\" og „di rumah\".",
+          "id": "In Indonesian we also use two words: \"pulang\" and \"di rumah\".",
+          "literal": "in Indonesian say we also two words: pulang and di rumah."
+        },
+        {
+          "speaker": "Sigga:",
+          "text": "Sérðu? Þú kunnir þetta nú þegar.",
+          "id": "See? You already knew this.",
+          "literal": "see-you? you knew this now already."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Þá fer ég í búðina og svo heim. Bless!",
+          "id": "Then I'll go to the store and then home. Bye!",
+          "literal": "then go I into store-the and then home. bye!"
+        }
+      ],
+      "notes": [
+        "**One rule covers everything: movement calls for þolfall, staying put calls for þágufall.** *Ég fer í búð**ina*** (moving there) but *ég er í búð**inni*** (already there). Same preposition, same place; the only difference is whether anything moves.",
+        "**So don't memorize \"í always takes þágufall\" or anything like it** — that dead end makes many beginners give up. There is only one question to ask yourself: *does anything change place in this sentence?*",
+        "**English already gives you the mental tool.** You distinguish \"to the store\" from \"at the store\", \"home\" from \"at home\", \"in\" from \"inside\". Icelandic makes exactly the same distinction — it just marks it on the end of the noun instead of with a different preposition.",
+        "**Þegar means \"when\", and it changes the word order in its clause.** For now just copy the pattern; the rule comes in unit 18.",
+        "**Kunnir þetta nú þegar — \"already knew this\".** *Kunna* means \"know how to\" in the sense of having mastered a skill, unlike *geta* (be able to do something on one occasion). It's the difference between \"can speak Icelandic\" and \"can come tomorrow\".",
+        "**Sit is from sitja (sit).** Together with *standa* (stand), *liggja* (lie), and *búa* (live), it belongs to the verbs almost always followed by þágufall — because they all express **staying in a place**."
+      ],
+      "grammars": [
+        {
+          "title": "Í and á — one preposition, two cases",
+          "body": [
+            "Compare them in pairs. The left side always involves movement; the right side always stays put."
+          ],
+          "table": {
+            "head": [
+              "Going there (þolfall)",
+              "English",
+              "Being there (þágufall)",
+              "English"
+            ],
+            "rows": [
+              [
+                "*í búðina*",
+                "to the store",
+                "*í búðinni*",
+                "at the store"
+              ],
+              [
+                "*í skólann*",
+                "to school",
+                "*í skólanum*",
+                "at school"
+              ],
+              [
+                "*á kaffihús*",
+                "to a café",
+                "*á kaffihúsi*",
+                "at a café"
+              ],
+              [
+                "*í bæinn*",
+                "to town",
+                "*í bænum*",
+                "in town"
+              ],
+              [
+                "*á Ísland*",
+                "to Iceland",
+                "*á Íslandi*",
+                "in Iceland"
+              ],
+              [
+                "*í vinnuna*",
+                "to work",
+                "*í vinnunni*",
+                "at work"
+              ]
+            ]
+          },
+          "after": [
+            "Verbs that call for the left side: *fara*, *koma*, *ganga*, *hlaupa*, *keyra*, *flytja* — they all mean moving.",
+            "Verbs that call for the right side: *vera*, *búa*, *sitja*, *standa*, *vinna*, *bíða* — they all mean being somewhere.",
+            "⚠️ The same rule applies to *yfir* (over), *undir* (under), *fyrir* (in front of), and *við* (beside). Four more prepositions, one rule — so once you've mastered it for *í* and *á*, you've mastered it for all of them."
+          ]
+        },
+        {
+          "title": "Adverb pairs: direction and location",
+          "body": [
+            "Icelandic has two separate words where English often gets by with one. The form ending in **-a** always means staying put."
+          ],
+          "table": {
+            "head": [
+              "Direction (going there)",
+              "Location (being there)",
+              "English"
+            ],
+            "rows": [
+              [
+                "*heim*",
+                "*heima*",
+                "home / at home"
+              ],
+              [
+                "*út*",
+                "*úti*",
+                "out / outside"
+              ],
+              [
+                "*inn*",
+                "*inni*",
+                "in / inside"
+              ],
+              [
+                "*upp*",
+                "*uppi*",
+                "up / upstairs"
+              ],
+              [
+                "*niður*",
+                "*niðri*",
+                "down / downstairs"
+              ],
+              [
+                "*hingað*",
+                "*hér*",
+                "(to) here / here"
+              ],
+              [
+                "*þangað*",
+                "*þar*",
+                "(to) there / there"
+              ],
+              [
+                "*hvert?*",
+                "*hvar?*",
+                "where to? / where?"
+              ]
+            ]
+          },
+          "after": [
+            "Now the three question words promised in unit 2 are complete: **hvert** where to, **hvar** where, **hvaðan** where from. English once had the same trio — *whither*, *where*, *whence*; Icelandic still uses all three every day.",
+            "*Heim* and *heima* are the pair you'll hear most. *Ég fer heim* — I'm going home. *Ég er heima* — I'm at home. *Ég er heiman* — I'm away from home, a rare third form, but it exists."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Í or á? — a choice to memorize",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The case rule is clear, but the choice between *í* and *á* doesn't always have a reason. Most of it can be guessed: *í* for places with walls and a roof, *á* for surfaces and open places. The rest has to be memorized."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Place",
+            "Preposition",
+            "Being there",
+            "Going there"
+          ],
+          "rows": [
+            [
+              "school",
+              "*í*",
+              "*í skólanum*",
+              "*í skólann*"
+            ],
+            [
+              "store",
+              "*í*",
+              "*í búðinni*",
+              "*í búðina*"
+            ],
+            [
+              "town",
+              "*í*",
+              "*í bænum*",
+              "*í bæinn*"
+            ],
+            [
+              "café",
+              "*á*",
+              "*á kaffihúsi*",
+              "*á kaffihús*"
+            ],
+            [
+              "library",
+              "*á*",
+              "*á bókasafninu*",
+              "*á bókasafnið*"
+            ],
+            [
+              "restaurant",
+              "*á*",
+              "*á veitingastað*",
+              "*á veitingastað*"
+            ],
+            [
+              "hotel",
+              "*á*",
+              "*á hóteli*",
+              "*á hótel*"
+            ],
+            [
+              "hospital",
+              "*á*",
+              "*á sjúkrahúsi*",
+              "*á sjúkrahús*"
+            ],
+            [
+              "swimming pool",
+              "*í*",
+              "*í sundlauginni*",
+              "*í sundlaugina*"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Á Íslandi — one preposition that marks a nation",
+          "items": [
+            "Countries usually take *í*: *í Noregi*, *í Danmörku*, *í Indónesíu*. But Iceland itself takes **á**: *á Íslandi*, *til Íslands*, *frá Íslandi*.",
+            "The reason is simple: Iceland is an **island**, and islands take *á* — just like *á Grænlandi*, *á Sikiley*. *Í Íslandi* sounds wrong to Icelandic ears straight away, so learn this one as a single chunk.",
+            "The same habit applies to towns within the country: *í Reykjavík* (in a valley), but *á Akureyri* (on a shore). If you're not sure, ask — Icelanders actually enjoy being asked about this."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Places in town",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Íslenska",
+            "Gender",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*búð*",
+              "kvk",
+              "boodh",
+              "store, shop"
+            ],
+            [
+              "*bókasafn*",
+              "hk",
+              "BOH-kah-sahbn",
+              "library"
+            ],
+            [
+              "*pósthús*",
+              "hk",
+              "POHST-hoos",
+              "post office"
+            ],
+            [
+              "*banki*",
+              "kk",
+              "BAHN-kih",
+              "bank"
+            ],
+            [
+              "*apótek*",
+              "hk",
+              "AH-poh-tehk",
+              "pharmacy"
+            ],
+            [
+              "*veitingastaður*",
+              "kk",
+              "VAY-tin-gah-stah-dhür",
+              "restaurant"
+            ],
+            [
+              "*sjúkrahús*",
+              "hk",
+              "SYOOK-rah-hoos",
+              "hospital"
+            ],
+            [
+              "*torg*",
+              "hk",
+              "tawrgh",
+              "square"
+            ],
+            [
+              "*gata*",
+              "kvk",
+              "GAH-tah",
+              "street"
+            ],
+            [
+              "*flugvöllur*",
+              "kk",
+              "FLÜGH-vö-tlür",
+              "airport"
+            ],
+            [
+              "*höfn*",
+              "kvk",
+              "höbn",
+              "harbor"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Flugvöllur* is literally \"flight field\" and *sjúkrahús* \"sick house\" — word for word, just like English *airfield*. Take apart every compound you meet; half your new vocabulary will come free that way."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "is": "hvert",
+      "baca": "kvehrt",
+      "en": "where to"
+    },
+    {
+      "is": "búð",
+      "baca": "boodh",
+      "en": "store, shop"
+    },
+    {
+      "is": "bær",
+      "baca": "bair",
+      "en": "town"
+    },
+    {
+      "is": "heim / heima",
+      "baca": "haym / HAY-mah",
+      "en": "home(ward) / at home"
+    },
+    {
+      "is": "út / úti",
+      "baca": "oot / OO-tih",
+      "en": "out / outside"
+    },
+    {
+      "is": "inn / inni",
+      "baca": "idn / IH-nih",
+      "en": "in / inside"
+    },
+    {
+      "is": "hingað",
+      "baca": "HIN-gahdh",
+      "en": "(to) here"
+    },
+    {
+      "is": "þangað",
+      "baca": "THAHN-gahdh",
+      "en": "(to) there"
+    },
+    {
+      "is": "þegar",
+      "baca": "THEH-ghahr",
+      "en": "when"
+    },
+    {
+      "is": "hreyfa sig",
+      "baca": "HRAY-vah sigh",
+      "en": "move (oneself)"
+    },
+    {
+      "is": "kyrr",
+      "baca": "kihr",
+      "en": "still, not moving"
+    },
+    {
+      "is": "staður",
+      "baca": "STAH-dhür",
+      "en": "place"
+    },
+    {
+      "is": "nákvæmlega",
+      "baca": "NOW-kvaim-leh-ghah",
+      "en": "exactly"
+    },
+    {
+      "is": "sitja",
+      "baca": "SIT-yah",
+      "en": "sit"
+    },
+    {
+      "is": "standa",
+      "baca": "STAHN-dah",
+      "en": "stand"
+    },
+    {
+      "is": "hugsun",
+      "baca": "HÜG-sün",
+      "en": "thought, idea"
+    },
+    {
+      "is": "kunna",
+      "baca": "KÜ-nah",
+      "en": "know how to"
+    },
+    {
+      "is": "nú þegar",
+      "baca": "noo THEH-ghahr",
+      "en": "already"
+    },
+    {
+      "is": "til",
+      "baca": "til",
+      "en": "until; to"
+    },
+    {
+      "is": "ganga",
+      "baca": "GOWN-gah",
+      "en": "walk"
+    },
+    {
+      "is": "keyra",
+      "baca": "KAY-rah",
+      "en": "drive"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose the right form: direction or location.",
+      "items": [
+        "Ég fer í ____ (búðina, búðinni).",
+        "Ég er í ____ (skólann, skólanum).",
+        "Hún situr á ____ (kaffihús, kaffihúsi).",
+        "Við förum í ____ (bæinn, bænum).",
+        "Þau búa á ____ (Ísland, Íslandi).",
+        "Ég kem í ____ (vinnuna, vinnunni) klukkan átta."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with a direction or location word.",
+      "items": [
+        "Ég fer ____ (home) klukkan fimm.",
+        "Ég er ____ (at home) núna.",
+        "Börnin eru ____ (outside).",
+        "Komdu ____ (in)!",
+        "Hann er ____ (there).",
+        "Komdu ____ (here)!"
+      ]
+    },
+    {
+      "prompt": "Choose the right question word: *hvert*, *hvar*, or *hvaðan*.",
+      "items": [
+        "____ ertu að fara?",
+        "____ býrðu?",
+        "____ kemurðu?",
+        "____ er bókin mín?",
+        "____ förum við á morgun?"
+      ]
+    },
+    {
+      "prompt": "Translate into Icelandic.",
+      "items": [
+        "Where are you going?",
+        "I'm going to the store.",
+        "I'm at work until five.",
+        "Then I'm going home.",
+        "I'm sitting at a café.",
+        "They live in Iceland."
+      ]
+    }
+  ],
+  "answers": [
+    "búðina — skólanum — kaffihúsi — bæinn — Íslandi — vinnuna",
+    "heim — heima — úti — inn — þar — hingað",
+    "Hvert — Hvar — Hvaðan — Hvar — Hvert",
+    "Hvert ertu að fara? — Ég er að fara í búðina. — Ég er í vinnunni til fimm. — Svo fer ég heim. — Ég sit á kaffihúsi. — Þau búa á Íslandi."
+  ]
+}

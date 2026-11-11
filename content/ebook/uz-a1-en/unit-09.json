@@ -1,0 +1,575 @@
+{
+  "title": "What time is it? Hours, days, and months",
+  "title_target": "Soat necha? Vaqt, kun va oy",
+  "goal": "Tell the time correctly, learn the names of the days (a neat Persian counting system), and avoid a half-hour trap that makes speakers of some languages sixty minutes late.",
+  "bekal": [
+    "ask *Soat necha?* and answer it for full hours, minutes past, and minutes to",
+    "say the days and months, and add *-da* to time expressions",
+    "see that *soat besh yarim* means 5:30, not 4:30"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Ertaga soat nechada uchrashamiz?",
+      "intro": "Nilufar invites Budi to explore the old town. They arrange a time over the phone.",
+      "lines": [
+        {
+          "speaker": "Nilufar:",
+          "text": "Budi, ertaga band emassizmi?",
+          "id": "Budi, you're not busy tomorrow, are you?",
+          "literal": "Budi, tomorrow busy not-you-are-?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ertaga payshanba... Soat oʻngacha darsim bor.",
+          "id": "Tomorrow's Thursday... I have class until ten.",
+          "literal": "tomorrow Thursday... hour ten-until lesson-my there-is."
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Yaxshi. Unda soat oʻn birda uchrashamizmi?",
+          "id": "Good. Then shall we meet at eleven?",
+          "literal": "good. that-in hour ten one-at meet-we-?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mayli. Qayerda?",
+          "id": "All right. Where?",
+          "literal": "all-right. where?"
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Chorsu metro bekatida. Kechikmang!",
+          "id": "At Chorsu metro station. Don't be late!",
+          "literal": "Chorsu metro stop-its-at. don't-be-late!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Xavotir olmang. Men har doim erta kelaman.",
+          "id": "Don't worry. I always come early.",
+          "literal": "worry don't-take. I always early come-I."
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Zoʻr. Tushlikni bir yarimda qilamiz.",
+          "id": "Great. We'll have lunch at half past one.",
+          "literal": "great. lunch-the one half-at do-we."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bir yarim — yaʼni oʻn uchdan oʻttiz daqiqa oʻtganda?",
+          "id": "Half past one — you mean thirty minutes after thirteen?",
+          "literal": "one half — that-is ten three-from thirty minute passed-when?"
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Ha, toʻgʻri. Soat 13:30.",
+          "id": "Yes, that's right. 13:30.",
+          "literal": "yes, right. hour 13:30."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tushundim! Indonezcha \"setengah dua\" ham xuddi shunday.",
+          "id": "Got it! In Indonesian, \"setengah dua\" means exactly the same.",
+          "literal": "understood-I! Indonesian \"setengah dua\" also exactly so."
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Demak oson. Ertaga koʻrishguncha!",
+          "id": "So it's easy. See you tomorrow!",
+          "literal": "so easy. tomorrow each-other-seeing-until!"
+        }
+      ],
+      "notes": [
+        "**Bir yarim, not \"yarim ikki\".** Look carefully: *bir yarim* means **1:30** (13:30), literally \"one and a half\". Uzbek names the hour that **has passed** and then adds the half — just like English \"half past one\". Watch out if you know German or Dutch, where *halb zwei* (\"half two\") means 1:30: Uzbek never counts toward the next hour like that. Budi's Indonesian *setengah dua* does point to the next hour — same time, opposite logic — so never translate word for word.",
+        "**Soat oʻngacha = \"until ten o'clock\".** The ending *-gacha* means \"until\", and it attaches after *-ga*: *uygacha* (all the way home), *ertalabgacha* (until morning). Its partner is *-dan* for \"since/from\": *ertalabdan kechgacha* (from morning till evening).",
+        "**Soat nechada? means \"at what time (does it happen)?\".** Compare *Soat necha?*, which asks what time it is now. The only difference is the ending *-da*, but the answers differ: *Soat uch* (it's three o'clock) versus *Soat uchda* (at three o'clock).",
+        "**Demak = \"so, that means\".** A very common linking word for drawing a conclusion. Its cousin is *yaʼni* (that is, i.e.) — both are Arabic words used across much of the Muslim world."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time: three forms are enough",
+          "body": [
+            "Uzbek has a full way and a short way. The long one is used in news broadcasts and announcements; the short one is what everyone uses every day."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Long form",
+              "Short form (everyday)"
+            ],
+            "rows": [
+              [
+                "3:00",
+                "*Soat uch.*",
+                "*Uch.*"
+              ],
+              [
+                "3:15",
+                "*Uchdan oʻn besh daqiqa oʻtdi.*",
+                "*Uchdan chorak oʻtdi.*"
+              ],
+              [
+                "3:30",
+                "*Uch yarim.*",
+                "*Uch yarim.*"
+              ],
+              [
+                "3:40",
+                "*Toʻrtga yigirma daqiqa qoldi.*",
+                "*Yigirma kam toʻrt.*"
+              ],
+              [
+                "3:45",
+                "*Toʻrtga chorak qoldi.*",
+                "*Chorak kam toʻrt.*"
+              ],
+              [
+                "12:00",
+                "*Soat oʻn ikki.*",
+                "*Tush* (noon) / *yarim kecha* (midnight)"
+              ]
+            ]
+          },
+          "after": [
+            "There are only two patterns: **[hour]-dan [minutes] oʻtdi** for \"past\", and **[next hour]-ga [minutes] qoldi** for \"to\". Literally \"from three, twenty minutes have passed\" and \"to four, twenty minutes remain\" — the same logic as English \"past\" and \"to\".",
+            "*Chorak* means a quarter, *yarim* means half. Both are Persian words; *chorak* is related to *chor* (four).",
+            "To say **at** what time, attach *-da*: *soat uchda* (at three), *besh yarimda* (at half past five), *oʻn birda* (at eleven). This is the form you'll need most for making plans."
+          ]
+        },
+        {
+          "title": "Days of the week: a Persian counting system",
+          "body": [
+            "The Uzbek names of the days come from Persian and are counted from Saturday. Once you know a few Persian numbers, most of them explain themselves."
+          ],
+          "table": {
+            "head": [
+              "Oʻzbekcha",
+              "Say it",
+              "Day",
+              "Origin"
+            ],
+            "rows": [
+              [
+                "**dushanba**",
+                "du-shån-BÅ",
+                "Monday",
+                "*du* (two) + *shanba* → second day after Saturday"
+              ],
+              [
+                "**seshanba**",
+                "se-shån-BÅ",
+                "Tuesday",
+                "*se* (three) + *shanba*"
+              ],
+              [
+                "**chorshanba**",
+                "chår-shån-BÅ",
+                "Wednesday",
+                "*chor* (four) + *shanba*"
+              ],
+              [
+                "**payshanba**",
+                "påy-shån-BÅ",
+                "Thursday",
+                "*panj* (five) + *shanba*"
+              ],
+              [
+                "**juma**",
+                "ju-MÅ",
+                "Friday",
+                "Arabic *jumʿa*, \"gathering\" — the day of communal prayer"
+              ],
+              [
+                "**shanba**",
+                "shån-BÅ",
+                "Saturday",
+                "related to \"Sabbath\""
+              ],
+              [
+                "**yakshanba**",
+                "yåk-shån-BÅ",
+                "Sunday",
+                "*yak* (one) + *shanba*"
+              ]
+            ]
+          },
+          "after": [
+            "The count centers on *shanba* (Saturday): Sunday is the first day after it, Monday the second, and so on up to Thursday. Friday has its own name because it's the day of communal prayer. Once you see this Persian number pattern, the seven names stop being blind memorization.",
+            "To say \"on Monday\", add *kuni*: *dushanba kuni* (on Monday), *juma kuni* (on Friday). The short form *dushanbada* is also used.",
+            "*Bugun* (today), *ertaga* (tomorrow), *kecha* (yesterday), *indinga* (the day after tomorrow), *oʻtgan hafta* (last week), *kelasi hafta* (next week)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Units of time and the months",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The month names come from Russian and have barely changed — another place where you can guess and almost always be right."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Meaning",
+            "Oʻzbekcha",
+            "Meaning",
+            "Oʻzbekcha",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*yanvar*",
+              "January",
+              "*may*",
+              "May",
+              "*sentyabr*",
+              "September"
+            ],
+            [
+              "*fevral*",
+              "February",
+              "*iyun*",
+              "June",
+              "*oktyabr*",
+              "October"
+            ],
+            [
+              "*mart*",
+              "March",
+              "*iyul*",
+              "July",
+              "*noyabr*",
+              "November"
+            ],
+            [
+              "*aprel*",
+              "April",
+              "*avgust*",
+              "August",
+              "*dekabr*",
+              "December"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "Meaning",
+            "Oʻzbekcha",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**soniya**",
+              "så-ni-YÅ",
+              "second",
+              "**hafta**",
+              "håf-TÅ",
+              "week"
+            ],
+            [
+              "**daqiqa**",
+              "då-qi-QÅ",
+              "minute",
+              "**oy**",
+              "åy",
+              "month; moon"
+            ],
+            [
+              "**soat**",
+              "så-AT",
+              "hour; clock, watch",
+              "**yil**",
+              "yil",
+              "year"
+            ],
+            [
+              "**kun**",
+              "kun",
+              "day",
+              "**asr**",
+              "åsr",
+              "century"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Oy* means both **moon** and **month** — the moon in the sky and the month on the calendar, just as English *month* comes from *moon*. *Soat* means **hour** as a unit **and** a clock or watch; it comes from the Arabic *sāʿa* (hour)."
+        },
+        {
+          "type": "p",
+          "text": "For years, Uzbek adds *-yil*: *2026-yilda* (in 2026), read *ikki ming yigirma oltinchi yilda*. The ordinal form (*-inchi*) comes in unit 16."
+        }
+      ]
+    },
+    {
+      "title": "Making plans",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Six phrases that cover almost everything about arranging a time."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**Soat necha?**",
+              "så-AT ne-CHÅ",
+              "What time is it?"
+            ],
+            [
+              "**Soat nechada?**",
+              "så-AT ne-chå-DÅ",
+              "At what time (is it)?"
+            ],
+            [
+              "**Qachon uchrashamiz?**",
+              "qå-CHÅN uch-rå-shå-MIZ",
+              "When shall we meet?"
+            ],
+            [
+              "**Band emasmisiz?**",
+              "bånd e-MÅS-mi-siz",
+              "Aren't you busy?"
+            ],
+            [
+              "**Kechikmang!**",
+              "ke-chik-MANG",
+              "Don't be late!"
+            ],
+            [
+              "**Vaqtim yoʻq.**",
+              "VÅQ-tim yoq",
+              "I don't have time."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One cultural note that saves misunderstandings: in Uzbekistan an invitation to eat is almost always meant seriously. If someone says *Uyimizga keling* (come to our house), it isn't just politeness — and declining twice, then accepting the third offer, is considered polite, not indecisive."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uz": "soat",
+      "baca": "så-AT",
+      "en": "hour; clock"
+    },
+    {
+      "uz": "daqiqa",
+      "baca": "då-qi-QÅ",
+      "en": "minute"
+    },
+    {
+      "uz": "kun",
+      "baca": "kun",
+      "en": "day"
+    },
+    {
+      "uz": "hafta",
+      "baca": "håf-TÅ",
+      "en": "week"
+    },
+    {
+      "uz": "oy",
+      "baca": "åy",
+      "en": "month; moon"
+    },
+    {
+      "uz": "yil",
+      "baca": "yil",
+      "en": "year"
+    },
+    {
+      "uz": "yarim",
+      "baca": "yå-RIM",
+      "en": "half"
+    },
+    {
+      "uz": "chorak",
+      "baca": "chå-RAK",
+      "en": "quarter"
+    },
+    {
+      "uz": "dushanba",
+      "baca": "du-shån-BÅ",
+      "en": "Monday"
+    },
+    {
+      "uz": "seshanba",
+      "baca": "se-shån-BÅ",
+      "en": "Tuesday"
+    },
+    {
+      "uz": "chorshanba",
+      "baca": "chår-shån-BÅ",
+      "en": "Wednesday"
+    },
+    {
+      "uz": "payshanba",
+      "baca": "påy-shån-BÅ",
+      "en": "Thursday"
+    },
+    {
+      "uz": "juma",
+      "baca": "ju-MÅ",
+      "en": "Friday"
+    },
+    {
+      "uz": "shanba",
+      "baca": "shån-BÅ",
+      "en": "Saturday"
+    },
+    {
+      "uz": "yakshanba",
+      "baca": "yåk-shån-BÅ",
+      "en": "Sunday"
+    },
+    {
+      "uz": "ertaga",
+      "baca": "er-tå-GÅ",
+      "en": "tomorrow"
+    },
+    {
+      "uz": "kecha",
+      "baca": "ke-CHÅ",
+      "en": "yesterday"
+    },
+    {
+      "uz": "indinga",
+      "baca": "in-din-GÅ",
+      "en": "the day after tomorrow"
+    },
+    {
+      "uz": "erta",
+      "baca": "er-TÅ",
+      "en": "early"
+    },
+    {
+      "uz": "kechikmoq",
+      "baca": "ke-chik-MÅQ",
+      "en": "to be late"
+    },
+    {
+      "uz": "uchrashmoq",
+      "baca": "uch-råsh-MÅQ",
+      "en": "to meet"
+    },
+    {
+      "uz": "band",
+      "baca": "bånd",
+      "en": "busy"
+    },
+    {
+      "uz": "dars",
+      "baca": "dårs",
+      "en": "lesson, class"
+    },
+    {
+      "uz": "tushlik",
+      "baca": "tush-LIK",
+      "en": "lunch"
+    },
+    {
+      "uz": "demak",
+      "baca": "de-MAK",
+      "en": "so, that means"
+    },
+    {
+      "uz": "yaʼni",
+      "baca": "yåʼ-NI",
+      "en": "that is, i.e."
+    },
+    {
+      "uz": "-gacha",
+      "baca": "-gå-CHÅ",
+      "en": "until"
+    },
+    {
+      "uz": "oʻtmoq",
+      "baca": "ot-MÅQ",
+      "en": "to pass (time)"
+    },
+    {
+      "uz": "qolmoq",
+      "baca": "qål-MÅQ",
+      "en": "to remain, to be left"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the time in Uzbek (everyday form).",
+      "items": [
+        "5:00",
+        "7:30",
+        "9:15",
+        "11:40",
+        "14:00",
+        "16:45"
+      ]
+    },
+    {
+      "prompt": "Translate into Uzbek.",
+      "items": [
+        "What time is it?",
+        "We'll meet at eleven.",
+        "Tomorrow is Thursday.",
+        "I have class until ten.",
+        "Don't be late!",
+        "I'm busy on Friday."
+      ]
+    },
+    {
+      "prompt": "Fill in the right day of the week.",
+      "items": [
+        "After dushanba comes ____.",
+        "Before juma comes ____.",
+        "The day of communal prayer is ____.",
+        "The day whose name means \"day one\" is ____.",
+        "The day the count is centered on is ____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "uchrashamiz / soat / oʻn birda",
+        "bor / darsim / oʻngacha / soat",
+        "payshanba / ertaga",
+        "yoʻq / vaqtim / bugun",
+        "kechikmang / iltimos"
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 7. Translate into Uzbek without looking back at the unit.",
+      "items": [
+        "I'm looking for my book.",
+        "Call Anvar!",
+        "I'm waiting for you.",
+        "I read books every day.",
+        "That dictionary is red."
+      ]
+    }
+  ],
+  "answers": [
+    "Soat besh. — Besh yarim. — Toʻqqizdan chorak oʻtdi. — Yigirma kam oʻn ikki. — Soat oʻn toʻrt. — Chorak kam oʻn yetti.",
+    "Soat necha? — Soat oʻn birda uchrashamiz. — Ertaga payshanba. — Soat oʻngacha darsim bor. — Kechikmang! — Juma kuni bandman.",
+    "seshanba — payshanba — juma — yakshanba — shanba",
+    "Soat oʻn birda uchrashamiz. — Soat oʻngacha darsim bor. — Ertaga payshanba. — Bugun vaqtim yoʻq. — Iltimos, kechikmang.",
+    "Men kitobimni qidiraman. — Anvarni chaqiring! — Men sizni kutaman. — Har kuni kitob oʻqiyman. — U lugʻat qizil."
+  ]
+}

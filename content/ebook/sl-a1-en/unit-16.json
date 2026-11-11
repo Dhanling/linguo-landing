@@ -1,0 +1,544 @@
+{
+  "title": "What's the weather like? — sentences with no subject",
+  "title_target": "Kakšno je vreme?",
+  "goal": "Talk about the weather and the seasons, and compare two things — while discovering one of the rare spots where Slovenian is simpler than English: weather sentences have no subject at all.",
+  "bekal": [
+    "using subjectless verbs: *dežuje*, *sneži*, *grmi*, *piha*",
+    "describing conditions with the neuter form: *toplo je*, *hladno je*, *oblačno je*",
+    "comparing with *-ejši* and *kot*: *topleje kot včeraj*, *najlepši dan*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kdo dežuje?",
+      "intro": "A rainy morning at the dorm window. Budi looks outside and discovers a sentence with no subject.",
+      "lines": [
+        {
+          "speaker": "Maja:",
+          "text": "Kakšno je vreme danes?",
+          "id": "What's the weather like today?",
+          "literal": "what-kind is weather today?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dežuje. In hladno je.",
+          "id": "It's raining. And it's chilly.",
+          "literal": "rains. and chilly-n is."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Kdo dežuje?",
+          "id": "Who's raining?",
+          "literal": "who rains?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nihče. Preprosto dežuje.",
+          "id": "Nobody. It just rains.",
+          "literal": "nobody. simply rains."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Tako je. Vreme nima osebka.",
+          "id": "Exactly. Weather has no subject.",
+          "literal": "so is. weather not-has of-subject."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kot v indonezijščini: hujan. Ena beseda.",
+          "id": "Like in Indonesian: \"hujan\". One word.",
+          "literal": "like in Indonesian: hujan. one word."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Jutri bo topleje. Menda celo sonce.",
+          "id": "Tomorrow it'll be warmer. Maybe even sunny, they say.",
+          "literal": "tomorrow will-be warmer. apparently even sun."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Topleje — to je od topel?",
+          "id": "\"Topleje\" — is that from \"topel\"?",
+          "literal": "warmer — this is from warm?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Ja. Topel, toplejši, najtoplejši.",
+          "id": "Yes. Warm, warmer, warmest.",
+          "literal": "yes. warm, warmer, warmest."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Potem gremo v hribe, če bo lepo.",
+          "id": "Then let's go to the mountains if it's nice.",
+          "literal": "then we-go to mountain-pl, if will-be nice."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Velja. Vzemi jakno — vreme se hitro spremeni.",
+          "id": "Deal. Take a jacket — the weather changes fast here.",
+          "literal": "it-holds. take-imp jacket-acc — weather self quickly changes."
+        }
+      ],
+      "notes": [
+        "**Dežuje has no subject, and that's on purpose.** English has to invent a dummy subject — *it is raining*, and nobody knows who \"it\" is. Slovenian doesn't bother: the verb stands alone, like \"hujan\" in Indonesian, as Budi points out. One less word to worry about.",
+        "**If it's not a verb, use the neuter form.** *Toplo je*, *Hladno je*, *Oblačno je*, *Megleno je*. The form ending in *-o* is the neuter adjective, and it's the fallback whenever there's no noun to agree with. You've already met this pattern in unit 4 with *Zunaj je hrupno*.",
+        "**Topleje is an adverb, toplejši is an adjective.** *Jutri bo toplej**e*** (tomorrow it'll be warmer — about conditions), but *toplej**ši** dan* (a warmer day — about a thing). The same split applies across the board: *bolje* versus *boljši*, *lepše* versus *lepši*.",
+        "**Menda = apparently, supposedly.** One word for something you've heard but haven't confirmed. Its relatives: *baje* (reportedly), *očitno* (evidently), *verjetno* (probably). All four are very common and very easy — none of them changes form.",
+        "**Vreme se hitro spremeni** isn't small talk. Slovenia is smaller than New Jersey, yet it holds the Alps, the Pannonian plain and the Mediterranean coast all at once; rain can move from one to another within an hour. The weather forecast is called **vremenska napoved**, and Slovenians check it as seriously as commuters check traffic."
+      ],
+      "grammars": [
+        {
+          "title": "Vreme — verbs and states with no subject",
+          "body": [
+            "Two groups, and neither needs a single noun in front."
+          ],
+          "table": {
+            "head": [
+              "Slovenščina",
+              "Say it",
+              "English",
+              "Type"
+            ],
+            "rows": [
+              [
+                "**dežuje**",
+                "day-ZHOO-yay",
+                "it's raining",
+                "verb"
+              ],
+              [
+                "**sneži**",
+                "snay-ZHEE",
+                "it's snowing",
+                "verb"
+              ],
+              [
+                "**grmi**",
+                "gayr-MEE",
+                "it's thundering",
+                "verb"
+              ],
+              [
+                "**piha**",
+                "PEE-hah",
+                "it's windy",
+                "verb"
+              ],
+              [
+                "**toplo je**",
+                "TAW-ploh yay",
+                "it's warm",
+                "neuter form"
+              ],
+              [
+                "**hladno je**",
+                "HLAHD-noh yay",
+                "it's cool",
+                "neuter form"
+              ],
+              [
+                "**mrzlo je**",
+                "MUHRZ-loh yay",
+                "it's cold",
+                "neuter form"
+              ],
+              [
+                "**vroče je**",
+                "vroh-CHAY yay",
+                "it's hot",
+                "neuter form"
+              ]
+            ]
+          },
+          "after": [
+            "The past tense uses the neuter: *Deževalo je* (it was raining), *Toplo je bilo* (it was warm), *Snežilo je* (it was snowing). So does the future: *Jutri bo deževalo*, *Jutri bo toplo*.",
+            "To ask: *Kakšno je vreme?* (what's the weather like) or *Kako je zunaj?* (what's it like outside). The most common answers: *Lepo je* (it's nice), *Grdo je* (it's ugly) — and yes, Slovenians really do call bad weather \"ugly\"."
+          ]
+        },
+        {
+          "title": "Comparing — more and most",
+          "body": [
+            "To make an adjective \"more\", add **-ejši** or **-ji**. To make it \"most\", add the prefix **naj-** in front of that form. Two steps, and the whole comparison system is done."
+          ],
+          "table": {
+            "head": [
+              "Basic",
+              "More",
+              "Most",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**topel**",
+                "*toplejši*",
+                "*najtoplejši*",
+                "warm"
+              ],
+              [
+                "**lep**",
+                "*lepši*",
+                "*najlepši*",
+                "beautiful"
+              ],
+              [
+                "**star**",
+                "*starejši*",
+                "*najstarejši*",
+                "old"
+              ],
+              [
+                "**mlad**",
+                "*mlajši*",
+                "*najmlajši*",
+                "young"
+              ],
+              [
+                "**velik**",
+                "*večji*",
+                "*največji*",
+                "big"
+              ],
+              [
+                "**majhen**",
+                "*manjši*",
+                "*najmanjši*",
+                "small"
+              ],
+              [
+                "**dober**",
+                "*boljši*",
+                "*najboljši*",
+                "good"
+              ],
+              [
+                "**slab**",
+                "*slabši*",
+                "*najslabši*",
+                "bad"
+              ],
+              [
+                "**drag**",
+                "*dražji*",
+                "*najdražji*",
+                "expensive"
+              ],
+              [
+                "**dolg**",
+                "*daljši*",
+                "*najdaljši*",
+                "long"
+              ]
+            ]
+          },
+          "after": [
+            "To say \"more … than\", use **kot**: *Danes je topleje **kot** včeraj* (it's warmer today than yesterday), *Ljubljana je manjša **kot** Jakarta*. *Kot* also means \"like\" or \"as\": *bel kot sneg* (white as snow).",
+            "If the adjective is long or awkward, Slovenian takes a shortcut with **bolj** (more) and **manj** (less): *bolj zanimiv* (more interesting), *manj drag* (less expensive). This always works, so it's a good backup when the ending form won't come to mind."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Vreme — weather words",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Slovenia has four sharply different seasons, and the weather is the number-one conversation opener — much as it is in Britain."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**vreme**",
+              "VRAY-may",
+              "weather"
+            ],
+            [
+              "**sonce**",
+              "SAWN-tsay",
+              "sun"
+            ],
+            [
+              "**dež**",
+              "daysh",
+              "rain"
+            ],
+            [
+              "**sneg**",
+              "snayk",
+              "snow"
+            ],
+            [
+              "**veter**",
+              "VAY-tuhr",
+              "wind"
+            ],
+            [
+              "**oblak**",
+              "oh-BLAHK",
+              "cloud"
+            ],
+            [
+              "**megla**",
+              "mayg-LAH",
+              "fog"
+            ],
+            [
+              "**nevihta**",
+              "nay-VEEKH-tah",
+              "thunderstorm"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Danes je lepo.*",
+              "DAH-nuhs yay LAY-poh",
+              "It's nice today."
+            ],
+            [
+              "*Zunaj je mrzlo.*",
+              "ZOO-nai yay MUHRZ-loh",
+              "It's cold outside."
+            ],
+            [
+              "*Kakšna je napoved?*",
+              "KAHKSH-nah yay nah-poh-VAYT",
+              "What's the forecast?"
+            ],
+            [
+              "*Jutri bo deževalo.*",
+              "YOO-tree boh day-zhay-VAH-loh",
+              "It'll rain tomorrow."
+            ],
+            [
+              "*Pet stopinj.*",
+              "payt stoh-PEENY",
+              "Five degrees."
+            ],
+            [
+              "*Minus tri.*",
+              "MEE-noos tree",
+              "Minus three."
+            ],
+            [
+              "*Vzemi dežnik.*",
+              "OOZAY-mee dayzh-NEEK",
+              "Take an umbrella."
+            ],
+            [
+              "*Sneži!*",
+              "snay-ZHEE",
+              "It's snowing!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice *pet stopinj* — the genitive plural of *stopinja*, because the number is five. The rule from unit 5 turns up again, in the least expected place. For two degrees: *dve stopinji*."
+        },
+        {
+          "type": "p",
+          "text": "Numbers to prepare yourself for: in January Ljubljana often sits around **zero to minus five** (°C), and the sun sets at 4:00 p.m. In July, by contrast, it can reach thirty-five degrees with dry air — a heat that feels very different from tropical heat."
+        }
+      ]
+    },
+    {
+      "title": "Seasons and what people do",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Four seasons, four adverbs, and four sets of activities. Notice that *spomladi*, *poleti*, *jeseni*, *pozimi* stand on their own, with no preposition."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Season",
+            "In that season",
+            "The weather",
+            "Typical activity"
+          ],
+          "rows": [
+            [
+              "**pomlad**",
+              "*spomladi*",
+              "*Postaja topleje.*",
+              "*Gremo na sprehod.*"
+            ],
+            [
+              "**poletje**",
+              "*poleti*",
+              "*Vroče je.*",
+              "*Gremo na morje.*"
+            ],
+            [
+              "**jesen**",
+              "*jeseni*",
+              "*Dežuje in piha.*",
+              "*Nabiramo gobe.*"
+            ],
+            [
+              "**zima**",
+              "*pozimi*",
+              "*Sneži in mrzlo je.*",
+              "*Gremo smučat.*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Two activities in the last column deserve attention, because both are part of Slovenian identity. **Nabiranje gob** — picking mushrooms in the forest in autumn — is a family pastime for tens of thousands of people, complete with field guides and official rules on how many kilos you may take home. And **smučanje** (skiing) is taught in primary school; nearly every Slovenian can ski before they can ride a bike."
+        },
+        {
+          "type": "p",
+          "text": "The sentence that opens a conversation anywhere: *Lepo vreme, kajne?* (nice weather, isn't it?). *Kajne* at the end of a sentence means \"isn't it?\" or \"right?\" and is used exactly like that — a polite question that doesn't demand an answer."
+        },
+        {
+          "type": "kotak",
+          "title": "Three comparison sentences to use today",
+          "items": [
+            "*Danes je topleje kot včeraj.* — It's warmer today than yesterday.",
+            "*To je najboljša kava v Ljubljani.* — This is the best coffee in Ljubljana.",
+            "*Ljubljana je manjša kot Jakarta, ampak lepša.* — Ljubljana is smaller than Jakarta, but more beautiful. (Say this to a Slovenian and watch their reaction.)"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "vreme",
+      "baca": "VRAY-may",
+      "en": "weather"
+    },
+    {
+      "sl": "dežuje",
+      "baca": "day-ZHOO-yay",
+      "en": "it's raining"
+    },
+    {
+      "sl": "sneži",
+      "baca": "snay-ZHEE",
+      "en": "it's snowing"
+    },
+    {
+      "sl": "sonce",
+      "baca": "SAWN-tsay",
+      "en": "sun"
+    },
+    {
+      "sl": "dež",
+      "baca": "daysh",
+      "en": "rain (noun)"
+    },
+    {
+      "sl": "sneg",
+      "baca": "snayk",
+      "en": "snow"
+    },
+    {
+      "sl": "veter",
+      "baca": "VAY-tuhr",
+      "en": "wind"
+    },
+    {
+      "sl": "oblačno",
+      "baca": "oh-BLAHCH-noh",
+      "en": "cloudy"
+    },
+    {
+      "sl": "jasno",
+      "baca": "YAHS-noh",
+      "en": "clear; sunny"
+    },
+    {
+      "sl": "toplo",
+      "baca": "TAW-ploh",
+      "en": "warm"
+    },
+    {
+      "sl": "mrzlo",
+      "baca": "MUHRZ-loh",
+      "en": "cold"
+    },
+    {
+      "sl": "vroče",
+      "baca": "vroh-CHAY",
+      "en": "hot"
+    },
+    {
+      "sl": "stopinja",
+      "baca": "stoh-PEE-nyah",
+      "en": "degree"
+    },
+    {
+      "sl": "napoved",
+      "baca": "nah-poh-VAYT",
+      "en": "forecast"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate the weather.",
+      "items": [
+        "It's raining. — ____",
+        "It's snowing. — ____",
+        "It's cold. — ____",
+        "It's cloudy. — ____",
+        "It's clear. — ____",
+        "It's windy. — ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the right comparative form.",
+      "items": [
+        "Danes je ____ kot včeraj. (toplo)",
+        "Ljubljana je ____ kot Jakarta. (majhen)",
+        "To je ____ kava v mestu. (naj + dober)",
+        "Moj brat je ____ kot jaz. (star)",
+        "Ta knjiga je ____ kot tista. (drag)",
+        "To je ____ dan v letu. (naj + lep)"
+      ]
+    },
+    {
+      "prompt": "Translate into Slovenian.",
+      "items": [
+        "What's the weather like today?",
+        "It's raining and chilly.",
+        "Tomorrow it'll be warmer.",
+        "What's the forecast?",
+        "Take an umbrella.",
+        "It's warmer today than yesterday."
+      ]
+    },
+    {
+      "prompt": "Wave review — unit 14. Translate into Slovenian without looking back at the unit.",
+      "items": [
+        "What are you cooking?",
+        "I'm cooking soup.",
+        "I like cooking.",
+        "It's delicious.",
+        "I'm full, thanks."
+      ]
+    }
+  ],
+  "answers": [
+    "Dežuje. — Sneži. — Mrzlo je. — Oblačno je. — Jasno je. — Piha.",
+    "topleje — manjša — najboljša — starejši — dražja — najlepši",
+    "Kakšno je vreme danes? — Dežuje in hladno je. — Jutri bo topleje. — Kakšna je napoved? — Vzemi dežnik. — Danes je topleje kot včeraj.",
+    "Kaj kuhaš? — Kuham juho. — Rad kuham. — Je zelo dobro. — Sit sem, hvala."
+  ]
+}

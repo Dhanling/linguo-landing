@@ -1,0 +1,620 @@
+{
+  "title": "Hello, what's your name?",
+  "title_target": "Kaixo, nola duzu izena?",
+  "goal": "Greet people at the right time of day, say your name and where you're from, ask how someone is, and use the verb \"to be\", which always comes at the end of the sentence.",
+  "bekal": [
+    "greet people with *kaixo*, *egun on*, *arratsalde on*, and *gabon*, each at the right time",
+    "say your own name with *nola duzu izena* and answer the question",
+    "use *naiz / zara / da* to say \"I am / you are / he or she is ...\""
+  ],
+  "dialogs": [
+    {
+      "title": "Elkarrizketa — Lehen eguna Bilbon",
+      "intro": "First day in Bilbo. Budi has just walked out of Loiu airport and meets Ainhoa, a staff member from the euskaltegi (Basque language school) who has come to pick him up.",
+      "lines": [
+        {
+          "speaker": "Ainhoa:",
+          "text": "Kaixo! Ongi etorri Bilbora. Ni Ainhoa naiz.",
+          "id": "Hello! Welcome to Bilbo. I'm Ainhoa.",
+          "literal": "hello! well come Bilbo-to. I Ainhoa am."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kaixo, Ainhoa. Ni Budi naiz. Pozten naiz.",
+          "id": "Hello, Ainhoa. I'm Budi. Nice to meet you.",
+          "literal": "hello, Ainhoa. I Budi am. glad am."
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Zer moduz? Nekatuta zaude?",
+          "id": "How are you? Are you tired?",
+          "literal": "what way-by? tired are(located)-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ondo, eskerrik asko. Pixka bat nekatuta. Eta zu?",
+          "id": "Fine, thank you. A bit tired. And you?",
+          "literal": "fine, thanks many. little one tired. and you?"
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Oso ondo. Nongoa zara zu?",
+          "id": "Very well. Where are you from?",
+          "literal": "very well. where-from-one are you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Indonesiarra naiz. Jakartakoa naiz.",
+          "id": "I'm Indonesian. I'm from Jakarta.",
+          "literal": "Indonesia-person am. Jakarta-from-one am."
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Oso urrun! Euskaraz badakizu?",
+          "id": "That's so far! Do you speak Basque?",
+          "literal": "very far! Basque-in yes-know-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Pixka bat. Euskara ikasten ari naiz.",
+          "id": "A little. I'm learning Basque.",
+          "literal": "little one. Basque learning busy am."
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Bikain! Ni euskara irakaslea naiz.",
+          "id": "Great! I'm a Basque teacher.",
+          "literal": "excellent! I Basque teacher-the am."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Benetan? Ni ikaslea naiz, eta sukaldaria ere bai.",
+          "id": "Really? I'm a student, and a cook too.",
+          "literal": "truly? I student-the am, and cook-the also yes."
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Ederra! Tira, goazen. Kotxea hemen dago.",
+          "id": "Lovely! Right, let's go. The car is here.",
+          "literal": "beautiful-the! well, let's-go. car-the here is(located)."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ados. Eskerrik asko, Ainhoa!",
+          "id": "OK. Thank you, Ainhoa!",
+          "literal": "agreed. thanks many, Ainhoa!"
+        }
+      ],
+      "notes": [
+        "**Kaixo works any time, but there's often a better fit.** *Kaixo* is a \"hello\" that is safe with anyone at any hour. But Basques more often greet by time of day: *egun on* in the morning, *arratsalde on* from midday to evening, *gabon* at night. Among friends you'll also hear *aupa!* a lot — roughly a friendly \"hey!\".",
+        "**Zer moduz? calls for a short answer.** Literally \"in what way?\". The answer is nearly always one word: *ondo* (fine), *oso ondo* (very well), *hala-hola* (so-so), *nekatuta* (tired). A long answer sounds like you're complaining — just like \"how are you?\" in English.",
+        "**\"To be\" can't be left out — and it goes last.** As in English, *ni ikaslea* (\"I student\") isn't a sentence yet; it needs *naiz*. But look where it goes: **at the very end**, after everything else — \"I student am\". That pattern will come back throughout the course.",
+        "**Two ways to say where you're from.** For countries and peoples, use *-ar/-tar*: *indonesiarra* (Indonesian), *japoniarra*, *euskalduna* (a Basque, literally \"one who has euskara\"). For cities, use *-ko/-go*: *Jakartakoa*, *Bilbokoa*, *Donostiakoa*. When in doubt, *-ko* almost always works: *Indonesiakoa naiz* is also correct."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Survival phrases",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These twelve phrases aren't grammar material — they're your emergency kit. Memorize them whole now; understand how they're built later."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Bai / Ez",
+              "BAH-ee / EHS",
+              "Yes / No"
+            ],
+            [
+              "Eskerrik asko",
+              "ehs-KEH-rreek AHS-koh",
+              "Thank you very much"
+            ],
+            [
+              "Ez horregatik",
+              "ehs oh-RREH-gah-teek",
+              "You're welcome"
+            ],
+            [
+              "Mesedez",
+              "meh-SEH-dehs",
+              "Please"
+            ],
+            [
+              "Barkatu",
+              "bahr-KAH-too",
+              "Sorry / Excuse me"
+            ],
+            [
+              "Ez dakit",
+              "ehs DAH-keet",
+              "I don't know"
+            ],
+            [
+              "Ez dut ulertzen",
+              "ehs doot oo-LEHR-tsehn",
+              "I don't understand"
+            ],
+            [
+              "Berriro esan, mesedez",
+              "beh-RREE-roh eh-SAHN",
+              "Please say that again"
+            ],
+            [
+              "Poliki, mesedez",
+              "poh-LEE-kee",
+              "Slowly, please"
+            ],
+            [
+              "Gaztelaniaz badakizu?",
+              "gahs-teh-lah-NEE-ahs bah-dah-KEE-soo",
+              "Do you speak Spanish?"
+            ],
+            [
+              "Nola esaten da hau euskaraz?",
+              "NOH-lah eh-SAH-tehn dah AH-oo",
+              "How do you say this in Basque?"
+            ],
+            [
+              "Lagundu, mesedez!",
+              "lah-GOON-doo",
+              "Help (me)!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Ez horregatik* literally means \"not because of that\" — the standard reply to thanks, and no stranger than \"don't mention it\" if you think about it too hard. Another one that's just as common: *ez da ezer* (\"it's nothing\")."
+        },
+        {
+          "type": "kotak",
+          "title": "One sentence that changes your time in Euskal Herria",
+          "items": [
+            "*Euskara ikasten ari naiz. Euskaraz hitz egin dezakegu?* — \"I'm learning Basque. Can we speak euskara?\"",
+            "Almost every Basque speaker is also fluent in Spanish or French, so they'll switch automatically the moment they hear a foreign accent. The sentence above stops that switch — and it's almost always met with a smile, because outsiders who learn their language are still rare."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Greetings by time of day",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Greeting",
+            "Say it",
+            "When",
+            "Note"
+          ],
+          "rows": [
+            [
+              "Egun on",
+              "eh-GOON ohn",
+              "until midday",
+              "literally: good day"
+            ],
+            [
+              "Arratsalde on",
+              "ah-rrahts-AHL-deh ohn",
+              "midday until sunset",
+              "also used when leaving"
+            ],
+            [
+              "Gabon",
+              "gah-BOHN",
+              "after dark",
+              "for arriving and for leaving"
+            ],
+            [
+              "Kaixo",
+              "KAH-ee-shoh",
+              "any time",
+              "safest with everyone"
+            ],
+            [
+              "Aupa",
+              "AH-oo-pah",
+              "any time",
+              "casual, for friends"
+            ],
+            [
+              "Epa",
+              "EH-pah",
+              "any time",
+              "very casual, young people"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at the order: the time first, then *on* (\"good\"). From *egun* (day) → *egun on*, all these greetings are literally short wishes: \"day good\". Basque puts adjectives **after** the noun, and these greetings are your first example."
+        },
+        {
+          "type": "sub",
+          "text": "Saying goodbye"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Agur",
+              "AH-goor",
+              "Goodbye (general)"
+            ],
+            [
+              "Aio",
+              "AH-ee-oh",
+              "Bye (casual)"
+            ],
+            [
+              "Gero arte",
+              "GEH-roh AHR-teh",
+              "See you later"
+            ],
+            [
+              "Bihar arte",
+              "BEE-ahr AHR-teh",
+              "See you tomorrow"
+            ],
+            [
+              "Ikusi arte",
+              "ee-KOO-see AHR-teh",
+              "See you (again)"
+            ],
+            [
+              "Ondo ibili",
+              "OHN-doh ee-BEE-lee",
+              "Take care"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Arte* means \"until\", and it stands **after** the word it goes with: *gero arte* = \"later until\". This holds for every word of place and time in Basque — they all come afterwards, never in front."
+        }
+      ]
+    },
+    {
+      "title": "Naiz, zara, da — your first verb",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "*Izan* means \"to be\". It's the most important verb in the language, and its forms have to be learned whole — there's no pattern, just like English \"am/is/are\"."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Person",
+            "Form",
+            "Say it",
+            "Example"
+          ],
+          "rows": [
+            [
+              "ni (I)",
+              "**naiz**",
+              "NAH-ees",
+              "Ni Budi naiz."
+            ],
+            [
+              "zu (you)",
+              "**zara**",
+              "SAH-rah",
+              "Zu Ainhoa zara."
+            ],
+            [
+              "hura (he/she)",
+              "**da**",
+              "DAH",
+              "Hura irakaslea da."
+            ],
+            [
+              "gu (we)",
+              "**gara**",
+              "GAH-rah",
+              "Gu ikasleak gara."
+            ],
+            [
+              "zuek (you all)",
+              "**zarete**",
+              "sah-REH-teh",
+              "Zuek lagunak zarete."
+            ],
+            [
+              "haiek (they)",
+              "**dira**",
+              "DEE-rah",
+              "Haiek euskaldunak dira."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The pronoun itself can be dropped, because the verb form already shows who's meant: *Budi naiz* already means \"I'm Budi\". Native speakers use *ni*, *zu*, and the rest only for emphasis — \"**I'm** the teacher, not her\"."
+        },
+        {
+          "type": "sub",
+          "text": "Negating: ez in front, and the auxiliary comes with it"
+        },
+        {
+          "type": "p",
+          "text": "To negate, put *ez* in front of the auxiliary — and the auxiliary jumps forward with it, leaving its place at the end of the sentence."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Positive",
+            "Negative",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "Ni irakaslea naiz.",
+              "Ni **ez naiz** irakaslea.",
+              "I'm not a teacher."
+            ],
+            [
+              "Hura euskalduna da.",
+              "Hura **ez da** euskalduna.",
+              "He isn't Basque."
+            ],
+            [
+              "Gu nekatuta gaude.",
+              "Gu **ez gaude** nekatuta.",
+              "We aren't tired."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Careful: izan and egon are not the same",
+          "items": [
+            "*Izan* (naiz, zara, da) is for **identity**: who you are, where you're from, your job. *Ni ikaslea naiz.*",
+            "*Egon* (nago, zaude, dago) is for **temporary states and location**: where you are, how you're feeling. *Bilbon nago. Nekatuta nago.*",
+            "English speakers tend to use *naiz* for both, because English has just one \"to be\". Quick rule: if it could change by tomorrow, use *egon*. Spanish makes exactly the same split (*ser* and *estar*) — if you've studied Spanish, you already know the feeling.",
+            "Unit 11 covers *egon* fully. For now, just memorize two sentences: *Nekatuta nago* and *Bilbon nago*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "eu": "kaixo",
+      "baca": "KAH-ee-shoh",
+      "en": "hello"
+    },
+    {
+      "eu": "egun on",
+      "baca": "eh-GOON ohn",
+      "en": "good morning"
+    },
+    {
+      "eu": "arratsalde on",
+      "baca": "ah-rrahts-AHL-deh ohn",
+      "en": "good afternoon/evening"
+    },
+    {
+      "eu": "gabon",
+      "baca": "gah-BOHN",
+      "en": "good night, good evening"
+    },
+    {
+      "eu": "agur",
+      "baca": "AH-goor",
+      "en": "goodbye"
+    },
+    {
+      "eu": "ongi etorri",
+      "baca": "OHN-gee eh-TOH-rree",
+      "en": "welcome"
+    },
+    {
+      "eu": "ni",
+      "baca": "NEE",
+      "en": "I"
+    },
+    {
+      "eu": "zu",
+      "baca": "SOO",
+      "en": "you"
+    },
+    {
+      "eu": "hura",
+      "baca": "OO-rah",
+      "en": "he, she"
+    },
+    {
+      "eu": "gu",
+      "baca": "GOO",
+      "en": "we"
+    },
+    {
+      "eu": "zuek",
+      "baca": "SOO-ehk",
+      "en": "you (plural)"
+    },
+    {
+      "eu": "haiek",
+      "baca": "AH-ee-ehk",
+      "en": "they"
+    },
+    {
+      "eu": "izen",
+      "baca": "EE-sehn",
+      "en": "name"
+    },
+    {
+      "eu": "ikasle",
+      "baca": "ee-KAHS-leh",
+      "en": "student, pupil"
+    },
+    {
+      "eu": "irakasle",
+      "baca": "ee-rah-KAHS-leh",
+      "en": "teacher"
+    },
+    {
+      "eu": "sukaldari",
+      "baca": "soo-kahl-DAH-ree",
+      "en": "cook"
+    },
+    {
+      "eu": "lagun",
+      "baca": "LAH-goon",
+      "en": "friend"
+    },
+    {
+      "eu": "euskaldun",
+      "baca": "eh-oos-KAHL-doon",
+      "en": "Basque speaker, a Basque"
+    },
+    {
+      "eu": "euskara",
+      "baca": "eh-oos-KAH-rah",
+      "en": "Basque (language)"
+    },
+    {
+      "eu": "gaztelania",
+      "baca": "gahs-teh-LAH-nee-ah",
+      "en": "Spanish (language)"
+    },
+    {
+      "eu": "ondo",
+      "baca": "OHN-doh",
+      "en": "well, fine"
+    },
+    {
+      "eu": "oso",
+      "baca": "OH-soh",
+      "en": "very"
+    },
+    {
+      "eu": "pixka bat",
+      "baca": "PEESH-kah baht",
+      "en": "a little"
+    },
+    {
+      "eu": "nekatuta",
+      "baca": "neh-kah-TOO-tah",
+      "en": "tired"
+    },
+    {
+      "eu": "urrun",
+      "baca": "OO-rroon",
+      "en": "far"
+    },
+    {
+      "eu": "hemen",
+      "baca": "EH-mehn",
+      "en": "here"
+    },
+    {
+      "eu": "eta",
+      "baca": "EH-tah",
+      "en": "and"
+    },
+    {
+      "eu": "ere bai",
+      "baca": "EH-reh BAH-ee",
+      "en": "too, also"
+    },
+    {
+      "eu": "benetan",
+      "baca": "beh-NEH-tahn",
+      "en": "really, truly"
+    },
+    {
+      "eu": "ados",
+      "baca": "ah-DOHS",
+      "en": "OK, agreed"
+    },
+    {
+      "eu": "bikain",
+      "baca": "bee-KAH-een",
+      "en": "excellent, great"
+    },
+    {
+      "eu": "kotxe",
+      "baca": "KOH-cheh",
+      "en": "car"
+    },
+    {
+      "eu": "zer moduz",
+      "baca": "sehr moh-DOOS",
+      "en": "how are you"
+    },
+    {
+      "eu": "nongoa",
+      "baca": "NOHN-goh-ah",
+      "en": "where from"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Basque.",
+      "items": [
+        "Hello! I'm Budi.",
+        "I'm Indonesian.",
+        "How are you?",
+        "Fine, thank you.",
+        "I'm learning Basque.",
+        "See you tomorrow!"
+      ]
+    },
+    {
+      "prompt": "Complete with the right form of *izan* (naiz, zara, da, gara, zarete, dira).",
+      "items": [
+        "Ni ikaslea ____.",
+        "Zu irakaslea ____.",
+        "Hura euskalduna ____.",
+        "Gu lagunak ____.",
+        "Zuek sukaldariak ____.",
+        "Haiek Bilbokoak ____."
+      ]
+    },
+    {
+      "prompt": "Choose the right greeting. Write the whole answer.",
+      "items": [
+        "You walk into a bakery at 8 in the morning. You say ____.",
+        "You meet a neighbor at 5 in the afternoon. You say ____.",
+        "You walk into a restaurant at 9 at night. You say ____.",
+        "You're leaving and will see them again tomorrow. You say ____.",
+        "Your friend is riding off on a motorbike. You say ____.",
+        "Someone thanks you. You reply ____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "naiz / Budi / ni",
+        "zara / nongoa / zu / ?",
+        "naiz / indonesiarra / ni",
+        "ez / irakaslea / naiz / ni",
+        "dago / kotxea / hemen",
+        "naiz / ari / euskara / ikasten"
+      ]
+    }
+  ],
+  "answers": [
+    "Kaixo! Ni Budi naiz. — Indonesiarra naiz. — Zer moduz? — Ondo, eskerrik asko. — Euskara ikasten ari naiz. — Bihar arte!",
+    "naiz — zara — da — gara — zarete — dira",
+    "Egun on. — Arratsalde on. — Gabon. — Bihar arte. — Ondo ibili. — Ez horregatik.",
+    "Ni Budi naiz. — Zu nongoa zara? — Ni indonesiarra naiz. — Ni ez naiz irakaslea. — Kotxea hemen dago. — Euskara ikasten ari naiz."
+  ]
+}

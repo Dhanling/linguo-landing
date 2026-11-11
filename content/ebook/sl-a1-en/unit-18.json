@@ -1,0 +1,514 @@
+{
+  "title": "Taking the train — and a preposition that changes its sound",
+  "title_target": "Potujemo z vlakom",
+  "goal": "Buy a ticket, read a timetable and say how you're traveling — while learning the instrumental (*orodnik*), the last case you need at A1, along with a preposition that changes shape depending on the sound after it.",
+  "bekal": [
+    "naming means of transport: *z vlakom*, *z avtobusom*, *s kolesom*, *peš*",
+    "choosing *z* or *s* from the sound of the next word",
+    "buying a ticket and asking how long the journey takes"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Na blagajni železniške postaje",
+      "intro": "The ticket counter at Ljubljana railway station, Saturday morning. Budi is heading to Bled and gets a phonetics lesson as a bonus.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Eno vozovnico do Bleda, prosim.",
+          "id": "One ticket to Bled, please.",
+          "literal": "one ticket-acc to of-Bled, please."
+        },
+        {
+          "speaker": "Blagajničarka:",
+          "text": "Enosmerno ali povratno?",
+          "id": "One way or return?",
+          "literal": "one-way or return?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Povratno. Kdaj gre vlak?",
+          "id": "Return. When does the train leave?",
+          "literal": "return. when goes train?"
+        },
+        {
+          "speaker": "Blagajničarka:",
+          "text": "Ob osmih petnajst. Peron tri.",
+          "id": "At 8:15. Platform three.",
+          "literal": "at of-eight fifteen. platform three."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Koliko časa traja?",
+          "id": "How long does it take?",
+          "literal": "how-much of-time lasts?"
+        },
+        {
+          "speaker": "Blagajničarka:",
+          "text": "Uro in pol. Z avtobusom je dlje.",
+          "id": "An hour and a half. It takes longer by bus.",
+          "literal": "hour-acc and half. with bus-ins is longer."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Z avtobusom, ne s avtobusom?",
+          "id": "\"Z avtobusom\", not \"s avtobusom\"?",
+          "literal": "with bus-ins, not with bus-ins?"
+        },
+        {
+          "speaker": "Blagajničarka:",
+          "text": "Odvisno od glasu za njim.",
+          "id": "It depends on the sound that comes after it.",
+          "literal": "depends on of-sound behind with-it."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aha — s kartico, z avtom.",
+          "id": "Aha — \"s kartico\", but \"z avtom\".",
+          "literal": "aha — with card-ins, with car-ins."
+        },
+        {
+          "speaker": "Blagajničarka:",
+          "text": "Točno. Devet evrov, prosim.",
+          "id": "Exactly. Nine euros, please.",
+          "literal": "exactly. nine of-euros, please."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Izvolite. Hvala lepa!",
+          "id": "Here you go. Thank you very much!",
+          "literal": "here-you-are. thanks lovely!"
+        }
+      ],
+      "notes": [
+        "**Z and s are the same word.** What decides which sound you use is the **first letter of the next word**, not the meaning. The rule is purely about ease of pronunciation: *s* before voiceless sounds, *z* before everything else. Slovenian does something similar with *iz/z*, *v/u* and *k/h*.",
+        "**Means of transport take the instrumental.** *Z vlakom*, *z avtobusom*, *s kolesom*, *z avtom*. Literally \"with the train\" — Slovenian treats a vehicle as a tool, just like a knife or a pen. One exception uses no preposition at all: *peš* (on foot).",
+        "**Koliko časa traja? uses the genitive.** You've known this since unit 5: *koliko* always pulls in that form. The answer, though, uses the accusative, because a length of time is treated as an object: *Traja uro in pol* (it takes an hour and a half), *Traja dve uri*.",
+        "**Uro in pol = an hour and a half.** Slovenian says \"hour and half\", just as English does. Other phrases on the same pattern: *dan in pol* (a day and a half), *leto in pol* (a year and a half). For just half: *pol ure*.",
+        "**Srečno pot!** — \"have a lucky journey\" — is what you'll hear every time you say goodbye at a station or airport. Its relatives: *Lep dan!*, *Lep večer!*, *Srečno!* All short, warm, and needing no answer other than *Hvala, enako!* (thanks, same to you)."
+      ],
+      "grammars": [
+        {
+          "title": "Orodnik — the case of tools and company",
+          "body": [
+            "The last case you need at A1. It marks **with what** or **with whom** something is done, and it also appears after position prepositions such as *pred*, *za*, *nad*, *pod* and *med*."
+          ],
+          "table": {
+            "head": [
+              "Type",
+              "Basic form",
+              "Instrumental",
+              "Example"
+            ],
+            "rows": [
+              [
+                "masculine",
+                "*vlak*",
+                "**z vlak*om***",
+                "*Potujem z vlakom.* — I'm going by train."
+              ],
+              [
+                "masculine",
+                "*avto*",
+                "**z avt*om***",
+                "*Grem z avtom.* — I'm going by car."
+              ],
+              [
+                "masculine",
+                "*prijatelj*",
+                "**s prijatelj*em***",
+                "*Grem s prijateljem.* — I'm going with a friend."
+              ],
+              [
+                "feminine",
+                "*kartica*",
+                "**s kartic*o***",
+                "*Plačam s kartico.* — I'll pay by card."
+              ],
+              [
+                "feminine",
+                "*Maja*",
+                "**z Maj*o***",
+                "*Grem z Majo.* — I'm going with Maja."
+              ],
+              [
+                "neuter",
+                "*letalo*",
+                "**z letal*om***",
+                "*Letim z letalom.* — I'm flying."
+              ],
+              [
+                "preposition",
+                "*pošta*",
+                "**pred pošt*o***",
+                "*Pred pošto.* — In front of the post office."
+              ],
+              [
+                "preposition",
+                "*miza*",
+                "**pod miz*o***",
+                "*Pod mizo.* — Under the table."
+              ]
+            ]
+          },
+          "after": [
+            "There are only two endings: **-om** for masculine and neuter words (becoming **-em** after *c, č, j, š, ž*), and **-o** for feminine words. The last one happens to sound the same as the accusative — the preposition tells them apart: *Vidim Majo* (object) versus *Grem z Majo* (company).",
+            "With the instrumental, all six Slovenian cases have now passed before your eyes: **imenovalnik** (nominative: the subject), **rodilnik** (genitive: of, possession, negation), **dajalnik** (dative: to), **tožilnik** (accusative: object, direction), **mestnik** (locative: place), **orodnik** (instrumental: tool, company). The full summary is at the back of this course."
+          ]
+        },
+        {
+          "title": "Z or s — the sound rule",
+          "body": [
+            "This rule has nothing to do with meaning; it's purely about sound. Once you've seen the list, it stops feeling random."
+          ],
+          "table": {
+            "head": [
+              "Use",
+              "Before the sounds",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**s**",
+                "p, t, k, s, š, c, č, f, h",
+                "*s prijateljem*, *s teboj*, *s kartico*, *s sestro*, *s hčerko*"
+              ],
+              [
+                "**z**",
+                "all vowels",
+                "*z avtom*, *z Evo*, *z očetom*, *z Ano*"
+              ],
+              [
+                "**z**",
+                "b, d, g, z, ž, j, l, m, n, r, v",
+                "*z bratom*, *z Majo*, *z vlakom*, *z ženo*, *z ladjo*"
+              ]
+            ]
+          },
+          "after": [
+            "The cheapest way to remember it: **whispered sounds want *s*, voiced sounds want *z***. Put your hand on your throat — if it vibrates when you say the first letter, use *z*.",
+            "A similar rule applies to the pair **k / h** (to someone's place): *h* is used only before *k* and *g* — *h koncu*, *h gospe* — and *k* everywhere else: *k Maji*, *k zdravniku*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Potovanje — traveling",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Slovenia is roughly the size of New Jersey, so almost every destination is within two hours. The trains are run by **Slovenske železnice**; intercity buses are often faster than the train on the same route."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Say it",
+            "By …",
+            "English"
+          ],
+          "rows": [
+            [
+              "**vlak**",
+              "vlahk",
+              "*z vlakom*",
+              "train"
+            ],
+            [
+              "**avtobus**",
+              "ow-toh-BOOS",
+              "*z avtobusom*",
+              "bus"
+            ],
+            [
+              "**avto**",
+              "OW-toh",
+              "*z avtom*",
+              "car"
+            ],
+            [
+              "**kolo**",
+              "koh-LAW",
+              "*s kolesom*",
+              "bicycle"
+            ],
+            [
+              "**letalo**",
+              "lay-TAH-loh",
+              "*z letalom*",
+              "plane"
+            ],
+            [
+              "**taksi**",
+              "TAHK-see",
+              "*s taksijem*",
+              "taxi"
+            ],
+            [
+              "**ladja**",
+              "LAHD-yah",
+              "*z ladjo*",
+              "ship"
+            ],
+            [
+              "**motor**",
+              "MAW-tohr",
+              "*z motorjem*",
+              "motorbike"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Eno vozovnico do Bleda.*",
+              "AY-noh voh-zohw-NEE-tsoh",
+              "One ticket to Bled."
+            ],
+            [
+              "*Enosmerno ali povratno?*",
+              "ay-noh-SMAYR-noh",
+              "One way or return?"
+            ],
+            [
+              "*Kdaj gre vlak?*",
+              "kdai gray vlahk",
+              "When does the train leave?"
+            ],
+            [
+              "*S katerega perona?*",
+              "s kah-TAY-ray-gah pay-RAW-nah",
+              "From which platform?"
+            ],
+            [
+              "*Koliko časa traja?*",
+              "KOH-lee-koh CHAH-sah TRAH-yah",
+              "How long does it take?"
+            ],
+            [
+              "*Je ta sedež prost?*",
+              "yay tah SAY-duhsh prawst",
+              "Is this seat free?"
+            ],
+            [
+              "*Kje moram prestopiti?*",
+              "kyay MOH-rahm prays-TAW-pee-tee",
+              "Where do I have to change?"
+            ],
+            [
+              "*Zamujam vlak!*",
+              "zah-MOO-yahm vlahk",
+              "I'm going to miss the train!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The destinations people mention most: **Bled** and **Bohinj** in the mountains, **Piran** and **Portorož** on the coast, **Postojna** and **Škocjan** for caves, **Maribor** and **Ptuj** in the east, and **Trst** — the Slovenian name for Trieste in Italy, two hours from Ljubljana by bus."
+        }
+      ]
+    },
+    {
+      "title": "Places to stay and finding your way",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sentences for hotels, guesthouses and everything that can go wrong on a short trip."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Imam rezervacijo.*",
+              "EE-mahm ray-zayr-VAH-tsee-yoh",
+              "I have a reservation."
+            ],
+            [
+              "*Za dve noči.*",
+              "zah dvay NAW-chee",
+              "For two nights."
+            ],
+            [
+              "*Je zajtrk vključen?*",
+              "yay ZAI-tuhrk ooklyoo-CHUHN",
+              "Is breakfast included?"
+            ],
+            [
+              "*Kje je moja soba?*",
+              "kyay yay MOH-yah SAW-bah",
+              "Where's my room?"
+            ],
+            [
+              "*Ključ, prosim.*",
+              "klyooch, PROH-seem",
+              "The key, please."
+            ],
+            [
+              "*Je wifi zastonj?*",
+              "yay VAI-fai zahs-TAWNY",
+              "Is the Wi-Fi free?"
+            ],
+            [
+              "*Ob kateri uri je odjava?*",
+              "ohd-YAH-vah",
+              "What time is checkout?"
+            ],
+            [
+              "*Kje lahko pustim prtljago?*",
+              "PUHRT-lyah-goh",
+              "Where can I leave my luggage?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice **zastonj** (free) — an everyday word heard far more often than the official *brezplačno*. And **prtljaga** (luggage) is one of the hardest words to pronounce in this whole course: **PUHRT-lyah-gah**, with a short \"uh\" before the *r*."
+        },
+        {
+          "type": "kotak",
+          "title": "Good to know before you set off",
+          "items": [
+            "Train tickets can be bought in the app or at the counter; if you board without one, buy it from the conductor **before** they come to you, or the fine applies.",
+            "Intercity buses leave from the **avtobusna postaja**, which in Ljubljana is right next to the train station. For Ljubljana city buses you need an **Urbana** card; cash isn't accepted on board.",
+            "To drive on the motorway you must have a **vinjeta** — a sticker or e-vignette. Without one the fine is steep, and checks are automatic."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "potovati",
+      "baca": "poh-TAW-vah-tee",
+      "en": "travel"
+    },
+    {
+      "sl": "pot",
+      "baca": "pawt",
+      "en": "way; journey"
+    },
+    {
+      "sl": "vlak",
+      "baca": "vlahk",
+      "en": "train"
+    },
+    {
+      "sl": "avtobus",
+      "baca": "ow-toh-BOOS",
+      "en": "bus"
+    },
+    {
+      "sl": "letalo",
+      "baca": "lay-TAH-loh",
+      "en": "plane"
+    },
+    {
+      "sl": "kolo",
+      "baca": "koh-LAW",
+      "en": "bicycle"
+    },
+    {
+      "sl": "vozovnica",
+      "baca": "voh-zohw-NEE-tsah",
+      "en": "ticket"
+    },
+    {
+      "sl": "postaja",
+      "baca": "pohs-TAH-yah",
+      "en": "station; stop"
+    },
+    {
+      "sl": "peron",
+      "baca": "pay-RAWN",
+      "en": "platform"
+    },
+    {
+      "sl": "prtljaga",
+      "baca": "PUHRT-lyah-gah",
+      "en": "luggage"
+    },
+    {
+      "sl": "sedež",
+      "baca": "SAY-duhsh",
+      "en": "seat"
+    },
+    {
+      "sl": "prestopiti",
+      "baca": "prays-TAW-pee-tee",
+      "en": "change (trains, buses)"
+    },
+    {
+      "sl": "trajati",
+      "baca": "TRAH-yah-tee",
+      "en": "last; take (time)"
+    },
+    {
+      "sl": "rezervacija",
+      "baca": "ray-zayr-VAH-tsee-yah",
+      "en": "reservation"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in z or s.",
+      "items": [
+        "Potujem ____ vlakom.",
+        "Grem ____ prijateljem.",
+        "Plačam ____ kartico.",
+        "Grem ____ avtom.",
+        "Grem ____ Majo.",
+        "Grem ____ kolesom."
+      ]
+    },
+    {
+      "prompt": "Fill in the right instrumental form.",
+      "items": [
+        "Potujem z ____. (avtobus)",
+        "Letim z ____. (letalo)",
+        "Plačam s ____. (kartica)",
+        "Grem s ____. (sestra)",
+        "Čakam pred ____. (pošta)",
+        "Sedim za ____. (miza)"
+      ]
+    },
+    {
+      "prompt": "Translate into Slovenian.",
+      "items": [
+        "One ticket to Bled, please.",
+        "One way or return?",
+        "When does the train leave?",
+        "How long does it take?",
+        "An hour and a half.",
+        "I'm going by bus."
+      ]
+    },
+    {
+      "prompt": "Wave review — unit 16. Translate into Slovenian without looking back at the unit.",
+      "items": [
+        "What's the weather like today?",
+        "It's raining and chilly.",
+        "Tomorrow it'll be warmer.",
+        "Take an umbrella.",
+        "It's warmer today than yesterday."
+      ]
+    }
+  ],
+  "answers": [
+    "z — s — s — z — z — s",
+    "avtobusom — letalom — kartico — sestro — pošto — mizo",
+    "Eno vozovnico do Bleda, prosim. — Enosmerno ali povratno? — Kdaj gre vlak? — Koliko časa traja? — Uro in pol. — Potujem z avtobusom.",
+    "Kakšno je vreme danes? — Dežuje in hladno je. — Jutri bo topleje. — Vzemi dežnik. — Danes je topleje kot včeraj."
+  ]
+}

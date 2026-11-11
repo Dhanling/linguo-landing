@@ -1,0 +1,588 @@
+{
+  "title": "Many at once",
+  "title_target": "Multi et multae",
+  "goal": "Form the plural of the first and second declensions for all four jobs you know, and spot the neuter trap whose plural ends in -a.",
+  "bekal": [
+    "turn singular nouns into plurals in all four forms",
+    "tell *templa* (temples) from *villa* (house) just by knowing its group",
+    "use *multi*, *multae*, *multa* and *pauci* in the right outfit"
+  ],
+  "dialogs": [
+    {
+      "title": "Colloquium — Discipuli sine tabulis",
+      "intro": "Morning at Titus's school. The class is full today, but the writing tablets have been left all over the place.",
+      "lines": [
+        {
+          "speaker": "Titus:",
+          "text": "Hodie multi discipuli in schola sunt.",
+          "id": "There are lots of pupils at school today.",
+          "literal": "today many-pl pupil-pl in school-in are-they."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Ita, magister. Novae discipulae quoque adsunt.",
+          "id": "Yes, sir. The new girls are here too.",
+          "literal": "yes, teacher-call. new-pl-fem pupil-pl-fem also are-present-they."
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Bene. Librosne portatis?",
+          "id": "Good. Have you brought your books?",
+          "literal": "well. book-pl-obj-Q carry-you-pl?"
+        },
+        {
+          "speaker": "Discipuli:",
+          "text": "Libros portamus, magister!",
+          "id": "We've brought the books, sir!",
+          "literal": "book-pl-obj carry-we, teacher-call!"
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Et tabulas? Sine tabulis non laboramus.",
+          "id": "And the tablets? We can't work without tablets.",
+          "literal": "and tablet-pl-obj? without tablet-pl-with not work-we."
+        },
+        {
+          "speaker": "Lydia:",
+          "text": "Tabulas non portamus, magister. In villis sunt.",
+          "id": "We didn't bring the tablets, sir. They're at home.",
+          "literal": "tablet-pl-obj not carry-we, teacher-call. in house-pl-in are-they."
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Ergo verba magistrorum non servatis!",
+          "id": "So you're not keeping your teachers' words!",
+          "literal": "so word-pl-obj teacher-pl-of not keep-you-pl!"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Servamus, magister! Sed tabulae multae et magnae sunt.",
+          "id": "We are, sir! But the tablets are many and big.",
+          "literal": "keep-we, teacher-call! but tablet-pl many-pl and big-pl are-they."
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Fabulae puerorum semper longae sunt!",
+          "id": "Boys' excuses are always long!",
+          "literal": "story-pl boy-pl-of always long-pl are-they!"
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Magister, ecce: amicae meae tabulas portant.",
+          "id": "Sir, look: my friends are bringing the tablets.",
+          "literal": "teacher-call, look: friend-pl-fem my-pl tablet-pl-obj carry-they."
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Bene, puellae! Puellae tabulas portant, pueri verba portant.",
+          "id": "Well done, girls! The girls bring tablets, the boys bring words.",
+          "literal": "well, girl-pl-call! girl-pl tablet-pl-obj carry-they, boy-pl word-pl-obj carry-they."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Sed verba nostra bona sunt, magister!",
+          "id": "But our words are good, sir!",
+          "literal": "but word-pl our-pl good-pl are-they, teacher-call!"
+        }
+      ],
+      "notes": [
+        "**Three plural subject endings, one for each group.** *Discipulae* from *discipula*, *discipuli* from *discipulus*, *verba* from *verbum*. Notice that each differs from its singular only in the last letter — which is exactly why reading right to the last letter matters so much.",
+        "**Verba is plural, even though it ends in -a.** This is the biggest trap in this unit. *Villa* (ending in *-a*, group one) means \"house\", singular. *Verba* (from *verbum*, neuter group two) means \"words\", plural. What decides isn't the last letter but the word's group. If you know the dictionary form — *verbum, verbi* — you won't be fooled. English kept a few such plurals: *data*, *media*, *curricula*.",
+        "**Magistrorum, puerorum — the plural \"of\" form.** The ending is *-arum* for group one and *-orum* for group two. It lives on in phrases like *summa summarum* and *mater studiorum*, and in names like *Angelorum* on old church maps.",
+        "**Adsunt = ad + sunt.** Many Latin verbs are built by sticking a preposition onto another verb: *adsum* (\"I'm present\"), *absum* (\"I'm absent\"), *possum* (\"I can\"). They all use the *sum* endings you learned in Unit 1 — hence English *absent* and *present*."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Plurals of the first and second declensions",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Everything you learned in Units 3, 4 and 5 now gets its plural partner. There are no new rules — just one extra column in each table."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Job",
+            "1st singular",
+            "1st plural",
+            "2nd singular",
+            "2nd plural"
+          ],
+          "rows": [
+            [
+              "subject",
+              "puella",
+              "puell**ae**",
+              "amicus",
+              "amic**i**"
+            ],
+            [
+              "object",
+              "puellam",
+              "puell**as**",
+              "amicum",
+              "amic**os**"
+            ],
+            [
+              "of",
+              "puellae",
+              "puell**arum**",
+              "amici",
+              "amic**orum**"
+            ],
+            [
+              "with/in",
+              "puella",
+              "puell**is**",
+              "amico",
+              "amic**is**"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Job",
+            "2nd neuter singular",
+            "2nd neuter plural",
+            "Example"
+          ],
+          "rows": [
+            [
+              "subject",
+              "templum",
+              "templ**a**",
+              "**Templa** antiqua sunt."
+            ],
+            [
+              "object",
+              "templum",
+              "templ**a**",
+              "**Templa** spectamus."
+            ],
+            [
+              "of",
+              "templi",
+              "templ**orum**",
+              "ianuae **templorum**"
+            ],
+            [
+              "with/in",
+              "templo",
+              "templ**is**",
+              "in **templis**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice three things. First, the *-is* form is used for every group, so *puellis* and *amicis* end the same. Second, neuter words stay true to their rule: subject and object are twins, and the plural always ends in *-a*. Third, the plural \"of\" form is always long and echoing — *-arum*, *-orum* — so it's the easiest to spot in a sentence."
+        },
+        {
+          "type": "kotak",
+          "title": "Two look-alikes to watch out for",
+          "items": [
+            "*puellae* can mean \"of the girl\" (singular \"of\") **or** \"the girls\" (plural subject). The sentence decides: if the verb is plural, so is the noun.",
+            "*amici* can mean \"of the friend\" **or** \"the friends\". Same method: check the verb.",
+            "*templa* and *villa* look alike, but *templa* is plural and *villa* is singular. Learn each word with its \"of\" form and the trap disappears."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Adjectives and quantity words in the plural",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Adjectives take exactly the same plural endings as their nouns, so there's nothing new to learn. All you need is practice pairing them."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Latin",
+            "Translation",
+            "Why"
+          ],
+          "rows": [
+            [
+              "puellae **bonae** sunt",
+              "the girls are good",
+              "plural, feminine, subject"
+            ],
+            [
+              "discipulos **bonos** laudo",
+              "I praise the good pupils",
+              "plural, masculine, object"
+            ],
+            [
+              "verba **bona** sunt",
+              "the words are good",
+              "plural, neuter, subject"
+            ],
+            [
+              "cum amicis **bonis**",
+              "with good friends",
+              "plural, with/in"
+            ],
+            [
+              "fabulae **puerorum**",
+              "the boys' stories",
+              "plural \"of\""
+            ],
+            [
+              "multae **discipulae**",
+              "many female pupils",
+              "*multus* is an ordinary adjective too"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "The most common quantity words"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Latin",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "multi, multae, multa",
+              "many",
+              "multi libri — many books"
+            ],
+            [
+              "pauci, paucae, pauca",
+              "few",
+              "paucae puellae — few girls"
+            ],
+            [
+              "omnes, omnia",
+              "all (another group, see Unit 11)",
+              "omnes discipuli — all the pupils"
+            ],
+            [
+              "nullus, nulla, nullum",
+              "not a single, no",
+              "nullus liber — no book"
+            ],
+            [
+              "totus, tota, totum",
+              "whole, entire",
+              "tota villa — the whole house"
+            ],
+            [
+              "ceteri, ceterae, cetera",
+              "the rest, the others",
+              "ceteri pueri — the other boys"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Multa* standing alone means \"many things\", and *pauca* means \"few things\" — Latin uses the neuter plural to talk about unnamed things. That habit gives us the phrase *cetera* you use every day in the abbreviation *etc.*: *et cetera* means \"and the remaining things\"."
+        }
+      ]
+    },
+    {
+      "title": "Plural verbs and the relatives of sum",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "You've had the plural verb forms since Unit 3; only the practice is new. Three plural endings hold across all of Latin: *-mus* (we), *-tis* (you, pl), *-nt* (they)."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Singular",
+            "Plural",
+            "Plural meaning"
+          ],
+          "rows": [
+            [
+              "porto",
+              "porta**mus**",
+              "we carry"
+            ],
+            [
+              "portas",
+              "porta**tis**",
+              "you (pl) carry"
+            ],
+            [
+              "portat",
+              "porta**nt**",
+              "they carry"
+            ],
+            [
+              "sum",
+              "su**mus**",
+              "we are"
+            ],
+            [
+              "es",
+              "es**tis**",
+              "you (pl) are"
+            ],
+            [
+              "est",
+              "su**nt**",
+              "they are"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "The sum family"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Latin",
+            "Built from",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "adsum, ades, adest",
+              "ad + sum",
+              "I'm present, I'm here"
+            ],
+            [
+              "absum, abes, abest",
+              "ab + sum",
+              "I'm absent, I'm away"
+            ],
+            [
+              "possum, potes, potest",
+              "potis + sum",
+              "I can (Unit 14)"
+            ],
+            [
+              "desum, dees, deest",
+              "de + sum",
+              "I'm lacking, not enough"
+            ],
+            [
+              "prosum, prodes, prodest",
+              "pro + sum",
+              "I'm useful"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "They all use the *sum* endings you already know, so there's no new table. *Adsum!* was what a Roman pupil answered when his name was called — exactly like \"Here!\" or \"Present!\" in class today."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "la": "multi, multae, multa",
+      "baca": "MOOL-tee",
+      "en": "many"
+    },
+    {
+      "la": "pauci, paucae, pauca",
+      "baca": "POW-kee",
+      "en": "few"
+    },
+    {
+      "la": "nullus, nulla, nullum",
+      "baca": "NOOL-loos",
+      "en": "not a single, no"
+    },
+    {
+      "la": "totus, tota, totum",
+      "baca": "TOH-toos",
+      "en": "whole, entire"
+    },
+    {
+      "la": "ceteri, cetera",
+      "baca": "KEH-teh-ree",
+      "en": "the rest, the others"
+    },
+    {
+      "la": "adsum, adesse",
+      "baca": "AHD-soom",
+      "en": "to be present, to be here"
+    },
+    {
+      "la": "absum, abesse",
+      "baca": "AHB-soom",
+      "en": "to be absent, to be away"
+    },
+    {
+      "la": "servo, servare",
+      "baca": "SEHR-woh",
+      "en": "to keep, to save"
+    },
+    {
+      "la": "verbum, verbi",
+      "baca": "WEHR-boom",
+      "en": "word"
+    },
+    {
+      "la": "liber, libri",
+      "baca": "LEE-behr",
+      "en": "book"
+    },
+    {
+      "la": "tabula, tabulae",
+      "baca": "TAH-boo-lah",
+      "en": "writing tablet"
+    },
+    {
+      "la": "discipulus, discipuli",
+      "baca": "dis-KEE-poo-loos",
+      "en": "pupil (male)"
+    },
+    {
+      "la": "discipula, discipulae",
+      "baca": "dis-KEE-poo-lah",
+      "en": "pupil (female)"
+    },
+    {
+      "la": "magister, magistri",
+      "baca": "mah-GIS-tehr",
+      "en": "teacher"
+    },
+    {
+      "la": "puer, pueri",
+      "baca": "POO-ehr",
+      "en": "boy"
+    },
+    {
+      "la": "amica, amicae",
+      "baca": "ah-MEE-kah",
+      "en": "friend (female)"
+    },
+    {
+      "la": "oculus, oculi",
+      "baca": "OH-koo-loos",
+      "en": "eye"
+    },
+    {
+      "la": "bracchium, bracchii",
+      "baca": "BRAHK-khee-oom",
+      "en": "arm"
+    },
+    {
+      "la": "gladius, gladii",
+      "baca": "GLAH-dee-oos",
+      "en": "sword"
+    },
+    {
+      "la": "equus, equi",
+      "baca": "EH-kwoos",
+      "en": "horse"
+    },
+    {
+      "la": "murus, muri",
+      "baca": "MOO-roos",
+      "en": "wall"
+    },
+    {
+      "la": "hora, horae",
+      "baca": "HOH-rah",
+      "en": "hour"
+    },
+    {
+      "la": "littera, litterae",
+      "baca": "LIT-teh-rah",
+      "en": "letter (of the alphabet); pl: a letter, literature"
+    },
+    {
+      "la": "stella, stellae",
+      "baca": "STEHL-lah",
+      "en": "star"
+    },
+    {
+      "la": "unda, undae",
+      "baca": "OON-dah",
+      "en": "wave"
+    },
+    {
+      "la": "castra, castrorum",
+      "baca": "KAHS-trah",
+      "en": "army camp (always pl)"
+    },
+    {
+      "la": "arma, armorum",
+      "baca": "AHR-mah",
+      "en": "weapons (always pl)"
+    },
+    {
+      "la": "deus, dei",
+      "baca": "DEH-oos",
+      "en": "god"
+    },
+    {
+      "la": "dea, deae",
+      "baca": "DEH-ah",
+      "en": "goddess"
+    },
+    {
+      "la": "annus, anni",
+      "baca": "AHN-noos",
+      "en": "year"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change into the plural subject form.",
+      "items": [
+        "puella",
+        "amicus",
+        "templum",
+        "magister",
+        "fabula",
+        "donum"
+      ]
+    },
+    {
+      "prompt": "Change into the plural object form.",
+      "items": [
+        "librum",
+        "tabulam",
+        "verbum",
+        "discipulum",
+        "epistulam",
+        "equum"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right plural form of the word in brackets.",
+      "items": [
+        "Fabulae ____ longae sunt. (puer, plural \"of\")",
+        "Cum ____ ambulamus. (amicus, plural with/in)",
+        "____ bonas laudamus. (discipula, plural object)",
+        "In ____ sumus. (villa, plural with/in)",
+        "Verba ____ laudamus. (magister, plural \"of\")",
+        "____ antiqua spectamus. (templum, plural object)"
+      ]
+    },
+    {
+      "prompt": "Translate into Latin.",
+      "items": [
+        "Many pupils are present.",
+        "We are carrying the books.",
+        "The teacher's words are good.",
+        "The temples are old.",
+        "I am walking with friends.",
+        "Few girls are singing."
+      ]
+    }
+  ],
+  "answers": [
+    "puellae — amici — templa — magistri — fabulae — dona",
+    "libros — tabulas — verba — discipulos — epistulas — equos",
+    "puerorum — amicis — Discipulas — villis — magistrorum — Templa",
+    "Multi discipuli adsunt. — Libros portamus. — Verba magistri bona sunt. — Templa antiqua sunt. — Cum amicis ambulo. — Paucae puellae cantant."
+  ]
+}

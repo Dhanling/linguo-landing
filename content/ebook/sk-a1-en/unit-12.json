@@ -1,0 +1,506 @@
+{
+  "title": "I don't feel well",
+  "title_target": "Nie je mi dobre",
+  "goal": "Complain about feeling ill, name parts of the body, and meet a structure that flips the usual way of thinking: in Slovak, your head hurts you — you don't have a headache.",
+  "bekal": [
+    "name parts of the body and say which one hurts",
+    "use *bolí ma* correctly — and know why it takes the accusative, not the dative",
+    "tell *je mi zle* from *bolí ma* and know when to use which"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — U lekára",
+      "intro": "Budi has missed class for two days. Eva takes him to the clinic near the dorm.",
+      "lines": [
+        {
+          "speaker": "Lekárka:",
+          "text": "Dobrý deň. Čo vás trápi?",
+          "id": "Good afternoon. What seems to be the problem?",
+          "literal": "good day. what you-pl-acc it-troubles?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nie je mi dobre. Bolí ma hlava.",
+          "id": "I don't feel well. I have a headache.",
+          "literal": "not is to-me well. it-hurts me head."
+        },
+        {
+          "speaker": "Lekárka:",
+          "text": "Odkedy vás to bolí?",
+          "id": "Since when has it hurt?",
+          "literal": "since-when you-pl-acc it it-hurts?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Od pondelka. A bolí ma aj hrdlo.",
+          "id": "Since Monday. And my throat hurts too.",
+          "literal": "from Monday-gen. and it-hurts me also throat."
+        },
+        {
+          "speaker": "Lekárka:",
+          "text": "Máte teplotu? Kašlete?",
+          "id": "Any fever? A cough?",
+          "literal": "you-pl-have temperature-acc? you-pl-cough?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Áno, trochu kašlem. A v noci mi je zima.",
+          "id": "Yes, I cough a little. And at night I feel cold.",
+          "literal": "yes, a-little I-cough. and at night-loc to-me is cold."
+        },
+        {
+          "speaker": "Lekárka:",
+          "text": "Otvorte ústa, prosím. Povedzte á.",
+          "id": "Open your mouth. Say \"ah\".",
+          "literal": "open-you-pl mouth-pl, I-ask. say-you-pl a."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Áááá.",
+          "id": "Aaaah.",
+          "literal": "aaaa."
+        },
+        {
+          "speaker": "Lekárka:",
+          "text": "Nič vážne. Je to obyčajná chrípka.",
+          "id": "Nothing serious. It's just a regular flu.",
+          "literal": "nothing serious. is it ordinary flu."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Musím brať lieky?",
+          "id": "Do I need to take medicine?",
+          "literal": "must-I take medicine-pl?"
+        },
+        {
+          "speaker": "Lekárka:",
+          "text": "Nič vážne. Pite veľa čaju a odpočívajte.",
+          "id": "Nothing serious. Drink lots of tea and get some rest.",
+          "literal": "nothing serious. drink-you-pl lots tea-gen and rest-you-pl."
+        }
+      ],
+      "notes": [
+        "**Bolí ma hlava** literally means \"head hurts me\". The **subject** of the sentence is the body part, and you are the **object** — in the accusative. The structure is like *páči sa mi* in unit 10, but the case is different: *páčiť sa* takes the dative, *boleť* takes the accusative. This is the most commonly confused pair in all of A1.",
+        "**Because the body part is the subject, the verb agrees with it.** *Bolí ma hlava* (one head), but *Bolia ma nohy* (my legs hurt, plural) and *Bolia ma zuby* (my teeth hurt). Use a singular verb for a body part that comes in pairs and your sentence sounds odd.",
+        "**Nie je mi dobre** takes the dative — here we're talking about how you feel overall, not one part that hurts. Compare: *Bolí ma hlava* (one spot, accusative) and *Je mi zle* (the whole body, dative). Two structures, two cases, two clearly different jobs.",
+        "**Je mi zima** isn't \"I am cold\" but \"to me it is cold\". All bodily feelings follow this pattern: *je mi teplo* (I'm hot), *je mi zle* (I feel sick), *je mi smutno* (I'm sad), *je mi to jedno* (it's all the same to me).",
+        "**Otvorte, povedzte, pite, odpočívajte** — all polite commands, ending in *-te*. You don't need to produce them at A1, but you must recognize them: every instruction you get from a doctor, an official, or a shop assistant will use this form."
+      ],
+      "grammars": [
+        {
+          "title": "Bolí ma — the structure that flips the subject",
+          "body": [
+            "English makes the person the subject: \"I have a headache\". Slovak makes the body part the subject: \"head hurts me\". Once you accept that flip, the whole table becomes easy."
+          ],
+          "table": {
+            "head": [
+              "Slovak",
+              "Literally",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Bolí **ma** hlava.*",
+                "hurts me head",
+                "I have a headache."
+              ],
+              [
+                "*Bolí **ťa** brucho?*",
+                "hurts you stomach",
+                "Does your stomach hurt?"
+              ],
+              [
+                "*Bolí **ho** chrbát.*",
+                "hurts him back",
+                "His back hurts."
+              ],
+              [
+                "*Bolí **ju** zub.*",
+                "hurts her tooth",
+                "Her tooth hurts."
+              ],
+              [
+                "*Bolia **ma** nohy.*",
+                "hurt-pl me legs",
+                "My legs hurt."
+              ],
+              [
+                "*Bolí **nás** hlava.*",
+                "hurts us head",
+                "We have headaches."
+              ],
+              [
+                "*Čo **vás** bolí?*",
+                "what you-pl hurts",
+                "What hurts?"
+              ]
+            ]
+          },
+          "after": [
+            "**The pronoun is accusative** — the same forms as unit 4: *ma, ťa, ho, ju, nás, vás, ich*. Compare *páčiť sa*, which takes *mi, ti, mu, jej, nám, vám, im*. If you get mixed up, remember this tag line: **\"head hurts** me**\"** — hurting has an object, and objects take the accusative.",
+            "**In the past, the ending follows the body part**: *Bolela ma hlava* (f), *Bolelo ma brucho* (n), *Boleli ma nohy* (plural). Once again the body part is the subject, so the ending follows its gender.",
+            "**If in doubt, there's a way out that's always right:** *Mám bolesti hlavy* (\"I have head pains\") uses a structure that feels natural to your ear and is still correct Slovak. It's a little more formal, but never wrong."
+          ]
+        },
+        {
+          "title": "Je mi … — feelings that affect the whole body",
+          "body": [
+            "When what you feel isn't pain in one spot but an overall state, Slovak uses *je mi* + an adverb, with the **dative**."
+          ],
+          "table": {
+            "head": [
+              "Slovak",
+              "Literally",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Je **mi** zle.*",
+                "is to-me bad",
+                "I feel sick; I don't feel well."
+              ],
+              [
+                "*Nie je **mi** dobre.*",
+                "not is to-me well",
+                "I don't feel well."
+              ],
+              [
+                "*Je **mi** zima.*",
+                "is to-me cold",
+                "I'm cold."
+              ],
+              [
+                "*Je **mi** teplo.*",
+                "is to-me hot",
+                "I'm hot."
+              ],
+              [
+                "*Je **mi** smutno.*",
+                "is to-me sad",
+                "I'm sad."
+              ],
+              [
+                "*Je **mi** to jedno.*",
+                "is to-me it one",
+                "It's all the same to me."
+              ],
+              [
+                "*Je **mi** ľúto.*",
+                "is to-me pity",
+                "I'm sorry."
+              ]
+            ]
+          },
+          "after": [
+            "**The last row comes up a lot.** *Je mi ľúto* is how you offer condolences, and also how you say no politely: *Je mi ľúto, ale nemôžem* = \"I'm sorry, but I can't\".",
+            "**Notice that the word after *mi* never changes form.** *Zle, dobre, zima, teplo, smutno* are all fixed adverbs. You don't need to match anything to your gender.",
+            "**The past:** replace *je* with *bolo* — *Bolo mi zle*, *Bolo mi zima*. The future: *Bude mi zle*. Change one word, and the whole pattern follows."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Parts of the body",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Say it",
+            "English",
+            "Plural"
+          ],
+          "rows": [
+            [
+              "**hlava** (f)",
+              "HLAH-vah",
+              "head",
+              "—"
+            ],
+            [
+              "**oko** (n)",
+              "OH-koh",
+              "eye",
+              "*oči*"
+            ],
+            [
+              "**ucho** (n)",
+              "OO-khoh",
+              "ear",
+              "*uši*"
+            ],
+            [
+              "**nos** (m)",
+              "nohs",
+              "nose",
+              "—"
+            ],
+            [
+              "**ústa** (pl)",
+              "OOS-tah",
+              "mouth",
+              "always plural"
+            ],
+            [
+              "**zub** (m)",
+              "zoop",
+              "tooth",
+              "*zuby*"
+            ],
+            [
+              "**krk** (m)",
+              "krk",
+              "neck",
+              "—"
+            ],
+            [
+              "**hrdlo** (n)",
+              "HRD-loh",
+              "throat",
+              "—"
+            ],
+            [
+              "**ruka** (f)",
+              "ROO-kah",
+              "hand; arm",
+              "*ruky*"
+            ],
+            [
+              "**prst** (m)",
+              "prst",
+              "finger",
+              "*prsty*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Oko → oči and ucho → uši** are irregular plurals, both left over from an old form for \"two things\" that has disappeared from modern Slovak. Because eyes and ears always come in pairs, the form survived right here."
+        },
+        {
+          "type": "kotak",
+          "title": "Four words with no vowels",
+          "items": [
+            "*Krk* (neck), *prst* (finger), *chrbát* (back, its first syllable), *smrť* (death) — body parts give Slovak some of its most famous vowel-less words.",
+            "How to say them: let the *r* carry the syllable, with only the faintest hint of a vowel before it — krk, prst, KHR-baht. Don't add a full vowel — that instantly sounds foreign."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "At the doctor's and the pharmacy",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Nie je mi dobre.*",
+              "I don't feel well."
+            ],
+            [
+              "*Bolí ma …*",
+              "My … hurts."
+            ],
+            [
+              "*Mám teplotu.*",
+              "I have a fever."
+            ],
+            [
+              "*Mám nádchu.*",
+              "I have a cold."
+            ],
+            [
+              "*Kašlem.*",
+              "I have a cough."
+            ],
+            [
+              "*Mám chrípku.*",
+              "I have the flu."
+            ],
+            [
+              "*Som alergický / alergická na …*",
+              "I'm allergic to … (m / f)"
+            ],
+            [
+              "*Potrebujem lekára.*",
+              "I need a doctor."
+            ],
+            [
+              "*Kde je najbližšia lekáreň?*",
+              "Where's the nearest pharmacy?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Uzdrav sa!** (informal) or **Uzdravte sa!** (polite) is what you say to someone who is ill. When someone sneezes, say **Na zdravie!** — the same phrase used for a toast."
+        },
+        {
+          "type": "kotak",
+          "title": "Healthcare in Slovakia",
+          "items": [
+            "International students and registered workers must have *zdravotné poistenie* (health insurance). With the card, a visit to a general practitioner is practically free.",
+            "A *lekáreň* (pharmacy) sells many medicines without a prescription, and the pharmacist is usually happy to hear your symptoms and suggest something — often a faster first step than queuing at a clinic.",
+            "*Pohotovosť* is the emergency service, open outside working hours. Emergency numbers: **112** for everything, **155** for an ambulance."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 10",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "Did you like the film?",
+              "*Páčil sa ti ten film?*"
+            ],
+            [
+              "I like old films.",
+              "*Mám rád staré filmy.*"
+            ],
+            [
+              "I like cooking.",
+              "*Rád varím.*"
+            ],
+            [
+              "I like Slovak food.",
+              "*Slovenské jedlo mi chutí.*"
+            ],
+            [
+              "I'll give him a book.",
+              "*Dám mu knihu.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "boleť",
+      "baca": "BOH-leht",
+      "en": "hurt"
+    },
+    {
+      "sk": "bolesť",
+      "baca": "BOH-lehst",
+      "en": "pain (f)"
+    },
+    {
+      "sk": "lekár / lekárka",
+      "baca": "LEH-kahr / -kah",
+      "en": "doctor (m / f)"
+    },
+    {
+      "sk": "lekáreň",
+      "baca": "LEH-kah-rehny",
+      "en": "pharmacy (f)"
+    },
+    {
+      "sk": "liek",
+      "baca": "lyehk",
+      "en": "medicine (m)"
+    },
+    {
+      "sk": "teplota",
+      "baca": "TEH-ploh-tah",
+      "en": "temperature; fever (f)"
+    },
+    {
+      "sk": "chrípka",
+      "baca": "KHREEP-kah",
+      "en": "flu (f)"
+    },
+    {
+      "sk": "nádcha",
+      "baca": "NAHT-khah",
+      "en": "cold (illness) (f)"
+    },
+    {
+      "sk": "kašľať",
+      "baca": "KAHSH-lyaht",
+      "en": "cough"
+    },
+    {
+      "sk": "trápiť",
+      "baca": "TRAH-peet",
+      "en": "trouble, bother"
+    },
+    {
+      "sk": "otvoriť",
+      "baca": "OHT-voh-reet",
+      "en": "open"
+    },
+    {
+      "sk": "odpočívať",
+      "baca": "OHT-poh-chee-vaht",
+      "en": "rest"
+    },
+    {
+      "sk": "zdravie",
+      "baca": "ZDRAH-vyeh",
+      "en": "health (n)"
+    },
+    {
+      "sk": "zdravý",
+      "baca": "ZDRAH-vee",
+      "en": "healthy"
+    },
+    {
+      "sk": "chorý",
+      "baca": "KHOH-ree",
+      "en": "ill, sick"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Slovak.",
+      "items": [
+        "I don't feel well.",
+        "I have a headache.",
+        "My throat hurts too.",
+        "I have a fever and a cough.",
+        "Where's the nearest pharmacy?",
+        "I'm already better."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right accusative pronoun.",
+      "items": [
+        "Bolí ____ hlava. (I)",
+        "Bolí ____ brucho? (you)",
+        "Bolí ____ chrbát. (he)",
+        "Bolí ____ zub. (she)",
+        "Čo ____ bolí? (you, polite)",
+        "Bolí ____ hlava. (we)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "mi / je / nie / dobre",
+        "hlava / ma / bolí",
+        "teplotu / mám",
+        "lekáreň / je / kde / najbližšia / ?",
+        "lepšie / mi / už / je"
+      ]
+    }
+  ],
+  "answers": [
+    "Nie je mi dobre. — Bolí ma hlava. — Bolí ma aj hrdlo. — Mám teplotu a kašlem. — Kde je najbližšia lekáreň? — Už mi je lepšie.",
+    "ma — ťa — ho — ju — vás — nás",
+    "Nie je mi dobre. — Bolí ma hlava. — Mám teplotu. — Kde je najbližšia lekáreň? — Už mi je lepšie."
+  ]
+}

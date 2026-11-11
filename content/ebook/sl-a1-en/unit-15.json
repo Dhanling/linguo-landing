@@ -1,0 +1,494 @@
+{
+  "title": "My head hurts — sentences that flip the subject",
+  "title_target": "Boli me glava",
+  "goal": "Say what hurts, and get by at the pharmacy and the doctor's — while learning a sentence pattern that flips your way of thinking: it isn't you who aches, it's your body part, and you're the target.",
+  "bekal": [
+    "naming body parts and using *Boli me …* / *Bolijo me …*",
+    "using the dative for states: *Slabo mi je*, *Vroče mi je*, *Všeč mi je*",
+    "getting by at the pharmacy: describing symptoms, asking for medicine, understanding advice"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Pri zdravnici",
+      "intro": "Budi goes to the campus clinic with a throat that feels like sandpaper. The doctor explains more than he asked.",
+      "lines": [
+        {
+          "speaker": "Zdravnica:",
+          "text": "Dober dan. Kaj vas boli?",
+          "id": "Good afternoon. What's hurting?",
+          "literal": "good day. what you-acc hurts?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Boli me glava. In grlo.",
+          "id": "My head hurts. And my throat.",
+          "literal": "hurts me-acc head. and throat."
+        },
+        {
+          "speaker": "Zdravnica:",
+          "text": "Od kdaj?",
+          "id": "Since when?",
+          "literal": "from when?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Od včeraj. Slabo mi je.",
+          "id": "Since yesterday. I feel unwell.",
+          "literal": "from yesterday. bad to-me is."
+        },
+        {
+          "speaker": "Zdravnica:",
+          "text": "Imate vročino?",
+          "id": "Do you have a fever?",
+          "literal": "you-have heat-acc?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja, sedemintrideset devet.",
+          "id": "Yes, thirty-seven point nine.",
+          "literal": "yes, seven-and-thirty nine."
+        },
+        {
+          "speaker": "Zdravnica:",
+          "text": "Ni hudega. Verjetno prehlad.",
+          "id": "Nothing serious. Probably a cold.",
+          "literal": "not-is of-bad. probably cold."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zakaj rečete boli me, ne jaz bolim?",
+          "id": "Why do you say \"boli me\" and not \"jaz bolim\"?",
+          "literal": "why you-say hurts me-acc, not I I-hurt?"
+        },
+        {
+          "speaker": "Zdravnica:",
+          "text": "Ker glava boli. Vi ste tarča.",
+          "id": "Because your head is doing the hurting. You're the target.",
+          "literal": "because head hurts. you are target."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Torej glava dela, jaz pa trpim.",
+          "id": "So my head does the work, and I do the suffering.",
+          "literal": "so head works, I but I-suffer."
+        },
+        {
+          "speaker": "Zdravnica:",
+          "text": "Tako je. Pijte čaj in počivajte.",
+          "id": "That's right. Drink tea and get some rest.",
+          "literal": "so is. drink-imp tea and rest-imp."
+        }
+      ],
+      "notes": [
+        "**Boli me glava is literally \"head hurts me\".** The body part is the **subject**, and you are the **object**. That's why the form used for you is the accusative (*tožilnik*): *me*, *te*, *ga*, *jo*, *nas*, *vas*, *jih*. Translating straight from English — *jaz bolim* — would mean \"I hurt (someone else)\".",
+        "**If the body part is plural, the verb goes plural too.** *Boli me glava* (one head) but *Bolijo me noge* (two legs), *Bolijo me oči*, *Bolijo me zobje*. Notice that for a pair of body parts Slovenian uses the plural, not the dual — an old habit that survives only here.",
+        "**Slabo mi je uses yet another form: the dative (*dajalnik*).** Compare: *Boli **me*** (direct object) but *Slabo **mi** je* (to me). Almost all physical states and feelings use *mi*: *Vroče mi je* (I'm hot), *Mrzlo mi je* (I'm cold), *Dolgčas mi je* (I'm bored).",
+        "**Body temperature is said without the word \"point\".** *Sedemintrideset devet* means 37.9. Slovenia uses Celsius, and the fever threshold people use at home is 37.5. Notice too that *vročina* means both fever and hot weather — context tells them apart.",
+        "**Pijte in počivajte — the polite command form.** The *-te* ending makes it polite and plural at the same time, just like ordinary verbs. To a friend: *Pij čaj in počivaj*. Commands are covered in full in unit 19; for now, just recognize the ending."
+      ],
+      "grammars": [
+        {
+          "title": "Boli me — the flipped sentence pattern",
+          "body": [
+            "One pattern, and it covers every physical complaint you'll ever make. All that changes is the object pronoun and how many body parts there are."
+          ],
+          "table": {
+            "head": [
+              "Who",
+              "One part",
+              "Several parts",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "me",
+                "**Boli me** glava.",
+                "**Bolijo me** noge.",
+                "My head hurts."
+              ],
+              [
+                "you",
+                "**Boli te** glava?",
+                "**Bolijo te** oči?",
+                "Does your head hurt?"
+              ],
+              [
+                "him",
+                "**Boli ga** trebuh.",
+                "**Bolijo ga** zobje.",
+                "His stomach hurts."
+              ],
+              [
+                "her",
+                "**Boli jo** grlo.",
+                "**Bolijo jo** roke.",
+                "Her throat hurts."
+              ],
+              [
+                "us",
+                "**Boli nas** …",
+                "**Bolijo nas** …",
+                "Our … hurts."
+              ],
+              [
+                "you (polite)",
+                "**Kaj vas boli?**",
+                "—",
+                "What's hurting?"
+              ]
+            ]
+          },
+          "after": [
+            "The object pronoun is a clitic, so it sits in second place as usual: *Danes **me** boli glava*, *Že tri dni **me** boli grlo*.",
+            "To say how much it hurts: *Zelo me boli* (it really hurts), *Malo me boli* (it hurts a bit), *Ne boli me več* (it doesn't hurt anymore)."
+          ]
+        },
+        {
+          "title": "Dajalnik — the \"to\" form",
+          "body": [
+            "This fourth case marks **to whom** something happens. At A1 you'll mostly meet it in pronouns, and almost always with a neuter adjective."
+          ],
+          "table": {
+            "head": [
+              "To",
+              "Form",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "me",
+                "**mi**",
+                "*Slabo mi je.*",
+                "I feel unwell."
+              ],
+              [
+                "you",
+                "**ti**",
+                "*Je ti vroče?*",
+                "Are you hot?"
+              ],
+              [
+                "him",
+                "**mu**",
+                "*Mrzlo mu je.*",
+                "He's cold."
+              ],
+              [
+                "her",
+                "**ji**",
+                "*Dolgčas ji je.*",
+                "She's bored."
+              ],
+              [
+                "us two",
+                "**nama**",
+                "*Všeč nama je.*",
+                "We both like it."
+              ],
+              [
+                "us",
+                "**nam**",
+                "*Žal nam je.*",
+                "We're sorry."
+              ],
+              [
+                "you (polite / plural)",
+                "**vam**",
+                "*Kako vam je ime?*",
+                "What's your name?"
+              ],
+              [
+                "them",
+                "**jim**",
+                "*Ni jim všeč.*",
+                "They don't like it."
+              ]
+            ]
+          },
+          "after": [
+            "The *Všeč mi je* row is worth learning right now: this is how Slovenian says **I like**. Literally it's \"it is pleasing to me\", so the thing you like is the subject: *Všeč mi je ta knjiga* (I like this book), *Všeč si mi* (I like you). If what you like is plural, the verb follows: *Všeč so mi te knjige*.",
+            "*Žal mi je* means both \"I'm sorry\" and \"what a pity\" — it's used for sincere apologies and for turning things down gently: *Žal mi je, ne morem* (sorry, I can't)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Telo — parts of the body",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The third column is the form you'll actually use in a *Boli me …* sentence, so learn that column rather than the dictionary form."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Say it",
+            "In a sentence",
+            "English"
+          ],
+          "rows": [
+            [
+              "**glava**",
+              "GLAH-vah",
+              "*Boli me glava.*",
+              "head"
+            ],
+            [
+              "**grlo**",
+              "GUHR-loh",
+              "*Boli me grlo.*",
+              "throat"
+            ],
+            [
+              "**trebuh**",
+              "TRAY-bookh",
+              "*Boli me trebuh.*",
+              "stomach"
+            ],
+            [
+              "**hrbet**",
+              "HUHR-buht",
+              "*Boli me hrbet.*",
+              "back"
+            ],
+            [
+              "**zob / zobje**",
+              "zawp / zohb-YAY",
+              "*Bolijo me zobje.*",
+              "tooth / teeth"
+            ],
+            [
+              "**oko / oči**",
+              "oh-KAW / oh-CHEE",
+              "*Bolijo me oči.*",
+              "eye / eyes"
+            ],
+            [
+              "**uho / ušesa**",
+              "OO-hoh / oo-SHAY-sah",
+              "*Bolijo me ušesa.*",
+              "ear / ears"
+            ],
+            [
+              "**roka / roke**",
+              "RAW-kah / RAW-kay",
+              "*Bolijo me roke.*",
+              "hand; arm"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Nos mi teče* is literally \"nose runs to me\" — the Slovenian way to say you have a runny nose. The dative pattern again, and once again the body part is the subject."
+        },
+        {
+          "type": "p",
+          "text": "Notice **oko** → **oči** and **uho** → **ušesa**: two plurals that follow no rule at all, inherited from Old Slavic. Since eyes and ears always come in pairs, the singular is rarely used unless one of them is giving you trouble."
+        }
+      ]
+    },
+    {
+      "title": "At the pharmacy and the doctor's",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A handful of sentences that cover almost every minor health matter — from describing symptoms to buying medicine."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Slabo mi je.*",
+              "SLAH-boh mee yay",
+              "I feel unwell."
+            ],
+            [
+              "*Imam vročino.*",
+              "EE-mahm vroh-CHEE-noh",
+              "I have a fever."
+            ],
+            [
+              "*Prehlajen sem.*",
+              "praykh-LAH-yuhn suhm",
+              "I have a cold. (male)"
+            ],
+            [
+              "*Kašljam.*",
+              "KAHSH-lyahm",
+              "I'm coughing."
+            ],
+            [
+              "*Bruham.*",
+              "BROO-hahm",
+              "I'm throwing up."
+            ],
+            [
+              "*Potrebujem zdravilo.*",
+              "poh-tray-BOO-yuhm zdrah-VEE-loh",
+              "I need some medicine."
+            ],
+            [
+              "*Imate kaj proti glavobolu?*",
+              "PRAW-tee glah-voh-BAW-loo",
+              "Do you have anything for a headache?"
+            ],
+            [
+              "*Sem alergičen na …*",
+              "suhm ah-layr-GEE-chuhn nah",
+              "I'm allergic to … (male)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The emergency numbers in Slovenia are **112** for ambulance and fire, **113** for police. Both work nationwide and are free from any phone."
+        },
+        {
+          "type": "kotak",
+          "title": "What newcomers should know",
+          "items": [
+            "A pharmacy is a **lekarna**, and almost all of them close at night. The ones open around the clock are called **dežurna lekarna**, and every town has at least one.",
+            "Many medicines sold over the counter in other countries — including antibiotics — need a **prescription** (*recept*) in Slovenia. Ordinary painkillers such as *lekadol* or *aspirin* can still be bought directly.",
+            "If you're staying long-term, you'll get a **kartica zdravstvenega zavarovanja** (health insurance card). Always carry it — without it, a doctor's visit is charged in full."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "And one sentence you'll often hear as an answer: *Ni hudega* — \"it's nothing serious\". Together with *Bo že* (it'll get better), these are how Slovenians comfort someone who's ill: short, calm, no drama."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "boleti",
+      "baca": "boh-LAY-tee",
+      "en": "hurt; ache"
+    },
+    {
+      "sl": "glava",
+      "baca": "GLAH-vah",
+      "en": "head"
+    },
+    {
+      "sl": "grlo",
+      "baca": "GUHR-loh",
+      "en": "throat"
+    },
+    {
+      "sl": "trebuh",
+      "baca": "TRAY-bookh",
+      "en": "stomach; belly"
+    },
+    {
+      "sl": "oko",
+      "baca": "oh-KAW",
+      "en": "eye"
+    },
+    {
+      "sl": "roka",
+      "baca": "RAW-kah",
+      "en": "hand; arm"
+    },
+    {
+      "sl": "noga",
+      "baca": "NAW-gah",
+      "en": "leg; foot"
+    },
+    {
+      "sl": "zob",
+      "baca": "zawp",
+      "en": "tooth"
+    },
+    {
+      "sl": "vročina",
+      "baca": "vroh-CHEE-nah",
+      "en": "fever; heat"
+    },
+    {
+      "sl": "prehlad",
+      "baca": "praykh-LAHT",
+      "en": "cold; flu"
+    },
+    {
+      "sl": "zdravilo",
+      "baca": "zdrah-VEE-loh",
+      "en": "medicine"
+    },
+    {
+      "sl": "lekarna",
+      "baca": "lay-KAHR-nah",
+      "en": "pharmacy"
+    },
+    {
+      "sl": "zdravnica",
+      "baca": "zdrow-NEE-tsah",
+      "en": "doctor (female)"
+    },
+    {
+      "sl": "bolan",
+      "baca": "boh-LAHN",
+      "en": "ill; sick"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in boli or bolijo.",
+      "items": [
+        "____ me glava.",
+        "____ me noge.",
+        "____ me grlo.",
+        "____ me oči.",
+        "____ me zobje.",
+        "____ me trebuh."
+      ]
+    },
+    {
+      "prompt": "Fill in the right dative form.",
+      "items": [
+        "Slabo ____ je. (me)",
+        "Vroče ____ je. (you)",
+        "Dolgčas ____ je. (her)",
+        "Žal ____ je. (us)",
+        "Všeč ____ je. (them)",
+        "Kako ____ je ime? (you, polite)"
+      ]
+    },
+    {
+      "prompt": "Translate into Slovenian.",
+      "items": [
+        "My head hurts.",
+        "Since yesterday.",
+        "I feel unwell.",
+        "I have a fever.",
+        "I need some medicine.",
+        "Where's the nearest pharmacy?"
+      ]
+    },
+    {
+      "prompt": "Wave review — unit 13. Translate into Slovenian without looking back at the unit.",
+      "items": [
+        "This is my family.",
+        "I have one sister.",
+        "Her husband is a teacher.",
+        "What do you do?",
+        "I'm still studying."
+      ]
+    }
+  ],
+  "answers": [
+    "Boli — Bolijo — Boli — Bolijo — Bolijo — Boli",
+    "mi — ti — ji — nam — jim — vam",
+    "Boli me glava. — Od včeraj. — Slabo mi je. — Imam vročino. — Potrebujem zdravilo. — Kje je najbližja lekarna?",
+    "To je moja družina. — Imam eno sestro. — Njen mož je učitelj. — Kaj si po poklicu? — Še študiram."
+  ]
+}

@@ -1,0 +1,660 @@
+{
+  "title": "My daily routine",
+  "title_target": "Eguneroko bizitza",
+  "goal": "Talk about your day from getting up to going to bed, and learn which verbs take naiz and which take dut.",
+  "bekal": [
+    "describe your routine from *esnatzen naiz* to *oheratzen naiz*",
+    "tell apart verbs with the auxiliary *izan* (naiz) and verbs with *ukan* (dut)",
+    "use the sequence words *gero*, *ondoren*, *azkenik* and means of transport with *-z*"
+  ],
+  "dialogs": [
+    {
+      "title": "Elkarrizketa — Nolakoa da zure eguna?",
+      "intro": "Break time at the euskaltegi. Maite is curious about Budi's daily schedule.",
+      "lines": [
+        {
+          "speaker": "Maite:",
+          "text": "Zer egiten duzu egunero?",
+          "id": "What do you do every day?",
+          "literal": "what doing you-have-it every-day?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Goizean zazpietan esnatzen naiz.",
+          "id": "In the morning I wake up at seven.",
+          "literal": "morning-in seven(pl)-at waking-up am."
+        },
+        {
+          "speaker": "Maite:",
+          "text": "Goiz! Eta gero?",
+          "id": "Early! And then?",
+          "literal": "early! and later?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dutxatzen naiz, gosaltzen dut eta euskaltegira joaten naiz.",
+          "id": "I shower, have breakfast, and go to the euskaltegi.",
+          "literal": "showering am, breakfasting I-have-it and euskaltegi-to going am."
+        },
+        {
+          "speaker": "Maite:",
+          "text": "Oinez ala autobusez?",
+          "id": "On foot or by bus?",
+          "literal": "foot-by or bus-by?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Oinez. Hogei minutu dira, eta bidea polita da.",
+          "id": "On foot. It's twenty minutes, and it's a nice walk.",
+          "literal": "foot-by. twenty minute are, and way-the pretty-the is."
+        },
+        {
+          "speaker": "Maite:",
+          "text": "Eta bazkaria non egiten duzu?",
+          "id": "And where do you have lunch?",
+          "literal": "and lunch-the where doing you-have-it?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Etxean bazkaltzen dut, Unairekin.",
+          "id": "I have lunch at home, with Unai.",
+          "literal": "house-at lunching I-have-it, Unai-with."
+        },
+        {
+          "speaker": "Maite:",
+          "text": "Arratsaldean zer egiten duzu?",
+          "id": "What do you do in the afternoon?",
+          "literal": "afternoon-in what doing you-have-it?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Lan pixka bat egiten dut, eta gero euskara ikasten dut.",
+          "id": "I do a bit of work, and then I study euskara.",
+          "literal": "work little one doing I-have-it, and later Basque studying I-have-it."
+        },
+        {
+          "speaker": "Maite:",
+          "text": "Ez zara inoiz nekatzen?",
+          "id": "Don't you ever get tired?",
+          "literal": "not are ever tiring?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bai, noski! Gauean hamaiketan oheratzen naiz.",
+          "id": "Yes, of course! At night I go to bed at eleven.",
+          "literal": "yes, of-course! night-at eleven(pl)-at bed-to-going am."
+        }
+      ],
+      "notes": [
+        "**Esnatzen naiz, but gosaltzen dut.** This is the split you need to start feeling now: actions that happen **to you yourself** take *naiz* (wake up, shower, go to bed, go, come), while actions that **affect something** take *dut* (have breakfast, read, study, buy). The grammar section below gives you a rule you can rely on.",
+        "**Oheratzen naiz — a verb born from a noun.** *Ohe* means bed; *ohe + ra* means \"to bed\"; *oheratu* means \"to go to bed\". This pattern is alive and productive: *etxeratu* (go home), *kaleratu* (go out into the street), *lurreratu* (land, touch down).",
+        "**Ala, not edo.** Both mean \"or\", but *ala* is used in **either/or questions** that expect one answer: *Oinez **ala** autobusez?* while *edo* is used in ordinary sentences: *Kafea **edo** tea hartzen dut.* English has just one \"or\" for both, so this needs a little extra attention.",
+        "**Ez zara inoiz nekatzen? — a perfectly normal double negative.** *Inoiz* means \"ever\"; together with *ez* it becomes \"never\". Unlike standard English, Basque happily puts two negative words side by side, and they don't cancel each other out."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "A whole day, from waking up to going to bed",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English",
+            "Auxiliary"
+          ],
+          "rows": [
+            [
+              "esnatu",
+              "ehs-NAH-too",
+              "wake up",
+              "naiz"
+            ],
+            [
+              "jaiki",
+              "KHAH-ee-kee",
+              "get up",
+              "naiz"
+            ],
+            [
+              "dutxatu",
+              "doo-CHAH-too",
+              "shower",
+              "naiz"
+            ],
+            [
+              "jantzi",
+              "KHAHN-tsee",
+              "get dressed",
+              "dut"
+            ],
+            [
+              "gosaldu",
+              "goh-SAHL-doo",
+              "have breakfast",
+              "dut"
+            ],
+            [
+              "bazkaldu",
+              "bahs-KAHL-doo",
+              "have lunch",
+              "dut"
+            ],
+            [
+              "afaldu",
+              "ah-FAHL-doo",
+              "have dinner",
+              "dut"
+            ],
+            [
+              "joan",
+              "KHOH-ahn",
+              "go",
+              "naiz"
+            ],
+            [
+              "etorri",
+              "eh-TOH-rree",
+              "come",
+              "naiz"
+            ],
+            [
+              "iritsi",
+              "ee-REE-tsee",
+              "arrive",
+              "naiz"
+            ],
+            [
+              "lan egin",
+              "LAHN eh-geen",
+              "work",
+              "dut"
+            ],
+            [
+              "ikasi",
+              "ee-KAH-see",
+              "study",
+              "dut"
+            ],
+            [
+              "deskantsatu",
+              "dehs-kahn-TSAH-too",
+              "rest",
+              "naiz"
+            ],
+            [
+              "oheratu",
+              "oh-eh-RAH-too",
+              "go to bed",
+              "naiz"
+            ],
+            [
+              "lo egin",
+              "LOH eh-geen",
+              "sleep",
+              "dut"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at the last pair: *oheratu* (go to bed) takes *naiz*, but *lo egin* (sleep, literally \"do sleep\") takes *dut* — because something is being done, namely the *lo* itself. Every compound verb with *egin* behaves the same way: *lan egin*, *hitz egin*, *negar egin* (cry), *barre egin* (laugh)."
+        },
+        {
+          "type": "kotak",
+          "title": "A paragraph you can use as is",
+          "items": [
+            "*Goizean zazpietan esnatzen naiz. Dutxatzen naiz eta gosaltzen dut. Zortzi eta erdietan etxetik ateratzen naiz. Bederatzietatik ordu batera arte lan egiten dut. Etxean bazkaltzen dut. Arratsaldean euskara ikasten dut. Gauean afaltzen dut eta telebista ikusten dut. Hamaiketan oheratzen naiz.*",
+            "Memorize the whole paragraph. It answers the \"tell me about your day\" question that comes up in almost every first conversation, and you can swap the content of each sentence to fit your own life."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Naiz or dut? — a rule you can rely on",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This is the question beginners ask most, and the answer is tidier than it looks. Ask just one thing: **is there something the action is done to?**"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Answer",
+            "Auxiliary",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Something acted on?",
+              "no",
+              "**izan** (naiz)",
+              "Etxera noa. / Esnatzen naiz."
+            ],
+            [
+              "",
+              "yes",
+              "**ukan** (dut)",
+              "Ogia jaten dut."
+            ],
+            [
+              "Doer wearing the -k hat?",
+              "no",
+              "**izan**",
+              "Ni etorri naiz."
+            ],
+            [
+              "",
+              "yes",
+              "**ukan**",
+              "Nik ogia jan dut."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Those two questions are really one and the same, seen from two sides: the doer's hat and the auxiliary *ukan* always come together. If one is there, so is the other."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "With izan (naiz)",
+            "With ukan (dut)"
+          ],
+          "rows": [
+            [
+              "joan (go), etorri (come)",
+              "jan (eat), edan (drink)"
+            ],
+            [
+              "iritsi (arrive), sartu (go in)",
+              "ikusi (see), entzun (hear)"
+            ],
+            [
+              "atera (go out), igo (go up)",
+              "irakurri (read), idatzi (write)"
+            ],
+            [
+              "esnatu (wake up), jaiki (get up)",
+              "erosi (buy), saldu (sell)"
+            ],
+            [
+              "dutxatu (shower), oheratu (go to bed)",
+              "ikasi (study), egin (do)"
+            ],
+            [
+              "egon (be located), bizi izan (live)",
+              "ukan (have), nahi izan (want)"
+            ],
+            [
+              "hasi (start), amaitu (finish)",
+              "hartu (take), eman (give)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Typical mistakes of English speakers",
+          "items": [
+            "Using *dut* for \"go\": ***Etxera joaten dut*** is wrong; the right form is *Etxera joaten **naiz***. \"Going\" feels like an active thing you do, so the temptation is strong.",
+            "Using *naiz* for \"study\": ***Euskara ikasten naiz*** is wrong; the right form is *Euskara ikasten **dut*** — there's something being studied: euskara.",
+            "Forgetting that *bizi izan* takes *naiz*: *Bilbon bizi **naiz***, not *dut*.",
+            "If you're really unsure, ask \"what?\". If there's an answer (what's eaten, what's read, what's bought), use *dut*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Sequence, frequency, and transport",
+      "blocks": [
+        {
+          "type": "sub",
+          "text": "Putting things in order"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "English",
+            "Example"
+          ],
+          "rows": [
+            [
+              "lehenengo",
+              "first",
+              "Lehenengo dutxatzen naiz."
+            ],
+            [
+              "gero",
+              "then, later",
+              "Gero gosaltzen dut."
+            ],
+            [
+              "ondoren",
+              "after that",
+              "Ondoren lanera noa."
+            ],
+            [
+              "azkenik",
+              "finally",
+              "Azkenik oheratzen naiz."
+            ],
+            [
+              "bitartean",
+              "meanwhile",
+              "Bitartean kafea hartzen dut."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "How often"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "English",
+            "Euskara",
+            "English"
+          ],
+          "rows": [
+            [
+              "beti",
+              "always",
+              "gutxitan",
+              "rarely"
+            ],
+            [
+              "ia beti",
+              "almost always",
+              "inoiz ez",
+              "never"
+            ],
+            [
+              "sarritan",
+              "often",
+              "egunero",
+              "every day"
+            ],
+            [
+              "batzuetan",
+              "sometimes",
+              "astean behin",
+              "once a week"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "How you get there: the ending -z"
+        },
+        {
+          "type": "p",
+          "text": "Means of transport are marked with *-z*, a short ending meaning \"by\" or \"using\"."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Literally",
+            "English"
+          ],
+          "rows": [
+            [
+              "oinez",
+              "foot-by",
+              "on foot"
+            ],
+            [
+              "autobusez",
+              "bus-by",
+              "by bus"
+            ],
+            [
+              "trenez",
+              "train-by",
+              "by train"
+            ],
+            [
+              "metroz",
+              "metro-by",
+              "by subway"
+            ],
+            [
+              "kotxez",
+              "car-by",
+              "by car"
+            ],
+            [
+              "bizikletaz",
+              "bicycle-by",
+              "by bike"
+            ],
+            [
+              "hegazkinez",
+              "plane-by",
+              "by plane"
+            ],
+            [
+              "euskaraz",
+              "Basque-by",
+              "in Basque"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last row shows that the same ending is used for languages: *euskaraz hitz egiten dut* (I speak in Basque), *ingelesez* (in English), *indonesieraz* (in Indonesian)."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "eu": "esnatu",
+      "baca": "ehs-NAH-too",
+      "en": "to wake up"
+    },
+    {
+      "eu": "jaiki",
+      "baca": "KHAH-ee-kee",
+      "en": "to get up"
+    },
+    {
+      "eu": "dutxatu",
+      "baca": "doo-CHAH-too",
+      "en": "to shower"
+    },
+    {
+      "eu": "jantzi",
+      "baca": "KHAHN-tsee",
+      "en": "to get dressed"
+    },
+    {
+      "eu": "gosaldu",
+      "baca": "goh-SAHL-doo",
+      "en": "to have breakfast"
+    },
+    {
+      "eu": "bazkaldu",
+      "baca": "bahs-KAHL-doo",
+      "en": "to have lunch"
+    },
+    {
+      "eu": "afaldu",
+      "baca": "ah-FAHL-doo",
+      "en": "to have dinner"
+    },
+    {
+      "eu": "oheratu",
+      "baca": "oh-eh-RAH-too",
+      "en": "to go to bed"
+    },
+    {
+      "eu": "lo egin",
+      "baca": "LOH eh-geen",
+      "en": "to sleep"
+    },
+    {
+      "eu": "deskantsatu",
+      "baca": "dehs-kahn-TSAH-too",
+      "en": "to rest"
+    },
+    {
+      "eu": "atera",
+      "baca": "ah-TEH-rah",
+      "en": "to go out"
+    },
+    {
+      "eu": "sartu",
+      "baca": "SAHR-too",
+      "en": "to go in"
+    },
+    {
+      "eu": "iritsi",
+      "baca": "ee-REE-tsee",
+      "en": "to arrive"
+    },
+    {
+      "eu": "bide",
+      "baca": "BEE-deh",
+      "en": "way, route"
+    },
+    {
+      "eu": "oinez",
+      "baca": "oh-ee-NEHS",
+      "en": "on foot"
+    },
+    {
+      "eu": "autobus",
+      "baca": "ah-oo-toh-BOOS",
+      "en": "bus"
+    },
+    {
+      "eu": "tren",
+      "baca": "TREHN",
+      "en": "train"
+    },
+    {
+      "eu": "bizikleta",
+      "baca": "bee-see-KLEH-tah",
+      "en": "bicycle"
+    },
+    {
+      "eu": "lan",
+      "baca": "LAHN",
+      "en": "work, job"
+    },
+    {
+      "eu": "lehenengo",
+      "baca": "leh-eh-NEHN-goh",
+      "en": "first"
+    },
+    {
+      "eu": "gero",
+      "baca": "GEH-roh",
+      "en": "then, later"
+    },
+    {
+      "eu": "ondoren",
+      "baca": "ohn-DOH-rehn",
+      "en": "after that"
+    },
+    {
+      "eu": "azkenik",
+      "baca": "ahs-KEH-neek",
+      "en": "finally"
+    },
+    {
+      "eu": "sarritan",
+      "baca": "sah-RREE-tahn",
+      "en": "often"
+    },
+    {
+      "eu": "inoiz ez",
+      "baca": "ee-NOH-ees EHS",
+      "en": "never"
+    },
+    {
+      "eu": "behin",
+      "baca": "BEH-een",
+      "en": "once"
+    },
+    {
+      "eu": "ala",
+      "baca": "AH-lah",
+      "en": "or (in either/or questions)"
+    },
+    {
+      "eu": "noski",
+      "baca": "NOHS-kee",
+      "en": "of course"
+    },
+    {
+      "eu": "nekatu",
+      "baca": "neh-KAH-too",
+      "en": "to get tired"
+    },
+    {
+      "eu": "eguneroko",
+      "baca": "eh-goo-NEH-roh-koh",
+      "en": "daily, everyday"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose the right auxiliary: naiz or dut.",
+      "items": [
+        "Zazpietan esnatzen ____.",
+        "Gosaria egiten ____.",
+        "Euskaltegira joaten ____.",
+        "Euskara ikasten ____.",
+        "Hamaiketan oheratzen ____.",
+        "Telebista ikusten ____."
+      ]
+    },
+    {
+      "prompt": "Translate into Basque.",
+      "items": [
+        "I wake up at seven.",
+        "I have breakfast at home.",
+        "I go to the office by bus.",
+        "In the afternoon I study euskara.",
+        "I never have lunch at a bar.",
+        "I go to bed at eleven."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the ending -z for transport or language.",
+      "items": [
+        "Lanera autobus____ joaten naiz.",
+        "Bilbora tren____ noa.",
+        "Etxera oin____ joaten naiz.",
+        "Euskara____ hitz egiten dut.",
+        "Ingeles____ ere badakit.",
+        "Mendira bizikleta____ igotzen naiz."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "naiz / zazpietan / esnatzen / goizean",
+        "dut / etxean / bazkaltzen",
+        "naiz / euskaltegira / joaten / oinez",
+        "dut / arratsaldean / ikasten / euskara",
+        "naiz / ez / nekatzen / inoiz",
+        "duzu / egunero / zer / egiten / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "naiz — dut — naiz — dut — naiz — dut",
+    "Zazpietan esnatzen naiz. — Etxean gosaltzen dut. — Bulegora autobusez joaten naiz. — Arratsaldean euskara ikasten dut. — Ez dut inoiz tabernan bazkaltzen. — Hamaiketan oheratzen naiz.",
+    "autobusez — trenez — oinez — Euskaraz — Ingelesez — bizikletaz",
+    "Goizean zazpietan esnatzen naiz. — Etxean bazkaltzen dut. — Euskaltegira oinez joaten naiz. — Arratsaldean euskara ikasten dut. — Ez naiz inoiz nekatzen. — Zer egiten duzu egunero?"
+  ]
+}

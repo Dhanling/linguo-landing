@@ -1,0 +1,660 @@
+{
+  "title": "Numbers, prices, and haggling at the bozor",
+  "title_target": "Sonlar va bozorda savdo",
+  "goal": "Count to a thousand, ask the price with *qancha*, use the counting ending *-ta*, and haggle without sounding rude.",
+  "bekal": [
+    "say the numbers 1–100 and multiples of a thousand",
+    "tell *nechta* (how many items) from *qancha* (how much)",
+    "haggle with *arzonroq boʻladimi?* — a phrase that will save you money every day"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Chorsu bozorida",
+      "intro": "Budi is standing in front of a mountain of fruit. The seller, a middle-aged woman, has been watching him for a while.",
+      "lines": [
+        {
+          "speaker": "Sotuvchi:",
+          "text": "Keling, uka! Meva juda shirin!",
+          "id": "Come on, young man! The fruit is really sweet!",
+          "literal": "come, younger-brother! fruit very sweet!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Assalomu alaykum, opa. Bu uzum qancha turadi?",
+          "id": "Hello, ma'am. How much are these grapes?",
+          "literal": "hello, older-sister. this grapes how-much stands?"
+        },
+        {
+          "speaker": "Sotuvchi:",
+          "text": "Bir kilosi yigirma besh ming soʻm.",
+          "id": "Twenty-five thousand som a kilo.",
+          "literal": "one kilo-its twenty five thousand som."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Voy, qimmat-ku! Arzonroq boʻladimi?",
+          "id": "Oh, that's expensive! Can it be cheaper?",
+          "literal": "oh, expensive-really! cheaper becomes-?"
+        },
+        {
+          "speaker": "Sotuvchi:",
+          "text": "Mayli, sizga yigirma ming. Nechta kilo olasiz?",
+          "id": "All right, for you twenty thousand. How many kilos will you take?",
+          "literal": "all-right, you-to twenty thousand. how-many kilo take-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ikki kilo, iltimos. Anor ham bormi?",
+          "id": "Two kilos, please. Do you have pomegranates too?",
+          "literal": "two kilo, please. pomegranate also there-is-?"
+        },
+        {
+          "speaker": "Sotuvchi:",
+          "text": "Albatta. Anor donasi olti ming soʻm.",
+          "id": "Of course. Pomegranates are six thousand som each.",
+          "literal": "of-course. pomegranate piece-its six thousand som."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Uchta anor bering. Hammasi qancha boʻldi?",
+          "id": "Three pomegranates, please. How much is it all together?",
+          "literal": "three-items pomegranate give. all-of-it how-much became?"
+        },
+        {
+          "speaker": "Sotuvchi:",
+          "text": "Qirq ming plus oʻn sakkiz ming — ellik sakkiz ming soʻm.",
+          "id": "Forty thousand plus eighteen thousand — fifty-eight thousand som.",
+          "literal": "forty thousand plus ten eight thousand — fifty eight thousand som."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mana, oltmish ming. Qaytimi bor?",
+          "id": "Here, sixty thousand. Do you have change?",
+          "literal": "here, sixty thousand. change-its there-is?"
+        },
+        {
+          "speaker": "Sotuvchi:",
+          "text": "Bor, ikki ming. Rahmat, yana keling!",
+          "id": "Yes, two thousand. Thank you, come again!",
+          "literal": "there-is, two thousand. thanks, again come!"
+        }
+      ],
+      "notes": [
+        "**Qancha turadi? literally \"how much does it stand?\".** The verb *turmoq* (to stand) is used for prices — just as English *cost* comes from Latin *constare*, \"to stand firm\". A shorter form that's just as correct: *Bu necha pul?* — \"this how-much money?\".",
+        "**-ku sticks on the end to show surprise.** *Qimmat-ku!* = \"That's expensive!\" It isn't a word, just seasoning; leaving it out is still correct, using it makes you sound like you've been around a while.",
+        "**Mayli = \"all right\".** One word to agree, give in, or close a deal. In Uzbekistan you'll hear it dozens of times a day, often doubled: *mayli-mayli*.",
+        "**Bir kilosi = \"one kilo of it\".** The ending *-si* here isn't about ownership but marks a portion: \"the one kilo of it\". Same pattern: *donasi* (per piece), *bittasi* (one of them).",
+        "**Big numbers have no \"and\".** *Ellik sakkiz ming* = 58,000, literally \"fifty eight thousand\". Uzbek money comes in big numbers — lunch can cost 40,000 som — so the numbers in this unit aren't school drills but everyday survival."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers: ten basic words, the rest is assembly",
+          "body": [
+            "Learn the first ten rows and the nine tens. Every other number is built from these, with no exceptions at all."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Oʻzbekcha",
+              "Say it",
+              "Number",
+              "Oʻzbekcha",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "1",
+                "*bir*",
+                "bir",
+                "10",
+                "*oʻn*",
+                "on"
+              ],
+              [
+                "2",
+                "*ikki*",
+                "ik-KI",
+                "20",
+                "*yigirma*",
+                "yi-gir-MÅ"
+              ],
+              [
+                "3",
+                "*uch*",
+                "uch",
+                "30",
+                "*oʻttiz*",
+                "ot-TIZ"
+              ],
+              [
+                "4",
+                "*toʻrt*",
+                "tort",
+                "40",
+                "*qirq*",
+                "qirq"
+              ],
+              [
+                "5",
+                "*besh*",
+                "besh",
+                "50",
+                "*ellik*",
+                "el-LIK"
+              ],
+              [
+                "6",
+                "*olti*",
+                "ål-TI",
+                "60",
+                "*oltmish*",
+                "ålt-MISH"
+              ],
+              [
+                "7",
+                "*yetti*",
+                "yet-TI",
+                "70",
+                "*yetmish*",
+                "yet-MISH"
+              ],
+              [
+                "8",
+                "*sakkiz*",
+                "såk-KIZ",
+                "80",
+                "*sakson*",
+                "såk-SÅN"
+              ],
+              [
+                "9",
+                "*toʻqqiz*",
+                "toq-QIZ",
+                "90",
+                "*toʻqson*",
+                "tåq-SÅN"
+              ],
+              [
+                "0",
+                "*nol*",
+                "nål",
+                "100",
+                "*yuz*",
+                "yuz"
+              ]
+            ]
+          },
+          "after": [
+            "**The teens = *oʻn* + the unit**, written as separate words: *oʻn bir* (11), *oʻn besh* (15), *oʻn toʻqqiz* (19). The other tens work exactly the same: *yigirma uch* (23), *qirq yetti* (47), *toʻqson toʻqqiz* (99).",
+            "Above a hundred: *yuz* (100), *ikki yuz* (200), *ming* (1,000), *besh ming* (5,000), *million* (1,000,000). Note that **there's no \"one\"** in front of *yuz* and *ming* when the amount is just one: 100 = *yuz*, 1,000 = *ming*.",
+            "⚠️ Six numbers contain letters that are easy to mix up. *Toʻrt* uses *oʻ*; so do *oʻn* and *oʻttiz*. But *olti*, *oltmish*, and *nol* use plain *o*, which is pronounced **å**. Read this row out loud until you hear the difference: *oʻn — olti — oʻttiz — oltmish*."
+          ]
+        },
+        {
+          "title": "-ta: the ending that appears when you count things",
+          "body": [
+            "Many Asian languages put a counter word between the number and the noun — like English \"three **pieces** of cake\" or \"two **head** of cattle\", but for everything. Uzbek does the same, with one ending attached to the number."
+          ],
+          "table": {
+            "head": [
+              "Angka",
+              "+ -ta",
+              "Contoh",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*bir*",
+                "**bitta**",
+                "*bitta kitob*",
+                "one book"
+              ],
+              [
+                "*ikki*",
+                "**ikkita**",
+                "*ikkita stol*",
+                "two tables"
+              ],
+              [
+                "*uch*",
+                "**uchta**",
+                "*uchta anor*",
+                "three pomegranates"
+              ],
+              [
+                "*toʻrt*",
+                "**toʻrtta**",
+                "*toʻrtta qalam*",
+                "four pencils"
+              ],
+              [
+                "*besh*",
+                "**beshta**",
+                "*beshta bola*",
+                "five children"
+              ],
+              [
+                "*oʻn*",
+                "**oʻnta**",
+                "*oʻnta kishi*",
+                "ten people"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **After a number, the noun stays singular.** *Uchta kitob*, not *uchta kitoblar*. The number already shows the amount.",
+            "*-ta* is used when things are **counted one by one**. For measures and amounts, the number stands bare: *ikki kilo uzum*, *uch soat*, *besh ming soʻm*. So *bitta non* (one loaf of bread) but *bir kilo non* (one kilo of bread).",
+            "For people there's a respectful form, *nafar*: *besh nafar talaba* (five students). It's used in official writing and announcements; on the street *beshta talaba* is enough."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Must-know phrases at the bozor",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Haggling in Uzbekistan isn't a fight but a friendly ritual both sides enjoy. Bargaining with a smile is seen as polite; paying the first price without asking actually seems strange."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**Bu qancha turadi?**",
+              "bu QÅN-chå tu-rå-DI",
+              "How much is this?"
+            ],
+            [
+              "**Bu necha pul?**",
+              "bu ne-CHÅ pul",
+              "How much is this? (everyday)"
+            ],
+            [
+              "**Qimmat!**",
+              "qim-MAT",
+              "Expensive!"
+            ],
+            [
+              "**Arzonroq boʻladimi?**",
+              "år-zån-RÅQ bo-lå-di-MI",
+              "Can it be cheaper?"
+            ],
+            [
+              "**Chegirma bormi?**",
+              "che-gir-MÅ bår-MI",
+              "Is there a discount?"
+            ],
+            [
+              "**Mayli, olaman.**",
+              "MÅY-li å-lå-MAN",
+              "All right, I'll take it."
+            ],
+            [
+              "**Hammasi qancha boʻldi?**",
+              "håm-må-si QÅN-chå bol-DI",
+              "How much is it all together?"
+            ],
+            [
+              "**Qaytimi bormi?**",
+              "QÅY-ti-mi bår-MI",
+              "Is there any change?"
+            ],
+            [
+              "**Kerak emas, rahmat.**",
+              "ke-RAK e-MÅS",
+              "No need, thank you."
+            ],
+            [
+              "**Bir koʻray.**",
+              "bir ko-RÅY",
+              "Let me have a look first."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One last-resort line if the price is truly outrageous: *Boshqa joyda arzonroq* — \"it's cheaper somewhere else\". Say it while taking half a step away, and see what happens."
+        }
+      ]
+    },
+    {
+      "title": "Fruit, bread, and the rest on the shelf",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Uzbekistan is a land of fruit. Its melons and grapes have been famous since Silk Road times, and Uzbeks are truly proud of them — praising the fruit is the fastest way to win over the seller."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**non**",
+              "nån",
+              "bread (round Uzbek flatbread)"
+            ],
+            [
+              "**meva**",
+              "me-VÅ",
+              "fruit"
+            ],
+            [
+              "**olma**",
+              "ÅL-må",
+              "apple"
+            ],
+            [
+              "**uzum**",
+              "u-ZUM",
+              "grapes"
+            ],
+            [
+              "**anor**",
+              "å-NÅR",
+              "pomegranate"
+            ],
+            [
+              "**qovun**",
+              "qå-VUN",
+              "melon"
+            ],
+            [
+              "**tarvuz**",
+              "tår-VUZ",
+              "watermelon"
+            ],
+            [
+              "**shaftoli**",
+              "shåf-tå-LI",
+              "peach"
+            ],
+            [
+              "**sabzavot**",
+              "såb-zå-VÅT",
+              "vegetables"
+            ],
+            [
+              "**kartoshka**",
+              "kår-TÅSH-kå",
+              "potato"
+            ],
+            [
+              "**piyoz**",
+              "pi-YÅZ",
+              "onion"
+            ],
+            [
+              "**goʻsht**",
+              "gosht",
+              "meat"
+            ],
+            [
+              "**tuxum**",
+              "tu-KHUM",
+              "egg"
+            ],
+            [
+              "**sut**",
+              "sut",
+              "milk"
+            ],
+            [
+              "**shakar**",
+              "shå-KAR",
+              "sugar"
+            ],
+            [
+              "**tuz**",
+              "tuz",
+              "salt"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Non* isn't just bread. It's round, stamped in the middle, and treated with respect: it must never be put upside down, never thrown away, and it's broken by hand — never cut with a knife. If you're a guest in an Uzbek home, breaking the *non* is the first part of eating together."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Anor* (pomegranate) and *shakar* (sugar) are Persian and Arabic words that traveled far: *shakar* is the same word as English *sugar* (via Arabic *sukkar*), and *anor* is Persian *anār*, also found in Hindi and Turkish (*nar*)."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uz": "bir",
+      "baca": "bir",
+      "en": "one"
+    },
+    {
+      "uz": "ikki",
+      "baca": "ik-KI",
+      "en": "two"
+    },
+    {
+      "uz": "uch",
+      "baca": "uch",
+      "en": "three"
+    },
+    {
+      "uz": "toʻrt",
+      "baca": "tort",
+      "en": "four"
+    },
+    {
+      "uz": "besh",
+      "baca": "besh",
+      "en": "five"
+    },
+    {
+      "uz": "olti",
+      "baca": "ål-TI",
+      "en": "six"
+    },
+    {
+      "uz": "yetti",
+      "baca": "yet-TI",
+      "en": "seven"
+    },
+    {
+      "uz": "sakkiz",
+      "baca": "såk-KIZ",
+      "en": "eight"
+    },
+    {
+      "uz": "toʻqqiz",
+      "baca": "toq-QIZ",
+      "en": "nine"
+    },
+    {
+      "uz": "oʻn",
+      "baca": "on",
+      "en": "ten"
+    },
+    {
+      "uz": "yigirma",
+      "baca": "yi-gir-MÅ",
+      "en": "twenty"
+    },
+    {
+      "uz": "ellik",
+      "baca": "el-LIK",
+      "en": "fifty"
+    },
+    {
+      "uz": "yuz",
+      "baca": "yuz",
+      "en": "one hundred"
+    },
+    {
+      "uz": "ming",
+      "baca": "ming",
+      "en": "one thousand"
+    },
+    {
+      "uz": "soʻm",
+      "baca": "som",
+      "en": "som (currency)"
+    },
+    {
+      "uz": "qancha",
+      "baca": "QÅN-chå",
+      "en": "how much"
+    },
+    {
+      "uz": "turmoq",
+      "baca": "tur-MÅQ",
+      "en": "to stand; to cost"
+    },
+    {
+      "uz": "meva",
+      "baca": "me-VÅ",
+      "en": "fruit"
+    },
+    {
+      "uz": "uzum",
+      "baca": "u-ZUM",
+      "en": "grapes"
+    },
+    {
+      "uz": "anor",
+      "baca": "å-NÅR",
+      "en": "pomegranate"
+    },
+    {
+      "uz": "olma",
+      "baca": "ÅL-må",
+      "en": "apple"
+    },
+    {
+      "uz": "qovun",
+      "baca": "qå-VUN",
+      "en": "melon"
+    },
+    {
+      "uz": "non",
+      "baca": "nån",
+      "en": "bread"
+    },
+    {
+      "uz": "kilo",
+      "baca": "ki-LÅ",
+      "en": "kilogram"
+    },
+    {
+      "uz": "dona",
+      "baca": "då-NÅ",
+      "en": "piece, item"
+    },
+    {
+      "uz": "shirin",
+      "baca": "shi-RIN",
+      "en": "sweet"
+    },
+    {
+      "uz": "arzonroq",
+      "baca": "år-zån-RÅQ",
+      "en": "cheaper"
+    },
+    {
+      "uz": "chegirma",
+      "baca": "che-gir-MÅ",
+      "en": "discount"
+    },
+    {
+      "uz": "qaytim",
+      "baca": "QÅY-tim",
+      "en": "change (money)"
+    },
+    {
+      "uz": "mayli",
+      "baca": "MÅY-li",
+      "en": "all right"
+    },
+    {
+      "uz": "yana",
+      "baca": "yå-NÅ",
+      "en": "again"
+    },
+    {
+      "uz": "hammasi",
+      "baca": "håm-må-SI",
+      "en": "all of it"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the numbers in Uzbek.",
+      "items": [
+        "7",
+        "13",
+        "24",
+        "40",
+        "58",
+        "99",
+        "300",
+        "5,000"
+      ]
+    },
+    {
+      "prompt": "Translate into Uzbek.",
+      "items": [
+        "How much is this?",
+        "Two kilos of grapes, please.",
+        "Can it be cheaper?",
+        "I'll take three pomegranates.",
+        "How much is it all together?",
+        "Is there any change?"
+      ]
+    },
+    {
+      "prompt": "Fill in with the -ta form or the bare number, whichever is correct.",
+      "items": [
+        "____ kitob bor. (3)",
+        "____ kilo uzum, iltimos. (2)",
+        "Xonada ____ stol bor. (5)",
+        "Bu ____ ming soʻm. (20)",
+        "Bizning oilamiz ____ kishi. (10)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "turadi / bu / qancha / ?",
+        "boʻladimi / arzonroq / ?",
+        "bering / anor / uchta",
+        "soʻm / ming / yigirma / besh",
+        "bormi / qaytimi / ?"
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 3. Translate into Uzbek without looking back at the unit.",
+      "items": [
+        "This is my family.",
+        "My father is a doctor.",
+        "I have one older brother.",
+        "How old is your younger sister?",
+        "This book is mine."
+      ]
+    }
+  ],
+  "answers": [
+    "yetti — oʻn uch — yigirma toʻrt — qirq — ellik sakkiz — toʻqson toʻqqiz — uch yuz — besh ming",
+    "Bu qancha turadi? — Ikki kilo uzum, iltimos. — Arzonroq boʻladimi? — Uchta anor olaman. — Hammasi qancha boʻldi? — Qaytimi bormi?",
+    "Uchta — Ikki — beshta — yigirma — oʻn",
+    "Bu qancha turadi? — Arzonroq boʻladimi? — Uchta anor bering. — Yigirma besh ming soʻm. — Qaytimi bormi?",
+    "Bu mening oilam. — Otam shifokor. — Bitta akam bor. — Singlingiz necha yoshda? — Bu kitob meniki."
+  ]
+}

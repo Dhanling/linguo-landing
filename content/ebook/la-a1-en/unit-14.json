@@ -1,0 +1,617 @@
+{
+  "title": "Can, want, go, carry",
+  "title_target": "Possum, volo, eo",
+  "goal": "Use the five most common irregular verbs, combine them with the infinitive of another verb, and recognize the infinitive used as a noun.",
+  "bekal": [
+    "conjugate *possum*, *volo*, *nolo*, *eo*, and *fero* in all six forms",
+    "build sentences on the pattern \"want/must/can + infinitive\"",
+    "read Latin proverbs with an infinitive as the subject"
+  ],
+  "dialogs": [
+    {
+      "title": "Colloquium — Iter ad villam",
+      "intro": "Quintus is planning a trip to the family farmhouse. Not everyone is allowed to come.",
+      "lines": [
+        {
+          "speaker": "Quintus:",
+          "text": "Cras ad villam ire volo. Quis venire vult?",
+          "id": "Tomorrow I want to go to the farmhouse. Who wants to come?",
+          "literal": "tomorrow to house-obj go want-I. who come want-he?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Ego venire volo! Sed non possum — magister me exspectat.",
+          "id": "I want to come! But I can't — my teacher is expecting me.",
+          "literal": "I come want-I! but not can-I — teacher me-obj wait-for-he."
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Ego ire possum! Nihil facere debeo.",
+          "id": "I can go! I don't have to do anything.",
+          "literal": "I go can-I! nothing-obj do must-I."
+        },
+        {
+          "speaker": "Cornelia:",
+          "text": "Iulia, tu domi manere debes. Litteras scribere debes.",
+          "id": "Iulia, you must stay home. You have to write letters.",
+          "literal": "Iulia, you at-home stay must-you. letter-pl-obj write must-you."
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Nolo litteras scribere! Ambulare volo!",
+          "id": "I don't want to write letters! I want to go for a walk!",
+          "literal": "not-want-I letter-pl-obj write! walk want-I!"
+        },
+        {
+          "speaker": "Cornelia:",
+          "text": "Scribere non vis, sed dona accipere vis.",
+          "id": "You don't want to write, but you do want to get presents.",
+          "literal": "write not want-you, but gift-pl-obj receive want-you."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Pater, quid ad villam ferre debemus?",
+          "id": "Father, what do we have to take to the farmhouse?",
+          "literal": "father-call, what-obj to house-obj carry must-we?"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Cibum et aquam ferre debemus. Cetera servi ferunt.",
+          "id": "We must take food and water. The servants carry the rest.",
+          "literal": "food-obj and water-obj carry must-we. rest-pl-obj servant-pl carry-they."
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Possumusne equos ducere?",
+          "id": "Can we take the horses?",
+          "literal": "can-we-Q horse-pl-obj lead?"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Possumus. Sed tu equum regere non potes!",
+          "id": "We can. But you can't handle a horse!",
+          "literal": "can-we. but you horse-obj control not can-you!"
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Possum! Discere volo.",
+          "id": "I can! I want to learn.",
+          "literal": "can-I! learn want-I."
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Bene dicis, filia. Qui vult, potest.",
+          "id": "Well said, my girl. Where there's a will, there's a way.",
+          "literal": "well say-you, daughter-call. who want-he, can-he."
+        }
+      ],
+      "notes": [
+        "**Volo, vis, vult — three forms that look nothing alike.** The verb \"want\" is one of the oldest and most worn-down in Latin. Learn its sound as three separate words: *volo* (I want), *vis* (you want), *vult* (he wants). The plural is friendlier: *volumus, vultis, volunt*.",
+        "**Nolo is non + volo fused together.** *Non volo* was shortened to *nolo*, and all its forms follow: *nolo, non vis, non vult, nolumus, non vultis, nolunt*. This word gives the \"don't!\" command you learn in Unit 16: *noli!*",
+        "**Ire, venire, scribere, facere — the infinitive after the first verb.** When two verbs meet in one sentence, the second takes the infinitive, the dictionary form ending in *-re*. The pattern is just like English: \"I want **to go**\", \"you must **write**\".",
+        "**Qui vult, potest — a proverb worth memorizing.** Literally \"the one who wants, can\". Here *qui* means \"the one who\", and how it works is explained fully in Unit 15. For now, just learn the whole sentence; it is one of the most quoted Latin proverbs."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Four verbs of will",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "*Possum*, *volo*, *nolo*, and *malo* almost always appear with the infinitive of another verb. All four are irregular, but the last three are close siblings: learn *volo*, and the other two follow by themselves."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Subject",
+            "possum (can)",
+            "volo (want)",
+            "nolo (don't want)",
+            "malo (prefer)"
+          ],
+          "rows": [
+            [
+              "I",
+              "possum",
+              "volo",
+              "nolo",
+              "malo"
+            ],
+            [
+              "you",
+              "potes",
+              "vis",
+              "non vis",
+              "mavis"
+            ],
+            [
+              "he/she",
+              "potest",
+              "vult",
+              "non vult",
+              "mavult"
+            ],
+            [
+              "we",
+              "possumus",
+              "volumus",
+              "nolumus",
+              "malumus"
+            ],
+            [
+              "you (pl)",
+              "potestis",
+              "vultis",
+              "non vultis",
+              "mavultis"
+            ],
+            [
+              "they",
+              "possunt",
+              "volunt",
+              "nolunt",
+              "malunt"
+            ],
+            [
+              "imperfect",
+              "poteram",
+              "volebam",
+              "nolebam",
+              "malebam"
+            ],
+            [
+              "perfect",
+              "potui",
+              "volui",
+              "nolui",
+              "malui"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Possum* is really *potis* (\"able\") plus *sum*, and it shows: *pot-* meets *sum* to give *possum*, meets *es* to give *potes*. If you know *sum*, you already half know *possum*."
+        },
+        {
+          "type": "sub",
+          "text": "Must: debeo and necesse est"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Latin",
+            "Translation",
+            "Note"
+          ],
+          "rows": [
+            [
+              "Scribere **debeo**.",
+              "I must write.",
+              "personal duty, from \"to owe\""
+            ],
+            [
+              "**Necesse est** scribere.",
+              "It is necessary to write.",
+              "necessity of the situation, no subject"
+            ],
+            [
+              "**Necesse est** mihi scribere.",
+              "I need to write.",
+              "with the \"to\" form"
+            ],
+            [
+              "Scribere non **possum**.",
+              "I can't write.",
+              "ability"
+            ],
+            [
+              "Scribere **nolo**.",
+              "I don't want to write.",
+              "will"
+            ],
+            [
+              "Legere quam scribere **malo**.",
+              "I prefer reading to writing.",
+              "*malo* pairs with *quam*"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Eo and fero: the two wildest",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "*Eo* (\"go\") is so short it almost disappears; *fero* (\"carry\") drops its linking letter in a few places. Both are extremely common, so there's no avoiding them."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Subject",
+            "eo (go)",
+            "fero (carry)",
+            "Imperfect",
+            "Perfect"
+          ],
+          "rows": [
+            [
+              "I",
+              "eo",
+              "fero",
+              "ibam / ferebam",
+              "ii / tuli"
+            ],
+            [
+              "you",
+              "is",
+              "fers",
+              "ibas / ferebas",
+              "isti / tulisti"
+            ],
+            [
+              "he/she",
+              "it",
+              "fert",
+              "ibat / ferebat",
+              "iit / tulit"
+            ],
+            [
+              "we",
+              "imus",
+              "ferimus",
+              "ibamus / ferebamus",
+              "iimus / tulimus"
+            ],
+            [
+              "you (pl)",
+              "itis",
+              "fertis",
+              "ibatis / ferebatis",
+              "istis / tulistis"
+            ],
+            [
+              "they",
+              "eunt",
+              "ferunt",
+              "ibant / ferebant",
+              "ierunt / tulerunt"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The infinitives are *ire* and *ferre*. Note *fers* and *fert*, which lose their *i*; the rest follow ordinary group three. The perfect *tuli* looks nothing like *fero* — it comes from another, older verb that gradually got attached."
+        },
+        {
+          "type": "sub",
+          "text": "The most common compounds"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Latin",
+            "Made of",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "exeo",
+              "ex + eo",
+              "to go out"
+            ],
+            [
+              "redeo",
+              "red + eo",
+              "to go back"
+            ],
+            [
+              "ineo",
+              "in + eo",
+              "to go in, to begin"
+            ],
+            [
+              "transeo",
+              "trans + eo",
+              "to cross"
+            ],
+            [
+              "pereo",
+              "per + eo",
+              "to perish"
+            ],
+            [
+              "affero",
+              "ad + fero",
+              "to bring"
+            ],
+            [
+              "aufero",
+              "ab + fero",
+              "to carry off"
+            ],
+            [
+              "confero",
+              "cum + fero",
+              "to bring together, to compare"
+            ],
+            [
+              "refero",
+              "re + fero",
+              "to bring back, to report"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Confero* gives the abbreviation *cf.* you see in footnotes, and *refero* gives *reference*. Every compound uses exactly the same table as its parent — so once you know *eo* and *fero*, you know twenty words at once."
+        }
+      ]
+    },
+    {
+      "title": "The infinitive as a noun",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A Latin infinitive can stand alone as the subject of a sentence, just like \"to err is human\" in English. When it is the subject, any adjective describing it takes the neuter ending."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Latin",
+            "Translation",
+            "Who"
+          ],
+          "rows": [
+            [
+              "**Errare** humanum est.",
+              "To err is human.",
+              "proverb, from Seneca"
+            ],
+            [
+              "**Vivere** est cogitare.",
+              "To live is to think.",
+              "Cicero"
+            ],
+            [
+              "**Navigare** necesse est.",
+              "Sailing is necessary.",
+              "sailors' motto, quoted by Plutarch"
+            ],
+            [
+              "Dulce et decorum est pro patria **mori**.",
+              "It is sweet and fitting to die for one's country.",
+              "Horace"
+            ],
+            [
+              "**Docere** est discere.",
+              "To teach is to learn.",
+              "school proverb"
+            ],
+            [
+              "**Dicere** non est **facere**.",
+              "Saying is not doing.",
+              "proverb"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Patterns you can use right away",
+          "items": [
+            "*… volo* — \"I want to …\". Example: *Latine legere volo.* — \"I want to read in Latin.\"",
+            "*… debeo* — \"I must …\". Example: *Cotidie discere debeo.* — \"I must study every day.\"",
+            "*… possum* — \"I can …\". Example: *Iam pauca dicere possum.* — \"I can already say a few things.\"",
+            "*… nolo* — \"I don't want to …\". Example: *Nolo tacere.* — \"I don't want to keep quiet.\"",
+            "These four patterns are enough to express almost every everyday plan and wish."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "la": "possum, posse, potui",
+      "baca": "POHS-soom",
+      "en": "can, to be able"
+    },
+    {
+      "la": "volo, velle, volui",
+      "baca": "WOH-loh",
+      "en": "to want, to wish"
+    },
+    {
+      "la": "nolo, nolle, nolui",
+      "baca": "NOH-loh",
+      "en": "not to want"
+    },
+    {
+      "la": "malo, malle, malui",
+      "baca": "MAH-loh",
+      "en": "to prefer"
+    },
+    {
+      "la": "eo, ire, ii",
+      "baca": "EH-oh, EE-reh",
+      "en": "to go"
+    },
+    {
+      "la": "fero, ferre, tuli",
+      "baca": "FEH-roh",
+      "en": "to carry, to bear"
+    },
+    {
+      "la": "debeo, debere, debui",
+      "baca": "DEH-beh-oh",
+      "en": "must, to owe"
+    },
+    {
+      "la": "necesse est",
+      "baca": "neh-KEHS-seh EHST",
+      "en": "it is necessary"
+    },
+    {
+      "la": "exeo, exire",
+      "baca": "EHK-seh-oh",
+      "en": "to go out"
+    },
+    {
+      "la": "redeo, redire",
+      "baca": "REH-deh-oh",
+      "en": "to go back"
+    },
+    {
+      "la": "transeo, transire",
+      "baca": "TRAHN-seh-oh",
+      "en": "to cross"
+    },
+    {
+      "la": "affero, afferre",
+      "baca": "AHF-feh-roh",
+      "en": "to bring"
+    },
+    {
+      "la": "aufero, auferre",
+      "baca": "OW-feh-roh",
+      "en": "to carry off, to take away"
+    },
+    {
+      "la": "maneo, manere, mansi",
+      "baca": "MAH-neh-oh",
+      "en": "to stay, to remain"
+    },
+    {
+      "la": "accipio, accipere, accepi",
+      "baca": "ahk-KEE-pee-oh",
+      "en": "to receive"
+    },
+    {
+      "la": "disco, discere, didici",
+      "baca": "DIS-koh",
+      "en": "to learn"
+    },
+    {
+      "la": "cogito, cogitare",
+      "baca": "KOH-gee-toh",
+      "en": "to think"
+    },
+    {
+      "la": "erro, errare",
+      "baca": "EHR-roh",
+      "en": "to make a mistake, to wander"
+    },
+    {
+      "la": "morior, mori",
+      "baca": "MOH-ree-ohr",
+      "en": "to die"
+    },
+    {
+      "la": "navigo, navigare",
+      "baca": "NAH-wee-goh",
+      "en": "to sail"
+    },
+    {
+      "la": "rego, regere, rexi",
+      "baca": "REH-goh",
+      "en": "to rule, to steer"
+    },
+    {
+      "la": "iter, itineris",
+      "baca": "EE-tehr",
+      "en": "journey, road"
+    },
+    {
+      "la": "cibus, cibi",
+      "baca": "KEE-boos",
+      "en": "food"
+    },
+    {
+      "la": "equus, equi",
+      "baca": "EH-kwoos",
+      "en": "horse"
+    },
+    {
+      "la": "humanus, humana",
+      "baca": "hoo-MAH-noos",
+      "en": "human, humane"
+    },
+    {
+      "la": "dulcis, dulce",
+      "baca": "DOOL-kis",
+      "en": "sweet"
+    },
+    {
+      "la": "necesse",
+      "baca": "neh-KEHS-seh",
+      "en": "necessary"
+    },
+    {
+      "la": "nihil",
+      "baca": "NEE-hil",
+      "en": "nothing"
+    },
+    {
+      "la": "cras",
+      "baca": "KRAHS",
+      "en": "tomorrow"
+    },
+    {
+      "la": "Latine",
+      "baca": "lah-TEE-neh",
+      "en": "in Latin"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the correct form of possum.",
+      "items": [
+        "Ego venire ____ .",
+        "Tu equum regere non ____ .",
+        "Marcus ire ____ .",
+        "Nos manere ____ .",
+        "Vos scribere ____ .",
+        "Pueri tacere non ____ ."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with volo or nolo as indicated.",
+      "items": [
+        "Ego discere ____ . (want)",
+        "Tu scribere ____ . (don't want)",
+        "Iulia ambulare ____ . (wants)",
+        "Nos manere ____ . (don't want)",
+        "Vos legere ____ . (want)",
+        "Pueri dormire ____ . (want)"
+      ]
+    },
+    {
+      "prompt": "Change to the infinitive (ending in -re).",
+      "items": [
+        "porto",
+        "video",
+        "mitto",
+        "audio",
+        "sum",
+        "eo"
+      ]
+    },
+    {
+      "prompt": "Translate into Latin.",
+      "items": [
+        "I want to learn Latin.",
+        "You must write letters.",
+        "We can't come.",
+        "Iulia prefers reading to writing.",
+        "To err is human.",
+        "Where there's a will, there's a way."
+      ]
+    }
+  ],
+  "answers": [
+    "possum — potes — potest — possumus — potestis — possunt",
+    "volo — non vis — vult — nolumus — vultis — volunt",
+    "portare — videre — mittere — audire — esse — ire",
+    "Latine discere volo. — Litteras scribere debes. — Venire non possumus. — Iulia legere quam scribere mavult. — Errare humanum est. — Qui vult, potest."
+  ]
+}

@@ -1,0 +1,619 @@
+{
+  "title": "My family",
+  "title_target": "Nire familia",
+  "goal": "Name the members of your family, use the possessives nire/zure/haren and the possessive ending -ren, and describe people with adjectives.",
+  "bekal": [
+    "name everyone in your close family and ask about someone else's",
+    "use *nire*, *zure*, *haren* and attach *-ren* to people's names",
+    "answer *nolakoa da?* with adjectives for people"
+  ],
+  "dialogs": [
+    {
+      "title": "Elkarrizketa — Familiaren argazkia",
+      "intro": "A break at the euskaltegi. Budi shows a photo of his family to Maite, a classmate.",
+      "lines": [
+        {
+          "speaker": "Maite:",
+          "text": "Hau zure familia da?",
+          "id": "Is this your family?",
+          "literal": "this your family is?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bai, hau nire familiaren argazkia da.",
+          "id": "Yes, this is a photo of my family.",
+          "literal": "yes, this my family-'s photo-the is."
+        },
+        {
+          "speaker": "Maite:",
+          "text": "Nor da gizon hori?",
+          "id": "Who's that man?",
+          "literal": "who is man that?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nire aita da. Hirurogei urte ditu.",
+          "id": "That's my father. He's sixty.",
+          "literal": "my father is. sixty year he-has-them."
+        },
+        {
+          "speaker": "Maite:",
+          "text": "Eta haren ondoko emakumea?",
+          "id": "And the woman next to him?",
+          "literal": "and his beside-of woman-the?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nire ama. Irakaslea da, zu bezala.",
+          "id": "My mother. She's a teacher, like you.",
+          "literal": "my mother. teacher-the is, you like."
+        },
+        {
+          "speaker": "Maite:",
+          "text": "Anai-arrebarik baduzu?",
+          "id": "Do you have any brothers or sisters?",
+          "literal": "brother-sister-any yes-you-have-it?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bai, arreba bat eta anaia bat ditut.",
+          "id": "Yes, I have a sister and a brother.",
+          "literal": "yes, sister one and brother one I-have-them."
+        },
+        {
+          "speaker": "Maite:",
+          "text": "Zenbat urte dituzte?",
+          "id": "How old are they?",
+          "literal": "how-many year they-have-them?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Arrebak hogei urte ditu, eta anaiak hamazazpi.",
+          "id": "My sister is twenty, and my brother is seventeen.",
+          "literal": "sister-doer twenty year has-them, and brother-doer seventeen."
+        },
+        {
+          "speaker": "Maite:",
+          "text": "Ezkonduta zaude?",
+          "id": "Are you married?",
+          "literal": "married are(located)-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ez, ezkongabea naiz. Baina bikotekide bat dut.",
+          "id": "No, I'm single. But I have a partner.",
+          "literal": "no, unmarried-the am. but partner one I-have-it."
+        }
+      ],
+      "notes": [
+        "**The word for a sibling depends on who's speaking.** This is the Basque quirk that surprises beginners most. If a **man** is speaking: *anaia* (brother), *arreba* (sister). If a **woman** is speaking: *neba* (brother), *ahizpa* (sister). So Budi and Maite use different words for exactly the same relationship.",
+        "**Anai-arreba: two words joined to mean \"siblings\".** Basque likes to pair two words to name the whole group: *anai-arrebak* (siblings), *seme-alabak* (children, sons and daughters), *aitona-amonak* (grandparents), *senar-emazteak* (husband and wife). English does something similar with \"brothers and sisters\" or \"mom and dad\".",
+        "**Baduzu? — the emphatic ba-.** In questions and emphatic positive sentences, the auxiliary *duzu* often takes the prefix *ba-*: *baduzu?* (\"do you have?\"), *badakit* (\"I know\"), *badago* (\"there is\"). The prefix doesn't change the basic meaning; it adds emphasis, like the \"do\" in \"I *do* have\".",
+        "**-rik: a special ending for questions and negatives.** *Anai-arreba**rik** baduzu?* and *Ez dut anai-arreba**rik**.* When the thing being talked about may not exist — in a question or a negative sentence — Basque uses *-rik* instead of the article *-a*. It corresponds roughly to English \"any\"."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Possession: nire, zure, haren",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Person",
+            "Possessive",
+            "Say it",
+            "Example"
+          ],
+          "rows": [
+            [
+              "ni",
+              "**nire**",
+              "NEE-reh",
+              "nire etxea (my house)"
+            ],
+            [
+              "zu",
+              "**zure**",
+              "SOO-reh",
+              "zure liburua (your book)"
+            ],
+            [
+              "hura",
+              "**haren**",
+              "AH-rehn",
+              "haren aita (his/her father)"
+            ],
+            [
+              "gu",
+              "**gure**",
+              "GOO-reh",
+              "gure gela (our room)"
+            ],
+            [
+              "zuek",
+              "**zuen**",
+              "SOO-ehn",
+              "zuen irakaslea (your teacher, you all)"
+            ],
+            [
+              "haiek",
+              "**haien**",
+              "AH-ee-ehn",
+              "haien etxeak (their houses)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The possessive stands **in front of** the thing owned — one of the few things in Basque that go in front. The noun itself still takes the article: *nire etxe**a***, not *nire etxe*."
+        },
+        {
+          "type": "sub",
+          "text": "Anyone's: the ending -ren"
+        },
+        {
+          "type": "p",
+          "text": "For names and other nouns, possession is marked with *-ren* — and the order is the same as English *'s*: **owner first, thing after**."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Literally",
+            "English"
+          ],
+          "rows": [
+            [
+              "Jon**en** etxea",
+              "Jon-'s house-the",
+              "Jon's house"
+            ],
+            [
+              "Maite**ren** liburua",
+              "Maite-'s book-the",
+              "Maite's book"
+            ],
+            [
+              "irakaslea**ren** izena",
+              "teacher-the-'s name-the",
+              "the teacher's name"
+            ],
+            [
+              "nire familia**ren** argazkia",
+              "my family-'s photo-the",
+              "my family's photo"
+            ],
+            [
+              "Bilbo**ko** museoa",
+              "Bilbo-of museum-the",
+              "the Bilbao museum"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two kinds of \"of\": -ren and -ko",
+          "items": [
+            "*-ren* is for owners that are **alive** or can own things: *Jonen etxea*, *amaren kotxea*.",
+            "*-ko* is for **place, material, and description**: *Bilboko kalea* (a street in Bilbao), *euskarazko liburua* (a book in Basque), *goizeko kafea* (morning coffee).",
+            "Quick rule: if English would use *'s*, use *-ren*. If English would say \"in\", \"from\", or \"made of\", use *-ko*.",
+            "Names ending in a consonant insert *-e-*: *Jon → Jon**en***, *Iker → Iker**ren*** (with a double *r* because the name ends in *r*)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Family",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "aita",
+              "AH-ee-tah",
+              "father"
+            ],
+            [
+              "ama",
+              "AH-mah",
+              "mother"
+            ],
+            [
+              "gurasoak",
+              "goo-RAH-soh-ahk",
+              "parents"
+            ],
+            [
+              "semea",
+              "seh-MEH-ah",
+              "son"
+            ],
+            [
+              "alaba",
+              "ah-LAH-bah",
+              "daughter"
+            ],
+            [
+              "seme-alabak",
+              "seh-meh-ah-LAH-bahk",
+              "children"
+            ],
+            [
+              "anaia",
+              "ah-NAH-ee-ah",
+              "brother (said by a man)"
+            ],
+            [
+              "arreba",
+              "ah-RREH-bah",
+              "sister (said by a man)"
+            ],
+            [
+              "neba",
+              "NEH-bah",
+              "brother (said by a woman)"
+            ],
+            [
+              "ahizpa",
+              "ah-EES-pah",
+              "sister (said by a woman)"
+            ],
+            [
+              "aitona",
+              "ah-ee-TOH-nah",
+              "grandfather"
+            ],
+            [
+              "amona",
+              "ah-MOH-nah",
+              "grandmother"
+            ],
+            [
+              "osaba",
+              "oh-SAH-bah",
+              "uncle"
+            ],
+            [
+              "izeba",
+              "ee-SEH-bah",
+              "aunt"
+            ],
+            [
+              "lehengusu",
+              "leh-ehn-GOO-soo",
+              "cousin"
+            ],
+            [
+              "senarra",
+              "seh-NAH-rrah",
+              "husband"
+            ],
+            [
+              "emaztea",
+              "eh-mahs-TEH-ah",
+              "wife"
+            ],
+            [
+              "bikotekidea",
+              "bee-koh-teh-KEE-deh-ah",
+              "partner"
+            ],
+            [
+              "biloba",
+              "bee-LOH-bah",
+              "grandchild"
+            ],
+            [
+              "haurra",
+              "AH-oo-rrah",
+              "small child"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Why siblings have two names",
+          "items": [
+            "Basque names the relationship **from the speaker's point of view**, not just by the sex of the person being talked about. That's why Budi (a man) has an *arreba*, while Maite (a woman) has an *ahizpa* — though both mean \"sister\".",
+            "Memory trick: **a**naia and **a**rreba are used by men; **n**eba and a**h**izpa by women.",
+            "If you get it wrong, nobody will be offended — but people will know at once that you're a beginner, because this is one of the most typical features of the language.",
+            "The good news: like English, Basque doesn't distinguish older and younger siblings. *Anaia* is a brother, older or younger. If you need to, you can specify *anaia zaharrena* (\"the oldest\")."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Nolakoa da? — describing people",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "*Nolakoa da?* means \"what is he/she like?\". The answer is an adjective with the article: *Altua da* (he's tall), *Oso jatorra da* (she's very nice)."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "English",
+            "Opposite",
+            "English"
+          ],
+          "rows": [
+            [
+              "altua",
+              "tall",
+              "baxua",
+              "short"
+            ],
+            [
+              "gaztea",
+              "young",
+              "zaharra",
+              "old"
+            ],
+            [
+              "argala",
+              "thin",
+              "lodia",
+              "fat"
+            ],
+            [
+              "jatorra",
+              "nice, kind",
+              "zakarra",
+              "rude"
+            ],
+            [
+              "alaia",
+              "cheerful",
+              "serioa",
+              "serious"
+            ],
+            [
+              "isila",
+              "quiet",
+              "berritsua",
+              "talkative"
+            ],
+            [
+              "langilea",
+              "hard-working",
+              "alferra",
+              "lazy"
+            ],
+            [
+              "ilehoria",
+              "blond",
+              "ilebeltza",
+              "dark-haired"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Adjectives can be strengthened with *oso* (\"very\") in front, or *-egi* (\"too\") at the end: *oso altua* (very tall), *altu**egia*** (too tall). To soften, use *samarra*: *altu samarra* (rather tall)."
+        },
+        {
+          "type": "kotak",
+          "title": "Ready-to-use sentences about family",
+          "items": [
+            "*Zenbat anai-arreba dituzu?* — \"How many brothers and sisters do you have?\"",
+            "*Ez dut anai-arrebarik.* — \"I'm an only child.\"",
+            "*Nire ama Jakartan bizi da.* — \"My mother lives in Jakarta.\"",
+            "*Nire aita erretiratuta dago.* — \"My father is retired.\"",
+            "*Familia handia dugu.* — \"We have a big family.\""
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "eu": "familia",
+      "baca": "fah-MEE-lee-ah",
+      "en": "family"
+    },
+    {
+      "eu": "aita",
+      "baca": "AH-ee-tah",
+      "en": "father"
+    },
+    {
+      "eu": "ama",
+      "baca": "AH-mah",
+      "en": "mother"
+    },
+    {
+      "eu": "guraso",
+      "baca": "goo-RAH-soh",
+      "en": "parent"
+    },
+    {
+      "eu": "seme",
+      "baca": "SEH-meh",
+      "en": "son"
+    },
+    {
+      "eu": "alaba",
+      "baca": "ah-LAH-bah",
+      "en": "daughter"
+    },
+    {
+      "eu": "anaia",
+      "baca": "ah-NAH-ee-ah",
+      "en": "brother (said by a man)"
+    },
+    {
+      "eu": "arreba",
+      "baca": "ah-RREH-bah",
+      "en": "sister (said by a man)"
+    },
+    {
+      "eu": "neba",
+      "baca": "NEH-bah",
+      "en": "brother (said by a woman)"
+    },
+    {
+      "eu": "ahizpa",
+      "baca": "ah-EES-pah",
+      "en": "sister (said by a woman)"
+    },
+    {
+      "eu": "aitona",
+      "baca": "ah-ee-TOH-nah",
+      "en": "grandfather"
+    },
+    {
+      "eu": "amona",
+      "baca": "ah-MOH-nah",
+      "en": "grandmother"
+    },
+    {
+      "eu": "osaba",
+      "baca": "oh-SAH-bah",
+      "en": "uncle"
+    },
+    {
+      "eu": "izeba",
+      "baca": "ee-SEH-bah",
+      "en": "aunt"
+    },
+    {
+      "eu": "lehengusu",
+      "baca": "leh-ehn-GOO-soo",
+      "en": "cousin"
+    },
+    {
+      "eu": "senar",
+      "baca": "SEH-nahr",
+      "en": "husband"
+    },
+    {
+      "eu": "emazte",
+      "baca": "eh-MAHS-teh",
+      "en": "wife"
+    },
+    {
+      "eu": "bikotekide",
+      "baca": "bee-koh-teh-KEE-deh",
+      "en": "partner"
+    },
+    {
+      "eu": "haur",
+      "baca": "AH-oor",
+      "en": "small child"
+    },
+    {
+      "eu": "gizon",
+      "baca": "gee-SOHN",
+      "en": "man"
+    },
+    {
+      "eu": "emakume",
+      "baca": "eh-mah-KOO-meh",
+      "en": "woman"
+    },
+    {
+      "eu": "argazki",
+      "baca": "ahr-GAHS-kee",
+      "en": "photo"
+    },
+    {
+      "eu": "ezkonduta",
+      "baca": "ehs-kohn-DOO-tah",
+      "en": "married"
+    },
+    {
+      "eu": "ezkongabe",
+      "baca": "ehs-kohn-GAH-beh",
+      "en": "single"
+    },
+    {
+      "eu": "altu",
+      "baca": "AHL-too",
+      "en": "tall"
+    },
+    {
+      "eu": "baxu",
+      "baca": "BAH-shoo",
+      "en": "short"
+    },
+    {
+      "eu": "gazte",
+      "baca": "GAHS-teh",
+      "en": "young"
+    },
+    {
+      "eu": "jator",
+      "baca": "KHAH-tohr",
+      "en": "nice, kind"
+    },
+    {
+      "eu": "alai",
+      "baca": "ah-LAH-ee",
+      "en": "cheerful"
+    },
+    {
+      "eu": "bezala",
+      "baca": "beh-SAH-lah",
+      "en": "like, as"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the right possessive (nire, zure, haren, gure, zuen, haien).",
+      "items": [
+        "____ aita mediku bat da. (I)",
+        "____ etxea handia da. (you)",
+        "____ ama Bilbon bizi da. (he)",
+        "____ irakaslea Ainhoa da. (we)",
+        "____ liburuak hemen daude. (you all)",
+        "____ seme-alabak gazteak dira. (they)"
+      ]
+    },
+    {
+      "prompt": "Add -ren or -ko.",
+      "items": [
+        "Jon____ etxea handia da.",
+        "Bilbo____ kaleak politak dira.",
+        "Maite____ ama irakaslea da.",
+        "euskara____ liburua",
+        "irakaslea____ izena Ainhoa da.",
+        "Donostia____ hondartza"
+      ]
+    },
+    {
+      "prompt": "Translate into Basque. Budi (a man) is speaking.",
+      "items": [
+        "This is my family.",
+        "I have a sister.",
+        "My father is sixty years old.",
+        "My mother is a teacher.",
+        "I don't have any brothers or sisters.",
+        "She's very nice."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "da / nire / irakaslea / ama",
+        "ditut / bat / eta / anaia / arreba / bat",
+        "da / altua / oso / aita / nire",
+        "dituzu / anai-arreba / zenbat / ?",
+        "bizi / Jakartan / dira / gurasoak / nire",
+        "da / familiaren / hau / argazkia / nire"
+      ]
+    }
+  ],
+  "answers": [
+    "Nire — Zure — Haren — Gure — Zuen — Haien",
+    "Jonen — Bilboko — Maiteren — euskarazko — irakaslearen — Donostiako",
+    "Hau nire familia da. — Arreba bat dut. — Nire aitak hirurogei urte ditu. — Nire ama irakaslea da. — Ez dut anai-arrebarik. — Oso jatorra da.",
+    "Nire ama irakaslea da. — Arreba bat eta anaia bat ditut. — Nire aita oso altua da. — Zenbat anai-arreba dituzu? — Nire gurasoak Jakartan bizi dira. — Hau nire familiaren argazkia da."
+  ]
+}

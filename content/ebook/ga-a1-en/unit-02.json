@@ -1,0 +1,638 @@
+{
+  "title": "Cold and wet today",
+  "title_target": "Tá sé fuar agus fliuch inniu",
+  "goal": "Making negatives and questions with the verb *tá*, answering without words for \"yes\" and \"no\", using adjectives, and talking about the weather.",
+  "bekal": [
+    "turn *tá* into *níl* and *an bhfuil* correctly",
+    "answer questions without a word for \"yes\" or \"no\"",
+    "put adjectives after the noun and strengthen them with *an-*"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — Bricfeasta sa chistin",
+      "intro": "Budi's first morning at Máire's house. It's raining outside, and breakfast is waiting on the kitchen table.",
+      "lines": [
+        {
+          "speaker": "Máire:",
+          "text": "Dia duit ar maidin, a Bhudi. An bhfuil tú tuirseach?",
+          "id": "Good morning, Budi. Are you tired?",
+          "literal": "God to-you on morning, O Budi. Q is you tired?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Níl. Tá mé go breá. Tá an teach seo an-chiúin.",
+          "id": "No. I'm great. This house is very quiet.",
+          "literal": "is-not. is I in-a-fine-way. is the house this very-quiet."
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Tá sé ciúin, cinnte. An bhfuil ocras ort?",
+          "id": "It's quiet, all right. Are you hungry?",
+          "literal": "is it quiet, certain. Q is hunger on-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá, tá ocras mór orm.",
+          "id": "Yes, I'm very hungry.",
+          "literal": "is, is hunger big on-me."
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Tá arán úr agus im ar an mbord. Tá an tae te fós.",
+          "id": "There's fresh bread and butter on the table. The tea's still hot.",
+          "literal": "is bread fresh and butter on the table. is the tea hot still."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Go hálainn. Cén sórt aimsire atá ann inniu?",
+          "id": "Lovely. What's the weather like today?",
+          "literal": "beautiful-ly. what sort of-weather that-is in-it today?"
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Tá sé fuar agus fliuch. Tá sé ag cur báistí.",
+          "id": "It's cold and wet. It's raining.",
+          "literal": "is it cold and wet. is it at putting of-rain."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "An bhfuil sé fuar i gcónaí i nGaillimh?",
+          "id": "Is it always cold in Galway?",
+          "literal": "Q is it cold in always in Galway?"
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Níl sé fuar i gcónaí, ach tá sé fliuch go minic!",
+          "id": "It's not always cold, but it's often wet!",
+          "literal": "is-not it cold in always, but is it wet often-ly!"
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Tá an aimsir go dona inniu, ach tá an bricfeasta go hiontach.",
+          "id": "The weather's bad today, but the breakfast is wonderful.",
+          "literal": "is the weather bad-ly today, but is the breakfast wonderful-ly."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá an t-arán an-bhlasta. Go raibh maith agat.",
+          "id": "The bread is really tasty. Thank you.",
+          "literal": "is the bread very-tasty. may-there-be good at-you."
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Tá fáilte romhat. Ith leat!",
+          "id": "You're welcome. Eat up!",
+          "literal": "is welcome before-you. eat with-you!"
+        }
+      ],
+      "notes": [
+        "**Níl isn't \"not\" plus \"tá\".** It's one whole word that replaces all of *tá*, fused from *ní* (not) and *fuil* (another form of *tá*). So *Tá mé tuirseach* becomes *Níl mé tuirseach*, not \"ní tá mé\". A third form appears in questions: *An bhfuil mé tuirseach?* All three are the same verb.",
+        "**Tá and Níl are your \"yes\" and \"no\".** Irish has no words for either. Asked *An bhfuil ocras ort?*, you answer by repeating the verb: *Tá* or *Níl*. Asked with a different verb, you answer with that verb — *An ólann tú tae?* gets *Ólaim* or *Ní ólaim*. The habit carried over into Irish English: \"I do, yeah.\" \"It is.\"",
+        "**An-chiúin, an-bhlasta — an intensifier that brings séimhiú.** The prefix *an-* means \"very\", is written with a hyphen, and always lenites the next letter: *ciúin* → *an-chiúin*, *blasta* → *an-bhlasta*, *mór* → *an-mhór*. Its sibling *ró-* means \"too\" and works the same way: *róthe* (too hot), *rófhuar* (too cold).",
+        "**Tá ocras orm — hunger sits on a person.** Irish doesn't say \"I'm hungry\" but \"there's hunger on me\". The pattern covers almost every physical feeling and emotion: *tart* (thirst), *tuirse* (tiredness), *áthas* (joy), *brón* (sadness), *fearg* (anger). The preposition is *ar*, which swallows the pronoun to make *orm, ort, air, uirthi*. Unit 8 covers it in full."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tá, Níl, An bhfuil — three faces of one verb",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "All you need are three forms, and none of them changes for different people. Only the pronoun changes."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Statement",
+            "Negative",
+            "Question",
+            "Answer"
+          ],
+          "rows": [
+            [
+              "Tá mé sásta.",
+              "Níl mé sásta.",
+              "An bhfuil tú sásta?",
+              "Tá. / Níl."
+            ],
+            [
+              "Tá sé fuar.",
+              "Níl sé fuar.",
+              "An bhfuil sé fuar?",
+              "Tá. / Níl."
+            ],
+            [
+              "Tá sí anseo.",
+              "Níl sí anseo.",
+              "An bhfuil sí anseo?",
+              "Tá. / Níl."
+            ],
+            [
+              "Tá muid réidh.",
+              "Níl muid réidh.",
+              "An bhfuil muid réidh?",
+              "Tá. / Níl."
+            ],
+            [
+              "Tá siad tuirseach.",
+              "Níl siad tuirseach.",
+              "An bhfuil siad tuirseach?",
+              "Tá. / Níl."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "How to say them: *tá* = TAW, *níl* = NEEL, *an bhfuil* = an WIL. Look at *bhfuil* — this is the urú (eclipsis) you saw in the pronunciation chapter: *bh* is written in front of *f*, and the *f* stops being pronounced. Drop the first two letters and you get *fuil*, which the dictionary lists under the verb *bí*."
+        },
+        {
+          "type": "kotak",
+          "title": "Don't look for a word for \"yes\" — there isn't one",
+          "items": [
+            "Asked *An bhfuil tú go maith?*, answer *Tá* (not \"sea\", not \"yeah\").",
+            "For questions about **identity** that use the verb *is*, the answer is different again: *Sea* and *Ní hea*. That's Unit 6. For now, every question starting with *An bhfuil …* is answered *Tá* or *Níl*.",
+            "To be emphatic, repeat the whole sentence: *Tá, tá mé go maith.* This sounds the most natural and is never wrong."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Adjectives come after the noun",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The opposite of English (but just like French or Spanish): the adjective comes **after** its noun. *Teach mór* — \"house big\", a big house. *Tae te* — \"tea hot\", hot tea. Flip the order in your head once and it soon feels natural."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "English",
+            "Opposite"
+          ],
+          "rows": [
+            [
+              "mór",
+              "MOHR",
+              "big",
+              "beag (BYUG) small"
+            ],
+            [
+              "fada",
+              "FAH-duh",
+              "long",
+              "gearr (GYAR) short"
+            ],
+            [
+              "ard",
+              "AWRD",
+              "tall, high",
+              "íseal (EE-shal) low"
+            ],
+            [
+              "te",
+              "TYEH",
+              "hot",
+              "fuar (FOO-ar) cold"
+            ],
+            [
+              "fliuch",
+              "FLYUKH",
+              "wet",
+              "tirim (TIH-rim) dry"
+            ],
+            [
+              "nua",
+              "NOO-uh",
+              "new",
+              "sean (SHAN) old"
+            ],
+            [
+              "óg",
+              "OHG",
+              "young",
+              "críonna (KREE-nuh) old (of people)"
+            ],
+            [
+              "deas",
+              "DYAS",
+              "nice, pretty",
+              "gránna (GRAW-nuh) ugly"
+            ],
+            [
+              "daor",
+              "DEER",
+              "expensive",
+              "saor (SAYR) cheap"
+            ],
+            [
+              "blasta",
+              "BLAS-tuh",
+              "tasty",
+              "searbh (SHAH-roow) bitter"
+            ],
+            [
+              "ciúin",
+              "KYOON",
+              "quiet",
+              "glórach (GLOH-rakh) noisy"
+            ],
+            [
+              "sásta",
+              "SAWS-tuh",
+              "happy",
+              "míshásta (MEE-haws-tuh) unhappy"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "An adjective standing after *tá* doesn't change at all: *Tá an teach mór*, *Tá na tithe mór*. Adjectives only change form when they're attached directly to a feminine noun or a plural noun — that's covered in Unit 4."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Intensifier",
+            "Meaning",
+            "Example",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "an- + séimhiú",
+              "very",
+              "an-mhaith",
+              "an-WAH"
+            ],
+            [
+              "ró- + séimhiú",
+              "too",
+              "róthe",
+              "roh-HYEH"
+            ],
+            [
+              "go leor (after)",
+              "enough",
+              "maith go leor",
+              "MAH guh LYOHR"
+            ],
+            [
+              "beagán",
+              "a little",
+              "beagán fuar",
+              "BYOO-gawn FOO-ar"
+            ],
+            [
+              "go hiomlán",
+              "completely",
+              "go hiomlán réidh",
+              "guh HEE-um-lawn"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two typical mistakes",
+          "items": [
+            "**Don't write *an* without the hyphen.** *An mhaith* means \"the good\" with the article; *an-mhaith* means \"very good\". The hyphen changes the meaning.",
+            "**An adjective after *go* isn't strengthened — it becomes an adverb.** *Tá sé maith* means \"it's good (a thing)\"; *Tá sé go maith* means \"it's in a good way\". When asking how people are, always use *go maith*.",
+            "*Go* adds an **h** when the next word begins with a vowel: *go hiontach*, *go hálainn*, *go holc* (badly)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "An aimsir — the weather, the conversation that never fails",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "In Ireland the weather isn't empty small talk; it really does change four times a day, and people really do talk about it. These thirteen sentences will see you through the whole year."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Tá sé go breá.",
+              "taw shay guh BRAW",
+              "The weather's fine."
+            ],
+            [
+              "Tá sé go dona.",
+              "taw shay guh DUH-nuh",
+              "The weather's bad."
+            ],
+            [
+              "Tá sé fuar.",
+              "taw shay FOO-ar",
+              "It's cold."
+            ],
+            [
+              "Tá sé te.",
+              "taw shay TYEH",
+              "It's hot."
+            ],
+            [
+              "Tá sé fliuch.",
+              "taw shay FLYUKH",
+              "It's wet."
+            ],
+            [
+              "Tá sé tirim.",
+              "taw shay TIH-rim",
+              "It's dry."
+            ],
+            [
+              "Tá sé ag cur báistí.",
+              "taw shay eg kur BAWS-tee",
+              "It's raining."
+            ],
+            [
+              "Tá sé ag cur sneachta.",
+              "taw shay eg kur SNYAKH-tuh",
+              "It's snowing."
+            ],
+            [
+              "Tá sé scamallach.",
+              "taw shay SKAH-muh-lakh",
+              "It's cloudy."
+            ],
+            [
+              "Tá sé grianmhar.",
+              "taw shay GREE-an-war",
+              "It's sunny."
+            ],
+            [
+              "Tá gaoth ann.",
+              "taw GAY OWN",
+              "It's windy."
+            ],
+            [
+              "Tá ceo ann.",
+              "taw KYOH OWN",
+              "It's foggy."
+            ],
+            [
+              "Tá sé ag stealladh báistí.",
+              "taw shay eg SHAH-luh BAWS-tee",
+              "It's pouring."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The word *ann* in the last sentences literally means \"in it\" and says that something **exists, is out there**. *Tá gaoth ann* = \"there's wind in it\", i.e. \"it's windy\". The same form is used for seasons: *Tá an samhradh ann* — \"it's summer now\"."
+        },
+        {
+          "type": "kotak",
+          "title": "Four seasons, and why one name is already familiar",
+          "items": [
+            "*earrach* (AH-rakh) spring · *samhradh* (SOW-ruh) summer · *fómhar* (FOH-war) autumn · *geimhreadh* (GYIV-ruh) winter.",
+            "*Samhain* — the name for November and the start of winter in the old calendar — is the root of **Halloween**, which in Ireland is still called *Oíche Shamhna*, \"Samhain night\".",
+            "*Deireadh Fómhair* literally means \"end of autumn\" and is the name for October; *Meán Fómhair*, \"middle of autumn\", is September."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "maidin",
+      "baca": "MAH-dyin",
+      "en": "morning"
+    },
+    {
+      "ga": "inniu",
+      "baca": "ih-NYOO",
+      "en": "today"
+    },
+    {
+      "ga": "an-",
+      "baca": "an",
+      "en": "very (prefix)"
+    },
+    {
+      "ga": "ciúin",
+      "baca": "KYOON",
+      "en": "quiet, calm"
+    },
+    {
+      "ga": "cinnte",
+      "baca": "KYIN-tyuh",
+      "en": "certain, sure"
+    },
+    {
+      "ga": "ocras",
+      "baca": "UH-kras",
+      "en": "hunger"
+    },
+    {
+      "ga": "tart",
+      "baca": "TART",
+      "en": "thirst"
+    },
+    {
+      "ga": "orm",
+      "baca": "UH-rum",
+      "en": "on me"
+    },
+    {
+      "ga": "ort",
+      "baca": "ORT",
+      "en": "on you"
+    },
+    {
+      "ga": "arán",
+      "baca": "uh-RAWN",
+      "en": "bread"
+    },
+    {
+      "ga": "úr",
+      "baca": "OOR",
+      "en": "fresh, new"
+    },
+    {
+      "ga": "im",
+      "baca": "IM",
+      "en": "butter"
+    },
+    {
+      "ga": "bord",
+      "baca": "BOHRD",
+      "en": "table"
+    },
+    {
+      "ga": "te",
+      "baca": "TYEH",
+      "en": "hot, warm"
+    },
+    {
+      "ga": "fuar",
+      "baca": "FOO-ar",
+      "en": "cold"
+    },
+    {
+      "ga": "fós",
+      "baca": "FOHS",
+      "en": "still, yet"
+    },
+    {
+      "ga": "álainn",
+      "baca": "AW-lin",
+      "en": "beautiful, lovely"
+    },
+    {
+      "ga": "aimsir",
+      "baca": "AM-shir",
+      "en": "weather"
+    },
+    {
+      "ga": "fliuch",
+      "baca": "FLYUKH",
+      "en": "wet"
+    },
+    {
+      "ga": "tirim",
+      "baca": "TIH-rim",
+      "en": "dry"
+    },
+    {
+      "ga": "ag cur báistí",
+      "baca": "eg kur BAWS-tee",
+      "en": "raining"
+    },
+    {
+      "ga": "i gcónaí",
+      "baca": "ih GOH-nee",
+      "en": "always"
+    },
+    {
+      "ga": "go minic",
+      "baca": "guh MIH-nik",
+      "en": "often"
+    },
+    {
+      "ga": "ach",
+      "baca": "AKH",
+      "en": "but"
+    },
+    {
+      "ga": "agus",
+      "baca": "AH-gus",
+      "en": "and"
+    },
+    {
+      "ga": "go dona",
+      "baca": "guh DUH-nuh",
+      "en": "bad"
+    },
+    {
+      "ga": "bricfeasta",
+      "baca": "BRIK-fyas-tuh",
+      "en": "breakfast"
+    },
+    {
+      "ga": "blasta",
+      "baca": "BLAS-tuh",
+      "en": "tasty"
+    },
+    {
+      "ga": "mór",
+      "baca": "MOHR",
+      "en": "big"
+    },
+    {
+      "ga": "beag",
+      "baca": "BYUG",
+      "en": "small"
+    },
+    {
+      "ga": "gaoth",
+      "baca": "GAY",
+      "en": "wind"
+    },
+    {
+      "ga": "grian",
+      "baca": "GREE-an",
+      "en": "sun"
+    },
+    {
+      "ga": "sneachta",
+      "baca": "SNYAKH-tuh",
+      "en": "snow"
+    },
+    {
+      "ga": "ann",
+      "baca": "OWN",
+      "en": "in it, there"
+    },
+    {
+      "ga": "teach",
+      "baca": "TYAKH",
+      "en": "house"
+    },
+    {
+      "ga": "cistin",
+      "baca": "KISH-tyin",
+      "en": "kitchen"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Make these sentences negative.",
+      "items": [
+        "Tá mé tuirseach.",
+        "Tá sé fuar inniu.",
+        "Tá an tae te.",
+        "Tá siad sásta.",
+        "Tá ocras orm.",
+        "Tá an aimsir go breá."
+      ]
+    },
+    {
+      "prompt": "Turn these into questions, then answer as shown in brackets.",
+      "items": [
+        "Tá tú go maith. (yes)",
+        "Tá sé fliuch. (no)",
+        "Tá an bricfeasta réidh. (yes)",
+        "Tá Máire anseo. (no)",
+        "Tá tart ort. (yes)",
+        "Tá siad tuirseach. (no)"
+      ]
+    },
+    {
+      "prompt": "Fill in the right adjective (te, fuar, blasta, mór, ciúin, fliuch).",
+      "items": [
+        "Tá an tae ____ . (hot)",
+        "Tá an teach ____ . (big)",
+        "Tá an t-arán ____ . (tasty)",
+        "Tá an aimsir ____ . (wet)",
+        "Tá an chistin ____ . (quiet)",
+        "Tá an sneachta ____ . (cold)"
+      ]
+    },
+    {
+      "prompt": "Translate into Irish.",
+      "items": [
+        "The weather's fine today.",
+        "I'm not tired.",
+        "Are you hungry?",
+        "This house is very quiet.",
+        "It's raining in Galway.",
+        "The tea's still hot."
+      ]
+    }
+  ],
+  "answers": [
+    "Níl mé tuirseach. — Níl sé fuar inniu. — Níl an tae te. — Níl siad sásta. — Níl ocras orm. — Níl an aimsir go breá.",
+    "An bhfuil tú go maith? Tá. — An bhfuil sé fliuch? Níl. — An bhfuil an bricfeasta réidh? Tá. — An bhfuil Máire anseo? Níl. — An bhfuil tart ort? Tá. — An bhfuil siad tuirseach? Níl.",
+    "te — mór — blasta — fliuch — ciúin — fuar",
+    "Tá an aimsir go breá inniu. — Níl mé tuirseach. — An bhfuil ocras ort? — Tá an teach seo an-chiúin. — Tá sé ag cur báistí i nGaillimh. — Tá an tae te fós."
+  ]
+}

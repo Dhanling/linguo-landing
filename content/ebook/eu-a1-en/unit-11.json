@@ -1,0 +1,624 @@
+{
+  "title": "Where is it?",
+  "title_target": "Non dago?",
+  "goal": "Ask and explain where things and places are, using place words like ondoan and aurrean, and say that something is or isn't there.",
+  "bekal": [
+    "use *-ren ondoan, aurrean, atzean, gainean, azpian, artean*",
+    "tell *dago* (one) from *daude* (several), and *badago* (there is) from *ez dago* (there isn't)",
+    "name common places in town and ask a stranger where they are"
+  ],
+  "dialogs": [
+    {
+      "title": "Elkarrizketa — Galduta Bilbon",
+      "intro": "Budi stops in a small square and asks a woman who is waiting for the bus.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Barkatu, non dago Guggenheim museoa?",
+          "id": "Excuse me, where is the Guggenheim Museum?",
+          "literal": "sorry, where is Guggenheim museum-the?"
+        },
+        {
+          "speaker": "Emakumea:",
+          "text": "Museoa ibaiaren ondoan dago, hemendik hurbil.",
+          "id": "The museum is by the river, close to here.",
+          "literal": "museum-the river-of side-at is, here-from near."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Oinez urrun dago?",
+          "id": "Is it far on foot?",
+          "literal": "foot-by far is?"
+        },
+        {
+          "speaker": "Emakumea:",
+          "text": "Ez, hamar minutu. Zuzen joan eta gero ezkerrera.",
+          "id": "No, ten minutes. Go straight and then left.",
+          "literal": "no, ten minute. straight go and then left-to."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eskerrik asko. Eta banketxe bat, hemen inguruan?",
+          "id": "Thank you. And is there a bank around here?",
+          "literal": "thanks many. and bank one, here around-at?"
+        },
+        {
+          "speaker": "Emakumea:",
+          "text": "Bai, kale honen amaieran dago, farmaziaren aurrean.",
+          "id": "Yes, at the end of this street, in front of the pharmacy.",
+          "literal": "yes, street this-of end-at is, pharmacy-of front-at."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Farmazia irekita dago orain?",
+          "id": "Is the pharmacy open now?",
+          "literal": "pharmacy-the open is now?"
+        },
+        {
+          "speaker": "Emakumea:",
+          "text": "Ez dakit. Normalean zortzietatik zortzietara irekita egoten da.",
+          "id": "I don't know. It's usually open from eight to eight.",
+          "literal": "not I-know. normally eight-pl-from eight-pl-to open being is."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ondo. Eta komunak non daude?",
+          "id": "Good. And where are the restrooms?",
+          "literal": "good. and toilet-pl where are?"
+        },
+        {
+          "speaker": "Emakumea:",
+          "text": "Plazan daude, iturriaren atzean.",
+          "id": "In the square, behind the fountain.",
+          "literal": "square-at they-are, fountain-of behind-at."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mila esker! Oso jatorra zara.",
+          "id": "Thanks a lot! You're very kind.",
+          "literal": "thousand thanks! very kind-the you-are."
+        },
+        {
+          "speaker": "Emakumea:",
+          "text": "Ez horregatik. Ondo ibili Bilbon!",
+          "id": "Don't mention it. Enjoy Bilbo!",
+          "literal": "not for-that. well walk Bilbo-in!"
+        }
+      ],
+      "notes": [
+        "**Place words need -ren in front of them.** *Ibaia**ren** ondoan* (next to the river), *farmazia**ren** aurrean* (in front of the pharmacy). The pattern: reference object + *-ren* + place word + *-an*. English puts it the other way round — \"next to the river\" — so get used to flipping the order in your head.",
+        "**Dago for one, daude for several.** *Museoa hemen **dago*** (the museum is here), *komunak han **daude*** (the restrooms are over there). Native speakers notice this mistake right away, and it's easy to avoid once you get used to spotting *-ak* at the end of the noun.",
+        "**Mila esker — a warmer way to say thanks.** It literally means \"a thousand thanks\". From shortest to warmest: *eskerrik asko* < *mila esker* < *eskerrik asko bihotzez* (\"thank you from the heart\"). All are answered with *ez horregatik* or *ez dago zergatik*.",
+        "**Irekita and itxita describe a state, so they take egon.** *Irekita **dago*** (it's open), *itxita **dago*** (it's closed). These are the *-ta* words you met in Unit 10, and they always pair with *egon*, never with *izan*."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Place words",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**gainean**",
+              "gah-ee-NEH-ahn",
+              "on (on top of)",
+              "mahaiaren gainean"
+            ],
+            [
+              "**azpian**",
+              "ahs-PEE-ahn",
+              "under",
+              "mahaiaren azpian"
+            ],
+            [
+              "**aurrean**",
+              "ah-OO-rreh-ahn",
+              "in front of",
+              "etxearen aurrean"
+            ],
+            [
+              "**atzean**",
+              "ah-TSEH-ahn",
+              "behind",
+              "etxearen atzean"
+            ],
+            [
+              "**ondoan**",
+              "ohn-DOH-ahn",
+              "next to",
+              "bankuaren ondoan"
+            ],
+            [
+              "**alboan**",
+              "ahl-BOH-ahn",
+              "beside",
+              "nire alboan"
+            ],
+            [
+              "**barruan**",
+              "bah-RROO-ahn",
+              "inside",
+              "poltsaren barruan"
+            ],
+            [
+              "**kanpoan**",
+              "kahn-POH-ahn",
+              "outside",
+              "etxetik kanpoan"
+            ],
+            [
+              "**artean**",
+              "ahr-TEH-ahn",
+              "between",
+              "bi etxeren artean"
+            ],
+            [
+              "**erdian**",
+              "ehr-DEE-ahn",
+              "in the middle of",
+              "plazaren erdian"
+            ],
+            [
+              "**inguruan**",
+              "een-GOO-roo-ahn",
+              "around",
+              "hemen inguruan"
+            ],
+            [
+              "**parean**",
+              "pah-REH-ahn",
+              "opposite",
+              "geltokiaren parean"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "All of these are really ordinary nouns with the place ending *-an*: *gain* (top surface) → *gainean* (on its top). That's why they need an owner in front, and the owner is marked with *-ren* — just like \"the table's top\"."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Literally",
+            "English"
+          ],
+          "rows": [
+            [
+              "Liburua mahaiaren gainean dago.",
+              "book-the table-of top-at is",
+              "The book is on the table."
+            ],
+            [
+              "Katua aulkiaren azpian dago.",
+              "cat-the chair-of under-at is",
+              "The cat is under the chair."
+            ],
+            [
+              "Banketxea farmaziaren ondoan dago.",
+              "bank-the pharmacy-of side-at is",
+              "The bank is next to the pharmacy."
+            ],
+            [
+              "Nire etxea bi dendaren artean dago.",
+              "my house-the two shop-of between-at is",
+              "My house is between two shops."
+            ],
+            [
+              "Zure poltsa non dago?",
+              "your bag where is",
+              "Where is your bag?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three direction endings to keep apart",
+          "items": [
+            "**-an** = at/in (staying there): *etxean nago* — I'm at home.",
+            "**-ra** = to (heading there): *etxera noa* — I'm going home.",
+            "**-tik** = from (coming from): *etxetik nator* — I'm coming from home.",
+            "All three also work with place words: *mahaiaren gainean* (on the table), *mahaiaren gainera* (onto the table), *mahaiaren gainetik* (off the table)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "There is and there isn't",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "To say something is or isn't somewhere, Basque uses *egon* — the same verb as \"to be (located)\"."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Literally",
+            "English"
+          ],
+          "rows": [
+            [
+              "**Badago** banketxe bat hemen.",
+              "indeed-is bank one here",
+              "There's a bank here."
+            ],
+            [
+              "**Ez dago** banketxerik hemen.",
+              "not is bank-any here",
+              "There's no bank here."
+            ],
+            [
+              "**Badaude** komunak?",
+              "indeed-are toilet-pl?",
+              "Are there restrooms?"
+            ],
+            [
+              "**Ez daude** hemen.",
+              "not are here",
+              "They aren't here."
+            ],
+            [
+              "**Zenbat** ikasle daude klasean?",
+              "how-many student are class-in",
+              "How many students are in the class?"
+            ],
+            [
+              "**Inor ez dago** etxean.",
+              "anyone not is house-at",
+              "Nobody is at home."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the ending *-rik* again in negative sentences: *ez dago banketxe**rik***. The same rule you learned in Unit 5 for objects applies here too."
+        },
+        {
+          "type": "kotak",
+          "title": "Four \"no-\" words",
+          "items": [
+            "*inor ez* — nobody. *Inor ez dago hemen.*",
+            "*ezer ez* — nothing. *Ez dago ezer hozkailuan.*",
+            "*inon ez* — nowhere. *Ez dago inon.*",
+            "*inoiz ez* — never. *Ez naiz inoiz Parisen egon.*",
+            "All four always pair with *ez* — the negation is said twice, like \"not … anybody\" in English."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Places in town",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "banketxea",
+              "bahn-KEH-cheh-ah",
+              "bank"
+            ],
+            [
+              "farmazia",
+              "fahr-MAH-see-ah",
+              "pharmacy"
+            ],
+            [
+              "ospitalea",
+              "ohs-pee-TAH-leh-ah",
+              "hospital"
+            ],
+            [
+              "liburutegia",
+              "lee-boo-roo-TEH-gee-ah",
+              "library"
+            ],
+            [
+              "postetxea",
+              "pohs-TEH-cheh-ah",
+              "post office"
+            ],
+            [
+              "geltokia",
+              "gehl-TOH-kee-ah",
+              "station, stop"
+            ],
+            [
+              "udaletxea",
+              "oo-dah-LEH-cheh-ah",
+              "town hall"
+            ],
+            [
+              "eliza",
+              "eh-LEE-sah",
+              "church"
+            ],
+            [
+              "museoa",
+              "moo-SEH-oh-ah",
+              "museum"
+            ],
+            [
+              "merkatua",
+              "mehr-kah-TOO-ah",
+              "market"
+            ],
+            [
+              "supermerkatua",
+              "soo-pehr-mehr-kah-TOO-ah",
+              "supermarket"
+            ],
+            [
+              "jatetxea",
+              "khah-TEH-cheh-ah",
+              "restaurant"
+            ],
+            [
+              "hotela",
+              "oh-TEH-lah",
+              "hotel"
+            ],
+            [
+              "komuna",
+              "koh-MOO-nah",
+              "restroom"
+            ],
+            [
+              "kalea",
+              "kah-LEH-ah",
+              "street"
+            ],
+            [
+              "zubia",
+              "SOO-bee-ah",
+              "bridge"
+            ],
+            [
+              "ibaia",
+              "ee-BAH-ee-ah",
+              "river"
+            ],
+            [
+              "hondartza",
+              "ohn-DAHR-tsah",
+              "beach"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the ending *-tegi*, meaning \"place for\": *liburu**tegi*** (book place = library), *euskal**tegi*** (Basque-language school), *sagardo**tegi*** (cider house), *ostatu*. And *-etxe*, meaning \"house\": *jat**etxe**a* (eating house = restaurant), *udal**etxe**a* (town-council house), *bank**etxe**a*."
+        },
+        {
+          "type": "kotak",
+          "title": "Asking for directions",
+          "items": [
+            "*Barkatu, non dago …?* — Excuse me, where is …?",
+            "*Hemendik hurbil dago?* — Is it close to here?",
+            "*Urrun dago?* — Is it far?",
+            "*Zuzen / ezkerrera / eskuinera* — straight / left / right.",
+            "*Galduta nago.* — I'm lost.",
+            "*Berriro esan, mesedez.* — Say it again, please."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "eu": "gainean",
+      "baca": "gah-ee-NEH-ahn",
+      "en": "on (top of)"
+    },
+    {
+      "eu": "azpian",
+      "baca": "ahs-PEE-ahn",
+      "en": "under"
+    },
+    {
+      "eu": "aurrean",
+      "baca": "ah-OO-rreh-ahn",
+      "en": "in front of"
+    },
+    {
+      "eu": "atzean",
+      "baca": "ah-TSEH-ahn",
+      "en": "behind"
+    },
+    {
+      "eu": "ondoan",
+      "baca": "ohn-DOH-ahn",
+      "en": "next to"
+    },
+    {
+      "eu": "barruan",
+      "baca": "bah-RROO-ahn",
+      "en": "inside"
+    },
+    {
+      "eu": "artean",
+      "baca": "ahr-TEH-ahn",
+      "en": "between"
+    },
+    {
+      "eu": "inguruan",
+      "baca": "een-GOO-roo-ahn",
+      "en": "around"
+    },
+    {
+      "eu": "banketxe",
+      "baca": "bahn-KEH-cheh",
+      "en": "bank"
+    },
+    {
+      "eu": "farmazia",
+      "baca": "fahr-MAH-see-ah",
+      "en": "pharmacy"
+    },
+    {
+      "eu": "liburutegi",
+      "baca": "lee-boo-roo-TEH-gee",
+      "en": "library"
+    },
+    {
+      "eu": "postetxe",
+      "baca": "pohs-TEH-cheh",
+      "en": "post office"
+    },
+    {
+      "eu": "geltoki",
+      "baca": "gehl-TOH-kee",
+      "en": "station, stop"
+    },
+    {
+      "eu": "jatetxe",
+      "baca": "khah-TEH-cheh",
+      "en": "restaurant"
+    },
+    {
+      "eu": "eliza",
+      "baca": "eh-LEE-sah",
+      "en": "church"
+    },
+    {
+      "eu": "museo",
+      "baca": "moo-SEH-oh",
+      "en": "museum"
+    },
+    {
+      "eu": "merkatu",
+      "baca": "mehr-kah-TOO",
+      "en": "market"
+    },
+    {
+      "eu": "komun",
+      "baca": "koh-MOON",
+      "en": "restroom, toilet"
+    },
+    {
+      "eu": "zubi",
+      "baca": "SOO-bee",
+      "en": "bridge"
+    },
+    {
+      "eu": "ibai",
+      "baca": "ee-BAH-ee",
+      "en": "river"
+    },
+    {
+      "eu": "hondartza",
+      "baca": "ohn-DAHR-tsah",
+      "en": "beach"
+    },
+    {
+      "eu": "iturri",
+      "baca": "ee-TOO-rree",
+      "en": "fountain, tap"
+    },
+    {
+      "eu": "irekita",
+      "baca": "ee-reh-KEE-tah",
+      "en": "open"
+    },
+    {
+      "eu": "itxita",
+      "baca": "ee-CHEE-tah",
+      "en": "closed"
+    },
+    {
+      "eu": "zuzen",
+      "baca": "SOO-sehn",
+      "en": "straight"
+    },
+    {
+      "eu": "ezkerrera",
+      "baca": "ehs-keh-RREH-rah",
+      "en": "to the left"
+    },
+    {
+      "eu": "eskuinera",
+      "baca": "ehs-koo-ee-NEH-rah",
+      "en": "to the right"
+    },
+    {
+      "eu": "inor",
+      "baca": "ee-NOHR",
+      "en": "anyone"
+    },
+    {
+      "eu": "mila esker",
+      "baca": "MEE-lah EHS-kehr",
+      "en": "thanks a lot"
+    },
+    {
+      "eu": "amaiera",
+      "baca": "ah-mah-ee-EH-rah",
+      "en": "end"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right place word.",
+      "items": [
+        "Liburua mahaiaren ____ dago. (on)",
+        "Katua aulkiaren ____ dago. (under)",
+        "Banketxea farmaziaren ____ dago. (next to)",
+        "Geltokia elizaren ____ dago. (in front of)",
+        "Poltsa ohearen ____ dago. (behind)",
+        "Iturria plazaren ____ dago. (in the middle of)"
+      ]
+    },
+    {
+      "prompt": "Fill in *dago*, *daude*, *badago*, or *ez dago*.",
+      "items": [
+        "Museoa hemen ____.",
+        "Komunak han ____.",
+        "____ banketxerik hemen? (question: is there?)",
+        "Ez, hemen ____ banketxerik.",
+        "Ikasleak klasean ____.",
+        "Inor ez ____ etxean."
+      ]
+    },
+    {
+      "prompt": "Translate into Basque.",
+      "items": [
+        "Excuse me, where is the museum?",
+        "Next to the river.",
+        "Is it far from here?",
+        "The pharmacy is closed.",
+        "There's no restaurant here.",
+        "I'm lost."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "dago / non / museoa / ?",
+        "dago / ibaiaren / museoa / ondoan",
+        "daude / komunak / plazan",
+        "dago / itxita / farmazia",
+        "dago / ez / banketxerik / hemen",
+        "nago / galduta"
+      ]
+    }
+  ],
+  "answers": [
+    "gainean — azpian — ondoan — aurrean — atzean — erdian",
+    "dago — daude — Badago — ez dago — daude — dago",
+    "Barkatu, non dago museoa? — Ibaiaren ondoan. — Hemendik urrun dago? — Farmazia itxita dago. — Hemen ez dago jatetxerik. — Galduta nago.",
+    "Non dago museoa? — Museoa ibaiaren ondoan dago. — Komunak plazan daude. — Farmazia itxita dago. — Hemen ez dago banketxerik. — Galduta nago."
+  ]
+}

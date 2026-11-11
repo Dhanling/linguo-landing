@@ -1,0 +1,580 @@
+{
+  "title": "Where and with whom",
+  "title_target": "Ubi et cum quo?",
+  "goal": "Express place, means and company with the ablative form, use the twelve most common prepositions, and tell staying in a place apart from moving into it.",
+  "bekal": [
+    "answer *ubi?* with *in* and the right form",
+    "use *cum*, *sine*, *ex*, *de*, *ab* without hesitation",
+    "tell *in villa* (inside the house) apart from *in villam* (into the house)"
+  ],
+  "dialogs": [
+    {
+      "title": "Colloquium — Ad forum",
+      "intro": "Quintus is heading to the town square. As usual, haggling over prices will take a while.",
+      "lines": [
+        {
+          "speaker": "Quintus:",
+          "text": "Hodie ad forum ambulo. Quis mecum ambulat?",
+          "id": "I'm walking to the forum today. Who's coming with me?",
+          "literal": "today to forum-obj walk-I. who with-me walk-he?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Ego, pater! In foro sunt tabernae.",
+          "id": "Me, Dad! There are shops in the forum.",
+          "literal": "I, father-call! in forum-in are-they shop-pl."
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Et ego! Sed cum Lydia ambulo.",
+          "id": "Me too! But I'm walking with Lydia.",
+          "literal": "and I! but with Lydia-with walk-I."
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Bene. Ubi est Lydia nunc?",
+          "id": "Fine. Where's Lydia now?",
+          "literal": "well. where is-she Lydia now?"
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "In villa est, cum Cornelia.",
+          "id": "She's in the house, with Mom.",
+          "literal": "in house-in is-she, with Cornelia-with."
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Sine Lydia non ambulamus. Exspectamus.",
+          "id": "We're not going without Lydia. We'll wait.",
+          "literal": "without Lydia-with not walk-we. wait-we."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Pater, cur ad forum ambulamus?",
+          "id": "Dad, why are we going to the forum?",
+          "literal": "father-call, why to forum-obj walk-we?"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "In foro frumentum paro. Et de pretio disputo!",
+          "id": "I'm getting grain at the forum. And arguing about the price!",
+          "literal": "in forum-in grain-obj prepare-I. and about price-about argue-I!"
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Pater semper de pretio disputat!",
+          "id": "Dad always argues about the price!",
+          "literal": "father always about price-about argue-he!"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Ecce, Sextus ex horto ambulat!",
+          "id": "Look, Sextus is walking out of the garden!",
+          "literal": "look, Sextus out-of garden-from walk-he!"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Bene. Cum Sexto semper laeti sumus.",
+          "id": "Good. We're always happy with Sextus around.",
+          "literal": "well. with Sextus-with always happy-pl are-we."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Ad forum, ad forum! In forum intramus!",
+          "id": "To the forum, to the forum! We're going into the forum!",
+          "literal": "to forum-obj, to forum-obj! into forum-obj enter-we!"
+        }
+      ],
+      "notes": [
+        "**In foro and in forum aren't the same.** *In foro* means \"in the forum\", with no movement. *In forum* means \"into the forum\", moving inside. The preposition is the same; the noun's form makes the difference. English uses \"in\" and \"into\" to do the same job.",
+        "**Mecum, not cum me.** The preposition *cum* sticks to the end of pronouns: *mecum* (with me), *tecum* (with you), *nobiscum* (with us), *vobiscum* (with you all). This reversed order froze in ancient times and can still be heard today in the church phrase *Dominus vobiscum*.",
+        "**In villa — notice it looks exactly like the subject form.** This is a quirk of the first declension: the subject form and the \"with/in\" form are both written *villa*. Romans told them apart by the length of the final vowel, which they never wrote. You tell them apart by the preposition: if *in*, *cum*, *sine*, *ex* or *de* comes before it, it's the \"with/in\" form.",
+        "**De pretio disputat.** *De* means \"about\" and also \"down from\". That's where *describe* (write about) and *deduce* (lead down) come from. Latin prepositions almost always have two lives: one about space, one figurative."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The \"with/in\" form: the -a and -o hat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This form — called the ablative — is the most versatile form in Latin. It expresses place, means, company, manner, cause and time all at once. Luckily its endings are simple."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Group",
+            "Subject",
+            "With/in",
+            "Example"
+          ],
+          "rows": [
+            [
+              "1st declension",
+              "villa",
+              "vill**a**",
+              "in **villa** — inside the house"
+            ],
+            [
+              "",
+              "schola",
+              "schol**a**",
+              "in **schola** — at school"
+            ],
+            [
+              "",
+              "Lydia",
+              "Lydi**a**",
+              "cum **Lydia** — with Lydia"
+            ],
+            [
+              "2nd declension (-us)",
+              "hortus",
+              "hort**o**",
+              "ex **horto** — out of the garden"
+            ],
+            [
+              "",
+              "Sextus",
+              "Sext**o**",
+              "cum **Sexto** — with Sextus"
+            ],
+            [
+              "2nd declension (-um)",
+              "forum",
+              "for**o**",
+              "in **foro** — in the forum"
+            ],
+            [
+              "",
+              "templum",
+              "templ**o**",
+              "de **templo** — about the temple"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "So there are only two endings to learn: *-a* for the first group, *-o* for the second. Compare them with the \"of\" form (*-ae* and *-i*) and the object form (*-am* and *-um*), and you already hold four of the six forms there are."
+        },
+        {
+          "type": "kotak",
+          "title": "The four forms you already have",
+          "items": [
+            "**subject**: puella · hortus · templum — who does it, or what is named",
+            "**object**: puellam · hortum · templum — what the action is done to",
+            "**of**: puellae · horti · templi — possession, \"of\", *'s*",
+            "**with/in**: puella · horto · templo — place, means, company, manner",
+            "Still to come: the **\"to\"** form, in Unit 9. After that the list is complete and doesn't grow again until the end of the book."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The twelve most common prepositions",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Latin prepositions choose the form that follows them, and that choice is non-negotiable. Most take the \"with/in\" form; a small group takes the object form."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Preposition",
+            "Followed by",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**in**",
+              "with/in",
+              "in, inside",
+              "in villa — in the house"
+            ],
+            [
+              "**cum**",
+              "with/in",
+              "with, together with",
+              "cum amico — with a friend"
+            ],
+            [
+              "**sine**",
+              "with/in",
+              "without",
+              "sine aqua — without water"
+            ],
+            [
+              "**ex, e**",
+              "with/in",
+              "out of",
+              "ex horto — out of the garden"
+            ],
+            [
+              "**ab, a**",
+              "with/in",
+              "from, away from",
+              "a villa — from the house"
+            ],
+            [
+              "**de**",
+              "with/in",
+              "about; down from",
+              "de pretio — about the price"
+            ],
+            [
+              "**pro**",
+              "with/in",
+              "for, in front of",
+              "pro patria — for the fatherland"
+            ],
+            [
+              "**sub**",
+              "with/in",
+              "under",
+              "sub mensa — under the table"
+            ],
+            [
+              "**ad**",
+              "object",
+              "to, toward",
+              "ad forum — to the forum"
+            ],
+            [
+              "**per**",
+              "object",
+              "through",
+              "per viam — along the road"
+            ],
+            [
+              "**ante, post**",
+              "object",
+              "before, after",
+              "ante cenam — before dinner"
+            ],
+            [
+              "**contra**",
+              "object",
+              "against",
+              "contra periculum — against danger"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Ex* and *ab* shorten to *e* and *a* before words starting with a consonant: *ex horto* but *e villa*; *ab amico* but *a villa*. It's purely about sound, just like English *an apple* but *a pear*."
+        },
+        {
+          "type": "kotak",
+          "title": "Prepositions you already use every day",
+          "items": [
+            "*ad* → **adapt, addict**; *ex* → **export, exit**; *in* → **inject, invade**; *per* → **permanent, perceive**.",
+            "*sub* → **submarine, substance**; *contra* → **contradict**; *pro* → **project, produce**; *de* → **deduce, deport**.",
+            "If you're unsure what a Latin preposition means, think of an English word that contains it. The meaning is almost always still there."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Staying there or moving there",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Two prepositions — *in* and *sub* — can be followed by two different forms, and the choice changes the meaning. The rule fits in one sentence: if there is movement, use the object form; if not, use the \"with/in\" form."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "No movement",
+            "Meaning",
+            "With movement",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "in villa sum",
+              "I'm inside the house",
+              "in villam intro",
+              "I go into the house"
+            ],
+            [
+              "in foro ambulo",
+              "I walk around in the forum",
+              "in forum ambulo",
+              "I walk into the forum"
+            ],
+            [
+              "in horto laborat",
+              "he works in the garden",
+              "in hortum portat",
+              "he carries it into the garden"
+            ],
+            [
+              "sub mensa est",
+              "it's under the table",
+              "sub mensam currit",
+              "it runs under the table"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "City names take no preposition"
+        },
+        {
+          "type": "p",
+          "text": "For names of cities and small islands, Latin drops the preposition entirely. The form for \"in that city\" happens to match the \"of\" form for cities ending in *-a* and *-us*; linguists call it the locative."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Latin",
+            "Meaning",
+            "Note"
+          ],
+          "rows": [
+            [
+              "**Romae** sum",
+              "I'm in Rome",
+              "not *in Roma*"
+            ],
+            [
+              "**Romam** ambulo",
+              "I walk to Rome",
+              "not *ad Romam*"
+            ],
+            [
+              "**Roma** ambulo",
+              "I walk from Rome",
+              "not *ex Roma*"
+            ],
+            [
+              "**domi** sum",
+              "I'm at home",
+              "a frozen form of *domus*"
+            ],
+            [
+              "**domum** ambulo",
+              "I'm going home",
+              "literally \"I walk to home\""
+            ],
+            [
+              "**ruri**",
+              "in the countryside",
+              "from *rus*, \"countryside\""
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "This rule applies only to names of cities, small islands, and three frozen words: *domus*, *rus*, *humus*. For every other place — countries, mountains, rivers — the preposition is used as usual: *in Italia*, *ad silvam*."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "la": "forum, fori",
+      "baca": "FOH-room",
+      "en": "forum, town center"
+    },
+    {
+      "la": "taberna, tabernae",
+      "baca": "tah-BEHR-nah",
+      "en": "shop, stall"
+    },
+    {
+      "la": "via, viae",
+      "baca": "WEE-ah",
+      "en": "road, way"
+    },
+    {
+      "la": "pretium, pretii",
+      "baca": "PREH-tee-oom",
+      "en": "price"
+    },
+    {
+      "la": "frumentum, frumenti",
+      "baca": "froo-MEHN-toom",
+      "en": "grain, food supply"
+    },
+    {
+      "la": "pecunia, pecuniae",
+      "baca": "peh-KOO-nee-ah",
+      "en": "money"
+    },
+    {
+      "la": "silva, silvae",
+      "baca": "SIL-wah",
+      "en": "forest, wood"
+    },
+    {
+      "la": "ager, agri",
+      "baca": "AH-gehr",
+      "en": "field"
+    },
+    {
+      "la": "patria, patriae",
+      "baca": "PAH-tree-ah",
+      "en": "fatherland, homeland"
+    },
+    {
+      "la": "locus, loci",
+      "baca": "LOH-koos",
+      "en": "place"
+    },
+    {
+      "la": "periculum, periculi",
+      "baca": "peh-REE-koo-loom",
+      "en": "danger"
+    },
+    {
+      "la": "in",
+      "baca": "IN",
+      "en": "in, inside; into"
+    },
+    {
+      "la": "cum",
+      "baca": "KOOM",
+      "en": "with, together with"
+    },
+    {
+      "la": "sine",
+      "baca": "SEE-neh",
+      "en": "without"
+    },
+    {
+      "la": "ex, e",
+      "baca": "EHKS, EH",
+      "en": "out of"
+    },
+    {
+      "la": "ab, a",
+      "baca": "AHB, AH",
+      "en": "from, away from; by"
+    },
+    {
+      "la": "de",
+      "baca": "DEH",
+      "en": "about; down from"
+    },
+    {
+      "la": "ad",
+      "baca": "AHD",
+      "en": "to, toward"
+    },
+    {
+      "la": "per",
+      "baca": "PEHR",
+      "en": "through, along"
+    },
+    {
+      "la": "pro",
+      "baca": "PROH",
+      "en": "for, on behalf of, in front of"
+    },
+    {
+      "la": "sub",
+      "baca": "SOOB",
+      "en": "under"
+    },
+    {
+      "la": "ante",
+      "baca": "AHN-teh",
+      "en": "before, in front of"
+    },
+    {
+      "la": "post",
+      "baca": "POHST",
+      "en": "after, behind"
+    },
+    {
+      "la": "contra",
+      "baca": "KOHN-trah",
+      "en": "against"
+    },
+    {
+      "la": "mecum, tecum",
+      "baca": "MEH-koom, TEH-koom",
+      "en": "with me, with you"
+    },
+    {
+      "la": "disputo, disputare",
+      "baca": "DIS-poo-toh",
+      "en": "to argue, to debate"
+    },
+    {
+      "la": "Roma, Romae",
+      "baca": "ROH-mah",
+      "en": "Rome"
+    },
+    {
+      "la": "Italia, Italiae",
+      "baca": "ee-TAH-lee-ah",
+      "en": "Italy"
+    },
+    {
+      "la": "domi",
+      "baca": "DOH-mee",
+      "en": "at home"
+    },
+    {
+      "la": "domum",
+      "baca": "DOH-moom",
+      "en": "home, homeward"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change into the \"with/in\" form.",
+      "items": [
+        "villa",
+        "hortus",
+        "forum",
+        "Sextus",
+        "schola",
+        "templum"
+      ]
+    },
+    {
+      "prompt": "Choose the right form after in: is there movement or not?",
+      "items": [
+        "Marcus in ____ est. (villa)",
+        "Marcus in ____ intrat. (villa)",
+        "Servi in ____ laborant. (hortus)",
+        "Aquam in ____ porto. (hortus)",
+        "Discipuli in ____ cantant. (schola)",
+        "Magister in ____ intrat. (schola)"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right preposition (in, cum, sine, ex, ad, de).",
+      "items": [
+        "____ Lydia ambulo.",
+        "____ aqua non laboramus.",
+        "____ forum ambulamus.",
+        "____ horto ambulat.",
+        "____ villa sumus.",
+        "____ pretio disputant."
+      ]
+    },
+    {
+      "prompt": "Translate into Latin.",
+      "items": [
+        "We live in Rome.",
+        "I am walking with a friend.",
+        "Sextus walks out of the garden.",
+        "Without money we do not wait.",
+        "The children go into the house.",
+        "Father argues about the price."
+      ]
+    }
+  ],
+  "answers": [
+    "villa — horto — foro — Sexto — schola — templo",
+    "villa — villam — horto — hortum — schola — scholam",
+    "Cum — Sine — Ad — Ex — In — De",
+    "Romae habitamus. — Cum amico ambulo. — Sextus ex horto ambulat. — Sine pecunia non exspectamus. — Liberi in villam intrant. — Pater de pretio disputat."
+  ]
+}

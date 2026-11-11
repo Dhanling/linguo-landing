@@ -1,0 +1,534 @@
+{
+  "title": "With friends",
+  "title_target": "S kamarátom",
+  "goal": "Say who you're with, what you use, and what you do for a living — and complete the sixth and final case: the instrumental, the only one often used with no preposition at all.",
+  "bekal": [
+    "use *s* + instrumental to say who you're with",
+    "use the instrumental without a preposition for tools and vehicles",
+    "say what you do for a living and ask others about their jobs"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Čím sa živíš?",
+      "intro": "At a birthday party. Budi meets Eva's friend, a man called Marek.",
+      "lines": [
+        {
+          "speaker": "Marek:",
+          "text": "Ahoj, ja som Marek. Ty si ten Indonézan?",
+          "id": "Hi, I'm Marek. Are you the Indonesian guy?",
+          "literal": "hello, I I-am Marek. you you-are that Indonesian-man?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Áno, Budi. Prišiel som s Evou.",
+          "id": "Yes, Budi. I came with Eva.",
+          "literal": "yes, Budi. come-m I-am with Eva-ins."
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Poznám ju od strednej školy. A čím sa živíš?",
+          "id": "I've known her since high school. And what do you do?",
+          "literal": "I-know her from secondary-gen school-gen. and what-ins self you-feed?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Som programátor. Pracujem s malým tímom.",
+          "id": "I'm a programmer. I work with a small team.",
+          "literal": "I-am programmer. I-work with small-ins team-ins."
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Zaujímavé. Ja som učiteľom na gymnáziu.",
+          "id": "Interesting. I'm a high-school teacher.",
+          "literal": "interesting. I I-am teacher-ins at grammar-school-loc."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Čo učíš?",
+          "id": "What do you teach?",
+          "literal": "what you-teach?"
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Dejepis. Ale píšem aj knihy — perom, nie na počítači.",
+          "id": "History. But I also write books — with a pen, not on a computer.",
+          "literal": "history. but I-write also books-pl — pen-ins, not on computer-loc."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Perom? To je nezvyčajné.",
+          "id": "With a pen? That's unusual.",
+          "literal": "pen-ins? that is un-usual."
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Viem. Ale s počítačom píšem príliš rýchlo.",
+          "id": "I know. But with a computer I write too fast.",
+          "literal": "I-know. but with computer-ins I-write too fast."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Chápem. A kam chodíš cez leto?",
+          "id": "I get it. And where are you going this summer?",
+          "literal": "I-understand. and where-to you-go over summer?"
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Chodím s rodinou do Chorvátska. Autom, dva dni.",
+          "id": "I'm going to Croatia with my family. By car, two days.",
+          "literal": "I-go with family-ins to Croatia-gen. car-ins, two days-pl."
+        }
+      ],
+      "notes": [
+        "**S Evou, s rodinou, s tímom** — the preposition *s* always takes the instrumental, and it means \"with\" (together). Notice that there is a preposition written here; this is the instrumental's first job.",
+        "**Perom, autom — no preposition at all.** This is the second job, and the most distinctive: tools and vehicles are expressed with a **bare** instrumental ending. *Píšem perom* = I write with a pen. There's no word for \"with\" in the sentence; the ending says it.",
+        "**So *s* and the bare instrumental must not be mixed up.** *Píšem perom* = I write with a pen (a tool). *Píšem s Evou* = I write together with Eva (a companion). Add *s* to a tool and the sentence sounds odd: *píšem s perom* sounds as if the pen is writing alongside you.",
+        "**Som učiteľom** uses the instrumental for a job, and that's fine — but *som učiteľ* with the basic form is also correct and heard more often. The difference is subtle: the instrumental stresses the role or position a little more, the basic form stresses identity. At A1, use the basic form and recognize the other.",
+        "**Čím sa živíš?** literally \"what do you feed yourself with?\" — a friendly, slightly casual way to ask about someone's job. More neutral: *Čo robíš?* or *Kde pracuješ?*"
+      ],
+      "grammars": [
+        {
+          "title": "The instrumental — the sixth and final case",
+          "body": [
+            "The instrumental answers the questions *kým?* (with whom) and *čím?* (with what). Its endings are the most uniform of all six cases: practically just two forms."
+          ],
+          "table": {
+            "head": [
+              "Type of noun",
+              "Ending",
+              "Nominative",
+              "Instrumental"
+            ],
+            "rows": [
+              [
+                "**m (all)**",
+                "**-om**",
+                "*brat, stôl, autobus*",
+                "*s bratom, pod stolom, autobusom*"
+              ],
+              [
+                "**n**",
+                "**-om**",
+                "*mesto, pivo, auto*",
+                "*za mestom, s pivom, autom*"
+              ],
+              [
+                "**f ending in -a**",
+                "**-ou**",
+                "*žena, sestra, káva*",
+                "*so ženou, so sestrou, s kávou*"
+              ],
+              [
+                "**f ending in a soft consonant**",
+                "**-ou**",
+                "*posteľ, dlaň*",
+                "*pod posteľou, s dlaňou*"
+              ]
+            ]
+          },
+          "after": [
+            "**Two endings for the whole system: *-om* and *-ou*.** Masculine and neuter take *-om*; feminine takes *-ou*. No animate/inanimate split, no exceptions to learn at A1. After the previous five cases, this feels like a gift.",
+            "**Adjectives**: m and n take **-ým** (*s dobrým bratom*, *pod veľkým stolom*), f takes **-ou** (*s dobrou sestrou*). Notice that feminine adjectives take the same ending as the noun — the only case where the two rhyme.",
+            "**Instrumental pronouns**: *mnou, tebou, ním, ňou, nami, vami, nimi*. All long, all can stand anywhere, and almost always preceded by a preposition: *so mnou*, *s tebou*, *s ním*, *s ňou*, *s nami*, *s vami*, *s nimi*."
+          ]
+        },
+        {
+          "title": "The four jobs of the instrumental",
+          "body": [
+            "This case has four clearly different jobs, and you've already been using three of them since the early units without explanation."
+          ],
+          "table": {
+            "head": [
+              "Job",
+              "Preposition",
+              "Example",
+              "English"
+            ],
+            "rows": [
+              [
+                "**companion**",
+                "**s / so**",
+                "*Idem s Evou.*",
+                "I'm going with Eva."
+              ],
+              [
+                "**tool**",
+                "**none**",
+                "*Píšem perom.*",
+                "I write with a pen."
+              ],
+              [
+                "**vehicle**",
+                "**none**",
+                "*Idem vlakom.*",
+                "I'm going by train."
+              ],
+              [
+                "**means of payment**",
+                "**none**",
+                "*Platím kartou.*",
+                "I'm paying by card."
+              ],
+              [
+                "**position**",
+                "*pred, za, nad, pod, medzi*",
+                "*Pred kinom.*",
+                "In front of the cinema."
+              ],
+              [
+                "**job**",
+                "**none**, with *byť*",
+                "*Som učiteľom.*",
+                "I'm a teacher."
+              ]
+            ]
+          },
+          "after": [
+            "**The rule that covers it all: if what's with you is a person, use *s*. If it's a tool, a vehicle, or a means, use nothing.** A simple check: could the thing \"come along\" of its own free will? If not, it's a tool.",
+            "**S becomes so** before words starting with *s, z, š, ž* and before *mnou*: *so sestrou*, *so Zuzanou*, *so mnou*. Just like *v/vo*, *z/zo*, *k/ku*.",
+            "**Four prepositions of position — *pred, za, nad, pod* — take the instrumental for rest and the accusative for motion.** *Auto stojí pred domom* (the car is parked in front of the house, rest, instrumental) but *Idem pred dom* (I'm going in front of the house, motion, accusative). You met the same split between motion and rest in units 6 and 11."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Jobs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina (m / f)",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**učiteľ / učiteľka**",
+              "OO-chee-tyehl / -kah",
+              "teacher"
+            ],
+            [
+              "**lekár / lekárka**",
+              "LEH-kahr / -kah",
+              "doctor"
+            ],
+            [
+              "**zdravotná sestra**",
+              "ZDRAH-voht-nah SEHS-trah",
+              "nurse"
+            ],
+            [
+              "**inžinier / inžinierka**",
+              "EEN-zhee-nyehr / -kah",
+              "engineer"
+            ],
+            [
+              "**programátor / -ka**",
+              "PROH-grah-mah-tohr / -kah",
+              "programmer"
+            ],
+            [
+              "**právnik / právnička**",
+              "PRAHV-neek / PRAHV-neech-kah",
+              "lawyer"
+            ],
+            [
+              "**účtovník / -čka**",
+              "OOCH-tohv-neek / -neech-kah",
+              "accountant"
+            ],
+            [
+              "**predavač / -ka**",
+              "PREH-dah-vahch / -kah",
+              "shop assistant"
+            ],
+            [
+              "**čašník / čašníčka**",
+              "CHAHSH-neek / -neech-kah",
+              "waiter"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Once again the ending **-ka** forms the female partner, with small sound adjustments: *-ník → -níčka*, *-vač → -vačka*. Once you know the male form, you practically get the female one for free — the same pattern as unit 3."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Questions and answers",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Čo robíš?*",
+              "What do you do?"
+            ],
+            [
+              "*Čím sa živíš?*",
+              "What do you do for a living? (informal)"
+            ],
+            [
+              "*Aké máte povolanie?*",
+              "What is your occupation? (formal)"
+            ],
+            [
+              "*Som učiteľ.* / *Som učiteľom.*",
+              "I'm a teacher."
+            ],
+            [
+              "*Pracujem ako …*",
+              "I work as a …"
+            ],
+            [
+              "*Ešte študujem.*",
+              "I'm still studying."
+            ],
+            [
+              "*Hľadám prácu.*",
+              "I'm looking for a job."
+            ],
+            [
+              "*Pracujem na plný / čiastočný úväzok.*",
+              "I work full-time / part-time."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Dôchodca: one word that says a lot",
+          "items": [
+            "*Dôchodcovia* (pensioners) are a very visible group in everyday Slovak life: they get big discounts on trains and city transport, and mornings on trams and at markets are mostly theirs.",
+            "Giving up your seat to an older person on the tram isn't extra politeness — it's a firm expectation, and if you don't, strangers around you will tell you off out loud."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "With whom, with what",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovak",
+            "Job",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Idem **s bratom**.*",
+              "companion",
+              "I'm going with my brother."
+            ],
+            [
+              "*Idem **s Evou**.*",
+              "companion",
+              "I'm going with Eva."
+            ],
+            [
+              "*Idem **so mnou**… → so mnou*",
+              "companion",
+              "with me"
+            ],
+            [
+              "*Idem **vlakom**.*",
+              "vehicle",
+              "I'm going by train."
+            ],
+            [
+              "*Píšem **perom**.*",
+              "tool",
+              "I write with a pen."
+            ],
+            [
+              "*Platím **kartou**.*",
+              "means",
+              "I'm paying by card."
+            ],
+            [
+              "*Krájam **nožom**.*",
+              "tool",
+              "I cut with a knife."
+            ],
+            [
+              "*Hovorím **s lekárom**.*",
+              "conversation partner",
+              "I'm talking to the doctor."
+            ],
+            [
+              "*Stretol som sa **s Marekom**.*",
+              "companion",
+              "I met Marek."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at the eighth and ninth rows: **talking and meeting take *s***, because the person you talk to is a person, not a tool. *Hovorím s lekárom*, not *hovorím lekárom*. This mistake turns up precisely because the tool rule has already stuck."
+        },
+        {
+          "type": "kotak",
+          "title": "Six cases, done",
+          "items": [
+            "With this unit you've used all six Slovak cases: nominative (unit 1), accusative (4), locative (6), genitive (9), dative (10), instrumental (17).",
+            "The full table is on the *A1 Grammar Summary* page at the back of this book. But if you've got here by working through every unit, you're not memorizing that table — you're recognizing something you've already been using."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 15",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "I've been reading it, but I haven't finished.",
+              "*Čítal som ju, ale neprečítal.*"
+            ],
+            [
+              "I'll definitely finish it tonight.",
+              "*Dnes večer to dočítam.*"
+            ],
+            [
+              "I cooked for two hours.",
+              "*Varil som dve hodiny.*"
+            ],
+            [
+              "I forgot to buy rice.",
+              "*Zabudol som kúpiť ryžu.*"
+            ],
+            [
+              "I finally finished it.",
+              "*Konečne som to urobil.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "s / so",
+      "baca": "s / soh",
+      "en": "with (together)"
+    },
+    {
+      "sk": "pred",
+      "baca": "preht",
+      "en": "in front of"
+    },
+    {
+      "sk": "za",
+      "baca": "zah",
+      "en": "behind"
+    },
+    {
+      "sk": "nad",
+      "baca": "naht",
+      "en": "above"
+    },
+    {
+      "sk": "pod",
+      "baca": "poht",
+      "en": "under"
+    },
+    {
+      "sk": "medzi",
+      "baca": "MEH-dzee",
+      "en": "between"
+    },
+    {
+      "sk": "povolanie",
+      "baca": "POH-voh-lah-nyeh",
+      "en": "job, occupation (n)"
+    },
+    {
+      "sk": "práca",
+      "baca": "PRAH-tsah",
+      "en": "work (f)"
+    },
+    {
+      "sk": "živiť sa",
+      "baca": "ZHEE-veet sah",
+      "en": "make a living"
+    },
+    {
+      "sk": "tím",
+      "baca": "teem",
+      "en": "team (m)"
+    },
+    {
+      "sk": "pero",
+      "baca": "PEH-roh",
+      "en": "pen (n)"
+    },
+    {
+      "sk": "počítač",
+      "baca": "POH-chee-tahch",
+      "en": "computer (m)"
+    },
+    {
+      "sk": "nôž",
+      "baca": "nwohzh",
+      "en": "knife (m)"
+    },
+    {
+      "sk": "obraz",
+      "baca": "OH-brahs",
+      "en": "painting (m)"
+    },
+    {
+      "sk": "gymnázium",
+      "baca": "GEEM-nah-zyoom",
+      "en": "grammar school (n)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Slovak. Use the masculine form for \"I\".",
+      "items": [
+        "I came with Eva.",
+        "I'm a programmer.",
+        "I work with a small team.",
+        "I write with a pen.",
+        "I'm going to Croatia with my family.",
+        "By car, two days."
+      ]
+    },
+    {
+      "prompt": "Put into the instrumental.",
+      "items": [
+        "s ____ (brat)",
+        "s ____ (sestra)",
+        "s ____ (Eva)",
+        "____ (vlak)",
+        "____ (auto)",
+        "____ (karta)",
+        "pred ____ (dom)",
+        "pod ____ (stôl)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "Evou / som / prišiel / s",
+        "programátor / som",
+        "tímom / pracujem / malým / s",
+        "perom / píšem",
+        "sa / živíš / čím / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Prišiel som s Evou. — Som programátor. — Pracujem s malým tímom. — Píšem perom. — Chodím s rodinou do Chorvátska. — Autom, dva dni.",
+    "bratom — sestrou — Evou — vlakom — autom — kartou — domom — stolom",
+    "Prišiel som s Evou. — Som programátor. — Pracujem s malým tímom. — Píšem perom. — Čím sa živíš?"
+  ]
+}

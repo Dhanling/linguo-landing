@@ -1,0 +1,565 @@
+{
+  "title": "Perfective and imperfective",
+  "title_target": "Dokonavý a nedokonavý",
+  "goal": "Face the one part of Slovak with no real equivalent in English: every action has two verbs, and choosing the wrong one changes the meaning of your sentence.",
+  "bekal": [
+    "understand what the perfective/imperfective pair really distinguishes — and that it isn't time",
+    "recognize pairs from their shape: a prefix, a change in the middle, or a completely different word",
+    "choose the right form in past and future sentences"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Prečo si to nedočítal?",
+      "intro": "Eva lent Budi a book last week. Now she wants it back.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Čítal si tú knihu, čo som ti dala?",
+          "id": "Have you read the book I gave you?",
+          "literal": "read-m you-are that book, which I-am to-you given-f?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Čítal som ju, ale neprečítal.",
+          "id": "I've been reading it, but I haven't finished.",
+          "literal": "read-m I-am it, but not-read-to-the-end-m."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "To znie ako výhovorka.",
+          "id": "Sounds like an excuse.",
+          "literal": "it it-sounds like excuse."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nie je! Každý večer som čítal desať strán.",
+          "id": "It's not! I read ten pages every evening.",
+          "literal": "not is! every evening I-am read-m ten pages-gen."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "A dnes ju dočítaš?",
+          "id": "And will you finish it today?",
+          "literal": "and today it you-will-read-to-the-end?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dnes večer ju určite dočítam.",
+          "id": "I'll definitely finish it tonight.",
+          "literal": "today evening it definitely I-will-read-to-the-end."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Dobre. A čo si varil včera?",
+          "id": "OK. And what did you cook yesterday?",
+          "literal": "good. and what you-are cooked-m yesterday?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Varil som dve hodiny a nič som neuvaril.",
+          "id": "I cooked for two hours and nothing turned out.",
+          "literal": "cooked-m I-am two hours-pl and nothing I-am not-cooked-done-m."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Ako to?",
+          "id": "How come?",
+          "literal": "how that?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zabudol som kúpiť ryžu. Kupoval som všetko ostatné.",
+          "id": "I forgot to buy rice. I bought everything else.",
+          "literal": "forgotten-m I-am buy rice-acc. bought-m I-am all rest."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nakoniec som zjedol dve porcie v jedálni.",
+          "id": "In the end I ate two portions at the canteen.",
+          "literal": "finally I-am eaten-up-m two portions in canteen-loc."
+        }
+      ],
+      "notes": [
+        "**Čítal som ju, ale neprečítal.** One sentence that holds this whole unit. *Čítal* = I spent time reading it (the activity really happened). *Neprečítal* = I didn't get to the last page (the result wasn't reached). Both are about the past, and both are true in the same sentence.",
+        "**Varil som dve hodiny a nič som neuvaril.** Same pattern, and this time it's even funny. The cooking went on for two full hours — that's *varil*. But no dish came out of it — that's *neuvaril*. In English you need extra words to separate the two; Slovak does it with one prefix.",
+        "**Kupoval som všetko ostatné, ale zabudol som kúpiť ryžu.** *Kupoval* = the activity of shopping (walking around, filling the basket). *Kúpiť* = getting one particular item. Because the rice never made it into the basket, the perfective is used — and it's negated.",
+        "**Zjedol som dve porcie** uses the perfective because the portions were really finished. Compare *Jedol som* = \"I was eating / I ate (for a while)\". The prefix *z-* here means \"all the way, until it's gone\".",
+        "**The perfective can't be paired with a length of time.** *Varil som dve hodiny* is right; *Uvaril som dve hodiny* means nothing. If your sentence says how long, the verb must be imperfective. A quick check that saves a lot of sentences."
+      ],
+      "grammars": [
+        {
+          "title": "What is really being distinguished",
+          "body": [
+            "Not time. Not politeness. Not quantity. What's distinguished is whether you see the action as **an ongoing activity** or as **a completed event**."
+          ],
+          "table": {
+            "head": [
+              "",
+              "Imperfective (*nedokonavý*)",
+              "Perfective (*dokonavý*)"
+            ],
+            "rows": [
+              [
+                "**Focus**",
+                "the process",
+                "the result"
+              ],
+              [
+                "**Question it answers**",
+                "doing what? for how long?",
+                "is it done?"
+              ],
+              [
+                "**Present form**",
+                "**yes** — *robím*",
+                "**none**"
+              ],
+              [
+                "**Present form means**",
+                "now",
+                "future — *urobím*"
+              ],
+              [
+                "**Past**",
+                "*robil som*",
+                "*urobil som*"
+              ],
+              [
+                "**Future**",
+                "*budem robiť*",
+                "*urobím*"
+              ],
+              [
+                "**Goes with**",
+                "*často, každý deň, dve hodiny*",
+                "*raz, konečne, už*"
+              ],
+              [
+                "**Example**",
+                "*Písal som list.*",
+                "*Napísal som list.*"
+              ],
+              [
+                "**Meaning**",
+                "I was writing a letter.",
+                "I wrote (finished) the letter."
+              ]
+            ]
+          },
+          "after": [
+            "**The third row is the key to the whole system.** The perfective **has no present**, because \"being in the middle of finishing\" isn't a possible state. Since the form still exists grammatically but has no job in the present, it's used for the future. That's the full explanation for what you saw in unit 14.",
+            "**English expresses something similar, but with extra words**: \"read\" and \"read to the end\", \"cook\" and \"get it cooked\", \"study\" and \"master\". Slovak builds the difference into the verb itself, and makes you choose every time.",
+            "**At A1, one practical rule covers most sentences:** if there's a word like *často, každý deň, väčšinou, dve hodiny, celý deň* — use the imperfective. If there's *raz, konečne, už, hneď* — use the perfective. The time word in the sentence almost always gives you the answer."
+          ]
+        },
+        {
+          "title": "Three ways pairs are formed",
+          "body": [
+            "You can recognize perfective/imperfective pairs by their shape. There are three patterns, and the first covers the most words."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Imperfective",
+              "Perfective",
+              "English"
+            ],
+            "rows": [
+              [
+                "**prefix added**",
+                "*robiť*",
+                "**u**robiť",
+                "do"
+              ],
+              [
+                "",
+                "*písať*",
+                "**na**písať",
+                "write"
+              ],
+              [
+                "",
+                "*čítať*",
+                "**pre**čítať",
+                "read"
+              ],
+              [
+                "",
+                "*variť*",
+                "**u**variť",
+                "cook"
+              ],
+              [
+                "",
+                "*jesť*",
+                "**z**jesť",
+                "eat"
+              ],
+              [
+                "",
+                "*piť*",
+                "**vy**piť",
+                "drink"
+              ],
+              [
+                "",
+                "*platiť*",
+                "**za**platiť",
+                "pay"
+              ],
+              [
+                "",
+                "*učiť sa*",
+                "**na**učiť sa",
+                "learn"
+              ],
+              [
+                "**middle part dropped**",
+                "*kupovať*",
+                "**kúpiť**",
+                "buy"
+              ],
+              [
+                "",
+                "*dávať*",
+                "**dať**",
+                "give"
+              ],
+              [
+                "",
+                "*vracať sa*",
+                "**vrátiť sa**",
+                "come back, return"
+              ],
+              [
+                "**different word**",
+                "*brať*",
+                "**vziať**",
+                "take"
+              ],
+              [
+                "",
+                "*hovoriť*",
+                "**povedať**",
+                "speak / say"
+              ],
+              [
+                "",
+                "*hľadať*",
+                "**nájsť**",
+                "look for / find"
+              ]
+            ]
+          },
+          "after": [
+            "**The first pattern is the most common, and the prefixes aren't decoration.** *U-, na-, pre-, z-, vy-, za-* each have their own meaning — *pre-* means \"all the way through\", *vy-* means \"out / until it's gone\", *z-* means \"into being / away\". But when they form a perfective pair, the extra meaning fades until you can barely feel it.",
+            "**The third pattern explains pairs that look like they make no sense.** *Hľadať* (look for) and *nájsť* (find) are two completely different words in English, but in Slovak they're the imperfective–perfective pair of the same action: looking is the process, finding is the result. Once you see it that way, the pair feels natural.",
+            "**Write pairs down together from now on.** If you learn *robiť* on its own, you can say \"I'm working on it\" but not \"I'll get it done\". The glossary at the back of this book lists them in pairs, and that's no accident."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Choosing correctly — six pairs of sentences",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The fastest way to understand this system isn't through rules but through pairs of sentences that differ by just one prefix. Read both out loud and feel the difference."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Imperfective",
+            "Perfective",
+            "The difference"
+          ],
+          "rows": [
+            [
+              "*Písal som list.*",
+              "*Napísal som list.*",
+              "was writing / the letter is done"
+            ],
+            [
+              "*Čítal som knihu.*",
+              "*Prečítal som knihu.*",
+              "was reading / finished the book"
+            ],
+            [
+              "*Pil som kávu.*",
+              "*Vypil som kávu.*",
+              "was drinking / the coffee is gone"
+            ],
+            [
+              "*Učil som sa slovenčinu.*",
+              "*Naučil som sa slovenčinu.*",
+              "was studying / now I know it"
+            ],
+            [
+              "*Kupoval som chlieb.*",
+              "*Kúpil som chlieb.*",
+              "was shopping / got the bread"
+            ],
+            [
+              "*Robil som to dlho.*",
+              "*Urobil som to.*",
+              "worked on it a long time / it's done"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Look at the fourth row.** *Učil som sa* means you sat and studied; *naučil som sa* means you can now do it. That's why *Učím sa po slovensky* (I'm learning Slovak) is right, but *Naučím sa po slovensky* means \"I will master Slovak\" — a much bigger promise."
+        },
+        {
+          "type": "kotak",
+          "title": "Three places that are always imperfective",
+          "items": [
+            "**After *začať* (start), *prestať* (stop), *pokračovať* (continue)**: *Začal som čítať*, not *začal som prečítať*. You can't \"start finishing\".",
+            "**When there's a length of time**: *dve hodiny, celý deň, celý týždeň*. The perfective has no duration.",
+            "**When there's a frequency**: *často, každý deň, väčšinou, niekedy, vždy*. A repeated action is, by definition, never completed."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two places that are almost always perfective",
+          "items": [
+            "**When there's *už* (already) or *konečne* (finally)**: *Už som to urobil*, *Konečne som ju prečítal*.",
+            "**When the action happens once and the result matters**: *Kúpil som lístok*, *Zaplatil som*, *Prišiel som*. Almost every everyday sentence about something getting done belongs here."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The most common pairs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Learn them in pairs, not one by one. The third column is the *ja* form of the perfective — the form that means the future."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Imperfective",
+            "Perfective",
+            "ja … (future)",
+            "English"
+          ],
+          "rows": [
+            [
+              "robiť",
+              "urobiť",
+              "urobím",
+              "do"
+            ],
+            [
+              "písať",
+              "napísať",
+              "napíšem",
+              "write"
+            ],
+            [
+              "čítať",
+              "prečítať",
+              "prečítam",
+              "read"
+            ],
+            [
+              "variť",
+              "uvariť",
+              "uvarím",
+              "cook"
+            ],
+            [
+              "jesť",
+              "zjesť",
+              "zjem",
+              "eat"
+            ],
+            [
+              "piť",
+              "vypiť",
+              "vypijem",
+              "drink"
+            ],
+            [
+              "platiť",
+              "zaplatiť",
+              "zaplatím",
+              "pay"
+            ],
+            [
+              "kupovať",
+              "kúpiť",
+              "kúpim",
+              "buy"
+            ],
+            [
+              "dávať",
+              "dať",
+              "dám",
+              "give"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "If you only have time to learn half, learn **the second and third columns**. The perfective is what you'll need most in everyday conversation, because most of what you talk about is something that's already done or will get done."
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 13",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "Yesterday I was at home.",
+              "*Včera som bol doma.*"
+            ],
+            [
+              "How was your weekend?",
+              "*Aký si mal víkend?*"
+            ],
+            [
+              "I didn't do anything.",
+              "*Nič som nerobil.*"
+            ],
+            [
+              "Where did you go?",
+              "*Kde si bol?*"
+            ],
+            [
+              "It was my first time there.",
+              "*Bol som tam prvýkrát.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "dokonavý",
+      "baca": "DOH-koh-nah-vee",
+      "en": "perfective"
+    },
+    {
+      "sk": "nedokonavý",
+      "baca": "NEH-doh-koh-nah-vee",
+      "en": "imperfective"
+    },
+    {
+      "sk": "urobiť",
+      "baca": "OO-roh-beet",
+      "en": "get done, finish"
+    },
+    {
+      "sk": "napísať",
+      "baca": "NAH-pee-saht",
+      "en": "finish writing"
+    },
+    {
+      "sk": "prečítať",
+      "baca": "PREH-chee-taht",
+      "en": "read to the end"
+    },
+    {
+      "sk": "dočítať",
+      "baca": "DOH-chee-taht",
+      "en": "finish reading"
+    },
+    {
+      "sk": "uvariť",
+      "baca": "OO-vah-reet",
+      "en": "cook (until ready)"
+    },
+    {
+      "sk": "zjesť",
+      "baca": "zyehst",
+      "en": "eat up"
+    },
+    {
+      "sk": "vypiť",
+      "baca": "VEE-peet",
+      "en": "drink up"
+    },
+    {
+      "sk": "naučiť sa",
+      "baca": "NAH-oo-cheet sah",
+      "en": "master, learn"
+    },
+    {
+      "sk": "počkať",
+      "baca": "POHCH-kaht",
+      "en": "wait (a moment)"
+    },
+    {
+      "sk": "vziať",
+      "baca": "vzyaht",
+      "en": "take"
+    },
+    {
+      "sk": "povedať",
+      "baca": "POH-veh-daht",
+      "en": "say"
+    },
+    {
+      "sk": "zabudnúť",
+      "baca": "ZAH-bood-noot",
+      "en": "forget"
+    },
+    {
+      "sk": "začať",
+      "baca": "ZAH-chaht",
+      "en": "start, begin"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Slovak. Use the masculine form for \"I\".",
+      "items": [
+        "I've been reading it, but I haven't finished.",
+        "I read ten pages every evening.",
+        "I'll definitely finish it tonight.",
+        "I cooked for two hours and nothing turned out.",
+        "I forgot to buy rice.",
+        "I ate up two portions."
+      ]
+    },
+    {
+      "prompt": "Write the perfective partner.",
+      "items": [
+        "robiť → ____",
+        "písať → ____",
+        "čítať → ____",
+        "piť → ____",
+        "platiť → ____",
+        "kupovať → ____",
+        "hľadať → ____",
+        "hovoriť → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "som / neprečítal / ale / ju / čítal / som / ,",
+        "hodiny / varil / dve / som",
+        "kúpiť / som / ryžu / zabudol",
+        "porcie / som / dve / zjedol",
+        "dočítam / ju / večer / dnes"
+      ]
+    }
+  ],
+  "answers": [
+    "Čítal som ju, ale neprečítal. — Každý večer som čítal desať strán. — Dnes večer ju určite dočítam. — Varil som dve hodiny a nič som neuvaril. — Zabudol som kúpiť ryžu. — Zjedol som dve porcie.",
+    "urobiť — napísať — prečítať — vypiť — zaplatiť — kúpiť — nájsť — povedať",
+    "Čítal som ju, ale neprečítal som. — Varil som dve hodiny. — Zabudol som kúpiť ryžu. — Zjedol som dve porcie. — Dnes večer ju dočítam."
+  ]
+}

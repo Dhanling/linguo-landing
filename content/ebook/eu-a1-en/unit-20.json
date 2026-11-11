@@ -1,0 +1,562 @@
+{
+  "title": "Traveling, and saying goodbye",
+  "title_target": "Bidaia eta agur",
+  "goal": "Handle hotels and travel, deal with small problems on the road, and close the course with goodbye phrases.",
+  "bekal": [
+    "staying somewhere: booking a room, asking about breakfast and Wi-Fi, checking out",
+    "dealing with problems: lost things, getting lost, something not working",
+    "saying goodbye and saying you'll keep learning"
+  ],
+  "dialogs": [
+    {
+      "title": "Elkarrizketa — Hotelean, Donostian",
+      "intro": "Budi's last trip before going home to Indonesia. He arrives at the front desk of a small hotel near the beach.",
+      "lines": [
+        {
+          "speaker": "Harreragilea:",
+          "text": "Arratsalde on! Erreserba baduzu?",
+          "id": "Good afternoon! Do you have a reservation?",
+          "literal": "afternoon good! reservation you-have?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bai, Budi Santoso izenean. Bi gauetarako.",
+          "id": "Yes, under the name Budi Santoso. For two nights.",
+          "literal": "yes, Budi Santoso name-in. two night-pl-for."
+        },
+        {
+          "speaker": "Harreragilea:",
+          "text": "Bai, hemen dago. Hogeita bat gela, bigarren solairuan.",
+          "id": "Yes, here it is. Room twenty-one, second floor.",
+          "literal": "yes, here is. twenty-and one room, second floor-on."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Gosaria barne dago?",
+          "id": "Is breakfast included?",
+          "literal": "breakfast-the inside is?"
+        },
+        {
+          "speaker": "Harreragilea:",
+          "text": "Bai, zortzietatik hamarretara, behe solairuan.",
+          "id": "Yes, from eight to ten, on the ground floor.",
+          "literal": "yes, eight-pl-from ten-pl-to, bottom floor-on."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ondo. Wifirik badago?",
+          "id": "Good. Is there Wi-Fi?",
+          "literal": "good. wifi-any indeed-is?"
+        },
+        {
+          "speaker": "Harreragilea:",
+          "text": "Bai, pasahitza txartelean dago.",
+          "id": "Yes, the password is on the card.",
+          "literal": "yes, password-the card-on is."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eskerrik asko. Bihar goiz irten behar dut.",
+          "id": "Thank you. I have to leave early tomorrow.",
+          "literal": "thanks many. tomorrow early leave need I-have-it."
+        },
+        {
+          "speaker": "Harreragilea:",
+          "text": "Ez dago arazorik. Giltza hemen duzu.",
+          "id": "No problem. Here's your key.",
+          "literal": "not is problem-any. key-the here you-have."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eta hondartza urrun dago?",
+          "id": "And is the beach far?",
+          "literal": "and beach-the far is?"
+        },
+        {
+          "speaker": "Harreragilea:",
+          "text": "Ez, bost minutu oinez. Kaletik zuzen.",
+          "id": "No, five minutes on foot. Straight down this street.",
+          "literal": "no, five minute foot-by. street-from straight."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Primeran. Eskerrik asko, oso jatorra zara!",
+          "id": "Great. Thank you, you're very kind!",
+          "literal": "great. thanks many, very kind-the you-are!"
+        }
+      ],
+      "notes": [
+        "**Bi gauetarako — for two nights.** A combination of three endings you already know: *gau* + *-eta-* (plural) + *-rako* (for). Other forms with the same pattern: *hiru egunetarako* (for three days), *aste baterako* (for a week).",
+        "**Izenean — under the name.** *Budi izenean* (under the name Budi). *Izen* means name, and *-ean* is the place ending you've used since Unit 3. Basque says \"in the name\" where English says \"under the name\".",
+        "**Wifirik badago? — the ending -rik again.** In questions about something that may or may not exist, the thing takes *-rik*: *wifirik*, *gelarik*, *lekurik*. It's the same ending you learned in Units 4 and 5 — and by now it should feel natural.",
+        "**Ez dago arazorik — no problem.** One of those short phrases that keep a conversation flowing. Similar ones: *lasai* (relax, don't worry), *berdin dio* (doesn't matter), *noski* (of course)."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Staying and traveling",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Gela bat nahi dut.",
+              "GEH-lah baht",
+              "I'd like a room."
+            ],
+            [
+              "Gela librerik baduzu?",
+              "LEE-breh-reek",
+              "Do you have a free room?"
+            ],
+            [
+              "Bi gauetarako.",
+              "BEE gah-oo-eh-TAH-rah-koh",
+              "For two nights."
+            ],
+            [
+              "Zenbat da gaua?",
+              "sehn-BAHT dah GAH-oo-ah",
+              "How much is it per night?"
+            ],
+            [
+              "Gosaria barne dago?",
+              "BAHR-neh",
+              "Is breakfast included?"
+            ],
+            [
+              "Zer ordutan da gosaria?",
+              "ohr-DOO-tahn",
+              "What time is breakfast?"
+            ],
+            [
+              "Wifiaren pasahitza, mesedez.",
+              "pah-sah-EE-tsah",
+              "The Wi-Fi password, please."
+            ],
+            [
+              "Noiz da irteera?",
+              "eer-TEH-eh-rah",
+              "When is checkout?"
+            ],
+            [
+              "Maletak hemen utz ditzaket?",
+              "mah-LEH-tahk",
+              "Can I leave my bags here?"
+            ],
+            [
+              "Faktura, mesedez.",
+              "fahk-TOO-rah",
+              "The receipt, please."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Luggage and belongings"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "English",
+            "Euskara",
+            "English"
+          ],
+          "rows": [
+            [
+              "maleta",
+              "suitcase",
+              "pasaportea",
+              "passport"
+            ],
+            [
+              "motxila",
+              "backpack",
+              "txartela",
+              "ticket, card"
+            ],
+            [
+              "diru-zorroa",
+              "wallet",
+              "kargagailua",
+              "charger"
+            ],
+            [
+              "kamera",
+              "camera",
+              "eguzkitako betaurrekoak",
+              "sunglasses"
+            ],
+            [
+              "euritakoa",
+              "umbrella",
+              "toalla",
+              "towel"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Euritakoa* literally means \"the one for rain\" — an umbrella. The *-tako* pattern is productive: *eguzkitakoa* (the one for the sun), *bidaiatakoa*. Once you recognize the word pieces, many long Basque words stop feeling foreign."
+        }
+      ]
+    },
+    {
+      "title": "When something goes wrong",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "English"
+          ],
+          "rows": [
+            [
+              "Galduta nago.",
+              "I'm lost."
+            ],
+            [
+              "Maleta galdu dut.",
+              "I've lost my suitcase."
+            ],
+            [
+              "Diru-zorroa lapurtu didate.",
+              "My wallet has been stolen."
+            ],
+            [
+              "Ez dabil.",
+              "It doesn't work."
+            ],
+            [
+              "Argirik ez dago gelan.",
+              "The light in the room isn't working."
+            ],
+            [
+              "Beste gela bat nahi dut.",
+              "I'd like a different room."
+            ],
+            [
+              "Trena galdu dut.",
+              "I've missed the train."
+            ],
+            [
+              "Laguntza behar dut.",
+              "I need help."
+            ],
+            [
+              "Polizia deitu behar dugu.",
+              "We need to call the police."
+            ],
+            [
+              "Ez dut ulertzen, poliki mesedez.",
+              "I don't understand — slowly, please."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Numbers and places to note down",
+          "items": [
+            "**112** — the emergency number for everything: ambulance, police, fire department.",
+            "*Udaltzaingoa* — city police; *Ertzaintza* — the Basque regional police.",
+            "*Galdutako gauzen bulegoa* — lost and found office.",
+            "*Turismo bulegoa* — tourist information office; there's almost always staff who speak Basque, Spanish, French, and English.",
+            "*Anbulatorioa* — general clinic; *larrialdiak* — emergency room."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Agur — and what comes next",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "You've reached the end of twenty units. Let's count what you can now do in a language whose sounds you may never have heard six months ago."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Introduce yourself and say where you're from, your age, your job, and your family.",
+            "Order food and drinks, go shopping, and ask about prices.",
+            "Tell the time, name days and months, and plan a schedule.",
+            "Describe daily activities, habits, and what you're doing right now.",
+            "Ask for directions, say where things are, and travel by train or bus.",
+            "Say what you like and don't like, and invite other people.",
+            "Talk about yesterday and the weekend that's just gone.",
+            "Make plans for tomorrow, next week, and next year.",
+            "And most important: use the doer's hat *-k* and the three auxiliary patterns without stopping to think too long."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Goodbye phrases"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "English"
+          ],
+          "rows": [
+            [
+              "Agur eta ondo ibili.",
+              "Goodbye and take care."
+            ],
+            [
+              "Ikusi arte.",
+              "See you."
+            ],
+            [
+              "Gero arte, laster arte.",
+              "See you later, see you soon."
+            ],
+            [
+              "Eskerrik asko dena gatik.",
+              "Thank you for everything."
+            ],
+            [
+              "Oso ondo pasatu dut hemen.",
+              "I've had a wonderful time here."
+            ],
+            [
+              "Itzuliko naiz.",
+              "I'll be back."
+            ],
+            [
+              "Zorte on!",
+              "Good luck!"
+            ],
+            [
+              "Euskara ikasten jarraituko dut.",
+              "I'll keep learning Basque."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three things you can start doing tomorrow",
+          "items": [
+            "**Listen every day.** The radio station *Euskadi Irratia* and the TV channel *EITB* broadcast in Basque all day; children's shows are the easiest to follow. Twenty minutes a day is enough.",
+            "**Reread this course from Unit 1.** The second reading feels different: what once looked like rules now reads like sentences. It isn't repetition — it's the next step.",
+            "**Use it, even with mistakes.** No euskara speaker will correct you harshly — the language has too few speakers to turn away anyone who tries. One *kaixo* and one *eskerrik asko* already open the door."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Eskerrik asko liburu hau irakurtzeagatik. Euskara ikasten jarraitu, eta ondo ibili beti. Gora euskara!*"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "eu": "hotel",
+      "baca": "oh-TEHL",
+      "en": "hotel"
+    },
+    {
+      "eu": "erreserba",
+      "baca": "eh-rreh-SEHR-bah",
+      "en": "reservation"
+    },
+    {
+      "eu": "harrera",
+      "baca": "ah-RREH-rah",
+      "en": "reception, front desk"
+    },
+    {
+      "eu": "gau",
+      "baca": "GAH-oo",
+      "en": "night"
+    },
+    {
+      "eu": "barne",
+      "baca": "BAHR-neh",
+      "en": "included, inside"
+    },
+    {
+      "eu": "pasahitz",
+      "baca": "pah-SAH-eets",
+      "en": "password"
+    },
+    {
+      "eu": "maleta",
+      "baca": "mah-LEH-tah",
+      "en": "suitcase"
+    },
+    {
+      "eu": "motxila",
+      "baca": "moh-CHEE-lah",
+      "en": "backpack"
+    },
+    {
+      "eu": "pasaporte",
+      "baca": "pah-sah-POHR-teh",
+      "en": "passport"
+    },
+    {
+      "eu": "diru-zorro",
+      "baca": "DEE-roo SOH-rroh",
+      "en": "wallet"
+    },
+    {
+      "eu": "euritako",
+      "baca": "eh-oo-ree-TAH-koh",
+      "en": "umbrella"
+    },
+    {
+      "eu": "kargagailu",
+      "baca": "kahr-gah-GAH-ee-loo",
+      "en": "charger"
+    },
+    {
+      "eu": "arazo",
+      "baca": "ah-RAH-soh",
+      "en": "problem"
+    },
+    {
+      "eu": "laguntza",
+      "baca": "lah-GOON-tsah",
+      "en": "help"
+    },
+    {
+      "eu": "lapurtu",
+      "baca": "lah-POOR-too",
+      "en": "steal"
+    },
+    {
+      "eu": "ibili",
+      "baca": "ee-BEE-lee",
+      "en": "walk; work (machines)"
+    },
+    {
+      "eu": "utzi",
+      "baca": "OO-tsee",
+      "en": "leave (behind)"
+    },
+    {
+      "eu": "jarraitu",
+      "baca": "khah-RRAH-ee-too",
+      "en": "continue, keep on"
+    },
+    {
+      "eu": "faktura",
+      "baca": "fahk-TOO-rah",
+      "en": "receipt, bill"
+    },
+    {
+      "eu": "solairu",
+      "baca": "soh-LAH-ee-roo",
+      "en": "floor (story)"
+    },
+    {
+      "eu": "behe",
+      "baca": "BEH-eh",
+      "en": "bottom, lower"
+    },
+    {
+      "eu": "goi",
+      "baca": "GOH-ee",
+      "en": "top, upper"
+    },
+    {
+      "eu": "irteera",
+      "baca": "eer-TEH-eh-rah",
+      "en": "exit, checkout"
+    },
+    {
+      "eu": "turismo bulego",
+      "baca": "too-REES-moh boo-LEH-goh",
+      "en": "tourist office"
+    },
+    {
+      "eu": "polizia",
+      "baca": "poh-lee-SEE-ah",
+      "en": "police"
+    },
+    {
+      "eu": "ikusi arte",
+      "baca": "ee-KOO-see AHR-teh",
+      "en": "see you"
+    },
+    {
+      "eu": "laster arte",
+      "baca": "LAHS-tehr AHR-teh",
+      "en": "see you soon"
+    },
+    {
+      "eu": "zorte on",
+      "baca": "SOHR-teh OHN",
+      "en": "good luck"
+    },
+    {
+      "eu": "ondo ibili",
+      "baca": "OHN-doh ee-BEE-lee",
+      "en": "take care"
+    },
+    {
+      "eu": "gora euskara",
+      "baca": "GOH-rah eh-oos-KAH-rah",
+      "en": "long live Basque"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Basque.",
+      "items": [
+        "Do you have a free room?",
+        "For two nights.",
+        "Is breakfast included?",
+        "How much is it per night?",
+        "The Wi-Fi password, please.",
+        "When is checkout?"
+      ]
+    },
+    {
+      "prompt": "What would you say in these situations?",
+      "items": [
+        "You don't know where you are. → ____",
+        "Your suitcase didn't arrive. → ____",
+        "The light in your room isn't working. → ____",
+        "You missed the train. → ____",
+        "You don't understand what someone is saying. → ____",
+        "You need help right away. → ____"
+      ]
+    },
+    {
+      "prompt": "Review of the whole course: fill in the right auxiliary.",
+      "items": [
+        "Ni Bilbon bizi ____. (naiz/dut)",
+        "Nik euskara ikasten ____. (naiz/dut)",
+        "Atzo Donostiara joan ____. (nintzen/nuen)",
+        "Atzo museoa ikusi ____. (nintzen/nuen)",
+        "Kafea gustatzen ____. (zait/dut)",
+        "Bihar lan egin behar ____. (naiz/dut)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "duzu / erreserba / ?",
+        "dago / gosaria / barne / ?",
+        "dut / gela / bat / nahi",
+        "dut / galdu / maleta",
+        "dut / jarraituko / ikasten / euskara",
+        "ibili / eta / agur / ondo"
+      ]
+    }
+  ],
+  "answers": [
+    "Gela librerik baduzu? — Bi gauetarako. — Gosaria barne dago? — Zenbat da gaua? — Wifiaren pasahitza, mesedez. — Noiz da irteera?",
+    "Galduta nago. — Maleta galdu dut. — Argirik ez dago gelan. — Trena galdu dut. — Ez dut ulertzen, poliki mesedez. — Laguntza behar dut.",
+    "naiz — dut — nintzen — nuen — zait — dut",
+    "Erreserba baduzu? — Gosaria barne dago? — Gela bat nahi dut. — Maleta galdu dut. — Euskara ikasten jarraituko dut. — Agur eta ondo ibili."
+  ]
+}

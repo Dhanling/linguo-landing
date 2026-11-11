@@ -1,0 +1,546 @@
+{
+  "title": "Which one is bigger?",
+  "title_target": "Кой е по-голям?",
+  "goal": "Compare anything with two prefixes that never change — **по-** for \"more\" and **най-** for \"most\" — a system far simpler than English.",
+  "bekal": [
+    "forming comparatives with **по-** and **най-**",
+    "using **от** for \"than\"",
+    "putting the definite article on the **най-** form",
+    "using **повече** and **по-малко** for amounts",
+    "comparing cities, weather and prices"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Sofia, Plovdiv and Jakarta",
+      "intro": "Ivan and Ani compare cities. Notice that **по-** and **най-** are always written with a hyphen and always carry the stress.",
+      "lines": [
+        {
+          "speaker": "Ани:",
+          "text": "[Кой|Koy] [град|grad] [е|eh] [по-голям|po-go-LYAM] — [София|SO-fee-ya] [или|EE-lee] [Пловдив|PLOV-deev]?",
+          "id": "Which city is bigger — Sofia or Plovdiv?",
+          "literal": "which — city — is — bigger — Sofia — or — Plovdiv?"
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[София|SO-fee-ya], [разбира|raz-BEE-ra] [се|seh]. [Тя|Tya] [е|eh] [най-големият|NAI-go-LEH-mee-yat] [град|grad] [в|v] [България|Băl-GA-ree-ya].",
+          "id": "Sofia, of course. It's the biggest city in Bulgaria.",
+          "literal": "Sofia, understands — itself. she — is — biggest-the — city — in — Bulgaria."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[А|A] [по-хубав|po-HOO-bav]?",
+          "id": "And which is nicer?",
+          "literal": "and — nicer?"
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Пловдив|PLOV-deev] [е|eh] [по-стар|po-STAR] [и|ee] [по-спокоен|po-spo-KO-en]. [София|SO-fee-ya] [е|eh] [по-модерна|po-mo-DER-na].",
+          "id": "Plovdiv is older and calmer. Sofia is more modern.",
+          "literal": "Plovdiv — is — older — and — calmer. Sofia — is — more-modern."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[В|V] [Джакарта|Dzha-KAR-ta] [има|EE-ma] [много|MNO-go] [повече|PO-veh-cheh] [хора|ho-RA].",
+          "id": "In Jakarta there are far more people.",
+          "literal": "in — Jakarta — there-is — much — more — people."
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Колко|KOL-ko]?",
+          "id": "How many?",
+          "literal": "how-many?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Около|O-ko-lo] [десет|DEH-set] [милиона|mee-lee-O-na]. [Осем|O-sem] [пъти|PĂ-tee] [повече|PO-veh-cheh] [от|ot] [София|SO-fee-ya].",
+          "id": "About ten million. Eight times more than Sofia.",
+          "literal": "about — ten — million. eight — times — more — than — Sofia."
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Невероятно|Neh-veh-ro-YAT-no]! [А|A] [по-топло|po-TOP-lo] [ли|lee] [е|eh]?",
+          "id": "Incredible! Is it hotter too?",
+          "literal": "unbelievable! and — hotter — (question) — is?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Много|MNO-go] [по-топло|po-TOP-lo]. [Най-студеният|NAI-stoo-DEH-nee-yat] [ден|den] [там|tam] [е|eh] [по-топъл|po-TO-păl] [от|ot] [най-топлия|NAI-TOP-lee-ya] [ден|den] [тук|took] [през|prez] [зимата|ZEE-ma-ta].",
+          "id": "Much hotter. The coldest day there is warmer than the warmest day here in winter.",
+          "literal": "much — hotter. coldest-the — day — there — is — warmer — than — warmest-the — day — here — during — winter-the."
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Тогава|To-GA-va] [зимата|ZEE-ma-ta] [ще|shteh] [ти|tee] [бъде|BĂ-deh] [най-трудното|NAI-TROOD-no-to] [нещо|NESH-to].",
+          "id": "Then winter will be the hardest thing for you.",
+          "literal": "then — winter-the — will — to-you — be — hardest-the — thing."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Вече|VEH-cheh] [е|eh]!",
+          "id": "It already is!",
+          "literal": "already — is!"
+        }
+      ],
+      "notes": [
+        "**По- and най- never change.** Bulgarian has no irregular comparatives like *good / better / best*. It simply attaches two prefixes to any adjective: *голям → по-голям → най-голям*. One system, no exceptions.",
+        "⚠️ **The hyphen is required, not decoration.** *По-голям* with a hyphen means \"bigger\"; *по голям* without one means nothing. The same goes for *най-*. It is the most common spelling mistake among learners — and among Bulgarians themselves in text messages.",
+        "⚠️ **По- and най- always carry the stress.** *ПО-голям*, *НАЙ-голям*. The adjective itself loses its main stress. If you say it without stressing the prefix, your comparison won't be heard.",
+        "**For \"than\", use от**, the same preposition as \"from\": *София е по-голяма от Пловдив.* If what follows is a clause, use *отколкото*: *По-лесно е, отколкото мислех.* (It's easier than I thought.)",
+        "**The най- form takes the definite article** — which makes sense, because \"the most\" is always specific. *Най-големият град* (the biggest city), *най-хубавата песен* (the nicest song). The article sits on the adjective, following the rule from Unit 12.",
+        "⚠️ **Много has an irregular comparative: повече.** Not *по-много*. Its opposite, *по-малко* (less, fewer), is regular. This is the only exception you need to memorize in the whole unit.",
+        "**To strengthen a comparison, put много in front**: *много по-топло* (much warmer), *много по-добре* (much better). It works exactly like \"much\" in English.",
+        "**Вече means \"already\" and goes before the verb.** *Вече разбирам* (I understand now), *Вече е късно* (it's already late). Its opposite is *още не* — not yet: *Още не разбирам.*"
+      ],
+      "grammars": [
+        {
+          "title": "Three degrees, two prefixes",
+          "body": [
+            "Works for adjectives and adverbs alike, with no difference in form."
+          ],
+          "table": {
+            "head": [
+              "Base",
+              "More",
+              "Most",
+              "English"
+            ],
+            "rows": [
+              [
+                "голям",
+                "**по-**голям",
+                "**най-**голям",
+                "big"
+              ],
+              [
+                "хубав",
+                "**по-**хубав",
+                "**най-**хубав",
+                "nice"
+              ],
+              [
+                "евтин",
+                "**по-**евтин",
+                "**най-**евтин",
+                "cheap"
+              ],
+              [
+                "добре",
+                "**по-**добре",
+                "**най-**добре",
+                "well"
+              ],
+              [
+                "бързо",
+                "**по-**бързо",
+                "**най-**бързо",
+                "fast"
+              ],
+              [
+                "много",
+                "**повече**",
+                "**най-много**",
+                "much, many"
+              ],
+              [
+                "малко",
+                "**по-малко**",
+                "**най-малко**",
+                "little, few"
+              ]
+            ]
+          },
+          "after": [
+            "The adjective still agrees with its noun as usual: *по-голям град*, *по-голяма къща*, *по-голямо дете*, *по-големи къщи*. The prefix *по-* changes nothing about that agreement.",
+            "⚠️ Don't mix up **по-добър** (adjective: better) and **по-добре** (adverb: better, in a better way). *Този филм е по-добър* (this film is better) versus *Говоря по-добре* (I speak better)."
+          ]
+        },
+        {
+          "title": "Comparing two things",
+          "body": [
+            "Four patterns that cover almost every everyday comparison."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Example",
+              "English"
+            ],
+            "rows": [
+              [
+                "A е по-X от B",
+                "София е по-голяма от Пловдив.",
+                "Sofia is bigger than Plovdiv."
+              ],
+              [
+                "A е най-X в …",
+                "София е най-големият град в България.",
+                "Sofia is the biggest city in Bulgaria."
+              ],
+              [
+                "A е толкова X, колкото B",
+                "Пловдив е толкова хубав, колкото София.",
+                "Plovdiv is as nice as Sofia."
+              ],
+              [
+                "A не е толкова X като B",
+                "Не е толкова студено като вчера.",
+                "It isn't as cold as yesterday."
+              ],
+              [
+                "повече / по-малко от",
+                "Има повече хора от вчера.",
+                "There are more people than yesterday."
+              ]
+            ]
+          },
+          "after": [
+            "The third and fourth patterns use the pair **толкова … колкото** — \"as … as\". For a more casual comparison, use **като** (like): *Той е висок като баща си.* (He is as tall as his father.)"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The most commonly compared adjectives",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bulgarian",
+            "Say it",
+            "English",
+            "Opposite",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "голям",
+              "go-LYAM",
+              "big",
+              "малък",
+              "MA-lăk",
+              "small"
+            ],
+            [
+              "дълъг",
+              "DĂ-lăg",
+              "long",
+              "къс",
+              "kăs",
+              "short"
+            ],
+            [
+              "висок",
+              "vee-SOK",
+              "tall, high",
+              "нисък",
+              "NEE-săk",
+              "low, short"
+            ],
+            [
+              "скъп",
+              "skăp",
+              "expensive",
+              "евтин",
+              "EV-teen",
+              "cheap"
+            ],
+            [
+              "нов",
+              "nov",
+              "new",
+              "стар",
+              "star",
+              "old"
+            ],
+            [
+              "бърз",
+              "bărz",
+              "fast",
+              "бавен",
+              "BA-ven",
+              "slow"
+            ],
+            [
+              "лесен",
+              "LEH-sen",
+              "easy",
+              "труден",
+              "TROO-den",
+              "difficult"
+            ],
+            [
+              "хубав",
+              "HOO-bav",
+              "good",
+              "лош",
+              "losh",
+              "bad"
+            ],
+            [
+              "топъл",
+              "TO-păl",
+              "warm",
+              "студен",
+              "stoo-DEN",
+              "cold"
+            ],
+            [
+              "близък",
+              "BLEE-zăk",
+              "near",
+              "далечен",
+              "da-LEH-chen",
+              "far"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice how many use a fleeting vowel in the masculine — *дълъг / дълга*, *нисък / ниска*, *лесен / лесна*, *топъл / топла*. If you're unsure of the feminine, drop the last vowel before the final consonant, then add **-а**."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Добър (good) is not the same as хубав (nice).** *Добър човек* means a good-hearted person; *хубав човек* means a good-looking one. Swapping them won't stop the conversation, but your compliment may miss the mark."
+        }
+      ]
+    },
+    {
+      "title": "Comparing Bulgaria with home",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The most useful exercise, and the one you'll need most often — because every Bulgarian will ask you about your country. Here is Ani's version."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bulgarian",
+            "English"
+          ],
+          "rows": [
+            [
+              "Индонезия е много по-голяма от България.",
+              "Indonesia is much bigger than Bulgaria."
+            ],
+            [
+              "В Индонезия има много повече хора.",
+              "There are far more people in Indonesia."
+            ],
+            [
+              "В София е по-студено, отколкото в Джакарта.",
+              "It's colder in Sofia than in Jakarta."
+            ],
+            [
+              "Храната тук е по-солена.",
+              "The food here is saltier."
+            ],
+            [
+              "Животът в София е по-евтин от живота в Джакарта.",
+              "Life in Sofia is cheaper than in Jakarta."
+            ],
+            [
+              "Най-трудното нещо е зимата.",
+              "The hardest thing is the winter."
+            ],
+            [
+              "Най-хубавото нещо са хората.",
+              "The best thing is the people."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last row shows something subtle: *най-хубавото нещо* is singular, but the verb is **са** (plural), because what follows is *хората*. Bulgarian makes the verb agree with the part that explains, not the part being explained. English would say \"is\" here, so just notice it — no need to worry."
+        },
+        {
+          "type": "kotak",
+          "title": "Useful numbers for this conversation",
+          "items": [
+            "Bulgaria has about **6.5 million** people and covers about 111,000 km² — roughly the size of Iceland or the US state of Tennessee.",
+            "Indonesia has about **280 million** people — more than forty times as many. The sentence: *Индонезия има четирийсет пъти повече хора от България.*",
+            "Sofia lies 550 meters above sea level, one of the highest capitals in Europe. The lowest temperature ever recorded in Bulgaria is **−38.3 °C**. Mention that number to anyone from the tropics and watch their face."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bg": "по-",
+      "baca": "po",
+      "en": "more (prefix)"
+    },
+    {
+      "bg": "най-",
+      "baca": "nai",
+      "en": "most (prefix)"
+    },
+    {
+      "bg": "повече",
+      "baca": "PO-veh-cheh",
+      "en": "more"
+    },
+    {
+      "bg": "по-малко",
+      "baca": "po-MAL-ko",
+      "en": "less, fewer"
+    },
+    {
+      "bg": "от",
+      "baca": "ot",
+      "en": "than; from"
+    },
+    {
+      "bg": "отколкото",
+      "baca": "ot-KOL-ko-to",
+      "en": "than (before a clause)"
+    },
+    {
+      "bg": "толкова",
+      "baca": "TOL-ko-va",
+      "en": "as, so (much)"
+    },
+    {
+      "bg": "като",
+      "baca": "ka-TO",
+      "en": "like, as"
+    },
+    {
+      "bg": "висок",
+      "baca": "vee-SOK",
+      "en": "tall, high"
+    },
+    {
+      "bg": "нисък",
+      "baca": "NEE-săk",
+      "en": "low, short"
+    },
+    {
+      "bg": "дълъг",
+      "baca": "DĂ-lăg",
+      "en": "long"
+    },
+    {
+      "bg": "къс",
+      "baca": "kăs",
+      "en": "short"
+    },
+    {
+      "bg": "лесен",
+      "baca": "LEH-sen",
+      "en": "easy"
+    },
+    {
+      "bg": "труден",
+      "baca": "TROO-den",
+      "en": "difficult"
+    },
+    {
+      "bg": "бърз",
+      "baca": "bărz",
+      "en": "fast"
+    },
+    {
+      "bg": "бавен",
+      "baca": "BA-ven",
+      "en": "slow"
+    },
+    {
+      "bg": "спокоен",
+      "baca": "spo-KO-en",
+      "en": "calm, quiet"
+    },
+    {
+      "bg": "модерен",
+      "baca": "mo-DEH-ren",
+      "en": "modern"
+    },
+    {
+      "bg": "лош",
+      "baca": "losh",
+      "en": "bad, ugly"
+    },
+    {
+      "bg": "добър",
+      "baca": "do-BĂR",
+      "en": "good"
+    },
+    {
+      "bg": "милион",
+      "baca": "mee-lee-ON",
+      "en": "million"
+    },
+    {
+      "bg": "около",
+      "baca": "O-ko-lo",
+      "en": "about, around"
+    },
+    {
+      "bg": "невероятно",
+      "baca": "neh-veh-ro-YAT-no",
+      "en": "incredible, unbelievable"
+    },
+    {
+      "bg": "вече",
+      "baca": "VEH-cheh",
+      "en": "already"
+    },
+    {
+      "bg": "живот",
+      "baca": "zhee-VOT",
+      "en": "life"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Form the comparative and the superlative.",
+      "items": [
+        "голям → ____ , ____",
+        "хубав → ____ , ____",
+        "евтин → ____ , ____",
+        "добре → ____ , ____",
+        "много → ____ , ____",
+        "труден → ____ , ____"
+      ]
+    },
+    {
+      "prompt": "Complete the sentences.",
+      "items": [
+        "София е ____-голяма ____ Пловдив.",
+        "Това е ____-хубавата песен.",
+        "В Джакарта има ____ хора. (more)",
+        "Днес е ____-студено ____ вчера.",
+        "Пловдив е ____-стар град в Европа. (most)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "е / по-голям / кой / град",
+        "град / най-големият / е / София",
+        "от / е / по-стар / Пловдив / София",
+        "по-топло / много / е",
+        "нещо / най-трудното / зимата / е"
+      ]
+    },
+    {
+      "prompt": "Translate into Bulgarian.",
+      "items": [
+        "Sofia is bigger than Plovdiv.",
+        "This is the nicest city in Bulgaria.",
+        "It's much warmer.",
+        "There are more people.",
+        "The hardest thing is the winter."
+      ]
+    }
+  ],
+  "answers": [
+    "по-голям, най-голям — по-хубав, най-хубав — по-евтин, най-евтин — по-добре, най-добре — повече, най-много — по-труден, най-труден",
+    "по, от — най — повече — по, от — най",
+    "Кой град е по-голям? — София е най-големият град. — Пловдив е по-стар от София. — Много по-топло е. — Най-трудното нещо е зимата.",
+    "София е по-голяма от Пловдив. — Това е най-хубавият град в България. — Много по-топло е. — Има повече хора. — Най-трудното нещо е зимата."
+  ]
+}

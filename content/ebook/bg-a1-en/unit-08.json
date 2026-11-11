@@ -1,0 +1,522 @@
+{
+  "title": "A language without \"to eat\"",
+  "title_target": "Искам да ям — Iskam da yam",
+  "goal": "Face Bulgarian's most surprising feature: there's no infinitive at all. Instead it uses **да** + a verb that still agrees with its subject — and once you're used to it, it's actually simpler.",
+  "bekal": [
+    "build sentences with **искам да**, **мога да**, **трябва да**",
+    "see that the second verb still changes for the subject",
+    "ask permission with **може ли да**",
+    "express necessity with no subject using **трябва да**",
+    "accept and turn down invitations politely"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Planning the weekend",
+      "intro": "Maria invites Ani on an outing. Count how many times **да** comes up, and notice that the verb after it never freezes — it always follows its subject.",
+      "lines": [
+        {
+          "speaker": "Мария:",
+          "text": "[Какво|Kak-VO] [искаш|EES-kash] [да|da] [правиш|PRA-veesh] [в|v] [събота|SĂ-bo-ta]?",
+          "id": "What do you want to do on Saturday?",
+          "literal": "what — want-you — that — do-you — on — Saturday?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Не|Neh] [знам|znam]. [Искам|EES-kam] [да|da] [видя|VEE-dya] [нещо|NESH-to] [ново|NO-vo].",
+          "id": "I don't know. I want to see something new.",
+          "literal": "not — know-I. want-I — that — see-I — something — new."
+        },
+        {
+          "speaker": "Мария:",
+          "text": "[Може|MO-zheh] [ли|lee] [да|da] [отидем|o-TEE-dem] [на|na] [Витоша|VEE-to-sha]? [Времето|VREH-meh-to] [ще|shteh] [е|eh] [хубаво|HOO-ba-vo].",
+          "id": "How about going to Vitosha? The weather will be nice.",
+          "literal": "may — (question) — that — go-we — to — Vitosha? weather-the — will — is — nice."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[С|S] [удоволствие|oo-do-VOL-stvee-eh]! [Но|No] [трябва|TRYAB-va] [да|da] [се|seh] [върна|VĂR-na] [до|do] [шест|shest].",
+          "id": "I'd love to! But I have to be back by six.",
+          "literal": "with — pleasure! but — must — that — myself — return-I — by — six."
+        },
+        {
+          "speaker": "Мария:",
+          "text": "[Няма|NYA-ma] [проблем|prob-LEM]. [Можем|MO-zhem] [да|da] [тръгнем|TRĂG-nem] [рано|RA-no].",
+          "id": "No problem. We can set off early.",
+          "literal": "there-isn't — problem. can-we — that — set-off-we — early."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Трябва|TRYAB-va] [ли|lee] [да|da] [взема|VZEH-ma] [нещо|NESH-to]?",
+          "id": "Do I need to bring anything?",
+          "literal": "must — (question) — that — take-I — something?"
+        },
+        {
+          "speaker": "Мария:",
+          "text": "[Вода|Vo-DA] [и|ee] [яке|YA-keh]. [Горе|GO-reh] [може|MO-zheh] [да|da] [е|eh] [студено|stoo-DEH-no].",
+          "id": "Water and a jacket. It can get cold up there.",
+          "literal": "water — and — jacket. up-there — may — that — is — cold."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Добре|Dob-REH]. [Обичам|O-bee-cham] [да|da] [ходя|HO-dya] [в|v] [планината|pla-nee-NA-ta].",
+          "id": "OK. I love walking in the mountains.",
+          "literal": "fine. love-I — that — walk-I — in — mountain-the."
+        },
+        {
+          "speaker": "Мария:",
+          "text": "[Аз|Az] [също|SĂSH-to]. [Значи|ZNA-chee] [в|v] [събота|SĂ-bo-ta] [в|v] [осем|O-sem] [пред|pred] [хотела|ho-TEH-lă]?",
+          "id": "Me too. So Saturday at eight in front of the hotel?",
+          "literal": "I — also. means — on — Saturday — at — eight — in-front-of — hotel-the?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Разбрахме|Raz-BRAH-meh] [се|seh]!",
+          "id": "It's a deal!",
+          "literal": "understood-we — each-other!"
+        }
+      ],
+      "notes": [
+        "**Bulgarian has no infinitive — none at all.** There's no single form meaning just \"to eat\", like English *to eat* or German *essen*. There are only forms that already agree with a subject. To say \"I want to eat\", the language says **искам да ям** — literally \"I-want that I-eat\". Two verbs, both changing for the subject.",
+        "⚠️ **The second verb changes too, and this is the biggest trap in this unit.** *Искам да ям* (I want to eat) but *Искаш да ядеш* (you want to eat) and *Той иска да яде* (he wants to eat). English speakers automatically freeze the second verb, because in English \"to eat\" never changes. Here both verbs have to match.",
+        "**Да doesn't mean \"yes\" here.** On its own *да* does mean \"yes\", but inside a sentence like this it works like \"that\" or English \"to\". Two jobs, one word — and Bulgarian ears never get confused, because the position is different.",
+        "**Трябва never changes form.** It's always *трябва*, whoever the subject is: *трябва да отида* (I have to go), *трябва да отидеш* (you have to go). The second verb carries the information about who. ⚠️ Saying *трябвам да…* is a very typical beginner's mistake.",
+        "**Може ли да… is the most common way to ask permission.** *Може ли да платя с карта?* (Can I pay by card?), *Може ли да седна?* (May I sit down?). On its own, **Може ли?** already means \"may I?\" or \"excuse me\" and can be used to call a waiter.",
+        "**Може also means \"maybe, it may\".** *Може да е студено* — it may be cold. Tone and context tell it apart from \"may I\".",
+        "**Разбрахме се literally means \"we've understood each other\" and it means \"deal, OK\".** A very common way to seal an agreement. The short form for one person: *Разбрано!* (got it, will do).",
+        "**С удоволствие — \"with pleasure\" — is always the right way to accept an invitation.** If you want to decline gently: *За съжаление не мога* (unfortunately I can't)."
+      ],
+      "grammars": [
+        {
+          "title": "The да pattern — the structure that replaces the infinitive",
+          "body": [
+            "The structure is always the same: the first verb agrees with the subject, then **да**, then the second verb, which agrees with the same subject."
+          ],
+          "table": {
+            "head": [
+              "Bulgarian",
+              "Say it",
+              "Literally",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Искам да ям.",
+                "EES-kam da yam",
+                "I-want that I-eat",
+                "I want to eat."
+              ],
+              [
+                "Искаш да ядеш.",
+                "EES-kash da ya-DESH",
+                "you-want that you-eat",
+                "You want to eat."
+              ],
+              [
+                "Той иска да яде.",
+                "toy EES-ka da YA-deh",
+                "he-wants that he-eats",
+                "He wants to eat."
+              ],
+              [
+                "Мога да говоря.",
+                "MO-ga da go-VO-rya",
+                "I-can that I-speak",
+                "I can speak."
+              ],
+              [
+                "Трябва да работим.",
+                "TRYAB-va da ra-BO-teem",
+                "must that we-work",
+                "We have to work."
+              ],
+              [
+                "Обичам да чета.",
+                "o-BEE-cham da cheh-TA",
+                "I-love that I-read",
+                "I like reading."
+              ]
+            ]
+          },
+          "after": [
+            "To make it negative, put **не** in front of the **first** verb: *Не искам да ям* (I don't want to eat). If *не* goes after *да*, the negation moves to the second verb: *Искам да не ям* — I want not to eat. The difference is real, so watch the position.",
+            "Little words like *се, ми, го* stand **between да and the verb**: *трябва да **се** върна* (I have to get back), *искам да **ти** кажа* (I want to tell you)."
+          ]
+        },
+        {
+          "title": "The words most often followed by да",
+          "body": [
+            "Learn these and you can build hundreds of sentences today."
+          ],
+          "table": {
+            "head": [
+              "Word",
+              "Say it",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "искам да",
+                "EES-kam da",
+                "I want to",
+                "Искам да пътувам."
+              ],
+              [
+                "мога да",
+                "MO-ga da",
+                "I can",
+                "Не мога да дойда."
+              ],
+              [
+                "трябва да",
+                "TRYAB-va da",
+                "must, have to (never changes)",
+                "Трябва да тръгвам."
+              ],
+              [
+                "може ли да",
+                "MO-zheh lee da",
+                "may I (asking permission)",
+                "Може ли да седна?"
+              ],
+              [
+                "обичам да",
+                "o-BEE-cham da",
+                "I like to",
+                "Обичам да готвя."
+              ],
+              [
+                "започвам да",
+                "za-POCH-vam da",
+                "I begin to",
+                "Започвам да разбирам."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Мога is irregular**: *мога, можеш, може, можем, можете, могат*. Notice that the \"I\" form has **г** while the rest have **ж**. It's the most frequent verb after *съм*, so learn it now."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Accepting, declining, and negotiating a time",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bulgarian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "С удоволствие!",
+              "s oo-do-VOL-stvee-eh",
+              "With pleasure!"
+            ],
+            [
+              "Разбира се!",
+              "raz-BEE-ra seh",
+              "Of course!"
+            ],
+            [
+              "Добра идея.",
+              "dob-RA ee-DEH-ya",
+              "Good idea."
+            ],
+            [
+              "Защо не?",
+              "zash-TO neh",
+              "Why not?"
+            ],
+            [
+              "За съжаление не мога.",
+              "za să-zha-LEH-nee-eh neh MO-ga",
+              "Unfortunately I can't."
+            ],
+            [
+              "Може би друг път.",
+              "MO-zheh bee droog păt",
+              "Maybe another time."
+            ],
+            [
+              "Имам друга работа.",
+              "EE-mam DROO-ga ra-BO-ta",
+              "I have something else on."
+            ],
+            [
+              "Може ли по-късно?",
+              "MO-zheh lee po-KĂS-no",
+              "Can we make it later?"
+            ],
+            [
+              "Трябва да помисля.",
+              "TRYAB-va da po-MEES-lya",
+              "I need to think about it."
+            ],
+            [
+              "Разбрахме се.",
+              "raz-BRAH-meh seh",
+              "It's a deal."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Turning down an invitation with a bare *Не* sounds sharp in Bulgaria. Always add a reason or an alternative — *За съжаление не мога, но може ли в неделя?* (Unfortunately I can't, but how about Sunday?)"
+        }
+      ]
+    },
+    {
+      "title": "Витоша — the mountain on the capital's doorstep",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This unit's dialogue mentions **Витоша**, and that's no random choice. Sofia is one of the few capitals in the world with a 2,290-meter mountain right at the city limits. From the center, buses and a cable car take you to stone fields and pine forests in less than an hour."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bulgarian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "планина",
+              "pla-nee-NA",
+              "mountain"
+            ],
+            [
+              "връх",
+              "vrăh",
+              "peak"
+            ],
+            [
+              "пътека",
+              "pă-TEH-ka",
+              "path, trail"
+            ],
+            [
+              "хижа",
+              "HEE-zha",
+              "mountain hut"
+            ],
+            [
+              "лифт",
+              "leeft",
+              "chairlift, cable car"
+            ],
+            [
+              "яке",
+              "YA-keh",
+              "jacket"
+            ],
+            [
+              "раница",
+              "RA-nee-tsa",
+              "backpack"
+            ],
+            [
+              "на разходка",
+              "na raz-HOD-ka",
+              "for a walk"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "If you want one sentence to start a conversation with any Bulgarian, try: *Обичам да ходя на планина.* (I love going to the mountains.) Almost everyone here has a mountain story, and many have strong opinions about which trail is best."
+        },
+        {
+          "type": "kotak",
+          "title": "Мартеница — the red-and-white bracelet",
+          "items": [
+            "If you're in Bulgaria in March, everyone suddenly wears a little red-and-white string on their wrist or collar. It's called a **мартеница** (*MAR-teh-nee-tsa*), and people give them to each other on March 1, saying *Честита Баба Марта!*",
+            "The rule: you wear it until you see a stork or a tree in blossom, then tie it to a branch of that tree. Red stands for health and the blood of life; white for long life.",
+            "If a Bulgarian gives you one, it's a sign you've been accepted into their circle. Take it, wear it, and don't forget to tie it to a tree."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bg": "да",
+      "baca": "da",
+      "en": "that, to (links two verbs)"
+    },
+    {
+      "bg": "искам",
+      "baca": "EES-kam",
+      "en": "I want"
+    },
+    {
+      "bg": "мога",
+      "baca": "MO-ga",
+      "en": "I can"
+    },
+    {
+      "bg": "трябва",
+      "baca": "TRYAB-va",
+      "en": "must, have to, need to"
+    },
+    {
+      "bg": "може",
+      "baca": "MO-zheh",
+      "en": "may; maybe"
+    },
+    {
+      "bg": "знам",
+      "baca": "znam",
+      "en": "I know"
+    },
+    {
+      "bg": "видя",
+      "baca": "VEE-dya",
+      "en": "I see (once, completed)"
+    },
+    {
+      "bg": "отида",
+      "baca": "o-TEE-da",
+      "en": "I go (once, completed)"
+    },
+    {
+      "bg": "тръгвам",
+      "baca": "TRĂG-vam",
+      "en": "I set off, I leave"
+    },
+    {
+      "bg": "връщам се",
+      "baca": "VRĂSH-tam seh",
+      "en": "I come back, I return"
+    },
+    {
+      "bg": "взема",
+      "baca": "VZEH-ma",
+      "en": "I take"
+    },
+    {
+      "bg": "ходя",
+      "baca": "HO-dya",
+      "en": "I walk, I go (regularly)"
+    },
+    {
+      "bg": "планина",
+      "baca": "pla-nee-NA",
+      "en": "mountain"
+    },
+    {
+      "bg": "събота",
+      "baca": "SĂ-bo-ta",
+      "en": "Saturday"
+    },
+    {
+      "bg": "неделя",
+      "baca": "neh-DEH-lya",
+      "en": "Sunday"
+    },
+    {
+      "bg": "рано",
+      "baca": "RA-no",
+      "en": "early"
+    },
+    {
+      "bg": "късно",
+      "baca": "KĂS-no",
+      "en": "late"
+    },
+    {
+      "bg": "ново",
+      "baca": "NO-vo",
+      "en": "new (n)"
+    },
+    {
+      "bg": "яке",
+      "baca": "YA-keh",
+      "en": "jacket"
+    },
+    {
+      "bg": "също",
+      "baca": "SĂSH-to",
+      "en": "also, too"
+    },
+    {
+      "bg": "с удоволствие",
+      "baca": "s oo-do-VOL-stvee-eh",
+      "en": "with pleasure"
+    },
+    {
+      "bg": "за съжаление",
+      "baca": "za să-zha-LEH-nee-eh",
+      "en": "unfortunately"
+    },
+    {
+      "bg": "разбира се",
+      "baca": "raz-BEE-ra seh",
+      "en": "of course"
+    },
+    {
+      "bg": "идея",
+      "baca": "ee-DEH-ya",
+      "en": "idea"
+    },
+    {
+      "bg": "разходка",
+      "baca": "raz-HOD-ka",
+      "en": "walk, stroll"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change the second verb to match the subject.",
+      "items": [
+        "Искам да ____ български. (уча)",
+        "Ти искаш да ____ вода. (пия)",
+        "Той трябва да ____ рано. (тръгна)",
+        "Ние можем да ____ утре. (дойда)",
+        "Те обичат да ____. (чета)",
+        "Вие искате ли да ____? (платя)"
+      ]
+    },
+    {
+      "prompt": "Translate into Bulgarian.",
+      "items": [
+        "I want to eat.",
+        "Can you speak slowly? (informal)",
+        "We have to go back.",
+        "May I sit down?",
+        "He likes reading."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "да / искам / нещо / видя / ново",
+        "се / трябва / да / върна",
+        "ли / да / може / отидем",
+        "обичам / планината / да / в / ходя",
+        "мога / за съжаление / не"
+      ]
+    },
+    {
+      "prompt": "Make these sentences negative, putting не in the right place.",
+      "items": [
+        "Искам да ям. ____",
+        "Мога да дойда. ____",
+        "Трябва да работя днес. ____",
+        "Той иска да пътува. ____",
+        "Обичаме да ставаме рано. ____"
+      ]
+    }
+  ],
+  "answers": [
+    "уча — пиеш — тръгне — дойдем — четат — платите",
+    "Искам да ям. — Можеш ли да говориш бавно? — Трябва да се върнем. — Може ли да седна? — Той обича да чете.",
+    "Искам да видя нещо ново. — Трябва да се върна. — Може ли да отидем? — Обичам да ходя в планината. — За съжаление не мога.",
+    "Не искам да ям. — Не мога да дойда. — Не трябва да работя днес. — Той не иска да пътува. — Не обичаме да ставаме рано."
+  ]
+}

@@ -1,0 +1,665 @@
+{
+  "title": "Hand and day",
+  "title_target": "Manus et dies",
+  "goal": "Complete all five noun groups with the fourth and fifth declensions, then express time in two different ways.",
+  "bekal": [
+    "recognize *manus* and *dies* as groups of their own, not spelling mistakes",
+    "tell \"when\" from \"how long\" by the form of the noun",
+    "name seasons, months, and dates the Roman way"
+  ],
+  "dialogs": [
+    {
+      "title": "Colloquium — In villa, quinque dies",
+      "intro": "Day two at the farmhouse. The weather is lovely, and everyone has an opinion about the seasons.",
+      "lines": [
+        {
+          "speaker": "Marcus:",
+          "text": "Quot dies in villa manebimus?",
+          "id": "How many days will we stay here?",
+          "literal": "how-many day-pl-obj in house-in stay-we-will?"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Quinque dies. Post quinque dies domum redibimus.",
+          "id": "Five days. After five days we'll go home.",
+          "literal": "five day-pl-obj. after five day-pl-obj home-obj return-we-will."
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Quo tempore anni villa pulcherrima est?",
+          "id": "In which season is the farmhouse most beautiful?",
+          "literal": "which time-in year-of house most-beautiful-fem is-it?"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Vere et autumno. Aestate nimis calidum est.",
+          "id": "In spring and autumn. In summer it's too hot.",
+          "literal": "spring-in and autumn-in. summer-in too hot-neut is-it."
+        },
+        {
+          "speaker": "Cornelia:",
+          "text": "Hieme frigidum est, sed ignis in casa bonus est.",
+          "id": "In winter it's cold, but a fire in the cottage is nice.",
+          "literal": "winter-in cold-neut is-it, but fire in cottage-in good-masc is-it."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Manus meae frigidae sunt iam nunc!",
+          "id": "My hands are cold already!",
+          "literal": "hand-pl my-pl cold-pl are-they already now!"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Duas horas in aqua natabas, Marce!",
+          "id": "You were swimming for two hours, Marcus!",
+          "literal": "two-obj hour-pl-obj in water-in swim-you-was, Marcus-call!"
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Pater, quae res est quam portas?",
+          "id": "Father, what's that you're carrying?",
+          "literal": "father-call, what thing is-it which-obj carry-you?"
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Fructus sunt. Ex arboribus cepi.",
+          "id": "Fruit. I picked it from the trees.",
+          "literal": "fruit-pl are-they. from tree-pl-from take-I-did."
+        },
+        {
+          "speaker": "Cornelia:",
+          "text": "Bonum est. Spes mea est: cras pluviam non videbimus.",
+          "id": "Good. My hope is that we won't see rain tomorrow.",
+          "literal": "good-neut is-it. hope my-fem is-it: tomorrow rain-obj not see-we-will."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Fides mea in caelo est! Sol lucet.",
+          "id": "I trust the sky! The sun is shining.",
+          "literal": "trust my-fem in sky-in is-it! sun shine-it."
+        },
+        {
+          "speaker": "Quintus:",
+          "text": "Bene. Hodie fortuna nobiscum est.",
+          "id": "Good. Today fortune is on our side.",
+          "literal": "well. today fortune with-us is-it."
+        }
+      ],
+      "notes": [
+        "**Manus ends in -us, but it isn't second declension.** Compare *hortus, horti* (group two) with *manus, manus* (group four). As always, the \"of\" form tells them apart. If you treat *manus* as group two, you'll write *mani*, which doesn't exist in Latin.",
+        "**Vere, aestate, hieme, autumno — seasons use the with/in form.** To say when something happens, Latin uses the with/in form with no preposition at all: *hieme* (\"in winter\"), *nocte* (\"at night\"), *hora prima* (\"at the first hour\").",
+        "**Duas horas natabas — \"how long\" uses the object form.** Note the difference from the note above. *Hora prima* means \"at the first hour\"; *duas horas* means \"for two hours\". One question asks for a point in time, the other for its length, and Latin uses two different forms for them.",
+        "**Res, spes, fides — three big words from the fifth group.** This group has the fewest members but contains some of the most quoted words: *res* (thing, matter), *spes* (hope), *fides* (trust, loyalty), and *dies* (day). From *res* comes *res publica* — \"the public matter\" — which became the word *republic*."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The fourth and fifth declensions",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These last two groups have few words, but the words are common. Both are easy to spot by their \"of\" form: *-us* for group four, *-ei* for group five."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Job",
+            "IV: manus, manus",
+            "IV neuter: cornu",
+            "V: dies, diei",
+            "V: res, rei"
+          ],
+          "rows": [
+            [
+              "subject",
+              "manus",
+              "cornu",
+              "dies",
+              "res"
+            ],
+            [
+              "object",
+              "man**um**",
+              "cornu",
+              "di**em**",
+              "r**em**"
+            ],
+            [
+              "of",
+              "man**us**",
+              "corn**us**",
+              "di**ei**",
+              "r**ei**"
+            ],
+            [
+              "to",
+              "man**ui**",
+              "cornu",
+              "di**ei**",
+              "r**ei**"
+            ],
+            [
+              "with/in",
+              "man**u**",
+              "cornu",
+              "di**e**",
+              "r**e**"
+            ],
+            [
+              "subject pl",
+              "man**us**",
+              "corn**ua**",
+              "di**es**",
+              "r**es**"
+            ],
+            [
+              "object pl",
+              "man**us**",
+              "corn**ua**",
+              "di**es**",
+              "r**es**"
+            ],
+            [
+              "of pl",
+              "man**uum**",
+              "corn**uum**",
+              "di**erum**",
+              "r**erum**"
+            ],
+            [
+              "to, with/in pl",
+              "man**ibus**",
+              "corn**ibus**",
+              "di**ebus**",
+              "r**ebus**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Manus* uses the same form for four different jobs — subject singular, \"of\" singular, subject plural, and object plural. That sounds scary, but in real sentences it's never a problem: the verbs and adjectives around it always tell you which one it is."
+        },
+        {
+          "type": "sub",
+          "text": "Words you need to know"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Declension IV",
+            "Meaning",
+            "Declension V",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "manus, manus",
+              "hand; band of troops",
+              "dies, diei",
+              "day"
+            ],
+            [
+              "exercitus, exercitus",
+              "army",
+              "res, rei",
+              "thing, matter, property"
+            ],
+            [
+              "fructus, fructus",
+              "fruit, profit",
+              "spes, spei",
+              "hope"
+            ],
+            [
+              "senatus, senatus",
+              "senate",
+              "fides, fidei",
+              "trust, loyalty"
+            ],
+            [
+              "portus, portus",
+              "harbor",
+              "acies, aciei",
+              "battle line"
+            ],
+            [
+              "adventus, adventus",
+              "arrival",
+              "species, speciei",
+              "appearance, kind"
+            ],
+            [
+              "metus, metus",
+              "fear",
+              "",
+              ""
+            ],
+            [
+              "cornu, cornus",
+              "horn; wing of an army",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Domus* (\"house\") is a mix: some of its forms are group four, some group two. For now just learn its three frozen forms you've used since Unit 5: *domi* (at home), *domum* (home, homeward), *domo* (from home)."
+        }
+      ]
+    },
+    {
+      "title": "When and how long",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Two questions about time are answered with two different forms, and neither uses a preposition."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Form",
+            "Example",
+            "Translation"
+          ],
+          "rows": [
+            [
+              "**quando?** when",
+              "with/in",
+              "hora prima",
+              "at the first hour"
+            ],
+            [
+              "",
+              "",
+              "nocte",
+              "at night"
+            ],
+            [
+              "",
+              "",
+              "hieme",
+              "in winter"
+            ],
+            [
+              "",
+              "",
+              "eo tempore",
+              "at that time"
+            ],
+            [
+              "",
+              "",
+              "tertio die",
+              "on the third day"
+            ],
+            [
+              "**quam diu?** how long",
+              "object",
+              "duas horas",
+              "for two hours"
+            ],
+            [
+              "",
+              "",
+              "multos annos",
+              "for many years"
+            ],
+            [
+              "",
+              "",
+              "totam noctem",
+              "all night long"
+            ],
+            [
+              "",
+              "",
+              "tres dies",
+              "for three days"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Seasons, months, and days"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Latin",
+            "Meaning",
+            "Latin",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ver, veris",
+              "spring",
+              "vere",
+              "in spring"
+            ],
+            [
+              "aestas, aestatis",
+              "summer",
+              "aestate",
+              "in summer"
+            ],
+            [
+              "autumnus, autumni",
+              "autumn",
+              "autumno",
+              "in autumn"
+            ],
+            [
+              "hiems, hiemis",
+              "winter",
+              "hieme",
+              "in winter"
+            ],
+            [
+              "Ianuarius, Februarius",
+              "January, February",
+              "Martius, Aprilis",
+              "March, April"
+            ],
+            [
+              "Maius, Iunius",
+              "May, June",
+              "Iulius, Augustus",
+              "July, August"
+            ],
+            [
+              "September, October",
+              "September, October",
+              "November, December",
+              "November, December"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Roman dates were counted backward from three fixed points each month: the *Kalendae* (the 1st), the *Nonae* (the 5th or 7th), and the *Idus* (the 13th or 15th). *Idus Martiae* — the Ides of March, the day Caesar was killed — is March 15. This countdown system is complicated and isn't practiced in this book, but the three names are worth knowing because they come up often."
+        }
+      ]
+    },
+    {
+      "title": "Res: one word, ten meanings",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "*Res* is the most flexible word in Latin. It means \"thing\", but what it refers to depends on the words around it, and many of these phrases are still alive today."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Phrase",
+            "Literal",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "res publica",
+              "public thing",
+              "state, republic"
+            ],
+            [
+              "res gestae",
+              "things done",
+              "record of deeds, history"
+            ],
+            [
+              "rerum natura",
+              "the nature of things",
+              "the universe"
+            ],
+            [
+              "res novae",
+              "new things",
+              "rebellion, revolution"
+            ],
+            [
+              "res familiaris",
+              "household thing",
+              "family property"
+            ],
+            [
+              "in medias res",
+              "into the middle of things",
+              "straight to the point"
+            ],
+            [
+              "rebus sic stantibus",
+              "with things standing thus",
+              "as long as circumstances don't change"
+            ],
+            [
+              "res ipsa loquitur",
+              "the thing speaks for itself",
+              "it's self-evident"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at *res novae*. To a Roman, \"new things\" was not praise but an accusation: people who wanted *res novae* wanted to turn the order upside down. The word *revolution* still carries that tension today."
+        },
+        {
+          "type": "kotak",
+          "title": "Four time phrases worth memorizing",
+          "items": [
+            "*hoc tempore* — at this time. *illo tempore* — at that time.",
+            "*multos annos* — for many years. *paucos dies* — for a few days.",
+            "*in dies* — day by day, more and more.",
+            "*ad tempus* — for the time being. *ante tempus* — before its time."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "la": "manus, manus",
+      "baca": "MAH-noos",
+      "en": "hand; band, group"
+    },
+    {
+      "la": "fructus, fructus",
+      "baca": "FROOK-toos",
+      "en": "fruit, profit"
+    },
+    {
+      "la": "exercitus, exercitus",
+      "baca": "ehk-SEHR-kee-toos",
+      "en": "army"
+    },
+    {
+      "la": "senatus, senatus",
+      "baca": "seh-NAH-toos",
+      "en": "senate"
+    },
+    {
+      "la": "portus, portus",
+      "baca": "POHR-toos",
+      "en": "harbor"
+    },
+    {
+      "la": "metus, metus",
+      "baca": "MEH-toos",
+      "en": "fear"
+    },
+    {
+      "la": "adventus, adventus",
+      "baca": "ahd-WEHN-toos",
+      "en": "arrival"
+    },
+    {
+      "la": "cornu, cornus",
+      "baca": "KOHR-noo",
+      "en": "horn"
+    },
+    {
+      "la": "dies, diei",
+      "baca": "DEE-ehs",
+      "en": "day"
+    },
+    {
+      "la": "res, rei",
+      "baca": "REHS",
+      "en": "thing, matter, property"
+    },
+    {
+      "la": "spes, spei",
+      "baca": "SPEHS",
+      "en": "hope"
+    },
+    {
+      "la": "fides, fidei",
+      "baca": "FEE-dehs",
+      "en": "trust, loyalty"
+    },
+    {
+      "la": "ver, veris",
+      "baca": "WEHR",
+      "en": "spring"
+    },
+    {
+      "la": "aestas, aestatis",
+      "baca": "EYES-tahs",
+      "en": "summer"
+    },
+    {
+      "la": "autumnus, autumni",
+      "baca": "ow-TOOM-noos",
+      "en": "autumn"
+    },
+    {
+      "la": "hiems, hiemis",
+      "baca": "HEE-ehms",
+      "en": "winter"
+    },
+    {
+      "la": "ignis, ignis",
+      "baca": "IG-nis",
+      "en": "fire"
+    },
+    {
+      "la": "pluvia, pluviae",
+      "baca": "PLOO-wee-ah",
+      "en": "rain"
+    },
+    {
+      "la": "nix, nivis",
+      "baca": "NIKS",
+      "en": "snow"
+    },
+    {
+      "la": "sol, solis",
+      "baca": "SOHL",
+      "en": "sun"
+    },
+    {
+      "la": "umbra, umbrae",
+      "baca": "OOM-brah",
+      "en": "shadow, shade"
+    },
+    {
+      "la": "arbor, arboris",
+      "baca": "AHR-bohr",
+      "en": "tree"
+    },
+    {
+      "la": "luceo, lucere",
+      "baca": "LOO-keh-oh",
+      "en": "to shine"
+    },
+    {
+      "la": "maneo, manere, mansi",
+      "baca": "MAH-neh-oh",
+      "en": "to stay, to last"
+    },
+    {
+      "la": "nimis",
+      "baca": "NEE-mis",
+      "en": "too, too much"
+    },
+    {
+      "la": "adhuc",
+      "baca": "AHD-hook",
+      "en": "until now, still"
+    },
+    {
+      "la": "Kalendae, Idus",
+      "baca": "kah-LEHN-dye, EE-doos",
+      "en": "first of the month, mid-month"
+    },
+    {
+      "la": "tempus, temporis",
+      "baca": "TEHM-poos",
+      "en": "time"
+    },
+    {
+      "la": "annus, anni",
+      "baca": "AHN-noos",
+      "en": "year"
+    },
+    {
+      "la": "mensis, mensis",
+      "baca": "MEHN-sis",
+      "en": "month"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the singular \"of\" form, then name its group.",
+      "items": [
+        "manus",
+        "dies",
+        "hortus",
+        "res",
+        "fructus",
+        "spes"
+      ]
+    },
+    {
+      "prompt": "Choose: with/in form (when) or object form (how long).",
+      "items": [
+        "____ natabam. (two hours)",
+        "____ frigidum est. (in winter)",
+        "____ in villa mansimus. (five days)",
+        "____ exibimus. (at the first hour)",
+        "____ Romae habitavi. (for many years)",
+        "____ dormimus. (at night)"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the form asked for.",
+      "items": [
+        "____ meae frigidae sunt. (manus, subject pl)",
+        "Spes ____ magna est. (res, of)",
+        "Post quinque ____ redibimus. (dies, object pl)",
+        "In ____ multi milites sunt. (exercitus, with/in)",
+        "____ ex arboribus cepi. (fructus, object pl)",
+        "De ____ publica dicimus. (res, with/in)"
+      ]
+    },
+    {
+      "prompt": "Translate into Latin.",
+      "items": [
+        "We will stay for five days.",
+        "In summer it's too hot.",
+        "My hands are cold.",
+        "My hope is great.",
+        "On the third day we go home.",
+        "We are talking about the republic."
+      ]
+    }
+  ],
+  "answers": [
+    "manus, IV — diei, V — horti, II — rei, V — fructus, IV — spei, V",
+    "Duas horas — Hieme — Quinque dies — Hora prima — Multos annos — Nocte",
+    "Manus — rei — dies — exercitu — Fructus — re",
+    "Quinque dies manebimus. — Aestate nimis calidum est. — Manus meae frigidae sunt. — Spes mea magna est. — Tertio die domum redimus. — De re publica dicimus."
+  ]
+}

@@ -1,0 +1,621 @@
+{
+  "title": "What's this? — things, articles, and numbers",
+  "title_target": "Hau zer da?",
+  "goal": "Name the things around you, use the article -a and the plural -ak, point with hau/hori/hura, and count to twenty.",
+  "bekal": [
+    "stick *-a* and *-ak* onto the end of a noun — a \"the\" that goes at the back",
+    "tell *hau*, *hori*, *hura* apart — three pointing distances, like \"this, that, that over there\"",
+    "count from zero to twenty and ask *zenbat?*"
+  ],
+  "dialogs": [
+    {
+      "title": "Elkarrizketa — Gela berria",
+      "intro": "Ainhoa shows Budi his room in an apartment near the euskaltegi.",
+      "lines": [
+        {
+          "speaker": "Ainhoa:",
+          "text": "Hau zure gela da. Handia da, ezta?",
+          "id": "This is your room. It's big, isn't it?",
+          "literal": "this your room-the is. big-the is, not-so?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bai, oso handia. Eta hori zer da?",
+          "id": "Yes, very big. And what's that?",
+          "literal": "yes, very big-the. and that what is?"
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Hori mahaia da. Eta hau aulkia.",
+          "id": "That's the table. And this is the chair.",
+          "literal": "that table-the is. and this chair-the."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aulki bat bakarrik?",
+          "id": "Only one chair?",
+          "literal": "chair one only?"
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Ez, bi aulki daude. Bestea han dago.",
+          "id": "No, there are two chairs. The other one is over there.",
+          "literal": "no, two chair are(located). other-the there is(located)."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ados. Eta liburu horiek zer dira?",
+          "id": "OK. And what are those books?",
+          "literal": "agreed. and book those what are?"
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Euskarazko liburuak dira. Zuretzat.",
+          "id": "They're books in Basque. For you.",
+          "literal": "Basque-in-of book-the(pl) are. you-for."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eskerrik asko! Zenbat liburu dira?",
+          "id": "Thank you! How many books are there?",
+          "literal": "thanks many! how-many book are?"
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Hamar liburu eta hiztegi bat.",
+          "id": "Ten books and a dictionary.",
+          "literal": "ten book and dictionary one."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hiztegia berria da?",
+          "id": "Is the dictionary new?",
+          "literal": "dictionary-the new-the is?"
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Bai, berri-berria. Gela polita da, ezta?",
+          "id": "Yes, brand-new. It's a nice room, isn't it?",
+          "literal": "yes, new-new-the. room-the pretty-the is, not-so?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bai, oso polita. Hemen gustura nago.",
+          "id": "Yes, very nice. I feel at home here.",
+          "literal": "yes, very pretty-the. here comfortable am(located)."
+        }
+      ],
+      "notes": [
+        "**Ezta? means \"isn't it?\" / \"right?\".** Tacked onto the end of a sentence to ask for agreement. It comes from *ez da* (\"it isn't\"), but it's now one word and never changes — unlike English tags (isn't it, don't you, aren't they), it works for any sentence.",
+        "**Numbers go first — except one.** *Hamar liburu* (ten books), *bi aulki* (two chairs) — the number comes first. But *bat* (\"one\") goes after: *aulki bat*, *hiztegi bat*. That's because *bat* also works as \"a/an\", and markers of indefiniteness always come last in this language.",
+        "**Counted nouns don't take the plural.** *Hamar liburu*, not *hamar liburuak* — literally \"ten book\". Unlike English, once the number is there, the noun stays bare.",
+        "**Berri-berria — doubling for emphasis.** Basque doubles an adjective to mean \"very\": *berri-berria* (brand-new), *bete-betea* (full to the brim), *goxo-goxoa* (really delicious). Think of English \"a big, big house\" — except in Basque it's a fixed pattern."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The article: an -a that sticks",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This is the first rule you really need to master, and the good news is that it's completely regular. Nouns in the dictionary stand bare — *etxe*, *liburu*, *mahai*. As soon as one is used in a sentence as a specific thing, it gets *-a* on its tail."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Dictionary word",
+            "+ article",
+            "+ plural",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "etxe",
+              "etxe**a**",
+              "etxe**ak**",
+              "house → the house → the houses"
+            ],
+            [
+              "liburu",
+              "liburu**a**",
+              "liburu**ak**",
+              "book → the book → the books"
+            ],
+            [
+              "mahai",
+              "mahai**a**",
+              "mahai**ak**",
+              "table → the table → the tables"
+            ],
+            [
+              "gizon",
+              "gizon**a**",
+              "gizon**ak**",
+              "man → the man → the men"
+            ],
+            [
+              "neska",
+              "neska",
+              "neska**k**",
+              "girl → the girl → the girls"
+            ],
+            [
+              "ur",
+              "ur**a**",
+              "—",
+              "water → the water"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The *neska* row shows the one exception you need to remember: a word that **already** ends in *-a* doesn't add another *-a*. *Neska* means both \"girl\" and \"the girl\"; the plural is just *neskak*. There are lots of words like this — *ama* (mother), *alaba* (daughter), *hizkuntza* (language)."
+        },
+        {
+          "type": "sub",
+          "text": "Adjectives go after the noun, and the article moves there too"
+        },
+        {
+          "type": "p",
+          "text": "If there's an adjective, it comes **after** the noun — and *-a* moves to the end of the whole group, sticking to the adjective."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Literally",
+            "English"
+          ],
+          "rows": [
+            [
+              "etxe **handia**",
+              "house big-the",
+              "the big house"
+            ],
+            [
+              "liburu **berria**",
+              "book new-the",
+              "the new book"
+            ],
+            [
+              "kotxe **gorriak**",
+              "car red-the(pl)",
+              "the red cars"
+            ],
+            [
+              "gela **txiki bat**",
+              "room small one",
+              "a small room"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "The most common mistakes",
+          "items": [
+            "Putting *-a* in two places: ***etxea handia*** is wrong. The right form is *etxe handia* — one group, one article, at the very end.",
+            "Using the bare dictionary word as a subject: ***Etxe handia da*** sounds like a half-finished sentence. The right form is *Etxea handia da* (the house is big).",
+            "A quick test: if English would say \"the\", Basque needs *-a* (or *-ak*) at the end of the group."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pointing: hau, hori, hura",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Basque has three pointing distances, not two: *this* (near me), *that* (near you), and *that over there* (far from both of us) — like the old English \"yonder\"."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Distance",
+            "Pointing word",
+            "Plural",
+            "Place",
+            "English"
+          ],
+          "rows": [
+            [
+              "near me",
+              "**hau**",
+              "hauek",
+              "**hemen**",
+              "this / here"
+            ],
+            [
+              "near you",
+              "**hori**",
+              "horiek",
+              "**hor**",
+              "that / there (by you)"
+            ],
+            [
+              "far from both",
+              "**hura**",
+              "haiek",
+              "**han**",
+              "that (over there) / over there"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "On its own, it's the subject of the sentence: *Hau mahaia da* (this is a table). Used with a noun, it stands **after** it, and the noun then drops the *-a*: *liburu hau* (this book), *liburu horiek* (those books), *gela hura* (that room over there)."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Literally",
+            "English"
+          ],
+          "rows": [
+            [
+              "Hau zer da?",
+              "this what is?",
+              "What's this?"
+            ],
+            [
+              "Hori nire liburua da.",
+              "that my book-the is.",
+              "That's my book."
+            ],
+            [
+              "Liburu hau berria da.",
+              "book this new-the is.",
+              "This book is new."
+            ],
+            [
+              "Neska horiek nire lagunak dira.",
+              "girl those my friend-the(pl) are.",
+              "Those girls are my friends."
+            ],
+            [
+              "Etxe hura handia da.",
+              "house that-yonder big-the is.",
+              "That house over there is big."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Hura has two jobs",
+          "items": [
+            "*Hura* means \"that (over there)\" and also **\"he/she\"** for people. *Hura irakaslea da* can mean \"he/she is a teacher\" or \"that one over there is the teacher\" — context decides.",
+            "Basque has no separate words for \"he\" and \"she\". One less thing to memorize."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Numbers from zero to twenty",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "Euskara",
+            "Say it",
+            "",
+            "Euskara",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "0",
+              "zero",
+              "SEH-roh",
+              "11",
+              "hamaika",
+              "ah-MAH-ee-kah"
+            ],
+            [
+              "1",
+              "bat",
+              "BAHT",
+              "12",
+              "hamabi",
+              "ah-mah-BEE"
+            ],
+            [
+              "2",
+              "bi",
+              "BEE",
+              "13",
+              "hamahiru",
+              "ah-mah-EE-roo"
+            ],
+            [
+              "3",
+              "hiru",
+              "EE-roo",
+              "14",
+              "hamalau",
+              "ah-mah-LAH-oo"
+            ],
+            [
+              "4",
+              "lau",
+              "LAH-oo",
+              "15",
+              "hamabost",
+              "ah-mah-BOHST"
+            ],
+            [
+              "5",
+              "bost",
+              "BOHST",
+              "16",
+              "hamasei",
+              "ah-mah-SEH-ee"
+            ],
+            [
+              "6",
+              "sei",
+              "SEH-ee",
+              "17",
+              "hamazazpi",
+              "ah-mah-SAHS-pee"
+            ],
+            [
+              "7",
+              "zazpi",
+              "SAHS-pee",
+              "18",
+              "hemezortzi",
+              "eh-meh-SOHR-tsee"
+            ],
+            [
+              "8",
+              "zortzi",
+              "SOHR-tsee",
+              "19",
+              "hemeretzi",
+              "eh-meh-REH-tsee"
+            ],
+            [
+              "9",
+              "bederatzi",
+              "beh-deh-RAH-tsee",
+              "20",
+              "hogei",
+              "oh-GEH-ee"
+            ],
+            [
+              "10",
+              "hamar",
+              "ah-MAHR",
+              "",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "From 11 to 17 the pattern is clear: *hama-* (from *hamar*, ten) plus the number — *hamabi* = ten-two. Eighteen and nineteen break the pattern as *hemezortzi* and *hemeretzi*; just learn them as they are."
+        },
+        {
+          "type": "p",
+          "text": "Ask \"how many\" with *zenbat*, and leave the noun bare: *Zenbat liburu?* (how many books?), *Zenbat urte?* (how many years?). The answer has no article either: *Hamar liburu.*"
+        },
+        {
+          "type": "kotak",
+          "title": "A small warning about bigger numbers",
+          "items": [
+            "Basque counts in **twenties**, not tens. Forty is *berrogei* — literally \"two times twenty\". Sixty is *hirurogei*, \"three times twenty\".",
+            "If you've met French, it's the same habit as *quatre-vingts* (eighty = four twenties) — or English \"four score\". The difference is that Basque uses it for all the tens.",
+            "Numbers 21 to 100 are covered fully in Unit 3. For now, twenty is enough for almost any first conversation."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "eu": "hau",
+      "baca": "AH-oo",
+      "en": "this"
+    },
+    {
+      "eu": "hori",
+      "baca": "OH-ree",
+      "en": "that (near the listener)"
+    },
+    {
+      "eu": "hura",
+      "baca": "OO-rah",
+      "en": "that (far away); he, she"
+    },
+    {
+      "eu": "hemen / hor / han",
+      "baca": "EH-mehn / OHR / AHN",
+      "en": "here / there (by you) / over there"
+    },
+    {
+      "eu": "gela",
+      "baca": "GEH-lah",
+      "en": "room"
+    },
+    {
+      "eu": "etxe",
+      "baca": "EH-cheh",
+      "en": "house"
+    },
+    {
+      "eu": "mahai",
+      "baca": "MAH-ah-ee",
+      "en": "table"
+    },
+    {
+      "eu": "aulki",
+      "baca": "AH-ool-kee",
+      "en": "chair"
+    },
+    {
+      "eu": "ohe",
+      "baca": "OH-eh",
+      "en": "bed"
+    },
+    {
+      "eu": "ate",
+      "baca": "AH-teh",
+      "en": "door"
+    },
+    {
+      "eu": "leiho",
+      "baca": "LEH-ee-oh",
+      "en": "window"
+    },
+    {
+      "eu": "liburu",
+      "baca": "lee-BOO-roo",
+      "en": "book"
+    },
+    {
+      "eu": "hiztegi",
+      "baca": "ees-TEH-gee",
+      "en": "dictionary"
+    },
+    {
+      "eu": "boligrafo",
+      "baca": "boh-lee-GRAH-foh",
+      "en": "pen"
+    },
+    {
+      "eu": "koaderno",
+      "baca": "koh-ah-DEHR-noh",
+      "en": "notebook"
+    },
+    {
+      "eu": "poltsa",
+      "baca": "POHL-tsah",
+      "en": "bag"
+    },
+    {
+      "eu": "telefono",
+      "baca": "teh-LEH-foh-noh",
+      "en": "telephone"
+    },
+    {
+      "eu": "handi",
+      "baca": "AHN-dee",
+      "en": "big"
+    },
+    {
+      "eu": "txiki",
+      "baca": "CHEE-kee",
+      "en": "small"
+    },
+    {
+      "eu": "berri",
+      "baca": "BEH-rree",
+      "en": "new"
+    },
+    {
+      "eu": "zahar",
+      "baca": "SAH-ahr",
+      "en": "old"
+    },
+    {
+      "eu": "polit",
+      "baca": "poh-LEET",
+      "en": "pretty, nice"
+    },
+    {
+      "eu": "on",
+      "baca": "OHN",
+      "en": "good"
+    },
+    {
+      "eu": "txar",
+      "baca": "CHAHR",
+      "en": "bad"
+    },
+    {
+      "eu": "garesti",
+      "baca": "gah-REHS-tee",
+      "en": "expensive"
+    },
+    {
+      "eu": "merke",
+      "baca": "MEHR-keh",
+      "en": "cheap"
+    },
+    {
+      "eu": "beste",
+      "baca": "BEHS-teh",
+      "en": "other, another"
+    },
+    {
+      "eu": "bakarrik",
+      "baca": "bah-KAH-rreek",
+      "en": "only, just"
+    },
+    {
+      "eu": "zenbat",
+      "baca": "sehn-BAHT",
+      "en": "how many, how much"
+    },
+    {
+      "eu": "gustura",
+      "baca": "goos-TOO-rah",
+      "en": "comfortable, at home"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Add the right article (-a or -ak).",
+      "items": [
+        "liburu____ berria da. (the book)",
+        "mahai____ handiak dira. (the tables)",
+        "etxe____ txikia da. (the house)",
+        "aulki____ berriak dira. (the chairs)",
+        "hiztegi____ ona da. (the dictionary)",
+        "neska____ nire lagunak dira. (the girls)"
+      ]
+    },
+    {
+      "prompt": "Translate into Basque.",
+      "items": [
+        "What's this?",
+        "That's a table.",
+        "This book is new.",
+        "That house over there is big.",
+        "How many chairs are there?",
+        "A small room."
+      ]
+    },
+    {
+      "prompt": "Write the numbers out in words.",
+      "items": [
+        "3 liburu",
+        "7 aulki",
+        "11 ikasle",
+        "15 egun",
+        "18 lagun",
+        "20 etxe"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "da / hau / mahaia",
+        "berria / liburu / hau / da",
+        "dira / horiek / nire / lagunak",
+        "handia / etxea / da / oso",
+        "daude / bi / aulki / hemen",
+        "da / zer / hori / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "liburua — mahaiak — etxea — aulkiak — hiztegia — neskak (a word that already ends in -a just adds -k)",
+    "Hau zer da? — Hori mahaia da. — Liburu hau berria da. — Etxe hura handia da. — Zenbat aulki daude? — Gela txiki bat.",
+    "hiru liburu — zazpi aulki — hamaika ikasle — hamabost egun — hemezortzi lagun — hogei etxe",
+    "Hau mahaia da. — Liburu hau berria da. — Horiek nire lagunak dira. — Etxea oso handia da. — Hemen bi aulki daude. — Hori zer da?"
+  ]
+}

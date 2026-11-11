@@ -1,0 +1,533 @@
+{
+  "title": "Likes and dislikes: sentences that flip the subject",
+  "title_target": "Yoqtirish va yoqmaslik",
+  "goal": "Say what you like with two different patterns, name free-time activities, and recognize the \"to me … is pleasing\" pattern that comes back in unit 17.",
+  "bekal": [
+    "using *Menga … yoqadi* — a pattern whose subject is the thing, not you",
+    "using *… ni yaxshi koʻraman* and *… ni yoqtiraman*",
+    "turning verbs into nouns with *-(i)sh* to say \"like reading\""
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Boʻsh vaqtingizda nima qilasiz?",
+      "intro": "In the park near the dorm. Nilufar, Budi, and Anvar sit on a bench after class.",
+      "lines": [
+        {
+          "speaker": "Nilufar:",
+          "text": "Budi, boʻsh vaqtingizda nima qilasiz?",
+          "id": "Budi, what do you do in your free time?",
+          "literal": "Budi, empty time-your-in what do-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kitob oʻqishni yoqtiraman. Musiqa ham tinglayman.",
+          "id": "I like reading books. I also listen to music.",
+          "literal": "book reading-(object) like-I. music also listen-I."
+        },
+        {
+          "speaker": "Anvar:",
+          "text": "Qanaqa musiqa? Menga zamonaviy musiqa yoqadi.",
+          "id": "What kind of music? I like modern music.",
+          "literal": "what-kind music? me-to modern music pleases."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Menga milliy musiqa koʻproq yoqadi. Dutor tovushi ajoyib.",
+          "id": "I prefer traditional music. The sound of the dutar is amazing.",
+          "literal": "me-to national music more pleases. dutar sound-its wonderful."
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Sport-chi? Futbol yoqadimi?",
+          "id": "And sports? Do you like soccer?",
+          "literal": "sport-and? soccer pleases-?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Yoqadi, lekin oʻynashni yoqtirmayman. Faqat koʻraman.",
+          "id": "I do, but I don't like playing. I just watch.",
+          "literal": "pleases, but playing-(object) like-not-I. only watch-I."
+        },
+        {
+          "speaker": "Anvar:",
+          "text": "Men esa suzishni yaxshi koʻraman. Har shanba basseynga boraman.",
+          "id": "As for me, I love swimming. I go to the pool every Saturday.",
+          "literal": "I as-for swimming-(object) well see-I. every Saturday pool-to go-I."
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Menga esa sovuq suv yoqmaydi!",
+          "id": "And I don't like cold water!",
+          "literal": "me-to as-for cold water pleases-not!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Siz nimani yoqtirasiz?",
+          "id": "What do you like?",
+          "literal": "you what-(object) like-you?"
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Rasm chizishni. Va bozorda yurishni.",
+          "id": "Drawing. And walking around the market.",
+          "literal": "picture drawing-(object). and market-in walking-(object)."
+        },
+        {
+          "speaker": "Anvar:",
+          "text": "Demak yakshanba kuni uchalamiz bozorga boramiz!",
+          "id": "So on Sunday the three of us are going to the market!",
+          "literal": "so Sunday day-its three-of-us market-to go-we!"
+        }
+      ],
+      "notes": [
+        "**Menga yoqadi literally means \"to me it is pleasing\".** The subject of the sentence is **the thing**, not you — so the verb is always third person: *yoqadi* for one thing, *yoqadilar* for several. The same pattern is used by *kerak* in unit 13 and by aches and pains in unit 17.",
+        "**Yoqtirmoq and yaxshi koʻrmoq flip it back.** Here you're the subject, and what you like becomes an object with *-ni*: *Men futbolni yoqtiraman*. Two roads to the same meaning, and Uzbeks use both interchangeably.",
+        "**Oʻqishni, oʻynashni, suzishni.** To say \"like reading\", the verb must first become a noun with *-(i)sh*, then take *-ni*. You already used this *-(i)sh* form in unit 13 for *borishim kerak*.",
+        "**Uchalamiz = \"the three of us\".** From *uch* + *-ala* + a possessive ending. Its cousins: *ikkalamiz* (the two of us), *toʻrtalangiz* (the four of you). A small form that makes a sentence sound warm."
+      ],
+      "grammars": [
+        {
+          "title": "Two ways to say \"I like\"",
+          "body": [
+            "Both are correct and equally common. What you need to watch is **which endings go where** — swap the patterns and the sentence breaks at once."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Example",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "**[person]ga [thing] yoqadi**",
+                "*Menga osh yoqadi.*",
+                "to-me plov pleases"
+              ],
+              [
+                "",
+                "*Sizga bu shahar yoqadimi?*",
+                "to-you this city pleases?"
+              ],
+              [
+                "",
+                "*Unga sovuq havo yoqmaydi.*",
+                "to-him/her cold weather doesn't please"
+              ],
+              [
+                "**[person] [thing]ni yoqtiradi**",
+                "*Men oshni yoqtiraman.*",
+                "I plov-(object) like"
+              ],
+              [
+                "",
+                "*Biz bu shaharni yaxshi koʻramiz.*",
+                "we this city well see"
+              ],
+              [
+                "",
+                "*U sovuq havoni yomon koʻradi.*",
+                "he/she cold weather badly sees"
+              ]
+            ]
+          },
+          "after": [
+            "**Yaxshi koʻrmoq literally means \"to see well\"** and ranges from \"to like\" to \"to love\". Its opposite *yomon koʻrmoq* (\"to see badly\") = to hate. For love between people, use *sevmoq*: *Men sizni sevaman*.",
+            "*Yoqmoq* in the past means \"liked (just now)\": *Menga film yoqdi* = \"I liked the film\". It's the most common sentence for giving an opinion after watching or eating something.",
+            "⚠️ Don't say *Men yoqaman* for \"I like\" — it means \"I am pleasing (to others)\". A very common beginner mistake."
+          ]
+        },
+        {
+          "title": "-(i)sh: turning verbs into nouns",
+          "body": [
+            "English just adds \"-ing\": \"I like reading\". Uzbek has to turn the verb into a noun first."
+          ],
+          "table": {
+            "head": [
+              "Verb",
+              "As a noun",
+              "With -ni",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*oʻqimoq*",
+                "*oʻqish*",
+                "*oʻqishni*",
+                "reading"
+              ],
+              [
+                "*yozmoq*",
+                "*yozish*",
+                "*yozishni*",
+                "writing"
+              ],
+              [
+                "*suzmoq*",
+                "*suzish*",
+                "*suzishni*",
+                "swimming"
+              ],
+              [
+                "*oʻynamoq*",
+                "*oʻynash*",
+                "*oʻynashni*",
+                "playing"
+              ],
+              [
+                "*gapirmoq*",
+                "*gapirish*",
+                "*gapirishni*",
+                "speaking"
+              ],
+              [
+                "*sayohat qilmoq*",
+                "*sayohat qilish*",
+                "*sayohat qilishni*",
+                "traveling"
+              ]
+            ]
+          },
+          "after": [
+            "The rule is the same as for the others: **stem ending in a consonant → -ish; ending in a vowel → -sh.** *yoz-* → *yozish*, but *oʻqi-* → *oʻqi**sh***, *ishla-* → *ishla**sh***.",
+            "This form isn't just for likes. It's used wherever you need a noun from a verb: *oʻqish* also means \"education\", *yozish* means \"writing\", *turmush qurish* means \"marriage\".",
+            "Combined with *bilmoq*, it means \"know how to\": *Men suzishni bilaman* = \"I can swim\" (because I've learned). Compare *suza olaman* in unit 18, which means \"I'm able to swim right now\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Free time and hobbies",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The opening question to memorize: *Boʻsh vaqtingizda nima qilasiz?* Answer with one of the rows below."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**kitob oʻqish**",
+              "ki-TÅB o-QISH",
+              "reading books"
+            ],
+            [
+              "**musiqa tinglash**",
+              "mu-si-QÅ ting-LASH",
+              "listening to music"
+            ],
+            [
+              "**film koʻrish**",
+              "film ko-RISH",
+              "watching movies"
+            ],
+            [
+              "**rasm chizish**",
+              "råsm chi-ZISH",
+              "drawing"
+            ],
+            [
+              "**sport bilan shugʻullanish**",
+              "spårt bi-LAN shu-ghul-lå-NISH",
+              "doing sports"
+            ],
+            [
+              "**suzish**",
+              "su-ZISH",
+              "swimming"
+            ],
+            [
+              "**yugurish**",
+              "yu-gu-RISH",
+              "running"
+            ],
+            [
+              "**sayohat qilish**",
+              "så-yå-HAT qi-LISH",
+              "traveling"
+            ],
+            [
+              "**ovqat pishirish**",
+              "åv-QAT pi-shi-RISH",
+              "cooking"
+            ],
+            [
+              "**doʻstlar bilan uchrashish**",
+              "dost-LÅR bi-LAN uch-rå-SHISH",
+              "meeting friends"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The *dutor* and *doira* are instruments you'll hear everywhere: a plucked two-stringed lute, and a large frame drum played with the hands. *Shashmaqom* music — twelve suites of classical songs from Bukhara — is on UNESCO's list of intangible cultural heritage, and mentioning it in conversation will pleasantly surprise whoever you're talking to."
+        }
+      ]
+    },
+    {
+      "title": "Giving your opinion",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Eight short sentences that cover almost every everyday judgment."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**Menga yoqdi.**",
+              "men-GÅ YÅQ-di",
+              "I liked it."
+            ],
+            [
+              "**Menga yoqmadi.**",
+              "men-GÅ yåq-må-DI",
+              "I didn't like it."
+            ],
+            [
+              "**Juda zoʻr!**",
+              "ju-DÅ zor",
+              "Fantastic!"
+            ],
+            [
+              "**Yomon emas.**",
+              "yå-MÅN e-MÅS",
+              "Not bad."
+            ],
+            [
+              "**Menimcha…**",
+              "me-nim-CHÅ",
+              "I think…"
+            ],
+            [
+              "**Rozimisiz?**",
+              "rå-ZI-mi-siz",
+              "Do you agree?"
+            ],
+            [
+              "**Roziman.**",
+              "rå-ZI-mån",
+              "I agree."
+            ],
+            [
+              "**Bilmadim.**",
+              "bil-må-DIM",
+              "I'm not sure / who knows."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Menimcha* is built from *men* + *-imcha* and means \"in my opinion\". Its cousins: *sizningcha* (in your opinion), *uningcha* (in his/her opinion). It's the same *-cha* ending that forms language names in unit 6 — here it means \"in the way of\"."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Rozi* comes from the Arabic *rāḍī* (content, satisfied) — the root behind the name \"Ridwan\". And *Bilmadim* literally means \"I didn't know\", but it's used for the present too; it sounds softer than *bilmayman*."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uz": "yoqmoq",
+      "baca": "yåq-MÅQ",
+      "en": "to please (→ to like)"
+    },
+    {
+      "uz": "yoqtirmoq",
+      "baca": "yåq-tir-MÅQ",
+      "en": "to like"
+    },
+    {
+      "uz": "yaxshi koʻrmoq",
+      "baca": "yåkh-SHI kor-MÅQ",
+      "en": "to like, to love"
+    },
+    {
+      "uz": "yomon koʻrmoq",
+      "baca": "yå-MÅN kor-MÅQ",
+      "en": "to hate"
+    },
+    {
+      "uz": "sevmoq",
+      "baca": "sev-MÅQ",
+      "en": "to love"
+    },
+    {
+      "uz": "boʻsh vaqt",
+      "baca": "bosh våqt",
+      "en": "free time"
+    },
+    {
+      "uz": "musiqa",
+      "baca": "mu-si-QÅ",
+      "en": "music"
+    },
+    {
+      "uz": "tinglamoq",
+      "baca": "ting-lå-MÅQ",
+      "en": "to listen"
+    },
+    {
+      "uz": "film",
+      "baca": "film",
+      "en": "film, movie"
+    },
+    {
+      "uz": "rasm chizmoq",
+      "baca": "råsm chiz-MÅQ",
+      "en": "to draw"
+    },
+    {
+      "uz": "sport",
+      "baca": "spårt",
+      "en": "sport"
+    },
+    {
+      "uz": "futbol",
+      "baca": "fut-BÅL",
+      "en": "soccer, football"
+    },
+    {
+      "uz": "oʻynamoq",
+      "baca": "oy-nå-MÅQ",
+      "en": "to play"
+    },
+    {
+      "uz": "suzmoq",
+      "baca": "suz-MÅQ",
+      "en": "to swim"
+    },
+    {
+      "uz": "yugurmoq",
+      "baca": "yu-gur-MÅQ",
+      "en": "to run"
+    },
+    {
+      "uz": "basseyn",
+      "baca": "bås-SEYN",
+      "en": "swimming pool"
+    },
+    {
+      "uz": "sayohat qilmoq",
+      "baca": "så-yå-HAT qil-MÅQ",
+      "en": "to travel"
+    },
+    {
+      "uz": "pishirmoq",
+      "baca": "pi-shir-MÅQ",
+      "en": "to cook"
+    },
+    {
+      "uz": "zamonaviy",
+      "baca": "zå-må-nå-VIY",
+      "en": "modern"
+    },
+    {
+      "uz": "milliy",
+      "baca": "mil-LIY",
+      "en": "national, traditional"
+    },
+    {
+      "uz": "dutor",
+      "baca": "du-TÅR",
+      "en": "dutar (two-stringed lute)"
+    },
+    {
+      "uz": "tovush",
+      "baca": "tå-VUSH",
+      "en": "sound, voice"
+    },
+    {
+      "uz": "menimcha",
+      "baca": "me-nim-CHÅ",
+      "en": "in my opinion"
+    },
+    {
+      "uz": "rozi",
+      "baca": "rå-ZI",
+      "en": "agreed, content"
+    },
+    {
+      "uz": "faqat",
+      "baca": "få-QAT",
+      "en": "only"
+    },
+    {
+      "uz": "koʻproq",
+      "baca": "kop-RÅQ",
+      "en": "more"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Uzbek using the menga … yoqadi pattern.",
+      "items": [
+        "I like plov.",
+        "Do you like this city?",
+        "She doesn't like cold weather.",
+        "We like traditional music.",
+        "I liked the film."
+      ]
+    },
+    {
+      "prompt": "Translate into Uzbek using the …-ni yoqtiraman / yaxshi koʻraman pattern.",
+      "items": [
+        "I like reading books.",
+        "He loves swimming.",
+        "We love this city.",
+        "I don't like playing soccer.",
+        "What do you like?"
+      ]
+    },
+    {
+      "prompt": "Turn the verb into a noun with -(i)sh.",
+      "items": [
+        "oʻqimoq → ____",
+        "yozmoq → ____",
+        "suzmoq → ____",
+        "oʻynamoq → ____",
+        "gapirmoq → ____",
+        "ishlamoq → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "yoqadi / menga / osh",
+        "yoqtiraman / oʻqishni / kitob / men",
+        "yoqmaydi / sovuq / unga / havo",
+        "qilasiz / nima / boʻsh vaqtingizda / ?",
+        "koʻraman / suzishni / yaxshi / men"
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 14. Translate into Uzbek without looking back at the unit.",
+      "items": [
+        "Whose bag is this?",
+        "The door of the house is closed.",
+        "My friend's father is a doctor.",
+        "What's your phone number?",
+        "This is Dilnoza's bag."
+      ]
+    }
+  ],
+  "answers": [
+    "Menga osh yoqadi. — Sizga bu shahar yoqadimi? — Unga sovuq havo yoqmaydi. — Bizga milliy musiqa yoqadi. — Menga film yoqdi.",
+    "Men kitob oʻqishni yoqtiraman. — U suzishni yaxshi koʻradi. — Biz bu shaharni yaxshi koʻramiz. — Men futbol oʻynashni yoqtirmayman. — Siz nimani yoqtirasiz?",
+    "oʻqish — yozish — suzish — oʻynash — gapirish — ishlash",
+    "Menga osh yoqadi. — Men kitob oʻqishni yoqtiraman. — Unga sovuq havo yoqmaydi. — Boʻsh vaqtingizda nima qilasiz? — Men suzishni yaxshi koʻraman.",
+    "Bu kimning sumkasi? — Uyning eshigi yopiq. — Doʻstimning otasi shifokor. — Telefon raqamingiz nechchi? — Bu Dilnozaning sumkasi."
+  ]
+}

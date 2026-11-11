@@ -1,0 +1,561 @@
+{
+  "title": "Where to and where from: -ga and -dan",
+  "title_target": "Qayerga, qayerdan: -ga va -dan",
+  "goal": "Show direction and origin with two endings, name your means of transport with *bilan*, and ask the way without getting lost.",
+  "bekal": [
+    "attach *-ga* for destinations and *-dan* for origins",
+    "recognize how *-ga* hardens to *-ka* and *-qa* after k, q, and gʻ",
+    "say \"by bus\" as *avtobus bilan* — literally \"with the bus\""
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Aeroportga qanday boraman?",
+      "intro": "Budi has to pick up a friend at the airport. He asks the receptionist at the dormitory.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Kechirasiz, aeroportga qanday boraman?",
+          "id": "Excuse me, how do I get to the airport?",
+          "literal": "sorry, airport-to how go-I?"
+        },
+        {
+          "speaker": "Xodim:",
+          "text": "Metro bilan boring. Bu yerdan oʻn besh daqiqa.",
+          "id": "Just take the metro. It's fifteen minutes from here.",
+          "literal": "metro with go. this place-from ten five minute."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Qaysi bekatdan chiqaman?",
+          "id": "Which station do I get off at?",
+          "literal": "which stop-from get-out-I?"
+        },
+        {
+          "speaker": "Xodim:",
+          "text": "Toshkent bekatidan chiqing, keyin taksiga oʻtiring.",
+          "id": "Get off at Toshkent station, then take a taxi.",
+          "literal": "Toshkent stop-its-from get-out, then taxi-to sit."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Taksi qancha turadi?",
+          "id": "How much is the taxi?",
+          "literal": "taxi how-much stands?"
+        },
+        {
+          "speaker": "Xodim:",
+          "text": "Yigirma ming atrofida. Aeroportdan qaytasizmi?",
+          "id": "About twenty thousand. Are you coming back from the airport?",
+          "literal": "twenty thousand around-its-at. airport-from return-you-?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ha, doʻstim bilan qaytaman. U Jakartadan keladi.",
+          "id": "Yes, I'm coming back with my friend. She's coming from Jakarta.",
+          "literal": "yes, friend-my with return-I. she Jakarta-from comes."
+        },
+        {
+          "speaker": "Xodim:",
+          "text": "Samolyot qachon qoʻnadi?",
+          "id": "When does the plane land?",
+          "literal": "plane when lands?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kechqurun. Ammo yoʻlni bilmayman.",
+          "id": "In the evening. But I don't know the way.",
+          "literal": "evening. but road-the know-not-I."
+        },
+        {
+          "speaker": "Xodim:",
+          "text": "Xavotir olmang. Haydovchiga manzilni koʻrsating.",
+          "id": "Don't worry. Show the address to the driver.",
+          "literal": "worry don't-take. driver-to address-the show."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Yaxshi fikr. Yordamingiz uchun rahmat!",
+          "id": "Good idea. Thank you for your help!",
+          "literal": "good thought. help-your for thanks!"
+        }
+      ],
+      "notes": [
+        "**-ga covers three meanings at once: to, toward, and for.** *Aeroportga* (to the airport), *haydovchiga* (to the driver), *menga* (for me). English uses different words; Uzbek uses one ending.",
+        "**Taksiga oʻtirmoq literally means \"to sit into a taxi\".** Uzbek uses *-ga* for getting into a vehicle, and *-dan* for getting out of one: *avtobusdan tushmoq* (to get off the bus).",
+        "**Bilan means \"with\" and \"by\".** *Doʻstim bilan* (with my friend), *metro bilan* (by metro), *qalam bilan* (with a pen). It stands **after** the noun, like almost every Uzbek function word.",
+        "**Xavotir olmang = \"don't worry\"**, literally \"don't take worry\". Uzbek often builds verbs from a noun + *olmoq/qilmoq/bermoq*: *dam olmoq* (to rest), *ish qilmoq* (to work), *yordam bermoq* (to help) — like English \"take a rest\", \"do work\", \"give help\"."
+      ],
+      "grammars": [
+        {
+          "title": "-ga: destination, recipient, and deadline",
+          "body": [
+            "The second of six endings. Its basic form is *-ga*, but it hardens when the word before it ends in a throat sound."
+          ],
+          "table": {
+            "head": [
+              "Base word",
+              "Form",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*uy*",
+                "*uy**ga***",
+                "uy-GÅ",
+                "home (to the house)"
+              ],
+              [
+                "*bozor*",
+                "*bozor**ga***",
+                "bå-zår-GÅ",
+                "to the bazaar"
+              ],
+              [
+                "*men*",
+                "*men**ga***",
+                "men-GÅ",
+                "to me, for me"
+              ],
+              [
+                "*siz*",
+                "*siz**ga***",
+                "siz-GÅ",
+                "to you"
+              ],
+              [
+                "*qishloq*",
+                "*qishlo**qqa***",
+                "qish-låq-QÅ",
+                "to the village"
+              ],
+              [
+                "*togʻ*",
+                "*to**qqa***",
+                "tåq-QÅ",
+                "to the mountain"
+              ],
+              [
+                "*tok*",
+                "*to**kka***",
+                "tåk-KÅ",
+                "to the grapevine"
+              ]
+            ]
+          },
+          "after": [
+            "The hardening rule is short: **after -q and -gʻ, the ending becomes -qa; after -k, it becomes -ka.** Notice too that the last letter of the base word blends in: *togʻ* → *to**qqa***, *tok* → *to**kka***.",
+            "*-ga* also marks a **time limit**: *soat uchga* (by three o'clock), *dushanbaga* (for Monday). And it's used for prices per unit: *bir kiloga yigirma ming* (twenty thousand per kilo).",
+            "⚠️ Pronouns change slightly: *men* → *men**ga***, *sen* → *sen**ga***, *u* → *un**ga***, *biz* → *biz**ga***, *siz* → *siz**ga***, *ular* → *ular**ga***. Only *u* isn't what you'd expect."
+          ]
+        },
+        {
+          "title": "-dan: from, since, through, and than",
+          "body": [
+            "The third ending. Its form never changes — always *-dan*, with no exceptions."
+          ],
+          "table": {
+            "head": [
+              "Example",
+              "Meaning",
+              "Function"
+            ],
+            "rows": [
+              [
+                "*Jakartadan keladi.*",
+                "She comes from Jakarta.",
+                "place of origin"
+              ],
+              [
+                "*Ertalabdan ishlayman.*",
+                "I've been working since morning.",
+                "starting point in time"
+              ],
+              [
+                "*Eshikdan kiring.*",
+                "Come in through the door.",
+                "the way through"
+              ],
+              [
+                "*Bekatdan tushdim.*",
+                "I got off at the stop.",
+                "getting out of something"
+              ],
+              [
+                "*Mendan soʻrang.*",
+                "Ask me.",
+                "source of information"
+              ],
+              [
+                "*Sendan kattaman.*",
+                "I'm older than you.",
+                "comparison (unit 16)"
+              ]
+            ]
+          },
+          "after": [
+            "The question words are *qayerdan* (from where), *kimdan* (from whom), *nimadan* (from what), *qachondan* (since when).",
+            "Pronouns follow the same pattern as with *-ga*: *mendan, sendan, undan, bizdan, sizdan, ulardan*.",
+            "Now you have three place endings at once. Practice all three as one package with every new noun: *uy — uyda — uyga — uydan*. Ten seconds, and \"in\", \"to\", and \"from\" are all covered."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Travel and transport",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The Tashkent Metro opened in 1977, the first in Central Asia, and its stations are decorated like palaces — mosaics, chandeliers, marble. Taking photos was banned until 2018; now the metro is a tourist attraction in its own right."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "Meaning",
+            "Oʻzbekcha",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**metro**",
+              "met-RÅ",
+              "metro",
+              "**avtobus**",
+              "åv-TÅ-bus",
+              "bus"
+            ],
+            [
+              "**taksi**",
+              "tåk-SI",
+              "taxi",
+              "**poyezd**",
+              "på-YEZD",
+              "train"
+            ],
+            [
+              "**samolyot**",
+              "så-mål-YÅT",
+              "plane",
+              "**mashina**",
+              "må-SHI-nå",
+              "car"
+            ],
+            [
+              "**aeroport**",
+              "å-e-rå-PÅRT",
+              "airport",
+              "**vokzal**",
+              "våk-ZAL",
+              "train station"
+            ],
+            [
+              "**bekat**",
+              "be-KAT",
+              "stop (bus, metro)",
+              "**chipta**",
+              "CHIP-tå",
+              "ticket"
+            ],
+            [
+              "**yoʻl**",
+              "yol",
+              "road, way",
+              "**manzil**",
+              "mån-ZIL",
+              "address, destination"
+            ],
+            [
+              "**piyoda**",
+              "pi-yå-DÅ",
+              "on foot",
+              "**safar**",
+              "så-FAR",
+              "journey, trip"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Manzil* means **address** or **destination** — from the Arabic *manzil* (stopping place, lodging) — and *safar* is the Arabic *safar* (journey), the root of English *safari*. Two words with a long history along the Silk Road."
+        }
+      ]
+    },
+    {
+      "title": "Asking the way",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Eight phrases that cover almost every lost-in-town situation."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**… ga qanday boraman?**",
+              "gå QÅN-dåy bå-rå-MAN",
+              "How do I get to …?"
+            ],
+            [
+              "**… qayerda?**",
+              "qå-YER-då",
+              "Where is …?"
+            ],
+            [
+              "**Toʻgʻriga yuring.**",
+              "tog-ri-GÅ yu-RING",
+              "Go straight ahead."
+            ],
+            [
+              "**Oʻngga buriling.**",
+              "ong-GÅ bu-ri-LING",
+              "Turn right."
+            ],
+            [
+              "**Chapga buriling.**",
+              "chåp-GÅ bu-ri-LING",
+              "Turn left."
+            ],
+            [
+              "**Bu yerdan uzoqmi?**",
+              "bu YER-dån u-ZÅQ-mi",
+              "Is it far from here?"
+            ],
+            [
+              "**Piyoda boraman.**",
+              "pi-yå-DÅ bå-rå-MAN",
+              "I'll walk."
+            ],
+            [
+              "**Adashib qoldim.**",
+              "å-då-SHIB QÅL-dim",
+              "I'm lost."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Learn the direction words separately, since they often appear alone: *oʻng* (right), *chap* (left), *toʻgʻri* (straight, correct). Note that *toʻgʻri* also means \"right, correct\" — *Toʻgʻri!* is the most common way to agree with something."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uz": "aeroport",
+      "baca": "å-e-rå-PÅRT",
+      "en": "airport"
+    },
+    {
+      "uz": "vokzal",
+      "baca": "våk-ZAL",
+      "en": "train station"
+    },
+    {
+      "uz": "avtobus",
+      "baca": "åv-TÅ-bus",
+      "en": "bus"
+    },
+    {
+      "uz": "poyezd",
+      "baca": "på-YEZD",
+      "en": "train"
+    },
+    {
+      "uz": "samolyot",
+      "baca": "så-mål-YÅT",
+      "en": "plane"
+    },
+    {
+      "uz": "taksi",
+      "baca": "tåk-SI",
+      "en": "taxi"
+    },
+    {
+      "uz": "chipta",
+      "baca": "CHIP-tå",
+      "en": "ticket"
+    },
+    {
+      "uz": "yoʻl",
+      "baca": "yol",
+      "en": "road, way"
+    },
+    {
+      "uz": "manzil",
+      "baca": "mån-ZIL",
+      "en": "address, destination"
+    },
+    {
+      "uz": "piyoda",
+      "baca": "pi-yå-DÅ",
+      "en": "on foot"
+    },
+    {
+      "uz": "bilan",
+      "baca": "bi-LAN",
+      "en": "with; by"
+    },
+    {
+      "uz": "uchun",
+      "baca": "u-CHUN",
+      "en": "for"
+    },
+    {
+      "uz": "keyin",
+      "baca": "ke-YIN",
+      "en": "then, after"
+    },
+    {
+      "uz": "oldin",
+      "baca": "ål-DIN",
+      "en": "before, earlier"
+    },
+    {
+      "uz": "ketmoq",
+      "baca": "ket-MÅQ",
+      "en": "to leave, to set off"
+    },
+    {
+      "uz": "qaytmoq",
+      "baca": "qåyt-MÅQ",
+      "en": "to return"
+    },
+    {
+      "uz": "kirmoq",
+      "baca": "kir-MÅQ",
+      "en": "to enter"
+    },
+    {
+      "uz": "chiqmoq",
+      "baca": "chiq-MÅQ",
+      "en": "to go out; to get on/up"
+    },
+    {
+      "uz": "tushmoq",
+      "baca": "tush-MÅQ",
+      "en": "to get off, to go down"
+    },
+    {
+      "uz": "oʻtirmoq",
+      "baca": "o-tir-MÅQ",
+      "en": "to sit"
+    },
+    {
+      "uz": "yurmoq",
+      "baca": "yur-MÅQ",
+      "en": "to walk"
+    },
+    {
+      "uz": "burilmoq",
+      "baca": "bu-ril-MÅQ",
+      "en": "to turn"
+    },
+    {
+      "uz": "koʻrsatmoq",
+      "baca": "kor-såt-MÅQ",
+      "en": "to show"
+    },
+    {
+      "uz": "oʻng",
+      "baca": "ong",
+      "en": "right"
+    },
+    {
+      "uz": "chap",
+      "baca": "chåp",
+      "en": "left"
+    },
+    {
+      "uz": "toʻgʻri",
+      "baca": "TOGH-ri",
+      "en": "straight; correct"
+    },
+    {
+      "uz": "daqiqa",
+      "baca": "då-qi-QÅ",
+      "en": "minute"
+    },
+    {
+      "uz": "yordam",
+      "baca": "yår-DAM",
+      "en": "help"
+    },
+    {
+      "uz": "ammo",
+      "baca": "åm-MÅ",
+      "en": "but"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Uzbek.",
+      "items": [
+        "I'm going to the airport.",
+        "She comes from Jakarta.",
+        "How do I get to the bazaar?",
+        "I go by metro.",
+        "Show the address to the driver.",
+        "Turn right, then go straight ahead."
+      ]
+    },
+    {
+      "prompt": "Attach -ga (or its hardened form) to these words.",
+      "items": [
+        "uy → ____",
+        "men → ____",
+        "u → ____",
+        "qishloq → ____",
+        "togʻ → ____",
+        "bozor → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in with -da, -ga, or -dan.",
+      "items": [
+        "Men uy____ yashayman. (in)",
+        "Ertaga bozor____ boraman. (to)",
+        "U Jakarta____ keladi. (from)",
+        "Kitob stol____ turibdi. (on → at)",
+        "Bekat____ tushing. (from)",
+        "Bu kitob siz____. (for)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "boraman / aeroportga / metro bilan / men",
+        "keladi / doʻstim / Jakartadan",
+        "buriling / oʻngga",
+        "qanday / boraman / bozorga / ?",
+        "rahmat / uchun / yordamingiz"
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 6. Translate into Uzbek without looking back at the unit.",
+      "items": [
+        "I read books every day.",
+        "Where do you live?",
+        "He works at a teahouse.",
+        "We don't speak Russian.",
+        "I don't understand."
+      ]
+    }
+  ],
+  "answers": [
+    "Men aeroportga boraman. — U Jakartadan keladi. — Bozorga qanday boraman? — Men metro bilan boraman. — Haydovchiga manzilni koʻrsating. — Oʻngga buriling, keyin toʻgʻriga yuring.",
+    "uyga — menga — unga — qishloqqa — toqqa — bozorga",
+    "uyda — bozorga — Jakartadan — stolda — Bekatdan — sizga",
+    "Men metro bilan aeroportga boraman. — Doʻstim Jakartadan keladi. — Oʻngga buriling. — Bozorga qanday boraman? — Yordamingiz uchun rahmat.",
+    "Har kuni kitob oʻqiyman. — Siz qayerda yashaysiz? — U choyxonada ishlaydi. — Biz ruscha gapirmaymiz. — Men tushunmayman."
+  ]
+}

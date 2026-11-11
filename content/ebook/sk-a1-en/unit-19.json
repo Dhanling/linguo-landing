@@ -1,0 +1,499 @@
+{
+  "title": "Call me, OK?",
+  "title_target": "Zavolaj mi!",
+  "goal": "Make phone calls, send messages, and produce the imperative yourself — the form you've been hearing since unit 6 without ever making it.",
+  "bekal": [
+    "form commands for *ty*, *vy*, and *my* from any verb",
+    "make and take phone calls with standard phrases",
+    "write short messages that sound natural"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Haló? Kto volá?",
+      "intro": "Budi calls Eva because he can't find his classroom. Eva is on the tram.",
+      "lines": [
+        {
+          "speaker": "Eva:",
+          "text": "Haló?",
+          "id": "Hello?",
+          "literal": "hello?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ahoj Eva, tu je Budi. Nerušem?",
+          "id": "Hi Eva, it's Budi. Am I disturbing you?",
+          "literal": "hello Eva, here is Budi. not-I-disturb?"
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Vôbec nie. Som v električke. Hovor hlasnejšie.",
+          "id": "Not at all. I'm on the tram. Speak up.",
+          "literal": "at-all not. I-am in tram-loc. speak louder."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Neviem nájsť učebňu. Pomôž mi, prosím.",
+          "id": "I can't find the classroom. Help me, please.",
+          "literal": "not-I-know find classroom-acc. help to-me, I-ask."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Choď na druhé poschodie a zaboč doprava.",
+          "id": "Go up to the second floor and turn right.",
+          "literal": "go to second floor and turn right."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Som na druhom poschodí. Nevidím nič.",
+          "id": "I'm on the second floor. I don't see anything.",
+          "literal": "I-am on second-loc floor-loc. not-I-see nothing."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Počkaj. Je tam automat na kávu?",
+          "id": "Wait. Is there a coffee machine there?",
+          "literal": "wait. is there machine for coffee-acc?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Áno, hneď vedľa mňa.",
+          "id": "Yes, right next to me.",
+          "literal": "yes, right next-to me-gen."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Tak si na treťom. Choď o poschodie nižšie.",
+          "id": "Then you're on the third floor. Go down one floor.",
+          "literal": "so you-are on third-loc. go to floor lower."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aha! Už vidím. Ďakujem, zachránila si ma.",
+          "id": "Oh! I see it now. Thanks, you saved me.",
+          "literal": "aha! already I-see. I-thank, saved-f you-are me."
+        },
+        {
+          "speaker": "Eva:",
+          "text": "Nič to nie je. Ozvi sa, keď prídeš!",
+          "id": "No problem. Let me know when you get there!",
+          "literal": "nothing it not is. sound self, when you-will-come!"
+        }
+      ],
+      "notes": [
+        "**Tu je Budi** is the standard way to introduce yourself on the phone — literally \"here is Budi\". Not *ja som Budi*, which sounds like a face-to-face introduction. Slovak keeps the phrasing from the landline era, just like German.",
+        "**Nerušem?** = \"am I not disturbing you?\" — a negative question you're expected to ask before getting to the point. Skipping it sounds rushed. The answer is almost always *vôbec nie* (not at all).",
+        "**Hovor, pomôž, choď, zaboč, počkaj, ozvi sa** — six imperatives in one dialogue. Notice that none of them needs an extra word like \"please\" to be formed; *prosím* is added separately if you want to be more polite.",
+        "**Ozvi sa** literally \"make a sound\" — used exactly like \"let me know\" or \"get in touch\". The polite form is *ozvite sa*. It's one of the most common goodbyes in Slovakia, after *maj sa*.",
+        "**Nič to nie je** = \"it's nothing\" — a casual reply to thanks, a little more informal than *nie je za čo*. A double negative again: *nič* and *nie je*."
+      ],
+      "grammars": [
+        {
+          "title": "The imperative",
+          "body": [
+            "The imperative is formed from the **oni form** of the verb: drop the ending, and what's left is the command for *ty*. For *vy* add *-te*, for *my* add *-me* (\"let's…\")."
+          ],
+          "table": {
+            "head": [
+              "Dictionary form",
+              "oni",
+              "ty",
+              "vy",
+              "my (let's)"
+            ],
+            "rows": [
+              [
+                "*robiť*",
+                "rob**ia**",
+                "**rob**",
+                "rob**te**",
+                "rob**me**"
+              ],
+              [
+                "*písať*",
+                "píš**u**",
+                "**píš**",
+                "píš**te**",
+                "píš**me**"
+              ],
+              [
+                "*čítať*",
+                "čítaj**ú**",
+                "**čítaj**",
+                "čítaj**te**",
+                "čítaj**me**"
+              ],
+              [
+                "*hovoriť*",
+                "hovor**ia**",
+                "**hovor**",
+                "hovor**te**",
+                "hovorme"
+              ],
+              [
+                "*počkať*",
+                "počkaj**ú**",
+                "**počkaj**",
+                "počkaj**te**",
+                "počkajme"
+              ],
+              [
+                "*spať*",
+                "sp**ia**",
+                "**spi**",
+                "sp**ite**",
+                "spime"
+              ]
+            ]
+          },
+          "after": [
+            "**The last row shows one adjustment.** If dropping the ending leaves consonants that are hard to say, **-i** is added: *spi*, *mysli*, *choď*. Your ear will make this decision for you after a few weeks.",
+            "**Eight irregular forms, all of them common:** *byť → **buď / buďte***, *ísť → **choď / choďte***, *prísť → **príď / príďte***, *jesť → **jedz / jedzte***, *dať → **daj / dajte***, *mať → **maj / majte***, *povedať → **povedz / povedzte***, *pomôcť → **pomôž / pomôžte***.",
+            "**Prohibitions use the imperfective**, not the perfective. *Nerob to!* (don't do that), not *neurob to*. *Nechoď tam!* (don't go there). It's one of the few places where the choice between perfective and imperfective is locked by a rule, not by meaning."
+          ]
+        },
+        {
+          "title": "Making commands sound polite",
+          "body": [
+            "The Slovak imperative is much more neutral than it first seems. It's used for directions, recipes, offers, and invitations — not just for giving orders."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Tone",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Počkaj!*",
+                "neutral, informal",
+                "Wait!"
+              ],
+              [
+                "*Počkajte, prosím.*",
+                "polite",
+                "Wait a moment."
+              ],
+              [
+                "*Poď ďalej!*",
+                "warm, inviting",
+                "Come in!"
+              ],
+              [
+                "*Nech sa páči, sadnite si.*",
+                "very polite",
+                "Please have a seat."
+              ],
+              [
+                "*Daj si!*",
+                "warm, offering food",
+                "Go on, help yourself!"
+              ],
+              [
+                "*Buď opatrný / opatrná.*",
+                "caring",
+                "Be careful."
+              ],
+              [
+                "*Maj sa!*",
+                "warm goodbye",
+                "Take care!"
+              ],
+              [
+                "*Ozvi sa!*",
+                "goodbye",
+                "Let me know!"
+              ],
+              [
+                "*Netráp sa.*",
+                "reassuring",
+                "Don't worry."
+              ],
+              [
+                "*Neboj sa.*",
+                "reassuring",
+                "Don't be afraid."
+              ]
+            ]
+          },
+          "after": [
+            "**Adding *prosím* makes any command polite instantly.** *Počkajte* can sound firm; *Počkajte, prosím* never does. It's the cheapest way to soften things, and Slovaks do it all day long.",
+            "**The *vy* form is used with strangers**, even for the friendliest commands: *Sadnite si*, *Poďte ďalej*, *Nech sa páči*. Using the *ty* form with someone you don't know sounds much ruder in a command than in an ordinary sentence.",
+            "**If you'd rather avoid the imperative altogether**, use *môžete* or *mohli by ste* from unit 16: *Mohli by ste počkať?* It's always correct and always polite — a safe choice for your first few weeks."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "On the phone",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Haló?*",
+              "Hello?"
+            ],
+            [
+              "*Prosím?*",
+              "Hello? (answering, polite)"
+            ],
+            [
+              "*Tu je …*",
+              "This is …"
+            ],
+            [
+              "*Môžem hovoriť s …?*",
+              "Could I speak to …?"
+            ],
+            [
+              "*Kto volá?*",
+              "Who's calling?"
+            ],
+            [
+              "*Nerušem?*",
+              "Am I disturbing you?"
+            ],
+            [
+              "*Počkajte, prosím.*",
+              "Hold on a moment."
+            ],
+            [
+              "*Nepočujem vás.*",
+              "I can't hear you."
+            ],
+            [
+              "*Zle vás počujem.*",
+              "You're breaking up."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Prosím once more",
+          "items": [
+            "Answering the phone with *Prosím?* is a Slovak habit that often confuses foreigners — it sounds like \"please?\". It means \"yes, go ahead\".",
+            "You've already met the same word as \"please\", \"you're welcome\", \"here you are\", and \"I'd like\". If you're counting, *prosím* now has six different jobs — and you learned them all from the same word in unit 1."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Writing short messages",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Written messages in Slovakia are much shorter than spoken conversation, and greetings are often dropped entirely between friends. The examples below cover most everyday needs."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Message",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Ahoj, si doma?*",
+              "Hi, are you home?"
+            ],
+            [
+              "*Meškám 10 min, prepáč.*",
+              "Running 10 min late, sorry."
+            ],
+            [
+              "*Kde si?*",
+              "Where are you?"
+            ],
+            [
+              "*Už idem.*",
+              "On my way."
+            ],
+            [
+              "*Dnes nemôžem, mám prácu.*",
+              "Can't today, I have work."
+            ],
+            [
+              "*Zajtra o piatej?*",
+              "Tomorrow at five?"
+            ],
+            [
+              "*Platí, uvidíme sa.*",
+              "Deal, see you."
+            ],
+            [
+              "*Daj vedieť.*",
+              "Let me know."
+            ],
+            [
+              "*Ďakujem za dnešok!*",
+              "Thanks for today!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Daj vedieť** literally \"give to know\" — two words that do the job of a whole sentence like \"please let me know later\". Together with *ozvi sa*, it's the most common way to close a written conversation."
+        },
+        {
+          "type": "p",
+          "text": "For formal letters or messages, the greeting changes completely: *Vážený pán / Vážená pani* at the start, and *S pozdravom* (kind regards) at the end. You'll need this to write to an office, a school, or a landlord — and using it shows that you know the local customs."
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 17",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "I came with Eva.",
+              "*Prišiel som s Evou.*"
+            ],
+            [
+              "I work with a small team.",
+              "*Pracujem s malým tímom.*"
+            ],
+            [
+              "I write with a pen.",
+              "*Píšem perom.*"
+            ],
+            [
+              "I'm going by train.",
+              "*Idem vlakom.*"
+            ],
+            [
+              "The car is in front of the house.",
+              "*Auto stojí pred domom.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "volať",
+      "baca": "VOH-laht",
+      "en": "call; phone"
+    },
+    {
+      "sk": "zavolať",
+      "baca": "ZAH-voh-laht",
+      "en": "call (once)"
+    },
+    {
+      "sk": "ozvať sa",
+      "baca": "OHZ-vaht sah",
+      "en": "get in touch"
+    },
+    {
+      "sk": "rušiť",
+      "baca": "ROO-sheet",
+      "en": "disturb"
+    },
+    {
+      "sk": "počuť",
+      "baca": "POH-choot",
+      "en": "hear"
+    },
+    {
+      "sk": "zachrániť",
+      "baca": "ZAH-khrah-nyeet",
+      "en": "save"
+    },
+    {
+      "sk": "zabočiť",
+      "baca": "ZAH-boh-cheet",
+      "en": "turn"
+    },
+    {
+      "sk": "sadnúť si",
+      "baca": "SAHD-noot see",
+      "en": "sit down"
+    },
+    {
+      "sk": "báť sa",
+      "baca": "baht sah",
+      "en": "be afraid"
+    },
+    {
+      "sk": "trápiť sa",
+      "baca": "TRAH-peet sah",
+      "en": "worry"
+    },
+    {
+      "sk": "telefón",
+      "baca": "TEH-leh-fohn",
+      "en": "phone (m)"
+    },
+    {
+      "sk": "správa",
+      "baca": "SPRAH-vah",
+      "en": "message; news (f)"
+    },
+    {
+      "sk": "kredit",
+      "baca": "KREH-deet",
+      "en": "phone credit (m)"
+    },
+    {
+      "sk": "baterka",
+      "baca": "BAH-tehr-kah",
+      "en": "battery (f)"
+    },
+    {
+      "sk": "poschodie",
+      "baca": "POHS-khoh-dyeh",
+      "en": "floor, story (n)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Slovak. Use *ty*.",
+      "items": [
+        "Hi, it's Budi. Am I disturbing you?",
+        "Speak up.",
+        "Help me.",
+        "Go up to the second floor and turn right.",
+        "Let me know when you get there.",
+        "See you soon."
+      ]
+    },
+    {
+      "prompt": "Write the ty imperative.",
+      "items": [
+        "robiť → ____",
+        "písať → ____",
+        "čítať → ____",
+        "počkať → ____",
+        "hovoriť → ____",
+        "spať → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "Budi / je / tu",
+        "prosím / mi / pomôž / ,",
+        "doprava / zaboč / a / choď / poschodie / na / druhé",
+        "chvíľu / sa / o / uvidíme",
+        "sa / ozvi"
+      ]
+    }
+  ],
+  "answers": [
+    "Ahoj, tu je Budi. Nerušem? — Hovor hlasnejšie. — Pomôž mi. — Choď na druhé poschodie a zaboč doprava. — Ozvi sa, keď prídeš. — Uvidíme sa o chvíľu.",
+    "rob — píš — čítaj — počkaj — hovor — spi",
+    "Tu je Budi. — Pomôž mi, prosím. — Choď na druhé poschodie a zaboč doprava. — Uvidíme sa o chvíľu. — Ozvi sa."
+  ]
+}

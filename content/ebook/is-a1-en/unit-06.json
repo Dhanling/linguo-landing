@@ -1,0 +1,549 @@
+{
+  "title": "Family and possession",
+  "title_target": "Fjölskyldan mín",
+  "goal": "Name family members, say \"my\" with the right form, and understand why Icelanders have no family names at all.",
+  "bekal": [
+    "name the members of your close family, including their irregular plurals",
+    "use *minn / mín / mitt* and *þinn / þín / þitt* in the right place",
+    "read an Icelandic name and know who the person's father is from the name alone"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Fjölskyldumyndin",
+      "intro": "A family photo hangs in Anna's living room. Búdí takes a closer look, and his questions lead to an Icelandic custom that surprises him.",
+      "lines": [
+        {
+          "speaker": "Búdí:",
+          "text": "Er þetta fjölskyldan þín?",
+          "id": "Is this your family?",
+          "literal": "is this family-the yours?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Já. Þetta er mamma mín og þetta er pabbi minn.",
+          "id": "Yes. This is my mom and this is my dad.",
+          "literal": "yes. this is mom my and this is dad my."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Áttu systkini?",
+          "id": "Do you have brothers and sisters?",
+          "literal": "own-you siblings?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Ég á eina systur og tvo bræður.",
+          "id": "I have one sister and two brothers.",
+          "literal": "I own one sister and two brothers."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Hvað heita þau?",
+          "id": "What are their names?",
+          "literal": "what are-called they?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Systir mín heitir Guðrún. Bræður mínir heita Jón og Ólafur.",
+          "id": "My sister is called Guðrún. My brothers are called Jón and Ólafur.",
+          "literal": "sister my is-called Guðrún. brothers my are-called Jón and Ólafur."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Anna Jónsdóttir … svo pabbi þinn heitir líka Jón?",
+          "id": "Anna Jónsdóttir… so your dad is called Jón too?",
+          "literal": "Anna Jónsdóttir… so dad your is-called also Jón?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Rétt! Ég er dóttir Jóns. Bróðir minn heitir Jónsson.",
+          "id": "Right! I'm Jón's daughter. My brother's last name is Jónsson.",
+          "literal": "right! I am daughter Jón's. brother my is-called Jónsson."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Svo þið hafið ekki sama eftirnafn?",
+          "id": "So you don't have the same last name?",
+          "literal": "so you-all have not same after-name?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Nei, við notum ekki ættarnöfn. Í símaskránni erum við undir fornafni.",
+          "id": "No, we don't use family names. In the phone book we're listed under our first name.",
+          "literal": "no, we use not family-names. in phone-book-the are we under fore-name."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Merkilegt! Í Indónesíu á ég bara eitt nafn.",
+          "id": "Interesting! In Indonesia I only have one name.",
+          "literal": "remarkable! in Indonesia own I only one name."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Þá erum við lík. Nafnið þitt er þitt eigið.",
+          "id": "Then we're alike. Your name is your very own.",
+          "literal": "then are we alike. name-the yours is yours own."
+        }
+      ],
+      "notes": [
+        "**The possessive stands AFTER the noun.** *Mamma mín* = \"mom my\", *bókin mín* = \"book-the my\", *nafnið þitt* = \"name-the your\". English speakers have to flip a lifelong habit (*my mom*); it helps to think \"the book of mine\".",
+        "**And its form follows the gender of the THING owned, not the owner.** *Pabbi **minn*** (*pabbi* is kk), *mamma **mín*** (*mamma* is kvk), *nafnið **mitt*** (*nafn* is hk). What decides is not who owns it but the noun in front.",
+        "**Anna Jónsdóttir literally means \"Anna, Jón's daughter\".** It isn't a family name but a **father's name**. If Anna has a daughter called Sara, the girl becomes *Sara Önnudóttir* or — more often — takes her father's name. Last names change every generation, so no family shares one surname.",
+        "**That's why the Icelandic phone book is sorted by FIRST name**, and Icelanders call everyone by their first name — prime minister and president included. Saying *herra Jónsson* (\"Mr. Jónsson\") actually sounds wrong, because \"Jónsson\" isn't the person's name.",
+        "**Eina systur, tvo bræður — the number and the noun change** because they're the object of *eiga*. The basic forms are *ein systir*, *tveir bræður*. This change is þolfall, and it only gets its name in Unit 8.",
+        "**Merkilegt — a neuter adjective used as an exclamation.** Just like *gott!*, *frábært!*, *leiðinlegt!* When there's no clear noun, Icelandic always falls back on the hvorugkyn form."
+      ],
+      "grammars": [
+        {
+          "title": "Minn, þinn — possessives",
+          "body": [
+            "The two most common possessives, each in three forms. Notice the pattern is the same as the adjective pattern in Unit 3."
+          ],
+          "table": {
+            "head": [
+              "Owner",
+              "kk",
+              "kvk",
+              "hk",
+              "Example"
+            ],
+            "rows": [
+              [
+                "my",
+                "*minn*",
+                "*mín*",
+                "*mitt*",
+                "*pabbi minn*, *mamma mín*, *nafnið mitt*"
+              ],
+              [
+                "your",
+                "*þinn*",
+                "*þín*",
+                "*þitt*",
+                "*bróðir þinn*, *systir þín*, *húsið þitt*"
+              ],
+              [
+                "our",
+                "*okkar*",
+                "*okkar*",
+                "*okkar*",
+                "*húsið okkar* — never changes"
+              ],
+              [
+                "your (pl.)",
+                "*ykkar*",
+                "*ykkar*",
+                "*ykkar*",
+                "*bíllinn ykkar* — never changes"
+              ],
+              [
+                "his",
+                "*hans*",
+                "*hans*",
+                "*hans*",
+                "*bókin hans* — never changes"
+              ],
+              [
+                "her",
+                "*hennar*",
+                "*hennar*",
+                "*hennar*",
+                "*bíllinn hennar* — never changes"
+              ]
+            ]
+          },
+          "after": [
+            "**Only *minn* and *þinn* change form**; the rest stay put. So the load is much lighter than it looks — six forms to learn, not eighteen.",
+            "The noun usually takes the **article** unless it's a family word: *bókin mín* (my book), *húsið mitt* (my house). But family members appear bare: *mamma mín*, *pabbi minn*, *systir mín* — no article.",
+            "*Bókin hans* means \"his book\" and *bókin hennar* \"her book\" — the same split English makes, so here at least nothing new to decide."
+          ]
+        },
+        {
+          "title": "Family: singular and plural",
+          "body": [
+            "Family words are among the oldest in Icelandic, and old words are almost always irregular. It's not just the ending that changes but the vowel in the middle — like English *man/men*, *foot/feet*."
+          ],
+          "table": {
+            "head": [
+              "Singular",
+              "Plural",
+              "Gender",
+              "English"
+            ],
+            "rows": [
+              [
+                "*faðir* / *pabbi*",
+                "*feður*",
+                "kk",
+                "father"
+              ],
+              [
+                "*móðir* / *mamma*",
+                "*mæður*",
+                "kvk",
+                "mother"
+              ],
+              [
+                "*bróðir*",
+                "*bræður*",
+                "kk",
+                "brother"
+              ],
+              [
+                "*systir*",
+                "*systur*",
+                "kvk",
+                "sister"
+              ],
+              [
+                "*sonur*",
+                "*synir*",
+                "kk",
+                "son"
+              ],
+              [
+                "*dóttir*",
+                "*dætur*",
+                "kvk",
+                "daughter"
+              ],
+              [
+                "*barn*",
+                "*börn*",
+                "hk",
+                "child"
+              ],
+              [
+                "*maður*",
+                "*menn*",
+                "kk",
+                "person, man"
+              ]
+            ]
+          },
+          "after": [
+            "Note the pattern: **a → e**, **ó → æ**, **o → ö**, **u → y**. This vowel change is called *hljóðvarp* and works throughout Icelandic, not just in family words.",
+            "*Pabbi* and *mamma* are the everyday forms; *faðir* and *móðir* are more formal and appear more in writing. In conversation, use *pabbi* and *mamma*.",
+            "*Systkini* (hk, plural) means \"brothers and sisters\" without saying which — like English *siblings*, but an everyday word, not a formal one."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Why Icelanders have no family names",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The Icelandic naming system is the oldest still alive in Europe: the last name is formed from the **father's name** plus *-son* (son) or *-dóttir* (daughter). It changes every generation, so it isn't a family marker but a marker of **relationship**."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Father's name",
+            "Son",
+            "Daughter",
+            "English"
+          ],
+          "rows": [
+            [
+              "Jón",
+              "Jóns**son**",
+              "Jóns**dóttir**",
+              "child of Jón"
+            ],
+            [
+              "Ólafur",
+              "Ólafs**son**",
+              "Ólafs**dóttir**",
+              "child of Ólafur"
+            ],
+            [
+              "Guðmundur",
+              "Guðmunds**son**",
+              "Guðmunds**dóttir**",
+              "child of Guðmundur"
+            ],
+            [
+              "Einar",
+              "Einars**son**",
+              "Einars**dóttir**",
+              "child of Einar"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "What it means in everyday life",
+          "items": [
+            "**Phone books and lists of any kind are sorted by first name.** If you look up \"Jónsson\", you won't find anyone.",
+            "**Everyone is called by their first name**, including the highest officials. The news refers to the prime minister by first name after the first mention.",
+            "**There is an official committee for names** — *Mannanafnanefnd*. A baby's name must be writable in the Icelandic alphabet and able to change form for the cases. Names that don't pass must be changed.",
+            "**The mother can be the reference.** *Önnudóttir* (Anna's daughter) is legal and increasingly common, though the father's name is still far more usual."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Búdí finds this familiar for a reason: millions of Indonesians go by **a single name** with no family name at all. In Iceland, too, your first name really is your name."
+        }
+      ]
+    },
+    {
+      "title": "Family members",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Íslenska",
+            "Gender",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*fjölskylda*",
+              "kvk",
+              "FYÖL-skil-dah",
+              "family"
+            ],
+            [
+              "*pabbi*",
+              "kk",
+              "PAH-bih",
+              "dad"
+            ],
+            [
+              "*mamma*",
+              "kvk",
+              "MAH-mah",
+              "mom"
+            ],
+            [
+              "*bróðir*",
+              "kk",
+              "BROH-dhihr",
+              "brother"
+            ],
+            [
+              "*systir*",
+              "kvk",
+              "SIS-tihr",
+              "sister"
+            ],
+            [
+              "*sonur*",
+              "kk",
+              "SAW-nür",
+              "son"
+            ],
+            [
+              "*dóttir*",
+              "kvk",
+              "DOHH-tihr",
+              "daughter"
+            ],
+            [
+              "*afi*",
+              "kk",
+              "AH-vih",
+              "grandfather"
+            ],
+            [
+              "*amma*",
+              "kvk",
+              "AH-mah",
+              "grandmother"
+            ],
+            [
+              "*frændi*",
+              "kk",
+              "FRAIN-dih",
+              "uncle; male cousin"
+            ],
+            [
+              "*frænka*",
+              "kvk",
+              "FRAIN-kah",
+              "aunt; female cousin"
+            ],
+            [
+              "*eiginmaður*",
+              "kk",
+              "AY-yin-mah-dhür",
+              "husband"
+            ],
+            [
+              "*eiginkona*",
+              "kvk",
+              "AY-yin-kaw-nah",
+              "wife"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Frændi* and *frænka* are used much more broadly than \"uncle\" and \"aunt\" in English: they cover uncles, cousins, and other relatives you don't need to spell out. If you need to be precise, name the relationship: *bróðir pabba míns* — my father's brother."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "is": "fjölskylda",
+      "baca": "FYÖL-skil-dah",
+      "en": "family"
+    },
+    {
+      "is": "systkini",
+      "baca": "SIST-kih-nih",
+      "en": "brothers and sisters, siblings"
+    },
+    {
+      "is": "bróðir",
+      "baca": "BROH-dhihr",
+      "en": "brother"
+    },
+    {
+      "is": "bræður",
+      "baca": "BRAI-dhür",
+      "en": "brothers"
+    },
+    {
+      "is": "systir",
+      "baca": "SIS-tihr",
+      "en": "sister"
+    },
+    {
+      "is": "sonur",
+      "baca": "SAW-nür",
+      "en": "son"
+    },
+    {
+      "is": "dóttir",
+      "baca": "DOHH-tihr",
+      "en": "daughter"
+    },
+    {
+      "is": "afi",
+      "baca": "AH-vih",
+      "en": "grandfather"
+    },
+    {
+      "is": "amma",
+      "baca": "AH-mah",
+      "en": "grandmother"
+    },
+    {
+      "is": "frændi",
+      "baca": "FRAIN-dih",
+      "en": "uncle, male cousin"
+    },
+    {
+      "is": "frænka",
+      "baca": "FRAIN-kah",
+      "en": "aunt, female cousin"
+    },
+    {
+      "is": "nafn",
+      "baca": "nahbn",
+      "en": "name"
+    },
+    {
+      "is": "fornafn",
+      "baca": "FAWR-nahbn",
+      "en": "first name"
+    },
+    {
+      "is": "eftirnafn",
+      "baca": "EHF-tihr-nahbn",
+      "en": "last name"
+    },
+    {
+      "is": "ættarnafn",
+      "baca": "AIH-tahr-nahbn",
+      "en": "family name"
+    },
+    {
+      "is": "símaskrá",
+      "baca": "SEE-mah-skrow",
+      "en": "phone book"
+    },
+    {
+      "is": "nota",
+      "baca": "NAW-tah",
+      "en": "to use"
+    },
+    {
+      "is": "sami / sama",
+      "baca": "SAH-mih / SAH-mah",
+      "en": "same, the same one"
+    },
+    {
+      "is": "merkilegt",
+      "baca": "MEHR-kih-lehgt",
+      "en": "interesting, remarkable"
+    },
+    {
+      "is": "líkur",
+      "baca": "LEE-kür",
+      "en": "alike, similar"
+    },
+    {
+      "is": "eigin",
+      "baca": "AY-yin",
+      "en": "own (my own, your own)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in *minn*, *mín*, or *mitt*.",
+      "items": [
+        "pabbi ____",
+        "mamma ____",
+        "nafnið ____",
+        "bókin ____",
+        "bróðir ____",
+        "húsið ____"
+      ]
+    },
+    {
+      "prompt": "Write the plural.",
+      "items": [
+        "bróðir",
+        "systir",
+        "sonur",
+        "dóttir",
+        "barn",
+        "maður"
+      ]
+    },
+    {
+      "prompt": "Write the children's last names.",
+      "items": [
+        "The father is Jón, his son is Ólafur → Ólafur ____",
+        "The father is Jón, his daughter is Anna → Anna ____",
+        "The father is Einar, his daughter is Guðrún → Guðrún ____",
+        "The father is Ólafur, his son is Jón → Jón ____",
+        "The mother is Anna, her daughter is Sara → Sara ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Icelandic.",
+      "items": [
+        "This is my family.",
+        "This is my dad and this is my mom.",
+        "Do you have brothers and sisters?",
+        "I have one sister.",
+        "What are their names?",
+        "My name is my very own."
+      ]
+    }
+  ],
+  "answers": [
+    "minn — mín — mitt — mín — minn — mitt",
+    "bræður — systur — synir — dætur — börn — menn",
+    "Jónsson — Jónsdóttir — Einarsdóttir — Ólafsson — Önnudóttir",
+    "Þetta er fjölskyldan mín. — Þetta er pabbi minn og þetta er mamma mín. — Áttu systkini? — Ég á eina systur. — Hvað heita þau? — Nafnið mitt er mitt eigið."
+  ]
+}

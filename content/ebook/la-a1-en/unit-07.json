@@ -1,0 +1,648 @@
+{
+  "title": "What are you doing?",
+  "title_target": "Quid agis?",
+  "goal": "Recognize all four verb groups from their dictionary form and use them all in the present tense, including mixed verbs like facio.",
+  "bekal": [
+    "guess a verb's group just from its second form",
+    "build the six forms of *video*, *mitto* and *audio* without looking at a table",
+    "read Latin sentences containing verbs from all four groups at once"
+  ],
+  "dialogs": [
+    {
+      "title": "Colloquium — In schola, hora tertia",
+      "intro": "Third lesson of the day. Everyone is busy doing something — except one person.",
+      "lines": [
+        {
+          "speaker": "Titus:",
+          "text": "Quid agis, Marce?",
+          "id": "What are you doing, Marcus?",
+          "literal": "what do-you, Marcus-call?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Librum lego, magister. Fabulam de Roma lego.",
+          "id": "I'm reading a book, sir. A story about Rome.",
+          "literal": "book-obj read-I, teacher-call. story-obj about Rome-about read-I."
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Bene. Et tu, Lydia? Quid facis?",
+          "id": "Good. And you, Lydia? What are you doing?",
+          "literal": "well. and you, Lydia-call? what make-you?"
+        },
+        {
+          "speaker": "Lydia:",
+          "text": "Epistulam scribo. Sed non bene audio — pueri clamant.",
+          "id": "I'm writing a letter. But I can't hear well — the boys are shouting.",
+          "literal": "letter-obj write-I. but not well hear-I — boy-pl shout-they."
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Ita, pueri semper clamant. Quid vident?",
+          "id": "Yes, boys are always shouting. What are they looking at?",
+          "literal": "yes, boy-pl always shout-they. what see-they?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "In horto Sextum vident. Sextus dormit!",
+          "id": "They can see Sextus in the garden. Sextus is asleep!",
+          "literal": "in garden-in Sextus-obj see-they. Sextus sleep-he!"
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Dormit? In horto? Cur non venit?",
+          "id": "Asleep? In the garden? Why isn't he coming in?",
+          "literal": "sleep-he? in garden-in? why not come-he?"
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Fessus est, magister. Semper dormit.",
+          "id": "He's tired, sir. He's always asleep.",
+          "literal": "tired-masc is-he, teacher-call. always sleep-he."
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Nos laboramus, Sextus dormit. Sic vita est!",
+          "id": "We work, Sextus sleeps. That's life!",
+          "literal": "we work-we, Sextus sleep-he. so life is-it!"
+        },
+        {
+          "speaker": "Lydia:",
+          "text": "Magister, quid hodie doces?",
+          "id": "Sir, what are you teaching today?",
+          "literal": "teacher-call, what today teach-you?"
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Hodie de Graecia dicimus et fabulas antiquas audimus.",
+          "id": "Today we're talking about Greece and listening to ancient stories.",
+          "literal": "today about Greece-about speak-we and story-pl-obj ancient-pl-obj hear-we."
+        },
+        {
+          "speaker": "Discipuli:",
+          "text": "Audimus, magister! Semper audimus!",
+          "id": "We're listening, sir! We always listen!",
+          "literal": "hear-we, teacher-call! always hear-we!"
+        }
+      ],
+      "notes": [
+        "**Quid agis? has two meanings at once.** Literally \"what are you doing?\", but as an everyday greeting it means \"how are you?\". The standard answers are *bene* (\"well\"), *optime* (\"very well\") or *male* (\"not so good\"). Titus uses it here in its literal sense.",
+        "**Lego, legis, legit — the linking vowel changes.** Third-group verbs use *-i-* in some forms and *-u-* in the \"they\" form: *legimus*, but *legunt*. It's the only group that doesn't stay loyal to one vowel, and it's also the group with the most members.",
+        "**Facio and audio differ by one letter, but they're still two groups.** *Audio, audire* belongs to the fourth group; *facio, facere* to the mixed third group. The difference shows in the second form: *audire* ends in *-ire*, *facere* in *-ere*. That's why the dictionary form always lists both.",
+        "**Sic vita est.** *Sic* means \"so, thus\". You've probably seen it in quotations reproduced with their mistakes intact, marked *[sic]* — meaning \"that's really how it was written\"."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Four groups, one ID tag",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Every Latin verb belongs to one of four groups, and you can read the group straight from the second dictionary form — the one ending in *-re*. What decides is the letter right before that *-re*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Group",
+            "Dictionary form",
+            "Its sign",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "I",
+              "amo, am**are**",
+              "-**a**re",
+              "to love"
+            ],
+            [
+              "II",
+              "video, vid**ere**",
+              "-**e**re with a long e",
+              "to see"
+            ],
+            [
+              "III",
+              "mitto, mitt**ere**",
+              "-**e**re with a short e",
+              "to send"
+            ],
+            [
+              "III mixed",
+              "facio, fac**ere**",
+              "-ere, but the first form ends in -io",
+              "to make"
+            ],
+            [
+              "IV",
+              "audio, aud**ire**",
+              "-**i**re",
+              "to hear"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Groups II and III both end in *-ere*, and the only difference is the length of the *e* — something that isn't written. So you need one more clue: look at the first form. Group II always ends in *-eo* (*video*, *habeo*, *doceo*); group III always ends in a plain *-o* (*mitto*, *lego*, *dico*)."
+        },
+        {
+          "type": "kotak",
+          "title": "A quick way to guess the group",
+          "items": [
+            "First form ends in **-o** and second form in **-are** → group I. Example: *porto, portare*.",
+            "First form ends in **-eo** → group II. Example: *video, videre*; *habeo, habere*.",
+            "First form ends in **-o** and second form in **-ere** → group III. Example: *lego, legere*.",
+            "First form ends in **-io** and second form in **-ire** → group IV. Example: *audio, audire*.",
+            "First form ends in **-io** but second form in **-ere** → mixed group III. Example: *facio, facere*; *capio, capere*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The full present-tense table",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The person endings are the same in every group — *-o, -s, -t, -mus, -tis, -nt* — exactly the ones you learned in Unit 3. Only the linking vowel before the ending differs."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Person",
+            "I: amare",
+            "II: videre",
+            "III: mittere",
+            "IV: audire"
+          ],
+          "rows": [
+            [
+              "I",
+              "am**o**",
+              "vide**o**",
+              "mitt**o**",
+              "audi**o**"
+            ],
+            [
+              "you",
+              "am**as**",
+              "vid**es**",
+              "mitt**is**",
+              "aud**is**"
+            ],
+            [
+              "he/she",
+              "am**at**",
+              "vid**et**",
+              "mitt**it**",
+              "aud**it**"
+            ],
+            [
+              "we",
+              "am**amus**",
+              "vid**emus**",
+              "mitt**imus**",
+              "aud**imus**"
+            ],
+            [
+              "you (pl)",
+              "am**atis**",
+              "vid**etis**",
+              "mitt**itis**",
+              "aud**itis**"
+            ],
+            [
+              "they",
+              "am**ant**",
+              "vid**ent**",
+              "mitt**unt**",
+              "audi**unt**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Read the table downward, not across. Group I stays loyal to *a*, group II to *e*, group IV to *i*. Only group III moves around: *i* in the middle, *u* in the last row."
+        },
+        {
+          "type": "sub",
+          "text": "Mixed group III: facio"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Person",
+            "facere (to make)",
+            "capere (to catch)",
+            "Note"
+          ],
+          "rows": [
+            [
+              "I",
+              "faci**o**",
+              "capi**o**",
+              "like group IV"
+            ],
+            [
+              "you",
+              "fac**is**",
+              "cap**is**",
+              "like group III"
+            ],
+            [
+              "he/she",
+              "fac**it**",
+              "cap**it**",
+              "like group III"
+            ],
+            [
+              "we",
+              "fac**imus**",
+              "cap**imus**",
+              "like group III"
+            ],
+            [
+              "you (pl)",
+              "fac**itis**",
+              "cap**itis**",
+              "like group III"
+            ],
+            [
+              "they",
+              "faci**unt**",
+              "capi**unt**",
+              "like group IV"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "This mixed group doesn't have many members, but they're all common words: *facio* (make), *capio* (take), *fugio* (flee), *iacio* (throw), *rapio* (snatch), *cupio* (want). Learn all six at once and you're done with it."
+        }
+      ]
+    },
+    {
+      "title": "Verbs you need to know",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This list isn't for memorizing in one go. Read it once, then come back here every time you meet one of them in a dialogue."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Group II",
+            "Meaning",
+            "Group III",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "video, videre",
+              "to see",
+              "lego, legere",
+              "to read, to gather"
+            ],
+            [
+              "habeo, habere",
+              "to have",
+              "dico, dicere",
+              "to say"
+            ],
+            [
+              "doceo, docere",
+              "to teach",
+              "scribo, scribere",
+              "to write"
+            ],
+            [
+              "teneo, tenere",
+              "to hold",
+              "mitto, mittere",
+              "to send"
+            ],
+            [
+              "moveo, movere",
+              "to move",
+              "duco, ducere",
+              "to lead, to bring"
+            ],
+            [
+              "timeo, timere",
+              "to fear",
+              "curro, currere",
+              "to run"
+            ],
+            [
+              "rideo, ridere",
+              "to laugh",
+              "vivo, vivere",
+              "to live"
+            ],
+            [
+              "sedeo, sedere",
+              "to sit",
+              "bibo, bibere",
+              "to drink"
+            ],
+            [
+              "taceo, tacere",
+              "to be silent",
+              "credo, credere",
+              "to believe"
+            ],
+            [
+              "respondeo, respondere",
+              "to answer",
+              "disco, discere",
+              "to learn"
+            ],
+            [
+              "debeo, debere",
+              "must, to owe",
+              "pono, ponere",
+              "to put, to place"
+            ],
+            [
+              "moneo, monere",
+              "to warn, to remind",
+              "vinco, vincere",
+              "to win, to conquer"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Group IV",
+            "Meaning",
+            "Mixed group III",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "audio, audire",
+              "to hear",
+              "facio, facere",
+              "to make, to do"
+            ],
+            [
+              "venio, venire",
+              "to come",
+              "capio, capere",
+              "to take, to catch"
+            ],
+            [
+              "dormio, dormire",
+              "to sleep",
+              "fugio, fugere",
+              "to flee, to run away"
+            ],
+            [
+              "sentio, sentire",
+              "to feel",
+              "iacio, iacere",
+              "to throw"
+            ],
+            [
+              "invenio, invenire",
+              "to find",
+              "rapio, rapere",
+              "to snatch"
+            ],
+            [
+              "scio, scire",
+              "to know",
+              "cupio, cupere",
+              "to want, to desire"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Their footprints in English",
+          "items": [
+            "*videre* → **video, visual, revise**; *audire* → **audio, audience, auditorium**.",
+            "*scribere* → **script, describe, manuscript**; *dicere* → **diction, dictate, contradict**.",
+            "*ducere* → **produce, induce, conductor**; *facere* → **fact, facsimile, effective**.",
+            "*capere* → **capacity, receive, captive**; *credere* → **credit, credible**; *ponere* → **position, component, deposit**."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "la": "ago, agere",
+      "baca": "AH-goh",
+      "en": "to do, to drive"
+    },
+    {
+      "la": "lego, legere",
+      "baca": "LEH-goh",
+      "en": "to read, to gather"
+    },
+    {
+      "la": "scribo, scribere",
+      "baca": "SKREE-boh",
+      "en": "to write"
+    },
+    {
+      "la": "dico, dicere",
+      "baca": "DEE-koh",
+      "en": "to say"
+    },
+    {
+      "la": "mitto, mittere",
+      "baca": "MIT-toh",
+      "en": "to send"
+    },
+    {
+      "la": "duco, ducere",
+      "baca": "DOO-koh",
+      "en": "to lead, to bring"
+    },
+    {
+      "la": "curro, currere",
+      "baca": "KOOR-roh",
+      "en": "to run"
+    },
+    {
+      "la": "vivo, vivere",
+      "baca": "WEE-woh",
+      "en": "to live"
+    },
+    {
+      "la": "bibo, bibere",
+      "baca": "BEE-boh",
+      "en": "to drink"
+    },
+    {
+      "la": "disco, discere",
+      "baca": "DIS-koh",
+      "en": "to learn"
+    },
+    {
+      "la": "credo, credere",
+      "baca": "KREH-doh",
+      "en": "to believe"
+    },
+    {
+      "la": "pono, ponere",
+      "baca": "POH-noh",
+      "en": "to put, to place"
+    },
+    {
+      "la": "video, videre",
+      "baca": "WEE-deh-oh",
+      "en": "to see"
+    },
+    {
+      "la": "habeo, habere",
+      "baca": "HAH-beh-oh",
+      "en": "to have"
+    },
+    {
+      "la": "doceo, docere",
+      "baca": "DOH-keh-oh",
+      "en": "to teach"
+    },
+    {
+      "la": "teneo, tenere",
+      "baca": "TEH-neh-oh",
+      "en": "to hold"
+    },
+    {
+      "la": "timeo, timere",
+      "baca": "TEE-meh-oh",
+      "en": "to fear, to be afraid"
+    },
+    {
+      "la": "rideo, ridere",
+      "baca": "REE-deh-oh",
+      "en": "to laugh"
+    },
+    {
+      "la": "sedeo, sedere",
+      "baca": "SEH-deh-oh",
+      "en": "to sit"
+    },
+    {
+      "la": "taceo, tacere",
+      "baca": "TAH-keh-oh",
+      "en": "to be silent"
+    },
+    {
+      "la": "respondeo, respondere",
+      "baca": "rehs-POHN-deh-oh",
+      "en": "to answer"
+    },
+    {
+      "la": "audio, audire",
+      "baca": "OW-dee-oh",
+      "en": "to hear"
+    },
+    {
+      "la": "venio, venire",
+      "baca": "WEH-nee-oh",
+      "en": "to come"
+    },
+    {
+      "la": "dormio, dormire",
+      "baca": "DOHR-mee-oh",
+      "en": "to sleep"
+    },
+    {
+      "la": "sentio, sentire",
+      "baca": "SEHN-tee-oh",
+      "en": "to feel"
+    },
+    {
+      "la": "invenio, invenire",
+      "baca": "in-WEH-nee-oh",
+      "en": "to find"
+    },
+    {
+      "la": "scio, scire",
+      "baca": "SKEE-oh",
+      "en": "to know"
+    },
+    {
+      "la": "facio, facere",
+      "baca": "FAH-kee-oh",
+      "en": "to make, to do"
+    },
+    {
+      "la": "capio, capere",
+      "baca": "KAH-pee-oh",
+      "en": "to take, to catch"
+    },
+    {
+      "la": "fugio, fugere",
+      "baca": "FOO-gee-oh",
+      "en": "to flee, to run away"
+    },
+    {
+      "la": "sic",
+      "baca": "SIK",
+      "en": "so, thus"
+    },
+    {
+      "la": "bene, male",
+      "baca": "BEH-neh, MAH-leh",
+      "en": "well, badly"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the group: I, II, III, III mixed or IV.",
+      "items": [
+        "porto, portare",
+        "video, videre",
+        "mitto, mittere",
+        "audio, audire",
+        "facio, facere",
+        "doceo, docere"
+      ]
+    },
+    {
+      "prompt": "Complete the verb to match its subject.",
+      "items": [
+        "Ego librum leg____.",
+        "Tu epistulam scrib____.",
+        "Marcus fabulam aud____.",
+        "Nos templum vid____.",
+        "Vos verba dic____.",
+        "Pueri in horto dorm____."
+      ]
+    },
+    {
+      "prompt": "Change into the matching plural form.",
+      "items": [
+        "lego",
+        "audit",
+        "vides",
+        "facio",
+        "dormit",
+        "scribis"
+      ]
+    },
+    {
+      "prompt": "Translate into Latin.",
+      "items": [
+        "I am writing a letter.",
+        "The teacher is teaching.",
+        "We hear stories.",
+        "The boys are running.",
+        "You are reading a book.",
+        "They are making a temple."
+      ]
+    }
+  ],
+  "answers": [
+    "I — II — III — IV — III mixed — II",
+    "lego — scribis — audit — videmus — dicitis — dormiunt",
+    "legimus — audiunt — videtis — facimus — dormiunt — scribitis",
+    "Epistulam scribo. — Magister docet. — Fabulas audimus. — Pueri currunt. — Librum legis. — Templum faciunt."
+  ]
+}

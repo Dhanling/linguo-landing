@@ -1,0 +1,595 @@
+{
+  "title": "What time do you get up?",
+  "title_target": "В колко часа ставаш?",
+  "goal": "Tell the time, make appointments and describe your daily routine — and get the clock right from the start: *три и половина* is 3:30 (\"three and a half\"), never 2:30.",
+  "bekal": [
+    "ask and tell the time with **и**, **без**, and **и половина**",
+    "make appointments with **в колко часа**",
+    "name the days of the week",
+    "describe your routine from morning to night",
+    "use verbs that come with **се**"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Making a date",
+      "intro": "Ivan wants to invite Ani to a show. Notice how times are expressed — and that *и половина* counts forward from the hour that's named.",
+      "lines": [
+        {
+          "speaker": "Иван:",
+          "text": "[В|F] [колко|KOL-ko] [часа|cha-SA] [ставаш|STA-vash] [сутрин|SOO-treen]?",
+          "id": "What time do you get up in the morning?",
+          "literal": "at — how-many — hours — get-up-you — mornings?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[В|F] [седем|SEH-dem]. [Закусвам|Za-KOOS-vam] [в|f] [седем|SEH-dem] [и|ee] [половина|po-lo-VEE-na].",
+          "id": "At seven. I have breakfast at seven-thirty.",
+          "literal": "at — seven. breakfast-I — at — seven — and — half."
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[А|A] [кога|ko-GA] [започват|za-POCH-vat] [часовете|cha-SO-veh-teh]?",
+          "id": "And when do your classes start?",
+          "literal": "and — when — begin-they — classes-the?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[В|F] [девет|DEH-vet] [без|bez] [петнайсет|pet-NAI-set]. [Свършват|SVĂR-shvat] [в|f] [един|eh-DEEN].",
+          "id": "At a quarter to nine. They finish at one.",
+          "literal": "at — nine — without — fifteen. finish-they — at — one."
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Значи|ZNA-chee] [следобед|sled-O-bed] [си|see] [свободна|svo-BOD-na].",
+          "id": "So you're free in the afternoon.",
+          "literal": "means — afternoon — are-you — free-(f)."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Да|Da], [но|no] [обикновено|o-beek-no-VEH-no] [уча|OO-cha] [до|do] [пет|pet]. [После|PO-sleh] [почивам|po-CHEE-vam].",
+          "id": "Yes, but I usually study until five. After that I rest.",
+          "literal": "yes, but — usually — study-I — until — five. afterwards — rest-I."
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Може|MO-zheh] [ли|lee] [да|da] [се|seh] [видим|VEE-deem] [в|f] [четвъртък|chet-VĂR-tăk] [вечер|VEH-cher]?",
+          "id": "Could we meet on Thursday evening?",
+          "literal": "may — (question) — that — each-other — see-we — on — Thursday — evening?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[В|F] [колко|KOL-ko]?",
+          "id": "What time?",
+          "literal": "at — how-many?"
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[В|F] [седем|SEH-dem] [и|ee] [половина|po-lo-VEE-na], [пред|pred] [Народния|Na-ROD-nee-ya] [театър|teh-A-tăr].",
+          "id": "At seven-thirty, in front of the National Theater.",
+          "literal": "at — seven — and — half, in-front-of — National-the — theater."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Добре|Dob-REH]. [Но|No] [моля|MO-lya] [те|teh], [не|neh] [закъснявай|za-kăs-NYA-vai]!",
+          "id": "OK. But please, don't be late!",
+          "literal": "fine. but — beg-I — you, not — be-late-(command)!"
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Никога|NEE-ko-ga] [не|neh] [закъснявам|za-kăs-NYA-vam]. [Почти|Poch-TEE] [никога|NEE-ko-ga].",
+          "id": "I'm never late. Almost never.",
+          "literal": "never — not — am-late-I. almost — never."
+        }
+      ],
+      "notes": [
+        "⚠️ **Седем и половина means 7:30.** Literally \"seven and a half\", so it counts forward from the hour named — just like English \"half past seven\". If you've learned German or Dutch, beware: there *halb acht* means 7:30 too, but counts toward eight. **Safe rule: take the number you hear and add thirty minutes.** *Три и половина* = 3:30. *Дванайсет и половина* = 12:30.",
+        "**Без means \"to\" (literally \"without\"), and the hour comes FIRST.** *Девет без петнайсет* = \"nine without fifteen\" = 8:45. English says \"a quarter to nine\", with the hour last. ⚠️ Mishearing this means arriving an hour early or late, so practice reading a wall clock out loud.",
+        "**Часът means \"the time\" (o'clock); час means \"an hour\" as a length of time, and also \"a class, a lesson\".** *Колко е часът?* (What time is it?), *Уча два часа* (I study for two hours), *Часовете започват в девет* (Classes start at nine).",
+        "**В means \"at\" with times, and is pronounced f before a voiceless consonant.** *В седем* sounds like *f SEH-dem*, *в пет* like *f pet*. The spelling stays **в**. This applies to all one-letter prepositions.",
+        "**Да се видим literally means \"that we see each other\" and it means \"to meet\".** The word **се** means \"oneself\" or \"each other\", and it attaches to many Bulgarian verbs to change their meaning: *казвам* (say) → *казвам се* (be called), *връщам* (give back) → *връщам се* (come back), *виждам* (see) → *виждаме се* (meet).",
+        "**Моля те means \"please\" with a pleading tone, not just \"here you are\".** The formal form is *моля Ви*. Adding it instantly softens a request or a warning.",
+        "**Не закъснявай is a prohibition.** It's the command form for one person, made negative with *не*. For more than one person, or formally: *Не закъснявайте.* Commands are covered more fully in Unit 11.",
+        "**Никога не закъснявам uses two negatives at once**, and that's the correct form. *Никога* must be paired with *не*. Unit 13 covers it fully — for now, just accept that dropping either one makes the sentence wrong."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "In conversation Bulgarians use the 1–12 clock, adding *сутринта*, *следобед* or *вечерта* when needed. The 24-hour clock is used on train timetables and in official announcements."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Bulgarian",
+              "Say it",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "3:00",
+                "три часа",
+                "tree cha-SA",
+                "three hours"
+              ],
+              [
+                "3:10",
+                "три и десет",
+                "tree ee DEH-set",
+                "three and ten"
+              ],
+              [
+                "3:15",
+                "три и петнайсет",
+                "tree ee pet-NAI-set",
+                "three and fifteen"
+              ],
+              [
+                "3:30",
+                "три и половина",
+                "tree ee po-lo-VEE-na",
+                "three and a half"
+              ],
+              [
+                "3:45",
+                "четири без петнайсет",
+                "CHEH-tee-ree bez pet-NAI-set",
+                "four without fifteen"
+              ],
+              [
+                "3:50",
+                "четири без десет",
+                "CHEH-tee-ree bez DEH-set",
+                "four without ten"
+              ],
+              [
+                "12:00 noon",
+                "дванайсет на обед",
+                "dva-NAI-set na O-bed",
+                "twelve at midday"
+              ],
+              [
+                "0:00",
+                "полунощ",
+                "PO-loo-nosht",
+                "midnight"
+              ]
+            ]
+          },
+          "after": [
+            "There are two questions, and they mean different things: **Колко е часът?** asks what time it is now. **В колко часа?** asks what time something happens. Don't mix them up — the second always starts with *в*."
+          ]
+        },
+        {
+          "title": "Verbs with се",
+          "body": [
+            "Dozens of Bulgarian verbs carry **се** as a fixed part. It can't always be translated; sometimes it means \"oneself\", sometimes \"each other\", and sometimes it just changes the meaning of the verb."
+          ],
+          "table": {
+            "head": [
+              "Without се",
+              "Meaning",
+              "With се",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "казвам",
+                "say",
+                "казвам се",
+                "be called"
+              ],
+              [
+                "връщам",
+                "give back",
+                "връщам се",
+                "come back, return"
+              ],
+              [
+                "виждам",
+                "see",
+                "виждаме се",
+                "meet (each other)"
+              ],
+              [
+                "чувствам",
+                "feel (something)",
+                "чувствам се",
+                "feel (well, tired…)"
+              ],
+              [
+                "обличам",
+                "dress (someone)",
+                "обличам се",
+                "get dressed"
+              ],
+              [
+                "събуждам",
+                "wake (someone)",
+                "събуждам се",
+                "wake up"
+              ],
+              [
+                "казва",
+                "he/she says",
+                "казва се",
+                "his/her name is"
+              ]
+            ]
+          },
+          "after": [
+            "**Се follows the same position rule as съм and ми**: it can't be the first word in a sentence, and it stays as close to its verb as possible. *Казвам се Ани*, not *Се казвам Ани*. In the *да* pattern it slips in between: *трябва да **се** върна*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "A day from waking up to bedtime",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bulgarian",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "събуждам се",
+              "să-BOOZH-dam seh",
+              "I wake up (open my eyes)"
+            ],
+            [
+              "ставам",
+              "STA-vam",
+              "I get up (out of bed)"
+            ],
+            [
+              "къпя се",
+              "KĂ-pya seh",
+              "I take a shower/bath"
+            ],
+            [
+              "обличам се",
+              "ob-LEE-cham seh",
+              "I get dressed"
+            ],
+            [
+              "закусвам",
+              "za-KOOS-vam",
+              "I have breakfast"
+            ],
+            [
+              "тръгвам",
+              "TRĂG-vam",
+              "I set off"
+            ],
+            [
+              "обядвам",
+              "o-BYAD-vam",
+              "I have lunch"
+            ],
+            [
+              "почивам",
+              "po-CHEE-vam",
+              "I rest"
+            ],
+            [
+              "вечерям",
+              "veh-CHEH-ryam",
+              "I have dinner"
+            ],
+            [
+              "гледам телевизия",
+              "GLEH-dam teh-leh-VEE-zee-ya",
+              "I watch TV"
+            ],
+            [
+              "лягам си",
+              "LYA-gam see",
+              "I go to bed"
+            ],
+            [
+              "спя",
+              "spya",
+              "I sleep"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at the three eating verbs: **закусвам, обядвам, вечерям** — one word each for having breakfast, lunch and dinner, with no need for the word \"eat\" at all. English mostly says \"have breakfast\"; Bulgarian packs it into a single verb."
+        },
+        {
+          "type": "p",
+          "text": "Tonight, try describing your own day in six sentences, then read them out loud. A routine is the best practice material for the present tense, because you already know the content and only have to think about the forms."
+        }
+      ]
+    },
+    {
+      "title": "Days and how often",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Day",
+            "Say it",
+            "Literally"
+          ],
+          "rows": [
+            [
+              "понеделник",
+              "po-neh-DEL-neek",
+              "after the no-work day"
+            ],
+            [
+              "вторник",
+              "VTOR-neek",
+              "second day"
+            ],
+            [
+              "сряда",
+              "SRYA-da",
+              "middle day"
+            ],
+            [
+              "четвъртък",
+              "chet-VĂR-tăk",
+              "fourth day"
+            ],
+            [
+              "петък",
+              "PEH-tăk",
+              "fifth day"
+            ],
+            [
+              "събота",
+              "SĂ-bo-ta",
+              "sabbath"
+            ],
+            [
+              "неделя",
+              "neh-DEH-lya",
+              "no-work (day)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The days are numbered, as in Portuguese or Hebrew: counting starts from the day after the rest day. *Неделя* — Sunday — literally means \"no-work\", from *не* + *дело* (work). And *понеделник* is \"the day after no-work\". Once you see the pattern, the seven names hardly need memorizing."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Phrase",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "в понеделник",
+              "f po-neh-DEL-neek",
+              "on Monday"
+            ],
+            [
+              "всеки понеделник",
+              "FSEH-kee po-neh-DEL-neek",
+              "every Monday"
+            ],
+            [
+              "през седмицата",
+              "prez SED-mee-tsa-ta",
+              "during the week"
+            ],
+            [
+              "през уикенда",
+              "prez oo-ee-KEN-da",
+              "on the weekend"
+            ],
+            [
+              "днес / утре / вчера",
+              "dnes / OO-treh / VCHEH-ra",
+              "today / tomorrow / yesterday"
+            ],
+            [
+              "вдругиден",
+              "VDROO-gee-den",
+              "the day after tomorrow"
+            ],
+            [
+              "онзи ден",
+              "ON-zee den",
+              "the day before yesterday"
+            ],
+            [
+              "тази седмица",
+              "TA-zee SED-mee-tsa",
+              "this week"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Days and months are never capitalized** in Bulgarian, except at the start of a sentence. The English habit of writing *Monday* and *March* with capitals doesn't apply here — and it's the most common spelling mistake learners make."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bg": "часът",
+      "baca": "cha-SĂT",
+      "en": "the time (o'clock)"
+    },
+    {
+      "bg": "час",
+      "baca": "chas",
+      "en": "hour; class, lesson"
+    },
+    {
+      "bg": "половина",
+      "baca": "po-lo-VEE-na",
+      "en": "half"
+    },
+    {
+      "bg": "без",
+      "baca": "bez",
+      "en": "to (in times); without"
+    },
+    {
+      "bg": "ставам",
+      "baca": "STA-vam",
+      "en": "I get up; I become"
+    },
+    {
+      "bg": "закусвам",
+      "baca": "za-KOOS-vam",
+      "en": "I have breakfast"
+    },
+    {
+      "bg": "обядвам",
+      "baca": "o-BYAD-vam",
+      "en": "I have lunch"
+    },
+    {
+      "bg": "вечерям",
+      "baca": "veh-CHEH-ryam",
+      "en": "I have dinner"
+    },
+    {
+      "bg": "спя",
+      "baca": "spya",
+      "en": "I sleep"
+    },
+    {
+      "bg": "почивам",
+      "baca": "po-CHEE-vam",
+      "en": "I rest"
+    },
+    {
+      "bg": "започвам",
+      "baca": "za-POCH-vam",
+      "en": "I begin, I start"
+    },
+    {
+      "bg": "свършвам",
+      "baca": "SVĂRSH-vam",
+      "en": "I finish"
+    },
+    {
+      "bg": "закъснявам",
+      "baca": "za-kăs-NYA-vam",
+      "en": "I'm late"
+    },
+    {
+      "bg": "свободен",
+      "baca": "svo-BO-den",
+      "en": "free (not busy)"
+    },
+    {
+      "bg": "зает",
+      "baca": "za-ET",
+      "en": "busy"
+    },
+    {
+      "bg": "кога",
+      "baca": "ko-GA",
+      "en": "when?"
+    },
+    {
+      "bg": "утре",
+      "baca": "OO-treh",
+      "en": "tomorrow"
+    },
+    {
+      "bg": "вчера",
+      "baca": "VCHEH-ra",
+      "en": "yesterday"
+    },
+    {
+      "bg": "седмица",
+      "baca": "SED-mee-tsa",
+      "en": "week"
+    },
+    {
+      "bg": "театър",
+      "baca": "teh-A-tăr",
+      "en": "theater"
+    },
+    {
+      "bg": "никога",
+      "baca": "NEE-ko-ga",
+      "en": "never"
+    },
+    {
+      "bg": "почти",
+      "baca": "poch-TEE",
+      "en": "almost"
+    },
+    {
+      "bg": "обикновено",
+      "baca": "o-beek-no-VEH-no",
+      "en": "usually"
+    },
+    {
+      "bg": "виждам се",
+      "baca": "VEEZH-dam seh",
+      "en": "I meet (someone)"
+    },
+    {
+      "bg": "полунощ",
+      "baca": "PO-loo-nosht",
+      "en": "midnight"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the times in Bulgarian.",
+      "items": [
+        "5:00",
+        "7:30",
+        "9:15",
+        "11:45",
+        "12:30",
+        "2:50"
+      ]
+    },
+    {
+      "prompt": "Fill in the right verb form.",
+      "items": [
+        "Аз ____ в седем сутрин. (ставам)",
+        "Тя ____ се в шест. (събуждам)",
+        "Часовете ____ в девет. (започвам)",
+        "Ние ____ в един. (обядвам)",
+        "Те не ____ никога. (закъснявам)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "часа / в / ставаш / колко",
+        "и / закусвам / седем / в / половина",
+        "без / девет / в / петнайсет",
+        "се / може / да / видим / ли",
+        "не / никога / закъснявам"
+      ]
+    },
+    {
+      "prompt": "Translate into Bulgarian.",
+      "items": [
+        "What time is it?",
+        "I get up at seven.",
+        "Classes finish at one.",
+        "Could we meet on Thursday?",
+        "Don't be late! (informal)"
+      ]
+    }
+  ],
+  "answers": [
+    "пет часа — седем и половина — девет и петнайсет — дванайсет без петнайсет — дванайсет и половина — три без десет",
+    "ставам — събужда — започват — обядваме — закъсняват",
+    "В колко часа ставаш? — Закусвам в седем и половина. — В девет без петнайсет. — Може ли да се видим? — Никога не закъснявам.",
+    "Колко е часът? — Ставам в седем. — Часовете свършват в един. — Може ли да се видим в четвъртък? — Не закъснявай!"
+  ]
+}

@@ -1,0 +1,541 @@
+{
+  "title": "How much are the tomatoes?",
+  "title_target": "Колко струват доматите?",
+  "goal": "Shop at the market with numbers, units and prices — and untangle the only real complication in Bulgarian numbers: a special counting form for masculine nouns, and yet another form just for men.",
+  "bekal": [
+    "count from zero to a thousand",
+    "ask prices with **колко струва** and **колко струват**",
+    "use **два** and **две** according to the noun",
+    "use the masculine counting form: *два лева*, *три хляба*",
+    "pay, get your change, and close the deal politely"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — At the Женски пазар market",
+      "intro": "Ani is shopping at Sofia's biggest open-air market. Notice that nouns after numbers end in **-а**, which isn't the ordinary plural — that's the masculine counting form.",
+      "lines": [
+        {
+          "speaker": "Ани:",
+          "text": "[Добър|Do-BĂR] [ден|den]! [Колко|KOL-ko] [струват|STROO-vat] [доматите|do-MA-tee-teh]?",
+          "id": "Good afternoon! How much are the tomatoes?",
+          "literal": "good — day! how-much — cost-they — tomatoes-the?"
+        },
+        {
+          "speaker": "Продавач:",
+          "text": "[Три|Tree] [лева|LEH-va] [килото|kee-LO-to]. [Много|MNO-go] [са|sa] [хубави|HOO-ba-vee].",
+          "id": "Three leva a kilo. They're really nice.",
+          "literal": "three — leva — kilo-the. very — are — nice."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Дайте|DAI-teh] [ми|mee] [един|eh-DEEN] [килограм|kee-lo-GRAM], [моля|MO-lya]. [И|Ee] [две|dveh] [краставици|kras-TA-vee-tsee].",
+          "id": "One kilo, please. And two cucumbers.",
+          "literal": "give-(formal) — to-me — one — kilogram, please. and — two — cucumbers."
+        },
+        {
+          "speaker": "Продавач:",
+          "text": "[Заповядайте|Za-po-VYA-dai-teh]. [Друго|DROO-go]?",
+          "id": "Here you are. Anything else?",
+          "literal": "here-you-are-(formal). other?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Колко|KOL-ko] [струва|STROO-va] [това|to-VA] [сирене|SEE-reh-neh]?",
+          "id": "How much is this cheese?",
+          "literal": "how-much — costs-it — this — cheese?"
+        },
+        {
+          "speaker": "Продавач:",
+          "text": "[Дванайсет|Dva-NAI-set] [лева|LEH-va] [килото|kee-LO-to]. [Искате|EES-ka-teh] [ли|lee] [половин|po-lo-VEEN] [кило|kee-LO]?",
+          "id": "Twelve leva a kilo. Would you like half a kilo?",
+          "literal": "twelve — leva — kilo-the. want-you-(formal) — (question) — half — kilo?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Да|Da], [моля|MO-lya]. [И|Ee] [един|eh-DEEN] [хляб|hlyab].",
+          "id": "Yes, please. And a loaf of bread.",
+          "literal": "yes, please. and — one — bread."
+        },
+        {
+          "speaker": "Продавач:",
+          "text": "[Всичко|FSEECH-ko] [е|eh] [дванайсет|dva-NAI-set] [лева|LEH-va] [и|ee] [петдесет|pet-deh-SET] [стотинки|sto-TEEN-kee].",
+          "id": "That's twelve leva fifty stotinki altogether.",
+          "literal": "everything — is — twelve — leva — and — fifty — stotinki."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Ето|EH-to] [двайсет|DVAI-set] [лева|LEH-va].",
+          "id": "Here's twenty leva.",
+          "literal": "here-is — twenty — leva."
+        },
+        {
+          "speaker": "Продавач:",
+          "text": "[Ето|EH-to] [рестото|RES-to-to] — [седем|SEH-dem] [лева|LEH-va] [и|ee] [петдесет|pet-deh-SET]. [Благодаря|Bla-go-da-RYA]!",
+          "id": "Here's your change — seven leva fifty. Thank you!",
+          "literal": "here-is — change-the — seven — leva — and — fifty. thank-you!"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Аз|Az] [благодаря|bla-go-da-RYA]! [Довиждане|Do-VEEZH-da-neh]!",
+          "id": "Thank YOU! Goodbye!",
+          "literal": "I — thank! until-seeing!"
+        }
+      ],
+      "notes": [
+        "⚠️ **Masculine nouns after a number take a special form, not the ordinary plural.** The plural of *лев* is *левове*, but after a number it becomes **лева**: *два лева, пет лева, сто лева*. Likewise *хляб* → plural *хлябове*, but *два хляба*. This is called the **бройна форма** — the counting form — and it exists only for masculine nouns that aren't people.",
+        "**Дайте ми literally means \"give to me\".** The *ми* is the short form \"to me\" you've already seen in *Приятно ми е*. To a friend it's *Дай ми*.",
+        "**Заповядайте is the most versatile word in Bulgaria.** It's used when handing something over (\"here you are\"), inviting someone in (\"come in\"), offering a seat, and when a waiter greets you (\"yes, what would you like?\"). The informal form is *Заповядай*. If you learn only ten words from this unit, include this one.",
+        "**Килото means \"per kilo\", with the article.** It's like English \"three leva **the** kilo\": *три лева килото*. The same pattern works for *бройката* (each, per piece) and *литърът* (per liter).",
+        "**Bulgarian money: лев, plural левове, counting form лева.** One lev is a hundred **стотинки** (from *сто*, a hundred). In conversation people often give a price without the unit at all: *дванайсет и петдесет* clearly means 12.50 lv.",
+        "**Струва for one thing, струват for several.** *Колко струва хлябът?* (How much is the bread?) and *Колко струват доматите?* (How much are the tomatoes?). Just like English \"is\" vs \"are\" — and here too the agreement is required.",
+        "**Друго? is how a seller asks \"anything else?\"** The closing answer: *Не, благодаря. Това е всичко.* (No, thanks. That's all.)",
+        "**Аз благодаря — \"thank YOU\".** A warm and very common closing line; putting *аз* in front shifts the emphasis onto you. The seller will remember you."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers 1–20 and beyond",
+          "body": [
+            "Numbers 1 to 10 have to be memorized; the rest are built from the same bricks."
+          ],
+          "table": {
+            "head": [
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "rows": [
+              [
+                "0 нула",
+                "1 един/една/едно",
+                "2 два/две",
+                "3 три",
+                "4 четири"
+              ],
+              [
+                "5 пет",
+                "6 шест",
+                "7 седем",
+                "8 осем",
+                "9 девет"
+              ],
+              [
+                "10 десет",
+                "11 единайсет",
+                "12 дванайсет",
+                "13 тринайсет",
+                "14 четиринайсет"
+              ],
+              [
+                "15 петнайсет",
+                "16 шестнайсет",
+                "17 седемнайсет",
+                "18 осемнайсет",
+                "19 деветнайсет"
+              ],
+              [
+                "20 двайсет",
+                "30 трийсет",
+                "40 четирийсет",
+                "50 петдесет",
+                "60 шейсет"
+              ],
+              [
+                "70 седемдесет",
+                "80 осемдесет",
+                "90 деветдесет",
+                "100 сто",
+                "1,000 хиляда"
+              ]
+            ]
+          },
+          "after": [
+            "Numbers 11 to 19 all follow the pattern **number + найсет**, which comes from *на десет* — \"on ten\", much like English \"-teen\". If you can say 1 to 10, you can practically say 1 to 20.",
+            "Compound numbers are joined with **и** before the last part: *двайсет и едно* (21), *сто двайсет и пет* (125), *хиляда деветстотин деветдесет и девет* (1999)."
+          ]
+        },
+        {
+          "title": "Един, два, and the masculine counting form",
+          "body": [
+            "Only one and two follow gender. Three and up never change. What changes instead is **the noun** — and only if it's masculine."
+          ],
+          "table": {
+            "head": [
+              "Type of noun",
+              "1",
+              "2",
+              "3",
+              "Example 5"
+            ],
+            "rows": [
+              [
+                "Masculine (thing)",
+                "един лев",
+                "два лев**а**",
+                "три лев**а**",
+                "пет лев**а**"
+              ],
+              [
+                "Masculine (thing)",
+                "един хляб",
+                "два хляб**а**",
+                "три хляб**а**",
+                "пет хляб**а**"
+              ],
+              [
+                "Feminine",
+                "една книга",
+                "две книги",
+                "три книги",
+                "пет книги"
+              ],
+              [
+                "Neuter",
+                "едно дете",
+                "две деца",
+                "три деца",
+                "пет деца"
+              ],
+              [
+                "Masculine (PEOPLE)",
+                "един мъж",
+                "**двама** мъже",
+                "**трима** мъже",
+                "**петима** мъже"
+              ]
+            ]
+          },
+          "after": [
+            "The last row is an oddity to learn separately: **for men, the number itself changes** — *двама, трима, четирима, петима, шестима*. These forms are used only for male people or mixed groups. For women alone, the ordinary numbers are used: *две жени*.",
+            "⚠️ The most common trap: saying *два лева* correctly and then *два мъжа* — which is wrong twice over. The right form is **двама мъже**.",
+            "The shortest way to remember it: **masculine thing → the noun changes; male people → the number changes.**"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Shopping phrases that cover the whole transaction",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Български",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Колко струва?",
+              "KOL-ko STROO-va",
+              "How much is it?"
+            ],
+            [
+              "Колко струва всичко?",
+              "KOL-ko STROO-va FSEECH-ko",
+              "How much is everything?"
+            ],
+            [
+              "Скъпо е.",
+              "SKĂ-po eh",
+              "It's expensive."
+            ],
+            [
+              "Имате ли по-евтино?",
+              "EE-ma-teh lee po-EV-tee-no",
+              "Do you have anything cheaper?"
+            ],
+            [
+              "Дайте ми, моля…",
+              "DAI-teh mee, MO-lya",
+              "Could I have…, please"
+            ],
+            [
+              "Само това.",
+              "SA-mo to-VA",
+              "Just this."
+            ],
+            [
+              "Това е всичко.",
+              "to-VA eh FSEECH-ko",
+              "That's all."
+            ],
+            [
+              "Може ли да платя с карта?",
+              "MO-zheh lee da pla-TYA s KAR-ta",
+              "Can I pay by card?"
+            ],
+            [
+              "В брой.",
+              "v broy",
+              "Cash."
+            ],
+            [
+              "Нямам ресто.",
+              "NYA-mam RES-to",
+              "I don't have change."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ You'll usually hear the last line from the seller, not say it yourself. At open markets, paying for something that costs three leva with a fifty is often gently refused. Keep small change — in Bulgaria it's worth more than its face value."
+        }
+      ]
+    },
+    {
+      "title": "Units, measures and packages",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bulgarian",
+            "Say it",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "кило / килограм",
+              "kee-LO / kee-lo-GRAM",
+              "kilo",
+              "едно кило домати"
+            ],
+            [
+              "половин кило",
+              "po-lo-VEEN kee-LO",
+              "half a kilo",
+              "половин кило сирене"
+            ],
+            [
+              "грам",
+              "gram",
+              "gram",
+              "двеста грама"
+            ],
+            [
+              "литър",
+              "LEE-tăr",
+              "liter",
+              "един литър мляко"
+            ],
+            [
+              "брой",
+              "broy",
+              "piece, item",
+              "три броя"
+            ],
+            [
+              "парче",
+              "par-CHEH",
+              "slice, piece",
+              "едно парче торта"
+            ],
+            [
+              "бутилка",
+              "boo-TEEL-ka",
+              "bottle",
+              "бутилка вода"
+            ],
+            [
+              "пакет",
+              "pa-KET",
+              "pack, packet",
+              "пакет ориз"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "At the market, small quantities are often given with no unit at all: *два домата* (two tomatoes), *три краставици* (three cucumbers). The seller will understand. Just don't forget the masculine counting form — *домат* is masculine, so **два домата**, not *два домати*."
+        },
+        {
+          "type": "kotak",
+          "title": "Кисело мляко — the yogurt that carries the country's name",
+          "items": [
+            "If you shop in Bulgaria, one product will always be in a local's basket: **кисело мляко** (*KEE-seh-lo MLYA-ko*), literally \"sour milk\", meaning yogurt. The bacterium that makes it, *Lactobacillus bulgaricus*, is named after this country because it was discovered here in 1905 by a Bulgarian student.",
+            "Yogurt isn't a side dish in Bulgaria; it's a staple. It becomes the cold soup *таратор* in summer, a sauce, the salty drink *айрян*, and it's eaten plain with honey. If you ask *Кое кисело мляко е най-хубавото?* (Which yogurt is the best?), get ready for a long and serious conversation."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bg": "колко",
+      "baca": "KOL-ko",
+      "en": "how much, how many"
+    },
+    {
+      "bg": "струва",
+      "baca": "STROO-va",
+      "en": "costs (one thing)"
+    },
+    {
+      "bg": "лев",
+      "baca": "lev",
+      "en": "lev (Bulgarian currency)"
+    },
+    {
+      "bg": "стотинка",
+      "baca": "sto-TEEN-ka",
+      "en": "stotinka (1/100 lev)"
+    },
+    {
+      "bg": "пазар",
+      "baca": "pa-ZAR",
+      "en": "market"
+    },
+    {
+      "bg": "магазин",
+      "baca": "ma-ga-ZEEN",
+      "en": "shop, store"
+    },
+    {
+      "bg": "домат",
+      "baca": "do-MAT",
+      "en": "tomato"
+    },
+    {
+      "bg": "краставица",
+      "baca": "KRAS-ta-vee-tsa",
+      "en": "cucumber"
+    },
+    {
+      "bg": "сирене",
+      "baca": "SEE-reh-neh",
+      "en": "white cheese"
+    },
+    {
+      "bg": "кисело мляко",
+      "baca": "KEE-seh-lo MLYA-ko",
+      "en": "yogurt"
+    },
+    {
+      "bg": "хляб",
+      "baca": "hlyab",
+      "en": "bread"
+    },
+    {
+      "bg": "кило",
+      "baca": "kee-LO",
+      "en": "kilo"
+    },
+    {
+      "bg": "половин",
+      "baca": "po-lo-VEEN",
+      "en": "half"
+    },
+    {
+      "bg": "заповядайте",
+      "baca": "za-po-VYA-dai-teh",
+      "en": "here you are; come in; please"
+    },
+    {
+      "bg": "дайте ми",
+      "baca": "DAI-teh mee",
+      "en": "give me"
+    },
+    {
+      "bg": "друго",
+      "baca": "DROO-go",
+      "en": "other, something else"
+    },
+    {
+      "bg": "ресто",
+      "baca": "RES-to",
+      "en": "change (money)"
+    },
+    {
+      "bg": "скъп",
+      "baca": "skăp",
+      "en": "expensive"
+    },
+    {
+      "bg": "евтин",
+      "baca": "EV-teen",
+      "en": "cheap"
+    },
+    {
+      "bg": "плащам",
+      "baca": "PLASH-tam",
+      "en": "I pay"
+    },
+    {
+      "bg": "в брой",
+      "baca": "v broy",
+      "en": "in cash"
+    },
+    {
+      "bg": "бутилка",
+      "baca": "boo-TEEL-ka",
+      "en": "bottle"
+    },
+    {
+      "bg": "парче",
+      "baca": "par-CHEH",
+      "en": "piece, slice"
+    },
+    {
+      "bg": "мъж / мъже",
+      "baca": "măzh / mă-ZHEH",
+      "en": "man (sg / pl)"
+    },
+    {
+      "bg": "жена / жени",
+      "baca": "zheh-NA / zheh-NEE",
+      "en": "woman (sg / pl)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the numbers in Cyrillic.",
+      "items": [
+        "7",
+        "12",
+        "20",
+        "45",
+        "100",
+        "1999"
+      ]
+    },
+    {
+      "prompt": "Fill in the right form of the number and the noun.",
+      "items": [
+        "два ____ (лев)",
+        "три ____ (хляб)",
+        "две ____ (книга)",
+        "____ мъже (2 men)",
+        "пет ____ (дете)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "струват / доматите / колко",
+        "лева / три / килото",
+        "ми / дайте / килограм / един",
+        "е / всичко / лева / осем",
+        "половин / искам / кило"
+      ]
+    },
+    {
+      "prompt": "Translate into Bulgarian.",
+      "items": [
+        "How much is the cheese?",
+        "It's very expensive.",
+        "Give me two loaves of bread.",
+        "How much is everything?",
+        "Can I pay by card?"
+      ]
+    }
+  ],
+  "answers": [
+    "седем — дванайсет — двайсет — четирийсет и пет — сто — хиляда деветстотин деветдесет и девет",
+    "лева — хляба — книги — двама — деца",
+    "Колко струват доматите? — Три лева килото. — Дайте ми един килограм. — Всичко е осем лева. — Искам половин кило.",
+    "Колко струва сиренето? — Много е скъпо. — Дайте ми два хляба. — Колко струва всичко? — Може ли да платя с карта?"
+  ]
+}

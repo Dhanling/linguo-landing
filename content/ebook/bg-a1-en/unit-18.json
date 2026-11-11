@@ -1,0 +1,598 @@
+{
+  "title": "My throat hurts",
+  "title_target": "Боли ме гърлото",
+  "goal": "Describe aches and symptoms at the pharmacy and the doctor's. The pattern flips again — it isn't you who hurts, but **the body part that hurts you**.",
+  "bekal": [
+    "using **боли ме** and **болят ме** correctly",
+    "naming the body parts people complain about most",
+    "saying since when something has been happening with **от**",
+    "reading the instructions for medicine",
+    "asking for emergency help"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — At the pharmacy",
+      "intro": "Ani falls ill in her first winter. Notice the pattern *боли ме* — the body part is the subject, and the verb agrees with that body part.",
+      "lines": [
+        {
+          "speaker": "Аптекарка:",
+          "text": "[Добър|Do-BĂR] [ден|den]. [Какво|Kak-VO] [ви|vee] [е|eh]?",
+          "id": "Good afternoon. What seems to be the problem?",
+          "literal": "good — day. what — to-you — is?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Боли|Bo-LEE] [ме|meh] [гърлото|GĂR-lo-to] [и|ee] [имам|EE-mam] [температура|tem-peh-ra-TOO-ra].",
+          "id": "My throat hurts and I have a fever.",
+          "literal": "hurts — me — throat-the — and — I-have — temperature."
+        },
+        {
+          "speaker": "Аптекарка:",
+          "text": "[От|Ot] [кога|ko-GA]?",
+          "id": "Since when?",
+          "literal": "from — when?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[От|Ot] [вчера|VCHEH-ra]. [Не|Neh] [мога|MO-ga] [да|da] [спя|spya].",
+          "id": "Since yesterday. I can't sleep.",
+          "literal": "from — yesterday. not — I-can — that — I-sleep."
+        },
+        {
+          "speaker": "Аптекарка:",
+          "text": "[Боли|Bo-LEE] [ли|lee] [ви|vee] [главата|gla-VA-ta]?",
+          "id": "Does your head hurt too?",
+          "literal": "hurts — (question) — you — head-the?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Малко|MAL-ko]. [И|Ee] [ме|meh] [болят|bo-LYAT] [очите|O-chee-teh].",
+          "id": "A little. And my eyes hurt.",
+          "literal": "a-little. and — me — they-hurt — eyes-the."
+        },
+        {
+          "speaker": "Аптекарка:",
+          "text": "[Имате|EE-ma-teh] [ли|lee] [алергия|a-ler-GEE-ya] [към|kăm] [лекарства|leh-KARST-va]?",
+          "id": "Are you allergic to any medicine?",
+          "literal": "you-have — (question) — allergy — to — medicines?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Не|Neh], [нямам|NYA-mam].",
+          "id": "No, I'm not.",
+          "literal": "no, I-don't-have."
+        },
+        {
+          "speaker": "Аптекарка:",
+          "text": "[Вземайте|VZEH-mai-teh] [тези|TEH-zee] [хапчета|HAP-cheh-ta] — [три|tree] [пъти|PĂ-tee] [на|na] [ден|den], [след|sled] [ядене|YA-deh-neh].",
+          "id": "Take these tablets — three times a day, after meals.",
+          "literal": "take — these — tablets — three — times — in — day, after — eating."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[А|A] [за|za] [гърлото|GĂR-lo-to]?",
+          "id": "And for the throat?",
+          "literal": "and — for — throat-the?"
+        },
+        {
+          "speaker": "Аптекарка:",
+          "text": "[Този|TO-zee] [спрей|sprey]. [И|Ee] [пийте|PEEY-teh] [топъл|TO-păl] [чай|chai] [с|s] [мед|med].",
+          "id": "This spray. And drink warm tea with honey.",
+          "literal": "this — spray. and — drink — warm — tea — with — honey."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Благодаря|Bla-go-da-RYA]. [Колко|KOL-ko] [струва|STROO-va] [всичко|FSEECH-ko]?",
+          "id": "Thank you. How much is it altogether?",
+          "literal": "thank-you. how-much — costs — everything?"
+        },
+        {
+          "speaker": "Аптекарка:",
+          "text": "[Дванайсет|Dva-NAI-set] [лева|LEH-va]. [Оздравявайте|Oz-dra-VYA-vai-teh]!",
+          "id": "Twelve leva. Get well soon!",
+          "literal": "twelve — leva. get-well!"
+        }
+      ],
+      "notes": [
+        "⚠️ **Боли ме flips the sentence like харесва ми.** Literally it means \"it hurts me\", and the subject is **the body part**. So the verb agrees with the number of body parts: *Боли ме главата* (one head) but **Болят** *ме очите* (two eyes), *краката* (two legs), *зъбите* (many teeth).",
+        "⚠️ **The person word here takes the object form, not the receiver form.** It's *боли **ме***, not *боли ми*. Compare: *харесва **ми*** (to me) but *боли **ме*** (me). This is the one place where the two sets of little words get mixed up, so learn the set: **ме, те, го, я, ни, ви, ги**.",
+        "**The body part is always definite.** *Боли ме главата*, not *боли ме глава*. It makes sense: the head in question is obviously your own, so it is already specific — English says \"my head\", Bulgarian says \"the head\".",
+        "**Какво ви е? is the most common way to ask what's wrong** and literally means \"what is with you?\". The casual form is *Какво ти е?* The same question is used when someone looks down — not just for physical illness.",
+        "**От кога? means \"since when?\"** and the answer uses *от* too: *от вчера, от два дни, от една седмица*. It's the same preposition used for where you're from in Unit 2 — Bulgarian uses it for any starting point.",
+        "**Вземайте, not вземете.** The first form marks a repeated action — taking medicine three times a day for several days. The second marks a single time. The same difference runs through all Bulgarian verbs, and you will learn it as a system at level A2.",
+        "**Оздравявайте! — \"get well soon\" — is said to someone who is ill.** To a friend: *Оздравявай!* It's also what people say if you sneeze twice; after the first sneeze it's usually *Наздраве!*",
+        "**The emergency number in Bulgaria is 112**, as everywhere in the EU, and operators speak English. Sentences to memorize right now: **Помощ!** (*POMOSHT* — help!) and **Извикайте линейка!** (*eez-vee-KAI-teh lee-NEY-ka* — call an ambulance!)."
+      ],
+      "grammars": [
+        {
+          "title": "Боли ме — the pattern for aches and pains",
+          "body": [
+            "The verb has only two forms you need: **боли** for one body part, **болят** for more than one."
+          ],
+          "table": {
+            "head": [
+              "Bulgarian",
+              "Say it",
+              "Literally",
+              "English"
+            ],
+            "rows": [
+              [
+                "Боли ме главата.",
+                "bo-LEE meh gla-VA-ta",
+                "hurts me head-the",
+                "I have a headache."
+              ],
+              [
+                "Боли ме гърлото.",
+                "bo-LEE meh GĂR-lo-to",
+                "hurts me throat-the",
+                "My throat hurts."
+              ],
+              [
+                "Болят ме очите.",
+                "bo-LYAT meh O-chee-teh",
+                "hurt(pl) me eyes-the",
+                "My eyes hurt."
+              ],
+              [
+                "Боли ли те коремът?",
+                "bo-LEE lee teh ko-REH-măt",
+                "hurts (question) you stomach-the",
+                "Does your stomach hurt?"
+              ],
+              [
+                "Не ме боли нищо.",
+                "neh meh bo-LEE NEESH-to",
+                "not me hurts nothing",
+                "Nothing hurts."
+              ],
+              [
+                "Вчера ме болеше главата.",
+                "VCHEH-ra meh bo-LEH-sheh gla-VA-ta",
+                "yesterday me was-hurting head-the",
+                "Yesterday I had a headache."
+              ]
+            ]
+          },
+          "after": [
+            "The last row uses the past form **болеше**, one of the few imperfect forms worth knowing at A1, because aches are almost always about an ongoing state, not a sudden event.",
+            "If you don't need to name the body part, just say: *Боли ме.* (It hurts.)"
+          ]
+        },
+        {
+          "title": "Body parts",
+          "body": [
+            "All of them are used with the article in the *боли ме* pattern."
+          ],
+          "table": {
+            "head": [
+              "Bulgarian",
+              "Say it",
+              "English",
+              "Bulgarian",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "глава",
+                "gla-VA",
+                "head",
+                "ръка / ръце",
+                "ră-KA / ră-TSEH",
+                "hand, arm"
+              ],
+              [
+                "око / очи",
+                "o-KO / o-CHEE",
+                "eye",
+                "крак / крака",
+                "krak / kra-KA",
+                "foot, leg"
+              ],
+              [
+                "ухо / уши",
+                "oo-HO / oo-SHEE",
+                "ear",
+                "гръб",
+                "grăb",
+                "back"
+              ],
+              [
+                "нос",
+                "nos",
+                "nose",
+                "стомах",
+                "sto-MAH",
+                "stomach"
+              ],
+              [
+                "уста",
+                "oos-TA",
+                "mouth",
+                "корем",
+                "ko-REM",
+                "belly"
+              ],
+              [
+                "зъб / зъби",
+                "zăb / ZĂ-bee",
+                "tooth",
+                "сърце",
+                "săr-TSEH",
+                "heart"
+              ],
+              [
+                "гърло",
+                "GĂR-lo",
+                "throat",
+                "кръв",
+                "krăv",
+                "blood"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Note three irregular plurals: *око → очи*, *ухо → уши*, *ръка → ръце*. All three are leftovers of the Old Slavic dual — a special form for a pair of things — and Bulgarian kept it precisely for body parts that come in pairs."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "At the pharmacy and the doctor's",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bulgarian",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Не се чувствам добре.",
+              "neh seh CHOOV-stvam dob-REH",
+              "I don't feel well."
+            ],
+            [
+              "Имам температура.",
+              "EE-mam tem-peh-ra-TOO-ra",
+              "I have a fever."
+            ],
+            [
+              "Имам кашлица.",
+              "EE-mam KASH-lee-tsa",
+              "I have a cough."
+            ],
+            [
+              "Настинал съм.",
+              "nas-TEE-nal săm",
+              "I've caught a cold. (m)"
+            ],
+            [
+              "Настинала съм.",
+              "nas-TEE-na-la săm",
+              "I've caught a cold. (f)"
+            ],
+            [
+              "Повръща ми се.",
+              "po-VRĂSH-ta mee seh",
+              "I feel sick."
+            ],
+            [
+              "Имам алергия към…",
+              "EE-mam a-ler-GEE-ya kăm",
+              "I'm allergic to…"
+            ],
+            [
+              "Трябва ми лекар.",
+              "TRYAB-va mee LEH-kar",
+              "I need a doctor."
+            ],
+            [
+              "Къде е болницата?",
+              "kă-DEH eh BOL-nee-tsa-ta",
+              "Where is the hospital?"
+            ],
+            [
+              "Имате ли нещо за…?",
+              "EE-ma-teh lee NESH-to za",
+              "Do you have something for…?"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Directions",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "три пъти на ден",
+              "tree PĂ-tee na den",
+              "three times a day"
+            ],
+            [
+              "преди ядене",
+              "preh-DEE YA-deh-neh",
+              "before meals"
+            ],
+            [
+              "след ядене",
+              "sled YA-deh-neh",
+              "after meals"
+            ],
+            [
+              "на гладно",
+              "na GLAD-no",
+              "on an empty stomach"
+            ],
+            [
+              "по едно хапче",
+              "po ed-NO HAP-cheh",
+              "one tablet each time"
+            ],
+            [
+              "в продължение на пет дни",
+              "f pro-dăl-ZHEH-nee-eh na pet dnee",
+              "for five days"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Настинал съм follows gender**, like every perfect form in Unit 16. A woman says *настинала съм*. You'll use this sentence a lot in a Bulgarian winter, so get the form right from the start."
+        }
+      ]
+    },
+    {
+      "title": "Emergency words, and one habit you should know about",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bulgarian",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Помощ!",
+              "POMOSHT",
+              "Help!"
+            ],
+            [
+              "Извикайте линейка!",
+              "eez-vee-KAI-teh lee-NEY-ka",
+              "Call an ambulance!"
+            ],
+            [
+              "Спешно е.",
+              "SPESH-no eh",
+              "This is an emergency."
+            ],
+            [
+              "Обадете се на 112.",
+              "o-ba-DEH-teh seh na sto ee dva-NAI-set",
+              "Call 112."
+            ],
+            [
+              "Изгубих си паспорта.",
+              "eez-GOO-beeh see pas-POR-ta",
+              "I've lost my passport."
+            ],
+            [
+              "Откраднаха ми чантата.",
+              "ot-KRAD-na-ha mee CHAN-ta-ta",
+              "My bag has been stolen."
+            ],
+            [
+              "Не говоря добре български.",
+              "neh go-VO-rya dob-REH BĂL-gar-skee",
+              "I don't speak Bulgarian well yet."
+            ],
+            [
+              "Говорите ли английски?",
+              "go-VO-ree-teh lee ang-LEEY-skee",
+              "Do you speak English?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Bulgarian emergency care is free for everyone, including visitors. For follow-up treatment, EU travelers use the EHIC card; visitors from outside the EU should have travel insurance — **застраховка** (*zas-tra-HOF-ka*)."
+        },
+        {
+          "type": "kotak",
+          "title": "Течение — the draft all of Bulgaria fears",
+          "items": [
+            "If you open two windows at once on a Bulgarian bus, train or classroom, someone will quickly close one, saying **течение!** (*teh-CHEH-nee-eh*) — a cross-draft.",
+            "The belief is sincere: air flowing through a room is thought to cause headaches, facial nerve inflammation and bad colds — even on a hot day. It's no joke, and there's no point arguing.",
+            "English speakers may find the idea less strange than it seems: \"catching a chill\" and \"catching a cold\" come from the same thinking. And the Bulgarian word for a cold, **настинка**, comes from a root meaning \"to get cold\" — exactly the same logic."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bg": "боли ме",
+      "baca": "bo-LEE meh",
+      "en": "it hurts me (body part)"
+    },
+    {
+      "bg": "глава",
+      "baca": "gla-VA",
+      "en": "head"
+    },
+    {
+      "bg": "гърло",
+      "baca": "GĂR-lo",
+      "en": "throat"
+    },
+    {
+      "bg": "корем",
+      "baca": "ko-REM",
+      "en": "belly, stomach"
+    },
+    {
+      "bg": "зъб",
+      "baca": "zăb",
+      "en": "tooth"
+    },
+    {
+      "bg": "око / очи",
+      "baca": "o-KO / o-CHEE",
+      "en": "eye"
+    },
+    {
+      "bg": "ръка / ръце",
+      "baca": "ră-KA / ră-TSEH",
+      "en": "hand, arm"
+    },
+    {
+      "bg": "крак / крака",
+      "baca": "krak / kra-KA",
+      "en": "foot, leg"
+    },
+    {
+      "bg": "температура",
+      "baca": "tem-peh-ra-TOO-ra",
+      "en": "fever, temperature"
+    },
+    {
+      "bg": "кашлица",
+      "baca": "KASH-lee-tsa",
+      "en": "cough"
+    },
+    {
+      "bg": "настинка",
+      "baca": "nas-TEEN-ka",
+      "en": "cold, chill"
+    },
+    {
+      "bg": "лекар",
+      "baca": "LEH-kar",
+      "en": "doctor"
+    },
+    {
+      "bg": "болница",
+      "baca": "BOL-nee-tsa",
+      "en": "hospital"
+    },
+    {
+      "bg": "аптека",
+      "baca": "ap-TEH-ka",
+      "en": "pharmacy"
+    },
+    {
+      "bg": "лекарство",
+      "baca": "leh-KARST-vo",
+      "en": "medicine"
+    },
+    {
+      "bg": "хапче",
+      "baca": "HAP-cheh",
+      "en": "tablet, pill"
+    },
+    {
+      "bg": "алергия",
+      "baca": "a-ler-GEE-ya",
+      "en": "allergy"
+    },
+    {
+      "bg": "мед",
+      "baca": "med",
+      "en": "honey"
+    },
+    {
+      "bg": "чувствам се",
+      "baca": "CHOOV-stvam seh",
+      "en": "I feel"
+    },
+    {
+      "bg": "помощ",
+      "baca": "POMOSHT",
+      "en": "help"
+    },
+    {
+      "bg": "линейка",
+      "baca": "lee-NEY-ka",
+      "en": "ambulance"
+    },
+    {
+      "bg": "спешно",
+      "baca": "SPESH-no",
+      "en": "urgent, emergency"
+    },
+    {
+      "bg": "здраве",
+      "baca": "ZDRA-veh",
+      "en": "health"
+    },
+    {
+      "bg": "оздравявам",
+      "baca": "oz-dra-VYA-vam",
+      "en": "I get well"
+    },
+    {
+      "bg": "след",
+      "baca": "sled",
+      "en": "after"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in боли or болят.",
+      "items": [
+        "____ ме главата.",
+        "____ ме очите.",
+        "____ ме гърлото.",
+        "____ ме краката.",
+        "____ ли те коремът?",
+        "Не ме ____ нищо."
+      ]
+    },
+    {
+      "prompt": "Fill in the short object form: ме, те, го, я, ни, ви, ги.",
+      "items": [
+        "Боли ____ главата. (me)",
+        "Боли ли ____ гърлото? (you, informal)",
+        "Болят ____ зъбите. (him)",
+        "Боли ____ коремът. (us)",
+        "Какво ____ е? (you, formal)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ме / гърлото / боли",
+        "температура / имам",
+        "кога / от",
+        "ми / лекар / трябва",
+        "се / чувствам / не / добре"
+      ]
+    },
+    {
+      "prompt": "Translate into Bulgarian.",
+      "items": [
+        "I have a headache.",
+        "My eyes hurt.",
+        "Since yesterday.",
+        "I need a doctor.",
+        "Get well soon!"
+      ]
+    }
+  ],
+  "answers": [
+    "Боли — Болят — Боли — Болят — Боли — боли",
+    "ме — те — го — ни — ви",
+    "Боли ме гърлото. — Имам температура. — От кога? — Трябва ми лекар. — Не се чувствам добре.",
+    "Боли ме главата. — Болят ме очите. — От вчера. — Трябва ми лекар. — Оздравявайте!"
+  ]
+}

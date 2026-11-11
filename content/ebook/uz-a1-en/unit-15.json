@@ -1,0 +1,536 @@
+{
+  "title": "Comparing: -roq, eng, and clothes shopping",
+  "title_target": "Qiyoslash: -roq va eng",
+  "goal": "Compare two things without a word for \"more\", name the best with *eng*, and shop for clothes in the right size.",
+  "bekal": [
+    "forming *kattaroq*, *arzonroq*, *yaxshiroq* with one ending",
+    "comparing with *-dan*: *Bu undan qimmatroq*",
+    "saying ordinal numbers with *-inchi*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Bu koʻylak menga toʻgʻri keladimi?",
+      "intro": "At a clothing store downtown. Budi is looking for a shirt for a friend's wedding.",
+      "lines": [
+        {
+          "speaker": "Sotuvchi:",
+          "text": "Xush kelibsiz! Nima qidiryapsiz?",
+          "id": "Welcome! What are you looking for?",
+          "literal": "glad came-you! what looking-for-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Oq koʻylak kerak. Toʻyga boraman.",
+          "id": "I need a white shirt. I'm going to a wedding.",
+          "literal": "white shirt needed. wedding-to go-I."
+        },
+        {
+          "speaker": "Sotuvchi:",
+          "text": "Oʻlchamingiz nechchi?",
+          "id": "What's your size?",
+          "literal": "size-your what-number?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bilmayman. Indoneziyada M kiyaman.",
+          "id": "I don't know. In Indonesia I wear an M.",
+          "literal": "know-not-I. Indonesia-in M wear-I."
+        },
+        {
+          "speaker": "Sotuvchi:",
+          "text": "Bu yerda oʻlchamlar kichikroq. L oling.",
+          "id": "Sizes here run smaller. Take an L.",
+          "literal": "this place-in sizes smaller. L take."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kiyib koʻrsam boʻladimi?",
+          "id": "May I try it on?",
+          "literal": "wearing see-if-I becomes-?"
+        },
+        {
+          "speaker": "Sotuvchi:",
+          "text": "Albatta, marhamat. Kiyinish xonasi u yerda.",
+          "id": "Of course, go ahead. The fitting room is over there.",
+          "literal": "of-course, please. dressing room-its that place-in."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bu yaxshiroq. Lekin qora rangi bormi?",
+          "id": "This is better. But do you have it in black?",
+          "literal": "this better. but black color-its exists-?"
+        },
+        {
+          "speaker": "Sotuvchi:",
+          "text": "Bor, ammo qoraroq koʻylak biroz qimmatroq.",
+          "id": "We do, but the black one is a bit more expensive.",
+          "literal": "exists, but blacker shirt a-bit more-expensive."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eng arzoni qaysi?",
+          "id": "Which one is the cheapest?",
+          "literal": "most cheap-its which?"
+        },
+        {
+          "speaker": "Sotuvchi:",
+          "text": "Manavi — ikkinchi javondagi. Sifati ham yomon emas.",
+          "id": "This one — on the second shelf. The quality isn't bad either.",
+          "literal": "this-here — second shelf-on-the-one. quality-its also bad not."
+        }
+      ],
+      "notes": [
+        "**-roq means \"more\", and there's no separate word for it.** *Katta* (big) → *kattaroq* (bigger). *Arzon* → *arzonroq*. Uzbek has no free-standing \"more\"; it all attaches — much like English \"-er\", but for every adjective.",
+        "**Toʻgʻri kelmoq = \"to fit, to suit\".** Literally \"to come straight\". *Bu menga toʻgʻri keladi* = this fits me. Another compound verb, and as usual you can't guess the meaning from its parts.",
+        "**Kiyib koʻrsam boʻladimi? = \"may I try it on?\"** The *-sa* inside it is the conditional form taught in unit 19. For now learn the pattern *…-sam boʻladimi?* as a whole — it's the most polite way to ask permission.",
+        "**Eng arzoni, not eng arzon.** When an adjective is used as a noun (\"the cheapest one\"), it gets the ending *-i*. Likewise *kattasi* (the big one), *yangisi* (the new one), *qizili* (the red one)."
+      ],
+      "grammars": [
+        {
+          "title": "Three degrees of comparison",
+          "body": [
+            "Uzbek comparison is built from two tools you already have: the ending *-roq*, and the \"from\" ending *-dan* from unit 8."
+          ],
+          "table": {
+            "head": [
+              "Degree",
+              "Form",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Plain",
+                "adjective",
+                "*Bu koʻylak qimmat.*",
+                "This shirt is expensive."
+              ],
+              [
+                "More",
+                "**-roq**",
+                "*Bu koʻylak qimmatroq.*",
+                "This shirt is more expensive."
+              ],
+              [
+                "More than X",
+                "**X-dan … -roq**",
+                "*Bu undan qimmatroq.*",
+                "This is more expensive than that."
+              ],
+              [
+                "Most",
+                "**eng**",
+                "*Bu eng qimmat koʻylak.*",
+                "This is the most expensive shirt."
+              ],
+              [
+                "The most … one",
+                "**eng … -i**",
+                "*Eng qimmati bu.*",
+                "The most expensive one is this."
+              ],
+              [
+                "Rather",
+                "**biroz / -roq**",
+                "*biroz qimmat*",
+                "a bit expensive"
+              ]
+            ]
+          },
+          "after": [
+            "**The thing compared to takes -dan, not a word for \"than\".** *Sendan kattaman* = \"I'm older than you\" — literally \"from-you big-I\". Note that *-roq* can even be dropped here; *-dan* alone carries the comparison.",
+            "*Eng* is the only comparison word that stands on its own, and it always comes first: *eng yaxshi* (best), *eng katta* (biggest), *eng birinchi* (the very first).",
+            "For likeness, use *xuddi … kabi* or *-day/-dek*: *Bu xuddi u kabi* (this is just like that), *muzday sovuq* (cold as ice), *asalday shirin* (sweet as honey)."
+          ]
+        },
+        {
+          "title": "Ordinal numbers: -inchi",
+          "body": [
+            "One ending turns every number into an ordinal. It's used for dates, floors, bus numbers, and school grades."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Ordinal",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*bir*",
+                "**birinchi**",
+                "bi-rin-CHI",
+                "first"
+              ],
+              [
+                "*ikki*",
+                "**ikkinchi**",
+                "ik-kin-CHI",
+                "second"
+              ],
+              [
+                "*uch*",
+                "**uchinchi**",
+                "u-chin-CHI",
+                "third"
+              ],
+              [
+                "*toʻrt*",
+                "**toʻrtinchi**",
+                "tor-tin-CHI",
+                "fourth"
+              ],
+              [
+                "*besh*",
+                "**beshinchi**",
+                "be-shin-CHI",
+                "fifth"
+              ],
+              [
+                "*oʻn*",
+                "**oʻninchi**",
+                "o-nin-CHI",
+                "tenth"
+              ]
+            ]
+          },
+          "after": [
+            "The rule: **number ending in a consonant → -inchi; ending in a vowel → -nchi.** *besh* → *beshinchi*, but *ikki* → *ikki**nchi***, *olti* → *olti**nchi***, *yetti* → *yetti**nchi***.",
+            "For dates, Uzbek puts **the month, then the day**: *mart oyining beshinchi kuni* or, shorter, *5-mart* (read *beshinchi mart*). The year: *2026-yil* (read *ikki ming yigirma oltinchi yil*).",
+            "*Birinchi* also means \"first of all\" at the start of a sentence: *Birinchi, non oling* = \"first, take the bread\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Clothes and sizes",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Most of the words below are used with the verb *kiymoq* (to wear, to put on) — and like most definite objects, they need *-ni*: *koʻylakni kiying*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "Meaning",
+            "Oʻzbekcha",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**koʻylak**",
+              "koy-LAK",
+              "shirt; dress",
+              "**shim**",
+              "shim",
+              "trousers"
+            ],
+            [
+              "**kurtka**",
+              "KURT-kå",
+              "jacket",
+              "**paypoq**",
+              "påy-PÅQ",
+              "socks"
+            ],
+            [
+              "**etik**",
+              "e-TIK",
+              "boots",
+              "**tufli**",
+              "TUF-li",
+              "shoes"
+            ],
+            [
+              "**doʻppi**",
+              "dop-PI",
+              "Uzbek skullcap",
+              "**roʻmol**",
+              "ro-MÅL",
+              "headscarf, shawl"
+            ],
+            [
+              "**kamar**",
+              "kå-MAR",
+              "belt",
+              "**soat**",
+              "så-AT",
+              "watch"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "A *doʻppi* is a black skullcap with white embroidery, worn by Uzbek men at formal events and on holidays. Its pattern varies by region — the one with four chili-pepper motifs comes from Chust in the Fergana Valley, and it's the most famous. Buying one is the most typical souvenir from Uzbekistan."
+        },
+        {
+          "type": "p",
+          "text": "Useful sentences in a shop: *Oʻlchamingiz nechchi?* (what's your size), *Kattarogʻi bormi?* (do you have a bigger one?), *Bu menga toʻgʻri kelmadi* (this doesn't fit me), *Boshqa rangi bormi?* (do you have another color?)."
+        }
+      ]
+    },
+    {
+      "title": "Adjectives often compared",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Practice like this: pick two things around you, then make one comparison sentence for each row."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Base",
+            "More",
+            "Most",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*katta*",
+              "*kattaroq*",
+              "*eng katta*",
+              "big"
+            ],
+            [
+              "*arzon*",
+              "*arzonroq*",
+              "*eng arzon*",
+              "cheap"
+            ],
+            [
+              "*yaxshi*",
+              "*yaxshiroq*",
+              "*eng yaxshi*",
+              "good"
+            ],
+            [
+              "*tez*",
+              "*tezroq*",
+              "*eng tez*",
+              "fast"
+            ],
+            [
+              "*qulay*",
+              "*qulayroq*",
+              "*eng qulay*",
+              "comfortable, convenient"
+            ],
+            [
+              "*mashhur*",
+              "*mashhurroq*",
+              "*eng mashhur*",
+              "famous"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *-roq* also attaches to adverbs: *sekinroq gapiring* (speak more slowly), *tezroq yuring* (walk faster), *keyinroq* (later). That last one is used all the time to put something off politely."
+        },
+        {
+          "type": "p",
+          "text": "*Qulay* is one of the most useful words without a single English equivalent: it covers \"comfortable\", \"convenient\", and \"a good time\". *Sizga qachon qulay?* = \"when suits you?\""
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uz": "koʻylak",
+      "baca": "koy-LAK",
+      "en": "shirt; dress"
+    },
+    {
+      "uz": "shim",
+      "baca": "shim",
+      "en": "trousers"
+    },
+    {
+      "uz": "kurtka",
+      "baca": "KURT-kå",
+      "en": "jacket"
+    },
+    {
+      "uz": "tufli",
+      "baca": "TUF-li",
+      "en": "shoes"
+    },
+    {
+      "uz": "doʻppi",
+      "baca": "dop-PI",
+      "en": "Uzbek skullcap"
+    },
+    {
+      "uz": "roʻmol",
+      "baca": "ro-MÅL",
+      "en": "headscarf, shawl"
+    },
+    {
+      "uz": "oʻlcham",
+      "baca": "ol-CHAM",
+      "en": "size"
+    },
+    {
+      "uz": "rang",
+      "baca": "rång",
+      "en": "color"
+    },
+    {
+      "uz": "sifat",
+      "baca": "si-FAT",
+      "en": "quality; adjective"
+    },
+    {
+      "uz": "kiymoq",
+      "baca": "kiy-MÅQ",
+      "en": "to wear, put on"
+    },
+    {
+      "uz": "kiyinish xonasi",
+      "baca": "ki-yi-NISH khå-nå-SI",
+      "en": "fitting room"
+    },
+    {
+      "uz": "toʻgʻri kelmoq",
+      "baca": "TOGH-ri kel-MÅQ",
+      "en": "to fit, suit"
+    },
+    {
+      "uz": "toʻy",
+      "baca": "toy",
+      "en": "wedding party"
+    },
+    {
+      "uz": "eng",
+      "baca": "eng",
+      "en": "most"
+    },
+    {
+      "uz": "biroz",
+      "baca": "bi-RÅZ",
+      "en": "a bit, slightly"
+    },
+    {
+      "uz": "boshqa",
+      "baca": "båsh-QÅ",
+      "en": "other, another"
+    },
+    {
+      "uz": "qulay",
+      "baca": "qu-LAI",
+      "en": "comfortable, convenient"
+    },
+    {
+      "uz": "mashhur",
+      "baca": "måsh-HUR",
+      "en": "famous"
+    },
+    {
+      "uz": "birinchi",
+      "baca": "bi-rin-CHI",
+      "en": "first"
+    },
+    {
+      "uz": "ikkinchi",
+      "baca": "ik-kin-CHI",
+      "en": "second"
+    },
+    {
+      "uz": "uchinchi",
+      "baca": "u-chin-CHI",
+      "en": "third"
+    },
+    {
+      "uz": "nechchi",
+      "baca": "nech-CHI",
+      "en": "what number"
+    },
+    {
+      "uz": "manavi",
+      "baca": "må-nå-VI",
+      "en": "this one here"
+    },
+    {
+      "uz": "xuddi",
+      "baca": "KHUD-di",
+      "en": "exactly, just like"
+    },
+    {
+      "uz": "kabi",
+      "baca": "kå-BI",
+      "en": "like, as"
+    },
+    {
+      "uz": "keyinroq",
+      "baca": "ke-yin-RÅQ",
+      "en": "later"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Make the comparative form (-roq).",
+      "items": [
+        "katta → ____",
+        "arzon → ____",
+        "tez → ____",
+        "yaxshi → ____",
+        "sekin → ____",
+        "qimmat → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Uzbek.",
+      "items": [
+        "This shirt is more expensive.",
+        "This is cheaper than that.",
+        "Which one is the cheapest?",
+        "May I try it on?",
+        "Do you have a bigger one?",
+        "This doesn't fit me."
+      ]
+    },
+    {
+      "prompt": "Write the ordinal number.",
+      "items": [
+        "1",
+        "2",
+        "3",
+        "5",
+        "10",
+        "20"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "qidiryapsiz / nima / ?",
+        "kerak / oq / menga / koʻylak",
+        "qimmatroq / undan / bu",
+        "qaysi / eng / arzoni / ?",
+        "boʻladimi / kiyib / koʻrsam / ?"
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 13. Translate into Uzbek without looking back at the unit.",
+      "items": [
+        "What would you like to order?",
+        "I want to eat plov.",
+        "I need water.",
+        "I have to go.",
+        "The bill, please."
+      ]
+    }
+  ],
+  "answers": [
+    "kattaroq — arzonroq — tezroq — yaxshiroq — sekinroq — qimmatroq",
+    "Bu koʻylak qimmatroq. — Bu undan arzonroq. — Eng arzoni qaysi? — Kiyib koʻrsam boʻladimi? — Kattarogʻi bormi? — Bu menga toʻgʻri kelmadi.",
+    "birinchi — ikkinchi — uchinchi — beshinchi — oʻninchi — yigirmanchi",
+    "Nima qidiryapsiz? — Menga oq koʻylak kerak. — Bu undan qimmatroq. — Eng arzoni qaysi? — Kiyib koʻrsam boʻladimi?",
+    "Nima buyurtma qilmoqchisiz? — Men osh yemoqchiman. — Menga suv kerak. — Borishim kerak. — Hisob, iltimos."
+  ]
+}

@@ -1,0 +1,546 @@
+{
+  "title": "Clock, days, and time",
+  "title_target": "Hvað er klukkan?",
+  "goal": "Tell the time correctly — including the Icelandic half hour, which counts toward the next hour and trips English speakers up for life.",
+  "bekal": [
+    "ask and tell the time, including \"past\" and \"to\"",
+    "use *hálf níu* for 8:30 without hesitating",
+    "name the days, the months, and everyday time expressions"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Hvað er klukkan?",
+      "intro": "In the school hallway, a few minutes before class. Búdí panics about the time, then discovers that one part of Icelandic is something he has known since childhood.",
+      "lines": [
+        {
+          "speaker": "Búdí:",
+          "text": "Anna, hvað er klukkan?",
+          "id": "Anna, what time is it?",
+          "literal": "Anna, what is clock-the?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Hún er korter yfir þrjú.",
+          "id": "It's a quarter past three.",
+          "literal": "she is quarter over three."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Æ, nei! Tíminn byrjar hálf fjögur.",
+          "id": "Oh no! Class starts at half past three.",
+          "literal": "oh, no! class-the begins half four."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Þá höfum við fimmtán mínútur. Nóg af tíma.",
+          "id": "Then we have fifteen minutes. Plenty of time.",
+          "literal": "then have we fifteen minutes. enough of time."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "„Hálf fjögur\" — af hverju fjögur? Klukkan er þrjú!",
+          "id": "\"Hálf fjögur\" — why four? It's three o'clock!",
+          "literal": "half four — of what four? clock-the is three!"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Af því að hálftíminn er á leiðinni í fjögur.",
+          "id": "Because the half hour is on its way to four.",
+          "literal": "of that that half-hour-the is on way-the to four."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Æ, það er eins og á indónesísku! „Setengah empat\".",
+          "id": "Oh, it's just like in Indonesian! \"Setengah empat\".",
+          "literal": "oh, it is one and in Indonesian! half four."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Sannarlega? Þá ertu heppinn. Enskumælandi fólk ruglast alltaf.",
+          "id": "Really? Then you're lucky. English speakers always get confused.",
+          "literal": "truly? then are-you lucky. English-speaking people get-confused always."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Hvenær er tíminn á morgun?",
+          "id": "When is class tomorrow?",
+          "literal": "when is class-the on morning?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Á morgun er enginn tími. Það er laugardagur.",
+          "id": "There's no class tomorrow. It's Saturday.",
+          "literal": "on morning is no class. it is Saturday."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Auðvitað! Hvað gerum við þá?",
+          "id": "Of course! So what shall we do?",
+          "literal": "of-course! what do we then?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Við förum í sund klukkan tíu og borðum svo hádegismat.",
+          "id": "We'll go swimming at ten and then have lunch.",
+          "literal": "we go to swimming at ten and eat then midday-food."
+        }
+      ],
+      "notes": [
+        "**Hálf fjögur means 3:30, not 4:30.** Icelandic counts **toward** the next hour — \"half to four\" — just like German *halb vier* and Búdí's Indonesian *setengah empat*. English speakers trip over this for life, because British \"half four\" means 4:30. Read *hálf* + hour as \"halfway to\" that hour.",
+        "**Klukkan is called hún**, because *klukka* is kvenkyn. That's why the answer is *Hún er þrjú*, not *Það er þrjú*. It's the use of noun gender from Unit 3 that you'll say most often, every single day.",
+        "**Korter yfir / korter í** — \"a quarter past\" and \"a quarter to\". The word *korter* was borrowed from Danish and is one of the few loanwords that survive in everyday Icelandic.",
+        "**Á morgun means \"tomorrow\", not \"in the morning\".** Compare three similar forms: *á morgun* (tomorrow), *í morgun* (this morning, earlier), *á morgnana* (every morning). One letter apart, three different times — learn all three together. (English has a similar pair: *morning* and *tomorrow*.)",
+        "**Laugardagur literally means \"bath day\".** *Laug* means a hot pool — the same word as in *sundlaug* in Unit 7. In the saga age, Saturday really was bath day, and the name has survived to this day. Almost all the Icelandic day names hold history like this.",
+        "**Hádegismatur literally means \"midday food\".** *Hádegi* = the high point of the day. You can take it apart yourself, and that's how most Icelandic compounds work."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "One pattern for \"past\", one for \"to\", and one for the half hour. The hour number always uses the **hvorugkyn** form (*eitt*, *tvö*, *þrjú*, *fjögur*)."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Íslenska",
+              "Say it",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "3:00",
+                "*Klukkan er þrjú.*",
+                "KLÜH-kahn ehr thryoo",
+                "the clock is three"
+              ],
+              [
+                "3:10",
+                "*Tíu mínútur yfir þrjú.*",
+                "TEE-ü MEE-noo-tür IH-vihr thryoo",
+                "ten minutes over three"
+              ],
+              [
+                "3:15",
+                "*Korter yfir þrjú.*",
+                "KAWR-tehr IH-vihr thryoo",
+                "quarter over three"
+              ],
+              [
+                "3:30",
+                "*Hálf fjögur.*",
+                "howlv FYÖ-ghür",
+                "half four (= halfway to four)"
+              ],
+              [
+                "3:45",
+                "*Korter í fjögur.*",
+                "KAWR-tehr ee FYÖ-ghür",
+                "quarter to four"
+              ],
+              [
+                "3:50",
+                "*Tíu mínútur í fjögur.*",
+                "TEE-ü MEE-noo-tür ee FYÖ-ghür",
+                "ten minutes to four"
+              ],
+              [
+                "4:00",
+                "*Klukkan er fjögur.*",
+                "KLÜH-kahn ehr FYÖ-ghür",
+                "the clock is four"
+              ]
+            ]
+          },
+          "after": [
+            "**Yfir** for \"past\", **í** for \"to\". The turning point is minute 30: after the half hour, Icelanders count down to the next hour, just as English says \"a quarter to four\".",
+            "To say when something happens, put *klukkan* in front: *Tíminn byrjar **klukkan** þrjú.* The word *klukkan* can't be dropped — it also signals that you're giving a time, not a quantity.",
+            "In official writing and timetables, Iceland uses the 24-hour clock: *17.30*, read *sautján þrjátíu*. In conversation, people still say *hálf sex*."
+          ]
+        },
+        {
+          "title": "Days and months",
+          "body": [
+            "All the day names are **karlkyn** and end in *-dagur*. Month names are karlkyn too, and all are written in **lowercase** — unlike in English."
+          ],
+          "table": {
+            "head": [
+              "Day",
+              "Say it",
+              "Literally",
+              "English"
+            ],
+            "rows": [
+              [
+                "*mánudagur*",
+                "MOW-nü-dah-ghür",
+                "moon day",
+                "Monday"
+              ],
+              [
+                "*þriðjudagur*",
+                "THRIH-dhyü-dah-ghür",
+                "third day",
+                "Tuesday"
+              ],
+              [
+                "*miðvikudagur*",
+                "MIDH-vih-kü-dah-ghür",
+                "mid-week day",
+                "Wednesday"
+              ],
+              [
+                "*fimmtudagur*",
+                "FIM-tü-dah-ghür",
+                "fifth day",
+                "Thursday"
+              ],
+              [
+                "*föstudagur*",
+                "FÖS-tü-dah-ghür",
+                "fast day",
+                "Friday"
+              ],
+              [
+                "*laugardagur*",
+                "LÖI-ghahr-dah-ghür",
+                "bath day",
+                "Saturday"
+              ],
+              [
+                "*sunnudagur*",
+                "SÜ-nü-dah-ghür",
+                "sun day",
+                "Sunday"
+              ]
+            ]
+          },
+          "after": [
+            "To say \"on …day\", use **á** + the þágufall form: *á mánudaginn* (this Monday), *á mánudögum* (on Mondays). Singular versus plural is what separates a one-off from a habit.",
+            "The months: *janúar, febrúar, mars, apríl, maí, júní, júlí, ágúst, september, október, nóvember, desember* — you can guess almost all of them. For \"in …\" use *í*: *í júlí*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Everyday time expressions",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Íslenska",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*í dag*",
+              "ee dahgh",
+              "today"
+            ],
+            [
+              "*á morgun*",
+              "ow MAWR-gün",
+              "tomorrow"
+            ],
+            [
+              "*í gær*",
+              "ee gyair",
+              "yesterday"
+            ],
+            [
+              "*í fyrradag*",
+              "ee FIH-rah-dahgh",
+              "the day before yesterday"
+            ],
+            [
+              "*hinn daginn*",
+              "hidn DAH-yin",
+              "the day after tomorrow"
+            ],
+            [
+              "*í morgun*",
+              "ee MAWR-gün",
+              "this morning (earlier)"
+            ],
+            [
+              "*á morgnana*",
+              "ow MAWRGN-ah-nah",
+              "every morning"
+            ],
+            [
+              "*í kvöld*",
+              "ee kvöld",
+              "this evening, tonight"
+            ],
+            [
+              "*í nótt*",
+              "ee nohht",
+              "tonight; last night"
+            ],
+            [
+              "*núna*",
+              "NOO-nah",
+              "now"
+            ],
+            [
+              "*strax*",
+              "strahx",
+              "right away"
+            ],
+            [
+              "*seinna*",
+              "SAY-nah",
+              "later"
+            ],
+            [
+              "*alltaf*",
+              "AHL-tahv",
+              "always"
+            ],
+            [
+              "*aldrei*",
+              "AHL-dray",
+              "never"
+            ],
+            [
+              "*oft*",
+              "awft",
+              "often"
+            ],
+            [
+              "*stundum*",
+              "STÜN-düm",
+              "sometimes"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three forms one letter apart",
+          "items": [
+            "**á morgun** = tomorrow. **í morgun** = this morning (earlier). **á morgnana** = every morning. All three come from the word *morgunn* (morning), and all three are very common — so picking the wrong one gets noticed fast.",
+            "The same pattern repeats: **í** for what has already passed today (*í morgun*, *í gær*), **á** for what's coming or what repeats (*á morgun*, *á morgnana*)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Making an appointment",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Íslenska",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Hvenær hittumst við?",
+              "KVEH-nair HIH-tümst vidh",
+              "When shall we meet?"
+            ],
+            [
+              "Klukkan hvað?",
+              "KLÜH-kahn kvahdh",
+              "At what time?"
+            ],
+            [
+              "Hentar þér klukkan sjö?",
+              "HEHN-tahr thyehr KLÜH-kahn syö",
+              "Does seven o'clock suit you?"
+            ],
+            [
+              "Já, það hentar vel.",
+              "yow, thahdh HEHN-tahr vehl",
+              "Yes, that suits me fine."
+            ],
+            [
+              "Ég get ekki í dag.",
+              "yehgh geht EHH-kih ee dahgh",
+              "I can't today."
+            ],
+            [
+              "Eigum við að segja hálf níu?",
+              "AY-ghüm vidh ahdh SEH-yah howlv NEE-ü",
+              "How about half past eight?"
+            ],
+            [
+              "Ég verð aðeins of seinn.",
+              "yehgh vehrdh OW-dhayns awv saydn",
+              "I'll be a little late."
+            ],
+            [
+              "Sjáumst þá!",
+              "SYOW-ümst thow",
+              "See you then!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Eigum við að segja …?* literally means \"shall we say …?\" and is used just like English \"how about …?\". It's one of the most useful phrases for arranging anything."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "is": "klukka",
+      "baca": "KLÜH-kah",
+      "en": "clock (object & time)"
+    },
+    {
+      "is": "korter",
+      "baca": "KAWR-tehr",
+      "en": "quarter of an hour"
+    },
+    {
+      "is": "yfir",
+      "baca": "IH-vihr",
+      "en": "past, over"
+    },
+    {
+      "is": "hálf",
+      "baca": "howlv",
+      "en": "half"
+    },
+    {
+      "is": "mínúta",
+      "baca": "MEE-noo-tah",
+      "en": "minute"
+    },
+    {
+      "is": "tími",
+      "baca": "TEE-mih",
+      "en": "time; class hour"
+    },
+    {
+      "is": "nóg",
+      "baca": "nohgh",
+      "en": "enough"
+    },
+    {
+      "is": "af hverju",
+      "baca": "ahv KVEHR-yü",
+      "en": "why"
+    },
+    {
+      "is": "leið",
+      "baca": "laydh",
+      "en": "way, direction"
+    },
+    {
+      "is": "eins og",
+      "baca": "ayns awgh",
+      "en": "like, as"
+    },
+    {
+      "is": "sannarlega",
+      "baca": "SAH-nahr-leh-ghah",
+      "en": "truly, really"
+    },
+    {
+      "is": "heppinn",
+      "baca": "HEHH-pidn",
+      "en": "lucky"
+    },
+    {
+      "is": "ruglast",
+      "baca": "RÜG-lahst",
+      "en": "to get confused"
+    },
+    {
+      "is": "auðvitað",
+      "baca": "ÖIDH-vih-tahdh",
+      "en": "of course"
+    },
+    {
+      "is": "hádegismatur",
+      "baca": "HOW-deh-yis-mah-tür",
+      "en": "lunch"
+    },
+    {
+      "is": "kvöldmatur",
+      "baca": "KVÖLD-mah-tür",
+      "en": "dinner"
+    },
+    {
+      "is": "dagur",
+      "baca": "DAH-ghür",
+      "en": "day"
+    },
+    {
+      "is": "helgi",
+      "baca": "HEHL-yih",
+      "en": "weekend"
+    },
+    {
+      "is": "mánuður",
+      "baca": "MOW-nü-dhür",
+      "en": "month"
+    },
+    {
+      "is": "hitta",
+      "baca": "HIH-tah",
+      "en": "to meet"
+    },
+    {
+      "is": "henta",
+      "baca": "HEHN-tah",
+      "en": "to suit"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these times in Icelandic.",
+      "items": [
+        "2:00",
+        "5:15",
+        "7:30",
+        "9:45",
+        "11:10",
+        "1:30"
+      ]
+    },
+    {
+      "prompt": "Fill in the right day of the week.",
+      "items": [
+        "The day after *mánudagur* is ____.",
+        "The day before *laugardagur* is ____.",
+        "The day in the middle of the week is ____.",
+        "The day after *laugardagur* is ____.",
+        "The day after *miðvikudagur* is ____."
+      ]
+    },
+    {
+      "prompt": "Choose the right time expression.",
+      "items": [
+        "____ (Í morgun, Á morgun) fer ég í skólann klukkan átta — það er á miðvikudaginn.",
+        "____ (Í gær, Í dag) var laugardagur; í dag er sunnudagur.",
+        "Ég vakna klukkan sjö ____ (á morgnana, á morgun).",
+        "Við hittumst ____ (í kvöld, í nótt) klukkan átta.",
+        "Ég drakk kaffi ____ (í morgun, á morgun) klukkan sex."
+      ]
+    },
+    {
+      "prompt": "Translate into Icelandic.",
+      "items": [
+        "What time is it?",
+        "It's a quarter past three.",
+        "Class starts at half past three.",
+        "Tomorrow is Saturday.",
+        "When shall we meet?",
+        "Does seven o'clock suit you?"
+      ]
+    }
+  ],
+  "answers": [
+    "Klukkan er tvö. — Korter yfir fimm. — Hálf átta. — Korter í tíu. — Tíu mínútur yfir ellefu. — Hálf tvö.",
+    "þriðjudagur — föstudagur — miðvikudagur — sunnudagur — fimmtudagur",
+    "Á morgun — Í gær — á morgnana — í kvöld — í morgun",
+    "Hvað er klukkan? — Korter yfir þrjú. — Tíminn byrjar hálf fjögur. — Á morgun er laugardagur. — Hvenær hittumst við? — Hentar þér klukkan sjö?"
+  ]
+}

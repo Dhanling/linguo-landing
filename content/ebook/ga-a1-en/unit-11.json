@@ -1,0 +1,617 @@
+{
+  "title": "I buy, I go, I see",
+  "title_target": "Ceannaím, téim, feicim",
+  "goal": "Use second-conjugation verbs and the eleven irregular verbs in the present tense.",
+  "bekal": [
+    "build the second-conjugation present: *ceannaím, ceannaíonn tú, ceannaímid*",
+    "spot verbs that drop a letter in the middle: *oscail* → *osclaím*",
+    "use the eleven most common irregular verbs"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — An deireadh seachtaine",
+      "intro": "Seán asks Budi what he usually does at the weekend.",
+      "lines": [
+        {
+          "speaker": "Seán:",
+          "text": "Cá dtéann tú ag an deireadh seachtaine?",
+          "id": "Where do you usually go at the weekend?",
+          "literal": "where go you at the end week-of?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Téim go dtí an chathair. Ceannaím bia sa mhargadh.",
+          "id": "I go into town. I buy food at the market.",
+          "literal": "go-I to the city. buy-I food in-the market."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "An dtagann do chairde leat?",
+          "id": "Do your friends come with you?",
+          "literal": "question come your friends with-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tagann, uaireanta. Tosaímid ar a deich.",
+          "id": "Sometimes. We start at ten.",
+          "literal": "come, sometimes. start-we on the ten."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Cad a dhéanann sibh ansin?",
+          "id": "And what do you do then?",
+          "literal": "what that does you-all then?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Féachaimid ar na siopaí. Uaireanta faighimid caife.",
+          "id": "We look around the shops. Sometimes we get coffee.",
+          "literal": "look-we on the shops. sometimes get-we coffee."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "An bhfeiceann tú na sráidcheoltóirí?",
+          "id": "Do you see the street musicians?",
+          "literal": "question see you the street-musicians?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Feicim iad gach Satharn. Tugaim euro dóibh.",
+          "id": "I see them every Saturday. I give them a euro.",
+          "literal": "see-I them every Saturday. give-I euro to-them."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Deas! An imíonn tú go luath?",
+          "id": "Nice! Do you leave early?",
+          "literal": "nice! question leave you early?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Imím ar a cúig. Críochnaím an lá le dinnéar.",
+          "id": "I leave at five. I finish the day with dinner.",
+          "literal": "leave-I on the five. finish-I the day with dinner."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "An gcabhraíonn tú le Mam sa chistin?",
+          "id": "Do you help Mam in the kitchen?",
+          "literal": "question help you with Mam in-the kitchen?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cabhraím go minic — ach ní ullmhaím an dinnéar!",
+          "id": "Often — but I don't make the dinner!",
+          "literal": "help-I often — but not prepare-I the dinner!"
+        }
+      ],
+      "notes": [
+        "**Second conjugation: long endings.** Where the first conjugation uses *-aim / -ann*, the second uses *-aím / -aíonn*. Only one fada separates them, but the sound is clearly different: *ólaim* (OH-lim) versus *ceannaím* (KYAH-neem). How to spot them: second-conjugation verbs have **two or more syllables** and almost always end in *-igh* — *ceannaigh*, *tosaigh*, *críochnaigh*, *imigh*, *cabhraigh*, *ullmhaigh*.",
+        "**Oscail → osclaím: a letter drops out.** A group of second-conjugation verbs ending in *-il, -in, -ir, -is* lose the vowel in the middle as soon as an ending is added: *oscail* → *osclaím*, *inis* → *insím*, *freagair* → *freagraím*, *imir* → *imrím*, *codail* → *codlaím*, *labhair* → *labhraím*. This is called syncopation, and it happens because Irish avoids three weak syllables in a row.",
+        "**Faighimid, feicim, tugaim, tagaim, téim — forms you can't guess.** Irish has eleven irregular verbs, and unluckily they are the eleven used most. The good news: in the present tense most of them behave normally once you know the stem — *faigh* → *faighim*, *feic* → *feicim*, *tabhair* → *tugaim*, *tar* → *tagaim*, *téigh* → *téim*. The really dramatic changes only come in the past tense (Unit 17).",
+        "**Cá dtéann tú? — cá brings urú, just like an.** You saw it in *Cá bhfuil …?* in Unit 3. Now the pattern is complete: *cá* and *an* both bring urú to the verb after them, while *ní* brings séimhiú. Three little words, three behaviors, and all three will keep showing up in every remaining unit."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Present tense, second conjugation",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Person",
+            "Broad stem: ceannaigh (buy)",
+            "Slender stem: imigh (leave)"
+          ],
+          "rows": [
+            [
+              "mé",
+              "ceannaím",
+              "imím"
+            ],
+            [
+              "tú",
+              "ceannaíonn tú",
+              "imíonn tú"
+            ],
+            [
+              "sé / sí",
+              "ceannaíonn sé / sí",
+              "imíonn sé / sí"
+            ],
+            [
+              "muid",
+              "ceannaímid",
+              "imímid"
+            ],
+            [
+              "sibh",
+              "ceannaíonn sibh",
+              "imíonn sibh"
+            ],
+            [
+              "siad",
+              "ceannaíonn siad",
+              "imíonn siad"
+            ],
+            [
+              "negative",
+              "ní cheannaím",
+              "ní imím"
+            ],
+            [
+              "question",
+              "an gceannaíonn tú?",
+              "an imíonn tú?"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Base form",
+            "Meaning",
+            "I",
+            "You / he, she",
+            "We"
+          ],
+          "rows": [
+            [
+              "ceannaigh",
+              "buy",
+              "ceannaím",
+              "ceannaíonn tú",
+              "ceannaímid"
+            ],
+            [
+              "tosaigh",
+              "start",
+              "tosaím",
+              "tosaíonn tú",
+              "tosaímid"
+            ],
+            [
+              "críochnaigh",
+              "finish",
+              "críochnaím",
+              "críochnaíonn tú",
+              "críochnaímid"
+            ],
+            [
+              "cabhraigh",
+              "help",
+              "cabhraím",
+              "cabhraíonn tú",
+              "cabhraímid"
+            ],
+            [
+              "ullmhaigh",
+              "prepare",
+              "ullmhaím",
+              "ullmhaíonn tú",
+              "ullmhaímid"
+            ],
+            [
+              "éirigh",
+              "get up, become",
+              "éirím",
+              "éiríonn tú",
+              "éirímid"
+            ],
+            [
+              "imigh",
+              "leave, go away",
+              "imím",
+              "imíonn tú",
+              "imímid"
+            ],
+            [
+              "cuimhnigh",
+              "remember",
+              "cuimhním",
+              "cuimhníonn tú",
+              "cuimhnímid"
+            ],
+            [
+              "oibrigh",
+              "work",
+              "oibrím",
+              "oibríonn tú",
+              "oibrímid"
+            ],
+            [
+              "oscail",
+              "open",
+              "osclaím",
+              "osclaíonn tú",
+              "osclaímid"
+            ],
+            [
+              "inis",
+              "tell",
+              "insím",
+              "insíonn tú",
+              "insímid"
+            ],
+            [
+              "freagair",
+              "answer",
+              "freagraím",
+              "freagraíonn tú",
+              "freagraímid"
+            ],
+            [
+              "imir",
+              "play",
+              "imrím",
+              "imríonn tú",
+              "imrímid"
+            ],
+            [
+              "codail",
+              "sleep",
+              "codlaím",
+              "codlaíonn tú",
+              "codlaímid"
+            ],
+            [
+              "labhair",
+              "speak",
+              "labhraím",
+              "labhraíonn tú",
+              "labhraímid"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "How to tell the first and second conjugations apart",
+          "items": [
+            "**One syllable → first conjugation.** *Ól, fan, glan, dún, cuir, bris, tuig, rith, léigh.*",
+            "**Two syllables ending in -igh → second conjugation.** *Ceannaigh, tosaigh, éirigh, imigh, cabhraigh.*",
+            "**Two syllables ending in -il, -in, -ir, -is → second conjugation, with a dropped letter.** *Oscail, inis, freagair, imir, codail, labhair.*",
+            "Exceptions to learn: *foghlaim* (learn) is second conjugation even though it doesn't end in *-igh* — *foghlaimím, foghlaimíonn tú*. On the other hand, *tiomáin* (drive) looks second conjugation but isn't — it is **first**, because its vowel is long: *tiomáinim*, *tiomáineann tú*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Eleven irregular verbs, present tense",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Watch the \"negative\" and \"question\" columns — that is where most of the surprises are."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Base form",
+            "Meaning",
+            "I",
+            "You / he, she",
+            "Negative",
+            "Question"
+          ],
+          "rows": [
+            [
+              "bí",
+              "be",
+              "tá mé",
+              "tá tú",
+              "níl mé",
+              "an bhfuil tú?"
+            ],
+            [
+              "abair",
+              "say",
+              "deirim",
+              "deir tú",
+              "ní deirim",
+              "an ndeir tú?"
+            ],
+            [
+              "beir",
+              "catch",
+              "beirim",
+              "beireann tú",
+              "ní bheirim",
+              "an mbeireann tú?"
+            ],
+            [
+              "clois",
+              "hear",
+              "cloisim",
+              "cloiseann tú",
+              "ní chloisim",
+              "an gcloiseann tú?"
+            ],
+            [
+              "déan",
+              "make, do",
+              "déanaim",
+              "déanann tú",
+              "ní dhéanaim",
+              "an ndéanann tú?"
+            ],
+            [
+              "faigh",
+              "get",
+              "faighim",
+              "faigheann tú",
+              "ní fhaighim",
+              "an bhfaigheann tú?"
+            ],
+            [
+              "feic",
+              "see",
+              "feicim",
+              "feiceann tú",
+              "ní fheicim",
+              "an bhfeiceann tú?"
+            ],
+            [
+              "ith",
+              "eat",
+              "ithim",
+              "itheann tú",
+              "ní ithim",
+              "an itheann tú?"
+            ],
+            [
+              "tabhair",
+              "give",
+              "tugaim",
+              "tugann tú",
+              "ní thugaim",
+              "an dtugann tú?"
+            ],
+            [
+              "tar",
+              "come",
+              "tagaim",
+              "tagann tú",
+              "ní thagaim",
+              "an dtagann tú?"
+            ],
+            [
+              "téigh",
+              "go",
+              "téim",
+              "téann tú",
+              "ní théim",
+              "an dtéann tú?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "How to say the most common ones: *deirim* = DYEH-rim, *déanaim* = DYAY-nim, *faighim* = FAI-yim, *feicim* = FEH-kim, *tugaim* = TOO-gim, *tagaim* = TAH-gim, *téim* = TYAYM."
+        },
+        {
+          "type": "kotak",
+          "title": "Three traps in this table",
+          "items": [
+            "**The stem and the present form are often far apart.** *Tabhair* → *tugaim*; *tar* → *tagaim*; *téigh* → *téim*; *abair* → *deirim*. To find *tugaim* in a dictionary, look under *tabhair*.",
+            "**Ní deirim takes no séimhiú.** *Abair* is the only verb that isn't softened after *ní*. All the others obey: *ní dhéanaim*, *ní thugaim*, *ní théim*.",
+            "**Faighim and feicim take bhf- in questions,** not *bf-*: *an bhfaigheann tú?*, *an bhfeiceann tú?* This is ordinary urú on *f*, just like *an bhfuil*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "ceannaím",
+      "baca": "KYAH-neem",
+      "en": "I buy"
+    },
+    {
+      "ga": "tosaím",
+      "baca": "TUH-seem",
+      "en": "I start"
+    },
+    {
+      "ga": "críochnaím",
+      "baca": "KREE-akh-neem",
+      "en": "I finish"
+    },
+    {
+      "ga": "cabhraím",
+      "baca": "KOHW-reem",
+      "en": "I help"
+    },
+    {
+      "ga": "ullmhaím",
+      "baca": "UL-weem",
+      "en": "I prepare"
+    },
+    {
+      "ga": "imím",
+      "baca": "IH-meem",
+      "en": "I leave, I go away"
+    },
+    {
+      "ga": "osclaím",
+      "baca": "OS-kleem",
+      "en": "I open"
+    },
+    {
+      "ga": "insím",
+      "baca": "IN-sheem",
+      "en": "I tell"
+    },
+    {
+      "ga": "freagraím",
+      "baca": "FRAH-greem",
+      "en": "I answer"
+    },
+    {
+      "ga": "imrím",
+      "baca": "IM-reem",
+      "en": "I play"
+    },
+    {
+      "ga": "codlaím",
+      "baca": "KOD-leem",
+      "en": "I sleep"
+    },
+    {
+      "ga": "labhraím",
+      "baca": "LOHW-reem",
+      "en": "I speak"
+    },
+    {
+      "ga": "oibrím",
+      "baca": "EH-breem",
+      "en": "I work"
+    },
+    {
+      "ga": "téim",
+      "baca": "TYAYM",
+      "en": "I go"
+    },
+    {
+      "ga": "tagaim",
+      "baca": "TAH-gim",
+      "en": "I come"
+    },
+    {
+      "ga": "tugaim",
+      "baca": "TOO-gim",
+      "en": "I give"
+    },
+    {
+      "ga": "feicim",
+      "baca": "FEH-kim",
+      "en": "I see"
+    },
+    {
+      "ga": "faighim",
+      "baca": "FAI-yim",
+      "en": "I get"
+    },
+    {
+      "ga": "déanaim",
+      "baca": "DYAY-nim",
+      "en": "I make, I do"
+    },
+    {
+      "ga": "deirim",
+      "baca": "DYEH-rim",
+      "en": "I say"
+    },
+    {
+      "ga": "cloisim",
+      "baca": "KLUH-shim",
+      "en": "I hear"
+    },
+    {
+      "ga": "deireadh seachtaine",
+      "baca": "DYEH-ruh SHAKH-tih-nyuh",
+      "en": "weekend"
+    },
+    {
+      "ga": "margadh",
+      "baca": "MAH-ruh-guh",
+      "en": "market"
+    },
+    {
+      "ga": "cairde",
+      "baca": "KAWR-dyuh",
+      "en": "friends"
+    },
+    {
+      "ga": "leat",
+      "baca": "LYAT",
+      "en": "with you"
+    },
+    {
+      "ga": "dóibh",
+      "baca": "DOHV",
+      "en": "to them"
+    },
+    {
+      "ga": "go luath",
+      "baca": "guh LOO-uh",
+      "en": "early, soon"
+    },
+    {
+      "ga": "go déanach",
+      "baca": "guh DYAY-nakh",
+      "en": "late"
+    },
+    {
+      "ga": "bia",
+      "baca": "BEE-uh",
+      "en": "food"
+    },
+    {
+      "ga": "sráidcheoltóir",
+      "baca": "SRAWJ-khyohl-tohr",
+      "en": "street musician, busker"
+    },
+    {
+      "ga": "timpeall",
+      "baca": "TIM-pal",
+      "en": "around, about"
+    },
+    {
+      "ga": "scéal",
+      "baca": "SKYAYL",
+      "en": "story, news"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the \"I\" form and the \"you\" form of these verbs.",
+      "items": [
+        "ceannaigh",
+        "tosaigh",
+        "imigh",
+        "oscail",
+        "inis",
+        "codail"
+      ]
+    },
+    {
+      "prompt": "Write the \"I\" form of these irregular verbs.",
+      "items": [
+        "téigh",
+        "tar",
+        "tabhair",
+        "feic",
+        "faigh",
+        "abair"
+      ]
+    },
+    {
+      "prompt": "Make these sentences negative.",
+      "items": [
+        "Téim go Gaillimh.",
+        "Feicim an cat.",
+        "Déanaim an obair.",
+        "Ceannaím bia sa mhargadh.",
+        "Tugaim euro dó.",
+        "Tagaim gach lá."
+      ]
+    },
+    {
+      "prompt": "Turn these into questions.",
+      "items": [
+        "Téann tú go Gaillimh.",
+        "Feiceann tú an siopa.",
+        "Ceannaíonn sí bia.",
+        "Déanann sibh an obair.",
+        "Itheann sé arán.",
+        "Tagann siad gach lá."
+      ]
+    }
+  ],
+  "answers": [
+    "ceannaím, ceannaíonn tú — tosaím, tosaíonn tú — imím, imíonn tú — osclaím, osclaíonn tú — insím, insíonn tú — codlaím, codlaíonn tú",
+    "téim — tagaim — tugaim — feicim — faighim — deirim",
+    "Ní théim go Gaillimh. — Ní fheicim an cat. — Ní dhéanaim an obair. — Ní cheannaím bia sa mhargadh. — Ní thugaim euro dó. — Ní thagaim gach lá.",
+    "An dtéann tú go Gaillimh? — An bhfeiceann tú an siopa? — An gceannaíonn sí bia? — An ndéanann sibh an obair? — An itheann sé arán? — An dtagann siad gach lá?"
+  ]
+}

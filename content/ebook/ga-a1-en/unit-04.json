@@ -1,0 +1,761 @@
+{
+  "title": "Masculine and feminine — for things too",
+  "title_target": "An fear agus an bhean",
+  "goal": "Getting to know noun gender, using the articles *an* and *na* with the letter changes that come with them, and forming plurals.",
+  "bekal": [
+    "know that every noun is masculine or feminine, and what follows from that",
+    "use *an* correctly: *an fear*, *an bhean*, *an t-arán*, *an tsráid*",
+    "form and use plurals with *na* and *na h-*"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — Sa seomra ranga",
+      "intro": "Budi's first day in Irish class. Aoife, the teacher, points at things around the room while explaining something that has puzzled him since page one of the textbook.",
+      "lines": [
+        {
+          "speaker": "Aoife:",
+          "text": "Fáilte isteach, a Bhudi. Seo é an seomra ranga.",
+          "id": "Welcome, Budi. This is the classroom.",
+          "literal": "welcome inside, O Budi. this him the room of-class."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá sé deas. Cad é sin ar an mballa?",
+          "id": "It's nice. What's that on the wall?",
+          "literal": "is it nice. what him that on the wall?"
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "Sin é an clár bán. Agus seo í an fhuinneog.",
+          "id": "That's the whiteboard. And this is the window.",
+          "literal": "that him the board white. and this her the window."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cén fáth \"an clár\" ach \"an fhuinneog\"?",
+          "id": "Why \"an clár\" but \"an fhuinneog\"?",
+          "literal": "what reason \"the board\" but \"the window\"?"
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "Tá gach ainmfhocal fireann nó baineann. Tá \"clár\" fireann; tá \"fuinneog\" baineann.",
+          "id": "Every noun is masculine or feminine. \"Clár\" is masculine; \"fuinneog\" is feminine.",
+          "literal": "is every noun masculine or feminine. is \"board\" masculine; is \"window\" feminine."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Agus tá séimhiú ar an bhfocal baineann?",
+          "id": "And the feminine word gets séimhiú?",
+          "literal": "and is lenition on the word feminine?"
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "Go díreach. An bhean, an chathaoir, an mhí — ach an fear, an bord, an múinteoir.",
+          "id": "Exactly. An bhean, an chathaoir, an mhí — but an fear, an bord, an múinteoir.",
+          "literal": "straight-ly. the woman, the chair, the month — but the man, the table, the teacher."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Agus focal a thosaíonn le guta?",
+          "id": "And words that start with a vowel?",
+          "literal": "and word that starts with vowel?"
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "An t-arán, an t-uisce — fireann. Ach an oifig, an aimsir — baineann, gan t.",
+          "id": "An t-arán, an t-uisce — masculine. But an oifig, an aimsir — feminine, no t.",
+          "literal": "the bread, the water — masculine. but the office, the weather — feminine, without t."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá sé sin soiléir go leor. Cad é an focal ar na rudaí seo?",
+          "id": "That's clear enough. What's the word for these things?",
+          "literal": "is it that clear enough. what him the word on the things these?"
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "Cathaoireacha. Tá cathaoir amháin anseo, agus tá deich gcathaoir sa seomra.",
+          "id": "Cathaoireacha. There's one chair here, and there are ten chairs in the room.",
+          "literal": "chairs. is chair one here, and is ten chair in-the room."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá na cathaoireacha nua, ach tá na boird an-sean!",
+          "id": "The chairs are new, but the tables are really old!",
+          "literal": "is the chairs new, but is the tables very-old!"
+        }
+      ],
+      "notes": [
+        "**Noun gender has nothing to do with sex.** *Cailín* (\"girl\") is **masculine**; *stail* (\"stallion\") is **feminine**. What's marked is a grammatical habit thousands of years old, not a property of the thing. So don't try to guess it from the meaning — learn each noun together with its article: not *bean* but *an bhean*, not *bord* but *an bord*.",
+        "**An bhean, an chathaoir — feminine gets séimhiú; an fear, an bord — masculine doesn't.** This is the first and most visible effect. One exception you need to know right away: *d* and *t* are never lenited after *an*, so *an deoch* and *an tine* stay unchanged even though both are feminine.",
+        "**An t-arán, but an oifig.** The second effect shows up on words beginning with a vowel: **masculine** words get *t-* in front (*an t-arán*, *an t-uisce*, *an t-am*), **feminine** words get nothing (*an oifig*, *an aimsir*, *an eaglais*). So a *t-* before a vowel is a free clue that the word is masculine.",
+        "**Deich gcathaoir — after a number, the noun stays singular.** Notice Aoife says *cathaoireacha* when talking about the chairs in general, but *deich gcathaoir* when counting them. Unlike English, Irish doesn't make a noun plural after a number. *Deich gcathaoir*, not *deich gcathaoireacha*. The number itself brings urú — that's Unit 5."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Fireann nó baineann — and what follows",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "All the effects of gender are gathered in one table. Read from the left: the type of word, then its form with *an*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Type of word",
+            "Form with *an*",
+            "Example",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "masculine, starts with a consonant",
+              "no change",
+              "an fear, an bord, an múinteoir",
+              "an FAR, an BOHRD"
+            ],
+            [
+              "masculine, starts with a vowel",
+              "an t-",
+              "an t-arán, an t-uisce, an t-am",
+              "an tuh-RAWN, an TISH-kuh"
+            ],
+            [
+              "feminine, starts with a consonant",
+              "an + séimhiú",
+              "an bhean, an chathaoir, an mhí",
+              "an VAN, an KHAH-hir, an VEE"
+            ],
+            [
+              "feminine, starts with d or t",
+              "no change",
+              "an deoch, an tine",
+              "an DYOKH, an TIH-nuh"
+            ],
+            [
+              "feminine, starts with s + vowel/l/n/r",
+              "an ts-",
+              "an tsráid, an tsúil, an tseachtain",
+              "an TRAWJ, an TOOL"
+            ],
+            [
+              "feminine, starts with a vowel",
+              "no change",
+              "an oifig, an aimsir, an eaglais",
+              "an EH-fig, an AM-shir"
+            ],
+            [
+              "plural, starts with a consonant",
+              "na",
+              "na fir, na mná, na boird",
+              "nuh FIR, nuh MNAW"
+            ],
+            [
+              "plural, starts with a vowel",
+              "na h-",
+              "na hoifigí, na héin",
+              "nuh HEH-fih-gee, nuh HAYN"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two clues that are right nine times out of ten",
+          "items": [
+            "Words ending in **-óg, -eog, -lann, -acht, -íocht, -is** are almost always **feminine**: *fuinneog*, *bróg*, *bialann*, *leabharlann*, *gluaiseacht*, *eaglais*.",
+            "Words ending in **-óir, -eoir, -éir, -aí, -í** that name a person who does something are almost always **masculine**: *múinteoir* (teacher), *dochtúir* (doctor), *siúinéir* (carpenter), *rúnaí* (secretary).",
+            "Beyond those two groups, there's no reliable rule. English-language dictionaries mark gender *m* (masculine) or *f* (feminine), as in this book — but Irish-only dictionaries write *f* (*firinscneach*, masculine) and *b* (*baininscneach*, feminine), so watch out: there *f* means masculine. Get used to looking for it."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The official names of the two genders are *firinscneach* (FIH-rinsh-nyakh) and *baininscneach* (BAH-ninsh-nyakh). You'll see them in dictionaries, but in everyday speech people just say *fireann* and *baineann*."
+        }
+      ]
+    },
+    {
+      "title": "Plurals",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Irish has six ways of forming plurals, and no rule decides which word uses which. The good news: the plural is always listed in the dictionary right after the base word, and the six patterns below cover nearly everything."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pattern",
+            "Singular",
+            "Plural",
+            "Say it (plural)"
+          ],
+          "rows": [
+            [
+              "1. The ending is made slender",
+              "fear (man)",
+              "fir",
+              "FIR"
+            ],
+            [
+              "",
+              "bord (table)",
+              "boird",
+              "BOHRJ"
+            ],
+            [
+              "",
+              "cat (cat)",
+              "cait",
+              "KATCH"
+            ],
+            [
+              "",
+              "focal (word)",
+              "focail",
+              "FUH-kil"
+            ],
+            [
+              "2. Add -a",
+              "bróg (shoe)",
+              "bróga",
+              "BROH-guh"
+            ],
+            [
+              "",
+              "fuinneog (window)",
+              "fuinneoga",
+              "FWIN-yoh-guh"
+            ],
+            [
+              "3. Add -í",
+              "cailín (girl)",
+              "cailíní",
+              "KAH-lee-nee"
+            ],
+            [
+              "",
+              "siopa (shop)",
+              "siopaí",
+              "SHOO-pee"
+            ],
+            [
+              "",
+              "páiste (child)",
+              "páistí",
+              "PAWS-tee"
+            ],
+            [
+              "4. Add -anna / -eanna",
+              "bus",
+              "busanna",
+              "BOO-suh-nuh"
+            ],
+            [
+              "",
+              "ceist (question)",
+              "ceisteanna",
+              "KESH-tyuh-nuh"
+            ],
+            [
+              "",
+              "áit (place)",
+              "áiteanna",
+              "AW-tyuh-nuh"
+            ],
+            [
+              "5. Add -eacha / -tha",
+              "cathaoir (chair)",
+              "cathaoireacha",
+              "KAH-hih-ruh-khuh"
+            ],
+            [
+              "",
+              "litir (letter)",
+              "litreacha",
+              "LIH-truh-khuh"
+            ],
+            [
+              "6. Irregular",
+              "bean (woman)",
+              "mná",
+              "MNAW"
+            ],
+            [
+              "",
+              "teach (house)",
+              "tithe",
+              "TIH-huh"
+            ],
+            [
+              "",
+              "duine (person)",
+              "daoine",
+              "DEE-nyuh"
+            ],
+            [
+              "",
+              "lá (day)",
+              "laethanta",
+              "LAY-han-tuh"
+            ],
+            [
+              "",
+              "bó (cow)",
+              "ba",
+              "BAW"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "What you need to know about plurals for now",
+          "items": [
+            "**The plural article is always *na*,** whatever the gender: *na fir*, *na mná*, *na tithe*. Gender stops mattering once a word is plural.",
+            "**Words starting with a vowel get *h-* in the plural:** *na hoifigí*, *na héin* (the birds), *na huaireanta* (the hours).",
+            "**After a number, don't use the plural.** *Trí leabhar*, not *trí leabhair*. This actually makes life easier: for most everyday sentences you won't need the plural at all.",
+            "**Adjectives follow the plural** by adding *-a* or making the ending slender: *fear mór* → *fir mhóra*, *teach nua* → *tithe nua*. You can leave this until A2."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Thirty of the most common nouns",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Learn them together with their article. The last column marks the gender: **f** for fireann (masculine), **b** for baineann (feminine)."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "With an",
+            "Say it",
+            "English",
+            "Gender"
+          ],
+          "rows": [
+            [
+              "an fear",
+              "an FAR",
+              "man",
+              "m"
+            ],
+            [
+              "an bhean",
+              "an VAN",
+              "woman",
+              "f"
+            ],
+            [
+              "an páiste",
+              "an PAWS-tyuh",
+              "child",
+              "m"
+            ],
+            [
+              "an cailín",
+              "an KAH-leen",
+              "girl",
+              "m"
+            ],
+            [
+              "an buachaill",
+              "an BOO-uh-khil",
+              "boy",
+              "m"
+            ],
+            [
+              "an duine",
+              "an DIH-nuh",
+              "person",
+              "m"
+            ],
+            [
+              "an teach",
+              "an TYAKH",
+              "house",
+              "m"
+            ],
+            [
+              "an doras",
+              "an DUH-ras",
+              "door",
+              "m"
+            ],
+            [
+              "an fhuinneog",
+              "an IH-nyohg",
+              "window",
+              "f"
+            ],
+            [
+              "an bord",
+              "an BOHRD",
+              "table",
+              "m"
+            ],
+            [
+              "an chathaoir",
+              "an KHAH-heer",
+              "chair",
+              "f"
+            ],
+            [
+              "an leabhar",
+              "an LYOW-er",
+              "book",
+              "m"
+            ],
+            [
+              "an peann",
+              "an PYOWN",
+              "pen",
+              "m"
+            ],
+            [
+              "an t-airgead",
+              "an TAH-rih-gyad",
+              "money",
+              "m"
+            ],
+            [
+              "an bia",
+              "an BEE-uh",
+              "food",
+              "m"
+            ],
+            [
+              "an t-uisce",
+              "an TISH-kuh",
+              "water",
+              "m"
+            ],
+            [
+              "an bainne",
+              "an BAH-nyuh",
+              "milk",
+              "m"
+            ],
+            [
+              "an t-arán",
+              "an tuh-RAWN",
+              "bread",
+              "m"
+            ],
+            [
+              "an deoch",
+              "an DYOKH",
+              "drink",
+              "f"
+            ],
+            [
+              "an tsráid",
+              "an TRAWJ",
+              "street",
+              "f"
+            ],
+            [
+              "an chathair",
+              "an KHAH-hir",
+              "city",
+              "f"
+            ],
+            [
+              "an tír",
+              "an TYEER",
+              "country",
+              "f"
+            ],
+            [
+              "an scoil",
+              "an SKOL",
+              "school",
+              "f"
+            ],
+            [
+              "an obair",
+              "an UH-bir",
+              "work",
+              "f"
+            ],
+            [
+              "an lá",
+              "an LAW",
+              "day",
+              "m"
+            ],
+            [
+              "an oíche",
+              "an EE-khuh",
+              "night",
+              "f"
+            ],
+            [
+              "an mhí",
+              "an VEE",
+              "month",
+              "f"
+            ],
+            [
+              "an bhliain",
+              "an VLEE-in",
+              "year",
+              "f"
+            ],
+            [
+              "an t-am",
+              "an TAM",
+              "time",
+              "m"
+            ],
+            [
+              "an rud",
+              "an RUD",
+              "thing",
+              "m"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Watch two tricky rows: *an cailín* is **masculine** even though it means \"girl\", and *an obair* is **feminine** but starts with a vowel, so there's neither a *t-* nor a séimhiú to see — its gender only shows once an adjective follows it."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "seomra",
+      "baca": "SHOHM-ruh",
+      "en": "room"
+    },
+    {
+      "ga": "rang",
+      "baca": "RANG",
+      "en": "class"
+    },
+    {
+      "ga": "balla",
+      "baca": "BAH-luh",
+      "en": "wall"
+    },
+    {
+      "ga": "clár bán",
+      "baca": "klawr BAWN",
+      "en": "whiteboard"
+    },
+    {
+      "ga": "fuinneog",
+      "baca": "FWIN-yohg",
+      "en": "window"
+    },
+    {
+      "ga": "doras",
+      "baca": "DUH-ras",
+      "en": "door"
+    },
+    {
+      "ga": "cén fáth?",
+      "baca": "kyayn FAW",
+      "en": "why?"
+    },
+    {
+      "ga": "gach",
+      "baca": "GAKH",
+      "en": "every, each"
+    },
+    {
+      "ga": "ainmfhocal",
+      "baca": "AH-nim-uh-kal",
+      "en": "noun"
+    },
+    {
+      "ga": "fireann",
+      "baca": "FIH-ryan",
+      "en": "masculine"
+    },
+    {
+      "ga": "baineann",
+      "baca": "BAH-nyan",
+      "en": "feminine"
+    },
+    {
+      "ga": "séimhiú",
+      "baca": "SHAY-woo",
+      "en": "lenition (softening a letter)"
+    },
+    {
+      "ga": "urú",
+      "baca": "OO-roo",
+      "en": "eclipsis (covering a letter)"
+    },
+    {
+      "ga": "focal",
+      "baca": "FUH-kal",
+      "en": "word"
+    },
+    {
+      "ga": "go díreach",
+      "baca": "guh DYEE-rakh",
+      "en": "exactly"
+    },
+    {
+      "ga": "guta",
+      "baca": "GOO-tuh",
+      "en": "vowel"
+    },
+    {
+      "ga": "gan",
+      "baca": "GAN",
+      "en": "without"
+    },
+    {
+      "ga": "soiléir",
+      "baca": "SIH-layr",
+      "en": "clear"
+    },
+    {
+      "ga": "go leor",
+      "baca": "guh LYOHR",
+      "en": "enough, plenty"
+    },
+    {
+      "ga": "rud",
+      "baca": "RUD",
+      "en": "thing"
+    },
+    {
+      "ga": "amháin",
+      "baca": "uh-WAWN",
+      "en": "one, only"
+    },
+    {
+      "ga": "nua",
+      "baca": "NOO-uh",
+      "en": "new"
+    },
+    {
+      "ga": "sean",
+      "baca": "SHAN",
+      "en": "old"
+    },
+    {
+      "ga": "fear",
+      "baca": "FAR",
+      "en": "man"
+    },
+    {
+      "ga": "bean",
+      "baca": "BAN",
+      "en": "woman"
+    },
+    {
+      "ga": "páiste",
+      "baca": "PAWS-tyuh",
+      "en": "child"
+    },
+    {
+      "ga": "cailín",
+      "baca": "KAH-leen",
+      "en": "girl"
+    },
+    {
+      "ga": "buachaill",
+      "baca": "BOO-uh-khil",
+      "en": "boy"
+    },
+    {
+      "ga": "múinteoir",
+      "baca": "MOON-tyohr",
+      "en": "teacher"
+    },
+    {
+      "ga": "leabhar",
+      "baca": "LYOW-er",
+      "en": "book"
+    },
+    {
+      "ga": "peann",
+      "baca": "PYOWN",
+      "en": "pen"
+    },
+    {
+      "ga": "uisce",
+      "baca": "ISH-kuh",
+      "en": "water"
+    },
+    {
+      "ga": "bainne",
+      "baca": "BAH-nyuh",
+      "en": "milk"
+    },
+    {
+      "ga": "tine",
+      "baca": "TIH-nuh",
+      "en": "fire, fireplace"
+    },
+    {
+      "ga": "obair",
+      "baca": "UH-bir",
+      "en": "work"
+    },
+    {
+      "ga": "tír",
+      "baca": "TYEER",
+      "en": "country"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Add the article *an* in the right form.",
+      "items": [
+        "____ fear (man)",
+        "____ bhean (woman) — write it out in full",
+        "____ arán (bread, masc.)",
+        "____ oifig (office, fem.)",
+        "____ sráid (street, fem.)",
+        "____ cathaoir (chair, fem.)"
+      ]
+    },
+    {
+      "prompt": "Write the plural.",
+      "items": [
+        "fear",
+        "cailín",
+        "bord",
+        "teach",
+        "bean",
+        "cathaoir"
+      ]
+    },
+    {
+      "prompt": "Choose *an* or *na*, then write out the whole sentence.",
+      "items": [
+        "Tá ____ leabhar ar an mbord. (one book)",
+        "Tá ____ leabhair ar an mbord. (books)",
+        "Tá ____ bhean anseo. (one woman)",
+        "Tá ____ mná anseo. (women)",
+        "Tá ____ hoifigí dúnta. (offices)",
+        "Tá ____ t-uisce fuar. (the water)"
+      ]
+    },
+    {
+      "prompt": "Translate into Irish.",
+      "items": [
+        "The window is big.",
+        "The whiteboard is new.",
+        "The woman is here.",
+        "The bread is tasty.",
+        "The chairs are old.",
+        "There are ten chairs in this room."
+      ]
+    }
+  ],
+  "answers": [
+    "an fear — an bhean — an t-arán — an oifig — an tsráid — an chathaoir",
+    "fir — cailíní — boird — tithe — mná — cathaoireacha",
+    "Tá an leabhar ar an mbord. — Tá na leabhair ar an mbord. — Tá an bhean anseo. — Tá na mná anseo. — Tá na hoifigí dúnta. — Tá an t-uisce fuar.",
+    "Tá an fhuinneog mór. — Tá an clár bán nua. — Tá an bhean anseo. — Tá an t-arán blasta. — Tá na cathaoireacha sean. — Tá deich gcathaoir sa seomra seo."
+  ]
+}

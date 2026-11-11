@@ -1,0 +1,500 @@
+{
+  "title": "Ever, and never",
+  "title_target": "Núliðin tíð — ég hef séð",
+  "goal": "Build the \"have done\" form with *hafa* + sagnbót, and know exactly when to use it — and when the plain past is the right choice instead.",
+  "bekal": [
+    "form the sagnbót of both weak and strong verbs",
+    "tell *ég fór* apart from *ég hef farið*",
+    "use *vera búinn að* like a native speaker"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Hefurðu séð norðurljósin?",
+      "intro": "Early October, and the nights are dark again. Sigga calls Búdí with a last-minute plan.",
+      "lines": [
+        {
+          "speaker": "Sigga:",
+          "text": "Búdí, hefurðu séð norðurljósin?",
+          "id": "Budi, have you ever seen the northern lights?",
+          "literal": "Budi, have-you seen northern-lights-the?"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Nei, ég hef aldrei séð þau. Ég hef bara séð myndir.",
+          "id": "No, I've never seen them. I've only seen pictures.",
+          "literal": "no, I have never seen them. I have only seen pictures."
+        },
+        {
+          "speaker": "Sigga:",
+          "text": "Þá verðum við að laga það. Ég hef fylgst með spánni.",
+          "id": "Then we have to fix that. I've been following the forecast.",
+          "literal": "then must we to fix that. I have followed with forecast-the."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Er spá fyrir norðurljós?",
+          "id": "There's a forecast for the northern lights?",
+          "literal": "is forecast for northern-lights?"
+        },
+        {
+          "speaker": "Sigga:",
+          "text": "Já, alveg eins og veðurspá. Í kvöld er virknin sterk.",
+          "id": "Yes, just like a weather forecast. Tonight the activity is strong.",
+          "literal": "yes, all one and weather-forecast. in night is activity-the strong."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Hvert höfum við farið áður? Ég man ekki.",
+          "id": "Where have we been before? I don't remember.",
+          "literal": "where-to have we gone before? I remember not."
+        },
+        {
+          "speaker": "Sigga:",
+          "text": "Við höfum aldrei farið saman. Þú hefur alltaf verið að læra!",
+          "id": "We've never gone anywhere together. You're always studying!",
+          "literal": "we have never gone together. you have always been to study!"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Satt. Ég hef lært mikið en séð lítið.",
+          "id": "True. I've studied a lot but seen little.",
+          "literal": "true. I have studied much but seen little."
+        },
+        {
+          "speaker": "Sigga:",
+          "text": "Í kvöld breytist það. Áttu hlýja úlpu?",
+          "id": "Tonight that changes. Do you have a warm jacket?",
+          "literal": "in night changes that. have-you warm jacket?"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Ég keypti eina í síðustu viku.",
+          "id": "I bought one last week.",
+          "literal": "I bought one in last week."
+        },
+        {
+          "speaker": "Sigga:",
+          "text": "Fullkomið. Við förum klukkan tíu, út fyrir borgina.",
+          "id": "Perfect. We leave at ten, out of town.",
+          "literal": "perfect. we go at ten, out for town-the."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Loksins! Ég hef beðið eftir þessu í þrjá mánuði.",
+          "id": "Finally! I've been waiting for this for three months.",
+          "literal": "finally! I have waited after this in three months."
+        }
+      ],
+      "notes": [
+        "**The pattern: *hafa* + sagnbót (supine).** *Ég **hef séð***, *ég **hef farið***, *ég **hef lært***. Only *hafa* changes form; the sagnbót stays the same for every subject — so once you know one sagnbót, it works for all six forms. Just like English *I have seen*, *she has seen*.",
+        "**The sagnbót always has the hvorugkyn form**, usually ending in **-að**, **-t**, or **-ið**: *talað*, *lært*, *farið*, *séð*, *verið*, *komið*. The neuter is used once again as the language's default form — a pattern you've seen since unit 3.",
+        "⚠️ **Ég keypti eina í síðustu viku, not ég hef keypt.** When the time is stated clearly (*í gær*, *í síðustu viku*, *árið 2020*), Icelandic uses the **plain past**. The \"have done\" form is used when the time is **not** stated, or when the effect is still felt now.",
+        "**Aldrei and alltaf almost always pair with this form**: *ég hef aldrei séð* (I've never seen), *þú hefur alltaf verið* (you've always been). Those two words are the surest sign that the \"have done\" form is needed.",
+        "**Bíða eftir + þágufall** — wait for something. *Ég hef beðið eftir þessu* — I've been waiting for this. Don't drop *eftir*; without it, *bíða* just means waiting with no object, like \"wait\" without \"for\".",
+        "**Northern lights forecasts really exist.** The Icelandic Met Office, *Veðurstofan*, publishes an aurora map every day showing two things: the strength of solar activity and cloud cover. Hunting the aurora without checking that map almost always ends in disappointment."
+      ],
+      "grammars": [
+        {
+          "title": "Hafa + sagnbót",
+          "body": [
+            "Only the form of *hafa* changes. The sagnbót has one form for everyone — that's the easy part."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "hafa",
+              "Example",
+              "English"
+            ],
+            "rows": [
+              [
+                "ég",
+                "**hef**",
+                "*Ég hef séð það.*",
+                "I've seen it."
+              ],
+              [
+                "þú",
+                "**hefur**",
+                "*Hefurðu séð það?*",
+                "Have you seen it?"
+              ],
+              [
+                "hann/hún/það",
+                "**hefur**",
+                "*Hún hefur farið.*",
+                "She has gone."
+              ],
+              [
+                "við",
+                "**höfum**",
+                "*Við höfum lært mikið.*",
+                "We've learned a lot."
+              ],
+              [
+                "þið",
+                "**hafið**",
+                "*Hafið þið borðað?*",
+                "Have you (all) eaten?"
+              ],
+              [
+                "þeir/þær/þau",
+                "**hafa**",
+                "*Þau hafa komið.*",
+                "They've arrived."
+              ]
+            ]
+          },
+          "after": [
+            "***Ekki* comes after *hafa*, not after the sagnbót**: *Ég hef **ekki** séð það.* The *ekki* rule from unit 2 still applies exactly — it always follows the verb **that changes form**.",
+            "Questions are made as usual, by swapping the order: *Hefur þú séð?* → *Hefurðu séð?*"
+          ]
+        },
+        {
+          "title": "Forming the sagnbót",
+          "body": [
+            "Three patterns, all with a distinctive ending. Strong verbs often take **-ið**; weak verbs take **-að** or **-t**."
+          ],
+          "table": {
+            "head": [
+              "Group",
+              "Infinitive",
+              "Sagnbót",
+              "Example"
+            ],
+            "rows": [
+              [
+                "weak -a",
+                "*tala*, *borða*",
+                "*talað*, *borðað*",
+                "*Ég hef talað.*"
+              ],
+              [
+                "weak -i",
+                "*læra*, *keyra*",
+                "*lært*, *keyrt*",
+                "*Ég hef lært.*"
+              ],
+              [
+                "strong",
+                "*fara*, *koma*",
+                "*farið*, *komið*",
+                "*Ég hef farið.*"
+              ],
+              [
+                "strong",
+                "*sjá*, *gera*",
+                "*séð*, *gert*",
+                "*Ég hef séð.*"
+              ],
+              [
+                "strong",
+                "*vera*, *taka*",
+                "*verið*, *tekið*",
+                "*Ég hef verið.*"
+              ],
+              [
+                "strong",
+                "*drekka*, *lesa*",
+                "*drukkið*, *lesið*",
+                "*Ég hef lesið.*"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *Drekka → drukkið* changes its vowel again, and not to the same vowel as the past (*drakk*). Strong verbs often have **three** different vowels: *drekka – drakk – drukkið*, *finna – fann – fundið*. English does it too — *drink – drank – drunk* — so learn them in threes.",
+            "**An everyday alternative that's just as common: *vera búinn að*.** *Ég er búinn að borða* = I've already eaten. *Búinn* follows the subject's gender: *búinn* (male), *búin* (female), *búið* (neuter). In conversation you'll actually hear this more often than *ég hef borðað*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Have done, or did?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The difference works almost exactly like English *I went* versus *I have gone*, so you already have the instinct. The question is always the same: **is the time stated?**"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Plain past",
+            "\"Have done\" form",
+            "Why"
+          ],
+          "rows": [
+            [
+              "*Ég fór í gær.*",
+              "*Ég hef farið.*",
+              "left states the time"
+            ],
+            [
+              "*Ég keypti úlpu í síðustu viku.*",
+              "*Ég hef keypt úlpu.*",
+              "left states the time"
+            ],
+            [
+              "*Hún kom klukkan sjö.*",
+              "*Hún hefur komið.*",
+              "left states the time"
+            ],
+            [
+              "*Ég sá myndina í fyrra.*",
+              "*Ég hef séð myndina.*",
+              "right = experience"
+            ],
+            [
+              "—",
+              "*Ég hef aldrei séð snjó.*",
+              "lifetime experience"
+            ],
+            [
+              "—",
+              "*Ég hef beðið í þrjá mánuði.*",
+              "still going on"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three deciding signals",
+          "items": [
+            "**A specific time is stated** (*í gær*, *í fyrra*, *klukkan sjö*, *árið 2020*) → plain past. No exceptions.",
+            "**Aldrei, alltaf, einhvern tíma, aldrei áður** → the \"have done\" form.",
+            "**Something that started in the past and is still going on** (*í þrjá mánuði*, *síðan í ágúst*) → the \"have done\" form."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Hunting the northern lights",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Íslenska",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*norðurljós*",
+              "NAWR-dhür-lyohs",
+              "northern lights, aurora"
+            ],
+            [
+              "*spá*",
+              "spow",
+              "forecast"
+            ],
+            [
+              "*virkni*",
+              "VIHRK-nih",
+              "activity"
+            ],
+            [
+              "*skýjað*",
+              "SKEE-yahdh",
+              "cloudy"
+            ],
+            [
+              "*heiðskírt*",
+              "HAYDH-skeert",
+              "clear, cloudless"
+            ],
+            [
+              "*myrkur*",
+              "MIHR-kür",
+              "dark"
+            ],
+            [
+              "*úlpa*",
+              "OOL-pah",
+              "parka, thick jacket"
+            ],
+            [
+              "*vettlingar*",
+              "VEHHT-lin-gahr",
+              "gloves"
+            ],
+            [
+              "*húfa*",
+              "HOO-vah",
+              "knit hat"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Four conditions that must all be met",
+          "items": [
+            "**Darkness** — so only between September and April; in summer the sky never gets dark enough.",
+            "**Clear skies** — clouds beat even the strongest aurora. *Veðurstofan*'s cloud map matters more than the activity number.",
+            "**Away from city lights** — a twenty-minute drive out of Reykjavík is enough.",
+            "**Patience** — the aurora can appear for five minutes and then vanish for an hour. Bring a thermos, and wear a truly thick *úlpa*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "is": "norðurljós",
+      "baca": "NAWR-dhür-lyohs",
+      "en": "northern lights"
+    },
+    {
+      "is": "sagnbót",
+      "baca": "SAHGN-boht",
+      "en": "supine (\"have done\" form)"
+    },
+    {
+      "is": "laga",
+      "baca": "LAH-ghah",
+      "en": "fix, repair"
+    },
+    {
+      "is": "fylgjast með",
+      "baca": "FIL-yahst mehdh",
+      "en": "follow, keep track of"
+    },
+    {
+      "is": "spá",
+      "baca": "spow",
+      "en": "forecast"
+    },
+    {
+      "is": "virkni",
+      "baca": "VIHRK-nih",
+      "en": "activity"
+    },
+    {
+      "is": "sterkur",
+      "baca": "STEHR-kür",
+      "en": "strong"
+    },
+    {
+      "is": "áður",
+      "baca": "OW-dhür",
+      "en": "before"
+    },
+    {
+      "is": "muna",
+      "baca": "MÜ-nah",
+      "en": "remember"
+    },
+    {
+      "is": "saman",
+      "baca": "SAH-mahn",
+      "en": "together"
+    },
+    {
+      "is": "breytast",
+      "baca": "BRAY-tahst",
+      "en": "change"
+    },
+    {
+      "is": "hlýr",
+      "baca": "hleer",
+      "en": "warm"
+    },
+    {
+      "is": "úlpa",
+      "baca": "OOL-pah",
+      "en": "parka, thick jacket"
+    },
+    {
+      "is": "síðastur",
+      "baca": "SEE-dhahs-tür",
+      "en": "last"
+    },
+    {
+      "is": "fullkominn",
+      "baca": "FÜTL-kaw-midn",
+      "en": "perfect"
+    },
+    {
+      "is": "borg",
+      "baca": "bawrgh",
+      "en": "city"
+    },
+    {
+      "is": "bíða eftir",
+      "baca": "BEE-dhah EHF-tihr",
+      "en": "wait"
+    },
+    {
+      "is": "mánuður",
+      "baca": "MOW-nü-dhür",
+      "en": "month"
+    },
+    {
+      "is": "búinn að",
+      "baca": "BOO-idn ahdh",
+      "en": "done, finished"
+    },
+    {
+      "is": "drekka",
+      "baca": "DREHH-kah",
+      "en": "drink"
+    },
+    {
+      "is": "skýjað",
+      "baca": "SKEE-yahdh",
+      "en": "cloudy"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the sagnbót of these verbs.",
+      "items": [
+        "tala",
+        "læra",
+        "fara",
+        "sjá",
+        "vera",
+        "koma"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right form of *hafa*.",
+      "items": [
+        "Ég ____ séð norðurljósin.",
+        "____ þú borðað?",
+        "Hún ____ farið heim.",
+        "Við ____ lært mikið.",
+        "____ þið komið áður?",
+        "Þau ____ aldrei verið hér."
+      ]
+    },
+    {
+      "prompt": "Choose the right form: plain past or the \"have done\" form.",
+      "items": [
+        "Ég ____ (fór, hef farið) til Þingvalla í gær.",
+        "Ég ____ (sá, hef séð) aldrei snjó.",
+        "Hún ____ (keypti, hefur keypt) úlpu í síðustu viku.",
+        "Við ____ (biðum, höfum beðið) í þrjá mánuði — og bíðum enn.",
+        "Þeir ____ (komu, hafa komið) klukkan sjö í morgun."
+      ]
+    },
+    {
+      "prompt": "Translate into Icelandic.",
+      "items": [
+        "Have you ever seen the northern lights?",
+        "I've never seen them.",
+        "We've never gone anywhere together.",
+        "I've studied a lot.",
+        "I bought one last week.",
+        "I've been waiting for three months."
+      ]
+    }
+  ],
+  "answers": [
+    "talað — lært — farið — séð — verið — komið",
+    "hef — Hefur — hefur — höfum — Hafið — hafa",
+    "fór — hef séð — keypti — höfum beðið — komu",
+    "Hefurðu séð norðurljósin? — Ég hef aldrei séð þau. — Við höfum aldrei farið saman. — Ég hef lært mikið. — Ég keypti eina í síðustu viku. — Ég hef beðið í þrjá mánuði."
+  ]
+}

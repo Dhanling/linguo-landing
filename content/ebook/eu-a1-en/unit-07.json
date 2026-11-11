@@ -1,0 +1,599 @@
+{
+  "title": "Shopping at the market",
+  "title_target": "Azokan erosketak egiten",
+  "goal": "Shop using weights and measures, ask about prices, name colors, and compare two things.",
+  "bekal": [
+    "ask the price with *zenbat balio du?* and understand the answer",
+    "use the units *kilo, kilo erdi, dozena, botila, zati*",
+    "compare with *-ago*, *baino*, *-en*, and *-egi*"
+  ],
+  "dialogs": [
+    {
+      "title": "Elkarrizketa — Erriberako azokan",
+      "intro": "Saturday morning at the Ribera Market, Bilbo's biggest covered market, right on the riverbank.",
+      "lines": [
+        {
+          "speaker": "Dendaria:",
+          "text": "Egun on! Zer nahi duzu?",
+          "id": "Good morning! What would you like?",
+          "literal": "day good! what want you-have-it?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sagarrak nahi ditut. Zenbat balio dute?",
+          "id": "I'd like some apples. How much are they?",
+          "literal": "apple-the(pl) want I-have-them. how-much worth they-have-it?"
+        },
+        {
+          "speaker": "Dendaria:",
+          "text": "Kiloa bi euro eta erdi.",
+          "id": "Two and a half euros a kilo.",
+          "literal": "kilo-the two euro and half."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ondo, kilo bat mesedez. Eta tomateak?",
+          "id": "OK, one kilo, please. And the tomatoes?",
+          "literal": "fine, kilo one please. and tomato-the(pl)?"
+        },
+        {
+          "speaker": "Dendaria:",
+          "text": "Hiru euro kiloa. Gaur oso onak dira.",
+          "id": "Three euros a kilo. They're very good today.",
+          "literal": "three euro kilo-the. today very good-the(pl) are."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kilo erdi nahi dut. Eta gazta hori zer da?",
+          "id": "I'd like half a kilo. And what's that cheese?",
+          "literal": "kilo half want I-have-it. and cheese that what is?"
+        },
+        {
+          "speaker": "Dendaria:",
+          "text": "Idiazabal gazta da, ardi esnearekin egina.",
+          "id": "That's Idiazabal cheese, made from sheep's milk.",
+          "literal": "Idiazabal cheese is, sheep milk-with made-the."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Garestia da?",
+          "id": "Is it expensive?",
+          "literal": "expensive-the is?"
+        },
+        {
+          "speaker": "Dendaria:",
+          "text": "Pixka bat garestiagoa, baina hemengo onena da.",
+          "id": "A bit more expensive, but it's the best one here.",
+          "literal": "little one expensive-more-the, but here-of good-most-the is."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Orduan zati txiki bat, mesedez.",
+          "id": "Then a small piece, please.",
+          "literal": "then piece small one, please."
+        },
+        {
+          "speaker": "Dendaria:",
+          "text": "Hemen duzu dena: hamabi euro eta berrogeita hamar.",
+          "id": "Here's everything: twelve euros fifty.",
+          "literal": "here you-have-it all-the: twelve euro and fifty."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hemen duzu. Eskerrik asko!",
+          "id": "Here you are. Thank you!",
+          "literal": "here you-have-it. thanks many!"
+        }
+      ],
+      "notes": [
+        "**Zenbat balio du? — the standard way to ask a price.** Literally \"how much is it worth?\". If the item is plural, the auxiliary goes plural too: *Zenbat balio **dute**?* Two equally common alternatives: *Zenbat da?* (shorter, more casual) and *Zein da prezioa?* (more formal).",
+        "**Prices are per unit, and the unit comes after.** *Bi euro kiloa* = \"two euros a kilo\". Note the order: the price first, then the unit with the article — just as English says \"two euros a kilo\".",
+        "**Erdi means half, and it goes after.** *Kilo erdi* (half a kilo), *ordu erdi* (half an hour), *bi euro eta erdi* (two and a half euros). Don't confuse it with *erdian*, which means \"in the middle\".",
+        "**Garestiagoa, onena — comparisons are glued on too.** Like English *-er* and *-est*, Basque uses endings for \"more\" and \"most\" — but for every adjective, however long. *Garesti* → *garesti**ago**a* (more expensive) → *garesti**en**a* (most expensive). The grammar section below covers it fully."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Colors and describing things",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English",
+            "Note"
+          ],
+          "rows": [
+            [
+              "zuria",
+              "SOO-ree-ah",
+              "white",
+              "ardo zuria = white wine"
+            ],
+            [
+              "beltza",
+              "BEHL-tsah",
+              "black",
+              "ardo beltza = red wine!"
+            ],
+            [
+              "gorria",
+              "GOH-rree-ah",
+              "red",
+              "ikurrina gorria da"
+            ],
+            [
+              "urdina",
+              "oor-DEE-nah",
+              "blue",
+              "also used for sea green"
+            ],
+            [
+              "berdea",
+              "behr-DEH-ah",
+              "green",
+              ""
+            ],
+            [
+              "horia",
+              "OH-ree-ah",
+              "yellow",
+              "don't confuse it with hori (that)"
+            ],
+            [
+              "marroia",
+              "mah-RROH-ee-ah",
+              "brown",
+              ""
+            ],
+            [
+              "grisa",
+              "GREE-sah",
+              "gray",
+              ""
+            ],
+            [
+              "laranja",
+              "lah-RAHN-jah",
+              "orange",
+              "also the fruit"
+            ],
+            [
+              "arrosa",
+              "ah-RROH-sah",
+              "pink",
+              "also means \"rose\""
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Watch out for one cultural trap: red wine is *ardo **beltza*** — \"black wine\", not red. Basque uses *beltz* for any deep, dark color, and red wine falls into that group. If you order *ardo gorria*, the waiter will understand, but will know at once that you're just learning."
+        },
+        {
+          "type": "kotak",
+          "title": "Ikurrina — the Basque flag",
+          "items": [
+            "It has three colors: a *gorria* (red) background, a *berdea* (green) diagonal cross, and a *zuria* (white) upright cross. Its name is *ikurrina*, from *ikur* (\"symbol\").",
+            "The word *gorri* also appears in many place names: *Mendigorria* (\"red mountain\"), *Iturgorri* (\"red spring\").",
+            "Colors work like any other adjective, so they go after the noun and carry the article: *kotxe **gorria*** (the red car), *etxe **zuriak*** (the white houses)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Comparing: -ago, baino, -en, -egi",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Form",
+            "Ending",
+            "Example",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "basic",
+              "—",
+              "garestia",
+              "expensive"
+            ],
+            [
+              "more",
+              "**-ago**",
+              "garesti**ago**a",
+              "more expensive"
+            ],
+            [
+              "most",
+              "**-en**",
+              "garesti**en**a",
+              "most expensive"
+            ],
+            [
+              "too",
+              "**-egi**",
+              "garesti**egi**a",
+              "too expensive"
+            ],
+            [
+              "as … as",
+              "**bezain**",
+              "zu **bezain** garestia",
+              "as expensive as you"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "To name what you're comparing with, use *baino* (\"than\") — and it goes **before** the adjective, the reverse of English."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Literally",
+            "English"
+          ],
+          "rows": [
+            [
+              "Gazta ogia **baino** garestiagoa da.",
+              "cheese bread-than expensive-more-the is",
+              "Cheese is more expensive than bread."
+            ],
+            [
+              "Bilbo Donostia **baino** handiagoa da.",
+              "Bilbo Donostia-than big-more-the is",
+              "Bilbo is bigger than Donostia."
+            ],
+            [
+              "Hau da onena.",
+              "this is good-most-the",
+              "This is the best one."
+            ],
+            [
+              "Kafe hau beroegia dago.",
+              "coffee this hot-too-the is(located)",
+              "This coffee is too hot."
+            ],
+            [
+              "Ni zu bezain altua naiz.",
+              "I you as tall-the am",
+              "I'm as tall as you."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three irregular forms to memorize",
+          "items": [
+            "*on* (good) → **hobea** (better) → **onena** (best).",
+            "*txar* (bad) → **okerragoa** (worse) → **txarrena** (worst).",
+            "*asko* (a lot) → **gehiago** (more) → **gehiena** (most); *gutxi* (a little) → **gutxiago** → **gutxiena**.",
+            "Everything else is completely regular — just stick *-ago*, *-en*, or *-egi* onto the base word before the article."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Shopping phrases and units",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Zenbat balio du?",
+              "sehn-BAHT bah-LEE-oh doo",
+              "How much is it?"
+            ],
+            [
+              "Merkeegia / Garestiegia da.",
+              "mehr-keh-EH-gee-ah",
+              "It's too cheap / too expensive."
+            ],
+            [
+              "Baduzu … ?",
+              "bah-DOO-soo",
+              "Do you have … ?"
+            ],
+            [
+              "Beste kolorerik baduzu?",
+              "BEHS-teh koh-loh-REH-reek",
+              "Do you have it in another color?"
+            ],
+            [
+              "Handiagoa nahi dut.",
+              "ahn-dee-AH-goh-ah",
+              "I'd like a bigger one."
+            ],
+            [
+              "Hau hartuko dut.",
+              "AH-oo ahr-TOO-koh doot",
+              "I'll take this one."
+            ],
+            [
+              "Besterik?",
+              "BEHS-teh-reek",
+              "Anything else?"
+            ],
+            [
+              "Poltsa bat, mesedez.",
+              "POHL-tsah baht",
+              "A bag, please."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Units"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "English",
+            "Example"
+          ],
+          "rows": [
+            [
+              "kilo bat",
+              "a kilo",
+              "kilo bat sagar"
+            ],
+            [
+              "kilo erdi",
+              "half a kilo",
+              "kilo erdi tomate"
+            ],
+            [
+              "laurden bat",
+              "a quarter",
+              "laurden bat gazta"
+            ],
+            [
+              "dozena bat",
+              "a dozen",
+              "dozena bat arrautza"
+            ],
+            [
+              "botila bat",
+              "a bottle",
+              "botila bat ur"
+            ],
+            [
+              "zati bat",
+              "a piece",
+              "zati bat ogi"
+            ],
+            [
+              "pakete bat",
+              "a pack",
+              "pakete bat kafe"
+            ],
+            [
+              "gutxi / asko",
+              "a little / a lot",
+              "azukre gutxi"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that after a unit, the noun stays bare, without the article: *kilo bat sagar*, not *kilo bat sagarrak*. The rule is the same as for numbers in Unit 2."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "eu": "azoka",
+      "baca": "ah-SOH-kah",
+      "en": "market"
+    },
+    {
+      "eu": "denda",
+      "baca": "DEHN-dah",
+      "en": "shop"
+    },
+    {
+      "eu": "dendari",
+      "baca": "dehn-DAH-ree",
+      "en": "shopkeeper, seller"
+    },
+    {
+      "eu": "prezio",
+      "baca": "preh-SEE-oh",
+      "en": "price"
+    },
+    {
+      "eu": "diru",
+      "baca": "DEE-roo",
+      "en": "money"
+    },
+    {
+      "eu": "balio izan",
+      "baca": "bah-LEE-oh",
+      "en": "to cost, to be worth"
+    },
+    {
+      "eu": "sagar",
+      "baca": "SAH-gahr",
+      "en": "apple"
+    },
+    {
+      "eu": "laranja",
+      "baca": "lah-RAHN-jah",
+      "en": "orange"
+    },
+    {
+      "eu": "banana",
+      "baca": "bah-NAH-nah",
+      "en": "banana"
+    },
+    {
+      "eu": "mahats",
+      "baca": "MAH-ahts",
+      "en": "grapes"
+    },
+    {
+      "eu": "tomate",
+      "baca": "toh-MAH-teh",
+      "en": "tomato"
+    },
+    {
+      "eu": "tipula",
+      "baca": "tee-POO-lah",
+      "en": "onion"
+    },
+    {
+      "eu": "baratxuri",
+      "baca": "bah-rah-CHOO-ree",
+      "en": "garlic"
+    },
+    {
+      "eu": "patata",
+      "baca": "pah-TAH-tah",
+      "en": "potato"
+    },
+    {
+      "eu": "arroz",
+      "baca": "ah-RROHS",
+      "en": "rice"
+    },
+    {
+      "eu": "arrautza",
+      "baca": "ah-RRAH-oo-tsah",
+      "en": "egg"
+    },
+    {
+      "eu": "kilo",
+      "baca": "KEE-loh",
+      "en": "kilo"
+    },
+    {
+      "eu": "erdi",
+      "baca": "EHR-dee",
+      "en": "half"
+    },
+    {
+      "eu": "zati",
+      "baca": "SAH-tee",
+      "en": "piece, part"
+    },
+    {
+      "eu": "botila",
+      "baca": "boh-TEE-lah",
+      "en": "bottle"
+    },
+    {
+      "eu": "poltsa",
+      "baca": "POHL-tsah",
+      "en": "bag"
+    },
+    {
+      "eu": "zuri",
+      "baca": "SOO-ree",
+      "en": "white"
+    },
+    {
+      "eu": "beltz",
+      "baca": "BEHLTS",
+      "en": "black"
+    },
+    {
+      "eu": "gorri",
+      "baca": "GOH-rree",
+      "en": "red"
+    },
+    {
+      "eu": "urdin",
+      "baca": "oor-DEEN",
+      "en": "blue"
+    },
+    {
+      "eu": "berde",
+      "baca": "BEHR-deh",
+      "en": "green"
+    },
+    {
+      "eu": "hori",
+      "baca": "OH-ree",
+      "en": "yellow"
+    },
+    {
+      "eu": "asko",
+      "baca": "AHS-koh",
+      "en": "a lot, many"
+    },
+    {
+      "eu": "gutxi",
+      "baca": "GOO-chee",
+      "en": "a little, few"
+    },
+    {
+      "eu": "hobe",
+      "baca": "OH-beh",
+      "en": "better"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Make the comparative form asked for.",
+      "items": [
+        "garesti + more = ____",
+        "merke + most = ____",
+        "bero + too = ____",
+        "handi + more = ____",
+        "on + more = ____",
+        "polit + most = ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Basque.",
+      "items": [
+        "How much is it?",
+        "A kilo of apples, please.",
+        "It's too expensive.",
+        "Bilbo is bigger than Donostia.",
+        "Do you have it in another color?",
+        "I'll take this one."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right color.",
+      "items": [
+        "Ikurrinaren hondoa ____ da. (red)",
+        "Elurra ____ da. (white)",
+        "Zerua ____ da. (blue)",
+        "Belarra ____ da. (green)",
+        "Eguzkia ____ da. (yellow)",
+        "Ardo ____ (red wine)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "du / zenbat / balio / ?",
+        "mesedez / bat / kilo / sagar",
+        "da / hau / garestiegia",
+        "da / gazta / baino / garestiagoa / ogia",
+        "dut / hau / nahi",
+        "da / onena / hau"
+      ]
+    }
+  ],
+  "answers": [
+    "garestiagoa — merkeena — beroegia — handiagoa — hobea — politena",
+    "Zenbat balio du? — Kilo bat sagar, mesedez. — Garestiegia da. — Bilbo Donostia baino handiagoa da. — Beste kolorerik baduzu? — Hau nahi dut.",
+    "gorria — zuria — urdina — berdea — horia — beltza",
+    "Zenbat balio du? — Kilo bat sagar, mesedez. — Hau garestiegia da. — Gazta ogia baino garestiagoa da. — Hau nahi dut. — Hau onena da."
+  ]
+}

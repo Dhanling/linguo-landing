@@ -1,0 +1,514 @@
+{
+  "title": "One shopska salad, please",
+  "title_target": "Една шопска салата, моля",
+  "goal": "Order a meal from start to paying, recognize the Bulgarian dishes you will be offered, and use the long forms of pronouns that are required after prepositions.",
+  "bekal": [
+    "ordering food and drinks with three different patterns",
+    "using the long pronoun forms after prepositions: **за мен, с теб**",
+    "asking for the bill and paying",
+    "reading a Bulgarian menu without panicking",
+    "making a toast the right way"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — An evening at the механа",
+      "intro": "Ani and Maria have dinner at a *механа*, a traditional Bulgarian tavern. Watch the pronoun form after the preposition **за** — the short form is not allowed there.",
+      "lines": [
+        {
+          "speaker": "Сервитьор:",
+          "text": "[Добър|Do-BĂR] [вечер|VEH-cher]! [Заповядайте|Za-po-VYA-dai-teh], [менюто|meh-NYOO-to].",
+          "id": "Good evening! Here you are, the menu.",
+          "literal": "good — evening! here-you-are, menu-the."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Благодаря|Bla-go-da-RYA]. [Какво|Kak-VO] [ще|shteh] [ни|nee] [препоръчате|preh-po-RĂ-cha-teh]?",
+          "id": "Thank you. What would you recommend for us?",
+          "literal": "thank-you. what — will — to-us — you-recommend?"
+        },
+        {
+          "speaker": "Сервитьор:",
+          "text": "[Шопската|SHOP-ska-ta] [салата|sa-LA-ta] [е|eh] [много|MNO-go] [добра|dob-RA]. [И|Ee] [мусаката|moo-SA-ka-ta].",
+          "id": "The shopska salad is very good. And the moussaka.",
+          "literal": "shopska-the — salad — is — very — good. and — moussaka-the."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Добре|Dob-REH]. [Една|Ed-NA] [шопска|SHOP-ska] [салата|sa-LA-ta] [и|ee] [една|ed-NA] [баница|BA-nee-tsa], [моля|MO-lya].",
+          "id": "OK. One shopska salad and one banitsa, please.",
+          "literal": "OK. one — shopska — salad — and — one — banitsa, please."
+        },
+        {
+          "speaker": "Мария:",
+          "text": "[За|Za] [мен|men] [таратор|ta-ra-TOR] [и|ee] [мусака|moo-SA-ka].",
+          "id": "For me, tarator and moussaka.",
+          "literal": "for — me — tarator — and — moussaka."
+        },
+        {
+          "speaker": "Сервитьор:",
+          "text": "[За|Za] [пиене|PEE-eh-neh]?",
+          "id": "Anything to drink?",
+          "literal": "for — drinking?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Една|Ed-NA] [минерална|mee-neh-RAL-na] [вода|vo-DA], [моля|MO-lya]. [Мария|Ma-REE-ya]?",
+          "id": "One mineral water, please. Maria?",
+          "literal": "one — mineral — water, please. Maria?"
+        },
+        {
+          "speaker": "Мария:",
+          "text": "[Чаша|CHA-sha] [червено|cher-VEH-no] [вино|VEE-no] [за|za] [мен|men].",
+          "id": "A glass of red wine for me.",
+          "literal": "glass — red — wine — for — me."
+        },
+        {
+          "speaker": "Сервитьор:",
+          "text": "[Веднага|Ved-na-GA].",
+          "id": "Right away.",
+          "literal": "immediately."
+        },
+        {
+          "speaker": "Мария:",
+          "text": "[Наздраве|Naz-DRA-veh]! [Гледай|GLEH-dai] [ме|meh] [в|f] [очите|O-chee-teh]!",
+          "id": "Cheers! Look me in the eye!",
+          "literal": "to-health! look — me — in — eyes-the!"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Наздраве|Naz-DRA-veh]! [Много|MNO-go] [е|eh] [вкусно|VKOOS-no].",
+          "id": "Cheers! It's delicious.",
+          "literal": "to-health! very — is — tasty."
+        },
+        {
+          "speaker": "Мария:",
+          "text": "[Сервитьор|Ser-vee-TYOR], [сметката|SMET-ka-ta], [моля|MO-lya]!",
+          "id": "Waiter, the bill, please!",
+          "literal": "waiter, bill-the, please!"
+        }
+      ],
+      "notes": [
+        "⚠️ **After a preposition, a pronoun MUST take the long form.** *За мен*, not *за ме*. *С теб*, not *с те*. *На него*, not *на му*. The short forms you learned in Unit 6 can only cling directly to a verb; as soon as a preposition comes before them, they switch to the long form.",
+        "**За мен … is the shortest and most common way to order.** No verb needed at all: *За мен таратор.* It is also how orders get divided up at a big table.",
+        "**Наздраве means \"to health\" and is used for two things**: toasting, and speaking to someone who sneezes — just like *Gesundheit* in German, which English speakers borrow too.",
+        "⚠️ **A Bulgarian toast requires eye contact.** When the glasses clink, look into the eyes of the person you are toasting — not at the glass. Skipping it is considered rude, or at least odd, and an old superstition says it brings seven years of bad luck. Just watch a group toasting: every head turns to find everyone else's eyes.",
+        "**Read a menu by its sections, not word by word.** *Салати* (salads), *предястия* (starters), *основни ястия* (main courses), *гарнитури* (sides), *десерти* (desserts), *напитки* (drinks). If you recognize just these six words, you can navigate any menu in Bulgaria.",
+        "**Сметката, моля is the closing line that always works.** You can also mime writing in the air, a gesture understood all over Bulgaria. ⚠️ A tip (**бакшиш**) is about ten percent and is usually left on the table, not handed over.",
+        "**Веднага means \"right away, immediately\".** You will hear it a lot from waiters, and it is about as flexible as \"just a minute\" in English.",
+        "**The vowel о in вкусно, вино, много is read as a full o in careful speech**, but in fast talk it leans toward *oo*: *MNO-goo*, *VEE-noo*. Don't be surprised if what you hear isn't exactly what is written."
+      ],
+      "grammars": [
+        {
+          "title": "Three ways to order",
+          "body": [
+            "All three are correct and all three are polite. Pick whichever comes out of your mouth fastest."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Example",
+              "Say it",
+              "Tone"
+            ],
+            "rows": [
+              [
+                "Item + моля",
+                "Една салата, моля.",
+                "ed-NA sa-LA-ta MO-lya",
+                "Shortest, always safe"
+              ],
+              [
+                "За + person + item",
+                "За мен таратор.",
+                "za men ta-ra-TOR",
+                "For splitting the order"
+              ],
+              [
+                "Искам + item",
+                "Искам една баница.",
+                "EES-kam ed-NA BA-nee-tsa",
+                "Direct, a little firm"
+              ],
+              [
+                "Ще взема…",
+                "Ще взема мусака.",
+                "shteh VZEH-ma moo-SA-ka",
+                "\"I'll take…\", very common"
+              ],
+              [
+                "Може ли…",
+                "Може ли едно кафе?",
+                "MO-zheh lee ed-NO ka-FEH",
+                "Most polite"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Note that the number \"one\" follows the gender of the food: *един чай* (masculine), *една салата* (feminine), *едно кафе* (neuter). Getting it wrong won't stop your order, but getting it right sounds far more practiced."
+          ]
+        },
+        {
+          "title": "Long pronoun forms — required after prepositions",
+          "body": [
+            "This second set of pronouns appears in only two places: after prepositions, and when you want to stress who you mean."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Short (object)",
+              "Long",
+              "Example with a preposition"
+            ],
+            "rows": [
+              [
+                "аз",
+                "ме / ми",
+                "мен / мене",
+                "за мен, с мен, на мен"
+              ],
+              [
+                "ти",
+                "те / ти",
+                "теб / тебе",
+                "за теб, с теб"
+              ],
+              [
+                "той",
+                "го / му",
+                "него",
+                "за него, с него"
+              ],
+              [
+                "тя",
+                "я / ѝ",
+                "нея",
+                "за нея, с нея"
+              ],
+              [
+                "ние",
+                "ни",
+                "нас",
+                "за нас, с нас"
+              ],
+              [
+                "вие",
+                "ви",
+                "вас",
+                "за вас, с вас"
+              ],
+              [
+                "те",
+                "ги / им",
+                "тях",
+                "за тях, с тях"
+              ]
+            ]
+          },
+          "after": [
+            "The long forms are also used for contrast: *Не него, а нея* — not him, but her.",
+            "In conversation, long and short forms sometimes appear together for heavy emphasis: *На мен ми е приятно* — literally \"to me to-me it is pleasant\". It sounds redundant in translation, but it is very common and perfectly correct."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Five dishes you will definitely be offered",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bulgarian",
+            "Say it",
+            "What it is"
+          ],
+          "rows": [
+            [
+              "шопска салата",
+              "SHOP-ska sa-LA-ta",
+              "Tomatoes, cucumbers, peppers and onions, with a mountain of grated white cheese on top. It is white, green and red — the colors of the national flag."
+            ],
+            [
+              "баница",
+              "BA-nee-tsa",
+              "Thin layered pastry filled with white cheese and eggs. The national breakfast; sold on every corner from six in the morning."
+            ],
+            [
+              "таратор",
+              "ta-ra-TOR",
+              "A cold soup of yogurt, cucumber, garlic, dill and walnuts. Drunk, not spooned, on the hottest days."
+            ],
+            [
+              "мусака",
+              "moo-SA-ka",
+              "Layers of potato and minced meat, topped with a baked egg-and-yogurt crust. Not the Greek version with eggplant."
+            ],
+            [
+              "кебапче",
+              "keh-BAP-cheh",
+              "Long minced-meat sausages grilled over charcoal, almost always ordered with *шопска салата* and beer."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Two drinks you should know: **ракия** (*ra-KEE-ya*), a strong fruit brandy sipped slowly before the meal with salad — not after; and **айрян** (*ai-RYAN*), thin salty yogurt that beats the heat."
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Word traps for English speakers",
+          "items": [
+            "The word **пиле** (*PEE-leh*) means **chicken** — nothing to do with a \"pile\". And **баница** has nothing to do with \"bananas\". Quite a few Bulgarian words sound accidentally funny to an English ear — the main thing is not to laugh in the middle of ordering.",
+            "On the other hand, here is one Bulgarian pair you really should know: **майка** means \"mother\" and is pronounced *MAI-ka*, while **лайка** means chamomile. One letter apart, a whole different conversation."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Everything you need to say at a restaurant",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bulgarian",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Имате ли свободна маса?",
+              "EE-ma-teh lee svo-BOD-na MA-sa",
+              "Do you have a free table?"
+            ],
+            [
+              "Менюто, моля.",
+              "meh-NYOO-to MO-lya",
+              "The menu, please."
+            ],
+            [
+              "Какво ще ни препоръчате?",
+              "kak-VO shteh nee preh-po-RĂ-cha-teh",
+              "What would you recommend?"
+            ],
+            [
+              "Аз съм вегетарианец.",
+              "az săm veh-geh-ta-ree-A-nets",
+              "I'm a vegetarian."
+            ],
+            [
+              "Без месо, моля.",
+              "bez meh-SO MO-lya",
+              "No meat, please."
+            ],
+            [
+              "Много е вкусно!",
+              "MNO-go eh VKOOS-no",
+              "It's delicious!"
+            ],
+            [
+              "Още една бира, моля.",
+              "OSH-teh ed-NA BEE-ra MO-lya",
+              "One more beer, please."
+            ],
+            [
+              "Сметката, моля.",
+              "SMET-ka-ta MO-lya",
+              "The bill, please."
+            ],
+            [
+              "Заедно или отделно?",
+              "ZA-ed-no EE-lee ot-DEL-no",
+              "Together or separately?"
+            ],
+            [
+              "Задръжте рестото.",
+              "zad-RĂZH-teh RES-to-to",
+              "Keep the change."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Аз съм вегетарианец** for a man, **вегетарианка** for a woman. And be prepared: \"no meat\" is sometimes taken not to include meat broth or a small piece of bacon. The safe sentence: *Изобщо без месо, моля.* (No meat at all, please.)"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bg": "меню",
+      "baca": "meh-NYOO",
+      "en": "menu"
+    },
+    {
+      "bg": "сметка",
+      "baca": "SMET-ka",
+      "en": "bill, check"
+    },
+    {
+      "bg": "сервитьор",
+      "baca": "ser-vee-TYOR",
+      "en": "waiter"
+    },
+    {
+      "bg": "салата",
+      "baca": "sa-LA-ta",
+      "en": "salad"
+    },
+    {
+      "bg": "месо",
+      "baca": "meh-SO",
+      "en": "meat"
+    },
+    {
+      "bg": "пиле",
+      "baca": "PEE-leh",
+      "en": "chicken"
+    },
+    {
+      "bg": "риба",
+      "baca": "REE-ba",
+      "en": "fish"
+    },
+    {
+      "bg": "супа",
+      "baca": "SOO-pa",
+      "en": "soup"
+    },
+    {
+      "bg": "ориз",
+      "baca": "o-REES",
+      "en": "rice"
+    },
+    {
+      "bg": "картофи",
+      "baca": "kar-TO-fee",
+      "en": "potatoes"
+    },
+    {
+      "bg": "зеленчуци",
+      "baca": "zeh-len-CHOO-tsee",
+      "en": "vegetables"
+    },
+    {
+      "bg": "плодове",
+      "baca": "plo-do-VEH",
+      "en": "fruit"
+    },
+    {
+      "bg": "вода",
+      "baca": "vo-DA",
+      "en": "water"
+    },
+    {
+      "bg": "вино",
+      "baca": "VEE-no",
+      "en": "wine"
+    },
+    {
+      "bg": "бира",
+      "baca": "BEE-ra",
+      "en": "beer"
+    },
+    {
+      "bg": "кафе",
+      "baca": "ka-FEH",
+      "en": "coffee"
+    },
+    {
+      "bg": "чаша",
+      "baca": "CHA-sha",
+      "en": "glass"
+    },
+    {
+      "bg": "вкусно",
+      "baca": "VKOOS-no",
+      "en": "tasty, delicious"
+    },
+    {
+      "bg": "сладко",
+      "baca": "SLAD-ko",
+      "en": "sweet"
+    },
+    {
+      "bg": "солено",
+      "baca": "so-LEH-no",
+      "en": "salty"
+    },
+    {
+      "bg": "люто",
+      "baca": "LYOO-to",
+      "en": "spicy, hot"
+    },
+    {
+      "bg": "наздраве",
+      "baca": "naz-DRA-veh",
+      "en": "cheers; bless you"
+    },
+    {
+      "bg": "веднага",
+      "baca": "ved-na-GA",
+      "en": "right away"
+    },
+    {
+      "bg": "препоръчвам",
+      "baca": "preh-po-RĂCH-vam",
+      "en": "I recommend"
+    },
+    {
+      "bg": "отделно",
+      "baca": "ot-DEL-no",
+      "en": "separately"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Bulgarian.",
+      "items": [
+        "The menu, please.",
+        "One shopska salad.",
+        "Coffee for me.",
+        "It's delicious!",
+        "The bill, please.",
+        "Do you have a free table?"
+      ]
+    },
+    {
+      "prompt": "Fill in the long form of the right pronoun.",
+      "items": [
+        "Това е за ____. (me)",
+        "Отивам с ____. (you, informal)",
+        "Салатата е за ____. (her)",
+        "Виното е за ____. (us)",
+        "Сметката е за ____. (them)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "моля / салата / една / шопска",
+        "мен / таратор / за",
+        "ни / какво / препоръчате / ще",
+        "моля / сметката",
+        "бира / още / една"
+      ]
+    },
+    {
+      "prompt": "Fill in един, една or едно.",
+      "items": [
+        "____ кафе",
+        "____ салата",
+        "____ чай",
+        "____ бира",
+        "____ вино"
+      ]
+    }
+  ],
+  "answers": [
+    "Менюто, моля. — Една шопска салата. — За мен кафе. — Много е вкусно! — Сметката, моля. — Имате ли свободна маса?",
+    "мен — теб — нея — нас — тях",
+    "Една шопска салата, моля. — За мен таратор. — Какво ще ни препоръчате? — Сметката, моля. — Още една бира.",
+    "едно — една — един — една — едно"
+  ]
+}

@@ -1,0 +1,641 @@
+{
+  "title": "How do I get to the cathedral?",
+  "title_target": "Как да стигна до катедралата?",
+  "goal": "Get around town: ask for directions, use place prepositions without changing the noun, and see why Bulgarian uses one word, **къде**, for both \"where\" and \"where to\".",
+  "bekal": [
+    "ask for directions and understand the answer",
+    "use **в** and **на** correctly for places",
+    "name means of transport with **с**",
+    "use the command form to give directions",
+    "say first, second, third"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Lost in the city center",
+      "intro": "Ani is looking for the Alexander Nevsky Cathedral, the gold-domed building that's Sofia's landmark. Notice that the place names never change form, however often the preposition changes.",
+      "lines": [
+        {
+          "speaker": "Ани:",
+          "text": "[Извинете|Eez-vee-NEH-teh], [как|kak] [да|da] [стигна|STEEG-na] [до|do] [катедралата|ka-ted-RA-la-ta]?",
+          "id": "Excuse me, how do I get to the cathedral?",
+          "literal": "excuse-(formal), how — that — reach-I — to — cathedral-the?"
+        },
+        {
+          "speaker": "Жена:",
+          "text": "[Пеша|Peh-SHA] [ли|lee] [сте|steh] [или|EE-lee] [с|s] [колата|KO-la-ta]?",
+          "id": "Are you on foot or by car?",
+          "literal": "on-foot — (question) — are-you — or — with — car-the?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Пеша|Peh-SHA]. [Далече|Da-LEH-cheh] [ли|lee] [е|eh]?",
+          "id": "On foot. Is it far?",
+          "literal": "on-foot. far — (question) — is?"
+        },
+        {
+          "speaker": "Жена:",
+          "text": "[Не|Neh], [десет|DEH-set] [минути|mee-NOO-tee]. [Вървете|Văr-VEH-teh] [направо|na-PRA-vo] [по|po] [тази|TA-zee] [улица|OO-lee-tsa].",
+          "id": "No, ten minutes. Go straight along this street.",
+          "literal": "no, ten — minutes. walk-(formal) — straight — along — this — street."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[До|Do] [светофара|sveh-to-FA-ră]?",
+          "id": "Up to the traffic lights?",
+          "literal": "to — traffic-light-the?"
+        },
+        {
+          "speaker": "Жена:",
+          "text": "[Да|Da]. [На|Na] [втората|VTO-ra-ta] [пресечка|preh-SECH-ka] [завийте|za-VEEY-teh] [надясно|na-DYAS-no].",
+          "id": "Yes. At the second intersection turn right.",
+          "literal": "yes. at — second-the — intersection — turn-(formal) — to-the-right."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[И|Ee] [после|PO-sleh]?",
+          "id": "And then?",
+          "literal": "and — then?"
+        },
+        {
+          "speaker": "Жена:",
+          "text": "[После|PO-sleh] [ще|shteh] [видите|VEE-dee-teh] [голям|go-LYAM] [парк|park]. [Катедралата|Ka-ted-RA-la-ta] [е|eh] [зад|zad] [парка|PAR-kă].",
+          "id": "Then you'll see a big park. The cathedral is behind the park.",
+          "literal": "then — will — see-you — big — park. cathedral-the — is — behind — park-the."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Не|Neh] [може|MO-zheh] [да|da] [я|ya] [пропусна|pro-POOS-na], [нали|na-LEE]?",
+          "id": "I can't miss it, can I?",
+          "literal": "not — can — that — it-(f) — miss-I, isn't-it?"
+        },
+        {
+          "speaker": "Жена:",
+          "text": "[Няма|NYA-ma] [начин|NA-cheen]! [Куполите|KOO-po-lee-teh] [са|sa] [златни|ZLAT-nee].",
+          "id": "No way! The domes are gold.",
+          "literal": "there-isn't — way! domes-the — are — golden."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Благодаря|Bla-go-da-RYA] [много|MNO-go]!",
+          "id": "Thank you very much!",
+          "literal": "thank-you — much!"
+        }
+      ],
+      "notes": [
+        "**Как да стигна до…? is the key sentence of this unit.** Literally \"how that I reach to…\", it uses the *да* pattern from Unit 8. Learn it whole; it will save you in any city.",
+        "**Means of transport take с — \"with\".** *С колата* (by car), *с автобус* (by bus), *с влак* (by train), *с метрото* (by metro). For walking there's a separate word: **пеша**. ⚠️ Don't say *с крака*; it sounds like carrying your feet along as luggage.",
+        "**По тази улица means \"along this street\".** The preposition **по** is used for movement *along* something: *по улицата* (along the street), *по стълбите* (up/down the stairs). Compare *на улицата* — being in the street, without movement.",
+        "**Вървете and завийте are formal commands.** To one person you know well, the forms are *върви* and *завий*. Formal commands almost always end in **-те**, and you'll hear them from everyone who gives you directions.",
+        "**Ordinal numbers follow gender and carry the article.** *На втората пресечка* — at the second intersection (*пресечка* is feminine). *На втория етаж* — on the second floor (*етаж* is masculine). Notice that the article sticks to **the number**, not to the noun.",
+        "**Не може да я пропусна — the short pronoun я stands for the cathedral.** *Катедрала* is feminine, so the pronoun is *я* (\"her\"), where English says \"it\". Note its position: between *да* and the verb, just like *се* in Unit 9.",
+        "**Няма начин literally means \"there's no way\"**, and it's used exactly like English *no way*, both for impossible things and for a firm refusal.",
+        "**The \"Свети Александър Невски\" Cathedral was built in memory of the two hundred thousand Russian soldiers who fell in the war that freed Bulgaria in 1877–78.** Its domes are covered in real gold, and the crypt holds one of the largest collections of Orthodox icons in Europe. If you go in: cover your shoulders, and don't take photos inside without permission."
+      ],
+      "grammars": [
+        {
+          "title": "Къде — one word for \"where\" and \"where to\"",
+          "body": [
+            "Bulgarian doesn't distinguish between where you are and where you're going, either in the question word or in the form of the noun. Only the verb tells you the direction — just as in English."
+          ],
+          "table": {
+            "head": [
+              "Bulgarian",
+              "Say it",
+              "Meaning",
+              "What tells you"
+            ],
+            "rows": [
+              [
+                "Къде си?",
+                "kă-DEH see",
+                "Where are you?",
+                "съм = be"
+              ],
+              [
+                "Къде отиваш?",
+                "kă-DEH o-TEE-vash",
+                "Where are you going?",
+                "отивам = go"
+              ],
+              [
+                "Живея в София.",
+                "zhee-VEH-ya f SO-fee-ya",
+                "I live in Sofia.",
+                "живея = live"
+              ],
+              [
+                "Отивам в София.",
+                "o-TEE-vam f SO-fee-ya",
+                "I'm going to Sofia.",
+                "отивам = go"
+              ],
+              [
+                "Тук съм.",
+                "took săm",
+                "I'm here.",
+                "съм"
+              ],
+              [
+                "Ела тук.",
+                "eh-LA took",
+                "Come here.",
+                "ела = come!"
+              ]
+            ]
+          },
+          "after": [
+            "Compare Russian, which demands *где* vs *куда*, *в Москве* vs *в Москву*. Bulgarian has thrown all of that away, and nothing is lost — the context is always enough. It's one of the reasons Bulgarian is much easier for beginners than its Slavic relatives."
+          ]
+        },
+        {
+          "title": "The command form",
+          "body": [
+            "Just two forms: one for someone you call *ти*, one for *вие*. The second is always the first plus **-те**."
+          ],
+          "table": {
+            "head": [
+              "Verb",
+              "To ти",
+              "To вие",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "вървя",
+                "върви",
+                "вървете",
+                "walk, go"
+              ],
+              [
+                "завия",
+                "завий",
+                "завийте",
+                "turn"
+              ],
+              [
+                "дойда",
+                "ела",
+                "елате",
+                "come"
+              ],
+              [
+                "седна",
+                "седни",
+                "седнете",
+                "sit down"
+              ],
+              [
+                "кажа",
+                "кажи",
+                "кажете",
+                "tell, say"
+              ],
+              [
+                "изчакам",
+                "изчакай",
+                "изчакайте",
+                "wait"
+              ],
+              [
+                "внимавам",
+                "внимавай",
+                "внимавайте",
+                "be careful"
+              ]
+            ]
+          },
+          "after": [
+            "To forbid something, just add **не** in front — but with the ongoing form of the verb: *Не закъснявай!* (don't be late), *Не влизайте!* (don't go in).",
+            "⚠️ **Ела and елате are very irregular** and look nothing like the dictionary form *дойда*. Learn them separately; you'll hear them every day."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Asking for directions and understanding the answer",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Asking",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "Как да стигна до…?",
+              "kak da STEEG-na do",
+              "How do I get to…?"
+            ],
+            [
+              "Къде е…?",
+              "kă-DEH eh",
+              "Where is…?"
+            ],
+            [
+              "Далече ли е?",
+              "da-LEH-cheh lee eh",
+              "Is it far?"
+            ],
+            [
+              "Колко време пеша?",
+              "KOL-ko VREH-meh peh-SHA",
+              "How long on foot?"
+            ],
+            [
+              "Изгубих се.",
+              "eez-GOO-beeh seh",
+              "I'm lost."
+            ],
+            [
+              "Може ли да ми покажете на картата?",
+              "MO-zheh lee da mee po-KA-zheh-teh na KAR-ta-ta",
+              "Could you show me on the map?"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Answers you'll hear",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "Вървете направо.",
+              "văr-VEH-teh na-PRA-vo",
+              "Go straight on."
+            ],
+            [
+              "Завийте надясно / наляво.",
+              "za-VEEY-teh na-DYAS-no",
+              "Turn right / left."
+            ],
+            [
+              "На ъгъла.",
+              "na Ă-găl-a",
+              "On the corner."
+            ],
+            [
+              "На светофара.",
+              "na sveh-to-FA-ră",
+              "At the traffic lights."
+            ],
+            [
+              "Точно срещу…",
+              "TOCH-no sresh-TOO",
+              "Right opposite…"
+            ],
+            [
+              "До спирката.",
+              "do SPEER-ka-ta",
+              "Next to the stop."
+            ],
+            [
+              "Втората пресечка.",
+              "VTO-ra-ta preh-SECH-ka",
+              "The second intersection."
+            ],
+            [
+              "Не е далече.",
+              "neh eh da-LEH-cheh",
+              "It's not far."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "If the answer is too fast, one sentence will save you: **Може ли по-бавно, моля?** (Could you say it more slowly, please?). Bulgarians almost always repeat it patiently right away — and often walk part of the way with you."
+        }
+      ]
+    },
+    {
+      "title": "Places, transport and ordinal numbers",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Place",
+            "Say it",
+            "Meaning",
+            "Transport",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "улица",
+              "OO-lee-tsa",
+              "street",
+              "автобус",
+              "av-to-BOOS",
+              "bus"
+            ],
+            [
+              "булевард",
+              "boo-leh-VARD",
+              "boulevard",
+              "трамвай",
+              "tram-VAI",
+              "tram"
+            ],
+            [
+              "площад",
+              "plosh-TAD",
+              "square",
+              "тролей",
+              "tro-LEY",
+              "trolleybus"
+            ],
+            [
+              "парк",
+              "park",
+              "park",
+              "метро",
+              "met-RO",
+              "metro, subway"
+            ],
+            [
+              "спирка",
+              "SPEER-ka",
+              "(bus) stop",
+              "влак",
+              "vlak",
+              "train"
+            ],
+            [
+              "гара",
+              "GA-ra",
+              "station",
+              "такси",
+              "tak-SEE",
+              "taxi"
+            ],
+            [
+              "летище",
+              "LEH-teesh-teh",
+              "airport",
+              "кола",
+              "ko-LA",
+              "car"
+            ],
+            [
+              "болница",
+              "BOL-nee-tsa",
+              "hospital",
+              "колело",
+              "ko-leh-LO",
+              "bicycle"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Number",
+            "Masculine",
+            "Feminine",
+            "Neuter",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "1",
+              "първи",
+              "първа",
+              "първо",
+              "first"
+            ],
+            [
+              "2",
+              "втори",
+              "втора",
+              "второ",
+              "second"
+            ],
+            [
+              "3",
+              "трети",
+              "трета",
+              "трето",
+              "third"
+            ],
+            [
+              "4",
+              "четвърти",
+              "четвърта",
+              "четвърто",
+              "fourth"
+            ],
+            [
+              "5",
+              "пети",
+              "пета",
+              "пето",
+              "fifth"
+            ],
+            [
+              "10",
+              "десети",
+              "десета",
+              "десето",
+              "tenth"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Ordinal numbers behave like adjectives: they follow the gender of the noun, and when used with the article, the article sticks to them. *Първият автобус* (the first bus), *първата спирка* (the first stop), *първото дете* (the first child)."
+        },
+        {
+          "type": "kotak",
+          "title": "The Sofia metro and its archaeological surprises",
+          "items": [
+            "Sofia has a clean, cheap, easy-to-read metro — three lines, with signs in both Cyrillic and Latin letters. What makes it special: while the tunnels were being dug, workers kept finding the ruins of the Roman city of **Serdica** under the center.",
+            "Instead of clearing them away, Sofia built the *Сердика* station around them. You step off the train and walk among eighteen-centuries-old Roman paving stones, under glass, in the middle of rush hour.",
+            "Even the city's name comes from the church of **Света София** — Holy Wisdom. If you want one sentence to compliment the city: *София е много стар град.* (Sofia is a very old city.)"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bg": "стигам",
+      "baca": "STEE-gam",
+      "en": "I reach, I arrive"
+    },
+    {
+      "bg": "улица",
+      "baca": "OO-lee-tsa",
+      "en": "street"
+    },
+    {
+      "bg": "площад",
+      "baca": "plosh-TAD",
+      "en": "square"
+    },
+    {
+      "bg": "парк",
+      "baca": "park",
+      "en": "park"
+    },
+    {
+      "bg": "катедрала",
+      "baca": "ka-ted-RA-la",
+      "en": "cathedral"
+    },
+    {
+      "bg": "църква",
+      "baca": "TSĂRK-va",
+      "en": "church"
+    },
+    {
+      "bg": "спирка",
+      "baca": "SPEER-ka",
+      "en": "(bus/tram) stop"
+    },
+    {
+      "bg": "светофар",
+      "baca": "sveh-to-FAR",
+      "en": "traffic light"
+    },
+    {
+      "bg": "пресечка",
+      "baca": "preh-SECH-ka",
+      "en": "intersection, crossing"
+    },
+    {
+      "bg": "ъгъл",
+      "baca": "Ă-găl",
+      "en": "corner"
+    },
+    {
+      "bg": "срещу",
+      "baca": "sresh-TOO",
+      "en": "opposite"
+    },
+    {
+      "bg": "зад",
+      "baca": "zad",
+      "en": "behind"
+    },
+    {
+      "bg": "пред",
+      "baca": "pred",
+      "en": "in front of"
+    },
+    {
+      "bg": "по",
+      "baca": "po",
+      "en": "along"
+    },
+    {
+      "bg": "вървя",
+      "baca": "văr-VYA",
+      "en": "I walk"
+    },
+    {
+      "bg": "завивам",
+      "baca": "za-VEE-vam",
+      "en": "I turn"
+    },
+    {
+      "bg": "автобус",
+      "baca": "av-to-BOOS",
+      "en": "bus"
+    },
+    {
+      "bg": "метро",
+      "baca": "met-RO",
+      "en": "metro, subway"
+    },
+    {
+      "bg": "влак",
+      "baca": "vlak",
+      "en": "train"
+    },
+    {
+      "bg": "билет",
+      "baca": "bee-LET",
+      "en": "ticket"
+    },
+    {
+      "bg": "изгубих се",
+      "baca": "eez-GOO-beeh seh",
+      "en": "I'm lost"
+    },
+    {
+      "bg": "начин",
+      "baca": "NA-cheen",
+      "en": "way, manner"
+    },
+    {
+      "bg": "златен",
+      "baca": "ZLA-ten",
+      "en": "golden"
+    },
+    {
+      "bg": "стар",
+      "baca": "star",
+      "en": "old"
+    },
+    {
+      "bg": "покажете",
+      "baca": "po-KA-zheh-teh",
+      "en": "show (formal command)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Bulgarian.",
+      "items": [
+        "How do I get to the station?",
+        "Where's the stop?",
+        "Is it far?",
+        "I'm lost.",
+        "Go straight on and turn left. (formal)",
+        "The cathedral is behind the park."
+      ]
+    },
+    {
+      "prompt": "Fill in the right preposition: в, на, до, зад, срещу.",
+      "items": [
+        "Катедралата е ____ парка.",
+        "Живея ____ София.",
+        "Спирката е ____ хотела.",
+        "Чакам ____ ъгъла.",
+        "Банката е ____ аптеката."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "до / как / стигна / да / катедралата",
+        "направо / вървете / улица / тази / по",
+        "завийте / пресечка / на / втората / надясно",
+        "се / изгубих",
+        "начин / няма"
+      ]
+    },
+    {
+      "prompt": "Change the command from ти to вие.",
+      "items": [
+        "Върви направо! ____",
+        "Завий надясно! ____",
+        "Ела тук! ____",
+        "Седни, моля! ____",
+        "Изчакай малко! ____"
+      ]
+    }
+  ],
+  "answers": [
+    "Как да стигна до гарата? — Къде е спирката? — Далече ли е? — Изгубих се. — Вървете направо и завийте наляво. — Катедралата е зад парка.",
+    "зад — в — до — на — срещу",
+    "Как да стигна до катедралата? — Вървете направо по тази улица. — На втората пресечка завийте надясно. — Изгубих се. — Няма начин.",
+    "Вървете направо! — Завийте надясно! — Елате тук! — Седнете, моля! — Изчакайте малко!"
+  ]
+}

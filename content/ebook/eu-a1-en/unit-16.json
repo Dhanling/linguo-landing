@@ -1,0 +1,598 @@
+{
+  "title": "Where I was yesterday",
+  "title_target": "Non zeunden atzo?",
+  "goal": "Talk about past states with the past forms of izan and egon, and say when something happened.",
+  "bekal": [
+    "use *nintzen, zinen, zen, ginen, zineten, ziren* for past states",
+    "use *nengoen, zeunden, zegoen* for past places and conditions",
+    "name past times: *atzo, joan den astean, duela bi urte*"
+  ],
+  "dialogs": [
+    {
+      "title": "Elkarrizketa — Asteburua Donostian",
+      "intro": "Monday morning at the euskaltegi. Ainhoa notices Budi arriving with a suntan.",
+      "lines": [
+        {
+          "speaker": "Ainhoa:",
+          "text": "Non zeunden asteburuan? Ez zinen hemen egon.",
+          "id": "Where were you this weekend? You weren't here.",
+          "literal": "where you-were weekend-in? not you-were here been."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Donostian nengoen, Nerearekin.",
+          "id": "I was in Donostia, with Nerea.",
+          "literal": "Donostia-in I-was, Nerea-with."
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Zer moduz? Eguraldia ona zen?",
+          "id": "How was it? Was the weather good?",
+          "literal": "what way-of? weather-the good-the was?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Larunbatean euria ari zuen, baina igandea eguzkitsua zen.",
+          "id": "On Saturday it rained, but Sunday was sunny.",
+          "literal": "Saturday-on rain-the doing it-had, but Sunday-the sunny-the was."
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Hondartzara joan zineten?",
+          "id": "Did you go to the beach?",
+          "literal": "beach-to gone you(pl)-were?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bai, Zurriolara. Jendez beteta zegoen!",
+          "id": "Yes, to Zurriola. It was packed with people!",
+          "literal": "yes, Zurriola-to. people-with full it-was!"
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Uda da, normala da. Eta zer moduz Donostia?",
+          "id": "It's summer, that's normal. And how was Donostia?",
+          "literal": "summer is, normal-the is. and what way-of Donostia?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Oso polita! Baina Bilbo baino garestiagoa zen.",
+          "id": "Really pretty! But it was more expensive than Bilbo.",
+          "literal": "very pretty-the! but Bilbo than expensive-er-the was."
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Ha, ha! Bilbotarra zara jada!",
+          "id": "Ha, ha! You're already a Bilbo local!",
+          "literal": "ha, ha! Bilbo-person-the you-are already!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Beharbada... Atzo gauean oso nekatuta nengoen.",
+          "id": "Maybe... Last night I was really tired.",
+          "literal": "maybe... yesterday night-in very tired I-was."
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Normala. Baina orain hemen zaude, klasean.",
+          "id": "Normal. But now you're here, in class.",
+          "literal": "normal-the. but now here you-are, class-in."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bai! Eta prest nago.",
+          "id": "Yes! And I'm ready.",
+          "literal": "yes! and ready I-am."
+        }
+      ],
+      "notes": [
+        "**Past forms always end in -n.** *Naiz* → *nintze**n***, *da* → *ze**n***, *dago* → *zegoe**n***, *dut* → *nue**n***. The final *n* marks the past for **every** auxiliary, no exceptions. It's one of the neatest rules in the language.",
+        "**Euria ari zuen — rain takes the auxiliary ukan.** As mentioned in Unit 10, weather is an exception: *euria ari **du*** (it's raining), *euria ari **zuen*** (it was raining). Basque treats the sky as a doer whose name is never said.",
+        "**Bilbotarra — the ending -tar for residents.** *Bilbo* → *bilbotarra*, *Donostia* → *donostiarra*, *Jakarta* → *jakartarra*. The same ending forms nationalities: *indonesiarra*, *japoniarra*. Note the lowercase: unlike English, Basque doesn't capitalize these words.",
+        "**Jada — already.** A small word often used to mark a change: *jada bilbotarra zara* (you're already a Bilbo local), *jada berandu da* (it's already late). Another word with the same meaning: *dagoeneko*."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The past: izan and egon",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Person",
+            "Present",
+            "Past",
+            "Example"
+          ],
+          "rows": [
+            [
+              "ni",
+              "naiz",
+              "**nintzen**",
+              "Atzo Donostian nintzen."
+            ],
+            [
+              "zu",
+              "zara",
+              "**zinen**",
+              "Non zinen?"
+            ],
+            [
+              "hura",
+              "da",
+              "**zen**",
+              "Eguraldia ona zen."
+            ],
+            [
+              "gu",
+              "gara",
+              "**ginen**",
+              "Lagunak ginen."
+            ],
+            [
+              "zuek",
+              "zarete",
+              "**zineten**",
+              "Hondartzan zineten?"
+            ],
+            [
+              "haiek",
+              "dira",
+              "**ziren**",
+              "Oso politak ziren."
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Person",
+            "Present",
+            "Past",
+            "Example"
+          ],
+          "rows": [
+            [
+              "ni",
+              "nago",
+              "**nengoen**",
+              "Nekatuta nengoen."
+            ],
+            [
+              "zu",
+              "zaude",
+              "**zeunden**",
+              "Non zeunden?"
+            ],
+            [
+              "hura",
+              "dago",
+              "**zegoen**",
+              "Itxita zegoen."
+            ],
+            [
+              "gu",
+              "gaude",
+              "**geunden**",
+              "Zain geunden."
+            ],
+            [
+              "zuek",
+              "zaudete",
+              "**zeundeten**",
+              "Pozik zeundeten?"
+            ],
+            [
+              "haiek",
+              "daude",
+              "**zeuden**",
+              "Tabernan zeuden."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The two verbs split the work just as they do in the present: *izan* for identity and qualities (*ikaslea nintzen* — I was a student), *egon* for place and temporary states (*etxean nengoen* — I was at home)."
+        },
+        {
+          "type": "kotak",
+          "title": "The most common past sentences",
+          "items": [
+            "*Non zinen atzo?* — Where were you yesterday?",
+            "*Etxean nengoen.* — I was at home.",
+            "*Nola zen?* — What was it like?",
+            "*Oso ondo zegoen.* — It was delicious. (for food)",
+            "*Jendez beteta zegoen.* — It was packed.",
+            "*Itxita zegoen.* — It was closed."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Talking about past times",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "atzo",
+              "AH-tsoh",
+              "yesterday"
+            ],
+            [
+              "herenegun",
+              "eh-reh-NEH-goon",
+              "the day before yesterday"
+            ],
+            [
+              "atzo gauean",
+              "AH-tsoh gah-OO-eh-ahn",
+              "last night"
+            ],
+            [
+              "gaur goizean",
+              "GAH-oor GOH-ee-seh-ahn",
+              "this morning"
+            ],
+            [
+              "joan den astean",
+              "KHOH-ahn dehn ahs-TEH-ahn",
+              "last week"
+            ],
+            [
+              "joan den hilean",
+              "ee-LEH-ahn",
+              "last month"
+            ],
+            [
+              "iaz",
+              "EE-ahs",
+              "last year"
+            ],
+            [
+              "duela bi urte",
+              "DOO-eh-lah bee OOR-teh",
+              "two years ago"
+            ],
+            [
+              "duela gutxi",
+              "DOO-eh-lah GOO-chee",
+              "recently"
+            ],
+            [
+              "aspaldi",
+              "ahs-PAHL-dee",
+              "a long time ago"
+            ],
+            [
+              "orduan",
+              "ohr-DOO-ahn",
+              "back then"
+            ],
+            [
+              "lehen",
+              "LEH-ehn",
+              "before, in the past"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Duela* means \"ago\", and it goes **in front of** the time span: *duela bi urte* (two years ago), *duela hiru egun* (three days ago). English puts \"ago\" after it — Basque flips the order."
+        },
+        {
+          "type": "sub",
+          "text": "Then and now"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "English"
+          ],
+          "rows": [
+            [
+              "Lehen Jakartan bizi nintzen, orain Bilbon bizi naiz.",
+              "I used to live in Jakarta; now I live in Bilbo."
+            ],
+            [
+              "Lehen ez nekien euskaraz, orain pixka bat badakit.",
+              "I used to not speak Basque; now I speak a little."
+            ],
+            [
+              "Orduan gaztea nintzen.",
+              "Back then I was young."
+            ],
+            [
+              "Duela bi urte hasi nintzen ikasten.",
+              "I started learning two years ago."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Birth and background",
+          "items": [
+            "*Non jaio zinen?* — Where were you born? *Jakartan jaio nintzen.*",
+            "*Noiz jaio zinen?* — When were you born? *Mila bederatziehun eta laurogeita hamaseian.* (1996)",
+            "*Non ikasi zenuen?* — Where did you go to school?",
+            "*Zenbat urte daramatzazu hemen?* — How long have you been here?",
+            "*Duela sei hilabete etorri nintzen.* — I came six months ago."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Other verbs in the past",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Verbs that take the auxiliary *izan* — the ones you know from Unit 9 — go into the past just by changing the auxiliary. The verb itself uses its dictionary form, not the *-t(z)en* form."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Present",
+            "Past",
+            "English"
+          ],
+          "rows": [
+            [
+              "etxera noa",
+              "etxera **joan nintzen**",
+              "I went home"
+            ],
+            [
+              "berandu iristen naiz",
+              "berandu **iritsi nintzen**",
+              "I arrived late"
+            ],
+            [
+              "klasea hasten da",
+              "klasea **hasi zen**",
+              "the class started"
+            ],
+            [
+              "lagunak datoz",
+              "lagunak **etorri ziren**",
+              "my friends came"
+            ],
+            [
+              "zazpietan esnatzen naiz",
+              "zazpietan **esnatu nintzen**",
+              "I woke up at seven"
+            ],
+            [
+              "Bilbon bizi naiz",
+              "Bilbon **bizi nintzen**",
+              "I lived in Bilbo"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that the *-t(z)en* form is also used for habits **in the past**: *lehen egunero mendira joaten nintzen* (I used to go to the mountains every day). So *joan nintzen* = \"I went (once, that time)\", while *joaten nintzen* = \"I used to go\"."
+        },
+        {
+          "type": "kotak",
+          "title": "Typical mistakes for English speakers",
+          "items": [
+            "Translating \"already\" or \"have\" word for word. Basque needs no extra word: *joan nintzen* already covers \"I went\" and \"I have gone\". Add *jada* only when you really want to stress it.",
+            "Using the *-t(z)en* form for a single event: ***atzo mendira joaten nintzen*** sounds like \"yesterday I used to go to the mountains\". The correct form is *atzo mendira joan nintzen*.",
+            "Forgetting to change the auxiliary *egon*: ***atzo etxean nago*** is wrong; the correct form is *atzo etxean **nengoen***."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "eu": "atzo",
+      "baca": "AH-tsoh",
+      "en": "yesterday"
+    },
+    {
+      "eu": "herenegun",
+      "baca": "eh-reh-NEH-goon",
+      "en": "the day before yesterday"
+    },
+    {
+      "eu": "iaz",
+      "baca": "EE-ahs",
+      "en": "last year"
+    },
+    {
+      "eu": "duela",
+      "baca": "DOO-eh-lah",
+      "en": "… ago"
+    },
+    {
+      "eu": "aspaldi",
+      "baca": "ahs-PAHL-dee",
+      "en": "a long time ago"
+    },
+    {
+      "eu": "orduan",
+      "baca": "ohr-DOO-ahn",
+      "en": "back then"
+    },
+    {
+      "eu": "lehen",
+      "baca": "LEH-ehn",
+      "en": "before, in the past"
+    },
+    {
+      "eu": "jada",
+      "baca": "KHAH-dah",
+      "en": "already"
+    },
+    {
+      "eu": "jaio",
+      "baca": "KHAH-ee-oh",
+      "en": "be born"
+    },
+    {
+      "eu": "bizitza",
+      "baca": "bee-SEE-tsah",
+      "en": "life"
+    },
+    {
+      "eu": "gertatu",
+      "baca": "gehr-TAH-too",
+      "en": "happen"
+    },
+    {
+      "eu": "hondartza",
+      "baca": "ohn-DAHR-tsah",
+      "en": "beach"
+    },
+    {
+      "eu": "itsaso",
+      "baca": "ee-TSAH-soh",
+      "en": "sea"
+    },
+    {
+      "eu": "jende",
+      "baca": "KHEHN-deh",
+      "en": "people"
+    },
+    {
+      "eu": "eguzkitsu",
+      "baca": "eh-goos-KEE-tsoo",
+      "en": "sunny"
+    },
+    {
+      "eu": "normala",
+      "baca": "nohr-MAH-lah",
+      "en": "normal"
+    },
+    {
+      "eu": "bilbotar",
+      "baca": "beel-BOH-tahr",
+      "en": "person from Bilbo"
+    },
+    {
+      "eu": "donostiar",
+      "baca": "doh-nohs-TEE-ahr",
+      "en": "person from Donostia"
+    },
+    {
+      "eu": "asteburu",
+      "baca": "ahs-teh-BOO-roo",
+      "en": "weekend"
+    },
+    {
+      "eu": "oporrak",
+      "baca": "oh-POH-rrahk",
+      "en": "vacation"
+    },
+    {
+      "eu": "txango",
+      "baca": "CHAHN-goh",
+      "en": "outing, trip"
+    },
+    {
+      "eu": "ikusi",
+      "baca": "ee-KOO-see",
+      "en": "see"
+    },
+    {
+      "eu": "ezagutu",
+      "baca": "eh-sah-GOO-too",
+      "en": "know, meet"
+    },
+    {
+      "eu": "iritsi",
+      "baca": "ee-REE-tsee",
+      "en": "arrive"
+    },
+    {
+      "eu": "geratu",
+      "baca": "geh-RAH-too",
+      "en": "stay"
+    },
+    {
+      "eu": "hasi",
+      "baca": "AH-see",
+      "en": "begin"
+    },
+    {
+      "eu": "amaitu",
+      "baca": "ah-MAH-ee-too",
+      "en": "finish"
+    },
+    {
+      "eu": "nekatuta",
+      "baca": "neh-kah-TOO-tah",
+      "en": "tired"
+    },
+    {
+      "eu": "polit",
+      "baca": "poh-LEET",
+      "en": "pretty"
+    },
+    {
+      "eu": "garesti",
+      "baca": "gah-REHS-tee",
+      "en": "expensive"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change to the past tense.",
+      "items": [
+        "Ni Bilbon nago. → Ni Bilbon ____.",
+        "Zu ikaslea zara. → Zu ikaslea ____.",
+        "Eguraldia ona da. → Eguraldia ona ____.",
+        "Gu tabernan gaude. → Gu tabernan ____.",
+        "Haiek nekatuta daude. → Haiek nekatuta ____.",
+        "Zuek lagunak zarete. → Zuek lagunak ____."
+      ]
+    },
+    {
+      "prompt": "Translate into Basque.",
+      "items": [
+        "Yesterday I was at home.",
+        "Where were you this weekend?",
+        "The weather was good.",
+        "The store was closed.",
+        "I was born in Jakarta.",
+        "I started learning Basque two years ago."
+      ]
+    },
+    {
+      "prompt": "Fill in the right past time word.",
+      "items": [
+        "____ etxean nengoen. (yesterday)",
+        "____ Donostian egon ginen. (last week)",
+        "____ bi urte hasi nintzen. (two years ago)",
+        "____ Jakartan bizi nintzen. (before)",
+        "____ gaztea nintzen. (back then)",
+        "____ ez zen euria ari. (this morning)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "zinen / non / atzo / ?",
+        "nengoen / etxean / ni",
+        "zen / ona / eguraldia",
+        "ginen / hondartzara / joan",
+        "zegoen / itxita / denda",
+        "nintzen / Jakartan / jaio"
+      ]
+    }
+  ],
+  "answers": [
+    "nengoen — zinen — zen — geunden — zeuden — zineten",
+    "Atzo etxean nengoen. — Non zinen asteburuan? — Eguraldia ona zen. — Denda itxita zegoen. — Jakartan jaio nintzen. — Duela bi urte hasi nintzen euskara ikasten.",
+    "Atzo — Joan den astean — Duela — Lehen — Orduan — Gaur goizean",
+    "Non zinen atzo? — Ni etxean nengoen. — Eguraldia ona zen. — Hondartzara joan ginen. — Denda itxita zegoen. — Jakartan jaio nintzen."
+  ]
+}

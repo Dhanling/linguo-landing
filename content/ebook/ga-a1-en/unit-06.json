@@ -1,0 +1,696 @@
+{
+  "title": "I'm a teacher",
+  "title_target": "Is múinteoir mé",
+  "goal": "Use the verb *is* to state someone's job, nationality, and identity, and answer *is* questions with *Sea* and *Ní hea*.",
+  "bekal": [
+    "tell when to use *is* and when to use *tá*",
+    "build *Is múinteoir mé* / *Ní múinteoir mé* / *An múinteoir tú?*",
+    "say your nationality and the country you come from"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — Ag an gcóisir",
+      "intro": "A small party at a neighbor's house. Aoife introduces Budi to Niamh, and the conversation goes straight to the question new acquaintances always ask.",
+      "lines": [
+        {
+          "speaker": "Aoife:",
+          "text": "A Bhudi, seo í Niamh. Is dochtúir í.",
+          "id": "Budi, this is Niamh. She's a doctor.",
+          "literal": "O Budi, this her Niamh. is doctor she."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dia duit, a Niamh. Is mise Budi.",
+          "id": "Hello, Niamh. I'm Budi.",
+          "literal": "God to-you, O Niamh. is me Budi."
+        },
+        {
+          "speaker": "Niamh:",
+          "text": "Dia is Muire duit. An mac léinn tú?",
+          "id": "Hello. Are you a student?",
+          "literal": "God and Mary to-you. question son of-learning you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Is ea. Is mac léinn mé i nGaillimh.",
+          "id": "Yes. I'm a student in Galway.",
+          "literal": "is so. is son of-learning me in Galway."
+        },
+        {
+          "speaker": "Niamh:",
+          "text": "An Sasanach tú?",
+          "id": "Are you English?",
+          "literal": "question Englishman you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ní hea! Is Indinéiseach mé.",
+          "id": "No! I'm Indonesian.",
+          "literal": "not so! is Indonesian me."
+        },
+        {
+          "speaker": "Niamh:",
+          "text": "Gabh mo leithscéal. Cén obair atá agat sa bhaile?",
+          "id": "Sorry. What's your job back home?",
+          "literal": "take my half-story. what work that-is at-you in-the home?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Is múinteoir Béarla mé in Iacárta.",
+          "id": "I'm an English teacher in Jakarta.",
+          "literal": "is teacher of-English me in Jakarta."
+        },
+        {
+          "speaker": "Niamh:",
+          "text": "Go hiontach. Is múinteoir é m'athair freisin.",
+          "id": "Wonderful. My father's a teacher too.",
+          "literal": "wonderfully. is teacher him my-father also."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cé hé an fear ard ansin?",
+          "id": "Who's the tall man over there?",
+          "literal": "who him the man tall there?"
+        },
+        {
+          "speaker": "Niamh:",
+          "text": "Is é sin Liam, mo dheartháir. Is ceoltóir é.",
+          "id": "That's Liam, my brother. He's a musician.",
+          "literal": "is him that Liam, my brother. is musician him."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Is breá liom an ceol Éireannach!",
+          "id": "I love Irish music!",
+          "literal": "is fine with-me the music Irish."
+        }
+      ],
+      "notes": [
+        "**Is múinteoir mé — the second verb \"to be\", and a back-to-front word order.** Irish has two verbs for \"to be\". You've been using *tá* since Unit 1 for states. *Is* is for **identity** — job, nationality, name. The order is *Is* + what you are + who. So \"I'm a teacher\" comes out as *Is múinteoir mé* — literally \"is teacher me\". Never write *Tá mé múinteoir*.",
+        "**Sea and Ní hea — words that look like \"yes\" and \"no\", but only for is.** Questions starting with *An bhfuil …* are answered *Tá* or *Níl* (Unit 2). Questions starting with *An* + a noun — that is, *is* questions — are answered *Is ea* (often written and said *Sea*, SHAH) or *Ní hea* (nee HAH). Answering *Tá* to *An Sasanach tú?* is the classic beginner's mistake.",
+        "**Ní hea, Cé hé — the h that slips in before a vowel.** You've now seen this pattern several times: *go hiontach*, *a hocht*, and now *ní hea* and *cé hé*. A handful of small Irish words add an *h* to the next word if it starts with a vowel. It isn't séimhiú and it isn't urú — it's a third, lighter way of smoothing over two vowels meeting.",
+        "**Is é sin Liam — naming a specific person needs an extra word.** To classify (\"he's a musician\"), *Is ceoltóir é* is enough. But to equate two specific things (\"that's Liam\"), you need an extra pronoun after *is*: *Is **é** sin Liam*, *Is **í** sin Máire*. Use *é* for men and masculine things, *í* for women, *iad* for plurals."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Is — the four forms you need",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Form",
+            "Example",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Statement",
+              "Is múinteoir mé.",
+              "is MOON-tyohr MAY",
+              "I'm a teacher."
+            ],
+            [
+              "Negative",
+              "Ní múinteoir mé.",
+              "nee MOON-tyohr MAY",
+              "I'm not a teacher."
+            ],
+            [
+              "Question",
+              "An múinteoir tú?",
+              "an MOON-tyohr TOO",
+              "Are you a teacher?"
+            ],
+            [
+              "Yes",
+              "Is ea. / Sea.",
+              "is AH / SHAH",
+              "Yes."
+            ],
+            [
+              "No",
+              "Ní hea.",
+              "nee HAH",
+              "No."
+            ],
+            [
+              "Equating",
+              "Is é Seán an múinteoir.",
+              "is ay SHAWN an MOON-tyohr",
+              "Seán is the teacher."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that *is* never changes for different people. Only the pronoun at the end changes: *Is múinteoir mé / tú / é / í / muid / sibh / iad*."
+        },
+        {
+          "type": "kotak",
+          "title": "Tá or Is — deciding in three seconds",
+          "items": [
+            "If what follows is an **adjective** or a **place**, use *tá*: *Tá mé tuirseach*, *Tá mé sa bhaile*, *Tá mé go maith*.",
+            "If what follows is a **noun** saying *what* or *who* someone is, use *is*: *Is múinteoir mé*, *Is Éireannach í*, *Is mise Budi*.",
+            "Quick test: could it change tomorrow? \"Tired\" can change, so *tá*. \"Indonesian\" can't, so *is*.",
+            "One exception worth remembering: a **job seen as temporary** can use *tá … i mo …* — *Tá mé i mo mhúinteoir* (\"I'm working as a teacher\"). The difference is subtle, and *is* is always safe for beginners."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Jobs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "múinteoir",
+              "MOON-tyohr",
+              "teacher"
+            ],
+            [
+              "dochtúir",
+              "DOKH-toor",
+              "doctor"
+            ],
+            [
+              "altra",
+              "AL-truh",
+              "nurse"
+            ],
+            [
+              "fiaclóir",
+              "FEE-uh-klohr",
+              "dentist"
+            ],
+            [
+              "mac léinn",
+              "mak LYAYN",
+              "(university) student"
+            ],
+            [
+              "dalta",
+              "DAL-tuh",
+              "pupil"
+            ],
+            [
+              "feirmeoir",
+              "FEH-rih-myohr",
+              "farmer"
+            ],
+            [
+              "iascaire",
+              "EE-as-kih-ruh",
+              "fisherman"
+            ],
+            [
+              "siopadóir",
+              "SHOO-puh-dohr",
+              "shopkeeper"
+            ],
+            [
+              "freastalaí",
+              "FRAS-tuh-lee",
+              "waiter"
+            ],
+            [
+              "cócaire",
+              "KOH-kih-ruh",
+              "cook"
+            ],
+            [
+              "tiománaí",
+              "tyih-MAW-nee",
+              "driver"
+            ],
+            [
+              "innealtóir",
+              "IH-nyal-tohr",
+              "engineer"
+            ],
+            [
+              "ríomhchláraitheoir",
+              "REEV-khlaw-rih-hohr",
+              "programmer"
+            ],
+            [
+              "dlíodóir",
+              "DLEE-dohr",
+              "lawyer"
+            ],
+            [
+              "garda",
+              "GAWR-duh",
+              "police officer"
+            ],
+            [
+              "ceoltóir",
+              "KYOHL-tohr",
+              "musician"
+            ],
+            [
+              "scríbhneoir",
+              "SKREEV-nyohr",
+              "writer"
+            ],
+            [
+              "ealaíontóir",
+              "AH-lee-un-tohr",
+              "artist"
+            ],
+            [
+              "tógálaí",
+              "TOH-gaw-lee",
+              "builder"
+            ],
+            [
+              "rúnaí",
+              "ROO-nee",
+              "secretary"
+            ],
+            [
+              "fear gnó / bean ghnó",
+              "far GNOH / ban GHNOH",
+              "businessman / businesswoman"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the endings *-óir*, *-eoir* and *-aí*: all three make \"doer\" nouns, like English \"-er\". *Ceol* (music) → *ceoltóir* (musician). *Scríobh* (write) → *scríbhneoir* (writer). All these words are masculine, so *an múinteoir*, *an dochtúir*, with no séimhiú — even when the person is a woman."
+        },
+        {
+          "type": "kotak",
+          "title": "Asking what someone does",
+          "items": [
+            "*Cén obair atá agat?* (kyayn UH-bir uh-TAW AH-gut) — \"what's your job?\", literally \"what work is at you?\"",
+            "*Cad a dhéanann tú?* (kod uh YAY-nan too) — \"what do you do?\" This uses the present tense, which you'll learn in Unit 10.",
+            "The answer always uses *is*: *Is dochtúir mé*, *Is feirmeoir mé*. If you're not working: *Is mac léinn mé* or *Níl post agam faoi láthair* (\"I don't have a job at the moment\")."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Countries and nationalities",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Irish nationality words end in *-ach*, and the same word works as both noun and adjective: *Is Éireannach é* (\"he's Irish\") and *ceol Éireannach* (\"Irish music\"). Notice that many country names carry the article *an* as part of the name — like English \"the Netherlands\"."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Country",
+            "Say it",
+            "Nationality",
+            "English"
+          ],
+          "rows": [
+            [
+              "Éire",
+              "AY-ruh",
+              "Éireannach",
+              "Ireland"
+            ],
+            [
+              "An Indinéis",
+              "an IN-dih-naysh",
+              "Indinéiseach",
+              "Indonesia"
+            ],
+            [
+              "Sasana",
+              "SAH-suh-nuh",
+              "Sasanach",
+              "England"
+            ],
+            [
+              "Albain",
+              "AH-luh-bin",
+              "Albanach",
+              "Scotland"
+            ],
+            [
+              "An Bhreatain Bheag",
+              "an VRAH-tin VYUG",
+              "Breatnach",
+              "Wales"
+            ],
+            [
+              "An Fhrainc",
+              "an RANK",
+              "Francach",
+              "France"
+            ],
+            [
+              "An Ghearmáin",
+              "an YAR-mawn",
+              "Gearmánach",
+              "Germany"
+            ],
+            [
+              "An Spáinn",
+              "an SPAWN",
+              "Spáinneach",
+              "Spain"
+            ],
+            [
+              "An Iodáil",
+              "an IH-dawl",
+              "Iodálach",
+              "Italy"
+            ],
+            [
+              "An Ísiltír",
+              "an EE-shil-tyeer",
+              "Ollannach",
+              "the Netherlands"
+            ],
+            [
+              "An tSín",
+              "an TYEEN",
+              "Síneach",
+              "China"
+            ],
+            [
+              "An tSeapáin",
+              "an TYAH-pawn",
+              "Seapánach",
+              "Japan"
+            ],
+            [
+              "An India",
+              "an IN-dee-uh",
+              "Indiach",
+              "India"
+            ],
+            [
+              "Meiriceá",
+              "MEH-rih-kaw",
+              "Meiriceánach",
+              "America"
+            ],
+            [
+              "An Astráil",
+              "an AS-trawl",
+              "Astrálach",
+              "Australia"
+            ],
+            [
+              "An Mhalaeisia",
+              "an WAH-luh-ay-shuh",
+              "Malaeiseach",
+              "Malaysia"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Literally",
+            "English"
+          ],
+          "rows": [
+            [
+              "Is Indinéiseach mé.",
+              "is Indonesian me",
+              "I'm Indonesian."
+            ],
+            [
+              "Is as an Indinéis mé.",
+              "is from the Indonesia me",
+              "I'm from Indonesia."
+            ],
+            [
+              "Ní Sasanach é.",
+              "not Englishman him",
+              "He isn't English."
+            ],
+            [
+              "An Éireannach tú?",
+              "question Irish-person you",
+              "Are you Irish?"
+            ],
+            [
+              "Is ea, is as Corcaigh mé.",
+              "is so, is from Cork me",
+              "Yes, I'm from Cork."
+            ],
+            [
+              "Cé as tú?",
+              "who from you",
+              "Where are you from?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two names that trip people up",
+          "items": [
+            "*Éire* is the country; *Gaeilge* is the language; *Éireannach* is the person. English uses \"Irish\" for two of these — Irish doesn't.",
+            "*Béarla* means \"the English language\" — and it's unrelated to *Sasana* (England). So an English person is a *Sasanach* (hence the Scottish \"Sassenach\"), but the language they speak is *Béarla*.",
+            "Other language names add *-is* or have their own form: *Fraincis* (French), *Gearmáinis* (German), *Spáinnis* (Spanish), *Sínis* (Chinese), *Indinéisis* (Indonesian)."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "is",
+      "baca": "is",
+      "en": "is, am, are (for identity)"
+    },
+    {
+      "ga": "ní",
+      "baca": "nee",
+      "en": "not (with is)"
+    },
+    {
+      "ga": "is ea / sea",
+      "baca": "is AH / SHAH",
+      "en": "yes (to an is question)"
+    },
+    {
+      "ga": "ní hea",
+      "baca": "nee HAH",
+      "en": "no (to an is question)"
+    },
+    {
+      "ga": "cóisir",
+      "baca": "KOH-shir",
+      "en": "party"
+    },
+    {
+      "ga": "dochtúir",
+      "baca": "DOKH-toor",
+      "en": "doctor"
+    },
+    {
+      "ga": "mac léinn",
+      "baca": "mak LYAYN",
+      "en": "(university) student"
+    },
+    {
+      "ga": "múinteoir",
+      "baca": "MOON-tyohr",
+      "en": "teacher"
+    },
+    {
+      "ga": "ceoltóir",
+      "baca": "KYOHL-tohr",
+      "en": "musician"
+    },
+    {
+      "ga": "feirmeoir",
+      "baca": "FEH-rih-myohr",
+      "en": "farmer"
+    },
+    {
+      "ga": "altra",
+      "baca": "AL-truh",
+      "en": "nurse"
+    },
+    {
+      "ga": "freastalaí",
+      "baca": "FRAS-tuh-lee",
+      "en": "waiter"
+    },
+    {
+      "ga": "garda",
+      "baca": "GAWR-duh",
+      "en": "police officer"
+    },
+    {
+      "ga": "obair",
+      "baca": "UH-bir",
+      "en": "work, job"
+    },
+    {
+      "ga": "gabh mo leithscéal",
+      "baca": "gohw muh LESH-kyayl",
+      "en": "excuse me, sorry"
+    },
+    {
+      "ga": "Béarla",
+      "baca": "BYAYR-luh",
+      "en": "English (language)"
+    },
+    {
+      "ga": "athair",
+      "baca": "AH-hir",
+      "en": "father"
+    },
+    {
+      "ga": "máthair",
+      "baca": "MAW-hir",
+      "en": "mother"
+    },
+    {
+      "ga": "deartháir",
+      "baca": "DRAH-hawr",
+      "en": "brother"
+    },
+    {
+      "ga": "deirfiúr",
+      "baca": "DRIF-oor",
+      "en": "sister"
+    },
+    {
+      "ga": "freisin",
+      "baca": "FREH-shin",
+      "en": "also, too"
+    },
+    {
+      "ga": "ard",
+      "baca": "AWRD",
+      "en": "tall"
+    },
+    {
+      "ga": "ceol",
+      "baca": "KYOHL",
+      "en": "music"
+    },
+    {
+      "ga": "is breá liom",
+      "baca": "is BRAW lyum",
+      "en": "I love"
+    },
+    {
+      "ga": "Éire",
+      "baca": "AY-ruh",
+      "en": "Ireland"
+    },
+    {
+      "ga": "Éireannach",
+      "baca": "AY-ryuh-nakh",
+      "en": "Irish person"
+    },
+    {
+      "ga": "Indinéiseach",
+      "baca": "IN-dih-nay-shakh",
+      "en": "Indonesian person"
+    },
+    {
+      "ga": "Sasanach",
+      "baca": "SAH-suh-nakh",
+      "en": "English person"
+    },
+    {
+      "ga": "tír",
+      "baca": "TYEER",
+      "en": "country, land"
+    },
+    {
+      "ga": "cé hé?",
+      "baca": "kyay HAY",
+      "en": "who is he?"
+    },
+    {
+      "ga": "cé hí?",
+      "baca": "kyay HEE",
+      "en": "who is she?"
+    },
+    {
+      "ga": "é",
+      "baca": "AY",
+      "en": "he, him (as object)"
+    },
+    {
+      "ga": "í",
+      "baca": "EE",
+      "en": "she, her (as object)"
+    },
+    {
+      "ga": "iad",
+      "baca": "EE-ad",
+      "en": "they, them (as object)"
+    },
+    {
+      "ga": "faoi láthair",
+      "baca": "fwee LAW-hir",
+      "en": "at the moment"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate using *is*.",
+      "items": [
+        "I'm a teacher.",
+        "She's a doctor.",
+        "We're students.",
+        "He's a farmer.",
+        "I'm Indonesian.",
+        "They're Irish."
+      ]
+    },
+    {
+      "prompt": "Make these negative, then turn them into questions.",
+      "items": [
+        "Is múinteoir mé.",
+        "Is dochtúir í.",
+        "Is Éireannach é.",
+        "Is mac léinn tú.",
+        "Is ceoltóir é.",
+        "Is Sasanach í."
+      ]
+    },
+    {
+      "prompt": "Choose *tá* or *is*, then write out the whole sentence.",
+      "items": [
+        "____ mé tuirseach.",
+        "____ dochtúir mé.",
+        "____ sí sa bhaile.",
+        "____ Éireannach é.",
+        "____ an aimsir go breá.",
+        "____ mise Budi."
+      ]
+    },
+    {
+      "prompt": "Answer with *Tá / Níl* or *Sea / Ní hea*, depending on the question.",
+      "items": [
+        "An bhfuil tú tuirseach? (yes)",
+        "An múinteoir tú? (yes)",
+        "An bhfuil sé fuar? (no)",
+        "An Sasanach tú? (no)",
+        "An dochtúir í? (yes)",
+        "An bhfuil ocras ort? (no)"
+      ]
+    }
+  ],
+  "answers": [
+    "Is múinteoir mé. — Is dochtúir í. — Is mic léinn muid. — Is feirmeoir é. — Is Indinéiseach mé. — Is Éireannaigh iad.",
+    "Ní múinteoir mé. An múinteoir mé? — Ní dochtúir í. An dochtúir í? — Ní Éireannach é. An Éireannach é? — Ní mac léinn tú. An mac léinn tú? — Ní ceoltóir é. An ceoltóir é? — Ní Sasanach í. An Sasanach í?",
+    "Tá mé tuirseach. — Is dochtúir mé. — Tá sí sa bhaile. — Is Éireannach é. — Tá an aimsir go breá. — Is mise Budi.",
+    "Tá. — Sea. — Níl. — Ní hea. — Sea. — Níl."
+  ]
+}

@@ -1,0 +1,598 @@
+{
+  "title": "This summer I'm going home",
+  "title_target": "Rachaidh mé abhaile sa samhradh",
+  "goal": "Talk about plans and things that haven't happened yet, using the future tense.",
+  "bekal": [
+    "form the future tense: *ólfaidh mé*, *ceannóidh mé*, *rachaidh mé*",
+    "use *ní* with séimhiú and *an* with urú, just as in the present",
+    "talk about plans with time words like *amárach, an tseachtain seo chugainn*"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — Pleananna don samhradh",
+      "intro": "The end of the semester is near. Seán and Budi sit in the park talking about summer plans.",
+      "lines": [
+        {
+          "speaker": "Seán:",
+          "text": "Cad a dhéanfaidh tú sa samhradh?",
+          "id": "What are you doing this summer?",
+          "literal": "what that will-do you in-the summer?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Rachaidh mé abhaile go dtí an Indinéis ar feadh míosa.",
+          "id": "I'll go home to Indonesia for a month.",
+          "literal": "will-go I homeward to the Indonesia for month-of."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "An bhfillfidh tú go hÉirinn?",
+          "id": "Will you come back to Ireland?",
+          "literal": "question will-return you to Ireland?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Fillfidh, cinnte. Tosóidh an cúrsa nua i mí Mheán Fómhair.",
+          "id": "Definitely. The new course starts in September.",
+          "literal": "will-return, surely. will-start the course new in month September."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Cad a dhéanfaidh tú sa bhaile?",
+          "id": "What will you do at home?",
+          "literal": "what that will-do you in-the home?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Feicfidh mé mo theaghlach. Íosfaidh mé bia mo mháthar!",
+          "id": "I'll see my family. I'll eat my mother's cooking!",
+          "literal": "will-see I my family. will-eat I food my mother-of!"
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Ha! An dtabharfaidh tú rud éigin dom?",
+          "id": "Ha! Will you bring me something?",
+          "literal": "ha! question will-give you thing some to-me?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tabharfaidh. Gheobhaidh mé caife maith duit.",
+          "id": "I will. I'll get you some good coffee.",
+          "literal": "will-give. will-get I coffee good to-you."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Go hiontach. Beidh mise ag obair anseo an samhradh ar fad.",
+          "id": "Great. Myself, I'll be working here all summer.",
+          "literal": "wonderful. will-be I at work here the summer on length."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "An mbeidh tú saor ag an deireadh seachtaine?",
+          "id": "Will you be free at the weekend?",
+          "literal": "question will-be you free at the end week-of?"
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Beidh. Rachaimid go dtí an trá.",
+          "id": "I will. Let's go to the beach.",
+          "literal": "will-be. will-go-we to the beach."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ceart go leor — ach ní rachaidh mé san uisce. Tá sé rófhuar!",
+          "id": "OK — but I won't go in the water. It's freezing!",
+          "literal": "right enough — but not will-go I in-the water. is it too-cold!"
+        }
+      ],
+      "notes": [
+        "**The future has its own endings, and the first letter is left alone.** The first conjugation adds **-faidh** (broad stem) or **-fidh** (slender stem): *ól* → *ólfaidh*, *cuir* → *cuirfidh*. The second conjugation adds **-óidh** or **-eoidh**: *ceannaigh* → *ceannóidh*, *imigh* → *imeoidh*. Unlike the past, there's no séimhiú and no *d'*.",
+        "**The f in these endings sounds like h.** *Ólfaidh* is said \"OHL-hee\", *fanfaidh* \"FAN-hee\", *tuigfidh* \"TIG-hee\". After a voiced sound it can sound like a light \"w\" or vanish completely. Don't pronounce it as a full f — that sounds like reading the spelling aloud.",
+        "**Ní brings séimhiú, an brings urú — exactly as in the present.** *Ní cheannóidh mé*, *an gceannóidh tú?*; *ní thuigfidh mé*, *an dtuigfidh tú?* So of the three tenses you've learned, only the past is the odd one out (there *ar* brings séimhiú too). When in doubt, remember: **the past softens everything; the other two follow the usual rules.**",
+        "**Rachaidh, gheobhaidh, íosfaidh — irregulars again.** *Téigh* becomes *rachaidh* (RAH-khee), which keeps not a single letter of the stem. *Faigh* becomes *gheobhaidh* (YOH-ee) in statements but *ní bhfaighidh* in the negative — the only verb whose stem switches between statement and negative. *Ith* becomes *íosfaidh* (EE-see)."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Future tense, regular verbs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Base form",
+            "Meaning",
+            "Future",
+            "Negative",
+            "Question"
+          ],
+          "rows": [
+            [
+              "ól",
+              "drink",
+              "ólfaidh mé",
+              "ní ólfaidh mé",
+              "an ólfaidh tú?"
+            ],
+            [
+              "fan",
+              "wait, stay",
+              "fanfaidh mé",
+              "ní fhanfaidh mé",
+              "an bhfanfaidh tú?"
+            ],
+            [
+              "glan",
+              "clean",
+              "glanfaidh mé",
+              "ní ghlanfaidh mé",
+              "an nglanfaidh tú?"
+            ],
+            [
+              "dún",
+              "close",
+              "dúnfaidh mé",
+              "ní dhúnfaidh mé",
+              "an ndúnfaidh tú?"
+            ],
+            [
+              "tuig",
+              "understand",
+              "tuigfidh mé",
+              "ní thuigfidh mé",
+              "an dtuigfidh tú?"
+            ],
+            [
+              "cuir",
+              "put",
+              "cuirfidh mé",
+              "ní chuirfidh mé",
+              "an gcuirfidh tú?"
+            ],
+            [
+              "léigh",
+              "read",
+              "léifidh mé",
+              "ní léifidh mé",
+              "an léifidh tú?"
+            ],
+            [
+              "ceannaigh",
+              "buy",
+              "ceannóidh mé",
+              "ní cheannóidh mé",
+              "an gceannóidh tú?"
+            ],
+            [
+              "tosaigh",
+              "start",
+              "tosóidh mé",
+              "ní thosóidh mé",
+              "an dtosóidh tú?"
+            ],
+            [
+              "críochnaigh",
+              "finish",
+              "críochnóidh mé",
+              "ní chríochnóidh mé",
+              "an gcríochnóidh tú?"
+            ],
+            [
+              "imigh",
+              "leave, go away",
+              "imeoidh mé",
+              "ní imeoidh mé",
+              "an imeoidh tú?"
+            ],
+            [
+              "éirigh",
+              "get up",
+              "éireoidh mé",
+              "ní éireoidh mé",
+              "an éireoidh tú?"
+            ],
+            [
+              "oscail",
+              "open",
+              "osclóidh mé",
+              "ní osclóidh mé",
+              "an osclóidh tú?"
+            ],
+            [
+              "fill",
+              "return",
+              "fillfidh mé",
+              "ní fhillfidh mé",
+              "an bhfillfidh tú?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The \"we\" form has its own ending: *ólfaimid*, *ceannóimid*, *rachaimid*. For other persons, just change the pronoun: *ólfaidh tú*, *ólfaidh sé*, *ólfaidh siad*."
+        },
+        {
+          "type": "kotak",
+          "title": "How the future endings sound",
+          "items": [
+            "*-faidh* and *-fidh* both sound like \"hee\": *ólfaidh* = OHL-hee, *cuirfidh* = KIR-hee, *fanfaidh* = FAN-hee.",
+            "*-óidh* and *-eoidh* sound like \"oh-ee\": *ceannóidh* = KYAH-noh-ee, *imeoidh* = IH-myoh-ee.",
+            "*-faimid* sounds like \"hih-mid\": *ólfaimid* = OHL-hih-mid.",
+            "Because the endings are long and lightly stressed, the Irish future is easy to pick out by ear once you know that \"hee\" sound."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Eleven irregular verbs, future tense",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Base form",
+            "Meaning",
+            "Future",
+            "Say it",
+            "Negative"
+          ],
+          "rows": [
+            [
+              "bí",
+              "be",
+              "beidh mé",
+              "BAY may",
+              "ní bheidh mé"
+            ],
+            [
+              "abair",
+              "say",
+              "déarfaidh mé",
+              "DYAYR-hee",
+              "ní déarfaidh mé"
+            ],
+            [
+              "beir",
+              "catch",
+              "béarfaidh mé",
+              "BYAYR-hee",
+              "ní bhéarfaidh mé"
+            ],
+            [
+              "clois",
+              "hear",
+              "cloisfidh mé",
+              "KLOSH-hee",
+              "ní chloisfidh mé"
+            ],
+            [
+              "déan",
+              "make, do",
+              "déanfaidh mé",
+              "DYAYN-hee",
+              "ní dhéanfaidh mé"
+            ],
+            [
+              "faigh",
+              "get",
+              "gheobhaidh mé",
+              "YOH-ee",
+              "ní bhfaighidh mé"
+            ],
+            [
+              "feic",
+              "see",
+              "feicfidh mé",
+              "FEK-hee",
+              "ní fheicfidh mé"
+            ],
+            [
+              "ith",
+              "eat",
+              "íosfaidh mé",
+              "EE-see",
+              "ní íosfaidh mé"
+            ],
+            [
+              "tabhair",
+              "give",
+              "tabharfaidh mé",
+              "TOHR-hee",
+              "ní thabharfaidh mé"
+            ],
+            [
+              "tar",
+              "come",
+              "tiocfaidh mé",
+              "TYUK-hee",
+              "ní thiocfaidh mé"
+            ],
+            [
+              "téigh",
+              "go",
+              "rachaidh mé",
+              "RAH-khee",
+              "ní rachaidh mé"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three future sentences you'll hear most",
+          "items": [
+            "*Feicfidh mé thú* — \"see you\". You've used it since Unit 1 without knowing it was future.",
+            "*Beidh mé ar ais* — \"I'll be back\".",
+            "*Rachaidh mé abhaile* — \"I'll go home\". Note that *abhaile* (\"home, homeward\") is different from *sa bhaile* (\"at home\")."
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Future time words",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "amárach",
+              "uh-MAW-rakh",
+              "tomorrow"
+            ],
+            [
+              "arú amárach",
+              "uh-ROO uh-MAW-rakh",
+              "the day after tomorrow"
+            ],
+            [
+              "anocht",
+              "uh-NOKHT",
+              "tonight"
+            ],
+            [
+              "an tseachtain seo chugainn",
+              "shuh KHOO-gin",
+              "next week"
+            ],
+            [
+              "an mhí seo chugainn",
+              "an VEE shuh KHOO-gin",
+              "next month"
+            ],
+            [
+              "an bhliain seo chugainn",
+              "an VLEE-in shuh KHOO-gin",
+              "next year"
+            ],
+            [
+              "go luath",
+              "guh LOO-uh",
+              "soon"
+            ],
+            [
+              "ar ball",
+              "er BAL",
+              "later, in a while"
+            ],
+            [
+              "lá éigin",
+              "law AY-gin",
+              "some day"
+            ],
+            [
+              "ar feadh míosa",
+              "er fuh MEE-suh",
+              "for a month"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "For fixed plans, Irish often uses the *ag* pattern (Unit 9) instead of the future, just as English says \"I'm going home tomorrow\": *Tá mé ag dul abhaile amárach*. Both are correct; the future sounds a little more formal."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "beidh",
+      "baca": "BAY",
+      "en": "will be"
+    },
+    {
+      "ga": "ní bheidh",
+      "baca": "nee VAY",
+      "en": "won't be"
+    },
+    {
+      "ga": "an mbeidh?",
+      "baca": "an MAY",
+      "en": "will ... be?"
+    },
+    {
+      "ga": "rachaidh mé",
+      "baca": "RAH-khee may",
+      "en": "I'll go"
+    },
+    {
+      "ga": "tiocfaidh mé",
+      "baca": "TYUK-hee may",
+      "en": "I'll come"
+    },
+    {
+      "ga": "gheobhaidh mé",
+      "baca": "YOH-ee may",
+      "en": "I'll get"
+    },
+    {
+      "ga": "feicfidh mé",
+      "baca": "FEK-hee may",
+      "en": "I'll see"
+    },
+    {
+      "ga": "déanfaidh mé",
+      "baca": "DYAYN-hee may",
+      "en": "I'll do"
+    },
+    {
+      "ga": "tabharfaidh mé",
+      "baca": "TOHR-hee may",
+      "en": "I'll give"
+    },
+    {
+      "ga": "íosfaidh mé",
+      "baca": "EE-see may",
+      "en": "I'll eat"
+    },
+    {
+      "ga": "déarfaidh mé",
+      "baca": "DYAYR-hee may",
+      "en": "I'll say"
+    },
+    {
+      "ga": "fillfidh mé",
+      "baca": "FIL-hee may",
+      "en": "I'll return"
+    },
+    {
+      "ga": "plean",
+      "baca": "PLYAN",
+      "en": "plan"
+    },
+    {
+      "ga": "cúrsa",
+      "baca": "KOOR-suh",
+      "en": "course"
+    },
+    {
+      "ga": "abhaile",
+      "baca": "uh-WAH-luh",
+      "en": "home, homeward"
+    },
+    {
+      "ga": "ar ais",
+      "baca": "er ASH",
+      "en": "back"
+    },
+    {
+      "ga": "ar feadh",
+      "baca": "er FAH",
+      "en": "for, during"
+    },
+    {
+      "ga": "trá",
+      "baca": "TRAW",
+      "en": "beach"
+    },
+    {
+      "ga": "amárach",
+      "baca": "uh-MAW-rakh",
+      "en": "tomorrow"
+    },
+    {
+      "ga": "seo chugainn",
+      "baca": "shuh KHOO-gin",
+      "en": "next (week etc.)"
+    },
+    {
+      "ga": "go luath",
+      "baca": "guh LOO-uh",
+      "en": "soon"
+    },
+    {
+      "ga": "lá éigin",
+      "baca": "law AY-gin",
+      "en": "some day"
+    },
+    {
+      "ga": "ró-",
+      "baca": "roh",
+      "en": "too (prefix)"
+    },
+    {
+      "ga": "an samhradh ar fad",
+      "baca": "an SOW-ruh er FAD",
+      "en": "all summer long"
+    },
+    {
+      "ga": "mise",
+      "baca": "MIH-shuh",
+      "en": "I, me (emphatic)"
+    },
+    {
+      "ga": "duit",
+      "baca": "GHWIT",
+      "en": "to you, for you"
+    },
+    {
+      "ga": "dom",
+      "baca": "DOM",
+      "en": "to me, for me"
+    },
+    {
+      "ga": "Meán Fómhair",
+      "baca": "myawn FOH-war",
+      "en": "September"
+    },
+    {
+      "ga": "go dtí",
+      "baca": "guh DYEE",
+      "en": "to, toward"
+    },
+    {
+      "ga": "cinnte",
+      "baca": "KYIN-tyuh",
+      "en": "surely, definitely"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Put into the future tense (\"I\" form).",
+      "items": [
+        "ól",
+        "fan",
+        "tuig",
+        "ceannaigh",
+        "tosaigh",
+        "imigh"
+      ]
+    },
+    {
+      "prompt": "Make these sentences negative. Remember: *ní* brings séimhiú.",
+      "items": [
+        "Ceannóidh mé leabhar.",
+        "Fanfaidh mé anseo.",
+        "Tuigfidh sé an cheist.",
+        "Glanfaidh sí an teach.",
+        "Rachaidh mé abhaile.",
+        "Beidh mé saor amárach."
+      ]
+    },
+    {
+      "prompt": "Turn these into questions. Remember: *an* brings urú.",
+      "items": [
+        "Ceannóidh tú bia.",
+        "Fanfaidh tú anseo.",
+        "Tuigfidh tú é.",
+        "Beidh tú saor.",
+        "Tiocfaidh tú amárach.",
+        "Ólfaidh tú tae."
+      ]
+    },
+    {
+      "prompt": "Translate into Irish.",
+      "items": [
+        "I'll go home this summer.",
+        "Will you come back to Ireland?",
+        "The course starts in September.",
+        "I'll see my family.",
+        "Will you be free at the weekend?",
+        "I won't go in the water."
+      ]
+    }
+  ],
+  "answers": [
+    "ólfaidh mé — fanfaidh mé — tuigfidh mé — ceannóidh mé — tosóidh mé — imeoidh mé",
+    "Ní cheannóidh mé leabhar. — Ní fhanfaidh mé anseo. — Ní thuigfidh sé an cheist. — Ní ghlanfaidh sí an teach. — Ní rachaidh mé abhaile. — Ní bheidh mé saor amárach.",
+    "An gceannóidh tú bia? — An bhfanfaidh tú anseo? — An dtuigfidh tú é? — An mbeidh tú saor? — An dtiocfaidh tú amárach? — An ólfaidh tú tae?",
+    "Rachaidh mé abhaile sa samhradh. — An bhfillfidh tú go hÉirinn? — Tosóidh an cúrsa i mí Mheán Fómhair. — Feicfidh mé mo theaghlach. — An mbeidh tú saor ag an deireadh seachtaine? — Ní rachaidh mé san uisce."
+  ]
+}

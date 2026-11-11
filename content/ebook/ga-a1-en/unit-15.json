@@ -1,0 +1,628 @@
+{
+  "title": "Food and drink",
+  "title_target": "Bia agus deoch",
+  "goal": "Order food and drink, name dishes, and talk about taste.",
+  "bekal": [
+    "order in a café or restaurant with *Ba mhaith liom …*",
+    "name foods, drinks, and mealtimes",
+    "describe taste with *blasta, milis, goirt, te*"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — Sa bhialann",
+      "intro": "Budi and Seán have lunch in a small restaurant in the city center. The waiter greets them in Irish.",
+      "lines": [
+        {
+          "speaker": "Freastalaí:",
+          "text": "Dia daoibh. An bhfuil sibh réidh le hordú?",
+          "id": "Hello. Are you ready to order?",
+          "literal": "God to-you-all. question are you-all ready for ordering?"
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Tá. Ba mhaith liom anraith agus ceapaire cáise.",
+          "id": "Yes. I'd like soup and a cheese sandwich.",
+          "literal": "am. would good with-me soup and sandwich cheese-of."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cad a mholann tú?",
+          "id": "What do you recommend?",
+          "literal": "what that recommends you?"
+        },
+        {
+          "speaker": "Freastalaí:",
+          "text": "Tá an bradán an-mhaith inniu. Nó an stobhach — tá sé traidisiúnta.",
+          "id": "The salmon is very good today. Or the stew — it's traditional.",
+          "literal": "is the salmon very-good today. or the stew — is it traditional."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ba mhaith liom an stobhach, le do thoil. Tá ocras mór orm!",
+          "id": "I'll have the stew, please. I'm starving!",
+          "literal": "would good with-me the stew, with your will. is hunger big on-me!"
+        },
+        {
+          "speaker": "Freastalaí:",
+          "text": "Go breá. Agus le hól?",
+          "id": "Fine. And to drink?",
+          "literal": "fine. and for drinking?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Gloine uisce, le do thoil. Tá tart orm freisin.",
+          "id": "A glass of water, please. I'm thirsty too.",
+          "literal": "glass water, with your will. is thirst on-me too."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Agus pionta bainne domsa!",
+          "id": "And a pint of milk for me!",
+          "literal": "and pint milk for-me!"
+        },
+        {
+          "speaker": "Freastalaí:",
+          "text": "Ceart go leor. Beidh sé réidh i gceann deich nóiméad.",
+          "id": "All right. It'll be ready in ten minutes.",
+          "literal": "right enough. will-be it ready in head ten minutes."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá an stobhach seo an-bhlasta. Tá sé beagán milis.",
+          "id": "This stew is delicious. It's a bit sweet.",
+          "literal": "is the stew this very-tasty. is it a-bit sweet."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Sea, tá prátaí agus cairéid ann. An bhfuil tú sásta?",
+          "id": "Yes, it has potatoes and carrots in it. Are you happy with it?",
+          "literal": "is so, are potatoes and carrots in-it. question are you satisfied?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá mé an-sásta. An bille, le do thoil!",
+          "id": "Very happy. The bill, please!",
+          "literal": "am I very-satisfied. the bill, with your will!"
+        }
+      ],
+      "notes": [
+        "**Ceapaire cáise — the ingredient goes into the possessive form.** \"Cheese sandwich\" comes out as \"sandwich of-cheese\": *cáis* becomes *cáise*. Same pattern for *cupán tae* (a cup of tea), *gloine uisce* (a glass of water), *pionta bainne* (a pint of milk). For now, learn the pairs; forming the possessive yourself is A2 material.",
+        "**Le hól, le hordú — the h slips in again.** The preposition *le* adds an *h* before a following word that starts with a vowel: *le hól* (\"to drink\"), *le hordú* (\"to order\"), *le hithe* (\"to eat\"). You've now seen this *h* pattern after *go*, *na*, *cé*, *ní*, numbers, and *le* — six places, one habit.",
+        "**Beidh sé réidh — \"it will be ready\".** *Beidh* is the future form of *tá*, and it behaves exactly the same: *beidh mé*, *beidh tú*, *beidh sé*. The full future tense comes in Unit 18; for now just recognize *beidh* when you hear it, and use it to promise something.",
+        "**Domsa, liomsa — emphatic forms.** Adding *-sa* or *-se* to a prepositional pronoun gives it stress, like saying \"for **me**\" with your voice raised. *Dom* → *domsa*, *liom* → *liomsa*, *agam* → *agamsa*, *uirthi* → *uirthise*. Use them when there's a contrast: *Tae domsa, caife duitse*."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bia — food",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "English",
+            "Gaeilge",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "arán",
+              "uh-RAWN",
+              "bread",
+              "iasc",
+              "EE-ask",
+              "fish"
+            ],
+            [
+              "im",
+              "IM",
+              "butter",
+              "bradán",
+              "BRAH-dawn",
+              "salmon"
+            ],
+            [
+              "cáis",
+              "KAWSH",
+              "cheese",
+              "sicín",
+              "SHIH-keen",
+              "chicken"
+            ],
+            [
+              "ubh",
+              "OOW",
+              "egg",
+              "mairteoil",
+              "MAR-tyohl",
+              "beef"
+            ],
+            [
+              "bagún",
+              "BAH-goon",
+              "bacon",
+              "muiceoil",
+              "MWIH-kyohl",
+              "pork"
+            ],
+            [
+              "ispín",
+              "IS-peen",
+              "sausage",
+              "anraith",
+              "AN-rih",
+              "soup"
+            ],
+            [
+              "práta",
+              "PRAW-tuh",
+              "potato",
+              "stobhach",
+              "STUH-wakh",
+              "stew"
+            ],
+            [
+              "cairéad",
+              "KAH-rayd",
+              "carrot",
+              "ceapaire",
+              "KYAH-pih-ruh",
+              "sandwich"
+            ],
+            [
+              "glasraí",
+              "GLAS-ree",
+              "vegetables",
+              "brachán",
+              "BRAH-khawn",
+              "porridge"
+            ],
+            [
+              "torthaí",
+              "TOR-hee",
+              "fruit",
+              "milseog",
+              "MIL-shohg",
+              "dessert"
+            ],
+            [
+              "úll",
+              "OOL",
+              "apple",
+              "cáca",
+              "KAW-kuh",
+              "cake"
+            ],
+            [
+              "oráiste",
+              "uh-RAWS-tyuh",
+              "orange",
+              "rís",
+              "REESH",
+              "rice"
+            ],
+            [
+              "banana",
+              "buh-NAW-nuh",
+              "banana",
+              "salann",
+              "SAH-lan",
+              "salt"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "bricfeasta",
+              "BRIK-fyas-tuh",
+              "breakfast"
+            ],
+            [
+              "lón",
+              "LOHN",
+              "lunch"
+            ],
+            [
+              "dinnéar",
+              "dih-NYAYR",
+              "dinner"
+            ],
+            [
+              "suipéar",
+              "sih-PYAYR",
+              "light supper"
+            ],
+            [
+              "deoch",
+              "DYOKH",
+              "drink"
+            ],
+            [
+              "uisce",
+              "ISH-kuh",
+              "water"
+            ],
+            [
+              "sú oráiste",
+              "soo uh-RAWS-tyuh",
+              "orange juice"
+            ],
+            [
+              "beoir",
+              "BYOHR",
+              "beer"
+            ],
+            [
+              "fíon",
+              "FEE-un",
+              "wine"
+            ],
+            [
+              "gloine",
+              "GLIH-nyuh",
+              "glass"
+            ],
+            [
+              "buidéal",
+              "BWIH-dyayl",
+              "bottle"
+            ],
+            [
+              "pionta",
+              "PYUN-tuh",
+              "pint"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ordering",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Ba mhaith liom …, le do thoil.",
+              "buh WAH lyum",
+              "I'd like …, please."
+            ],
+            [
+              "An bhfuil … agaibh?",
+              "an wil … AH-giv",
+              "Do you have …?"
+            ],
+            [
+              "Cad a mholann tú?",
+              "kod uh WUH-lan too",
+              "What do you recommend?"
+            ],
+            [
+              "Cé mhéad atá air?",
+              "kyay vayd uh-TAW er",
+              "How much is it?"
+            ],
+            [
+              "An bille, le do thoil.",
+              "an BIH-luh",
+              "The bill, please."
+            ],
+            [
+              "Tá sé an-bhlasta.",
+              "taw shay an-VLAS-tuh",
+              "It's delicious."
+            ],
+            [
+              "Tá mé lán.",
+              "taw may LAWN",
+              "I'm full."
+            ],
+            [
+              "Ní ithim feoil.",
+              "neel may eg IH-huh FYUH-luh",
+              "I don't eat meat."
+            ],
+            [
+              "An bhfuil sé te?",
+              "an wil shay TYEH",
+              "Is it spicy?"
+            ],
+            [
+              "Gan siúcra, le do thoil.",
+              "gan SHOO-kruh",
+              "No sugar, please."
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Taste",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "blasta",
+              "BLAS-tuh",
+              "tasty"
+            ],
+            [
+              "milis",
+              "MIH-lish",
+              "sweet"
+            ],
+            [
+              "goirt",
+              "GORTCH",
+              "salty"
+            ],
+            [
+              "searbh",
+              "SHAH-roow",
+              "bitter"
+            ],
+            [
+              "te",
+              "TYEH",
+              "hot, spicy"
+            ],
+            [
+              "fuar",
+              "FOO-ar",
+              "cold"
+            ],
+            [
+              "úr",
+              "OOR",
+              "fresh"
+            ],
+            [
+              "trom",
+              "TRUM",
+              "heavy, filling"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Te means both hot and spicy",
+          "items": [
+            "Irish doesn't separate hot in temperature from hot in taste; both are *te*, just as in English. So *Tá an tae te* (\"the tea is hot\") and *Tá an bia te* (\"the food is spicy\") use the same word.",
+            "If you need to be clear, add a phrase: *te ó spíosraí* (\"hot from spices\") or *róthe le hithe* (\"too hot to eat\").",
+            "Irish food is rarely spicy, so if you say *Is maith liom bia te*, your host will most likely warm up your plate."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "freastalaí",
+      "baca": "FRAS-tuh-lee",
+      "en": "waiter"
+    },
+    {
+      "ga": "bialann",
+      "baca": "BEE-uh-lan",
+      "en": "restaurant"
+    },
+    {
+      "ga": "ag ordú",
+      "baca": "eg OR-doo",
+      "en": "ordering"
+    },
+    {
+      "ga": "anraith",
+      "baca": "AN-rih",
+      "en": "soup"
+    },
+    {
+      "ga": "ceapaire",
+      "baca": "KYAH-pih-ruh",
+      "en": "sandwich"
+    },
+    {
+      "ga": "cáis",
+      "baca": "KAWSH",
+      "en": "cheese"
+    },
+    {
+      "ga": "bradán",
+      "baca": "BRAH-dawn",
+      "en": "salmon"
+    },
+    {
+      "ga": "stobhach",
+      "baca": "STUH-wakh",
+      "en": "stew"
+    },
+    {
+      "ga": "gloine",
+      "baca": "GLIH-nyuh",
+      "en": "glass"
+    },
+    {
+      "ga": "pionta",
+      "baca": "PYUN-tuh",
+      "en": "pint"
+    },
+    {
+      "ga": "ceart go leor",
+      "baca": "kyart guh LYOHR",
+      "en": "all right, OK"
+    },
+    {
+      "ga": "i gceann",
+      "baca": "ih GYOWN",
+      "en": "in (time)"
+    },
+    {
+      "ga": "milis",
+      "baca": "MIH-lish",
+      "en": "sweet"
+    },
+    {
+      "ga": "goirt",
+      "baca": "GORTCH",
+      "en": "salty"
+    },
+    {
+      "ga": "searbh",
+      "baca": "SHAH-roow",
+      "en": "bitter"
+    },
+    {
+      "ga": "cairéad",
+      "baca": "KAH-rayd",
+      "en": "carrot"
+    },
+    {
+      "ga": "bille",
+      "baca": "BIH-luh",
+      "en": "bill, check"
+    },
+    {
+      "ga": "lán",
+      "baca": "LAWN",
+      "en": "full"
+    },
+    {
+      "ga": "feoil",
+      "baca": "FYOHL",
+      "en": "meat"
+    },
+    {
+      "ga": "glasraí",
+      "baca": "GLAS-ree",
+      "en": "vegetables"
+    },
+    {
+      "ga": "torthaí",
+      "baca": "TOR-hee",
+      "en": "fruit"
+    },
+    {
+      "ga": "úll",
+      "baca": "OOL",
+      "en": "apple"
+    },
+    {
+      "ga": "ubh",
+      "baca": "OOW",
+      "en": "egg"
+    },
+    {
+      "ga": "lón",
+      "baca": "LOHN",
+      "en": "lunch"
+    },
+    {
+      "ga": "deoch",
+      "baca": "DYOKH",
+      "en": "drink"
+    },
+    {
+      "ga": "sú",
+      "baca": "SOO",
+      "en": "juice"
+    },
+    {
+      "ga": "beoir",
+      "baca": "BYOHR",
+      "en": "beer"
+    },
+    {
+      "ga": "buidéal",
+      "baca": "BWIH-dyayl",
+      "en": "bottle"
+    },
+    {
+      "ga": "domsa",
+      "baca": "DOM-suh",
+      "en": "for me (emphatic)"
+    },
+    {
+      "ga": "gan",
+      "baca": "GAN",
+      "en": "without"
+    },
+    {
+      "ga": "mholann",
+      "baca": "WUH-lan",
+      "en": "recommend (after *a*)"
+    },
+    {
+      "ga": "sicín",
+      "baca": "SHIH-keen",
+      "en": "chicken"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Order these with *Ba mhaith liom …, le do thoil.*",
+      "items": [
+        "a cup of tea",
+        "a glass of water",
+        "soup",
+        "a cheese sandwich",
+        "orange juice",
+        "dessert"
+      ]
+    },
+    {
+      "prompt": "Translate into Irish.",
+      "items": [
+        "I'm starving.",
+        "I'm thirsty too.",
+        "What do you recommend?",
+        "It's delicious.",
+        "The bill, please.",
+        "I don't eat meat."
+      ]
+    },
+    {
+      "prompt": "Choose the right taste word (blasta, milis, goirt, searbh, te, fuar).",
+      "items": [
+        "Tá an cáca ____ . (sweet)",
+        "Tá an t-anraith ____ . (salty)",
+        "Tá an caife ____ . (bitter)",
+        "Tá an bia ____ . (tasty)",
+        "Tá an bainne ____ . (cold)",
+        "Tá an tae ____ . (hot)"
+      ]
+    },
+    {
+      "prompt": "Answer the questions in full sentences.",
+      "items": [
+        "An maith leat iasc?",
+        "Cad a itheann tú don bhricfeasta?",
+        "An bhfuil ocras ort anois?",
+        "Cad is fearr leat, tae nó caife?",
+        "An maith leat bia te?",
+        "Cad a ólann tú gach lá?"
+      ]
+    }
+  ],
+  "answers": [
+    "Ba mhaith liom cupán tae, le do thoil. — Ba mhaith liom gloine uisce, le do thoil. — Ba mhaith liom anraith, le do thoil. — Ba mhaith liom ceapaire cáise, le do thoil. — Ba mhaith liom sú oráiste, le do thoil. — Ba mhaith liom milseog, le do thoil.",
+    "Tá ocras mór orm. — Tá tart orm freisin. — Cad a mholann tú? — Tá sé an-bhlasta. — An bille, le do thoil. — Ní ithim feoil.",
+    "milis — goirt — searbh — blasta — fuar — te",
+    "Is maith liom iasc. — Ithim arán agus ubh. — Tá, tá ocras orm. — Is fearr liom tae. — Ní maith liom bia an-te. — Ólaim tae agus uisce."
+  ]
+}

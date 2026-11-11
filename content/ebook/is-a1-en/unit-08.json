@@ -1,0 +1,508 @@
+{
+  "title": "The first case: the object form",
+  "title_target": "Þolfall — ég sé kirkjuna",
+  "goal": "Face the first of four cases: the form a noun takes when it's on the receiving end of an action — and know exactly when the ending changes and when it doesn't.",
+  "bekal": [
+    "change a noun from its dictionary form to its object form",
+    "use the object pronouns *mig*, *þig*, *hann*, *hana*, *það*",
+    "recognize prepositions that always take þolfall, especially *um*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Göngutúr um miðbæinn",
+      "intro": "Late afternoon in downtown Reykjavík. Anna points out the Hallgrímskirkja church towering at the end of the street, and Búdí asks about everything he sees.",
+      "lines": [
+        {
+          "speaker": "Anna:",
+          "text": "Sérðu kirkjuna þarna?",
+          "id": "Do you see the church over there?",
+          "literal": "see-you church-the there?"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Já, ég sé hana. Hún er mjög stór.",
+          "id": "Yes, I see it. It's very big.",
+          "literal": "yes, I see her. she is very big."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Hún heitir Hallgrímskirkja. Þekkirðu Hallgrím?",
+          "id": "It's called Hallgrímskirkja. Do you know Hallgrímur?",
+          "literal": "she is-called Hallgrímskirkja. know-you Hallgrímur?"
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Nei, ég þekki hann ekki. Hver var hann?",
+          "id": "No, I don't know him. Who was he?",
+          "literal": "no, I know him not. who was he?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Hann var skáld. Allir Íslendingar lesa sálmana hans.",
+          "id": "He was a poet. All Icelanders read his hymns.",
+          "literal": "he was poet. all Icelanders read hymns-the his."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Ég ætla að taka mynd. Sérðu bátinn líka?",
+          "id": "I'm going to take a picture. Do you see the boat too?",
+          "literal": "I intend to take picture. see-you boat-the too?"
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Já! Og fjallið fyrir aftan hann.",
+          "id": "Yes! And the mountain behind it.",
+          "literal": "yes! and mountain-the for behind him."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Ég skil ekki þetta orð: „aftan\".",
+          "id": "I don't understand this word: \"aftan\".",
+          "literal": "I understand not this word: behind."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Það þýðir „bak við\". Þú spyrð góðar spurningar.",
+          "id": "It means \"behind\". You ask good questions.",
+          "literal": "it means behind at. you ask good questions."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Ég spyr af því að ég vil læra málið.",
+          "id": "I ask because I want to learn the language.",
+          "literal": "I ask of that that I want learn language-the."
+        },
+        {
+          "speaker": "Anna:",
+          "text": "Gott. Á morgun skoðum við safnið um víkinga.",
+          "id": "Good. Tomorrow we'll visit the museum about the Vikings.",
+          "literal": "good. on morning look-at we museum-the about Vikings."
+        },
+        {
+          "speaker": "Búdí:",
+          "text": "Frábært! Ég elska sögur um víkinga.",
+          "id": "Great! I love stories about Vikings.",
+          "literal": "great! I love stories about Vikings."
+        }
+      ],
+      "notes": [
+        "**A noun changes form when it's on the receiving end of an action.** *Kirkjan* (the church) → *Ég sé **kirkjuna***. *Báturinn* (the boat) → *Ég sé **bátinn***. This changed form is called **þolfall** (the accusative), and it's the first of the four cases you'll learn.",
+        "**English has almost lost this** — only pronouns still do it (*I/me*, *she/her*, *we/us*), while \"I see the church\" and \"the church is big\" use exactly the same noun. So think of Icelandic nouns as behaving like English pronouns, and look for the pattern in the endings — there turn out to be only a few.",
+        "**Pronouns change too**: *hann* stays *hann*, but *hún* becomes *hana*, *ég* becomes *mig*, *þú* becomes *þig*. Note *ég sé **hana*** for the church — since *kirkja* is kvenkyn, its pronoun is *hún*, and as an object it becomes *hana*.",
+        "**Um is always followed by þolfall, no exceptions.** *Sögur **um víkinga***, *bók **um Ísland***, *tala **um veðrið***. It's one of the few prepositions that never switches case, so it's the safest place to start practicing.",
+        "**Ég ætla að taka mynd — the intention form.** *Ætla að* + infinitive means \"intend to, be going to\". It's one of the two ways Icelandic talks about the future, and it's covered in full in Unit 18.",
+        "**Hallgrímskirkja and Hallgrímur Pétursson.** Iceland's tallest church is named after the 17th-century poet who wrote the *Passíusálmar*, fifty hymns still read on the radio every Easter. The church's name is itself a grammar lesson: *Hallgríms* is the possessive form of *Hallgrímur*."
+      ],
+      "grammars": [
+        {
+          "title": "Þolfall — how the endings change",
+          "body": [
+            "The change depends on the noun's gender, and only **karlkyn and kvenkyn** really change. Hvorugkyn stays put — a free gift."
+          ],
+          "table": {
+            "head": [
+              "Gender",
+              "Nefnifall (dictionary)",
+              "Þolfall (object)",
+              "With article",
+              "Example"
+            ],
+            "rows": [
+              [
+                "kk -ur",
+                "*hestur*",
+                "*hest*",
+                "*hestinn*",
+                "*Ég sé hestinn.*"
+              ],
+              [
+                "kk -ll / -nn",
+                "*bíll*, *steinn*",
+                "*bíl*, *stein*",
+                "*bílinn*",
+                "*Ég á bílinn.*"
+              ],
+              [
+                "kk -i",
+                "*tími*",
+                "*tíma*",
+                "*tímann*",
+                "*Ég tek tímann.*"
+              ],
+              [
+                "kvk -a",
+                "*kirkja*",
+                "*kirkju*",
+                "*kirkjuna*",
+                "*Ég sé kirkjuna.*"
+              ],
+              [
+                "kvk, no ending",
+                "*bók*, *borg*",
+                "*bók*, *borg*",
+                "*bókina*",
+                "*Ég les bókina.*"
+              ],
+              [
+                "hk",
+                "*hús*, *borð*",
+                "*hús*, *borð*",
+                "*húsið*",
+                "*Ég sé húsið.*"
+              ]
+            ]
+          },
+          "after": [
+            "Three rules cover almost everything: **kk -ur/-ll/-nn lose their ending**, **kvk -a becomes -u**, and **hk doesn't change at all**. Kvenkyn words with no ending don't change in their bare form either.",
+            "Watch the forms with the article: *bókin* → *bókina*, *kirkjan* → *kirkjuna*, *bíllinn* → *bílinn*, *húsið* → *húsið* (unchanged).",
+            "⚠️ Since hvorugkyn forms are identical in nefnifall and þolfall, a sentence like *barnið sér húsið* can't be decoded from the endings alone — **word order** decides who sees what. Icelandic is not a free-word-order language."
+          ]
+        },
+        {
+          "title": "Pronouns in the object form",
+          "body": [
+            "Eight forms, and some of them look very different from the subject form. Learn them in pairs: *ég – mig*, *þú – þig* — just like English *I – me*."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "Object",
+              "Example",
+              "English"
+            ],
+            "rows": [
+              [
+                "*ég*",
+                "**mig**",
+                "*Hún sér mig.*",
+                "She sees me."
+              ],
+              [
+                "*þú*",
+                "**þig**",
+                "*Ég sé þig.*",
+                "I see you."
+              ],
+              [
+                "*hann*",
+                "**hann**",
+                "*Ég þekki hann.*",
+                "I know him."
+              ],
+              [
+                "*hún*",
+                "**hana**",
+                "*Ég sé hana.*",
+                "I see her."
+              ],
+              [
+                "*það*",
+                "**það**",
+                "*Ég skil það.*",
+                "I understand it."
+              ],
+              [
+                "*við*",
+                "**okkur**",
+                "*Hann sér okkur.*",
+                "He sees us."
+              ],
+              [
+                "*þið*",
+                "**ykkur**",
+                "*Ég þekki ykkur.*",
+                "I know you (pl.)."
+              ],
+              [
+                "*þeir/þær/þau*",
+                "**þá/þær/þau**",
+                "*Ég sé þau.*",
+                "I see them."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Remember that *ekki* jumps behind an object pronoun: *Ég þekki hann **ekki***, not *ég þekki ekki hann*. This rule came up in Unit 2, and now the reason is clear.",
+            "Since things have genders too, you'll often use *hana* and *hann* for objects: *Sérðu bókina? — Já, ég sé **hana**.* (\"Do you see the book? — Yes, I see *her*\" = it.)"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Verbs that take an object",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The verbs below are almost always followed by þolfall. Practice each one with a noun from Unit 3, and the object form will stick without memorizing tables."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Verb",
+            "Example",
+            "English"
+          ],
+          "rows": [
+            [
+              "*sjá* see",
+              "*Ég sé fjallið.*",
+              "I see the mountain."
+            ],
+            [
+              "*þekkja* know (a person)",
+              "*Ég þekki hana.*",
+              "I know her."
+            ],
+            [
+              "*lesa* read",
+              "*Hún les bókina.*",
+              "She reads the book."
+            ],
+            [
+              "*taka* take",
+              "*Ég tek strætó.*",
+              "I take the bus."
+            ],
+            [
+              "*kaupa* buy",
+              "*Við kaupum húsið.*",
+              "We buy the house."
+            ],
+            [
+              "*eiga* own",
+              "*Hann á bílinn.*",
+              "He owns the car."
+            ],
+            [
+              "*elska* love",
+              "*Ég elska Ísland.*",
+              "I love Iceland."
+            ],
+            [
+              "*skilja* understand",
+              "*Ég skil þig.*",
+              "I understand you."
+            ],
+            [
+              "*skoða* look around",
+              "*Við skoðum safnið.*",
+              "We look around the museum."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Prepositions that always take þolfall",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Some Icelandic prepositions switch case depending on their meaning — that's Unit 11. But the four below **always** take þolfall, whatever the situation."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Preposition",
+            "English",
+            "Example",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*um*",
+              "about; through",
+              "*bók um Ísland*",
+              "a book about Iceland"
+            ],
+            [
+              "*gegnum*",
+              "through",
+              "*gegnum bæinn*",
+              "through the town"
+            ],
+            [
+              "*kringum*",
+              "around",
+              "*kringum húsið*",
+              "around the house"
+            ],
+            [
+              "*fyrir … aftan*",
+              "behind",
+              "*fyrir aftan bátinn*",
+              "behind the boat"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "A really fast way to practice",
+          "items": [
+            "Take ten nouns you already know and say each one twice: once as the subject, once as the object. *Bókin er ný — ég les bókina.* *Bíllinn er stór — ég sé bílinn.*",
+            "Pairs like these stick much faster than tables, because what you're learning isn't the form but **the switch**."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "is": "þolfall",
+      "baca": "THAWL-fahtl",
+      "en": "accusative (object case)"
+    },
+    {
+      "is": "kirkja",
+      "baca": "KIHRK-yah",
+      "en": "church"
+    },
+    {
+      "is": "bátur",
+      "baca": "BOW-tür",
+      "en": "boat"
+    },
+    {
+      "is": "skáld",
+      "baca": "skowld",
+      "en": "poet"
+    },
+    {
+      "is": "sálmur",
+      "baca": "SOWL-mür",
+      "en": "hymn, psalm"
+    },
+    {
+      "is": "mynd",
+      "baca": "mihnd",
+      "en": "picture, photo"
+    },
+    {
+      "is": "taka mynd",
+      "baca": "TAH-kah mihnd",
+      "en": "to take a picture"
+    },
+    {
+      "is": "orð",
+      "baca": "awrdh",
+      "en": "word"
+    },
+    {
+      "is": "þýða",
+      "baca": "THEE-dhah",
+      "en": "to mean; to translate"
+    },
+    {
+      "is": "spyrja",
+      "baca": "SPIHR-yah",
+      "en": "to ask"
+    },
+    {
+      "is": "af því að",
+      "baca": "ahv thvee ahdh",
+      "en": "because"
+    },
+    {
+      "is": "vilja",
+      "baca": "VIL-yah",
+      "en": "to want"
+    },
+    {
+      "is": "skoða",
+      "baca": "SKAW-dhah",
+      "en": "to look around, to visit"
+    },
+    {
+      "is": "safn",
+      "baca": "sahbn",
+      "en": "museum; collection"
+    },
+    {
+      "is": "víkingur",
+      "baca": "VEE-kin-gür",
+      "en": "Viking"
+    },
+    {
+      "is": "saga",
+      "baca": "SAH-ghah",
+      "en": "story, saga"
+    },
+    {
+      "is": "elska",
+      "baca": "EHLS-kah",
+      "en": "to love"
+    },
+    {
+      "is": "frábært",
+      "baca": "FROW-bairt",
+      "en": "great, wonderful"
+    },
+    {
+      "is": "mjög",
+      "baca": "myögh",
+      "en": "very"
+    },
+    {
+      "is": "miðbær",
+      "baca": "MIDH-bair",
+      "en": "downtown, city center"
+    },
+    {
+      "is": "göngutúr",
+      "baca": "GÖIN-gü-toor",
+      "en": "walk, stroll"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change to the object form (þolfall).",
+      "items": [
+        "bíllinn",
+        "bókin",
+        "húsið",
+        "kirkjan",
+        "hesturinn",
+        "borgin"
+      ]
+    },
+    {
+      "prompt": "Fill in the right object pronoun.",
+      "items": [
+        "Ég sé ____ (hún).",
+        "Hún þekkir ____ (ég).",
+        "Við sjáum ____ (þið).",
+        "Ég skil ____ (það).",
+        "Þau þekkja ____ (við).",
+        "Ég sé ____ (þú)."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "sé / kirkjuna / ég",
+        "bókina / hún / les",
+        "ekki / hann / ég / þekki",
+        "um / bók / Ísland / þetta / er",
+        "skoðum / safnið / við / á morgun"
+      ]
+    },
+    {
+      "prompt": "Translate into Icelandic.",
+      "items": [
+        "Do you see the church?",
+        "Yes, I see it.",
+        "I don't know him.",
+        "I want to learn the language.",
+        "This is a book about Iceland.",
+        "I love stories about Vikings."
+      ]
+    }
+  ],
+  "answers": [
+    "bílinn — bókina — húsið — kirkjuna — hestinn — borgina",
+    "hana — mig — ykkur — það — okkur — þig",
+    "Ég sé kirkjuna. — Hún les bókina. — Ég þekki hann ekki. — Þetta er bók um Ísland. — Við skoðum safnið á morgun.",
+    "Sérðu kirkjuna? — Já, ég sé hana. — Ég þekki hann ekki. — Ég vil læra málið. — Þetta er bók um Ísland. — Ég elska sögur um víkinga."
+  ]
+}

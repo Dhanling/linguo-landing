@@ -1,0 +1,550 @@
+{
+  "title": "Where is the post office?",
+  "title_target": "Kde je pošta?",
+  "goal": "Ask for and give directions, and set up the second case: the locative — the only case that never appears without a preposition in front of it.",
+  "bekal": [
+    "ask for directions and understand the answer",
+    "put nouns into the locative after *v*, *na*, *o*, *pri*",
+    "choose between *v* and *na* — a choice you can't guess from the meaning"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Neviem, kde som",
+      "intro": "Budi is lost near Hlavná stanica, the main station. He stops a woman walking past.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Prepáčte, môžem sa niečo opýtať?",
+          "id": "Excuse me, may I ask you something?",
+          "literal": "excuse-you, may-I self something ask?"
+        },
+        {
+          "speaker": "Pani:",
+          "text": "Samozrejme. Nech sa páči.",
+          "id": "Of course. Go ahead.",
+          "literal": "of-course. let self it-please."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kde je pošta? Neviem, kde som.",
+          "id": "Where is the post office? I don't know where I am.",
+          "literal": "where is post? not-I-know, where I-am."
+        },
+        {
+          "speaker": "Pani:",
+          "text": "Pošta je na námestí, oproti kostolu.",
+          "id": "The post office is on the square, opposite the church.",
+          "literal": "post is on square-loc, opposite church-dat."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A ako sa tam dostanem?",
+          "id": "And how do I get there?",
+          "literal": "and how self there I-will-get?"
+        },
+        {
+          "speaker": "Pani:",
+          "text": "Choďte rovno a potom doľava.",
+          "id": "Go straight on and then turn left.",
+          "literal": "go-you straight and then to-left."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Rovno a doľava. Je to ďaleko?",
+          "id": "Straight and then left. Is it far?",
+          "literal": "straight and to-left. is it far?"
+        },
+        {
+          "speaker": "Pani:",
+          "text": "Nie, päť minút pešo. Je to hneď za parkom.",
+          "id": "No, five minutes on foot. It's just behind the park.",
+          "literal": "no, five minutes-gen on-foot. is it right-away behind park-ins."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A je tam blízko aj banka?",
+          "id": "And is there a bank near there too?",
+          "literal": "and is there near also bank?"
+        },
+        {
+          "speaker": "Pani:",
+          "text": "Áno, banka je vedľa pošty, v tej istej budove.",
+          "id": "Yes, the bank is next to the post office, in the same building.",
+          "literal": "yes, bank is next-to post-gen, in that-loc same-loc building-loc."
+        },
+        {
+          "speaker": "Pani:",
+          "text": "Nie je za čo. Dovidenia!",
+          "id": "You're welcome. Goodbye!",
+          "literal": "not is for what. goodbye!"
+        }
+      ],
+      "notes": [
+        "**Na námestí, v budove, za parkom** — three prepositions, three different endings. The first two are locative, the third instrumental (unit 17). For now just notice that **a preposition always changes the word after it**; not a single Slovak preposition leaves its noun untouched.",
+        "**Môžem sa niečo opýtať?** is the most polite way to stop a stranger. Gentler than asking straight away, and it almost always makes people stop gladly. Put *prepáčte* in front of it.",
+        "**Choďte** is the polite command form of *ísť* (to go). The casual form is *choď*. You don't need to produce it at A1, but you must recognize it — every set of directions you hear will use this form.",
+        "**Nie je za čo** literally \"there is nothing for what\" — the standard reply to thanks, a little warmer than *prosím*. Both are correct.",
+        "**Aj means \"also\", like *tiež*.** The difference is position: *aj* stands right before the word it highlights (*aj banka* = a bank **too**), while *tiež* usually comes at the end or after the subject (*Ja tiež* = me too). At A1 you can use them interchangeably in simple sentences."
+      ],
+      "grammars": [
+        {
+          "title": "The locative — the case that can't stand alone",
+          "body": [
+            "The locative is the only one of the six cases that is **never** used without a preposition. That's good news: you don't have to guess when to use it — if *v*, *na*, *o*, *pri*, or *po* comes in front, the ending is locative."
+          ],
+          "table": {
+            "head": [
+              "Noun type",
+              "Ending",
+              "Nominative",
+              "Locative"
+            ],
+            "rows": [
+              [
+                "**ordinary m / n**",
+                "**-e**",
+                "*dom, obchod, mesto*",
+                "*v dom**e**, v obchod**e**, v mest**e***"
+              ],
+              [
+                "**m / n ending in k, g, h, ch**",
+                "**-u**",
+                "*park, Slovensko, obchodík*",
+                "*v park**u**, na Slovensk**u***"
+              ],
+              [
+                "**f ending in -a**",
+                "**-e**",
+                "*škola, Bratislava, banka*",
+                "*v škol**e**, v Bratislav**e**, v bank**e***"
+              ],
+              [
+                "**f soft letter**",
+                "**-i**",
+                "*kaviareň, stanica, reštaurácia*",
+                "*v kaviarn**i**, na stanic**i***"
+              ],
+              [
+                "**n ending in -ie**",
+                "**-í**",
+                "*námestie*",
+                "*na námest**í***"
+              ],
+              [
+                "**m animate**",
+                "**-ovi**",
+                "*brat, učiteľ*",
+                "*o brat**ovi**, o učiteľ**ovi***"
+              ]
+            ]
+          },
+          "after": [
+            "**The adjective changes too**: m and n take **-om** (*vo veľkom dome*, *v malom meste*), f takes **-ej** (*vo veľkej škole*). Two endings, twenty seconds to learn.",
+            "**The second row often surprises people.** Words ending in *k, g, h, ch* take *-u*, not *-e*, because an *-e* ending would force that letter to soften and change its sound. That's why it's *na Slovensku* and not *na Slovensce*. It's also why *v parku*, *v Rakúsku*, *v Nemecku*.",
+            "**Notice *v* becomes *vo*** before words starting with *v* or *f*: *vo Viedni* (in Vienna), *vo februári*. Just like *z/zo* and *s/so* — purely so the mouth doesn't trip."
+          ]
+        },
+        {
+          "title": "V or na — a choice you can't guess from the meaning",
+          "body": [
+            "Both mean \"in/at\", both take the locative, and no rule covers a hundred percent. But there's a tendency that covers about ninety percent, and that's more than enough for A1."
+          ],
+          "table": {
+            "head": [
+              "v — enclosed spaces, towns, countries",
+              "na — surfaces, institutions, events"
+            ],
+            "rows": [
+              [
+                "*v dome* — at home, in the house",
+                "*na pošte* — at the post office"
+              ],
+              [
+                "*v obchode* — in the shop",
+                "*na stanici* — at the station"
+              ],
+              [
+                "*v škole* — at school",
+                "*na univerzite* — at university"
+              ],
+              [
+                "*v meste* — in town",
+                "*na námestí* — on the square"
+              ],
+              [
+                "*v banke* — at the bank",
+                "*na ulici* — in the street"
+              ],
+              [
+                "*v reštaurácii* — in the restaurant",
+                "*na trhu* — at the market"
+              ],
+              [
+                "*v Bratislave* — in Bratislava",
+                "*na Slovensku* — in Slovakia"
+              ],
+              [
+                "*v Indonézii* — in Indonesia",
+                "*na koncerte* — at a concert"
+              ],
+              [
+                "*v aute* — in the car",
+                "*na obede* — at lunch"
+              ]
+            ]
+          },
+          "after": [
+            "**Look at the seventh and eighth rows.** Almost every country takes *v*, but Slovakia itself takes **na Slovensku**. So do *na Ukrajine* and *na Morave*. The reason is historical — these regions were once part of a larger kingdom, and *na* has stuck ever since. For beginners: learn *na Slovensku* as one chunk, because you'll say it every day.",
+            "**A pattern you can hold on to:** *v* for something you **go inside**, *na* for something you **go to** or whose surface you're on. The post office takes *na* because Slovak sees it as an errand you go to, not a building you enter.",
+            "**If you pick the wrong one, you're still understood** — it's a mistake that makes Slovaks smile, not frown. But picking right sounds very polished, so learn the table above a few rows at a sitting."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Places in town",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Say it",
+            "English",
+            "There"
+          ],
+          "rows": [
+            [
+              "**pošta** (f)",
+              "POHSH-tah",
+              "post office",
+              "*na pošte*"
+            ],
+            [
+              "**banka** (f)",
+              "BAHN-kah",
+              "bank",
+              "*v banke*"
+            ],
+            [
+              "**obchod** (m)",
+              "OHP-khoht",
+              "shop",
+              "*v obchode*"
+            ],
+            [
+              "**reštaurácia** (f)",
+              "REHSH-tah-oo-rah-tsyah",
+              "restaurant",
+              "*v reštaurácii*"
+            ],
+            [
+              "**kostol** (m)",
+              "KOHS-tohl",
+              "church",
+              "*v kostole*"
+            ],
+            [
+              "**park** (m)",
+              "pahrk",
+              "park",
+              "*v parku*"
+            ],
+            [
+              "**námestie** (n)",
+              "NAH-mehs-tyeh",
+              "square",
+              "*na námestí*"
+            ],
+            [
+              "**ulica** (f)",
+              "OO-lee-tsah",
+              "street",
+              "*na ulici*"
+            ],
+            [
+              "**stanica** (f)",
+              "STAH-nee-tsah",
+              "station",
+              "*na stanici*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last column isn't decoration — it's part of the word you must learn. If you note down *pošta* without *na pošte*, you've only learned half the word. This habit is what stops the cases from feeling like a table."
+        }
+      ]
+    },
+    {
+      "title": "Directions and position",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenčina",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**rovno**",
+              "ROHV-noh",
+              "straight on"
+            ],
+            [
+              "**doprava / vpravo**",
+              "DOH-prah-vah / FPRAH-voh",
+              "to the right / on the right"
+            ],
+            [
+              "**doľava / vľavo**",
+              "DOH-lyah-vah / VLYAH-voh",
+              "to the left / on the left"
+            ],
+            [
+              "**hore / dole**",
+              "HOH-reh / DOH-leh",
+              "up / down"
+            ],
+            [
+              "**blízko**",
+              "BLEES-koh",
+              "near"
+            ],
+            [
+              "**ďaleko**",
+              "DYAH-leh-koh",
+              "far"
+            ],
+            [
+              "**vedľa** + genitive",
+              "VEHD-lyah",
+              "next to"
+            ],
+            [
+              "**oproti** + dative",
+              "OH-proh-tyee",
+              "opposite"
+            ],
+            [
+              "**za** + instrumental",
+              "zah",
+              "behind"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at the pairs **doprava/vpravo** and **doľava/vľavo**. The *do-* form means movement (\"to the right\"), the *v-* form means position (\"on the right\"). Slovak separates motion and rest everywhere — the same split comes back with *do/v* in unit 11."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Questions and answers",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Kde je …?*",
+              "Where is …?"
+            ],
+            [
+              "*Ako sa dostanem na …?*",
+              "How do I get to …?"
+            ],
+            [
+              "*Je to ďaleko?*",
+              "Is it far?"
+            ],
+            [
+              "*Koľko minút pešo?*",
+              "How many minutes on foot?"
+            ],
+            [
+              "*Choďte rovno.*",
+              "Go straight on."
+            ],
+            [
+              "*Zabočte doprava.*",
+              "Turn right."
+            ],
+            [
+              "*Je to hneď za rohom.*",
+              "It's just around the corner."
+            ],
+            [
+              "*Stratil / stratila som sa.*",
+              "I'm lost. (m / f)"
+            ],
+            [
+              "*Môžete mi to ukázať na mape?*",
+              "Can you show me on the map?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "One sentence that saves the day",
+          "items": [
+            "*Prepáčte, hľadám poštu.* — \"Excuse me, I'm looking for the post office.\" Swap the last word for any place in the accusative, and you have one sentence that works all over Slovakia.",
+            "If the answer is too fast: *Pomaly, prosím* or *Môžete to zopakovať?* (Could you repeat that?). Both are polite and always work."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 4",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Slovenčina"
+          ],
+          "rows": [
+            [
+              "I'd like a coffee, please.",
+              "*Prosím si jednu kávu.*"
+            ],
+            [
+              "I'll have a beer.",
+              "*Dám si jedno pivo.*"
+            ],
+            [
+              "What do you recommend?",
+              "*Čo odporúčate?*"
+            ],
+            [
+              "I know her.",
+              "*Poznám ju.*"
+            ],
+            [
+              "The bill, please.",
+              "*Účet, prosím.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sk": "pošta",
+      "baca": "POHSH-tah",
+      "en": "post office (f)"
+    },
+    {
+      "sk": "banka",
+      "baca": "BAHN-kah",
+      "en": "bank (f)"
+    },
+    {
+      "sk": "námestie",
+      "baca": "NAH-mehs-tyeh",
+      "en": "square (n)"
+    },
+    {
+      "sk": "kostol",
+      "baca": "KOHS-tohl",
+      "en": "church (m)"
+    },
+    {
+      "sk": "budova",
+      "baca": "BOO-doh-vah",
+      "en": "building (f)"
+    },
+    {
+      "sk": "ulica",
+      "baca": "OO-lee-tsah",
+      "en": "street (f)"
+    },
+    {
+      "sk": "stanica",
+      "baca": "STAH-nee-tsah",
+      "en": "station (f)"
+    },
+    {
+      "sk": "park",
+      "baca": "pahrk",
+      "en": "park (m)"
+    },
+    {
+      "sk": "mapa",
+      "baca": "MAH-pah",
+      "en": "map (f)"
+    },
+    {
+      "sk": "rovno",
+      "baca": "ROHV-noh",
+      "en": "straight on"
+    },
+    {
+      "sk": "doprava",
+      "baca": "DOH-prah-vah",
+      "en": "to the right"
+    },
+    {
+      "sk": "doľava",
+      "baca": "DOH-lyah-vah",
+      "en": "to the left"
+    },
+    {
+      "sk": "blízko",
+      "baca": "BLEES-koh",
+      "en": "near"
+    },
+    {
+      "sk": "ďaleko",
+      "baca": "DYAH-leh-koh",
+      "en": "far"
+    },
+    {
+      "sk": "vedľa",
+      "baca": "VEHD-lyah",
+      "en": "next to"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Slovak.",
+      "items": [
+        "Excuse me, may I ask you something?",
+        "Where is the post office?",
+        "Go straight on and then turn left.",
+        "Is it far?",
+        "Five minutes on foot.",
+        "The bank is next to the post office."
+      ]
+    },
+    {
+      "prompt": "Put into the locative.",
+      "items": [
+        "v ____ (škola)",
+        "v ____ (obchod)",
+        "na ____ (pošta)",
+        "v ____ (mesto)",
+        "v ____ (park)",
+        "na ____ (Slovensko)",
+        "v ____ (Bratislava)",
+        "na ____ (námestie)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "pošta / kde / je / ?",
+        "námestí / je / pošta / na",
+        "doľava / rovno / a / choďte",
+        "ďaleko / to / je / ?",
+        "pešo / minút / päť"
+      ]
+    }
+  ],
+  "answers": [
+    "Prepáčte, môžem sa niečo opýtať? — Kde je pošta? — Choďte rovno a potom doľava. — Je to ďaleko? — Päť minút pešo. — Banka je vedľa pošty.",
+    "škole — obchode — pošte — meste — parku — Slovensku — Bratislave — námestí",
+    "Kde je pošta? — Pošta je na námestí. — Choďte rovno a doľava. — Je to ďaleko? — Päť minút pešo."
+  ]
+}

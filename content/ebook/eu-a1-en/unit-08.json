@@ -1,0 +1,706 @@
+{
+  "title": "What time is it?",
+  "title_target": "Zer ordu da?",
+  "goal": "Tell the time, name the days, months, and dates, and ask when something starts and ends.",
+  "bekal": [
+    "answer *zer ordu da?* correctly, including half past and quarter past/to",
+    "name the seven days, twelve months, and four seasons",
+    "use *-etan* (\"at … o'clock\") and *-tik … arte* (\"from … to …\")"
+  ],
+  "dialogs": [
+    {
+      "title": "Elkarrizketa — Klaseko ordutegia",
+      "intro": "Outside the euskaltegi door, Budi is in a panic, sure he's late.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Barkatu, Ainhoa, zer ordu da?",
+          "id": "Sorry, Ainhoa, what time is it?",
+          "literal": "sorry, Ainhoa, what hour is?"
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Bederatziak eta laurden dira.",
+          "id": "It's a quarter past nine.",
+          "literal": "nine-the(pl) and quarter are."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jo! Klasea bederatzietan hasten da!",
+          "id": "Oh no! Class starts at nine!",
+          "literal": "oh! class-the nine(pl)-at starting is!"
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Lasai, gaur hamarretan hasten gara.",
+          "id": "Relax, today we start at ten.",
+          "literal": "calm, today ten(pl)-at starting are-we."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A, ondo. Eta noiz amaitzen da?",
+          "id": "Oh, good. And when does it finish?",
+          "literal": "ah, good. and when finishing is?"
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Ordu bata eta erdietan.",
+          "id": "At half past one.",
+          "literal": "hour one-the and half(pl)-at."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Astelehenetan ere ordu berean?",
+          "id": "Same time on Mondays too?",
+          "literal": "Monday(pl)-on also hour same-at?"
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Ez, astelehenetan arratsaldez izaten dugu, lauretatik seiak arte.",
+          "id": "No, on Mondays we have it in the afternoon, from four to six.",
+          "literal": "no, Monday(pl)-on afternoon-by having we-have-it, four(pl)-from six(pl) until."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eta ostiraletan?",
+          "id": "And on Fridays?",
+          "literal": "and Friday(pl)-on?"
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Ostiraletan ez dago klaserik. Asteburua libre!",
+          "id": "There's no class on Fridays. The weekend's free!",
+          "literal": "Friday(pl)-on not is(located) class-any. weekend-the free!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bikain. Larunbatean zer egiten duzu?",
+          "id": "Great. What do you do on Saturdays?",
+          "literal": "excellent. Saturday-on what doing you-have-it?"
+        },
+        {
+          "speaker": "Ainhoa:",
+          "text": "Normalean mendira joaten naiz. Etorri nahi duzu?",
+          "id": "I usually go to the mountains. Want to come?",
+          "literal": "usually mountain-to going am. come want you-have-it?"
+        }
+      ],
+      "notes": [
+        "**Hours are plural, except one o'clock.** *Bederatziak dira* (it's nine o'clock — literally \"the nines are\"), *hirurak dira*, *hamarrak dira*. Only one o'clock is singular: *ordu bata da*. The logic is simple: Basque counts the hours already struck, and \"one\" can't be plural.",
+        "**At what time: the ending -etan.** *Bederatzi**etan*** (at nine), *hamar**retan*** (at ten), *ordu bat**ean*** (at one). It's the place ending *-etan* you know from Unit 3, borrowed for time — just as English uses \"at\" for both: \"at home\", \"at nine\".",
+        "**Astelehenetan = every Monday.** A day name made plural with *-etan* means a repeated habit: *astelehenetan* (on Mondays), *larunbatetan* (on Saturdays). For one particular Monday, use the singular: *astelehenean* (on Monday).",
+        "**Hasi and amaitu take the auxiliary without the hat.** *Klasea hasten **da*** (the class starts), not *du* — because nobody is \"starting\" anything here; the class starts by itself. Compare: *Nik klasea hasten **dut*** means \"I start the class\"."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Telling the time",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Time",
+            "Euskara",
+            "Say it",
+            "Literally"
+          ],
+          "rows": [
+            [
+              "1:00",
+              "Ordu bata da.",
+              "OHR-doo BAH-tah dah",
+              "hour one-the is"
+            ],
+            [
+              "2:00",
+              "Ordu biak dira.",
+              "OHR-doo BEE-ahk",
+              "hour two-the(pl) are"
+            ],
+            [
+              "3:00",
+              "Hirurak dira.",
+              "ee-ROO-rahk",
+              "three-the(pl) are"
+            ],
+            [
+              "4:15",
+              "Laurak eta laurden.",
+              "LAH-oo-rahk ehtah lah-OOR-dehn",
+              "four-the(pl) and quarter"
+            ],
+            [
+              "5:30",
+              "Bostak eta erdiak.",
+              "BOHS-tahk ehtah ehr-DEE-ahk",
+              "five-the(pl) and half"
+            ],
+            [
+              "6:45",
+              "Zazpiak laurden gutxi.",
+              "SAHS-pee-ahk lah-OOR-dehn GOO-chee",
+              "seven-the(pl) quarter less"
+            ],
+            [
+              "7:20",
+              "Zazpiak eta hogei.",
+              "SAHS-pee-ahk ehtah oh-GEH-ee",
+              "seven-the(pl) and twenty"
+            ],
+            [
+              "8:50",
+              "Bederatziak hamar gutxi.",
+              "beh-deh-RAH-tsee-ahk ah-MAHR GOO-chee",
+              "nine-the(pl) ten less"
+            ],
+            [
+              "12:00",
+              "Hamabiak dira.",
+              "ah-mah-BEE-ahk",
+              "twelve-the(pl) are"
+            ],
+            [
+              "12:00 noon",
+              "Eguerdia da.",
+              "eh-goo-EHR-dee-ah",
+              "midday-the is"
+            ],
+            [
+              "midnight",
+              "Gauerdia da.",
+              "gah-oo-EHR-dee-ah",
+              "midnight-the is"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "For minutes past the hour, use *eta* (\"and\"); for minutes to the hour, put *gutxi* (\"less\") **after** the minutes. Note that \"to\" always names the **next** hour, as in English: 6:45 is \"a quarter to seven\"."
+        },
+        {
+          "type": "sub",
+          "text": "Morning, afternoon, night"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "English",
+            "Example"
+          ],
+          "rows": [
+            [
+              "goizeko",
+              "(… o'clock) in the morning",
+              "goizeko zortziak (8 a.m.)"
+            ],
+            [
+              "arratsaldeko",
+              "(… o'clock) in the afternoon",
+              "arratsaldeko laurak (4 p.m.)"
+            ],
+            [
+              "gaueko",
+              "(… o'clock) at night",
+              "gaueko hamarrak (10 p.m.)"
+            ],
+            [
+              "goizean",
+              "in the morning",
+              "goizean lan egiten dut"
+            ],
+            [
+              "arratsaldean",
+              "in the afternoon",
+              "arratsaldean ikasten dut"
+            ],
+            [
+              "gauean",
+              "at night",
+              "gauean telebista ikusten dut"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Ready-to-use sentences",
+          "items": [
+            "*Zer ordu da?* — What time is it?",
+            "*Zer ordutan hasten da?* — What time does it start?",
+            "*Berandu da / Goiz da.* — It's late / it's early.",
+            "*Ordu erdi barru.* — In half an hour.",
+            "*Ordu laurden bat.* — A quarter of an hour.",
+            "*Beti berandu iristen naiz!* — I'm always late!"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Days, months, seasons",
+      "blocks": [
+        {
+          "type": "sub",
+          "text": "Asteko egunak — days of the week"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English",
+            "Literally"
+          ],
+          "rows": [
+            [
+              "astelehena",
+              "ahs-teh-LEH-eh-nah",
+              "Monday",
+              "start of the week"
+            ],
+            [
+              "asteartea",
+              "ahs-teh-AHR-teh-ah",
+              "Tuesday",
+              "between weeks"
+            ],
+            [
+              "asteazkena",
+              "ahs-teh-AHS-keh-nah",
+              "Wednesday",
+              "end of the week (old)"
+            ],
+            [
+              "osteguna",
+              "ohs-teh-GOO-nah",
+              "Thursday",
+              "day of Ost (thunder god)"
+            ],
+            [
+              "ostirala",
+              "ohs-tee-RAH-lah",
+              "Friday",
+              "—"
+            ],
+            [
+              "larunbata",
+              "lah-roon-BAH-tah",
+              "Saturday",
+              "fourth day"
+            ],
+            [
+              "igandea",
+              "ee-gahn-DEH-ah",
+              "Sunday",
+              "day of rising"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Hilabeteak — months"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "Euskara",
+            "",
+            "Euskara"
+          ],
+          "rows": [
+            [
+              "January",
+              "urtarrila",
+              "July",
+              "uztaila"
+            ],
+            [
+              "February",
+              "otsaila",
+              "August",
+              "abuztua"
+            ],
+            [
+              "March",
+              "martxoa",
+              "September",
+              "iraila"
+            ],
+            [
+              "April",
+              "apirila",
+              "October",
+              "urria"
+            ],
+            [
+              "May",
+              "maiatza",
+              "November",
+              "azaroa"
+            ],
+            [
+              "June",
+              "ekaina",
+              "December",
+              "abendua"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Basque month names don't copy Latin; nearly all of them come from farm work or the weather. *Uztaila* comes from *uzta* (harvest), *urria* from *urri* (scarce, as supplies run low), *otsaila* from *otso* (wolf — the month when wolves came down to the villages)."
+        },
+        {
+          "type": "sub",
+          "text": "Urtaroak — seasons"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "udaberria",
+              "oo-dah-BEH-rree-ah",
+              "spring (literally: new summer)"
+            ],
+            [
+              "uda",
+              "OO-dah",
+              "summer"
+            ],
+            [
+              "udazkena",
+              "oo-dahs-KEH-nah",
+              "fall, autumn (literally: end of summer)"
+            ],
+            [
+              "negua",
+              "neh-GOO-ah",
+              "winter"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "When? — making a schedule",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Literally",
+            "English"
+          ],
+          "rows": [
+            [
+              "Klasea zortzi**etan** hasten da.",
+              "class eight(pl)-at starting is",
+              "Class starts at eight."
+            ],
+            [
+              "Lauretatik seiak arte.",
+              "four(pl)-from six(pl) until",
+              "From four to six."
+            ],
+            [
+              "Astelehen**etan** ikasten dut.",
+              "Monday(pl)-on studying I-have-it",
+              "I study on Mondays."
+            ],
+            [
+              "Astelehen**ean** azterketa dut.",
+              "Monday-on exam I-have-it",
+              "I have an exam on Monday."
+            ],
+            [
+              "Maiatz**ean** Bilbora noa.",
+              "May-in Bilbo-to I-go",
+              "In May I'm going to Bilbo."
+            ],
+            [
+              "Uda**n** ez dago klaserik.",
+              "summer-in not is(located) class-any",
+              "There are no classes in summer."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "The most common time words"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "English",
+            "Euskara",
+            "English"
+          ],
+          "rows": [
+            [
+              "gaur",
+              "today",
+              "orain",
+              "now"
+            ],
+            [
+              "bihar",
+              "tomorrow",
+              "gero",
+              "later"
+            ],
+            [
+              "atzo",
+              "yesterday",
+              "lehen",
+              "before, earlier"
+            ],
+            [
+              "etzi",
+              "the day after tomorrow",
+              "berandu",
+              "late"
+            ],
+            [
+              "herenegun",
+              "the day before yesterday",
+              "goiz",
+              "early, morning"
+            ],
+            [
+              "gaur goizean",
+              "this morning",
+              "asteburua",
+              "the weekend"
+            ],
+            [
+              "aste honetan",
+              "this week",
+              "hurrengo astean",
+              "next week"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Dates",
+          "items": [
+            "The order is day, month, year — as in British English. *Maiatzaren hamabia* = May 12 (literally \"May's twelfth\").",
+            "Asking the date: *Zer egun da gaur?* or *Zenbat gara gaur?*",
+            "Years are read in full: *bi mila eta hogeita seian* = in 2026."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "eu": "ordu",
+      "baca": "OHR-doo",
+      "en": "hour, time"
+    },
+    {
+      "eu": "ordutegi",
+      "baca": "ohr-doo-TEH-gee",
+      "en": "schedule, timetable"
+    },
+    {
+      "eu": "minutu",
+      "baca": "mee-NOO-too",
+      "en": "minute"
+    },
+    {
+      "eu": "laurden",
+      "baca": "lah-OOR-dehn",
+      "en": "quarter"
+    },
+    {
+      "eu": "goiz",
+      "baca": "GOH-ees",
+      "en": "morning; early"
+    },
+    {
+      "eu": "arratsalde",
+      "baca": "ah-rrahts-AHL-deh",
+      "en": "afternoon"
+    },
+    {
+      "eu": "gau",
+      "baca": "GAH-oo",
+      "en": "night"
+    },
+    {
+      "eu": "eguerdi",
+      "baca": "eh-goo-EHR-dee",
+      "en": "midday, noon"
+    },
+    {
+      "eu": "egun",
+      "baca": "eh-GOON",
+      "en": "day"
+    },
+    {
+      "eu": "aste",
+      "baca": "AHS-teh",
+      "en": "week"
+    },
+    {
+      "eu": "asteburu",
+      "baca": "ahs-teh-BOO-roo",
+      "en": "weekend"
+    },
+    {
+      "eu": "hilabete",
+      "baca": "ee-lah-BEH-teh",
+      "en": "month"
+    },
+    {
+      "eu": "urte",
+      "baca": "OOR-teh",
+      "en": "year"
+    },
+    {
+      "eu": "astelehen",
+      "baca": "ahs-teh-LEH-ehn",
+      "en": "Monday"
+    },
+    {
+      "eu": "asteazken",
+      "baca": "ahs-teh-AHS-kehn",
+      "en": "Wednesday"
+    },
+    {
+      "eu": "ostiral",
+      "baca": "ohs-tee-RAHL",
+      "en": "Friday"
+    },
+    {
+      "eu": "larunbat",
+      "baca": "lah-roon-BAHT",
+      "en": "Saturday"
+    },
+    {
+      "eu": "igande",
+      "baca": "ee-GAHN-deh",
+      "en": "Sunday"
+    },
+    {
+      "eu": "uda",
+      "baca": "OO-dah",
+      "en": "summer"
+    },
+    {
+      "eu": "negu",
+      "baca": "NEH-goo",
+      "en": "winter"
+    },
+    {
+      "eu": "gaur",
+      "baca": "GAH-oor",
+      "en": "today"
+    },
+    {
+      "eu": "bihar",
+      "baca": "BEE-ahr",
+      "en": "tomorrow"
+    },
+    {
+      "eu": "atzo",
+      "baca": "AH-tsoh",
+      "en": "yesterday"
+    },
+    {
+      "eu": "gero",
+      "baca": "GEH-roh",
+      "en": "later"
+    },
+    {
+      "eu": "berandu",
+      "baca": "beh-RAHN-doo",
+      "en": "late"
+    },
+    {
+      "eu": "hasi",
+      "baca": "AH-see",
+      "en": "to start, to begin"
+    },
+    {
+      "eu": "amaitu",
+      "baca": "ah-MAH-ee-too",
+      "en": "to finish, to end"
+    },
+    {
+      "eu": "libre",
+      "baca": "LEE-breh",
+      "en": "free"
+    },
+    {
+      "eu": "lasai",
+      "baca": "lah-SAH-ee",
+      "en": "calm, relaxed"
+    },
+    {
+      "eu": "mendi",
+      "baca": "MEHN-dee",
+      "en": "mountain"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the time in Basque.",
+      "items": [
+        "1:00",
+        "3:00",
+        "4:15",
+        "5:30",
+        "6:45",
+        "10:20"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right time ending.",
+      "items": [
+        "Klasea bederatzi____ hasten da. (at nine)",
+        "Astelehen____ euskara dut. (on Mondays)",
+        "Maiatz____ Bilbora noa. (in May)",
+        "Uda____ ez dago klaserik. (in summer)",
+        "Lau____ seiak arte. (from four)",
+        "Larunbat____ mendira joaten naiz. (on Saturdays)"
+      ]
+    },
+    {
+      "prompt": "Translate into Basque.",
+      "items": [
+        "What time is it?",
+        "It's half past seven.",
+        "Class starts at ten.",
+        "There's no class on Fridays.",
+        "Today is Wednesday.",
+        "I have an exam tomorrow."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "da / ordu / zer / ?",
+        "dira / eta / bederatziak / laurden",
+        "da / klasea / hasten / hamarretan",
+        "dago / klaserik / ez / ostiraletan",
+        "naiz / mendira / larunbatetan / joaten",
+        "da / amaitzen / noiz / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Ordu bata da. — Hirurak dira. — Laurak eta laurden. — Bostak eta erdiak. — Zazpiak laurden gutxi. — Hamarrak eta hogei.",
+    "bederatzietan — Astelehenetan — Maiatzean — Udan — Lauretatik — Larunbatetan",
+    "Zer ordu da? — Zazpiak eta erdiak dira. — Klasea hamarretan hasten da. — Ostiraletan ez dago klaserik. — Gaur asteazkena da. — Bihar azterketa dut.",
+    "Zer ordu da? — Bederatziak eta laurden dira. — Klasea hamarretan hasten da. — Ostiraletan ez dago klaserik. — Larunbatetan mendira joaten naiz. — Noiz amaitzen da?"
+  ]
+}

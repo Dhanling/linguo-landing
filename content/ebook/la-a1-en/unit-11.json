@@ -1,0 +1,630 @@
+{
+  "title": "More, and most",
+  "title_target": "Qualis est?",
+  "goal": "Use third-group adjectives, form the \"more\" and \"most\" degrees, compare with quam, and turn adjectives into adverbs.",
+  "bekal": [
+    "use *fortis, forte* and its relatives with the right endings",
+    "form *fortior* and *fortissimus* from any adjective",
+    "memorize the six most common irregular sets: *bonus, melior, optimus* and friends"
+  ],
+  "dialogs": [
+    {
+      "title": "Colloquium — Quis fortior est?",
+      "intro": "The debate that will never end: who is greater.",
+      "lines": [
+        {
+          "speaker": "Marcus:",
+          "text": "Ego fortior sum quam Sextus!",
+          "id": "I'm stronger than Sextus!",
+          "literal": "I stronger am-I than Sextus!"
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Minime! Tu celerior es, sed non fortior.",
+          "id": "Not at all! You're faster, but not stronger.",
+          "literal": "not-at-all! you faster are-you, but not stronger."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Celeritas melior est quam corpus magnum!",
+          "id": "Speed is better than a big body!",
+          "literal": "speed better is-it than body big-neut!"
+        },
+        {
+          "speaker": "Sextus:",
+          "text": "Ego non sum fortis. Sed felix sum!",
+          "id": "Well, I'm not strong. But I'm lucky!",
+          "literal": "I not am-I strong. but lucky am-I!"
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Bene dicis, Sexte. Felicitas maxima res est.",
+          "id": "Well said, Sextus. Luck is the greatest thing of all.",
+          "literal": "well say-you, Sextus-call. luck biggest-fem thing is-it."
+        },
+        {
+          "speaker": "Lydia:",
+          "text": "Magister, estne Roma maior quam Alexandria?",
+          "id": "Sir, is Rome bigger than Alexandria?",
+          "literal": "teacher-call, is-it-Q Rome bigger than Alexandria?"
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Roma maxima urbium est. Sed Alexandria pulcherrima est.",
+          "id": "Rome is the biggest city. But Alexandria is the most beautiful.",
+          "literal": "Rome biggest-fem city-pl-of is-it. but Alexandria most-beautiful-fem is-it."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Et quis est optimus poeta?",
+          "id": "And who is the best poet?",
+          "literal": "and who is-he best-masc poet?"
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Vergilius optimus est. Sed Horatius brevior et acutior.",
+          "id": "Vergil is the best. But Horace is shorter and sharper.",
+          "literal": "Vergil best-masc is-he. but Horace shorter and sharper."
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Liber Vergilii longissimus est — difficilior quam mons!",
+          "id": "Vergil's book is so long — harder than climbing a mountain!",
+          "literal": "book Vergil-of longest-masc is-it — harder than mountain!"
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Difficilia pulchriora sunt, Iulia.",
+          "id": "Difficult things are the more beautiful ones, Iulia.",
+          "literal": "difficult-pl-neut more-beautiful-pl-neut are-they, Iulia."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Minime, magister! Facilia meliora sunt.",
+          "id": "Not really, sir! Easy things are better.",
+          "literal": "not-at-all, teacher-call! easy-pl-neut better-pl-neut are-they."
+        }
+      ],
+      "notes": [
+        "**Fortior, celerior, pulchrior — one ending for \"more\".** The \"more\" degree is formed by adding *-ior* to the adjective stem: *fortis* → *fortior*, *longus* → *longior*, *pulcher* → *pulchrior*. The neuter form is *-ius*: *fortius*, *longius*. It works like English *-er* (stronger, longer), but Latin uses it for every adjective — there is no separate \"more\" for long words.",
+        "**Quam means \"than\".** *Fortior quam Sextus* — \"stronger than Sextus\". The thing compared takes the same form as the first. There is a shorter second way: drop *quam* and use the with/in form — *fortior Sexto*. Both mean the same, and writers use the second one more often.",
+        "**Maxima, pulcherrima, longissimus — the \"most\" degree.** The ending is *-issimus*, but words ending in *-er* take *-errimus* (*pulcher* → *pulcherrimus*, *acer* → *acerrimus*), and six words ending in *-ilis* take *-illimus* (*facilis* → *facillimus*, *difficilis* → *difficillimus*). The \"most\" degree can also mean \"very\": *longissimus* can be \"longest\" or simply \"very long\".",
+        "**Difficilia, facilia, meliora — adjectives standing alone.** The neuter plural is used to talk about \"things that are…\": *difficilia* means \"difficult things\". You have already seen this pattern with *multa*, *cetera*, and *vera*."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Third-group adjectives",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Besides the *bonus, bona, bonum* group you already know, there is a second group that uses third-declension endings. Its members are some of the most common words: *fortis*, *omnis*, *gravis*, *facilis*, *dulcis*, *felix*, *ingens*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Job",
+            "fortis (masculine/feminine)",
+            "forte (neuter)",
+            "Plural masculine/feminine",
+            "Plural neuter"
+          ],
+          "rows": [
+            [
+              "subject",
+              "fortis",
+              "forte",
+              "fortes",
+              "fortia"
+            ],
+            [
+              "object",
+              "fortem",
+              "forte",
+              "fortes",
+              "fortia"
+            ],
+            [
+              "of",
+              "fortis",
+              "fortis",
+              "fortium",
+              "fortium"
+            ],
+            [
+              "to",
+              "forti",
+              "forti",
+              "fortibus",
+              "fortibus"
+            ],
+            [
+              "with/in",
+              "forti",
+              "forti",
+              "fortibus",
+              "fortibus"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "So masculine and feminine share the same forms, and only the neuter differs. These are called two-ending adjectives. There are also one-ending ones — a single subject form for all three genders — and three-ending ones."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Type",
+            "Dictionary form",
+            "Meaning",
+            "Note"
+          ],
+          "rows": [
+            [
+              "two endings",
+              "fortis, forte",
+              "strong, brave",
+              "the most common"
+            ],
+            [
+              "",
+              "omnis, omne",
+              "every, all",
+              "plural *omnes, omnia*"
+            ],
+            [
+              "",
+              "gravis, grave",
+              "heavy, serious",
+              "→ gravity"
+            ],
+            [
+              "",
+              "facilis, facile",
+              "easy",
+              "→ facility"
+            ],
+            [
+              "one ending",
+              "felix, felicis",
+              "lucky, happy",
+              "one form for every gender"
+            ],
+            [
+              "",
+              "ingens, ingentis",
+              "huge",
+              "neuter plural *ingentia*"
+            ],
+            [
+              "three endings",
+              "acer, acris, acre",
+              "sharp, keen",
+              "→ acrid; its cousin *acutus* → acute"
+            ],
+            [
+              "",
+              "celer, celeris, celere",
+              "fast",
+              "→ accelerate"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "More and most",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Both degrees are built on the adjective's stem, which is the \"of\" form minus its ending. For *longus, longa, longum* the stem is *long-*; for *fortis, fortis* it is *fort-*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Plain",
+            "More …",
+            "Most …",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "longus",
+              "long**ior**",
+              "long**issimus**",
+              "long"
+            ],
+            [
+              "fortis",
+              "fort**ior**",
+              "fort**issimus**",
+              "strong"
+            ],
+            [
+              "gravis",
+              "grav**ior**",
+              "grav**issimus**",
+              "heavy"
+            ],
+            [
+              "pulcher",
+              "pulchr**ior**",
+              "pulch**errimus**",
+              "beautiful"
+            ],
+            [
+              "acer",
+              "acr**ior**",
+              "ac**errimus**",
+              "sharp"
+            ],
+            [
+              "facilis",
+              "facil**ior**",
+              "fac**illimus**",
+              "easy"
+            ],
+            [
+              "difficilis",
+              "difficil**ior**",
+              "diffic**illimus**",
+              "difficult"
+            ],
+            [
+              "felix",
+              "felic**ior**",
+              "felic**issimus**",
+              "lucky"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The \"more\" degree changes its endings like an ordinary third-group adjective, but its neuter ends in *-ius*, not *-ior*: *liber longior* but *verbum longius*. The \"most\" degree changes like *bonus*: *longissimus, longissima, longissimum*."
+        },
+        {
+          "type": "sub",
+          "text": "Six irregular sets to memorize"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Plain",
+            "More",
+            "Most",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "bonus",
+              "**melior**",
+              "**optimus**",
+              "good"
+            ],
+            [
+              "malus",
+              "**peior**",
+              "**pessimus**",
+              "bad"
+            ],
+            [
+              "magnus",
+              "**maior**",
+              "**maximus**",
+              "big"
+            ],
+            [
+              "parvus",
+              "**minor**",
+              "**minimus**",
+              "small"
+            ],
+            [
+              "multus",
+              "**plus**",
+              "**plurimus**",
+              "much, many"
+            ],
+            [
+              "prope (near)",
+              "**propior**",
+              "**proximus**",
+              "near"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "All six already live in English: *optimal*, *pessimist*, *maximum*, *minimum*, *plus*, *proximity*, *major*, *minor*, *ameliorate*. If you're unsure, think of the English word."
+        }
+      ]
+    },
+    {
+      "title": "From adjective to adverb",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Adverbs of manner — \"quickly\", \"well\" — are made from adjectives by swapping the ending, much like English *-ly*. Just two rules, one for each adjective group."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Adjective",
+            "Adverb",
+            "Meaning",
+            "Rule"
+          ],
+          "rows": [
+            [
+              "longus",
+              "long**e**",
+              "at length, far",
+              "groups I-II → **-e**"
+            ],
+            [
+              "clarus",
+              "clar**e**",
+              "clearly",
+              "groups I-II → **-e**"
+            ],
+            [
+              "fortis",
+              "fort**iter**",
+              "bravely",
+              "group III → **-iter**"
+            ],
+            [
+              "celer",
+              "celer**iter**",
+              "quickly",
+              "group III → **-iter**"
+            ],
+            [
+              "felix",
+              "felic**iter**",
+              "happily",
+              "group III → **-iter**"
+            ],
+            [
+              "bonus",
+              "**bene**",
+              "well",
+              "irregular"
+            ],
+            [
+              "malus",
+              "**male**",
+              "badly",
+              "irregular"
+            ],
+            [
+              "multus",
+              "**multum**",
+              "much",
+              "irregular"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The \"more\" degree of an adverb is always the same as the neuter \"more\" form: *fortius* (\"more bravely\"), *clarius* (\"more clearly\"), *melius* (\"better\"). The \"most\" degree ends in *-issime*: *fortissime*, *clarissime*, and the irregular *optime*, *pessime*, *maxime*, *minime*."
+        },
+        {
+          "type": "kotak",
+          "title": "Words you already use every day",
+          "items": [
+            "*Minime* — which you have used for \"not at all\" since Unit 1 — actually means \"least\".",
+            "*Maxime* means \"most, especially\", and it gives us *maximal*.",
+            "*Optime!* was everyday Roman praise: \"excellent!\" Its opposite is *pessime*.",
+            "*Gratias maximas* — \"the greatest thanks\" — is the most polite way to say thank you in Latin."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "la": "fortis, forte",
+      "baca": "FOHR-tis",
+      "en": "strong, brave"
+    },
+    {
+      "la": "omnis, omne",
+      "baca": "OHM-nis",
+      "en": "every; plural: all"
+    },
+    {
+      "la": "gravis, grave",
+      "baca": "GRAH-wis",
+      "en": "heavy, serious"
+    },
+    {
+      "la": "levis, leve",
+      "baca": "LEH-wis",
+      "en": "light (in weight)"
+    },
+    {
+      "la": "brevis, breve",
+      "baca": "BREH-wis",
+      "en": "short, brief"
+    },
+    {
+      "la": "facilis, facile",
+      "baca": "FAH-kee-lis",
+      "en": "easy"
+    },
+    {
+      "la": "difficilis, difficile",
+      "baca": "dif-FEE-kee-lis",
+      "en": "difficult"
+    },
+    {
+      "la": "similis, simile",
+      "baca": "SEE-mee-lis",
+      "en": "similar, like"
+    },
+    {
+      "la": "dulcis, dulce",
+      "baca": "DOOL-kis",
+      "en": "sweet"
+    },
+    {
+      "la": "tristis, triste",
+      "baca": "TRIS-tis",
+      "en": "sad"
+    },
+    {
+      "la": "felix, felicis",
+      "baca": "FEH-liks",
+      "en": "lucky, happy"
+    },
+    {
+      "la": "ingens, ingentis",
+      "baca": "IN-gehns",
+      "en": "huge, enormous"
+    },
+    {
+      "la": "acer, acris, acre",
+      "baca": "AH-kehr",
+      "en": "sharp, keen"
+    },
+    {
+      "la": "celer, celeris",
+      "baca": "KEH-lehr",
+      "en": "fast"
+    },
+    {
+      "la": "melior, optimus",
+      "baca": "MEH-lee-ohr, OHP-tee-moos",
+      "en": "better, best"
+    },
+    {
+      "la": "peior, pessimus",
+      "baca": "PEH-yohr, PEHS-see-moos",
+      "en": "worse, worst"
+    },
+    {
+      "la": "maior, maximus",
+      "baca": "MAH-yohr, MAHK-see-moos",
+      "en": "bigger, biggest"
+    },
+    {
+      "la": "minor, minimus",
+      "baca": "MEE-nohr, MEE-nee-moos",
+      "en": "smaller, smallest"
+    },
+    {
+      "la": "plus, plurimus",
+      "baca": "PLOOS, PLOO-ree-moos",
+      "en": "more, most"
+    },
+    {
+      "la": "quam",
+      "baca": "KWAHM",
+      "en": "than; how"
+    },
+    {
+      "la": "valde",
+      "baca": "WAHL-deh",
+      "en": "very"
+    },
+    {
+      "la": "magis",
+      "baca": "MAH-gis",
+      "en": "more"
+    },
+    {
+      "la": "prope",
+      "baca": "PROH-peh",
+      "en": "near"
+    },
+    {
+      "la": "celeritas, celeritatis",
+      "baca": "keh-LEH-ree-tahs",
+      "en": "speed"
+    },
+    {
+      "la": "felicitas, felicitatis",
+      "baca": "feh-LEE-kee-tahs",
+      "en": "luck, happiness"
+    },
+    {
+      "la": "res",
+      "baca": "REHS",
+      "en": "thing, matter, affair"
+    },
+    {
+      "la": "acutus",
+      "baca": "ah-KOO-toos",
+      "en": "sharp, clever"
+    },
+    {
+      "la": "severus",
+      "baca": "seh-WEH-roos",
+      "en": "stern, strict"
+    },
+    {
+      "la": "bene, melius, optime",
+      "baca": "BEH-neh, MEH-lee-oos, OHP-tee-meh",
+      "en": "well, better, best"
+    },
+    {
+      "la": "fortiter, celeriter",
+      "baca": "FOHR-tee-tehr, keh-LEH-ree-tehr",
+      "en": "bravely, quickly"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Form the \"more\" degree (-ior) of these adjectives.",
+      "items": [
+        "longus",
+        "fortis",
+        "gravis",
+        "pulcher",
+        "felix",
+        "brevis"
+      ]
+    },
+    {
+      "prompt": "Form the \"most\" degree.",
+      "items": [
+        "longus",
+        "fortis",
+        "pulcher",
+        "facilis",
+        "bonus",
+        "magnus"
+      ]
+    },
+    {
+      "prompt": "Complete the comparisons.",
+      "items": [
+        "Marcus ____ est quam Sextus. (faster)",
+        "Roma ____ urbs est. (biggest)",
+        "Liber tuus ____ est quam liber meus. (better)",
+        "Fabula tua ____ est. (shortest)",
+        "Iulia ____ est quam Marcus. (smaller)",
+        "Magister ____ est. (strictest)"
+      ]
+    },
+    {
+      "prompt": "Turn the adjectives into adverbs.",
+      "items": [
+        "clarus",
+        "fortis",
+        "celer",
+        "bonus",
+        "malus",
+        "felix"
+      ]
+    }
+  ],
+  "answers": [
+    "longior — fortior — gravior — pulchrior — felicior — brevior",
+    "longissimus — fortissimus — pulcherrimus — facillimus — optimus — maximus",
+    "celerior — maxima — melior — brevissima — minor — severissimus",
+    "clare — fortiter — celeriter — bene — male — feliciter"
+  ]
+}

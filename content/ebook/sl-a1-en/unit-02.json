@@ -1,0 +1,582 @@
+{
+  "title": "Where are you from?",
+  "title_target": "Od kod si?",
+  "goal": "Say where you're from, where you live, and which languages you speak — and see for the first time that place names CHANGE FORM after a preposition, and that English \"where\" covers three separate Slovenian question words.",
+  "bekal": [
+    "ask and answer *Od kod si?* and *Kje živiš?*",
+    "name a country, its people, and its language — three different words from one root",
+    "recognize *iz + rodilnik* and *v + mestnik* as memorized chunks, before the rules are taken apart in units 6 and 8"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Na hodniku pred predavalnico",
+      "intro": "In a university hallway, before a lecture starts. Budi has been in Ljubljana for just two weeks; Luka is a second-year student.",
+      "lines": [
+        {
+          "speaker": "Luka:",
+          "text": "Živjo! Od kod si?",
+          "id": "Hi! Where are you from?",
+          "literal": "hi! from where you-are?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Iz Indonezije sem. Iz Jakarte.",
+          "id": "I'm from Indonesia. From Jakarta.",
+          "literal": "from Indonesia I-am. from Jakarta."
+        },
+        {
+          "speaker": "Luka:",
+          "text": "Aha! In kje živiš zdaj?",
+          "id": "I see! And where do you live now?",
+          "literal": "aha! and where you-live now?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zdaj živim v Ljubljani. Pa ti?",
+          "id": "Now I live in Ljubljana. And you?",
+          "literal": "now I-live in Ljubljana. and you?"
+        },
+        {
+          "speaker": "Luka:",
+          "text": "Jaz sem iz Maribora, zdaj pa študiram tukaj.",
+          "id": "I'm from Maribor, but now I study here.",
+          "literal": "I am from Maribor, now but I-study here."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kateri jezik govoriš doma?",
+          "id": "Which language do you speak at home?",
+          "literal": "which language you-speak at-home?"
+        },
+        {
+          "speaker": "Luka:",
+          "text": "Slovensko, seveda. In malo nemško.",
+          "id": "Slovenian, of course. And a little German.",
+          "literal": "Slovenian-ly, of-course. and little German-ly."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jaz govorim indonezijsko in angleško.",
+          "id": "I speak Indonesian and English.",
+          "literal": "I speak Indonesian-ly and English-ly."
+        },
+        {
+          "speaker": "Luka:",
+          "text": "Slovensko pa? Malo?",
+          "id": "And Slovenian? A little?",
+          "literal": "Slovenian-ly but? little?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zelo malo. Šele začenjam.",
+          "id": "Very little. I'm only just starting.",
+          "literal": "very little. only-just I-start."
+        },
+        {
+          "speaker": "Luka:",
+          "text": "Odlično! Vsak začetek je težak.",
+          "id": "Great! Every beginning is hard.",
+          "literal": "excellent! every beginning is hard."
+        }
+      ],
+      "notes": [
+        "**Three question words for one \"where\".** English uses \"where\" for everything and just tacks on extras: *where*, *where to*, *where from*. Slovenian has three separate whole words: **kje** (where — location), **kam** (where to), **od kod** (where from). Picking the wrong one isn't just a bit sloppy — the sentence ends up asking something else.",
+        "**Place names change form, and it's obligatory.** Look closely: *Indonezija* becomes *iz Indonezije*, *Jakarta* becomes *iz Jakarte*, *Maribor* becomes *iz Maribora*, and *Ljubljana* becomes *v Ljubljani*. This isn't style, it's **sklon** (case) — a system of endings that does much of the work English leaves to prepositions and word order. For now, learn each pair as one chunk; the rules get unpacked slowly from unit 6 on.",
+        "**Languages are said with an adverb, not a noun.** *Govorim slovensko* is literally \"I speak Slovenian-ly\". The noun exists — *slovenščina* — but it's used for other things: *Učim se slovenščino* (\"I'm learning Slovenian\"). With *govoriti*, always use the *-o* form: *slovensko, angleško, nemško, indonezijsko*.",
+        "**Pa — the little word that adapts.** In this one dialogue *pa* turns up three times with three flavors: *Pa ti?* = \"and you?\", *zdaj pa študiram* = \"but now I study\", *Slovensko pa?* = \"and what about Slovenian?\". It never stands at the start of a sentence and has no fixed translation — it signals that the conversation is turning. Get a feel for it first; don't memorize a meaning.",
+        "**Seveda.** It means \"of course\" and is used exactly like that. It's one of the words you'll hear most in Slovenia; its partners *žal* (unfortunately) and *mogoče* (maybe) follow in unit 19."
+      ],
+      "grammars": [
+        {
+          "title": "Present-tense verbs — nine forms, one pattern",
+          "body": [
+            "Slovenian verbs change according to who is doing the action, like other European languages — the difference is that there are nine slots, not six, because the dual lane joins in. Here is *govoriti* (to speak), whose pattern holds for hundreds of other verbs."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "govoriti",
+              "Say it",
+              "meaning"
+            ],
+            "rows": [
+              [
+                "jaz",
+                "**govorim**",
+                "goh-VOH-reem",
+                "I speak"
+              ],
+              [
+                "ti",
+                "**govoriš**",
+                "goh-VOH-reesh",
+                "you speak"
+              ],
+              [
+                "on / ona",
+                "**govori**",
+                "goh-VOH-ree",
+                "he / she speaks"
+              ],
+              [
+                "midva / midve",
+                "**govoriva**",
+                "goh-VOH-ree-vah",
+                "we two speak"
+              ],
+              [
+                "vidva / vidve",
+                "**govorita**",
+                "goh-VOH-ree-tah",
+                "you two speak"
+              ],
+              [
+                "onadva / onidve",
+                "**govorita**",
+                "goh-VOH-ree-tah",
+                "they two speak"
+              ],
+              [
+                "mi / me",
+                "**govorimo**",
+                "goh-voh-REE-moh",
+                "we speak (3+)"
+              ],
+              [
+                "vi / ve",
+                "**govorite**",
+                "goh-voh-REE-tay",
+                "you speak (3+)"
+              ],
+              [
+                "mi / me",
+                "**govorimo**",
+                "goh-voh-REE-moh",
+                "we speak (3+)"
+              ],
+              [
+                "vi / ve",
+                "**govorite**",
+                "goh-voh-REE-tay",
+                "you speak (3+)"
+              ],
+              [
+                "oni / one",
+                "**govorijo**",
+                "goh-voh-REE-yoh",
+                "they speak (3+)"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that the endings — *-m, -š, -∅, -va, -ta, -ta, -mo, -te, -jo* — are the same for almost every Slovenian verb. Only the vowel in front changes: *govor**i**m* but *del**a**m* (I work) and *ber**e**m* (I read).",
+            "Because the ending already tells you who's acting, **the pronoun can be dropped**: *Govorim slovensko* can only mean \"I speak Slovenian\". So drop it; saying *jaz* over and over sounds like you're defending yourself."
+          ]
+        },
+        {
+          "title": "Iz + rodilnik: saying where you're from",
+          "body": [
+            "The preposition *iz* (from) makes the next noun change form. If the place name ends in **-a**, swap it for **-e**; if it ends in a consonant, add **-a**. Those two lines already cover most country and city names."
+          ],
+          "table": {
+            "head": [
+              "Basic form",
+              "After iz",
+              "Example sentence"
+            ],
+            "rows": [
+              [
+                "**Indonezij*a***",
+                "iz Indonezij**e**",
+                "*Sem iz Indonezije.* — I'm from Indonesia."
+              ],
+              [
+                "**Slovenij*a***",
+                "iz Slovenij**e**",
+                "*Maja je iz Slovenije.*"
+              ],
+              [
+                "**Jakart*a***",
+                "iz Jakart**e**",
+                "*Budi je iz Jakarte.*"
+              ],
+              [
+                "**Ljubljan*a***",
+                "iz Ljubljan**e**",
+                "*Luka ni iz Ljubljane.*"
+              ],
+              [
+                "**Maribor**",
+                "iz Maribor**a**",
+                "*Sem iz Maribora.*"
+              ],
+              [
+                "**Bali**",
+                "z Balij**a***",
+                "*Sva z Balija.*"
+              ],
+              [
+                "**Nemčij*a***",
+                "iz Nemčij**e**",
+                "*Ni iz Nemčije.*"
+              ],
+              [
+                "**Hrvašk*a***",
+                "iz Hrvašk**e**",
+                "*Ana je iz Hrvaške.*"
+              ]
+            ]
+          },
+          "after": [
+            "The *Bali* row shows one small thing that often confuses people: *iz* becomes **z** before certain sounds, purely to make it easier to say. The full rule is in unit 18; for now, just follow what's in the table.",
+            "This *-e* form is called the **rodilnik** (Genitive) — the second of six cases. It isn't only used after *iz*: it also shows possession (*hiša moje mame* = my mom's house) and appears after numbers from five up (unit 5). You'll meet it constantly."
+          ]
+        },
+        {
+          "title": "Kje živiš? — v + mestnik",
+          "body": [
+            "To say where you live, Slovenian uses *v* (in) or *na* (on/at), and the place name changes again — this time into a form called the **mestnik** (Locative)."
+          ],
+          "table": {
+            "head": [
+              "Question",
+              "Answer",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*Kje živiš?*",
+                "**V Ljubljani.**",
+                "In Ljubljana."
+              ],
+              [
+                "*Kje živiš?*",
+                "**V Mariboru.**",
+                "In Maribor."
+              ],
+              [
+                "*Kje živiš?*",
+                "**V Jakarti.**",
+                "In Jakarta."
+              ],
+              [
+                "*Kje živiš?*",
+                "**V Indoneziji.**",
+                "In Indonesia."
+              ],
+              [
+                "*Kje živiš?*",
+                "**Na Baliju.**",
+                "On Bali."
+              ],
+              [
+                "*Kje študiraš?*",
+                "**Na univerzi.**",
+                "At the university."
+              ]
+            ]
+          },
+          "after": [
+            "The sound pattern is easy to remember: the **-i** ending for feminine words (*Ljubljan**a*** → *v Ljubljan**i***), and **-u** for masculine words (*Maribor* → *v Maribor**u***).",
+            "Why *v Ljubljani* but *na Baliju*? Because islands, mountains, and squares take *na*, while cities and countries take *v*. Part of the choice makes sense, part of it is just habit — and the full list is waiting in unit 8."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Countries, peoples, and languages",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "From one root, Slovenian grows four words: the country, the word for a man, the word for a woman, and the language form. English gets by with fewer — \"a German speaks German in Germany\" — so this part really does need memorizing."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Country",
+            "Man",
+            "Woman",
+            "Language"
+          ],
+          "rows": [
+            [
+              "**Slovenija**",
+              "Slovenec",
+              "Slovenka",
+              "slovensko"
+            ],
+            [
+              "**Indonezija**",
+              "Indonezijec",
+              "Indonezijka",
+              "indonezijsko"
+            ],
+            [
+              "**Anglija**",
+              "Anglež",
+              "Angležinja",
+              "angleško"
+            ],
+            [
+              "**Nemčija**",
+              "Nemec",
+              "Nemka",
+              "nemško"
+            ],
+            [
+              "**Italija**",
+              "Italijan",
+              "Italijanka",
+              "italijansko"
+            ],
+            [
+              "**Hrvaška**",
+              "Hrvat",
+              "Hrvatica",
+              "hrvaško"
+            ],
+            [
+              "**Avstrija**",
+              "Avstrijec",
+              "Avstrijka",
+              "nemško"
+            ],
+            [
+              "**Madžarska**",
+              "Madžar",
+              "Madžarka",
+              "madžarsko"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that country names take a **capital letter**, while the language form is **lowercase**: *Slovenija* but *slovensko*. Words for people are capitalized too: *Slovenec*, *Indonezijka*."
+        },
+        {
+          "type": "p",
+          "text": "Four country names in this table end in *-ska* or *-ška* — *Hrvaška, Madžarska, Kitajska, Japonska*. That form is really an adjective frozen into a name, and it changes like an adjective: *iz Hrvaške*, *na Hrvaškem* (in Croatia). For now, just memorize the *iz* form."
+        },
+        {
+          "type": "kotak",
+          "title": "A neat little trap",
+          "items": [
+            "People from **Avstrija** speak **nemško**, not \"avstrijsko\". Language and nationality don't always pair up — just like Americans speaking *angleško*.",
+            "And be careful to tell **Avstrija** (Austria) from **Avstralija** (Australia). The two are neighbors in the dictionary, not on the map, and thousands of learners mix them up every year."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kje, kam, od kod — three roads for one \"where\"",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Slovenian sorts place questions by **direction of movement**: staying put, heading there, or coming from there. Each choice drags along its own prepositions and its own noun form."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Meaning",
+            "Preposition",
+            "Sample answer"
+          ],
+          "rows": [
+            [
+              "**Kje?**",
+              "Where? (at rest)",
+              "*v*, *na*, *pri*",
+              "*V Ljubljani.* — In Ljubljana."
+            ],
+            [
+              "**Kam?**",
+              "Where to? (heading)",
+              "*v*, *na*, *k*",
+              "*V Ljubljano.* — To Ljubljana."
+            ],
+            [
+              "**Od kod?**",
+              "Where from? (coming)",
+              "*iz*, *z/s*, *od*",
+              "*Iz Ljubljane.* — From Ljubljana."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Watch one city name pass through those three rows: *Ljubljan**i*** → *Ljubljan**o*** → *Ljubljan**e***. Same noun, three different endings. This is the real reason Slovenian has six cases: **the preposition alone isn't enough to make the meaning clear**, so the noun pitches in."
+        },
+        {
+          "type": "p",
+          "text": "The good news is that this sorting is logical and consistent. After ten uses, your hand picks the ending on its own without you thinking — and from then on, Slovenian stops feeling like a table."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Kje si?*",
+              "kyay see",
+              "Where are you?"
+            ],
+            [
+              "*Kam greš?*",
+              "kahm graysh",
+              "Where are you going?"
+            ],
+            [
+              "*Od kod prihajaš?*",
+              "oht-KAWT pree-HAH-yahsh",
+              "Where are you coming from?"
+            ],
+            [
+              "*Doma sem.*",
+              "DAW-mah suhm",
+              "I'm at home."
+            ],
+            [
+              "*Grem domov.*",
+              "graym doh-MAWOO",
+              "I'm going home."
+            ],
+            [
+              "*Prihajam od doma.*",
+              "pree-HAH-yahm oht DAW-mah",
+              "I'm coming from home."
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "od kod",
+      "baca": "oht-KAWT",
+      "en": "where from"
+    },
+    {
+      "sl": "kje",
+      "baca": "kyay",
+      "en": "where (location)"
+    },
+    {
+      "sl": "kam",
+      "baca": "kahm",
+      "en": "where to"
+    },
+    {
+      "sl": "iz",
+      "baca": "eez",
+      "en": "from (out of)"
+    },
+    {
+      "sl": "v",
+      "baca": "oo",
+      "en": "in; into"
+    },
+    {
+      "sl": "živeti",
+      "baca": "zhee-VAY-tee",
+      "en": "to live"
+    },
+    {
+      "sl": "živim",
+      "baca": "ZHEE-veem",
+      "en": "I live"
+    },
+    {
+      "sl": "govoriti",
+      "baca": "goh-voh-REE-tee",
+      "en": "to speak"
+    },
+    {
+      "sl": "govorim",
+      "baca": "goh-VOH-reem",
+      "en": "I speak"
+    },
+    {
+      "sl": "študirati",
+      "baca": "shtoo-DEE-rah-tee",
+      "en": "to study (at university)"
+    },
+    {
+      "sl": "jezik",
+      "baca": "YAY-zeek",
+      "en": "language; tongue"
+    },
+    {
+      "sl": "kateri",
+      "baca": "kah-TAY-ree",
+      "en": "which"
+    },
+    {
+      "sl": "zdaj",
+      "baca": "zdai",
+      "en": "now"
+    },
+    {
+      "sl": "tukaj",
+      "baca": "TOO-kai",
+      "en": "here"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Slovenian.",
+      "items": [
+        "Where are you from?",
+        "I'm from Indonesia.",
+        "Now I live in Ljubljana.",
+        "I speak Indonesian and English.",
+        "Maja is from Maribor.",
+        "I don't speak German."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right form after iz.",
+      "items": [
+        "Sem iz ____. (Slovenija)",
+        "Ana je iz ____. (Jakarta)",
+        "Luka je iz ____. (Maribor)",
+        "Nisem iz ____. (Nemčija)",
+        "Onadva sta iz ____. (Hrvaška)",
+        "Ste iz ____? (Indonezija)"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right form of govoriti.",
+      "items": [
+        "Jaz ____ slovensko.",
+        "Ti ____ angleško?",
+        "Maja ____ nemško.",
+        "Midva ____ indonezijsko.",
+        "Mi ____ italijansko.",
+        "Oni ____ hrvaško."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "si / kod / od / ?",
+        "Indonezije / sem / iz",
+        "živiš / kje / ?",
+        "v / živim / Ljubljani",
+        "govorim / nemško / ne"
+      ]
+    }
+  ],
+  "answers": [
+    "Od kod si? — Iz Indonezije sem. — Zdaj živim v Ljubljani. — Govorim indonezijsko in angleško. — Maja je iz Maribora. — Ne govorim nemško.",
+    "Slovenije — Jakarte — Maribora — Nemčije — Hrvaške — Indonezije",
+    "govorim — govoriš — govori — govoriva — govorimo — govorijo",
+    "Od kod si? — Iz Indonezije sem. — Kje živiš? — Živim v Ljubljani. — Ne govorim nemško."
+  ]
+}

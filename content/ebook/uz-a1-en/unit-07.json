@@ -1,0 +1,540 @@
+{
+  "title": "The ending -ni: the specific object",
+  "title_target": "Tushum kelishigi: -ni",
+  "goal": "Recognize when an object needs *-ni* and when it stands bare — a difference English shows with *the* versus *a*, and Uzbek shows with an ending.",
+  "bekal": [
+    "tell *kitob oʻqiyman* from *kitobni oʻqiyman*",
+    "put the required *-ni* on names, pronouns, and things already mentioned",
+    "use *-ni* together with possessive endings: *kitobimni*, *uyingizni*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Kitobni topa olmayapman",
+      "intro": "In the university library. Budi is rummaging through his bag in a panic.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Nilufar, kitobimni koʻrmadingizmi?",
+          "id": "Nilufar, have you seen my book?",
+          "literal": "Nilufar, book-my-the see-not-you-?"
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Qaysi kitobni? Lugʻatnimi?",
+          "id": "Which book? The dictionary?",
+          "literal": "which book-the? dictionary-the-?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ha, lugʻatni. Ertalab stolga qoʻydim.",
+          "id": "Yes, the dictionary. I put it on the table this morning.",
+          "literal": "yes, dictionary-the. morning table-to put-I."
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Men bir lugʻat koʻrdim, lekin sizniki emas edi.",
+          "id": "I saw a dictionary, but it wasn't yours.",
+          "literal": "I one dictionary saw-I, but yours not was."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Farqi bor: mening lugʻatim eski va qizil.",
+          "id": "There's a difference: my dictionary is old and red.",
+          "literal": "difference-its there-is: my dictionary-my old and red."
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Unda anavi javonni koʻring. Men Anvarni chaqiraman.",
+          "id": "Then look at the shelf over there. I'll call Anvar.",
+          "literal": "that-over-there shelf-the look. I Anvar-the call-I."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Anvar kim?",
+          "id": "Who's Anvar?",
+          "literal": "Anvar who?"
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Kutubxonachi. U hamma kitobni biladi.",
+          "id": "The librarian. He knows every book.",
+          "literal": "library-person. he all book-the knows."
+        },
+        {
+          "speaker": "Anvar:",
+          "text": "Qizil lugʻatmi? Uni men oldim — muqovasi yirtiq edi.",
+          "id": "A red dictionary? I took it — its cover is torn.",
+          "literal": "red dictionary-? it-the I took-I — cover-its torn is."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Voy, rahmat! Sizni butun kun qidirdim!",
+          "id": "Oh, thank you! I've been looking for you all day!",
+          "literal": "oh, thanks! you-the whole day searched-I!"
+        },
+        {
+          "speaker": "Anvar:",
+          "text": "Arzimaydi. Endi kitoblarni stolga qoʻymang!",
+          "id": "You're welcome. Next time, don't leave books on the table!",
+          "literal": "not-worth-it. now books-the table-to don't-put!"
+        }
+      ],
+      "notes": [
+        "**Lugʻatni, not lugʻat.** In the third line Budi uses *-ni* because both of them know which dictionary is meant — it was just mentioned. In the fourth line Nilufar uses bare *lugʻat* because what she saw was *a* dictionary, not necessarily *the* one.",
+        "**Names and pronouns always take -ni.** *Anvarni chaqiraman* (I'll call Anvar), *Sizni qidirdim* (I was looking for you). A person is never \"just any\" — you always call a specific person.",
+        "**Uni = \"it/him/her\" as an object.** The *-ni* form of *u*. The full set: *meni* (me), *seni*, *uni*, *bizni*, *sizni*, *ularni*. Notice that *men* and *sen* shorten to *me-* and *se-*.",
+        "**Edi marks a past state.** *Sizniki emas edi* = \"it wasn't yours (back then)\". It's the past partner of the verbless sentences from unit 1, and it's explained in full in unit 11."
+      ],
+      "grammars": [
+        {
+          "title": "When to use -ni, and when not",
+          "body": [
+            "English shows this with *the* and *a*. Uzbek has no articles, so it marks the specific object with an ending instead. The rule comes down to one question: **does the listener know exactly which thing I mean?**"
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Meaning",
+              "Why"
+            ],
+            "rows": [
+              [
+                "*Men kitob oʻqiyman.*",
+                "I read books.",
+                "any book — an activity, not a particular thing"
+              ],
+              [
+                "*Men kitobni oʻqiyman.*",
+                "I'm reading the book.",
+                "the book we've already talked about"
+              ],
+              [
+                "*Choy ichaman.*",
+                "I drink tea.",
+                "tea in general"
+              ],
+              [
+                "*Choyni iching!*",
+                "Drink your tea!",
+                "the tea in front of you"
+              ],
+              [
+                "*Anvarni chaqir.*",
+                "Call Anvar.",
+                "a person's name — always specific"
+              ],
+              [
+                "*Kitobimni topdim.*",
+                "I found my book.",
+                "it has an owner → definitely specific"
+              ]
+            ]
+          },
+          "after": [
+            "**Four things always take -ni:** proper names, personal pronouns, nouns with a possessive ending, and nouns pointed out with *bu/shu/u*. If any of these is there, don't hesitate — add *-ni*.",
+            "**What doesn't take -ni** is a non-specific object standing right before the verb and almost merging with it: *kitob oʻqimoq* (book-reading), *choy ichmoq* (tea-drinking), *ish qilmoq* (to work). English does something similar in \"book-reading\" or \"to go shopping\": one activity, not one particular object.",
+            "⚠️ Once the object **moves away from the spot right before the verb**, it almost always needs *-ni*: *Kitobni men oʻqiyman* (That book — I'm the one reading it)."
+          ]
+        },
+        {
+          "title": "Ending order: plural → possessive → object",
+          "body": [
+            "Uzbek endings line up in a fixed order and never overtake each other. Once you know the order, you can take apart a word of any length."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Breakdown",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*kitobni*",
+                "kitob + ni",
+                "the book (object)"
+              ],
+              [
+                "*kitobimni*",
+                "kitob + im + ni",
+                "my book (object)"
+              ],
+              [
+                "*kitoblarni*",
+                "kitob + lar + ni",
+                "the books"
+              ],
+              [
+                "*kitoblarimni*",
+                "kitob + lar + im + ni",
+                "my books"
+              ],
+              [
+                "*doʻstingizni*",
+                "doʻst + ingiz + ni",
+                "your friend"
+              ],
+              [
+                "*uylarimizni*",
+                "uy + lar + imiz + ni",
+                "our houses"
+              ]
+            ]
+          },
+          "after": [
+            "The order **never** changes: base word → *-lar* → possessive ending → case ending. The same rule applies to *-da*, *-ga*, and *-dan*, which you have learned or will learn.",
+            "The most helpful practice isn't memorizing tables but **taking apart** long words you come across. Look at *doʻstlarimizda* and split it: *doʻst-lar-imiz-da* = \"at our friends'\". Five seconds, and the word stops being scary."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Colors",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "They're all adjectives, so they all stand in front of the noun and never change form."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "Meaning",
+            "Oʻzbekcha",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**qizil**",
+              "qi-ZIL",
+              "red",
+              "**yashil**",
+              "yå-SHIL",
+              "green"
+            ],
+            [
+              "**koʻk**",
+              "kok",
+              "blue",
+              "**sariq**",
+              "så-RIQ",
+              "yellow"
+            ],
+            [
+              "**oq**",
+              "åq",
+              "white",
+              "**qora**",
+              "qå-RÅ",
+              "black"
+            ],
+            [
+              "**jigarrang**",
+              "ji-går-RANG",
+              "brown",
+              "**kulrang**",
+              "kul-RANG",
+              "gray"
+            ],
+            [
+              "**pushti**",
+              "push-TI",
+              "pink",
+              "**siyoh**",
+              "si-YÅH",
+              "dark blue, ink"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Koʻk* means **blue**, but also **sky** and **light green** for plants: *koʻk choy* is green tea, not blue tea. Old Turkic didn't separate blue from green, and traces of that habit are still visible here."
+        },
+        {
+          "type": "p",
+          "text": "*Jigarrang* literally means \"liver-colored\" (*jigar* = liver, a Persian word), and *kulrang* means \"ash-colored\". The ending *-rang* comes from Persian and means \"color\"."
+        }
+      ]
+    },
+    {
+      "title": "All the question words",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Ten question words cover almost all A1 conversation. Notice that they can all take endings, just like ordinary nouns: *kimga* (to whom), *nimada* (in what), *qayerdan* (from where)."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "Meaning",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "**kim**",
+              "kim",
+              "who",
+              "*Bu kim?*"
+            ],
+            [
+              "**nima**",
+              "NI-må",
+              "what",
+              "*Bu nima?*"
+            ],
+            [
+              "**qayer**",
+              "qå-YER",
+              "where (place)",
+              "*Qayerda yashaysiz?*"
+            ],
+            [
+              "**qachon**",
+              "qå-CHÅN",
+              "when",
+              "*Qachon kelasiz?*"
+            ],
+            [
+              "**nega**",
+              "ne-GÅ",
+              "why",
+              "*Nega bormaysiz?*"
+            ],
+            [
+              "**qanday**",
+              "QÅN-dåy",
+              "how",
+              "*Qanday oʻqiysiz?*"
+            ],
+            [
+              "**qanaqa**",
+              "qå-NÅ-qå",
+              "what kind of",
+              "*Qanaqa kitob?*"
+            ],
+            [
+              "**qaysi**",
+              "QÅY-si",
+              "which",
+              "*Qaysi kitobni?*"
+            ],
+            [
+              "**nechta**",
+              "nech-TÅ",
+              "how many (items)",
+              "*Nechta kitob?*"
+            ],
+            [
+              "**qancha**",
+              "QÅN-chå",
+              "how much",
+              "*Qancha turadi?*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Uzbek question words **don't move anything**. A question is built exactly like a statement, with the verb still at the end: *Siz qayerda ishlaysiz?* Compare English, which has to flip the word order."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uz": "topmoq",
+      "baca": "tåp-MÅQ",
+      "en": "to find"
+    },
+    {
+      "uz": "qidirmoq",
+      "baca": "qi-dir-MÅQ",
+      "en": "to look for"
+    },
+    {
+      "uz": "qoʻymoq",
+      "baca": "qoy-MÅQ",
+      "en": "to put"
+    },
+    {
+      "uz": "chaqirmoq",
+      "baca": "chå-qir-MÅQ",
+      "en": "to call"
+    },
+    {
+      "uz": "muqova",
+      "baca": "mu-qå-VÅ",
+      "en": "cover"
+    },
+    {
+      "uz": "farq",
+      "baca": "fårq",
+      "en": "difference"
+    },
+    {
+      "uz": "butun",
+      "baca": "bu-TUN",
+      "en": "whole, entire"
+    },
+    {
+      "uz": "endi",
+      "baca": "en-DI",
+      "en": "now; next time"
+    },
+    {
+      "uz": "unda",
+      "baca": "un-DÅ",
+      "en": "in that case, then"
+    },
+    {
+      "uz": "qaysi",
+      "baca": "QÅY-si",
+      "en": "which"
+    },
+    {
+      "uz": "qanaqa",
+      "baca": "qå-NÅ-qå",
+      "en": "what kind of"
+    },
+    {
+      "uz": "qachon",
+      "baca": "qå-CHÅN",
+      "en": "when"
+    },
+    {
+      "uz": "nega",
+      "baca": "ne-GÅ",
+      "en": "why"
+    },
+    {
+      "uz": "qanday",
+      "baca": "QÅN-dåy",
+      "en": "how"
+    },
+    {
+      "uz": "qizil",
+      "baca": "qi-ZIL",
+      "en": "red"
+    },
+    {
+      "uz": "koʻk",
+      "baca": "kok",
+      "en": "blue; green (leaves)"
+    },
+    {
+      "uz": "yashil",
+      "baca": "yå-SHIL",
+      "en": "green"
+    },
+    {
+      "uz": "sariq",
+      "baca": "så-RIQ",
+      "en": "yellow"
+    },
+    {
+      "uz": "oq",
+      "baca": "åq",
+      "en": "white"
+    },
+    {
+      "uz": "qora",
+      "baca": "qå-RÅ",
+      "en": "black"
+    },
+    {
+      "uz": "meni",
+      "baca": "me-NI",
+      "en": "me (object)"
+    },
+    {
+      "uz": "sizni",
+      "baca": "siz-NI",
+      "en": "you (object)"
+    },
+    {
+      "uz": "uni",
+      "baca": "u-NI",
+      "en": "him, her, it (object)"
+    },
+    {
+      "uz": "edi",
+      "baca": "e-DI",
+      "en": "was (past)"
+    },
+    {
+      "uz": "arzimaydi",
+      "baca": "år-zi-MÅY-di",
+      "en": "you're welcome"
+    },
+    {
+      "uz": "yirtiq",
+      "baca": "yir-TIQ",
+      "en": "torn"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Add -ni if needed; if not, write the noun as it is.",
+      "items": [
+        "Men ____ oʻqiyman. (kitob — any book)",
+        "Men ____ oʻqiyman. (kitob — the book just mentioned)",
+        "____ chaqiring! (Anvar)",
+        "Har kuni ____ ichaman. (choy — tea in general)",
+        "____ topdim. (kalitim)",
+        "Biz ____ kutamiz. (siz)"
+      ]
+    },
+    {
+      "prompt": "Translate into Uzbek.",
+      "items": [
+        "I'm looking for my book.",
+        "Did you see the dictionary?",
+        "Call Nilufar!",
+        "I'm waiting for you.",
+        "He knows every book.",
+        "Don't put the books on the table."
+      ]
+    },
+    {
+      "prompt": "Break these long words into their parts, then translate. Example: kitobimni = kitob + im + ni = my book.",
+      "items": [
+        "doʻstlarimni",
+        "uyingizni",
+        "kitoblarni",
+        "xonamizda",
+        "oilangizni"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "qidirdim / men / sizni",
+        "koʻrmadingizmi / kitobimni / ?",
+        "biladi / kitobni / u / hamma",
+        "oʻqiyman / kitob / men / har kuni",
+        "chaqiraman / Anvarni / men"
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 5. Translate into Uzbek without looking back at the unit.",
+      "items": [
+        "How much is this?",
+        "Two kilos of apples, please.",
+        "Can it be cheaper?",
+        "How much is it all together?",
+        "Is there any change?"
+      ]
+    }
+  ],
+  "answers": [
+    "kitob — kitobni — Anvarni — choy — Kalitimni — sizni",
+    "Men kitobimni qidiraman. — Siz lugʻatni koʻrdingizmi? — Nilufarni chaqiring! — Men sizni kutaman. — U hamma kitobni biladi. — Kitoblarni stolga qoʻymang.",
+    "doʻst + lar + im + ni = my friends — uy + ingiz + ni = your house — kitob + lar + ni = the books — xona + miz + da = in our room — oila + ngiz + ni = your family",
+    "Men sizni qidirdim. — Kitobimni koʻrmadingizmi? — U hamma kitobni biladi. — Men har kuni kitob oʻqiyman. — Men Anvarni chaqiraman.",
+    "Bu qancha turadi? — Ikki kilo olma, iltimos. — Arzonroq boʻladimi? — Hammasi qancha boʻldi? — Qaytimi bormi?"
+  ]
+}

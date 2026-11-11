@@ -1,0 +1,564 @@
+{
+  "title": "Body and health: pain that has a \"place\"",
+  "title_target": "Tana va salomatlik: boshim ogʻriyapti",
+  "goal": "Name parts of the body, complain of pain the typically Uzbek way, and look after yourself at the pharmacy or the doctor's office.",
+  "bekal": [
+    "building *boshim ogʻriyapti* — \"my head is hurting\"",
+    "using *boʻlmoq* for a change of state: *kasal boʻldim*",
+    "buying medicine and explaining your symptoms to a doctor"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Nima boʻldi?",
+      "intro": "Budi has missed class for two days. Nilufar comes to the dorm with a bag of fruit.",
+      "lines": [
+        {
+          "speaker": "Nilufar:",
+          "text": "Budi, nima boʻldi? Ikki kundan beri koʻrinmaysiz.",
+          "id": "Budi, what happened? I haven't seen you for two days.",
+          "literal": "Budi, what became? two day-from since appear-not-you."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kasal boʻldim. Boshim ogʻriyapti.",
+          "id": "I got sick. I have a headache.",
+          "literal": "sick became-I. head-my hurting."
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Isitmangiz bormi?",
+          "id": "Do you have a fever?",
+          "literal": "fever-your exists-?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kecha bor edi. Bugun tomogʻim ham ogʻriyapti.",
+          "id": "I did yesterday. Today my throat hurts too.",
+          "literal": "yesterday exists was. today throat-my also hurting."
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Dori ichdingizmi?",
+          "id": "Have you taken any medicine?",
+          "literal": "medicine drank-you-?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Yoʻq, dorixonaga borolmadim. Kuchim yoʻq edi.",
+          "id": "No, I couldn't get to the pharmacy. I had no energy.",
+          "literal": "no, pharmacy-to go-could-not-I. strength-my not-exist was."
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Men olib kelaman. Shifokorga bordingizmi?",
+          "id": "I'll get it for you. Have you been to the doctor?",
+          "literal": "I take come-I. doctor-to went-you-?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hali yoʻq. Ertaga borsam boʻladimi deb oʻylayapman.",
+          "id": "Not yet. I'm thinking of going tomorrow.",
+          "literal": "still no. tomorrow go-if-I becomes-? saying thinking-I."
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Kechiktirmang! Issiq choy iching, koʻp uxlang.",
+          "id": "Don't put it off! Drink hot tea and get plenty of sleep.",
+          "literal": "don't-delay! hot tea drink, much sleep."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Rahmat, opa. Sizsiz nima qilardim!",
+          "id": "Thank you. What would I do without you!",
+          "literal": "thanks, elder-sister. you-without what would-do-I!"
+        },
+        {
+          "speaker": "Nilufar:",
+          "text": "Tezroq tuzaling. Ertaga yana kelaman.",
+          "id": "Get well soon. I'll come again tomorrow.",
+          "literal": "quicker recover. tomorrow again come-I."
+        }
+      ],
+      "notes": [
+        "**Boshim ogʻriyapti — it's your head that hurts, not you.** Uzbek places pain **in the body part**, and that body part is the subject of the sentence. Literally \"my head is hurting\". English does something similar with \"my head hurts\", but Uzbek uses this pattern for every ache — never \"I have a headache\".",
+        "**Kasal boʻldim = \"I fell ill\".** *Boʻlmoq* marks a **change** of state: *kasal boʻldim* (became sick), *charchadim* (got tired), *katta boʻldi* (grew up). Whereas *kasalman* means \"I'm sick\" without saying when it started.",
+        "**Ikki kundan beri = \"for two days now\".** *-dan beri* means \"since\", and it pairs with the ongoing form: *Ikki kundan beri yomgʻir yogʻyapti* (it's been raining for two days).",
+        "**Sizsiz = \"without you\".** The *-siz* ending from unit 13 attached to a pronoun. Note that it looks just like the predicate ending *-siz* (you are) — only its position and meaning in the sentence tell them apart."
+      ],
+      "grammars": [
+        {
+          "title": "Complaining of pain: three patterns",
+          "body": [
+            "All three are used interchangeably in everyday conversation. The first is the most common."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Example",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "**[body part]+possessive ogʻriyapti**",
+                "*Boshim ogʻriyapti.*",
+                "my head is hurting"
+              ],
+              [
+                "",
+                "*Qornim ogʻriyapti.*",
+                "my stomach is hurting"
+              ],
+              [
+                "",
+                "*Tishim ogʻriyapti.*",
+                "my tooth is hurting"
+              ],
+              [
+                "**[person]da [illness] bor**",
+                "*Menda isitma bor.*",
+                "at me there is fever"
+              ],
+              [
+                "**[person] kasal**",
+                "*Men kasalman.*",
+                "I am sick"
+              ],
+              [
+                "",
+                "*U kasal boʻldi.*",
+                "he/she fell sick"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Body parts **must take a possessive ending**. *Bosh ogʻriyapti* sounds like \"some head is hurting\" with no owner — odd. Always *boshim*, *boshingiz*, *boshi*.",
+            "Remember the vowel-dropping from unit 3, which happens a lot with body parts: *ogʻiz* → *ogʻzim*, *burun* → *burnim*, *qorin* → *qornim*, *koʻngil* → *koʻnglim*.",
+            "Use the past to talk about pain that's over: *Kecha boshim ogʻridi* (my head hurt yesterday). Use the habitual for chronic pain: *Qishda tizzam ogʻriydi* (my knee hurts in winter)."
+          ]
+        },
+        {
+          "title": "Boʻlmoq: the verb that changes states",
+          "body": [
+            "One verb, many jobs. It covers \"become\", \"happen\", \"may\", and \"OK\" in the sense of agreeing."
+          ],
+          "table": {
+            "head": [
+              "Use",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "become",
+                "*Shifokor boʻldim.*",
+                "I became a doctor."
+              ],
+              [
+                "happen",
+                "*Nima boʻldi?*",
+                "What happened? / What's wrong?"
+              ],
+              [
+                "may",
+                "*Boʻladimi?*",
+                "May I? / Is that OK?"
+              ],
+              [
+                "agree",
+                "*Boʻladi!*",
+                "Sure! / OK!"
+              ],
+              [
+                "there will be",
+                "*Ertaga yomgʻir boʻladi.*",
+                "It will rain tomorrow."
+              ],
+              [
+                "not allowed",
+                "*Bu yerda boʻlmaydi.*",
+                "That's not allowed here."
+              ]
+            ]
+          },
+          "after": [
+            "*Boʻladi* on its own is one of the most frequently heard words in Uzbekistan. It means \"OK\", \"sure\", \"done\" — an all-purpose answer that's always safe.",
+            "*Boʻlsin* means \"may it be\": *Salomat boʻling!* (stay healthy), *Omadingiz boʻlsin!* (good luck), *Osh boʻlsin!* (enjoy your meal).",
+            "⚠️ Don't mix up *boʻlmoq* with *bor*. *Bor* says something **already exists**; *boʻlmoq* says something **comes into being** or **changes**."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Parts of the body",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Say each word while pointing to the part, then repeat with the ending *-im*. Two rounds and this list will stick."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "Meaning",
+            "Oʻzbekcha",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**bosh**",
+              "båsh",
+              "head",
+              "**qoʻl**",
+              "qol",
+              "hand, arm"
+            ],
+            [
+              "**koʻz**",
+              "koz",
+              "eye",
+              "**oyoq**",
+              "å-YÅQ",
+              "foot, leg"
+            ],
+            [
+              "**quloq**",
+              "qu-LÅQ",
+              "ear",
+              "**barmoq**",
+              "bår-MÅQ",
+              "finger"
+            ],
+            [
+              "**burun**",
+              "bu-RUN",
+              "nose",
+              "**qorin**",
+              "qå-RIN",
+              "stomach"
+            ],
+            [
+              "**ogʻiz**",
+              "å-GHIZ",
+              "mouth",
+              "**yurak**",
+              "yu-RAK",
+              "heart"
+            ],
+            [
+              "**tish**",
+              "tish",
+              "tooth",
+              "**orqa**",
+              "år-QÅ",
+              "back"
+            ],
+            [
+              "**til**",
+              "til",
+              "tongue",
+              "**tomoq**",
+              "tå-MÅQ",
+              "throat"
+            ],
+            [
+              "**boʻyin**",
+              "bo-YIN",
+              "neck",
+              "**tizza**",
+              "tiz-ZÅ",
+              "knee"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Yurak* means the **heart** both as an organ and as the seat of feelings — just like English \"heart\". *Jigar* is the liver, and it's also used as a term of endearment for a child: *jigarim* = \"my darling\"."
+        },
+        {
+          "type": "p",
+          "text": "*Koʻngil* is a word worth knowing even though it isn't a body part: it means \"heart, soul, feelings\". *Koʻnglim toʻq* (I'm at peace), *koʻngil ochmoq* (to have fun), *koʻnglingizga olmang* (don't take it personally)."
+        }
+      ]
+    },
+    {
+      "title": "At the pharmacy and the doctor's",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Pharmacies in Uzbekistan sell many medicines without a prescription, and pharmacists readily give advice — often it's the first stop before seeing a doctor."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Oʻzbekcha",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**Oʻzimni yomon his qilyapman.**",
+              "o-zim-NI yå-MÅN his qil-YÅP-mån",
+              "I don't feel well."
+            ],
+            [
+              "**Isitmam bor.**",
+              "i-sit-MAM bår",
+              "I have a fever."
+            ],
+            [
+              "**Yoʻtalyapman.**",
+              "yo-tål-YÅP-mån",
+              "I have a cough."
+            ],
+            [
+              "**Tumov boʻldim.**",
+              "tu-MÅV bol-DIM",
+              "I have a cold."
+            ],
+            [
+              "**Bosh ogʻrigʻiga dori bormi?**",
+              "båsh åg-hri-ghi-GÅ då-RI bår-MI",
+              "Do you have something for a headache?"
+            ],
+            [
+              "**Bu dori retseptsizmi?**",
+              "bu då-RI ret-sept-SIZ-mi",
+              "Is this medicine over the counter?"
+            ],
+            [
+              "**Kuniga necha marta?**",
+              "ku-ni-GÅ ne-CHÅ mår-TÅ",
+              "How many times a day?"
+            ],
+            [
+              "**Allergiyam bor.**",
+              "ål-ler-gi-YAM bår",
+              "I have an allergy."
+            ],
+            [
+              "**Tez yordam chaqiring!**",
+              "tez yår-DAM chå-qi-RING",
+              "Call an ambulance!"
+            ],
+            [
+              "**Tezroq tuzaling!**",
+              "tez-RÅQ tu-zå-LING",
+              "Get well soon!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Tez yordam* literally means \"quick help\" and is the word for ambulance; the number is 103. Other emergency numbers: police 102, fire 101, gas 104."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uz": "salomatlik",
+      "baca": "så-lå-måt-LIK",
+      "en": "health"
+    },
+    {
+      "uz": "kasal",
+      "baca": "kå-SAL",
+      "en": "sick"
+    },
+    {
+      "uz": "ogʻrimoq",
+      "baca": "åg-hri-MÅQ",
+      "en": "to hurt, ache"
+    },
+    {
+      "uz": "isitma",
+      "baca": "i-sit-MÅ",
+      "en": "fever"
+    },
+    {
+      "uz": "yoʻtal",
+      "baca": "yo-TAL",
+      "en": "cough"
+    },
+    {
+      "uz": "tumov",
+      "baca": "tu-MÅV",
+      "en": "cold, runny nose"
+    },
+    {
+      "uz": "dori",
+      "baca": "då-RI",
+      "en": "medicine"
+    },
+    {
+      "uz": "retsept",
+      "baca": "ret-SEPT",
+      "en": "prescription"
+    },
+    {
+      "uz": "shifokor",
+      "baca": "shi-få-KÅR",
+      "en": "doctor"
+    },
+    {
+      "uz": "tez yordam",
+      "baca": "tez yår-DAM",
+      "en": "ambulance"
+    },
+    {
+      "uz": "bosh",
+      "baca": "båsh",
+      "en": "head"
+    },
+    {
+      "uz": "koʻz",
+      "baca": "koz",
+      "en": "eye"
+    },
+    {
+      "uz": "quloq",
+      "baca": "qu-LÅQ",
+      "en": "ear"
+    },
+    {
+      "uz": "burun",
+      "baca": "bu-RUN",
+      "en": "nose"
+    },
+    {
+      "uz": "tish",
+      "baca": "tish",
+      "en": "tooth"
+    },
+    {
+      "uz": "tomoq",
+      "baca": "tå-MÅQ",
+      "en": "throat"
+    },
+    {
+      "uz": "qorin",
+      "baca": "qå-RIN",
+      "en": "stomach"
+    },
+    {
+      "uz": "qoʻl",
+      "baca": "qol",
+      "en": "hand, arm"
+    },
+    {
+      "uz": "oyoq",
+      "baca": "å-YÅQ",
+      "en": "foot, leg"
+    },
+    {
+      "uz": "yurak",
+      "baca": "yu-RAK",
+      "en": "heart"
+    },
+    {
+      "uz": "koʻngil",
+      "baca": "kon-GIL",
+      "en": "heart, soul"
+    },
+    {
+      "uz": "kuch",
+      "baca": "kuch",
+      "en": "strength, energy"
+    },
+    {
+      "uz": "tuzalmoq",
+      "baca": "tu-zål-MÅQ",
+      "en": "to recover"
+    },
+    {
+      "uz": "uxlamoq",
+      "baca": "ukh-lå-MÅQ",
+      "en": "to sleep"
+    },
+    {
+      "uz": "his qilmoq",
+      "baca": "his qil-MÅQ",
+      "en": "to feel"
+    },
+    {
+      "uz": "oʻylamoq",
+      "baca": "oy-lå-MÅQ",
+      "en": "to think"
+    },
+    {
+      "uz": "hali",
+      "baca": "hå-LI",
+      "en": "still; (not) yet"
+    },
+    {
+      "uz": "-dan beri",
+      "baca": "-dån be-RI",
+      "en": "since, for"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Uzbek.",
+      "items": [
+        "I have a headache.",
+        "My stomach hurts.",
+        "I have a fever.",
+        "I got sick.",
+        "Have you taken any medicine?",
+        "Get well soon!"
+      ]
+    },
+    {
+      "prompt": "Add the possessive ending \"my\" to these body parts. Watch out for dropped vowels.",
+      "items": [
+        "bosh → ____",
+        "qorin → ____",
+        "burun → ____",
+        "ogʻiz → ____",
+        "tish → ____",
+        "koʻngil → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in with bor, boʻldi, or ogʻriyapti.",
+      "items": [
+        "Menda isitma ____.",
+        "Kecha u kasal ____.",
+        "Boshim ____.",
+        "Nima ____?",
+        "Tomogʻim ____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ogʻriyapti / boshim",
+        "boʻldim / kasal / men",
+        "bormi / dori / bosh ogʻrigʻiga / ?",
+        "iching / choy / issiq",
+        "tuzaling / tezroq"
+      ]
+    },
+    {
+      "prompt": "Spaced review — unit 15. Translate into Uzbek without looking back at the unit.",
+      "items": [
+        "This shirt is more expensive.",
+        "Which one is the cheapest?",
+        "May I try it on?",
+        "Do you have another color?",
+        "This doesn't fit me."
+      ]
+    }
+  ],
+  "answers": [
+    "Boshim ogʻriyapti. — Qornim ogʻriyapti. — Menda isitma bor. — Kasal boʻldim. — Dori ichdingizmi? — Tezroq tuzaling!",
+    "boshim — qornim — burnim — ogʻzim — tishim — koʻnglim",
+    "bor — boʻldi — ogʻriyapti — boʻldi — ogʻriyapti",
+    "Boshim ogʻriyapti. — Men kasal boʻldim. — Bosh ogʻrigʻiga dori bormi? — Issiq choy iching. — Tezroq tuzaling.",
+    "Bu koʻylak qimmatroq. — Eng arzoni qaysi? — Kiyib koʻrsam boʻladimi? — Boshqa rangi bormi? — Bu menga toʻgʻri kelmadi."
+  ]
+}

@@ -1,0 +1,532 @@
+{
+  "title": "Shopping at the market — and saying no",
+  "title_target": "Nakupovanje na tržnici",
+  "goal": "Ask prices, ask for quantities, and pay — and install a rule with no match in any language you probably know: the moment a sentence is NEGATIVE, the noun changes form.",
+  "bekal": [
+    "ask prices with *Koliko stane?* and *Koliko stanejo?*",
+    "ask for quantities: *en kilogram*, *pol kile*, *deset dek*",
+    "switch the object to the Genitive as soon as the sentence is negative: *Imam kavo* → *Nimam kave*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Na Centralni tržnici",
+      "intro": "Saturday morning at Ljubljana's central market. Budi stands in front of a fruit stall; the vendor knows the face of a foreigner who's just started learning.",
+      "lines": [
+        {
+          "speaker": "Prodajalka:",
+          "text": "Izvolite! Kaj bo dobrega?",
+          "id": "Here you go! What can I get you?",
+          "literal": "please! what will-be of-good?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Koliko stanejo jabolka?",
+          "id": "How much are the apples?",
+          "literal": "how-much they-cost apples?"
+        },
+        {
+          "speaker": "Prodajalka:",
+          "text": "Dva evra kilogram. So domača.",
+          "id": "Two euros a kilo. They're all local.",
+          "literal": "two euros-two kilogram. they-are homemade-pl."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Potem prosim en kilogram. In tri banane.",
+          "id": "Then a kilo, please. And three bananas.",
+          "literal": "then please one kilogram. and three bananas."
+        },
+        {
+          "speaker": "Prodajalka:",
+          "text": "Še kaj? Imamo lepe paradižnike.",
+          "id": "Anything else? We have lovely tomatoes.",
+          "literal": "more what? we-have beautiful-pl tomatoes."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Pol kile, prosim. Koliko je vse skupaj?",
+          "id": "Half a kilo, please. How much is that altogether?",
+          "literal": "half of-kilo, please. how-much is all together?"
+        },
+        {
+          "speaker": "Prodajalka:",
+          "text": "Štiri evre in petdeset centov.",
+          "id": "Four euros fifty.",
+          "literal": "four euros and fifty of-cents."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Oprostite, nimam drobiža. Lahko plačam s kartico?",
+          "id": "Sorry, I don't have any change. Can I pay by card?",
+          "literal": "sorry, I-not-have of-change. can I-pay with card?"
+        },
+        {
+          "speaker": "Prodajalka:",
+          "text": "Na tržnici ne, samo gotovina.",
+          "id": "Not at the market, cash only.",
+          "literal": "at market no, only cash."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "V redu, bankomat je blizu. Takoj se vrnem.",
+          "id": "OK, the ATM is close. I'll be right back.",
+          "literal": "in order, ATM is near. right-away self I-return."
+        },
+        {
+          "speaker": "Prodajalka:",
+          "text": "Nič hudega, počakam vas.",
+          "id": "No problem, I'll wait for you.",
+          "literal": "nothing of-bad, I-wait you."
+        }
+      ],
+      "notes": [
+        "**Kaj bo dobrega?** literally \"what will be of the good?\" — a typical market vendor's greeting, roughly \"What can I get you?\". You don't need to copy it, but you do need to recognize it, because it'll be the first thing you hear at every stall.",
+        "**Stane or stanejo — it follows the number of items.** *Koliko stane kruh?* (one thing) but *Koliko stanejo jabolka?* (several things). That's exactly like English *how much is / how much are*.",
+        "**Prices are given in the object form.** *Stane štiri evre* — not *štiri evri*. The reason: the item \"costs\" an amount, and that amount is treated as an object. From five up the form goes back to the Genitive: *pet evrov*, *deset evrov*, *petdeset centov*.",
+        "**Nimam drobiža — this is the heart of the unit.** In an ordinary sentence you say *Imam drobiž* (I have change). As soon as the sentence is negative, the noun switches to the Genitive: *Nimam drobiž**a***. Slovenian thinks it makes sense that something absent is named with an \"of\" form — and after a few weeks, you'll agree.",
+        "**Samo gotovina.** At Slovenia's open-air markets cards often aren't accepted — and in most small towns, shops are completely closed on Sundays. Knowing both facts from the start saves many a Saturday morning: get cash first, shop on Saturday, leave nothing for Sunday."
+      ],
+      "grammars": [
+        {
+          "title": "The Genitive of negation — the big rule of this unit",
+          "body": [
+            "In Slovenian, saying no isn't just adding *ne*. The noun changes form too — from the **tožilnik** (Accusative, the object) to the **rodilnik** (Genitive). The rule has no exceptions, and it applies in every negative sentence that has an object."
+          ],
+          "table": {
+            "head": [
+              "Ordinary sentence",
+              "Negative sentence",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*Imam kav**o***.",
+                "*Nimam kav**e***.",
+                "I don't have any coffee."
+              ],
+              [
+                "*Imam čas.*",
+                "*Nimam čas**a***.",
+                "I don't have time."
+              ],
+              [
+                "*Pijem vod**o***.",
+                "*Ne pijem vod**e***.",
+                "I don't drink water."
+              ],
+              [
+                "*Vidim brat**a***.",
+                "*Ne vidim brat**a***.",
+                "I don't see my brother."
+              ],
+              [
+                "*Tukaj je piv**o***.",
+                "*Tukaj ni piv**a***.",
+                "There's no beer here."
+              ],
+              [
+                "*Imam denar.*",
+                "*Nimam denar**ja***.",
+                "I don't have any money."
+              ]
+            ]
+          },
+          "after": [
+            "The Genitive form is exactly the same as the form after *iz* in unit 2: feminine words end in **-e** (*kava* → *kave*), masculine and neuter words end in **-a** (*čas* → *časa*, *pivo* → *piva*).",
+            "Look at the fourth row: for **living** masculine words, the Accusative and Genitive forms are twins from the start (*brata* for both), so the negative sentence doesn't change at all. One group of words that asks nothing of you."
+          ]
+        },
+        {
+          "title": "Prices and money",
+          "body": [
+            "Slovenia's currency has been the euro since 2007. All you need to learn is how numbers attach to it — and that's the same pattern as in unit 5."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Form",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "1",
+                "**en evro**",
+                "uhn AYW-roh",
+                "one euro"
+              ],
+              [
+                "2",
+                "**dva evra**",
+                "dvah AYW-rah",
+                "two euros"
+              ],
+              [
+                "3, 4",
+                "**tri / štiri evre**",
+                "tree AYW-ray",
+                "three / four euros"
+              ],
+              [
+                "5+",
+                "**pet evrov**",
+                "payt AYW-rohw",
+                "five euros"
+              ],
+              [
+                "cents",
+                "**petdeset centov**",
+                "payt-day-suht TSAYN-tohw",
+                "fifty cents"
+              ],
+              [
+                "combined",
+                "**tri evre in dvajset**",
+                "tree AYW-ray een DVAI-suht",
+                "three euros twenty"
+              ]
+            ]
+          },
+          "after": [
+            "The last row shows an everyday habit: cents are often **not mentioned at all**. *Tri evre in dvajset* is understood as €3.20. In writing, Slovenia uses a comma for cents: **3,20 €**, not a point as in English.",
+            "Sentences to learn whole: *Koliko stane?* (how much is it), *Koliko je vse skupaj?* (how much altogether), *Je to popust?* (is this on sale?), *Lahko plačam s kartico?* (can I pay by card), *Prosim račun* (the receipt, please)."
+          ]
+        },
+        {
+          "title": "Quantities at the market",
+          "body": [
+            "One Slovenian habit that surprises newcomers: small quantities are counted in **deka** — units of ten grams, an Austrian legacy that lives on all over Central Europe."
+          ],
+          "table": {
+            "head": [
+              "Slovenščina",
+              "Say it",
+              "Meaning",
+              "Equals"
+            ],
+            "rows": [
+              [
+                "*en kilogram* / *en kilo*",
+                "uhn kee-loh-GRAHM",
+                "one kilo",
+                "1,000 g"
+              ],
+              [
+                "*pol kile*",
+                "pohw KEE-lay",
+                "half a kilo",
+                "500 g"
+              ],
+              [
+                "*deset dek*",
+                "day-SAYT dayk",
+                "ten deka",
+                "100 g"
+              ],
+              [
+                "*petindvajset dek*",
+                "pay-teen-DVAI-suht dayk",
+                "twenty-five deka",
+                "250 g"
+              ],
+              [
+                "*ena zaboj*",
+                "AY-nah zah-BAWY",
+                "one crate",
+                "—"
+              ],
+              [
+                "*en kos*",
+                "uhn kaws",
+                "one piece / one item",
+                "—"
+              ]
+            ]
+          },
+          "after": [
+            "When you order cheese or cold cuts, don't say grams — say **deka**. *Dvajset dek sira, prosim* = \"two hundred grams of cheese\". Saying \"dvesto gramov\" will be understood, but it instantly marks you as a foreigner.",
+            "Notice *pol kile*: after *pol* (half), the noun takes the Genitive — just like after numbers from five up. Every quantity word in Slovenian behaves this way."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Sadje in zelenjava — fruit and vegetables",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Fruit and vegetable names are the vocabulary you'll put to use fastest, because you'll say them every week. The third column shows the form you use when ordering more than one."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Say it",
+            "When ordering",
+            "English"
+          ],
+          "rows": [
+            [
+              "**jabolko**",
+              "YAH-bohw-koh",
+              "*kilogram jabolk*",
+              "apple"
+            ],
+            [
+              "**banana**",
+              "bah-NAH-nah",
+              "*tri banane*",
+              "banana"
+            ],
+            [
+              "**pomaranča**",
+              "poh-mah-RAHN-chah",
+              "*pet pomaranč*",
+              "orange"
+            ],
+            [
+              "**grozdje**",
+              "GRAWZD-yay",
+              "*pol kile grozdja*",
+              "grapes"
+            ],
+            [
+              "**jagoda**",
+              "YAH-goh-dah",
+              "*deset dek jagod*",
+              "strawberry"
+            ],
+            [
+              "**breskev**",
+              "BRAYS-kuhw",
+              "*tri breskve*",
+              "peach"
+            ],
+            [
+              "**paradižnik**",
+              "pah-rah-DEEZH-neek",
+              "*pet paradižnikov*",
+              "tomato"
+            ],
+            [
+              "**krompir**",
+              "krohm-PEER",
+              "*kilogram krompirja*",
+              "potato"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice **jabolko** is said **YAH-bohw-koh** — the *l* in the middle turns into *u*, as usual. And the form for five and up, *jabolk*, loses its ending entirely; that's normal for neuter words."
+        },
+        {
+          "type": "p",
+          "text": "**Grozdje** (grapes) and **korenje** (carrots) are collective nouns: they have no plural, like English \"rice\". You always buy *pol kile grozdja*, never \"five grapes\"."
+        },
+        {
+          "type": "kotak",
+          "title": "Words that help you at the stall",
+          "items": [
+            "*domač* (doh-MAHCH) — local produce, not imported. The most powerful sales word at a Slovenian market.",
+            "*svež* (svaysh) — fresh. *ekološki* (ay-koh-LAWSH-kee) — organic.",
+            "*zrel* (zrayw) — ripe. *nezrel* — unripe.",
+            "*Lahko poskusim?* — Can I try some? At a Slovenian market, the answer is almost always yes."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Shopping phrases",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A handful of sentences that cover almost every small transaction — at the market, at the corner shop, or at a kiosk."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Koliko stane?*",
+              "KOH-lee-koh STAH-nay",
+              "How much is it?"
+            ],
+            [
+              "*Koliko stanejo?*",
+              "KOH-lee-koh STAH-nay-yoh",
+              "How much are they?"
+            ],
+            [
+              "*To je predrago.*",
+              "toh yay pray-DRAH-goh",
+              "That's too expensive."
+            ],
+            [
+              "*Imate kaj cenejšega?*",
+              "ee-MAH-tay kai tsay-NAY-shgay-gah",
+              "Do you have anything cheaper?"
+            ],
+            [
+              "*Samo gledam, hvala.*",
+              "SAH-moh GLAY-dahm",
+              "Just looking, thanks."
+            ],
+            [
+              "*Vzamem to.*",
+              "VZAH-muhm toh",
+              "I'll take this one."
+            ],
+            [
+              "*Še kaj?*",
+              "shay kai",
+              "Anything else?"
+            ],
+            [
+              "*To je vse, hvala.*",
+              "toh yay oosay",
+              "That's all, thanks."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Samo gledam* (just looking) is a lifesaver in clothing stores: Slovenian shop assistants usually greet you as soon as you walk in, and this sentence closes the conversation kindly without you having to say more."
+        },
+        {
+          "type": "p",
+          "text": "One thing to plan for: **on Sundays, Slovenia is closed**. Since 2024 most large stores must close on Sundays, and in small towns almost everything does. The only things open are gas stations, small kiosks at stations, and a few shops in tourist centers. Do your shopping on Saturday."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "tržnica",
+      "baca": "TUHRZH-nee-tsah",
+      "en": "market"
+    },
+    {
+      "sl": "trgovina",
+      "baca": "tuhr-goh-VEE-nah",
+      "en": "shop, store"
+    },
+    {
+      "sl": "prodajalka",
+      "baca": "proh-dah-YOW-kah",
+      "en": "vendor, shop assistant (f)"
+    },
+    {
+      "sl": "kupiti",
+      "baca": "KOO-pee-tee",
+      "en": "to buy"
+    },
+    {
+      "sl": "plačati",
+      "baca": "PLAH-chah-tee",
+      "en": "to pay"
+    },
+    {
+      "sl": "stati",
+      "baca": "STAH-tee",
+      "en": "to cost"
+    },
+    {
+      "sl": "cena",
+      "baca": "TSAY-nah",
+      "en": "price"
+    },
+    {
+      "sl": "denar",
+      "baca": "day-NAHR",
+      "en": "money"
+    },
+    {
+      "sl": "drobiž",
+      "baca": "droh-BEESH",
+      "en": "small change; change"
+    },
+    {
+      "sl": "gotovina",
+      "baca": "goh-toh-VEE-nah",
+      "en": "cash"
+    },
+    {
+      "sl": "kartica",
+      "baca": "KAHR-tee-tsah",
+      "en": "card"
+    },
+    {
+      "sl": "bankomat",
+      "baca": "bahn-koh-MAHT",
+      "en": "ATM"
+    },
+    {
+      "sl": "sadje",
+      "baca": "SAHD-yay",
+      "en": "fruit"
+    },
+    {
+      "sl": "zelenjava",
+      "baca": "zay-lay-NYAH-vah",
+      "en": "vegetables"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Make the sentences negative.",
+      "items": [
+        "Imam denar. — ____",
+        "Imam čas. — ____",
+        "Pijem kavo. — ____",
+        "Tukaj je pivo. — ____",
+        "Imam drobiž. — ____",
+        "Kupim solato. — ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right form of evro.",
+      "items": [
+        "Stane en ____.",
+        "Stane dva ____.",
+        "Stane tri ____.",
+        "Stane pet ____.",
+        "Stane deset ____.",
+        "Stane petdeset ____. (cent)"
+      ]
+    },
+    {
+      "prompt": "Translate into Slovenian.",
+      "items": [
+        "How much are the apples?",
+        "A kilo, please.",
+        "Half a kilo of tomatoes.",
+        "How much is that altogether?",
+        "Can I pay by card?",
+        "I don't have any change."
+      ]
+    },
+    {
+      "prompt": "Wave review — unit 5. Translate into Slovenian without looking back at the unit.",
+      "items": [
+        "I'm twenty-three. (said by a man)",
+        "I have two sisters.",
+        "How many books?",
+        "Five books.",
+        "How many people are here?"
+      ]
+    }
+  ],
+  "answers": [
+    "Nimam denarja. — Nimam časa. — Ne pijem kave. — Tukaj ni piva. — Nimam drobiža. — Ne kupim solate.",
+    "evro — evra — evre — evrov — evrov — centov",
+    "Koliko stanejo jabolka? — En kilogram, prosim. — Pol kile paradižnikov. — Koliko je vse skupaj? — Lahko plačam s kartico? — Nimam drobiža.",
+    "Star sem triindvajset let. — Imam dve sestri. — Koliko knjig? — Pet knjig. — Koliko ljudi je tukaj?"
+  ]
+}

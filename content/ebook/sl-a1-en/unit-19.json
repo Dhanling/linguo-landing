@@ -1,0 +1,473 @@
+{
+  "title": "Invitations — can, may, must, and how to say no",
+  "title_target": "Vabilo na večerjo",
+  "goal": "Invite, accept and decline politely — while sorting out the words that English squeezes into \"can\" and \"may\", and meeting one word that never changes form at all: *lahko*.",
+  "bekal": [
+    "telling apart *lahko* (can, may), *moram* (must), *smem* (am allowed), *znam* (know how)",
+    "building commands: *pridi!*, *pridite!*, *ne pozabi!*",
+    "accepting and declining invitations without sounding rude"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Vabilo k Maji domov",
+      "intro": "Thursday lunchtime. Maja invites Budi to dinner at her family's home — and explains a word that never changes.",
+      "lines": [
+        {
+          "speaker": "Maja:",
+          "text": "Bi prišel v soboto na večerjo?",
+          "id": "Would you like to come for dinner on Saturday?",
+          "literal": "would come-m on Saturday to dinner?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Z veseljem! Kam?",
+          "id": "With pleasure! Where?",
+          "literal": "with joy-ins! where-to?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "K nam domov. Mama kuha.",
+          "id": "To our place. Mom's cooking.",
+          "literal": "to to-us home. mom cooks."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Moram kaj prinesti?",
+          "id": "Should I bring anything?",
+          "literal": "I-must something bring?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Ni treba. Lahko prineseš vino.",
+          "id": "No need. You can bring some wine.",
+          "literal": "not-is needed. can you-bring wine."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Lahko prineseš — brez končnice?",
+          "id": "\"Lahko prineseš\" — with no ending?",
+          "literal": "can you-bring — without of-ending?"
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Lahko ni glagol. Je prislov.",
+          "id": "\"Lahko\" isn't a verb. It's an adverb.",
+          "literal": "can not-is verb. is adverb."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Torej lahko grem, lahko greš, lahko gremo.",
+          "id": "So \"lahko grem\", \"lahko greš\", \"lahko gremo\".",
+          "literal": "so can I-go, can you-go, can we-go."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Tako je. Samo glagol se spreminja.",
+          "id": "That's right. Only the verb changes.",
+          "literal": "so is. only verb self changes."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Prav. Pridem ob sedmih.",
+          "id": "OK. I'll come at seven.",
+          "literal": "right. I-come at of-seven."
+        },
+        {
+          "speaker": "Maja:",
+          "text": "Super. Ne pozabi na rože za mamo!",
+          "id": "Great. Don't forget flowers for Mom!",
+          "literal": "great. not forget-imp on flower-pl for mom-acc!"
+        }
+      ],
+      "notes": [
+        "**Lahko never changes form.** It's not a verb but an adverb, and the verb after it is what changes: *lahko grem*, *lahko greš*, *lahko gremo*, *lahko sta prišla*. English speakers often try to bend it like *can/could* — in Slovenian there's nothing to bend.",
+        "**Bi prišel? is a polite invitation.** The *bi* form softens everything — it's like \"would you like to\" rather than \"are you coming\". The ending follows the gender of the person invited: *Bi prišel?* to a man, *Bi prišla?* to a woman, *Bi prišla?* to two people, *Bi prišli?* to a group or politely.",
+        "**Ni treba = no need.** A sentence with no subject, like the weather sentences in unit 16. Its relatives: *Treba je* (it's necessary), *Ni mogoče* (it's not possible), *Ni problema* (no problem). They stay the same no matter who's speaking.",
+        "**K nam domov — two direction words at once.** *K nam* means \"to our place\" and *domov* means \"home\". Together they mean \"to our home\". *K* takes the dative from unit 15 and is used for going **to someone's place**.",
+        "**Ne pozabi na rože.** The flowers aren't just a pleasantry: in Slovenia, a guest invited to dinner brings something — flowers for the hostess, a bottle of wine, or a cake. Turning up empty-handed isn't fatal, but it's noticed straight away. And flowers always come in odd numbers; even numbers are for funerals."
+      ],
+      "grammars": [
+        {
+          "title": "Lahko, moram, smem, znam — four kinds of \"can\"",
+          "body": [
+            "English uses \"can\" and \"may\" for four things that Slovenian keeps sharply apart. Choosing wrong here won't make you incomprehensible, but it can make you mean something else."
+          ],
+          "table": {
+            "head": [
+              "Word",
+              "Meaning",
+              "Changes?",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**lahko**",
+                "can; may (circumstances allow)",
+                "never",
+                "*Lahko grem?* — May I go?"
+              ],
+              [
+                "**morati**",
+                "must",
+                "*moram, moraš, mora*",
+                "*Moram delati.* — I have to work."
+              ],
+              [
+                "**smeti**",
+                "may (permission)",
+                "*smem, smeš, sme*",
+                "*Tu ne smem kaditi.* — I'm not allowed to smoke here."
+              ],
+              [
+                "**znati**",
+                "can (know how)",
+                "*znam, znaš, zna*",
+                "*Znam kuhati.* — I can cook."
+              ],
+              [
+                "**moči**",
+                "be able (mostly negative)",
+                "*morem, moreš, more*",
+                "*Ne morem priti.* — I can't come."
+              ],
+              [
+                "**hoteti**",
+                "want",
+                "*hočem, hočeš, hoče*",
+                "*Hočem kavo.* — I want a coffee."
+              ]
+            ]
+          },
+          "after": [
+            "The difference most often mixed up is between **ne morem**, **ne smem** and **ne znam**. *Ne morem plavati* = I can't swim right now (broken leg, water too cold). *Ne smem plavati* = I'm not allowed to swim. *Ne znam plavati* = I can't swim, I never learned.",
+            "*Lahko* is also used for polite requests, and that's the use you'll need most: *Lahko dobim račun?* (could I have the bill?), *Lahko ponovite?* (could you repeat that?), *Lahko pomagam?* (can I help?)."
+          ]
+        },
+        {
+          "title": "Velelnik — commands",
+          "body": [
+            "Three endings for three numbers, just like the rest of Slovenian. The polite form uses the plural, as usual."
+          ],
+          "table": {
+            "head": [
+              "Verb",
+              "to one person",
+              "to two",
+              "to many / polite"
+            ],
+            "rows": [
+              [
+                "*priti* (come)",
+                "**pridi!**",
+                "**pridita!**",
+                "**pridite!**"
+              ],
+              [
+                "*iti* (go)",
+                "**pojdi!**",
+                "**pojdita!**",
+                "**pojdite!**"
+              ],
+              [
+                "*piti* (drink)",
+                "**pij!**",
+                "**pijta!**",
+                "**pijte!**"
+              ],
+              [
+                "*počakati* (wait)",
+                "**počakaj!**",
+                "**počakajta!**",
+                "**počakajte!**"
+              ],
+              [
+                "*oprostiti* (excuse)",
+                "**oprosti!**",
+                "**oprostita!**",
+                "**oprostite!**"
+              ],
+              [
+                "*povedati* (tell)",
+                "**povej!**",
+                "**povejta!**",
+                "**povejte!**"
+              ]
+            ]
+          },
+          "after": [
+            "To forbid something, put *ne* in front: *Ne pozabi!* (don't forget), *Ne skrbi!* (don't worry), *Ne hodi tja!* (don't go there). Note that negative commands use the **imperfective** verb, not the perfective — so *Ne odpiraj!* (don't open it), not *Ne odpri!*",
+            "Slovenian commands sound much friendlier than English speakers expect, especially with *prosim* added: *Počakajte, prosim* (wait a moment, please). They're used in shops, offices and among friends without sounding bossy."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Inviting, accepting, declining",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Saying no politely is a skill rarely taught, yet it's one you need most often. The rows at the bottom of this table all decline without closing the door."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Slovenščina",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Bi šel na kavo?*",
+              "bee shuhw nah KAH-voh",
+              "Fancy a coffee? (to a man)"
+            ],
+            [
+              "*Te vabim na večerjo.*",
+              "tay VAH-beem nah vay-CHAYR-yoh",
+              "I'd like to invite you to dinner."
+            ],
+            [
+              "*Se nam pridružiš?*",
+              "suh nahm pree-DROO-zheesh",
+              "Will you join us?"
+            ],
+            [
+              "*Z veseljem!*",
+              "z vay-SAY-lyuhm",
+              "With pleasure!"
+            ],
+            [
+              "*Super ideja!*",
+              "SOO-puhr ee-DAY-yah",
+              "Great idea!"
+            ],
+            [
+              "*Seveda, pridem.*",
+              "say-VAY-dah, PREE-duhm",
+              "Sure, I'll come."
+            ],
+            [
+              "*Žal ne morem.*",
+              "zhow nay MOH-ruhm",
+              "Unfortunately I can't."
+            ],
+            [
+              "*Ta teden ne gre.*",
+              "tah TAY-duhn nay gray",
+              "This week doesn't work."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Ta teden ne gre* is literally \"this week it doesn't go\" — a very Slovenian way of declining: no reason given, no over-apologizing, and the door left open. Combined with *Mogoče drugič?*, it turns someone down completely and warmly in two short sentences."
+        },
+        {
+          "type": "p",
+          "text": "Notice **žal** — a word you met in unit 15 as *Žal mi je*. At the start of a sentence it means \"unfortunately\" and signals right away that a refusal is coming. Slovenians use it as often as English speakers say \"I'm afraid\"."
+        }
+      ]
+    },
+    {
+      "title": "Visiting a Slovenian home",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "If your invitation is accepted, these customs will save you some awkwardness."
+        },
+        {
+          "type": "kotak",
+          "title": "Before you go in",
+          "items": [
+            "**Shoes come off.** Almost always, in almost every home. The host will offer you *copate* (house slippers); accept them.",
+            "**Bring something.** An odd number of flowers, a bottle of wine, or a cake. If there are small children, something sweet is always right.",
+            "**Arrive five to ten minutes after the stated time.** Unlike business appointments, which must be punctual, a dinner invitation gives the host a little leeway."
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Say it",
+            "When to use"
+          ],
+          "rows": [
+            [
+              "*Dober večer, hvala za povabilo.*",
+              "DAW-buhr vay-CHAYR",
+              "When you come in"
+            ],
+            [
+              "*To je za vas.*",
+              "toh yay zah vahs",
+              "Handing over a gift"
+            ],
+            [
+              "*Naj sezujem čevlje?*",
+              "nai say-ZOO-yuhm CHAYW-lyay",
+              "Shall I take my shoes off?"
+            ],
+            [
+              "*Lepo stanovanje imate.*",
+              "LAY-poh stah-noh-VAH-nyay",
+              "Complimenting the home"
+            ],
+            [
+              "*Na zdravje!*",
+              "nah ZDROW-yay",
+              "A toast — look them in the eye"
+            ],
+            [
+              "*Dober tek!*",
+              "DAW-buhr tayk",
+              "Before eating"
+            ],
+            [
+              "*Je zelo okusno.*",
+              "yay zay-LOH oh-KOOS-noh",
+              "Praising the food"
+            ],
+            [
+              "*Res sem sit, hvala.*",
+              "rays suhm seet",
+              "Declining a second helping"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "A Slovenian host will offer more food again and again, and one refusal isn't taken as final. If you're really full, *Res sem sit, hvala* with a smile is a clear way to say so without giving offense."
+        },
+        {
+          "type": "p",
+          "text": "And one custom worth knowing: **when you toast, look the person in the eye**, not at the glass, and say their name if you remember it. Looking at the glass is considered insincere. It's an unwritten rule taken seriously across Central Europe, and following it just once will be noticed."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sl": "vabilo",
+      "baca": "vah-BEE-loh",
+      "en": "invitation"
+    },
+    {
+      "sl": "vabiti",
+      "baca": "VAH-bee-tee",
+      "en": "invite"
+    },
+    {
+      "sl": "lahko",
+      "baca": "LAHKH-koh",
+      "en": "can; may"
+    },
+    {
+      "sl": "morati",
+      "baca": "MOH-rah-tee",
+      "en": "must; have to"
+    },
+    {
+      "sl": "smeti",
+      "baca": "SMAY-tee",
+      "en": "may; be allowed to"
+    },
+    {
+      "sl": "znati",
+      "baca": "ZNAH-tee",
+      "en": "know how to"
+    },
+    {
+      "sl": "hoteti",
+      "baca": "hoh-TAY-tee",
+      "en": "want"
+    },
+    {
+      "sl": "prinesti",
+      "baca": "pree-NAYS-tee",
+      "en": "bring"
+    },
+    {
+      "sl": "treba",
+      "baca": "TRAY-bah",
+      "en": "necessary"
+    },
+    {
+      "sl": "rože",
+      "baca": "RAW-zhay",
+      "en": "flowers"
+    },
+    {
+      "sl": "darilo",
+      "baca": "dah-REE-loh",
+      "en": "gift"
+    },
+    {
+      "sl": "čevlji",
+      "baca": "CHAYW-lyee",
+      "en": "shoes"
+    },
+    {
+      "sl": "copate",
+      "baca": "tsoh-PAH-tay",
+      "en": "house slippers"
+    },
+    {
+      "sl": "pomagati",
+      "baca": "poh-MAH-gah-tee",
+      "en": "help"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose lahko, moram, smem or znam.",
+      "items": [
+        "____ kuhati. (I know how)",
+        "____ delati. (I have to)",
+        "Tu ne ____ kaditi. (not allowed)",
+        "____ dobim račun? (may I have)",
+        "Ne ____ priti. (I'm not able)",
+        "____ ponovite? (could you repeat)"
+      ]
+    },
+    {
+      "prompt": "Make commands to one person.",
+      "items": [
+        "priti — ____",
+        "iti — ____",
+        "piti — ____",
+        "počakati — ____",
+        "povedati — ____",
+        "ne pozabiti — ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Slovenian.",
+      "items": [
+        "Would you like to come for dinner on Saturday?",
+        "With pleasure!",
+        "Should I bring anything?",
+        "No need.",
+        "Unfortunately I can't.",
+        "Maybe another time?"
+      ]
+    },
+    {
+      "prompt": "Wave review — unit 17. Translate into Slovenian without looking back at the unit.",
+      "items": [
+        "What are you doing tomorrow?",
+        "I'll be studying.",
+        "I'll be at home.",
+        "If it's nice, we'll go to the mountains.",
+        "We'll see."
+      ]
+    }
+  ],
+  "answers": [
+    "Znam — Moram — smem — Lahko — morem — Lahko",
+    "pridi — pojdi — pij — počakaj — povej — ne pozabi",
+    "Bi prišel v soboto na večerjo? — Z veseljem! — Moram kaj prinesti? — Ni treba. — Žal ne morem. — Mogoče drugič?",
+    "Kaj boš delal jutri? — Bom študiral. — Bom doma. — Če bo lepo, gremo v hribe. — Bomo videli."
+  ]
+}

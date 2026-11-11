@@ -1,0 +1,634 @@
+{
+  "title": "The third group: the biggest one",
+  "title_target": "Rex et miles",
+  "goal": "Read and build third-declension nouns by relying on the \"of\" form, including neuter nouns and the i-stem subgroup.",
+  "bekal": [
+    "find a third-declension stem from its \"of\" form",
+    "build all six forms of *rex*, *nomen* and *urbs*",
+    "recognize third-declension words in a sentence even when the subject form is unpredictable"
+  ],
+  "dialogs": [
+    {
+      "title": "Colloquium — De regibus antiquis",
+      "intro": "A history lesson. Titus tells the story of Rome's first kings, and the pupils have lots of questions.",
+      "lines": [
+        {
+          "speaker": "Titus:",
+          "text": "Hodie de regibus antiquis dicimus.",
+          "id": "Today we're talking about the ancient kings.",
+          "literal": "today about king-pl-about ancient-pl speak-we."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "De quo rege, magister?",
+          "id": "Which king, sir?",
+          "literal": "about which-about king-about, teacher-call?"
+        },
+        {
+          "speaker": "Titus:",
+          "text": "De Numa. Numa rex bonus in fabulis est.",
+          "id": "About Numa. In the stories, Numa is a good king.",
+          "literal": "about Numa-about. Numa king good-masc in story-pl-in is-he."
+        },
+        {
+          "speaker": "Lydia:",
+          "text": "Estne rex in urbe nostra hodie?",
+          "id": "Is there a king in our city today?",
+          "literal": "is-Q king in city-in our-in today?"
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Minime! Romani reges non amant. Nunc consules urbem regunt.",
+          "id": "Certainly not! Romans don't like kings. Now the consuls govern the city.",
+          "literal": "not-at-all! Roman-pl king-pl-obj not love-they. now consul-pl city-obj rule-they."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Et milites? Milites urbem servant?",
+          "id": "And the soldiers? Do the soldiers guard the city?",
+          "literal": "and soldier-pl? soldier-pl city-obj guard-they?"
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Ita. Milites urbem et cives servant.",
+          "id": "Yes. The soldiers guard the city and its citizens.",
+          "literal": "yes. soldier-pl city-obj and citizen-pl-obj guard-they."
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Magister, quid est nomen regis primi?",
+          "id": "Sir, what's the name of the first king?",
+          "literal": "teacher-call, what is-it name king-of first-of?"
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Nomen regis primi Romulus est. Romulus urbem condit.",
+          "id": "The first king's name is Romulus. Romulus founds the city.",
+          "literal": "name king-of first-of Romulus is-it. Romulus city-obj found-he."
+        },
+        {
+          "speaker": "Lydia:",
+          "text": "Et mare? Habentne Romani naves?",
+          "id": "And the sea? Do the Romans have ships?",
+          "literal": "and sea? have-they-Q Roman-pl ship-pl-obj?"
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Multas naves habent. Mare nostrum dicunt!",
+          "id": "They have lots of ships. They call the sea Mare Nostrum!",
+          "literal": "many-pl-obj ship-pl-obj have-they. sea our-neut say-they!"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Mare nostrum — nomen bonum est!",
+          "id": "Mare Nostrum, our sea — that's a good name!",
+          "literal": "sea our-neut — name good-neut is-it!"
+        }
+      ],
+      "notes": [
+        "**Rex, regis — you can't rely on the subject form.** The third declension is the biggest group, and its subject forms are the wildest: *rex*, *miles*, *nomen*, *urbs*, *corpus*, *homo*. What is regular is the **\"of\" form**, which always ends in *-is*. Every other form is built from it: drop the *-is* and what's left is the stem. *Regis* → stem *reg-*; *militis* → stem *milit-*; *nominis* → stem *nomin-*. English often borrows the stem, not the subject form: *regal*, *military*, *nominal*.",
+        "**Mare nostrum — nostrum, not noster.** *Mare* is neuter, so its possessive wears the neuter outfit. This is the name Romans really used for the Mediterranean, and it wasn't empty boasting: by the first century its entire coastline lay within one empire.",
+        "**Urbe, urbem, urbs — three faces of one word.** Follow the stem: *urbs, urbis* → stem *urb-*, then *urbem* (object), *urbe* (with/in), *urbis* (of). It's the short, compact subject form that misleads you; the rest is straightforward. (English *urban* comes from the stem.)",
+        "**Reges non amant — why the Romans hated the word \"king\".** The Roman Republic was born by driving out the last king, and for five hundred years afterward *rex* was an accusation, not a title. Even Caesar refused to be called *rex*. That's why the word \"king\" all but vanished from Roman political language."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The third declension: find the stem in the \"of\" form",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The third group contains more words than groups one and two combined, including some of the most frequent words in all of Latin: *rex*, *lex*, *pax*, *homo*, *tempus*, *corpus*, *nomen*, *urbs*, *mater*, *pater*. They all use one and the same table."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Job",
+            "rex, regis (masculine)",
+            "vox, vocis (feminine)",
+            "nomen, nominis (neuter)"
+          ],
+          "rows": [
+            [
+              "subject",
+              "rex",
+              "vox",
+              "nomen"
+            ],
+            [
+              "object",
+              "reg**em**",
+              "voc**em**",
+              "nomen"
+            ],
+            [
+              "of",
+              "reg**is**",
+              "voc**is**",
+              "nomin**is**"
+            ],
+            [
+              "to",
+              "reg**i**",
+              "voc**i**",
+              "nomin**i**"
+            ],
+            [
+              "with/in",
+              "reg**e**",
+              "voc**e**",
+              "nomin**e**"
+            ],
+            [
+              "subject pl",
+              "reg**es**",
+              "voc**es**",
+              "nomin**a**"
+            ],
+            [
+              "object pl",
+              "reg**es**",
+              "voc**es**",
+              "nomin**a**"
+            ],
+            [
+              "of pl",
+              "reg**um**",
+              "voc**um**",
+              "nomin**um**"
+            ],
+            [
+              "to pl",
+              "reg**ibus**",
+              "voc**ibus**",
+              "nomin**ibus**"
+            ],
+            [
+              "with/in pl",
+              "reg**ibus**",
+              "voc**ibus**",
+              "nomin**ibus**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that masculine and feminine use exactly the same endings. In this group you can't guess the gender from the form at all — *rex* is masculine, *vox* feminine, and both follow an identical pattern. All you can rely on is the dictionary and the adjective that goes with the noun."
+        },
+        {
+          "type": "kotak",
+          "title": "A working rule to make a habit",
+          "items": [
+            "Look at the \"of\" form in the dictionary: *miles, milit**is***. Drop the *-is*. The stem is *milit-*.",
+            "Attach the third-group endings: *militem*, *militi*, *milite*, *milites*, *militum*, *militibus*.",
+            "Neuter words have two fixed peculiarities: subject and object are always twins, and the plural always ends in *-a*. This holds in every declension, so it's nothing new.",
+            "If the subject form is very short — *rex*, *lex*, *pax*, *nox*, *dux* — there's almost certainly a letter hidden in the stem: *reg-*, *leg-*, *pac-*, *noct-*, *duc-*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The i-stem subgroup",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A set of third-declension words slips in an *i* in two places: the plural \"of\" form becomes *-ium* and, for neuter words, the \"with/in\" form becomes *-i* and the plural *-ia*. This small subgroup is called the i-stems."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Job",
+            "civis, civis (citizen)",
+            "urbs, urbis (city)",
+            "mare, maris (sea, neuter)"
+          ],
+          "rows": [
+            [
+              "subject",
+              "civis",
+              "urbs",
+              "mare"
+            ],
+            [
+              "object",
+              "civem",
+              "urbem",
+              "mare"
+            ],
+            [
+              "of",
+              "civis",
+              "urbis",
+              "maris"
+            ],
+            [
+              "to",
+              "civi",
+              "urbi",
+              "mari"
+            ],
+            [
+              "with/in",
+              "cive",
+              "urbe",
+              "mar**i**"
+            ],
+            [
+              "subject pl",
+              "cives",
+              "urbes",
+              "mar**ia**"
+            ],
+            [
+              "object pl",
+              "cives",
+              "urbes",
+              "mar**ia**"
+            ],
+            [
+              "of pl",
+              "civ**ium**",
+              "urb**ium**",
+              "mar**ium**"
+            ],
+            [
+              "to pl",
+              "civibus",
+              "urbibus",
+              "maribus"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "How to spot them: words whose subject and \"of\" forms have the same number of syllables (*civis, civis*; *nubes, nubis*), and words whose stem ends in two consonants (*urbs, urbis*; *pars, partis*; *mons, montis*). For beginners, it's enough to remember that the plural \"of\" form is *-ium*; everything else matches the main table."
+        },
+        {
+          "type": "p",
+          "text": "Neuter words ending in *-e*, *-al* and *-ar* always belong to this group: *mare* (sea), *animal* (animal), *exemplar* (model). Their plurals are *maria*, *animalia*, *exemplaria* — which is where *Animalia*, the name biologists still use for the animal kingdom, comes from."
+        }
+      ]
+    },
+    {
+      "title": "The most common third-declension words",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Always learn them in pairs: the subject form and the \"of\" form. Without the second one, you can't build anything."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "People",
+            "Meaning",
+            "Things and places",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "homo, hominis",
+              "human being",
+              "urbs, urbis",
+              "city"
+            ],
+            [
+              "pater, patris",
+              "father",
+              "mare, maris",
+              "sea"
+            ],
+            [
+              "mater, matris",
+              "mother",
+              "mons, montis",
+              "mountain"
+            ],
+            [
+              "frater, fratris",
+              "brother",
+              "flumen, fluminis",
+              "river"
+            ],
+            [
+              "soror, sororis",
+              "sister",
+              "nox, noctis",
+              "night"
+            ],
+            [
+              "rex, regis",
+              "king",
+              "lux, lucis",
+              "light"
+            ],
+            [
+              "miles, militis",
+              "soldier",
+              "panis, panis",
+              "bread"
+            ],
+            [
+              "dux, ducis",
+              "general, leader",
+              "navis, navis",
+              "ship"
+            ],
+            [
+              "civis, civis",
+              "citizen",
+              "pes, pedis",
+              "foot"
+            ],
+            [
+              "hostis, hostis",
+              "enemy",
+              "caput, capitis",
+              "head"
+            ],
+            [
+              "iudex, iudicis",
+              "judge",
+              "corpus, corporis",
+              "body"
+            ],
+            [
+              "uxor, uxoris",
+              "wife",
+              "tempus, temporis",
+              "time"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Abstract things",
+            "Meaning",
+            "Its footprint in English"
+          ],
+          "rows": [
+            [
+              "lex, legis",
+              "law",
+              "legal, legislative"
+            ],
+            [
+              "pax, pacis",
+              "peace",
+              "pacific, pacifist"
+            ],
+            [
+              "ius, iuris",
+              "right, law",
+              "jury, jurisdiction"
+            ],
+            [
+              "mors, mortis",
+              "death",
+              "mortal, mortality"
+            ],
+            [
+              "salus, salutis",
+              "safety, health",
+              "salute, salutation"
+            ],
+            [
+              "virtus, virtutis",
+              "courage, virtue",
+              "virtue, virtuoso"
+            ],
+            [
+              "nomen, nominis",
+              "name",
+              "nominal, nomination"
+            ],
+            [
+              "opus, operis",
+              "work",
+              "opera, operation"
+            ],
+            [
+              "genus, generis",
+              "kind, race",
+              "genus, generic"
+            ],
+            [
+              "vox, vocis",
+              "voice",
+              "vocal, vocalist"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the deceptive *-us* pattern in the right-hand column: *corpus*, *tempus*, *opus*, *genus* are all **neuter** and belong to the third declension, not the second. Their \"of\" forms give them away: *corporis*, *temporis*, *operis*, *generis*. Their plurals are *corpora*, *tempora*, *opera*, *genera* — and English borrowed several of those plural forms just as they are."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "la": "rex, regis",
+      "baca": "REHKS, REH-gis",
+      "en": "king"
+    },
+    {
+      "la": "lex, legis",
+      "baca": "LEHKS, LEH-gis",
+      "en": "law"
+    },
+    {
+      "la": "pax, pacis",
+      "baca": "PAHKS, PAH-kis",
+      "en": "peace"
+    },
+    {
+      "la": "vox, vocis",
+      "baca": "WOHKS, WOH-kis",
+      "en": "voice"
+    },
+    {
+      "la": "nox, noctis",
+      "baca": "NOHKS, NOHK-tis",
+      "en": "night"
+    },
+    {
+      "la": "lux, lucis",
+      "baca": "LOOKS, LOO-kis",
+      "en": "light"
+    },
+    {
+      "la": "dux, ducis",
+      "baca": "DOOKS, DOO-kis",
+      "en": "general, leader"
+    },
+    {
+      "la": "homo, hominis",
+      "baca": "HOH-moh",
+      "en": "human being, person"
+    },
+    {
+      "la": "miles, militis",
+      "baca": "MEE-lehs",
+      "en": "soldier"
+    },
+    {
+      "la": "civis, civis",
+      "baca": "KEE-wis",
+      "en": "citizen"
+    },
+    {
+      "la": "hostis, hostis",
+      "baca": "HOHS-tis",
+      "en": "enemy"
+    },
+    {
+      "la": "iudex, iudicis",
+      "baca": "YOO-dehks",
+      "en": "judge"
+    },
+    {
+      "la": "urbs, urbis",
+      "baca": "OORBS",
+      "en": "city (especially Rome)"
+    },
+    {
+      "la": "mare, maris",
+      "baca": "MAH-reh",
+      "en": "sea"
+    },
+    {
+      "la": "mons, montis",
+      "baca": "MOHNS",
+      "en": "mountain"
+    },
+    {
+      "la": "flumen, fluminis",
+      "baca": "FLOO-mehn",
+      "en": "river"
+    },
+    {
+      "la": "navis, navis",
+      "baca": "NAH-wis",
+      "en": "ship"
+    },
+    {
+      "la": "panis, panis",
+      "baca": "PAH-nis",
+      "en": "bread"
+    },
+    {
+      "la": "pes, pedis",
+      "baca": "PEHS",
+      "en": "foot"
+    },
+    {
+      "la": "caput, capitis",
+      "baca": "KAH-poot",
+      "en": "head"
+    },
+    {
+      "la": "corpus, corporis",
+      "baca": "KOHR-poos",
+      "en": "body"
+    },
+    {
+      "la": "tempus, temporis",
+      "baca": "TEHM-poos",
+      "en": "time"
+    },
+    {
+      "la": "opus, operis",
+      "baca": "OH-poos",
+      "en": "work, task"
+    },
+    {
+      "la": "genus, generis",
+      "baca": "GEH-noos",
+      "en": "kind, descent"
+    },
+    {
+      "la": "nomen, nominis",
+      "baca": "NOH-mehn",
+      "en": "name"
+    },
+    {
+      "la": "mors, mortis",
+      "baca": "MOHRS",
+      "en": "death"
+    },
+    {
+      "la": "virtus, virtutis",
+      "baca": "WEER-toos",
+      "en": "courage, virtue"
+    },
+    {
+      "la": "animal, animalis",
+      "baca": "AH-nee-mahl",
+      "en": "animal"
+    },
+    {
+      "la": "condo, condere",
+      "baca": "KOHN-doh",
+      "en": "to found, to store"
+    },
+    {
+      "la": "rego, regere",
+      "baca": "REH-goh",
+      "en": "to rule, to steer"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the stem, using the \"of\" form given.",
+      "items": [
+        "rex, regis",
+        "miles, militis",
+        "nomen, nominis",
+        "corpus, corporis",
+        "urbs, urbis",
+        "homo, hominis"
+      ]
+    },
+    {
+      "prompt": "Change into the singular object form.",
+      "items": [
+        "rex",
+        "vox",
+        "urbs",
+        "nomen",
+        "miles",
+        "tempus"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the form asked for.",
+      "items": [
+        "Milites ____ servant. (urbs, object)",
+        "Nomen ____ Romulus est. (rex, of)",
+        "In ____ navigamus. (mare, with/in)",
+        "____ credimus. (rex, to)",
+        "Voces ____ audimus. (civis, plural of)",
+        "Cum ____ ambulamus. (miles, plural with/in)"
+      ]
+    },
+    {
+      "prompt": "Translate into Latin.",
+      "items": [
+        "The king rules the city.",
+        "We hear a human voice.",
+        "The soldiers have ships.",
+        "The mountain's name is long.",
+        "At night we sleep.",
+        "Peace is good."
+      ]
+    }
+  ],
+  "answers": [
+    "reg- — milit- — nomin- — corpor- — urb- — homin-",
+    "regem — vocem — urbem — nomen — militem — tempus",
+    "urbem — regis — mari — Regi — civium — militibus",
+    "Rex urbem regit. — Vocem hominis audimus. — Milites naves habent. — Nomen montis longum est. — Nocte dormimus. — Pax bona est."
+  ]
+}

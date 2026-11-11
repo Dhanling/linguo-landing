@@ -1,0 +1,597 @@
+{
+  "title": "To whom?",
+  "title_target": "Cui?",
+  "goal": "Complete the six noun forms with the \"to\" form, use verbs that require it, and express possession the Roman way with est mihi.",
+  "bekal": [
+    "make the singular and plural \"to\" form for the first two groups",
+    "put *mihi*, *tibi*, *nobis*, *vobis* in the right place",
+    "say \"I have\" in two ways: *habeo* and *est mihi*"
+  ],
+  "dialogs": [
+    {
+      "title": "Colloquium — Epistula ad avum",
+      "intro": "Marcus is writing a letter to his grandfather in Sicily. Iulia notices something unfair.",
+      "lines": [
+        {
+          "speaker": "Iulia:",
+          "text": "Cui epistulam scribis, Marce?",
+          "id": "Who are you writing a letter to, Marcus?",
+          "literal": "to-whom letter-obj write-you, Marcus-call?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Avo scribo. Avus in Sicilia habitat.",
+          "id": "To Grandpa. Grandpa lives in Sicily.",
+          "literal": "grandfather-to write-I. grandfather in Sicily-in live-he."
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Et quid avo narras?",
+          "id": "And what are you telling Grandpa?",
+          "literal": "and what grandfather-to tell-you?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Avo de schola narro. Et de dono quoque.",
+          "id": "I'm telling Grandpa about school. And about a present too.",
+          "literal": "grandfather-to about school-about tell-I. and about gift-about also."
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Avusne tibi donum dat?",
+          "id": "Does Grandpa give you presents?",
+          "literal": "grandfather-Q you-to gift-obj give-he?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Ita! Avus mihi semper dona mittit.",
+          "id": "Yes! Grandpa always sends me presents.",
+          "literal": "yes! grandfather me-to always gift-pl-obj send-he."
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Et mihi? Avus mihi numquam dona mittit!",
+          "id": "What about me? Grandpa never sends me presents!",
+          "literal": "and me-to? grandfather me-to never gift-pl-obj send-he!"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Tu avo non scribis, Iulia! Ergo avus tibi non mittit.",
+          "id": "You don't write to Grandpa, Iulia! So Grandpa doesn't send you anything.",
+          "literal": "you grandfather-to not write-you, Iulia! so grandfather you-to not send-he."
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Vera dicis. Hodie avo et aviae scribo.",
+          "id": "That's true. Today I'll write to Grandpa and Grandma.",
+          "literal": "true-pl-neut-obj say-you. today grandfather-to and grandmother-to write-I."
+        },
+        {
+          "speaker": "Cornelia:",
+          "text": "Bene, filia. Litterae amicis gaudium dant.",
+          "id": "Good, daughter. Letters bring joy to friends.",
+          "literal": "well, daughter-call. letter-pl friend-pl-to joy-obj give-they."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Mater, estne tibi stilus?",
+          "id": "Mom, do you have a pen?",
+          "literal": "mother-call, is-Q you-to pen?"
+        },
+        {
+          "speaker": "Cornelia:",
+          "text": "Est mihi stilus, sed non est mihi patientia!",
+          "id": "I have a pen, but I don't have the patience!",
+          "literal": "is-it me-to pen, but not is-it me-to patience!"
+        }
+      ],
+      "notes": [
+        "**Cui? — \"to whom?\"** This is the \"to\" form of *quis*. Latin uses one form for what English splits into \"to\" and \"for\". So *avo scribo* can be translated \"I'm writing to Grandpa\" or \"I'm writing for Grandpa\" — and both are right.",
+        "**Est mihi stilus — the Roman way to say \"I have\".** Literally \"there is a pen to me\". Latin does have *habeo*, but this pattern is older and sounds more natural for things a person simply has. Notice that the thing owned becomes the **subject**, not the object: *stilus*, not *stilum*.",
+        "**Avo, aviae, amicis — three \"to\" endings in one dialogue.** Group two uses *-o*, group one uses *-ae*, and the plural of both uses *-is*. The same *-is* ending is also used for the \"with/in\" form, so one form does two jobs — the preposition tells them apart.",
+        "**Vera dicis — a neuter plural adjective used as a noun.** *Vera* means \"true things\", so *vera dicis* is \"you're saying true things\", that is, \"you're right\". It's the pattern you've already seen in *multa* and *cetera*."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "All six forms",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "With the \"to\" form, the noun table for groups one and two is now complete. There will be no new forms until the end of the course; all that's left are other noun groups with different endings."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Job",
+            "1st singular",
+            "1st plural",
+            "2nd singular",
+            "2nd plural",
+            "2nd neuter singular",
+            "2nd neuter plural"
+          ],
+          "rows": [
+            [
+              "subject",
+              "puella",
+              "puellae",
+              "amicus",
+              "amici",
+              "donum",
+              "dona"
+            ],
+            [
+              "calling",
+              "puella",
+              "puellae",
+              "amice",
+              "amici",
+              "donum",
+              "dona"
+            ],
+            [
+              "object",
+              "puellam",
+              "puellas",
+              "amicum",
+              "amicos",
+              "donum",
+              "dona"
+            ],
+            [
+              "of",
+              "puellae",
+              "puellarum",
+              "amici",
+              "amicorum",
+              "doni",
+              "donorum"
+            ],
+            [
+              "**to**",
+              "puell**ae**",
+              "puell**is**",
+              "amic**o**",
+              "amic**is**",
+              "don**o**",
+              "don**is**"
+            ],
+            [
+              "with/in",
+              "puella",
+              "puellis",
+              "amico",
+              "amicis",
+              "dono",
+              "donis"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Two new look-alikes appear, and it's best to notice them now. First, *puellae* can now mean three things: singular \"of\", plural subject, or singular \"to\". Second, *amicis* and *puellis* serve as both plural \"to\" and plural \"with/in\". Latin lives at peace with these twins because the sentence always gives clues: the verb, the preposition, and common sense."
+        },
+        {
+          "type": "sub",
+          "text": "Pronouns in the \"to\" form"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Person",
+            "Subject",
+            "Object",
+            "To"
+          ],
+          "rows": [
+            [
+              "I",
+              "ego",
+              "me",
+              "**mihi**"
+            ],
+            [
+              "you",
+              "tu",
+              "te",
+              "**tibi**"
+            ],
+            [
+              "he/she",
+              "is, ea",
+              "eum, eam",
+              "**ei**"
+            ],
+            [
+              "we",
+              "nos",
+              "nos",
+              "**nobis**"
+            ],
+            [
+              "you (pl)",
+              "vos",
+              "vos",
+              "**vobis**"
+            ],
+            [
+              "they",
+              "ei, eae",
+              "eos, eas",
+              "**eis**"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Verbs that require the \"to\" form",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "There are many kinds of \"giving\" verbs, and they all follow the same pattern: the thing given takes the object form, the receiver takes the \"to\" form."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Latin",
+            "Meaning",
+            "Example",
+            "Translation"
+          ],
+          "rows": [
+            [
+              "do, dare",
+              "to give",
+              "Donum **amico** do.",
+              "I give a gift to a friend."
+            ],
+            [
+              "mitto, mittere",
+              "to send",
+              "Epistulam **avo** mitto.",
+              "I send a letter to Grandpa."
+            ],
+            [
+              "dico, dicere",
+              "to say, to tell",
+              "**Tibi** verum dico.",
+              "I'm telling you the truth."
+            ],
+            [
+              "narro, narrare",
+              "to tell",
+              "Fabulam **liberis** narrat.",
+              "She tells the children a story."
+            ],
+            [
+              "monstro, monstrare",
+              "to show",
+              "Villam **amicis** monstro.",
+              "I show the house to my friends."
+            ],
+            [
+              "scribo, scribere",
+              "to write",
+              "**Aviae** scribo.",
+              "I write to Grandma."
+            ],
+            [
+              "respondeo, respondere",
+              "to answer",
+              "**Magistro** respondet.",
+              "He answers the teacher."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "There's also a group of verbs that in English seem to take an ordinary object, but in Latin require the \"to\" form. The group is small, and it's best learned as a whole."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Latin",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "credo, credere",
+              "to believe, to trust",
+              "**Amico** credo. — I trust my friend."
+            ],
+            [
+              "noceo, nocere",
+              "to harm",
+              "**Nemini** noceo. — I harm no one."
+            ],
+            [
+              "placeo, placere",
+              "to please",
+              "Fabula **mihi** placet. — I like the story."
+            ],
+            [
+              "pareo, parere",
+              "to obey",
+              "**Magistro** paremus. — We obey the teacher."
+            ],
+            [
+              "faveo, favere",
+              "to favor, to support",
+              "**Tibi** faveo. — I'm on your side."
+            ],
+            [
+              "ignosco, ignoscere",
+              "to forgive",
+              "**Tibi** ignosco. — I forgive you."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Placet* is worth learning whole: *mihi placet* is the Latin way to say \"I like it\", literally \"it pleases me\". Spanish and Italian inherited this way of thinking with *me gusta* and *mi piace*."
+        }
+      ]
+    },
+    {
+      "title": "Three jobs of the \"to\" form",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Job",
+            "Example",
+            "Translation"
+          ],
+          "rows": [
+            [
+              "receiver",
+              "Librum **puellae** do.",
+              "I give the book to the girl."
+            ],
+            [
+              "possession",
+              "**Mihi** est liber.",
+              "I have a book."
+            ],
+            [
+              "who it's done for",
+              "Cenam **liberis** paro.",
+              "I'm making dinner for the children."
+            ],
+            [
+              "",
+              "**Tibi** canto.",
+              "I'm singing for you."
+            ],
+            [
+              "",
+              "Non **scholae** sed vitae discimus.",
+              "We learn not for school, but for life."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "That last sentence — *non scholae sed vitae discimus* — is Seneca's complaint, turned around by later schoolmasters, and it's still carved on many school buildings in Europe. You can already read it word by word."
+        },
+        {
+          "type": "kotak",
+          "title": "Two ways to say \"have\"",
+          "items": [
+            "*Librum habeo.* — the owner is the subject, the thing is the object. This is the closest to English \"I have a book\".",
+            "*Mihi est liber.* — the thing is the subject, the owner takes the \"to\" form. This is the most Roman way, and the most common for qualities: *mihi est patientia* (\"I have patience\").",
+            "Both are correct. For things you hold, *habeo* is more natural; for qualities, relationships and names, *est mihi* is more natural: *nomen mihi est Marcus* — \"my name is Marcus\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "la": "cui?",
+      "baca": "KOO-ee",
+      "en": "to whom?"
+    },
+    {
+      "la": "mihi, tibi",
+      "baca": "MEE-hee, TEE-bee",
+      "en": "to me, to you"
+    },
+    {
+      "la": "nobis, vobis",
+      "baca": "NOH-bis, WOH-bis",
+      "en": "to us, to you (pl)"
+    },
+    {
+      "la": "do, dare",
+      "baca": "DOH, DAH-reh",
+      "en": "to give"
+    },
+    {
+      "la": "monstro, monstrare",
+      "baca": "MOHNS-troh",
+      "en": "to show"
+    },
+    {
+      "la": "credo, credere",
+      "baca": "KREH-doh",
+      "en": "to believe, to trust"
+    },
+    {
+      "la": "placeo, placere",
+      "baca": "PLAH-keh-oh",
+      "en": "to please, to be liked"
+    },
+    {
+      "la": "pareo, parere",
+      "baca": "PAH-reh-oh",
+      "en": "to obey"
+    },
+    {
+      "la": "noceo, nocere",
+      "baca": "NOH-keh-oh",
+      "en": "to harm"
+    },
+    {
+      "la": "ignosco, ignoscere",
+      "baca": "ig-NOHS-koh",
+      "en": "to forgive"
+    },
+    {
+      "la": "faveo, favere",
+      "baca": "FAH-weh-oh",
+      "en": "to favor, to support"
+    },
+    {
+      "la": "epistula, epistulae",
+      "baca": "eh-PIS-too-lah",
+      "en": "letter"
+    },
+    {
+      "la": "litterae, litterarum",
+      "baca": "LIT-teh-rye",
+      "en": "letter, writings, literature"
+    },
+    {
+      "la": "stilus, stili",
+      "baca": "STEE-loos",
+      "en": "pen, writing tool"
+    },
+    {
+      "la": "charta, chartae",
+      "baca": "KHAHR-tah",
+      "en": "sheet of papyrus, paper"
+    },
+    {
+      "la": "donum, doni",
+      "baca": "DOH-noom",
+      "en": "gift"
+    },
+    {
+      "la": "gaudium, gaudii",
+      "baca": "GOW-dee-oom",
+      "en": "joy"
+    },
+    {
+      "la": "verum, veri",
+      "baca": "WEH-room",
+      "en": "truth, what is true"
+    },
+    {
+      "la": "consilium, consilii",
+      "baca": "kohn-SEE-lee-oom",
+      "en": "advice, plan"
+    },
+    {
+      "la": "auxilium, auxilii",
+      "baca": "owk-SEE-lee-oom",
+      "en": "help"
+    },
+    {
+      "la": "beneficium, beneficii",
+      "baca": "beh-neh-FEE-kee-oom",
+      "en": "kindness, favor"
+    },
+    {
+      "la": "praemium, praemii",
+      "baca": "PRYE-mee-oom",
+      "en": "reward, prize"
+    },
+    {
+      "la": "numquam",
+      "baca": "NOOM-kwahm",
+      "en": "never"
+    },
+    {
+      "la": "saepe",
+      "baca": "SYE-peh",
+      "en": "often"
+    },
+    {
+      "la": "nemo",
+      "baca": "NEH-moh",
+      "en": "no one, nobody"
+    },
+    {
+      "la": "nihil",
+      "baca": "NEE-hil",
+      "en": "nothing"
+    },
+    {
+      "la": "avus, avi",
+      "baca": "AH-woos",
+      "en": "grandfather"
+    },
+    {
+      "la": "avia, aviae",
+      "baca": "AH-wee-ah",
+      "en": "grandmother"
+    },
+    {
+      "la": "Sicilia, Siciliae",
+      "baca": "see-KEE-lee-ah",
+      "en": "Sicily"
+    },
+    {
+      "la": "verus, vera, verum",
+      "baca": "WEH-roos",
+      "en": "true, real"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change into the singular \"to\" form.",
+      "items": [
+        "puella",
+        "amicus",
+        "donum",
+        "magister",
+        "avia",
+        "filius"
+      ]
+    },
+    {
+      "prompt": "Change into the plural \"to\" form.",
+      "items": [
+        "puella",
+        "amicus",
+        "donum",
+        "discipula",
+        "puer",
+        "templum"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right \"to\" pronoun.",
+      "items": [
+        "Avus ____ donum dat. (to me)",
+        "____ fabulam narro. (to you, sg)",
+        "Magister ____ respondet. (to us)",
+        "Epistulam ____ mitto. (to you, pl)",
+        "Fabula ____ placet. (to me)",
+        "____ credimus. (to you, sg)"
+      ]
+    },
+    {
+      "prompt": "Translate into Latin.",
+      "items": [
+        "I am writing a letter to Grandpa.",
+        "We give a gift to our friends.",
+        "Cornelia has a pen.",
+        "I like the story.",
+        "The teacher answers the pupils.",
+        "I do not trust Sextus."
+      ]
+    }
+  ],
+  "answers": [
+    "puellae — amico — dono — magistro — aviae — filio",
+    "puellis — amicis — donis — discipulis — pueris — templis",
+    "mihi — Tibi — nobis — vobis — mihi — Tibi",
+    "Avo epistulam scribo. — Amicis donum damus. — Corneliae est stilus. — Fabula mihi placet. — Magister discipulis respondet. — Sexto non credo."
+  ]
+}

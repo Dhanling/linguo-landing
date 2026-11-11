@@ -1,0 +1,568 @@
+{
+  "title": "Greetings from Rome",
+  "title_target": "Salve!",
+  "goal": "Say hello and goodbye, give your name and describe yourself with the verb sum, ask yes/no questions with -ne, and address people with the correct form of their name.",
+  "bekal": [
+    "greet one person or several people, then say goodbye",
+    "say *I am …, you are …, he is …* with the six forms of the verb *sum*",
+    "make a yes/no question just by attaching *-ne*"
+  ],
+  "dialogs": [
+    {
+      "title": "Colloquium — In schola",
+      "intro": "The first day at Titus's little school. Marcus has been studying there for a while; Lydia has just arrived.",
+      "lines": [
+        {
+          "speaker": "Marcus:",
+          "text": "Salve! Marcus sum.",
+          "id": "Hi! I'm Marcus.",
+          "literal": "be-well! Marcus am-I."
+        },
+        {
+          "speaker": "Lydia:",
+          "text": "Salve, Marce! Lydia sum.",
+          "id": "Hi, Marcus! I'm Lydia.",
+          "literal": "be-well, Marcus-call! Lydia am-I."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Esne Romana?",
+          "id": "Are you Roman?",
+          "literal": "are-you-Q Roman-fem?"
+        },
+        {
+          "speaker": "Lydia:",
+          "text": "Ita, Romana sum. Et tu?",
+          "id": "Yes, I'm Roman. And you?",
+          "literal": "yes, Roman-fem am-I. and you?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Ego quoque Romanus sum. Discipulus sum.",
+          "id": "I'm Roman too. I'm a pupil here.",
+          "literal": "I also Roman-masc am-I. pupil-masc am-I."
+        },
+        {
+          "speaker": "Lydia:",
+          "text": "Ego quoque discipula sum. Nova sum.",
+          "id": "I'm a pupil too. I'm new.",
+          "literal": "I also pupil-fem am-I. new-fem am-I."
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Salvete, discipuli!",
+          "id": "Good morning, pupils!",
+          "literal": "be-well-you-pl, pupil-pl-call!"
+        },
+        {
+          "speaker": "Marcus et Lydia:",
+          "text": "Salve, magister!",
+          "id": "Good morning, teacher!",
+          "literal": "be-well, teacher-call!"
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Esne tu Lydia? Nova discipula es.",
+          "id": "You're Lydia, aren't you? You're a new pupil.",
+          "literal": "are-you-Q you Lydia? new-fem pupil-fem are-you."
+        },
+        {
+          "speaker": "Lydia:",
+          "text": "Ita, magister. Laeta sum, sed timida.",
+          "id": "Yes, sir. I'm happy, but nervous.",
+          "literal": "yes, teacher-call. happy-fem am-I, but fearful-fem."
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Timida non es! Bona discipula es.",
+          "id": "No need to be nervous! You're a good pupil.",
+          "literal": "fearful-fem not are-you! good-fem pupil-fem are-you."
+        },
+        {
+          "speaker": "Titus:",
+          "text": "Nunc, discipuli: hodie fabula nova est. Fabulae bonae sunt!",
+          "id": "Now, everyone: today there's a new story. Stories are a good thing!",
+          "literal": "now, pupil-pl-call: today story new is-it. story-pl good-pl are-they!"
+        }
+      ],
+      "notes": [
+        "**Salve means \"be well\".** Romans didn't greet each other with \"good morning\" but with a short wish: *salve* comes from *salvus* (\"safe, whole\" — think *salvation*), and *vale* from *valere* (\"to be healthy, strong\" — think *valiant*). To one person: *salve* and *vale*. To more than one, add *-te*: *salvete*, *valete*. Titus greets two pupils at once, so he says *salvete*; the two pupils answer one teacher, so they say *salve*.",
+        "**Marce, not Marcus.** When you call out to someone, their name changes its ending. Names ending in *-us* take *-e*: *Marcus* becomes *Marce*, *Quintus* becomes *Quinte*. Women's names don't change: *Lydia* stays *Lydia*. This is the calling form, marked `-call` in this course's literal translations.",
+        "**Esne? — asking just by attaching.** Latin has no word like English \"do\" or \"does\" for questions. To ask yes/no, take the word you most want to ask about, put it at the front, and stick *-ne* on its end: *es* → *esne*, *aeger* → *aegerne*, *Romana* → *Romanane*. In the literal line it's marked `-Q`. The answer is *ita* (yes) or *minime* (not at all).",
+        "**No words for \"a\" and \"the\".** *Fabula* can mean \"story\", \"a story\" or \"the story\" — Latin has no articles at all. Pronouns are often dropped too: *sum* already means \"I am\", so *ego* is used only for emphasis (\"**I** too\", as Marcus says)."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Your first verb: sum, \"to be\"",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "*Sum* is the most frequent verb in Latin, and also the most irregular. Luckily it has only six forms, and those six will stay with you until the last unit. Learn how they sound, not how the table looks."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Latin",
+            "Literal",
+            "English"
+          ],
+          "rows": [
+            [
+              "**sum**",
+              "am-I",
+              "I am"
+            ],
+            [
+              "**es**",
+              "are-you",
+              "you are"
+            ],
+            [
+              "**est**",
+              "is-he",
+              "he/she/it is, there is"
+            ],
+            [
+              "**sumus**",
+              "are-we",
+              "we are"
+            ],
+            [
+              "**estis**",
+              "are-you-pl",
+              "you (all) are"
+            ],
+            [
+              "**sunt**",
+              "are-they",
+              "they are, there are"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that all six forms carry the doer inside their ending. *Sum* isn't \"am\" but \"I am\". That's why a Latin sentence is often just two words: *Discipulus sum.* — \"I'm a pupil.\" Adding *ego* isn't wrong, but it sounds like raising your voice: \"**I'm** a pupil.\""
+        },
+        {
+          "type": "p",
+          "text": "*Est* and *sunt* have a second job: stating that something exists, like English \"there is / there are\". *Fabula est.* can mean \"It's a story\" or \"There is a story\", depending on context."
+        },
+        {
+          "type": "kotak",
+          "title": "The verb goes at the end",
+          "items": [
+            "The most natural Latin word order puts the verb **last**: *Marcus discipulus est.* Literally \"Marcus pupil is-he\".",
+            "This isn't a strict rule — poets and speakers shuffle it as they like — but in this course, get used to writing the verb at the back. Your ear will recognize Latin reading patterns faster later.",
+            "The one thing that really is fixed: *non* always stands **right before** the word it negates. *Non sum discipulus* (\"I'm not a pupil\") has a different feel from *Discipulus non sum*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Calling people: the calling form",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Latin has a special form for the name of the person being addressed. English does this with a comma and tone of voice; Latin does it by changing the ending. The good news: only one group of words actually changes."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Normal form",
+            "When called",
+            "Example sentence"
+          ],
+          "rows": [
+            [
+              "Marcus",
+              "**Marce**",
+              "Salve, **Marce**!"
+            ],
+            [
+              "Quintus",
+              "**Quinte**",
+              "Vale, **Quinte**!"
+            ],
+            [
+              "magister",
+              "**magister** (same)",
+              "Salve, **magister**!"
+            ],
+            [
+              "Iulius",
+              "**Iuli**",
+              "Ubi es, **Iuli**?"
+            ],
+            [
+              "Lydia",
+              "**Lydia** (same)",
+              "Salve, **Lydia**!"
+            ],
+            [
+              "Cornelia",
+              "**Cornelia** (same)",
+              "Vale, **Cornelia**!"
+            ],
+            [
+              "discipuli (pl)",
+              "**discipuli** (same)",
+              "Salvete, **discipuli**!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "So only words ending in *-us* change to *-e*, and words ending in *-ius* shorten to *-i*. Everything else uses its normal form. This is the only place in all of Latin where the calling form differs from the subject form — in every other word the two are twins."
+        },
+        {
+          "type": "kotak",
+          "title": "Typical mistakes",
+          "items": [
+            "Writing *Salve, Marcus!* That sounds like mentioning his name to someone else, not greeting him. The correct form is *Salve, Marce!*",
+            "Using *salve* for several people. If you're talking to more than one person, it must be *salvete*.",
+            "Thinking *vale* literally means \"goodbye\". It means \"be well\" — just like *salve*, only used at the end of a meeting."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking and answering",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Three question tools are enough for this unit: *-ne* for yes/no questions, plus question words for people and things."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Latin",
+            "Meaning",
+            "Example",
+            "Translation"
+          ],
+          "rows": [
+            [
+              "**-ne**",
+              "(yes/no?) …?",
+              "Esne Romanus?",
+              "Are you Roman?"
+            ],
+            [
+              "**quis**",
+              "who?",
+              "Quis es?",
+              "Who are you?"
+            ],
+            [
+              "**quid**",
+              "what?",
+              "Quid est?",
+              "What is it?"
+            ],
+            [
+              "**ubi**",
+              "where?",
+              "Ubi est Iulia?",
+              "Where is Iulia?"
+            ],
+            [
+              "**nonne**",
+              "… isn't it?",
+              "Nonne discipulus es?",
+              "You're a pupil, aren't you?"
+            ],
+            [
+              "**num**",
+              "surely not …?",
+              "Num aeger es?",
+              "You're not sick, are you?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last two already carry the answer inside the question. *Nonne* is used when the asker expects \"yes\"; *num* when they expect \"no\". English does the same with tag questions: \"aren't you?\" and \"are you?\"."
+        },
+        {
+          "type": "sub",
+          "text": "Answering"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Latin",
+            "Meaning",
+            "How it feels"
+          ],
+          "rows": [
+            [
+              "ita",
+              "yes",
+              "plain, neutral"
+            ],
+            [
+              "ita vero",
+              "yes, indeed",
+              "firmer"
+            ],
+            [
+              "certe",
+              "certainly",
+              "sure"
+            ],
+            [
+              "non",
+              "no, not",
+              "plain"
+            ],
+            [
+              "minime",
+              "not at all",
+              "a firm refusal"
+            ],
+            [
+              "fortasse",
+              "perhaps",
+              "doubtful"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Latin actually has no truly neutral words for \"yes\" and \"no\" the way English does. The most Roman way to answer is to repeat the verb: *Esne discipulus?* — *Sum.* (\"I am.\") or *Non sum.* (\"I'm not.\") You'll meet this often in real texts."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "la": "salve, salvete",
+      "baca": "SAHL-weh, sahl-WEH-teh",
+      "en": "hello (to one person / to several)"
+    },
+    {
+      "la": "vale, valete",
+      "baca": "WAH-leh, wah-LEH-teh",
+      "en": "goodbye, farewell (lit. be well)"
+    },
+    {
+      "la": "sum, esse",
+      "baca": "SOOM, EHS-seh",
+      "en": "to be, to exist"
+    },
+    {
+      "la": "es",
+      "baca": "EHS",
+      "en": "you are"
+    },
+    {
+      "la": "est",
+      "baca": "EHST",
+      "en": "he/she/it is, there is"
+    },
+    {
+      "la": "sumus",
+      "baca": "SOO-moos",
+      "en": "we are"
+    },
+    {
+      "la": "estis",
+      "baca": "EHS-tis",
+      "en": "you (pl) are"
+    },
+    {
+      "la": "sunt",
+      "baca": "SOONT",
+      "en": "they are, there are"
+    },
+    {
+      "la": "ego",
+      "baca": "EH-goh",
+      "en": "I"
+    },
+    {
+      "la": "tu",
+      "baca": "TOO",
+      "en": "you (one person)"
+    },
+    {
+      "la": "et",
+      "baca": "EHT",
+      "en": "and"
+    },
+    {
+      "la": "sed",
+      "baca": "SEHD",
+      "en": "but"
+    },
+    {
+      "la": "quoque",
+      "baca": "KWOH-kweh",
+      "en": "also, too"
+    },
+    {
+      "la": "non",
+      "baca": "NOHN",
+      "en": "not, no"
+    },
+    {
+      "la": "ita",
+      "baca": "EE-tah",
+      "en": "yes, so"
+    },
+    {
+      "la": "minime",
+      "baca": "MEE-nee-meh",
+      "en": "not at all"
+    },
+    {
+      "la": "certe",
+      "baca": "KEHR-teh",
+      "en": "certainly"
+    },
+    {
+      "la": "fortasse",
+      "baca": "fohr-TAHS-seh",
+      "en": "perhaps"
+    },
+    {
+      "la": "quis?",
+      "baca": "KWIS",
+      "en": "who?"
+    },
+    {
+      "la": "quid?",
+      "baca": "KWID",
+      "en": "what?"
+    },
+    {
+      "la": "ubi?",
+      "baca": "OO-bee",
+      "en": "where?"
+    },
+    {
+      "la": "hodie",
+      "baca": "HOH-dee-eh",
+      "en": "today"
+    },
+    {
+      "la": "nunc",
+      "baca": "NOONK",
+      "en": "now"
+    },
+    {
+      "la": "discipulus, discipula",
+      "baca": "dis-KEE-poo-loos",
+      "en": "pupil (m, f)"
+    },
+    {
+      "la": "magister, magistra",
+      "baca": "mah-GIS-tehr",
+      "en": "teacher (m, f)"
+    },
+    {
+      "la": "fabula",
+      "baca": "FAH-boo-lah",
+      "en": "story, tale"
+    },
+    {
+      "la": "schola",
+      "baca": "SKOH-lah",
+      "en": "school"
+    },
+    {
+      "la": "Romanus, Romana",
+      "baca": "roh-MAH-noos",
+      "en": "Roman"
+    },
+    {
+      "la": "novus, nova",
+      "baca": "NOH-woos",
+      "en": "new"
+    },
+    {
+      "la": "bonus, bona",
+      "baca": "BOH-noos",
+      "en": "good"
+    },
+    {
+      "la": "laetus, laeta",
+      "baca": "LYE-toos",
+      "en": "happy, glad"
+    },
+    {
+      "la": "fessus, fessa",
+      "baca": "FEHS-soos",
+      "en": "tired"
+    },
+    {
+      "la": "aeger, aegra",
+      "baca": "EYE-gehr",
+      "en": "sick, ill"
+    },
+    {
+      "la": "timidus, timida",
+      "baca": "TEE-mee-doos",
+      "en": "afraid, nervous"
+    },
+    {
+      "la": "gratias (ago)",
+      "baca": "GRAH-tee-ahs",
+      "en": "thank you"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the correct form of sum.",
+      "items": [
+        "Ego discipulus ____.",
+        "Tu magistra ____.",
+        "Marcus Romanus ____.",
+        "Nos discipuli ____.",
+        "Vos laeti ____.",
+        "Fabulae bonae ____."
+      ]
+    },
+    {
+      "prompt": "Change into the calling form, then use it in the greeting Salve, …!",
+      "items": [
+        "Marcus",
+        "Lydia",
+        "Quintus",
+        "magister",
+        "Iulius",
+        "Cornelia"
+      ]
+    },
+    {
+      "prompt": "Make a yes/no question by attaching -ne to the first word.",
+      "items": [
+        "Romanus es.",
+        "Aegra est.",
+        "Discipuli sumus.",
+        "Fabula nova est.",
+        "Laeti estis.",
+        "Magister est."
+      ]
+    },
+    {
+      "prompt": "Translate into Latin. Put the verb at the end of the sentence.",
+      "items": [
+        "I am a pupil.",
+        "You are not a teacher.",
+        "Lydia is Roman.",
+        "We are happy.",
+        "Hello, Marcus! (greeting)",
+        "The story is new."
+      ]
+    }
+  ],
+  "answers": [
+    "sum — es — est — sumus — estis — sunt",
+    "Salve, Marce! — Salve, Lydia! — Salve, Quinte! — Salve, magister! — Salve, Iuli! — Salve, Cornelia!",
+    "Romanusne es? — Aegrane est? — Discipuline sumus? — Fabulane nova est? — Laetine estis? — Magisterne est?",
+    "Discipulus sum. — Magister non es. — Lydia Romana est. — Laeti sumus. — Salve, Marce! — Fabula nova est."
+  ]
+}

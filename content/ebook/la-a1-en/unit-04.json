@@ -1,0 +1,561 @@
+{
+  "title": "Whose is it?",
+  "title_target": "Cuius est?",
+  "goal": "Express possession with the endings -ae and -i, use the possessives meus and tuus correctly, and name the members of a Roman family.",
+  "bekal": [
+    "ask *cuius est?* and answer with the \"of\" form",
+    "read a noun's dictionary form and know why it always lists two forms",
+    "put *meus, tua, nostrum* on the right thing — the thing owned, not the owner"
+  ],
+  "dialogs": [
+    {
+      "title": "Colloquium — Anulus in horto",
+      "intro": "Iulia finds a ring in the garden. The whole household tries to guess who owns it.",
+      "lines": [
+        {
+          "speaker": "Iulia:",
+          "text": "Ecce anulus! Cuius est anulus?",
+          "id": "Look, a ring! Whose ring is this?",
+          "literal": "look ring! whose is-it ring?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Meus non est. Fortasse anulus Sexti est.",
+          "id": "It's not mine. Maybe it's Sextus's ring.",
+          "literal": "mine not is-it. perhaps ring Sextus-of is-it."
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Sextine? Cur?",
+          "id": "Sextus's? Why?",
+          "literal": "Sextus-of-Q? why?"
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Sextus semper hic ambulat.",
+          "id": "Sextus is always walking around here.",
+          "literal": "Sextus always here walk-he."
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Fortasse. Sed anulus feminae est, non viri.",
+          "id": "Maybe. But it's a woman's ring, not a man's.",
+          "literal": "perhaps. but ring woman-of is-it, not man-of."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Ergo anulus Corneliae est?",
+          "id": "So it's Cornelia's ring?",
+          "literal": "so ring Cornelia-of is-it?"
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Fortasse. Cornelia anulum amat.",
+          "id": "Maybe. Cornelia does love rings.",
+          "literal": "perhaps. Cornelia ring-obj love-she."
+        },
+        {
+          "speaker": "Cornelia:",
+          "text": "Quid clamatis, liberi?",
+          "id": "What are you shouting about, children?",
+          "literal": "what shout-you-pl, children-pl-call?"
+        },
+        {
+          "speaker": "Iulia:",
+          "text": "Ecce anulus, mater! Tuusne est?",
+          "id": "Look, a ring, Mom! Is it yours?",
+          "literal": "look ring, mother-call! yours-Q is-it?"
+        },
+        {
+          "speaker": "Cornelia:",
+          "text": "Ita, meus est! Anulus aviae meae est.",
+          "id": "Yes, it's mine! It's my grandmother's ring.",
+          "literal": "yes, mine is-it! ring grandmother-of my-of is-it."
+        },
+        {
+          "speaker": "Marcus:",
+          "text": "Anulus aviae? Ergo antiquus est!",
+          "id": "Grandmother's ring? Then it's really old!",
+          "literal": "ring grandmother-of? so old-masc is-it!"
+        },
+        {
+          "speaker": "Cornelia:",
+          "text": "Ita. Gratias, liberi. Filia bona et filius bonus estis.",
+          "id": "Yes. Thank you, children. You're a good daughter and a good son.",
+          "literal": "yes. thanks, children-pl-call. daughter good-fem and son good-masc are-you-pl."
+        }
+      ],
+      "notes": [
+        "**Cuius est? — \"whose is it?\"** This is the \"of\" form of *quis*. The answer uses the \"of\" form too: *Corneliae est* (\"it's Cornelia's\"), *Sexti est* (\"it's Sextus's\"), *viri est* (\"it's the man's\"). Notice that Latin needs no word for \"of\" or no *'s* at all — the ending carries that meaning.",
+        "**Anulus feminae, non viri.** Two words in one line show two groups at once: *femina* becomes *feminae*, *vir* becomes *viri*. Dictionaries use this \"of\" form to mark a word's group, which is why every noun is always listed twice: *femina, feminae* and *vir, viri*.",
+        "**Anulus aviae meae — two \"of\" endings in a row.** *Aviae* means \"of grandmother\", and *meae* matches *aviae*, not *anulus*. A possessive always follows the word it belongs to. The translation: \"my grandmother's ring\".",
+        "**Liberi means \"children\", not \"free people\".** It's the plural of *liber* (\"free\" — think *liberty*) used as a noun: in a Roman household, the children were the free people in it — as opposed to those who were enslaved. It's one of those words that carries a bitter history; this course uses it as it is."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The \"of\" form: the -ae and -i hat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The \"of\" form — called the genitive — expresses possession, origin and relationship. It translates English \"of\" and *'s*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Group",
+            "Subject",
+            "\"Of\" form",
+            "Example"
+          ],
+          "rows": [
+            [
+              "1st declension",
+              "puella",
+              "puell**ae**",
+              "liber **puellae** — the girl's book"
+            ],
+            [
+              "",
+              "Cornelia",
+              "Cornel**iae**",
+              "villa **Corneliae** — Cornelia's house"
+            ],
+            [
+              "",
+              "schola",
+              "schol**ae**",
+              "ianua **scholae** — the door of the school"
+            ],
+            [
+              "2nd declension (-us)",
+              "amicus",
+              "amic**i**",
+              "epistula **amici** — a letter from a friend"
+            ],
+            [
+              "",
+              "Sextus",
+              "Sext**i**",
+              "anulus **Sexti** — Sextus's ring"
+            ],
+            [
+              "",
+              "vir",
+              "vir**i**",
+              "vox **viri** — the man's voice"
+            ],
+            [
+              "2nd declension (-um)",
+              "templum",
+              "templ**i**",
+              "ianua **templi** — the temple door"
+            ],
+            [
+              "",
+              "oppidum",
+              "oppid**i**",
+              "forum **oppidi** — the town square"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Words in *-us* and neuter words in *-um* share the same \"of\" form: *-i*. Words in *-er* like *magister* and *liber* drop their *e*: *magistri*, *libri*, *agri* — except *puer*, which keeps it: *pueri*. There are few words like this, and the dictionary always tells you."
+        },
+        {
+          "type": "kotak",
+          "title": "Why the dictionary lists two forms",
+          "items": [
+            "A Latin noun's dictionary form always has two parts: *puella, puellae* — the subject form and the \"of\" form. The second one tells you its group.",
+            "Ends in *-ae* → 1st declension. Ends in *-i* → 2nd declension. Ends in *-is* → 3rd declension (Unit 10). Ends in *-us* → 4th declension, ends in *-ei* → 5th declension (Unit 17).",
+            "So always learn nouns in pairs. *Hortus, horti* sticks much better than *hortus* alone, and once you know it, you can build all the other forms yourself."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Possessives: meus, tuus, noster, vester",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Latin possessives behave like ordinary adjectives: they change outfits to match **the thing owned**, not the owner. English *his* and *her* follow the owner, so this often confuses learners at first."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Owner",
+            "For masculine things",
+            "For feminine things",
+            "For neuter things"
+          ],
+          "rows": [
+            [
+              "I",
+              "meus",
+              "mea",
+              "meum"
+            ],
+            [
+              "you",
+              "tuus",
+              "tua",
+              "tuum"
+            ],
+            [
+              "he/she (someone else's)",
+              "eius (never changes)",
+              "eius",
+              "eius"
+            ],
+            [
+              "we",
+              "noster",
+              "nostra",
+              "nostrum"
+            ],
+            [
+              "you (pl)",
+              "vester",
+              "vestra",
+              "vestrum"
+            ],
+            [
+              "he/she (their own)",
+              "suus",
+              "sua",
+              "suum"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Translation",
+            "Why that form"
+          ],
+          "rows": [
+            [
+              "Marcus dicit: \"Amica **mea** est.\"",
+              "Marcus says: \"She's my friend.\"",
+              "*amica* is feminine → *mea*, even though Marcus is male"
+            ],
+            [
+              "Lydia dicit: \"Liber **meus** est.\"",
+              "Lydia says: \"It's my book.\"",
+              "*liber* is masculine → *meus*, even though Lydia is female"
+            ],
+            [
+              "Villa **nostra** magna est.",
+              "Our house is big.",
+              "*villa* is feminine → *nostra*"
+            ],
+            [
+              "Templum **vestrum** antiquum est.",
+              "Your temple is old.",
+              "*templum* is neuter → *vestrum*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "A possessive can stand before or after its noun. *Amicus meus* is the normal order; *meus amicus* sounds emphatic: \"**my** friend, not yours\". When calling someone, though, the possessive almost always comes first: *mi fili* (\"my son\") — and note *mi*, the irregular calling form of *meus*."
+        }
+      ]
+    },
+    {
+      "title": "The Roman family",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Some family words belong to the third declension, which you'll learn in Unit 10. For now just memorize them; the middle column shows the \"of\" form, which you can already use. Plenty of English cousins here: *paternal, maternal, filial, fraternal, sorority, marital*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Latin",
+            "\"Of\" form",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "pater",
+              "patris",
+              "father"
+            ],
+            [
+              "mater",
+              "matris",
+              "mother"
+            ],
+            [
+              "filius",
+              "filii",
+              "son"
+            ],
+            [
+              "filia",
+              "filiae",
+              "daughter"
+            ],
+            [
+              "frater",
+              "fratris",
+              "brother"
+            ],
+            [
+              "soror",
+              "sororis",
+              "sister"
+            ],
+            [
+              "avus",
+              "avi",
+              "grandfather"
+            ],
+            [
+              "avia",
+              "aviae",
+              "grandmother"
+            ],
+            [
+              "maritus",
+              "mariti",
+              "husband"
+            ],
+            [
+              "uxor",
+              "uxoris",
+              "wife"
+            ],
+            [
+              "liberi",
+              "liberorum",
+              "children"
+            ],
+            [
+              "familia",
+              "familiae",
+              "household"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Familia doesn't mean \"family\"",
+          "items": [
+            "In Latin, *familia* covers **the whole household**: father, mother, children, relatives living with them, and the enslaved people in it. It's closer to \"household\" than to \"nuclear family\".",
+            "The head of the household is the *pater familias* — note the old \"of\" form *familias*, not *familiae*. The phrase froze in an older age and was never updated.",
+            "*Domus* means a house as the family's home, while *villa* is a farmhouse outside town, and *insula* is a multi-story apartment block where most people in Rome actually lived."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "la": "cuius?",
+      "baca": "KOO-yoos",
+      "en": "whose?"
+    },
+    {
+      "la": "anulus, anuli",
+      "baca": "AH-noo-loos",
+      "en": "ring"
+    },
+    {
+      "la": "pater, patris",
+      "baca": "PAH-tehr",
+      "en": "father"
+    },
+    {
+      "la": "mater, matris",
+      "baca": "MAH-tehr",
+      "en": "mother"
+    },
+    {
+      "la": "filius, filii",
+      "baca": "FEE-lee-oos",
+      "en": "son"
+    },
+    {
+      "la": "filia, filiae",
+      "baca": "FEE-lee-ah",
+      "en": "daughter"
+    },
+    {
+      "la": "frater, fratris",
+      "baca": "FRAH-tehr",
+      "en": "brother"
+    },
+    {
+      "la": "soror, sororis",
+      "baca": "SOH-rohr",
+      "en": "sister"
+    },
+    {
+      "la": "avus, avi",
+      "baca": "AH-woos",
+      "en": "grandfather"
+    },
+    {
+      "la": "avia, aviae",
+      "baca": "AH-wee-ah",
+      "en": "grandmother"
+    },
+    {
+      "la": "uxor, uxoris",
+      "baca": "OOK-sohr",
+      "en": "wife"
+    },
+    {
+      "la": "maritus, mariti",
+      "baca": "mah-REE-toos",
+      "en": "husband"
+    },
+    {
+      "la": "liberi, liberorum",
+      "baca": "LEE-beh-ree",
+      "en": "children"
+    },
+    {
+      "la": "familia, familiae",
+      "baca": "fah-MEE-lee-ah",
+      "en": "household"
+    },
+    {
+      "la": "domus",
+      "baca": "DOH-moos",
+      "en": "house, home"
+    },
+    {
+      "la": "insula, insulae",
+      "baca": "IN-soo-lah",
+      "en": "apartment block; island"
+    },
+    {
+      "la": "vita, vitae",
+      "baca": "WEE-tah",
+      "en": "life"
+    },
+    {
+      "la": "nomen",
+      "baca": "NOH-mehn",
+      "en": "name"
+    },
+    {
+      "la": "vox, vocis",
+      "baca": "WOHKS",
+      "en": "voice"
+    },
+    {
+      "la": "meus, mea, meum",
+      "baca": "MEH-oos",
+      "en": "my, mine"
+    },
+    {
+      "la": "tuus, tua, tuum",
+      "baca": "TOO-oos",
+      "en": "your, yours (one person)"
+    },
+    {
+      "la": "noster, nostra",
+      "baca": "NOHS-tehr",
+      "en": "our, ours"
+    },
+    {
+      "la": "vester, vestra",
+      "baca": "WEHS-tehr",
+      "en": "your, yours (pl)"
+    },
+    {
+      "la": "suus, sua, suum",
+      "baca": "SOO-oos",
+      "en": "his/her/their own"
+    },
+    {
+      "la": "eius",
+      "baca": "EH-yoos",
+      "en": "his, her (someone else's)"
+    },
+    {
+      "la": "ergo",
+      "baca": "EHR-goh",
+      "en": "so, therefore"
+    },
+    {
+      "la": "hic",
+      "baca": "HIK",
+      "en": "here"
+    },
+    {
+      "la": "fortasse",
+      "baca": "fohr-TAHS-seh",
+      "en": "perhaps"
+    },
+    {
+      "la": "clamo, clamare",
+      "baca": "KLAH-moh",
+      "en": "to shout"
+    },
+    {
+      "la": "amo, amare",
+      "baca": "AH-moh",
+      "en": "to love, to like"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change into the \"of\" form.",
+      "items": [
+        "puella",
+        "amicus",
+        "templum",
+        "Cornelia",
+        "vir",
+        "oppidum"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the \"of\" form of the word in brackets.",
+      "items": [
+        "liber ____ (magister)",
+        "villa ____ (femina)",
+        "ianua ____ (schola)",
+        "anulus ____ (avia)",
+        "forum ____ (oppidum)",
+        "epistula ____ (filius)"
+      ]
+    },
+    {
+      "prompt": "Choose the right possessive form for the thing owned.",
+      "items": [
+        "amicus ____ (my)",
+        "villa ____ (our)",
+        "templum ____ (your, pl)",
+        "filia ____ (your, sg)",
+        "hortus ____ (our)",
+        "donum ____ (my)"
+      ]
+    },
+    {
+      "prompt": "Translate into Latin.",
+      "items": [
+        "It is grandmother's ring.",
+        "Whose is this book?",
+        "Our house is big.",
+        "He is my friend. (said by a woman)",
+        "The temple door is tall.",
+        "I am Cornelia's son."
+      ]
+    }
+  ],
+  "answers": [
+    "puellae — amici — templi — Corneliae — viri — oppidi",
+    "magistri — feminae — scholae — aviae — oppidi — filii",
+    "meus — nostra — vestrum — tua — noster — meum",
+    "Anulus aviae est. — Cuius est liber? — Villa nostra magna est. — Amicus meus est. — Ianua templi alta est. — Filius Corneliae sum."
+  ]
+}

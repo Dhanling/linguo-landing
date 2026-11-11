@@ -1,0 +1,609 @@
+{
+  "title": "I drink tea every morning",
+  "title_target": "Ólaim tae gach maidin",
+  "goal": "Use present-tense verbs for habits, make them negative with *ní*, and ask questions with *an*.",
+  "bekal": [
+    "build the present tense of the first conjugation: *ólaim, ólann tú, ólaimid*",
+    "tell a habit (*Ólaim tae*) from something in progress (*Tá mé ag ól tae*)",
+    "use *ní* with séimhiú and *an* with urú"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — Gnáthlá Bhudi",
+      "intro": "In class, Aoife asks each student to describe an ordinary day. It's Budi's turn.",
+      "lines": [
+        {
+          "speaker": "Aoife:",
+          "text": "A Bhudi, inis dúinn faoi do lá. Cén t-am a éiríonn tú?",
+          "id": "Budi, tell us about your day. What time do you get up?",
+          "literal": "O Budi, tell to-us about your day. what time that rises you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Éirím ar a seacht. Ólaim tae agus ithim arán.",
+          "id": "I get up at seven. I drink tea and eat bread.",
+          "literal": "rise-I at the seven. drink-I tea and eat-I bread."
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "An ólann tú caife riamh?",
+          "id": "Do you ever drink coffee?",
+          "literal": "question drinks you coffee ever?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ní ólaim caife. Ní maith liom é.",
+          "id": "I don't drink coffee. I don't like it.",
+          "literal": "not drink-I coffee. not good with-me it."
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "Agus ansin?",
+          "id": "And then?",
+          "literal": "and then?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Siúlaim chuig an scoil. Fanaim anseo go dtí a trí.",
+          "id": "I walk to school. I stay here until three.",
+          "literal": "walk-I to the school. stay-I here until the three."
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "An dtuigeann tú gach rud sa rang?",
+          "id": "Do you understand everything in class?",
+          "literal": "question understands you every thing in-the class?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ní thuigim gach rud, ach tuigim go leor.",
+          "id": "I don't understand everything, but I understand plenty.",
+          "literal": "not understand-I every thing, but understand-I galore."
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "Maith thú! Cad a dhéanann tú tráthnóna?",
+          "id": "Well done! What do you do in the evening?",
+          "literal": "good you! what that does you evening?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Léim leabhar nó féachaim ar an teilifís. Uaireanta glanaim an chistin.",
+          "id": "I read a book or watch TV. Sometimes I clean the kitchen.",
+          "literal": "read-I book or look-I on the television. sometimes clean-I the kitchen."
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "An gcanann tú?",
+          "id": "Do you sing?",
+          "literal": "question sings you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Canaim sa seomra folctha amháin!",
+          "id": "Only in the bathroom!",
+          "literal": "sing-I in-the room of-bathing only!"
+        }
+      ],
+      "notes": [
+        "**Ólaim, but ólann tú.** Irish barely changes its verbs for different people. Only \"I\" and \"we\" have their own endings (*-aim* and *-aimid*); everyone else shares one form, *-ann*, plus the pronoun. So there are only **three** forms to learn per verb, not six.",
+        "**Ólaim tae isn't the same as Tá mé ag ól tae.** *Ólaim tae* means \"I drink tea\" — a habit, like the English present simple. *Tá mé ag ól tae* means \"I'm drinking tea right now\". English makes the same distinction, so you have a head start here. If the sentence has a word like *gach lá*, *go minic* or *uaireanta*, it almost certainly takes the habitual form.",
+        "**Ní thuigim, an dtuigeann tú — two small words that change letters.** *Ní* (\"not\") brings **séimhiú**: *tuigim* → *ní thuigim*, *canaim* → *ní chanaim*. *An* (question) brings **urú**: *tuigeann* → *an dtuigeann*, *canann* → *an gcanann*. Words starting with a vowel are untouched by both: *ólaim* → *ní ólaim*, *an ólann tú?*",
+        "**The verb comes first.** *Ólaim tae* — verb, then object. If the doer is named, it goes in the middle: *Ólann Seán tae* (\"Seán drinks tea\"). This verb–subject–object order is the same in every tense, so once you're used to it, it won't trouble you again."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The present tense, first conjugation",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The first conjugation is verbs whose base form has one syllable: *ól, fan, can, glan, dún, léigh, tuig, cuir*. Their endings depend on the last vowel of the base — **broad** (a, o, u) or **slender** (e, i)."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Person",
+            "Broad base: ól (drink)",
+            "Slender base: tuig (understand)"
+          ],
+          "rows": [
+            [
+              "mé",
+              "ólaim",
+              "tuigim"
+            ],
+            [
+              "tú",
+              "ólann tú",
+              "tuigeann tú"
+            ],
+            [
+              "sé / sí",
+              "ólann sé / sí",
+              "tuigeann sé / sí"
+            ],
+            [
+              "muid",
+              "ólaimid",
+              "tuigimid"
+            ],
+            [
+              "sibh",
+              "ólann sibh",
+              "tuigeann sibh"
+            ],
+            [
+              "siad",
+              "ólann siad",
+              "tuigeann siad"
+            ],
+            [
+              "negative",
+              "ní ólaim",
+              "ní thuigim"
+            ],
+            [
+              "question",
+              "an ólann tú?",
+              "an dtuigeann tú?"
+            ],
+            [
+              "negative question",
+              "nach n-ólann tú?",
+              "nach dtuigeann tú?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Say them like this: *ólaim* = OH-lim, *ólann* = OH-lan, *ólaimid* = OH-lih-mid, *tuigim* = TIH-gyim, *tuigeann* = TIH-gyan. The endings *-ann* and *-eann* both sound like a short \"an\"; the *e* is only there to show that the consonant before it is slender."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Base",
+            "Meaning",
+            "I",
+            "You / he / she",
+            "We"
+          ],
+          "rows": [
+            [
+              "ól",
+              "drink",
+              "ólaim",
+              "ólann tú",
+              "ólaimid"
+            ],
+            [
+              "fan",
+              "wait, stay",
+              "fanaim",
+              "fanann tú",
+              "fanaimid"
+            ],
+            [
+              "can",
+              "sing",
+              "canaim",
+              "canann tú",
+              "canaimid"
+            ],
+            [
+              "glan",
+              "clean",
+              "glanaim",
+              "glanann tú",
+              "glanaimid"
+            ],
+            [
+              "dún",
+              "close",
+              "dúnaim",
+              "dúnann tú",
+              "dúnaimid"
+            ],
+            [
+              "féach",
+              "look",
+              "féachaim",
+              "féachann tú",
+              "féachaimid"
+            ],
+            [
+              "tuig",
+              "understand",
+              "tuigim",
+              "tuigeann tú",
+              "tuigimid"
+            ],
+            [
+              "cuir",
+              "put",
+              "cuirim",
+              "cuireann tú",
+              "cuirimid"
+            ],
+            [
+              "bris",
+              "break",
+              "brisim",
+              "briseann tú",
+              "brisimid"
+            ],
+            [
+              "rith",
+              "run",
+              "rithim",
+              "ritheann tú",
+              "rithimid"
+            ],
+            [
+              "léigh",
+              "read",
+              "léim",
+              "léann tú",
+              "léimid"
+            ],
+            [
+              "suigh",
+              "sit",
+              "suím",
+              "suíonn tú",
+              "suímid"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two forms that break the pattern",
+          "items": [
+            "Verbs ending in *-igh* (*léigh*, *suigh*, *nigh*) lose their *gh*: *léim*, *léann*; *suím*, *suíonn*; *ním*, *níonn*.",
+            "*Léim* means \"I read\" — but it also happens to mean \"a jump\" as a noun. Only its place in the sentence tells them apart.",
+            "The \"we\" form can also be written as two words: *ólann muid* is just as correct as *ólaimid*, and more often heard in Connacht and Ulster."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Habits — and the words that signal them",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "gach lá",
+              "gakh LAW",
+              "every day"
+            ],
+            [
+              "gach maidin",
+              "gakh MAH-dyin",
+              "every morning"
+            ],
+            [
+              "gach seachtain",
+              "gakh SHAKH-tin",
+              "every week"
+            ],
+            [
+              "go minic",
+              "guh MIH-nik",
+              "often"
+            ],
+            [
+              "uaireanta",
+              "OO-uh-ryan-tuh",
+              "sometimes"
+            ],
+            [
+              "i gcónaí",
+              "ih GOH-nee",
+              "always"
+            ],
+            [
+              "riamh",
+              "REE-uv",
+              "ever; never (in a negative sentence)"
+            ],
+            [
+              "go hannamh",
+              "guh HAH-nuv",
+              "rarely"
+            ],
+            [
+              "arís",
+              "uh-REESH",
+              "again"
+            ],
+            [
+              "anois",
+              "uh-NISH",
+              "now"
+            ],
+            [
+              "ansin",
+              "an-SHIN",
+              "then"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Literally",
+            "English"
+          ],
+          "rows": [
+            [
+              "Ólaim tae gach maidin.",
+              "drink-I tea every morning",
+              "I drink tea every morning."
+            ],
+            [
+              "Ní ólaim caife riamh.",
+              "not drink-I coffee ever",
+              "I never drink coffee."
+            ],
+            [
+              "An itheann tú feoil?",
+              "question eats you meat",
+              "Do you eat meat?"
+            ],
+            [
+              "Fanaimid sa bhaile go minic.",
+              "stay-we at-home often",
+              "We often stay at home."
+            ],
+            [
+              "Ní thuigim an cheist.",
+              "not understand-I the question",
+              "I don't understand the question."
+            ],
+            [
+              "Siúlann sí chuig an scoil.",
+              "walks she to the school",
+              "She walks to school."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Compare for yourself",
+          "items": [
+            "*Ólaim tae.* — I drink tea. A habit, not tied to any moment.",
+            "*Tá mé ag ól tae.* — I'm drinking tea. Right now, in front of you.",
+            "*Ólaim tae gach maidin, ach tá mé ag ól caife anois.* — \"I usually drink tea every morning, but right now I'm drinking coffee.\" This sentence has both at once, and it's worth memorizing as a reference point."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "éirím",
+      "baca": "AY-reem",
+      "en": "I get up"
+    },
+    {
+      "ga": "ólaim",
+      "baca": "OH-lim",
+      "en": "I drink"
+    },
+    {
+      "ga": "ithim",
+      "baca": "IH-him",
+      "en": "I eat"
+    },
+    {
+      "ga": "siúlaim",
+      "baca": "SHOO-lim",
+      "en": "I walk"
+    },
+    {
+      "ga": "fanaim",
+      "baca": "FAH-nim",
+      "en": "I wait, I stay"
+    },
+    {
+      "ga": "tuigim",
+      "baca": "TIH-gyim",
+      "en": "I understand"
+    },
+    {
+      "ga": "léim",
+      "baca": "LYAYM",
+      "en": "I read"
+    },
+    {
+      "ga": "féachaim",
+      "baca": "FAY-uh-khim",
+      "en": "I look"
+    },
+    {
+      "ga": "glanaim",
+      "baca": "GLAH-nim",
+      "en": "I clean"
+    },
+    {
+      "ga": "canaim",
+      "baca": "KAH-nim",
+      "en": "I sing"
+    },
+    {
+      "ga": "dúnaim",
+      "baca": "DOO-nim",
+      "en": "I close"
+    },
+    {
+      "ga": "cuirim",
+      "baca": "KIH-rim",
+      "en": "I put"
+    },
+    {
+      "ga": "ní",
+      "baca": "nee",
+      "en": "not (before a verb)"
+    },
+    {
+      "ga": "an",
+      "baca": "an",
+      "en": "question word (before a verb)"
+    },
+    {
+      "ga": "nach",
+      "baca": "NAKH",
+      "en": "isn't it?, don't you?"
+    },
+    {
+      "ga": "gnáthlá",
+      "baca": "GNAW-law",
+      "en": "ordinary day"
+    },
+    {
+      "ga": "inis",
+      "baca": "IH-nish",
+      "en": "tell"
+    },
+    {
+      "ga": "faoi",
+      "baca": "FWEE",
+      "en": "about; under"
+    },
+    {
+      "ga": "cén t-am?",
+      "baca": "kyayn TAM",
+      "en": "what time?"
+    },
+    {
+      "ga": "riamh",
+      "baca": "REE-uv",
+      "en": "ever; never"
+    },
+    {
+      "ga": "uaireanta",
+      "baca": "OO-uh-ryan-tuh",
+      "en": "sometimes"
+    },
+    {
+      "ga": "gach lá",
+      "baca": "gakh LAW",
+      "en": "every day"
+    },
+    {
+      "ga": "go dtí",
+      "baca": "guh DYEE",
+      "en": "until, to"
+    },
+    {
+      "ga": "anois",
+      "baca": "uh-NISH",
+      "en": "now"
+    },
+    {
+      "ga": "ansin",
+      "baca": "an-SHIN",
+      "en": "then"
+    },
+    {
+      "ga": "nó",
+      "baca": "NOH",
+      "en": "or"
+    },
+    {
+      "ga": "maith thú!",
+      "baca": "muh HOO",
+      "en": "well done!"
+    },
+    {
+      "ga": "seomra folctha",
+      "baca": "SHOHM-ruh FOL-kuh",
+      "en": "bathroom"
+    },
+    {
+      "ga": "feoil",
+      "baca": "FYOHL",
+      "en": "meat"
+    },
+    {
+      "ga": "iasc",
+      "baca": "EE-ask",
+      "en": "fish"
+    },
+    {
+      "ga": "seachtain",
+      "baca": "SHAKH-tin",
+      "en": "week"
+    },
+    {
+      "ga": "arís",
+      "baca": "uh-REESH",
+      "en": "again"
+    },
+    {
+      "ga": "gnáth-",
+      "baca": "GNAW",
+      "en": "ordinary (prefix)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the \"I\" form of these verbs.",
+      "items": [
+        "ól",
+        "fan",
+        "glan",
+        "tuig",
+        "cuir",
+        "léigh"
+      ]
+    },
+    {
+      "prompt": "Make these negative. Remember *ní* brings séimhiú.",
+      "items": [
+        "Ólaim caife.",
+        "Tuigim an cheist.",
+        "Canaim gach lá.",
+        "Glanann sé an chistin.",
+        "Fanann siad sa bhaile.",
+        "Itheann tú feoil."
+      ]
+    },
+    {
+      "prompt": "Turn these into questions. Remember *an* brings urú.",
+      "items": [
+        "Ólann tú tae.",
+        "Tuigeann tú Gaeilge.",
+        "Canann sí go minic.",
+        "Fanann sibh anseo.",
+        "Glanann siad an teach.",
+        "Itheann sé arán."
+      ]
+    },
+    {
+      "prompt": "Choose the habitual form or the *ag* form, then translate.",
+      "items": [
+        "I drink tea every morning.",
+        "I'm drinking tea right now.",
+        "She often walks to school.",
+        "She's walking to school.",
+        "I never drink coffee.",
+        "We're cleaning the kitchen."
+      ]
+    }
+  ],
+  "answers": [
+    "ólaim — fanaim — glanaim — tuigim — cuirim — léim",
+    "Ní ólaim caife. — Ní thuigim an cheist. — Ní chanaim gach lá. — Ní ghlanann sé an chistin. — Ní fhanann siad sa bhaile. — Ní itheann tú feoil.",
+    "An ólann tú tae? — An dtuigeann tú Gaeilge? — An gcanann sí go minic? — An bhfanann sibh anseo? — An nglanann siad an teach? — An itheann sé arán?",
+    "Ólaim tae gach maidin. — Tá mé ag ól tae anois. — Siúlann sí chuig an scoil go minic. — Tá sí ag siúl chuig an scoil. — Ní ólaim caife riamh. — Tá muid ag glanadh na cistine."
+  ]
+}

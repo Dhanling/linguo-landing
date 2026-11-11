@@ -1,0 +1,644 @@
+{
+  "title": "The doer's hat and auxiliary verbs",
+  "title_target": "Nik zer egiten dut?",
+  "goal": "Use the doer ending -k, master the auxiliaries dut/duzu/du, and build sentences about habits with the -t(z)en form.",
+  "bekal": [
+    "put the \"doer's hat\" *-k* on the person who does something to something else",
+    "use *dut, duzu, du, dugu, duzue, dute* and their plural forms *ditut, dituzu, ditu*",
+    "build sentences about habits: *kafea edaten dut*, *euskara ikasten dut*"
+  ],
+  "dialogs": [
+    {
+      "title": "Elkarrizketa — Gosaria pisuan",
+      "intro": "Morning in the apartment. Unai, Budi's flatmate, is making breakfast.",
+      "lines": [
+        {
+          "speaker": "Unai:",
+          "text": "Egun on! Zer duzu eskuan?",
+          "id": "Good morning! What have you got in your hand?",
+          "literal": "day good! what you-have-it hand-in?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Euskarazko liburu bat dut. Egunero irakurtzen dut.",
+          "id": "A book in Basque. I read it every day.",
+          "literal": "Basque-in-of book one I-have-it. every-day reading I-have-it."
+        },
+        {
+          "speaker": "Unai:",
+          "text": "Nik ere liburu hori dut! Non erosi duzu?",
+          "id": "I've got that book too! Where did you buy it?",
+          "literal": "I-doer also book that I-have-it! where bought you-have-it?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Euskaltegian erosi dut, hamabost euroan.",
+          "id": "I bought it at the euskaltegi, for fifteen euros.",
+          "literal": "euskaltegi-at bought I-have-it, fifteen euro-at."
+        },
+        {
+          "speaker": "Unai:",
+          "text": "Merkea! Nik euskara ikasten dut, baina poliki.",
+          "id": "That's cheap! I'm learning euskara too, but slowly.",
+          "literal": "cheap-the! I-doer Basque learning I-have-it, but slowly."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zer egiten duzu goizetan?",
+          "id": "What do you do in the mornings?",
+          "literal": "what doing you-have-it morning(pl)-in?"
+        },
+        {
+          "speaker": "Unai:",
+          "text": "Kafea hartzen dut eta egunkaria irakurtzen dut.",
+          "id": "I have a coffee and read the paper.",
+          "literal": "coffee-the taking I-have-it and newspaper-the reading I-have-it."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nik tea edaten dut. Ez dut kaferik edaten.",
+          "id": "I drink tea. I don't drink coffee.",
+          "literal": "I-doer tea-the drinking I-have-it. not I-have-it coffee-any drinking."
+        },
+        {
+          "speaker": "Unai:",
+          "text": "Tea?! Euskaldunek kafea edaten dute beti!",
+          "id": "Tea?! Basques always drink coffee!",
+          "literal": "tea?! Basque-person(pl)-doer coffee-the drinking they-have-it always!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Badakit, baina nik tea nahiago dut.",
+          "id": "I know, but I prefer tea.",
+          "literal": "yes-I-know-it, but I-doer tea-the want-more I-have-it."
+        },
+        {
+          "speaker": "Unai:",
+          "text": "Ondo, ondo. Gosaria prest dago!",
+          "id": "Fine, fine. Breakfast is ready!",
+          "literal": "fine, fine. breakfast-the ready is(located)!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eskerrik asko, Unai. Gose naiz!",
+          "id": "Thanks, Unai. I'm hungry!",
+          "literal": "thanks many, Unai. hungry am!"
+        }
+      ],
+      "notes": [
+        "**Nik, not ni.** As soon as the sentence has something the action is done to — a book being read, coffee being drunk — the doer wears the *-k* hat. *Ni Budi naiz* (no hat, nothing being acted on) but *Nik liburua dut* (there's a book, so: hat on). This is the one truly new idea in the language, and this whole unit is about it.",
+        "**One auxiliary holds two pieces of information.** *Dut* isn't just \"have\": inside it are \"I\" (the doer) and \"it\" (a single thing being acted on). That's why the literal translation is `I-have-it`. If the thing is plural, the auxiliary changes: *ditut* = `I-have-them`.",
+        "**Egunero irakurtzen dut — a habit, not something happening now.** The *-t(z)en* form expresses what you usually do, just like the English present simple. For \"I'm reading right now\" you use *irakurtzen ari naiz*, covered in Unit 10.",
+        "**Ez dut kaferik edaten.** Notice three things at once: *ez* in front, the auxiliary jumping after it, and the verb thrown to the back. On top of that, *kafea* becomes *kaferik* — in a negative sentence, the thing acted on takes *-rik*, not *-a*."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The doer's hat: the ending -k",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This is the idea Basque is famous for. English marks the *subject* by putting it first. Basque doesn't care about the subject; it marks **the doer who does something to something else** with the ending *-k*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Something acted on?",
+            "Doer form",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**Jon** etorri da.",
+              "no",
+              "Jon (bare)",
+              "Jon has come."
+            ],
+            [
+              "**Jonek** ogia jaten du.",
+              "yes (ogia)",
+              "Jon**ek**",
+              "Jon eats bread."
+            ],
+            [
+              "**Ni** Bilbon bizi naiz.",
+              "no",
+              "ni (bare)",
+              "I live in Bilbo."
+            ],
+            [
+              "**Nik** euskara ikasten dut.",
+              "yes (euskara)",
+              "ni**k**",
+              "I study euskara."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "So the question isn't \"who's the subject?\" but \"is something being acted on?\". If so, the doer wears the hat. If not, it stays bare. Basque even has a special question word for a doer with a hat: **nork?** (who does it), as opposed to **nor?** (who)."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "No hat (nor)",
+            "With hat (nork)",
+            "Owner (noren)",
+            "To whom (nori)"
+          ],
+          "rows": [
+            [
+              "ni",
+              "**nik**",
+              "nire",
+              "niri"
+            ],
+            [
+              "zu",
+              "**zuk**",
+              "zure",
+              "zuri"
+            ],
+            [
+              "hura",
+              "**hark**",
+              "haren",
+              "hari"
+            ],
+            [
+              "gu",
+              "**guk**",
+              "gure",
+              "guri"
+            ],
+            [
+              "zuek",
+              "**zuek**",
+              "zuen",
+              "zuei"
+            ],
+            [
+              "haiek",
+              "**haiek**",
+              "haien",
+              "haiei"
+            ],
+            [
+              "irakaslea",
+              "irakasle**ak**",
+              "irakaslearen",
+              "irakasleari"
+            ],
+            [
+              "irakasleak (pl)",
+              "irakasle**ek**",
+              "irakasleen",
+              "irakasleei"
+            ],
+            [
+              "Jon",
+              "Jon**ek**",
+              "Jonen",
+              "Joni"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "The most common trap: -ak and -ak",
+          "items": [
+            "*Irakasleak* can mean two things: **\"the teachers\"** (plural, no hat) or **\"the teacher, as doer\"** (singular, with hat). The forms just happen to be the same.",
+            "The auxiliary tells them apart. *Irakasleak etorri **dira*** = the teachers have come (plural). *Irakasleak liburua irakurtzen **du*** = the teacher reads the book (singular, with hat).",
+            "The plural with a hat is different: *irakasle**ek***. Note the *e*: *euskaldun**ek** kafea edaten dute*.",
+            "Don't panic. Native speakers rely on the auxiliary to sort this out too, and the auxiliary is always there at the end of the sentence."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The NORK-NOR auxiliary: the dut family",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The auxiliary used with a doer wearing the hat is called *ukan*. On its own it means \"to have\", and it's the auxiliary for every verb that has an object. Learn both rows — it's the biggest investment in the whole course, and it pays off in every unit after this one."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Doer",
+            "Single thing",
+            "Plural things",
+            "Example"
+          ],
+          "rows": [
+            [
+              "nik",
+              "**dut**",
+              "**ditut**",
+              "Liburua dut. / Liburuak ditut."
+            ],
+            [
+              "zuk",
+              "**duzu**",
+              "**dituzu**",
+              "Kafea duzu?"
+            ],
+            [
+              "hark",
+              "**du**",
+              "**ditu**",
+              "Jonek etxe bat du."
+            ],
+            [
+              "guk",
+              "**dugu**",
+              "**ditugu**",
+              "Klasea dugu."
+            ],
+            [
+              "zuek",
+              "**duzue**",
+              "**dituzue**",
+              "Liburuak dituzue?"
+            ],
+            [
+              "haiek",
+              "**dute**",
+              "**dituzte**",
+              "Haiek kafea edaten dute."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Read the table as sentences, not as a list: *dut* = \"I-have-it\", *dituzte* = \"they-have-them\". The ending marks the doer; the middle marks how many things there are."
+        },
+        {
+          "type": "sub",
+          "text": "Negatives and questions"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Form",
+            "Example",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "positive",
+              "Kafea edaten dut.",
+              "I drink coffee."
+            ],
+            [
+              "negative",
+              "**Ez dut** kaferik edaten.",
+              "I don't drink coffee."
+            ],
+            [
+              "question",
+              "Kafea edaten **duzu**?",
+              "Do you drink coffee?"
+            ],
+            [
+              "polite question",
+              "Kafea edaten **al duzu**?",
+              "Do you drink coffee, then?"
+            ],
+            [
+              "emphasis",
+              "**Badut** kafea.",
+              "I do have coffee."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Why the verb moves in a negative",
+          "items": [
+            "Positive sentence: `thing + verb + auxiliary` — *kafea edaten dut*.",
+            "Negative sentence: `ez + auxiliary + thing + verb` — *ez dut kaferik edaten*.",
+            "The auxiliary always sticks to *ez*, and since the auxiliary used to be at the end, the whole sentence swings around. It feels odd for the first two weeks, then becomes automatic.",
+            "Shortcut for beginners: learn *ez dut*, *ez duzu*, *ez du* as single chunks of sound, then add the rest after them."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The -t(z)en form: everyday habits",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "To talk about what you usually do, the verb takes its *-t(z)en* form, followed by the auxiliary. The *-t(z)en* form is made from the dictionary form in three patterns."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Dictionary ending",
+            "Rule",
+            "Example",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "-tu / -du",
+              "→ **-tzen**",
+              "hartu → har**tzen**",
+              "take, have (a drink)"
+            ],
+            [
+              "",
+              "",
+              "ordaindu → ordain**tzen**",
+              "pay"
+            ],
+            [
+              "-i",
+              "→ **-tzen / -ten**",
+              "ikusi → ikus**ten**",
+              "see"
+            ],
+            [
+              "",
+              "",
+              "irakurri → irakur**tzen**",
+              "read"
+            ],
+            [
+              "-n",
+              "→ **-ten**",
+              "jan → ja**ten**",
+              "eat"
+            ],
+            [
+              "",
+              "",
+              "edan → eda**ten**",
+              "drink"
+            ],
+            [
+              "no ending",
+              "→ **-tzen**",
+              "ikasi → ikas**ten**",
+              "learn"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The choice between *-tzen* and *-ten* follows the sound, not a neat rule — learn it word by word, like English irregular verbs. Luckily, the verbs you'll really use number fewer than forty, and they're all in the list at the end of the course."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Euskara",
+            "Literally",
+            "English"
+          ],
+          "rows": [
+            [
+              "Egunero euskara ikasten dut.",
+              "every-day Basque learning I-have-it",
+              "I study euskara every day."
+            ],
+            [
+              "Unaik egunkaria irakurtzen du.",
+              "Unai-doer newspaper-the reading he-has-it",
+              "Unai reads the paper."
+            ],
+            [
+              "Guk pintxoak jaten ditugu.",
+              "we-doer pintxo-the(pl) eating we-have-them",
+              "We eat pintxos."
+            ],
+            [
+              "Zuk zer edaten duzu?",
+              "you-doer what drinking you-have-it",
+              "What do you drink?"
+            ],
+            [
+              "Ez dut telebistarik ikusten.",
+              "not I-have-it television-any seeing",
+              "I don't watch TV."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Time words that go with habits",
+          "items": [
+            "*beti* (always), *normalean* (usually), *askotan* (often), *batzuetan* (sometimes), *gutxitan* (rarely), *inoiz ez* (never).",
+            "*egunero* (every day), *astero* (every week), *hilero* (every month), *urtero* (every year) — all made with the ending *-ero*.",
+            "They can go anywhere, but most often at the start of the sentence: *Normalean kafea hartzen dut.*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "eu": "ukan / eduki",
+      "baca": "oo-KAHN / eh-DOO-kee",
+      "en": "to have"
+    },
+    {
+      "eu": "egin",
+      "baca": "eh-GEEN",
+      "en": "to do, to make"
+    },
+    {
+      "eu": "jan",
+      "baca": "KHAHN",
+      "en": "to eat"
+    },
+    {
+      "eu": "edan",
+      "baca": "eh-DAHN",
+      "en": "to drink"
+    },
+    {
+      "eu": "hartu",
+      "baca": "AHR-too",
+      "en": "to take, to order"
+    },
+    {
+      "eu": "irakurri",
+      "baca": "ee-rah-KOO-rree",
+      "en": "to read"
+    },
+    {
+      "eu": "idatzi",
+      "baca": "ee-DAH-tsee",
+      "en": "to write"
+    },
+    {
+      "eu": "ikasi",
+      "baca": "ee-KAH-see",
+      "en": "to learn, to study"
+    },
+    {
+      "eu": "ikusi",
+      "baca": "ee-KOO-see",
+      "en": "to see, to watch"
+    },
+    {
+      "eu": "entzun",
+      "baca": "ehn-TSOON",
+      "en": "to hear, to listen"
+    },
+    {
+      "eu": "erosi",
+      "baca": "eh-ROH-see",
+      "en": "to buy"
+    },
+    {
+      "eu": "nahi izan",
+      "baca": "NAH-ee",
+      "en": "to want"
+    },
+    {
+      "eu": "nahiago izan",
+      "baca": "nah-ee-AH-goh",
+      "en": "to prefer"
+    },
+    {
+      "eu": "jakin",
+      "baca": "KHAH-keen",
+      "en": "to know"
+    },
+    {
+      "eu": "gosari",
+      "baca": "goh-SAH-ree",
+      "en": "breakfast"
+    },
+    {
+      "eu": "bazkari",
+      "baca": "bahs-KAH-ree",
+      "en": "lunch"
+    },
+    {
+      "eu": "afari",
+      "baca": "ah-FAH-ree",
+      "en": "dinner"
+    },
+    {
+      "eu": "kafe",
+      "baca": "KAH-feh",
+      "en": "coffee"
+    },
+    {
+      "eu": "te",
+      "baca": "TEH",
+      "en": "tea"
+    },
+    {
+      "eu": "esne",
+      "baca": "EHS-neh",
+      "en": "milk"
+    },
+    {
+      "eu": "ogi",
+      "baca": "OH-gee",
+      "en": "bread"
+    },
+    {
+      "eu": "egunkari",
+      "baca": "eh-goon-KAH-ree",
+      "en": "newspaper"
+    },
+    {
+      "eu": "goizean",
+      "baca": "GOH-ee-seh-ahn",
+      "en": "in the morning"
+    },
+    {
+      "eu": "egunero",
+      "baca": "eh-goo-NEH-roh",
+      "en": "every day"
+    },
+    {
+      "eu": "beti",
+      "baca": "BEH-tee",
+      "en": "always"
+    },
+    {
+      "eu": "normalean",
+      "baca": "nohr-mah-LEH-ahn",
+      "en": "usually"
+    },
+    {
+      "eu": "batzuetan",
+      "baca": "bah-TSOO-eh-tahn",
+      "en": "sometimes"
+    },
+    {
+      "eu": "poliki",
+      "baca": "poh-LEE-kee",
+      "en": "slowly"
+    },
+    {
+      "eu": "prest",
+      "baca": "PREHST",
+      "en": "ready"
+    },
+    {
+      "eu": "gose",
+      "baca": "GOH-seh",
+      "en": "hungry"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Put on the doer's hat if it's needed. If not, write the word as it is.",
+      "items": [
+        "____ Bilbon bizi naiz. (ni)",
+        "____ euskara ikasten dut. (ni)",
+        "____ kafea edaten du. (Jon)",
+        "____ etorri da. (Jon)",
+        "____ liburuak irakurtzen dituzte. (haiek)",
+        "____ nekatuta daude. (ikasleak)"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right auxiliary (dut, duzu, du, dugu, duzue, dute, ditut, ditu).",
+      "items": [
+        "Nik kafea edaten ____.",
+        "Zuk euskara ikasten ____?",
+        "Unaik egunkaria irakurtzen ____.",
+        "Guk pintxoak jaten ____.",
+        "Haiek tea hartzen ____.",
+        "Nik hiru liburu ____."
+      ]
+    },
+    {
+      "prompt": "Make these sentences negative.",
+      "items": [
+        "Kafea edaten dut.",
+        "Egunkaria irakurtzen du.",
+        "Euskara ikasten dugu.",
+        "Telebista ikusten dute.",
+        "Ogia jaten duzu.",
+        "Liburu bat dut."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "dut / euskara / nik / ikasten",
+        "du / kafea / Unaik / edaten",
+        "duzu / zer / goizean / egiten / ?",
+        "ditugu / pintxoak / guk / jaten",
+        "dut / ez / irakurtzen / egunkaririk",
+        "dute / beti / euskaldunek / edaten / kafea"
+      ]
+    }
+  ],
+  "answers": [
+    "Ni — Nik — Jonek — Jon — Haiek — Ikasleak",
+    "dut — duzu — du — ditugu — dute — ditut",
+    "Ez dut kaferik edaten. — Ez du egunkaririk irakurtzen. — Ez dugu euskararik ikasten. — Ez dute telebistarik ikusten. — Ez duzu ogirik jaten. — Ez dut libururik.",
+    "Nik euskara ikasten dut. — Unaik kafea edaten du. — Zer egiten duzu goizean? — Guk pintxoak jaten ditugu. — Ez dut egunkaririk irakurtzen. — Euskaldunek beti kafea edaten dute."
+  ]
+}
