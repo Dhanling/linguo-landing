@@ -56,7 +56,8 @@ export default function CheckoutSection({ product, pricingTiers, paketLengkap = 
   const [cookieRef, setCookieRef] = useState("");
   const [promoOk, setPromoOk] = useState(false);
   useEffect(() => {
-    setCookieRef(decodeURIComponent(("; " + document.cookie).split("; linguo_ref=")[1]?.split(";")[0] ?? ""));
+    const mentah = ("; " + document.cookie).split("; linguo_ref=")[1]?.split(";")[0] ?? "";
+    try { setCookieRef(decodeURIComponent(mentah)); } catch { setCookieRef(mentah); }
   }, []);
   const kodeAktif = refCode.trim() || cookieRef;
   useEffect(() => {

@@ -37,7 +37,8 @@ import {
 /** Kode afiliator dari cookie linguo_ref (link ?ref=KODE). */
 function kodeCookie(): string {
   if (typeof document === 'undefined') return '';
-  return decodeURIComponent(('; ' + document.cookie).split('; linguo_ref=')[1]?.split(';')[0] ?? '');
+  const mentah = ('; ' + document.cookie).split('; linguo_ref=')[1]?.split(';')[0] ?? '';
+  try { return decodeURIComponent(mentah); } catch { return mentah; }
 }
 
 // [elearning-per-bahasa-v1] Etalase e-learning per bahasa. Dulu halaman ini
