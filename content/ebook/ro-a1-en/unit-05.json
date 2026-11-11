@@ -1,0 +1,585 @@
+{
+  "title": "How much is it?",
+  "title_target": "Cât costă?",
+  "goal": "Ask prices, give your age and phone number — and for that, fit in two things English doesn't do: numbers that agree in gender, and plural nouns that change their whole ending.",
+  "bekal": [
+    "count from 0 to 100, including knowing when to slip in the little word *de*",
+    "form the plural of masculine, feminine, and neuter nouns — with the three most common sound changes",
+    "ask and answer about prices, age, and phone numbers"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — La chioșc",
+      "intro": "Budi and Ioana stop at a ticket kiosk near the bus stop. Budi needs a bus ticket; while they wait, Ioana realizes she doesn't have Budi's phone number yet.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Bună ziua! Cât costă un bilet?",
+          "id": "Good afternoon! How much is a ticket?",
+          "literal": "good-f day-the! how-much it-costs a-m ticket?"
+        },
+        {
+          "speaker": "Vânzătoarea:",
+          "text": "Costă cinci lei.",
+          "id": "It's five lei.",
+          "literal": "it-costs five lei."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Două bilete, vă rog. Și cât costă un abonament?",
+          "id": "Two tickets, please. And how much is a pass?",
+          "literal": "two-f tickets, you-pl I-ask. and how-much it-costs a-m pass?"
+        },
+        {
+          "speaker": "Vânzătoarea:",
+          "text": "Optzeci de lei pe lună.",
+          "id": "Eighty lei a month.",
+          "literal": "eighty of lei per month."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hm, este prea scump. Doar două bilete, vă rog.",
+          "id": "Hm, that's too expensive. Just two tickets, please.",
+          "literal": "hm, it-is too expensive. only two-f tickets, you-pl I-ask."
+        },
+        {
+          "speaker": "Vânzătoarea:",
+          "text": "Zece lei, vă rog.",
+          "id": "Ten lei, please.",
+          "literal": "ten lei, you-pl I-ask."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Poftiți. Mulțumesc!",
+          "id": "Here you are. Thank you!",
+          "literal": "please-pl. I-thank!"
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Apropo, Budi, câți ani ai?",
+          "id": "By the way, Budi, how old are you?",
+          "literal": "by-the-way, Budi, how-many-m years you-have?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Am douăzeci și opt de ani. Și tu?",
+          "id": "I'm twenty-eight. And you?",
+          "literal": "I-have twenty and eight of years. and you?"
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Douăzeci și nouă. Ai o familie mare?",
+          "id": "Twenty-nine. Do you have a big family?",
+          "literal": "twenty and nine. you-have a-f family big?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Da. Am doi frați și două surori.",
+          "id": "Yes. I have two brothers and two sisters.",
+          "literal": "yes. I-have two-m brothers and two-f sisters."
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Care este numărul tău de telefon? Am doar e-mailul tău.",
+          "id": "What's your phone number? I only have your e-mail.",
+          "literal": "which it-is number-the your-m of telephone? I-have only e-mail-the your-m."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zero șapte zero zero, unu doi trei, patru cinci șase.",
+          "id": "Zero seven zero zero, one two three, four five six.",
+          "literal": "zero seven zero zero, one two three, four five six."
+        }
+      ],
+      "notes": [
+        "**Cât costă?** The verb is *a costa*, and *costă* works for one item or several: *Cât costă un bilet?* and *Cât costă biletele?* In the *-a* verb group, the \"he/she\" and \"they\" forms are always twins. One form for every price — a small gift from this language.",
+        "**Cinci lei, but optzeci *de* lei.** From 20 up, Romanian slips *de* between the number and the noun; literally \"eighty of lei\". Below 20 there's nothing: *zece lei*, *nouăsprezece lei*. This is the mistake that lasts longest for learners, so build the habit now.",
+        "**Am douăzeci și opt de ani.** Age is something you **have**, not something you \"are\": the verb is *a avea* from unit 3, just like French or Spanish. The question is *Câți ani ai?* — \"how many years do you have?\". *Câți* is the masculine plural form because *an* is masculine; for feminine and neuter nouns use *câte*: *Câte bilete?*",
+        "**Doi frați, două surori, două bilete.** The number two agrees with the gender of its noun. The surprise: *bilet* is neuter, and neuter nouns behave as feminine in the plural — so *două bilete*, not *doi bilete*. That's what \"masculine in the singular, feminine in the plural\" from unit 3 means in real life.",
+        "**Prea scump** = too expensive; don't confuse it with *foarte scump* (very expensive). And notice the order in *numărul tău de telefon*: the possessive sticks right onto the noun with its article, and only then comes *de telefon*."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers 0–100",
+          "body": [
+            "Romanian numbers are cousins of the Latin numbers you already know from English words: *doi* (duo), *trei* (trio), *opt* (octave), *zece* (decimal). The pattern is regular: teens = unit + *-sprezece* (\"over ten\"), tens = unit + *-zeci* (\"tens\").",
+            "Watch out for three shortened forms: **pai**sprezece (14), **șai**sprezece (16), and **șai**zeci (60) — not *patrusprezece*, *șasesprezece*, *șasezeci*."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Română",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "0 · 1 · 2",
+                "*zero · unu (una) · doi (două)*",
+                "ZEH-roh · OO-noo (OO-nah) · doy (DOH-wuh)"
+              ],
+              [
+                "3 · 4 · 5",
+                "*trei · patru · cinci*",
+                "trey · PAH-troo · cheench'"
+              ],
+              [
+                "6 · 7 · 8",
+                "*șase · șapte · opt*",
+                "SHAH-seh · SHAHP-teh · ohpt"
+              ],
+              [
+                "9 · 10",
+                "*nouă · zece*",
+                "NOH-wuh · ZEH-cheh"
+              ],
+              [
+                "11 · 12",
+                "*unsprezece · doisprezece (douăsprezece)*",
+                "OON-spreh-zeh-cheh · DOY-spreh-zeh-cheh"
+              ],
+              [
+                "13 · 14 · 15",
+                "*treisprezece · paisprezece · cincisprezece*",
+                "TREY- · PAI- · CHEENCH'-spreh-zeh-cheh"
+              ],
+              [
+                "16 · 17",
+                "*șaisprezece · șaptesprezece*",
+                "SHAI- · SHAHP-teh-spreh-zeh-cheh"
+              ],
+              [
+                "18 · 19",
+                "*optsprezece · nouăsprezece*",
+                "OHPT- · NOH-wuh-spreh-zeh-cheh"
+              ],
+              [
+                "20 · 30 · 40",
+                "*douăzeci · treizeci · patruzeci*",
+                "doh-wuh-ZEHCH' · trey-ZEHCH' · pah-troo-ZEHCH'"
+              ],
+              [
+                "50 · 60",
+                "*cincizeci · șaizeci*",
+                "cheench'-ZEHCH' · shai-ZEHCH'"
+              ],
+              [
+                "70 · 80 · 90",
+                "*șaptezeci · optzeci · nouăzeci*",
+                "shahp-teh-ZEHCH' · ohpt-ZEHCH' · noh-wuh-ZEHCH'"
+              ],
+              [
+                "21 · 35 · 99",
+                "*douăzeci și unu · treizeci și cinci · nouăzeci și nouă*",
+                "tens + *și* (and) + units"
+              ],
+              [
+                "100",
+                "*o sută*",
+                "oh SOO-tuh"
+              ]
+            ]
+          },
+          "after": [
+            "**Unu, un, o.** For counting, phone numbers, and at the end of compound numbers, use *unu*: *zero, unu, doi…*, *douăzeci și unu*. But in front of a noun, \"one\" is nothing other than the indefinite article you already know: *un bilet*, *o cafea*. Never say *unu bilet*.",
+            "**Doi and două spread into compound numbers:** *doisprezece lei* but *douăsprezece bilete*; *douăzeci și doi de ani* but *douăzeci și două de cafele*. The other numbers don't care about gender.",
+            "**The *de* rule:** 1–19 go straight to the noun (*cinci lei, nouăsprezece ani*), 20–100 use *de* (*douăzeci de lei, optzeci și cinci de ani, o sută de lei*). If the noun isn't mentioned, *de* disappears too: *Câți ani ai? — Douăzeci și opt.*",
+            "On the street you'll hear clipped teens: *unșpe, doișpe, treișpe, paișpe, cinșpe, șaișpe…* That's everyday speech; just recognize it for now, no need to copy it."
+          ]
+        },
+        {
+          "title": "Noun plurals",
+          "body": [
+            "English mostly just adds *-s*. Romanian changes the whole ending, and which ending depends on the noun's gender."
+          ],
+          "table": {
+            "head": [
+              "Gender",
+              "Plural ending",
+              "Singular → plural"
+            ],
+            "rows": [
+              [
+                "**m**",
+                "**-i**",
+                "*student → studenți, frate → frați, leu → lei, an → ani*"
+              ],
+              [
+                "**f** ending in -ă",
+                "**-e**",
+                "*fată → fete, casă → case, studentă → studente*"
+              ],
+              [
+                "**f** ending in -ă",
+                "**-i**",
+                "*stradă → străzi, gară → gări, lună → luni*"
+              ],
+              [
+                "**f** ending in -e",
+                "**-i**",
+                "*carte → cărți, floare → flori, familie → familii*"
+              ],
+              [
+                "**f** ending in -ea / stressed -a",
+                "**-le**",
+                "*cafea → cafele, stea → stele, sarma → sarmale*"
+              ],
+              [
+                "**n**",
+                "**-uri**",
+                "*tren → trenuri, ceai → ceaiuri, preț → prețuri*"
+              ],
+              [
+                "**n**",
+                "**-e**",
+                "*bilet → bilete, oraș → orașe, număr → numere*"
+              ]
+            ]
+          },
+          "after": [
+            "**The *-i* ending softens the letter before it.** These three changes come up all the time: **t → ț** (*student → studenți, frate → frați*), **d → z** (*stradă → străzi*), **s → ș** (*urs → urși*, bear). Remember from the Pronunciation chapter: the *-i* itself is barely heard — *studenți* is read stoo-DEHNTS'.",
+            "**Vowels in the middle of the word often shift too:** *a → e* (*fată → fete*), *a → ă* (*stradă → străzi, carte → cărți*), *o → oa* (*telefon → telefoane*). Some are truly irregular — like English *man → men*: *soră → surori*, *om → oameni* (person), *copil → copii* (child).",
+            "Honestly: for feminine and neuter nouns, no rule always predicts *-e* or *-i*, *-uri* or *-e*. Romanians themselves learn them word by word. That's why from this unit on the vocabulary list gives the plural — *bilet, bilete* — so learn the two as a pair."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Money and prices",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Română",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**leu, lei** (m)",
+              "lehw, ley",
+              "leu — Romania's currency"
+            ],
+            [
+              "**ban, bani** (m)",
+              "bahn, bahn'",
+              "ban (1 leu = 100 bani); *bani* also means \"money\""
+            ],
+            [
+              "**preț, prețuri** (n)",
+              "prehts, PREH-tsoor'",
+              "price"
+            ],
+            [
+              "**bancnotă, bancnote** (f)",
+              "bahnk-NOH-tuh, bahnk-NOH-teh",
+              "banknote"
+            ],
+            [
+              "**monedă, monede** (f)",
+              "moh-NEH-duh, moh-NEH-deh",
+              "coin"
+            ],
+            [
+              "**rest** (n)",
+              "rehst",
+              "change (money back)"
+            ],
+            [
+              "**mărunt**",
+              "muh-ROONT",
+              "small change"
+            ],
+            [
+              "**bon, bonuri** (n)",
+              "bohn, BOH-noor'",
+              "receipt"
+            ],
+            [
+              "**reducere, reduceri** (f)",
+              "reh-DOO-cheh-reh, reh-DOO-chehr'",
+              "discount"
+            ],
+            [
+              "**scump · ieftin · gratis**",
+              "skoomp · YEHF-teen · GRAH-tees",
+              "expensive · cheap · free"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "At the checkout",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Cât costă o cafea?*",
+              "How much is a coffee?"
+            ],
+            [
+              "*Cât costă biletele?*",
+              "How much are the tickets?"
+            ],
+            [
+              "*Cât face?*",
+              "How much is it altogether?"
+            ],
+            [
+              "*Face treizeci și doi de lei.*",
+              "That's thirty-two lei."
+            ],
+            [
+              "*Se poate cu cardul?*",
+              "Can I pay by card?"
+            ],
+            [
+              "*Aveți mărunt?* / *Nu am mărunt.*",
+              "Do you have small change? / I don't have small change."
+            ],
+            [
+              "*Păstrați restul.*",
+              "Keep the change."
+            ],
+            [
+              "*Nu am bani.*",
+              "I don't have any money."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Romanian money",
+          "items": [
+            "The currency is the **leu** (code RON), plural **lei**. *Leu* also means \"lion\" — so technically you pay for your coffee with a few lions.",
+            "The banknotes aren't paper: they're all **polymer** (plastic), waterproof and hard to tear. They come in 1, 5, 10, 20, 50, 100, 200, and 500 lei. The coins are 1, 5, 10, and 50 bani.",
+            "Cards are accepted almost everywhere in București, but at markets, small kiosks, and in villages cash is still king. Prices in this book are just examples for practicing numbers; real prices change all the time."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Age and phone numbers",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Câți ani ai?* / *Câți ani aveți?*",
+              "How old are you? (informal / polite)"
+            ],
+            [
+              "*Am treizeci și unu de ani.*",
+              "I'm thirty-one."
+            ],
+            [
+              "*Câți ani are Andrei? — Are douăzeci și doi de ani.*",
+              "How old is Andrei? — He's twenty-two."
+            ],
+            [
+              "*Fratele meu are nouăsprezece ani.*",
+              "My brother is nineteen."
+            ],
+            [
+              "*Care este numărul dumneavoastră de telefon?*",
+              "What's your phone number? (polite)"
+            ],
+            [
+              "*Numărul meu este…*",
+              "My number is…"
+            ],
+            [
+              "*Mai rar, vă rog.*",
+              "More slowly, please."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at the fourth row: *nouăsprezece ani* without *de*, because nineteen is still under twenty — while *douăzeci și doi **de** ani* uses it. Age is the best place to practice this rule, since you'll be asked your age far more often than you think. Asking someone's age is normal among peers in Romania; with older people or people you've just met, wait for them to raise the topic."
+        },
+        {
+          "type": "kotak",
+          "title": "How Romanians give phone numbers",
+          "items": [
+            "Romanian mobile numbers have ten digits and always start with **07**. The country code is **+40**; when you use it, drop the leading zero.",
+            "Numbers are usually dictated digit by digit in groups of three or four, just like Budi does. Some people read them in pairs — *zero șapte, douăzeci și doi…* — so your tens need to be ready.",
+            "The numbers 1 and 2 in phone numbers are always masculine: *unu, doi* — not *una, două*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 3",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Romanian column, read the English, and rebuild the sentences from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Română"
+          ],
+          "rows": [
+            [
+              "Do you have brothers or sisters? — I have a brother and a sister.",
+              "*Ai frați sau surori? — Am un frate și o soră.*"
+            ],
+            [
+              "Who is she? — She's my mother.",
+              "*Cine este ea? — Este mama mea.*"
+            ],
+            [
+              "My sister is a student.",
+              "*Sora mea este studentă.*"
+            ],
+            [
+              "My father is an engineer.",
+              "*Tatăl meu este inginer.*"
+            ],
+            [
+              "I don't have children.",
+              "*Nu am copii.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ro": "bilet, bilete",
+      "baca": "bee-LEHT, bee-LEH-teh",
+      "en": "ticket (n)"
+    },
+    {
+      "ro": "leu, lei",
+      "baca": "lehw, ley",
+      "en": "leu, Romania's currency (m)"
+    },
+    {
+      "ro": "ban, bani",
+      "baca": "bahn, bahn'",
+      "en": "ban; the plural also means \"money\" (m)"
+    },
+    {
+      "ro": "an, ani",
+      "baca": "ahn, ahn'",
+      "en": "year (m)"
+    },
+    {
+      "ro": "lună, luni",
+      "baca": "LOO-nuh, loon'",
+      "en": "month (f)"
+    },
+    {
+      "ro": "număr, numere",
+      "baca": "NOO-muhr, NOO-meh-reh",
+      "en": "number (n)"
+    },
+    {
+      "ro": "telefon, telefoane",
+      "baca": "teh-leh-FOHN, teh-leh-FWAH-neh",
+      "en": "telephone (n)"
+    },
+    {
+      "ro": "preț, prețuri",
+      "baca": "prehts, PREH-tsoor'",
+      "en": "price (n)"
+    },
+    {
+      "ro": "abonament, abonamente",
+      "baca": "ah-boh-nah-MEHNT, ah-boh-nah-MEHN-teh",
+      "en": "pass, subscription (n)"
+    },
+    {
+      "ro": "a costa (costă)",
+      "baca": "ah kohs-TAH (KOHS-tuh)",
+      "en": "to cost (\"it costs / they cost\" form)"
+    },
+    {
+      "ro": "a cumpăra (cumpăr)",
+      "baca": "ah koom-puh-RAH (KOOM-puhr)",
+      "en": "to buy"
+    },
+    {
+      "ro": "cât, câți, câte",
+      "baca": "kît, kîts', KÎ-teh",
+      "en": "how much, how many (general, m pl, f/n pl)"
+    },
+    {
+      "ro": "scump",
+      "baca": "skoomp",
+      "en": "expensive"
+    },
+    {
+      "ro": "ieftin",
+      "baca": "YEHF-teen",
+      "en": "cheap"
+    },
+    {
+      "ro": "prea",
+      "baca": "pryah",
+      "en": "too (much)"
+    },
+    {
+      "ro": "doar",
+      "baca": "dwahr",
+      "en": "only, just"
+    },
+    {
+      "ro": "poftiți",
+      "baca": "pohf-TEETS'",
+      "en": "here you are (handing something over; polite)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Romanian.",
+      "items": [
+        "How much is a ticket?",
+        "It's twenty lei.",
+        "That's too expensive.",
+        "How old are you? — I'm twenty-eight.",
+        "I have two brothers and two sisters.",
+        "What's your phone number?"
+      ]
+    },
+    {
+      "prompt": "Put the word in brackets into the plural.",
+      "items": [
+        "doi ____ (frate)",
+        "două ____ (soră)",
+        "trei ____ (bilet)",
+        "cinci ____ (leu)",
+        "patru ____ (student)",
+        "două ____ (fată)",
+        "șase ____ (stradă)",
+        "zece ____ (an)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "costă / un / cât / bilet / ?",
+        "de / lei / optzeci / costă",
+        "ani / câți / ai / ?",
+        "treizeci / ani / am / de",
+        "scump / este / prea"
+      ]
+    }
+  ],
+  "answers": [
+    "Cât costă un bilet? — Costă douăzeci de lei. — Este prea scump. — Câți ani ai? Am douăzeci și opt de ani. — Am doi frați și două surori. — Care este numărul tău de telefon?",
+    "frați — surori — bilete — lei — studenți — fete — străzi — ani",
+    "Cât costă un bilet? — Costă optzeci de lei. — Câți ani ai? — Am treizeci de ani. — Este prea scump."
+  ]
+}

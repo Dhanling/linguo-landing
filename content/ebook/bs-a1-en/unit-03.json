@@ -1,0 +1,502 @@
+{
+  "title": "What's this? — three kinds of nouns",
+  "title_target": "Šta je ovo?",
+  "goal": "Name the things around you, read a noun's gender straight from its last letter, and point at three distances that Bosnian keeps apart — this, that, and that over there.",
+  "bekal": [
+    "guess the gender of almost any noun from its last letter",
+    "point at things with *ovaj / ova / ovo* and pick the right distance between *ovo*, *to*, and *ono*",
+    "make adjectives agree with their noun: *mali sto, mala soba, malo pismo*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — U novom stanu",
+      "intro": "Emir shows Budi around the flat they are going to share, in a narrow lane in Stari Grad.",
+      "lines": [
+        {
+          "speaker": "Emir:",
+          "text": "Evo, ovo je tvoja soba. Mala je, ali svijetla.",
+          "id": "Here, this is your room. It's small, but bright.",
+          "literal": "here-is, this-n it-is your-f room. small-f it-is, but bright-f."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Lijepa je! A šta je ono tamo?",
+          "id": "It's nice! And what's that over there?",
+          "literal": "beautiful-f it-is! and what it-is that-n over-there?"
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Ono je peć. Zima je u Sarajevu jako hladna.",
+          "id": "That's the stove. Winter in Sarajevo is very cold.",
+          "literal": "that-n it-is stove. winter it-is in Sarajevo-loc very cold-f."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A ovaj mali sto? Je li i on moj?",
+          "id": "And this little table? Is it mine too?",
+          "literal": "and this-m small-m table? whether also it my-m?"
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Jeste. Ovaj sto je za kompjuter, a ova stolica je nova.",
+          "id": "Yes. This table is for the computer, and this chair is new.",
+          "literal": "it-is. this-m table it-is for computer, and this-f chair it-is new-f."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Odlično. A gdje je kupatilo?",
+          "id": "Great. And where's the bathroom?",
+          "literal": "excellent. and where it-is bathroom?"
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Kupatilo je lijevo, kuhinja desno. Evo, ovdje je frižider.",
+          "id": "The bathroom is on the left, the kitchen on the right. And here's the fridge.",
+          "literal": "bathroom it-is left, kitchen right. here-is, here it-is fridge."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A ovo? Je li ovo kafa?",
+          "id": "And this? Is this coffee?",
+          "literal": "and this-n? whether this-n coffee?"
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Jeste, to je bosanska kafa. Ovo je džezva, a ovo je fildžan.",
+          "id": "Yes, that's Bosnian coffee. This is a džezva, and this is a fildžan.",
+          "literal": "it-is, that-n it-is bosnian-f coffee. this-n it-is džezva, and this-n it-is cup."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Lijepi su! Kako se kaže \"sendok\" na bosanskom?",
+          "id": "They're lovely! How do you say \"spoon\" in Bosnian?",
+          "literal": "beautiful-pl they-are! how self it-says \"spoon\" in bosnian-loc?"
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Kašika. Ovo je tanjir, ovo je nož, a ovo je viljuška.",
+          "id": "Kašika. This is a plate, this is a knife, and this is a fork.",
+          "literal": "spoon. this-n it-is plate, this-n it-is knife, and this-n it-is fork."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kašika, tanjir, nož, viljuška… Sve je jasno!",
+          "id": "Kašika, tanjir, nož, viljuška… It's all clear!",
+          "literal": "spoon, plate, knife, fork… all it-is clear-n!"
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Nije baš sve, ali bit će. Hajde sad na kafu!",
+          "id": "Not quite all, but it will be. Now let's have coffee!",
+          "literal": "not-it-is exactly all, but it-will it-be. come-on now to coffee-acc!"
+        }
+      ],
+      "notes": [
+        "**Ovo, to, ono — three distances, not two.** English has \"this\" and \"that\"; Bosnian adds one more level (like old English *yonder*). *Ovo* = this, near the speaker. *To* = that, near the listener or just mentioned. *Ono* = that over there, far from both — which is why Budi uses *ono* for the stove across the room, and Emir answers *ono je peć*.",
+        "**When introducing something, always the neuter form — whatever the thing.** *Ovo je džezva* even though *džezva* is feminine; *Ovo je sto* even though *sto* is masculine; *Ovo su fildžani* for plural. A big relief: \"this is…\" never requires you to know the noun's gender. It's completely different when the pointing word is attached to a noun: then it must agree — *ovaj sto*, *ova stolica*, *ovo pismo*.",
+        "**Adjectives agree too.** Follow the trail through the dialogue: *soba* is feminine, so *mala je, svijetla je, lijepa je*. *Sto* is masculine, so *mali sto*. *Fildžani* is plural, so *lijepi su*. That's why you must note the gender with every word from day one — not for the sake of a table, but for the adjective endings that show up in nearly every sentence.",
+        "**Things are \"he\" or \"she\" too.** *Je li i on moj?* — Budi says *on* (he) about a table, because *sto* is masculine. Bosnian has no separate \"it\" for objects; everything is *on*, *ona*, or *ono*, following the word's gender. *Gdje je kafa? — Ona je na stolu.*",
+        "**The Bosnian kitchen speaks Turkish.** *Kašika* (spoon), *tanjir* (plate), *džezva*, *fildžan*, *čaršaf* (bedsheet), *sahan* (pot), *jorgan* (quilt) — all Ottoman inheritances. *Bit će* in the last line is a small preview of the future tense, which comes in unit 19; for now learn it whole as \"it will be\"."
+      ],
+      "grammars": [
+        {
+          "title": "Three kinds of nouns — read from the last letter",
+          "body": [
+            "This is the most important lesson of the first ten units, and luckily one of the easiest: for almost every word, **the last letter tells you the gender straight away**. Nothing to memorize word by word, as in German or French."
+          ],
+          "table": {
+            "head": [
+              "Type",
+              "Sign",
+              "Examples",
+              "\"this\"",
+              "Adjective \"small / new\""
+            ],
+            "rows": [
+              [
+                "**masculine (m)**",
+                "ends in a **consonant**",
+                "*sto, grad, prozor, kompjuter, nož*",
+                "*ovaj*",
+                "*mali / novi*"
+              ],
+              [
+                "**feminine (f)**",
+                "ends in **-a**",
+                "*soba, stolica, kuhinja, kafa, knjiga*",
+                "*ova*",
+                "*mala / nova*"
+              ],
+              [
+                "**neuter (n)**",
+                "ends in **-o** or **-e**",
+                "*pismo, jutro, more, veče, pitanje*",
+                "*ovo*",
+                "*malo / novo*"
+              ]
+            ]
+          },
+          "after": [
+            "**The rule holds about nine times out of ten.** The rest fall into just two groups, and both make sense. First, a handful of words end in a consonant but are **feminine**: *noć* (night), *stvar* (thing), *ljubav* (love), *riječ* (word), *pomoć* (help), *večer* (evening). Learn these six now and you're practically done.",
+            "**Second, words ending in *-a* that refer to men are treated as masculine for meaning**: *tata* (dad), *kolega*, *sudija* (judge), *vođa* (leader). The noun's endings follow the feminine pattern, but the adjective is masculine: *moj kolega je nov*. This rarely trips anyone up, since the meaning makes it obvious.",
+            "**Masculine adjectives have two shapes.** *Ovaj mali sto* — but *sto je malen* for some adjectives. The *-i* forms (*mali, novi, dobri*) are used when attached to a noun that is already known; the bare forms (*mal, nov, dobar*) are used standing after *biti*: *Sto je nov.* At A1 this difference rarely causes misunderstanding — pick either, then notice how native speakers use them.",
+            "**The ten-second habit:** say every new noun together with its pointing word, never alone. Not *soba*, but *ova soba*. Not *prozor*, but *ovaj prozor*. That way the gender is stored with the word, not in a separate list you have to look up later."
+          ]
+        },
+        {
+          "title": "Ovaj, taj, onaj — pointing at three distances",
+          "body": [
+            "All three change to match their noun, just like adjectives. The table looks dense, but there is only one pattern: change the front, keep the ending."
+          ],
+          "table": {
+            "head": [
+              "Distance",
+              "m",
+              "f",
+              "n",
+              "plural (m / f / n)"
+            ],
+            "rows": [
+              [
+                "**this** — near the speaker",
+                "*ovaj*",
+                "*ova*",
+                "*ovo*",
+                "*ovi / ove / ova*"
+              ],
+              [
+                "**that** — near the listener, or just mentioned",
+                "*taj*",
+                "*ta*",
+                "*to*",
+                "*ti / te / ta*"
+              ],
+              [
+                "**that over there** — far from both",
+                "*onaj*",
+                "*ona*",
+                "*ono*",
+                "*oni / one / ona*"
+              ]
+            ]
+          },
+          "after": [
+            "***To* is the form used most in everyday speech.** If you're unsure which of the three to use, use *to* — it's almost always natural. *Šta je to?* is a question you will ask hundreds of times in Sarajevo, and nobody will correct it.",
+            "**Two different jobs — don't mix them up.** When the pointing word stands alone as the subject (\"this is…\"), it is always **neuter singular**: *Ovo je moja sestra. Ovo su moji roditelji.* When it is attached to a noun, it **agrees with the noun**: *Ova knjiga je nova. Ovi fildžani su lijepi.*",
+            "**Don't be confused by seeing *ona* and *oni* twice.** The same word works as a personal pronoun (*ona* = she, *oni* = they) and as the far pointer (*ona knjiga* = that book over there). What decides the meaning is simply whether a noun follows.",
+            "**One little word people forget: *evo*.** It means \"here you go, here it is\" — used when handing something over or showing something: *Evo kafe! Evo, ovdje je frižider.* Its siblings: *eto* (there you go, that's it) and *eno* (there it is, over there)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Stvari u kući — things in the house",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This list is not for learning all at once. Read it while looking around your own room, and say each word with its pointing word — *ovaj prozor*, *ova stolica*, *ovo ogledalo*. A gender learned while pointing at a real object sticks far better than one memorized from a column."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bosanski",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**stan** (m)",
+              "stahn",
+              "flat, apartment"
+            ],
+            [
+              "**kuća** (f)",
+              "KOO-chah",
+              "house"
+            ],
+            [
+              "**soba** (f)",
+              "SOH-bah",
+              "room"
+            ],
+            [
+              "**kuhinja** (f)",
+              "KOO-hee-nyah",
+              "kitchen"
+            ],
+            [
+              "**kupatilo** (n)",
+              "koo-PAH-tee-loh",
+              "bathroom"
+            ],
+            [
+              "**vrata** (pl)",
+              "VRAH-tah",
+              "door"
+            ],
+            [
+              "**prozor** (m)",
+              "PROH-zohr",
+              "window"
+            ],
+            [
+              "**sto** (m)",
+              "stoh",
+              "table"
+            ],
+            [
+              "**stolica** (f)",
+              "stoh-LEE-tsah",
+              "chair"
+            ],
+            [
+              "**krevet** (m)",
+              "KREH-veht",
+              "bed"
+            ],
+            [
+              "**ormar** (m)",
+              "OHR-mahr",
+              "wardrobe, cupboard"
+            ],
+            [
+              "**frižider** (m)",
+              "free-ZHEE-dehr",
+              "fridge"
+            ],
+            [
+              "**peć** (f)",
+              "pehch",
+              "stove; oven"
+            ],
+            [
+              "**ogledalo** (n)",
+              "oh-gleh-DAH-loh",
+              "mirror"
+            ],
+            [
+              "**knjiga** (f)",
+              "KNYEE-gah",
+              "book"
+            ],
+            [
+              "**tanjir** (m)",
+              "TAH-nyeer",
+              "plate"
+            ],
+            [
+              "**kašika** (f)",
+              "KAH-shee-kah",
+              "spoon"
+            ],
+            [
+              "**viljuška** (f)",
+              "vee-LYOOSH-kah",
+              "fork"
+            ],
+            [
+              "**nož** (m)",
+              "nohzh",
+              "knife"
+            ],
+            [
+              "**čaša** (f)",
+              "CHAH-shah",
+              "glass"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice *vrata* (door): it is plural in form, and always plural — *vrata su otvorena* (the door is open), never singular. Bosnian has a handful of words like this: *vrata* (door), *kola* (car), *leđa* (back), *novine* (newspaper), *naočale* (glasses). English does something similar with \"scissors\" and \"trousers\" — the verb is plural there too."
+        },
+        {
+          "type": "kotak",
+          "title": "Four sentences that unlock almost any new word",
+          "items": [
+            "***Šta je ovo?*** — \"What's this?\" The most productive sentence in any language. Point, ask, repeat the answer aloud, done.",
+            "***Kako se kaže \"…\" na bosanskom?*** — \"How do you say '…' in Bosnian?\" Use this when you know the English word but not the Bosnian one.",
+            "***Šta znači \"…\"?*** — \"What does '…' mean?\" The reverse, for a word you've just heard.",
+            "***Možete li ponoviti, molim vas?*** — \"Could you repeat that, please?\" Keep this one in your pocket; you'll use it more often than the other three."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 1",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Bosnian column, read the English, and rebuild the sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Bosanski"
+          ],
+          "rows": [
+            [
+              "Good afternoon! What's your name?",
+              "*Dobar dan! Kako se zoveš?*"
+            ],
+            [
+              "My name is Budi. I'm new here.",
+              "*Zovem se Budi. Nov sam ovdje.*"
+            ],
+            [
+              "Nice to meet you. Thank you very much!",
+              "*Drago mi je. Hvala lijepo!*"
+            ],
+            [
+              "Are you tired? — No.",
+              "*Jesi li umoran? — Nisam.*"
+            ],
+            [
+              "This is Amina, my colleague.",
+              "*Ovo je Amina, moja koleginica.*"
+            ],
+            [
+              "Goodbye! See you tomorrow!",
+              "*Doviđenja! Vidimo se sutra!*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bs": "ovaj / ova / ovo",
+      "baca": "OH-vai / OH-vah / OH-voh",
+      "en": "this"
+    },
+    {
+      "bs": "taj / ta / to",
+      "baca": "tai / tah / toh",
+      "en": "that"
+    },
+    {
+      "bs": "onaj / ona / ono",
+      "baca": "OH-nai",
+      "en": "that (over there)"
+    },
+    {
+      "bs": "evo",
+      "baca": "EH-voh",
+      "en": "here you go, here it is"
+    },
+    {
+      "bs": "tamo",
+      "baca": "TAH-moh",
+      "en": "there, over there"
+    },
+    {
+      "bs": "lijevo / desno",
+      "baca": "LYEH-voh / DEHS-noh",
+      "en": "left / right"
+    },
+    {
+      "bs": "soba (f)",
+      "baca": "SOH-bah",
+      "en": "room"
+    },
+    {
+      "bs": "sto (m)",
+      "baca": "stoh",
+      "en": "table"
+    },
+    {
+      "bs": "stolica (f)",
+      "baca": "stoh-LEE-tsah",
+      "en": "chair"
+    },
+    {
+      "bs": "prozor (m)",
+      "baca": "PROH-zohr",
+      "en": "window"
+    },
+    {
+      "bs": "kuhinja (f)",
+      "baca": "KOO-hee-nyah",
+      "en": "kitchen"
+    },
+    {
+      "bs": "kupatilo (n)",
+      "baca": "koo-PAH-tee-loh",
+      "en": "bathroom"
+    },
+    {
+      "bs": "peć (f)",
+      "baca": "pehch",
+      "en": "stove; oven"
+    },
+    {
+      "bs": "mali / mala / malo",
+      "baca": "MAH-lee",
+      "en": "small"
+    },
+    {
+      "bs": "lijep / lijepa / lijepo",
+      "baca": "lyehp / LYEH-pah",
+      "en": "beautiful, nice"
+    },
+    {
+      "bs": "hladan / hladna",
+      "baca": "HLAH-dahn",
+      "en": "cold"
+    },
+    {
+      "bs": "jasno",
+      "baca": "YAHS-noh",
+      "en": "clear"
+    },
+    {
+      "bs": "sve",
+      "baca": "sveh",
+      "en": "all, everything"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Bosnian.",
+      "items": [
+        "What's this?",
+        "That's a table, and this is a chair.",
+        "This room is small but nice.",
+        "The bathroom is on the left, the kitchen on the right.",
+        "That window over there is big.",
+        "It's all clear!"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with ovaj, ova, or ovo.",
+      "items": [
+        "____ sto je nov.",
+        "____ stolica je lijepa.",
+        "____ pismo je za tebe.",
+        "____ prozor je mali.",
+        "____ kuhinja je svijetla.",
+        "____ je moja soba.",
+        "____ kupatilo je desno."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ovo / je / šta / ?",
+        "soba / mala / moja / je",
+        "lijepa / stolica / je / ova",
+        "tamo / je / šta / ono / ?",
+        "je / sve / jasno / !"
+      ]
+    }
+  ],
+  "answers": [
+    "Šta je ovo? — To je sto, a ovo je stolica. — Ova soba je mala, ali lijepa. — Kupatilo je lijevo, kuhinja desno. — Onaj prozor tamo je velik. — Sve je jasno!",
+    "Ovaj — Ova — Ovo — Ovaj — Ova — Ovo — Ovo",
+    "Šta je ovo? — Moja soba je mala. — Ova stolica je lijepa. — Šta je ono tamo? — Sve je jasno!"
+  ]
+}

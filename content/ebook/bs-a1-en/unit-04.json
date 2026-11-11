@@ -1,0 +1,539 @@
+{
+  "title": "My family",
+  "title_target": "Moja porodica",
+  "goal": "Talk about your family and say what belongs to whom — while setting up possessive words that agree with the thing owned, not the owner, and the two forms of *imati* whose negative fuses into one word.",
+  "bekal": [
+    "name family members and answer *Imaš li braće i sestara?*",
+    "use *moj, tvoj, njegov, njen, naš, vaš, njihov* with the right endings",
+    "use *imam / nemam* and recognize *ima / nema* meaning \"there is / there isn't\""
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Moja porodica",
+      "intro": "Lunch break at the office. Budi opens the photo gallery on his phone, and Amina comes straight over — in Bosnia, asking about family isn't small talk but the real way of getting to know someone.",
+      "lines": [
+        {
+          "speaker": "Amina:",
+          "text": "Je li ovo tvoja porodica?",
+          "id": "Is this your family?",
+          "literal": "whether this-n your-f family?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jeste. Ovo su moji roditelji, a ovo je moja sestra.",
+          "id": "Yes. These are my parents, and this is my younger sister.",
+          "literal": "it-is. this-n they-are my-pl parents, and this-n it-is my-f sister."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Kako se zove tvoja sestra?",
+          "id": "What's your sister's name?",
+          "literal": "how self she-calls your-f sister?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zove se Sari. Ona je studentica, studira medicinu.",
+          "id": "Her name is Sari. She's a student, she studies medicine.",
+          "literal": "she-calls self Sari. she she-is student-f, she-studies medicine-acc."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "A ovaj dječak? Je li i on tvoj brat?",
+          "id": "And this boy? Is he your brother too?",
+          "literal": "and this-m boy? whether also he your-m brother?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jeste, to je moj brat Rizky. On ima deset godina.",
+          "id": "Yes, that's my little brother Rizky. He's ten years old.",
+          "literal": "it-is, that-n it-is my-m brother Rizky. he he-has ten years-gen."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Imaš li još braće i sestara?",
+          "id": "Do you have any other brothers and sisters?",
+          "literal": "you-have whether more brothers-gen and sisters-gen?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nemam, samo njih dvoje. A tvoja porodica?",
+          "id": "No, just the two of them. And your family?",
+          "literal": "not-I-have, only them-gen two. and your-f family?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Moja porodica je velika. Imam tri sestre i jednog brata.",
+          "id": "My family is big. I have three sisters and one brother.",
+          "literal": "my-f family it-is big-f. I-have three sisters and one-acc brother-acc."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tri sestre! Jesu li sve u Mostaru?",
+          "id": "Three sisters! Are they all in Mostar?",
+          "literal": "three sisters! they-are whether all-f-pl in Mostar-loc?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Nisu sve. Jedna sestra živi u Njemačkoj, u Frankfurtu.",
+          "id": "Not all of them. One sister lives in Germany, in Frankfurt.",
+          "literal": "they-are-not all. one-f sister she-lives in Germany-loc, in Frankfurt-loc."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A tvoji roditelji? Šta rade?",
+          "id": "And your parents? What do they do?",
+          "literal": "and your-pl parents? what they-do?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Otac je penzioner, a majka je nastavnica. Oni su u Mostaru.",
+          "id": "My father is retired, and my mother is a teacher. They're in Mostar.",
+          "literal": "father he-is retiree, and mother she-is teacher-f. they they-are in Mostar-loc."
+        }
+      ],
+      "notes": [
+        "**Possessives agree with the thing owned, not the owner.** *Moja sestra* uses *moja* because *sestra* is feminine; *moj brat* uses *moj* because *brat* is masculine; *moji roditelji* uses *moji* because it's plural. In English \"my\" never changes, so the only way to get used to this is to say the pairs whole — *moja sestra*, *moj brat*, *moje pismo* — rather than memorizing the *moj / moja / moje* table on its own.",
+        "**Why *medicinu*, *sestre*, *jednog brata*?** Because Bosnian nouns change their ending according to their job in the sentence. After *studira* and *imam* the noun is an object, and the ending changes: *medicina → medicinu*, *brat → brata*. After the numbers 2-4 the ending is different again: *sestra → tri sestre*. Each has its own unit — numbers in unit 5, the object form in unit 7, the genitive in unit 8. For now, learn the whole sentences and let your ear get used to endings that move.",
+        "***On ima deset godina* — age is expressed with \"have\".** Just as in French and Spanish, unlike English \"he *is* ten\". *Koliko imaš godina?* = \"how many years do you have?\" The answer: *Imam dvadeset pet godina.* Numbers come in unit 5.",
+        "***Imaš li braće i sestara?* is a set phrase.** Literally \"do you have brothers and sisters?\", and *braće* is a special plural of *brat* that doesn't follow the usual pattern. Learn it whole as one chunk; you'll hear it every time someone gets to know you in Bosnia.",
+        "**Porodica is more than parents and children.** In Bosnia *porodica* easily stretches to uncles, aunts, cousins, and neighbors who count as family. If someone asks about your family, a one-sentence answer feels too short — tell a little, ask back, and the conversation will run by itself. The word *komšija* (neighbor, from Turkish) is almost the equal of a relative in Bosnia."
+      ],
+      "grammars": [
+        {
+          "title": "Possessives — moj, tvoj, njegov, njen…",
+          "body": [
+            "Seven possessive words, each with four shapes. It looks like a lot, but the endings are exactly the same in all seven — only the stem changes."
+          ],
+          "table": {
+            "head": [
+              "Owner",
+              "m",
+              "f",
+              "n",
+              "plural (m / f / n)"
+            ],
+            "rows": [
+              [
+                "**ja** — I",
+                "*moj*",
+                "*moja*",
+                "*moje*",
+                "*moji / moje / moja*"
+              ],
+              [
+                "**ti** — you",
+                "*tvoj*",
+                "*tvoja*",
+                "*tvoje*",
+                "*tvoji / tvoje / tvoja*"
+              ],
+              [
+                "**on** — he",
+                "*njegov*",
+                "*njegova*",
+                "*njegovo*",
+                "*njegovi / njegove / njegova*"
+              ],
+              [
+                "**ona** — she",
+                "*njen*",
+                "*njena*",
+                "*njeno*",
+                "*njeni / njene / njena*"
+              ],
+              [
+                "**mi** — we",
+                "*naš*",
+                "*naša*",
+                "*naše*",
+                "*naši / naše / naša*"
+              ],
+              [
+                "**vi** — you all; you (formal)",
+                "*vaš*",
+                "*vaša*",
+                "*vaše*",
+                "*vaši / vaše / vaša*"
+              ],
+              [
+                "**oni** — they",
+                "*njihov*",
+                "*njihova*",
+                "*njihovo*",
+                "*njihovi / njihove / njihova*"
+              ]
+            ]
+          },
+          "after": [
+            "**The main trap is *njegov* and *njen*.** Like English *his* and *her*, they tell you **who the owner is** (*njegov* = his, *njen* = her), but **the ending follows the thing owned**. So \"his (Emir's) sister\" = *njegova sestra*: *njegov-* because Emir is male, *-a* because *sestra* is feminine. And \"her (Amina's) brother\" = *njen brat*. Two decisions in one word; take it slowly at first.",
+            "**The far shorter everyday way: the dative pronoun.** Instead of *moje ime je Budi*, Bosnians say *Ime mi je Budi* — literally \"name to-me is Budi\". Likewise *Brat mi je student* (my brother is a student), *Kako ti je sestra?* (how's your sister?). This form gets its full treatment in unit 13, but from now on you'll hear it everywhere — especially with family members.",
+            "**Asking \"whose\": *čiji / čija / čije*.** *Čija je ovo knjiga?* (whose book is this?), *Čiji je ovaj telefon?* The endings are the same as the other possessives, so there's nothing new to learn.",
+            "**One word you don't need yet, but will hear: *svoj*.** It means \"the subject's own\": *On voli svoju sestru* = he loves his (own) sister, whereas *On voli njegovu sestru* = he loves his (someone else's) sister. At A1, using plain *moj/tvoj* won't cause misunderstandings — just keep it in mind for later."
+          ]
+        },
+        {
+          "title": "Imati and nemati — and \"there is\" with no subject",
+          "body": [
+            "The second verb you need to master as early as *biti*. It belongs to the *-am* group, so you already know its endings from unit 2 — and its negative, like that of *biti*, fuses into one word."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "**imati** (to have)",
+              "Say it",
+              "**nemati** (not to have)",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "ja",
+                "**imam**",
+                "EE-mahm",
+                "**nemam**",
+                "NEH-mahm"
+              ],
+              [
+                "ti",
+                "*imaš*",
+                "EE-mahsh",
+                "*nemaš*",
+                "NEH-mahsh"
+              ],
+              [
+                "on / ona / ono",
+                "*ima*",
+                "EE-mah",
+                "*nema*",
+                "NEH-mah"
+              ],
+              [
+                "mi",
+                "*imamo*",
+                "ee-MAH-moh",
+                "*nemamo*",
+                "neh-MAH-moh"
+              ],
+              [
+                "vi",
+                "*imate*",
+                "ee-MAH-teh",
+                "*nemate*",
+                "neh-MAH-teh"
+              ],
+              [
+                "oni / one / ona",
+                "*imaju*",
+                "ee-MAH-yoo",
+                "*nemaju*",
+                "NEH-mah-yoo"
+              ]
+            ]
+          },
+          "after": [
+            "**There is no \"ne imam\".** The negative is *nemam*, one word. Together with *nisam* (unit 1) and *neću* (unit 19), these are the three verbs with a fused negative; every other verb simply takes a separate *ne* in front.",
+            "***Ima* and *nema* also mean \"there is\" and \"there isn't\" — with no subject at all.** *Ima li kafe?* (is there any coffee?), *Nema problema* (no problem), *Nema nikoga* (there's nobody), *Ima mjesta?* (is there room?). The form is always *ima* / *nema*, never changing, because there is no subject to change it. This is one of the sentences you'll say most in shops and restaurants.",
+            "**The noun changes its ending after *imam*.** *Sestra → imam sestru*, *brat → imam brata*, *kafa → imam kafu*. Inanimate masculine nouns don't change at all: *imam stan, imam kompjuter, imam telefon*. That's the object form, and its full rules come in unit 7 — for now, just notice that the ending moves.",
+            "**After *nemam*, the ending is different again.** *Imam sestru*, but *nemam sestre*. *Ima kafe*, but *nema kafe*. Negation in Bosnian pulls the noun into the genitive — a pattern set up in unit 8 that, once you see it, explains half the negative sentences you've ever heard."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Porodica — family members",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "One thing that will come as a relief: like English, Bosnian **doesn't have separate words for older and younger siblings**. *Brat* is a brother of any age; *sestra* a sister. If you need to be specific, add *stariji* (older) or *mlađi* (younger): *moj stariji brat*, *moja mlađa sestra*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bosanski",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**porodica** (f)",
+              "poh-ROH-dee-tsah",
+              "family"
+            ],
+            [
+              "**roditelji** (pl)",
+              "roh-DEE-teh-lyee",
+              "parents"
+            ],
+            [
+              "**otac / tata** (m)",
+              "OH-tahts / TAH-tah",
+              "father (formal / everyday)"
+            ],
+            [
+              "**majka / mama** (f)",
+              "MAI-kah",
+              "mother"
+            ],
+            [
+              "**sin** (m)",
+              "seen",
+              "son"
+            ],
+            [
+              "**kćerka / kći** (f)",
+              "KCHEHR-kah",
+              "daughter"
+            ],
+            [
+              "**brat** (m)",
+              "braht",
+              "brother"
+            ],
+            [
+              "**sestra** (f)",
+              "SEHS-trah",
+              "sister"
+            ],
+            [
+              "**djed / dedo** (m)",
+              "dyehd / DEH-doh",
+              "grandfather"
+            ],
+            [
+              "**nana / baka** (f)",
+              "NAH-nah / BAH-kah",
+              "grandmother"
+            ],
+            [
+              "**amidža / daidža** (m)",
+              "ah-MEE-jah / DAI-jah",
+              "uncle (father's / mother's brother)"
+            ],
+            [
+              "**tetka** (f)",
+              "TEHT-kah",
+              "aunt"
+            ],
+            [
+              "**rođak / rodica**",
+              "ROH-jahk",
+              "cousin (m / f)"
+            ],
+            [
+              "**muž** (m)",
+              "moozh",
+              "husband"
+            ],
+            [
+              "**žena / supruga** (f)",
+              "ZHEH-nah",
+              "wife; woman"
+            ],
+            [
+              "**dijete** (n) — pl *djeca*",
+              "DEE-yeh-teh / DYEH-tsah",
+              "child"
+            ],
+            [
+              "**dječak / djevojčica**",
+              "DYEH-chahk",
+              "boy / girl"
+            ],
+            [
+              "**komšija / komšinica**",
+              "KOHM-shee-yah",
+              "neighbor (m / f)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Two words that are typically Bosnian and not used in Croatia or Serbia: **amidža** (uncle on the father's side) and **daidža** (uncle on the mother's side) — both from Turkish, keeping apart two relatives English lumps together as \"uncle\". Likewise *nana* for grandmother, which in Sarajevo is heard far more often than *baka*."
+        },
+        {
+          "type": "kotak",
+          "title": "Dijete and djeca — one word that behaves oddly",
+          "items": [
+            "*Dijete* (child) is a **neuter singular** word, but its plural *djeca* is treated as a **feminine singular** word: *Djeca su lijepa* — but also *Moja djeca su ovdje*, with *moja* in the feminine singular form. The verb is plural, the adjective feminine singular. There's no point looking for logic here; learn *moja djeca* whole and you're done.",
+            "To ask about children: *Imate li djece?* (\"do you have children?\"). This is one of the first questions Bosnians will ask you, and not out of nosiness — it's how they place you on the map of relationships. *Nemam još* (\"not yet\") is a perfectly good answer."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 2",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Bosnian column, read the English, and rebuild the sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Bosanski"
+          ],
+          "rows": [
+            [
+              "Where are you from? — I'm from Indonesia.",
+              "*Odakle si? — Iz Indonezije sam.*"
+            ],
+            [
+              "Now I live in Sarajevo.",
+              "*Sada živim u Sarajevu.*"
+            ],
+            [
+              "I speak English and a little Bosnian.",
+              "*Govorim engleski i malo bosanski.*"
+            ],
+            [
+              "What do you do? — I'm a programmer.",
+              "*Šta radiš? — Programer sam.*"
+            ],
+            [
+              "I don't understand everything, but I study every day.",
+              "*Ne razumijem sve, ali učim svaki dan.*"
+            ],
+            [
+              "Do you know what it means?",
+              "*Znaš li šta znači?*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bs": "porodica (f)",
+      "baca": "poh-ROH-dee-tsah",
+      "en": "family"
+    },
+    {
+      "bs": "roditelji (pl)",
+      "baca": "roh-DEE-teh-lyee",
+      "en": "parents"
+    },
+    {
+      "bs": "otac (m)",
+      "baca": "OH-tahts",
+      "en": "father"
+    },
+    {
+      "bs": "majka (f)",
+      "baca": "MAI-kah",
+      "en": "mother"
+    },
+    {
+      "bs": "brat (m)",
+      "baca": "braht",
+      "en": "brother"
+    },
+    {
+      "bs": "sestra (f)",
+      "baca": "SEHS-trah",
+      "en": "sister"
+    },
+    {
+      "bs": "dijete (n) — *djeca*",
+      "baca": "DEE-yeh-teh",
+      "en": "child"
+    },
+    {
+      "bs": "imati — *imam*",
+      "baca": "EE-mah-tee",
+      "en": "to have"
+    },
+    {
+      "bs": "nemati — *nemam*",
+      "baca": "NEH-mah-tee",
+      "en": "not to have"
+    },
+    {
+      "bs": "moj / moja / moje",
+      "baca": "moy / MOH-yah",
+      "en": "my"
+    },
+    {
+      "bs": "tvoj / tvoja / tvoje",
+      "baca": "tvoy",
+      "en": "your"
+    },
+    {
+      "bs": "njegov / njen",
+      "baca": "NYEH-gohv / nyehn",
+      "en": "his / her"
+    },
+    {
+      "bs": "naš / vaš / njihov",
+      "baca": "nahsh / vahsh",
+      "en": "our / your (pl) / their"
+    },
+    {
+      "bs": "čiji / čija / čije",
+      "baca": "CHEE-yee",
+      "en": "whose"
+    },
+    {
+      "bs": "velik / velika",
+      "baca": "VEH-leek",
+      "en": "big"
+    },
+    {
+      "bs": "stariji / mlađi",
+      "baca": "STAH-ree-yee / MLAH-jee",
+      "en": "older / younger"
+    },
+    {
+      "bs": "još",
+      "baca": "yohsh",
+      "en": "more, else; still"
+    },
+    {
+      "bs": "samo",
+      "baca": "SAH-moh",
+      "en": "only, just"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Bosnian.",
+      "items": [
+        "This is my family.",
+        "What's your sister's name?",
+        "I have one brother.",
+        "I don't have children.",
+        "My father is retired, my mother is a teacher.",
+        "Is there any coffee? — No, there isn't."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right possessive.",
+      "items": [
+        "Ovo je ____ (my) sestra.",
+        "Kako se zove ____ (your) brat?",
+        "____ (our) porodica je velika.",
+        "____ (their) roditelji su u Mostaru.",
+        "Amina i ____ (her) sestra žive ovdje.",
+        "Emir i ____ (his) brat su studenti.",
+        "____ (your, formal) kćerka je studentica?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "porodica / moja / velika / je",
+        "li / imaš / sestara / ?",
+        "penzioner / otac / je / moj",
+        "problema / nema",
+        "godina / deset / ima / on"
+      ]
+    }
+  ],
+  "answers": [
+    "Ovo je moja porodica. — Kako se zove tvoja sestra? — Imam jednog brata. — Nemam djece. — Moj otac je penzioner, a majka je nastavnica. — Ima li kafe? Nema.",
+    "moja — tvoj — Naša — Njihovi — njena — njegov — Vaša",
+    "Moja porodica je velika. — Imaš li sestara? — Moj otac je penzioner. — Nema problema. — On ima deset godina."
+  ]
+}

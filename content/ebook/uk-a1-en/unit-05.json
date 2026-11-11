@@ -1,0 +1,523 @@
+{
+  "title": "What do you do for a living?",
+  "title_target": "Ким ви працюєте? — Kym vy pratsyuyete?",
+  "goal": "Ask about and name jobs, say the verb \"to work\" in all six forms, and meet the fifth case (орудний, the instrumental) through its easiest doorway: jobs always use it.",
+  "bekal": [
+    "ask about someone's job with Ким?",
+    "say what you and your family do",
+    "put job names into the орудний",
+    "conjugate працювати in all six forms",
+    "say where someone works"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — After class, in the cafeteria",
+      "intro": "Ani and Andriy are having lunch. Look at the first line: Ani calls Andriy by the calling form, **Андрію** — not *Андрій*. Notice too that every job name ends in a brand-new sound.",
+      "lines": [
+        {
+          "speaker": "Ані:",
+          "text": "[Андрію|An-DREE-yoo], [ти|ti] [студент|stoo-DENT]?",
+          "id": "Andriy, are you a student?",
+          "literal": "Andriy (calling), you — student?"
+        },
+        {
+          "speaker": "Андрій:",
+          "text": "[Так|Tak], [але|A-leh] [я|ya] [також|TA-kozh] [працюю|pra-TSYOO-yoo].",
+          "id": "Yes, but I work too.",
+          "literal": "yes, but — I — also — work."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Ким|Kim] [ти|ti] [працюєш|pra-TSYOO-yesh]?",
+          "id": "What do you work as?",
+          "literal": "as-whom — you — work?"
+        },
+        {
+          "speaker": "Андрій:",
+          "text": "[Я|Ya] [працюю|pra-TSYOO-yoo] [офіціантом|o-fee-tsee-AN-tom] [у|oo] [кафе|ka-FEH]. [А|A] [ти|ti]?",
+          "id": "I work as a waiter in a café. And you?",
+          "literal": "I — work — waiter (орудний) — in — café. and — you?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Я|Ya] [поки|PO-ki] [не|neh] [працюю|pra-TSYOO-yoo]. [Тільки|TEEL'-ki] [вчуся|VCHOO-sya].",
+          "id": "I'm not working yet. Just studying.",
+          "literal": "I — for-now — not — work. only — study."
+        },
+        {
+          "speaker": "Андрій:",
+          "text": "[А|A] [твої|tvo-YEE] [батьки|bat'-KI]? [Ким|Kim] [вони|vo-NI] [працюють|pra-TSYOO-yoot']?",
+          "id": "What about your parents? What do they do?",
+          "literal": "and — your — parents? as-whom — they — work?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Мама|MA-ma] [працює|pra-TSYOO-yeh] [вчителькою|VCHI-tel'-ko-yoo], [а|a] [тато|TA-to] — [інженером|een-zheh-NEH-rom].",
+          "id": "Mom works as a teacher, and Dad's an engineer.",
+          "literal": "mom — works — teacher (f, орудний), and — dad — engineer (орудний)."
+        },
+        {
+          "speaker": "Андрій:",
+          "text": "[Цікаво|Tsee-KA-vo]! [Де|Deh] [працює|pra-TSYOO-yeh] [твоя|tvo-YA] [мама|MA-ma]?",
+          "id": "Interesting! Where does your mom work?",
+          "literal": "interesting! where — works — your — mom?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[У|OO] [школі|SHKO-lee], [в|v] [Джакарті|dzha-KAR-tee].",
+          "id": "At a school, in Jakarta.",
+          "literal": "in — school (місцевий), in — Jakarta (місцевий)."
+        },
+        {
+          "speaker": "Андрій:",
+          "text": "[Їй|Yeey] [подобається|po-DO-ba-yeh-tsya] [її|yee-YEE] [робота|ro-BO-ta]?",
+          "id": "Does she like her job?",
+          "literal": "to-her — is-pleasing — her — work?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Дуже|DOO-zheh]. [Вона|Vo-NA] [каже|KA-zheh], [що|shcho] [це|tseh] [найкраща|nai-KRA-shcha] [робота|ro-BO-ta] [у|oo] [світі|SVEE-tee].",
+          "id": "Very much. She says it's the best job in the world.",
+          "literal": "very. she — says, that — this — best — work — in — world."
+        },
+        {
+          "speaker": "Андрій:",
+          "text": "[Тоді|To-DEE] [твоя|tvo-YA] [мама|MA-ma] — [щаслива|shchas-LI-va] [людина|lyoo-DI-na].",
+          "id": "Then your mom is a lucky person.",
+          "literal": "then — your — mom — happy (f) — person."
+        }
+      ],
+      "notes": [
+        "**Ким?, not Хто?** *Хто ти?* asks who you are (your identity). *Ким ти працюєш?* asks what you work as. The correct answer to the second question **must** use the орудний: *офіціантом*, not *офіціант*.",
+        "**The орудний endings are -ом, -ем, or -ою.** Masculine nouns ending in a hard consonant → **-ом** (*інженер* → *інженером*). Ending in a soft consonant or -й → **-ем** (*водій* → *водієм*, *лікар* → *лікарем*). Feminine nouns in -а → **-ою** (*вчителька* → *вчителькою*).",
+        "**Працювати follows the first pattern, but its stem shrinks.** The dictionary form is *працювати*, but once you conjugate it, **-юва-** collapses to **-ю-**: *я працюю*, not *я працюваю*. Every verb ending in **-увати / -ювати** behaves the same way: *малювати* → *малюю*, *дякувати* → *дякую*.",
+        "**Поки не = not yet, for now.** Softer than *ще ні* because it implies the situation is temporary. *Я поки не працюю* — I'm not working yet (but I will be).",
+        "**Вчуся is a reflexive verb.** The ending **-ся** originally meant \"oneself\": *вчити* = to teach, *вчитися* = to teach oneself, i.e. to study. You'll meet this group again in Unit 12; for now just remember *я вчуся*, *ти вчишся*.",
+        "**Job names have feminine forms, and people use them.** *Вчитель* / *вчителька*, *лікар* / *лікарка*, *студент* / *студентка*, *перекладач* / *перекладачка*. Unlike some European languages that have dropped feminine forms, Ukrainian is actively reviving them.",
+        "**У світі, not в світі.** After a consonant people use *у*; after a vowel, *в*. It's the same ease-of-speech habit as з / із / зі in Unit 3, and once again: picking the wrong one never stops anyone understanding you."
+      ],
+      "grammars": [
+        {
+          "title": "Працювати in six forms",
+          "body": [
+            "First pattern, with **-ю-** in the stem. Learn this table and you've got dozens of other verbs ending in -увати too."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Form",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "я",
+                "працюю",
+                "pra-TSYOO-yoo",
+                "I work"
+              ],
+              [
+                "ти",
+                "працюєш",
+                "pra-TSYOO-yesh",
+                "you work (informal)"
+              ],
+              [
+                "він / вона",
+                "працює",
+                "pra-TSYOO-yeh",
+                "he / she works"
+              ],
+              [
+                "ми",
+                "працюємо",
+                "pra-TSYOO-yeh-mo",
+                "we work"
+              ],
+              [
+                "ви",
+                "працюєте",
+                "pra-TSYOO-yeh-teh",
+                "you work (formal / plural)"
+              ],
+              [
+                "вони",
+                "працюють",
+                "pra-TSYOO-yoot'",
+                "they work"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "Jobs in the орудний",
+          "body": [
+            "The second column is what you use after *працювати*. The first column is only for sentences with no verb: *Він лікар.*"
+          ],
+          "table": {
+            "head": [
+              "Dictionary form",
+              "After працювати",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "лікар",
+                "лікарем",
+                "LEE-ka-rem",
+                "doctor"
+              ],
+              [
+                "вчитель",
+                "вчителем",
+                "VCHI-teh-lem",
+                "teacher (m)"
+              ],
+              [
+                "вчителька",
+                "вчителькою",
+                "VCHI-tel'-ko-yoo",
+                "teacher (f)"
+              ],
+              [
+                "інженер",
+                "інженером",
+                "een-zheh-NEH-rom",
+                "engineer"
+              ],
+              [
+                "офіціант",
+                "офіціантом",
+                "o-fee-tsee-AN-tom",
+                "waiter"
+              ],
+              [
+                "програміст",
+                "програмістом",
+                "pro-hra-MEES-tom",
+                "programmer"
+              ],
+              [
+                "журналіст",
+                "журналістом",
+                "zhoor-na-LEES-tom",
+                "journalist"
+              ],
+              [
+                "перекладач",
+                "перекладачем",
+                "peh-reh-kla-DA-chem",
+                "translator"
+              ],
+              [
+                "медсестра",
+                "медсестрою",
+                "med-ses-TRO-yoo",
+                "nurse"
+              ],
+              [
+                "водій",
+                "водієм",
+                "vo-DEE-yem",
+                "driver"
+              ],
+              [
+                "продавець",
+                "продавцем",
+                "pro-dav-TSEM",
+                "shop assistant"
+              ],
+              [
+                "кухар",
+                "кухарем",
+                "KOO-kha-rem",
+                "cook"
+              ]
+            ]
+          },
+          "after": [
+            "Look at **продавець** → **продавцем**: the **е** in the last syllable drops out as soon as the ending changes. All words ending in **-ець** behave this way (*українець* → *українцем*)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Where people work",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "To say **at / in** a place, Ukrainian uses в/у or на, and the place goes into the sixth case (місцевий, the locative). The ending is almost always **-і**. This case is covered fully in Unit 10; for now, just learn the pairs."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Place",
+            "There",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "школа",
+              "у школі",
+              "oo SHKO-lee",
+              "at school"
+            ],
+            [
+              "університет",
+              "в університеті",
+              "v oo-nee-ver-si-TEH-tee",
+              "at university"
+            ],
+            [
+              "кафе",
+              "у кафе",
+              "oo ka-FEH",
+              "at a café (doesn't change)"
+            ],
+            [
+              "лікарня",
+              "у лікарні",
+              "oo lee-KAR-nee",
+              "at the hospital"
+            ],
+            [
+              "офіс",
+              "в офісі",
+              "v O-fee-see",
+              "at the office"
+            ],
+            [
+              "магазин",
+              "у магазині",
+              "oo ma-ha-ZI-nee",
+              "at a shop"
+            ],
+            [
+              "банк",
+              "у банку",
+              "oo BAN-koo",
+              "at a bank"
+            ],
+            [
+              "ресторан",
+              "у ресторані",
+              "oo res-to-RA-nee",
+              "at a restaurant"
+            ],
+            [
+              "робота",
+              "на роботі",
+              "na ro-BO-tee",
+              "at work"
+            ],
+            [
+              "завод",
+              "на заводі",
+              "na za-VO-dee",
+              "at a factory"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last two rows use **на**, not **в**. There's no really tidy rule for this — *на роботі*, *на заводі*, *на пошті*, *на вокзалі* have to be learned one by one. Luckily there aren't many."
+        },
+        {
+          "type": "kotak",
+          "title": "Three ways to ask about someone's job",
+          "items": [
+            "**Ким ви працюєте?** — the most common and the safest. Literally \"as whom do you work\".",
+            "**Хто ви за професією?** — a bit more formal; it sounds like a question on a form. Literally \"who are you by profession\".",
+            "**Де ви працюєте?** — asks about the place, not the position. You answer with *у школі*, *в офісі*, not a job title.",
+            "⚠️ If you're not working yet, the most natural answer isn't silence but **Я ще вчуся** (I'm still at school / university) or **Я поки не працюю**."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uk": "робота",
+      "baca": "ro-BO-ta",
+      "en": "work, job"
+    },
+    {
+      "uk": "працювати",
+      "baca": "pra-tsyoo-VA-ti",
+      "en": "to work"
+    },
+    {
+      "uk": "ким",
+      "baca": "kim",
+      "en": "as what / as whom"
+    },
+    {
+      "uk": "професія",
+      "baca": "pro-FEH-see-ya",
+      "en": "profession"
+    },
+    {
+      "uk": "лікар",
+      "baca": "LEE-kar",
+      "en": "doctor"
+    },
+    {
+      "uk": "вчитель / вчителька",
+      "baca": "VCHI-tel'",
+      "en": "teacher (m / f)"
+    },
+    {
+      "uk": "інженер",
+      "baca": "een-zheh-NER",
+      "en": "engineer"
+    },
+    {
+      "uk": "офіціант",
+      "baca": "o-fee-tsee-ANT",
+      "en": "waiter"
+    },
+    {
+      "uk": "програміст",
+      "baca": "pro-hra-MEEST",
+      "en": "programmer"
+    },
+    {
+      "uk": "журналіст",
+      "baca": "zhoor-na-LEEST",
+      "en": "journalist"
+    },
+    {
+      "uk": "перекладач",
+      "baca": "peh-reh-kla-DACH",
+      "en": "translator"
+    },
+    {
+      "uk": "медсестра",
+      "baca": "med-ses-TRA",
+      "en": "nurse"
+    },
+    {
+      "uk": "продавець",
+      "baca": "pro-da-VETS'",
+      "en": "shop assistant"
+    },
+    {
+      "uk": "водій",
+      "baca": "vo-DEEY",
+      "en": "driver"
+    },
+    {
+      "uk": "кухар",
+      "baca": "KOO-khar",
+      "en": "cook"
+    },
+    {
+      "uk": "офіс",
+      "baca": "O-fees",
+      "en": "office"
+    },
+    {
+      "uk": "університет",
+      "baca": "oo-nee-ver-si-TET",
+      "en": "university"
+    },
+    {
+      "uk": "школа",
+      "baca": "SHKO-la",
+      "en": "school"
+    },
+    {
+      "uk": "лікарня",
+      "baca": "lee-KAR-nya",
+      "en": "hospital"
+    },
+    {
+      "uk": "вчитися",
+      "baca": "VCHI-ti-sya",
+      "en": "to study, to go to school"
+    },
+    {
+      "uk": "поки",
+      "baca": "PO-ki",
+      "en": "for now, so far"
+    },
+    {
+      "uk": "також",
+      "baca": "TA-kozh",
+      "en": "also, too"
+    },
+    {
+      "uk": "цікаво",
+      "baca": "tsee-KA-vo",
+      "en": "interesting"
+    },
+    {
+      "uk": "казати",
+      "baca": "ka-ZA-ti",
+      "en": "to say"
+    },
+    {
+      "uk": "людина",
+      "baca": "lyoo-DI-na",
+      "en": "person"
+    },
+    {
+      "uk": "світ",
+      "baca": "sveet",
+      "en": "world"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the correct орудний form.",
+      "items": [
+        "Я працюю ____ (лікар).",
+        "Вона працює ____ (вчителька).",
+        "Він працює ____ (інженер).",
+        "Ти працюєш ____ (журналіст)?",
+        "Вона працює ____ (медсестра)."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right form of працювати.",
+      "items": [
+        "Я ____ у кафе.",
+        "Ти ____ у школі?",
+        "Він ____ в офісі.",
+        "Ми ____ у лікарні.",
+        "Вони ____ на заводі."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "працюєш / ким / ти",
+        "кафе / я / у / працюю",
+        "не / поки / я / працюю",
+        "вчителькою / мама / працює / моя",
+        "робота / це / гарна"
+      ]
+    },
+    {
+      "prompt": "Translate into Ukrainian.",
+      "items": [
+        "What do you do for a living? (formal)",
+        "I work as a doctor.",
+        "My mother works as a teacher.",
+        "I'm not working yet. I'm still studying.",
+        "She likes her job."
+      ]
+    }
+  ],
+  "answers": [
+    "лікарем — вчителькою — інженером — журналістом — медсестрою",
+    "працюю — працюєш — працює — працюємо — працюють",
+    "Ким ти працюєш? — Я працюю у кафе. — Я поки не працюю. — Моя мама працює вчителькою. — Це гарна робота.",
+    "Ким ви працюєте? — Я працюю лікарем. — Моя мама працює вчителькою. — Я поки не працюю. Я ще вчуся. — Їй подобається її робота."
+  ],
+  "wave": "Review Unit 1. Oksana's sentence *Я викладачка* has no verb — and that's why it does **not** use the орудний. Compare it with *Я працюю викладачкою*."
+}

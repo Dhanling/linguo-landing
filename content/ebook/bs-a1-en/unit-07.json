@@ -1,0 +1,572 @@
+{
+  "title": "At the café — and the noun as object",
+  "title_target": "U kafani",
+  "goal": "Order drinks and food, and set up the first case: the accusative, the form a noun takes when it is the object of an action — and which, for half of all nouns, turns out not to change at all.",
+  "bekal": [
+    "order and pay with polite, natural sentences",
+    "put nouns into the accusative, and know when they don't change",
+    "use the object pronouns *me, te, ga, je, nas, vas, ih*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — U kafani",
+      "intro": "A small café in Baščaršija, low wooden chairs outside. Budi and Amina sit down; the waiter comes over without waiting to be called.",
+      "lines": [
+        {
+          "speaker": "Konobar:",
+          "text": "Izvolite! Šta želite?",
+          "id": "Hello! What would you like?",
+          "literal": "please! what you(pl)-wish?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jednu bosansku kafu, molim.",
+          "id": "One Bosnian coffee, please.",
+          "literal": "one-acc-f bosnian-acc-f coffee-acc, I-ask."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Za mene čaj, molim. S limunom.",
+          "id": "Tea for me, please. With lemon.",
+          "literal": "for me-acc tea, I-ask. with lemon-ins."
+        },
+        {
+          "speaker": "Konobar:",
+          "text": "Želite li nešto za jelo?",
+          "id": "Would you like something to eat?",
+          "literal": "you(pl)-wish whether something for food?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Imate li ćevape?",
+          "id": "Do you have ćevapi?",
+          "literal": "you(pl)-have whether ćevapi-acc-pl?"
+        },
+        {
+          "speaker": "Konobar:",
+          "text": "Naravno. Pet ili deset?",
+          "id": "Of course. Five or ten?",
+          "literal": "of-course. five or ten?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Deset, molim. I jednu vodu.",
+          "id": "Ten, please. And a water.",
+          "literal": "ten, I-ask. and one-acc-f water-acc."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Ja ne jedem meso. Imate li nešto vegetarijansko?",
+          "id": "I don't eat meat. Do you have anything vegetarian?",
+          "literal": "I not I-eat meat-acc. you(pl)-have whether something vegetarian-n?"
+        },
+        {
+          "speaker": "Konobar:",
+          "text": "Imamo pitu sa sirom i pitu sa spinatom.",
+          "id": "We have cheese pie and spinach pie.",
+          "literal": "we-have pie-acc with cheese-ins and pie-acc with spinach-ins."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Onda pitu sa sirom, molim.",
+          "id": "Then the cheese pie, please.",
+          "literal": "then pie-acc with cheese-ins, I-ask."
+        },
+        {
+          "speaker": "Konobar:",
+          "text": "Odmah donosim.",
+          "id": "I'll bring it right away.",
+          "literal": "right-away I-bring."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hvala. Možemo li poslije platiti zajedno?",
+          "id": "Thank you. Can we pay together afterward?",
+          "literal": "thanks. we-can whether after pay together?"
+        },
+        {
+          "speaker": "Konobar:",
+          "text": "Naravno, nema problema. Prijatno!",
+          "id": "Of course, no problem. Enjoy!",
+          "literal": "of-course, there's-no problem-gen. pleasantly!"
+        }
+      ],
+      "notes": [
+        "**Notice the ending *-u* turning up again and again:** *kafa → kafu*, *voda → vodu*, *pita → pitu*. That's the feminine accusative, and it's what makes your order sound right. *Jednu kafu, molim* is a sentence you'll say more often than any other in Bosnia.",
+        "**Adjectives change along with their noun.** *Bosanska kafa* becomes *bosansku kafu*; *jedna* becomes *jednu*. A noun never moves alone — the whole group in front of it moves too. That's why the adjective table at the back of this course has a row for each case.",
+        "***Za mene* — after a preposition, pronouns use the long form.** *Za mene, za tebe, za njega, bez nas.* The short forms (*me, te, ga*) never appear after a preposition, and never at the start of a sentence. This is part of the second-slot rule set up fully in unit 12.",
+        "***Molim* at the end of a sentence is the shortest way to be polite.** Fuller forms: *Molim vas* (to someone you address formally) or *Molim te* (to a friend). And *Izvolite!* from the waiter means \"here you are, what can I get you\" — you'll hear it every time you enter a shop, and it's also used when handing something to you.",
+        "**Pita.** Not Greek flatbread, but thin pastry rolled around a filling and baked in a coil — the most typical Bosnian home food. Its name depends on the filling: *burek* (meat — and only meat; calling any other kind *burek* will get you a friendly but firm correction), *sirnica* (cheese), *zeljanica* (spinach), *krompiruša* (potato). Ask *Imate li pitu?* almost anywhere and the answer will be *Imamo*."
+      ],
+      "grammars": [
+        {
+          "title": "Akuzativ — the object form, and half of it doesn't change",
+          "body": [
+            "The first of seven cases, and deliberately this one first: it's the most used, and the cheapest to learn — because for half of all nouns the form is exactly the same as the dictionary form. English has a trace of the same idea: *he* sees, but someone sees *him*."
+          ],
+          "table": {
+            "head": [
+              "Kind of noun",
+              "Nominativ (dictionary)",
+              "Akuzativ",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**m inanimate**",
+                "*sok, čaj, grad, hljeb*",
+                "**same**",
+                "*Pijem sok. Volim grad.*"
+              ],
+              [
+                "**m animate**",
+                "*brat, konobar, student*",
+                "**+ -a**",
+                "*Čekam brata. Zovem konobara.*"
+              ],
+              [
+                "**f ending in -a**",
+                "*kafa, voda, pita, sestra*",
+                "**-a → -u**",
+                "*Pijem kafu. Čekam sestru.*"
+              ],
+              [
+                "**f ending in a consonant**",
+                "*noć, stvar, ljubav*",
+                "**same**",
+                "*Volim noć.*"
+              ],
+              [
+                "**n**",
+                "*pivo, mlijeko, more*",
+                "**same**",
+                "*Pijem mlijeko.*"
+              ],
+              [
+                "**m plural**",
+                "*studenti, gradovi, ćevapi*",
+                "**-i → -e**",
+                "*Vidim studente. Jedem ćevape.*"
+              ],
+              [
+                "**f / n plural**",
+                "*kafe, žene, piva*",
+                "**same**",
+                "*Pijem dvije kafe.*"
+              ]
+            ]
+          },
+          "after": [
+            "**You really only need to remember two rows:** feminine words ending in *-a* change it to **-u**, and **animate** masculine words add **-a**. Everything else doesn't move at all. If all you remember today is *kafa → kafu*, seventy percent of your orders are already right.",
+            "**\"Animate\" means people and animals.** *Vidim brata* (I see my brother), *Vidim konja* (I see a horse), but *Vidim grad* (I see the city — inanimate, no change). This rule applies only to **masculine singular** words; feminine and neuter don't care whether something is alive.",
+            "**The whole group in front of the noun changes too.** *Ovaj dobar sok* stays *ovaj dobar sok* (inanimate), but *ova dobra kafa* becomes *ovu dobru kafu*, and *ovaj dobar student* becomes *ovog dobrog studenta*. The full adjective table is in the grammar summary; for now, copy ready-made pairs: *jednu bosansku kafu*.",
+            "**The accusative also comes after some prepositions**, and the most important use is **destination**: *idem u grad* (into town), *idem na posao* (to work), *ovo je za tebe* (this is for you), *kroz park* (through the park). Compare *u gradu* and *na poslu* — that's the locative, the **location** form, set up in unit 9. One preposition, two cases, two meanings: *u grad* = into town, *u gradu* = in town."
+          ]
+        },
+        {
+          "title": "Object pronouns — me, te, ga, je…",
+          "body": [
+            "Just like nouns, pronouns have an object form (English does too: *I → me, he → him*). And like *sam* and *je*, they come in two shapes: short for everyday use, long for emphasis."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Long",
+              "Short",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**ja** — I",
+                "*mene*",
+                "**me**",
+                "*Čekaš li me?* — Are you waiting for me?"
+              ],
+              [
+                "**ti** — you",
+                "*tebe*",
+                "**te**",
+                "*Ja te čekam.* — I'm waiting for you."
+              ],
+              [
+                "**on** — he",
+                "*njega*",
+                "**ga**",
+                "*Vidim ga.* — I see him."
+              ],
+              [
+                "**ona** — she",
+                "*nju*",
+                "**je / ju**",
+                "*Vidim je.* — I see her."
+              ],
+              [
+                "**mi** — we",
+                "*nas*",
+                "**nas**",
+                "*Oni nas čekaju.*"
+              ],
+              [
+                "**vi** — you all; you (formal)",
+                "*vas*",
+                "**vas**",
+                "*Ja vas razumijem.*"
+              ],
+              [
+                "**oni** — they",
+                "*njih*",
+                "**ih**",
+                "*Zovem ih.* — I'm calling them."
+              ]
+            ]
+          },
+          "after": [
+            "**The short form sits in the second slot and never starts a sentence.** *Ja te čekam* — not *Te čekam*. If there's no other word in front, the order flips: *Čekam te.* This rule is exactly the same as for *sam, si, je* in unit 1, and the full version comes in unit 12.",
+            "**The long form is used in two situations**: after a preposition (*za mene, bez tebe, s njim*) and when you want emphasis (*Mene čekaš, ne njega?* — \"it's *me* you're waiting for, not him?\"). In ordinary conversation, the short form is what you use almost all the time.",
+            "***Je* or *ju* for \"her\"?** Both mean the same. *Ju* is used to avoid clashing with *je* from *biti*: *Vidio ju je* (he has seen her) sounds neater than *vidio je je*. Otherwise *je* is the usual one.",
+            "**The verbs that most often pair with these forms:** *čekati* (to wait for), *vidjeti* (to see), *zvati* (to call), *razumjeti* (to understand), *voljeti* (to love), *tražiti* (to look for), *poznavati* (to know a person). Practice three short sentences every day — *Čekam te. Vidim ga. Ne razumijem ih.* — and these little words will stop feeling foreign within a week."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "U kafani — ordering, asking, paying",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The sequence is always the same, and barely changes anywhere in Bosnia: the waiter comes and says *Izvolite*, you name your order in the accusative with *molim*, and at the end you call out *Račun, molim!*"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bosanski",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Izvolite!*",
+              "eez-VOH-lee-teh",
+              "What can I get you? (from the waiter)"
+            ],
+            [
+              "*Jednu kafu, molim.*",
+              "YEHD-noo KAH-foo MOH-leem",
+              "One coffee, please."
+            ],
+            [
+              "*Za mene čaj, molim.*",
+              "zah MEH-neh chai",
+              "Tea for me, please."
+            ],
+            [
+              "*Imate li…?*",
+              "EE-mah-teh lee",
+              "Do you have… ?"
+            ],
+            [
+              "*Šta preporučujete?*",
+              "shtah preh-poh-ROO-choo-yeh-teh",
+              "What do you recommend?"
+            ],
+            [
+              "*Ja ne jedem meso.*",
+              "yah neh YEH-dehm MEH-soh",
+              "I don't eat meat."
+            ],
+            [
+              "*Bez šećera, molim.*",
+              "behz SHEH-cheh-rah",
+              "No sugar, please."
+            ],
+            [
+              "*Još jednu, molim.*",
+              "yohsh YEHD-noo",
+              "One more, please."
+            ],
+            [
+              "*Račun, molim!*",
+              "RAH-choon",
+              "The bill, please!"
+            ],
+            [
+              "*Možemo li platiti zajedno?*",
+              "MOH-zheh-moh lee PLAH-tee-tee zah-YEHD-noh",
+              "Can we pay together?"
+            ],
+            [
+              "*Odvojeno, molim.*",
+              "ohd-VOH-yeh-noh",
+              "Separately, please."
+            ],
+            [
+              "*Zadržite kusur.*",
+              "zah-DR-zhee-teh KOO-soor",
+              "Keep the change."
+            ],
+            [
+              "*Bilo je odlično!*",
+              "BEE-loh yeh ohd-LEECH-noh",
+              "It was excellent!"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Piće (drinks)",
+            "Hrana (food)",
+            "English"
+          ],
+          "rows": [
+            [
+              "*kafa* (f)",
+              "*hljeb* (m)",
+              "coffee / bread"
+            ],
+            [
+              "*bosanska kafa*",
+              "*burek* (m)",
+              "Bosnian coffee / meat pie"
+            ],
+            [
+              "*čaj* (m)",
+              "*pita* (f)",
+              "tea / pie (pita)"
+            ],
+            [
+              "*voda* (f)",
+              "*ćevapi* (pl)",
+              "water / ćevapi"
+            ],
+            [
+              "*sok* (m)",
+              "*meso* (n)",
+              "juice / meat"
+            ],
+            [
+              "*mlijeko* (n)",
+              "*piletina* (f)",
+              "milk / chicken"
+            ],
+            [
+              "*pivo* (n)",
+              "*riba* (f)",
+              "beer / fish"
+            ],
+            [
+              "*vino* (n)",
+              "*sir* (m)",
+              "wine / cheese"
+            ],
+            [
+              "*gazirana voda*",
+              "*salata* (f)",
+              "sparkling water / salad"
+            ],
+            [
+              "*šećer* (m)",
+              "*supa* (f)",
+              "sugar / soup"
+            ],
+            [
+              "*limun* (m)",
+              "*kolač* (m)",
+              "lemon / cake"
+            ],
+            [
+              "*jogurt* (m)",
+              "*sladoled* (m)",
+              "yogurt / ice cream"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three things to know before you sit down",
+          "items": [
+            "**Bosnian coffee is not espresso.** *Bosanska kafa* is ground very fine, boiled in a *džezva*, and served with its grounds. It's drunk without stirring, slowly, while nibbling a sugar cube. If you want Italian-style coffee, ask for it by name: *espreso*, *makijato*, *kapućino*.",
+            "**The price includes your seat for as long as you like.** Nobody will move you on; one coffee can last you two hours, and that's the custom. The waiter won't bring the bill until you ask — *Račun, molim!*",
+            "**Tipping: round up.** There's no fixed percentage. If the bill is 8.50 KM, handing over 10 KM and saying *Zadržite kusur* is more than enough."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 5",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Bosnian column, read the English, and rebuild the sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Bosanski"
+          ],
+          "rows": [
+            [
+              "I'm twenty-eight years old.",
+              "*Imam dvadeset osam godina.*"
+            ],
+            [
+              "How much is it? — Five marks.",
+              "*Koliko košta? — Pet maraka.*"
+            ],
+            [
+              "I have two sisters.",
+              "*Imam dvije sestre.*"
+            ],
+            [
+              "What's your phone number?",
+              "*Koji je vaš broj telefona?*"
+            ],
+            [
+              "There are eight people in the class.",
+              "*U grupi ima osam ljudi.*"
+            ],
+            [
+              "The course costs two hundred marks.",
+              "*Kurs košta dvjesto maraka.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bs": "kafana (f)",
+      "baca": "kah-FAH-nah",
+      "en": "café"
+    },
+    {
+      "bs": "konobar (m)",
+      "baca": "KOH-noh-bahr",
+      "en": "waiter"
+    },
+    {
+      "bs": "izvolite",
+      "baca": "eez-VOH-lee-teh",
+      "en": "here you are; what can I get you"
+    },
+    {
+      "bs": "željeti — *želim*",
+      "baca": "ZHEH-lyeh-tee",
+      "en": "to wish, to want"
+    },
+    {
+      "bs": "jelo (n)",
+      "baca": "YEH-loh",
+      "en": "dish, food"
+    },
+    {
+      "bs": "piće (n)",
+      "baca": "PEE-cheh",
+      "en": "drink"
+    },
+    {
+      "bs": "meso (n)",
+      "baca": "MEH-soh",
+      "en": "meat"
+    },
+    {
+      "bs": "voda (f)",
+      "baca": "VOH-dah",
+      "en": "water"
+    },
+    {
+      "bs": "pita (f)",
+      "baca": "PEE-tah",
+      "en": "pita (rolled pastry pie)"
+    },
+    {
+      "bs": "sir (m)",
+      "baca": "seer",
+      "en": "cheese"
+    },
+    {
+      "bs": "račun (m)",
+      "baca": "RAH-choon",
+      "en": "bill, check"
+    },
+    {
+      "bs": "platiti — *platim*",
+      "baca": "PLAH-tee-tee",
+      "en": "to pay"
+    },
+    {
+      "bs": "zajedno",
+      "baca": "zah-YEHD-noh",
+      "en": "together"
+    },
+    {
+      "bs": "odvojeno",
+      "baca": "ohd-VOH-yeh-noh",
+      "en": "separately"
+    },
+    {
+      "bs": "nešto / ništa",
+      "baca": "NEHSH-toh / NEESH-tah",
+      "en": "something / nothing"
+    },
+    {
+      "bs": "bez",
+      "baca": "behz",
+      "en": "without"
+    },
+    {
+      "bs": "za",
+      "baca": "zah",
+      "en": "for"
+    },
+    {
+      "bs": "odmah",
+      "baca": "OHD-mahkh",
+      "en": "right away, immediately"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Bosnian.",
+      "items": [
+        "One Bosnian coffee, please.",
+        "Tea for me, no sugar.",
+        "Do you have cheese pie?",
+        "I don't eat meat.",
+        "The bill, please! Can we pay together?",
+        "I'm waiting for you."
+      ]
+    },
+    {
+      "prompt": "Put the noun into the accusative.",
+      "items": [
+        "Pijem ____ (kafa).",
+        "Jedem ____ (pita).",
+        "Volim ____ (grad).",
+        "Čekam ____ (brat).",
+        "Pijemo ____ (voda).",
+        "Vidim ____ (studenti).",
+        "Ovo je za ____ (ti)."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "molim / kafu / jednu / ,",
+        "li / pitu / imate / ?",
+        "meso / ne / jedem / ja",
+        "molim / račun / ,",
+        "čekam / te / ja"
+      ]
+    }
+  ],
+  "answers": [
+    "Jednu bosansku kafu, molim. — Za mene čaj, bez šećera. — Imate li pitu sa sirom? — Ja ne jedem meso. — Račun, molim! Možemo li platiti zajedno? — Ja te čekam.",
+    "kafu — pitu — grad — brata — vodu — studente — tebe",
+    "Jednu kafu, molim. — Imate li pitu? — Ja ne jedem meso. — Račun, molim. — Ja te čekam."
+  ]
+}

@@ -1,0 +1,544 @@
+{
+  "title": "I like music",
+  "title_target": "Îmi place muzica",
+  "goal": "Talk about hobbies and likes, and fit in the dative pronouns *îmi, îți, îi, ne, vă, le* — because in Romanian you don't \"like\" something; it \"pleases you\".",
+  "bekal": [
+    "say what you like and dislike with *îmi place / îmi plac* and *nu-mi place*",
+    "choose *place* or *plac* according to the thing liked, and give it the definite article",
+    "stress who likes it with *mie, ție, lui, ei, nouă, vouă, lor* and with names: *Lui Andrei îi place…*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ce faci în timpul liber?",
+      "intro": "Break time at the office. Ioana and Budi are having coffee in the office kitchen and chatting about what they do outside work.",
+      "lines": [
+        {
+          "speaker": "Ioana:",
+          "text": "Budi, ce faci în timpul liber?",
+          "id": "Budi, what do you do in your free time?",
+          "literal": "Budi, what you-do in time-the free?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ascult muzică și citesc. Îmi place muzica românească.",
+          "id": "I listen to music and read. I like Romanian music.",
+          "literal": "I-listen music and I-read. to-me it-pleases music-the Romanian-f."
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Serios? Și mie îmi place! Îți plac filmele?",
+          "id": "Really? I like it too! Do you like films?",
+          "literal": "serious? also to-me to-me it-pleases! to-you they-please films-the?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Da, îmi plac foarte mult, mai ales comediile.",
+          "id": "Yes, I like them a lot, especially comedies.",
+          "literal": "yes, to-me they-please very much, more especially comedies-the."
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Și sportul? Îți place fotbalul?",
+          "id": "And sport? Do you like football?",
+          "literal": "and sport-the? to-you it-pleases football-the?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nu, nu-mi place fotbalul deloc. Prefer înotul.",
+          "id": "No, I don't like football at all. I prefer swimming.",
+          "literal": "no, not-to-me it-pleases football-the at-all. I-prefer swimming-the."
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Și lui Andrei ce îi place?",
+          "id": "And what does Andrei like?",
+          "literal": "and to-him Andrei what to-him it-pleases?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Lui Andrei îi place muntele. Sâmbăta merge mereu la munte.",
+          "id": "Andrei likes the mountains. On Saturdays he always goes to the mountains.",
+          "literal": "to-him Andrei to-him it-pleases mountain-the. Saturday-the he-goes always to mountain."
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Și nouă ne plac munții! Eu și sora mea mergem des la Sinaia.",
+          "id": "We love the mountains too! My sister and I often go to Sinaia.",
+          "literal": "also to-us to-us they-please mountains-the! I and sister-the my-f we-go often to Sinaia."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vouă vă place și marea?",
+          "id": "Do you like the sea too?",
+          "literal": "to-you-pl to-you-pl it-pleases also sea-the?"
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Mie da, dar ei nu-i place deloc.",
+          "id": "I do, but she doesn't like it at all.",
+          "literal": "to-me yes, but to-her not-to-her it-pleases at-all."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eu ador marea! La vară merg la Constanța.",
+          "id": "I love the sea! This summer I'm going to Constanța.",
+          "literal": "I I-adore sea-the! at summer I-go to Constanța."
+        }
+      ],
+      "notes": [
+        "**Îmi place muzica = \"music pleases me\".** The verb *a plăcea* works the other way round from \"like\": the thing liked is the **subject**, and the person who likes it only appears as the little word *îmi* (\"to me\"). That's why the verb agrees with the thing liked, not with the person — like Spanish *me gusta*.",
+        "**Ascult muzică, but îmi place muzica.** As an ordinary object, *muzică* can be bare. But as the subject of *place*, something liked in general **must take the definite article**: *muzica, filmele, fotbalul, marea*.",
+        "**Nu-mi place.** *Nu* + *îmi* merge into *nu-mi*. The same goes for *nu-ți* and *nu-i*; the other three don't merge: *nu ne, nu vă, nu le*. The word *deloc* (at all) stands at the end and is only used with *nu*.",
+        "**Și mie îmi place.** *Mie* is the stressed form of *îmi*, used when the person is highlighted: \"**me** too\". Notice that *îmi* is still there — the stressed form never replaces the short form, it only keeps it company.",
+        "**Munte → muntele → munții.** The singular with article uses *-le* because it ends in *-e* (unit 4); the plural with article is *munții*, with two *i*s (unit 6). *La munte* has no article, following the golden rule of prepositions."
+      ],
+      "grammars": [
+        {
+          "title": "Dative pronouns and place versus plac",
+          "body": [
+            "The dative answers the question \"to whom?\". Each person has a short form that stands right in front of the verb, and a stressed form that can be added before it.",
+            "The verb itself has only two forms you need: **place** if the thing liked is singular, **plac** if it's plural."
+          ],
+          "table": {
+            "head": [
+              "Who",
+              "Stressed",
+              "Short dative",
+              "Example"
+            ],
+            "rows": [
+              [
+                "eu",
+                "mie",
+                "**îmi**",
+                "*Îmi place cafeaua.*"
+              ],
+              [
+                "tu",
+                "ție",
+                "**îți**",
+                "*Îți plac cărțile?*"
+              ],
+              [
+                "el",
+                "lui",
+                "**îi**",
+                "*Îi place fotbalul.*"
+              ],
+              [
+                "ea",
+                "ei",
+                "**îi**",
+                "*Îi plac florile.*"
+              ],
+              [
+                "noi",
+                "nouă",
+                "**ne**",
+                "*Ne place orașul.*"
+              ],
+              [
+                "voi / dumneavoastră",
+                "vouă / dumneavoastră",
+                "**vă**",
+                "*Vă place ciorba?*"
+              ],
+              [
+                "ei / ele",
+                "lor",
+                "**le**",
+                "*Le plac munții.*"
+              ]
+            ]
+          },
+          "after": [
+            "**Place or plac is decided by the thing, not the person.** *Îmi place filmul* (one film) versus *Îmi plac filmele* (films in general). *Le place muzica* = \"they like music\": the people are plural, but *muzica* is singular, so *place*.",
+            "**The order is flexible.** The thing liked can come first: *Muzica românească îmi place foarte mult.* Only the short pronoun can't move — it always sticks to the front of the verb.",
+            "**Liking to do something** = *îmi place să* + verb: *Îmi place să citesc* (I like reading). The *să* form comes in unit 11; for now, learn it whole, and notice that here it's always *place*."
+          ]
+        },
+        {
+          "title": "Negative and stressed forms",
+          "body": [
+            "Two things make sentences about likes and dislikes come alive: merging with *nu*, and the stressed forms for comparing people's tastes."
+          ],
+          "table": {
+            "head": [
+              "Positive",
+              "Negative",
+              "With stress"
+            ],
+            "rows": [
+              [
+                "*îmi place*",
+                "**nu-mi** place",
+                "*Mie nu-mi place.*"
+              ],
+              [
+                "*îți place*",
+                "**nu-ți** place",
+                "*Ție nu-ți place?*"
+              ],
+              [
+                "*îi place*",
+                "**nu-i** place",
+                "*Lui nu-i place. Ei nu-i place.*"
+              ],
+              [
+                "*ne place*",
+                "**nu ne** place",
+                "*Nouă nu ne place.*"
+              ],
+              [
+                "*vă place*",
+                "**nu vă** place",
+                "*Vouă nu vă place?*"
+              ],
+              [
+                "*le place*",
+                "**nu le** place",
+                "*Lor nu le place.*"
+              ]
+            ]
+          },
+          "after": [
+            "**When is the stressed form used?** To contrast (*Mie îmi place ceaiul, dar ție îți place cafeaua*), and for short answers without a verb: *Și mie* (me too), *Mie nu* (not me), *Nici mie* (me neither).",
+            "**With people's names**, use *lui* + name, and the short pronoun is still required: *Lui Andrei îi place muntele. Lui Budi nu-i place fotbalul.* The sentence *Lui Andrei place muntele* is wrong — *îi* can't be left out. Female names ending in *-a* take a different ending (*Ioanei îi place marea*); that ending comes in unit 13, so for now just recognize it."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Hobbies and free time",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Română",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**muzică** (f)",
+              "MOO-zee-kuh",
+              "music"
+            ],
+            [
+              "**film, filme** (n)",
+              "feelm, FEEL-meh",
+              "film, movie"
+            ],
+            [
+              "**carte, cărți** (f)",
+              "KAHR-teh, kuhrts'",
+              "book"
+            ],
+            [
+              "**înot** (n)",
+              "î-NOHT",
+              "swimming"
+            ],
+            [
+              "**munte, munți** (m)",
+              "MOON-teh, moonts'",
+              "mountain"
+            ],
+            [
+              "**mare, mări** (f)",
+              "MAH-reh, muhr'",
+              "sea"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Activity",
+            "*eu* form",
+            "English"
+          ],
+          "rows": [
+            [
+              "*a asculta muzică*",
+              "ascult",
+              "to listen to music"
+            ],
+            [
+              "*a citi*",
+              "citesc",
+              "to read"
+            ],
+            [
+              "*a găti*",
+              "gătesc",
+              "to cook"
+            ],
+            [
+              "*a înota*",
+              "înot",
+              "to swim"
+            ],
+            [
+              "*a juca fotbal*",
+              "joc",
+              "to play football"
+            ],
+            [
+              "*a se plimba*",
+              "mă plimb",
+              "to go for a walk"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Watch out for twins: *mare* means \"big\" (adjective, unit 9) and also \"sea\" (feminine noun). Context always helps: *marea* with the article is definitely the sea, and *Marea Neagră* is the Black Sea, with beaches at Constanța and Mamaia."
+        },
+        {
+          "type": "kotak",
+          "title": "Music and mountains",
+          "items": [
+            "**Muzică populară** is folk music, still alive at parties and weddings, often accompanying the *hora* — a circle dance holding hands. From the classical world, the biggest name is the composer George Enescu; the festival named after him is held in București every two years.",
+            "**Weekends in the mountains** are a București habit. Sinaia, Bușteni, and Predeal in Valea Prahovei (the Prahova Valley) are about two hours away by train."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "How much do you like it?",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Level"
+          ],
+          "rows": [
+            [
+              "**Ador muzica.**",
+              "love it"
+            ],
+            [
+              "**Îmi place foarte mult.**",
+              "like it a lot"
+            ],
+            [
+              "**Îmi place destul de mult.**",
+              "quite like it"
+            ],
+            [
+              "**Nu prea îmi place.**",
+              "don't really like it"
+            ],
+            [
+              "**Nu-mi place deloc.**",
+              "don't like it at all"
+            ],
+            [
+              "**Detest fotbalul.**",
+              "hate it"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Ador*, *prefer*, and *detest* are ordinary *-a* group verbs (*a adora, a prefera, a detesta*): you are the subject, with no dative pronoun — just like English *love, prefer, hate*. But something spoken of in general still takes the definite article: *Ador marea. Prefer ceaiul.* And *nu prea* is a gentle way of saying you don't like something without offending your host."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Asking about tastes",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Ce faci în timpul liber?*",
+              "What do you do in your free time?"
+            ],
+            [
+              "*Ce muzică îți place?*",
+              "What music do you like?"
+            ],
+            [
+              "*Ce fel de filme îți plac?*",
+              "What kind of films do you like?"
+            ],
+            [
+              "*Care este sportul tău preferat?*",
+              "What's your favorite sport?"
+            ],
+            [
+              "*Vă place România?*",
+              "Do you like Romania? (polite)"
+            ],
+            [
+              "*Și ție? — Și mie. / Mie nu.*",
+              "And you? — Me too. / Not me."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "One small trap",
+          "items": [
+            "*A plăcea* can also be used about people, and then the meaning shifts: *Îmi placi* (\"you please me\") usually sounds like \"I fancy you\". For friends, it's safer to say *Ești simpatic* (m) or *Ești simpatică* (f) — \"you're nice\"."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 8",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Romanian column, read the English, and rebuild the sentences from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Română"
+          ],
+          "rows": [
+            [
+              "I get up at seven.",
+              "*Mă trezesc la șapte.*"
+            ],
+            [
+              "I wash and get dressed quickly.",
+              "*Mă spăl și mă îmbrac repede.*"
+            ],
+            [
+              "What time do you go to bed? — I go to bed late.",
+              "*La ce oră te culci? — Mă culc târziu.*"
+            ],
+            [
+              "I usually have a coffee in the morning.",
+              "*De obicei beau o cafea dimineața.*"
+            ],
+            [
+              "In the evening I read or watch TV.",
+              "*Seara citesc sau mă uit la televizor.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ro": "timp liber",
+      "baca": "teemp LEE-behr",
+      "en": "free time (n)"
+    },
+    {
+      "ro": "comedie, comedii",
+      "baca": "koh-meh-DEE-yeh, koh-meh-DEEY",
+      "en": "comedy (f)"
+    },
+    {
+      "ro": "munte, munți",
+      "baca": "MOON-teh, moonts'",
+      "en": "mountain (m)"
+    },
+    {
+      "ro": "mare, mări",
+      "baca": "MAH-reh, muhr'",
+      "en": "sea (f)"
+    },
+    {
+      "ro": "vară, veri",
+      "baca": "VAH-ruh, vehr'",
+      "en": "summer (f)"
+    },
+    {
+      "ro": "a plăcea (îmi place)",
+      "baca": "ah pluh-CHAH (îm' PLAH-cheh)",
+      "en": "to please; to be liked"
+    },
+    {
+      "ro": "a asculta (ascult)",
+      "baca": "ah ahs-kool-TAH (ahs-KOOLT)",
+      "en": "to listen (to)"
+    },
+    {
+      "ro": "a citi (citesc)",
+      "baca": "ah chee-TEE (chee-TEHSK)",
+      "en": "to read"
+    },
+    {
+      "ro": "a adora (ador)",
+      "baca": "ah ah-doh-RAH (ah-DOHR)",
+      "en": "to adore, to love"
+    },
+    {
+      "ro": "a prefera (prefer)",
+      "baca": "ah preh-feh-RAH (preh-FEHR)",
+      "en": "to prefer"
+    },
+    {
+      "ro": "a detesta (detest)",
+      "baca": "ah deh-tehs-TAH (deh-TEHST)",
+      "en": "to hate"
+    },
+    {
+      "ro": "deloc",
+      "baca": "deh-LOHK",
+      "en": "(not) at all"
+    },
+    {
+      "ro": "mai ales",
+      "baca": "mai ah-LEHS",
+      "en": "especially"
+    },
+    {
+      "ro": "destul de",
+      "baca": "dehs-TOOL deh",
+      "en": "quite; fairly"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Romanian.",
+      "items": [
+        "I like Romanian music.",
+        "Do you like films? (films in general)",
+        "Yes, I like them a lot. (those films)",
+        "What do you do in your free time?",
+        "I don't like football at all.",
+        "Andrei likes the mountains."
+      ]
+    },
+    {
+      "prompt": "Fill in *place* or *plac*, or the right short dative pronoun.",
+      "items": [
+        "Îmi ____ muzica.",
+        "Îți ____ filmele?",
+        "Nu ne ____ fotbalul.",
+        "Lui Andrei îi ____ munții.",
+        "Mie ____ place ceaiul.",
+        "Ție ____ plac cărțile?",
+        "Lui Budi ____ place marea.",
+        "Lor nu ____ place cafeaua."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "place / îmi / românească / muzica",
+        "filmele / plac / îți / ?",
+        "deloc / fotbalul / nu-mi / place",
+        "andrei / îi / lui / muntele / place",
+        "liber / faci / timpul / ce / în / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Îmi place muzica românească. — Îți plac filmele? — Da, îmi plac foarte mult. — Ce faci în timpul liber? — Nu-mi place fotbalul deloc. — Lui Andrei îi place muntele.",
+    "place — plac — place — plac — îmi — îți — îi — le",
+    "Îmi place muzica românească. — Îți plac filmele? — Nu-mi place fotbalul deloc. — Lui Andrei îi place muntele. — Ce faci în timpul liber?"
+  ]
+}

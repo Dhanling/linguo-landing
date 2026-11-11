@@ -1,0 +1,598 @@
+{
+  "title": "My home",
+  "title_target": "Casa mea",
+  "goal": "Show people where you live and say who owns what, using the one Romanian case that really changes the form of a noun: the genitive-dative.",
+  "bekal": [
+    "name the rooms and furniture in your apartment and say where they are",
+    "show possession with genitive endings: *mașina vecinului*, *ușa camerei*, *camera lui Andrei*, *mașina Ioanei*",
+    "state the rent with hundreds and thousands"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Apartamentul lui Budi",
+      "intro": "Ioana drops by for the first time at the apartment Budi rents with Andrei, not far from Piața Obor. Budi shows her around.",
+      "lines": [
+        {
+          "speaker": "Ioana:",
+          "text": "Ce frumos este aici! Apartamentul este mare?",
+          "id": "It's so nice here! Is the apartment big?",
+          "literal": "how beautiful it-is here! apartment-the it-is big?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nu foarte mare. Apartamentul are două camere și o bucătărie.",
+          "id": "Not very big. The apartment has two rooms and a kitchen.",
+          "literal": "not very big. apartment-the it-has two-f room-pl and a-f kitchen."
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Care este camera ta?",
+          "id": "Which one is your room?",
+          "literal": "which it-is room-the your-f?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Camera mea este la dreapta. Camera lui Andrei este mică, dar are balcon.",
+          "id": "My room is on the right. Andrei's room is small, but it has a balcony.",
+          "literal": "room-the my-f it-is at right. room-the of Andrei it-is small-f, but it-has balcony."
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Ce mașină frumoasă, acolo jos! Este mașina ta?",
+          "id": "What a beautiful car, down there! Is that your car?",
+          "literal": "what car beautiful-f, there below! it-is car-the your-f?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nu, eu nu am mașină. Aceasta este mașina vecinului.",
+          "id": "No, I don't have a car. That's the neighbor's car.",
+          "literal": "no, I not I-have car. this-f it-is car-the neighbor-the-gen."
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Și cât este chiria?",
+          "id": "And how much is the rent?",
+          "literal": "and how-much it-is rent-the?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Chiria este patru sute de euro pe lună, fără utilități.",
+          "id": "The rent is four hundred euros a month, not including utilities.",
+          "literal": "rent-the it-is four hundred-pl of euro per month, without utility-pl."
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Nu este scump pentru centrul orașului. Cine este proprietarul?",
+          "id": "That's not expensive for downtown. Who's the owner?",
+          "literal": "not it-is expensive for center-the city-the-gen. who it-is owner-the?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Este apartamentul doamnei Popescu. Ea locuiește la etajul doi.",
+          "id": "It's Mrs. Popescu's apartment. She lives on the second floor.",
+          "literal": "it-is apartment-the lady-the-gen Popescu. she-f she-lives at floor-the two."
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Bine. Eu trebuie să plec acum. Unde sunt cheile mașinii?",
+          "id": "OK. I have to go now. Where are the car keys?",
+          "literal": "good. I must that I-leave now. where they-are key-pl-the car-the-gen?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cheile sunt pe masă, în bucătărie.",
+          "id": "The keys are on the table, in the kitchen.",
+          "literal": "key-pl-the they-are on table, in kitchen."
+        }
+      ],
+      "notes": [
+        "**Mașina vecinului — thing first, owner after.** *Mașina vecinului* = \"the car of the neighbor\". What's new is only the ending on the owner: *vecinul* (the neighbor) becomes *vecin**ului*** (the neighbor's). No word for \"of\", no apostrophe-s — the ending does all the work.",
+        "**Camera lui Andrei.** A man's name can't take an ending, so Romanian puts *lui* in front of it. In the literal line *lui* is written \"of\": it means nothing except that the name after it is the owner.",
+        "**Doamnei, mașinii, orașului — three more genitives in this dialogue.** *Doamna → doamnei* and *mașina → mașinii* are feminine words; *orașul → orașului* is neuter, which behaves like a masculine word in the singular. The full pattern for all three is in the first grammar box.",
+        "**Patru sute de euro.** *O sută* (a hundred) has a plural: *două sute, trei sute, patru sute*. The *de* you know from unit 5 still appears after round hundreds. *Euro* itself never changes form, while *leu* still becomes *lei*: *patru sute de lei*.",
+        "**Pe masă without an article, la etajul doi with one.** The golden rule of unit 6 still holds: after a preposition, a bare noun loses its article (*pe masă, în bucătărie*), but as soon as it has a modifier — here the number *doi* — the article comes back: *la etajul doi*. Note that *etajul doi* is the second floor *above* the ground floor (see the box below). *Pe lună* = \"a month\", the same chunk as *pe zi* and *pe an*."
+      ],
+      "grammars": [
+        {
+          "title": "The genitive-dative — the ending goes on the article",
+          "body": [
+            "Romanian has cases, but far fewer than the Slavic languages: for nouns there is only **one extra form** to learn, and it does two jobs at once — **genitive** (whose?) and **dative** (to whom?).",
+            "The ending attaches not to the noun itself but to the **definite article** you've known since unit 4. So the rule is: take the form with the article, then swap the article."
+          ],
+          "table": {
+            "head": [
+              "Type",
+              "Ending",
+              "With article → genitive-dative",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**m / n singular**",
+                "**-ului**",
+                "*vecinul → vecinului*, *orașul → orașului*",
+                "*mașina vecin**ului*** — the neighbor's car"
+              ],
+              [
+                "**m ending in -e**",
+                "**-lui**",
+                "*fratele → fratelui*, *câinele → câinelui*",
+                "*camera frate**lui** meu* — my brother's room"
+              ],
+              [
+                "**f singular**",
+                "**-ei / -ii**",
+                "*camera → camerei*, *mașina → mașinii*",
+                "*ușa camer**ei*** — the room's door"
+              ],
+              [
+                "**f ending in -ie**",
+                "**-iei**",
+                "*bucătăria → bucătăriei*, *familia → familiei*",
+                "*fereastra bucătări**ei*** — the kitchen window"
+              ],
+              [
+                "**plural, all types**",
+                "**-lor**",
+                "*vecinii → vecinilor*, *camerele → camerelor*",
+                "*copiii vecini**lor*** — the neighbors' children"
+              ]
+            ]
+          },
+          "after": [
+            "**A trick for feminine words: plural form + *-i*.** The feminine genitive singular is always built from the **plural**: *cameră → camere → camerei*, *masă → mese → mesei*, *fată → fete → fetei*, *mașină → mașini → mașinii*, *stradă → străzi → străzii*, *ușă → uși → ușii*, *cheie → chei → cheii*. That's why the vocabulary has listed plurals since unit 5 — now they pay off twice. Only words ending in a consonant + *-ie* start from the singular: *bucătărie → bucătăriei*, *chirie → chiriei*.",
+            "**A few common forms worth learning whole:** *tatăl → tatălui*, *mama → mamei*, *sora → surorii*, *doamna → doamnei*, *domnul → domnului*. The possessive just follows: *mașina tatălui meu*, *camera surorii mele* (*mele* is used because *surorii* is built from the plural — just learn the chunk).",
+            "**The second job: dative.** The same form answers \"to whom?\": *Îi dau vecinului cheile* = \"I give the keys to the neighbor\". The pronoun *îi* from unit 10 appears as a double. The dative gets full practice in unit 19; for now just know you don't have to learn the form twice."
+          ]
+        },
+        {
+          "title": "Names, *unui / unei*, and little *al, a, ai, ale*",
+          "body": [
+            "Not every owner has a definite article to attach to. Names and nouns with *un/o* have their own route — still short, still regular."
+          ],
+          "table": {
+            "head": [
+              "The owner",
+              "Rule",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "man's name",
+                "***lui*** + name",
+                "*camera lui Andrei*, *laptopul lui Budi*",
+                "Andrei's room, Budi's laptop"
+              ],
+              [
+                "woman's name in *-a*",
+                "*-a* → ***-ei***",
+                "*mașina Ioanei*, *casa Mariei*",
+                "Ioana's car, Maria's house"
+              ],
+              [
+                "other women's names",
+                "***lui*** + name",
+                "*geanta lui Carmen*",
+                "Carmen's bag"
+              ],
+              [
+                "*un* + m / n",
+                "***unui***",
+                "*camera unui student*",
+                "a student's room"
+              ],
+              [
+                "*o* + f",
+                "***unei*** + genitive form",
+                "*mașina unei vecine*, *numele unei străzi*",
+                "a (female) neighbor's car, the name of a street"
+              ],
+              [
+                "question word",
+                "***cui*** (dative), ***al / a cui*** (whose)",
+                "*A cui este mașina?*",
+                "Whose car is this?"
+              ]
+            ]
+          },
+          "after": [
+            "**After *unei*, the noun still uses its \"plural\" form:** *o vecină → unei vecine*, *o stradă → unei străzi*, *o colegă → unei colege*. After *unui* the noun doesn't change at all: *un vecin → unui vecin*.",
+            "**Al, a, ai, ale.** A genitive may only stand **right after** a noun with a definite article. When that condition isn't met — the thing has *un/o*, another word gets in between, or the thing isn't named — a little linking word appears that agrees with **the thing owned**: *un coleg **al** lui Andrei* (m), *o prietenă **a** Ioanei* (f), *doi colegi **ai** lui Budi* (m pl), *două prietene **ale** Ioanei* (f pl). Also: *Mașina este **a** vecinului* = \"The car is the neighbor's\".",
+            "The full rules for *al, a, ai, ale* are A2 material. For now learn the four examples above as chunks, and use the safe pattern that is always right: **thing with article + owner**, with nothing in between."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Rooms and furniture",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Română",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**cameră, camere** (f)",
+              "KAH-meh-ruh, KAH-meh-reh",
+              "room"
+            ],
+            [
+              "**sufragerie, sufragerii** (f)",
+              "soo-frah-jeh-REE-yeh",
+              "living room"
+            ],
+            [
+              "**dormitor, dormitoare** (n)",
+              "dohr-mee-TOHR",
+              "bedroom"
+            ],
+            [
+              "**baie, băi** (f)",
+              "BAH-yeh, buhy",
+              "bathroom"
+            ],
+            [
+              "**hol, holuri** (n)",
+              "hohl",
+              "hallway, entrance"
+            ],
+            [
+              "**balcon, balcoane** (n)",
+              "bahl-KOHN",
+              "balcony"
+            ],
+            [
+              "**ușă, uși** (f)",
+              "OO-shuh, oosh'",
+              "door"
+            ],
+            [
+              "**fereastră, ferestre** (f)",
+              "feh-RYAHS-truh",
+              "window"
+            ],
+            [
+              "**pat, paturi** (n)",
+              "paht",
+              "bed"
+            ],
+            [
+              "**scaun, scaune** (n)",
+              "SKAH-oon",
+              "chair"
+            ],
+            [
+              "**dulap, dulapuri** (n)",
+              "doo-LAHP",
+              "wardrobe, cupboard"
+            ],
+            [
+              "**canapea, canapele** (f)",
+              "kah-nah-PYAH",
+              "sofa"
+            ],
+            [
+              "**frigider, frigidere** (n)",
+              "free-jee-DEHR",
+              "fridge"
+            ],
+            [
+              "**aragaz, aragaze** (n)",
+              "ah-rah-GAHZ",
+              "stove"
+            ],
+            [
+              "**mașină de spălat** (f)",
+              "mah-SHEE-nuh deh spuh-LAHT",
+              "washing machine"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Almost all furniture is neuter (*pat, scaun, dulap, frigider*) and almost all rooms are feminine (*cameră, baie, bucătărie, sufragerie*). To say where things are, use the prepositions from unit 6 without an article: *Patul este lângă fereastră. Frigiderul este în bucătărie. Cheile sunt pe masă.* Once the owner is named, the article returns and the genitive follows: *pe masa lui Andrei*, *lângă ușa camerei mele*."
+        },
+        {
+          "type": "kotak",
+          "title": "How Romanians count rooms",
+          "items": [
+            "An ad for an *apartament cu două camere* does **not** mean two bedrooms. Every living space is counted, including the living room: two *camere* = one *sufragerie* + one *dormitor*. The kitchen and bathroom don't count.",
+            "A ***garsonieră*** is a one-room apartment — a studio. The cheapest option, and the one students hunt for most.",
+            "The ***parter*** is the ground floor; *etajul unu* is the floor above it. So Mrs. Popescu's *etajul doi* is the third floor by American counting (the second floor in British English).",
+            "Most people in Bucharest live in a ***bloc***, an apartment building. And shoes come off at the door: the host usually hands guests a pair of *papuci* (house slippers) right away."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Renting an apartment — and the big numbers to pay for it",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Number",
+            "Română",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "100",
+              "**o sută**",
+              "oh SOO-tuh"
+            ],
+            [
+              "200",
+              "**două sute**",
+              "DOH-wuh SOO-teh"
+            ],
+            [
+              "350",
+              "**trei sute cincizeci**",
+              "trey SOO-teh cheench'-ZEHCH'"
+            ],
+            [
+              "400",
+              "**patru sute**",
+              "PAH-troo SOO-teh"
+            ],
+            [
+              "1,000",
+              "**o mie**",
+              "oh MEE-yeh"
+            ],
+            [
+              "2,000",
+              "**două mii**",
+              "DOH-wuh meey"
+            ],
+            [
+              "2,500",
+              "**două mii cinci sute**",
+              "DOH-wuh meey cheench' SOO-teh"
+            ],
+            [
+              "2026",
+              "**două mii douăzeci și șase**",
+              "DOH-wuh meey doh-wuh-ZEHCH' shee SHAH-seh"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Sută* and *mie* are ordinary feminine nouns, so the number before them takes the feminine form: **o** sută, **două** sute, **o** mie, **două** mii. Hundreds, tens, and units are simply lined up with no linking word — *și* appears only between tens and units, as in unit 5. As for *de*: look at **the last two digits**. If they are 01–19, no *de* (*o sută zece lei*); if 00 or 20–99, use *de* (*o sută **de** lei, trei sute cincizeci **de** euro, două mii **de** lei*)."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Renting words and phrases",
+            "English"
+          ],
+          "rows": [
+            [
+              "*De închiriat* · *De vânzare*",
+              "For rent · For sale (on windows and in ads)"
+            ],
+            [
+              "*Caut o garsonieră aproape de metrou.*",
+              "I'm looking for a studio near the metro."
+            ],
+            [
+              "*Cât este chiria pe lună?*",
+              "How much is the rent per month?"
+            ],
+            [
+              "*Utilitățile sunt incluse?*",
+              "Are utilities included?"
+            ],
+            [
+              "*La ce etaj este? Blocul are lift?*",
+              "What floor is it on? Does the building have an elevator?"
+            ],
+            [
+              "*Apartamentul este mobilat?*",
+              "Is the apartment furnished?"
+            ],
+            [
+              "*Cât este garanția?*",
+              "How much is the deposit?"
+            ],
+            [
+              "*Pot să văd apartamentul mâine?*",
+              "Can I see the apartment tomorrow?"
+            ],
+            [
+              "*Proprietarul locuiește în același bloc.*",
+              "The landlord lives in the same building."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three things about renting in Bucharest",
+          "items": [
+            "**Rent is quoted in euros and paid monthly.** This is the only place in the book where you'll meet euros; shopping, meals, and tickets are still in *lei*.",
+            "The ***garanție*** — a deposit, usually one or two months' rent — is paid up front and returned when you move out, if the apartment is in one piece.",
+            "On top of the rent come ***utilități*** (electricity, gas, internet) and ***întreținere***: the monthly building fee covering water, stairwell cleaning, and in winter the heating. Ask about both before signing the *contract de închiriere*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 11",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Romanian column, read the English, then rebuild the sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Română"
+          ],
+          "rows": [
+            [
+              "I want to learn Romanian.",
+              "*Vreau să învăț limba română.*"
+            ],
+            [
+              "Can you help me?",
+              "*Poți să mă ajuți?*"
+            ],
+            [
+              "I have to go now.",
+              "*Trebuie să plec acum.*"
+            ],
+            [
+              "I can't come tomorrow.",
+              "*Nu pot să vin mâine.*"
+            ],
+            [
+              "Can you cook?",
+              "*Știi să gătești?*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ro": "casă, case",
+      "baca": "KAH-suh, KAH-seh",
+      "en": "house, home (f)"
+    },
+    {
+      "ro": "apartament, apartamente",
+      "baca": "ah-pahr-tah-MEHNT",
+      "en": "apartment (n)"
+    },
+    {
+      "ro": "bucătărie, bucătării",
+      "baca": "boo-kuh-tuh-REE-yeh",
+      "en": "kitchen (f)"
+    },
+    {
+      "ro": "masă, mese",
+      "baca": "MAH-suh, MEH-seh",
+      "en": "table (f)"
+    },
+    {
+      "ro": "cheie, chei",
+      "baca": "KEH-yeh, key",
+      "en": "key (f)"
+    },
+    {
+      "ro": "mașină, mașini",
+      "baca": "mah-SHEE-nuh, mah-SHEEN'",
+      "en": "car; machine (f)"
+    },
+    {
+      "ro": "vecin, vecini / vecină, vecine",
+      "baca": "veh-CHEEN, veh-CHEEN' / veh-CHEE-nuh",
+      "en": "neighbor (m / f)"
+    },
+    {
+      "ro": "proprietar, proprietari",
+      "baca": "proh-pree-yeh-TAHR",
+      "en": "owner, landlord (m)"
+    },
+    {
+      "ro": "chirie, chirii",
+      "baca": "kee-REE-yeh",
+      "en": "rent (f)"
+    },
+    {
+      "ro": "utilități",
+      "baca": "oo-tee-lee-TUHTS'",
+      "en": "utilities (f, pl)"
+    },
+    {
+      "ro": "etaj, etaje",
+      "baca": "eh-TAHZH",
+      "en": "floor, story (n)"
+    },
+    {
+      "ro": "bloc, blocuri",
+      "baca": "blohk, BLOH-koor'",
+      "en": "apartment building (n)"
+    },
+    {
+      "ro": "lună, luni",
+      "baca": "LOO-nuh, loon'",
+      "en": "month (f)"
+    },
+    {
+      "ro": "a închiria (închiriez)",
+      "baca": "ah în-kee-ree-YAH (în-kee-ree-YEHZ)",
+      "en": "to rent; to rent out"
+    },
+    {
+      "ro": "curat",
+      "baca": "koo-RAHT",
+      "en": "clean"
+    },
+    {
+      "ro": "fără",
+      "baca": "FUH-ruh",
+      "en": "without"
+    },
+    {
+      "ro": "jos / sus",
+      "baca": "zhohs / soos",
+      "en": "down, below / up, above"
+    },
+    {
+      "ro": "sută, sute · mie, mii",
+      "baca": "SOO-tuh, SOO-teh · MEE-yeh, meey",
+      "en": "hundred · thousand (f)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Romanian.",
+      "items": [
+        "The apartment has two rooms and a kitchen.",
+        "Andrei's room is small, but it has a balcony.",
+        "This is the neighbor's car.",
+        "The rent is four hundred euros a month.",
+        "The keys are on the table, in the kitchen.",
+        "It's Mrs. Popescu's apartment."
+      ]
+    },
+    {
+      "prompt": "Fill in the genitive form of the word in brackets.",
+      "items": [
+        "Aceasta este mașina ____ . (vecinul)",
+        "Ușa ____ este la stânga. (camera)",
+        "Laptopul ____ este pe masă. (Andrei)",
+        "Unde este geanta ____ ? (Ioana)",
+        "Fereastra ____ este mare. (bucătăria)",
+        "Cheile ____ sunt la doamna Popescu. (apartamentul)",
+        "Copiii ____ sunt la școală. (vecinii)",
+        "Este camera ____ student. (un)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "vecinului / este / mașina / aceasta",
+        "pe / sunt / masă / cheile",
+        "lui / mică / camera / este / andrei",
+        "chiria / cât / este / ?",
+        "etajul / la / locuiește / doi / ea"
+      ]
+    }
+  ],
+  "answers": [
+    "Apartamentul are două camere și o bucătărie. — Camera lui Andrei este mică, dar are balcon. — Aceasta este mașina vecinului. — Chiria este patru sute de euro pe lună. — Cheile sunt pe masă, în bucătărie. — Este apartamentul doamnei Popescu.",
+    "vecinului — camerei — lui Andrei — Ioanei — bucătăriei — apartamentului — vecinilor — unui",
+    "Aceasta este mașina vecinului. — Cheile sunt pe masă. — Camera lui Andrei este mică. — Cât este chiria? — Ea locuiește la etajul doi."
+  ]
+}

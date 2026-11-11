@@ -1,0 +1,536 @@
+{
+  "title": "Where are you from?",
+  "title_target": "De unde ești?",
+  "goal": "Say where you're from, where you live, and which languages you speak — while fitting in the negative *nu* and the first verb group: the one with the *-esc* insert.",
+  "bekal": [
+    "ask and say where someone is from with *de unde* and *din*, and where they live with *unde* and *în*",
+    "make any sentence negative with the single word *nu* — no \"do/does\" needed",
+    "conjugate *a vorbi* and *a locui*, and give nationalities in the masculine and feminine"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — În pauza de prânz",
+      "intro": "Lunch break at the office. Ioana invites her friend Maria to eat with them and introduces her to Budi.",
+      "lines": [
+        {
+          "speaker": "Ioana:",
+          "text": "Budi, ea este Maria, prietena mea.",
+          "id": "Budi, this is Maria, my friend.",
+          "literal": "Budi, she she-is Maria, friend-f-the my-f."
+        },
+        {
+          "speaker": "Maria:",
+          "text": "Bună, Budi! De unde ești?",
+          "id": "Hi, Budi! Where are you from?",
+          "literal": "good-f, Budi! from where you-are?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sunt din Indonezia, din Bandung.",
+          "id": "I'm from Indonesia, from Bandung.",
+          "literal": "I-am from-in Indonesia, from-in Bandung."
+        },
+        {
+          "speaker": "Maria:",
+          "text": "Din Indonezia! Și unde locuiești acum?",
+          "id": "From Indonesia! And where do you live now?",
+          "literal": "from-in Indonesia! and where you-live now?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Acum locuiesc în București, cu Andrei. El este din Cluj.",
+          "id": "Now I live in București, with Andrei. He's from Cluj.",
+          "literal": "now I-live in București, with Andrei. he he-is from-in Cluj."
+        },
+        {
+          "speaker": "Maria:",
+          "text": "Vorbești românește?",
+          "id": "Do you speak Romanian?",
+          "literal": "you-speak Romanian-way?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Puțin. Încă nu vorbesc bine. Scuze!",
+          "id": "A little. I don't speak well yet. Sorry!",
+          "literal": "little. still not I-speak well. excuses!"
+        },
+        {
+          "speaker": "Maria:",
+          "text": "Nu-i nimic. Vorbești foarte bine! Ce limbi vorbești?",
+          "id": "It's nothing. You speak very well! Which languages do you speak?",
+          "literal": "not-it-is nothing. you-speak very well! what languages you-speak?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vorbesc indoneziană, engleză și puțin română. Tu ești româncă?",
+          "id": "I speak Indonesian, English, and a little Romanian. Are you Romanian?",
+          "literal": "I-speak Indonesian-f, English-f and little Romanian-f. you you-are Romanian-f?"
+        },
+        {
+          "speaker": "Maria:",
+          "text": "Da, sunt româncă, dar nu sunt din București. Sunt din Sibiu.",
+          "id": "Yes, I'm Romanian, but I'm not from București. I'm from Sibiu.",
+          "literal": "yes, I-am Romanian-f, but not I-am from-in București. I-am from-in Sibiu."
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Maria vorbește și germană. La birou vorbim engleză, dar în pauză vorbim românește.",
+          "id": "Maria speaks German too. At the office we speak English, but on our break we speak Romanian.",
+          "literal": "Maria she-speaks also German-f. at office we-speak English-f, but in break we-speak Romanian-way."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Foarte bine! Mulțumesc.",
+          "id": "Very good! Thank you.",
+          "literal": "very well! I-thank."
+        }
+      ],
+      "notes": [
+        "**De unde ești? — ask with *de*, answer with *din*.** *Unde* = where, *de unde* = from where. The answer uses *din*, a merger of *de* + *în*: \"from in\". To someone you address formally: *De unde sunteți?* Notice that the verb is still *a fi* — just like English, Romanians \"are from\" a place.",
+        "**Încă nu = not yet.** *Încă* (still) + *nu* (not). The order is fixed and *nu* always sits right in front of its verb: *Încă nu vorbesc bine*, *Încă nu sunt gata*.",
+        "**Nu-i nimic literally means \"it isn't nothing\".** *Nu-i* is a shortened *nu este*, and *nimic* means \"nothing\". Two negatives at once — and in Romanian that's required, not a mistake. It's the standard reply when someone apologizes.",
+        "**Românește is not the name of the language but a manner.** *Vorbesc românește* literally means \"I speak in the Romanian way\". The language itself is *româna* or *limba română*. Both are equally common: *Vorbești românește?* = *Vorbești română?*",
+        "**Și means both \"and\" and \"also\".** Between two things it's \"and\": *engleză și română*. In front of one word it's \"also, too\": *Maria vorbește și germană* = \"Maria speaks German **too**\". You already used it in unit 1 without noticing: *Și eu* — \"me too\"."
+      ],
+      "grammars": [
+        {
+          "title": "Nu — one negative for everything",
+          "body": [
+            "English needs a helper to say no: *I **don't** speak*, *she **isn't***. Romanian doesn't bother: just put **nu** right in front of the verb, whatever you are negating."
+          ],
+          "table": {
+            "head": [
+              "Positive",
+              "Negative",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Sunt din București.*",
+                "***Nu** sunt din București.*",
+                "I'm not from București."
+              ],
+              [
+                "*Vorbesc bine.*",
+                "***Nu** vorbesc bine.*",
+                "I don't speak well."
+              ],
+              [
+                "*Ești român?*",
+                "***Nu** ești român?*",
+                "Aren't you Romanian?"
+              ],
+              [
+                "*Locuim aici.*",
+                "***Nu** locuim aici.*",
+                "We don't live here."
+              ],
+              [
+                "*Este student.*",
+                "***Nu** este student.* / ***Nu-i** student.*",
+                "He isn't a student."
+              ],
+              [
+                "*Înțeleg.*",
+                "***Nu** înțeleg.*",
+                "I don't understand."
+              ]
+            ]
+          },
+          "after": [
+            "***Nu* also means \"no\" as an answer**, so it often appears twice in a row with different jobs: *Nu, nu sunt din București* — the first answers, the second negates. At the end of a sentence, *nu?* becomes \"right?\": *Ești student, nu?*",
+            "**Double negatives are required.** Words like *nimic* (nothing), *nimeni* (nobody), and *niciodată* (never) always come with *nu*: *Nu înțeleg nimic* = \"I don't understand anything\" (literally \"I don't understand nothing\"). Leaving out the *nu* is what's wrong.",
+            "**In conversation, *nu* likes to merge with the next word**: *nu este → nu-i*, and *nu am → n-am* (\"I don't have\" — the verb *a avea* comes in unit 3). You don't have to use these, but you do have to recognize them, because that's how people talk."
+          ]
+        },
+        {
+          "title": "A vorbi and a locui — verbs with the -esc insert",
+          "body": [
+            "A Romanian infinitive is always preceded by the little word *a*, just like English \"to\": *a vorbi* (to speak), *a locui* (to live). Most verbs ending in *-i* slip **-esc-** in between the stem and the ending — but only in four of the six forms."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "a vorbi",
+              "Say it",
+              "a locui",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "eu",
+                "vorb**esc**",
+                "vohr-BEHSK",
+                "locui**esc**",
+                "loh-koo-YEHSK"
+              ],
+              [
+                "tu",
+                "vorb**ești**",
+                "vohr-BEHSHT'",
+                "locui**ești**",
+                "loh-koo-YEHSHT'"
+              ],
+              [
+                "el / ea",
+                "vorb**ește**",
+                "vohr-BEHSH-teh",
+                "locui**ește**",
+                "loh-koo-YEHSH-teh"
+              ],
+              [
+                "noi",
+                "vorb**im**",
+                "vohr-BEEM",
+                "locu**im**",
+                "loh-koo-EEM"
+              ],
+              [
+                "voi",
+                "vorb**iți**",
+                "vohr-BEETS'",
+                "locu**iți**",
+                "loh-koo-EETS'"
+              ],
+              [
+                "ei / ele",
+                "vorb**esc**",
+                "vohr-BEHSK",
+                "locui**esc**",
+                "loh-koo-YEHSK"
+              ]
+            ]
+          },
+          "after": [
+            "**The insert disappears in *noi* and *voi*.** In those two forms the stress moves to the ending (vohr-BEEM, vohr-BEETS'), and *-esc-* isn't needed any more. In the other four forms the stress always falls on the insert. The *sc* softens to *șt* before *i* and *e*: *-esc, -ești, -ește*.",
+            "**The *eu* and *ei/ele* forms are twins**, just like *sunt* in unit 1: *vorbesc* = \"I speak\" and \"they speak\". Only when context isn't clear does the pronoun come out: *Ei vorbesc germană*.",
+            "**This pattern unlocks dozens of verbs at once**: *a citi* (citesc — to read), *a dori* (doresc — to wish), *a plăti* (plătesc — to pay), *a găti* (gătesc — to cook), and the one you've used since day one: *a mulțumi* → *mulțumesc*, *mulțumim*. Not every *-i* verb follows this pattern (unit 8), so this course's vocabulary lists always give the *eu* form in brackets."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Countries, nationalities, and languages",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Country",
+            "Man",
+            "Woman",
+            "Language"
+          ],
+          "rows": [
+            [
+              "România",
+              "român",
+              "româncă",
+              "română"
+            ],
+            [
+              "Indonezia",
+              "indonezian",
+              "indoneziancă",
+              "indoneziană"
+            ],
+            [
+              "Anglia",
+              "englez",
+              "englezoaică",
+              "engleză"
+            ],
+            [
+              "Germania",
+              "german",
+              "germană",
+              "germană"
+            ],
+            [
+              "Franța",
+              "francez",
+              "franțuzoaică",
+              "franceză"
+            ],
+            [
+              "Italia",
+              "italian",
+              "italiancă",
+              "italiană"
+            ],
+            [
+              "Ungaria",
+              "ungur",
+              "unguroaică",
+              "maghiară"
+            ],
+            [
+              "Olanda",
+              "olandez",
+              "olandeză",
+              "olandeză"
+            ],
+            [
+              "Japonia",
+              "japonez",
+              "japoneză",
+              "japoneză"
+            ],
+            [
+              "China",
+              "chinez",
+              "chinezoaică",
+              "chineză"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Lowercase.** Only country names are capitalized; nationalities and languages are written in lowercase — unlike English: *Sunt indonezian. Vorbesc engleză.* And as with jobs in unit 1, a nationality after *a fi* takes no article."
+        },
+        {
+          "type": "p",
+          "text": "**The feminine form has three possible endings, and you have to learn them word by word**: *-că* (*româncă, indoneziancă, italiancă*), *-oaică* (*englezoaică, franțuzoaică, chinezoaică*), or just *-ă* (*germană, olandeză, japoneză*). Learn the one for your own nationality first — Budi's are *indonezian* [een-doh-neh-zee-AHN] and *indoneziancă* [een-doh-neh-zee-AHN-kuh]."
+        },
+        {
+          "type": "p",
+          "text": "**Language name = the feminine form of the adjective**, because it follows the word *limbă* (language), which is feminine: *limba română*, *limba engleză*. Some languages also have a \"manner\" form ending in *-ește*: *românește, englezește, franțuzește, nemțește* (the German way), *ungurește*. This form is used only with verbs like *a vorbi* and never changes. Indonesian has no common *-ește* form, so Budi says *vorbesc indoneziană*."
+        },
+        {
+          "type": "kotak",
+          "title": "A Latin island in Eastern Europe",
+          "items": [
+            "Romanian is a sister of Italian, French, Spanish, and Portuguese — all descendants of Latin. The name *România* itself comes from the word *roman*. Its neighbors, though, speak Slavic languages and Hungarian, so Romania is often called a Latin island in Eastern Europe. The same language is also spoken in the Republic of Moldova.",
+            "Transylvania — including Cluj, Andrei's hometown — is home to many Hungarian speakers. Sibiu, Maria's hometown, was built by German settlers (the *sași*, Saxons) in the Middle Ages and has a German name: Hermannstadt. That's why Maria speaks German.",
+            "Good news for you: much of that Latin vocabulary already looks familiar from English — *familie, problemă, muzică, doctor, universitate, informație*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Din versus în — from where and where",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Two questions, two prepositions, and they pair up neatly. The ones beginners mix up most are *din* and *de*, so look closely at the examples column."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Word",
+            "Say it",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**unde**",
+              "OON-deh",
+              "where; where to",
+              "*Unde locuiești?*"
+            ],
+            [
+              "**în**",
+              "în",
+              "in",
+              "*Locuiesc în București. Sunt în România.*"
+            ],
+            [
+              "**de unde**",
+              "deh OON-deh",
+              "from where",
+              "*De unde ești?*"
+            ],
+            [
+              "**din**",
+              "deen",
+              "from (in)",
+              "*Sunt din Indonezia. El este din Cluj.*"
+            ],
+            [
+              "**la**",
+              "lah",
+              "at; to (a point: office, station, event)",
+              "*Sunt la birou. Vorbim engleză la birou.*"
+            ],
+            [
+              "**cu**",
+              "koo",
+              "with; together with",
+              "*Locuiesc cu Andrei.*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The formula: **unde → în**, **de unde → din**. Countries and cities always use this pair: *în Indonezia — din Indonezia*, *în Sibiu — din Sibiu*. The preposition *la* is used for places seen as a point or an activity, not a space you're inside: *la birou* (at the office), *la universitate* (at university). The difference between *în* and *la* is sorted out in unit 6; for now, learn the examples."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Language lifesavers",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Vorbiți engleză?*",
+              "Do you speak English?"
+            ],
+            [
+              "*Vorbesc puțin românește.*",
+              "I speak a little Romanian."
+            ],
+            [
+              "*Nu vorbesc bine românește.*",
+              "My Romanian isn't good yet."
+            ],
+            [
+              "*Înțeleg, dar nu vorbesc.*",
+              "I understand, but I can't speak."
+            ],
+            [
+              "*Nu înțeleg nimic.*",
+              "I don't understand anything."
+            ],
+            [
+              "*Ce limbă vorbiți acasă?*",
+              "What language do you speak at home?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Romanians almost always greet your attempts at Romanian with praise — *Vorbești foarte bine!* — even if you only know three sentences. Just accept it with *Mulțumesc!* and carry on in Romanian. Switching to English at that moment is the fastest way to stop learning."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ro": "a vorbi (vorbesc)",
+      "baca": "ah vohr-BEE (vohr-BEHSK)",
+      "en": "to speak"
+    },
+    {
+      "ro": "a locui (locuiesc)",
+      "baca": "ah loh-koo-EE (loh-koo-YEHSK)",
+      "en": "to live; to reside"
+    },
+    {
+      "ro": "unde / de unde",
+      "baca": "OON-deh / deh OON-deh",
+      "en": "where / from where"
+    },
+    {
+      "ro": "din",
+      "baca": "deen",
+      "en": "from (in)"
+    },
+    {
+      "ro": "în",
+      "baca": "în",
+      "en": "in"
+    },
+    {
+      "ro": "acum",
+      "baca": "ah-KOOM",
+      "en": "now"
+    },
+    {
+      "ro": "încă",
+      "baca": "ÎN-kuh",
+      "en": "still; *încă nu* = not yet"
+    },
+    {
+      "ro": "puțin",
+      "baca": "poo-TSEEN",
+      "en": "a little"
+    },
+    {
+      "ro": "foarte",
+      "baca": "FWAHR-teh",
+      "en": "very"
+    },
+    {
+      "ro": "dar",
+      "baca": "dahr",
+      "en": "but"
+    },
+    {
+      "ro": "nimic",
+      "baca": "nee-MEEK",
+      "en": "nothing"
+    },
+    {
+      "ro": "limbă",
+      "baca": "LEEM-buh",
+      "en": "language; tongue (f)"
+    },
+    {
+      "ro": "țară",
+      "baca": "TSAH-ruh",
+      "en": "country; land (f)"
+    },
+    {
+      "ro": "oraș",
+      "baca": "oh-RAHSH",
+      "en": "city, town (n)"
+    },
+    {
+      "ro": "prieten / prietenă",
+      "baca": "pree-YEH-tehn / pree-YEH-teh-nuh",
+      "en": "friend (m / f)"
+    },
+    {
+      "ro": "român / româncă",
+      "baca": "roh-MÎN / roh-MÎN-kuh",
+      "en": "Romanian person (m / f)"
+    },
+    {
+      "ro": "indonezian / indoneziancă",
+      "baca": "een-doh-neh-zee-AHN / een-doh-neh-zee-AHN-kuh",
+      "en": "Indonesian person (m / f)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Romanian.",
+      "items": [
+        "Where are you from?",
+        "I'm from Indonesia.",
+        "Now I live in București.",
+        "Do you speak Romanian?",
+        "A little. I don't speak well yet.",
+        "Which languages do you speak?"
+      ]
+    },
+    {
+      "prompt": "Fill in the right form of the verb in brackets.",
+      "items": [
+        "Eu ____ în București. (a locui)",
+        "Tu ____ românește? (a vorbi)",
+        "Maria ____ germană. (a vorbi)",
+        "Noi ____ engleză la birou. (a vorbi)",
+        "Unde ____ dumneavoastră? (a locui)",
+        "Andrei și Budi ____ în București. (a locui)",
+        "Ioana nu ____ indoneziană. (a vorbi)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ești / unde / de / ?",
+        "din / sunt / nu / bucurești",
+        "bine / nu / încă / vorbesc",
+        "nimic / nu-i",
+        "limbi / vorbești / ce / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "De unde ești? — Sunt din Indonezia. — Acum locuiesc în București. — Vorbești românește? — Puțin. Încă nu vorbesc bine. — Ce limbi vorbești?",
+    "locuiesc — vorbești — vorbește — vorbim — locuiți — locuiesc — vorbește",
+    "De unde ești? — Nu sunt din București. — Încă nu vorbesc bine. — Nu-i nimic. — Ce limbi vorbești?"
+  ]
+}

@@ -1,0 +1,654 @@
+{
+  "title": "In the city: places and directions",
+  "title_target": "Onde fica o banco?",
+  "goal": "Name places, ask for directions, and master one small machine that runs through the rest of the course: **prepositions that merge with articles**.",
+  "bekal": [
+    "merge *em* and *a* with articles: *no*, *na*, *ao*, *à*",
+    "ask for and understand simple directions",
+    "use *ficar* — the Brazilian verb for \"to be located\" and ten other meanings"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Perdido na Avenida Paulista",
+      "intro": "Budi is standing on the sidewalk with a dead phone battery. He walks up to a woman at the bus stop.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Com licença, você pode me ajudar?",
+          "id": "Excuse me, could you help me?",
+          "literal": "with permission, you you-can me help?"
+        },
+        {
+          "speaker": "Mulher:",
+          "text": "Claro! O que você precisa?",
+          "id": "Sure! What do you need?",
+          "literal": "clear! what you you-need?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Onde fica o metrô, por favor?",
+          "id": "Where's the subway, please?",
+          "literal": "where it-is-located the metro, please?"
+        },
+        {
+          "speaker": "Mulher:",
+          "text": "Fica perto. Você vai reto até a esquina.",
+          "id": "It's close. Go straight to the corner.",
+          "literal": "it-is-located near. you you-go straight until the corner."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Reto até a esquina, tá.",
+          "id": "Straight to the corner, okay.",
+          "literal": "straight until the corner, okay."
+        },
+        {
+          "speaker": "Mulher:",
+          "text": "Depois vira à direita, na frente do banco.",
+          "id": "Then turn right, in front of the bank.",
+          "literal": "after turn to-the right, in-the front of-the bank."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "É longe daqui?",
+          "id": "Is it far from here?",
+          "literal": "is far from-here?"
+        },
+        {
+          "speaker": "Mulher:",
+          "text": "Não, uns cinco minutos a pé.",
+          "id": "No, about five minutes on foot.",
+          "literal": "no, some five minutes on foot."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "E tem uma farmácia por aqui?",
+          "id": "And is there a pharmacy around here?",
+          "literal": "and it-has a pharmacy by here?"
+        },
+        {
+          "speaker": "Mulher:",
+          "text": "Tem, ao lado da padaria, do outro lado da rua.",
+          "id": "There is, next to the bakery, across the street.",
+          "literal": "it-has, to-the side of-the bakery, of-the other side of-the street."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Muito obrigado! Você salvou o meu dia.",
+          "id": "Thank you so much! You saved my day.",
+          "literal": "much thanked! you you-saved the my day."
+        },
+        {
+          "speaker": "Mulher:",
+          "text": "Imagina! Boa sorte!",
+          "id": "Don't mention it! Good luck!",
+          "literal": "imagine! good luck!"
+        }
+      ],
+      "notes": [
+        "**Ficar is the most Brazilian verb in this whole course.** Its basic meaning is \"to stay, to be\", but it's used for a dozen things: **to be located** (*Onde fica o metrô?*), **to become** (*Fiquei feliz* = I got happy), **to stay** (*Vou ficar em casa*), and even **to hook up casually** (*ficar com alguém*) — that last one is typical Brazilian youth slang, with no exact equivalent anywhere. To ask where something is, *ficar* is used far more often than *estar*.",
+        "**Imagina!** is a typically Brazilian reply to thanks. Literally \"imagine!\", it means \"oh, don't mention it\". Along with *de nada* and *por nada*, it's one of three ways to answer *obrigado* — and the warmest.",
+        "**Uns cinco minutos** = \"about five minutes\". Putting *uns/umas* before a number makes it an estimate: *umas dez pessoas* (about ten people). It's the shortest way to avoid sounding too exact.",
+        "**À direita, with a grave accent.** The mark on `à` isn't decoration: it shows that the preposition *a* has merged with the article *a*. Two *a*'s become one letter with a backward accent. The rule is set out in the table below.",
+        "**Tá** is a shortened *está*, and here it means \"okay\". You'll hear it at the end of almost every Brazilian sentence: *Vamos, tá?*"
+      ],
+      "grammars": [
+        {
+          "title": "Em + article: the first machine",
+          "body": [
+            "*Em* means \"in, at, on\". It **must** merge with the article that follows — writing them separately is a mistake, not a style choice."
+          ],
+          "table": {
+            "head": [
+              "em +",
+              "becomes",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "em + o",
+                "**no**",
+                "*no banco*",
+                "at the bank"
+              ],
+              [
+                "em + a",
+                "**na**",
+                "*na rua*",
+                "on the street"
+              ],
+              [
+                "em + os",
+                "**nos**",
+                "*nos hotéis*",
+                "in the hotels"
+              ],
+              [
+                "em + as",
+                "**nas**",
+                "*nas lojas*",
+                "in the shops"
+              ],
+              [
+                "em + um",
+                "**num**",
+                "*num restaurante*",
+                "in a restaurant"
+              ],
+              [
+                "em + uma",
+                "**numa**",
+                "*numa casa*",
+                "in a house"
+              ],
+              [
+                "em + este",
+                "**neste**",
+                "*neste mês*",
+                "this month"
+              ]
+            ]
+          },
+          "after": [
+            "**Country and city names follow their own article rules.** *No Brasil*, *no Japão*, *na Indonésia*, *na França* — because those countries take an article. But cities almost never do: *em São Paulo*, *em Jacarta*, *em Lisboa*, with nothing in front.",
+            "⚠️ One exception to memorize: **em casa** means \"at home\" (your own), with no article. *Estou em casa* = I'm at home. If you say *estou na casa*, people will ask \"whose house?\""
+          ]
+        },
+        {
+          "title": "A + article: the second machine",
+          "body": [
+            "*A* means \"to\" (direction) and \"at\" (time). It merges the same way, but the result can carry an accent."
+          ],
+          "table": {
+            "head": [
+              "a +",
+              "becomes",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "a + o",
+                "**ao**",
+                "*ao banco*",
+                "to the bank"
+              ],
+              [
+                "a + a",
+                "**à**",
+                "*à direita*",
+                "to the right"
+              ],
+              [
+                "a + os",
+                "**aos**",
+                "*aos domingos*",
+                "on Sundays"
+              ],
+              [
+                "a + as",
+                "**às**",
+                "*às oito horas*",
+                "at eight o'clock"
+              ]
+            ]
+          },
+          "after": [
+            "**The mark on à is called crase, and it doesn't change the sound at all** — *à* and *a* are said exactly the same. It's only a spelling sign that two words have merged. Brazilians themselves often put it in the wrong place, so don't worry too much; what matters is that you can read it.",
+            "**In Brazil, para is used more than a for direction.** *Vou para o Rio* sounds more natural than *Vou ao Rio*. And *para* merges too, but only in speech: *pro* (para+o) and *pra* (para+a). You'll see *pra* written everywhere on Brazilian social media, even though grammar books don't accept it yet."
+          ]
+        },
+        {
+          "title": "Prepositions of place",
+          "body": [
+            "Everything ending in *de* merges with the next article, so watch for *do* and *da* popping up again and again."
+          ],
+          "table": {
+            "head": [
+              "Português",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "em cima **de**",
+                "ehn SEE-mah jee",
+                "on top of"
+              ],
+              [
+                "embaixo **de**",
+                "ehn-BY-shoo jee",
+                "under"
+              ],
+              [
+                "ao lado **de**",
+                "ow LAH-doo jee",
+                "next to"
+              ],
+              [
+                "na frente **de**",
+                "nah FREHN-chee jee",
+                "in front of"
+              ],
+              [
+                "atrás **de**",
+                "ah-TRYS jee",
+                "behind"
+              ],
+              [
+                "dentro **de**",
+                "DEHN-troo jee",
+                "inside"
+              ],
+              [
+                "fora **de**",
+                "FAW-rah jee",
+                "outside"
+              ],
+              [
+                "entre",
+                "EHN-tree",
+                "between"
+              ],
+              [
+                "perto **de**",
+                "PAYH-too jee",
+                "near"
+              ],
+              [
+                "longe **de**",
+                "LOHN-zhee jee",
+                "far from"
+              ],
+              [
+                "do outro lado **de**",
+                "doo OH-troo LAH-doo jee",
+                "across from"
+              ]
+            ]
+          },
+          "after": [
+            "Full examples: *O banco fica ao lado **da** padaria* (The bank is next to the bakery), *A chave está em cima **da** mesa* (The key is on the table), *Eu moro perto **do** metrô* (I live near the subway).",
+            "⚠️ Notice *entre* — it's the only one in the list that does **not** take *de*: *entre o banco e a farmácia* (between the bank and the pharmacy)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Places in the city",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Learn them with their articles, as always."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "o banco",
+              "oo BAHN-koo",
+              "bank"
+            ],
+            [
+              "a farmácia",
+              "ah fahh-MAH-see-ah",
+              "pharmacy"
+            ],
+            [
+              "a padaria",
+              "ah pah-dah-REE-ah",
+              "bakery"
+            ],
+            [
+              "o mercado",
+              "oo mehh-KAH-doo",
+              "market; grocery store"
+            ],
+            [
+              "o supermercado",
+              "oo soo-pehh-mehh-KAH-doo",
+              "supermarket"
+            ],
+            [
+              "a loja",
+              "ah LOH-zhah",
+              "shop, store"
+            ],
+            [
+              "o shopping",
+              "oo SHAW-peen",
+              "mall"
+            ],
+            [
+              "a praça",
+              "ah PRAH-sah",
+              "square; town park"
+            ],
+            [
+              "a igreja",
+              "ah ee-GRAY-zhah",
+              "church"
+            ],
+            [
+              "o hospital",
+              "oo ohs-pee-TOW",
+              "hospital"
+            ],
+            [
+              "a escola",
+              "ah ees-KAW-lah",
+              "school"
+            ],
+            [
+              "o metrô",
+              "oo meh-TROH",
+              "subway"
+            ],
+            [
+              "o ponto de ônibus",
+              "oo POHN-too jee OH-nee-boos",
+              "bus stop"
+            ],
+            [
+              "a praia",
+              "ah PRY-ah",
+              "beach"
+            ],
+            [
+              "o banheiro",
+              "oo bah-NYEY-roo",
+              "restroom, bathroom"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *O banheiro* is the word you'll need most and the easiest to mispronounce. *Onde fica o banheiro?* — memorize it whole right now. In Brazil it's used everywhere, from restaurants to offices; *toalete* sounds like you're reading an airport sign."
+        }
+      ]
+    },
+    {
+      "title": "Asking for and giving directions",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Onde fica…?",
+              "OHN-jee FEE-kah",
+              "Where is…?"
+            ],
+            [
+              "Como eu chego lá?",
+              "KOH-moo ay-oo SHAY-goo LAH",
+              "How do I get there?"
+            ],
+            [
+              "É longe daqui?",
+              "eh LOHN-zhee dah-KEE",
+              "Is it far from here?"
+            ],
+            [
+              "Vai reto.",
+              "vy HEH-too",
+              "Go straight."
+            ],
+            [
+              "Vira à direita.",
+              "VEE-rah ah jee-REY-tah",
+              "Turn right."
+            ],
+            [
+              "Vira à esquerda.",
+              "VEE-rah ah ees-KAYH-dah",
+              "Turn left."
+            ],
+            [
+              "Na esquina",
+              "nah ees-KEE-nah",
+              "At the corner"
+            ],
+            [
+              "a pé",
+              "ah PEH",
+              "on foot"
+            ],
+            [
+              "de ônibus",
+              "jee OH-nee-boos",
+              "by bus"
+            ],
+            [
+              "de carro",
+              "jee KAH-hoo",
+              "by car"
+            ],
+            [
+              "Estou perdido.",
+              "ees-TOH pehh-JEE-doo",
+              "I'm lost."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Notice the transport pattern: **de** ônibus, **de** carro, **de** metrô, **de** avião — but **a** pé for walking. One exception, and it's the one used most."
+        },
+        {
+          "type": "p",
+          "text": "The sentence *Estou perdido* is much more useful than it looks. In Brazil, saying it to a stranger on the street almost always gets you more help than you need — sometimes they'll walk you right to your destination."
+        }
+      ]
+    },
+    {
+      "title": "Spaced review — back to unit 6",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Portuguese column."
+        },
+        {
+          "type": "list",
+          "items": [
+            "I study every day → *Eu estudo todo dia*",
+            "Where do you work? → *Onde você trabalha?*",
+            "I like coffee → *Eu gosto de café*",
+            "We dance every Saturday → *Nós dançamos todo sábado*",
+            "Everybody dances in Brazil → *Todo mundo dança no Brasil*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pt": "ficar",
+      "baca": "fee-KAHH",
+      "en": "to be located; to stay; to become"
+    },
+    {
+      "pt": "o banco",
+      "baca": "oo BAHN-koo",
+      "en": "bank"
+    },
+    {
+      "pt": "a farmácia",
+      "baca": "ah fahh-MAH-see-ah",
+      "en": "pharmacy"
+    },
+    {
+      "pt": "a padaria",
+      "baca": "ah pah-dah-REE-ah",
+      "en": "bakery"
+    },
+    {
+      "pt": "o mercado",
+      "baca": "oo mehh-KAH-doo",
+      "en": "market"
+    },
+    {
+      "pt": "a loja",
+      "baca": "ah LOH-zhah",
+      "en": "shop, store"
+    },
+    {
+      "pt": "a praça",
+      "baca": "ah PRAH-sah",
+      "en": "square"
+    },
+    {
+      "pt": "o metrô",
+      "baca": "oo meh-TROH",
+      "en": "subway"
+    },
+    {
+      "pt": "o ônibus",
+      "baca": "oo OH-nee-boos",
+      "en": "bus"
+    },
+    {
+      "pt": "a praia",
+      "baca": "ah PRY-ah",
+      "en": "beach"
+    },
+    {
+      "pt": "o banheiro",
+      "baca": "oo bah-NYEY-roo",
+      "en": "restroom, bathroom"
+    },
+    {
+      "pt": "a esquina",
+      "baca": "ah ees-KEE-nah",
+      "en": "corner"
+    },
+    {
+      "pt": "reto",
+      "baca": "HEH-too",
+      "en": "straight"
+    },
+    {
+      "pt": "à direita / à esquerda",
+      "baca": "ah jee-REY-tah / ah ees-KAYH-dah",
+      "en": "to the right / to the left"
+    },
+    {
+      "pt": "virar",
+      "baca": "vee-RAHH",
+      "en": "to turn"
+    },
+    {
+      "pt": "perto / longe",
+      "baca": "PAYH-too / LOHN-zhee",
+      "en": "near / far"
+    },
+    {
+      "pt": "ao lado de",
+      "baca": "ow LAH-doo jee",
+      "en": "next to"
+    },
+    {
+      "pt": "na frente de",
+      "baca": "nah FREHN-chee jee",
+      "en": "in front of"
+    },
+    {
+      "pt": "atrás de",
+      "baca": "ah-TRYS jee",
+      "en": "behind"
+    },
+    {
+      "pt": "em cima de",
+      "baca": "ehn SEE-mah jee",
+      "en": "on top of"
+    },
+    {
+      "pt": "embaixo de",
+      "baca": "ehn-BY-shoo jee",
+      "en": "under"
+    },
+    {
+      "pt": "entre",
+      "baca": "EHN-tree",
+      "en": "between"
+    },
+    {
+      "pt": "a pé",
+      "baca": "ah PEH",
+      "en": "on foot"
+    },
+    {
+      "pt": "o minuto",
+      "baca": "oo mee-NOO-too",
+      "en": "minute"
+    },
+    {
+      "pt": "Imagina!",
+      "baca": "ee-mah-ZHEE-nah",
+      "en": "Don't mention it!"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Merge the preposition with the article.",
+      "items": [
+        "em + o banco",
+        "em + a rua",
+        "em + um restaurante",
+        "a + o mercado",
+        "a + a esquerda",
+        "de + a padaria"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right merged form.",
+      "items": [
+        "Eu moro ____ Brasil. (em)",
+        "Ela trabalha ____ escola. (em)",
+        "O livro está ____ mesa. (em cima de)",
+        "A farmácia fica ____ padaria. (ao lado de)",
+        "Eu vou ____ mercado. (a)",
+        "Vira ____ direita. (a)"
+      ]
+    },
+    {
+      "prompt": "Translate into Portuguese.",
+      "items": [
+        "Where's the restroom?",
+        "The bank is next to the bakery.",
+        "Is it far from here?",
+        "About five minutes on foot.",
+        "I live near the subway.",
+        "I'm lost."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "metrô / fica / onde / o / ?",
+        "reto / vai / esquina / até / você / a",
+        "daqui / longe / é / ?",
+        "banco / fica / do / lado / a / farmácia / ao",
+        "perdido / estou / eu"
+      ]
+    }
+  ],
+  "answers": [
+    "no banco — na rua — num restaurante — ao mercado — à esquerda — da padaria",
+    "no — na — em cima da — ao lado da — ao — à",
+    "Onde fica o banheiro? — O banco fica ao lado da padaria. — É longe daqui? — Uns cinco minutos a pé. — Eu moro perto do metrô. — Estou perdido.",
+    "Onde fica o metrô? — Você vai reto até a esquina. — É longe daqui? — A farmácia fica ao lado do banco. — Eu estou perdido."
+  ]
+}

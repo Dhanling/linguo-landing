@@ -1,0 +1,533 @@
+{
+  "title": "At the shop: prices, amounts, and \"there isn't any\"",
+  "title_target": "У магазині — U mahazyni",
+  "goal": "Ask prices, ask for a certain amount of something, and understand the sentence you'll hear most often in a Ukrainian shop: \"we don't have any\" — along with the ending that always comes with it.",
+  "bekal": [
+    "ask the price of one item and of several",
+    "ask for something with Дайте, будь ласка",
+    "understand and use немає + родовий",
+    "give amounts with units (кілограм, пляшка, пачка)",
+    "ask for the total"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — Morning at the Bessarabska market",
+      "intro": "Ani is shopping at the market. Notice that every time the seller says something **isn't there**, the item's name changes its ending: полуниця becomes полуниці, молоко becomes молока.",
+      "lines": [
+        {
+          "speaker": "Продавець:",
+          "text": "[Добрий|DOB-riy] [день|den']! [Що|Shcho] [вам|vam]?",
+          "id": "Good afternoon! What can I get you?",
+          "literal": "good — day! what — to-you?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Скільки|SKEEL'-ki] [коштує|KOSH-too-yeh] [кілограм|kee-lo-HRAM] [яблук|YAB-look]?",
+          "id": "How much is a kilo of apples?",
+          "literal": "how-much — costs — kilogram — apples (родовий)?"
+        },
+        {
+          "speaker": "Продавець:",
+          "text": "[Сорок|SO-rok] [п'ять|pyat'] [гривень|HRI-ven'].",
+          "id": "Forty-five hryvnias.",
+          "literal": "forty — five — hryvnias (родовий plural)."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Дайте|DAI-teh], [будь|bood'] [ласка|LAS-ka], [два|dva] [кілограми|kee-lo-HRA-mi].",
+          "id": "Two kilos, please.",
+          "literal": "give, be — kindness, two — kilograms."
+        },
+        {
+          "speaker": "Продавець:",
+          "text": "[Будь|Bood'] [ласка|LAS-ka]. [Ще|Shcheh] [щось|shchos']?",
+          "id": "Here you go. Anything else?",
+          "literal": "be — kindness. more — something?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[У|OO] [вас|vas] [є|yeh] [полуниця|po-loo-NI-tsya]?",
+          "id": "Do you have strawberries?",
+          "literal": "at — you — there-is — strawberry?"
+        },
+        {
+          "speaker": "Продавець:",
+          "text": "[Полуниці|Po-loo-NI-tsee] [немає|neh-MA-yeh]. [Сезон|Seh-ZON] [закінчився|za-KEEN-chiv-sya].",
+          "id": "No strawberries. The season's over.",
+          "literal": "strawberry (родовий) — there-isn't. season — has-ended."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Шкода|Shko-DA]. [Тоді|To-DEE] [дайте|DAI-teh] [ще|shcheh] [хліб|khleeb] [і|ee] [молоко|mo-lo-KO].",
+          "id": "Too bad. Then I'll also have bread and milk, please.",
+          "literal": "pity. then — give — more — bread — and — milk."
+        },
+        {
+          "speaker": "Продавець:",
+          "text": "[Молока|Mo-lo-KA] [теж|tezh] [немає|neh-MA-yeh]. [Тільки|TEEL'-ki] [кефір|keh-FEER].",
+          "id": "No milk either. Only kefir.",
+          "literal": "milk (родовий) — also — there-isn't. only — kefir."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Добре|DOB-reh], [кефір|keh-FEER]. [Скільки|SKEEL'-ki] [з|z] [мене|MEH-neh]?",
+          "id": "OK, kefir then. How much do I owe you?",
+          "literal": "good, kefir. how-much — from — me?"
+        },
+        {
+          "speaker": "Продавець:",
+          "text": "[Сто|Sto] [двадцять|DVAD-tsyat'] [гривень|HRI-ven'].",
+          "id": "A hundred and twenty hryvnias.",
+          "literal": "hundred — twenty — hryvnias."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Ось|Os'], [будь|bood'] [ласка|LAS-ka]. [Дякую|DYA-koo-yoo]!",
+          "id": "Here you are. Thank you!",
+          "literal": "here, be — kindness. I-thank!"
+        }
+      ],
+      "notes": [
+        "**Скільки коштує for one item, скільки коштують for several.** *Скільки коштує хліб?* (one) — *Скільки коштують яблука?* (several). The verb follows the number of items, just like *is* / *are* in English. If in doubt, point at the item and ask **Скільки це коштує?** — always correct.",
+        "**Absence always takes the родовий, and this is the sentence you'll hear most in shops.** *Полуниці немає*, *молока немає*, *хліба немає*. Notice the word order: the item first, *немає* after — the opposite of what you might expect.",
+        "**Дайте, будь ласка — the polite command.** Commands in Ukrainian aren't rude as long as *будь ласка* comes with them. To a friend: **дай**. To anyone else, or more than one person: **дайте**. This is the formula you'll use in shops, pharmacies, and kiosks.",
+        "**Units change form with the number, like рік in Unit 7.** *Один кілограм*, *два кілограми*, *п'ять кілограмів*. Exactly the same pattern: 1 → dictionary form, 2–4 → ordinary plural, 5 and up → родовий plural.",
+        "**The родовий plural often looks like a word with its ending chopped off.** *Яблука* → *яблук*, *гривні* → *гривень*, *книги* → *книг*, *хвилини* → *хвилин*. Feminine nouns in **-а** lose their ending entirely. It feels strange at first, then becomes an easy giveaway.",
+        "**Скільки з мене? literally \"how much from me?\"** It's the most common way to ask for the total. Other forms that are just as correct: *Скільки всього?* (how much altogether) or *Скільки за все?*",
+        "**Ось = here you are.** Used when handing something over, like English \"here\". To point at something farther away: **он** (*он там* — over there)."
+      ],
+      "grammars": [
+        {
+          "title": "Родовий: absence, amounts, and belonging",
+          "body": [
+            "Three jobs you've already met separately, now in one table. The endings are the same for all three."
+          ],
+          "table": {
+            "head": [
+              "Used for",
+              "Example",
+              "English"
+            ],
+            "rows": [
+              [
+                "absence (немає)",
+                "Молока немає.",
+                "There's no milk."
+              ],
+              [
+                "absence (не + verb)",
+                "Я не п'ю кави.",
+                "I don't drink coffee."
+              ],
+              [
+                "after numbers 5+",
+                "п'ять гривень",
+                "five hryvnias"
+              ],
+              [
+                "after скільки, багато",
+                "багато людей",
+                "a lot of people"
+              ],
+              [
+                "belonging",
+                "книга сестри",
+                "my sister's book"
+              ],
+              [
+                "after з, до, від, без",
+                "з України, без цукру",
+                "from Ukraine, without sugar"
+              ],
+              [
+                "units of content",
+                "кілограм яблук",
+                "a kilo of apples"
+              ]
+            ]
+          },
+          "after": [
+            "Beginners often miss the second row: **a negative sentence turns its object into the родовий**. *Я п'ю каву* (знахідний) → *Я не п'ю кави* (родовий). This isn't compulsory in modern conversation, but it sounds polished and Ukrainians use it."
+          ]
+        },
+        {
+          "title": "Units and amounts",
+          "body": [],
+          "table": {
+            "head": [
+              "Unit",
+              "Say it",
+              "1",
+              "2–4",
+              "5+"
+            ],
+            "rows": [
+              [
+                "кілограм",
+                "kee-lo-HRAM",
+                "один кілограм",
+                "два кілограми",
+                "п'ять кілограмів"
+              ],
+              [
+                "пляшка",
+                "PLYASH-ka",
+                "одна пляшка",
+                "дві пляшки",
+                "п'ять пляшок"
+              ],
+              [
+                "пачка",
+                "PACH-ka",
+                "одна пачка",
+                "дві пачки",
+                "п'ять пачок"
+              ],
+              [
+                "штука",
+                "SHTOO-ka",
+                "одна штука",
+                "дві штуки",
+                "п'ять штук"
+              ],
+              [
+                "гривня",
+                "HRIV-nya",
+                "одна гривня",
+                "дві гривні",
+                "п'ять гривень"
+              ],
+              [
+                "грам",
+                "hram",
+                "один грам",
+                "два грами",
+                "сто грамів"
+              ]
+            ]
+          },
+          "after": [
+            "**Штука** is the lifesaver unit: use it for anything counted one by one. *Дайте три штуки* — three of those, please. Not rude at all and very common."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The weekly shop",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Українська",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "магазин",
+              "ma-ha-ZIN",
+              "shop, store"
+            ],
+            [
+              "ринок",
+              "RI-nok",
+              "market"
+            ],
+            [
+              "супермаркет",
+              "soo-per-MAR-ket",
+              "supermarket"
+            ],
+            [
+              "аптека",
+              "ap-TEH-ka",
+              "pharmacy"
+            ],
+            [
+              "хліб",
+              "khleeb",
+              "bread"
+            ],
+            [
+              "молоко",
+              "mo-lo-KO",
+              "milk"
+            ],
+            [
+              "кефір",
+              "keh-FEER",
+              "kefir (fermented milk)"
+            ],
+            [
+              "сир",
+              "sir",
+              "cheese"
+            ],
+            [
+              "яйця",
+              "YAI-tsya",
+              "eggs"
+            ],
+            [
+              "масло",
+              "MAS-lo",
+              "butter"
+            ],
+            [
+              "олія",
+              "o-LEE-ya",
+              "cooking oil"
+            ],
+            [
+              "цукор",
+              "TSOO-kor",
+              "sugar"
+            ],
+            [
+              "сіль",
+              "seel'",
+              "salt"
+            ],
+            [
+              "рис",
+              "ris",
+              "rice"
+            ],
+            [
+              "яблука",
+              "YAB-loo-ka",
+              "apples"
+            ],
+            [
+              "банани",
+              "ba-NA-ni",
+              "bananas"
+            ],
+            [
+              "помідори",
+              "po-mee-DO-ri",
+              "tomatoes"
+            ],
+            [
+              "огірки",
+              "o-heer-KI",
+              "cucumbers"
+            ],
+            [
+              "картопля",
+              "kar-TOP-lya",
+              "potatoes"
+            ],
+            [
+              "цибуля",
+              "tsi-BOO-lya",
+              "onions"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Five sentences that get you through a shop",
+          "items": [
+            "**Скільки це коштує?** — how much is it? Point, say it, done.",
+            "**Дайте, будь ласка, два кілограми.** — two kilos, please.",
+            "**У вас є ___?** — do you have ___? Fill in the dictionary form, not any other form.",
+            "**Це все, дякую.** — that's all, thank you.",
+            "**Скільки з мене?** — how much is that altogether?"
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "If you don't catch the price"
+        },
+        {
+          "type": "p",
+          "text": "Numbers said quickly are every beginner's first wall, in any language. Two lifesavers: **Повторіть, будь ласка** (please say that again) and **Напишіть, будь ласка** (please write it down). The second one works every time, and no seller minds."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uk": "магазин",
+      "baca": "ma-ha-ZIN",
+      "en": "shop, store"
+    },
+    {
+      "uk": "ринок",
+      "baca": "RI-nok",
+      "en": "market"
+    },
+    {
+      "uk": "продавець",
+      "baca": "pro-da-VETS'",
+      "en": "seller, shop assistant"
+    },
+    {
+      "uk": "купувати",
+      "baca": "koo-poo-VA-ti",
+      "en": "to buy"
+    },
+    {
+      "uk": "дайте",
+      "baca": "DAI-teh",
+      "en": "give (me) (polite)"
+    },
+    {
+      "uk": "кілограм",
+      "baca": "kee-lo-HRAM",
+      "en": "kilogram"
+    },
+    {
+      "uk": "пляшка",
+      "baca": "PLYASH-ka",
+      "en": "bottle"
+    },
+    {
+      "uk": "пачка",
+      "baca": "PACH-ka",
+      "en": "pack, packet"
+    },
+    {
+      "uk": "штука",
+      "baca": "SHTOO-ka",
+      "en": "piece, item"
+    },
+    {
+      "uk": "яблуко",
+      "baca": "YAB-loo-ko",
+      "en": "apple"
+    },
+    {
+      "uk": "полуниця",
+      "baca": "po-loo-NI-tsya",
+      "en": "strawberries"
+    },
+    {
+      "uk": "овочі",
+      "baca": "O-vo-chee",
+      "en": "vegetables"
+    },
+    {
+      "uk": "фрукти",
+      "baca": "FROOK-ti",
+      "en": "fruit"
+    },
+    {
+      "uk": "гроші",
+      "baca": "HRO-shee",
+      "en": "money"
+    },
+    {
+      "uk": "сезон",
+      "baca": "seh-ZON",
+      "en": "season"
+    },
+    {
+      "uk": "шкода",
+      "baca": "shko-DA",
+      "en": "too bad, what a pity"
+    },
+    {
+      "uk": "тоді",
+      "baca": "to-DEE",
+      "en": "then, in that case"
+    },
+    {
+      "uk": "ось",
+      "baca": "os'",
+      "en": "here you are"
+    },
+    {
+      "uk": "все",
+      "baca": "vseh",
+      "en": "everything; that's all"
+    },
+    {
+      "uk": "багато",
+      "baca": "ba-HA-to",
+      "en": "a lot, many"
+    },
+    {
+      "uk": "мало",
+      "baca": "MA-lo",
+      "en": "little, few"
+    },
+    {
+      "uk": "свіжий",
+      "baca": "SVEE-zhiy",
+      "en": "fresh"
+    },
+    {
+      "uk": "напишіть",
+      "baca": "na-pi-SHEET'",
+      "en": "write (it) down (polite)"
+    },
+    {
+      "uk": "скільки з мене",
+      "baca": "SKEEL'-ki z MEH-neh",
+      "en": "how much do I owe?"
+    },
+    {
+      "uk": "закінчитися",
+      "baca": "za-KEEN-chi-ti-sya",
+      "en": "to end, to run out"
+    },
+    {
+      "uk": "сир",
+      "baca": "sir",
+      "en": "cheese"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with коштує or коштують.",
+      "items": [
+        "Скільки ____ хліб?",
+        "Скільки ____ ці яблука?",
+        "Скільки ____ кава?",
+        "Скільки ____ ці книги?",
+        "Скільки ____ кілограм рису?"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the родовий form after немає.",
+      "items": [
+        "У нас немає ____ (молоко).",
+        "У них немає ____ (хліб).",
+        "Тут немає ____ (вода).",
+        "У мене немає ____ (гроші).",
+        "Сьогодні немає ____ (полуниця)."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "коштує / скільки / це",
+        "будь ласка / дайте / хліб",
+        "немає / молока / у нас",
+        "мене / скільки / з",
+        "дорого / це / дуже"
+      ]
+    },
+    {
+      "prompt": "Translate into Ukrainian.",
+      "items": [
+        "How much is a kilo of apples?",
+        "Two kilos, please.",
+        "Do you have strawberries?",
+        "There are no strawberries.",
+        "How much do I owe you?"
+      ]
+    }
+  ],
+  "answers": [
+    "коштує — коштують — коштує — коштують — коштує",
+    "молока — хліба — води — грошей — полуниці",
+    "Скільки це коштує? — Дайте хліб, будь ласка. — У нас немає молока. — Скільки з мене? — Це дуже дорого.",
+    "Скільки коштує кілограм яблук? — Дайте, будь ласка, два кілограми. — У вас є полуниця? — Полуниці немає. — Скільки з мене?"
+  ],
+  "wave": "Review Unit 4. *У мене немає брата* and today's *Молока немає* are built exactly the same way — родовий after absence."
+}

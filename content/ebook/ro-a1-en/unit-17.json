@@ -1,0 +1,652 @@
+{
+  "title": "At the doctor's",
+  "title_target": "La doctor",
+  "goal": "Explain what hurts, understand the doctor's advice, and master two things at once: the *mă doare* pattern — the aching part is the subject, you are on the receiving end — and the imperative, the form for commands.",
+  "bekal": [
+    "say what hurts with *mă doare* (one thing) and *mă dor* (several), without \"I have\"",
+    "describe how your body feels with the dative: *mi-e rău, mi-e foame, mi-e sete, mi-e somn, mi-e frică*",
+    "understand and give commands: *luați!* for someone you address formally, *ia!* and *nu lua!* for a friend"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — La cabinetul medical",
+      "intro": "Budi hasn't felt well since yesterday, so this morning he goes to a doctor's office near Piața Obor. The doctor addresses him with *dumneavoastră*. The last two lines happen at the apartment, when Andrei takes over as nurse — with *tu*.",
+      "lines": [
+        {
+          "speaker": "Doctorul:",
+          "text": "Bună ziua! Luați loc, vă rog. Ce vă doare?",
+          "id": "Good morning! Have a seat, please. What's hurting?",
+          "literal": "good-f day-the! you-pl-take place, you I-ask. what you it-hurts?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bună ziua, domnule doctor. Mă doare capul și mă doare gâtul.",
+          "id": "Good morning, doctor. My head hurts and my throat hurts.",
+          "literal": "good-f day-the, mister-voc doctor. me it-hurts head-the and me it-hurts throat-the."
+        },
+        {
+          "speaker": "Doctorul:",
+          "text": "De când nu vă simțiți bine?",
+          "id": "How long have you been feeling unwell?",
+          "literal": "from when not yourself-polite you-feel well?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "De ieri. Nu mă simt bine deloc: am febră și tușesc.",
+          "id": "Since yesterday. I don't feel well at all: I have a fever and I'm coughing.",
+          "literal": "from yesterday. not myself I-feel well at-all: I-have fever and I-cough."
+        },
+        {
+          "speaker": "Doctorul:",
+          "text": "Vă dor și picioarele?",
+          "id": "Do your legs hurt too?",
+          "literal": "you they-hurt also leg-pl-the?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Da, mă dor picioarele și mi-e frig tot timpul.",
+          "id": "Yes, my legs hurt and I feel cold all the time.",
+          "literal": "yes, me they-hurt leg-pl-the and to-me-is cold all time-the."
+        },
+        {
+          "speaker": "Doctorul:",
+          "text": "Deschideți gura și spuneți „A”. Aveți gâtul roșu, dar nu este nimic grav: este doar o răceală.",
+          "id": "Open your mouth and say \"Ah\". Your throat is red, but it's nothing serious: it's just a cold.",
+          "literal": "you-pl-open mouth-the and you-pl-say „A”. you-have throat-the red, but not is nothing serious: is only a-f cold."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Trebuie să iau antibiotice?",
+          "id": "Do I need to take antibiotics?",
+          "literal": "must that I-take antibiotic-pl?"
+        },
+        {
+          "speaker": "Doctorul:",
+          "text": "Nu, nu este nevoie. Poftiți rețeta: luați o pastilă de trei ori pe zi, după masă. Beți mult ceai cald și stați acasă două-trei zile.",
+          "id": "No, there's no need. Here's the prescription: take one pill three times a day, after meals. Drink lots of hot tea and stay home for two or three days.",
+          "literal": "no, not is need. here-you-are prescription-the: you-pl-take a-f pill of three times per day, after meal. you-pl-drink much tea warm and you-pl-stay at-home two-three day-pl."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Am înțeles. Mulțumesc mult, domnule doctor.",
+          "id": "I understand. Thank you very much, doctor.",
+          "literal": "I-have understood. I-thank much, mister-voc doctor."
+        },
+        {
+          "speaker": "Doctorul:",
+          "text": "Cu plăcere. Multă sănătate!",
+          "id": "You're welcome. Get well soon!",
+          "literal": "with pleasure. much-f health!"
+        },
+        {
+          "speaker": "Andrei:",
+          "text": "Gata, acum stai în pat și bea ceaiul ăsta. Și nu ieși din casă!",
+          "id": "Right, now stay in bed and drink this tea. And don't go out!",
+          "literal": "done, now stay in bed and drink tea-the this. and not go-out from house!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mulțumesc, Andrei. Mi-e somn și mi-e sete.",
+          "id": "Thanks, Andrei. I'm sleepy and thirsty.",
+          "literal": "I-thank, Andrei. to-me-is sleep and to-me-is thirst."
+        }
+      ],
+      "notes": [
+        "**Mă doare capul — not \"capul meu doare\".** This is the heart of the unit. The verb *a durea* means \"to hurt (someone)\": the aching part (*capul*) is the **subject**, and you are the one affected, in the accusative form *mă*. Literally \"the head hurts me\". Since the owner is already clear from *mă*, the body part just takes the definite article — no *meu*. The pattern is the same as *îmi place* in unit 10: the thing talked about is the subject, and you just feel the effect.",
+        "**Mă dor picioarele.** Since the body part is the subject, the verb agrees with **the body part**, not with the person: one → *doare*, several → *dor*. *Mă doare un picior* (one leg), *mă dor picioarele* (both). Exactly like *place* versus *plac*.",
+        "**Luați, deschideți, spuneți, beți, stați** — all the doctor's commands are polite imperatives, and they are identical to the *voi* form of the present tense. You've been using them since unit 6 without noticing: *Scuzați-mă*, *Mergeți drept înainte*, *Traversați*. Nothing new to learn.",
+        "**Stai, bea, nu ieși.** Andrei uses *tu*, so his commands are short: *stai!* (stay), *bea!* (drink). The negative has an odd but easy rule: **nu + infinitive** — *nu ieși!*, *nu lua!*, *nu bea!*. So \"don't drink\" isn't *nu bei* but *nu bea*.",
+        "**De trei ori pe zi** = three times a day. The pattern: *o dată* (once), *de două ori* (twice), *de trei ori*, then *pe zi / pe săptămână / pe lună*. And *domnule doctor* is the form of address (vocative) of *domnul* — doctors in Romania are always addressed this way, or *doamna doctor* for a woman doctor."
+      ],
+      "grammars": [
+        {
+          "title": "Mă doare versus mă dor — the aching part is the subject",
+          "body": [
+            "English says \"my head hurts\"; Romanian says \"the head hurts me\". The person in pain appears as an **accusative** pronoun from unit 12 (*mă, te, îl, o, ne, vă, îi, le*), and the body part takes the definite article.",
+            "The verb has only two forms to remember: **doare** for one body part, **dor** for more than one."
+          ],
+          "table": {
+            "head": [
+              "Who",
+              "Pronoun",
+              "One: doare",
+              "Several: dor"
+            ],
+            "rows": [
+              [
+                "eu",
+                "**mă**",
+                "*Mă doare capul.*",
+                "*Mă dor ochii.*"
+              ],
+              [
+                "tu",
+                "**te**",
+                "*Te doare stomacul?*",
+                "*Te dor picioarele?*"
+              ],
+              [
+                "el",
+                "**îl**",
+                "*Îl doare spatele.*",
+                "*Îl dor dinții.*"
+              ],
+              [
+                "ea",
+                "**o**",
+                "*O doare gâtul.*",
+                "*O dor urechile.*"
+              ],
+              [
+                "noi",
+                "**ne**",
+                "*Ne doare capul.*",
+                "*Ne dor picioarele.*"
+              ],
+              [
+                "voi / dvs.",
+                "**vă**",
+                "*Ce vă doare?*",
+                "*Vă dor ochii?*"
+              ],
+              [
+                "ei",
+                "**îi**",
+                "*Îi doare burta.*",
+                "*Îi dor mâinile.*"
+              ],
+              [
+                "ele",
+                "**le**",
+                "*Le doare capul.*",
+                "*Le dor picioarele.*"
+              ]
+            ]
+          },
+          "after": [
+            "**If the person is named**, the doubling from unit 12 applies: *Pe Andrei îl doare un dinte.* *Pe Ioana o doare capul.* The short pronoun must still be there.",
+            "**In the past** the pattern follows unit 15: *M-a durut capul toată ziua* (my head hurt all day), *m-au durut picioarele*. The negative is regular: *Nu mă doare nimic* — \"nothing hurts\".",
+            "**Body states use the dative, not the accusative.** The *mi-e cald / mi-e frig* pattern from unit 16 works for every feeling: *mi-e rău* (I feel sick), *mi-e foame* (hungry), *mi-e sete* (thirsty), *mi-e somn* (sleepy), *mi-e frică* (scared). For others just swap the pronoun: *ți-e foame?*, *îi este somn*, *ne e sete*, *vă e frig?*. Don't say *sunt foame* — in Romanian hunger is \"to you\", not \"what you are\"."
+          ]
+        },
+        {
+          "title": "The imperative — telling and forbidding",
+          "body": [
+            "The imperative has only two kinds of listener: **tu** (one person, informal) and **voi / dumneavoastră** (several people, or one person addressed formally). The second form is free — the same as the present tense. The *tu* form needs a little attention."
+          ],
+          "table": {
+            "head": [
+              "Infinitive",
+              "tu",
+              "voi / dumneavoastră",
+              "Negative for tu"
+            ],
+            "rows": [
+              [
+                "a lua — to take",
+                "**ia!**",
+                "luați!",
+                "nu lua!"
+              ],
+              [
+                "a sta — to stay, to stay still",
+                "**stai!**",
+                "stați!",
+                "nu sta!"
+              ],
+              [
+                "a bea — to drink",
+                "**bea!**",
+                "beți!",
+                "nu bea!"
+              ],
+              [
+                "a veni — to come",
+                "**vino!**",
+                "veniți!",
+                "nu veni!"
+              ],
+              [
+                "a spune — to say",
+                "**spune!**",
+                "spuneți!",
+                "nu spune!"
+              ],
+              [
+                "a face — to do",
+                "**fă!**",
+                "faceți!",
+                "nu face!"
+              ],
+              [
+                "a deschide — to open",
+                "**deschide!**",
+                "deschideți!",
+                "nu deschide!"
+              ],
+              [
+                "a aștepta — to wait",
+                "**așteaptă!**",
+                "așteptați!",
+                "nu aștepta!"
+              ],
+              [
+                "a merge — to go",
+                "**mergi!**",
+                "mergeți!",
+                "nu merge!"
+              ]
+            ]
+          },
+          "after": [
+            "**A guide for the *tu* form:** most verbs use the *el/ea* present form — *așteaptă!*, *ascultă!*, *spune!*, *deschide!*, *citește!*. Some others use the *tu* present form, especially verbs with no object: *mergi!*, *dormi!*, *stai!*, *vezi!*. A few short ones are irregular and very common: **fă!**, **zi!** (say), **vino!**, **fii!** (be — *Fii atent!* \"be careful!\").",
+            "**Negative:** for *tu* use **nu + infinitive without *a*** — *nu lua!*, *nu face!*, *nu fi trist!*. For *voi / dumneavoastră* just put *nu* before the normal form: *nu luați!*, *nu beți cafea!*, *nu mergeți la lucru!*.",
+            "**Short pronouns move after** the command and are hyphenated: *Scuzați-mă!*, *Așteaptă-mă!* (wait for me), *Ia-o!* (take it), *Spune-mi!* (tell me). In the negative they come back in front: *Nu mă aștepta!*. Reflexive verbs behave the same: *Trezește-te!* (wake up!), *Nu te culca târziu!*",
+            "To keep a command from sounding rude, add *te rog* or *vă rog* — or use *Poți să…? / Puteți să…?* from unit 11."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Parts of the body",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Română",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**cap, capete** (n)",
+              "kahp, KAH-peh-teh",
+              "head"
+            ],
+            [
+              "**ochi, ochi** (m)",
+              "ohk'",
+              "eye"
+            ],
+            [
+              "**ureche, urechi** (f)",
+              "oo-REH-keh, oo-REHK'",
+              "ear"
+            ],
+            [
+              "**nas, nasuri** (n)",
+              "nahs, NAH-soor'",
+              "nose"
+            ],
+            [
+              "**gură, guri** (f)",
+              "GOO-ruh, goor'",
+              "mouth"
+            ],
+            [
+              "**dinte, dinți** (m)",
+              "DEEN-teh, deents'",
+              "tooth"
+            ],
+            [
+              "**gât, gâturi** (n)",
+              "gît, GÎ-toor'",
+              "neck; throat"
+            ],
+            [
+              "**spate, spate** (n)",
+              "SPAH-teh",
+              "back"
+            ],
+            [
+              "**stomac, stomacuri** (n)",
+              "stoh-MAHK",
+              "stomach"
+            ],
+            [
+              "**burtă, burți** (f)",
+              "BOOR-tuh, boorts'",
+              "belly"
+            ],
+            [
+              "**mână, mâini** (f)",
+              "MÎ-nuh, mîyn'",
+              "hand"
+            ],
+            [
+              "**deget, degete** (n)",
+              "DEH-jeht, DEH-jeh-teh",
+              "finger"
+            ],
+            [
+              "**picior, picioare** (n)",
+              "pee-CHOHR, pee-CHWAH-reh",
+              "leg; foot"
+            ],
+            [
+              "**genunchi, genunchi** (m)",
+              "jeh-NOONK'",
+              "knee"
+            ],
+            [
+              "**inimă, inimi** (f)",
+              "EE-nee-muh, EE-neem'",
+              "heart"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "After *mă doare* and *mă dor* body parts always take the definite article, so get your ear used to these forms: *capul, gâtul, stomacul, piciorul, spatele* · *gura, mâna, burta, inima* · *ochii, dinții, genunchii* · *urechile, mâinile, picioarele, degetele*. Note *mână → mâini*: the plural is irregular, and since hands usually come in pairs, it's the plural you'll hear most. *Spate* doesn't change in the plural, while *ochi* and *genunchi* are the same in singular and plural — the difference shows only in the article: *ochiul* (the eye, one) versus *ochii* (both eyes)."
+        },
+        {
+          "type": "kotak",
+          "title": "The kissed hand: Sărut mâna",
+          "items": [
+            "***Sărut mâna*** literally means \"I kiss the hand\" — a respectful greeting used by men to women, and by younger people to older women. Nobody actually kisses the hand anymore; only the phrase remains.",
+            "Budi uses it with Mrs. Popescu every morning. It isn't used with older men; *Bună ziua* is enough.",
+            "Children also say it as \"thank you\" to a grandmother or aunt after a meal. The usual reply: *Să crești mare!* — \"may you grow up big!\""
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Symptoms and the pharmacy",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Română",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**febră** (f)",
+              "FEH-bruh",
+              "fever"
+            ],
+            [
+              "**tuse** (f)",
+              "TOO-seh",
+              "cough"
+            ],
+            [
+              "**răceală, răceli** (f)",
+              "ruh-CHAH-luh, ruh-CHEHL'",
+              "cold, chill"
+            ],
+            [
+              "**gripă** (f)",
+              "GREE-puh",
+              "flu"
+            ],
+            [
+              "**durere, dureri** (f)",
+              "doo-REH-reh, doo-REHR'",
+              "pain, ache"
+            ],
+            [
+              "**rețetă, rețete** (f)",
+              "reh-TSEH-tuh, reh-TSEH-teh",
+              "prescription"
+            ],
+            [
+              "**pastilă, pastile** (f)",
+              "pahs-TEE-luh, pahs-TEE-leh",
+              "pill, tablet"
+            ],
+            [
+              "**sirop, siropuri** (n)",
+              "see-ROHP",
+              "syrup"
+            ],
+            [
+              "**medicament, medicamente** (n)",
+              "meh-dee-kah-MEHNT",
+              "medicine"
+            ],
+            [
+              "**farmacie, farmacii** (f)",
+              "fahr-mah-CHEE-eh, fahr-mah-CHEEY",
+              "pharmacy"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Nu mă simt bine.* · *Mi-e rău.*",
+              "I don't feel well. · I feel sick."
+            ],
+            [
+              "*Sunt răcit.* (m) · *Sunt răcită.* (f)",
+              "I have a cold."
+            ],
+            [
+              "*Am o durere de cap.*",
+              "I have a headache."
+            ],
+            [
+              "*Îmi curge nasul.*",
+              "My nose is running."
+            ],
+            [
+              "*Aveți ceva pentru tuse?*",
+              "Do you have anything for a cough?"
+            ],
+            [
+              "*Am nevoie de rețetă?*",
+              "Do I need a prescription?"
+            ],
+            [
+              "*Sunt alergic la…* (m) · *Sunt alergică la…* (f)",
+              "I'm allergic to…"
+            ],
+            [
+              "*De câte ori pe zi?*",
+              "How many times a day?"
+            ],
+            [
+              "*Înainte sau după masă?*",
+              "Before or after meals?"
+            ],
+            [
+              "*Însănătoșire grabnică!*",
+              "Get well soon!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Good news for English speakers: half the Romanian medical vocabulary looks familiar — *doctor, farmacie, sirop, pastilă, antibiotic, alergic, gripă, temperatură, vitamină*. It's the everyday words that need practice: *răceală* comes from *rece* (cold), just like the English \"a cold\". *Îmi curge nasul* is literally \"the nose runs to me\" — a possessive dative that comes at the next level; for now learn it whole."
+        },
+        {
+          "type": "kotak",
+          "title": "Getting sick in Romania: what to know",
+          "items": [
+            "**112** is the single emergency number — ambulance, police, fire department. Pharmacies are marked with a green cross, and antibiotics are only given with a *rețetă*.",
+            "**Sănătate!** or **Noroc!** is what you say when someone sneezes — Romania's \"bless you\". *Multă sănătate!* is a common wish when leaving a sick person — and on birthdays, too.",
+            "**Curentul** — the cross-breeze from two open windows — is blamed by many Romanians for colds, earaches, and stiff necks. You'll hear *Te trage curentul!* (\"you'll catch a draft!\") from Mrs. Popescu the moment a window and a door are open at the same time.",
+            "The first home remedy offered is almost always tea: *ceai de tei* (linden blossom) or *ceai de mușețel* (chamomile), with honey and lemon."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 15",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Romanian column, read the English, then rebuild the sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Română"
+          ],
+          "rows": [
+            [
+              "On Saturday I woke up late.",
+              "*Sâmbătă m-am trezit târziu.*"
+            ],
+            [
+              "We strolled around the Old Town.",
+              "*Ne-am plimbat prin Centrul Vechi.*"
+            ],
+            [
+              "I went to the mountains with friends.",
+              "*Am mers la munte cu prietenii.*"
+            ],
+            [
+              "I didn't have time.",
+              "*Nu am avut timp.*"
+            ],
+            [
+              "Did you like it? — Yes, I liked it a lot.",
+              "*Ți-a plăcut? — Da, mi-a plăcut mult.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ro": "doctor, doctori",
+      "baca": "DOHK-tohr, DOHK-tohr'",
+      "en": "doctor (m)"
+    },
+    {
+      "ro": "a durea (mă doare)",
+      "baca": "ah doo-RYAH (muh DWAH-reh)",
+      "en": "to hurt, to ache"
+    },
+    {
+      "ro": "a se simți (mă simt)",
+      "baca": "ah seh seem-TSEE (muh seemt)",
+      "en": "to feel (physically)"
+    },
+    {
+      "ro": "a tuși (tușesc)",
+      "baca": "ah too-SHEE (too-SHEHSK)",
+      "en": "to cough"
+    },
+    {
+      "ro": "a lua (iau)",
+      "baca": "ah loo-AH (yow)",
+      "en": "to take; to take (medicine)"
+    },
+    {
+      "ro": "a sta (stau)",
+      "baca": "ah stah (stow)",
+      "en": "to stay, to keep still, to be"
+    },
+    {
+      "ro": "a deschide (deschid)",
+      "baca": "ah dehs-KEE-deh (dehs-KEED)",
+      "en": "to open"
+    },
+    {
+      "ro": "a ieși (ies)",
+      "baca": "ah yeh-SHEE (yehs)",
+      "en": "to go out"
+    },
+    {
+      "ro": "sănătate",
+      "baca": "suh-nuh-TAH-teh",
+      "en": "health (f)"
+    },
+    {
+      "ro": "bolnav, bolnavă",
+      "baca": "bohl-NAHV, bohl-NAH-vuh",
+      "en": "sick, ill (of a person)"
+    },
+    {
+      "ro": "grav",
+      "baca": "grahv",
+      "en": "serious, severe"
+    },
+    {
+      "ro": "nevoie",
+      "baca": "neh-VOH-yeh",
+      "en": "need (f); *am nevoie de* = I need"
+    },
+    {
+      "ro": "pat, paturi",
+      "baca": "paht, PAH-toor'",
+      "en": "bed (n)"
+    },
+    {
+      "ro": "după masă",
+      "baca": "DOO-puh MAH-suh",
+      "en": "after meals"
+    },
+    {
+      "ro": "de trei ori pe zi",
+      "baca": "deh trey ohr' peh zee",
+      "en": "three times a day"
+    },
+    {
+      "ro": "doar",
+      "baca": "dwahr",
+      "en": "only, just"
+    },
+    {
+      "ro": "gata",
+      "baca": "GAH-tah",
+      "en": "done, that's it; ready"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Romanian.",
+      "items": [
+        "What's hurting? (to someone you address formally)",
+        "My head hurts.",
+        "I have a fever and I'm coughing.",
+        "I don't feel well.",
+        "Take one pill three times a day. (polite)",
+        "I'm sleepy and thirsty."
+      ]
+    },
+    {
+      "prompt": "Fill in doare or dor.",
+      "items": [
+        "Mă ____ capul.",
+        "Mă ____ ochii.",
+        "Te ____ gâtul?",
+        "Îl ____ picioarele.",
+        "Ne ____ spatele.",
+        "O ____ dinții.",
+        "Vă ____ stomacul?",
+        "Pe Andrei îl ____ mâinile."
+      ]
+    },
+    {
+      "prompt": "The doctor says this to Budi. Turn it into an informal (tu) command, like Andrei.",
+      "items": [
+        "Luați o pastilă!",
+        "Stați acasă!",
+        "Beți mult ceai!",
+        "Veniți mâine!",
+        "Spuneți „A”!",
+        "Nu luați antibiotice!",
+        "Nu beți cafea!"
+      ]
+    }
+  ],
+  "answers": [
+    "Ce vă doare? — Mă doare capul. — Am febră și tușesc. — Nu mă simt bine. — Luați o pastilă de trei ori pe zi. — Mi-e somn și mi-e sete.",
+    "doare — dor — doare — dor — doare — dor — doare — dor",
+    "Ia o pastilă! — Stai acasă! — Bea mult ceai! — Vino mâine! — Spune „A”! — Nu lua antibiotice! — Nu bea cafea!"
+  ]
+}

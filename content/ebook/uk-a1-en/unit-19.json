@@ -1,0 +1,591 @@
+{
+  "title": "At the pharmacy: it's my head that hurts, not me",
+  "title_target": "В аптеці — V aptetsi",
+  "goal": "Say which part of your body hurts, buy medicine, and understand why in Ukrainian it isn't you who hurts, but your head.",
+  "bekal": [
+    "name parts of the body",
+    "use болить and болять correctly",
+    "describe simple symptoms",
+    "buy medicine and ask how to take it",
+    "emergency sentences you should memorize"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — The pharmacy two blocks from the dorm",
+      "intro": "Ani has a fever and goes to the pharmacy. Notice how her complaint is built: not \"I have a headache\" but \"at me, the head hurts\". The head is the subject.",
+      "lines": [
+        {
+          "speaker": "Фармацевт:",
+          "text": "[Доброго|DOB-ro-ho] [дня|dnya]. [Чим|Chim] [можу|MO-zhoo] [допомогти|do-po-moh-TI]?",
+          "id": "Good afternoon. How can I help you?",
+          "literal": "good — day. with-what — can — help?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[У|OO] [мене|MEH-neh] [болить|bo-LIT'] [голова|ho-lo-VA]. [І|EE] [горло|HOR-lo].",
+          "id": "I have a headache. And a sore throat.",
+          "literal": "at — me — hurts — head. and — throat."
+        },
+        {
+          "speaker": "Фармацевт:",
+          "text": "[Температура|Tem-peh-ra-TOO-ra] [є|yeh]?",
+          "id": "Do you have a fever?",
+          "literal": "temperature — is-there?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Здається|Zda-YEH-tsya], [є|yeh]. [Тридцять|TRID-tsyat'] [сім|seem] [і|ee] [вісім|VEE-seem].",
+          "id": "I think so. Thirty-seven point eight.",
+          "literal": "it-seems, there-is. thirty — seven — and — eight."
+        },
+        {
+          "speaker": "Фармацевт:",
+          "text": "[Давно|Dav-NO]?",
+          "id": "For how long?",
+          "literal": "long-ago?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Два|Dva] [дні|dnee].",
+          "id": "Two days.",
+          "literal": "two — days."
+        },
+        {
+          "speaker": "Фармацевт:",
+          "text": "[Ось|Os'] [таблетки|tab-LET-ki] [від|veed] [голови|ho-lo-VI]. [І|EE] [чай|chai] [від|veed] [горла|HOR-la].",
+          "id": "Here are tablets for the headache. And tea for your throat.",
+          "literal": "here-are — tablets — against — head (genitive). and — tea — against — throat (genitive)."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Як|Yak] [приймати|priy-MA-ti]?",
+          "id": "How do I take them?",
+          "literal": "how — to-take?"
+        },
+        {
+          "speaker": "Фармацевт:",
+          "text": "[Одну|Od-NOO] [таблетку|tab-LET-koo] [тричі|TRI-chee] [на|na] [день|den'], [після|PEES-lya] [їжі|YEE-zhee].",
+          "id": "One tablet three times a day, after meals.",
+          "literal": "one — tablet (accusative) — three-times — per — day, after — food (genitive)."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Дякую|DYA-koo-yoo]. [А|A] [скільки|SKEEL'-ki] [коштує|KOSH-too-yeh]?",
+          "id": "Thank you. And how much is it?",
+          "literal": "thank-you. and — how-much — costs?"
+        },
+        {
+          "speaker": "Фармацевт:",
+          "text": "[Разом|RA-zom] [двісті|DVEES-tee] [тридцять|TRID-tsyat']. [Якщо|Yak-SHCHO] [не|neh] [стане|STA-neh] [краще|KRA-shcheh] — [до|do] [лікаря|LEE-ka-rya].",
+          "id": "Two hundred thirty altogether. If you don't get better, see a doctor.",
+          "literal": "together — two-hundred — thirty. if — not — becomes — better — to — doctor (genitive)."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Ось|Os']. [Дякую|DYA-koo-yoo] [вам|vam]!",
+          "id": "Here you are. Thank you!",
+          "literal": "here-is. thank — to-you!"
+        }
+      ],
+      "notes": [
+        "**У мене болить голова: the head is the subject.** Literally \"at me, the head hurts\". You don't do anything in this sentence; your body part does. This goes back to the *У мене є* pattern from Unit 4: the owner goes into родовий (genitive), and the thing becomes the subject.",
+        "**Болить for one, болять for several.** *Болить голова* (one head), *болять зуби* (several teeth), *болять ноги* (two legs). ⚠️ The most common mistake: using *болить* for body parts that come in pairs.",
+        "**Таблетки від голови literally means \"tablets from the head\".** The preposition **від** is used for medicine: *від голови*, *від горла*, *від кашлю*, *від температури*. It means \"against\", not \"from\" in the sense of origin. What follows it goes into the genitive.",
+        "**Body temperature is said without a word for the decimal point.** *Тридцять сім і вісім* = 37.8. The word *і* replaces the point. In Ukraine 36.6 °C counts as normal, and from 37 people already call it a *температура*.",
+        "**Приймати ліки, not пити ліки.** For medicine, the verb is *приймати* (to take). *Пити* is used only when the medicine really is a liquid. Notice that *приймати* also means \"to receive\": *приймати гостей* (to receive guests).",
+        "**Тричі на день = three times a day.** Special forms: *раз* (once), *двічі* (twice), *тричі* (three times). From four times on, the usual forms are used: *чотири рази*, *п'ять разів*.",
+        "**Якщо = if, as a condition.** Don't mix it up with *коли* (when). *Якщо не стане краще* (if you don't get better) versus *Коли стане краще* (when you get better). Two words that separate possibility from certainty."
+      ],
+      "grammars": [
+        {
+          "title": "Болить and болять",
+          "body": [],
+          "table": {
+            "head": [
+              "Ukrainian",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "У мене болить голова.",
+                "oo MEH-neh bo-LIT'",
+                "I have a headache."
+              ],
+              [
+                "У мене болить горло.",
+                "HOR-lo",
+                "I have a sore throat."
+              ],
+              [
+                "У мене болить живіт.",
+                "zhi-VEET",
+                "I have a stomachache."
+              ],
+              [
+                "У мене болить спина.",
+                "spi-NA",
+                "My back hurts."
+              ],
+              [
+                "У мене болять зуби.",
+                "bo-LYAT' ZOO-bi",
+                "I have a toothache."
+              ],
+              [
+                "У мене болять ноги.",
+                "NO-hi",
+                "My legs hurt."
+              ],
+              [
+                "У нього болить вухо.",
+                "oo NYO-ho",
+                "He has an earache."
+              ],
+              [
+                "У неї нічого не болить.",
+                "oo NEH-yee",
+                "Nothing hurts her."
+              ]
+            ]
+          },
+          "after": [
+            "For the past: *боліла голова* (f), *болів живіт* (m), *боліли зуби* (pl). The ending follows the body part, not the person."
+          ]
+        },
+        {
+          "title": "Parts of the body",
+          "body": [],
+          "table": {
+            "head": [
+              "Українська",
+              "Say it",
+              "Gender",
+              "English"
+            ],
+            "rows": [
+              [
+                "голова",
+                "ho-lo-VA",
+                "вона",
+                "head"
+              ],
+              [
+                "обличчя",
+                "ob-LICH-chya",
+                "воно",
+                "face"
+              ],
+              [
+                "око, очі",
+                "O-ko, O-chee",
+                "воно",
+                "eye, eyes"
+              ],
+              [
+                "вухо, вуха",
+                "VOO-kho, VOO-kha",
+                "воно",
+                "ear, ears"
+              ],
+              [
+                "ніс",
+                "nees",
+                "він",
+                "nose"
+              ],
+              [
+                "рот",
+                "rot",
+                "він",
+                "mouth"
+              ],
+              [
+                "зуб, зуби",
+                "zoob, ZOO-bi",
+                "він",
+                "tooth, teeth"
+              ],
+              [
+                "горло",
+                "HOR-lo",
+                "воно",
+                "throat"
+              ],
+              [
+                "шия",
+                "SHI-ya",
+                "вона",
+                "neck"
+              ],
+              [
+                "рука, руки",
+                "roo-KA, ROO-ki",
+                "вона",
+                "hand, arm"
+              ],
+              [
+                "нога, ноги",
+                "no-HA, NO-hi",
+                "вона",
+                "leg, foot"
+              ],
+              [
+                "спина",
+                "spi-NA",
+                "вона",
+                "back"
+              ],
+              [
+                "живіт",
+                "zhi-VEET",
+                "він",
+                "stomach, belly"
+              ],
+              [
+                "серце",
+                "SER-tseh",
+                "воно",
+                "heart"
+              ],
+              [
+                "палець",
+                "PA-lets'",
+                "він",
+                "finger"
+              ]
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Symptoms, medicine, and emergency sentences",
+      "blocks": [
+        {
+          "type": "sub",
+          "text": "Describing how you feel"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Ukrainian",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Я погано себе почуваю.",
+              "po-HA-no seh-BEH po-choo-VA-yoo",
+              "I don't feel well."
+            ],
+            [
+              "У мене температура.",
+              "tem-peh-ra-TOO-ra",
+              "I have a fever."
+            ],
+            [
+              "У мене кашель.",
+              "KA-shel'",
+              "I have a cough."
+            ],
+            [
+              "У мене нежить.",
+              "NEH-zhit'",
+              "I have a runny nose."
+            ],
+            [
+              "Мене нудить.",
+              "meh-NEH NOO-dit'",
+              "I feel sick (nauseous)."
+            ],
+            [
+              "Я застудився / застудилася.",
+              "za-stoo-DIV-sya",
+              "I've caught a cold. (m / f)"
+            ],
+            [
+              "У мене алергія на ___.",
+              "a-ler-HEE-ya",
+              "I'm allergic to ___."
+            ],
+            [
+              "Мені краще.",
+              "meh-NEE KRA-shcheh",
+              "I feel better."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "At the pharmacy"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Українська",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "аптека",
+              "ap-TEH-ka",
+              "pharmacy"
+            ],
+            [
+              "ліки",
+              "LEE-ki",
+              "medicine"
+            ],
+            [
+              "таблетка",
+              "tab-LET-ka",
+              "tablet, pill"
+            ],
+            [
+              "сироп",
+              "si-ROP",
+              "syrup"
+            ],
+            [
+              "краплі",
+              "KRAP-lee",
+              "drops"
+            ],
+            [
+              "пластир",
+              "PLAS-tir",
+              "band-aid"
+            ],
+            [
+              "рецепт",
+              "reh-TSEPT",
+              "prescription"
+            ],
+            [
+              "без рецепта",
+              "bez reh-TSEP-ta",
+              "without a prescription"
+            ],
+            [
+              "лікар",
+              "LEE-kar",
+              "doctor"
+            ],
+            [
+              "лікарня",
+              "lee-KAR-nya",
+              "hospital"
+            ],
+            [
+              "швидка допомога",
+              "SHVID-ka do-po-MO-ha",
+              "ambulance"
+            ],
+            [
+              "страховка",
+              "stra-KHOV-ka",
+              "insurance"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Emergency sentences: learn them, and hope you never need them",
+          "items": [
+            "**Допоможіть!** (*do-po-mo-ZHEET'*) — Help!",
+            "**Викличте швидку!** (*VI-klich-teh SHVID-koo*) — Call an ambulance!",
+            "**Мені погано.** — I feel really unwell.",
+            "**Я не місцевий / не місцева. Мій номер телефону ___.** — I'm not from here. My phone number is ___.",
+            "**У мене алергія на ліки.** — I'm allergic to medication.",
+            "⚠️ Emergency numbers in Ukraine: **103** for an ambulance, **102** police, **101** fire department, and **112** for all of them at once."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uk": "боліти",
+      "baca": "bo-LEE-ti",
+      "en": "to hurt, ache"
+    },
+    {
+      "uk": "болить / болять",
+      "baca": "bo-LIT' / bo-LYAT'",
+      "en": "hurts (one / several)"
+    },
+    {
+      "uk": "голова",
+      "baca": "ho-lo-VA",
+      "en": "head"
+    },
+    {
+      "uk": "горло",
+      "baca": "HOR-lo",
+      "en": "throat"
+    },
+    {
+      "uk": "живіт",
+      "baca": "zhi-VEET",
+      "en": "stomach, belly"
+    },
+    {
+      "uk": "спина",
+      "baca": "spi-NA",
+      "en": "back"
+    },
+    {
+      "uk": "зуб",
+      "baca": "zoob",
+      "en": "tooth"
+    },
+    {
+      "uk": "рука",
+      "baca": "roo-KA",
+      "en": "hand, arm"
+    },
+    {
+      "uk": "нога",
+      "baca": "no-HA",
+      "en": "leg, foot"
+    },
+    {
+      "uk": "око",
+      "baca": "O-ko",
+      "en": "eye"
+    },
+    {
+      "uk": "температура",
+      "baca": "tem-peh-ra-TOO-ra",
+      "en": "fever, temperature"
+    },
+    {
+      "uk": "кашель",
+      "baca": "KA-shel'",
+      "en": "cough"
+    },
+    {
+      "uk": "нежить",
+      "baca": "NEH-zhit'",
+      "en": "runny nose"
+    },
+    {
+      "uk": "застудитися",
+      "baca": "za-stoo-DI-ti-sya",
+      "en": "to catch a cold"
+    },
+    {
+      "uk": "ліки",
+      "baca": "LEE-ki",
+      "en": "medicine"
+    },
+    {
+      "uk": "таблетка",
+      "baca": "tab-LET-ka",
+      "en": "tablet, pill"
+    },
+    {
+      "uk": "рецепт",
+      "baca": "reh-TSEPT",
+      "en": "prescription"
+    },
+    {
+      "uk": "приймати",
+      "baca": "priy-MA-ti",
+      "en": "to take (medicine)"
+    },
+    {
+      "uk": "тричі на день",
+      "baca": "TRI-chee na den'",
+      "en": "three times a day"
+    },
+    {
+      "uk": "після їжі",
+      "baca": "PEES-lya YEE-zhee",
+      "en": "after meals"
+    },
+    {
+      "uk": "лікар",
+      "baca": "LEE-kar",
+      "en": "doctor"
+    },
+    {
+      "uk": "лікарня",
+      "baca": "lee-KAR-nya",
+      "en": "hospital"
+    },
+    {
+      "uk": "швидка допомога",
+      "baca": "SHVID-ka do-po-MO-ha",
+      "en": "ambulance"
+    },
+    {
+      "uk": "допоможіть",
+      "baca": "do-po-mo-ZHEET'",
+      "en": "help!"
+    },
+    {
+      "uk": "якщо",
+      "baca": "yak-SHCHO",
+      "en": "if (condition)"
+    },
+    {
+      "uk": "краще",
+      "baca": "KRA-shcheh",
+      "en": "better"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in болить or болять.",
+      "items": [
+        "У мене ____ голова.",
+        "У мене ____ зуби.",
+        "У нього ____ горло.",
+        "У неї ____ ноги.",
+        "У них ____ живіт."
+      ]
+    },
+    {
+      "prompt": "Write these body parts in Ukrainian.",
+      "items": [
+        "head",
+        "throat",
+        "stomach",
+        "hand",
+        "leg"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "болить / у мене / голова",
+        "температура / є",
+        "приймати / як",
+        "день / тричі / на",
+        "їжі / після"
+      ]
+    },
+    {
+      "prompt": "Translate into Ukrainian.",
+      "items": [
+        "I have a headache.",
+        "My throat hurts too.",
+        "For two days already.",
+        "How do I take them?",
+        "One tablet three times a day, after meals."
+      ]
+    }
+  ],
+  "answers": [
+    "болить — болять — болить — болять — болить",
+    "голова — горло — живіт — рука — нога",
+    "У мене болить голова. — Температура є? — Як приймати? — Тричі на день. — Після їжі.",
+    "У мене болить голова. — У мене також болить горло. — Вже два дні. — Як приймати? — Одну таблетку тричі на день, після їжі."
+  ],
+  "wave": "Go back over Unit 4. *У мене є брат* and *У мене болить голова* have the same structure, and now you can see it at a glance."
+}

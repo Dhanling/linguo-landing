@@ -1,0 +1,590 @@
+{
+  "title": "Two faces of every action",
+  "title_target": "Čitao sam, ali nisam pročitao",
+  "goal": "Recognize *vid* (aspect) — the fact that almost every Bosnian verb comes in two forms, one for an action in progress and one for a completed action — and know which to use when.",
+  "bekal": [
+    "recognizing *vid* pairs and noting down new verbs in pairs",
+    "choosing the *nesvršeni* (imperfective) form for processes and habits, *svršeni* (perfective) for results",
+    "understanding why the perfective in the present tense actually points to the future"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Jesi li pročitao knjigu?",
+      "intro": "Amina lent Budi a novel two weeks ago, and today she wants it back — half joking.",
+      "lines": [
+        {
+          "speaker": "Amina:",
+          "text": "Budi, jesi li pročitao onu knjigu koju sam ti dala?",
+          "id": "Budi, have you finished that book I gave you?",
+          "literal": "Budi, you-are whether read-through-m that-acc-f book which-acc-f I-am to-you given-f?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Čitao sam je, ali nisam je pročitao. Teška je.",
+          "id": "I've been reading it, but I haven't finished it. It's heavy going.",
+          "literal": "read-m I-am it-acc, but I-am-not it-acc read-through-m. heavy-f it-is."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Koliko si stranica pročitao?",
+          "id": "How many pages have you read?",
+          "literal": "how-many you-are page-gen-pl read-through-m?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Pedeset. Čitam svako veče po malo.",
+          "id": "Fifty. I read a little every evening.",
+          "literal": "fifty. I-read every-n evening by little."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "To je dobro. A jesi li napisao izvještaj?",
+          "id": "That's good. And have you finished writing the report?",
+          "literal": "that it-is good. and you-are whether written-through-m report-acc?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Pisao sam ga cijelo popodne, ali još nije gotov.",
+          "id": "I was writing it all afternoon, but it's not done yet.",
+          "literal": "written-m I-am it-acc whole-n afternoon, but still not-it-is finished-m."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Ha! Znači, radio si, ali nisi uradio.",
+          "id": "Ha! So you worked on it, but you didn't get it done.",
+          "literal": "ha! means, worked-m you-are, but you-are-not done-m."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tačno tako. Bosanski me je naučio jednoj stvari.",
+          "id": "Exactly. Bosnian has taught me one thing.",
+          "literal": "exactly so. Bosnian me-acc it-is taught-m one-dat-f thing-dat."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Kojoj?",
+          "id": "What's that?",
+          "literal": "which-dat-f?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Da postoji razlika između \"raditi\" i \"uraditi\".",
+          "id": "That \"raditi\" and \"uraditi\" are different.",
+          "literal": "that it-exists difference between \"work\" and \"get-done\"."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Sad si pravi Bosanac. Jesi li kupio kafu?",
+          "id": "Now you're a real Bosnian. Did you buy the coffee?",
+          "literal": "now you-are real-m Bosnian. you-are whether bought-m coffee-acc?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kupovao sam je jučer, ali nisam kupio — nije bilo u prodavnici.",
+          "id": "I tried to buy it yesterday, but didn't manage — the shop was out.",
+          "literal": "buying-m I-am it-acc yesterday, but I-am-not bought-m — not-it-is been-n in shop-loc."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Onda idemo po kafu. Odmah.",
+          "id": "Then let's go get coffee. Right now.",
+          "literal": "then we-go for coffee-acc. immediately."
+        }
+      ],
+      "notes": [
+        "***Čitao sam, ali nisam pročitao* — one sentence that sums up this whole unit.** The first verb says **the process happened**; the second says **the result was not reached**. English does the same thing with tenses and extra words (\"I was reading\" vs \"I've finished reading\"); Bosnian does it with two different verbs.",
+        "***Radio si, ali nisi uradio*** is a joke that only works in Slavic languages — \"you worked, but you didn't get it done\". If you can see why that sentence is funny, you already understand *vid*.",
+        "***Kupovao sam, ali nisam kupio*** shows the same thing with a verb whose partner isn't just a prefix: *kupovati* (be shopping, try to buy) vs *kupiti* (succeed in buying). Pairs where the stem changes like this have to be learned whole.",
+        "***Po malo* means \"a little at a time\".** The preposition *po* is used for sharing out: *po malo* (bit by bit), *po jedan* (one each, one by one), *dva puta po sat* (twice for an hour), *po osobi* (per person).",
+        "**A consolation.** Even native speakers sometimes hesitate over the right aspect for a rarely used verb, and a wrong choice **almost never makes your sentence impossible to understand** — it just sounds a little off. So don't hold back from speaking until you've mastered it; what matters is starting to note verbs down in pairs from today."
+      ],
+      "grammars": [
+        {
+          "title": "Dva vida — and how the pairs are formed",
+          "body": [
+            "Almost every action in Bosnian has two verbs: **nesvršeni** (imperfective — a process, a habit, an ongoing state) and **svršeni** (perfective — one complete action, with a result)."
+          ],
+          "table": {
+            "head": [
+              "Nesvršeni",
+              "Svršeni",
+              "Meaning",
+              "How it's formed"
+            ],
+            "rows": [
+              [
+                "*čitati*",
+                "**pro**čitati",
+                "read",
+                "prefix *pro-*"
+              ],
+              [
+                "*pisati*",
+                "**na**pisati",
+                "write",
+                "prefix *na-*"
+              ],
+              [
+                "*raditi*",
+                "**u**raditi",
+                "do, work",
+                "prefix *u-*"
+              ],
+              [
+                "*jesti*",
+                "**po**jesti",
+                "eat",
+                "prefix *po-*"
+              ],
+              [
+                "*piti*",
+                "**po**piti",
+                "drink",
+                "prefix *po-*"
+              ],
+              [
+                "*učiti*",
+                "**na**učiti",
+                "study → learn, master",
+                "prefix *na-*"
+              ],
+              [
+                "*gledati*",
+                "**po**gledati",
+                "watch → take a look",
+                "prefix *po-*"
+              ],
+              [
+                "*kupovati*",
+                "*kupiti*",
+                "buy",
+                "stem changes"
+              ],
+              [
+                "*davati*",
+                "*dati*",
+                "give",
+                "stem changes"
+              ],
+              [
+                "*dolaziti*",
+                "*doći*",
+                "come",
+                "stem changes"
+              ],
+              [
+                "*govoriti*",
+                "*reći*",
+                "speak → say",
+                "a different word"
+              ],
+              [
+                "*vraćati se*",
+                "*vratiti se*",
+                "come back",
+                "stem changes"
+              ]
+            ]
+          },
+          "after": [
+            "**A prefix doesn't always just mean \"finish\" — sometimes it changes the meaning.** *Pisati* (write) → *napisati* (finish writing), but also *potpisati* (sign), *prepisati* (copy), *opisati* (describe), *zapisati* (note down). All are perfective verbs, but their meanings differ. This is how Bosnian grows its vocabulary: one stem, a dozen prefixes.",
+            "**When a prefix changes the meaning, Bosnian makes yet another pair** by lengthening the stem: *potpisati* (perfective) pairs with *potpisivati* (imperfective). You don't need to build these yourself yet; just know that the endings *-ivati* and *-avati* almost always mark an imperfective form.",
+            "**Some verbs have no partner at all**, because their meaning can't be \"finished\": *biti* (be), *imati* (have), *moći* (can), *znati* (know), *voljeti* (love), *živjeti* (live). It's a small group, and they're all verbs of state.",
+            "**The right way to learn from today on:** note verbs down **in pairs**, not one by one. Not *čitati*, but *čitati / pročitati*. It's the biggest investment you can make before A2, because the whole past and future depend on it."
+          ]
+        },
+        {
+          "title": "Which one when",
+          "body": [
+            "Three rules cover almost every situation you'll meet at A1."
+          ],
+          "table": {
+            "head": [
+              "Situation",
+              "Aspect",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "happening right now",
+                "**nesvršeni**",
+                "*Čitam knjigu.*",
+                "I'm reading a book."
+              ],
+              [
+                "habit, repeated",
+                "**nesvršeni**",
+                "*Svaki dan čitam.*",
+                "I read every day."
+              ],
+              [
+                "past — the process",
+                "**nesvršeni**",
+                "*Čitao sam cijeli dan.*",
+                "I was reading all day."
+              ],
+              [
+                "past — the result",
+                "**svršeni**",
+                "*Pročitao sam knjigu.*",
+                "I've finished the book."
+              ],
+              [
+                "future, done once",
+                "**svršeni**",
+                "*Pročitat ću je sutra.*",
+                "I'll finish it tomorrow."
+              ],
+              [
+                "after *kada, ako, dok*",
+                "**svršeni**",
+                "*Kada pročitam, javit ću ti.*",
+                "When I've finished, I'll let you know."
+              ],
+              [
+                "after *početi, prestati, voljeti*",
+                "**nesvršeni**",
+                "*Počinjem učiti.*",
+                "I'm starting to study."
+              ]
+            ]
+          },
+          "after": [
+            "**The single most important rule: a *svršeni* form NEVER means \"now\".** *Čitam* = I'm reading; *pročitam* does **not** mean \"I'm finishing reading\" but something that hasn't happened yet. That's why *pročitam* almost always appears after *kada* (when), *ako* (if), or as part of the future.",
+            "**Negation brings the difference to the surface.** *Nisam čitao knjigu* = I didn't read the book at all. *Nisam pročitao knjigu* = I read some of it, but didn't finish. One prefix, two very different pieces of news — and this is where the choice of aspect really matters.",
+            "**Adverbs are often a clue.** *Cijeli dan, često, obično, svaki dan, dugo* pull toward the imperfective. *Odjednom, konačno, brzo, jednom* pull toward the perfective. If in doubt, look at the time expression first.",
+            "**A self-check:** ask \"does this sentence have an end point?\" *Jučer sam pisao* (yesterday I was writing — finished or not, who knows) vs *Jučer sam napisao pismo* (yesterday the letter got written). If there's a result you could point to, use the perfective."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The aspect pairs you'll need most",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Thirty pairs that cover almost all everyday conversation. Copy them into your notes as pairs — the first two columns, always side by side."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Nesvršeni",
+            "Svršeni",
+            "Meaning",
+            "Nesvršeni",
+            "Svršeni",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*čitati*",
+              "*pročitati*",
+              "read",
+              "*kupovati*",
+              "*kupiti*",
+              "buy"
+            ],
+            [
+              "*pisati*",
+              "*napisati*",
+              "write",
+              "*plaćati*",
+              "*platiti*",
+              "pay"
+            ],
+            [
+              "*jesti*",
+              "*pojesti*",
+              "eat",
+              "*davati*",
+              "*dati*",
+              "give"
+            ],
+            [
+              "*piti*",
+              "*popiti*",
+              "drink",
+              "*uzimati*",
+              "*uzeti*",
+              "take"
+            ],
+            [
+              "*raditi*",
+              "*uraditi*",
+              "do",
+              "*dolaziti*",
+              "*doći*",
+              "come"
+            ],
+            [
+              "*učiti*",
+              "*naučiti*",
+              "learn",
+              "*odlaziti*",
+              "*otići*",
+              "leave"
+            ],
+            [
+              "*gledati*",
+              "*pogledati*",
+              "watch",
+              "*vraćati se*",
+              "*vratiti se*",
+              "come back"
+            ],
+            [
+              "*slušati*",
+              "*poslušati*",
+              "listen",
+              "*sjedati*",
+              "*sjesti*",
+              "sit down"
+            ],
+            [
+              "*kuhati*",
+              "*skuhati*",
+              "cook",
+              "*ustajati*",
+              "*ustati*",
+              "get up"
+            ],
+            [
+              "*spremati*",
+              "*spremiti*",
+              "prepare",
+              "*govoriti*",
+              "*reći*",
+              "say"
+            ],
+            [
+              "*tražiti*",
+              "*naći*",
+              "look for → find",
+              "*pitati*",
+              "*upitati*",
+              "ask"
+            ],
+            [
+              "*pomagati*",
+              "*pomoći*",
+              "help",
+              "*javljati se*",
+              "*javiti se*",
+              "get in touch"
+            ],
+            [
+              "*počinjati*",
+              "*početi*",
+              "begin",
+              "*završavati*",
+              "*završiti*",
+              "finish"
+            ],
+            [
+              "*otvarati*",
+              "*otvoriti*",
+              "open",
+              "*zatvarati*",
+              "*zatvoriti*",
+              "close"
+            ],
+            [
+              "*zaboravljati*",
+              "*zaboraviti*",
+              "forget",
+              "*sjećati se*",
+              "*sjetiti se*",
+              "remember"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "One stem, a dozen words",
+          "items": [
+            "From *pisati* (write) come: *napisati* (finish writing), *potpisati* (sign), *prepisati* (copy), *zapisati* (note down), *opisati* (describe), *upisati* (enroll, enter), *ispisati* (write out in full), *raspisati* (announce). Eight verbs from one stem.",
+            "From *ići* (go) come: *doći* (come), *otići* (go away), *ući* (enter), *izaći* (go out), *proći* (pass), *naći* (find), *preći* (cross), *sići* (go down). Notice that the stem changes its sound, but the *-ći* pattern is still visible.",
+            "This is why Bosnian vocabulary grows much faster than you'd expect: once you recognize the stem, you can guess the meaning of words you've never seen. The most common prefixes: *do-* (up to, arrive), *iz-* (out), *na-* (on, finished), *o-* (around), *od-* (away), *po-* (briefly, finished), *pre-* (across, again), *pri-* (toward), *u-* (in), *za-* (start, closed)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 13",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Bosnian column, read the English, and rebuild the sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Bosanski"
+          ],
+          "rows": [
+            [
+              "I like Sarajevo.",
+              "*Sviđa mi se Sarajevo.*"
+            ],
+            [
+              "I like the films.",
+              "*Sviđaju mi se filmovi.*"
+            ],
+            [
+              "I need help.",
+              "*Treba mi pomoć.*"
+            ],
+            [
+              "I like reading and listening to music.",
+              "*Volim čitati i slušati muziku.*"
+            ],
+            [
+              "I prefer tea to coffee.",
+              "*Više volim čaj nego kafu.*"
+            ],
+            [
+              "Thank you (polite).",
+              "*Hvala vam.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bs": "vid (m)",
+      "baca": "veed",
+      "en": "aspect (of a verb)"
+    },
+    {
+      "bs": "pročitati — *pročitam*",
+      "baca": "proh-CHEE-tah-tee",
+      "en": "finish reading"
+    },
+    {
+      "bs": "napisati — *napišem*",
+      "baca": "nah-PEE-sah-tee",
+      "en": "finish writing"
+    },
+    {
+      "bs": "uraditi — *uradim*",
+      "baca": "oo-RAH-dee-tee",
+      "en": "get done, finish"
+    },
+    {
+      "bs": "naučiti — *naučim*",
+      "baca": "nah-OO-chee-tee",
+      "en": "learn, master"
+    },
+    {
+      "bs": "kupiti — *kupim*",
+      "baca": "KOO-pee-tee",
+      "en": "buy (completed)"
+    },
+    {
+      "bs": "uzeti — *uzmem*",
+      "baca": "OO-zeh-tee",
+      "en": "take"
+    },
+    {
+      "bs": "otvoriti / zatvoriti",
+      "baca": "oht-VOH-ree-tee",
+      "en": "open / close"
+    },
+    {
+      "bs": "sjetiti se — *sjetim se*",
+      "baca": "SYEH-tee-tee seh",
+      "en": "remember, recall"
+    },
+    {
+      "bs": "knjiga (f)",
+      "baca": "KNYEE-gah",
+      "en": "book"
+    },
+    {
+      "bs": "stranica (f)",
+      "baca": "STRAH-nee-tsah",
+      "en": "page"
+    },
+    {
+      "bs": "izvještaj (m)",
+      "baca": "eez-VYEHSH-tai",
+      "en": "report"
+    },
+    {
+      "bs": "razlika (f)",
+      "baca": "RAHZ-lee-kah",
+      "en": "difference"
+    },
+    {
+      "bs": "gotov / gotova",
+      "baca": "GOH-tohv",
+      "en": "finished, ready"
+    },
+    {
+      "bs": "po malo",
+      "baca": "poh MAH-loh",
+      "en": "a little at a time"
+    },
+    {
+      "bs": "još",
+      "baca": "yohsh",
+      "en": "still; more"
+    },
+    {
+      "bs": "konačno",
+      "baca": "koh-NAHCH-noh",
+      "en": "finally"
+    },
+    {
+      "bs": "odjednom",
+      "baca": "ohd-YEHD-nohm",
+      "en": "suddenly"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Bosnian (male speaker).",
+      "items": [
+        "I've been reading the book, but I haven't finished it.",
+        "I read a little every evening.",
+        "I've finished writing the report.",
+        "I worked on it, but didn't get it done.",
+        "When I've finished, I'll let you know.",
+        "Yesterday I didn't buy the coffee."
+      ]
+    },
+    {
+      "prompt": "Choose the right aspect.",
+      "items": [
+        "Sada ____ (čitati or pročitati) knjigu.",
+        "Jučer sam ____ (pisati or napisati) pismo i poslao ga.",
+        "Svaki dan ____ (kupovati or kupiti) hljeb.",
+        "Kada ____ (učiti or naučiti) bosanski, ići ću u Mostar.",
+        "Cijeli dan sam ____ (raditi or uraditi).",
+        "Počinjem ____ (učiti or naučiti).",
+        "Konačno sam ____ (jesti or pojesti) sve."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "sam / nisam / ali / čitao / pročitao / ,",
+        "si / ali / radio / uradio / nisi / ,",
+        "izvještaj / sam / napisao",
+        "malo / veče / čitam / svako / po",
+        "kafu / jesi / kupio / li / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Čitao sam knjigu, ali nisam je pročitao. — Svako veče čitam po malo. — Napisao sam izvještaj. — Radio sam, ali nisam uradio. — Kada završim, javit ću ti. — Jučer nisam kupio kafu.",
+    "čitam — napisao — kupujem — naučim — radio — učiti — pojeo",
+    "Čitao sam, ali nisam pročitao. — Radio si, ali nisi uradio. — Napisao sam izvještaj. — Svako veče čitam po malo. — Jesi li kupio kafu?"
+  ]
+}

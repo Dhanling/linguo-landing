@@ -1,0 +1,543 @@
+{
+  "title": "What did you do yesterday?",
+  "title_target": "Ce ai făcut ieri?",
+  "goal": "Talk about things that have happened, using Romanian's everyday past tense: the *perfect compus* — the helper *am, ai, a…* plus a participle that never changes.",
+  "bekal": [
+    "tell what you did yesterday, last week, or last year",
+    "form participles from all four verb groups: *lucrat, vorbit, văzut, făcut, mers*",
+    "use *a fost* to rate an experience and *am fost la…* to say you've been somewhere"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ce ai făcut ieri?",
+      "intro": "Evening at the apartment. Andrei has just come back from Cluj and has hardly seen Budi all week, so there's a lot to ask.",
+      "lines": [
+        {
+          "speaker": "Andrei:",
+          "text": "Salut, Budi! Ce ai făcut ieri? Nu ai fost acasă.",
+          "id": "Hi, Budi! What did you do yesterday? You weren't home.",
+          "literal": "greeting, Budi! what you-have made yesterday? not you-have been at-home."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Am lucrat toată ziua. Am avut o zi lungă la birou.",
+          "id": "I worked all day. I had a long day at the office.",
+          "literal": "I-have worked all-f day-the. I-have had a-f day long-f at office."
+        },
+        {
+          "speaker": "Andrei:",
+          "text": "Și seara? Ai venit târziu.",
+          "id": "And in the evening? You came home late.",
+          "literal": "and evening-the? you-have come late."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Seara am mâncat la restaurant cu Ioana. Am mâncat sarmale cu mămăligă.",
+          "id": "In the evening I ate at a restaurant with Ioana. We had sarmale with mămăligă.",
+          "literal": "evening-the I/we-have eaten at restaurant with Ioana. we-have eaten sarmale with mămăligă."
+        },
+        {
+          "speaker": "Andrei:",
+          "text": "Au fost bune?",
+          "id": "Were they good?",
+          "literal": "they-have been good-f-pl?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Foarte bune! Și tu, ce ai făcut?",
+          "id": "Really good! And you, what did you do?",
+          "literal": "very good-f-pl! and you, what you-have made?"
+        },
+        {
+          "speaker": "Andrei:",
+          "text": "Am stat acasă și am învățat pentru examen. Apoi a fost un film românesc la televizor. Ai văzut filmul?",
+          "id": "I stayed home and studied for my exam. Then there was a Romanian movie on TV. Did you see the movie?",
+          "literal": "I-have stayed at-home and I-have studied for exam. then it-has been a-m movie romanian on television. you-have seen movie-the?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nu, n-am văzut filmul. Am ajuns acasă la unsprezece.",
+          "id": "No, I didn't see the movie. I got home at eleven.",
+          "literal": "no, not-I-have seen movie-the. I-have arrived at-home at eleven."
+        },
+        {
+          "speaker": "Andrei:",
+          "text": "Păcat! Apropo, unde ai fost săptămâna trecută?",
+          "id": "Too bad! By the way, where were you last week?",
+          "literal": "pity! by-the-way, where you-have been week-the past-f?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Săptămâna trecută am fost la Sibiu, cu colegii.",
+          "id": "Last week I went to Sibiu with my coworkers.",
+          "literal": "week-the past-f I-have been at Sibiu, with colleague-pl-the."
+        },
+        {
+          "speaker": "Andrei:",
+          "text": "Și cum a fost?",
+          "id": "And how was it?",
+          "literal": "and how it-has been?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A fost foarte frumos. Am mers mult pe jos și am făcut multe fotografii.",
+          "id": "It was really beautiful. We walked a lot and I took lots of photos.",
+          "literal": "it-has been very beautiful. we-have gone much on foot and I-have made many-f-pl photo-pl."
+        },
+        {
+          "speaker": "Andrei:",
+          "text": "Sibiul este un oraș minunat. Eu am fost acolo acum doi ani.",
+          "id": "Sibiu is a wonderful city. I was there two years ago.",
+          "literal": "Sibiu-the it-is a-m city wonderful. I I-have been there now two-m year-pl."
+        }
+      ],
+      "notes": [
+        "**Am lucrat — two words for one tense.** The Romanian past is made from a helper (*am*) and a participle (*lucrat*) — just like English \"I have worked\". The difference: Romanian uses this one form for \"I worked yesterday\", \"I have worked\", and \"I did work\" alike — spoken Romanian doesn't distinguish them.",
+        "**Am mâncat: I or we?** The helper for *eu* and *noi* is the same, *am*. In the dialogue, *am mâncat la restaurant cu Ioana* can mean \"I ate\" or \"we ate\" — context decides. If you need to be clear, add the pronoun, as Andrei does in the last line: ***Eu** am fost acolo*.",
+        "**N-am văzut filmul.** *Nu* + *am* merge into *n-am* in speech; the full *nu am* is just as correct and sounds a little more emphatic. A Romanian would actually answer even more briefly, *Nu, nu l-am văzut* (\"no, I didn't see it\") — pronouns in the past tense come in unit 15; for now just repeat the noun.",
+        "**Am fost la Sibiu = I went to Sibiu.** Literally \"I have been to Sibiu\", like the English. For a finished trip — gone and back — Romanians almost always use *am fost*, not *am mers*. *Am mers* stresses the way of going: *am mers mult pe jos*, \"we walked a lot\".",
+        "**Acum doi ani.** *Acum* alone means \"now\", but *acum* + a length of time means \"… ago\": *acum două zile* (two days ago), *acum o oră* (an hour ago). Note *săptămâna trecută* too: *trecută* is the participle of *a trece* (pass) used as an adjective — \"the week that has passed\", just like English \"past\"."
+      ],
+      "grammars": [
+        {
+          "title": "Perfect compus — *am, ai, a, am, ați, au* + participle",
+          "body": [
+            "The helper is a short version of *a avea*. You know three of the six forms already; **the three that differ** need special attention: third person singular ***a*** (not *are*), and *noi* ***am***, *voi* ***ați*** (not *avem, aveți*).",
+            "The participle **never changes** — not for the subject, not for gender, not for number. Learn *lucrat* once and all six forms are ready."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "Helper",
+              "a lucra",
+              "a vedea",
+              "a merge"
+            ],
+            "rows": [
+              [
+                "eu",
+                "**am**",
+                "*am lucrat*",
+                "*am văzut*",
+                "*am mers*"
+              ],
+              [
+                "tu",
+                "**ai**",
+                "*ai lucrat*",
+                "*ai văzut*",
+                "*ai mers*"
+              ],
+              [
+                "el / ea",
+                "**a**",
+                "*a lucrat*",
+                "*a văzut*",
+                "*a mers*"
+              ],
+              [
+                "noi",
+                "**am**",
+                "*am lucrat*",
+                "*am văzut*",
+                "*am mers*"
+              ],
+              [
+                "voi / dumneavoastră",
+                "**ați**",
+                "*ați lucrat*",
+                "*ați văzut*",
+                "*ați mers*"
+              ],
+              [
+                "ei / ele",
+                "**au**",
+                "*au lucrat*",
+                "*au văzut*",
+                "*au mers*"
+              ]
+            ]
+          },
+          "after": [
+            "**Negative:** *nu* goes before the helper, and in speech the two merge: *n-am, n-ai, n-a, n-am, n-ați, n-au*. *N-am lucrat ieri. N-ați văzut filmul? Andrei n-a venit.*",
+            "**The helper and participle are almost inseparable.** Time and place words go before or after the pair, not in the middle: *Ieri am lucrat mult* or *Am lucrat mult ieri* — not *am ieri lucrat*. For a question, just raise your voice: *Ai mâncat?*",
+            "**Adjectives still agree, even though the participle stays put.** *Filmul a fost bun. Sarmalele au fost bune.* What changes is the helper (*a → au*) and the adjective (*bun → bune*); *fost* stays *fost*.",
+            "Romanian has other past tenses (the *imperfect*, touched on in unit 20; the *perfect simplu*, alive in novels and in the Oltenia region). For everyday conversation, the *perfect compus* covers almost everything."
+          ]
+        },
+        {
+          "title": "Forming the participle",
+          "body": [
+            "The participle is built from the infinitive, and its ending depends on the verb group summarized in unit 8. Three groups are completely regular; only the *-e* group splits in two and has to be learned verb by verb."
+          ],
+          "table": {
+            "head": [
+              "Infinitive",
+              "Participle",
+              "Example",
+              "Note"
+            ],
+            "rows": [
+              [
+                "**-a**",
+                "**-at**",
+                "*a lucra → lucrat*, *a mânca → mâncat*, *a învăța → învățat*, *a sta → stat*",
+                "no exceptions"
+              ],
+              [
+                "**-i**",
+                "**-it**",
+                "*a vorbi → vorbit*, *a dormi → dormit*, *a veni → venit*, *a citi → citit*",
+                "*-î* → *-ât*: *a coborî → coborât*"
+              ],
+              [
+                "**-ea**",
+                "**-ut**",
+                "*a vedea → văzut*, *a avea → avut*, *a putea → putut*, *a vrea → vrut*",
+                "*d* softens to *z*: *văzut*"
+              ],
+              [
+                "**-e** (branch 1)",
+                "**-ut**",
+                "*a face → făcut*, *a începe → început*, *a trece → trecut*, *a cere → cerut*",
+                "unstressed *a* → *ă*: *făcut*"
+              ],
+              [
+                "**-e** (branch 2)",
+                "**-s**",
+                "*a merge → mers*, *a scrie → scris*, *a pune → pus*, *a zice → zis*, *a ajunge → ajuns*",
+                "the *-e* and the last consonant drop"
+              ],
+              [
+                "irregular",
+                "—",
+                "*a fi → fost*, *a ști → știut*, *a bea → băut*",
+                "learn them whole"
+              ]
+            ]
+          },
+          "after": [
+            "**Branch *-ut* or *-s*?** There's no fully reliable rule; dictionaries always list it. A rough guide: verbs whose *eu* form ends in *-g, -d, -n* lean toward *-s* (*merg → mers, ajung → ajuns, deschid → deschis, pun → pus, spun → spus*). The full list of participles used in this book is in unit 15.",
+            "**The participle also works as an adjective** — and then it agrees like a four-form adjective: *săptămâna trecută*, *anul trecut*, *ușa este deschisă*, *magazinele sunt închise*. Many adjectives you already know are participles in disguise: *obosit* (tired), *ocupat* (busy), *căsătorit* (married)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Talking about yesterday",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Română",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**ieri**",
+              "yehr'",
+              "yesterday"
+            ],
+            [
+              "**alaltăieri**",
+              "ah-lahl-tuh-YEHR'",
+              "the day before yesterday"
+            ],
+            [
+              "**aseară**",
+              "ah-SYAH-ruh",
+              "last night, yesterday evening"
+            ],
+            [
+              "**azi-dimineață**",
+              "ahz' dee-mee-NYAH-tsuh",
+              "this morning"
+            ],
+            [
+              "**ieri după-amiază**",
+              "yehr' DOO-puh ah-MYAH-zuh",
+              "yesterday afternoon"
+            ],
+            [
+              "**săptămâna trecută**",
+              "suhp-tuh-MÎ-nah treh-KOO-tuh",
+              "last week"
+            ],
+            [
+              "**luna trecută**",
+              "LOO-nah treh-KOO-tuh",
+              "last month"
+            ],
+            [
+              "**anul trecut**",
+              "AH-nool treh-KOOT",
+              "last year"
+            ],
+            [
+              "**acum două zile**",
+              "ah-KOOM DOH-wuh ZEE-leh",
+              "two days ago"
+            ],
+            [
+              "**deja** · **încă nu**",
+              "deh-ZHAH · ÎN-kuh noo",
+              "already · not yet"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Trecut* agrees with its noun: *săptămâna trecut**ă***, *luna trecut**ă*** (f), but *anul trecut*, *weekendul trecut* (m/n). Day names for a one-off event are used **without** the article — *luni am lucrat* (\"on Monday I worked\") — unlike *lunea* with the article from unit 7, which means \"every Monday\". And *încă nu* goes before the helper: *Încă n-am mâncat* = \"I haven't eaten yet\"."
+        },
+        {
+          "type": "kotak",
+          "title": "Story glue: four words that make your story flow",
+          "items": [
+            "***Mai întâi*** (first): *Mai întâi am băut o cafea.*",
+            "***Apoi*** or ***după aceea*** (then, after that): *Apoi am mers la birou cu metroul.*",
+            "***La prânz… seara…*** — the parts of the day from unit 7 still work as signposts: *La prânz am mâncat o ciorbă. Seara am citit puțin.*",
+            "***La sfârșit*** (in the end): *La sfârșit am dormit zece ore!* With these four links and ten participles, you can already tell the story of a whole day."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "*A fost* — rating things, and places you've been",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Cum a fost?*",
+              "How was it?"
+            ],
+            [
+              "*A fost foarte frumos.*",
+              "It was really beautiful. / It was great."
+            ],
+            [
+              "*A fost bine. · A fost greu.*",
+              "It went well. · It was hard."
+            ],
+            [
+              "*A fost scump?* — *Nu, n-a fost scump.*",
+              "Was it expensive? — No, it wasn't expensive."
+            ],
+            [
+              "*Mâncarea a fost foarte bună.*",
+              "The food was really good."
+            ],
+            [
+              "*Unde ai fost ieri?* — *Am fost la piață.*",
+              "Where were you yesterday? — I went to the market."
+            ],
+            [
+              "*Ați fost la Brașov?* — *Da, am fost anul trecut.*",
+              "Have you been to Brașov? — Yes, last year."
+            ],
+            [
+              "*Ieri a fost luni.*",
+              "Yesterday was Monday."
+            ],
+            [
+              "*A fost un concert în Centrul Vechi.*",
+              "There was a concert in the Old Town."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "In the past tense *a fi* works like any other verb: *am fost, ai fost, a fost, am fost, ați fost, au fost*. Keep its three jobs apart. **Rating**: *a fost* + an adjective in the masculine singular when you rate the situation in general (*a fost frumos*), and agreeing when the thing is named (*excursia a fost frumoasă*). **There was**: *a fost un film la televizor* — \"there was a movie\". **Been to**: *am fost la* + place, the most natural way to say \"I went to…\" or \"I've been to…\"."
+        },
+        {
+          "type": "kotak",
+          "title": "Sibiu, the city whose houses have eyes",
+          "items": [
+            "Sibiu lies in Transylvania, about five hours by train from Bucharest. Its old town was built by German Saxon settlers in the Middle Ages, and its German name, *Hermannstadt*, still appears on city signs.",
+            "Its trademark is the eyelid-shaped attic windows on the old roofs — people call them *ochii Sibiului*, \"the eyes of Sibiu\". Note the genitive: *Sibiul → Sibiului*, exactly the pattern from unit 13.",
+            "Two places that turn up in everyone's photos: *Piața Mare* (the Great Square) and *Podul Minciunilor*, \"the Bridge of Lies\" — *minciunilor* is the genitive plural of *minciuni* (lies). In 2007 Sibiu was a European Capital of Culture.",
+            "Every Romanian fairy tale opens with the same past tense as this unit: ***A fost odată ca niciodată…*** — \"Once upon a time, like never before…\"."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 12",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Romanian column, read the English, then rebuild the sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Română"
+          ],
+          "rows": [
+            [
+              "One round-trip ticket to Brașov, please.",
+              "*Un bilet dus-întors până la Brașov, vă rog.*"
+            ],
+            [
+              "What time does the train leave?",
+              "*La ce oră pleacă trenul?*"
+            ],
+            [
+              "Which platform does it leave from?",
+              "*De la ce peron pleacă?*"
+            ],
+            [
+              "I'll wait for you at the station.",
+              "*Te aștept la gară.*"
+            ],
+            [
+              "Do you know Andrei? — Yes, I know him.",
+              "*Îl cunoști pe Andrei? — Da, îl cunosc.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ro": "ieri",
+      "baca": "yehr'",
+      "en": "yesterday"
+    },
+    {
+      "ro": "aseară",
+      "baca": "ah-SYAH-ruh",
+      "en": "last night, yesterday evening"
+    },
+    {
+      "ro": "trecut, trecută",
+      "baca": "treh-KOOT, treh-KOO-tuh",
+      "en": "past, last"
+    },
+    {
+      "ro": "zi, zile",
+      "baca": "zee, ZEE-leh",
+      "en": "day (f)"
+    },
+    {
+      "ro": "toată ziua",
+      "baca": "TWAH-tuh ZEE-wah",
+      "en": "all day"
+    },
+    {
+      "ro": "a face (fac)",
+      "baca": "ah FAH-cheh (fahk)",
+      "en": "to make, to do; participle *făcut*"
+    },
+    {
+      "ro": "a vedea (văd)",
+      "baca": "ah veh-DYAH (vuhd)",
+      "en": "to see, to watch; participle *văzut*"
+    },
+    {
+      "ro": "a ajunge (ajung)",
+      "baca": "ah ah-ZHOON-jeh (ah-ZHOONG)",
+      "en": "to arrive, to get to; participle *ajuns*"
+    },
+    {
+      "ro": "a sta (stau)",
+      "baca": "ah stah (stow)",
+      "en": "to stay, to be (somewhere); participle *stat*"
+    },
+    {
+      "ro": "film, filme",
+      "baca": "feelm, FEEL-meh",
+      "en": "movie, film (n)"
+    },
+    {
+      "ro": "examen, examene",
+      "baca": "ehg-ZAH-mehn",
+      "en": "exam (n)"
+    },
+    {
+      "ro": "fotografie, fotografii",
+      "baca": "foh-toh-grah-FEE-yeh",
+      "en": "photo (f)"
+    },
+    {
+      "ro": "birou, birouri",
+      "baca": "bee-ROHW",
+      "en": "office; desk (n)"
+    },
+    {
+      "ro": "acasă",
+      "baca": "ah-KAH-suh",
+      "en": "at home; home"
+    },
+    {
+      "ro": "acolo",
+      "baca": "ah-KOH-loh",
+      "en": "there"
+    },
+    {
+      "ro": "minunat",
+      "baca": "mee-noo-NAHT",
+      "en": "wonderful, amazing"
+    },
+    {
+      "ro": "Păcat!",
+      "baca": "puh-KAHT",
+      "en": "Too bad!"
+    },
+    {
+      "ro": "apropo",
+      "baca": "ah-proh-POH",
+      "en": "by the way"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Romanian.",
+      "items": [
+        "What did you do yesterday?",
+        "I worked all day.",
+        "I ate at a restaurant with Ioana.",
+        "Did you see the movie? (use *filmul*)",
+        "Last week I went to Sibiu.",
+        "It was really beautiful."
+      ]
+    },
+    {
+      "prompt": "Fill in the perfect compus of the verb in brackets.",
+      "items": [
+        "Ieri eu ____ toată ziua. (a lucra)",
+        "Tu ce ____ aseară? (a face)",
+        "Andrei ____ pentru examen. (a învăța)",
+        "Noi ____ la Sibiu cu trenul. (a merge)",
+        "Voi ____ filmul? (a vedea)",
+        "Ioana și Budi ____ sarmale. (a mânca)",
+        "Eu nu ____ bine azi-noapte. (a dormi)",
+        "Anul trecut ei ____ la mare. (a fi)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "făcut / ce / ieri / ai / ?",
+        "văzut / n-am / filmul",
+        "fost / săptămâna / am / la sibiu / trecută",
+        "foarte / a / frumos / fost",
+        "acasă / la / am / unsprezece / ajuns"
+      ]
+    }
+  ],
+  "answers": [
+    "Ce ai făcut ieri? — Am lucrat toată ziua. — Am mâncat la restaurant cu Ioana. — Ai văzut filmul? — Săptămâna trecută am fost la Sibiu. — A fost foarte frumos.",
+    "am lucrat — ai făcut — a învățat — am mers — ați văzut — au mâncat — am dormit — au fost",
+    "Ce ai făcut ieri? — N-am văzut filmul. — Săptămâna trecută am fost la Sibiu. — A fost foarte frumos. — Am ajuns acasă la unsprezece."
+  ]
+}

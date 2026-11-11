@@ -1,0 +1,556 @@
+{
+  "title": "Where are you going? — on foot or by vehicle",
+  "title_target": "Куди ти йдеш? — Kudy ty ydesh?",
+  "goal": "Say where you're going, choose between two different verbs for \"go\", and keep place (де) and direction (куди) firmly apart: the pair beginners mix up most.",
+  "bekal": [
+    "tell йти (on foot) from їхати (by vehicle)",
+    "answer Куди? with в/на + знахідний (accusative)",
+    "use Де? and Куди? in the same breath",
+    "name transport with на + місцевий (locative)",
+    "invite someone with Ходімо!"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — At the metro entrance",
+      "intro": "Ani and Andriy run into each other in the street. Watch the two verbs that both mean \"go\": Ani is walking, Andriy is riding, and Ukrainian won't let them use the same word.",
+      "lines": [
+        {
+          "speaker": "Андрій:",
+          "text": "[Ані|A-nee], [куди|koo-DI] [ти|ti] [йдеш|y-DESH]?",
+          "id": "Ani, where are you going?",
+          "literal": "Ani, where-to — you — walk?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Я|Ya] [йду|y-DOO] [на|na] [пошту|POSH-too]. [А|A] [потім|PO-teem] [у|oo] [бібліотеку|beeb-lee-o-TEH-koo].",
+          "id": "I'm going to the post office. Then to the library.",
+          "literal": "I — walk — to — post-office (accusative). and — then — to — library (accusative)."
+        },
+        {
+          "speaker": "Андрій:",
+          "text": "[Пішки|PEESH-ki]? [Це|Tseh] [далеко|da-LEH-ko].",
+          "id": "On foot? That's far.",
+          "literal": "on-foot? this — far."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Не|Neh] [дуже|DOO-zheh]. [Двадцять|DVAD-tsyat'] [хвилин|khvi-LIN].",
+          "id": "Not very. Twenty minutes.",
+          "literal": "not — very. twenty — minutes."
+        },
+        {
+          "speaker": "Андрій:",
+          "text": "[Краще|KRA-shcheh] [їдь|yeed'] [на|na] [автобусі|av-TO-boo-see]. [Номер|NO-mer] [сім|seem].",
+          "id": "Better take the bus. Number seven.",
+          "literal": "better — ride — on — bus (locative). number — seven."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[А|A] [ти|ti] [куди|koo-DI] [їдеш|YEE-desh]?",
+          "id": "And where are you going?",
+          "literal": "and — you — where-to — ride?"
+        },
+        {
+          "speaker": "Андрій:",
+          "text": "[Я|Ya] [їду|YEE-doo] [на|na] [роботу|ro-BO-too]. [У|OO] [кафе|ka-FEH].",
+          "id": "I'm going to work. To the café.",
+          "literal": "I — ride — to — work (accusative). to — café."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[На|Na] [метро|met-RO]?",
+          "id": "By metro?",
+          "literal": "on — metro?"
+        },
+        {
+          "speaker": "Андрій:",
+          "text": "[Так|Tak]. [Це|Tseh] [швидше|SHVID-sheh].",
+          "id": "Yes. It's faster.",
+          "literal": "yes. this — faster."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Тоді|To-DEE] [ходімо|kho-DEE-mo] [разом|RA-zom] [до|do] [метро|met-RO].",
+          "id": "Then let's walk to the metro together.",
+          "literal": "then — let's-walk — together — up-to — metro."
+        },
+        {
+          "speaker": "Андрій:",
+          "text": "[Добре|DOB-reh]. [А|A] [завтра|ZAV-tra] [ти|ti] [йдеш|y-DESH] [на|na] [концерт|kon-TSERT]?",
+          "id": "OK. Are you going to the concert tomorrow?",
+          "literal": "good. and — tomorrow — you — walk — to — concert?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Обов'язково|O-bo-VYAZ-ko-vo]! [Я|Ya] [вже|vzheh] [купила|koo-PI-la] [квиток|kvi-TOK].",
+          "id": "Definitely! I've already bought a ticket.",
+          "literal": "definitely! I — already — bought (past f) — ticket."
+        }
+      ],
+      "notes": [
+        "**Йти for going on foot, їхати for going by vehicle.** Ukrainian has no neutral verb for \"go\". If you say *йду* when you're taking the bus, you'll still be understood, but it sounds as if you're walking to Lviv. ⚠️ English speakers slip here most, because English *go* covers both.",
+        "**Куди takes the accusative, Де takes the locative, with exactly the same preposition.** *Я йду в університет* (direction) versus *Я в університеті* (place). The preposition is *в* in both; the ending tells the story. This is the most important pair in the whole book.",
+        "**Transport takes на + locative.** *На автобусі*, *на метро*, *на потязі*, *на таксі*, *на машині*. Notice that this collides with the direction rule: *їду на роботу* (direction, accusative) but *їду на автобусі* (means, locative). Context keeps them apart, and your ear will adjust quickly.",
+        "**Пішки stands alone, with no preposition.** *Я йду пішки*: I'm walking, I'm going on foot. It's the only way to say \"on foot\", and it's an adverb, not a noun.",
+        "**Ходімо! = let's go (on foot).** A very common and very useful way to invite someone. For vehicles: **поїхали!** (let's go, off we go). You'll hear both often from Ukrainian friends, and both mean \"let's go\".",
+        "**Пошта takes на, not в.** *На пошту* (to the post office), *на пошті* (at the post office). It belongs to the same group as *на роботу*, *на вокзал*, *на ринок*, *на концерт*, *на урок*. The group is small, but it's full of places you visit often, so learn them together.",
+        "**До метро, not в метро.** The preposition **до** means \"up to\": you walk as far as the entrance, not inside. Compare *йду до метро* (heading to the station) with *їду на метро* (riding the train)."
+      ],
+      "grammars": [
+        {
+          "title": "Йти and їхати side by side",
+          "body": [],
+          "table": {
+            "head": [
+              "Person",
+              "йти (on foot)",
+              "Say it",
+              "їхати (by vehicle)",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "я",
+                "йду",
+                "y-DOO",
+                "їду",
+                "YEE-doo"
+              ],
+              [
+                "ти",
+                "йдеш",
+                "y-DESH",
+                "їдеш",
+                "YEE-desh"
+              ],
+              [
+                "він / вона",
+                "йде",
+                "y-DEH",
+                "їде",
+                "YEE-deh"
+              ],
+              [
+                "ми",
+                "йдемо",
+                "y-deh-MO",
+                "їдемо",
+                "YEE-deh-mo"
+              ],
+              [
+                "ви",
+                "йдете",
+                "y-deh-TEH",
+                "їдете",
+                "YEE-deh-teh"
+              ],
+              [
+                "вони",
+                "йдуть",
+                "y-DOOT'",
+                "їдуть",
+                "YEE-doot'"
+              ],
+              [
+                "let's",
+                "ходімо!",
+                "kho-DEE-mo",
+                "поїхали!",
+                "po-YEE-kha-li"
+              ]
+            ]
+          },
+          "after": [
+            "For long trips between cities, **їхати** is almost always right. Even a Ukrainian who walks five kilometers will say *їду*, unless they want to stress that they're walking."
+          ]
+        },
+        {
+          "title": "Куди? and Де? in pairs",
+          "body": [
+            "Read them in pairs, not one by one. What sticks in your memory is the difference, not each form on its own."
+          ],
+          "table": {
+            "head": [
+              "Куди? (direction, accusative)",
+              "Де? (place, locative)",
+              "English"
+            ],
+            "rows": [
+              [
+                "в університет",
+                "в університеті",
+                "to / at the university"
+              ],
+              [
+                "у школу",
+                "у школі",
+                "to / at school"
+              ],
+              [
+                "в бібліотеку",
+                "в бібліотеці",
+                "to / at the library"
+              ],
+              [
+                "у кафе",
+                "у кафе",
+                "to / at the café (no change)"
+              ],
+              [
+                "на роботу",
+                "на роботі",
+                "to / at work"
+              ],
+              [
+                "на пошту",
+                "на пошті",
+                "to / at the post office"
+              ],
+              [
+                "на ринок",
+                "на ринку",
+                "to / at the market"
+              ],
+              [
+                "на концерт",
+                "на концерті",
+                "to / at the concert"
+              ],
+              [
+                "додому",
+                "вдома",
+                "home / at home"
+              ],
+              [
+                "в Київ",
+                "у Києві",
+                "to / in Kyiv"
+              ]
+            ]
+          },
+          "after": [
+            "Row nine is an exception you must memorize, because the forms follow no pattern: **додому** (direction) and **вдома** (place). Two short words you'll say every day."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Getting around every day",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Українська",
+            "Say it",
+            "By this vehicle",
+            "English"
+          ],
+          "rows": [
+            [
+              "автобус",
+              "av-TO-boos",
+              "на автобусі",
+              "bus"
+            ],
+            [
+              "тролейбус",
+              "tro-LEY-boos",
+              "на тролейбусі",
+              "trolleybus"
+            ],
+            [
+              "трамвай",
+              "tram-VAI",
+              "на трамваї",
+              "tram"
+            ],
+            [
+              "маршрутка",
+              "marsh-ROOT-ka",
+              "на маршрутці",
+              "shared minibus"
+            ],
+            [
+              "метро",
+              "met-RO",
+              "на метро",
+              "metro, subway"
+            ],
+            [
+              "потяг",
+              "PO-tyah",
+              "на потязі",
+              "train"
+            ],
+            [
+              "таксі",
+              "tak-SEE",
+              "на таксі",
+              "taxi"
+            ],
+            [
+              "машина",
+              "ma-SHI-na",
+              "на машині",
+              "car"
+            ],
+            [
+              "велосипед",
+              "veh-lo-si-PED",
+              "на велосипеді",
+              "bicycle"
+            ],
+            [
+              "літак",
+              "lee-TAK",
+              "на літаку",
+              "plane"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Маршрутка: the most Ukrainian vehicle",
+          "items": [
+            "A **маршрутка** is a minibus that runs a fixed route but stops wherever a passenger asks, much like shared minibuses across Eastern Europe, Asia, and Latin America.",
+            "To get off: **На зупинці, будь ласка!** (at the stop, please) or just **Зупиніть, будь ласка** (stop, please).",
+            "You pay the driver, often by passing the money forward hand to hand. Passing on the money of the person behind you is normal, not an extraordinary courtesy.",
+            "⚠️ The word *маршрутка* isn't in any tourist phrasebook, but it's the vehicle you'll ride most outside the city center."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Travel phrases that cover most situations"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Ukrainian",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Куди ви їдете?",
+              "koo-DI vi YEE-deh-teh",
+              "Where are you going?"
+            ],
+            [
+              "Мені треба на вокзал.",
+              "meh-NEE TREH-ba na vok-ZAL",
+              "I need to get to the station."
+            ],
+            [
+              "Скільки їхати?",
+              "SKEEL'-ki YEE-kha-ti",
+              "How long is the trip?"
+            ],
+            [
+              "Де зупинка?",
+              "deh zoo-PIN-ka",
+              "Where's the stop?"
+            ],
+            [
+              "Один квиток, будь ласка.",
+              "o-DIN kvi-TOK",
+              "One ticket, please."
+            ],
+            [
+              "Ви виходите?",
+              "vi vi-KHO-di-teh",
+              "Are you getting off?"
+            ],
+            [
+              "Це моя зупинка.",
+              "tseh mo-YA zoo-PIN-ka",
+              "This is my stop."
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uk": "куди",
+      "baca": "koo-DI",
+      "en": "where (to)"
+    },
+    {
+      "uk": "йти",
+      "baca": "y-TI",
+      "en": "to go (on foot)"
+    },
+    {
+      "uk": "їхати",
+      "baca": "YEE-kha-ti",
+      "en": "to go (by vehicle)"
+    },
+    {
+      "uk": "ходімо",
+      "baca": "kho-DEE-mo",
+      "en": "let's go (on foot)"
+    },
+    {
+      "uk": "поїхали",
+      "baca": "po-YEE-kha-li",
+      "en": "let's go, off we go"
+    },
+    {
+      "uk": "пішки",
+      "baca": "PEESH-ki",
+      "en": "on foot"
+    },
+    {
+      "uk": "автобус",
+      "baca": "av-TO-boos",
+      "en": "bus"
+    },
+    {
+      "uk": "маршрутка",
+      "baca": "marsh-ROOT-ka",
+      "en": "shared minibus"
+    },
+    {
+      "uk": "потяг",
+      "baca": "PO-tyah",
+      "en": "train"
+    },
+    {
+      "uk": "літак",
+      "baca": "lee-TAK",
+      "en": "plane"
+    },
+    {
+      "uk": "таксі",
+      "baca": "tak-SEE",
+      "en": "taxi"
+    },
+    {
+      "uk": "зупинка",
+      "baca": "zoo-PIN-ka",
+      "en": "stop (bus, tram)"
+    },
+    {
+      "uk": "вокзал",
+      "baca": "vok-ZAL",
+      "en": "station"
+    },
+    {
+      "uk": "аеропорт",
+      "baca": "a-eh-ro-PORT",
+      "en": "airport"
+    },
+    {
+      "uk": "пошта",
+      "baca": "POSH-ta",
+      "en": "post office"
+    },
+    {
+      "uk": "квиток",
+      "baca": "kvi-TOK",
+      "en": "ticket"
+    },
+    {
+      "uk": "концерт",
+      "baca": "kon-TSERT",
+      "en": "concert"
+    },
+    {
+      "uk": "бібліотека",
+      "baca": "beeb-lee-o-TEH-ka",
+      "en": "library"
+    },
+    {
+      "uk": "виходити",
+      "baca": "vi-KHO-di-ti",
+      "en": "to go out, get off"
+    },
+    {
+      "uk": "швидко",
+      "baca": "SHVID-ko",
+      "en": "fast, quickly"
+    },
+    {
+      "uk": "швидше",
+      "baca": "SHVID-sheh",
+      "en": "faster"
+    },
+    {
+      "uk": "повільно",
+      "baca": "po-VEEL'-no",
+      "en": "slowly"
+    },
+    {
+      "uk": "обов'язково",
+      "baca": "o-bo-VYAZ-ko-vo",
+      "en": "definitely, for sure"
+    },
+    {
+      "uk": "купувати",
+      "baca": "koo-poo-VA-ti",
+      "en": "to buy"
+    },
+    {
+      "uk": "до",
+      "baca": "do",
+      "en": "to, up to"
+    },
+    {
+      "uk": "разом",
+      "baca": "RA-zom",
+      "en": "together"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the correct form of йти or їхати.",
+      "items": [
+        "Я ____ пішки в магазин.",
+        "Ми ____ на автобусі в Київ.",
+        "Він ____ у школу пішки.",
+        "Вони ____ на потязі до Львова.",
+        "Ти ____ на роботу на метро?"
+      ]
+    },
+    {
+      "prompt": "Fill in the correct accusative (direction) or locative (place) form.",
+      "items": [
+        "Я йду в ____ (університет).",
+        "Я в ____ (університет).",
+        "Вона їде на ____ (робота).",
+        "Вона на ____ (робота).",
+        "Ми йдемо в ____ (бібліотека)."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "йдеш / куди / ти",
+        "пошту / я / на / йду",
+        "автобусі / він / на / їде",
+        "разом / ходімо",
+        "квиток / я / купила / вже"
+      ]
+    },
+    {
+      "prompt": "Translate into Ukrainian.",
+      "items": [
+        "Where are you going?",
+        "I'm going to the post office.",
+        "On foot? That's far.",
+        "Better take the bus. Number seven.",
+        "Let's walk to the metro together."
+      ]
+    }
+  ],
+  "answers": [
+    "йду — їдемо — йде — їдуть — їдеш",
+    "університет — університеті — роботу — роботі — бібліотеку",
+    "Куди ти йдеш? — Я йду на пошту. — Він їде на автобусі. — Ходімо разом! — Я вже купила квиток.",
+    "Куди ти йдеш? — Я йду на пошту. — Пішки? Це далеко. — Краще їдь на автобусі. Номер сім. — Ходімо разом до метро."
+  ],
+  "wave": "Go back over Unit 10. All the **-і** forms you learned there are the right-hand column of today's table, and now the left-hand column is yours too."
+}

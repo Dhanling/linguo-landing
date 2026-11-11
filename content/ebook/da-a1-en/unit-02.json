@@ -1,0 +1,564 @@
+{
+  "title": "Where are you from?",
+  "title_target": "Hvor kommer du fra?",
+  "goal": "Say where you're from, where you live, what you do and which languages you speak — and spot the single pattern behind every Danish verb in the present tense.",
+  "bekal": [
+    "say where you're from (*jeg kommer fra*) and where you live (*jeg bor i*)",
+    "state your job without an article: *jeg er lærer*",
+    "form the present tense of any verb yourself: base form + **-r**"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — I kantinen",
+      "intro": "Lunch break in the school cafeteria. Mette and Budi sit with Ahmad, another student.",
+      "lines": [
+        {
+          "speaker": "Mette:",
+          "text": "Budi, det her er Ahmad. Han går også på sprogskolen.",
+          "id": "Budi, this is Ahmad. He's at the language school too.",
+          "literal": "Budi, this here is Ahmad. he goes also on language-school-the."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hej Ahmad! Hvor kommer du fra?",
+          "id": "Hi Ahmad! Where are you from?",
+          "literal": "hi Ahmad! where come you from?"
+        },
+        {
+          "speaker": "Ahmad:",
+          "text": "Jeg kommer fra Syrien, men jeg bor i Aarhus nu.",
+          "id": "I'm from Syria, but I live in Aarhus now.",
+          "literal": "I come from Syria, but I live in Aarhus now."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hvor længe har du boet i Danmark?",
+          "id": "How long have you lived in Denmark?",
+          "literal": "how long have you lived in Denmark?"
+        },
+        {
+          "speaker": "Ahmad:",
+          "text": "I to år. Og du? Hvad laver du her?",
+          "id": "For two years. And you? What do you do here?",
+          "literal": "in two years. and you? what make you here?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jeg studerer i København. Jeg læser arkitektur.",
+          "id": "I'm a student in Copenhagen. I'm studying architecture.",
+          "literal": "I study in Copenhagen. I read architecture."
+        },
+        {
+          "speaker": "Ahmad:",
+          "text": "Spændende. Taler du engelsk også?",
+          "id": "Interesting. Do you speak English too?",
+          "literal": "exciting. speak you English also?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja, jeg taler engelsk og indonesisk. Og lidt dansk!",
+          "id": "Yes, I speak English and Indonesian. And a little Danish!",
+          "literal": "yes, I speak English and Indonesian. and little Danish!"
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Du taler faktisk rigtig godt dansk.",
+          "id": "Your Danish is actually really good.",
+          "literal": "you speak actually really well Danish."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tak! Men jeg forstår ikke altid, når I taler hurtigt.",
+          "id": "Thanks! But I don't always understand when you talk fast.",
+          "literal": "thanks! but I understand not always, when you(pl) speak fast."
+        },
+        {
+          "speaker": "Ahmad:",
+          "text": "Det gør jeg heller ikke. Vi lærer sammen.",
+          "id": "Neither do I. We're learning together.",
+          "literal": "that do I either not. we learn together."
+        }
+      ],
+      "notes": [
+        "**Kommer fra or er fra?** Both are correct. *Jeg er fra Indonesien* states your origin as a fact; *jeg kommer fra Indonesien* is a little livelier, like \"I come from\". In everyday speech they're interchangeable.",
+        "**Bor, not lever.** *At bo* = to live somewhere, to have an address there. *At leve* = to be alive. \"I live in Aarhus\" is always *jeg bor i Aarhus*; *jeg lever i Aarhus* sounds as if you're barely surviving there.",
+        "**Jobs without an article.** *Jeg er lærer*, not *jeg er en lærer*. This is the opposite of English (*I am a teacher*) — and a classic mistake for English speakers. The article only appears when there's a description: *jeg er **en** god lærer*.",
+        "**Læser arkitektur.** *At læse* does mean \"to read\", but with a field of study it means \"to study, to major in\" — like British \"to read law\". *Jeg læser medicin* = I'm studying medicine. Unexpected, and very common.",
+        "**Faktisk** isn't \"in fact\" so much as \"actually\" — used for something slightly unexpected, exactly like English *actually*. Danes use it constantly.",
+        "**Heller ikke** = \"not … either\", \"neither\". Danish doesn't say *også ikke*; there's a separate word for \"too\" in a negative sentence, just like English *either*. Compare: *jeg taler også dansk* (I speak Danish too) and *jeg taler heller ikke dansk* (I don't speak Danish either).",
+        "**Det gør jeg heller ikke** — look at the order. The sentence starts with *det*, so the subject (*jeg*) jumps behind the verb. This is the most important rule in Danish, and all of Unit 10 is devoted to it. For now just notice that it sounds natural — a bit like English \"so do I\".",
+        "**Når**, not *hvornår*. *Hvornår* asks about time (\"when?\"), *når* links clauses (\"when, whenever\"). Two words that are easy to mix up."
+      ],
+      "grammars": [
+        {
+          "title": "Present tense: base form + -r",
+          "body": [
+            "This is the biggest time-saver in all of Danish verb grammar. Take the base form, add **-r**, done — and the result works for every person at once."
+          ],
+          "table": {
+            "head": [
+              "Base form",
+              "Present",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "at bo",
+                "bo**r**",
+                "to live"
+              ],
+              [
+                "at komme",
+                "komme**r**",
+                "to come"
+              ],
+              [
+                "at tale",
+                "tale**r**",
+                "to speak"
+              ],
+              [
+                "at arbejde",
+                "arbejde**r**",
+                "to work"
+              ],
+              [
+                "at studere",
+                "studere**r**",
+                "to study (at university)"
+              ],
+              [
+                "at forstå",
+                "forstå**r**",
+                "to understand"
+              ],
+              [
+                "at hedde",
+                "hedde**r**",
+                "to be called"
+              ],
+              [
+                "at lære",
+                "lære**r**",
+                "to learn, to teach"
+              ]
+            ]
+          },
+          "after": [
+            "*Jeg bor, du bor, han bor, vi bor, I bor, de bor* — one form, six persons. Compare English, which still has *he lives*, or Spanish with six different forms.",
+            "A base form that already ends in *-r* sometimes takes nothing more: *at høre* → *hører*, but *at gøre* → *gør* (not *gører*).",
+            "⚠️ Only a handful of verbs don't follow this pattern, and they're all among the most common: *at være* → **er**, *at have* → **har**, *at vide* → **ved**, *at gøre* → **gør**, plus the four modal verbs *kan*, *skal*, *vil*, *må* covered in Unit 13."
+          ]
+        },
+        {
+          "title": "Saying where you're from, where you live, what you do",
+          "body": [
+            "Three sentence frames you'll repeat hundreds of times:"
+          ],
+          "table": {
+            "head": [
+              "Frame",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Jeg kommer fra …",
+                "Jeg kommer fra Indonesien.",
+                "I come from Indonesia."
+              ],
+              [
+                "Jeg bor i …",
+                "Jeg bor i København.",
+                "I live in Copenhagen."
+              ],
+              [
+                "Jeg er …",
+                "Jeg er studerende.",
+                "I'm a student."
+              ],
+              [
+                "Jeg arbejder som …",
+                "Jeg arbejder som lærer.",
+                "I work as a teacher."
+              ],
+              [
+                "Jeg taler …",
+                "Jeg taler indonesisk.",
+                "I speak Indonesian."
+              ]
+            ]
+          },
+          "after": [
+            "**i** for countries and cities: *i Danmark*, *i Jakarta*. **på** for islands: *på Fyn*, *på Bali*, *på Java*. The island rule can be surprising, but it's handy — Denmark itself is largely made of islands.",
+            "One exception simply has to be memorized as it is: **på Sjælland** (the island Copenhagen is on), but **i København**."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Countries, nationalities, languages",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Notice that the three columns have different forms. The country is capitalized; the other two columns are lowercase."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Country",
+            "Person",
+            "Language"
+          ],
+          "rows": [
+            [
+              "Danmark",
+              "en dansker",
+              "dansk"
+            ],
+            [
+              "Indonesien",
+              "en indoneser",
+              "indonesisk"
+            ],
+            [
+              "England",
+              "en englænder",
+              "engelsk"
+            ],
+            [
+              "Tyskland",
+              "en tysker",
+              "tysk"
+            ],
+            [
+              "Frankrig",
+              "en franskmand",
+              "fransk"
+            ],
+            [
+              "Spanien",
+              "en spanier",
+              "spansk"
+            ],
+            [
+              "Kina",
+              "en kineser",
+              "kinesisk"
+            ],
+            [
+              "Japan",
+              "en japaner",
+              "japansk"
+            ],
+            [
+              "Norge",
+              "en nordmand",
+              "norsk"
+            ],
+            [
+              "Sverige",
+              "en svensker",
+              "svensk"
+            ],
+            [
+              "Holland",
+              "en hollænder",
+              "hollandsk"
+            ],
+            [
+              "Tyrkiet",
+              "en tyrker",
+              "tyrkisk"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Language names are used **without an article** after *at tale*: *jeg taler dansk*. To say \"in Danish\", use *på dansk*: *Hvad hedder det på dansk?*"
+        },
+        {
+          "type": "kotak",
+          "title": "Why these names matter sooner than you think",
+          "items": [
+            "At a Danish language school, the first question you'll hear from other students is almost always *Hvor kommer du fra?* — and the second, *Hvor længe har du været her?*",
+            "If you have answers ready for both, your first day becomes much easier."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Jobs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Dansk",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "en lærer",
+              "en LEH-rah",
+              "teacher"
+            ],
+            [
+              "en studerende",
+              "en stoo-DEH-nuh",
+              "student"
+            ],
+            [
+              "en læge",
+              "en LEH-uh",
+              "doctor"
+            ],
+            [
+              "en sygeplejerske",
+              "en SÜ-uh-plai-ahs-guh",
+              "nurse"
+            ],
+            [
+              "en ingeniør",
+              "en in-guh-nee-ÖR",
+              "engineer"
+            ],
+            [
+              "en kok",
+              "en kok",
+              "cook, chef"
+            ],
+            [
+              "en chauffør",
+              "en shoh-FÖR",
+              "driver"
+            ],
+            [
+              "en sælger",
+              "en SEL-yah",
+              "salesperson"
+            ],
+            [
+              "en tjener",
+              "en TYEH-nah",
+              "waiter"
+            ],
+            [
+              "en pensionist",
+              "en pahng-shoh-NIST",
+              "retiree"
+            ],
+            [
+              "arbejdsløs",
+              "AHR-baids-lös",
+              "unemployed"
+            ],
+            [
+              "selvstændig",
+              "sel-STEN-dee",
+              "self-employed"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Some jobs have a separate female form (*en sygeplejerske*), but modern Danish tends to drop the difference. *En lærer* is used for men and women alike, and that's the safe form."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "da": "at komme",
+      "baca": "oh KOM-uh",
+      "en": "to come"
+    },
+    {
+      "da": "at bo",
+      "baca": "oh boh",
+      "en": "to live, to reside"
+    },
+    {
+      "da": "at tale",
+      "baca": "oh TAH-luh",
+      "en": "to speak"
+    },
+    {
+      "da": "at arbejde",
+      "baca": "oh AHR-bai-dhuh",
+      "en": "to work"
+    },
+    {
+      "da": "at studere",
+      "baca": "oh stoo-DEH-ah",
+      "en": "to study (at university)"
+    },
+    {
+      "da": "at læse",
+      "baca": "oh LEH-suh",
+      "en": "to read; to study (a subject)"
+    },
+    {
+      "da": "at lære",
+      "baca": "oh LEH-ah",
+      "en": "to learn; to teach"
+    },
+    {
+      "da": "at forstå",
+      "baca": "oh for-STOH",
+      "en": "to understand"
+    },
+    {
+      "da": "at lave",
+      "baca": "oh LAH-vuh",
+      "en": "to make, to do"
+    },
+    {
+      "da": "men",
+      "baca": "men",
+      "en": "but"
+    },
+    {
+      "da": "nu",
+      "baca": "noo",
+      "en": "now"
+    },
+    {
+      "da": "her",
+      "baca": "heh-ah",
+      "en": "here"
+    },
+    {
+      "da": "der",
+      "baca": "deh-ah",
+      "en": "there"
+    },
+    {
+      "da": "hvor længe",
+      "baca": "vor LENG-uh",
+      "en": "how long"
+    },
+    {
+      "da": "et år",
+      "baca": "et or",
+      "en": "year"
+    },
+    {
+      "da": "lidt",
+      "baca": "lit",
+      "en": "a little"
+    },
+    {
+      "da": "altid",
+      "baca": "AHL-tidh",
+      "en": "always"
+    },
+    {
+      "da": "hurtigt",
+      "baca": "HOOR-tit",
+      "en": "fast, quickly"
+    },
+    {
+      "da": "langsomt",
+      "baca": "LAHNG-somt",
+      "en": "slowly"
+    },
+    {
+      "da": "faktisk",
+      "baca": "FAHK-tisk",
+      "en": "actually"
+    },
+    {
+      "da": "rigtig",
+      "baca": "REK-tee",
+      "en": "right; really"
+    },
+    {
+      "da": "sammen",
+      "baca": "SAHM-uhn",
+      "en": "together"
+    },
+    {
+      "da": "heller ikke",
+      "baca": "HEL-ah EE-guh",
+      "en": "not … either"
+    },
+    {
+      "da": "når",
+      "baca": "nor",
+      "en": "when, whenever"
+    },
+    {
+      "da": "en sprogskole",
+      "baca": "en SPROHW-skoh-luh",
+      "en": "language school"
+    },
+    {
+      "da": "en kantine",
+      "baca": "en kahn-TEE-nuh",
+      "en": "cafeteria"
+    },
+    {
+      "da": "et sprog",
+      "baca": "et sprohw",
+      "en": "language"
+    },
+    {
+      "da": "som",
+      "baca": "som",
+      "en": "as; who, that"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Danish.",
+      "items": [
+        "Where are you from?",
+        "I come from Indonesia.",
+        "I live in Copenhagen now.",
+        "I'm a teacher.",
+        "Do you speak Danish?",
+        "I don't always understand."
+      ]
+    },
+    {
+      "prompt": "Change to the present tense.",
+      "items": [
+        "at bo → jeg ____",
+        "at arbejde → hun ____",
+        "at forstå → vi ____",
+        "at studere → de ____",
+        "at være → du ____",
+        "at have → I ____"
+      ]
+    },
+    {
+      "prompt": "Fill in i or på.",
+      "items": [
+        "Jeg bor ____ Danmark.",
+        "Hun bor ____ Fyn.",
+        "Vi studerer ____ København.",
+        "Han arbejder ____ et hotel.",
+        "De kommer fra en by ____ Java."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "fra / kommer / hvor / du / ?",
+        "i / bor / jeg / Aarhus",
+        "dansk / lidt / taler / jeg",
+        "arbejder / lærer / som / hun",
+        "ikke / heller / forstår / jeg / det"
+      ]
+    }
+  ],
+  "answers": [
+    "Hvor kommer du fra? — Jeg kommer fra Indonesien. — Jeg bor i København nu. — Jeg er lærer. — Taler du dansk? — Jeg forstår ikke altid.",
+    "bor — arbejder — forstår — studerer — er — har",
+    "i — på — i — på — på",
+    "Hvor kommer du fra? — Jeg bor i Aarhus. — Jeg taler lidt dansk. — Hun arbejder som lærer. — Jeg forstår det heller ikke."
+  ]
+}

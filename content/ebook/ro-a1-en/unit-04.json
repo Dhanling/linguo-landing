@@ -1,0 +1,571 @@
+{
+  "title": "At the café",
+  "title_target": "La cafenea",
+  "goal": "Order drinks and snacks, ask for the bill, and fit in Romanian's most distinctive feature: the definite article glued to the end of the noun — *the* placed behind.",
+  "bekal": [
+    "order politely with *aș vrea…* and *…, vă rog*, and know when *vreau* sounds too blunt",
+    "give any singular noun its definite article: *-ul, -l, -le, -a, -ua*",
+    "ask for a recommendation, ask for the bill, and pay by card"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — La o cafenea în Centrul Vechi",
+      "intro": "Saturday afternoon. Ioana takes Budi to a café in Centrul Vechi, the old town of București. A waiter comes over to their table.",
+      "lines": [
+        {
+          "speaker": "Chelnerul:",
+          "text": "Bună ziua! Ce doriți?",
+          "id": "Good afternoon! What would you like?",
+          "literal": "good-f day-the! what you-pl-wish?"
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Bună ziua. Aș vrea o cafea, vă rog.",
+          "id": "Good afternoon. I'd like a coffee, please.",
+          "literal": "good-f day-the. I-would want a-f coffee, you-pl I-ask."
+        },
+        {
+          "speaker": "Chelnerul:",
+          "text": "Cu lapte sau fără lapte?",
+          "id": "With milk or without milk?",
+          "literal": "with milk or without milk?"
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Cu lapte, vă rog. Și un pahar cu apă.",
+          "id": "With milk, please. And a glass of water.",
+          "literal": "with milk, you-pl I-ask. and a-m glass with water."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eu vreau ceva dulce. Ce îmi recomandați?",
+          "id": "I want something sweet. What do you recommend?",
+          "literal": "I I-want something sweet. what to-me you-pl-recommend?"
+        },
+        {
+          "speaker": "Chelnerul:",
+          "text": "Vă recomand papanași. Avem și plăcintă cu mere.",
+          "id": "I recommend papanași. We also have apple pie.",
+          "literal": "to-you-pl I-recommend papanași. we-have also pie with apples."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Atunci papanași și un ceai, vă rog.",
+          "id": "Then papanași and a tea, please.",
+          "literal": "then papanași and a-m tea, you-pl I-ask."
+        },
+        {
+          "speaker": "Chelnerul:",
+          "text": "Imediat. … Poftiți! Poftă bună!",
+          "id": "Right away. … Here you are! Enjoy your meal!",
+          "literal": "immediately. … please-pl! appetite good-f!"
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Mulțumim! Mmm, cafeaua este foarte bună.",
+          "id": "Thank you! Mmm, the coffee is very good.",
+          "literal": "we-thank! mmm, coffee-the it-is very good-f."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Și ceaiul este bun. Nota, vă rog!",
+          "id": "The tea is good too. The bill, please!",
+          "literal": "and tea-the it-is good-m. bill-the, you-pl I-ask!"
+        },
+        {
+          "speaker": "Chelnerul:",
+          "text": "Sigur. Plătiți cash sau cu cardul?",
+          "id": "Sure. Are you paying cash or by card?",
+          "literal": "sure. you-pl-pay cash or with card-the?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Pot să plătesc cu cardul?",
+          "id": "Can I pay by card?",
+          "literal": "I-can that I-pay with card-the?"
+        },
+        {
+          "speaker": "Chelnerul:",
+          "text": "Da, sigur. Poftiți!",
+          "id": "Yes, of course. Here you are!",
+          "literal": "yes, sure. please-pl!"
+        }
+      ],
+      "notes": [
+        "**O cafea, then cafeaua.** When ordering, the coffee doesn't exist yet and isn't specific: *o cafea* — \"a coffee\". Once the cup is on the table, it becomes *cafeaua* — \"the coffee\". Likewise *un ceai → ceaiul*. That's exactly where English also switches from \"a\" to \"the\", and it's the point of this unit.",
+        "**Aș vrea is softer than vreau.** Ioana, ordering from the waiter, uses *aș vrea* (\"I'd like\"). Budi uses *vreau* — but he's stating his taste, not giving an order, and he closes with *vă rog*. Details in the second grammar box.",
+        "**Ce îmi recomandați? — learn it whole.** *Îmi* means \"to me\", and the waiter answers with its partner: *Vă recomand…* (\"I recommend to you…\"). Small pronouns like these come in units 10 and 19; for now, the ready-made sentence is enough.",
+        "**Pot să plătesc…? is a chunk too.** *Pot să* + verb = \"can I / may I…\". The *să* construction arrives in unit 11. Notice *cu cardul*: after *cu*, the noun keeps its article — the opposite of most other prepositions, as unit 6 explains.",
+        "**Poftiți and Poftă bună.** *Poftiți* is the polite form of *poftim* (unit 1): \"here you are\". *Poftă bună* literally means \"good appetite\" and is said before eating by anyone at the table — including the waiter to the guests. The reply is *Mulțumesc, la fel!* (\"Thanks, you too!\")."
+      ],
+      "grammars": [
+        {
+          "title": "The definite article — an ending glued on behind",
+          "body": [
+            "English puts *the* in front. Romanian — alone among its Latin sisters — glues it **behind** the noun as an ending: *cafeaua* = \"coffee-the\", *nota* = \"bill-the\". Which ending you use depends on the gender and the last letter of the word."
+          ],
+          "table": {
+            "head": [
+              "Gender and ending",
+              "Ending",
+              "Indefinite",
+              "Definite"
+            ],
+            "rows": [
+              [
+                "**m / n** ending in a consonant or *-i*",
+                "**-ul**",
+                "*un ceai, un pahar, un card*",
+                "*ceai**ul**, pahar**ul**, card**ul***"
+              ],
+              [
+                "**m / n** ending in *-u*",
+                "**-l**",
+                "*un leu, un metrou, un fiu*",
+                "*leu**l**, metrou**l**, fiu**l***"
+              ],
+              [
+                "**m / n** ending in *-e*",
+                "**-le**",
+                "*un frate, un câine, un lapte*",
+                "*frate**le**, câine**le**, lapte**le***"
+              ],
+              [
+                "**f** ending in *-ă*",
+                "**-a** replaces *-ă*",
+                "*o notă, o apă, o masă*",
+                "*not**a**, ap**a**, mas**a***"
+              ],
+              [
+                "**f** ending in *-e*",
+                "**-a** added",
+                "*o carte, o bere, o pâine*",
+                "*carte**a**, bere**a**, pâine**a***"
+              ],
+              [
+                "**f** ending in *-ie*",
+                "**-a** replaces *-e*",
+                "*o familie, o farmacie*",
+                "*famili**a**, farmaci**a***"
+              ],
+              [
+                "**f** ending in *-ea* or stressed *-a*",
+                "**-ua**",
+                "*o cafea, o cafenea, o stea*",
+                "*cafea**ua**, cafenea**ua**, stea**ua***"
+              ]
+            ]
+          },
+          "after": [
+            "**Now the puzzle from unit 3 is solved.** *Mama mea, sora mea, familia mea* use the ending *-a*; *fratele meu* uses *-le*; *copilul meu* and *soțul meu* use *-ul*. A possessive demands the definite article, so the ending is always there. Two irregular forms to memorize: *tată → tatăl* and *zi → ziua* (hence *bună ziua*).",
+            "**When is it used?** Almost always where English uses *the*: things already mentioned or clear to both sides (*Nota, vă rog*), and nouns that are the topic of the sentence (*Cafeaua este bună*). Romanian also uses it for general statements where English has no article: *Cafeaua e scumpă aici* = \"Coffee is expensive here\". **When not?** After *un / o*, after *a fi* + job, and after most prepositions (unit 6).",
+            "**What you'll hear on the street.** In fast speech, the *l* of *-ul* is almost always swallowed: *cardul* sounds like \"kardoo\", *ceaiul* like \"chah-yoo\". In writing the *l* is required; for your ear, the *-u* at the end is enough to signal the article."
+          ]
+        },
+        {
+          "title": "Vreau versus aș vrea — want and would like",
+          "body": [
+            "*A vrea* (to want) is irregular, but short. Next to it stands its softer form — the conditional — used every time you ask a stranger for something."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "a vrea",
+              "Say it",
+              "Polite form",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "eu",
+                "**vreau**",
+                "vryow",
+                "**aș vrea**",
+                "ahsh vryah"
+              ],
+              [
+                "tu",
+                "**vrei**",
+                "vrey",
+                "ai vrea",
+                "ai vryah"
+              ],
+              [
+                "el / ea",
+                "**vrea**",
+                "vryah",
+                "ar vrea",
+                "ahr vryah"
+              ],
+              [
+                "noi",
+                "**vrem**",
+                "vrehm",
+                "am vrea",
+                "ahm vryah"
+              ],
+              [
+                "voi",
+                "**vreți**",
+                "vrehts'",
+                "ați vrea",
+                "ahts' vryah"
+              ],
+              [
+                "ei / ele",
+                "**vor**",
+                "vohr",
+                "ar vrea",
+                "ahr vryah"
+              ]
+            ]
+          },
+          "after": [
+            "**The difference is exactly \"I want a coffee\" versus \"I'd like a coffee\".** *Vreau o cafea* to a waiter isn't grammatically wrong, but it sounds like a child making demands. *Aș vrea o cafea* is always safe. Just as polite: *Aș dori o cafea*. And even the simplest version is polite, as long as you close with the magic word: *O cafea, vă rog.*",
+            "**Among friends, *vreau* and *vrei* are perfectly normal**: *Vrei o cafea? — Da, vreau.* What's rude isn't the verb but using it to give orders to someone serving you.",
+            "**For now, use *a vrea* only with nouns**: *Vreau un ceai*, *Vrem nota*. If what you want is an action — \"I want to pay\" — Romanian needs *să*: *Vreau să plătesc*. That's the point of unit 11. You only need to recognize the polite-form column; the one to memorize is *aș vrea*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Drinks and snacks",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Română",
+            "Say it",
+            "English",
+            "With article"
+          ],
+          "rows": [
+            [
+              "**cafea** (f)",
+              "kah-FYAH",
+              "coffee",
+              "*cafeaua*"
+            ],
+            [
+              "**ceai** (n)",
+              "chai",
+              "tea",
+              "*ceaiul*"
+            ],
+            [
+              "**apă** (f)",
+              "AH-puh",
+              "water",
+              "*apa*"
+            ],
+            [
+              "**lapte** (n)",
+              "LAHP-teh",
+              "milk",
+              "*laptele*"
+            ],
+            [
+              "**suc** (n)",
+              "sook",
+              "juice; soft drink",
+              "*sucul*"
+            ],
+            [
+              "**limonadă** (f)",
+              "lee-moh-NAH-duh",
+              "fresh lemonade",
+              "*limonada*"
+            ],
+            [
+              "**bere** (f)",
+              "BEH-reh",
+              "beer",
+              "*berea*"
+            ],
+            [
+              "**vin** (n)",
+              "veen",
+              "wine",
+              "*vinul*"
+            ],
+            [
+              "**prăjitură** (f)",
+              "pruh-zhee-TOO-ruh",
+              "cake",
+              "*prăjitura*"
+            ],
+            [
+              "**plăcintă** (f)",
+              "pluh-CHEEN-tuh",
+              "pie; filled pastry",
+              "*plăcinta*"
+            ],
+            [
+              "**înghețată** (f)",
+              "în-geh-TSAH-tuh",
+              "ice cream",
+              "*înghețata*"
+            ],
+            [
+              "**covrig** (m)",
+              "koh-VREEG",
+              "pretzel ring",
+              "*covrigul*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "If you order water, the waiter will ask back: *Plată sau minerală?* — *apă plată* is still water, *apă minerală* sparkling. And if you just order *o cafea*, what arrives is usually an espresso; for coffee with milk, ask for *o cafea cu lapte* or simply say *un cappuccino*."
+        },
+        {
+          "type": "kotak",
+          "title": "Three things worth tasting",
+          "items": [
+            "**Papanași** — fried doughnuts made from fresh cheese dough (*brânză de vaci*), served warm with sour cream (*smântână*) and berry jam. Almost every Romanian restaurant has them; one portion is usually enough for two.",
+            "**Covrigi** — pretzel rings topped with sesame, poppy seeds, or coarse salt, sold warm at *covrigărie* kiosks on almost every corner of București. Cheap, and breakfast on the go for half the city.",
+            "**Cafea la ibric** — ground coffee boiled in a small long-handled copper pot and poured out with its grounds. It's the old Romanian way of making coffee at home, and the most familiar to anyone who loves Turkish coffee."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Café phrases, from sitting down to paying",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Aveți o masă liberă?*",
+              "Do you have a free table?"
+            ],
+            [
+              "*Meniul, vă rog.*",
+              "The menu, please."
+            ],
+            [
+              "*Aș vrea… / Aș dori…*",
+              "I'd like…"
+            ],
+            [
+              "*Încă o cafea, vă rog.*",
+              "Another coffee, please."
+            ],
+            [
+              "*Fără zahăr, vă rog.*",
+              "Without sugar, please."
+            ],
+            [
+              "*Ce îmi recomandați?*",
+              "What do you recommend?"
+            ],
+            [
+              "*Nu mănânc carne de porc.*",
+              "I don't eat pork."
+            ],
+            [
+              "*Nota, vă rog.*",
+              "The bill, please."
+            ],
+            [
+              "*Pot să plătesc cu cardul?*",
+              "Can I pay by card?"
+            ],
+            [
+              "*Plătim împreună.* / *Plătim separat.*",
+              "We'll pay together. / We'll pay separately."
+            ],
+            [
+              "*Păstrați restul.*",
+              "Keep the change."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice how often the definite article appears in this table: *meniul, nota, cardul, restul*. They're all things already clear to you and the waiter — there's only one menu, one bill, one change. On the other hand, *o masă liberă* and *o cafea* are indefinite, because any one will do. *Nu mănânc carne de porc* uses a verb that only arrives in unit 7; learn it whole, since Romanian cooking uses a lot of pork and you may need it from day one."
+        },
+        {
+          "type": "kotak",
+          "title": "Two table customs worth knowing",
+          "items": [
+            "**Bacșiș** (the tip) isn't included in the price and is usually about ten percent. Many restaurants print a separate *bacșiș* line on the bill, so you can add it even when paying by card. When paying cash, name a round amount or say *Păstrați restul*.",
+            "**Noroc!** is what you say when clinking glasses — literally \"luck!\". Romanians look each other in the eye as the glasses touch. A more formal toast: *Sănătate!* (\"health!\")."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 2",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Romanian column, read the English, and rebuild the sentences from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Română"
+          ],
+          "rows": [
+            [
+              "Where are you from? — I'm from Indonesia.",
+              "*De unde ești? — Sunt din Indonezia.*"
+            ],
+            [
+              "Now I live in București.",
+              "*Acum locuiesc în București.*"
+            ],
+            [
+              "Do you speak Romanian? — A little. I don't speak well yet.",
+              "*Vorbești românește? — Puțin. Încă nu vorbesc bine.*"
+            ],
+            [
+              "Which languages do you speak?",
+              "*Ce limbi vorbești?*"
+            ],
+            [
+              "It's nothing.",
+              "*Nu-i nimic.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ro": "cafenea",
+      "baca": "kah-feh-NYAH",
+      "en": "café (f)"
+    },
+    {
+      "ro": "chelner / chelneriță",
+      "baca": "KEHL-nehr / kehl-neh-REE-tsuh",
+      "en": "waiter / waitress (m / f)"
+    },
+    {
+      "ro": "a vrea (vreau)",
+      "baca": "ah vryah (vryow)",
+      "en": "to want"
+    },
+    {
+      "ro": "a dori (doresc)",
+      "baca": "ah doh-REE (doh-REHSK)",
+      "en": "to wish, to desire"
+    },
+    {
+      "ro": "a plăti (plătesc)",
+      "baca": "ah pluh-TEE (pluh-TEHSK)",
+      "en": "to pay"
+    },
+    {
+      "ro": "a recomanda (recomand)",
+      "baca": "ah reh-koh-mahn-DAH (reh-koh-MAHND)",
+      "en": "to recommend"
+    },
+    {
+      "ro": "notă",
+      "baca": "NOH-tuh",
+      "en": "bill; receipt (f)"
+    },
+    {
+      "ro": "card",
+      "baca": "kahrd",
+      "en": "bank card (n)"
+    },
+    {
+      "ro": "pahar",
+      "baca": "pah-HAHR",
+      "en": "glass (n)"
+    },
+    {
+      "ro": "zahăr",
+      "baca": "ZAH-huhr",
+      "en": "sugar (n)"
+    },
+    {
+      "ro": "bun / bună",
+      "baca": "boon / BOO-nuh",
+      "en": "good; tasty (m / f)"
+    },
+    {
+      "ro": "dulce",
+      "baca": "DOOL-cheh",
+      "en": "sweet"
+    },
+    {
+      "ro": "cu",
+      "baca": "koo",
+      "en": "with"
+    },
+    {
+      "ro": "fără",
+      "baca": "FUH-ruh",
+      "en": "without"
+    },
+    {
+      "ro": "ceva",
+      "baca": "cheh-VAH",
+      "en": "something"
+    },
+    {
+      "ro": "atunci",
+      "baca": "ah-TOONCH'",
+      "en": "then; in that case"
+    },
+    {
+      "ro": "sigur",
+      "baca": "SEE-goor",
+      "en": "sure; certain"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Romanian.",
+      "items": [
+        "Good afternoon. I'd like a coffee, please.",
+        "With milk or without milk?",
+        "What do you recommend?",
+        "The coffee is very good.",
+        "The bill, please.",
+        "Can I pay by card?"
+      ]
+    },
+    {
+      "prompt": "Give these nouns the definite article.",
+      "items": [
+        "o cafea → ____",
+        "un ceai → ____",
+        "o notă → ____",
+        "un frate → ____",
+        "o bere → ____",
+        "un pahar → ____",
+        "o familie → ____",
+        "un metrou → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "cafea / vrea / o / aș / rog / vă / ,",
+        "recomandați / îmi / ce / ?",
+        "bună / este / cafeaua / foarte",
+        "rog / nota / vă / ,",
+        "cu / plătesc / pot / cardul / să / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Bună ziua. Aș vrea o cafea, vă rog. — Cu lapte sau fără lapte? — Ce îmi recomandați? — Cafeaua este foarte bună. — Nota, vă rog. — Pot să plătesc cu cardul?",
+    "cafeaua — ceaiul — nota — fratele — berea — paharul — familia — metroul",
+    "Aș vrea o cafea, vă rog. — Ce îmi recomandați? — Cafeaua este foarte bună. — Nota, vă rog. — Pot să plătesc cu cardul?"
+  ]
+}

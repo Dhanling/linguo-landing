@@ -1,0 +1,537 @@
+{
+  "title": "Shopping — and the form that appears when something isn't there",
+  "title_target": "Na pijaci",
+  "goal": "Haggle, ask for quantities, and pay at the market — while setting up the genitive, the case with the most jobs: possession, negation, quantities, and a whole row of prepositions you use every day.",
+  "bekal": [
+    "ask prices, ask for quantities, and understand your change",
+    "form the genitive singular and plural for all three noun genders",
+    "use the genitive after *nema*, after quantities, and after *iz, od, do, bez, kod*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Na pijaci Markale",
+      "intro": "Saturday morning at the Markale open-air market, in the city center. The wooden stalls are piled with vegetables, and every seller calls out to buyers with a nickname.",
+      "lines": [
+        {
+          "speaker": "Prodavačica:",
+          "text": "Izvolite, mladiću! Šta želite?",
+          "id": "Come on, young man! What would you like?",
+          "literal": "please, young-man-voc! what you(pl)-wish?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Koliko košta kilogram jabuka?",
+          "id": "How much is a kilo of apples?",
+          "literal": "how-much it-costs kilogram apples-gen-pl?"
+        },
+        {
+          "speaker": "Prodavačica:",
+          "text": "Dvije marke i pedeset. Jako su dobre.",
+          "id": "Two fifty. They're very good.",
+          "literal": "two-f marks and fifty. very they-are good-f-pl."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dajte mi dva kilograma, molim. Imate li paradajza?",
+          "id": "Two kilos, please. Do you have tomatoes?",
+          "literal": "give to-me two kilograms-gen, I-ask. you(pl)-have whether tomatoes-gen?"
+        },
+        {
+          "speaker": "Prodavačica:",
+          "text": "Danas nemam paradajza, ali imam krastavaca.",
+          "id": "No tomatoes today, but I have cucumbers.",
+          "literal": "today not-I-have tomatoes-gen, but I-have cucumbers-gen-pl."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Onda pola kilograma krastavaca. I malo sira, ako imate.",
+          "id": "Then half a kilo of cucumbers. And a little cheese, if you have some.",
+          "literal": "then half kilogram-gen cucumbers-gen-pl. and little cheese-gen, if you(pl)-have."
+        },
+        {
+          "speaker": "Prodavačica:",
+          "text": "Sir je kod komšinice, tamo desno. Još nešto?",
+          "id": "Cheese is at my neighbor's stall, there on the right. Anything else?",
+          "literal": "cheese it-is at neighbor-f-gen, there right. more something?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ne, hvala. Koliko je to ukupno?",
+          "id": "No, thanks. How much is that altogether?",
+          "literal": "no, thanks. how-much it-is that in-total?"
+        },
+        {
+          "speaker": "Prodavačica:",
+          "text": "Šest maraka i dvadeset feninga.",
+          "id": "Six marks twenty.",
+          "literal": "six marks-gen-pl and twenty fenings-gen-pl."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Evo deset maraka.",
+          "id": "Here's ten marks.",
+          "literal": "here-is ten marks-gen-pl."
+        },
+        {
+          "speaker": "Prodavačica:",
+          "text": "Hvala. Evo kusura. Dolazite li iz Turske?",
+          "id": "Thank you. Here's your change. Are you from Turkey?",
+          "literal": "thanks. here-is change-gen. you(pl)-come whether from Turkey-gen?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ne, iz Indonezije. Ovdje sam zbog posla.",
+          "id": "No, from Indonesia. I'm here for work.",
+          "literal": "no, from Indonesia-gen. here I-am because-of work-gen."
+        },
+        {
+          "speaker": "Prodavačica:",
+          "text": "Indonezija! Dobro došli. Dođite opet, imam najbolje jabuke.",
+          "id": "Indonesia! Welcome. Come again — I have the best apples.",
+          "literal": "Indonesia! well come-pl. come again, I-have best-pl apples."
+        }
+      ],
+      "notes": [
+        "**Count how many times a genitive ending shows up in this dialogue: *jabuka, kilograma, paradajza, krastavaca, sira, komšinice, maraka, feninga, kusura, Turske, Indonezije, posla*.** Twelve times in thirteen lines. That's why the genitive is called the busiest case in Bosnian — and why it comes this early.",
+        "***Nemam paradajza*, not *nemam paradajz*.** Negation pulls the noun into the genitive. *Imam vremena* and *nemam vremena* (I have / don't have time), *Ima kafe* and *nema kafe*. This rule also explains *nema problema* — a phrase you've been using since unit 4 without knowing why it ends in *-a*.",
+        "***Dajte mi* — \"give me\".** That's the polite command form of *dati*, plus *mi*, meaning \"to me\". The casual form is *Daj mi*. The little word *mi* is a dative form, set up in unit 13; for now learn *dajte mi* and *daj mi* as chunks — you'll use them in every shop.",
+        "***Kod* means \"at (someone's place)\".** *Kod komšinice* = at the neighbor's stall; *kod kuće* = at home; *kod doktora* = at the doctor's; *kod mene* = at my place. It works like French *chez*, and it's used all the time — once you recognize it, many sentences suddenly open up.",
+        "**Markale.** An open-air market in the heart of Sarajevo, and a heavy name in the city's history: it was shelled twice during the siege of 1992-1995. Today it's back to what it always was — a place where people argue over the price of tomatoes from seven in the morning. If you go, go early; after midday the best is gone."
+      ],
+      "grammars": [
+        {
+          "title": "Genitiv — the forms",
+          "body": [
+            "The second case, and the most used of all seven. Its endings are few and regular; what takes time is recognizing when it's used — that's the second part."
+          ],
+          "table": {
+            "head": [
+              "Type",
+              "Nominativ",
+              "Genitive singular",
+              "Genitive plural"
+            ],
+            "rows": [
+              [
+                "**m**",
+                "*grad, student, sir*",
+                "**-a** → *grada, studenta, sira*",
+                "**-ova / -eva** → *gradova, studenata*"
+              ],
+              [
+                "**f ending in -a**",
+                "*kafa, jabuka, marka*",
+                "**-e** → *kafe, jabuke, marke*",
+                "**no ending** → *kafa, jabuka, maraka*"
+              ],
+              [
+                "**f ending in a consonant**",
+                "*noć, stvar*",
+                "**-i** → *noći, stvari*",
+                "**-i** → *noći, stvari*"
+              ],
+              [
+                "**n**",
+                "*pivo, more*",
+                "**-a** → *piva, mora*",
+                "**no ending** → *piva, mora*"
+              ]
+            ]
+          },
+          "after": [
+            "**The easiest to remember: masculine and neuter words end in *-a* in the genitive singular.** *Grad → grada*, *pivo → piva*, *posao → posla*, *sir → sira*. One ending for two genders.",
+            "**The genitive plural of feminine and neuter words has no ending at all** — and that's exactly why it often looks like some other form. *Jabuke → jabuka*, *marke → maraka*, *piva → piva*. Note *maraka*: when dropping the ending would leave two consonants that are hard to say (*mark*), Bosnian slips an **-a-** into the middle. Likewise *sestra → sestara*, *djevojka → djevojaka*, *student → studenata*.",
+            "**The masculine genitive plural uses *-ova* or *-eva***, the same insert you know from the plural in unit 5: *grad → gradovi → gradova*, *nož → noževi → noževa*. Longer words just use *-a*: *studenti → studenata*, *prozori → prozora*.",
+            "**Adjectives follow, as usual:** *dobrog grada* (m/n singular), *dobre kafe* (f singular), *dobrih gradova* (plural, all genders). That plural ending *-ih* is the same for all three genders — one thing that's easier than it looks."
+          ]
+        },
+        {
+          "title": "The five jobs of the genitive",
+          "body": [
+            "This is the part that really takes time. All five often appear in the same sentence, so once you recognize the pattern, half of Bosnian becomes readable."
+          ],
+          "table": {
+            "head": [
+              "Job",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**1. Possession — \"of\"**",
+                "*kuća mog brata*, *centar grada*",
+                "my brother's house, the city center"
+              ],
+              [
+                "**2. After negation**",
+                "*Nema kafe. Nemam vremena.*",
+                "There's no coffee. I don't have time."
+              ],
+              [
+                "**3. Quantities and amounts**",
+                "*kilogram jabuka*, *čaša vode*, *malo sira*, *puno ljudi*",
+                "a kilo of apples, a glass of water, a little cheese, lots of people"
+              ],
+              [
+                "**4. After numbers from 2 up**",
+                "*dva grada*, *pet maraka*",
+                "two cities, five marks"
+              ],
+              [
+                "**5. After prepositions**",
+                "*iz, od, do, bez, kod, poslije, prije, blizu, oko, zbog*",
+                "from, from, until, without, at, after, before, near, around, because of"
+              ]
+            ]
+          },
+          "after": [
+            "**Possession: the same order as English \"of\".** *Kuća mog brata* = \"the house of my brother\" — the thing owned first, the owner after. There's no *'s*; instead the owner's ending changes: *brat → brata*, *Amina → Amine*, *grad → grada*.",
+            "**The prepositions you'll use most, all with the genitive:** *iz* (from, origin), *od* (from, since; also \"than\"), *do* (until, up to), *bez* (without), *kod* (at someone's place), *poslije* (after), *prije* (before), *blizu* (near), *pored* (next to), *oko* (around), *zbog* (because of), *umjesto* (instead of), *preko* (across, via).",
+            "**Quantity words are worth learning whole with their partners:** *malo* (a little), *puno / mnogo* (a lot), *dosta* (enough; also \"quite a lot\"), *nekoliko* (several), *pola* (half), *komad* (a piece), *čaša* (a glass), *flaša* (a bottle), *kilogram*, *litar*. All of them pull the next noun into the genitive — and if it's countable, into the genitive **plural**: *puno ljudi*, *nekoliko maraka*.",
+            "**One idea that ties it all together.** If you look closely, all five jobs circle around one notion: **part of**, **coming from**, or **none of**. The genitive is the case that points toward origin and parts — much like English \"of\" and \"from\". If you're unsure mid-sentence, ask yourself: is this about a portion, an origin, or an absence? If yes, it's almost certainly the genitive."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kupovina — shopping at the market and in shops",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bosnia has two different shopping worlds: the *pijaca* (open-air market, prices can be rounded, the seller remembers your face) and the *market* or *prodavnica* (supermarket, fixed prices). The sentences below work in both."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bosanski",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Koliko košta…?*",
+              "KOH-lee-koh KOHSH-tah",
+              "How much is… ?"
+            ],
+            [
+              "*Imate li…?*",
+              "EE-mah-teh lee",
+              "Do you have… ?"
+            ],
+            [
+              "*Dajte mi…, molim.*",
+              "DAI-teh mee",
+              "I'd like…, please."
+            ],
+            [
+              "*Pola kilograma, molim.*",
+              "POH-lah kee-loh-GRAH-mah",
+              "Half a kilo, please."
+            ],
+            [
+              "*Malo / puno, molim.*",
+              "MAH-loh / POO-noh",
+              "A little / a lot, please."
+            ],
+            [
+              "*Još nešto?*",
+              "yohsh NEHSH-toh",
+              "Anything else? (from the seller)"
+            ],
+            [
+              "*To je sve, hvala.*",
+              "toh yeh sveh",
+              "That's all, thanks."
+            ],
+            [
+              "*Koliko je to ukupno?*",
+              "…OO-koop-noh",
+              "How much is that altogether?"
+            ],
+            [
+              "*Imate li nešto jeftinije?*",
+              "…yehf-TEE-nee-yeh",
+              "Do you have anything cheaper?"
+            ],
+            [
+              "*Može li malo jeftinije?*",
+              "MOH-zheh lee",
+              "Could you make it a bit cheaper?"
+            ],
+            [
+              "*Evo kusura.*",
+              "EH-voh KOO-soo-rah",
+              "Here's your change."
+            ],
+            [
+              "*Nemam sitno.*",
+              "NEH-mahm SEET-noh",
+              "I don't have small change."
+            ],
+            [
+              "*Mogu li platiti karticom?*",
+              "…KAHR-tee-tsohm",
+              "Can I pay by card?"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Voće i povrće",
+            "English",
+            "U prodavnici",
+            "English"
+          ],
+          "rows": [
+            [
+              "*jabuka* (f)",
+              "apple",
+              "*hljeb* (m)",
+              "bread"
+            ],
+            [
+              "*banana* (f)",
+              "banana",
+              "*mlijeko* (n)",
+              "milk"
+            ],
+            [
+              "*grožđe* (n)",
+              "grapes",
+              "*jaje* (n) — pl *jaja*",
+              "egg"
+            ],
+            [
+              "*šljiva* (f)",
+              "plum",
+              "*puter* (m)",
+              "butter"
+            ],
+            [
+              "*paradajz* (m)",
+              "tomato",
+              "*riža* (f)",
+              "rice"
+            ],
+            [
+              "*krastavac* (m)",
+              "cucumber",
+              "*ulje* (n)",
+              "oil"
+            ],
+            [
+              "*krompir* (m)",
+              "potato",
+              "*so* (f)",
+              "salt"
+            ],
+            [
+              "*luk* (m)",
+              "onion",
+              "*šećer* (m)",
+              "sugar"
+            ],
+            [
+              "*paprika* (f)",
+              "pepper",
+              "*brašno* (n)",
+              "flour"
+            ],
+            [
+              "*salata* (f)",
+              "lettuce",
+              "*kafa* (f)",
+              "coffee"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Haggling: yes, but not everywhere",
+          "items": [
+            "At the *pijaca*, rounding the price down is normal and not considered rude — especially if you're buying a lot or come near closing time. The phrase: *Može li malo jeftinije?* or simply *Hajde, za pet maraka?*",
+            "In supermarkets, pharmacies, and shops with price tags, nobody haggles at all. There, a different question is useful: *Imate li nešto jeftinije?* — do you have anything cheaper?",
+            "One habit worth copying: greet the seller first. A *Dobar dan!* before asking the price changes the whole tone of the conversation, and at a small market it often ends with a free piece of fruit to taste."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 6",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Bosnian column, read the English, and rebuild the sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Bosanski"
+          ],
+          "rows": [
+            [
+              "What are you doing after work?",
+              "*Šta radiš poslije posla?*"
+            ],
+            [
+              "I'm going home, maybe I'll read.",
+              "*Idem kući, možda čitam.*"
+            ],
+            [
+              "Usually I eat out.",
+              "*Obično jedem vani.*"
+            ],
+            [
+              "I never drink coffee in the evening.",
+              "*Nikad ne pijem kafu uveče.*"
+            ],
+            [
+              "Can I write a message first?",
+              "*Mogu li prvo pisati poruku?*"
+            ],
+            [
+              "I'll wait for you downstairs.",
+              "*Čekam te dolje.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bs": "pijaca (f)",
+      "baca": "PEE-yah-tsah",
+      "en": "market"
+    },
+    {
+      "bs": "prodavnica (f)",
+      "baca": "proh-DAHV-nee-tsah",
+      "en": "shop, store"
+    },
+    {
+      "bs": "kilogram (m)",
+      "baca": "kee-loh-GRAHM",
+      "en": "kilogram"
+    },
+    {
+      "bs": "pola",
+      "baca": "POH-lah",
+      "en": "half"
+    },
+    {
+      "bs": "puno / mnogo",
+      "baca": "POO-noh / MNOH-goh",
+      "en": "a lot, many"
+    },
+    {
+      "bs": "dosta",
+      "baca": "DOHS-tah",
+      "en": "enough"
+    },
+    {
+      "bs": "kusur (m)",
+      "baca": "KOO-soor",
+      "en": "change (money)"
+    },
+    {
+      "bs": "jabuka (f)",
+      "baca": "YAH-boo-kah",
+      "en": "apple"
+    },
+    {
+      "bs": "hljeb (m)",
+      "baca": "hlyehb",
+      "en": "bread"
+    },
+    {
+      "bs": "jaje (n) — pl *jaja*",
+      "baca": "YAH-yeh",
+      "en": "egg"
+    },
+    {
+      "bs": "iz / od / do",
+      "baca": "eez / ohd / doh",
+      "en": "from / from, since / until, up to"
+    },
+    {
+      "bs": "bez",
+      "baca": "behz",
+      "en": "without"
+    },
+    {
+      "bs": "kod",
+      "baca": "kohd",
+      "en": "at (someone's place)"
+    },
+    {
+      "bs": "blizu / pored",
+      "baca": "BLEE-zoo / POH-rehd",
+      "en": "near / next to"
+    },
+    {
+      "bs": "prije / poslije",
+      "baca": "PREE-yeh / POHS-lyeh",
+      "en": "before / after"
+    },
+    {
+      "bs": "zbog",
+      "baca": "zbohg",
+      "en": "because of"
+    },
+    {
+      "bs": "vrijeme (n)",
+      "baca": "VREE-yeh-meh",
+      "en": "time; weather"
+    },
+    {
+      "bs": "opet",
+      "baca": "OH-peht",
+      "en": "again"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Bosnian.",
+      "items": [
+        "How much is a kilo of apples?",
+        "Two kilos, please.",
+        "There are no tomatoes today.",
+        "I don't have time.",
+        "I'm from Indonesia.",
+        "How much is that altogether?"
+      ]
+    },
+    {
+      "prompt": "Put the noun into the genitive.",
+      "items": [
+        "kilogram ____ (jabuke)",
+        "čaša ____ (voda)",
+        "Nemam ____ (vrijeme).",
+        "Ovo je kuća mog ____ (brat).",
+        "Dolazim iz ____ (Indonezija).",
+        "pet ____ (marka)",
+        "kafa bez ____ (šećer)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "košta / jabuka / kilogram / koliko / ?",
+        "mi / dajte / kilograma / dva",
+        "paradajza / nemam / danas",
+        "Indonezije / sam / iz",
+        "ukupno / je / to / koliko / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Koliko košta kilogram jabuka? — Dajte mi dva kilograma, molim. — Danas nema paradajza. — Nemam vremena. — Ja sam iz Indonezije. — Koliko je to ukupno?",
+    "jabuka — vode — vremena — brata — Indonezije — maraka — šećera",
+    "Koliko košta kilogram jabuka? — Dajte mi dva kilograma. — Danas nemam paradajza. — Iz Indonezije sam. — Koliko je to ukupno?"
+  ]
+}

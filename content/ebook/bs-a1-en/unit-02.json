@@ -1,0 +1,585 @@
+{
+  "title": "Where are you from?",
+  "title_target": "Odakle si?",
+  "goal": "Say where you're from, where you live, what you do, and which languages you speak — while setting up the two verb groups with the most members and two ways of asking a yes/no question.",
+  "bekal": [
+    "answer *Odakle si?* and *Gdje živiš?* in full sentences",
+    "use verbs of the *-am* and *-im* groups in all six forms",
+    "negate with *ne* and ask questions with both *da li* and *li*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Odakle si?",
+      "intro": "Budi's first coffee break at the office. Amina is curious, and like almost every Bosnian, she asks straight out without beating around the bush.",
+      "lines": [
+        {
+          "speaker": "Amina:",
+          "text": "Budi, odakle si? Iz Malezije?",
+          "id": "Budi, where are you from? From Malaysia?",
+          "literal": "Budi, from-where you-are? from Malaysia-gen?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ne, nisam. Iz Indonezije sam, iz Jakarte.",
+          "id": "No. I'm from Indonesia, from Jakarta.",
+          "literal": "no, I-am-not. from Indonesia-gen I-am, from Jakarta-gen."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Aha! A gdje sada živiš?",
+          "id": "Oh! And where do you live now?",
+          "literal": "aha! and where now you-live?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Živim u Sarajevu, u Starom Gradu. A ti?",
+          "id": "I live in Sarajevo, in Stari Grad. And you?",
+          "literal": "I-live in Sarajevo-loc, in Old-Town-loc. and you?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Ja sam iz Mostara, ali radim ovdje već tri godine.",
+          "id": "I'm from Mostar, but I've been working here for three years.",
+          "literal": "I I-am from Mostar-gen, but I-work here already three years-gen."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Šta radiš u firmi?",
+          "id": "What do you do at the company?",
+          "literal": "what you-do in company-loc?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Programerka sam, kao i ti. A koje jezike govoriš?",
+          "id": "I'm a programmer, just like you. And which languages do you speak?",
+          "literal": "programmer-f I-am, like also you. and which-pl languages-pl you-speak?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Govorim indonežanski, engleski i malo bosanski.",
+          "id": "I speak Indonesian, English, and a little Bosnian.",
+          "literal": "I-speak indonesian, english and little bosnian."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Odlično govoriš! Razumiješ li sve?",
+          "id": "You speak really well! Do you understand everything?",
+          "literal": "excellently you-speak! you-understand whether everything?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ne razumijem sve, ali učim svaki dan.",
+          "id": "Not everything, but I study every day.",
+          "literal": "not I-understand everything, but I-study every day."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Znaš li šta znači \"Baščaršija\"?",
+          "id": "Do you know what \"Baščaršija\" means?",
+          "literal": "you-know whether what it-means \"Baščaršija\"?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ne znam. Šta znači?",
+          "id": "I don't know. What does it mean?",
+          "literal": "not I-know. what it-means?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "To je glavna čaršija — turska riječ za pijacu. Idemo sutra!",
+          "id": "It's the main bazaar — a Turkish word for market. Let's go tomorrow!",
+          "literal": "that it-is main-f bazaar — turkish-f word for market-acc. we-go tomorrow!"
+        }
+      ],
+      "notes": [
+        "***Odakle si?* is answered with *iz* + a changed ending.** The place name changes its ending: *Indonezija → iz Indonezije*, *Jakarta → iz Jakarte*, *Mostar → iz Mostara*. That form is called the genitive and gets its full treatment in unit 8. For now just learn the pattern: names ending in *-a* switch to *-e*, names ending in a consonant add *-a*.",
+        "**Saying \"no\" takes two words.** *Ne* on its own sounds very short, almost curt. The natural thing is to repeat the verb in the negative: *Ne, nisam.* — *Ne, ne znam.* — *Ne, ne živim tamo.* Much like English \"No, I'm not\" or \"No, I don't\" — and it works for every yes/no question in Bosnian.",
+        "**Language names are lowercase, country names capitalized.** *Bosna* but *bosanski*; *Indonezija* but *indonežanski*; *Engleska* but *engleski*. Nationalities are capitalized: *Bosanac, Indonežanin*. This is the opposite of English for language names — watch out when writing.",
+        "***Radim ovdje već tri godine* — present tense, not past.** English says \"I have been working here for three years\", but Bosnian uses the **present tense** for something that started in the past and is still going on. The key word is *već* (already). Don't be tempted to use the past here — it would mean \"I once worked here\".",
+        "**Baščaršija.** The name of the heart of Sarajevo's old town, from Turkish *baş* (head, main) + *çarşı* (market). Hundreds of words like this live on in everyday Bosnian: *sapun* (soap), *sat* (hour, clock), *šećer* (sugar), *insan* (human being), *selam*, *dunjaluk* (the world). Some even reached English through the same route: *kafa* (coffee), *jogurt*, *kiosk*."
+      ],
+      "grammars": [
+        {
+          "title": "Present tense — the two biggest groups",
+          "body": [
+            "Bosnian verbs change for the person — six forms in each tense, just like *biti* in unit 1. The good news: the endings are nearly uniform. All that separates the groups is **the vowel before the ending** and **the *oni* form**."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "**znati** (to know)",
+              "**raditi** (to work)",
+              "**govoriti** (to speak)",
+              "**živjeti** (to live)"
+            ],
+            "rows": [
+              [
+                "ja",
+                "**znam**",
+                "**radim**",
+                "**govorim**",
+                "**živim**"
+              ],
+              [
+                "ti",
+                "*znaš*",
+                "*radiš*",
+                "*govoriš*",
+                "*živiš*"
+              ],
+              [
+                "on / ona / ono",
+                "*zna*",
+                "*radi*",
+                "*govori*",
+                "*živi*"
+              ],
+              [
+                "mi",
+                "*znamo*",
+                "*radimo*",
+                "*govorimo*",
+                "*živimo*"
+              ],
+              [
+                "vi",
+                "*znate*",
+                "*radite*",
+                "*govorite*",
+                "*živite*"
+              ],
+              [
+                "oni / one / ona",
+                "*znaju*",
+                "*rade*",
+                "*govore*",
+                "*žive*"
+              ]
+            ]
+          },
+          "after": [
+            "**The endings are the same in both groups: *-m, -š, —, -mo, -te*.** Only the vowel in front differs: the **-am** group (*znam, znaš*) and the **-im** group (*radim, radiš*). The *on/ona* form never has an ending at all — just cut the *-m* off the *ja* form.",
+            "**The *oni* form is the one you can't guess**: the *-am* group uses **-aju** (*znaju, imaju, pitaju*), the *-im* group uses **-e** (*rade, govore, žive*). This is the only row you must learn separately.",
+            "**The dictionary form is often misleading.** *Raditi* and *živjeti* look different, but both belong to the *-im* group. *Znati* and *imati* belong to the *-am* group. That's why this course always lists verbs in their **ja form**, not the dictionary form — that's the form that actually tells you the group. The third group (*-em*: *pišem, idem, zovem*) comes in unit 6.",
+            "**The pronoun is dropped unless stressed.** *Govorim bosanski* can only mean \"I speak Bosnian\". *Ja govorim bosanski* means \"*I* speak Bosnian\" — there's a hidden contrast in it."
+          ]
+        },
+        {
+          "title": "Saying no and asking questions",
+          "body": [
+            "Two tools you'll use in every unit from now on, and both are simpler than you'd expect."
+          ],
+          "table": {
+            "head": [
+              "Question word",
+              "Say it",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**ko**",
+                "koh",
+                "who",
+                "*Ko je to?* — Who is that?"
+              ],
+              [
+                "**šta**",
+                "shtah",
+                "what",
+                "*Šta radiš?* — What are you doing?"
+              ],
+              [
+                "**gdje**",
+                "gdyeh",
+                "where",
+                "*Gdje živiš?* — Where do you live?"
+              ],
+              [
+                "**odakle**",
+                "OH-dah-kleh",
+                "where from",
+                "*Odakle si?* — Where are you from?"
+              ],
+              [
+                "**kuda / gdje**",
+                "KOO-dah",
+                "where to",
+                "*Kuda ideš?* — Where are you going?"
+              ],
+              [
+                "**kada / kad**",
+                "KAH-dah",
+                "when",
+                "*Kada radiš?* — When do you work?"
+              ],
+              [
+                "**zašto**",
+                "ZAHSH-toh",
+                "why",
+                "*Zašto učiš bosanski?*"
+              ],
+              [
+                "**kako**",
+                "KAH-koh",
+                "how",
+                "*Kako se kaže…?*"
+              ],
+              [
+                "**koliko**",
+                "KOH-lee-koh",
+                "how much / how many",
+                "*Koliko košta?* — How much is it?"
+              ],
+              [
+                "**koji / koja / koje**",
+                "KOH-yee",
+                "which",
+                "*Koje jezike govoriš?*"
+              ]
+            ]
+          },
+          "after": [
+            "**Negating: *ne* before the verb, written separately.** *Ne znam. Ne razumijem. Ne živim u Mostaru.* No helper like English *do* — just *ne*. Only three verbs fuse their negative into one word, and all three are very common: *nisam* (from *biti*), *nemam* (from *imati*), *neću* (from *htjeti*, to want).",
+            "**Yes/no questions have two equally correct forms.** First, *da li* at the front: **Da li** *govoriš bosanski?* Second, *li* slipped in after the verb: *Govoriš* **li** *bosanski?* Both are everyday Bosnian; the second is a little shorter and more common in writing. With *biti*, the long form is used: *Jesi li umoran?*, *Jeste li Vi profesor?*",
+            "**No need for \"do\" or swapping words around.** Unlike English, a Bosnian question can be exactly the same as a statement — just raise your voice at the end: *Ti si student?* is a valid and very common question.",
+            "**Question words always come first.** *Gdje živiš?*, *Šta radiš?*, *Koliko košta?* — just as in English."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Countries, nationalities, languages",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Country, person, and language are always three different words in Bosnian, even where English uses one word for two of them (\"Japanese\" = the person and the language). Once you see the pattern, you can guess the rest."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Država (country)",
+            "Čovjek (man / woman)",
+            "Jezik (language)"
+          ],
+          "rows": [
+            [
+              "**Bosna i Hercegovina**",
+              "*Bosanac / Bosanka*",
+              "*bosanski*"
+            ],
+            [
+              "**Indonezija**",
+              "*Indonežanin / Indonežanka*",
+              "*indonežanski*"
+            ],
+            [
+              "**Hrvatska**",
+              "*Hrvat / Hrvatica*",
+              "*hrvatski*"
+            ],
+            [
+              "**Srbija**",
+              "*Srbin / Srpkinja*",
+              "*srpski*"
+            ],
+            [
+              "**Turska**",
+              "*Turčin / Turkinja*",
+              "*turski*"
+            ],
+            [
+              "**Njemačka**",
+              "*Nijemac / Njemica*",
+              "*njemački*"
+            ],
+            [
+              "**Engleska**",
+              "*Englez / Engleskinja*",
+              "*engleski*"
+            ],
+            [
+              "**Amerika**",
+              "*Amerikanac / Amerikanka*",
+              "*engleski*"
+            ],
+            [
+              "**Francuska**",
+              "*Francuz / Francuskinja*",
+              "*francuski*"
+            ],
+            [
+              "**Italija**",
+              "*Italijan / Italijanka*",
+              "*italijanski*"
+            ],
+            [
+              "**Malezija**",
+              "*Malezijac / Malezijka*",
+              "*malajski*"
+            ],
+            [
+              "**Japan**",
+              "*Japanac / Japanka*",
+              "*japanski*"
+            ],
+            [
+              "**Kina**",
+              "*Kinez / Kineskinja*",
+              "*kineski*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Language names **always end in *-ski* and are always lowercase**. If you know the country, you can almost always work out the language yourself. To say \"in Bosnian\", use *na*: *Kako se to kaže na bosanskom?*"
+        },
+        {
+          "type": "kotak",
+          "title": "From where — and where",
+          "items": [
+            "**Origin: *iz* + genitive ending.** *Ja sam iz Indonezije. On je iz Mostara. Oni su iz Njemačke.* Names ending in *-a* change it to *-e*; names ending in a consonant add *-a*.",
+            "**Where you live: *u* + locative ending.** *Živim u Sarajevu. Ona živi u Jakarti. Oni žive u Njemačkoj.* The ending is *-u* for masculine and neuter words, *-i* for feminine words.",
+            "**For now, learn whole sentences, not tables.** These two endings each have their own unit — the genitive in unit 8, the locative in unit 9 — and there it will all click at once. What matters today: your ear has heard that place names *do change*, so it won't come as a shock later."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Zanimanja — saying what you do",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The question comes in two equally common forms: *Šta si po zanimanju?* (\"what are you by occupation?\") and *Čime se baviš?* (\"with what do you occupy yourself?\"). The answer has no article: *Programer sam* — \"I'm a programmer\", with no *a*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Man",
+            "Woman",
+            "English"
+          ],
+          "rows": [
+            [
+              "*student*",
+              "*studentica*",
+              "(university) student"
+            ],
+            [
+              "*profesor*",
+              "*profesorica*",
+              "professor; high-school teacher"
+            ],
+            [
+              "*nastavnik*",
+              "*nastavnica*",
+              "teacher"
+            ],
+            [
+              "*ljekar / doktor*",
+              "*ljekarka / doktorica*",
+              "doctor"
+            ],
+            [
+              "*inženjer*",
+              "*inženjerka*",
+              "engineer"
+            ],
+            [
+              "*programer*",
+              "*programerka*",
+              "programmer"
+            ],
+            [
+              "*novinar*",
+              "*novinarka*",
+              "journalist"
+            ],
+            [
+              "*pravnik*",
+              "*pravnica*",
+              "lawyer"
+            ],
+            [
+              "*konobar*",
+              "*konobarica*",
+              "waiter / waitress"
+            ],
+            [
+              "*kuhar*",
+              "*kuharica*",
+              "cook"
+            ],
+            [
+              "*prodavač*",
+              "*prodavačica*",
+              "shop assistant"
+            ],
+            [
+              "*vozač*",
+              "*vozačica*",
+              "driver"
+            ],
+            [
+              "*radnik*",
+              "*radnica*",
+              "worker"
+            ],
+            [
+              "*penzioner*",
+              "*penzionerka*",
+              "retiree"
+            ],
+            [
+              "*medicinski tehničar*",
+              "*medicinska sestra*",
+              "nurse"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The pattern is almost always the same: the feminine form adds **-ica** or **-ka** to the masculine. If you forget the feminine, using the masculine won't cause any misunderstanding — but the feminine sounds far more natural, and in Bosnia it is almost always used."
+        },
+        {
+          "type": "p",
+          "text": "Three phrases that help when you don't have a neat answer yet: *Tražim posao* (I'm looking for work), *Ne radim* (I'm not working), *Studiram* (I'm at university). And one sentence you'll often need in Sarajevo: *Radim za jednu firmu iz Indonezije* — I work for a company from Indonesia."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bs": "odakle",
+      "baca": "OH-dah-kleh",
+      "en": "where from"
+    },
+    {
+      "bs": "iz",
+      "baca": "eez",
+      "en": "from (origin)"
+    },
+    {
+      "bs": "gdje",
+      "baca": "gdyeh",
+      "en": "where"
+    },
+    {
+      "bs": "živjeti — *živim*",
+      "baca": "ZHEEV-yeh-tee",
+      "en": "to live"
+    },
+    {
+      "bs": "raditi — *radim*",
+      "baca": "RAH-dee-tee",
+      "en": "to work; to do"
+    },
+    {
+      "bs": "govoriti — *govorim*",
+      "baca": "goh-VOH-ree-tee",
+      "en": "to speak"
+    },
+    {
+      "bs": "znati — *znam*",
+      "baca": "ZNAH-tee",
+      "en": "to know"
+    },
+    {
+      "bs": "učiti — *učim*",
+      "baca": "OO-chee-tee",
+      "en": "to study, to learn; to teach"
+    },
+    {
+      "bs": "razumjeti — *razumijem*",
+      "baca": "rah-ZOO-myeh-tee",
+      "en": "to understand"
+    },
+    {
+      "bs": "značiti — *znači*",
+      "baca": "ZNAH-chee-tee",
+      "en": "to mean"
+    },
+    {
+      "bs": "jezik (m)",
+      "baca": "YEH-zeek",
+      "en": "language; tongue"
+    },
+    {
+      "bs": "firma (f)",
+      "baca": "FEER-mah",
+      "en": "company, firm"
+    },
+    {
+      "bs": "godina (f)",
+      "baca": "goh-DEE-nah",
+      "en": "year"
+    },
+    {
+      "bs": "riječ (f)",
+      "baca": "ree-YEHCH",
+      "en": "word"
+    },
+    {
+      "bs": "sada / sad",
+      "baca": "SAH-dah",
+      "en": "now"
+    },
+    {
+      "bs": "već",
+      "baca": "vehch",
+      "en": "already"
+    },
+    {
+      "bs": "malo",
+      "baca": "MAH-loh",
+      "en": "a little"
+    },
+    {
+      "bs": "svaki dan",
+      "baca": "SVAH-kee dahn",
+      "en": "every day"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Bosnian.",
+      "items": [
+        "Where are you from? — I'm from Indonesia.",
+        "Now I live in Sarajevo.",
+        "What do you do?",
+        "I speak English and a little Bosnian.",
+        "I don't understand everything.",
+        "Do you know what it means?"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right verb form.",
+      "items": [
+        "Ja ____ (raditi) u firmi.",
+        "Ti ____ (živjeti) u Mostaru?",
+        "Amina ____ (govoriti) engleski.",
+        "Mi ____ (učiti) bosanski.",
+        "Vi ____ (znati) Emira?",
+        "Oni ____ (raditi) svaki dan.",
+        "Budi ne ____ (razumjeti) sve."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "si / odakle / ?",
+        "u / živim / Sarajevu",
+        "jezike / govoriš / koje / ?",
+        "razumijem / ne / sve",
+        "dan / učim / svaki / bosanski"
+      ]
+    }
+  ],
+  "answers": [
+    "Odakle si? Iz Indonezije sam. — Sada živim u Sarajevu. — Šta radiš? — Govorim engleski i malo bosanski. — Ne razumijem sve. — Znaš li šta znači?",
+    "radim — živiš — govori — učimo — znate — rade — razumije",
+    "Odakle si? — Živim u Sarajevu. — Koje jezike govoriš? — Ne razumijem sve. — Učim bosanski svaki dan."
+  ]
+}

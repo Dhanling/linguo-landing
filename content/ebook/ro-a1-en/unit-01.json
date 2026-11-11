@@ -1,0 +1,520 @@
+{
+  "title": "Hello!",
+  "title_target": "Salut!",
+  "goal": "Greet people at the right level of politeness, introduce yourself, ask how someone is, and say goodbye — while learning *a fi* (to be), a verb that changes for every person.",
+  "bekal": [
+    "greet and say goodbye with *salut*, *bună ziua*, *pa*, and *la revedere*, each in its proper place",
+    "give your name with *mă cheamă…* and introduce others with *el este… / ea este…*",
+    "use all six forms of *a fi* and choose between *tu* and *dumneavoastră*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Prima zi la birou",
+      "intro": "It's Budi's first day at his new office in București. A colleague comes over to his desk. Near the end of the day, Andrei — Budi's flatmate — stops by to pick him up.",
+      "lines": [
+        {
+          "speaker": "Ioana:",
+          "text": "Bună ziua! Eu sunt Ioana. Cum te cheamă?",
+          "id": "Good afternoon! I'm Ioana. What's your name?",
+          "literal": "good-f day-the! I I-am Ioana. how you-acc it-calls?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bună ziua! Mă cheamă Budi. Sunt nou aici.",
+          "id": "Good afternoon! My name is Budi. I'm new here.",
+          "literal": "good-f day-the! me-acc it-calls Budi. I-am new-m here."
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Încântată de cunoștință, Budi! Bine ai venit!",
+          "id": "Nice to meet you, Budi! Welcome!",
+          "literal": "delighted-f of acquaintance, Budi! well you-have come!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Încântat de cunoștință. Mulțumesc!",
+          "id": "Nice to meet you. Thank you!",
+          "literal": "delighted-m of acquaintance. I-thank!"
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Ce mai faci? Ești obosit?",
+          "id": "How are you? Are you tired?",
+          "literal": "what more you-do? you-are tired-m?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bine, mulțumesc. Și tu?",
+          "id": "Fine, thanks. And you?",
+          "literal": "well, I-thank. and you?"
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Și eu, mulțumesc.",
+          "id": "Me too, thanks.",
+          "literal": "and I, I-thank."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Salut, Andrei! Ea este Ioana, colega mea.",
+          "id": "Hi, Andrei! This is Ioana, my colleague.",
+          "literal": "greeting, Andrei! she she-is Ioana, colleague-f-the my-f."
+        },
+        {
+          "speaker": "Andrei:",
+          "text": "Salut, Ioana! Îmi pare bine. Și tu ești programatoare?",
+          "id": "Hi, Ioana! Nice to meet you. Are you a programmer too?",
+          "literal": "greeting, Ioana! to-me it-seems well. and you you-are programmer-f?"
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Da, suntem colegi. Tu ești student, nu?",
+          "id": "Yes, we're colleagues. You're a student, right?",
+          "literal": "yes, we-are colleagues. you you-are student-m, no?"
+        },
+        {
+          "speaker": "Andrei:",
+          "text": "Da, sunt student. Budi, ești gata?",
+          "id": "Yes, I'm a student. Budi, are you ready?",
+          "literal": "yes, I-am student-m. Budi, you-are ready?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Da, sunt gata. La revedere, Ioana! Pe mâine!",
+          "id": "Yes, I'm ready. Goodbye, Ioana! See you tomorrow!",
+          "literal": "yes, I-am ready. at re-seeing, Ioana! on tomorrow!"
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Pa! Pe mâine!",
+          "id": "Bye! See you tomorrow!",
+          "literal": "bye! on tomorrow!"
+        }
+      ],
+      "notes": [
+        "**Cum te cheamă? is not \"what is your name\".** Literally it is \"how does (one) call you?\" — someone else is the doer, and you are just the target (*te*). That's why the verb doesn't change: *mă cheamă* (I'm called), *te cheamă* (you're called). To someone you address formally: *Cum vă cheamă?* There is also a more formal pair, *Cum te numești? — Mă numesc Budi*, which you'll often see on forms.",
+        "**Încântat or încântată — it follows the speaker.** Budi is a man, so *încântat*; Ioana is a woman, so *încântată*. If you don't want to choose, use *Îmi pare bine* like Andrei: it's the same for everyone.",
+        "**Ce mai faci? literally means \"what else are you doing?\"** The little word *mai* is what turns an ordinary question into \"how are you\". The standard answer is *Bine, mulțumesc*; other options: *Foarte bine* (very well) and *Așa și așa* (so-so). To someone you address formally: *Ce mai faceți?*",
+        "**Ea este Ioana — introductions use *el* and *ea* (he/she), not \"this\".** For a man: *El este Andrei, colegul meu*. Look at *colega mea*: \"my\" comes after the noun, and the noun gets the ending *-a*. That ending is the definite article; it gets fitted in units 3 and 4 — for now, learn the phrase whole.",
+        "**Budi is still too formal.** *La revedere* goes with *bună ziua*, while friends say goodbye with *pa*. Ioana doesn't correct him — she just answers *Pa!*, and that's how Romanians tell you you can relax."
+      ],
+      "grammars": [
+        {
+          "title": "Subject pronouns and a fi — the \"to be\" you can't skip",
+          "body": [
+            "Like English, Romanian needs its verb \"to be\": *Sunt student* = I am a student. The difference is that the verb changes for every person, and the pronoun usually disappears. Learn all six forms until they come out on their own."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "Say it",
+              "a fi",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "eu",
+                "yehw",
+                "**sunt**",
+                "soont",
+                "I am"
+              ],
+              [
+                "tu",
+                "too",
+                "**ești**",
+                "yehsht'",
+                "you are"
+              ],
+              [
+                "el / ea",
+                "yehl / yah",
+                "**este / e**",
+                "YEHS-teh / yeh",
+                "he / she is"
+              ],
+              [
+                "noi",
+                "noy",
+                "**suntem**",
+                "SOON-tehm",
+                "we are"
+              ],
+              [
+                "voi",
+                "voy",
+                "**sunteți**",
+                "SOON-tehts'",
+                "you (pl) are"
+              ],
+              [
+                "ei / ele",
+                "yey / YEH-leh",
+                "**sunt**",
+                "soont",
+                "they (m / f) are"
+              ]
+            ]
+          },
+          "after": [
+            "**The pronoun is often dropped.** The verb ending already holds the subject, so *Sunt student* can only mean \"I'm a student\". *Eu* and *tu* are used only to **emphasize or contrast**: *Eu sunt Ioana* (\"as for me, I'm Ioana\"), *Și tu ești programatoare?* (\"are you a programmer **too**?\"). The one trap: *sunt* means both \"I am\" and \"they are\" — context tells you which.",
+            "***Este* and *e* mean the same.** *Este* is neater and safe anywhere; *e* is the short form you hear in conversation: *Ea e Ioana*. In this course the dialogues use *este* so the pattern stays clear.",
+            "***Ei* and *ele*.** *Ele* is used only when everyone is female; as soon as there's one man in the group, it becomes *ei*. Romanian also has no word \"it\" for things: objects too are called *el* or *ea*, because every noun has a gender. That's the story of unit 3.",
+            "**After *a fi*, jobs and nationalities take no article**: *Sunt student*, *Ești programatoare* — not *sunt un student*. Here English (\"I'm a student\") is the odd one out."
+          ]
+        },
+        {
+          "title": "Tu versus dumneavoastră — two kinds of \"you\"",
+          "body": [
+            "Romanian splits \"you\" the way French splits *tu* and *vous* — and the choice also changes the verb."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Say it",
+              "Used with",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**tu**",
+                "too",
+                "one person, informal — friends, peers, family, children",
+                "*Cum te cheamă? Ce mai faci?*"
+              ],
+              [
+                "**dumneavoastră**",
+                "doom-nyah-VWAHS-truh",
+                "one person, polite — strangers, bosses, older people",
+                "*Cum vă cheamă? Ce mai faceți?*"
+              ],
+              [
+                "**voi**",
+                "voy",
+                "several people, informal",
+                "*Ce mai faceți?*"
+              ],
+              [
+                "**dumneavoastră**",
+                "doom-nyah-VWAHS-truh",
+                "several people, polite",
+                "*Ce mai faceți?*"
+              ]
+            ]
+          },
+          "after": [
+            "***Dumneavoastră* always takes the *voi* verb form, even for just one person**: *Dumneavoastră sunteți doamna Popescu?* (\"Are you Mrs. Popescu?\"). So there's no new table to learn — just remember that polite = plural. In writing it's usually shortened to *dvs.*",
+            "**Rule of thumb: when in doubt, use *dumneavoastră*.** Being too polite to a friend just sounds stiff and is instantly forgiven; using *tu* with your landlady sounds rude. It's usually the Romanian who offers to switch first, with *Putem să ne tutuim?* (\"Can we say *tu* to each other?\"). In young offices in București, colleagues of the same age use *tu* from day one, like Ioana.",
+            "**Polite address uses *doamna* (Mrs./Ms.) and *domnul* (Mr.) + surname**: *Bună ziua, doamna Popescu!* The pairs are locked: **salut / pa + tu**, **bună ziua / la revedere + dumneavoastră**. If you remember just one thing from this page, remember those pairs."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Greetings by time of day and closeness",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Romanian greetings vary along two axes at once: the time of day, and how close you are to the person. This table covers both."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Română",
+            "Say it",
+            "When to use it"
+          ],
+          "rows": [
+            [
+              "**Bună dimineața!**",
+              "BOO-nuh dee-mee-NYAH-tsah",
+              "Good morning — until about 10:00"
+            ],
+            [
+              "**Bună ziua!**",
+              "BOO-nuh ZEE-wah",
+              "Good day / good afternoon — all day, the safest polite greeting"
+            ],
+            [
+              "**Bună seara!**",
+              "BOO-nuh SYAH-rah",
+              "Good evening — from dusk"
+            ],
+            [
+              "**Noapte bună!**",
+              "NWAHP-teh BOO-nuh",
+              "Good night — only when parting to go to bed"
+            ],
+            [
+              "**Salut!**",
+              "sah-LOOT",
+              "Hi, also bye — informal"
+            ],
+            [
+              "**Bună!**",
+              "BOO-nuh",
+              "Hi — informal, very common"
+            ],
+            [
+              "**Servus!**",
+              "SEHR-voos",
+              "Hi/bye — informal, typical of Transylvania; Andrei from Cluj uses it"
+            ],
+            [
+              "**Pa!**",
+              "pah",
+              "Bye — informal"
+            ],
+            [
+              "**La revedere!**",
+              "lah reh-veh-DEH-reh",
+              "Goodbye — polite, works anywhere"
+            ],
+            [
+              "**Pe mâine! / Pe curând!**",
+              "peh MÎY-neh / peh koo-RÎND",
+              "See you tomorrow! / See you soon!"
+            ],
+            [
+              "**O zi bună!**",
+              "oh zee BOO-nuh",
+              "Have a nice day — said when parting"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The one you'll need most is **bună ziua**: polite, never wrong, and good from morning to early evening. Romanians also say it to strangers when stepping into an elevator, a waiting room, or a small shop — silence feels cold. On the way out, say *la revedere* or *o zi bună*."
+        },
+        {
+          "type": "p",
+          "text": "Why always *bună*, never *bun*? Because *ziua* (day), *dimineața* (morning), *seara* (evening), and *noaptea* (night) are all feminine nouns, and Romanian adjectives agree with the noun's gender. Notice the order too: *bună seara* is a greeting when you meet, while *noapte bună* — order reversed — is a wish when you part. One pronunciation note: *ea* is one quick glide from *e* to *a* within a single syllable, so *seara* is not \"seh-ah-rah\" but SYAH-rah."
+        },
+        {
+          "type": "kotak",
+          "title": "Sărut mâna — \"I kiss your hand\"",
+          "items": [
+            "Literally \"(I) kiss the hand\". It's a traditional respectful greeting from men to women, and from children to older people. The hand is almost never actually kissed; only the phrase remains.",
+            "You'll still hear it often, especially to older women. Budi can greet his landlady with *Sărut mâna, doamna Popescu!* — she'll be pleased. To Ioana? Don't; to a peer it sounds like a joke."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Polite words that keep you afloat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These words aren't grammar homework — they're an emergency kit. Learn them whole now; understand how they're built later."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Română",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Da / Nu",
+              "dah / noo",
+              "Yes / No"
+            ],
+            [
+              "Mulțumesc",
+              "mool-tsoo-MEHSK",
+              "Thank you"
+            ],
+            [
+              "Mulțumesc frumos",
+              "mool-tsoo-MEHSK froo-MOHS",
+              "Thank you very much"
+            ],
+            [
+              "Merci",
+              "mehr-SEE",
+              "Thanks (casual — borrowed from French)"
+            ],
+            [
+              "Cu plăcere",
+              "koo pluh-CHEH-reh",
+              "You're welcome"
+            ],
+            [
+              "Te rog / Vă rog",
+              "teh rohg / vuh rohg",
+              "Please (informal / polite)"
+            ],
+            [
+              "Scuze! / Scuzați-mă!",
+              "SKOO-zeh / skoo-ZAHTS'-muh",
+              "Sorry! / Excuse me!"
+            ],
+            [
+              "Îmi pare rău",
+              "îm' PAH-reh ruhw",
+              "I'm sorry"
+            ],
+            [
+              "Nicio problemă",
+              "NEE-choh proh-BLEH-muh",
+              "No problem"
+            ],
+            [
+              "Poftim",
+              "pohf-TEEM",
+              "Please, come in; here you go; sorry, what was that?"
+            ],
+            [
+              "Nu înțeleg",
+              "noo în-tseh-LEHG",
+              "I don't understand"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Te rog* and *vă rog* literally mean \"I ask you\" (informal / polite) — so the choice follows *tu* and *dumneavoastră*. In shops, cafés, and at ticket counters, always *vă rog*. It can go anywhere: *Vă rog, o cafea* or *O cafea, vă rog*."
+        },
+        {
+          "type": "p",
+          "text": "*Cu plăcere* literally means \"with pleasure\", and it's the standard reply to *mulțumesc*. *Mulțumesc* itself is actually a verb — \"I thank\" — so if two of you are thanking, it becomes *mulțumim* (\"we thank\"). That *-esc* ending pattern arrives in unit 2."
+        },
+        {
+          "type": "p",
+          "text": "*Poftim* is the most versatile word on this page. It means \"please, come in\" when inviting someone in, \"here you go\" when handing something over, and — with a questioning tone, *Poftim?* — \"sorry, what was that?\" when you didn't catch what someone said. The polite form is *poftiți*. *Problemă*, by the way, is the first of hundreds of Romanian words you already know from English."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ro": "salut",
+      "baca": "sah-LOOT",
+      "en": "hi; bye (informal)"
+    },
+    {
+      "ro": "bună ziua",
+      "baca": "BOO-nuh ZEE-wah",
+      "en": "good day, good afternoon (polite)"
+    },
+    {
+      "ro": "la revedere",
+      "baca": "lah reh-veh-DEH-reh",
+      "en": "goodbye"
+    },
+    {
+      "ro": "pa",
+      "baca": "pah",
+      "en": "bye (informal)"
+    },
+    {
+      "ro": "mulțumesc",
+      "baca": "mool-tsoo-MEHSK",
+      "en": "thank you"
+    },
+    {
+      "ro": "cu plăcere",
+      "baca": "koo pluh-CHEH-reh",
+      "en": "you're welcome"
+    },
+    {
+      "ro": "vă rog / te rog",
+      "baca": "vuh rohg / teh rohg",
+      "en": "please (polite / informal)"
+    },
+    {
+      "ro": "a fi (sunt)",
+      "baca": "ah fee (soont)",
+      "en": "to be; there is"
+    },
+    {
+      "ro": "eu",
+      "baca": "yehw",
+      "en": "I"
+    },
+    {
+      "ro": "tu",
+      "baca": "too",
+      "en": "you (informal)"
+    },
+    {
+      "ro": "dumneavoastră",
+      "baca": "doom-nyah-VWAHS-truh",
+      "en": "you (polite)"
+    },
+    {
+      "ro": "coleg / colegă",
+      "baca": "koh-LEHG / koh-LEH-guh",
+      "en": "colleague; classmate (m / f)"
+    },
+    {
+      "ro": "student / studentă",
+      "baca": "stoo-DEHNT / stoo-DEHN-tuh",
+      "en": "university student (m / f)"
+    },
+    {
+      "ro": "bine",
+      "baca": "BEE-neh",
+      "en": "well (adverb)"
+    },
+    {
+      "ro": "și",
+      "baca": "shee",
+      "en": "and; also"
+    },
+    {
+      "ro": "aici",
+      "baca": "ah-EECH'",
+      "en": "here"
+    },
+    {
+      "ro": "mâine",
+      "baca": "MÎY-neh",
+      "en": "tomorrow"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Romanian.",
+      "items": [
+        "Good afternoon! What's your name?",
+        "My name is Budi.",
+        "Nice to meet you. (you're a man)",
+        "How are you?",
+        "Fine, thanks. And you?",
+        "This is Ioana, my colleague."
+      ]
+    },
+    {
+      "prompt": "Fill in the right form of a fi.",
+      "items": [
+        "Eu ____ Ioana.",
+        "Tu ____ student?",
+        "Ea ____ colega mea.",
+        "Noi ____ colegi.",
+        "Dumneavoastră ____ doamna Popescu?",
+        "Andrei și Budi ____ aici.",
+        "Voi ____ gata?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "cheamă / budi / mă",
+        "faci / ce / mai / ?",
+        "ioana / mea / este / colega / ea / ,",
+        "cunoștință / încântat / de",
+        "mâine / revedere / la / pe / ! / !"
+      ]
+    }
+  ],
+  "answers": [
+    "Bună ziua! Cum te cheamă? — Mă cheamă Budi. — Încântat de cunoștință. — Ce mai faci? — Bine, mulțumesc. Și tu? — Ea este Ioana, colega mea.",
+    "sunt — ești — este — suntem — sunteți — sunt — sunteți",
+    "Mă cheamă Budi. — Ce mai faci? — Ea este Ioana, colega mea. — Încântat de cunoștință. — La revedere! Pe mâine!"
+  ]
+}

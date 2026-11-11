@@ -1,0 +1,536 @@
+{
+  "title": "Masculine, feminine, and the table",
+  "title_target": "O livro e a mesa",
+  "goal": "Build the habit that shapes the rest of the course: every noun has a gender, and its article and adjectives must follow along. Plus: making plurals.",
+  "bekal": [
+    "choose *o* or *a* for a new noun by guessing from its ending",
+    "make plurals with *-s* and switch the article to *os* / *as*",
+    "put the adjective **after** the noun and match its ending"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Na livraria",
+      "intro": "Budi is looking for a book in a small bookstore on Rua Augusta. A shop assistant comes over.",
+      "lines": [
+        {
+          "speaker": "Vendedor:",
+          "text": "Boa tarde! Posso ajudar?",
+          "id": "Good afternoon! Can I help you?",
+          "literal": "good afternoon! I-can help?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Boa tarde. Eu procuro um livro de português.",
+          "id": "Good afternoon. I'm looking for a Portuguese book.",
+          "literal": "good afternoon. I I-look-for a book of Portuguese."
+        },
+        {
+          "speaker": "Vendedor:",
+          "text": "Claro. O livro é para você?",
+          "id": "Sure. Is the book for you?",
+          "literal": "clear. the book is for you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "É, sim. Eu sou estudante.",
+          "id": "Yes, it is. I'm a student.",
+          "literal": "is, yes. I am student."
+        },
+        {
+          "speaker": "Vendedor:",
+          "text": "Temos uma gramática nova e um dicionário pequeno.",
+          "id": "We have a new grammar book and a small dictionary.",
+          "literal": "we-have a grammar new and a dictionary small."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A gramática é boa?",
+          "id": "Is the grammar book good?",
+          "literal": "the grammar is good(fem)?"
+        },
+        {
+          "speaker": "Vendedor:",
+          "text": "É excelente. E os exercícios são fáceis.",
+          "id": "It's excellent. And the exercises are easy.",
+          "literal": "is excellent. and the(pl) exercises are easy(pl)."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "E as fotos? O livro tem fotos?",
+          "id": "What about the photos? Does the book have photos?",
+          "literal": "and the(pl) photos? the book it-has photos?"
+        },
+        {
+          "speaker": "Vendedor:",
+          "text": "Tem, sim. As páginas são bem coloridas.",
+          "id": "It does. The pages are really colorful.",
+          "literal": "it-has, yes. the(pl) pages are well colorful(pl)."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Perfeito. Eu levo os dois.",
+          "id": "Perfect. I'll take both.",
+          "literal": "perfect. I I-take the(pl) two."
+        },
+        {
+          "speaker": "Vendedor:",
+          "text": "Ótima escolha!",
+          "id": "Great choice!",
+          "literal": "great(fem) choice!"
+        }
+      ],
+      "notes": [
+        "**Every thing has a gender, even things that obviously don't.** *O livro* (book) is masculine; *a mesa* (table) is feminine. There's no logical reason, and hunting for one is a waste of time. What you can rely on isn't the meaning but **the ending of the word** — and that works for about eight words out of ten.",
+        "**Adjectives come after the noun.** *um livro pequeno* = \"a book small\", *uma gramática nova* = \"a grammar new\". It's the reverse of English, and English speakers spend months fighting the urge to write *um pequeno livro*. Read the dialogue aloud a few times and the right order starts to sound natural.",
+        "**And the adjective changes too.** This part has no equivalent in English: *livro pequen**o***, but *mesa pequen**a***; *livros pequen**os***, *mesas pequen**as***. The adjective copies the gender and number of its noun, like a shadow.",
+        "**Bem coloridas, not muito coloridas.** *Bem* before an adjective means \"quite/really\", and in Brazil it's heard far more often than *muito* in casual conversation. *A comida é bem gostosa* = \"the food is really tasty\"."
+      ],
+      "grammars": [
+        {
+          "title": "Articles: four definite, four indefinite",
+          "body": [
+            "English has just *the* and *a/an*; Portuguese has a form for every gender and number. The good news: the whole table is only eight words, and they're among the most frequent in Portuguese, so they stick on their own."
+          ],
+          "table": {
+            "head": [
+              "",
+              "Masc. singular",
+              "Fem. singular",
+              "Masc. plural",
+              "Fem. plural"
+            ],
+            "rows": [
+              [
+                "**Definite** (\"the\")",
+                "**o** livro",
+                "**a** mesa",
+                "**os** livros",
+                "**as** mesas"
+              ],
+              [
+                "**Indefinite** (\"a / some\")",
+                "**um** livro",
+                "**uma** mesa",
+                "**uns** livros",
+                "**umas** mesas"
+              ]
+            ]
+          },
+          "after": [
+            "**The definite article is used far more often than you'd expect.** Portuguese puts it in front of things that stand bare in English: *o Brasil* (Brazil), *a vida* (life), *o português* (Portuguese), even *a Carla* (a person's name). Rough rule: when in doubt, put it in.",
+            "*Uns* and *umas* mean \"some\": *uns livros* = some books. They're used less often than the other forms.",
+            "⚠️ Memorizing nouns without their article is the most expensive mistake of your whole learning journey, because fixing it later means relearning every word from scratch. Write **o livro**, not *livro*. Always."
+          ]
+        },
+        {
+          "title": "Guessing gender from the ending",
+          "body": [
+            "Eight out of ten nouns follow the rules below. The rest are learned one by one, and there are fewer of them than you fear."
+          ],
+          "table": {
+            "head": [
+              "Ending",
+              "Gender",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**-o**",
+                "masculine",
+                "*o livro*, *o carro*, *o banheiro*"
+              ],
+              [
+                "**-a**",
+                "feminine",
+                "*a mesa*, *a casa*, *a pergunta*"
+              ],
+              [
+                "**-ção**",
+                "feminine (always)",
+                "*a estação*, *a informação*"
+              ],
+              [
+                "**-dade**",
+                "feminine (always)",
+                "*a cidade*, *a verdade*"
+              ],
+              [
+                "**-l, -r, -z**",
+                "usually masculine",
+                "*o hotel*, *o mar*, *o arroz*"
+              ],
+              [
+                "**-e**",
+                "can be either — memorize",
+                "*o nome*, but *a noite*"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Four exceptions you must learn because they're so common: **o dia** (day) is masculine even though it ends in -a; **o problema**, **o mapa** and **o programa** are masculine too. Most come from Greek, and they all misbehave the same way.",
+            "Words for people follow the person's gender, and usually have two forms: *o professor / a professora*, *o amigo / a amiga*, *o brasileiro / a brasileira*. Some have a single form for both, and only the article changes: *o estudante / a estudante*, *o dentista / a dentista*."
+          ]
+        },
+        {
+          "title": "Plurals: add -s",
+          "body": [
+            "The basic rule is as simple as in English, and four extra lines cover the rest."
+          ],
+          "table": {
+            "head": [
+              "Ending",
+              "Becomes",
+              "Example"
+            ],
+            "rows": [
+              [
+                "a vowel",
+                "+ **s**",
+                "*livro* → *livros*; *mesa* → *mesas*"
+              ],
+              [
+                "stressed **-r, -z, -s**",
+                "+ **es**",
+                "*mulher* → *mulheres*; *luz* → *luzes*"
+              ],
+              [
+                "**-l**",
+                "**-l** → **is**",
+                "*hotel* → *hotéis*; *papel* → *papéis*"
+              ],
+              [
+                "**-m**",
+                "**-m** → **ns**",
+                "*homem* → *homens*; *jovem* → *jovens*"
+              ],
+              [
+                "**-ão**",
+                "usually → **ões**",
+                "*estação* → *estações*; *limão* → *limões*"
+              ]
+            ]
+          },
+          "after": [
+            "**Everything attached goes plural too.** If the noun is plural, its article and adjective are plural as well: *as casas bonitas* — three words, three *s*'s. English marks the plural once (*the beautiful houses*); Portuguese marks it on every word in the chain.",
+            "⚠️ The last row has two stubborn groups: *o pão* → *os pães* (bread) and *a mão* → *as mãos* (hand). All three patterns *-ões*, *-ães*, *-ãos* exist; *-ões* is by far the most common, and the other two are simply learned when you meet them."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Things around you",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Learn this table **together with the articles**. Never say a word from the first column without the little word in front of it."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "o livro",
+              "oo LEE-vroo",
+              "book"
+            ],
+            [
+              "a mesa",
+              "ah MAY-zah",
+              "table"
+            ],
+            [
+              "a porta",
+              "ah POHH-tah",
+              "door"
+            ],
+            [
+              "a janela",
+              "ah zhah-NEH-lah",
+              "window"
+            ],
+            [
+              "o celular",
+              "oo seh-loo-LAHH",
+              "cell phone"
+            ],
+            [
+              "a chave",
+              "ah SHAH-vee",
+              "key"
+            ],
+            [
+              "o dinheiro",
+              "oo jee-NYEY-roo",
+              "money"
+            ],
+            [
+              "o carro",
+              "oo KAH-hoo",
+              "car"
+            ],
+            [
+              "a rua",
+              "ah HOO-ah",
+              "street"
+            ],
+            [
+              "a casa",
+              "ah KAH-zah",
+              "house"
+            ],
+            [
+              "a cidade",
+              "ah see-DAH-jee",
+              "city"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Note *a água* (water): a feminine word that starts with a stressed **a**. Some languages change the article here (Spanish says *el agua*); Portuguese doesn't. It stays *a água*, and the plural is *as águas*."
+        }
+      ]
+    },
+    {
+      "title": "First adjectives",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Portuguese adjectives come in two groups. Those ending in **-o** have four forms; those ending in **-e** or a consonant change only for the plural."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Base form",
+            "Its forms",
+            "English"
+          ],
+          "rows": [
+            [
+              "**bonito**",
+              "bonito / bonita / bonitos / bonitas",
+              "beautiful; nice"
+            ],
+            [
+              "**pequeno**",
+              "pequeno / pequena / pequenos / pequenas",
+              "small"
+            ],
+            [
+              "**novo**",
+              "novo / nova / novos / novas",
+              "new; young"
+            ],
+            [
+              "**bom**",
+              "bom / boa / bons / boas",
+              "good (irregular)"
+            ],
+            [
+              "**grande**",
+              "grande / grandes",
+              "big"
+            ],
+            [
+              "**fácil**",
+              "fácil / fáceis",
+              "easy"
+            ],
+            [
+              "**difícil**",
+              "difícil / difíceis",
+              "difficult"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last three rows are good news: *grande*, *fácil*, *difícil* (and *feliz*) **don't care** whether the noun is masculine or feminine. *Um livro grande*, *uma casa grande* — exactly the same. About a third of Portuguese adjectives behave this way."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Bom* is both the most irregular adjective and the most used. Notice that its feminine form isn't *boma* but **boa** — and that's where *boa tarde* and *boa noite* from unit 1 come from, while masculine *dia* gets *bom dia*."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pt": "o livro",
+      "baca": "oo LEE-vroo",
+      "en": "book"
+    },
+    {
+      "pt": "a mesa",
+      "baca": "ah MAY-zah",
+      "en": "table"
+    },
+    {
+      "pt": "a porta",
+      "baca": "ah POHH-tah",
+      "en": "door"
+    },
+    {
+      "pt": "a chave",
+      "baca": "ah SHAH-vee",
+      "en": "key"
+    },
+    {
+      "pt": "o celular",
+      "baca": "oo seh-loo-LAHH",
+      "en": "cell phone"
+    },
+    {
+      "pt": "o dinheiro",
+      "baca": "oo jee-NYEY-roo",
+      "en": "money"
+    },
+    {
+      "pt": "a casa",
+      "baca": "ah KAH-zah",
+      "en": "house"
+    },
+    {
+      "pt": "a rua",
+      "baca": "ah HOO-ah",
+      "en": "street"
+    },
+    {
+      "pt": "a cidade",
+      "baca": "ah see-DAH-jee",
+      "en": "city"
+    },
+    {
+      "pt": "o dia",
+      "baca": "oo JEE-ah",
+      "en": "day (⚠️ masculine)"
+    },
+    {
+      "pt": "o problema",
+      "baca": "oo proh-BLAY-mah",
+      "en": "problem (⚠️ masculine)"
+    },
+    {
+      "pt": "a livraria",
+      "baca": "ah lee-vrah-REE-ah",
+      "en": "bookstore"
+    },
+    {
+      "pt": "a gramática",
+      "baca": "ah grah-MAH-chee-kah",
+      "en": "grammar"
+    },
+    {
+      "pt": "o exercício",
+      "baca": "oo eh-zehh-SEE-see-oo",
+      "en": "exercise"
+    },
+    {
+      "pt": "a foto",
+      "baca": "ah FAW-too",
+      "en": "photo (⚠️ feminine)"
+    },
+    {
+      "pt": "o estudante",
+      "baca": "oo ees-too-DAHN-chee",
+      "en": "student"
+    },
+    {
+      "pt": "bonito",
+      "baca": "boh-NEE-too",
+      "en": "beautiful; nice"
+    },
+    {
+      "pt": "pequeno",
+      "baca": "peh-KAY-noo",
+      "en": "small"
+    },
+    {
+      "pt": "grande",
+      "baca": "GRAHN-jee",
+      "en": "big"
+    },
+    {
+      "pt": "novo",
+      "baca": "NOH-voo",
+      "en": "new; young"
+    },
+    {
+      "pt": "caro",
+      "baca": "KAH-roo",
+      "en": "expensive"
+    },
+    {
+      "pt": "fácil / difícil",
+      "baca": "FAH-seew / jee-FEE-seew",
+      "en": "easy / difficult"
+    },
+    {
+      "pt": "procurar",
+      "baca": "proh-koo-RAHH",
+      "en": "to look for"
+    },
+    {
+      "pt": "levar",
+      "baca": "leh-VAHH",
+      "en": "to take; to carry"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the right definite article: o, a, os or as.",
+      "items": [
+        "____ livro é novo.",
+        "____ mesa é grande.",
+        "____ exercícios são fáceis.",
+        "____ chaves são pequenas.",
+        "____ dia está bonito.",
+        "____ cidade é grande."
+      ]
+    },
+    {
+      "prompt": "Make it plural. Write out the whole phrase.",
+      "items": [
+        "o livro novo",
+        "a casa bonita",
+        "o hotel grande",
+        "a estação pequena",
+        "o homem feliz",
+        "a mulher brasileira"
+      ]
+    },
+    {
+      "prompt": "Match the adjective in brackets.",
+      "items": [
+        "Uma gramática ____. (novo)",
+        "Os exercícios são ____. (fácil)",
+        "A cidade é muito ____. (bonito)",
+        "Os livros são ____. (caro)",
+        "A comida é ____. (bom)",
+        "As casas são ____. (grande)"
+      ]
+    },
+    {
+      "prompt": "Translate into Portuguese.",
+      "items": [
+        "A small book.",
+        "The house is big.",
+        "The exercises are easy.",
+        "I'm looking for a dictionary.",
+        "The city is very beautiful."
+      ]
+    }
+  ],
+  "answers": [
+    "O — A — Os — As — O — A",
+    "os livros novos — as casas bonitas — os hotéis grandes — as estações pequenas — os homens felizes — as mulheres brasileiras",
+    "nova — fáceis — bonita — caros — boa — grandes",
+    "Um livro pequeno. — A casa é grande. — Os exercícios são fáceis. — Eu procuro um dicionário. — A cidade é muito bonita."
+  ]
+}

@@ -1,0 +1,544 @@
+{
+  "title": "What time is it?",
+  "title_target": "Hvad er klokken?",
+  "goal": "Tell the time in Danish, name the days and months, and make appointments.",
+  "bekal": [
+    "tell the time with *kvart over*, *halv* and *kvart i*",
+    "name the days, the months and the parts of the day",
+    "make and accept appointments"
+  ],
+  "wave": "Go back over **Unit 6** first: read out five prices and one phone number in Danish, out loud, without looking at the tables.",
+  "dialogs": [
+    {
+      "title": "Dialogue — En aftale i kalenderen",
+      "intro": "Budi and Mette find a time to study together.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Skal vi læse sammen i denne uge?",
+          "id": "Shall we study together this week?",
+          "literal": "shall we read together in this week?"
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Gerne! Hvornår passer det dig?",
+          "id": "Sure! When suits you?",
+          "literal": "gladly! when suits it you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Onsdag eftermiddag? Klokken to?",
+          "id": "Wednesday afternoon? Two o'clock?",
+          "literal": "Wednesday afternoon? clock-the two?"
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Onsdag kan jeg ikke. Jeg har time til fire.",
+          "id": "I can't on Wednesday. I have class until four.",
+          "literal": "Wednesday can I not. I have lesson till four."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hvad med torsdag? Kvart over fem?",
+          "id": "What about Thursday? A quarter past five?",
+          "literal": "what with Thursday? quarter over five?"
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Det passer fint. Hvor mødes vi?",
+          "id": "That works fine. Where shall we meet?",
+          "literal": "it suits fine. where meet we?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "På biblioteket. Det åbner klokken otte og lukker klokken syv.",
+          "id": "At the library. It opens at eight and closes at seven.",
+          "literal": "on library-the. it opens clock-the eight and closes clock-the seven."
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Perfekt. Men jeg kommer måske lidt for sent.",
+          "id": "Perfect. But I might be a little late.",
+          "literal": "perfect. but I come maybe little too late."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hvor sent?",
+          "id": "How late?",
+          "literal": "how late?"
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Halv seks, måske. Bussen er aldrig til tiden.",
+          "id": "Half past five, maybe. The bus is never on time.",
+          "literal": "half six, maybe. bus-the is never to time-the."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Det er i orden. Vi ses på torsdag!",
+          "id": "That's fine. See you on Thursday!",
+          "literal": "it is in order. we see-each-other on Thursday!"
+        }
+      ],
+      "notes": [
+        "**Halv seks = 5:30, not 6:30.** Danish counts the half toward the next hour — *halv seks* means \"half (way to) six\". This is a nasty trap for English speakers: in British English *half six* means 6:30, so a Dane's *halv seks* is a whole hour earlier than you'd think.",
+        "**Klokken** = \"the clock\", from *en klokke* (bell, clock) with the definite ending. In writing it's often shortened to *kl.*, and in fast speech it almost disappears.",
+        "**Passer** from *at passe* = to suit, to fit. *Det passer fint* = that suits me fine. The word also means \"to look after\" (*at passe børn* = to look after children) and \"to be true\" (*det passer ikke* = that's not true).",
+        "**Jeg har time** — *en time* means two things: an hour, and a lesson. *Jeg har time til fire* = I have class until four. (Not English \"time\" — that's *tid*.)",
+        "**For sent** = late. Remember *for* means \"too\", so literally \"too late\". Being on time in Denmark isn't extra politeness, it's the default — an appointment at two means two, not ten past.",
+        "**Mødes** — a form ending in *-s* that means \"each other\": *at møde* (to meet someone) → *at mødes* (to meet each other). The same pattern is in *vi ses* (we see each other = see you) and *vi snakkes ved* (we'll talk later).",
+        "**Aldrig** = never. Note there's no *ikke* in that sentence — *aldrig* already contains the negation, just like English *never*.",
+        "**På torsdag** = this coming Thursday. Without *på*, *torsdag* just means Thursday in general. And *om torsdagen* means \"every Thursday, on Thursdays\"."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "In conversation Danish uses the twelve-hour clock, with four reference points each hour: on the hour, quarter past, half, and quarter to."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Dansk",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "5:00",
+                "klokken fem",
+                "clock five"
+              ],
+              [
+                "5:05",
+                "fem minutter over fem",
+                "five minutes over five"
+              ],
+              [
+                "5:15",
+                "**kvart over** fem",
+                "quarter over five"
+              ],
+              [
+                "5:20",
+                "tyve minutter over fem",
+                "twenty minutes over five"
+              ],
+              [
+                "5:25",
+                "fem minutter i **halv seks**",
+                "five minutes to half six"
+              ],
+              [
+                "5:30",
+                "**halv seks**",
+                "half six"
+              ],
+              [
+                "5:35",
+                "fem minutter over halv seks",
+                "five minutes over half six"
+              ],
+              [
+                "5:45",
+                "**kvart i** seks",
+                "quarter to six"
+              ],
+              [
+                "5:50",
+                "ti minutter i seks",
+                "ten minutes to six"
+              ],
+              [
+                "6:00",
+                "klokken seks",
+                "clock six"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ The 5:25 and 5:35 rows are the trickiest. In that range Danish doesn't count from the full hour but from the **half**: *fem minutter i halv seks* (five minutes before half to six) and *fem minutter over halv seks*. German and Dutch do the same.",
+            "Official schedules — trains, buses, cinemas, opening hours — use the 24-hour clock and are read straight: *sytten tredive* for 17:30. Don't mix the two.",
+            "To ask: *Hvad er klokken?* (what time is it?) and *Hvornår…?* (when…?). To say at what time something happens, use *klokken* with no preposition: *Toget kommer klokken ni.*"
+          ]
+        },
+        {
+          "title": "Days, months, parts of the day",
+          "body": [
+            "All of them are written in **lowercase** — unlike English. The day names come from Norse gods, just like English *Wednesday*, *Thursday* and *Friday*."
+          ],
+          "table": {
+            "head": [
+              "Day",
+              "Say it",
+              "Month",
+              "Month"
+            ],
+            "rows": [
+              [
+                "mandag",
+                "MAHN-dæ",
+                "januar",
+                "juli"
+              ],
+              [
+                "tirsdag",
+                "TIRS-dæ",
+                "februar",
+                "august"
+              ],
+              [
+                "onsdag",
+                "ONS-dæ",
+                "marts",
+                "september"
+              ],
+              [
+                "torsdag",
+                "TORS-dæ",
+                "april",
+                "oktober"
+              ],
+              [
+                "fredag",
+                "FREH-dæ",
+                "maj",
+                "november"
+              ],
+              [
+                "lørdag",
+                "LÖR-dæ",
+                "juni",
+                "december"
+              ],
+              [
+                "søndag",
+                "SÖN-dæ",
+                "",
+                ""
+              ]
+            ]
+          },
+          "after": [
+            "*Onsdag* = Odin's day (English *Wednesday*, from Woden), *torsdag* = Thor's day, *fredag* = Freya's day. *Lørdag*, though, means \"washing day\" (*løre* = to wash) — a Viking habit of bathing once a week, and the name has survived a thousand years.",
+            "Parts of the day: *om morgenen* (in the morning), *om formiddagen* (late morning), *om eftermiddagen* (afternoon), *om aftenen* (evening), *om natten* (at night). Note they all use **om** + the form with the ending.",
+            "⚠️ Three ways of using a day name, each with a different meaning: *på mandag* (next Monday), *om mandagen* (every Monday), *i mandags* (last Monday)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Time and appointments",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Dansk",
+            "English"
+          ],
+          "rows": [
+            [
+              "Hvad er klokken?",
+              "What time is it?"
+            ],
+            [
+              "Klokken er halv otte.",
+              "It's half past seven."
+            ],
+            [
+              "Hvornår mødes vi?",
+              "When shall we meet?"
+            ],
+            [
+              "Hvornår passer det dig?",
+              "When suits you?"
+            ],
+            [
+              "Har du tid på fredag?",
+              "Do you have time on Friday?"
+            ],
+            [
+              "Det passer fint.",
+              "That works fine."
+            ],
+            [
+              "Det kan jeg desværre ikke.",
+              "Unfortunately I can't."
+            ],
+            [
+              "Skal vi sige klokken to?",
+              "Shall we say two o'clock?"
+            ],
+            [
+              "Jeg kommer for sent.",
+              "I'm going to be late."
+            ],
+            [
+              "Vi ses på torsdag!",
+              "See you on Thursday!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Desværre* = unfortunately. It softens a refusal and almost always comes along when you turn down an invitation. Without it, *det kan jeg ikke* sounds flat and a bit cold."
+        },
+        {
+          "type": "kotak",
+          "title": "Time in Denmark isn't an estimate",
+          "items": [
+            "An appointment at two means two. Turning up at ten past without letting anyone know is considered rude, not relaxed.",
+            "If you're going to be late, send a message. Ready-made sentence: *Jeg kommer ti minutter for sent — undskyld!*",
+            "On the other hand, don't arrive too early at someone's home. Turning up fifteen minutes early actually bothers a host who isn't ready yet."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The phrase *i orden* (literally \"in order\") means \"fine, no problem\". It's used very often as a casual reply: *Det er i orden.*"
+        }
+      ]
+    },
+    {
+      "title": "Common time expressions",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Dansk",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "i dag",
+              "ee DÆ",
+              "today"
+            ],
+            [
+              "i går",
+              "ee GOR",
+              "yesterday"
+            ],
+            [
+              "i morgen",
+              "ee MORN",
+              "tomorrow"
+            ],
+            [
+              "i overmorgen",
+              "ee OH-ah-morn",
+              "the day after tomorrow"
+            ],
+            [
+              "i forgårs",
+              "ee FOR-gors",
+              "the day before yesterday"
+            ],
+            [
+              "i denne uge",
+              "ee DEH-nuh OO-uh",
+              "this week"
+            ],
+            [
+              "i næste uge",
+              "ee NES-duh OO-uh",
+              "next week"
+            ],
+            [
+              "i sidste uge",
+              "ee SIS-duh OO-uh",
+              "last week"
+            ],
+            [
+              "om et øjeblik",
+              "om et OI-uh-blik",
+              "in a moment"
+            ],
+            [
+              "altid / aldrig",
+              "AHL-tidh / AHL-dree",
+              "always / never"
+            ],
+            [
+              "ofte / sommetider",
+              "OF-duh / SOM-uh-tee-dhah",
+              "often / sometimes"
+            ],
+            [
+              "tidligt / sent",
+              "TEE-lit / sent",
+              "early / late"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Et øjeblik* literally means \"an eye-blink\" — a direct cousin of German *Augenblick*. Used on its own it means \"just a moment\": *Et øjeblik!*"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "da": "en klokke",
+      "baca": "en KLOH-guh",
+      "en": "clock, bell"
+    },
+    {
+      "da": "et minut",
+      "baca": "et mee-NOOT",
+      "en": "minute"
+    },
+    {
+      "da": "en time",
+      "baca": "en TEE-muh",
+      "en": "hour; lesson"
+    },
+    {
+      "da": "en uge",
+      "baca": "en OO-uh",
+      "en": "week"
+    },
+    {
+      "da": "en måned",
+      "baca": "en MOH-nuhdh",
+      "en": "month"
+    },
+    {
+      "da": "kvart over",
+      "baca": "kvahrt OH-ah",
+      "en": "quarter past"
+    },
+    {
+      "da": "kvart i",
+      "baca": "kvahrt ee",
+      "en": "quarter to"
+    },
+    {
+      "da": "halv",
+      "baca": "hahl",
+      "en": "half"
+    },
+    {
+      "da": "at passe",
+      "baca": "oh PAH-suh",
+      "en": "to suit, to fit; to look after"
+    },
+    {
+      "da": "at mødes",
+      "baca": "oh MÖ-dhuhs",
+      "en": "to meet (each other)"
+    },
+    {
+      "da": "at åbne / at lukke",
+      "baca": "oh OB-nuh / oh LOH-guh",
+      "en": "to open / to close"
+    },
+    {
+      "da": "en kalender",
+      "baca": "en kah-LEN-dah",
+      "en": "calendar"
+    },
+    {
+      "da": "et bibliotek",
+      "baca": "et bee-blee-oh-TEK",
+      "en": "library"
+    },
+    {
+      "da": "en bus",
+      "baca": "en boos",
+      "en": "bus"
+    },
+    {
+      "da": "desværre",
+      "baca": "des-VER-uh",
+      "en": "unfortunately"
+    },
+    {
+      "da": "måske",
+      "baca": "mos-KEH",
+      "en": "maybe"
+    },
+    {
+      "da": "aldrig",
+      "baca": "AHL-dree",
+      "en": "never"
+    },
+    {
+      "da": "ofte",
+      "baca": "OF-duh",
+      "en": "often"
+    },
+    {
+      "da": "sent / tidligt",
+      "baca": "sent / TEE-lit",
+      "en": "late / early"
+    },
+    {
+      "da": "i orden",
+      "baca": "ee OR-duhn",
+      "en": "fine, OK"
+    },
+    {
+      "da": "et øjeblik",
+      "baca": "et OI-uh-blik",
+      "en": "moment"
+    },
+    {
+      "da": "til tiden",
+      "baca": "til TEE-dhuhn",
+      "en": "on time"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the time in Danish.",
+      "items": [
+        "8:00",
+        "9:15",
+        "10:30",
+        "11:45",
+        "14:25",
+        "16:35"
+      ]
+    },
+    {
+      "prompt": "Translate into Danish.",
+      "items": [
+        "What time is it?",
+        "It's half past seven.",
+        "When shall we meet?",
+        "Do you have time on Friday?",
+        "Unfortunately I can't.",
+        "See you on Thursday!"
+      ]
+    },
+    {
+      "prompt": "Fill in på, om or i.",
+      "items": [
+        "Vi ses ____ mandag. (next Monday)",
+        "Jeg arbejder ____ mandagen. (every Monday)",
+        "Jeg var syg ____ mandags. (last Monday)",
+        "Hun læser ____ aftenen. (every evening)",
+        "Vi mødes ____ næste uge. (next week)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "klokken / hvad / er / ?",
+        "halv / er / otte / klokken",
+        "torsdag / på / ses / vi",
+        "sent / kommer / for / jeg",
+        "dig / hvornår / det / passer / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "klokken otte — kvart over ni — halv elleve — kvart i tolv — fem minutter i halv tre — fem minutter over halv fem",
+    "Hvad er klokken? — Klokken er halv otte. — Hvornår mødes vi? — Har du tid på fredag? — Det kan jeg desværre ikke. — Vi ses på torsdag!",
+    "på — om — i — om — i",
+    "Hvad er klokken? — Klokken er halv otte. — Vi ses på torsdag. — Jeg kommer for sent. — Hvornår passer det dig?"
+  ]
+}

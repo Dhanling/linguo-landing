@@ -1,0 +1,554 @@
+{
+  "title": "Where does it hurt",
+  "title_target": "Kod doktora",
+  "goal": "Say what hurts, get by at the pharmacy and the doctor's — and learn one more sentence pattern that flips the subject, this time with the accusative rather than the dative.",
+  "bekal": [
+    "saying what hurts with *boli me* and *bole me*",
+    "naming symptoms and asking for medicine at the pharmacy",
+    "recognizing the command forms used by doctors, shop staff and street directions"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kod doktora",
+      "intro": "Day four, and Budi's throat feels like sandpaper. Emir takes him to the nearest *Dom zdravlja* and waits outside.",
+      "lines": [
+        {
+          "speaker": "Doktorica:",
+          "text": "Dobar dan. Izvolite, sjednite. Šta vas muči?",
+          "id": "Good afternoon. Please, have a seat. What's troubling you?",
+          "literal": "good-m day. here-you-are, sit-pl. what you-pl-acc it-troubles?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dobar dan. Boli me grlo, već tri dana.",
+          "id": "Good afternoon. My throat hurts, for three days now.",
+          "literal": "good-m day. it-hurts me-acc throat, already three day-gen."
+        },
+        {
+          "speaker": "Doktorica:",
+          "text": "Imate li temperaturu?",
+          "id": "Do you have a temperature?",
+          "literal": "you-pl-have whether temperature-acc?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sinoć sam imao trideset osam.",
+          "id": "Last night it was thirty-eight.",
+          "literal": "last-night I-am had-m thirty eight."
+        },
+        {
+          "speaker": "Doktorica:",
+          "text": "Otvorite usta i recite \"a\". … Grlo je crveno.",
+          "id": "Open your mouth and say \"ah\". … Your throat is red.",
+          "literal": "open-pl mouth and say-pl \"a\". … throat it-is red-n."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Boli i kad gutam. I glava me boli.",
+          "id": "It hurts when I swallow, too. And my head hurts.",
+          "literal": "it-hurts also when I-swallow. and head me-acc it-hurts."
+        },
+        {
+          "speaker": "Doktorica:",
+          "text": "Nije ozbiljno. Obična upala grla, virusna.",
+          "id": "It's not serious. An ordinary sore throat, viral.",
+          "literal": "not-it-is serious-n. ordinary-f inflammation throat-gen, viral-f."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Trebam li antibiotik?",
+          "id": "Do I need antibiotics?",
+          "literal": "I-need whether antibiotic-acc?"
+        },
+        {
+          "speaker": "Doktorica:",
+          "text": "Ne trebate. Pijte puno čaja, odmarajte se i nemojte izlaziti.",
+          "id": "No, you don't. Drink plenty of tea, rest and don't go out.",
+          "literal": "not you-pl-need. drink-pl much tea-gen, rest-pl self and don't-pl go-out."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A mogu li raditi od kuće?",
+          "id": "And can I work from home?",
+          "literal": "and I-can whether work from home-gen?"
+        },
+        {
+          "speaker": "Doktorica:",
+          "text": "Možete, ali polako. Evo vam recept za pastile.",
+          "id": "You can, but take it easy. Here's a prescription for lozenges.",
+          "literal": "you-pl-can, but slowly. here-is to-you-pl prescription for lozenge-acc-pl."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hvala. Kada da se vratim?",
+          "id": "Thank you. When should I come back?",
+          "literal": "thanks. when that self I-return?"
+        },
+        {
+          "speaker": "Doktorica:",
+          "text": "Ako za tri dana ne bude bolje, dođite ponovo. Ozdravite brzo!",
+          "id": "If it isn't better in three days, come again. Get well soon!",
+          "literal": "if in three day-gen not it-will-be better, come-pl again. get-well-pl fast!"
+        }
+      ],
+      "notes": [
+        "***Boli me grlo* — the subject is the throat.** Literally \"the throat hurts me\". So when what hurts is plural, the verb goes plural too: *bole me noge* (my legs hurt), *bole me oči* (my eyes hurt). The pattern is the same as *sviđa mi se* in Unit 13 — but note the difference: *sviđa* uses the dative (*mi*), *boli* uses the accusative (*me*). Learn them as a pair so you don't mix them up.",
+        "***Šta vas muči?* is the Bosnian doctor's standard question.** Literally \"what is tormenting you?\" The safest answer always starts with *Boli me…* If you don't know the name of the body part, pointing and saying *ovdje me boli* (it hurts here) is enough.",
+        "***Otvorite, recite, pijte, odmarajte se, dođite, nemojte*** — six command forms in one dialogue. At the doctor's, in shops and on the street you'll **hear** these far more often than you say them, so recognizing them is what matters most. How they're formed is in the table below.",
+        "***Kada da se vratim?*** uses the *da* + present pattern from Unit 11. In questions it means \"what should I do\": *Šta da radim?* (what should I do?), *Gdje da idem?* (where should I go?). Very handy when you're confused.",
+        "**The Bosnian health system.** *Dom zdravlja* is the local primary care clinic, where you register and see a *porodični ljekar* (family doctor). A hospital is a *bolnica*; emergency services are *hitna pomoć*, number **124**. Pharmacies (*apoteka*) sell many medicines without a prescription and the pharmacists are used to giving advice — for minor complaints, go there first before seeing a doctor."
+      ],
+      "grammars": [
+        {
+          "title": "Boli me — and talking about how you feel",
+          "body": [
+            "A group of health expressions uses the subject-flipping pattern. Learn the whole sentences; all you need to change is the body part."
+          ],
+          "table": {
+            "head": [
+              "Bosanski",
+              "Literally",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*Boli me glava.*",
+                "hurts me-acc head",
+                "My head hurts."
+              ],
+              [
+                "*Bole me noge.*",
+                "hurt-pl me-acc leg-pl",
+                "My legs hurt."
+              ],
+              [
+                "*Boli li te zub?*",
+                "",
+                "Does your tooth hurt?"
+              ],
+              [
+                "*Ne osjećam se dobro.*",
+                "not I-feel self good",
+                "I don't feel well."
+              ],
+              [
+                "*Imam temperaturu.*",
+                "I-have temperature",
+                "I have a fever."
+              ],
+              [
+                "*Prehlađen sam / prehlađena sam.*",
+                "",
+                "I have a cold. (m / f)"
+              ],
+              [
+                "*Kašljem.* / *Kijam.*",
+                "",
+                "I'm coughing. / I'm sneezing."
+              ],
+              [
+                "*Muka mi je.*",
+                "nausea to-me it-is",
+                "I feel sick."
+              ],
+              [
+                "*Umoran sam / umorna sam.*",
+                "",
+                "I'm tired."
+              ],
+              [
+                "*Bolje mi je.*",
+                "better to-me it-is",
+                "I'm feeling better."
+              ]
+            ]
+          },
+          "after": [
+            "**Two similar patterns with different cases — don't mix them up.** *Boli **me*** uses the **accusative** (*me, te, ga, je, nas, vas, ih*): the body is hurting me. *Sviđa **mi** se* and *hladno **mi** je* use the **dative** (*mi, ti, mu, joj, nam, vam, im*). A way to remember: pain attacks you (accusative); feelings and impressions come to you (dative).",
+            "**There's also a second way, with a noun:** *Imam glavobolju* (I have a headache), *imam zubobolju* (toothache), *imam stomakobolju* (stomachache). This form is a bit more formal and common on forms; in conversation, *boli me* is the usual choice.",
+            "**To ask someone else**, just swap the pronoun: *Šta te boli?* (what hurts?), *Boli li vas?* (does it hurt?), *Da li ga još boli?* (does he still have pain?).",
+            "**Phrases you must have:** *Ozdravi!* / *Ozdravite!* (get well soon — informal / polite), *Brzo ozdravljenje!* (speedy recovery), and what Bosnians say most often when someone sneezes: *Nazdravlje!*"
+          ]
+        },
+        {
+          "title": "The imperative — command forms",
+          "body": [
+            "You'll hear these more often than you say them, so the learning order is: recognize first, use later. They're built from the *oni* form, not the dictionary form."
+          ],
+          "table": {
+            "head": [
+              "Dictionary form",
+              "oni",
+              "ti (informal)",
+              "vi (polite/plural)",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*otvoriti*",
+                "*otvore*",
+                "*otvori*",
+                "*otvorite*",
+                "open"
+              ],
+              [
+                "*doći*",
+                "*dođu*",
+                "*dođi*",
+                "*dođite*",
+                "come"
+              ],
+              [
+                "*pisati*",
+                "*pišu*",
+                "*piši*",
+                "*pišite*",
+                "write"
+              ],
+              [
+                "*reći*",
+                "*kažu*",
+                "*reci*",
+                "*recite*",
+                "say"
+              ],
+              [
+                "*piti*",
+                "*piju*",
+                "*pij*",
+                "*pijte*",
+                "drink"
+              ],
+              [
+                "*čitati*",
+                "*čitaju*",
+                "*čitaj*",
+                "*čitajte*",
+                "read"
+              ],
+              [
+                "*odmarati se*",
+                "*odmaraju se*",
+                "*odmaraj se*",
+                "*odmarajte se*",
+                "rest"
+              ],
+              [
+                "*biti*",
+                "*budu*",
+                "*budi*",
+                "*budite*",
+                "be"
+              ]
+            ]
+          },
+          "after": [
+            "**How: take the *oni* form, drop the ending, then add.** If what's left ends in a consonant, add **-i**: *piš- → piši*, *dođ- → dođi*, *otvor- → otvori*. If it ends in a vowel, add **-j**: *pi- → pij*, *čita- → čitaj*, *da- → daj*. For the polite form just add **-te**.",
+            "**Prohibitions don't use this form.** Instead you use *nemoj* (informal) or *nemojte* (polite) + dictionary form: *Nemoj zaboraviti! Nemojte izlaziti!* The form *ne pij* does exist, but it sounds harsh, like a military order — *nemoj piti* is much more natural.",
+            "**Commands you'll hear most on the street:** *Izvolite!* (here you go, please), *Sjednite!* (sit down), *Uđite!* (come in), *Idite pravo!* (go straight on), *Sačekajte, molim!* (wait a moment, please), *Požurite!* (hurry up).",
+            "**\"Let's\" is formed with the ending *-mo*:** *Idemo!* (let's go), *Nađimo se u sedam* (let's meet at seven), *Popijmo kafu* (let's have a coffee). And the most common of all: *Hajdemo!*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tijelo i zdravlje — body, symptoms, pharmacy",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The first table covers body parts. Remember: the body part is the **subject** in a *boli me* sentence, so what you need is the dictionary form, not an object form — which makes this easier than it looks."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bosanski",
+            "English",
+            "Bosanski",
+            "English"
+          ],
+          "rows": [
+            [
+              "*glava* (f)",
+              "head",
+              "*oko* (n) — pl *oči*",
+              "eye"
+            ],
+            [
+              "*kosa* (f)",
+              "hair",
+              "*uho* (n) — pl *uši*",
+              "ear"
+            ],
+            [
+              "*lice* (n)",
+              "face",
+              "*nos* (m)",
+              "nose"
+            ],
+            [
+              "*usta* (pl)",
+              "mouth",
+              "*zub* (m)",
+              "tooth"
+            ],
+            [
+              "*grlo* (n)",
+              "throat",
+              "*vrat* (m)",
+              "neck"
+            ],
+            [
+              "*ruka* (f)",
+              "hand, arm",
+              "*noga* (f)",
+              "foot, leg"
+            ],
+            [
+              "*prst* (m)",
+              "finger",
+              "*leđa* (pl)",
+              "back"
+            ],
+            [
+              "*stomak* (m)",
+              "stomach",
+              "*srce* (n)",
+              "heart"
+            ],
+            [
+              "*koža* (f)",
+              "skin",
+              "*krv* (f)",
+              "blood"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "At the pharmacy",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Imate li nešto protiv glavobolje?*",
+              "Do you have anything for a headache?"
+            ],
+            [
+              "*Treba mi nešto za kašalj.*",
+              "I need something for a cough."
+            ],
+            [
+              "*Imate li ovo bez recepta?*",
+              "Do you have this without a prescription?"
+            ],
+            [
+              "*Koliko puta dnevno?*",
+              "How many times a day?"
+            ],
+            [
+              "*Prije ili poslije jela?*",
+              "Before or after meals?"
+            ],
+            [
+              "*Alergičan sam na…*",
+              "I'm allergic to…"
+            ],
+            [
+              "*Gdje je najbliža dežurna apoteka?*",
+              "Where's the nearest all-night pharmacy?"
+            ],
+            [
+              "*Zovite hitnu pomoć!*",
+              "Call an ambulance!"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two words that work harder than you'd think",
+          "items": [
+            "***Ruka*** means hand **and** arm at once; ***noga*** means foot **and** leg. Bosnian doesn't separate them, which takes some getting used to for English speakers. If you need to be precise: *šaka* (hand), *stopalo* (foot).",
+            "***Srce*** means the heart as an organ and as the seat of feelings — just like English *heart*. *Boli me srce* can mean either, and context tells you which. If you want to be sure you're not misunderstood at the doctor's, describe the symptoms."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 15",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Bosnian column, read the English, and rebuild the sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Bosanski"
+          ],
+          "rows": [
+            [
+              "I've been reading the book, but I haven't finished it.",
+              "*Čitao sam knjigu, ali je nisam pročitao.*"
+            ],
+            [
+              "I read a little every evening.",
+              "*Svako veče čitam po malo.*"
+            ],
+            [
+              "I've finished writing the report.",
+              "*Napisao sam izvještaj.*"
+            ],
+            [
+              "I worked on it, but didn't get it done.",
+              "*Radio sam, ali nisam uradio.*"
+            ],
+            [
+              "When I've finished, I'll let you know.",
+              "*Kada završim, javit ću ti.*"
+            ],
+            [
+              "I didn't buy the coffee.",
+              "*Nisam kupio kafu.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bs": "boljeti — *boli me*",
+      "baca": "BOH-lyeh-tee",
+      "en": "hurt, ache"
+    },
+    {
+      "bs": "ljekar / doktor (m)",
+      "baca": "LYEH-kahr",
+      "en": "doctor"
+    },
+    {
+      "bs": "bolnica (f)",
+      "baca": "BOHL-nee-tsah",
+      "en": "hospital"
+    },
+    {
+      "bs": "apoteka (f)",
+      "baca": "ah-poh-TEH-kah",
+      "en": "pharmacy"
+    },
+    {
+      "bs": "lijek (m)",
+      "baca": "lyehk",
+      "en": "medicine"
+    },
+    {
+      "bs": "recept (m)",
+      "baca": "REH-tsehpt",
+      "en": "prescription"
+    },
+    {
+      "bs": "temperatura (f)",
+      "baca": "tehm-peh-rah-TOO-rah",
+      "en": "temperature; fever"
+    },
+    {
+      "bs": "kašalj (m)",
+      "baca": "KAH-shahly",
+      "en": "cough"
+    },
+    {
+      "bs": "upala (f)",
+      "baca": "OO-pah-lah",
+      "en": "inflammation"
+    },
+    {
+      "bs": "glava (f)",
+      "baca": "GLAH-vah",
+      "en": "head"
+    },
+    {
+      "bs": "grlo (n)",
+      "baca": "GR-loh",
+      "en": "throat"
+    },
+    {
+      "bs": "stomak (m)",
+      "baca": "STOH-mahk",
+      "en": "stomach"
+    },
+    {
+      "bs": "ruka / noga (f)",
+      "baca": "ROO-kah / NOH-gah",
+      "en": "hand, arm / foot, leg"
+    },
+    {
+      "bs": "zub (m)",
+      "baca": "zoob",
+      "en": "tooth"
+    },
+    {
+      "bs": "ozbiljno",
+      "baca": "OHZ-beely-noh",
+      "en": "seriously, serious"
+    },
+    {
+      "bs": "odmarati se — *odmaram se*",
+      "baca": "ohd-MAH-rah-tee seh",
+      "en": "rest"
+    },
+    {
+      "bs": "ozdraviti — *ozdravim*",
+      "baca": "ohz-DRAH-vee-tee",
+      "en": "get well"
+    },
+    {
+      "bs": "polako",
+      "baca": "poh-LAH-koh",
+      "en": "slowly, take it easy"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Bosnian.",
+      "items": [
+        "My throat hurts.",
+        "My legs hurt.",
+        "I don't feel well.",
+        "I have a fever.",
+        "Do you have anything for a headache?",
+        "Get well soon!"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with boli or bole.",
+      "items": [
+        "____ me glava.",
+        "____ me noge.",
+        "____ li te zub?",
+        "Njega ____ stomak.",
+        "Nju ____ oči.",
+        "____ li vas grlo?",
+        "Njih ____ leđa."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "me / grlo / boli",
+        "temperaturu / li / imate / ?",
+        "dobro / se / ne / osjećam",
+        "čaja / pijte / puno",
+        "brzo / ozdravite / !"
+      ]
+    }
+  ],
+  "answers": [
+    "Boli me grlo. — Bole me noge. — Ne osjećam se dobro. — Imam temperaturu. — Imate li nešto protiv glavobolje? — Ozdravite brzo!",
+    "Boli — Bole — Boli — boli — bole — Boli — bole",
+    "Boli me grlo. — Imate li temperaturu? — Ne osjećam se dobro. — Pijte puno čaja. — Ozdravite brzo!"
+  ]
+}

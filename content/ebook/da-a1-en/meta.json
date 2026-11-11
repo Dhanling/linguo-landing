@@ -1,0 +1,978 @@
+{
+  "brand": "LINGUO",
+  "cover": "cover.png",
+  "title": "Dansk 101",
+  "subtitle": "A self-study course in Danish for complete beginners",
+  "level": "Level A1 (CEFR)",
+  "edition": "English Edition",
+  "ruby": false,
+  "font_size": "9.4pt",
+  "page_margin": "12mm 11mm 10mm",
+  "labels": {
+    "unit": "Unit",
+    "dialog": "Dialogue",
+    "notes": "Notes",
+    "vocab": "Vocabulary in this unit",
+    "exercises": "Exercises",
+    "answers": "Answer key",
+    "bekal": "By the end of this unit you can:",
+    "literal": "literally:",
+    "wave": "Wave review:",
+    "bagian": "Part"
+  },
+  "vocab_columns": [
+    {
+      "head": "Dansk",
+      "key": "da"
+    },
+    {
+      "head": "Say it",
+      "key": "baca"
+    },
+    {
+      "head": "English",
+      "key": "en"
+    }
+  ],
+  "cover_design": {
+    "bg": "#7B1526",
+    "accent": "#F3C969",
+    "label": "DANISH",
+    "judul": "Dansk",
+    "cap": "ø",
+    "pola_opacity": 0.45,
+    "pola": "background-image:repeating-linear-gradient(0deg, rgba(255,255,255,.12) 0 3px, transparent 3px 46px),repeating-linear-gradient(90deg, rgba(255,255,255,.07) 0 3px, transparent 3px 46px);",
+    "ringkas": "A self-study course in Danish for complete beginners — from saying hello in Copenhagen to telling the story of last weekend.",
+    "catatan": "Every line of dialogue comes with a word-for-word translation, and every word with a pronunciation guide.",
+    "merek_sub": "SELF-STUDY MODULE",
+    "kaki_sub": "units · dialogues · exercises · answer key"
+  },
+  "product": {
+    "slug": "dansk-101-a1-en",
+    "title": "Danish 101 - A1 (English Edition)",
+    "type": "ebook",
+    "language": "Danish",
+    "level": "A1",
+    "file": "dansk-101-a1-en.pdf",
+    "description": "Twenty Assimil-style self-study units that take you from zero to A1 Danish: short dialogues, word-for-word translations that show how Danish builds its sentences, grammar notes, vocabulary with an English-friendly pronunciation guide, exercises, and an answer key. Danish verbs never change for the person (no am/is/are, no -s), and much of the vocabulary looks familiar to English speakers. The hard parts are elsewhere, and each unit targets one of them: a spelling that hides half the sounds, the article that sticks to the end of the noun, the double definite with adjectives, and the verb that must sit in second place.",
+    "pages": 148
+  },
+  "front": [
+    {
+      "title": "Foreword",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Danish has a bad reputation, and half of it is unfair. People say it's impossible to pronounce, that Danes swallow half their own words, that Danish babies learn to talk later than Norwegian ones. Some of that is true."
+        },
+        {
+          "type": "p",
+          "text": "What people rarely mention is the part that's easy — and it's a big part. Danish verbs **never change** for the person: *jeg er, du er, han er, vi er, I er, de er*. One form for everyone, in every tense. If you've ever wrestled with French or German conjugation tables, this feels like a gift. Even English, with its *am/is/are* and *he goes*, is fussier."
+        },
+        {
+          "type": "p",
+          "text": "So the difficulty of Danish isn't where you'd expect. It lies in three things: **sounds** that don't match the spelling, **the article that sticks to the end of the noun** (*en bil* → *bilen*, the car), and **the verb that must sit in second place** in the sentence, whatever comes first."
+        },
+        {
+          "type": "p",
+          "text": "None of the three works like English. That's why this course tackles them from the start instead of saving them for the last chapter: sounds come before Unit 1, the end article arrives in Unit 4, and word order gets a whole unit to itself in Unit 10."
+        },
+        {
+          "type": "p",
+          "text": "The explanations are deliberately short. What's long isn't the theory — it's the practice."
+        },
+        {
+          "type": "kotak",
+          "title": "Before you start",
+          "items": [
+            "Set aside 20–30 undisturbed minutes, not two hours broken into pieces. A language sticks through short, frequent repetition, not one long assault.",
+            "Read out loud — and in Danish this isn't a tip, it's a requirement. Danish spelling keeps letters that stopped being pronounced long ago; if you only read silently, you're memorizing spelling, not the language.",
+            "From Unit 1, learn every noun **with its en or et**: not *bil*, but *en bil*. That one small word decides the form of the article, the adjective, and the possessive in the whole sentence later on.",
+            "Don't wait for your pronunciation to be perfect before you dare to speak. Danes are used to foreign accents, and they're far happier to help you than to correct you."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Enjoy the journey. *Held og lykke!*"
+        }
+      ]
+    },
+    {
+      "type": "isi",
+      "title": "Contents",
+      "intro": "This course works best in order — each unit reuses what the previous ones put in place."
+    },
+    {
+      "title": "How to use this course",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This course is built for **self-study**. Each unit is designed to be finished in one sitting, about 20–30 minutes. What matters isn't how fast you move forward, but how often you come back."
+        },
+        {
+          "type": "p",
+          "text": "Every unit has the same structure, and the order is deliberate:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Dialogue** — first read the Danish out loud without looking at the translation. Let your ears work before your brain demands an explanation.",
+            "**Word-for-word translation** — the small italic line under the translation. This is the part people skip most often, yet it's where you see how Danish *thinks*. Example: *Jeg hedder Budi* literally means \"I am-called Budi\", not \"my name is Budi\".",
+            "**Notes** — short explanations of whatever felt strange.",
+            "**Vocabulary** — the new words of the unit, each with a pronunciation guide. Nouns are always given with *en* or *et*, so you learn their gender along with them.",
+            "**Exercises** — do them without looking at the key. Mistakes are part of the process.",
+            "**Answer key** — open it only after you've genuinely tried."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Wave review",
+          "items": [
+            "From Unit 3 on, each unit asks you to review an earlier one — usually two steps back, just the right distance to make your memory work without feeling like starting from zero. Do it in reverse: cover the Danish, look at the English translation, and rebuild the Danish sentence from memory.",
+            "This is the part that turns \"I understood it once\" into \"I can use it\". Don't skip it."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One last rule: **say it out loud**. Danish has the least honest spelling of all the Scandinavian languages. The \"Say it\" column in every vocabulary table isn't decoration — it's a core part of the lesson."
+        }
+      ]
+    },
+    {
+      "title": "Danish pronunciation",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This is the most important section in the whole course, and it comes first because it has to be read first. Danish spelling froze about 400 years ago, while the sounds kept moving. The result: many written letters are no longer pronounced, and several letters have turned into completely different sounds."
+        },
+        {
+          "type": "p",
+          "text": "The **Say it** column throughout this course is written to be read the way an English speaker naturally would, with capitals marking the stressed syllable: **ah** as in \"father\", **eh** as in \"bed\" (in a closed syllable just **e**: *en* → **en**), **uh** for the weak vowel in \"about\" (*hedde* → **HEH-dhuh**), **ee** as in \"see\", **oh** as in \"go\" (without the glide into \"w\"), **oo** as in \"food\", **ai** as in \"Thai\", **oi** as in \"boy\", **ow** as in \"how\", **ohw** as in \"go\" plus a light *w*, and **y** always as in \"yes\". Three extra symbols, **æ**, **ö** and **ü**, cover vowels English doesn't have."
+        },
+        {
+          "type": "sub",
+          "text": "Three extra letters"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Letter",
+            "Sound",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**æ**",
+              "**eh** — like the *e* in \"bed\"; where this course writes **æ** itself (*dag* → dæ), say the *a* of \"bad\"",
+              "*træ* (treh) = tree"
+            ],
+            [
+              "**ø**",
+              "**ö** — lips rounded as for \"oh\", tongue where it is for \"eh\"; like German *ö*",
+              "*øl* (öl) = beer"
+            ],
+            [
+              "**å**",
+              "a long **oh**, like the vowel in \"more\" or \"saw\"",
+              "*år* (or) = year"
+            ],
+            [
+              "**y**",
+              "**ü** — lips rounded as for \"oo\", tongue where it is for \"ee\"",
+              "*by* (bü) = town"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*æ*, *ø* and *å* aren't variants of *a* and *o* — they're letters in their own right, and they come at the **very end** of the Danish alphabet, after *z*. Useful when you look a word up in a dictionary."
+        },
+        {
+          "type": "sub",
+          "text": "Disappearing letters"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Written",
+            "What happens",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**hv-** at the start",
+              "the h is silent",
+              "*hvad* (vahdh), *hvor* (vor), *hvem* (vem)"
+            ],
+            [
+              "**-g** at the end",
+              "almost always silent",
+              "*og* (oh), *dag* (dæ), *jeg* (yai)"
+            ],
+            [
+              "**-d** after l, n, r",
+              "silent",
+              "*hold* (hol), *hun**d*** (hoon), *jord* (yor)"
+            ],
+            [
+              "**-t** in the ending -et",
+              "softens to dh",
+              "*huset* (HOO-suhdh)"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Two sounds English doesn't have"
+        },
+        {
+          "type": "p",
+          "text": "**Blødt d (\"soft d\").** A *d* in the middle or at the end of a word after a vowel isn't pronounced \"d\". The tongue rests lightly behind the lower teeth and air slips past its sides — the result is a sound between *d*, *l*, and the *th* in English \"the\". This course writes it **dh**."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Word",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "mad",
+              "mahdh",
+              "food"
+            ],
+            [
+              "gade",
+              "GAH-dhuh",
+              "street"
+            ],
+            [
+              "med",
+              "medh",
+              "with"
+            ],
+            [
+              "hvad",
+              "vahdh",
+              "what"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Stød.** A kind of catch or tiny break in the middle of a vowel, like the catch in the middle of \"uh-oh\". It can tell words apart: *hun* (she) has no stød, *hund* (dog) has one — even though both sound like \"hoon\". The good news: ignoring stød won't make you misunderstood, it'll just make you sound foreign. Don't let it hold you back in your first year."
+        },
+        {
+          "type": "sub",
+          "text": "Consonants that change their sound"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Letter",
+            "Sound",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**r** at the start of a word",
+              "in the back of the throat, like French *r* — not the English *r*",
+              "*rød* (rödh) = red"
+            ],
+            [
+              "**r** after a vowel",
+              "melts into a faint \"ah\" vowel",
+              "*her* (heh-ah) = here"
+            ],
+            [
+              "**v** after a vowel",
+              "softens into a \"w\"/\"oo\" glide",
+              "*hav* (how) = sea"
+            ],
+            [
+              "**k, p, t** at the start",
+              "breathy, with a little puff of air — even more than in English",
+              "*tak* (t'ahk) = thanks"
+            ],
+            [
+              "**k, p, t** in the middle/at the end",
+              "soften into g, b, d",
+              "*ikke* (EE-guh) = not"
+            ],
+            [
+              "**j**",
+              "like *y* in \"yes\"",
+              "*ja* (yah) = yes"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Four words to get right from day one",
+          "items": [
+            "*jeg* = **yai**, not \"jeg\". It's the word you'll use most in your whole Danish-speaking life.",
+            "*og* (and) = **oh**, and *at* as the infinitive marker (\"to\") sounds just the same — this course writes both **oh**. Two short words that are easy to mix up on paper but sound alike.",
+            "*ikke* (not) = **EE-guh**, stressed at the front.",
+            "*tak* = **t'ahk**, with a puff of air. You'll say this word dozens of times a day in Denmark."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Don't try to memorize all these tables now. Read them once, calmly, then come back to this page whenever a word in a unit seems to be pronounced strangely. After five units, most of the rules will start to feel natural on their own."
+        }
+      ]
+    }
+  ],
+  "back": [
+    {
+      "title": "A1 grammar summary",
+      "blocks": [
+        {
+          "type": "sub",
+          "text": "Nouns: en-words and et-words"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "Indefinite",
+            "Definite (ending)",
+            "Plural",
+            "Definite plural"
+          ],
+          "rows": [
+            [
+              "en-ord",
+              "en bil",
+              "bil**en**",
+              "bil**er**",
+              "bil**erne**"
+            ],
+            [
+              "en-ord",
+              "en stol",
+              "stol**en**",
+              "stol**e**",
+              "stol**ene**"
+            ],
+            [
+              "et-ord",
+              "et hus",
+              "hus**et**",
+              "hus**e**",
+              "hus**ene**"
+            ],
+            [
+              "et-ord",
+              "et æble",
+              "æbl**et**",
+              "æbl**er**",
+              "æbl**erne**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "About **75%** of Danish nouns are *en*-words. If you really don't know, guess *en* — the odds are three to one. The indefinite plural has three endings (**-er**, **-e**, or no ending) that have to be learned word by word; the most common is **-er**."
+        },
+        {
+          "type": "p",
+          "text": "Words that don't change in the plural: *et år → to år*, *en ting → to ting*, *en sko → to sko*. Words that change their vowel: *en mand → mænd*, *en bog → bøger*, *en hånd → hænder*, *et barn → børn*, *en nat → nætter*, *en bonde → bønder*."
+        },
+        {
+          "type": "sub",
+          "text": "Adjectives"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "Form",
+            "Example"
+          ],
+          "rows": [
+            [
+              "en-word singular",
+              "base",
+              "en **stor** bil"
+            ],
+            [
+              "et-word singular",
+              "+ **t**",
+              "et **stort** hus"
+            ],
+            [
+              "plural",
+              "+ **e**",
+              "**store** biler"
+            ],
+            [
+              "after den/det/de/min/din",
+              "+ **e**",
+              "den **store** bil"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Double definite**: \"the big car\" = *den store bil* — *den* in front **and** the adjective ending in *-e*, but *bil* stays bare, without the *-en* ending. Without an adjective, the ending comes back: *bilen*."
+        },
+        {
+          "type": "p",
+          "text": "Adjectives ending in *-sk*, *-t* and *-ed* don't add another *t*: *et dansk hus*, *et sort bord*, *et lukket vindue*. Nor do adjectives ending in a vowel: *et blå hus* (and the plural is just *blå*, with no *-e*)."
+        },
+        {
+          "type": "p",
+          "text": "Comparing: **-ere** and **-est** — *stor → større → størst*, *billig → billigere → billigst*. Irregular: *god → bedre → bedst*, *dårlig → værre → værst*, *mange → flere → flest*, *lille → mindre → mindst*, *gammel → ældre → ældst*. Long words use *mere* and *mest*: *mere interessant*."
+        },
+        {
+          "type": "sub",
+          "text": "Possessives"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Owner",
+            "en-word",
+            "et-word",
+            "Plural"
+          ],
+          "rows": [
+            [
+              "my",
+              "min",
+              "mit",
+              "mine"
+            ],
+            [
+              "your",
+              "din",
+              "dit",
+              "dine"
+            ],
+            [
+              "his",
+              "hans",
+              "hans",
+              "hans"
+            ],
+            [
+              "her",
+              "hendes",
+              "hendes",
+              "hendes"
+            ],
+            [
+              "our",
+              "vores",
+              "vores",
+              "vores"
+            ],
+            [
+              "your (plural)",
+              "jeres",
+              "jeres",
+              "jeres"
+            ],
+            [
+              "their",
+              "deres",
+              "deres",
+              "deres"
+            ],
+            [
+              "his/her/their own (3rd person)",
+              "sin",
+              "sit",
+              "sine"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Han ringer til **sin** mor* = he calls his **own** mother. *Han ringer til **hans** mor* = he calls **someone else's** mother. *Sin/sit/sine* is only used when the owner is the subject of that same sentence, and it can never be the subject itself. English \"his\" covers both — Danish doesn't."
+        },
+        {
+          "type": "sub",
+          "text": "Verbs"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Tense",
+            "Form",
+            "Example"
+          ],
+          "rows": [
+            [
+              "present (nutid)",
+              "base + **-r**",
+              "jeg tale**r**, du tale**r**, de tale**r**"
+            ],
+            [
+              "past group 1 (datid)",
+              "+ **-ede**",
+              "jeg snakk**ede**, jeg arbejd**ede**"
+            ],
+            [
+              "past group 2 (datid)",
+              "+ **-te**",
+              "jeg tal**te**, jeg køb**te**"
+            ],
+            [
+              "perfect (førnutid)",
+              "har/er + **-et / -t**",
+              "jeg har tal**t**, jeg er komm**et**"
+            ],
+            [
+              "infinitive",
+              "**at** + base",
+              "at tale, at spise"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One form for everyone — nothing changes with *jeg/du/han/vi/I/de*. This is Danish's biggest advantage, and it holds in every tense."
+        },
+        {
+          "type": "p",
+          "text": "**har or er?** Most verbs take *har*. Verbs of movement or change of state take *er* when the result is what matters: *jeg **er** gået* (I have left), *hun **er** kommet*, *de **er** rejst*, *det **er** blevet koldt*. When the activity itself is the point, *har* is used: *jeg **har** gået i to timer* (I've been walking for two hours)."
+        },
+        {
+          "type": "sub",
+          "text": "Modal verbs"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Present",
+            "Past",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "kan",
+              "kunne",
+              "can, be able to"
+            ],
+            [
+              "skal",
+              "skulle",
+              "must, will"
+            ],
+            [
+              "vil",
+              "ville",
+              "want to"
+            ],
+            [
+              "må",
+              "måtte",
+              "may; have to"
+            ],
+            [
+              "bør",
+              "burde",
+              "should, ought to"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "After a modal verb, the next verb is in the **base form without at**: *jeg kan tale dansk*, not *at tale*. ⚠️ *Jeg må ikke ryge* = I **must not** smoke, not \"I don't have to\". \"Don't have to\" = *jeg behøver ikke*."
+        },
+        {
+          "type": "sub",
+          "text": "Word order"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**The verb always comes second** in a statement. If the first slot is taken by an adverb or time phrase, the subject jumps behind the verb: *I morgen **tager** jeg til Aarhus*.",
+            "**Yes/no questions**: the verb moves to the front — *Taler du dansk?*",
+            "**Questions with a question word**: question word, then verb, then subject — *Hvor **bor** du?*",
+            "**ikke** comes **after** the verb in a main clause: *Jeg taler ikke dansk.*",
+            "⚠️ In a **subordinate clause** (after *at, fordi, hvis, når, som*), *ikke* moves **in front of** the verb: *Jeg ved, at han **ikke kommer***.",
+            "Adverbials go in the order manner–place–time: *Jeg kører **med bus** **til arbejde** **hver dag***."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Question words"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Danish",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "hvad",
+              "vahdh",
+              "what"
+            ],
+            [
+              "hvem",
+              "vem",
+              "who"
+            ],
+            [
+              "hvor",
+              "vor",
+              "where"
+            ],
+            [
+              "hvorfor",
+              "VOR-for",
+              "why"
+            ],
+            [
+              "hvordan",
+              "vor-DAHN",
+              "how"
+            ],
+            [
+              "hvornår",
+              "vor-NOR",
+              "when"
+            ],
+            [
+              "hvilken / hvilket / hvilke",
+              "VIL-guhn",
+              "which"
+            ],
+            [
+              "hvor mange",
+              "vor MAHNG-uh",
+              "how many"
+            ],
+            [
+              "hvor meget",
+              "vor MAI-uhdh",
+              "how much"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Numbers"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "rows": [
+            [
+              "0 nul",
+              "1 en/et",
+              "2 to",
+              "3 tre"
+            ],
+            [
+              "4 fire",
+              "5 fem",
+              "6 seks",
+              "7 syv"
+            ],
+            [
+              "8 otte",
+              "9 ni",
+              "10 ti",
+              "11 elleve"
+            ],
+            [
+              "12 tolv",
+              "13 tretten",
+              "14 fjorten",
+              "15 femten"
+            ],
+            [
+              "16 seksten",
+              "17 sytten",
+              "18 atten",
+              "19 nitten"
+            ],
+            [
+              "20 tyve",
+              "30 tredive",
+              "40 fyrre",
+              "50 halvtreds"
+            ],
+            [
+              "60 tres",
+              "70 halvfjerds",
+              "80 firs",
+              "90 halvfems"
+            ],
+            [
+              "100 hundrede",
+              "1,000 tusind",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The ones come **first**, joined with *og*: *enogtyve* (21), *femogtredive* (35), *tooghalvfems* (92) — like the old English \"four-and-twenty\". The numbers 50–90 are built on multiples of **twenty**, not ten — a relic of an old way of counting that no other Scandinavian language kept."
+        },
+        {
+          "type": "sub",
+          "text": "The most commonly confused prepositions"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**i** = in, inside, and for countries & big cities: *i Danmark*, *i København*, *i bilen*.",
+            "**på** = on a surface, and — the unexpected part — for many public places: *på arbejde*, *på skolen*, *på hotellet*, *på café*.",
+            "**til** = to (direction): *til Aarhus*, *til arbejde*. ⚠️ *at gå **til** skole* (going there) vs *at være **på** skolen* (being there).",
+            "**hos** = at someone's place: *hos lægen*, *hos min mor* (like French *chez*).",
+            "**med** = with, and also for means of transport: *med bus*, *med tog*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The most common verbs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The verbs below cover most everyday conversation. Only the last two columns need memorizing — the present tense can always be guessed."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Infinitive",
+            "Present",
+            "Past",
+            "Perfect",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "at være",
+              "er",
+              "var",
+              "har været",
+              "to be"
+            ],
+            [
+              "at have",
+              "har",
+              "havde",
+              "har haft",
+              "to have"
+            ],
+            [
+              "at gøre",
+              "gør",
+              "gjorde",
+              "har gjort",
+              "to do"
+            ],
+            [
+              "at gå",
+              "går",
+              "gik",
+              "er gået",
+              "to walk, to go"
+            ],
+            [
+              "at komme",
+              "kommer",
+              "kom",
+              "er kommet",
+              "to come"
+            ],
+            [
+              "at tage",
+              "tager",
+              "tog",
+              "har taget",
+              "to take; to go (by transport)"
+            ],
+            [
+              "at få",
+              "får",
+              "fik",
+              "har fået",
+              "to get"
+            ],
+            [
+              "at se",
+              "ser",
+              "så",
+              "har set",
+              "to see"
+            ],
+            [
+              "at sige",
+              "siger",
+              "sagde",
+              "har sagt",
+              "to say"
+            ],
+            [
+              "at vide",
+              "ved",
+              "vidste",
+              "har vidst",
+              "to know"
+            ],
+            [
+              "at give",
+              "giver",
+              "gav",
+              "har givet",
+              "to give"
+            ],
+            [
+              "at blive",
+              "bliver",
+              "blev",
+              "er blevet",
+              "to become; to stay"
+            ],
+            [
+              "at stå",
+              "står",
+              "stod",
+              "har stået",
+              "to stand"
+            ],
+            [
+              "at sidde",
+              "sidder",
+              "sad",
+              "har siddet",
+              "to sit"
+            ],
+            [
+              "at ligge",
+              "ligger",
+              "lå",
+              "har ligget",
+              "to lie; to be located"
+            ],
+            [
+              "at sove",
+              "sover",
+              "sov",
+              "har sovet",
+              "to sleep"
+            ],
+            [
+              "at drikke",
+              "drikker",
+              "drak",
+              "har drukket",
+              "to drink"
+            ],
+            [
+              "at skrive",
+              "skriver",
+              "skrev",
+              "har skrevet",
+              "to write"
+            ],
+            [
+              "at finde",
+              "finder",
+              "fandt",
+              "har fundet",
+              "to find"
+            ],
+            [
+              "at løbe",
+              "løber",
+              "løb",
+              "er løbet",
+              "to run"
+            ],
+            [
+              "at synge",
+              "synger",
+              "sang",
+              "har sunget",
+              "to sing"
+            ],
+            [
+              "at spise",
+              "spiser",
+              "spiste",
+              "har spist",
+              "to eat"
+            ],
+            [
+              "at tale",
+              "taler",
+              "talte",
+              "har talt",
+              "to speak"
+            ],
+            [
+              "at købe",
+              "køber",
+              "købte",
+              "har købt",
+              "to buy"
+            ],
+            [
+              "at bo",
+              "bor",
+              "boede",
+              "har boet",
+              "to live (reside)"
+            ],
+            [
+              "at hedde",
+              "hedder",
+              "hed",
+              "har heddet",
+              "to be called"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "What's next",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "If you've reached this page after genuinely working through all twenty units, you now hold the whole A1 framework: you can introduce yourself, ask and give prices and times, order something, ask for directions, describe an ordinary day, and talk about what has already happened. That's no small thing."
+        },
+        {
+          "type": "p",
+          "text": "What matters most now isn't the next chapter — it's **habit**."
+        },
+        {
+          "type": "kotak",
+          "title": "Four steps that really move the needle",
+          "items": [
+            "**Go through this course once more, in reverse.** Cover the Danish column, read the English translation, and rebuild the sentence. This second round usually gives you more than the first.",
+            "**Listen to more than you understand.** DR P4 radio, the news in *Nyheder på let dansk*, or Danish series with Danish subtitles — not English ones. Your ears need flight hours before your brain can keep up.",
+            "**Write five sentences a day** about your day, using only words you already have. Five simple correct sentences beat one paragraph written with a machine translator.",
+            "**Find someone to talk to.** Danish has a well-known problem: as soon as Danes hear your accent, they switch to English because they think they're helping. Say it once, up front: *Må vi tale dansk? Jeg er ved at lære.* Almost everyone will gladly stick with Danish."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The next official step is **A2**: longer compound sentences, the passive, phrasal verbs (*at se frem til*, *at holde op med*), and reading short complete texts. If your goal is to work or study in Denmark, the usual target is **Prøve i Dansk 2 or 3** — and the distance from here to there is much shorter than from zero to here."
+        },
+        {
+          "type": "p",
+          "text": "*Held og lykke — og husk at tale højt.*"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,516 @@
+{
+  "title": "Hi, how are you?",
+  "title_target": "Oi! Tudo bem?",
+  "goal": "Greet Brazilians the right way at any time of day, say your name and where you're from, ask how someone is, and discover that Portuguese questions keep normal word order — no *do you* needed.",
+  "bekal": [
+    "greet people with *oi*, *bom dia*, *boa tarde* and *boa noite*, each at the right time",
+    "say your name and origin with *eu sou…* and *eu sou de…*",
+    "ask a question just by raising your voice, without changing the word order"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Primeiro dia na escola de idiomas",
+      "intro": "First day of a language course in São Paulo. Two new students sit side by side, waiting for class to start.",
+      "lines": [
+        {
+          "speaker": "Carla:",
+          "text": "Oi! Tudo bem?",
+          "id": "Hi! How are you?",
+          "literal": "hi! all good?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Oi! Tudo bem, obrigado. E você?",
+          "id": "Hi! Fine, thanks. And you?",
+          "literal": "hi! all good, thanked. and you?"
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Tudo ótimo! Como você se chama?",
+          "id": "Great! What's your name?",
+          "literal": "all great! how you yourself call?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eu me chamo Budi. E você?",
+          "id": "My name is Budi. And you?",
+          "literal": "I myself call Budi. and you?"
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Eu sou a Carla. Muito prazer!",
+          "id": "I'm Carla. Nice to meet you!",
+          "literal": "I am the Carla. much pleasure!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "O prazer é meu. Você é brasileira?",
+          "id": "Nice to meet you too. Are you Brazilian?",
+          "literal": "the pleasure is mine. you are Brazilian(fem)?"
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Sou, sim. Sou de Salvador. E você?",
+          "id": "Yes, I am. I'm from Salvador. And you?",
+          "literal": "am, yes. am from Salvador. and you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eu sou indonésio. Sou de Jacarta.",
+          "id": "I'm Indonesian. I'm from Jakarta.",
+          "literal": "I am Indonesian(masc). am from Jakarta."
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Que legal! Seja bem-vindo ao Brasil!",
+          "id": "How cool! Welcome to Brazil!",
+          "literal": "what cool! be well-come to-the Brazil!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Muito obrigado! Até amanhã, Carla.",
+          "id": "Thank you very much! See you tomorrow, Carla.",
+          "literal": "much thanked! until tomorrow, Carla."
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Até amanhã! Tchau!",
+          "id": "See you tomorrow! Bye!",
+          "literal": "until tomorrow! bye!"
+        }
+      ],
+      "notes": [
+        "**Tudo bem? is a greeting, not a real question.** Literally \"all good?\", and the answer is almost always *tudo bem* too — even when your life is falling apart. It works exactly like \"how's it going?\" in English: an opening ritual, not a request for a report. You can answer *tudo bem*, *tudo bom* or *tudo ótimo*, and all three are correct.",
+        "**Look at Carla's question: the word order doesn't change.** *Você é brasileira?* has exactly the same word order as *Você é brasileira.* The only difference is the voice rising at the end — just like a casual \"You're Brazilian?\" in English. No helper word to add (no *do*, no *are you*), nothing to flip around. This is Portuguese's first gift to you.",
+        "**Answering \"yes\" by repeating the verb.** Look at Carla's answer: not just *sim*, but *Sou, sim*. Brazilians very often answer yes/no questions by repeating the verb of the question: *Você é brasileira?* → *Sou.* Answering with just *sim* isn't wrong, but repeating the verb sounds far more natural.",
+        "**Eu me chamo is literally \"I call myself\".** There's a little word *me* in the middle, like *myself*. Simpler forms exist and are just as correct: *Meu nome é Budi* (\"my name is Budi\") or even *Eu sou o Budi*."
+      ],
+      "grammars": [
+        {
+          "title": "Ser — the first verb \"to be\"",
+          "body": [
+            "The first verb you absolutely need to master, and also the most irregular. Don't look for a pattern; learn its six lines like a song."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "Say it",
+              "ser",
+              "meaning"
+            ],
+            "rows": [
+              [
+                "eu",
+                "ay-oo",
+                "**sou**",
+                "I am"
+              ],
+              [
+                "você",
+                "voh-SAY",
+                "**é**",
+                "you are"
+              ],
+              [
+                "ele / ela",
+                "AY-lee / EH-lah",
+                "**é**",
+                "he / she is"
+              ],
+              [
+                "nós",
+                "naws",
+                "**somos**",
+                "we are"
+              ],
+              [
+                "vocês",
+                "voh-SAYS",
+                "**são**",
+                "you are (plural)"
+              ],
+              [
+                "eles / elas",
+                "AY-lees / EH-lahs",
+                "**são**",
+                "they are (masc. / fem.)"
+              ]
+            ]
+          },
+          "after": [
+            "**Você uses the same form as \"he/she\".** Look at rows two and three: *você é* and *ele é* — the verb form is identical. Brazilian Portuguese uses *você* for everyone, casual or polite, and that cuts your memorizing in half. Old grammar books teach *tu falas*; in ninety percent of Brazil, that form isn't used.",
+            "**The subject pronoun can be dropped.** *Sou de Jacarta* can only mean \"I'm from Jakarta\", because only \"I\" uses the form *sou*. Brazilians drop it all the time. Use *eu* when you want to **stress** it: *Eu sou indonésio, ela é brasileira*.",
+            "⚠️ There's a second verb \"to be\", *estar*, used for temporary things. It gets a whole unit to itself in unit 3. For now, use *ser* for name, origin and nationality — and you'll always be right."
+          ]
+        },
+        {
+          "title": "Subject pronouns",
+          "body": [
+            "Six forms to memorize, plus two you only need to recognize."
+          ],
+          "table": {
+            "head": [
+              "Português",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "**eu**",
+                "ay-oo",
+                "I"
+              ],
+              [
+                "**você**",
+                "voh-SAY",
+                "you (both casual and polite)"
+              ],
+              [
+                "**ele**",
+                "AY-lee",
+                "he"
+              ],
+              [
+                "**ela**",
+                "EH-lah",
+                "she"
+              ],
+              [
+                "**nós**",
+                "naws",
+                "we"
+              ],
+              [
+                "**a gente**",
+                "ah ZHEHN-chee",
+                "we (spoken, far more common)"
+              ],
+              [
+                "**vocês**",
+                "voh-SAYS",
+                "you (plural)"
+              ],
+              [
+                "**eles / elas**",
+                "AY-lees / EH-lahs",
+                "they (masc. / fem.)"
+              ]
+            ]
+          },
+          "after": [
+            "**Portuguese has a separate \"they\" for men and for women.** *Eles* for a group of men (or a mixed group), *elas* for a group of women only. English has one *they*; Portuguese makes you choose, and it will be one of the mistakes you make most often at first.",
+            "**A gente is the biggest secret of spoken Brazilian Portuguese.** Literally \"the people\", but it means \"we\" — and it takes the **third-person singular** verb form, just like *ele*: *A gente é brasileiro*, not *a gente somos*. In everyday conversation you'll hear *a gente* far more often than *nós*. Good news for you: using it means one fewer verb form to memorize."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Survival phrases",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The ten phrases below aren't grammar material — they're emergency tools. Memorize them whole now; understand how they're built later."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Sim / Não",
+              "seen / nown",
+              "Yes / No"
+            ],
+            [
+              "Obrigado / Obrigada",
+              "oh-bree-GAH-doo / oh-bree-GAH-dah",
+              "Thank you (said by a man / a woman)"
+            ],
+            [
+              "Por favor",
+              "pohh fah-VOHH",
+              "Please"
+            ],
+            [
+              "Desculpa",
+              "dees-KOOW-pah",
+              "Sorry"
+            ],
+            [
+              "Com licença",
+              "kohn lee-SEHN-sah",
+              "Excuse me"
+            ],
+            [
+              "Não entendi",
+              "nown ehn-tehn-JEE",
+              "I didn't understand"
+            ],
+            [
+              "Fala mais devagar, por favor.",
+              "FAH-lah mys jee-vah-GAHH",
+              "Speak more slowly, please."
+            ],
+            [
+              "Como se diz… em português?",
+              "KOH-moo see JEES… ehn pohh-too-GAYS",
+              "How do you say… in Portuguese?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Obrigado* changes according to **who says it**, not who receives it. Men always say *obrigado*; women always say *obrigada* — even to other women. It's the most common mistake foreigners make in Brazil, and the easiest to fix."
+        },
+        {
+          "type": "p",
+          "text": "The last two phrases in that table are worth more than a hundred memorized words. *Fala mais devagar* keeps a conversation going when it's run away from you, and *Como se diz…?* turns every Brazilian around you into a walking dictionary."
+        }
+      ]
+    },
+    {
+      "title": "Greetings by time of day",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Portuguese sorts greetings by the clock, not by level of politeness. This table covers them all."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "When to use it"
+          ],
+          "rows": [
+            [
+              "**Bom dia!**",
+              "bohn JEE-ah",
+              "Good morning — until noon"
+            ],
+            [
+              "**Boa tarde!**",
+              "BOH-ah TAHH-jee",
+              "Good afternoon — noon until dark"
+            ],
+            [
+              "**Boa noite!**",
+              "BOH-ah NOY-chee",
+              "Good evening / good night — arriving or leaving"
+            ],
+            [
+              "**Oi!**",
+              "ohy",
+              "Hi — casual, any time"
+            ],
+            [
+              "**Olá!**",
+              "oh-LAH",
+              "Hello — a little more formal"
+            ],
+            [
+              "**Tchau!**",
+              "chow",
+              "Bye — from Italian *ciao*"
+            ],
+            [
+              "**Até logo!**",
+              "ah-TEH LOH-goo",
+              "See you later"
+            ],
+            [
+              "**Até amanhã!**",
+              "ah-TEH ah-mah-NYAHN",
+              "See you tomorrow"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Boa noite* works **both ways** — to greet people when you walk into a room at night, and to say goodbye before bed. Portuguese doesn't split them the way English splits *good evening* and *good night*."
+        },
+        {
+          "type": "p",
+          "text": "Notice, too, that *bom* goes with *dia* but *boa* with *tarde* and *noite*. That's no accident: *dia* is a masculine word, while *tarde* and *noite* are feminine. The full rule comes in unit 2 — for now, learn the three greetings as single chunks."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pt": "oi",
+      "baca": "ohy",
+      "en": "hi (casual)"
+    },
+    {
+      "pt": "olá",
+      "baca": "oh-LAH",
+      "en": "hello"
+    },
+    {
+      "pt": "tchau",
+      "baca": "chow",
+      "en": "bye; see you"
+    },
+    {
+      "pt": "bom dia",
+      "baca": "bohn JEE-ah",
+      "en": "good morning"
+    },
+    {
+      "pt": "boa tarde",
+      "baca": "BOH-ah TAHH-jee",
+      "en": "good afternoon"
+    },
+    {
+      "pt": "boa noite",
+      "baca": "BOH-ah NOY-chee",
+      "en": "good evening; good night"
+    },
+    {
+      "pt": "tudo bem",
+      "baca": "TOO-doo BAYN",
+      "en": "how are you?; all good"
+    },
+    {
+      "pt": "ótimo",
+      "baca": "AW-chee-moo",
+      "en": "great, excellent"
+    },
+    {
+      "pt": "obrigado / obrigada",
+      "baca": "oh-bree-GAH-doo / -dah",
+      "en": "thank you (man / woman speaking)"
+    },
+    {
+      "pt": "e",
+      "baca": "ee",
+      "en": "and"
+    },
+    {
+      "pt": "você",
+      "baca": "voh-SAY",
+      "en": "you"
+    },
+    {
+      "pt": "eu",
+      "baca": "ay-oo",
+      "en": "I"
+    },
+    {
+      "pt": "ser",
+      "baca": "SAYH",
+      "en": "to be (permanent)"
+    },
+    {
+      "pt": "sou",
+      "baca": "soh",
+      "en": "I am"
+    },
+    {
+      "pt": "é",
+      "baca": "eh",
+      "en": "you are / he, she is"
+    },
+    {
+      "pt": "chamar-se",
+      "baca": "shah-MAHH-see",
+      "en": "to be called"
+    },
+    {
+      "pt": "prazer",
+      "baca": "prah-ZAYH",
+      "en": "pleasure; nice to meet you"
+    },
+    {
+      "pt": "brasileiro / brasileira",
+      "baca": "brah-zee-LEY-roo / -rah",
+      "en": "Brazilian (masc. / fem.)"
+    },
+    {
+      "pt": "indonésio / indonésia",
+      "baca": "een-doh-NEH-zee-oo / -ah",
+      "en": "Indonesian (masc. / fem.)"
+    },
+    {
+      "pt": "de",
+      "baca": "jee",
+      "en": "from; of"
+    },
+    {
+      "pt": "sim / não",
+      "baca": "seen / nown",
+      "en": "yes / no"
+    },
+    {
+      "pt": "muito",
+      "baca": "MOOYN-too",
+      "en": "very; a lot"
+    },
+    {
+      "pt": "legal",
+      "baca": "leh-GOW",
+      "en": "cool; nice"
+    },
+    {
+      "pt": "bem-vindo",
+      "baca": "bayn-VEEN-doo",
+      "en": "welcome"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Portuguese.",
+      "items": [
+        "Hi! How are you?",
+        "My name is Budi.",
+        "I'm Indonesian.",
+        "Are you Brazilian? (to a woman)",
+        "I'm from Jakarta.",
+        "Thank you very much! (said by a man)"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right form of ser.",
+      "items": [
+        "Eu ____ o Budi.",
+        "Você ____ brasileira?",
+        "Ela ____ de Salvador.",
+        "Nós ____ indonésios.",
+        "Eles ____ brasileiros.",
+        "A gente ____ de Jacarta."
+      ]
+    },
+    {
+      "prompt": "Choose the right greeting. Write out the full sentence.",
+      "items": [
+        "You walk into a bakery at seven in the morning. To the person at the counter you say ____.",
+        "You run into a classmate in the cafeteria at three in the afternoon. You say ____.",
+        "You walk into a restaurant at eight at night. To the waiter you say ____.",
+        "You're leaving a friend and will see each other again tomorrow. You say ____.",
+        "You want to get past two people who are standing in your way. You say ____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "sou / Budi / eu",
+        "você / brasileira / é / ?",
+        "chama / como / se / você / ?",
+        "de / sou / Jacarta / eu",
+        "prazer / muito / ,"
+      ]
+    }
+  ],
+  "answers": [
+    "Oi! Tudo bem? — Eu me chamo Budi. — Eu sou indonésio. — Você é brasileira? — Eu sou de Jacarta. — Muito obrigado!",
+    "sou — é — é — somos — são — é",
+    "Bom dia! — Boa tarde! — Boa noite! — Até amanhã! — Com licença!",
+    "Eu sou Budi. — Você é brasileira? — Como você se chama? — Eu sou de Jacarta. — Muito prazer!"
+  ]
+}

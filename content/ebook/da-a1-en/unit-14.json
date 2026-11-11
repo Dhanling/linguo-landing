@@ -1,0 +1,564 @@
+{
+  "title": "At the supermarket",
+  "title_target": "I supermarkedet",
+  "goal": "Shop for groceries, give amounts and measures, and use *nogle*, *noget* and *nogen*.",
+  "bekal": [
+    "name measures: *et kilo*, *en liter*, *et par*, *en pakke*",
+    "tell *nogle* (some), *noget* (some/something) and *ingen* (no, none) apart",
+    "shop in a store and ask where things are"
+  ],
+  "wave": "Review **unit 12** first: describe today's weather, yesterday's weather and winter weather in your country — six sentences, out loud.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Indkøb til aftensmad",
+      "intro": "Budi is shopping at Netto. He's looking for a few things and asks a staff member.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Undskyld, hvor står risen?",
+          "id": "Excuse me, where's the rice?",
+          "literal": "sorry, where stands rice-the?"
+        },
+        {
+          "speaker": "Ansat:",
+          "text": "Ris? Reol fire, sammen med pasta og mel.",
+          "id": "Rice? Aisle four, with the pasta and flour.",
+          "literal": "rice? shelf four, together with pasta and flour."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tak. Har I også kokosmælk?",
+          "id": "Thanks. Do you have coconut milk too?",
+          "literal": "thanks. have you(pl.) also coconut-milk?"
+        },
+        {
+          "speaker": "Ansat:",
+          "text": "Ja, i den asiatiske afdeling. Nederste hylde.",
+          "id": "Yes, in the Asian section. Bottom shelf.",
+          "literal": "yes, in the Asian section. lowest shelf."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Perfekt. Og hvad koster kyllingen?",
+          "id": "Perfect. And how much is the chicken?",
+          "literal": "perfect. and what costs chicken-the?"
+        },
+        {
+          "speaker": "Ansat:",
+          "text": "Niogfyrre kroner per kilo. Den er på tilbud i dag.",
+          "id": "Forty-nine kroner a kilo. It's on sale today.",
+          "literal": "nine-and-forty kroner per kilo. it is on offer today."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Så tager jeg to. Har I nogle friske grøntsager?",
+          "id": "Then I'll take two. Do you have any fresh vegetables?",
+          "literal": "then take I two. have you(pl.) some fresh vegetables?"
+        },
+        {
+          "speaker": "Ansat:",
+          "text": "Ja, lige derovre. Men vi har ingen mango i dag.",
+          "id": "Yes, right over there. But we have no mangoes today.",
+          "literal": "yes, just there-over. but we have no mango today."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Det gør ikke noget. Jeg tager nogle løg i stedet.",
+          "id": "That's okay. I'll take some onions instead.",
+          "literal": "it does not anything. I take some onions in place."
+        },
+        {
+          "speaker": "Ansat:",
+          "text": "Skal du bruge en pose?",
+          "id": "Do you need a bag?",
+          "literal": "shall you use a bag?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nej tak, jeg har min egen med.",
+          "id": "No thanks, I brought my own.",
+          "literal": "no thanks, I have my own with."
+        }
+      ],
+      "notes": [
+        "**Hvor står risen?** — remember from unit 11: *at stå* for things standing upright on a shelf. For things lying flat, *at ligge*: *Hvor ligger brødet?*",
+        "**Det gør ikke noget** = \"that's okay, no problem\", literally \"it doesn't do anything\". A fixed phrase used all the time; don't take it apart.",
+        "**Vi har ingen mango** — *ingen* means \"no, none\" and already contains the negative, so no *ikke* is needed. You can also say *vi har ikke nogen mango*; both are correct, the first is shorter.",
+        "**Per kilo.** Everything in Denmark is sold by the kilogram or by the piece, and the price per kilo must be shown on the shelf — very handy for comparing.",
+        "**En pose** = plastic bag. In Denmark shopping bags **cost money** and aren't cheap (2-5 kroner), and almost everyone brings their own. *Jeg har min egen med* is a sentence you'll use a lot.",
+        "**Egen** = own. It changes like an adjective: *min egen bil*, *mit eget hus*, *mine egne bøger*. One of the few adjectives whose et-form doubles a letter.",
+        "**Nederste hylde** — *nederst* (bottom) and *øverst* (top) are very useful in supermarkets and elevators.",
+        "**Asiatiske** — notice the *-e* ending because it comes after *den*. Double definiteness again; unit 15 explains it fully."
+      ],
+      "grammars": [
+        {
+          "title": "Nogle, noget, nogen, ingen",
+          "body": [
+            "Four words that sound alike and are often mixed up. The system is actually tidy: what matters is **countable or not**, and **positive sentence or not** — much like English *some* vs *any*."
+          ],
+          "table": {
+            "head": [
+              "Word",
+              "Used for",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**nogle**",
+                "some (countable, positive sentence)",
+                "Jeg har **nogle** venner i Aarhus."
+              ],
+              [
+                "**noget**",
+                "some / something (uncountable)",
+                "Vil du have **noget** vand?"
+              ],
+              [
+                "**nogen**",
+                "any (in questions & negatives)",
+                "Har du **nogen** penge? / Jeg har ikke **nogen** penge."
+              ],
+              [
+                "**ingen**",
+                "no, none (one word, no ikke)",
+                "Jeg har **ingen** penge."
+              ],
+              [
+                "**intet**",
+                "nothing, no (uncountable, rather formal)",
+                "Der er **intet** at gøre."
+              ],
+              [
+                "**alle / alt**",
+                "all, everyone / everything",
+                "**Alle** kommer. / **Alt** er klar."
+              ]
+            ]
+          },
+          "after": [
+            "A shortcut that works in almost every everyday situation: **nogle** if it's countable and the sentence is positive, **noget** if it's uncountable, **nogen** if the sentence is a question or negative.",
+            "*Nogle* and *nogen* sound **almost the same** in speech — both come out as \"NOH-uhn\". The difference is only in writing, and even Danes often spell them wrong.",
+            "*Noget* also means \"something\" on its own: *Vil du have noget?* (do you want something?), and *ingenting* means \"nothing\": *Jeg har ingenting.*"
+          ]
+        },
+        {
+          "title": "Measures and amounts",
+          "body": [
+            "After a measure word, the noun stands **bare** — no article, and usually no plural ending."
+          ],
+          "table": {
+            "head": [
+              "Measure",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "et kilo",
+                "et kilo **ris**",
+                "a kilo of rice"
+              ],
+              [
+                "et halvt kilo",
+                "et halvt kilo **kød**",
+                "half a kilo of meat"
+              ],
+              [
+                "en liter",
+                "en liter **mælk**",
+                "a liter of milk"
+              ],
+              [
+                "et gram",
+                "hundrede gram **ost**",
+                "a hundred grams of cheese"
+              ],
+              [
+                "en pakke",
+                "en pakke **smør**",
+                "a pack of butter"
+              ],
+              [
+                "en flaske",
+                "en flaske **vand**",
+                "a bottle of water"
+              ],
+              [
+                "en dåse",
+                "en dåse **tomater**",
+                "a can of tomatoes"
+              ],
+              [
+                "et par",
+                "et par **æbler**",
+                "a couple of apples"
+              ],
+              [
+                "en pose",
+                "en pose **kartofler**",
+                "a bag of potatoes"
+              ],
+              [
+                "et stykke",
+                "et stykke **kage**",
+                "a piece of cake"
+              ],
+              [
+                "en skive",
+                "to skiver **brød**",
+                "two slices of bread"
+              ]
+            ]
+          },
+          "after": [
+            "*Et par* literally means \"a pair\", but in everyday use it means \"two or three\" — just like \"a couple of\". *Et par dage* = a couple of days.",
+            "⚠️ Denmark is fully metric. The only non-metric measures, like *en pægl*, disappeared long ago. But watch the commas and periods — Danes write *1.000* for a thousand and *1,5* for one and a half, the opposite of English."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Groceries",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Dansk",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "et brød",
+              "et brödh",
+              "bread"
+            ],
+            [
+              "en ris",
+              "en ris",
+              "rice"
+            ],
+            [
+              "et sukker",
+              "et SOO-gah",
+              "sugar"
+            ],
+            [
+              "et salt / en peber",
+              "et sahlt / en PEH-bah",
+              "salt / pepper"
+            ],
+            [
+              "en olie",
+              "en OH-lyuh",
+              "oil"
+            ],
+            [
+              "et smør",
+              "et smör",
+              "butter"
+            ],
+            [
+              "en ost",
+              "en ost",
+              "cheese"
+            ],
+            [
+              "et æg / æg",
+              "et eg",
+              "egg / eggs"
+            ],
+            [
+              "en mælk",
+              "en melk",
+              "milk"
+            ],
+            [
+              "grøntsager",
+              "GRÖNT-sah-ah",
+              "vegetables"
+            ],
+            [
+              "frugt",
+              "frogt",
+              "fruit"
+            ],
+            [
+              "en tomat",
+              "en toh-MAHT",
+              "tomato"
+            ],
+            [
+              "et løg",
+              "et loi",
+              "onion"
+            ],
+            [
+              "en kartoffel",
+              "en kahr-TOF-uhl",
+              "potato"
+            ],
+            [
+              "et æble / en banan",
+              "et EH-bluh / en bah-NAHN",
+              "apple / banana"
+            ],
+            [
+              "en kylling",
+              "en KÜ-ling",
+              "chicken"
+            ],
+            [
+              "en fisk",
+              "en fisk",
+              "fish"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Æg* doesn't change in the plural: *et æg, to æg*. Likewise *en fisk, to fisk* — though *fisker* is also used when you mean several different kinds of fish."
+        }
+      ]
+    },
+    {
+      "title": "Phrases for the store",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Dansk",
+            "English"
+          ],
+          "rows": [
+            [
+              "Hvor står / ligger…?",
+              "Where is…?"
+            ],
+            [
+              "Har I…?",
+              "Do you have…?"
+            ],
+            [
+              "Jeg leder efter…",
+              "I'm looking for…"
+            ],
+            [
+              "Er den her frisk?",
+              "Is this fresh?"
+            ],
+            [
+              "Hvor meget skal du bruge?",
+              "How much do you need?"
+            ],
+            [
+              "Et halvt kilo, tak.",
+              "Half a kilo, please."
+            ],
+            [
+              "Er det alt?",
+              "Is that everything?"
+            ],
+            [
+              "Ja tak, det var det.",
+              "Yes, that's all."
+            ],
+            [
+              "Skal du bruge en pose?",
+              "Do you need a bag?"
+            ],
+            [
+              "Har du et medlemskort?",
+              "Do you have a membership card?"
+            ],
+            [
+              "Kan jeg betale med MobilePay?",
+              "Can I pay with MobilePay?"
+            ],
+            [
+              "Hvornår lukker I?",
+              "What time do you close?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Det var det* literally means \"that was that\" — the standard way to finish an order, in shops and cafés alike. You'll hear it at the checkout all the time."
+        },
+        {
+          "type": "kotak",
+          "title": "Shopping in Denmark: what the phrasebook doesn't tell you",
+          "items": [
+            "**Pant.** Drink bottles and cans carry a deposit (1-3 kroner) that you get back by feeding them into the *pantautomat* machine at the supermarket. Don't throw empty bottles away.",
+            "**Bags cost money.** Bring your own. The line: *Nej tak, jeg har min egen med.*",
+            "**Fast cashiers.** Danish cashiers work very fast and expect you to pack while they scan. Standing still and waiting will make the line pile up."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "da": "et supermarked",
+      "baca": "et SOO-pah-mahr-kuhdh",
+      "en": "supermarket"
+    },
+    {
+      "da": "at handle",
+      "baca": "oh HAHN-luh",
+      "en": "to shop"
+    },
+    {
+      "da": "et indkøb",
+      "baca": "et IN-köb",
+      "en": "purchase, shopping"
+    },
+    {
+      "da": "en hylde",
+      "baca": "en HÜ-luh",
+      "en": "shelf"
+    },
+    {
+      "da": "en afdeling",
+      "baca": "en OW-deh-ling",
+      "en": "section, department"
+    },
+    {
+      "da": "en pose",
+      "baca": "en POH-suh",
+      "en": "bag"
+    },
+    {
+      "da": "en flaske",
+      "baca": "en FLAHS-guh",
+      "en": "bottle"
+    },
+    {
+      "da": "en pakke",
+      "baca": "en PAH-guh",
+      "en": "pack, package"
+    },
+    {
+      "da": "et kilo",
+      "baca": "et KEE-loh",
+      "en": "kilogram"
+    },
+    {
+      "da": "en liter",
+      "baca": "en LEE-dah",
+      "en": "liter"
+    },
+    {
+      "da": "et par",
+      "baca": "et pahr",
+      "en": "a pair; a couple"
+    },
+    {
+      "da": "nogle",
+      "baca": "NOH-uhn",
+      "en": "some"
+    },
+    {
+      "da": "noget",
+      "baca": "NOH-uhdh",
+      "en": "something; some"
+    },
+    {
+      "da": "nogen",
+      "baca": "NOH-uhn",
+      "en": "any (in questions/negatives)"
+    },
+    {
+      "da": "ingen / ingenting",
+      "baca": "ING-uhn",
+      "en": "no, none / nothing"
+    },
+    {
+      "da": "alt / alle",
+      "baca": "ahlt / AH-luh",
+      "en": "everything / all, everyone"
+    },
+    {
+      "da": "frisk",
+      "baca": "frisk",
+      "en": "fresh"
+    },
+    {
+      "da": "egen / eget / egne",
+      "baca": "AI-uhn",
+      "en": "own"
+    },
+    {
+      "da": "nederst / øverst",
+      "baca": "NEH-dhahst / Ö-vahst",
+      "en": "bottom / top"
+    },
+    {
+      "da": "derovre",
+      "baca": "deh-ah-OHW-ruh",
+      "en": "over there"
+    },
+    {
+      "da": "per",
+      "baca": "per",
+      "en": "per"
+    },
+    {
+      "da": "en ansat",
+      "baca": "en AHN-saht",
+      "en": "employee, staff member"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with nogle, noget, nogen or ingen.",
+      "items": [
+        "Jeg har ____ venner i Aarhus.",
+        "Vil du have ____ kaffe?",
+        "Har du ____ penge?",
+        "Vi har ____ mælk i dag. (none)",
+        "Jeg køber ____ æbler.",
+        "Er der ____ hjemme?"
+      ]
+    },
+    {
+      "prompt": "Translate into Danish.",
+      "items": [
+        "Excuse me, where's the rice?",
+        "Do you have fresh vegetables?",
+        "Half a kilo of meat, please.",
+        "How much is the chicken per kilo?",
+        "No thanks, I brought my own bag.",
+        "What time do you close?"
+      ]
+    },
+    {
+      "prompt": "Fill in the right measure.",
+      "items": [
+        "____ mælk (a liter)",
+        "____ ris (a kilo)",
+        "____ smør (a pack)",
+        "____ vand (a bottle)",
+        "____ brød (two slices)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "risen / hvor / står / ?",
+        "grøntsager / friske / I / har / ?",
+        "kilo / tak / halvt / et",
+        "pose / bruge / skal / en / du / ?",
+        "med / egen / har / jeg / min"
+      ]
+    }
+  ],
+  "answers": [
+    "nogle — noget — nogen — ingen — nogle — nogen",
+    "Undskyld, hvor står risen? — Har I friske grøntsager? — Et halvt kilo kød, tak. — Hvad koster kyllingen per kilo? — Nej tak, jeg har min egen med. — Hvornår lukker I?",
+    "en liter mælk — et kilo ris — en pakke smør — en flaske vand — to skiver brød",
+    "Hvor står risen? — Har I friske grøntsager? — Et halvt kilo, tak. — Skal du bruge en pose? — Jeg har min egen med."
+  ]
+}

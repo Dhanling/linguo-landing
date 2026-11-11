@@ -1,0 +1,578 @@
+{
+  "title": "Hi, what's your name?",
+  "title_target": "Hej! Hvad hedder du?",
+  "goal": "Greet people at the right time of day, say your name, ask how someone is, and see why Danish verbs never change.",
+  "bekal": [
+    "greet with *hej*, *goddag* and *godmorgen*, each in its proper place",
+    "say your name with *jeg hedder* and ask other people theirs",
+    "use *er* for everyone, with not a single change of form"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Første dag på sprogskolen",
+      "intro": "The first day of a language course at Københavns Sprogcenter. Two new students sit side by side.",
+      "lines": [
+        {
+          "speaker": "Mette:",
+          "text": "Hej! Hvad hedder du?",
+          "id": "Hi! What's your name?",
+          "literal": "hi! what are-called you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hej! Jeg hedder Budi. Og du?",
+          "id": "Hi! My name is Budi. And you?",
+          "literal": "hi! I am-called Budi. and you?"
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Jeg hedder Mette. Hyggeligt at møde dig!",
+          "id": "My name is Mette. Nice to meet you!",
+          "literal": "I am-called Mette. cozy to meet you!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "I lige måde. Hvordan går det?",
+          "id": "Likewise. How are you?",
+          "literal": "in same way. how goes it?"
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Det går godt, tak. Og dig?",
+          "id": "I'm fine, thanks. And you?",
+          "literal": "it goes well, thanks. and you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jeg har det også godt. Er du dansker?",
+          "id": "I'm fine too. Are you Danish?",
+          "literal": "I have it also good. are you Dane?"
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Ja, jeg er fra Odense. Er du kineser?",
+          "id": "Yes, I'm from Odense. Are you Chinese?",
+          "literal": "yes, I am from Odense. are you Chinese-person?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nej, jeg er indoneser. Jeg er fra Jakarta.",
+          "id": "No, I'm Indonesian. I'm from Jakarta.",
+          "literal": "no, I am Indonesian-person. I am from Jakarta."
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Hvor spændende! Velkommen til Danmark!",
+          "id": "How exciting! Welcome to Denmark!",
+          "literal": "how exciting! welcome to Denmark!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mange tak! Vi ses i morgen, Mette.",
+          "id": "Thanks a lot! See you tomorrow, Mette.",
+          "literal": "many thanks! we see-each-other in morning, Mette."
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Vi ses! Hej hej!",
+          "id": "See you! Bye!",
+          "literal": "we see-each-other! hi hi!"
+        }
+      ],
+      "notes": [
+        "**Hej works both ways.** One word for \"hi\" and \"bye\" — and when it's doubled (*hej hej*), it always means goodbye. The repetition isn't an emphatic greeting; it's a sign you're leaving.",
+        "**Hvad hedder du isn't \"what is your name\".** Literally it's \"what are you called\". *At hedde* is a full verb, not \"name\" + \"your\". So the answer is a verb too: *jeg hedder Budi*, not *mit navn er Budi* — the second is grammatically correct but sounds stiff, like filling in a form.",
+        "**Hvordan går det** literally means \"how goes it\". The standard answer is *det går godt*. There's also a full answer with *have*: *jeg har det godt* — \"I have it good\". Both are correct and equally common.",
+        "**The verb doesn't change.** Look closely: *jeg hedder*, *du hedder*, *hun hedder* — exactly the same form. Likewise *er*, *går*, *har*. This isn't a coincidence of this unit; Danish simply has no verb endings for the person at all. No *am/is/are*, no *he goes* with an *-s*: a huge saving.",
+        "**Nationalities are lowercase.** *dansker*, *indoneser*, *kineser* — unlike English. Country names stay capitalized: *Danmark*, *Indonesien*. Note too that nationality words don't change for gender: men and women are both *dansker*.",
+        "**Mange tak** literally means \"many thanks\". There's a ladder of politeness: *tak* (normal) → *mange tak* (many) → *tusind tak* (a thousand thanks, very warm). The reply is *selv tak* or *det var så lidt* (\"that was so little\").",
+        "**Vi ses** literally means \"we see each other\" — the most common goodbye between friends. More formal: *farvel*.",
+        "**Hyggeligt.** This word comes from *hygge*, the most famous Danish word in the world. Here it simply means \"nice, pleasant\". But note its form — *hyggelig* becomes *hyggeligt* because it describes an unnamed \"it\". The rule comes in Unit 15."
+      ],
+      "grammars": [
+        {
+          "title": "At være — the verb \"to be\"",
+          "body": [
+            "The first verb you must master — and the key lesson isn't its forms, but how few forms there are."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "Say it",
+              "at være",
+              "meaning"
+            ],
+            "rows": [
+              [
+                "jeg",
+                "yai",
+                "**er**",
+                "I am"
+              ],
+              [
+                "du",
+                "doo",
+                "**er**",
+                "you are"
+              ],
+              [
+                "han / hun / den / det",
+                "hahn / hoon / den / deh",
+                "**er**",
+                "he / she / it is"
+              ],
+              [
+                "vi",
+                "vee",
+                "**er**",
+                "we are"
+              ],
+              [
+                "I",
+                "ee",
+                "**er**",
+                "you (plural) are"
+              ],
+              [
+                "de",
+                "dee",
+                "**er**",
+                "they are"
+              ]
+            ]
+          },
+          "after": [
+            "One and the same column from top to bottom. There's nothing to memorize but the word *er* itself, and the same goes for **every** Danish verb, without exception.",
+            "⚠️ *I* (you, plural) is always written with a **capital letter**, wherever it stands in the sentence. That's the only way to tell it apart from *i* (in), which is always lowercase. Compare: *I er i Danmark* = you (all) are in Denmark.",
+            "*Han* and *hun* are for people only. For things, use *den* (for en-words) or *det* (for et-words) — the rule comes in Units 3 and 4."
+          ]
+        },
+        {
+          "title": "Greetings by the clock",
+          "body": [
+            "Danish picks a greeting by the time of day and by how well you know the person. Getting it wrong isn't a grammar mistake but a mood mistake — and that's more noticeable."
+          ],
+          "table": {
+            "head": [
+              "Greeting",
+              "Say it",
+              "When",
+              "Tone"
+            ],
+            "rows": [
+              [
+                "Hej",
+                "hai",
+                "any time",
+                "friendly, but widely used — even with shop staff"
+              ],
+              [
+                "Godmorgen",
+                "goh-MORN",
+                "until ~10 a.m.",
+                "neutral"
+              ],
+              [
+                "Goddag",
+                "goh-DÆ",
+                "daytime",
+                "a bit formal; to strangers"
+              ],
+              [
+                "Godaften",
+                "goh-AHF-duhn",
+                "evening",
+                "a bit formal"
+              ],
+              [
+                "Godnat",
+                "goh-NAHT",
+                "parting at night",
+                "before bed"
+              ],
+              [
+                "Farvel",
+                "fah-VEL",
+                "parting",
+                "formal"
+              ],
+              [
+                "Vi ses",
+                "vee ses",
+                "parting",
+                "friendly, most common"
+              ],
+              [
+                "Hej hej",
+                "hai hai",
+                "parting",
+                "friendly and warm"
+              ]
+            ]
+          },
+          "after": [
+            "Denmark is a flat society. *Hej* is used far more widely than newcomers expect: to shop assistants, bus drivers, lecturers. *Goddag* actually sounds a bit stiff in many situations.",
+            "Danish **no longer uses a polite form** in everyday speech. The form *De* (formal \"you\") still exists in official letters and with the royal family, but in normal life everyone says *du* to everyone — students to teachers and employees to the CEO. A relief: no French-style *tu/vous* dilemma."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Survival phrases",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The eleven phrases below aren't grammar to memorize — they're emergency tools. Learn them whole now, understand how they're built later."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Dansk",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Ja / Nej",
+              "yah / nai",
+              "Yes / No"
+            ],
+            [
+              "Tak",
+              "t'ahk",
+              "Thank you"
+            ],
+            [
+              "Selv tak",
+              "sel t'ahk",
+              "You're welcome"
+            ],
+            [
+              "Undskyld",
+              "ON-skül",
+              "Sorry; excuse me"
+            ],
+            [
+              "Værsgo",
+              "VERS-goh",
+              "Here you are (when handing something over)"
+            ],
+            [
+              "Jeg forstår ikke",
+              "yai for-STOR EE-guh",
+              "I don't understand"
+            ],
+            [
+              "Det ved jeg ikke",
+              "deh vedh yai EE-guh",
+              "I don't know"
+            ],
+            [
+              "Kan du gentage det?",
+              "kahn doo gen-TÆ deh",
+              "Could you repeat that?"
+            ],
+            [
+              "Taler du engelsk?",
+              "TAH-lah doo ENG-uhlsk",
+              "Do you speak English?"
+            ],
+            [
+              "Hvad hedder det på dansk?",
+              "vahdh HEH-dhah deh poh dahnsk",
+              "What's that called in Danish?"
+            ],
+            [
+              "Lidt langsommere, tak",
+              "lit LAHNG-som-ah t'ahk",
+              "A little slower, please"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Undskyld* does two jobs at once: apologizing and getting someone's attention — just like English \"sorry\" and \"excuse me\" rolled into one word."
+        },
+        {
+          "type": "kotak",
+          "title": "One sentence that changes your experience in Denmark",
+          "items": [
+            "*Må vi tale dansk? Jeg er ved at lære.* — \"Can we speak Danish? I'm learning.\"",
+            "The classic problem of learning Danish isn't that people are unfriendly — it's the opposite: the moment they hear your accent, almost all Danes automatically switch to English, thinking they're helping. As an English speaker you'll hit this even more often. The sentence above stops it politely, and almost everyone will gladly stay in Danish."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Personal pronouns",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Subject",
+            "Say it",
+            "Object",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "jeg",
+              "yai",
+              "mig (mai)",
+              "I / me"
+            ],
+            [
+              "du",
+              "doo",
+              "dig (dai)",
+              "you"
+            ],
+            [
+              "han",
+              "hahn",
+              "ham (hahm)",
+              "he / him"
+            ],
+            [
+              "hun",
+              "hoon",
+              "hende (HEH-nuh)",
+              "she / her"
+            ],
+            [
+              "den / det",
+              "den / deh",
+              "den / det",
+              "it (things)"
+            ],
+            [
+              "vi",
+              "vee",
+              "os (os)",
+              "we / us"
+            ],
+            [
+              "I",
+              "ee",
+              "jer (yeh-ah)",
+              "you (plural)"
+            ],
+            [
+              "de",
+              "dee",
+              "dem (dem)",
+              "they / them"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The object form is used when the pronoun isn't the subject: *hyggeligt at møde **dig***, *jeg kender **hende***. This works just like English *I/me*, *she/her* — Danish keeps the same split."
+        },
+        {
+          "type": "p",
+          "text": "Note that *mig* and *dig* are pronounced **mai** and **dai**, not \"mig\" and \"dig\". It's the same pattern as *jeg* → **yai**: the letters *-eg* and *-ig* at the end of a word sound like \"ai\"."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "da": "hej",
+      "baca": "hai",
+      "en": "hi; bye"
+    },
+    {
+      "da": "goddag",
+      "baca": "goh-DÆ",
+      "en": "good day, hello"
+    },
+    {
+      "da": "godmorgen",
+      "baca": "goh-MORN",
+      "en": "good morning"
+    },
+    {
+      "da": "godaften",
+      "baca": "goh-AHF-duhn",
+      "en": "good evening"
+    },
+    {
+      "da": "farvel",
+      "baca": "fah-VEL",
+      "en": "goodbye"
+    },
+    {
+      "da": "vi ses",
+      "baca": "vee ses",
+      "en": "see you"
+    },
+    {
+      "da": "at hedde",
+      "baca": "oh HEH-dhuh",
+      "en": "to be called"
+    },
+    {
+      "da": "at være",
+      "baca": "oh VEH-ah",
+      "en": "to be"
+    },
+    {
+      "da": "at have",
+      "baca": "oh HAH-vuh",
+      "en": "to have"
+    },
+    {
+      "da": "hvad",
+      "baca": "vahdh",
+      "en": "what"
+    },
+    {
+      "da": "hvordan",
+      "baca": "vor-DAHN",
+      "en": "how"
+    },
+    {
+      "da": "hvor",
+      "baca": "vor",
+      "en": "where"
+    },
+    {
+      "da": "og",
+      "baca": "oh",
+      "en": "and"
+    },
+    {
+      "da": "ja / nej",
+      "baca": "yah / nai",
+      "en": "yes / no"
+    },
+    {
+      "da": "ikke",
+      "baca": "EE-guh",
+      "en": "not"
+    },
+    {
+      "da": "tak",
+      "baca": "t'ahk",
+      "en": "thank you, thanks"
+    },
+    {
+      "da": "mange tak",
+      "baca": "MAHNG-uh t'ahk",
+      "en": "thanks a lot"
+    },
+    {
+      "da": "godt",
+      "baca": "got",
+      "en": "well, good"
+    },
+    {
+      "da": "også",
+      "baca": "OS-suh",
+      "en": "also, too"
+    },
+    {
+      "da": "fra",
+      "baca": "frah",
+      "en": "from"
+    },
+    {
+      "da": "en dansker",
+      "baca": "en DAHN-skah",
+      "en": "a Dane"
+    },
+    {
+      "da": "en indoneser",
+      "baca": "en in-doh-NEH-sah",
+      "en": "an Indonesian"
+    },
+    {
+      "da": "Danmark",
+      "baca": "DAHN-mahrk",
+      "en": "Denmark"
+    },
+    {
+      "da": "Indonesien",
+      "baca": "in-doh-NEH-see-uhn",
+      "en": "Indonesia"
+    },
+    {
+      "da": "hyggelig",
+      "baca": "HÜ-guh-lee",
+      "en": "cozy, nice, pleasant"
+    },
+    {
+      "da": "velkommen",
+      "baca": "vel-KOM-uhn",
+      "en": "welcome"
+    },
+    {
+      "da": "spændende",
+      "baca": "SPEN-uh-nuh",
+      "en": "exciting, interesting"
+    },
+    {
+      "da": "i morgen",
+      "baca": "ee MORN",
+      "en": "tomorrow"
+    },
+    {
+      "da": "undskyld",
+      "baca": "ON-skül",
+      "en": "sorry; excuse me"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Danish.",
+      "items": [
+        "Hi! What's your name?",
+        "My name is Budi.",
+        "I'm Indonesian.",
+        "How are you?",
+        "I'm fine, thanks.",
+        "Are you from Odense?"
+      ]
+    },
+    {
+      "prompt": "Fill in the right personal pronoun.",
+      "items": [
+        "____ hedder Mette. (she)",
+        "____ er fra Jakarta. (I)",
+        "Hyggeligt at møde ____. (you, as object)",
+        "____ er dansker. (he)",
+        "____ er i Danmark. (you, plural)",
+        "____ ses i morgen. (we)"
+      ]
+    },
+    {
+      "prompt": "Choose the right greeting. Write out the whole sentence.",
+      "items": [
+        "You walk into a bakery at eight in the morning. To the baker you say ____.",
+        "You meet a classmate in the cafeteria at eleven. You say ____.",
+        "You walk into a restaurant at seven in the evening. To the waiter you say ____.",
+        "You part from your lecturer at the end of the corridor, formally. You say ____.",
+        "You say goodbye to a classmate, warmly. You say ____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "hedder / jeg / Mette",
+        "er / fra / jeg / Jakarta",
+        "det / går / hvordan / ?",
+        "dansker / du / er / ?",
+        "tak / det / godt / går"
+      ]
+    }
+  ],
+  "answers": [
+    "Hej! Hvad hedder du? — Jeg hedder Budi. — Jeg er indoneser. — Hvordan går det? — Det går godt, tak. — Er du fra Odense?",
+    "Hun — Jeg — dig — Han — I — Vi",
+    "Godmorgen. — Hej. — Godaften. — Farvel. — Hej hej.",
+    "Jeg hedder Mette. — Jeg er fra Jakarta. — Hvordan går det? — Er du dansker? — Det går godt, tak."
+  ]
+}

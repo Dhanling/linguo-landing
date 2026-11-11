@@ -1,0 +1,609 @@
+{
+  "title": "How do I get there?",
+  "title_target": "Як пройти? — Yak proyty?",
+  "goal": "Ask people in the street for directions, understand the answer, and use the imperative, which in Ukrainian isn't rude at all as long as one polite word comes with it.",
+  "bekal": [
+    "ask the way with Як пройти / Як доїхати",
+    "form the imperative for ти and ви",
+    "understand directions people give you",
+    "use prepositions of position (біля, навпроти, за, перед)",
+    "name public places in the city"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — Asking the way on Khreshchatyk",
+      "intro": "Ani is looking for a museum and asks a passerby. Notice that all the directions are given in the imperative, and none of them sounds rude.",
+      "lines": [
+        {
+          "speaker": "Ані:",
+          "text": "[Вибачте|VI-bach-teh], [як|yak] [пройти|proy-TI] [до|do] [музею|moo-ZEH-yoo]?",
+          "id": "Excuse me, how do I get to the museum?",
+          "literal": "forgive, how — to-walk-through — to — museum (genitive)?"
+        },
+        {
+          "speaker": "Перехожий:",
+          "text": "[До|Do] [якого|ya-KO-ho] [музею|moo-ZEH-yoo]?",
+          "id": "Which museum?",
+          "literal": "to — which (genitive) — museum?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[До|Do] [Національного|Na-tsee-o-NAL'-no-ho] [музею|moo-ZEH-yoo].",
+          "id": "The National Museum.",
+          "literal": "to — National (genitive) — museum."
+        },
+        {
+          "speaker": "Перехожий:",
+          "text": "[Ідіть|EE-deet'] [прямо|PRYA-mo] [до|do] [перехрестя|peh-reh-KHRES-tya], [потім|PO-teem] [поверніть|po-ver-NEET'] [ліворуч|lee-VO-rooch].",
+          "id": "Go straight to the intersection, then turn left.",
+          "literal": "go — straight — up-to — intersection, then — turn — to-the-left."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Ліворуч|Lee-VO-rooch]... [А|A] [потім|PO-teem]?",
+          "id": "Left... And then?",
+          "literal": "to-the-left... and — then?"
+        },
+        {
+          "speaker": "Перехожий:",
+          "text": "[Потім|PO-teem] [прямо|PRYA-mo] [метрів|MET-reev] [двісті|DVEES-tee]. [Музей|Moo-ZEY] [буде|BOO-deh] [праворуч|pra-VO-rooch].",
+          "id": "Then straight on for about two hundred meters. The museum will be on the right.",
+          "literal": "then — straight — meters (genitive) — two-hundred. museum — will-be — on-the-right."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Це|Tseh] [далеко|da-LEH-ko]?",
+          "id": "Is it far?",
+          "literal": "this — far?"
+        },
+        {
+          "speaker": "Перехожий:",
+          "text": "[Хвилин|Khvi-LIN] [десять|DEH-syat'] [пішки|PEESH-ki].",
+          "id": "About ten minutes on foot.",
+          "literal": "minutes (genitive) — ten — on-foot."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[А|A] [можна|MOZH-na] [на|na] [автобусі|av-TO-boo-see]?",
+          "id": "Can I take a bus?",
+          "literal": "and — allowed — on — bus?"
+        },
+        {
+          "speaker": "Перехожий:",
+          "text": "[Можна|MOZH-na], [але|A-leh] [пішки|PEESH-ki] [швидше|SHVID-sheh].",
+          "id": "You can, but walking is faster.",
+          "literal": "allowed, but — on-foot — faster."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Зрозуміла|Zro-zoo-MEE-la]. [Дуже|DOO-zheh] [дякую|DYA-koo-yoo]!",
+          "id": "Got it. Thank you very much!",
+          "literal": "understood (past f). very — thank-you!"
+        },
+        {
+          "speaker": "Перехожий:",
+          "text": "[Будь|Bood'] [ласка|LAS-ka]. [Гарного|HAR-no-ho] [дня|dnya]!",
+          "id": "You're welcome. Have a nice day!",
+          "literal": "be — kindness. nice (genitive) — day!"
+        }
+      ],
+      "notes": [
+        "**Як пройти for walking, Як доїхати for vehicles.** The same split as *йти* and *їхати* in Unit 13, and Ukrainians notice it. If in doubt, *Як дістатися до…?* (how do I get to…) covers both.",
+        "**The imperative isn't rude in Ukrainian.** *Ідіть прямо* (go straight) is the normal way to give directions, and no one hears it as bossy. What changes the tone is **будь ласка**, and even that is often dropped in directions because it isn't needed.",
+        "**Commands to ти and ви differ by one syllable.** *Іди / Ідіть*, *поверни / поверніть*, *скажи / скажіть*, *почекай / почекайте*. The *ви* form adds **-те** to the *ти* form. Since you'll be asking strangers, the **-те** form is the one to master.",
+        "**Ліворуч and праворуч, not наліво and направо.** The second pair is Russian and often heard in Ukraine, but the standard Ukrainian forms are **ліворуч** (left) and **праворуч** (right). Both come from *ліва рука* and *права рука*: left hand and right hand.",
+        "**Метрів двісті means \"about two hundred meters\".** Flipping the order of number and unit is the Ukrainian way to say \"roughly\": *хвилин десять* (about ten minutes), *днів п'ять* (about five days). Neat, simple, and used all the time.",
+        "**Зрозуміла, not зрозуміло.** Ani is a woman, so she uses the feminine past form: \"I've understood\". The neuter *зрозуміло* means \"it's clear\" in general, with no subject. Both are correct here, and the difference is subtle.",
+        "**Гарного дня! is a warm goodbye.** It's in родовий (genitive) because it's a fragment of a wish, just like *Доброго дня* in Unit 1. Its relatives: *Гарного вечора*, *Гарних вихідних* (have a nice weekend), *Успіхів* (good luck)."
+      ],
+      "grammars": [
+        {
+          "title": "The imperative",
+          "body": [
+            "Every *ви* form is made by adding **-те** to the *ти* form. It's that simple."
+          ],
+          "table": {
+            "head": [
+              "Basic form",
+              "To ти",
+              "To ви",
+              "English"
+            ],
+            "rows": [
+              [
+                "йти",
+                "іди",
+                "ідіть",
+                "go, walk"
+              ],
+              [
+                "повернути",
+                "поверни",
+                "поверніть",
+                "turn"
+              ],
+              [
+                "сказати",
+                "скажи",
+                "скажіть",
+                "say, tell"
+              ],
+              [
+                "чекати",
+                "чекай",
+                "чекайте",
+                "wait"
+              ],
+              [
+                "дати",
+                "дай",
+                "дайте",
+                "give"
+              ],
+              [
+                "повторити",
+                "повтори",
+                "повторіть",
+                "repeat"
+              ],
+              [
+                "написати",
+                "напиши",
+                "напишіть",
+                "write"
+              ],
+              [
+                "слухати",
+                "слухай",
+                "слухайте",
+                "listen"
+              ],
+              [
+                "не запізнюватися",
+                "не запізнюйся",
+                "не запізнюйтеся",
+                "don't be late"
+              ],
+              [
+                "let's",
+                "—",
+                "ходімо",
+                "let's go"
+              ]
+            ]
+          },
+          "after": [
+            "To forbid, put **не** in front: *Не йдіть туди* (don't go there), *Не хвилюйтеся* (don't worry)."
+          ]
+        },
+        {
+          "title": "Directions and position",
+          "body": [],
+          "tables": [
+            {
+              "head": [
+                "Ukrainian",
+                "Say it",
+                "English"
+              ],
+              "rows": [
+                [
+                  "прямо",
+                  "PRYA-mo",
+                  "straight ahead"
+                ],
+                [
+                  "ліворуч",
+                  "lee-VO-rooch",
+                  "(to / on the) left"
+                ],
+                [
+                  "праворуч",
+                  "pra-VO-rooch",
+                  "(to / on the) right"
+                ],
+                [
+                  "назад",
+                  "na-ZAD",
+                  "back"
+                ],
+                [
+                  "вперед",
+                  "vpeh-RED",
+                  "forward"
+                ],
+                [
+                  "вгору / вниз",
+                  "VHO-roo / vniz",
+                  "up / down"
+                ],
+                [
+                  "тут / там",
+                  "toot / tam",
+                  "here / there"
+                ],
+                [
+                  "перехрестя",
+                  "peh-reh-KHRES-tya",
+                  "intersection"
+                ],
+                [
+                  "світлофор",
+                  "sveet-lo-FOR",
+                  "traffic light"
+                ],
+                [
+                  "ріг",
+                  "reeh",
+                  "corner"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Preposition",
+                "Case",
+                "Example",
+                "English"
+              ],
+              "rows": [
+                [
+                  "біля",
+                  "genitive",
+                  "біля банку",
+                  "near the bank"
+                ],
+                [
+                  "навпроти",
+                  "genitive",
+                  "навпроти музею",
+                  "opposite the museum"
+                ],
+                [
+                  "поруч з",
+                  "instrumental",
+                  "поруч з аптекою",
+                  "next to the pharmacy"
+                ],
+                [
+                  "за",
+                  "instrumental",
+                  "за рогом",
+                  "around the corner"
+                ],
+                [
+                  "перед",
+                  "instrumental",
+                  "перед школою",
+                  "in front of the school"
+                ],
+                [
+                  "між",
+                  "instrumental",
+                  "між банком і аптекою",
+                  "between the bank and the pharmacy"
+                ],
+                [
+                  "на розі",
+                  "locative",
+                  "на розі вулиці",
+                  "on the street corner"
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Public places in the city",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Українська",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "музей",
+              "moo-ZEY",
+              "museum"
+            ],
+            [
+              "театр",
+              "teh-ATR",
+              "theater"
+            ],
+            [
+              "кінотеатр",
+              "kee-no-teh-ATR",
+              "movie theater"
+            ],
+            [
+              "банк",
+              "bank",
+              "bank"
+            ],
+            [
+              "аптека",
+              "ap-TEH-ka",
+              "pharmacy"
+            ],
+            [
+              "лікарня",
+              "lee-KAR-nya",
+              "hospital"
+            ],
+            [
+              "пошта",
+              "POSH-ta",
+              "post office"
+            ],
+            [
+              "парк",
+              "park",
+              "park"
+            ],
+            [
+              "площа",
+              "PLO-shcha",
+              "square"
+            ],
+            [
+              "вокзал",
+              "vok-ZAL",
+              "train station"
+            ],
+            [
+              "аеропорт",
+              "a-eh-ro-PORT",
+              "airport"
+            ],
+            [
+              "готель",
+              "ho-TEL'",
+              "hotel"
+            ],
+            [
+              "церква",
+              "TSER-kva",
+              "church"
+            ],
+            [
+              "мечеть",
+              "meh-CHET'",
+              "mosque"
+            ],
+            [
+              "ринок",
+              "RI-nok",
+              "market"
+            ],
+            [
+              "зупинка",
+              "zoo-PIN-ka",
+              "stop (bus, tram)"
+            ],
+            [
+              "міст",
+              "meest",
+              "bridge"
+            ],
+            [
+              "річка",
+              "REECH-ka",
+              "river"
+            ],
+            [
+              "туалет",
+              "too-a-LET",
+              "restroom"
+            ],
+            [
+              "банкомат",
+              "ban-ko-MAT",
+              "ATM"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "If you get lost",
+          "items": [
+            "**Я загубився / загубилася.** — I'm lost. (m / f)",
+            "**Де я?** — where am I? Show the map on your phone as you say it.",
+            "**Я шукаю цю адресу.** — I'm looking for this address.",
+            "**Ви можете показати на карті?** — can you show me on the map?",
+            "**Я не місцевий / не місцева.** — I'm not from here. This sentence makes people explain more slowly right away.",
+            "⚠️ Ukrainians are generally very patient with foreigners asking the way. If the directions come too fast, **Повільніше, будь ласка** always works."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uk": "як пройти",
+      "baca": "yak proy-TI",
+      "en": "how to get there (on foot)"
+    },
+    {
+      "uk": "як доїхати",
+      "baca": "yak do-YEE-kha-ti",
+      "en": "how to get there (by vehicle)"
+    },
+    {
+      "uk": "прямо",
+      "baca": "PRYA-mo",
+      "en": "straight ahead"
+    },
+    {
+      "uk": "ліворуч",
+      "baca": "lee-VO-rooch",
+      "en": "left"
+    },
+    {
+      "uk": "праворуч",
+      "baca": "pra-VO-rooch",
+      "en": "right"
+    },
+    {
+      "uk": "повернути",
+      "baca": "po-ver-NOO-ti",
+      "en": "to turn"
+    },
+    {
+      "uk": "перехрестя",
+      "baca": "peh-reh-KHRES-tya",
+      "en": "intersection"
+    },
+    {
+      "uk": "світлофор",
+      "baca": "sveet-lo-FOR",
+      "en": "traffic light"
+    },
+    {
+      "uk": "ріг",
+      "baca": "reeh",
+      "en": "corner"
+    },
+    {
+      "uk": "біля",
+      "baca": "BEE-lya",
+      "en": "near"
+    },
+    {
+      "uk": "навпроти",
+      "baca": "nav-PRO-ti",
+      "en": "opposite"
+    },
+    {
+      "uk": "поруч",
+      "baca": "PO-rooch",
+      "en": "next to"
+    },
+    {
+      "uk": "за",
+      "baca": "za",
+      "en": "behind, beyond"
+    },
+    {
+      "uk": "перед",
+      "baca": "PEH-red",
+      "en": "in front of"
+    },
+    {
+      "uk": "між",
+      "baca": "meezh",
+      "en": "between"
+    },
+    {
+      "uk": "музей",
+      "baca": "moo-ZEY",
+      "en": "museum"
+    },
+    {
+      "uk": "аптека",
+      "baca": "ap-TEH-ka",
+      "en": "pharmacy"
+    },
+    {
+      "uk": "площа",
+      "baca": "PLO-shcha",
+      "en": "square"
+    },
+    {
+      "uk": "готель",
+      "baca": "ho-TEL'",
+      "en": "hotel"
+    },
+    {
+      "uk": "банкомат",
+      "baca": "ban-ko-MAT",
+      "en": "ATM"
+    },
+    {
+      "uk": "метр",
+      "baca": "metr",
+      "en": "meter"
+    },
+    {
+      "uk": "карта",
+      "baca": "KAR-ta",
+      "en": "map"
+    },
+    {
+      "uk": "показати",
+      "baca": "po-ka-ZA-ti",
+      "en": "to show"
+    },
+    {
+      "uk": "загубитися",
+      "baca": "za-hoo-BI-ti-sya",
+      "en": "to get lost"
+    },
+    {
+      "uk": "перехожий",
+      "baca": "peh-reh-KHO-zhiy",
+      "en": "passerby"
+    },
+    {
+      "uk": "гарного дня",
+      "baca": "HAR-no-ho dnya",
+      "en": "have a nice day"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change into the imperative for ви.",
+      "items": [
+        "йти → ____",
+        "повернути → ____",
+        "сказати → ____",
+        "чекати → ____",
+        "повторити → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the right direction word or preposition.",
+      "items": [
+        "Поверніть ____ (to the left).",
+        "Поверніть ____ (to the right).",
+        "Ідіть ____ (straight ahead).",
+        "Музей ____ (opposite) банку.",
+        "Аптека ____ (near) метро."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "пройти / як / музею / до",
+        "прямо / ідіть",
+        "ліворуч / поверніть",
+        "далеко / це",
+        "пішки / десять / хвилин"
+      ]
+    },
+    {
+      "prompt": "Translate into Ukrainian.",
+      "items": [
+        "Excuse me, how do I get to the museum?",
+        "Go straight to the intersection.",
+        "Then turn left.",
+        "The museum will be on the right.",
+        "Ten minutes on foot."
+      ]
+    }
+  ],
+  "answers": [
+    "ідіть — поверніть — скажіть — чекайте — повторіть",
+    "ліворуч — праворуч — прямо — навпроти — біля",
+    "Як пройти до музею? — Ідіть прямо. — Поверніть ліворуч. — Це далеко? — Десять хвилин пішки.",
+    "Вибачте, як пройти до музею? — Ідіть прямо до перехрестя. — Потім поверніть ліворуч. — Музей буде праворуч. — Десять хвилин пішки."
+  ],
+  "wave": "Go back over Unit 13. The *Куди* and *Де* you separated there are the foundation of this whole page: directions always use the first one."
+}

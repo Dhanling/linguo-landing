@@ -1,0 +1,464 @@
+{
+  "title": "Hello, my name is Ani",
+  "title_target": "Привіт — Pryvit",
+  "goal": "Greet anyone safely, say your name, ask someone else's name, and say your first correct Ukrainian sentence — a sentence with no word for \"is\" at all. You'll also meet something Russian doesn't have: a special form for calling someone by name.",
+  "bekal": [
+    "greet formally and casually, and know the difference",
+    "say your name and ask someone else's",
+    "say thank you, sorry, and excuse me",
+    "build \"I am X\" sentences with no verb",
+    "address people in the correct form"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — First day of the course",
+      "intro": "Ani, a student from Indonesia, walks into a Ukrainian class in Kyiv and sits next to someone she doesn't know yet. Notice that not one sentence below uses a word meaning \"is\" — and look at the last line, where the name Оксана changes its ending.",
+      "lines": [
+        {
+          "speaker": "Ані:",
+          "text": "[Доброго|DOB-ro-ho] [дня|dnya]!",
+          "id": "Good afternoon!",
+          "literal": "good day!"
+        },
+        {
+          "speaker": "Оксана:",
+          "text": "[Доброго|DOB-ro-ho] [дня|dnya]! [Мене|meh-NEH] [звати|ZVA-ti] [Оксана|ok-SA-na]. [А|A] [вас|vas]?",
+          "id": "Good afternoon! My name is Oksana. And you?",
+          "literal": "good day! me (object) — they-call — Oksana. and — you (object)?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Дуже|DOO-zheh] [приємно|pri-YEM-no]. [Я|Ya] [Ані|A-nee].",
+          "id": "Nice to meet you. I'm Ani.",
+          "literal": "very — pleasant. I — Ani."
+        },
+        {
+          "speaker": "Оксана:",
+          "text": "[Ані|A-nee]? [Гарне|HAR-neh] [ім'я|eem-YA]. [Ви|Vi] [студентка|stoo-DENT-ka]?",
+          "id": "Ani? What a lovely name. Are you a student?",
+          "literal": "Ani? lovely (neuter) — name. you — student (f)?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Так|Tak], [я|ya] [студентка|stoo-DENT-ka]. [А|A] [ви|vi]?",
+          "id": "Yes, I'm a student. And you?",
+          "literal": "yes, I — student (f). and — you?"
+        },
+        {
+          "speaker": "Оксана:",
+          "text": "[Я|Ya] [не|neh] [студентка|stoo-DENT-ka]. [Я|Ya] [викладачка|vi-kla-DACH-ka].",
+          "id": "I'm not a student. I'm a teacher.",
+          "literal": "I — not — student (f). I — teacher (f)."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Ой|Oy], [вибачте|VI-bach-teh]!",
+          "id": "Oh, sorry!",
+          "literal": "oh, forgive-(you)!"
+        },
+        {
+          "speaker": "Оксана:",
+          "text": "[Нічого|Nee-CHO-ho]! [Все|Vseh] [добре|DOB-reh]. [Ласкаво|Las-KA-vo] [просимо|PRO-si-mo] [до|do] [Києва|KI-yeh-va]!",
+          "id": "That's all right! Everything's fine. Welcome to Kyiv!",
+          "literal": "nothing! all — good. kindly — we-ask — to — Kyiv!"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Дякую|DYA-koo-yoo].",
+          "id": "Thank you.",
+          "literal": "I-thank."
+        },
+        {
+          "speaker": "Оксана:",
+          "text": "[Будь|Bood'] [ласка|LAS-ka]. [До|Do] [побачення|po-BA-chen-nya], [Ані|A-nee]!",
+          "id": "You're welcome. Goodbye, Ani!",
+          "literal": "be — kindness. until — seeing, Ani!"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[До|Do] [побачення|po-BA-chen-nya], [пані|PA-nee] [Оксано|ok-SA-no]!",
+          "id": "Goodbye, Ms Oksana!",
+          "literal": "until — seeing, Mrs (calling) — Oksana (calling)!"
+        }
+      ],
+      "notes": [
+        "**Ukrainian has no word for \"is/am/are\" in the present tense.** *Я студентка* is literally just \"I student\" — two words, nothing linking them. In formal writing that missing link is sometimes marked with a dash: *Київ — місто* (Kyiv is a city). ⚠️ Beginners often hunt for a word for \"is\" and force in **є**, which is wrong here. Є means \"there is\", not \"is\", and you'll learn how to use it in Unit 4.",
+        "**Ukrainian has no \"a\" or \"the\" either.** There are no articles at all. One of the decisions you make in every English sentence simply disappears.",
+        "**Доброго дня is formal, Привіт is casual.** *Доброго дня* (*DOB-ro-ho dnya*) is safe with anyone — strangers, lecturers, officials, cashiers. *Привіт* (*pri-VEET*) is only for friends and people your own age. ⚠️ Saying *Привіт* to a lecturer or a passport officer sounds like a child slapping an adult on the back.",
+        "**Why Доброго дня and not Добрий день?** Both are correct and both are used. *Добрий день* is the basic form; *Доброго дня* was originally a piece of a wish — \"(I wish you) a good day\" — so its ending is in the родовий (genitive). It sounds a little warmer and more typically Ukrainian. Pick one and stick with it.",
+        "**Мене звати literally means \"me they-call\".** Not \"my name is\". Ukrainians give their name in a sentence with no clear subject — who does the calling is never said. Just take it as one chunk: *Мене звати ___*. To ask back, **А вас?** (\"and you?\") is enough; no need to repeat the whole sentence.",
+        "**Вибачте and Перепрошую both mean \"sorry\".** *Вибачте* (*VI-bach-teh*) is for small interruptions: cutting in, squeezing past, a slip of the tongue. *Перепрошую* (*peh-reh-PRO-shoo-yoo*) is a little more formal and more typical of western Ukraine. For a real mistake people say *Пробачте* (*pro-BACH-teh*).",
+        "**Будь ласка: one phrase, three jobs.** It means \"please\", \"here you go\", and \"you're welcome\" all at once. You'll use it dozens of times a day. Literally it's \"be kindness\" — two words, not one, so never run them together as *будьласка*.",
+        "**Пані Оксано, not пані Оксана.** The last line uses the calling form (кличний відмінок, the vocative): both *пані* and the name *Оксана* change their ending. This sets Ukrainian apart from Russian from the very first sentence — and Ukrainians hear it immediately."
+      ],
+      "grammars": [
+        {
+          "title": "Sentences without a verb",
+          "body": [
+            "In the present tense, a Ukrainian \"X is Y\" sentence just puts X and Y side by side. Nothing needs to be added, and adding something is actually wrong."
+          ],
+          "table": {
+            "head": [
+              "Ukrainian",
+              "Say it",
+              "English",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "Я студент.",
+                "ya stoo-DENT",
+                "I'm a student.",
+                "I student"
+              ],
+              [
+                "Він лікар.",
+                "veen LEE-kar",
+                "He's a doctor.",
+                "he doctor"
+              ],
+              [
+                "Вона вдома.",
+                "vo-NA VDO-ma",
+                "She's at home.",
+                "she at-home"
+              ],
+              [
+                "Це Київ.",
+                "tseh KI-yeev",
+                "This is Kyiv.",
+                "this Kyiv"
+              ],
+              [
+                "Я не викладач.",
+                "ya neh vi-kla-DACH",
+                "I'm not a teacher.",
+                "I not teacher"
+              ]
+            ]
+          },
+          "after": [
+            "To negate, put **не** right in front of the part you're negating. One word, nothing else changes."
+          ]
+        },
+        {
+          "title": "Кличний відмінок — the calling form",
+          "body": [
+            "The moment you call someone by name, the end of the name changes. This is the seventh case, and Russian doesn't have it. The three patterns below cover almost every name you'll say at A1."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Dictionary form",
+              "Calling form",
+              "In use"
+            ],
+            "rows": [
+              [
+                "Feminine -а",
+                "Оксана, мама, сестра",
+                "Оксано, мамо, сестро",
+                "Оксано, добрий день!"
+              ],
+              [
+                "Feminine -я",
+                "Марія, Софія",
+                "Маріє, Софіє",
+                "Маріє, дякую!"
+              ],
+              [
+                "Masculine, hard",
+                "Іван, брат, пан",
+                "Іване, брате, пане",
+                "Іване, вибачте!"
+              ],
+              [
+                "Masculine -й",
+                "Андрій, Сергій",
+                "Андрію, Сергію",
+                "Андрію, привіт!"
+              ],
+              [
+                "Polite title",
+                "пан Петро, пані Оксана",
+                "пане Петре, пані Оксано",
+                "Пане Петре, будь ласка."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Notice that the polite title changes too: **пане**, **пані**. It goes together with the name; it doesn't stand alone.",
+            "Skipping this form won't cause a misunderstanding, but it's instantly noticeable. To a Ukrainian, calling out \"Оксана!\" sounds like reading a roll call."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Must-have phrases for your first day",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These ten phrases cover almost all the small talk of a first day. Memorize them whole, as chunks; the grammar will untangle itself over the next units."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Українська",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Так / Ні",
+              "tak / nee",
+              "Yes / No"
+            ],
+            [
+              "Дякую",
+              "DYA-koo-yoo",
+              "Thank you"
+            ],
+            [
+              "Дуже дякую",
+              "DOO-zheh DYA-koo-yoo",
+              "Thank you very much"
+            ],
+            [
+              "Будь ласка",
+              "bood' LAS-ka",
+              "Please / Here you go / You're welcome"
+            ],
+            [
+              "Вибачте",
+              "VI-bach-teh",
+              "Sorry, excuse me"
+            ],
+            [
+              "Я не розумію",
+              "ya neh ro-zoo-MEE-yoo",
+              "I don't understand"
+            ],
+            [
+              "Повторіть, будь ласка",
+              "pov-to-REET' bood' LAS-ka",
+              "Please say that again"
+            ],
+            [
+              "Говоріть повільно, будь ласка",
+              "ho-vo-REET' po-VEEL'-no",
+              "Please speak slowly"
+            ],
+            [
+              "Що це?",
+              "shcho tseh",
+              "What's this?"
+            ],
+            [
+              "Як це українською?",
+              "yak tseh oo-kra-YEEN-s'ko-yoo",
+              "How do you say this in Ukrainian?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last two aren't just vocabulary — they're learning tools. Once you can ask \"what's this\" and \"how do you say it in Ukrainian\", every Ukrainian around you turns into a walking dictionary."
+        },
+        {
+          "type": "kotak",
+          "title": "Як справи? and its little trap",
+          "items": [
+            "**Як справи?** (*yak SPRA-vi*) literally means \"how are matters?\" — an everyday greeting for people you already know.",
+            "Standard answers: **Добре** (fine), **Нормально** (okay), **Непогано** (not bad), **Так собі** (so-so).",
+            "To someone you call *ви*, it's **Як ваші справи?**; to a friend, **Як твої справи?** or just **Як справи?**",
+            "⚠️ Unlike English *How are you?*, Як справи? is **not** an empty pleasantry you toss at a cashier or a stranger. You ask it of people you know, and the answer is actually listened to."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uk": "доброго дня",
+      "baca": "DOB-ro-ho dnya",
+      "en": "good afternoon / hello (formal, safe with anyone)"
+    },
+    {
+      "uk": "доброго ранку",
+      "baca": "DOB-ro-ho RAN-koo",
+      "en": "good morning"
+    },
+    {
+      "uk": "добрий вечір",
+      "baca": "DOB-riy VEH-cheer",
+      "en": "good evening (when meeting)"
+    },
+    {
+      "uk": "привіт",
+      "baca": "pri-VEET",
+      "en": "hi (casual, to friends)"
+    },
+    {
+      "uk": "до побачення",
+      "baca": "do po-BA-chen-nya",
+      "en": "goodbye"
+    },
+    {
+      "uk": "бувай",
+      "baca": "boo-VAI",
+      "en": "bye (casual)"
+    },
+    {
+      "uk": "мене звати",
+      "baca": "meh-NEH ZVA-ti",
+      "en": "my name is"
+    },
+    {
+      "uk": "як вас звати?",
+      "baca": "yak vas ZVA-ti",
+      "en": "what's your name? (formal)"
+    },
+    {
+      "uk": "дуже приємно",
+      "baca": "DOO-zheh pri-YEM-no",
+      "en": "nice to meet you"
+    },
+    {
+      "uk": "дякую",
+      "baca": "DYA-koo-yoo",
+      "en": "thank you"
+    },
+    {
+      "uk": "будь ласка",
+      "baca": "bood' LAS-ka",
+      "en": "please / here you go / you're welcome"
+    },
+    {
+      "uk": "вибачте",
+      "baca": "VI-bach-teh",
+      "en": "sorry, excuse me"
+    },
+    {
+      "uk": "нічого",
+      "baca": "nee-CHO-ho",
+      "en": "that's all right, never mind"
+    },
+    {
+      "uk": "так",
+      "baca": "tak",
+      "en": "yes"
+    },
+    {
+      "uk": "ні",
+      "baca": "nee",
+      "en": "no (as an answer)"
+    },
+    {
+      "uk": "не",
+      "baca": "neh",
+      "en": "not (in front of a word)"
+    },
+    {
+      "uk": "я",
+      "baca": "ya",
+      "en": "I"
+    },
+    {
+      "uk": "ти",
+      "baca": "ti",
+      "en": "you (informal)"
+    },
+    {
+      "uk": "ви",
+      "baca": "vi",
+      "en": "you (formal / plural)"
+    },
+    {
+      "uk": "студент / студентка",
+      "baca": "stoo-DENT / stoo-DENT-ka",
+      "en": "student (m / f)"
+    },
+    {
+      "uk": "викладач / викладачка",
+      "baca": "vi-kla-DACH",
+      "en": "teacher, lecturer (m / f)"
+    },
+    {
+      "uk": "ім'я",
+      "baca": "eem-YA",
+      "en": "(first) name"
+    },
+    {
+      "uk": "гарний",
+      "baca": "HAR-niy",
+      "en": "nice, beautiful"
+    },
+    {
+      "uk": "добре",
+      "baca": "DOB-reh",
+      "en": "good, fine, OK"
+    },
+    {
+      "uk": "як справи?",
+      "baca": "yak SPRA-vi",
+      "en": "how are you?"
+    },
+    {
+      "uk": "пан / пані",
+      "baca": "pan / PA-nee",
+      "en": "Mr / Mrs, Ms (polite title)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Ukrainian. Remember: there's no word for \"is\".",
+      "items": [
+        "Good afternoon! (formal)",
+        "My name is Ani.",
+        "I'm a student. (f)",
+        "He's not a doctor.",
+        "What's your name? (formal)",
+        "Goodbye!"
+      ]
+    },
+    {
+      "prompt": "Fill in the right ти or ви form (тебе, вас, твої, ваші, ви).",
+      "items": [
+        "To a lecturer in class: Як ____ звати?",
+        "To your roommate: Як ____ справи?",
+        "To an airport officer: Вибачте, ____ говорите англійською?",
+        "To the seven-year-old next door: Як ____ звати?",
+        "To three friends at once: Як ____ справи?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "звати / мене / Ані",
+        "не / я / студент",
+        "приємно / дуже",
+        "добре / все",
+        "вас / як / звати"
+      ]
+    },
+    {
+      "prompt": "Change into the calling form (кличний відмінок).",
+      "items": [
+        "Оксана, добрий день! → ____",
+        "Іван, вибачте! → ____",
+        "мама, дякую! → ____",
+        "Андрій, привіт! → ____",
+        "пан Петро, будь ласка. → ____"
+      ]
+    }
+  ],
+  "answers": [
+    "Доброго дня! — Мене звати Ані. — Я студентка. — Він не лікар. — Як вас звати? — До побачення!",
+    "вас — твої — ви — тебе — ваші",
+    "Мене звати Ані. — Я не студент. — Дуже приємно. — Все добре. — Як вас звати?",
+    "Оксано — Іване — мамо — Андрію — пане Петре"
+  ],
+  "wave": "Nothing to review yet. From the next unit on, this section points back to the unit that trips people up most."
+}

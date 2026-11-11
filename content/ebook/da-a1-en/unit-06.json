@@ -1,0 +1,581 @@
+{
+  "title": "How much is it?",
+  "title_target": "Hvad koster det?",
+  "goal": "Master the famously strange Danish number system, give and ask for prices, and read phone numbers and dates.",
+  "bekal": [
+    "count to a thousand, including 50–90, which are built on multiples of twenty",
+    "say the ones first: *enogtyve* = one-and-twenty",
+    "ask for prices and pay"
+  ],
+  "wave": "Go back over **Unit 4** first: take ten nouns and say all four forms in a row — *en bil, bilen, biler, bilerne*.",
+  "dialogs": [
+    {
+      "title": "Dialogue — På loppemarkedet",
+      "intro": "A Sunday flea market at Israels Plads. Budi haggles over a secondhand bike.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Undskyld, hvad koster cyklen?",
+          "id": "Excuse me, how much is the bike?",
+          "literal": "excuse-me, what costs bike-the?"
+        },
+        {
+          "speaker": "Sælger:",
+          "text": "Den koster otte hundrede kroner.",
+          "id": "It's eight hundred kroner.",
+          "literal": "it costs eight hundred kroner."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Otte hundrede? Det er lidt dyrt.",
+          "id": "Eight hundred? That's a bit expensive.",
+          "literal": "eight hundred? it is little expensive."
+        },
+        {
+          "speaker": "Sælger:",
+          "text": "Den er kun to år gammel. Se på bremserne.",
+          "id": "It's only two years old. Look at the brakes.",
+          "literal": "it is only two years old. look at brakes-the."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kan du tage seks hundrede?",
+          "id": "Would you take six hundred?",
+          "literal": "can you take six hundred?"
+        },
+        {
+          "speaker": "Sælger:",
+          "text": "Syvhundrede og halvtreds. Så er der en lås med.",
+          "id": "Seven hundred and fifty. The lock's included.",
+          "literal": "seven-hundred and fifty. then is there a lock with."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Syvhundrede. Jeg har kun kontanter.",
+          "id": "Seven hundred. I only have cash.",
+          "literal": "seven-hundred. I have only cash."
+        },
+        {
+          "speaker": "Sælger:",
+          "text": "Okay, det er en aftale. Syvhundrede.",
+          "id": "Okay, it's a deal. Seven hundred.",
+          "literal": "okay, it is a deal. seven-hundred."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Værsgo. Her er syv hundredekronesedler.",
+          "id": "Here you are. Seven hundred-kroner notes.",
+          "literal": "here-you-go. here are seven hundred-krone-notes."
+        },
+        {
+          "speaker": "Sælger:",
+          "text": "Perfekt. Og her er nøglen til låsen.",
+          "id": "Perfect. And here's the key to the lock.",
+          "literal": "perfect. and here is key-the to lock-the."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tusind tak. Hav en god dag!",
+          "id": "Thanks so much. Have a nice day!",
+          "literal": "thousand thanks. have a good day!"
+        }
+      ],
+      "notes": [
+        "**Hvad koster det?** is the most common way to ask a price. There's also *Hvor meget koster det?* — same meaning, a bit longer.",
+        "**Kroner, not krone.** The Danish currency is *en krone* (plural *kroner*), shortened to **kr.** or **DKK**. A hundred *øre* make one krone, but øre coins went out of use long ago; prices are always rounded.",
+        "**Kun** = \"only\". Don't confuse it with *kan* (can). Two short words that sound close but mean very different things.",
+        "**Så** has many jobs: \"then\", \"so\", \"in that case\", and as an intensifier (*så dyrt!* = so expensive!). It's one of the most frequent words in Danish conversation.",
+        "**Kontanter** = cash, always plural. Worth knowing: Denmark is almost entirely cashless. Outside flea markets, you'll pay for almost everything with a *Dankort* or *MobilePay*. The sentence you'll need more often is *Kan jeg betale med kort?*",
+        "**Hav en god dag** — the command form of *at have* is *hav*. This phrase is fairly new in Danish, borrowed from English \"have a nice day\", but it's now common in shops.",
+        "**Hundredekronesedler** — a three-level compound: *hundrede* + *krone* + *sedler* (banknotes). If you can take it apart, you've mastered the way to read written Danish."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers 20–100: the system that makes people give up",
+          "body": [
+            "This is the most famously strange part of Danish, and its reputation is well earned. Norwegian and Swedish build 50–90 from multiples of **ten**, like almost every language in the world. Danish kept an ancient way of counting based on **twenty**.",
+            "The good news: you only need to memorize five words. The logic behind them can be ignored completely — even Danes don't think about it."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Dansk",
+              "Say it",
+              "Where it comes from"
+            ],
+            "rows": [
+              [
+                "20",
+                "tyve",
+                "TÜ-vuh",
+                "twenty"
+              ],
+              [
+                "30",
+                "tredive",
+                "TREDH-vuh",
+                "thirty"
+              ],
+              [
+                "40",
+                "fyrre",
+                "FÖR-uh",
+                "forty"
+              ],
+              [
+                "50",
+                "**halvtreds**",
+                "hahl-TRES",
+                "half-third × 20 = 2½ × 20"
+              ],
+              [
+                "60",
+                "**tres**",
+                "tres",
+                "three × 20"
+              ],
+              [
+                "70",
+                "**halvfjerds**",
+                "hahl-FYERS",
+                "half-fourth × 20 = 3½ × 20"
+              ],
+              [
+                "80",
+                "**firs**",
+                "firs",
+                "four × 20"
+              ],
+              [
+                "90",
+                "**halvfems**",
+                "hahl-FEMS",
+                "half-fifth × 20 = 4½ × 20"
+              ],
+              [
+                "100",
+                "hundrede",
+                "HOON-ruh-dhuh",
+                "a hundred"
+              ],
+              [
+                "1,000",
+                "tusind",
+                "TOO-suhn",
+                "a thousand"
+              ]
+            ]
+          },
+          "after": [
+            "The last column is just to satisfy your curiosity. \"Half-third\" means two and a half — a way of counting that also existed in old German. English has a cousin of the idea in \"score\" (*four score and seven years*). Don't memorize that column; memorize the second one.",
+            "⚠️ There are longer official forms for checks and financial documents: *halvtredsindstyve*, *tresindstyve*, and so on. You'll never say them, but you might read them."
+          ]
+        },
+        {
+          "title": "The ones come first",
+          "body": [
+            "After 20, Danish says **the ones first, then the tens**, joined with *og* (and) — like the old English nursery rhyme \"four-and-twenty blackbirds\". If you've studied German or Dutch, you know this pattern. If not, it takes real practice."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Dansk",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "21",
+                "enogtyve",
+                "one-and-twenty"
+              ],
+              [
+                "35",
+                "femogtredive",
+                "five-and-thirty"
+              ],
+              [
+                "47",
+                "syvogfyrre",
+                "seven-and-forty"
+              ],
+              [
+                "52",
+                "tooghalvtreds",
+                "two-and-fifty"
+              ],
+              [
+                "68",
+                "otteogtres",
+                "eight-and-sixty"
+              ],
+              [
+                "76",
+                "seksoghalvfjerds",
+                "six-and-seventy"
+              ],
+              [
+                "84",
+                "fireogfirs",
+                "four-and-eighty"
+              ],
+              [
+                "99",
+                "nioghalvfems",
+                "nine-and-ninety"
+              ],
+              [
+                "234",
+                "tohundrede og fireogtredive",
+                "two-hundred and four-and-thirty"
+              ],
+              [
+                "1,500",
+                "tusind fem hundrede",
+                "one thousand five hundred"
+              ]
+            ]
+          },
+          "after": [
+            "Everything up to 99 is written **as one word with no spaces**: *seksoghalvfjerds*. From the hundreds on, the parts are written separately, with *og* before the tens.",
+            "What takes the most effort at first isn't saying them but **hearing** them. When the cashier says *toogfirs*, your brain hears \"two\" first and has already guessed something in the twenties. The fix: listen all the way to the end before translating.",
+            "An emergency trick at the checkout: almost every Danish till has a display showing the amount. There's no harm in glancing at it while you learn."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Prices and paying",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Dansk",
+            "English"
+          ],
+          "rows": [
+            [
+              "Hvad koster det?",
+              "How much is it?"
+            ],
+            [
+              "Hvor meget koster den?",
+              "How much is it (an en-word)?"
+            ],
+            [
+              "Det koster halvfjerds kroner.",
+              "It's seventy kroner."
+            ],
+            [
+              "Det er for dyrt.",
+              "That's too expensive."
+            ],
+            [
+              "Har I noget billigere?",
+              "Do you have anything cheaper?"
+            ],
+            [
+              "Kan jeg betale med kort?",
+              "Can I pay by card?"
+            ],
+            [
+              "Jeg tager den.",
+              "I'll take it."
+            ],
+            [
+              "Må jeg få en kvittering?",
+              "Could I have a receipt?"
+            ],
+            [
+              "Er der rabat?",
+              "Is there a discount?"
+            ],
+            [
+              "Det er på tilbud.",
+              "It's on sale."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *For* in front of an adjective means \"too\", not \"for\": *for dyrt* = too expensive, *for lille* = too small. A short word whose meaning changes completely depending on where it stands."
+        },
+        {
+          "type": "p",
+          "text": "Note *Har **I** noget billigere?* — capital *I*, meaning \"you (plural)\". In a shop, Danes address the staff as \"you all\" on behalf of the store, much as English speakers ask \"Do you have…?\" meaning the shop, not the person."
+        }
+      ]
+    },
+    {
+      "title": "Phone numbers and dates",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Danish phone numbers always have eight digits, and they're read out **in pairs** — which means all the number weirdness above gets used right away."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Written",
+            "Said as",
+            "Literally"
+          ],
+          "rows": [
+            [
+              "28 45 91 63",
+              "otteogtyve — femogfyrre — enoghalvfems — treogtres",
+              "28-45-91-63"
+            ],
+            [
+              "12 34 56 78",
+              "tolv — fireogtredive — seksoghalvtreds — otteoghalvfjerds",
+              "12-34-56-78"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dates use ordinal numbers, formed by adding **-ende** or **-te**. The first eleven are irregular and must be memorized:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "rows": [
+            [
+              "1. første",
+              "2. anden",
+              "3. tredje",
+              "4. fjerde"
+            ],
+            [
+              "5. femte",
+              "6. sjette",
+              "7. syvende",
+              "8. ottende"
+            ],
+            [
+              "9. niende",
+              "10. tiende",
+              "11. ellevte",
+              "12. tolvte"
+            ],
+            [
+              "13. trettende",
+              "20. tyvende",
+              "21. enogtyvende",
+              "31. enogtredivte"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Dansk",
+            "English"
+          ],
+          "rows": [
+            [
+              "Hvad er datoen i dag?",
+              "What's the date today?"
+            ],
+            [
+              "Det er den tredje maj.",
+              "It's the third of May."
+            ],
+            [
+              "Jeg har fødselsdag den syttende august.",
+              "My birthday is on the seventeenth of August."
+            ],
+            [
+              "Hvilket år?",
+              "What year?"
+            ],
+            [
+              "I nittenhundredefireoghalvfems.",
+              "In 1994."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Number practice that really works",
+          "items": [
+            "Read your own phone number out loud in Danish once a day. Eight digits, four pairs — and almost certainly at least one number between 50 and 90.",
+            "Every time you see a price anywhere today, say it silently in Danish. The prices around you are an endless, free source of practice.",
+            "Numbers are the one part of a language that has to be **automatic**. If you're still calculating in your head when you hear *halvfjerds*, you've already missed the next three sentences."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "da": "at koste",
+      "baca": "oh KOS-duh",
+      "en": "to cost"
+    },
+    {
+      "da": "at betale",
+      "baca": "oh beh-TAH-luh",
+      "en": "to pay"
+    },
+    {
+      "da": "en krone / kroner",
+      "baca": "en KROH-nuh",
+      "en": "krone / kroner (currency)"
+    },
+    {
+      "da": "kontanter",
+      "baca": "kon-TAHN-dah",
+      "en": "cash"
+    },
+    {
+      "da": "et kort",
+      "baca": "et kort",
+      "en": "card"
+    },
+    {
+      "da": "en kvittering",
+      "baca": "en kvee-TEH-ring",
+      "en": "receipt"
+    },
+    {
+      "da": "en rabat",
+      "baca": "en rah-BAHT",
+      "en": "discount"
+    },
+    {
+      "da": "et tilbud",
+      "baca": "et TIL-boodh",
+      "en": "offer, special deal"
+    },
+    {
+      "da": "et loppemarked",
+      "baca": "et LOH-buh-mahr-kuhdh",
+      "en": "flea market"
+    },
+    {
+      "da": "en lås",
+      "baca": "en los",
+      "en": "lock"
+    },
+    {
+      "da": "en bremse",
+      "baca": "en BREM-suh",
+      "en": "brake"
+    },
+    {
+      "da": "en aftale",
+      "baca": "en OW-tah-luh",
+      "en": "deal; appointment"
+    },
+    {
+      "da": "en dato",
+      "baca": "en DAH-toh",
+      "en": "date"
+    },
+    {
+      "da": "kun",
+      "baca": "kon",
+      "en": "only"
+    },
+    {
+      "da": "for",
+      "baca": "for",
+      "en": "too; for"
+    },
+    {
+      "da": "så",
+      "baca": "soh",
+      "en": "then; so; in that case"
+    },
+    {
+      "da": "noget",
+      "baca": "NOH-uhdh",
+      "en": "something"
+    },
+    {
+      "da": "billigere",
+      "baca": "BEE-lee-ah",
+      "en": "cheaper"
+    },
+    {
+      "da": "perfekt",
+      "baca": "per-FEKT",
+      "en": "perfect"
+    },
+    {
+      "da": "tusind tak",
+      "baca": "TOO-suhn t'ahk",
+      "en": "thanks so much"
+    },
+    {
+      "da": "hvor meget",
+      "baca": "vor MAI-uhdh",
+      "en": "how much"
+    },
+    {
+      "da": "hvor mange",
+      "baca": "vor MAHNG-uh",
+      "en": "how many"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write out in Danish words.",
+      "items": [
+        "24",
+        "38",
+        "51",
+        "67",
+        "72",
+        "89",
+        "95",
+        "150"
+      ]
+    },
+    {
+      "prompt": "Translate into Danish.",
+      "items": [
+        "How much is the bike?",
+        "It's seven hundred kroner.",
+        "That's too expensive.",
+        "Can I pay by card?",
+        "Do you have anything cheaper?",
+        "I'll take it."
+      ]
+    },
+    {
+      "prompt": "Write these numbers in figures.",
+      "items": [
+        "seksoghalvtreds = ____",
+        "niogfirs = ____",
+        "treoghalvfjerds = ____",
+        "toogtyve = ____",
+        "femoghalvfems = ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "koster / hvad / det / ?",
+        "kroner / halvfjerds / koster / den",
+        "dyrt / for / er / det",
+        "kort / betale / med / jeg / kan / ?",
+        "den / tager / jeg"
+      ]
+    }
+  ],
+  "answers": [
+    "fireogtyve — otteogtredive — enoghalvtreds — syvogtres — tooghalvfjerds — niogfirs — femoghalvfems — hundrede og halvtreds",
+    "Hvad koster cyklen? — Den koster syv hundrede kroner. — Det er for dyrt. — Kan jeg betale med kort? — Har I noget billigere? — Jeg tager den.",
+    "56 — 89 — 73 — 22 — 95",
+    "Hvad koster det? — Den koster halvfjerds kroner. — Det er for dyrt. — Kan jeg betale med kort? — Jeg tager den."
+  ]
+}

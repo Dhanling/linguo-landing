@@ -1,0 +1,515 @@
+{
+  "title": "At the market",
+  "title_target": "La piață",
+  "goal": "Shop for fruit and vegetables at the market, and fit in adjectives: their place after the noun, and their forms that follow gender and number — plus the demonstrative \"this\".",
+  "bekal": [
+    "ask for goods by quantity: *un kilogram de*, *o jumătate de kilogram de*, *o legătură de*",
+    "choose the adjective form that matches the noun: *bun, bună, buni, bune*",
+    "point at things with *acest pepene*, *pepenele acesta*, and the spoken form *ăsta / asta*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — La Piața Obor",
+      "intro": "On Saturday morning Budi goes shopping at Piața Obor, a big market in București. He stops at a fruit and vegetable stall.",
+      "lines": [
+        {
+          "speaker": "Vânzătoarea:",
+          "text": "Bună ziua! Poftiți, ce doriți?",
+          "id": "Good morning! Go ahead, what would you like?",
+          "literal": "good-f day-the! please-pl, what you-pl-wish?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bună ziua. Roșiile sunt proaspete?",
+          "id": "Good morning. Are the tomatoes fresh?",
+          "literal": "good-f day-the. tomatoes-the they-are fresh-f-pl?"
+        },
+        {
+          "speaker": "Vânzătoarea:",
+          "text": "Sigur, sunt foarte proaspete, de azi-dimineață.",
+          "id": "Of course, they're very fresh, from this morning.",
+          "literal": "sure, they-are very fresh-f-pl, from today-morning."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bine. Un kilogram de roșii, vă rog.",
+          "id": "Good. A kilo of tomatoes, please.",
+          "literal": "good. a-m kilogram of tomatoes, you-pl I-ask."
+        },
+        {
+          "speaker": "Vânzătoarea:",
+          "text": "Poftiți. Avem și mere. Merele acestea sunt foarte dulci.",
+          "id": "Here you are. We have apples too. These apples are very sweet.",
+          "literal": "please-pl. we-have also apples. apples-the these-f they-are very sweet-pl."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Atunci o jumătate de kilogram de mere. Și cât costă pepenii?",
+          "id": "Then half a kilo of apples. And how much are the watermelons?",
+          "literal": "then a-f half of kilogram of apples. and how-much they-cost watermelons-the?"
+        },
+        {
+          "speaker": "Vânzătoarea:",
+          "text": "Trei lei kilogramul. Pepenii sunt mari și dulci.",
+          "id": "Three lei a kilo. The watermelons are big and sweet.",
+          "literal": "three lei kilogram-the. watermelons-the they-are big-pl and sweet-pl."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Acest pepene este prea mare. Aveți și pepeni mici?",
+          "id": "This watermelon is too big. Do you have small ones too?",
+          "literal": "this-m watermelon it-is too big. you-pl-have also watermelons small-m-pl?"
+        },
+        {
+          "speaker": "Vânzătoarea:",
+          "text": "Da, ăsta este mic și bun. Are patru kilograme.",
+          "id": "Yes, this one is small and good. It weighs four kilos.",
+          "literal": "yes, this-m-spoken it-is small and good. it-has four kilograms."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Perfect. Și o legătură de pătrunjel, vă rog.",
+          "id": "Perfect. And a bunch of parsley, please.",
+          "literal": "perfect. and a-f bunch of parsley, you-pl I-ask."
+        },
+        {
+          "speaker": "Vânzătoarea:",
+          "text": "Mai doriți ceva?",
+          "id": "Anything else?",
+          "literal": "more you-pl-wish something?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Atât, mulțumesc. Cât face în total?",
+          "id": "That's all, thanks. How much is it altogether?",
+          "literal": "that-much, I-thank. how-much it-makes in total?"
+        },
+        {
+          "speaker": "Vânzătoarea:",
+          "text": "Douăzeci și doi de lei. O zi bună!",
+          "id": "Twenty-two lei. Have a nice day!",
+          "literal": "twenty and two of lei. a-f day good-f!"
+        }
+      ],
+      "notes": [
+        "**Un kilogram de roșii — quantities always link with *de*.** The pattern is the same as *douăzeci de lei* in unit 5: quantity + *de* + noun **without the article**, just like English \"a kilo of\". Countable things go in the plural (*de roșii, de mere*), uncountable things stay singular (*de pătrunjel, de brânză*).",
+        "**Roșiile = \"the tomatoes\".** The chain: *roșie* (one tomato) → *roșii* (plural) → *roșiile* (plural with the definite article, the *-le* ending from unit 6).",
+        "**Proaspete follows *roșiile*.** This is the point of this unit: a Romanian adjective always copies the gender and number of its noun — even when *sunt* stands between them. *Roșiile* is feminine plural, so *proaspete*; *pepenii* is masculine plural, so *mari și dulci*.",
+        "**Acest pepene, merele acestea, ăsta.** Three faces of \"this\" in one dialogue: the short form in front of a bare noun, the form with *-a* after a noun with the article, and the spoken form *ăsta / asta* in the mouths of market traders.",
+        "**Poftiți and Atât.** *Poftiți* is a seller's all-purpose word: \"go ahead\", \"here are your things\", \"here's your change\". *Atât* literally means \"that much\" — the standard answer to *Mai doriți ceva?*."
+      ],
+      "grammars": [
+        {
+          "title": "Adjectives — behind the noun, and matching it",
+          "body": [
+            "First, the position: unlike English, Romanian adjectives come **after** the noun. *O roșie proaspătă* = \"a tomato fresh\", *un pepene mare* = \"a watermelon big\".",
+            "What's new: the adjective changes its ending to match the gender and number of the noun. There are at most four forms, and many adjectives have only three or two."
+          ],
+          "table": {
+            "head": [
+              "Type",
+              "m sg",
+              "f sg",
+              "m pl",
+              "f pl"
+            ],
+            "rows": [
+              [
+                "**four forms**",
+                "*bun*",
+                "*bună*",
+                "*buni*",
+                "*bune*"
+              ],
+              [
+                "**four forms**",
+                "*frumos*",
+                "*frumoasă*",
+                "*frumoși*",
+                "*frumoase*"
+              ],
+              [
+                "**four forms**",
+                "*proaspăt*",
+                "*proaspătă*",
+                "*proaspeți*",
+                "*proaspete*"
+              ],
+              [
+                "**three forms**",
+                "*mic*",
+                "*mică*",
+                "*mici*",
+                "*mici*"
+              ],
+              [
+                "**three forms**",
+                "*românesc*",
+                "*românească*",
+                "*românești*",
+                "*românești*"
+              ],
+              [
+                "**two forms**",
+                "*mare*",
+                "*mare*",
+                "*mari*",
+                "*mari*"
+              ],
+              [
+                "**two forms**",
+                "*dulce*",
+                "*dulce*",
+                "*dulci*",
+                "*dulci*"
+              ]
+            ]
+          },
+          "after": [
+            "**The basic pattern: — , -ă, -i, -e**, exactly the noun endings you already know. The sound changes are the same as in unit 5: *-i* softens the consonant (*frumos → frumoși*, *proaspăt → proaspeți*), and *o* becomes *oa* in the feminine (*frumos → frumoasă*).",
+            "**Adjectives ending in *-e*** (*mare, dulce, verde*) don't distinguish gender — only singular versus plural. Adjectives ending in *-c* or *-esc* have one plural form for both: *mici*, *românești*.",
+            "**Neuter nouns** stay true to their nature: masculine form in the singular, feminine form in the plural. *Un măr bun* → *două mere bune*; *un bilet scump* → *bilete scumpe*.",
+            "**After *a fi* the rule is the same:** *Cafeaua este bună. Pepenii sunt mari. Merele sunt dulci.* But *foarte* (very) and *prea* (too) never change: *foarte bună, prea mari*."
+          ]
+        },
+        {
+          "title": "Demonstratives — acest pepene, pepenele acesta, pepenele ăsta",
+          "body": [
+            "Romanian has two ways to say \"this watermelon\", and they mean exactly the same. The only difference is where the demonstrative stands — and that decides whether the noun takes the article."
+          ],
+          "table": {
+            "head": [
+              "Order",
+              "m sg",
+              "f sg",
+              "m pl",
+              "f pl"
+            ],
+            "rows": [
+              [
+                "**in front** (bare noun)",
+                "*acest pepene*",
+                "*această roșie*",
+                "*acești pepeni*",
+                "*aceste roșii*"
+              ],
+              [
+                "**behind** (noun with article)",
+                "*pepenele acesta*",
+                "*roșia aceasta*",
+                "*pepenii aceștia*",
+                "*roșiile acestea*"
+              ],
+              [
+                "**spoken**, behind",
+                "*pepenele ăsta*",
+                "*roșia asta*",
+                "*pepenii ăștia*",
+                "*roșiile astea*"
+              ]
+            ]
+          },
+          "after": [
+            "**Don't mix them.** In front: short form + bare noun (*acest pepene*). Behind: noun with article + form with *-a* (*pepenele acesta*). *Acest pepenele* and *pepene acesta* are both wrong. The front order is neater and common in writing; the back order, especially with *ăsta / asta*, is everyday speech.",
+            "**Neuter nouns** split again: *acest măr* → *aceste mere*; *mărul acesta* → *merele acestea*.",
+            "**Standing alone**, use the form with *-a*: *Acesta este mic* (\"This one is small\"), *Aceasta este Ioana*. *Asta* also means \"this / that\" in general, without pointing to a particular noun: *Ce este asta?* (What's this?), *Cât costă asta?* (How much is this?), *Asta e tot* (That's all)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Fruit and vegetables",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Română",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**măr, mere** (n)",
+              "muhr, MEH-reh",
+              "apple"
+            ],
+            [
+              "**pară, pere** (f)",
+              "PAH-ruh, PEH-reh",
+              "pear"
+            ],
+            [
+              "**căpșună, căpșuni** (f)",
+              "kuhp-SHOO-nuh, kuhp-SHOON'",
+              "strawberry"
+            ],
+            [
+              "**pepene, pepeni** (m)",
+              "PEH-peh-neh",
+              "watermelon; melon"
+            ],
+            [
+              "**roșie, roșii** (f)",
+              "ROH-shee-yeh, ROH-shee",
+              "tomato"
+            ],
+            [
+              "**cartof, cartofi** (m)",
+              "kahr-TOHF",
+              "potato"
+            ],
+            [
+              "**ceapă, cepe** (f)",
+              "CHAH-puh, CHEH-peh",
+              "onion"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "At a Romanian market",
+          "items": [
+            "**Pepene** on its own can mean two fruits. To be clear: *pepene roșu* (\"red melon\") = watermelon, *pepene galben* (\"yellow melon\") = melon. Watermelons from Dăbuleni, in the south of the country, are what sellers boast about most.",
+            "**Piața Obor** is one of the biggest and oldest markets in București. Grilled *mici* at Obor — skinless minced-meat sausages, eaten with mustard and bread — are a destination in themselves.",
+            "Prices are written per kilogram. Some things are sold *la bucată* (per piece), and leafy greens like *pătrunjel* (parsley) or *ceapă verde* (spring onions) are sold per *legătură* — per bunch."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Quantities and phrases at the stall",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Quantity",
+            "Example",
+            "English"
+          ],
+          "rows": [
+            [
+              "**un kilogram de**",
+              "*un kilogram de cartofi*",
+              "a kilo of potatoes"
+            ],
+            [
+              "**o jumătate de kilogram de**",
+              "*o jumătate de kilogram de căpșuni*",
+              "half a kilo of strawberries"
+            ],
+            [
+              "**o legătură de**",
+              "*o legătură de pătrunjel*",
+              "a bunch of parsley"
+            ],
+            [
+              "**o bucată de**",
+              "*o bucată de brânză*",
+              "a piece of cheese"
+            ],
+            [
+              "**o pungă**",
+              "*O pungă, vă rog.*",
+              "A bag, please."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Kilogram* is neuter, so in the plural the number takes the feminine form: *două kilograme*, not *doi*. At the stall you'll also hear the short form, *un kil*. And remember: after *de* the noun is always bare — *un kilogram de roșii*, never *de roșiile*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "More market phrases",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Cât costă kilogramul?*",
+              "How much is a kilo?"
+            ],
+            [
+              "*Cât face în total?*",
+              "How much is it altogether?"
+            ],
+            [
+              "*Pot să gust?*",
+              "Can I taste it?"
+            ],
+            [
+              "*Mai doriți ceva? — Atât, mulțumesc.*",
+              "Anything else? — That's all, thanks."
+            ],
+            [
+              "*Poftiți restul.*",
+              "Here's your change."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two things about money at the market",
+          "items": [
+            "**Bring cash.** Many stalls only accept *numerar* (cash), and sellers are happy if you have small notes. A question you'll hear often: *Aveți mărunt?* — \"Do you have small change?\"",
+            "**Haggling isn't really the custom.** Prices are usually written on a small sign and apply as they are."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 7",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Romanian column, read the English, and rebuild the sentences from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Română"
+          ],
+          "rows": [
+            [
+              "What time is it? — It's a quarter past eight.",
+              "*Cât este ceasul? — Este opt și un sfert.*"
+            ],
+            [
+              "What time do you start work? — I start at nine.",
+              "*La ce oră începi lucrul? — Încep la nouă.*"
+            ],
+            [
+              "I work from Monday to Friday.",
+              "*Lucrez de luni până vineri.*"
+            ],
+            [
+              "At lunchtime I eat at one.",
+              "*La prânz mănânc la unu.*"
+            ],
+            [
+              "On Saturdays I don't work.",
+              "*Sâmbăta nu lucrez.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ro": "piață, piețe",
+      "baca": "PYAH-tsuh, PYEH-tseh",
+      "en": "market; square (f)"
+    },
+    {
+      "ro": "vânzător / vânzătoare",
+      "baca": "vîn-zuh-TOHR / -TWAH-reh",
+      "en": "seller (m / f)"
+    },
+    {
+      "ro": "kilogram, kilograme",
+      "baca": "kee-loh-GRAHM",
+      "en": "kilogram (n)"
+    },
+    {
+      "ro": "jumătate",
+      "baca": "zhoo-muh-TAH-teh",
+      "en": "half (f)"
+    },
+    {
+      "ro": "legătură, legături",
+      "baca": "leh-guh-TOO-ruh",
+      "en": "bunch (f)"
+    },
+    {
+      "ro": "bucată, bucăți",
+      "baca": "boo-KAH-tuh, boo-KUHTS'",
+      "en": "piece (f)"
+    },
+    {
+      "ro": "pungă, pungi",
+      "baca": "POON-guh, poonj'",
+      "en": "bag (f)"
+    },
+    {
+      "ro": "proaspăt, proaspătă",
+      "baca": "PRWAHS-puht, PRWAHS-puh-tuh",
+      "en": "fresh"
+    },
+    {
+      "ro": "dulce, dulci",
+      "baca": "DOOL-cheh, doolch'",
+      "en": "sweet"
+    },
+    {
+      "ro": "mare, mari",
+      "baca": "MAH-reh, mahr'",
+      "en": "big"
+    },
+    {
+      "ro": "mic, mică",
+      "baca": "meek, MEE-kuh",
+      "en": "small"
+    },
+    {
+      "ro": "a dori (doresc)",
+      "baca": "ah doh-REE (doh-REHSK)",
+      "en": "to wish, to want"
+    },
+    {
+      "ro": "acest / această",
+      "baca": "ah-CHEHST / ah-CHAHS-tuh",
+      "en": "this (m / f)"
+    },
+    {
+      "ro": "atât",
+      "baca": "ah-TÎT",
+      "en": "that much; that's all"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Romanian.",
+      "items": [
+        "A kilo of tomatoes, please.",
+        "Are the tomatoes fresh?",
+        "This watermelon is too big. (demonstrative in front)",
+        "These apples are very sweet. (demonstrative behind)",
+        "Would you like anything else?",
+        "That's all, thank you."
+      ]
+    },
+    {
+      "prompt": "Fill in the right form of the adjective.",
+      "items": [
+        "o roșie ____ (proaspăt)",
+        "doi pepeni ____ (mare)",
+        "două mere ____ (dulce)",
+        "un măr ____ (bun)",
+        "roșii ____ (proaspăt)",
+        "o cafea ____ (mic)",
+        "cartofi ____ (bun)",
+        "o pară ____ (frumos)"
+      ]
+    },
+    {
+      "prompt": "Move the demonstrative behind the noun (example: acest pepene → pepenele acesta).",
+      "items": [
+        "acest măr",
+        "această roșie",
+        "aceste mere",
+        "acești cartofi",
+        "această piață",
+        "aceste roșii"
+      ]
+    }
+  ],
+  "answers": [
+    "Un kilogram de roșii, vă rog. — Roșiile sunt proaspete? — Acest pepene este prea mare. — Merele acestea sunt foarte dulci. — Mai doriți ceva? — Atât, mulțumesc.",
+    "proaspătă — mari — dulci — bun — proaspete — mică — buni — frumoasă",
+    "mărul acesta — roșia aceasta — merele acestea — cartofii aceștia — piața aceasta — roșiile acestea"
+  ]
+}

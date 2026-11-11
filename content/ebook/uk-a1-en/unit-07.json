@@ -1,0 +1,576 @@
+{
+  "title": "How old are you?",
+  "title_target": "Скільки вам років? — Skilky vam rokiv?",
+  "goal": "Count from zero to a thousand, give your age the way Ukrainians build it, and meet the third case (давальний, the dative) through its busiest doorway: age.",
+  "bekal": [
+    "count from zero to a hundred",
+    "ask and give someone's age",
+    "choose between рік, роки, and років",
+    "give a phone number and a room number",
+    "ask the price with Скільки коштує?"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — Filling in a form at the dorm",
+      "intro": "Ani is re-registering at the dormitory office. Notice that the word *рік* shows up in three different forms in this dialogue — and what decides the form isn't the age but its last digit.",
+      "lines": [
+        {
+          "speaker": "Секретар:",
+          "text": "[Скажіть|Ska-ZHEET'], [будь|bood'] [ласка|LAS-ka], [скільки|SKEEL'-ki] [вам|vam] [років|RO-keev]?",
+          "id": "Could you tell me how old you are, please?",
+          "literal": "tell, be — kindness, how-many — to-you — years?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Мені|Meh-NEE] [двадцять|DVAD-tsyat'] [один|o-DIN] [рік|reek].",
+          "id": "I'm twenty-one.",
+          "literal": "to-me — twenty — one — year."
+        },
+        {
+          "speaker": "Секретар:",
+          "text": "[Двадцять|DVAD-tsyat'] [один|o-DIN]... [А|A] [ваш|vash] [номер|NO-mer] [телефону|teh-leh-FO-noo]?",
+          "id": "Twenty-one... And your phone number?",
+          "literal": "twenty — one... and — your — number — phone (родовий)?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Нуль|Nool'] [сім|seem] [три|tri], [вісім|VEE-seem] [два|dva], [дев'ять|DEH-vyat'] [один|o-DIN].",
+          "id": "Zero seven three, eight two, nine one.",
+          "literal": "zero — seven — three, eight — two, nine — one."
+        },
+        {
+          "speaker": "Секретар:",
+          "text": "[Дякую|DYA-koo-yoo]. [Ви|Vi] [живете|zhi-veh-TEH] [в|v] [гуртожитку|hoor-TO-zhit-koo]?",
+          "id": "Thank you. Do you live in the dorm?",
+          "literal": "I-thank. you — live — in — dormitory?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Так|Tak], [кімната|keem-NA-ta] [сорок|SO-rok] [п'ять|pyat'].",
+          "id": "Yes, room forty-five.",
+          "literal": "yes, room — forty — five."
+        },
+        {
+          "speaker": "Секретар:",
+          "text": "[Добре|DOB-reh]. [А|A] [скільки|SKEEL'-ki] [коштує|KOSH-too-yeh] [ваша|VA-sha] [кімната|keem-NA-ta]?",
+          "id": "Good. And how much is your room?",
+          "literal": "good. and — how-much — costs — your — room?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Дві|Dvee] [тисячі|TI-sya-chee] [гривень|HRI-ven'] [на|na] [місяць|MEE-syats'].",
+          "id": "Two thousand hryvnias a month.",
+          "literal": "two — thousand — hryvnias (родовий plural) — per — month."
+        },
+        {
+          "speaker": "Секретар:",
+          "text": "[Це|Tseh] [недорого|neh-DO-ro-ho]. [А|A] [ваша|VA-sha] [сестра|ses-TRA]? [Скільки|SKEEL'-ki] [їй|yeey] [років|RO-keev]?",
+          "id": "That's not expensive. And your sister? How old is she?",
+          "literal": "this — not-expensive. and — your — sister? how-many — to-her — years?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Їй|Yeey] [сімнадцять|seem-NAD-tsyat']. [А|A] [брату|BRA-too] [двадцять|DVAD-tsyat'] [три|tri] [роки|RO-ki].",
+          "id": "She's seventeen. And my brother is twenty-three.",
+          "literal": "to-her — seventeen. and — to-brother — twenty — three — years."
+        },
+        {
+          "speaker": "Секретар:",
+          "text": "[Зрозуміло|Zro-zoo-MEE-lo]. [Все|Vseh] [готово|ho-TO-vo], [дякую|DYA-koo-yoo]!",
+          "id": "Got it. All done, thank you!",
+          "literal": "understood. all — ready, I-thank!"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Дякую|DYA-koo-yoo] [вам|vam]!",
+          "id": "Thank you!",
+          "literal": "I-thank — to-you!"
+        }
+      ],
+      "notes": [
+        "**Age uses the давальний, not \"I\".** Not *Я двадцять один рік* but **Мені двадцять один рік** — literally \"to me twenty-one years\". Age is pictured as something **given** to you, not something you are.",
+        "**The word рік has three outfits, and the last digit picks one.** Ending in **1** (except 11) → **рік**. Ending in **2, 3, 4** (except 12, 13, 14) → **роки**. Everything else, including 11–14 → **років**. So *21 рік*, *22 роки*, *25 років*, *31 рік*, *44 роки*.",
+        "**11 to 14 are the trap.** *Одинадцять років*, *дванадцять років*, *тринадцять років*, *чотирнадцять років* — all use **років** even though they end in 1, 2, 3, 4. It's the only exception, and it also applies to 111, 112, and so on.",
+        "**You can give your age with no рік at all.** *Їй сімнадцять* is enough and very common in conversation, just like English \"she's seventeen\". Forms and formal sentences still use the full version.",
+        "**Два and дві are not the same.** For masculine and neuter nouns: **два** (*два брати*, *два вікна*). For feminine nouns: **дві** (*дві сестри*, *дві тисячі*). Other numbers don't have this issue — only *один / одна / одне* and *два / дві*.",
+        "**Гривня comes in three forms too.** *Одна гривня*, *дві гривні*, *п'ять гривень*. Ukraine's currency is the **гривня** (*HRIV-nya*, hryvnia), abbreviated **грн**, and it's divided into **копійки**. You'll use these three forms every day in Unit 9.",
+        "**Номер телефону, not номер телефон.** The second word goes into the родовий because it describes the first — just like *чашка кави* (a cup of coffee), *книга сестри* (my sister's book). The pattern \"X of Y\" always puts Y in the родовий."
+      ],
+      "grammars": [
+        {
+          "title": "Age: давальний + number + рік/роки/років",
+          "body": [
+            "The давальний forms of the pronouns — learn the second column and the rest follows."
+          ],
+          "table": {
+            "head": [
+              "Who",
+              "Давальний form",
+              "Say it",
+              "Example"
+            ],
+            "rows": [
+              [
+                "I",
+                "мені",
+                "meh-NEE",
+                "Мені двадцять один рік."
+              ],
+              [
+                "you (informal)",
+                "тобі",
+                "to-BEE",
+                "Скільки тобі років?"
+              ],
+              [
+                "he",
+                "йому",
+                "yo-MOO",
+                "Йому тридцять два роки."
+              ],
+              [
+                "she",
+                "їй",
+                "yeey",
+                "Їй сімнадцять років."
+              ],
+              [
+                "we",
+                "нам",
+                "nam",
+                "Нам по двадцять."
+              ],
+              [
+                "you (formal / plural)",
+                "вам",
+                "vam",
+                "Скільки вам років?"
+              ],
+              [
+                "they",
+                "їм",
+                "yeem",
+                "Їм по п'ять років."
+              ]
+            ]
+          },
+          "after": [
+            "For nouns, the давальний endings are: masculine **-ові / -у** (*брату*, *батькові*), feminine **-і** (*сестрі*, *мамі*). *Моїй сестрі сімнадцять років.*"
+          ]
+        },
+        {
+          "title": "Zero to a hundred",
+          "body": [],
+          "tables": [
+            {
+              "head": [
+                "Number",
+                "Ukrainian",
+                "Say it",
+                "Number",
+                "Ukrainian",
+                "Say it"
+              ],
+              "rows": [
+                [
+                  "0",
+                  "нуль",
+                  "nool'",
+                  "11",
+                  "одинадцять",
+                  "o-di-NAD-tsyat'"
+                ],
+                [
+                  "1",
+                  "один / одна",
+                  "o-DIN / od-NA",
+                  "12",
+                  "дванадцять",
+                  "dva-NAD-tsyat'"
+                ],
+                [
+                  "2",
+                  "два / дві",
+                  "dva / dvee",
+                  "13",
+                  "тринадцять",
+                  "tri-NAD-tsyat'"
+                ],
+                [
+                  "3",
+                  "три",
+                  "tri",
+                  "14",
+                  "чотирнадцять",
+                  "cho-tir-NAD-tsyat'"
+                ],
+                [
+                  "4",
+                  "чотири",
+                  "cho-TI-ri",
+                  "15",
+                  "п'ятнадцять",
+                  "pyat-NAD-tsyat'"
+                ],
+                [
+                  "5",
+                  "п'ять",
+                  "pyat'",
+                  "16",
+                  "шістнадцять",
+                  "sheest-NAD-tsyat'"
+                ],
+                [
+                  "6",
+                  "шість",
+                  "sheest'",
+                  "17",
+                  "сімнадцять",
+                  "seem-NAD-tsyat'"
+                ],
+                [
+                  "7",
+                  "сім",
+                  "seem",
+                  "18",
+                  "вісімнадцять",
+                  "vee-seem-NAD-tsyat'"
+                ],
+                [
+                  "8",
+                  "вісім",
+                  "VEE-seem",
+                  "19",
+                  "дев'ятнадцять",
+                  "deh-vyat-NAD-tsyat'"
+                ],
+                [
+                  "9",
+                  "дев'ять",
+                  "DEH-vyat'",
+                  "20",
+                  "двадцять",
+                  "DVAD-tsyat'"
+                ],
+                [
+                  "10",
+                  "десять",
+                  "DEH-syat'",
+                  "21",
+                  "двадцять один",
+                  "DVAD-tsyat' o-DIN"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Number",
+                "Ukrainian",
+                "Say it",
+                "Number",
+                "Ukrainian",
+                "Say it"
+              ],
+              "rows": [
+                [
+                  "30",
+                  "тридцять",
+                  "TRID-tsyat'",
+                  "80",
+                  "вісімдесят",
+                  "vee-seem-deh-SYAT"
+                ],
+                [
+                  "40",
+                  "сорок",
+                  "SO-rok",
+                  "90",
+                  "дев'яносто",
+                  "deh-vya-NOS-to"
+                ],
+                [
+                  "50",
+                  "п'ятдесят",
+                  "pyat-deh-SYAT",
+                  "100",
+                  "сто",
+                  "sto"
+                ],
+                [
+                  "60",
+                  "шістдесят",
+                  "sheest-deh-SYAT",
+                  "200",
+                  "двісті",
+                  "DVEES-tee"
+                ],
+                [
+                  "70",
+                  "сімдесят",
+                  "seem-deh-SYAT",
+                  "1,000",
+                  "тисяча",
+                  "TI-sya-cha"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "Notice that **сорок** (40) stands alone — it doesn't follow the *-десят* pattern of its neighbors. It's the only odd one out among the tens."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Numbers change the word that follows them",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The same rule as *рік / роки / років* applies to every noun. Once you see the pattern, all numbers become easy."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Number",
+            "Noun form",
+            "Example: гривня",
+            "Example: книга"
+          ],
+          "rows": [
+            [
+              "1, 21, 31...",
+              "dictionary form",
+              "одна гривня",
+              "одна книга"
+            ],
+            [
+              "2, 3, 4, 22...",
+              "ordinary plural",
+              "дві гривні",
+              "три книги"
+            ],
+            [
+              "5 to 20",
+              "родовий plural",
+              "п'ять гривень",
+              "п'ять книг"
+            ],
+            [
+              "11, 12, 13, 14",
+              "родовий plural",
+              "дванадцять гривень",
+              "дванадцять книг"
+            ],
+            [
+              "скільки, багато",
+              "родовий plural",
+              "скільки гривень?",
+              "багато книг"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Ukrainian money in three forms",
+          "items": [
+            "**Гривня** (*HRIV-nya*) — Ukraine's currency, written **грн** or ₴. One гривня is divided into a hundred **копійок**.",
+            "**Одна гривня — дві гривні — п'ять гривень.** These three forms cover every price you'll say.",
+            "Prices are often given without the currency word at all: *Скільки коштує? — Сорок п'ять.* Just like \"forty-five\" at any market.",
+            "⚠️ Don't quote prices in *рублі* — that's another country's currency, and saying it in Ukraine is more than just a slip."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Giving a phone number"
+        },
+        {
+          "type": "p",
+          "text": "Phone numbers are read digit by digit or in pairs. Ukrainian numbers look like **+380** followed by nine digits. If you need it repeated, the lifesaver is: *Повторіть, будь ласка, повільно* (please repeat that slowly)."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uk": "скільки",
+      "baca": "SKEEL'-ki",
+      "en": "how many, how much"
+    },
+    {
+      "uk": "рік",
+      "baca": "reek",
+      "en": "year"
+    },
+    {
+      "uk": "роки",
+      "baca": "RO-ki",
+      "en": "years (after 2, 3, 4)"
+    },
+    {
+      "uk": "років",
+      "baca": "RO-keev",
+      "en": "years (after 5 and up)"
+    },
+    {
+      "uk": "мені",
+      "baca": "meh-NEE",
+      "en": "to me"
+    },
+    {
+      "uk": "тобі",
+      "baca": "to-BEE",
+      "en": "to you (informal)"
+    },
+    {
+      "uk": "йому",
+      "baca": "yo-MOO",
+      "en": "to him"
+    },
+    {
+      "uk": "їй",
+      "baca": "yeey",
+      "en": "to her"
+    },
+    {
+      "uk": "вам",
+      "baca": "vam",
+      "en": "to you (formal / plural)"
+    },
+    {
+      "uk": "номер",
+      "baca": "NO-mer",
+      "en": "number"
+    },
+    {
+      "uk": "телефон",
+      "baca": "teh-leh-FON",
+      "en": "phone"
+    },
+    {
+      "uk": "кімната",
+      "baca": "keem-NA-ta",
+      "en": "room"
+    },
+    {
+      "uk": "гуртожиток",
+      "baca": "hoor-TO-zhi-tok",
+      "en": "dormitory"
+    },
+    {
+      "uk": "гривня",
+      "baca": "HRIV-nya",
+      "en": "hryvnia (currency)"
+    },
+    {
+      "uk": "копійка",
+      "baca": "ko-PEEY-ka",
+      "en": "kopiyka (1/100 hryvnia)"
+    },
+    {
+      "uk": "коштувати",
+      "baca": "KOSH-too-va-ti",
+      "en": "to cost"
+    },
+    {
+      "uk": "дорого",
+      "baca": "DO-ro-ho",
+      "en": "expensive"
+    },
+    {
+      "uk": "недорого",
+      "baca": "neh-DO-ro-ho",
+      "en": "not expensive"
+    },
+    {
+      "uk": "дешево",
+      "baca": "DEH-sheh-vo",
+      "en": "cheap"
+    },
+    {
+      "uk": "місяць",
+      "baca": "MEE-syats'",
+      "en": "month"
+    },
+    {
+      "uk": "тиждень",
+      "baca": "TIZH-den'",
+      "en": "week"
+    },
+    {
+      "uk": "день",
+      "baca": "den'",
+      "en": "day"
+    },
+    {
+      "uk": "тисяча",
+      "baca": "TI-sya-cha",
+      "en": "thousand"
+    },
+    {
+      "uk": "готово",
+      "baca": "ho-TO-vo",
+      "en": "done, ready"
+    },
+    {
+      "uk": "скажіть",
+      "baca": "ska-ZHEET'",
+      "en": "tell (me) (polite)"
+    },
+    {
+      "uk": "повторіть",
+      "baca": "pov-to-REET'",
+      "en": "repeat (polite)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the right давальний pronoun.",
+      "items": [
+        "____ двадцять років. (я)",
+        "Скільки ____ років? (ти)",
+        "____ тридцять років. (він)",
+        "____ сімнадцять. (вона)",
+        "Скільки ____ років? (ви)"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with рік, роки, or років.",
+      "items": [
+        "Мені двадцять один ____.",
+        "Йому двадцять три ____.",
+        "Їй п'ять ____.",
+        "Нам сорок два ____.",
+        "Їм тридцять ____."
+      ]
+    },
+    {
+      "prompt": "Write these numbers out in words.",
+      "items": [
+        "7",
+        "12",
+        "20",
+        "45",
+        "100"
+      ]
+    },
+    {
+      "prompt": "Translate into Ukrainian.",
+      "items": [
+        "How old are you? (formal)",
+        "I'm twenty-one.",
+        "My sister is seventeen.",
+        "How much does it cost?",
+        "Two thousand hryvnias a month."
+      ]
+    }
+  ],
+  "answers": [
+    "Мені — тобі — Йому — Їй — вам",
+    "рік — роки — років — роки — років",
+    "сім — дванадцять — двадцять — сорок п'ять — сто",
+    "Скільки вам років? — Мені двадцять один рік. — Моїй сестрі сімнадцять років. — Скільки це коштує? — Дві тисячі гривень на місяць."
+  ],
+  "wave": "Review Unit 4. The sentence *Йому двадцять років* already appeared there — now you know that **йому** is the давальний, and why it isn't *він*."
+}

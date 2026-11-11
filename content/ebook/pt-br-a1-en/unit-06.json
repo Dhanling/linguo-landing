@@ -1,0 +1,641 @@
+{
+  "title": "Verbs that change form",
+  "title_target": "Eu falo, você fala",
+  "goal": "Tackle the biggest hurdle for English speakers: Portuguese verbs change their ending for every subject, not just *speak/speaks*. This unit sets up the first and largest group — verbs ending in **-ar**.",
+  "bekal": [
+    "conjugate -ar verbs for five subjects",
+    "make negative sentences with *não* before the verb",
+    "drop the subject pronoun, because the verb ending already carries it"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — O que você faz no fim de semana?",
+      "intro": "Friday afternoon, just before class ends. Carla and Budi chat about their routines.",
+      "lines": [
+        {
+          "speaker": "Carla:",
+          "text": "Budi, você fala outras línguas?",
+          "id": "Budi, do you speak other languages?",
+          "literal": "Budi, you you-speak other(pl) languages?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Falo indonésio, inglês e um pouco de árabe.",
+          "id": "I speak Indonesian, English and a little Arabic.",
+          "literal": "I-speak Indonesian, English and a little of Arabic."
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Nossa! E você estuda português todo dia?",
+          "id": "Wow! And do you study Portuguese every day?",
+          "literal": "gosh! and you you-study Portuguese every day?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Estudo de manhã. À noite eu trabalho.",
+          "id": "I study in the morning. At night I work.",
+          "literal": "I-study of morning. at-the night I I-work."
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Onde você trabalha?",
+          "id": "Where do you work?",
+          "literal": "where you you-work?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Num restaurante japonês. E você?",
+          "id": "At a Japanese restaurant. And you?",
+          "literal": "in-a restaurant Japanese. and you?"
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Eu não trabalho. Só estudo.",
+          "id": "I don't work. I just study.",
+          "literal": "I not I-work. only I-study."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "E o que você faz no fim de semana?",
+          "id": "And what do you do on the weekend?",
+          "literal": "and what you you-do in-the end of week?"
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Eu danço. Nós dançamos forró todo sábado.",
+          "id": "I dance. We dance forró every Saturday.",
+          "literal": "I I-dance. we we-dance forró every Saturday."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Que legal! Eu não danço nada.",
+          "id": "How cool! I don't dance at all.",
+          "literal": "what cool! I not I-dance nothing."
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Todo mundo dança no Brasil. A gente ensina você!",
+          "id": "Everybody dances in Brazil. We'll teach you!",
+          "literal": "all world it-dances in-the Brazil. we we-teach you!"
+        }
+      ],
+      "notes": [
+        "**This is the biggest difference from English.** English *speak* barely changes: I speak, you speak, she speak**s**. Portuguese changes the ending every time: *falo*, *fala*, *falamos*, *falam*. The good news: only **the ending** changes — the stem (*fal-*) stays intact forever.",
+        "**Because the ending already carries the subject, the pronoun can be dropped.** Look at Budi's answer: *Falo indonésio*, not *Eu falo indonésio*. The ending *-o* can only mean \"I\". Brazilians drop it all the time, especially *eu*. Use *eu* when you want to **stress** or contrast: *Eu não trabalho, ela trabalha*.",
+        "**Não goes right before the verb.** *Eu não trabalho.* Just one word, always in the same spot, with no helper verb. That's much simpler than English *I don't work* — no *do*, no *does*.",
+        "⚠️ **The double negative is correct.** *Eu não danço nada* is literally \"I don't dance nothing\" — two negatives in one sentence, and it's **required**. The same goes for *não tem ninguém* (there's nobody) and *não vou nunca* (I'll never go). Leaving out *não* is what's wrong. Forget what your English teacher told you.",
+        "**Todo mundo** literally means \"all the world\", but it means \"everybody\", and it takes the **singular** verb: *todo mundo dança*. It's one of the most common expressions in Brazil, and the formal *todos* actually sounds stiff in conversation."
+      ],
+      "grammars": [
+        {
+          "title": "-ar verbs: the biggest group",
+          "body": [
+            "About eighty percent of Portuguese verbs end in **-ar**, and almost all are regular. Remove *-ar* from the infinitive, then add the endings below."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "Ending",
+              "falar (to speak)",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "eu",
+                "**-o**",
+                "**falo**",
+                "FAH-loo"
+              ],
+              [
+                "você / ele / ela",
+                "**-a**",
+                "**fala**",
+                "FAH-lah"
+              ],
+              [
+                "nós",
+                "**-amos**",
+                "**falamos**",
+                "fah-LAH-moos"
+              ],
+              [
+                "vocês / eles / elas",
+                "**-am**",
+                "**falam**",
+                "FAH-lown"
+              ],
+              [
+                "a gente",
+                "**-a**",
+                "**fala**",
+                "FAH-lah"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Look at the pronunciation in row four: **-am** at the end of a verb is said **own**, just like *-ão*. So *falam* sounds like FAH-lown, and *trabalham* like trah-BAH-lyown. It's one of the sounds beginners mispronounce most.",
+            "**Row five is the biggest shortcut in spoken Brazilian Portuguese.** Since *a gente* uses the same form as *ele*, you can talk all day with just **three** forms: *-o* for I, *-a* for everyone else in the singular including *a gente*, and *-am* for the plural. The *-amos* form can wait.",
+            "**The endings -o and -a have nothing to do with gender here.** This confusion often pops up after unit 2: *eu falo* uses *-o* whether the speaker is a man or a woman. Verb endings mark **the subject**, adjective endings mark **gender** — two systems that happen to use the same letters."
+          ]
+        },
+        {
+          "title": "The twenty most common -ar verbs",
+          "body": [
+            "All regular. Once you know the endings, these twenty verbs are ready to use in five forms each."
+          ],
+          "table": {
+            "head": [
+              "Português",
+              "Say it",
+              "Meaning",
+              "Português",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "falar",
+                "fah-LAHH",
+                "to speak",
+                "morar",
+                "moh-RAHH",
+                "to live (somewhere)"
+              ],
+              [
+                "estudar",
+                "ees-too-DAHH",
+                "to study",
+                "trabalhar",
+                "trah-bah-LYAHH",
+                "to work"
+              ],
+              [
+                "gostar",
+                "gohs-TAHH",
+                "to like",
+                "chegar",
+                "sheh-GAHH",
+                "to arrive"
+              ],
+              [
+                "comprar",
+                "kohn-PRAHH",
+                "to buy",
+                "pagar",
+                "pah-GAHH",
+                "to pay"
+              ],
+              [
+                "olhar",
+                "oh-LYAHH",
+                "to look",
+                "escutar",
+                "ees-koo-TAHH",
+                "to listen"
+              ],
+              [
+                "achar",
+                "ah-SHAHH",
+                "to think; to find",
+                "precisar",
+                "preh-see-ZAHH",
+                "to need"
+              ],
+              [
+                "ajudar",
+                "ah-zhoo-DAHH",
+                "to help",
+                "esperar",
+                "ees-peh-RAHH",
+                "to wait"
+              ],
+              [
+                "dançar",
+                "dahn-SAHH",
+                "to dance",
+                "cozinhar",
+                "koh-zee-NYAHH",
+                "to cook"
+              ],
+              [
+                "viajar",
+                "vee-ah-ZHAHH",
+                "to travel",
+                "descansar",
+                "dees-kahn-SAHH",
+                "to rest"
+              ],
+              [
+                "ensinar",
+                "ehn-see-NAHH",
+                "to teach",
+                "usar",
+                "oo-ZAHH",
+                "to use; to wear"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Two verbs in that table hide a small **spelling** change that only shows up later in the past tense, purely to keep the sound: *chegar* → *cheguei* (a *u* is added so the g stays hard) and *dançar* → *dancei* (ç becomes c before e). In the present tense, both are fully regular.",
+            "**Achar is the most typically Brazilian verb.** It means \"to think, to reckon\" — *Eu acho que sim* (\"I think so\"), *O que você acha?* (\"What do you think?\"). It's used far more than *pensar*, and mastering it makes your conversation sound natural right away."
+          ]
+        },
+        {
+          "title": "Gostar de — to like, with a required little word",
+          "body": [
+            "One verb that needs special attention, because its form is a trap."
+          ],
+          "table": {
+            "head": [
+              "Português",
+              "Literally",
+              "English"
+            ],
+            "rows": [
+              [
+                "Eu gosto **de** café.",
+                "I like of coffee",
+                "I like coffee."
+              ],
+              [
+                "Eu gosto **do** Brasil.",
+                "I like of-the Brazil",
+                "I like Brazil."
+              ],
+              [
+                "Eu gosto **da** música.",
+                "I like of-the music",
+                "I like the music."
+              ],
+              [
+                "Eu gosto **de** estudar.",
+                "I like of studying",
+                "I like studying."
+              ],
+              [
+                "Você gosta **de** samba?",
+                "you like of samba?",
+                "Do you like samba?"
+              ],
+              [
+                "Eu não gosto **de** peixe.",
+                "I not like of fish",
+                "I don't like fish."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **De can't be dropped.** *Eu gosto café* is wrong, and it's one of the mistakes that survives longest, into the intermediate level. Think of *gostar de* as one whole unit, like \"to be fond of\" — and never split it.",
+            "And since *de* meets the article, it merges just like in unit 5: *gosto **do** Brasil*, *gosto **da** música*, *gosto **dos** livros*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "When things happen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These time expressions attach to almost any verb sentence, and you can use all of them right now."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "de manhã",
+              "jee mah-NYAHN",
+              "in the morning"
+            ],
+            [
+              "de tarde",
+              "jee TAHH-jee",
+              "in the afternoon"
+            ],
+            [
+              "à noite",
+              "ah NOY-chee",
+              "at night"
+            ],
+            [
+              "hoje",
+              "OH-zhee",
+              "today"
+            ],
+            [
+              "amanhã",
+              "ah-mah-NYAHN",
+              "tomorrow"
+            ],
+            [
+              "ontem",
+              "OHN-tayn",
+              "yesterday"
+            ],
+            [
+              "sempre",
+              "SEHN-pree",
+              "always"
+            ],
+            [
+              "nunca",
+              "NOON-kah",
+              "never"
+            ],
+            [
+              "às vezes",
+              "ahs VAY-zees",
+              "sometimes"
+            ],
+            [
+              "todo dia",
+              "TOH-doo JEE-ah",
+              "every day"
+            ],
+            [
+              "no fim de semana",
+              "noo FEEN jee seh-MAH-nah",
+              "on the weekend"
+            ],
+            [
+              "agora",
+              "ah-GOH-rah",
+              "now"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Nunca* triggers a double negative when it comes after the verb: *Eu não danço nunca*. When it comes before, *não* is dropped: *Eu nunca danço*. Both are correct and mean the same thing."
+        }
+      ]
+    },
+    {
+      "title": "Days of the week",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Portuguese names the weekdays by **number** — a quirk no other major European language shares, and one that makes them easy to learn."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "Literally",
+            "English"
+          ],
+          "rows": [
+            [
+              "segunda-feira",
+              "seh-GOON-dah FEY-rah",
+              "second fair(-day)",
+              "Monday"
+            ],
+            [
+              "terça-feira",
+              "TAYH-sah FEY-rah",
+              "third fair(-day)",
+              "Tuesday"
+            ],
+            [
+              "quarta-feira",
+              "KWAHH-tah FEY-rah",
+              "fourth fair(-day)",
+              "Wednesday"
+            ],
+            [
+              "quinta-feira",
+              "KEEN-tah FEY-rah",
+              "fifth fair(-day)",
+              "Thursday"
+            ],
+            [
+              "sexta-feira",
+              "SAYS-tah FEY-rah",
+              "sixth fair(-day)",
+              "Friday"
+            ],
+            [
+              "sábado",
+              "SAH-bah-doo",
+              "Sabbath",
+              "Saturday"
+            ],
+            [
+              "domingo",
+              "doh-MEEN-goo",
+              "the Lord's day",
+              "Sunday"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "In conversation, the *-feira* part is almost always dropped: people say *segunda*, *terça*, *quinta*. Notice also that the count starts at **two**, because Sunday counts as the first day."
+        },
+        {
+          "type": "p",
+          "text": "To say \"on Monday\", add the article: *na segunda* (this Monday) and *às segundas* (every Monday, on Mondays). The five weekdays are feminine; *sábado* and *domingo* are masculine — so *no sábado*, *no domingo*."
+        }
+      ]
+    },
+    {
+      "title": "Spaced review — back to unit 4",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Portuguese column and rebuild it from memory."
+        },
+        {
+          "type": "list",
+          "items": [
+            "How old are you? → *Quantos anos você tem?*",
+            "I'm twenty-five years old → *Eu tenho vinte e cinco anos*",
+            "How much is it? → *Quanto custa?*",
+            "There are twelve students → *Tem doze alunos*",
+            "Four hundred reais a month → *quatrocentos reais por mês*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pt": "falar",
+      "baca": "fah-LAHH",
+      "en": "to speak"
+    },
+    {
+      "pt": "estudar",
+      "baca": "ees-too-DAHH",
+      "en": "to study"
+    },
+    {
+      "pt": "trabalhar",
+      "baca": "trah-bah-LYAHH",
+      "en": "to work"
+    },
+    {
+      "pt": "morar",
+      "baca": "moh-RAHH",
+      "en": "to live (somewhere)"
+    },
+    {
+      "pt": "gostar de",
+      "baca": "gohs-TAHH jee",
+      "en": "to like (⚠️ always with de)"
+    },
+    {
+      "pt": "achar",
+      "baca": "ah-SHAHH",
+      "en": "to think; to reckon"
+    },
+    {
+      "pt": "precisar de",
+      "baca": "preh-see-ZAHH jee",
+      "en": "to need"
+    },
+    {
+      "pt": "ajudar",
+      "baca": "ah-zhoo-DAHH",
+      "en": "to help"
+    },
+    {
+      "pt": "dançar",
+      "baca": "dahn-SAHH",
+      "en": "to dance"
+    },
+    {
+      "pt": "cozinhar",
+      "baca": "koh-zee-NYAHH",
+      "en": "to cook"
+    },
+    {
+      "pt": "esperar",
+      "baca": "ees-peh-RAHH",
+      "en": "to wait; to hope"
+    },
+    {
+      "pt": "comprar",
+      "baca": "kohn-PRAHH",
+      "en": "to buy"
+    },
+    {
+      "pt": "a língua",
+      "baca": "ah LEEN-gwah",
+      "en": "language; tongue"
+    },
+    {
+      "pt": "o inglês",
+      "baca": "oo een-GLAYS",
+      "en": "English (language)"
+    },
+    {
+      "pt": "o restaurante",
+      "baca": "oo hehs-tow-RAHN-chee",
+      "en": "restaurant"
+    },
+    {
+      "pt": "o fim de semana",
+      "baca": "oo FEEN jee seh-MAH-nah",
+      "en": "weekend"
+    },
+    {
+      "pt": "todo dia",
+      "baca": "TOH-doo JEE-ah",
+      "en": "every day"
+    },
+    {
+      "pt": "todo mundo",
+      "baca": "TOH-doo MOON-doo",
+      "en": "everybody"
+    },
+    {
+      "pt": "sempre / nunca",
+      "baca": "SEHN-pree / NOON-kah",
+      "en": "always / never"
+    },
+    {
+      "pt": "às vezes",
+      "baca": "ahs VAY-zees",
+      "en": "sometimes"
+    },
+    {
+      "pt": "agora",
+      "baca": "ah-GOH-rah",
+      "en": "now"
+    },
+    {
+      "pt": "nada",
+      "baca": "NAH-dah",
+      "en": "nothing"
+    },
+    {
+      "pt": "um pouco",
+      "baca": "oon POH-koo",
+      "en": "a little"
+    },
+    {
+      "pt": "onde",
+      "baca": "OHN-jee",
+      "en": "where"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the right verb form.",
+      "items": [
+        "Eu ____ português. (falar)",
+        "Você ____ em São Paulo? (morar)",
+        "Nós ____ todo dia. (estudar)",
+        "Eles ____ num restaurante. (trabalhar)",
+        "A gente ____ forró. (dançar)",
+        "Ela não ____ carne. (gostar de)"
+      ]
+    },
+    {
+      "prompt": "Make the sentences negative.",
+      "items": [
+        "Eu trabalho aqui.",
+        "Ela dança bem.",
+        "Nós estudamos à noite.",
+        "Eles moram no Brasil.",
+        "Você fala inglês."
+      ]
+    },
+    {
+      "prompt": "Translate into Portuguese.",
+      "items": [
+        "I study Portuguese every day.",
+        "Where do you work?",
+        "I like coffee.",
+        "We dance every Saturday.",
+        "I don't like fish.",
+        "Everybody dances in Brazil."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "você / línguas / fala / outras / ?",
+        "manhã / estudo / de / eu",
+        "trabalha / onde / você / ?",
+        "gosto / de / eu / café",
+        "danço / não / nada / eu"
+      ]
+    }
+  ],
+  "answers": [
+    "falo — mora — estudamos — trabalham — dança — gosta de",
+    "Eu não trabalho aqui. — Ela não dança bem. — Nós não estudamos à noite. — Eles não moram no Brasil. — Você não fala inglês.",
+    "Eu estudo português todo dia. — Onde você trabalha? — Eu gosto de café. — Nós dançamos todo sábado. — Eu não gosto de peixe. — Todo mundo dança no Brasil.",
+    "Você fala outras línguas? — Eu estudo de manhã. — Onde você trabalha? — Eu gosto de café. — Eu não danço nada."
+  ]
+}

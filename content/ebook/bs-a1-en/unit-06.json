@@ -1,0 +1,599 @@
+{
+  "title": "The third verb group",
+  "title_target": "Šta radiš danas?",
+  "goal": "Use the last verb group — the one ending in *-em*, whose stem likes to change — and say how often you do things, including one rule that standard English forbids but Bosnian requires: the double negative.",
+  "bekal": [
+    "use verbs of the *-em* group, including *ići*, *piti*, *jesti*, and *moći*",
+    "recognize the *-ovati* group that turns into *-ujem*",
+    "say how often with *uvijek, obično, ponekad, nikad* — and use *ne* together with *nikad*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Šta radiš danas?",
+      "intro": "Late afternoon at the flat. Emir is getting ready to go out and turns to Budi, who is still at his laptop.",
+      "lines": [
+        {
+          "speaker": "Emir:",
+          "text": "Budi, šta radiš danas poslije posla?",
+          "id": "Budi, what are you doing today after work?",
+          "literal": "Budi, what you-do today after work-gen?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ne znam još. Idem kući, možda čitam.",
+          "id": "I don't know yet. I'm going home, maybe I'll read.",
+          "literal": "not I-know yet. I-go home, maybe I-read."
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Ja idem na Baščaršiju. Hoćeš li i ti?",
+          "id": "I'm going to Baščaršija. Do you want to come too?",
+          "literal": "I I-go to Baščaršija-acc. you-want whether also you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Naravno! A šta vi tamo radite?",
+          "id": "Sure! And what do you all do there?",
+          "literal": "of-course! and what you(pl) there you(pl)-do?"
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Pijemo kafu, gledamo ljude, razgovaramo. To je sve.",
+          "id": "We drink coffee, watch people, talk. That's all.",
+          "literal": "we-drink coffee-acc, we-watch people-acc, we-talk. that it-is all."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "To zvuči dobro. Kada ideš?",
+          "id": "Sounds good. When are you leaving?",
+          "literal": "that it-sounds good. when you-go?"
+        },
+        {
+          "speaker": "Emir:",
+          "text": "U šest. Prvo idem na trening, pa onda tamo.",
+          "id": "At six. First I'm going to training, then there.",
+          "literal": "at six. first I-go to training-acc, and then there."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A šta jedeš uveče? Kuhaš li sam?",
+          "id": "And what do you eat in the evening? Do you cook yourself?",
+          "literal": "and what you-eat in-evening? you-cook whether alone-m?"
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Ponekad kuham, ali obično jedem vani. Ćevapi su jeftini.",
+          "id": "Sometimes I cook, but usually I eat out. Ćevapi are cheap.",
+          "literal": "sometimes I-cook, but usually I-eat outside. ćevapi they-are cheap-pl."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Piješ li kafu i uveče?",
+          "id": "Do you drink coffee in the evening too?",
+          "literal": "you-drink whether coffee-acc also in-evening?"
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Uvijek! Bosanci piju kafu i u ponoć. To nikad nije problem.",
+          "id": "Always! Bosnians drink coffee even at midnight. It's never a problem.",
+          "literal": "always! Bosnians they-drink coffee-acc also at midnight. that never not-it-is problem."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Onda i ja idem. Mogu li pisati poruku prvo?",
+          "id": "Then I'm coming too. Can I write a message first?",
+          "literal": "then also I I-go. I-can whether write message-acc first?"
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Možeš, naravno. Ja te čekam dolje.",
+          "id": "Sure you can. I'll wait for you downstairs.",
+          "literal": "you-can, of-course. I you-acc I-wait downstairs."
+        }
+      ],
+      "notes": [
+        "***Idem kući* = \"I'm going home\".** The form *kući* isn't an ordinary locative but a frozen old form, and it means \"(to) home\" — your own home. Learn it whole along with its two equally frozen siblings: *idem kući* (go home), *kod kuće* (at home), *iz kuće* (from home).",
+        "**Notice the nouns changing again:** *kafa → pijemo kafu*, *poruka → pisati poruku*, *Baščaršija → na Baščaršiju*, *ljudi → gledamo ljude*. That's the object form you've now met twice, and the next unit sets it up fully. If you're starting to feel you can guess the endings yourself — that's exactly the point.",
+        "***Hoćeš li i ti?* — \"do you want to (come) too?\"** The verb *htjeti* (to want) is very common and irregular: *hoću, hoćeš, hoće, hoćemo, hoćete, hoće*, with the fused negative *neću, nećeš, neće…* It's also the engine of the future tense in unit 19. For now learn *hoćeš li* as one chunk meaning \"do you want…?\"",
+        "***Nikad nije problem* — two negatives in one sentence, and that's correct.** Bosnian requires *ne* to stay even when *nikad*, *niko*, *ništa*, or *nigdje* is already there. The full rule is below; for now just note that the sentence does not mean \"it's always a problem\".",
+        "**Ćevapi.** Small finger-shaped grilled minced-meat sausages, cooked over charcoal and served in *somun* bread with chopped onion and *kajmak* (a rich clotted cream). This is Bosnia's national dish, sold everywhere, and almost always counted by the piece: *deset ćevapa* is a normal portion. A portion with a drink in Sarajevo is usually cheaper than two coffees at a café with a view — hence Emir's *jeftini*."
+      ],
+      "grammars": [
+        {
+          "title": "The -em group — and why the dictionary form can't be trusted",
+          "body": [
+            "The third and last group. The endings are as easy as the other two; what makes it tricky is that **the stem often differs from the dictionary form**. That's why this course always lists the *ja* form."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "**pisati** → *pišem*",
+              "**ići** → *idem*",
+              "**piti** → *pijem*",
+              "**jesti** → *jedem*",
+              "**moći** → *mogu*"
+            ],
+            "rows": [
+              [
+                "ja",
+                "**pišem**",
+                "**idem**",
+                "**pijem**",
+                "**jedem**",
+                "**mogu**"
+              ],
+              [
+                "ti",
+                "*pišeš*",
+                "*ideš*",
+                "*piješ*",
+                "*jedeš*",
+                "*možeš*"
+              ],
+              [
+                "on / ona",
+                "*piše*",
+                "*ide*",
+                "*pije*",
+                "*jede*",
+                "*može*"
+              ],
+              [
+                "mi",
+                "*pišemo*",
+                "*idemo*",
+                "*pijemo*",
+                "*jedemo*",
+                "*možemo*"
+              ],
+              [
+                "vi",
+                "*pišete*",
+                "*idete*",
+                "*pijete*",
+                "*jedete*",
+                "*možete*"
+              ],
+              [
+                "oni / one",
+                "*pišu*",
+                "*idu*",
+                "*piju*",
+                "*jedu*",
+                "*mogu*"
+              ]
+            ]
+          },
+          "after": [
+            "**The *oni* form of this group ends in *-u*.** Now all three are complete, and this is the only row that differs between the groups: *-aju* (znaju), *-e* (rade), *-u* (idu). Know those three endings and the whole Bosnian present tense is in your hands.",
+            "**The stem changes, and there's no way to guess it.** *Pisati → pišem*, *zvati → zovem*, *uzeti → uzmem*, *doći → dođem*, *reći → kažem*, *ići → idem*. Hence this course's rule: note verbs in the *ja* form, not the dictionary form. *Idem* tells you everything; *ići* tells you nothing.",
+            "**One big group that is actually very regular: *-ovati* and *-evati* → *-ujem*.** *Putovati → putujem* (to travel), *kupovati → kupujem* (to buy), *stanovati → stanujem* (to reside), *organizovati → organizujem*. This group takes in many international loanwords, so once you recognize the pattern you gain hundreds of verbs at once. Don't confuse it with *-irati*: *studirati → studiram*, *telefonirati → telefoniram*, *planirati → planiram*. Verbs in *-irati* join the *-am* group, verbs in *-ovati* the *-ujem* group.",
+            "***Moći* (can) is irregular, and its *ja* form is the same as its *oni* form: *mogu*.** *Mogu li?* means \"may I?\" and it's a sentence you'll use every day. After *moći* comes the dictionary form: *Mogu li pisati? Možeš li ponoviti?* Its siblings that behave the same way: *morati* (must, *moram*), *htjeti* (to want, *hoću*), *trebati* (to need, *trebam*), *smjeti* (may, *smijem*) — all set up fully in unit 11."
+          ]
+        },
+        {
+          "title": "How often — and the double negative that is required",
+          "body": [
+            "Frequency words go before the verb or at the start of the sentence; their position is flexible, and your ear will quickly find the natural spot."
+          ],
+          "table": {
+            "head": [
+              "Bosanski",
+              "Say it",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**uvijek**",
+                "OO-vee-yehk",
+                "always",
+                "*Uvijek pijem kafu ujutro.*"
+              ],
+              [
+                "**obično**",
+                "OH-beech-noh",
+                "usually",
+                "*Obično jedem vani.*"
+              ],
+              [
+                "**često**",
+                "CHEHS-toh",
+                "often",
+                "*Često idemo na Baščaršiju.*"
+              ],
+              [
+                "**ponekad**",
+                "POH-neh-kahd",
+                "sometimes",
+                "*Ponekad kuham sam.*"
+              ],
+              [
+                "**rijetko**",
+                "REE-yeht-koh",
+                "rarely",
+                "*Rijetko gledam TV.*"
+              ],
+              [
+                "**nikad(a)**",
+                "NEE-kahd",
+                "never",
+                "*Nikad ne pijem alkohol.*"
+              ],
+              [
+                "**svaki dan**",
+                "SVAH-kee dahn",
+                "every day",
+                "*Učim bosanski svaki dan.*"
+              ],
+              [
+                "**jednom sedmično**",
+                "YEHD-nohm SEHD-meech-noh",
+                "once a week",
+                "*Idem na trening jednom sedmično.*"
+              ],
+              [
+                "**ujutro / uveče**",
+                "OO-yoo-troh / OO-veh-cheh",
+                "in the morning / in the evening",
+                "*Ujutro radim, uveče čitam.*"
+              ],
+              [
+                "**danas / sutra / jučer**",
+                "DAH-nahs / SOO-trah / YOO-chehr",
+                "today / tomorrow / yesterday",
+                "*Danas ne radim.*"
+              ]
+            ]
+          },
+          "after": [
+            "**Bosnian negation must be double.** If there is a negative word like *nikad* (never), *niko* (nobody), *ništa* (nothing), *nigdje* (nowhere), *nikako* (in no way) — the verb **still** has to take *ne*. *Nikad **ne** pijem alkohol. Niko **ne** zna. Ništa **ne** razumijem. Nigdje **ne** idem.*",
+            "**For English speakers this feels wrong** — school taught you that \"I don't know nothing\" is a mistake. In Bosnian it's the only correct way. What you need to train is the reflex of adding *ne*: *Nikad pijem kafu* sounds cut off and confusing, not like a charming grammar slip.",
+            "**Even when three negative words gather, they are all used:** *Niko nikad ništa ne zna* — literally \"nobody never nothing doesn't know\", i.e. \"nobody ever knows anything\". This sentence is correct, natural, and often said.",
+            "***I* means \"and\", but also \"too, even\".** *Hoćeš li i ti?* = \"do you want to come too?\"; *Bosanci piju kafu i u ponoć* = \"even at midnight\". It goes before the word being stressed. This little word works very hard in Bosnian, and recognizing it explains many sentences that felt strange at first."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Dnevne radnje — everyday activities",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Thirty-odd verbs that cover almost an entire ordinary day. The second column is the *ja* form — that's the one you learn, because the other five forms can be worked out from it."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Dictionary form",
+            "ja",
+            "Group",
+            "English"
+          ],
+          "rows": [
+            [
+              "*ustati*",
+              "*ustanem*",
+              "-em",
+              "to get up"
+            ],
+            [
+              "*spavati*",
+              "*spavam*",
+              "-am",
+              "to sleep"
+            ],
+            [
+              "*jesti*",
+              "*jedem*",
+              "-em",
+              "to eat"
+            ],
+            [
+              "*piti*",
+              "*pijem*",
+              "-em",
+              "to drink"
+            ],
+            [
+              "*kuhati*",
+              "*kuham*",
+              "-am",
+              "to cook"
+            ],
+            [
+              "*raditi*",
+              "*radim*",
+              "-im",
+              "to work"
+            ],
+            [
+              "*ići*",
+              "*idem*",
+              "-em",
+              "to go, to walk"
+            ],
+            [
+              "*doći*",
+              "*dođem*",
+              "-em",
+              "to come"
+            ],
+            [
+              "*vraćati se*",
+              "*vraćam se*",
+              "-am",
+              "to come back, to return"
+            ],
+            [
+              "*čitati*",
+              "*čitam*",
+              "-am",
+              "to read"
+            ],
+            [
+              "*pisati*",
+              "*pišem*",
+              "-em",
+              "to write"
+            ],
+            [
+              "*gledati*",
+              "*gledam*",
+              "-am",
+              "to watch, to look at"
+            ],
+            [
+              "*slušati*",
+              "*slušam*",
+              "-am",
+              "to listen"
+            ],
+            [
+              "*razgovarati*",
+              "*razgovaram*",
+              "-am",
+              "to talk, to chat"
+            ],
+            [
+              "*zvati*",
+              "*zovem*",
+              "-em",
+              "to call, to phone"
+            ],
+            [
+              "*čekati*",
+              "*čekam*",
+              "-am",
+              "to wait"
+            ],
+            [
+              "*tražiti*",
+              "*tražim*",
+              "-im",
+              "to look for"
+            ],
+            [
+              "*kupovati*",
+              "*kupujem*",
+              "-em",
+              "to buy"
+            ],
+            [
+              "*putovati*",
+              "*putujem*",
+              "-em",
+              "to travel"
+            ],
+            [
+              "*učiti*",
+              "*učim*",
+              "-im",
+              "to study, to learn"
+            ],
+            [
+              "*misliti*",
+              "*mislim*",
+              "-im",
+              "to think"
+            ],
+            [
+              "*moći*",
+              "*mogu*",
+              "irregular",
+              "can, may"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Two verbs people mix up: *ići* is \"go\" in the sense of walking or setting off — *idem na posao* (I'm going to work). *Doći* is \"come\", and is almost always used for an arrival that is completed: *Dođi sutra!* (come tomorrow). And *vraćam se* means \"I'm coming back\" with an obligatory *se* — without *se* it means \"I'm returning something\"."
+        },
+        {
+          "type": "kotak",
+          "title": "The first verb worth mastering properly: ići",
+          "items": [
+            "*Idem* goes with almost every preposition, and each pair has its own meaning: *idem u grad* (into town), *idem na posao* (to work), *idem kod doktora* (to the doctor's), *idem kući* (home), *idem po kafu* (to get coffee).",
+            "*Hajde!* means \"come on! let's go!\" and often replaces a whole invitation: *Hajde na kafu! Hajdemo!* It isn't a form of *ići* but an interjection of its own — yet in practice the two work as a pair, and *hajde* will almost certainly be the first Bosnian word you use without thinking."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 4",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Bosnian column, read the English, and rebuild the sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Bosanski"
+          ],
+          "rows": [
+            [
+              "This is my family.",
+              "*Ovo je moja porodica.*"
+            ],
+            [
+              "What's your sister's name?",
+              "*Kako se zove tvoja sestra?*"
+            ],
+            [
+              "I have one brother; he's ten years old.",
+              "*Imam jednog brata, on ima deset godina.*"
+            ],
+            [
+              "My family is big.",
+              "*Moja porodica je velika.*"
+            ],
+            [
+              "My father is retired, my mother is a teacher.",
+              "*Moj otac je penzioner, a majka je nastavnica.*"
+            ],
+            [
+              "No problem.",
+              "*Nema problema.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bs": "ići — *idem*",
+      "baca": "EE-chee",
+      "en": "to go, to walk"
+    },
+    {
+      "bs": "piti — *pijem*",
+      "baca": "PEE-tee",
+      "en": "to drink"
+    },
+    {
+      "bs": "jesti — *jedem*",
+      "baca": "YEHS-tee",
+      "en": "to eat"
+    },
+    {
+      "bs": "pisati — *pišem*",
+      "baca": "PEE-sah-tee",
+      "en": "to write"
+    },
+    {
+      "bs": "moći — *mogu*",
+      "baca": "MOH-chee",
+      "en": "can, may"
+    },
+    {
+      "bs": "kupovati — *kupujem*",
+      "baca": "koo-POH-vah-tee",
+      "en": "to buy"
+    },
+    {
+      "bs": "razgovarati — *razgovaram*",
+      "baca": "rahz-goh-VAH-rah-tee",
+      "en": "to talk, to chat"
+    },
+    {
+      "bs": "čekati — *čekam*",
+      "baca": "CHEH-kah-tee",
+      "en": "to wait"
+    },
+    {
+      "bs": "poslije",
+      "baca": "POHS-lyeh",
+      "en": "after"
+    },
+    {
+      "bs": "posao (m)",
+      "baca": "POH-sow",
+      "en": "job, work"
+    },
+    {
+      "bs": "poruka (f)",
+      "baca": "POH-roo-kah",
+      "en": "message"
+    },
+    {
+      "bs": "uvijek",
+      "baca": "OO-vee-yehk",
+      "en": "always"
+    },
+    {
+      "bs": "obično",
+      "baca": "OH-beech-noh",
+      "en": "usually"
+    },
+    {
+      "bs": "ponekad",
+      "baca": "POH-neh-kahd",
+      "en": "sometimes"
+    },
+    {
+      "bs": "nikad(a)",
+      "baca": "NEE-kahd",
+      "en": "never"
+    },
+    {
+      "bs": "vani / napolju",
+      "baca": "VAH-nee",
+      "en": "outside, out"
+    },
+    {
+      "bs": "jeftin / skup",
+      "baca": "YEHF-teen / skoop",
+      "en": "cheap / expensive"
+    },
+    {
+      "bs": "naravno",
+      "baca": "nah-RAHV-noh",
+      "en": "of course"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Bosnian.",
+      "items": [
+        "I'm going home.",
+        "We drink coffee and chat.",
+        "What are you eating tonight?",
+        "Usually I eat out.",
+        "I never drink coffee in the evening.",
+        "Can I write a message first?"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right verb form.",
+      "items": [
+        "Ja ____ (ići) na Baščaršiju.",
+        "Ti ____ (piti) kafu?",
+        "Emir ____ (jesti) ćevape.",
+        "Mi ____ (pisati) poruke.",
+        "Vi ____ (moći) doći sutra?",
+        "Oni ____ (ići) kući.",
+        "Ja ____ (kupovati) hljeb svaki dan."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "kući / idem / sada",
+        "kafu / pijemo / uvijek / ujutro",
+        "vani / obično / jedem",
+        "ne / nikad / TV / gledam",
+        "li / doći / možeš / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Idem kući. — Pijemo kafu i razgovaramo. — Šta jedeš večeras? — Obično jedem vani. — Nikad ne pijem kafu uveče. — Mogu li prvo pisati poruku?",
+    "idem — piješ — jede — pišemo — možete — idu — kupujem",
+    "Sada idem kući. — Ujutro uvijek pijemo kafu. — Obično jedem vani. — Nikad ne gledam TV. — Možeš li doći?"
+  ]
+}

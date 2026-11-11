@@ -1,0 +1,535 @@
+{
+  "title": "What time is it?",
+  "title_target": "Cât este ceasul?",
+  "goal": "Tell the time and the day, talk about your work schedule — and fit in the biggest verb group, the one ending in *-a*, with its two patterns: plain and with the *-ez* insert.",
+  "bekal": [
+    "ask and tell the time: *și un sfert, și jumătate, fără un sfert*, and *la* + time",
+    "conjugate *-a* verbs in both patterns: *cânt* versus *lucrez*",
+    "name the days and parts of the day, and tell *sâmbătă* (this Saturday) from *sâmbăta* (every Saturday)"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Dimineața, în bucătărie",
+      "intro": "Morning in the apartment kitchen. Andrei has just woken up and is still looking for his phone; Budi already has his keys in hand, about to leave for the office.",
+      "lines": [
+        {
+          "speaker": "Andrei:",
+          "text": "Bună dimineața, Budi! Cât este ceasul?",
+          "id": "Good morning, Budi! What time is it?",
+          "literal": "good-f morning-the, Budi! how-much it-is clock-the?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Este opt și un sfert.",
+          "id": "It's a quarter past eight.",
+          "literal": "it-is eight and a-m quarter."
+        },
+        {
+          "speaker": "Andrei:",
+          "text": "Deja? La ce oră începi lucrul?",
+          "id": "Already? What time do you start work?",
+          "literal": "already? at what hour you-start work-the?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Încep la nouă. Și tu? La ce oră începe cursul?",
+          "id": "I start at nine. And you? What time does your class start?",
+          "literal": "I-start at nine. and you? at what hour it-starts course-the?"
+        },
+        {
+          "speaker": "Andrei:",
+          "text": "La zece și jumătate. Am timp. Lucrezi în fiecare zi?",
+          "id": "At half past ten. I've got time. Do you work every day?",
+          "literal": "at ten and half. I-have time. you-work in every day?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Lucrez de luni până vineri. Sâmbăta nu lucrez.",
+          "id": "I work from Monday to Friday. On Saturdays I don't work.",
+          "literal": "I-work from Monday until Friday. Saturday-the not I-work."
+        },
+        {
+          "speaker": "Andrei:",
+          "text": "Și unde mănânci la prânz?",
+          "id": "And where do you eat at lunchtime?",
+          "literal": "and where you-eat at noon?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "La prânz mănânc la unu, cu colegii.",
+          "id": "At lunchtime I eat at one, with my colleagues.",
+          "literal": "at noon I-eat at one, with colleagues-the."
+        },
+        {
+          "speaker": "Andrei:",
+          "text": "Eu mănânc acasă. Iar seara cânt într-o trupă.",
+          "id": "I eat at home. And in the evenings I sing in a band.",
+          "literal": "I I-eat at-home. and evening-the I-sing in-a-f band."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Serios? Și când cântați?",
+          "id": "Seriously? And when do you play?",
+          "literal": "serious? and when you-pl-sing?"
+        },
+        {
+          "speaker": "Andrei:",
+          "text": "Vineri seara, la opt și jumătate, în Centrul Vechi. Ești liber?",
+          "id": "Friday evening, at half past eight, in Centrul Vechi. Are you free?",
+          "literal": "Friday evening-the, at eight and half, in center-the old. you-are free?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Da, vineri seara sunt liber. Oh, e deja opt și douăzeci! Pa!",
+          "id": "Yes, I'm free on Friday evening. Oh, it's already twenty past eight! Bye!",
+          "literal": "yes, Friday evening-the I-am free. oh, it-is already eight and twenty! bye!"
+        },
+        {
+          "speaker": "Andrei:",
+          "text": "Pa! O zi bună!",
+          "id": "Bye! Have a good day!",
+          "literal": "bye! a-f day good-f!"
+        }
+      ],
+      "notes": [
+        "**Cât este ceasul?** literally \"how much is the clock?\" — *ceas* is the object: a watch, a clock. Another question that's just as common: *Ce oră este?* and, more casually, *Cât e ceasul?* The answer always opens with *Este…* or *E…*",
+        "**La nouă, la unu, la zece și jumătate.** \"At such-and-such a time\" is always *la* + number; the word *ora* can be said (*la ora nouă*) or not. *Zece și jumătate* = ten **and** a half = 10:30, just like English \"half past ten\" (not German *halb zehn*, which is 9:30). Romanian counts forward from the hour that has passed.",
+        "**Începi lucrul.** *Lucru* (n) means \"work\", and since it ends in *-u* it just takes *-l*: *lucrul* — the rule from unit 4. The verb is *a începe* (to begin): *încep, începi, începe, începem, începeți, încep*. It belongs to the *-e* group, which gets sorted out in unit 8.",
+        "**De luni până vineri. Sâmbăta nu lucrez.** Day names need no preposition: *vineri seara* = (on) Friday evening. But once they take the definite article, the meaning becomes a **habit**: *sâmbăta* = on Saturdays, *seara* = in the evenings. One letter *-a* replaces \"every\" — like English *on Saturday* versus *on Saturdays*.",
+        "**Într-o trupă, cu colegii.** *În* can't stand right before *un/o*; it stretches into *într-un, într-o*: *într-o trupă, într-un parc*. And *cu colegii* shows two things from unit 6 at once: the masculine plural article *-ii*, and *cu* as the one preposition that keeps the article."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "The pattern is simple: the first half of the hour counts **forward** with *și* (and), the second half counts **back** from the next hour with *fără* (without, to). *Un sfert* = a quarter, *jumătate* = half."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Română",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "8:00",
+                "*Este (ora) opt.* / *Este opt fix.*",
+                "it is (the hour) eight / eight sharp"
+              ],
+              [
+                "8:10",
+                "*Este opt și zece.*",
+                "eight and ten"
+              ],
+              [
+                "8:15",
+                "*Este opt și un sfert.*",
+                "eight and a quarter"
+              ],
+              [
+                "8:30",
+                "*Este opt și jumătate.*",
+                "eight and a half"
+              ],
+              [
+                "8:45",
+                "*Este nouă fără un sfert.*",
+                "nine without a quarter"
+              ],
+              [
+                "8:50",
+                "*Este nouă fără zece.*",
+                "nine without ten"
+              ],
+              [
+                "1:00 · 2:00",
+                "*Este ora unu.* · *Este ora două.*",
+                "the hour one · the hour two"
+              ],
+              [
+                "12:00",
+                "*Este ora douăsprezece.*",
+                "the hour twelve"
+              ]
+            ]
+          },
+          "after": [
+            "**The hour is feminine — almost always.** Because *oră* is a feminine noun, numbers with two forms use the feminine one: *ora **două***, *ora **douăsprezece***, *douăzeci și **două***. The one rebel is the number one: the standard form is *ora **unu***, not *ora una*. Just memorize it: *la unu, la două*.",
+            "**Morning or evening?** In conversation people use 1–12 and add the part of the day when needed: *la opt dimineața* (8 a.m.), *la opt seara* (8 p.m.), *la trei după-amiaza* (3 p.m.). Train timetables, cinemas, and official announcements use the 24-hour clock: *șaptesprezece și treizeci* = 17:30.",
+            "Handy little words around the clock: *fix* (sharp), *aproape* (almost — *e aproape nouă*), *deja* (already), *de la… până la…* (from… to…): *de la nouă până la cinci*."
+          ]
+        },
+        {
+          "title": "Verbs ending in -a: two patterns",
+          "body": [
+            "The *-a* group is the largest, and every new verb that enters Romanian joins it. It splits in two: some verbs attach the ending straight to the stem, others slip in ***-ez*** first — like *-esc* in *vorbesc* in unit 2. *A mânca* (to eat) follows the plain pattern, but its stem changes slightly."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "a cânta (to sing)",
+              "a lucra (to work)",
+              "a mânca (to eat)"
+            ],
+            "rows": [
+              [
+                "eu",
+                "cânt",
+                "lucr**ez**",
+                "mănânc"
+              ],
+              [
+                "tu",
+                "cânți",
+                "lucr**ezi**",
+                "mănânci"
+              ],
+              [
+                "el / ea",
+                "cântă",
+                "lucr**ează**",
+                "mănâncă"
+              ],
+              [
+                "noi",
+                "cântăm",
+                "lucrăm",
+                "mâncăm"
+              ],
+              [
+                "voi",
+                "cântați",
+                "lucrați",
+                "mâncați"
+              ],
+              [
+                "ei / ele",
+                "cântă",
+                "lucr**ează**",
+                "mănâncă"
+              ]
+            ]
+          },
+          "after": [
+            "**The \"he/she\" and \"they\" forms are always twins** in this group: *el cântă, ei cântă*; *ea lucrează, ele lucrează*. That's why *costă* in unit 5 works for one ticket or ten.",
+            "**The *-ez* insert appears only in four forms** — *eu, tu, el/ea, ei/ele*. The *noi* and *voi* forms are always plain: *lucrăm, lucrați*, never *lucrezăm*. The same happens with *a mânca*: the long stem *mănânc-* in those four forms, the short stem *mânc-* in *noi* and *voi*.",
+            "**Which verbs take *-ez*?** You can't tell from the infinitive; that's why this book's vocabulary always gives the *eu* form in brackets. With the insert: *a lucra (lucrez), a traversa (traversez), a studia (studiez), a vizita (vizitez), a dansa (dansez)*. Plain: *a cânta (cânt), a asculta (ascult), a întreba (întreb), a ajuta (ajut), a pleca (plec), a cumpăra (cumpăr)*.",
+            "Notice *cânți*: the *-i* ending softens *t* into *ț*, just like *student → studenți* in unit 5. The same sound change works in nouns and verbs — learn it once, use it twice."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The days of the week",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Română",
+            "Say it",
+            "English",
+            "Every …"
+          ],
+          "rows": [
+            [
+              "**luni**",
+              "loon'",
+              "Monday",
+              "*lunea*"
+            ],
+            [
+              "**marți**",
+              "mahrts'",
+              "Tuesday",
+              "*marțea*"
+            ],
+            [
+              "**miercuri**",
+              "MYEHR-koor'",
+              "Wednesday",
+              "*miercurea*"
+            ],
+            [
+              "**joi**",
+              "zhoy",
+              "Thursday",
+              "*joia*"
+            ],
+            [
+              "**vineri**",
+              "VEE-nehr'",
+              "Friday",
+              "*vinerea*"
+            ],
+            [
+              "**sâmbătă**",
+              "SÎM-buh-tuh",
+              "Saturday",
+              "*sâmbăta*"
+            ],
+            [
+              "**duminică**",
+              "doo-MEE-nee-kuh",
+              "Sunday",
+              "*duminica*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Day names are written in **lowercase** and are all feminine. Without the article they point to one particular day: *Vineri sunt liber* (I'm free this Friday). With the article they become a habit: *Vinerea cânt într-o trupă* (on Fridays I sing in a band). Time words that go with them: *azi* (today), *mâine* (tomorrow), *ieri* (yesterday), *în weekend* (at the weekend), *în fiecare zi* (every day), *săptămâna aceasta* (this week)."
+        },
+        {
+          "type": "kotak",
+          "title": "Where the day names come from",
+          "items": [
+            "The five working days are named after Roman heavenly bodies and gods, inherited straight from Latin: *luni* (Luna, the moon), *marți* (Mars), *miercuri* (Mercury), *joi* (Jupiter), *vineri* (Venus). If you've ever studied Spanish, French, or Italian, you'll recognize them all.",
+            "*Sâmbătă* comes from \"sabbath\" — and *duminică* means \"the Lord's day\", from Latin *dominica*, like Spanish *domingo*. English took its day names from Norse and Saxon gods instead, but *Monday* (moon day) and *luni* are still the same idea.",
+            "The week in Romania starts on **Monday**; wall calendars are printed starting from *luni*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Parts of the day",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Română",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**dimineața**",
+              "dee-mee-NYAH-tsah",
+              "in the morning"
+            ],
+            [
+              "**la prânz**",
+              "lah prînz",
+              "at midday, at lunchtime"
+            ],
+            [
+              "**după-amiaza**",
+              "DOO-puh ah-MYAH-zah",
+              "in the afternoon"
+            ],
+            [
+              "**seara**",
+              "SYAH-rah",
+              "in the evening (dusk until bedtime)"
+            ],
+            [
+              "**noaptea**",
+              "NWAHP-tyah",
+              "at night (late)"
+            ],
+            [
+              "**azi-dimineață**",
+              "ahz' dee-mee-NYAH-tsuh",
+              "this morning"
+            ],
+            [
+              "**diseară**",
+              "dee-SYAH-ruh",
+              "tonight, this evening"
+            ],
+            [
+              "**mâine dimineață**",
+              "MÎY-neh dee-mee-NYAH-tsuh",
+              "tomorrow morning"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Just like day names, parts of the day **with the article** stand alone without a preposition and mean \"at that time, usually\": *Dimineața lucrez acasă. După-amiaza studiez româna. Seara ascult muzică. Noaptea nu lucrez.* Only *prânz* needs *la*. And because *seara* starts around six o'clock, Romanians already say *Bună seara!* at the time an English speaker might still say \"good afternoon\"."
+        },
+        {
+          "type": "kotak",
+          "title": "Program: opening hours on the shop door",
+          "items": [
+            "The word ***Program*** on the door of a shop, bank, or pharmacy isn't a show — it's the **opening hours**. Days are abbreviated *L, Ma, Mi, J, V, S, D*; so *L–V 9–18* means Monday to Friday, nine to six.",
+            "*Deschis* = open, *închis* = closed. Many small shops close early on Saturdays and stay shut on Sundays, so don't leave your shopping until *duminică*.",
+            "A ***Non-Stop*** sign marks a small shop or pharmacy open 24 hours — a lifesaver if, like Budi, you only remember dinner close to midnight."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 5",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Romanian column, read the English, and rebuild the sentences from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Română"
+          ],
+          "rows": [
+            [
+              "How much is a ticket? — It's five lei.",
+              "*Cât costă un bilet? — Costă cinci lei.*"
+            ],
+            [
+              "How old are you? — I'm twenty-eight.",
+              "*Câți ani ai? — Am douăzeci și opt de ani.*"
+            ],
+            [
+              "I have two brothers and two sisters.",
+              "*Am doi frați și două surori.*"
+            ],
+            [
+              "That's too expensive.",
+              "*Este prea scump.*"
+            ],
+            [
+              "What's your phone number?",
+              "*Care este numărul tău de telefon?*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ro": "ceas, ceasuri",
+      "baca": "chahs, CHAH-soor'",
+      "en": "clock, watch (the object) (n)"
+    },
+    {
+      "ro": "oră, ore",
+      "baca": "OH-ruh, OH-reh",
+      "en": "hour; o'clock (f)"
+    },
+    {
+      "ro": "sfert, sferturi",
+      "baca": "sfehrt, SFEHR-toor'",
+      "en": "quarter (n)"
+    },
+    {
+      "ro": "jumătate",
+      "baca": "zhoo-muh-TAH-teh",
+      "en": "half (f)"
+    },
+    {
+      "ro": "zi, zile",
+      "baca": "zee, ZEE-leh",
+      "en": "day (f)"
+    },
+    {
+      "ro": "săptămână, săptămâni",
+      "baca": "suhp-tuh-MÎ-nuh, suhp-tuh-MÎN'",
+      "en": "week (f)"
+    },
+    {
+      "ro": "lucru",
+      "baca": "LOO-kroo",
+      "en": "work, job (n)"
+    },
+    {
+      "ro": "prânz",
+      "baca": "prînz",
+      "en": "midday; lunch (n)"
+    },
+    {
+      "ro": "a lucra (lucrez)",
+      "baca": "ah loo-KRAH (loo-KREHZ)",
+      "en": "to work"
+    },
+    {
+      "ro": "a mânca (mănânc)",
+      "baca": "ah mîn-KAH (muh-NÎNK)",
+      "en": "to eat"
+    },
+    {
+      "ro": "a cânta (cânt)",
+      "baca": "ah kîn-TAH (kînt)",
+      "en": "to sing; to play (an instrument)"
+    },
+    {
+      "ro": "a începe (încep)",
+      "baca": "ah în-CHEH-peh (în-CHEHP)",
+      "en": "to begin; to start"
+    },
+    {
+      "ro": "când",
+      "baca": "kînd",
+      "en": "when"
+    },
+    {
+      "ro": "deja",
+      "baca": "deh-ZHAH",
+      "en": "already"
+    },
+    {
+      "ro": "fără",
+      "baca": "FUH-ruh",
+      "en": "without; to (telling the time)"
+    },
+    {
+      "ro": "până",
+      "baca": "PÎ-nuh",
+      "en": "until"
+    },
+    {
+      "ro": "liber, liberă",
+      "baca": "LEE-behr, LEE-beh-ruh",
+      "en": "free, available (m, f)"
+    },
+    {
+      "ro": "acasă",
+      "baca": "ah-KAH-suh",
+      "en": "at home; home (direction)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Romanian.",
+      "items": [
+        "What time is it?",
+        "It's a quarter past eight.",
+        "What time do you start work?",
+        "I work from Monday to Friday.",
+        "At lunchtime I eat at one.",
+        "On Saturdays I don't work."
+      ]
+    },
+    {
+      "prompt": "Fill in the right form of the verb.",
+      "items": [
+        "Eu ____ în București. (a lucra)",
+        "Tu ____ la prânz? (a mânca)",
+        "Andrei ____ într-o trupă. (a cânta)",
+        "Noi ____ acasă. (a mânca)",
+        "Voi ____ sâmbăta? (a lucra)",
+        "Ioana ____ de luni până vineri. (a lucra)",
+        "Ei ____ la unu. (a mânca)",
+        "Eu nu ____ bine. (a cânta)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ceasul / este / cât / ?",
+        "jumătate / este / și / zece",
+        "un / fără / este / sfert / nouă",
+        "oră / ce / lucrul / la / începi / ?",
+        "lucrez / nu / duminica"
+      ]
+    }
+  ],
+  "answers": [
+    "Cât este ceasul? — Este opt și un sfert. — La ce oră începi lucrul? — Lucrez de luni până vineri. — La prânz mănânc la unu. — Sâmbăta nu lucrez.",
+    "lucrez — mănânci — cântă — mâncăm — lucrați — lucrează — mănâncă — cânt",
+    "Cât este ceasul? — Este zece și jumătate. — Este nouă fără un sfert. — La ce oră începi lucrul? — Duminica nu lucrez."
+  ]
+}

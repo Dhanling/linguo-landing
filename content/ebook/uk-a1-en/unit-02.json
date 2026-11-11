@@ -1,0 +1,545 @@
+{
+  "title": "What's this? A wardrobe is a \"she\"",
+  "title_target": "Що це? — Shcho tse?",
+  "goal": "Ask what things are called, say what they're not, and understand why every Ukrainian noun has a gender — plus how to guess it from the end of the word, almost always without a dictionary.",
+  "bekal": [
+    "ask and say the names of things",
+    "guess a noun's gender from its ending",
+    "tell це apart from цей / ця / це",
+    "negate with не",
+    "name twenty things around you"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — The new rented room",
+      "intro": "Ani has just moved into a rented room. Oksana shows her in and points at things one by one. Notice that Ani doesn't ask what the words mean — she asks what gender they are, and that's exactly the right question.",
+      "lines": [
+        {
+          "speaker": "Ані:",
+          "text": "[Вибачте|VI-bach-teh], [що|shcho] [це|tseh]?",
+          "id": "Excuse me, what's this?",
+          "literal": "forgive, what — this?"
+        },
+        {
+          "speaker": "Оксана:",
+          "text": "[Це|Tseh] [вікно|veek-NO]. [А|A] [це|tseh] [двері|DVEH-ree].",
+          "id": "This is a window. And this is a door.",
+          "literal": "this — window. and — this — doors."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[А|A] [це|tseh] [що|shcho]? [Це|Tseh] [стіл|steel]?",
+          "id": "And what's this? Is it a table?",
+          "literal": "and — this — what? this — table?"
+        },
+        {
+          "speaker": "Оксана:",
+          "text": "[Ні|Nee], [це|tseh] [не|neh] [стіл|steel]. [Це|Tseh] [шафа|SHA-fa].",
+          "id": "No, it's not a table. It's a wardrobe.",
+          "literal": "no, this — not — table. this — wardrobe."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Шафа|SHA-fa]... [Це|Tseh] [він|veen] [чи|chi] [вона|vo-NA]?",
+          "id": "Wardrobe... Is it a \"he\" or a \"she\"?",
+          "literal": "wardrobe... this — he — or — she?"
+        },
+        {
+          "speaker": "Оксана:",
+          "text": "[Шафа|SHA-fa] — [вона|vo-NA]. [А|A] [стіл|steel] — [він|veen].",
+          "id": "A wardrobe is a \"she\". A table is a \"he\".",
+          "literal": "wardrobe — she. and — table — he."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Чому|Cho-MOO]?",
+          "id": "Why?",
+          "literal": "why?"
+        },
+        {
+          "speaker": "Оксана:",
+          "text": "[Тому|To-MOO] [що|shcho] [шафа|SHA-fa] [закінчується|za-KEEN-choo-yeh-tsya] [на|na] -а. [Всі|Vsee] [слова|slo-VA] [на|na] -а — [жіночого|zhee-NO-cho-ho] [роду|RO-doo].",
+          "id": "Because шафа ends in -a. All words ending in -a are feminine.",
+          "literal": "because — wardrobe — ends — on -a. all — words — on -a — feminine — gender (of)."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[А|A] [вікно|veek-NO]?",
+          "id": "And window?",
+          "literal": "and — window?"
+        },
+        {
+          "speaker": "Оксана:",
+          "text": "[Вікно|Veek-NO] — [воно|vo-NO]. [Середній|Seh-RED-neey] [рід|reed].",
+          "id": "A window is an \"it\". Neuter gender.",
+          "literal": "window — it. middle — gender."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Зрозуміло|Zro-zoo-MEE-lo]. [Дякую|DYA-koo-yoo]!",
+          "id": "Got it. Thank you!",
+          "literal": "understood. I-thank!"
+        },
+        {
+          "speaker": "Оксана:",
+          "text": "[Будь|Bood'] [ласка|LAS-ka]. [Це|Tseh] [легко|LEH-ko], [правда|PRAV-da]?",
+          "id": "You're welcome. It's easy, isn't it?",
+          "literal": "be — kindness. this — easy, truth?"
+        }
+      ],
+      "notes": [
+        "**Every noun has one of three genders, no exceptions.** It has nothing to do with being alive: *шафа* (wardrobe) is feminine, *стіл* (table) masculine, *вікно* (window) neuter. Gender says nothing about the thing itself — it only decides the endings of the adjectives and verbs that attach to it later.",
+        "**The good news: the ending almost always tells you.** Ends in **-а** or **-я** → feminine. Ends in a **consonant** → masculine. Ends in **-о** or **-е** → neuter. Those three rules cover about nine out of ten words you'll meet at A1.",
+        "**Двері is always plural.** Like English \"scissors\" or \"trousers\", *двері* (door) has no singular — even a single door is *двері*. Adjectives attached to it are plural too: *нові двері* (a new door).",
+        "**Чи means \"or\" in questions.** *Він чи вона?* — he or she? For \"or\" in ordinary statements people use **або**: *кава або чай* (coffee or tea). In everyday speech the two often swap places without any problem.",
+        "**Тому що = because.** Two words, always together. Don't split them. To ask for the reason, say **Чому?** (*cho-MOO*) — and notice that the answer starts with *тому що*, almost like an echo of the question.",
+        "**Зрозуміло is an answer, not an adjective.** It means \"(it's) clear / got it\" and stands on its own, just like English \"Got it.\" The opposite: **Не зрозуміло**, or more often **Я не розумію** (I don't understand).",
+        "**Це and цей are not the same word.** *Це* stands alone: \"this is\". *Цей / ця / це / ці* attach to a noun and follow its gender: *цей стіл* (this table). ⚠️ The most common beginner mistake: saying *це стіл* when you mean \"this table\" — what the listener hears is \"this is a table\"."
+      ],
+      "grammars": [
+        {
+          "title": "Three genders, and how to guess them from the ending",
+          "body": [
+            "Cover the right-hand column, look at the ending, guess the gender. Once you can do this smoothly, half the work of Ukrainian grammar is done."
+          ],
+          "table": {
+            "head": [
+              "Ending",
+              "Gender",
+              "Pronoun",
+              "Examples"
+            ],
+            "rows": [
+              [
+                "consonant",
+                "чоловічий (masculine)",
+                "він",
+                "стіл, банк, хліб, чай"
+              ],
+              [
+                "-а",
+                "жіночий (feminine)",
+                "вона",
+                "шафа, книга, кава, мама"
+              ],
+              [
+                "-я",
+                "жіночий (feminine)",
+                "вона",
+                "сім'я, земля, кухня"
+              ],
+              [
+                "-о",
+                "середній (neuter)",
+                "воно",
+                "вікно, місто, молоко"
+              ],
+              [
+                "-е",
+                "середній (neuter)",
+                "воно",
+                "море, поле, сонце"
+              ],
+              [
+                "-ь",
+                "could be either",
+                "він / вона",
+                "день (m), сіль (f)"
+              ]
+            ]
+          },
+          "after": [
+            "Only the last row has to be learned word by word. Luckily there aren't many words in **-ь** at A1, and most of them come up again and again in this course until their gender sticks on its own."
+          ]
+        },
+        {
+          "title": "Це vs цей / ця / це / ці",
+          "body": [
+            "*Це* introduces something. *Цей* points at something already in front of you. Compare the rows in pairs."
+          ],
+          "table": {
+            "head": [
+              "Ukrainian",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "Це книга.",
+                "tseh KNI-ha",
+                "This is a book."
+              ],
+              [
+                "Ця книга нова.",
+                "tsya KNI-ha NO-va",
+                "This book is new."
+              ],
+              [
+                "Це стіл.",
+                "tseh steel",
+                "This is a table."
+              ],
+              [
+                "Цей стіл великий.",
+                "tsey steel veh-LI-kiy",
+                "This table is big."
+              ],
+              [
+                "Це вікно.",
+                "tseh veek-NO",
+                "This is a window."
+              ],
+              [
+                "Це вікно маленьке.",
+                "tseh veek-NO ma-LEN'-keh",
+                "This window is small."
+              ],
+              [
+                "Ці двері нові.",
+                "tsee DVEH-ree no-VEE",
+                "This door is new."
+              ]
+            ]
+          },
+          "after": [
+            "For neuter nouns both forms happen to be **це** — so *Це вікно маленьке* can mean \"This is a small window\" or \"This window is small\". Context decides, and Ukrainians are never confused by it."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Twenty things around you",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Read the first column and guess the gender before you look at the third. These words come back over the next ten units, so time spent here pays off twice."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Українська",
+            "Say it",
+            "Gender",
+            "English"
+          ],
+          "rows": [
+            [
+              "стіл",
+              "steel",
+              "він",
+              "table"
+            ],
+            [
+              "стілець",
+              "stee-LETS'",
+              "він",
+              "chair"
+            ],
+            [
+              "шафа",
+              "SHA-fa",
+              "вона",
+              "wardrobe"
+            ],
+            [
+              "ліжко",
+              "LEEZH-ko",
+              "воно",
+              "bed"
+            ],
+            [
+              "вікно",
+              "veek-NO",
+              "воно",
+              "window"
+            ],
+            [
+              "двері",
+              "DVEH-ree",
+              "plural",
+              "door"
+            ],
+            [
+              "кімната",
+              "keem-NA-ta",
+              "вона",
+              "room"
+            ],
+            [
+              "кухня",
+              "KOOKH-nya",
+              "вона",
+              "kitchen"
+            ],
+            [
+              "книга",
+              "KNI-ha",
+              "вона",
+              "book"
+            ],
+            [
+              "зошит",
+              "ZO-shit",
+              "він",
+              "notebook"
+            ],
+            [
+              "ручка",
+              "ROOCH-ka",
+              "вона",
+              "pen"
+            ],
+            [
+              "телефон",
+              "teh-leh-FON",
+              "він",
+              "phone"
+            ],
+            [
+              "комп'ютер",
+              "kom-PYOO-ter",
+              "він",
+              "computer"
+            ],
+            [
+              "сумка",
+              "SOOM-ka",
+              "вона",
+              "bag"
+            ],
+            [
+              "ключ",
+              "klyooch",
+              "він",
+              "key"
+            ],
+            [
+              "вода",
+              "vo-DA",
+              "вона",
+              "water"
+            ],
+            [
+              "кава",
+              "KA-va",
+              "вона",
+              "coffee"
+            ],
+            [
+              "чай",
+              "chai",
+              "він",
+              "tea"
+            ],
+            [
+              "хліб",
+              "khleeb",
+              "він",
+              "bread"
+            ],
+            [
+              "молоко",
+              "mo-lo-KO",
+              "воно",
+              "milk"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Words ending in -ь: the only ones to memorize",
+          "items": [
+            "**Masculine:** день (day), тиждень (week), місяць (month), лікар (doctor — consonant), учитель (teacher), готель (hotel).",
+            "**Feminine:** ніч (night), сіль (salt), любов (love), осінь (autumn), подорож (journey).",
+            "A handy mini-pattern: words ending in **-ість** and **-ощ** are almost always feminine; words ending in **-тель** and **-ар** are almost always masculine.",
+            "⚠️ Don't spend time memorizing this list now. Bookmark the page and come back when a word actually gets in your way."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uk": "що",
+      "baca": "shcho",
+      "en": "what"
+    },
+    {
+      "uk": "це",
+      "baca": "tseh",
+      "en": "this, this is"
+    },
+    {
+      "uk": "цей / ця / це / ці",
+      "baca": "tsey / tsya",
+      "en": "this (attached to a noun)"
+    },
+    {
+      "uk": "той / та / те / ті",
+      "baca": "toy / ta",
+      "en": "that"
+    },
+    {
+      "uk": "тут",
+      "baca": "toot",
+      "en": "here"
+    },
+    {
+      "uk": "там",
+      "baca": "tam",
+      "en": "there"
+    },
+    {
+      "uk": "він",
+      "baca": "veen",
+      "en": "he; it (masculine noun)"
+    },
+    {
+      "uk": "вона",
+      "baca": "vo-NA",
+      "en": "she; it (feminine noun)"
+    },
+    {
+      "uk": "воно",
+      "baca": "vo-NO",
+      "en": "it (neuter noun)"
+    },
+    {
+      "uk": "рід",
+      "baca": "reed",
+      "en": "gender (of a noun)"
+    },
+    {
+      "uk": "чоловічий рід",
+      "baca": "cho-lo-VEE-chiy reed",
+      "en": "masculine gender"
+    },
+    {
+      "uk": "жіночий рід",
+      "baca": "zhee-NO-chiy reed",
+      "en": "feminine gender"
+    },
+    {
+      "uk": "середній рід",
+      "baca": "seh-RED-neey reed",
+      "en": "neuter gender"
+    },
+    {
+      "uk": "чи",
+      "baca": "chi",
+      "en": "or (in questions)"
+    },
+    {
+      "uk": "або",
+      "baca": "A-bo",
+      "en": "or"
+    },
+    {
+      "uk": "і, та",
+      "baca": "ee, ta",
+      "en": "and"
+    },
+    {
+      "uk": "але",
+      "baca": "A-leh",
+      "en": "but"
+    },
+    {
+      "uk": "чому",
+      "baca": "cho-MOO",
+      "en": "why"
+    },
+    {
+      "uk": "тому що",
+      "baca": "to-MOO shcho",
+      "en": "because"
+    },
+    {
+      "uk": "зрозуміло",
+      "baca": "zro-zoo-MEE-lo",
+      "en": "got it, clear"
+    },
+    {
+      "uk": "я не розумію",
+      "baca": "ya neh ro-zoo-MEE-yoo",
+      "en": "I don't understand"
+    },
+    {
+      "uk": "легко",
+      "baca": "LEH-ko",
+      "en": "easy"
+    },
+    {
+      "uk": "важко",
+      "baca": "VAZH-ko",
+      "en": "difficult"
+    },
+    {
+      "uk": "правда",
+      "baca": "PRAV-da",
+      "en": "true; right?"
+    },
+    {
+      "uk": "великий",
+      "baca": "veh-LI-kiy",
+      "en": "big"
+    },
+    {
+      "uk": "маленький",
+      "baca": "ma-LEN'-kiy",
+      "en": "small"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "What gender is each word? Write він, вона, or воно.",
+      "items": [
+        "книга",
+        "стіл",
+        "вікно",
+        "кава",
+        "чай",
+        "молоко"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with цей, ця, or це.",
+      "items": [
+        "____ книга нова.",
+        "____ стіл великий.",
+        "____ вікно маленьке.",
+        "____ кава гаряча.",
+        "____ хліб свіжий."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "це / що",
+        "стіл / це / не",
+        "шафа / це",
+        "велике / вікно / це",
+        "легко / це"
+      ]
+    },
+    {
+      "prompt": "Translate into Ukrainian.",
+      "items": [
+        "What's this?",
+        "This is a window.",
+        "This isn't a wardrobe.",
+        "This table is big.",
+        "Why? Because шафа ends in -a."
+      ]
+    }
+  ],
+  "answers": [
+    "вона — він — воно — вона — він — воно",
+    "Ця — Цей — Це — Ця — Цей",
+    "Що це? — Це не стіл. — Це шафа. — Це велике вікно. — Це легко.",
+    "Що це? — Це вікно. — Це не шафа. — Цей стіл великий. — Чому? Тому що шафа закінчується на -а."
+  ],
+  "wave": "Go through the Unit 1 dialogue once more, this time noticing that *студентка* ends in -а and is therefore feminine."
+}

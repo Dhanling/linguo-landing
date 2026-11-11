@@ -1,0 +1,537 @@
+{
+  "title": "My family",
+  "title_target": "Min familie",
+  "goal": "Name family members, use possessives that follow the noun's group, and ask someone's age.",
+  "bekal": [
+    "use *min/mit/mine* and *din/dit/dine* correctly",
+    "tell *hans*, *hendes* and *sin* apart — the most famous trap in Danish",
+    "ask and give ages"
+  ],
+  "wave": "Go back over **Unit 3** first: point at ten things around you, name each with its *en* or *et*, then change it into the form with the ending.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Billeder på telefonen",
+      "intro": "Mette shows Budi photos of her family.",
+      "lines": [
+        {
+          "speaker": "Mette:",
+          "text": "Se her — det er min familie.",
+          "id": "Look — this is my family.",
+          "literal": "see here — it is my family."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hvem er manden med skægget?",
+          "id": "Who's the man with the beard?",
+          "literal": "who is man-the with beard-the?"
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Det er min far. Han hedder Jens.",
+          "id": "That's my dad. His name is Jens.",
+          "literal": "it is my father. he is-called Jens."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Og kvinden ved siden af?",
+          "id": "And the woman next to him?",
+          "literal": "and woman-the by side-the of?"
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Det er min mor, Anne. Og det er mine to brødre.",
+          "id": "That's my mom, Anne. And those are my two brothers.",
+          "literal": "it is my mother, Anne. and it is my two brothers."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hvor gamle er de?",
+          "id": "How old are they?",
+          "literal": "how old are they?"
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Lars er nitten, og Peter er fjorten. Jeg er den ældste.",
+          "id": "Lars is nineteen, and Peter is fourteen. I'm the oldest.",
+          "literal": "Lars is nineteen, and Peter is fourteen. I am the oldest."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Har du også en søster?",
+          "id": "Do you have a sister too?",
+          "literal": "have you also a sister?"
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Nej. Men min bror har en kæreste — hende der.",
+          "id": "No. But my brother has a girlfriend — that one there.",
+          "literal": "no. but my brother has a sweetheart — her there."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bor de sammen?",
+          "id": "Do they live together?",
+          "literal": "live they together?"
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Ja, i hendes lejlighed i Aarhus. Han elsker sin cykel mere end hende.",
+          "id": "Yes, in her apartment in Aarhus. He loves his bike more than her.",
+          "literal": "yes, in her apartment in Aarhus. he loves his-own bike more than her."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Meget dansk.",
+          "id": "Very Danish.",
+          "literal": "very Danish."
+        }
+      ],
+      "notes": [
+        "**The possessive follows the noun, not the owner.** *Min far* but *mit hus* — and what decides it isn't who owns it, but whether *far* and *hus* are en-words or et-words. English has just one *my*; Danish has three.",
+        "**Ved siden af** = \"next to\". Literally \"by the side of\". Danish place expressions are often three-word chunks like this; learn them whole, don't take them apart.",
+        "**Hvor gamle er de?** Note *gamle*, not *gammel* — since you're asking about more than one person, the adjective ends in *-e*. For one person: *Hvor gammel er du?*",
+        "**Age without an extra verb.** *Jeg er femogtyve* is enough; you can also say it in full: *jeg er femogtyve år gammel*. Danish uses *er* like English (*I am 25*), not *har* like French or Spanish.",
+        "**Den ældste** = \"the oldest\". The forms are irregular: *gammel → ældre → ældst* — like English *old → elder → eldest*. Notice the double definite again: *den* in front, *-e* on the adjective.",
+        "**Sin cykel — here's the trap.** *Han elsker **sin** cykel* = he loves **his own** bike. If you write *han elsker **hans** cykel*, it means he loves **another man's** bike. English \"his\" can mean either; Danish must make the difference.",
+        "**En kæreste** is used for a boyfriend or a girlfriend — Danish doesn't distinguish. Literally \"dearest\". For married couples: *en mand* (husband) and *en kone* (wife)."
+      ],
+      "grammars": [
+        {
+          "title": "Possessives",
+          "body": [
+            "Only the first three rows change form. The rest have one form for everything — an unexpected relief."
+          ],
+          "table": {
+            "head": [
+              "Owner",
+              "en-word",
+              "et-word",
+              "Plural",
+              "Example"
+            ],
+            "rows": [
+              [
+                "my",
+                "**min**",
+                "**mit**",
+                "**mine**",
+                "min far, mit hus, mine bøger"
+              ],
+              [
+                "your",
+                "**din**",
+                "**dit**",
+                "**dine**",
+                "din mor, dit værelse, dine nøgler"
+              ],
+              [
+                "his/her own (3rd person)",
+                "**sin**",
+                "**sit**",
+                "**sine**",
+                "han tager sin cykel"
+              ],
+              [
+                "his",
+                "hans",
+                "hans",
+                "hans",
+                "hans bil, hans hus, hans børn"
+              ],
+              [
+                "her",
+                "hendes",
+                "hendes",
+                "hendes",
+                "hendes bil, hendes hus"
+              ],
+              [
+                "our",
+                "vores",
+                "vores",
+                "vores",
+                "vores lejlighed"
+              ],
+              [
+                "your (plural)",
+                "jeres",
+                "jeres",
+                "jeres",
+                "jeres lærer"
+              ],
+              [
+                "their",
+                "deres",
+                "deres",
+                "deres",
+                "deres børn"
+              ]
+            ]
+          },
+          "after": [
+            "*Hans*, *hendes*, *vores*, *jeres*, *deres* never change, whatever the noun. Only *min/din/sin* and their forms need attention.",
+            "Danish also has a possessive **-s**, just like English but without the apostrophe: *Mettes far* (Mette's dad), *Danmarks hovedstad* (Denmark's capital), *min brors cykel* (my brother's bike). It's the most common form with people's names."
+          ]
+        },
+        {
+          "title": "Sin, hans or hendes?",
+          "body": [
+            "The only rule you need to remember: **sin/sit/sine is used when the owner is the subject of that same sentence.** Otherwise, use *hans* or *hendes*."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Peter ringer til **sin** mor.",
+                "Peter calls his **own** mother."
+              ],
+              [
+                "Peter ringer til **hans** mor.",
+                "Peter calls **another man's** mother."
+              ],
+              [
+                "Mette tager **sin** cykel.",
+                "Mette takes her **own** bike."
+              ],
+              [
+                "Mette tager **hendes** cykel.",
+                "Mette takes **another woman's** bike."
+              ],
+              [
+                "**Hans** mor ringer til Peter.",
+                "His mother calls Peter. (*sin* is impossible here)"
+              ]
+            ]
+          },
+          "after": [
+            "The last row shows the fence on the other side: **sin can never be part of the subject**. If the possessive stands in front of the verb as part of the subject, it must be *hans* or *hendes*.",
+            "The same goes for the plural: *De tager **deres** cykler* — but even when they mean their own, modern Danish still uses *deres*. So in practice this trap only applies to the third person singular.",
+            "This mistake won't make you misunderstood, but it marks you as a beginner instantly. Getting it right, on the other hand, is one of the quickest signs that someone is learning seriously."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Family members",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Dansk",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "en familie",
+              "en fah-MEE-lyuh",
+              "family"
+            ],
+            [
+              "en far / en mor",
+              "en fahr / en mor",
+              "father / mother"
+            ],
+            [
+              "forældre",
+              "for-EL-druh",
+              "parents"
+            ],
+            [
+              "en søn / en datter",
+              "en sön / en DAH-dah",
+              "son / daughter"
+            ],
+            [
+              "en bror / en søster",
+              "en bror / en SÖS-dah",
+              "brother / sister"
+            ],
+            [
+              "søskende",
+              "SÖS-guh-nuh",
+              "siblings"
+            ],
+            [
+              "en bedstefar / en bedstemor",
+              "en BES-duh-fahr",
+              "grandfather / grandmother"
+            ],
+            [
+              "en onkel / en tante",
+              "en ONG-guhl / en TAHN-duh",
+              "uncle / aunt"
+            ],
+            [
+              "en fætter / en kusine",
+              "en FEH-dah / en koo-SEE-nuh",
+              "cousin (m) / cousin (f)"
+            ],
+            [
+              "en mand / en kone",
+              "en mahn / en KOH-nuh",
+              "husband / wife"
+            ],
+            [
+              "en kæreste",
+              "en KEH-ahs-duh",
+              "boyfriend, girlfriend"
+            ],
+            [
+              "en ven / en veninde",
+              "en ven / en veh-NIN-uh",
+              "friend (m) / friend (f)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Brødre* (plural of *bror*) and *søstre* (plural of *søster*) change form. To talk about brothers and sisters together, Danish has one very handy everyday word: **søskende** — \"siblings\", but far more common than the English word."
+        },
+        {
+          "type": "p",
+          "text": "Step-relatives are formed with the prefix *sted-*: *en stedfar*, *en stedmor*, *en stedsøster*. Modern Danish families are often complicated, and these words are used without any awkwardness."
+        }
+      ]
+    },
+    {
+      "title": "Age",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Dansk",
+            "English"
+          ],
+          "rows": [
+            [
+              "Hvor gammel er du?",
+              "How old are you?"
+            ],
+            [
+              "Jeg er femogtyve.",
+              "I'm twenty-five."
+            ],
+            [
+              "Jeg er femogtyve år gammel.",
+              "I'm twenty-five years old."
+            ],
+            [
+              "Hvor gamle er dine børn?",
+              "How old are your children?"
+            ],
+            [
+              "Han er lige fyldt tredive.",
+              "He's just turned thirty."
+            ],
+            [
+              "Hun har fødselsdag i dag.",
+              "It's her birthday today."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*At fylde* literally means \"to fill\" — *at fylde tredive* = to turn thirty. *En fødselsdag* literally means \"birth day\", built from *fødsel* + *dag*. Danish loves gluing words into one long word; if you meet a word that looks impossible, try breaking it up first."
+        },
+        {
+          "type": "kotak",
+          "title": "Compound words: the key to reading Danish",
+          "items": [
+            "*køleskab* = *køle* (to cool) + *skab* (cupboard) = fridge.",
+            "*sprogskole* = *sprog* (language) + *skole* (school).",
+            "*bedsteforældre* = *bedste* (best) + *forældre* (parents) = grandparents.",
+            "⚠️ A compound's group is always decided by **the last word**: *et skab* → *et køleskab*. It's the only truly reliable rule for guessing a word's group."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "da": "min / mit / mine",
+      "baca": "min / mit / MEE-nuh",
+      "en": "my, mine"
+    },
+    {
+      "da": "din / dit / dine",
+      "baca": "din / dit / DEE-nuh",
+      "en": "your, yours"
+    },
+    {
+      "da": "sin / sit / sine",
+      "baca": "sin / sit / SEE-nuh",
+      "en": "his/her/its own"
+    },
+    {
+      "da": "hans / hendes",
+      "baca": "hahns / HEN-uhs",
+      "en": "his / her"
+    },
+    {
+      "da": "vores / jeres / deres",
+      "baca": "VOH-ahs / YEH-ahs / DEH-ahs",
+      "en": "our / your (pl.) / their"
+    },
+    {
+      "da": "en familie",
+      "baca": "en fah-MEE-lyuh",
+      "en": "family"
+    },
+    {
+      "da": "en far",
+      "baca": "en fahr",
+      "en": "father"
+    },
+    {
+      "da": "en mor",
+      "baca": "en mor",
+      "en": "mother"
+    },
+    {
+      "da": "en bror",
+      "baca": "en bror",
+      "en": "brother"
+    },
+    {
+      "da": "en søster",
+      "baca": "en SÖS-dah",
+      "en": "sister"
+    },
+    {
+      "da": "søskende",
+      "baca": "SÖS-guh-nuh",
+      "en": "siblings"
+    },
+    {
+      "da": "et barn / børn",
+      "baca": "et bahrn / börn",
+      "en": "child / children"
+    },
+    {
+      "da": "en kæreste",
+      "baca": "en KEH-ahs-duh",
+      "en": "boyfriend, girlfriend"
+    },
+    {
+      "da": "en ven",
+      "baca": "en ven",
+      "en": "friend"
+    },
+    {
+      "da": "hvem",
+      "baca": "vem",
+      "en": "who"
+    },
+    {
+      "da": "hvor gammel",
+      "baca": "vor GAHM-uhl",
+      "en": "how old"
+    },
+    {
+      "da": "en fødselsdag",
+      "baca": "en FÖ-suhls-dæ",
+      "en": "birthday"
+    },
+    {
+      "da": "at elske",
+      "baca": "oh ELS-guh",
+      "en": "to love"
+    },
+    {
+      "da": "at se",
+      "baca": "oh seh",
+      "en": "to see"
+    },
+    {
+      "da": "at ringe til",
+      "baca": "oh RING-uh til",
+      "en": "to call (on the phone)"
+    },
+    {
+      "da": "et skæg",
+      "baca": "et skeg",
+      "en": "beard"
+    },
+    {
+      "da": "ved siden af",
+      "baca": "vedh SEE-dhuhn ah",
+      "en": "next to"
+    },
+    {
+      "da": "ældst",
+      "baca": "ELST",
+      "en": "oldest"
+    },
+    {
+      "da": "yngst",
+      "baca": "ÜNGST",
+      "en": "youngest"
+    },
+    {
+      "da": "mere end",
+      "baca": "MEH-ah en",
+      "en": "more than"
+    },
+    {
+      "da": "i dag",
+      "baca": "ee DÆ",
+      "en": "today"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in min, mit or mine.",
+      "items": [
+        "____ far",
+        "____ hus",
+        "____ søskende",
+        "____ værelse",
+        "____ cykel",
+        "____ bøger"
+      ]
+    },
+    {
+      "prompt": "Choose sin, hans or hendes.",
+      "items": [
+        "Peter tager ____ cykel. (his own bike)",
+        "Mette ringer til ____ mor. (her own mother)",
+        "Lars bor i ____ lejlighed. (Mette's apartment)",
+        "____ far er lærer. (Peter's father, as subject)",
+        "Hun elsker ____ børn. (her own children)"
+      ]
+    },
+    {
+      "prompt": "Translate into Danish.",
+      "items": [
+        "This is my family.",
+        "How old are you?",
+        "I'm twenty-five years old.",
+        "I have two brothers and one sister.",
+        "Who is the woman?",
+        "She calls her own mother."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "familie / min / er / det",
+        "gammel / du / hvor / er / ?",
+        "brødre / to / har / jeg",
+        "cykel / tager / sin / han",
+        "lejlighed / bor / i / hendes / de"
+      ]
+    }
+  ],
+  "answers": [
+    "min — mit — mine — mit — min — mine",
+    "sin — sin — hendes — Hans — sine",
+    "Det er min familie. — Hvor gammel er du? — Jeg er femogtyve år gammel. — Jeg har to brødre og en søster. — Hvem er kvinden? — Hun ringer til sin mor.",
+    "Det er min familie. — Hvor gammel er du? — Jeg har to brødre. — Han tager sin cykel. — De bor i hendes lejlighed."
+  ]
+}

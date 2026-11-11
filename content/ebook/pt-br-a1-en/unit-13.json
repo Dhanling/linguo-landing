@@ -1,0 +1,623 @@
+{
+  "title": "Shopping, colors and pointing words",
+  "title_target": "Quanto custa esse?",
+  "goal": "Shop from start to checkout, name colors and sizes, and use **three levels of pointing words** — where English has only two.",
+  "bekal": [
+    "using *este*, *esse*, *aquele* at the right distance",
+    "naming colors and sizes with the matching endings",
+    "asking for discounts and paying with phrases people really use"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Numa loja de roupas",
+      "intro": "Budi is looking for a shirt for a classmate's birthday party.",
+      "lines": [
+        {
+          "speaker": "Vendedora:",
+          "text": "Oi! Posso ajudar ou só está olhando?",
+          "id": "Hi! Can I help you, or are you just looking?",
+          "literal": "hi! I-can help or only you-are looking?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Estou procurando uma camisa social.",
+          "id": "I'm looking for a dress shirt.",
+          "literal": "I-am looking-for a shirt social."
+        },
+        {
+          "speaker": "Vendedora:",
+          "text": "Que tamanho você usa?",
+          "id": "What size are you?",
+          "literal": "what size you you-use?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Acho que M. Essa azul é bonita.",
+          "id": "M, I think. That blue one is nice.",
+          "literal": "I-think that M. this blue is pretty."
+        },
+        {
+          "speaker": "Vendedora:",
+          "text": "Essa aqui? Temos em azul, branco e preto.",
+          "id": "This one here? We have it in blue, white and black.",
+          "literal": "this here? we-have in blue, white and black."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "E aquela ali, no fundo? A verde.",
+          "id": "And that one over there, at the back? The green one.",
+          "literal": "and that there, in-the back? the green."
+        },
+        {
+          "speaker": "Vendedora:",
+          "text": "Aquela é linda, mas é mais cara.",
+          "id": "That one's gorgeous, but it's more expensive.",
+          "literal": "that is lovely, but is more expensive."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Quanto custa?",
+          "id": "How much is it?",
+          "literal": "how-much it-costs?"
+        },
+        {
+          "speaker": "Vendedora:",
+          "text": "Cento e oitenta. A azul sai por cento e vinte.",
+          "id": "A hundred and eighty. The blue one comes to a hundred and twenty.",
+          "literal": "hundred and eighty. the blue it-goes-out for hundred and twenty."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Posso experimentar as duas?",
+          "id": "Can I try both on?",
+          "literal": "I-can try the(pl) two?"
+        },
+        {
+          "speaker": "Vendedora:",
+          "text": "Claro! O provador fica ali, à esquerda.",
+          "id": "Of course! The fitting room is over there, on the left.",
+          "literal": "clear! the fitting-room it-sits there, to-the left."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vou levar a azul. Aceita cartão?",
+          "id": "I'll take the blue one. Do you take cards?",
+          "literal": "I-go take the blue. you-accept card?"
+        },
+        {
+          "speaker": "Vendedora:",
+          "text": "Aceito. Em quantas vezes?",
+          "id": "Yes. In how many installments?",
+          "literal": "I-accept. in how-many times?"
+        }
+      ],
+      "notes": [
+        "⚠️ **Em quantas vezes? is the question that puzzles foreigners most in Brazil.** Literally \"in how many times?\", it asks how many monthly **installments** you want to split the purchase into. In Brazil, paying for a fifteen-dollar item in three interest-free installments is perfectly normal. The right answer if you want to pay in one go: *À vista* (\"in full\").",
+        "**Estou procurando** — the \"-ing\" form, covered fully in unit 19. For now just recognize the pattern: *estar* + a verb ending in **-ndo**, just like English \"I am looking\". Brazilians use it constantly; in Portugal people say *estou a procurar*.",
+        "**Sai por** literally \"goes out for\", means \"comes to\". It's a casual way to state a price in a shop: *Sai por cem reais*. Its sibling *fica por* means the same.",
+        "**Essa aqui, aquela ali** — notice how pointing words always pair up with a place word. Brazilians hardly ever say *esse* without *aqui*, or *aquele* without *ali*. That pairing makes the meaning clear without having to point.",
+        "**Linda** is stronger than *bonita*. Roughly: *bonito* (nice) → *lindo* (gorgeous) → *maravilhoso* (amazing). Brazilians hand out all three generously."
+      ],
+      "grammars": [
+        {
+          "title": "Three levels of pointing words",
+          "body": [
+            "English has two: \"this\" and \"that\". Portuguese has three, and the third marks something far from **both** speakers."
+          ],
+          "table": {
+            "head": [
+              "Distance",
+              "Masc. sing.",
+              "Fem. sing.",
+              "Neutral",
+              "English"
+            ],
+            "rows": [
+              [
+                "near me",
+                "**este / esse**",
+                "**esta / essa**",
+                "**isto / isso**",
+                "this"
+              ],
+              [
+                "near you",
+                "**esse**",
+                "**essa**",
+                "**isso**",
+                "that (near you)"
+              ],
+              [
+                "far from both",
+                "**aquele**",
+                "**aquela**",
+                "**aquilo**",
+                "that (over there)"
+              ]
+            ]
+          },
+          "after": [
+            "**In Brazil, este and esse have merged in practice.** Grammar books separate *este* (near me) from *esse* (near you), but Brazilians use **esse** for both, in speech and in casual writing. If you use *esse* for everything nearby and *aquele* for things far away, you already sound Brazilian.",
+            "**The neutral forms (isso, aquilo) are used when the thing isn't named**: *O que é isso?* (\"What's this?\"), *Isso é caro* (\"That's expensive\"). As soon as the noun appears, you go back to the masculine or feminine form: *esse livro*, *essa camisa*.",
+            "⚠️ Pointing words also fuse with prepositions: *de + esse* = **desse**, *em + esse* = **nesse**, *de + aquele* = **daquele**. The pattern is the same as *do* and *no* from unit 8."
+          ]
+        },
+        {
+          "title": "Colors",
+          "body": [
+            "Ordinary adjectives, so their endings match the noun. Those ending in *-e* or a consonant don't change for gender."
+          ],
+          "table": {
+            "head": [
+              "Português",
+              "Say it",
+              "English",
+              "Changes?"
+            ],
+            "rows": [
+              [
+                "branco / branca",
+                "BRAHN-koo",
+                "white",
+                "yes"
+              ],
+              [
+                "preto / preta",
+                "PRAY-too",
+                "black",
+                "yes"
+              ],
+              [
+                "vermelho / vermelha",
+                "vehh-MAY-lyoo",
+                "red",
+                "yes"
+              ],
+              [
+                "amarelo / amarela",
+                "ah-mah-REH-loo",
+                "yellow",
+                "yes"
+              ],
+              [
+                "azul / azuis",
+                "ah-ZOOW",
+                "blue",
+                "plural only"
+              ],
+              [
+                "verde / verdes",
+                "VAYH-jee",
+                "green",
+                "plural only"
+              ],
+              [
+                "cinza",
+                "SEEN-zah",
+                "gray",
+                "no"
+              ],
+              [
+                "rosa",
+                "HAW-zah",
+                "pink",
+                "no"
+              ],
+              [
+                "laranja",
+                "lah-RAHN-zhah",
+                "orange",
+                "no"
+              ],
+              [
+                "marrom / marrons",
+                "mah-HOHN",
+                "brown",
+                "plural only"
+              ]
+            ]
+          },
+          "after": [
+            "The three rows that **never change** — *cinza*, *rosa*, *laranja* — have a nice reason: they're really names of things (ash, rose, orange), and names of things don't adapt. *Uma camisa rosa*, *dois carros laranja*.",
+            "Colors go **after** the noun, like all adjectives: *a camisa azul*, *o carro vermelho* — the reverse of English \"the blue shirt\"."
+          ]
+        },
+        {
+          "title": "Shopping phrases",
+          "body": [
+            "Ten phrases that cover almost every transaction."
+          ],
+          "table": {
+            "head": [
+              "Português",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Só estou olhando, obrigado.*",
+                "Just looking, thanks."
+              ],
+              [
+                "*Quanto custa esse?*",
+                "How much is this one?"
+              ],
+              [
+                "*Tem em outro tamanho?*",
+                "Do you have another size?"
+              ],
+              [
+                "*Posso experimentar?*",
+                "Can I try it on?"
+              ],
+              [
+                "*Onde fica o provador?*",
+                "Where's the fitting room?"
+              ],
+              [
+                "*Ficou grande demais.*",
+                "It's too big."
+              ],
+              [
+                "*Tem desconto?*",
+                "Is there a discount?"
+              ],
+              [
+                "*Vou levar.*",
+                "I'll take it."
+              ],
+              [
+                "*Aceita cartão?*",
+                "Do you take cards?"
+              ],
+              [
+                "*À vista, por favor.*",
+                "In full, please."
+              ]
+            ]
+          },
+          "after": [
+            "**Demais means \"too\"** and goes after its adjective: *caro demais* (too expensive), *pequeno demais* (too small). It's also used on its own as praise: *Legal demais!* = \"so cool!\"",
+            "*Tem desconto?* is fine to ask at markets and small shops, but not in malls or supermarkets. If you pay cash, your chances are much better — try adding *à vista*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Clothes and sizes",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "a camisa",
+              "ah kah-MEE-zah",
+              "shirt"
+            ],
+            [
+              "a camiseta",
+              "ah kah-mee-ZAY-tah",
+              "T-shirt"
+            ],
+            [
+              "a calça",
+              "ah KOW-sah",
+              "pants, trousers"
+            ],
+            [
+              "o short",
+              "oo SHAWH-chee",
+              "shorts"
+            ],
+            [
+              "o vestido",
+              "oo vehs-CHEE-doo",
+              "dress"
+            ],
+            [
+              "a saia",
+              "ah SY-ah",
+              "skirt"
+            ],
+            [
+              "o sapato",
+              "oo sah-PAH-too",
+              "shoe"
+            ],
+            [
+              "o tênis",
+              "oo TAY-nees",
+              "sneakers"
+            ],
+            [
+              "a bolsa",
+              "ah BOHW-sah",
+              "bag"
+            ],
+            [
+              "o chinelo",
+              "oo shee-NEH-loo",
+              "flip-flops"
+            ],
+            [
+              "pequeno / médio / grande",
+              "peh-KAY-noo / MEH-jee-oo / GRAHN-jee",
+              "small / medium / large"
+            ],
+            [
+              "o tamanho",
+              "oo tah-MAH-nyoo",
+              "size"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*O chinelo* — flip-flops — deserves a mention of its own because it's so much a part of everyday Brazilian life that people wear them to the supermarket, the beach, and sometimes the office. The best-known brand, Havaianas, has become a household word."
+        }
+      ]
+    },
+    {
+      "title": "Paying",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "em dinheiro",
+              "ayn jee-NYEY-roo",
+              "in cash"
+            ],
+            [
+              "no cartão",
+              "noo kahh-TOWN",
+              "by card"
+            ],
+            [
+              "no débito / no crédito",
+              "noo DEH-bee-too / noo KREH-jee-too",
+              "debit / credit"
+            ],
+            [
+              "por Pix",
+              "pohh PEEKS",
+              "by Pix instant transfer"
+            ],
+            [
+              "à vista",
+              "ah VEES-tah",
+              "in full, all at once"
+            ],
+            [
+              "parcelado",
+              "pahh-seh-LAH-doo",
+              "in installments"
+            ],
+            [
+              "o troco",
+              "oo TROH-koo",
+              "change"
+            ],
+            [
+              "o recibo",
+              "oo heh-SEE-boo",
+              "receipt"
+            ],
+            [
+              "a promoção",
+              "ah proh-moh-SOWN",
+              "sale; special offer"
+            ],
+            [
+              "caro / barato",
+              "KAH-roo / bah-RAH-too",
+              "expensive / cheap"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Pix has been the most common way to pay in Brazil since 2020** — an instant, free bank transfer accepted everywhere from big malls to coconut sellers on the beach. If you stay in Brazil for more than a month, you'll use it more often than cash."
+        },
+        {
+          "type": "p",
+          "text": "*Tem troco para cinquenta?* = \"Do you have change for fifty?\" — a handy question, because small vendors in Brazil often run out of small bills."
+        }
+      ]
+    },
+    {
+      "title": "Spaced review — back to unit 11",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "What are you doing tomorrow? → *O que você vai fazer amanhã?*",
+            "I'm going to stay home → *Eu vou ficar em casa*",
+            "We're going to travel in July → *Nós vamos viajar em julho*",
+            "You're going to love it → *Você vai adorar*",
+            "How about a coffee? → *Que tal um café?*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pt": "esse / essa",
+      "baca": "AY-see / EH-sah",
+      "en": "this; that (nearby)"
+    },
+    {
+      "pt": "aquele / aquela",
+      "baca": "ah-KAY-lee / ah-KEH-lah",
+      "en": "that (over there)"
+    },
+    {
+      "pt": "isso / aquilo",
+      "baca": "EE-soo / ah-KEE-loo",
+      "en": "this / that (no noun)"
+    },
+    {
+      "pt": "aqui / ali / lá",
+      "baca": "ah-KEE / ah-LEE / LAH",
+      "en": "here / there / over there"
+    },
+    {
+      "pt": "a camisa",
+      "baca": "ah kah-MEE-zah",
+      "en": "shirt"
+    },
+    {
+      "pt": "a calça",
+      "baca": "ah KOW-sah",
+      "en": "pants, trousers"
+    },
+    {
+      "pt": "o sapato",
+      "baca": "oo sah-PAH-too",
+      "en": "shoe"
+    },
+    {
+      "pt": "o tamanho",
+      "baca": "oo tah-MAH-nyoo",
+      "en": "size"
+    },
+    {
+      "pt": "branco / preto",
+      "baca": "BRAHN-koo / PRAY-too",
+      "en": "white / black"
+    },
+    {
+      "pt": "vermelho / azul",
+      "baca": "vehh-MAY-lyoo / ah-ZOOW",
+      "en": "red / blue"
+    },
+    {
+      "pt": "verde / amarelo",
+      "baca": "VAYH-jee / ah-mah-REH-loo",
+      "en": "green / yellow"
+    },
+    {
+      "pt": "cinza / rosa",
+      "baca": "SEEN-zah / HAW-zah",
+      "en": "gray / pink"
+    },
+    {
+      "pt": "experimentar",
+      "baca": "ees-peh-ree-mehn-TAHH",
+      "en": "to try on"
+    },
+    {
+      "pt": "o provador",
+      "baca": "oo proh-vah-DOHH",
+      "en": "fitting room"
+    },
+    {
+      "pt": "o desconto",
+      "baca": "oo dees-KOHN-too",
+      "en": "discount"
+    },
+    {
+      "pt": "aceitar",
+      "baca": "ah-sey-TAHH",
+      "en": "to accept"
+    },
+    {
+      "pt": "o troco",
+      "baca": "oo TROH-koo",
+      "en": "change (money)"
+    },
+    {
+      "pt": "à vista",
+      "baca": "ah VEES-tah",
+      "en": "in full"
+    },
+    {
+      "pt": "parcelado",
+      "baca": "pahh-seh-LAH-doo",
+      "en": "in installments"
+    },
+    {
+      "pt": "caro / barato",
+      "baca": "KAH-roo / bah-RAH-too",
+      "en": "expensive / cheap"
+    },
+    {
+      "pt": "demais",
+      "baca": "jee-MYS",
+      "en": "too; really"
+    },
+    {
+      "pt": "lindo",
+      "baca": "LEEN-doo",
+      "en": "gorgeous"
+    },
+    {
+      "pt": "usar",
+      "baca": "oo-ZAHH",
+      "en": "to wear; to use"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right pointing word.",
+      "items": [
+        "____ camisa aqui é azul. (near me, feminine)",
+        "____ livro aqui é meu. (near me, masculine)",
+        "____ casa ali no fundo é grande. (far, feminine)",
+        "O que é ____? (no noun)",
+        "____ sapatos ali são caros. (far, masculine plural)",
+        "Eu quero ____ aqui. (no noun, near)"
+      ]
+    },
+    {
+      "prompt": "Make the color agree with the noun.",
+      "items": [
+        "uma camisa ____ (branco)",
+        "dois carros ____ (vermelho)",
+        "as calças ____ (preto)",
+        "uma bolsa ____ (azul)",
+        "três camisetas ____ (verde)",
+        "uma saia ____ (rosa)"
+      ]
+    },
+    {
+      "prompt": "Translate into Portuguese.",
+      "items": [
+        "How much is this one?",
+        "Can I try it on?",
+        "Where's the fitting room?",
+        "Do you have another size?",
+        "Too expensive.",
+        "I'll take the blue one."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "custa / esse / quanto / ?",
+        "experimentar / posso / ?",
+        "levar / azul / vou / a",
+        "cartão / aceita / ?",
+        "olhando / estou / só"
+      ]
+    }
+  ],
+  "answers": [
+    "Essa — Esse — Aquela — isso — Aqueles — isso",
+    "branca — vermelhos — pretas — azul — verdes — rosa",
+    "Quanto custa esse? — Posso experimentar? — Onde fica o provador? — Tem em outro tamanho? — Caro demais. — Vou levar a azul.",
+    "Quanto custa esse? — Posso experimentar? — Vou levar a azul. — Aceita cartão? — Só estou olhando."
+  ]
+}

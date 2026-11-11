@@ -1,0 +1,576 @@
+{
+  "title": "At the café: ordering without pointing",
+  "title_target": "У кафе — U kafe",
+  "goal": "Order food and drinks in full sentences, ask for the bill, and meet the fourth case (знахідний, the accusative) — the case that marks what you want, drink, and eat.",
+  "bekal": [
+    "order with Мені, будь ласка",
+    "put nouns into the знахідний",
+    "ask for something with or without (з / без)",
+    "ask for the bill and pay",
+    "read a Ukrainian café menu"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — A first order, no pointing",
+      "intro": "Ani and Andriy sit down in a café in the city center. Notice that every item ordered changes its ending: кава becomes каву, вода becomes воду — while чай and борщ don't change at all.",
+      "lines": [
+        {
+          "speaker": "Офіціантка:",
+          "text": "[Доброго|DOB-ro-ho] [дня|dnya]! [Що|Shcho] [ви|vi] [будете|BOO-deh-teh]?",
+          "id": "Good afternoon! What can I get you?",
+          "literal": "good day! what — you — will-be (having)?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Мені|Meh-NEE], [будь|bood'] [ласка|LAS-ka], [каву|KA-voo] [і|ee] [воду|VO-doo].",
+          "id": "A coffee and a water for me, please.",
+          "literal": "to-me, be — kindness, coffee (знахідний) — and — water (знахідний)."
+        },
+        {
+          "speaker": "Офіціантка:",
+          "text": "[Каву|KA-voo] [з|z] [молоком|mo-lo-KOM] [чи|chi] [без|bez]?",
+          "id": "Coffee with milk or without?",
+          "literal": "coffee — with — milk (орудний) — or — without?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Без|Bez] [молока|mo-lo-KA], [але|A-leh] [з|z] [цукром|TSOOK-rom].",
+          "id": "No milk, but with sugar.",
+          "literal": "without — milk (родовий), but — with — sugar (орудний)."
+        },
+        {
+          "speaker": "Офіціантка:",
+          "text": "[А|A] [ви|vi]?",
+          "id": "And for you?",
+          "literal": "and — you?"
+        },
+        {
+          "speaker": "Андрій:",
+          "text": "[Мені|Meh-NEE] [чай|chai] [і|ee] [борщ|borshch].",
+          "id": "Tea and borscht for me.",
+          "literal": "to-me — tea — and — borscht."
+        },
+        {
+          "speaker": "Офіціантка:",
+          "text": "[Борщ|Borshch] [зі|zee] [сметаною|smeh-TA-no-yoo]?",
+          "id": "Borscht with sour cream?",
+          "literal": "borscht — with — sour-cream (орудний)?"
+        },
+        {
+          "speaker": "Андрій:",
+          "text": "[Так|Tak], [будь|bood'] [ласка|LAS-ka]. [І|EE] [хліб|khleeb].",
+          "id": "Yes, please. And some bread.",
+          "literal": "yes, be — kindness. and — bread."
+        },
+        {
+          "speaker": "Офіціантка:",
+          "text": "[Щось|Shchos'] [на|na] [десерт|deh-SERT]?",
+          "id": "Anything for dessert?",
+          "literal": "something — for — dessert?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Так|Tak], [одне|od-NEH] [морозиво|mo-RO-zi-vo]. [І|EE] [рахунок|ra-KHOO-nok] [разом|RA-zom], [будь|bood'] [ласка|LAS-ka].",
+          "id": "Yes, one ice cream. And one bill for both of us, please.",
+          "literal": "yes, one (n) — ice-cream. and — bill — together, be — kindness."
+        },
+        {
+          "speaker": "Офіціантка:",
+          "text": "[Добре|DOB-reh]. [Хвилинку|Khvi-LIN-koo].",
+          "id": "Sure. Just a moment.",
+          "literal": "good. a-little-minute (знахідний)."
+        },
+        {
+          "speaker": "Андрій:",
+          "text": "[Смачного|Smach-NO-ho]!",
+          "id": "Enjoy your meal!",
+          "literal": "tasty (родовий)!"
+        }
+      ],
+      "notes": [
+        "**Мені, будь ласка — the safest ordering formula.** Literally \"to me, please\". The verb is dropped entirely, so you don't have to choose between *хочу* (I want), *буду* (I'll have), or *візьму* (I'll take). Every server in Ukraine understands it.",
+        "**Що ви будете? literally means \"what will you be?\"** The verb is left hanging without an object — much like English \"What'll it be?\". The most natural answer follows the same shape: *Я буду каву* (I'll have a coffee).",
+        "**What you order goes into the знахідний, which means its ending changes — sometimes.** Feminine nouns in **-а** switch to **-у**: *кава* → *каву*, *вода* → *воду*, *піца* → *піцу*. Inanimate masculine nouns and neuter nouns **don't change at all**: *чай*, *борщ*, *хліб*, *молоко*, *морозиво*.",
+        "**That's why the знахідний often feels invisible.** Half the nouns you'll order happen not to change shape. Don't be fooled — the case is still there, and it becomes very real as soon as you talk about someone alive (Unit 13) or a direction (Unit 13 too).",
+        "**З takes the орудний, без takes the родовий.** *З молоком* (with milk), *без молока* (without milk) — the same word with two different endings. This pair comes up with every coffee order in Ukraine, so it's worth learning whole: *з цукром / без цукру*, *зі сметаною / без сметани*.",
+        "**Смачного isn't literally \"enjoy your meal\".** It's a fragment of \"(I wish you something) tasty\", which is why it's in the родовий. You say it to someone about to eat — servers say it as they bring the plate, and friends say it before the first bite.",
+        "**Рахунок разом or окремо.** *Разом* = together, *окремо* = separately. Paying separately is very common in Ukraine and not considered stingy at all. The full sentence: *Рахунок, будь ласка, окремо.*"
+      ],
+      "grammars": [
+        {
+          "title": "Знахідний: what you want",
+          "body": [
+            "This case marks the target of an action — whatever is eaten, drunk, read, seen, or ordered."
+          ],
+          "table": {
+            "head": [
+              "Dictionary form",
+              "Gender",
+              "Знахідний form",
+              "Example"
+            ],
+            "rows": [
+              [
+                "кава",
+                "f -а",
+                "каву",
+                "Я хочу каву."
+              ],
+              [
+                "вода",
+                "f -а",
+                "воду",
+                "Я п'ю воду."
+              ],
+              [
+                "піца",
+                "f -а",
+                "піцу",
+                "Я їм піцу."
+              ],
+              [
+                "книга",
+                "f -а",
+                "книгу",
+                "Я читаю книгу."
+              ],
+              [
+                "кухня",
+                "f -я",
+                "кухню",
+                "Я бачу кухню."
+              ],
+              [
+                "чай",
+                "m inanimate",
+                "чай",
+                "Я п'ю чай."
+              ],
+              [
+                "борщ",
+                "m inanimate",
+                "борщ",
+                "Я їм борщ."
+              ],
+              [
+                "хліб",
+                "m inanimate",
+                "хліб",
+                "Я купую хліб."
+              ],
+              [
+                "молоко",
+                "neuter",
+                "молоко",
+                "Я п'ю молоко."
+              ],
+              [
+                "морозиво",
+                "neuter",
+                "морозиво",
+                "Я люблю морозиво."
+              ],
+              [
+                "брат",
+                "m animate",
+                "брата",
+                "Я бачу брата."
+              ]
+            ]
+          },
+          "after": [
+            "The last row is an important exception: **animate masculine nouns use the родовий form**, not the dictionary form. *Я бачу брата*, not *Я бачу брат*. This applies to people and animals."
+          ]
+        },
+        {
+          "title": "З and без: two prepositions that come as a pair",
+          "body": [],
+          "table": {
+            "head": [
+              "With (з + орудний)",
+              "Without (без + родовий)",
+              "English"
+            ],
+            "rows": [
+              [
+                "з молоком",
+                "без молока",
+                "with / without milk"
+              ],
+              [
+                "з цукром",
+                "без цукру",
+                "with / without sugar"
+              ],
+              [
+                "зі сметаною",
+                "без сметани",
+                "with / without sour cream"
+              ],
+              [
+                "з лимоном",
+                "без лимона",
+                "with / without lemon"
+              ],
+              [
+                "з газом",
+                "без газу",
+                "sparkling / still"
+              ],
+              [
+                "з м'ясом",
+                "без м'яса",
+                "with / without meat"
+              ]
+            ]
+          },
+          "after": [
+            "If you forget the ending, the lifesaver that's always understood is **Без молока, будь ласка** — two words and a polite request are enough."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Діалог — Paying",
+      "intro": "Four lines that close every visit to a café.",
+      "lines": [
+        {
+          "speaker": "Ані:",
+          "text": "[Рахунок|Ra-KHOO-nok], [будь|bood'] [ласка|LAS-ka].",
+          "id": "The bill, please.",
+          "literal": "bill, be — kindness."
+        },
+        {
+          "speaker": "Офіціантка:",
+          "text": "[Разом|RA-zom] [чи|chi] [окремо|o-KREH-mo]?",
+          "id": "Together or separately?",
+          "literal": "together — or — separately?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Окремо|O-KREH-mo], [будь|bood'] [ласка|LAS-ka]. [Карткою|KART-ko-yoo] [можна|MOZH-na]?",
+          "id": "Separately, please. Can I pay by card?",
+          "literal": "separately, be — kindness. by-card — allowed?"
+        },
+        {
+          "speaker": "Офіціантка:",
+          "text": "[Звичайно|Zvi-CHAI-no]. [Дякую|DYA-koo-yoo], [смачного|smach-NO-ho]!",
+          "id": "Of course. Thank you, enjoy!",
+          "literal": "of-course. I-thank, tasty!"
+        }
+      ],
+      "notes": [
+        "**Карткою — by card, in the орудний.** Tools always take this case: *плачу карткою* (I pay by card), *плачу готівкою* (I pay cash), *пишу ручкою* (I write with a pen).",
+        "**Можна? One word, one complete question.** It means \"may I?\" and works on its own in almost any situation: pointing at an empty chair, at a door, at your card. The opposite is **не можна** (not allowed)."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Reading a Ukrainian café menu",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Українська",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "кава",
+              "KA-va",
+              "coffee"
+            ],
+            [
+              "чай",
+              "chai",
+              "tea"
+            ],
+            [
+              "вода",
+              "vo-DA",
+              "water"
+            ],
+            [
+              "сік",
+              "seek",
+              "juice"
+            ],
+            [
+              "пиво",
+              "PI-vo",
+              "beer"
+            ],
+            [
+              "борщ",
+              "borshch",
+              "borscht (red beet soup)"
+            ],
+            [
+              "суп",
+              "soop",
+              "soup"
+            ],
+            [
+              "вареники",
+              "va-REH-ni-ki",
+              "boiled dumplings with potato or cheese"
+            ],
+            [
+              "деруни",
+              "deh-roo-NI",
+              "grated potato pancakes"
+            ],
+            [
+              "сирники",
+              "SIR-ni-ki",
+              "soft-cheese pancakes"
+            ],
+            [
+              "салат",
+              "sa-LAT",
+              "salad"
+            ],
+            [
+              "хліб",
+              "khleeb",
+              "bread"
+            ],
+            [
+              "м'ясо",
+              "MYA-so",
+              "meat"
+            ],
+            [
+              "курка",
+              "KOOR-ka",
+              "chicken"
+            ],
+            [
+              "риба",
+              "RI-ba",
+              "fish"
+            ],
+            [
+              "картопля",
+              "kar-TOP-lya",
+              "potatoes"
+            ],
+            [
+              "сметана",
+              "smeh-TA-na",
+              "sour cream"
+            ],
+            [
+              "морозиво",
+              "mo-RO-zi-vo",
+              "ice cream"
+            ],
+            [
+              "цукор",
+              "TSOO-kor",
+              "sugar"
+            ],
+            [
+              "сіль",
+              "seel'",
+              "salt"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three dishes you'll be offered",
+          "items": [
+            "**Борщ** — red beet soup with meat and vegetables, served hot with **сметана** and garlic. It's the national dish, and turning it down in someone's home is not a wise move.",
+            "**Вареники** — boiled dumplings filled with potato, soft cheese, cabbage, or cherries. The cherry ones (*з вишнями*) are a dessert, not a main course.",
+            "**Деруни** — fried grated-potato pancakes, almost always served with сметана. If you like hash browns or latkes, this is the Ukrainian dish that will feel familiar fastest.",
+            "⚠️ If you don't eat meat: **Я не їм м'яса** (родовий after a negative). To double-check: *Це без м'яса?*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uk": "кафе",
+      "baca": "ka-FEH",
+      "en": "café"
+    },
+    {
+      "uk": "ресторан",
+      "baca": "res-to-RAN",
+      "en": "restaurant"
+    },
+    {
+      "uk": "офіціант",
+      "baca": "o-fee-tsee-ANT",
+      "en": "waiter"
+    },
+    {
+      "uk": "меню",
+      "baca": "meh-NYOO",
+      "en": "menu"
+    },
+    {
+      "uk": "рахунок",
+      "baca": "ra-KHOO-nok",
+      "en": "bill, check"
+    },
+    {
+      "uk": "разом",
+      "baca": "RA-zom",
+      "en": "together"
+    },
+    {
+      "uk": "окремо",
+      "baca": "o-KREH-mo",
+      "en": "separately"
+    },
+    {
+      "uk": "картка",
+      "baca": "KART-ka",
+      "en": "card"
+    },
+    {
+      "uk": "готівка",
+      "baca": "ho-TEEV-ka",
+      "en": "cash"
+    },
+    {
+      "uk": "можна",
+      "baca": "MOZH-na",
+      "en": "may I?, allowed"
+    },
+    {
+      "uk": "звичайно",
+      "baca": "zvi-CHAI-no",
+      "en": "of course"
+    },
+    {
+      "uk": "хвилинку",
+      "baca": "khvi-LIN-koo",
+      "en": "just a moment"
+    },
+    {
+      "uk": "смачного",
+      "baca": "smach-NO-ho",
+      "en": "enjoy your meal"
+    },
+    {
+      "uk": "смачно",
+      "baca": "SMACH-no",
+      "en": "tasty, delicious"
+    },
+    {
+      "uk": "хотіти",
+      "baca": "kho-TEE-ti",
+      "en": "to want"
+    },
+    {
+      "uk": "замовити",
+      "baca": "za-MO-vi-ti",
+      "en": "to order"
+    },
+    {
+      "uk": "платити",
+      "baca": "pla-TI-ti",
+      "en": "to pay"
+    },
+    {
+      "uk": "з",
+      "baca": "z",
+      "en": "with"
+    },
+    {
+      "uk": "без",
+      "baca": "bez",
+      "en": "without"
+    },
+    {
+      "uk": "щось",
+      "baca": "shchos'",
+      "en": "something"
+    },
+    {
+      "uk": "десерт",
+      "baca": "deh-SERT",
+      "en": "dessert"
+    },
+    {
+      "uk": "сніданок",
+      "baca": "snee-DA-nok",
+      "en": "breakfast"
+    },
+    {
+      "uk": "обід",
+      "baca": "o-BEED",
+      "en": "lunch"
+    },
+    {
+      "uk": "вечеря",
+      "baca": "veh-CHEH-rya",
+      "en": "dinner"
+    },
+    {
+      "uk": "гарячий",
+      "baca": "ha-RYA-chiy",
+      "en": "hot"
+    },
+    {
+      "uk": "холодний",
+      "baca": "kho-LOD-niy",
+      "en": "cold"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the correct знахідний form.",
+      "items": [
+        "Я хочу ____ (кава).",
+        "Я п'ю ____ (вода).",
+        "Він їсть ____ (борщ).",
+        "Ми хочемо ____ (піца).",
+        "Вона любить ____ (морозиво)."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with з or без. Look at the ending of the next word.",
+      "items": [
+        "Каву ____ молоком.",
+        "Чай ____ цукру.",
+        "Борщ ____ сметаною.",
+        "Вода ____ газу.",
+        "Хліб ____ маслом."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "будь ласка / каву / мені",
+        "ви / що / будете",
+        "рахунок / будь ласка",
+        "борщ / хочу / я",
+        "смачно / це / дуже"
+      ]
+    },
+    {
+      "prompt": "Translate into Ukrainian.",
+      "items": [
+        "Good afternoon! What can I get you?",
+        "I'd like a coffee, no milk.",
+        "Tea with sugar, please.",
+        "The bill, please.",
+        "Enjoy your meal!"
+      ]
+    }
+  ],
+  "answers": [
+    "каву — воду — борщ — піцу — морозиво",
+    "з — без — з — без — з",
+    "Мені каву, будь ласка. — Що ви будете? — Рахунок, будь ласка. — Я хочу борщ. — Це дуже смачно.",
+    "Доброго дня! Що ви будете? — Я хочу каву, без молока. — Чай з цукром, будь ласка. — Рахунок, будь ласка. — Смачного!"
+  ],
+  "wave": "Review Unit 6. The sentence *Тато готує вечерю* uses the знахідний you learned today — *вечеря* becomes *вечерю*."
+}

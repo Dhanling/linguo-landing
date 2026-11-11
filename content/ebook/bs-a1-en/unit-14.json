@@ -1,0 +1,538 @@
+{
+  "title": "What did you do yesterday? — the past tense",
+  "title_target": "Šta si radio jučer?",
+  "goal": "Talk about what has already happened — and accept one fact that English never forces on you: the Bosnian past tense reveals the speaker's gender.",
+  "bekal": [
+    "forming the perfect with *sam/si/je* + a form ending in *-o / -la / -li*",
+    "negating and asking in the past: *nisam radio*, *jesi li radio?*",
+    "stringing a short story together with *prvo, onda, poslije toga, na kraju*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Šta si radio jučer?",
+      "intro": "Monday morning. Amina sets a coffee on Budi's desk with a look that demands an explanation.",
+      "lines": [
+        {
+          "speaker": "Amina:",
+          "text": "Budi, gdje si bio jučer? Zvala sam te dva puta.",
+          "id": "Budi, where were you yesterday? I called you twice.",
+          "literal": "Budi, where you-are been-m yesterday? called-f I-am you-acc two time-gen."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Izvini! Bio sam na Trebeviću cijeli dan.",
+          "id": "Sorry! I was up on Trebević all day.",
+          "literal": "sorry! been-m I-am on Trebević-loc whole-acc day."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Sam? Nisi valjda išao sam?",
+          "id": "Alone? Don't tell me you went alone?",
+          "literal": "alone-m? you-are-not surely gone-m alone-m?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ne, išao sam s Emirom. Vozili smo se žičarom.",
+          "id": "No, I went with Emir. We took the cable car.",
+          "literal": "no, gone-m I-am with Emir-ins. ridden-pl we-are self cable-car-ins."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "I? Kako je bilo?",
+          "id": "And? How was it?",
+          "literal": "and? how it-is been-n?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Prelijepo. Vidjeli smo cijeli grad odozgo.",
+          "id": "Gorgeous. We saw the whole city from above.",
+          "literal": "very-beautiful. seen-pl we-are whole-acc city from-above."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Jeste li nešto jeli tamo?",
+          "id": "Did you eat anything up there?",
+          "literal": "you-pl-are whether something eaten-pl there?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jesmo. Jeli smo pitu i pili čaj. Emir je platio sve.",
+          "id": "We did. We had pita and drank tea. Emir paid for everything.",
+          "literal": "we-are. eaten-pl we-are pita-acc and drunk-pl tea-acc. Emir he-is paid-m all."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "A zašto se nisi javio?",
+          "id": "So why didn't you get in touch?",
+          "literal": "and why self you-are-not got-in-touch-m?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Baterija mi se ispraznila. Nisam imao signal.",
+          "id": "My battery died. I had no signal.",
+          "literal": "battery to-me self emptied-f. I-am-not had-m signal-acc."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Ah, dobro. Mislila sam da si zaboravio na sastanak.",
+          "id": "Oh, OK. I thought you'd forgotten about the meeting.",
+          "literal": "ah, good. thought-f I-am that you-are forgotten-m on meeting-acc."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nisam zaboravio! Došao sam tačno u deset i petnaest.",
+          "id": "I didn't forget! I came at a quarter past ten on the dot.",
+          "literal": "I-am-not forgotten-m! come-m I-am exactly at ten and fifteen."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Znam, šalim se. Bio si tačan kao sat.",
+          "id": "I know, I'm joking. You were as punctual as a clock.",
+          "literal": "I-know, I-joke self. been-m you-are punctual-m like clock."
+        }
+      ],
+      "notes": [
+        "**Notice that Amina says *zvala sam* and *mislila sam*, while Budi says *bio sam* and *došao sam*.** The Bosnian past tense reveals the speaker's gender, and there's no way around it. English never makes you state this, so it may be the strangest thing in the whole course. The easiest way to get used to it: practice your own stories, in the form that fits you, until it comes out automatically.",
+        "***Nisam zaboravio* — the negative uses *nisam*, not *ne sam*.** The formula is exactly the same as for ordinary sentences, only the helping verb is swapped: *sam radio* → *nisam radio*. And questions use the long form: *Jesi li radio?* is answered *Jesam* or *Nisam*.",
+        "***Zašto se nisi javio?* — two little words in a row.** *Se* and *nisi* both compete for second place, and their order follows the table in Unit 12: helping verb first, then *se*. Here *zašto* takes first place.",
+        "***Emir je platio* — but *baterija mi se ispraznila*, without *je*.** In the third person singular, *je* is **dropped** when the sentence already has *se*. *On se vratio*, not *on se je vratio*. In all other forms the two live side by side: *ja sam se vratio*.",
+        "**Trebević.** The mountain south of Sarajevo, home to a cable car (*žičara*) built in 1959, destroyed in the war and reopened in 2018 — now a symbol of the city's recovery. On top still lies the bobsleigh track from the 1984 Winter Olympics, overgrown with moss and covered in graffiti. Go up toward late afternoon; from there the whole Sarajevo valley spreads out like a map."
+      ],
+      "grammars": [
+        {
+          "title": "The perfect — the formula",
+          "body": [
+            "The only past tense you need at A1, and it does everything: \"I worked yesterday\", \"I have worked\", \"I've ever worked\". The formula has two parts: **the short form of the helping verb *biti* + the verb's *-o / -la* form**."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Helper",
+              "Male speaker",
+              "Female speaker",
+              "Negative"
+            ],
+            "rows": [
+              [
+                "**ja**",
+                "*sam*",
+                "*radio sam*",
+                "*radila sam*",
+                "*nisam radio / radila*"
+              ],
+              [
+                "**ti**",
+                "*si*",
+                "*radio si*",
+                "*radila si*",
+                "*nisi radio / radila*"
+              ],
+              [
+                "**on / ona**",
+                "*je*",
+                "*radio je*",
+                "*radila je*",
+                "*nije radio / radila*"
+              ],
+              [
+                "**mi**",
+                "*smo*",
+                "*radili smo*",
+                "*radile smo*",
+                "*nismo radili / radile*"
+              ],
+              [
+                "**vi**",
+                "*ste*",
+                "*radili ste*",
+                "*radile ste*",
+                "*niste radili / radile*"
+              ],
+              [
+                "**oni / one**",
+                "*su*",
+                "*radili su*",
+                "*radile su*",
+                "*nisu radili / radile*"
+              ]
+            ]
+          },
+          "after": [
+            "**The plural has two forms: *-li* and *-le*.** *-li* is used for groups of men **and** mixed groups — so one man among ten women is enough to change the whole sentence. *-le* only when everyone is female. (There's also *-la* for the neuter plural, but you'll hardly ever need it.)",
+            "**The helping verb is still a little word**, so it obeys the second-place rule: *Radio sam* (verb in front) or *Ja sam radio*, but **never** *Sam radio*. In the negative the order is actually freer, because *nisam* isn't a little word: *Nisam radio* can start a sentence.",
+            "**Asking:** *Jesi li radio?* or *Da li si radio?* Short answers use the long form: *Jesam* / *Nisam*. It's exactly the same pattern as in Unit 1, just with a verb added at the end.",
+            "**One tense, three meanings.** In the past, Bosnian doesn't distinguish \"I worked\", \"I was working\" and \"I have worked\" — they're all *radio sam*. If you need to stress that the work was finished, what changes is **the verb**, not the tense: *uradio sam*. That's *vid* (aspect), and it's the topic of the next unit."
+          ]
+        },
+        {
+          "title": "Building the -o / -la form",
+          "body": [
+            "Drop *-ti* from the dictionary form, then add the ending. Only about ten verbs need to be learned separately — and they're all verbs you use every day."
+          ],
+          "table": {
+            "head": [
+              "Dictionary form",
+              "m",
+              "f",
+              "plural",
+              "Note"
+            ],
+            "rows": [
+              [
+                "*raditi*",
+                "*radio*",
+                "*radila*",
+                "*radili*",
+                "regular"
+              ],
+              [
+                "*pisati*",
+                "*pisao*",
+                "*pisala*",
+                "*pisali*",
+                "regular"
+              ],
+              [
+                "*piti*",
+                "*pio*",
+                "*pila*",
+                "*pili*",
+                "regular"
+              ],
+              [
+                "*govoriti*",
+                "*govorio*",
+                "*govorila*",
+                "*govorili*",
+                "regular"
+              ],
+              [
+                "**biti**",
+                "*bio*",
+                "*bila*",
+                "*bili*",
+                "learn by heart"
+              ],
+              [
+                "**ići**",
+                "*išao*",
+                "*išla*",
+                "*išli*",
+                "learn by heart"
+              ],
+              [
+                "**doći**",
+                "*došao*",
+                "*došla*",
+                "*došli*",
+                "learn by heart"
+              ],
+              [
+                "**jesti**",
+                "*jeo*",
+                "*jela*",
+                "*jeli*",
+                "learn by heart"
+              ],
+              [
+                "**reći**",
+                "*rekao*",
+                "*rekla*",
+                "*rekli*",
+                "learn by heart"
+              ],
+              [
+                "**moći**",
+                "*mogao*",
+                "*mogla*",
+                "*mogli*",
+                "learn by heart"
+              ],
+              [
+                "**htjeti**",
+                "*htio*",
+                "*htjela*",
+                "*htjeli*",
+                "learn by heart"
+              ]
+            ]
+          },
+          "after": [
+            "**The pattern: drop *-ti*, then add *-o* (m), *-la* (f), *-lo* (n), *-li / -le* (pl).** *Radi-ti → radi-o, radi-la.* Simple, and it works for most verbs.",
+            "**If the stem ends in a consonant, an *-a-* is slipped in before *-o*:** *rek- → rekao*, *mog- → mogao*, *doš- → došao*, *iš- → išao*. Note that the extra vowel appears **only** in the masculine form: *rekao* but *rekla*, *mogao* but *mogla*, *išao* but *išla*. This is the main source of confusion, and the only cure is to say both forms as a pair from the start.",
+            "**Verbs with *se* keep their *se*:** *vratio sam se*, *odmarala sam se*, *nismo se javili*. It stays in second place together with the helping verb.",
+            "**One habit that pays off:** every time you note down a new verb, write three forms, not one — the *ja* form (*radim*), the dictionary form (*raditi*) and the masculine past form (*radio*). From those three, every other form can be worked out without guessing."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Jučer — telling what's already happened",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Telling a story takes two things: time markers so the listener knows when, and linking words so the order is clear. Both are in this table, and you can use both as they are."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Past time markers",
+            "English",
+            "Story linkers",
+            "English"
+          ],
+          "rows": [
+            [
+              "*jučer*",
+              "yesterday",
+              "*prvo*",
+              "first"
+            ],
+            [
+              "*prekjučer*",
+              "the day before yesterday",
+              "*onda / zatim*",
+              "then, next"
+            ],
+            [
+              "*sinoć*",
+              "last night",
+              "*poslije toga*",
+              "after that"
+            ],
+            [
+              "*jutros*",
+              "this morning",
+              "*na kraju*",
+              "in the end"
+            ],
+            [
+              "*prošle sedmice*",
+              "last week",
+              "*zato*",
+              "so, that's why"
+            ],
+            [
+              "*prošlog mjeseca*",
+              "last month",
+              "*ali*",
+              "but"
+            ],
+            [
+              "*prošle godine*",
+              "last year",
+              "*jer*",
+              "because"
+            ],
+            [
+              "*prije dva dana*",
+              "two days ago",
+              "*iako*",
+              "although"
+            ],
+            [
+              "*nekad / ranije*",
+              "once, before",
+              "*i*",
+              "and"
+            ],
+            [
+              "*cijeli dan*",
+              "all day",
+              "*pa*",
+              "then (casual)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One four-sentence story using them all: *Jučer sam bio na Trebeviću. **Prvo** smo se vozili žičarom, **onda** smo šetali, **poslije toga** smo jeli pitu. **Na kraju** sam se vratio kući u osam, **ali** baterija mi se ispraznila, **zato** se nisam javio.* That's what A1 storytelling looks like — short, in order, and enough to keep a conversation going for five minutes."
+        },
+        {
+          "type": "kotak",
+          "title": "Two other past tenses you'll see — and can ignore",
+          "items": [
+            "The **aorist** (*rekoh, dođoh, bi*) and the **imperfect** (*bijah, govorah*) do exist in Bosnian, but they're almost entirely limited to literature, folk tales and old-fashioned storytelling. In everyday conversation, the perfect does everything.",
+            "The only truly living remnants of the aorist: ***bi*** in conditional sentences (*Da mogu, bih došao* — if I could, I would come) and ***rekoh***, which sometimes pops up as a storytelling flourish. Recognizing them is enough; you don't need to produce them until B1."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 12",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Bosnian column, read the English, and rebuild the sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Bosanski"
+          ],
+          "rows": [
+            [
+              "I get up at six, shower, then drink coffee.",
+              "*Ustajem u šest, tuširam se, pa pijem kafu.*"
+            ],
+            [
+              "I go home at five.",
+              "*Vraćam se kući u pet.*"
+            ],
+            [
+              "On Mondays I go to class.",
+              "*Ponedjeljkom idem na kurs.*"
+            ],
+            [
+              "On Saturdays I sleep in.",
+              "*Subotom spavam dugo.*"
+            ],
+            [
+              "Sometimes I walk along the river.",
+              "*Ponekad se šetam pored rijeke.*"
+            ],
+            [
+              "You're never bored.",
+              "*Nikad ti nije dosadno.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bs": "biti — *bio / bila*",
+      "baca": "BEE-tee",
+      "en": "be (past)"
+    },
+    {
+      "bs": "ići — *išao / išla*",
+      "baca": "EE-chee",
+      "en": "go (past)"
+    },
+    {
+      "bs": "doći — *došao / došla*",
+      "baca": "DOH-chee",
+      "en": "come (past)"
+    },
+    {
+      "bs": "reći — *rekao / rekla*",
+      "baca": "REH-chee",
+      "en": "say (past)"
+    },
+    {
+      "bs": "jučer / sinoć",
+      "baca": "YOO-chehr / SEE-nohch",
+      "en": "yesterday / last night"
+    },
+    {
+      "bs": "prošle sedmice",
+      "baca": "PROHSH-leh SEHD-mee-tseh",
+      "en": "last week"
+    },
+    {
+      "bs": "prije dva dana",
+      "baca": "PREE-yeh dvah DAH-nah",
+      "en": "two days ago"
+    },
+    {
+      "bs": "cijeli dan",
+      "baca": "TSEE-yeh-lee dahn",
+      "en": "all day"
+    },
+    {
+      "bs": "prvo / onda",
+      "baca": "PR-voh / OHN-dah",
+      "en": "first / then"
+    },
+    {
+      "bs": "poslije toga",
+      "baca": "POHS-lyeh TOH-gah",
+      "en": "after that"
+    },
+    {
+      "bs": "na kraju",
+      "baca": "nah KRAH-yoo",
+      "en": "in the end"
+    },
+    {
+      "bs": "jer / zato",
+      "baca": "yehr / ZAH-toh",
+      "en": "because / so, that's why"
+    },
+    {
+      "bs": "žičara (f)",
+      "baca": "ZHEE-chah-rah",
+      "en": "cable car"
+    },
+    {
+      "bs": "voziti se — *vozim se*",
+      "baca": "VOH-zee-tee seh",
+      "en": "ride, travel (by vehicle)"
+    },
+    {
+      "bs": "šaliti se — *šalim se*",
+      "baca": "SHAH-lee-tee seh",
+      "en": "joke"
+    },
+    {
+      "bs": "misliti — *mislim*",
+      "baca": "MEES-lee-tee",
+      "en": "think"
+    },
+    {
+      "bs": "odozgo / odozdo",
+      "baca": "oh-DOHZ-goh",
+      "en": "from above / from below"
+    },
+    {
+      "bs": "tačan / tačna",
+      "baca": "TAH-chahn",
+      "en": "punctual; correct"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Bosnian (male speaker).",
+      "items": [
+        "Where were you yesterday?",
+        "I was on Trebević all day.",
+        "I went with Emir.",
+        "We had pita and drank tea.",
+        "I didn't forget.",
+        "I came at ten on the dot."
+      ]
+    },
+    {
+      "prompt": "Change to the past tense (perfect).",
+      "items": [
+        "Radim u firmi. → ____ (male)",
+        "Ona pije kafu. → ____",
+        "Idemo na Baščaršiju. → ____",
+        "Jesi li umoran? → ____",
+        "Ne razumijem. → ____ (female)",
+        "On dolazi u deset. → ____",
+        "Mi se vraćamo kući. → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "jučer / si / gdje / bio / ?",
+        "sam / Trebeviću / na / bio",
+        "smo / pitu / jeli",
+        "zaboravio / nisam",
+        "je / sve / Emir / platio"
+      ]
+    }
+  ],
+  "answers": [
+    "Gdje si bio jučer? — Bio sam na Trebeviću cijeli dan. — Išao sam s Emirom. — Jeli smo pitu i pili čaj. — Nisam zaboravio. — Došao sam tačno u deset.",
+    "Radio sam u firmi. — Ona je pila kafu. — Išli smo na Baščaršiju. — Jesi li bio umoran? — Nisam razumjela. — On je došao u deset. — Vratili smo se kući.",
+    "Gdje si bio jučer? — Bio sam na Trebeviću. — Jeli smo pitu. — Nisam zaboravio. — Emir je platio sve."
+  ]
+}

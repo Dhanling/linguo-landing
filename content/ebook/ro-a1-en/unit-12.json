@@ -1,0 +1,570 @@
+{
+  "title": "By train to Brașov",
+  "title_target": "Cu trenul la Brașov",
+  "goal": "Buy tickets and ask questions at the station, and use object pronouns (*mă, te, îl, o…*) with the marker *pe* — Romanian's way of flagging that the person on the receiving end is a person.",
+  "bekal": [
+    "put object pronouns before the verb: *te aștept*, *îl cunosc*, *o văd*",
+    "mark a person object with *pe* and double it with a pronoun: *Îl cunosc pe Andrei. O aștept pe Ioana.*",
+    "conjugate *a merge*, *a veni*, *a pleca*, and name transport with *cu* + definite article: *cu trenul*, *cu metroul*, *pe jos*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — La Gara de Nord",
+      "intro": "Friday afternoon at the office, Ioana invites Budi on a trip to Brașov. On Saturday morning Budi is already standing at the ticket window at Gara de Nord.",
+      "lines": [
+        {
+          "speaker": "Ioana:",
+          "text": "Mâine merg la Brașov cu trenul. Vii și tu?",
+          "id": "Tomorrow I'm going to Brașov by train. Are you coming?",
+          "literal": "tomorrow I-go to brașov with train-the. you-come also you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sigur că vin! La ce oră pleacă trenul?",
+          "id": "Of course I'm coming! What time does the train leave?",
+          "literal": "sure that I-come! at what hour it-leaves train-the?"
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Pleacă la nouă și jumătate de la Gara de Nord. Te aștept la gară la nouă.",
+          "id": "It leaves at half past nine from Gara de Nord. I'll wait for you at the station at nine.",
+          "literal": "it-leaves at nine and half from station-the of north. you I-wait at station at nine."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bine. Poate să vină și Andrei, colegul meu de apartament? Îl cunoști pe Andrei?",
+          "id": "OK. Can Andrei, my roommate, come too? Do you know Andrei?",
+          "literal": "good. he-can that he-come also andrei, colleague-the my-m of apartment? him you-know pe andrei?"
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Da, îl cunosc. E foarte simpatic. Atunci vă aștept pe amândoi!",
+          "id": "Yes, I know him. He's really nice. Then I'll wait for you both!",
+          "literal": "yes, him I-know. he-is very nice. then you-pl I-wait pe both-m!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bună ziua! Un bilet dus-întors până la Brașov, vă rog.",
+          "id": "Good afternoon! One round-trip ticket to Brașov, please.",
+          "literal": "good-f day-the! a-m ticket gone-returned until to brașov, you I-ask."
+        },
+        {
+          "speaker": "Casieriță:",
+          "text": "Pentru trenul de nouă și jumătate? Nouăzeci și șase de lei, vă rog.",
+          "id": "For the half past nine train? Ninety-six lei, please.",
+          "literal": "for train-the of nine and half? ninety and six of lei, you I-ask."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Poftiți. De la ce peron pleacă?",
+          "id": "Here you are. Which platform does it leave from?",
+          "literal": "here-you-are-polite. from at what platform it-leaves?"
+        },
+        {
+          "speaker": "Casieriță:",
+          "text": "De la linia cinci. Aveți vagonul trei, locul patruzeci și doi.",
+          "id": "From track five. You're in car three, seat forty-two.",
+          "literal": "from at track-the five. you-have-polite car-the three, place-the forty and two."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mulțumesc. Trenul are întârziere?",
+          "id": "Thank you. Is the train late?",
+          "literal": "I-thank. train-the it-has delay?"
+        },
+        {
+          "speaker": "Casieriță:",
+          "text": "Nu, astăzi pleacă la timp. Călătorie plăcută!",
+          "id": "No, today it's leaving on time. Have a nice trip!",
+          "literal": "no, today it-leaves at time. trip pleasant-f!"
+        },
+        {
+          "speaker": "Andrei:",
+          "text": "Budi, repede! Ioana ne așteaptă pe peron.",
+          "id": "Budi, hurry! Ioana is waiting for us on the platform.",
+          "literal": "budi, quick! ioana us she-waits on platform."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "O văd! Ioana, venim acum!",
+          "id": "I see her! Ioana, we're coming now!",
+          "literal": "her I-see! ioana, we-come now!"
+        }
+      ],
+      "notes": [
+        "**Îl cunoști pe Andrei? — Andrei is mentioned twice.** Once through the pronoun *îl* before the verb, and again by name with the marker *pe*. To English ears this sounds redundant (\"him you know Andrei?\"), but to a Romanian a sentence without *îl* sounds lame. In the answer the pronoun alone is enough: *Da, îl cunosc.*",
+        "**Te aștept, vă aștept, ne așteaptă, o văd.** Object pronouns always stand **before** the verb — the opposite of \"I'm waiting for *you*\", \"I see *her*\". *Vă aștept pe amândoi*: *amândoi* = \"you both\" (for two women: *amândouă*), and since they are people, it also gets *pe*.",
+        "**Vii și tu?** For \"come along\" Romanian uses *a veni* (come): *Vii și tu?* — \"are you coming?\", *Sigur că vin!* — \"of course I'm coming!\". *A merge* is used when you just name the destination: *Merg la Brașov.*",
+        "**La ce oră…? De la ce peron…?** A preposition is never left at the end, as in English \"which platform from?\"; it always stands before the question word. *Peron* is where passengers stand, *linie* is the track — on station boards and announcements you'll see *linia 5* more often than *peronul 5*. Both are understood.",
+        "**Trenul de nouă și jumătate.** *De* + a time turns the time into a label: \"the half past nine train\". *Are întârziere* (literally \"has a delay\") and its opposite *la timp* (on time) are the two phrases you'll hear most at the station."
+      ],
+      "grammars": [
+        {
+          "title": "Accusative object pronouns and the marker pe",
+          "body": [
+            "In unit 8 you used *mă, te, se* for actions that come back to yourself. Object pronouns look almost the same — the difference is that they point at someone else: *mă aștepți* = \"you're waiting for me\". The only truly new ones are in the third person: **îl, o, îi, le**.",
+            "If the object is **a specific person** (a name, a relative, a pronoun), it gets the marker **pe**, and the pronoun still appears before the verb. This doubling is what makes a Romanian sentence sound Romanian."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Pronoun",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "eu",
+                "**mă**",
+                "Ioana **mă** așteaptă.",
+                "Ioana is waiting for me."
+              ],
+              [
+                "tu",
+                "**te**",
+                "**Te** aștept la gară.",
+                "I'll wait for you at the station."
+              ],
+              [
+                "el",
+                "**îl**",
+                "**Îl** cunosc pe Andrei.",
+                "I know Andrei."
+              ],
+              [
+                "ea",
+                "**o**",
+                "**O** aștept pe Ioana.",
+                "I'm waiting for Ioana."
+              ],
+              [
+                "noi",
+                "**ne**",
+                "Andrei **ne** ajută.",
+                "Andrei helps us."
+              ],
+              [
+                "voi / dumneavoastră",
+                "**vă**",
+                "**Vă** aștept pe amândoi.",
+                "I'll wait for you both."
+              ],
+              [
+                "ei",
+                "**îi**",
+                "**Îi** cunosc pe părinții tăi.",
+                "I know your parents."
+              ],
+              [
+                "ele",
+                "**le**",
+                "**Le** văd pe colegele mele.",
+                "I see my (female) coworkers."
+              ]
+            ]
+          },
+          "after": [
+            "**Things don't take *pe*:** *Aștept trenul. Cumpăr un bilet.* But once the thing has been mentioned, the pronoun is used alone and follows the word's gender: *Ai biletul? — Da, îl am.* · *Bei cafeaua? — Da, o beau.* Neuter words take *îl* in the singular and *le* in the plural.",
+            "**The golden rule of unit 6 still applies after *pe*:** a bare noun loses its article — *Îl aștept pe profesor* — but one with a modifier keeps it: *O aștept pe colega mea. Îi cunosc pe părinții tăi.* To ask: *Pe cine aștepți?* — \"Who are you waiting for?\" (no pronoun here).",
+            "**With *nu* and *să*** the pronoun still sits right before the verb: *Nu te văd. Vreau să te ajut.* In speech *îl* and *o* usually merge: *nu-l cunosc*, *n-o văd*, *să-l aștept*, *s-o aștept*; the full forms *nu îl*, *nu o* are also correct.",
+            "*O* has one quirk: in the past tense it moves **after** the verb (*am văzut-o*). That comes in unit 15; for now, in the present, everything goes in front."
+          ]
+        },
+        {
+          "title": "A merge, a veni, a pleca — and cu + transport",
+          "body": [
+            "Three verbs of motion that split the work neatly: *a merge* = go, head for a destination; *a veni* = come, toward the person you're talking to (or along with them); *a pleca* = leave, depart from a place."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "a merge (go)",
+              "a veni (come)",
+              "a pleca (leave)"
+            ],
+            "rows": [
+              [
+                "eu",
+                "**merg**",
+                "**vin**",
+                "**plec**"
+              ],
+              [
+                "tu",
+                "**mergi**",
+                "**vii**",
+                "**pleci**"
+              ],
+              [
+                "el / ea",
+                "**merge**",
+                "**vine**",
+                "**pleacă**"
+              ],
+              [
+                "noi",
+                "**mergem**",
+                "**venim**",
+                "**plecăm**"
+              ],
+              [
+                "voi",
+                "**mergeți**",
+                "**veniți**",
+                "**plecați**"
+              ],
+              [
+                "ei / ele",
+                "**merg**",
+                "**vin**",
+                "**pleacă**"
+              ]
+            ]
+          },
+          "after": [
+            "**Pleacă, așteaptă:** before the ending *-ă*, the *e* sound breaks into *ea* — *plec, pleci, **pleacă***; *aștept, aștepți, **așteaptă***. The third-person subjunctive (unit 11) goes back to *e*: *să plece, să aștepte*; and *să meargă, să vină*.",
+            "**The prepositions:** *merg **la** Brașov* (destination) · *plec **din** București* (from inside a city or room) · *trenul pleacă **de la** linia cinci, vin **de la** birou* (from a point). The partner verb is *a ajunge* (arrive): *Plecăm la nouă și jumătate și ajungem la Brașov la douăsprezece.*",
+            "**Transport = *cu* + definite article.** This is the exception to the golden rule mentioned in unit 6: after *cu* the article stays — *cu trenul, cu autobuzul, cu metroul, cu mașina*. The only one without *cu*: **pe jos** — on foot.",
+            "*A merge* is also used for things that \"run\": *Liftul nu merge* — \"the elevator is out of order\". And *Merge!* alone means \"OK, works for me!\""
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "At the station",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Română",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**casă de bilete** (f)",
+              "KAH-suh deh bee-LEH-teh",
+              "ticket office"
+            ],
+            [
+              "**bilet dus**",
+              "bee-LEHT doos",
+              "one-way ticket"
+            ],
+            [
+              "**bilet dus-întors**",
+              "bee-LEHT doos-în-TOHRS",
+              "round-trip ticket"
+            ],
+            [
+              "**peron** (n) · **linie** (f)",
+              "peh-ROHN · LEE-nee-yeh",
+              "platform · track"
+            ],
+            [
+              "**vagon** (n) · **loc** (n)",
+              "vah-GOHN · lohk",
+              "car · seat"
+            ],
+            [
+              "**întârziere** (f)",
+              "în-tîr-ZYEH-reh",
+              "delay"
+            ],
+            [
+              "**plecări** · **sosiri**",
+              "pleh-KUHR' · soh-SEER'",
+              "departures · arrivals"
+            ],
+            [
+              "**mersul trenurilor**",
+              "MEHR-sool TREH-noo-ree-lohr",
+              "train timetable"
+            ]
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "*Acesta este trenul de Brașov?* — Is this the train to Brașov?",
+            "*La ce oră ajunge trenul la Brașov?* — What time does the train get to Brașov?",
+            "*Trebuie să schimb trenul?* — Do I have to change trains?",
+            "*Locul acesta este liber?* — Is this seat free?",
+            "*Trenul are o întârziere de douăzeci de minute.* — The train is twenty minutes late."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Dus* means \"gone\" and *întors* \"returned\" — *dus-întors* is literally \"there-and-back\". *Mersul trenurilor* (literally \"the running of the trains\") contains a plural genitive that comes in unit 13; for now just memorize it whole as the heading on the timetable board."
+        },
+        {
+          "type": "kotak",
+          "title": "Taking the train in Romania",
+          "items": [
+            "State passenger trains are run by **CFR Călători**. The two types you'll meet most: **Regio (R)** — cheap, stopping at every small station — and **InterRegio (IR)** — faster, with the *vagon* and *loc* numbers printed on the ticket.",
+            "**Gara de Nord** is Bucharest's main station. The line to Brașov climbs the Prahova valley past Sinaia — the mountain town that is home to Peleș Castle — and the trip takes about two and a half to three hours.",
+            "Delays are nothing unusual, so get used to glancing at the *întârziere* column on the *plecări* board. The upside: the view of the Carpathians from the window makes an extra half hour fly by."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Transport: how do you get there?",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Vehicle",
+            "Say it",
+            "English",
+            "By… = cu + article"
+          ],
+          "rows": [
+            [
+              "**tren** (n)",
+              "trehn",
+              "train",
+              "cu trenul"
+            ],
+            [
+              "**autobuz** (n)",
+              "ah-oo-toh-BOOZ",
+              "bus",
+              "cu autobuzul"
+            ],
+            [
+              "**metrou** (n)",
+              "meh-TROHW",
+              "subway, metro",
+              "cu metroul"
+            ],
+            [
+              "**tramvai** (n)",
+              "trahm-VAI",
+              "tram",
+              "cu tramvaiul"
+            ],
+            [
+              "**taxi** (n)",
+              "tahk-SEE",
+              "taxi",
+              "cu taxiul"
+            ],
+            [
+              "**mașină** (f)",
+              "mah-SHEE-nuh",
+              "car",
+              "cu mașina"
+            ],
+            [
+              "**bicicletă** (f)",
+              "bee-chee-KLEH-tuh",
+              "bicycle",
+              "cu bicicleta"
+            ],
+            [
+              "**avion** (n)",
+              "ah-vee-OHN",
+              "plane",
+              "cu avionul"
+            ],
+            [
+              "—",
+              "peh zhohs",
+              "on foot",
+              "**pe jos**"
+            ]
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "*Cum mergi la birou? — Merg cu metroul.* — How do you get to the office? — By metro.",
+            "*Autobuzul vine în cinci minute.* — The bus is coming in five minutes.",
+            "*Doamna Popescu merge la piață pe jos.* — Mrs. Popescu walks to the market.",
+            "*Te aștept în stația de metrou.* — I'll wait for you at the metro station.",
+            "*Andrei pleacă la Cluj cu avionul; îl aștept pe fratele lui la gară.* — Andrei is flying to Cluj; I'm waiting for his brother at the station."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Getting around Bucharest",
+          "items": [
+            "*Metroul* is the fastest way across the city; buses, trams, and trolleybuses fill in above ground. *Stație* is used for stops and metro stations, while *gară* is only for train stations.",
+            "On buses and trams, your ticket or card must be **validated** in the little machine as soon as you board — *a valida biletul*. Inspectors (*controlor*) turn up often, and \"I didn't know\" won't save you from a fine."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 10",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Romanian column, read the English, then rebuild the sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Română"
+          ],
+          "rows": [
+            [
+              "I like Romanian music.",
+              "*Îmi place muzica românească.*"
+            ],
+            [
+              "Do you like movies? — Yes, I like them a lot.",
+              "*Îți plac filmele? — Da, îmi plac foarte mult.*"
+            ],
+            [
+              "What do you do in your free time?",
+              "*Ce faci în timpul liber?*"
+            ],
+            [
+              "I don't like soccer at all.",
+              "*Nu-mi place fotbalul deloc.*"
+            ],
+            [
+              "Andrei likes the mountains.",
+              "*Lui Andrei îi place muntele.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ro": "a merge (merg)",
+      "baca": "ah MEHR-jeh (mehrg)",
+      "en": "to go; to walk"
+    },
+    {
+      "ro": "a aștepta (aștept)",
+      "baca": "ah ahsh-tehp-TAH (ahsh-TEHPT)",
+      "en": "to wait (for)"
+    },
+    {
+      "ro": "a cunoaște (cunosc)",
+      "baca": "ah koo-NWAHSH-teh (koo-NOHSK)",
+      "en": "to know (a person)"
+    },
+    {
+      "ro": "a ajunge (ajung)",
+      "baca": "ah ah-ZHOON-jeh (ah-ZHOONG)",
+      "en": "to arrive, to get to"
+    },
+    {
+      "ro": "a schimba (schimb)",
+      "baca": "ah skeem-BAH (skeemb)",
+      "en": "to change; to exchange"
+    },
+    {
+      "ro": "tren, trenuri",
+      "baca": "trehn, TREH-noor'",
+      "en": "train (n)"
+    },
+    {
+      "ro": "peron, peroane",
+      "baca": "peh-ROHN, peh-RWAH-neh",
+      "en": "platform (n)"
+    },
+    {
+      "ro": "linie, linii",
+      "baca": "LEE-nee-yeh, LEE-neey",
+      "en": "track; line (f)"
+    },
+    {
+      "ro": "vagon, vagoane",
+      "baca": "vah-GOHN, vah-GWAH-neh",
+      "en": "railroad car (n)"
+    },
+    {
+      "ro": "loc, locuri",
+      "baca": "lohk, LOH-koor'",
+      "en": "place; seat (n)"
+    },
+    {
+      "ro": "întârziere, întârzieri",
+      "baca": "în-tîr-ZYEH-reh, în-tîr-ZYEHR'",
+      "en": "delay (f)"
+    },
+    {
+      "ro": "călătorie, călătorii",
+      "baca": "kuh-luh-toh-REE-yeh, kuh-luh-toh-REEY",
+      "en": "trip, journey (f)"
+    },
+    {
+      "ro": "autobuz, autobuze",
+      "baca": "ah-oo-toh-BOOZ, ah-oo-toh-BOO-zeh",
+      "en": "bus (n)"
+    },
+    {
+      "ro": "dus-întors",
+      "baca": "doos-în-TOHRS",
+      "en": "round-trip"
+    },
+    {
+      "ro": "amândoi, amândouă",
+      "baca": "ah-mîn-DOY, ah-mîn-DOH-wuh",
+      "en": "both (m, f)"
+    },
+    {
+      "ro": "la timp",
+      "baca": "lah teemp",
+      "en": "on time"
+    },
+    {
+      "ro": "pe jos",
+      "baca": "peh zhohs",
+      "en": "on foot"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Romanian.",
+      "items": [
+        "One round-trip ticket to Brașov, please.",
+        "What time does the train leave?",
+        "Which platform does it leave from?",
+        "I'll wait for you at the station.",
+        "Do you know Andrei?",
+        "Yes, I know him.",
+        "I'm waiting for Ioana."
+      ]
+    },
+    {
+      "prompt": "Fill in the right object pronoun.",
+      "items": [
+        "____ cunosc pe Andrei.",
+        "____ aștept pe Ioana.",
+        "Ioana ____ așteaptă pe peron. (us)",
+        "Budi, ____ aștept la gară. (you)",
+        "____ cunoști pe părinții mei?",
+        "____ văd pe colegele tale.",
+        "Doamnă Popescu, ____ aștept la opt. (you, polite)",
+        "Andrei ____ ajută la română. (me)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "pleacă / ce / trenul / la / oră / ?",
+        "peron / de / pleacă / ce / la / ?",
+        "aștept / gară / te / la",
+        "pe / cunoști / îl / andrei / ?",
+        "cu / mergem / brașov / trenul / la",
+        "pe / o / ioana / aștept"
+      ]
+    }
+  ],
+  "answers": [
+    "Un bilet dus-întors până la Brașov, vă rog. — La ce oră pleacă trenul? — De la ce peron pleacă? — Te aștept la gară. — Îl cunoști pe Andrei? — Da, îl cunosc. — O aștept pe Ioana.",
+    "Îl — O — ne — te — Îi — Le — vă — mă",
+    "La ce oră pleacă trenul? — De la ce peron pleacă? — Te aștept la gară. — Îl cunoști pe Andrei? — Mergem la Brașov cu trenul. — O aștept pe Ioana."
+  ]
+}

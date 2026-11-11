@@ -1,0 +1,540 @@
+{
+  "title": "How you travel, and who with",
+  "title_target": "Putujemo u Mostar",
+  "goal": "Plan a trip, buy tickets, and say how you're traveling and who with — using the instrumental, the last case you need at A1.",
+  "bekal": [
+    "forming the instrumental and using it for both tools and companions",
+    "answering *Čime ideš?* and *S kim ideš?*",
+    "buying a ticket and understanding basic station announcements"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Putujemo u Mostar",
+      "intro": "Thursday evening at the apartment. Emir closes his laptop and announces the weekend plan as if everyone had already agreed.",
+      "lines": [
+        {
+          "speaker": "Emir:",
+          "text": "Budi, hoćeš li s nama u Mostar u subotu?",
+          "id": "Budi, do you want to come with us to Mostar on Saturday?",
+          "literal": "Budi, you-want whether with us-ins to Mostar-acc on Saturday-acc?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Rado! Čime idemo, autom ili vozom?",
+          "id": "Gladly! How are we going, by car or by train?",
+          "literal": "gladly! with-what we-go, car-ins or train-ins?"
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Vozom. Putovanje traje oko dva sata i po.",
+          "id": "By train. The trip takes about two and a half hours.",
+          "literal": "train-ins. trip it-lasts about two hour-gen and half."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Super. A s kim još idemo?",
+          "id": "Great. And who else is coming?",
+          "literal": "great. and with whom-ins else we-go?"
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Sa mnom, s Aminom i s njenom sestrom.",
+          "id": "Me, Amina and her sister.",
+          "literal": "with me-ins, with Amina-ins and with her-ins-f sister-ins."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Treba li rezervisati karte?",
+          "id": "Do we need to book tickets?",
+          "literal": "it-needs whether book ticket-acc-pl?"
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Ne treba, kupujemo ih na stanici. Povratna karta je dvadeset maraka.",
+          "id": "No need, we buy them at the station. A return ticket is twenty marks.",
+          "literal": "not it-needs, we-buy them-acc at station-loc. return-f ticket it-is twenty mark-gen-pl."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A šta ćemo raditi tamo?",
+          "id": "And what are we going to do there?",
+          "literal": "and what we-will do there?"
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Šetat ćemo pored Starog mosta, jest ćemo ribu, plivati u Neretvi.",
+          "id": "We'll stroll by the Old Bridge, eat fish, swim in the Neretva.",
+          "literal": "stroll we-will beside Old-gen-m bridge-gen, eat we-will fish-acc, swim in Neretva-loc."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Neretva je hladna, zar ne?",
+          "id": "The Neretva is cold, isn't it?",
+          "literal": "Neretva it-is cold-f, isn't not?"
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Ledena! Ali vrijedi. Ponesi jaknu, uveče je svježe.",
+          "id": "Ice-cold! But it's worth it. Bring a jacket, it's chilly in the evening.",
+          "literal": "icy-f! but it-is-worth. bring jacket-acc, in-evening it-is chilly."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Važi. Kada se nalazimo?",
+          "id": "Deal. When are we meeting?",
+          "literal": "it-holds. when self we-meet?"
+        },
+        {
+          "speaker": "Emir:",
+          "text": "U sedam ispred stanice. S kartom i s dobrom voljom.",
+          "id": "Seven o'clock outside the station. With your ticket and a good attitude.",
+          "literal": "at seven in-front-of station-gen. with ticket-ins and with good-ins-f will-ins."
+        }
+      ],
+      "notes": [
+        "***Čime?* and *S kim?* are the two instrumental questions.** *Čime ideš?* = how are you getting there? *S kim ideš?* = who are you going with? The answers use the same form: *vozom*, *sa mnom*. You'll use these two questions all the time, and English needs several words for what each of them says in one.",
+        "**Tools without a preposition, companions with *s*.** *Idem vozom* (I'm going by train — no preposition) but *Idem s Emirom* (I'm going with Emir). It's a neat, easy-to-remember split: if you **use** the thing, it stands alone; if it **keeps you company**, it gets *s*.",
+        "***Sa mnom*, not *s mnom*.** The preposition *s* becomes *sa* before sounds that are hard to join: *sa mnom*, *sa sestrom*, *sa Šejlom*, *sa zetom*. The rule: before *s, š, z, ž*, and before *mnom*. When in doubt, *sa* is always understood.",
+        "***Šetat ćemo, jest ćemo*** are the future tense, covered fully in Unit 19. The formula is *ću / ćeš / će…* + dictionary form, with the *-i* of the dictionary form cut off when it comes first. For now, just recognize the pattern.",
+        "**Mostar and Stari Most.** An arched stone bridge built by the Ottoman architect Mimar Hayruddin in 1566, destroyed in 1993 and rebuilt with stone from the same quarry in 2004. The city's name comes from *mostari* — the bridge keepers. Young men from the city still dive from the top into the Neretva which, as Emir says, is ice-cold all year round."
+      ],
+      "grammars": [
+        {
+          "title": "The instrumental — its forms",
+          "body": [
+            "The fifth and last case you need at A1 (the vocative follows briefly in Unit 20, and it's the easiest of all). There are few endings and almost no surprises."
+          ],
+          "table": {
+            "head": [
+              "Type",
+              "Nominative",
+              "Instrumental",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**m / n**",
+                "*voz, auto, Emir, pivo*",
+                "**-om** → *vozom, autom, Emirom, pivom*",
+                "*Idem vozom.*"
+              ],
+              [
+                "**m ending in č, ć, š, ž, đ, dž, j, lj, nj, c**",
+                "*nož, prijatelj, muž*",
+                "**-em** → *nožem, prijateljem, mužem*",
+                "*Režem nožem.*"
+              ],
+              [
+                "**f ending in -a**",
+                "*Amina, kafa, sestra*",
+                "**-om** → *Aminom, kafom, sestrom*",
+                "*Idem s Aminom.*"
+              ],
+              [
+                "**f ending in a consonant**",
+                "*noć, stvar, ljubav*",
+                "**-i** or **-ju** → *noći / noću*",
+                "*Putujem noću.*"
+              ],
+              [
+                "**plural**",
+                "*prijatelji, sestre*",
+                "**-ima / -ama**",
+                "*Idem s prijateljima.*"
+              ]
+            ]
+          },
+          "after": [
+            "**You already know the plural ending *-ima / -ama*** — it's the same as the dative and locative plural. Three cases, one ending: that's the biggest break Bosnian gives beginners.",
+            "**The instrumental has two jobs, and both make sense.** First, **the tool**: *pišem olovkom* (I write with a pen), *idem autobusom* (I go by bus), *jedem kašikom* (I eat with a spoon) — no preposition at all. Second, **the companion**: *idem s bratom*, *razgovaram s Aminom*, *kafa s mlijekom* — with *s* or *sa*.",
+            "**The difference matters.** *Idem autom* means I'm going by car. *Idem s autom* means I'm going along with the car — as if it were your walking buddy. Native speakers will smile, but the message won't get through.",
+            "**Some verbs always take the instrumental:** *baviti se* (be into, do — *bavim se sportom*), *putovati* (travel by), *služiti se* (use), *postati* (become — *postao je doktorom*), and *razgovarati s* (talk with)."
+          ]
+        },
+        {
+          "title": "S kim — pronouns and prepositions of place",
+          "body": [
+            "Instrumental pronouns almost always appear with *s* or *sa*, so learn the two together as one chunk."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Instrumental",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**ja**",
+                "*sa mnom*",
+                "*Hoćeš li sa mnom?*",
+                "Want to come with me?"
+              ],
+              [
+                "**ti**",
+                "*s tobom*",
+                "*Idem s tobom.*",
+                "I'm coming with you."
+              ],
+              [
+                "**on / ono**",
+                "*s njim*",
+                "*Razgovaram s njim.*",
+                "I'm talking to him."
+              ],
+              [
+                "**ona**",
+                "*s njom*",
+                "*Putujem s njom.*",
+                "I'm traveling with her."
+              ],
+              [
+                "**mi**",
+                "*s nama*",
+                "*Dođi s nama!*",
+                "Come with us!"
+              ],
+              [
+                "**vi**",
+                "*s vama*",
+                "*Mogu li s vama?*",
+                "May I come with you?"
+              ],
+              [
+                "**oni / one**",
+                "*s njima*",
+                "*Živim s njima.*",
+                "I live with them."
+              ]
+            ]
+          },
+          "after": [
+            "**Five prepositions of place take the instrumental** when they express **a fixed position**: *pod* (under), *nad* (above), *pred* (in front of), *za* (behind), *među* (among). *Ključ je pod stolom.* *Magla je nad gradom.* *Čekam pred kućom.*",
+            "**If there's movement toward that place, the case switches to the accusative** — exactly the same pattern as *u* and *na* in Unit 9: *Stavi ključ pod sto* (put the key under the table) vs *Ključ je pod stolom* (the key is under the table).",
+            "**A number of time expressions are really frozen instrumentals**, and you've been using them since Unit 12: *ponedjeljkom* (on Mondays), *vikendom* (on weekends), *jutrom* (in the mornings), *noću* (at night), *ljeti* (in summer), *zimi* (in winter), *danima* (for days).",
+            "**One expression worth learning whole:** *s dobrom voljom* — with good will, in good spirits. And its equally common partner: *s tobom* in the farewell *Bilo mi je lijepo s tobom* (it was lovely being with you)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Putovanje — trips, tickets and stations",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Distances in Bosnia are short, but the roads wind between mountains, so travel always takes longer than the map suggests. Sarajevo–Mostar is about 130 kilometers — and still takes two and a half hours, by train or by bus."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bosanski",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Jednu kartu za Mostar, molim.*",
+              "YEHD-noo KAHR-too",
+              "One ticket to Mostar, please."
+            ],
+            [
+              "*U jednom pravcu ili povratnu?*",
+              "PRAHV-tsoo / poh-VRAHT-noo",
+              "One-way or return?"
+            ],
+            [
+              "*Kada polazi sljedeći voz?*",
+              "SLYEH-deh-chee vohz",
+              "When does the next train leave?"
+            ],
+            [
+              "*Koliko traje put?*",
+              "TRAH-yeh poot",
+              "How long does the trip take?"
+            ],
+            [
+              "*Sa kojeg perona?*",
+              "PEH-roh-nah",
+              "From which platform?"
+            ],
+            [
+              "*Je li ovo mjesto slobodno?*",
+              "MYEHS-toh sloh-BOHD-noh",
+              "Is this seat free?"
+            ],
+            [
+              "*Moram presjesti?*",
+              "preh-SYEHS-tee",
+              "Do I have to change?"
+            ],
+            [
+              "*Gdje izlazim za centar?*",
+              "EEZ-lah-zeem",
+              "Where do I get off for the center?"
+            ],
+            [
+              "*Zaustavite, molim.*",
+              "zah-oos-TAH-vee-teh",
+              "Stop here, please."
+            ],
+            [
+              "*Sretan put!*",
+              "SREH-tahn poot",
+              "Have a good trip!"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Prijevoz",
+            "English",
+            "Instrumental",
+            ""
+          ],
+          "rows": [
+            [
+              "*voz* (m)",
+              "train",
+              "*vozom*",
+              "by train"
+            ],
+            [
+              "*autobus* (m)",
+              "bus",
+              "*autobusom*",
+              "by bus"
+            ],
+            [
+              "*auto* (m)",
+              "car",
+              "*autom*",
+              "by car"
+            ],
+            [
+              "*tramvaj* (m)",
+              "tram",
+              "*tramvajem*",
+              "by tram"
+            ],
+            [
+              "*taksi* (m)",
+              "taxi",
+              "*taksijem*",
+              "by taxi"
+            ],
+            [
+              "*avion* (m)",
+              "plane",
+              "*avionom*",
+              "by plane"
+            ],
+            [
+              "*bicikl* (m)",
+              "bicycle",
+              "*biciklom*",
+              "by bike"
+            ],
+            [
+              "*žičara* (f)",
+              "cable car",
+              "*žičarom*",
+              "by cable car"
+            ],
+            [
+              "*pješke*",
+              "on foot",
+              "—",
+              "doesn't change"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three words that set trips apart",
+          "items": [
+            "***Put*** means both road and journey: *Sretan put!* (have a good trip). ***Putovanje*** is travel as an event: *Putovanje traje dva sata.* ***Izlet*** is a day trip with no overnight stay — and it's the word Bosnians use most for weekends like the one in the dialogue.",
+            "Trains in Bosnia are few and slow, but the Sarajevo–Mostar line runs through the Neretva canyon and is worth riding once in your life just for the views. For everything else, the bus (*autobus*) is far more frequent and faster.",
+            "One lifesaver at the bus station: *Izvinite, ide li ovaj autobus za Mostar?* — excuse me, does this bus go to Mostar?"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 14",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Bosnian column, read the English, and rebuild the sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Bosanski"
+          ],
+          "rows": [
+            [
+              "Where were you yesterday?",
+              "*Gdje si bio jučer?*"
+            ],
+            [
+              "I was on Trebević all day.",
+              "*Bio sam na Trebeviću cijeli dan.*"
+            ],
+            [
+              "We had pita and drank tea.",
+              "*Jeli smo pitu i pili čaj.*"
+            ],
+            [
+              "Why didn't you get in touch?",
+              "*Zašto se nisi javio?*"
+            ],
+            [
+              "I didn't forget.",
+              "*Nisam zaboravio.*"
+            ],
+            [
+              "I thought you'd forgotten about the meeting.",
+              "*Mislila sam da si zaboravio na sastanak.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bs": "putovati — *putujem*",
+      "baca": "poo-TOH-vah-tee",
+      "en": "travel"
+    },
+    {
+      "bs": "putovanje (n)",
+      "baca": "poo-toh-VAH-nyeh",
+      "en": "trip, journey"
+    },
+    {
+      "bs": "put (m)",
+      "baca": "poot",
+      "en": "road; trip; time (as in \"three times\")"
+    },
+    {
+      "bs": "karta (f)",
+      "baca": "KAHR-tah",
+      "en": "ticket; map; card"
+    },
+    {
+      "bs": "povratna karta",
+      "baca": "poh-VRAHT-nah KAHR-tah",
+      "en": "return ticket"
+    },
+    {
+      "bs": "voz (m)",
+      "baca": "vohz",
+      "en": "train"
+    },
+    {
+      "bs": "avion (m)",
+      "baca": "ah-vee-OHN",
+      "en": "plane"
+    },
+    {
+      "bs": "peron (m)",
+      "baca": "PEH-rohn",
+      "en": "platform"
+    },
+    {
+      "bs": "trajati — *traje*",
+      "baca": "TRAH-yah-tee",
+      "en": "last, take (time)"
+    },
+    {
+      "bs": "rezervisati — *rezervišem*",
+      "baca": "reh-zehr-VEE-sah-tee",
+      "en": "book, reserve"
+    },
+    {
+      "bs": "presjesti — *presjednem*",
+      "baca": "preh-SYEHS-tee",
+      "en": "change (trains, buses)"
+    },
+    {
+      "bs": "izlaziti — *izlazim*",
+      "baca": "eez-LAH-zee-tee",
+      "en": "go out, get off"
+    },
+    {
+      "bs": "s / sa",
+      "baca": "s / sah",
+      "en": "with"
+    },
+    {
+      "bs": "čime / s kim",
+      "baca": "CHEE-meh / s keem",
+      "en": "with what / with whom"
+    },
+    {
+      "bs": "pod / nad / pred",
+      "baca": "pohd / nahd / prehd",
+      "en": "under / above / in front of"
+    },
+    {
+      "bs": "rijeka (f)",
+      "baca": "REE-yeh-kah",
+      "en": "river"
+    },
+    {
+      "bs": "jakna (f)",
+      "baca": "YAHK-nah",
+      "en": "jacket"
+    },
+    {
+      "bs": "vrijediti — *vrijedi*",
+      "baca": "VREE-yeh-dee-tee",
+      "en": "be worth"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Bosnian.",
+      "items": [
+        "How are we going?",
+        "By train.",
+        "Who are you going with?",
+        "I'm going with Amina.",
+        "One ticket to Mostar, please.",
+        "How long does the trip take?"
+      ]
+    },
+    {
+      "prompt": "Put into the instrumental.",
+      "items": [
+        "Idem ____ (voz).",
+        "Putujem ____ (autobus).",
+        "Idem s ____ (Amina).",
+        "Razgovaram s ____ (Emir).",
+        "Hoćeš li sa ____ (ja)?",
+        "Živim s ____ (prijatelji).",
+        "Ključ je pod ____ (sto)."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "idemo / čime / ?",
+        "vozom / idemo",
+        "kim / ideš / s / ?",
+        "molim / Mostar / kartu / za / jednu / ,",
+        "put / traje / koliko / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Čime idemo? — Vozom. — S kim ideš? — Idem s Aminom. — Jednu kartu za Mostar, molim. — Koliko traje put?",
+    "vozom — autobusom — Aminom — Emirom — mnom — prijateljima — stolom",
+    "Čime idemo? — Idemo vozom. — S kim ideš? — Jednu kartu za Mostar, molim. — Koliko traje put?"
+  ]
+}

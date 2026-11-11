@@ -1,0 +1,625 @@
+{
+  "title": "Adjectives: colors, sizes, and endings that tag along",
+  "title_target": "У магазині одягу — U mahazyni odyahu",
+  "goal": "Describe things with adjectives whose endings match, name colors, and shop for clothes from browsing to paying.",
+  "bekal": [
+    "match adjective endings to the noun's gender",
+    "name twelve colors",
+    "ask with Який, Яка, Яке, Які",
+    "ask for another size and try clothes on",
+    "describe people and things"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — A sweater for the first winter",
+      "intro": "Ani goes clothes shopping before winter. Notice that every adjective changes its ending to match the thing it describes, and that the same thing gets a different ending once it becomes the object of an action.",
+      "lines": [
+        {
+          "speaker": "Продавчиня:",
+          "text": "[Доброго|DOB-ro-ho] [дня|dnya]! [Вам|Vam] [допомогти|do-po-moh-TI]?",
+          "id": "Good afternoon! Can I help you?",
+          "literal": "good — day! to-you — to-help?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Так|Tak]. [Я|Ya] [шукаю|shoo-KA-yoo] [светр|svetr].",
+          "id": "Yes. I'm looking for a sweater.",
+          "literal": "yes. I — look-for — sweater."
+        },
+        {
+          "speaker": "Продавчиня:",
+          "text": "[Який|Ya-KIY] [колір|KO-leer] [ви|vi] [хочете|KHO-cheh-teh]?",
+          "id": "What color would you like?",
+          "literal": "which (m) — color — you — want?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Синій|SI-neey] [або|A-bo] [зелений|zeh-LEH-niy].",
+          "id": "Blue or green.",
+          "literal": "blue — or — green."
+        },
+        {
+          "speaker": "Продавчиня:",
+          "text": "[Ось|Os'] [синій|SI-neey]. [Це|Tseh] [ваш|vash] [розмір|ROZ-meer]?",
+          "id": "Here's a blue one. Is this your size?",
+          "literal": "here-is — blue. this — your — size?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Здається|Zda-YEH-tsya], [великий|veh-LI-kiy]. [Є|Yeh] [менший|MEN-shiy]?",
+          "id": "I think it's too big. Is there a smaller one?",
+          "literal": "it-seems, big. is-there — smaller?"
+        },
+        {
+          "speaker": "Продавчиня:",
+          "text": "[Є|Yeh]. [Ось|Os'] [цей|tsey].",
+          "id": "Yes. Here you go.",
+          "literal": "there-is. here-is — this-one (m)."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Можна|MOZH-na] [поміряти|po-MEE-rya-ti]?",
+          "id": "Can I try it on?",
+          "literal": "allowed — to-try-on?"
+        },
+        {
+          "speaker": "Продавчиня:",
+          "text": "[Звичайно|Zvi-CHAI-no]. [Примірочна|Pri-MEE-roch-na] [там|tam].",
+          "id": "Of course. The fitting room is over there.",
+          "literal": "of-course. fitting-room — there."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Дякую|DYA-koo-yoo]... [Цей|Tsey] [гарний|HAR-niy]. [Скільки|SKEEL'-ki] [коштує|KOSH-too-yeh]?",
+          "id": "Thank you... This one's nice. How much is it?",
+          "literal": "thank-you... this-one (m) — nice. how-much — costs?"
+        },
+        {
+          "speaker": "Продавчиня:",
+          "text": "[Вісімсот|Vee-seem-SOT] [гривень|HRI-ven'].",
+          "id": "Eight hundred hryvnias.",
+          "literal": "eight-hundred — hryvnias."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Беру|Beh-ROO]. [Він|Veen] [теплий|TEP-liy] [і|ee] [красивий|kra-SI-viy].",
+          "id": "I'll take it. It's warm and pretty.",
+          "literal": "I-take. he — warm — and — pretty."
+        }
+      ],
+      "notes": [
+        "**An adjective always follows the gender, number, and case of the noun it describes.** *Новий светр* (m), *нова книга* (f), *нове вікно* (n), *нові книги* (pl). No adjective may keep its dictionary ending when it's attached to a noun.",
+        "**The basic endings are -ий, -а, -е, -і.** This is the biggest and easiest group: *гарний, гарна, гарне, гарні*; *великий, велика, велике, великі*; *теплий, тепла, тепле, теплі*.",
+        "**A small soft group ends in -ій, -я, -є, -і.** *Синій, синя, синє, сині*. It has few members, but they're common: *синій* (blue), *останній* (last), *сьогоднішній* (today's), *домашній* (homemade). ⚠️ Notice that *синій* and *зелений* behave differently even though both are colors.",
+        "**Який? changes too, because it's an adjective itself.** *Який колір?* (m), *Яка сукня?* (f), *Яке пальто?* (n), *Які штани?* (pl). It asks what something is like, not which one from a list; for that people say *котрий*.",
+        "**Comparisons are made with -ший or більш.** *Великий* → *більший* (bigger), *маленький* → *менший* (smaller), *гарний* → *гарніший* (nicer). For long words: *більш цікавий* (more interesting). For the most: add **най-**, as in *найбільший* (biggest), *найкращий* (best).",
+        "**Поміряти = to try on.** This word is only for clothes and shoes; to try food people use *спробувати*. The full sentence is *Можна поміряти?*: three words that handle the whole fitting-room business.",
+        "**Беру = I'll take it, meaning I'll buy it.** Just like English \"I'll take it\". The basic form is *брати*, and it's irregular: *беру, береш, бере, беремо, берете, беруть*."
+      ],
+      "grammars": [
+        {
+          "title": "Adjective endings",
+          "body": [],
+          "table": {
+            "head": [
+              "Group",
+              "+ masculine",
+              "+ feminine",
+              "+ neuter",
+              "+ plural"
+            ],
+            "rows": [
+              [
+                "hard (-ий)",
+                "новий светр",
+                "нова книга",
+                "нове вікно",
+                "нові книги"
+              ],
+              [
+                "",
+                "гарний день",
+                "гарна погода",
+                "гарне місто",
+                "гарні люди"
+              ],
+              [
+                "",
+                "великий стіл",
+                "велика кімната",
+                "велике вікно",
+                "великі міста"
+              ],
+              [
+                "",
+                "теплий чай",
+                "тепла вода",
+                "тепле молоко",
+                "теплі речі"
+              ],
+              [
+                "",
+                "червоний светр",
+                "червона сукня",
+                "червоне яблуко",
+                "червоні квіти"
+              ],
+              [
+                "soft (-ій)",
+                "синій светр",
+                "синя сукня",
+                "синє небо",
+                "сині очі"
+              ],
+              [
+                "",
+                "останній день",
+                "остання пара",
+                "останнє слово",
+                "останні дні"
+              ]
+            ]
+          },
+          "after": [
+            "If in doubt, look at the noun's ending and match it: a noun ending in **-а** wants an adjective ending in **-а**; a noun ending in **-о** wants **-е**. This simple rule works in most cases."
+          ]
+        },
+        {
+          "title": "Colors",
+          "body": [],
+          "table": {
+            "head": [
+              "Українська",
+              "Say it",
+              "English",
+              "Feminine form"
+            ],
+            "rows": [
+              [
+                "червоний",
+                "cher-VO-niy",
+                "red",
+                "червона"
+              ],
+              [
+                "синій",
+                "SI-neey",
+                "blue",
+                "синя"
+              ],
+              [
+                "блакитний",
+                "bla-KIT-niy",
+                "light blue",
+                "блакитна"
+              ],
+              [
+                "зелений",
+                "zeh-LEH-niy",
+                "green",
+                "зелена"
+              ],
+              [
+                "жовтий",
+                "ZHOV-tiy",
+                "yellow",
+                "жовта"
+              ],
+              [
+                "чорний",
+                "CHOR-niy",
+                "black",
+                "чорна"
+              ],
+              [
+                "білий",
+                "BEE-liy",
+                "white",
+                "біла"
+              ],
+              [
+                "сірий",
+                "SEE-riy",
+                "gray",
+                "сіра"
+              ],
+              [
+                "коричневий",
+                "ko-RICH-neh-viy",
+                "brown",
+                "коричнева"
+              ],
+              [
+                "рожевий",
+                "ro-ZHEH-viy",
+                "pink",
+                "рожева"
+              ],
+              [
+                "помаранчевий",
+                "po-ma-RAN-cheh-viy",
+                "orange",
+                "помаранчева"
+              ],
+              [
+                "фіолетовий",
+                "fee-o-LEH-to-viy",
+                "purple",
+                "фіолетова"
+              ]
+            ]
+          },
+          "after": [
+            "**Жовтий і блакитний** are the colors of the Ukrainian flag: yellow and light blue. You'll see these two words everywhere, and the order matters: blue on top, yellow below."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Clothes and sizes",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Українська",
+            "Say it",
+            "Gender",
+            "English"
+          ],
+          "rows": [
+            [
+              "сорочка",
+              "so-ROCH-ka",
+              "вона",
+              "shirt"
+            ],
+            [
+              "футболка",
+              "foot-BOL-ka",
+              "вона",
+              "T-shirt"
+            ],
+            [
+              "светр",
+              "svetr",
+              "він",
+              "sweater"
+            ],
+            [
+              "куртка",
+              "KOORT-ka",
+              "вона",
+              "jacket"
+            ],
+            [
+              "пальто",
+              "pal'-TO",
+              "воно",
+              "coat"
+            ],
+            [
+              "штани",
+              "shta-NI",
+              "plural",
+              "pants, trousers"
+            ],
+            [
+              "джинси",
+              "DZHIN-si",
+              "plural",
+              "jeans"
+            ],
+            [
+              "спідниця",
+              "speed-NI-tsya",
+              "вона",
+              "skirt"
+            ],
+            [
+              "сукня",
+              "SOOK-nya",
+              "вона",
+              "dress"
+            ],
+            [
+              "шкарпетки",
+              "shkar-PET-ki",
+              "plural",
+              "socks"
+            ],
+            [
+              "взуття",
+              "vzoot-TYA",
+              "воно",
+              "footwear"
+            ],
+            [
+              "черевики",
+              "cheh-reh-VI-ki",
+              "plural",
+              "boots"
+            ],
+            [
+              "кросівки",
+              "kro-SEEV-ki",
+              "plural",
+              "sneakers"
+            ],
+            [
+              "шапка",
+              "SHAP-ka",
+              "вона",
+              "knit hat"
+            ],
+            [
+              "шарф",
+              "sharf",
+              "він",
+              "scarf"
+            ],
+            [
+              "рукавички",
+              "roo-ka-VICH-ki",
+              "plural",
+              "gloves"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Sentences that cover a whole clothes-shopping trip",
+          "items": [
+            "**Я шукаю ___** — I'm looking for ___",
+            "**Можна поміряти?** — can I try it on?",
+            "**Є більший розмір?** — is there a bigger size? · **Є менший?** — is there a smaller one?",
+            "**Це задовге / закоротке** — it's too long / too short",
+            "**Мені підходить** — it fits me · **Не підходить** — it doesn't fit",
+            "**Беру.** — I'll take it. · **Я подумаю.** — I'll think about it (a polite no)"
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Describing people"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Ukrainian",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "високий / низький",
+              "vi-SO-kiy / NIZ'-kiy",
+              "tall / short"
+            ],
+            [
+              "молодий / старий",
+              "mo-lo-DIY / sta-RIY",
+              "young / old"
+            ],
+            [
+              "красивий / гарний",
+              "kra-SI-viy / HAR-niy",
+              "beautiful, handsome / nice"
+            ],
+            [
+              "добрий",
+              "DOB-riy",
+              "kind"
+            ],
+            [
+              "веселий",
+              "veh-SEH-liy",
+              "cheerful"
+            ],
+            [
+              "розумний",
+              "ro-ZOOM-niy",
+              "clever"
+            ],
+            [
+              "тихий",
+              "TI-khiy",
+              "quiet"
+            ],
+            [
+              "у неї темне волосся",
+              "TEM-neh vo-LOS-sya",
+              "she has dark hair"
+            ],
+            [
+              "у нього сині очі",
+              "SI-nee O-chee",
+              "he has blue eyes"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uk": "одяг",
+      "baca": "O-dyah",
+      "en": "clothes"
+    },
+    {
+      "uk": "колір",
+      "baca": "KO-leer",
+      "en": "color"
+    },
+    {
+      "uk": "розмір",
+      "baca": "ROZ-meer",
+      "en": "size"
+    },
+    {
+      "uk": "шукати",
+      "baca": "shoo-KA-ti",
+      "en": "to look for"
+    },
+    {
+      "uk": "міряти",
+      "baca": "MEE-rya-ti",
+      "en": "to try on (clothes)"
+    },
+    {
+      "uk": "примірочна",
+      "baca": "pri-MEE-roch-na",
+      "en": "fitting room"
+    },
+    {
+      "uk": "брати",
+      "baca": "BRA-ti",
+      "en": "to take"
+    },
+    {
+      "uk": "підходити",
+      "baca": "peed-KHO-di-ti",
+      "en": "to fit, suit"
+    },
+    {
+      "uk": "який / яка / яке / які",
+      "baca": "ya-KIY / ya-KA",
+      "en": "which, what kind of"
+    },
+    {
+      "uk": "більший",
+      "baca": "BEEL'-shiy",
+      "en": "bigger"
+    },
+    {
+      "uk": "менший",
+      "baca": "MEN-shiy",
+      "en": "smaller"
+    },
+    {
+      "uk": "найкращий",
+      "baca": "nai-KRA-shchiy",
+      "en": "best"
+    },
+    {
+      "uk": "теплий",
+      "baca": "TEP-liy",
+      "en": "warm"
+    },
+    {
+      "uk": "красивий",
+      "baca": "kra-SI-viy",
+      "en": "beautiful, handsome"
+    },
+    {
+      "uk": "високий",
+      "baca": "vi-SO-kiy",
+      "en": "tall"
+    },
+    {
+      "uk": "молодий",
+      "baca": "mo-lo-DIY",
+      "en": "young"
+    },
+    {
+      "uk": "старий",
+      "baca": "sta-RIY",
+      "en": "old"
+    },
+    {
+      "uk": "здається",
+      "baca": "zda-YEH-tsya",
+      "en": "it seems"
+    },
+    {
+      "uk": "допомогти",
+      "baca": "do-po-moh-TI",
+      "en": "to help"
+    },
+    {
+      "uk": "светр",
+      "baca": "svetr",
+      "en": "sweater"
+    },
+    {
+      "uk": "сукня",
+      "baca": "SOOK-nya",
+      "en": "dress"
+    },
+    {
+      "uk": "куртка",
+      "baca": "KOORT-ka",
+      "en": "jacket"
+    },
+    {
+      "uk": "взуття",
+      "baca": "vzoot-TYA",
+      "en": "footwear"
+    },
+    {
+      "uk": "волосся",
+      "baca": "vo-LOS-sya",
+      "en": "hair"
+    },
+    {
+      "uk": "очі",
+      "baca": "O-chee",
+      "en": "eyes"
+    },
+    {
+      "uk": "жовтий",
+      "baca": "ZHOV-tiy",
+      "en": "yellow"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the correct adjective ending.",
+      "items": [
+        "____ (новий) книга",
+        "____ (великий) місто",
+        "____ (гарний) день",
+        "____ (синій) сукня",
+        "____ (червоний) яблука"
+      ]
+    },
+    {
+      "prompt": "Fill in Який, Яка, Яке, or Які.",
+      "items": [
+        "____ це колір?",
+        "____ гарна сукня!",
+        "____ велике вікно!",
+        "____ у тебе книги?",
+        "____ твій улюблений колір?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "светр / шукаю / я",
+        "хочете / колір / який / ви",
+        "поміряти / можна",
+        "коштує / це / скільки",
+        "теплий / і / він / красивий"
+      ]
+    },
+    {
+      "prompt": "Translate into Ukrainian.",
+      "items": [
+        "I'm looking for a sweater.",
+        "What color would you like?",
+        "Blue or green.",
+        "Can I try it on?",
+        "I'll take it. It's warm and pretty."
+      ]
+    }
+  ],
+  "answers": [
+    "нова — велике — гарний — синя — червоні",
+    "Який — Яка — Яке — Які — Який",
+    "Я шукаю светр. — Який колір ви хочете? — Можна поміряти? — Скільки це коштує? — Він теплий і красивий.",
+    "Я шукаю светр. — Який колір ви хочете? — Синій або зелений. — Можна поміряти? — Беру. Він теплий і красивий."
+  ],
+  "wave": "Go back over Unit 2. The noun genders you learned there finally pay off: without knowing that *книга* is feminine, you can't choose *нова*."
+}

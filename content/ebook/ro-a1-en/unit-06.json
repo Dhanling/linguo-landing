@@ -1,0 +1,551 @@
+{
+  "title": "Where is the station?",
+  "title_target": "Unde este gara?",
+  "goal": "Ask for and give directions around town, and fit in the golden rule of prepositions: after *în, la, pe, lângă* and friends, the noun actually **drops** its definite article.",
+  "bekal": [
+    "say where something is with *în, la, pe, sub, lângă, între, aproape de, departe de*",
+    "know when a noun after a preposition loses its article — and when it gets it back",
+    "put the definite article on plural nouns: *studenții, străzile, trenurile*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Unde este gara?",
+      "intro": "On Saturday morning Budi wants to buy a train ticket to Brașov, but he gets lost a few blocks from Gara de Nord. He stops a passer-by.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Scuzați-mă, unde este gara?",
+          "id": "Excuse me, where is the station?",
+          "literal": "excuse-pl-me, where it-is station-the?"
+        },
+        {
+          "speaker": "Un domn:",
+          "text": "Scuze, nu sunt de aici.",
+          "id": "Sorry, I'm not from here.",
+          "literal": "excuses, not I-am from here."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nu-i nimic. Bună ziua, doamnă! Unde este Gara de Nord, vă rog?",
+          "id": "No problem. Good afternoon, ma'am! Where is Gara de Nord, please?",
+          "literal": "not-it-is nothing. good-f day-the, madam! where it-is station-the of north, you-pl I-ask?"
+        },
+        {
+          "speaker": "O doamnă:",
+          "text": "Gara de Nord? Mergeți drept înainte, apoi la stânga.",
+          "id": "Gara de Nord? Go straight ahead, then left.",
+          "literal": "station-the of north? you-pl-go straight forward, then to left."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Este departe?",
+          "id": "Is it far?",
+          "literal": "it-is far?"
+        },
+        {
+          "speaker": "O doamnă:",
+          "text": "Nu, este aproape, lângă parc. Zece minute pe jos.",
+          "id": "No, it's close, next to the park. Ten minutes on foot.",
+          "literal": "no, it-is near, beside park. ten minutes on foot."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Și este o bancă pe aici?",
+          "id": "And is there a bank around here?",
+          "literal": "and it-is a-f bank on here?"
+        },
+        {
+          "speaker": "O doamnă:",
+          "text": "Da. Banca este între hotel și farmacie, în fața gării.",
+          "id": "Yes. The bank is between the hotel and the pharmacy, in front of the station.",
+          "literal": "yes. bank-the it-is between hotel and pharmacy, in front-the station-gen."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Între hotel și farmacie. Mulțumesc mult!",
+          "id": "Between the hotel and the pharmacy. Thank you very much!",
+          "literal": "between hotel and pharmacy. I-thank much!"
+        },
+        {
+          "speaker": "O doamnă:",
+          "text": "Cu plăcere. Sunteți turist?",
+          "id": "You're welcome. Are you a tourist?",
+          "literal": "with pleasure. you-pl-are tourist?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nu, locuiesc în București, dar sunt nou în oraș.",
+          "id": "No, I live in București, but I'm new in town.",
+          "literal": "no, I-live in București, but I-am new in city."
+        },
+        {
+          "speaker": "O doamnă:",
+          "text": "Atunci bun venit! Și atenție: taxiurile de la gară sunt scumpe.",
+          "id": "Then welcome! And be careful: the taxis at the station are expensive.",
+          "literal": "then good-m come! and attention: taxis-the from at station they-are expensive-f-pl."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mulțumesc pentru sfat. O zi bună!",
+          "id": "Thanks for the advice. Have a nice day!",
+          "literal": "I-thank for advice. a-f day good-f!"
+        }
+      ],
+      "notes": [
+        "**Scuzați-mă and mergeți** are polite command forms, which are really nothing more than the present-tense *voi* form. The imperative comes in unit 17; for now, learn both whole. To a peer it's *scuză-mă*. The opener *Scuzați-mă, unde este…?* is enough to stop anyone on the sidewalk politely.",
+        "**Unde este *gara*?** but **de la *gară*.** In the first sentence the station is the subject — a specific thing being looked for — so it has the article: *gara*. As soon as a preposition stands in front, the article falls off: *la gară, de la gară, lângă parc, între hotel și farmacie, în oraș*. English says \"at *the* station\", and that's exactly why this rule is the point of this unit.",
+        "**Nu sunt de aici** — \"I'm not from here\". With place names you use *din* (*sunt din Indonezia*, unit 2), but with place words like here and there you use *de*: *de aici* (from here), *de acolo* (from there), *de unde* (from where).",
+        "**În fața gării** = in front of the station. The expressions *în fața* (in front of) and *în spatele* (behind) require the genitive form — *gară → gării, hotel → hotelului, bancă → băncii*. The genitive only comes in unit 13; for now, learn these three chunks as they are.",
+        "**Taxiurile** is a plural with the article: *taxi → taxiuri → taxiurile*, \"the taxis\". The adjective goes plural too: *scump → scumpe*. The plural article is in the second box; adjective agreement is covered fully in unit 9."
+      ],
+      "grammars": [
+        {
+          "title": "Prepositions of place and their golden rule",
+          "body": [
+            "Romanian prepositions themselves aren't hard — there are few of them and their meanings are close to English \"in, at, on\". What trips people up is what happens to the noun **after** them."
+          ],
+          "table": {
+            "head": [
+              "Preposition",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**în**",
+                "in, inside; in (a city, country)",
+                "*în parc, în oraș, în România*"
+              ],
+              [
+                "**la**",
+                "at, to (a point, a destination)",
+                "*la gară, la hotel, la Brașov*"
+              ],
+              [
+                "**pe**",
+                "on; on (a street)",
+                "*pe masă, pe stradă*"
+              ],
+              [
+                "**sub**",
+                "under",
+                "*sub pod, sub masă*"
+              ],
+              [
+                "**lângă**",
+                "next to",
+                "*lângă parc, lângă farmacie*"
+              ],
+              [
+                "**între**",
+                "between",
+                "*între hotel și farmacie*"
+              ],
+              [
+                "**aproape de**",
+                "close to",
+                "*aproape de gară*"
+              ],
+              [
+                "**departe de**",
+                "far from",
+                "*departe de centru*"
+              ],
+              [
+                "**în fața** + genitive",
+                "in front of",
+                "*în fața gării, în fața hotelului*"
+              ],
+              [
+                "**în spatele** + genitive",
+                "behind",
+                "*în spatele băncii*"
+              ]
+            ]
+          },
+          "after": [
+            "**The golden rule: after a preposition, a noun drops its definite article** — even when a very specific thing is meant. *Gara este mare* (the station is big), but *Sunt la gară* (I'm at the station). *Parcul este aproape*, but *Budi este în parc*.",
+            "**The article comes back as soon as the noun gets a description** — an adjective, a name, a possessive, anything that describes it: *în parc* → *în parc**ul** mare*, *în parc**ul** Cișmigiu*; *pe stradă* → *pe strad**a** Lipscani*; *la gară* → *la gar**a** de Nord*. That's why street and place names always have the article.",
+            "**The only important exception is *cu*** (with): it still takes the article. You've already used it in unit 4 — *Pot să plătesc cu card**ul**?* — and you'll meet it again in *cu tren**ul**, cu metro**ul***.",
+            "*La* means both \"at\" and \"to\": *Sunt la gară* (I'm at the station) and *Merg la gară* (I'm going to the station). The verb makes the difference — one less thing to worry about."
+          ]
+        },
+        {
+          "title": "The plural definite article",
+          "body": [
+            "In unit 4 you glued the article onto singular nouns, in unit 5 you formed plurals. Now the two combine: the plural article sticks **behind the plural ending**. There are only two endings to remember."
+          ],
+          "table": {
+            "head": [
+              "Gender",
+              "Plural",
+              "Plural + article",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**m** → **-i**",
+                "*studenți, frați, pomi*",
+                "*studenț**ii**, fraț**ii**, pom**ii***",
+                "the students, the brothers, the trees"
+              ],
+              [
+                "**f** → **-le**",
+                "*fete, case*",
+                "*fete**le**, case**le***",
+                "the girls, the houses"
+              ],
+              [
+                "**f** → **-le**",
+                "*străzi, gări, farmacii*",
+                "*străzi**le**, gări**le**, farmacii**le***",
+                "the streets, the stations, the pharmacies"
+              ],
+              [
+                "**n** → **-le**",
+                "*trenuri, parcuri, taxiuri*",
+                "*trenuri**le**, parcuri**le**, taxiuri**le***",
+                "the trains, the parks, the taxis"
+              ],
+              [
+                "**n** → **-le**",
+                "*bilete, hoteluri*",
+                "*bilete**le**, hoteluri**le***",
+                "the tickets, the hotels"
+              ]
+            ]
+          },
+          "after": [
+            "**Masculine nouns: add one more *-i*.** This is when the nearly silent *-i* becomes a full sound: *studenți* is read stoo-DEHNTS', but *studenții* is read stoo-DEHN-tsee. Romanian ears hear the difference clearly, so really pronounce the *i*.",
+            "**Feminine and neuter nouns: add *-le*** to any plural form — once again, neuter behaves as feminine in the plural. *Biletele sunt scumpe. Străzile sunt frumoase.*",
+            "The record belongs to *copil* (child): its plural is *copii*, and with the article it becomes ***copiii*** — three *i*s in a row, read koh-PEE-ee. Not a typo.",
+            "The golden rule still applies in the plural: *Studenții sunt în parc*, but *Vorbesc cu studenții* (because of *cu*) and *o cafenea pentru studenți* (no article after *pentru*)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Places in town",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Română",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**gară, gări** (f)",
+              "GAH-ruh, guhr'",
+              "train station"
+            ],
+            [
+              "**stație, stații** (f)",
+              "STAH-tsee-eh, STAH-tsee",
+              "stop; metro station"
+            ],
+            [
+              "**stradă, străzi** (f)",
+              "STRAH-duh, struhz'",
+              "street"
+            ],
+            [
+              "**piață, piețe** (f)",
+              "PYAH-tsuh, PYEH-tseh",
+              "market; square"
+            ],
+            [
+              "**parc, parcuri** (n)",
+              "pahrk, PAHR-koor'",
+              "park"
+            ],
+            [
+              "**bancă, bănci** (f)",
+              "BAHN-kuh, buhnch'",
+              "bank"
+            ],
+            [
+              "**farmacie, farmacii** (f)",
+              "fahr-mah-CHEE-eh, fahr-mah-CHEE-ee",
+              "pharmacy"
+            ],
+            [
+              "**spital, spitale** (n)",
+              "spee-TAHL, spee-TAH-leh",
+              "hospital"
+            ],
+            [
+              "**magazin, magazine** (n)",
+              "mah-gah-ZEEN, mah-gah-ZEE-neh",
+              "shop, store"
+            ],
+            [
+              "**biserică, biserici** (f)",
+              "bee-SEH-ree-kuh, bee-SEH-reech'",
+              "church"
+            ],
+            [
+              "**muzeu, muzee** (n)",
+              "moo-ZEHW, moo-ZEH-eh",
+              "museum"
+            ],
+            [
+              "**pod, poduri** (n)",
+              "pohd, POH-door'",
+              "bridge"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Half of this list is already familiar from English: *parc*, *bancă*, *farmacie*, *hotel*, *muzeu*, *restaurant*. Save your energy for the plurals — and for *magazin*, a false friend that means \"shop\", not magazine (magazine = *revistă*)."
+        },
+        {
+          "type": "kotak",
+          "title": "Reading the map of București",
+          "items": [
+            "**Piață** has two meanings: market (*Piața Obor*, the city's biggest market) and square or roundabout (*Piața Unirii, Piața Victoriei, Piața Romană*). If someone says *la piață* with no name, they mean the market.",
+            "Metro entrances are marked with a big letter **M**. *Gara de Nord* is the main train station of București and has its own metro station with the same name.",
+            "In addresses you'll see *Strada* (Str.), *Bulevardul* (Bd.), *Calea*, and *Șoseaua* (Șos.) — all with the article because a name follows: *pe Calea Victoriei*, *pe strada Lipscani*. *Centrul Vechi*, the old town, lies around that Lipscani street."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Giving directions",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Cum ajung la Piața Unirii?*",
+              "How do I get to Piața Unirii?"
+            ],
+            [
+              "*Mergeți drept înainte.*",
+              "Go straight ahead."
+            ],
+            [
+              "*La stânga.* / *La dreapta.*",
+              "Left. / Right."
+            ],
+            [
+              "*Prima stradă la dreapta.*",
+              "The first street on the right."
+            ],
+            [
+              "*Traversați strada.*",
+              "Cross the street."
+            ],
+            [
+              "*Mergeți până la semafor.*",
+              "Go as far as the traffic light."
+            ],
+            [
+              "*Este la colț.*",
+              "It's on the corner."
+            ],
+            [
+              "*Este aici.* / *Este acolo.*",
+              "It's here. / It's over there."
+            ],
+            [
+              "*Este la cinci minute pe jos.*",
+              "It's five minutes on foot."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Trap: drept versus dreapta",
+          "items": [
+            "***Drept** (înainte)* = **straight**. ***Dreapta*** = **right**. Both come from the same root, sound alike, and send you in different directions — a bit like English \"right\" meaning both correct and a direction. Tip: *la dreapt**a*** and *la stâng**a*** both end in *-a* and both follow *la*.",
+            "Romanians asked for directions tend to answer fast and at length. Catch just three words — *drept*, *stânga*, *dreapta* — then **repeat** the directions back like Budi in the dialogue (*Între hotel și farmacie.*). If you got it wrong, they'll correct you right away."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Cum ajung la…?* uses the verb *a ajunge* (to arrive, to get to). Learn it as a chunk; it's the most useful sentence on this page, and the answer is almost always built from the pieces in the table above."
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 4",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Romanian column, read the English, and rebuild the sentences from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Română"
+          ],
+          "rows": [
+            [
+              "I'd like a coffee, please.",
+              "*Aș vrea o cafea, vă rog.*"
+            ],
+            [
+              "The coffee is very good.",
+              "*Cafeaua este foarte bună.*"
+            ],
+            [
+              "What do you recommend?",
+              "*Ce îmi recomandați?*"
+            ],
+            [
+              "The bill, please.",
+              "*Nota, vă rog.*"
+            ],
+            [
+              "Can I pay by card?",
+              "*Pot să plătesc cu cardul?*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ro": "gară, gări",
+      "baca": "GAH-ruh, guhr'",
+      "en": "train station (f)"
+    },
+    {
+      "ro": "stradă, străzi",
+      "baca": "STRAH-duh, struhz'",
+      "en": "street (f)"
+    },
+    {
+      "ro": "parc, parcuri",
+      "baca": "pahrk, PAHR-koor'",
+      "en": "park (n)"
+    },
+    {
+      "ro": "bancă, bănci",
+      "baca": "BAHN-kuh, buhnch'",
+      "en": "bank (f)"
+    },
+    {
+      "ro": "farmacie, farmacii",
+      "baca": "fahr-mah-CHEE-eh, fahr-mah-CHEE-ee",
+      "en": "pharmacy (f)"
+    },
+    {
+      "ro": "hotel, hoteluri",
+      "baca": "hoh-TEHL, hoh-TEH-loor'",
+      "en": "hotel (n)"
+    },
+    {
+      "ro": "oraș, orașe",
+      "baca": "oh-RAHSH, oh-RAH-sheh",
+      "en": "city, town (n)"
+    },
+    {
+      "ro": "minut, minute",
+      "baca": "mee-NOOT, mee-NOO-teh",
+      "en": "minute (n)"
+    },
+    {
+      "ro": "a merge (merg)",
+      "baca": "ah MEHR-jeh (mehrg)",
+      "en": "to go; to walk"
+    },
+    {
+      "ro": "a traversa (traversez)",
+      "baca": "ah trah-vehr-SAH (trah-vehr-SEHZ)",
+      "en": "to cross"
+    },
+    {
+      "ro": "unde",
+      "baca": "OON-deh",
+      "en": "where"
+    },
+    {
+      "ro": "aici / acolo",
+      "baca": "ah-EECH' / ah-KOH-loh",
+      "en": "here / there"
+    },
+    {
+      "ro": "aproape / departe",
+      "baca": "ah-PRWAH-peh / deh-PAHR-teh",
+      "en": "near / far"
+    },
+    {
+      "ro": "lângă",
+      "baca": "LÎN-guh",
+      "en": "next to"
+    },
+    {
+      "ro": "între",
+      "baca": "ÎN-treh",
+      "en": "between"
+    },
+    {
+      "ro": "la stânga / la dreapta",
+      "baca": "lah STÎN-gah / lah DRYAHP-tah",
+      "en": "to the left / to the right"
+    },
+    {
+      "ro": "drept înainte",
+      "baca": "drehpt î-nah-EEN-teh",
+      "en": "straight ahead"
+    },
+    {
+      "ro": "apoi",
+      "baca": "ah-POY",
+      "en": "then, next"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Romanian.",
+      "items": [
+        "Excuse me, where is the station?",
+        "Go straight ahead, then left.",
+        "It isn't far, it's close, next to the park.",
+        "The bank is between the hotel and the pharmacy.",
+        "I'm not from here.",
+        "The tickets are expensive."
+      ]
+    },
+    {
+      "prompt": "Choose the right form: with or without the article?",
+      "items": [
+        "Sunt la ____ . (gară or gara)",
+        "____ este departe. (Gară or Gara)",
+        "Budi este în ____ . (parc or parcul)",
+        "Budi este în ____ Cișmigiu. (parc or parcul)",
+        "Banca este lângă ____ . (hotel or hotelul)",
+        "Plătesc cu ____ . (card or cardul)",
+        "____ sunt scumpe. (Bilete or Biletele)",
+        "____ sunt în parc. (Studenți or Studenții)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "gara / este / unde / ?",
+        "aici / sunt / nu / de",
+        "este / parc / lângă / farmacia",
+        "la / apoi / dreapta / mergeți / drept / înainte / ,",
+        "departe / este / gară / de / hotelul"
+      ]
+    }
+  ],
+  "answers": [
+    "Scuzați-mă, unde este gara? — Mergeți drept înainte, apoi la stânga. — Nu este departe, este aproape, lângă parc. — Banca este între hotel și farmacie. — Nu sunt de aici. — Biletele sunt scumpe.",
+    "gară — Gara — parc — parcul — hotel — cardul — Biletele — Studenții",
+    "Unde este gara? — Nu sunt de aici. — Farmacia este lângă parc. — Mergeți drept înainte, apoi la dreapta. — Hotelul este departe de gară."
+  ]
+}

@@ -1,0 +1,530 @@
+{
+  "title": "I'm from Indonesia",
+  "title_target": "Я з Індонезії — Ya z Indoneziyi",
+  "goal": "Say which country and city you're from, ask where others are from, and say which languages you speak — while meeting the second case (родовий, the genitive) through its busiest doorway: the preposition з.",
+  "bekal": [
+    "ask and answer \"where from?\"",
+    "put country and city names into the родовий",
+    "say which languages you speak",
+    "choose between з, із, and зі",
+    "say nationalities for men and women"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — In the university corridor",
+      "intro": "Andriy says hi to Ani before class starts. Notice that a country's name changes its ending every time it follows з — Індонезія becomes Індонезії, Україна becomes України.",
+      "lines": [
+        {
+          "speaker": "Андрій:",
+          "text": "[Привіт|Pri-VEET]! [Ти|Ti] [нова|no-VA] [тут|toot], [так|tak]?",
+          "id": "Hi! You're new here, right?",
+          "literal": "hi! you — new (f) — here, yes?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Так|Tak]. [Мене|Meh-NEH] [звати|ZVA-ti] [Ані|A-nee].",
+          "id": "Yes. My name is Ani.",
+          "literal": "yes. me (object) — they-call — Ani."
+        },
+        {
+          "speaker": "Андрій:",
+          "text": "[Дуже|DOO-zheh] [приємно|pri-YEM-no]. [Я|Ya] [Андрій|An-DREEY]. [Звідки|ZVEED-ki] [ти|ti]?",
+          "id": "Nice to meet you. I'm Andriy. Where are you from?",
+          "literal": "very — pleasant. I — Andriy. where-from — you?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Я|Ya] [з|z] [Індонезії|een-do-NEH-zee-yee]. [З|Z] [Джакарти|dzha-KAR-ti].",
+          "id": "I'm from Indonesia. From Jakarta.",
+          "literal": "I — from — Indonesia (родовий). from — Jakarta (родовий)."
+        },
+        {
+          "speaker": "Андрій:",
+          "text": "[З|Z] [Індонезії|een-do-NEH-zee-yee]? [Це|Tseh] [далеко|da-LEH-ko]!",
+          "id": "From Indonesia? That's far!",
+          "literal": "from — Indonesia? this — far!"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Дуже|DOO-zheh] [далеко|da-LEH-ko]. [А|A] [ти|ti] [звідки|ZVEED-ki]?",
+          "id": "Very far. And where are you from?",
+          "literal": "very — far. and — you — where-from?"
+        },
+        {
+          "speaker": "Андрій:",
+          "text": "[Я|Ya] [з|z] [України|oo-kra-YEE-ni], [зі|zee] [Львова|L'VO-va]. [Але|A-leh] [зараз|ZA-raz] [я|ya] [живу|zhi-VOO] [в|v] [Києві|KI-yeh-vee].",
+          "id": "I'm from Ukraine, from Lviv. But right now I live in Kyiv.",
+          "literal": "I — from — Ukraine, from — Lviv. but — now — I — live — in — Kyiv."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Ти|Ti] [говориш|ho-VO-rish] [англійською|an-HLEEY-s'ko-yoo]?",
+          "id": "Do you speak English?",
+          "literal": "you — speak — English-ly?"
+        },
+        {
+          "speaker": "Андрій:",
+          "text": "[Трохи|TRO-khi]. [А|A] [ти|ti] [говориш|ho-VO-rish] [українською|oo-kra-YEEN-s'ko-yoo]?",
+          "id": "A little. And do you speak Ukrainian?",
+          "literal": "a-little. and — you — speak — Ukrainian-ly?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Ще|Shcheh] [ні|nee]. [Тільки|TEEL'-ki] [трохи|TRO-khi]. [Я|Ya] [вивчаю|viv-CHA-yoo] [українську|oo-kra-YEEN-s'koo].",
+          "id": "Not yet. Only a little. I'm learning Ukrainian.",
+          "literal": "still — no. only — a-little. I — study — Ukrainian."
+        },
+        {
+          "speaker": "Андрій:",
+          "text": "[Ти|Ti] [вже|vzheh] [говориш|ho-VO-rish] [добре|DOB-reh]!",
+          "id": "You already speak well!",
+          "literal": "you — already — speak — well!"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Дякую|DYA-koo-yoo], [але|A-leh] [це|tseh] [неправда|neh-PRAV-da].",
+          "id": "Thanks, but that's not true.",
+          "literal": "I-thank, but — this — untruth."
+        }
+      ],
+      "notes": [
+        "**Звідки asks where you're from, not where you are.** *Звідки ти?* = where are you from? *Де ти?* = where are you (right now)? Two different questions, answered with different cases. Compare: *Я з України* (origin) vs *Я в Україні* (where I am now).",
+        "**After з, a country's name goes into the родовий.** The good news is that the pattern is very tidy for countries ending in **-я**: Індонезія → **Індонезії**, Японія → **Японії**, Малайзія → **Малайзії**. Countries ending in **-а** switch to **-и**: Україна → **України**, Канада → **Канади**, Америка → **Америки**.",
+        "**з, із, зі — one word in three outfits.** The choice is purely about what's easy to say. **з** before a vowel or a single consonant (*з Києва*), **із** before a cluster of consonants (*із Сінгапуру*), **зі** before a cluster starting with с/з/ш/ж (*зі Львова*, *зі школи*). ⚠️ Picking the wrong one doesn't change the meaning and everyone still understands — so don't let it stop you talking.",
+        "**Languages use the -ською form, not the language's name.** *Я говорю українською* is literally \"I speak in-the-Ukrainian-way\". This form is the fifth case (орудний, the instrumental), but you don't need to know that yet — just remember the ending **-ською** or **-цькою**.",
+        "**But when the language is the thing being studied, the ending changes.** *Я вивчаю українську* (I'm learning Ukrainian) — here the language is the object of the action, and the ending is **-ську**. Compare in pairs: *говорю українською* / *вивчаю українську*.",
+        "**Ще ні = not yet.** Literally \"still no\". It's a much softer answer than a bare *ні*, and very useful for beginners: it admits your limits while signaling that you're working on it. The opposite is **вже** (already).",
+        "**Ukrainian city names come from Ukrainian itself.** Київ (Kyiv), Львів (Lviv), Харків (Kharkiv), Одеса (Odesa), Дніпро (Dnipro). ⚠️ The forms *Киев*, *Львов*, *Одесса* are Russian spellings; using them in Ukraine sounds like calling a country by its old colonial name."
+      ],
+      "grammars": [
+        {
+          "title": "Звідки? — origin, with з + родовий",
+          "body": [
+            "Watch the pattern, not the individual words. The ending **-а** becomes **-и**; **-я** becomes **-ї**; a consonant gets **-у** or **-а**."
+          ],
+          "table": {
+            "head": [
+              "Country",
+              "Say it",
+              "From there",
+              "English"
+            ],
+            "rows": [
+              [
+                "Індонезія",
+                "een-do-NEH-zee-ya",
+                "з Індонезії",
+                "from Indonesia"
+              ],
+              [
+                "Україна",
+                "oo-kra-YEE-na",
+                "з України",
+                "from Ukraine"
+              ],
+              [
+                "Малайзія",
+                "ma-LAI-zee-ya",
+                "з Малайзії",
+                "from Malaysia"
+              ],
+              [
+                "Японія",
+                "ya-PO-nee-ya",
+                "з Японії",
+                "from Japan"
+              ],
+              [
+                "Польща",
+                "POL'-shcha",
+                "з Польщі",
+                "from Poland"
+              ],
+              [
+                "Німеччина",
+                "nee-MECH-chi-na",
+                "з Німеччини",
+                "from Germany"
+              ],
+              [
+                "Америка",
+                "a-MEH-ri-ka",
+                "з Америки",
+                "from America"
+              ],
+              [
+                "Канада",
+                "ka-NA-da",
+                "з Канади",
+                "from Canada"
+              ],
+              [
+                "Китай",
+                "ki-TAI",
+                "з Китаю",
+                "from China"
+              ],
+              [
+                "Сінгапур",
+                "seen-ha-POOR",
+                "із Сінгапуру",
+                "from Singapore"
+              ],
+              [
+                "Джакарта",
+                "dzha-KAR-ta",
+                "з Джакарти",
+                "from Jakarta"
+              ],
+              [
+                "Київ",
+                "KI-yeev",
+                "з Києва",
+                "from Kyiv"
+              ],
+              [
+                "Львів",
+                "l'veev",
+                "зі Львова",
+                "from Lviv"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "Languages: говорити + the -ською ending",
+          "body": [
+            "One formula, any language. Stick **-ською** (or **-цькою**) onto the language's name and you're done."
+          ],
+          "table": {
+            "head": [
+              "Language",
+              "Form used",
+              "Say it",
+              "Example sentence"
+            ],
+            "rows": [
+              [
+                "українська",
+                "українською",
+                "oo-kra-YEEN-s'ko-yoo",
+                "Я говорю українською."
+              ],
+              [
+                "англійська",
+                "англійською",
+                "an-HLEEY-s'ko-yoo",
+                "Він говорить англійською."
+              ],
+              [
+                "індонезійська",
+                "індонезійською",
+                "een-do-neh-ZEEY-s'ko-yoo",
+                "Ми говоримо індонезійською."
+              ],
+              [
+                "польська",
+                "польською",
+                "POL'-s'ko-yoo",
+                "Вона говорить польською."
+              ],
+              [
+                "німецька",
+                "німецькою",
+                "nee-METS'-ko-yoo",
+                "Ти говориш німецькою?"
+              ],
+              [
+                "французька",
+                "французькою",
+                "fran-TSOOZ'-ko-yoo",
+                "Вони говорять французькою."
+              ],
+              [
+                "японська",
+                "японською",
+                "ya-PON-s'ko-yoo",
+                "Я не говорю японською."
+              ],
+              [
+                "арабська",
+                "арабською",
+                "a-RAB-s'ko-yoo",
+                "Він говорить арабською."
+              ]
+            ]
+          },
+          "after": [
+            "To ask politely: **Ви говорите англійською?** — probably the sentence you'll use most in your first week.",
+            "To admit your limits: **Я говорю тільки трохи** (I only speak a little) or **Я ще вивчаю** (I'm still learning)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Nationalities: different for men and women",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Unlike English, Ukrainian nationality words have two forms. You only need to memorize the one that describes you — the rest will come by ear."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Country",
+            "Man",
+            "Woman",
+            "Language"
+          ],
+          "rows": [
+            [
+              "Індонезія",
+              "індонезієць",
+              "індонезійка",
+              "індонезійська"
+            ],
+            [
+              "Україна",
+              "українець",
+              "українка",
+              "українська"
+            ],
+            [
+              "Америка",
+              "американець",
+              "американка",
+              "англійська"
+            ],
+            [
+              "Англія",
+              "англієць",
+              "англійка",
+              "англійська"
+            ],
+            [
+              "Польща",
+              "поляк",
+              "полька",
+              "польська"
+            ],
+            [
+              "Німеччина",
+              "німець",
+              "німкеня",
+              "німецька"
+            ],
+            [
+              "Японія",
+              "японець",
+              "японка",
+              "японська"
+            ],
+            [
+              "Малайзія",
+              "малайзієць",
+              "малайзійка",
+              "малайська"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the pattern: the man's form almost always ends in **-ець**, which shrinks to **-ця** in other cases; the woman's form almost always ends in **-ка**. If in doubt, the safe route that's always right is to name the country: *Я з Індонезії* — and that's what people use most anyway."
+        },
+        {
+          "type": "kotak",
+          "title": "В Україні, not на Україні",
+          "items": [
+            "To say \"in Ukraine\", Ukrainian uses **в Україні** — the preposition *в*, as with any country: *в Індонезії*, *в Польщі*, *в Японії*.",
+            "The form **на Україні** used to be common in Russian and implies a region, not a country. It was dropped long ago and sounds offensive to many people.",
+            "The practical rule is simple: **countries take в, islands and regions take на**. *В Україні*, *в Індонезії*, but *на Балі*, *на Яві*, *на Суматрі*.",
+            "⚠️ This is one of the few grammar mistakes in this course that's about more than right and wrong. If you remember just one thing from this page, make it this one."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uk": "звідки",
+      "baca": "ZVEED-ki",
+      "en": "where from"
+    },
+    {
+      "uk": "з, із, зі",
+      "baca": "z, eez, zee",
+      "en": "from"
+    },
+    {
+      "uk": "країна",
+      "baca": "kra-YEE-na",
+      "en": "country"
+    },
+    {
+      "uk": "місто",
+      "baca": "MEES-to",
+      "en": "city, town"
+    },
+    {
+      "uk": "Індонезія",
+      "baca": "een-do-NEH-zee-ya",
+      "en": "Indonesia"
+    },
+    {
+      "uk": "Україна",
+      "baca": "oo-kra-YEE-na",
+      "en": "Ukraine"
+    },
+    {
+      "uk": "Київ",
+      "baca": "KI-yeev",
+      "en": "Kyiv"
+    },
+    {
+      "uk": "Львів",
+      "baca": "l'veev",
+      "en": "Lviv"
+    },
+    {
+      "uk": "Джакарта",
+      "baca": "dzha-KAR-ta",
+      "en": "Jakarta"
+    },
+    {
+      "uk": "мова",
+      "baca": "MO-va",
+      "en": "language"
+    },
+    {
+      "uk": "говорити",
+      "baca": "ho-vo-RI-ti",
+      "en": "to speak"
+    },
+    {
+      "uk": "розмовляти",
+      "baca": "roz-mov-LYA-ti",
+      "en": "to talk, to chat"
+    },
+    {
+      "uk": "вивчати",
+      "baca": "viv-CHA-ti",
+      "en": "to study, to learn"
+    },
+    {
+      "uk": "жити",
+      "baca": "ZHI-ti",
+      "en": "to live"
+    },
+    {
+      "uk": "трохи",
+      "baca": "TRO-khi",
+      "en": "a little"
+    },
+    {
+      "uk": "тільки",
+      "baca": "TEEL'-ki",
+      "en": "only"
+    },
+    {
+      "uk": "вже",
+      "baca": "vzheh",
+      "en": "already"
+    },
+    {
+      "uk": "ще",
+      "baca": "shcheh",
+      "en": "still; more"
+    },
+    {
+      "uk": "ще ні",
+      "baca": "shcheh nee",
+      "en": "not yet"
+    },
+    {
+      "uk": "зараз",
+      "baca": "ZA-raz",
+      "en": "now"
+    },
+    {
+      "uk": "далеко",
+      "baca": "da-LEH-ko",
+      "en": "far"
+    },
+    {
+      "uk": "близько",
+      "baca": "BLIZ'-ko",
+      "en": "near, close"
+    },
+    {
+      "uk": "новий / нова / нове",
+      "baca": "no-VIY / no-VA",
+      "en": "new"
+    },
+    {
+      "uk": "англійська",
+      "baca": "an-HLEEY-s'ka",
+      "en": "English (language)"
+    },
+    {
+      "uk": "українець / українка",
+      "baca": "oo-kra-YEE-nets'",
+      "en": "Ukrainian (man / woman)"
+    },
+    {
+      "uk": "неправда",
+      "baca": "neh-PRAV-da",
+      "en": "not true"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with з + the correct form of the country.",
+      "items": [
+        "Я ____ (Індонезія).",
+        "Він ____ (Україна).",
+        "Вона ____ (Польща).",
+        "Ми ____ (Японія).",
+        "Ви ____ (Канада)?"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the correct language form (-ською).",
+      "items": [
+        "Я говорю ____ (українська).",
+        "Він говорить ____ (англійська).",
+        "Вона говорить ____ (польська).",
+        "Ми говоримо ____ (індонезійська).",
+        "Ти говориш ____ (німецька)?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ти / звідки",
+        "Індонезії / я / з",
+        "українською / трохи / я / говорю",
+        "Києві / живу / я / в",
+        "далеко / це / дуже"
+      ]
+    },
+    {
+      "prompt": "Translate into Ukrainian.",
+      "items": [
+        "Where are you from? (informal)",
+        "I'm from Indonesia, from Jakarta.",
+        "He's from Lviv, but now he lives in Kyiv.",
+        "I don't speak Ukrainian yet. Only a little.",
+        "Do you speak English? (formal)"
+      ]
+    }
+  ],
+  "answers": [
+    "з Індонезії — з України — з Польщі — з Японії — з Канади",
+    "українською — англійською — польською — індонезійською — німецькою",
+    "Звідки ти? — Я з Індонезії. — Я трохи говорю українською. — Я живу в Києві. — Це дуже далеко.",
+    "Звідки ти? — Я з Індонезії, з Джакарти. — Він зі Львова, але зараз живе в Києві. — Я ще не говорю українською. Тільки трохи. — Ви говорите англійською?"
+  ],
+  "wave": "Review Unit 1. By now *Ласкаво просимо до Києва* should read as \"welcome to Kyiv\" — and you can see for yourself why the ending is **Києва**, not **Київ**."
+}

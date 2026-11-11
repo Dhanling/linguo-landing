@@ -1,0 +1,544 @@
+{
+  "title": "Counting — and what happens to the noun",
+  "title_target": "Koliko?",
+  "goal": "Count from zero to a million, give your age, phone number, and prices — while setting up the rule that trips up nearly every learner: the noun changes form three ways depending on the number in front of it.",
+  "bekal": [
+    "say the numbers 0-1,000 and answer *Koliko imate godina?*",
+    "form the plural of masculine, feminine, and neuter nouns",
+    "choose the right noun form after 1, after 2-4, and after 5 and up"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Upis na kurs",
+      "intro": "Budi signs up for a Bosnian course at a small school near Ferhadija. The clerk uses *Vi* from start to finish — watch the verb forms.",
+      "lines": [
+        {
+          "speaker": "Referentica:",
+          "text": "Dobar dan! Kako se zovete?",
+          "id": "Good afternoon! What is your name?",
+          "literal": "good-m day! how self you(pl)-call?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zovem se Budi Santoso.",
+          "id": "My name is Budi Santoso.",
+          "literal": "I-call self Budi Santoso."
+        },
+        {
+          "speaker": "Referentica:",
+          "text": "Koliko imate godina?",
+          "id": "How old are you?",
+          "literal": "how-many you(pl)-have years-gen-pl?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Imam dvadeset osam godina.",
+          "id": "I'm twenty-eight.",
+          "literal": "I-have twenty eight years-gen-pl."
+        },
+        {
+          "speaker": "Referentica:",
+          "text": "Koji je vaš broj telefona?",
+          "id": "What is your phone number?",
+          "literal": "which-m it-is your(pl)-m number telephone-gen?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nula šest dva — tri četiri pet — sedam osam devet.",
+          "id": "Zero six two, three four five, seven eight nine.",
+          "literal": "zero six two — three four five — seven eight nine."
+        },
+        {
+          "speaker": "Referentica:",
+          "text": "A adresa?",
+          "id": "And the address?",
+          "literal": "and address?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ulica Ferhadija, broj sedamnaest, drugi sprat.",
+          "id": "Ferhadija Street, number seventeen, second floor.",
+          "literal": "street Ferhadija, number seventeen, second-m floor."
+        },
+        {
+          "speaker": "Referentica:",
+          "text": "Koliko dugo ste već u Sarajevu?",
+          "id": "How long have you been in Sarajevo?",
+          "literal": "how-much long you(pl)-are already in Sarajevo-loc?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tri mjeseca. Došao sam u junu.",
+          "id": "Three months. I came in June.",
+          "literal": "three months-gen. come-m I-am in June-loc."
+        },
+        {
+          "speaker": "Referentica:",
+          "text": "Kurs ima dvadeset časova i košta dvjesto maraka.",
+          "id": "The course is twenty lessons and costs two hundred marks.",
+          "literal": "course it-has twenty hours-gen-pl and it-costs two-hundred marks-gen-pl."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "U redu. Koliko studenata ima u grupi?",
+          "id": "All right. How many students are in a class?",
+          "literal": "in order. how-many students-gen-pl it-has in group-loc?"
+        },
+        {
+          "speaker": "Referentica:",
+          "text": "Osam — pet žena i tri muškarca. Počinjemo u ponedjeljak.",
+          "id": "Eight — five women and three men. We start on Monday.",
+          "literal": "eight — five women-gen-pl and three men-gen. we-start on Monday-acc."
+        }
+      ],
+      "notes": [
+        "**Notice the noun endings change three ways in this dialogue:** *tri mjeseca* (after 2-4), *dvadeset časova* and *pet žena* (after 5 and up), *drugi sprat* (after an ordinal, the normal form). That is the grammar of this unit, and it works exactly the same for every noun in Bosnian.",
+        "***Koliko imate godina?* — age counts as something you have.** Literally \"how many years do you have?\" The answer must use *godina*: *Imam dvadeset osam godina.* Answering with just the number sounds unfinished.",
+        "**Phone numbers are read digit by digit, in groups of three.** If there's a double digit, Bosnians sometimes say *dva puta pet* (\"two times five\") for 55. *Nula* is zero; don't use the letter O the way English speakers often do.",
+        "**Bosnian currency: *konvertibilna marka*, written KM or BAM.** One mark = a hundred *feninga*. The name comes from the German mark, and its value is pegged to the euro (€1 ≈ 1.96 KM) — so a rough rule: halve it to get euros. In conversation people say *maraka* or just *KM* (said *ka-em*).",
+        "**Floors are counted the European way.** *Prizemlje* is the ground floor, *prvi sprat* is the floor above it — what Americans call the second floor. So Budi's *drugi sprat* is the third floor in American terms. This misunderstanding causes more late arrivals than it should."
+      ],
+      "grammars": [
+        {
+          "title": "Brojevi — numbers from zero to a million",
+          "body": [
+            "The system is regular and almost free of surprises. Once you know one to ten, you can build the rest yourself."
+          ],
+          "table": {
+            "head": [
+              "",
+              "",
+              "",
+              ""
+            ],
+            "rows": [
+              [
+                "0 **nula**",
+                "1 **jedan**",
+                "2 **dva / dvije**",
+                "3 **tri**"
+              ],
+              [
+                "4 **četiri**",
+                "5 **pet**",
+                "6 **šest**",
+                "7 **sedam**"
+              ],
+              [
+                "8 **osam**",
+                "9 **devet**",
+                "10 **deset**",
+                "11 *jedanaest*"
+              ],
+              [
+                "12 *dvanaest*",
+                "13 *trinaest*",
+                "14 *četrnaest*",
+                "15 *petnaest*"
+              ],
+              [
+                "16 *šesnaest*",
+                "17 *sedamnaest*",
+                "18 *osamnaest*",
+                "19 *devetnaest*"
+              ],
+              [
+                "20 **dvadeset**",
+                "21 *dvadeset jedan*",
+                "30 **trideset**",
+                "40 **četrdeset**"
+              ],
+              [
+                "50 **pedeset**",
+                "60 **šezdeset**",
+                "70 **sedamdeset**",
+                "80 **osamdeset**"
+              ],
+              [
+                "90 **devedeset**",
+                "100 **sto**",
+                "200 *dvjesto*",
+                "300 *tristo*"
+              ],
+              [
+                "500 *petsto*",
+                "1,000 **hiljada**",
+                "2,000 *dvije hiljade*",
+                "1,000,000 **milion**"
+              ]
+            ]
+          },
+          "after": [
+            "**Eleven to nineteen: the number stem + *-naest*.** *Jedan → jedanaest*, *pet → petnaest*, *devet → devetnaest*. Two are slightly shortened: *četiri → četrnaest*, *šest → šesnaest*. Stress goes near the front: yeh-dah-NAH-ehst sounds wrong; the right way is *yeh-DAH-nah-ehst*.",
+            "**Tens: the number stem + *-deset*.** *Tri → trideset*, *pet → pedeset*, *sedam → sedamdeset*. Two change their sound: *četiri → četrdeset*, *šest → šezdeset*. Compound numbers are simply strung together: *dvadeset jedan* (21), *četrdeset pet* (45), *devedeset devet* (99) — no \"and\" in the middle, unlike German or Dutch.",
+            "**Only *jedan* and *dva* have gender.** *Jedan grad, jedna kafa, jedno pivo.* And the one people miss most: **dva** for masculine and neuter words, **dvije** for feminine words. *Dva brata* but *dvije sestre*; *dva piva* but *dvije kafe*. Numbers from three up never change.",
+            "**Ordinals are formed like adjectives**, so their endings follow the noun: *prvi* (first), *drugi* (second), *treći*, *četvrti*, *peti*, *šesti*, *sedmi*, *osmi*, *deveti*, *deseti*. *Prvi sprat, prva soba, prvo pitanje.* Note that *drugi* has a second meaning: \"other\" — *drugi grad* can mean \"the second city\" or \"another city\", and context decides."
+          ]
+        },
+        {
+          "title": "Nouns after numbers — three forms, not one",
+          "body": [
+            "This is the rule that most often makes learners stop mid-sentence. The good news: it has only three lines, and it applies the same way to every noun without exception."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Noun form",
+              "m *grad*",
+              "f *godina*",
+              "n *pivo*"
+            ],
+            "rows": [
+              [
+                "**1**, 21, 31, 101…",
+                "normal singular",
+                "*jedan grad*",
+                "*jedna godina*",
+                "*jedno pivo*"
+              ],
+              [
+                "**2, 3, 4**, 22, 33, 54…",
+                "genitive **singular**",
+                "*dva grada*",
+                "*dvije godine*",
+                "*dva piva*"
+              ],
+              [
+                "**5 and up**, also 11-14",
+                "genitive **plural**",
+                "*pet gradova*",
+                "*pet godina*",
+                "*pet piva*"
+              ],
+              [
+                "no number (ordinary plural)",
+                "nominative plural",
+                "*gradovi*",
+                "*godine*",
+                "*piva*"
+              ]
+            ]
+          },
+          "after": [
+            "**What decides is the last digit.** *Dvadeset jedna godina* (21 years) goes back to the singular because it ends in 1. *Trideset tri godine* uses the 2-4 form. *Dvadeset pet godina* uses the genitive plural. The only exception: **11 to 14 always take the genitive plural** even though they end in 1-4 — *jedanaest godina*, *četrnaest godina*.",
+            "**Why a separate form for 2-4?** Because early Slavic had a special form for \"exactly two\", and its remains froze around 2, 3, and 4. There's no point hunting for the logic now — all you need is to drill three examples until they come out by themselves: *jedna kafa, dvije kafe, pet kafa*.",
+            "**You already have half the genitive endings.** Genitive singular: masculine and neuter add **-a** (*grad → grada*, *pivo → piva*), feminine changes to **-e** (*godina → godine*). Genitive plural: masculine adds **-ova / -eva** (*gradovi → gradova*), while feminine and neuter have **no ending at all** (*godine → godina*, *piva → piva*). The whole story is in unit 8.",
+            "**The verb follows too.** After 1 it is singular (*jedan student je ovdje*), after 2-4 plural (*dva studenta su ovdje*), after 5 and up it is **neuter singular**: *Pet studenata je ovdje.* It sounds strange, but that's how it is — and hardly any foreign speaker notices."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Plurals — from one to many",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The plural is formed with an ending, and the ending is set by the word's gender — so three patterns, one per gender. Once again, proof of why you need to note the gender from the very first word."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Type",
+            "Plural ending",
+            "Example",
+            "Note"
+          ],
+          "rows": [
+            [
+              "**masculine**",
+              "**-i**",
+              "*student → studenti*, *prozor → prozori*",
+              "one-syllable words insert *-ov-/-ev-*: *grad → gradovi*, *nož → noževi*"
+            ],
+            [
+              "**feminine**",
+              "**-e**",
+              "*žena → žene*, *kafa → kafe*, *soba → sobe*",
+              "the most regular; almost no surprises"
+            ],
+            [
+              "**neuter**",
+              "**-a**",
+              "*pivo → piva*, *selo → sela*",
+              "*-e* becomes *-a* too: *more → mora*"
+            ],
+            [
+              "**f ending in a consonant**",
+              "**-i**",
+              "*noć → noći*, *stvar → stvari*",
+              "the small group you know from unit 3"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One-syllable masculine words insert *-ov-* (or *-ev-* after *č, ć, š, ž, đ, dž, j, lj, nj*) before the ending. *Grad → gradovi*, *sat → satovi*, *voz → vozovi*, but *nož → noževi*, *muž → muževi*. Words of two or more syllables don't need it: *prozor → prozori*, *student → studenti*."
+        },
+        {
+          "type": "kotak",
+          "title": "Five plurals to learn separately",
+          "items": [
+            "*čovjek* (person) → **ljudi** — a completely different word, just like *person / people*. *Ljudi su dobri.*",
+            "*dijete* (child) → **djeca**, treated as feminine singular: *moja djeca*.",
+            "*brat* (brother) → **braća**, also feminine singular: *moja braća su ovdje*.",
+            "*oko* (eye) → **oči**, *uho* (ear) → **uši** — both feminine plural.",
+            "*sat* has two plurals with different meanings: **sati** = hours (units of time), **satovi** = clocks/watches. *Tri sata* = three hours; *tri satova* = three clocks."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Koliko? — numbers in everyday life",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "One question word opens almost every question with a number in it: *koliko* (how much / how many). It is always followed by the genitive plural, just like the big numbers."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bosanski",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Koliko imate godina?*",
+              "KOH-lee-koh EE-mah-teh GOH-dee-nah",
+              "How old are you?"
+            ],
+            [
+              "*Koliko košta?*",
+              "KOH-lee-koh KOHSH-tah",
+              "How much is it?"
+            ],
+            [
+              "*Koliko je sati?*",
+              "KOH-lee-koh yeh SAH-tee",
+              "What time is it?"
+            ],
+            [
+              "*Koliko dugo?*",
+              "KOH-lee-koh DOO-goh",
+              "How long?"
+            ],
+            [
+              "*Koliko ljudi?*",
+              "KOH-lee-koh LYOO-dee",
+              "How many people?"
+            ],
+            [
+              "*Koji je vaš broj telefona?*",
+              "KOH-yee yeh vahsh broy teh-leh-FOH-nah",
+              "What's your phone number?"
+            ],
+            [
+              "*Koliko to košta ukupno?*",
+              "…OO-koop-noh",
+              "How much is it altogether?"
+            ],
+            [
+              "*Imam dvadeset osam godina.*",
+              "",
+              "I'm twenty-eight."
+            ],
+            [
+              "*Košta pet maraka.*",
+              "",
+              "It costs five marks."
+            ],
+            [
+              "*Živim ovdje tri mjeseca.*",
+              "",
+              "I've been living here for three months."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Bosnian money: the **konvertibilna marka** (KM), a hundred *feninga*. Denominations in circulation: 1, 2, 5 KM as coins; 10, 20, 50, 100, 200 KM as notes. For prices with change, people say the marks first: *tri marke i pedeset* (3.50 KM), often shortened to *tri i po* — \"three and a half\"."
+        },
+        {
+          "type": "p",
+          "text": "One small trap that often comes up at the till: **marka itself is feminine**, so *jedna marka, dvije marke, pet maraka*. If you say *dva marke*, everyone will still understand, but *dvije marke* is correct. And in Bosnia prices are written with a comma for the decimals — *3,50 KM*, not *3.50*."
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 3",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Bosnian column, read the English, and rebuild the sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Bosanski"
+          ],
+          "rows": [
+            [
+              "What's this? — That's a table.",
+              "*Šta je ovo? — To je sto.*"
+            ],
+            [
+              "This room is small but bright.",
+              "*Ova soba je mala, ali svijetla.*"
+            ],
+            [
+              "This table is for the computer.",
+              "*Ovaj sto je za kompjuter.*"
+            ],
+            [
+              "What's that over there?",
+              "*Šta je ono tamo?*"
+            ],
+            [
+              "The bathroom is on the left, the kitchen on the right.",
+              "*Kupatilo je lijevo, kuhinja desno.*"
+            ],
+            [
+              "It's all clear!",
+              "*Sve je jasno!*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bs": "koliko",
+      "baca": "KOH-lee-koh",
+      "en": "how much, how many"
+    },
+    {
+      "bs": "broj (m)",
+      "baca": "broy",
+      "en": "number"
+    },
+    {
+      "bs": "godina (f)",
+      "baca": "goh-DEE-nah",
+      "en": "year"
+    },
+    {
+      "bs": "mjesec (m)",
+      "baca": "MYEH-sehts",
+      "en": "month"
+    },
+    {
+      "bs": "sat (m)",
+      "baca": "saht",
+      "en": "hour; clock, watch"
+    },
+    {
+      "bs": "marka (f)",
+      "baca": "MAHR-kah",
+      "en": "mark (Bosnian currency)"
+    },
+    {
+      "bs": "koštati — *košta*",
+      "baca": "KOHSH-tah-tee",
+      "en": "to cost"
+    },
+    {
+      "bs": "adresa (f)",
+      "baca": "ah-DREH-sah",
+      "en": "address"
+    },
+    {
+      "bs": "ulica (f)",
+      "baca": "OO-lee-tsah",
+      "en": "street"
+    },
+    {
+      "bs": "sprat (m)",
+      "baca": "spraht",
+      "en": "floor (story)"
+    },
+    {
+      "bs": "kurs (m)",
+      "baca": "koors",
+      "en": "course"
+    },
+    {
+      "bs": "grupa (f)",
+      "baca": "GROO-pah",
+      "en": "group, class"
+    },
+    {
+      "bs": "čovjek (m) — pl *ljudi*",
+      "baca": "CHOH-vyehk",
+      "en": "person"
+    },
+    {
+      "bs": "žena (f)",
+      "baca": "ZHEH-nah",
+      "en": "woman; wife"
+    },
+    {
+      "bs": "muškarac (m)",
+      "baca": "moosh-KAH-rahts",
+      "en": "man"
+    },
+    {
+      "bs": "prvi / drugi / treći",
+      "baca": "PR-vee / DROO-gee / TREH-chee",
+      "en": "first / second / third"
+    },
+    {
+      "bs": "ukupno",
+      "baca": "OO-koop-noh",
+      "en": "in total, altogether"
+    },
+    {
+      "bs": "dugo",
+      "baca": "DOO-goh",
+      "en": "long (time)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Bosnian.",
+      "items": [
+        "I'm twenty-eight years old.",
+        "How much is it? — Five marks.",
+        "I have two sisters.",
+        "The course is twenty lessons.",
+        "There are eight people in the class.",
+        "I've been living here for three months."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right noun form.",
+      "items": [
+        "jedna ____ (godina)",
+        "dvije ____ (godina)",
+        "pet ____ (godina)",
+        "dva ____ (grad)",
+        "sedam ____ (grad)",
+        "tri ____ (pivo)",
+        "deset ____ (marka)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "godina / imate / koliko / ?",
+        "košta / to / koliko / ?",
+        "sestre / imam / dvije",
+        "telefona / vaš / je / koji / broj / ?",
+        "maraka / košta / dvjesto / kurs"
+      ]
+    }
+  ],
+  "answers": [
+    "Imam dvadeset osam godina. — Koliko košta? Pet maraka. — Imam dvije sestre. — Kurs ima dvadeset časova. — U grupi ima osam ljudi. — Živim ovdje tri mjeseca.",
+    "godina — godine — godina — grada — gradova — piva — maraka",
+    "Koliko imate godina? — Koliko to košta? — Imam dvije sestre. — Koji je vaš broj telefona? — Kurs košta dvjesto maraka."
+  ]
+}

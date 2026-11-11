@@ -1,0 +1,524 @@
+{
+  "title": "What about tomorrow? — the future and the weather",
+  "title_target": "Kakvo će biti vrijeme?",
+  "goal": "Talk about plans and the weather forecast — learn the future tense, and the one important place where Bosnian uses the present instead.",
+  "bekal": [
+    "forming the future with *ću / ćeš / će* + dictionary form, including the negative",
+    "talking about the weather with sentences that have no subject",
+    "naming months, seasons and dates"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kakvo će biti vrijeme?",
+      "intro": "Thursday evening in the apartment kitchen. Budi has heard about the mountains around Sarajevo and wants to climb one.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Emire, kakvo će biti vrijeme sutra?",
+          "id": "Emir, what's the weather going to be like tomorrow?",
+          "literal": "Emir-voc, what-like-n it-will be tomorrow?"
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Pogledat ću na telefonu. Bit će sunčano i toplo, oko dvadeset.",
+          "id": "I'll check on my phone. Sunny and warm, about twenty degrees.",
+          "literal": "look I-will on phone-loc. be it-will sunny-n and warm-n, about twenty."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Odlično! Onda ćemo ići na Bjelašnicu?",
+          "id": "Great! So we'll go to Bjelašnica?",
+          "literal": "excellent! then we-will go to Bjelašnica-acc?"
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Nećemo sutra — sutra radim. Možemo u nedjelju.",
+          "id": "Not tomorrow — I'm working tomorrow. We can go on Sunday.",
+          "literal": "we-won't tomorrow — tomorrow I-work. we-can on Sunday-acc."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Važi. A kada počinje zima ovdje?",
+          "id": "Deal. And when does winter start here?",
+          "literal": "it-holds. and when it-starts winter here?"
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Krajem novembra obično padne prvi snijeg. U decembru je već hladno.",
+          "id": "The first snow usually falls at the end of November. By December it's already cold.",
+          "literal": "end-ins November-gen usually it-falls first-m snow. in December-loc it-is already cold-n."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Koliko hladno?",
+          "id": "How cold?",
+          "literal": "how-much cold-n?"
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Minus deset, ponekad minus petnaest. Ali suho je, nije kao kiša.",
+          "id": "Minus ten, sometimes minus fifteen. But it's dry, not like rain.",
+          "literal": "minus ten, sometimes minus fifteen. but dry-n it-is, not-it-is like rain."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "U Jakarti nikad nije bilo ispod dvadeset pet.",
+          "id": "In Jakarta it never got below twenty-five.",
+          "literal": "in Jakarta-loc never not-it-is been-n below twenty five."
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Onda ćeš se smrznuti. Trebat će ti dobra jakna i kapa.",
+          "id": "Then you'll freeze. You'll need a good jacket and a hat.",
+          "literal": "then you-will self freeze. need it-will to-you good-f jacket and hat."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kupit ću sve u oktobru. Obećavam.",
+          "id": "I'll buy everything in October. I promise.",
+          "literal": "buy I-will all in October-loc. I-promise."
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Nećeš. Svi to kažu, pa kupe u januaru.",
+          "id": "You won't. Everyone says that, then they buy in January.",
+          "literal": "you-won't. all that they-say, then they-buy in January-loc."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vidjet ćemo! Kada dođe novembar, javit ću ti.",
+          "id": "We'll see! When November comes, I'll let you know.",
+          "literal": "see we-will! when it-comes November, let-know I-will to-you."
+        }
+      ],
+      "notes": [
+        "**Two ways to write the future, both in this dialogue.** *Pogledat ću* — the verb comes first, its final *-i* is cut off, then *ću* stands on its own. *Onda ćemo ići* — the helping verb comes first and the verb stays whole. Both mean the same and both are correct; all that decides it is what's sitting in first place.",
+        "***Kada dođe novembar, javit ću ti* — notice the present tense.** After *kada* (when) and *ako* (if), Bosnian uses the **present**, not the future, even when the meaning is clearly future. That's exactly what English does (*when November comes*). Note too that the verb is the *svršeni* (perfective) form — *dođe*, not *dolazi* — as covered in Unit 15.",
+        "***Nećemo sutra* — the negative future uses a fused form.** *Neću, nećeš, neće, nećemo, nećete, neće*. And unlike the positive form, here the verb is **never cut short**: *neću raditi*, not *neću radit*.",
+        "***Krajem novembra* = \"toward the end of November\".** A frozen instrumental used as a time expression, related to *početkom* (at the beginning) and *sredinom* (in the middle): *početkom maja*, *sredinom godine*. The month that follows is in the genitive.",
+        "**Bjelašnica and Jahorina** are the two mountains where the skiing events of the 1984 Winter Olympics were held — both less than an hour from central Sarajevo. It's one of the least-known things about the city: you can have coffee in the old town in the morning and be standing in snow before noon."
+      ],
+      "grammars": [
+        {
+          "title": "Futur I — the future tense",
+          "body": [
+            "It's formed from the short form of *htjeti* (want) plus the dictionary form. Because the short form is a little word, it follows the second-place rule you've known since Unit 12."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Short",
+              "Long",
+              "Negative",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**ja**",
+                "*ću*",
+                "*hoću*",
+                "*neću*",
+                "*Radit ću.* / *Ja ću raditi.*"
+              ],
+              [
+                "**ti**",
+                "*ćeš*",
+                "*hoćeš*",
+                "*nećeš*",
+                "*Hoćeš li raditi?*"
+              ],
+              [
+                "**on / ona**",
+                "*će*",
+                "*hoće*",
+                "*neće*",
+                "*Bit će sunčano.*"
+              ],
+              [
+                "**mi**",
+                "*ćemo*",
+                "*hoćemo*",
+                "*nećemo*",
+                "*Ići ćemo sutra.*"
+              ],
+              [
+                "**vi**",
+                "*ćete*",
+                "*hoćete*",
+                "*nećete*",
+                "*Hoćete li doći?*"
+              ],
+              [
+                "**oni / one**",
+                "*će*",
+                "*hoće*",
+                "*neće*",
+                "*Oni će kupiti karte.*"
+              ]
+            ]
+          },
+          "after": [
+            "**Two word orders, one meaning.** If the verb comes first, the final *-i* of the dictionary form is cut off and *ću* follows: *radit ću, kupit ću, vidjet ćemo, bit će*. If another word is in first place, the verb stays whole at the end: *Ja ću raditi. Sutra ćemo kupiti karte.* Verbs ending in *-ći* are never cut short: *ići ću, doći će, reći ćemo*.",
+            "**In Serbia the two are often written as one word — *radiću, kupiću*.** You'll also see that form in eastern Bosnia and in a lot of online writing. This course uses the separate form, which is usual in Sarajevo and in Croatia. They sound exactly the same; only the spelling differs.",
+            "**Questions use the long form:** *Hoćeš li doći?* — and so do short answers: *Hoću* (yes, I will) or *Neću* (no). *Da li ćeš doći?* is equally correct.",
+            "**The present often stands in for the future** when there's a clear time expression: *Sutra idem u Mostar.* *U nedjelju radim.* This is very common in conversation — just like English \"I'm going to Mostar tomorrow\". If you're unsure of the future form, this is always a safe option."
+          ]
+        },
+        {
+          "title": "Vrijeme — the weather, and sentences with no subject",
+          "body": [
+            "Almost all Bosnian weather sentences have no subject at all: just an adjective in the **neuter** form plus *je*."
+          ],
+          "table": {
+            "head": [
+              "Bosanski",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*Kakvo je vrijeme?*",
+                "KAHK-voh yeh VREE-yeh-meh",
+                "What's the weather like?"
+              ],
+              [
+                "*Sunčano je.*",
+                "SOON-chah-noh yeh",
+                "It's sunny."
+              ],
+              [
+                "*Oblačno je.*",
+                "oh-BLAHCH-noh yeh",
+                "It's cloudy."
+              ],
+              [
+                "*Pada kiša.*",
+                "PAH-dah KEE-shah",
+                "It's raining. (literally: rain is falling)"
+              ],
+              [
+                "*Pada snijeg.*",
+                "PAH-dah snyehg",
+                "It's snowing."
+              ],
+              [
+                "*Vjetrovito je.*",
+                "vyeh-troh-VEE-toh yeh",
+                "It's windy."
+              ],
+              [
+                "*Toplo / hladno / vruće je.*",
+                "TOH-ploh / HLAHD-noh / VROO-cheh",
+                "It's warm / cold / hot."
+              ],
+              [
+                "*Magla je.*",
+                "MAH-glah yeh",
+                "It's foggy."
+              ],
+              [
+                "*Koliko je stepeni?*",
+                "KOH-lee-koh yeh STEH-peh-nee",
+                "How many degrees is it?"
+              ],
+              [
+                "*Dvadeset stepeni. / Minus deset.*",
+                "",
+                "Twenty degrees. / Minus ten."
+              ]
+            ]
+          },
+          "after": [
+            "**The adjective is always neuter** because there's no noun for it to follow: *hladno je*, not *hladan je*. The same pattern is used for situations in general: *lijepo je ovdje* (it's nice here), *teško je* (it's hard), *jasno je* (it's clear).",
+            "***Pada kiša* does have a subject, and it's the rain itself** — literally \"rain is falling\". So the past form follows *kiša*, which is feminine: *Padala je kiša.* For snow, which is masculine: *Padao je snijeg.*",
+            "***Vrijeme* means weather **and** time.** *Nemam vremena* (I don't have time) and *Lijepo je vrijeme* (the weather is nice) use the same word. Context tells them apart, and it's never really confusing.",
+            "**Forecast phrases you'll hear on the radio:** *Sutra se očekuje kiša* (rain is expected tomorrow), *Temperatura od pet do dvanaest stepeni*, *Ujutro magla, poslije podne sunčano*. You don't need to produce them — recognizing them is enough."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Mjeseci, godišnja doba, datumi",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bosnian month names are almost the same as the English ones — both borrowed from Latin. This is one of the cheapest lists you'll learn in the whole course."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bosanski",
+            "English",
+            "Bosanski",
+            "English"
+          ],
+          "rows": [
+            [
+              "*januar*",
+              "January",
+              "*juli*",
+              "July"
+            ],
+            [
+              "*februar*",
+              "February",
+              "*august / avgust*",
+              "August"
+            ],
+            [
+              "*mart*",
+              "March",
+              "*septembar*",
+              "September"
+            ],
+            [
+              "*april*",
+              "April",
+              "*oktobar*",
+              "October"
+            ],
+            [
+              "*maj*",
+              "May",
+              "*novembar*",
+              "November"
+            ],
+            [
+              "*juni*",
+              "June",
+              "*decembar*",
+              "December"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "In **Croatia** the month names are completely different and come from old Slavic: *siječanj, veljača, ožujak, travanj, svibanj, lipanj, srpanj, kolovoz, rujan, listopad, studeni, prosinac*. You'll see them on Croatian tickets, newspapers and timetables, so it's good to know the list exists — but in Bosnia, the international names are used."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Godišnja doba",
+            "English",
+            "\"in …\"",
+            "Dates"
+          ],
+          "rows": [
+            [
+              "*proljeće* (n)",
+              "spring",
+              "*u proljeće*",
+              "*Koji je danas datum?*"
+            ],
+            [
+              "*ljeto* (n)",
+              "summer",
+              "*ljeti*",
+              "*Danas je peti maj.*"
+            ],
+            [
+              "*jesen* (f)",
+              "autumn, fall",
+              "*u jesen*",
+              "*Rođen sam petnaestog juna.*"
+            ],
+            [
+              "*zima* (f)",
+              "winter",
+              "*zimi*",
+              "*Vidimo se prvog septembra.*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dates use **ordinal numbers**, just as English says \"the fifth\". To give today's date, use the ordinary form — *Danas je peti maj* (today is the fifth of May). To say \"on the …\", use the **genitive**, and the month goes into the genitive too — *petog maja*, *petnaestog juna*, *prvog septembra*. In writing, dates use periods, day first: **15. 6. 2026.**"
+        },
+        {
+          "type": "kotak",
+          "title": "Two dates to know in Bosnia",
+          "items": [
+            "**1 March** — Independence Day (*Dan nezavisnosti*), and **25 November** — Statehood Day (*Dan državnosti*). Both are public holidays in the Federation of Bosnia and Herzegovina.",
+            "Islamic holidays follow the Hijri calendar, so their dates move every year: *Ramazanski bajram* (Eid al-Fitr) and *Kurban-bajram* (Eid al-Adha). The greeting: *Bajram šerif mubarek olsun*, answered with *Allah razi olsun* — two Turkish phrases that have survived intact in Bosnia. A simpler greeting that's always safe: *Sretan Bajram!*"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 17",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Bosnian column, read the English, and rebuild the sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Bosanski"
+          ],
+          "rows": [
+            [
+              "My throat hurts, for three days now.",
+              "*Boli me grlo, već tri dana.*"
+            ],
+            [
+              "Do you have a fever? — Last night it was thirty-eight.",
+              "*Imate li temperaturu? — Sinoć sam imao trideset osam.*"
+            ],
+            [
+              "I don't feel well.",
+              "*Ne osjećam se dobro.*"
+            ],
+            [
+              "Drink plenty of tea and rest.",
+              "*Pijte puno čaja i odmarajte se.*"
+            ],
+            [
+              "Do you have anything for a headache?",
+              "*Imate li nešto protiv glavobolje?*"
+            ],
+            [
+              "Get well soon!",
+              "*Ozdravite brzo!*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bs": "vrijeme (n)",
+      "baca": "VREE-yeh-meh",
+      "en": "weather; time"
+    },
+    {
+      "bs": "sunčano / oblačno",
+      "baca": "SOON-chah-noh",
+      "en": "sunny / cloudy"
+    },
+    {
+      "bs": "kiša (f)",
+      "baca": "KEE-shah",
+      "en": "rain"
+    },
+    {
+      "bs": "snijeg (m)",
+      "baca": "snyehg",
+      "en": "snow"
+    },
+    {
+      "bs": "padati — *pada*",
+      "baca": "PAH-dah-tee",
+      "en": "fall"
+    },
+    {
+      "bs": "vjetar (m)",
+      "baca": "VYEH-tahr",
+      "en": "wind"
+    },
+    {
+      "bs": "magla (f)",
+      "baca": "MAH-glah",
+      "en": "fog"
+    },
+    {
+      "bs": "stepen (m)",
+      "baca": "STEH-pehn",
+      "en": "degree"
+    },
+    {
+      "bs": "vruće / hladno",
+      "baca": "VROO-cheh / HLAHD-noh",
+      "en": "hot / cold"
+    },
+    {
+      "bs": "suho / vlažno",
+      "baca": "SOO-hoh / VLAHZH-noh",
+      "en": "dry / humid"
+    },
+    {
+      "bs": "proljeće / ljeto",
+      "baca": "PROH-lyeh-cheh / LYEH-toh",
+      "en": "spring / summer"
+    },
+    {
+      "bs": "jesen / zima",
+      "baca": "YEH-sehn / ZEE-mah",
+      "en": "autumn / winter"
+    },
+    {
+      "bs": "mjesec (m)",
+      "baca": "MYEH-sehts",
+      "en": "month"
+    },
+    {
+      "bs": "datum (m)",
+      "baca": "DAH-toom",
+      "en": "date"
+    },
+    {
+      "bs": "krajem / početkom",
+      "baca": "KRAH-yehm / poh-CHEHT-kohm",
+      "en": "at the end / beginning of (a month, year)"
+    },
+    {
+      "bs": "jakna / kapa (f)",
+      "baca": "YAHK-nah / KAH-pah",
+      "en": "jacket / hat"
+    },
+    {
+      "bs": "očekivati — *očekujem*",
+      "baca": "oh-cheh-KEE-vah-tee",
+      "en": "expect"
+    },
+    {
+      "bs": "vidjet ćemo",
+      "baca": "VEE-dyeht cheh-moh",
+      "en": "we'll see"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Bosnian.",
+      "items": [
+        "What will the weather be like tomorrow?",
+        "Tomorrow will be sunny and warm.",
+        "It's raining today.",
+        "I'm not working tomorrow.",
+        "I'll buy a jacket in October.",
+        "When November comes, I'll let you know."
+      ]
+    },
+    {
+      "prompt": "Put into the future tense.",
+      "items": [
+        "Radim sutra. → ____",
+        "Idemo u Mostar. → ____",
+        "On kupuje karte. → ____",
+        "Vrijeme je lijepo. → ____",
+        "Ne dolazim. → ____",
+        "Vidimo se. → ____",
+        "Oni putuju u augustu. → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "biti / će / vrijeme / kakvo / sutra / ?",
+        "sunčano / će / biti / toplo / i",
+        "kiša / pada / danas",
+        "sutra / nećemo / ići",
+        "ti / javit / ću"
+      ]
+    }
+  ],
+  "answers": [
+    "Kakvo će biti vrijeme sutra? — Sutra će biti sunčano i toplo. — Danas pada kiša. — Sutra neću raditi. — Kupit ću jaknu u oktobru. — Kada dođe novembar, javit ću ti.",
+    "Radit ću sutra. — Ići ćemo u Mostar. — On će kupiti karte. — Vrijeme će biti lijepo. — Neću doći. — Vidjet ćemo se. — Oni će putovati u augustu.",
+    "Kakvo će biti vrijeme sutra? — Bit će sunčano i toplo. — Danas pada kiša. — Sutra nećemo ići. — Javit ću ti."
+  ]
+}

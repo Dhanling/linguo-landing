@@ -1,0 +1,603 @@
+{
+  "title": "Where do you live?",
+  "title_target": "Де ти живеш? — De ty zhyvesh?",
+  "goal": "Say where you live, work, and are — and master the sixth case (місцевий, the locative), the only case that never appears without a preposition.",
+  "bekal": [
+    "ask and answer \"where do you live?\"",
+    "put place names into the місцевий",
+    "choose between в and на",
+    "conjugate the verb жити",
+    "describe where you live"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — After class, waiting for the bus",
+      "intro": "Oksana and Ani are chatting at the bus stop. Every place name in this dialogue ends in **-і** — that's the hallmark of the sixth case, and it has hardly any exceptions.",
+      "lines": [
+        {
+          "speaker": "Оксана:",
+          "text": "[Ані|A-nee], [де|deh] [ти|ti] [живеш|zhi-VESH]?",
+          "id": "Ani, where do you live?",
+          "literal": "Ani, where — you — live?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Я|Ya] [живу|zhi-VOO] [в|v] [гуртожитку|hoor-TO-zhit-koo], [на|na] [Подолі|Po-DO-lee].",
+          "id": "I live in the dorm, in Podil.",
+          "literal": "I — live — in — dormitory, on — Podil."
+        },
+        {
+          "speaker": "Оксана:",
+          "text": "[О|O], [я|ya] [знаю|ZNA-yoo] [Поділ|Po-DEEL]. [Це|Tseh] [гарний|HAR-niy] [район|ra-YON].",
+          "id": "Oh, I know Podil. It's a nice neighborhood.",
+          "literal": "oh, I — know — Podil. this — nice — district."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Так|Tak], [і|ee] [близько|BLIZ'-ko] [до|do] [університету|oo-nee-ver-si-TEH-too]. [А|A] [ви|vi] [де|deh] [живете|zhi-veh-TEH]?",
+          "id": "Yes, and it's close to the university. And where do you live?",
+          "literal": "yes, and — close — to — university (родовий). and — you — where — live?"
+        },
+        {
+          "speaker": "Оксана:",
+          "text": "[Я|Ya] [живу|zhi-VOO] [в|v] [квартирі|kvar-TI-ree] [на|na] [Лівому|LEE-vo-moo] [березі|BEH-reh-zee].",
+          "id": "I live in an apartment on the Left Bank.",
+          "literal": "I — live — in — apartment, on — left — bank."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Це|Tseh] [далеко|da-LEH-ko]?",
+          "id": "Is that far?",
+          "literal": "this — far?"
+        },
+        {
+          "speaker": "Оксана:",
+          "text": "[Не|Neh] [дуже|DOO-zheh]. [Сорок|SO-rok] [хвилин|khvi-LIN] [на|na] [метро|met-RO].",
+          "id": "Not very. Forty minutes by metro.",
+          "literal": "not — very. forty — minutes (родовий) — on — metro."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[У|OO] [вас|vas] [велика|veh-LI-ka] [квартира|kvar-TI-ra]?",
+          "id": "Is your apartment big?",
+          "literal": "at — you — big — apartment?"
+        },
+        {
+          "speaker": "Оксана:",
+          "text": "[Три|Tri] [кімнати|keem-NA-ti]. [Я|Ya] [живу|zhi-VOO] [там|tam] [з|z] [чоловіком|cho-lo-VEE-kom] [і|ee] [сином|SI-nom].",
+          "id": "Three rooms. I live there with my husband and son.",
+          "literal": "three — rooms. I — live — there — with — husband (орудний) — and — son (орудний)."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[А|A] [в|v] [моїй|mo-YEEY] [кімнаті|keem-NA-tee] [тільки|TEEL'-ki] [ліжко|LEEZH-ko], [стіл|steel] [і|ee] [шафа|SHA-fa].",
+          "id": "In my room there's just a bed, a table, and a wardrobe.",
+          "literal": "and — in — my (місцевий) — room — only — bed, table — and — wardrobe."
+        },
+        {
+          "speaker": "Оксана:",
+          "text": "[Цього|TSYO-ho] [достатньо|dos-TAT-nyo], [коли|ko-LI] [ти|ti] [студентка|stoo-DENT-ka].",
+          "id": "That's enough when you're a student.",
+          "literal": "this (родовий) — enough, when — you — student (f)."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Правда|PRAV-da]. [І|EE] [вікно|veek-NO] [з|z] [гарним|HAR-nim] [видом|VI-dom].",
+          "id": "True. And a window with a nice view.",
+          "literal": "true. and — window — with — nice (орудний) — view (орудний)."
+        }
+      ],
+      "notes": [
+        "**The місцевий never stands alone.** It's the only case that **must** come after a preposition: в, у, на, при, по. You'll never see *школі* without *в* or *у* in front of it. That's why it's the easiest of the seven cases to recognize.",
+        "**The ending is almost always -і.** *Київ* → *у Києві*, *школа* → *у школі*, *стіл* → *на столі*, *кімната* → *у кімнаті*, *робота* → *на роботі*. Stick on **-і**, put a preposition in front, and you're right nine times out of ten.",
+        "**The rest end in -у, and they're certain masculine nouns.** *Банк* → *у банку*, *гуртожиток* → *у гуртожитку*, *ринок* → *на ринку*, *сад* → *у саду*. There's no tidy rule; you pick these up through use, and there aren't many.",
+        "**Foreign words ending in -о, -е, -у don't change at all.** *Кафе*, *метро*, *таксі*, *пальто* — same form in every case. A small gift that comes in handy fairly often.",
+        "**В for things with walls, на for surfaces — but not always.** The big rule: *в квартирі*, *в кімнаті*, *в школі* (enclosed spaces) versus *на столі*, *на вулиці* (surfaces or open spaces). ⚠️ But there's a group to memorize: **на роботі**, **на вокзалі**, **на пошті**, **на заводі**, **на ринку**, **на метро** — all take *на* even though they're clearly indoors.",
+        "**Neighborhoods and districts almost always take на.** *На Подолі*, *на Лівому березі*, *на Оболоні*. If you're unsure about a district name, *на* is a safer bet than *в*.",
+        "**Жити is a first-pattern verb with a changing stem.** The dictionary form is *жити*, but the stem becomes **жив-**: *я живу*, *ти живеш*, *він живе*. This group of verbs is small, but it's full of high-frequency words — exactly the ones you'll say most."
+      ],
+      "grammars": [
+        {
+          "title": "Місцевий: places, always with a preposition",
+          "body": [],
+          "table": {
+            "head": [
+              "Dictionary form",
+              "There",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "Київ",
+                "у Києві",
+                "oo KI-yeh-vee",
+                "in Kyiv"
+              ],
+              [
+                "Львів",
+                "у Львові",
+                "oo L'VO-vee",
+                "in Lviv"
+              ],
+              [
+                "Україна",
+                "в Україні",
+                "v oo-kra-YEE-nee",
+                "in Ukraine"
+              ],
+              [
+                "Індонезія",
+                "в Індонезії",
+                "v een-do-NEH-zee-yee",
+                "in Indonesia"
+              ],
+              [
+                "школа",
+                "у школі",
+                "oo SHKO-lee",
+                "at school"
+              ],
+              [
+                "кімната",
+                "у кімнаті",
+                "oo keem-NA-tee",
+                "in the room"
+              ],
+              [
+                "квартира",
+                "у квартирі",
+                "oo kvar-TI-ree",
+                "in the apartment"
+              ],
+              [
+                "стіл",
+                "на столі",
+                "na sto-LEE",
+                "on the table"
+              ],
+              [
+                "вулиця",
+                "на вулиці",
+                "na VOO-li-tsee",
+                "in the street, outside"
+              ],
+              [
+                "робота",
+                "на роботі",
+                "na ro-BO-tee",
+                "at work"
+              ],
+              [
+                "банк",
+                "у банку",
+                "oo BAN-koo",
+                "at the bank"
+              ],
+              [
+                "гуртожиток",
+                "у гуртожитку",
+                "oo hoor-TO-zhit-koo",
+                "in the dorm"
+              ],
+              [
+                "кафе",
+                "у кафе",
+                "oo ka-FEH",
+                "at the café"
+              ],
+              [
+                "метро",
+                "на метро",
+                "na met-RO",
+                "by metro"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "Жити in six forms",
+          "body": [
+            "Notice that the **и** of the dictionary form disappears completely once the verb is conjugated."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Form",
+              "Say it",
+              "Example"
+            ],
+            "rows": [
+              [
+                "я",
+                "живу",
+                "zhi-VOO",
+                "Я живу в Києві."
+              ],
+              [
+                "ти",
+                "живеш",
+                "zhi-VESH",
+                "Де ти живеш?"
+              ],
+              [
+                "він / вона",
+                "живе",
+                "zhi-VEH",
+                "Вона живе далеко."
+              ],
+              [
+                "ми",
+                "живемо",
+                "zhi-veh-MO",
+                "Ми живемо разом."
+              ],
+              [
+                "ви",
+                "живете",
+                "zhi-veh-TEH",
+                "Де ви живете?"
+              ],
+              [
+                "вони",
+                "живуть",
+                "zhi-VOOT'",
+                "Вони живуть у Львові."
+              ]
+            ]
+          },
+          "after": [
+            "Other verbs whose stem changes like this: **пити** → *п'ю, п'єш*; **бути** → *буду, будеш*; **брати** → *беру, береш*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Home, rooms, and what's in them",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Українська",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "дім, будинок",
+              "deem, boo-DI-nok",
+              "house, building"
+            ],
+            [
+              "квартира",
+              "kvar-TI-ra",
+              "apartment"
+            ],
+            [
+              "гуртожиток",
+              "hoor-TO-zhi-tok",
+              "dormitory"
+            ],
+            [
+              "кімната",
+              "keem-NA-ta",
+              "room"
+            ],
+            [
+              "кухня",
+              "KOOKH-nya",
+              "kitchen"
+            ],
+            [
+              "ванна",
+              "VAN-na",
+              "bathroom"
+            ],
+            [
+              "туалет",
+              "too-a-LET",
+              "toilet"
+            ],
+            [
+              "балкон",
+              "bal-KON",
+              "balcony"
+            ],
+            [
+              "поверх",
+              "PO-verkh",
+              "floor, story"
+            ],
+            [
+              "ліфт",
+              "leeft",
+              "elevator"
+            ],
+            [
+              "ліжко",
+              "LEEZH-ko",
+              "bed"
+            ],
+            [
+              "стіл",
+              "steel",
+              "table"
+            ],
+            [
+              "стілець",
+              "stee-LETS'",
+              "chair"
+            ],
+            [
+              "шафа",
+              "SHA-fa",
+              "wardrobe"
+            ],
+            [
+              "вікно",
+              "veek-NO",
+              "window"
+            ],
+            [
+              "двері",
+              "DVEH-ree",
+              "door"
+            ],
+            [
+              "підлога",
+              "peed-LO-ha",
+              "floor (surface)"
+            ],
+            [
+              "стіна",
+              "stee-NA",
+              "wall"
+            ],
+            [
+              "район",
+              "ra-YON",
+              "district, neighborhood"
+            ],
+            [
+              "вулиця",
+              "VOO-li-tsya",
+              "street"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Giving an address in Ukraine",
+          "items": [
+            "The order is the reverse of the English habit: **street first, then the number**. *Вулиця Хрещатик, 15, квартира 8.*",
+            "The word *вулиця* is often shortened to **вул.** Other types: **проспект** (avenue), **площа** (square), **провулок** (lane).",
+            "To say you live on a particular street: **Я живу на вулиці Хрещатик** — with *на*, not *в*.",
+            "Floors are counted with **поверх**: *п'ятий поверх* (fifth floor). The ground floor counts as the first floor, as in the US."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Asking about distance and travel time"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Ukrainian",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Це далеко?",
+              "tseh da-LEH-ko",
+              "Is it far?"
+            ],
+            [
+              "Це близько.",
+              "tseh BLIZ'-ko",
+              "It's close."
+            ],
+            [
+              "Сорок хвилин на метро.",
+              "SO-rok khvi-LIN na met-RO",
+              "Forty minutes by metro."
+            ],
+            [
+              "Десять хвилин пішки.",
+              "DEH-syat' khvi-LIN PEESH-ki",
+              "Ten minutes on foot."
+            ],
+            [
+              "Це поруч.",
+              "tseh PO-rooch",
+              "It's right nearby."
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uk": "жити",
+      "baca": "ZHI-ti",
+      "en": "to live"
+    },
+    {
+      "uk": "де",
+      "baca": "deh",
+      "en": "where"
+    },
+    {
+      "uk": "квартира",
+      "baca": "kvar-TI-ra",
+      "en": "apartment"
+    },
+    {
+      "uk": "гуртожиток",
+      "baca": "hoor-TO-zhi-tok",
+      "en": "dormitory"
+    },
+    {
+      "uk": "кімната",
+      "baca": "keem-NA-ta",
+      "en": "room"
+    },
+    {
+      "uk": "кухня",
+      "baca": "KOOKH-nya",
+      "en": "kitchen"
+    },
+    {
+      "uk": "поверх",
+      "baca": "PO-verkh",
+      "en": "floor, story"
+    },
+    {
+      "uk": "район",
+      "baca": "ra-YON",
+      "en": "district, neighborhood"
+    },
+    {
+      "uk": "вулиця",
+      "baca": "VOO-li-tsya",
+      "en": "street"
+    },
+    {
+      "uk": "метро",
+      "baca": "met-RO",
+      "en": "metro, subway"
+    },
+    {
+      "uk": "автобус",
+      "baca": "av-TO-boos",
+      "en": "bus"
+    },
+    {
+      "uk": "пішки",
+      "baca": "PEESH-ki",
+      "en": "on foot"
+    },
+    {
+      "uk": "хвилина",
+      "baca": "khvi-LI-na",
+      "en": "minute"
+    },
+    {
+      "uk": "близько",
+      "baca": "BLIZ'-ko",
+      "en": "close, near"
+    },
+    {
+      "uk": "далеко",
+      "baca": "da-LEH-ko",
+      "en": "far"
+    },
+    {
+      "uk": "поруч",
+      "baca": "PO-rooch",
+      "en": "nearby, next door"
+    },
+    {
+      "uk": "ліжко",
+      "baca": "LEEZH-ko",
+      "en": "bed"
+    },
+    {
+      "uk": "стілець",
+      "baca": "stee-LETS'",
+      "en": "chair"
+    },
+    {
+      "uk": "вид",
+      "baca": "vid",
+      "en": "view"
+    },
+    {
+      "uk": "достатньо",
+      "baca": "dos-TAT-nyo",
+      "en": "enough"
+    },
+    {
+      "uk": "разом",
+      "baca": "RA-zom",
+      "en": "together"
+    },
+    {
+      "uk": "сам, сама",
+      "baca": "sam, sa-MA",
+      "en": "alone, on my own (m, f)"
+    },
+    {
+      "uk": "сусід",
+      "baca": "soo-SEED",
+      "en": "neighbor"
+    },
+    {
+      "uk": "адреса",
+      "baca": "ad-REH-sa",
+      "en": "address"
+    },
+    {
+      "uk": "будинок",
+      "baca": "boo-DI-nok",
+      "en": "building, house"
+    },
+    {
+      "uk": "коли",
+      "baca": "ko-LI",
+      "en": "when"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the correct місцевий form.",
+      "items": [
+        "Я живу в ____ (Київ).",
+        "Вона працює в ____ (школа).",
+        "Ми в ____ (кафе).",
+        "Книга на ____ (стіл).",
+        "Він у ____ (кімната)."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with в or на.",
+      "items": [
+        "Я живу ____ квартирі.",
+        "Вона ____ роботі.",
+        "Ми ____ університеті.",
+        "Він ____ вокзалі.",
+        "Діти ____ школі."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right form of жити.",
+      "items": [
+        "Я ____ у Києві.",
+        "Ти ____ у Львові?",
+        "Він ____ в Одесі.",
+        "Ми ____ разом.",
+        "Вони ____ далеко."
+      ]
+    },
+    {
+      "prompt": "Translate into Ukrainian.",
+      "items": [
+        "Where do you live? (informal)",
+        "I live in the dorm.",
+        "Is it far?",
+        "Forty minutes by metro.",
+        "We have three rooms."
+      ]
+    }
+  ],
+  "answers": [
+    "Києві — школі — кафе — столі — кімнаті",
+    "в — на — в — на — в",
+    "живу — живеш — живе — живемо — живуть",
+    "Де ти живеш? — Я живу в гуртожитку. — Це далеко? — Сорок хвилин на метро. — У нас три кімнати."
+  ],
+  "wave": "Review Unit 5. The line *Вона працює у школі* there was already using the місцевий — now you know why it ends in **-і**."
+}

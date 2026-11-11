@@ -1,0 +1,546 @@
+{
+  "title": "En and et — two kinds of noun",
+  "title_target": "En bil og et hus",
+  "goal": "Recognize how Danish nouns split into en-words and et-words, use the indefinite article, and name the things around you.",
+  "bekal": [
+    "tell **en**-words from **et**-words and know why the difference decides everything",
+    "use *der er* to say \"there is\"",
+    "name what's in a room and the things you carry every day"
+  ],
+  "wave": "Go back over **Unit 1** first: cover the Danish column, look at the English translation, and rebuild the whole dialogue from memory. Say it out loud.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Et nyt værelse",
+      "intro": "Budi has just moved into a rented room in Nørrebro. Mette comes to see it.",
+      "lines": [
+        {
+          "speaker": "Mette:",
+          "text": "Sikke et hyggeligt værelse! Er det dyrt?",
+          "id": "What a cozy room! Is it expensive?",
+          "literal": "what a cozy room! is it expensive?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nej, det er billigt. Men det er lille.",
+          "id": "No, it's cheap. But it's small.",
+          "literal": "no, it is cheap. but it is small."
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Hvad har du i værelset?",
+          "id": "What have you got in your room?",
+          "literal": "what have you in room-the?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Der er en seng, et bord og to stole.",
+          "id": "There's a bed, a table and two chairs.",
+          "literal": "there is a bed, a table and two chairs."
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Og et vindue! Det er vigtigt.",
+          "id": "And a window! That's important.",
+          "literal": "and a window! it is important."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja, men jeg har ikke et køleskab.",
+          "id": "Yes, but I don't have a fridge.",
+          "literal": "yes, but I have not a fridge."
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Er der et køkken?",
+          "id": "Is there a kitchen?",
+          "literal": "is there a kitchen?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Der er et fælleskøkken nede i gården.",
+          "id": "There's a shared kitchen down in the courtyard.",
+          "literal": "there is a shared-kitchen down in yard-the."
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Det er meget almindeligt i København.",
+          "id": "That's very common in Copenhagen.",
+          "literal": "it is very common in Copenhagen."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vil du have en kop kaffe?",
+          "id": "Would you like a cup of coffee?",
+          "literal": "will you have a cup coffee?"
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Ja tak, gerne!",
+          "id": "Yes please, I'd love one!",
+          "literal": "yes thanks, gladly!"
+        }
+      ],
+      "notes": [
+        "**Sikke** = \"what a\", for exclamations. *Sikke et værelse!*, *Sikke en dag!* Just like English *what a room!*, the *en* or *et* stays.",
+        "**Der er** = \"there is\". Literally \"there is\", exactly like English. Don't turn it into *det er* — *det er en seng* means \"that is a bed\", pointing at a particular thing; *der er en seng* means \"there is a bed\", saying it exists.",
+        "**Adjectives follow the noun's gender.** Notice *dyrt*, *billigt*, *vigtigt*, *almindeligt* — they all end in *-t* because they describe *det*, and *det* is an et-word. If the noun is an en-word, the *t* disappears: *en dyr bil*. The full rule comes in Unit 15; for now just notice the pattern.",
+        "**Lille** never changes in the singular — there's no *lillet*. It's one of a handful of rebel adjectives, and its plural is a different word altogether: *små*.",
+        "**Vil du have…?** = \"would you like…?\" — literally \"will you have\". It's the most common way to offer anything in Denmark, from coffee to a chair.",
+        "**Gerne** is a hard-to-translate Danish word used all the time. It means \"gladly\" or \"I'd love to\". *Ja tak, gerne* is the most natural way to accept an offer. It comes back in Unit 7 in *jeg vil gerne have…*",
+        "**Nede** = \"down (there)\" as a location. Danish has a pair of words for each direction: *ned* (moving down) and *nede* (being down there). Likewise *op/oppe*, *ud/ude*, *hjem/hjemme*, *ind/inde*. English uses one word for both (*go down* / *be down there*); Danish doesn't."
+      ],
+      "grammars": [
+        {
+          "title": "En-words and et-words",
+          "body": [
+            "Every Danish noun belongs to one of two groups. This isn't about masculine and feminine — modern Danish dropped that split — but two groups simply named after their articles.",
+            "Why it matters so much: the choice of *en* or *et* decides the form of the end article, the adjective, the possessive, and the pronoun that replaces the noun. A wrong guess here spreads through the whole sentence."
+          ],
+          "table": {
+            "head": [
+              "",
+              "en-word (fælleskøn)",
+              "et-word (intetkøn)"
+            ],
+            "rows": [
+              [
+                "Article",
+                "**en**",
+                "**et**"
+              ],
+              [
+                "Examples",
+                "en bil, en stol, en kop",
+                "et hus, et bord, et barn"
+              ],
+              [
+                "Replaced by",
+                "**den**",
+                "**det**"
+              ],
+              [
+                "Adjective (singular)",
+                "en stor bil",
+                "et stor**t** hus"
+              ],
+              [
+                "Possessive",
+                "min bil",
+                "mit hus"
+              ],
+              [
+                "Share of nouns",
+                "about **75%** of nouns",
+                "about **25%**"
+              ]
+            ]
+          },
+          "after": [
+            "There's no rule you can really rely on to guess a word's group. There are only weak tendencies: loanwords are often *en* (*en computer*, *en bus*), words for substances and materials are often *et* (*et brød*, *et glas*), and almost all living things are *en* (*en mand*, *en hund*) — with one big exception to memorize: **et barn**, **et menneske**, **et dyr**.",
+            "So the only way is to **always learn a noun together with its article**. Throughout this course, the vocabulary column never writes just *bil*; it always writes *en bil*. Do the same in your own notes.",
+            "If you're truly stuck and have to guess right now: pick **en**. The odds are three to one."
+          ]
+        },
+        {
+          "title": "Der er — saying something exists",
+          "body": [
+            "The frame used to introduce something new into the conversation."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Der er …",
+                "Der er en seng i værelset.",
+                "There's a bed in the room."
+              ],
+              [
+                "Der er ikke …",
+                "Der er ikke et køleskab.",
+                "There's no fridge."
+              ],
+              [
+                "Er der …?",
+                "Er der et køkken?",
+                "Is there a kitchen?"
+              ],
+              [
+                "Der er mange …",
+                "Der er mange cykler i København.",
+                "There are many bikes in Copenhagen."
+              ]
+            ]
+          },
+          "after": [
+            "Notice the question is made by swapping *er* and *der*, with no helper word at all. Danish has no equivalent of English *do* — questions are made purely by moving the verb to the front. We'll see this again and again."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Things around you",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Learn each line **with its en or et**. Learning just *bord* is useless; what's useful is *et bord*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "en-word",
+            "Say it",
+            "et-word",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "en seng (bed)",
+              "en seng",
+              "et bord (table)",
+              "et boh-ah"
+            ],
+            [
+              "en stol (chair)",
+              "en stol",
+              "et vindue (window)",
+              "et VIN-doo"
+            ],
+            [
+              "en dør (door)",
+              "en dör",
+              "et gulv (floor)",
+              "et gol"
+            ],
+            [
+              "en lampe (lamp)",
+              "en LAHM-puh",
+              "et tæppe (rug)",
+              "et TEH-buh"
+            ],
+            [
+              "en bog (book)",
+              "en bohw",
+              "et billede (picture)",
+              "et BEE-luh-dhuh"
+            ],
+            [
+              "en taske (bag)",
+              "en TAHS-guh",
+              "et køkken (kitchen)",
+              "et KÖ-guhn"
+            ],
+            [
+              "en nøgle (key)",
+              "en NOI-luh",
+              "et badeværelse (bathroom)",
+              "et BAH-dhuh-ver-uhl-suh"
+            ],
+            [
+              "en telefon (phone)",
+              "en teh-luh-FON",
+              "et køleskab (fridge)",
+              "et KÖ-luh-skahb"
+            ],
+            [
+              "en computer (computer)",
+              "en kom-PYOO-tah",
+              "et ur (clock, watch)",
+              "et oor"
+            ],
+            [
+              "en cykel (bike)",
+              "en SÜ-guhl",
+              "et bad (bath, bathroom)",
+              "et bahdh"
+            ],
+            [
+              "en kop (cup)",
+              "en kop",
+              "et glas (glass)",
+              "et glahs"
+            ],
+            [
+              "en lejlighed (apartment)",
+              "en LAI-lee-hedh",
+              "et værelse (room)",
+              "et VER-uhl-suh"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Memory tricks that actually work",
+          "items": [
+            "Write nouns in your notes **in different colors** for en-words and et-words. The brain remembers colors far better than the label \"fælleskøn\".",
+            "Or: don't learn the word, learn a **short sentence** containing it. *Jeg har et bord* sticks better than \"bord = table (et)\".",
+            "Don't learn two contrasting words side by side (*en stol* / *et bord*) in the same session — the brain mixes them up. Space them out."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Numbers 0–20",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The easy part of the Danish number system. The hard part waits in Unit 6."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "rows": [
+            [
+              "0 nul (nol)",
+              "1 en / et (en / et)",
+              "2 to (toh)",
+              "3 tre (treh)"
+            ],
+            [
+              "4 fire (FEE-ah)",
+              "5 fem (fem)",
+              "6 seks (seks)",
+              "7 syv (sü-oo)"
+            ],
+            [
+              "8 otte (OH-duh)",
+              "9 ni (nee)",
+              "10 ti (tee)",
+              "11 elleve (EL-vuh)"
+            ],
+            [
+              "12 tolv (tol)",
+              "13 tretten (TRET-uhn)",
+              "14 fjorten (FYOR-tuhn)",
+              "15 femten (FEM-tuhn)"
+            ],
+            [
+              "16 seksten (SAIS-tuhn)",
+              "17 sytten (SÖT-uhn)",
+              "18 atten (AHT-uhn)",
+              "19 nitten (NIT-uhn)"
+            ],
+            [
+              "20 tyve (TÜ-vuh)",
+              "",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ The number **1** has two forms, chosen by the noun's group — exactly like the article: *en bil* (one car), *et hus* (one house). That's no coincidence; the articles *en/et* come from the number one. From two upward, there's no difference."
+        },
+        {
+          "type": "p",
+          "text": "*Seksten* is pronounced **SAIS-tuhn**, not \"sex-ten\" — the *k* is silent. It's the number beginners misread most often."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "da": "et værelse",
+      "baca": "et VER-uhl-suh",
+      "en": "room"
+    },
+    {
+      "da": "en seng",
+      "baca": "en seng",
+      "en": "bed"
+    },
+    {
+      "da": "et bord",
+      "baca": "et boh-ah",
+      "en": "table"
+    },
+    {
+      "da": "en stol",
+      "baca": "en stol",
+      "en": "chair"
+    },
+    {
+      "da": "et vindue",
+      "baca": "et VIN-doo",
+      "en": "window"
+    },
+    {
+      "da": "en dør",
+      "baca": "en dör",
+      "en": "door"
+    },
+    {
+      "da": "et køkken",
+      "baca": "et KÖ-guhn",
+      "en": "kitchen"
+    },
+    {
+      "da": "et køleskab",
+      "baca": "et KÖ-luh-skahb",
+      "en": "fridge"
+    },
+    {
+      "da": "en kop",
+      "baca": "en kop",
+      "en": "cup"
+    },
+    {
+      "da": "en bog",
+      "baca": "en bohw",
+      "en": "book"
+    },
+    {
+      "da": "en cykel",
+      "baca": "en SÜ-guhl",
+      "en": "bike, bicycle"
+    },
+    {
+      "da": "en nøgle",
+      "baca": "en NOI-luh",
+      "en": "key"
+    },
+    {
+      "da": "en lejlighed",
+      "baca": "en LAI-lee-hedh",
+      "en": "apartment"
+    },
+    {
+      "da": "en gård",
+      "baca": "en gor",
+      "en": "courtyard, yard"
+    },
+    {
+      "da": "der er",
+      "baca": "deh-ah eh-ah",
+      "en": "there is, there are"
+    },
+    {
+      "da": "dyr",
+      "baca": "dür",
+      "en": "expensive"
+    },
+    {
+      "da": "billig",
+      "baca": "BEE-lee",
+      "en": "cheap"
+    },
+    {
+      "da": "stor",
+      "baca": "stoh-ah",
+      "en": "big"
+    },
+    {
+      "da": "lille",
+      "baca": "LEE-luh",
+      "en": "small, little"
+    },
+    {
+      "da": "ny",
+      "baca": "nü",
+      "en": "new"
+    },
+    {
+      "da": "gammel",
+      "baca": "GAHM-uhl",
+      "en": "old"
+    },
+    {
+      "da": "vigtig",
+      "baca": "VEK-tee",
+      "en": "important"
+    },
+    {
+      "da": "almindelig",
+      "baca": "ahl-MIN-uh-lee",
+      "en": "ordinary, common"
+    },
+    {
+      "da": "meget",
+      "baca": "MAI-uhdh",
+      "en": "very; much"
+    },
+    {
+      "da": "gerne",
+      "baca": "GER-nuh",
+      "en": "gladly"
+    },
+    {
+      "da": "nede",
+      "baca": "NEH-dhuh",
+      "en": "down (there)"
+    },
+    {
+      "da": "en kaffe",
+      "baca": "en KAH-fuh",
+      "en": "coffee"
+    },
+    {
+      "da": "sikke",
+      "baca": "SEE-guh",
+      "en": "what a (exclamation)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in en or et.",
+      "items": [
+        "____ bord",
+        "____ stol",
+        "____ hus",
+        "____ cykel",
+        "____ vindue",
+        "____ bog",
+        "____ køkken",
+        "____ telefon"
+      ]
+    },
+    {
+      "prompt": "Translate into Danish.",
+      "items": [
+        "There's a table in the room.",
+        "I don't have a fridge.",
+        "Is there a kitchen?",
+        "The room is small but cheap.",
+        "Would you like a cup of coffee?",
+        "There are two chairs and one window."
+      ]
+    },
+    {
+      "prompt": "Choose der er or det er.",
+      "items": [
+        "____ en seng i værelset.",
+        "____ meget dyrt.",
+        "____ ikke et køleskab her.",
+        "____ en god bog.",
+        "____ mange cykler i København."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "er / et / der / vindue",
+        "har / køleskab / jeg / et / ikke",
+        "billigt / er / værelset",
+        "kaffe / have / du / vil / en / kop / ?",
+        "stole / og / en / to / seng / er / der"
+      ]
+    }
+  ],
+  "answers": [
+    "et — en — et — en — et — en — et — en",
+    "Der er et bord i værelset. — Jeg har ikke et køleskab. — Er der et køkken? — Værelset er lille, men billigt. — Vil du have en kop kaffe? — Der er to stole og et vindue.",
+    "Der er — Det er — Der er — Det er — Der er",
+    "Der er et vindue. — Jeg har ikke et køleskab. — Værelset er billigt. — Vil du have en kop kaffe? — Der er en seng og to stole."
+  ]
+}

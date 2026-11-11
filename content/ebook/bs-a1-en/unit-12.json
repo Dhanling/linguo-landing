@@ -1,0 +1,506 @@
+{
+  "title": "My days — and the little words that always take second place",
+  "title_target": "Moj dan",
+  "goal": "Describe your daily routine, use *se* for actions that turn back on yourself, and learn the placement rule that governs all of Bosnian's little words at once.",
+  "bekal": [
+    "describing daily and weekly routines with *se* verbs",
+    "putting *sam, se, mi, ga, li* in second place, and knowing their order when they pile up",
+    "naming the days of the week and saying \"every Monday\""
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kako izgleda tvoj dan?",
+      "intro": "A long queue at the police counter. Amina turns to Budi, and her questions start with the simplest one.",
+      "lines": [
+        {
+          "speaker": "Amina:",
+          "text": "Kako izgleda tvoj dan? Kada ustaješ?",
+          "id": "What's your day like? When do you get up?",
+          "literal": "how it-looks your-m day? when you-get-up?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ustajem u šest. Tuširam se, oblačim se i pijem kafu.",
+          "id": "I get up at six. I shower, get dressed and drink coffee.",
+          "literal": "I-get-up at six. I-shower self, I-dress self and I-drink coffee-acc."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "U šest? Ja se budim tek u sedam i po.",
+          "id": "At six? I don't wake up till half past seven.",
+          "literal": "at six? I self I-wake only-then at seven and half."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Navikao sam. U Jakarti sam ustajao u pet.",
+          "id": "I'm used to it. In Jakarta I got up at five.",
+          "literal": "used-m I-am. in Jakarta-loc I-am got-up-m at five."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Kada dolaziš na posao?",
+          "id": "When do you get to work?",
+          "literal": "when you-come to work-acc?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "U osam. Radim do pet, pa se vraćam kući.",
+          "id": "At eight. I work till five, then I go home.",
+          "literal": "at eight. I-work until five, then self I-return home."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "A šta radiš uveče?",
+          "id": "And what do you do in the evening?",
+          "literal": "and what you-do in-evening?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ponedjeljkom, srijedom i petkom idem na kurs. Ostale dane se odmaram.",
+          "id": "Mondays, Wednesdays and Fridays I go to class. The other days I rest.",
+          "literal": "Monday-ins, Wednesday-ins and Friday-ins I-go to course-acc. other-acc-pl day-pl self I-rest."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "A kad se odmaraš, šta radiš?",
+          "id": "And when you rest, what do you do?",
+          "literal": "and when self you-rest, what you-do?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Čitam, gledam filmove, ponekad se šetam pored rijeke.",
+          "id": "I read, watch films, sometimes walk along the river.",
+          "literal": "I-read, I-watch film-acc-pl, sometimes self I-walk beside river-gen."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "A vikendom?",
+          "id": "And on weekends?",
+          "literal": "and weekend-ins?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Subotom spavam dugo. Nedjeljom se nalazim s Emirom.",
+          "id": "On Saturdays I sleep in. On Sundays I meet up with Emir.",
+          "literal": "Saturday-ins I-sleep long. Sunday-ins self I-meet with Emir-ins."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Znači, nikad ti nije dosadno. Dobro za tebe!",
+          "id": "So you're never bored. Good for you!",
+          "literal": "means, never to-you not-it-is boring. good for you-acc!"
+        }
+      ],
+      "notes": [
+        "**Notice that *se* moves around, yet always lands in the same spot according to its rule:** *Tuširam se* (after the first word), *Ja se budim* (after *ja*), *pa se vraćam* (after *pa*), *Ostale dane se odmaram*, *kad se odmaraš*. It never starts a sentence and is never far from second place. The full rule is below, and it applies to all the little words at once.",
+        "***Se* never changes.** One form for all six persons: *ja se tuširam, ti se tuširaš, on se tušira, mi se tuširamo*. That's a big relief compared with French or Spanish, which have six different forms.",
+        "***Ponedjeljkom, srijedom, petkom* mean \"on Mondays, Wednesdays, Fridays\".** The form is the instrumental, the case that comes in Unit 16 — but this use stands on its own and is worth learning now, because it is the standard way to talk about weekly habits. Likewise *vikendom* (on weekends), *ljeti* (in summer), *jutrom* (in the mornings).",
+        "***Nikad ti nije dosadno* — a sentence with no subject.** Literally \"never to you is it boring\". Bosnian loves to build feelings this way: *hladno mi je* (I'm cold), *drago mi je* (I'm glad), *žao mi je* (I'm sorry), *dosadno mi je* (I'm bored). The person who feels is the receiver, not the subject. The pattern comes in Unit 13.",
+        "***Tek* means \"only\" in the sense of \"not before\": *tek u sedam* = not until seven.** Don't confuse it with *samo* (only, just) or *novo* (new). This little word is very common and learners often miss it."
+      ],
+      "grammars": [
+        {
+          "title": "Verbs with se",
+          "body": [
+            "A large group of Bosnian verbs always travels with the little word *se*. Some you can guess, some you just have to learn — and some change meaning completely when the *se* is dropped."
+          ],
+          "table": {
+            "head": [
+              "With se",
+              "Meaning",
+              "Without se",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*zvati se* — *zovem se*",
+                "be called",
+                "*zvati*",
+                "call, phone"
+              ],
+              [
+                "*buditi se* — *budim se*",
+                "wake up",
+                "*buditi*",
+                "wake someone up"
+              ],
+              [
+                "*oblačiti se* — *oblačim se*",
+                "get dressed",
+                "*oblačiti*",
+                "dress someone"
+              ],
+              [
+                "*vraćati se* — *vraćam se*",
+                "come back, go home",
+                "*vraćati*",
+                "give something back"
+              ],
+              [
+                "*tuširati se*",
+                "take a shower",
+                "—",
+                "—"
+              ],
+              [
+                "*odmarati se*",
+                "rest",
+                "—",
+                "—"
+              ],
+              [
+                "*šetati se*",
+                "go for a walk",
+                "*šetati psa*",
+                "walk the dog"
+              ],
+              [
+                "*nalaziti se*",
+                "meet; be located",
+                "*naći*",
+                "find"
+              ],
+              [
+                "*osjećati se*",
+                "feel (well, tired…)",
+                "*osjećati*",
+                "feel something"
+              ],
+              [
+                "*žuriti se*",
+                "be in a hurry",
+                "—",
+                "—"
+              ],
+              [
+                "*smijati se*",
+                "laugh",
+                "—",
+                "—"
+              ],
+              [
+                "*bojati se*",
+                "be afraid",
+                "—",
+                "—"
+              ]
+            ]
+          },
+          "after": [
+            "***Se* has three jobs.** First, **back to yourself**: *tuširam se* (I shower myself). Second, **each other**: *vidimo se* (we see each other = see you), *nalazimo se* (we meet), *poznajemo se* (we know each other). Third, **attached with no special meaning**: *bojim se, smijem se, nadam se* — this group can't be guessed and has to be learned together with the verb.",
+            "**Dropping *se* can change the meaning completely.** *Vraćam knjigu* = I'm returning the book; *vraćam se* = I'm going home. *Budim brata* = I wake my brother; *budim se* = I wake up. That's why this course always lists *se* as part of the verb, not as an extra.",
+            "***Se* also makes sentences with no subject** — Bosnian's way of saying \"one\" or \"people\" in general: *Kako se kaže…?* (how do you say…?), *Ovdje se ne puši* (no smoking here), *Kako se ide do centra?* (how do you get to the center?). It's a very useful pattern, and you'll see it on notice boards all the time.",
+            "**A small note that will matter in Unit 14:** in the past tense of *on/ona*, the word *je* is usually **dropped** when *se* is already there. *On se vratio* — not *on se je vratio*. In all other forms *se* and the helping verb live side by side: *ja sam se vratio, mi smo se vratili*."
+          ]
+        },
+        {
+          "title": "Second place — one rule that governs everything",
+          "body": [
+            "This is the most typical rule of the Slavic languages, and after this you have the whole toolkit. All the little words — *sam, si, je, se, mi, te, ga, li, ću* — compete for one spot: **right after the first word of the sentence**."
+          ],
+          "table": {
+            "head": [
+              "Order",
+              "The little words",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**1**",
+                "*li* (question marker)",
+                "*Jesi **li** umoran?*"
+              ],
+              [
+                "**2**",
+                "*sam, si, smo, ste, su* · *ću, ćeš, će…*",
+                "*Ja **sam** Budi.* · *Sutra **ću** raditi.*"
+              ],
+              [
+                "**3**",
+                "dative: *mi, ti, mu, joj, nam, vam, im*",
+                "*Daj **mi** vode.*"
+              ],
+              [
+                "**4**",
+                "accusative: *me, te, ga, je, nas, vas, ih*",
+                "*Ja **te** čekam.*"
+              ],
+              [
+                "**5**",
+                "*se*",
+                "*Kako se zoveš?*"
+              ],
+              [
+                "**6**",
+                "*je* (from *biti*, third person singular)",
+                "*Vidio **ga je**.*"
+              ]
+            ]
+          },
+          "after": [
+            "**The one rule: a little word may not start a sentence.** If there is no other word in front, the order flips: not *Se zovem Budi*, but *Zovem se Budi*. Not *Te čekam*, but *Čekam te* or *Ja te čekam*.",
+            "**The \"first word\" can be a whole phrase.** *Moja sestra se zove Sari* — *moja sestra* counts as one block, and the little word follows it. Likewise *Svaki dan se odmaram.*",
+            "**When several little words pile up, their order is exactly as in the table above** and never changes: *Jesi **li mu ga** dao?* (did you give it to him?) — *li*, then dative *mu*, then accusative *ga*. You don't need to build sentences that long yourself yet; what matters is knowing the order exists, so such sentences don't sound like random noise.",
+            "**Why does this matter at A1?** Because a word in the wrong place is far more noticeable than a wrong ending. A wrong ending makes you sound foreign; a little word at the start of a sentence makes you sound **broken** — native speakers pause for a moment to put it back. Practice three short sentences every day until the position feels natural: *Zovem se…* — *Drago mi je.* — *Vidimo se sutra.*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Dani u sedmici — the days of the week",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "As in other Slavic languages, most Bosnian day names are not names but descriptions: *srijeda* means \"middle\", *četvrtak* \"the fourth\", *petak* \"the fifth\". The week starts on Monday, so the counting really does add up."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Day",
+            "Say it",
+            "\"on …s\"",
+            "Where the word comes from"
+          ],
+          "rows": [
+            [
+              "**ponedjeljak**",
+              "poh-neh-DYEH-lyahk",
+              "*ponedjeljkom*",
+              "after *nedjelja* (Sunday)"
+            ],
+            [
+              "**utorak**",
+              "OO-toh-rahk",
+              "*utorkom*",
+              "\"the second\""
+            ],
+            [
+              "**srijeda**",
+              "SREE-yeh-dah",
+              "*srijedom*",
+              "\"middle\" (of the week)"
+            ],
+            [
+              "**četvrtak**",
+              "CHEHT-vr-tahk",
+              "*četvrtkom*",
+              "\"the fourth\""
+            ],
+            [
+              "**petak**",
+              "PEH-tahk",
+              "*petkom*",
+              "\"the fifth\""
+            ],
+            [
+              "**subota**",
+              "SOO-boh-tah",
+              "*subotom*",
+              "from *Sabbath*"
+            ],
+            [
+              "**nedjelja**",
+              "NEH-dyeh-lyah",
+              "*nedjeljom*",
+              "\"no work\""
+            ],
+            [
+              "**vikend**",
+              "VEE-kehnd",
+              "*vikendom*",
+              "from English"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Three ways to place things on a day, all common: **u ponedjeljak** = on Monday (one particular day, accusative); **ponedjeljkom** = on Mondays (habit, instrumental); **svaki ponedjeljak** = every Monday, with a bit more emphasis. For today and the days around it: *danas* (today), *sutra* (tomorrow), *jučer* (yesterday), *prekosutra* (the day after tomorrow), *prekjučer* (the day before yesterday)."
+        },
+        {
+          "type": "kotak",
+          "title": "Friday in Bosnia",
+          "items": [
+            "*Petak* is the day of Friday prayers (*džuma*) for Bosnian Muslims, and in Sarajevo around midday you'll see some offices slow down for a while. But **the official days off are still Saturday and Sunday**, as in the rest of Europe — so *vikend* means Saturday–Sunday, not Friday–Saturday.",
+            "What you'll hear as the weekend approaches: *Lijep vikend!* (have a nice weekend) and, on Friday afternoon, *Petak je!* — said in the same tone as anywhere else in the world."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 10",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Bosnian column, read the English, and rebuild the sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Bosanski"
+          ],
+          "rows": [
+            [
+              "What time is it? — Almost five.",
+              "*Koliko je sati? — Skoro pet.*"
+            ],
+            [
+              "The class starts at seven in the evening.",
+              "*Kurs počinje u sedam uveče.*"
+            ],
+            [
+              "Half past eight (8:30).",
+              "*Pola devet.*"
+            ],
+            [
+              "The bus leaves in ten minutes.",
+              "*Autobus polazi za deset minuta.*"
+            ],
+            [
+              "See you tomorrow at a quarter past ten.",
+              "*Vidimo se sutra u deset i petnaest.*"
+            ],
+            [
+              "Don't be late!",
+              "*Nemoj kasniti!*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bs": "ustajati — *ustajem*",
+      "baca": "oos-TAH-yah-tee",
+      "en": "get up, rise"
+    },
+    {
+      "bs": "buditi se — *budim se*",
+      "baca": "BOO-dee-tee seh",
+      "en": "wake up"
+    },
+    {
+      "bs": "tuširati se — *tuširam se*",
+      "baca": "too-SHEE-rah-tee seh",
+      "en": "take a shower"
+    },
+    {
+      "bs": "oblačiti se — *oblačim se*",
+      "baca": "oh-BLAH-chee-tee seh",
+      "en": "get dressed"
+    },
+    {
+      "bs": "vraćati se — *vraćam se*",
+      "baca": "VRAH-chah-tee seh",
+      "en": "come back, go home"
+    },
+    {
+      "bs": "odmarati se — *odmaram se*",
+      "baca": "ohd-MAH-rah-tee seh",
+      "en": "rest"
+    },
+    {
+      "bs": "šetati se — *šetam se*",
+      "baca": "SHEH-tah-tee seh",
+      "en": "go for a walk"
+    },
+    {
+      "bs": "nalaziti se — *nalazim se*",
+      "baca": "nah-LAH-zee-tee seh",
+      "en": "meet; be located"
+    },
+    {
+      "bs": "osjećati se — *osjećam se*",
+      "baca": "oh-SYEH-chah-tee seh",
+      "en": "feel"
+    },
+    {
+      "bs": "žuriti se — *žurim se*",
+      "baca": "ZHOO-ree-tee seh",
+      "en": "be in a hurry"
+    },
+    {
+      "bs": "ponedjeljak (m)",
+      "baca": "poh-neh-DYEH-lyahk",
+      "en": "Monday"
+    },
+    {
+      "bs": "srijeda (f)",
+      "baca": "SREE-yeh-dah",
+      "en": "Wednesday"
+    },
+    {
+      "bs": "petak (m)",
+      "baca": "PEH-tahk",
+      "en": "Friday"
+    },
+    {
+      "bs": "subota / nedjelja (f)",
+      "baca": "SOO-boh-tah / NEH-dyeh-lyah",
+      "en": "Saturday / Sunday"
+    },
+    {
+      "bs": "vikend (m)",
+      "baca": "VEE-kehnd",
+      "en": "weekend"
+    },
+    {
+      "bs": "jučer / prekosutra",
+      "baca": "YOO-chehr / PREH-koh-soo-trah",
+      "en": "yesterday / day after tomorrow"
+    },
+    {
+      "bs": "tek",
+      "baca": "tehk",
+      "en": "not until, only then"
+    },
+    {
+      "bs": "dosadno",
+      "baca": "DOH-sahd-noh",
+      "en": "boring"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Bosnian.",
+      "items": [
+        "I get up at six.",
+        "I shower and get dressed.",
+        "I go home at five.",
+        "On Mondays I go to class.",
+        "On Saturdays I sleep in.",
+        "We're meeting on Sunday."
+      ]
+    },
+    {
+      "prompt": "Put the little word in the right place.",
+      "items": [
+        "Zovem ____ Budi. (se)",
+        "Ja ____ budim u sedam. (se)",
+        "Kako ____ zoveš? (se)",
+        "Ja ____ čekam ispred pošte. (te)",
+        "Jesi ____ umoran? (li)",
+        "Drago ____ je. (mi)",
+        "Moja sestra ____ zove Sari. (se)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "u / ustajem / šest",
+        "se / vraćam / kući / pet / u",
+        "idem / kurs / ponedjeljkom / na",
+        "spavam / subotom / dugo",
+        "se / nedjeljom / nalazim / s / Emirom"
+      ]
+    }
+  ],
+  "answers": [
+    "Ustajem u šest. — Tuširam se i oblačim se. — Vraćam se kući u pet. — Ponedjeljkom idem na kurs. — Subotom spavam dugo. — Nalazimo se u nedjelju.",
+    "se — se — se — te — li — mi — se",
+    "Ustajem u šest. — U pet se vraćam kući. — Ponedjeljkom idem na kurs. — Subotom spavam dugo. — Nedjeljom se nalazim s Emirom."
+  ]
+}

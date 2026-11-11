@@ -1,0 +1,532 @@
+{
+  "title": "Family and possession",
+  "title_target": "A minha família",
+  "goal": "Name family members and say who something belongs to — while discovering the rule that trips beginners up most: Portuguese possessives follow **the thing owned**, not the owner.",
+  "bekal": [
+    "name members of your close and extended family",
+    "use *meu/minha*, *seu/sua*, *nosso/nossa* with the right ending",
+    "show possession with *de*: *o carro do meu pai*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — As fotos no celular",
+      "intro": "In the campus cafeteria. Carla shows Budi photos of her family.",
+      "lines": [
+        {
+          "speaker": "Carla:",
+          "text": "Olha, essa é a minha família.",
+          "id": "Look, this is my family.",
+          "literal": "look, this is the my(fem) family."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Que legal! Quem é esse senhor?",
+          "id": "How cool! Who's this gentleman?",
+          "literal": "what cool! who is this gentleman?"
+        },
+        {
+          "speaker": "Carla:",
+          "text": "É o meu pai. Ele tem sessenta anos.",
+          "id": "That's my father. He's sixty.",
+          "literal": "is the my father. he he-has sixty years."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "E essa senhora do lado?",
+          "id": "And this lady next to him?",
+          "literal": "and this lady of-the side?"
+        },
+        {
+          "speaker": "Carla:",
+          "text": "É a minha mãe. O nome dela é Sônia.",
+          "id": "That's my mother. Her name is Sônia.",
+          "literal": "is the my(fem) mother. the name of-her is Sônia."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Você tem irmãos?",
+          "id": "Do you have any brothers or sisters?",
+          "literal": "you you-have siblings?"
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Tenho dois: um irmão e uma irmã.",
+          "id": "Two: a brother and a sister.",
+          "literal": "I-have two: a brother and a sister."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A sua irmã é mais velha que você?",
+          "id": "Is your sister older than you?",
+          "literal": "the your(fem) sister is more old(fem) than you?"
+        },
+        {
+          "speaker": "Carla:",
+          "text": "É. Ela é casada e tem uma filha.",
+          "id": "Yes. She's married and has a daughter.",
+          "literal": "is. she is married and she-has a daughter."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Então você é tia! E a sua família é grande?",
+          "id": "So you're an aunt! And is your family big?",
+          "literal": "then you are aunt! and the your(fem) family is big?"
+        },
+        {
+          "speaker": "Carla:",
+          "text": "Enorme. Eu tenho quatorze primos.",
+          "id": "Huge. I have fourteen cousins.",
+          "literal": "enormous. I I-have fourteen cousins."
+        }
+      ],
+      "notes": [
+        "**Minha, not meu — and the reason isn't that Carla is a woman.** *A minha mãe* uses the feminine form because ***mãe*** is feminine, not because the speaker is. The best proof is in the same dialogue: Carla also says *o meu pai* — a masculine form, from a woman's mouth. Portuguese possessives copy the gender of **the thing owned**, not the owner. It's the opposite of English *his/her*, and the mistake that lingers longest in beginners.",
+        "**O meu pai, with an article in front.** In Brazil, possessives are usually preceded by *o* or *a*: *o meu pai*, *a minha casa*. Leaving it out is also correct (*meu pai*), and in fast speech people often do. Use either; just don't be surprised when you hear both.",
+        "**O nome dela, not o seu nome.** A practical key that saves many conversations. Because *seu* can mean \"your\" **and** \"his/her\" at the same time, Brazilians avoid the ambiguity with *dele* (his) and *dela* (her) — and both go **after** the noun: *o carro dele*, *a mãe dela*. If you use *seu* only for \"your\" and *dele/dela* for \"his/her\", you'll never be misunderstood.",
+        "**Mais velha que você** = \"older than you\". Comparisons are covered fully in unit 19; for now, just learn the pattern: *mais* + adjective + *que*.",
+        "**Enorme** and *que legal* are two words that make your conversation sound alive. Brazilians are generous with strong adjectives — *ótimo*, *maravilhoso*, *enorme*, *péssimo*. Using them makes you sound far more natural than repeating *bom* and *ruim* all the time."
+      ],
+      "grammars": [
+        {
+          "title": "Possessives: they follow the thing",
+          "body": [
+            "These six rows cover all of A1 possession. What to watch isn't the left column, but the fact that **the right-hand columns change with the noun**."
+          ],
+          "table": {
+            "head": [
+              "Owner",
+              "Masc. thing",
+              "Fem. thing",
+              "Plural"
+            ],
+            "rows": [
+              [
+                "I",
+                "**o meu** livro",
+                "**a minha** casa",
+                "*meus / minhas*"
+              ],
+              [
+                "you; he/she",
+                "**o seu** livro",
+                "**a sua** casa",
+                "*seus / suas*"
+              ],
+              [
+                "we",
+                "**o nosso** livro",
+                "**a nossa** casa",
+                "*nossos / nossas*"
+              ],
+              [
+                "he",
+                "o livro **dele**",
+                "a casa **dele**",
+                "— doesn't change"
+              ],
+              [
+                "she",
+                "o livro **dela**",
+                "a casa **dela**",
+                "— doesn't change"
+              ],
+              [
+                "they",
+                "o livro **deles / delas**",
+                "a casa **deles / delas**",
+                "— doesn't change"
+              ]
+            ]
+          },
+          "after": [
+            "Look at the last three rows: *dele*, *dela*, *deles*, *delas* **never change form**, because they aren't really possessives but *de* + *ele*. They also always come **after** the noun. For beginners, those three rows are actually the easiest part.",
+            "⚠️ Don't let English mislead you. \"His house\" isn't *seu casa* but **a casa dele** — or *a sua casa* if the context is already clear. And \"her book\" isn't *sua livro* but **o livro dela**.",
+            "Compare with English: *my*, *your*, *his*, *her* — one word each, and only *his/her* care about gender (the owner's). Portuguese asks for two decisions with every possessive: who the owner is, and what gender the thing is."
+          ]
+        },
+        {
+          "title": "De + article: a required merger",
+          "body": [
+            "The word *de* means \"of\" and \"from\". Whenever it meets an article, the two **must** merge — writing them separately isn't a style choice, it's wrong."
+          ],
+          "table": {
+            "head": [
+              "de +",
+              "becomes",
+              "Example"
+            ],
+            "rows": [
+              [
+                "de + o",
+                "**do**",
+                "*o carro **do** meu pai* = my father's car"
+              ],
+              [
+                "de + a",
+                "**da**",
+                "*a casa **da** Carla* = Carla's house"
+              ],
+              [
+                "de + os",
+                "**dos**",
+                "*o nome **dos** alunos* = the students' names"
+              ],
+              [
+                "de + as",
+                "**das**",
+                "*as fotos **das** minhas irmãs* = my sisters' photos"
+              ],
+              [
+                "de + ele",
+                "**dele**",
+                "*a mãe **dele*** = his mother"
+              ],
+              [
+                "de + ela",
+                "**dela**",
+                "*o irmão **dela*** = her brother"
+              ],
+              [
+                "de + isso",
+                "**disso**",
+                "*Eu gosto **disso*** = I like that"
+              ]
+            ]
+          },
+          "after": [
+            "**The order is reversed from English 's.** \"My father's car\" becomes *o carro do meu pai* — \"the car of my father\": the thing first, the owner after, with *de* joining them. Portuguese has no 's at all.",
+            "This pattern also answers \"whose\": *De quem é esse celular?* = \"Whose phone is this?\" — literally \"of whom is this phone?\""
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Family members",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Learn them in pairs. Almost all switch their ending from **-o** to **-a**, and the ones that don't are marked."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "o pai / a mãe",
+              "oo PY / ah MYN",
+              "father / mother (⚠️ not a pair)"
+            ],
+            [
+              "os pais",
+              "oos PYS",
+              "parents (father and mother)"
+            ],
+            [
+              "o filho / a filha",
+              "oo FEE-lyoo / ah FEE-lyah",
+              "son / daughter"
+            ],
+            [
+              "o irmão / a irmã",
+              "oo eeh-MOWN / ah eeh-MAHN",
+              "brother / sister"
+            ],
+            [
+              "o avô / a avó",
+              "oo ah-VOH / ah ah-VAW",
+              "grandfather / grandmother (⚠️ only the accent differs)"
+            ],
+            [
+              "o tio / a tia",
+              "oo CHEE-oo / ah CHEE-ah",
+              "uncle / aunt"
+            ],
+            [
+              "o primo / a prima",
+              "oo PREE-moo / ah PREE-mah",
+              "cousin"
+            ],
+            [
+              "o sobrinho / a sobrinha",
+              "oo soh-BREE-nyoo / -nyah",
+              "nephew / niece"
+            ],
+            [
+              "o marido / a esposa",
+              "oo mah-REE-doo / ah ees-POH-zah",
+              "husband / wife"
+            ],
+            [
+              "o namorado / a namorada",
+              "oo nah-moh-RAH-doo / -dah",
+              "boyfriend / girlfriend"
+            ],
+            [
+              "o neto / a neta",
+              "oo NEH-too / ah NEH-tah",
+              "grandson / granddaughter"
+            ],
+            [
+              "o amigo / a amiga",
+              "oo ah-MEE-goo / ah ah-MEE-gah",
+              "friend"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Portuguese, like English, has no single word for \"older\" or \"younger\" sibling.** *Irmão* just means brother. If needed, add the age: *o meu irmão mais velho* (my older brother) and *o meu irmão mais novo* (my younger brother)."
+        },
+        {
+          "type": "p",
+          "text": "**The masculine plural covers mixed groups.** *Os pais* means \"father and mother\", *os filhos* means \"children\" (sons and daughters), *os irmãos* means \"siblings\". If a group has a hundred women and one man, the form is still masculine plural. This rule holds throughout Portuguese."
+        }
+      ]
+    },
+    {
+      "title": "Marital status and more",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "They all use *ser*, because they all answer \"who is he/she\", not \"how is he/she today\"."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "solteiro / solteira",
+              "sohw-TEY-roo / -rah",
+              "single"
+            ],
+            [
+              "casado / casada",
+              "kah-ZAH-doo / -dah",
+              "married"
+            ],
+            [
+              "divorciado / divorciada",
+              "jee-vohh-see-AH-doo / -dah",
+              "divorced"
+            ],
+            [
+              "mais velho / mais novo",
+              "mys VEH-lyoo / mys NOH-voo",
+              "older / younger"
+            ],
+            [
+              "do meio",
+              "doo MEY-oo",
+              "middle child"
+            ],
+            [
+              "filho único",
+              "FEE-lyoo OO-nee-koo",
+              "only child"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Questions you'll hear over and over in Brazil: *Você é casado?* and *Você tem filhos?* Both count as ordinary small talk, not personal questions — don't be surprised if a taxi driver asks."
+        }
+      ]
+    },
+    {
+      "title": "Spaced review — back to unit 3",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Portuguese column. Notice that the last two sentences make you choose between *ser* and *estar*."
+        },
+        {
+          "type": "list",
+          "items": [
+            "I'm tired today → *estou cansado hoje*",
+            "I'm hungry → *estou com fome*",
+            "He's a teacher → *ele é professor*",
+            "He's in Japan → *ele está no Japão*",
+            "The class is great → *a aula é ótima*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pt": "a família",
+      "baca": "ah fah-MEE-lee-ah",
+      "en": "family"
+    },
+    {
+      "pt": "o pai / a mãe",
+      "baca": "oo PY / ah MYN",
+      "en": "father / mother"
+    },
+    {
+      "pt": "os pais",
+      "baca": "oos PYS",
+      "en": "parents"
+    },
+    {
+      "pt": "o filho / a filha",
+      "baca": "oo FEE-lyoo / ah FEE-lyah",
+      "en": "son / daughter"
+    },
+    {
+      "pt": "o irmão / a irmã",
+      "baca": "oo eeh-MOWN / ah eeh-MAHN",
+      "en": "brother / sister"
+    },
+    {
+      "pt": "o avô / a avó",
+      "baca": "oo ah-VOH / ah ah-VAW",
+      "en": "grandfather / grandmother"
+    },
+    {
+      "pt": "o tio / a tia",
+      "baca": "oo CHEE-oo / ah CHEE-ah",
+      "en": "uncle / aunt"
+    },
+    {
+      "pt": "o primo",
+      "baca": "oo PREE-moo",
+      "en": "cousin"
+    },
+    {
+      "pt": "o marido",
+      "baca": "oo mah-REE-doo",
+      "en": "husband"
+    },
+    {
+      "pt": "a esposa",
+      "baca": "ah ees-POH-zah",
+      "en": "wife"
+    },
+    {
+      "pt": "o namorado",
+      "baca": "oo nah-moh-RAH-doo",
+      "en": "boyfriend"
+    },
+    {
+      "pt": "o amigo",
+      "baca": "oo ah-MEE-goo",
+      "en": "friend"
+    },
+    {
+      "pt": "meu / minha",
+      "baca": "MAY-oo / MEE-nyah",
+      "en": "my"
+    },
+    {
+      "pt": "seu / sua",
+      "baca": "SAY-oo / SOO-ah",
+      "en": "your; his, her"
+    },
+    {
+      "pt": "nosso / nossa",
+      "baca": "NAW-soo / NAW-sah",
+      "en": "our"
+    },
+    {
+      "pt": "dele / dela",
+      "baca": "DAY-lee / DEH-lah",
+      "en": "his / her"
+    },
+    {
+      "pt": "casado",
+      "baca": "kah-ZAH-doo",
+      "en": "married"
+    },
+    {
+      "pt": "solteiro",
+      "baca": "sohw-TEY-roo",
+      "en": "single"
+    },
+    {
+      "pt": "velho / novo",
+      "baca": "VEH-lyoo / NOH-voo",
+      "en": "old / young"
+    },
+    {
+      "pt": "enorme",
+      "baca": "eh-NOHH-mee",
+      "en": "huge"
+    },
+    {
+      "pt": "quem",
+      "baca": "kayn",
+      "en": "who"
+    },
+    {
+      "pt": "olhar",
+      "baca": "oh-LYAHH",
+      "en": "to look; look!"
+    },
+    {
+      "pt": "o senhor / a senhora",
+      "baca": "oo see-NYOHH / ah see-NYOH-rah",
+      "en": "sir / madam (polite address)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the right possessive.",
+      "items": [
+        "Esse é o ____ pai. (my)",
+        "Essa é a ____ mãe. (my)",
+        "A ____ casa é grande. (our)",
+        "Qual é o ____ nome? (your)",
+        "O carro ____ é novo. (his)",
+        "A irmã ____ é casada. (her)"
+      ]
+    },
+    {
+      "prompt": "Merge de with the article, then write out the whole phrase.",
+      "items": [
+        "o carro de + o meu pai",
+        "a casa de + a Carla",
+        "as fotos de + as minhas irmãs",
+        "o nome de + os alunos",
+        "a mãe de + ele",
+        "o livro de + ela"
+      ]
+    },
+    {
+      "prompt": "Translate into Portuguese.",
+      "items": [
+        "This is my family.",
+        "My father is sixty years old.",
+        "Do you have any brothers or sisters?",
+        "My sister is married.",
+        "Whose phone is this?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "minha / é / essa / família / a",
+        "meu / o / pai / é / esse",
+        "irmãos / você / tem / ?",
+        "dela / o / é / Sônia / nome",
+        "grande / família / a / é / sua / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "meu — minha — nossa — seu — dele — dela",
+    "o carro do meu pai — a casa da Carla — as fotos das minhas irmãs — o nome dos alunos — a mãe dele — o livro dela",
+    "Essa é a minha família. — O meu pai tem sessenta anos. — Você tem irmãos? — A minha irmã é casada. — De quem é esse celular?",
+    "Essa é a minha família. — Esse é o meu pai. — Você tem irmãos? — O nome dela é Sônia. — A sua família é grande?"
+  ]
+}

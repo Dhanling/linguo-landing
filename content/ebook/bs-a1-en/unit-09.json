@@ -1,0 +1,543 @@
+{
+  "title": "Where's the post office? — asking the way",
+  "title_target": "Gdje je pošta?",
+  "goal": "Ask the way and understand the answer — while setting up the locative, the place form, and seeing why one and the same preposition can mean \"to\" or \"in/at\" depending on the noun's ending.",
+  "bekal": [
+    "ask the way and follow directions given by a stranger in the street",
+    "form the locative and recognize the sound changes *k → c*, *g → z*, *h → s*",
+    "choose between the accusative (where to) and the locative (where) after *u* and *na*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Gdje je pošta?",
+      "intro": "Budi is lost among the little lanes of Stari Grad. He stops an old man walking slowly with a bag of bread.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Izvinite, gdje je pošta?",
+          "id": "Excuse me, where's the post office?",
+          "literal": "forgive-pl, where it-is post-office?"
+        },
+        {
+          "speaker": "Prolaznik:",
+          "text": "Pošta? Idite pravo, pa prvo lijevo.",
+          "id": "The post office? Go straight, then take the first left.",
+          "literal": "post-office? go-pl straight, then first left."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Je li daleko?",
+          "id": "Is it far?",
+          "literal": "whether far?"
+        },
+        {
+          "speaker": "Prolaznik:",
+          "text": "Nije, pet minuta pješke. Pored banke, preko puta džamije.",
+          "id": "No, five minutes on foot. Next to the bank, across from the mosque.",
+          "literal": "not-it-is, five minutes-gen-pl on-foot. next-to bank-gen, across road-gen mosque-gen."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A ima li tu negdje i bankomat?",
+          "id": "Is there an ATM there too?",
+          "literal": "and there-is whether there somewhere also ATM?"
+        },
+        {
+          "speaker": "Prolaznik:",
+          "text": "Ima, na uglu. U pošti možete platiti i račune.",
+          "id": "There is, on the corner. You can also pay bills at the post office.",
+          "literal": "there-is, on corner-loc. in post-office-loc you(pl)-can pay also bills-acc-pl."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hvala vam! A gdje je najbliža apoteka?",
+          "id": "Thank you! And where's the nearest pharmacy?",
+          "literal": "thanks to-you(pl)! and where it-is nearest-f pharmacy?"
+        },
+        {
+          "speaker": "Prolaznik:",
+          "text": "Apoteka je na trgu, blizu tramvajske stanice.",
+          "id": "The pharmacy is on the square, near the tram stop.",
+          "literal": "pharmacy it-is on square-loc, near tram-f-gen stop-gen."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A jesam li blizu Baščaršije?",
+          "id": "And am I near Baščaršija?",
+          "literal": "and I-am whether near Baščaršija-gen?"
+        },
+        {
+          "speaker": "Prolaznik:",
+          "text": "Jeste! Baščaršija je iza vas. Samo se okrenite.",
+          "id": "You are! Baščaršija is behind you. Just turn around.",
+          "literal": "you-are! Baščaršija it-is behind you(pl)-gen. only self turn-pl."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ah! Hvala. Izgubio sam se.",
+          "id": "Ah! Thank you. I got lost.",
+          "literal": "ah! thanks. lost-m I-am self."
+        },
+        {
+          "speaker": "Prolaznik:",
+          "text": "Nema problema, sine. Svi se izgube u Sarajevu prvi put.",
+          "id": "No problem, son. Everyone gets lost in Sarajevo the first time.",
+          "literal": "there's-no problem-gen, son-voc. all self they-lose in Sarajevo-loc first time."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hvala još jednom. Prijatno!",
+          "id": "Thanks once again. Have a nice day!",
+          "literal": "thanks again once-ins. pleasantly!"
+        }
+      ],
+      "notes": [
+        "**Count the *-u* and *-i* endings in this dialogue: *na uglu, u pošti, na trgu, u Sarajevu*.** That's the locative — the form a noun takes when it is a **place**. It never appears alone; there's always a preposition in front.",
+        "***Pored banke*, *preko puta džamije*, *blizu stanice* — all genitive.** Position words like *pored* (next to), *blizu* (near), *iza* (behind), *ispred* (in front of), *preko puta* (across from) take the genitive you set up in unit 8. So two cases work side by side in this dialogue: the genitive for relative position, the locative after *u* and *na*.",
+        "***Idite pravo* and *okrenite se* are commands.** The polite form ends in *-ite* or *-te*; the casual form drops that ending: *idi pravo*, *okreni se*. You don't need to build them yourself at A1 — what you need is to **recognize them when someone gives you directions**, and the list below is enough for that.",
+        "***Izgubio sam se* — the past tense, set up fully in unit 14.** The formula is *sam* + a form ending in *-o* for a man, *-la* for a woman: *izgubio sam se* (man), *izgubila sam se* (woman). Learn these two forms whole now; it's a sentence you'll need before you get to unit 14.",
+        "***Sine!* — \"son!\"** From *sin* (son), in the vocative form. In Bosnia older people call younger ones this, and it's a sign of warmth, not rudeness. Its siblings: *kćeri* or *ćerko* (to a young woman), *brate* (\"bro\", to a male friend your age), *dušo* (\"darling\", used far more loosely than in English)."
+      ],
+      "grammars": [
+        {
+          "title": "Lokativ — the place form",
+          "body": [
+            "The third case, and it has one feature that makes it easy to spot: **it never stands without a preposition**. If you see *u*, *na*, or *o*, and the meaning isn't movement, what follows is certainly the locative."
+          ],
+          "table": {
+            "head": [
+              "Type",
+              "Nominativ",
+              "Locative",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**m**",
+                "*grad, posao, ugao*",
+                "**-u** → *gradu, poslu, uglu*",
+                "*u gradu, na poslu, na uglu*"
+              ],
+              [
+                "**f ending in -a**",
+                "*pošta, soba, stanica*",
+                "**-i** → *pošti, sobi, stanici*",
+                "*u pošti, u sobi, na stanici*"
+              ],
+              [
+                "**f ending in a consonant**",
+                "*noć, stvar*",
+                "**-i** → *noći, stvari*",
+                "*u noći*"
+              ],
+              [
+                "**n**",
+                "*selo, more*",
+                "**-u** → *selu, moru*",
+                "*u selu, na moru*"
+              ],
+              [
+                "**plural**",
+                "*gradovi, pošte, sela*",
+                "**-ima / -ama**",
+                "*u gradovima, u poštama, u selima*"
+              ]
+            ]
+          },
+          "after": [
+            "**Good news worth printing in large type: the locative and the dative have exactly the same forms.** One ending, two jobs. When unit 13 sets up the dative, you won't learn a single new form — just a new job for a form you already know.",
+            "**Feminine words ending in *-ka, -ga, -ha* change that letter before *-i*.** *Banka → u banci*, *ruka → u ruci*, *Amerika → u Americi*, *knjiga → u knjizi*, *noga → na nozi*. The pattern: **k → c, g → z, h → s**. It sounds like extra complication, but it runs through all Slavic languages and you'll meet it again in unit 13 — learn three examples and the rest follows by itself.",
+            "**In the plural, one ending covers three jobs.** *-ima* (masculine & neuter) and *-ama* (feminine) are used for the **dative, locative, and instrumental** at once: *u gradovima* (in the cities), *prema gradovima* (toward the cities), *s gradovima* (with the cities). Three cases, one ending.",
+            "**Only five prepositions call for the locative:** *u* (in), *na* (on, at), *o* (about), *po* (around, all over; according to), *pri* (at, near — rare at A1). The most common: *u* and *na*, and *o* for \"about\" — *Govorimo o Sarajevu*, *Šta misliš o tome?*"
+          ]
+        },
+        {
+          "title": "U or na — and \"to\" versus \"in/at\"",
+          "body": [
+            "This is the part that really separates fluent beginners from stumbling ones, and luckily it boils down to one idea: **the preposition stays the same, the case changes**."
+          ],
+          "table": {
+            "head": [
+              "Where to — accusative",
+              "Where — locative",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*idem **u grad***",
+                "*u **gradu** sam*",
+                "into town / in town"
+              ],
+              [
+                "*idem **u školu***",
+                "*u **školi** sam*",
+                "to school / at school"
+              ],
+              [
+                "*idem **u poštu***",
+                "*u **pošti** sam*",
+                "to the post office / at the post office"
+              ],
+              [
+                "*idem **na posao***",
+                "*na **poslu** sam*",
+                "to work / at work"
+              ],
+              [
+                "*idem **na trg***",
+                "*na **trgu** sam*",
+                "to the square / on the square"
+              ],
+              [
+                "*idem **kući***",
+                "*kod **kuće** sam*",
+                "home / at home"
+              ]
+            ]
+          },
+          "after": [
+            "**One preposition, two meanings.** *U grad* = heading into town; *u gradu* = being in town. English uses two words for this (\"into\" and \"in\"); Bosnian uses two endings. Once you see the pattern, it holds across the whole language without exception — and a mistake here is the one native speakers notice fastest.",
+            "**When *u*, when *na*?** Rough rule: *u* for spaces you can go into (*grad, kuća, soba, škola, pošta, prodavnica, restoran*), *na* for open surfaces and for activities (*trg, ulica, stanica, pijaca, more, planina, koncert, čas, posao, fakultet*).",
+            "**But don't push the logic too far.** Why *u školi* but *na fakultetu*? Why *u gradu* but *na selu*? There's no reason — just as English says *at school* but *in college*, *on the bus* but *in the car*. These pairs have to be learned like vocabulary. The ones you'll need most: *na poslu, na pijaci, na stanici, na ulici, na trgu, na fakultetu, na moru, na planini* — and almost everything else is *u*.",
+            "**Two frozen forms worth learning today:** *idem kući* (I'm going home) and *kod kuće sam* (I'm at home). Neither follows any pattern, and you'll use both every day."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "U gradu — directions, position, and public places",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "An opener that always works: *Izvinite, gdje je…?* After that, all you need is the ability to **recognize** the answer — and the answer is almost always built from the words in this table."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Directions",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Idite pravo.*",
+              "EE-dee-teh PRAH-voh",
+              "Go straight on."
+            ],
+            [
+              "*Skrenite lijevo / desno.*",
+              "SKREH-nee-teh LYEH-voh",
+              "Turn left / right."
+            ],
+            [
+              "*Prvo lijevo, drugo desno.*",
+              "",
+              "First left, second right."
+            ],
+            [
+              "*Na uglu.*",
+              "nah OOG-loo",
+              "On the corner."
+            ],
+            [
+              "*Pored banke.*",
+              "POH-rehd BAHN-keh",
+              "Next to the bank."
+            ],
+            [
+              "*Preko puta džamije.*",
+              "PREH-koh POO-tah",
+              "Across from the mosque."
+            ],
+            [
+              "*Iza / ispred zgrade.*",
+              "EE-zah / EES-prehd",
+              "Behind / in front of the building."
+            ],
+            [
+              "*Između pošte i banke.*",
+              "eez-MEH-joo",
+              "Between the post office and the bank."
+            ],
+            [
+              "*Pet minuta pješke.*",
+              "PYEHSH-keh",
+              "Five minutes on foot."
+            ],
+            [
+              "*Je li daleko? — Nije, blizu je.*",
+              "DAH-leh-koh",
+              "Is it far? — No, it's close."
+            ],
+            [
+              "*Izgubio / izgubila sam se.*",
+              "eez-GOO-bee-oh",
+              "I'm lost. (m / f)"
+            ],
+            [
+              "*Možete li mi pokazati na karti?*",
+              "poh-KAH-zah-tee",
+              "Could you show me on the map?"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Mjesta u gradu",
+            "English",
+            "",
+            ""
+          ],
+          "rows": [
+            [
+              "*pošta* (f)",
+              "post office",
+              "*banka* (f)",
+              "bank"
+            ],
+            [
+              "*apoteka* (f)",
+              "pharmacy",
+              "*bolnica* (f)",
+              "hospital"
+            ],
+            [
+              "*pijaca* (f)",
+              "market",
+              "*prodavnica* (f)",
+              "shop"
+            ],
+            [
+              "*trg* (m)",
+              "square",
+              "*ulica* (f)",
+              "street"
+            ],
+            [
+              "*stanica* (f)",
+              "stop, station",
+              "*aerodrom* (m)",
+              "airport"
+            ],
+            [
+              "*džamija* (f)",
+              "mosque",
+              "*crkva* (f)",
+              "church"
+            ],
+            [
+              "*muzej* (m)",
+              "museum",
+              "*biblioteka* (f)",
+              "library"
+            ],
+            [
+              "*restoran* (m)",
+              "restaurant",
+              "*hotel* (m)",
+              "hotel"
+            ],
+            [
+              "*park* (m)",
+              "park",
+              "*most* (m)",
+              "bridge"
+            ],
+            [
+              "*škola* (f)",
+              "school",
+              "*fakultet* (m)",
+              "faculty, university"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Sarajevo on foot",
+          "items": [
+            "The city stretches along a narrow valley between two ranges of hills, so you can hardly get truly lost: the *Miljacka* river runs from east to west, and the whole old town lies along it. If in doubt, find the river.",
+            "Sarajevo's tram is one of the oldest in Europe — its first line opened in 1885, before Vienna's. Tickets are bought at a kiosk (*kiosk*) or from the driver, and you validate them yourself as soon as you board. The sentence you need: *Jednu kartu, molim.*",
+            "In conversation, street names in Bosnia are almost always used without the word *ulica*: people say *Živim u Ferhadiji*, not *u ulici Ferhadija*. And in addresses the number comes **after** the street name — the opposite of the English habit."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 7",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Bosnian column, read the English, and rebuild the sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Bosanski"
+          ],
+          "rows": [
+            [
+              "One Bosnian coffee, please.",
+              "*Jednu bosansku kafu, molim.*"
+            ],
+            [
+              "Tea for me, no sugar.",
+              "*Za mene čaj, bez šećera.*"
+            ],
+            [
+              "Do you have cheese pie?",
+              "*Imate li pitu sa sirom?*"
+            ],
+            [
+              "I don't eat meat.",
+              "*Ja ne jedem meso.*"
+            ],
+            [
+              "The bill, please! Can we pay together?",
+              "*Račun, molim! Možemo li platiti zajedno?*"
+            ],
+            [
+              "I'm waiting for you.",
+              "*Ja te čekam.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bs": "pošta (f)",
+      "baca": "POHSH-tah",
+      "en": "post office"
+    },
+    {
+      "bs": "banka (f)",
+      "baca": "BAHN-kah",
+      "en": "bank"
+    },
+    {
+      "bs": "apoteka (f)",
+      "baca": "ah-poh-TEH-kah",
+      "en": "pharmacy"
+    },
+    {
+      "bs": "trg (m)",
+      "baca": "trg",
+      "en": "square"
+    },
+    {
+      "bs": "ugao (m)",
+      "baca": "OO-gow",
+      "en": "corner"
+    },
+    {
+      "bs": "stanica (f)",
+      "baca": "STAH-nee-tsah",
+      "en": "stop, station"
+    },
+    {
+      "bs": "most (m)",
+      "baca": "mohst",
+      "en": "bridge"
+    },
+    {
+      "bs": "pravo",
+      "baca": "PRAH-voh",
+      "en": "straight on"
+    },
+    {
+      "bs": "skrenuti — *skrenem*",
+      "baca": "SKREH-noo-tee",
+      "en": "to turn"
+    },
+    {
+      "bs": "daleko / blizu",
+      "baca": "DAH-leh-koh / BLEE-zoo",
+      "en": "far / near"
+    },
+    {
+      "bs": "pored / iza / ispred",
+      "baca": "POH-rehd / EE-zah / EES-prehd",
+      "en": "next to / behind / in front of"
+    },
+    {
+      "bs": "između",
+      "baca": "eez-MEH-joo",
+      "en": "between"
+    },
+    {
+      "bs": "preko puta",
+      "baca": "PREH-koh POO-tah",
+      "en": "across from"
+    },
+    {
+      "bs": "pješke",
+      "baca": "PYEHSH-keh",
+      "en": "on foot"
+    },
+    {
+      "bs": "minut (m)",
+      "baca": "MEE-noot",
+      "en": "minute"
+    },
+    {
+      "bs": "izgubiti se — *izgubim se*",
+      "baca": "eez-GOO-bee-tee seh",
+      "en": "to get lost"
+    },
+    {
+      "bs": "pokazati — *pokažem*",
+      "baca": "poh-KAH-zah-tee",
+      "en": "to show"
+    },
+    {
+      "bs": "najbliži / najbliža",
+      "baca": "NAI-blee-zhee",
+      "en": "nearest"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Bosnian.",
+      "items": [
+        "Excuse me, where's the post office?",
+        "Go straight on, then turn left.",
+        "Is it far? — No, five minutes on foot.",
+        "The pharmacy is on the square.",
+        "I'm lost. (man)",
+        "I live in Sarajevo."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the locative.",
+      "items": [
+        "Ja sam u ____ (grad).",
+        "Radim u ____ (pošta).",
+        "Oni su na ____ (trg).",
+        "Amina je u ____ (banka).",
+        "Živimo u ____ (Sarajevo).",
+        "Knjiga je na ____ (sto).",
+        "Govorimo o ____ (Bosna)."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "je / pošta / gdje / ?",
+        "pravo / idite / lijevo / pa",
+        "banke / je / pored / apoteka",
+        "se / sam / izgubio",
+        "u / sam / gradu / ja"
+      ]
+    }
+  ],
+  "answers": [
+    "Izvinite, gdje je pošta? — Idite pravo, pa skrenite lijevo. — Je li daleko? Nije, pet minuta pješke. — Apoteka je na trgu. — Izgubio sam se. — Živim u Sarajevu.",
+    "gradu — pošti — trgu — banci — Sarajevu — stolu — Bosni",
+    "Gdje je pošta? — Idite pravo, pa lijevo. — Apoteka je pored banke. — Izgubio sam se. — Ja sam u gradu."
+  ]
+}

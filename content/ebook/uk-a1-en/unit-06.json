@@ -1,0 +1,577 @@
+{
+  "title": "What are you doing right now?",
+  "title_target": "Що ти робиш? — Shcho ty robysh?",
+  "goal": "Master the two verb patterns that hold up the whole of Ukrainian, then use them to say what you and other people are doing.",
+  "bekal": [
+    "conjugate first-pattern verbs (-е-)",
+    "conjugate second-pattern verbs (-и-)",
+    "ask what someone is doing",
+    "negate with нічого не",
+    "use fifteen everyday verbs"
+  ],
+  "dialogs": [
+    {
+      "title": "Діалог — A video call to Jakarta",
+      "intro": "Ani calls her younger sister, Dina. Count how many verbs go by in these twelve lines — and notice that their endings fall into just two groups.",
+      "lines": [
+        {
+          "speaker": "Діна:",
+          "text": "[Ані|A-nee], [привіт|pri-VEET]! [Що|Shcho] [ти|ti] [робиш|RO-bish]?",
+          "id": "Ani, hi! What are you doing?",
+          "literal": "Ani, hi! what — you — do?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Я|Ya] [читаю|chi-TA-yoo]. [А|A] [ти|ti]?",
+          "id": "I'm reading. And you?",
+          "literal": "I — read. and — you?"
+        },
+        {
+          "speaker": "Діна:",
+          "text": "[Я|Ya] [нічого|nee-CHO-ho] [не|neh] [роблю|rob-LYOO]. [Дивлюся|Div-LYOO-sya] [телевізор|teh-leh-VEE-zor].",
+          "id": "I'm not doing anything. Watching TV.",
+          "literal": "I — nothing — not — do. watch — television."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Мама|MA-ma] [вдома|VDO-ma]?",
+          "id": "Is Mom home?",
+          "literal": "mom — at-home?"
+        },
+        {
+          "speaker": "Діна:",
+          "text": "[Ні|Nee], [вона|vo-NA] [працює|pra-TSYOO-yeh]. [Тато|TA-to] [готує|ho-TOO-yeh] [вечерю|veh-CHEH-ryoo].",
+          "id": "No, she's at work. Dad's cooking dinner.",
+          "literal": "no, she — works. dad — cooks — dinner."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Тато|TA-to] [готує|ho-TOO-yeh]? [Це|Tseh] [новина|no-vi-NA]!",
+          "id": "Dad's cooking? That's news!",
+          "literal": "dad — cooks? this — news!"
+        },
+        {
+          "speaker": "Діна:",
+          "text": "[Так|Tak]. [Він|Veen] [каже|KA-zheh], [що|shcho] [любить|LYOO-bit'] [готувати|ho-too-VA-ti].",
+          "id": "Yep. He says he loves cooking.",
+          "literal": "yes. he — says, that — loves — to-cook."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[А|A] [що|shcho] [він|veen] [готує|ho-TOO-yeh]?",
+          "id": "What's he making?",
+          "literal": "and — what — he — cooks?"
+        },
+        {
+          "speaker": "Діна:",
+          "text": "[Рис|Ris] [і|ee] [рибу|RI-boo]. [Як|Yak] [завжди|ZAV-zhdi].",
+          "id": "Rice and fish. As always.",
+          "literal": "rice — and — fish (знахідний). as — always."
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Я|Ya] [сумую|soo-MOO-yoo] [за|za] [домом|DO-mom].",
+          "id": "I miss home.",
+          "literal": "I — grieve — behind — home (орудний)."
+        },
+        {
+          "speaker": "Діна:",
+          "text": "[Ми|Mi] [теж|tezh] [сумуємо|soo-MOO-yeh-mo]. [Коли|Ko-LI] [ти|ti] [приїдеш|pri-YEE-desh]?",
+          "id": "We miss you too. When are you coming home?",
+          "literal": "we — too — grieve. when — you — will-arrive?"
+        },
+        {
+          "speaker": "Ані:",
+          "text": "[Не|Neh] [знаю|ZNA-yoo]. [Але|A-leh] [я|ya] [думаю|DOO-ma-yoo] [про|pro] [вас|vas] [щодня|shcho-DNYA].",
+          "id": "I don't know. But I think about you all every day.",
+          "literal": "not — know. but — I — think — about — you (pl) — every-day."
+        }
+      ],
+      "notes": [
+        "**Ukrainian has no separate \"-ing\" form.** *Я читаю* means \"I read\" **and** \"I'm reading\" at once. There's no equivalent of English *am reading*. Good news: one form covers both, and context does the rest.",
+        "**Every verb falls into one of two patterns.** The difference is a single letter in the third-person form: pattern one **читає** (-е-), pattern two **робить** (-и-). If you know that one form for a verb, the other five follow without memorizing.",
+        "**Роблю, not робю.** Second-pattern verbs whose stem ends in **б, п, в, м, ф** slip in an **-л-** only in the *я* and *вони* forms: *роблю / роблять*, *люблю / люблять*, *сплю / сплять*. The four forms in between are unaffected. ⚠️ A small pattern, but it comes up constantly.",
+        "**Нічого не роблю — two negatives in one sentence.** Ukrainian requires a double negative: *нічого* (nothing) **still** needs *не*. Same with *ніхто не знає* (nobody knows), *ніколи не був* (has never been). Drop either one and the sentence breaks.",
+        "**Дивлюся телевізор, but дивлюся на нього.** The verb *дивитися* (to watch, to look) pairs with **на** when what you're looking at isn't a show: *дивлюся на тебе* (I'm looking at you). For TV and films, no preposition.",
+        "**Сумувати за — to miss.** Literally \"to grieve behind\", and whatever you miss goes into the орудний: *сумую за домом*, *сумую за мамою*. You'll also hear *скучати*, but *сумувати* is more Ukrainian.",
+        "**Що can mean \"what\" and \"that\".** *Що ти робиш?* (what are you doing) and *Він каже, що…* (he says that…). The only difference is position: at the start of a sentence it asks; in the middle, after a comma, it links."
+      ],
+      "grammars": [
+        {
+          "title": "Pattern I (-е-): читати — to read",
+          "body": [
+            "How to recognize it: the third-person form ends in **-є** or **-е**."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Form",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "я",
+                "читаю",
+                "chi-TA-yoo",
+                "I read"
+              ],
+              [
+                "ти",
+                "читаєш",
+                "chi-TA-yesh",
+                "you read (informal)"
+              ],
+              [
+                "він / вона",
+                "читає",
+                "chi-TA-yeh",
+                "he / she reads"
+              ],
+              [
+                "ми",
+                "читаємо",
+                "chi-TA-yeh-mo",
+                "we read"
+              ],
+              [
+                "ви",
+                "читаєте",
+                "chi-TA-yeh-teh",
+                "you read (formal / plural)"
+              ],
+              [
+                "вони",
+                "читають",
+                "chi-TA-yoot'",
+                "they read"
+              ]
+            ]
+          },
+          "after": [
+            "Same pattern: **знати** (to know), **думати** (to think), **гуляти** (to go for a walk), **питати** (to ask), **відпочивати** (to rest), **розуміти** (to understand)."
+          ]
+        },
+        {
+          "title": "Pattern II (-и-): робити — to do",
+          "body": [
+            "How to recognize it: the third-person form ends in **-ить** (often soft)."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Form",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "я",
+                "роблю",
+                "rob-LYOO",
+                "I do"
+              ],
+              [
+                "ти",
+                "робиш",
+                "RO-bish",
+                "you do (informal)"
+              ],
+              [
+                "він / вона",
+                "робить",
+                "RO-bit'",
+                "he / she does"
+              ],
+              [
+                "ми",
+                "робимо",
+                "RO-bi-mo",
+                "we do"
+              ],
+              [
+                "ви",
+                "робите",
+                "RO-bi-teh",
+                "you do (formal / plural)"
+              ],
+              [
+                "вони",
+                "роблять",
+                "ROB-lyat'",
+                "they do"
+              ]
+            ]
+          },
+          "after": [
+            "Same pattern: **говорити** (to speak), **любити** (to love), **бачити** (to see), **вчити** (to learn / to teach), **платити** (to pay), **спати** (to sleep)."
+          ]
+        },
+        {
+          "title": "Spotting the pattern without a dictionary",
+          "body": [
+            "A rule of thumb that works for most A1 verbs:"
+          ],
+          "table": {
+            "head": [
+              "Dictionary ending",
+              "Usually pattern",
+              "Examples",
+              "я form"
+            ],
+            "rows": [
+              [
+                "-ати",
+                "I",
+                "читати, знати, думати",
+                "читаю, знаю, думаю"
+              ],
+              [
+                "-увати / -ювати",
+                "I",
+                "працювати, малювати",
+                "працюю, малюю"
+              ],
+              [
+                "-ити",
+                "II",
+                "робити, говорити, любити",
+                "роблю, говорю, люблю"
+              ],
+              [
+                "-іти",
+                "II",
+                "бачити, сидіти, летіти",
+                "бачу, сиджу, лечу"
+              ],
+              [
+                "-ти after another vowel",
+                "mixed",
+                "жити, пити, їсти",
+                "живу, п'ю, їм"
+              ]
+            ]
+          },
+          "after": [
+            "The last row is the group to learn one by one, and luckily it's small: the most-used verbs are the ones most likely to be irregular — just like *be*, *go*, and *eat* in English."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Fifteen verbs that cover an ordinary day",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Dictionary form",
+            "я form",
+            "він form",
+            "Pattern",
+            "English"
+          ],
+          "rows": [
+            [
+              "читати",
+              "читаю",
+              "читає",
+              "I",
+              "to read"
+            ],
+            [
+              "писати",
+              "пишу",
+              "пише",
+              "I",
+              "to write"
+            ],
+            [
+              "знати",
+              "знаю",
+              "знає",
+              "I",
+              "to know"
+            ],
+            [
+              "думати",
+              "думаю",
+              "думає",
+              "I",
+              "to think"
+            ],
+            [
+              "розуміти",
+              "розумію",
+              "розуміє",
+              "I",
+              "to understand"
+            ],
+            [
+              "працювати",
+              "працюю",
+              "працює",
+              "I",
+              "to work"
+            ],
+            [
+              "готувати",
+              "готую",
+              "готує",
+              "I",
+              "to cook"
+            ],
+            [
+              "жити",
+              "живу",
+              "живе",
+              "I",
+              "to live"
+            ],
+            [
+              "пити",
+              "п'ю",
+              "п'є",
+              "I",
+              "to drink"
+            ],
+            [
+              "робити",
+              "роблю",
+              "робить",
+              "II",
+              "to do, to make"
+            ],
+            [
+              "говорити",
+              "говорю",
+              "говорить",
+              "II",
+              "to speak"
+            ],
+            [
+              "любити",
+              "люблю",
+              "любить",
+              "II",
+              "to love, to like"
+            ],
+            [
+              "бачити",
+              "бачу",
+              "бачить",
+              "II",
+              "to see"
+            ],
+            [
+              "спати",
+              "сплю",
+              "спить",
+              "II",
+              "to sleep"
+            ],
+            [
+              "їсти",
+              "їм",
+              "їсть",
+              "special",
+              "to eat"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "The double negative is required, not a mistake",
+          "items": [
+            "**Я нічого не роблю** — literally \"I nothing don't do\". To an English-trained ear this sounds wrong; in Ukrainian it's the only correct form.",
+            "**Ніхто не знає** — nobody knows. **Ніде немає** — it's nowhere. **Ніколи не був** — has never been.",
+            "The pattern never changes: a negative word starting with **ні-** always pairs with **не** in front of the verb.",
+            "⚠️ Dropping either one doesn't just sound odd — the sentence becomes unreadable. *Я нічого роблю* means nothing at all."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "uk": "робити",
+      "baca": "ro-BI-ti",
+      "en": "to do, to make"
+    },
+    {
+      "uk": "читати",
+      "baca": "chi-TA-ti",
+      "en": "to read"
+    },
+    {
+      "uk": "писати",
+      "baca": "pi-SA-ti",
+      "en": "to write"
+    },
+    {
+      "uk": "знати",
+      "baca": "ZNA-ti",
+      "en": "to know"
+    },
+    {
+      "uk": "думати",
+      "baca": "DOO-ma-ti",
+      "en": "to think"
+    },
+    {
+      "uk": "розуміти",
+      "baca": "ro-zoo-MEE-ti",
+      "en": "to understand"
+    },
+    {
+      "uk": "готувати",
+      "baca": "ho-too-VA-ti",
+      "en": "to cook"
+    },
+    {
+      "uk": "дивитися",
+      "baca": "di-VI-ti-sya",
+      "en": "to watch, to look"
+    },
+    {
+      "uk": "любити",
+      "baca": "lyoo-BI-ti",
+      "en": "to love, to like"
+    },
+    {
+      "uk": "бачити",
+      "baca": "BA-chi-ti",
+      "en": "to see"
+    },
+    {
+      "uk": "спати",
+      "baca": "SPA-ti",
+      "en": "to sleep"
+    },
+    {
+      "uk": "їсти",
+      "baca": "YEES-ti",
+      "en": "to eat"
+    },
+    {
+      "uk": "пити",
+      "baca": "PI-ti",
+      "en": "to drink"
+    },
+    {
+      "uk": "сумувати за",
+      "baca": "soo-moo-VA-ti za",
+      "en": "to miss (someone / something)"
+    },
+    {
+      "uk": "нічого",
+      "baca": "nee-CHO-ho",
+      "en": "nothing"
+    },
+    {
+      "uk": "ніхто",
+      "baca": "neekh-TO",
+      "en": "nobody"
+    },
+    {
+      "uk": "завжди",
+      "baca": "ZAV-zhdi",
+      "en": "always"
+    },
+    {
+      "uk": "ніколи",
+      "baca": "nee-KO-li",
+      "en": "never"
+    },
+    {
+      "uk": "щодня",
+      "baca": "shcho-DNYA",
+      "en": "every day"
+    },
+    {
+      "uk": "вдома",
+      "baca": "VDO-ma",
+      "en": "at home"
+    },
+    {
+      "uk": "телевізор",
+      "baca": "teh-leh-VEE-zor",
+      "en": "television, TV"
+    },
+    {
+      "uk": "вечеря",
+      "baca": "veh-CHEH-rya",
+      "en": "dinner"
+    },
+    {
+      "uk": "рис",
+      "baca": "ris",
+      "en": "rice"
+    },
+    {
+      "uk": "риба",
+      "baca": "RI-ba",
+      "en": "fish"
+    },
+    {
+      "uk": "новина",
+      "baca": "no-vi-NA",
+      "en": "news"
+    },
+    {
+      "uk": "теж",
+      "baca": "tezh",
+      "en": "too, also"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the right form of читати (pattern I).",
+      "items": [
+        "Я ____ книгу.",
+        "Ти ____ газету?",
+        "Він ____ журнал.",
+        "Ми ____ разом.",
+        "Вони ____ багато."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right form of робити (pattern II). Remember the -л- in the я and вони forms.",
+      "items": [
+        "Що я ____?",
+        "Що ти ____?",
+        "Що вона ____?",
+        "Що ми ____?",
+        "Що вони ____?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "робиш / що / ти",
+        "книгу / я / читаю",
+        "не / нічого / я / роблю",
+        "вечерю / тато / готує",
+        "про / думаю / вас / я"
+      ]
+    },
+    {
+      "prompt": "Translate into Ukrainian.",
+      "items": [
+        "What are you doing? (informal)",
+        "I'm reading.",
+        "I'm not doing anything.",
+        "Dad is cooking dinner.",
+        "I think about you all every day."
+      ]
+    }
+  ],
+  "answers": [
+    "читаю — читаєш — читає — читаємо — читають",
+    "роблю — робиш — робить — робимо — роблять",
+    "Що ти робиш? — Я читаю книгу. — Я нічого не роблю. — Тато готує вечерю. — Я думаю про вас.",
+    "Що ти робиш? — Я читаю. — Я нічого не роблю. — Тато готує вечерю. — Я думаю про вас щодня."
+  ],
+  "wave": "Review Unit 5. The *працюю* you learned there turns out to be pattern one — and now you know why its endings look the way they do."
+}

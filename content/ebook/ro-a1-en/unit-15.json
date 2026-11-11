@@ -1,0 +1,572 @@
+{
+  "title": "The weekend",
+  "title_target": "În weekend",
+  "goal": "Tell and rate your weekend, while tackling the trickiest part of the past tense: where the little words — *mă, te, se, îl, o, îmi* — go once the helper *am, ai, a* joins the sentence.",
+  "bekal": [
+    "use reflexive verbs in the past: *m-am trezit, te-ai culcat, ne-am plimbat*",
+    "place object pronouns correctly: *l-am văzut*, but *am văzut-o*; and *mi-a plăcut*",
+    "rate an experience: *a fost minunat, obositor, plictisitor*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Cum a fost în weekend?",
+      "intro": "Monday morning at the office, by the coffee machine. Ioana and Budi swap weekend stories.",
+      "lines": [
+        {
+          "speaker": "Ioana:",
+          "text": "Bună, Budi! Cum a fost în weekend?",
+          "id": "Hi, Budi! How was your weekend?",
+          "literal": "good-f, Budi! how it-has been in weekend?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Foarte bine. Sâmbătă m-am trezit târziu, pe la zece.",
+          "id": "Really good. On Saturday I woke up late, around ten.",
+          "literal": "very good. saturday myself-I-have woken late, around at ten."
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Și ce ai făcut după aceea?",
+          "id": "And what did you do after that?",
+          "literal": "and what you-have made after that?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "M-am întâlnit cu Andrei în oraș. Ne-am plimbat prin Centrul Vechi și am mâncat mici.",
+          "id": "I met Andrei in town. We strolled around the Old Town and ate mici.",
+          "literal": "myself-I-have met with Andrei in town. ourselves-we-have strolled through center-the old and we-have eaten mici."
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Ați văzut și Hanul lui Manuc?",
+          "id": "Did you see Hanul lui Manuc too?",
+          "literal": "you-pl-have seen also inn-the of Manuc?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Da, l-am văzut. Dar la muzeu n-am fost. Nu am avut timp. Și tu?",
+          "id": "Yes, we saw it. But we didn't go to the museum. We didn't have time. And you?",
+          "literal": "yes, it-m-we-have seen. but at museum not-we-have been. not we-have had time. and you?"
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Eu am mers la munte cu prietenii, la Sinaia. Am vizitat Castelul Peleș.",
+          "id": "I went to the mountains with friends, to Sinaia. We visited Peleș Castle.",
+          "literal": "I I-have gone to mountain with friend-pl-the, to Sinaia. we-have visited castle-the Peleș."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Și prietena ta, Maria? Ai văzut-o?",
+          "id": "And your friend Maria? Did you see her?",
+          "literal": "and friend-f-the your-f, Maria? you-have seen-her?"
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Da, am văzut-o. A venit și ea, cu trenul de la Brașov.",
+          "id": "Yes, I saw her. She came too, by train from Brașov.",
+          "literal": "yes, I-have seen-her. she-has come also she, with train-the from Brașov."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Și castelul? Ți-a plăcut?",
+          "id": "And the castle? Did you like it?",
+          "literal": "and castle-the? to-you-it-has pleased?"
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Da, mi-a plăcut mult. Dar a fost obositor: aseară m-am culcat la unu!",
+          "id": "Yes, I liked it a lot. But it was tiring: last night I went to bed at one!",
+          "literal": "yes, to-me-it-has pleased much. but it-has been tiring: last-night myself-I-have lain at one!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Atunci azi trebuie să bem două cafele!",
+          "id": "Then today we need two coffees each!",
+          "literal": "then today must that we-drink two-f coffee-pl!"
+        }
+      ],
+      "notes": [
+        "**M-am trezit.** In the present you say *mă trezesc*; in the past *mă* meets *am*, and since two vowels collide, the *ă* drops: *mă + am → m-am*. The hyphen isn't decoration — it marks exactly where a letter went missing, and the two words are read as one syllable: mahm.",
+        "**L-am văzut, but am văzut-o.** This is the promise from unit 12. Almost all the little pronouns attach **before** the helper (*îl + am → l-am*), except one: *o* (her/it, feminine) moves **after the participle**. *Hanul* (n, acting as m) → *l-am văzut*; *Maria* (f) → *am văzut-o*. Misplacing *o* is the classic learner's mistake, so drill this pair until it's automatic.",
+        "**Ți-a plăcut? — Mi-a plăcut.** The dative pronouns from unit 10 shorten too: *îmi → mi-*, *îți → ți-*. The subject is still the thing liked (*castelul*), so the helper is *a*, not *am* or *ai*. If the thing liked is plural, the helper follows: *Mi-au plăcut munții.*",
+        "**Sâmbătă without an article** = this past (or coming) Saturday, once. *Sâmbăta* with the article = every Saturday. ***Pe la** zece* = \"around ten\": *pe* before *la* blurs the time, very handy for casual stories.",
+        "**Prin Centrul Vechi.** *Prin* means \"through\" or \"around inside\": *ne-am plimbat prin parc, prin oraș, prin pădure*. Compare *la munte*, *la mare*, *la țară* — three holiday-destination chunks that never take an article."
+      ],
+      "grammars": [
+        {
+          "title": "Reflexives in the past — *m-am, te-ai, s-a, ne-am, v-ați, s-au*",
+          "body": [
+            "The reflexive pronouns from unit 8 still stand in front, but now what follows them is a helper starting with a vowel. The result: pronouns ending in *-ă* lose that letter, and everything is joined with a hyphen."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "Present",
+              "Perfect compus",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "eu",
+                "*mă trezesc*",
+                "**m-am** trezit",
+                "I woke up"
+              ],
+              [
+                "tu",
+                "*te trezești*",
+                "**te-ai** trezit",
+                "you woke up"
+              ],
+              [
+                "el / ea",
+                "*se trezește*",
+                "**s-a** trezit",
+                "he / she woke up"
+              ],
+              [
+                "noi",
+                "*ne trezim*",
+                "**ne-am** trezit",
+                "we woke up"
+              ],
+              [
+                "voi / dumneavoastră",
+                "*vă treziți*",
+                "**v-ați** trezit",
+                "you (pl / polite) woke up"
+              ],
+              [
+                "ei / ele",
+                "*se trezesc*",
+                "**s-au** trezit",
+                "they woke up"
+              ]
+            ]
+          },
+          "after": [
+            "**The rule in one line:** *mă, vă* drop the *ă*; *se* drops the *e*; *te* and *ne* stay whole. All are then hyphenated to the helper: *m-am, v-ați, s-a, s-au, te-ai, ne-am*.",
+            "**Negative:** just *nu* before the whole chain, with no further merging: *Nu m-am trezit la timp. Nu ne-am întâlnit. Andrei nu s-a culcat devreme.*",
+            "**A whole day in the past:** *M-am trezit la șapte, m-am spălat, m-am îmbrăcat și m-am dus la birou. Seara m-am uitat la un film și m-am culcat târziu.* All the routine verbs from unit 8 can now tell a story.",
+            "Plural reflexives often mean **each other**: *ne-am întâlnit* (we met each other), *ne-am văzut ieri* (we saw each other yesterday), *s-au cunoscut la Cluj* (they got to know each other in Cluj)."
+          ]
+        },
+        {
+          "title": "Object and dative pronouns in the past",
+          "body": [
+            "The same rule applies to the accusative pronouns (unit 12) and the dative ones (unit 10): a leading *î* drops, a final *ă* drops, then a hyphen. The only rebel is *o*."
+          ],
+          "table": {
+            "head": [
+              "Pronoun",
+              "Present",
+              "Perfect compus",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "mă",
+                "*mă vede*",
+                "**m-a** văzut",
+                "he/she saw me"
+              ],
+              [
+                "te",
+                "*te văd*",
+                "**te-am** văzut",
+                "I saw you"
+              ],
+              [
+                "îl",
+                "*îl văd*",
+                "**l-am** văzut",
+                "I saw him / it (m/n)"
+              ],
+              [
+                "o",
+                "*o văd*",
+                "am văzut**-o**",
+                "I saw her / it (f)"
+              ],
+              [
+                "ne · vă",
+                "*ne vede* · *vă văd*",
+                "**ne-a** văzut · **v-am** văzut",
+                "he/she saw us · I saw you (pl)"
+              ],
+              [
+                "îi",
+                "*îi văd*",
+                "**i-am** văzut",
+                "I saw them (m)"
+              ],
+              [
+                "le",
+                "*le văd*",
+                "**le-am** văzut",
+                "I saw them (f/n)"
+              ],
+              [
+                "îmi · îți · îi (dative)",
+                "*îmi place*",
+                "**mi-a** plăcut · **ți-a** plăcut · **i-a** plăcut",
+                "I · you · he/she liked it"
+              ],
+              [
+                "ne · vă · le (dative)",
+                "*ne place*",
+                "**ne-a** plăcut · **v-a** plăcut · **le-a** plăcut",
+                "we · you (pl) · they liked it"
+              ]
+            ]
+          },
+          "after": [
+            "**Doubling with *pe* still applies**, exactly as in unit 12: *L-am văzut pe Andrei. Am văzut-o pe Ioana. I-am văzut pe colegi.* Negative: *Nu l-am văzut*, and for *o*: *N-am văzut-o.*",
+            "**Why does *o* go to the back?** Because *o am* would crash two vowels together with nothing that can drop. Romanian chose to move it instead. This happens only in this past tense; in the present *o* stays in front: *o văd → am văzut-o*.",
+            "**Irregular participles used so far** — learn them paired with the infinitive: *a fi → fost · a avea → avut · a face → făcut · a merge → mers · a vedea → văzut · a zice → zis · a scrie → scris · a pune → pus · a veni → venit · a bea → băut · a vrea → vrut · a putea → putut · a ști → știut · a da → dat · a lua → luat · a sta → stat · a rămâne → rămas · a deschide → deschis · a înțelege → înțeles*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Weekend activities and outings",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Română",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "**a se plimba prin oraș**",
+              "ah seh pleem-BAH preen oh-RAHSH",
+              "to stroll around town"
+            ],
+            [
+              "**a merge la munte**",
+              "ah MEHR-jeh lah MOON-teh",
+              "to go to the mountains"
+            ],
+            [
+              "**a merge la mare**",
+              "ah MEHR-jeh lah MAH-reh",
+              "to go to the seaside"
+            ],
+            [
+              "**a merge la țară**",
+              "ah MEHR-jeh lah TSAH-ruh",
+              "to go to the countryside"
+            ],
+            [
+              "**a face o excursie**",
+              "ah FAH-cheh oh ehks-KOOR-see-yeh",
+              "to go on a trip"
+            ],
+            [
+              "**a vizita un muzeu**",
+              "ah vee-zee-TAH oon moo-ZEHW",
+              "to visit a museum"
+            ],
+            [
+              "**a ieși în oraș**",
+              "ah yeh-SHEE în oh-RAHSH",
+              "to go out (in town)"
+            ],
+            [
+              "**a se întâlni cu prietenii**",
+              "ah seh în-tîl-NEE koo pree-YEH-teh-neey",
+              "to meet up with friends"
+            ],
+            [
+              "**a face un grătar**",
+              "ah FAH-cheh oon gruh-TAHR",
+              "to have a barbecue"
+            ],
+            [
+              "**a face cumpărături**",
+              "ah FAH-cheh koom-puh-ruh-TOOR'",
+              "to go shopping"
+            ],
+            [
+              "**a face curat**",
+              "ah FAH-cheh koo-RAHT",
+              "to clean up"
+            ],
+            [
+              "**a se odihni**",
+              "ah seh oh-deeh-NEE",
+              "to rest"
+            ],
+            [
+              "**a dormi până târziu**",
+              "ah dohr-MEE PÎ-nuh tîr-ZYOO",
+              "to sleep in"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Try turning each line into the past with *eu*: *m-am plimbat prin oraș, am mers la munte, am făcut o excursie, am vizitat un muzeu, am ieșit în oraș, m-am întâlnit cu prietenii, am făcut curat, m-am odihnit, am dormit până târziu*. Watch out for *mare*: as a feminine noun it means \"sea\" (*la mare*), as an adjective \"big\" (*un oraș mare*). Context always tells them apart — *Marea este mare* = \"The sea is big\"."
+        },
+        {
+          "type": "kotak",
+          "title": "Where Bucharest escapes on weekends",
+          "items": [
+            "**La munte.** The Prahova Valley — Sinaia, Bușteni, Predeal — is only about an hour and a half to two hours by train from Gara de Nord. Sinaia is home to *Castelul Peleș*, the summer palace built by King Carol I in the late 19th century.",
+            "**La mare.** From June to early September the main destination is the Black Sea coast: Constanța, Mamaia, and the more laid-back Vama Veche. You'll go there with Budi in unit 16.",
+            "**La țară.** Many city families still have grandparents in a village. *Merg la țară, la bunici* means coming back loaded with eggs, cheese, and jars of homemade *zacuscă*.",
+            "**La un grătar.** As soon as the weather warms up, Romanians fire up the grill: *mici*, meat, bread, and mustard. May 1 is practically national *grătar* day."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Rating an experience",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "English"
+          ],
+          "rows": [
+            [
+              "*A fost minunat!* · *A fost superb!*",
+              "It was wonderful! · It was gorgeous!"
+            ],
+            [
+              "*A fost grozav!*",
+              "It was awesome! (spoken)"
+            ],
+            [
+              "*A fost interesant.*",
+              "It was interesting."
+            ],
+            [
+              "*A fost așa și așa.*",
+              "It was so-so."
+            ],
+            [
+              "*A fost plictisitor.*",
+              "It was boring."
+            ],
+            [
+              "*A fost obositor, dar a meritat.*",
+              "It was tiring, but worth it."
+            ],
+            [
+              "*A fost groaznic.*",
+              "It was awful."
+            ],
+            [
+              "*Ne-am distrat foarte bine.*",
+              "We had a great time."
+            ],
+            [
+              "*Mi-a plăcut foarte mult.*",
+              "I liked it a lot."
+            ],
+            [
+              "*Nu mi-a plăcut deloc.*",
+              "I didn't like it at all."
+            ],
+            [
+              "*Mi-au plăcut munții, dar nu mi-a plăcut hotelul.*",
+              "I liked the mountains, but I didn't like the hotel."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Two small things make your verdict sound native. First, *a plăcea* still turns on the thing, not on you: one thing → *mi-**a** plăcut*, several things → *mi-**au** plăcut*. Second, before *mi-a, ți-a, l-am* the word *nu* does **not** merge — *nu mi-a plăcut, nu l-am văzut* — because the hyphen slot is already taken. The merged *n-am* only happens when *nu* meets the helper directly: *n-am văzut-o*."
+        },
+        {
+          "type": "kotak",
+          "title": "Five Monday-morning questions",
+          "items": [
+            "*Cum a fost în weekend?* — How was your weekend?",
+            "*Ce ai făcut sâmbătă?* — What did you do on Saturday?",
+            "*Unde ați fost?* · *Cu cine ai fost?* — Where did you go? · Who did you go with?",
+            "*V-ați distrat?* — Did you have fun? The typical answer: *Da, ne-am distrat de minune!*",
+            "*Te-ai odihnit?* — Did you get some rest? And almost everyone's honest answer: *Nu prea.* (\"Not really.\")"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 13",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Romanian column, read the English, then rebuild the sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Română"
+          ],
+          "rows": [
+            [
+              "The apartment has two rooms and a kitchen.",
+              "*Apartamentul are două camere și o bucătărie.*"
+            ],
+            [
+              "Andrei's room is small.",
+              "*Camera lui Andrei este mică.*"
+            ],
+            [
+              "This is the neighbor's car.",
+              "*Aceasta este mașina vecinului.*"
+            ],
+            [
+              "The keys are on the table.",
+              "*Cheile sunt pe masă.*"
+            ],
+            [
+              "The rent is four hundred euros a month.",
+              "*Chiria este patru sute de euro pe lună.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ro": "weekend, weekenduri",
+      "baca": "OOY-kehnd",
+      "en": "weekend (n)"
+    },
+    {
+      "ro": "a se plimba (mă plimb)",
+      "baca": "ah seh pleem-BAH (muh pleemb)",
+      "en": "to take a walk, to stroll"
+    },
+    {
+      "ro": "a se întâlni (mă întâlnesc) cu",
+      "baca": "ah seh în-tîl-NEE (muh în-tîl-NEHSK)",
+      "en": "to meet (with)"
+    },
+    {
+      "ro": "a se întoarce (mă întorc)",
+      "baca": "ah seh în-TWAHR-cheh (muh în-TOHRK)",
+      "en": "to return, to come back; participle *întors*"
+    },
+    {
+      "ro": "a se distra (mă distrez)",
+      "baca": "ah seh dees-TRAH (muh dees-TREHZ)",
+      "en": "to have fun"
+    },
+    {
+      "ro": "a se odihni (mă odihnesc)",
+      "baca": "ah seh oh-deeh-NEE (muh oh-deeh-NEHSK)",
+      "en": "to rest"
+    },
+    {
+      "ro": "a vizita (vizitez)",
+      "baca": "ah vee-zee-TAH (vee-zee-TEHZ)",
+      "en": "to visit"
+    },
+    {
+      "ro": "munte, munți",
+      "baca": "MOON-teh, moonts'",
+      "en": "mountain (m)"
+    },
+    {
+      "ro": "mare, mări",
+      "baca": "MAH-reh, muhr'",
+      "en": "sea (f)"
+    },
+    {
+      "ro": "țară, țări",
+      "baca": "TSAH-ruh, tsuhr'",
+      "en": "country; countryside (f)"
+    },
+    {
+      "ro": "castel, castele",
+      "baca": "kahs-TEHL",
+      "en": "castle, palace (n)"
+    },
+    {
+      "ro": "muzeu, muzee",
+      "baca": "moo-ZEHW, moo-ZEH-yeh",
+      "en": "museum (n)"
+    },
+    {
+      "ro": "prieten, prieteni / prietenă, prietene",
+      "baca": "pree-YEH-tehn / pree-YEH-teh-nuh",
+      "en": "friend (m / f)"
+    },
+    {
+      "ro": "timp",
+      "baca": "teemp",
+      "en": "time (n)"
+    },
+    {
+      "ro": "prin",
+      "baca": "preen",
+      "en": "through; around"
+    },
+    {
+      "ro": "după aceea",
+      "baca": "DOO-puh ah-CHEH-yah",
+      "en": "after that"
+    },
+    {
+      "ro": "obositor",
+      "baca": "oh-boh-see-TOHR",
+      "en": "tiring"
+    },
+    {
+      "ro": "plictisitor",
+      "baca": "pleek-tee-see-TOHR",
+      "en": "boring"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Romanian.",
+      "items": [
+        "On Saturday I woke up late.",
+        "We strolled around the Old Town (Centrul Vechi).",
+        "I went to the mountains with friends.",
+        "I didn't have time.",
+        "Did you like it? (one thing)",
+        "Yes, I liked it a lot."
+      ]
+    },
+    {
+      "prompt": "Fill in the past tense. In the last three, put the pronoun in brackets in the right place.",
+      "items": [
+        "Sâmbătă eu ____ târziu. (a se trezi)",
+        "Tu ____ devreme aseară? (a se culca)",
+        "Andrei ____ prin parc. (a se plimba)",
+        "Noi ____ cu prietenii în oraș. (a se întâlni)",
+        "Ei ____ de la munte aseară. (a se întoarce)",
+        "Filmul? Da, ____ . (îl, am văzut)",
+        "Pe Maria? Da, ____ . (o, am văzut)",
+        "Castelul? Da, ____ mult. (îmi, a plăcut)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "trezit / sâmbătă / târziu / m-am",
+        "prin / plimbat / vechi / ne-am / centrul",
+        "timp / am / nu / avut",
+        "plăcut / mi-a / mult / da / ,",
+        "munte / am / cu / mers / prietenii / la"
+      ]
+    }
+  ],
+  "answers": [
+    "Sâmbătă m-am trezit târziu. — Ne-am plimbat prin Centrul Vechi. — Am mers la munte cu prietenii. — Nu am avut timp. — Ți-a plăcut? — Da, mi-a plăcut mult.",
+    "m-am trezit — te-ai culcat — s-a plimbat — ne-am întâlnit — s-au întors — l-am văzut — am văzut-o — mi-a plăcut",
+    "Sâmbătă m-am trezit târziu. — Ne-am plimbat prin Centrul Vechi. — Nu am avut timp. — Da, mi-a plăcut mult. — Am mers la munte cu prietenii."
+  ]
+}

@@ -1,0 +1,563 @@
+{
+  "title": "Hello!",
+  "title_target": "Zdravo!",
+  "goal": "Greet people at the right level of politeness, introduce yourself, ask how someone is, say goodbye — and get used, from the very first line, to the fact that \"am/is/are\" can never be dropped in Bosnian, even though articles really don't exist.",
+  "bekal": [
+    "greet and say goodbye with *zdravo*, *dobar dan*, *ćao*, and *doviđenja*, each in its proper place",
+    "say your name with *zovem se…* and introduce someone with *ovo je…*",
+    "use all six forms of *biti* — short, long, and negative — and choose between *ti* and *Vi*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Prvi dan u kancelariji",
+      "intro": "Budi's first day at his new office in Sarajevo. A colleague comes over to his desk. Toward the end of the day, Emir — Budi's flatmate — drops by to pick him up.",
+      "lines": [
+        {
+          "speaker": "Amina:",
+          "text": "Dobar dan! Ja sam Amina. Kako se zoveš?",
+          "id": "Good afternoon! I'm Amina. What's your name?",
+          "literal": "good-m day! I I-am Amina. how self you-call?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dobar dan! Zovem se Budi. Ja sam nov ovdje.",
+          "id": "Good afternoon! My name is Budi. I'm new here.",
+          "literal": "good-m day! I-call self Budi. I I-am new-m here."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Drago mi je! Dobro došao, Budi!",
+          "id": "Nice to meet you! Welcome, Budi!",
+          "literal": "pleasing to-me it-is! well come-m!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Drago mi je. Hvala lijepo!",
+          "id": "Nice to meet you. Thank you very much!",
+          "literal": "pleasing to-me it-is. thanks beautifully."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Kako si? Jesi li umoran?",
+          "id": "How are you? Are you tired?",
+          "literal": "how you-are? you-are whether tired-m?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dobro sam, hvala. A ti?",
+          "id": "I'm fine, thanks. And you?",
+          "literal": "well I-am, thanks. and you?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "I ja sam dobro, hvala.",
+          "id": "I'm fine too, thanks.",
+          "literal": "also I I-am well, thanks."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zdravo, Emire! Ovo je Amina, moja koleginica.",
+          "id": "Hi, Emir! This is Amina, my colleague.",
+          "literal": "hello, Emir-voc! this it-is Amina, my-f colleague-f."
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Zdravo, Amina! Drago mi je. Jesi li i ti programerka?",
+          "id": "Hi, Amina! Nice to meet you. Are you a programmer too?",
+          "literal": "hello, Amina! pleasing to-me it-is. you-are whether also you programmer-f?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Jesam, kolege smo. A ti si student, zar ne?",
+          "id": "Yes, we're colleagues. And you're a student, right?",
+          "literal": "I-am, colleague-pl we-are. and you you-are student-m, isn't-it not?"
+        },
+        {
+          "speaker": "Emir:",
+          "text": "Jesam, student sam. Budi, jesi li spreman?",
+          "id": "Yes, I'm a student. Budi, are you ready?",
+          "literal": "I-am, student-m I-am. Budi, you-are whether ready-m?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jesam, spreman sam. Doviđenja, Amina! Vidimo se sutra!",
+          "id": "Yes, I'm ready. Goodbye, Amina! See you tomorrow!",
+          "literal": "I-am, ready-m I-am. goodbye, Amina! we-see self tomorrow!"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Ćao! Vidimo se!",
+          "id": "Bye! See you!",
+          "literal": "ciao! we-see self!"
+        }
+      ],
+      "notes": [
+        "**Kako se zoveš? is not \"what is your name\".** Literally it is \"how do you call yourself?\" — the little word *se* turns the action back on the doer. The answer uses the same pattern: *Zovem se Budi*. To someone you address formally: *Kako se zovete? — Zovem se…* There is a second pair, just as common and easier to say: *Kako ti je ime? — Ime mi je Budi* (\"how to-you is name?\").",
+        "**Dobro došao or dobro došla — it follows the person arriving.** Budi is a man, so *dobro došao*; to a woman *dobro došla*, to several people *dobro došli*. The full reply is *Bolje vas našao* (\"better I found you\"), but a simple *Hvala* works anywhere.",
+        "**Drago mi je never changes.** Literally \"it is pleasing to me\" — what is pleasing is the situation, not you, so the form is the same for men and women. Compare *nov / nova*, *umoran / umorna*, *spreman / spremna*: all adjectives follow the gender of the person being described. Budi says *umoran sam*, Amina says *umorna sam*.",
+        "**Jesam and sam are the same word.** The long form (*jesam, jesi, jeste…*) is used for short answers and for emphasis; the short form (*sam, si, je…*) is used mid-sentence. Hence *Jesi li spreman? — Jesam.* Answering just \"*Sam*\" is impossible: short forms can't stand alone, and that rule will keep coming back throughout this course.",
+        "**Zar ne? = \"right?\"** Literally \"surely not?\", and it goes at the end of the sentence just like English *right?* or *isn't it?* Notice the choice of goodbyes too: *doviđenja* is polite and safe anywhere, *ćao* is casual. In Bosnia you will also often hear *Selam!* or *Merhaba!* — greetings inherited from five Ottoman centuries, used every day with no formal tone at all."
+      ],
+      "grammars": [
+        {
+          "title": "Personal pronouns and biti — the \"am/is/are\" that can't disappear",
+          "body": [
+            "Casual English sometimes drops the verb (\"You tired?\"), and many languages do it all the time. Bosnian never does: *Ja sam student* — \"I am a student\". The good news: this is the only verb you have to memorize right now — and it has three sets of forms at once."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Say it",
+              "Short",
+              "Long",
+              "Negative",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ja",
+                "yah",
+                "**sam**",
+                "*jesam*",
+                "*nisam*",
+                "I am"
+              ],
+              [
+                "ti",
+                "tee",
+                "**si**",
+                "*jesi*",
+                "*nisi*",
+                "you are"
+              ],
+              [
+                "on / ona / ono",
+                "ohn / OH-nah / OH-noh",
+                "**je**",
+                "*jeste*",
+                "*nije*",
+                "he / she / it is"
+              ],
+              [
+                "mi",
+                "mee",
+                "**smo**",
+                "*jesmo*",
+                "*nismo*",
+                "we are"
+              ],
+              [
+                "vi",
+                "vee",
+                "**ste**",
+                "*jeste*",
+                "*niste*",
+                "you (all / formal) are"
+              ],
+              [
+                "oni / one / ona",
+                "OH-nee / OH-neh / OH-nah",
+                "**su**",
+                "*jesu*",
+                "*nisu*",
+                "they (m / f / n) are"
+              ]
+            ]
+          },
+          "after": [
+            "**The pronoun is often dropped.** The verb form already carries the person, so *Student sam* can only mean \"I'm a student\". *Ja* and *ti* are used only to **emphasize or contrast**: *Ja sam Amina* (\"as for me, I'm Amina\"), *A ti si student?* (\"and you, you're a student?\").",
+            "**A short form may never start a sentence.** *Sam Budi* is impossible; it's *Ja sam Budi* or *Budi sam*. Little words like *sam, si, je, se, mi* always sit in the **second slot**, after the first word. The full rule comes in unit 12, but start training your ear now.",
+            "**The negative is one word, not two.** There is no \"ne sam\" — only *nisam*. Likewise *nije* (not \"ne je\"): *Ovo nije kafa.* This is the only verb with a fused negative; for all the others you simply put *ne* in front.",
+            "**No articles, and that is a big gift.** *Ja sam student* means \"I'm a student\" and \"I'm the student\" at once. Don't look for an equivalent of *a* or *the* — there isn't one, and you never need one."
+          ]
+        },
+        {
+          "title": "Ti vs Vi — two kinds of \"you\"",
+          "body": [
+            "English has one \"you\" for everyone. Bosnian, like French (*tu/vous*) or German (*du/Sie*), has two — and the choice changes the verb too."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Say it",
+              "Used with",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**ti**",
+                "tee",
+                "one person, casual — friends, peers, family, children",
+                "*Kako si? Kako se zoveš?*"
+              ],
+              [
+                "**Vi**",
+                "vee",
+                "one person, polite — strangers, your boss, older people",
+                "*Kako ste? Kako se zovete?*"
+              ],
+              [
+                "**vi**",
+                "vee",
+                "several people, casual or polite",
+                "*Kako ste? Jeste li spremni?*"
+              ],
+              [
+                "**mi**",
+                "mee",
+                "we — inclusive or not, no difference in Bosnian",
+                "*Kolege smo.*"
+              ]
+            ]
+          },
+          "after": [
+            "**Polite *Vi* takes the plural verb, even for one person**: *Jeste li Vi gospodin Hodžić?* So there's no new set to learn — just remember that polite = plural. In letters and written messages, polite *Vi* is spelled with a capital; *vi* for several people is lowercase.",
+            "**The adjective goes plural too**: to one person you address formally it is still *Jeste li umorni?*, not *umoran*. This is the one people miss most.",
+            "**Rule of thumb: when in doubt, use *Vi*.** Being too polite with a friend only sounds funny for a moment; being too casual with an older person sounds rude. But be ready — Bosnians quickly find that distance excessive and will offer *Možemo na ti?* (\"can we say *ti*?\"). The answer is *Naravno!* and from that second on you use *ti*.",
+            "**One third person worth noting:** Bosnian uses *on, ona, ono* for things too, because every noun has a gender. *Gdje je kafa? — Ona je na stolu.* That's the story of unit 3."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Greetings by time and closeness",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bosnian greetings vary along two lines at once: what time it is, and how close you are to the other person. This table covers both."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bosanski",
+            "Say it",
+            "When to use it"
+          ],
+          "rows": [
+            [
+              "**Dobro jutro!**",
+              "DOH-broh YOO-troh",
+              "Good morning — until about 10:00"
+            ],
+            [
+              "**Dobar dan!**",
+              "DOH-bahr dahn",
+              "Good day / good afternoon — all day, the safest polite greeting"
+            ],
+            [
+              "**Dobro veče!**",
+              "DOH-broh VEH-cheh",
+              "Good evening — from dusk, when meeting"
+            ],
+            [
+              "**Laku noć!**",
+              "LAH-koo nohch",
+              "Good night — only when parting for the night"
+            ],
+            [
+              "**Zdravo!**",
+              "ZDRAH-voh",
+              "Hello, also bye — neutral, safe anywhere"
+            ],
+            [
+              "**Ćao!**",
+              "chow",
+              "Hi, bye — casual, borrowed from Italian"
+            ],
+            [
+              "**Merhaba!**",
+              "MEHR-hah-bah",
+              "Hello — typically Bosnian, from Turkish, everyday"
+            ],
+            [
+              "**Selam! / Selam alejkum!**",
+              "SEH-lahm ah-LAY-koom",
+              "Peace be with you — among Bosnian Muslims; the reply is *Alejkumu selam*"
+            ],
+            [
+              "**Doviđenja!**",
+              "doh-vee-JEH-nyah",
+              "Goodbye — polite, used anywhere"
+            ],
+            [
+              "**Vidimo se!**",
+              "VEE-dee-moh seh",
+              "See you — casual"
+            ],
+            [
+              "**Vidimo se sutra!**",
+              "VEE-dee-moh seh SOO-trah",
+              "See you tomorrow!"
+            ],
+            [
+              "**Prijatno!**",
+              "pree-YAHT-noh",
+              "Have a nice one — said when leaving; also \"enjoy your meal\""
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The one you will need most is **dobar dan**: polite, never wrong, and valid from morning to evening. Bosnians also say it to strangers when stepping into a lift, a waiting room, or a small shop — silence feels cold. On the way out, say *doviđenja* or *prijatno*."
+        },
+        {
+          "type": "p",
+          "text": "Notice one thing that will make sense two units from now: why *dobar dan* but *dobro jutro*? Because *dan* (day) is masculine, while *jutro* (morning) and *veče* (evening) are neuter, and Bosnian adjectives follow the gender of their noun: *dobar* for masculine, *dobra* for feminine, *dobro* for neuter. *Noć* (night) happens to be feminine — so *laku noć* uses the feminine *laka*, changed to *laku*, the object form, because literally it means \"(may you have) a light night\"."
+        },
+        {
+          "type": "kotak",
+          "title": "Coffee is not a drink but an invitation",
+          "items": [
+            "If someone says *Hajde na kafu!* (\"let's go for coffee!\"), it's not small talk and it's not about the coffee. It's an invitation to sit for an hour. Turning it down because you're busy can sound like turning down the person, so if you really can't, name another time: *Danas ne mogu, ali može sutra?*",
+            "Bosnian coffee (*bosanska kafa*) is served in a copper *džezva* with a small handleless cup (*fildžan*), a sugar cube or a piece of *rahat-lokum* (Turkish delight), and a glass of water. It is drunk slowly — very slowly. If you finish it in five minutes, your host will think something is wrong."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Polite words that keep you afloat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The words below are not grammar to memorize — they are emergency tools. Learn the whole phrases now, understand how they're built later."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bosanski",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Da / Ne",
+              "dah / neh",
+              "Yes / No"
+            ],
+            [
+              "Hvala",
+              "HVAH-lah",
+              "Thank you"
+            ],
+            [
+              "Hvala lijepo",
+              "HVAH-lah LYEH-poh",
+              "Thank you very much"
+            ],
+            [
+              "Molim",
+              "MOH-leem",
+              "Please; here you are; you're welcome; sorry, what was that?"
+            ],
+            [
+              "Nema na čemu",
+              "NEH-mah nah CHEH-moo",
+              "You're welcome (literally: there's nothing to it)"
+            ],
+            [
+              "Izvini / Izvinite",
+              "eez-VEE-nee / eez-VEE-nee-teh",
+              "Sorry; excuse me (casual / polite)"
+            ],
+            [
+              "Oprosti / Oprostite",
+              "oh-PROHS-tee / oh-PROHS-tee-teh",
+              "Forgive me (deeper)"
+            ],
+            [
+              "Žao mi je",
+              "ZHAH-oh mee yeh",
+              "I'm sorry; I regret it"
+            ],
+            [
+              "Nema problema",
+              "NEH-mah proh-BLEH-mah",
+              "No problem"
+            ],
+            [
+              "U redu",
+              "oo REH-doo",
+              "All right; OK"
+            ],
+            [
+              "Izvolite",
+              "eez-VOH-lee-teh",
+              "Here you are; go ahead"
+            ],
+            [
+              "Ne razumijem",
+              "neh rah-ZOO-mee-yehm",
+              "I don't understand"
+            ],
+            [
+              "Molim vas, sporije",
+              "MOH-leem vahs SPOH-ree-yeh",
+              "Slower, please"
+            ],
+            [
+              "Kako se kaže… ?",
+              "KAH-koh seh KAH-zheh",
+              "How do you say… ?"
+            ],
+            [
+              "Govorite li engleski?",
+              "GOH-voh-ree-teh lee EHN-glehs-kee",
+              "Do you speak English?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "***Molim* is the pocketknife of Bosnian.** This one word means \"please\" (*Kafu, molim*), \"here you are\" (when handing something over), \"you're welcome\" (in reply to *hvala*), and \"sorry, what was that?\" (when you didn't catch what someone said). If you could take only one word to Sarajevo, take this one."
+        },
+        {
+          "type": "p",
+          "text": "Two words people mix up: *izvini* is for small things — bumping into someone, interrupting, passing in front of someone. *Oprosti* is for a real mistake. And *žao mi je* is not an apology but an expression of sadness: it's what you say on hearing bad news, not when you step on someone's foot."
+        },
+        {
+          "type": "kotak",
+          "title": "Three emergency sentences worth learning whole today",
+          "items": [
+            "***Ne razumijem, molim vas, sporije.*** — \"I don't understand, slower please.\" Far more useful than pretending to understand, and almost always met with patience.",
+            "***Kako se kaže \"thank you\" na bosanskom?*** — \"How do you say 'thank you' in Bosnian?\" This one sentence can earn you an afternoon's worth of vocabulary.",
+            "***Učim bosanski.*** — \"I'm learning Bosnian.\" Say this at the start of a conversation and the other person will automatically slow down. Bosnians very rarely meet foreigners learning their language, and the reaction is almost always a big smile."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bs": "zdravo",
+      "baca": "ZDRAH-voh",
+      "en": "hello; bye (neutral)"
+    },
+    {
+      "bs": "dobar dan",
+      "baca": "DOH-bahr dahn",
+      "en": "good day, good afternoon (polite)"
+    },
+    {
+      "bs": "doviđenja",
+      "baca": "doh-vee-JEH-nyah",
+      "en": "goodbye"
+    },
+    {
+      "bs": "ćao",
+      "baca": "chow",
+      "en": "hi; bye (casual)"
+    },
+    {
+      "bs": "hvala",
+      "baca": "HVAH-lah",
+      "en": "thank you"
+    },
+    {
+      "bs": "molim",
+      "baca": "MOH-leem",
+      "en": "please; here you are; you're welcome"
+    },
+    {
+      "bs": "kako",
+      "baca": "KAH-koh",
+      "en": "how"
+    },
+    {
+      "bs": "zvati se",
+      "baca": "ZVAH-tee seh",
+      "en": "to be called (*zovem se* = my name is)"
+    },
+    {
+      "bs": "ime (n)",
+      "baca": "EE-meh",
+      "en": "name"
+    },
+    {
+      "bs": "drago mi je",
+      "baca": "DRAH-goh mee yeh",
+      "en": "nice to meet you"
+    },
+    {
+      "bs": "dobro došao / došla",
+      "baca": "DOH-broh DOH-show",
+      "en": "welcome (to m / f)"
+    },
+    {
+      "bs": "nov / nova",
+      "baca": "nohv / NOH-vah",
+      "en": "new"
+    },
+    {
+      "bs": "umoran / umorna",
+      "baca": "OO-moh-rahn",
+      "en": "tired"
+    },
+    {
+      "bs": "spreman / spremna",
+      "baca": "SPREH-mahn",
+      "en": "ready"
+    },
+    {
+      "bs": "student (m) / studentica (f)",
+      "baca": "STOO-dehnt",
+      "en": "(university) student"
+    },
+    {
+      "bs": "kolega (m) / koleginica (f)",
+      "baca": "koh-LEH-gah",
+      "en": "colleague"
+    },
+    {
+      "bs": "ovdje",
+      "baca": "OHV-dyeh",
+      "en": "here"
+    },
+    {
+      "bs": "sutra",
+      "baca": "SOO-trah",
+      "en": "tomorrow"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Bosnian.",
+      "items": [
+        "Good afternoon! What's your name?",
+        "My name is Budi.",
+        "Nice to meet you.",
+        "How are you? (to a friend)",
+        "Fine, thanks. And you?",
+        "This is Amina, my colleague."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right form of biti (short form).",
+      "items": [
+        "Ja ____ Amina.",
+        "Ti ____ student?",
+        "Ona ____ moja koleginica.",
+        "Mi ____ kolege.",
+        "Vi ____ gospodin Hodžić?",
+        "Emir i Budi ____ ovdje.",
+        "Ja ____ spreman."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "se / Budi / zovem",
+        "si / kako / ?",
+        "koleginica / je / moja / Amina / ovo / ,",
+        "mi / drago / je",
+        "sutra / se / vidimo / !"
+      ]
+    }
+  ],
+  "answers": [
+    "Dobar dan! Kako se zoveš? — Zovem se Budi. — Drago mi je. — Kako si? — Dobro sam, hvala. A ti? — Ovo je Amina, moja koleginica.",
+    "sam — si — je — smo — ste — su — sam",
+    "Zovem se Budi. — Kako si? — Ovo je Amina, moja koleginica. — Drago mi je. — Vidimo se sutra!"
+  ]
+}

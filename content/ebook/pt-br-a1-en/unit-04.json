@@ -1,0 +1,620 @@
+{
+  "title": "Numbers and age",
+  "title_target": "Quantos anos você tem?",
+  "goal": "Count to a million, ask and give your age with the verb *ter*, and say phone numbers like a Brazilian — including their habit of swapping the number six for another word.",
+  "bekal": [
+    "count 0-100 and build big numbers with *e*",
+    "use *ter* for age — \"have twenty-five years\", not \"be twenty-five\"",
+    "ask about prices and numbers with *quanto* and *qual*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — A ficha de inscrição",
+      "intro": "At the course's registration desk. The clerk fills in a form while asking Budi questions.",
+      "lines": [
+        {
+          "speaker": "Atendente:",
+          "text": "Boa tarde! Qual é o seu nome completo?",
+          "id": "Good afternoon! What's your full name?",
+          "literal": "good afternoon! which is the your name complete?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Budi Santoso. Com S de São Paulo.",
+          "id": "Budi Santoso. With an S as in São Paulo.",
+          "literal": "Budi Santoso. with S of São Paulo."
+        },
+        {
+          "speaker": "Atendente:",
+          "text": "Perfeito. Quantos anos você tem?",
+          "id": "Perfect. How old are you?",
+          "literal": "perfect. how-many years you you-have?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eu tenho vinte e cinco anos.",
+          "id": "I'm twenty-five years old.",
+          "literal": "I I-have twenty and five years."
+        },
+        {
+          "speaker": "Atendente:",
+          "text": "E qual é o seu telefone?",
+          "id": "And what's your phone number?",
+          "literal": "and which is the your telephone?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "É onze, nove seis dois... desculpa, meia dois...",
+          "id": "It's eleven, nine six two... sorry, six two...",
+          "literal": "is eleven, nine six two... sorry, half two..."
+        },
+        {
+          "speaker": "Atendente:",
+          "text": "Calma! Fala devagar, por favor.",
+          "id": "Easy! Speak slowly, please.",
+          "literal": "calm! speak slowly, please."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Onze, nove seis dois, três quatro cinco oito.",
+          "id": "Eleven, nine six two, three four five eight.",
+          "literal": "eleven, nine six two, three four five eight."
+        },
+        {
+          "speaker": "Atendente:",
+          "text": "Anotei. O curso custa quatrocentos reais por mês.",
+          "id": "Got it. The course costs four hundred reais a month.",
+          "literal": "I-noted. the course it-costs four-hundred reais per month."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tudo bem. Quantos alunos tem na turma?",
+          "id": "Okay. How many students are there in the class?",
+          "literal": "all good. how-many students it-has in-the class?"
+        },
+        {
+          "speaker": "Atendente:",
+          "text": "Tem doze. É uma turma pequena.",
+          "id": "There are twelve. It's a small class.",
+          "literal": "it-has twelve. is a class small."
+        }
+      ],
+      "notes": [
+        "**Age is something you have, not something you are.** *Eu tenho vinte e cinco anos* literally means \"I have twenty-five years\". Translating straight from English as *eu sou vinte e cinco* is a mistake people hear immediately — and the easiest one to avoid, since there's only one pattern.",
+        "**⚠️ Meia, not seis.** A Brazilian habit textbooks rarely teach. When reading out phone numbers or addresses, Brazilians replace *seis* (six) with **meia** — short for *meia dúzia*, \"half a dozen\". The reason is practical: *seis* and *três* sound too alike over the phone. If you hear *meia* in a string of digits, it means **six**, not half.",
+        "**Phone numbers are read digit by digit.** *Nove seis dois* is said one by one, not combined into \"nine hundred sixty-two\". The first two digits are the area code — 11 for São Paulo, 21 for Rio de Janeiro.",
+        "**Tem also means \"there is\".** *Quantos alunos tem na turma?* is literally \"how many students does it have in the class?\", but it means \"how many students are there\". In Brazil, *tem* expresses existence just like \"there is/are\": *Tem café?* = \"Is there any coffee?\", *Não tem problema* = \"No problem\". The formal form *há* exists too, but lives almost only in writing.",
+        "**Anotei** is a past form — \"I've noted it down\". It's not time to learn it yet; for now just recognize that the ending **-ei** marks something that has already happened. The whole past tense chapter is waiting in unit 15."
+      ],
+      "grammars": [
+        {
+          "title": "Ter — \"to have\", the most versatile verb",
+          "body": [
+            "After *ser* and *estar*, this is the third verb you must learn whole. It's used for possession, age, existence, and — later in unit 12 — obligation."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "ter",
+              "Say it",
+              "meaning"
+            ],
+            "rows": [
+              [
+                "eu",
+                "**tenho**",
+                "TAY-nyoo",
+                "I have"
+              ],
+              [
+                "você / ele / ela",
+                "**tem**",
+                "TAYN",
+                "you have / he, she has"
+              ],
+              [
+                "nós",
+                "**temos**",
+                "TAY-moos",
+                "we have"
+              ],
+              [
+                "vocês / eles / elas",
+                "**têm**",
+                "TAYN",
+                "you (pl.) / they have"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *tem* and *têm* **sound exactly the same**. The little hat on *ê* is only a spelling mark to tell singular from plural; your ears can't hear it, and Brazilians often get it wrong in writing too.",
+            "Four jobs of *ter* to recognize now: *Eu tenho um carro* (possession), *Eu tenho vinte anos* (age), *Tem café?* (existence), and *Tem que estudar* (obligation — unit 12)."
+          ]
+        },
+        {
+          "title": "Numbers 0 to 20",
+          "body": [
+            "Twenty-one words to learn whole. After that, you can build the rest yourself."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Português",
+              "Say it",
+              "Number",
+              "Português",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "0",
+                "zero",
+                "ZEH-roo",
+                "11",
+                "onze",
+                "OHN-zee"
+              ],
+              [
+                "1",
+                "um / uma",
+                "oon / OO-mah",
+                "12",
+                "doze",
+                "DOH-zee"
+              ],
+              [
+                "2",
+                "dois / duas",
+                "doys / DOO-ahs",
+                "13",
+                "treze",
+                "TRAY-zee"
+              ],
+              [
+                "3",
+                "três",
+                "trays",
+                "14",
+                "quatorze",
+                "kah-TOHH-zee"
+              ],
+              [
+                "4",
+                "quatro",
+                "KWAH-troo",
+                "15",
+                "quinze",
+                "KEEN-zee"
+              ],
+              [
+                "5",
+                "cinco",
+                "SEEN-koo",
+                "16",
+                "dezesseis",
+                "deh-zeh-SEYS"
+              ],
+              [
+                "6",
+                "seis (meia)",
+                "seys (MEY-ah)",
+                "17",
+                "dezessete",
+                "deh-zeh-SEH-chee"
+              ],
+              [
+                "7",
+                "sete",
+                "SEH-chee",
+                "18",
+                "dezoito",
+                "deh-ZOY-too"
+              ],
+              [
+                "8",
+                "oito",
+                "OY-too",
+                "19",
+                "dezenove",
+                "deh-zeh-NAW-vee"
+              ],
+              [
+                "9",
+                "nove",
+                "NAW-vee",
+                "20",
+                "vinte",
+                "VEEN-chee"
+              ],
+              [
+                "10",
+                "dez",
+                "dehs",
+                "",
+                "",
+                ""
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **One and two have feminine forms.** *Um livro* but *uma mesa*; *dois livros* but *duas mesas*. No other number changes at all. This mistake tends to linger because it seems trivial — yet *duas horas* and *dois anos* come up in conversation every day.",
+            "Notice that 16 to 19 are built from *dez* + the digit: *dez-e-sseis*, *dez-e-ssete*, *dez-oito*, *dez-e-nove*. After 20, every number is built with the word **e** (\"and\") in the middle."
+          ]
+        },
+        {
+          "title": "Numbers 20 to a million",
+          "body": [
+            "From here on, everything can be built. There's only one rule: put **e** between the parts."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Português",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "21",
+                "vinte **e** um",
+                "VEEN-chee ee OON"
+              ],
+              [
+                "30 / 40 / 50",
+                "trinta / quarenta / cinquenta",
+                "TREEN-tah / kwah-REHN-tah / seen-KWEHN-tah"
+              ],
+              [
+                "60 / 70",
+                "sessenta / setenta",
+                "seh-SEHN-tah / seh-TEHN-tah"
+              ],
+              [
+                "80 / 90",
+                "oitenta / noventa",
+                "oy-TEHN-tah / noh-VEHN-tah"
+              ],
+              [
+                "100",
+                "cem",
+                "sayn"
+              ],
+              [
+                "101",
+                "cento **e** um",
+                "SEHN-too ee OON"
+              ],
+              [
+                "200 / 300",
+                "duzentos / trezentos",
+                "doo-ZEHN-toos / treh-ZEHN-toos"
+              ],
+              [
+                "400 / 500",
+                "quatrocentos / quinhentos",
+                "kwah-troo-SEHN-toos / kee-NYEHN-toos"
+              ],
+              [
+                "1,000",
+                "mil",
+                "meew"
+              ],
+              [
+                "1,000,000",
+                "um milhão",
+                "oon mee-LYOWN"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Cem becomes cento as soon as another number follows.** Exactly one hundred = *cem*; 101 and up = *cento e um*, *cento e vinte*. It's the only number that behaves this way.",
+            "**Hundreds have feminine forms**: *duzentos reais* but *duzentas pessoas*; *quinhentos livros* but *quinhentas casas*. Same rule as *um/uma* and *dois/duas*.",
+            "⚠️ In Brazil, **dots and commas are swapped** compared with English: *1.000* means one thousand, and *3,5* means three point five. You'll see it on every price tag."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Asking with numbers",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Two question words cover nearly every number question: *quanto* (how much/how many) and *qual* (which; what, for numbers)."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Português",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Quantos anos você tem?",
+              "KWAHN-toos AH-noos voh-SAY TAYN",
+              "How old are you?"
+            ],
+            [
+              "Quanto custa?",
+              "KWAHN-too KOOS-tah",
+              "How much does it cost?"
+            ],
+            [
+              "Quanto é?",
+              "KWAHN-too EH",
+              "How much is it altogether?"
+            ],
+            [
+              "Quantas pessoas?",
+              "KWAHN-tahs peh-SOH-ahs",
+              "How many people?"
+            ],
+            [
+              "Qual é o seu telefone?",
+              "kwow EH oo SAY-oo teh-LAY-foh-nee",
+              "What's your phone number?"
+            ],
+            [
+              "Qual é o seu endereço?",
+              "kwow EH oo SAY-oo ehn-deh-RAY-soo",
+              "What's your address?"
+            ],
+            [
+              "Que horas são?",
+              "kee AW-rahs SOWN",
+              "What time is it?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Quanto* changes to match its noun: *quantos anos* (masculine plural), *quantas pessoas* (feminine plural), *quanto dinheiro* (masculine singular). *Qual* doesn't change except in the plural: *quais*."
+        },
+        {
+          "type": "p",
+          "text": "Look at the fifth row: Portuguese asks *qual é* (\"which is\") for phone numbers and names, not *o que é*. Saying *o que é o seu nome* is a mistake that instantly marks a foreigner — even though English uses \"what\"."
+        }
+      ]
+    },
+    {
+      "title": "Brazilian money",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Brazil's currency is the **real**, plural **reais** (said heh-EYES). The symbol is R$, written before the number: R$ 25,00."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Written",
+            "Said as",
+            "English"
+          ],
+          "rows": [
+            [
+              "R$ 1,00",
+              "um real",
+              "one real"
+            ],
+            [
+              "R$ 2,00",
+              "dois reais",
+              "two reais"
+            ],
+            [
+              "R$ 10,50",
+              "dez reais e cinquenta centavos",
+              "ten reais fifty centavos"
+            ],
+            [
+              "R$ 100,00",
+              "cem reais",
+              "a hundred reais"
+            ],
+            [
+              "R$ 250,00",
+              "duzentos e cinquenta reais",
+              "two hundred fifty reais"
+            ],
+            [
+              "R$ 1.000,00",
+              "mil reais",
+              "a thousand reais"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "In everyday conversation the cents part is shortened: R$ 10,50 is simply *dez e cinquenta* — just like saying \"ten fifty\" in English without naming the currency."
+        }
+      ]
+    },
+    {
+      "title": "Spaced review — back to unit 2",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Portuguese column and rebuild it from the translation."
+        },
+        {
+          "type": "list",
+          "items": [
+            "A small book → *um livro pequeno*",
+            "The beautiful houses → *as casas bonitas*",
+            "The exercise is easy → *o exercício é fácil*",
+            "The big hotels → *os hotéis grandes*",
+            "The city is very big → *a cidade é muito grande*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pt": "ter",
+      "baca": "TAYH",
+      "en": "to have; there is"
+    },
+    {
+      "pt": "tenho / tem",
+      "baca": "TAY-nyoo / TAYN",
+      "en": "I have / you have, he, she has"
+    },
+    {
+      "pt": "o ano",
+      "baca": "oo AH-noo",
+      "en": "year"
+    },
+    {
+      "pt": "quantos / quantas",
+      "baca": "KWAHN-toos / -tahs",
+      "en": "how many"
+    },
+    {
+      "pt": "quanto custa",
+      "baca": "KWAHN-too KOOS-tah",
+      "en": "how much is it"
+    },
+    {
+      "pt": "qual",
+      "baca": "kwow",
+      "en": "which; what (for numbers/names)"
+    },
+    {
+      "pt": "o nome",
+      "baca": "oo NOH-mee",
+      "en": "name"
+    },
+    {
+      "pt": "completo",
+      "baca": "kohn-PLAY-too",
+      "en": "full, complete"
+    },
+    {
+      "pt": "o telefone",
+      "baca": "oo teh-LAY-foh-nee",
+      "en": "telephone"
+    },
+    {
+      "pt": "o endereço",
+      "baca": "oo ehn-deh-RAY-soo",
+      "en": "address"
+    },
+    {
+      "pt": "meia",
+      "baca": "MEY-ah",
+      "en": "six (when reading out numbers)"
+    },
+    {
+      "pt": "o real / os reais",
+      "baca": "oo heh-OW / oos heh-EYES",
+      "en": "real (Brazilian currency)"
+    },
+    {
+      "pt": "o centavo",
+      "baca": "oo sehn-TAH-voo",
+      "en": "cent"
+    },
+    {
+      "pt": "o curso",
+      "baca": "oo KOOH-soo",
+      "en": "course"
+    },
+    {
+      "pt": "a turma",
+      "baca": "ah TOOH-mah",
+      "en": "class; group"
+    },
+    {
+      "pt": "o aluno",
+      "baca": "oo ah-LOO-noo",
+      "en": "student, pupil"
+    },
+    {
+      "pt": "a pessoa",
+      "baca": "ah peh-SOH-ah",
+      "en": "person"
+    },
+    {
+      "pt": "o mês",
+      "baca": "oo MAYS",
+      "en": "month"
+    },
+    {
+      "pt": "custar",
+      "baca": "koos-TAHH",
+      "en": "to cost"
+    },
+    {
+      "pt": "por mês",
+      "baca": "pohh MAYS",
+      "en": "per month"
+    },
+    {
+      "pt": "devagar",
+      "baca": "jee-vah-GAHH",
+      "en": "slowly"
+    },
+    {
+      "pt": "calma",
+      "baca": "KOW-mah",
+      "en": "calm; easy"
+    },
+    {
+      "pt": "perfeito",
+      "baca": "pehh-FEY-too",
+      "en": "perfect"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the numbers out in Portuguese words.",
+      "items": [
+        "12",
+        "16",
+        "21",
+        "45",
+        "100",
+        "230"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right form of ter.",
+      "items": [
+        "Eu ____ vinte e cinco anos.",
+        "Você ____ um carro?",
+        "Nós ____ uma turma pequena.",
+        "Eles ____ dois filhos.",
+        "____ café aqui? (meaning \"is there\")",
+        "A gente ____ aula hoje."
+      ]
+    },
+    {
+      "prompt": "Translate into Portuguese.",
+      "items": [
+        "How old are you?",
+        "I'm thirty years old.",
+        "How much does it cost?",
+        "How many people are there?",
+        "What's your phone number?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "anos / você / quantos / tem / ?",
+        "vinte / tenho / anos / eu / e / cinco",
+        "custa / quanto / ?",
+        "telefone / qual / seu / é / o / ?",
+        "pessoas / duas / tem"
+      ]
+    }
+  ],
+  "answers": [
+    "doze — dezesseis — vinte e um — quarenta e cinco — cem — duzentos e trinta",
+    "tenho — tem — temos — têm — Tem — tem",
+    "Quantos anos você tem? — Eu tenho trinta anos. — Quanto custa? — Quantas pessoas tem? — Qual é o seu telefone?",
+    "Quantos anos você tem? — Eu tenho vinte e cinco anos. — Quanto custa? — Qual é o seu telefone? — Tem duas pessoas."
+  ]
+}

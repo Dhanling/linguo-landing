@@ -1,0 +1,504 @@
+{
+  "title": "What time is it? — and the half that counts forward",
+  "title_target": "Koliko je sati?",
+  "goal": "Tell the time, make appointments, and avoid the costliest mistake a learner of Bosnian can make: thinking *pola osam* means half past eight.",
+  "bekal": [
+    "tell the time in both the full form and the conversational form",
+    "understand that *pola* counts forward to the next hour",
+    "make appointments with *u*, *za*, *od…do*, *oko*, *prije*, and *poslije*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kada imamo sastanak?",
+      "intro": "Late afternoon at the office. Amina closes her laptop and turns toward Budi's desk.",
+      "lines": [
+        {
+          "speaker": "Amina:",
+          "text": "Budi, kada ti počinje kurs bosanskog?",
+          "id": "Budi, what time does your Bosnian course start?",
+          "literal": "Budi, when to-you it-starts course bosnian-gen?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "U sedam uveče, tri puta sedmično.",
+          "id": "At seven in the evening, three times a week.",
+          "literal": "at seven in-evening, three times-gen weekly."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "A kada završava?",
+          "id": "And when does it finish?",
+          "literal": "and when it-finishes?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "U pola devet. Zašto pitaš?",
+          "id": "At half past eight. Why do you ask?",
+          "literal": "at half nine. why you-ask?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Imamo sastanak sutra u deset i petnaest.",
+          "id": "We have a meeting tomorrow at a quarter past ten.",
+          "literal": "we-have meeting-acc tomorrow at ten and fifteen."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ujutro ili uveče?",
+          "id": "In the morning or the evening?",
+          "literal": "in-morning or in-evening?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Ujutro, naravno. I nemoj kasniti!",
+          "id": "In the morning, of course. And don't be late!",
+          "literal": "in-morning, of-course. and don't be-late!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nikad ne kasnim. A koliko je sada sati?",
+          "id": "I'm never late. And what time is it now?",
+          "literal": "never not I-am-late. and how-much it-is now hours-gen-pl?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Skoro pet. Tačnije, petnaest do pet.",
+          "id": "Almost five. To be exact, a quarter to five.",
+          "literal": "almost five. more-exactly, fifteen to five."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Onda moram ići. Autobus polazi za deset minuta.",
+          "id": "Then I have to go. The bus leaves in ten minutes.",
+          "literal": "then I-must go. bus it-leaves in ten minutes-gen-pl."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Dobro. Vidimo se sutra u deset i petnaest.",
+          "id": "OK. See you tomorrow at a quarter past ten.",
+          "literal": "good. we-see self tomorrow at ten and fifteen."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "U deset i petnaest. Zapisao sam. Laku noć!",
+          "id": "A quarter past ten. I've noted it down. Good night!",
+          "literal": "at ten and fifteen. noted-m I-am. light-acc night-acc!"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Laku noć, vidimo se!",
+          "id": "Good night, see you!",
+          "literal": "light-acc night-acc, we-see self!"
+        }
+      ],
+      "notes": [
+        "***U pola devet* means 8:30, not 9:30.** This is the costliest mistake a learner of Bosnian can make, and almost everyone makes it once. The explanation is in the warning box below — read it now, not later.",
+        "***Koliko je sati?* is literally \"how many hours is it?\"** with *sati* in the genitive plural, because *koliko* is always followed by the genitive (unit 8). The answer may use *sati* or not: *Pet sati je* and *Pet je* are both correct, the second more casual.",
+        "***Za deset minuta* = in ten minutes.** The preposition *za* has two very different jobs: with people it means \"for\" (*za tebe*), with time it means \"in, within\" (*za pet minuta, za sat vremena*). Its opposite: *prije deset minuta* = ten minutes ago.",
+        "***Nemoj kasniti!* — \"don't be late!\"** Prohibitions in Bosnian are formed with *nemoj* (to one person) or *nemojte* (polite/plural) followed by the dictionary form. *Nemoj zaboraviti!* (don't forget!), *Nemojte brinuti!* (don't worry!). This form is used far more often than an ordinary negative command.",
+        "**Punctuality in Bosnia has two faces.** For official matters — meetings, doctor's appointments, trains — people are on time and expect the same. For coffee with friends, *u pet* means \"around five\", and turning up a quarter of an hour later won't draw any comment. The word that marks the difference: *tačno* (exactly). *Tačno u pet* means five o'clock sharp."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "Two systems live side by side: the conversational one (1-12 with *ujutro*, *popodne*, *uveče*) and the official 24-hour one for written schedules. This table covers the first."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Bosanski",
+              "Literally",
+              "Note"
+            ],
+            "rows": [
+              [
+                "**7:00**",
+                "*sedam sati*",
+                "seven hours",
+                "*sati* can be dropped: *sedam je*"
+              ],
+              [
+                "**7:05**",
+                "*sedam i pet*",
+                "seven and five",
+                ""
+              ],
+              [
+                "**7:15**",
+                "*sedam i petnaest* / *sedam i četvrt*",
+                "seven and a quarter",
+                ""
+              ],
+              [
+                "**7:30**",
+                "**pola osam**",
+                "half (toward) eight",
+                "⚠️ not half past eight"
+              ],
+              [
+                "**7:40**",
+                "*dvadeset do osam*",
+                "twenty to eight",
+                ""
+              ],
+              [
+                "**7:45**",
+                "*petnaest do osam* / *tri četvrt osam*",
+                "fifteen to eight",
+                ""
+              ],
+              [
+                "**12:00**",
+                "*podne*",
+                "noon",
+                "*u podne* = at noon"
+              ],
+              [
+                "**00:00**",
+                "*ponoć*",
+                "midnight",
+                "*u ponoć*"
+              ],
+              [
+                "**17:30**",
+                "*sedamnaest i trideset*",
+                "seventeen and thirty",
+                "official style, timetables"
+              ]
+            ]
+          },
+          "after": [
+            "**After the half hour, Bosnian counts down with *do* (to).** *Dvadeset do osam* = twenty minutes to eight = 7:40. Exactly like English *twenty to eight* — word for word.",
+            "**The word *sat* has three forms that alternate with the number**, exactly the rule from unit 5: *jedan sat, dva sata, pet sati*. So *Koliko je sati?* uses the genitive plural because of *koliko*. And remember that *sat* also means \"watch, clock\" and \"lesson\" — context tells them apart.",
+            "**Adding the part of the day removes any morning/evening confusion:** *ujutro* (in the morning, roughly 5-11), *prijepodne* (late morning), *popodne* (afternoon), *uveče* (in the evening), *noću* (at night). *U sedam ujutro* and *u sedam uveče* — and that's why Budi asks *ujutro ili uveče?*",
+            "**Official timetables use the 24-hour system**, read number by number: *voz polazi u sedamnaest i trideset*. You'll see it at stations, airports, and cinemas — but you'll almost never hear it in conversation."
+          ]
+        },
+        {
+          "title": "Time prepositions — and the cases they call for",
+          "body": [
+            "Every time preposition uses a case you already know. Nothing is new here except the list itself."
+          ],
+          "table": {
+            "head": [
+              "Preposition",
+              "Case",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**u**",
+                "accusative",
+                "*u sedam, u ponedjeljak, u podne*",
+                "at seven, on Monday, at noon"
+              ],
+              [
+                "**za**",
+                "accusative",
+                "*za deset minuta, za sat vremena*",
+                "in ten minutes, in an hour"
+              ],
+              [
+                "**prije**",
+                "genitive",
+                "*prije deset minuta, prije ručka*",
+                "ten minutes ago, before lunch"
+              ],
+              [
+                "**poslije / nakon**",
+                "genitive",
+                "*poslije posla, poslije podne*",
+                "after work, in the afternoon"
+              ],
+              [
+                "**od … do**",
+                "genitive",
+                "*od devet do pet*",
+                "from nine to five"
+              ],
+              [
+                "**oko**",
+                "genitive",
+                "*oko pet sati*",
+                "around five o'clock"
+              ],
+              [
+                "**do**",
+                "genitive",
+                "*do sutra, do pet*",
+                "until tomorrow, until five"
+              ]
+            ]
+          },
+          "after": [
+            "***Prije* and *za* are opposites** and both are very common: *prije pet minuta* (five minutes ago) versus *za pet minuta* (in five minutes). One looks back, one looks ahead. Mix them up and the meaning changes completely — this is one of the few A1 mistakes that can really leave someone waiting in vain.",
+            "**Working hours and opening hours always use *od … do***: *Radimo od osam do šesnaest.* On shop doors you'll see *radno vrijeme* (opening hours) followed by the times, and *neradni dan* means a day when they're closed.",
+            "***Oko* gives you useful wiggle room.** *Dolazim oko pet* (I'll come around five) sounds natural and honest, while *dolazim u pet* is a promise. Bosnians use *oko* all the time, and learning it early will save you a lot of apologies.",
+            "**Three set sentences worth learning today:** *Koliko je sati?* (what time is it?), *Kada se vidimo?* (when shall we meet?), *Nemam vremena.* (I don't have time)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Dogovor — making and changing plans",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Conversations about meeting up in Bosnia almost always use the same pieces. Learn these sentences whole and you can arrange a meeting without building a single sentence from scratch."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bosanski",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Kada se vidimo?*",
+              "KAH-dah seh VEE-dee-moh",
+              "When shall we meet?"
+            ],
+            [
+              "*Imaš li vremena sutra?*",
+              "EE-mahsh lee VREH-meh-nah",
+              "Do you have time tomorrow?"
+            ],
+            [
+              "*Može li u pet?*",
+              "MOH-zheh lee oo peht",
+              "Does five work?"
+            ],
+            [
+              "*Odgovara mi.*",
+              "ohd-goh-VAH-rah mee",
+              "That suits me."
+            ],
+            [
+              "*Ne mogu tada.*",
+              "neh MOH-goo TAH-dah",
+              "I can't then."
+            ],
+            [
+              "*Možemo li malo kasnije?*",
+              "KAHS-nee-yeh",
+              "Could we make it a bit later?"
+            ],
+            [
+              "*Gdje se nalazimo?*",
+              "nah-LAH-zee-moh",
+              "Where shall we meet?"
+            ],
+            [
+              "*Ispred pošte, u pet.*",
+              "EES-prehd POHSH-teh",
+              "In front of the post office, at five."
+            ],
+            [
+              "*Kasnim deset minuta.*",
+              "KAHS-neem",
+              "I'm running ten minutes late."
+            ],
+            [
+              "*Izvini, moram otkazati.*",
+              "oht-KAH-zah-tee",
+              "Sorry, I have to cancel."
+            ],
+            [
+              "*Vidimo se!*",
+              "VEE-dee-moh seh",
+              "See you!"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Pola — the half that counts forward",
+          "items": [
+            "***Pola osam* means 7:30.** Bosnian doesn't count half past the hour that has gone by, but **halfway toward the next hour** — like German *halb acht*. So *pola devet* = 8:30, *pola dvanaest* = 11:30, *pola jedan* = 12:30.",
+            "**If you think in English (\"half eight\" = 8:30 in British English), you'll always be off by an hour** — and always in the same direction: late. The safest way to get used to it is to repeat the time back in numbers: *Pola devet? Znači osam i trideset?* No native speaker will find that odd; they know exactly why you're asking.",
+            "**Pola is also used for quantities**, and there it means plain \"half\": *pola kilograma* (half a kilo), *pola sata* (half an hour), *pola litre* (half a liter). Only *pola* + an hour counts forward."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 8",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Bosnian column, read the English, and rebuild the sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Bosanski"
+          ],
+          "rows": [
+            [
+              "How much is a kilo of apples?",
+              "*Koliko košta kilogram jabuka?*"
+            ],
+            [
+              "Two kilos, please.",
+              "*Dajte mi dva kilograma, molim.*"
+            ],
+            [
+              "There are no tomatoes today.",
+              "*Danas nema paradajza.*"
+            ],
+            [
+              "I don't have time.",
+              "*Nemam vremena.*"
+            ],
+            [
+              "The cheese is at the neighbor's stall.",
+              "*Sir je kod komšinice.*"
+            ],
+            [
+              "How much is that altogether?",
+              "*Koliko je to ukupno?*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bs": "sat (m) — *dva sata, pet sati*",
+      "baca": "saht",
+      "en": "hour; clock, watch"
+    },
+    {
+      "bs": "minut (m)",
+      "baca": "MEE-noot",
+      "en": "minute"
+    },
+    {
+      "bs": "pola",
+      "baca": "POH-lah",
+      "en": "half"
+    },
+    {
+      "bs": "četvrt (f)",
+      "baca": "CHEHT-vrt",
+      "en": "quarter"
+    },
+    {
+      "bs": "podne / ponoć",
+      "baca": "POHD-neh / POH-nohch",
+      "en": "noon / midnight"
+    },
+    {
+      "bs": "ujutro / popodne / uveče",
+      "baca": "OO-yoo-troh / poh-POHD-neh / OO-veh-cheh",
+      "en": "in the morning / afternoon / evening"
+    },
+    {
+      "bs": "sastanak (m)",
+      "baca": "SAHS-tah-nahk",
+      "en": "meeting"
+    },
+    {
+      "bs": "početi — *počnem*",
+      "baca": "poh-CHEH-tee",
+      "en": "to start, to begin"
+    },
+    {
+      "bs": "završiti — *završim*",
+      "baca": "zah-VR-shee-tee",
+      "en": "to finish, to end"
+    },
+    {
+      "bs": "kasniti — *kasnim*",
+      "baca": "KAHS-nee-tee",
+      "en": "to be late"
+    },
+    {
+      "bs": "polaziti — *polazi*",
+      "baca": "POH-lah-zee-tee",
+      "en": "to leave, to depart"
+    },
+    {
+      "bs": "autobus (m)",
+      "baca": "OW-toh-boos",
+      "en": "bus"
+    },
+    {
+      "bs": "skoro / tačno",
+      "baca": "SKOH-roh / TAHCH-noh",
+      "en": "almost / exactly"
+    },
+    {
+      "bs": "oko",
+      "baca": "OH-koh",
+      "en": "around, about"
+    },
+    {
+      "bs": "za (+ time)",
+      "baca": "zah",
+      "en": "in (time from now)"
+    },
+    {
+      "bs": "prije",
+      "baca": "PREE-yeh",
+      "en": "before; …ago"
+    },
+    {
+      "bs": "nemoj / nemojte",
+      "baca": "NEH-moy",
+      "en": "don't"
+    },
+    {
+      "bs": "sedmica (f)",
+      "baca": "SEHD-mee-tsah",
+      "en": "week"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Bosnian.",
+      "items": [
+        "What time is it now?",
+        "At seven in the evening.",
+        "Half past eight. (8:30)",
+        "The bus leaves in ten minutes.",
+        "We work from nine to five.",
+        "See you tomorrow at a quarter past ten."
+      ]
+    },
+    {
+      "prompt": "Write the time in Bosnian.",
+      "items": [
+        "6:00 = ____",
+        "6:15 = ____",
+        "6:30 = ____",
+        "6:45 = ____",
+        "12:00 = ____",
+        "00:00 = ____",
+        "9:20 = ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "sati / je / koliko / ?",
+        "u / kurs / sedam / počinje",
+        "minuta / za / polazi / deset / autobus",
+        "sutra / se / vidimo / deset / u",
+        "kasni / ne / nemoj / !"
+      ]
+    }
+  ],
+  "answers": [
+    "Koliko je sada sati? — U sedam uveče. — Pola devet. — Autobus polazi za deset minuta. — Radimo od devet do pet. — Vidimo se sutra u deset i petnaest.",
+    "šest sati — šest i petnaest — pola sedam — petnaest do sedam — podne — ponoć — devet i dvadeset",
+    "Koliko je sati? — Kurs počinje u sedam. — Autobus polazi za deset minuta. — Vidimo se sutra u deset. — Nemoj kasniti!"
+  ]
+}

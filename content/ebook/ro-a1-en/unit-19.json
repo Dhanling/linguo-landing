@@ -1,0 +1,572 @@
+{
+  "title": "Let's grab a coffee!",
+  "title_target": "Hai la o cafea!",
+  "goal": "Make a phone call, invite a friend out, accept and turn down invitations — while using dative pronouns as **recipients**: who you give, say, write, and send things to.",
+  "bekal": [
+    "use *îmi, îți, îi, ne, vă, le* as recipients, including doubling: *Îi scriu Ioanei*",
+    "choose the right form after a preposition: *cu mine, pentru tine, la noi*",
+    "invite with *hai să…* and *ce-ar fi să…*, then say no without giving offense"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — La telefon",
+      "intro": "Thursday evening. Andrei has concert tickets for Saturday, and Budi wants to invite Ioana. He calls, but the one who answers is Maria, Ioana's younger sister.",
+      "lines": [
+        {
+          "speaker": "Maria:",
+          "text": "Alo?",
+          "id": "Hello?",
+          "literal": "hello?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Alo? Bună, sunt Budi. Pot să vorbesc cu Ioana?",
+          "id": "Hello? Hi, it's Budi. Can I speak to Ioana?",
+          "literal": "hello? good-f, I-am Budi. I-can that I-speak with Ioana?"
+        },
+        {
+          "speaker": "Maria:",
+          "text": "Bună, Budi! Un moment, te rog. Ioana, e pentru tine!",
+          "id": "Hi, Budi! Just a moment, please. Ioana, it's for you!",
+          "literal": "good-f, Budi! a-n moment, you I-ask. Ioana, is for you!"
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Bună, Budi! Ce faci?",
+          "id": "Hi, Budi! How are you?",
+          "literal": "good-f, Budi! what you-do?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bine. Ascultă, ești liberă sâmbătă seara?",
+          "id": "Fine. Listen, are you free on Saturday evening?",
+          "literal": "well. listen, you-are free-f saturday evening-the?"
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Cred că da. De ce?",
+          "id": "I think so. Why?",
+          "literal": "I-believe that yes. from what?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hai să mergem la un concert! Andrei are bilete și pentru noi.",
+          "id": "Let's go to a concert! Andrei has tickets for us too.",
+          "literal": "come-on that we-go to a-n concert! Andrei he-has ticket-pl also for us."
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Sâmbătă? Îmi pare rău, nu pot. Am de lucru până târziu.",
+          "id": "Saturday? I'm sorry, I can't. I have work until late.",
+          "literal": "saturday? to-me it-seems bad, not I-can. I-have of work until late."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ce păcat! Atunci ce-ar fi să bem o cafea duminică?",
+          "id": "What a pity! Then how about a coffee on Sunday?",
+          "literal": "what pity! then what-would be that we-drink a-f coffee sunday?"
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Duminică? Sigur, cu plăcere! Unde ne vedem?",
+          "id": "Sunday? Sure, I'd love to! Where shall we meet?",
+          "literal": "sunday? sure, with pleasure! where each-other we-see?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Îți trimit un mesaj mai târziu, cu adresa. Și îi spun și lui Andrei.",
+          "id": "I'll send you a message later, with the address. And I'll tell Andrei too.",
+          "literal": "to-you I-send a-n message more late, with address-the. and to-him I-say also to Andrei."
+        },
+        {
+          "speaker": "Ioana:",
+          "text": "Perfect. Și spune-i că îi mulțumesc pentru bilete!",
+          "id": "Perfect. And tell him thanks for the tickets!",
+          "literal": "perfect. and tell-to-him that to-him I-thank for ticket-pl!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Îi spun. Pe duminică, pa!",
+          "id": "I will. See you Sunday, bye!",
+          "literal": "to-him I-say. on sunday, bye!"
+        }
+      ],
+      "notes": [
+        "**Îți trimit un mesaj.** This is the heart of the unit. You know the dative pronouns *îmi, îți, îi…* from *îmi place* (unit 10), but there they felt like part of a set phrase. Here their job is clear: they mark the **recipient**. *Îți trimit* = \"I'll send (to) you\", *îi spun* = \"I'll tell him/her\". English often needs \"to\"; Romanian manages with one syllable before the verb.",
+        "**Îi spun și lui Andrei.** When the recipient is named, the short pronoun **stays** — the same doubling as *Îl cunosc pe Andrei* in unit 12. A man's name gets *lui* in front; a woman's name ending in *-a* changes to *-ei*: *Îi scriu Ioanei.* That's the genitive-dative form from unit 13, now doing its second job.",
+        "**E pentru tine! Bilete pentru noi.** After a preposition, pronouns take the stressed form. Only two are really new: *eu → mine* and *tu → tine* — like English *I → me*. The rest are the same as the subject forms. So *cu mine*, not *cu eu*.",
+        "**Hai să mergem!** *Hai* is an all-purpose \"come on, let's\". It's followed by *să* + the *noi* subjunctive (unit 11): *hai să mergem, hai să bem, hai să vedem*. It can even go with no verb at all: *Hai la o cafea!* A more careful option: *Ce-ar fi să…?* — \"how about…?\". *Ar fi* is the conditional of *a fi*, which comes at the next level; for now learn it whole.",
+        "**Îmi pare rău, nu pot. Am de lucru.** The most natural way to decline: apologize, say no, give a short reason. *Îmi pare rău* is literally \"it seems bad to me\" — the dative again. *Am de lucru* = \"I have (something) to work on\"; the pattern *am de* + verb/noun is handy: *am de învățat* (I have to study), *am de scris un e-mail*."
+      ],
+      "grammars": [
+        {
+          "title": "The dative as recipient: to whom?",
+          "body": [
+            "Verbs of giving, saying, writing, sending, and showing have two objects: **what** is given (accusative) and **to whom** (dative). The recipient appears as a short, unstressed pronoun before the verb."
+          ],
+          "table": {
+            "head": [
+              "Who",
+              "Dative",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "eu",
+                "**îmi**",
+                "*Îmi dai numărul tău?*",
+                "Will you give me your number?"
+              ],
+              [
+                "tu",
+                "**îți**",
+                "*Îți spun mâine.*",
+                "I'll tell you tomorrow."
+              ],
+              [
+                "el / ea",
+                "**îi**",
+                "*Îi scriu Ioanei.*",
+                "I'm writing to Ioana."
+              ],
+              [
+                "noi",
+                "**ne**",
+                "*Ioana ne arată orașul.*",
+                "Ioana shows us the city."
+              ],
+              [
+                "voi / dvs.",
+                "**vă**",
+                "*Vă trimit un e-mail.*",
+                "I'll send you an email."
+              ],
+              [
+                "ei / ele",
+                "**le**",
+                "*Le telefonez părinților.*",
+                "I'm calling my parents."
+              ]
+            ]
+          },
+          "after": [
+            "**Doubling is required** when the recipient is named: *Îi dau **lui Andrei** cartea.* *Îi scriu **Ioanei**.* *Le spun **părinților**.* *Îi trimit **doamnei Popescu** chiria.* The short pronoun can't be dropped, even if it sounds redundant to English ears.",
+            "**Verbs that take the dative:** *a da* (give), *a spune* (say, tell), *a scrie* (write), *a trimite* (send), *a arăta* (show), *a explica* (explain), *a răspunde* (answer), *a mulțumi* (thank), *a telefona* (phone), *a cere* (ask for).",
+            "**Watch out for *a suna*:** this most common verb for \"to call\" takes the **accusative**: *Te sun mai târziu. O sun pe Ioana. Vă sun mâine.* *A telefona*, on the other hand, takes the dative: *Îi telefonez Ioanei.* Same meaning; different grammar.",
+            "**Short hyphenated forms** turn up in three places you know: after *nu* (*nu-mi spune, nu-ți dau, nu-i scriu*), after *să* (*Poți să-mi dai…? Vreau să-i spun…*), and in the past tense (*mi-a dat, ți-am spus, i-am scris, le-am trimis* — unit 15). In the imperative they move to the end: *Spune-mi! Dă-mi! Scrie-i!*",
+            "**A little trap:** *îi* and *le* have two jobs each. *Îi văd* = \"I see them\" (accusative m pl), but *îi spun* = \"I tell him/her\" (dative singular). The verb decides."
+          ]
+        },
+        {
+          "title": "After prepositions: mine, tine, el, ea…",
+          "body": [
+            "Short pronouns never stand after a preposition. In that position the stressed form is used — and the good news is that only two differ from the subject forms."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "After a preposition",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "eu",
+                "**mine**",
+                "*Vii cu mine?*",
+                "Are you coming with me?"
+              ],
+              [
+                "tu",
+                "**tine**",
+                "*E pentru tine.*",
+                "It's for you."
+              ],
+              [
+                "el",
+                "el",
+                "*Merg la el.*",
+                "I'm going to his place."
+              ],
+              [
+                "ea",
+                "ea",
+                "*Vorbesc cu ea.*",
+                "I'm talking to her."
+              ],
+              [
+                "noi",
+                "noi",
+                "*Hai cu noi!*",
+                "Come with us!"
+              ],
+              [
+                "voi",
+                "voi",
+                "*Nu plecăm fără voi.*",
+                "We're not leaving without you."
+              ],
+              [
+                "dumneavoastră",
+                "dumneavoastră",
+                "*Este pentru dumneavoastră.*",
+                "This is for you."
+              ],
+              [
+                "ei / ele",
+                "ei / ele",
+                "*Am un mesaj de la ei.*",
+                "I have a message from them."
+              ]
+            ]
+          },
+          "after": [
+            "***La mine, la tine, la noi*** means \"at/to my place, your place, our place\": *Hai la mine!* (come over to my place), *Diseară mâncăm la noi.* Very common in invitations.",
+            "***Pe mine, pe tine*** are used to stress the object, and the short pronoun stays too: *Pe mine mă cheamă Budi. Pe tine te-am văzut ieri.* Likewise the dative has emphatic forms from unit 10: *Mie îmi dai cafeaua, lui îi dai ceaiul.*",
+            "These forms are also used after *decât* and *ca* in comparisons (unit 18): *Ioana vorbește mai repede decât mine.*",
+            "**Three levels of invitation:** *Hai la film!* (spontaneous, casual) → *Hai să mergem la film!* (a clear invitation) → *Ce-ar fi să mergem la film?* (a polite suggestion). To several people, or someone you address formally, *hai* becomes *haideți*: *Haideți să mergem!*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "On the phone",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Alo?*",
+              "Hello?"
+            ],
+            [
+              "*Cine e la telefon?*",
+              "Who's calling?"
+            ],
+            [
+              "*Bună ziua, sunt Budi Santoso.*",
+              "Good afternoon, this is Budi Santoso."
+            ],
+            [
+              "*Pot să vorbesc cu doamna Popescu?*",
+              "May I speak to Mrs. Popescu?"
+            ],
+            [
+              "*Un moment, vă rog.*",
+              "One moment, please."
+            ],
+            [
+              "*Nu este aici acum.*",
+              "She's not here right now."
+            ],
+            [
+              "*Pot să las un mesaj?*",
+              "Can I leave a message?"
+            ],
+            [
+              "*Vă sun mai târziu.* · *Te sun mai târziu.*",
+              "I'll call you back later. (polite · informal)"
+            ],
+            [
+              "*Ați greșit numărul.*",
+              "You have the wrong number."
+            ],
+            [
+              "*Nu te aud bine. Nu am semnal.*",
+              "I can't hear you well. I have no signal."
+            ],
+            [
+              "*Nu mai am baterie.*",
+              "My battery's dead."
+            ],
+            [
+              "*Îți scriu pe WhatsApp.*",
+              "I'll message you on WhatsApp."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "On the phone Romanians introduce themselves with *sunt* + name (\"I am…\"), not with \"this is\". The technical vocabulary is almost all familiar: *telefon, mesaj, număr, semnal, baterie, e-mail, aplicație*. Three verbs to practice: *a suna* (to call; *sun, suni, sună* — also \"to ring\": *Sună telefonul!*), *a trimite* (to send; *trimit, trimiți, trimite*), and *a răspunde* (to answer; *răspund, răspunzi, răspunde*): *Nu răspunde* — \"he/she isn't picking up\"."
+        },
+        {
+          "type": "kotak",
+          "title": "Phone manners",
+          "items": [
+            "A casual call rarely ends with a single *pa*. The usual thing is a string: *Bine, hai, pa, pa!* — and *hai* here isn't an invitation but a \"well, OK then\".",
+            "With family and close friends people sign off with ***Te pup!*** — literally \"I kiss you\", like \"hugs and kisses\" at the end of a message. Don't be surprised, and don't use it with your boss.",
+            "With older women, *Sărut mâna* from unit 17 still works on the phone, at the start or the end.",
+            "Romanian cell numbers start with **07**, and the country code is **+40**. Numbers are read out in groups of two or three digits — good practice for the numbers in unit 5."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Inviting, accepting, declining",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "English",
+            "Used for"
+          ],
+          "rows": [
+            [
+              "*Ești liber diseară?* (to a man) · *Ești liberă diseară?* (to a woman)",
+              "Are you free tonight?",
+              "opening an invitation"
+            ],
+            [
+              "*Hai să ieșim în oraș!*",
+              "Let's go out!",
+              "inviting"
+            ],
+            [
+              "*Vrei să vii cu noi?*",
+              "Do you want to come with us?",
+              "inviting"
+            ],
+            [
+              "*Ce-ar fi să mergem la munte?*",
+              "How about going to the mountains?",
+              "suggesting"
+            ],
+            [
+              "*Cu plăcere!* · *Sigur!*",
+              "I'd love to! · Sure!",
+              "accepting"
+            ],
+            [
+              "*Bună idee!* · *De ce nu?*",
+              "Good idea! · Why not?",
+              "accepting"
+            ],
+            [
+              "*Îmi pare rău, nu pot.*",
+              "I'm sorry, I can't.",
+              "declining"
+            ],
+            [
+              "*Din păcate, am alt program.*",
+              "Unfortunately, I have other plans.",
+              "declining"
+            ],
+            [
+              "*Am de lucru.*",
+              "I have work to do.",
+              "giving a reason"
+            ],
+            [
+              "*Poate altă dată.*",
+              "Maybe another time.",
+              "declining gently"
+            ],
+            [
+              "*Unde ne vedem? La ce oră?*",
+              "Where shall we meet? What time?",
+              "making plans"
+            ],
+            [
+              "*Ne vedem la șapte, în fața cinematografului.*",
+              "Let's meet at seven, in front of the movie theater.",
+              "making plans"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Note *liber / liberă*: the adjective agrees with the person **being asked**, so Budi asks Ioana *Ești liberă?*, and Ioana asks Budi *Ești liber?* *Diseară* = tonight; *mâine-seară* = tomorrow evening. Declining with no reason sounds cold, and a long reason sounds made up — one short sentence plus *poate altă dată* is just right. If you really do want to meet, suggest another day on the spot, like Budi: *Atunci ce-ar fi să… duminică?*"
+        },
+        {
+          "type": "kotak",
+          "title": "\"Hai la o cafea\" is rarely just about coffee",
+          "items": [
+            "*Hai la o cafea!* means \"let's hang out and talk\". The coffee may turn into lemonade or beer, and one cup can last three hours — especially on the terraces of the Old Town in summer.",
+            "***Fac eu cinste!*** = \"my treat!\". Whoever does the inviting often offers to pay; next time it's your turn. To split the bill, the phrase is ***plătim nemțește*** — literally \"we pay the German way\".",
+            "Being fifteen minutes late for a casual meetup is still forgiven; Romanians call it the *sfertul academic*, \"the academic quarter hour\". For work and doctor's appointments, be on time."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — unit 17",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Romanian column, read the English, then rebuild the sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Română"
+          ],
+          "rows": [
+            [
+              "What's hurting? — My head hurts.",
+              "*Ce vă doare? — Mă doare capul.*"
+            ],
+            [
+              "I have a fever and I'm coughing.",
+              "*Am febră și tușesc.*"
+            ],
+            [
+              "I don't feel well.",
+              "*Nu mă simt bine.*"
+            ],
+            [
+              "Take one pill three times a day.",
+              "*Luați o pastilă de trei ori pe zi.*"
+            ],
+            [
+              "Get well soon!",
+              "*Multă sănătate!*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ro": "telefon, telefoane",
+      "baca": "teh-leh-FOHN, teh-leh-FWAH-neh",
+      "en": "telephone (n)"
+    },
+    {
+      "ro": "mesaj, mesaje",
+      "baca": "meh-SAHZH, meh-SAH-zheh",
+      "en": "message (n)"
+    },
+    {
+      "ro": "concert, concerte",
+      "baca": "kohn-CHEHRT, kohn-CHEHR-teh",
+      "en": "concert (n)"
+    },
+    {
+      "ro": "adresă, adrese",
+      "baca": "ah-DREH-suh, ah-DREH-seh",
+      "en": "address (f)"
+    },
+    {
+      "ro": "a suna (sun)",
+      "baca": "ah soo-NAH (soon)",
+      "en": "to call (+ accusative); to ring"
+    },
+    {
+      "ro": "a trimite (trimit)",
+      "baca": "ah tree-MEE-teh (tree-MEET)",
+      "en": "to send"
+    },
+    {
+      "ro": "a da (dau)",
+      "baca": "ah dah (dow)",
+      "en": "to give"
+    },
+    {
+      "ro": "a spune (spun)",
+      "baca": "ah SPOO-neh (spoon)",
+      "en": "to say, to tell"
+    },
+    {
+      "ro": "a arăta (arăt)",
+      "baca": "ah ah-ruh-TAH (ah-RUHT)",
+      "en": "to show"
+    },
+    {
+      "ro": "a asculta (ascult)",
+      "baca": "ah ahs-kool-TAH (ahs-KOOLT)",
+      "en": "to listen (to)"
+    },
+    {
+      "ro": "a crede (cred)",
+      "baca": "ah KREH-deh (krehd)",
+      "en": "to think, to believe"
+    },
+    {
+      "ro": "liber, liberă",
+      "baca": "LEE-behr, LEE-beh-ruh",
+      "en": "free (no plans)"
+    },
+    {
+      "ro": "hai",
+      "baca": "hai",
+      "en": "come on, let's"
+    },
+    {
+      "ro": "îmi pare rău",
+      "baca": "îm' PAH-reh ruhw",
+      "en": "I'm sorry"
+    },
+    {
+      "ro": "ce păcat",
+      "baca": "cheh puh-KAHT",
+      "en": "what a pity"
+    },
+    {
+      "ro": "poate",
+      "baca": "PWAH-teh",
+      "en": "maybe"
+    },
+    {
+      "ro": "altă dată",
+      "baca": "AHL-tuh DAH-tuh",
+      "en": "another time"
+    },
+    {
+      "ro": "diseară",
+      "baca": "dee-SYAH-ruh",
+      "en": "tonight, this evening"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Romanian.",
+      "items": [
+        "Can I speak to Ioana?",
+        "Are you free on Saturday evening? (to Ioana)",
+        "Let's go to a concert!",
+        "I'm sorry, I can't. I have work to do.",
+        "I'll send you a message later.",
+        "Are you coming with me?"
+      ]
+    },
+    {
+      "prompt": "Fill in the right dative pronoun (îmi, îți, îi, ne, vă, le).",
+      "items": [
+        "____ scriu Ioanei un mesaj.",
+        "____ spun părinților că vin duminică.",
+        "____ dai numărul tău de telefon? (to me)",
+        "____ trimit adresa mai târziu. (to you)",
+        "Profesorul ____ explică lecția. (to us)",
+        "____ mulțumesc pentru ajutor, doamna Popescu!",
+        "____ telefonez lui Andrei diseară.",
+        "Bunica ____ dă copiilor covrigi."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "să / hai / la / mergem / concert / un / !",
+        "cu / pot / vorbesc / ioana / să / ?",
+        "seara / ești / sâmbătă / liberă / ?",
+        "trimit / mai / îți / mesaj / târziu / un",
+        "pentru / e / tine",
+        "lui / spun / îi / andrei / și"
+      ]
+    }
+  ],
+  "answers": [
+    "Pot să vorbesc cu Ioana? — Ești liberă sâmbătă seara? — Hai să mergem la un concert! — Îmi pare rău, nu pot. Am de lucru. — Îți trimit un mesaj mai târziu. — Vii cu mine?",
+    "Îi — Le — Îmi — Îți — ne — Vă — Îi — le",
+    "Hai să mergem la un concert! — Pot să vorbesc cu Ioana? — Ești liberă sâmbătă seara? — Îți trimit un mesaj mai târziu. — E pentru tine. — Îi spun și lui Andrei."
+  ]
+}
