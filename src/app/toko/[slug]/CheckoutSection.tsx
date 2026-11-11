@@ -1,8 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CreditCard, Mail, Sparkles, X } from "lucide-react";
 import { normalisasiWa } from "@/lib/waPembeli";
+import {
+  HARGA_PROMO_AFILIATOR_ELEARNING,
+  promoAfiliatorElearningAktif,
+  tierPromoAfiliator,
+} from "@/lib/elearningPromoAfiliator";
 
 interface PricingTier {
   id: string;
@@ -46,6 +51,33 @@ export default function CheckoutSection({ product, pricingTiers, paketLengkap = 
   const [refCode, setRefCode] = useState("");
   const [error, setError] = useState<string | null>(null);
 
+  // [elearning-promo-afiliator-v1] E-Learning 6 bulan + kode afiliator sah → Rp29.000.
+  // Pratinjau saja; harga ditagih dihitung ulang server (/api/create-cart-invoice).
+  const [cookieRef, setCookieRef] = useState("");
+  const [promoOk, setPromoOk] = useState(false);
+  useEffect(() => {
+    setCookieRef(decodeURIComponent(("; " + document.cookie).split("; linguo_ref=")[1]?.split(";")[0] ?? ""));
+  }, []);
+  const kodeAktif = refCode.trim() || cookieRef;
+  useEffect(() => {
+    if (product.type !== "elearning" || !promoAfiliatorElearningAktif() || kodeAktif.length < 3) {
+      setPromoOk(false);
+      return;
+    }
+    let batal = false;
+    const t = setTimeout(() => {
+      fetch(`/api/elearning-promo?code=${encodeURIComponent(kodeAktif)}`)
+        .then((r) => r.json())
+        .then((j) => { if (!batal) setPromoOk(!!j.ok); })
+        .catch(() => { if (!batal) setPromoOk(false); });
+    }, 400);
+    return () => { batal = true; clearTimeout(t); };
+  }, [kodeAktif, product.type]);
+  const hargaTier = (t: PricingTier) =>
+    promoOk && tierPromoAfiliator(product.type, t.duration_days) && t.price > HARGA_PROMO_AFILIATOR_ELEARNING
+      ? HARGA_PROMO_AFILIATOR_ELEARNING
+      : t.price;
+
   if (!selectedTier) {
     return (
       <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-amber-700 text-sm">
@@ -54,7 +86,7 @@ export default function CheckoutSection({ product, pricingTiers, paketLengkap = 
     );
   }
 
-  const hargaDipilih = pilihPaket && paketLengkap ? paketLengkap.total : selectedTier.price;
+  const hargaDipilih = pilihPaket && paketLengkap ? paketLengkap.total : hargaTier(selectedTier);
   const labelDipilih = pilihPaket && paketLengkap ? "Selamanya · A1–B2" : selectedTier.display_label;
 
   async function handleCheckout(e: React.FormEvent) {
@@ -76,16 +108,20 @@ export default function CheckoutSection({ product, pricingTiers, paketLengkap = 
 
     setSubmitting(true);
 
-    const refKiriman =
-      refCode.trim() ||
-      (typeof document !== "undefined"
-        ? ("; " + document.cookie).split("; linguo_ref=")[1]?.split(";")[0] ?? null
-        : null);
+    const refKiriman = kodeAktif || null;
 
     // [ebook-paket-lengkap-v1] Paket = keranjang 4 modul lewat jalur tamu
     // /api/create-cart-invoice; server yang menerapkan harga paketnya (dan
     // membuang modul yang ternyata sudah dimiliki email ini).
-    if (pilihPaket && paketLengkap) {
+    // [elearning-promo-afiliator-v1] E-Learning juga lewat keranjang: hanya route
+    // itu yang menerapkan harga promo kode afiliator.
+    const itemsKeranjang =
+      pilihPaket && paketLengkap
+        ? paketLengkap.items.map((x) => ({ productId: x.productId, pricingId: x.pricingId }))
+        : product.type === "elearning"
+          ? [{ productId: product.id, pricingId: selectedTier.id }]
+          : null;
+    if (itemsKeranjang) {
       try {
         const res = await fetch("/api/create-cart-invoice", {
           method: "POST",
@@ -95,7 +131,7 @@ export default function CheckoutSection({ product, pricingTiers, paketLengkap = 
             buyer_name: form.name,
             buyer_phone: waPembeli,
             referral_code: refKiriman,
-            items: paketLengkap.items.map((x) => ({ productId: x.productId, pricingId: x.pricingId })),
+            items: itemsKeranjang,
           }),
         });
         const data = await res.json().catch(() => ({}));
@@ -165,7 +201,10 @@ export default function CheckoutSection({ product, pricingTiers, paketLengkap = 
               >
                 <div className="text-[11px] text-gray-500">{tier.display_label}</div>
                 <div className="text-[13px] font-semibold text-gray-900">
-                  Rp {formatRupiah(tier.price)}
+                  {hargaTier(tier) < tier.price && (
+                    <span className="block text-[10px] font-normal text-gray-400 line-through">Rp {formatRupiah(tier.price)}</span>
+                  )}
+                  Rp {formatRupiah(hargaTier(tier))}
                 </div>
               </button>
             ))}
@@ -320,8 +359,12 @@ export default function CheckoutSection({ product, pricingTiers, paketLengkap = 
                   placeholder="Masukkan kode referral jika ada"
                   disabled={submitting}
                 />
-                <p className="text-xs text-gray-500 mt-1">
-                  Dapatkan dari teman atau afiliator Linguo
+                <p className={`text-xs mt-1 ${promoOk ? "text-teal-700 font-medium" : "text-gray-500"}`}>
+                  {promoOk
+                    ? `✓ Kode afiliator aktif — akses 6 bulan jadi Rp ${formatRupiah(HARGA_PROMO_AFILIATOR_ELEARNING)}`
+                    : product.type === "elearning" && promoAfiliatorElearningAktif()
+                      ? `Pakai kode afiliator/influencer: akses 6 bulan jadi Rp ${formatRupiah(HARGA_PROMO_AFILIATOR_ELEARNING)}`
+                      : "Dapatkan dari teman atau afiliator Linguo"}
                 </p>
               </div>
 

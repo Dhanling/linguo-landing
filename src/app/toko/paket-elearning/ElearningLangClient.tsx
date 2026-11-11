@@ -28,6 +28,17 @@ import { getLangPhoto } from '@/lib/lang-visuals';
 import type { ElearningProduct, PricingTier } from './page';
 import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 import { normalisasiWa } from '@/lib/waPembeli';
+import {
+  HARGA_PROMO_AFILIATOR_ELEARNING,
+  promoAfiliatorElearningAktif,
+  tierPromoAfiliator,
+} from '@/lib/elearningPromoAfiliator';
+
+/** Kode afiliator dari cookie linguo_ref (link ?ref=KODE). */
+function kodeCookie(): string {
+  if (typeof document === 'undefined') return '';
+  return decodeURIComponent(('; ' + document.cookie).split('; linguo_ref=')[1]?.split(';')[0] ?? '');
+}
 
 // [elearning-per-bahasa-v1] Etalase e-learning per bahasa. Dulu halaman ini
 // satu form checkout untuk paket "12+ bahasa sekaligus"; sekarang tiap bahasa
@@ -104,6 +115,43 @@ export default function ElearningLangClient({ products }: { products: ElearningP
   const [form, setForm] = useState({ name: '', email: '', phone: '', ref: '' });
   const [kirim, setKirim] = useState(false);
   const [salah, setSalah] = useState<string | null>(null);
+  // [elearning-promo-afiliator-v1] Kode afiliator/lingfluencer sah → tier 6 bulan
+  // Rp29.000 (s/d 31 Des 2026). Ini cuma pratinjau; server yang menagih.
+  const [cookieRef, setCookieRef] = useState('');
+  const [promoOk, setPromoOk] = useState(false);
+  const [cekPromo, setCekPromo] = useState(false);
+  useEffect(() => { setCookieRef(kodeCookie()); }, []);
+  const kodeAktif = form.ref.trim() || cookieRef;
+  useEffect(() => {
+    if (!promoAfiliatorElearningAktif() || kodeAktif.length < 3) { setPromoOk(false); return; }
+    let batal = false;
+    setCekPromo(true);
+    const t = setTimeout(() => {
+      fetch(`/api/elearning-promo?code=${encodeURIComponent(kodeAktif)}`)
+        .then((r) => r.json())
+        .then((j) => { if (!batal) setPromoOk(!!j.ok); })
+        .catch(() => { if (!batal) setPromoOk(false); })
+        .finally(() => { if (!batal) setCekPromo(false); });
+    }, 400);
+    return () => { batal = true; clearTimeout(t); };
+  }, [kodeAktif]);
+  /** Harga yang dibayar untuk satu tier (promo afiliator kalau berlaku). */
+  const harga = (t: PricingTier | null | undefined): number => {
+    if (!t) return 0;
+    return promoOk && tierPromoAfiliator('elearning', t.duration_days) && t.price > HARGA_PROMO_AFILIATOR_ELEARNING
+      ? HARGA_PROMO_AFILIATOR_ELEARNING
+      : t.price;
+  };
+  /** Harga dengan coretan harga normal kalau sedang promo. */
+  const Harga = ({ t }: { t: PricingTier | null | undefined }) =>
+    t && harga(t) < t.price ? (
+      <>
+        <span className="mr-1 text-[0.75em] font-normal text-slate-400 line-through">{formatRupiah(t.price)}</span>
+        {formatRupiah(harga(t))}
+      </>
+    ) : (
+      <>{formatRupiah(t?.price ?? 0)}</>
+    );
 
   // Kalau pengunjung sudah login, data dirinya tak perlu diketik ulang.
   useEffect(() => {
@@ -129,7 +177,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
     () => dipilih.map((id) => products.find((p) => p.id === id)).filter((p): p is ElearningProduct => !!p),
     [dipilih, products],
   );
-  const totalKeranjang = terpilih.reduce((n, p) => n + (tierDari(p)?.price ?? 0), 0);
+  const totalKeranjang = terpilih.reduce((n, p) => n + harga(tierDari(p)), 0);
   // Semua bahasa di keranjang durasinya sama? Label total ikut menyesuaikan.
   const durasiSeragam =
     terpilih.length > 0 && terpilih.every((p) => idxDari(p) === idxDari(terpilih[0]));
@@ -191,11 +239,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
           buyer_name: form.name.trim(),
           buyer_email: form.email.trim(),
           buyer_phone: waPembeli,
-          referral_code:
-            form.ref.trim() ||
-            (typeof document !== 'undefined'
-              ? ('; ' + document.cookie).split('; linguo_ref=')[1]?.split(';')[0] ?? null
-              : null),
+          referral_code: kodeAktif || null,
           items: terpilih
             .map((p) => ({ productId: p.id, pricingId: tierDari(p)?.id ?? '' }))
             .filter((x) => x.pricingId),
@@ -288,7 +332,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
                   )}
                 </div>
                 <div className="mt-1 text-2xl font-bold text-slate-900">
-                  {formatRupiah(t.price)}
+                  <Harga t={t} />
                 </div>
                 <div className="text-xs text-slate-500">per bahasa</div>
               </div>
@@ -298,6 +342,14 @@ export default function ElearningLangClient({ products }: { products: ElearningP
           <p className="mt-4 text-sm text-slate-500">
             Durasi di atas adalah lama <strong>akses</strong> materinya, bukan tingkat levelnya.
           </p>
+          {promoAfiliatorElearningAktif() && (
+            <p className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-3 py-1 text-sm font-medium text-amber-800 ring-1 ring-amber-200">
+              <Sparkles className="h-4 w-4" strokeWidth={2} aria-hidden />
+              {promoOk
+                ? `Kode afiliator aktif — akses 6 bulan cuma ${formatRupiah(HARGA_PROMO_AFILIATOR_ELEARNING)}/bahasa`
+                : `Punya kode afiliator/influencer? Akses 6 bulan jadi ${formatRupiah(HARGA_PROMO_AFILIATOR_ELEARNING)}`}
+            </p>
+          )}
         </div>
       </section>
 
@@ -458,7 +510,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
                             {tier && p.ready ? `akses ${tier.display_label}` : 'Segera hadir'}
                           </div>
                           <div className="font-bold text-slate-900 text-lg leading-none">
-                            {tier ? formatRupiah(tier.price) : '—'}
+                            {tier ? <Harga t={tier} /> : '—'}
                           </div>
                         </div>
                         {p.ready && <span className="inline-flex items-center gap-1 text-teal-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
@@ -631,7 +683,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
                       }`}
                     >
                       <span className="block text-xs text-slate-500">{t.display_label}</span>
-                      <span className="block text-sm font-bold">{formatRupiah(t.price)}</span>
+                      <span className="block text-sm font-bold"><Harga t={t} /></span>
                     </button>
                   ))}
                 </div>
@@ -656,7 +708,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
                         Bahasa {namaBahasa(p)}
                       </span>
                       <span className="shrink-0 font-semibold text-slate-900">
-                        {formatRupiah(tierDari(p)?.price ?? 0)}
+                        <Harga t={tierDari(p)} />
                       </span>
                       {/* Baris terakhir tak bisa dibuang dari sini: keranjang kosong
                           berarti tidak ada yang dibayar — tutup modalnya saja. */}
@@ -751,7 +803,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
                                 Bahasa {namaBahasa(p)}
                               </span>
                               <span className="shrink-0 text-slate-500">
-                                {formatRupiah(tierPada(p, durasiIdx)?.price ?? 0)}
+                                {formatRupiah(harga(tierPada(p, durasiIdx)))}
                                 <span className="ml-1 text-[11px] text-slate-400">
                                   /{tierPada(p, durasiIdx)?.display_label ?? ''}
                                 </span>
@@ -799,10 +851,10 @@ export default function ElearningLangClient({ products }: { products: ElearningP
                 type="text"
                 value={form.ref}
                 onChange={(e) => setForm((v) => ({ ...v, ref: e.target.value }))}
-                placeholder="Kode afiliator"
+                placeholder="Kode afiliator / influencer"
                 aria-label="Kode referral"
                 autoFocus
-                className="mt-2 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
+                className="mt-2 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm uppercase focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
               />
             ) : (
               <button
@@ -810,8 +862,18 @@ export default function ElearningLangClient({ products }: { products: ElearningP
                 onClick={() => setRefOpen(true)}
                 className="mt-2 text-[13px] font-medium text-slate-500 underline decoration-dotted underline-offset-2 hover:text-teal-700"
               >
-                Punya kode referral?
+                Punya kode afiliator/influencer? Akses 6 bulan jadi {formatRupiah(HARGA_PROMO_AFILIATOR_ELEARNING)}
               </button>
+            )}
+
+            {promoAfiliatorElearningAktif() && kodeAktif && !cekPromo && (
+              <p className={`mt-1.5 text-[12px] ${promoOk ? 'text-teal-700' : 'text-slate-500'}`}>
+                {promoOk
+                  ? `✓ Kode ${kodeAktif.toUpperCase()} aktif — akses 6 bulan jadi ${formatRupiah(HARGA_PROMO_AFILIATOR_ELEARNING)}/bahasa.`
+                  : form.ref.trim()
+                    ? 'Kode tidak dikenal — harga normal berlaku.'
+                    : null}
+              </p>
             )}
 
             {salah && (

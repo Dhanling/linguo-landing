@@ -45,6 +45,7 @@ import { promoAmountFor } from "@/lib/promoMerdeka";
 import { KODE_WA_WAJIB, PESAN_WA_WAJIB, pastikanWaPembeli } from "@/lib/waPembeli";
 import { hitungPaketLengkap, type ModulDimiliki } from "@/lib/bundelEbook";
 import { amanIlike } from "@/lib/amanIlike"; // [audit9-ilike-escape-v1]
+import { hargaPromoAfiliator, kodeAfiliatorSah, rapikanKode } from "@/lib/elearningPromoAfiliator";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -316,7 +317,15 @@ async function buatInvoice(req: NextRequest): Promise<NextResponse> {
     })),
     modulDimiliki,
   );
-  const hargaBaris = (x: { prod: Prod; tier: Tier }) => paket.harga.get(x.prod.id) ?? x.tier.price ?? 0;
+  // [elearning-promo-afiliator-v1] E-Learning 6 bulan + kode afiliator aktif → Rp29.000.
+  const kodeSah = sah.some((x) => x.prod.type === "elearning") ? await kodeAfiliatorSah(admin, referralCode) : false;
+  if (kodeSah) referralCode = rapikanKode(referralCode);
+  const hargaBaris = (x: { prod: Prod; tier: Tier }) =>
+    paket.harga.get(x.prod.id) ??
+    hargaPromoAfiliator(x.prod.type, x.tier.duration_days, kodeSah, x.tier.price ?? 0) ??
+    x.tier.price ?? 0;
+  const promoAfiliator = (x: { prod: Prod; tier: Tier }) =>
+    !paket.harga.has(x.prod.id) && hargaPromoAfiliator(x.prod.type, x.tier.duration_days, kodeSah, x.tier.price ?? 0) !== null;
 
   const simBaris = simSah.map((t) => ({ testType: t, harga: hargaSimulasi(t) }));
   const total =
@@ -435,7 +444,7 @@ async function buatInvoice(req: NextRequest): Promise<NextResponse> {
         // memeriksa isi keranjangnya sebelum membayar.
         items: [
           ...sah.map((x) => ({
-            name: `${rapiTipe(x.prod.type)} — ${x.prod.title}${x.tier.display_label ? ` (${x.tier.display_label})` : ""}${paket.dalamPaket.has(x.prod.id) ? " · Paket Lengkap A1–B2" : ""}`,
+            name: `${rapiTipe(x.prod.type)} — ${x.prod.title}${x.tier.display_label ? ` (${x.tier.display_label})` : ""}${paket.dalamPaket.has(x.prod.id) ? " · Paket Lengkap A1–B2" : ""}${promoAfiliator(x) ? " · Promo kode afiliator" : ""}`,
             quantity: 1,
             price: hargaBaris(x),
           })),
