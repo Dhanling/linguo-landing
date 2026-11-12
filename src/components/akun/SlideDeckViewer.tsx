@@ -83,6 +83,25 @@ const TEMA: Record<SlideType, Tema> = {
 
 const TEPI = /^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu;
 
+/* [tts-tanpa-gender-v1] Laporan owner 12 Nov 2026: "l'heure (f.)" dibunyikan
+   "l'heure f" — keterangan tata bahasa dalam kurung (gender/jumlah: f., m., n.,
+   pl., m./f., …) itu catatan untuk dibaca mata, bukan bagian katanya. Penanda
+   seperti itu tetap TAMPIL, tapi tidak ikut TTS, tidak bisa diklik, dan tidak
+   dihitung karaoke. Kurung yang menempel huruf ("eine(n)") bukan penanda. */
+const PENANDA = /(^|[^\p{L}])\(\s*(?:(?:m|f|n|c|nt|mf|pl|sg|sing|plur|masc|fem|neut|inv)\.?\s*[/,;&]?\s*)+\)/giu;
+function tandaiPenanda(bagian: string[]): boolean[] {
+  const rentang: Array<[number, number]> = [];
+  for (const m of bagian.join("").matchAll(PENANDA)) {
+    const awal = (m.index ?? 0) + m[1].length;
+    rentang.push([awal, (m.index ?? 0) + m[0].length]);
+  }
+  let pos = 0;
+  return bagian.map((b) => {
+    const a = pos; pos += b.length;
+    return rentang.some(([x, y]) => a >= x && pos <= y);
+  });
+}
+
 /* [slide-arti-v1] Tooltip arti di atas kata yang diklik. Posisinya `fixed`
    terhadap KARTU slide (`contain: layout` di SlideCard menjadikan kartu acuan
    `fixed` — container-type saja TIDAK, tooltipnya lari ke pojok layar), bukan
@@ -223,7 +242,7 @@ function Ucap({ teks, lang, kalimat = true, peran }: { teks: string; lang?: stri
     const a = audioEbookAktif();
     if (!a) return;
     const src = a.src;
-    const bobot = bagian.map((b) => (/\p{L}/u.test(b) ? Array.from(b.replace(TEPI, "")).length + 1 : 0));
+    const bobot = bagian.map((b, i) => (!penanda[i] && /\p{L}/u.test(b) ? Array.from(b.replace(TEPI, "")).length + 1 : 0));
     const total = bobot.reduce((x, y) => x + y, 0) || 1;
     const langkah = () => {
       if (ke !== putaran.current) return;
@@ -239,10 +258,11 @@ function Ucap({ teks, lang, kalimat = true, peran }: { teks: string; lang?: stri
     requestAnimationFrame(langkah);
   };
   // Pemisah tampilan ("·", "/", "→") dibaca sebagai jeda, bukan dieja.
-  const utuh = teks.replace(/\s*[·/→]\s*/g, ", ").replace(/[()]/g, " ").trim();
+  const utuh = teks.replace(PENANDA, "$1 ").replace(/\s*[·/→]\s*/g, ", ").replace(/[()]/g, " ").trim();
 
   const bagian = pecahKata(teks, lang);
-  const banyakKata = bagian.filter((b) => /\p{L}/u.test(b)).length > 1;
+  const penanda = tandaiPenanda(bagian);
+  const banyakKata = bagian.filter((b, i) => !penanda[i] && /\p{L}/u.test(b)).length > 1;
   let urutKata = 0;
 
   return (
@@ -251,6 +271,7 @@ function Ucap({ teks, lang, kalimat = true, peran }: { teks: string; lang?: stri
         const kata = b.replace(TEPI, "");
         if (!/\p{L}/u.test(kata)) return b;
         const pr = peran?.[urutKata++];
+        if (penanda[i]) return b; // [tts-tanpa-gender-v1] "(f.)" tampil saja, tak berbunyi
         const warnaPeran = pr ? { color: WARNA_PERAN[pr].teks, fontWeight: 800 } : undefined;
         return (
           // [vc-slide-ketuk-tts-v1] data-ucap = teks yang dibunyikan; dibaca saat
