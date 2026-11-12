@@ -49,6 +49,7 @@ import { SlideVisual } from "@/components/akun/SlideVisual";
 import ArabicPronounSlide from "./ArabicPronounSlide";
 import { ARABIC_PRONOUN_BACKGROUND, isMsaPronounSlide } from "@/lib/arabicPronouns";
 import NumberSlide from "./NumberSlide";
+import { pasangkanLawanKata, uraiPola, warnaContoh, kepingPeran, WARNA_PERAN, type Peran, type SegmenPola } from "./slidePolaKata";
 import { numberSlideTheme } from "@/lib/numberSlideTheme";
 import DutchNumberSlide, { isDutchNumberSlide } from "./DutchNumberSlide";
 
@@ -127,7 +128,7 @@ function ketukKartuUcap(e: ReactMouseEvent) {
 /** Kelas kartu yang bisa diketuk: membesar halus saat kursor singgah. */
 const KARTU_KETUK = "cursor-pointer transition-[transform,box-shadow] duration-200 ease-out hover:z-10 hover:scale-[1.025] hover:shadow-lg";
 
-function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | null; kalimat?: boolean }) {
+function Ucap({ teks, lang, kalimat = true, peran }: { teks: string; lang?: string | null; kalimat?: boolean; peran?: Array<Peran | null> }) {
   const [aktif, setAktif] = useState<number | null>(null);
   // [tts-karaoke-v1] Indeks kepingan yang sedang dibaca saat TTS satu kalimat diputar.
   const [baca, setBaca] = useState<number | null>(null);
@@ -149,7 +150,16 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
   }, [adaTip]);
   // [slide-rtl-v1] dir="auto": kalimat Arab/Ibrani/Persia mengalir kanan-ke-kiri
   // dengan tanda baca di tempat yang benar, tanpa membalik tata letak kartu.
-  if (!lang || !bisaDibunyikan(lang)) return <span dir="auto">{teks}</span>;
+  // [slide-pola-warna-v1] `peran` = warna kata sifat/benda/kerja per kata berhuruf (urut).
+  if (!lang || !bisaDibunyikan(lang)) {
+    if (!peran?.some(Boolean)) return <span dir="auto">{teks}</span>;
+    let n = 0;
+    return <span dir="auto">{teks.split(/(\s+)/).map((b, i) => {
+      if (!/\p{L}/u.test(b.replace(TEPI, ""))) return b;
+      const p = peran[n++];
+      return p ? <span key={i} style={{ color: WARNA_PERAN[p].teks, fontWeight: 800 }}>{b}</span> : b;
+    })}</span>;
+  }
 
   const bukaTip = (kata: string, el: HTMLElement) => {
     const kartu = el.closest("[data-slide-card]");
@@ -233,12 +243,15 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
 
   const bagian = pecahKata(teks, lang);
   const banyakKata = bagian.filter((b) => /\p{L}/u.test(b)).length > 1;
+  let urutKata = 0;
 
   return (
     <span dir="auto" data-ucap-akar>
       {bagian.map((b, i) => {
         const kata = b.replace(TEPI, "");
         if (!/\p{L}/u.test(kata)) return b;
+        const pr = peran?.[urutKata++];
+        const warnaPeran = pr ? { color: WARNA_PERAN[pr].teks, fontWeight: 800 } : undefined;
         return (
           // [vc-slide-ketuk-tts-v1] data-ucap = teks yang dibunyikan; dibaca saat
           // slide dipotret untuk Kelas Video supaya kotak katanya ikut terbawa.
@@ -247,8 +260,8 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
             onMouseLeave={() => setLup((l) => (l && l.kata === b.replace(TEPI_LUP, "") ? null : l))}
             onClick={bunyikan(kata, i)}
             className="cursor-pointer rounded-[0.25em] transition-colors hover:bg-teal-100/80"
-            style={aktif === i ? { background: "#99E6DC" }
-              : baca === null ? undefined
+            style={aktif === i ? { ...warnaPeran, background: "#99E6DC" }
+              : baca === null ? warnaPeran
               : i === baca ? { background: "#99E6DC", color: "#0B5E5D" }
               : i < baca ? { color: "#0E7C7B" } : undefined}>
             {b}
@@ -424,6 +437,74 @@ function LatihanJawab({ s, kunci, aksen, kartu }: { s: MateriSlide; kunci?: bool
   );
 }
 
+/* [slide-pola-warna-v1] Rumus pola dua baris: label slot di atas (kata sifat /
+   kata benda / kata kerja berwarna, sisanya abu-abu), kata contohnya sejajar di
+   bawah dengan warna yang sama. Rumus yang tak bisa disejajarkan tetap satu baris,
+   frasa perannya saja yang diwarnai. Warna ditulis inline (bukan class) supaya
+   mode gelap tidak menimpanya — lihat WARNA_TERANG. */
+function PolaBerwarna({ segmen, aksen, en }: { segmen: SegmenPola[]; aksen: string; en: boolean }) {
+  const dipakai = new Set(segmen.flatMap((g) => g.slot.flatMap((x) => kepingPeran(x.teks).map((k) => k.peran))).filter(Boolean) as Peran[]);
+  const NAMA: Record<Peran, string> = en
+    ? { sifat: "adjective", benda: "noun", kerja: "verb" }
+    : { sifat: "kata sifat", benda: "kata benda", kerja: "kata kerja" };
+  const chip = (teks: string, peran: Peran | null) => (
+    <span className="inline-block whitespace-nowrap rounded-full px-[0.75em] py-[0.15em] text-[0.82em] font-bold"
+      style={peran ? { background: WARNA_PERAN[peran].latar, color: WARNA_PERAN[peran].teks }
+        : { background: "#F3F4F6", color: "#374151" }}>
+      {peran ? teks : kepingPeran(teks).map((k, i) => k.peran
+        ? <span key={i} style={{ color: WARNA_PERAN[k.peran].teks }}>{k.t}</span> : <span key={i}>{k.t}</span>)}
+    </span>
+  );
+  return (
+    <div className="rounded-xl border-2 bg-white px-[2cqw] py-[1.3cqh] shadow-sm" style={{ borderColor: aksen }}>
+      <div className="flex flex-wrap items-stretch justify-center gap-x-[3cqw] gap-y-[1.2cqh]">
+        {segmen.map((g, gi) => (
+          <div key={gi} className="flex items-center gap-[0.8em]">
+            {gi > 0 && <span className="h-[70%] w-px self-center bg-gray-200" aria-hidden />}
+            {g.sejajar ? (
+              <div className="inline-grid items-center gap-x-[0.45em] gap-y-[0.5cqh]"
+                style={{ gridTemplateColumns: g.slot.map((_, i) => (i ? "auto auto" : "auto")).join(" ") }}>
+                {g.slot.map((x, i) => [
+                  i > 0 && <span key={`p${i}`} className="text-center font-bold text-gray-400">+</span>,
+                  <div key={`s${i}`} className="text-center">{chip(x.teks, x.peran)}</div>,
+                ])}
+                {g.slot.map((x, i) => [
+                  i > 0 && <span key={`q${i}`} />,
+                  <div key={`w${i}`} className="text-center text-[1.35em] font-extrabold leading-tight"
+                    style={{ color: x.peran ? WARNA_PERAN[x.peran].teks : "#111827" }}>
+                    {g.sejajar![i].join(" ")}
+                    {x.peran && <div className="mx-auto mt-[0.15em] h-[0.18em] w-[70%] rounded-full" style={{ background: WARNA_PERAN[x.peran].teks, opacity: 0.55 }} />}
+                  </div>,
+                ])}
+              </div>
+            ) : (
+              <div className="flex flex-wrap items-center justify-center gap-[0.4em]">
+                {g.slot.map((x, i) => (
+                  <span key={i} className="inline-flex items-center gap-[0.4em]">
+                    {i > 0 && <span className="font-bold text-gray-400">+</span>}
+                    {chip(x.teks, x.peran)}
+                  </span>
+                ))}
+                {g.contoh && <><span className="font-bold text-gray-400">→</span><span className="font-extrabold text-gray-900">{g.contoh}</span></>}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+      {dipakai.size > 1 && (
+        <div className="mt-[0.9cqh] flex flex-wrap justify-center gap-x-[1.4em] gap-y-[0.3em] text-[0.78em] text-gray-500">
+          {(["sifat", "benda", "kerja"] as Peran[]).filter((p) => dipakai.has(p)).map((p) => (
+            <span key={p} className="inline-flex items-center gap-[0.35em]">
+              <span className="inline-block h-[0.75em] w-[0.75em] rounded-full" style={{ background: WARNA_PERAN[p].teks }} />
+              {NAMA[p]}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 /* ── Isi satu slide ──────────────────────────────────────────────────────── */
 
 export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean; lang?: string | null }) {
@@ -482,7 +563,10 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
   const panelBawaan = isCantoneseAdvancedBody(s.cover) || !!frenchTheme || isA1LanguageBodyCover(s.cover) || isA2LanguageBodyCover(s.cover) || isB1LanguageBodyCover(s.cover) || isB2LanguageBodyCover(s.cover) || isPortugueseBrBodyCover(s.cover) || isTestPrepB1BodyCover(s.cover);
   const ruangTeks = panelBawaan ? "pr-[25.8cqw]" : kiriSaja ? (isImagegenA2GoalCover(s.cover) ? "pr-[55cqw]" : "pr-[45cqw]") : "pr-[4cqw]";
   /* Slide yang isinya banyak dikecilkan sedikit supaya tetap muat tanpa gulir. */
-  const n = s.items?.length || s.lines?.length || s.quiz?.length || s.examples?.length || s.points?.length || s.questions?.length || 0;
+  const kosakata = s.type === "vocab" ? pasangkanLawanKata(s.items || [], s.heading) : [];
+  const pola = s.type === "pattern" ? uraiPola(s.pattern, s.examples) : null;
+  const warnaPola = pola ? warnaContoh(pola, s.examples || []) : [];
+  const n = kosakata.length || s.items?.length || s.lines?.length || s.quiz?.length || s.examples?.length || s.points?.length || s.questions?.length || 0;
   /* [dialog-gulir-v1] Dialog tidak dikecilkan dan tidak dibagi dua kolom:
      selalu satu kolom seperti chat, dialog panjang digulir di dalam kartu. */
   const skala = s.type === "dialog" ? 1
@@ -526,9 +610,10 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
         </div>
       ) : (
       <div className="mt-[2cqh] min-h-0 flex-1 overflow-y-auto pr-[1cqw]" style={{ scrollbarWidth: "thin", fontSize: `clamp(${0.66 * skala}rem, ${1.5 * skala}cqw, ${1.05 * skala}rem)` }}>
+        {/* [slide-sifat-pasangan-v1] Lawan kata sebaris: kiri "murah", kanan "mahal". */}
         {s.type === "vocab" && (
-          <ul className={`grid gap-x-[1.6cqw] gap-y-[1.2cqh] ${(s.items || []).length > 4 ? "grid-cols-2" : "grid-cols-1"}`}>
-            {(s.items || []).map((it, i) => (
+          <ul className={`grid gap-x-[1.6cqw] gap-y-[1.2cqh] ${kosakata.length > 4 ? "grid-cols-2" : "grid-cols-1"}`}>
+            {kosakata.map((it, i) => (
               <li key={i} data-kartu-ucap className={`${kartu} ${KARTU_KETUK}`} style={{ borderLeft: `0.35em solid ${tema.aksen}` }}>
                 <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
                   <span className="font-bold text-gray-900"><Ucap teks={it.term} lang={lang} /></span>
@@ -549,7 +634,8 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
 
         {s.type === "pattern" && (
           <div className="space-y-[1.4cqh]">
-            {s.pattern && (
+            {s.pattern && pola && <PolaBerwarna segmen={pola} aksen={tema.aksen} en={(s as { ui?: string }).ui === "en"} />}
+            {s.pattern && !pola && (
               <div className="rounded-xl px-[2.2cqw] py-[1.5cqh] text-center font-bold text-white shadow-md"
                 style={{ background: `linear-gradient(90deg, ${tema.aksen}, #F59E0B)` }}>
                 {s.pattern}
@@ -558,7 +644,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
             <ul className={`grid gap-x-[1.6cqw] gap-y-[1.1cqh] ${(s.examples || []).length > 4 ? "grid-cols-2" : "grid-cols-1"}`}>
               {(s.examples || []).map((e, i) => (
                 <li key={i} data-kartu-ucap className={`${kartu} ${KARTU_KETUK}`}>
-                  <div className="font-semibold text-gray-900"><Ucap teks={e.target} lang={lang} /></div>
+                  <div className="font-semibold text-gray-900"><Ucap teks={e.target} lang={lang} peran={warnaPola[i]} /></div>
                   {e.translit && <div className="text-[0.9em] text-gray-900">{e.translit}</div>}
                   {e.meaning && <div className="text-gray-500">{e.meaning}</div>}
                 </li>
