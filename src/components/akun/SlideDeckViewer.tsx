@@ -1,4 +1,5 @@
 'use client';
+import { a1CuteCover } from '../../lib/a1CuteCover';
 import { isEnglishSessionArtCover } from '@/data/englishSessionArtwork';
 import { isCantoneseAdvancedBody } from '@/data/cantoneseAdvancedBody';
 import { isTestPrepB1BodyCover } from '@/data/testPrepB1BodyBackground';
@@ -546,6 +547,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
   if (numberTheme && !s.visual) {
     return <NumberSlide key={`${numberTheme.slug}:${s.heading}`} slide={s} theme={numberTheme} lang={lang} renderSpeech={text => <Ucap teks={text} lang={lang || numberTheme.code} />} />;
   }
+  s = { ...s, cover: a1CuteCover(s.cover, s.type === 'title') };
   const tema = TEMA[s.type] || TEMA.points;
 
   if (s.type === "title") {
@@ -772,6 +774,7 @@ const CSS_TERANG = WARNA_TERANG.map(([kelas, prop, nilai]) =>
 export function SlideCard({ s, showAnswers, lang, className = "" }: {
   s: MateriSlide; showAnswers?: boolean; lang?: string | null; className?: string;
 }) {
+  s = { ...s, cover: a1CuteCover(s.cover, s.type === 'title') };
   const tema = TEMA[s.type] || TEMA.points;
   const judul = s.type === "title";
   const sampul = isMsaPronounSlide(s, lang) ? ARABIC_PRONOUN_BACKGROUND : personalPronounTheme(s, lang)?.image || (isDutchNumberSlide(s, lang) ? "/slide-cover/dutch-numbers/background-reference-v3.jpg" : numberSlideTheme(s, lang)?.image || s.cover || null);

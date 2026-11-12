@@ -1,3 +1,4 @@
+import { a1CuteCover } from './a1CuteCover';
 import { upgradeEnglishSessionCover } from '../data/englishSessionArtwork';
 import { upgradeImagegenA2Cover } from "../data/imagegenA2Cover";
 import { upgradeAslCover } from "../data/aslSlideArtwork";
@@ -461,7 +462,7 @@ export function normalizeSlide(raw: any): MateriSlide | null {
   const noSesi = Number(/^Sesi\s+(\d+)/i.exec(str(raw.heading))?.[1]) || undefined;
   const noSesiAsl = noSesi || 1;
   const cover = upgradeAslCover(upgradeEnglishSessionCover(upgradeImagegenA2Cover(str(raw.cover), noSesi), noSesi, str(raw.sublevel)), noSesiAsl, str(raw.sublevel) || 'A1.1');
-  if (/^\/slide-cover\/(?:(?:french-themes|spanish-themes|spanish-v2|portuguese-br|mandarin-themes|dutch-(?:a[12]-[1-4]|b1-[1-4]|b2-[1-7]))\/)?[\w.-]+$/.test(cover)) {
+  if (/^\/slide-cover\/(?:(?:a1-cute-2026-11|french-themes|spanish-themes|spanish-v2|portuguese-br|mandarin-themes|dutch-(?:a[12]-[1-4]|b1-[1-4]|b2-[1-7]))\/)?[\w.-]+$/.test(cover)) {
     // Decks saved before the illustrated artwork was ready contain the old
     // deterministic SVG path. Resolve that specific built-in asset to the
     // current session artwork, preserving uploaded/custom cover choices.
@@ -474,6 +475,8 @@ export function normalizeSlide(raw: any): MateriSlide | null {
       : cover;
     if (raw.ruang === "kiri" && type !== "title") s.ruang = "kiri";
   }
+
+  s.cover = a1CuteCover(s.cover, type === "title");
 
   const kosong =
     !s.heading && !s.subheading && !s.note && !s.pattern && !s.homework &&
