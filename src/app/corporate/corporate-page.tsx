@@ -88,6 +88,7 @@ const CLIENTS = [
   { name: "Dexa Medica", img: "/images/clients/dexa-medica.png" },
   { name: "Alfamart", img: "/images/clients/alfamart.png" },
   { name: "Dua Kelinci", img: "/images/clients/dua-kelinci-v2.png" },
+  { name: "TMNC", img: "/images/clients/tmnc.png" },
 ];
 
 const STEPS = [

@@ -137,6 +137,7 @@ export default function Home() {
             { src: "/images/clients/alfamart.png", alt: "Alfamart", w: 750, h: 240 },
             { src: "/images/clients/dua-kelinci-v2.png", alt: "Dua Kelinci", w: 494, h: 300 },
             { src: "/images/clients/dexa-medica.png", alt: "Dexa Medica", w: 749, h: 247 },
+            { src: "/images/clients/tmnc.png", alt: "TMNC", w: 522, h: 140 },
           ].map((logo, i) => (
             // Marquee repeats the list 2× for the infinite scroll; only the first
             // copy is exposed to assistive tech, the rest are decorative duplicates.
