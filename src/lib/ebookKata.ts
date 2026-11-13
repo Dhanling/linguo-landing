@@ -31,6 +31,24 @@ export interface ArtiKata {
    * disembunyikan, karena "casa → casa" cuma menambah baris tanpa isi.
    */
   translit?: string;
+  /** [ebook-kata-gender-v1] Gender kata benda: masculine|feminine|neuter|common, "" kalau tak ada. */
+  gender?: string;
+  /** Artikel tentu tunggal ("el", "la", "der", "het") — "" kalau bahasanya tak punya. */
+  article?: string;
+}
+
+/** [ebook-kata-gender-v1] Chip gender di tooltip kata ("la · feminin"). Warna
+ *  sama dengan chip kartu kata Meet (genderChip di wordLookup.ts dashboard). */
+export function chipGender(a?: Pick<ArtiKata, "gender" | "article"> | null, en = false): { teks: string; warna: string; latar: string } | null {
+  const g = String(a?.gender || "").toLowerCase();
+  const c = g.startsWith("masc") ? { l: en ? "masculine" : "maskulin", warna: "#8EC5FF", latar: "rgba(142,197,255,.16)" }
+    : g.startsWith("fem") ? { l: en ? "feminine" : "feminin", warna: "#F7A8C8", latar: "rgba(247,168,200,.16)" }
+    : g.startsWith("neut") ? { l: en ? "neuter" : "netral", warna: "#D9D3A3", latar: "rgba(217,211,163,.16)" }
+    : g.startsWith("common") ? { l: en ? "common" : "umum (en)", warna: "#C9D6D4", latar: "rgba(201,214,212,.14)" }
+    : null;
+  if (!c) return null;
+  const art = String(a?.article || "").trim();
+  return { teks: art ? `${art} · ${c.l}` : c.l, warna: c.warna, latar: c.latar };
 }
 
 /**
@@ -122,6 +140,8 @@ function ambilTersimpan(k: string): ArtiKata | undefined {
   const l = bacaLokal()[k];
   if (!l) return undefined;
   const { t: _t, ...arti } = l;
+  // [ebook-kata-gender-v1] Kata benda tersimpan sebelum ada kolom gender → ambil ulang.
+  if (arti.gender === undefined && /benda|nomina|noun/i.test(arti.kelas || "")) return undefined;
   memori.set(k, arti);
   return arti;
 }
@@ -183,6 +203,8 @@ async function tanyaArti(k: string, kata: string, kalimat: string, kode: string)
     const kelas = typeof p.type === "string" ? p.type.trim() : "";
     const dasar = typeof p.base === "string" ? p.base.trim() : "";
     const translit = typeof p.translit === "string" ? p.translit.trim() : "";
+    const gender = typeof p.gender === "string" ? p.gender.trim().toLowerCase() : "";
+    const article = typeof p.article === "string" ? p.article.trim() : "";
     if (!arti && !kelas) return null;
     const hasil: ArtiKata = {
       arti,
@@ -194,6 +216,8 @@ async function tanyaArti(k: string, kata: string, kalimat: string, kode: string)
         translit && perluTranslit(kata) && translit.toLowerCase() !== kata.toLowerCase()
           ? translit
           : undefined,
+      gender,
+      article: gender ? article : "",
     };
     // Cuma hasil yang BERHASIL yang disimpan: kegagalan sesaat (jaringan siswa
     // putus sebentar) tak boleh membekukan kata itu jadi "tak ada arti"

@@ -72,9 +72,19 @@ const SISTEM =
   '"translit":"Latin-alphabet romanization of the word, using that language standard scheme ' +
   '(Russian/Arabic/Persian/Urdu: ALA-LC; Japanese: Hepburn; Mandarin: Hanyu Pinyin WITH tone marks; ' +
   'Korean: Revised Romanization; Hindi/Bengali: IAST; Greek: ISO 843; Thai: RTGS). ' +
-  'Empty string ONLY when the word is already written in the Latin alphabet"}. ' +
-  'Example for Russian: {"meaning":"sedikit","type":"kata keterangan","base":"","translit":"nemnogo"}. ' +
-  'Example for Spanish: {"meaning":"rumah","type":"kata benda","base":"","translit":""}. ' +
+  'Empty string ONLY when the word is already written in the Latin alphabet",' +
+  /* [ebook-kata-gender-v1] KEMBAR dengan edge fn ebook-kata (linguo-app). */
+  '"gender":"grammatical gender of a NOUN in languages that have it (Spanish, Portuguese, French, Italian, ' +
+  'Catalan, Romanian, German, Dutch, Swedish/Danish/Norwegian, Icelandic, Russian, Ukrainian, Polish, Czech, ' +
+  'Slovak, Slovenian, Serbian/Croatian/Bosnian, Bulgarian, Greek, Latin, Irish, Arabic, Hebrew, Hindi, Urdu, ...): ' +
+  'exactly one of masculine/feminine/neuter/common; empty string for non-nouns and for languages without ' +
+  'grammatical gender (English, Indonesian, Chinese, Japanese, Korean, Turkish, Finnish, Hungarian, Persian, Thai, ...)",' +
+  '"article":"singular DEFINITE article learners memorize with that noun, in the language itself: Spanish el/la ' +
+  "(el agua), French le/la (never l'), Italian il/lo/la, Portuguese o/a, Catalan el/la, German der/die/das, " +
+  'Dutch de/het, Swedish en/ett, Danish en/et, Norwegian en/ei/et, Greek ο/η/το; empty string when the language ' +
+  'has no free-standing article (Slavic, Romanian, Arabic, Hebrew, Hindi, ...) or the word is not a noun"}. ' +
+  'Example for Russian: {"meaning":"sedikit","type":"kata keterangan","base":"","translit":"nemnogo","gender":"","article":""}. ' +
+  'Example for Spanish: {"meaning":"rumah","type":"kata benda","base":"","translit":"","gender":"feminine","article":"la"}. ' +
   "Give the meaning the word carries IN THAT SENTENCE, not every possible meaning.";
 
 const pesan = (kata: string, kalimat: string, bahasa: string) =>
@@ -90,7 +100,7 @@ async function lewatOpenAICompat(
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
     body: JSON.stringify({
       model,
-      max_tokens: 200,
+      max_tokens: 260,
       temperature: 0,
       response_format: { type: "json_object" },
       messages: [
@@ -117,7 +127,7 @@ async function lewatGemini(kata: string, kalimat: string, bahasa: string): Promi
         contents: [{ role: "user", parts: [{ text: pesan(kata, kalimat, bahasa) }] }],
         generationConfig: {
           temperature: 0,
-          maxOutputTokens: 200,
+          maxOutputTokens: 260,
           responseMimeType: "application/json",
           // Tanpa ini Flash-Lite bisa menghabiskan seluruh jatah keluaran untuk
           // berpikir lalu mengembalikan teks kosong — untuk mencari arti satu
@@ -255,7 +265,10 @@ export async function POST(req: NextRequest) {
 
     const jalur = jalurCache(bahasa, kata.toLowerCase(), kalimat);
     const tersimpan = await dariCache(jalur);
-    if (tersimpan) return NextResponse.json({ ...tersimpan, cached: true });
+    /* [ebook-kata-gender-v1] Entri kata benda dari sebelum ada kolom gender
+       ditanyakan ulang (lalu ditimpa) — kata lain tetap dari cache. */
+    const bendaLama = tersimpan && !("gender" in tersimpan) && /benda|noun/i.test(String(tersimpan.type ?? ""));
+    if (tersimpan && !bendaLama) return NextResponse.json({ ...tersimpan, cached: true });
 
     const { teks, oleh } = await tanyaAI(kata, kalimat, bahasa);
     /* [ebook-kata-galat-per-kata-v1] Sesudah titik ini penyedianya SUDAH
@@ -280,6 +293,11 @@ export async function POST(req: NextRequest) {
       /* [ebook-kata-translit-v1] Cara baca beraksara Latin — kosong untuk bahasa
          yang memang sudah Latin (klien menyembunyikan barisnya). */
       translit: typeof p.translit === "string" ? p.translit.trim().slice(0, 80) : "",
+      gender: (() => {
+        const g = typeof p.gender === "string" ? p.gender.trim().toLowerCase() : "";
+        return ["masculine", "feminine", "neuter", "common"].includes(g) ? g : "";
+      })(),
+      article: typeof p.article === "string" ? p.article.trim().slice(0, 12) : "",
     };
     if (!hasil.meaning && !hasil.type) return NextResponse.json({ error: "arti kosong" }, { status: 422 });
 

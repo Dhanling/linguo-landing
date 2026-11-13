@@ -44,7 +44,7 @@ import {
 } from "@/lib/ebookTts";
 // [slide-arti-v1] Arti kata yang SAMA dengan kartu ketuk-kata reader e-book
 // (cache memori → localStorage → cache bersama di server).
-import { artiKataEbook, artiTersimpan, type HasilArti } from "@/lib/ebookKata";
+import { artiKataEbook, artiTersimpan, chipGender, type HasilArti } from "@/lib/ebookKata";
 import { SlideVisual } from "@/components/akun/SlideVisual";
 
 import ArabicPronounSlide from "./ArabicPronounSlide";
@@ -144,6 +144,17 @@ function ketukKartuUcap(e: ReactMouseEvent) {
   const akar = kartu.querySelector("[data-ucap-akar]");
   const sasaran = akar?.querySelector<HTMLElement>("[data-ucap-kalimat]") || akar?.querySelector<HTMLElement>("[data-ucap]");
   sasaran?.click();
+}
+/* [slide-gulir-sembunyi-v1] 13 Nov 2026 — scrollbar isi slide cuma tampil saat
+   kursor bergerak di atasnya / sedang digulir, lalu hilang 1,2 dtk kemudian.
+   Slide yang dipresentasikan di Meet jadi bersih tanpa batang abu-abu diam.
+   Gayanya di CSS global (.slide-gulir). */
+function tampilGulir(e: { currentTarget: EventTarget }) {
+  const el = e.currentTarget as HTMLElement & { _gulirT?: number };
+  if (el.scrollHeight <= el.clientHeight) return;
+  el.dataset.gulir = "1";
+  window.clearTimeout(el._gulirT);
+  el._gulirT = window.setTimeout(() => { delete el.dataset.gulir; }, 1200);
 }
 /** Kelas kartu yang bisa diketuk: membesar halus saat kursor singgah. */
 const KARTU_KETUK = "cursor-pointer transition-[transform,box-shadow] duration-200 ease-out hover:z-10 hover:scale-[1.025] hover:shadow-lg";
@@ -321,6 +332,14 @@ function Ucap({ teks, lang, kalimat = true, peran }: { teks: string; lang?: stri
           {tip.arti ? (
             <>
               <span className="block">{tip.arti.arti}</span>
+              {/* [ebook-kata-gender-v1] Kata benda bergender: chip "la · feminin". */}
+              {(() => {
+                const g = chipGender(tip.arti, en);
+                return g && (
+                  <span className="mt-[0.3em] inline-block rounded-full px-[0.6em] py-[0.1em] text-[0.82em] font-semibold"
+                    style={{ color: g.warna, background: g.latar }}>{g.teks}</span>
+                );
+              })()}
               {(tip.arti.kelas || tip.arti.dasar) && (
                 <span className="mt-[0.2em] block text-[0.82em] text-gray-400">
                   {[tip.arti.kelas, tip.arti.dasar && `${en ? "base" : "dasar"}: ${tip.arti.dasar}`].filter(Boolean).join(" · ")}
@@ -632,7 +651,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
           {s.note && <p className="shrink-0 rounded-xl border border-amber-200 bg-amber-50 px-[2.2cqw] py-[0.9cqh] text-[0.86em] text-amber-800">{s.note}</p>}
         </div>
       ) : (
-      <div className="mt-[2cqh] min-h-0 flex-1 overflow-y-auto pr-[1cqw]" style={{ scrollbarWidth: "thin", fontSize: `clamp(${0.66 * skala}rem, ${1.5 * skala}cqw, ${1.05 * skala}rem)` }}>
+      <div className="slide-gulir mt-[2cqh] min-h-0 flex-1 overflow-y-auto pr-[1cqw]" onScroll={tampilGulir} onPointerMove={tampilGulir} style={{ fontSize: `clamp(${0.66 * skala}rem, ${1.5 * skala}cqw, ${1.05 * skala}rem)` }}>
         {/* [slide-sifat-pasangan-v1] Lawan kata sebaris: kiri "murah", kanan "mahal". */}
         {s.type === "vocab" && (
           <ul className={`grid gap-x-[1.6cqw] gap-y-[1.2cqh] ${kosakata.length > 4 ? "grid-cols-2" : "grid-cols-1"}`}>

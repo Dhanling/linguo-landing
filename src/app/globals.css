@@ -349,3 +349,12 @@ body.ebook-cicip-buka .lingw-teaser { display: none !important; }
    animasi klik kartu produk beranda. Browser tanpa dukungan cukup pindah biasa. */
 @view-transition { navigation: auto; }
 @media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+
+/* [slide-gulir-sembunyi-v1] Scrollbar isi slide tersembunyi sampai kursor
+   bergerak/menggulir (data-gulir dipasang tampilGulir di SlideDeckViewer). */
+.slide-gulir { scrollbar-width: thin; scrollbar-color: transparent transparent; }
+.slide-gulir[data-gulir] { scrollbar-color: rgba(15, 23, 42, 0.28) transparent; }
+.slide-gulir::-webkit-scrollbar { width: 6px; }
+.slide-gulir::-webkit-scrollbar-track { background: transparent; }
+.slide-gulir::-webkit-scrollbar-thumb { background: transparent; border-radius: 9999px; }
+.slide-gulir[data-gulir]::-webkit-scrollbar-thumb { background: rgba(15, 23, 42, 0.28); }
