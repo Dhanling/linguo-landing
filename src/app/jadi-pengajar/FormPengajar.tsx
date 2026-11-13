@@ -29,6 +29,7 @@ import {
   GraduationCap, Award, Link2, AlertCircle,
   Wallet, Clock, Home, TrendingUp, Globe, MessagesSquare,
   X, Loader2, CheckCircle2, Search, Check, ChevronDown, ChevronLeft, ChevronRight,
+  FileText, Upload,
 } from "lucide-react";
 
 // [jadi-pengajar-flat-icon-v1] ikon flat (lucide) menggantikan emoji di kartu manfaat.
@@ -234,6 +235,16 @@ const T = {
     s3Desc: "Ceritakan pengalaman dan motivasi kamu",
     expLabel: "Pengalaman Mengajar *",
     expOptions: ["Belum pernah (tapi mau belajar)", "< 1 tahun", "1-3 tahun", "3-5 tahun", "5+ tahun"],
+    // [lamaran-cv-v1]
+    cvLabel: "CV / Daftar Riwayat Hidup (opsional)",
+    cvPick: "Pilih berkas CV",
+    cvHint: "PDF atau Word, maksimal 10 MB. CV akan tersimpan di profil pengajar kamu kalau diterima.",
+    cvUploading: "Mengunggah CV…",
+    cvReplace: "Ganti",
+    cvRemove: "Hapus CV",
+    cvBadType: "Format CV harus PDF atau Word (.doc/.docx).",
+    cvTooBig: "Ukuran CV maksimal 10 MB.",
+    cvFailed: "CV gagal diunggah. Coba lagi, atau lanjut tanpa CV.",
     videoLabel: "Video Perkenalan (opsional)",
     videoPh: "Link YouTube atau Google Drive (1-3 menit)",
     videoTip: "Tips: Perkenalkan diri, tunjukkan gaya mengajar, dan jelaskan kenapa kamu cocok jadi pengajar",
@@ -245,7 +256,7 @@ const T = {
       name: "Nama", email: "Email", wa: "WhatsApp", nationality: "Asal", residence: "Negara domisili",
       province: "Provinsi", city: "Kota",
       langs: "Bahasa", mode: "Mode Mengajar", cert: "Sertifikat", kids: "Mengajar Kids", testPrep: "Persiapan Tes", abroad: "Kampus Luar Negeri",
-      exp: "Pengalaman", video: "Video", motiv: "Motivasi",
+      exp: "Pengalaman", cv: "CV", video: "Video", motiv: "Motivasi",
     },
     yes: "Ya",
     no: "Tidak",
@@ -446,6 +457,16 @@ const T = {
     s3Desc: "Tell us about your experience and what motivates you",
     expLabel: "Teaching Experience *",
     expOptions: ["None yet (but eager to learn)", "< 1 year", "1-3 years", "3-5 years", "5+ years"],
+    // [lamaran-cv-v1]
+    cvLabel: "CV / Resume (optional)",
+    cvPick: "Choose CV file",
+    cvHint: "PDF or Word, max 10 MB. If you are accepted, your CV is kept on your teacher profile.",
+    cvUploading: "Uploading CV…",
+    cvReplace: "Replace",
+    cvRemove: "Remove CV",
+    cvBadType: "Your CV must be a PDF or Word file (.doc/.docx).",
+    cvTooBig: "Your CV must be 10 MB or smaller.",
+    cvFailed: "CV upload failed. Try again, or continue without a CV.",
     videoLabel: "Introduction Video (optional)",
     videoPh: "YouTube or Google Drive link (1-3 minutes)",
     videoTip: "Tip: introduce yourself, show your teaching style, and explain why you would be a good fit",
@@ -457,7 +478,7 @@ const T = {
       name: "Name", email: "Email", wa: "WhatsApp", nationality: "Nationality", residence: "Country of residence",
       province: "Province", city: "City",
       langs: "Languages", mode: "Teaching Mode", cert: "Certificates", kids: "Teaches Kids", testPrep: "Test Prep", abroad: "University Abroad",
-      exp: "Experience", video: "Video", motiv: "Motivation",
+      exp: "Experience", cv: "CV", video: "Video", motiv: "Motivation",
     },
     yes: "Yes",
     no: "No",
@@ -737,6 +758,42 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
   // Step 3: Pengalaman
   const [exp, setExp] = useState("");
   const [videoLink, setVideoLink] = useState("");
+  // [lamaran-cv-v1] CV diunggah langsung ke storage privat; yang dikirim bersama formulir cuma path-nya.
+  const [cv, setCv] = useState<{ path: string; name: string } | null>(null);
+  const [cvBusy, setCvBusy] = useState(false);
+  const [cvError, setCvError] = useState<string | null>(null);
+  const CV_TYPES: Record<string, string> = {
+    pdf: "application/pdf",
+    doc: "application/msword",
+    docx: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  };
+  const uploadCv = async (file: File) => {
+    setCvError(null);
+    const ext = (file.name.split(".").pop() || "").toLowerCase();
+    const type = CV_TYPES[ext];
+    if (!type) { setCvError(t.cvBadType); return; }
+    if (file.size > 10 * 1024 * 1024) { setCvError(t.cvTooBig); return; }
+    setCvBusy(true);
+    try {
+      const signRes = await fetch("/api/teacher-apply/cv", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type, size: file.size }),
+      });
+      if (!signRes.ok) throw new Error("sign");
+      const { path, uploadUrl } = await signRes.json();
+      const fd = new FormData();
+      fd.append("cacheControl", "3600");
+      fd.append("", new Blob([file], { type }), file.name);
+      const up = await fetch(uploadUrl, { method: "PUT", body: fd, headers: { "x-upsert": "false" } });
+      if (!up.ok) throw new Error("upload");
+      setCv({ path, name: file.name });
+    } catch {
+      setCvError(t.cvFailed);
+    } finally {
+      setCvBusy(false);
+    }
+  };
   const [motivation, setMotivation] = useState("");
 
   // ---- Lang skills helpers ----
@@ -861,7 +918,7 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
         && canTeachKids !== null
         && kidsOk;
     }
-    if (s === 3) return !!exp;
+    if (s === 3) return !!exp && !cvBusy;
     return true;
   };
 
@@ -890,6 +947,7 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
       teaching_mode: teachingMode || null,
       can_teach_kids: canTeachKids === true,
       kids_tiers: canTeachKids === true ? kidsTiers : null,
+      cv_path: cv?.path ?? null,
     };
 
     try {
@@ -1540,6 +1598,36 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
                   </div>
                 </div>
 
+                {/* [lamaran-cv-v1] */}
+                <div>
+                  <label className="text-xs font-semibold text-slate-500 mb-1.5 block">{t.cvLabel}</label>
+                  {cv ? (
+                    <div className="flex items-center gap-3 border-2 border-[#1A9E9E]/30 bg-[#1A9E9E]/5 rounded-xl px-4 py-3">
+                      <FileText className="h-5 w-5 text-[#1A9E9E] flex-shrink-0" />
+                      <span className="text-sm font-medium text-slate-700 truncate flex-1 min-w-0">{cv.name}</span>
+                      <label className="text-xs font-semibold text-[#1A9E9E] hover:underline cursor-pointer flex-shrink-0">
+                        {t.cvReplace}
+                        <input type="file" accept=".pdf,.doc,.docx" className="hidden" disabled={cvBusy}
+                          onChange={e => { const f = e.target.files?.[0]; e.target.value = ""; if (f) uploadCv(f); }} />
+                      </label>
+                      <button type="button" onClick={() => setCv(null)} aria-label={t.cvRemove}
+                        className="h-8 w-8 flex-shrink-0 flex items-center justify-center rounded-lg text-slate-400 hover:bg-red-50 hover:text-red-500 transition-colors">
+                        <X size={16} />
+                      </button>
+                    </div>
+                  ) : (
+                    <label className={`flex items-center justify-center gap-2 border-2 border-dashed rounded-xl px-4 py-4 text-sm transition-colors ${cvBusy ? "border-slate-200 text-slate-400 cursor-wait" : "border-slate-200 text-slate-600 hover:border-[#1A9E9E] hover:text-[#1A9E9E] cursor-pointer"}`}>
+                      {cvBusy ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4" />}
+                      {cvBusy ? t.cvUploading : t.cvPick}
+                      <input type="file" accept=".pdf,.doc,.docx" className="hidden" disabled={cvBusy}
+                        onChange={e => { const f = e.target.files?.[0]; e.target.value = ""; if (f) uploadCv(f); }} />
+                    </label>
+                  )}
+                  {cvError
+                    ? <p className="text-xs text-red-500 mt-1.5">{cvError}</p>
+                    : <p className="text-xs text-slate-400 mt-1.5">{t.cvHint}</p>}
+                </div>
+
                 <div>
                   <label className="text-xs font-semibold text-slate-500 mb-1.5 block">{t.videoLabel}</label>
                   <input type="url" value={videoLink} onChange={e => setVideoLink(e.target.value)} placeholder={t.videoPh}
@@ -1579,6 +1667,7 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
                     { label: t.review.testPrep, value: testPrepList.join(", ") || "-" },
                     { label: t.review.abroad, value: abroadUni.trim() || "-" },
                     { label: t.review.exp, value: exp ? t.expOptions[EXP_VALUES.indexOf(exp as typeof EXP_VALUES[number])] ?? exp : "" },
+                    { label: t.review.cv, value: cv?.name || "-" },
                     { label: t.review.video, value: videoLink || "-" },
                   ].map((r, i) => (
                     <div key={i} className="flex justify-between px-5 py-3">

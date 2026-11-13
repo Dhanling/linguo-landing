@@ -101,8 +101,11 @@ export async function POST(req: NextRequest) {
     const {
       name, email, phone, province, city, languages, level, experience, note,
       nationality, residence_country,
-      teaching_mode, can_teach_kids, kids_tiers,
+      teaching_mode, can_teach_kids, kids_tiers, cv_path,
     } = body;
+
+    // [lamaran-cv-v1] path hasil /api/teacher-apply/cv — hanya terima bentuk yang kita terbitkan sendiri.
+    const cvPath = typeof cv_path === "string" && /^lamaran\/[0-9a-f-]{36}\.(pdf|docx?)$/.test(cv_path) ? cv_path : null;
 
     // ---- Validasi field wajib ----
     if (!name?.trim() || !email?.trim() || !phone?.trim() || !province?.trim() || !city?.trim() || !languages?.trim()) {
@@ -151,7 +154,25 @@ export async function POST(req: NextRequest) {
     }
 
     // ---- Insert ----
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/teacher_applications`, {
+    const row: Record<string, unknown> = {
+      name: name.trim(),
+      email: normalizedEmail,
+      phone: normalizedPhone,
+      province: province.trim(),
+      city: city.trim(),
+      nationality: typeof nationality === "string" ? nationality.trim() || null : null,
+      residence_country: typeof residence_country === "string" ? residence_country.trim() || null : null,
+      languages: languages.trim(),
+      level: level || null,
+      experience: experience || null,
+      note: note || null,
+      teaching_mode: teaching_mode || null,
+      can_teach_kids: can_teach_kids === true,
+      kids_tiers: normalizedKidsTiers,
+      status: "submitted", // initial state — valid per teacher_applications_status_check
+    };
+    if (cvPath) row.cv_path = cvPath;
+    const insert = (body: Record<string, unknown>) => fetch(`${SUPABASE_URL}/rest/v1/teacher_applications`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -159,24 +180,19 @@ export async function POST(req: NextRequest) {
         Authorization: `Bearer ${SUPABASE_KEY}`,
         Prefer: "return=representation",
       },
-      body: JSON.stringify({
-        name: name.trim(),
-        email: normalizedEmail,
-        phone: normalizedPhone,
-        province: province.trim(),
-        city: city.trim(),
-        nationality: typeof nationality === "string" ? nationality.trim() || null : null,
-        residence_country: typeof residence_country === "string" ? residence_country.trim() || null : null,
-        languages: languages.trim(),
-        level: level || null,
-        experience: experience || null,
-        note: note || null,
-        teaching_mode: teaching_mode || null,
-        can_teach_kids: can_teach_kids === true,
-        kids_tiers: normalizedKidsTiers,
-        status: "submitted", // initial state — valid per teacher_applications_status_check
-      }),
+      body: JSON.stringify(body),
     });
+    let res = await insert(row);
+    // [lamaran-cv-v1] Jaga-jaga kolom cv_path belum ada di DB: jangan gagalkan lamaran,
+    // titipkan path CV di catatan supaya tetap bisa dilacak tim Kurikulum.
+    if (!res.ok && cvPath && res.status === 400) {
+      const errText = await res.clone().text();
+      if (errText.includes("cv_path")) {
+        delete row.cv_path;
+        row.note = [row.note, `CV: ${cvPath}`].filter(Boolean).join("\n");
+        res = await insert(row);
+      }
+    }
 
     if (!res.ok) {
       const err = await res.text();
