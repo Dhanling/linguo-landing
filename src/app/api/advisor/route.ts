@@ -7,7 +7,7 @@
 //   {"t":"error","v":"..."}  pesan error ramah
 //   {"t":"done"}
 
-import { NextRequest } from "next/server";
+import { NextRequest, after } from "next/server";
 import { batasLaju, ipPemanggil } from "@/lib/rateLimit";
 import { buildAdvisorSystemPrompt } from "@/lib/advisor/prompt";
 import { streamCompletion, type ChatMessage } from "@/lib/advisor/llm";
@@ -76,7 +76,7 @@ export async function POST(req: NextRequest) {
   };
 
   const userTurns = messages.filter((m) => m.role === "user").length;
-  if (userTurns === 1) void logAdvisorEvent("advisor_started", "web", sessionId, { path: "/konsultasi", ...visit });
+  if (userTurns === 1) after(() => logAdvisorEvent("advisor_started", "web", sessionId, { path: "/konsultasi", ...visit }));
 
   const enc = new TextEncoder();
   const stream = new ReadableStream({
@@ -105,8 +105,8 @@ export async function POST(req: NextRequest) {
             if (tc.function.name === "estimate_learning_plan" && (result as LearningPlan)?.ok) {
               const plan = result as LearningPlan;
               send({ t: "plan", v: plan, input: args });
-              void upsertAdvisorSession(sessionId, "web", { plan, answers: args as Record<string, unknown> });
-              void logAdvisorEvent("advisor_plan_generated", "web", sessionId, {
+              await upsertAdvisorSession(sessionId, "web", { plan, answers: args as Record<string, unknown> });
+              await logAdvisorEvent("advisor_plan_generated", "web", sessionId, {
                 language: plan.language.name,
                 target_level: plan.target_level,
                 program: plan.program,

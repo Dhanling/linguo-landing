@@ -15,7 +15,7 @@
 // Belum ada OAuth (versi pertama tanpa data pengguna). Kalau nanti butuh login
 // siswa: tambahkan cek Bearer token + /.well-known/oauth-protected-resource.
 
-import { NextRequest } from "next/server";
+import { NextRequest, after } from "next/server";
 import { batasLaju, ipPemanggil } from "@/lib/rateLimit";
 import { toolsFor, runTool } from "@/lib/advisor/tools";
 import { logAdvisorEvent } from "@/lib/advisor/leads";
@@ -101,13 +101,13 @@ async function handle(
       const clientVersion = typeof info.version === "string" ? info.version.slice(0, 40) : null;
       const client = mcpClientLabel(clientName, caller.ua);
       const sessionUuid = crypto.randomUUID();
-      void logAdvisorEvent("mcp_connected", "mcp", sessionUuid, {
+      after(() => logAdvisorEvent("mcp_connected", "mcp", sessionUuid, {
         client,
         client_name: clientName,
         client_version: clientVersion,
         user_agent: caller.ua || null,
         protocol: asked,
-      });
+      }));
       return {
         body: ok(id, {
           protocolVersion: SUPPORTED_VERSIONS.includes(asked) ? asked : LATEST,
@@ -140,20 +140,20 @@ async function handle(
         via: caller.client,
       });
       const failed = !fine || (result as { ok?: boolean })?.ok === false;
-      void logAdvisorEvent("mcp_tool_called", "mcp", caller.sessionUuid, {
+      after(() => logAdvisorEvent("mcp_tool_called", "mcp", caller.sessionUuid, {
         tool: name,
         client: caller.client,
         ok: !failed,
-      });
+      }));
       if (name === "estimate_learning_plan" && (result as LearningPlan)?.ok) {
         const p = result as LearningPlan;
-        void logAdvisorEvent("advisor_plan_generated", "mcp", caller.sessionUuid, {
+        after(() => logAdvisorEvent("advisor_plan_generated", "mcp", caller.sessionUuid, {
           client: caller.client,
           language: p.language.name,
           target_level: p.target_level,
           program: p.program,
           estimated_cost_idr: p.estimated_cost_idr,
-        });
+        }));
       }
       return {
         body: ok(id, {
