@@ -27,6 +27,15 @@ Tool baca diberi anotasi `readOnlyHint: true`. `request_trial`:
 validasi nomor WA, rate limit 5/jam per IP, dedupe nomor WA 24 jam (kanal `web_advisor` + `mcp`).
 Semua endpoint juga dibatasi 200 request / 10 menit per IP (`api_rate_limits`).
 
+## Membedakan ChatGPT vs Claude (laporan Kanal AI)
+
+Saat `initialize`, server membaca `clientInfo.name` (cadangan: User-Agent) dan membalas header
+`Mcp-Session-Id: <uuid>.<Label>` (mis. `….ChatGPT`). Klien wajib mengirim header itu lagi di tiap
+request, jadi setiap `tools/call` tercatat dengan kliennya di `advisor_events`
+(`mcp_connected`, `mcp_tool_called`, `meta.client`). Lead dari `request_trial` ditandai
+"Via: ChatGPT (MCP)". Laporan bulanan: RPC `ai_channel_monthly` (`supabase/sql/002_ai_kanal_laporan.sql`),
+tampil di dashboard admin → kartu Website Landing → tab **Kanal AI**.
+
 ## Uji lokal
 
 ```bash

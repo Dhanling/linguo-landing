@@ -16,7 +16,13 @@ import { saveLead, type AdvisorChannel } from "./leads";
 
 type JsonSchema = Record<string, unknown>;
 
-export type ToolContext = { channel: AdvisorChannel; sessionId: string | null; ip: string };
+export type ToolContext = {
+  channel: AdvisorChannel;
+  sessionId: string | null;
+  ip: string;
+  /** [ai-kanal-v1] Klien MCP / sumber AI pengunjung — ikut ke lead & event. */
+  via?: string | null;
+};
 
 export type AdvisorTool = {
   name: string;
@@ -217,6 +223,7 @@ export const ADVISOR_TOOLS: AdvisorTool[] = [
         schedule: str(a, "preferred_schedule", { max: 200 }),
         notes: str(a, "notes", { max: 400 }),
         sessionId: ctx.sessionId,
+        via: ctx.via ?? null,
       });
       if (!r.ok) return { ok: false, message: r.error };
       return {

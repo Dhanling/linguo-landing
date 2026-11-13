@@ -4,6 +4,8 @@
 import { NextRequest } from "next/server";
 import { batasLaju, ipPemanggil } from "@/lib/rateLimit";
 import { logAdvisorEvent } from "@/lib/advisor/leads";
+import { readAdAttribution } from "@/lib/adAttributionServer";
+import { aiSourceFromVisit } from "@/lib/advisor/aiSource";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -17,6 +19,10 @@ export async function POST(req: NextRequest) {
   await logAdvisorEvent("advisor_cta_clicked", "web", str(b.sessionId, 40), {
     label: str(b.label, 80),
     url: str(b.url, 300),
+    ai_source: (() => {
+      const a = readAdAttribution(req);
+      return aiSourceFromVisit(a.utm_source, a.referrer);
+    })(),
   });
   return new Response(null, { status: 204 });
 }

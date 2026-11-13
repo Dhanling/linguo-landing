@@ -15,6 +15,8 @@ import { openAiToolSpecs, runTool } from "@/lib/advisor/tools";
 import { logAdvisorEvent, upsertAdvisorSession, UUID_RE } from "@/lib/advisor/leads";
 import { WA_ADMIN_URL } from "@/lib/advisor/catalog";
 import type { LearningPlan } from "@/lib/advisor/plan";
+import { readAdAttribution } from "@/lib/adAttributionServer";
+import { aiSourceFromVisit } from "@/lib/advisor/aiSource";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -23,6 +25,15 @@ export const maxDuration = 60;
 const MAX_TURNS = 30;
 const MAX_CHARS = 1500;
 const MAX_TOOL_ROUNDS = 4;
+
+function hostOf(v: unknown): string | null {
+  if (typeof v !== "string" || !v) return null;
+  try {
+    return new URL(v).hostname.slice(0, 100);
+  } catch {
+    return null;
+  }
+}
 
 type InMsg = { role: "user" | "assistant"; content: string };
 
@@ -55,8 +66,17 @@ export async function POST(req: NextRequest) {
   if (typeof parsed === "string") return Response.json({ error: parsed }, { status: 400 });
   const { sessionId, messages } = parsed;
 
+  // [ai-kanal-v1] Asal pengunjung (first-touch dari cookie atribusi) → bisa dihitung
+  // "konsultasi yang datang dari ChatGPT/Perplexity/…" per bulan.
+  const attr = readAdAttribution(req);
+  const visit = {
+    ai_source: aiSourceFromVisit(attr.utm_source, attr.referrer),
+    utm_source: typeof attr.utm_source === "string" ? attr.utm_source.slice(0, 100) : null,
+    referrer_host: hostOf(attr.referrer),
+  };
+
   const userTurns = messages.filter((m) => m.role === "user").length;
-  if (userTurns === 1) void logAdvisorEvent("advisor_started", "web", sessionId, { path: "/konsultasi" });
+  if (userTurns === 1) void logAdvisorEvent("advisor_started", "web", sessionId, { path: "/konsultasi", ...visit });
 
   const enc = new TextEncoder();
   const stream = new ReadableStream({
@@ -92,6 +112,7 @@ export async function POST(req: NextRequest) {
                 program: plan.program,
                 total_sessions: plan.total_sessions,
                 estimated_cost_idr: plan.estimated_cost_idr,
+                ai_source: visit.ai_source,
               });
             }
             convo.push({ role: "tool", tool_call_id: tc.id, content: JSON.stringify(result).slice(0, 12000) });

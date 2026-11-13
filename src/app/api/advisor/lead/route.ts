@@ -6,6 +6,8 @@ import { NextRequest } from "next/server";
 import { batasLaju, ipPemanggil } from "@/lib/rateLimit";
 import { saveLead, UUID_RE } from "@/lib/advisor/leads";
 import { estimateLearningPlan, type LearningPlan } from "@/lib/advisor/plan";
+import { readAdAttribution, recordAdAttribution } from "@/lib/adAttributionServer";
+import { aiSourceFromVisit } from "@/lib/advisor/aiSource";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -36,7 +38,9 @@ export async function POST(req: NextRequest) {
     if (r.ok) plan = r;
   }
 
+  const attr = readAdAttribution(req);
   const r = await saveLead({
+    via: aiSourceFromVisit(attr.utm_source, attr.referrer),
     channel: "web",
     name: s(b.name, 80),
     whatsapp: s(b.whatsapp, 25),
@@ -45,5 +49,8 @@ export async function POST(req: NextRequest) {
     sessionId: UUID_RE.test(sessionId) ? sessionId : null,
     plan,
   });
+  // [ai-kanal-v1] Sama dengan form lain: tautkan asal kunjungan ke nomor WA ini,
+  // supaya pembayarannya nanti terlacak ke sumbernya (sales_paid / laporan Kanal AI).
+  if (r.ok && !r.duplicate) recordAdAttribution(req, { phone: s(b.whatsapp, 25), email: s(b.email, 120) || null });
   return Response.json(r, { status: r.ok ? 200 : 400 });
 }

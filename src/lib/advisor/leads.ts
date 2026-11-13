@@ -19,6 +19,9 @@ export const ADVISOR_EVENTS = [
   "advisor_plan_generated",
   "advisor_cta_clicked",
   "advisor_lead_saved",
+  // [ai-kanal-v1] MCP: sesi tersambung (initialize) & tiap pemanggilan tool.
+  "mcp_connected",
+  "mcp_tool_called",
 ] as const;
 export type AdvisorEvent = (typeof ADVISOR_EVENTS)[number];
 
@@ -117,6 +120,8 @@ export type LeadInput = {
   notes?: string | null;
   sessionId?: string | null;
   plan?: LearningPlan | null;
+  /** [ai-kanal-v1] Asal: klien MCP ("ChatGPT", "Claude") atau sumber AI pengunjung web. */
+  via?: string | null;
 };
 
 export type LeadResult =
@@ -154,7 +159,12 @@ export async function saveLead(input: LeadInput): Promise<LeadResult> {
         `${plan.total_sessions} sesi, ±${plan.estimated_months} bulan @${plan.sessions_per_week} sesi/minggu` +
         (plan.estimated_cost_idr ? `, estimasi Rp ${plan.estimated_cost_idr.toLocaleString("id-ID")}` : "")
       : null;
-    const reason = [planSummary, input.notes ? `Catatan: ${String(input.notes).slice(0, 400)}` : null]
+    const viaLabel = input.via
+      ? input.channel === "mcp"
+        ? `Via: ${input.via} (MCP)`
+        : `Asal pengunjung: ${input.via}`
+      : null;
+    const reason = [viaLabel, planSummary, input.notes ? `Catatan: ${String(input.notes).slice(0, 400)}` : null]
       .filter(Boolean)
       .join(" | ");
 
@@ -182,6 +192,7 @@ export async function saveLead(input: LeadInput): Promise<LeadResult> {
       language: plan?.language.name ?? input.language ?? null,
       program: plan?.program ?? input.program ?? null,
       estimated_cost_idr: plan?.estimated_cost_idr ?? null,
+      via: input.via ?? null,
     });
     return { ok: true, lead_id: leadId, duplicate: false };
   } catch (e) {
