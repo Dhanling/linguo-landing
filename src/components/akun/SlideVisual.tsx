@@ -14,6 +14,9 @@ import { useSlideEn } from "@/lib/slideUiEn";
 import { createContext, lazy, Suspense, useContext, useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Volume2, Wind, X, Check, Play, Square, RotateCcw, Equal, Shuffle, ChevronLeft, ChevronRight } from "lucide-react";
 import type { BandingStatus, BandingToken, Nada, SlideVisual as Visual } from "@/lib/materiSlides";
+// [slide-menulis-v1] Papan aksara + latihan mandiri untuk slide "Latihan Menulis · Part N".
+import { LatihanAksaraModal, PapanAksara, muatFontAksara } from "./PapanAksara";
+import { bahasaAksara, paketDariSlide, sumberGoresanPaket, teksUcap } from "@/lib/paketMenulis";
 // [isyarat-3d-v1] Avatar 3D bahasa isyarat — three.js dimuat hanya di slide ini.
 const SlideIsyarat = lazy(() => import("./SlideIsyarat"));
 // [slide-audio-eleven-v1] Klip per kata hasil ElevenLabs eleven_v4 (dibuat sekali,
@@ -1241,7 +1244,7 @@ export function SlideVisual({ visual, aksen, ucap, siapkan, lang }: {
       : visual.kind === "sejarah" ? visual.peristiwa.map((p) => p.asli || "")
       : visual.kind === "banding" ? visual.rows.flatMap((r) => r.target.map((t) => t.t))
       : visual.kind === "tabel" ? visual.baris.flatMap((b) => b.filter((_, i) => visual.kolom[i]?.target).map((c) => c.t))
-      : visual.kind === "alfabet" || visual.kind === "bunyi" || visual.kind === "isyarat" ? []
+      : visual.kind === "alfabet" || visual.kind === "bunyi" || visual.kind === "isyarat" || visual.kind === "menulis" ? []
       : visual.rows.map((r) => r.hanzi || "");
     teks.forEach((t) => { const u = urlKlip(t); if (u) void fetch(u, { cache: "force-cache" }).catch(() => {}); });
   }, [visual, klip]);
@@ -1263,5 +1266,45 @@ function Isi({ visual, aksen, ucap, siapkan }: { visual: Visual; aksen: string; 
   if (visual.kind === "bunyi") return <VisualBunyi v={visual} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
   if (visual.kind === "tabel") return <VisualTabel v={visual} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
   if (visual.kind === "alfabet") return <VisualAlfabet v={visual} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
+  if (visual.kind === "menulis") return <VisualMenulis v={visual} ucap={ucap} aksen={aksen} />;
   return null;
+}
+
+/* [slide-menulis-v1] Latihan Menulis · Part N — ubin contoh tiap huruf (urutan goresan
+   bernomor), cara baca, arti; klik ubin = papan latihan mandiri. Di Linguo Meet slide
+   ini tayang sebagai gambar, dan pengajar membuka papan Tulis Bersama dari pemilih slide. */
+function VisualMenulis({ v, ucap, aksen }: { v: Extract<Visual, { kind: "menulis" }>; ucap?: Ucap; aksen: string }) {
+  const [buka, setBuka] = useState<number | null>(null);
+  const lang = bahasaAksara(v.aksara);
+  const sumber = sumberGoresanPaket(v.aksara, v.set);
+  useEffect(() => { muatFontAksara(lang?.font); }, [lang?.font]);
+  const paket = paketDariSlide({ type: "points", heading: "", visual: v });
+  const en = v.ui === "en";
+  return (
+    <div style={{ display: "flex", height: "100%", flexDirection: "column", gap: "1.2cqh" }}>
+      <div style={{ display: "grid", gridTemplateColumns: `repeat(${v.huruf.length}, minmax(0, 1fr))`, gap: "1.4cqw", flex: 1, minHeight: 0, alignItems: "start" }}>
+        {v.huruf.map((h, i) => (
+          <button key={i} type="button" onClick={() => setBuka(i)} title={en ? "Click to practise writing" : "Klik untuk berlatih menulis"}
+            style={{ all: "unset", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", gap: "0.6cqh", minWidth: 0 }}>
+            <PapanAksara huruf={h} sumber={sumber} font={lang?.font} tampil="contoh"
+              style={{ width: "min(100%, 40cqh)", boxShadow: `0 0 0 0.15cqw ${aksen}55, 0 0.4cqw 1.2cqw rgba(15,80,90,.12)` }} />
+            <span style={{ fontWeight: 800, color: "#0f172a", fontSize: "1.15em", lineHeight: 1.1, textAlign: "center" }}
+              onClick={ucap ? (e) => { e.stopPropagation(); void ucap(teksUcap(h)); } : undefined}>
+              {h.r}{ucap && <Volume2 size="0.8em" style={{ marginLeft: "0.25em", verticalAlign: "-0.05em", color: aksen }} />}
+            </span>
+            {h.n && <span style={{ color: "#64748b", fontSize: "0.8em", lineHeight: 1.2, textAlign: "center" }}>{h.n}</span>}
+          </button>
+        ))}
+      </div>
+      <p style={{ margin: 0, flexShrink: 0, color: "#475569", fontSize: "0.85em" }}>
+        {en
+          ? "Numbers show the stroke order. Click a character to practise on the board."
+          : "Angka menunjukkan urutan goresan. Klik huruf untuk berlatih menulis di papan."}
+      </p>
+      {buka !== null && paket && (
+        <LatihanAksaraModal paket={paket} mulai={buka} ui={v.ui} onClose={() => setBuka(null)}
+          ucap={ucap ? (t) => { void ucap(t); } : undefined} />
+      )}
+    </div>
+  );
 }

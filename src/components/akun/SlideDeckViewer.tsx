@@ -631,8 +631,8 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
         <span className="inline-block rounded-full px-[0.9em] py-[0.2em] text-[clamp(0.5rem,1cqw,0.7rem)] font-extrabold uppercase tracking-[0.12em] text-white"
           style={{ background: tema.aksen }}>
           {s.ui === "en"
-            ? (s.visual?.kind === "isyarat" ? (s.visual.baris?.length ? "Sign dialogue" : "3D signs") : s.visual?.kind === "sejarah" ? "History" : s.visual?.kind === "banding" ? "Comparison" : s.visual?.kind === "alfabet" ? "Alphabet" : s.visual?.kind === "bunyi" ? "Pronunciation" : s.visual?.kind === "tabel" ? "Table" : SLIDE_TYPE_LABEL_EN[s.type] || SLIDE_TYPE_LABEL[s.type])
-            : s.visual?.kind === "isyarat" ? (s.visual.baris?.length ? "Dialog isyarat" : "Isyarat 3D") : s.visual?.kind === "sejarah" ? "Sejarah" : s.visual?.kind === "banding" ? "Perbandingan" : s.visual?.kind === "alfabet" ? "Alfabet" : s.visual?.kind === "bunyi" ? "Pelafalan" : s.visual?.kind === "tabel" ? "Tabel" : SLIDE_TYPE_LABEL[s.type]}
+            ? (s.visual?.kind === "isyarat" ? (s.visual.baris?.length ? "Sign dialogue" : "3D signs") : s.visual?.kind === "sejarah" ? "History" : s.visual?.kind === "banding" ? "Comparison" : s.visual?.kind === "alfabet" ? "Alphabet" : s.visual?.kind === "bunyi" ? "Pronunciation" : s.visual?.kind === "tabel" ? "Table" : s.visual?.kind === "menulis" ? "Writing practice" : SLIDE_TYPE_LABEL_EN[s.type] || SLIDE_TYPE_LABEL[s.type])
+            : s.visual?.kind === "isyarat" ? (s.visual.baris?.length ? "Dialog isyarat" : "Isyarat 3D") : s.visual?.kind === "sejarah" ? "Sejarah" : s.visual?.kind === "banding" ? "Perbandingan" : s.visual?.kind === "alfabet" ? "Alfabet" : s.visual?.kind === "bunyi" ? "Pelafalan" : s.visual?.kind === "tabel" ? "Tabel" : s.visual?.kind === "menulis" ? "Latihan Menulis" : SLIDE_TYPE_LABEL[s.type]}
         </span>
         <h3 className="mt-[0.8cqh] text-[clamp(1rem,2.4cqw,1.7rem)] font-extrabold leading-snug text-gray-900">{s.heading}</h3>
         {s.subheading && <p className="mt-0.5 text-[clamp(0.68rem,1.4cqw,0.95rem)] text-gray-500">{s.subheading}</p>}

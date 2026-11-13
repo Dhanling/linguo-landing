@@ -927,6 +927,7 @@ const MODUL_GORESAN: Record<string, () => Promise<ModulGoresan>> = {
   bali: () => import("./goresan/bali"),
   batak: () => import("./goresan/batak"),
   bengali: () => import("./goresan/bengali"),
+  bihua: () => import("./goresan/bihua"), // [slide-menulis-v1] goresan dasar Hanzi
   bugis: () => import("./goresan/bugis"),
   devanagari: () => import("./goresan/devanagari"),
   etiopia: () => import("./goresan/etiopia"),

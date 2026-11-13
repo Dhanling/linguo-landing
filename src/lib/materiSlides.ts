@@ -160,6 +160,11 @@ export interface IsyaratBaris { siapa: "A" | "B"; urut: string[]; gloss: string;
 /* [slide-tabel-v1] Tabel konjugasi/paradigma (mis. umur: я → мені, ти → тобі …).
    `kolom[i].target` = kolom berbahasa target: selnya bisa diklik untuk TTS dan
    bagian yang cocok dengan `sorot` diberi warna aksen. `arti` tampil kecil di bawah sel. */
+/* [slide-menulis-v1] Latihan menulis aksara per Part (lihat lib/paketMenulis.ts).
+   `c` = yang tampil, `t` = yang ditulis kalau beda (pasangan Kiril "Аа" → "а"),
+   `u` = yang dibunyikan kalau beda (goresan 笔画 → nama Hanzi-nya), `r` = cara baca. */
+export interface MenulisHuruf { c: string; r: string; n?: string; t?: string; u?: string }
+
 export interface TabelKolom { label: string; target?: boolean }
 export interface TabelSel { t: string; tr?: string; arti?: string }
 
@@ -188,7 +193,9 @@ export type SlideVisual =
   /** `vokalJudul`/`vokalKet` = ganti label kotak vokal (default "Vokal murni"). */
   | { kind: "bunyi"; vokal: BunyiVokal[]; khas: BunyiKhas[]; vokalJudul?: string; vokalKet?: string; ui?: "en" }
   /** `sorot` = potongan teks yang diwarnai di sel target; `ket` = catatan kecil di bawah tabel. */
-  | { kind: "tabel"; kolom: TabelKolom[]; baris: TabelSel[][]; sorot?: string[]; ket?: string };
+  | { kind: "tabel"; kolom: TabelKolom[]; baris: TabelSel[][]; sorot?: string[]; ket?: string }
+  /** [slide-menulis-v1] `aksara` = ScriptLang.key, `set` = ScriptSet.id asal hurufnya. */
+  | { kind: "menulis"; aksara: string; set: string; label: string; part: number; huruf: MenulisHuruf[]; ui?: "en" };
 
 export interface MateriSlide {
   type: SlideType;
@@ -391,6 +398,18 @@ function normVisual(v: any): SlideVisual | undefined {
       contoh: arr(h?.contoh).map((c) => ({ kata: str(c?.kata), arti: str(c?.arti), ikon: opt(c?.ikon), baca: opt(c?.baca) })).filter((c) => c.kata),
     })).filter((h) => h.huruf && h.nama);
     return huruf.length ? { kind: "alfabet", huruf, ui: v.ui === "en" ? "en" : undefined, ket: opt(v.ket) } : undefined;
+  }
+  if (v.kind === "menulis") {
+    const kode = str(v.aksara).toLowerCase();
+    const huruf = arr(v.huruf).map((h) => ({
+      c: str(h?.c), r: str(h?.r), ...(opt(h?.n) ? { n: opt(h?.n) } : null),
+      ...(opt(h?.t) ? { t: opt(h?.t) } : null), ...(opt(h?.u) ? { u: opt(h?.u) } : null),
+    })).filter((h) => h.c).slice(0, 8);
+    if (!/^[a-z]{2,3}$/.test(kode) || !huruf.length) return undefined;
+    return {
+      kind: "menulis", aksara: kode, set: str(v.set), label: str(v.label), part: Math.max(1, Math.round(Number(v.part)) || 1), huruf,
+      ...(v.ui === "en" ? { ui: "en" as const } : null),
+    };
   }
   if (v.kind === "tabel") {
     const kolom = arr(v.kolom).map((k) => ({ label: str(k?.label), ...(k?.target === true ? { target: true } : null) })).slice(0, 6);
