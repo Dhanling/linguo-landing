@@ -11,7 +11,7 @@
 // dashboard tidak menimpanya — slide selalu terang [slide-terang-v1].
 
 import { useSlideEn } from "@/lib/slideUiEn";
-import { createContext, lazy, Suspense, useContext, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
+import { createContext, lazy, Suspense, useContext, useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Volume2, Wind, X, Check, Play, Square, RotateCcw, Equal, Shuffle, ChevronLeft, ChevronRight } from "lucide-react";
 import type { BandingStatus, BandingToken, Nada, SlideVisual as Visual } from "@/lib/materiSlides";
 // [isyarat-3d-v1] Avatar 3D bahasa isyarat — three.js dimuat hanya di slide ini.
@@ -1105,6 +1105,38 @@ function potongKata(teks: string, sorot: string[]): Array<{ t: string; s: boolea
   return out;
 }
 
+/* [tabel-kembar-v1] Baris yang bentuknya SAMA (mis. lui · lei · Lei → il suo/la sua …) diberi warna
+   kelompok yang sama. Dibandingkan per kolom target (tanpa kolom subjek pertama & kolom contoh),
+   huruf besar-kecil diabaikan; kelompok yang mencakup semua baris tak diwarnai (tak informatif). */
+const WARNA_KEMBAR = ["#7C3AED", "#0284C7", "#DB2777", "#059669", "#B45309"];
+function kembarTabel(v: Extract<Visual, { kind: "tabel" }>) {
+  const target = v.kolom.map((k, i) => (k.target && !/contoh|kalimat|example/i.test(k.label) ? i : -1)).filter((i) => i >= 0);
+  // Kolom subjek (io/tu/lui…) dikenali dari labelnya; ia penamaan kelompok, bukan bahan perbandingan.
+  const subjek = v.kolom.findIndex((k) => /^(subjek|subject|pronoun|pronomina|kata ganti)$/i.test(k.label.trim()));
+  const banding = target.filter((i) => i !== subjek);
+  const norm = (t: string) => t.trim().replace(/\s+/g, " ").toLocaleLowerCase();
+  const kosong = (t: string) => !t.trim() || /^[—–\-·…]+$/.test(t.trim());
+  const induk = v.baris.map((_, r) => r);
+  const akar = (r: number): number => (induk[r] === r ? r : (induk[r] = akar(induk[r])));
+  const selSama = new Set<string>();
+  for (const c of banding) {
+    const peta = new Map<string, number[]>();
+    v.baris.forEach((b, r) => { const t = b[c]?.t || ""; if (!kosong(t)) peta.set(norm(t), [...(peta.get(norm(t)) || []), r]); });
+    for (const rs of peta.values()) {
+      if (rs.length < 2) continue;
+      rs.forEach((r) => { selSama.add(`${r}-${c}`); induk[akar(r)] = akar(rs[0]); });
+    }
+  }
+  const anggota = new Map<number, number[]>();
+  v.baris.forEach((_, r) => anggota.set(akar(r), [...(anggota.get(akar(r)) || []), r]));
+  const kelompok = [...anggota.values()].filter((rs) => rs.length >= 2 && rs.length < v.baris.length);
+  const warnaBaris = new Map<number, string>();
+  kelompok.forEach((rs, i) => rs.forEach((r) => warnaBaris.set(r, WARNA_KEMBAR[i % WARNA_KEMBAR.length])));
+  const nama = (r: number) => (subjek >= 0 ? v.baris[r][subjek]?.t : "") || v.baris[r][0]?.t || "";
+  const legenda = kelompok.map((rs, i) => ({ warna: WARNA_KEMBAR[i % WARNA_KEMBAR.length], nama: rs.map(nama).filter(Boolean) }));
+  return { warnaBaris, selSama, subjek, legenda };
+}
+
 function VisualTabel({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "tabel" }>; ucap?: Ucap; siapkan?: (t: string) => void; aksen: string }) {
   const kotak = useRef<HTMLDivElement>(null);
   const isi = useRef<HTMLDivElement>(null);
@@ -1127,10 +1159,11 @@ function VisualTabel({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "
     return () => ro.disconnect();
   }, []);
   const sorot = v.sorot || [];
+  const kembar = useMemo(() => kembarTabel(v), [v]);
   // Kolom Indonesia (label persona) sempit; kolom target dan kolom contoh panjang mendapat ruang lebih.
   const lebarKolom = v.kolom.map((k, i) => {
     const panjang = Math.max(k.label.length, ...v.baris.map((b) => (b[i]?.t || "").length));
-    return panjang > 14 ? "minmax(0,2.2fr)" : "minmax(0,1fr)";
+    return `minmax(0,${Math.min(2.2, Math.max(1, panjang / 9)).toFixed(2)}fr)`;
   }).join(" ");
   return (
     <div className="flex h-full flex-col gap-[0.8cqh]">
@@ -1145,14 +1178,22 @@ function VisualTabel({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "
             {v.baris.map((b, r) => b.map((c, i) => {
               const target = !!v.kolom[i]?.target;
               const latar = r % 2 ? "#F9FAFB" : "#FFFFFF";
+              // [tabel-kembar-v1] warna kelompok: sel yang sama bentuknya diberi latar tipis + teks berwarna.
+              const wk = kembar.warnaBaris.get(r);
+              const sama = !!wk && kembar.selSama.has(`${r}-${i}`);
+              const kepala = !!wk && (i === 0 || i === kembar.subjek);
+              const warnaSorot = sama ? wk : aksen;
               const gaya: React.CSSProperties = {
-                background: latar, borderTop: "1px solid #E5E7EB", borderLeft: i ? "1px solid #F1F5F9" : undefined,
+                background: sama || kepala ? `color-mix(in srgb, ${wk} 10%, ${latar})` : latar,
+                borderTop: "1px solid #E5E7EB", borderLeft: i ? "1px solid #F1F5F9" : undefined,
+                boxShadow: wk && i === 0 ? `inset 0.3em 0 0 ${wk}` : undefined,
                 animation: `slideVisMuncul .3s ease-out ${r * 0.07}s both`,
               };
               const isiSel = (
                 <>
-                  <span dir="auto" className={`${target ? "text-[1.12em] font-extrabold" : "text-[0.95em] font-bold"} leading-tight`} style={{ color: target ? "#111827" : "#374151", ...longgar(c.t) }}>
-                    {target && sorot.length ? potongKata(c.t, sorot).map((b, k) => <span key={k} style={b.s ? { color: aksen } : undefined}>{b.t}</span>) : c.t}
+                  <span dir="auto" className={`${target ? "text-[1.12em] font-extrabold" : "text-[0.95em] font-bold"} leading-tight`} style={{ color: kepala && i === kembar.subjek ? wk : target ? "#111827" : "#374151", ...longgar(c.t) }}>
+                    {target && sorot.length ? potongKata(c.t, sorot).map((b, k) => <span key={k} style={b.s ? { color: warnaSorot } : undefined}>{b.t}</span>)
+                      : sama ? <span style={{ color: wk }}>{c.t}</span> : c.t}
                   </span>
                   {c.tr && <span className="text-[0.74em] font-bold leading-tight" style={{ color: aksen }}>{c.tr}</span>}
                   {c.arti && <span className="text-[0.7em] leading-tight" style={{ color: "#6B7280" }}>{c.arti}</span>}
@@ -1166,6 +1207,18 @@ function VisualTabel({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "
           </div>
         </div>
       </div>
+      {kembar.legenda.length > 0 && (
+        <div className="flex shrink-0 flex-wrap items-center gap-x-[0.9em] gap-y-[0.3em] text-[0.74em] font-bold" style={{ color: "#4B5563" }}>
+          <span>Warna sama = bentuknya sama:</span>
+          {kembar.legenda.map((g, i) => (
+            <span key={i} className="inline-flex items-center gap-[0.35em] rounded-full px-[0.7em] py-[0.15em]"
+              style={{ color: g.warna, background: `color-mix(in srgb, ${g.warna} 12%, #FFFFFF)`, border: `1px solid color-mix(in srgb, ${g.warna} 35%, #FFFFFF)` }}>
+              <span className="inline-block h-[0.6em] w-[0.6em] rounded-full" style={{ background: g.warna }} />
+              <span dir="auto">{g.nama.join(" = ")}</span>
+            </span>
+          ))}
+        </div>
+      )}
       {v.ket && <p className="shrink-0 text-[0.78em] font-medium" style={{ color: "#4B5563" }}>{v.ket}</p>}
     </div>
   );
