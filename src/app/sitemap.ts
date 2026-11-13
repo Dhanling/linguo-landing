@@ -61,6 +61,8 @@ const STATIC_ROUTES: Array<{
   // [daftar-page-funnel-v1] /daftar = hub pendaftaran (dulu modal di homepage).
   // Langkah dalamnya (/daftar/<bahasa>/<program>/...) noindex — JANGAN didaftarkan.
   { path: "/daftar", priority: 0.9, changeFrequency: "weekly" },
+  // [ai-funnel-v1] Konsultan AI: wawancara singkat → rencana belajar + biaya resmi.
+  { path: "/konsultasi", priority: 0.8, changeFrequency: "monthly", updated: new Date("2026-11-13") },
   { path: "/harga", priority: 0.9, changeFrequency: "weekly" },
   { path: "/kursus", priority: 0.9, changeFrequency: "weekly" },
   { path: "/kelas-trial", priority: 0.9, changeFrequency: "weekly" },

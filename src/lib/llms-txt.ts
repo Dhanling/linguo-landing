@@ -65,7 +65,7 @@ const NOT_A_LANGUAGE = new Set(["ielts", "toefl-itp", "toefl"]);
  * gabungannya — daftar yang lebih pendek dari klaimnya justru mematahkan klaim
  * itu di mata mesin jawaban.
  */
-const PRICELIST_TO_CURRICULUM: Record<string, string> = {
+export const PRICELIST_TO_CURRICULUM: Record<string, string> = {
   Swahili: "swahili", Greek: "greek", Hindi: "hindi", Turkish: "turkish",
   Norwegian: "norwegian", Tagalog: "filipino", Vietnamese: "vietnamese",
   Swedish: "swedish", Urdu: "urdu", Kurdish: "kurdish", Hebrew: "hebrew",
@@ -88,7 +88,7 @@ const PRICELIST_TO_CURRICULUM: Record<string, string> = {
 };
 
 /** Bahasa yang ada di pricelist tapi belum punya baris di katalog kurikulum. */
-const PRICELIST_ONLY: Record<string, { name: string; nativeName: string; region: string }> = {
+export const PRICELIST_ONLY: Record<string, { name: string; nativeName: string; region: string }> = {
   "Traditional Chinese": { name: "Mandarin Tradisional (Taiwan)", nativeName: "繁體中文", region: "asian" },
   Uzbek: { name: "Uzbek", nativeName: "Oʻzbek", region: "other" },
   Serbian: { name: "Serbia", nativeName: "Српски", region: "european" },
@@ -226,6 +226,7 @@ ${perbandinganLinks()}
 - [Silabus](${BASE}/silabus): kurikulum per bahasa, 192 sesi dari A1 sampai B2, plus placement test gratis per bahasa.
 - [Silabus persiapan PTE Academic](${BASE}/persiapan-tes/pte): 16 modul untuk 22 tipe soal format terbaru, dipetakan ke paket 8, 12, dan 16 sesi private.
 ${TES_BAHASA.map((t) => `- [Kursus persiapan ${t.tes} online](${BASE}/persiapan-tes/${t.slug}): ujian bahasa ${t.bahasa}, bagian yang diujikan, padanan level CEFR, dan biaya kelas persiapan.`).join("\n")}
+- [Konsultasi rencana belajar](${BASE}/konsultasi): konsultan AI gratis — tanya tujuan belajar, lalu susun target level CEFR, estimasi jumlah sesi & durasi, program, dan biaya sesuai pricelist resmi.
 - [Kelas trial](${BASE}/kelas-trial): satu sesi percobaan berbayar sebelum ambil paket.
 - [Simulasi TOEFL](${BASE}/simulasi): simulasi tes dengan skor resmi.
 - [Watch & Learn](${BASE}/watch-learn): belajar dari video YouTube dengan transkrip dan terjemahan.
@@ -240,6 +241,10 @@ ${KOTA_OFFLINE.map((k) => `- [Kursus bahasa offline di ${k.nama}](${BASE}/kursus
 - [Program korporat](${BASE}/corporate): pelatihan bahasa untuk karyawan perusahaan.
 - [Jasa penerjemah](${BASE}/translator) dan [juru bahasa](${BASE}/interpreter).
 - [Karier & rekrutmen pengajar](${BASE}/jadi-pengajar).
+
+## Untuk asisten AI (MCP)
+
+- MCP server: ${BASE}/api/mcp (Streamable HTTP, tanpa login). Tool: list_languages, search_programs, get_program_details, estimate_learning_plan, get_placement_test_link, request_trial. Harga & estimasi dihitung dari pricelist resmi yang sama dengan halaman ini.
 
 ## Kontak
 

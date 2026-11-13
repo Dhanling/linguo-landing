@@ -101,4 +101,5 @@ export const FOOTER_PROGRAMS: { label: string; href: string }[] = [
   { label: "Persiapan PTE",   href: "/persiapan-tes?produk=pte" },
   { label: "Persiapan TOEIC", href: "/persiapan-tes?produk=toeic" }, // [toeic-prep-v1]
   { label: "Kelas Anak",      href: "/kelas-anak" },
+  { label: "Konsultasi Rencana Belajar", href: "/konsultasi" }, // [ai-funnel-v1]
 ];
