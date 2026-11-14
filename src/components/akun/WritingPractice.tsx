@@ -32,6 +32,10 @@ import {
   KOTAK_GORESAN, SCRIPT_LANGS, muatGoresan, pecahBagian, pilihBahasaAksara, teksFrasa,
   type Glyph, type ScriptLang, type ScriptSet,
 } from "@/lib/writingScripts";
+import {
+  BATAS_LULUS, FONT_AKSARA, KUNCI_KEMAJUAN, bacaKemajuan, gambarGaris, gambarHuruf, nilaiBentuk, pngTulisan,
+  type Kemajuan, type Pt,
+} from "@/lib/nilaiTulisan";
 
 export type HasilNilaiAi = { score: number; feedback: string; tips: string[] };
 export type MintaNilaiAi = (a: {
@@ -208,20 +212,8 @@ const TINTA = "#0f172a";
 const BAYANGAN = "#dbe3ea";
 const TEAL = "#1A9E9E";
 const MERAH = "#e11d48";
-const BATAS_LULUS = 80;
-
-const FONT_AKSARA =
-  '"Noto Sans", "Noto Sans JP", "Noto Sans KR", "Noto Sans Thai", "Noto Sans Arabic", "Noto Sans Devanagari", "Noto Sans Hebrew", "Hiragino Sans", "Apple SD Gothic Neo", "Thonburi", "Geeza Pro", "Malgun Gothic", "Leelawadee UI", "Nirmala UI", system-ui, sans-serif';
-
-/* ── kemajuan (localStorage) ──────────────────────────────────────────────── */
-const KUNCI_KEMAJUAN = "linguo:menulis:v1";
-type Kemajuan = Record<string, Record<string, number>>;
-function bacaKemajuan(): Kemajuan {
-  try { return JSON.parse(localStorage.getItem(KUNCI_KEMAJUAN) || "{}") as Kemajuan; } catch { return {}; }
-}
 
 /* ── geometri ─────────────────────────────────────────────────────────────── */
-type Pt = [number, number];
 const jarak = (a: Pt, b: Pt) => Math.hypot(a[0] - b[0], a[1] - b[1]);
 const panjangGaris = (p: Pt[]) => p.reduce((s, q, i) => (i ? s + jarak(p[i - 1], q) : 0), 0);
 
@@ -269,167 +261,8 @@ function cocokGoresan(siswa: Pt[], acuan: SVGPathElement, panjang: number): "ok"
 /* Papan bisa persegi (satu aksara) atau lebar (kata). Titik tulisan dinormalkan
    terhadap LEBAR papan di kedua sumbu, jadi y berkisar 0..rasio. */
 const RASIO_LEBAR = 0.5;
-
-function gambarHuruf(ctx: CanvasRenderingContext2D, W: number, H: number, teks: string, warna: string, rtl: boolean, font = FONT_AKSARA) {
-  ctx.save();
-  ctx.direction = rtl ? "rtl" : "ltr";
-  ctx.textAlign = "left";
-  ctx.textBaseline = "alphabetic";
-  ctx.fillStyle = warna;
-  let px = H * 0.62;
-  const ukur = () => {
-    ctx.font = `${px}px ${font}`;
-    const m = ctx.measureText(teks);
-    return {
-      kiri: m.actualBoundingBoxLeft,
-      w: m.actualBoundingBoxLeft + m.actualBoundingBoxRight,
-      naik: m.actualBoundingBoxAscent,
-      h: m.actualBoundingBoxAscent + m.actualBoundingBoxDescent,
-    };
-  };
-  let m = ukur();
-  const skala = Math.min(1.25, (W * (W === H ? 0.72 : 0.88)) / Math.max(1, m.w), (H * 0.72) / Math.max(1, m.h));
-  px *= skala;
-  m = ukur();
-  ctx.fillText(teks, (W - m.w) / 2 + m.kiri, (H - m.h) / 2 + m.naik);
-  ctx.restore();
-}
-
-/** Garis dalam satuan lebar papan (S = lebar dalam piksel), dihaluskan lewat titik tengah. */
-function gambarGaris(ctx: CanvasRenderingContext2D, S: number, garis: Pt[][], warna: string, tebal: number) {
-  ctx.save();
-  ctx.strokeStyle = warna;
-  ctx.fillStyle = warna;
-  ctx.lineWidth = tebal;
-  ctx.lineCap = "round";
-  ctx.lineJoin = "round";
-  for (const g of garis) {
-    if (!g.length) continue;
-    if (g.length === 1) {
-      ctx.beginPath();
-      ctx.arc(g[0][0] * S, g[0][1] * S, tebal / 2, 0, Math.PI * 2);
-      ctx.fill();
-      continue;
-    }
-    ctx.beginPath();
-    ctx.moveTo(g[0][0] * S, g[0][1] * S);
-    for (let i = 1; i < g.length - 1; i++) {
-      const tx = ((g[i][0] + g[i + 1][0]) / 2) * S;
-      const ty = ((g[i][1] + g[i + 1][1]) / 2) * S;
-      ctx.quadraticCurveTo(g[i][0] * S, g[i][1] * S, tx, ty);
-    }
-    const akhir = g[g.length - 1];
-    ctx.lineTo(akhir[0] * S, akhir[1] * S);
-    ctx.stroke();
-  }
-  ctx.restore();
-}
-
-function keBit(ctx: CanvasRenderingContext2D, W: number, H: number): Uint8Array {
-  const d = ctx.getImageData(0, 0, W, H).data;
-  const out = new Uint8Array(W * H);
-  for (let i = 0; i < W * H; i++) out[i] = d[i * 4 + 3] > 70 ? 1 : 0;
-  return out;
-}
-
-function tebalkan(src: Uint8Array, W: number, H: number, r: number): Uint8Array {
-  let a = src;
-  for (let k = 0; k < r; k++) {
-    const b = new Uint8Array(a);
-    for (let y = 0; y < H; y++) {
-      for (let x = 0; x < W; x++) {
-        const i = y * W + x;
-        if (a[i]) continue;
-        if ((x > 0 && a[i - 1]) || (x < W - 1 && a[i + 1]) || (y > 0 && a[i - W]) || (y < H - 1 && a[i + W])) b[i] = 1;
-      }
-    }
-    a = b;
-  }
-  return a;
-}
-
-/**
- * Skor kemiripan bentuk 0–100. Tulisan disamakan dulu ukuran & letaknya dengan
- * huruf acuan, jadi menulis tanpa bayangan (lebih kecil / agak bergeser) tidak
- * dihukum — yang dinilai bentuknya, bukan posisinya di kertas.
- */
-function nilaiBentuk(teks: string, garis: Pt[][], rtl: boolean, rasio = 1, font = FONT_AKSARA): number | null {
-  const titik = garis.flat();
-  if (!titik.length) return null;
-  const lebar = rasio !== 1;
-  const W = lebar ? 192 : 96;
-  const H = Math.round(W * rasio);
-  const buat = () => {
-    const k = document.createElement("canvas");
-    k.width = W;
-    k.height = H;
-    return k.getContext("2d", { willReadFrequently: true });
-  };
-  const cg = buat();
-  const ci = buat();
-  if (!cg || !ci) return null;
-  gambarHuruf(cg, W, H, teks, "#000", rtl, font);
-  const G = keBit(cg, W, H);
-  let gx0 = W, gy0 = H, gx1 = 0, gy1 = 0, isiG = 0;
-  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (G[y * W + x]) {
-    isiG++;
-    if (x < gx0) gx0 = x; if (x > gx1) gx1 = x; if (y < gy0) gy0 = y; if (y > gy1) gy1 = y;
-  }
-  if (!isiG) return null;
-  let ix0 = Infinity, iy0 = Infinity, ix1 = -Infinity, iy1 = -Infinity;
-  for (const [x, y] of titik) {
-    if (x < ix0) ix0 = x; if (x > ix1) ix1 = x; if (y < iy0) iy0 = y; if (y > iy1) iy1 = y;
-  }
-  const jepit = (v: number) => Math.min(3, Math.max(0.5, v));
-  let sx: number, sy: number;
-  if (lebar) {
-    // Kata: lebar & tinggi disamakan sendiri-sendiri — jarak antarhuruf tulisan
-    // tangan hampir tak pernah sama dengan huruf cetak.
-    sx = jepit((gx1 - gx0) / W / Math.max(ix1 - ix0, 0.04));
-    sy = jepit((gy1 - gy0) / W / Math.max(iy1 - iy0, 0.04));
-  } else {
-    const dimG = Math.max(gx1 - gx0, gy1 - gy0) / W;
-    const dimI = Math.max(ix1 - ix0, iy1 - iy0, 0.04);
-    sx = sy = jepit(dimG / dimI);
-  }
-  const cxG = (gx0 + gx1) / 2 / W, cyG = (gy0 + gy1) / 2 / W;
-  const cxI = (ix0 + ix1) / 2, cyI = (iy0 + iy1) / 2;
-  const pas = garis.map((g) => g.map(([x, y]) => [(x - cxI) * sx + cxG, (y - cyI) * sy + cyG] as Pt));
-  gambarGaris(ci, W, pas, "#000", H * 0.05);
-  const I = keBit(ci, W, H);
-  // Garis tengah tinta (tipis) dipakai untuk presisi: tinta tebal selalu "kena"
-  // badan huruf walau jalurnya melenceng.
-  const ct = buat();
-  if (!ct) return null;
-  gambarGaris(ct, W, pas, "#000", H * 0.02);
-  const T = keBit(ct, W, H);
-  const Gt = tebalkan(G, W, H, 2);
-  const It = tebalkan(I, W, H, 3);
-  let isiT = 0, kena = 0, tepat = 0;
-  for (let i = 0; i < W * H; i++) {
-    if (G[i] && It[i]) kena++;
-    if (T[i]) { isiT++; if (Gt[i]) tepat++; }
-  }
-  if (!isiT) return null;
-  // cakupan = bagian huruf yang tertulis; presisi = bagian tulisan yang memang di jalur huruf.
-  const cakupan = Math.min(1, kena / isiG / 0.85);
-  const presisi = Math.min(1, tepat / isiT / 0.92);
-  return Math.round(100 * Math.pow(cakupan, 1.3) * Math.pow(presisi, 1.3));
-}
-
-function pngTulisan(garis: Pt[][], rasio = 1): string {
-  const W = rasio === 1 ? 320 : 560;
-  const H = Math.round(W * rasio);
-  const k = document.createElement("canvas");
-  k.width = W;
-  k.height = H;
-  const ctx = k.getContext("2d");
-  if (!ctx) return "";
-  ctx.fillStyle = "#fff";
-  ctx.fillRect(0, 0, W, H);
-  gambarGaris(ctx, W, garis, "#000", H * 0.03);
-  return k.toDataURL("image/png").replace(/^data:image\/png;base64,/, "");
-}
+// [nilai-tulisan-v1] Lukis huruf/garis + nilaiBentuk + pngTulisan dipindah ke lib/nilaiTulisan.ts
+// (dipakai juga slide Latihan Menulis & Tulis Bersama Meet).
 
 function ucapBrowser(teks: string, kode: string) {
   try {

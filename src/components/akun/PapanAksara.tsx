@@ -17,6 +17,7 @@ import { createPortal } from "react-dom";
 import { KOTAK_GORESAN, muatGoresan, type SumberGoresan } from "@/lib/writingScripts";
 import type { MenulisHuruf } from "@/lib/materiSlides";
 import { bahasaAksara, sumberGoresanPaket, teksTulis, teksUcap, type PaketTulis } from "@/lib/paketMenulis";
+import { BATAS_LULUS, bacaKemajuan, garisDariDatar, nadaSkor, nilaiBentuk, simpanSkorTerbaik, type Kemajuan } from "@/lib/nilaiTulisan";
 
 export const TINTA = "#0f172a";
 export const TEAL = "#1A9E9E";
@@ -211,12 +212,48 @@ export function PapanAksara({
   );
 }
 
+/* ── Penilaian [nilai-tulisan-v1] ─────────────────────────────────────────── */
+
+/** Skor kemiripan bentuk 0–100 tulisan di papan ini (null = papan masih kosong).
+ *  Acuannya path goresan kalau ada (sama dengan bayangan di papan), kalau tidak
+ *  huruf dari font aksaranya — font ditunggu dulu supaya kanvas tidak memakai
+ *  font cadangan. */
+export async function nilaiTinta(
+  huruf: MenulisHuruf, tinta: Array<{ pts: number[] }>, jalur: string[] | null,
+  font?: string, rtl?: boolean,
+): Promise<number | null> {
+  const teks = teksTulis(huruf);
+  if (!jalur?.length && font && typeof document !== "undefined" && document.fonts) {
+    try { await document.fonts.load(`40px "${font}"`, teks); } catch { /* font gagal — pakai cadangan */ }
+  }
+  const fam = font ? `"${font}", ${FONT_CADANGAN}` : FONT_CADANGAN;
+  return nilaiBentuk(teks, garisDariDatar(tinta), !!rtl, 1, fam, jalur);
+}
+
+/** Lencana skor (warna sama dengan menu Latihan Menulis). */
+export function LencanaSkor({ skor, ui, kecil = false }: { skor: number; ui?: "en"; kecil?: boolean }) {
+  const n = nadaSkor(skor);
+  return (
+    <span style={{ display: "inline-flex", alignItems: "baseline", gap: 6, borderRadius: 999, background: n.latar, color: n.warna,
+      padding: kecil ? "1px 7px" : "4px 12px", fontWeight: 800, fontSize: kecil ? 11 : 15, whiteSpace: "nowrap" }}>
+      <span style={{ fontSize: kecil ? 12 : 20 }}>{skor}</span>
+      {!kecil && <span style={{ fontSize: 12 }}>{ui === "en" ? n.labelEn : n.label}</span>}
+    </span>
+  );
+}
+
 /* ── Latihan mandiri (klik ubin di slide) ─────────────────────────────────── */
 
 const EN: Record<string, string> = {
   "Latihan Menulis": "Writing Practice", "Contoh goresan": "Show strokes", "Bayangan": "Guide",
   "Batalkan": "Undo", "Hapus": "Clear", "Dengar": "Listen", "Tutup": "Close",
   "Tulis di papan mengikuti nomor urut goresannya.": "Write on the board following the numbered stroke order.",
+  "Cek tulisan": "Check writing", "Menilai…": "Checking…", "Berikutnya": "Next", "Terbaik": "Best",
+  "Tulis dulu hurufnya di papan.": "Write the character on the board first.",
+  "Akurasi": "Accuracy", "Rekap": "Summary", "rata-rata": "average", "lulus": "passed",
+  "Perlu diulang:": "Practice again:", "Semua huruf lulus!": "Every character passed!",
+  "Ulangi dari awal": "Start over", "Skor dinilai dari kemiripan bentuk tulisanmu dengan huruf contoh.":
+    "Scores compare the shape of your writing with the model character.",
 };
 
 export function LatihanAksaraModal({ paket, mulai = 0, ucap, ui, onClose }: {
@@ -236,9 +273,37 @@ export function LatihanAksaraModal({ paket, mulai = 0, ucap, ui, onClose }: {
   const [versi, setVersi] = useState(0);
   const garisRef = useRef<GarisTinta[]>([]);
   const h = paket.huruf[i];
+  const jalur = useGoresan(teksTulis(h), sumber);
+  // Skor latihan kali ini per huruf (indeks) — dasar rekap Part. Skor terbaik
+  // disimpan ke kemajuan bersama menu Latihan Menulis.
+  const [skorSesi, setSkorSesi] = useState<Record<number, number>>({});
+  const [skor, setSkor] = useState<number | null>(null);
+  const [catatan, setCatatan] = useState("");
+  const [menilai, setMenilai] = useState(false);
+  const [kemajuan, setKemajuan] = useState<Kemajuan>({});
 
   useEffect(() => { muatFontAksara(lang?.font); }, [lang?.font]);
-  useEffect(() => { garisRef.current = []; setVersi((v) => v + 1); setDemo((d) => d + 1); }, [i]);
+  useEffect(() => { setKemajuan(bacaKemajuan()); }, []);
+  useEffect(() => { garisRef.current = []; setVersi((v) => v + 1); setDemo((d) => d + 1); setSkor(null); setCatatan(""); }, [i]);
+
+  const ubahTinta = () => { setVersi((v) => v + 1); setSkor(null); setCatatan(""); };
+  const cek = async () => {
+    if (menilai) return;
+    setMenilai(true);
+    try {
+      const n = await nilaiTinta(h, garisRef.current, jalur, lang?.font, lang?.rtl);
+      if (n === null) { setSkor(null); setCatatan(t("Tulis dulu hurufnya di papan.")); return; }
+      setSkor(n);
+      setCatatan("");
+      setSkorSesi((m) => ({ ...m, [i]: Math.max(n, m[i] ?? 0) }));
+      setKemajuan(simpanSkorTerbaik(paket.set, h.c, n));
+    } finally { setMenilai(false); }
+  };
+  const terbaik = kemajuan[paket.set]?.[h.c];
+  const nSkor = Object.keys(skorSesi).length;
+  const selesaiSemua = nSkor === paket.huruf.length;
+  const rata = nSkor ? Math.round(Object.values(skorSesi).reduce((a, b) => a + b, 0) / nSkor) : 0;
+  const belumLulus = paket.huruf.map((x, j) => ({ x, j })).filter(({ j }) => (skorSesi[j] ?? 0) < BATAS_LULUS);
   useEffect(() => {
     const k = (e: KeyboardEvent) => { if (e.key === "Escape") { e.stopPropagation(); onClose(); } };
     window.addEventListener("keydown", k, true);
@@ -263,9 +328,13 @@ export function LatihanAksaraModal({ paket, mulai = 0, ucap, ui, onClose }: {
         <div style={{ display: "flex", gap: 6, marginTop: 12, flexWrap: "wrap" }}>
           {paket.huruf.map((x, j) => (
             <button key={j} onClick={() => setI(j)}
-              style={{ minWidth: 44, height: 44, borderRadius: 12, cursor: "pointer", fontSize: 22, fontFamily: lang?.font ? `"${lang.font}", ${FONT_CADANGAN}` : FONT_CADANGAN,
-                border: j === i ? `2px solid ${TEAL}` : "1px solid #e2e8f0", background: j === i ? "#e6f6f6" : "#fff", color: "#0f172a" }}>
+              style={{ position: "relative", minWidth: 44, height: 44, borderRadius: 12, cursor: "pointer", fontSize: 22, fontFamily: lang?.font ? `"${lang.font}", ${FONT_CADANGAN}` : FONT_CADANGAN,
+                border: j === i ? `2px solid ${TEAL}` : "1px solid #e2e8f0", background: j === i ? "#e6f6f6" : "#fff", color: "#0f172a", overflow: "hidden" }}>
               {x.c}
+              {/* Garis warna di bawah huruf = skor latihan kali ini. */}
+              {skorSesi[j] !== undefined && (
+                <span aria-hidden style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 4, background: nadaSkor(skorSesi[j]).warna }} />
+              )}
             </button>
           ))}
         </div>
@@ -278,20 +347,65 @@ export function LatihanAksaraModal({ paket, mulai = 0, ucap, ui, onClose }: {
         <PapanAksara huruf={h} sumber={sumber} font={lang?.font} tampil={bayangan ? "bayangan" : "kosong"} demo={demo}
           tinta={garisRef.current} versi={versi} bisaTulis
           style={{ width: "min(100%, 62vh)", margin: "10px auto 0", boxShadow: "0 0 0 1px #cbd5e1, 0 6px 18px rgba(15,23,42,.08)" }}
-          onMulai={(x, y) => { garisRef.current.push({ pts: [x, y], warna: TINTA }); setVersi((v) => v + 1); }}
+          onMulai={(x, y) => { garisRef.current.push({ pts: [x, y], warna: TINTA }); ubahTinta(); }}
           onTambah={(x, y) => { const g = garisRef.current[garisRef.current.length - 1]; if (g) { g.pts.push(x, y); setVersi((v) => v + 1); } }}
         />
         <p style={{ margin: "8px 0 0", fontSize: 12, color: "#64748b", textAlign: "center" }}>{t("Tulis di papan mengikuti nomor urut goresannya.")}</p>
 
+        {/* [nilai-tulisan-v1] Cek tulisan → skor akurasi; lulus = lanjut huruf berikutnya. */}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, marginTop: 10, flexWrap: "wrap", minHeight: 40 }}>
+          {skor !== null && skor >= BATAS_LULUS && i < paket.huruf.length - 1 ? (
+            <button onClick={() => setI((j) => Math.min(paket.huruf.length - 1, j + 1))}
+              style={{ ...tombol, background: TEAL, borderColor: TEAL, color: "#fff", padding: "9px 18px", fontSize: 14 }}>{t("Berikutnya")} ›</button>
+          ) : (
+            <button onClick={() => { void cek(); }} disabled={menilai}
+              style={{ ...tombol, background: TEAL, borderColor: TEAL, color: "#fff", padding: "9px 18px", fontSize: 14, opacity: menilai ? 0.7 : 1 }}>
+              {menilai ? t("Menilai…") : t("Cek tulisan")}
+            </button>
+          )}
+          {skor !== null && <span style={{ fontSize: 12, color: "#64748b", fontWeight: 700 }}>{t("Akurasi")}</span>}
+          {skor !== null && <LencanaSkor skor={skor} ui={ui} />}
+          {terbaik !== undefined && <span style={{ fontSize: 12, color: "#64748b" }}>{t("Terbaik")} {terbaik}</span>}
+        </div>
+        {catatan && <p style={{ margin: "6px 0 0", fontSize: 12.5, color: "#be123c", textAlign: "center", fontWeight: 600 }}>{catatan}</p>}
+
         <div style={{ display: "flex", gap: 6, marginTop: 10, flexWrap: "wrap", justifyContent: "center" }}>
           <button style={tombol} onClick={() => setDemo((d) => d + 1)}>{t("Contoh goresan")}</button>
           <button style={{ ...tombol, ...(bayangan ? { borderColor: TEAL, color: TEAL } : null) }} onClick={() => setBayangan((b) => !b)}>{t("Bayangan")}</button>
-          <button style={tombol} onClick={() => { garisRef.current.pop(); setVersi((v) => v + 1); }}>{t("Batalkan")}</button>
-          <button style={tombol} onClick={() => { garisRef.current = []; setVersi((v) => v + 1); }}>{t("Hapus")}</button>
+          <button style={tombol} onClick={() => { garisRef.current.pop(); ubahTinta(); }}>{t("Batalkan")}</button>
+          <button style={tombol} onClick={() => { garisRef.current = []; ubahTinta(); }}>{t("Hapus")}</button>
           {ucap && <button style={tombol} onClick={() => ucap(teksUcap(h))}>{t("Dengar")}</button>}
           <button style={tombol} disabled={i === 0} onClick={() => setI((j) => Math.max(0, j - 1))}>‹</button>
           <button style={tombol} disabled={i >= paket.huruf.length - 1} onClick={() => setI((j) => Math.min(paket.huruf.length - 1, j + 1))}>›</button>
         </div>
+
+        {/* Rekap Part: muncul setelah semua huruf di Part ini dicek sekali. */}
+        {selesaiSemua && (
+          <div style={{ marginTop: 14, borderRadius: 14, border: "1px solid #cfe9e9", background: "#f0fafa", padding: 12 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+              <span style={{ fontSize: 13, fontWeight: 800, color: "#0f172a" }}>{t("Rekap")} Part {paket.part}</span>
+              <LencanaSkor skor={rata} ui={ui} />
+              <span style={{ fontSize: 12, color: "#475569" }}>
+                {t("rata-rata")} · {paket.huruf.length - belumLulus.length}/{paket.huruf.length} {t("lulus")}
+              </span>
+            </div>
+            {belumLulus.length ? (
+              <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 8, flexWrap: "wrap" }}>
+                <span style={{ fontSize: 12, color: "#475569" }}>{t("Perlu diulang:")}</span>
+                {belumLulus.map(({ x, j }) => (
+                  <button key={j} onClick={() => setI(j)} style={{ ...tombol, padding: "3px 10px", fontSize: 15 }}>
+                    {x.c} <span style={{ fontSize: 11, color: nadaSkor(skorSesi[j] ?? 0).warna }}>{skorSesi[j]}</span>
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <p style={{ margin: "6px 0 0", fontSize: 12.5, fontWeight: 700, color: "#047857" }}>{t("Semua huruf lulus!")}</p>
+            )}
+            <button onClick={() => { setSkorSesi({}); setI(0); garisRef.current = []; ubahTinta(); }}
+              style={{ ...tombol, marginTop: 8, padding: "4px 12px", fontSize: 12 }}>{t("Ulangi dari awal")}</button>
+          </div>
+        )}
+        <p style={{ margin: "10px 0 0", fontSize: 11, color: "#94a3b8", textAlign: "center" }}>{t("Skor dinilai dari kemiripan bentuk tulisanmu dengan huruf contoh.")}</p>
       </div>
     </div>,
     document.body,
