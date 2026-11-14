@@ -121,12 +121,13 @@ async function silabusLanjutan(
   if (!studentId || !dibuat) return null;
   const { data: regs } = await supabase
     .from("registrations")
-    .select("id, language, level, sessions_used, created_at, batch_id, test_prep_batch_id")
+    .select("id, language, level, sessions_used, created_at, batch_id, test_prep_batch_id, is_trial, archived_at")
     .eq("student_id", studentId)
     .lt("created_at", dibuat);
   let awal = 0;
   for (const r of ((regs as any[]) || [])) {
-    if (r.id === reg.id || r.batch_id || r.test_prep_batch_id) continue;
+    // [unlock-kumulatif-v1] Trial & registrasi yang diarsip tidak memajukan posisi silabus.
+    if (r.id === reg.id || r.batch_id || r.test_prep_batch_id || r.is_trial || r.archived_at) continue;
     if (languageSlug(r.language) !== slug) continue;
     const s = await loadSilabusLevel(r.language, r.level).catch(() => null);
     if (s?.code === dasar.code) awal += Math.max(0, Number(r.sessions_used) || 0);

@@ -577,10 +577,14 @@ function MilestoneRow({
   durasi,
   silabus,
   adaSlide,
+  posisi,
   isLast,
   onOpen,
 }: {
   no: number;
+  /** [unlock-kumulatif-v1] Posisi asli di silabus (sublevel 16 sesi) kalau paket ini
+   *  melanjutkan paket lama — mis. sesi 1 paket lanjutan = "A1.1 · Sesi 5". */
+  posisi?: { code: string; n: number } | null;
   /** [dek-siswa-v1] Slide siap pakai sesi ini sudah terbuka. */
   adaSlide?: boolean;
   sched: any | null;
@@ -650,6 +654,11 @@ function MilestoneRow({
               dengan titik milestone-nya di semua baris (ada tanggal atau tidak). */}
           <div className="flex min-h-6 flex-wrap items-center gap-x-2 gap-y-1">
             <span className={`text-sm font-extrabold ${sched || st.done ? 'text-[#12172B]' : 'text-gray-400'} ${bisaDibuka ? 'group-hover/head:text-[#16796E]' : ''}`}>{t('Sesi')} {no}</span>
+            {posisi && (
+              <span className="rounded-full bg-gray-100 px-2 py-0.5 text-[11px] font-bold text-gray-500">
+                {posisi.code} · {t('Sesi')} {posisi.n}
+              </span>
+            )}
             {/* Judul sesi dari silabus level — bikin linimasa terbaca sebagai peta
                 materi, bukan cuma deretan nomor. */}
             {silabus?.title && (
@@ -966,6 +975,7 @@ export default function ClassMateriTab({
                 durasi={durasiSesi || ms.sched?.duration_minutes || null}
                 silabus={silabusSesi(ms.no)}
                 adaSlide={ms.sudahJalan && !!dekUntuk(ms.no)}
+                posisi={posisiDek?.[ms.no - 1] || null}
                 isLast={i === arr.length - 1}
                 onOpen={() => setSesiTerbuka(ms.no)}
               />
