@@ -69,8 +69,9 @@ export const languages: LanguageMeta[] = [
   { slug: "balinese",    name: "Bali",      nativeName: "Basa Bali",   flag: "🇮🇩", region: "nusantara", available: true },
   { slug: "minangkabau", name: "Minang",    nativeName: "Minangkabau", flag: "🇮🇩", region: "nusantara", available: false },
   // [batak-toba-mandailing-v1] slug "batak" = Batak Toba (silabus & dek memang Toba).
+  // [mandailing-a1-v1] Mandailing punya silabus sendiri (A1 rinci + dek A1.1–A1.3).
   { slug: "batak",       name: "Batak Toba", nativeName: "Hata Batak Toba", flag: "🇮🇩", region: "nusantara", available: true, aliases: ["batak","toba","hata batak"] },
-  { slug: "batak-mandailing", name: "Batak Mandailing", nativeName: "Hata Mandailing", flag: "🇮🇩", region: "nusantara", available: false, aliases: ["mandailing","angkola","batak"] },
+  { slug: "batak-mandailing", name: "Batak Mandailing", nativeName: "Hata Mandailing", flag: "🇮🇩", region: "nusantara", available: true, aliases: ["mandailing","angkola","hata mandailing"] },
   { slug: "bugis",       name: "Bugis",     nativeName: "Ugi",         flag: "🇮🇩", region: "nusantara", available: true },
   { slug: "acehnese",    name: "Aceh",      nativeName: "Bahsa Acèh",  flag: "🇮🇩", region: "nusantara", available: false },
   { slug: "banjar",      name: "Banjar",    nativeName: "Bahasa Banjar", flag: "🇮🇩", region: "nusantara", available: false },

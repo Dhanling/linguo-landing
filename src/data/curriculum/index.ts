@@ -48,6 +48,7 @@ import urdu from './data/urdu';
 import ukrainian from './data/ukrainian';
 import balinese from './data/balinese';
 import batak from './data/batak';
+import batakMandailing from './data/batak-mandailing'; // [mandailing-a1-v1]
 import bugis from './data/bugis';
 import madurese from './data/madurese'; // __PATCH_NORWEGIAN_BUNDLE__
 import malay from './data/malay';
@@ -61,6 +62,7 @@ const registry: Record<string, LanguageCurriculum> = {
   bisindo,
   balinese,
   batak,
+  "batak-mandailing": batakMandailing,
   bugis,
   madurese,
   japanese,
