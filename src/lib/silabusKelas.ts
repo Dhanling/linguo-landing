@@ -11,7 +11,7 @@
 // dan jumlah pertemuan yang sudah lewat dihitung dari pola kalender batch.
 
 import { supabase } from "@/lib/supabase-client";
-import { loadSilabusLevel, type SilabusLevel } from "./silabusSesi";
+import { loadSilabusLevel, loadSilabusRangkaian, type SilabusLevel } from "./silabusSesi";
 import { languageSlug } from "./languageSlug";
 import { batchOccurrences } from "./batchCalendar";
 
@@ -21,6 +21,9 @@ export interface SilabusKelas {
   silabus: SilabusLevel;
   /** pertemuan batch yang sudah lewat menurut kalender (0 kalau bukan batch) */
   sesiBatch: number;
+  /** [silabus-lanjut-paket-v1] sesi paket ke-i (0-based) → sublevel & nomor sesi silabus aslinya.
+   *  Hanya ada kalau paket ini melanjutkan paket lama; tanpa ini sesi paket = sesi silabus. */
+  posisi?: { code: string; n: number }[];
 }
 
 const KODE = /^[ABC][12](\.\d)?$/i;
@@ -89,7 +92,56 @@ export async function loadSilabusKelas(reg: any): Promise<SilabusKelas | null> {
   const slug = languageSlug(reg.language);
   if (!slug) return null;
   const silabus = await loadSilabusLevel(reg.language, reg.level).catch(() => null);
-  return silabus ? { slug, silabus, sesiBatch: 0 } : null;
+  if (!silabus) return null;
+  const lanjut = await silabusLanjutan(reg, slug, silabus).catch(() => null);
+  return lanjut ? { slug, ...lanjut, sesiBatch: 0 } : { slug, silabus, sesiBatch: 0 };
+}
+
+/**
+ * [silabus-lanjut-paket-v1] Paket baru yang MELANJUTKAN paket lama di sublevel yang sama.
+ * 14 Nov 2026 — Devi (Swedish): A1.1 4 sesi selesai, lalu beli paket "A1" 8 sesi. "A1"
+ * terpetakan ke A1.1 dan nomor sesi paket mulai dari 1 lagi → slide sesi 1 paket baru
+ * = "Alphabet & Pronunciation" (materi sesi 1 yang sudah dia pelajari). Sesi yang sudah
+ * dipakai registrasi Private bahasa & sublevel yang sama SEBELUM paket ini jadi titik
+ * awal: sesi paket 1 = A1.1 sesi 5, dst., menyeberang ke sublevel berikutnya bila lewat.
+ */
+async function silabusLanjutan(
+  reg: any,
+  slug: string,
+  dasar: SilabusLevel,
+): Promise<{ silabus: SilabusLevel; posisi: { code: string; n: number }[] } | null> {
+  if (!reg?.id) return null;
+  let studentId = reg.student_id || null;
+  let dibuat = reg.created_at || null;
+  if (!studentId || !dibuat) {
+    const { data } = await supabase.from("registrations").select("student_id, created_at").eq("id", reg.id).maybeSingle();
+    studentId = studentId || (data as any)?.student_id || null;
+    dibuat = dibuat || (data as any)?.created_at || null;
+  }
+  if (!studentId || !dibuat) return null;
+  const { data: regs } = await supabase
+    .from("registrations")
+    .select("id, language, level, sessions_used, created_at, batch_id, test_prep_batch_id")
+    .eq("student_id", studentId)
+    .lt("created_at", dibuat);
+  let awal = 0;
+  for (const r of ((regs as any[]) || [])) {
+    if (r.id === reg.id || r.batch_id || r.test_prep_batch_id) continue;
+    if (languageSlug(r.language) !== slug) continue;
+    const s = await loadSilabusLevel(r.language, r.level).catch(() => null);
+    if (s?.code === dasar.code) awal += Math.max(0, Number(r.sessions_used) || 0);
+  }
+  if (awal <= 0) return null;
+
+  const rangkaian = await loadSilabusRangkaian(reg.language, dasar.code);
+  const datar = rangkaian.flatMap((sub) => sub.sessions.map((sesi, i) => ({ sub, sesi, n: i + 1 })));
+  const jumlah = Math.max(Number(reg.sessions_total) || 0, dasar.sessions.length);
+  const potong = datar.slice(awal, awal + jumlah);
+  if (!potong.length) return null;
+  return {
+    silabus: { code: potong[0].sub.code, name: potong[0].sub.name, sessions: potong.map((p) => p.sesi) },
+    posisi: potong.map((p) => ({ code: p.sub.code, n: p.n })),
+  };
 }
 
 /** Registrasi ini boleh membuka dek `slug`? (gerbang link slide yang dibagikan) */

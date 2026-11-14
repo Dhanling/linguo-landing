@@ -68,3 +68,25 @@ export async function loadSilabusLevel(
 
   return { code: hit.code, name: hit.name, sessions: hit.sessions };
 }
+
+/**
+ * [silabus-lanjut-paket-v1] Sublevel `code` dan semua sublevel SESUDAHNYA (urut
+ * kurikulum, lintas level: A1.3 → A2.1). Dipakai kalau paket baru melanjutkan
+ * paket lama di sublevel yang sama — sesi bisa menyeberang ke sublevel berikutnya.
+ */
+export async function loadSilabusRangkaian(
+  language?: string | null,
+  code?: string | null,
+): Promise<SilabusLevel[]> {
+  const slug = languageSlug(language);
+  if (!slug || !code) return [];
+  const cur = await loadCurriculum(slug);
+  if (!cur) return [];
+  const subs: any[] = cur.levels.flatMap((l: any) => l.sublevels || []);
+  const i = subs.findIndex((s) => String(s.code).toUpperCase() === String(code).toUpperCase());
+  if (i < 0) return [];
+  return subs
+    .slice(i)
+    .filter((s) => Array.isArray(s.sessions) && s.sessions.length > 0)
+    .map((s) => ({ code: s.code, name: s.name, sessions: s.sessions }));
+}

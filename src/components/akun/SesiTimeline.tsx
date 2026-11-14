@@ -33,7 +33,7 @@ import { detectKind, KIND_META, TeksMateriOverlay } from './ClassMateriTab';
 import { parseDeck, type MateriSlide } from '@/lib/materiSlides';
 import { SlideDeckViewer } from '@/components/akun/SlideDeckViewer';
 import { loadSilabusKelas } from '@/lib/silabusKelas';
-import { loadDekSiswa, type DekSublevelSiswa } from '@/lib/dekSilabusSiswa';
+import { loadDekKelas, type DekSublevelSiswa } from '@/lib/dekSilabusSiswa';
 import { preloadDekSlides } from '@/lib/slideImageCache';
 import { toLangCode } from '@/lib/quiz/language';
 import { getUiLang, tr, useT } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
@@ -235,7 +235,7 @@ export default function SesiTimeline({
       if (!alive || !k) return;
       setSesiBatch(k.sesiBatch);
       setJudulSesi((k.silabus.sessions || []).map((s) => s?.title || ''));
-      const d = await loadDekSiswa(k.slug, k.silabus.code);
+      const d = await loadDekKelas(k.slug, k.silabus.code, k.posisi);
       if (alive) setDek(d);
     })();
     return () => { alive = false; };

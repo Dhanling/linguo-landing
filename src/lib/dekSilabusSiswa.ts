@@ -64,3 +64,26 @@ export function loadDekSiswa(slug: string | null, code: string | null | undefine
   }
   return p;
 }
+
+/**
+ * [silabus-lanjut-paket-v1] Dek untuk nomor sesi PAKET. Tanpa `posisi` sama persis
+ * dengan loadDekSiswa(slug, code). Dengan `posisi` (sesi paket ke-i → sublevel &
+ * nomor sesi silabus aslinya), dek tiap sublevel yang dilewati dimuat lalu
+ * dipetakan ulang ke nomor sesi paket.
+ */
+export async function loadDekKelas(
+  slug: string | null,
+  code: string | null | undefined,
+  posisi?: { code: string; n: number }[] | null,
+): Promise<DekSublevelSiswa | null> {
+  if (!posisi || !posisi.length) return loadDekSiswa(slug, code);
+  const kode = Array.from(new Set(posisi.map((p) => p.code)));
+  const dek = await Promise.all(kode.map((c) => loadDekSiswa(slug, c)));
+  const out: DekSublevelSiswa = {};
+  let ada = false;
+  posisi.forEach((p, i) => {
+    const s = dek[kode.indexOf(p.code)]?.[p.n];
+    if (s?.length) { out[i + 1] = s; ada = true; }
+  });
+  return ada ? out : null;
+}

@@ -47,7 +47,7 @@ import { loadSilabusKelas } from '@/lib/silabusKelas';
 import { parseDeck, type MateriSlide } from '@/lib/materiSlides';
 import { SlideDeckViewer } from '@/components/akun/SlideDeckViewer';
 // [dek-siswa-v1] dek siap pakai per sesi silabus (dirakit di repo dashboard)
-import { loadDekSiswa, type DekSublevelSiswa } from '@/lib/dekSilabusSiswa';
+import { loadDekKelas, type DekSublevelSiswa } from '@/lib/dekSilabusSiswa';
 import { preloadDekSlides } from '@/lib/slideImageCache';
 import { toLangCode } from '@/lib/quiz/language';
 import { tr, useT, useUiLang } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
@@ -783,6 +783,7 @@ export default function ClassMateriTab({
   // lihat lib/silabusKelas. sesiBatch = pertemuan yang sudah lewat di kalender batch.
   const [slugDek, setSlugDek] = useState<string | null>(null);
   const [sesiBatch, setSesiBatch] = useState(0);
+  const [posisiDek, setPosisiDek] = useState<{ code: string; n: number }[] | undefined>(undefined);
   useEffect(() => {
     let alive = true;
     loadSilabusKelas(reg)
@@ -791,6 +792,7 @@ export default function ClassMateriTab({
         setSilabus(k?.silabus || null);
         setSlugDek(k?.slug || null);
         setSesiBatch(k?.sesiBatch || 0);
+        setPosisiDek(k?.posisi);
       })
       .catch(() => { if (alive) setSilabus(null); });
     return () => { alive = false; };
@@ -802,9 +804,10 @@ export default function ClassMateriTab({
   useEffect(() => {
     let alive = true;
     setDek(null);
-    loadDekSiswa(slugDek, kodeSilabus).then((d) => { if (alive) setDek(d); });
+    loadDekKelas(slugDek, kodeSilabus, posisiDek).then((d) => { if (alive) setDek(d); });
     return () => { alive = false; };
-  }, [slugDek, kodeSilabus]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slugDek, kodeSilabus, (posisiDek || []).map((p) => `${p.code}:${p.n}`).join(',')]);
 
   if (materials === null) {
     return <div className="py-10 text-center text-gray-400">Memuat…</div>;
