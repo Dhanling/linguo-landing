@@ -266,14 +266,23 @@ export default function SesiTimeline({
     // semu — campur session_number & urutan kronologis gampang bikin nomor kembar.
     const semuaBernomor = asc.length > 0 && kurang === 0 && asc.every((s) => Number.isFinite(Number(s.session_number)));
 
-    type Row = { key: string; no: number; s: TimelineSchedule | null; jenis: 'nyata' | 'selesai-semu' | 'belum-semu' };
+    // [sesi-batch-progres-v1] Kelas grup: sisa slot paket diberi tanggal pertemuan batch
+    // MENDATANG (pola batch + libur/pindah) secara berurutan, bukan "Jadwal belum
+    // ditentukan". Hari yang sudah punya baris jadwal nyata dilewati biar tak dobel.
+    const now0 = Date.now();
+    const hariNyata = new Set(asc.map((s) => new Date(s.scheduled_at).toDateString()));
+    const tglBatch = ((reg?.__tanggalBatch as string[] | undefined) || [])
+      .map((iso) => new Date(iso))
+      .filter((d) => !isNaN(d.getTime()) && d.getTime() > now0 && !hariNyata.has(d.toDateString()));
+
+    type Row = { key: string; no: number; s: TimelineSchedule | null; jenis: 'nyata' | 'selesai-semu' | 'belum-semu'; tgl?: Date | null };
     const urut: Row[] = [
       ...Array.from({ length: semuSelesai }, (_, i) => ({ key: `semu-done-${i}`, no: 0, s: null, jenis: 'selesai-semu' as const })),
       ...asc.map((s, i) => ({ key: s.id, no: semuaBernomor ? Number(s.session_number) : 0, s, jenis: 'nyata' as const })),
-      ...Array.from({ length: semuBelum }, (_, i) => ({ key: `semu-todo-${i}`, no: 0, s: null, jenis: 'belum-semu' as const })),
+      ...Array.from({ length: semuBelum }, (_, i) => ({ key: `semu-todo-${i}`, no: 0, s: null, jenis: 'belum-semu' as const, tgl: tglBatch[i] || null })),
     ];
     return urut.map((r, i) => ({ ...r, no: r.no || i + 1 })).reverse(); // terbaru di paling atas
-  }, [schedules, reg?.sessions_total, reg?.sessions_used]);
+  }, [schedules, reg?.sessions_total, reg?.sessions_used, reg?.__tanggalBatch]);
 
   const now = Date.now();
   const total = reg?.sessions_total || rows.length || 0;
@@ -363,14 +372,16 @@ export default function SesiTimeline({
         <p className="py-8 text-center text-[13px] font-medium text-gray-400">{t('Memuat materi…')}</p>
       ) : (
         <ol className="flex flex-col">
-          {rows.map(({ s, no, key, jenis }, i) => {
-            const d = s ? new Date(s.scheduled_at) : null;
+          {rows.map(({ s, no, key, jenis, tgl }, i) => {
+            const d = s ? new Date(s.scheduled_at) : tgl || null;
             const past = !!d && d.getTime() < now;
             const chip = s
               ? statusChip(s, past)
               : jenis === 'selesai-semu'
                 ? { label: 'Selesai', cls: 'bg-emerald-50 text-emerald-700' }
-                : { label: 'Belum terjadwal', cls: 'bg-gray-100 text-gray-500' };
+                : tgl
+                  ? { label: 'Mendatang', cls: 'bg-[#16796E]/10 text-[#16796E]' } // [sesi-batch-progres-v1]
+                  : { label: 'Belum terjadwal', cls: 'bg-gray-100 text-gray-500' };
             const done = s
               ? s.status === 'completed' || (past && s.status !== 'cancelled' && s.status !== 'hangus')
               : jenis === 'selesai-semu';

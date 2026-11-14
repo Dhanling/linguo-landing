@@ -16,6 +16,7 @@ import {
 } from "@/lib/batchCalendar"; // [jadwal-batch-kalender-v1] pola batch kelas grup → pertemuan
 import { simpanDaftarLevel } from "@/lib/kelasCache"; // [kelas-level-switcher-v3] titip daftar level buat strip di halaman detail
 import { petaNomorSesi } from "@/lib/nomorSesi"; // [sesi-nomor-sinkron-v1] nomor sesi nyambung dengan sessions_used
+import { denganSesiBatch } from "@/lib/sesiBatchReg"; // [sesi-batch-progres-v1] progres kelas grup dari pertemuan batch
 import { tanpaSesiSintetis } from "@/lib/sesiSintetis"; // [jadwal-hantu-hidden-v1] baris presensi pembukuan disembunyikan
 import { LangSlugFlag } from "@/components/RectFlag"; // [materi-flag-pie-v1] bendera rounded-rect (data bendera-nya lazy)
 import { sapaan, initial as callInitial } from "@/lib/teacherName"; // [teacher-sapaan-v1] "Kak Dhani", bukan nama lengkap
@@ -4157,7 +4158,7 @@ export default function AkunPage() {
   // UnifiedCourseCard. Yang belum bayar TIDAK pernah masuk sini — mereka ada di
   // pendingRegs (Perlu Perhatian). NB: webhook Xendit cuma set payment_status
   // (bukan status, krn CHECK constraint), makanya filter pakai payment_status.
-  const activeRegs = useMemo(() => student?.registrations.filter(r =>
+  const activeRegsMentah = useMemo(() => student?.registrations.filter(r =>
     // [linguo-patch:akun-hide-cancelled-v1] buang reg yang di-Batal-in admin/cron & yang udah diarsip
     r.pipeline_status !== "Batal" && !r.archived_at &&
     // [akun-sembunyikan-transferred-v1] kelas lama yang sudah dipindah (mis. Reguler →
@@ -4166,6 +4167,23 @@ export default function AkunPage() {
     r.status !== "Transferred" &&
     (r.payment_status === "Lunas" || r.payment_status === "Cicilan")
   ) || [], [student]);
+  /* [sesi-batch-progres-v1] Laporan 41d08167 (14 Nov 2026, FRA-A11-OCT26): kelas grup
+     sudah 4 pertemuan tapi kartu "1/8 sesi · Belum terjadwal" — `sessions_used` batch
+     tak pernah disinkron (registrasi Reguler banyak yang `sessions_total` NULL, trigger
+     sinkron butuh angka itu). Angka sesi kelas grup kini = terbesar dari sessions_used,
+     baris schedules completed, dan pertemuan batch yang sudah lewat; `__tanggalBatch`
+     dipakai linimasa & "Sesi Berikutnya". Registrasi non-batch tak berubah. */
+  const activeRegs = useMemo(() => {
+    const perReg = new Map<string, any[]>();
+    for (const s of allSchedules as any[]) {
+      const k = String(s.registration_id || "");
+      if (!k) continue;
+      if (!perReg.has(k)) perReg.set(k, []);
+      perReg.get(k)!.push(s);
+    }
+    const now = Date.now();
+    return activeRegsMentah.map((r) => denganSesiBatch(r, perReg.get(String(r.id)) || [], batchOverrides, now));
+  }, [activeRegsMentah, allSchedules, batchOverrides]);
 
 
   // [materi-bahasa-siswa-v1] Bahasa yang BENAR-BENAR diambil siswa (slug kanonik) —
@@ -6041,7 +6059,12 @@ export default function AkunPage() {
                                 ? jadwalOf(selected)
                                     .filter((s: any) => s.status !== "cancelled" && s.status !== "completed" && new Date(s.scheduled_at).getTime() > Date.now())
                                     .sort((a: any, b: any) => new Date(a.scheduled_at).getTime() - new Date(b.scheduled_at).getTime())[0]
-                                : upcomingSchedules.find((s) => s.registration_id === selected.id);
+                                : upcomingSchedules.find((s) => s.registration_id === selected.id)
+                                  /* [sesi-batch-progres-v1] kelas grup tanpa baris jadwal mendatang →
+                                     pertemuan batch berikutnya menurut pola + libur/pindah batch. */
+                                  || ((selected.__tanggalBatch as string[] | undefined) || [])
+                                    .filter((iso) => new Date(iso).getTime() > Date.now())
+                                    .map((iso) => ({ scheduled_at: iso }))[0];
                               const nextLabel = nextSched
                                 ? new Date(nextSched.scheduled_at).toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" }) + " · " + new Date(nextSched.scheduled_at).toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })
                                 : tt("Belum terjadwal");
