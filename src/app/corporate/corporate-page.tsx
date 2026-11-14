@@ -1,5 +1,5 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -56,6 +56,17 @@ const DAILY_HOURS = ["≤ 4 jam (half day)", "8 jam (full day)", "> 8 jam / lemb
 const INTERPRETER_COUNT = ["1 interpreter", "2 interpreter (tim simultan)", "Lebih dari 2", "Belum tahu — mohon disarankan"];
 const DOC_TYPES = ["Legal / kontrak", "Teknis", "Materi presentasi", "Laporan / company profile", "Sertifikat & dokumen resmi", "Lainnya"];
 const SWORN_OPTS = ["Ya, tersumpah", "Tidak perlu", "Belum tahu"];
+// [b2b-komunitas-v1] Jenis pemohon. Komunitas (patungan anggota) punya format &
+// harga sendiri: kelas interaktif maks 20 orang atau webinar satu arah s/d 100.
+// Link langsung untuk CS: linguo.id/corporate?jenis=komunitas#form
+const ORG_TYPES = ["Perusahaan", "Instansi Pemerintah", "Sekolah / Kampus", "Komunitas"];
+const KOM_FORMATS = [
+  "Kelas interaktif (maks 20 orang, latihan bicara)",
+  "Webinar / kelas besar (20–100 orang, satu arah)",
+  "Kombinasi webinar + kelas interaktif",
+  "Belum tahu — mohon disarankan",
+];
+const KOM_PESERTA = ["10-20 orang", "21-50 orang", "51-100 orang", "100+ orang"];
 
 // Kode negara ISO-2 untuk bendera rounded-rectangle. Label yang bukan negara
 // ("BIPA" = bahasa Indonesia untuk penutur asing → id; "Lainnya", "60+ bahasa")
@@ -114,7 +125,17 @@ export default function CorporatePage() {
     doc_types: [] as string[], doc_pages: "", doc_sworn: "", doc_deadline: "",
     // [b2b-simulasi-v1]
     sim_tests: [] as string[], sim_mode: "", sim_date: "", sim_outputs: [] as string[],
+    // [b2b-komunitas-v1]
+    org_type: "", kom_format: "",
   });
+  const isKom = form.org_type === "Komunitas";
+  // ?jenis=komunitas → Komunitas + kelas training langsung terpilih.
+  useEffect(() => {
+    const jenis = new URLSearchParams(window.location.search).get("jenis")?.toLowerCase();
+    if (jenis === "komunitas" || jenis === "community") {
+      setForm(f => ({ ...f, org_type: "Komunitas", services: f.services.length ? f.services : ["training"] }));
+    }
+  }, []);
   const setF = (k: string, v: any) => setForm(f => ({ ...f, [k]: v }));
   const toggleArr = (k: string, val: string) => {
     setForm(f => {
@@ -144,14 +165,14 @@ export default function CorporatePage() {
     // Bahasa di langkah sendiri supaya langkah Layanan tak terlalu ramai.
     // Simulasi saja → selalu bahasa Inggris, langkah ini dilewati.
     if (!simOnly) st.push({ key: "lang", label: "Bahasa" });
-    st.push({ key: "company", label: "Perusahaan" });
+    st.push({ key: "company", label: isKom ? "Komunitas" : "Perusahaan" });
     if (hasTraining || form.services.length === 0) st.push({ key: "training", label: "Kebutuhan" });
     if (hasInterpreting) st.push({ key: "event", label: "Detail Acara" });
     if (hasTranslation) st.push({ key: "doc", label: "Dokumen" });
     if (hasSimulation) st.push({ key: "sim", label: "Simulasi Tes" });
     st.push({ key: "pic", label: "PIC & Kirim" });
     return st;
-  }, [hasTraining, hasInterpreting, hasTranslation, hasSimulation, simOnly, form.services.length]);
+  }, [hasTraining, hasInterpreting, hasTranslation, hasSimulation, simOnly, form.services.length, isKom]);
   // Daftar langkah bisa menyusut saat pilihan layanan diubah → jaga indeksnya.
   const stepIdx = Math.min(step, wizardSteps.length - 1);
   const cur = wizardSteps[stepIdx].key;
@@ -159,16 +180,18 @@ export default function CorporatePage() {
   const canNext =
     cur === "service" ? form.services.length > 0
     : cur === "lang" ? form.languages.length > 0 || simOnly
-    : cur === "company" ? !!form.company_name && !!form.industry
+    : cur === "company" ? !!form.company_name && (isKom || !!form.industry)
     : true;
 
   // Ringkasan permintaan — dipakai untuk pesan WA sekaligus ditempel ke `notes`
   // supaya rincian acara tetap terbaca di menu Corporate dashboard.
   const buildSummary = () => {
     const L: string[] = [];
+    if (form.org_type) L.push(`Jenis: ${form.org_type}`);
     L.push(`Layanan: ${form.services.map(id => SERVICES.find(s2 => s2.id === id)?.title || id).join(" + ")}`);
     L.push(`Bahasa: ${languages.join(", ") || "-"}`);
     if (hasTraining) {
+      if (isKom) L.push(`Format kelas komunitas: ${form.kom_format || "-"}`);
       L.push(`Tujuan training: ${form.training_goal.join(", ") || "-"}`);
       L.push(`Peserta: ${form.participant_count || "-"} · Timeline: ${form.timeline || "-"}`);
     }
@@ -198,7 +221,8 @@ export default function CorporatePage() {
     setSaving(true);
     const summary = buildSummary();
     const notesFull = [form.notes?.trim(), ...summary].filter(Boolean).join("\n");
-    const serviceDetail: Record<string, any> = { services: form.services, languages };
+    const serviceDetail: Record<string, any> = { services: form.services, languages, org_type: form.org_type || null };
+    if (isKom) serviceDetail.komunitas = { format: form.kom_format || null, participants: form.participant_count || null };
     if (hasInterpreting) {
       serviceDetail.event = {
         name: form.event_name, start_date: form.event_start || null, end_date: form.event_end || null,
@@ -225,6 +249,8 @@ export default function CorporatePage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...form,
+          industry: isKom ? "Komunitas" : form.industry,
+          program_type: isKom ? "komunitas" : undefined,
           languages,
           notes: notesFull,
           service_type: form.services.join("+") || "training",
@@ -232,7 +258,7 @@ export default function CorporatePage() {
         }),
       });
       // Also send WA
-      const msg = `Halo, saya ${form.pic_name}${form.pic_title ? ` (${form.pic_title})` : ""} dari ${form.company_name}${form.industry ? ` (${form.industry})` : ""}.\n\nPermintaan B2B:\n${summary.map(l => `• ${l}`).join("\n")}\n\nEmail: ${form.pic_email}\nWhatsApp: ${form.pic_phone}\n\nCatatan: ${form.notes || "-"}`;
+      const msg = `Halo, saya ${form.pic_name}${form.pic_title ? ` (${form.pic_title})` : ""} dari ${form.company_name}${!isKom && form.industry ? ` (${form.industry})` : ""}.\n\n${isKom ? "Permintaan kelas komunitas" : "Permintaan B2B"}:\n${summary.map(l => `• ${l}`).join("\n")}\n\nEmail: ${form.pic_email}\nWhatsApp: ${form.pic_phone}\n\nCatatan: ${form.notes || "-"}`;
       window.open(waMsg(msg), "_blank");
       setSubmitted(true);
     } catch (e) {
@@ -415,6 +441,22 @@ export default function CorporatePage() {
               {cur === "service" && (
                 <div className="space-y-4">
                   <div>
+                    <label className="text-xs font-semibold text-slate-500 mb-2 block">Mendaftar sebagai</label>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                      {ORG_TYPES.map(o => (
+                        <button key={o} onClick={() => setF("org_type", form.org_type === o ? "" : o)}
+                          className={`px-3 py-2.5 rounded-xl border-2 text-xs font-medium transition-all ${
+                            form.org_type === o ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E]" : "border-slate-200 text-slate-600 hover:border-slate-300"
+                          }`}>{o}</button>
+                      ))}
+                    </div>
+                    {isKom && (
+                      <p className="mt-2 text-[11px] text-slate-500 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 leading-relaxed">
+                        Untuk komunitas ada dua format: kelas interaktif (maksimal 20 orang, semua latihan bicara) atau webinar untuk peserta lebih banyak. Harganya dihitung khusus komunitas, bukan tarif korporat.
+                      </p>
+                    )}
+                  </div>
+                  <div>
                     <label className="text-xs font-semibold text-slate-500 mb-2 block">Layanan yang Dibutuhkan * (bisa pilih lebih dari 1)</label>
                     <div className="grid sm:grid-cols-2 gap-2">
                       {SERVICES.map(sv => (
@@ -466,10 +508,11 @@ export default function CorporatePage() {
               {cur === "company" && (
                 <div className="space-y-4">
                   <div>
-                    <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Nama Perusahaan / Instansi *</label>
-                    <input type="text" value={form.company_name} onChange={e => setF("company_name", e.target.value)} placeholder="PT. Example Indonesia"
+                    <label className="text-xs font-semibold text-slate-500 mb-1.5 block">{isKom ? "Nama Komunitas *" : "Nama Perusahaan / Instansi *"}</label>
+                    <input type="text" value={form.company_name} onChange={e => setF("company_name", e.target.value)} placeholder={isKom ? "mis. Komunitas Belajar Inggris Bandung" : "PT. Example Indonesia"}
                       className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
                   </div>
+                  {!isKom && (<>
                   <div>
                     <label className="text-xs font-semibold text-slate-500 mb-2 block">Industri *</label>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -492,12 +535,26 @@ export default function CorporatePage() {
                       ))}
                     </div>
                   </div>
+                  </>)}
                 </div>
               )}
 
               {/* Langkah 3a: Kebutuhan kelas training */}
               {cur === "training" && (
                 <div className="space-y-4">
+                  {isKom && (
+                    <div>
+                      <label className="text-xs font-semibold text-slate-500 mb-2 block">Format Kelas</label>
+                      <div className="grid sm:grid-cols-2 gap-2">
+                        {KOM_FORMATS.map(fm => (
+                          <button key={fm} onClick={() => setF("kom_format", fm)}
+                            className={`px-3 py-2 rounded-xl border-2 text-xs font-medium transition-all text-left ${
+                              form.kom_format === fm ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E]" : "border-slate-200 text-slate-600 hover:border-slate-300"
+                            }`}>{fm}</button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                   <div>
                     <label className="text-xs font-semibold text-slate-500 mb-2 block">Tujuan Training (bisa pilih lebih dari 1)</label>
                     <div className="grid grid-cols-2 gap-2">
@@ -514,7 +571,7 @@ export default function CorporatePage() {
                     <select value={form.participant_count} onChange={e => setF("participant_count", e.target.value)}
                       className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors bg-white">
                       <option value="">Pilih</option>
-                      {["5-10 orang", "11-20 orang", "21-50 orang", "50-100 orang", "100+ orang"].map(sz => <option key={sz} value={sz}>{sz}</option>)}
+                      {(isKom ? KOM_PESERTA : ["5-10 orang", "11-20 orang", "21-50 orang", "50-100 orang", "100+ orang"]).map(sz => <option key={sz} value={sz}>{sz}</option>)}
                     </select>
                   </div>
                   <div>

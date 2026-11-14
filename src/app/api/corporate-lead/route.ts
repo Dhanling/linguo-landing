@@ -38,7 +38,10 @@ export async function POST(req: NextRequest) {
         // Sebelumnya diisi "new" → SETIAP insert ditolak Postgres dan tak satu
         // pun lead dari form ini pernah masuk ke menu Corporate.
         status: "cold_lead",
-        program_type: body.service_type && body.service_type !== "training" ? body.service_type : "corporate",
+        // [b2b-komunitas-v1] Komunitas ditandai terpisah dari korporat.
+        program_type: body.program_type === "komunitas"
+          ? "komunitas"
+          : body.service_type && body.service_type !== "training" ? body.service_type : "corporate",
         lead_date: new Date().toISOString().slice(0, 10),
       }),
     });
