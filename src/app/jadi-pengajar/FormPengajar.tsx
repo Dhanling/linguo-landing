@@ -147,6 +147,10 @@ const T = {
     prev: "Sebelumnya",
     stepOf: (n: number) => `Step ${n}/4`,
     next: "Lanjut →",
+    // [jadi-pengajar-hint-v1] tombol Lanjut mati tanpa alasan → calon pengajar mengira sertifikat wajib.
+    missingHint: "Belum bisa lanjut, lengkapi dulu:",
+    missing2: { lang: "Bahasa #1 + level", langPartial: "Level untuk tiap bahasa yang dipilih", mode: "Mode mengajar", cert: "Nama + link sertifikat (atau kosongkan dua-duanya)", kids: "Bisa mengajar anak-anak? (+ pilih usia kalau Ya)" },
+    certOptionalNote: "Sertifikat opsional — boleh dikosongkan.",
     sending: "Mengirim...",
     submit: "Kirim Pendaftaran →",
     steps: [
@@ -369,6 +373,9 @@ const T = {
     prev: "Previous",
     stepOf: (n: number) => `Step ${n}/4`,
     next: "Continue →",
+    missingHint: "Can't continue yet, please complete:",
+    missing2: { lang: "Language #1 + level", langPartial: "A level for each chosen language", mode: "Teaching mode", cert: "Certificate name + link (or leave both empty)", kids: "Can you teach children? (+ pick ages if Yes)" },
+    certOptionalNote: "Certificates are optional — you can leave them empty.",
     sending: "Sending...",
     submit: "Submit Application →",
     steps: [
@@ -1703,6 +1710,23 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
       {/* WIZARD FOOTER */}
       {!success && (
         <div className="bg-white border-t border-slate-100">
+          {step === 2 && !canNext(2) && (() => {
+            const kidsOk = canTeachKids === false || (canTeachKids === true && kidsTiers.length > 0);
+            const miss = [
+              validSkills.length < 1 && t.missing2.lang,
+              hasIncompleteSkill && t.missing2.langPartial,
+              !teachingMode && t.missing2.mode,
+              hasIncompleteCert && t.missing2.cert,
+              !kidsOk && t.missing2.kids,
+            ].filter(Boolean) as string[];
+            if (miss.length === 0) return null;
+            return (
+              <div className="max-w-xl mx-auto px-4 pt-3 text-xs text-amber-700">
+                <span className="font-semibold">{t.missingHint}</span> {miss.join(" · ")}
+                {!hasIncompleteCert && <span className="block text-slate-400 mt-0.5">{t.certOptionalNote}</span>}
+              </div>
+            );
+          })()}
           <div className="max-w-xl mx-auto px-4 py-4 flex justify-between">
             <button onClick={() => step === 1 ? setStep(0) : setStep(step - 1)} className="text-sm text-slate-500 hover:text-slate-900 px-6 py-3 rounded-full transition-colors">
               ← {t.back}
