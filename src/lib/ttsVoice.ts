@@ -94,6 +94,10 @@ export const AZURE_VOICES: Record<string, { locale: string; voice: string }> = {
   uz: { locale: "uz-UZ", voice: "uz-UZ-MadinaNeural" },
   fa: { locale: "fa-IR", voice: "fa-IR-DilaraNeural" },
   ka: { locale: "ka-GE", voice: "ka-GE-EkaNeural" },
+  // [tts-ibrani-azure-v1] Ibrani pindah dari Chirp 3 HD: teks tanpa niqqud dan
+  // campuran angka (nomor telepon, "שיעור 5") lebih tepat dibaca Azure. Chirp
+  // he-IL tetap jadi cadangan kalau kunci Azure tak ada.
+  he: { locale: "he-IL", voice: "he-IL-HilaNeural" },
 };
 
 /** Format keluaran Azure — mp3 supaya satu bucket, satu tipe berkas. */
