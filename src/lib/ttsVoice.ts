@@ -231,7 +231,25 @@ export function namaVoicePersona(kode?: string | null, persona?: string | null, 
  *  Teks yang MASUK ke kunci cache adalah hasil fungsi ini, bukan teks mentah. */
 export function bersihkanTeksTts(s: string): string {
   const t = String(s || "").replace(/\s*\([^)]*\)/g, "").replace(/\s*·\s*/g, ", ").trim();
-  return buangIsianRumpang(t);
+  return buangIsianRumpang(buangPanah(t));
+}
+
+/* [tts-tanpa-panah-v1] Panah penanda intonasi ("Jesteś z Polski? ↗") cuma
+   petunjuk visual — dibacakan mesin suara jadi "panah kanan atas". Panah
+   mendatar (→ ← ⇒) dibaca jeda koma; panah lain (↗ ↘ ↑ ↓ ⤴ ⤵ …) dibuang.
+   Teks TANPA panah dikembalikan apa adanya supaya kunci cache tak bergeser.
+   🔴 KEMBAR dengan ttsVoice.ts di repo landing/dashboard. */
+const PANAH = /[\u2190-\u21FF\u27F0-\u27FF\u2900-\u297F\u2B00-\u2B11\u2B60-\u2BFF]/u;
+function buangPanah(t: string): string {
+  if (!PANAH.test(t)) return t;
+  return t
+    .replace(/\s*[\u2192\u2190\u21D2\u21D0\u27F6\u27F5\u27F9]\s*/gu, ", ")
+    .replace(/[\u2190-\u21FF\u27F0-\u27FF\u2900-\u297F\u2B00-\u2B11\u2B60-\u2BFF]\uFE0F?/gu, " ")
+    .replace(/^[\s,]+|[\s,]+$/g, "")
+    .replace(/\s+([,.;:!?…。！？])/gu, "$1")
+    .replace(/,\s*,/g, ",")
+    .replace(/\s{2,}/g, " ")
+    .trim();
 }
 
 /* [tts-tanpa-isian-v1] Latihan isian rumpang "Я ____ кофе." — garis bawahnya
