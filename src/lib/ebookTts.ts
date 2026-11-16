@@ -21,7 +21,7 @@
 import { toLangCode } from "@/lib/quiz/language";
 import { KODE_CHIRP } from "@/lib/quizTts";
 import {
-  BATAS_TEKS_TTS, BUCKET_TTS, bersihkanTeksTts, jalurCacheTts, namaVoice,
+  BATAS_TEKS_TTS, BUCKET_TTS, bersihkanTeksTts, jalurCacheTts, kataLepasTts, namaVoice, voiceKunciTts,
 } from "@/lib/ttsVoice";
 
 /** Bahasa ini punya suara di /api/tts (Chirp 3 HD atau Azure Neural)? Beda
@@ -2919,7 +2919,9 @@ async function mainkan(base64: string, laju = 1): Promise<boolean> {
 
 /* ── cache ─────────────────────────────────────────────────────────────────── */
 const memori = new Map<string, string>(); // `${kode}|${teks}` → base64 mp3
-const NAMA_CACHE = "linguo-tts-v1";
+// [tts-kata-lepas-v1] v2: kata lepas lama (Chirp, bisa salah bahasa) jangan dipakai lagi.
+const NAMA_CACHE = "linguo-tts-v2";
+try { if (typeof caches !== "undefined") void caches.delete("linguo-tts-v1").catch(() => {}); } catch { /* diam */ }
 const alamat = (kode: string, teks: string) => `/__tts/${kode}/${encodeURIComponent(teks)}`;
 
 async function dariCacheTetap(kode: string, teks: string): Promise<string | null> {
@@ -2992,7 +2994,8 @@ async function dariCdn(kode: string, teks: string): Promise<string | null> {
   const bersih = bersihkanTeksTts(teks).slice(0, BATAS_TEKS_TTS);
   if (!bersih) return null;
   try {
-    const jalur = jalurCacheTts(voice, await sha256Hex(`${voice}|${bersih}`));
+    const kunciVoice = voiceKunciTts(kode, bersih, voice); // [tts-kata-lepas-v1]
+    const jalur = jalurCacheTts(kunciVoice, await sha256Hex(`${kunciVoice}|${bersih}`));
     const res = await fetch(
       `${ASAL_SUPABASE}/storage/v1/object/public/${BUCKET_TTS}/${jalur}`,
       { cache: "force-cache" }
@@ -3053,7 +3056,7 @@ function ambilAudio(kode: string, teks: string, bolehSintesis: boolean): Promise
 
     // GET, bukan POST: balasannya boleh disimpan CDN Vercel + cache browser
     // (lihat header abadi di /api/tts) — POST tak pernah disimpan keduanya.
-    const alamatApi = `/api/tts?text=${encodeURIComponent(teks)}&lang=${encodeURIComponent(kode)}${segar ? "&segar=1" : ""}`;
+    const alamatApi = `/api/tts?text=${encodeURIComponent(teks)}&lang=${encodeURIComponent(kode)}${kataLepasTts(bersihkanTeksTts(teks)) ? "&kata=1" : ""}${segar ? "&segar=1" : ""}`;
     const res = await fetch(alamatApi);
     if (!res.ok) return null;
     const { audioContent } = await res.json();

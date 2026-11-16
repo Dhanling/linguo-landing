@@ -24,7 +24,7 @@ import os from "node:os";
 import path from "node:path";
 import {
   AZURE_FORMAT, AZURE_VOICES, BATAS_TEKS_TTS, BUCKET_TTS, ESPEAK_VOICES, bersihkanTeksTts,
-  jalurCacheTts, localeAksen, localeChirp, namaVoiceGoogle, namaVoicePersona, penyediaTts,
+  jalurCacheTts, localeAksen, localeChirp, namaVoiceGoogle, namaVoicePersona, penyediaTts, voiceKunciTts,
 } from "@/lib/ttsVoice";
 
 export const runtime = "nodejs";
@@ -144,6 +144,32 @@ async function sintesisAzure(locale: string, voice: string, text: string): Promi
   const buf = Buffer.from(await res.arrayBuffer());
   if (!buf.length) throw new Error("azure: balasan kosong");
   return buf.toString("base64");
+}
+
+/* [tts-kata-lepas-v1] Suara Google SATU bahasa untuk kata lepas di sebuah locale:
+   Neural2 → Wavenet → Standard, perempuan dulu (selaras Kore). Dicari sekali per
+   kontainer; null = tak ada (kata tetap pakai Chirp). */
+const _voiceKata = new Map<string, Promise<string | null>>();
+function voiceKata(locale: string, token: string): Promise<string | null> {
+  let p = _voiceKata.get(locale);
+  if (!p) {
+    p = (async () => {
+      const res = await fetch(`https://texttospeech.googleapis.com/v1/voices?languageCode=${encodeURIComponent(locale)}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      if (!res.ok) throw new Error(`voices ${res.status}`);
+      const j = await res.json().catch(() => ({}));
+      const peringkat = (n: string) => (/-Neural2-/.test(n) ? 0 : /-Wavenet-/.test(n) ? 1 : /-Standard-/.test(n) ? 2 : 9);
+      const calon = ((j.voices || []) as Array<{ name?: string; ssmlGender?: string; languageCodes?: string[] }>)
+        .filter((v) => v.name && (v.languageCodes || []).includes(locale) && peringkat(v.name) < 9)
+        .sort((a, b) => peringkat(a.name!) - peringkat(b.name!)
+          || (a.ssmlGender === "FEMALE" ? 0 : 1) - (b.ssmlGender === "FEMALE" ? 0 : 1)
+          || a.name!.localeCompare(b.name!));
+      return calon[0]?.name ?? null;
+    })().catch(() => { _voiceKata.delete(locale); return null; });
+    _voiceKata.set(locale, p);
+  }
+  return p;
 }
 
 // ---- resolve voice sekali (TTS_VOICE override, atau auto-pick Chirp3-HD pertama) ----
@@ -281,8 +307,11 @@ async function sintesis(teksMentah: unknown, langMentah: unknown, suaraMentah?: 
         ? (voicePersona ?? (namaVoiceGoogle(langBase) as string))
         : await resolveVoice(await getAccessToken());
 
+  // [tts-kata-lepas-v1] Kata lepas → kunci `<voice>~kata` + suara satu bahasa (lihat ttsVoice.ts).
+  const kunciVoice = chirpLocale ? voiceKunciTts(langBase, text, voice) : voice;
+  const kataLepas = kunciVoice !== voice;
   // Sudah pernah disintesis? Balas dari simpanan — nol karakter ditagih.
-  const jalur = jalurCache(voice, text);
+  const jalur = jalurCache(kunciVoice, text);
   // [tts-klik-pertama-v1] Token Google diminta BERSAMAAN dengan pemeriksaan
   // cache, bukan sesudahnya: cache miss di kontainer yang belum punya token
   // dulu membayar dua perjalanan berurutan (Storage, lalu OAuth) sebelum
@@ -328,6 +357,7 @@ async function sintesis(teksMentah: unknown, langMentah: unknown, suaraMentah?: 
   }
 
   const token = (await tokenAwal) ?? (await getAccessToken());
+  const voiceSintesis = kataLepas ? ((await voiceKata(languageCode, token)) ?? voice) : voice;
   // [tts-senyap-v1] Senyap → ulang dengan variasi kecil (kapital, tanda baca):
   // hasil Chirp untuk kata lepas acak — "ja" senyap, "Ja" bersuara, "ja!" bersuara.
   const kapital = text.charAt(0).toLocaleUpperCase() + text.slice(1);
@@ -339,7 +369,7 @@ async function sintesis(teksMentah: unknown, langMentah: unknown, suaraMentah?: 
       headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
       body: JSON.stringify({
         input: { text: t },
-        voice: { languageCode, name: voice },
+        voice: { languageCode, name: voiceSintesis },
         audioConfig: { audioEncoding: ENCODING },
       }),
     });

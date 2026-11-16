@@ -276,3 +276,24 @@ export const BATAS_TEKS_TTS = 400;
 export function jalurCacheTts(voice: string, sha: string): string {
   return `${voice}/${sha.slice(0, 40)}.mp3`;
 }
+
+/* [tts-kata-lepas-v1] Laporan owner 16 Nov 2026 (Polish A1, "moi" dibaca "mwa"
+   ala Prancis). Diuji Whisper: mp3 Chirp pl-PL untuk "moi" terdeteksi Prancis,
+   "moi." Belanda, sedangkan kalimat utuhnya Polandia. Chirp 3 HD multibahasa —
+   kata lepas yang juga kata bahasa lain bisa "pindah bahasa". Kata tunggal
+   (bahasa ber-spasi) karena itu disintesis dengan suara Google SATU bahasa
+   (Neural2/Wavenet/Standard) di locale yang sama; kalimat tetap Chirp. Kunci
+   cache-nya diberi akhiran `~kata` supaya rekaman lama yang melenceng tak
+   terpakai lagi. 🔴 KEMBAR: ttsVoice.ts landing & dashboard + /api/tts. */
+const TANPA_SPASI_TTS = /[\u0E00-\u0EFF\u1000-\u109F\u1780-\u17FF\u3040-\u30FF\u3400-\u9FFF\uF900-\uFAFF]/u;
+export const SUFIKS_KATA_TTS = "~kata";
+export function kataLepasTts(teksBersih: string): boolean {
+  const t = String(teksBersih || "").trim();
+  return !!t && t.length <= 30 && !/\s/.test(t) && /\p{L}/u.test(t) && !TANPA_SPASI_TTS.test(t);
+}
+/** Nama "voice" untuk KUNCI cache (bukan untuk Google): suara bawaan Google +
+ *  kata lepas → `<voice>~kata`. Persona/suara 2/Azure/eSpeak tak berubah. */
+export function voiceKunciTts(kode: string | null | undefined, teksBersih: string, voice: string): string {
+  if (penyediaTts(kode) !== "google" || voice !== namaVoiceGoogle(kode) || !kataLepasTts(teksBersih)) return voice;
+  return voice + SUFIKS_KATA_TTS;
+}
