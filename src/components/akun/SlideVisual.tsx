@@ -1112,6 +1112,7 @@ function potongKata(teks: string, sorot: string[]): Array<{ t: string; s: boolea
    kelompok yang sama. Dibandingkan per kolom target (tanpa kolom subjek pertama & kolom contoh),
    huruf besar-kecil diabaikan; kelompok yang mencakup semua baris tak diwarnai (tak informatif). */
 const WARNA_KEMBAR = ["#7C3AED", "#0284C7", "#DB2777", "#059669", "#B45309"];
+const WARNA_TETAP = "#0E7C7B"; // [tabel-tetap-v1] teal gelap — bentuk tak berubah antarkolom
 function kembarTabel(v: Extract<Visual, { kind: "tabel" }>) {
   const target = v.kolom.map((k, i) => (k.target && !/contoh|kalimat|example/i.test(k.label) ? i : -1)).filter((i) => i >= 0);
   // Kolom subjek (io/tu/lui…) dikenali dari labelnya; ia penamaan kelompok, bukan bahan perbandingan.
@@ -1137,7 +1138,24 @@ function kembarTabel(v: Extract<Visual, { kind: "tabel" }>) {
   kelompok.forEach((rs, i) => rs.forEach((r) => warnaBaris.set(r, WARNA_KEMBAR[i % WARNA_KEMBAR.length])));
   const nama = (r: number) => (subjek >= 0 ? v.baris[r][subjek]?.t : "") || v.baris[r][0]?.t || "";
   const legenda = kelompok.map((rs, i) => ({ warna: WARNA_KEMBAR[i % WARNA_KEMBAR.length], nama: rs.map(nama).filter(Boolean) }));
-  return { warnaBaris, selSama, subjek, legenda };
+  /* [tabel-tetap-v1] Laporan owner 16 Nov 2026 (tabel posesif Polandia): jego/jej/pana·pani/ich
+     SAMA di semua kolom gender — tidak berubah — tapi tak ditandai karena kembar di atas cuma
+     membandingkan ANTAR baris. Baris yang semua sel target-nya (≥2 kolom) identik kini diberi
+     satu warna "tetap" + legenda. Baris yang sudah punya warna kembar tak ditimpa; kalau SEMUA
+     baris tetap, tak diwarnai (tak informatif). */
+  const tetap = new Set<number>();
+  if (banding.length >= 2) {
+    v.baris.forEach((b, r) => {
+      if (warnaBaris.has(r)) return;
+      const isi = banding.map((c) => b[c]?.t || "");
+      if (isi.some(kosong)) return;
+      if (new Set(isi.map(norm)).size === 1) tetap.add(r);
+    });
+    if (tetap.size === v.baris.length) tetap.clear();
+  }
+  tetap.forEach((r) => { warnaBaris.set(r, WARNA_TETAP); banding.forEach((c) => selSama.add(`${r}-${c}`)); });
+  const namaTetap = [...tetap].map(nama).filter(Boolean);
+  return { warnaBaris, selSama, subjek, legenda, namaTetap };
 }
 
 function VisualTabel({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "tabel" }>; ucap?: Ucap; siapkan?: (t: string) => void; aksen: string }) {
@@ -1210,6 +1228,16 @@ function VisualTabel({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "
           </div>
         </div>
       </div>
+      {kembar.namaTetap.length > 0 && (
+        <div className="flex shrink-0 flex-wrap items-center gap-x-[0.9em] gap-y-[0.3em] text-[0.74em] font-bold" style={{ color: "#4B5563" }}>
+          <span>Bentuknya tetap di semua kolom:</span>
+          <span className="inline-flex items-center gap-[0.35em] rounded-full px-[0.7em] py-[0.15em]"
+            style={{ color: WARNA_TETAP, background: `color-mix(in srgb, ${WARNA_TETAP} 12%, #FFFFFF)`, border: `1px solid color-mix(in srgb, ${WARNA_TETAP} 35%, #FFFFFF)` }}>
+            <span className="inline-block h-[0.6em] w-[0.6em] rounded-full" style={{ background: WARNA_TETAP }} />
+            <span dir="auto">{kembar.namaTetap.join(" · ")}</span>
+          </span>
+        </div>
+      )}
       {kembar.legenda.length > 0 && (
         <div className="flex shrink-0 flex-wrap items-center gap-x-[0.9em] gap-y-[0.3em] text-[0.74em] font-bold" style={{ color: "#4B5563" }}>
           <span>Warna sama = bentuknya sama:</span>
