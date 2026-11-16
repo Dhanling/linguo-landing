@@ -9,6 +9,7 @@ import Link from "next/link";
 import { BadgeCheck, ShieldAlert, ShieldCheck } from "lucide-react";
 import { createClient } from "@supabase/supabase-js";
 import { sapaan } from "@/lib/teacherName"; // [panggilan-pengajar-v1]
+import { bobotSesi } from "@/lib/sesiSetara"; // [sertifikat-setara-60-v1]
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Verifikasi Sertifikat — Linguo.id", robots: { index: false, follow: false } };
@@ -34,7 +35,7 @@ async function ambil(id: string): Promise<Data | null> {
   });
   const { data: r } = await supabase
     .from("registrations")
-    .select("id, student_id, product_type, language, level, sessions_used, sessions_total, students(name), teachers(name)")
+    .select("id, student_id, product_type, language, level, sessions_used, sessions_total, duration, students(name), teachers(name)")
     .eq("id", id)
     .maybeSingle();
   if (!r) return null;
@@ -46,12 +47,13 @@ async function ambil(id: string): Promise<Data | null> {
   // [sertifikat-reguler-16-v1] Reguler (batch 8 sesi, `sessions_total` sering NULL) ikut sejak 27 Okt 2026.
   const ikutGabung = (x: any) => {
     const t = Number(x.sessions_total) || 0;
-    return x.product_type === "Reguler" ? t < 16 : x.product_type === "Private" && t > 0 && t < 16;
+    // [sertifikat-setara-60-v1] Private < 60 menit/sesi ikut digabung & dihitung setara 60 menit.
+    return x.product_type === "Reguler" ? t < 16 : x.product_type === "Private" && t > 0 && (t < 16 || bobotSesi(x) < 1);
   };
   if (ikutGabung(reg) && reg.student_id) {
     const { data: lain } = await supabase
       .from("registrations")
-      .select("sessions_used, sessions_total, product_type, level, pipeline_status, status")
+      .select("sessions_used, sessions_total, product_type, level, duration, pipeline_status, status")
       .eq("student_id", reg.student_id)
       .in("product_type", ["Private", "Reguler"])
       .ilike("language", String(reg.language || ""))
@@ -59,7 +61,7 @@ async function ambil(id: string): Promise<Data | null> {
       .is("archived_at", null);
     used = ((lain as any[]) || [])
       .filter((x) => ikutGabung(x) && String(x.level || "") === String(reg.level || "") && x.pipeline_status !== "Batal" && x.status !== "Transferred")
-      .reduce((n, x) => n + (Number(x.sessions_total) > 0 ? Math.min(Number(x.sessions_used) || 0, Number(x.sessions_total)) : Number(x.sessions_used) || 0), 0);
+      .reduce((n, x) => n + (Number(x.sessions_total) > 0 ? Math.min(Number(x.sessions_used) || 0, Number(x.sessions_total)) : Number(x.sessions_used) || 0) * bobotSesi(x), 0);
     total = 16;
   }
   const base = String(reg.level || "A1").split(".")[0].toUpperCase();

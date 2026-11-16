@@ -4,6 +4,7 @@
 import { useState, useEffect, useMemo, useRef, useCallback, Fragment, type ReactNode } from "react";
 import { useRouter } from "next/navigation"; // [perf:sidebar-nav-v1]
 import Link from "next/link"; // [kelas-detail-page-v1] card kelas → halaman /akun/kelas/[id]
+import { bobotSesi } from "@/lib/sesiSetara"; // [sertifikat-setara-60-v1]
 import { classRoomUrl, isJoinable, classRoomUrlForRoom, pickClassRoomId } from "@/lib/classRoom"; // [kelas-video-siswa-v1]
 import { LANG_FLAGS, getFlagUrl, getLangPhoto, langGlyph } from "@/lib/lang-visuals"; // [kelas-detail-page-v1]
 import { baseLanguage, displayLanguage, regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
@@ -4217,20 +4218,24 @@ export default function AkunPage() {
     // [sertifikat-reguler-16-v1] Reguler (batch 8 sesi) ikut aturan yang sama sejak 27 Okt 2026
     // (arahan owner "kaya yang lain"): 1 batch A1.1 = 8/16, sertifikat terbit sesudah 16 sesi level
     // itu — boleh gabungan Reguler + Private.
+    // [sertifikat-setara-60-v1] 16 Nov 2026: syarat sublevel = 16 sesi × 60 menit. Private dengan
+    // durasi < 60 menit dihitung setara (30 mnt = ½ sesi) — 16 × 30 menit baru 8/16 (Murni, Hebrew A1.1).
     for (const r of activeRegs as any[]) {
       const tot = Number(r.sessions_total) || 0;
-      const gabung = r.product_type === "Reguler" ? tot < SESI_LEVEL : r.product_type === "Private" && tot > 0 && tot < SESI_LEVEL;
+      const bobot = bobotSesi(r);
+      const gabung = r.product_type === "Reguler" ? tot < SESI_LEVEL : r.product_type === "Private" && tot > 0 && (tot < SESI_LEVEL || bobot < 1);
       if (!gabung) { regsSertif.push(r); continue; }
       const k = `${String(r.language || "").toLowerCase()}|${String(r.level || "")}`;
-      const used = tot > 0 ? Math.min(Number(r.sessions_used) || 0, tot) : Number(r.sessions_used) || 0;
+      const used = (tot > 0 ? Math.min(Number(r.sessions_used) || 0, tot) : Number(r.sessions_used) || 0) * bobot;
       const g = gabungan.get(k);
       if (!g) {
-        const baru = { ...r, sessions_used: used, sessions_total: SESI_LEVEL, __regIds: [String(r.id)], __terbaru: r.created_at };
+        const baru = { ...r, sessions_used: used, sessions_total: SESI_LEVEL, __regIds: [String(r.id)], __terbaru: r.created_at, ...(bobot < 1 ? { duration: "60" } : {}) };
         gabungan.set(k, baru);
         regsSertif.push(baru);
         continue;
       }
       g.sessions_used += used;
+      if (bobot < 1) g.duration = "60";
       g.__regIds.push(String(r.id));
       if (String(r.created_at || "") > String(g.__terbaru || "")) {
         Object.assign(g, { id: r.id, teachers: r.teachers, teacher_id: r.teacher_id, status: r.status, class_reports: r.class_reports, __terbaru: r.created_at });
@@ -4263,7 +4268,7 @@ export default function AkunPage() {
       if (isNaN(awal.getTime()) || awal > mundur(3)) awal = mundur(3);
       else if (awal < mundur(4)) awal = mundur(4);
       const dateFrom = awal.toISOString();
-      const used = r.sessions_used || 0;
+      const used = Math.round((r.sessions_used || 0) * 100) / 100;
       const pct = total > 0 ? Math.min(100, Math.max(0, Math.round((used / total) * 100))) : 0;
       const issued = total > 0 && used >= total;
       const lvl = String(r.level || "A1");
