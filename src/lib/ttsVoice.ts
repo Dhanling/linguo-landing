@@ -235,7 +235,24 @@ export function namaVoicePersona(kode?: string | null, persona?: string | null, 
  *  Teks yang MASUK ke kunci cache adalah hasil fungsi ini, bukan teks mentah. */
 export function bersihkanTeksTts(s: string): string {
   const t = String(s || "").replace(/\s*\([^)]*\)/g, "").replace(/\s*·\s*/g, ", ").trim();
-  return buangIsianRumpang(buangPanah(t));
+  return lafalTts(buangIsianRumpang(buangPanah(t)));
+}
+
+/* [tts-lafal-niqqud-v1] Kata tanpa tanda vokal yang salah ditebak mesin suara.
+   Diukur 16 Nov 2026 (Azure he-IL-HilaNeural, F1 vokal): "ביי" (bye) dibaca
+   "bei" (F1 280 Hz), "בַּיי" dengan patah dibaca "bai" (734 Hz ≈ רב 762 Hz).
+   Hanya teks TTS yang diganti — tulisan di slide tetap tanpa niqqud. Teks yang
+   tak memuat kata di daftar dikembalikan apa adanya supaya kunci cache tak
+   bergeser. Tambah baris HANYA untuk kata yang lafalnya tak bergantung konteks
+   (mis. שלומך shlomekh/shlomkha tergantung lawan bicara → jangan di sini).
+   🔴 KEMBAR dengan ttsVoice.ts di repo landing/dashboard. */
+const HURUF_IBRANI = "\u0590-\u05FF";
+const LAFAL_TTS: [RegExp, string][] = [
+  [new RegExp(`(^|[^${HURUF_IBRANI}])ביי(?=$|[^${HURUF_IBRANI}])`, "gu"), "$1בַּיי"],
+];
+function lafalTts(t: string): string {
+  if (!/[\u05D0-\u05EA]/u.test(t)) return t;
+  return LAFAL_TTS.reduce((s, [re, ganti]) => s.replace(re, ganti), t);
 }
 
 /* [tts-tanpa-panah-v1] Panah penanda intonasi ("Jesteś z Polski? ↗") cuma
