@@ -3144,6 +3144,57 @@ export function siapkanEbook(teksMentah: string, kode: string) {
   void ambilAudio(kode, teks, false);
 }
 
+/* [tts-pramuat-slide-v1] Laporan owner 16 Nov 2026: klik kalimat/kata di slide
+   (terutama mode Dialog) masih menunggu loading. Begitu satu slide tampil,
+   SEMUA teks bersuaranya disiapkan di latar — kalimat/tombol putar dulu, lalu
+   kata lepas — sampai /api/tts kalau perlu, jadi klik pertama biasanya
+   langsung berbunyi dari memori. Antrean maksimal 4 permintaan sejalan; pindah
+   slide membuang antrean slide lama (yang sudah jalan dibiarkan selesai, toh
+   hasilnya masuk cache bersama). Biaya Chirp: hanya teks yang belum pernah
+   disintesis siapa pun — sesudahnya semua dari CDN.
+   🔴 KEMBAR di linguo-landing & linguo-admin-dashboard src/lib/ebookTts.ts. */
+const SEJALAN_PRAMUAT = 4;
+let antreanPramuat: Array<() => Promise<unknown>> = [];
+let pramuatJalan = 0;
+function pompaPramuat() {
+  while (pramuatJalan < SEJALAN_PRAMUAT && antreanPramuat.length) {
+    const kerja = antreanPramuat.shift()!;
+    pramuatJalan++;
+    void kerja().catch(() => null).finally(() => { pramuatJalan--; pompaPramuat(); });
+  }
+}
+/** Siapkan banyak teks sekaligus (urutan = prioritas). Mengganti antrean sebelumnya. */
+export function pramuatTeks(daftar: Array<{ teks: string; sintesis?: boolean }>, kode: string, batas = 80) {
+  if (typeof window === "undefined" || !bisaDibunyikan(kode)) { antreanPramuat = []; return; }
+  const sudah = new Set<string>();
+  const baru: Array<() => Promise<unknown>> = [];
+  for (const d of daftar) {
+    const teks = rapikan(d.teks);
+    if (!teks || sudah.has(teks) || memori.has(`${kode}|${teks}`)) continue;
+    sudah.add(teks);
+    const sintesis = d.sintesis !== false;
+    baru.push(() => ambilAudio(kode, teks, sintesis));
+    if (baru.length >= batas) break;
+  }
+  antreanPramuat = baru;
+  pompaPramuat();
+}
+
+/** Kumpulkan teks bersuara ([data-ucap]) di dalam sebuah kartu slide — kalimat,
+ *  tombol putar & opsi dulu, kata lepas belakangan. */
+export function teksUcapDiElemen(akar: ParentNode | null): Array<{ teks: string; sintesis: boolean }> {
+  if (!akar) return [];
+  const depan: Array<{ teks: string; sintesis: boolean }> = [];
+  const belakang: Array<{ teks: string; sintesis: boolean }> = [];
+  akar.querySelectorAll<HTMLElement>("[data-ucap],[data-ucap-opsi]").forEach((el) => {
+    const t = (el.dataset.ucap || el.dataset.ucapOpsi || "").trim();
+    if (!t) return;
+    const kata = el.dataset.ucapKonteks !== undefined && !/\s/.test(t);
+    (kata ? belakang : depan).push({ teks: t, sintesis: true });
+  });
+  return [...depan, ...belakang];
+}
+
 export type HasilUcap = "ok" | "gagal" | "dilewati";
 
 /**

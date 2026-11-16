@@ -40,7 +40,7 @@ import { RectFlag } from "@/components/RectFlag";
 // (memori → Cache API → CDN bucket `tts-cache` → /api/tts). Kata yang pernah
 // dibunyikan siapa pun — di e-book maupun di slide — tidak disintesis ulang.
 import {
-  bisaDibunyikan, bukaKunciAudio, hentikanEbookTts, siapkanEbook, ucapkanEbook, audioEbookAktif
+  bisaDibunyikan, bukaKunciAudio, hentikanEbookTts, siapkanEbook, ucapkanEbook, audioEbookAktif, jagaHangatTts, pramuatTeks, teksUcapDiElemen
 } from "@/lib/ebookTts";
 // [slide-arti-v1] Arti kata yang SAMA dengan kartu ketuk-kata reader e-book
 // (cache memori → localStorage → cache bersama di server).
@@ -962,6 +962,15 @@ function SlideDeckViewerSession({
 
   /* [slide-tts-v1] Pindah slide / menutup = suara yang masih berjalan dihentikan. */
   useEffect(() => { hentikanEbookTts(); }, [i]);
+  /* [tts-pramuat-slide-v1] Slide tampil → semua kalimat & kata bersuaranya
+     disiapkan di latar (lihat pramuatTeks), dan /api/tts dijaga hangat. */
+  const kotakSlideRef = useRef<HTMLDivElement>(null);
+  useEffect(() => (lang && bisaDibunyikan(lang) ? jagaHangatTts(lang) : undefined), [lang]);
+  useEffect(() => {
+    if (!lang || !bisaDibunyikan(lang)) return;
+    const id = window.setTimeout(() => pramuatTeks(teksUcapDiElemen(kotakSlideRef.current), lang), 150);
+    return () => window.clearTimeout(id);
+  }, [i, lang, kunci]);
   useEffect(() => () => { hentikanEbookTts(); }, []);
   const bisaTts = !!lang && bisaDibunyikan(lang);
 
@@ -1024,7 +1033,7 @@ function SlideDeckViewerSession({
           <ChevronLeft size={22} />
         </button>
         <div className="relative aspect-[16/9] max-h-full w-full max-w-[min(1100px,92vw)] overflow-hidden rounded-2xl shadow-2xl">
-          <div key={i} className="absolute inset-0">
+          <div key={i} ref={kotakSlideRef} className="absolute inset-0">
             <SlideCard s={s} showAnswers={kunci} lang={lang} className="h-full w-full" />
           </div>
         </div>
