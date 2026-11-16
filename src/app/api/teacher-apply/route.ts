@@ -20,14 +20,16 @@ function normalizePhone(raw: string): string {
 
 type ExistingRow = { email: string; phone: string; status: string };
 
-// Query Supabase untuk row yang match email atau phone (OR)
+// Query Supabase untuk row yang match email atau phone (OR).
+// Lamaran yang sudah DIARSIP tim tidak dihitung — pelamar boleh daftar ulang
+// (mis. salah pilih bahasa: Sotar daftar "Belanda A1", mestinya Batak Mandailing). [teacher-apply-arsip-v1]
 async function findExisting(email?: string | null, phone?: string | null): Promise<ExistingRow[] | null> {
   const filters: string[] = [];
   if (email) filters.push(`email.eq.${encodeURIComponent(email)}`);
   if (phone) filters.push(`phone.eq.${encodeURIComponent(phone)}`);
   if (filters.length === 0) return [];
 
-  const url = `${SUPABASE_URL}/rest/v1/teacher_applications?select=email,phone,status&or=(${filters.join(",")})&limit=10`;
+  const url = `${SUPABASE_URL}/rest/v1/teacher_applications?select=email,phone,status&archived_at=is.null&or=(${filters.join(",")})&limit=10`;
   const res = await fetch(url, {
     headers: {
       apikey: SUPABASE_KEY,
