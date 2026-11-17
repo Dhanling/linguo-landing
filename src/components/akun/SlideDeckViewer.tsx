@@ -1,4 +1,6 @@
 'use client';
+import { isMongolianA1Body, isMongolianA1Objectives } from '@/data/mongolianA1Artwork';
+import { isMongolianA2Objectives } from '@/data/mongolianA2Artwork';
 import { a1CuteCover } from '../../lib/a1CuteCover';
 import { isEnglishSessionArtCover } from '@/data/englishSessionArtwork';
 import { isCantoneseAdvancedBody } from '@/data/cantoneseAdvancedBody';
@@ -602,8 +604,8 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
      putih sendiri (kiri 1,9% · kanan 25,8% · atas 3,4% gambar). Panel CSS di atasnya
      dulu bergeser beberapa piksel → dua panel bertumpuk (laporan owner 30 Okt 2026,
      Rumania di Linguo Meet). Kini panel CSS transparan dan isinya duduk di panel gambar. */
-  const panelBawaan = isCantoneseAdvancedBody(s.cover) || !!frenchTheme || isA1LanguageBodyCover(s.cover) || isA2LanguageBodyCover(s.cover) || isB1LanguageBodyCover(s.cover) || isB2LanguageBodyCover(s.cover) || isPortugueseBrBodyCover(s.cover) || isTestPrepB1BodyCover(s.cover);
-  const ruangTeks = panelBawaan ? "pr-[25.8cqw]" : kiriSaja ? (isImagegenA2GoalCover(s.cover) ? "pr-[55cqw]" : "pr-[45cqw]") : "pr-[4cqw]";
+  const panelBawaan = isMongolianA1Body(s.cover) || isCantoneseAdvancedBody(s.cover) || !!frenchTheme || isA1LanguageBodyCover(s.cover) || isA2LanguageBodyCover(s.cover) || isB1LanguageBodyCover(s.cover) || isB2LanguageBodyCover(s.cover) || isPortugueseBrBodyCover(s.cover) || isTestPrepB1BodyCover(s.cover);
+  const ruangTeks = panelBawaan ? "pr-[25.8cqw]" : kiriSaja ? ((isMongolianA1Objectives(s.cover) || isMongolianA2Objectives(s.cover) || isImagegenA2GoalCover(s.cover)) ? "pr-[55cqw]" : "pr-[45cqw]") : "pr-[4cqw]";
   /* Slide yang isinya banyak dikecilkan sedikit supaya tetap muat tanpa gulir. */
   const kosakata = s.type === "vocab" ? pasangkanLawanKata(s.items || [], s.heading) : [];
   const pola = s.type === "pattern" ? uraiPola(s.pattern, s.examples) : null;
@@ -796,7 +798,7 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
   s = { ...s, cover: a1CuteCover(s.cover, s.type === 'title') };
   const tema = TEMA[s.type] || TEMA.points;
   const judul = s.type === "title";
-  const sampul = isMsaPronounSlide(s, lang) ? ARABIC_PRONOUN_BACKGROUND : personalPronounTheme(s, lang)?.image || (isDutchNumberSlide(s, lang) ? "/slide-cover/dutch-numbers/background-reference-v3.jpg" : numberSlideTheme(s, lang)?.image || s.cover || null);
+  const sampul = isMongolianA1Body(s.cover) ? s.cover : isMsaPronounSlide(s, lang) ? ARABIC_PRONOUN_BACKGROUND : personalPronounTheme(s, lang)?.image || (isDutchNumberSlide(s, lang) ? "/slide-cover/dutch-numbers/background-reference-v3.jpg" : numberSlideTheme(s, lang)?.image || s.cover || null);
   return (
     // `container-type: size` bikin clamp(...cqw) menskala ikut LEBAR KARTU, bukan
     // lebar layar — itu yang bikin teks slide ikut membesar saat fullscreen.
