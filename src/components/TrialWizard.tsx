@@ -12,6 +12,7 @@ import { Baby, Check as CheckIcon, GraduationCap, Hand, Rocket, Smile, X } from 
 import {
   TRIAL_LANGUAGES,
   TRIAL_DURATIONS,
+  TRIAL_LEVEL_IDS,
   TRIAL_LEVELS,
   KIDS_DURATION,
   computePrivateTrialPrice,
@@ -213,30 +214,52 @@ const LANG_CHIPS: { key: string; label: string }[] = [
   { key: "lainnya", label: "Lainnya" },
 ];
 
+// [funnel-trial-tawar-v1] Isian awal saat wizard dibuka dari langkah 3 /daftar
+// ("Coba 1 sesi trial dulu"): bahasa, level, durasi & tipe pengajar ikut terbawa,
+// wizard langsung mulai di "Detail Kelas". Nilai yang tak dikenal diabaikan.
+export type TrialPreset = {
+  program: "private" | "kids";
+  language?: string;
+  level?: string;
+  duration?: number;
+  teacherType?: TeacherType;
+  kidsType?: "little-learner" | "young-explorer";
+};
+
 export default function TrialWizard({
   onClose,
   onDirtyChange,
+  preset,
 }: {
   onClose?: () => void;
   onDirtyChange?: (dirty: boolean) => void;
+  preset?: TrialPreset | null;
 }) {
-  const [step, setStep] = useState(1);
-  const [program, setProgram] = useState<"" | "private" | "kids">("");
+  const [step, setStep] = useState(preset?.program ? 2 : 1);
+  const [program, setProgram] = useState<"" | "private" | "kids">(preset?.program ?? "");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [country, setCountry] = useState<CountryCode>(DEFAULT_COUNTRY.code);
   const [waNational, setWaNational] = useState("");
-  const [language, setLanguage] = useState("");
+  const [language, setLanguage] = useState(
+    preset?.language && TRIAL_LANG_OPTIONS.includes(preset.language) ? preset.language : "",
+  );
   // trial-level-price-v1 — tarif trial beda tiap level, jadi siswa wajib milih
   // (bukan default A1 diam-diam, itu yang bikin siswa intermediate ketagih 100rb).
-  const [level, setLevel] = useState("");
-  const [duration, setDuration] = useState(60);
+  const [level, setLevel] = useState(
+    preset?.program === "private" && preset.level && TRIAL_LEVEL_IDS.includes(preset.level) ? preset.level : "",
+  );
+  const [duration, setDuration] = useState(
+    preset?.program === "private" && preset.duration && TRIAL_DURATIONS.includes(preset.duration) ? preset.duration : 60,
+  );
   const [kidsType, setKidsType] = useState<
     "" | "little-learner" | "young-explorer"
-  >("");
+  >(preset?.program === "kids" && preset.kidsType ? preset.kidsType : "");
   // native-pricing-v1 — trial juga bisa pilih pengajar native (2× tarif lokal),
   // aturan sama untuk Private maupun Kids.
-  const [teacherType, setTeacherType] = useState<TeacherType>("lokal");
+  const [teacherType, setTeacherType] = useState<TeacherType>(
+    preset?.teacherType === "native" ? "native" : "lokal",
+  );
   const [days, setDays] = useState<string[]>([]);
   const [times, setTimes] = useState<string[]>([]);
   const [submitting, setSubmitting] = useState(false);

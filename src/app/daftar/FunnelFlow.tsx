@@ -44,6 +44,8 @@ import {
   ADDON_EBOOK_PRICE,
   ADDON_RECORDING_PRICE,
   KIDS_PRICE_LEVELS,
+  computePrivateTrialPrice,
+  computeKidsTrialPrice,
 } from "@/lib/trial-pricing";
 import { regulerLangName } from "@/lib/classLanguage";
 import {
@@ -335,6 +337,23 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
 
   const durationProg = program === "Kelas Private" || program === "Kelas Kids";
   const DURATION_OPTS = program === "Kelas Kids" ? [30, 45, 60] : [30, 45, 60, 75, 90];
+
+  // [funnel-trial-tawar-v1] Harga trial = tarif 1 sesi online di bahasa/level/durasi yang sama.
+  const trialPrice =
+    program === "Kelas Private"
+      ? computePrivateTrialPrice(lang, duration, effTeacherType, selLevel) || perSessionOnline
+      : program === "Kelas Kids" && KIDS_LEVEL_KEY[selLevel]
+        ? computeKidsTrialPrice(KIDS_LEVEL_KEY[selLevel], effTeacherType, lang) || 0
+        : 0;
+  const openTrial = () => {
+    const w = window as any;
+    try { w.gtag?.("event", "funnel_trial_offer_click", { program, language: lang, level: selLevel, sessions }); } catch {}
+    const preset = program === "Kelas Kids"
+      ? { program: "kids", language: lang, teacherType: effTeacherType, kidsType: KIDS_LEVEL_KEY[selLevel] }
+      : { program: "private", language: lang, level: selLevel, duration, teacherType: effTeacherType };
+    if (typeof w.__openTrialWizard === "function") w.__openTrialWizard(preset);
+    else window.location.href = "/kelas-trial";
+  };
 
   // ── Navigasi ──
   const goForm = () => {
@@ -893,6 +912,29 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
                 Bayar aman via Xendit. Jadwal diatur Admin setelah pembayaran.
                 {program === "Semi Private" && " Tiap anggota grup daftar & bayar porsinya sendiri lewat halaman ini."}
               </p>
+            </div>
+          )}
+
+          {/* [funnel-trial-tawar-v1] 19 Nov 2026: langkah 3 → Data Diri cuma 27% (target 35%)
+              dan tagihan Private Rp1,7–1,9 jt yang dibuat tak dibayar, sementara 2 dari 7
+              pembayaran web pekan itu justru trial 1 sesi. Orang yang ragu dengan total paket
+              dikasih jalan keluar murah, bukan menutup tab: wizard trial terbuka dengan
+              bahasa/level/durasi/tipe pengajar yang sama sudah terisi. */}
+          {selLevel && (program === "Kelas Private" || program === "Kelas Kids") && !isOffline && trialPrice > 0 && sessions > 1 && (
+            <div className="mt-3 flex items-center gap-3 rounded-2xl border border-dashed border-[#1A9E9E]/40 bg-white p-3.5">
+              <div className="min-w-0 flex-1">
+                <p className="text-sm font-bold text-slate-800">Masih ragu? Coba 1 sesi trial dulu</p>
+                <p className="mt-0.5 text-[11px] leading-snug text-slate-500">
+                  Cukup {fmtRp(trialPrice)} untuk 1 sesi{program === "Kelas Private" ? ` ${duration} menit` : ""} bareng pengajar Linguo. Cocok? Baru lanjut ambil paket.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={openTrial}
+                className="shrink-0 rounded-full border-2 border-[#1A9E9E] px-3.5 py-2 text-xs font-bold text-[#1A9E9E] transition-all hover:bg-[#1A9E9E]/5 active:scale-95"
+              >
+                Coba trial
+              </button>
             </div>
           )}
 

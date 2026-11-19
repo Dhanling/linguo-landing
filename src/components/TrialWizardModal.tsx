@@ -19,16 +19,24 @@ import { useOverlayLock } from "@/lib/overlayStore";
 // Lazy: the heavy wizard (form + libphonenumber-js + supabase) only downloads
 // when the modal is actually opened, not on every page's initial load.
 const TrialWizard = dynamic(() => import("@/components/TrialWizard"), { ssr: false });
+import type { TrialPreset } from "@/components/TrialWizard";
 
 const TEAL = "#1A9E9E";
 
 export default function TrialWizardModal() {
   const [open, setOpen] = useState(false);
+  // [funnel-trial-tawar-v1] window.__openTrialWizard(preset?) — isian awal opsional.
+  const [preset, setPreset] = useState<TrialPreset | null>(null);
+  const [openSeq, setOpenSeq] = useState(0);
   const [dirty, setDirty] = useState(false);
   const [confirmClose, setConfirmClose] = useState(false);
 
   useEffect(() => {
-    (window as any).__openTrialWizard = () => setOpen(true);
+    (window as any).__openTrialWizard = (p?: TrialPreset) => {
+      setPreset(p && typeof p === "object" && p.program ? p : null);
+      setOpenSeq((n) => n + 1);
+      setOpen(true);
+    };
     return () => {
       try {
         delete (window as any).__openTrialWizard;
@@ -74,7 +82,7 @@ export default function TrialWizardModal() {
         className="w-full sm:w-auto sm:max-w-lg"
         onClick={(e) => e.stopPropagation()}
       >
-        <TrialWizard onClose={requestClose} onDirtyChange={setDirty} />
+        <TrialWizard key={openSeq} preset={preset} onClose={requestClose} onDirtyChange={setDirty} />
       </div>
 
       {/* linguo-patch:trial-discard-guard-v1 — dialog konfirmasi buang perubahan */}
