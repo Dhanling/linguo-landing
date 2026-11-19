@@ -293,8 +293,179 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "value": 10
     },
     {
+      "term": "sampulu sada",
+      "meaning": "sebelas",
+      "value": 11
+    },
+    {
+      "term": "sampulu dua",
+      "meaning": "dua belas",
+      "value": 12
+    },
+    {
+      "term": "sampulu tolu",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
+      "term": "sampulu opat",
+      "meaning": "empat belas",
+      "value": 14
+    },
+    {
+      "term": "sampulu lima",
+      "meaning": "lima belas",
+      "value": 15
+    },
+    {
+      "term": "sampulu onom",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "sampulu pitu",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "sampulu ualu",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "sampulu sia",
+      "meaning": "sembilan belas",
+      "value": 19
+    },
+    {
       "term": "duapulu",
       "meaning": "dua puluh",
+      "value": 20
+    }
+  ],
+  "batak-mandailing:default": [
+    {
+      "term": "sada",
+      "meaning": "satu",
+      "example": "Sada bagas.",
+      "example_meaning": "Satu rumah.",
+      "value": 1
+    },
+    {
+      "term": "dua",
+      "meaning": "dua",
+      "example": "Dua anggi.",
+      "example_meaning": "Dua adik.",
+      "value": 2
+    },
+    {
+      "term": "tolu",
+      "meaning": "tiga",
+      "example": "Tolu anak.",
+      "example_meaning": "Tiga anak.",
+      "value": 3
+    },
+    {
+      "term": "opat",
+      "meaning": "empat",
+      "example": "Opat buku.",
+      "example_meaning": "Empat buku.",
+      "value": 4
+    },
+    {
+      "term": "lima",
+      "meaning": "lima",
+      "example": "Lima ikan.",
+      "example_meaning": "Lima ikan.",
+      "value": 5
+    },
+    {
+      "term": "onom",
+      "meaning": "enam",
+      "example": "Onom kursi.",
+      "example_meaning": "Enam kursi.",
+      "value": 6
+    },
+    {
+      "term": "pitu",
+      "meaning": "tujuh",
+      "example": "Pitu ari.",
+      "example_meaning": "Tujuh hari.",
+      "value": 7
+    },
+    {
+      "term": "ualu",
+      "meaning": "delapan",
+      "example": "Ualu jam.",
+      "example_meaning": "Jam delapan / delapan jam.",
+      "value": 8
+    },
+    {
+      "term": "sambilan",
+      "meaning": "sembilan",
+      "example": "Gordang Sambilan.",
+      "example_meaning": "Sembilan gendang.",
+      "value": 9
+    },
+    {
+      "term": "sapulu",
+      "meaning": "sepuluh",
+      "example": "Sapulu ribu.",
+      "example_meaning": "Sepuluh ribu.",
+      "value": 10
+    },
+    {
+      "term": "sapulu sada",
+      "meaning": "sebelas",
+      "example": "Sapulu sada anak.",
+      "example_meaning": "Sebelas anak.",
+      "value": 11
+    },
+    {
+      "term": "sapulu dua",
+      "meaning": "dua belas",
+      "value": 12
+    },
+    {
+      "term": "sapulu tolu",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
+      "term": "sapulu opat",
+      "meaning": "empat belas",
+      "value": 14
+    },
+    {
+      "term": "sapulu lima",
+      "meaning": "lima belas",
+      "value": 15
+    },
+    {
+      "term": "sapulu onom",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "sapulu pitu",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "sapulu ualu",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "sapulu sambilan",
+      "meaning": "sembilan belas",
+      "value": 19
+    },
+    {
+      "term": "dua pulu",
+      "meaning": "dua puluh",
+      "example": "Dua pulu ribu.",
+      "example_meaning": "Dua puluh ribu.",
       "value": 20
     }
   ],
@@ -478,6 +649,56 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "example": "Due rebu.",
       "example_meaning": "Dua ribu.",
       "value": 10
+    },
+    {
+      "term": "sebelas",
+      "meaning": "sebelas",
+      "value": 11
+    },
+    {
+      "term": "due belas",
+      "meaning": "dua belas",
+      "value": 12
+    },
+    {
+      "term": "tige belas",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
+      "term": "empat belas",
+      "meaning": "empat belas",
+      "value": 14
+    },
+    {
+      "term": "lime belas",
+      "meaning": "lima belas",
+      "value": 15
+    },
+    {
+      "term": "enem belas",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "tujuh belas",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "delapan belas",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "sembilan belas",
+      "meaning": "sembilan belas",
+      "value": 19
+    },
+    {
+      "term": "due puluh",
+      "meaning": "dua puluh",
+      "value": 20
     }
   ],
   "bipa:default": [
@@ -574,6 +795,31 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "value": 13
     },
     {
+      "term": "empat belas",
+      "meaning": "empat belas",
+      "value": 14
+    },
+    {
+      "term": "lima belas",
+      "meaning": "lima belas",
+      "value": 15
+    },
+    {
+      "term": "enam belas",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "tujuh belas",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "delapan belas",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
       "term": "sembilan belas",
       "meaning": "sembilan belas",
       "value": 19
@@ -651,14 +897,34 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "value": 12
     },
     {
+      "term": "tri + naest = trinaest",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
       "term": "četiri + naest = četrnaest",
       "meaning": "14 (i hilang)",
       "value": 14
     },
     {
+      "term": "pet + naest = petnaest",
+      "meaning": "lima belas",
+      "value": 15
+    },
+    {
       "term": "šest + naest = šesnaest",
       "meaning": "16 (t hilang)",
       "value": 16
+    },
+    {
+      "term": "sedam + naest = sedamnaest",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "osam + naest = osamnaest",
+      "meaning": "delapan belas",
+      "value": 18
     },
     {
       "term": "devet + naest = devetnaest",
@@ -753,9 +1019,39 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "value": 12
     },
     {
+      "term": "sampulo tellu",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
+      "term": "sampulo eppa'",
+      "meaning": "empat belas",
+      "value": 14
+    },
+    {
       "term": "sampulo lima",
       "meaning": "lima belas",
       "value": 15
+    },
+    {
+      "term": "sampulo enneng",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "sampulo pitu",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "sampulo aruwa",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "sampulo asera",
+      "meaning": "sembilan belas",
+      "value": 19
     },
     {
       "term": "duappulo",
@@ -849,16 +1145,40 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "value": 13
     },
     {
+      "term": "четиринадесет",
+      "translit": "chetirinádeset",
+      "meaning": "empat belas",
+      "value": 14
+    },
+    {
       "term": "петнадесет",
       "meaning": "lima belas",
       "translit": "petnádeset",
       "value": 15
     },
     {
+      "term": "шестнадесет",
+      "translit": "shestnádeset",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "седемнадесет",
+      "translit": "sedemnádeset",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
       "term": "осемнадесет",
       "meaning": "delapan belas",
       "translit": "osemnádeset",
       "value": 18
+    },
+    {
+      "term": "деветнадесет",
+      "translit": "devetnádeset",
+      "meaning": "sembilan belas",
+      "value": 19
     },
     {
       "term": "двадесет",
@@ -927,6 +1247,66 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "translit": "hsɛ̀ / tə-hsɛ̀",
       "meaning": "sepuluh",
       "value": 10
+    },
+    {
+      "term": "၁၁ ဆယ့်တစ်",
+      "translit": "hsɛ̰-tiʔ",
+      "meaning": "sebelas",
+      "value": 11
+    },
+    {
+      "term": "၁၂ ဆယ့်နှစ်",
+      "translit": "hsɛ̰-hniʔ",
+      "meaning": "dua belas",
+      "value": 12
+    },
+    {
+      "term": "၁၃ ဆယ့်သုံး",
+      "translit": "hsɛ̰-thóun",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
+      "term": "၁၄ ဆယ့်လေး",
+      "translit": "hsɛ̰-lé",
+      "meaning": "empat belas",
+      "value": 14
+    },
+    {
+      "term": "၁၅ ဆယ့်ငါး",
+      "translit": "hsɛ̰-ngá",
+      "meaning": "lima belas",
+      "value": 15
+    },
+    {
+      "term": "၁၆ ဆယ့်ခြောက်",
+      "translit": "hsɛ̰-chauʔ",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "၁၇ ဆယ့်ခုနစ်",
+      "translit": "hsɛ̰-khṵ-hniʔ",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "၁၈ ဆယ့်ရှစ်",
+      "translit": "hsɛ̰-shiʔ",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "၁၉ ဆယ့်ကိုး",
+      "translit": "hsɛ̰-kó",
+      "meaning": "sembilan belas",
+      "value": 19
+    },
+    {
+      "term": "၂၀ နှစ်ဆယ်",
+      "translit": "hnə-hsɛ̀",
+      "meaning": "dua puluh",
+      "value": 20
     }
   ],
   "cantonese:default": [
@@ -1003,10 +1383,52 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "value": 11
     },
     {
+      "term": "十二",
+      "translit": "sap6 ji6",
+      "meaning": "dua belas",
+      "value": 12
+    },
+    {
+      "term": "十三",
+      "translit": "sap6 saam1",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
+      "term": "十四",
+      "translit": "sap6 sei3",
+      "meaning": "empat belas",
+      "value": 14
+    },
+    {
       "term": "十五",
       "meaning": "lima belas",
       "translit": "sap6 ng5",
       "value": 15
+    },
+    {
+      "term": "十六",
+      "translit": "sap6 luk6",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "十七",
+      "translit": "sap6 cat1",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "十八",
+      "translit": "sap6 baat3",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "十九",
+      "translit": "sap6 gau2",
+      "meaning": "sembilan belas",
+      "value": 19
     },
     {
       "term": "二十 / 廿",
@@ -1077,6 +1499,16 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "value": 11
     },
     {
+      "term": "dvanáct",
+      "meaning": "dua belas",
+      "value": 12
+    },
+    {
+      "term": "třináct",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
       "term": "čtrnáct",
       "meaning": "14 (perhatikan: čtr-, bukan čtyři-)",
       "value": 14
@@ -1085,6 +1517,21 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "term": "patnáct",
       "meaning": "15 (pat-, bukan pět-)",
       "value": 15
+    },
+    {
+      "term": "šestnáct",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "sedmnáct",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "osmnáct",
+      "meaning": "delapan belas",
+      "value": 18
     },
     {
       "term": "devatenáct",
@@ -1385,6 +1832,56 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "term": "sampu",
       "meaning": "10 (sa + pu = se-puluh)",
       "value": 10
+    },
+    {
+      "term": "labing-isa",
+      "meaning": "sebelas",
+      "value": 11
+    },
+    {
+      "term": "labindalawa",
+      "meaning": "dua belas",
+      "value": 12
+    },
+    {
+      "term": "labintatlo",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
+      "term": "labing-apat",
+      "meaning": "empat belas",
+      "value": 14
+    },
+    {
+      "term": "labinlima",
+      "meaning": "lima belas",
+      "value": 15
+    },
+    {
+      "term": "labing-anim",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "labimpito",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "labingwalo",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "labinsiyam",
+      "meaning": "sembilan belas",
+      "value": 19
+    },
+    {
+      "term": "dalawampu",
+      "meaning": "dua puluh",
+      "value": 20
     }
   ],
   "filipino:borrowed": [
@@ -1506,9 +2003,34 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "value": 12
     },
     {
+      "term": "kolmetoista",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
+      "term": "neljätoista",
+      "meaning": "empat belas",
+      "value": 14
+    },
+    {
       "term": "viisitoista",
       "meaning": "lima belas",
       "value": 15
+    },
+    {
+      "term": "kuusitoista",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "seitsemäntoista",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "kahdeksantoista",
+      "meaning": "delapan belas",
+      "value": 18
     },
     {
       "term": "yhdeksäntoista",
@@ -2127,6 +2649,15 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
   ],
   "hindi:default": [
     {
+      "term": "शून्य",
+      "translit": "shūnya",
+      "meaning": "nol (bandingkan: sunya, 'kosong')",
+      "example": "०",
+      "example_translit": "0",
+      "example_meaning": "angka nol",
+      "value": 0
+    },
+    {
       "term": "एक",
       "translit": "ek",
       "meaning": "satu",
@@ -2217,13 +2748,64 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "value": 10
     },
     {
-      "term": "शून्य",
-      "translit": "shūnya",
-      "meaning": "nol (bandingkan: sunya, 'kosong')",
-      "example": "०",
-      "example_translit": "0",
-      "example_meaning": "angka nol",
-      "value": 0
+      "term": "ग्यारह",
+      "translit": "gyārah",
+      "meaning": "sebelas",
+      "value": 11
+    },
+    {
+      "term": "बारह",
+      "translit": "bārah",
+      "meaning": "dua belas",
+      "value": 12
+    },
+    {
+      "term": "तेरह",
+      "translit": "terah",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
+      "term": "चौदह",
+      "translit": "chaudah",
+      "meaning": "empat belas",
+      "value": 14
+    },
+    {
+      "term": "पंद्रह",
+      "translit": "pandrah",
+      "meaning": "lima belas",
+      "value": 15
+    },
+    {
+      "term": "सोलह",
+      "translit": "solah",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "सत्रह",
+      "translit": "satrah",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "अठारह",
+      "translit": "aṭhārah",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "उन्नीस",
+      "translit": "unnīs",
+      "meaning": "sembilan belas",
+      "value": 19
+    },
+    {
+      "term": "बीस",
+      "translit": "bīs",
+      "meaning": "dua puluh",
+      "value": 20
     }
   ],
   "hungarian:default": [
@@ -2505,6 +3087,56 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "term": "a deich",
       "meaning": "sepuluh",
       "value": 10
+    },
+    {
+      "term": "a haon déag",
+      "meaning": "sebelas",
+      "value": 11
+    },
+    {
+      "term": "a dó dhéag",
+      "meaning": "dua belas",
+      "value": 12
+    },
+    {
+      "term": "a trí déag",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
+      "term": "a ceathair déag",
+      "meaning": "empat belas",
+      "value": 14
+    },
+    {
+      "term": "a cúig déag",
+      "meaning": "lima belas",
+      "value": 15
+    },
+    {
+      "term": "a sé déag",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "a seacht déag",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "a hocht déag",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "a naoi déag",
+      "meaning": "sembilan belas",
+      "value": 19
+    },
+    {
+      "term": "fiche",
+      "meaning": "dua puluh",
+      "value": 20
     }
   ],
   "irish:personal": [
@@ -2740,10 +3372,52 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "value": 11
     },
     {
+      "term": "じゅうに",
+      "translit": "jūni",
+      "meaning": "dua belas",
+      "value": 12
+    },
+    {
+      "term": "じゅうさん",
+      "translit": "jūsan",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
       "term": "じゅうよん",
       "translit": "jūyon",
       "meaning": "empat belas",
       "value": 14
+    },
+    {
+      "term": "じゅうご",
+      "translit": "jūgo",
+      "meaning": "lima belas",
+      "value": 15
+    },
+    {
+      "term": "じゅうろく",
+      "translit": "jūroku",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "じゅうなな",
+      "translit": "jūnana",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "じゅうはち",
+      "translit": "jūhachi",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "じゅうきゅう",
+      "translit": "jūkyū",
+      "meaning": "sembilan belas",
+      "value": 19
     },
     {
       "term": "にじゅう",
@@ -2854,6 +3528,21 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "value": 16
     },
     {
+      "term": "pitulas",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "wolulas",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "sangalas",
+      "meaning": "sembilan belas",
+      "value": 19
+    },
+    {
       "term": "rong puluh",
       "meaning": "dua puluh",
       "value": 20
@@ -2919,6 +3608,66 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "translit": "dap",
       "meaning": "sepuluh (10)",
       "value": 10
+    },
+    {
+      "term": "ដប់មួយ (១១)",
+      "translit": "dap muoy",
+      "meaning": "sebelas",
+      "value": 11
+    },
+    {
+      "term": "ដប់ពីរ (១២)",
+      "translit": "dap pii",
+      "meaning": "dua belas",
+      "value": 12
+    },
+    {
+      "term": "ដប់បី (១៣)",
+      "translit": "dap bei",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
+      "term": "ដប់បួន (១៤)",
+      "translit": "dap buon",
+      "meaning": "empat belas",
+      "value": 14
+    },
+    {
+      "term": "ដប់ប្រាំ (១៥)",
+      "translit": "dap pram",
+      "meaning": "lima belas",
+      "value": 15
+    },
+    {
+      "term": "ដប់ប្រាំមួយ (១៦)",
+      "translit": "dap pram muoy",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "ដប់ប្រាំពីរ (១៧)",
+      "translit": "dap pram pii",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "ដប់ប្រាំបី (១៨)",
+      "translit": "dap pram bei",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "ដប់ប្រាំបួន (១៩)",
+      "translit": "dap pram buon",
+      "meaning": "sembilan belas",
+      "value": 19
+    },
+    {
+      "term": "ម្ភៃ (២០)",
+      "translit": "mphey",
+      "meaning": "dua puluh",
+      "value": 20
     }
   ],
   "korean:default": [
@@ -2995,10 +3744,46 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "value": 11
     },
     {
+      "term": "십이",
+      "translit": "sibi",
+      "meaning": "dua belas",
+      "value": 12
+    },
+    {
+      "term": "십삼",
+      "translit": "sipsam",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
+      "term": "십사",
+      "translit": "sipsa",
+      "meaning": "empat belas",
+      "value": 14
+    },
+    {
       "term": "십오",
       "meaning": "lima belas",
       "translit": "sibo",
       "value": 15
+    },
+    {
+      "term": "십육",
+      "translit": "simnyuk",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "십칠",
+      "translit": "sipchil",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "십팔",
+      "translit": "sippal",
+      "meaning": "delapan belas",
+      "value": 18
     },
     {
       "term": "십구",
@@ -3073,6 +3858,60 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "translit": "yeol",
       "meaning": "sepuluh",
       "value": 10
+    },
+    {
+      "term": "열하나",
+      "translit": "yeolhana",
+      "meaning": "sebelas",
+      "value": 11
+    },
+    {
+      "term": "열둘",
+      "translit": "yeoldul",
+      "meaning": "dua belas",
+      "value": 12
+    },
+    {
+      "term": "열셋",
+      "translit": "yeolset",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
+      "term": "열넷",
+      "translit": "yeollet",
+      "meaning": "empat belas",
+      "value": 14
+    },
+    {
+      "term": "열다섯",
+      "translit": "yeoldaseot",
+      "meaning": "lima belas",
+      "value": 15
+    },
+    {
+      "term": "열여섯",
+      "translit": "yeollyeoseot",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "열일곱",
+      "translit": "yeorilgop",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "열여덟",
+      "translit": "yeollyeodeol",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "열아홉",
+      "translit": "yeorahop",
+      "meaning": "sembilan belas",
+      "value": 19
     },
     {
       "term": "스물",
@@ -3161,10 +4000,46 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "value": 12
     },
     {
+      "term": "ສິບສາມ",
+      "translit": "síp-sǎam",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
+      "term": "ສິບສີ່",
+      "translit": "síp-sii",
+      "meaning": "empat belas",
+      "value": 14
+    },
+    {
       "term": "ສິບຫ້າ",
       "meaning": "lima belas",
       "translit": "síp-hȁa",
       "value": 15
+    },
+    {
+      "term": "ສິບຫົກ",
+      "translit": "síp-hók",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "ສິບເຈັດ",
+      "translit": "síp-jét",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "ສິບແປດ",
+      "translit": "síp-pɛ̀ɛt",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "ສິບເກົ້າ",
+      "translit": "síp-kâw",
+      "meaning": "sembilan belas",
+      "value": 19
     },
     {
       "term": "ຊາວ",
@@ -3260,6 +4135,36 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "value": 13
     },
     {
+      "term": "empa' bellâs",
+      "meaning": "empat belas",
+      "value": 14
+    },
+    {
+      "term": "lèma' bellâs",
+      "meaning": "lima belas",
+      "value": 15
+    },
+    {
+      "term": "ennem bellâs",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "petto' bellâs",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "ballu' bellâs",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "sanga' bellâs",
+      "meaning": "sembilan belas",
+      "value": 19
+    },
+    {
       "term": "duwâ' polo",
       "meaning": "dua puluh",
       "value": 20
@@ -3322,9 +4227,65 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "term": "sepuluh",
       "meaning": "sepuluh (10)",
       "value": 10
+    },
+    {
+      "term": "sebelas",
+      "meaning": "sebelas",
+      "value": 11
+    },
+    {
+      "term": "dua belas",
+      "meaning": "dua belas",
+      "value": 12
+    },
+    {
+      "term": "tiga belas",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
+      "term": "empat belas",
+      "meaning": "empat belas",
+      "value": 14
+    },
+    {
+      "term": "lima belas",
+      "meaning": "lima belas",
+      "value": 15
+    },
+    {
+      "term": "enam belas",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "tujuh belas",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "lapan belas",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "sembilan belas",
+      "meaning": "sembilan belas",
+      "value": 19
+    },
+    {
+      "term": "dua puluh",
+      "meaning": "dua puluh",
+      "value": 20
     }
   ],
   "mandarin:default": [
+    {
+      "term": "零",
+      "translit": "líng",
+      "meaning": "nol",
+      "value": 0
+    },
     {
       "term": "一",
       "translit": "yī",
@@ -3386,12 +4347,6 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "value": 10
     },
     {
-      "term": "零",
-      "translit": "líng",
-      "meaning": "nol",
-      "value": 0
-    },
-    {
       "term": "十一",
       "translit": "shíyī",
       "meaning": "sebelas (10 + 1)",
@@ -3404,16 +4359,213 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "value": 12
     },
     {
-      "term": "二十",
-      "translit": "èrshí",
-      "meaning": "dua puluh (2 × 10)",
-      "value": 20
+      "term": "十三",
+      "translit": "shísān",
+      "meaning": "tiga belas",
+      "value": 13
     },
     {
       "term": "十四",
       "meaning": "14 (sepuluh + empat)",
       "translit": "shísì",
       "value": 14
+    },
+    {
+      "term": "十五",
+      "translit": "shíwǔ",
+      "meaning": "lima belas",
+      "value": 15
+    },
+    {
+      "term": "十六",
+      "translit": "shíliù",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "十七",
+      "translit": "shíqī",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "十八",
+      "translit": "shíbā",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "十九",
+      "translit": "shíjiǔ",
+      "meaning": "sembilan belas",
+      "value": 19
+    },
+    {
+      "term": "二十",
+      "translit": "èrshí",
+      "meaning": "dua puluh (2 × 10)",
+      "value": 20
+    }
+  ],
+  "mongolian:default": [
+    {
+      "term": "тэг",
+      "translit": "teg",
+      "meaning": "nol",
+      "value": 0
+    },
+    {
+      "term": "нэг",
+      "translit": "neg",
+      "meaning": "satu (нэг)",
+      "example": "нэг ном",
+      "example_translit": "neg nom",
+      "example_meaning": "satu buku",
+      "value": 1
+    },
+    {
+      "term": "хоёр",
+      "translit": "khoyor",
+      "meaning": "dua (хоёр)",
+      "example": "хоёр гэр",
+      "example_translit": "khoyor ger",
+      "example_meaning": "dua ger",
+      "value": 2
+    },
+    {
+      "term": "гурав",
+      "translit": "gurav",
+      "meaning": "tiga (гурван)",
+      "example": "гурван ном",
+      "example_translit": "gurvan nom",
+      "example_meaning": "tiga buku",
+      "value": 3
+    },
+    {
+      "term": "дөрөв",
+      "translit": "döröv",
+      "meaning": "empat (дөрвөн)",
+      "example": "дөрвөн хүн",
+      "example_translit": "dörvön khün",
+      "example_meaning": "empat orang",
+      "value": 4
+    },
+    {
+      "term": "тав",
+      "translit": "tav",
+      "meaning": "lima (таван)",
+      "example": "таван морь",
+      "example_translit": "tavan mori",
+      "example_meaning": "lima kuda",
+      "value": 5
+    },
+    {
+      "term": "зургаа",
+      "translit": "zurgaa",
+      "meaning": "enam (зургаан)",
+      "example": "зургаан сар",
+      "example_translit": "zurgaan sar",
+      "example_meaning": "enam bulan",
+      "value": 6
+    },
+    {
+      "term": "долоо",
+      "translit": "doloo",
+      "meaning": "tujuh (долоон)",
+      "example": "долоон өдөр",
+      "example_translit": "doloon ödör",
+      "example_meaning": "tujuh hari",
+      "value": 7
+    },
+    {
+      "term": "найм",
+      "translit": "naim",
+      "meaning": "delapan (найман)",
+      "example": "найман тэмээ",
+      "example_translit": "naiman temee",
+      "example_meaning": "delapan unta",
+      "value": 8
+    },
+    {
+      "term": "ес",
+      "translit": "yös",
+      "meaning": "sembilan (есөн)",
+      "example": "есөн хонь",
+      "example_translit": "yösön khoni",
+      "example_meaning": "sembilan domba",
+      "value": 9
+    },
+    {
+      "term": "арав",
+      "translit": "arav",
+      "meaning": "sepuluh (арван)",
+      "example": "арван оюутан",
+      "example_translit": "arvan oyuutan",
+      "example_meaning": "sepuluh mahasiswa",
+      "value": 10
+    },
+    {
+      "term": "арван нэг",
+      "meaning": "sebelas",
+      "translit": "arvan neg",
+      "value": 11
+    },
+    {
+      "term": "арван хоёр",
+      "translit": "arvan khoyor",
+      "meaning": "dua belas",
+      "value": 12
+    },
+    {
+      "term": "арван гурав",
+      "translit": "arvan gurav",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
+      "term": "арван дөрөв",
+      "translit": "arvan döröv",
+      "meaning": "empat belas",
+      "value": 14
+    },
+    {
+      "term": "арван тав",
+      "meaning": "lima belas",
+      "translit": "arvan tav",
+      "value": 15
+    },
+    {
+      "term": "арван зургаа",
+      "translit": "arvan zurgaa",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "арван долоо",
+      "translit": "arvan doloo",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "арван найм",
+      "translit": "arvan naim",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "арван ес",
+      "translit": "arvan yös",
+      "meaning": "sembilan belas",
+      "value": 19
+    },
+    {
+      "term": "хорь",
+      "translit": "khori",
+      "meaning": "20 (хорин)",
+      "example": "хорин хоёр",
+      "example_translit": "khorin khoyor",
+      "example_meaning": "22",
+      "value": 20
     }
   ],
   "norwegian:default": [
@@ -3736,6 +4888,26 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "term": "szesnaście",
       "meaning": "16 (sześć → szes-)",
       "value": 16
+    },
+    {
+      "term": "siedemnaście",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "osiemnaście",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "dziewiętnaście",
+      "meaning": "sembilan belas",
+      "value": 19
+    },
+    {
+      "term": "dwadzieścia",
+      "meaning": "dua puluh",
+      "value": 20
     }
   ],
   "portuguese-br:default": [
@@ -3906,9 +5078,29 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "value": 10
     },
     {
+      "term": "onze",
+      "meaning": "sebelas",
+      "value": 11
+    },
+    {
+      "term": "doze",
+      "meaning": "dua belas",
+      "value": 12
+    },
+    {
+      "term": "treze",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
       "term": "catorze",
       "meaning": "14 — di Portugal hanya 'catorze'",
       "value": 14
+    },
+    {
+      "term": "quinze",
+      "meaning": "lima belas",
+      "value": 15
     },
     {
       "term": "dezasseis",
@@ -4000,14 +5192,39 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "value": 11
     },
     {
+      "term": "doișpe",
+      "meaning": "dua belas",
+      "value": 12
+    },
+    {
+      "term": "treisprezece",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
       "term": "paisprezece",
       "meaning": "14 (perhatikan: pai-, bukan patru-)",
       "value": 14
     },
     {
+      "term": "cincisprezece",
+      "meaning": "lima belas",
+      "value": 15
+    },
+    {
       "term": "șaisprezece",
       "meaning": "16 (șai-, bukan șase-)",
       "value": 16
+    },
+    {
+      "term": "șaptesprezece",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "optsprezece",
+      "meaning": "delapan belas",
+      "value": 18
     },
     {
       "term": "nouăsprezece",
@@ -4018,11 +5235,6 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "term": "douăzeci",
       "meaning": "20 (două + zeci = dua puluhan)",
       "value": 20
-    },
-    {
-      "term": "doișpe",
-      "meaning": "dua belas",
-      "value": 12
     }
   ],
   "russian:default": [
@@ -4233,6 +5445,31 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "term": "quince",
       "meaning": "lima belas",
       "value": 15
+    },
+    {
+      "term": "dieciséis",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "diecisiete",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "dieciocho",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "diecinueve",
+      "meaning": "sembilan belas",
+      "value": 19
+    },
+    {
+      "term": "veinte",
+      "meaning": "dua puluh",
+      "value": 20
     }
   ],
   "sundanese:default": [
@@ -4408,9 +5645,49 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "value": 11
     },
     {
+      "term": "kumi na mbili",
+      "meaning": "dua belas",
+      "value": 12
+    },
+    {
+      "term": "kumi na tatu",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
+      "term": "kumi na nne",
+      "meaning": "empat belas",
+      "value": 14
+    },
+    {
       "term": "kumi na tano",
       "meaning": "lima belas",
       "value": 15
+    },
+    {
+      "term": "kumi na sita",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "kumi na saba",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "kumi na nane",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "kumi na tisa",
+      "meaning": "sembilan belas",
+      "value": 19
+    },
+    {
+      "term": "ishirini",
+      "meaning": "dua puluh",
+      "value": 20
     }
   ],
   "swedish:default": [
@@ -4714,9 +5991,19 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "value": 11
     },
     {
+      "term": "on iki",
+      "meaning": "dua belas",
+      "value": 12
+    },
+    {
       "term": "on üç",
       "meaning": "tiga belas",
       "value": 13
+    },
+    {
+      "term": "on dört",
+      "meaning": "empat belas",
+      "value": 14
     },
     {
       "term": "on beş",
@@ -4724,9 +6011,19 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "value": 15
     },
     {
+      "term": "on altı",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
       "term": "on yedi",
       "meaning": "tujuh belas",
       "value": 17
+    },
+    {
+      "term": "on sekiz",
+      "meaning": "delapan belas",
+      "value": 18
     },
     {
       "term": "on dokuz",
@@ -4945,6 +6242,66 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "example_translit": "das pʰal",
       "example_meaning": "sepuluh buah",
       "value": 10
+    },
+    {
+      "term": "گیارہ",
+      "translit": "gyaarah",
+      "meaning": "sebelas",
+      "value": 11
+    },
+    {
+      "term": "بارہ",
+      "translit": "baarah",
+      "meaning": "dua belas",
+      "value": 12
+    },
+    {
+      "term": "تیرہ",
+      "translit": "terah",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
+      "term": "چودہ",
+      "translit": "chaudah",
+      "meaning": "empat belas",
+      "value": 14
+    },
+    {
+      "term": "پندرہ",
+      "translit": "pandrah",
+      "meaning": "lima belas",
+      "value": 15
+    },
+    {
+      "term": "سولہ",
+      "translit": "solah",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "سترہ",
+      "translit": "satrah",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "اٹھارہ",
+      "translit": "aṭʰaarah",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "انیس",
+      "translit": "unniis",
+      "meaning": "sembilan belas",
+      "value": 19
+    },
+    {
+      "term": "بیس",
+      "translit": "biis",
+      "meaning": "dua puluh",
+      "value": 20
     }
   ],
   "vietnamese:default": [
@@ -5002,6 +6359,56 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "term": "mười",
       "meaning": "sepuluh",
       "value": 10
+    },
+    {
+      "term": "mười một",
+      "meaning": "sebelas",
+      "value": 11
+    },
+    {
+      "term": "mười hai",
+      "meaning": "dua belas",
+      "value": 12
+    },
+    {
+      "term": "mười ba",
+      "meaning": "tiga belas",
+      "value": 13
+    },
+    {
+      "term": "mười bốn",
+      "meaning": "empat belas",
+      "value": 14
+    },
+    {
+      "term": "mười lăm",
+      "meaning": "15 (năm → lăm setelah mười)",
+      "value": 15
+    },
+    {
+      "term": "mười sáu",
+      "meaning": "enam belas",
+      "value": 16
+    },
+    {
+      "term": "mười bảy",
+      "meaning": "tujuh belas",
+      "value": 17
+    },
+    {
+      "term": "mười tám",
+      "meaning": "delapan belas",
+      "value": 18
+    },
+    {
+      "term": "mười chín",
+      "meaning": "sembilan belas",
+      "value": 19
+    },
+    {
+      "term": "hai mươi",
+      "meaning": "dua puluh",
+      "value": 20
     }
   ]
 };
