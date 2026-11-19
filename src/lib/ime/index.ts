@@ -34,7 +34,11 @@ const DAFTAR: Array<Ime & { nama: string[] }> = [
 export function imeUntuk(bahasa?: string | null): Ime | null {
   const b = String(bahasa ?? "").trim().toLowerCase();
   if (!b) return null;
-  const hit = DAFTAR.find((d) => d.nama.some((n) => b === n || b.startsWith(n + " ") || b.includes(n)));
+  // Cocokkan per KATA UTUH, bukan potongan huruf. Dulu `b.includes(n)` membuat
+  // "icELandic" kena kode "el" (Yunani) dan "JAvanese" kena "ja" (Kana) — siswa
+  // Islandia mengetik "kaffi" lalu berubah jadi "καφφι" di tengah kuis.
+  const kata = b.split(/[^a-z]+/).filter(Boolean);
+  const hit = DAFTAR.find((d) => d.nama.some((n) => b === n || (!n.includes(" ") && kata.includes(n))));
   if (!hit) return null;
   const { nama: _nama, ...ime } = hit;
   return ime;

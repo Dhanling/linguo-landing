@@ -74,6 +74,12 @@ describe("Pemilihan bahasa", () => {
   });
   it("bahasa beraksara Latin tidak dapat IME", () => {
     expect(imeUntuk("English")).toBeNull();
+    // Kode 2 huruf tak boleh nyangkut di tengah nama bahasa lain.
+    expect(imeUntuk("Icelandic")).toBeNull();
+    expect(imeUntuk("Javanese")).toBeNull();
+    expect(imeUntuk("Belarusian")).toBeNull();
+    expect(imeUntuk("Mandarin (Chinese)")?.mode).toBe("kandidat");
+    expect(imeUntuk("Russian A1")?.kode).toBe("ru");
     expect(imeUntuk("Indonesian")).toBeNull();
     expect(imeUntuk("")).toBeNull();
   });
