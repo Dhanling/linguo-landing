@@ -44,6 +44,15 @@ const BUCKETS = ["class-recordings", "class-materials"] as const; // privat (bar
 const PREFIX = "video-recordings";
 const LOCK_NAME = "finalize-server.json";
 const STALE_MS = 20 * 60_000;           // manifest lebih muda = perekamnya mungkin masih jalan
+/* [rec-cron-tunda-v1] 20 Nov 2026 — rekaman yang DITUNDA ([vc-rec-tunda-v1]: jalur naik
+   pengajar sempit) sengaja tidak mengunggah potongan selama kelas, jadi manifest-nya
+   diam sejak menit-menit awal. Cron dulu menganggapnya mati sesudah 20 menit, merakit
+   rekaman 1 menit dari potongan 0000, lalu menghapus folder — potongan sisanya yang
+   naik sesudah kelas jadi "yatim" dan ikut dibuang (Ferdila–Cindy 29 mnt → 1 mnt).
+   Manifest `ditunda` baru dianggap mati sesudah 12 jam (brankas lokal host masih
+   memegang rekaman utuhnya); manifest `rakitServer` milik perakit VPS dulu, 2 jam. */
+const STALE_TUNDA_MS = 12 * 60 * 60_000;
+const STALE_RAKIT_MS = 2 * 60 * 60_000;
 const LOCK_FRESH_MS = 6 * 60_000;       // kunci lebih muda = pemanggilan lain sedang menggarap
 const RETRY_AFTER_MS = 3 * 60 * 60_000; // jeda sesudah gagal
 const MAX_ATTEMPTS = 6;
@@ -68,7 +77,7 @@ export interface RecordingMeta {
   recordedAt: string;
   hostUserId?: string;
 }
-interface PartsManifest extends RecordingMeta { parts: number; updatedAt: string }
+interface PartsManifest extends RecordingMeta { parts: number; updatedAt: string; ditunda?: boolean; rakitServer?: boolean }
 interface Lock { startedAt?: string; attempts: number; lastAttemptAt?: string; lastError?: string }
 
 export interface Candidate {
@@ -95,7 +104,8 @@ export interface FinalizeResult {
   error?: string;
 }
 
-type Entry = { name: string; id: string | null; metadata?: { size?: number } | null };
+type Entry = { name: string; id: string | null; updated_at?: string | null; created_at?: string | null; metadata?: { size?: number } | null };
+const waktu = (e: Entry) => new Date(e.updated_at ?? e.created_at ?? 0).getTime();
 
 function adminClient(): SupabaseClient {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -151,15 +161,25 @@ export async function listCandidates(sb: SupabaseClient = adminClient()): Promis
       const entries = await listAll(sb, bucket, roomPath);
       // Berkas utuh yang sudah ada: folder potongan ber-stamp sama berarti
       // rekamannya SUDAH tersimpan (dropAll gagal) — sama seperti di dashboard.
-      const done = new Set(
-        entries.filter((e) => e.id !== null && /\.(mp4|webm)$/i.test(e.name)).map((e) => e.name.replace(/(-seek\d*)?\.(mp4|webm)$/i, "")),
-      );
+      const done = new Map<string, number>();
+      for (const e of entries) {
+        if (e.id === null || !/\.(mp4|webm)$/i.test(e.name)) continue;
+        const k = e.name.replace(/(-seek\d*)?\.(mp4|webm)$/i, "");
+        done.set(k, Math.max(done.get(k) ?? 0, waktu(e)));
+      }
       for (const e of entries) {
         if (e.id !== null || !e.name.endsWith(".parts")) continue;
         const folder = `${roomPath}/${e.name}`;
         const stamp = e.name.replace(/\.parts$/, "");
         const files = await listAll(sb, bucket, folder);
         if (!files.length) continue;
+        /* [rec-cron-tunda-v1] Potongan yang naik SESUDAH berkas utuh dibuat berarti berkas
+           utuh itu tidak lengkap (dirakit terlalu dini) — jangan dibuang, perlu pemulihan. */
+        const lebihBaru = done.has(stamp) && files.some((f) => /^\d+\.(mp4|webm)$/i.test(f.name) && waktu(f) > (done.get(stamp) ?? 0) + 60_000);
+        if (lebihBaru) {
+          out.push({ bucket, folder, meta: { roomId: room.name, title: "", durationSec: 0, participants: 0, recordedAt: "", parts: 0, updatedAt: "" }, partKeys: [], expected: 0, sizeBytes: 0, updatedAt: "", lock: null, skip: "potongan lebih baru dari berkas utuh — perlu pemulihan manual, JANGAN dibuang" });
+          continue;
+        }
         if (done.has(stamp)) {
           // Potongan yatim: berkas utuhnya sudah ada. Dibersihkan di sini juga
           // supaya tidak dipindai terus — dashboard pun tidak menawarkannya.
@@ -184,6 +204,8 @@ export async function listCandidates(sb: SupabaseClient = adminClient()): Promis
         };
         const age = Date.now() - new Date(c.updatedAt).getTime();
         if (!(age > STALE_MS)) c.skip = "manifest masih segar — perekam mungkin masih jalan";
+        else if (meta.rakitServer && !(age > STALE_RAKIT_MS)) c.skip = "sudah diserahkan ke perakit server (VPS)";
+        else if (meta.ditunda && !meta.rakitServer && !(age > STALE_TUNDA_MS)) c.skip = "rekaman ditunda — potongan masih di perangkat pengajar";
         else if (!/^0+\.(mp4|webm)$/i.test(parts[0].name)) c.skip = "potongan 0000 (kepala berkas) tidak ada";
         else if (c.sizeBytes > MAX_BYTES) c.skip = `terlalu besar untuk server (${Math.round(c.sizeBytes / 1048576)} MB) — sambung manual dari Riwayat`;
         else if (lock?.startedAt && Date.now() - new Date(lock.startedAt).getTime() < LOCK_FRESH_MS && !lock.lastError) c.skip = "sedang digarap pemanggilan lain";
