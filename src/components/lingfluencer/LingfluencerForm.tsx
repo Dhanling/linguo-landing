@@ -1,0 +1,1376 @@
+"use client";
+
+// linguo-patch:lingfluencer-wizard-v1
+// 4-step wizard form. Preserves all existing fields, validation, submit API,
+// helper components (Field, ConsentBox, SuccessView), and ?pic= URL auto-fill.
+//
+// [lingfluencer-ebook-v1] (20 Nov 2026, Bug Tracker b8c0a1b8 — Intan): form yang
+// sama dipakai dua program. /lingfluencer = paket E-Learning (lama),
+// /lingfluencer/ebook = E-Book 1 bulan, influencer memilih SATU bahasa. Barisnya
+// masuk `lingfluencers` type 'e_book' + ebook_language; tombol "Kirim akses" di
+// dashboard menerbitkan akses e-book-nya (trigger DB) dan email dikirim cron
+// ebook-access-notify. Akses tertutup sendiri sesudah 30 hari.
+
+import { useState, useRef, useEffect, Suspense, createContext, useContext } from "react";
+import { useSearchParams } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import { BRAND_FACTS } from "@/lib/brand-facts";
+import {
+  Sparkles,
+  Gift,
+  Percent,
+  Music,
+  Video,
+  Camera,
+  Image as ImageIcon,
+  CheckCircle2,
+  AlertCircle,
+  Loader2,
+  ExternalLink,
+  Users,
+  ArrowLeft,
+  ArrowRight,
+  Check,
+  ChevronDown,
+  Search,
+} from "lucide-react";
+
+// ────────────────────────────────────────────────────────────────────
+// inline X icon (lucide-react dropped Twitter export)
+// ────────────────────────────────────────────────────────────────────
+
+function XLogo({ size = 18, className }: { size?: number; className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      width={size}
+      height={size}
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
+
+// Ikon "@" gaya Threads (lucide tidak punya logo Threads) — [lingfluencer-threads-v1]
+function ThreadsLogo({ size = 18, className }: { size?: number; className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round"
+      strokeLinejoin="round" width={size} height={size} className={className} aria-hidden="true">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8" />
+    </svg>
+  );
+}
+
+// ────────────────────────────────────────────────────────────────────
+// constants
+// ────────────────────────────────────────────────────────────────────
+
+const PLATFORMS = [
+  { id: "ig_reels", label: "IG Reels", icon: Video },
+  { id: "ig_story", label: "IG Story", subLabel: "min. 5 story", icon: Camera },
+  { id: "ig_feeds", label: "IG Feeds", icon: ImageIcon },
+  { id: "twitter", label: "X (Twitter)", subLabel: "berupa Thread", icon: XLogo },
+  { id: "tiktok", label: "TikTok", icon: Music },
+  // [lingfluencer-threads-v1] Bug Tracker b55a009b (Intan): opsi Threads
+  { id: "threads", label: "Threads", subLabel: "post/thread", icon: ThreadsLogo },
+] as const;
+
+export type LingfluencerProgram = "e_learning" | "e_book";
+const ProgramCtx = createContext<LingfluencerProgram>("e_learning");
+const useProgram = () => useContext(ProgramCtx);
+/** "e-learning" / "e-book" — dipakai di teks komitmen & ringkasan. */
+const hadiahLabel = (p: LingfluencerProgram) => (p === "e_book" ? "e-book" : "e-learning");
+
+/** Pilihan e-book program Lingfluencer. `value` = nama bahasa (Inggris) yang
+ *  dibaca ebook_product_for_language di DB → e-book "<Bahasa> 101 - A1".
+ *  Daftar yang sama dicek ulang di /api/lingfluencer-apply. */
+export const EBOOK_LANGUAGES = [
+  { value: "English", label: "Inggris", flag: "🇬🇧" },
+  { value: "Spanish", label: "Spanyol", flag: "🇪🇸" },
+  { value: "Japanese", label: "Jepang", flag: "🇯🇵" },
+  { value: "Mandarin", label: "Mandarin", flag: "🇨🇳" },
+  { value: "Korean", label: "Korea", flag: "🇰🇷" },
+  { value: "German", label: "Jerman", flag: "🇩🇪" },
+  { value: "Italian", label: "Italia", flag: "🇮🇹" },
+  { value: "Thai", label: "Thailand", flag: "🇹🇭" },
+  { value: "French", label: "Prancis", flag: "🇫🇷" },
+  { value: "Turkish", label: "Turki", flag: "🇹🇷" },
+] as const;
+
+const STEPS = [
+  { id: 1, label: "Profil" },
+  { id: 2, label: "Konten" },
+  { id: 3, label: "Komitmen" },
+  { id: 4, label: "Review" },
+] as const;
+
+const PLATFORM_BY_ID: Record<string, string> = Object.fromEntries(
+  PLATFORMS.map((p) => [p.id, p.label])
+);
+
+// Country dial codes for the WhatsApp selector. `dial` is stored WITHOUT the +
+// (matches existing lingfluencers.whatsapp convention: 628…, 447…). Indonesia
+// stays the default. Searchable by country name or dial code.
+const COUNTRY_CODES = [
+  { iso: "ID", dial: "62", name: "Indonesia", flag: "🇮🇩" },
+  { iso: "MY", dial: "60", name: "Malaysia", flag: "🇲🇾" },
+  { iso: "SG", dial: "65", name: "Singapore", flag: "🇸🇬" },
+  { iso: "PH", dial: "63", name: "Philippines", flag: "🇵🇭" },
+  { iso: "TH", dial: "66", name: "Thailand", flag: "🇹🇭" },
+  { iso: "VN", dial: "84", name: "Vietnam", flag: "🇻🇳" },
+  { iso: "KH", dial: "855", name: "Cambodia", flag: "🇰🇭" },
+  { iso: "LA", dial: "856", name: "Laos", flag: "🇱🇦" },
+  { iso: "MM", dial: "95", name: "Myanmar", flag: "🇲🇲" },
+  { iso: "BN", dial: "673", name: "Brunei", flag: "🇧🇳" },
+  { iso: "GB", dial: "44", name: "United Kingdom", flag: "🇬🇧" },
+  { iso: "US", dial: "1", name: "United States", flag: "🇺🇸" },
+  { iso: "AU", dial: "61", name: "Australia", flag: "🇦🇺" },
+  { iso: "JP", dial: "81", name: "Japan", flag: "🇯🇵" },
+  { iso: "KR", dial: "82", name: "Korea", flag: "🇰🇷" },
+  { iso: "CN", dial: "86", name: "China", flag: "🇨🇳" },
+  { iso: "IN", dial: "91", name: "India", flag: "🇮🇳" },
+  { iso: "DE", dial: "49", name: "Germany", flag: "🇩🇪" },
+  { iso: "FR", dial: "33", name: "France", flag: "🇫🇷" },
+  { iso: "ES", dial: "34", name: "Spain", flag: "🇪🇸" },
+  { iso: "IT", dial: "39", name: "Italy", flag: "🇮🇹" },
+  { iso: "NL", dial: "31", name: "Netherlands", flag: "🇳🇱" },
+  { iso: "SE", dial: "46", name: "Sweden", flag: "🇸🇪" },
+  { iso: "NO", dial: "47", name: "Norway", flag: "🇳🇴" },
+  { iso: "DK", dial: "45", name: "Denmark", flag: "🇩🇰" },
+  { iso: "CH", dial: "41", name: "Switzerland", flag: "🇨🇭" },
+  { iso: "AT", dial: "43", name: "Austria", flag: "🇦🇹" },
+  { iso: "PL", dial: "48", name: "Poland", flag: "🇵🇱" },
+  { iso: "RU", dial: "7", name: "Russia", flag: "🇷🇺" },
+  { iso: "BR", dial: "55", name: "Brazil", flag: "🇧🇷" },
+  { iso: "MX", dial: "52", name: "Mexico", flag: "🇲🇽" },
+  { iso: "AE", dial: "971", name: "UAE", flag: "🇦🇪" },
+  { iso: "SA", dial: "966", name: "Saudi Arabia", flag: "🇸🇦" },
+  { iso: "QA", dial: "974", name: "Qatar", flag: "🇶🇦" },
+  { iso: "BH", dial: "973", name: "Bahrain", flag: "🇧🇭" },
+  { iso: "KW", dial: "965", name: "Kuwait", flag: "🇰🇼" },
+] as const;
+
+const DEFAULT_DIAL = "62";
+
+// ────────────────────────────────────────────────────────────────────
+// helpers
+// ────────────────────────────────────────────────────────────────────
+
+// Combine the selected dial code + local subscriber number into the full
+// international value stored in Supabase (digits only, NO + prefix), e.g.
+// "6281234567890" or "447911123456". For Indonesia we also drop a redundant
+// 62/leading-0; for other countries we drop a leading trunk-0 (common in UK/AU
+// national formats) so the international number is clean.
+function buildFullWa(dial: string, local: string): string {
+  let digits = local.replace(/\D/g, "");
+  if (digits.startsWith(dial)) digits = digits.slice(dial.length);
+  if (digits.startsWith("0")) digits = digits.slice(1);
+  return digits ? dial + digits : "";
+}
+
+// Indonesia keeps the strict mobile rule (628 + 8–12 digits). Other country
+// codes only require a non-empty numeric local part within E.164 length (≤15).
+function isValidWa(dial: string, local: string): boolean {
+  const full = buildFullWa(dial, local);
+  if (!full) return false;
+  if (dial === "62") return /^628\d{8,12}$/.test(full);
+  return /^\d+$/.test(full) && full.length >= 7 && full.length <= 15;
+}
+
+const PIC_LAINNYA = "__lainnya__";
+
+const inputClass = (hasError: boolean) =>
+  `w-full px-4 py-3 rounded-xl border-2 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none transition-colors ${
+    hasError
+      ? "border-rose-300 focus:border-rose-500"
+      : "border-slate-200 focus:border-[#1A9E9E]"
+  }`;
+
+// ────────────────────────────────────────────────────────────────────
+// Compact, searchable country dial-code selector (flag + dial code)
+// ────────────────────────────────────────────────────────────────────
+
+function CountryCodeSelect({
+  value,
+  onChange,
+}: {
+  value: string;
+  onChange: (dial: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const ref = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const selected =
+    COUNTRY_CODES.find((c) => c.dial === value) || COUNTRY_CODES[0];
+
+  // Close on outside click
+  useEffect(() => {
+    if (!open) return;
+    const onDoc = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+        setQuery("");
+      }
+    };
+    document.addEventListener("mousedown", onDoc);
+    return () => document.removeEventListener("mousedown", onDoc);
+  }, [open]);
+
+  // Auto-focus search when opened
+  useEffect(() => {
+    if (open) inputRef.current?.focus();
+  }, [open]);
+
+  const q = query.trim().toLowerCase().replace(/^\+/, "");
+  const filtered = q
+    ? COUNTRY_CODES.filter(
+        (c) => c.name.toLowerCase().includes(q) || c.dial.includes(q)
+      )
+    : COUNTRY_CODES;
+
+  return (
+    <div className="relative flex" ref={ref}>
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-label="Pilih kode negara"
+        className="flex items-center gap-1.5 px-3 text-slate-700 font-semibold border-r-2 border-slate-100 select-none hover:bg-slate-50 rounded-l-[10px] transition-colors"
+      >
+        <span className="text-base leading-none">{selected.flag}</span>
+        <span className="text-sm whitespace-nowrap">+{selected.dial}</span>
+        <ChevronDown
+          size={14}
+          className={`text-slate-400 transition-transform ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+
+      {open && (
+        <div className="absolute z-30 top-full left-0 mt-2 w-72 max-w-[80vw] bg-white border-2 border-slate-200 rounded-xl shadow-lg overflow-hidden">
+          <div className="p-2 border-b border-slate-100">
+            <div className="relative">
+              <Search
+                size={14}
+                className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
+              />
+              <input
+                ref={inputRef}
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Cari negara / kode…"
+                className="w-full pl-8 pr-3 py-2 text-sm rounded-lg border border-slate-200 focus:outline-none focus:border-[#1A9E9E]"
+              />
+            </div>
+          </div>
+          <ul className="max-h-56 overflow-y-auto py-1">
+            {filtered.length === 0 && (
+              <li className="px-3 py-2 text-sm text-slate-400">
+                Tidak ditemukan
+              </li>
+            )}
+            {filtered.map((c) => (
+              <li key={c.iso}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onChange(c.dial);
+                    setOpen(false);
+                    setQuery("");
+                  }}
+                  className={`w-full flex items-center gap-2.5 px-3 py-2 text-sm text-left hover:bg-slate-50 transition-colors ${
+                    c.dial === value
+                      ? "bg-[#1A9E9E]/5 text-[#1A9E9E] font-semibold"
+                      : "text-slate-700"
+                  }`}
+                >
+                  <span className="text-base leading-none">{c.flag}</span>
+                  <span className="flex-1 truncate">{c.name}</span>
+                  <span className="text-slate-400 font-medium">+{c.dial}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ────────────────────────────────────────────────────────────────────
+// main wrapper (Suspense for useSearchParams in Next 16)
+// ────────────────────────────────────────────────────────────────────
+
+export default function LingfluencerForm({ program = "e_learning" }: { program?: LingfluencerProgram }) {
+  return (
+    <ProgramCtx.Provider value={program}>
+      <Suspense
+        fallback={
+          <div className="min-h-screen flex items-center justify-center">
+            <Loader2 className="animate-spin text-[#1A9E9E]" size={32} />
+          </div>
+        }
+      >
+        <LingfluencerPage />
+      </Suspense>
+    </ProgramCtx.Provider>
+  );
+}
+
+// ────────────────────────────────────────────────────────────────────
+// page
+// ────────────────────────────────────────────────────────────────────
+
+function LingfluencerPage() {
+  const program = useProgram();
+  const isEbook = program === "e_book";
+  const searchParams = useSearchParams();
+  const picFromUrl = searchParams.get("pic") || "";
+
+  const [form, setForm] = useState({
+    name: "",
+    whatsapp: "",
+    whatsapp_cc: DEFAULT_DIAL,
+    gmail: "",
+    ebook_language: "",
+    content_platforms: [] as string[],
+    socmed_username: "",
+    pic_name: picFromUrl,
+    socmed_review_consent: false,
+    gbusiness_review_consent: false,
+  });
+
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [currentStep, setCurrentStep] = useState(1);
+  const [checkingDup, setCheckingDup] = useState(false);
+
+  const togglePlatform = (id: string) => {
+    setForm((p) => ({
+      ...p,
+      content_platforms: p.content_platforms.includes(id)
+        ? p.content_platforms.filter((x) => x !== id)
+        : [...p.content_platforms, id],
+    }));
+    if (errors.content_platforms) {
+      setErrors((e) => ({ ...e, content_platforms: "" }));
+    }
+  };
+
+  const updateField = (key: keyof typeof form, value: any) => {
+    setForm((p) => ({ ...p, [key]: value }));
+    if (errors[key]) setErrors((e) => ({ ...e, [key]: "" }));
+  };
+
+  // Changing the country code re-frames the WhatsApp validation, so clear any
+  // existing whatsapp error too.
+  const changeCc = (dial: string) => {
+    setForm((p) => ({ ...p, whatsapp_cc: dial }));
+    if (errors.whatsapp) setErrors((e) => ({ ...e, whatsapp: "" }));
+  };
+
+  // Per-step validation — returns errors for that step only
+  const validateStep = (step: number): Record<string, string> => {
+    const e: Record<string, string> = {};
+
+    if (step === 1) {
+      if (!form.name.trim()) e.name = "Nama wajib diisi";
+
+      const gmail = form.gmail.trim().toLowerCase();
+      if (!gmail) e.gmail = "Gmail wajib diisi";
+      else if (!gmail.endsWith("@gmail.com"))
+        e.gmail = "Wajib pakai alamat @gmail.com";
+
+      if (!form.whatsapp.trim()) e.whatsapp = "Nomor WhatsApp wajib diisi";
+      else if (!isValidWa(form.whatsapp_cc, form.whatsapp))
+        e.whatsapp =
+          form.whatsapp_cc === "62"
+            ? "Nomor tidak valid. Ketik tanpa 0 di depan, contoh: 81234567890"
+            : "Nomor WhatsApp tidak valid — masukkan angka saja, tanpa kode negara.";
+      if (isEbook && !form.ebook_language) e.ebook_language = "Pilih satu bahasa e-book";
+    } else if (step === 2) {
+      if (form.content_platforms.length === 0)
+        e.content_platforms = "Pilih minimal 1 platform";
+      if (!form.socmed_username.trim())
+        e.socmed_username = "Username sosmed wajib diisi";
+    } else if (step === 3) {
+      if (!form.pic_name.trim()) e.pic_name = "Nama PIC wajib diisi";
+      if (!form.socmed_review_consent)
+        e.socmed_review_consent = "Wajib disetujui";
+      if (!form.gbusiness_review_consent)
+        e.gbusiness_review_consent = "Wajib disetujui";
+    }
+
+    return e;
+  };
+
+  const scrollToTop = () => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  const goNext = async () => {
+    setSubmitError("");
+
+    // Step 4 = submit
+    if (currentStep === STEPS.length) {
+      handleSubmit();
+      return;
+    }
+
+    const stepErrors = validateStep(currentStep);
+    if (Object.keys(stepErrors).length > 0) {
+      setErrors(stepErrors);
+      const firstError = document.querySelector("[data-error='true']");
+      firstError?.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+
+    // Step 1: proactive duplicate check (email + WhatsApp)
+    if (currentStep === 1) {
+      setCheckingDup(true);
+      try {
+        const gmail = form.gmail.trim().toLowerCase();
+        const wa = buildFullWa(form.whatsapp_cc, form.whatsapp);
+        const res = await fetch(
+          `/api/lingfluencer-apply?gmail=${encodeURIComponent(
+            gmail
+          )}&whatsapp=${encodeURIComponent(wa)}&program=${program}`
+        );
+        const data = await res.json();
+        const dupErrors: Record<string, string> = {};
+        if (data.emailExists) {
+          dupErrors.gmail = `Gmail ini udah pernah daftar${
+            data.emailStatus ? ` (status: ${data.emailStatus})` : ""
+          }. Hubungi tim Linguo via WhatsApp kalau ada pertanyaan.`;
+        }
+        if (data.waExists) {
+          dupErrors.whatsapp = `Nomor WhatsApp ini udah pernah daftar${
+            data.waStatus ? ` (status: ${data.waStatus})` : ""
+          }.`;
+        }
+        if (Object.keys(dupErrors).length > 0) {
+          setErrors(dupErrors);
+          setCheckingDup(false);
+          const firstError = document.querySelector("[data-error='true']");
+          firstError?.scrollIntoView({ behavior: "smooth", block: "center" });
+          return;
+        }
+      } catch (err) {
+        // Network error saat cek — lanjut aja; POST submit punya dup guard sendiri
+        console.warn("Duplicate check skipped:", err);
+      }
+      setCheckingDup(false);
+    }
+
+    setErrors({});
+    setCurrentStep((s) => s + 1);
+    scrollToTop();
+  };
+
+  const goBack = () => {
+    if (currentStep > 1) {
+      setErrors({});
+      setSubmitError("");
+      setCurrentStep((s) => s - 1);
+      scrollToTop();
+    }
+  };
+
+  const handleSubmit = async () => {
+    setSubmitError("");
+
+    // Final full validation — collect all errors across all steps
+    const allErrors = {
+      ...validateStep(1),
+      ...validateStep(2),
+      ...validateStep(3),
+    };
+    if (Object.keys(allErrors).length > 0) {
+      setErrors(allErrors);
+      // Jump back to first invalid step
+      if (Object.keys(validateStep(1)).length > 0) setCurrentStep(1);
+      else if (Object.keys(validateStep(2)).length > 0) setCurrentStep(2);
+      else setCurrentStep(3);
+      setTimeout(() => {
+        const firstError = document.querySelector("[data-error='true']");
+        firstError?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 100);
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const res = await fetch("/api/lingfluencer-apply", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...form,
+          program,
+          ebook_language: isEbook ? form.ebook_language : null,
+          whatsapp: buildFullWa(form.whatsapp_cc, form.whatsapp),
+          gmail: form.gmail.trim().toLowerCase(),
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        // Duplicate detected at submit (race: someone registered between check & submit)
+        if (res.status === 409 && data.duplicate) {
+          const fieldKey = data.field === "whatsapp" ? "whatsapp" : "gmail";
+          setErrors({ [fieldKey]: data.error });
+          setCurrentStep(1);
+          setTimeout(() => {
+            const firstError = document.querySelector("[data-error='true']");
+            firstError?.scrollIntoView({ behavior: "smooth", block: "center" });
+          }, 100);
+          return;
+        }
+        setSubmitError(data.error || "Gagal submit, coba lagi sebentar.");
+        return;
+      }
+      setSubmitted(true);
+      scrollToTop();
+    } catch (err: any) {
+      setSubmitError(err.message || "Network error — coba lagi.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (submitted) {
+    return <SuccessView name={form.name} />;
+  }
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-[#1A9E9E]/5 via-white to-white pb-24">
+      {/* Hero */}
+      <motion.section
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="max-w-2xl mx-auto px-4 pt-12 pb-8 text-center"
+      >
+        <div className="inline-flex items-center gap-2 bg-[#1A9E9E]/10 text-[#1A9E9E] text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">
+          <Sparkles size={14} />
+          Lingfluencer Program
+        </div>
+        <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 leading-tight">
+          Belajar Bahasa{" "}
+          <span className="bg-[#1A9E9E]/20 px-2 rounded">Gratis</span>,
+          <br />
+          <span className="text-[#1A9E9E]">Komisi 10%</span> Tiap Pembelian
+        </h1>
+        <p className="text-slate-600 text-base md:text-lg leading-relaxed">
+          {isEbook
+            ? "Join program kolaborasi Linguo — pilih satu e-book bahasa (akses 1 bulan) & gabung komunitas eksklusif. Sebagai feedback, kamu share pengalaman belajar via konten sosmed."
+            : "Join program kolaborasi Linguo — dapet akses paket e-learning 10+ bahasa & komunitas eksklusif. Sebagai feedback, kamu share pengalaman belajar via konten sosmed."}
+        </p>
+
+        <div className="grid grid-cols-2 gap-3 mt-8">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, delay: 0.15 }}
+            className="bg-white border border-slate-200 rounded-2xl p-4 text-left"
+          >
+            <Gift className="text-[#1A9E9E] mb-2" size={24} />
+            <div className="font-bold text-slate-900 text-sm">
+              {isEbook ? "E-Book FREE 1 bulan" : "Paket E-learning FREE"}
+            </div>
+            {/* [aeo-klaim-toko-v1] Dulu "10+ bahasa + komunitas" — sisa dari zaman
+                paket e-learning semua-bahasa yang sudah tidak dijual. */}
+            <div className="text-xs text-slate-500 mt-1">
+              {isEbook ? "Pilih 1 dari 10 bahasa + komunitas" : "Pilih bahasamu + komunitas"}
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, delay: 0.25 }}
+            className="bg-white border border-slate-200 rounded-2xl p-4 text-left"
+          >
+            <Percent className="text-[#1A9E9E] mb-2" size={24} />
+            <div className="font-bold text-slate-900 text-sm">Komisi 10%</div>
+            <div className="text-xs text-slate-500 mt-1">
+              Tiap pembelian via kode kamu
+            </div>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* Wizard */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="max-w-2xl mx-auto px-4"
+      >
+        {/* Progress indicator */}
+        <ProgressIndicator currentStep={currentStep} />
+
+        {/* Wizard card */}
+        <div className="bg-white border-2 border-slate-200 rounded-3xl p-6 md:p-8 shadow-sm">
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={currentStep}
+              initial={{ opacity: 0, x: 24 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -24 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="space-y-6"
+            >
+              {currentStep === 1 && (
+                <Step1Profil
+                  form={form}
+                  errors={errors}
+                  updateField={updateField}
+                  changeCc={changeCc}
+                />
+              )}
+              {currentStep === 2 && (
+                <Step2Konten
+                  form={form}
+                  errors={errors}
+                  updateField={updateField}
+                  togglePlatform={togglePlatform}
+                />
+              )}
+              {currentStep === 3 && (
+                <Step3Komitmen
+                  form={form}
+                  errors={errors}
+                  updateField={updateField}
+                />
+              )}
+              {currentStep === 4 && <Step4Review form={form} />}
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Submit error */}
+          {submitError && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mt-6 bg-rose-50 border border-rose-200 rounded-xl p-4 text-sm text-rose-700 flex items-start gap-2"
+            >
+              <AlertCircle size={18} className="flex-shrink-0 mt-0.5" />
+              <span>{submitError}</span>
+            </motion.div>
+          )}
+
+          {/* Navigation */}
+          <div className="flex items-center justify-between gap-3 pt-6 mt-2 border-t border-slate-100">
+            <button
+              type="button"
+              onClick={goBack}
+              disabled={currentStep === 1 || loading || checkingDup}
+              className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-50 disabled:opacity-0 disabled:pointer-events-none transition-colors"
+            >
+              <ArrowLeft size={16} /> Kembali
+            </button>
+            <span className="text-xs text-slate-400 font-medium">
+              Langkah {currentStep} dari {STEPS.length}
+            </span>
+            <button
+              type="button"
+              onClick={goNext}
+              disabled={loading || checkingDup}
+              className="flex items-center gap-1.5 bg-[#1A9E9E] hover:bg-[#157d7d] disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold px-5 py-3 rounded-xl transition-colors text-sm"
+            >
+              {loading ? (
+                <>
+                  <Loader2 size={18} className="animate-spin" />
+                  Mengirim...
+                </>
+              ) : checkingDup ? (
+                <>
+                  <Loader2 size={18} className="animate-spin" />
+                  Mengecek...
+                </>
+              ) : currentStep === STEPS.length ? (
+                <>
+                  <Sparkles size={18} />
+                  Daftar Lingfluencer
+                </>
+              ) : (
+                <>
+                  Lanjut <ArrowRight size={16} />
+                </>
+              )}
+            </button>
+          </div>
+        </div>
+
+        <p className="text-xs text-slate-400 text-center leading-relaxed mt-6 px-4">
+          Setelah submit, tim Linguo akan WhatsApp kamu dalam 1-7 hari untuk
+          konfirmasi & kirim {isEbook ? "akses e-book (lewat email)" : "paket e-learning"} + kode affiliate kamu.
+        </p>
+      </motion.section>
+    </div>
+  );
+}
+
+// ────────────────────────────────────────────────────────────────────
+// Progress indicator
+// ────────────────────────────────────────────────────────────────────
+
+function ProgressIndicator({ currentStep }: { currentStep: number }) {
+  return (
+    <div className="flex items-center justify-center mb-6 px-2">
+      <div className="flex items-center gap-0 max-w-md w-full">
+        {STEPS.map((step, i) => {
+          const isActive = step.id === currentStep;
+          const isDone = step.id < currentStep;
+          return (
+            <div key={step.id} className="flex items-center flex-1 last:flex-initial">
+              <div className="flex flex-col items-center flex-shrink-0">
+                <div
+                  className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all ${
+                    isActive
+                      ? "bg-[#1A9E9E] text-white scale-110 shadow-sm shadow-[#1A9E9E]/30"
+                      : isDone
+                        ? "bg-[#1A9E9E] text-white"
+                        : "bg-white border-2 border-slate-200 text-slate-400"
+                  }`}
+                >
+                  {isDone ? <Check size={14} strokeWidth={3} /> : step.id}
+                </div>
+                <div
+                  className={`text-[10px] font-semibold mt-1.5 whitespace-nowrap transition-colors ${
+                    isActive
+                      ? "text-[#1A9E9E]"
+                      : isDone
+                        ? "text-slate-700"
+                        : "text-slate-400"
+                  }`}
+                >
+                  {step.label}
+                </div>
+              </div>
+              {i < STEPS.length - 1 && (
+                <div
+                  className={`flex-1 h-0.5 mx-1 -mt-5 rounded transition-colors ${
+                    isDone ? "bg-[#1A9E9E]" : "bg-slate-200"
+                  }`}
+                />
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// ────────────────────────────────────────────────────────────────────
+// Step 1: Profil
+// ────────────────────────────────────────────────────────────────────
+
+function Step1Profil({
+  form,
+  errors,
+  updateField,
+  changeCc,
+}: {
+  form: any;
+  errors: Record<string, string>;
+  updateField: (key: any, value: any) => void;
+  changeCc: (dial: string) => void;
+}) {
+  const isEbook = useProgram() === "e_book";
+  const fullWa = buildFullWa(form.whatsapp_cc, form.whatsapp);
+  return (
+    <>
+      <div>
+        <h2 className="text-xl font-bold text-slate-900 mb-1">Kenalan dulu</h2>
+        <p className="text-sm text-slate-500">Info dasar buat tim Linguo hubungi kamu</p>
+      </div>
+
+      <Field label="Nama Lengkap" required error={errors.name}>
+        <input
+          type="text"
+          value={form.name}
+          onChange={(e) => updateField("name", e.target.value)}
+          className={inputClass(!!errors.name)}
+          placeholder="Misal: Nadia Permata"
+          data-error={!!errors.name}
+        />
+      </Field>
+
+      <Field
+        label="Gmail"
+        required
+        error={errors.gmail}
+        hint={
+          isEbook
+            ? "Wajib @gmail.com — akses e-book dikirim ke email ini & dipakai untuk masuk ke linguo.id/akun"
+            : "Wajib @gmail.com — dipakai buat kontak & akses paket e-learning Linguo"
+        }
+      >
+        <input
+          type="email"
+          value={form.gmail}
+          onChange={(e) => updateField("gmail", e.target.value)}
+          className={inputClass(!!errors.gmail)}
+          placeholder="nadia.belajar@gmail.com"
+          data-error={!!errors.gmail}
+        />
+      </Field>
+
+      <Field
+        label="No. WhatsApp"
+        required
+        error={errors.whatsapp}
+        hint={
+          form.whatsapp_cc === "62"
+            ? "Pilih kode negara, lalu ketik nomor tanpa 0 di depan — contoh: 81234567890"
+            : "Pilih kode negara, lalu ketik nomor (angka saja) tanpa kode negara"
+        }
+      >
+        <div
+          className={`flex items-stretch rounded-xl border-2 bg-white transition-colors ${
+            errors.whatsapp
+              ? "border-rose-300 focus-within:border-rose-500"
+              : "border-slate-200 focus-within:border-[#1A9E9E]"
+          }`}
+          data-error={!!errors.whatsapp}
+        >
+          <CountryCodeSelect value={form.whatsapp_cc} onChange={changeCc} />
+          <input
+            type="tel"
+            inputMode="numeric"
+            value={form.whatsapp}
+            onChange={(e) => {
+              let d = e.target.value.replace(/\D/g, "");
+              if (d.startsWith(form.whatsapp_cc)) d = d.slice(form.whatsapp_cc.length);
+              if (d.startsWith("0")) d = d.slice(1);
+              updateField("whatsapp", d);
+            }}
+            className="flex-1 min-w-0 px-4 py-3 bg-transparent text-slate-900 placeholder:text-slate-400 focus:outline-none rounded-r-xl"
+            placeholder={form.whatsapp_cc === "62" ? "81234567890" : "812345678"}
+          />
+        </div>
+        {form.whatsapp && !errors.whatsapp && (
+          <p className="text-xs text-slate-400 mt-1">
+            Tersimpan sebagai:{" "}
+            <span className="font-mono text-slate-700">
+              {fullWa ? "+" + fullWa : "—"}
+            </span>
+          </p>
+        )}
+      </Field>
+
+      {isEbook && (
+        <Field
+          label="Pilih E-Book (1 bahasa)"
+          required
+          error={errors.ebook_language}
+          hint="E-book level A1 (pemula). Akses berlaku 1 bulan sejak dikirim tim Linguo."
+        >
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2" data-error={!!errors.ebook_language}>
+            {EBOOK_LANGUAGES.map((l) => {
+              const checked = form.ebook_language === l.value;
+              return (
+                <button
+                  key={l.value}
+                  type="button"
+                  onClick={() => updateField("ebook_language", l.value)}
+                  aria-pressed={checked}
+                  className={`flex items-center gap-2 px-3 py-2.5 rounded-xl border-2 text-sm transition-colors text-left ${
+                    checked
+                      ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E] font-semibold"
+                      : "border-slate-200 text-slate-700 hover:border-slate-300"
+                  }`}
+                >
+                  <span className="text-base leading-none">{l.flag}</span>
+                  <span className="flex-1">{l.label}</span>
+                  {checked && <CheckCircle2 size={16} className="flex-shrink-0" />}
+                </button>
+              );
+            })}
+          </div>
+        </Field>
+      )}
+    </>
+  );
+}
+
+// ────────────────────────────────────────────────────────────────────
+// Step 2: Konten
+// ────────────────────────────────────────────────────────────────────
+
+function Step2Konten({
+  form,
+  errors,
+  updateField,
+  togglePlatform,
+}: {
+  form: any;
+  errors: Record<string, string>;
+  updateField: (key: any, value: any) => void;
+  togglePlatform: (id: string) => void;
+}) {
+  return (
+    <>
+      <div>
+        <h2 className="text-xl font-bold text-slate-900 mb-1">Konten review</h2>
+        <p className="text-sm text-slate-500">Platform & akun sosmed buat posting konten</p>
+      </div>
+
+      <Field
+        label="Konten review akan dipost di mana?"
+        required
+        error={errors.content_platforms}
+        hint="Pilih satu atau lebih platform"
+      >
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 gap-2"
+          data-error={!!errors.content_platforms}
+        >
+          {PLATFORMS.map((p) => {
+            const Icon = p.icon;
+            const checked = form.content_platforms.includes(p.id);
+            return (
+              <button
+                key={p.id}
+                type="button"
+                onClick={() => togglePlatform(p.id)}
+                className={`flex items-center gap-3 px-4 py-3 rounded-xl border-2 text-sm transition-colors text-left ${
+                  checked
+                    ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-slate-900"
+                    : "border-slate-200 text-slate-700 hover:border-slate-300"
+                }`}
+              >
+                <Icon
+                  size={18}
+                  className={checked ? "text-[#1A9E9E]" : "text-slate-400"}
+                />
+                <div className="flex-1">
+                  <div className={`font-semibold ${checked ? "text-[#1A9E9E]" : ""}`}>
+                    {p.label}
+                  </div>
+                  {"subLabel" in p && p.subLabel && (
+                    <div className="text-xs text-slate-500">{p.subLabel}</div>
+                  )}
+                </div>
+                {checked && (
+                  <CheckCircle2
+                    size={18}
+                    className="text-[#1A9E9E] flex-shrink-0"
+                  />
+                )}
+              </button>
+            );
+          })}
+        </div>
+      </Field>
+
+      <Field
+        label="Username sosmed untuk posting konten"
+        required
+        error={errors.socmed_username}
+        hint="Tanpa @. Kalau pake beberapa platform dengan handle berbeda, pisahkan dengan koma"
+      >
+        <input
+          type="text"
+          value={form.socmed_username}
+          onChange={(e) => updateField("socmed_username", e.target.value)}
+          className={inputClass(!!errors.socmed_username)}
+          placeholder="nadia.belajarbahasa"
+          data-error={!!errors.socmed_username}
+        />
+      </Field>
+    </>
+  );
+}
+
+// ────────────────────────────────────────────────────────────────────
+// Step 3: Komitmen
+// ────────────────────────────────────────────────────────────────────
+
+function Step3Komitmen({
+  form,
+  errors,
+  updateField,
+}: {
+  form: any;
+  errors: Record<string, string>;
+  updateField: (key: any, value: any) => void;
+}) {
+  const hadiah = hadiahLabel(useProgram());
+  const [picOptions, setPicOptions] = useState<string[]>([]);
+  const [picManual, setPicManual] = useState(false);
+  useEffect(() => {
+    let alive = true;
+    // Baca langsung lewat REST dengan kunci anon (sama seperti lingfluencer-content.html) —
+    // tidak bergantung pada sesi login pengunjung.
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    if (!url || !key) return;
+    fetch(`${url}/rest/v1/v_lingtership_interns?select=name&order=name.asc`, {
+      headers: { apikey: key, Authorization: `Bearer ${key}` },
+    })
+      .then((r) => (r.ok ? r.json() : []))
+      .then((rows: { name?: string | null }[]) => {
+        if (!alive || !Array.isArray(rows)) return;
+        const names = rows.map((r) => String(r.name || "").trim()).filter(Boolean);
+        setPicOptions(names);
+        // nama dari ?pic= / ketikan sebelumnya yang tidak ada di daftar → mode "Lainnya"
+        if (names.length && form.pic_name && !names.includes(form.pic_name)) setPicManual(true);
+      })
+      .catch(() => {});
+    return () => {
+      alive = false;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  return (
+    <>
+      <div>
+        <h2 className="text-xl font-bold text-slate-900 mb-1">PIC & komitmen</h2>
+        <p className="text-sm text-slate-500">
+          Tim Linguo yang outreach kamu & kesepakatan review
+        </p>
+      </div>
+
+      <Field
+        label="Nama PIC yang menghubungi kamu"
+        required
+        error={errors.pic_name}
+        hint={`Pilih nama tim Linguo yang outreach kamu, atau "Lainnya…" kalau tidak ada di daftar`}
+      >
+        <div className="relative">
+          <Users
+            size={18}
+            className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
+          />
+          {/* [lingfluencer-pic-dropdown-v1] Daftar PIC = magang berstatus aktif di dashboard
+              (view v_lingtership_interns), jadi ikut berganti sendiri tiap batch baru.
+              Kalau daftarnya gagal dimuat, kolomnya kembali jadi ketik bebas. */}
+          {picOptions.length > 0 ? (
+            <>
+              <select
+                value={picManual ? PIC_LAINNYA : form.pic_name}
+                onChange={(e) => {
+                  const v = e.target.value;
+                  setPicManual(v === PIC_LAINNYA);
+                  updateField("pic_name", v === PIC_LAINNYA ? "" : v);
+                }}
+                className={`${inputClass(!!errors.pic_name)} pl-10 pr-10 appearance-none`}
+                data-error={!!errors.pic_name}
+              >
+                <option value="">Pilih PIC</option>
+                {picOptions.map((n) => (
+                  <option key={n} value={n}>
+                    {n}
+                  </option>
+                ))}
+                <option value={PIC_LAINNYA}>Lainnya…</option>
+              </select>
+              <ChevronDown
+                size={18}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
+              />
+            </>
+          ) : (
+            <input
+              type="text"
+              value={form.pic_name}
+              onChange={(e) => updateField("pic_name", e.target.value)}
+              className={`${inputClass(!!errors.pic_name)} pl-10`}
+              placeholder="Nama PIC"
+              data-error={!!errors.pic_name}
+            />
+          )}
+        </div>
+        {picOptions.length > 0 && picManual && (
+          <input
+            type="text"
+            value={form.pic_name}
+            onChange={(e) => updateField("pic_name", e.target.value)}
+            className={`${inputClass(!!errors.pic_name)} mt-2`}
+            placeholder="Tulis nama PIC"
+            autoFocus
+          />
+        )}
+      </Field>
+
+      <div className="border-t border-slate-200 pt-6 space-y-3">
+        <p className="text-sm font-bold text-slate-900 mb-3">
+          Komitmen Kolaborasi <span className="text-rose-500">*</span>
+        </p>
+        <ConsentBox
+          checked={form.socmed_review_consent}
+          onToggle={() =>
+            updateField("socmed_review_consent", !form.socmed_review_consent)
+          }
+          error={errors.socmed_review_consent}
+          label={`Saya bersedia memberikan honest review di sosmed maksimal 14 hari setelah ${hadiah} dikirim`}
+        />
+        <ConsentBox
+          checked={form.gbusiness_review_consent}
+          onToggle={() =>
+            updateField(
+              "gbusiness_review_consent",
+              !form.gbusiness_review_consent
+            )
+          }
+          error={errors.gbusiness_review_consent}
+          label={`Saya bersedia memberikan honest review di Google Business Linguo maksimal 14 hari setelah ${hadiah} dikirim`}
+        />
+      </div>
+    </>
+  );
+}
+
+// ────────────────────────────────────────────────────────────────────
+// Step 4: Review
+// ────────────────────────────────────────────────────────────────────
+
+function Step4Review({ form }: { form: any }) {
+  const program = useProgram();
+  const hadiah = hadiahLabel(program);
+  const platformLabels = form.content_platforms
+    .map((id: string) => PLATFORM_BY_ID[id] || id)
+    .join(", ");
+  const ebook = EBOOK_LANGUAGES.find((l) => l.value === form.ebook_language);
+
+  const rows: Array<{ key: string; value: string }> = [
+    { key: "Nama lengkap", value: form.name || "—" },
+    { key: "Gmail", value: form.gmail || "—" },
+    {
+      key: "WhatsApp",
+      value: form.whatsapp
+        ? "+" + buildFullWa(form.whatsapp_cc, form.whatsapp)
+        : "—",
+    },
+    ...(program === "e_book"
+      ? [{ key: "E-book pilihan", value: ebook ? `${ebook.flag} ${ebook.label} (A1, akses 1 bulan)` : "—" }]
+      : []),
+    { key: "Platform konten", value: platformLabels || "—" },
+    { key: "Username sosmed", value: form.socmed_username || "—" },
+    { key: "PIC Linguo", value: form.pic_name || "—" },
+  ];
+
+  return (
+    <>
+      <div className="text-center">
+        <div className="w-14 h-14 bg-[#1A9E9E]/10 rounded-full mx-auto flex items-center justify-center mb-3">
+          <CheckCircle2 size={28} className="text-[#1A9E9E]" />
+        </div>
+        <h2 className="text-xl font-bold text-slate-900 mb-1">Review data kamu</h2>
+        <p className="text-sm text-slate-500">Pastikan benar sebelum submit</p>
+      </div>
+
+      <div className="bg-slate-50 rounded-2xl p-5 divide-y divide-slate-200">
+        {rows.map((r) => (
+          <div
+            key={r.key}
+            className="flex items-start justify-between gap-4 py-2.5 first:pt-0 last:pb-0"
+          >
+            <span className="text-xs font-semibold text-slate-500 flex-shrink-0">
+              {r.key}
+            </span>
+            <span className="text-sm text-slate-900 font-medium text-right break-words">
+              {r.value}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      <div className="bg-[#1A9E9E]/5 border border-[#1A9E9E]/20 rounded-xl p-4 space-y-2">
+        <div className="flex items-start gap-2">
+          <CheckCircle2
+            size={16}
+            className="text-[#1A9E9E] flex-shrink-0 mt-0.5"
+          />
+          <p className="text-xs text-slate-700 leading-relaxed">
+            Honest review di sosmed dalam 14 hari setelah {hadiah} dikirim
+          </p>
+        </div>
+        <div className="flex items-start gap-2">
+          <CheckCircle2
+            size={16}
+            className="text-[#1A9E9E] flex-shrink-0 mt-0.5"
+          />
+          <p className="text-xs text-slate-700 leading-relaxed">
+            Honest review di Google Business Linguo dalam 14 hari setelah{" "}
+            {hadiah} dikirim
+          </p>
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ────────────────────────────────────────────────────────────────────
+// reusable Field
+// ────────────────────────────────────────────────────────────────────
+
+function Field({
+  label,
+  required,
+  error,
+  hint,
+  children,
+}: {
+  label: string;
+  required?: boolean;
+  error?: string;
+  hint?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div>
+      <label className="block text-sm font-semibold text-slate-900 mb-2">
+        {label} {required && <span className="text-rose-500">*</span>}
+      </label>
+      {children}
+      {hint && !error && (
+        <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">{hint}</p>
+      )}
+      {error && (
+        <p className="text-xs text-rose-600 mt-1.5 flex items-center gap-1">
+          <AlertCircle size={12} />
+          {error}
+        </p>
+      )}
+    </div>
+  );
+}
+
+// ────────────────────────────────────────────────────────────────────
+// ConsentBox
+// ────────────────────────────────────────────────────────────────────
+
+function ConsentBox({
+  checked,
+  onToggle,
+  error,
+  label,
+}: {
+  checked: boolean;
+  onToggle: () => void;
+  error?: string;
+  label: string;
+}) {
+  return (
+    <div>
+      <button
+        type="button"
+        onClick={onToggle}
+        data-error={!!error}
+        className={`w-full flex items-start gap-3 p-4 rounded-xl border-2 text-left transition-colors ${
+          checked
+            ? "border-[#1A9E9E] bg-[#1A9E9E]/5"
+            : error
+              ? "border-rose-200 hover:border-rose-300"
+              : "border-slate-200 hover:border-slate-300"
+        }`}
+      >
+        <div
+          className={`flex-shrink-0 w-5 h-5 rounded mt-0.5 border-2 flex items-center justify-center transition-colors ${
+            checked
+              ? "bg-[#1A9E9E] border-[#1A9E9E]"
+              : "border-slate-300 bg-white"
+          }`}
+        >
+          {checked && <CheckCircle2 size={14} className="text-white" />}
+        </div>
+        <span
+          className={`text-sm leading-relaxed ${
+            checked ? "text-slate-900 font-medium" : "text-slate-700"
+          }`}
+        >
+          {label}
+        </span>
+      </button>
+      {error && (
+        <p className="text-xs text-rose-600 mt-1 flex items-center gap-1 px-1">
+          <AlertCircle size={12} />
+          {error}
+        </p>
+      )}
+    </div>
+  );
+}
+
+// ────────────────────────────────────────────────────────────────────
+// SuccessView
+// ────────────────────────────────────────────────────────────────────
+
+function SuccessView({ name }: { name: string }) {
+  const firstName = name.trim().split(" ")[0] || "kamu";
+  const isEbook = useProgram() === "e_book";
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4 }}
+      className="min-h-screen bg-gradient-to-b from-[#1A9E9E]/5 via-white to-white flex items-center justify-center px-4 py-12"
+    >
+      <div className="max-w-md w-full">
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+          className="w-20 h-20 bg-[#1A9E9E] rounded-full mx-auto flex items-center justify-center mb-6 shadow-lg shadow-[#1A9E9E]/30"
+        >
+          <CheckCircle2 size={40} className="text-white" strokeWidth={2.5} />
+        </motion.div>
+
+        <div className="text-center">
+          <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Yay, kamu udah daftar! 🎉
+          </h1>
+          <p className="text-slate-600 leading-relaxed mb-8">
+            Hi <span className="font-semibold text-slate-900">{firstName}</span>
+            , makasih udah join Lingfluencer. Tim Linguo akan WhatsApp kamu
+            dalam <span className="font-semibold">1-7 hari</span> untuk
+            konfirmasi kolaborasi, kirim {isEbook ? "akses e-book (cek email kamu ya)" : "paket e-learning"}, dan kasih kode
+            affiliate kamu.
+          </p>
+
+          <div className="bg-[#1A9E9E]/5 border border-[#1A9E9E]/20 rounded-2xl p-5 mb-6 text-left">
+            <div className="flex items-center gap-2 mb-2">
+              <Sparkles size={14} className="text-[#1A9E9E]" />
+              <p className="text-xs font-bold text-[#1A9E9E] uppercase tracking-wider">
+                Next Step
+              </p>
+            </div>
+            <p className="text-sm text-slate-700 leading-relaxed">
+              Pastikan WhatsApp kamu aktif. Kalau dalam 7 hari belum ada
+              kontak dari tim Linguo, kamu bisa follow up ke{" "}
+              <a
+                href={BRAND_FACTS.contact.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#1A9E9E] font-semibold hover:underline"
+              >
+                CS Linguo
+              </a>
+              .
+            </p>
+          </div>
+
+          <a
+            href="https://linguo.id"
+            className="inline-flex items-center gap-2 text-[#1A9E9E] font-semibold hover:underline"
+          >
+            Kembali ke Linguo.id
+            <ExternalLink size={14} />
+          </a>
+        </div>
+      </div>
+    </motion.div>
+  );
+}

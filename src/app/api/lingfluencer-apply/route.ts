@@ -60,6 +60,18 @@ function pickPrimaryPlatform(platforms: string[]): string {
   return "instagram";
 }
 
+// [lingfluencer-ebook-v1] Program E-Book (form /lingfluencer/ebook): influencer pilih
+// SATU bahasa. Daftar ini = EBOOK_LANGUAGES di components/lingfluencer/LingfluencerForm.tsx.
+const EBOOK_LANGUAGES: Record<string, string> = {
+  English: "Inggris", Spanish: "Spanyol", Japanese: "Jepang", Mandarin: "Mandarin",
+  Korean: "Korea", German: "Jerman", Italian: "Italia", Thai: "Thailand",
+  French: "Prancis", Turkish: "Turki",
+};
+type Program = "e_learning" | "e_book";
+const asProgram = (v: unknown): Program => (v === "e_book" ? "e_book" : "e_learning");
+/** Cek dobel per program: pendaftar e-learning lama tetap boleh ikut program e-book. */
+const programFilter = (p: Program) => (p === "e_book" ? "&type=eq.e_book" : "&type=neq.e_book");
+
 /**
  * Build structured `notes` content — captures data yang gak punya kolom dedicated
  * (PIC, consents, full platform list).
@@ -70,13 +82,17 @@ function buildNotes(opts: {
   socmed_username: string;
   socmed_review_consent: boolean;
   gbusiness_review_consent: boolean;
+  ebook_language?: string | null;
 }): string {
   const labels = opts.content_platforms
     .map((p) => PLATFORM_LABELS[p] || p)
     .join(", ");
   const today = new Date().toISOString().slice(0, 10);
   return [
-    `[Auto] Daftar via form publik linguo.id/lingfluencer (${today})`,
+    opts.ebook_language
+      ? `[Auto] Daftar via form publik linguo.id/lingfluencer/ebook (${today})`
+      : `[Auto] Daftar via form publik linguo.id/lingfluencer (${today})`,
+    ...(opts.ebook_language ? [`E-book pilihan: ${EBOOK_LANGUAGES[opts.ebook_language] ?? opts.ebook_language} (A1, akses 1 bulan)`] : []),
     `PIC outreach: ${opts.pic_name}`,
     `Platforms terpilih: ${labels}`,
     `Username sosmed (raw): ${opts.socmed_username}`,
@@ -99,6 +115,7 @@ export async function GET(req: NextRequest) {
   const url = new URL(req.url);
   const gmail = url.searchParams.get("gmail")?.toLowerCase().trim();
   const waRaw = url.searchParams.get("whatsapp")?.trim();
+  const program = asProgram(url.searchParams.get("program"));
 
   if (!gmail && !waRaw) {
     return NextResponse.json(
@@ -111,7 +128,7 @@ export async function GET(req: NextRequest) {
   let emailStatus: string | null = null;
   if (gmail) {
     const res = await supaFetch(
-      `lingfluencers?email=eq.${encodeURIComponent(gmail)}&select=id,status,created_at`
+      `lingfluencers?email=eq.${encodeURIComponent(gmail)}${programFilter(program)}&select=id,status,created_at`
     );
     const rows = res.ok ? await res.json() : [];
     emailExists = rows.length > 0;
@@ -124,7 +141,7 @@ export async function GET(req: NextRequest) {
     const normalizedWA = normalizeWhatsApp(waRaw);
     if (normalizedWA) {
       const res = await supaFetch(
-        `lingfluencers?whatsapp=eq.${encodeURIComponent(normalizedWA)}&select=id,status,created_at`
+        `lingfluencers?whatsapp=eq.${encodeURIComponent(normalizedWA)}${programFilter(program)}&select=id,status,created_at`
       );
       const rows = res.ok ? await res.json() : [];
       waExists = rows.length > 0;
@@ -160,6 +177,11 @@ export async function POST(req: NextRequest) {
       socmed_review_consent,
       gbusiness_review_consent,
     } = body;
+    const program = asProgram(body.program);
+    const ebookLanguage = program === "e_book" ? String(body.ebook_language ?? "").trim() : null;
+    if (program === "e_book" && !EBOOK_LANGUAGES[ebookLanguage ?? ""]) {
+      return NextResponse.json({ error: "Pilih satu bahasa e-book dulu" }, { status: 400 });
+    }
 
     // ── Required field checks ────────────────────────────────────────
     if (
@@ -226,7 +248,7 @@ export async function POST(req: NextRequest) {
 
     // ── Dup check on email (lingfluencers.email = our gmail) ─────────
     const dupRes = await supaFetch(
-      `lingfluencers?email=eq.${encodeURIComponent(gmailLower)}&select=id,status`
+      `lingfluencers?email=eq.${encodeURIComponent(gmailLower)}${programFilter(program)}&select=id,status`
     );
     const dupRows = dupRes.ok ? await dupRes.json() : [];
     if (dupRows.length > 0) {
@@ -242,7 +264,7 @@ export async function POST(req: NextRequest) {
 
     // ── Dup check on WhatsApp ────────────────────────────────────────
     const waDupRes = await supaFetch(
-      `lingfluencers?whatsapp=eq.${encodeURIComponent(normalizedWA)}&select=id,status`
+      `lingfluencers?whatsapp=eq.${encodeURIComponent(normalizedWA)}${programFilter(program)}&select=id,status`
     );
     const waDupRows = waDupRes.ok ? await waDupRes.json() : [];
     if (waDupRows.length > 0) {
@@ -274,7 +296,10 @@ export async function POST(req: NextRequest) {
         tiktok_handle: usesTiktok ? username : null,
         platform: primaryPlatform,
         status: "registered", // valid per CHECK constraint (default new submission)
-        type: "e_learning",   // valid per CHECK constraint (e_learning | private)
+        type: program,        // CHECK: e_learning | private | e_book
+        // kolom hanya dikirim untuk program e-book — form e-learning tetap jalan
+        // walau migrasi kolom ini belum ada
+        ...(ebookLanguage ? { ebook_language: ebookLanguage } : {}),
         followers: 0,         // belum tau, Intan isi belakangan via dashboard
         pic_outreach: pic_name.trim(), // ALSO write to dedicated column (filterable di dashboard)
         notes: buildNotes({
@@ -283,6 +308,7 @@ export async function POST(req: NextRequest) {
           socmed_username: username,
           socmed_review_consent,
           gbusiness_review_consent,
+          ebook_language: ebookLanguage,
         }),
       }),
     });
