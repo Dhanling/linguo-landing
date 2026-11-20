@@ -205,7 +205,7 @@ export default function SesiTimeline({
     (async () => {
       const { data, error } = await supabase
         .from('class_materials')
-        .select('id, schedule_id, title, kind, url, note, content, created_at')
+        .select('id, schedule_id, session_number, title, kind, url, note, content, created_at')
         .eq('registration_id', reg.id)
         .order('created_at', { ascending: false });
       if (!alive) return;
@@ -295,7 +295,24 @@ export default function SesiTimeline({
   const pct = total > 0 ? Math.min(100, Math.round((selesai / total) * 100)) : 0;
   const durasiMenit = String(reg?.duration ?? '').match(/\d+/)?.[0] || '';
 
-  const general = (materials || []).filter((m) => !m.schedule_id);
+  // [materi-nomor-sesi-v1] (20 Nov 2026, Rizal Japanese B1.2) Materi yang ditempel
+  // pengajar ke NOMOR sesi (belum ada baris jadwalnya) dulu jatuh ke "Materi Umum"
+  // urut terbaru dulu — siswa melihat "Role Play" sesi 16 paling atas dan materi
+  // pertemuan hari ini terkubur di bawah. Sekarang ikut ke sesi bernomor itu.
+  const nomorMateri = (m: any) => {
+    const n = Number(m?.session_number);
+    return Number.isFinite(n) && n > 0 ? n : null;
+  };
+  const general = (materials || []).filter((m) => !m.schedule_id && nomorMateri(m) == null);
+  const byNo = new Map<number, any[]>();
+  (materials || []).filter((m) => !m.schedule_id && nomorMateri(m) != null).forEach((m) => {
+    const n = nomorMateri(m)!;
+    const arr = byNo.get(n) || [];
+    arr.push(m);
+    byNo.set(n, arr);
+  });
+  const itemsNo = (no: number): Item[] => (byNo.get(no) || []).slice().reverse()
+    .map((m) => ({ id: m.id, title: m.title, kind: m.kind, url: m.url, note: m.note, content: m.content }));
   const bySchedule = new Map<string, any[]>();
   (materials || []).filter((m) => m.schedule_id).forEach((m) => {
     const arr = bySchedule.get(m.schedule_id) || [];
@@ -327,7 +344,7 @@ export default function SesiTimeline({
   };
 
   const totalRekaman = bolehRekaman ? rows.filter(({ s }) => !!s?.recording_url).length : 0;
-  const totalLampiran = rows.reduce((n, { s }) => n + (s ? (bySchedule.get(s.id)?.length || 0) + (Array.isArray(s.material_links) ? s.material_links.length : 0) : 0), 0);
+  const totalLampiran = rows.reduce((n, { s, no }) => n + (byNo.get(no)?.length || 0) + (s ? (bySchedule.get(s.id)?.length || 0) + (Array.isArray(s.material_links) ? s.material_links.length : 0) : 0), 0);
 
   return (
     <div className="flex flex-col gap-4">
@@ -385,7 +402,7 @@ export default function SesiTimeline({
             const done = s
               ? s.status === 'completed' || (past && s.status !== 'cancelled' && s.status !== 'hangus')
               : jenis === 'selesai-semu';
-            const items = variant === 'materi' && s ? itemsOf(s) : [];
+            const items = variant === 'materi' ? [...(s ? itemsOf(s) : []), ...itemsNo(no)] : [];
             // [dek-siswa-v1] Terbuka = nomor sesinya sudah terlewati menurut angka
             // "Sesi X dari Y" di atas. Dek pengajar yang tersimpan menang (tak dobel).
             const dekSesi = variant === 'materi' && !items.some((it) => parseDeck(it.content)) ? dek?.[no] || null : null;
