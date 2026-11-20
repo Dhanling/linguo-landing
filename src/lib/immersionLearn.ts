@@ -2107,6 +2107,9 @@ export interface WordMeaning {
   /** Bacaan Latin bentuk dasar untuk bahasa non-Latin — mis. "する" → "suru".
    *  Hanya terisi kalau `base` ada & bahasanya beraksara non-Latin. */
   baseTranslit?: string;
+  /** [word-refleksif-v1] Verba refleksif lengkap dgn pronominanya ("se reposer",
+   *  "sich freuen", "levantarse") kalau dipakai refleksif di kalimat itu. */
+  reflexive?: string;
 }
 
 export async function getWordMeaning(params: {
@@ -2125,7 +2128,9 @@ export async function getWordMeaning(params: {
     type?: unknown;
     base?: unknown;
     baseTranslit?: unknown;
+    reflexive?: unknown;
   };
+  const reflexive = typeof parsed.reflexive === "string" ? parsed.reflexive.trim() : "";
   const meaning = typeof parsed.meaning === "string" ? parsed.meaning.trim() : "";
   const type = typeof parsed.type === "string" ? parsed.type.trim() : "";
   const base = typeof parsed.base === "string" ? parsed.base.trim() : "";
@@ -2138,6 +2143,7 @@ export async function getWordMeaning(params: {
     base: base || undefined,
     // Bacaan bentuk dasar tak ada artinya tanpa bentuk dasarnya.
     baseTranslit: (base && baseTranslit) || undefined,
+    reflexive: reflexive || undefined,
   };
 }
 

@@ -462,7 +462,17 @@ export function WordTooltip({
         <div className="flex min-w-0 flex-wrap items-baseline gap-1.5">
           <span className="min-w-0 break-words text-[16px] font-extrabold text-white">{word}</span>
           {/* Bentuk dasar/infinitive utk verba terkonjugasi — mis. produjo (producir) */}
-          {meaning?.base &&
+          {/* [word-refleksif-v1] Verba refleksif: tampilkan "se reposer", bukan "reposer". */}
+          {meaning?.reflexive && (
+            <span
+              className="shrink-0 rounded-md px-1.5 py-0.5 text-[10px] font-semibold leading-tight"
+              style={{ backgroundColor: "rgba(245,185,64,0.16)", color: "#F5C76A" }}
+              title="Kata kerja refleksif — hafalkan bersama pronomina refleksifnya"
+            >
+              refleksif: {meaning.reflexive}
+            </span>
+          )}
+          {meaning?.base && !meaning?.reflexive &&
             meaning.base.trim().toLowerCase() !== word.trim().toLowerCase() && (
               <span className="shrink-0 text-[14px] font-semibold" style={{ color: SUB }}>
                 ({meaning.base})
