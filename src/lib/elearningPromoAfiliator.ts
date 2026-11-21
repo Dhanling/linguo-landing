@@ -35,6 +35,22 @@ export function hargaPromoAfiliator(
   return hargaNormal > HARGA_PROMO_AFILIATOR_ELEARNING ? HARGA_PROMO_AFILIATOR_ELEARNING : null;
 }
 
+// [ebook-diskon-afiliator-v1] (#fa816ac8, Intan) E-Book yang dibeli pakai kode
+// afiliator/Lingfluencer aktif → potongan Rp10.000 per e-book (per baris, tidak
+// untuk modul yang masuk Paket Lengkap — paket sudah berharga khusus). Tanpa
+// batas tanggal & tanpa batas sekali-per-pembeli. Harga tetap diputus SERVER.
+export const DISKON_AFILIATOR_EBOOK = 10000;
+
+/** Harga e-book setelah potongan kode afiliator, atau null kalau tak berlaku. */
+export function hargaDiskonEbookAfiliator(
+  type: string | null | undefined,
+  kodeSah: boolean,
+  hargaNormal: number,
+): number | null {
+  if (!kodeSah || type !== "ebook") return null;
+  return hargaNormal > DISKON_AFILIATOR_EBOOK * 2 ? hargaNormal - DISKON_AFILIATOR_EBOOK : null;
+}
+
 export function rapikanKode(kode: string | null | undefined): string {
   let k = String(kode ?? "");
   try { k = decodeURIComponent(k); } catch { /* % rusak — pakai apa adanya */ }

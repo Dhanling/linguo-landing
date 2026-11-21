@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 import { CreditCard, Mail, Sparkles, X } from "lucide-react";
 import { normalisasiWa } from "@/lib/waPembeli";
 import {
+  DISKON_AFILIATOR_EBOOK,
   HARGA_PROMO_AFILIATOR_ELEARNING,
+  hargaDiskonEbookAfiliator,
   promoAfiliatorElearningAktif,
   tierPromoAfiliator,
 } from "@/lib/elearningPromoAfiliator";
@@ -55,29 +57,34 @@ export default function CheckoutSection({ product, pricingTiers, paketLengkap = 
   // Pratinjau saja; harga ditagih dihitung ulang server (/api/create-cart-invoice).
   const [cookieRef, setCookieRef] = useState("");
   const [promoOk, setPromoOk] = useState(false);
+  // [ebook-diskon-afiliator-v1] Kode afiliator/Lingfluencer aktif (tanpa syarat tanggal) → e-book potong Rp10rb.
+  const [kodeSah, setKodeSah] = useState(false);
   useEffect(() => {
     const mentah = ("; " + document.cookie).split("; linguo_ref=")[1]?.split(";")[0] ?? "";
     try { setCookieRef(decodeURIComponent(mentah)); } catch { setCookieRef(mentah); }
   }, []);
   const kodeAktif = refCode.trim() || cookieRef;
   useEffect(() => {
-    if (product.type !== "elearning" || !promoAfiliatorElearningAktif() || kodeAktif.length < 3) {
+    const cek = product.type === "ebook" || (product.type === "elearning" && promoAfiliatorElearningAktif());
+    if (!cek || kodeAktif.length < 3) {
       setPromoOk(false);
+      setKodeSah(false);
       return;
     }
     let batal = false;
     const t = setTimeout(() => {
       fetch(`/api/elearning-promo?code=${encodeURIComponent(kodeAktif)}`)
         .then((r) => r.json())
-        .then((j) => { if (!batal) setPromoOk(!!j.ok); })
-        .catch(() => { if (!batal) setPromoOk(false); });
+        .then((j) => { if (!batal) { setPromoOk(product.type === "elearning" && !!j.ok); setKodeSah(!!(j.sah ?? j.ok)); } })
+        .catch(() => { if (!batal) { setPromoOk(false); setKodeSah(false); } });
     }, 400);
     return () => { batal = true; clearTimeout(t); };
   }, [kodeAktif, product.type]);
   const hargaTier = (t: PricingTier) =>
     promoOk && tierPromoAfiliator(product.type, t.duration_days) && t.price > HARGA_PROMO_AFILIATOR_ELEARNING
       ? HARGA_PROMO_AFILIATOR_ELEARNING
-      : t.price;
+      : hargaDiskonEbookAfiliator(product.type, kodeSah, t.price) ?? t.price;
+  const diskonEbookOk = product.type === "ebook" && kodeSah;
 
   if (!selectedTier) {
     return (
@@ -119,7 +126,7 @@ export default function CheckoutSection({ product, pricingTiers, paketLengkap = 
     const itemsKeranjang =
       pilihPaket && paketLengkap
         ? paketLengkap.items.map((x) => ({ productId: x.productId, pricingId: x.pricingId }))
-        : product.type === "elearning"
+        : product.type === "elearning" || diskonEbookOk
           ? [{ productId: product.id, pricingId: selectedTier.id }]
           : null;
     if (itemsKeranjang) {
@@ -360,9 +367,13 @@ export default function CheckoutSection({ product, pricingTiers, paketLengkap = 
                   placeholder="Masukkan kode referral jika ada"
                   disabled={submitting}
                 />
-                <p className={`text-xs mt-1 ${promoOk ? "text-teal-700 font-medium" : "text-gray-500"}`}>
+                <p className={`text-xs mt-1 ${promoOk || diskonEbookOk ? "text-teal-700 font-medium" : "text-gray-500"}`}>
                   {promoOk
                     ? `✓ Kode afiliator aktif — akses 6 bulan jadi Rp ${formatRupiah(HARGA_PROMO_AFILIATOR_ELEARNING)}`
+                    : diskonEbookOk
+                    ? `✓ Kode aktif — potongan Rp ${formatRupiah(DISKON_AFILIATOR_EBOOK)} untuk e-book ini`
+                    : product.type === "ebook"
+                    ? `Pakai kode afiliator/influencer: potongan Rp ${formatRupiah(DISKON_AFILIATOR_EBOOK)}`
                     : product.type === "elearning" && promoAfiliatorElearningAktif()
                       ? `Pakai kode afiliator/influencer: akses 6 bulan jadi Rp ${formatRupiah(HARGA_PROMO_AFILIATOR_ELEARNING)}`
                       : "Dapatkan dari teman atau afiliator Linguo"}

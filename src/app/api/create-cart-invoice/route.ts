@@ -45,7 +45,7 @@ import { promoAmountFor } from "@/lib/promoMerdeka";
 import { KODE_WA_WAJIB, PESAN_WA_WAJIB, pastikanWaPembeli } from "@/lib/waPembeli";
 import { hitungPaketLengkap, type ModulDimiliki } from "@/lib/bundelEbook";
 import { amanIlike } from "@/lib/amanIlike"; // [audit9-ilike-escape-v1]
-import { HARGA_PROMO_AFILIATOR_ELEARNING, hargaPromoAfiliator, idAfiliatorDariKode, rapikanKode } from "@/lib/elearningPromoAfiliator";
+import { HARGA_PROMO_AFILIATOR_ELEARNING, hargaDiskonEbookAfiliator, hargaPromoAfiliator, idAfiliatorDariKode, rapikanKode } from "@/lib/elearningPromoAfiliator";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -352,9 +352,14 @@ async function buatInvoice(req: NextRequest): Promise<NextResponse> {
   const hargaBaris = (x: { prod: Prod; tier: Tier }) =>
     (paket.dalamPaket.has(x.prod.id) ? paket.harga.get(x.prod.id) : undefined) ??
     hargaPromoAfiliator(x.prod.type, x.tier.duration_days, kodeSah, x.tier.price ?? 0) ??
+    // [ebook-diskon-afiliator-v1] e-book + kode afiliator/Lingfluencer → potong Rp10rb
+    hargaDiskonEbookAfiliator(x.prod.type, kodeSah, x.tier.price ?? 0) ??
     x.tier.price ?? 0;
   const promoAfiliator = (x: { prod: Prod; tier: Tier }) =>
-    !paket.dalamPaket.has(x.prod.id) && hargaPromoAfiliator(x.prod.type, x.tier.duration_days, kodeSah, x.tier.price ?? 0) !== null;
+    !paket.dalamPaket.has(x.prod.id) && (
+      hargaPromoAfiliator(x.prod.type, x.tier.duration_days, kodeSah, x.tier.price ?? 0) !== null ||
+      hargaDiskonEbookAfiliator(x.prod.type, kodeSah, x.tier.price ?? 0) !== null
+    );
 
   const simBaris = simSah.map((t) => ({ testType: t, harga: hargaSimulasi(t) }));
   const total =
