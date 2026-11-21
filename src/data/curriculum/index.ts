@@ -49,6 +49,11 @@ import ukrainian from './data/ukrainian';
 import balinese from './data/balinese';
 import batak from './data/batak';
 import batakMandailing from './data/batak-mandailing'; // [mandailing-a1-v1]
+import acehnese from './data/acehnese'; // [silabus-a1-baru-v1]
+import banjar from './data/banjar';
+import armenian from './data/armenian';
+import kurdish from './data/kurdish';
+import amharic from './data/amharic';
 import bugis from './data/bugis';
 import madurese from './data/madurese'; // __PATCH_NORWEGIAN_BUNDLE__
 import malay from './data/malay';
@@ -63,6 +68,11 @@ const registry: Record<string, LanguageCurriculum> = {
   balinese,
   batak,
   "batak-mandailing": batakMandailing,
+  acehnese,
+  banjar,
+  armenian,
+  kurdish,
+  amharic,
   bugis,
   madurese,
   japanese,

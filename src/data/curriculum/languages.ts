@@ -63,7 +63,7 @@ export const languages: LanguageMeta[] = [
   { slug: "mongolian",  name: "Mongol",    nativeName: "Монгол",      flag: "🇲🇳", region: "asian", available: false },
 
   // === Middle Eastern ===
-  { slug: "kurdish",    name: "Kurdi",     nativeName: "Kurdî",       flag: "☀️", region: "middle-eastern", available: false },
+  { slug: "kurdish",    name: "Kurdi",     nativeName: "Kurdî",       flag: "☀️", region: "middle-eastern", available: true, description: "Kurmanji (Kurdi Utara) beraksara Latin Hawar — Newroz, dengbêj & salam Rojbaş.", aliases: ["kurdi","kurdish","kurmanji","kurmancî","kurdistan"] }, // [silabus-a1-baru-v1],
 
   // === Nusantara ===
   { slug: "balinese",    name: "Bali",      nativeName: "Basa Bali",   flag: "🇮🇩", region: "nusantara", available: true },
@@ -73,8 +73,8 @@ export const languages: LanguageMeta[] = [
   { slug: "batak",       name: "Batak Toba", nativeName: "Hata Batak Toba", flag: "🇮🇩", region: "nusantara", available: true, aliases: ["batak","toba","hata batak"] },
   { slug: "batak-mandailing", name: "Batak Mandailing", nativeName: "Hata Mandailing", flag: "🇮🇩", region: "nusantara", available: true, aliases: ["mandailing","angkola","hata mandailing"] },
   { slug: "bugis",       name: "Bugis",     nativeName: "Ugi",         flag: "🇮🇩", region: "nusantara", available: true },
-  { slug: "acehnese",    name: "Aceh",      nativeName: "Bahsa Acèh",  flag: "🇮🇩", region: "nusantara", available: false },
-  { slug: "banjar",      name: "Banjar",    nativeName: "Bahasa Banjar", flag: "🇮🇩", region: "nusantara", available: false },
+  { slug: "acehnese",    name: "Aceh",      nativeName: "Bahsa Acèh",  flag: "🇮🇩", region: "nusantara", available: true, description: "Bahasa Serambi Mekkah — kata ganti sopan gata/droeneuh, hikayat, Saman & kopi Aceh.", aliases: ["aceh","acehnese","bahasa aceh","banda aceh"] }, // [silabus-a1-baru-v1],
+  { slug: "banjar",      name: "Banjar",    nativeName: "Bahasa Banjar", flag: "🇮🇩", region: "nusantara", available: true, description: "Bahasa urang Banjar Kalimantan Selatan — ulun/pian, pasar terapung & madihin.", aliases: ["banjar","banjarmasin","kalimantan selatan","kalsel","urang banjar"] }, // [silabus-a1-baru-v1],
   { slug: "madurese",    name: "Madura",    nativeName: "Bhâsa Madhurâ", flag: "🇮🇩", region: "nusantara", available: true },
   // linguo-patch:placement-all-v1 — entri "betawi" kedua dihapus: duplikat slug bikin
   // Betawi muncul 2x di PlacementPicker (entri utama featured ada di blok atas).
@@ -83,14 +83,14 @@ export const languages: LanguageMeta[] = [
   { slug: "swahili",     name: "Swahili",   nativeName: "Kiswahili",   flag: "🇰🇪", region: "african", available: true,  description: "Bahasa Bantu 200 juta penutur — ejaan fonetis, tanpa tone, sistem ngeli 18 kelas.", aliases: ["kiswahili","kenya","tanzania","afrika timur"] }, // linguo-patch:silabus-swahili-v1
   { slug: "zulu",        name: "Zulu",      nativeName: "isiZulu",     flag: "🇿🇦", region: "african", available: false },
   { slug: "yoruba",      name: "Yoruba",    nativeName: "Yorùbá",      flag: "🇳🇬", region: "african", available: false },
-  { slug: "amharic",     name: "Amhar",     nativeName: "አማርኛ",        flag: "🇪🇹", region: "african", available: false },
+  { slug: "amharic",     name: "Amhar",     nativeName: "አማርኛ",        flag: "🇪🇹", region: "african", available: true, description: "Bahasa resmi Ethiopia beraksara Fidel Ge'ez — upacara kopi buna, injera & kalender Ethiopia.", aliases: ["amhar","amharik","amharic","ethiopia","etiopia"] }, // [silabus-a1-baru-v1],
 
   // === Other / Classical ===
   { slug: "asl",         name: "Bahasa Isyarat ASL", nativeName: "American Sign Language", flag: "🤟", region: "other", available: true, description: "Bahasa isyarat komunitas Tuli Amerika — abjad jari, ekspresi wajah sebagai tata bahasa, dan avatar 3D yang bisa diputar ulang pelan.", aliases: ["asl","american sign language","isyarat amerika","bahasa isyarat amerika","sign language asl"] }, // [isyarat-3d-v1]
   { slug: "bisindo",     name: "Bahasa Isyarat BISINDO", nativeName: "Bahasa Isyarat Indonesia", flag: "🤟", region: "other", available: true, description: "Bahasa isyarat alami komunitas Tuli Indonesia — abjad jari dua tangan, ekspresi wajah, variasi antardaerah, dan avatar 3D yang bisa diputar ulang pelan.", aliases: ["bisindo","bahasa isyarat indonesia","isyarat indonesia","indonesian sign language","sign language bisindo"] }, // [isyarat-bisindo-v1]
   { slug: "latin",       name: "Latin",     nativeName: "Latinum",     flag: "📜", region: "other", available: false },
   { slug: "esperanto",   name: "Esperanto", nativeName: "Esperanto",   flag: "🟢", region: "other", available: false },
-  { slug: "armenian",    name: "Armenia",   nativeName: "Հայերեն",      flag: "🇦🇲", region: "other", available: false },
+  { slug: "armenian",    name: "Armenia",   nativeName: "Հայերեն",      flag: "🇦🇲", region: "other", available: true, description: "Armenia Timur beraksara Mesrop Mashtots — Yerevan, Ararat, khachkar & lavash.", aliases: ["armenia","armenian","hayeren","yerevan"] }, // [silabus-a1-baru-v1],
 ];
 
 export const regionLabels: Record<string, string> = {
