@@ -69,7 +69,7 @@ const SKIP_PRICE_NAMES = new Set([
   "Farsi",
 ]);
 // Bukan bahasa (program ujian) — dijual sebagai test prep, bukan di daftar bahasa.
-const NOT_A_LANGUAGE = new Set(["ielts", "toefl-itp", "toefl"]);
+const NOT_A_LANGUAGE = new Set(["ielts", "toefl-itp", "toefl", "business-english"]);
 
 const kebab = (s: string) =>
   s.toLowerCase().normalize("NFKD").replace(/[^\w\s-]/g, "").trim().replace(/[\s_]+/g, "-");

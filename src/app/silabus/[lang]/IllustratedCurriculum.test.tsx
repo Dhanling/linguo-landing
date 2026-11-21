@@ -13,12 +13,19 @@ const available = languages.flatMap(language => {
 describe("Halaman silabus berilustrasi", () => {
   it.each(available.map(c => [c.meta.slug, c] as const))("%s memakai karakter, sesi, dan jalur daftar bahasanya", (slug, curriculum) => {
     const html = renderToStaticMarkup(<IllustratedCurriculum curriculum={curriculum} />);
-    expect(html).toContain(`/images/silabus/scenes-v1/${slug}.webp`);
-    expect(html).toContain(`/images/silabus/first-chapter-v1/${slug}.webp`);
-    expect(new Set([...html.matchAll(/data-scene="(session-\d+)"/g)].map(m => m[1])).size).toBe(16);
+    // business-english meminjam adegan English & tidak punya grid first-chapter sendiri.
+    const borrowed = slug === "business-english";
+    expect(html).toContain(`/images/silabus/scenes-v1/${borrowed ? "english" : slug}.webp`);
+    if (!borrowed) {
+      expect(html).toContain(`/images/silabus/first-chapter-v1/${slug}.webp`);
+      expect(new Set([...html.matchAll(/data-scene="(session-\d+)"/g)].map(m => m[1])).size).toBe(16);
+    } else {
+      expect(html).not.toContain(`/images/silabus/first-chapter-v1/`);
+    }
     expect(html).toContain(displayLangTitle(curriculum.meta));
     const registration = ["ielts", "toefl-itp"].includes(slug)
       ? "/daftar/inggris/ielts-toefl"
+      : borrowed ? "/daftar/inggris"
       : `/daftar/${daftarSlugFromLanguageSlug(slug) || ""}`.replace(/\/$/, "");
     expect(html).toContain(`href="${registration}"`);
     expect(html).toContain(`href="/silabus/${slug}/coba"`);

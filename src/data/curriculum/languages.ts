@@ -7,6 +7,7 @@ export const languages: LanguageMeta[] = [
   // === FEATURED / Priority ===
   { slug: "english",    name: "Inggris",   nativeName: "English",     flag: "🇬🇧", region: "european",       featured: true, available: true,  description: "Bahasa internasional — dari A1 sampai B2, TOEFL & IELTS ready.", aliases: ["inggris","english","british"] },
   { slug: "ielts",      name: "IELTS",     nativeName: "IELTS",       flag: "🎓", region: "european",       featured: true, available: true,  description: "Persiapan IELTS Academic intensif — target Band 6.5–7.0 dalam 64 sesi." },
+  { slug: "business-english", name: "Business English", nativeName: "English for Business", flag: "💼", region: "european", featured: true, available: true, description: "Inggris untuk dunia kerja — email, meeting, presentasi, negosiasi. A1 sampai B2, TOEIC ready.", aliases: ["english for business","inggris bisnis","bahasa inggris bisnis"] }, // [silabus-business-english-v1]
   { slug: "toefl-itp",  name: "TOEFL ITP", nativeName: "TOEFL ITP",   flag: "📝", region: "european",       featured: true, available: true,  description: "Persiapan TOEFL ITP intensif — target skor 500–550+ dalam 64 sesi." },
   { slug: "japanese",   name: "Jepang",    nativeName: "日本語",       flag: "🇯🇵", region: "asian",          featured: true, available: true, description: "Hiragana, Katakana, Kanji — dari nol sampai JLPT.", aliases: ["jepang","nihongo","jlpt"] },
   { slug: "korean",     name: "Korea",     nativeName: "한국어",       flag: "🇰🇷", region: "asian",          featured: true, available: true, description: "Hangul, tata bahasa Korea, TOPIK ready.", aliases: ["korea","hangul","topik"] },
@@ -106,7 +107,9 @@ export const regionLabels: Record<string, string> = {
 // bahasa. "Bahasa IELTS" salah secara harfiah, jadi prefiks "Bahasa" dilepas khusus
 // buat slug di sini. Tambah slug baru ke set ini kalau nanti ada entri ujian lain
 // (mis. JLPT/TOPIK) yang masuk katalog silabus.
-export const examSlugs = new Set(["ielts", "toefl-itp"]);
+// [silabus-business-english-v1] business-english ikut di sini: bukan bahasa tersendiri
+// (judulnya "Business English", bukan "Bahasa Business English"; tanpa tema sertifikat sendiri).
+export const examSlugs = new Set(["ielts", "toefl-itp", "business-english"]);
 
 /** Judul tampilan sebuah entri silabus: "Bahasa Jepang", tapi "IELTS" (tanpa prefiks). */
 export function displayLangTitle(l: { slug: string; name: string }) {

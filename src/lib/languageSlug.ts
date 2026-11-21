@@ -12,7 +12,7 @@
 // tersedia" — atau lebih parah, jatuh ke fallback "english": bahasa yang bukan
 // miliknya ikut nongol di menu Kelas & Materi.
 
-import { baseLanguage } from "./classLanguage";
+import { baseLanguage, displayLanguage } from "./classLanguage";
 import { languages as CURRICULUM_LANGUAGES } from "@/data/curriculum/languages";
 
 const norm = (v: string) => v.trim().toLowerCase();
@@ -25,6 +25,10 @@ const ALIAS: Record<string, string> = {
   toefl: "toefl-itp",
   "toefl itp": "toefl-itp",
   "test prep - toefl": "toefl-itp",
+  // [silabus-business-english-v1] registrations.language = "English For Business"
+  "business english": "business-english",
+  "english for business": "business-english",
+  "inggris bisnis": "business-english",
   chinese: "mandarin",
   "mandarin (china)": "mandarin",
   china: "mandarin",
@@ -69,6 +73,9 @@ CURRICULUM_LANGUAGES.forEach((l) => {
  * bahasa lain yang tidak diambil siswa.
  */
 export function languageSlug(raw?: string | null): string | null {
+  // [silabus-business-english-v1] "English - Business …" punya silabus sendiri — cek SEBELUM
+  // baseLanguage() membuang varian "- Business" (pemangkasan itu tetap dipakai bendera/foto).
+  if (/^english\s*[-–—]\s*business\b/i.test(displayLanguage(raw).trim())) return "business-english";
   const base = baseLanguage(raw);
   if (!base) return null;
   const key = norm(base);

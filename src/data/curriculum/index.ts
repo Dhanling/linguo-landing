@@ -1,5 +1,6 @@
 import type { LanguageCurriculum } from "./types";
 import english from "./data/english";
+import businessEnglish from "./data/business-english"; // [silabus-business-english-v1]
 import asl from "./data/asl"; // [isyarat-3d-v1]
 import bisindo from "./data/bisindo"; // [isyarat-bisindo-v1]
 import japanese from "./data/japanese";
@@ -58,6 +59,7 @@ import bengali from './data/bengali';
 
 const registry: Record<string, LanguageCurriculum> = {
   english,
+  "business-english": businessEnglish,
   asl,
   bisindo,
   balinese,

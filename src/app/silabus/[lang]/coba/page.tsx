@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import { getCurriculum, getLanguageBySlug, resolveLanguageSlug } from "@/data/curriculum";
 import { CEFR_QUESTIONS } from "./cefrQuestions";
 import CobaClient from "./CobaClient";
@@ -11,6 +12,8 @@ export default async function PlacementTestPage({ params }: Props) {
   // linguo-patch:silabus-alias-redirect-v1 — /silabus/melayu/coba dulu diam-diam
   // jatuh ke placement TOEFL ITP karena "melayu" bukan slug. Samakan dulu ke kanonik.
   const lang = resolveLanguageSlug(raw) ?? raw;
+  // [silabus-business-english-v1] Business English memakai placement test English umum.
+  if (lang === "business-english") redirect("/silabus/english/coba");
   const questions = CEFR_QUESTIONS[lang] ?? null;
   // linguo-patch:placement-all-v1 — <PlacementTest/> cuma pakai curriculum.meta,
   // jadi kirim stub (overview/levels kosong) — bukan seluruh silabus.

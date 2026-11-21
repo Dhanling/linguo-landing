@@ -14,11 +14,16 @@ import LanguageSwitcher from "./LanguageSwitcher";
 const labels = { A1: "Pemula", A2: "Pra-Menengah", B1: "Menengah", B2: "Menengah Atas" };
 
 // Satu set adegan per bahasa, bukan potret yang diulang di semua kartu.
+// [silabus-business-english-v1] Jalur tanpa ilustrasi sendiri meminjam adegan bahasa induknya.
+// Grid first-chapter-v1 digambar per judul sesi, jadi TIDAK dipinjam (judulnya beda).
+const ART_SLUG: Record<string, string> = { "business-english": "english" };
+
 function SessionArt({ session, slug, hero = false, firstChapter = false, index = 0 }: {
   session?: SessionPreview; slug: string; hero?: boolean; firstChapter?: boolean; index?: number;
 }) {
   const scene = hero || !session ? "hero" : sceneForSession(session);
-  const specific = firstChapter && !hero;
+  const specific = firstChapter && !hero && !ART_SLUG[slug];
+  slug = ART_SLUG[slug] || slug;
   const cell = specific ? index : SILABUS_SCENES.indexOf(scene);
   const columns = specific ? 4 : 5;
   const folder = specific ? "first-chapter-v1" : "scenes-v1";
@@ -62,7 +67,9 @@ export default function IllustratedCurriculum({ curriculum }: { curriculum: Lang
   const title = displayLangTitle(meta);
   const registrationSlug = daftarSlugFromLanguageSlug(meta.slug);
   const registrationUrl = meta.slug === "ielts" || meta.slug === "toefl-itp"
-    ? "/daftar/inggris/ielts-toefl" : registrationSlug ? `/daftar/${registrationSlug}` : "/daftar";
+    ? "/daftar/inggris/ielts-toefl"
+    : meta.slug === "business-english" ? "/daftar/inggris" // [silabus-business-english-v1]
+    : registrationSlug ? `/daftar/${registrationSlug}` : "/daftar";
   const [overviewExpanded, setOverviewExpanded] = useState(false);
   const longOverview = curriculum.overview.length > 500;
   const [levelIndex, setLevelIndex] = useState(0);
