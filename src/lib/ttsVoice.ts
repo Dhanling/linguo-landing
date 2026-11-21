@@ -98,6 +98,10 @@ export const AZURE_VOICES: Record<string, { locale: string; voice: string }> = {
   // campuran angka (nomor telepon, "שיעור 5") lebih tepat dibaca Azure. Chirp
   // he-IL tetap jadi cadangan kalau kunci Azure tak ada.
   he: { locale: "he-IL", voice: "he-IL-HilaNeural" },
+  /* [tts-melayu-azure-v1] Bug Tracker 38e2b62f (Intan, 21 Nov 2026): Google TIDAK punya
+     ms-MY-Chirp3-HD-* ("Voice does not exist") dan Gemini kreditnya habis, jadi 🔊 Melayu
+     di blog & /api/tts selalu gagal. Azure punya suara neural Melayu asli. */
+  ms: { locale: "ms-MY", voice: "ms-MY-YasminNeural" },
 };
 
 /** Format keluaran Azure — mp3 supaya satu bucket, satu tipe berkas. */

@@ -501,7 +501,15 @@ const ARTICLE_CSS = `
   cursor: pointer;
   display: inline;
   transition: background 0.15s, border-color 0.15s;
-  white-space: nowrap;
+  /* [blog-tts-bungkus-v1] Bug Tracker ccc9943c (Intan, 21 Nov 2026): kalimat panjang
+     (mis. contoh perkenalan Jepang) dulu nowrap → menjebol layar ke kanan. Sekarang
+     turun ke baris berikut seperti teks biasa. !important karena CMS lama menyimpan
+     white-space:nowrap sebagai style inline di tiap anotasi. Kata CJK tanpa spasi
+     dipatahkan per karakter (overflow-wrap:anywhere). */
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 .linguo-tts:hover {
   background: rgba(26,158,158,0.22);

@@ -323,12 +323,16 @@ async function buatInvoice(req: NextRequest): Promise<NextResponse> {
   const affiliateId = referralCode ? await idAfiliatorDariKode(admin, referralCode) : null;
   const kodeSah = affiliateId !== null;
   if (kodeSah) referralCode = rapikanKode(referralCode);
+  // [elearning-promo-afiliator-v2] paket.harga berisi SEMUA baris (yang tak kena
+  // paket = harga normal tiernya), jadi `paket.harga.get(id) ?? promo` dulu selalu
+  // berhenti di harga normal — promo Rp29rb tak pernah terpasang (laporan #fba1eba0,
+  // invoice Rp79rb padahal kodenya sah). Paket hanya menang untuk baris dalamPaket.
   const hargaBaris = (x: { prod: Prod; tier: Tier }) =>
-    paket.harga.get(x.prod.id) ??
+    (paket.dalamPaket.has(x.prod.id) ? paket.harga.get(x.prod.id) : undefined) ??
     hargaPromoAfiliator(x.prod.type, x.tier.duration_days, kodeSah, x.tier.price ?? 0) ??
     x.tier.price ?? 0;
   const promoAfiliator = (x: { prod: Prod; tier: Tier }) =>
-    !paket.harga.has(x.prod.id) && hargaPromoAfiliator(x.prod.type, x.tier.duration_days, kodeSah, x.tier.price ?? 0) !== null;
+    !paket.dalamPaket.has(x.prod.id) && hargaPromoAfiliator(x.prod.type, x.tier.duration_days, kodeSah, x.tier.price ?? 0) !== null;
 
   const simBaris = simSah.map((t) => ({ testType: t, harga: hargaSimulasi(t) }));
   const total =
