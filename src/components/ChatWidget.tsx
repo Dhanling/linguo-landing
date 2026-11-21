@@ -16,6 +16,12 @@ const WA_NUMBER = "6282116859493"; // admin handoff
 // [ling-handoff-kurikulum-v2] Pelamar (pengajar, penerjemah, interpreter, loker
 // apa pun) bukan urusan CS: handoff-nya langsung ke nomor WA Kurikulum.
 const WA_KURIKULUM = "6281320113243";
+// [ling-handoff-partnership-v1] Pertanyaan afiliator / Lingfluencer / kerja sama
+// = urusan Linguo for Partnership (Intan), bukan CS: handoff ke nomor itu.
+const WA_PARTNERSHIP = "6281221822973";
+const PARTNER_PATHS = ["/afiliator", "/lingfluencer", "/akun/afiliator"];
+const PARTNER_RE =
+  /\b(afiliat\w*|affiliat\w*|lingfluencer|influencer|kreator konten|content creator|endorse\w*|brand ambassador|komisi referral|kode referral|kode afiliator|link afiliasi)\b|\b(kerja ?sama|kolaborasi|collab\w*|partnership|partner)\b/i;
 const RECRUIT_PATHS = ["/jadi-", "/karir", "/micro-teaching"];
 const RECRUIT_RE =
   /\b(jadi|menjadi|melamar|lamaran|lowongan|loker)\s+(sebagai\s+)?(pengajar|tutor|guru|penerjemah|interpreter|translator)\b|\b(loker|lowongan|karir|rekrutmen|magang|internship|melamar\s+kerja|lamaran\s+kerja|kirim\s+cv|job\s+vacanc\w*|career)\b|\bteaching\s+(opportunit|position|job|vacanc)|\bbecome\s+an?\s+(teacher|tutor)\b/i;
@@ -503,9 +509,14 @@ export default function ChatWidget() {
     const transcript = poin.slice(-3).join(" · ");
     const recruit =
       RECRUIT_PATHS.some((x) => pathname?.startsWith(x)) || poin.some((x) => RECRUIT_RE.test(x));
+    const partner =
+      !recruit &&
+      (PARTNER_PATHS.some((x) => pathname?.startsWith(x)) || poin.some((x) => PARTNER_RE.test(x)));
     const salam = recruit
       ? "Halo Tim Kurikulum Linguo, saya dari chat website."
-      : "Halo Admin Linguo, saya dari chat website.";
+      : partner
+        ? "Halo Linguo for Partnership, saya dari chat website."
+        : "Halo Admin Linguo, saya dari chat website.";
     const halaman = pathname && pathname !== "/" ? ` Saya lagi buka halaman ${pathname}.` : "";
     const tiket = ticket ? ` (Tiket ${ticket})` : "";
     let text =
@@ -537,7 +548,7 @@ export default function ChatWidget() {
       /* ringkasan gagal/lambat: pakai fallback */
     }
     // [wa-lead-ref-v1] Nomor CS ditempeli kode lead; nomor Kurikulum dilewati tagWaUrl.
-    const url = taggedWaUrlAndTrack(`https://wa.me/${recruit ? WA_KURIKULUM : WA_NUMBER}?text=${encodeURIComponent(text)}`, "chat widget");
+    const url = taggedWaUrlAndTrack(`https://wa.me/${recruit ? WA_KURIKULUM : partner ? WA_PARTNERSHIP : WA_NUMBER}?text=${encodeURIComponent(text)}`, "chat widget");
     if (w) w.location.href = url;
     else window.open(url, "_blank");
   }
