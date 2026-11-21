@@ -45,7 +45,7 @@ import { promoAmountFor } from "@/lib/promoMerdeka";
 import { KODE_WA_WAJIB, PESAN_WA_WAJIB, pastikanWaPembeli } from "@/lib/waPembeli";
 import { hitungPaketLengkap, type ModulDimiliki } from "@/lib/bundelEbook";
 import { amanIlike } from "@/lib/amanIlike"; // [audit9-ilike-escape-v1]
-import { hargaPromoAfiliator, idAfiliatorDariKode, rapikanKode } from "@/lib/elearningPromoAfiliator";
+import { HARGA_PROMO_AFILIATOR_ELEARNING, hargaPromoAfiliator, idAfiliatorDariKode, rapikanKode } from "@/lib/elearningPromoAfiliator";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -321,8 +321,30 @@ async function buatInvoice(req: NextRequest): Promise<NextResponse> {
   // affiliate_id ikut diisi: mesin komisi di xendit-webhook (processAffiliateCommission)
   // melewati baris tanpa affiliate_id — dulu komisi keranjang tak pernah tercatat.
   const affiliateId = referralCode ? await idAfiliatorDariKode(admin, referralCode) : null;
-  const kodeSah = affiliateId !== null;
+  let kodeSah = affiliateId !== null;
   if (kodeSah) referralCode = rapikanKode(referralCode);
+  // [elearning-promo-afiliator-v3] Harga Rp29rb hanya SEKALI per pembeli: email yang
+  // sudah pernah LUNAS memakai promo ini (baris afiliator + amount promo) tidak
+  // dapat lagi — cegah satu orang mengulang beli murah dengan kode yang sama/beda.
+  // Bagi keranjang yang berisi baris promo: tolak jelas (bukan diam-diam harga normal,
+  // itu yang bikin pembeli kaget di invoice).
+  if (kodeSah && sah.some((x) => hargaPromoAfiliator(x.prod.type, x.tier.duration_days, true, x.tier.price ?? 0) !== null)) {
+    const { data: pernah } = await admin
+      .from("digital_purchases")
+      .select("id")
+      .ilike("buyer_email", email)
+      .eq("payment_status", "Lunas")
+      .eq("amount", HARGA_PROMO_AFILIATOR_ELEARNING)
+      .not("affiliate_id", "is", null)
+      .limit(1);
+    if ((pernah?.length ?? 0) > 0) {
+      return tolak(
+        "Kode afiliator ini hanya berlaku sekali per pembeli, dan email ini sudah pernah memakainya. Kosongkan kolom kode untuk lanjut dengan harga normal.",
+        409,
+        "PROMO_SUDAH_DIPAKAI",
+      );
+    }
+  }
   // [elearning-promo-afiliator-v2] paket.harga berisi SEMUA baris (yang tak kena
   // paket = harga normal tiernya), jadi `paket.harga.get(id) ?? promo` dulu selalu
   // berhenti di harga normal — promo Rp29rb tak pernah terpasang (laporan #fba1eba0,
