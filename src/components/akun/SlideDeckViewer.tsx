@@ -650,7 +650,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
               ucap={lang && bisaDibunyikan(lang) ? (t) => { bukaKunciAudio(); void ucapkanEbook(t, lang); } : undefined}
               siapkan={lang && bisaDibunyikan(lang) ? (t) => siapkanEbook(t, lang) : undefined} />
           </div>
-          {s.note && <p className="shrink-0 rounded-xl border border-amber-200 bg-amber-50 px-[2.2cqw] py-[0.9cqh] text-[0.86em] text-amber-800">{s.note}</p>}
+          {s.note && <p className={`shrink-0 rounded-xl border border-amber-200 bg-amber-50 px-[2.2cqw] text-amber-800 ${s.visual.kind === "tabel" ? "py-[0.6cqh] text-[0.74em] leading-snug" : "py-[0.9cqh] text-[0.86em]"}`}>{s.note}</p>}
         </div>
       ) : (
       <div className="slide-gulir mt-[2cqh] min-h-0 flex-1 overflow-y-auto pr-[1cqw]" onScroll={tampilGulir} onPointerMove={tampilGulir} style={{ fontSize: `clamp(${0.66 * skala}rem, ${1.5 * skala}cqw, ${1.05 * skala}rem)` }}>

@@ -1184,7 +1184,9 @@ function VisualTabel({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "
   // Kolom Indonesia (label persona) sempit; kolom target dan kolom contoh panjang mendapat ruang lebih.
   const lebarKolom = v.kolom.map((k, i) => {
     const panjang = Math.max(k.label.length, ...v.baris.map((b) => (b[i]?.t || "").length));
-    return `minmax(0,${Math.min(2.2, Math.max(1, panjang / 9)).toFixed(2)}fr)`;
+    // [tabel-huruf-besar-v1] Batas atas 2.2 → 3.4: kolom contoh (kalimat panjang) dulu pecah 3 baris,
+    // tabel jadi tinggi dan seluruh hurufnya disusutkan otomatis.
+    return `minmax(0,${Math.min(3.4, Math.max(0.9, panjang / 9)).toFixed(2)}fr)`;
   }).join(" ");
   return (
     <div className="flex h-full flex-col gap-[0.8cqh]">
@@ -1193,7 +1195,7 @@ function VisualTabel({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "
         <div ref={isi} style={{ fontSize: `${skala}em`, ...KARTU, overflow: "hidden" }}>
           <div className="grid" style={{ gridTemplateColumns: lebarKolom }}>
             {v.kolom.map((k, i) => (
-              <div key={i} className="px-[0.8em] py-[0.45em] text-[0.78em] font-extrabold uppercase tracking-wider text-white"
+              <div key={i} className="px-[0.8em] py-[0.4em] text-[0.86em] font-extrabold uppercase tracking-wider text-white"
                 style={{ background: aksen, borderLeft: i ? "1px solid rgba(255,255,255,0.35)" : undefined }}>{k.label}</div>
             ))}
             {v.baris.map((b, r) => b.map((c, i) => {
@@ -1210,17 +1212,29 @@ function VisualTabel({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "
                 boxShadow: wk && i === 0 ? `inset 0.3em 0 0 ${wk}` : undefined,
                 animation: `slideVisMuncul .3s ease-out ${r * 0.07}s both`,
               };
+              /* [tabel-huruf-besar-v1] Kembar dashboard: huruf tabel lebih besar; kolom CONTOH
+                 menyatukan translit + arti sebaris supaya baris lebih pendek. */
+              const contoh = /contoh|kalimat|example/i.test(v.kolom[i]?.label || "");
               const isiSel = (
                 <>
-                  <span dir="auto" className={`${target ? "text-[1.12em] font-extrabold" : "text-[0.95em] font-bold"} leading-tight`} style={{ color: kepala && i === kembar.subjek ? wk : target ? "#111827" : "#374151", ...longgar(c.t) }}>
+                  <span dir="auto" className={`${target ? "text-[1.22em] font-extrabold" : "text-[1.08em] font-bold"} leading-tight`} style={{ color: kepala && i === kembar.subjek ? wk : target ? "#111827" : "#374151", ...longgar(c.t) }}>
                     {target && sorot.length ? potongKata(c.t, sorot).map((b, k) => <span key={k} style={b.s ? { color: warnaSorot } : undefined}>{b.t}</span>)
                       : sama ? <span style={{ color: wk }}>{c.t}</span> : c.t}
                   </span>
-                  {c.tr && <span className="text-[0.74em] font-bold leading-tight" style={{ color: aksen }}>{c.tr}</span>}
-                  {c.arti && <span className="text-[0.7em] leading-tight" style={{ color: "#6B7280" }}>{c.arti}</span>}
+                  {contoh && c.tr && c.arti ? (
+                    <span className="text-[0.86em] leading-tight">
+                      <span className="font-bold" style={{ color: aksen }}>{c.tr}</span>
+                      <span style={{ color: "#4B5563" }}> · {c.arti}</span>
+                    </span>
+                  ) : (
+                    <>
+                      {c.tr && <span className="text-[0.88em] font-bold leading-tight" style={{ color: aksen }}>{c.tr}</span>}
+                      {c.arti && <span className="text-[0.84em] leading-tight" style={{ color: "#4B5563" }}>{c.arti}</span>}
+                    </>
+                  )}
                 </>
               );
-              const kelas = "sv-anim flex min-w-0 flex-col justify-center gap-[0.1em] px-[0.8em] py-[0.4em]";
+              const kelas = "sv-anim flex min-w-0 flex-col justify-center gap-[0.12em] px-[0.8em] py-[0.32em]";
               return target && ucap && c.t
                 ? <Bunyi key={`${r}-${i}`} teks={c.t} ucap={ucap} siapkan={siapkan} className={`${kelas} !rounded-none !shadow-none`} style={gaya}>{isiSel}</Bunyi>
                 : <div key={`${r}-${i}`} className={kelas} style={gaya}>{isiSel}</div>;
