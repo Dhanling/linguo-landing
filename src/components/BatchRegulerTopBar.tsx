@@ -17,6 +17,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { ArrowRight, Hourglass } from "lucide-react";
 import { isPromoActive } from "@/lib/promoMerdeka";
+import { REGULER_NORMAL_PRICE } from "@/lib/regulerPricing";
 
 // Halaman ber-chrome sendiri (dashboard siswa, laporan, form, pengerjaan kuis)
 // dilewati — daftar yang sama dengan PromoTopBar.
@@ -27,9 +28,9 @@ const EXCLUDED = [
   "/jadi-pengajar", // halaman rekrutmen pengajar (juga versi EN) — promo kelas siswa tak relevan
 ];
 
-// Harga normal yang dicoret. Sinkron dengan PRICE_STRIKE di halaman
-// /jadwal-kelas-reguler — kalau salah satu diubah, ubah dua-duanya.
-const PRICE_STRIKE = 500000;
+// Harga normal yang dicoret (hanya tampil selama early bird). Sama dengan
+// PRICE_STRIKE di /jadwal-kelas-reguler — dua-duanya dari lib/regulerPricing.
+const PRICE_STRIKE = REGULER_NORMAL_PRICE;
 
 type BatchBar = {
   batchMonth: string | null;

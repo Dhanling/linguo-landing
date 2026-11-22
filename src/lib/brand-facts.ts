@@ -5,7 +5,7 @@
 // SATU sumber kebenaran untuk "fakta brand" — angka & klaim umum yang selama
 // ini ditulis ulang manual di puluhan berkas dan akhirnya saling bertentangan:
 // jumlah bahasa pernah tertulis 46 / 50+ / 55+ / 60+ di halaman berbeda, harga
-// "mulai dari" pernah Rp 29.000 / 75.000 / 90.000 / 150.000.
+// "mulai dari" pernah Rp 29.000 / 75.000 / 90.000 / 150.000 (harga lama).
 //
 // Kenapa itu masalah (bukan cuma soal rapi): mesin jawaban — ChatGPT, Claude,
 // Gemini, Perplexity, AI Overviews — mengutip fakta yang KONSISTEN muncul di
@@ -22,6 +22,7 @@
 // =============================================================================
 
 import { KIDS_PRICE, PRICE_A1_60MIN, SEMI_PRIVATE_PRICE_BASIC } from "./trial-pricing";
+import { getRegulerPrice, getRegulerPriceLabel, REGULER_MIN_PESERTA, REGULER_MAX_PESERTA } from "./regulerPricing";
 
 /** Angka "mulai dari" diturunkan dari pricelist supaya tidak bisa basi. */
 // [harga-private-asing-v1] Kategori D (bahasa daerah Nusantara, Rp90rb) DIKECUALIKAN dari
@@ -82,9 +83,10 @@ export const BRAND_FACTS = {
     /** Kelas Private bahasa daerah Nusantara (Jawa, Sunda, Bali, dll), level A1. */
     privateDaerahFrom: PRIVATE_DAERAH_FROM,
     privateDaerahFromLabel: `${rupiah(PRIVATE_DAERAH_FROM)}/sesi`,
-    /** Kelas Reguler (grup) — paket flat, mirror REGULER_PACKAGE_PRICE. */
-    reguler: 150000,
-    regulerLabel: `${rupiah(150000)}/2 bulan`,
+    /** Kelas Reguler (grup) — paket flat 8 sesi dari lib/regulerPricing
+     *  (EB Rp250.000 s.d. 20 Des 2026, lalu Rp300.000; getter = ikut tanggal). */
+    get reguler() { return getRegulerPrice(); },
+    get regulerLabel() { return `${getRegulerPriceLabel()}/8 sesi`; },
     /** Kelas Kids 5–12 tahun, per anak per sesi. */
     kidsFrom: KIDS_FROM,
     kidsFromLabel: `${rupiah(KIDS_FROM)}/sesi`,
@@ -116,8 +118,8 @@ export const BRAND_FACTS = {
     {
       name: "Kelas Reguler",
       slug: "/jadwal-kelas-reguler",
-      priceLabel: `${rupiah(150000)}/2 bulan`,
-      detail: "Kelas grup 8–15 siswa, 90 menit, 8 pertemuan per batch.",
+      get priceLabel() { return `${getRegulerPriceLabel()}/8 sesi`; },
+      detail: `Kelas grup ${REGULER_MIN_PESERTA}–${REGULER_MAX_PESERTA} siswa, 90 menit, 8 pertemuan (1x/minggu) per batch.`,
     },
     {
       name: "Kelas Kids (5–12 tahun)",

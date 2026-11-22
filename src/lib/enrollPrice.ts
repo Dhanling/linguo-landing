@@ -1,3 +1,4 @@
+import { getRegulerPrice } from "./regulerPricing";
 // [edge-auth-gate-v1] Harga pendaftaran kelas baru dari /akun — dipakai wizard
 // (tampilan) DAN /api/enroll (nominal yang ditagih), jadi klien tak bisa lagi
 // mengirim nominal sendiri. Dipindah apa adanya dari src/app/akun/page.tsx.
@@ -47,7 +48,7 @@ export const privatePerSession = (lang: string, durationMin: string | number): n
 
 export const pricePerSession: Record<string,Record<string,number>> = {
   "Kelas Private": { "30":45000, "45":65000, "60":85000, "75":105000, "90":125000 },
-  "Kelas Reguler": { "90":18750 },
+  "Kelas Reguler": { "90":31250 }, // [reguler-jan27-harga-v1] 250rb EB / 8 sesi (info saja; tagihan pakai flat)
   "Kelas Kids": { "30":75000, "45":85000 },
   "English Test Preparation": { "90":18750 },
 };
@@ -55,8 +56,10 @@ export const pricePerSession: Record<string,Record<string,number>> = {
 // Reguler & Test Prep: flat price per 2 bulan, bukan per sesi
 export const isFixedPriceProgram = (program: string): boolean =>
   program === "Kelas Reguler" || program === "English Test Preparation";
+// [reguler-jan27-harga-v1] Harga Reguler dibaca dari lib/regulerPricing lewat
+// getter supaya peralihan early bird → normal (21 Des 2026) terjadi otomatis.
 export const flatPrice: Record<string, number> = {
-  "Kelas Reguler": 150000,
+  get "Kelas Reguler"() { return getRegulerPrice(); },
   "English Test Preparation": 300000,
 };
 

@@ -30,12 +30,17 @@ import { usePathname } from "next/navigation";
 import { ArrowRight, X } from "lucide-react";
 import { useOverlayLock } from "@/lib/overlayStore";
 
+// [reguler-jan27-harga-v1] Poster November (Rp150.000, "batch November dibuka")
+// sudah basi sejak harga baru 22 Nov 2026 — pop-up DIMATIKAN sampai ada poster
+// gelombang Januari 2027 (early bird Rp250.000 s.d. 20 Des, normal Rp300.000).
+// Untuk menyalakan lagi: ganti POSTER_SRC ke berkas poster baru & POSTER_AKTIF = true.
+const POSTER_AKTIF = false;
 // Ganti kalau posternya diperbarui.
 const POSTER_SRC = "/popup-reguler-november.jpg";
 const POSTER_W = 1200;
 const POSTER_H = 972;
 const POSTER_ALT =
-  "Belajar 50+ bahasa cuma Rp 150.000 untuk 2 bulan / 8x pertemuan — pendaftaran Kelas Reguler batch November dibuka";
+  "Kelas Reguler gelombang Januari 2027 — early bird Rp250.000 s.d. 20 Des (normal Rp300.000), 8x pertemuan, pendaftaran dibuka";
 const SEEN_KEY = `poster-popup-seen:${POSTER_SRC}`;
 
 function sudahPernahLihat() {
@@ -88,7 +93,7 @@ export default function PosterPopup() {
   const dilewati = EXCLUDED.some((p) => pathname.startsWith(p));
 
   useEffect(() => {
-    if (dilewati || sudahPernahLihat()) return;
+    if (!POSTER_AKTIF || dilewati || sudahPernahLihat()) return;
 
     let id: ReturnType<typeof setTimeout> | undefined;
     let sudah = false;

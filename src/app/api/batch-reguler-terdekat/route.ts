@@ -13,6 +13,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { isRegulerLang } from "@/lib/programLanguages";
+import { regulerBatchPrice } from "@/lib/regulerPricing";
 
 export const revalidate = 300;
 
@@ -52,7 +53,7 @@ export async function GET() {
 
     const terdekat = buka.slice().sort((a: any, b: any) => deadline(a) - deadline(b))[0];
     const hargaTermurah = Math.min(
-      ...buka.map((b: any) => Number(b.current_price_per_student || b.price_regular) || 0),
+      ...buka.map((b: any) => regulerBatchPrice(b)), // [reguler-jan27-harga-v1] EB → normal ikut tanggal
     );
 
     return NextResponse.json(

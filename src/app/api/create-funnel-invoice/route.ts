@@ -8,7 +8,7 @@
 // Model harga:
 //   - Kelas Private : harga/sesi (kategori bahasa × durasi × pengajar) × jumlah sesi
 //   - Kelas Kids    : harga/sesi (tier × durasi) × jumlah sesi
-//   - Kelas Reguler : flat Rp 150.000 (paket 2 bulan)
+//   - Kelas Reguler : flat getRegulerPrice() — EB Rp250.000 s.d. 20 Des 2026, lalu Rp300.000 (8 sesi)
 //   - IELTS/TOEFL   : flat Rp 300.000 (16 sesi @90 menit)
 //   - Test Prep     : HSK/JLPT/TOPIK/Goethe — semi-private (paket 12 sesi,
 //                     harga/orang) atau private (harga/sesi × sesi), lihat testPrep.ts
@@ -16,6 +16,7 @@
 // total yang ditagih.
 // =============================================================================
 
+import { getRegulerPrice } from "@/lib/regulerPricing";
 import { NextRequest, NextResponse } from "next/server";
 import {
   getPrivateBase60,
@@ -58,7 +59,6 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://linguo.id";
 
 // Konstanta harus sinkron dengan FunnelModal.tsx. Markup native (2×) hidup di
 // @/lib/trial-pricing → applyNativeMultiplier, dipakai Private & Kids.
-const REGULER_PRICE = 150000;
 const IELTS_PRICE = 300000;
 const SESSION_OPTS = [4, 8, 12, 16, 24];
 const PRIVATE_DURATIONS = [30, 45, 60, 75, 90];
@@ -174,9 +174,9 @@ function computeFunnelAmount(input: {
     // Reguler = kelas batch. Bahasa tanpa batch tidak boleh dijual di sini.
     if (programLangRejection(program, language)) return null;
     return {
-      amount: REGULER_PRICE,
+      amount: getRegulerPrice(), // [reguler-jan27-harga-v1]
       perSession: 0,
-      description: `Kelas Reguler ${language} — Level A1 (2 bulan)`,
+      description: `Kelas Reguler ${language} — Level A1 (8 sesi, ±2 bulan)`,
     };
   }
 

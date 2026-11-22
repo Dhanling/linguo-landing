@@ -8,7 +8,7 @@ import { isRegulerLang } from "@/lib/programLanguages";
 
 export const metadata: Metadata = {
   title: "Jadwal Kelas Reguler — Linguo.id",
-  description: "Jadwal lengkap kelas reguler bahasa asing di Linguo: English, Spanyol, German, Bahasa Isyarat, Belanda, dan lainnya. Mulai dari Rp 150.000/batch. Daftar sekarang!",
+  description: "Jadwal Kelas Reguler Linguo gelombang Januari 2027 (mulai 14–17 Jan): English, Mandarin, Jepang, Jerman, Prancis, dan Spanyol. 8 pertemuan @90 menit, early bird Rp250.000 s.d. 20 Des 2026 (normal Rp300.000). Daftar sekarang!",
   keywords: [
     "jadwal kelas reguler",
     "kelas bahasa reguler",

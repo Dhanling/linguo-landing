@@ -25,6 +25,7 @@ import {
 } from "@/lib/funnelRouting";
 import { Card, BackLink, Chosen, fmtRp, useQueryHints } from "./ui";
 import { useOpenRegulerLangs } from "@/lib/useOpenRegulerLangs";
+import { getRegulerPriceShort, isRegulerEarlyBird, REGULER_MIN_PESERTA } from "@/lib/regulerPricing";
 
 // Ringkasan kartu program. Harga WAJIB dari lib/trial-pricing (kategori bahasa
 // A–E), bukan angka hardcode — sumber yang sama dengan /harga & invoice.
@@ -70,10 +71,12 @@ function programMeta(slug: ProgramSlug, langEn: string) {
     }
     case "reguler":
       return {
-        desc: "Grup class, jadwal tetap, 8 sesi @90 menit",
-        price: "Rp 150.000/2 bulan",
+        desc: "Grup class, jadwal tetap, 8 sesi @90 menit (1x/minggu)",
+        // [reguler-jan27-harga-v1] EB 250rb s.d. 20 Des 2026, lalu 300rb — otomatis.
+        price: getRegulerPriceShort() + "/8 sesi",
         highlight: false,
-        note: "*Kelas dibuka minimal 8 peserta",
+        note: (isRegulerEarlyBird() ? "*Early bird s.d. 20 Des 2026 (normal Rp300.000). " : "*")
+          + `Kelas dibuka minimal ${REGULER_MIN_PESERTA} peserta`,
       };
     case "kids":
       return {

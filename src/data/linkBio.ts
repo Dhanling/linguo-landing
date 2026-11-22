@@ -30,7 +30,7 @@ const PENGADUAN_WA = `https://wa.me/6281320113243?text=${encodeURIComponent("Hal
 
 export const BIO_LINKS: BioLink[] = [
   { illustration: "support", label: "Customer Support", note: "Chat WhatsApp admin Linguo", href: CS_WA, highlight: true },
-  { illustration: "reguler", label: "Pendaftaran Kelas Reguler", note: "Mulai 150rb / 2 bulan · 11 bahasa", href: "/jadwal-kelas-reguler" },
+  { illustration: "reguler", label: "Pendaftaran Kelas Reguler", note: "Gelombang Jan 2027 · 6 bahasa · early bird 250rb s.d. 20 Des", href: "/jadwal-kelas-reguler" },
   { illustration: "test-prep", label: "Pendaftaran Kelas TOEFL/IELTS Prep", note: "300rb / 2 bulan", href: "/jadwal-kelas-reguler?tab=etp" },
   { illustration: "private", label: "Pendaftaran Private Class (Online/Offline)", note: `Mulai ${BRAND_FACTS.price.fromLabel} per sesi`, href: "/kelas-trial" },
   { illustration: "native", label: "Kelas Bersama Native Teacher", note: "Private dengan penutur asli", href: "/harga" },

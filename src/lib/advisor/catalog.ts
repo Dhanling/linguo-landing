@@ -242,11 +242,11 @@ function programsFor(lang: LanguageEntry): ProgramOffer[] {
       program: "Kelas Reguler",
       format: "reguler",
       language: lang.name,
-      description: "Kelas grup 8–15 siswa, 90 menit, 8 pertemuan per batch, jadwal tetap.",
+      description: "Kelas grup 4–15 siswa (dibuka minimal 4 peserta), 90 menit, 8 pertemuan 1x/minggu per batch, jadwal tetap. Gelombang Januari 2027: English, Mandarin, Jepang, Jerman, Prancis, Spanyol.",
       session_minutes: 90,
       price_per_session_idr: null,
       package_price_idr: BRAND_FACTS.price.reguler,
-      package_note: "Harga per batch (2 bulan). Ketersediaan batch tergantung jadwal yang sedang dibuka.",
+      package_note: "Harga per batch (8 sesi, ±2 bulan): early bird Rp250.000 s.d. 20 Des 2026, normal Rp300.000 mulai 21 Des 2026. Ketersediaan batch tergantung jadwal yang sedang dibuka.",
       native_teacher_note: null,
       url: `${BASE_URL}${BRAND_FACTS.programs.find((p) => p.name === "Kelas Reguler")?.slug ?? "/daftar"}`,
     });

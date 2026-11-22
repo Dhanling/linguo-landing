@@ -80,11 +80,11 @@ export default function SyaratKetentuanPage() {
         <Section n="4" title="Kebijakan Kelas Reguler">
           <ul className="list-disc space-y-1.5 pl-5">
             <li>
-              Kelas Reguler dibuka apabila minimal <strong>8 peserta</strong>{" "}
+              Kelas Reguler dibuka apabila minimal <strong>4 peserta</strong>{" "}
               terpenuhi per batch.
             </li>
             <li>
-              Jika kuota <strong>kurang dari 8 peserta</strong>, peserta dapat
+              Jika kuota <strong>kurang dari 4 peserta</strong>, peserta dapat
               memilih untuk dipindahkan ke <strong>batch berikutnya</strong>{" "}
               atau menerima <strong>refund penuh</strong>.
             </li>

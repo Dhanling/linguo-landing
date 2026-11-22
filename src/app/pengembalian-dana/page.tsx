@@ -53,7 +53,7 @@ export default function PengembalianDanaPage() {
         <Section n="2" title="Kelas Reguler (Grup)">
           <ul className="list-disc space-y-1.5 pl-5">
             <li>
-              Kelas Reguler dibuka apabila minimal <strong>8 peserta</strong>{" "}
+              Kelas Reguler dibuka apabila minimal <strong>4 peserta</strong>{" "}
               terpenuhi per batch.
             </li>
             <li>

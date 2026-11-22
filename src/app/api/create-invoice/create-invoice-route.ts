@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { xenditMobile } from "@/lib/xenditMobile";
+import { getRegulerPrice } from "@/lib/regulerPricing";
 
 const XENDIT_SECRET_KEY = process.env.XENDIT_SECRET_KEY!;
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -12,7 +13,7 @@ const PRODUCT_PRICES: Record<string, { amount: number; description: string }> = 
   "private-a2": { amount: 1_440_000, description: "Kelas Private - Level A2 (16 sesi)" },
   "private-b1": { amount: 1_440_000, description: "Kelas Private - Level B1 (16 sesi)" },
   "private-b2": { amount: 1_440_000, description: "Kelas Private - Level B2 (16 sesi)" },
-  "reguler-a1": { amount: 150_000, description: "Kelas Reguler - Level A1 (2 bulan)" },
+  "reguler-a1": { amount: 250_000, description: "Kelas Reguler - Level A1 (8 sesi, ±2 bulan)" },
   "ielts-toefl": { amount: 300_000, description: "IELTS/TOEFL Prep (16 sesi @90min)" },
   "e-learning": { amount: 29_000, description: "E-Learning Access" },
   "e-book": { amount: 29_000, description: "E-Book Digital" },
@@ -29,7 +30,10 @@ export async function POST(req: NextRequest) {
       productKey = `${program}-${level.toLowerCase()}`;
     }
 
-    const product = PRODUCT_PRICES[productKey];
+    const baseProduct = PRODUCT_PRICES[productKey];
+    const product = productKey === "reguler-a1" && baseProduct
+      ? { ...baseProduct, amount: getRegulerPrice() }
+      : baseProduct;
     if (!product) {
       return NextResponse.json({ error: "Produk tidak ditemukan" }, { status: 400 });
     }

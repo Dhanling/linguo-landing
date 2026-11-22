@@ -23,7 +23,7 @@ import {
   PRICE_PRIVATE_60MIN,
   SEMI_PRIVATE_PRICE_BASIC,
 } from "../../../lib/trial-pricing";
-import { REGULER_LANGS } from "../../../lib/programLanguages";
+import { getRegulerPrice, isRegulerEarlyBird, REGULER_JAN27_LANGS, REGULER_MIN_PESERTA, REGULER_MAX_PESERTA } from "../../../lib/regulerPricing";
 import {
   breadcrumbSchema,
   courseSchema,
@@ -52,6 +52,10 @@ function parseBahasaSlug(lang: string): string | null {
 // ============================================================================
 // STATIC PARAMS — generates 1 static page per bahasa at build time
 // ============================================================================
+
+// [reguler-jan27-harga-v1] Regenerasi berkala supaya harga Reguler beralih
+// early bird → normal (21 Des 2026) tanpa deploy ulang.
+export const revalidate = 3600;
 
 export async function generateStaticParams() {
   return getAllLanguageDetailSlugs().map((slug) => ({ lang: `bahasa-${slug}` }));
@@ -165,11 +169,10 @@ const TIER_PROGRAM: Record<string, "private" | "semi-private" | "reguler"> = {
 // languages-detail.ts sengaja diabaikan.
 // - Privat: PRICE_PRIVATE_60MIN[cat][0] (level A1, 60 menit)
 // - Semi Privat: SEMI_PRIVATE_PRICE_BASIC[cat][1] / 2 (2 siswa, per siswa)
-// - Reguler: paket flat Rp 150.000/2 bulan (mirror REGULER_PRICE di
-//   FunnelModal.tsx & api/create-funnel-invoice) — HANYA bahasa REGULER_LANGS
+// - Reguler: paket flat dari lib/regulerPricing (EB Rp250.000 s.d. 20 Des 2026,
+//   lalu Rp300.000) — HANYA 6 bahasa gelombang Januari 2027 [reguler-jan27-harga-v1]
 // ============================================================================
 
-const REGULER_PACKAGE_PRICE = 150000;
 
 type ComputedTier = {
   name: string;
@@ -231,12 +234,12 @@ function buildPricingTiers(languageSlug: string): ComputedTier[] {
     },
   ];
 
-  if (REGULER_LANGS.includes(langEn)) {
+  if (REGULER_JAN27_LANGS.includes(langEn)) {
     tiers.push({
       name: "Reguler (Grup)",
-      price: REGULER_PACKAGE_PRICE,
-      priceUnit: "per 2 bulan",
-      sub: "8–15 siswa • 90 menit",
+      price: getRegulerPrice(),
+      priceUnit: "per 8 sesi (±2 bulan)",
+      sub: `${REGULER_MIN_PESERTA}–${REGULER_MAX_PESERTA} siswa • 90 menit • 1x/minggu`,
       features: [
         "Belajar bareng komunitas",
         "Jadwal fix mingguan",
@@ -244,7 +247,8 @@ function buildPricingTiers(languageSlug: string): ComputedTier[] {
         "Harga paling terjangkau",
       ],
       ctaLabel: "Daftar Reguler",
-      note: "*Level A1 — kelas dibuka minimal 8 peserta.",
+      note: (isRegulerEarlyBird() ? "*Early bird s.d. 20 Des 2026 (normal Rp300.000). " : "*")
+        + `Level A1 — gelombang Januari 2027, kelas dibuka minimal ${REGULER_MIN_PESERTA} peserta.`,
     });
   }
 

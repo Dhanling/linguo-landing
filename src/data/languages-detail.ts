@@ -104,7 +104,7 @@ const defaultPricing: PricingTier[] = [
     name: "Reguler (Grup)",
     pricePerSession: 50000,
     sessionDuration: "60 menit",
-    classSize: "8–15 siswa",
+    classSize: "4–15 siswa",
     features: [
       "Belajar bareng komunitas",
       "Jadwal fix mingguan",

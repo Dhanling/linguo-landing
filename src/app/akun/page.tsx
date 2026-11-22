@@ -186,6 +186,7 @@ const CatatanWorkspace = dynamic(() => import('@/components/akun/CatatanWorkspac
 // [latihan-menulis-v1] Latihan menulis aksara non-Latin (urutan goresan, jiplak, nilai AI).
 const LatihanMenulisTab = dynamic(() => import('@/components/akun/LatihanMenulisTab'), { ssr: false, loading: TabLoading });
 import AttentionAlert from '@/components/akun/AttentionAlert';
+import { getRegulerPrice, REGULER_MIN_PESERTA, REGULER_MAX_PESERTA } from '@/lib/regulerPricing';
 // ── Supabase Client ──────────────────────────────────────────────────────
 // [akun-batalkan-hard-delete-v1] pakai client anon kanonik dari @/lib/supabase-client
 // (bukan service-role) — session-aware (persistSession) biar RLS jalan benar.
@@ -403,7 +404,7 @@ function getGreeting() {
 // ── Programs & Languages for Enrollment Wizard ───────────────────────────
 const PROGRAMS: { key: string; label: string; desc: string; icon: LucideIcon; tint: string; price: string }[] = [
   { key: "Kelas Private", label: "Kelas Private", desc: "1-on-1 dengan pengajar, jadwal fleksibel", icon: User, tint: "bg-teal-50 text-teal-600", price: "Mulai Rp45k/sesi (30 mnt)" },
-  { key: "Kelas Reguler", label: "Kelas Reguler", desc: "Belajar bersama 8–15 siswa, jadwal tetap", icon: Users, tint: "bg-blue-50 text-blue-600", price: "Rp150k / 2 bulan (8 sesi)" },
+  { key: "Kelas Reguler", label: "Kelas Reguler", desc: `Belajar bersama ${REGULER_MIN_PESERTA}–${REGULER_MAX_PESERTA} siswa, jadwal tetap`, icon: Users, tint: "bg-blue-50 text-blue-600", price: `Rp${Math.round(getRegulerPrice() / 1000)}k / 8 sesi (±2 bulan)` },
   { key: "Kelas Kids", label: "Kelas Kids", desc: "Untuk anak usia 5-12 tahun", icon: Baby, tint: "bg-purple-50 text-purple-600", price: "Mulai Rp75k/sesi" },
   { key: "English Test Preparation", label: "IELTS/TOEFL Prep", desc: "Persiapan tes bahasa Inggris", icon: ClipboardList, tint: "bg-amber-50 text-amber-600", price: "Rp300k / 2 bulan (16 sesi)" },
 ];
@@ -444,7 +445,7 @@ const JELAJAHI_LANGS = [
 // ═══════════════════════════════════════════════════════════════════════════
 const WIZARD_PROGRAMS: { key: string; label: string; icon: LucideIcon; iconTint: string; desc: string; price: string; badge?: string }[] = [
   { key: "Kelas Private", label: "Kelas Private 1-on-1", icon: User, iconTint: "bg-teal-50 text-teal-600", desc: "Belajar langsung dengan pengajar, jadwal fleksibel", price: "Mulai Rp45k/sesi (30 menit)", badge: "Paling Populer" },
-  { key: "Kelas Reguler", label: "Kelas Reguler", icon: Users, iconTint: "bg-blue-50 text-blue-600", desc: "Belajar bersama 8–15 siswa, lebih hemat", price: "Rp18.750/sesi (8 sesi @90 mnt / 2 bulan)" },
+  { key: "Kelas Reguler", label: "Kelas Reguler", icon: Users, iconTint: "bg-blue-50 text-blue-600", desc: `Belajar bersama ${REGULER_MIN_PESERTA}–${REGULER_MAX_PESERTA} siswa, lebih hemat`, price: `Rp${Math.round(getRegulerPrice() / 8).toLocaleString("id-ID")}/sesi (8 sesi @90 mnt / ±2 bulan)` },
   { key: "Kelas Kids", label: "Kelas Kids", icon: Baby, iconTint: "bg-purple-50 text-purple-600", desc: "Untuk anak usia 5–12 tahun", price: "Mulai Rp75k/sesi" },
   { key: "English Test Preparation", label: "IELTS / TOEFL Prep", icon: ClipboardList, iconTint: "bg-amber-50 text-amber-600", desc: "Persiapan tes bahasa Inggris bersertifikat", price: "Rp300k/2 bulan (16 sesi @90 mnt)" },
 ];
@@ -596,7 +597,7 @@ function RegulerTermsBox({ checked, onChange }: { checked: boolean; onChange: (v
         Ketentuan Kelas Reguler
       </p>
       <ul className="space-y-2 text-[12px] leading-relaxed text-amber-900/90">
-        <li>1. Kelas Reguler dibuka jika peserta memenuhi <b>minimal 8 siswa</b>.</li>
+        <li>1. Kelas Reguler dibuka jika peserta memenuhi <b>minimal {REGULER_MIN_PESERTA} siswa</b>.</li>
         <li>2. Jika kuota minimum belum terpenuhi, kelas <b>tidak dibuka</b> pada periode tersebut. Kamu bisa memilih: menunggu periode berikutnya, memindahkan pembayaran ke program/bahasa lain, atau beralih ke kelas <b>Private / Semi-Private</b> (dengan penyesuaian biaya).</li>
         <li>3. Jika kelas tidak dibuka, kamu berhak atas <b>pengembalian dana penuh</b>. Selain refund, tersedia opsi: simpan sebagai <b>deposit / saldo</b> untuk batch berikutnya, alihkan ke kelas <b>Private</b> (penyesuaian biaya), atau tukar dengan <b>produk digital (e-learning)</b>.</li>
       </ul>

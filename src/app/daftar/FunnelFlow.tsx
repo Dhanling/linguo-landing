@@ -56,6 +56,7 @@ import {
 } from "@/lib/funnelRouting";
 import PadananUjianBadge from "@/components/PadananUjianBadge"; // [padanan-ujian-v1]
 import { trackConversion } from "@/components/AnalyticsTracker";
+import { getRegulerPrice, isRegulerEarlyBird, REGULER_MIN_PESERTA, REGULER_NORMAL_PRICE } from "@/lib/regulerPricing";
 import {
   BackLink,
   Card,
@@ -72,7 +73,9 @@ import {
 const SESSION_OPTS = [4, 8, 12, 16, 24];
 const SESI_SUBLEVEL = 16;
 const IELTS_PRICE = 300000;
-const REGULER_PRICE = 150000;
+// [reguler-jan27-harga-v1] harga Reguler dari lib/regulerPricing (EB → normal otomatis).
+const REGULER_PRICE = getRegulerPrice();
+const REGULER_EB = isRegulerEarlyBird();
 const FORM_KEY = "linguo_daftar_form";
 
 // [kids-cefr-level-v1] Keterangan singkat tiap level untuk orang tua — CEFR
@@ -943,12 +946,14 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
               <div className="flex items-center justify-between">
                 <span className="text-sm text-slate-600">Biaya kelas</span>
                 <div className="text-right">
-                  <span className="mr-1.5 text-xs text-slate-400 line-through">Rp 200.000</span>
-                  <span className="text-lg font-extrabold text-[#1A9E9E]">Rp 150.000</span>
-                  <span className="text-xs font-medium text-slate-400">/2 bulan</span>
+                  {REGULER_EB && (
+                    <span className="mr-1.5 text-xs text-slate-400 line-through">Rp {REGULER_NORMAL_PRICE.toLocaleString("id-ID")}</span>
+                  )}
+                  <span className="text-lg font-extrabold text-[#1A9E9E]">Rp {REGULER_PRICE.toLocaleString("id-ID")}</span>
+                  <span className="text-xs font-medium text-slate-400">/8 sesi</span>
                 </div>
               </div>
-              <p className="mt-1.5 text-[11px] text-slate-400">8 sesi grup class • 90 menit/sesi • dibuka minimal 8 peserta</p>
+              <p className="mt-1.5 text-[11px] text-slate-400">{REGULER_EB ? "Early bird s.d. 20 Des 2026 • " : ""}8 sesi grup class • 90 menit/sesi • 1x/minggu • dibuka minimal {REGULER_MIN_PESERTA} peserta</p>
             </div>
           )}
 
@@ -1010,7 +1015,7 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
                     <li className="flex items-start gap-1.5"><CalendarCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#1A9E9E]" />Jadwal dicocokkan dengan pengajar setelah bayar</li>
                   </>
                 ) : program === "Kelas Reguler" ? (
-                  <li className="flex items-start gap-1.5"><ShieldCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#1A9E9E]" />Kuota 8 peserta belum terpenuhi = pindah batch berikutnya atau refund penuh</li>
+                  <li className="flex items-start gap-1.5"><ShieldCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#1A9E9E]" />Kuota minimal {REGULER_MIN_PESERTA} peserta belum terpenuhi = pindah batch berikutnya atau refund penuh</li>
                 ) : null}
                 <li className="flex items-start gap-1.5"><ShieldCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#1A9E9E]" />Bayar aman lewat halaman pembayaran Xendit</li>
               </ul>
@@ -1146,7 +1151,7 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
                 <Row label="Durasi" value="8 sesi @ 90 menit" />
                 <div className="mt-2.5 flex items-center justify-between border-t border-slate-200 pt-2.5">
                   <span className="text-xs text-slate-500">Biaya kelas</span>
-                  <span className="text-sm font-medium">Rp 150.000 <span className="font-normal text-slate-400">/2 bulan</span></span>
+                  <span className="text-sm font-medium">Rp {REGULER_PRICE.toLocaleString("id-ID")} <span className="font-normal text-slate-400">/8 sesi</span></span>
                 </div>
                 {/* [addon-harga-per-jenis-v1] Modul Rp150.000 & Recording Rp100.000
                     dipilih terpisah; dua-duanya = Rp250.000. Harga di layar ini dulu
@@ -1181,7 +1186,7 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
                 </div>
                 <div className="mt-3 space-y-1.5 rounded-xl border border-amber-100 bg-amber-50 p-3">
                   <p className="text-[11px] leading-relaxed text-amber-900">
-                    <b>Syarat pembukaan kelas:</b> Kelas Reguler dibuka jika minimal <b>8 peserta</b> terkumpul. Jika kuota
+                    <b>Syarat pembukaan kelas:</b> Kelas Reguler dibuka jika minimal <b>{REGULER_MIN_PESERTA} peserta</b> terkumpul. Jika kuota
                     belum tercapai, kamu akan ditawari batch berikutnya atau <b>refund penuh</b>.
                   </p>
                   {/* [reguler-pengalihan-saldo-v1] Kalimat lama berbunyi "Namun

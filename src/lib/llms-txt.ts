@@ -390,7 +390,7 @@ ${kidsTable()}
 
 ### Program paket tetap
 
-- Kelas Reguler: ${BRAND_FACTS.price.regulerLabel} untuk 8 pertemuan @90 menit, kelas grup 8-15 siswa.
+- Kelas Reguler: ${BRAND_FACTS.price.regulerLabel} untuk 8 pertemuan @90 menit (1x/minggu), kelas grup 4-15 siswa (dibuka minimal 4 peserta). Gelombang berikutnya Januari 2027 (mulai 14–17 Jan), hanya 6 bahasa: English, Mandarin, Jepang, Jerman, Prancis, Spanyol. Tidak ada gelombang Desember.
 - IELTS & TOEFL Preparation: ${BRAND_FACTS.price.testPrepLabel} untuk 16 sesi @90 menit, termasuk mock test.
 - E-Learning per bahasa: ${rupiah(79000)} akses 6 bulan, ${rupiah(150000)} akses 1 tahun. Isinya rekaman kelas level Basic (A1.1) saja — A1.2 ke atas lewat kelas Private.
 - E-Book per bahasa: ${BRAND_FACTS.price.ebookFromLabel}, format PDF, akses selamanya.

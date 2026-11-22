@@ -20,6 +20,7 @@ import { HOME_FLAGS } from "@/lib/flags/homeFlags";
 import { RectFlag as RectFlagLazy } from "@/components/RectFlag";
 import Link from "next/link";
 import RegisterRegulerModal from "@/components/RegisterRegulerModal";
+import { regulerBatchPrice, REGULER_NORMAL_PRICE } from "@/lib/regulerPricing";
 import RegisterEtpModal from "@/components/RegisterEtpModal";
 import {
   type EtpBatchRow,
@@ -204,8 +205,9 @@ function formatIDR(amount: number): string {
 }
 
 // Harga normal yang dicoret di samping harga promo. Cuma tampil kalau harga
-// yang dibayar siswa memang lebih murah dari angka ini.
-const PRICE_STRIKE = 500000;
+// yang dibayar siswa memang lebih murah dari angka ini — yaitu selama early bird
+// (s.d. 20 Des 2026). [reguler-jan27-harga-v1]
+const PRICE_STRIKE = REGULER_NORMAL_PRICE;
 
 function formatDate(dateStr: string): string {
   const d = new Date(dateStr);
@@ -270,7 +272,7 @@ function sortValue(batch: Batch, key: SortKey): number | string {
     case "language": return batch.language || "";
     case "start": return new Date(batch.start_date).getTime();
     case "sessions": return Number(batch.total_sessions) || 0;
-    case "price": return Number(batch.current_price_per_student || batch.price_regular) || 0;
+    case "price": return regulerBatchPrice(batch);
     case "slots": return (batch.max_capacity || 0) - (batch.actual_enrolled || 0);
   }
 }
@@ -908,13 +910,13 @@ export default function JadwalKelasRegulerClient({
                                 {batch.total_sessions} × {batch.session_duration_min} mnt
                               </td>
                               <td className="py-4 px-4 text-right">
-                                {(batch.current_price_per_student || batch.price_regular) < PRICE_STRIKE && (
+                                {regulerBatchPrice(batch) < PRICE_STRIKE && (
                                   <div className="text-[11px] text-slate-400 line-through tabular-nums">
                                     {formatIDR(PRICE_STRIKE)}
                                   </div>
                                 )}
                                 <div className="font-bold text-slate-900 tabular-nums">
-                                  {formatIDR(batch.current_price_per_student || batch.price_regular)}
+                                  {formatIDR(regulerBatchPrice(batch))}
                                 </div>
                                 <div className="text-[10px] text-slate-500">/siswa/batch</div>
                               </td>
@@ -1021,13 +1023,13 @@ export default function JadwalKelasRegulerClient({
                           </div>
                           <div className="flex items-center justify-between pt-3 border-t border-slate-100">
                             <div>
-                              {(batch.current_price_per_student || batch.price_regular) < PRICE_STRIKE && (
+                              {regulerBatchPrice(batch) < PRICE_STRIKE && (
                                 <div className="text-xs text-slate-400 line-through tabular-nums">
                                   {formatIDR(PRICE_STRIKE)}
                                 </div>
                               )}
                               <div className="text-lg font-bold text-slate-900 tabular-nums">
-                                {formatIDR(batch.current_price_per_student || batch.price_regular)}
+                                {formatIDR(regulerBatchPrice(batch))}
                               </div>
                               <div className="text-[10px] text-slate-500">/siswa/batch</div>
                             </div>

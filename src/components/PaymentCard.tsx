@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { getRegulerPrice } from "@/lib/regulerPricing";
 import {
   Clock,
   CreditCard,
@@ -21,7 +22,7 @@ const WA_ADMIN = "6282116859493";
 // fields: amount" → siswa lihat "Gagal generate link pembayaran".
 export function calculateDefaultAmount(product: string, level: string): number {
   if (product === "Kelas Private") return 720000;
-  if (product === "Kelas Reguler") return 150000;
+  if (product === "Kelas Reguler") return getRegulerPrice(); // [reguler-jan27-harga-v1]
   if (product === "IELTS/TOEFL Prep") return 300000;
   if (product === "Kelas Kids") {
     const lvl = (level || "").toLowerCase();

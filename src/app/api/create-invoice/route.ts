@@ -4,6 +4,7 @@ import { getPlan, hargaFinal, type LmsPlanId } from "../../../data/lms-pricing";
 import { recordAdAttribution } from "@/lib/adAttributionServer";
 import { promoAmountFor } from "@/lib/promoMerdeka";
 import { regulerClosedRejection } from "@/lib/regulerOpen";
+import { getRegulerPrice } from "@/lib/regulerPricing";
 import { createClient } from "@supabase/supabase-js";
 import { KODE_WA_WAJIB, PESAN_WA_WAJIB, normalisasiWa, pastikanWaPembeli } from "@/lib/waPembeli";
 import {
@@ -28,7 +29,9 @@ const PRODUCT_PRICES: Record<string, { amount: number; description: string }> = 
   "private-a2": { amount: 1440000, description: "Kelas Private - Level A2 (16 sesi)" },
   "private-b1": { amount: 1440000, description: "Kelas Private - Level B1 (16 sesi)" },
   "private-b2": { amount: 1440000, description: "Kelas Private - Level B2 (16 sesi)" },
-  "reguler-a1": { amount: 150000, description: "Kelas Reguler - Level A1 (2 bulan)" },
+  // [reguler-jan27-harga-v1] amount di sini hanya placeholder — nominal yang
+  // ditagih dihitung saat request lewat getRegulerPrice() (EB 250rb s.d. 20 Des, lalu 300rb).
+  "reguler-a1": { amount: 250000, description: "Kelas Reguler - Level A1 (8 sesi, ±2 bulan)" },
   "ielts-toefl": { amount: 300000, description: "IELTS/TOEFL Prep (16 sesi @90min)" },
   "kids-little-learner": { amount: 900000, description: "Kelas Kids Little Learner (12 sesi @30min, usia 5-8 thn)" },
   "kids-young-explorer": { amount: 1020000, description: "Kelas Kids Young Explorer (12 sesi @45min, usia 9-12 thn)" },
@@ -211,7 +214,11 @@ export async function POST(req: NextRequest) {
     let wa_number: string | undefined = waMasuk; // [wa-wajib-digital-v1] bisa diisi dari profil siswa di bawah
 
     const productKey = directKey || (programMasuk && level ? `${programMasuk}-${String(level).toLowerCase()}` : programMasuk);
-    const product = PRODUCT_PRICES[productKey || ""];
+    const baseProduct = PRODUCT_PRICES[productKey || ""];
+    // [reguler-jan27-harga-v1] harga Reguler ikut tanggal (early bird → normal).
+    const product = productKey === "reguler-a1" && baseProduct
+      ? { ...baseProduct, amount: getRegulerPrice() }
+      : baseProduct;
     if (!product) {
       return NextResponse.json({ error: "Produk tidak ditemukan" }, { status: 400 });
     }

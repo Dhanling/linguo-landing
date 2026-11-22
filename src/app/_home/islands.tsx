@@ -31,6 +31,13 @@ import { REGULER_LANGS, isProgramLangAllowed, langsForProgram, programsForLang }
 import { programSlugOf, langSlugOf, langFromSlug, kursusSlugOf } from "@/lib/funnelRouting";
 import { daftarHref, EMAIL_REGEX } from "./data";
 import { taggedWaUrlAndTrack } from "@/lib/waLeadRef"; // [wa-lead-ref-v1]
+import { getRegulerPrice, isRegulerEarlyBird, REGULER_NORMAL_PRICE } from "@/lib/regulerPricing"; // [reguler-jan27-harga-v1]
+
+// [reguler-jan27-harga-v1] Harga kartu Kelas Reguler: early bird Rp250.000 (coret
+// Rp300.000) s.d. 20 Des 2026, lalu Rp300.000 tanpa coretan — otomatis.
+const fmtRpReg = (n: number) => `Rp ${n.toLocaleString("id-ID")}`;
+const REG_EB = isRegulerEarlyBird();
+const REG_PRICE = getRegulerPrice();
 
 // [home-rsc-v1] PlacementPicker membawa supabase-js — baru diunduh saat
 // pengunjung memilih "Placement Test" di pop-up Mulai Belajar.
@@ -910,7 +917,7 @@ const PRODUCTS = [
   // 120rb+/sesi). Homepage tidak tahu bahasa, jadi tampilkan "Mulai" + hapus
   // framing "diskon 10% dari Rp100.000" yg tidak akurat utk harga variabel.
   {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-2.5 h-2.5 inline-block mr-0.5"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>,badgeLabel:"Paling Diminati",badgeColor:"bg-[#1A9E9E] text-white",title:"Kelas Private",desc:"Belajar 1-on-1 via Zoom, request jadwal & topik sesukamu",priceOld:null,price:"Mulai Rp 100.000",per:"/sesi",discount:null,tab:0,bgColor:"#E0F7F7",imageEmoji:"",objPos:"object-[50%_20%]",img1:"/images/programs/brush/private.webp"},
-  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-2.5 h-2.5 inline-block mr-0.5"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>,badgeLabel:"Terjangkau",badgeColor:"bg-[#1A9E9E] text-white",title:"Kelas Reguler",desc:"Grup class dengan jadwal tetap, cocok untuk belajar bareng",priceOld:"Rp 200.000",price:"Rp 150.000",per:"/2 bulan",discount:"25%",tab:1,bgColor:"#E8F0FE",imageEmoji:"",objPos:"object-[50%_20%]",img1:"/images/programs/brush/reguler.webp"},
+  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-2.5 h-2.5 inline-block mr-0.5"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>,badgeLabel:"Terjangkau",badgeColor:"bg-[#1A9E9E] text-white",title:"Kelas Reguler",desc:"Grup class dengan jadwal tetap, cocok untuk belajar bareng",priceOld:REG_EB ? fmtRpReg(REGULER_NORMAL_PRICE) : undefined,price:fmtRpReg(REG_PRICE),per:"/8 sesi",discount:REG_EB ? "Early Bird" : undefined,tab:1,bgColor:"#E8F0FE",imageEmoji:"",objPos:"object-[50%_20%]",img1:"/images/programs/brush/reguler.webp"},
   {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-2.5 h-2.5 inline-block mr-0.5"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>,badgeLabel:"Intensif",badgeColor:"bg-[#FF8700] text-white",title:"IELTS / TOEFL",desc:"16 sesi @90 menit, persiapan tes bahasa Inggris terlengkap",priceOld:"Rp 400.000",price:"Rp 300.000",per:"/2 bulan",discount:"25%",tab:2,bgColor:"#FFF8E1",imageEmoji:"",objPos:"object-[50%_20%]",img1:"/images/programs/brush/ielts-toefl.webp"},
   // test-prep-v1 — persiapan ujian bahasa non-Inggris (HSK/JLPT/TOPIK/Goethe) → halaman /persiapan-tes
   {badgeIcon:<Languages className="w-2.5 h-2.5 inline-block mr-0.5"/>,badgeLabel:"Ujian Bahasa",badgeColor:"bg-[#1A9E9E] text-white",title:"Persiapan Ujian Bahasa",desc:"PTE, TOEIC, HSK, JLPT, TOPIK, Goethe — semi-private / private + mock test",priceOld:null,price:"Mulai Rp 1.000.000",per:"/paket",discount:null,tab:-1,href:"/persiapan-tes",bgColor:"#E0F7F7",imageEmoji:"",lucideIcon:Languages,objPos:"object-[50%_20%]",img1:"/images/programs/brush/ujian-bahasa.webp"},
@@ -1247,7 +1254,7 @@ const PRICING_TABS = [
   {
     id:"reguler",label:"Kelas Reguler",desc:"Grup class, jadwal tetap, harga terjangkau.",
     plans:[
-      {name:"2 Bulan",desc:"8 sesi grup class",price:"Rp 150.000",highlighted:true,badge:"AFFORDABLE"},
+      {name:"8 Sesi (±2 Bulan)",desc:REG_EB ? `8 sesi grup class · early bird s.d. 20 Des (normal ${fmtRpReg(REGULER_NORMAL_PRICE)})` : "8 sesi grup class · 1x/minggu",price:fmtRpReg(REG_PRICE),highlighted:true,badge:REG_EB ? "EARLY BIRD" : "AFFORDABLE"},
     ],
     features:["Recording Class/sesi","Interactive Class via ZOOM","Soft file Materi Pembelajaran","Jadwal Tetap (tidak bisa request)","Qualified Teacher","E-Certificate","Bahasa Terbatas (pilihan populer)"],
     checks:[[true],[true],[true],[true],[true],[true],[true]],

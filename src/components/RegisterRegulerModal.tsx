@@ -5,6 +5,7 @@
 // Self-contained: gak butuh helper dari page. Reuse infra create-invoice + leads + webhook.
 "use client";
 
+import { regulerBatchPrice } from "@/lib/regulerPricing";
 import { useState, useEffect } from "react";
 import { X, Loader2, MessageCircle, Calendar, Clock, Check } from "lucide-react";
 import { trackConversion } from "@/components/AnalyticsTracker";
@@ -31,6 +32,7 @@ export interface RegulerBatchLite {
   session_duration_min: number;
   start_date: string;
   price_regular: number;
+  batch_month?: string | null;
   current_price_per_student: number | null;
 }
 
@@ -100,7 +102,8 @@ export default function RegisterRegulerModal({ batch, onClose }: Props) {
 
   if (!batch) return null;
 
-  const price = batch.current_price_per_student || batch.price_regular;
+  // [reguler-jan27-harga-v1] sama dengan nominal yang ditagih server (getRegulerPrice).
+  const price = regulerBatchPrice(batch);
   const total = price + (addEbook ? ADDON_EBOOK_PRICE : 0) + (addRecording ? ADDON_RECORDING_PRICE : 0);
   const waMsg = encodeURIComponent(
     `Halo Linguo! Saya mau tanya soal Kelas Reguler ${batch.language} ${batch.level} (${batch.batch_code}).`
