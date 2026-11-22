@@ -115,7 +115,11 @@ const nextConfig: NextConfig = {
         { source: '/links/twitter-image', destination: '/links/twitter-image.jpg' },
       ],
       fallback: [
-        { source: '/slide-cover/:path*', destination: 'https://teach.linguo.id/slide-cover/:path*' },
+        // [slide-cover-bucket-v1] Sumbernya kini bucket publik Supabase `slide-cover`
+        // (diisi saat deploy dashboard & landing oleh scripts/sinkron-slide-cover.mjs).
+        // Di mesin build Vercel salinan public/slide-cover yang isinya sama dengan
+        // bucket dibuang, supaya ±0,7 GB gambar tak ikut di tiap deployment.
+        { source: '/slide-cover/:path*', destination: 'https://jbtgciepdmqxxcjflrxz.supabase.co/storage/v1/object/public/slide-cover/:path*' },
       ],
     };
   },
@@ -135,6 +139,9 @@ const nextConfig: NextConfig = {
         source: '/slide-cover/:path*',
         headers: [
           { key: 'Cache-Control', value: 'public, max-age=86400, stale-while-revalidate=31536000' },
+          // Simpan jawaban bucket di CDN Vercel sehari — hemat egress Supabase.
+          { key: 'x-vercel-enable-rewrite-caching', value: '1' },
+          { key: 'CDN-Cache-Control', value: 'max-age=86400' },
         ],
       },
     ];

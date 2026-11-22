@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack",
+    "build": "node scripts/sinkron-slide-cover.mjs --hanya-vercel --mode tambahan --pangkas public/slide-cover && next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
