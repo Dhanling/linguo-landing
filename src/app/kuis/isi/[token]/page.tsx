@@ -52,6 +52,7 @@ import {
   type GradeResult, type QuizAnalysis,
 } from "@/lib/quizPublic";
 import { toLangCode } from "@/lib/quiz/language";
+import { pisahStimulus } from "@/lib/quiz/stimulus";
 import { bisaTts, teksUntukTts, ucapkan, hentikanTts } from "@/lib/quizTts";
 import ImeTextarea from "@/components/kuis/ImeTextarea";
 import HasilKuis from "@/components/kuis/HasilKuis";
@@ -478,6 +479,7 @@ export default function QuizTakePage() {
     ? [quiz.source_lang, quiz.target_lang].filter(Boolean).join(" → ") + (quiz.difficulty ? ` · ${quiz.difficulty}` : "")
     : "";
   const cur = step >= 0 && step < total ? questions[step] : null;
+  const curStim = pisahStimulus(cur?.prompt);
   const count1 = questions.filter((q) => partOf(q) === 1).length;
   const count2 = total - count1;
   // [kuis-4-skill-v1] Jumlah soal per keterampilan (kosong = kuis model lama).
@@ -698,12 +700,19 @@ export default function QuizTakePage() {
                   </span>
                 )}
               </div>
+              {/* [kuis-ielts-section-v1] Bacaan panjang / tabel data di kartu bergulir,
+                  huruf biasa — pertanyaannya tetap besar di bawahnya. */}
+              {curStim.stimulus && (
+                <div className="mb-4 max-h-[48vh] overflow-y-auto rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 sm:px-5">
+                  <p className="whitespace-pre-line text-[15px] leading-relaxed text-slate-800">{curStim.stimulus}</p>
+                </div>
+              )}
               <div className="flex items-start gap-2">
-                <p className="min-w-0 flex-1 whitespace-pre-line text-xl font-extrabold leading-snug text-slate-900 sm:text-2xl">{cur.prompt}</p>
+                <p className="min-w-0 flex-1 whitespace-pre-line text-xl font-extrabold leading-snug text-slate-900 sm:text-2xl">{curStim.soal}</p>
                 {/* Reading & listening menguji membaca/menyimak — tombol dengar di
                     soalnya akan mengubah keterampilan yang diuji. */}
                 {cur.type !== "reading" && cur.type !== "listening" && (
-                  <TombolDengar teks={cur.prompt} lang={ttsLang} besar />
+                  <TombolDengar teks={curStim.soal} lang={ttsLang} besar />
                 )}
               </div>
               {showTranslit && cur.prompt_translit && (

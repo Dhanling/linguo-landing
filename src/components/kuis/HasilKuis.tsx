@@ -35,6 +35,7 @@ import type {
   PublicQuiz, PublicQuizQuestion, GradeResult, QuizAnalysis, EssayResponse,
 } from "@/lib/quizPublic";
 import { emailQuizResult, isChoiceQuestion, skillLabel } from "@/lib/quizPublic";
+import { judulStimulus, pisahStimulus } from "@/lib/quiz/stimulus";
 
 const BRAND = "#1A9E9E";
 const BRAND_DEEP = "#0F766E";
@@ -828,7 +829,16 @@ function KartuSoal({
               : null}
             <span className="text-[10.5px] font-bold text-slate-400 tabular-nums">{bulat(dapat)}/{bulat(poin)} poin</span>
           </span>
-          <span className="mt-1 block whitespace-pre-line text-[13.5px] font-semibold leading-snug text-slate-800">{q.prompt}</span>
+          {/* [kuis-ielts-section-v1] Bacaan panjang tidak diulang di tiap baris hasil. */}
+          {(() => {
+            const { stimulus, soal } = pisahStimulus(q.prompt);
+            return (
+              <span className="mt-1 block whitespace-pre-line text-[13.5px] font-semibold leading-snug text-slate-800">
+                {stimulus && <span className="mr-1 text-[11px] font-bold uppercase text-slate-400">{judulStimulus(stimulus)} ·</span>}
+                {soal}
+              </span>
+            );
+          })()}
           {showTranslit && q.prompt_translit
             ? <span className="mt-0.5 block text-[11.5px] italic text-slate-400">{q.prompt_translit}</span>
             : null}

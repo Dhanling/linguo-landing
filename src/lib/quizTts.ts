@@ -116,6 +116,81 @@ export function hentikanTts() {
  * Bunyikan teks. Balikannya menandakan berhasil/tidak supaya pemanggil bisa
  * mematikan indikator "sedang memuat" — bukan untuk ditampilkan sebagai galat.
  */
+/* [kuis-ielts-section-v1] /api/tts memotong teks di 400 karakter. Naskah
+   Listening IELTS ±2.500 karakter, jadi dipecah per kalimat jadi potongan ≤380
+   karakter, disintesis satu-satu, lalu diputar berurutan di SATU elemen Audio
+   (elemen yang sudah dibuka gesture tap boleh ganti src tanpa diblokir Safari). */
+const BATAS_POTONG = 380;
+function potongTeks(teks: string): string[] {
+  const kalimat = teks.replace(/\s+/g, " ").match(/[^.!?]+[.!?]+["')\]]*\s*|[^.!?]+$/g) ?? [teks];
+  const out: string[] = [];
+  let buf = "";
+  for (const k0 of kalimat) {
+    let k = k0.trim();
+    while (k.length > BATAS_POTONG) {
+      const cut = k.lastIndexOf(" ", BATAS_POTONG);
+      const i = cut > 100 ? cut : BATAS_POTONG;
+      if (buf) { out.push(buf); buf = ""; }
+      out.push(k.slice(0, i).trim());
+      k = k.slice(i).trim();
+    }
+    if (!k) continue;
+    if ((buf + " " + k).trim().length > BATAS_POTONG) { if (buf) out.push(buf); buf = k; }
+    else buf = (buf + " " + k).trim();
+  }
+  if (buf) out.push(buf);
+  return out.filter(Boolean);
+}
+
+async function ambilUrl(teks: string, lang: string): Promise<string | null> {
+  const kunci = `${lang}|${teks}`;
+  const ada = cache.get(kunci);
+  if (ada) return ada;
+  const res = await fetch("/api/tts", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text: teks.slice(0, 400), lang }),
+  });
+  if (!res.ok) return null;
+  const { audioContent } = await res.json();
+  if (!audioContent) return null;
+  const bytes = Uint8Array.from(atob(audioContent), (c) => c.charCodeAt(0));
+  const url = URL.createObjectURL(new Blob([bytes], { type: "audio/mpeg" }));
+  cache.set(kunci, url);
+  return url;
+}
+
+async function ucapkanPanjang(teks: string, lang: string): Promise<boolean> {
+  const potong = potongTeks(teks);
+  const saya = ++seq;
+  if (audio) { try { audio.pause(); } catch {} }
+  const el = audio ?? new Audio();
+  audio = el;
+  // Potongan pertama diambil dulu supaya suara cepat mulai; sisanya disusulkan.
+  const urls: Promise<string | null>[] = [];
+  urls[0] = ambilUrl(potong[0], lang).catch(() => null);
+  for (let i = 1; i < potong.length; i++) {
+    const sebelumnya = urls[i - 1];
+    urls[i] = sebelumnya.then(() => ambilUrl(potong[i], lang)).catch(() => null);
+  }
+  const pertama = await urls[0];
+  if (!pertama) return false;
+  if (saya !== seq) return true;
+  let i = 0;
+  const putar = async (url: string | null) => {
+    if (saya !== seq) return;
+    if (!url) { i++; if (i < potong.length) putar(await urls[i]); return; }
+    el.src = url;
+    el.onended = async () => {
+      i++;
+      if (i < potong.length && saya === seq) putar(await urls[i]);
+    };
+    el.play().catch(() => {});
+  };
+  putar(pertama);
+  return true;
+}
+
 export async function ucapkan(
   teksMentah?: string | null,
   kode?: string | null,
@@ -128,6 +203,9 @@ export async function ucapkan(
   const lang = (kode || "").trim().toLowerCase();
   const teks = mentah ? String(teksMentah ?? "").trim() : teksUntukTts(teksMentah, lang);
   if (!teks || !bisaTts(lang)) return false;
+  if (teks.length > 400) {
+    try { return await ucapkanPanjang(teks, lang); } catch { return false; }
+  }
 
   const kunci = `${lang}|${teks}`;
   const ada = cache.get(kunci);
@@ -137,17 +215,8 @@ export async function ucapkan(
 
   const saya = ++seq;
   try {
-    const res = await fetch("/api/tts", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text: teks.slice(0, 400), lang }),
-    });
-    if (!res.ok) return false;
-    const { audioContent } = await res.json();
-    if (!audioContent) return false;
-    const bytes = Uint8Array.from(atob(audioContent), (c) => c.charCodeAt(0));
-    const url = URL.createObjectURL(new Blob([bytes], { type: "audio/mpeg" }));
-    cache.set(kunci, url);
+    const url = await ambilUrl(teks, lang);
+    if (!url) return false;
     if (saya !== seq) return true; // keburu disusul tap lain — jangan ikut bunyi
     mainkan(url);
     return true;
