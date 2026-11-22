@@ -104,7 +104,7 @@ const BAGIAN: Bagian[] = [
   },
   {
     q: "Apa itu Lingcore?",
-    a: `Lingcore adalah platform belajar milik ${F.name} yang dipakai siswa dan pengajar selama kursus berjalan. Di dalamnya tersimpan materi per sesi, kuis, catatan progres, rekaman kelas, dan rapor CEFR. ${F.name} juga mengembangkan Lingcore for Schools, versi khusus sekolah dengan dashboard terpisah untuk guru, admin, dan orang tua.`,
+    a: `Lingcore adalah metode belajar bahasa yang dikembangkan ${F.name}. Siswa tidak diminta menghafal daftar kata, tetapi diajak memahami pola bahasa lalu menyusun kalimat sendiri sejak sesi pertama, dengan bahasa Indonesia sebagai jembatan. Penjelasan disampaikan lewat suara dan teks sekaligus: pola kalimat ditandai, siswa mencoba menjawab dulu, baru jawabannya dibuka. Metode Lingcore menjadi dasar kurikulum 192 sesi per bahasa di ${F.name}. ${F.name} juga mengembangkan Lingcore for Schools, program bahasa untuk sekolah yang memakai metode yang sama.`,
     faq: true,
   },
   {
