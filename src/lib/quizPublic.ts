@@ -26,7 +26,9 @@ export type QuizQType = "multiple_choice" | "translation" | "fill_blank" | "hots
 /** Soal yang dijawab dengan memilih opsi. */
 export function isChoiceQuestion(q: { type: string; options?: any[] | null }): boolean {
   const n = Array.isArray(q.options) ? q.options.length : 0;
-  if (q.type === "multiple_choice" || q.type === "reading" || q.type === "listening") return true;
+  // [kuis-ielts-real-v1] Listening/Reading tanpa opsi = isian yang diketik (IELTS).
+  if (q.type === "reading" || q.type === "listening") return n >= 2;
+  if (q.type === "multiple_choice") return true;
   return q.type === "hots" && n >= 2;
 }
 
@@ -108,7 +110,17 @@ export interface QuizPerQuestion {
   why: string;
 }
 
+/** [kuis-ielts-real-v1] Perkiraan band Simulasi IELTS (dihitung edge fn grade-quiz). */
+export interface IeltsSkillBand { correct?: number; total?: number; band: number | null }
+export interface IeltsBands {
+  listening?: IeltsSkillBand; reading?: IeltsSkillBand; writing?: IeltsSkillBand; speaking?: IeltsSkillBand;
+  overall: number | null;
+  partial: boolean;
+}
+
 export interface QuizAnalysis {
+  /** Hanya ada di kuis Simulasi IELTS. */
+  ielts?: IeltsBands;
   summary: string;
   strengths: string[];
   weaknesses: string[];

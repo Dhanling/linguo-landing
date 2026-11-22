@@ -34,7 +34,7 @@ import {
 import type {
   PublicQuiz, PublicQuizQuestion, GradeResult, QuizAnalysis, EssayResponse,
 } from "@/lib/quizPublic";
-import { emailQuizResult, isChoiceQuestion, skillLabel } from "@/lib/quizPublic";
+import { emailQuizResult, isChoiceQuestion, skillLabel, type IeltsBands, type IeltsSkillBand } from "@/lib/quizPublic";
 import { judulStimulus, pisahStimulus } from "@/lib/quiz/stimulus";
 
 const BRAND = "#1A9E9E";
@@ -552,6 +552,7 @@ export default function HasilKuis({
         </section>
 
         {/* ── Rapor AI ─────────────────────────────────────────────────────── */}
+        <BandIelts ielts={analysis?.ielts} />
         <RaporAi analysis={analysis} perluDiulang={perluDiulang.map((m) => m.nama)} />
 
         {/* ── Daftar soal ──────────────────────────────────────────────────── */}
@@ -707,6 +708,48 @@ function Legenda({ warna, icon, teks }: { warna: string; icon: React.ReactNode; 
       <span style={{ color: warna }}>{icon}</span>
       {teks}
     </span>
+  );
+}
+
+/* [kuis-ielts-real-v1] Perkiraan band Simulasi IELTS: Listening & Reading dari
+   tabel konversi skor mentah, Writing & Speaking dari penilaian AI berkriteria
+   IELTS. Angkanya dihitung server (grade-quiz) — di sini cuma ditayangkan. */
+function BandIelts({ ielts }: { ielts?: IeltsBands | null }) {
+  if (!ielts || typeof ielts !== "object") return null;
+  const kolom: [string, IeltsSkillBand | undefined, boolean][] = [
+    ["Listening", ielts.listening, true], ["Reading", ielts.reading, true],
+    ["Writing", ielts.writing, false], ["Speaking", ielts.speaking, false],
+  ];
+  const ada = kolom.filter(([, v]) => v && typeof v === "object");
+  if (!ada.length) return null;
+  const f = (b: number | null | undefined) => (typeof b === "number" ? b.toFixed(1) : "–");
+  return (
+    <section data-pdf-block className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <h2 className="text-sm font-bold text-slate-800">Perkiraan band IELTS</h2>
+      <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-5">
+        {ada.map(([label, v, mentah]) => (
+          <div key={label} className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-center">
+            <p className="text-[10.5px] font-bold uppercase tracking-wide text-slate-500">{label}</p>
+            <p className="text-2xl font-extrabold tabular-nums text-slate-800">{f(v!.band)}</p>
+            {mentah && v!.total ? (
+              <p className="text-[11px] font-semibold tabular-nums text-slate-500">{v!.correct ?? 0}/{v!.total} benar</p>
+            ) : null}
+          </div>
+        ))}
+        {ada.length > 1 && (
+          <div className="rounded-xl px-3 py-2.5 text-center text-white" style={{ background: BRAND_DEEP }}>
+            <p className="text-[10.5px] font-bold uppercase tracking-wide opacity-80">Overall</p>
+            <p className="text-2xl font-extrabold tabular-nums">{f(ielts.overall)}</p>
+          </div>
+        )}
+      </div>
+      <p className="mt-3 text-[12px] leading-snug text-slate-500">
+        {ielts.partial
+          ? "Kamu belum mengerjakan full test, jadi band ini diskalakan dari section yang dikerjakan — baru gambaran kasar."
+          : "Listening & Reading memakai tabel konversi resmi; Writing & Speaking dinilai dengan kriteria IELTS."}
+        {" "}Ini perkiraan untuk latihan, bukan skor resmi IELTS.
+      </p>
+    </section>
   );
 }
 

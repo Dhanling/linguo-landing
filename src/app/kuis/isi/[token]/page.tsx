@@ -276,6 +276,8 @@ export default function QuizTakePage() {
   useEffect(() => () => keluarLayarPenuh(), []);
 
   // Soal pertama bagian 2 — di situlah spanduk "Bagian 2" muncul, sekali saja.
+  const stepRef = useRef(step);
+  stepRef.current = step;
   const firstOfPart2 = useMemo(() => questions.findIndex((q) => partOf(q) === 2), [questions]);
 
   const goto = useCallback((next: number) => {
@@ -283,10 +285,16 @@ export default function QuizTakePage() {
     // [kuis-tts-chirp-v1] Suara soal lama dibungkam saat pindah soal — kalimat
     // bahasa asing yang masih berbunyi di atas soal berikutnya bikin salah kira
     // itu bunyi soal yang sekarang.
-    hentikanTts();
+    // [kuis-ielts-real-v1] KECUALI pindah antarsoal yang berbagi SATU audio
+    // listening (IELTS: 10 soal per rekaman) — audionya harus terus berjalan
+    // selagi siswa menjawab soal demi soal, seperti ujian asli.
+    const dari = questions[stepRef.current], ke = questions[next];
+    const audioSama = dari?.type === "listening" && ke?.type === "listening"
+      && !!dari.audio_text && dari.audio_text === ke.audio_text;
+    if (!audioSama) hentikanTts();
     setStep(next);
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+  }, [questions]);
 
   useEffect(() => () => { if (advanceRef.current) window.clearTimeout(advanceRef.current); }, []);
 
@@ -721,7 +729,11 @@ export default function QuizTakePage() {
 
               <div className="mt-5">
                 {cur.type === "listening" && (
-                  <PemutarListening key={step} teks={cur.audio_text} lang={ttsLang} />
+                  /* [kuis-ielts-real-v1] `key` = naskahnya, bukan nomor soal: 10 soal
+                     IELTS yang berbagi satu rekaman memakai SATU pemutar yang tidak
+                     ter-reset tiap pindah soal. */
+                  <PemutarListening key={cur.audio_text ?? step} teks={cur.audio_text} lang={ttsLang}
+                    sekali={/^\s*Listening Part \d/.test(cur.prompt)} />
                 )}
                 {/* [kuis-lembar-sekaligus-v1] Panel lembar bersama — cuma di bagian 2,
                     dan cuma kalau pengajar mengizinkan unggahan. Ditaruh DI ATAS
@@ -770,7 +782,9 @@ export default function QuizTakePage() {
                             <span className="block text-lg font-bold leading-snug text-slate-800">{opt}</span>
                             {tl && <span className="block text-sm font-medium italic text-slate-400">{tl}</span>}
                           </span>
-                          <TombolDengar teks={opt} lang={ttsLang} />
+                          {/* [kuis-ielts-real-v1] Di soal listening tombol ini memotong
+                              audio utama yang sedang diputar. */}
+                          {cur.type !== "listening" && <TombolDengar teks={opt} lang={ttsLang} />}
                           {active && <CheckCircle2 className="h-6 w-6 shrink-0" style={{ color: BRAND }} />}
                         </button>
                       );
@@ -795,6 +809,33 @@ export default function QuizTakePage() {
                       return n;
                     })}
                   />
+                ) : cur.type === "listening" || cur.type === "reading" ? (
+                  /* [kuis-ielts-real-v1] Isian IELTS (form/note/sentence completion):
+                     diketik satu baris. Koreksi otomatis & kapital otomatis HP
+                     dimatikan — ejaan ikut dinilai, jadi tidak boleh dibetulkan mesin. */
+                  <div>
+                    <input
+                      key={step}
+                      type="text"
+                      value={typeof responses[step] === "string" ? responses[step] : ""}
+                      onChange={(e) => {
+                        const v = e.target.value;
+                        setResponses((s) => {
+                          const n = { ...s };
+                          if (v) n[step] = v; else delete n[step];
+                          return n;
+                        });
+                      }}
+                      onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); goto(step + 1); } }}
+                      autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck={false}
+                      maxLength={60}
+                      placeholder="Ketik jawabanmu…"
+                      className="w-full rounded-2xl border-2 border-slate-300 px-4 py-4 text-xl font-bold text-slate-800 outline-none focus:border-[color:var(--brand)]"
+                      style={{ ["--brand" as any]: BRAND }} />
+                    <p className="mt-2 text-[12.5px] font-medium text-slate-500">
+                      Ikuti batas kata di soal. Huruf besar-kecil bebas, tapi ejaan harus tepat.
+                    </p>
+                  </div>
                 ) : sheetUrls.length > 0 && partOf(cur) === 2 ? (
                   /* Lembar terpasang: kotak jawaban diganti penanda. Menampilkan
                      kotak ketik di sini berarti dua jawaban hidup bersamaan untuk
@@ -874,7 +915,10 @@ export default function QuizTakePage() {
                  "Tidak tahu"), jadi alasan tombol ini dulu dicabut (siswa
                  menekannya duluan & melewati soal kosong) tetap tertutup. */
               const sudahDijawab = isAnswered(responses[step]);
-              const sembunyikanLanjut = isMC(cur) && !soalTerakhir && !sudahDijawab;
+              // [kuis-ielts-real-v1] Listening IELTS: audionya jalan terus & cuma sekali,
+              // jadi siswa harus bisa maju ke soal berikutnya walau yang ini belum terjawab.
+              const audioBersama = cur.type === "listening" && /^\s*Listening Part \d/.test(cur.prompt);
+              const sembunyikanLanjut = isMC(cur) && !soalTerakhir && !sudahDijawab && !audioBersama;
               const labelMaju = isMC(cur) ? "Selanjutnya" : "Lanjut";
               return (
                 <div className="sticky bottom-0 mt-4 -mx-4 border-t border-slate-200 bg-white/95 px-4 py-3 backdrop-blur sm:mx-0 sm:rounded-2xl sm:border">
@@ -1143,7 +1187,11 @@ function TombolDengar({ teks, lang, besar }: { teks?: string | null; lang: strin
    diputar ulang (siswa A1 hampir selalu butuh dua kali). Kalau bahasanya tak punya
    suara atau pemutarannya gagal, naskahnya baru dibuka supaya soalnya tetap bisa
    dikerjakan — lebih baik jadi soal membaca daripada soal yang mustahil. */
-function PemutarListening({ teks, lang }: { teks?: string | null; lang: string | null }) {
+function PemutarListening({ teks, lang, sekali }: {
+  teks?: string | null; lang: string | null;
+  /** [kuis-ielts-real-v1] true = seperti IELTS asli, rekaman hanya diputar SATU kali. */
+  sekali?: boolean;
+}) {
   const [sibuk, setSibuk] = useState(false);
   const [kali, setKali] = useState(0);
   const [gagal, setGagal] = useState(false);
@@ -1154,6 +1202,18 @@ function PemutarListening({ teks, lang }: { teks?: string | null; lang: string |
       <div className="mb-4 rounded-2xl border-2 border-dashed border-amber-300 bg-amber-50 px-4 py-3">
         <p className="text-[12px] font-semibold text-amber-700">Audio belum bisa diputar — baca teksnya:</p>
         <p className="mt-1 text-lg font-bold text-slate-800">{naskah}</p>
+      </div>
+    );
+  }
+  if (sekali && kali > 0) {
+    return (
+      <div className="mb-4 flex w-full items-center gap-3 rounded-2xl border-2 px-5 py-4"
+        style={{ borderColor: BRAND, background: "#f0fdfa" }}>
+        <Headphones className="h-6 w-6 shrink-0" style={{ color: BRAND }} />
+        <p className="text-[14px] font-semibold leading-snug text-slate-700">
+          Audio diputar <b>satu kali saja</b>, seperti ujian asli. Jawab soal-soal part ini sambil mendengarkan —
+          pindah soal tidak menghentikan audionya.
+        </p>
       </div>
     );
   }
@@ -1168,7 +1228,7 @@ function PemutarListening({ teks, lang }: { teks?: string | null; lang: string |
       className="mb-4 flex w-full items-center justify-center gap-3 rounded-2xl px-5 py-5 text-lg font-extrabold text-white shadow-md transition active:scale-[0.98] disabled:opacity-70"
       style={{ background: BRAND }}>
       {sibuk ? <Loader2 className="h-6 w-6 animate-spin" /> : <Headphones className="h-6 w-6" />}
-      {kali === 0 ? "Putar audio" : "Putar lagi"}
+      {kali === 0 ? (sekali ? "Putar audio (hanya sekali)" : "Putar audio") : "Putar lagi"}
       {kali > 0 && <span className="text-sm font-semibold opacity-80">· {kali}×</span>}
     </button>
   );
