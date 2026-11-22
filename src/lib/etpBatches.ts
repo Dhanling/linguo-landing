@@ -40,72 +40,12 @@ export interface EtpBatchRow {
 // Cadangan ini cuma dipakai kalau DB tak terbaca; isinya tetap harus batch yang
 // sedang dibuka, karena cadangan basi persis keluhan yang bikin aturan ini ada
 // ("website masih memajang batch Agustus padahal September sudah dipublish").
-export const ETP_FALLBACK_BATCHES: EtpBatchRow[] = [
-  {
-    id: "toefl-nov26",
-    title: "TOEFL Preparation",
-    badge: "TOEFL",
-    icon: "", // ikon dirender lewat <EtpIcon> (Lucide) berdasarkan badge
-    color: "teal",
-    days: "Senin & Rabu",
-    time: "19.30 – 21.00 WIB",
-    start_date: "2026-11-23",
-    duration_min: 90,
-    total_sessions: 16,
-    price: 300000,
-    max_capacity: 15,
-    current_enrolled: 0,
-    highlights: [
-      "Latihan Listening, Structure, Reading intensif",
-      "Bank soal TOEFL ITP & PBT terlengkap",
-      "Simulasi ujian sebelum test hari H",
-      "Target skor 500+ dalam 1 batch",
-    ],
-    syllabus: [
-      { week: "Sesi 1–2", topics: ["Orientasi format TOEFL ITP & strategi umum", "Listening Section: short conversations, surprise questions"] },
-      { week: "Sesi 3–4", topics: ["Listening Section: longer conversations & mini talks", "Teknik note-taking & prediksi jawaban"] },
-      { week: "Sesi 5–6", topics: ["Structure: subject-verb agreement & verb forms", "Written Expression: error recognition dasar"] },
-      { week: "Sesi 7–8", topics: ["Structure lanjutan: parallel structure, relative clauses", "Written Expression: preposisi, artikel, word form"] },
-      { week: "Sesi 9–10", topics: ["Reading: main idea, topic sentence, inference", "Vocabulary in context & reference questions"] },
-      { week: "Sesi 11–12", topics: ["Reading: scanning & skimming cepat", "Unstated detail & negative fact questions"] },
-      { week: "Sesi 13–14", topics: ["Full mock test #1 (Listening + Structure + Reading)", "Review mendalam: analisis kesalahan per section"] },
-      { week: "Sesi 15–16", topics: ["Full mock test #2 + simulasi kondisi ujian nyata", "Target skor 500+: strategi akhir & manajemen waktu"] },
-    ],
-    is_active: true,
-  },
-  {
-    id: "ielts-nov26",
-    title: "IELTS Preparation",
-    badge: "IELTS",
-    icon: "",
-    color: "blue",
-    days: "Selasa & Kamis",
-    time: "19.30 – 21.00 WIB",
-    start_date: "2026-11-24",
-    duration_min: 90,
-    total_sessions: 16,
-    price: 300000,
-    max_capacity: 15,
-    current_enrolled: 0,
-    highlights: [
-      "4 skill: Listening, Reading, Writing, Speaking",
-      "Latihan Task 1 & Task 2 Writing dengan feedback",
-      "Mock speaking session 1-on-1",
-      "Target band 6.5+ dalam 1 batch",
-    ],
-    syllabus: [
-      { week: "Sesi 1–2", topics: ["Orientasi format IELTS Academic & strategi umum", "Listening Section 1–2: form filling & multiple choice"] },
-      { week: "Sesi 3–4", topics: ["Listening Section 3–4: lectures & seminars", "Map labelling, diagram completion, sentence completion"] },
-      { week: "Sesi 5–6", topics: ["Reading: True/False/Not Given & Yes/No/Not Given", "Matching headings & matching information"] },
-      { week: "Sesi 7–8", topics: ["Reading: summary completion & short answer questions", "Teknik skimming & scanning untuk waktu terbatas"] },
-      { week: "Sesi 9–10", topics: ["Writing Task 1: describe grafik, tabel, diagram, peta", "Struktur paragraf & academic vocabulary Task 1"] },
-      { week: "Sesi 11–12", topics: ["Writing Task 2: opinion, discussion, problem-solution essay", "Coherence & cohesion, lexical resource, grammatical range"] },
-      { week: "Sesi 13–14", topics: ["Speaking Part 1: personal questions & fluency drills", "Speaking Part 2: long turn (cue card) & Part 3: discussion"] },
-      { week: "Sesi 15–16", topics: ["Full Academic mock test + mock speaking 1-on-1", "Feedback individual & strategi raih band 6.5+"] },
-    ],
-    is_active: true,
-  },
-];
+// [etp-jan27-segera-v1] 22 Nov 2026: batch November (TOEFL 23 Nov, IELTS 24 Nov)
+// DIBATALKAN (peserta kurang), tidak ada gelombang Desember. Gelombang berikutnya
+// Januari 2027 — jadwal & harga belum rilis. Sengaja kosong: halaman jadwal
+// menampilkan pesan "Januari 2027, segera diumumkan" + tawaran Private Test Prep.
+// Isi lagi begitu batch Januari dipublish di menu Test Prep dashboard.
+export const ETP_FALLBACK_BATCHES: EtpBatchRow[] = [];
 
 // Perkiraan tanggal kelas terakhir: ETP jalan 2x seminggu, jadi 16 sesi ≈ 8
 // minggu. Dipakai untuk membuang batch yang kelasnya sudah kelar tapi lupa

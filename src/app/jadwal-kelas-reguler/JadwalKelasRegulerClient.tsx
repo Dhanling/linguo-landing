@@ -409,7 +409,12 @@ export default function JadwalKelasRegulerClient({
   // fallback ke data statik di @/lib/etpBatches. Resolver-nya sama persis dengan
   // yang dipakai knowledge AI, jadi jadwal di chat gak pernah beda dari kartu ini.
   const etpPrograms: EtpProgram[] = useMemo(
-    () => resolveEtpBatches(etpBatches, todayWIBISO()).map(mapEtpRow),
+    // [etp-jan27-segera-v1] Website hanya memajang batch yang BELUM mulai (masih
+    // bisa didaftar). Batch Oktober yang sedang berjalan tidak ditawarkan; batch
+    // November dibatalkan (22 Nov 2026) → kosong → tampil pesan "Januari 2027".
+    () => resolveEtpBatches(etpBatches, todayWIBISO())
+      .filter((r) => String(r.start_date).slice(0, 10) >= todayWIBISO())
+      .map(mapEtpRow),
     [etpBatches]
   );
 
@@ -1122,6 +1127,13 @@ export default function JadwalKelasRegulerClient({
                     </p>
                   </div>
                   {/* ETP Countdown */}
+                  {!nearestEtp ? (
+                    <div className="bg-white/10 rounded-xl px-5 py-4 text-center shrink-0">
+                      <div className="text-[11px] font-semibold text-blue-100 uppercase tracking-wide mb-1">Batch berikutnya</div>
+                      <div className="text-lg md:text-xl font-bold leading-tight">Januari 2027</div>
+                      <div className="text-[11px] text-blue-200 mt-1">Jadwal segera diumumkan</div>
+                    </div>
+                  ) : (
                   <div className="bg-white/10 rounded-xl px-5 py-4 text-center shrink-0">
                     <div className="text-[11px] font-semibold text-blue-100 uppercase tracking-wide mb-1 flex items-center justify-center gap-1"><Hourglass className="h-3 w-3" /> Pendaftaran ditutup dalam</div>
                     <div className="text-lg md:text-xl font-bold tabular-nums leading-tight">
@@ -1131,6 +1143,7 @@ export default function JadwalKelasRegulerClient({
                       {nearestEtp ? `Batch ${nearestEtp.title} mulai ${nearestEtp.startDate}` : "Batch terdekat"}
                     </div>
                   </div>
+                  )}
                 </div>
               </div>
             </section>
@@ -1141,11 +1154,28 @@ export default function JadwalKelasRegulerClient({
                 ke baris lipatan supaya tabelnya tetap ringkas. */}
             <section className="px-4 pb-12 max-w-6xl mx-auto">
               {etpPrograms.length === 0 ? (
-                <div className="text-center py-16 bg-white rounded-2xl border border-slate-200">
-                  <p className="text-slate-500 mb-2">Belum ada batch ETP yang dibuka</p>
-                  <p className="text-xs text-slate-400">
-                    Batch baru akan segera diumumkan. Follow Instagram @linguo.id untuk info terbaru!
+                <div className="text-center py-12 px-6 bg-white rounded-2xl border border-slate-200">
+                  <p className="text-slate-800 font-semibold mb-2">Batch TOEFL/IELTS berikutnya: Januari 2027</p>
+                  <p className="text-sm text-slate-500 max-w-md mx-auto mb-5">
+                    Jadwal dan biayanya segera diumumkan. Sementara itu, kamu bisa mulai sekarang
+                    lewat kelas Private Test Prep (1-on-1, jadwal fleksibel).
                   </p>
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5">
+                    <Link
+                      href="/persiapan-tes"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700"
+                    >
+                      Lihat Private Test Prep
+                    </Link>
+                    <a
+                      href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("Halo Linguo! Saya mau dikabari jadwal batch TOEFL/IELTS Januari 2027, dan tanya kelas Private Test Prep.")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-slate-300 text-slate-700 text-sm font-semibold hover:bg-slate-50"
+                    >
+                      <MessageCircle className="h-4 w-4" /> Kabari saya via WhatsApp
+                    </a>
+                  </div>
                 </div>
               ) : (
                 <>

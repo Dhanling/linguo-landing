@@ -153,7 +153,9 @@ export default function RegisterModal({ open, onClose, data }: RegisterModalProp
             live.filter(
               (r) =>
                 (r.badge || "").toUpperCase().includes(etpBadge) &&
-                (r.current_enrolled ?? 0) < (r.max_capacity ?? 0)
+                (r.current_enrolled ?? 0) < (r.max_capacity ?? 0) &&
+                // [etp-jan27-segera-v1] batch yang sudah mulai/batal tidak ditawarkan
+                String(r.start_date).slice(0, 10) >= todayWIBISO()
             )
           );
         });
