@@ -31,6 +31,13 @@ const ALIAS: Record<string, string> = {
   "inggris bisnis": "business-english",
   chinese: "mandarin",
   "mandarin (china)": "mandarin",
+  // [#d19e7d41] Mandarin aksara tradisional (Taiwan) — silabusnya tetap Mandarin.
+  // "Chinese (Traditional)" sudah jatuh ke "chinese" karena kurung dibuang
+  // displayLanguage(); bentuk tanpa kurung ini dulu null → tab Materi kosong.
+  "traditional chinese": "mandarin",
+  "chinese traditional": "mandarin",
+  "mandarin traditional": "mandarin",
+  "traditional mandarin": "mandarin",
   china: "mandarin",
   tagalog: "filipino",
   portuguese: "portuguese-br",
