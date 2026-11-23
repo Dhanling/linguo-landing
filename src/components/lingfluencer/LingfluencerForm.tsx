@@ -182,6 +182,7 @@ function isValidWa(dial: string, local: string): boolean {
 }
 
 const PIC_LAINNYA = "__lainnya__";
+const PIC_TETAP = ["Minling"];
 
 const inputClass = (hasError: boolean) =>
   `w-full px-4 py-3 rounded-xl border-2 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none transition-colors ${
@@ -1021,7 +1022,11 @@ function Step3Komitmen({
       .then((r) => (r.ok ? r.json() : []))
       .then((rows: { name?: string | null }[]) => {
         if (!alive || !Array.isArray(rows)) return;
-        const names = rows.map((r) => String(r.name || "").trim()).filter(Boolean);
+        const interns = rows.map((r) => String(r.name || "").trim()).filter(Boolean);
+        // PIC tetap di luar daftar magang (mis. akun admin "Minling") selalu ikut tampil
+        const names = interns.length
+          ? [...interns, ...PIC_TETAP.filter((n) => !interns.includes(n))]
+          : interns;
         setPicOptions(names);
         // nama dari ?pic= / ketikan sebelumnya yang tidak ada di daftar → mode "Lainnya"
         if (names.length && form.pic_name && !names.includes(form.pic_name)) setPicManual(true);
