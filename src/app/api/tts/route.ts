@@ -258,7 +258,7 @@ const senyap = (b64: string) => Buffer.from(b64, "base64").length < BATAS_SENYAP
 /** Balasan rute ini: `abadi` menandai isi yang boleh disimpan CDN/browser. */
 type Hasil = { status: number; body: Record<string, unknown>; abadi?: boolean };
 
-async function sintesis(teksMentah: unknown, langMentah: unknown, suaraMentah?: unknown, aksenMentah?: unknown, ip?: string): Promise<Hasil> {
+async function sintesis(teksMentah: unknown, langMentah: unknown, suaraMentah?: unknown, aksenMentah?: unknown, ip?: string, paksaGoogle = false): Promise<Hasil> {
   const text = bersihkanTeksTts(String(teksMentah || "")).slice(0, BATAS_TEKS_TTS);
   if (!text) return { status: 400, body: { error: "text kosong" } };
 
@@ -277,7 +277,7 @@ async function sintesis(teksMentah: unknown, langMentah: unknown, suaraMentah?: 
   // Bahasa Azure tapi kuncinya belum terpasang: turun ke suara Google lama
   // kalau ada; kalau tidak, 503 (bukan 422 — bahasanya didukung, servernya
   // yang belum siap) supaya klien tetap jatuh ke suara browser.
-  if (penyedia === "azure" && !azureSiap()) {
+  if (penyedia === "azure" && (paksaGoogle || !azureSiap())) {
     if (!localeChirp(langBase)) {
       return { status: 503, body: { error: `AZURE_SPEECH_KEY belum dipasang; ${langBase} butuh Azure` } };
     }
@@ -349,6 +349,14 @@ async function sintesis(teksMentah: unknown, langMentah: unknown, suaraMentah?: 
     try {
       audioContent = await sintesisAzure(azure.locale, azure.voice, text);
     } catch (e: any) {
+      /* [tts-azure-gagal-ke-google-v1] 23 Nov 2026: kunci Azure prod ditolak (401) →
+         Hebrew di kuis siswa & Meet bisu total ("Putar audio" tak bunyi). Bahasa
+         Azure yang punya locale Chirp turun ke suara Google, bukan 502. `ip`
+         tak diteruskan supaya batas laju tak terhitung dua kali. */
+      if (localeChirp(langBase)) {
+        console.warn("[tts] azure gagal, turun ke google:", String(e?.message || e).slice(0, 120));
+        return sintesis(teksMentah, langMentah, suaraMentah, aksenMentah, undefined, true);
+      }
       return { status: 502, body: { error: "tts failed", detail: String(e?.message || e).slice(0, 300) } };
     }
     // Lewat after() — alasannya sama dengan jalur Google di bawah.
