@@ -344,7 +344,7 @@ function Ucap({ teks, lang, kalimat = true, peran }: { teks: string; lang?: stri
               })()}
               {(tip.arti.kelas || tip.arti.dasar) && (
                 <span className="mt-[0.2em] block text-[0.82em] text-gray-400">
-                  {[tip.arti.kelas, tip.arti.dasar && `${en ? "base" : "dasar"}: ${tip.arti.dasar}`].filter(Boolean).join(" · ")}
+                  {[tip.arti.kelas, tip.arti.dasar && `${en ? "base" : "dasar"}: ${tip.arti.dasar}${tip.arti.dasarTranslit ? ` /${tip.arti.dasarTranslit}/` : ""}`].filter(Boolean).join(" · ")}
                 </span>
               )}
             </>

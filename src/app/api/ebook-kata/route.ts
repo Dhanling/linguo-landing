@@ -82,7 +82,10 @@ const SISTEM =
   '"article":"singular DEFINITE article learners memorize with that noun, in the language itself: Spanish el/la ' +
   "(el agua), French le/la (never l'), Italian il/lo/la, Portuguese o/a, Catalan el/la, German der/die/das, " +
   'Dutch de/het, Swedish en/ett, Danish en/et, Norwegian en/ei/et, Greek ο/η/το; empty string when the language ' +
-  'has no free-standing article (Slavic, Romanian, Arabic, Hebrew, Hindi, ...) or the word is not a noun"}. ' +
+  'has no free-standing article (Slavic, Romanian, Arabic, Hebrew, Hindi, ...) or the word is not a noun",' +
+  /* [ebook-kata-base-translit-v1] Cara baca bentuk dasar — KEMBAR dengan edge fn ebook-kata. */
+  '"baseTranslit":"romanization of base with the same scheme; empty string when base is empty or Latin"}. ' +
+  'Example for Hebrew "השיעור": {"meaning":"pelajaran itu","type":"kata benda","base":"שיעור","translit":"hashiur","baseTranslit":"shiur","gender":"masculine","article":""}. ' +
   'Example for Russian: {"meaning":"sedikit","type":"kata keterangan","base":"","translit":"nemnogo","gender":"","article":""}. ' +
   'Example for Spanish: {"meaning":"rumah","type":"kata benda","base":"","translit":"","gender":"feminine","article":"la"}. ' +
   "Give the meaning the word carries IN THAT SENTENCE, not every possible meaning.";
@@ -267,7 +270,9 @@ export async function POST(req: NextRequest) {
     const tersimpan = await dariCache(jalur);
     /* [ebook-kata-gender-v1] Entri kata benda dari sebelum ada kolom gender
        ditanyakan ulang (lalu ditimpa) — kata lain tetap dari cache. */
-    const bendaLama = tersimpan && !("gender" in tersimpan) && /benda|noun/i.test(String(tersimpan.type ?? ""));
+    const bendaLama = (tersimpan && !("gender" in tersimpan) && /benda|noun/i.test(String(tersimpan.type ?? "")))
+      /* [ebook-kata-base-translit-v1] Bentuk dasar non-Latin tanpa cara baca → tanya ulang. */
+      || (tersimpan && !("baseTranslit" in tersimpan) && /[^\u0000-\u024F\u1E00-\u1EFF]/.test(String(tersimpan.base ?? "")));
     if (tersimpan && !bendaLama) return NextResponse.json({ ...tersimpan, cached: true });
 
     const { teks, oleh } = await tanyaAI(kata, kalimat, bahasa);
@@ -293,6 +298,7 @@ export async function POST(req: NextRequest) {
       /* [ebook-kata-translit-v1] Cara baca beraksara Latin — kosong untuk bahasa
          yang memang sudah Latin (klien menyembunyikan barisnya). */
       translit: typeof p.translit === "string" ? p.translit.trim().slice(0, 80) : "",
+      baseTranslit: typeof p.baseTranslit === "string" ? p.baseTranslit.trim().slice(0, 80) : "",
       gender: (() => {
         const g = typeof p.gender === "string" ? p.gender.trim().toLowerCase() : "";
         return ["masculine", "feminine", "neuter", "common"].includes(g) ? g : "";

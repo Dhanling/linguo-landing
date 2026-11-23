@@ -4094,7 +4094,7 @@ export default function EbookReader({
                             <>
                               {arti.arti}
                               {arti.dasar && (
-                                <span className="text-white/40"> · {t("bentuk dasar")}: {arti.dasar}</span>
+                                <span className="text-white/40"> · {t("bentuk dasar")}: {arti.dasar}{arti.dasarTranslit ? ` /${arti.dasarTranslit}/` : ""}</span>
                               )}
                             </>
                           ) : (

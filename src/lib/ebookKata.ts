@@ -25,6 +25,8 @@ export interface ArtiKata {
   kelas: string;
   /** Bentuk dasar untuk verba terkonjugasi (mis. "llamo" → "llamar"). */
   dasar?: string;
+  /** [ebook-kata-base-translit-v1] Cara baca bentuk dasar ("שיעור" → "shiur"). */
+  dasarTranslit?: string;
   /**
    * [ebook-kata-translit-v1] Cara baca beraksara Latin ("немного" → "nemnogo").
    * Kosong/undefined untuk bahasa yang aksaranya memang sudah Latin — barisnya
@@ -142,6 +144,8 @@ function ambilTersimpan(k: string): ArtiKata | undefined {
   const { t: _t, ...arti } = l;
   // [ebook-kata-gender-v1] Kata benda tersimpan sebelum ada kolom gender → ambil ulang.
   if (arti.gender === undefined && /benda|nomina|noun/i.test(arti.kelas || "")) return undefined;
+  // [ebook-kata-base-translit-v1] Bentuk dasar non-Latin tersimpan sebelum ada cara bacanya → ambil ulang.
+  if (arti.dasar && perluTranslit(arti.dasar) && arti.dasarTranslit === undefined) return undefined;
   memori.set(k, arti);
   return arti;
 }
@@ -203,6 +207,7 @@ async function tanyaArti(k: string, kata: string, kalimat: string, kode: string)
     const kelas = typeof p.type === "string" ? p.type.trim() : "";
     const dasar = typeof p.base === "string" ? p.base.trim() : "";
     const translit = typeof p.translit === "string" ? p.translit.trim() : "";
+    const dasarTranslit = typeof p.baseTranslit === "string" ? p.baseTranslit.trim() : "";
     const gender = typeof p.gender === "string" ? p.gender.trim().toLowerCase() : "";
     const article = typeof p.article === "string" ? p.article.trim() : "";
     if (!arti && !kelas) return null;
@@ -210,6 +215,7 @@ async function tanyaArti(k: string, kata: string, kalimat: string, kode: string)
       arti,
       kelas,
       dasar: dasar && dasar.toLowerCase() !== kata.toLowerCase() ? dasar : undefined,
+      dasarTranslit: dasar && perluTranslit(dasar) && dasarTranslit && !perluTranslit(dasarTranslit) ? dasarTranslit : dasar && perluTranslit(dasar) ? "" : undefined,
       // Model kadang mengembalikan kata aslinya bulat-bulat untuk bahasa Latin;
       // itu bukan cara baca, jadi dibuang di sini sekali untuk semua pemakai.
       translit:
