@@ -1,8 +1,16 @@
 import ready from '../data/a1CuteCoverReady.json';
 
-/** Ganti hanya sampul SVG lama; label level dan materi tetap dari dek asli. */
+const bahasaTujuan = new Set(['danish', 'french', 'polish', 'bulgarian', 'hebrew', 'norwegian', 'romanian', 'arabic']);
+
+/** Ganti hanya SVG bawaan lama; materi dan gambar pilihan pengajar tetap dijaga. */
 export function a1CuteCover(cover?: string, isTitle = true): string | undefined {
-  if (!isTitle || !cover) return cover;
+  if (!cover) return cover;
+  if (!isTitle) {
+    const tujuan = /^\/slide-cover\/([a-z-]+)-a[12]-[1-4]-sesi-(?:[1-9]|1[0-6])-tujuan-cute-vector-v1\.svg$/.exec(cover);
+    return tujuan && bahasaTujuan.has(tujuan[1])
+      ? `/slide-cover/priority-goals-v1/${tujuan[1]}-objectives.webp`
+      : cover;
+  }
   const match = /^\/slide-cover\/([a-z-]+)-(a[12]|b[12])-(\d+)-sesi-(\d+)-cover-cute-vector-v1\.svg$/.exec(cover);
   if (!match) return cover;
   const [, language, level, sublevel, session] = match;
