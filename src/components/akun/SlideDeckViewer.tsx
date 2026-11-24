@@ -124,7 +124,7 @@ function pecahKata(teks: string, lang: string): string[] {
   }
 }
 
-type Tip = { kata: string; x: number; y: number; bawah: boolean; arti: HasilArti | undefined };
+type Tip = { kata: string; x: number; y: number; bawah: boolean; arti: HasilArti | undefined; translit?: string };
 
 /* [slide-lup-aksara-v1] Permintaan owner 10 Nov 2026: kata beraksara non-Latin
    (Arab, Kiril, Han, Thai, Devanagari, …) diperbesar seperti kaca pembesar saat
@@ -161,7 +161,7 @@ function tampilGulir(e: { currentTarget: EventTarget }) {
 /** Kelas kartu yang bisa diketuk: membesar halus saat kursor singgah. */
 const KARTU_KETUK = "cursor-pointer transition-[transform,box-shadow] duration-200 ease-out hover:z-10 hover:scale-[1.025] hover:shadow-lg";
 
-function Ucap({ teks, lang, kalimat = true, peran }: { teks: string; lang?: string | null; kalimat?: boolean; peran?: Array<Peran | null> }) {
+function Ucap({ teks, lang, kalimat = true, peran, translit }: { teks: string; lang?: string | null; kalimat?: boolean; peran?: Array<Peran | null>; translit?: string }) {
   const [aktif, setAktif] = useState<number | null>(null);
   // [tts-karaoke-v1] Indeks kepingan yang sedang dibaca saat TTS satu kalimat diputar.
   const [baca, setBaca] = useState<number | null>(null);
@@ -194,7 +194,7 @@ function Ucap({ teks, lang, kalimat = true, peran }: { teks: string; lang?: stri
     })}</span>;
   }
 
-  const bukaTip = (kata: string, el: HTMLElement) => {
+  const bukaTip = (kata: string, el: HTMLElement, tr?: string) => {
     const kartu = el.closest("[data-slide-card]");
     if (!kartu) return;
     const k = kartu.getBoundingClientRect();
@@ -204,7 +204,7 @@ function Ucap({ teks, lang, kalimat = true, peran }: { teks: string; lang?: stri
     setWadah(kartu as HTMLElement);
     setLup(null);
     setTip({
-      kata, bawah, arti: ada,
+      kata, bawah, arti: ada, translit: tr,
       x: Math.min(Math.max(r.left + r.width / 2 - k.left, k.width * 0.15), k.width * 0.85),
       y: (bawah ? r.bottom : r.top) - k.top,
     });
@@ -241,7 +241,7 @@ function Ucap({ teks, lang, kalimat = true, peran }: { teks: string; lang?: stri
     e.stopPropagation();
     bukaKunciAudio();
     setAktif(idx);
-    if (idx >= 0) bukaTip(apa, e.currentTarget as HTMLElement);
+    if (idx >= 0) bukaTip(apa, e.currentTarget as HTMLElement, trKata.get(idx));
     const ke = ++putaran.current;
     setBaca(null);
     void ucapkanEbook(apa, lang)
@@ -276,6 +276,17 @@ function Ucap({ teks, lang, kalimat = true, peran }: { teks: string; lang?: stri
 
   const bagian = pecahKata(teks, lang);
   const penanda = tandaiPenanda(bagian);
+  /* [slide-tooltip-translit-sinkron-v1] 24 Nov 2026 (Ibrani "תשע עשרה" tsha-esre, tooltip
+     dulu "/tesha/" = bacaan kata lepas). Kalau slide punya translit sendiri, tooltip
+     memakai potongan translit kata yang diketuk — pecah per spasi/tanda hubung, dipasang
+     urut ke kata berhuruf; jumlah tak cocok → translit kamus seperti biasa. */
+  const trKata = new Map<number, string>();
+  if (translit) {
+    const idxKata = bagian.map((b, i) => (!penanda[i] && /\p{L}/u.test(b.replace(TEPI, "")) ? i : -1)).filter((i) => i >= 0);
+    const potong = translit.split(/[\s\-\u2010\u2013\u05BE]+/).map((t) => t.replace(/^[^\p{L}']+|[^\p{L}']+$/gu, "")).filter(Boolean);
+    if (idxKata.length === 1) trKata.set(idxKata[0], translit.trim());
+    else if (idxKata.length === potong.length) idxKata.forEach((i, n) => trKata.set(i, potong[n]));
+  }
   const banyakKata = bagian.filter((b, i) => !penanda[i] && /\p{L}/u.test(b)).length > 1;
   let urutKata = 0;
 
@@ -329,7 +340,7 @@ function Ucap({ teks, lang, kalimat = true, peran }: { teks: string; lang?: stri
           style={{ position: "fixed", left: tip.x, top: tip.y, transform: `translate(-50%, ${tip.bawah ? "0.5em" : "calc(-100% - 0.5em)"})` }}>
           <span className="block font-bold" style={{ color: "#7FE3D6" }}>
             {tip.kata}
-            {tip.arti?.translit && <span className="ml-[0.5em] font-normal text-gray-400">/{tip.arti.translit}/</span>}
+            {(tip.translit || tip.arti?.translit) && <span className="ml-[0.5em] font-normal text-gray-400">/{tip.translit || tip.arti?.translit}/</span>}
           </span>
           {tip.arti ? (
             <>
@@ -566,7 +577,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
   }
   const numberTheme = numberSlideTheme(s, lang);
   if (numberTheme && !s.visual) {
-    return <NumberSlide key={`${numberTheme.slug}:${s.heading}`} slide={s} theme={numberTheme} lang={lang} renderSpeech={text => <Ucap teks={text} lang={lang || numberTheme.code} />} />;
+    return <NumberSlide key={`${numberTheme.slug}:${s.heading}`} slide={s} theme={numberTheme} lang={lang} renderSpeech={(text, tr) => <Ucap teks={text} lang={lang || numberTheme.code} translit={tr} />} />;
   }
   s = { ...s, cover: a1CuteCover(s.cover, s.type === 'title') };
   const tema = TEMA[s.type] || TEMA.points;

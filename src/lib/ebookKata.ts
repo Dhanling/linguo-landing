@@ -145,7 +145,9 @@ function ambilTersimpan(k: string): ArtiKata | undefined {
   // [ebook-kata-gender-v1] Kata benda tersimpan sebelum ada kolom gender → ambil ulang.
   if (arti.gender === undefined && /benda|nomina|noun/i.test(arti.kelas || "")) return undefined;
   // [ebook-kata-base-translit-v1] Bentuk dasar non-Latin tersimpan sebelum ada cara bacanya → ambil ulang.
-  if (arti.dasar && perluTranslit(arti.dasar) && arti.dasarTranslit === undefined) return undefined;
+  // [ebook-kata-base-translit-v2] 24 Nov 2026: juga yang tersimpan KOSONG ("" = layanan dulu tak
+  // mengirim cara baca) — dulu tertahan selamanya tanpa translit ("dasar: טלפון").
+  if (arti.dasar && perluTranslit(arti.dasar) && !arti.dasarTranslit) return undefined;
   memori.set(k, arti);
   return arti;
 }

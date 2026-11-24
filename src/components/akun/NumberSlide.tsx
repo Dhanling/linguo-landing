@@ -20,9 +20,22 @@ export function prepareNumberSlide(slide: MateriSlide, theme: NumberTheme) {
   return { entries, labels, groupFor, initial: own[0] ? groupFor(own[0].value) : labels[0] };
 }
 
+// [angka-rtl-urutan-v1] 24 Nov 2026 (Ibrani "שמונה / שמונה" — shmone / shmona). Bentuk ganda
+// "A / B" beraksara kanan-ke-kiri dulu dirender satu blok RTL, jadi tampil "B / A" sementara
+// translit di bawahnya "a / b" → pasangan kata & bacaan tampak tertukar. Kini tiap bentuk
+// diisolasi dan disusun kiri→kanan, sejajar dengan urutan translit.
+function termUrutLtr(term: string, translit: string | undefined, renderSpeech: (text: string, translit?: string) => ReactNode): ReactNode {
+  const parts = term.split(' / ');
+  if (parts.length < 2) return <strong dir="auto">{renderSpeech(term, translit)}</strong>;
+  // Translit "a / b" ikut dipecah supaya tooltip tiap bentuk memakai bacaannya sendiri.
+  const trParts = translit?.split(' / ');
+  const tr = trParts && trParts.length === parts.length ? trParts : [];
+  return <strong dir="ltr">{parts.map((part, i) => <span key={i}>{i > 0 && ' / '}<bdi dir="auto">{renderSpeech(part, tr[i])}</bdi></span>)}</strong>;
+}
+
 export default function NumberSlide({ slide, theme, lang, renderSpeech }: {
   slide: MateriSlide; theme: NumberTheme; lang?: string | null;
-  renderSpeech: (text: string) => ReactNode;
+  renderSpeech: (text: string, translit?: string) => ReactNode;
 }) {
   const { entries, labels, initial, groupFor } = prepareNumberSlide(slide, theme);
   const [selected, setSelected] = useState(initial);
@@ -71,7 +84,7 @@ export default function NumberSlide({ slide, theme, lang, renderSpeech }: {
               style={{ fontSize: `${Math.min(2.6, 6 / String(entry.value).length)}cqw` }}
               aria-label={`Dengarkan ${entry.value}: ${entry.term}`} onClick={() => speak(numberSpeech(entry.term))}>{entry.value}</button>
             <div className={styles.word}>
-              <div><strong dir="auto">{renderSpeech(entry.term)}</strong><span className={styles.meaning}> — {entry.meaning}</span></div>
+              <div>{termUrutLtr(entry.term, entry.translit, renderSpeech)}<span className={styles.meaning}> — {entry.meaning}</span></div>
               {entry.translit && <div className={styles.translit} dir="auto">{entry.translit}</div>}
               {entry.example && <div className={styles.example} dir="auto">{renderSpeech(entry.example)}{entry.example_translit && <span> /{entry.example_translit}/</span>}{entry.example_meaning && <span> ({entry.example_meaning})</span>}</div>}
             </div>

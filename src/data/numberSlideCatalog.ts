@@ -2523,61 +2523,61 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
     {
       "term": "אחת / אחד",
       "translit": "akhat / ekhad",
-      "meaning": "satu",
+      "meaning": "satu (fem. / mask.)",
       "value": 1
     },
     {
       "term": "שתיים / שניים",
       "translit": "shtayim / shnayim",
-      "meaning": "dua",
+      "meaning": "dua (fem. / mask.)",
       "value": 2
     },
     {
       "term": "שלוש / שלושה",
       "translit": "shalosh / shlosha",
-      "meaning": "tiga",
+      "meaning": "tiga (fem. / mask.)",
       "value": 3
     },
     {
       "term": "ארבע / ארבעה",
       "translit": "arba / arba'a",
-      "meaning": "empat",
+      "meaning": "empat (fem. / mask.)",
       "value": 4
     },
     {
       "term": "חמש / חמישה",
       "translit": "khamesh / khamisha",
-      "meaning": "lima",
+      "meaning": "lima (fem. / mask.)",
       "value": 5
     },
     {
       "term": "שש / שישה",
       "translit": "shesh / shisha",
-      "meaning": "enam",
+      "meaning": "enam (fem. / mask.)",
       "value": 6
     },
     {
       "term": "שבע / שבעה",
       "translit": "sheva / shiv'a",
-      "meaning": "tujuh",
+      "meaning": "tujuh (fem. / mask.)",
       "value": 7
     },
     {
       "term": "שמונה / שמונה",
       "translit": "shmone / shmona",
-      "meaning": "8 (tulisan sama, ucapan beda)",
+      "meaning": "delapan (fem. / mask.)",
       "value": 8
     },
     {
       "term": "תשע / תשעה",
       "translit": "tesha / tish'a",
-      "meaning": "sembilan",
+      "meaning": "sembilan (fem. / mask.)",
       "value": 9
     },
     {
       "term": "עשר / עשרה",
       "translit": "eser / asara",
-      "meaning": "sepuluh",
+      "meaning": "sepuluh (fem. / mask.)",
       "value": 10
     },
     {
@@ -2587,57 +2587,57 @@ export const NUMBER_CATALOG: Record<string, NumberEntry[]> = {
       "value": 0
     },
     {
-      "term": "אחת עשרה",
-      "translit": "akhat-esre",
-      "meaning": "sebelas",
+      "term": "אחת עשרה / אחד עשר",
+      "translit": "akhat-esre / akhad-asar",
+      "meaning": "sebelas (fem. / mask.)",
       "value": 11
     },
     {
-      "term": "שתים עשרה",
-      "translit": "shtem-esre",
-      "meaning": "dua belas",
+      "term": "שתים עשרה / שנים עשר",
+      "translit": "shtem-esre / shnem-asar",
+      "meaning": "dua belas (fem. / mask.)",
       "value": 12
     },
     {
-      "term": "שלוש עשרה",
-      "translit": "shlosh-esre",
-      "meaning": "tiga belas",
+      "term": "שלוש עשרה / שלושה עשר",
+      "translit": "shlosh-esre / shlosha-asar",
+      "meaning": "tiga belas (fem. / mask.)",
       "value": 13
     },
     {
-      "term": "ארבע עשרה",
-      "translit": "arba-esre",
-      "meaning": "empat belas",
+      "term": "ארבע עשרה / ארבעה עשר",
+      "translit": "arba-esre / arba'a-asar",
+      "meaning": "empat belas (fem. / mask.)",
       "value": 14
     },
     {
-      "term": "חמש עשרה",
-      "translit": "khamesh-esre",
-      "meaning": "lima belas",
+      "term": "חמש עשרה / חמישה עשר",
+      "translit": "khamesh-esre / khamisha-asar",
+      "meaning": "lima belas (fem. / mask.)",
       "value": 15
     },
     {
-      "term": "שש עשרה",
-      "translit": "shesh-esre",
-      "meaning": "enam belas",
+      "term": "שש עשרה / שישה עשר",
+      "translit": "shesh-esre / shisha-asar",
+      "meaning": "enam belas (fem. / mask.)",
       "value": 16
     },
     {
-      "term": "שבע עשרה",
-      "translit": "shva-esre",
-      "meaning": "tujuh belas",
+      "term": "שבע עשרה / שבעה עשר",
+      "translit": "shva-esre / shiv'a-asar",
+      "meaning": "tujuh belas (fem. / mask.)",
       "value": 17
     },
     {
-      "term": "שמונה עשרה",
-      "translit": "shmone-esre",
-      "meaning": "delapan belas",
+      "term": "שמונה עשרה / שמונה עשר",
+      "translit": "shmone-esre / shmona-asar",
+      "meaning": "delapan belas (fem. / mask.)",
       "value": 18
     },
     {
-      "term": "תשע עשרה",
-      "translit": "tsha-esre",
-      "meaning": "sembilan belas",
+      "term": "תשע עשרה / תשעה עשר",
+      "translit": "tsha-esre / tish'a-asar",
+      "meaning": "sembilan belas (fem. / mask.)",
       "value": 19
     },
     {
