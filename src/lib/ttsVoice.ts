@@ -312,9 +312,18 @@ export function jalurCacheTts(voice: string, sha: string): string {
    terpakai lagi. 🔴 KEMBAR: ttsVoice.ts landing & dashboard + /api/tts. */
 const TANPA_SPASI_TTS = /[\u0E00-\u0EFF\u1000-\u109F\u1780-\u17FF\u3040-\u30FF\u3400-\u9FFF\uF900-\uFAFF]/u;
 export const SUFIKS_KATA_TTS = "~kata";
+/* [tts-frasa-pendek-v1] Laporan owner 24 Nov 2026 (dek Italia, Dialog "A tavola
+   dalla signora Rossi"): "Dewi, hai fame?" dibaca Chirp it-IT dengan lafal
+   Inggris — Whisper mendengarnya "Devi, hi fame!" (en), sedangkan 5 kalimat
+   lain di slide yang sama terdeteksi Italia. Frasa pendek + nama orang + kata
+   mirip bahasa lain ("hai" ≈ "hi") sama rawannya dengan kata lepas, jadi frasa
+   ≤ 3 kata (≤ 30 huruf) ikut memakai suara SATU bahasa. Kalimat lebih panjang
+   tetap Chirp — konteksnya cukup untuk menahan bahasanya. */
+const MAKS_KATA_FRASA_TTS = 3;
 export function kataLepasTts(teksBersih: string): boolean {
   const t = String(teksBersih || "").trim();
-  return !!t && t.length <= 30 && !/\s/.test(t) && /\p{L}/u.test(t) && !TANPA_SPASI_TTS.test(t);
+  if (!t || t.length > 30 || !/\p{L}/u.test(t) || TANPA_SPASI_TTS.test(t)) return false;
+  return t.split(/\s+/).filter((w) => /\p{L}/u.test(w)).length <= MAKS_KATA_FRASA_TTS;
 }
 /** Nama "voice" untuk KUNCI cache (bukan untuk Google): suara bawaan Google +
  *  kata lepas → `<voice>~kata`. Persona/suara 2/Azure/eSpeak tak berubah. */
