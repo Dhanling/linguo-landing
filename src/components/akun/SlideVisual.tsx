@@ -1165,7 +1165,7 @@ function VisualTabel({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "
   useLayoutEffect(() => {
     const el = kotak.current, x = isi.current;
     if (!el || !x) return;
-    if (x.offsetHeight > el.clientHeight + 1 && skala > 0.5) setSkala((k) => Math.max(0.5, +(k - 0.06).toFixed(2)));
+    if (x.offsetHeight > el.clientHeight + 1 && skala > 0.6) setSkala((k) => Math.max(0.6, +(k - 0.06).toFixed(2)));
   }, [skala, v]);
   useEffect(() => {
     const el = kotak.current;
@@ -1191,7 +1191,10 @@ function VisualTabel({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "
   return (
     <div className="flex h-full flex-col gap-[0.8cqh]">
       <style>{MUNCUL}</style>
-      <div ref={kotak} className="min-h-0 flex-1 overflow-hidden">
+      {/* [tabel-gulir-v1] 24 Nov 2026 (tabel kata ganti Ibrani, zoom 1.4×): sudah disusutkan ke batas
+          pun masih tak muat → baris bawah terpotong & tampak menimpa legenda. Kini batas susut 60%
+          (huruf tetap terbaca) dan sisanya bisa digulir; legenda di bawah tetap terpisah. */}
+      <div ref={kotak} className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain [scrollbar-width:thin]">
         <div ref={isi} style={{ fontSize: `${skala}em`, ...KARTU, overflow: "hidden" }}>
           <div className="grid" style={{ gridTemplateColumns: lebarKolom }}>
             {v.kolom.map((k, i) => (
