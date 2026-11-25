@@ -7,6 +7,9 @@ export function a1CuteCover(cover?: string, isTitle = true): string | undefined 
   if (!cover) return cover;
   if (!isTitle) {
     const tujuan = /^\/slide-cover\/([a-z-]+)-a[12]-[1-4]-sesi-(?:[1-9]|1[0-6])-tujuan-cute-vector-v1\.svg$/.exec(cover);
+    if (tujuan && ['japanese', 'korean', 'icelandic'].includes(tujuan[1])) {
+      return `/slide-cover/next-priority-textured-v2/${tujuan[1]}-objectives.webp`;
+    }
     return tujuan && bahasaTujuan.has(tujuan[1])
       ? `/slide-cover/priority-goals-v1/${tujuan[1]}-objectives.webp`
       : cover;
