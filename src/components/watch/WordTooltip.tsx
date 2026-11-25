@@ -283,6 +283,14 @@ export function WordTooltip({
       setErrored(false);
       setLoading(false);
       setTranslit(isNonLatin(langCode) && cached.translit ? cached.translit : "");
+      // [word-ipa-lafal-v1] Cache analisa kalimat tak punya cara pengucapan (IPA/lafal)
+      // → word-info diminta di background, arti dari cache tetap tampil instan.
+      getWordMeaning({ word, sentence, langCode, baseCode: baseLang })
+        .then((m) => {
+          if (cancelled || (!m.ipa && !m.say)) return;
+          setMeaning((cur) => (cur ? { ...cur, ipa: m.ipa, say: m.say } : cur));
+        })
+        .catch(() => {});
       // Cache tak menyertakan bacaan Latin → ambil terpisah (background).
       if (isNonLatin(langCode) && !cached.translit) {
         transliterateLines([word], langCode)
@@ -498,6 +506,21 @@ export function WordTooltip({
             {translit}
             {baseTranslit && baseTranslit.toLowerCase() !== translit.trim().toLowerCase() && (
               <span style={{ color: SUB }}>{translit ? ` (${baseTranslit})` : baseTranslit}</span>
+            )}
+          </p>
+        )}
+        {/* [word-ipa-lafal-v1] Cara pengucapan untuk SEMUA bahasa: IPA + ejaan lafal ala Indonesia. */}
+        {(meaning?.ipa || meaning?.say) && (
+          <p className="mt-0.5 flex flex-wrap items-baseline gap-x-2 text-[12.5px] leading-snug">
+            {meaning.ipa && (
+              <span className="font-medium" style={{ color: SUB }} title="IPA (alfabet fonetik internasional)">
+                {meaning.ipa}
+              </span>
+            )}
+            {meaning.say && (
+              <span className="font-bold tracking-[.02em]" style={{ color: "#F5C451" }} title="Cara baca — suku kata HURUF BESAR diberi tekanan">
+                {meaning.say}
+              </span>
             )}
           </p>
         )}

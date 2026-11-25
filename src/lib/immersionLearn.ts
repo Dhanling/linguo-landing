@@ -2110,6 +2110,18 @@ export interface WordMeaning {
   /** [word-refleksif-v1] Verba refleksif lengkap dgn pronominanya ("se reposer",
    *  "sich freuen", "levantarse") kalau dipakai refleksif di kalimat itu. */
   reflexive?: string;
+  /** [word-ipa-lafal-v1] IPA kata yang di-tap ("/ˈbælkəni/") — semua bahasa. */
+  ipa?: string;
+  /** Ejaan lafal ala pembaca, suku bertekanan huruf besar ("BÉL-ke-ni"). */
+  say?: string;
+}
+
+/** [word-ipa-lafal-v1] IPA selalu diapit garis miring; buang yang kepanjangan. */
+function rapikanIpa(v: unknown): string {
+  const t = typeof v === "string" ? v.trim().replace(/^\[|\]$/g, "/") : "";
+  if (!t || t.length > 80) return "";
+  const inti = t.replace(/^\/+|\/+$/g, "").trim();
+  return inti ? `/${inti}/` : "";
 }
 
 export async function getWordMeaning(params: {
@@ -2129,7 +2141,11 @@ export async function getWordMeaning(params: {
     base?: unknown;
     baseTranslit?: unknown;
     reflexive?: unknown;
+    ipa?: unknown;
+    say?: unknown;
   };
+  const ipa = rapikanIpa(parsed.ipa);
+  const say = typeof parsed.say === "string" ? parsed.say.trim().slice(0, 60) : "";
   const reflexive = typeof parsed.reflexive === "string" ? parsed.reflexive.trim() : "";
   const meaning = typeof parsed.meaning === "string" ? parsed.meaning.trim() : "";
   const type = typeof parsed.type === "string" ? parsed.type.trim() : "";
@@ -2144,6 +2160,8 @@ export async function getWordMeaning(params: {
     // Bacaan bentuk dasar tak ada artinya tanpa bentuk dasarnya.
     baseTranslit: (base && baseTranslit) || undefined,
     reflexive: reflexive || undefined,
+    ipa: ipa || undefined,
+    say: say || undefined,
   };
 }
 
