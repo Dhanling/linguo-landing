@@ -43,6 +43,9 @@ export default async function Page({ params }: Props) {
     // linguo-patch:silabus-alias-redirect-v1 — "melayu" → "malay", "tagalog" → "filipino".
     // Sengaja redirect sementara (307), bukan 308: 308 nempel di cache browser dan
     // susah dicabut kalau suatu saat alias-nya jadi slug beneran.
+    // [#f67267e2] silabus PTE dipakai dashboard siswa (tombol "Silabus lengkap") tapi
+    // halaman publiknya /persiapan-tes/pte, bukan katalog /silabus.
+    if (lang === "pte") redirect("/persiapan-tes/pte");
     const slug = resolveLanguageSlug(lang);
     if (slug && slug !== lang) redirect(`/silabus/${slug}`);
     notFound();

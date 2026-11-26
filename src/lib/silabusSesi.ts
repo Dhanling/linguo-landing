@@ -26,6 +26,9 @@ export interface SilabusLevel {
   sessions: SilabusSesi[];
 }
 
+/** [#f67267e2] tahap PTE di atas B1.1 Foundation (lihat data/curriculum/data/pte.ts). */
+const PTE_TAHAP_LANJUT = new Set(["B1.2", "B2.1", "B2.2", "C1.1"]);
+
 // Modul kurikulum di-cache per slug: satu kelas bisa membuka drawer belasan kali.
 const cache = new Map<string, any>();
 
@@ -58,7 +61,10 @@ export async function loadSilabusLevel(
   if (!cur) return null;
 
   const subs: any[] = cur.levels.flatMap((l: any) => l.sublevels || []);
-  const want = (level || "").trim().toUpperCase();
+  let want = (level || "").trim().toUpperCase();
+  // [#f67267e2] Level registrasi PTE = level Inggris umum siswa (A2.2, B1.1, kosong), bukan
+  // tahap program. Hanya tahap lanjutan yang PERSIS tercatat dipakai; sisanya B1.1 Foundation.
+  if (slug === "pte") want = PTE_TAHAP_LANJUT.has(want) ? want : "B1.1";
   // Cocok persis dulu ("A1.2"), baru jatuh ke sublevel pertama level induknya
   // ("A1" → A1.1). Level kosong/aneh ("TBD") tidak ditebak-tebak.
   const hit =

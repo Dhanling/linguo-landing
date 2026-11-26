@@ -25,6 +25,13 @@ const ALIAS: Record<string, string> = {
   toefl: "toefl-itp",
   "toefl itp": "toefl-itp",
   "test prep - toefl": "toefl-itp",
+  // [#f67267e2] registrations.language Private PTE = "PTE prep" — dulu null → tab Materi kosong.
+  pte: "pte",
+  "pte prep": "pte",
+  "pte academic": "pte",
+  "pte academic prep": "pte",
+  "pte preparation": "pte",
+  "test prep - pte": "pte",
   // [silabus-business-english-v1] registrations.language = "English For Business"
   "business english": "business-english",
   "english for business": "business-english",

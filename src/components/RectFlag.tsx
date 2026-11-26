@@ -8,7 +8,7 @@ import { Globe, Scroll, Sun } from "lucide-react";
 
 export const FLAG_CODE_BY_SLUG: Record<string, string> = {
   // IELTS = ujian Inggris British Council/IDP → bendera UK. TOEFL = ETS, Amerika → bendera US.
-  english: "gb", "business-english": "gb", ielts: "gb", "toefl-itp": "us", japanese: "jp", korean: "kr",
+  english: "gb", "business-english": "gb", ielts: "gb", pte: "gb", "toefl-itp": "us", japanese: "jp", korean: "kr",
   mandarin: "cn", spanish: "es", french: "fr", german: "de", italian: "it",
   arabic: "sa", hebrew: "il", persian: "ir", javanese: "id", sundanese: "id",
   betawi: "id", bipa: "id", georgian: "ge", greek: "gr", "portuguese-pt": "pt",

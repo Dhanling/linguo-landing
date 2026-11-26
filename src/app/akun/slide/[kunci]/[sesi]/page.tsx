@@ -50,7 +50,7 @@ async function punyaKelasBahasa(email: string | null, slug: string): Promise<boo
     if (e1) return null;
     const ids = ((siswa as any[]) || []).map((r) => r.id).filter(Boolean);
     if (!ids.length) return false;
-    // [slide-batch-v1] Test Prep tersimpan "English"/"TOEFL prep" — regCocokDek memetakannya ke toefl-itp/ielts.
+    // [slide-batch-v1] Test Prep tersimpan "English"/"TOEFL prep" — regCocokDek memetakannya ke toefl-itp/ielts/pte.
     const { data: regs, error: e2 } = await supabase.from("registrations").select("language, level, product, test_prep_batch_id").in("student_id", ids);
     if (e2) return null;
     return ((regs as any[]) || []).some((r) => regCocokDek(r, slug));
@@ -67,7 +67,8 @@ export default function SlideDibagikanPage() {
   const [status, setStatus] = useState<Status>({ tahap: "memuat" });
   const [ulang, setUlang] = useState(0);
 
-  const namaBahasa = dek ? (CURRICULUM_LANGUAGES.find((l) => l.slug === dek.slug)?.name || dek.slug) : "";
+  // [#f67267e2] pte tidak ada di katalog languages.ts (halaman publiknya /persiapan-tes/pte).
+  const namaBahasa = dek ? (CURRICULUM_LANGUAGES.find((l) => l.slug === dek.slug)?.name || (dek.slug === "pte" ? "PTE Academic" : dek.slug)) : "";
 
   useEffect(() => {
     let alive = true;

@@ -30,10 +30,12 @@ const KODE = /^[ABC][12](\.\d)?$/i;
 /** Test prep tanpa sublevel tercatat → mulai dari sublevel pertama silabusnya. */
 const SUBLEVEL_AWAL_TESTPREP = "B1.1";
 
-function jenisTes(...vals: unknown[]): "toefl" | "ielts" | null {
+function jenisTes(...vals: unknown[]): "toefl" | "ielts" | "pte" | null {
   const s = vals.map((v) => String(v ?? "")).join(" ").toLowerCase();
   if (/toefl/.test(s)) return "toefl";
   if (/ielts/.test(s)) return "ielts";
+  // [#f67267e2] PTE Academic ("PTE prep"). \b: jangan tertangkap "accepted", "chapter", dll.
+  if (/\bpte\b/.test(s)) return "pte";
   return null;
 }
 
@@ -70,7 +72,9 @@ export async function loadSilabusKelas(reg: any): Promise<SilabusKelas | null> {
   const tpId = reg.test_prep_batch_id || reg.testPrepBatch?.id || null;
   const tp = reg.testPrepBatch || (tpId ? await ambilBatch("test_prep_batches", tpId, KOLOM_TP) : null);
   const tes = jenisTes(tp?.test_type, tp?.name, reg.language, reg.level);
-  if (tes) {
+  // [#f67267e2] PTE Private (tanpa batch ETP) lewat jalur Private di bawah supaya paket
+  // lanjutan tetap melanjutkan nomor sesi paket lama (silabusLanjutan).
+  if (tes && !(tes === "pte" && !tp)) {
     const level = [reg.level, tp?.level].map((v) => String(v ?? "").trim()).find((v) => KODE.test(v)) || SUBLEVEL_AWAL_TESTPREP;
     const silabus = await loadSilabusLevel(tes, level).catch(() => null);
     if (silabus) return { slug: languageSlug(tes)!, silabus, sesiBatch: sesiLewat(tp, true) };
@@ -148,10 +152,15 @@ async function silabusLanjutan(
 /** Registrasi ini boleh membuka dek `slug`? (gerbang link slide yang dibagikan) */
 export function regCocokDek(r: any, slug: string): boolean {
   if (languageSlug(r?.language) === slug) return true;
+  if (slug === "pte") {
+    // [#f67267e2] language "PTE prep" sudah tertangkap languageSlug di atas; ini untuk
+    // registrasi berlabel PTE di level/produk (mis. language "English").
+    return jenisTes(r?.language, r?.level, r?.product) === "pte";
+  }
   if (slug === "toefl-itp" || slug === "ielts") {
     // product "English Test Preparation (IELTS/TOEFL)" menyebut keduanya — jangan dipakai.
     const tes = jenisTes(r?.language, r?.level);
-    if (tes) return (tes === "toefl" ? "toefl-itp" : "ielts") === slug;
+    if (tes) return (tes === "toefl" ? "toefl-itp" : tes === "pte" ? "pte" : "ielts") === slug;
     // Batch ETP tercatat "English" tanpa label tes → izinkan kedua dek tes.
     return !!r?.test_prep_batch_id || /test ?prep/i.test(String(r?.product || ""));
   }
