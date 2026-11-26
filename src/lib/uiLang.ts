@@ -450,6 +450,9 @@ const EN: Record<string, string> = {
 
   /* ── Tab Rapor ──────────────────────────────────────────────────────────── */
   "Belum ada rapor yang diterbitkan": "No report card published yet",
+  "PDF berisi 2 halaman: sertifikat + rapor": "PDF has 2 pages: certificate + report card",
+  "Rapor belum diterbitkan pengajar — PDF berisi sertifikat saja": "Report card not yet published by your teacher — PDF contains the certificate only",
+  "Rapor belum diterbitkan pengajar, jadi PDF berisi sertifikat saja (1 halaman). Rapor ikut masuk PDF otomatis setelah diterbitkan.": "Your teacher hasn't published the report card yet, so the PDF contains the certificate only (1 page). The report card is added to the PDF automatically once published.",
   "Pengajar menerbitkan Rapor Tengah (± sesi 8) dan Rapor Akhir di akhir program":
     "Your teacher publishes a Mid-term Report (around session 8) and a Final Report at the end of the program",
   "Sertifikat Penyelesaian": "Certificate of Completion",

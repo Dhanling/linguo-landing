@@ -561,11 +561,13 @@ function fmtCertDate(iso: string | null | undefined, lang: UiLang): string | nul
 // ── [sertifikat-rapor-2hal-v3] Rapor kelas + pembuat PDF bersama ──────────────
 // Rapor terbit registrasi ini (akhir dulu, kalau tidak terbaru). Pratinjau staf
 // membawa barisnya di `ct.reports`; siswa login membaca sendiri lewat RLS.
-function useRaporKelas(ct: Cert): RaporRow | null {
-  const [rapor, setRapor] = useState<RaporRow | null>(null);
+// [#3c1cce99] undefined = belum/tak bisa dipastikan (memuat, galat, sertifikat contoh);
+// null = sudah dicek dan memang belum ada rapor terbit → PDF hanya berisi sertifikat.
+function useRaporKelas(ct: Cert): RaporRow | null | undefined {
+  const [rapor, setRapor] = useState<RaporRow | null | undefined>(undefined);
   useEffect(() => {
     if (ct.reports !== undefined) { setRapor(pilihRapor(ct.reports)); return; }
-    setRapor(null);
+    setRapor(undefined);
     if (!/^[0-9a-f-]{36}$/i.test(ct.id)) return;
     let batal = false;
     supabase
@@ -776,7 +778,7 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName, lingwordsUserI
       {/* [sertifikat-rapor-2hal-v1] Slide 1 sertifikat · slide 2 rapor. Keduanya ditumpuk
           di sel grid yang sama dan yang tak aktif cuma `visibility:hidden` — tetap ada di
           DOM berukuran asli supaya html2canvas bisa memotret dua-duanya untuk PDF. */}
-      <SlideTabs slide={slide} onChange={setSlide} note={rapor ? t("PDF berisi 2 halaman: sertifikat + rapor") : null} />
+      <SlideTabs slide={slide} onChange={setSlide} note={rapor ? t("PDF berisi 2 halaman: sertifikat + rapor") : rapor === null ? t("Rapor belum diterbitkan pengajar — PDF berisi sertifikat saja") : null} />
       {/* Kolom minmax(0,1fr) + minWidth 0 wajib: tanpa itu kolom grid melebar ke lebar asli
           kertas (1120px) sehingga skala pratinjau tak pernah turun dan sertifikat meluber. */}
       <div className="mx-auto grid w-full max-w-[880px] grid-cols-[minmax(0,1fr)]">
@@ -847,6 +849,12 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName, lingwordsUserI
           {pdfLoading ? <Loader2 className="h-[18px] w-[18px] animate-spin" /> : <Download className="h-[18px] w-[18px]" />}
           {pdfLoading ? t("Membuat PDF…") : t("Unduh PDF")}
         </button>
+        {/* [#3c1cce99] Siswa mengira PDF 1 halaman = rusak; padahal rapornya belum terbit. */}
+        {rapor === null && (
+          <span className="order-last basis-full text-[12px] font-medium text-[#6B7280]">
+            {t("Rapor belum diterbitkan pengajar, jadi PDF berisi sertifikat saja (1 halaman). Rapor ikut masuk PDF otomatis setelah diterbitkan.")}
+          </span>
+        )}
         <button onClick={handleShare} className="cert-btn-ghost inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><Share2 className="h-[18px] w-[18px]" />{t("Bagikan")}</button>
         <button onClick={handleLinkedIn} className="cert-btn-ghost inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><ExternalLink className="h-[18px] w-[18px]" />{t("Tambah ke LinkedIn")}</button>
         {onSaveName && (
