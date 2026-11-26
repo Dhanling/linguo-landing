@@ -33,6 +33,11 @@ import { EMAIL_REGEX } from "./data";
 type AuthView = "login" | "signup" | "forgot" | "reset_otp" | "forgot_sent" | "verify_phone";
 
 
+// [akun-login-kode-email-v1] panjang kode email ikut setelan Auth (sekarang 8); minimal 6.
+const OTP_LEN = 8;
+const OTP_MIN = 6;
+const EMPTY_OTP: string[] = Array(OTP_LEN).fill("");
+
 // Map Supabase reset-password / OTP-send error messages to Bahasa Indonesia
 function mapResetError(msg: string): string {
   const m = (msg || "").toLowerCase();
@@ -71,15 +76,16 @@ export default function LoginModal({ open, onClose }: { open: boolean; onClose: 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  // Email reset OTP (6-digit) state
-  const [otpDigits, setOtpDigits] = useState<string[]>(["", "", "", "", "", ""]);
+  // Email reset OTP state — [akun-login-kode-email-v1] Supabase Auth mengirim kode 8 digit
+  // (mailer_otp_length=8); kotak dibuat 8, tapi kode 6–8 digit tetap diterima.
+  const [otpDigits, setOtpDigits] = useState<string[]>(EMPTY_OTP);
   const [otpSecondsLeft, setOtpSecondsLeft] = useState(0);
   const otpRefs = useRef<Array<HTMLInputElement | null>>([]);
 
   const reset = () => {
     setError(""); setSuccess(""); setName(""); setEmail("");
     setPhone(""); setPassword(""); setOtp(""); setShowPass(false);
-    setOtpDigits(["", "", "", "", "", ""]); setOtpSecondsLeft(0);
+    setOtpDigits(EMPTY_OTP); setOtpSecondsLeft(0);
   };
 
   const goTo = (v: AuthView) => { reset(); setView(v); };
@@ -128,7 +134,7 @@ export default function LoginModal({ open, onClose }: { open: boolean; onClose: 
     else { setSuccess("Cek email kamu untuk konfirmasi akun ya!"); }
   };
 
-  // ── Forgot Password — send 6-digit OTP code to email ──
+  // ── Forgot Password — send OTP code (6–8 digit) to email ──
   const handleForgot = async () => {
     if (!email) { setError("Masukkan email kamu dulu."); return; }
     if (!email.includes("@") || !EMAIL_REGEX.test(email)) {
@@ -142,7 +148,7 @@ export default function LoginModal({ open, onClose }: { open: boolean; onClose: 
     });
     setLoading(false);
     if (error) { setError(mapResetError(error.message)); return; }
-    setOtpDigits(["", "", "", "", "", ""]);
+    setOtpDigits(EMPTY_OTP);
     setOtpSecondsLeft(60);
     setError(""); setSuccess("");
     setView("reset_otp");
@@ -159,7 +165,7 @@ export default function LoginModal({ open, onClose }: { open: boolean; onClose: 
     });
     setLoading(false);
     if (error) { setError(mapResetError(error.message)); return; }
-    setOtpDigits(["", "", "", "", "", ""]);
+    setOtpDigits(EMPTY_OTP);
     setOtpSecondsLeft(60);
     setSuccess("Kode baru sudah dikirim ke email kamu.");
     otpRefs.current[0]?.focus();
@@ -168,7 +174,7 @@ export default function LoginModal({ open, onClose }: { open: boolean; onClose: 
   // ── Verify reset OTP → go to update-password page ──
   const handleVerifyResetOtp = async (codeArg?: string) => {
     const code = codeArg ?? otpDigits.join("");
-    if (code.length !== 6) { setError("Masukkan 6 digit kode."); return; }
+    if (code.length < OTP_MIN || code.length > OTP_LEN) { setError(`Masukkan ${OTP_LEN} digit kode dari email.`); return; }
     setLoading(true); setError("");
     const { error } = await supabase.auth.verifyOtp({ email, token: code, type: "email" });
     setLoading(false);
@@ -179,15 +185,26 @@ export default function LoginModal({ open, onClose }: { open: boolean; onClose: 
 
   // ── OTP box input handlers ──
   const handleOtpBoxChange = (i: number, val: string) => {
-    const digit = val.replace(/\D/g, "").slice(-1);
+    // autofill iOS/Android ("one-time-code") bisa menjejalkan seluruh kode ke satu kotak
+    const all = val.replace(/\D/g, "");
+    if (all.length >= OTP_MIN) {
+      const code = all.slice(0, OTP_LEN);
+      const filled = [...EMPTY_OTP];
+      for (let j = 0; j < code.length; j++) filled[j] = code[j];
+      setOtpDigits(filled);
+      otpRefs.current[Math.min(code.length, OTP_LEN - 1)]?.focus();
+      handleVerifyResetOtp(code);
+      return;
+    }
+    const digit = all.slice(-1);
     const next = [...otpDigits];
     next[i] = digit;
     setOtpDigits(next);
     if (error) setError("");
-    if (digit && i < 5) otpRefs.current[i + 1]?.focus();
-    if (digit && i === 5) {
+    if (digit && i < OTP_LEN - 1) otpRefs.current[i + 1]?.focus();
+    if (digit && i === OTP_LEN - 1) {
       const code = next.join("");
-      if (code.length === 6) handleVerifyResetOtp(code);
+      if (code.length === OTP_LEN) handleVerifyResetOtp(code);
     }
   };
 
@@ -199,13 +216,13 @@ export default function LoginModal({ open, onClose }: { open: boolean; onClose: 
 
   const handleOtpPaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
     e.preventDefault();
-    const pasted = e.clipboardData.getData("text").replace(/\D/g, "").slice(0, 6);
+    const pasted = e.clipboardData.getData("text").replace(/\D/g, "").slice(0, OTP_LEN);
     if (!pasted) return;
-    const next = ["", "", "", "", "", ""];
+    const next = [...EMPTY_OTP];
     for (let j = 0; j < pasted.length; j++) next[j] = pasted[j];
     setOtpDigits(next);
-    otpRefs.current[Math.min(pasted.length, 5)]?.focus();
-    if (pasted.length === 6) handleVerifyResetOtp(pasted);
+    otpRefs.current[Math.min(pasted.length, OTP_LEN - 1)]?.focus();
+    if (pasted.length >= OTP_MIN) handleVerifyResetOtp(pasted);
   };
 
   // ── Phone OTP Send ──
@@ -253,19 +270,19 @@ export default function LoginModal({ open, onClose }: { open: boolean; onClose: 
 
             <div className="p-8">
 
-              {/* ── RESET OTP (6-digit code) ── */}
+              {/* ── RESET OTP (kode 6–8 digit) ── */}
               {view === "reset_otp" ? (
                 <div>
                   <button onClick={() => goTo("forgot")} className="flex items-center gap-1 text-sm text-slate-400 hover:text-slate-600 mb-4 transition-colors">
                     <ChevronLeft className="w-4 h-4" /> Kembali
                   </button>
                   <h2 className="text-xl font-extrabold text-slate-900 mb-1">Masukkan kode reset</h2>
-                  <p className="text-slate-500 text-sm mb-6">Kami kirim kode 6 digit ke <strong>{email}</strong>. Cek inbox & folder spam ya.</p>
+                  <p className="text-slate-500 text-sm mb-6">Kami kirim kode {OTP_LEN} digit ke <strong>{email}</strong>. Cek inbox & folder spam ya.</p>
 
                   {error && <p className="text-red-500 text-xs mb-3 bg-red-50 px-3 py-2 rounded-lg">{error}</p>}
                   {success && <p className="text-emerald-600 text-xs mb-3 bg-emerald-50 px-3 py-2 rounded-lg">{success}</p>}
 
-                  <div className="flex justify-between gap-2 mb-4">
+                  <div className="flex justify-between gap-1.5 mb-4">
                     {otpDigits.map((d, i) => (
                       <input
                         key={i}
@@ -273,11 +290,11 @@ export default function LoginModal({ open, onClose }: { open: boolean; onClose: 
                         value={d}
                         onChange={e => handleOtpBoxChange(i, e.target.value)}
                         onKeyDown={e => handleOtpKeyDown(i, e)}
-                        onPaste={i === 0 ? handleOtpPaste : undefined}
+                        onPaste={handleOtpPaste}
                         inputMode="numeric"
                         autoComplete="one-time-code"
-                        maxLength={1}
-                        className="w-11 h-14 text-center text-2xl font-bold border border-slate-200 rounded-xl outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/10 transition-all"
+                        maxLength={OTP_LEN}
+                        className="w-9 h-12 min-w-0 text-center text-xl font-bold border border-slate-200 rounded-xl outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/10 transition-all"
                       />
                     ))}
                   </div>
@@ -335,7 +352,7 @@ export default function LoginModal({ open, onClose }: { open: boolean; onClose: 
                   </h2>
                   <p className="text-slate-500 text-sm mb-6">
                     {view === "signup" ? "Buat akun untuk mulai belajar bahasa impianmu." :
-                     view === "forgot" ? "Masukkan emailmu, kami kirim kode reset 6 digit." :
+                     view === "forgot" ? "Masukkan emailmu, kami kirim kode reset ke emailmu." :
                      "Masuk untuk lanjut belajar bersama Linguo."}
                   </p>
 

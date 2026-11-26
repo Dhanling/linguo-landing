@@ -20,6 +20,15 @@ export const initialAuthError: { code: string; description: string } | null = ((
   }
 })();
 
+// [akun-login-kode-email-v1] Snapshot: halaman dibuka dengan `?code=` (link login
+// email / OAuth, alur PKCE). Kalau link email dibuka di browser/aplikasi lain dari
+// tempat user minta link (mis. dari aplikasi Gmail), code_verifier tak ada di sana →
+// pertukaran gagal diam-diam. Dipakai /akun untuk menawarkan "ketik kode dari email".
+export const initialAuthCodeInUrl: boolean = (() => {
+  if (typeof window === "undefined") return false;
+  try { return !!new URLSearchParams(window.location.search).get("code"); } catch { return false; }
+})();
+
 // [auth-cookie-session-v1] Sesi disimpan di COOKIE (bukan localStorage).
 // Kenapa: di Safari, localStorage yang ditulis saat landing balik dari OAuth
 // gampang disapu/di-cap ITP → user "keluar sendiri" begitu di-refresh, padahal

@@ -23,7 +23,7 @@ import { LangSlugFlag } from "@/components/RectFlag"; // [materi-flag-pie-v1] be
 import { sapaan, initial as callInitial } from "@/lib/teacherName"; // [teacher-sapaan-v1] "Kak Dhani", bukan nama lengkap
 import { flatPrice, isFixedPriceProgram, pricePerSession, privatePerSession } from "@/lib/enrollPrice"; // [edge-auth-gate-v1]
 import { muatRekamanBatch, tempelRekamanBatch, regBatch, type PertemuanBatch } from "@/lib/batchRecordingsClient"; // [rekaman-batch-akun-v1]
-import { supabase, initialAuthError, peekSessionUser, adoptImplicitSessionFromUrl, resolveSessionForGate } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2] [perf:session-cookie-peek-v1] [auth-implicit-hash-adopt-v1] [auth-gate-resilient-v1]
+import { supabase, initialAuthError, initialAuthCodeInUrl, peekSessionUser, adoptImplicitSessionFromUrl, resolveSessionForGate } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2] [perf:session-cookie-peek-v1] [auth-implicit-hash-adopt-v1] [auth-gate-resilient-v1]
 import { enrollHeaders } from "@/lib/enrollHeaders"; // [enroll-wajib-sesi-v1]
 import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
@@ -3402,6 +3402,11 @@ export default function AkunPage() {
   const [loginPassword, setLoginPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false); // [akun-login-redesign-v1] toggle mata password
   const [otpSent, setOtpSent] = useState(false); // linguo-patch:akun-otp-login-v1
+  // [akun-login-kode-email-v1] Email "Kode Masuk" berisi kode angka (panjangnya ikut
+  // setelan Auth — sekarang 8 digit) + tombol link. Kode diketik di sini → verifyOtp,
+  // jadi tetap bisa masuk walau link-nya dibuka di browser/aplikasi lain.
+  const [loginCode, setLoginCode] = useState("");
+  const [codeError, setCodeError] = useState("");
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [showSuccessAnim, setShowSuccessAnim] = useState(false); // [linguo-patch:onboarding-success-lottie-v1]
   const [wizardCompleted, setWizardCompleted] = useState(false);
@@ -3493,6 +3498,13 @@ export default function AkunPage() {
         setUser(verdict.user);
         setAuthLoading(false);
         return;
+      }
+      // [akun-login-kode-email-v1] Datang dari link (?code=) tapi sesi tak terbentuk →
+      // hampir pasti link email dibuka di browser/aplikasi lain. Tawarkan ketik kode.
+      if (initialAuthCodeInUrl) {
+        setAuthError("Link masuk tidak bisa diproses di browser ini (biasanya karena link dibuka di aplikasi/browser lain dari tempat kamu memintanya). Ketik saja kode angka dari email di bawah.");
+        setOtpSent(true);
+        try { window.history.replaceState(null, "", window.location.pathname + window.location.search.replace(/([?&])code=[^&]*/g, "$1").replace(/[?&]+$/, "").replace(/\?&/, "?")); } catch {}
       }
       settle(null);
     })();
@@ -3643,6 +3655,26 @@ export default function AkunPage() {
       return;
     }
     setOtpSent(true);
+  };
+
+  // [akun-login-kode-email-v1] Masuk dengan kode dari email (6–8 digit, ikut setelan Auth).
+  const verifyLoginCode = async (codeArg?: string) => {
+    const email = loginEmail.trim().toLowerCase();
+    const code = (codeArg ?? loginCode).replace(/\D/g, "");
+    if (!email) { setCodeError("Isi email yang kamu pakai untuk minta kode."); return; }
+    if (code.length < 6 || code.length > 8) { setCodeError("Kode harus 6–8 angka, sesuai yang ada di email."); return; }
+    setIsSigningIn(true); setCodeError("");
+    const { error } = await supabase.auth.verifyOtp({ email, token: code, type: "email" });
+    setIsSigningIn(false);
+    if (error) {
+      const m = (error.message || "").toLowerCase();
+      setCodeError(m.includes("expired") || m.includes("invalid")
+        ? "Kode salah atau sudah kedaluwarsa. Pakai kode dari email TERBARU, atau kirim ulang."
+        : error.message);
+      return;
+    }
+    setAuthError("");
+    // sesi tersimpan → onAuthStateChange memindahkan ke dashboard (dan ?next kalau ada)
   };
 
   // ── Data Loading (fixed column names) ────────────────────────────
@@ -4546,11 +4578,44 @@ export default function AkunPage() {
                   <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-50 text-[#1A9E9E]">
                     <Mail className="h-6 w-6" />
                   </div>
-                  <p className="text-sm font-semibold text-gray-800">Link login terkirim!</p>
+                  <p className="text-sm font-semibold text-gray-800">Kode masuk terkirim!</p>
                   <p className="text-xs leading-relaxed text-gray-500">
-                    Kami kirim link masuk ke <span className="font-medium text-gray-700">{loginEmail}</span>. Buka email, klik link-nya, kamu langsung masuk. Cek juga folder spam ya.
+                    {loginEmail ? <>Cek email <span className="font-medium text-gray-700">{loginEmail}</span> (juga folder spam). </> : null}
+                    Ketik <b>kode angka</b> dari email di bawah, atau klik tombol <b>Masuk Sekarang</b> di email (buka di browser yang sama dengan halaman ini).
                   </p>
-                  <button onClick={() => setOtpSent(false)} className="text-xs font-semibold text-[#1A9E9E] hover:underline">
+                  {!loginEmail && (
+                    <input
+                      type="email"
+                      placeholder="Email kamu"
+                      value={loginEmail}
+                      onChange={e => setLoginEmail(e.target.value)}
+                      className="h-12 w-full rounded-2xl border border-gray-200 bg-white px-5 text-sm text-gray-900 placeholder:text-gray-400 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#1A9E9E]"
+                    />
+                  )}
+                  <input
+                    value={loginCode}
+                    onChange={e => {
+                      const v = e.target.value.replace(/\D/g, "").slice(0, 8);
+                      setLoginCode(v); if (codeError) setCodeError("");
+                      if (v.length === 8) verifyLoginCode(v);
+                    }}
+                    onKeyDown={e => e.key === "Enter" && verifyLoginCode()}
+                    inputMode="numeric"
+                    autoComplete="one-time-code"
+                    placeholder="Kode dari email"
+                    maxLength={8}
+                    aria-label="Kode masuk dari email (6–8 angka)"
+                    className="h-13 w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-center text-2xl font-bold tracking-[0.3em] text-gray-900 placeholder:text-base placeholder:font-normal placeholder:tracking-normal placeholder:text-gray-400 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#1A9E9E]"
+                  />
+                  {codeError && <p className="rounded-lg bg-red-50 px-3 py-2 text-xs text-red-600">{codeError}</p>}
+                  <button
+                    onClick={() => verifyLoginCode()}
+                    disabled={isSigningIn || loginCode.length < 6}
+                    className="flex h-12 w-full items-center justify-center rounded-2xl bg-[#1A9E9E] text-sm font-bold text-white transition-colors hover:bg-[#178585] disabled:opacity-50"
+                  >
+                    {isSigningIn ? <div className="h-4 w-4 rounded-full border-2 border-white/60 border-t-transparent animate-spin" /> : "Masuk dengan Kode"}
+                  </button>
+                  <button onClick={() => { setOtpSent(false); setLoginCode(""); setCodeError(""); }} className="text-xs font-semibold text-[#1A9E9E] hover:underline">
                     Ganti email / kirim ulang
                   </button>
                 </div>
@@ -4595,7 +4660,7 @@ export default function AkunPage() {
                   <div className="pt-1 text-center text-[12px] leading-relaxed text-gray-500">
                     Nggak punya / lupa password?{" "}
                     <button onClick={signInWithMagicLink} disabled={isSigningIn || !loginEmail} className="inline-flex items-center gap-1 font-semibold text-[#1A9E9E] hover:underline disabled:text-gray-300 disabled:no-underline">
-                      <Mail className="h-3.5 w-3.5" /> Kirim link login
+                      <Mail className="h-3.5 w-3.5" /> Kirim kode / link login
                     </button>
                   </div>
                 </div>
