@@ -20,6 +20,8 @@ import ClassQuizScores, { QuizReviewModal, quizScoreRows, quizPct, type QuizScor
 import ClassTugasTab from '@/components/akun/ClassTugasTab';
 import { ClipboardCheck, Check, X, ChevronRight } from 'lucide-react';
 import { useT, useUiLang } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
+import BandRadarCard, { type BandEntry } from '@/components/akun/BandRadarCard';
+import { hitungBand, type AnswerForBand } from '@/lib/ieltsBand';
 
 export default function ClassKuisTab({ reg, schedules }: { reg: any; schedules: any[] }) {
   // [ui-lang-switcher-v1] `tl` — `t` sudah dipakai buat tally per baris di bawah.
@@ -32,21 +34,42 @@ export default function ClassKuisTab({ reg, schedules }: { reg: any; schedules: 
   // skor, karena bobot poin tiap soal bisa berbeda (skor 8/10 tidak otomatis
   // berarti 2 soal salah).
   const [tally, setTally] = useState<Record<string, { benar: number; salah: number }>>({});
+  // [kuis-band-radar-siswa-v1] Band IELTS per kuis (hanya kuis bergaya IELTS).
+  const [bands, setBands] = useState<BandEntry[]>([]);
 
   const subIds = rows.map((r) => r.quiz_submission_id).filter(Boolean) as string[];
   const subKey = subIds.join(',');
 
   useEffect(() => {
-    if (!subKey) { setTally({}); return; }
+    if (!subKey) { setTally({}); setBands([]); return; }
     let alive = true;
     (async () => {
       // Boleh gagal (RLS/kolom belum dimigrasi): kalau kosong, kartunya cuma
       // tidak menampilkan chip benar/salah — halaman TIDAK boleh ikut error.
-      const { data } = await supabase
-        .from('quiz_answers')
-        .select('submission_id, is_correct')
-        .in('submission_id', subKey.split(','));
+      const ids = subKey.split(',');
+      const [{ data }, { data: subs }] = await Promise.all([
+        supabase
+          .from('quiz_answers')
+          .select('submission_id, is_correct, score, response, quiz_questions(type, points, prompt)')
+          .in('submission_id', ids),
+        // Dibaca lewat policy quiz_submissions_own_read (sama dgn QuizReviewModal).
+        supabase.from('quiz_submissions').select('id, analysis').in('id', ids),
+      ]);
       if (!alive) return;
+      const perSub = new Map<string, AnswerForBand[]>();
+      (data || []).forEach((a: any) => {
+        const l = perSub.get(a.submission_id) ?? [];
+        l.push(a);
+        perSub.set(a.submission_id, l);
+      });
+      const analysis = new Map<string, any>(((subs || []) as any[]).map((r) => [r.id, r.analysis]));
+      const daftar: BandEntry[] = [];
+      rows.forEach((r) => {
+        if (!r.quiz_submission_id) return;
+        const b = hitungBand(perSub.get(r.quiz_submission_id) ?? [], analysis.get(r.quiz_submission_id));
+        if (b) daftar.push({ submissionId: r.quiz_submission_id, sessionNo: r.sessionNo, date: r.scheduled_at, band: b });
+      });
+      setBands(daftar);
       const map: Record<string, { benar: number; salah: number }> = {};
       (data || []).forEach((a: any) => {
         const cur = map[a.submission_id] || { benar: 0, salah: 0 };
@@ -65,6 +88,9 @@ export default function ClassKuisTab({ reg, schedules }: { reg: any; schedules: 
     <div className="space-y-7">
       {/* Grafik + rata-rata (komponen yang sama dengan yang dulu di tab Progress) */}
       <ClassQuizScores schedules={schedules} />
+
+      {/* [kuis-band-radar-siswa-v1] Radar band IELTS — muncul sejak kuis IELTS pertama dikoreksi. */}
+      {bands.length > 0 && <BandRadarCard entries={bands} />}
 
       {rows.length > 0 && (
         <section>
