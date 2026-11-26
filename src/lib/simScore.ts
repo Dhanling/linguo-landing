@@ -16,7 +16,7 @@
 // selalu berada di rentang skala yang benar.
 import type { Skill, TestType, TestVariant } from "@/lib/simulations";
 
-export type ScoreScale = "toefl_itp" | "toefl_ibt" | "ielts" | "jlpt" | "hsk" | "topik" | "goethe";
+export type ScoreScale = "toefl_itp" | "toefl_ibt" | "ielts" | "jlpt" | "hsk" | "topik" | "goethe" | "toeic";
 
 // Rincian mentah satu subtes (skill) dalam satu attempt.
 export interface SkillRaw {
@@ -77,6 +77,7 @@ export function detectScoreScale(
   if (testType === "hsk") return "hsk";
   if (testType === "topik") return "topik";
   if (testType === "goethe") return "goethe";
+  if (testType === "toeic") return "toeic";
   // TOEFL — varian eksplisit paling andal; fallback ke petunjuk pada judul.
   if (variant === "ibt") return "toefl_ibt";
   if (variant === "itp") return "toefl_itp";
@@ -143,6 +144,13 @@ function ieltsOverall(bands: number[]): number {
   return f < 0.25 ? base : f < 0.75 ? base + 0.5 : base + 1;
 }
 
+// [toeic-sim-v1] TOEIC L&R — raw benar (dari 100) → skor seksi 5–495.
+// ETS tak menerbitkan tabel tetap (di-equate per form); ini titik tengah tabel
+// konversi tidak resmi yang umum dipakai lembaga persiapan, diinterpolasi.
+const TOEIC_LISTENING: Anchor[] = [[0, 5], [5, 15], [10, 30], [15, 55], [20, 80], [25, 105], [30, 135], [35, 160], [40, 190], [45, 215], [50, 245], [55, 270], [60, 300], [65, 325], [70, 355], [75, 380], [80, 405], [85, 430], [90, 460], [95, 485], [100, 495]];
+const TOEIC_READING: Anchor[] = [[0, 5], [5, 15], [10, 25], [15, 40], [20, 60], [25, 78], [30, 98], [35, 120], [40, 148], [45, 178], [50, 203], [55, 233], [60, 263], [65, 293], [70, 323], [75, 350], [80, 375], [85, 405], [90, 430], [95, 458], [100, 495]];
+const round5 = (n: number) => Math.round(n / 5) * 5;
+
 // Ambang lulus JLPT per level (total selalu skala 180).
 const JLPT_PASS: Partial<Record<TestVariant, number>> = { n5: 80, n4: 90, n3: 95, n2: 90, n1: 100 };
 
@@ -154,6 +162,7 @@ export const SCALE_LABEL: Record<ScoreScale, string> = {
   hsk: "HSK",
   topik: "TOPIK",
   goethe: "Goethe-Zertifikat",
+  toeic: "TOEIC",
 };
 
 // ── Spesifikasi skala ────────────────────────────────────────────────────────
@@ -301,6 +310,24 @@ function scaleSpec(scale: ScoreScale, variant?: TestVariant | null): ScaleSpec {
       note: two
         ? "Tiap bagian 100 poin (total 300). Level 3 ≥120 · Level 4 ≥150 · Level 5 ≥190 · Level 6 ≥230."
         : "Tiap bagian 100 poin (total 200). Level 1 ≥80 · Level 2 ≥140.",
+    };
+  }
+  if (scale === "toeic") {
+    return {
+      unit: "TOEIC", min: 10, max: 990, totalMax: 990,
+      sections: [
+        { key: "listening", label: "Listening", skills: ["listening"], max: 495, convert: (f) => round5(interp(TOEIC_LISTENING, f * 100)) },
+        { key: "reading", label: "Reading", skills: ["reading"], max: 495, convert: (f) => round5(interp(TOEIC_READING, f * 100)) },
+      ],
+      // Total = Listening + Reading (10–990). Bila hanya satu seksi, diproporsikan.
+      total: (present, scaled) => {
+        const v = present.length === 2 ? present[0].value + present[1].value : scaled;
+        return Math.max(10, Math.min(990, round5(v)));
+      },
+      format: (v) => String(Math.round(v)),
+      // Pemetaan CEFR dari ETS (batas minimum total L+R).
+      verdict: (v) => (v >= 945 ? "≈ CEFR C1" : v >= 785 ? "≈ CEFR B2" : v >= 550 ? "≈ CEFR B1" : v >= 225 ? "≈ CEFR A2" : v >= 120 ? "≈ CEFR A1" : null),
+      note: "Tiap seksi dikonversi ke skala 5–495 dari jumlah benar (per 100 soal), total = Listening + Reading (10–990).",
     };
   }
   // Goethe — 4 modul, tiap modul 100 poin, lulus 60.

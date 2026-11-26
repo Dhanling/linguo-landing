@@ -20,6 +20,7 @@ const OFFICIAL_BODY: Record<ScoreScale, string> = {
   hsk: "Chinese Testing International (Hanban)",
   topik: "NIIED",
   goethe: "Goethe-Institut",
+  toeic: "ETS",
 };
 
 export const officialBody = (scale: ScoreScale): string => OFFICIAL_BODY[scale] ?? "lembaga tes resmi";

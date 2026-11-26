@@ -8,15 +8,16 @@ import { PROMO_SOURCE_PREFIX, FREE_PROMOS } from "@/lib/simulasiPakets";
 // jadi impor nilai akan jadi lingkaran.
 import type { SkillRaw } from "@/lib/simScore";
 
-export type TestType = "toefl" | "ielts" | "jlpt" | "hsk" | "topik" | "goethe";
+export type TestType = "toefl" | "ielts" | "jlpt" | "hsk" | "topik" | "goethe" | "toeic";
 // Varian/level: IELTS Academic/General · TOEFL ITP/iBT · JLPT N5–N1 · HSK 1–6 ·
-// TOPIK I/II · Goethe (CEFR) A1–C2.
+// TOPIK I/II · Goethe (CEFR) A1–C2 · TOEIC Listening & Reading / Speaking & Writing.
 export type TestVariant =
   | "academic" | "general" | "itp" | "ibt"
   | "n5" | "n4" | "n3" | "n2" | "n1"
   | "hsk1" | "hsk2" | "hsk3" | "hsk4" | "hsk5" | "hsk6"
   | "topik1" | "topik2"
-  | "a1" | "a2" | "b1" | "b2" | "c1" | "c2";
+  | "a1" | "a2" | "b1" | "b2" | "c1" | "c2"
+  | "lr" | "sw";
 export type Skill = "reading" | "listening" | "writing" | "speaking" | "structure";
 export type QuestionType =
   | "multiple_choice" | "true_false_ng" | "fill_blank" | "short_answer"
@@ -65,6 +66,7 @@ export interface Question {
 
 export const TEST_TYPE_LABEL: Record<TestType, string> = {
   toefl: "TOEFL", ielts: "IELTS", jlpt: "JLPT", hsk: "HSK", topik: "TOPIK", goethe: "Goethe",
+  toeic: "TOEIC", // [toeic-sim-v1]
 };
 export const TEST_VARIANT_LABEL: Record<TestVariant, string> = {
   academic: "Academic", general: "General", itp: "ITP", ibt: "iBT",
@@ -72,6 +74,7 @@ export const TEST_VARIANT_LABEL: Record<TestVariant, string> = {
   hsk1: "1", hsk2: "2", hsk3: "3", hsk4: "4", hsk5: "5", hsk6: "6",
   topik1: "I", topik2: "II",
   a1: "A1", a2: "A2", b1: "B1", b2: "B2", c1: "C1", c2: "C2",
+  lr: "Listening & Reading", sw: "Speaking & Writing",
 };
 // Label lengkap jenis + varian, mis. "IELTS Academic" / "TOEFL iBT".
 export function testTypeLabel(testType: TestType, variant?: TestVariant | null): string {
@@ -97,9 +100,11 @@ export const REAL_TEST_DURATION_BY_VARIANT: Partial<Record<TestVariant, number>>
   topik1: 100, topik2: 180,
   // Goethe (CEFR) — 4 modul, makin tinggi makin panjang.
   a1: 60, a2: 90, b1: 150, b2: 190, c1: 230, c2: 230,
+  // TOEIC L&R 45 + 75 menit; S&W ±80 menit.
+  lr: 120, sw: 80,
 };
 export const REAL_TEST_DURATION_BY_TYPE: Record<TestType, number> = {
-  toefl: 115, ielts: 165, jlpt: 115, hsk: 90, topik: 140, goethe: 120,
+  toefl: 115, ielts: 165, jlpt: 115, hsk: 90, topik: 140, goethe: 120, toeic: 120,
 };
 export function defaultDurationMinutes(testType: TestType, variant?: TestVariant | null): number {
   if (variant && REAL_TEST_DURATION_BY_VARIANT[variant] != null) return REAL_TEST_DURATION_BY_VARIANT[variant]!;
@@ -132,6 +137,8 @@ export const TEST_OVERVIEW: Record<TestType, string> = {
     "TOPIK (한국어능력시험) mengukur kemampuan bahasa Korea melalui Menyimak (듣기), Membaca (읽기), dan Menulis (쓰기, TOPIK II). Kerjakan tiap bagian secara berurutan dan perhatikan sisa waktu.",
   goethe:
     "Goethe-Zertifikat mengukur kemampuan bahasa Jerman melalui empat modul: Lesen (Membaca), Hören (Menyimak), Schreiben (Menulis), dan Sprechen (Berbicara). Kerjakan tiap bagian secara berurutan dan perhatikan sisa waktu.",
+  toeic:
+    "TOEIC mengukur kemampuan bahasa Inggris untuk dunia kerja: Listening (Part 1–4) dan Reading (Part 5–7), semuanya pilihan ganda dengan konteks kantor dan bisnis. Skor tiap seksi 5–495, total 10–990. Kerjakan tiap bagian secara berurutan dan perhatikan sisa waktu.",
 };
 
 // Cara menjawab per keterampilan — jadi instruksi default tiap bagian.
