@@ -34,6 +34,8 @@ import { fotoOauthAsli } from "@/lib/oauthAvatar"; // [avatar-google-huruf-v1]
 import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, XCircle, Hand, X, Eye, EyeOff, MessagesSquare, PartyPopper, Rocket, Sprout, HelpCircle, AlertCircle, Sparkles, FileText, Layers, Lightbulb, Loader2, AlertTriangle, Minus, Play, ExternalLink, ClipboardCheck, BarChart2, List, LayoutGrid, Building2, type LucideIcon } from "lucide-react";
 // [no-emoji-lucide-v1] bendera rounded-rect buat prefix nomor WA & pilihan tes (bukan emoji 🇮🇩)
 import { RectFlag } from "@/components/RectFlag";
+import SambutanSiswaLunas from "@/components/akun/SambutanSiswaLunas"; // [sambut-siswa-lunas-v1]
+import EbookPanduan, { type LangkahPanduan } from "@/components/akun/EbookPanduan"; // [sambut-siswa-lunas-v1] tur dashboard
 import OnboardingBelanja, { type KategoriBelanja } from "@/components/akun/OnboardingBelanja"; // [onboarding-belanja-v1] produk digital ikut ditawarkan di onboarding
 
 import PaymentCard, { calculateDefaultAmount } from '@/components/PaymentCard';
@@ -837,15 +839,20 @@ function OnboardingWizard({ user, studentId, onDone }: {
   }
 
   return (
-    <div className="fixed inset-0 z-[100] bg-gradient-to-br from-teal-50 via-white to-teal-50 flex items-center justify-center p-4 overflow-y-auto">
+    /* [onboarding-stepper-sticky-v1] Dulu kontainernya `items-center` + bar langkah
+       `absolute`: begitu isi langkah lebih tinggi dari layar HP (langkah Program),
+       bagian atasnya terpotong (judul hilang) dan bar menimpa kartu pertama.
+       Sekarang bar menempel di atas (sticky, berlatar) dan isinya dipusatkan
+       pakai my-auto — aman saat meluap, tetap di tengah saat pendek. */
+    <div className="fixed inset-0 z-[100] bg-gradient-to-br from-teal-50 via-white to-teal-50 flex flex-col items-center px-4 overflow-y-auto">
       {step >= 1 && (
-        <div className="absolute top-0 left-0 right-0">
+        <div className="sticky top-0 z-10 w-[calc(100%+2rem)] -mx-4 shrink-0 bg-white/90 backdrop-blur-md">
           <OnbMilestoneBar step={step} />
         </div>
       )}
 
       <AnimatePresence mode="wait">
-        <motion.div key={step} initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -30 }} transition={{ duration: 0.22 }} className="w-full max-w-lg py-8">
+        <motion.div key={step} initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -30 }} transition={{ duration: 0.22 }} className="my-auto w-full max-w-lg py-8">
 
           {/* Step 0: Welcome */}
           {step === 0 && (
@@ -4196,6 +4203,68 @@ export default function AkunPage() {
     [activeRegs]
   );
 
+  /* [sambut-siswa-lunas-v1] Siswa yang SUDAH bayar (Xendit / didaftarkan admin) lalu
+     baru pertama kali membuka dashboard: bukan wizard "Mulai Setup", tapi kartu
+     "kamu sudah terdaftar" (program, bahasa, level, sesi, durasi, pengajar) + tur
+     singkat menu. Hanya untuk akun yang baru dibuat (≤ 14 hari) supaya siswa lama
+     yang sudah lama memakai dashboard tak tiba-tiba disodori sambutan sesudah rilis. */
+  const [sambutLunas, setSambutLunas] = useState(false);
+  const [turDashboard, setTurDashboard] = useState(false);
+  const kunciSambut = student?.id ? `linguo_sambut_lunas_${student.id}` : "";
+  useEffect(() => {
+    if (previewMode || showOnboarding || !kunciSambut) return;
+    if (!student?.id || student.id === "pending" || student.id === user?.id) return;
+    if (gateNeedsProfile(student)) return; // WA Gate didahulukan; sambutan menyusul sesudahnya
+    if (activeRegsMentah.length === 0) return;
+    try {
+      if (localStorage.getItem(kunciSambut)) return;
+      const dibuat = Date.parse(user?.created_at || "");
+      if (!Number.isFinite(dibuat) || Date.now() - dibuat > 14 * 864e5) {
+        localStorage.setItem(kunciSambut, "akun-lama");
+        return;
+      }
+    } catch { return; }
+    setSambutLunas(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [previewMode, showOnboarding, kunciSambut, activeRegsMentah.length, student?.whatsapp, student?.name, user?.created_at]);
+  const tutupSambut = (mulaiTur: boolean) => {
+    try { if (kunciSambut) localStorage.setItem(kunciSambut, new Date().toISOString()); } catch {}
+    setSambutLunas(false);
+    if (mulaiTur) { setActiveTab("beranda"); setTurDashboard(true); }
+  };
+  const langkahTurDashboard = useMemo<LangkahPanduan[]>(() => [
+    {
+      judul: "Tur singkat dashboard",
+      isi: "Enam langkah, kurang dari satu menit. Kami tunjukkan tempat jadwal, materi, grup kelas, dan cara menambah kelas.",
+      tip: "Tekan Esc atau \"Lewati panduan\" untuk keluar kapan saja.",
+    },
+    {
+      target: ['[data-nav="jadwal"]', '[data-nav-grup="Aktivitas"]'],
+      judul: "Jadwal kelas",
+      isi: "Semua sesi kelasmu ada di sini, lengkap dengan link kelas. Jadwal muncul sesudah disepakati dengan admin & pengajar — kamu juga bisa minta ganti jadwal dari sini.",
+    },
+    {
+      target: ['[data-nav="materi"]', '[data-nav-grup="Belajar"]'],
+      judul: "Kelas & Materi",
+      isi: "Materi tiap sesi, slide, kuis, dan progres belajarmu. Buka sebelum kelas biar lebih siap.",
+    },
+    {
+      target: ['[data-nav="grup"]', '[data-nav-grup="Aktivitas"]', '[data-nav="menu-hp"]'],
+      judul: "Grup Kelas & menu lainnya",
+      isi: "Pengumuman, link kelas, dan obrolan dengan pengajar ada di Grup Kelas. Perpustakaan (e-book), Sertifikat, dan Lingnote juga ada di menu ini.",
+    },
+    {
+      target: ['[data-panduan-akun="tambah-kelas"]', '[data-panduan-akun="aksi-cepat"]'],
+      judul: "Mau tambah kelas atau beli produk lain?",
+      isi: "Tambah kelas bahasa lain atau lanjut level dari sini. E-book, e-learning, dan Simulasi Tes IELTS/TOEFL bisa dibeli di Toko (linguo.id/toko) — langsung bisa dipakai sesudah bayar.",
+    },
+    {
+      target: ['[data-nav="akun"]', '[data-nav-grup="Akun"]'],
+      judul: "Pengaturan & tagihan",
+      isi: "Profil, nomor WhatsApp, riwayat pembayaran, dan tagihan ada di sini. Butuh bantuan? Chat admin dari tombol Hubungi Admin kapan saja.",
+    },
+  ], []);
+
   // Sertifikat diturunkan dari registrasi aktif: 'progress' (used/total) atau 'issued' (used>=total).
   // [sertifikat-durasi-periode-v1] Jam belajar = total sesi × menit/sesi paket (16 × 30
   // menit = 8 jam — dulu ditulis "16 jam" karena angka sesi dipakai mentah sebagai jam),
@@ -4766,6 +4835,17 @@ export default function AkunPage() {
       {/* ── Sukses onboarding: Lottie ceklis sebelum dashboard — [linguo-patch:onboarding-success-lottie-v1] ── */}
       {showSuccessAnim && <OnboardingSuccess onClose={() => setShowSuccessAnim(false)} />}
 
+      {/* [sambut-siswa-lunas-v1] login pertama siswa yang sudah bayar → ringkasan kelas + tur */}
+      {sambutLunas && !showOnboarding && !showSuccessAnim && (
+        <SambutanSiswaLunas
+          firstName={firstName}
+          regs={activeRegs}
+          onMulaiTur={() => tutupSambut(true)}
+          onTutup={() => tutupSambut(false)}
+        />
+      )}
+      {turDashboard && <EbookPanduan langkah={langkahTurDashboard} onClose={() => setTurDashboard(false)} />}
+
       {/* [shell-mobile-drawer-v1] Header mobile (hamburger + logo + lonceng) sekarang
           dirender oleh StudentShell, jadi SEMUA halaman ber-shell kebagian — dulu cuma
           halaman ini yang punya, sisanya nol navigasi di HP. */}
@@ -5160,7 +5240,7 @@ export default function AkunPage() {
                                 </div>
                               )}
                               {liveView === "aktif" && liveRegs.length > 0 && (
-                                <button onClick={openEnrollWizard} className="text-[13px] font-bold text-[#16796E] hover:text-[#0F5A52]">+ {tt("Tambah")}</button>
+                                <button onClick={openEnrollWizard} data-panduan-akun="tambah-kelas" className="text-[13px] font-bold text-[#16796E] hover:text-[#0F5A52]">+ {tt("Tambah")}</button>
                               )}
                             </div>
                           </div>
@@ -6341,6 +6421,7 @@ export default function AkunPage() {
         <>
           <button
             onClick={() => setShowQuickActions(true)}
+            data-panduan-akun="aksi-cepat" /* [sambut-siswa-lunas-v1] */
             className="fixed md:hidden bottom-24 right-4 sm:right-6 z-[45] h-14 w-14 rounded-full bg-gradient-to-br from-teal-600 to-teal-500 text-white shadow-xl shadow-teal-500/40 flex items-center justify-center hover:scale-105 active:scale-95 transition-transform"
             aria-label="Aksi Cepat"
           >

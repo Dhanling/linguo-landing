@@ -65,7 +65,7 @@ export default function MobileBottomNav({ activeTab, onChange, canAccessMateri =
           }`;
           if ("href" in item) {
             return (
-              <Link key={key} href={withPreview(item.href)} prefetch className={cls}>
+              <Link key={key} href={withPreview(item.href)} data-nav={key} prefetch className={cls}>
                 {inner}
               </Link>
             );
@@ -76,6 +76,7 @@ export default function MobileBottomNav({ activeTab, onChange, canAccessMateri =
             <Link
               key={key}
               href={withPreview(`/akun?menu=${key}`)}
+              data-nav={key} /* [sambut-siswa-lunas-v1] target tur dashboard */
               /* [perf:tab-link-prefetch-v1] dari halaman LMS lain tombol ini benar-benar
                  menavigasi ke /akun — biar chunk dashboard sudah siap sebelum diklik. */
               onClick={(e) => {

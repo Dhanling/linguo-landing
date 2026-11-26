@@ -334,6 +334,7 @@ export default function StudentShell({
       const node = (
         <Link
           href={href}
+          data-nav={item.key} /* [sambut-siswa-lunas-v1] target tur dashboard */
           prefetch
           onClick={onNavigated}
           target={newTab ? "_blank" : undefined}
@@ -371,6 +372,7 @@ export default function StudentShell({
     return navRow(item, href, (
       <Link
         href={href}
+        data-nav={item.key} /* [sambut-siswa-lunas-v1] target tur dashboard */
         /* [perf:tab-link-prefetch-v1] Dari halaman LMS lain (Grup Kelas, Perpustakaan,
            Lingbook) menu tab ini benar-benar menavigasi ke /akun. Dengan prefetch mati,
            chunk dashboard baru diunduh SESUDAH diklik → menu terasa menggantung
@@ -818,7 +820,7 @@ export default function StudentShell({
                   const it = c.items[0];
                   const href = withPreview("href" in it ? it.href : `/akun?menu=${it.key}`);
                   return (
-                    <Link key={c.id} href={href} prefetch title={label} className={cls} aria-current={isActive ? "page" : undefined}
+                    <Link key={c.id} href={href} data-nav={it.key} prefetch title={label} className={cls} aria-current={isActive ? "page" : undefined}
                       onClick={(e) => {
                         if ("href" in it || it.soon) return;
                         if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
@@ -831,7 +833,7 @@ export default function StudentShell({
                   );
                 }
                 return (
-                  <button key={c.id} onClick={() => openPanel(c.id)} title={label} aria-expanded={selected} className={cls}>
+                  <button key={c.id} data-nav-grup={c.id} onClick={() => openPanel(c.id)} title={label} aria-expanded={selected} className={cls}>
                     {inner}
                   </button>
                 );
@@ -886,6 +888,7 @@ export default function StudentShell({
         <header className={`sticky top-0 z-40 h-14 shrink-0 items-center gap-2 border-b border-gray-100 bg-white/90 px-3 backdrop-blur-lg md:hidden ${immersive ? "hidden" : "flex"}`}>
           <button
             onClick={() => setDrawerOpen(true)}
+            data-nav="menu-hp" /* [sambut-siswa-lunas-v1] */
             aria-label={t("Buka menu")}
             aria-expanded={drawerOpen}
             className="flex h-10 w-10 items-center justify-center rounded-xl text-[#12172B] transition hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16796E]"

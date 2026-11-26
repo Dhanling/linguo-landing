@@ -45,10 +45,16 @@ const TEPI = 12;
 function cariTarget(sel: string[] | undefined): HTMLElement | null {
   if (!sel?.length) return null;
   for (const s of sel) {
-    const el = document.querySelector<HTMLElement>(s);
     // Elemen yang ada di DOM tapi disembunyikan (mis. tombol zoom di layar HP)
     // tidak boleh disorot: sorotannya akan jadi kotak nol di pojok kiri atas.
-    if (el && el.getBoundingClientRect().width > 0) return el;
+    // [sambut-siswa-lunas-v1] Semua kecocokan dicek, bukan cuma yang pertama: menu
+    // dashboard punya kembaran (rail desktop, laci HP, nav bawah) dan hanya satu
+    // yang terlihat. Yang tergeser ke luar layar (laci tertutup) juga dilewati.
+    for (const el of Array.from(document.querySelectorAll<HTMLElement>(s))) {
+      const r = el.getBoundingClientRect();
+      if (r.width > 0 && r.height > 0 && r.right > 0 && r.bottom > 0 &&
+          r.left < window.innerWidth && r.top < window.innerHeight) return el;
+    }
   }
   return null;
 }
