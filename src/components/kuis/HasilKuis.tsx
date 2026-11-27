@@ -95,10 +95,12 @@ type JsPdfCtor = new (o?: Record<string, unknown>) => JsPdfDoc;
 // ── Bantu-bantu kecil ───────────────────────────────────────────────────────
 
 /** Ringkas, karena ini isi kotak selebar sepertiga layar HP: "12 mnt 22 dtk". */
-function lamaRingkas(sec: number): string {
+/* [hasil-kuis-radar-v1] Kotak "Waktu" selebar sepertiga layar HP: "23 mnt 42 dtk"
+   patah jadi dua baris. Di atas 1 menit detiknya dibuang — selisih detik tidak
+   berarti apa-apa buat siswa. */
+function lamaSebaris(sec: number): string {
   const s = Math.max(0, Math.round(sec));
-  const m = Math.floor(s / 60);
-  return m > 0 ? `${m} mnt ${s % 60} dtk` : `${s} dtk`;
+  return s >= 60 ? `${Math.round(s / 60)} mnt` : `${s} dtk`;
 }
 
 function isMC(q: { type: string; options?: unknown[] }): boolean {
@@ -447,7 +449,7 @@ export default function HasilKuis({
             {/* Tanpa ikon jam: labelnya sudah menyebut "Waktu", dan di kotak
                 selebar sepertiga layar HP ikonnya cuma mendorong angkanya turun
                 ke baris kedua. */}
-            <Tile label="Waktu" nilai={durationSec ? lamaRingkas(durationSec) : "—"} />
+            <Tile label="Waktu" nilai={durationSec ? lamaSebaris(durationSec) : "—"} />
           </div>
         </section>
 
@@ -457,6 +459,29 @@ export default function HasilKuis({
             <h2 className="text-sm font-bold text-slate-800">
               {adaTopik ? "Penguasaan per materi" : "Penguasaan per jenis soal"}
             </h2>
+            {/* [hasil-kuis-radar-v1] 3–8 materi → radar seperti dashboard siswa,
+                teksnya cukup satu baris chip. Di luar itu radar tak terbaca → batang. */}
+            {materi.length >= 3 && materi.length <= 8 ? (
+              <>
+                <p className="mt-0.5 text-[11.5px] text-slate-500">Makin penuh, makin dikuasai.</p>
+                <RadarMateri materi={materi} />
+                <div className="mt-1 flex flex-wrap justify-center gap-1.5">
+                  {materi.map((m) => {
+                    const p = m.maks > 0 ? Math.round((m.dapat / m.maks) * 100) : 0;
+                    const lemah = p < 70;
+                    return (
+                      <Chip
+                        key={m.nama}
+                        warna={lemah ? WARN : OK}
+                        icon={lemah ? <RotateCcw className="h-3 w-3" /> : <ThumbsUp className="h-3 w-3" />}
+                        teks={`${namaPendek(m.nama)} ${p}%`}
+                      />
+                    );
+                  })}
+                </div>
+              </>
+            ) : (
+            <>
             <p className="mt-0.5 text-[11.5px] text-slate-500">
               Urut dari yang paling perlu diulang. Angkanya poin yang kamu dapat dari poin yang tersedia.
             </p>
@@ -495,6 +520,8 @@ export default function HasilKuis({
                 );
               })}
             </div>
+            </>
+            )}
           </section>
         )}
 
@@ -681,11 +708,68 @@ function SkorCincin({ pct }: { pct: number }) {
   );
 }
 
+/** "Speaking (berbicara)" → "Speaking": label sumbu radar harus pendek. */
+function namaPendek(nama: string, maks = 18): string {
+  const n = nama.replace(/\s*\(.*?\)\s*/g, " ").trim();
+  return n.length > maks ? n.slice(0, maks - 1).trimEnd() + "…" : n || nama;
+}
+
+/* [hasil-kuis-radar-v1] Radar penguasaan per materi (inline SVG, gaya BandRadarCard
+   di /akun). Sumbu urut nomor soal pertama supaya bentuknya stabil antar kuis. */
+function RadarMateri({ materi }: { materi: Materi[] }) {
+  const data = [...materi].sort((a, b) => a.nomor[0] - b.nomor[0]);
+  const n = data.length;
+  const W = 360, H = 272, cx = W / 2, cy = 138, R = 80;
+  const sudut = (i: number) => -Math.PI / 2 + (i * 2 * Math.PI) / n;
+  const titik = (i: number, v: number) => {
+    const r = (Math.max(0, Math.min(100, v)) / 100) * R;
+    return [cx + r * Math.cos(sudut(i)), cy + r * Math.sin(sudut(i))] as const;
+  };
+  const persen = (m: Materi) => (m.maks > 0 ? Math.round((m.dapat / m.maks) * 100) : 0);
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} className="mx-auto mt-1 block w-full max-w-[360px] overflow-visible text-slate-500" role="img"
+      aria-label={data.map((m) => `${m.nama} ${persen(m)}%`).join(", ")}>
+      {[25, 50, 75, 100].map((v) => (
+        <polygon key={v} points={data.map((_, i) => titik(i, v).join(",")).join(" ")}
+          fill="none" stroke="currentColor" strokeOpacity={0.18} strokeWidth={1} />
+      ))}
+      {data.map((_, i) => {
+        const [x, y] = titik(i, 100);
+        return <line key={i} x1={cx} y1={cy} x2={x} y2={y} stroke="currentColor" strokeOpacity={0.18} />;
+      })}
+      <polygon points={data.map((m, i) => titik(i, persen(m)).join(",")).join(" ")}
+        fill={`${BRAND}26`} stroke={BRAND} strokeWidth={2.5} strokeLinejoin="round" />
+      {data.map((m, i) => {
+        const [x, y] = titik(i, persen(m));
+        return <circle key={m.nama} cx={x} cy={y} r={3.5} fill={persen(m) < 70 ? WARN : BRAND} />;
+      })}
+      {data.map((m, i) => {
+        const a = sudut(i);
+        const c = Math.cos(a);
+        const lx = cx + (R + 16) * c;
+        const ly = cy + (R + 16) * Math.sin(a) + (Math.sin(a) > 0.3 ? 12 : Math.sin(a) < -0.3 ? -14 : 0);
+        const anchor = Math.abs(c) < 0.2 ? "middle" : c > 0 ? "start" : "end";
+        const p = persen(m);
+        return (
+          <g key={m.nama}>
+            <text x={lx} y={ly - 2} textAnchor={anchor} fontSize={16} fontWeight={800} fill={p < 70 ? WARN : BRAND}>
+              {p}%
+            </text>
+            <text x={lx} y={ly + 13} textAnchor={anchor} fontSize={11.5} fill="#475569">
+              {namaPendek(m.nama, 14)}
+            </text>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
 function Tile({ label, nilai, icon }: { label: string; nilai: string; icon?: React.ReactNode }) {
   return (
     <div className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-2">
       <p className="text-[10px] font-semibold uppercase tracking-wide text-slate-400">{label}</p>
-      <p className="mt-0.5 flex items-center gap-1 text-[13px] font-bold text-slate-700">{icon}{nilai}</p>
+      <p className="mt-0.5 flex items-center gap-1 whitespace-nowrap text-[13px] font-bold text-slate-700">{icon}{nilai}</p>
     </div>
   );
 }
