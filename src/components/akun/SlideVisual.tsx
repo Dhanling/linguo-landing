@@ -11,7 +11,7 @@
 // dashboard tidak menimpanya — slide selalu terang [slide-terang-v1].
 
 import { useSlideEn } from "@/lib/slideUiEn";
-import { createContext, lazy, Suspense, useContext, useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { createContext, Fragment, lazy, Suspense, useContext, useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Volume2, Wind, X, Check, Play, Square, RotateCcw, Equal, Shuffle, ChevronLeft, ChevronRight } from "lucide-react";
 import type { BandingStatus, BandingToken, Nada, SlideVisual as Visual } from "@/lib/materiSlides";
 // [slide-menulis-v1] Papan aksara + latihan mandiri untuk slide "Latihan Menulis · Part N".
@@ -1158,6 +1158,90 @@ function kembarTabel(v: Extract<Visual, { kind: "tabel" }>) {
   return { warnaBaris, selSama, subjek, legenda, namaTetap };
 }
 
+/* ── [slide-urutan-v2-v1] Perbandingan urutan kata ─────────────────────────
+   Permintaan owner 28 Nov 2026 (slide V2 Belanda di Linguo Meet): perbandingan
+   Belanda–Indonesia–Inggris sebagai daftar kalimat tak memperlihatkan bedanya.
+   Di sini tiap bahasa satu baris yang dipecah per SLOT, verbanya diwarnai, dan
+   kolom aturan (slot 2) dipertegas — terlihat verba bahasa target selalu jatuh
+   di kolom yang sama, sedangkan verba Indonesia/Inggris bergeser. */
+function VisualUrutan({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "urutan" }>; ucap?: Ucap; siapkan?: (t: string) => void; aksen: string }) {
+  const kotak = useRef<HTMLDivElement>(null);
+  const isi = useRef<HTMLDivElement>(null);
+  const [skala, setSkala] = useState(1);
+  useLayoutEffect(() => {
+    const el = kotak.current, x = isi.current;
+    if (!el || !x) return;
+    if (x.offsetHeight > el.clientHeight + 1 && skala > 0.6) setSkala((k) => Math.max(0.6, +(k - 0.06).toFixed(2)));
+  }, [skala, v]);
+  useEffect(() => {
+    const el = kotak.current;
+    if (!el) return;
+    let lebar = el.clientWidth, tinggi = el.clientHeight;
+    const ro = new ResizeObserver(() => {
+      if (el.clientWidth === lebar && el.clientHeight === tinggi) return;
+      lebar = el.clientWidth; tinggi = el.clientHeight;
+      setSkala(1);
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+  const MERAH = "#DC2626";
+  const kolom = `minmax(0,1.05fr) ${v.slot.map(() => "minmax(0,1fr)").join(" ")}`;
+  return (
+    <div className="flex h-full flex-col gap-[0.8cqh]">
+      <style>{MUNCUL}</style>
+      <div ref={kotak} className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain [scrollbar-width:thin]">
+        <div ref={isi} style={{ fontSize: `${skala}em`, ...KARTU, overflow: "hidden", padding: "0.5em 0.6em 0.7em" }}>
+          <div className="grid gap-x-[0.35em] gap-y-[0.3em]" style={{ gridTemplateColumns: kolom }}>
+            <div />
+            {v.slot.map((label, i) => (
+              <div key={i} className="rounded-[0.5em] px-[0.6em] py-[0.3em] text-center text-[0.82em] font-extrabold uppercase tracking-wider"
+                style={i === v.kunci ? { background: aksen, color: "#fff" } : { background: "#F1F5F9", color: "#475569" }}>{label}</div>
+            ))}
+            {v.baris.map((b, r) => {
+              const kalimat = b.kata.filter(Boolean).join(" ");
+              const label = (
+                <div className="flex items-center gap-[0.35em] text-[0.92em] font-extrabold leading-tight" style={{ color: b.salah ? MERAH : b.target ? "#111827" : "#64748B" }}>
+                  {b.salah && <X aria-hidden className="h-[1em] w-[1em] shrink-0" strokeWidth={3} />}
+                  <span>{b.bahasa}</span>
+                  {b.target && !b.salah && ucap && <Volume2 aria-hidden className="h-[0.95em] w-[0.95em] shrink-0" style={{ color: aksen }} />}
+                </div>
+              );
+              const anim: React.CSSProperties = { animation: `slideVisMuncul .3s ease-out ${r * 0.08}s both` };
+              return (
+                <Fragment key={r}>
+                  {b.pisah && r > 0 && <div className="h-[0.5em]" style={{ gridColumn: "1 / -1" }} />}
+                  {b.target && !b.salah && ucap && kalimat
+                    ? <Bunyi teks={kalimat} ucap={ucap} siapkan={siapkan} className="sv-anim flex items-center rounded-[0.5em] px-[0.4em]" style={anim}>{label}</Bunyi>
+                    : <div className="sv-anim flex items-center px-[0.4em]" style={anim}>{label}</div>}
+                  {b.kata.map((k, i) => {
+                    const verba = !!b.verba?.includes(i);
+                    const kosong = !k;
+                    const gaya: React.CSSProperties = {
+                      ...anim,
+                      background: kosong ? "transparent"
+                        : verba ? (b.salah ? MERAH : aksen)
+                        : i === v.kunci ? `color-mix(in srgb, ${aksen} 9%, #FFFFFF)` : b.salah ? "#FEF2F2" : "#F8FAFC",
+                      color: verba ? "#fff" : b.salah ? MERAH : b.target ? "#111827" : "#475569",
+                      border: kosong ? "1px dashed #E2E8F0" : `1px solid ${verba ? "transparent" : i === v.kunci ? `color-mix(in srgb, ${aksen} 30%, #FFFFFF)` : "#E2E8F0"}`,
+                    };
+                    return (
+                      <div key={i} dir="auto" className={`sv-anim flex items-center justify-center rounded-[0.5em] px-[0.5em] py-[0.35em] text-center leading-tight ${b.target ? "text-[1.18em] font-extrabold" : "text-[1.02em] font-bold"}`} style={gaya}>
+                        {k || "—"}
+                      </div>
+                    );
+                  })}
+                </Fragment>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+      {v.ket && <p className="shrink-0 text-[0.78em] font-semibold leading-snug" style={{ color: "#4B5563" }}>{v.ket}</p>}
+    </div>
+  );
+}
+
 function VisualTabel({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "tabel" }>; ucap?: Ucap; siapkan?: (t: string) => void; aksen: string }) {
   const kotak = useRef<HTMLDivElement>(null);
   const isi = useRef<HTMLDivElement>(null);
@@ -1289,6 +1373,7 @@ export function SlideVisual({ visual, aksen, ucap, siapkan, lang }: {
       : visual.kind === "sejarah" ? visual.peristiwa.map((p) => p.asli || "")
       : visual.kind === "banding" ? visual.rows.flatMap((r) => r.target.map((t) => t.t))
       : visual.kind === "tabel" ? visual.baris.flatMap((b) => b.filter((_, i) => visual.kolom[i]?.target).map((c) => c.t))
+      : visual.kind === "urutan" ? visual.baris.filter((b) => b.target && !b.salah).map((b) => b.kata.filter(Boolean).join(" "))
       : visual.kind === "alfabet" || visual.kind === "bunyi" || visual.kind === "isyarat" || visual.kind === "menulis" ? []
       : visual.rows.map((r) => r.hanzi || "");
     teks.forEach((t) => { const u = urlKlip(t); if (u) void fetch(u, { cache: "force-cache" }).catch(() => {}); });
@@ -1310,6 +1395,7 @@ function Isi({ visual, aksen, ucap, siapkan }: { visual: Visual; aksen: string; 
   if (visual.kind === "banding") return <VisualBanding v={visual} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
   if (visual.kind === "bunyi") return <VisualBunyi v={visual} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
   if (visual.kind === "tabel") return <VisualTabel v={visual} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
+  if (visual.kind === "urutan") return <VisualUrutan v={visual} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
   if (visual.kind === "alfabet") return <VisualAlfabet v={visual} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
   if (visual.kind === "menulis") return <VisualMenulis v={visual} ucap={ucap} aksen={aksen} />;
   return null;

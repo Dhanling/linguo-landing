@@ -166,6 +166,13 @@ export interface IsyaratBaris { siapa: "A" | "B"; urut: string[]; gloss: string;
 export interface MenulisHuruf { c: string; r: string; n?: string; t?: string; u?: string }
 
 export interface TabelKolom { label: string; target?: boolean }
+
+/* [slide-urutan-v2-v1] Perbandingan URUTAN KATA (mis. aturan V2 Belanda/Jerman/Skandinavia):
+   baris = satu bahasa, kolom = slot 1…n, `verba` = indeks slot yang diwarnai (verba).
+   `kunci` = indeks slot yang dipertegas sebagai kolom aturan (V2 → 1). `target` = baris
+   bahasa target (bisa diklik untuk didengar), `salah` = contoh keliru (dicoret, ✗),
+   `pisah` = jarak sebelum baris ini (awal kelompok contoh baru). */
+export interface UrutanBaris { bahasa: string; kata: string[]; verba?: number[]; target?: boolean; salah?: boolean; pisah?: boolean }
 export interface TabelSel { t: string; tr?: string; arti?: string }
 
 export type SlideVisual =
@@ -194,6 +201,7 @@ export type SlideVisual =
   | { kind: "bunyi"; vokal: BunyiVokal[]; khas: BunyiKhas[]; vokalJudul?: string; vokalKet?: string; ui?: "en" }
   /** `sorot` = potongan teks yang diwarnai di sel target; `ket` = catatan kecil di bawah tabel. */
   | { kind: "tabel"; kolom: TabelKolom[]; baris: TabelSel[][]; sorot?: string[]; ket?: string }
+  | { kind: "urutan"; slot: string[]; kunci?: number; baris: UrutanBaris[]; ket?: string }
   /** [slide-menulis-v1] `aksara` = ScriptLang.key, `set` = ScriptSet.id asal hurufnya. */
   | { kind: "menulis"; aksara: string; set: string; label: string; part: number; huruf: MenulisHuruf[]; ui?: "en" };
 
@@ -418,6 +426,25 @@ function normVisual(v: any): SlideVisual | undefined {
     const baris = arr(v.baris).map((b) => kolom.map((_, i) => sel(arr(b)[i]))).filter((b) => b.some((x) => x.t)).slice(0, 12);
     const sorot = strList(v.sorot);
     return baris.length ? { kind: "tabel", kolom, baris, ...(sorot.length ? { sorot } : null), ...(opt(v.ket) ? { ket: opt(v.ket) } : null) } : undefined;
+  }
+  if (v.kind === "urutan") {
+    const slot = strList(v.slot).slice(0, 7);
+    if (slot.length < 2) return undefined;
+    const idx = (x: any) => arr(x).map((n) => Math.round(Number(n))).filter((n) => Number.isFinite(n) && n >= 0 && n < slot.length);
+    const baris: UrutanBaris[] = arr(v.baris).map((b) => ({
+      bahasa: str(b?.bahasa),
+      kata: slot.map((_, i) => str(arr(b?.kata)[i])),
+      ...(idx(b?.verba).length ? { verba: idx(b?.verba) } : null),
+      ...(b?.target === true ? { target: true } : null),
+      ...(b?.salah === true ? { salah: true } : null),
+      ...(b?.pisah === true ? { pisah: true } : null),
+    })).filter((b) => b.kata.some(Boolean)).slice(0, 14);
+    const kunci = Math.round(Number(v.kunci));
+    return baris.length ? {
+      kind: "urutan", slot, baris,
+      ...(Number.isFinite(kunci) && kunci >= 0 && kunci < slot.length ? { kunci } : null),
+      ...(opt(v.ket) ? { ket: opt(v.ket) } : null),
+    } : undefined;
   }
   if (v.kind === "bunyi") {
     const vokal = arr(v.vokal).map((x) => ({
