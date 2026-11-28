@@ -74,7 +74,7 @@ export async function GET(req: NextRequest) {
     (await rest(
       `registrations?student_id=${inSiswa}` +
         `&select=id,product,language,level,status,sessions_total,sessions_used,` +
-        `duration,total_amount,payment_status,registration_date,teacher_id,batch_id,test_prep_batch_id,` +
+        `duration,total_amount,payment_status,registration_date,teacher_id,batch_id,test_prep_batch_id,transferred_from_id,` +
         // [akun-tagihan-real-v1] kolom billing buat tab Tagihan & Paket di preview
         `installment_paid,payment_due_date,payment_date,created_at,` +
         // [teacher-avatar-sync-v1] ikutkan avatar_url biar foto pengajar tampil di preview

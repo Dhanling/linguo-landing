@@ -4008,7 +4008,7 @@ export default function AkunPage() {
           registration_date, teacher_id, batch_id, test_prep_batch_id,
           payment_proof_url, payment_proof_uploaded_at,
           payment_verified_at, payment_rejection_reason,
-          pipeline_status, archived_at,
+          pipeline_status, archived_at, transferred_from_id,
           addons, addon_ebook_recording,
           teachers(name, whatsapp, avatar_url)
         `)
@@ -4199,15 +4199,34 @@ export default function AkunPage() {
   // UnifiedCourseCard. Yang belum bayar TIDAK pernah masuk sini — mereka ada di
   // pendingRegs (Perlu Perhatian). NB: webhook Xendit cuma set payment_status
   // (bukan status, krn CHECK constraint), makanya filter pakai payment_status.
+  /* [akun-ganti-pengajar-riwayat-v1] Ganti pengajar di tengah kelas (Devi, Swedish A1, 28 Nov
+     2026) juga membuat registrasi lama berstatus Transferred — tapi isinya sesi yang BENAR-BENAR
+     sudah diajar. Kartunya tetap tampil (riwayat + slide yang sudah dipelajari) kalau ada
+     penerus dengan bahasa + level + jenis produk yang sama lewat `transferred_from_id`.
+     "Pindah kelas" Reguler → Private beda jenis produk, jadi tetap tersembunyi. */
+  const gantiPengajarIds = useMemo(() => {
+    const regs: any[] = (student?.registrations as any[]) || [];
+    const ids = new Set<string>();
+    for (const r of regs) {
+      if (r.status !== "Transferred") continue;
+      const penerus = regs.find((x) =>
+        x.transferred_from_id === r.id &&
+        String(x.language || "").toLowerCase() === String(r.language || "").toLowerCase() &&
+        String(x.level || "") === String(r.level || "") &&
+        String(x.product_type || x.product || "") === String(r.product_type || r.product || ""));
+      if (penerus) ids.add(String(r.id));
+    }
+    return ids;
+  }, [student]);
   const activeRegsMentah = useMemo(() => student?.registrations.filter(r =>
     // [linguo-patch:akun-hide-cancelled-v1] buang reg yang di-Batal-in admin/cron & yang udah diarsip
     r.pipeline_status !== "Batal" && !r.archived_at &&
     // [akun-sembunyikan-transferred-v1] kelas lama yang sudah dipindah (mis. Reguler →
     // Private lewat "Pindah kelas") berstatus Transferred — uangnya sudah jadi potongan
     // kelas baru, jadi kartunya tidak boleh tampil lagi. Riwayat tagihan tetap membacanya.
-    r.status !== "Transferred" &&
+    (r.status !== "Transferred" || gantiPengajarIds.has(String(r.id))) &&
     (r.payment_status === "Lunas" || r.payment_status === "Cicilan")
-  ) || [], [student]);
+  ) || [], [student, gantiPengajarIds]);
   /* [sesi-batch-progres-v1] Laporan 41d08167 (14 Nov 2026, FRA-A11-OCT26): kelas grup
      sudah 4 pertemuan tapi kartu "1/8 sesi · Belum terjadwal" — `sessions_used` batch
      tak pernah disinkron (registrasi Reguler banyak yang `sessions_total` NULL, trigger
@@ -4327,7 +4346,10 @@ export default function AkunPage() {
       const bobot = bobotSesi(r);
       const gabung = r.product_type === "Reguler" ? tot < SESI_LEVEL : r.product_type === "Private" && tot > 0 && (tot < SESI_LEVEL || bobot < 1);
       if (!gabung) { regsSertif.push(r); continue; }
-      const k = `${String(r.language || "").toLowerCase()}|${String(r.level || "")}`;
+      // [akun-ganti-pengajar-riwayat-v1] level band polos "A1" = sublevel A1.1 (sama dengan
+      // pemetaan silabus) — dulu Devi dapat dua kartu Swedish A1.1 4/16 + A1 0/16.
+      const lvlKey = /^[ABC][12]$/i.test(String(r.level || "").trim()) ? `${String(r.level).trim().toUpperCase()}.1` : String(r.level || "");
+      const k = `${String(r.language || "").toLowerCase()}|${lvlKey}`;
       const used = (tot > 0 ? Math.min(Number(r.sessions_used) || 0, tot) : Number(r.sessions_used) || 0) * bobot;
       const g = gabungan.get(k);
       if (!g) {
@@ -5800,7 +5822,15 @@ export default function AkunPage() {
               {(() => {
                 // jadwal-riwayat-v1: kalender pakai `allSchedules` (riwayat + mendatang),
                 // bukan `upcomingSchedules` — itu sebabnya bulan berjalan dulu tampak kosong.
-                const jadwalSessions = allSchedules.map((s: any) => {
+                /* [akun-ganti-pengajar-riwayat-v1] Slot batal milik registrasi yang sudah
+                   dialihkan (Transferred) atau yang kembar dengan sesi lain di jam sama tak
+                   digambar — siswa membacanya sebagai "sesi batal" padahal cuma sisa
+                   jadwal pengajar lama / koreksi data (Devi, 28 Nov 2026). */
+                const regTransferred = new Set(((student?.registrations as any[]) || []).filter((r) => r.status === "Transferred").map((r) => String(r.id)));
+                const jamTerisi = new Set((allSchedules as any[]).filter((s) => s.status !== "cancelled").map((s) => `${s.registration_id}|${s.scheduled_at}`));
+                const jadwalSessions = (allSchedules as any[]).filter((s: any) =>
+                  s.status !== "cancelled" || (!regTransferred.has(String(s.registration_id)) && !jamTerisi.has(`${s.registration_id}|${s.scheduled_at}`)),
+                ).map((s: any) => {
                   const reg = student?.registrations.find((r: any) => r.id === s.registration_id);
                   // [jadwal-teacher-avatar-v1] direktori `teachers` menang atas embed
                   // registrasi (embed bisa dari cache lama yang belum punya foto).
@@ -6074,7 +6104,9 @@ export default function AkunPage() {
                    (registration_id NULL) — sesinya datang dari RPC my_corporate_class_sessions
                    dan sudah menempel di registrasi semunya. Kuis & Rapor belum ada datanya. */
                 const jadwalOf = (r: any): any[] => (r?.__b2b ? r.__sesi || []
-                  : tempelRekamanBatch(r, jadwalNyata.filter((s) => s.registration_id === r?.id), rekamanBatchMap.get(r?.id) || []));
+                  : tempelRekamanBatch(r, jadwalNyata.filter((s) => s.registration_id === r?.id &&
+                      // [akun-ganti-pengajar-riwayat-v1] kelas yang dialihkan: slot batalnya bukan riwayat
+                      !(r?.status === "Transferred" && s.status === "cancelled")), rekamanBatchMap.get(r?.id) || []));
                 const materiB2B = (r: any): any[] | undefined =>
                   r?.__b2b ? (r.__sesi || []).flatMap((s: any) => (Array.isArray(s.materials) ? s.materials : [])) : undefined;
                 const tabAktif = selected?.__b2b && (materiTab === "kuis" || materiTab === "rapor") ? "sesi" : materiTab;
