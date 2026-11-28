@@ -20,7 +20,7 @@ import { HOME_FLAGS } from "@/lib/flags/homeFlags";
 import { RectFlag as RectFlagLazy } from "@/components/RectFlag";
 import Link from "next/link";
 import RegisterRegulerModal from "@/components/RegisterRegulerModal";
-import { regulerBatchPrice, REGULER_NORMAL_PRICE } from "@/lib/regulerPricing";
+import { regulerBatchPrice, REGULER_NORMAL_PRICE, REGULER_EB_PRICE, REGULER_EB_END_LABEL, REGULER_EB_END_LABEL_SHORT, isRegulerEarlyBird } from "@/lib/regulerPricing";
 import RegisterEtpModal from "@/components/RegisterEtpModal";
 import {
   type EtpBatchRow,
@@ -616,6 +616,12 @@ export default function JadwalKelasRegulerClient({
                     Terakhir daftar {formatDate(nearestBatch.closes_at)}
                   </div>
                 )}
+                {/* [jadwal-eb-label-v1] harga coret di tabel dulu tanpa keterangan promo */}
+                {isRegulerEarlyBird() && regulerBatchPrice(nearestBatch) < PRICE_STRIKE && (
+                  <div className="mt-1.5 inline-block rounded-full bg-[#FFD43B] px-2.5 py-0.5 text-xs font-bold text-slate-900">
+                    Early bird {formatIDR(REGULER_EB_PRICE)} s.d. {REGULER_EB_END_LABEL} (normal {formatIDR(PRICE_STRIKE)})
+                  </div>
+                )}
               </div>
             </div>
             <div className="flex items-center gap-3 sm:text-right">
@@ -924,6 +930,11 @@ export default function JadwalKelasRegulerClient({
                                   {formatIDR(regulerBatchPrice(batch))}
                                 </div>
                                 <div className="text-[10px] text-slate-500">/siswa/batch</div>
+                                {regulerBatchPrice(batch) < PRICE_STRIKE && (
+                                  <div className="mt-1 inline-block rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-800 whitespace-nowrap">
+                                    Early bird s.d. {REGULER_EB_END_LABEL_SHORT}
+                                  </div>
+                                )}
                               </td>
                               <td className="py-4 px-4 text-center">
                                 {closed ? (
@@ -1037,6 +1048,11 @@ export default function JadwalKelasRegulerClient({
                                 {formatIDR(regulerBatchPrice(batch))}
                               </div>
                               <div className="text-[10px] text-slate-500">/siswa/batch</div>
+                              {regulerBatchPrice(batch) < PRICE_STRIKE && (
+                                <div className="mt-1 inline-block rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-800 whitespace-nowrap">
+                                  Early bird s.d. {REGULER_EB_END_LABEL_SHORT}
+                                </div>
+                              )}
                             </div>
                             {closed ? (
                               <span className="inline-flex items-center gap-1.5 h-10 px-4 rounded-xl bg-slate-100 text-slate-400 text-sm font-semibold cursor-not-allowed">

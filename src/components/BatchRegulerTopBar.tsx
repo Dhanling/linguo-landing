@@ -17,7 +17,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { ArrowRight, Hourglass } from "lucide-react";
 import { isPromoActive } from "@/lib/promoMerdeka";
-import { REGULER_NORMAL_PRICE } from "@/lib/regulerPricing";
+import { REGULER_NORMAL_PRICE, REGULER_EB_END_LABEL_SHORT } from "@/lib/regulerPricing";
 
 // Halaman ber-chrome sendiri (dashboard siswa, laporan, form, pengerjaan kuis)
 // dilewati — daftar yang sama dengan PromoTopBar.
@@ -185,6 +185,11 @@ export default function BatchRegulerTopBar() {
           <span className="text-base font-extrabold text-[#FFD43B] sm:text-lg">
             {rp(batch.price)}
           </span>
+          {batch.price < PRICE_STRIKE && (
+            <span className="rounded-full bg-white/20 px-2 py-0.5 text-[11px] font-bold">
+              Early bird s.d. {REGULER_EB_END_LABEL_SHORT}
+            </span>
+          )}
         </span>
 
         {/* tabular-nums: tanpa ini lebar angka berubah tiap detik & barnya bergoyang */}

@@ -25,6 +25,10 @@ export const REGULER_TOTAL_SESI = 8;
 /** Batch dengan batch_month >= ini memakai harga baru (EB/normal). */
 export const REGULER_NEW_PRICING_FROM_MONTH = "2027-01-01";
 
+/** Tanggal akhir early bird untuk copy, mis. "20 Des 2026" / pendek "20 Des". [jadwal-eb-label-v1] */
+export const REGULER_EB_END_LABEL = "20 Des 2026";
+export const REGULER_EB_END_LABEL_SHORT = "20 Des";
+
 const rp = (n: number) => `Rp${n.toLocaleString("id-ID")}`;
 
 export function isRegulerEarlyBird(now: Date = new Date()): boolean {
