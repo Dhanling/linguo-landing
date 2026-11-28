@@ -1578,7 +1578,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
     try {
       // [akun-pay-fallback-amount-v1] registrasi wizard punya total_amount 0 →
       // pakai nominal patokan yang sama dengan PaymentCard, jangan kirim 0.
-      const amount = r.total_amount > 0 ? r.total_amount : calculateDefaultAmount(r.product, r.level);
+      const amount = r.total_amount > 0 ? r.total_amount : calculateDefaultAmount(r.product, r.level, r.language, r.duration);
       // [edge-auth-gate-v1] edge fn kini mengecek registrasi milik siswa ini → bawa token sesi.
       const { data: { session: sesiBayar } } = await supabase.auth.getSession();
       const res = await fetch("https://jbtgciepdmqxxcjflrxz.supabase.co/functions/v1/xendit-create-invoice", {

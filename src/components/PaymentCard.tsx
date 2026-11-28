@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { getRegulerPrice } from "@/lib/regulerPricing";
+import { getPrivateBase60 } from "@/lib/trial-pricing";
 import {
   Clock,
   CreditCard,
@@ -20,8 +21,24 @@ const WA_ADMIN = "6282116859493";
 // patokan ini, dan nominal yang SAMA wajib dikirim ke xendit-create-invoice —
 // dulu klien mengirim `total_amount || 0` → server menolak "Missing required
 // fields: amount" → siswa lihat "Gagal generate link pembayaran".
-export function calculateDefaultAmount(product: string, level: string): number {
-  if (product === "Kelas Private") return 720000;
+//
+// [akun-pay-private-harga-bahasa-v1] Private dulu dipatok flat 720rb (8 × 90rb =
+// tarif kategori D) untuk SEMUA bahasa/durasi → Natashia German A1 60 mnt ketagih
+// 720rb padahal pricelist 8 × 100rb = 800rb (laporan Jia 28 Nov 2026). Kini paket
+// 8 sesi × tarif resmi (kategori bahasa + level + durasi, sumber trial-pricing.ts).
+export const PAKET_SESI_DEFAULT = 8;
+export function calculateDefaultAmount(
+  product: string,
+  level: string,
+  language?: string | null,
+  duration?: string | number | null,
+): number {
+  if (product === "Kelas Private") {
+    const base60 = getPrivateBase60(language || "", level || "A1");
+    const dur = parseInt(String(duration ?? ""), 10) || 60;
+    const perSesi = Math.round((base60 * dur) / 60 / 1000) * 1000;
+    return perSesi * PAKET_SESI_DEFAULT;
+  }
   if (product === "Kelas Reguler") return getRegulerPrice(); // [reguler-jan27-harga-v1]
   if (product === "IELTS/TOEFL Prep") return 300000;
   if (product === "Kelas Kids") {
@@ -46,6 +63,7 @@ type Props = {
     product: string;
     language: string;
     level: string;
+    duration?: string | number | null;
     total_amount: number;
     payment_status: string;
     payment_proof_url?: string | null;
@@ -68,7 +86,7 @@ export default function PaymentCard({
   const [regenerating, setRegenerating] = useState(false);
 
   const amount =
-    reg.total_amount > 0 ? reg.total_amount : calculateDefaultAmount(reg.product, reg.level);
+    reg.total_amount > 0 ? reg.total_amount : calculateDefaultAmount(reg.product, reg.level, reg.language, reg.duration);
   const hasUploaded = !!reg.payment_proof_url;
   const isRejected = !!reg.payment_rejection_reason;
   const waMsg =
